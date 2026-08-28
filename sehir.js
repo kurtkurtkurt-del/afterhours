@@ -240,7 +240,7 @@
   sahne.addEventListener("pointermove", (e) => {
     if (!surukluyor) return;
     aci -= (e.clientX - sonX) * 0.006;      // ters yon
-    egim2 -= (e.clientY - sonY) * 0.005;    // dikey donus
+    egim2 += (e.clientY - sonY) * 0.005;    // dikey donus (ters yon)
     egim2 = Math.max(-0.62, Math.min(0.62, egim2));
     sonX = e.clientX;
     sonY = e.clientY;
