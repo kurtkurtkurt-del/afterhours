@@ -54,6 +54,13 @@ body {
   text-decoration: none;
 }
 
+/* Bulundugun bolum: ince bir alt cizgi, baska hicbir sey */
+.header-links a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+
 /* ---------- Ekranlar ---------- */
 
 /* Iki tam ekran ust uste; gecis dikey kaydirma ile yapilir */
@@ -1012,33 +1019,98 @@ body[data-ekran="3"] .ses { opacity: 0; pointer-events: none; }
 /* ---------- explore: kaydirmali deste ---------- */
 
 .ex-alan {
+  /* Poster genisligi (yukseklik x1.5). Sutunda posterin disinda
+     kalan her sey ~424px tutuyor; deste artik ondan arta kalana
+     gore olculuyor, yoksa kisa ekranlarda alta tasiyor. */
+  --ex-w: clamp(186px, calc((100vh - 424px) / 1.5), 46vw);
+  --ex-w: clamp(186px, calc((100dvh - 424px) / 1.5), 46vw);
+  --ex-bilgi-h: 56px;           /* posterin altindaki serit */
   height: 100vh;
   height: 100dvh;
   padding: 104px 32px 48px;
+  display: grid;
+  grid-template-columns: auto 1fr auto min(30vw, 390px);
+  gap: 40px;
+  align-items: center;
+}
+
+/* Sol sutun: filtre, servis satiri, deste */
+.ex-sol {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 26px;
+  gap: 18px;
+  min-height: 0;
 }
 
-.ex-etiket {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  opacity: 0.55;
+/* Filtrenin altindaki satir; ustunde ve altinda nefes olsun */
+.ex-servis {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin: 8px 0;
+}
+
+/* Filtre: sehir / kategori / tarih. Yazi tipi menunun aynisi.
+   Simdilik secim bir seyi degistirmiyor. */
+.ex-filtre {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.ex-sec {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.ex-sec select {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--siyah);
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0 19px 0 0;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.ex-sec select:focus-visible { outline: 1px solid var(--siyah); outline-offset: 3px; }
+
+/* Kucuk asagi ok */
+.ex-sec::after {
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  margin-top: -5px;
+  border-right: 1.4px solid var(--siyah);
+  border-bottom: 1.4px solid var(--siyah);
+  transform: rotate(45deg);
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .ex-deste {
   position: relative;
-  width: min(42vh, 62vw);
-  aspect-ratio: 2 / 3;
+  width: var(--ex-w);
+  height: calc(var(--ex-w) * 1.5 + var(--ex-bilgi-h));
 }
 
 .ex-kart {
   position: absolute;
   inset: 0;
+  display: flex;
+  flex-direction: column;
   cursor: grab;
   touch-action: none;
   user-select: none;
@@ -1052,10 +1124,34 @@ body[data-ekran="3"] .ses { opacity: 0; pointer-events: none; }
 
 .ex-kart object {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 2 / 3;    /* poster hep 2:3, yoksa artwork eziliyor */
   display: block;
   pointer-events: none;   /* surukleme karta ulassin */
 }
+
+/* Poster ne oldugunu soyluyor, serit ne zaman ve nerede oldugunu */
+.ex-bilgi {
+  padding-top: 14px;
+  background: var(--beyaz);
+}
+
+.ex-tur {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.ex-meta {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.62;
+}
+
+/* Serit sadece en ustteki kartta; arkadakilerin yazisi altindan tasiyordu.
+   Ustteki kart destenin son cocugu. */
+.ex-kart:not(:last-child) .ex-bilgi { opacity: 0; }
 
 .ex-bitti {
   font-size: 19px;
@@ -1065,3 +1161,382 @@ body[data-ekran="3"] .ses { opacity: 0; pointer-events: none; }
 }
 
 .ex-bitti.acik { opacity: 0.6; }
+
+/* Kartin ustunde: solun ne, sagin ne demek oldugu */
+.ex-yonler {
+  width: var(--ex-w);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: -4px;
+}
+
+.ex-yon {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  opacity: 0.5;
+}
+
+.ex-yon-cizim {
+  height: 20px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: var(--siyah);
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ex-yon-cizim { width: 20px; }
+.ex-yon.sag .ex-yon-cizim { width: 28px; }
+
+.ex-yon-yazi {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Destenin altinda: solda klavye, sagda fare. Sadece anlatir. */
+.ex-ipuclari {
+  width: var(--ex-w);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: -4px;
+}
+
+.ex-ipucu {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.42;
+}
+
+.ex-ipucu-cizim {
+  width: 46px;
+  height: 20px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: var(--siyah);
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ex-ipucu-yazi {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ---------- explore: destenin kaynagi ---------- */
+
+/* global deck: normal filtrelenmis deste. friends liked swipes:
+   arkadaslarin begendiklerine goz gezdirme. i feel lucky: rastgele.
+   Simdilik hicbiri bir sey degistirmiyor. */
+.ex-modlar {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.ex-mod {
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--siyah);
+  background: none;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  opacity: 0.42;
+  transition: opacity 0.2s ease;
+}
+
+.ex-mod:hover { opacity: 0.72; }
+
+.ex-mod.secili,
+.ex-mod.secili:hover {
+  font-weight: 500;
+  opacity: 1;
+}
+
+/* ---------- explore: sagi attiklarin ---------- */
+
+/* Deste ile yorumlarin arasinda, dikeyde ortada */
+.ex-kutu {
+  position: relative;
+  justify-self: center;
+}
+
+.ex-kutu-dugme {
+  position: relative;
+  display: block;
+  background: none;
+  border: 0;
+  padding: 4px;
+  cursor: pointer;
+  opacity: 0.4;                      /* bos oldugu surece geride durur */
+  transition: opacity 0.3s ease;
+}
+
+.ex-kutu.dolu .ex-kutu-dugme { opacity: 1; }
+
+/* Simge: ust uste iki kart */
+.ex-kutu-simge {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.ex-kutu-simge rect {
+  fill: var(--beyaz);
+  stroke: var(--siyah);
+  stroke-width: 1.5;
+}
+
+.ex-rozet {
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: 10px;
+  background: #e02b20;
+  color: var(--beyaz);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 19px;
+  text-align: center;
+}
+
+/* Yeni bir kart eklenince kisa bir zipla */
+.ex-rozet.artti { animation: rozet-zipla 0.34s ease; }
+
+@keyframes rozet-zipla {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.32); }
+  100% { transform: scale(1); }
+}
+
+/* Simgeye basinca acilan liste */
+.ex-kutu-liste {
+  position: absolute;
+  top: calc(50% + 34px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  width: 316px;
+  max-height: 46vh;
+  overflow-y: auto;
+  padding: 18px;
+  background: var(--beyaz);
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  scrollbar-width: none;
+}
+
+.ex-kutu-liste::-webkit-scrollbar { width: 0; display: none; }
+
+.ex-kutu-baslik {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 16px;
+}
+
+.ex-kutu-satir {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-decoration: none;
+  color: var(--siyah);
+}
+
+.ex-kutu-satir + .ex-kutu-satir { margin-top: 14px; }
+
+.ex-kutu-satir object {
+  width: 32px;
+  height: 48px;
+  flex: 0 0 auto;
+  display: block;
+  pointer-events: none;
+}
+
+.ex-kutu-ad {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.ex-kutu-meta {
+  font-size: 13px;
+  opacity: 0.55;
+  margin-top: 2px;
+}
+
+.ex-kutu-bos {
+  font-size: 14px;
+  opacity: 0.5;
+  line-height: 1.5;
+}
+
+/* ---------- explore: yorum alani ---------- */
+
+/* Ucan kart 120vw'a gidiyor: sayfa yatayda kaymasin, bar cikmasin.
+   hidden burada kaydirmayi engellemiyor (govdeden viewport'a
+   tasiniyor); clip gercekten kesiyor. */
+body.explore {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+/* Govdedeki kural viewport'a tasindigi icin tek basina kesmiyor;
+   kok ogede de kesmek gerekiyor. */
+html:has(body.explore) {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+.ex-yorum {
+  align-self: stretch;
+  overflow-y: auto;
+  padding-right: 6px;
+  min-height: 0;
+  scrollbar-width: none;        /* bar gorunmesin, kaydirma kalsin */
+  -ms-overflow-style: none;
+}
+
+.ex-yorum::-webkit-scrollbar { width: 0; height: 0; display: none; }
+
+/* Baslik ayni zamanda ac/kapa dugmesi */
+.ex-yorum-baslik {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: inherit;
+  color: var(--siyah);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.ex-yorum-baslik::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 1.4px solid var(--siyah);
+  border-bottom: 1.4px solid var(--siyah);
+  transform: translateY(-3px) rotate(-135deg);   /* acikken yukari bakar */
+  opacity: 0.5;
+  transition: transform 0.2s ease;
+}
+
+.ex-alan.yorum-kapali .ex-yorum-baslik::after {
+  transform: translateY(-2px) rotate(45deg);
+}
+
+/* Kapaliyken sutun daralir, deste ortaya dogru genisler */
+.ex-alan.yorum-kapali { grid-template-columns: auto 1fr auto auto; }
+.ex-alan.yorum-kapali .ex-yorum-liste { display: none; }
+.ex-alan.yorum-kapali .ex-yorum-baslik { margin-bottom: 0; }
+
+.ex-yorum-baslik {
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+}
+
+.ex-yorum-liste { transition: opacity 0.22s ease; }
+.ex-yorum-liste.solgun { opacity: 0; }
+
+.y-grup + .y-grup { margin-top: 36px; }
+
+/* Eski gece(ler)den kalanlar biraz geride dursun */
+.y-grup.eski { opacity: 0.68; }
+
+.y-grup-baslik {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 16px;
+}
+
+.y-konu + .y-konu { margin-top: 24px; }
+
+.y-ust {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.y-kim { font-size: 14px; font-weight: 500; }
+.y-zaman { font-size: 12px; opacity: 0.45; }
+
+.y-metin {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+/* Cevaplar konunun altinda, ince bir cizgiyle bagli */
+.y-cevaplar {
+  margin-top: 12px;
+  padding-left: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.13);
+}
+
+.y-cevap + .y-cevap { margin-top: 12px; }
+.y-cevaplar .y-metin { font-size: 14px; }
+
+.y-yok { font-size: 15px; opacity: 0.5; }
+
+/* ---------- explore: telefon ---------- */
+
+@media (max-width: 720px) {
+
+  /* Tek sutun: filtre, deste, sonra yorumlar. Sayfa aksin. */
+  .ex-alan {
+    --ex-w: min(62vw, 300px);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100dvh;
+    padding: 92px 16px 56px;
+    gap: 44px;
+  }
+
+  .ex-filtre { gap: 18px; }
+  .ex-sec select { font-size: 13px; }
+  .ex-servis { font-size: 19px; margin: 6px 0; }
+
+  .ex-yorum {
+    align-self: auto;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .ex-modlar { align-items: center; gap: 10px; }
+  .ex-mod { font-size: 15px; }
+  .ex-kutu { align-self: center; }
+  .ex-kutu-liste { width: min(88vw, 316px); }
+}
