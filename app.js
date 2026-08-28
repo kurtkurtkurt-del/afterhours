@@ -63,6 +63,12 @@ let gecisSuruyor = false;
 
 function ekranaGec(hedef) {
   if (hedef === ekran || hedef < 0 || hedef >= EKRAN_SAYISI) return;
+
+  // Kart kaydirilmadan ikinci ekrandan ileri gecilemez; deste zipar
+  if (ekran === 1 && hedef > ekran && deste.querySelector(".kart2")) {
+    destiZiplat();
+    return;
+  }
   ekran = hedef;
   birikim = 0;
   gecisSuruyor = true;
@@ -133,6 +139,18 @@ const deste = document.getElementById("deste2");
 const telefon = document.getElementById("telefon");
 const sonMesaj = document.getElementById("son-mesaj");
 const kaydirIpucu = document.getElementById("kaydir-ipucu");
+
+// Kaydirmadan gecilmeye calisilinca kartin verdigi kucuk tepki
+let ziplamaZamani;
+function destiZiplat() {
+  const kart = deste.querySelector(".kart2");
+  if (!kart) return;
+  kart.classList.remove("zipla");
+  void kart.offsetWidth;               // animasyonu bastan baslat
+  kart.classList.add("zipla");
+  clearTimeout(ziplamaZamani);
+  ziplamaZamani = setTimeout(() => kart.classList.remove("zipla"), 520);
+}
 const DESTE_POSTERLERI = ["01"];         // tek poster: A$AP Rocky
 const CEKME_ESIGI = 120;                 // px
 
@@ -184,10 +202,17 @@ DESTE_POSTERLERI.slice().reverse().forEach((no) => {
         if (!deste.querySelector(".kart2")) {
           kaydirIpucu.classList.add("gizli");
           telefon.classList.add("acik");
-          // Telefon 1.6 sn durur, kaybolur, yerine kapanis yazisi gelir
+          // Telefon 1.6 sn durur, kaybolur, yerine kapanis yazisi gelir.
+          // Yazi 2 sn sonra yukari kayar ve telefon altinda geri gelir.
           setTimeout(() => {
             telefon.classList.remove("acik");
-            setTimeout(() => sonMesaj.classList.add("acik"), 300);
+            setTimeout(() => {
+              sonMesaj.classList.add("acik");
+              setTimeout(() => {
+                deste.classList.add("son-hal");
+                telefon.classList.add("acik");
+              }, 2000);
+            }, 300);
           }, 1600);
         }
       };

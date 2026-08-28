@@ -332,7 +332,9 @@ body:not([data-ekran="0"]) .foto {
   border-radius: 34px;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.94);
-  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: opacity 0.4s ease,
+              transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+              height 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
   pointer-events: none;
 }
 
@@ -635,6 +637,16 @@ body:not([data-ekran="0"]) .foto {
   .tel-durum { font-size: 8px; }
   .tel-mesaj { font-size: 11px; }
 
+  /* Son hal: masaustunun px degerleri burada yaziyi ekran disina iterdi */
+  .deste2.son-hal .son-mesaj.acik {
+    transform: translate(-50%, calc(-50% - 28dvh));
+  }
+
+  .deste2.son-hal .telefon.acik {
+    height: 52dvh;
+    transform: translate(-50%, calc(-50% + 6dvh)) scale(1);
+  }
+
   .son-mesaj {
     width: calc(100vw - 48px);
     font-size: 23px;
@@ -649,4 +661,29 @@ body:not([data-ekran="0"]) .foto {
     transform: translateX(-50%);
     font-size: 11px;
   }
+}
+
+/* --- Son hal: yazi yukari cikar, telefon altinda geri gelir --- */
+
+.deste2.son-hal .son-mesaj.acik {
+  transform: translate(-50%, calc(-50% - 305px));   /* alanin en ustune */
+}
+
+.deste2.son-hal .telefon.acik {
+  height: 560px;
+  transform: translate(-50%, calc(-50% + 45px)) scale(1);
+}
+
+/* --- Kaydirmadan gecilmeye calisilinca kartin tepkisi --- */
+
+@keyframes kart-zipla {
+  0%   { transform: translateX(0); }
+  22%  { transform: translateX(16px) rotate(1.4deg); }
+  48%  { transform: translateX(-9px) rotate(-0.8deg); }
+  72%  { transform: translateX(5px) rotate(0.4deg); }
+  100% { transform: translateX(0); }
+}
+
+.kart2.zipla {
+  animation: kart-zipla 0.46s cubic-bezier(0.36, 0.07, 0.19, 0.97);
 }
