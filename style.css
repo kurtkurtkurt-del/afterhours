@@ -62,10 +62,13 @@ body {
   left: 0;
   right: 0;
   transition: transform 0.72s cubic-bezier(0.65, 0, 0.35, 1);
+  transform: translateY(calc(var(--ekran, 0) * -100vh));
+  transform: translateY(calc(var(--ekran, 0) * -100dvh));
 }
 
 .ekran {
   height: 100vh;
+  height: 100dvh;   /* iOS Safari: adres cubugu haric gercek gorunen yukseklik */
 }
 
 /* ---------- Sag alt foto ---------- */
@@ -132,6 +135,7 @@ body:not([data-ekran="0"]) .foto {
   --gap: 12px;
   --ust: 92px;                               /* menunun altindaki bosluk (menu 79px) */
   --row: calc((100vh - var(--ust)) / 3.5);
+  --row: calc((100dvh - var(--ust)) / 3.5);
   --poster-h: calc(var(--row) - var(--gap));
   --poster-w: calc(var(--poster-h) * 2 / 3);  /* posterlerin gercek orani: 400x600 = 2:3 */
 
@@ -140,6 +144,7 @@ body:not([data-ekran="0"]) .foto {
   align-items: start;
   gap: 72px;
   height: 100vh;
+  height: 100dvh;
   padding: var(--ust) 32px 0;
 }
 

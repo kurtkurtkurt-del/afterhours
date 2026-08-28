@@ -66,7 +66,7 @@ function ekranaGec(hedef) {
   ekran = hedef;
   birikim = 0;
   gecisSuruyor = true;
-  ekranlar.style.transform = "translateY(-" + hedef * 100 + "vh)";
+  ekranlar.style.setProperty("--ekran", String(hedef));
   document.body.dataset.ekran = String(hedef);
   setTimeout(() => { gecisSuruyor = false; }, 760);
 }
