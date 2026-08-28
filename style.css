@@ -1008,3 +1008,60 @@ body[data-ekran="3"] .ses { opacity: 0; pointer-events: none; }
 
 .kirinti span { opacity: 0.55; }
 .kirinti span:last-child { opacity: 1; }
+
+/* ---------- explore: kaydirmali deste ---------- */
+
+.ex-alan {
+  height: 100vh;
+  height: 100dvh;
+  padding: 104px 32px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+}
+
+.ex-etiket {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.ex-deste {
+  position: relative;
+  width: min(42vh, 62vw);
+  aspect-ratio: 2 / 3;
+}
+
+.ex-kart {
+  position: absolute;
+  inset: 0;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.ex-kart.tutuluyor { cursor: grabbing; }
+
+.ex-kart.yumusak {
+  transition: transform 0.34s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.34s ease;
+}
+
+.ex-kart object {
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;   /* surukleme karta ulassin */
+}
+
+.ex-bitti {
+  font-size: 19px;
+  font-weight: 400;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.ex-bitti.acik { opacity: 0.6; }
