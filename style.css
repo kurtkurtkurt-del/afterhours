@@ -326,7 +326,7 @@ body:not([data-ekran="0"]) .foto {
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 470px;              /* kartlarla ayni uzunluk */
+  height: 600px;              /* karttan belirgin buyuk */
   aspect-ratio: 9 / 19.5;     /* telefon orani */
   background: var(--siyah);
   border-radius: 34px;
@@ -345,7 +345,7 @@ body:not([data-ekran="0"]) .foto {
 
 .tel-icerik {
   height: 100%;
-  padding: 20px 16px 16px;
+  padding: 28px 22px 22px;
   overflow: hidden;
   color: var(--beyaz);
 }
@@ -360,34 +360,34 @@ body:not([data-ekran="0"]) .foto {
 
 .tel-poster {
   flex: 0 0 auto;
-  width: 34px;
-  height: 51px;
+  width: 50px;
+  height: 75px;
   display: block;
   pointer-events: none;
 }
 
 .tel-baslik {
-  font-size: 13.5px;
+  font-size: 19px;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
   line-height: 1.2;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .tel-meta {
   font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 7.5px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   opacity: 0.6;
 }
 
 .tel-etiket {
   font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 7.5px;
+  font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   opacity: 0.55;
-  margin: 14px 0 8px;
+  margin: 20px 0 10px;
 }
 
 .tel-liste {
@@ -395,7 +395,7 @@ body:not([data-ekran="0"]) .foto {
 }
 
 .tel-liste li {
-  padding: 9px 0;
+  padding: 13px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -410,21 +410,21 @@ body:not([data-ekran="0"]) .foto {
 }
 
 .tel-ad {
-  font-size: 10.5px;
+  font-size: 14px;
   font-weight: 500;
 }
 
 .tel-durum {
   font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   opacity: 0.6;
 }
 
 .tel-mesaj {
-  font-size: 9.5px;
-  line-height: 1.35;
+  font-size: 13px;
+  line-height: 1.4;
   opacity: 0.82;
 }
 
@@ -618,7 +618,22 @@ body:not([data-ekran="0"]) .foto {
     margin: calc(56vw * -0.75) 0 0 calc(56vw / -2);
   }
 
-  .telefon { height: calc(56vw * 1.5); border-radius: 26px; }
+  .telefon {
+    height: 62vh;
+    height: 62dvh;
+    border-radius: 30px;
+  }
+
+  /* Telefon icerigi: masaustu olcegi bu boyda tasiyordu */
+  .tel-icerik { padding: 22px 18px 18px; }
+  .tel-poster { width: 42px; height: 63px; }
+  .tel-baslik { font-size: 16px; margin-bottom: 5px; }
+  .tel-meta { font-size: 8.5px; }
+  .tel-etiket { font-size: 8.5px; margin: 16px 0 8px; }
+  .tel-liste li { padding: 10px 0; }
+  .tel-ad { font-size: 12px; }
+  .tel-durum { font-size: 8px; }
+  .tel-mesaj { font-size: 11px; }
 
   .son-mesaj {
     width: calc(100vw - 48px);
