@@ -687,3 +687,88 @@ body:not([data-ekran="0"]) .foto {
 .kart2.zipla {
   animation: kart-zipla 0.46s cubic-bezier(0.36, 0.07, 0.19, 0.97);
 }
+
+/* ---------- Ucuncu ekran: kart seridi ---------- */
+
+.ekran3 {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 30px;
+  /* alt/ust esit olmali: yoksa telefonun ortasi ile seridin ortasi kayiyor */
+  padding: 92px 32px;
+}
+
+/* Ekranin tam ortasindan gecen serit; telefonun ve yazilarin arkasinda */
+.k3-serit {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 240px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.k3-ray {
+  flex: 0 0 auto;      /* icerik kadar genis olmali, yoksa dongu kayar */
+  display: flex;
+  gap: 44px;
+  will-change: transform;
+  animation: k3-kay 46s linear infinite;
+}
+
+@keyframes k3-kay {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Bir kartin onu ve arkasi tek obje: bitisik iki yuz, sonra bosluk */
+.k3-cift {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 6px;
+}
+
+.k3-kart {
+  width: 140px;
+  height: 210px;
+  border: 1px solid var(--siyah);
+  background: var(--beyaz);
+}
+
+.k3-sol,
+.k3-sag {
+  position: relative;
+  z-index: 2;
+  font-size: min(5.3vw, 9vh);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+/* Serit tam ortadan gectigi icin yazilar capraz duruyor:
+   soldaki ustte, sagdaki altta — boylece kartlar harflere carpmiyor */
+.k3-sol {
+  align-self: start;
+  margin-top: 58px;
+}
+
+.k3-sag {
+  align-self: end;
+  margin-bottom: 58px;
+  text-align: right;
+}
+
+.telefon3 {
+  position: relative;
+  z-index: 2;
+  height: 660px;
+  aspect-ratio: 9 / 19.5;
+  background: var(--siyah);
+  border-radius: 38px;
+}
