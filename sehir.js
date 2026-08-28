@@ -112,9 +112,9 @@
   // ---------- izdusum ----------
   let aci = 0.4, egim2 = 0.12;
 
-  function yansit(p, cosA, sinA) {
-    const rx = p[0] * cosA - p[2] * sinA;
-    const rz = p[0] * sinA + p[2] * cosA;
+  function yansit(p) {
+    const rx = p[0];
+    const rz = p[2];
     const ty = p[1] - KAM_Y;
     const tz = rz - KAM_Z;
     const y2 = ty * cosE - tz * sinE;
@@ -130,20 +130,25 @@
     return [x, v[1] * cosT - z * sinT, v[1] * sinT + z * cosT];
   }
 
-  // ---------- katmanlar ----------
-  const zeminKat = document.createElementNS(NS, "g");
-  const binaKat = document.createElementNS(NS, "g");
-  const beaconKat = document.createElementNS(NS, "g");
-  const etiketKat = document.createElementNS(NS, "g");
-  sahne.append(zeminKat, binaKat, beaconKat, etiketKat);
+  // ---------- canvas ----------
+  const ctx = sahne.getContext("2d");
+  let OLCEK = 1, KAY_X = 0, KAY_Y = 0;
+
+  function boyutla() {
+    const r = sahne.getBoundingClientRect();
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    sahne.width = Math.round(r.width * dpr);
+    sahne.height = Math.round(r.height * dpr);
+    // Tasarim alani 1440x900; kadraji doldur (kenarlardan tassin)
+    OLCEK = Math.max(r.width / G, r.height / Y) * dpr;
+    KAY_X = (sahne.width - G * OLCEK) / 2;
+    KAY_Y = (sahne.height - Y * OLCEK) / 2;
+  }
+  boyutla();
+  window.addEventListener("resize", boyutla);
 
   // Kurenin silueti donusten etkilenmez: bir kez hesapla
-  const kure = document.createElementNS(NS, "polygon");
-  kure.setAttribute("fill", "#191a1e");
-  kure.setAttribute("stroke", "#2e3238");
-  kure.setAttribute("stroke-width", "1");
-  zeminKat.appendChild(kure);
-  (function limb() {
+  const LIMB = (function () {
     const e1 = birim(capraz(BAKIS, [0, 1, 0]));
     const e2 = capraz(BAKIS, e1);
     const merkezMesafe = (R * R) / UZAKLIK;
@@ -151,27 +156,14 @@
     const n = [];
     for (let i = 0; i < 96; i++) {
       const t = (i / 96) * Math.PI * 2;
-      const p = [
+      n.push(yansit([
         BAKIS[0] * merkezMesafe + (e1[0] * Math.cos(t) + e2[0] * Math.sin(t)) * yaricap,
         BAKIS[1] * merkezMesafe + (e1[1] * Math.cos(t) + e2[1] * Math.sin(t)) * yaricap,
         BAKIS[2] * merkezMesafe + (e1[2] * Math.cos(t) + e2[2] * Math.sin(t)) * yaricap,
-      ];
-      const q = yansit(p, 1, 0);
-      n.push(q.x.toFixed(1) + "," + q.y.toFixed(1));
+      ]));
     }
-    kure.setAttribute("points", n.join(" "));
+    return n;
   })();
-
-  const HAVUZ = 1500;
-  const yuzler = [];
-  for (let i = 0; i < HAVUZ; i++) {
-    const p = document.createElementNS(NS, "polygon");
-    p.setAttribute("stroke", KONTUR);
-    p.setAttribute("stroke-width", "0.7");
-    p.setAttribute("stroke-linejoin", "round");
-    binaKat.appendChild(p);
-    yuzler.push(p);
-  }
 
   const KABUK = [
     { g: 13, o: 0.09 }, { g: 7.4, o: 0.17 },
@@ -180,56 +172,7 @@
 
   let secili = null;
 
-  const beaconlar = GECELER.map((g) => {
-    const grup = document.createElementNS(NS, "g");
-    grup.style.cursor = "pointer";
-    const kabuklar = KABUK.map((k) => {
-      const p = document.createElementNS(NS, "polygon");
-      p.setAttribute("fill", g.renk);
-      p.setAttribute("fill-opacity", k.o);
-      grup.appendChild(p);
-      return p;
-    });
-    const t = document.createElementNS(NS, "text");
-    t.setAttribute("font-family", "JetBrains Mono, monospace");
-    t.setAttribute("font-size", "10.5");
-    t.setAttribute("letter-spacing", "1.6");
-    t.setAttribute("text-anchor", "middle");
-    t.setAttribute("fill", g.renk);
-    t.textContent = g.saat;
-    grup.appendChild(t);
-
-    grup.addEventListener("mouseenter", () => { secili = g; });
-    grup.addEventListener("mouseleave", () => { if (secili === g) secili = null; });
-    grup.addEventListener("click", () => window.open(g.sayfa, "_blank", "noopener"));
-
-    beaconKat.appendChild(grup);
-    return { g, grup, kabuklar, t };
-  });
-
-  // ---------- hover etiketi ----------
-  const etiket = document.createElementNS(NS, "g");
-  etiket.setAttribute("opacity", "0");
-  const eCizgi = document.createElementNS(NS, "line");
-  eCizgi.setAttribute("stroke", "#f0f0ee");
-  eCizgi.setAttribute("stroke-width", "1");
-  etiket.appendChild(eCizgi);
-  const eSatir = [0, 1, 2].map((i) => {
-    const t = document.createElementNS(NS, "text");
-    t.setAttribute("fill", "#f0f0ee");
-    if (i === 0) { t.setAttribute("font-size", "19"); t.setAttribute("font-weight", "500"); }
-    else {
-      t.setAttribute("font-family", "JetBrains Mono, monospace");
-      t.setAttribute("font-size", "10.5");
-      t.setAttribute("letter-spacing", "1.4");
-      t.setAttribute("opacity", "0.72");
-    }
-    etiket.appendChild(t);
-    return t;
-  });
-  etiketKat.appendChild(etiket);
-
-  // ---------- surukleme (yon ters) ----------
+  // ---------- surukleme (iki eksen de ters) ----------
   let hiz = 0.11;
   let surukluyor = false, sonX = 0, sonY = 0, bosZaman = 0;
 
@@ -237,21 +180,51 @@
     surukluyor = true; sonX = e.clientX; sonY = e.clientY;
     try { sahne.setPointerCapture(e.pointerId); } catch (_) {}
   });
+
   sahne.addEventListener("pointermove", (e) => {
-    if (!surukluyor) return;
-    aci -= (e.clientX - sonX) * 0.006;      // ters yon
-    egim2 += (e.clientY - sonY) * 0.005;    // dikey donus (ters yon)
-    egim2 = Math.max(-0.62, Math.min(0.62, egim2));
-    sonX = e.clientX;
-    sonY = e.clientY;
+    if (surukluyor) {
+      aci -= (e.clientX - sonX) * 0.006;
+      egim2 += (e.clientY - sonY) * 0.005;
+      egim2 = Math.max(-0.62, Math.min(0.62, egim2));
+      sonX = e.clientX; sonY = e.clientY;
+      return;
+    }
+    // Beacon uzerinde miyiz? (canvas'ta DOM yok, elle vurus testi)
+    const r = sahne.getBoundingClientRect();
+    const px = (e.clientX - r.left) * (sahne.width / r.width);
+    const py = (e.clientY - r.top) * (sahne.height / r.height);
+    let en = null, enYakin = 16 * OLCEK;
+    beaconlar.forEach((b) => {
+      if (!b.gorunur || b.gorunur < 0.4) return;
+      const d = mesafeSegmente(px, py, b.altE, b.ustE);
+      if (d < enYakin) { enYakin = d; en = b.g; }
+    });
+    secili = en;
+    sahne.style.cursor = en ? "pointer" : "grab";
   });
+
   const birak = () => { if (surukluyor) { surukluyor = false; bosZaman = 0; } };
   sahne.addEventListener("pointerup", birak);
   sahne.addEventListener("pointercancel", birak);
+  sahne.addEventListener("pointerleave", () => { secili = null; });
+  sahne.addEventListener("click", () => {
+    if (secili) window.open(secili.sayfa, "_blank", "noopener");
+  });
+
+  function mesafeSegmente(px, py, a, b) {
+    const dx = b.x - a.x, dy = b.y - a.y;
+    const uz = dx * dx + dy * dy;
+    let t = uz ? ((px - a.x) * dx + (py - a.y) * dy) / uz : 0;
+    t = Math.max(0, Math.min(1, t));
+    return Math.hypot(px - (a.x + dx * t), py - (a.y + dy * t));
+  }
 
   // ---------- cizim ----------
   const BEACON_BOY = 132;
+  const beaconlar = GECELER.map((g) => ({ g: g, gorunur: 0, altE: null, ustE: null }));
   let oncekiZaman = performance.now();
+
+  const E = (q) => ({ x: KAY_X + q.x * OLCEK, y: KAY_Y + q.y * OLCEK });
 
   function ciz(simdi) {
     const dt = Math.min(0.05, (simdi - oncekiZaman) / 1000);
@@ -264,13 +237,30 @@
 
     const cosA = Math.cos(aci), sinA = Math.sin(aci);
     const cosT = Math.cos(egim2), sinT = Math.sin(egim2);
-    const liste = [];
 
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, sahne.width, sahne.height);
+    ctx.setTransform(OLCEK, 0, 0, OLCEK, KAY_X, KAY_Y);
+
+    // --- kure zemini ---
+    ctx.beginPath();
+    LIMB.forEach((q, i) => (i ? ctx.lineTo(q.x, q.y) : ctx.moveTo(q.x, q.y)));
+    ctx.closePath();
+    ctx.fillStyle = "#191a1e";
+    ctx.fill();
+    ctx.strokeStyle = "#2e3238";
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // --- binalar ---
+    const liste = [];
     BINALAR.forEach((b) => {
       const ur = dondur(b.u, cosA, sinA, cosT, sinT);
       const merkez = [ur[0] * R, ur[1] * R, ur[2] * R];
-      // arka yarikureyi at
-      if (nokta(ur, birim(cikar(KAMERA, merkez))) < 0.06) return;
+      const bakis = nokta(ur, birim(cikar(KAMERA, merkez)));
+      if (bakis < 0.02) return;
+      // ufukta sert kesme yerine sonumleme
+      const solma = Math.min(1, (bakis - 0.02) / 0.16);
 
       const dr = dondur(b.dogu, cosA, sinA, cosT, sinT);
       const kr = dondur(b.kuzey, cosA, sinA, cosT, sinT);
@@ -282,20 +272,18 @@
             ur[0] * rr + dr[0] * sx * b.g / 2 + kr[0] * sz * b.d / 2,
             ur[1] * rr + dr[1] * sx * b.g / 2 + kr[1] * sz * b.d / 2,
             ur[2] * rr + dr[2] * sx * b.g / 2 + kr[2] * sz * b.d / 2,
-          ], 1, 0));
+          ]));
         });
       });
-      // k: [taban0, tepe0, taban1, tepe1, taban2, tepe2, taban3, tepe3]
       const T = [k[1], k[3], k[5], k[7]];
       const A = [k[0], k[2], k[4], k[6]];
-      const yuz = [
+      [
         { p: T, ton: CATI[b.ton] },
         { p: [A[0], A[1], T[1], T[0]], ton: YAN_A[b.ton] },
         { p: [A[2], A[3], T[3], T[2]], ton: YAN_A[b.ton] },
         { p: [A[1], A[2], T[2], T[1]], ton: YAN_B[b.ton] },
         { p: [A[3], A[0], T[0], T[3]], ton: YAN_B[b.ton] },
-      ];
-      yuz.forEach((f) => {
+      ].forEach((f) => {
         let alan = 0;
         for (let i = 0; i < 4; i++) {
           const a = f.p[i], c = f.p[(i + 1) % 4];
@@ -304,76 +292,98 @@
         if (alan >= 0) return;
         liste.push({
           d: (f.p[0].d + f.p[1].d + f.p[2].d + f.p[3].d) / 4,
-          ton: f.ton,
-          nokta: f.p.map((q) => q.x.toFixed(1) + "," + q.y.toFixed(1)).join(" "),
+          p: f.p, ton: f.ton, solma: solma,
         });
       });
     });
 
     liste.sort((a, b) => b.d - a.d);
-    for (let i = 0; i < yuzler.length; i++) {
-      const p = yuzler[i];
-      if (i < liste.length) {
-        p.setAttribute("points", liste[i].nokta);
-        p.setAttribute("fill", liste[i].ton);
-        p.setAttribute("visibility", "visible");
-      } else if (p.getAttribute("visibility") !== "hidden") {
-        p.setAttribute("visibility", "hidden");
-      }
-    }
 
-    beaconlar.forEach(({ g, grup, kabuklar, t }) => {
-      const b = g.bina;
-      const ur = dondur(b.u, cosA, sinA, cosT, sinT);
-      const taban = [ur[0] * (R + b.h), ur[1] * (R + b.h), ur[2] * (R + b.h)];
-      const tepeR = R + b.h + BEACON_BOY;
-      const alt = yansit(taban, 1, 0);
-      const ust = yansit([ur[0] * tepeR, ur[1] * tepeR, ur[2] * tepeR], 1, 0);
+    ctx.lineWidth = 0.7;
+    ctx.lineJoin = "round";
+    ctx.strokeStyle = KONTUR;
+    let sonAlfa = -1;
+    liste.forEach((f) => {
+      if (f.solma !== sonAlfa) { ctx.globalAlpha = f.solma; sonAlfa = f.solma; }
+      ctx.beginPath();
+      ctx.moveTo(f.p[0].x, f.p[0].y);
+      ctx.lineTo(f.p[1].x, f.p[1].y);
+      ctx.lineTo(f.p[2].x, f.p[2].y);
+      ctx.lineTo(f.p[3].x, f.p[3].y);
+      ctx.closePath();
+      ctx.fillStyle = f.ton;
+      ctx.fill();
+      ctx.stroke();
+    });
+    ctx.globalAlpha = 1;
+
+    // --- beacon'lar ---
+    ctx.font = "10.5px 'JetBrains Mono', ui-monospace, monospace";
+    ctx.textAlign = "center";
+    beaconlar.forEach((b) => {
+      const g = b.g, bina = g.bina;
+      const ur = dondur(bina.u, cosA, sinA, cosT, sinT);
+      const taban = [ur[0] * (R + bina.h), ur[1] * (R + bina.h), ur[2] * (R + bina.h)];
+      const tepeR = R + bina.h + BEACON_BOY;
+      const alt = yansit(taban);
+      const ust = yansit([ur[0] * tepeR, ur[1] * tepeR, ur[2] * tepeR]);
 
       const yuz = nokta(ur, birim(cikar(KAMERA, taban)));
-      const gorunur = Math.max(0, Math.min(1, (yuz - 0.05) * 2.6));
-      grup.setAttribute("opacity", gorunur.toFixed(3));
-      grup.style.pointerEvents = gorunur > 0.4 ? "auto" : "none";
+      b.gorunur = Math.max(0, Math.min(1, (yuz - 0.03) * 2.6));
+      b.altE = E(alt); b.ustE = E(ust);
+      if (b.gorunur <= 0.01) return;
 
       const dx = ust.x - alt.x, dy = ust.y - alt.y;
       const uz = Math.hypot(dx, dy) || 1;
-      const nx = -dy / uz, ny = dx / uz;      // sutuna dik yon
+      const nx = -dy / uz, ny = dx / uz;
 
-      kabuklar.forEach((p, i) => {
-        const w = KABUK[i].g;
-        const wa = w * alt.s, wu = w * ust.s;
-        p.setAttribute("points",
-          (alt.x - nx * wa) + "," + (alt.y - ny * wa) + " " +
-          (alt.x + nx * wa) + "," + (alt.y + ny * wa) + " " +
-          (ust.x + nx * wu) + "," + (ust.y + ny * wu) + " " +
-          (ust.x - nx * wu) + "," + (ust.y - ny * wu));
+      const parlak = secili === g ? 1.35 : 1;
+      KABUK.forEach((kb) => {
+        const wa = kb.g * alt.s, wu = kb.g * ust.s;
+        ctx.globalAlpha = Math.min(1, kb.o * b.gorunur * parlak);
+        ctx.fillStyle = g.renk;
+        ctx.beginPath();
+        ctx.moveTo(alt.x - nx * wa, alt.y - ny * wa);
+        ctx.lineTo(alt.x + nx * wa, alt.y + ny * wa);
+        ctx.lineTo(ust.x + nx * wu, ust.y + ny * wu);
+        ctx.lineTo(ust.x - nx * wu, ust.y - ny * wu);
+        ctx.closePath();
+        ctx.fill();
       });
 
-      t.setAttribute("x", ust.x.toFixed(1));
-      t.setAttribute("y", (ust.y - 12).toFixed(1));
-      g._ust = ust;
+      ctx.globalAlpha = b.gorunur;
+      ctx.fillStyle = g.renk;
+      ctx.fillText(g.saat, ust.x, ust.y - 12);
+      ctx.globalAlpha = 1;
     });
 
+    // --- hover etiketi ---
     if (secili) {
-      const u = secili._ust;
+      const b = beaconlar.find((x) => x.g === secili);
+      const u = yansitTers(b.ustE);
       const x = u.x + 26, y = u.y - 40;
-      eCizgi.setAttribute("x1", x - 14); eCizgi.setAttribute("y1", y + 6);
-      eCizgi.setAttribute("x2", x - 4);  eCizgi.setAttribute("y2", y + 6);
-      eSatir[0].setAttribute("x", x); eSatir[0].setAttribute("y", y + 12);
-      eSatir[0].textContent = secili.ad;
-      eSatir[1].setAttribute("x", x); eSatir[1].setAttribute("y", y + 32);
-      eSatir[1].textContent = secili.tip + " · " + secili.saat;
-      eSatir[2].setAttribute("x", x); eSatir[2].setAttribute("y", y + 50);
-      eSatir[2].textContent = secili.dk + " MIN WALK";
-      etiket.setAttribute("opacity", "1");
-    } else {
-      etiket.setAttribute("opacity", "0");
+      ctx.textAlign = "left";
+      ctx.strokeStyle = "#f0f0ee";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(x - 14, y + 6); ctx.lineTo(x - 4, y + 6);
+      ctx.stroke();
+      ctx.fillStyle = "#f0f0ee";
+      ctx.font = "500 19px 'Inter Tight', sans-serif";
+      ctx.fillText(secili.ad, x, y + 12);
+      ctx.font = "10.5px 'JetBrains Mono', ui-monospace, monospace";
+      ctx.globalAlpha = 0.72;
+      ctx.fillText(secili.tip + " · " + secili.saat, x, y + 32);
+      ctx.fillText(secili.dk + " MIN WALK", x, y + 50);
+      ctx.globalAlpha = 1;
     }
   }
 
-  /* rAF yerine zamanlayici: onizleme paneli belgeyi "gizli" saydigi icin
-     rAF hic tetiklenmiyor. Bos yere calismasin diye sadece bu ekran
-     onderken ciziyoruz. */
+  // Ekran koordinatindan tasarim koordinatina geri
+  const yansitTers = (q) => ({ x: (q.x - KAY_X) / OLCEK, y: (q.y - KAY_Y) / OLCEK });
+
+  /* Sadece bu ekran ondeyken ciz. rAF onizleme panelinde hic tetiklenmiyor
+     (panel belgeyi "gizli" sayiyor), o yuzden zamanlayici kullaniyoruz. */
   ciz(performance.now());
   setInterval(() => {
     if (document.body.dataset.ekran === "3") ciz(performance.now());
