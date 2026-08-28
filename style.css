@@ -501,3 +501,20 @@ body:not([data-ekran="0"]) .foto {
   height: 100%;
   background: var(--siyah);
 }
+
+/* --- Kartin solunda, ortada duran ipucu --- */
+
+.kaydir-ipucu {
+  position: absolute;
+  top: 50%;
+  /* kartin yarisi (156px) + 30px bosluk kadar solda */
+  right: calc(50% + 186px);
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  transition: opacity 0.35s ease;
+}
+
+.kaydir-ipucu.gizli { opacity: 0; }

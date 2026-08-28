@@ -104,6 +104,7 @@ window.addEventListener("wheel", (e) => {
 const deste = document.getElementById("deste2");
 const telefon = document.getElementById("telefon");
 const sonMesaj = document.getElementById("son-mesaj");
+const kaydirIpucu = document.getElementById("kaydir-ipucu");
 const DESTE_POSTERLERI = ["01"];         // tek poster: A$AP Rocky
 const CEKME_ESIGI = 120;                 // px
 
@@ -153,6 +154,7 @@ DESTE_POSTERLERI.slice().reverse().forEach((no) => {
         kart.remove();
         // Deste bitti: telefon ekrani acilir
         if (!deste.querySelector(".kart2")) {
+          kaydirIpucu.classList.add("gizli");
           telefon.classList.add("acik");
           // Telefon 1.6 sn durur, kaybolur, yerine kapanis yazisi gelir
           setTimeout(() => {
