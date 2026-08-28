@@ -862,3 +862,59 @@ body[data-ekran="5"] .ses {
   opacity: 0;
   pointer-events: none;
 }
+
+/* ---------- Dorduncu ekran: sehir maketi ---------- */
+
+.ekran4 {
+  position: relative;
+  background: #0c0c0d;
+  color: #f0f0ee;
+  overflow: hidden;
+}
+
+.k4-sahne {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab;
+}
+
+.k4-sahne:active { cursor: grabbing; }
+
+.k4-metin {
+  position: absolute;
+  top: 112px;
+  left: 32px;
+  max-width: 520px;
+  pointer-events: none;
+}
+
+.k4-eyebrow {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: 16px;
+}
+
+.k4-baslik {
+  font-size: 96px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  margin-bottom: 18px;
+}
+
+.k4-alt {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  opacity: 0.72;
+}
+
+/* Sehir ekraninda menu koyu zemine gore tersine doner */
+body[data-ekran="3"] .header a { color: #f0f0ee; }
+body[data-ekran="3"] .ses { opacity: 0; pointer-events: none; }

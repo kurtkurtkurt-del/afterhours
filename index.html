@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=Archivo:wght@400;500;600;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=12" />
+  <link rel="stylesheet" href="style.css?v=13" />
 </head>
 <body class="home" data-ekran="0">
 
@@ -123,8 +123,16 @@
       <p class="k3-sag">collect your afterhours card</p>
     </section>
 
-    <!-- Dorduncu ekran: simdilik bos -->
-    <section class="ekran"></section>
+    <!-- Dorduncu ekran: donen sehir maketi -->
+    <section class="ekran ekran4">
+      <svg class="k4-sahne" id="k4-sahne" viewBox="0 0 1440 900"
+           preserveAspectRatio="xMidYMid meet"></svg>
+
+      <div class="k4-metin">
+        <h2 class="k4-baslik">go local.</h2>
+        <p class="k4-alt">Maps is now in the app. Roam your city.</p>
+      </div>
+    </section>
 
     <!-- Besinci ekran: simdilik bos -->
     <section class="ekran"></section>
@@ -168,9 +176,10 @@
     <img src="foto.jpg" alt="" />
   </div>
 
-  <script src="events-data.js?v=12"></script>
-  <script src="kartlar.js?v=12"></script>
-  <script src="app.js?v=12"></script>
+  <script src="events-data.js?v=13"></script>
+  <script src="kartlar.js?v=13"></script>
+  <script src="sehir.js?v=13" defer></script>
+  <script src="app.js?v=13"></script>
 
 </body>
 </html>
