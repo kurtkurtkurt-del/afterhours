@@ -707,7 +707,7 @@ body:not([data-ekran="0"]) .foto {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  height: 240px;
+  height: 300px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -719,7 +719,7 @@ body:not([data-ekran="0"]) .foto {
   display: flex;
   gap: 44px;
   will-change: transform;
-  animation: k3-kay 46s linear infinite;
+  animation: k3-kay 110s linear infinite;   /* 10 kart cifti, ayni hiz */
 }
 
 @keyframes k3-kay {
@@ -734,11 +734,10 @@ body:not([data-ekran="0"]) .foto {
   gap: 6px;
 }
 
-.k3-kart {
-  width: 140px;
-  height: 210px;
-  border: 1px solid var(--siyah);
-  background: var(--beyaz);
+.k3-cift svg {
+  display: block;
+  width: 180px;
+  height: 270px;
 }
 
 .k3-sol,
@@ -755,12 +754,12 @@ body:not([data-ekran="0"]) .foto {
    soldaki ustte, sagdaki altta — boylece kartlar harflere carpmiyor */
 .k3-sol {
   align-self: start;
-  margin-top: 58px;
+  margin-top: 40px;
 }
 
 .k3-sag {
   align-self: end;
-  margin-bottom: 58px;
+  margin-bottom: 40px;
   text-align: right;
 }
 

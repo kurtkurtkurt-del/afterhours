@@ -275,16 +275,18 @@ sesKaynak.addEventListener("timeupdate", () => {
 sesKaynak.addEventListener("ended", calmaDurdur);
 
 
-/* ---------- Ucuncu ekran: seritte akan bos kartlar ---------- */
+/* ---------- Ucuncu ekran: seritte akan afterhours kartlari ---------- */
 
 const k3Ray = document.getElementById("k3-ray");
-const K3_CIFT_SAYISI = 6;      // dikissiz dongu icin ekran genisliginin iki katini asar
 
+// Her gece bir cift: on yuz + arka yuz bitisik, sonra bosluk.
+// Dizi iki kez basilir; SVG id'leri cakismasin diye sayac devam eder.
 for (let tekrar = 0; tekrar < 2; tekrar++) {
-  for (let i = 0; i < K3_CIFT_SAYISI; i++) {
+  KARTLAR.gece.forEach((gece, i) => {
+    const sira = tekrar * KARTLAR.gece.length + i;
     const cift = document.createElement("div");
     cift.className = "k3-cift";
-    cift.innerHTML = '<div class="k3-kart"></div><div class="k3-kart"></div>';
+    cift.innerHTML = KARTLAR.on(gece, sira) + KARTLAR.arka(gece, sira);
     k3Ray.appendChild(cift);
-  }
+  });
 }
