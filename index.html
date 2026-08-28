@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>afterhours | your scene</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=Archivo:wght@400;500;600;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="home" data-ekran="0">
+
+  <header class="header">
+    <a class="logo" href="index.html">afterhours</a>
+    <nav class="header-links">
+      <a href="explore.html">explore</a>
+      <a href="help.html">help</a>
+      <a href="login.html">login</a>
+    </nav>
+  </header>
+
+  <!-- Menunun altinda: dun geceden kisa kayitlar -->
+  <div class="ses" id="ses">
+    <div class="ses-satir" data-kaynak="ses/yesterday-munich.mp3">
+      <button class="ses-dugme" type="button">
+        <span class="ses-etiket">yesterday, munich:</span>
+        <span class="ses-ikon"></span>
+      </button>
+      <div class="ses-cizgi"><span></span></div>
+    </div>
+    <div class="ses-satir" data-kaynak="ses/yesterday-istanbul.mp3">
+      <button class="ses-dugme" type="button">
+        <span class="ses-etiket">yesterday, istanbul:</span>
+        <span class="ses-ikon"></span>
+      </button>
+      <div class="ses-cizgi"><span></span></div>
+    </div>
+    <div class="ses-satir" data-kaynak="ses/yesterday-barcelona.mp3">
+      <button class="ses-dugme" type="button">
+        <span class="ses-etiket">yesterday, barcelona:</span>
+        <span class="ses-ikon"></span>
+      </button>
+      <div class="ses-cizgi"><span></span></div>
+    </div>
+    <audio id="ses-kaynak" preload="none"></audio>
+  </div>
+
+  <div class="ekranlar" id="ekranlar" data-ekran="0">
+
+    <section class="ekran">
+  <main class="showcase">
+    <div class="posters" id="posters"><!-- posterler app.js ile olusturuluyor --></div>
+    <div class="yan" id="yan">
+      <div class="intro">
+        <p class="intro-1">Discover what's happening tonight in your city: raves, club nights, concerts, house parties.</p>
+        <p class="intro-2">Swipe to find them, plan with friends, keep the ones you went to.</p>
+        <a class="explore-btn" href="explore.html">explore</a>
+      </div>
+      <aside class="info" id="info">
+        <p class="info-index"></p>
+        <p class="info-type"></p>
+        <h2 class="info-title"></h2>
+        <p class="info-meta"></p>
+        <p class="info-body"></p>
+      </aside>
+    </div>
+  </main>
+    </section>
+
+    <!-- Ikinci ekran -->
+    <section class="ekran ekran2">
+      <div class="deste2" id="deste2">
+        <!-- Iki kart da kaydirilinca acilir -->
+        <div class="telefon" id="telefon">
+          <div class="tel-icerik">
+            <div class="tel-ust">
+              <object class="tel-poster" type="image/svg+xml" data="posters/01.svg"></object>
+              <div>
+                <p class="tel-baslik">A$AP Rocky</p>
+                <p class="tel-meta">OLYMPIAHALLE · 11.09</p>
+              </div>
+            </div>
+
+            <p class="tel-etiket">your crew</p>
+
+            <ul class="tel-liste">
+              <li>
+                <div class="tel-satir"><span class="tel-ad">Lina</span><span class="tel-durum">going</span></div>
+                <p class="tel-mesaj">tickets are in my pocket</p>
+              </li>
+              <li>
+                <div class="tel-satir"><span class="tel-ad">Emre</span><span class="tel-durum">going</span></div>
+                <p class="tel-mesaj">u-bahn at 21, don't be late</p>
+              </li>
+              <li>
+                <div class="tel-satir"><span class="tel-ad">Jonas</span><span class="tel-durum">maybe</span></div>
+                <p class="tel-mesaj">depends on my shift, i'll know friday</p>
+              </li>
+              <li>
+                <div class="tel-satir"><span class="tel-ad">Mira</span><span class="tel-durum">going</span></div>
+                <p class="tel-mesaj">third time this year, no regrets</p>
+              </li>
+              <li>
+                <div class="tel-satir"><span class="tel-ad">Selin</span><span class="tel-durum">can't</span></div>
+                <p class="tel-mesaj">in berlin that week — send videos</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Telefon kaybolduktan sonra gelir -->
+        <p class="son-mesaj" id="son-mesaj">Let your friends know you want to go.</p>
+
+        <!-- kartlar app.js ile olusturuluyor -->
+      </div>
+      <h2 class="ekran2-baslik">Swipe through every event in your city.</h2>
+    </section>
+
+    <!-- Ucuncu ekran: simdilik bos -->
+    <section class="ekran"></section>
+
+  </div>
+
+  <!-- Sag altta duran foto (tamami); ikinci ekrana gecince asagi iner -->
+  <div class="foto">
+    <img src="foto.jpg" alt="" />
+  </div>
+
+  <script src="events-data.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* ---------------------------------------------------------------
+   DENEME 02 — yatay kayan seritler
+   Uc serit farkli hizlarda zit yonlerde kayar, metin ortada sabit.
+   Bir posterin ustune gelince o serit durur, poster hafif buyur.
+   Ana sayfaya dokunmaz; sadece bu sayfada gecerlidir.
+   --------------------------------------------------------------- */
+
+body.serit-sayfa {
+  overflow: hidden;
+  --ust: 92px;
+  --serit-bosluk: 14px;
+  /* Uc serit ekrani boler; poster yuksekligi buradan cikar */
+  --serit-h: calc((100vh - var(--ust) - 2 * var(--serit-bosluk)) / 3);
+}
+
+.seritler {
+  position: fixed;
+  top: 92px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--serit-bosluk);
+}
+
+.serit {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Kayan ray: icerik iki kez basilir, -%50'ye kayinca dikissiz doner */
+.ray {
+  flex: 0 0 auto;          /* ray icerigi kadar genis olmali, yoksa -%50 dongusu kayar */
+  display: flex;
+  gap: 14px;
+  will-change: transform;
+  animation-name: kay;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes kay {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Farkli hizlar, zit yonler */
+.serit:nth-child(1) .ray { animation-duration: 64s; }
+.serit:nth-child(2) .ray { animation-duration: 46s; animation-direction: reverse; }
+.serit:nth-child(3) .ray { animation-duration: 88s; }
+
+/* Fare bir posterin ustundeyken o serit durur */
+.serit:hover .ray,
+.serit.duruyor .ray { animation-play-state: paused; }
+
+.serit .poster {
+  flex: 0 0 auto;
+  height: calc(var(--serit-h) * 0.86);   /* buyume payi icin %14 bosluk */
+  width: auto;
+  aspect-ratio: 2 / 3;
+  transition: transform 0.22s ease;
+}
+
+.serit .poster:hover,
+.serit .poster.buyuk {
+  transform: scale(1.07);
+  position: relative;
+  z-index: 2;
+}
+
+/* Ortadaki sabit metin */
+.orta {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 660px;
+  max-width: calc(100vw - 64px);
+  padding: 52px 56px;
+  background: var(--beyaz);
+  text-align: center;
+}
+
+.orta .intro { max-width: none; }
+.orta .info { max-width: none; }
+.orta .explore-btn { margin-top: 34px; }
