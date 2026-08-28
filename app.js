@@ -21,7 +21,7 @@ GOSTERILEN.forEach((p, i) => {
   // Cerceve: tiklanabilir, kendi event sayfasini yeni sekmede acar
   const kutu = document.createElement("a");
   kutu.className = "poster";
-  kutu.href = "explore/" + p.slug + "/";
+  kutu.href = "explore/" + p.slug + "/index.html";
   kutu.target = "_blank";
   kutu.rel = "noopener";
 

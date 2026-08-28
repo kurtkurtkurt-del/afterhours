@@ -120,7 +120,7 @@
     ["Pegel", "CLUB NIGHT", "22:00", 15, "#ff5c1f", "36"],
   ].map((g) => ({
     ad: g[0], tip: g[1], saat: g[2], dk: g[3], renk: g[4],
-    sayfa: "explore/" + SLUG[+g[5] - 1] + "/",
+    sayfa: "explore/" + SLUG[+g[5] - 1] + "/index.html",
   }));
 
 
