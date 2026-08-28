@@ -79,6 +79,8 @@
   }
 
   // ---------- beacon'lar: renk o gecenin posterinden ----------
+  const SLUG = ["asap-rocky", "nick-cave", "bonez-mc-raf-camora", "thirty-seconds-to-mars", "annenmaykantereit", "elysium", "tollwood", "mondscheinexpress", "isle-of-summer", "zamanand", "blitz", "rote-sonne-bahnwarter", "silo-west", "cfu-open-air", "daytime-rave", "echonomist", "10-years-blurred-vision", "legal-blitz", "bahnwarter-techno-nacht", "unterwelt", "kuchentisch", "3-stock-links", "boxenturm", "klingel-14", "plattenabend", "vierter-stock", "zine-klub", "kaffee-karten", "nachtlinie", "sprechstunde", "riso-abend", "lange-tafel", "strobo", "tunnelblick", "spiegelsaal", "pegel"];
+
   const GECELER = [
     ["A$AP Rocky", "KONZERT", "18:30", 21, "#ffd93d", "01"],
     ["Nick Cave", "KONZERT", "20:00", 26, "#e8d9b8", "02"],
@@ -118,7 +120,7 @@
     ["Pegel", "CLUB NIGHT", "22:00", 15, "#ff5c1f", "36"],
   ].map((g) => ({
     ad: g[0], tip: g[1], saat: g[2], dk: g[3], renk: g[4],
-    sayfa: "events/" + g[5] + ".html",
+    sayfa: "explore/" + SLUG[+g[5] - 1] + "/",
   }));
 
 

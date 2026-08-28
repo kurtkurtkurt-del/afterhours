@@ -976,15 +976,35 @@ body[data-ekran="3"] .ses { opacity: 0; pointer-events: none; }
 .etkinlik {
   display: flex;
   align-items: flex-start;
-  padding: 64px;
+  padding: 148px 64px 64px;
 }
 
 .etkinlik-poster {
   flex: 0 0 auto;
   display: block;
-  height: calc(100vh - 128px);
-  height: calc(100dvh - 128px);
+  height: calc(100vh - 212px);
+  height: calc(100dvh - 212px);
   max-height: 760px;
   aspect-ratio: 2 / 3;
   pointer-events: none;
 }
+
+/* Bolum icindeki konumu gosteren kirinti */
+.kirinti {
+  position: fixed;
+  top: 104px;
+  left: 64px;
+  display: flex;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.kirinti a {
+  color: var(--siyah);
+  text-decoration: none;
+  opacity: 0.55;
+}
+
+.kirinti span { opacity: 0.55; }
+.kirinti span:last-child { opacity: 1; }

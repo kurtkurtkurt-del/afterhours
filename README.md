@@ -9,9 +9,11 @@ Static landing page — no build step. Open `index.html`, or serve the folder:
 ## Layout
 
 - `index.html` · `style.css` · `app.js` — the landing page
-- `events-data.js` — the 36 events (type, title, venue, copy)
+- `explore/` · `help/` · `login/` — the sections, each an `index.html`
+- `explore/<slug>/` — one page per event, e.g. `explore/asap-rocky/`
+- `events-data.js` — the 36 events (slug, type, title, venue, copy)
 - `posters/` — 36 SVG posters, one per event
-- `events/` — one page per event (placeholders for now)
+- `sehir.js` — the spinnable city globe on the landing page
 - `ses/` — three short clips, fully synthesised (see `tools-*`)
 - `serit.html` — a parked layout experiment (horizontal marquee strips)
 
