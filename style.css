@@ -856,9 +856,9 @@ body:not([data-ekran="0"]) .foto {
 .header a { transition: color 0.5s ease; }
 .ses { transition: opacity 0.5s ease; }
 
-body[data-ekran="5"] .header a { color: #f2f2f0; }
+body[data-ekran="4"] .header a { color: #f2f2f0; }
 
-body[data-ekran="5"] .ses {
+body[data-ekran="4"] .ses {
   opacity: 0;
   pointer-events: none;
 }
@@ -918,3 +918,55 @@ body[data-ekran="5"] .ses {
 /* Sehir ekraninda menu koyu zemine gore tersine doner */
 body[data-ekran="3"] .header a { color: #f0f0ee; }
 body[data-ekran="3"] .ses { opacity: 0; pointer-events: none; }
+
+/* Kure ekraninin sag tarafi: bu gece yurume mesafesindekiler */
+.k4-yakin {
+  position: absolute;
+  top: 118px;
+  right: 32px;
+  width: 300px;
+  text-align: right;
+  pointer-events: none;
+}
+
+.k4-yakin-baslik {
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.5;
+  padding-bottom: 12px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(240, 240, 238, 0.22);
+}
+
+.k4-yakin ul { list-style: none; }
+
+.k4-yakin li {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.k4-yakin li em {
+  font-style: normal;
+  font-size: 12px;
+  opacity: 0.42;
+}
+
+.k4-yakin li b {
+  font-weight: 400;
+  font-size: 13px;
+  opacity: 0.72;
+  min-width: 52px;
+}
+
+.k4-yakin-alt {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(240, 240, 238, 0.22);
+  font-size: 12px;
+  opacity: 0.45;
+}
