@@ -98,6 +98,34 @@ window.addEventListener("wheel", (e) => {
   if (birikim >= ESIK) ekranaGec(ekran + (asagi ? 1 : -1));
 }, { passive: true });
 
+/* Dokunmatikte tekerlek olayi yok: ayni gecisi parmak surtmesiyle yap */
+const DOKUNUS_ESIGI = 70;   // px
+let dokunusY = null;
+let dokunusKartta = false;
+let dokunusSonda = false;
+
+window.addEventListener("touchstart", (e) => {
+  dokunusY = e.touches[0].clientY;
+  const h = e.target;
+  dokunusKartta = !!(h && h.closest && h.closest(".kart2"));
+  dokunusSonda = izgara.scrollTop + izgara.clientHeight >= izgara.scrollHeight - 4;
+}, { passive: true });
+
+window.addEventListener("touchend", (e) => {
+  const baslangic = dokunusY;
+  dokunusY = null;
+  if (baslangic === null || dokunusKartta || gecisSuruyor) return;
+
+  const fark = baslangic - e.changedTouches[0].clientY;   // yukari surtme pozitif
+  if (Math.abs(fark) < DOKUNUS_ESIGI) return;
+
+  const asagi = fark > 0;
+  // Ilk ekranda ancak poster listesinin sonundayken ilerlenir
+  if (ekran === 0 && (!asagi || !dokunusSonda)) return;
+
+  ekranaGec(ekran + (asagi ? 1 : -1));
+}, { passive: true });
+
 /* ---------- Ikinci ekran: 2 kartlik deste ----------
    Saga cekince begenilir ve kaybolur. Yeterince cekilmezse yerine doner. */
 
