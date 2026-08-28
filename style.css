@@ -836,3 +836,73 @@ body:not([data-ekran="0"]) .foto {
 }
 
 .t3-sekme-aktif { background: var(--siyah); }
+
+/* ---------- Dorduncu ekran: harita ---------- */
+
+.ekran4 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 92px 32px 48px;
+}
+
+/* Harita iki kez cizilir: arkada soluk sehir, telefonun penceresinde net hali */
+.k4-harita {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.k4-harita svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.k4-arka { z-index: 0; opacity: 0.26; }
+.k4-on   { z-index: 1; }
+
+.k4-slogan {
+  position: relative;
+  z-index: 3;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  text-align: center;
+}
+
+.k4-slogan b { font-weight: 700; }
+
+.k4-orta {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.telefon3.saatli { height: 600px; }
+
+/* Uygulama ekraninin basligi: saat + sehir */
+.t4-baslik {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 18px 18px 14px;
+}
+
+.t4-saat {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.t4-etiket {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
