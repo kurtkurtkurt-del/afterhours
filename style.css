@@ -23,6 +23,7 @@ body {
 
 .header {
   position: fixed;
+  z-index: 10;   /* ekranlar transform ile kendi katmanini kurar; menu ustte kalmali */
   top: 0;
   left: 0;
   right: 0;
@@ -837,72 +838,90 @@ body:not([data-ekran="0"]) .foto {
 
 .t3-sekme-aktif { background: var(--siyah); }
 
-/* ---------- Dorduncu ekran: harita ---------- */
+/* ---------- Altinci ekran: footer ---------- */
 
-.ekran4 {
-  position: relative;
+.ekran6 {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
   padding: 92px 32px 48px;
+  background: #0a0a0a;
+  color: #f2f2f0;
 }
 
-/* Harita iki kez cizilir: arkada soluk sehir, telefonun penceresinde net hali */
-.k4-harita {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.k4-harita svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.k4-arka { z-index: 0; opacity: 0.26; }
-.k4-on   { z-index: 1; }
-
-.k4-slogan {
-  position: relative;
-  z-index: 3;
-  font-size: 40px;
-  font-weight: 400;
-  letter-spacing: -0.025em;
-  text-align: center;
-}
-
-.k4-slogan b { font-weight: 700; }
-
-.k4-orta {
-  position: relative;
-  z-index: 2;
-  flex: 1;
+.k6-ust {
   display: flex;
-  align-items: center;
+  gap: 26px;
+  align-items: baseline;
+  letter-spacing: -0.01em;
 }
 
-.telefon3.saatli { height: 600px; }
-
-/* Uygulama ekraninin basligi: saat + sehir */
-.t4-baslik {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  padding: 18px 18px 14px;
+.k6-saat {
+  font-size: 14px;
+  font-weight: 400;
 }
 
-.t4-saat {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 19px;
+.k6-sayac {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.62;
+}
+
+.k6-manifesto {
+  font-size: min(7.4vw, 12.6vh);
   font-weight: 700;
-  letter-spacing: 0.04em;
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  max-width: 15ch;
 }
 
-.t4-etiket {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 9.5px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  opacity: 0.5;
+.k6-alt {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.k6-sehirler,
+.k6-linkler {
+  list-style: none;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.85;
+}
+
+/* Kucuk oldugumuzu saklamiyoruz */
+.k6-sehirler li { opacity: 0.28; }
+.k6-sehirler li.acik { opacity: 1; }
+.k6-sehirler li.yakinda { opacity: 0.55; }
+.k6-sehirler li.yakinda span { opacity: 0.6; margin-left: 6px; }
+
+.k6-linkler a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.55;
+}
+
+.k6-buton {
+  flex: 0 0 auto;
+  padding: 22px 56px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  background: #f2f2f0;
+  color: #0a0a0a;
+}
+
+/* Siyah footer'da: menu tersine doner, ses bari tamamen kaybolur */
+
+.header a { transition: color 0.5s ease; }
+.ses { transition: opacity 0.5s ease; }
+
+body[data-ekran="5"] .header a { color: #f2f2f0; }
+
+body[data-ekran="5"] .ses {
+  opacity: 0;
+  pointer-events: none;
 }

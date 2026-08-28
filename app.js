@@ -291,11 +291,8 @@ for (let tekrar = 0; tekrar < 2; tekrar++) {
   });
 }
 
-/* ---------- Dorduncu ekran: cizilmis Munih + gecenin saati ----------
-   Harita iki kez cizilir: arkada soluk sehir, telefonun penceresinde net
-   hali. Ikisi de bolume gore ayni yerde durur; ondeki kopya pencerenin
-   olculerine gore kirpilir. Saat 18:00'den 06:00'a doner, mekanlar
-   kendi saatleri gelince yanar. */
+/* ---------- Mekan saatleri ----------
+   Footer'daki "kac oda acik" sayaci bunu kullanir. */
 
 const MEKANLAR = [
   { ad: "OLYMPIAHALLE",      x: 512, y: 236, saat: 18.5, sure: 4 },
@@ -320,103 +317,35 @@ const MEKANLAR = [
   { ad: "RIEM",              x: 1128, y: 512, saat: 20.0, sure: 8 },
 ];
 
-const SEMTLER = [
-  ["SCHWABING", 742, 268], ["MAXVORSTADT", 596, 372], ["NEUHAUSEN", 470, 412],
-  ["HAIDHAUSEN", 920, 462], ["GIESING", 838, 712], ["SENDLING", 620, 636],
-  ["WESTEND", 528, 566], ["OLYMPIAPARK", 470, 262], ["RIEM", 1150, 480],
-];
+/* ---------- Altinci ekran: footer ----------
+   Zemin her zaman siyah. Saat kullanicinin kendi saati; sayac o an
+   acik olan mekanlardan hesaplanir. */
 
-function haritaCiz() {
-  const yollar = `
-    <g fill="none" stroke="#000" stroke-width="1.6" opacity="0.5">
-      <path d="M760 214 C 986 214, 1104 336, 1104 470
-               C 1104 610, 962 730, 760 730
-               C 560 730, 418 610, 418 470
-               C 418 336, 536 214, 760 214 Z"/>
-    </g>
-    <g fill="none" stroke="#000" stroke-width="1.2" opacity="0.42">
-      <ellipse cx="770" cy="462" rx="86" ry="70"/>
-    </g>
-    <g fill="none" stroke="#000" stroke-width="1" opacity="0.3">
-      <path d="M770 462 L770 120"/><path d="M770 462 L1180 300"/>
-      <path d="M770 462 L1240 520"/><path d="M770 462 L1040 800"/>
-      <path d="M770 462 L640 860"/><path d="M770 462 L300 640"/>
-      <path d="M770 462 L250 380"/><path d="M770 462 L470 140"/>
-    </g>
-    <g fill="none" stroke="#000" stroke-width="1.6" opacity="0.34" stroke-dasharray="9 7">
-      <path d="M330 462 L1230 462"/>
-    </g>`;
+const k6Saat = document.getElementById("k6-saat");
+const k6Sayac = document.getElementById("k6-sayac");
 
-  const isar = `
-    <path d="M900 40 C 862 180, 826 268, 838 372
-             C 848 466, 806 520, 800 606
-             C 795 690, 826 782, 812 900"
-          fill="none" stroke="#000" stroke-width="7" opacity="0.32" stroke-linecap="round"/>`;
+document.body.dataset.footerTon = "koyu";   // menu ve ses bari tersine doner
 
-  const etiketler = SEMTLER.map(([ad, x, y]) =>
-    `<text x="${x}" y="${y}" font-family="JetBrains Mono, monospace" font-size="11"
-           letter-spacing="2.4" fill="#000" opacity="0.42">${ad}</text>`).join("");
+function k6Guncelle() {
+  const simdi = new Date();
+  const s = simdi.getHours();
+  const d = simdi.getMinutes();
 
-  const noktalar = MEKANLAR.map((m, i) =>
-    `<g class="k4-nokta" data-no="${i}">
-       <circle class="k4-halka" cx="${m.x}" cy="${m.y}" r="13" fill="none"
-               stroke="#000" stroke-width="1.4" opacity="0"/>
-       <circle class="k4-cekirdek" cx="${m.x}" cy="${m.y}" r="3.5" fill="#000" opacity="0.22"/>
-     </g>`).join("");
+  k6Saat.textContent =
+    String(s).padStart(2, "0") + ":" + String(d).padStart(2, "0") + " · münchen";
 
-  return `<svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-    ${yollar}${isar}${etiketler}${noktalar}
-  </svg>`;
+  // Su an acik olan mekanlar (gece saatleri 24'u asarak yazildi)
+  const saat = s + d / 60;
+  const acik = MEKANLAR.filter((m) => {
+    const bas = m.saat;
+    const son = m.saat + m.sure;
+    return (saat >= bas && saat < son) || (saat + 24 >= bas && saat + 24 < son);
+  }).length;
+
+  k6Sayac.textContent = acik
+    ? acik + (acik === 1 ? " room open in münchen right now" : " rooms open in münchen right now")
+    : "no rooms open yet — come back after dark";
 }
 
-const k4Arka = document.getElementById("k4-arka");
-const k4On = document.getElementById("k4-on");
-const k4Pencere = document.getElementById("t4-pencere");
-const k4Saat = document.getElementById("t4-saat");
-const ekran4 = document.querySelector(".ekran4");
-
-k4Arka.innerHTML = haritaCiz();
-k4On.innerHTML = haritaCiz();
-
-// Ondeki kopyayi telefonun penceresine kirp
-function k4Kirp() {
-  const p = k4Pencere.getBoundingClientRect();
-  const b = ekran4.getBoundingClientRect();
-  k4On.style.clipPath =
-    "inset(" + (p.top - b.top) + "px " + (b.right - p.right) + "px " +
-    (b.bottom - p.bottom) + "px " + (p.left - b.left) + "px)";
-}
-k4Kirp();
-window.addEventListener("resize", k4Kirp);
-
-// Gece saati: 18:00 -> 06:00, 24 saniyede bir tur
-const K4_BASLANGIC = 18;
-const K4_UZUNLUK = 12;      // saat
-const K4_TUR = 24000;       // ms
-
-const k4Gruplar = [k4Arka, k4On].map((k) => [...k.querySelectorAll(".k4-nokta")]);
-
-function k4Guncelle() {
-  const oran = (Date.now() % K4_TUR) / K4_TUR;
-  const saat = K4_BASLANGIC + oran * K4_UZUNLUK;
-
-  const s = Math.floor(saat) % 24;
-  const d = Math.floor((saat % 1) * 60);
-  k4Saat.textContent =
-    String(s).padStart(2, "0") + ":" + String(d).padStart(2, "0");
-
-  MEKANLAR.forEach((m, i) => {
-    const acik = saat >= m.saat;
-    const bitti = saat >= m.saat + m.sure;
-    const yeni = acik && !bitti;
-    k4Gruplar.forEach((grup) => {
-      const g = grup[i];
-      g.querySelector(".k4-cekirdek").setAttribute("r", yeni ? 6 : 3.5);
-      g.querySelector(".k4-cekirdek").setAttribute("opacity", yeni ? 1 : (bitti ? 0.3 : 0.18));
-      g.querySelector(".k4-halka").setAttribute("opacity", yeni ? 0.45 : 0);
-    });
-  });
-}
-
-k4Guncelle();
-setInterval(k4Guncelle, 60);
+k6Guncelle();
+setInterval(k6Guncelle, 20000);
