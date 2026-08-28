@@ -763,11 +763,76 @@ body:not([data-ekran="0"]) .foto {
   text-align: right;
 }
 
+/* Basit, notr bir uygulama ekrani.
+   Ortasi saydam: seritteki kartlar gercekten icinden gecer. */
 .telefon3 {
   position: relative;
   z-index: 2;
   height: 660px;
   aspect-ratio: 9 / 19.5;
-  background: var(--siyah);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--siyah);
   border-radius: 38px;
+  overflow: hidden;
+  background: transparent;
 }
+
+.t3-ust {
+  background: var(--beyaz);
+  padding-top: 12px;
+}
+
+.t3-centik {
+  width: 92px;
+  height: 22px;
+  margin: 0 auto;
+  background: var(--siyah);
+  border-radius: 11px;
+}
+
+.t3-baslik {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 18px 18px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.t3-yuvarlak {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  flex: 0 0 auto;
+}
+
+.t3-cubuk {
+  height: 8px;
+  border-radius: 4px;
+  background: #d9d9d9;
+}
+
+.t3-cubuk-uzun { width: 96px; }
+.t3-cubuk-kisa { width: 42px; }
+
+/* Kartlarin gorundugu bosluk */
+.t3-pencere { flex: 1; }
+
+.t3-alt {
+  background: var(--beyaz);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 74px;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.t3-sekme {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: #d9d9d9;
+}
+
+.t3-sekme-aktif { background: var(--siyah); }
