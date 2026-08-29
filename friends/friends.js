@@ -163,6 +163,56 @@
     });
   }
 
+  /* --- nachtradar'dan gelenler --- */
+
+  /* Girise bagli degil: nachtradar listesi herkese ayni gorunuyor,
+     cunku simdilik sabit. Isimler; fotograf ya da rozet yok. */
+  function nachtradarCiz() {
+    const kutu = document.getElementById("nr");
+    const aciklama = document.getElementById("nr-aciklama");
+    const veri = window.NACHTRADAR;
+    if (!kutu || !veri) return;
+
+    const hepsi = [
+      ...veri.crew.map((k) => ({ ...k, crew: true })),
+      ...veri.bekleyen.map((k) => ({ ...k, crew: false })),
+    ];
+
+    aciklama.textContent =
+      hepsi.length + " people from nachtradar · " +
+      veri.crew.length + " of them already crew";
+
+    kutu.textContent = "";
+    hepsi.forEach((k) => {
+      const kart = document.createElement("div");
+      kart.className = "nr-kisi" + (k.crew ? " crew" : "");
+
+      /* Fotograf yok: bas harf. Hesabin kendi isareti kadar. */
+      const im = document.createElement("span");
+      im.className = "nr-im";
+      im.textContent = (k.ad || "?").trim()[0].toUpperCase();
+      kart.appendChild(im);
+
+      const yazi = document.createElement("div");
+      yazi.className = "nr-yazi";
+
+      const ad = document.createElement("p");
+      ad.className = "nr-ad";
+      ad.textContent = k.ad;
+      yazi.appendChild(ad);
+
+      const alt = document.createElement("p");
+      alt.className = "nr-handle";
+      alt.textContent = k.handle ? "@" + k.handle : "no handle";
+      yazi.appendChild(alt);
+
+      kart.appendChild(yazi);
+      kutu.appendChild(kart);
+    });
+  }
+
+  nachtradarCiz();
+
   /* --- acilis --- */
 
   if (!(AYAR.url && AYAR.anonKey)) {

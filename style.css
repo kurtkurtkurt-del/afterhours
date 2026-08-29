@@ -1748,7 +1748,16 @@ html:has(body.explore) {
 .giris-alan::placeholder { color: rgba(0, 0, 0, 0.28); }
 .giris-alan:focus { outline: none; border-bottom-color: var(--siyah); }
 
+/* Davet: yazi ve dugme ust uste binmesin */
+.ark-disarida {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
 .giris-dugme {
+  text-decoration: none;      /* <a> olarak da kullaniliyor */
   margin-top: 20px;
   padding: 18px 44px;
   background: var(--siyah);
@@ -2017,6 +2026,108 @@ html:has(body.explore) {
   .ha-alt { font-size: 13px; }
   .ha-kart { right: 16px; top: 84px; text-align: right; max-width: 46vw; }
   .ha-kart-ad { font-size: 20px; }
+}
+
+/* ---------- friends & more: nachtradar'dan gelenler ---------- */
+
+/* Girise bagli degil: sayfayi acan herkes goruyor. */
+.nr-bolum { margin-top: 30px; }
+
+/* Her kisi kendi kutusunda. Fotograf yok, rozet yok, buton yok —
+   nachtradar'daki kartlarin aksine: ince cizgi, iki satir yazi. */
+.nr {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
+  gap: 10px;
+}
+
+.nr-kisi {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 13px;
+  border: 1px solid rgba(0, 0, 0, 0.13);
+  min-width: 0;
+}
+
+/* Bas harf: fotografin yerine gecen en sade sey */
+.nr-im {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* Crew: zaten iceride olanlar, isaret tek bir dolgu farki */
+.nr-kisi.crew .nr-im {
+  background: var(--siyah);
+  border-color: var(--siyah);
+  color: var(--beyaz);
+  opacity: 1;
+}
+
+.nr-yazi { min-width: 0; }
+
+.nr-ad {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nr-kisi.crew .nr-ad { font-weight: 500; }
+
+.nr-handle {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  opacity: 0.4;
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* friends&more iki sutun: solda slogan ve hesap, sagda nachtradar
+   listesi. Giris sayfasindan miras kalan tek dar sutun 61 kisiyi
+   sikistiriyordu. */
+body.arkadaslar .giris {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(0, 1.2fr);
+  gap: 56px;
+  align-items: start;
+  justify-content: start;
+  max-width: 1240px;
+  padding-top: 132px;
+}
+
+.nr-bolum { margin-top: 0; }
+
+@media (max-width: 900px) {
+  /* Dar ekranda tek sutun: liste sloganin altina iner */
+  body.arkadaslar .giris {
+    display: flex;
+    flex-direction: column;
+    padding-top: 104px;
+  }
+
+  .nr-bolum { margin-top: 30px; }
+}
+
+@media (max-width: 720px) {
+  .nr { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+  .nr-kisi { padding: 9px 10px; gap: 9px; }
+  .nr-im { width: 26px; height: 26px; font-size: 11px; }
+  .nr-ad { font-size: 14px; }
 }
 
 /* ---------- friends & more: biriktirdiklerin ---------- */

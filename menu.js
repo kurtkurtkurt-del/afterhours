@@ -91,8 +91,11 @@
         if (profil && profil.is_admin) ekle(); else kaldir();
       })
       .catch(() => {
-        /* Profil okunamasa bile giris yapilmis; e-postadan selamla */
-        selamla(adBul(null));
+        /* Istek 401 ile dondugunde oturum bu arada dusurulmus olabilir
+           (veri.js gecersiz jetonu birakiyor). O zaman selamlamak yanlis:
+           girissiz birine "welcome you" yaziyordu. */
+        if (AH.girisliMi && AH.girisliMi()) selamla(adBul(null));
+        else selamiKaldir();
         kaldir();
       });
   }
