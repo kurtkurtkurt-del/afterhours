@@ -84,7 +84,7 @@
     }
     /* En son tutulan ustte */
     tutulan.slice().reverse().forEach((e) => {
-      const no = String(POSTERS.indexOf(e) + 1).padStart(2, "0");
+      const no = String(e.poster || POSTERS.indexOf(e) + 1).padStart(2, "0");
       const a = document.createElement("a");
       a.className = "ex-kutu-satir";
       a.href = e.slug + "/index.html";
@@ -166,7 +166,9 @@
   });
 
   function kartYap(i) {
-    const no = String(i + 1).padStart(2, "0");
+    /* Poster numarasi kaydin kendisinden geliyor; veritabani eksik bir
+       liste dondurdugunde posterler kaymasin diye siraya guvenmiyoruz. */
+    const no = String(POSTERS[i].poster || i + 1).padStart(2, "0");
     const kart = document.createElement("div");
     kart.className = "ex-kart";
     kart.dataset.no = String(i);

@@ -16,7 +16,8 @@ const alanMetin = bilgi.querySelector(".info-body");
 let gizleZamani;
 
 GOSTERILEN.forEach((p, i) => {
-  const no = String(i + 1).padStart(2, "0");
+  // Poster numarasi kaydin kendisinde; siraya bagli degil
+  const no = String(p.poster || i + 1).padStart(2, "0");
 
   // Cerceve: tiklanabilir, kendi event sayfasini yeni sekmede acar
   const kutu = document.createElement("a");

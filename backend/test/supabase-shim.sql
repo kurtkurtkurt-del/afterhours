@@ -33,3 +33,7 @@ begin
   end if;
 end
 $$;
+
+-- Supabase'de bu izinler hazir geliyor; taklidini burada kuruyoruz.
+grant usage on schema auth to anon, authenticated;
+grant execute on function auth.uid() to anon, authenticated;
