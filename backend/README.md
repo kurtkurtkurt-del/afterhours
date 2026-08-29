@@ -47,10 +47,26 @@ degistirmek. Sirasiyla:
 **1 · Supabase projesi ac** — supabase.com, yeni proje, bolge olarak
 Frankfurt (Munih'e en yakini). Ucretsiz plan yeter.
 
-**2 · SQL'leri sirayla calistir** — Supabase panelinde SQL Editor:
-`01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09`. Her biri tek seferde
-yapistirilip calistirilir. 08 (depo) ve 09'daki zamanlama satirlari
-yalniz Supabase'de anlamli.
+**2 · SQL'leri sirayla calistir** — Supabase panelinde SQL Editor.
+
+> **Onemli:** Run dugmesinin yanindaki rol/RLS secenegini **kapali**
+> tut ("run without RLS"). Rol taklidi acikken editor betigi oldugu gibi
+> gondermiyor, sarmalayip yeniden yaziyor; uzun kurulum dosyasinda bu
+> ceviri bozuluyor ve `relation "one" does not exist` gibi anlamsiz bir
+> hata veriyor. Hata dosyada degil, o moddadir. (29.08.2026'da tam olarak
+> bu yasandi.)
+
+Sirasiyla:
+`sql/kurulum-1-yapi.sql` → `sql/kurulum-2-yorumlar.sql`. Bu ikisi
+`01..09`'un birlestirilmis hali (`npm run kurulum` ile yeniden uretilir);
+tek tek de calistirabilirsin. 08 (depo) ve 09'daki zamanlama satirlari
+yalniz Supabase'de anlamli, baska yerde kendilerini atlarlar.
+
+Panodan yapistirmakta sorun yasarsan dosyayi dogrudan kaynagindan al:
+`raw.githubusercontent.com/kurtkurtkurt-del/afterhours/main/backend/sql/kurulum-1-yapi.sql`
+
+Her dosyanin 3. satirinda bir SURUM damgasi var; editorde hangi kopyanin
+durdugunu oradan anlarsin.
 
 **3 · Kendini yonetici yap** — once siteden giris yap (asagidaki 5.
 adimdan sonra), sonra SQL Editor'de:

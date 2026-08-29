@@ -5,6 +5,7 @@
   "scripts": {
     "test": "node test/schema.test.mjs && node test/seed.test.mjs && node test/views.test.mjs && node test/friends.test.mjs && node test/jobs.test.mjs",
     "seed": "node tools/seed-uret.mjs",
+    "kurulum": "node tools/kurulum-uret.mjs",
     "sunucu": "node tools/yerel-sunucu.mjs",
     "yedek": "node tools/yedek.mjs",
     "saglik": "node tools/saglik.mjs"
