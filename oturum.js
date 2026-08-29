@@ -86,6 +86,21 @@
     });
   };
 
+  /* Sifreyle giris. Sitenin genelinde YOK: orada sifresiz baglanti var.
+     Bu yol yalniz yonetim paneli icin, e-posta kotasina takilmadan
+     girebilmek adina. Sifre hicbir yerde saklanmiyor; dogrudan
+     Supabase'e gidiyor ve karsiliginda jeton geliyor. */
+  AH.sifreyleGir = function (eposta, sifre) {
+    return auth("/token?grant_type=password", {
+      method: "POST",
+      body: JSON.stringify({ email: eposta, password: sifre }),
+    }).then((c) => {
+      const o = jetonuKaydet(c, true);
+      if (!o) throw new Error("jeton gelmedi");
+      return o;
+    });
+  };
+
   AH.cikis = function () {
     const j = AH.jeton;
     yaz(null);

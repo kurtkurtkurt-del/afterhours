@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=60" />
-  <link rel="stylesheet" href="admin.css?v=60" />
+  <link rel="stylesheet" href="../style.css?v=61" />
+  <link rel="stylesheet" href="admin.css?v=61" />
 </head>
 <body class="yonetim">
 
@@ -27,7 +27,17 @@
   <!-- Kapi: giris yoksa ya da yonetici degilse buraya kadar -->
   <main class="yn-kapi" id="yn-kapi">
     <p class="yn-kapi-yazi" id="yn-kapi-yazi">checking…</p>
-    <a class="yn-kapi-link" id="yn-kapi-link" href="../login/index.html" hidden>sign in</a>
+
+    <form class="yn-giris" id="yn-giris" hidden>
+      <input class="yn-giris-alan" id="yn-eposta" type="email"
+             placeholder="email" autocomplete="username" />
+      <input class="yn-giris-alan" id="yn-sifre" type="password"
+             placeholder="password" autocomplete="current-password" />
+      <button class="yn-giris-dugme" type="submit">sign in</button>
+    </form>
+    <p class="yn-giris-not" id="yn-giris-not"></p>
+
+    <a class="yn-kapi-link" id="yn-kapi-link" href="../login/index.html" hidden>use a link instead</a>
   </main>
 
   <main class="yn" id="yn" hidden>
@@ -124,10 +134,10 @@
 
   </main>
 
-  <script src="../ayar.js?v=60"></script>
-  <script src="../oturum.js?v=60"></script>
-  <script src="../veri.js?v=60"></script>
-  <script src="admin.js?v=60"></script>
+  <script src="../ayar.js?v=61"></script>
+  <script src="../oturum.js?v=61"></script>
+  <script src="../veri.js?v=61"></script>
+  <script src="admin.js?v=61"></script>
 
 </body>
 </html>

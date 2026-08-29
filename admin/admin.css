@@ -281,3 +281,39 @@
   padding: 8px 18px;
   cursor: pointer;
 }
+
+/* Kapidaki sifre girisi — yalniz yonetim sayfasinda */
+.yn-giris {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.yn-giris-alan {
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--siyah);
+  background: none;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 6px 0 8px;
+  width: 210px;
+}
+
+.yn-giris-alan:focus { outline: none; border-bottom-color: var(--siyah); }
+.yn-giris-alan::placeholder { color: rgba(0, 0, 0, 0.3); }
+
+.yn-giris-dugme {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--beyaz);
+  background: var(--siyah);
+  border: 0;
+  padding: 10px 26px;
+  cursor: pointer;
+}
+
+.yn-giris-not { font-size: 13px; opacity: 0.6; min-height: 18px; margin-top: 4px; }

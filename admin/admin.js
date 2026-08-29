@@ -25,12 +25,33 @@
   let sayilar = {};
   let secili = null;
 
-  function kapiyiGoster(metin, linkVar) {
+  const girisForm = document.getElementById("yn-giris");
+  const girisNot = document.getElementById("yn-giris-not");
+
+  function kapiyiGoster(metin, girisIster) {
     kapi.hidden = false;
     panel.hidden = true;
     kapiYazi.textContent = metin;
-    kapiLink.hidden = !linkVar;
+    kapiLink.hidden = !girisIster;
+    girisForm.hidden = !girisIster;
   }
+
+  /* Sifreyle giris: e-posta kotasina takilmadan yonetime girebilmek icin.
+     Sifre burada tutulmuyor, dogrudan Supabase'e gidiyor. */
+  girisForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const eposta = document.getElementById("yn-eposta").value.trim();
+    const sifre = document.getElementById("yn-sifre").value;
+    if (!eposta || !sifre) return;
+    girisNot.textContent = "signing in…";
+    AH.sifreyleGir(eposta, sifre)
+      .then(() => { location.reload(); })
+      .catch((h) => {
+        girisNot.textContent = /invalid/i.test(h.message)
+          ? "wrong email or password."
+          : "couldn't sign in: " + h.message;
+      });
+  });
 
   /* --- acilis: once kimlik, sonra yetki --- */
 
