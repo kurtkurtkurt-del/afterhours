@@ -316,3 +316,7 @@ function back(e,i){
 
   return { gece: EVENTS, on: front, arka: back };
 })();
+
+/* `const` global window'a yazilmaz; card collection sayfasi buradan
+   okuyor (POSTERS ve MEKANLAR ile ayni durum). */
+window.KARTLAR = KARTLAR;

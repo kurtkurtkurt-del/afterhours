@@ -2048,12 +2048,30 @@ html:has(body.explore) {
 
 .kk-kart { min-width: 0; }
 
-.kk-kart object {
+/* Kart tiklanabilir: on yuz ve arka yuz ayni yerde durur, biri gorunur */
+.kk-cevir {
+  display: grid;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.kk-yuz {
+  grid-area: 1 / 1;
+  transition: opacity 0.24s ease;
+}
+
+.kk-yuz svg {
   display: block;
   width: 100%;
-  aspect-ratio: 2 / 3;      /* poster orani bozulmasin */
-  pointer-events: none;
+  height: auto;
 }
+
+.kk-arka { opacity: 0; }
+.kk-kart.cevrik .kk-yuz:not(.kk-arka) { opacity: 0; }
+.kk-kart.cevrik .kk-arka { opacity: 1; }
 
 .kk-kart figcaption {
   margin-top: 10px;
