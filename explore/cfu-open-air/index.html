@@ -10,8 +10,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../../favicon-180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../style.css?v=94" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=Archivo:wght@400;500;600;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css?v=101" />
 </head>
 <body>
 
@@ -26,6 +26,9 @@
     </nav>
   </header>
 
+  <!-- Icerigi explore/etkinlik.js kuruyor: duzen tek, gece basina degisen
+       her sey etkinligin kendi verisinden ve tur havuzlarindan geliyor. -->
+  <main class="ks"></main>
 
   <footer class="dipnot">
     <p class="dipnot-ad">&copy; 2026 afterhours</p>
@@ -36,6 +39,14 @@
     </nav>
   </footer>
 
+  <script src="../../kartlar.js?v=101"></script>
+  <script src="../etkinlik-veri.js?v=101"></script>
+  <script src="../../ayar.js?v=101"></script>
+  <script src="../../oturum.js?v=101"></script>
+  <script src="../../menu.js?v=101"></script>
+  <script src="../../veri.js?v=101"
+          data-yedek="../../events-data.js?v=101"
+          data-sonra="../etkinlik.js?v=101"></script>
 
 </body>
 </html>

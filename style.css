@@ -2507,3 +2507,335 @@ body:has(> .dipnot:not(.ince)) > .dipnot { margin-top: auto; }
   .dipnot.ince .dipnot-ad { display: block; }
   .hukuk-liste { font-size: 15px; }
 }
+/* ---------- Etkinlik sayfasi: kontak baskisi ---------- */
+
+/* Tek bir geceyi degil, tekrar eden bir seyin bu ayki karesini
+   anlatiyor. Solda degismeyenler, ortada secilmemis kareler, sagda
+   kimin gelecegi. Ilk ekranda hepsi birden goruluyor; asagida sadece
+   gittigin edisyonlar kaliyor. */
+.ks {
+  display: grid;
+  grid-template-columns: 232px minmax(0, 1fr) 300px;
+  gap: 52px;
+  align-items: start;
+  max-width: 1400px;
+  padding: 100px 32px 56px;
+}
+
+/* Ray: sayfa kaysa da yerinde kalir */
+.ks-ray {
+  position: sticky;
+  top: 100px;
+}
+
+.ks-poster {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  pointer-events: none;      /* object tiklamayi yutuyor */
+}
+
+/* Kunye: hepsi ayni dilde, ayni boyda, ayni sirada. Bilerek sikici —
+   serinin kimligi degiskenlerde degil, degismeyenlerde. Burada YALNIZ
+   her edisyonda ayni olan seyler var; saatler karelerde. */
+.ks-kunye {
+  margin-top: 18px;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ks-kunye > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.ks-kunye dt { opacity: 0.38; white-space: nowrap; }
+.ks-kunye dd { text-align: right; }
+
+/* --- orta sutun --- */
+
+/* Izgara ogesi kendi icerigi kadar genis olmaya calismasin */
+.ks-alan { min-width: 0; }
+
+/* Kirinti burada sabit degil, yazinin basinda duruyor */
+.ks .kirinti {
+  position: static;
+  margin-bottom: 20px;
+}
+
+.ks-sira {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.ks-baslik {
+  margin-top: 8px;
+  font-size: min(5.4vw, 64px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+}
+
+/* Kunyede ve karelerde yazan hicbir sey burada tekrar etmiyor */
+.ks-meta { margin-top: 12px; font-size: 15px; opacity: 0.5; }
+
+.ks-metin {
+  margin-top: 18px;
+  max-width: 68ch;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.78;
+}
+
+.ks-metin + .ks-metin { margin-top: 13px; }
+
+.ks-bolum { margin-top: 34px; }
+
+.ks-etiket {
+  margin-bottom: 12px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* Kareler: tek serit, bes kare. Rezidans da konuk da ayni kutuda —
+   biri buyuk isim degil, hepsi ayni rulodan cikti. */
+.ks-kareler {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 7px;
+}
+
+/* Poz: karenin kendisi. Her kare posterin baska bir seridi — dort
+   kare, dort bant, hepsi ayni ruloda. Siyah-beyaz, kontak baskisi gibi.
+   <img> degil <object>: SVG poster kendi yazi tipini ancak boyle
+   yukleyebiliyor (img icinde webfont gelmiyor). */
+.ks-poz {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: #ececea;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.ks-poz-im {
+  position: absolute;
+  left: 0;
+  top: calc(var(--kay, 0) * -1%);
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Poster renkli, kontak baskisi degil. <object> ICINDEKI belgeye
+   `filter` islemiyor (ayri bir belge), bunun yerine karenin uzerine
+   "saturation" karisimli siyah bir katman koyuyoruz: rengi cekiyor,
+   parlakligi birakiyor. */
+.ks-poz:not(.bos)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;
+  mix-blend-mode: saturation;
+  pointer-events: none;
+}
+
+/* Bos kare de bir bilgi: haber verilmemis olmak bir hata degil */
+.ks-poz.bos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f2;
+  border-color: rgba(0, 0, 0, 0.08);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  opacity: 0.4;
+}
+
+.ks-no {
+  display: block;
+  margin-top: 7px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  opacity: 0.3;
+}
+
+.ks-rol {
+  margin-top: 5px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+.ks-ad {
+  margin-top: 3px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.ks-saat {
+  margin-top: 3px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  opacity: 0.45;
+}
+
+.ks-kare.bos .ks-ad { opacity: 0.3; }
+.ks-kare.bos .ks-rol,
+.ks-kare.bos .ks-saat { opacity: 0.3; }
+
+.ks-not {
+  margin-top: 16px;
+  max-width: 52ch;
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.42;
+}
+
+/* --- sag sutun: kim geliyor, sonra bilet --- */
+
+.ks-sag { position: sticky; top: 100px; }
+
+.ks-kimler {
+  list-style: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.ks-kimler li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.ks-kim-ad { font-size: 15px; letter-spacing: -0.01em; }
+
+.ks-kim-durum {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+.ks-kimler li.yok .ks-kim-ad { opacity: 0.4; }
+
+.ks-sayim {
+  margin-top: 10px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.38;
+}
+
+.ks-bilet {
+  display: block;
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: var(--siyah);
+  color: var(--beyaz);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.ks-bilet-alt {
+  margin-top: 9px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.38;
+  text-align: center;
+}
+
+/* Arkadaslarin bu geceye birakdiklari: explore'daki beforehours'un
+   ayni dili, dar sutuna gore biraz kucultulmus. */
+.ks-yorumlar { margin-top: 30px; }
+.ks-yorumlar .y-konu + .y-konu { margin-top: 20px; }
+.ks-yorumlar .y-ust { gap: 8px; margin-bottom: 4px; }
+.ks-yorumlar .y-kim { font-size: 13px; }
+.ks-yorumlar .y-zaman { font-size: 11px; }
+.ks-yorumlar .y-metin { font-size: 13.5px; line-height: 1.5; opacity: 0.8; }
+.ks-yorumlar .y-cevaplar { margin-top: 10px; padding-left: 12px; }
+.ks-yorumlar .y-cevaplar .y-metin { font-size: 13px; }
+
+/* Gecmis edisyonlar: gercek afterhours kartlari. Ilk ekranin altinda
+   kaliyorlar — sayfa bir gece satmiyor, bir devamliligi hatirlatiyor. */
+.ks-gecmis {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 560px;
+}
+
+.ks-gec-kart { min-width: 0; }
+.ks-gec-yuz svg { display: block; width: 100%; height: auto; }
+
+.ks-gec-kart figcaption {
+  margin-top: 10px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+/* Dar masaustunde ucuncu sutun sigmiyor: kim geliyor ve bilet, rayin
+   altina gecer — sayfanin dibine degil, hala ilk ekranda kalsinlar diye. */
+@media (max-width: 1100px) {
+  .ks { grid-template-columns: 216px minmax(0, 1fr); gap: 40px; }
+  .ks-ray { position: static; }
+  .ks-alan { grid-row: 1 / span 2; grid-column: 2; }
+  .ks-sag { grid-column: 1; position: static; margin-top: 26px; }
+  .ks-kareler { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+  .ks {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    padding: 104px 16px 64px;
+  }
+
+  /* Telefonda ray yapismiyor ve dagiliyor: once kucuk bir poster, sonra
+     gecenin kendisi, kunye en alta. Yoksa etkinligin adina varmak icin
+     on satir kunyeyi gecmek gerekiyordu. */
+  .ks-ray { display: contents; }
+  .ks-poster { order: 1; max-width: 190px; }
+  .ks-alan { order: 2; width: 100%; }
+  .ks-sag { order: 3; max-width: none; }
+  .ks-kunye { order: 4; margin-top: 0; }
+
+  .ks-kareler { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .ks-baslik { font-size: min(11vw, 52px); }
+  .ks-metin, .ks-not { max-width: none; }
+  .ks-gecmis { gap: 12px; }
+}
