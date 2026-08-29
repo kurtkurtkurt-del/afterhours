@@ -53,6 +53,8 @@ where not c.is_hidden;
 
 -- Explore’un destesi. Giris yapilmissa daha once atilan kartlar dusuyor;
 -- anonimde 36’sinin hepsi geliyor. Sira poster numarasi (bugunku sira).
+-- Donus tipi degisirse create or replace yetmiyor; once dusuruyoruz.
+drop function if exists public.deck(text, text, int);
 create or replace function public.deck(
   p_city text default 'munchen',
   p_type text default null,
@@ -114,6 +116,8 @@ $$;
 -- "kept tonight": kendi saga attiklarin, en son ustte.
 -- Duz satir donuyor, bilesik tip degil: bilesik tipler REST katmaninda
 -- surumden surume farkli seriellesiyor, duz kolonlar her yerde ayni.
+-- Donus tipi degisirse create or replace yetmiyor; once dusuruyoruz.
+drop function if exists public.kept();
 create or replace function public.kept()
 returns setof public.events_public
 language sql
@@ -130,6 +134,8 @@ $$;
 
 -- "friends liked swipes" modunun kaynagi. Sadece onayli arkadaslar,
 -- sadece saga atilanlar; RLS zaten bunu zorluyor, burada niyet acik olsun.
+-- Donus tipi degisirse create or replace yetmiyor; once dusuruyoruz.
+drop function if exists public.friends_kept(int);
 create or replace function public.friends_kept(p_limit int default 60)
 returns table (
   friend      text,
@@ -165,6 +171,8 @@ $$;
 
 -- Ana sayfadaki "36 nights in Munich this week · 7 Rave · ..." satirinin
 -- kaynagi. Bugun JS’te sayiliyor; ayni sayi buradan da gelebilsin.
+-- Donus tipi degisirse create or replace yetmiyor; once dusuruyoruz.
+drop function if exists public.event_counts(text);
 create or replace function public.event_counts(p_city text default 'munchen')
 returns table (type_slug text, type_name text, sira int, n bigint)
 language sql
@@ -179,6 +187,8 @@ $$;
 
 -- Bir etkinligi kac kisi biriktirmis. Kimin biriktirdigi gorunmez —
 -- security definer sadece SAYIYI disari veriyor.
+-- Donus tipi degisirse create or replace yetmiyor; once dusuruyoruz.
+drop function if exists public.keep_counts();
 create or replace function public.keep_counts()
 returns table (event_id uuid, n bigint)
 language sql
@@ -193,6 +203,8 @@ as $$
 $$;
 
 -- Filtredeki sehir listesi: her sehir ve kac gecesi var.
+-- Donus tipi degisirse create or replace yetmiyor; once dusuruyoruz.
+drop function if exists public.city_counts();
 create or replace function public.city_counts()
 returns table (
   slug            text,

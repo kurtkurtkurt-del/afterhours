@@ -26,6 +26,8 @@ create index if not exists cities_country_idx on public.cities (country_slug, si
 
 -- Filtrede her sehrin yanindaki sayi. Bos sehirler bos gorunsun diye
 -- yayindaki etkinlikler sayiliyor.
+-- Once dusur: donus tipi degisirse create or replace yetmiyor.
+drop function if exists public.city_counts();
 create or replace function public.city_counts()
 returns table (
   slug          text,

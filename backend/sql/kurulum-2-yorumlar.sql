@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — KURULUM 2 / 2 : ORNEK YORUMLAR
---  SURUM: 2026-08-29 18:26
+--  SURUM: 2026-08-29 18:37
 --
 --  Once kurulum-1-yapi.sql calistirilmis olmali.
 --  beforehours panelindeki ornek tartismalar: 180 konu, 131 cevap.
