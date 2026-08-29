@@ -5,7 +5,7 @@
 --  TAMAMINI yapistir → Run.
 --
 --  Bittiginde "Success. No rows returned" gormelisin.
---  Sonra kurulum-2-yorumlar.sql'i ayni sekilde calistir.
+--  Sonra kurulum-2-yorumlar.sql dosyasini ayni sekilde calistir.
 --
 --  URETILMIS DOSYA — kaynak: backend/tools/kurulum-uret.mjs
 -- ============================================================
@@ -17,10 +17,10 @@
 
 -- afterhours — tablolar
 -- Supabase SQL editorunde sirayla calistirilir: 01 → 02 → 03 → ...
--- Kimlik dogrulama Supabase'in auth semasindan gelir; burada sadece
+-- Kimlik dogrulama Supabase’in auth semasindan gelir; burada sadece
 -- ona baglanan public sema var.
 
--- gen_random_uuid() Postgres 13'ten beri cekirdekte; uzanti gerekmiyor.
+-- gen_random_uuid() Postgres 13’ten beri cekirdekte; uzanti gerekmiyor.
 
 -- ---------------------------------------------------------------- sehir
 
@@ -39,7 +39,7 @@ create table if not exists public.event_types (
   id    uuid primary key default gen_random_uuid(),
   slug  text unique not null,
   name  text not null,
-  -- spec'in kendi sirasi: rave, club night, konzert, festival, meetup, hausparty
+  -- spec’in kendi sirasi: rave, club night, konzert, festival, meetup, hausparty
   sira  int  not null
 );
 
@@ -102,14 +102,14 @@ create table if not exists public.profiles (
   id            uuid primary key references auth.users on delete cascade,
   handle        text unique,
   display_name  text,
-  -- etkinlik yazma yetkisi buradan cikiyor. Sadece Ahmet'te true.
+  -- etkinlik yazma yetkisi buradan cikiyor. Sadece Ahmet’te true.
   is_admin      boolean not null default false,
   created_at    timestamptz not null default now()
 );
 
 -- --------------------------------------------------------------- atislar
 
--- Biriktirilen kartlar ayri bir tablo degil: yonu 'right' olan atislardir.
+-- Biriktirilen kartlar ayri bir tablo degil: yonu ’right’ olan atislardir.
 create table if not exists public.swipes (
   id          uuid primary key default gen_random_uuid(),
   -- Varsayilan oturumdaki kisi: tarayici kimin adina yazdigini
@@ -138,7 +138,7 @@ create table if not exists public.comments (
   is_hidden   boolean not null default false,
   created_at  timestamptz not null default now(),
   -- Ornek yorumlarin ekranda gorunen zaman metni ("4 days ago", "Nov 2023").
-  -- Gercek yorumlarda bos kalir; o zaman created_at'ten uretilir.
+  -- Gercek yorumlarda bos kalir; o zaman created_at’ten uretilir.
   time_text   text,
   constraint comments_author_var check (author_id is not null or author_name is not null)
 );
@@ -240,7 +240,7 @@ create trigger on_auth_user_created
 -- ------------------------------------------------------------ yardimcilar
 
 -- profiles uzerinde RLS var; policy icinden profiles okumak sonsuz donguye
--- girer. security definer bu yuzden: fonksiyon RLS'i atlar.
+-- girer. security definer bu yuzden: fonksiyon RLS’i atlar.
 create or replace function public.is_admin()
 returns boolean
 language sql
@@ -536,7 +536,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'asap-rocky', c.id, t.id, v.id,
-       'A$AP Rocky', 'Olympiahalle · 11.09.26 · 18:30', $ah$An arena show built around one voice. Doors early, everyone seated until they aren't.$ah$, 1,
+       'A$AP Rocky', 'Olympiahalle · 11.09.26 · 18:30', 'An arena show built around one voice. Doors early, everyone seated until they aren''t.', 1,
        '2026-09-11T18:30:00+02:00'::timestamptz, false, '11.09.26 · 18:30'
 from public.cities c
 join public.event_types t on t.slug = 'konzert'
@@ -572,7 +572,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'thirty-seconds-to-mars', c.id, t.id, v.id,
-       'Thirty Seconds to Mars', 'Olympiahalle · 12.04.27', $ah$Stadium rock at hall scale. Bring a voice you don't mind losing.$ah$, 4,
+       'Thirty Seconds to Mars', 'Olympiahalle · 12.04.27', 'Stadium rock at hall scale. Bring a voice you don''t mind losing.', 4,
        '2027-04-12T20:00:00+02:00'::timestamptz, false, '12.04.27'
 from public.cities c
 join public.event_types t on t.slug = 'konzert'
@@ -644,7 +644,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'zamanand', c.id, t.id, null,
-       'Zamanand', 'München · 12.09 · 16:00', $ah$Starts in daylight and never quite admits it's a festival. Local bills, no headliner hierarchy.$ah$, 10,
+       'Zamanand', 'München · 12.09 · 16:00', 'Starts in daylight and never quite admits it''s a festival. Local bills, no headliner hierarchy.', 10,
        '2026-09-12T14:00:00.000Z'::timestamptz, true, '12.09 · 16:00'
 from public.cities c
 join public.event_types t on t.slug = 'festival'
@@ -689,7 +689,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'cfu-open-air', c.id, t.id, v.id,
-       'CFU Open Air', 'Bahnwärter Thiel · 18.07 · 14:00', $ah$Outside while it's warm, inside when it isn't. The same crowd moves between both all afternoon.$ah$, 14,
+       'CFU Open Air', 'Bahnwärter Thiel · 18.07 · 14:00', 'Outside while it''s warm, inside when it isn''t. The same crowd moves between both all afternoon.', 14,
        '2027-07-18T12:00:00.000Z'::timestamptz, true, '18.07 · 14:00'
 from public.cities c
 join public.event_types t on t.slug = 'rave'
@@ -712,7 +712,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'echonomist', c.id, t.id, v.id,
-       'Echonomist', 'Pimpernel · 25.09 · 22:00', $ah$Staged inside a former cinema — the screen stays up, the seats don't. Sound follows the room.$ah$, 16,
+       'Echonomist', 'Pimpernel · 25.09 · 22:00', 'Staged inside a former cinema — the screen stays up, the seats don''t. Sound follows the room.', 16,
        '2026-09-25T20:00:00.000Z'::timestamptz, true, '25.09 · 22:00'
 from public.cities c
 join public.event_types t on t.slug = 'club-night'
@@ -782,7 +782,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select '3-stock-links', c.id, t.id, v.id,
-       '3. Stock Links', 'Haidhausen · 05.07 · 20:00', $ah$Balcony party with string lights and a borrowed speaker. Quiet by two, that's the deal with the neighbours.$ah$, 22,
+       '3. Stock Links', 'Haidhausen · 05.07 · 20:00', 'Balcony party with string lights and a borrowed speaker. Quiet by two, that''s the deal with the neighbours.', 22,
        '2027-07-05T18:00:00.000Z'::timestamptz, true, '05.07 · 20:00'
 from public.cities c
 join public.event_types t on t.slug = 'hausparty'
@@ -853,7 +853,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'kaffee-karten', c.id, t.id, v.id,
-       'Kaffee & Karten', 'Westend · Sonntags · 15:00', $ah$Card games and too much coffee. Daylight only — it's over before anything else starts.$ah$, 28,
+       'Kaffee & Karten', 'Westend · Sonntags · 15:00', 'Card games and too much coffee. Daylight only — it''s over before anything else starts.', 28,
        null, false, 'Sonntags · 15:00'
 from public.cities c
 join public.event_types t on t.slug = 'meetup'
@@ -876,7 +876,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'sprechstunde', c.id, t.id, v.id,
-       'Sprechstunde', 'Untergiesing · Mittwochs · 19:30', $ah$An open round table — you talk about what you're making, someone tells you what's wrong with it.$ah$, 30,
+       'Sprechstunde', 'Untergiesing · Mittwochs · 19:30', 'An open round table — you talk about what you''re making, someone tells you what''s wrong with it.', 30,
        null, false, 'Mittwochs · 19:30'
 from public.cities c
 join public.event_types t on t.slug = 'meetup'
@@ -936,7 +936,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'spiegelsaal', c.id, t.id, v.id,
-       'Spiegelsaal', 'P1 · 06.12 · 23:00', $ah$Italo and disco under an actual mirror ball. The most fun you'll have taking nothing seriously.$ah$, 35,
+       'Spiegelsaal', 'P1 · 06.12 · 23:00', 'Italo and disco under an actual mirror ball. The most fun you''ll have taking nothing seriously.', 35,
        '2026-12-06T21:00:00.000Z'::timestamptz, true, '06.12 · 23:00'
 from public.cities c
 join public.event_types t on t.slug = 'club-night'
@@ -966,7 +966,7 @@ on conflict (slug) do nothing;
 -- Sorgu mantigi burada dursun; tarayicidaki JS sadece cagirsin.
 
 -- security_invoker: gorunum, cagirani kimse onun haklariyla calisir.
--- Bu olmazsa gorunum RLS'i atlar ve yayinda olmayan etkinlikler sizar.
+-- Bu olmazsa gorunum RLS’i atlar ve yayinda olmayan etkinlikler sizar.
 
 -- ------------------------------------------------- etkinlik (okunur hali)
 
@@ -1015,8 +1015,8 @@ where not c.is_hidden;
 
 -- ------------------------------------------------------------- deste
 
--- Explore'un destesi. Giris yapilmissa daha once atilan kartlar dusuyor;
--- anonimde 36'sinin hepsi geliyor. Sira poster numarasi (bugunku sira).
+-- Explore’un destesi. Giris yapilmissa daha once atilan kartlar dusuyor;
+-- anonimde 36’sinin hepsi geliyor. Sira poster numarasi (bugunku sira).
 create or replace function public.deck(
   p_city text default 'munchen',
   p_type text default null,
@@ -1047,7 +1047,7 @@ $$;
 
 -- ------------------------------------------------------- atis yazma
 
--- Tarayici etkinligin id'sini bilmek zorunda kalmasin: slug yeter.
+-- Tarayici etkinligin id’sini bilmek zorunda kalmasin: slug yeter.
 -- Bu sayede girissizken biriken atislar, deste yuklenmeden once
 -- hesaba tasinabiliyor. user_id yine oturumdan geliyor.
 create or replace function public.swipe_set(p_slug text, p_direction text)
@@ -1115,7 +1115,7 @@ $$;
 -- --------------------------------------------------------- sayaclar
 
 -- Ana sayfadaki "36 nights in Munich this week · 7 Rave · ..." satirinin
--- kaynagi. Bugun JS'te sayiliyor; ayni sayi buradan da gelebilsin.
+-- kaynagi. Bugun JS’te sayiliyor; ayni sayi buradan da gelebilsin.
 create or replace function public.event_counts(p_city text default 'munchen')
 returns table (type_slug text, type_name text, sira int, n bigint)
 language sql
@@ -1158,7 +1158,7 @@ grant select on public.events_public, public.comments_public to anon, authentica
 -- ============================================================
 
 -- afterhours — arkadaslik islemleri
--- Tablo ve kurallar 01/02'de; burasi gunluk islerin fonksiyonlari.
+-- Tablo ve kurallar 01/02’de; burasi gunluk islerin fonksiyonlari.
 
 -- Kullanici adi: arkadaslik bunun uzerinden kuruluyor, o yuzden
 -- bicimi zorunlu. Kucuk harf, rakam, alt cizgi; 3-20 karakter.
@@ -1169,7 +1169,7 @@ alter table public.profiles
   check (handle is null or handle ~ '^[a-z0-9_]{3,20}$');
 
 -- Kendi arkadaslarin ve bekleyen istekler, tek listede.
--- yon: 'giden' = sen istedin, 'gelen' = sana geldi.
+-- yon: ’giden’ = sen istedin, ’gelen’ = sana geldi.
 create or replace function public.friends_list()
 returns table (
   other_id      uuid,
@@ -1262,7 +1262,7 @@ grant execute on function public.friend_remove(uuid)     to authenticated;
 -- ============================================================
 
 -- afterhours — poster deposu (Supabase Storage)
--- storage semasi yalnizca Supabase'de var; yerel testlerde bu blok
+-- storage semasi yalnizca Supabase’de var; yerel testlerde bu blok
 -- kendiliginden atlanir. Bu yuzden butun ifadeler dinamik (execute).
 
 do $$
@@ -1286,7 +1286,7 @@ begin
       for select using (bucket_id = 'posters')
   $q$;
 
-  -- Yazma yalniz yoneticide. public.is_admin() 02_rls.sql'de tanimli.
+  -- Yazma yalniz yoneticide. public.is_admin() 02_rls.sql’de tanimli.
   execute $q$ drop policy if exists "posters yonetici yazar" on storage.objects $q$;
   execute $q$
     create policy "posters yonetici yazar" on storage.objects
@@ -1314,7 +1314,7 @@ $$;
 -- ============================================================
 
 -- afterhours — arka planda calisan isler
--- pg_cron uzantisi Supabase'de Database → Extensions altindan acilir.
+-- pg_cron uzantisi Supabase’de Database → Extensions altindan acilir.
 -- Uzanti yoksa fonksiyonlar yine calisir, sadece kendiliginden
 -- tetiklenmez; elle de cagirabilirsin.
 

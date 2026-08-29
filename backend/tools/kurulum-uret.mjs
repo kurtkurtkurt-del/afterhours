@@ -25,7 +25,7 @@ let bir = `-- ============================================================
 --  TAMAMINI yapistir → Run.
 --
 --  Bittiginde "Success. No rows returned" gormelisin.
---  Sonra kurulum-2-yorumlar.sql'i ayni sekilde calistir.
+--  Sonra kurulum-2-yorumlar.sql dosyasini ayni sekilde calistir.
 --
 --  URETILMIS DOSYA — kaynak: backend/tools/kurulum-uret.mjs
 -- ============================================================

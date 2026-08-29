@@ -1,5 +1,5 @@
 -- afterhours — arkadaslik islemleri
--- Tablo ve kurallar 01/02'de; burasi gunluk islerin fonksiyonlari.
+-- Tablo ve kurallar 01/02’de; burasi gunluk islerin fonksiyonlari.
 
 -- Kullanici adi: arkadaslik bunun uzerinden kuruluyor, o yuzden
 -- bicimi zorunlu. Kucuk harf, rakam, alt cizgi; 3-20 karakter.
@@ -10,7 +10,7 @@ alter table public.profiles
   check (handle is null or handle ~ '^[a-z0-9_]{3,20}$');
 
 -- Kendi arkadaslarin ve bekleyen istekler, tek listede.
--- yon: 'giden' = sen istedin, 'gelen' = sana geldi.
+-- yon: ’giden’ = sen istedin, ’gelen’ = sana geldi.
 create or replace function public.friends_list()
 returns table (
   other_id      uuid,

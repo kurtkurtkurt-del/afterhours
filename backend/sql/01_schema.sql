@@ -1,9 +1,9 @@
 -- afterhours — tablolar
 -- Supabase SQL editorunde sirayla calistirilir: 01 → 02 → 03 → ...
--- Kimlik dogrulama Supabase'in auth semasindan gelir; burada sadece
+-- Kimlik dogrulama Supabase’in auth semasindan gelir; burada sadece
 -- ona baglanan public sema var.
 
--- gen_random_uuid() Postgres 13'ten beri cekirdekte; uzanti gerekmiyor.
+-- gen_random_uuid() Postgres 13’ten beri cekirdekte; uzanti gerekmiyor.
 
 -- ---------------------------------------------------------------- sehir
 
@@ -22,7 +22,7 @@ create table if not exists public.event_types (
   id    uuid primary key default gen_random_uuid(),
   slug  text unique not null,
   name  text not null,
-  -- spec'in kendi sirasi: rave, club night, konzert, festival, meetup, hausparty
+  -- spec’in kendi sirasi: rave, club night, konzert, festival, meetup, hausparty
   sira  int  not null
 );
 
@@ -85,14 +85,14 @@ create table if not exists public.profiles (
   id            uuid primary key references auth.users on delete cascade,
   handle        text unique,
   display_name  text,
-  -- etkinlik yazma yetkisi buradan cikiyor. Sadece Ahmet'te true.
+  -- etkinlik yazma yetkisi buradan cikiyor. Sadece Ahmet’te true.
   is_admin      boolean not null default false,
   created_at    timestamptz not null default now()
 );
 
 -- --------------------------------------------------------------- atislar
 
--- Biriktirilen kartlar ayri bir tablo degil: yonu 'right' olan atislardir.
+-- Biriktirilen kartlar ayri bir tablo degil: yonu ’right’ olan atislardir.
 create table if not exists public.swipes (
   id          uuid primary key default gen_random_uuid(),
   -- Varsayilan oturumdaki kisi: tarayici kimin adina yazdigini
@@ -121,7 +121,7 @@ create table if not exists public.comments (
   is_hidden   boolean not null default false,
   created_at  timestamptz not null default now(),
   -- Ornek yorumlarin ekranda gorunen zaman metni ("4 days ago", "Nov 2023").
-  -- Gercek yorumlarda bos kalir; o zaman created_at'ten uretilir.
+  -- Gercek yorumlarda bos kalir; o zaman created_at’ten uretilir.
   time_text   text,
   constraint comments_author_var check (author_id is not null or author_name is not null)
 );

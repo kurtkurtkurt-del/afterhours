@@ -4,7 +4,7 @@
 -- ------------------------------------------------------------ yardimcilar
 
 -- profiles uzerinde RLS var; policy icinden profiles okumak sonsuz donguye
--- girer. security definer bu yuzden: fonksiyon RLS'i atlar.
+-- girer. security definer bu yuzden: fonksiyon RLS’i atlar.
 create or replace function public.is_admin()
 returns boolean
 language sql

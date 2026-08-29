@@ -1,5 +1,5 @@
 -- afterhours — arka planda calisan isler
--- pg_cron uzantisi Supabase'de Database → Extensions altindan acilir.
+-- pg_cron uzantisi Supabase’de Database → Extensions altindan acilir.
 -- Uzanti yoksa fonksiyonlar yine calisir, sadece kendiliginden
 -- tetiklenmez; elle de cagirabilirsin.
 

@@ -1,5 +1,5 @@
 -- afterhours — poster deposu (Supabase Storage)
--- storage semasi yalnizca Supabase'de var; yerel testlerde bu blok
+-- storage semasi yalnizca Supabase’de var; yerel testlerde bu blok
 -- kendiliginden atlanir. Bu yuzden butun ifadeler dinamik (execute).
 
 do $$
@@ -23,7 +23,7 @@ begin
       for select using (bucket_id = 'posters')
   $q$;
 
-  -- Yazma yalniz yoneticide. public.is_admin() 02_rls.sql'de tanimli.
+  -- Yazma yalniz yoneticide. public.is_admin() 02_rls.sql’de tanimli.
   execute $q$ drop policy if exists "posters yonetici yazar" on storage.objects $q$;
   execute $q$
     create policy "posters yonetici yazar" on storage.objects

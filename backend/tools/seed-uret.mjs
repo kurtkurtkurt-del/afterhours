@@ -36,10 +36,12 @@ const { YORUM_HAVUZU, YORUMLARI_GETIR } =
    bu sorunu tamamen ortadan kaldiriyor. */
 const q = (v) => {
   if (v === null || v === undefined) return "null";
-  const s = String(v);
-  if (!s.includes("'")) return "'" + s + "'";
-  if (!s.includes("$ah$")) return "$ah$" + s + "$ah$";
-  return "'" + s.replace(/'/g, "''") + "'";      /* ikisi de varsa: eski yol */
+  /* Kacisli tirnak ('') kullaniyoruz: hem Postgres icin dogru, hem de
+     tirnaklari sayarak ilerleyen basit ayristiricilar icin DENGELI
+     (iki isaret = iki gecis). Dolar tirnagi denendi ve daha kotuydu:
+     icindeki tek kesme isareti ("aren't") sayimi kaydirip metnin
+     gerisini kod haline getiriyor. */
+  return "'" + String(v).replace(/'/g, "''") + "'";
 };
 const slugla = (s) =>
   s.toLowerCase()

@@ -101,26 +101,28 @@ console.log("\n— yorumlarin sitedeki secimle ayni oldugu —");
 
 console.log("— SQL editorlerinde ayristirilabilirlik —");
 {
-  /* Supabase panelinde gercekten yasandi: kacisli tirnak ('') iceren bir
-     metin, editorun tarayicidaki ayristiricisinda tirnak sayimini
-     kaydirdi ve gerisi kod sanildi ("relation \"one\" does not exist").
-     Uretilen dosyalarda metin degerleri artik dolar tirnagiyla yazilir. */
-  for (const d of ["../sql/04_seed_events.sql", "../sql/05_seed_comments.sql",
-                   "../sql/kurulum-1-yapi.sql", "../sql/kurulum-2-yorumlar.sql"]) {
-    const metin = await oku(d).catch(() => null);
-    if (metin === null) continue;
-    /* Bos metin ('') sorun degil; sorun olan, icinde karakter olan kacis */
-    const kacislar = (metin.match(/'[^'\n]*''/g) || []);
-    olmali(kacislar.length === 0,
-      d.split("/").pop() + ": kacisli tirnakli metin yok",
-      kacislar.slice(0, 2).join(" | "));
-  }
+  /* Asil tuzak buydu: Supabase panelinin ayristiricisi tirnaklari
+     sayarak ilerliyor ve YORUMLARIN icindeki kesme isaretini de sayiyor.
+     "Supabase'in" gibi tek bir isaret sayimi cevirince, ileride gecen
+     "...condensed into one night..." metni KOD olarak okunuyor ve
+     "relation \"one\" does not exist" hatasi cikiyor.
+     Yorumlarda ASCII kesme isareti olmamali; tipografik ’ kullaniyoruz. */
+  for (const d of ["../sql/kurulum-1-yapi.sql", "../sql/kurulum-2-yorumlar.sql"]) {
+    const metin = await oku(d);
 
-  /* Dolar tirnagi kullaniliyorsa metinlerin icinde kapanis etiketi
-     olmamali, yoksa metin erken biter. */
-  const yorumlar = await oku("../sql/05_seed_comments.sql");
-  const kotu = yorumlar.split("$ah$").length % 2 === 0;
-  olmali(!kotu, "dolar tirnaklari dengeli");
+    const yorumlu = metin.split("\n").filter((r) => {
+      const i = r.indexOf("--");
+      return i >= 0 && r.slice(i).includes("'");
+    });
+    olmali(yorumlu.length === 0,
+      d.split("/").pop() + ": yorumlarda kesme isareti yok",
+      yorumlu[0] && yorumlu[0].trim().slice(0, 60));
+
+    /* Naif ayristiriciyi taklit et: dosya sonunda dize icinde kalmamali */
+    let tirnakta = false;
+    for (const c of metin) if (c === "'") tirnakta = !tirnakta;
+    olmali(!tirnakta, d.split("/").pop() + ": tirnak sayimi dengeli bitiyor");
+  }
 }
 
 console.log("\n— iliskiler —");

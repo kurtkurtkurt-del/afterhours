@@ -2,7 +2,7 @@
 -- Sorgu mantigi burada dursun; tarayicidaki JS sadece cagirsin.
 
 -- security_invoker: gorunum, cagirani kimse onun haklariyla calisir.
--- Bu olmazsa gorunum RLS'i atlar ve yayinda olmayan etkinlikler sizar.
+-- Bu olmazsa gorunum RLS’i atlar ve yayinda olmayan etkinlikler sizar.
 
 -- ------------------------------------------------- etkinlik (okunur hali)
 
@@ -51,8 +51,8 @@ where not c.is_hidden;
 
 -- ------------------------------------------------------------- deste
 
--- Explore'un destesi. Giris yapilmissa daha once atilan kartlar dusuyor;
--- anonimde 36'sinin hepsi geliyor. Sira poster numarasi (bugunku sira).
+-- Explore’un destesi. Giris yapilmissa daha once atilan kartlar dusuyor;
+-- anonimde 36’sinin hepsi geliyor. Sira poster numarasi (bugunku sira).
 create or replace function public.deck(
   p_city text default 'munchen',
   p_type text default null,
@@ -83,7 +83,7 @@ $$;
 
 -- ------------------------------------------------------- atis yazma
 
--- Tarayici etkinligin id'sini bilmek zorunda kalmasin: slug yeter.
+-- Tarayici etkinligin id’sini bilmek zorunda kalmasin: slug yeter.
 -- Bu sayede girissizken biriken atislar, deste yuklenmeden once
 -- hesaba tasinabiliyor. user_id yine oturumdan geliyor.
 create or replace function public.swipe_set(p_slug text, p_direction text)
@@ -151,7 +151,7 @@ $$;
 -- --------------------------------------------------------- sayaclar
 
 -- Ana sayfadaki "36 nights in Munich this week · 7 Rave · ..." satirinin
--- kaynagi. Bugun JS'te sayiliyor; ayni sayi buradan da gelebilsin.
+-- kaynagi. Bugun JS’te sayiliyor; ayni sayi buradan da gelebilsin.
 create or replace function public.event_counts(p_city text default 'munchen')
 returns table (type_slug text, type_name text, sira int, n bigint)
 language sql
