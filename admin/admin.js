@@ -317,7 +317,57 @@
         ? sorunlar.join("  ·  ")
         : "looks fine: 2:3 and nothing crosses the frame.";
       not.className = "yn-poster-not" + (sorunlar.length ? " kotu" : " iyi");
+
+      /* Sorun yoksa yuklenebilir. Sorunluysa yukleme dugmesi hic
+         gorunmuyor: bozuk poster siteye gitmesin. */
+      yukleDugmesi.hidden = Boolean(sorunlar.length) || !secili;
+      bekleyenDosya = sorunlar.length ? null : dosya;
     });
+  });
+
+  /* --- depoya yukleme --- */
+
+  let bekleyenDosya = null;
+  const yukleDugmesi = document.getElementById("a-poster-yukle");
+
+  yukleDugmesi.addEventListener("click", () => {
+    if (!bekleyenDosya || !secili) return;
+    const not = $("a-poster-not");
+    const ad = secili.slug + "-" + Date.now() + ".svg";
+    not.textContent = "uploading…";
+    not.className = "yn-poster-not";
+
+    fetch(AYAR.url.replace(/\/$/, "") + "/storage/v1/object/posters/" + ad, {
+      method: "POST",
+      headers: {
+        apikey: AYAR.anonKey,
+        Authorization: "Bearer " + AH.jeton,
+        "Content-Type": "image/svg+xml",
+        "x-upsert": "true",
+      },
+      body: bekleyenDosya,
+    })
+      .then(async (c) => {
+        if (!c.ok) throw new Error(c.status + " " + (await c.text()).slice(0, 120));
+        /* Kaydin poster_path'ini isaretle: site bundan sonra bu dosyayi
+           gosterir, posters/NN.svg yerine. */
+        return AH.istek("/events?id=eq." + secili.id, {
+          method: "PATCH",
+          headers: { Prefer: "return=representation" },
+          body: JSON.stringify({ poster_path: ad }),
+        });
+      })
+      .then(() => {
+        not.textContent = "uploaded. the site uses this file now.";
+        not.className = "yn-poster-not iyi";
+        yukleDugmesi.hidden = true;
+        bekleyenDosya = null;
+        return yenile();
+      })
+      .catch((h) => {
+        not.textContent = "couldn't upload: " + h.message;
+        not.className = "yn-poster-not kotu";
+      });
   });
 
   /* --- yorum denetimi --- */

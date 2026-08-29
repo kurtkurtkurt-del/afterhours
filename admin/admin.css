@@ -268,3 +268,16 @@
   .yn-duzen { grid-template-columns: 1fr; }
   .yn-liste { max-height: 320px; }
 }
+
+.yn-poster-yukle {
+  display: block;
+  margin-top: 12px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--beyaz);
+  background: var(--siyah);
+  border: 0;
+  padding: 8px 18px;
+  cursor: pointer;
+}

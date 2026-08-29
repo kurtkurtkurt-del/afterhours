@@ -107,6 +107,11 @@
       meta: r.meta,
       metin: r.body,
       poster: r.poster_no,
+      /* Depoya yuklenmis poster varsa onun tam adresi; yoksa bos
+         kalir ve posters/NN.svg kullanilir. */
+      posterYolu: r.poster_path
+        ? (AYAR.url || "").replace(/\/$/, "") + "/storage/v1/object/public/posters/" + r.poster_path
+        : null,
       // ekranin kullanmadigi ama ileride lazim olacaklar
       id: r.id,
       basliyor: r.starts_at,

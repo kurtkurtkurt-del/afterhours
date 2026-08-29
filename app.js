@@ -30,7 +30,7 @@ GOSTERILEN.forEach((p, i) => {
   const gorsel = document.createElement("object");
   gorsel.className = "poster-gorsel";
   gorsel.type = "image/svg+xml";
-  gorsel.data = "posters/" + no + ".svg";
+  gorsel.data = p.posterYolu || "posters/" + no + ".svg";
   kutu.appendChild(gorsel);
   kutu.addEventListener("mouseenter", () => {
     clearTimeout(gizleZamani);

@@ -91,12 +91,13 @@
     /* En son tutulan ustte */
     tutulan.slice().reverse().forEach((e) => {
       const no = String(e.poster || KARTLAR.indexOf(e) + 1).padStart(2, "0");
+      const yol = e.posterYolu || "../posters/" + no + ".svg";
       const a = document.createElement("a");
       a.className = "ex-kutu-satir";
       a.href = e.slug + "/index.html";
       const g = document.createElement("object");
       g.type = "image/svg+xml";
-      g.data = "../posters/" + no + ".svg";
+      g.data = yol;
       a.appendChild(g);
       const yazi = document.createElement("div");
       const ad = document.createElement("p");
@@ -179,13 +180,14 @@
     /* Poster numarasi kaydin kendisinden geliyor; veritabani eksik bir
        liste dondurdugunde posterler kaymasin diye siraya guvenmiyoruz. */
     const no = String(KARTLAR[i].poster || i + 1).padStart(2, "0");
+    const yol = KARTLAR[i].posterYolu || "../posters/" + no + ".svg";
     const kart = document.createElement("div");
     kart.className = "ex-kart";
     kart.dataset.no = String(i);
 
     const gorsel = document.createElement("object");
     gorsel.type = "image/svg+xml";
-    gorsel.data = "../posters/" + no + ".svg";
+    gorsel.data = yol;
     kart.appendChild(gorsel);
 
     /* Posterin altindaki bilgi seridi: tur + mekan/tarih.

@@ -20,10 +20,14 @@ const db = new PGlite();
 for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02_rls.sql",
                  "../sql/03_seed_katalog.sql", "../sql/04_seed_events.sql",
                  "../sql/05_seed_comments.sql", "../sql/06_views.sql",
-                 "../sql/07_friends.sql"]) {
+                 "../sql/07_friends.sql", "../sql/09_jobs.sql"]) {
   await db.exec(await oku(d));
 }
 console.log("veritabani hazir (bellekte)");
+
+/* Depo taklidi: dosyalar bellekte, sunucu kapaninca gider.
+   Gercek Supabase Storage'in yerine sadece akisi denemek icin. */
+const depo = new Map();
 
 /* --- istegi kimin yaptigi ------------------------------------------- */
 
@@ -109,7 +113,7 @@ const sunucu = createServer(async (istek, cevap) => {
   const yol = url.pathname;
 
   cevap.setHeader("Access-Control-Allow-Origin", "*");
-  cevap.setHeader("Access-Control-Allow-Headers", "authorization, apikey, content-type, prefer");
+  cevap.setHeader("Access-Control-Allow-Headers", "authorization, apikey, content-type, prefer, x-upsert, range");
   cevap.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE, OPTIONS");
   if (istek.method === "OPTIONS") { cevap.writeHead(204); return cevap.end(); }
 
@@ -163,6 +167,35 @@ const sunucu = createServer(async (istek, cevap) => {
     }
 
     if (yol === "/auth/v1/logout") return yolla(204);
+
+    /* ---------- Storage taklidi (bellekte) ---------- */
+
+    if (yol.startsWith("/storage/v1/object/")) {
+      /* Yukleme: /storage/v1/object/posters/<ad> */
+      if (istek.method === "POST" || istek.method === "PUT") {
+        if (!kullanici) return yolla(401, { message: "jeton yok" });
+        await rolAyarla(kullanici);
+        const y = await db.query(`select public.is_admin() as y`);
+        await rolBirak();
+        if (!y.rows[0].y) return yolla(403, { message: "sadece yonetici yukleyebilir" });
+
+        const ad = yol.split("/").slice(5).join("/");
+        const parcalar = [];
+        for await (const p of istek) parcalar.push(p);
+        depo.set(ad, Buffer.concat(parcalar));
+        console.log("  ⇧ poster yuklendi: " + ad + " (" + depo.get(ad).length + " bayt)");
+        return yolla(200, { Key: "posters/" + ad });
+      }
+
+      /* Okuma: /storage/v1/object/public/posters/<ad> */
+      if (istek.method === "GET") {
+        const ad = yol.replace("/storage/v1/object/public/posters/", "");
+        const veri = depo.get(ad);
+        if (!veri) return yolla(404, { message: "yok" });
+        cevap.writeHead(200, { "Content-Type": "image/svg+xml" });
+        return cevap.end(veri);
+      }
+    }
 
     /* ---------- PostgREST taklidi ---------- */
 
