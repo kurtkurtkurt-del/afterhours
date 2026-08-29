@@ -27,16 +27,16 @@
     if (!etkinlik || !etkinlik.slug) return Promise.resolve();
     const kayit = yon > 0 || yon === "right" ? "right" : "left";
 
-    if (!(AH.girisliMi && AH.girisliMi() && etkinlik.id)) {
+    if (!(AH.girisliMi && AH.girisliMi())) {
       yerelEkle(etkinlik.slug, kayit);
       return Promise.resolve();
     }
 
-    /* Ayni karta ikinci atis uzerine yazsin (tabloda benzersiz kisit var) */
-    return AH.istek("/swipes", {
+    /* slug ile yaziyoruz: id bilmeye gerek yok, ayni karta ikinci atis
+       da uzerine yaziyor (fonksiyonun icinde on conflict var). */
+    return AH.istek("/rpc/swipe_set", {
       method: "POST",
-      headers: { Prefer: "resolution=merge-duplicates,return=minimal" },
-      body: JSON.stringify({ event_id: etkinlik.id, direction: kayit }),
+      body: JSON.stringify({ p_slug: etkinlik.slug, p_direction: kayit }),
     }).catch((h) => {
       console.warn("[afterhours] atis kaydedilemedi, yerele yazildi:", h.message);
       yerelEkle(etkinlik.slug, kayit);
@@ -50,7 +50,7 @@
   AH.biriktirilenler = function () {
     if (AH.girisliMi && AH.girisliMi()) {
       return AH.istek("/rpc/kept", { method: "POST", body: "{}" })
-        .then((satirlar) => satirlar.map((s) => AH.satiriCevir(s.event)))
+        .then((satirlar) => satirlar.map(AH.satiriCevir))
         .catch((h) => {
           console.warn("[afterhours] biriktirilenler alinamadi:", h.message);
           return yereldenEtkinlikler();
@@ -84,23 +84,21 @@
     const yerel = yerelOku();
     if (!yerel.length || !(AH.girisliMi && AH.girisliMi())) return Promise.resolve(0);
 
-    const liste = window.POSTERS || [];
-    const govde = yerel
-      .map((a) => {
-        const e = liste.find((x) => x.slug === a.slug);
-        return e && e.id ? { event_id: e.id, direction: a.yon } : null;
-      })
-      .filter(Boolean);
-
-    if (!govde.length) return Promise.resolve(0);
-
-    return AH.istek("/swipes", {
-      method: "POST",
-      headers: { Prefer: "resolution=merge-duplicates,return=minimal" },
-      body: JSON.stringify(govde),
-    })
-      .then(() => { yerelYaz([]); return govde.length; })
-      .catch((h) => { console.warn("[afterhours] atislar tasinamadi:", h.message); return 0; });
+    /* Slug ile yaziliyor, o yuzden etkinlik listesinin yuklenmis
+       olmasi gerekmiyor: giris aninda hemen calisabiliyor. */
+    return Promise.all(
+      yerel.map((a) =>
+        AH.istek("/rpc/swipe_set", {
+          method: "POST",
+          body: JSON.stringify({ p_slug: a.slug, p_direction: a.yon }),
+        }).then(() => true, () => false)
+      )
+    ).then((sonuclar) => {
+      if (sonuclar.every(Boolean)) { yerelYaz([]); return sonuclar.length; }
+      /* Bir kismi gecmediyse yerelde kalsin, bir dahaki sefere denenir */
+      console.warn("[afterhours] bazi atislar tasinamadi, yerelde tutuluyor");
+      return sonuclar.filter(Boolean).length;
+    });
   };
 
   if (AH.oturumDegisti) {

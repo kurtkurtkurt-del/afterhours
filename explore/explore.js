@@ -291,22 +291,86 @@
     return g;
   }
 
+  /* Yorum yazma kutusu. Backend kapaliyken hic gorunmez (yazacak yer
+     yok); acikken ama girissizken tek satirlik bir davet. */
+  function yazmaAlani(etkinlik) {
+    const sarmal = document.createElement("div");
+    sarmal.className = "y-yaz";
+    if (!(window.AH && AH.yorumBackendAcik && AH.yorumBackendAcik())) return sarmal;
+
+    if (!AH.yorumYazilabilir()) {
+      const d = document.createElement("a");
+      d.className = "y-yaz-davet";
+      d.href = "../login/index.html";
+      d.textContent = "sign in to say something";
+      sarmal.appendChild(d);
+      return sarmal;
+    }
+
+    const kutu = document.createElement("textarea");
+    kutu.className = "y-yaz-alan";
+    kutu.rows = 2;
+    kutu.placeholder = "say something about this night";
+
+    const dugme = document.createElement("button");
+    dugme.className = "y-yaz-dugme";
+    dugme.type = "button";
+    dugme.textContent = "post";
+
+    const durum = document.createElement("p");
+    durum.className = "y-yaz-durum";
+
+    dugme.addEventListener("click", () => {
+      const metin = kutu.value.trim();
+      if (!metin) { kutu.focus(); return; }
+      dugme.disabled = true;
+      durum.textContent = "posting…";
+      AH.yorumYaz(etkinlik, metin)
+        .then(() => { kutu.value = ""; durum.textContent = ""; yorumlariBas(); })
+        .catch((h) => { durum.textContent = "couldn't post: " + h.message; })
+        .finally(() => { dugme.disabled = false; });
+    });
+
+    sarmal.appendChild(kutu);
+    sarmal.appendChild(dugme);
+    sarmal.appendChild(durum);
+    return sarmal;
+  }
+
   function yorumlariBas() {
     if (!yorumAlani) return;
     const ust = deste.lastElementChild;
 
+    /* Yorumlar canliyken veritabanindan, degilse yorumlar.js'ten gelir;
+       ikisi de ayni bicimi dondurur, ekran ayni kalir. */
+    const kaynak = (etkinlik) =>
+      window.AH && AH.yorumlariGetir
+        ? AH.yorumlariGetir(etkinlik)
+        : Promise.resolve(YORUMLARI_GETIR(etkinlik));
+
     const doldurYorum = () => {
-      yorumAlani.textContent = "";
       if (!ust) {
+        yorumAlani.textContent = "";
         yorumAlani.appendChild(satir("y-yok", "nothing left to talk about tonight."));
-      } else {
-        const etkinlik = POSTERS[Number(ust.dataset.no)];
-        const { eski, yeni } = YORUMLARI_GETIR(etkinlik);
+        yorumAlani.scrollTop = 0;
+        yorumAlani.classList.remove("solgun");
+        return;
+      }
+
+      const etkinlik = POSTERS[Number(ust.dataset.no)];
+      kaynak(etkinlik).then(({ eski, yeni }) => {
+        /* Bu arada baska bir kart ustte olabilir; gec gelen cevabi basma */
+        if (deste.lastElementChild !== ust) return;
+        yorumAlani.textContent = "";
+        yorumAlani.appendChild(yazmaAlani(etkinlik));
         if (yeni.length) yorumAlani.appendChild(grupYap("this week", yeni, false));
         if (eski.length) yorumAlani.appendChild(grupYap("from earlier nights", eski, true));
-      }
-      yorumAlani.scrollTop = 0;
-      yorumAlani.classList.remove("solgun");
+        if (!yeni.length && !eski.length) {
+          yorumAlani.appendChild(satir("y-yok", "nobody has said anything yet."));
+        }
+        yorumAlani.scrollTop = 0;
+        yorumAlani.classList.remove("solgun");
+      });
     };
 
     /* Kart degisince yazi da degissin: once soner, sonra yenisi gelir */

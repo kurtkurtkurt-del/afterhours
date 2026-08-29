@@ -71,7 +71,7 @@ console.log("\n— atilan kart bir daha gelmiyor —");
 console.log("\n— biriktirilenler —");
 {
   await kimlik(BEN);
-  const r = await db.query(`select (event).slug as slug from public.kept()`);
+  const r = await db.query(`select slug from public.kept()`);
   olmali(r.rows.length === 1 && r.rows[0].slug === "nick-cave",
     "sadece saga atilan biriktiriliyor (sola atilan yok)");
 
@@ -83,7 +83,7 @@ console.log("\n— biriktirilenler —");
 console.log("\n— arkadaslarin begendikleri —");
 {
   await kimlik(ARKADAS);
-  const r = await db.query(`select (event).slug as slug, friend from public.friends_kept()`);
+  const r = await db.query(`select slug, friend from public.friends_kept()`);
   olmali(r.rows.length === 1 && r.rows[0].slug === "nick-cave",
     "onayli arkadasin saga attigi gorunuyor");
   olmali(r.rows[0].friend !== null, "kimin begendigi belli (" + r.rows[0].friend + ")");

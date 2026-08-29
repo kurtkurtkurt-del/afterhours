@@ -81,18 +81,32 @@ as $$
   limit p_limit;
 $$;
 
+-- ------------------------------------------------------- atis yazma
+
+-- Tarayici etkinligin id'sini bilmek zorunda kalmasin: slug yeter.
+-- Bu sayede girissizken biriken atislar, deste yuklenmeden once
+-- hesaba tasinabiliyor. user_id yine oturumdan geliyor.
+create or replace function public.swipe_set(p_slug text, p_direction text)
+returns void
+language sql
+as $$
+  insert into public.swipes (event_id, direction)
+  select e.id, p_direction from public.events e where e.slug = p_slug
+  on conflict (user_id, event_id)
+  do update set direction = excluded.direction, created_at = now();
+$$;
+
 -- --------------------------------------------------- biriktirilenler
 
 -- "kept tonight": kendi saga attiklarin, en son ustte.
+-- Duz satir donuyor, bilesik tip degil: bilesik tipler REST katmaninda
+-- surumden surume farkli seriellesiyor, duz kolonlar her yerde ayni.
 create or replace function public.kept()
-returns table (
-  swiped_at timestamptz,
-  event     public.events_public
-)
+returns setof public.events_public
 language sql
 stable
 as $$
-  select s.created_at, e
+  select e.*
   from public.swipes s
   join public.events_public e on e.id = s.event_id
   where s.user_id = auth.uid() and s.direction = 'right'
@@ -105,14 +119,25 @@ $$;
 -- sadece saga atilanlar; RLS zaten bunu zorluyor, burada niyet acik olsun.
 create or replace function public.friends_kept(p_limit int default 60)
 returns table (
-  event      public.events_public,
-  friend     text,
-  swiped_at  timestamptz
+  friend      text,
+  kept_at     timestamptz,
+  id          uuid,
+  slug        text,
+  title       text,
+  meta        text,
+  body        text,
+  poster_no   int,
+  type_name   text,
+  venue_name  text,
+  city_slug   text,
+  starts_at   timestamptz
 )
 language sql
 stable
 as $$
-  select e, coalesce(p.handle, p.display_name, 'a friend'), s.created_at
+  select coalesce(p.handle, p.display_name, 'a friend'), s.created_at,
+         e.id, e.slug, e.title, e.meta, e.body, e.poster_no,
+         e.type_name, e.venue_name, e.city_slug, e.starts_at
   from public.swipes s
   join public.events_public e on e.id = s.event_id
   join public.profiles p on p.id = s.user_id
@@ -155,6 +180,7 @@ as $$
 $$;
 
 grant execute on function public.deck(text, text, int)  to anon, authenticated;
+grant execute on function public.swipe_set(text, text)  to authenticated;
 grant execute on function public.kept()                 to authenticated;
 grant execute on function public.friends_kept(int)      to authenticated;
 grant execute on function public.event_counts(text)     to anon, authenticated;

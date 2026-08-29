@@ -11,6 +11,13 @@
 (function () {
   const AH = (window.AH = window.AH || {});
   const AYAR = window.AH_AYAR || {};
+
+  /* veri.js ile ayni gelistirme yonlendirmesi; sadece localhost'ta. */
+  if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    const p = new URLSearchParams(location.search).get("backend");
+    if (p) { AYAR.url = p; AYAR.anonKey = AYAR.anonKey || "yerel"; }
+  }
+
   const acik = Boolean(AYAR.url && AYAR.anonKey);
   const KUTU = "afterhours.oturum";
 

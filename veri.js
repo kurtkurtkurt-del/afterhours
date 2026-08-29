@@ -10,6 +10,16 @@
 
 (function () {
   const AYAR = window.AH_AYAR || {};
+
+  /* Gelistirme kolayligi: yerel taklit sunucuya yonlendirme.
+     SADECE localhost'ta gecerli — yayindaki sitenin verisi adres
+     cubugundan degistirilemesin. */
+  const yerelMi = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+  if (yerelMi) {
+    const p = new URLSearchParams(location.search).get("backend");
+    if (p) { AYAR.url = p; AYAR.anonKey = AYAR.anonKey || "yerel"; }
+  }
+
   const acik = Boolean(AYAR.url && AYAR.anonKey);
 
   const benBetik = document.currentScript;
@@ -78,8 +88,12 @@
       ...secenek,
       headers: { ...bas, ...(secenek.headers || {}) },
     }).then(async (c) => {
-      if (!c.ok) throw new Error(c.status + " " + (await c.text()).slice(0, 200));
-      return c.status === 204 ? null : c.json();
+      const yazi = await c.text();
+      if (!c.ok) throw new Error(c.status + " " + yazi.slice(0, 200));
+      /* Prefer: return=minimal 201'i BOS govdeyle donuyor; bunu JSON
+         diye ayristirmaya calismak istegi basarisiz gosteriyordu. */
+      if (!yazi) return null;
+      try { return JSON.parse(yazi); } catch (_) { return null; }
     });
   };
 
@@ -118,6 +132,11 @@
   const hazir = !acik
     ? yedegeDon(null)
     : oturum
+        /* Once yereldeki atislari hesaba tasi: deste ondan sonra
+           gelsin ki tasinan kartlar zaten elenmis olsun. */
+        .then(() => (AH.girisliMi && AH.girisliMi() && AH.atislariBirlestir
+          ? AH.atislariBirlestir().catch(() => 0)
+          : null))
         .then(() => AH.etkinlikler())
         .then((liste) => {
           if (!liste.length) throw new Error("veritabani bos");

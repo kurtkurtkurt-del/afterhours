@@ -1466,6 +1466,55 @@ html:has(body.explore) {
 .ex-yorum-liste { transition: opacity 0.22s ease; }
 .ex-yorum-liste.solgun { opacity: 0; }
 
+/* Yorum yazma kutusu — backend kapaliyken hic basilmiyor */
+.y-yaz:empty { display: none; }
+
+.y-yaz {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.y-yaz-alan {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--siyah);
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.y-yaz-alan::placeholder { color: rgba(0, 0, 0, 0.32); }
+.y-yaz-alan:focus { outline: none; border-color: rgba(0, 0, 0, 0.45); }
+
+.y-yaz-dugme {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--beyaz);
+  background: var(--siyah);
+  border: 0;
+  padding: 9px 22px;
+  cursor: pointer;
+}
+
+.y-yaz-dugme:disabled { opacity: 0.45; cursor: default; }
+
+.y-yaz-durum { font-size: 13px; opacity: 0.6; }
+
+.y-yaz-davet {
+  font-size: 14px;
+  color: var(--siyah);
+  opacity: 0.55;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
 .y-grup + .y-grup { margin-top: 36px; }
 
 /* Eski gece(ler)den kalanlar biraz geride dursun */
