@@ -1,0 +1,12 @@
+{
+  "name": "afterhours-backend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node test/schema.test.mjs && node test/seed.test.mjs",
+    "seed": "node tools/seed-uret.mjs"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.8"
+  }
+}

@@ -1,0 +1,182 @@
+-- afterhours — kimin neyi gorebilecegi / yazabilecegi
+-- Bu dosya guvenligin kendisi. Sayfayi gizlemek guvenlik degil; kural burada.
+
+-- ------------------------------------------------------------ yardimcilar
+
+-- profiles uzerinde RLS var; policy icinden profiles okumak sonsuz donguye
+-- girer. security definer bu yuzden: fonksiyon RLS'i atlar.
+create or replace function public.is_admin()
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select coalesce((select p.is_admin from public.profiles p where p.id = auth.uid()), false);
+$$;
+
+create or replace function public.is_friend(other uuid)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (
+    select 1 from public.friendships f
+    where f.status = 'accepted'
+      and ((f.requester_id = auth.uid() and f.addressee_id = other)
+        or (f.addressee_id = auth.uid() and f.requester_id = other))
+  );
+$$;
+
+-- Kimse kendini yonetici yapamasin.
+create or replace function public.guard_is_admin()
+returns trigger
+language plpgsql
+as $$
+begin
+  -- auth.uid() bos ise istek servis rolunden / SQL editorunden geliyor
+  -- demektir; ilk yonetici oradan atanir. Anonim buraya hic ulasamaz,
+  -- cunku profiles_update_own politikasi onu zaten durdurur.
+  if new.is_admin is distinct from old.is_admin
+     and auth.uid() is not null
+     and not public.is_admin() then
+    raise exception 'is_admin sadece yonetici tarafindan degistirilebilir';
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists profiles_guard_admin on public.profiles;
+create trigger profiles_guard_admin
+  before update on public.profiles
+  for each row execute function public.guard_is_admin();
+
+-- ------------------------------------------------------------------ RLS
+
+alter table public.cities       enable row level security;
+alter table public.event_types  enable row level security;
+alter table public.venues       enable row level security;
+alter table public.events       enable row level security;
+alter table public.profiles     enable row level security;
+alter table public.swipes       enable row level security;
+alter table public.comments     enable row level security;
+alter table public.friendships  enable row level security;
+
+-- ------------------------------------------- katalog: herkes okur, admin yazar
+
+drop policy if exists cities_read on public.cities;
+create policy cities_read on public.cities for select using (true);
+drop policy if exists cities_write on public.cities;
+create policy cities_write on public.cities for all
+  using (public.is_admin()) with check (public.is_admin());
+
+drop policy if exists types_read on public.event_types;
+create policy types_read on public.event_types for select using (true);
+drop policy if exists types_write on public.event_types;
+create policy types_write on public.event_types for all
+  using (public.is_admin()) with check (public.is_admin());
+
+drop policy if exists venues_read on public.venues;
+create policy venues_read on public.venues for select using (true);
+drop policy if exists venues_write on public.venues;
+create policy venues_write on public.venues for all
+  using (public.is_admin()) with check (public.is_admin());
+
+-- --------------------------------------------------------------- etkinlik
+
+-- Giris yapmadan gezilebilir: yayindaki etkinlikleri herkes okur.
+drop policy if exists events_read on public.events;
+create policy events_read on public.events for select
+  using (is_published or public.is_admin());
+
+drop policy if exists events_write on public.events;
+create policy events_write on public.events for all
+  using (public.is_admin()) with check (public.is_admin());
+
+-- ---------------------------------------------------------------- profil
+
+drop policy if exists profiles_read on public.profiles;
+create policy profiles_read on public.profiles for select using (true);
+
+drop policy if exists profiles_update_own on public.profiles;
+create policy profiles_update_own on public.profiles for update
+  using (id = auth.uid() or public.is_admin())
+  with check (id = auth.uid() or public.is_admin());
+
+-- ----------------------------------------------------------------- atis
+
+-- Kendi atislarin + onayli arkadaslarinin SAGA attiklari.
+-- Arkadasinin sola attigi kimseyi ilgilendirmiyor.
+drop policy if exists swipes_read on public.swipes;
+create policy swipes_read on public.swipes for select
+  using (
+    user_id = auth.uid()
+    or (direction = 'right' and public.is_friend(user_id))
+  );
+
+drop policy if exists swipes_insert_own on public.swipes;
+create policy swipes_insert_own on public.swipes for insert
+  with check (user_id = auth.uid());
+
+drop policy if exists swipes_update_own on public.swipes;
+create policy swipes_update_own on public.swipes for update
+  using (user_id = auth.uid()) with check (user_id = auth.uid());
+
+drop policy if exists swipes_delete_own on public.swipes;
+create policy swipes_delete_own on public.swipes for delete
+  using (user_id = auth.uid());
+
+-- ------------------------------------------------------------ beforehours
+
+drop policy if exists comments_read on public.comments;
+create policy comments_read on public.comments for select
+  using (not is_hidden or public.is_admin());
+
+-- Yazmak giris ister ve baskasinin adina yazilamaz.
+drop policy if exists comments_insert on public.comments;
+create policy comments_insert on public.comments for insert
+  with check (author_id = auth.uid());
+
+drop policy if exists comments_update on public.comments;
+create policy comments_update on public.comments for update
+  using (author_id = auth.uid() or public.is_admin())
+  with check (author_id = auth.uid() or public.is_admin());
+
+drop policy if exists comments_delete on public.comments;
+create policy comments_delete on public.comments for delete
+  using (author_id = auth.uid() or public.is_admin());
+
+-- ------------------------------------------------------------ arkadaslik
+
+drop policy if exists friendships_read on public.friendships;
+create policy friendships_read on public.friendships for select
+  using (requester_id = auth.uid() or addressee_id = auth.uid());
+
+drop policy if exists friendships_insert on public.friendships;
+create policy friendships_insert on public.friendships for insert
+  with check (requester_id = auth.uid());
+
+-- Karsi taraf kabul eder, iki taraf da geri alabilir.
+drop policy if exists friendships_update on public.friendships;
+create policy friendships_update on public.friendships for update
+  using (requester_id = auth.uid() or addressee_id = auth.uid())
+  with check (requester_id = auth.uid() or addressee_id = auth.uid());
+
+drop policy if exists friendships_delete on public.friendships;
+create policy friendships_delete on public.friendships for delete
+  using (requester_id = auth.uid() or addressee_id = auth.uid());
+
+-- ---------------------------------------------------------------- izinler
+
+grant usage on schema public to anon, authenticated;
+
+grant select on public.cities, public.event_types, public.venues,
+                public.events, public.profiles, public.comments to anon, authenticated;
+
+grant insert, update, delete on public.swipes, public.comments, public.friendships to authenticated;
+grant select on public.swipes, public.friendships to authenticated;
+grant update on public.profiles to authenticated;
+grant insert, update, delete on public.cities, public.event_types,
+                                 public.venues, public.events to authenticated;
