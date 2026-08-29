@@ -2332,3 +2332,178 @@ body.arkadaslar .giris {
   .ex-kutu { align-self: center; }
   .ex-kutu-liste { width: min(88vw, 316px); }
 }
+
+/* ---------- Dipnot: her sayfanin altindaki kucuk serit ---------- */
+
+/* Menunun altindaki ince yazilarla ayni dil: mono, 10px, aralikli.
+   Icerigin degil, sayfanin dibinde duran kunye. */
+.dipnot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  padding: 22px 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.09);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.dipnot-ad { opacity: 0.38; }
+
+.dipnot-linkler {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.dipnot-linkler a {
+  color: var(--siyah);
+  text-decoration: none;
+  opacity: 0.38;
+  transition: opacity 0.25s ease;
+}
+
+.dipnot-linkler a:hover { opacity: 1; }
+.dipnot-linkler a[aria-current="page"] { opacity: 1; }
+
+/* Tam ekran sayfalar (explore, maps) dikeyde kaymiyor: orada serit
+   cizgisiz olarak bos kosede duruyor ve duzeni hic itmiyor. */
+.dipnot.ince {
+  position: fixed;
+  z-index: 5;
+  bottom: 26px;
+  left: 32px;
+  width: auto;
+  padding: 0;
+  border-top: 0;
+}
+
+.dipnot.ince .dipnot-ad { display: none; }
+.dipnot.ince.sag { left: auto; right: 32px; }
+
+/* Serit gercekten sayfanin DIBINDE dursun. Icerigi kisa olan
+   sayfalarda (henuz bos etkinlik sayfalari gibi) yoksa menunun hemen
+   altina yapisiyordu: govde sutun olarak diziliyor, serit de arta kalan
+   bosluk kadar asagi itiliyor. */
+body:has(> .dipnot:not(.ince)) {
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body:has(> .dipnot:not(.ince)) > .dipnot { margin-top: auto; }
+
+/* Ortalanmis sayfalar seridin payini birakiyor; yoksa her biri bir
+   serit boyu kaymaya basliyordu. */
+.giris { min-height: calc(100dvh - 58px); }
+
+/* ---------- Hesap sayfasi: girisin yanindaki kisa yollar ---------- */
+
+/* Solda giris, ortada ve en sagda birer kisa yol. Ucu de ayni satirdan
+   basliyor: satirin kendisi dikeyde ortalaniyor, sutunlar tepeden
+   hizalaniyor. */
+.hesap-sayfa {
+  max-width: none;
+  display: grid;
+  /* Ucuncu sutun icerigi kadar: boylece sagdaki blok menudeki
+     "login" ve dipnottaki "agb" ile ayni kenara oturuyor. Ilk iki
+     sutun esnek ve 1.9:1 — soldaki basligin bir satirda kalmasi bu
+     orana bagli, sabit genislik verilirse dar ekranda ortadaki tasiyor. */
+  grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr) auto;
+  gap: 44px;
+  align-content: center;
+  align-items: start;
+}
+
+/* Uc baslik da ayni olcude. Sayfanin genisligine gore kuculuyorlar
+   (7vw yerine 5vw): ucu yan yana dururken sabit 76px dar ekranda
+   birbirinin uzerine biniyordu. */
+.hesap-sayfa .giris-baslik,
+.hs-baslik {
+  font-size: min(5vw, 72px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+}
+
+.hs-alt {
+  margin-top: 20px;
+  font-size: 15px;
+  opacity: 0.55;
+}
+
+.hs-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding-bottom: 2px;
+  color: var(--siyah);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  transition: border-color 0.25s ease;
+}
+
+.hs-link:hover { border-bottom-color: var(--siyah); }
+
+/* ---------- Hukuk sayfalari ---------- */
+
+.hukuk { max-width: 700px; }
+
+/* Bu metinler daha oturana kadar ne olduklarini kendileri soylesin */
+.hukuk-uyari {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-bottom: 18px;
+}
+
+.hukuk .hesap { margin-bottom: 30px; }
+.hukuk .hesap-baslik { margin-bottom: 8px; }
+.hukuk .yardim-metin + .yardim-metin { margin-top: 12px; }
+
+.hukuk-liste {
+  list-style: none;
+  font-size: 16px;
+  line-height: 1.62;
+  opacity: 0.78;
+}
+
+.hukuk-liste li { padding-left: 18px; position: relative; }
+.hukuk-liste li::before { content: "—"; position: absolute; left: 0; opacity: 0.5; }
+
+.hukuk-tarih {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.38;
+  margin-top: 10px;
+}
+
+@media (max-width: 720px) {
+  /* Telefonda uc sutun alt alta */
+  .hesap-sayfa { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .hesap-sayfa .giris-baslik, .hs-baslik { font-size: min(7vw, 72px); }
+
+  .dipnot { padding: 20px 16px; }
+  .dipnot-linkler { gap: 16px; }
+
+  /* Telefonda explore ve maps de akiyor: serit sabit durmak yerine
+     digerleriyle ayni sekilde sayfanin sonuna otursun. */
+  .dipnot.ince {
+    position: static;
+    padding: 20px 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.09);
+  }
+
+  .dipnot.ince .dipnot-ad { display: block; }
+  .hukuk-liste { font-size: 15px; }
+}

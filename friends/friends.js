@@ -19,6 +19,7 @@
   const arkDurum = document.getElementById("arkadas-durum");
   const arkListe = document.getElementById("arkadas-liste");
   const tutListe = document.getElementById("tutulan-liste");
+  const nrBolum = document.querySelector(".nr-bolum");
 
   const CEVAP = {
     gonderildi: "request sent.",
@@ -31,6 +32,7 @@
     const girisli = Boolean(window.AH && AH.girisliMi && AH.girisliMi());
     disarida.hidden = girisli;
     icerde.hidden = !girisli;
+    tanidiklar(girisli);
     if (girisli) { handleYukle(); arkadaslariYukle(); tutulanlariYukle(); }
   }
 
@@ -165,8 +167,14 @@
 
   /* --- nachtradar'dan gelenler --- */
 
-  /* Girise bagli degil: nachtradar listesi herkese ayni gorunuyor,
-     cunku simdilik sabit. Isimler; fotograf ya da rozet yok. */
+  /* Liste girmemis birine "burada tanidiklarin var" demek icin var;
+     girmis biri kendi arkadaslarini goruyor, o zaman kayboluyor. */
+  function tanidiklar(girisli) {
+    if (nrBolum) nrBolum.hidden = girisli;
+  }
+
+  /* Icerik herkese ayni, cunku simdilik sabit bir liste.
+     Isimler; fotograf ya da rozet yok. */
   function nachtradarCiz() {
     const kutu = document.getElementById("nr");
     const aciklama = document.getElementById("nr-aciklama");
@@ -210,6 +218,10 @@
   }
 
   nachtradarCiz();
+
+  /* Jeton yerelde duruyor: karari ilk boyamadan once verebiliyoruz,
+     boylece girisliye liste bir an gorunup kaybolmuyor. */
+  tanidiklar(Boolean(window.AH && AH.girisliMi && AH.girisliMi()));
 
   /* --- acilis --- */
 

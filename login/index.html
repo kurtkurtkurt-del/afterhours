@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=86" />
+  <link rel="stylesheet" href="../style.css?v=94" />
 </head>
 <body>
 
@@ -26,7 +26,8 @@
     </nav>
   </header>
 
-  <main class="giris">
+  <main class="giris hesap-sayfa">
+   <div class="hs-sol">
     <h1 class="giris-baslik">good to see you<br />again.</h1>
 
     <form class="giris-form" id="giris-form" novalidate>
@@ -48,13 +49,47 @@
 
       <button class="giris-cik" id="giris-cik" type="button">sign out</button>
     </div>
+   </div>
+
+   <!-- Girisin yanindaki iki kisa yol; basliklariyla ayni satirda.
+        Ortadaki oturuma gore degisiyor (login/hesap.js). -->
+   <section class="hs-yol">
+     <div id="hs-disarida">
+       <h2 class="hs-baslik">first<br />time?</h2>
+       <p class="hs-alt">register to afterhours</p>
+       <a class="hs-link" href="../register/index.html">here you go</a>
+     </div>
+
+     <div id="hs-icerde" hidden>
+       <h2 class="hs-baslik">account<br />settings.</h2>
+       <p class="hs-alt">control your profile</p>
+       <a class="hs-link" href="../settings/index.html">settings</a>
+     </div>
+   </section>
+
+   <section class="hs-yol">
+     <h2 class="hs-baslik">give<br />feedback.</h2>
+     <p class="hs-alt">tell us what is missing</p>
+     <a class="hs-link" href="../feedback/index.html">help us</a>
+   </section>
   </main>
 
-  <script src="../ayar.js?v=86"></script>
-  <script src="../oturum.js?v=86"></script>
-  <script src="../menu.js?v=86"></script>
-  <script src="../veri.js?v=86"></script>
-  <script src="login.js?v=86"></script>
+
+  <footer class="dipnot">
+    <p class="dipnot-ad">&copy; 2026 afterhours</p>
+    <nav class="dipnot-linkler">
+      <a href="../impressum/index.html">impressum</a>
+      <a href="../datenschutz/index.html">datenschutz</a>
+      <a href="../agb/index.html">agb</a>
+    </nav>
+  </footer>
+
+  <script src="../ayar.js?v=94"></script>
+  <script src="../oturum.js?v=94"></script>
+  <script src="../menu.js?v=94"></script>
+  <script src="../veri.js?v=94"></script>
+  <script src="login.js?v=94"></script>
+  <script src="hesap.js?v=94"></script>
 
 </body>
 </html>
