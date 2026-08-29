@@ -95,7 +95,9 @@ create table if not exists public.profiles (
 -- Biriktirilen kartlar ayri bir tablo degil: yonu 'right' olan atislardir.
 create table if not exists public.swipes (
   id          uuid primary key default gen_random_uuid(),
-  user_id     uuid not null references public.profiles on delete cascade,
+  -- Varsayilan oturumdaki kisi: tarayici kimin adina yazdigini
+  -- hic gondermiyor, uydurma sansi da kalmiyor.
+  user_id     uuid not null default auth.uid() references public.profiles on delete cascade,
   event_id    uuid not null references public.events on delete cascade,
   direction   text not null check (direction in ('left', 'right')),
   created_at  timestamptz not null default now(),
@@ -112,7 +114,7 @@ create table if not exists public.comments (
   id          uuid primary key default gen_random_uuid(),
   event_id    uuid not null references public.events on delete cascade,
   parent_id   uuid references public.comments on delete cascade,
-  author_id   uuid references public.profiles on delete set null,
+  author_id   uuid default auth.uid() references public.profiles on delete set null,
   -- gercek kullanicisi olmayan ornek yorumlar icin
   author_name text,
   body        text not null check (length(btrim(body)) > 0),
@@ -162,7 +164,7 @@ create trigger comments_depth
 -- ------------------------------------------------------------ arkadaslik
 
 create table if not exists public.friendships (
-  requester_id  uuid not null references public.profiles on delete cascade,
+  requester_id  uuid not null default auth.uid() references public.profiles on delete cascade,
   addressee_id  uuid not null references public.profiles on delete cascade,
   status        text not null default 'pending' check (status in ('pending', 'accepted')),
   created_at    timestamptz not null default now(),

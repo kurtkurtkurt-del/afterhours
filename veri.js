@@ -56,7 +56,12 @@
       /* events-data.js POSTERS'i `const` ile tanimliyor: global sozluksel
          bir bag, window'un ozelligi degil. window.POSTERS undefined'dir,
          cikplak POSTERS ise calisir. */
-      try { numaralandir(POSTERS); } catch (_) {}
+      try {
+        numaralandir(POSTERS);
+        /* Diger modullerin (atislar.js) gorebilmesi icin window'a da
+           bagla; `const` tek basina window'a yazmiyor. */
+        window.POSTERS = POSTERS;
+      } catch (_) {}
     });
   }
 
@@ -106,9 +111,14 @@
 
   /* --- acilis ------------------------------------------------------ */
 
+  /* Oturum once cozulsun: deste "daha once attiklarimi" eleyecekse
+     istek jetonla gitmeli. oturum.js yoksa beklenecek bir sey de yok. */
+  const oturum = Promise.resolve(AH.oturumHazir || null).catch(() => null);
+
   const hazir = !acik
     ? yedegeDon(null)
-    : AH.etkinlikler()
+    : oturum
+        .then(() => AH.etkinlikler())
         .then((liste) => {
           if (!liste.length) throw new Error("veritabani bos");
           window.POSTERS = numaralandir(liste);

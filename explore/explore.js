@@ -133,7 +133,11 @@
   function ucur(kart, yon) {
     if (kart.dataset.uctu) return;
     kart.dataset.uctu = "1";
-    if (yon > 0) tut(POSTERS[Number(kart.dataset.no)]);
+    const atilan = POSTERS[Number(kart.dataset.no)];
+    if (yon > 0) tut(atilan);
+    /* Her iki yon de kaydediliyor: sag biriktirmek, sol "bir daha gosterme".
+       Girisliyken veritabanina, degilse tarayiciya. */
+    if (window.AH && AH.atisKaydet) AH.atisKaydet(atilan, yon);
     kart.classList.remove("tutuluyor");
     kart.classList.add("yumusak");
     kart.style.transform = "translateX(" + (yon * 120) + "vw) rotate(" + (yon * 22) + "deg)";
@@ -316,8 +320,16 @@
 
   /* Desteyi hep GORUNEN kart dolu tut: en arkaya ekleyip
      en ustteki (son cocuk) surukleniyor. */
+  /* Daha once atilmis kartlar bir daha gelmesin. Girisliyken bu eleme
+     zaten veritabaninda yapiliyor (deck fonksiyonu), burasi girissiz
+     gezenler icin. */
+  const atlanacak = new Set(
+    window.AH && AH.atilanlar ? AH.atilanlar() : []
+  );
+
   function doldur() {
     while (deste.children.length < GORUNEN && sira < POSTERS.length) {
+      if (atlanacak.has(POSTERS[sira].slug)) { sira++; continue; }
       deste.insertBefore(kartYap(sira), deste.firstChild);
       sira++;
     }
@@ -389,6 +401,13 @@
       yenidenDagit();
     });
   });
+
+  /* Onceki oturumdan biriktirilenler geri gelsin (rozet ve liste). */
+  if (window.AH && AH.biriktirilenler) {
+    AH.biriktirilenler().then((liste) => {
+      liste.slice().reverse().forEach(tut);
+    });
+  }
 
   doldur();
 })();

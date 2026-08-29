@@ -125,10 +125,13 @@ console.log("\n— giris yapmis kullanici —");
     `update public.profiles set is_admin = true where id = '${ARKADAS}'`,
     "kullanici kendini yonetici yapamiyor");
 
-  await db.exec(`insert into public.swipes (user_id, event_id, direction)
-                 select '${ARKADAS}', id, 'right' from public.events where slug = 'asap-rocky'`);
-  const r = await db.query(`select count(*)::int as n from public.swipes`);
-  olmali(r.rows[0].n === 1, "kendi atisini kaydedebiliyor");
+  /* user_id gonderilmiyor: varsayilani auth.uid(). Tarayicinin kimin
+     adina yazdigini soylemesi gerekmiyor. */
+  await db.exec(`insert into public.swipes (event_id, direction)
+                 select id, 'right' from public.events where slug = 'asap-rocky'`);
+  const r = await db.query(`select user_id from public.swipes`);
+  olmali(r.rows.length === 1, "kendi atisini kaydedebiliyor");
+  olmali(r.rows[0].user_id === ARKADAS, "user_id oturumdan kendiliginden dolduruldu");
 
   await reddedilmeli(db,
     `insert into public.swipes (user_id, event_id, direction)

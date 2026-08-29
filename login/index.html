@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=41" />
+  <link rel="stylesheet" href="../style.css?v=43" />
 </head>
 <body>
 
@@ -23,6 +23,28 @@
       <a href="../login/index.html" aria-current="page">login</a>
     </nav>
   </header>
+
+  <main class="giris">
+    <h1 class="giris-baslik">one link,<br />no password.</h1>
+
+    <form class="giris-form" id="giris-form" novalidate>
+      <label class="giris-etiket" for="giris-eposta">your email</label>
+      <input class="giris-alan" id="giris-eposta" type="email" name="email"
+             autocomplete="email" placeholder="you@example.com" required />
+      <button class="giris-dugme" id="giris-dugme" type="submit">send me a link</button>
+    </form>
+
+    <p class="giris-not" id="giris-not"></p>
+
+    <div class="giris-icerde" id="giris-icerde" hidden>
+      <p class="giris-kim" id="giris-kim"></p>
+      <button class="giris-cik" id="giris-cik" type="button">sign out</button>
+    </div>
+  </main>
+
+  <script src="../ayar.js?v=43"></script>
+  <script src="../oturum.js?v=43"></script>
+  <script src="login.js?v=43"></script>
 
 </body>
 </html>
