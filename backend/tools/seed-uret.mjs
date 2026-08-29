@@ -27,7 +27,20 @@ const { YORUM_HAVUZU, YORUMLARI_GETIR } =
 
 /* ---- yardimcilar ----------------------------------------------------- */
 
-const q = (v) => (v === null || v === undefined ? "null" : "'" + String(v).replace(/'/g, "''") + "'");
+/* Metin degerleri.
+
+   Kesme isareti iceren metinleri kacisli tirnakla ('') yazmak Postgres
+   icin dogru, ama SQL EDITORLERININ ayristiricisi icin degil: Supabase
+   panelinde '...aren''t...' satiri tirnak sayimini kaydirdi ve metnin
+   gerisi kod sanildi ("relation \"one\" does not exist"). Dolar tirnagi
+   bu sorunu tamamen ortadan kaldiriyor. */
+const q = (v) => {
+  if (v === null || v === undefined) return "null";
+  const s = String(v);
+  if (!s.includes("'")) return "'" + s + "'";
+  if (!s.includes("$ah$")) return "$ah$" + s + "$ah$";
+  return "'" + s.replace(/'/g, "''") + "'";      /* ikisi de varsa: eski yol */
+};
 const slugla = (s) =>
   s.toLowerCase()
     .replace(/ü/g, "u").replace(/ö/g, "o").replace(/ä/g, "a").replace(/ß/g, "ss")

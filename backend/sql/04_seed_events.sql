@@ -5,7 +5,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'asap-rocky', c.id, t.id, v.id,
-       'A$AP Rocky', 'Olympiahalle · 11.09.26 · 18:30', 'An arena show built around one voice. Doors early, everyone seated until they aren''t.', 1,
+       'A$AP Rocky', 'Olympiahalle · 11.09.26 · 18:30', $ah$An arena show built around one voice. Doors early, everyone seated until they aren't.$ah$, 1,
        '2026-09-11T18:30:00+02:00'::timestamptz, false, '11.09.26 · 18:30'
 from public.cities c
 join public.event_types t on t.slug = 'konzert'
@@ -41,7 +41,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'thirty-seconds-to-mars', c.id, t.id, v.id,
-       'Thirty Seconds to Mars', 'Olympiahalle · 12.04.27', 'Stadium rock at hall scale. Bring a voice you don''t mind losing.', 4,
+       'Thirty Seconds to Mars', 'Olympiahalle · 12.04.27', $ah$Stadium rock at hall scale. Bring a voice you don't mind losing.$ah$, 4,
        '2027-04-12T20:00:00+02:00'::timestamptz, false, '12.04.27'
 from public.cities c
 join public.event_types t on t.slug = 'konzert'
@@ -113,7 +113,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'zamanand', c.id, t.id, null,
-       'Zamanand', 'München · 12.09 · 16:00', 'Starts in daylight and never quite admits it''s a festival. Local bills, no headliner hierarchy.', 10,
+       'Zamanand', 'München · 12.09 · 16:00', $ah$Starts in daylight and never quite admits it's a festival. Local bills, no headliner hierarchy.$ah$, 10,
        '2026-09-12T14:00:00.000Z'::timestamptz, true, '12.09 · 16:00'
 from public.cities c
 join public.event_types t on t.slug = 'festival'
@@ -158,7 +158,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'cfu-open-air', c.id, t.id, v.id,
-       'CFU Open Air', 'Bahnwärter Thiel · 18.07 · 14:00', 'Outside while it''s warm, inside when it isn''t. The same crowd moves between both all afternoon.', 14,
+       'CFU Open Air', 'Bahnwärter Thiel · 18.07 · 14:00', $ah$Outside while it's warm, inside when it isn't. The same crowd moves between both all afternoon.$ah$, 14,
        '2027-07-18T12:00:00.000Z'::timestamptz, true, '18.07 · 14:00'
 from public.cities c
 join public.event_types t on t.slug = 'rave'
@@ -181,7 +181,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'echonomist', c.id, t.id, v.id,
-       'Echonomist', 'Pimpernel · 25.09 · 22:00', 'Staged inside a former cinema — the screen stays up, the seats don''t. Sound follows the room.', 16,
+       'Echonomist', 'Pimpernel · 25.09 · 22:00', $ah$Staged inside a former cinema — the screen stays up, the seats don't. Sound follows the room.$ah$, 16,
        '2026-09-25T20:00:00.000Z'::timestamptz, true, '25.09 · 22:00'
 from public.cities c
 join public.event_types t on t.slug = 'club-night'
@@ -251,7 +251,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select '3-stock-links', c.id, t.id, v.id,
-       '3. Stock Links', 'Haidhausen · 05.07 · 20:00', 'Balcony party with string lights and a borrowed speaker. Quiet by two, that''s the deal with the neighbours.', 22,
+       '3. Stock Links', 'Haidhausen · 05.07 · 20:00', $ah$Balcony party with string lights and a borrowed speaker. Quiet by two, that's the deal with the neighbours.$ah$, 22,
        '2027-07-05T18:00:00.000Z'::timestamptz, true, '05.07 · 20:00'
 from public.cities c
 join public.event_types t on t.slug = 'hausparty'
@@ -322,7 +322,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'kaffee-karten', c.id, t.id, v.id,
-       'Kaffee & Karten', 'Westend · Sonntags · 15:00', 'Card games and too much coffee. Daylight only — it''s over before anything else starts.', 28,
+       'Kaffee & Karten', 'Westend · Sonntags · 15:00', $ah$Card games and too much coffee. Daylight only — it's over before anything else starts.$ah$, 28,
        null, false, 'Sonntags · 15:00'
 from public.cities c
 join public.event_types t on t.slug = 'meetup'
@@ -345,7 +345,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'sprechstunde', c.id, t.id, v.id,
-       'Sprechstunde', 'Untergiesing · Mittwochs · 19:30', 'An open round table — you talk about what you''re making, someone tells you what''s wrong with it.', 30,
+       'Sprechstunde', 'Untergiesing · Mittwochs · 19:30', $ah$An open round table — you talk about what you're making, someone tells you what's wrong with it.$ah$, 30,
        null, false, 'Mittwochs · 19:30'
 from public.cities c
 join public.event_types t on t.slug = 'meetup'
@@ -405,7 +405,7 @@ insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select 'spiegelsaal', c.id, t.id, v.id,
-       'Spiegelsaal', 'P1 · 06.12 · 23:00', 'Italo and disco under an actual mirror ball. The most fun you''ll have taking nothing seriously.', 35,
+       'Spiegelsaal', 'P1 · 06.12 · 23:00', $ah$Italo and disco under an actual mirror ball. The most fun you'll have taking nothing seriously.$ah$, 35,
        '2026-12-06T21:00:00.000Z'::timestamptz, true, '06.12 · 23:00'
 from public.cities c
 join public.event_types t on t.slug = 'club-night'

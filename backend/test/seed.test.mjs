@@ -99,6 +99,30 @@ console.log("\n— yorumlarin sitedeki secimle ayni oldugu —");
   olmali(oksuz.rows[0].n === 0, "her cevap bir konuya bagli");
 }
 
+console.log("— SQL editorlerinde ayristirilabilirlik —");
+{
+  /* Supabase panelinde gercekten yasandi: kacisli tirnak ('') iceren bir
+     metin, editorun tarayicidaki ayristiricisinda tirnak sayimini
+     kaydirdi ve gerisi kod sanildi ("relation \"one\" does not exist").
+     Uretilen dosyalarda metin degerleri artik dolar tirnagiyla yazilir. */
+  for (const d of ["../sql/04_seed_events.sql", "../sql/05_seed_comments.sql",
+                   "../sql/kurulum-1-yapi.sql", "../sql/kurulum-2-yorumlar.sql"]) {
+    const metin = await oku(d).catch(() => null);
+    if (metin === null) continue;
+    /* Bos metin ('') sorun degil; sorun olan, icinde karakter olan kacis */
+    const kacislar = (metin.match(/'[^'\n]*''/g) || []);
+    olmali(kacislar.length === 0,
+      d.split("/").pop() + ": kacisli tirnakli metin yok",
+      kacislar.slice(0, 2).join(" | "));
+  }
+
+  /* Dolar tirnagi kullaniliyorsa metinlerin icinde kapanis etiketi
+     olmamali, yoksa metin erken biter. */
+  const yorumlar = await oku("../sql/05_seed_comments.sql");
+  const kotu = yorumlar.split("$ah$").length % 2 === 0;
+  olmali(!kotu, "dolar tirnaklari dengeli");
+}
+
 console.log("\n— iliskiler —");
 {
   const eksik = await db.query(`

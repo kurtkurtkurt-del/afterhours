@@ -15,7 +15,7 @@
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'dnk', 'Tram 20 back to the centre after is packed. U3 from Olympiazentrum is emptier even if it''s a longer walk.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'dnk', $ah$Tram 20 back to the centre after is packed. U3 from Olympiazentrum is emptier even if it's a longer walk.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'asap-rocky'
   returning id, event_id
 )
@@ -23,12 +23,12 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'seraph', 'Tickets moved faster than last time. Two of us have spares if anyone''s short.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
+  select id, 'seraph', $ah$Tickets moved faster than last time. Two of us have spares if anyone's short.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
   from public.events where slug = 'asap-rocky'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'juli', 'Still going? I''d take one.', '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz from konu
+  select konu.event_id, konu.id, 'juli', $ah$Still going? I'd take one.$ah$, '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz from konu
   union all
   select konu.event_id, konu.id, 'seraph', 'Gone — but people keep dropping them in here the week of.', '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz from konu;
 
@@ -39,7 +39,7 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'lena_k', 'It''s real. Bring a voice you don''t need tomorrow.', '3 h ago', '2026-08-29T16:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'lena_k', $ah$It's real. Bring a voice you don't need tomorrow.$ah$, '3 h ago', '2026-08-29T16:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -52,7 +52,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'marek', 'Olympiahalle sound is fine if you''re not under the balcony. Anything past block D and it turns to soup.', 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
+  select id, 'marek', $ah$Olympiahalle sound is fine if you're not under the balcony. Anything past block D and it turns to soup.$ah$, 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'asap-rocky'
   returning id, event_id
 )
@@ -66,22 +66,22 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'lena_k', 'It''s real. Bring a voice you don''t need tomorrow.', '3 h ago', '2026-08-29T16:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'lena_k', $ah$It's real. Bring a voice you don't need tomorrow.$ah$, '3 h ago', '2026-08-29T16:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'seraph', 'Tickets moved faster than last time. Two of us have spares if anyone''s short.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
+  select id, 'seraph', $ah$Tickets moved faster than last time. Two of us have spares if anyone's short.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
   from public.events where slug = 'nick-cave'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'juli', 'Still going? I''d take one.', '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz from konu
+  select konu.event_id, konu.id, 'juli', $ah$Still going? I'd take one.$ah$, '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz from konu
   union all
   select konu.event_id, konu.id, 'seraph', 'Gone — but people keep dropping them in here the week of.', '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'dnk', 'Tram 20 back to the centre after is packed. U3 from Olympiazentrum is emptier even if it''s a longer walk.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'dnk', $ah$Tram 20 back to the centre after is packed. U3 from Olympiazentrum is emptier even if it's a longer walk.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'nick-cave'
   returning id, event_id
 )
@@ -89,7 +89,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'hbf_nights', 'Doors said 18:30 and the support started 19:40. Don''t rush your dinner.', 'Mar 2025', '2025-03-15T20:00:00.000Z'::timestamptz
+  select id, 'hbf_nights', $ah$Doors said 18:30 and the support started 19:40. Don't rush your dinner.$ah$, 'Mar 2025', '2025-03-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'nick-cave'
   returning id, event_id
 )
@@ -97,7 +97,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'marek', 'Olympiahalle sound is fine if you''re not under the balcony. Anything past block D and it turns to soup.', 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
+  select id, 'marek', $ah$Olympiahalle sound is fine if you're not under the balcony. Anything past block D and it turns to soup.$ah$, 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'nick-cave'
   returning id, event_id
 )
@@ -106,18 +106,18 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'seraph', 'Tickets moved faster than last time. Two of us have spares if anyone''s short.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
+  select id, 'seraph', $ah$Tickets moved faster than last time. Two of us have spares if anyone's short.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
   from public.events where slug = 'bonez-mc-raf-camora'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'juli', 'Still going? I''d take one.', '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz from konu
+  select konu.event_id, konu.id, 'juli', $ah$Still going? I'd take one.$ah$, '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz from konu
   union all
   select konu.event_id, konu.id, 'seraph', 'Gone — but people keep dropping them in here the week of.', '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'dnk', 'Tram 20 back to the centre after is packed. U3 from Olympiazentrum is emptier even if it''s a longer walk.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'dnk', $ah$Tram 20 back to the centre after is packed. U3 from Olympiazentrum is emptier even if it's a longer walk.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'bonez-mc-raf-camora'
   returning id, event_id
 )
@@ -130,7 +130,7 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'lena_k', 'It''s real. Bring a voice you don''t need tomorrow.', '3 h ago', '2026-08-29T16:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'lena_k', $ah$It's real. Bring a voice you don't need tomorrow.$ah$, '3 h ago', '2026-08-29T16:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -143,7 +143,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'marek', 'Olympiahalle sound is fine if you''re not under the balcony. Anything past block D and it turns to soup.', 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
+  select id, 'marek', $ah$Olympiahalle sound is fine if you're not under the balcony. Anything past block D and it turns to soup.$ah$, 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'bonez-mc-raf-camora'
   returning id, event_id
 )
@@ -157,11 +157,11 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'lena_k', 'It''s real. Bring a voice you don''t need tomorrow.', '3 h ago', '2026-08-29T16:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'lena_k', $ah$It's real. Bring a voice you don't need tomorrow.$ah$, '3 h ago', '2026-08-29T16:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'dnk', 'Tram 20 back to the centre after is packed. U3 from Olympiazentrum is emptier even if it''s a longer walk.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'dnk', $ah$Tram 20 back to the centre after is packed. U3 from Olympiazentrum is emptier even if it's a longer walk.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'thirty-seconds-to-mars'
   returning id, event_id
 )
@@ -169,18 +169,18 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'seraph', 'Tickets moved faster than last time. Two of us have spares if anyone''s short.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
+  select id, 'seraph', $ah$Tickets moved faster than last time. Two of us have spares if anyone's short.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
   from public.events where slug = 'thirty-seconds-to-mars'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'juli', 'Still going? I''d take one.', '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz from konu
+  select konu.event_id, konu.id, 'juli', $ah$Still going? I'd take one.$ah$, '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz from konu
   union all
   select konu.event_id, konu.id, 'seraph', 'Gone — but people keep dropping them in here the week of.', '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'hbf_nights', 'Doors said 18:30 and the support started 19:40. Don''t rush your dinner.', 'Mar 2025', '2025-03-15T20:00:00.000Z'::timestamptz
+  select id, 'hbf_nights', $ah$Doors said 18:30 and the support started 19:40. Don't rush your dinner.$ah$, 'Mar 2025', '2025-03-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'thirty-seconds-to-mars'
   returning id, event_id
 )
@@ -197,12 +197,12 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'seraph', 'Tickets moved faster than last time. Two of us have spares if anyone''s short.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
+  select id, 'seraph', $ah$Tickets moved faster than last time. Two of us have spares if anyone's short.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
   from public.events where slug = 'annenmaykantereit'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'juli', 'Still going? I''d take one.', '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz from konu
+  select konu.event_id, konu.id, 'juli', $ah$Still going? I'd take one.$ah$, '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz from konu
   union all
   select konu.event_id, konu.id, 'seraph', 'Gone — but people keep dropping them in here the week of.', '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz from konu;
 
@@ -213,11 +213,11 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'lena_k', 'It''s real. Bring a voice you don''t need tomorrow.', '3 h ago', '2026-08-29T16:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'lena_k', $ah$It's real. Bring a voice you don't need tomorrow.$ah$, '3 h ago', '2026-08-29T16:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'dnk', 'Tram 20 back to the centre after is packed. U3 from Olympiazentrum is emptier even if it''s a longer walk.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'dnk', $ah$Tram 20 back to the centre after is packed. U3 from Olympiazentrum is emptier even if it's a longer walk.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'annenmaykantereit'
   returning id, event_id
 )
@@ -234,7 +234,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'marek', 'Olympiahalle sound is fine if you''re not under the balcony. Anything past block D and it turns to soup.', 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
+  select id, 'marek', $ah$Olympiahalle sound is fine if you're not under the balcony. Anything past block D and it turns to soup.$ah$, 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'annenmaykantereit'
   returning id, event_id
 )
@@ -243,7 +243,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'obst', 'Weather looks like it''ll hold. Saying that out loud is probably a mistake.', '11 h ago', '2026-08-29T08:00:00.000Z'::timestamptz
+  select id, 'obst', $ah$Weather looks like it'll hold. Saying that out loud is probably a mistake.$ah$, '11 h ago', '2026-08-29T08:00:00.000Z'::timestamptz
   from public.events where slug = 'elysium'
   returning id, event_id
 )
@@ -256,7 +256,7 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'sanne', 'It fits inside one walk home if you stay east. That''s the whole point of it.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'sanne', $ah$It fits inside one walk home if you stay east. That's the whole point of it.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -265,11 +265,11 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'ferro', 'It''s always the better one. That''s the joke by now.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'ferro', $ah$It's always the better one. That's the joke by now.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'ferro', 'Went alone the first year and left with six people I still go out with. It''s that kind of field.', 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
+  select id, 'ferro', $ah$Went alone the first year and left with six people I still go out with. It's that kind of field.$ah$, 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'elysium'
   returning id, event_id
 )
@@ -278,7 +278,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sanne', 'Bring cash for the food stalls. Half of them still don''t take cards and the queue for the machine is its own festival.', 'July 2024', '2024-07-15T20:00:00.000Z'::timestamptz
+  select id, 'sanne', $ah$Bring cash for the food stalls. Half of them still don't take cards and the queue for the machine is its own festival.$ah$, 'July 2024', '2024-07-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'elysium'
   returning id, event_id
 )
@@ -291,7 +291,7 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'sanne', 'It fits inside one walk home if you stay east. That''s the whole point of it.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'sanne', $ah$It fits inside one walk home if you stay east. That's the whole point of it.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -300,11 +300,11 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'ferro', 'It''s always the better one. That''s the joke by now.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'ferro', $ah$It's always the better one. That's the joke by now.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'obst', 'Weather looks like it''ll hold. Saying that out loud is probably a mistake.', '11 h ago', '2026-08-29T08:00:00.000Z'::timestamptz
+  select id, 'obst', $ah$Weather looks like it'll hold. Saying that out loud is probably a mistake.$ah$, '11 h ago', '2026-08-29T08:00:00.000Z'::timestamptz
   from public.events where slug = 'tollwood'
   returning id, event_id
 )
@@ -312,7 +312,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sanne', 'Bring cash for the food stalls. Half of them still don''t take cards and the queue for the machine is its own festival.', 'July 2024', '2024-07-15T20:00:00.000Z'::timestamptz
+  select id, 'sanne', $ah$Bring cash for the food stalls. Half of them still don't take cards and the queue for the machine is its own festival.$ah$, 'July 2024', '2024-07-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'tollwood'
   returning id, event_id
 )
@@ -320,7 +320,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'ferro', 'Went alone the first year and left with six people I still go out with. It''s that kind of field.', 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
+  select id, 'ferro', $ah$Went alone the first year and left with six people I still go out with. It's that kind of field.$ah$, 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'tollwood'
   returning id, event_id
 )
@@ -334,11 +334,11 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'ferro', 'It''s always the better one. That''s the joke by now.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'ferro', $ah$It's always the better one. That's the joke by now.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'obst', 'Weather looks like it''ll hold. Saying that out loud is probably a mistake.', '11 h ago', '2026-08-29T08:00:00.000Z'::timestamptz
+  select id, 'obst', $ah$Weather looks like it'll hold. Saying that out loud is probably a mistake.$ah$, '11 h ago', '2026-08-29T08:00:00.000Z'::timestamptz
   from public.events where slug = 'mondscheinexpress'
   returning id, event_id
 )
@@ -351,7 +351,7 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'sanne', 'It fits inside one walk home if you stay east. That''s the whole point of it.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'sanne', $ah$It fits inside one walk home if you stay east. That's the whole point of it.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -360,11 +360,11 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'roh', 'Best accidental afterhours I''ve had.', 'Aug 2023', '2023-08-15T20:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'roh', $ah$Best accidental afterhours I've had.$ah$, 'Aug 2023', '2023-08-15T20:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'ferro', 'Went alone the first year and left with six people I still go out with. It''s that kind of field.', 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
+  select id, 'ferro', $ah$Went alone the first year and left with six people I still go out with. It's that kind of field.$ah$, 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'mondscheinexpress'
   returning id, event_id
 )
@@ -373,7 +373,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'obst', 'Weather looks like it''ll hold. Saying that out loud is probably a mistake.', '11 h ago', '2026-08-29T08:00:00.000Z'::timestamptz
+  select id, 'obst', $ah$Weather looks like it'll hold. Saying that out loud is probably a mistake.$ah$, '11 h ago', '2026-08-29T08:00:00.000Z'::timestamptz
   from public.events where slug = 'isle-of-summer'
   returning id, event_id
 )
@@ -386,7 +386,7 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'ferro', 'It''s always the better one. That''s the joke by now.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'ferro', $ah$It's always the better one. That's the joke by now.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -395,11 +395,11 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'sanne', 'It fits inside one walk home if you stay east. That''s the whole point of it.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'sanne', $ah$It fits inside one walk home if you stay east. That's the whole point of it.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sanne', 'Bring cash for the food stalls. Half of them still don''t take cards and the queue for the machine is its own festival.', 'July 2024', '2024-07-15T20:00:00.000Z'::timestamptz
+  select id, 'sanne', $ah$Bring cash for the food stalls. Half of them still don't take cards and the queue for the machine is its own festival.$ah$, 'July 2024', '2024-07-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'isle-of-summer'
   returning id, event_id
 )
@@ -407,7 +407,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'ferro', 'Went alone the first year and left with six people I still go out with. It''s that kind of field.', 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
+  select id, 'ferro', $ah$Went alone the first year and left with six people I still go out with. It's that kind of field.$ah$, 'Sept 2024', '2024-09-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'isle-of-summer'
   returning id, event_id
 )
@@ -416,7 +416,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'obst', 'Weather looks like it''ll hold. Saying that out loud is probably a mistake.', '11 h ago', '2026-08-29T08:00:00.000Z'::timestamptz
+  select id, 'obst', $ah$Weather looks like it'll hold. Saying that out loud is probably a mistake.$ah$, '11 h ago', '2026-08-29T08:00:00.000Z'::timestamptz
   from public.events where slug = 'zamanand'
   returning id, event_id
 )
@@ -429,7 +429,7 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'sanne', 'It fits inside one walk home if you stay east. That''s the whole point of it.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'sanne', $ah$It fits inside one walk home if you stay east. That's the whole point of it.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -438,7 +438,7 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'ferro', 'It''s always the better one. That''s the joke by now.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'ferro', $ah$It's always the better one. That's the joke by now.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -447,11 +447,11 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'roh', 'Best accidental afterhours I''ve had.', 'Aug 2023', '2023-08-15T20:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'roh', $ah$Best accidental afterhours I've had.$ah$, 'Aug 2023', '2023-08-15T20:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sanne', 'Bring cash for the food stalls. Half of them still don''t take cards and the queue for the machine is its own festival.', 'July 2024', '2024-07-15T20:00:00.000Z'::timestamptz
+  select id, 'sanne', $ah$Bring cash for the food stalls. Half of them still don't take cards and the queue for the machine is its own festival.$ah$, 'July 2024', '2024-07-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'zamanand'
   returning id, event_id
 )
@@ -459,16 +459,16 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'grau', 'Bringing someone to their first one. Any advice that isn''t ''drink water''?', '2 h ago', '2026-08-29T17:00:00.000Z'::timestamptz
+  select id, 'grau', $ah$Bringing someone to their first one. Any advice that isn't 'drink water'?$ah$, '2 h ago', '2026-08-29T17:00:00.000Z'::timestamptz
   from public.events where slug = 'blitz'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'hallo_ben', 'Agree on a meeting spot. Phones die, the room is dark, that''s it.', '1 h ago', '2026-08-29T18:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'hallo_ben', $ah$Agree on a meeting spot. Phones die, the room is dark, that's it.$ah$, '1 h ago', '2026-08-29T18:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'esra_p', 'Who''s playing the back room? The flyer says nothing and that''s usually where the night actually happens.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'esra_p', $ah$Who's playing the back room? The flyer says nothing and that's usually where the night actually happens.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'blitz'
   returning id, event_id
 )
@@ -477,7 +477,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'lu', 'Door is doing a hard no on groups of guys again. Not a complaint, just don''t roll up six deep and act surprised.', '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz
+  select id, 'lu', $ah$Door is doing a hard no on groups of guys again. Not a complaint, just don't roll up six deep and act surprised.$ah$, '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz
   from public.events where slug = 'blitz'
   returning id, event_id
 )
@@ -494,7 +494,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'hallo_ben', 'Closing set ran two hours over and nobody working there seemed to mind. That''s the whole memory.', 'May 2025', '2025-05-15T20:00:00.000Z'::timestamptz
+  select id, 'hallo_ben', $ah$Closing set ran two hours over and nobody working there seemed to mind. That's the whole memory.$ah$, 'May 2025', '2025-05-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'blitz'
   returning id, event_id
 )
@@ -503,16 +503,16 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'grau', 'Bringing someone to their first one. Any advice that isn''t ''drink water''?', '2 h ago', '2026-08-29T17:00:00.000Z'::timestamptz
+  select id, 'grau', $ah$Bringing someone to their first one. Any advice that isn't 'drink water'?$ah$, '2 h ago', '2026-08-29T17:00:00.000Z'::timestamptz
   from public.events where slug = 'rote-sonne-bahnwarter'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'hallo_ben', 'Agree on a meeting spot. Phones die, the room is dark, that''s it.', '1 h ago', '2026-08-29T18:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'hallo_ben', $ah$Agree on a meeting spot. Phones die, the room is dark, that's it.$ah$, '1 h ago', '2026-08-29T18:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'esra_p', 'Who''s playing the back room? The flyer says nothing and that''s usually where the night actually happens.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'esra_p', $ah$Who's playing the back room? The flyer says nothing and that's usually where the night actually happens.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'rote-sonne-bahnwarter'
   returning id, event_id
 )
@@ -521,7 +521,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'lu', 'Door is doing a hard no on groups of guys again. Not a complaint, just don''t roll up six deep and act surprised.', '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz
+  select id, 'lu', $ah$Door is doing a hard no on groups of guys again. Not a complaint, just don't roll up six deep and act surprised.$ah$, '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz
   from public.events where slug = 'rote-sonne-bahnwarter'
   returning id, event_id
 )
@@ -530,7 +530,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'hallo_ben', 'Closing set ran two hours over and nobody working there seemed to mind. That''s the whole memory.', 'May 2025', '2025-05-15T20:00:00.000Z'::timestamptz
+  select id, 'hallo_ben', $ah$Closing set ran two hours over and nobody working there seemed to mind. That's the whole memory.$ah$, 'May 2025', '2025-05-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'rote-sonne-bahnwarter'
   returning id, event_id
 )
@@ -548,16 +548,16 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'grau', 'Bringing someone to their first one. Any advice that isn''t ''drink water''?', '2 h ago', '2026-08-29T17:00:00.000Z'::timestamptz
+  select id, 'grau', $ah$Bringing someone to their first one. Any advice that isn't 'drink water'?$ah$, '2 h ago', '2026-08-29T17:00:00.000Z'::timestamptz
   from public.events where slug = 'silo-west'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'hallo_ben', 'Agree on a meeting spot. Phones die, the room is dark, that''s it.', '1 h ago', '2026-08-29T18:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'hallo_ben', $ah$Agree on a meeting spot. Phones die, the room is dark, that's it.$ah$, '1 h ago', '2026-08-29T18:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'esra_p', 'Who''s playing the back room? The flyer says nothing and that''s usually where the night actually happens.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'esra_p', $ah$Who's playing the back room? The flyer says nothing and that's usually where the night actually happens.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'silo-west'
   returning id, event_id
 )
@@ -566,7 +566,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'lu', 'Door is doing a hard no on groups of guys again. Not a complaint, just don''t roll up six deep and act surprised.', '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz
+  select id, 'lu', $ah$Door is doing a hard no on groups of guys again. Not a complaint, just don't roll up six deep and act surprised.$ah$, '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz
   from public.events where slug = 'silo-west'
   returning id, event_id
 )
@@ -592,16 +592,16 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'grau', 'Bringing someone to their first one. Any advice that isn''t ''drink water''?', '2 h ago', '2026-08-29T17:00:00.000Z'::timestamptz
+  select id, 'grau', $ah$Bringing someone to their first one. Any advice that isn't 'drink water'?$ah$, '2 h ago', '2026-08-29T17:00:00.000Z'::timestamptz
   from public.events where slug = 'cfu-open-air'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'hallo_ben', 'Agree on a meeting spot. Phones die, the room is dark, that''s it.', '1 h ago', '2026-08-29T18:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'hallo_ben', $ah$Agree on a meeting spot. Phones die, the room is dark, that's it.$ah$, '1 h ago', '2026-08-29T18:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'lu', 'Door is doing a hard no on groups of guys again. Not a complaint, just don''t roll up six deep and act surprised.', '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz
+  select id, 'lu', $ah$Door is doing a hard no on groups of guys again. Not a complaint, just don't roll up six deep and act surprised.$ah$, '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz
   from public.events where slug = 'cfu-open-air'
   returning id, event_id
 )
@@ -610,7 +610,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'esra_p', 'Who''s playing the back room? The flyer says nothing and that''s usually where the night actually happens.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'esra_p', $ah$Who's playing the back room? The flyer says nothing and that's usually where the night actually happens.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'cfu-open-air'
   returning id, event_id
 )
@@ -619,7 +619,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'hallo_ben', 'Closing set ran two hours over and nobody working there seemed to mind. That''s the whole memory.', 'May 2025', '2025-05-15T20:00:00.000Z'::timestamptz
+  select id, 'hallo_ben', $ah$Closing set ran two hours over and nobody working there seemed to mind. That's the whole memory.$ah$, 'May 2025', '2025-05-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'cfu-open-air'
   returning id, event_id
 )
@@ -637,7 +637,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'esra_p', 'Who''s playing the back room? The flyer says nothing and that''s usually where the night actually happens.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'esra_p', $ah$Who's playing the back room? The flyer says nothing and that's usually where the night actually happens.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'daytime-rave'
   returning id, event_id
 )
@@ -646,16 +646,16 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'grau', 'Bringing someone to their first one. Any advice that isn''t ''drink water''?', '2 h ago', '2026-08-29T17:00:00.000Z'::timestamptz
+  select id, 'grau', $ah$Bringing someone to their first one. Any advice that isn't 'drink water'?$ah$, '2 h ago', '2026-08-29T17:00:00.000Z'::timestamptz
   from public.events where slug = 'daytime-rave'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'hallo_ben', 'Agree on a meeting spot. Phones die, the room is dark, that''s it.', '1 h ago', '2026-08-29T18:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'hallo_ben', $ah$Agree on a meeting spot. Phones die, the room is dark, that's it.$ah$, '1 h ago', '2026-08-29T18:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'lu', 'Door is doing a hard no on groups of guys again. Not a complaint, just don''t roll up six deep and act surprised.', '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz
+  select id, 'lu', $ah$Door is doing a hard no on groups of guys again. Not a complaint, just don't roll up six deep and act surprised.$ah$, '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz
   from public.events where slug = 'daytime-rave'
   returning id, event_id
 )
@@ -664,7 +664,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'hallo_ben', 'Closing set ran two hours over and nobody working there seemed to mind. That''s the whole memory.', 'May 2025', '2025-05-15T20:00:00.000Z'::timestamptz
+  select id, 'hallo_ben', $ah$Closing set ran two hours over and nobody working there seemed to mind. That's the whole memory.$ah$, 'May 2025', '2025-05-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'daytime-rave'
   returning id, event_id
 )
@@ -682,7 +682,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sol', 'Two of us going, don''t know anyone. Say hi if you''re also standing near the pillar looking unsure.', '8 h ago', '2026-08-29T11:00:00.000Z'::timestamptz
+  select id, 'sol', $ah$Two of us going, don't know anyone. Say hi if you're also standing near the pillar looking unsure.$ah$, '8 h ago', '2026-08-29T11:00:00.000Z'::timestamptz
   from public.events where slug = 'echonomist'
   returning id, event_id
 )
@@ -691,7 +691,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'fitz', 'Doors 23:59 is a bit of a statement but the room genuinely doesn''t fill before 1.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
+  select id, 'fitz', $ah$Doors 23:59 is a bit of a statement but the room genuinely doesn't fill before 1.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
   from public.events where slug = 'echonomist'
   returning id, event_id
 )
@@ -734,7 +734,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'fitz', 'Doors 23:59 is a bit of a statement but the room genuinely doesn''t fill before 1.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
+  select id, 'fitz', $ah$Doors 23:59 is a bit of a statement but the room genuinely doesn't fill before 1.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
   from public.events where slug = '10-years-blurred-vision'
   returning id, event_id
 )
@@ -742,7 +742,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sol', 'Two of us going, don''t know anyone. Say hi if you''re also standing near the pillar looking unsure.', '8 h ago', '2026-08-29T11:00:00.000Z'::timestamptz
+  select id, 'sol', $ah$Two of us going, don't know anyone. Say hi if you're also standing near the pillar looking unsure.$ah$, '8 h ago', '2026-08-29T11:00:00.000Z'::timestamptz
   from public.events where slug = '10-years-blurred-vision'
   returning id, event_id
 )
@@ -756,7 +756,7 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'roza', 'That''s the booking policy, not luck.', 'Jan 2025', '2025-01-15T20:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'roza', $ah$That's the booking policy, not luck.$ah$, 'Jan 2025', '2025-01-15T20:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -769,7 +769,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'fitz', 'Doors 23:59 is a bit of a statement but the room genuinely doesn''t fill before 1.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
+  select id, 'fitz', $ah$Doors 23:59 is a bit of a statement but the room genuinely doesn't fill before 1.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
   from public.events where slug = 'legal-blitz'
   returning id, event_id
 )
@@ -786,7 +786,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sol', 'Two of us going, don''t know anyone. Say hi if you''re also standing near the pillar looking unsure.', '8 h ago', '2026-08-29T11:00:00.000Z'::timestamptz
+  select id, 'sol', $ah$Two of us going, don't know anyone. Say hi if you're also standing near the pillar looking unsure.$ah$, '8 h ago', '2026-08-29T11:00:00.000Z'::timestamptz
   from public.events where slug = 'legal-blitz'
   returning id, event_id
 )
@@ -821,7 +821,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sol', 'Two of us going, don''t know anyone. Say hi if you''re also standing near the pillar looking unsure.', '8 h ago', '2026-08-29T11:00:00.000Z'::timestamptz
+  select id, 'sol', $ah$Two of us going, don't know anyone. Say hi if you're also standing near the pillar looking unsure.$ah$, '8 h ago', '2026-08-29T11:00:00.000Z'::timestamptz
   from public.events where slug = 'bahnwarter-techno-nacht'
   returning id, event_id
 )
@@ -830,7 +830,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'fitz', 'Doors 23:59 is a bit of a statement but the room genuinely doesn''t fill before 1.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
+  select id, 'fitz', $ah$Doors 23:59 is a bit of a statement but the room genuinely doesn't fill before 1.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
   from public.events where slug = 'bahnwarter-techno-nacht'
   returning id, event_id
 )
@@ -851,11 +851,11 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'roza', 'That''s the booking policy, not luck.', 'Jan 2025', '2025-01-15T20:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'roza', $ah$That's the booking policy, not luck.$ah$, 'Jan 2025', '2025-01-15T20:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sol', 'Two of us going, don''t know anyone. Say hi if you''re also standing near the pillar looking unsure.', '8 h ago', '2026-08-29T11:00:00.000Z'::timestamptz
+  select id, 'sol', $ah$Two of us going, don't know anyone. Say hi if you're also standing near the pillar looking unsure.$ah$, '8 h ago', '2026-08-29T11:00:00.000Z'::timestamptz
   from public.events where slug = 'unterwelt'
   returning id, event_id
 )
@@ -873,7 +873,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'fitz', 'Doors 23:59 is a bit of a statement but the room genuinely doesn''t fill before 1.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
+  select id, 'fitz', $ah$Doors 23:59 is a bit of a statement but the room genuinely doesn't fill before 1.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
   from public.events where slug = 'unterwelt'
   returning id, event_id
 )
@@ -898,12 +898,12 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sibel', 'Address only goes out the day of, right? Don''t want to plan a whole evening around a doorbell I can''t find.', '5 days ago', '2026-08-24T19:00:00.000Z'::timestamptz
+  select id, 'sibel', $ah$Address only goes out the day of, right? Don't want to plan a whole evening around a doorbell I can't find.$ah$, '5 days ago', '2026-08-24T19:00:00.000Z'::timestamptz
   from public.events where slug = 'kuchentisch'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'nemo', 'Day of, and it''s the fourth floor. There is no lift. That''s the ritual.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'nemo', $ah$Day of, and it's the fourth floor. There is no lift. That's the ritual.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -915,7 +915,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'mo', 'Bringing two people who don''t know anyone. Is that a lot or normal here?', '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz
+  select id, 'mo', $ah$Bringing two people who don't know anyone. Is that a lot or normal here?$ah$, '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz
   from public.events where slug = 'kuchentisch'
   returning id, event_id
 )
@@ -924,12 +924,12 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'juno_r', 'Someone brought a record player and the whole night changed direction at 2am. Best thing that''s happened in that flat.', 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz
+  select id, 'juno_r', $ah$Someone brought a record player and the whole night changed direction at 2am. Best thing that's happened in that flat.$ah$, 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'kuchentisch'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'wg_küche', 'That was Timo. He''s invited forever now.', 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'wg_küche', $ah$That was Timo. He's invited forever now.$ah$, 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -941,7 +941,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'mo', 'Bringing two people who don''t know anyone. Is that a lot or normal here?', '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz
+  select id, 'mo', $ah$Bringing two people who don't know anyone. Is that a lot or normal here?$ah$, '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz
   from public.events where slug = '3-stock-links'
   returning id, event_id
 )
@@ -950,12 +950,12 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sibel', 'Address only goes out the day of, right? Don''t want to plan a whole evening around a doorbell I can''t find.', '5 days ago', '2026-08-24T19:00:00.000Z'::timestamptz
+  select id, 'sibel', $ah$Address only goes out the day of, right? Don't want to plan a whole evening around a doorbell I can't find.$ah$, '5 days ago', '2026-08-24T19:00:00.000Z'::timestamptz
   from public.events where slug = '3-stock-links'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'nemo', 'Day of, and it''s the fourth floor. There is no lift. That''s the ritual.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'nemo', $ah$Day of, and it's the fourth floor. There is no lift. That's the ritual.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -967,12 +967,12 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'juno_r', 'Someone brought a record player and the whole night changed direction at 2am. Best thing that''s happened in that flat.', 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz
+  select id, 'juno_r', $ah$Someone brought a record player and the whole night changed direction at 2am. Best thing that's happened in that flat.$ah$, 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz
   from public.events where slug = '3-stock-links'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'wg_küche', 'That was Timo. He''s invited forever now.', 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'wg_küche', $ah$That was Timo. He's invited forever now.$ah$, 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -993,16 +993,16 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sibel', 'Address only goes out the day of, right? Don''t want to plan a whole evening around a doorbell I can''t find.', '5 days ago', '2026-08-24T19:00:00.000Z'::timestamptz
+  select id, 'sibel', $ah$Address only goes out the day of, right? Don't want to plan a whole evening around a doorbell I can't find.$ah$, '5 days ago', '2026-08-24T19:00:00.000Z'::timestamptz
   from public.events where slug = 'boxenturm'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'nemo', 'Day of, and it''s the fourth floor. There is no lift. That''s the ritual.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'nemo', $ah$Day of, and it's the fourth floor. There is no lift. That's the ritual.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'mo', 'Bringing two people who don''t know anyone. Is that a lot or normal here?', '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz
+  select id, 'mo', $ah$Bringing two people who don't know anyone. Is that a lot or normal here?$ah$, '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz
   from public.events where slug = 'boxenturm'
   returning id, event_id
 )
@@ -1019,16 +1019,16 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'juno_r', 'Someone brought a record player and the whole night changed direction at 2am. Best thing that''s happened in that flat.', 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz
+  select id, 'juno_r', $ah$Someone brought a record player and the whole night changed direction at 2am. Best thing that's happened in that flat.$ah$, 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'boxenturm'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'wg_küche', 'That was Timo. He''s invited forever now.', 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'wg_küche', $ah$That was Timo. He's invited forever now.$ah$, 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'mo', 'Bringing two people who don''t know anyone. Is that a lot or normal here?', '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz
+  select id, 'mo', $ah$Bringing two people who don't know anyone. Is that a lot or normal here?$ah$, '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz
   from public.events where slug = 'klingel-14'
   returning id, event_id
 )
@@ -1037,12 +1037,12 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sibel', 'Address only goes out the day of, right? Don''t want to plan a whole evening around a doorbell I can''t find.', '5 days ago', '2026-08-24T19:00:00.000Z'::timestamptz
+  select id, 'sibel', $ah$Address only goes out the day of, right? Don't want to plan a whole evening around a doorbell I can't find.$ah$, '5 days ago', '2026-08-24T19:00:00.000Z'::timestamptz
   from public.events where slug = 'klingel-14'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'nemo', 'Day of, and it''s the fourth floor. There is no lift. That''s the ritual.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'nemo', $ah$Day of, and it's the fourth floor. There is no lift. That's the ritual.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -1054,12 +1054,12 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'juno_r', 'Someone brought a record player and the whole night changed direction at 2am. Best thing that''s happened in that flat.', 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz
+  select id, 'juno_r', $ah$Someone brought a record player and the whole night changed direction at 2am. Best thing that's happened in that flat.$ah$, 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'klingel-14'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'wg_küche', 'That was Timo. He''s invited forever now.', 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'wg_küche', $ah$That was Timo. He's invited forever now.$ah$, 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -1072,12 +1072,12 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sibel', 'Address only goes out the day of, right? Don''t want to plan a whole evening around a doorbell I can''t find.', '5 days ago', '2026-08-24T19:00:00.000Z'::timestamptz
+  select id, 'sibel', $ah$Address only goes out the day of, right? Don't want to plan a whole evening around a doorbell I can't find.$ah$, '5 days ago', '2026-08-24T19:00:00.000Z'::timestamptz
   from public.events where slug = 'plattenabend'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'nemo', 'Day of, and it''s the fourth floor. There is no lift. That''s the ritual.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'nemo', $ah$Day of, and it's the fourth floor. There is no lift. That's the ritual.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -1089,7 +1089,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'mo', 'Bringing two people who don''t know anyone. Is that a lot or normal here?', '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz
+  select id, 'mo', $ah$Bringing two people who don't know anyone. Is that a lot or normal here?$ah$, '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz
   from public.events where slug = 'plattenabend'
   returning id, event_id
 )
@@ -1107,12 +1107,12 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'juno_r', 'Someone brought a record player and the whole night changed direction at 2am. Best thing that''s happened in that flat.', 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz
+  select id, 'juno_r', $ah$Someone brought a record player and the whole night changed direction at 2am. Best thing that's happened in that flat.$ah$, 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'plattenabend'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'wg_küche', 'That was Timo. He''s invited forever now.', 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'wg_küche', $ah$That was Timo. He's invited forever now.$ah$, 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -1124,7 +1124,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'mo', 'Bringing two people who don''t know anyone. Is that a lot or normal here?', '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz
+  select id, 'mo', $ah$Bringing two people who don't know anyone. Is that a lot or normal here?$ah$, '2 days ago', '2026-08-27T19:00:00.000Z'::timestamptz
   from public.events where slug = 'vierter-stock'
   returning id, event_id
 )
@@ -1133,21 +1133,21 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sibel', 'Address only goes out the day of, right? Don''t want to plan a whole evening around a doorbell I can''t find.', '5 days ago', '2026-08-24T19:00:00.000Z'::timestamptz
+  select id, 'sibel', $ah$Address only goes out the day of, right? Don't want to plan a whole evening around a doorbell I can't find.$ah$, '5 days ago', '2026-08-24T19:00:00.000Z'::timestamptz
   from public.events where slug = 'vierter-stock'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'nemo', 'Day of, and it''s the fourth floor. There is no lift. That''s the ritual.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'nemo', $ah$Day of, and it's the fourth floor. There is no lift. That's the ritual.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'juno_r', 'Someone brought a record player and the whole night changed direction at 2am. Best thing that''s happened in that flat.', 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz
+  select id, 'juno_r', $ah$Someone brought a record player and the whole night changed direction at 2am. Best thing that's happened in that flat.$ah$, 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'vierter-stock'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'wg_küche', 'That was Timo. He''s invited forever now.', 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'wg_küche', $ah$That was Timo. He's invited forever now.$ah$, 'Feb 2025', '2025-02-15T20:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -1159,7 +1159,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'clea', 'German or English? Asking for the friend I''m dragging along who''s three weeks into the city.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'clea', $ah$German or English? Asking for the friend I'm dragging along who's three weeks into the city.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'zine-klub'
   returning id, event_id
 )
@@ -1177,7 +1177,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'rem', 'Room fits about thirty and it was full last time twenty minutes in. Don''t stroll in at half past.', '4 h ago', '2026-08-29T15:00:00.000Z'::timestamptz
+  select id, 'rem', $ah$Room fits about thirty and it was full last time twenty minutes in. Don't stroll in at half past.$ah$, '4 h ago', '2026-08-29T15:00:00.000Z'::timestamptz
   from public.events where slug = 'zine-klub'
   returning id, event_id
 )
@@ -1193,12 +1193,12 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'bine', 'Ends earlier than you''d think, then half the room walks to the same bar anyway. That part is the meetup.', 'Nov 2024', '2024-11-15T20:00:00.000Z'::timestamptz
+  select id, 'bine', $ah$Ends earlier than you'd think, then half the room walks to the same bar anyway. That part is the meetup.$ah$, 'Nov 2024', '2024-11-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'zine-klub'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'hanna', 'The second half is undocumented and that''s fine.', 'Nov 2024', '2024-11-15T20:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'hanna', $ah$The second half is undocumented and that's fine.$ah$, 'Nov 2024', '2024-11-15T20:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -1211,7 +1211,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'clea', 'German or English? Asking for the friend I''m dragging along who''s three weeks into the city.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'clea', $ah$German or English? Asking for the friend I'm dragging along who's three weeks into the city.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'kaffee-karten'
   returning id, event_id
 )
@@ -1220,7 +1220,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'rem', 'Room fits about thirty and it was full last time twenty minutes in. Don''t stroll in at half past.', '4 h ago', '2026-08-29T15:00:00.000Z'::timestamptz
+  select id, 'rem', $ah$Room fits about thirty and it was full last time twenty minutes in. Don't stroll in at half past.$ah$, '4 h ago', '2026-08-29T15:00:00.000Z'::timestamptz
   from public.events where slug = 'kaffee-karten'
   returning id, event_id
 )
@@ -1228,12 +1228,12 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'bine', 'Ends earlier than you''d think, then half the room walks to the same bar anyway. That part is the meetup.', 'Nov 2024', '2024-11-15T20:00:00.000Z'::timestamptz
+  select id, 'bine', $ah$Ends earlier than you'd think, then half the room walks to the same bar anyway. That part is the meetup.$ah$, 'Nov 2024', '2024-11-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'kaffee-karten'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'hanna', 'The second half is undocumented and that''s fine.', 'Nov 2024', '2024-11-15T20:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'hanna', $ah$The second half is undocumented and that's fine.$ah$, 'Nov 2024', '2024-11-15T20:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
@@ -1245,7 +1245,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'clea', 'German or English? Asking for the friend I''m dragging along who''s three weeks into the city.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'clea', $ah$German or English? Asking for the friend I'm dragging along who's three weeks into the city.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'nachtlinie'
   returning id, event_id
 )
@@ -1263,7 +1263,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'rem', 'Room fits about thirty and it was full last time twenty minutes in. Don''t stroll in at half past.', '4 h ago', '2026-08-29T15:00:00.000Z'::timestamptz
+  select id, 'rem', $ah$Room fits about thirty and it was full last time twenty minutes in. Don't stroll in at half past.$ah$, '4 h ago', '2026-08-29T15:00:00.000Z'::timestamptz
   from public.events where slug = 'nachtlinie'
   returning id, event_id
 )
@@ -1271,7 +1271,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'hanna', 'Went to the very first one when it was four people and a table. It''s bigger now and somehow still not awkward.', 'Oct 2023', '2023-10-15T20:00:00.000Z'::timestamptz
+  select id, 'hanna', $ah$Went to the very first one when it was four people and a table. It's bigger now and somehow still not awkward.$ah$, 'Oct 2023', '2023-10-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'nachtlinie'
   returning id, event_id
 )
@@ -1288,7 +1288,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'rem', 'Room fits about thirty and it was full last time twenty minutes in. Don''t stroll in at half past.', '4 h ago', '2026-08-29T15:00:00.000Z'::timestamptz
+  select id, 'rem', $ah$Room fits about thirty and it was full last time twenty minutes in. Don't stroll in at half past.$ah$, '4 h ago', '2026-08-29T15:00:00.000Z'::timestamptz
   from public.events where slug = 'sprechstunde'
   returning id, event_id
 )
@@ -1305,7 +1305,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'clea', 'German or English? Asking for the friend I''m dragging along who''s three weeks into the city.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'clea', $ah$German or English? Asking for the friend I'm dragging along who's three weeks into the city.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'sprechstunde'
   returning id, event_id
 )
@@ -1314,7 +1314,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'hanna', 'Went to the very first one when it was four people and a table. It''s bigger now and somehow still not awkward.', 'Oct 2023', '2023-10-15T20:00:00.000Z'::timestamptz
+  select id, 'hanna', $ah$Went to the very first one when it was four people and a table. It's bigger now and somehow still not awkward.$ah$, 'Oct 2023', '2023-10-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'sprechstunde'
   returning id, event_id
 )
@@ -1331,7 +1331,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'rem', 'Room fits about thirty and it was full last time twenty minutes in. Don''t stroll in at half past.', '4 h ago', '2026-08-29T15:00:00.000Z'::timestamptz
+  select id, 'rem', $ah$Room fits about thirty and it was full last time twenty minutes in. Don't stroll in at half past.$ah$, '4 h ago', '2026-08-29T15:00:00.000Z'::timestamptz
   from public.events where slug = 'riso-abend'
   returning id, event_id
 )
@@ -1339,7 +1339,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'clea', 'German or English? Asking for the friend I''m dragging along who''s three weeks into the city.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'clea', $ah$German or English? Asking for the friend I'm dragging along who's three weeks into the city.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'riso-abend'
   returning id, event_id
 )
@@ -1357,7 +1357,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'hanna', 'Went to the very first one when it was four people and a table. It''s bigger now and somehow still not awkward.', 'Oct 2023', '2023-10-15T20:00:00.000Z'::timestamptz
+  select id, 'hanna', $ah$Went to the very first one when it was four people and a table. It's bigger now and somehow still not awkward.$ah$, 'Oct 2023', '2023-10-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'riso-abend'
   returning id, event_id
 )
@@ -1383,7 +1383,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'clea', 'German or English? Asking for the friend I''m dragging along who''s three weeks into the city.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'clea', $ah$German or English? Asking for the friend I'm dragging along who's three weeks into the city.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'lange-tafel'
   returning id, event_id
 )
@@ -1392,7 +1392,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'rem', 'Room fits about thirty and it was full last time twenty minutes in. Don''t stroll in at half past.', '4 h ago', '2026-08-29T15:00:00.000Z'::timestamptz
+  select id, 'rem', $ah$Room fits about thirty and it was full last time twenty minutes in. Don't stroll in at half past.$ah$, '4 h ago', '2026-08-29T15:00:00.000Z'::timestamptz
   from public.events where slug = 'lange-tafel'
   returning id, event_id
 )
@@ -1400,7 +1400,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'hanna', 'Went to the very first one when it was four people and a table. It''s bigger now and somehow still not awkward.', 'Oct 2023', '2023-10-15T20:00:00.000Z'::timestamptz
+  select id, 'hanna', $ah$Went to the very first one when it was four people and a table. It's bigger now and somehow still not awkward.$ah$, 'Oct 2023', '2023-10-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'lange-tafel'
   returning id, event_id
 )
@@ -1417,16 +1417,16 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'grau', 'Bringing someone to their first one. Any advice that isn''t ''drink water''?', '2 h ago', '2026-08-29T17:00:00.000Z'::timestamptz
+  select id, 'grau', $ah$Bringing someone to their first one. Any advice that isn't 'drink water'?$ah$, '2 h ago', '2026-08-29T17:00:00.000Z'::timestamptz
   from public.events where slug = 'strobo'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'hallo_ben', 'Agree on a meeting spot. Phones die, the room is dark, that''s it.', '1 h ago', '2026-08-29T18:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'hallo_ben', $ah$Agree on a meeting spot. Phones die, the room is dark, that's it.$ah$, '1 h ago', '2026-08-29T18:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'lu', 'Door is doing a hard no on groups of guys again. Not a complaint, just don''t roll up six deep and act surprised.', '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz
+  select id, 'lu', $ah$Door is doing a hard no on groups of guys again. Not a complaint, just don't roll up six deep and act surprised.$ah$, '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz
   from public.events where slug = 'strobo'
   returning id, event_id
 )
@@ -1435,7 +1435,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'esra_p', 'Who''s playing the back room? The flyer says nothing and that''s usually where the night actually happens.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'esra_p', $ah$Who's playing the back room? The flyer says nothing and that's usually where the night actually happens.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'strobo'
   returning id, event_id
 )
@@ -1452,7 +1452,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'hallo_ben', 'Closing set ran two hours over and nobody working there seemed to mind. That''s the whole memory.', 'May 2025', '2025-05-15T20:00:00.000Z'::timestamptz
+  select id, 'hallo_ben', $ah$Closing set ran two hours over and nobody working there seemed to mind. That's the whole memory.$ah$, 'May 2025', '2025-05-15T20:00:00.000Z'::timestamptz
   from public.events where slug = 'strobo'
   returning id, event_id
 )
@@ -1461,16 +1461,16 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'grau', 'Bringing someone to their first one. Any advice that isn''t ''drink water''?', '2 h ago', '2026-08-29T17:00:00.000Z'::timestamptz
+  select id, 'grau', $ah$Bringing someone to their first one. Any advice that isn't 'drink water'?$ah$, '2 h ago', '2026-08-29T17:00:00.000Z'::timestamptz
   from public.events where slug = 'tunnelblick'
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'hallo_ben', 'Agree on a meeting spot. Phones die, the room is dark, that''s it.', '1 h ago', '2026-08-29T18:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'hallo_ben', $ah$Agree on a meeting spot. Phones die, the room is dark, that's it.$ah$, '1 h ago', '2026-08-29T18:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'lu', 'Door is doing a hard no on groups of guys again. Not a complaint, just don''t roll up six deep and act surprised.', '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz
+  select id, 'lu', $ah$Door is doing a hard no on groups of guys again. Not a complaint, just don't roll up six deep and act surprised.$ah$, '3 days ago', '2026-08-26T19:00:00.000Z'::timestamptz
   from public.events where slug = 'tunnelblick'
   returning id, event_id
 )
@@ -1479,7 +1479,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'esra_p', 'Who''s playing the back room? The flyer says nothing and that''s usually where the night actually happens.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
+  select id, 'esra_p', $ah$Who's playing the back room? The flyer says nothing and that's usually where the night actually happens.$ah$, 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz
   from public.events where slug = 'tunnelblick'
   returning id, event_id
 )
@@ -1505,7 +1505,7 @@ select 1 from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'fitz', 'Doors 23:59 is a bit of a statement but the room genuinely doesn''t fill before 1.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
+  select id, 'fitz', $ah$Doors 23:59 is a bit of a statement but the room genuinely doesn't fill before 1.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
   from public.events where slug = 'spiegelsaal'
   returning id, event_id
 )
@@ -1522,7 +1522,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sol', 'Two of us going, don''t know anyone. Say hi if you''re also standing near the pillar looking unsure.', '8 h ago', '2026-08-29T11:00:00.000Z'::timestamptz
+  select id, 'sol', $ah$Two of us going, don't know anyone. Say hi if you're also standing near the pillar looking unsure.$ah$, '8 h ago', '2026-08-29T11:00:00.000Z'::timestamptz
   from public.events where slug = 'spiegelsaal'
   returning id, event_id
 )
@@ -1544,11 +1544,11 @@ with konu as (
   returning id, event_id
 )
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-  select konu.event_id, konu.id, 'roza', 'That''s the booking policy, not luck.', 'Jan 2025', '2025-01-15T20:00:00.000Z'::timestamptz from konu;
+  select konu.event_id, konu.id, 'roza', $ah$That's the booking policy, not luck.$ah$, 'Jan 2025', '2025-01-15T20:00:00.000Z'::timestamptz from konu;
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'fitz', 'Doors 23:59 is a bit of a statement but the room genuinely doesn''t fill before 1.', '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
+  select id, 'fitz', $ah$Doors 23:59 is a bit of a statement but the room genuinely doesn't fill before 1.$ah$, '4 days ago', '2026-08-25T19:00:00.000Z'::timestamptz
   from public.events where slug = 'pegel'
   returning id, event_id
 )
@@ -1565,7 +1565,7 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, 'sol', 'Two of us going, don''t know anyone. Say hi if you''re also standing near the pillar looking unsure.', '8 h ago', '2026-08-29T11:00:00.000Z'::timestamptz
+  select id, 'sol', $ah$Two of us going, don't know anyone. Say hi if you're also standing near the pillar looking unsure.$ah$, '8 h ago', '2026-08-29T11:00:00.000Z'::timestamptz
   from public.events where slug = 'pegel'
   returning id, event_id
 )
