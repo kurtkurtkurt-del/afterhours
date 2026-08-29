@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>posters | afterhours</title>
+  <title>maps | afterhours</title>
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
   <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png" />
@@ -11,20 +11,43 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=66" />
+  <link rel="stylesheet" href="../style.css?v=67" />
 </head>
-<body>
+<!-- Kure yalnizca "ekran 3" ondeyken ciziyor; burada sayfanin tamami o. -->
+<body data-ekran="3" class="harita">
 
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
     <nav class="header-links">
       <a href="../explore/index.html">explore</a>
       <a href="../friends/index.html">friends&amp;more</a>
-      <a href="../maps/index.html">i prefer maps</a>
+      <a href="../maps/index.html" aria-current="page">i prefer maps</a>
       <a href="../help/index.html">help</a>
       <a href="../login/index.html">login</a>
     </nav>
   </header>
+
+  <main class="ekran ekran4">
+    <canvas class="k4-sahne" id="k4-sahne"></canvas>
+
+    <div class="k4-metin">
+      <h2 class="k4-baslik">go local.</h2>
+      <p class="k4-alt">Drag to spin the city. Click a beacon to open the night.</p>
+    </div>
+
+    <div class="k4-yakin">
+      <p class="k4-yakin-baslik">within reach tonight</p>
+      <ul id="harita-yakin"></ul>
+      <p class="k4-yakin-alt" id="harita-alt">spin to find the rest</p>
+    </div>
+  </main>
+
+  <script src="../ayar.js?v=67"></script>
+  <script src="../oturum.js?v=67"></script>
+  <script src="../veri.js?v=67"
+          data-yedek="../events-data.js?v=67"
+          data-sonra="../sehir.js?v=67, harita.js?v=67"></script>
+  <script src="../menu.js?v=67"></script>
 
 </body>
 </html>

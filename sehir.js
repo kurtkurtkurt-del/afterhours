@@ -487,6 +487,10 @@
     }
   }
 
+  /* Kuredeki geceler disaridan da okunabilsin: maps sayfasi yanindaki
+     "yurume mesafesinde" listesini bu gercek dakikalardan doldurur. */
+  window.AH_GECELER = GECELER;
+
   // Ekran koordinatindan tasarim koordinatina geri
   const yansitTers = (q) => ({ x: (q.x - KAY_X) / OLCEK, y: (q.y - KAY_Y) / OLCEK });
 

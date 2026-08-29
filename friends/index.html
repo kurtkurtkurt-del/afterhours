@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>friends &amp; more | afterhours</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css?v=66" />
+</head>
+<body>
+
+  <header class="header">
+    <a class="logo" href="../index.html">afterhours</a>
+    <nav class="header-links">
+      <a href="../explore/index.html">explore</a>
+      <a href="../friends/index.html" aria-current="page">friends&amp;more</a>
+      <a href="../maps/index.html">i prefer maps</a>
+      <a href="../help/index.html">help</a>
+      <a href="../login/index.html">login</a>
+    </nav>
+  </header>
+
+  <main class="giris">
+    <h1 class="giris-baslik">your people,<br />your nights.</h1>
+
+    <!-- Girissizken: davet -->
+    <div class="ark-disarida" id="ark-disarida" hidden>
+      <p class="giris-not">sign in to keep nights and see where your friends are going.</p>
+      <a class="giris-dugme" href="../login/index.html">sign in</a>
+    </div>
+
+    <div class="ark-icerde" id="ark-icerde" hidden>
+
+      <section class="hesap">
+        <p class="hesap-baslik">your handle</p>
+        <p class="hesap-aciklama">friends find you by this. lowercase, 3–20 characters.</p>
+        <form class="hesap-satir" id="handle-form">
+          <input class="hesap-alan" id="handle-alan" type="text" placeholder="yourname"
+                 autocomplete="off" spellcheck="false" />
+          <button class="hesap-dugme" type="submit">save</button>
+        </form>
+        <p class="hesap-durum" id="handle-durum"></p>
+      </section>
+
+      <section class="hesap">
+        <p class="hesap-baslik">your friends</p>
+        <p class="hesap-aciklama">what they keep shows up in your deck.</p>
+        <form class="hesap-satir" id="arkadas-form">
+          <input class="hesap-alan" id="arkadas-alan" type="text" placeholder="their handle"
+                 autocomplete="off" spellcheck="false" />
+          <button class="hesap-dugme" type="submit">add</button>
+        </form>
+        <p class="hesap-durum" id="arkadas-durum"></p>
+        <ul class="arkadas-liste" id="arkadas-liste"></ul>
+      </section>
+
+      <section class="hesap">
+        <p class="hesap-baslik">what you kept</p>
+        <p class="hesap-aciklama">every card you swiped right.</p>
+        <ul class="tutulan-liste" id="tutulan-liste"></ul>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="../ayar.js?v=66"></script>
+  <script src="../oturum.js?v=66"></script>
+  <script src="../veri.js?v=66"
+          data-yedek="../events-data.js?v=66"></script>
+  <script src="../atislar.js?v=66"></script>
+  <script src="../arkadaslar.js?v=66"></script>
+  <script src="../menu.js?v=66"></script>
+  <script src="friends.js?v=66"></script>
+
+</body>
+</html>

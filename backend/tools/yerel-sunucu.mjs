@@ -154,6 +154,27 @@ const sunucu = createServer(async (istek, cevap) => {
     }
 
     if (yol === "/auth/v1/token") {
+      const tur = url.searchParams.get("grant_type") || "refresh_token";
+
+      /* Sifreyle giris. DIKKAT: burada sifre KONTROL EDILMIYOR — bu bir
+         taklit sunucu, sadece akisi denemek icin. Gercek Supabase sifreyi
+         dogrular. Internete acilmaz. */
+      if (tur === "password") {
+        const eposta = ((govde && govde.email) || "").toLowerCase();
+        if (!eposta) return yolla(400, { msg: "email gerekli" });
+        await rolBirak();
+        let k = await db.query(`select id from auth.users where email = $1`, [eposta]);
+        if (!k.rows.length) {
+          return yolla(400, { error_description: "Invalid login credentials" });
+        }
+        const id = k.rows[0].id;
+        console.log("  🔑 sifreyle giris: " + eposta + " (sifre dogrulanmadi — taklit)");
+        return yolla(200, {
+          access_token: "yerel-" + id, refresh_token: "yerel-" + id, expires_in: 3600,
+          user: { id, email: eposta },
+        });
+      }
+
       const id = (govde && govde.refresh_token || "").replace(/^yerel-/, "");
       if (!id) return yolla(400, { msg: "refresh_token gerekli" });
       return yolla(200, { access_token: "yerel-" + id, refresh_token: "yerel-" + id, expires_in: 3600 });
