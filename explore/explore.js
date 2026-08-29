@@ -498,6 +498,31 @@
     });
   });
 
+  /* --- desteyi sifirla --- */
+
+  const sifirlaDugmesi = document.getElementById("ex-sifirla");
+  if (sifirlaDugmesi) {
+    sifirlaDugmesi.addEventListener("click", () => {
+      if (!window.AH || !AH.atislariSifirla) return;
+      /* Geri alinamaz: biriktirilenler de gidiyor */
+      if (!window.confirm(
+        "reset the deck? everything you kept and everything you passed on is forgotten."
+      )) return;
+
+      sifirlaDugmesi.disabled = true;
+      AH.atislariSifirla().then(() => {
+        /* Ekrandaki izleri de sil */
+        tutulan.length = 0;
+        if (rozet) { rozet.textContent = "0"; rozet.hidden = true; }
+        if (kutu) kutu.classList.remove("dolu");
+        if (kutuListe) kutuyuAc(false);
+        atlanacak.clear();
+        if (bitti) bitti.textContent = "that's everyone for tonight.";
+        return yenidenDagit(secilenMod());
+      }).finally(() => { sifirlaDugmesi.disabled = false; });
+    });
+  }
+
   /* Onceki oturumdan biriktirilenler geri gelsin (rozet ve liste). */
   if (window.AH && AH.biriktirilenler) {
     AH.biriktirilenler().then((liste) => {

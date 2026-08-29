@@ -96,6 +96,19 @@ as $$
   do update set direction = excluded.direction, created_at = now();
 $$;
 
+-- Destemi sifirla: butun atislarim silinir, kartlar geri gelir.
+-- Sadece kendi satirlarina dokunuyor; RLS zaten bunu zorluyor ama
+-- niyetin acik olmasi icin burada da yaziyor.
+create or replace function public.swipes_reset()
+returns integer
+language sql
+as $$
+  with silinen as (
+    delete from public.swipes where user_id = auth.uid() returning 1
+  )
+  select count(*)::int from silinen;
+$$;
+
 -- --------------------------------------------------- biriktirilenler
 
 -- "kept tonight": kendi saga attiklarin, en son ustte.
@@ -182,28 +195,33 @@ $$;
 -- Filtredeki sehir listesi: her sehir ve kac gecesi var.
 create or replace function public.city_counts()
 returns table (
-  slug          text,
-  name          text,
-  status        text,
-  sira          int,
-  country       text,
-  country_slug  text,
-  n             bigint
+  slug            text,
+  name            text,
+  status          text,
+  sira            int,
+  country         text,
+  country_slug    text,
+  continent       text,
+  continent_slug  text,
+  n               bigint
 )
 language sql
 stable
 as $$
   select c.slug, c.name, c.status, c.sira, c.country, c.country_slug,
+         c.continent, c.continent_slug,
          count(e.id) filter (where e.is_published)
   from public.cities c
   left join public.events e on e.city_id = c.id
-  group by c.slug, c.name, c.status, c.sira, c.country, c.country_slug
+  group by c.slug, c.name, c.status, c.sira, c.country, c.country_slug,
+           c.continent, c.continent_slug
   order by c.sira;
 $$;
 
 grant execute on function public.city_counts()         to anon, authenticated;
 grant execute on function public.deck(text, text, int)  to anon, authenticated;
 grant execute on function public.swipe_set(text, text)  to authenticated;
+grant execute on function public.swipes_reset()         to authenticated;
 grant execute on function public.kept()                 to authenticated;
 grant execute on function public.friends_kept(int)      to authenticated;
 grant execute on function public.event_counts(text)     to anon, authenticated;

@@ -16,6 +16,7 @@ const yapi = [
   ["07_friends.sql", "ARKADASLIK"],
   ["08_storage.sql", "POSTER DEPOSU"],
   ["09_jobs.sql", "ARKA PLAN ISLERI"],
+  ["11_dunya.sql", "DUNYA — 54 SEHIR, 106 GECE"],
 ];
 
 /* Dosyanin basina gorunur bir surum damgasi koyuyoruz: editorde hangi

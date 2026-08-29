@@ -23,6 +23,15 @@
 
   /* --- yazma ------------------------------------------------------- */
 
+  /* Ucan yazmalarin zinciri. Sifirlama bunu bekliyor: yoksa son atis
+     silme isleminden SONRA sunucuya varip kartı tekrar atilmis
+     gosteriyordu. */
+  let bekleyenYazmalar = Promise.resolve();
+  const kuyruga = (p) => {
+    bekleyenYazmalar = bekleyenYazmalar.then(() => p, () => p);
+    return p;
+  };
+
   AH.atisKaydet = function (etkinlik, yon) {
     if (!etkinlik || !etkinlik.slug) return Promise.resolve();
     const kayit = yon > 0 || yon === "right" ? "right" : "left";
@@ -34,10 +43,10 @@
 
     /* slug ile yaziyoruz: id bilmeye gerek yok, ayni karta ikinci atis
        da uzerine yaziyor (fonksiyonun icinde on conflict var). */
-    return AH.istek("/rpc/swipe_set", {
+    return kuyruga(AH.istek("/rpc/swipe_set", {
       method: "POST",
       body: JSON.stringify({ p_slug: etkinlik.slug, p_direction: kayit }),
-    }).catch((h) => {
+    })).catch((h) => {
       console.warn("[afterhours] atis kaydedilemedi, yerele yazildi:", h.message);
       yerelEkle(etkinlik.slug, kayit);
     });
@@ -73,6 +82,24 @@
   AH.atilanlar = function () {
     if (AH.girisliMi && AH.girisliMi()) return [];
     return yerelOku().map((a) => a.slug);
+  };
+
+  /* --- sifirlama ---------------------------------------------------- */
+
+  /* Destemi bastan al: butun atislar silinir. Girisliyken veritabanindan,
+     degilse tarayicidan. Geri alinamaz — cagiran once sormali. */
+  AH.atislariSifirla = function () {
+    yerelYaz([]);
+    if (!(AH.girisliMi && AH.girisliMi())) return Promise.resolve(0);
+    /* Once ucan yazmalar insin; sonra sil. */
+    return bekleyenYazmalar
+      .catch(() => {})
+      .then(() => AH.istek("/rpc/swipes_reset", { method: "POST", body: "{}" }))
+      .then((n) => (typeof n === "number" ? n : 0))
+      .catch((h) => {
+        console.warn("[afterhours] atislar sifirlanamadi:", h.message);
+        return 0;
+      });
   };
 
   /* --- giriste tasima ---------------------------------------------- */

@@ -14,9 +14,12 @@ create table if not exists public.cities (
   -- ana sayfadaki durust sehir listesi: yayinda / yakinda / hedefte
   status  text not null default 'live' check (status in ('live', 'soon', 'planned')),
   sira    int  not null default 0,
-  -- Filtrede once ulke seciliyor, sonra o ulkenin sehirleri geliyor
-  country       text,
-  country_slug  text
+  -- Filtrede once ulke seciliyor, sonra o ulkenin sehirleri geliyor;
+  -- ulkeler de kitalarina gore gruplaniyor
+  country         text,
+  country_slug    text,
+  continent       text,
+  continent_slug  text
 );
 
 create index if not exists cities_country_idx on public.cities (country_slug, sira);

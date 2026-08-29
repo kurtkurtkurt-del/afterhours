@@ -47,11 +47,21 @@
     const deger = kutu.querySelector(".fl-deger");
     const panel = kutu.querySelector(".fl-liste");
 
-    const secili = secenekler.find((s) => s.deger === seciliDeger) || secenekler[0];
+    const secili = secenekler.find((s) => s.deger === seciliDeger) ||
+      secenekler.find((s) => !s.baslik);
     deger.textContent = secili ? secili.ad : "—";
 
     panel.textContent = "";
     secenekler.forEach((s) => {
+      /* Grup basligi: tiklanmaz, sadece ayirir */
+      if (s.baslik) {
+        const b = document.createElement("p");
+        b.className = "fl-grup";
+        b.textContent = s.baslik;
+        panel.appendChild(b);
+        return;
+      }
+
       const oge = document.createElement("button");
       oge.type = "button";
       oge.className = "fl-oge" + (s.deger === seciliDeger ? " secili" : "") +
@@ -112,17 +122,40 @@
     tarih: alan.querySelector('[data-alan="tarih"]'),
   };
 
+  /* Ulkeler kitalarina gore gruplanip listeleniyor: 18 ulke duz bir
+     liste olarak okunmuyor. Gecesi olan kitalar once. */
   function ulkeSecenekleri() {
     const gorulen = new Map();
     sehirler.forEach((s) => {
       if (!s.country_slug) return;
-      const o = gorulen.get(s.country_slug) || { deger: s.country_slug, ad: s.country, n: 0 };
+      const o = gorulen.get(s.country_slug) ||
+        { deger: s.country_slug, ad: s.country, kita: s.continent || "", n: 0 };
       o.n += Number(s.n || 0);
       gorulen.set(s.country_slug, o);
     });
-    return [...gorulen.values()]
+
+    const ulkeler = [...gorulen.values()];
+    const kitalar = new Map();
+    ulkeler.forEach((u) => {
+      const g = kitalar.get(u.kita) || { ad: u.kita, n: 0, ulkeler: [] };
+      g.n += u.n;
+      g.ulkeler.push(u);
+      kitalar.set(u.kita, g);
+    });
+
+    const sirali = [];
+    [...kitalar.values()]
       .sort((a, b) => b.n - a.n || a.ad.localeCompare(b.ad))
-      .map((o) => ({ ...o, bos: !o.n, not: o.n ? o.n + " nights" : "nothing yet" }));
+      .forEach((k) => {
+        if (k.ad) sirali.push({ baslik: k.ad });
+        k.ulkeler
+          .sort((a, b) => b.n - a.n || a.ad.localeCompare(b.ad))
+          .forEach((u) => sirali.push({
+            deger: u.deger, ad: u.ad, bos: !u.n,
+            not: u.n ? u.n + " nights" : "nothing yet",
+          }));
+      });
+    return sirali;
   }
 
   function sehirSecenekleri() {
