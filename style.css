@@ -2028,6 +2028,51 @@ html:has(body.explore) {
   .ha-kart-ad { font-size: 20px; }
 }
 
+/* ---------- card collection ---------- */
+
+/* Solda slogan ve kucuk yazi (yerleri degismedi), sagda uc ornek kart
+   yan yana. Kartlar poster ureteciyle ayni dilde ama acik paletle. */
+.kk {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(0, 1.55fr);
+  gap: 56px;
+  align-items: center;
+  max-width: 1240px;
+}
+
+.kk-kartlar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.kk-kart { min-width: 0; }
+
+.kk-kart object {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;      /* poster orani bozulmasin */
+  pointer-events: none;
+}
+
+.kk-kart figcaption {
+  margin-top: 10px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+@media (max-width: 900px) {
+  .kk {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
+  .kk-kartlar { gap: 12px; }
+}
+
 /* ---------- friends & more: nachtradar'dan gelenler ---------- */
 
 /* Girise bagli degil: sayfayi acan herkes goruyor. */
