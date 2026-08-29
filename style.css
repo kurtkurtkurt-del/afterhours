@@ -1650,6 +1650,86 @@ html:has(body.explore) {
 
 .giris-kim { font-size: 21px; font-weight: 500; letter-spacing: -0.01em; }
 
+/* Hesap bolumleri: kullanici adi ve arkadaslar */
+.hesap { margin-top: 40px; }
+
+.hesap-baslik {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 6px;
+}
+
+.hesap-aciklama { font-size: 14px; opacity: 0.55; margin-bottom: 14px; }
+
+.hesap-satir { display: flex; align-items: flex-end; gap: 14px; }
+
+.hesap-alan {
+  width: min(100%, 260px);
+  font-family: inherit;
+  font-size: 17px;
+  color: var(--siyah);
+  background: none;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 4px 0 8px;
+}
+
+.hesap-alan::placeholder { color: rgba(0, 0, 0, 0.28); }
+.hesap-alan:focus { outline: none; border-bottom-color: var(--siyah); }
+
+.hesap-dugme {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--beyaz);
+  background: var(--siyah);
+  border: 0;
+  padding: 9px 20px;
+  cursor: pointer;
+}
+
+.hesap-durum { font-size: 13px; opacity: 0.6; margin-top: 10px; min-height: 18px; }
+
+.arkadas-liste { list-style: none; margin-top: 8px; }
+
+.arkadas-satir {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.arkadas-ad { font-size: 16px; font-weight: 500; }
+
+.arkadas-durum-etiket {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-right: auto;
+}
+
+.arkadas-islem {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--siyah);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  opacity: 0.65;
+}
+
+.arkadas-islem.sil { opacity: 0.4; }
+.arkadas-bos { font-size: 14px; opacity: 0.45; padding: 8px 0; }
+
 .giris-cik {
   margin-top: 18px;
   font-family: inherit;

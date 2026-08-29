@@ -19,7 +19,8 @@ const oku = (y) => readFile(new URL(y, import.meta.url), "utf8");
 const db = new PGlite();
 for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02_rls.sql",
                  "../sql/03_seed_katalog.sql", "../sql/04_seed_events.sql",
-                 "../sql/05_seed_comments.sql", "../sql/06_views.sql"]) {
+                 "../sql/05_seed_comments.sql", "../sql/06_views.sql",
+                 "../sql/07_friends.sql"]) {
   await db.exec(await oku(d));
 }
 console.log("veritabani hazir (bellekte)");
@@ -43,6 +44,24 @@ async function rolAyarla(kullanici) {
   }
 }
 const rolBirak = () => db.exec(`reset role; set request.jwt.claims = '';`);
+
+/* Fonksiyon argumanlarinin adi → tipi. Bir kere okunup saklaniyor. */
+const tipBellegi = new Map();
+async function argumanTipleri(fn) {
+  if (tipBellegi.has(fn)) return tipBellegi.get(fn);
+  const r = await db.query(
+    `select p.proargnames as adlar,
+            array(select t::regtype::text from unnest(p.proargtypes) as t) as tipler
+     from pg_proc p join pg_namespace n on n.oid = p.pronamespace
+     where n.nspname = 'public' and p.proname = $1 limit 1`, [fn]);
+  const esle = {};
+  if (r.rows.length && r.rows[0].adlar) {
+    const adlar = r.rows[0].adlar, tipler = r.rows[0].tipler;
+    adlar.forEach((a, i) => { if (a && tipler[i]) esle[a] = tipler[i]; });
+  }
+  tipBellegi.set(fn, esle);
+  return esle;
+}
 
 /* --- PostgREST suzgeclerinin kucuk bir alt kumesi -------------------- */
 
@@ -146,10 +165,19 @@ const sunucu = createServer(async (istek, cevap) => {
       if (ad.startsWith("rpc/")) {
         const fn = ad.slice(4).replace(/[^a-z_0-9]/gi, "");
         const anahtarlar = Object.keys(govde || {});
-        const args = anahtarlar.map((k, i) => `${k} => $${i + 1}`).join(", ");
+        const tipler = await argumanTipleri(fn);
+        /* Tip verilmezse Postgres argumani "unknown" sayip fonksiyonu
+           bulamiyor; imzayi katalogdan okuyup her argumani donusturuyoruz. */
+        const args = anahtarlar
+          .map((k, i) => `${k} => $${i + 1}::${tipler[k] || "text"}`)
+          .join(", ");
         const r = await db.query(`select * from public.${fn}(${args})`,
                                  anahtarlar.map((k) => govde[k]));
-        return yolla(200, r.rows);
+        /* PostgREST skaler donen fonksiyonlarda ciplak degeri dondurur,
+           satir sarmalamaz. Ayni davranis. */
+        const skaler = r.rows.length === 1 && r.fields && r.fields.length === 1
+          && r.fields[0].name === fn;
+        return yolla(200, skaler ? r.rows[0][fn] : r.rows);
       }
 
       const tablo = ad.split("?")[0].replace(/[^a-z_0-9]/gi, "");
@@ -184,11 +212,16 @@ const sunucu = createServer(async (istek, cevap) => {
       }
 
       if (istek.method === "PATCH") {
+        /* SET degerleri $1..$n, suzgecler ondan SONRA baslamali.
+           Suzgecler yukarida $1'den numaralandigi icin burada
+           kaydirilmis bir sayacla yeniden hesapliyoruz. */
         const kolonlar = Object.keys(govde || {});
-        const atamalar = kolonlar.map((k) => `${k} = $${sayac.n++}`);
+        const kaydirilmis = { n: kolonlar.length + 1 };
+        const f = suzgecCevir(url.searchParams, kaydirilmis);
+        const atamalar = kolonlar.map((k, i) => `${k} = $${i + 1}`);
         const r = await db.query(
-          `update public.${tablo} set ${atamalar.join(", ")}${nerede} returning *`,
-          [...kolonlar.map((k) => govde[k]), ...parametreler]);
+          `update public.${tablo} set ${atamalar.join(", ")}${f.nerede} returning *`,
+          [...kolonlar.map((k) => govde[k]), ...f.parametreler]);
         return yolla(200, r.rows);
       }
 

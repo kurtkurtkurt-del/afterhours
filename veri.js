@@ -125,6 +125,15 @@
 
   /* --- acilis ------------------------------------------------------ */
 
+  /* Bazi sayfalar (login) sadece baglantiyi istiyor, etkinlik listesini
+     degil. Yedek ve sonraki betik verilmemisse liste cekilmez. */
+  const sadeceBaglanti = !yedekYol && !sonraki.length;
+  if (sadeceBaglanti) {
+    AH.durum = acik ? "canli" : "yerel";
+    AH.hazir = Promise.resolve(AH.durum);
+    return;
+  }
+
   /* Oturum once cozulsun: deste "daha once attiklarimi" eleyecekse
      istek jetonla gitmeli. oturum.js yoksa beklenecek bir sey de yok. */
   const oturum = Promise.resolve(AH.oturumHazir || null).catch(() => null);

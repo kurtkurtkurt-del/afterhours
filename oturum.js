@@ -58,14 +58,16 @@
   }
   AH.auth = auth;
 
-  /* Donen jetonu sakla. expires_in saniye cinsinden. */
-  function jetonuKaydet(c) {
+  /* Donen jetonu sakla. expires_in saniye cinsinden.
+     yeniGiris: adresten taze bir jeton geldi demek — o zaman saklanan
+     kullanici bilgisi BASKA birine ait olabilir, atilmali. */
+  function jetonuKaydet(c, yeniGiris) {
     if (!c || !c.access_token) return null;
     const o = {
       access_token: c.access_token,
       refresh_token: c.refresh_token,
       bitis: Date.now() + (c.expires_in || 3600) * 1000,
-      kullanici: c.user || (AH.oturum && AH.oturum.kullanici) || null,
+      kullanici: c.user || (!yeniGiris && AH.oturum && AH.oturum.kullanici) || null,
     };
     yaz(o);
     return o;
@@ -111,7 +113,7 @@
     };
     /* Jeton adres cubugunda kalmasin: gecmise, paylasilan baglantiya girer */
     history.replaceState(null, "", location.pathname + location.search);
-    return jetonuKaydet(c);
+    return jetonuKaydet(c, true);
   }
 
   function yenile() {

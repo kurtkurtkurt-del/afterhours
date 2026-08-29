@@ -50,6 +50,12 @@
   const GORUNEN = 3;             // ust uste duran kart sayisi
   let sira = 0;
 
+  /* Destenin kaynagi. Soldaki tuslar bunu degistiriyor:
+     global deck   → POSTERS (filtreli normal deste)
+     friends liked → arkadaslarin saga attiklari
+     i feel lucky  → ayni kartlar, karisik sirayla           */
+  let KARTLAR = POSTERS;
+
   /* --- Saga atilanlar burada birikir --- */
 
   const tutulan = [];
@@ -84,7 +90,7 @@
     }
     /* En son tutulan ustte */
     tutulan.slice().reverse().forEach((e) => {
-      const no = String(e.poster || POSTERS.indexOf(e) + 1).padStart(2, "0");
+      const no = String(e.poster || KARTLAR.indexOf(e) + 1).padStart(2, "0");
       const a = document.createElement("a");
       a.className = "ex-kutu-satir";
       a.href = e.slug + "/index.html";
@@ -133,7 +139,7 @@
   function ucur(kart, yon) {
     if (kart.dataset.uctu) return;
     kart.dataset.uctu = "1";
-    const atilan = POSTERS[Number(kart.dataset.no)];
+    const atilan = KARTLAR[Number(kart.dataset.no)];
     if (yon > 0) tut(atilan);
     /* Her iki yon de kaydediliyor: sag biriktirmek, sol "bir daha gosterme".
        Girisliyken veritabanina, degilse tarayiciya. */
@@ -172,7 +178,7 @@
   function kartYap(i) {
     /* Poster numarasi kaydin kendisinden geliyor; veritabani eksik bir
        liste dondurdugunde posterler kaymasin diye siraya guvenmiyoruz. */
-    const no = String(POSTERS[i].poster || i + 1).padStart(2, "0");
+    const no = String(KARTLAR[i].poster || i + 1).padStart(2, "0");
     const kart = document.createElement("div");
     kart.className = "ex-kart";
     kart.dataset.no = String(i);
@@ -184,7 +190,7 @@
 
     /* Posterin altindaki bilgi seridi: tur + mekan/tarih.
        Veri events-data.js'ten, poster ile hic celismesin diye. */
-    const veri = POSTERS[i];
+    const veri = KARTLAR[i];
     const bilgi = document.createElement("div");
     bilgi.className = "ex-bilgi";
     const tur = document.createElement("p");
@@ -357,7 +363,7 @@
         return;
       }
 
-      const etkinlik = POSTERS[Number(ust.dataset.no)];
+      const etkinlik = KARTLAR[Number(ust.dataset.no)];
       kaynak(etkinlik).then(({ eski, yeni }) => {
         /* Bu arada baska bir kart ustte olabilir; gec gelen cevabi basma */
         if (deste.lastElementChild !== ust) return;
@@ -392,8 +398,8 @@
   );
 
   function doldur() {
-    while (deste.children.length < GORUNEN && sira < POSTERS.length) {
-      if (atlanacak.has(POSTERS[sira].slug)) { sira++; continue; }
+    while (deste.children.length < GORUNEN && sira < KARTLAR.length) {
+      if (atlanacak.has(KARTLAR[sira].slug)) { sira++; continue; }
       deste.insertBefore(kartYap(sira), deste.firstChild);
       sira++;
     }
@@ -418,7 +424,41 @@
 
   /* Ayni kartlar, bastan. Kartlar soldan ucup gelir ve
      ust uste dusler; en ustteki en son iner. */
-  function yenidenDagit() {
+  const BOS_MESAJ = {
+    "global deck": "that's everyone for tonight.",
+    "friends liked swipes": "no friends have kept anything yet.",
+    "i feel lucky": "that's everyone for tonight.",
+  };
+
+  /* Modun kart kaynagini getir. Hepsi ayni bicimde kayit dondurur. */
+  function kaynakGetir(mod) {
+    if (mod === "friends liked swipes") {
+      return window.AH && AH.arkadasBegenileri
+        ? AH.arkadasBegenileri()
+        : Promise.resolve([]);
+    }
+    if (mod === "i feel lucky") {
+      const k = POSTERS.slice();
+      for (let i = k.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [k[i], k[j]] = [k[j], k[i]];
+      }
+      return Promise.resolve(k);
+    }
+    return Promise.resolve(POSTERS);
+  }
+
+  function yenidenDagit(mod) {
+    const bitti = document.getElementById("ex-bitti");
+    if (bitti && mod) bitti.textContent = BOS_MESAJ[mod] || BOS_MESAJ["global deck"];
+
+    return kaynakGetir(mod || "global deck").then((liste) => {
+      KARTLAR = liste.length ? liste : [];
+      dagitmayaBasla();
+    });
+  }
+
+  function dagitmayaBasla() {
     while (deste.firstChild) deste.removeChild(deste.firstChild);
     sira = 0;
     doldur();                       /* son hallerini katmanla() kurar */
@@ -462,7 +502,7 @@
         if (d === dugme) d.setAttribute("aria-current", "true");
         else d.removeAttribute("aria-current");
       });
-      yenidenDagit();
+      yenidenDagit(dugme.textContent.trim());
     });
   });
 
