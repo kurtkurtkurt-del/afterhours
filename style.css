@@ -255,6 +255,57 @@ body:not([data-ekran="0"]) .foto {
   text-decoration: none;
 }
 
+/* Asagi gostergesi: ana sayfada dort ekran daha var ve bunu ancak
+   kaydirmayi deneyen ogreniyordu. Ekran 0'dan cikinca kayboluyor. */
+.asagi {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 34px;
+  opacity: 0.42;
+  transition: opacity 0.4s ease;
+}
+
+body:not([data-ekran="0"]) .asagi { opacity: 0; }
+
+.asagi-yazi {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Ince bir dikey cizgi ve ucunda ok; asagi dogru nefes alip veriyor */
+.asagi-ok {
+  position: relative;
+  width: 1px;
+  height: 26px;
+  background: var(--siyah);
+  animation: asagi-in 2.4s ease-in-out infinite;
+}
+
+.asagi-ok::after {
+  content: "";
+  position: absolute;
+  left: -3px;
+  bottom: 0;
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid var(--siyah);
+  border-bottom: 1px solid var(--siyah);
+  transform: rotate(45deg);
+}
+
+@keyframes asagi-in {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50%      { transform: translateY(7px); opacity: 0.55; }
+}
+
+/* Hareketi azaltilmis ayarda sadece dursun */
+@media (prefers-reduced-motion: reduce) {
+  .asagi-ok { animation: none; }
+}
+
 /* Posterin ustundeyken: o etkinligin bilgisi */
 .info {
   max-width: 440px;
@@ -2038,6 +2089,13 @@ html:has(body.explore) {
   gap: 56px;
   align-items: center;
   max-width: 1240px;
+}
+
+/* Yazi ve dugme ust uste binmesin (ark-disarida ile ayni durum) */
+.kk-sol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .kk-kartlar {
