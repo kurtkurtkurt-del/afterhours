@@ -178,9 +178,12 @@
       ...veri.bekleyen.map((k) => ({ ...k, crew: false })),
     ];
 
+    /* "hundreds" uygulamanin tamami icin; ekranda duran 61 kisi onun
+       bir parcasi. Ikisini birlikte yaziyoruz ki cumle ekrandakiyle
+       celismesin. */
     aciklama.textContent =
-      hepsi.length + " people from nachtradar · " +
-      veri.crew.length + " of them already crew";
+      "hundreds of people are already on the app · " +
+      hepsi.length + " of them here, " + veri.crew.length + " already crew";
 
     kutu.textContent = "";
     hepsi.forEach((k) => {
