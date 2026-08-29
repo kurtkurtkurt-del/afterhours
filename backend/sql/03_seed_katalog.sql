@@ -1,13 +1,18 @@
 -- URETILMIS DOSYA — elle duzenleme. Kaynak: backend/tools/seed-uret.mjs
 -- Sehirler, turler ve mekanlar. Once bu, sonra 04.
 
-insert into public.cities (slug, name, status, sira) values
-  ('munchen', 'münchen', 'live', 1),
-  ('istanbul', 'istanbul', 'live', 2),
-  ('ankara', 'ankara', 'soon', 3),
-  ('berlin', 'berlin', 'planned', 4),
-  ('wien', 'wien', 'planned', 5),
-  ('koln', 'köln', 'planned', 6)
+insert into public.cities (slug, name, status, sira, country, country_slug) values
+  ('munchen', 'münchen', 'live', 1, 'Deutschland', 'de'),
+  ('istanbul', 'istanbul', 'live', 2, 'Türkiye', 'tr'),
+  ('ankara', 'ankara', 'soon', 3, 'Türkiye', 'tr'),
+  ('berlin', 'berlin', 'planned', 4, 'Deutschland', 'de'),
+  ('wien', 'wien', 'planned', 5, 'Österreich', 'at'),
+  ('koln', 'köln', 'planned', 6, 'Deutschland', 'de'),
+  ('hamburg', 'hamburg', 'planned', 7, 'Deutschland', 'de'),
+  ('frankfurt', 'frankfurt', 'planned', 8, 'Deutschland', 'de'),
+  ('leipzig', 'leipzig', 'planned', 9, 'Deutschland', 'de'),
+  ('izmir', 'izmir', 'planned', 10, 'Türkiye', 'tr'),
+  ('graz', 'graz', 'planned', 11, 'Österreich', 'at')
 on conflict (slug) do nothing;
 
 insert into public.event_types (slug, name, sira) values

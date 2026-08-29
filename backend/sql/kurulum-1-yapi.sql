@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — KURULUM 1 / 2 : YAPI
---  SURUM: 2026-08-29 17:20   ← editorde bu satir gorunuyorsa dogru kopya
+--  SURUM: 2026-08-29 18:15   ← editorde bu satir gorunuyorsa dogru kopya
 --
 --  Supabase panelinde: SQL Editor → New query → bu dosyanin
 --  TAMAMINI yapistir → Run.
@@ -31,8 +31,13 @@ create table if not exists public.cities (
   name    text not null,
   -- ana sayfadaki durust sehir listesi: yayinda / yakinda / hedefte
   status  text not null default 'live' check (status in ('live', 'soon', 'planned')),
-  sira    int  not null default 0
+  sira    int  not null default 0,
+  -- Filtrede once ulke seciliyor, sonra o ulkenin sehirleri geliyor
+  country       text,
+  country_slug  text
 );
+
+create index if not exists cities_country_idx on public.cities (country_slug, sira);
 
 -- ------------------------------------------------------------------ tur
 
@@ -426,13 +431,18 @@ grant insert, update, delete on public.cities, public.event_types,
 -- URETILMIS DOSYA — elle duzenleme. Kaynak: backend/tools/seed-uret.mjs
 -- Sehirler, turler ve mekanlar. Once bu, sonra 04.
 
-insert into public.cities (slug, name, status, sira) values
-  ('munchen', 'münchen', 'live', 1),
-  ('istanbul', 'istanbul', 'live', 2),
-  ('ankara', 'ankara', 'soon', 3),
-  ('berlin', 'berlin', 'planned', 4),
-  ('wien', 'wien', 'planned', 5),
-  ('koln', 'köln', 'planned', 6)
+insert into public.cities (slug, name, status, sira, country, country_slug) values
+  ('munchen', 'münchen', 'live', 1, 'Deutschland', 'de'),
+  ('istanbul', 'istanbul', 'live', 2, 'Türkiye', 'tr'),
+  ('ankara', 'ankara', 'soon', 3, 'Türkiye', 'tr'),
+  ('berlin', 'berlin', 'planned', 4, 'Deutschland', 'de'),
+  ('wien', 'wien', 'planned', 5, 'Österreich', 'at'),
+  ('koln', 'köln', 'planned', 6, 'Deutschland', 'de'),
+  ('hamburg', 'hamburg', 'planned', 7, 'Deutschland', 'de'),
+  ('frankfurt', 'frankfurt', 'planned', 8, 'Deutschland', 'de'),
+  ('leipzig', 'leipzig', 'planned', 9, 'Deutschland', 'de'),
+  ('izmir', 'izmir', 'planned', 10, 'Türkiye', 'tr'),
+  ('graz', 'graz', 'planned', 11, 'Österreich', 'at')
 on conflict (slug) do nothing;
 
 insert into public.event_types (slug, name, sira) values
@@ -1144,6 +1154,29 @@ as $$
   group by s.event_id;
 $$;
 
+-- Filtredeki sehir listesi: her sehir ve kac gecesi var.
+create or replace function public.city_counts()
+returns table (
+  slug          text,
+  name          text,
+  status        text,
+  sira          int,
+  country       text,
+  country_slug  text,
+  n             bigint
+)
+language sql
+stable
+as $$
+  select c.slug, c.name, c.status, c.sira, c.country, c.country_slug,
+         count(e.id) filter (where e.is_published)
+  from public.cities c
+  left join public.events e on e.city_id = c.id
+  group by c.slug, c.name, c.status, c.sira, c.country, c.country_slug
+  order by c.sira;
+$$;
+
+grant execute on function public.city_counts()         to anon, authenticated;
 grant execute on function public.deck(text, text, int)  to anon, authenticated;
 grant execute on function public.swipe_set(text, text)  to authenticated;
 grant execute on function public.kept()                 to authenticated;

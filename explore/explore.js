@@ -2,46 +2,6 @@
    Ustteki kart surukleniyor; esigi asinca ucup gidiyor ve altindaki
    one geliyor. Sagi begenmek, solu gecmek. */
 
-/* Filtre: select'in genisligi normalde EN UZUN secenege gore olusuyor,
-   o yuzden ok isareti yazidan kopuk duruyordu. Secili metni olcup
-   genisligi ona esitliyoruz. */
-(function () {
-  const secler = document.querySelectorAll(".ex-sec select");
-  if (!secler.length) return;
-
-  const olcer = document.createElement("span");
-  olcer.style.cssText =
-    "position:absolute;visibility:hidden;white-space:pre;top:0;left:0";
-  document.body.appendChild(olcer);
-
-  function boyutla(sec) {
-    const stil = getComputedStyle(sec);
-    olcer.style.font = stil.font;
-    olcer.style.letterSpacing = stil.letterSpacing;
-    olcer.textContent = sec.options[sec.selectedIndex].text;
-    sec.style.width = Math.ceil(olcer.getBoundingClientRect().width) + 20 + "px";
-  }
-
-  function hepsi() { secler.forEach(boyutla); }
-
-  secler.forEach((s) => s.addEventListener("change", () => boyutla(s)));
-  hepsi();
-
-  /* Webfont gec geldiginde ilk olcum yedek fontla yapiliyor ve
-     genislik bir karakter eksik kaliyor. Font hazir diyene kadar
-     tekrar olc; hazir olunca dongu kendiliginden biter. */
-  /* Pane/pencere once dar acilirsa mobil font boyutuyla olculuyor;
-     genislik degisince tekrar olc. */
-  window.addEventListener("resize", hepsi);
-
-  let deneme = 0;
-  (function fontuBekle() {
-    const hazir = document.fonts && document.fonts.check('400 15px "Inter Tight"');
-    hepsi();
-    if (!hazir && deneme++ < 20) setTimeout(fontuBekle, 150);
-  })();
-})();
-
 (function () {
   const deste = document.getElementById("ex-deste");
   if (!deste) return;
@@ -432,6 +392,15 @@
     "i feel lucky": "that's everyone for tonight.",
   };
 
+  /* Ustteki filtre: sehir ve tur. Canliyken sorgu veritabaninda
+     yapiliyor, yerel modda elimizdeki listeden suzuluyor. */
+  function filtrele(liste) {
+    const f = (window.AH && AH.filtre) || {};
+    if (!f.tur) return liste;
+    const ad = f.tur.replace(/-/g, " ");
+    return liste.filter((e) => (e.tur || "").toLowerCase() === ad);
+  }
+
   /* Modun kart kaynagini getir. Hepsi ayni bicimde kayit dondurur. */
   function kaynakGetir(mod) {
     if (mod === "friends liked swipes") {
@@ -440,14 +409,19 @@
         : Promise.resolve([]);
     }
     if (mod === "i feel lucky") {
-      const k = POSTERS.slice();
+      const k = filtrele(POSTERS).slice();
       for (let i = k.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [k[i], k[j]] = [k[j], k[i]];
       }
       return Promise.resolve(k);
     }
-    return Promise.resolve(POSTERS);
+
+    const f = (window.AH && AH.filtre) || {};
+    if (window.AH && AH.durum === "canli" && AH.etkinlikler) {
+      return AH.etkinlikler(f.tur, f.sehir).catch(() => filtrele(POSTERS));
+    }
+    return Promise.resolve(filtrele(POSTERS));
   }
 
   function yenidenDagit(mod) {
@@ -456,6 +430,13 @@
 
     return kaynakGetir(mod || "global deck").then((liste) => {
       KARTLAR = liste.length ? liste : [];
+      /* Bos deste: neden bos oldugunu soyle */
+      if (!liste.length && bitti && (mod || "global deck") === "global deck") {
+        const f = (window.AH && AH.filtre) || {};
+        bitti.textContent = f.sehir
+          ? "no nights in " + f.sehir + " yet."
+          : "that's everyone for tonight.";
+      }
       dagitmayaBasla();
     });
   }
@@ -495,6 +476,15 @@
         k.style.opacity = "1";
       });
     }, 95 * kartlar.length + 600);
+  }
+
+  /* Filtre degisince deste yeniden dagitilsin */
+  window.AH = window.AH || {};
+  AH.desteyiYenile = (mod) => yenidenDagit(mod || secilenMod());
+
+  function secilenMod() {
+    const d = document.querySelector(".ex-mod.secili");
+    return d ? d.textContent.trim() : "global deck";
   }
 
   document.querySelectorAll(".ex-mod").forEach((dugme) => {

@@ -121,11 +121,14 @@
   }
   AH.satiriCevir = satiriCevir;
 
-  AH.etkinlikler = function (tur) {
+  AH.etkinlikler = function (tur, sehir) {
     const iste = () =>
       AH.istek("/rpc/deck", {
         method: "POST",
-        body: JSON.stringify({ p_city: AYAR.sehir || "munchen", p_type: tur || null }),
+        body: JSON.stringify({
+          p_city: sehir || AYAR.sehir || "munchen",
+          p_type: tur || null,
+        }),
       }).then((satirlar) => satirlar.map(satiriCevir));
 
     return iste().catch((h) => {

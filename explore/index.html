@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=66" />
+  <link rel="stylesheet" href="../style.css?v=73" />
 </head>
 <body class="explore">
 
@@ -36,36 +36,35 @@
 
     <div class="ex-sol">
       <div class="ex-filtre">
-        <span class="ex-sec">
-          <select aria-label="city">
-            <option>münchen</option>
-            <option>istanbul</option>
-            <option>berlin</option>
-            <option>wien</option>
-            <option>köln</option>
-          </select>
-        </span>
-        <span class="ex-sec">
-          <select aria-label="category">
-            <option>all events</option>
-            <option>rave</option>
-            <option>club night</option>
-            <option>konzert</option>
-            <option>festival</option>
-            <option>meetup</option>
-            <option>hausparty</option>
-          </select>
-        </span>
-        <span class="ex-sec">
-          <select aria-label="date">
-            <option>tonight</option>
-            <option>tomorrow</option>
-            <option>this weekend</option>
-            <option>this week</option>
-            <option>this month</option>
-          </select>
-        </span>
+        <div class="fl" data-alan="ulke">
+          <button class="fl-dugme" type="button" aria-expanded="false" aria-label="country">
+            <span class="fl-deger">deutschland</span>
+          </button>
+          <div class="fl-liste" hidden></div>
+        </div>
+
+        <div class="fl" data-alan="sehir">
+          <button class="fl-dugme" type="button" aria-expanded="false" aria-label="city">
+            <span class="fl-deger">münchen</span>
+          </button>
+          <div class="fl-liste" hidden></div>
+        </div>
+
+        <div class="fl" data-alan="tur">
+          <button class="fl-dugme" type="button" aria-expanded="false" aria-label="category">
+            <span class="fl-deger">all events</span>
+          </button>
+          <div class="fl-liste" hidden></div>
+        </div>
+
+        <div class="fl" data-alan="tarih">
+          <button class="fl-dugme" type="button" aria-expanded="false" aria-label="date">
+            <span class="fl-deger">tonight</span>
+          </button>
+          <div class="fl-liste" hidden></div>
+        </div>
       </div>
+
       <p class="ex-servis">your deck is served</p>
       <!-- Kartin ustunde: sol gecmek, sag begenip biriktirmek -->
       <div class="ex-yonler">
@@ -139,16 +138,16 @@
 
   </main>
 
-  <script src="../ayar.js?v=66"></script>
-  <script src="../oturum.js?v=66"></script>
-  <script src="../menu.js?v=66"></script>
-  <script src="../atislar.js?v=66"></script>
-  <script src="../beforehours.js?v=66"></script>
-  <script src="../arkadaslar.js?v=66"></script>
-  <script src="yorumlar.js?v=66"></script>
-  <script src="../veri.js?v=66"
-          data-yedek="../events-data.js?v=66"
-          data-sonra="explore.js?v=66"></script>
+  <script src="../ayar.js?v=73"></script>
+  <script src="../oturum.js?v=73"></script>
+  <script src="../menu.js?v=73"></script>
+  <script src="../atislar.js?v=73"></script>
+  <script src="../beforehours.js?v=73"></script>
+  <script src="../arkadaslar.js?v=73"></script>
+  <script src="yorumlar.js?v=73"></script>
+  <script src="../veri.js?v=73"
+          data-yedek="../events-data.js?v=73"
+          data-sonra="explore.js?v=73, filtre.js?v=73"></script>
 
 </body>
 </html>

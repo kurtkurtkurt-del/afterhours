@@ -36,7 +36,7 @@ console.log("\n— sayilar —");
 {
   const say = async (t) => (await db.query(`select count(*)::int as n from public.${t}`)).rows[0].n;
   olmali(await say("events") === POSTERS.length, `${POSTERS.length} etkinlik yuklendi`);
-  olmali(await say("cities") === 6, "6 sehir");
+  olmali(await say("cities") === 11, "11 sehir (uc ulke)");
   olmali(await say("event_types") === 6, "6 tur");
   olmali(await say("venues") === 20, "20 mekan");
 
@@ -138,6 +138,15 @@ console.log("\n— iliskiler —");
 
   const tahmin = await db.query(`select count(*)::int as n from public.events where starts_at_estimated`);
   olmali(tahmin.rows[0].n === 24, "24 tarih 'dogrulanmadi' olarak isaretli", `bulunan ${tahmin.rows[0].n}`);
+
+  /* Ulke alanlari dolu mu: filtre once ulkeye gore ayiriyor */
+  const ulkesiz = await db.query(
+    `select count(*)::int as n from public.cities where country_slug is null`);
+  olmali(ulkesiz.rows[0].n === 0, "her sehrin ulkesi var");
+
+  const ulkeler = await db.query(
+    `select count(distinct country_slug)::int as n from public.cities`);
+  olmali(ulkeler.rows[0].n === 3, "uc ulke", "bulunan " + ulkeler.rows[0].n);
 
   const turDagilim = await db.query(`
     select t.name, count(*)::int as n from public.events e

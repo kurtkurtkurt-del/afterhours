@@ -16,10 +16,10 @@ const oku = (yol) => readFile(new URL(yol, kok), "utf8");
 const eventsJs = await oku("events-data.js");
 const { POSTERS } = new Function(eventsJs + "\n;return { POSTERS };")();
 
-const appJs = await oku("app.js");
-const mekanBlok = appJs.match(/const MEKANLAR = \[[\s\S]*?\n\];/);
-if (!mekanBlok) throw new Error("app.js icinde MEKANLAR bulunamadi");
-const { MEKANLAR } = new Function(mekanBlok[0] + "\n;return { MEKANLAR };")();
+/* MEKANLAR app.js'in icindeydi, mekanlar.js'e tasindi (maps sayfasi da
+   ayni koordinatlari kullaniyor). */
+const mekanJs = await oku("mekanlar.js");
+const { MEKANLAR } = new Function("window", mekanJs + "\n;return { MEKANLAR };")({});
 
 const yorumJs = await oku("explore/yorumlar.js");
 const { YORUM_HAVUZU, YORUMLARI_GETIR } =
@@ -134,13 +134,19 @@ function zamaniCoz(metin) {
 
 /* ---- 03: sehir, tur, mekan ------------------------------------------ */
 
+/* slug, ad, durum, sira, ulke, ulke kodu */
 const sehirler = [
-  ["munchen", "münchen", "live", 1],
-  ["istanbul", "istanbul", "live", 2],
-  ["ankara", "ankara", "soon", 3],
-  ["berlin", "berlin", "planned", 4],
-  ["wien", "wien", "planned", 5],
-  ["koln", "köln", "planned", 6],
+  ["munchen", "münchen", "live", 1, "Deutschland", "de"],
+  ["istanbul", "istanbul", "live", 2, "Türkiye", "tr"],
+  ["ankara", "ankara", "soon", 3, "Türkiye", "tr"],
+  ["berlin", "berlin", "planned", 4, "Deutschland", "de"],
+  ["wien", "wien", "planned", 5, "Österreich", "at"],
+  ["koln", "köln", "planned", 6, "Deutschland", "de"],
+  ["hamburg", "hamburg", "planned", 7, "Deutschland", "de"],
+  ["frankfurt", "frankfurt", "planned", 8, "Deutschland", "de"],
+  ["leipzig", "leipzig", "planned", 9, "Deutschland", "de"],
+  ["izmir", "izmir", "planned", 10, "Türkiye", "tr"],
+  ["graz", "graz", "planned", 11, "Österreich", "at"],
 ];
 
 /* spec'in kendi sirasi */
@@ -149,8 +155,9 @@ const turler = ["Rave", "Club Night", "Konzert", "Festival", "Meetup", "Hauspart
 let sql = `-- URETILMIS DOSYA — elle duzenleme. Kaynak: backend/tools/seed-uret.mjs
 -- Sehirler, turler ve mekanlar. Once bu, sonra 04.
 
-insert into public.cities (slug, name, status, sira) values
-${sehirler.map(([s, a, d, i]) => `  (${q(s)}, ${q(a)}, ${q(d)}, ${i})`).join(",\n")}
+insert into public.cities (slug, name, status, sira, country, country_slug) values
+${sehirler.map(([s, a, d, i, u, uk]) =>
+  `  (${q(s)}, ${q(a)}, ${q(d)}, ${i}, ${q(u)}, ${q(uk)})`).join(",\n")}
 on conflict (slug) do nothing;
 
 insert into public.event_types (slug, name, sira) values

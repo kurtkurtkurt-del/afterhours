@@ -179,6 +179,29 @@ as $$
   group by s.event_id;
 $$;
 
+-- Filtredeki sehir listesi: her sehir ve kac gecesi var.
+create or replace function public.city_counts()
+returns table (
+  slug          text,
+  name          text,
+  status        text,
+  sira          int,
+  country       text,
+  country_slug  text,
+  n             bigint
+)
+language sql
+stable
+as $$
+  select c.slug, c.name, c.status, c.sira, c.country, c.country_slug,
+         count(e.id) filter (where e.is_published)
+  from public.cities c
+  left join public.events e on e.city_id = c.id
+  group by c.slug, c.name, c.status, c.sira, c.country, c.country_slug
+  order by c.sira;
+$$;
+
+grant execute on function public.city_counts()         to anon, authenticated;
 grant execute on function public.deck(text, text, int)  to anon, authenticated;
 grant execute on function public.swipe_set(text, text)  to authenticated;
 grant execute on function public.kept()                 to authenticated;
