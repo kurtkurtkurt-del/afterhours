@@ -1,5 +1,6 @@
 -- ============================================================
 --  afterhours — KURULUM 1 / 2 : YAPI
+--  SURUM: 2026-08-29 17:20   ← editorde bu satir gorunuyorsa dogru kopya
 --
 --  Supabase panelinde: SQL Editor → New query → bu dosyanin
 --  TAMAMINI yapistir → Run.

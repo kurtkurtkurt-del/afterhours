@@ -18,8 +18,13 @@ const yapi = [
   ["09_jobs.sql", "ARKA PLAN ISLERI"],
 ];
 
+/* Dosyanin basina gorunur bir surum damgasi koyuyoruz: editorde hangi
+   kopyanin durdugu tek bakista anlasilsin. Pano guvenilmez cikti. */
+const damga = new Date().toISOString().slice(0, 16).replace("T", " ");
+
 let bir = `-- ============================================================
 --  afterhours — KURULUM 1 / 2 : YAPI
+--  SURUM: ${damga}   ← editorde bu satir gorunuyorsa dogru kopya
 --
 --  Supabase panelinde: SQL Editor → New query → bu dosyanin
 --  TAMAMINI yapistir → Run.
@@ -40,6 +45,7 @@ for (const [dosya, baslik] of yapi) {
 
 const iki = `-- ============================================================
 --  afterhours — KURULUM 2 / 2 : ORNEK YORUMLAR
+--  SURUM: ${damga}
 --
 --  Once kurulum-1-yapi.sql calistirilmis olmali.
 --  beforehours panelindeki ornek tartismalar: 180 konu, 131 cevap.
