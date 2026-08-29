@@ -1777,6 +1777,141 @@ html:has(body.explore) {
   .giris-dugme { font-size: 16px; padding: 15px 34px; }
 }
 
+/* ---------- maps: elle cizilmis Munih semasi ---------- */
+
+/* Kure yerine bu geldi: tek bir SVG, hicbir animasyon dongusu yok. */
+/* Sema butun alani kaplasin, yazilar uzerine binsin: harita icerik,
+   yazi etiket. Ust uste koymak semayi iki katina cikardi. */
+.ha {
+  height: 100vh;
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+}
+
+.ha-yazi {
+  position: absolute;
+  top: 96px;
+  left: 32px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ha-baslik {
+  font-size: min(5.2vw, 60px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.ha-alt { font-size: 15px; opacity: 0.5; margin-top: 4px; }
+
+/* SVG degistirilmis bir oge: inset onu germiyor, kendi ic olculerine
+   gore boyutlaniyor. Kutuyu konumlandirip SVG'yi kutunun icine
+   yerlestiriyoruz. */
+.ha-sema-kutu {
+  position: absolute;
+  inset: 72px 24px 52px;
+}
+
+.ha-sema { width: 100%; height: 100%; display: block; }
+
+/* --- semanin cizgileri --- */
+
+.ha-park { fill: #f0f1ed; stroke: none; }
+
+.ha-nehir {
+  fill: none;
+  stroke: #dde2e6;
+  stroke-width: 11;
+  stroke-linecap: round;
+}
+
+.ha-ring-dis, .ha-ring-ic {
+  fill: none;
+  stroke: rgba(0, 0, 0, 0.17);
+  stroke-width: 1.2;
+}
+
+.ha-yol path {
+  fill: none;
+  stroke: rgba(0, 0, 0, 0.12);
+  stroke-width: 1;
+}
+
+.ha-gar { fill: none; stroke: rgba(0, 0, 0, 0.35); stroke-width: 1.4; }
+
+.ha-etiket text {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  fill: rgba(0, 0, 0, 0.38);
+}
+
+.ha-etiket-park { fill: rgba(0, 0, 0, 0.22) !important; }
+.ha-etiket-gar { font-size: 8.5px !important; }
+
+/* --- geceler --- */
+
+.ha-nokta { cursor: pointer; }
+.ha-nokta-hedef { fill: transparent; }
+
+.ha-nokta-daire {
+  fill: var(--siyah);
+  transition: r 0.16s ease, fill 0.16s ease;
+}
+
+.ha-nokta:hover .ha-nokta-daire,
+.ha-nokta.ustunde .ha-nokta-daire { r: 8; }
+
+.ha-nokta:focus-visible .ha-nokta-daire { r: 8; }
+.ha-nokta:focus { outline: none; }
+
+/* --- uzerine gelinen gece --- */
+
+.ha-kart {
+  position: absolute;
+  z-index: 2;
+  right: 32px;
+  top: 96px;
+  max-width: 300px;
+  text-align: right;
+  pointer-events: none;
+}
+
+.ha-kart-tur {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  opacity: 0.5;
+  margin-bottom: 6px;
+}
+
+.ha-kart-ad { font-size: 26px; font-weight: 500; letter-spacing: -0.02em; }
+.ha-kart-meta { font-size: 14px; opacity: 0.6; margin-top: 4px; }
+
+.ha-dip {
+  position: absolute;
+  left: 32px;
+  bottom: 26px;
+  z-index: 2;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.38;
+}
+
+@media (max-width: 720px) {
+  .ha-yazi { top: 84px; left: 16px; }
+  .ha-sema-kutu { inset: 150px 8px 64px; }
+  .ha-dip { left: 16px; bottom: 18px; }
+  .ha-baslik { font-size: 34px; }
+  .ha-alt { font-size: 13px; }
+  .ha-kart { right: 16px; top: 84px; text-align: right; max-width: 46vw; }
+  .ha-kart-ad { font-size: 20px; }
+}
+
 /* ---------- friends & more: biriktirdiklerin ---------- */
 
 .tutulan-liste { list-style: none; margin-top: 6px; }

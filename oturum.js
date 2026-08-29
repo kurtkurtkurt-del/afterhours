@@ -116,6 +116,10 @@
 
   AH.girisliMi = () => Boolean(AH.jeton);
 
+  /* Sunucuya sormadan yerel oturumu birak. Jeton artik gecerli degilse
+     (baska bir projeye ait, suresi gecmis) sunucuya gitmenin anlami yok. */
+  AH.oturumuBirak = function () { yaz(null); };
+
   /* --- acilista: adresteki jetonu al, sureli olani yenile --- */
 
   function adrestenAl() {

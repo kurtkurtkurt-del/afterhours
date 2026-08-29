@@ -11,10 +11,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=67" />
+  <link rel="stylesheet" href="../style.css?v=71" />
 </head>
-<!-- Kure yalnizca "ekran 3" ondeyken ciziyor; burada sayfanin tamami o. -->
-<body data-ekran="3" class="harita">
+<body>
 
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
@@ -27,27 +26,86 @@
     </nav>
   </header>
 
-  <main class="ekran ekran4">
-    <canvas class="k4-sahne" id="k4-sahne"></canvas>
+  <main class="ha">
 
-    <div class="k4-metin">
-      <h2 class="k4-baslik">go local.</h2>
-      <p class="k4-alt">Drag to spin the city. Click a beacon to open the night.</p>
+    <div class="ha-yazi">
+      <h1 class="ha-baslik">go local.</h1>
+      <p class="ha-alt" id="ha-alt">the city, roughly. hover a dot.</p>
     </div>
 
-    <div class="k4-yakin">
-      <p class="k4-yakin-baslik">within reach tonight</p>
-      <ul id="harita-yakin"></ul>
-      <p class="k4-yakin-alt" id="harita-alt">spin to find the rest</p>
+    <!-- Sehir semasi: elle cizildi, olcekli degil. Isar, ring, park ve
+         birkac mahalle — noktalarin nerede durdugu anlasilsin diye. -->
+    <div class="ha-sema-kutu">
+    <svg class="ha-sema" id="ha-sema" viewBox="450 130 760 640"
+         preserveAspectRatio="xMidYMid meet" aria-label="a schematic map of munich">
+
+      <!-- Englischer Garten -->
+      <path class="ha-park"
+            d="M 800 190 L 858 178 L 868 262 L 858 352 L 826 404 L 800 392 L 790 300 Z" />
+
+      <!-- Isar -->
+      <path class="ha-nehir"
+            d="M 903 130 C 892 220 876 300 864 380 C 852 452 840 500 822 560
+               C 802 632 782 702 764 772" />
+
+      <!-- Mittlerer Ring -->
+      <path class="ha-ring-dis"
+            d="M 762 236 C 872 236 962 320 962 434 C 962 560 878 664 762 664
+               C 646 664 562 560 562 434 C 562 320 652 236 762 236 Z" />
+
+      <!-- Altstadtring -->
+      <circle class="ha-ring-ic" cx="770" cy="470" r="58" />
+
+      <!-- birkac ana eksen -->
+      <g class="ha-yol">
+        <path d="M 770 412 L 770 250" />
+        <path d="M 770 528 L 770 690" />
+        <path d="M 712 470 L 560 470" />
+        <path d="M 828 470 L 1000 470" />
+        <path d="M 728 428 L 620 330" />
+        <path d="M 812 512 L 900 600" />
+        <path d="M 1000 470 L 1128 512" />
+      </g>
+
+      <!-- Hauptbahnhof -->
+      <rect class="ha-gar" x="666" y="462" width="16" height="16" />
+
+      <g class="ha-etiket">
+        <text x="700" y="255">SCHWABING</text>
+        <text x="614" y="392">MAXVORSTADT</text>
+        <text x="906" y="470">HAIDHAUSEN</text>
+        <text x="828" y="700">GIESING</text>
+        <text x="556" y="560">WESTEND</text>
+        <text x="520" y="430">NEUHAUSEN</text>
+        <text x="650" y="640">SENDLING</text>
+        <text x="500" y="270">OLYMPIAPARK</text>
+        <text x="1090" y="540">RIEM</text>
+        <text x="806" y="215" class="ha-etiket-park">ENGLISCHER GARTEN</text>
+        <text x="700" y="486" class="ha-etiket-gar">HBF</text>
+      </g>
+
+      <!-- Noktalar harita.js ile -->
+      <g id="ha-noktalar"></g>
+    </svg>
     </div>
+
+    <!-- Uzerine gelinen etkinlik -->
+    <div class="ha-kart" id="ha-kart" hidden>
+      <p class="ha-kart-tur" id="ha-kart-tur"></p>
+      <p class="ha-kart-ad" id="ha-kart-ad"></p>
+      <p class="ha-kart-meta" id="ha-kart-meta"></p>
+    </div>
+
+    <p class="ha-dip" id="ha-dip"></p>
   </main>
 
-  <script src="../ayar.js?v=67"></script>
-  <script src="../oturum.js?v=67"></script>
-  <script src="../veri.js?v=67"
-          data-yedek="../events-data.js?v=67"
-          data-sonra="../sehir.js?v=67, harita.js?v=67"></script>
-  <script src="../menu.js?v=67"></script>
+  <script src="../ayar.js?v=71"></script>
+  <script src="../oturum.js?v=71"></script>
+  <script src="../mekanlar.js?v=71"></script>
+  <script src="../veri.js?v=71"
+          data-yedek="../events-data.js?v=71"
+          data-sonra="harita.js?v=71"></script>
+  <script src="../menu.js?v=71"></script>
 
 </body>
 </html>

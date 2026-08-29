@@ -1,39 +1,105 @@
-/* afterhours — maps sayfasi.
-   Kureyi ana sayfadaki sehir.js ciziyor; burada sadece yanindaki
-   "yurume mesafesinde" listesini gercek veriden dolduruyoruz.
-   Ana sayfada bu liste elle yazilmisti; burada etkinliklerden geliyor. */
+/* afterhours — maps.
+   Sehir semasi HTML'de elle cizildi; burasi sadece noktalari koyuyor.
+   Hicbir animasyon dongusu yok: kureyi degistirmesinin sebebi de bu,
+   o her karede yuzlerce bina ciziyordu.
+
+   Nokta konumu mekanin koordinatindan (mekanlar.js) geliyor. Ayni
+   mekanda birden fazla gece varsa ust uste binmesinler diye slug'dan
+   uretilen sabit bir kaydirma uygulaniyor — her acilista ayni yerde. */
 
 (function () {
-  const liste = document.getElementById("harita-yakin");
-  const alt = document.getElementById("harita-alt");
-  if (!liste) return;
+  const NS = "http://www.w3.org/2000/svg";
+  const katman = document.getElementById("ha-noktalar");
+  const sema = document.getElementById("ha-sema");
+  const kart = document.getElementById("ha-kart");
+  const kartTur = document.getElementById("ha-kart-tur");
+  const kartAd = document.getElementById("ha-kart-ad");
+  const kartMeta = document.getElementById("ha-kart-meta");
+  const dip = document.getElementById("ha-dip");
+  if (!katman) return;
 
-  /* Yurume dakikalari kurenin kendi verisinde: sehir.js her geceyi
-     `dk` alaniyla tutuyor ve beacon'a gelince ayni sayiyi gosteriyor.
-     Liste de oradan gelsin ki iki yer birbirini yalanlamasin. */
-  const geceler = window.AH_GECELER || [];
-  if (!geceler.length) return;
+  const kartlar = window.POSTERS || [];
+  const mekanlar = window.MEKANLAR || [];
 
-  const yakin = geceler.slice().sort((a, b) => a.dk - b.dk).slice(0, 7);
+  /* Etkinligin mekanini bul: canliyken kayittan geliyor, yerel modda
+     meta satirindaki adlari tariyoruz (tohum ureteciyle ayni mantik). */
+  function mekanBul(e) {
+    const adaylar = [];
+    if (e.mekan) adaylar.push(e.mekan);
+    (e.meta || "").split("·").forEach((p) => adaylar.push(p.trim()));
 
-  liste.textContent = "";
-  yakin.forEach((g) => {
-    const li = document.createElement("li");
+    for (const ham of adaylar) {
+      if (!ham) continue;
+      const aday = ham.toUpperCase().trim();
+      const m =
+        mekanlar.find((x) => x.ad === aday) ||
+        mekanlar.find((x) => aday.startsWith(x.ad) || x.ad.startsWith(aday)) ||
+        mekanlar.find((x) => aday.includes(x.ad));
+      if (m) return m;
+    }
+    return null;
+  }
 
-    const ad = document.createElement("span");
-    ad.textContent = g.ad;
+  /* Ayni noktada yigilmasinlar: slug'a bagli kucuk, sabit bir kaydirma */
+  function kaydir(slug) {
+    let h = 0;
+    for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+    const aci = (h % 360) * (Math.PI / 180);
+    const uzaklik = 7 + (h % 11);
+    return { dx: Math.cos(aci) * uzaklik, dy: Math.sin(aci) * uzaklik };
+  }
 
-    const tur = document.createElement("em");
-    tur.textContent = (g.tip || "").toLowerCase();
+  let yerlesen = 0;
 
-    const sure = document.createElement("b");
-    sure.textContent = g.dk + " min";
+  kartlar.forEach((e) => {
+    const m = mekanBul(e);
+    if (!m) return;                     /* mekani olmayan gece haritada yok */
+    yerlesen++;
 
-    li.appendChild(ad);
-    li.appendChild(tur);
-    li.appendChild(sure);
-    liste.appendChild(li);
+    const k = kaydir(e.slug);
+    const g = document.createElementNS(NS, "a");
+    g.setAttribute("href", "../explore/" + e.slug + "/index.html");
+    g.setAttribute("class", "ha-nokta");
+
+    /* Buyuk gorunmez daire: fareyle yakalamasi kolay olsun */
+    const hedef = document.createElementNS(NS, "circle");
+    hedef.setAttribute("cx", m.x + k.dx);
+    hedef.setAttribute("cy", m.y + k.dy);
+    hedef.setAttribute("r", 13);
+    hedef.setAttribute("class", "ha-nokta-hedef");
+
+    const daire = document.createElementNS(NS, "circle");
+    daire.setAttribute("cx", m.x + k.dx);
+    daire.setAttribute("cy", m.y + k.dy);
+    daire.setAttribute("r", 5.2);
+    daire.setAttribute("class", "ha-nokta-daire");
+
+    g.appendChild(hedef);
+    g.appendChild(daire);
+
+    const goster = () => {
+      kart.hidden = false;
+      kartTur.textContent = (e.tur || "").toUpperCase();
+      kartAd.textContent = e.baslik;
+      kartMeta.textContent = e.meta;
+      g.classList.add("ustunde");
+    };
+    const gizle = () => { kart.hidden = true; g.classList.remove("ustunde"); };
+
+    g.addEventListener("mouseenter", goster);
+    g.addEventListener("mouseleave", gizle);
+    g.addEventListener("focus", goster);
+    g.addEventListener("blur", gizle);
+
+    katman.appendChild(g);
   });
 
-  alt.textContent = geceler.length + " nights on the globe · spin to find the rest";
+  const eksik = kartlar.length - yerlesen;
+  dip.textContent =
+    yerlesen + " nights placed" +
+    (eksik ? " · " + eksik + " without a venue yet" : "") +
+    " · schematic, not to scale";
+
+  /* Fare haritanin bosluguna gidince kart kapansin */
+  sema.addEventListener("mouseleave", () => { kart.hidden = true; });
 })();

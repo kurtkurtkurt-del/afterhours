@@ -122,10 +122,21 @@
   AH.satiriCevir = satiriCevir;
 
   AH.etkinlikler = function (tur) {
-    return AH.istek("/rpc/deck", {
-      method: "POST",
-      body: JSON.stringify({ p_city: AYAR.sehir || "munchen", p_type: tur || null }),
-    }).then((satirlar) => satirlar.map(satiriCevir));
+    const iste = () =>
+      AH.istek("/rpc/deck", {
+        method: "POST",
+        body: JSON.stringify({ p_city: AYAR.sehir || "munchen", p_type: tur || null }),
+      }).then((satirlar) => satirlar.map(satiriCevir));
+
+    return iste().catch((h) => {
+      /* Elde eskimis/gecersiz bir jeton varsa sunucu 401 doner ve site
+         bos kalirdi. Jetonu birakip anonim olarak tekrar deniyoruz:
+         giris gecersizse bile gezinme calismali. */
+      if (!/^401/.test(h.message) || !AH.jeton) throw h;
+      console.warn("[afterhours] oturum gecersiz, anonim devam ediliyor");
+      if (AH.oturumuBirak) AH.oturumuBirak();
+      return iste();
+    });
   };
 
   /* --- acilis ------------------------------------------------------ */
