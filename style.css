@@ -8,6 +8,12 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* hidden ozniteligi her zaman kazansin. Varsayilan degeri display:none
+   yalnizca "display" ayrica verilmemisse gecerli; flex/grid verilen her
+   ogede hidden sessizce etkisiz kaliyor (giris formunda ve yonetim
+   panelinde tam olarak bu oldu). */
+[hidden] { display: none !important; }
+
 html, body { height: 100%; }
 body.home { overflow: hidden; }   /* ana sayfa kaymaz, sadece poster sutunu kayar */
 
@@ -1578,10 +1584,6 @@ html:has(body.explore) {
   line-height: 0.98;
   margin-bottom: 44px;
 }
-
-/* [hidden] tek basina yetmiyor: display: flex onu eziyor. */
-.giris-form[hidden],
-.giris-icerde[hidden] { display: none; }
 
 .giris-form {
   display: flex;

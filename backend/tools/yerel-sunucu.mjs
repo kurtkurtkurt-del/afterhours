@@ -133,6 +133,15 @@ const sunucu = createServer(async (istek, cevap) => {
         k = await db.query(`insert into auth.users (email) values ($1) returning id`, [eposta]);
       }
       const id = k.rows[0].id;
+
+      /* Gelistirme kolayligi: ilk kullanici yonetici olsun. Gercek
+         kurulumda bu, SQL editorunde tek satirlik bir guncelleme. */
+      const yon = await db.query(`select count(*)::int as n from public.profiles where is_admin`);
+      if (yon.rows[0].n === 0) {
+        await db.query(`update public.profiles set is_admin = true where id = $1`, [id]);
+        console.log("  ★ " + eposta + " yonetici yapildi (sadece yerelde)");
+      }
+
       const donus = (govde.options && govde.options.email_redirect_to) || "http://localhost:4340/";
       console.log("\n  ✉  giris baglantisi (" + eposta + "):");
       console.log("     " + donus + "#access_token=yerel-" + id +

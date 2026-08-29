@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>admin | afterhours</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css?v=53" />
+  <link rel="stylesheet" href="admin.css?v=53" />
+</head>
+<body class="yonetim">
+
+  <header class="header">
+    <a class="logo" href="../index.html">afterhours</a>
+    <nav class="header-links">
+      <a href="../explore/index.html">explore</a>
+      <a href="../help/index.html">help</a>
+      <a href="../login/index.html">login</a>
+    </nav>
+  </header>
+
+  <!-- Kapi: giris yoksa ya da yonetici degilse buraya kadar -->
+  <main class="yn-kapi" id="yn-kapi">
+    <p class="yn-kapi-yazi" id="yn-kapi-yazi">checking…</p>
+    <a class="yn-kapi-link" id="yn-kapi-link" href="../login/index.html" hidden>sign in</a>
+  </main>
+
+  <main class="yn" id="yn" hidden>
+
+    <aside class="yn-liste-alan">
+      <div class="yn-arac">
+        <input class="yn-ara" id="yn-ara" type="search" placeholder="search events" />
+        <button class="yn-yeni" id="yn-yeni" type="button">new</button>
+      </div>
+      <p class="yn-ozet" id="yn-ozet"></p>
+      <ul class="yn-liste" id="yn-liste"></ul>
+    </aside>
+
+    <section class="yn-duzen" id="yn-duzen" hidden>
+      <div class="yn-duzen-sol">
+        <label class="yn-etiket">title
+          <input class="yn-alan" id="a-title" type="text" />
+        </label>
+
+        <label class="yn-etiket">slug <span class="yn-ipucu">changing this breaks existing links</span>
+          <input class="yn-alan" id="a-slug" type="text" spellcheck="false" />
+        </label>
+
+        <div class="yn-ikili">
+          <label class="yn-etiket">type
+            <select class="yn-alan" id="a-type"></select>
+          </label>
+          <label class="yn-etiket">city
+            <select class="yn-alan" id="a-city"></select>
+          </label>
+        </div>
+
+        <div class="yn-ikili">
+          <label class="yn-etiket">venue
+            <select class="yn-alan" id="a-venue"></select>
+          </label>
+          <label class="yn-etiket">poster no
+            <input class="yn-alan" id="a-poster" type="number" min="1" />
+          </label>
+        </div>
+
+        <label class="yn-etiket">meta <span class="yn-ipucu">shown on screen exactly as typed</span>
+          <input class="yn-alan" id="a-meta" type="text" />
+        </label>
+
+        <div class="yn-ikili">
+          <label class="yn-etiket">starts at
+            <input class="yn-alan" id="a-starts" type="datetime-local" />
+          </label>
+          <label class="yn-etiket yn-onay">
+            <input type="checkbox" id="a-estimated" />
+            <span>date not verified</span>
+          </label>
+        </div>
+
+        <label class="yn-etiket">body
+          <textarea class="yn-alan yn-uzun" id="a-body" rows="4"></textarea>
+        </label>
+
+        <label class="yn-etiket yn-onay">
+          <input type="checkbox" id="a-published" />
+          <span>published</span>
+        </label>
+
+        <div class="yn-islemler">
+          <button class="yn-kaydet" id="a-kaydet" type="button">save</button>
+          <button class="yn-sil" id="a-sil" type="button">delete</button>
+          <span class="yn-durum" id="a-durum"></span>
+        </div>
+      </div>
+
+      <div class="yn-duzen-sag">
+        <p class="yn-etiket">poster</p>
+        <div class="yn-poster" id="a-poster-onizleme"></div>
+        <p class="yn-poster-not" id="a-poster-not"></p>
+
+        <label class="yn-yukle">
+          <input type="file" id="a-poster-dosya" accept=".svg,image/svg+xml" hidden />
+          <span>check an svg</span>
+        </label>
+
+        <p class="yn-etiket" style="margin-top: 26px">kept by</p>
+        <p class="yn-sayi" id="a-sayi">—</p>
+      </div>
+    </section>
+
+    <section class="yn-yorumlar">
+      <p class="yn-etiket">latest comments</p>
+      <ul class="yn-yorum-liste" id="yn-yorum-liste"></ul>
+    </section>
+
+  </main>
+
+  <script src="../ayar.js?v=53"></script>
+  <script src="../oturum.js?v=53"></script>
+  <script src="../veri.js?v=53"></script>
+  <script src="admin.js?v=53"></script>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+/* afterhours — yonetim paneli.
+   Sadece is_admin olan hesap ise yarar. Bu sayfayi herkes acabilir;
+   koruma sayfada degil veritabaninda (backend/sql/02_rls.sql). Yonetici
+   olmayan biri buraya gelse hicbir sey yazamaz, yayinda olmayani bile
+   goremez.  */
+
+(function () {
+  const AYAR = window.AH_AYAR || {};
+  const kapi = document.getElementById("yn-kapi");
+  const kapiYazi = document.getElementById("yn-kapi-yazi");
+  const kapiLink = document.getElementById("yn-kapi-link");
+  const panel = document.getElementById("yn");
+
+  const $ = (id) => document.getElementById(id);
+  const listeAlan = $("yn-liste");
+  const ozet = $("yn-ozet");
+  const araAlan = $("yn-ara");
+  const duzen = $("yn-duzen");
+  const durum = $("a-durum");
+
+  let etkinlikler = [];
+  let turler = [];
+  let sehirler = [];
+  let mekanlar = [];
+  let sayilar = {};
+  let secili = null;
+
+  function kapiyiGoster(metin, linkVar) {
+    kapi.hidden = false;
+    panel.hidden = true;
+    kapiYazi.textContent = metin;
+    kapiLink.hidden = !linkVar;
+  }
+
+  /* --- acilis: once kimlik, sonra yetki --- */
+
+  if (!(AYAR.url && AYAR.anonKey)) {
+    kapiyiGoster("no backend configured. fill in ayar.js first.", false);
+    return;
+  }
+
+  AH.oturumHazir
+    .then(() => {
+      if (!AH.girisliMi()) {
+        kapiyiGoster("sign in with the admin account to continue.", true);
+        return null;
+      }
+      const id = AH.oturum.kullanici && AH.oturum.kullanici.id;
+      return AH.istek("/profiles?id=eq." + id).then((r) => (r && r[0]) || null);
+    })
+    .then((profil) => {
+      if (!profil) return;
+      if (!profil.is_admin) {
+        kapiyiGoster("this account isn't an admin. nothing to do here.", false);
+        return;
+      }
+      kapi.hidden = true;
+      panel.hidden = false;
+      return baslat();
+    })
+    .catch((h) => kapiyiGoster("couldn't check the account: " + h.message, false));
+
+  /* --- veri --- */
+
+  function baslat() {
+    return Promise.all([
+      AH.istek("/event_types?order=sira"),
+      AH.istek("/cities?order=sira"),
+      AH.istek("/venues?order=name"),
+      yenile(),
+      yorumlariGetir(),
+    ]).then(([t, s, m]) => {
+      turler = t; sehirler = s; mekanlar = m;
+      secenekleriDoldur();
+    });
+  }
+
+  function yenile() {
+    return Promise.all([
+      AH.istek("/events?order=poster_no"),
+      AH.istek("/rpc/keep_counts", { method: "POST", body: "{}" }).catch(() => []),
+    ]).then(([e, k]) => {
+      etkinlikler = e;
+      sayilar = {};
+      (k || []).forEach((r) => { sayilar[r.event_id] = Number(r.n); });
+      listeyiCiz();
+    });
+  }
+
+  function secenekleriDoldur() {
+    const koy = (alan, kayitlar, bosMu) => {
+      alan.textContent = "";
+      if (bosMu) {
+        const o = document.createElement("option");
+        o.value = ""; o.textContent = "—";
+        alan.appendChild(o);
+      }
+      kayitlar.forEach((k) => {
+        const o = document.createElement("option");
+        o.value = k.id;
+        o.textContent = k.name;
+        alan.appendChild(o);
+      });
+    };
+    koy($("a-type"), turler, false);
+    koy($("a-city"), sehirler, false);
+    koy($("a-venue"), mekanlar, true);
+  }
+
+  /* --- liste --- */
+
+  function uyarilar(e) {
+    const u = [];
+    if (!e.is_published) u.push("unpublished");
+    if (e.starts_at_estimated) u.push("date?");
+    if (!e.venue_id) u.push("no venue");
+    if (!e.poster_no) u.push("no poster");
+    return u;
+  }
+
+  function listeyiCiz() {
+    const arama = (araAlan.value || "").trim().toLowerCase();
+    const gosterilecek = etkinlikler.filter(
+      (e) => !arama ||
+        (e.title + " " + e.slug + " " + e.meta).toLowerCase().includes(arama)
+    );
+
+    listeAlan.textContent = "";
+    gosterilecek.forEach((e) => {
+      const li = document.createElement("li");
+      li.className = "yn-satir" + (secili && secili.id === e.id ? " secili" : "");
+
+      const no = document.createElement("span");
+      no.className = "yn-no";
+      no.textContent = String(e.poster_no || "–").padStart(2, "0");
+
+      const ad = document.createElement("span");
+      ad.className = "yn-ad";
+      ad.textContent = e.title;
+
+      li.appendChild(no);
+      li.appendChild(ad);
+
+      uyarilar(e).forEach((u) => {
+        const rozet = document.createElement("span");
+        rozet.className = "yn-rozet" + (u === "unpublished" ? " sessiz" : "");
+        rozet.textContent = u;
+        li.appendChild(rozet);
+      });
+
+      li.addEventListener("click", () => sec(e));
+      listeAlan.appendChild(li);
+    });
+
+    const sorunlu = etkinlikler.filter((e) => uyarilar(e).length).length;
+    ozet.textContent =
+      `${etkinlikler.length} events · ${sorunlu} need attention` +
+      (arama ? ` · showing ${gosterilecek.length}` : "");
+  }
+
+  araAlan.addEventListener("input", listeyiCiz);
+
+  /* --- duzenleme --- */
+
+  function sec(e) {
+    secili = e;
+    duzen.hidden = false;
+    durum.textContent = "";
+
+    $("a-title").value = e.title || "";
+    $("a-slug").value = e.slug || "";
+    $("a-meta").value = e.meta || "";
+    $("a-body").value = e.body || "";
+    $("a-poster").value = e.poster_no || "";
+    $("a-type").value = e.type_id || "";
+    $("a-city").value = e.city_id || "";
+    $("a-venue").value = e.venue_id || "";
+    $("a-published").checked = Boolean(e.is_published);
+    $("a-estimated").checked = Boolean(e.starts_at_estimated);
+    /* datetime-local saniye ve zaman dilimi istemiyor */
+    $("a-starts").value = e.starts_at ? new Date(e.starts_at).toISOString().slice(0, 16) : "";
+    $("a-sayi").textContent = sayilar[e.id] ? sayilar[e.id] + " people" : "nobody yet";
+
+    posteriGoster(e.poster_no);
+    listeyiCiz();
+  }
+
+  function posteriGoster(no) {
+    const kutu = $("a-poster-onizleme");
+    kutu.textContent = "";
+    $("a-poster-not").textContent = "";
+    if (!no) { kutu.textContent = "—"; return; }
+    const nesne = document.createElement("object");
+    nesne.type = "image/svg+xml";
+    nesne.data = "../posters/" + String(no).padStart(2, "0") + ".svg";
+    kutu.appendChild(nesne);
+  }
+
+  $("yn-yeni").addEventListener("click", () => {
+    secili = null;
+    duzen.hidden = false;
+    durum.textContent = "";
+    ["a-title", "a-slug", "a-meta", "a-body", "a-poster", "a-starts"].forEach((i) => ($(i).value = ""));
+    $("a-published").checked = true;
+    $("a-estimated").checked = false;
+    $("a-venue").value = "";
+    $("a-sayi").textContent = "—";
+    posteriGoster(null);
+    $("a-title").focus();
+  });
+
+  function formdanOku() {
+    const g = {
+      title: $("a-title").value.trim(),
+      slug: $("a-slug").value.trim(),
+      meta: $("a-meta").value.trim(),
+      body: $("a-body").value.trim(),
+      poster_no: $("a-poster").value ? Number($("a-poster").value) : null,
+      type_id: $("a-type").value || null,
+      city_id: $("a-city").value || null,
+      venue_id: $("a-venue").value || null,
+      is_published: $("a-published").checked,
+      starts_at_estimated: $("a-estimated").checked,
+      starts_at: $("a-starts").value ? new Date($("a-starts").value).toISOString() : null,
+    };
+    return g;
+  }
+
+  $("a-kaydet").addEventListener("click", () => {
+    const g = formdanOku();
+    if (!g.title || !g.slug || !g.meta) {
+      durum.textContent = "title, slug and meta are required.";
+      return;
+    }
+    durum.textContent = "saving…";
+
+    const istek = secili
+      ? AH.istek("/events?id=eq." + secili.id, {
+          method: "PATCH",
+          headers: { Prefer: "return=representation" },
+          body: JSON.stringify(g),
+        })
+      : AH.istek("/events", {
+          method: "POST",
+          headers: { Prefer: "return=representation" },
+          body: JSON.stringify(g),
+        });
+
+    istek
+      .then((satirlar) => {
+        if (!satirlar || !satirlar.length) throw new Error("nothing was written");
+        return yenile().then(() => {
+          const yeni = etkinlikler.find((e) => e.id === satirlar[0].id);
+          if (yeni) sec(yeni);
+          /* sec() durumu temizliyor; mesaji ondan SONRA yaz */
+          durum.textContent = "saved.";
+        });
+      })
+      .catch((h) => { durum.textContent = "couldn't save: " + h.message; });
+  });
+
+  $("a-sil").addEventListener("click", () => {
+    if (!secili) return;
+    /* Silmek geri alinamaz; once ne silindigini soyle */
+    if (!window.confirm('delete "' + secili.title + '" and everything attached to it?')) return;
+    durum.textContent = "deleting…";
+    AH.istek("/events?id=eq." + secili.id, { method: "DELETE" })
+      .then(() => { secili = null; duzen.hidden = true; return yenile(); })
+      .catch((h) => { durum.textContent = "couldn't delete: " + h.message; });
+  });
+
+  /* --- poster kontrolu ---
+     Posterlerin cercevesi 12px icerde ve 400x600 kutuda. Archivo 900
+     basliklar bu cerceveyi tasabiliyor (36'lik sette dordu tasmisti),
+     o yuzden yuklenen SVG'yi olcup soyluyoruz. */
+
+  $("a-poster-dosya").addEventListener("change", (olay) => {
+    const dosya = olay.target.files && olay.target.files[0];
+    if (!dosya) return;
+    const not = $("a-poster-not");
+    not.textContent = "checking…";
+
+    dosya.text().then((metin) => {
+      const kutu = $("a-poster-onizleme");
+      kutu.textContent = "";
+      const sarmal = document.createElement("div");
+      sarmal.className = "yn-poster-ic";
+      sarmal.innerHTML = metin;
+      kutu.appendChild(sarmal);
+
+      const svg = sarmal.querySelector("svg");
+      if (!svg) { not.textContent = "that file has no <svg> in it."; return; }
+
+      const kutuOlcu = (svg.getAttribute("viewBox") || "").split(/\s+/);
+      const genislik = Number(kutuOlcu[2]) || 400;
+      const yukseklik = Number(kutuOlcu[3]) || 600;
+
+      const sorunlar = [];
+      if (Math.abs(genislik / yukseklik - 2 / 3) > 0.01) {
+        sorunlar.push(`viewBox ${genislik}×${yukseklik} — should be 2:3 (400×600)`);
+      }
+
+      /* Yazilar cerceveyi tasiyor mu: x + width <= 388 */
+      const sinir = genislik - 12;
+      svg.querySelectorAll("text").forEach((t) => {
+        let k;
+        try { k = t.getBBox(); } catch (_) { return; }
+        if (k.x + k.width > sinir + 0.5) {
+          sorunlar.push(`"${(t.textContent || "").slice(0, 18)}" runs ${Math.round(k.x + k.width - sinir)}px past the frame`);
+        }
+        if (k.x < 12 - 0.5) {
+          sorunlar.push(`"${(t.textContent || "").slice(0, 18)}" starts left of the frame`);
+        }
+      });
+
+      not.textContent = sorunlar.length
+        ? sorunlar.join("  ·  ")
+        : "looks fine: 2:3 and nothing crosses the frame.";
+      not.className = "yn-poster-not" + (sorunlar.length ? " kotu" : " iyi");
+    });
+  });
+
+  /* --- yorum denetimi --- */
+
+  function yorumlariGetir() {
+    return AH.istek("/comments?order=created_at.desc&limit=30")
+      .then(yorumlariCiz)
+      .catch(() => {});
+  }
+
+  function yorumlariCiz(satirlar) {
+    const liste = $("yn-yorum-liste");
+    liste.textContent = "";
+    (satirlar || []).forEach((y) => {
+      const li = document.createElement("li");
+      li.className = "yn-yorum" + (y.is_hidden ? " gizli" : "");
+
+      const kim = document.createElement("span");
+      kim.className = "yn-yorum-kim";
+      kim.textContent = y.author_name || "member";
+
+      const metin = document.createElement("span");
+      metin.className = "yn-yorum-metin";
+      metin.textContent = y.body;
+
+      const gizle = document.createElement("button");
+      gizle.className = "yn-yorum-islem";
+      gizle.type = "button";
+      gizle.textContent = y.is_hidden ? "show" : "hide";
+      gizle.addEventListener("click", () => {
+        AH.istek("/comments?id=eq." + y.id, {
+          method: "PATCH",
+          body: JSON.stringify({ is_hidden: !y.is_hidden }),
+        }).then(yorumlariGetir);
+      });
+
+      li.appendChild(kim);
+      li.appendChild(metin);
+      li.appendChild(gizle);
+      liste.appendChild(li);
+    });
+  }
+})();
