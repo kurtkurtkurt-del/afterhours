@@ -5,6 +5,13 @@
 alter table public.cities add column if not exists country text;
 alter table public.cities add column if not exists country_slug text;
 
+-- Kita alanlari da burada aciliyor. 11_dunya.sql onlari dolduruyor ama
+-- ARADAKI 06_views.sql city_counts icinde onlara BAKIYOR — sutunlar
+-- burada olmazsa guncelleme ortasinda "column c.continent does not
+-- exist" ile duruyor. (Tam olarak bu yasandi.)
+alter table public.cities add column if not exists continent text;
+alter table public.cities add column if not exists continent_slug text;
+
 update public.cities set country = 'Deutschland', country_slug = 'de'
   where slug in ('munchen', 'berlin', 'koln');
 update public.cities set country = 'Türkiye', country_slug = 'tr'

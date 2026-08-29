@@ -1,17 +1,16 @@
 -- ============================================================
 --  afterhours — GUNCELLEME: DUNYA
---  SURUM: 2026-08-29 21:10   ← editorde bu satir gorunuyorsa dogru kopya
+--  SURUM: 2026-08-29 21:25   ← editorde bu satir gorunuyorsa dogru kopya
 --
 --  Zaten kurulu bir projeye eklenir. SQL Editor → New query →
---  TAMAMINI yapistir → Run.  ROL/RLS SECENEGI KAPALI OLMALI
---  ("run without RLS"); acikken editor betigi bozuyor.
+--  TAMAMINI yapistir → Run.  ROL/RLS SECENEGI KAPALI OLMALI.
 --
 --  Iki kez calistirmak zararsiz.
 -- ============================================================
 
 
 -- ============================================================
---  SEHIRLERE ULKE   (10_countries.sql)
+--  SEHIRLERE ULKE VE KITA SUTUNLARI   (10_countries.sql)
 -- ============================================================
 
 -- afterhours — sehirlere ulke
@@ -20,6 +19,13 @@
 
 alter table public.cities add column if not exists country text;
 alter table public.cities add column if not exists country_slug text;
+
+-- Kita alanlari da burada aciliyor. 11_dunya.sql onlari dolduruyor ama
+-- ARADAKI 06_views.sql city_counts icinde onlara BAKIYOR — sutunlar
+-- burada olmazsa guncelleme ortasinda "column c.continent does not
+-- exist" ile duruyor. (Tam olarak bu yasandi.)
+alter table public.cities add column if not exists continent text;
+alter table public.cities add column if not exists continent_slug text;
 
 update public.cities set country = 'Deutschland', country_slug = 'de'
   where slug in ('munchen', 'berlin', 'koln');
@@ -69,7 +75,7 @@ grant execute on function public.city_counts() to anon, authenticated;
 
 
 -- ============================================================
---  GORUNUMLER — city_counts ve swipes_reset guncellendi   (06_views.sql)
+--  GORUNUMLER — city_counts ve swipes_reset   (06_views.sql)
 -- ============================================================
 
 -- afterhours — on yuzun kullandigi gorunumler ve fonksiyonlar
