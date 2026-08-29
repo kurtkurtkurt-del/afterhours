@@ -389,7 +389,7 @@
   const BOS_MESAJ = {
     "global deck": "that's everyone for tonight.",
     "friends liked swipes": "no friends have kept anything yet.",
-    "i feel lucky": "that's everyone for tonight.",
+    "i feel lucky": "nowhere left to be sent tonight.",
   };
 
   /* Ustteki filtre: sehir ve tur. Canliyken sorgu veritabaninda
@@ -409,12 +409,22 @@
         : Promise.resolve([]);
     }
     if (mod === "i feel lucky") {
-      const k = filtrele(POSTERS).slice();
-      for (let i = k.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [k[i], k[j]] = [k[j], k[i]];
-      }
-      return Promise.resolve(k);
+      /* Rastgele bir sehre atla, sonra oranin destesini karistir.
+         Filtre kendini de guncelliyor, boylece nereye dustugun
+         ustteki secimlerden okunuyor. */
+      const gidilen = window.AH && AH.filtreRastgele ? AH.filtreRastgele() : null;
+      const kaynak = gidilen && AH.durum === "canli" && AH.etkinlikler
+        ? AH.etkinlikler(null, gidilen.slug).catch(() => filtrele(POSTERS))
+        : Promise.resolve(filtrele(POSTERS));
+
+      return kaynak.then((liste) => {
+        const k = liste.slice();
+        for (let i = k.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [k[i], k[j]] = [k[j], k[i]];
+        }
+        return k;
+      });
     }
 
     const f = (window.AH && AH.filtre) || {};

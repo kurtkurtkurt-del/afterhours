@@ -204,6 +204,22 @@
     if (AH.desteyiYenile) AH.desteyiYenile("global deck");
   }
 
+  /* "i feel lucky": seni gecesi olan rastgele bir sehre atar. Bulundugun
+     sehri secmez — ayni yerde kalmak sansli hissettirmiyor. Tur de
+     sifirlanir, gittigin yerde her sey acik olsun. */
+  AH.filtreRastgele = function () {
+    const dolu = sehirler.filter(
+      (s) => Number(s.n) > 0 && s.slug !== AH.filtre.sehir);
+    if (!dolu.length) return null;
+
+    const secim = dolu[Math.floor(Math.random() * dolu.length)];
+    AH.filtre.ulke = secim.country_slug;
+    AH.filtre.sehir = secim.slug;
+    AH.filtre.tur = null;
+    ciz();
+    return secim;
+  };
+
   /* ---------- acilis ---------- */
 
   function sehirleriGetir() {
