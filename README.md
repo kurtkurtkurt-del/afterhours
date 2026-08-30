@@ -70,7 +70,7 @@ okunur ve site aynı davranır.
 | `settings/` | **Hesap ayarları** — handle, ad, bir satır, şehir; sakladıklarını kim görsün, adınla bulunabilir misin, e-posta; hesabı silme | çalışıyor |
 | `feedback/` | **Geri bildirim** — konu, mesaj, isteğe bağlı iletişim. Giriş istemiyor | çalışıyor |
 | `register/` | **Kayıt** — iki adım: e-posta + şifre, sonra handle (+ şehir). Handle seçilene kadar kayıt bitmiş sayılmıyor | çalışıyor |
-| `help/` | Sitenin nasıl çalıştığı | çalışıyor |
+| `help/` | Sitenin nasıl çalıştığı. Tepesinde üç sayılık şerit: friend connections · cards swiped · afterhours cards gathered | çalışıyor, **sayılar sabit** |
 | `impressum/` `datenschutz/` `agb/` | Almanca hukuk sayfaları | **Muster** (köşeli parantezler doldurulacak) |
 | `admin/` | Etkinlik düzenleme, poster kontrolü, yorum moderasyonu | sadece `is_admin` |
 | `posters/` | 36 SVG poster, gece başına bir tane | — |
@@ -339,6 +339,8 @@ Sıra önemli: her adım bir öncekinin açtığı yolu kapatıyor.
 4. **Hukuk sayfalarının doldurulması** — köşeli parantezler + gerçek Stand
    tarihi.
 5. **Gerçek fotoğraflar** — kareler poster şeritleri yerine gerçek kareler.
+6. **Help sayfasındaki üç sayı gerçek olsun** — ikisi bugün de hesaplanabilir
+   (`swipes`, `friendships`); üçüncüsü kart koleksiyonu kurulmadan mümkün değil.
 
 ---
 
