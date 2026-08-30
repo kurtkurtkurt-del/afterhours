@@ -13,7 +13,7 @@ language sql
 security definer
 set search_path = public
 as $$
-  with kapatilan as (
+  with closed as (
     update public.events
     set is_published = false
     where is_published
@@ -22,7 +22,7 @@ as $$
       and starts_at < now() - interval '12 hours'   -- let the night end first
     returning 1
   )
-  select count(*)::int from kapatilan;
+  select count(*)::int from closed;
 $$;
 
 -- The maintenance summary: one row saying what wants attention.

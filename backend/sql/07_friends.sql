@@ -85,13 +85,13 @@ create or replace function public.friend_remove(p_other uuid)
 returns boolean
 language sql
 as $$
-  with silinen as (
+  with removed as (
     delete from public.friendships
     where (requester_id = auth.uid() and addressee_id = p_other)
        or (addressee_id = auth.uid() and requester_id = p_other)
     returning 1
   )
-  select exists (select 1 from silinen);
+  select exists (select 1 from removed);
 $$;
 
 grant execute on function public.friends_list()          to authenticated;

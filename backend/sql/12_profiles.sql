@@ -90,13 +90,13 @@ security definer
 set search_path = public
 as $$
 declare
-  istenen text := lower(btrim(coalesce(new.raw_user_meta_data ->> 'handle', '')));
+  wanted text := lower(btrim(coalesce(new.raw_user_meta_data ->> 'handle', '')));
   city_slug_in   text := lower(btrim(coalesce(new.raw_user_meta_data ->> 'city', '')));
   city_uuid uuid;
 begin
-  if istenen !~ '^[a-z0-9_]{3,20}$'
-     or exists (select 1 from public.profiles where handle = istenen) then
-    istenen := null;
+  if wanted !~ '^[a-z0-9_]{3,20}$'
+     or exists (select 1 from public.profiles where handle = wanted) then
+    wanted := null;
   end if;
 
   if city_slug_in <> '' then
@@ -107,9 +107,9 @@ begin
   values (
     new.id,
     coalesce(new.raw_user_meta_data ->> 'name', split_part(new.email, '@', 1)),
-    istenen,
+    wanted,
     city_uuid,
-    case when istenen is null then null else now() end
+    case when wanted is null then null else now() end
   )
   on conflict (id) do nothing;
 
@@ -169,11 +169,11 @@ returns text
 language plpgsql
 as $$
 declare
-  durum    text := public.handle_status(p_handle);
+  handle_state    text := public.handle_status(p_handle);
   city_uuid uuid;
 begin
   if auth.uid() is null then return 'signedout'; end if;
-  if durum not in ('ok', 'yours') then return durum; end if;
+  if handle_state not in ('ok', 'yours') then return handle_state; end if;
 
   if coalesce(btrim(p_city_slug), '') <> '' then
     select id into city_uuid from public.cities where slug = lower(btrim(p_city_slug));

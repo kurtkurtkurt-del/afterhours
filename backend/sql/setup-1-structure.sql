@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-08-30 21:28   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-08-30 21:46   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -1201,10 +1201,10 @@ create or replace function public.swipes_reset()
 returns integer
 language sql
 as $$
-  with silinen as (
+  with removed as (
     delete from public.swipes where user_id = auth.uid() returning 1
   )
-  select count(*)::int from silinen;
+  select count(*)::int from removed;
 $$;
 
 -- --------------------------------------------------------- kept cards
@@ -1438,13 +1438,13 @@ create or replace function public.friend_remove(p_other uuid)
 returns boolean
 language sql
 as $$
-  with silinen as (
+  with removed as (
     delete from public.friendships
     where (requester_id = auth.uid() and addressee_id = p_other)
        or (addressee_id = auth.uid() and requester_id = p_other)
     returning 1
   )
-  select exists (select 1 from silinen);
+  select exists (select 1 from removed);
 $$;
 
 grant execute on function public.friends_list()          to authenticated;
@@ -1507,8 +1507,9 @@ begin
   $q$;
 
   execute $q$ drop policy if exists "posters yonetici siler" on storage.objects $q$;
+  execute $q$ drop policy if exists "posters admin deletes" on storage.objects $q$;
   execute $q$
-    create policy "posters yonetici siler" on storage.objects
+    create policy "posters admin deletes" on storage.objects
       for delete using (bucket_id = 'posters' and public.is_admin())
   $q$;
 end
@@ -1542,7 +1543,7 @@ language sql
 security definer
 set search_path = public
 as $$
-  with kapatilan as (
+  with closed as (
     update public.events
     set is_published = false
     where is_published
@@ -1551,7 +1552,7 @@ as $$
       and starts_at < now() - interval '12 hours'   -- let the night end first
     returning 1
   )
-  select count(*)::int from kapatilan;
+  select count(*)::int from closed;
 $$;
 
 -- The maintenance summary: one row saying what wants attention.
@@ -2869,13 +2870,13 @@ security definer
 set search_path = public
 as $$
 declare
-  istenen text := lower(btrim(coalesce(new.raw_user_meta_data ->> 'handle', '')));
+  wanted text := lower(btrim(coalesce(new.raw_user_meta_data ->> 'handle', '')));
   city_slug_in   text := lower(btrim(coalesce(new.raw_user_meta_data ->> 'city', '')));
   city_uuid uuid;
 begin
-  if istenen !~ '^[a-z0-9_]{3,20}$'
-     or exists (select 1 from public.profiles where handle = istenen) then
-    istenen := null;
+  if wanted !~ '^[a-z0-9_]{3,20}$'
+     or exists (select 1 from public.profiles where handle = wanted) then
+    wanted := null;
   end if;
 
   if city_slug_in <> '' then
@@ -2886,9 +2887,9 @@ begin
   values (
     new.id,
     coalesce(new.raw_user_meta_data ->> 'name', split_part(new.email, '@', 1)),
-    istenen,
+    wanted,
     city_uuid,
-    case when istenen is null then null else now() end
+    case when wanted is null then null else now() end
   )
   on conflict (id) do nothing;
 
@@ -2948,11 +2949,11 @@ returns text
 language plpgsql
 as $$
 declare
-  durum    text := public.handle_status(p_handle);
+  handle_state    text := public.handle_status(p_handle);
   city_uuid uuid;
 begin
   if auth.uid() is null then return 'signedout'; end if;
-  if durum not in ('ok', 'yours') then return durum; end if;
+  if handle_state not in ('ok', 'yours') then return handle_state; end if;
 
   if coalesce(btrim(p_city_slug), '') <> '' then
     select id into city_uuid from public.cities where slug = lower(btrim(p_city_slug));

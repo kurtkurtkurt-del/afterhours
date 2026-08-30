@@ -192,10 +192,10 @@ create or replace function public.swipes_reset()
 returns integer
 language sql
 as $$
-  with silinen as (
+  with removed as (
     delete from public.swipes where user_id = auth.uid() returning 1
   )
-  select count(*)::int from silinen;
+  select count(*)::int from removed;
 $$;
 
 -- --------------------------------------------------------- kept cards

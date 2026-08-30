@@ -40,8 +40,9 @@ begin
   $q$;
 
   execute $q$ drop policy if exists "posters yonetici siler" on storage.objects $q$;
+  execute $q$ drop policy if exists "posters admin deletes" on storage.objects $q$;
   execute $q$
-    create policy "posters yonetici siler" on storage.objects
+    create policy "posters admin deletes" on storage.objects
       for delete using (bucket_id = 'posters' and public.is_admin())
   $q$;
 end
