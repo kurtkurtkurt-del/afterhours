@@ -1,7 +1,7 @@
 /* afterhours — card collection'in oturuma gore hali.
-   Girisliysen sayfa bos: "sign in" dugmesi de, ornek kartlar da
+   Girisliysen page empty: "sign in" dugmesi de, ornek cards da
    gitmis oluyor. Ikisi de girmemis birine ne oldugunu anlatmak icin
-   duruyordu; girmis biri kendi (henuz bos) koleksiyonunu goruyor.
+   duruyordu; girmis biri kendi (henuz empty) koleksiyonunu goruyor.
 
    Ayri dosya, cunku cards.js session.js'ten ONCE yukleniyor ve orada
    AH heniz yok. Bu betik en sonda: oturum localStorage'dan zaten
@@ -12,15 +12,15 @@
   if (!AH) return;
 
   const dugme = document.querySelector(".cc-left .page-button");
-  const kartlar = document.getElementById("cc-cards");
+  const cards = document.getElementById("cc-cards");
 
-  function bak() {
-    const girisli = Boolean(AH.signedIn && AH.signedIn());
-    if (dugme) dugme.hidden = girisli;
-    if (kartlar) kartlar.hidden = girisli;
+  function refresh() {
+    const signedIn = Boolean(AH.signedIn && AH.signedIn());
+    if (dugme) dugme.hidden = signedIn;
+    if (cards) cards.hidden = signedIn;
   }
 
-  bak();                                   /* jeton yerelde: hemen bilinir */
-  if (AH.sessionReady) AH.sessionReady.then(bak);
-  if (AH.onSessionChange) AH.onSessionChange(bak);
+  refresh();                                   /* jeton yerelde: hemen bilinir */
+  if (AH.sessionReady) AH.sessionReady.then(refresh);
+  if (AH.onSessionChange) AH.onSessionChange(refresh);
 })();

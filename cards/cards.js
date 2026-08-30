@@ -3,15 +3,15 @@
    cards.js ureteci ayni isi yapiyor (CARDS.front = on yuz).
    Burada sadece uc geceyi ona veriyoruz.
 
-   Tiklayinca kart cevriliyor: arka yuz gecenin zaman cizelgesi. */
+   Tiklayinca card cevriliyor: arka yuz gecenin zaman cizelgesi. */
 
 (function () {
-  const alan = document.getElementById("cc-cards");
-  if (!alan || !window.CARDS || !window.CARD_SAMPLES) return;
+  const field = document.getElementById("cc-cards");
+  if (!field || !window.CARDS || !window.CARD_SAMPLES) return;
 
   CARD_SAMPLES.forEach((gece, i) => {
-    const kutu = document.createElement("figure");
-    kutu.className = "cc-card";
+    const box = document.createElement("figure");
+    box.className = "cc-card";
 
     const yuz = document.createElement("div");
     yuz.className = "cc-face";
@@ -21,19 +21,19 @@
     arka.className = "cc-face cc-back";
     arka.innerHTML = CARDS.back(gece, "a" + i);
 
-    const cevir = document.createElement("button");
-    cevir.className = "cc-flip";
-    cevir.type = "button";
-    cevir.setAttribute("aria-label", "flip " + gece.t);
-    cevir.appendChild(yuz);
-    cevir.appendChild(arka);
-    cevir.addEventListener("click", () => kutu.classList.toggle("flipped"));
+    const shape = document.createElement("button");
+    shape.className = "cc-flip";
+    shape.type = "button";
+    shape.setAttribute("aria-label", "flip " + gece.t);
+    shape.appendChild(yuz);
+    shape.appendChild(arka);
+    shape.addEventListener("click", () => box.classList.toggle("flipped"));
 
-    const alt = document.createElement("figcaption");
-    alt.textContent = gece.city;
+    const sub = document.createElement("figcaption");
+    sub.textContent = gece.city;
 
-    kutu.appendChild(cevir);
-    kutu.appendChild(alt);
-    alan.appendChild(kutu);
+    box.appendChild(shape);
+    box.appendChild(sub);
+    field.appendChild(box);
   });
 })();

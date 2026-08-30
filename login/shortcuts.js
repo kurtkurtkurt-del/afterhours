@@ -10,16 +10,16 @@
 (function () {
   const AH = (window.AH = window.AH || {});
 
-  const disarida = document.getElementById("sc-out");
-  const icerde = document.getElementById("sc-in");
-  if (!disarida || !icerde || !AH.sessionReady) return;
+  const outside = document.getElementById("sc-out");
+  const inside = document.getElementById("sc-in");
+  if (!outside || !inside || !AH.sessionReady) return;
 
-  function bak() {
-    const girisli = Boolean(AH.signedIn && AH.signedIn());
-    disarida.hidden = girisli;
-    icerde.hidden = !girisli;
+  function refresh() {
+    const signedIn = Boolean(AH.signedIn && AH.signedIn());
+    outside.hidden = signedIn;
+    inside.hidden = !signedIn;
   }
 
-  AH.sessionReady.then(bak);
-  if (AH.onSessionChange) AH.onSessionChange(bak);
+  AH.sessionReady.then(refresh);
+  if (AH.onSessionChange) AH.onSessionChange(refresh);
 })();

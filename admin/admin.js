@@ -16,22 +16,22 @@
   const ozet = $("adm-summary");
   const araAlan = $("adm-search");
   const duzen = $("adm-edit");
-  const durum = $("a-status");
+  const status = $("a-status");
 
   let events = [];
-  let turler = [];
-  let sehirler = [];
-  let mekanlar = [];
-  let sayilar = {};
-  let secili = null;
+  let kinds = [];
+  let cities = [];
+  let venues = [];
+  let counts = {};
+  let chosen = null;
 
   const girisForm = document.getElementById("adm-intro");
   const girisNot = document.getElementById("adm-intro-note");
 
-  function kapiyiGoster(metin, girisIster) {
+  function showGate(text, girisIster) {
     kapi.hidden = false;
     panel.hidden = true;
-    kapiYazi.textContent = metin;
+    kapiYazi.textContent = text;
     kapiLink.hidden = !girisIster;
     girisForm.hidden = !girisIster;
   }
@@ -40,11 +40,11 @@
      Sifre burada tutulmuyor, dogrudan Supabase'e gidiyor. */
   girisForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const eposta = document.getElementById("adm-email").value.trim();
-    const sifre = document.getElementById("adm-password").value;
-    if (!eposta || !sifre) return;
+    const email = document.getElementById("adm-email").value.trim();
+    const password = document.getElementById("adm-password").value;
+    if (!email || !password) return;
     girisNot.textContent = "signing in…";
-    AH.signInWithPassword(eposta, sifre)
+    AH.signInWithPassword(email, password)
       .then(() => { location.reload(); })
       .catch((h) => {
         girisNot.textContent = /invalid/i.test(h.message)
@@ -56,82 +56,82 @@
   /* --- acilis: once kimlik, sonra yetki --- */
 
   if (!(AYAR.url && AYAR.anonKey)) {
-    kapiyiGoster("no backend configured. fill in config.js first.", false);
+    showGate("no backend configured. fill in config.js first.", false);
     return;
   }
 
   AH.sessionReady
     .then(() => {
       if (!AH.signedIn()) {
-        kapiyiGoster("sign in with the admin account to continue.", true);
+        showGate("sign in with the admin account to continue.", true);
         return null;
       }
       const id = AH.session.user && AH.session.user.id;
       return AH.request("/profiles?id=eq." + id).then((r) => (r && r[0]) || null);
     })
-    .then((profil) => {
-      if (!profil) return;
-      if (!profil.is_admin) {
-        kapiyiGoster("this account isn't an admin. nothing to do here.", false);
+    .then((profile) => {
+      if (!profile) return;
+      if (!profile.is_admin) {
+        showGate("this account isn't an admin. nothing to do here.", false);
         return;
       }
       kapi.hidden = true;
       panel.hidden = false;
-      return baslat();
+      return start();
     })
-    .catch((h) => kapiyiGoster("couldn't check the account: " + h.message, false));
+    .catch((h) => showGate("couldn't check the account: " + h.message, false));
 
   /* --- veri --- */
 
-  function baslat() {
+  function start() {
     return Promise.all([
       AH.request("/event_types?order=sira"),
       AH.request("/cities?order=sira"),
       AH.request("/venues?order=name"),
-      yenile(),
+      reload(),
       comments(),
-      geriGetir(),
+      fetchFeedback(),
     ]).then(([t, s, m]) => {
-      turler = t; sehirler = s; mekanlar = m;
-      secenekleriDoldur();
+      kinds = t; cities = s; venues = m;
+      fillOptions();
     });
   }
 
-  function yenile() {
+  function reload() {
     return Promise.all([
       AH.request("/events?order=poster_no"),
       AH.request("/rpc/keep_counts", { method: "POST", body: "{}" }).catch(() => []),
     ]).then(([e, k]) => {
       events = e;
-      sayilar = {};
-      (k || []).forEach((r) => { sayilar[r.event_id] = Number(r.n); });
-      listeyiCiz();
+      counts = {};
+      (k || []).forEach((r) => { counts[r.event_id] = Number(r.n); });
+      drawList();
     });
   }
 
-  function secenekleriDoldur() {
-    const koy = (alan, kayitlar, bosMu) => {
-      alan.textContent = "";
+  function fillOptions() {
+    const koy = (field, kayitlar, bosMu) => {
+      field.textContent = "";
       if (bosMu) {
         const o = document.createElement("option");
         o.value = ""; o.textContent = "—";
-        alan.appendChild(o);
+        field.appendChild(o);
       }
       kayitlar.forEach((k) => {
         const o = document.createElement("option");
         o.value = k.id;
         o.textContent = k.name;
-        alan.appendChild(o);
+        field.appendChild(o);
       });
     };
-    koy($("a-type"), turler, false);
-    koy($("a-city"), sehirler, false);
-    koy($("a-venue"), mekanlar, true);
+    koy($("a-type"), kinds, false);
+    koy($("a-city"), cities, false);
+    koy($("a-venue"), venues, true);
   }
 
-  /* --- liste --- */
+  /* --- list --- */
 
-  function uyarilar(e) {
+  function warnings(e) {
     const u = [];
     if (!e.is_published) u.push("unpublished");
     if (e.starts_at_estimated) u.push("date?");
@@ -140,54 +140,54 @@
     return u;
   }
 
-  function listeyiCiz() {
-    const arama = (araAlan.value || "").trim().toLowerCase();
-    const gosterilecek = events.filter(
-      (e) => !arama ||
-        (e.title + " " + e.slug + " " + e.meta).toLowerCase().includes(arama)
+  function drawList() {
+    const query = (araAlan.value || "").trim().toLowerCase();
+    const visible = events.filter(
+      (e) => !query ||
+        (e.title + " " + e.slug + " " + e.meta).toLowerCase().includes(query)
     );
 
     listeAlan.textContent = "";
-    gosterilecek.forEach((e) => {
+    visible.forEach((e) => {
       const li = document.createElement("li");
-      li.className = "adm-row" + (secili && secili.id === e.id ? " selected" : "");
+      li.className = "adm-row" + (chosen && chosen.id === e.id ? " selected" : "");
 
       const no = document.createElement("span");
       no.className = "adm-no";
       no.textContent = String(e.poster_no || "–").padStart(2, "0");
 
-      const ad = document.createElement("span");
-      ad.className = "adm-name";
-      ad.textContent = e.title;
+      const name = document.createElement("span");
+      name.className = "adm-name";
+      name.textContent = e.title;
 
       li.appendChild(no);
-      li.appendChild(ad);
+      li.appendChild(name);
 
-      uyarilar(e).forEach((u) => {
-        const rozet = document.createElement("span");
-        rozet.className = "adm-badge" + (u === "unpublished" ? " quiet" : "");
-        rozet.textContent = u;
-        li.appendChild(rozet);
+      warnings(e).forEach((u) => {
+        const badge = document.createElement("span");
+        badge.className = "adm-badge" + (u === "unpublished" ? " quiet" : "");
+        badge.textContent = u;
+        li.appendChild(badge);
       });
 
-      li.addEventListener("click", () => sec(e));
+      li.addEventListener("click", () => select(e));
       listeAlan.appendChild(li);
     });
 
-    const sorunlu = events.filter((e) => uyarilar(e).length).length;
+    const sorunlu = events.filter((e) => warnings(e).length).length;
     ozet.textContent =
       `${events.length} events · ${sorunlu} need attention` +
-      (arama ? ` · showing ${gosterilecek.length}` : "");
+      (query ? ` · showing ${visible.length}` : "");
   }
 
-  araAlan.addEventListener("input", listeyiCiz);
+  araAlan.addEventListener("input", drawList);
 
   /* --- duzenleme --- */
 
-  function sec(e) {
-    secili = e;
+  function select(e) {
+    chosen = e;
     duzen.hidden = false;
-    durum.textContent = "";
+    status.textContent = "";
 
     $("a-title").value = e.title || "";
     $("a-slug").value = e.slug || "";
@@ -201,37 +201,37 @@
     $("a-estimated").checked = Boolean(e.starts_at_estimated);
     /* datetime-local saniye ve zaman dilimi istemiyor */
     $("a-starts").value = e.starts_at ? new Date(e.starts_at).toISOString().slice(0, 16) : "";
-    $("a-number").textContent = sayilar[e.id] ? sayilar[e.id] + " people" : "nobody yet";
+    $("a-number").textContent = counts[e.id] ? counts[e.id] + " people" : "nobody yet";
 
-    posteriGoster(e.poster_no);
-    listeyiCiz();
+    showPoster(e.poster_no);
+    drawList();
   }
 
-  function posteriGoster(no) {
-    const kutu = $("a-poster-preview");
-    kutu.textContent = "";
+  function showPoster(no) {
+    const box = $("a-poster-preview");
+    box.textContent = "";
     $("a-poster-note").textContent = "";
-    if (!no) { kutu.textContent = "—"; return; }
+    if (!no) { box.textContent = "—"; return; }
     const nesne = document.createElement("object");
     nesne.type = "image/svg+xml";
     nesne.data = "../posters/" + String(no).padStart(2, "0") + ".svg";
-    kutu.appendChild(nesne);
+    box.appendChild(nesne);
   }
 
   $("adm-new").addEventListener("click", () => {
-    secili = null;
+    chosen = null;
     duzen.hidden = false;
-    durum.textContent = "";
+    status.textContent = "";
     ["a-title", "a-slug", "a-meta", "a-body", "a-poster", "a-starts"].forEach((i) => ($(i).value = ""));
     $("a-published").checked = true;
     $("a-estimated").checked = false;
     $("a-venue").value = "";
     $("a-number").textContent = "—";
-    posteriGoster(null);
+    showPoster(null);
     $("a-title").focus();
   });
 
-  function formdanOku() {
+  function readForm() {
     const g = {
       title: $("a-title").value.trim(),
       slug: $("a-slug").value.trim(),
@@ -249,15 +249,15 @@
   }
 
   $("a-save").addEventListener("click", () => {
-    const g = formdanOku();
+    const g = readForm();
     if (!g.title || !g.slug || !g.meta) {
-      durum.textContent = "title, slug and meta are required.";
+      status.textContent = "title, slug and meta are required.";
       return;
     }
-    durum.textContent = "saving…";
+    status.textContent = "saving…";
 
-    const istek = secili
-      ? AH.request("/events?id=eq." + secili.id, {
+    const istek = chosen
+      ? AH.request("/events?id=eq." + chosen.id, {
           method: "PATCH",
           headers: { Prefer: "return=representation" },
           body: JSON.stringify(g),
@@ -269,57 +269,57 @@
         });
 
     istek
-      .then((satirlar) => {
-        if (!satirlar || !satirlar.length) throw new Error("nothing was written");
-        return yenile().then(() => {
-          const yeni = events.find((e) => e.id === satirlar[0].id);
-          if (yeni) sec(yeni);
-          /* sec() durumu temizliyor; mesaji ondan SONRA yaz */
-          durum.textContent = "saved.";
+      .then((rows) => {
+        if (!rows || !rows.length) throw new Error("nothing was written");
+        return reload().then(() => {
+          const yeni = events.find((e) => e.id === rows[0].id);
+          if (yeni) select(yeni);
+          /* select() durumu temizliyor; mesaji ondan SONRA yaz */
+          status.textContent = "saved.";
         });
       })
-      .catch((h) => { durum.textContent = "couldn't save: " + h.message; });
+      .catch((h) => { status.textContent = "couldn't save: " + h.message; });
   });
 
   $("a-delete").addEventListener("click", () => {
-    if (!secili) return;
-    /* Silmek geri alinamaz; once ne silindigini soyle */
-    if (!window.confirm('delete "' + secili.title + '" and everything attached to it?')) return;
-    durum.textContent = "deleting…";
-    AH.request("/events?id=eq." + secili.id, { method: "DELETE" })
-      .then(() => { secili = null; duzen.hidden = true; return yenile(); })
-      .catch((h) => { durum.textContent = "couldn't delete: " + h.message; });
+    if (!chosen) return;
+    /* Silmek geri alinamaz; once ne silindigini say */
+    if (!window.confirm('delete "' + chosen.title + '" and everything attached to it?')) return;
+    status.textContent = "deleting…";
+    AH.request("/events?id=eq." + chosen.id, { method: "DELETE" })
+      .then(() => { chosen = null; duzen.hidden = true; return reload(); })
+      .catch((h) => { status.textContent = "couldn't delete: " + h.message; });
   });
 
   /* --- poster kontrolu ---
-     Posterlerin cercevesi 12px icerde ve 400x600 kutuda. Archivo 900
+     Posterlerin cercevesi 12px inside ve 400x600 kutuda. Archivo 900
      basliklar bu cerceveyi tasabiliyor (36'lik sette dordu tasmisti),
      o yuzden yuklenen SVG'yi olcup soyluyoruz. */
 
   $("a-poster-file").addEventListener("change", (olay) => {
     const dosya = olay.target.files && olay.target.files[0];
     if (!dosya) return;
-    const not = $("a-poster-note");
-    not.textContent = "checking…";
+    const note = $("a-poster-note");
+    note.textContent = "checking…";
 
-    dosya.text().then((metin) => {
-      const kutu = $("a-poster-preview");
-      kutu.textContent = "";
+    dosya.text().then((text) => {
+      const box = $("a-poster-preview");
+      box.textContent = "";
       const sarmal = document.createElement("div");
       sarmal.className = "adm-poster-inner";
-      sarmal.innerHTML = metin;
-      kutu.appendChild(sarmal);
+      sarmal.innerHTML = text;
+      box.appendChild(sarmal);
 
       const svg = sarmal.querySelector("svg");
-      if (!svg) { not.textContent = "that file has no <svg> in it."; return; }
+      if (!svg) { note.textContent = "that file has no <svg> in it."; return; }
 
       const kutuOlcu = (svg.getAttribute("viewBox") || "").split(/\s+/);
       const genislik = Number(kutuOlcu[2]) || 400;
       const yukseklik = Number(kutuOlcu[3]) || 600;
 
-      const sorunlar = [];
+      const problems = [];
       if (Math.abs(genislik / yukseklik - 2 / 3) > 0.01) {
-        sorunlar.push(`viewBox ${genislik}×${yukseklik} — should be 2:3 (400×600)`);
+        problems.push(`viewBox ${genislik}×${yukseklik} — should be 2:3 (400×600)`);
       }
 
       /* Yazilar cerceveyi tasiyor mu: x + width <= 388 */
@@ -328,22 +328,22 @@
         let k;
         try { k = t.getBBox(); } catch (_) { return; }
         if (k.x + k.width > sinir + 0.5) {
-          sorunlar.push(`"${(t.textContent || "").slice(0, 18)}" runs ${Math.round(k.x + k.width - sinir)}px past the frame`);
+          problems.push(`"${(t.textContent || "").slice(0, 18)}" runs ${Math.round(k.x + k.width - sinir)}px past the frame`);
         }
         if (k.x < 12 - 0.5) {
-          sorunlar.push(`"${(t.textContent || "").slice(0, 18)}" starts left of the frame`);
+          problems.push(`"${(t.textContent || "").slice(0, 18)}" starts left of the frame`);
         }
       });
 
-      not.textContent = sorunlar.length
-        ? sorunlar.join("  ·  ")
+      note.textContent = problems.length
+        ? problems.join("  ·  ")
         : "looks fine: 2:3 and nothing crosses the frame.";
-      not.className = "adm-poster-note" + (sorunlar.length ? " bad" : " good");
+      note.className = "adm-poster-note" + (problems.length ? " bad" : " good");
 
       /* Sorun yoksa yuklenebilir. Sorunluysa yukleme dugmesi hic
          gorunmuyor: bozuk poster siteye gitmesin. */
-      yukleDugmesi.hidden = Boolean(sorunlar.length) || !secili;
-      bekleyenDosya = sorunlar.length ? null : dosya;
+      yukleDugmesi.hidden = Boolean(problems.length) || !chosen;
+      bekleyenDosya = problems.length ? null : dosya;
     });
   });
 
@@ -353,13 +353,13 @@
   const yukleDugmesi = document.getElementById("a-poster-upload");
 
   yukleDugmesi.addEventListener("click", () => {
-    if (!bekleyenDosya || !secili) return;
-    const not = $("a-poster-note");
-    const ad = secili.slug + "-" + Date.now() + ".svg";
-    not.textContent = "uploading…";
-    not.className = "adm-poster-note";
+    if (!bekleyenDosya || !chosen) return;
+    const note = $("a-poster-note");
+    const name = chosen.slug + "-" + Date.now() + ".svg";
+    note.textContent = "uploading…";
+    note.className = "adm-poster-note";
 
-    fetch(AYAR.url.replace(/\/$/, "") + "/storage/v1/object/posters/" + ad, {
+    fetch(AYAR.url.replace(/\/$/, "") + "/storage/v1/object/posters/" + name, {
       method: "POST",
       headers: {
         apikey: AYAR.anonKey,
@@ -371,24 +371,24 @@
     })
       .then(async (c) => {
         if (!c.ok) throw new Error(c.status + " " + (await c.text()).slice(0, 120));
-        /* Kaydin poster_path'ini isaretle: site bundan sonra bu dosyayi
+        /* Kaydin poster_path'ini mark: site bundan sonra bu dosyayi
            gosterir, posters/NN.svg yerine. */
-        return AH.request("/events?id=eq." + secili.id, {
+        return AH.request("/events?id=eq." + chosen.id, {
           method: "PATCH",
           headers: { Prefer: "return=representation" },
-          body: JSON.stringify({ poster_path: ad }),
+          body: JSON.stringify({ poster_path: name }),
         });
       })
       .then(() => {
-        not.textContent = "uploaded. the site uses this file now.";
-        not.className = "adm-poster-note good";
+        note.textContent = "uploaded. the site uses this file now.";
+        note.className = "adm-poster-note good";
         yukleDugmesi.hidden = true;
         bekleyenDosya = null;
-        return yenile();
+        return reload();
       })
       .catch((h) => {
-        not.textContent = "couldn't upload: " + h.message;
-        not.className = "adm-poster-note bad";
+        note.textContent = "couldn't upload: " + h.message;
+        note.className = "adm-poster-note bad";
       });
   });
 
@@ -401,52 +401,52 @@
 
   const TUR = { broken: "broken", idea: "idea", event: "event", other: "other" };
 
-  function geriGetir() {
+  function fetchFeedback() {
     return AH.request("/rpc/feedback_list", {
       method: "POST",
       body: JSON.stringify({ p_limit: 60 }),
-    }).then(geriCiz).catch(() => {});
+    }).then(drawFeedback).catch(() => {});
   }
 
-  function geriCiz(satirlar) {
-    const liste = $("adm-feedback-list");
+  function drawFeedback(rows) {
+    const list = $("adm-feedback-list");
     const sayac = $("adm-feedback-number");
-    liste.textContent = "";
+    list.textContent = "";
 
-    const acik = (satirlar || []).filter((g) => !g.handled).length;
-    sayac.textContent = acik ? "· " + acik + " waiting" : "· all handled";
+    const open = (rows || []).filter((g) => !g.handled).length;
+    sayac.textContent = open ? "· " + open + " waiting" : "· all handled";
 
-    if (!satirlar || !satirlar.length) {
-      const bos = document.createElement("li");
-      bos.className = "adm-feedback-empty";
-      bos.textContent = "nothing yet.";
-      liste.appendChild(bos);
+    if (!rows || !rows.length) {
+      const empty = document.createElement("li");
+      empty.className = "adm-feedback-empty";
+      empty.textContent = "nothing yet.";
+      list.appendChild(empty);
       return;
     }
 
-    satirlar.forEach((g) => {
+    rows.forEach((g) => {
       const li = document.createElement("li");
       li.className = "adm-feedback-row" + (g.handled ? " done" : "");
 
-      const ust = document.createElement("div");
-      ust.className = "adm-feedback-top";
+      const top = document.createElement("div");
+      top.className = "adm-feedback-top";
 
-      const tur = document.createElement("span");
-      tur.className = "adm-feedback-kind";
-      tur.textContent = TUR[g.kind] || g.kind;
-      ust.appendChild(tur);
+      const kind = document.createElement("span");
+      kind.className = "adm-feedback-kind";
+      kind.textContent = TUR[g.kind] || g.kind;
+      top.appendChild(kind);
 
-      const kim = document.createElement("span");
-      kim.className = "adm-feedback-who";
+      const who = document.createElement("span");
+      who.className = "adm-feedback-who";
       /* Girisli yazan handle ile, girissiz biraktigi iletisimle,
          hicbirini vermeyen "anonymous" olarak gorunuyor. */
-      kim.textContent = g.author ? "@" + g.author : (g.contact || "anonymous");
-      ust.appendChild(kim);
+      who.textContent = g.author ? "@" + g.author : (g.contact || "anonymous");
+      top.appendChild(who);
 
       const ne = document.createElement("span");
       ne.className = "adm-feedback-when";
       ne.textContent = String(g.created_at || "").slice(0, 10);
-      ust.appendChild(ne);
+      top.appendChild(ne);
 
       const isaret = document.createElement("button");
       isaret.className = "adm-comment-action";
@@ -456,56 +456,56 @@
         AH.request("/feedback?id=eq." + g.id, {
           method: "PATCH",
           body: JSON.stringify({ handled: !g.handled }),
-        }).then(geriGetir);
+        }).then(fetchFeedback);
       });
-      ust.appendChild(isaret);
+      top.appendChild(isaret);
 
-      const metin = document.createElement("p");
-      metin.className = "adm-feedback-text";
-      metin.textContent = g.body;
+      const text = document.createElement("p");
+      text.className = "adm-feedback-text";
+      text.textContent = g.body;
 
-      li.appendChild(ust);
-      li.appendChild(metin);
-      liste.appendChild(li);
+      li.appendChild(top);
+      li.appendChild(text);
+      list.appendChild(li);
     });
   }
 
   function comments() {
     return AH.request("/comments?order=created_at.desc&limit=30")
-      .then(yorumlariCiz)
+      .then(drawComments)
       .catch(() => {});
   }
 
-  function yorumlariCiz(satirlar) {
-    const liste = $("adm-comment-list");
-    liste.textContent = "";
-    (satirlar || []).forEach((y) => {
+  function drawComments(rows) {
+    const list = $("adm-comment-list");
+    list.textContent = "";
+    (rows || []).forEach((y) => {
       const li = document.createElement("li");
       li.className = "adm-comment" + (y.is_hidden ? " hidden" : "");
 
-      const kim = document.createElement("span");
-      kim.className = "adm-comment-who";
-      kim.textContent = y.author_name || "member";
+      const who = document.createElement("span");
+      who.className = "adm-comment-who";
+      who.textContent = y.author_name || "member";
 
-      const metin = document.createElement("span");
-      metin.className = "adm-comment-text";
-      metin.textContent = y.body;
+      const text = document.createElement("span");
+      text.className = "adm-comment-text";
+      text.textContent = y.body;
 
-      const gizle = document.createElement("button");
-      gizle.className = "adm-comment-action";
-      gizle.type = "button";
-      gizle.textContent = y.is_hidden ? "show" : "hide";
-      gizle.addEventListener("click", () => {
+      const hide = document.createElement("button");
+      hide.className = "adm-comment-action";
+      hide.type = "button";
+      hide.textContent = y.is_hidden ? "show" : "hide";
+      hide.addEventListener("click", () => {
         AH.request("/comments?id=eq." + y.id, {
           method: "PATCH",
           body: JSON.stringify({ is_hidden: !y.is_hidden }),
         }).then(comments);
       });
 
-      li.appendChild(kim);
-      li.appendChild(metin);
-      li.appendChild(gizle);
-      liste.appendChild(li);
+      li.appendChild(who);
+      li.appendChild(text);
+      li.appendChild(hide);
+      list.appendChild(li);
     });
   }
 })();

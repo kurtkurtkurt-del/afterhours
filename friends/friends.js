@@ -1,18 +1,18 @@
 /* afterhours — friends & more.
    Kullanici adi, arkadaslar ve biriktirdiklerin. Hepsi giris ister;
-   girissizken sayfa sadece bir davet gosterir.
+   girissizken page sadece bir davet gosterir.
 
    Bu bolumler once giris sayfasindaydi; oraya ait degillerdi. Giris
    sayfasi artik yalnizca giris.  */
 
 (function () {
   const AYAR = window.AH_CONFIG || {};
-  const disarida = document.getElementById("fr-out");
-  const icerde = document.getElementById("fr-in");
+  const outside = document.getElementById("fr-out");
+  const inside = document.getElementById("fr-in");
 
   const handleForm = document.getElementById("handle-form");
-  const handleAlan = document.getElementById("handle-field");
-  const handleDurum = document.getElementById("handle-status");
+  const handleField = document.getElementById("handle-field");
+  const handleStatus = document.getElementById("handle-status");
 
   const arkForm = document.getElementById("friend-form");
   const arkAlan = document.getElementById("friend-field");
@@ -28,31 +28,31 @@
     yourself: "that's you.",
   };
 
-  function ekraniKur() {
-    const girisli = Boolean(window.AH && AH.signedIn && AH.signedIn());
-    disarida.hidden = girisli;
-    icerde.hidden = !girisli;
-    tanidiklar(girisli);
-    if (girisli) { handleYukle(); arkadaslariYukle(); tutulanlariYukle(); }
+  function render() {
+    const signedIn = Boolean(window.AH && AH.signedIn && AH.signedIn());
+    outside.hidden = signedIn;
+    inside.hidden = !signedIn;
+    showFamiliarFaces(signedIn);
+    if (signedIn) { loadHandle(); loadFriends(); loadKept(); }
   }
 
   /* --- kullanici adi --- */
 
-  function handleYukle() {
-    AH.myProfile().then((p) => { if (p && p.handle) handleAlan.value = p.handle; });
+  function loadHandle() {
+    AH.myProfile().then((p) => { if (p && p.handle) handleField.value = p.handle; });
   }
 
   handleForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    handleDurum.textContent = "saving…";
-    AH.setHandle(handleAlan.value)
-      .then((satirlar) => {
-        handleDurum.textContent = satirlar && satirlar.length
+    handleStatus.textContent = "saving…";
+    AH.setHandle(handleField.value)
+      .then((rows) => {
+        handleStatus.textContent = rows && rows.length
           ? "saved."
           : "couldn't save — try signing in again.";
       })
       .catch((h) => {
-        handleDurum.textContent = /duplicate|unique/i.test(h.message)
+        handleStatus.textContent = /duplicate|unique/i.test(h.message)
           ? "someone already has that one."
           : AH.errorText(h, "couldn't save that handle.");
       });
@@ -60,32 +60,32 @@
 
   /* --- arkadaslar --- */
 
-  function arkadaslariYukle() {
-    AH.friends().then((liste) => {
+  function loadFriends() {
+    AH.friends().then((list) => {
       arkListe.textContent = "";
-      if (!liste.length) {
-        const bos = document.createElement("li");
-        bos.className = "friend-empty";
-        bos.textContent = "no friends yet.";
-        arkListe.appendChild(bos);
+      if (!list.length) {
+        const empty = document.createElement("li");
+        empty.className = "friend-empty";
+        empty.textContent = "no friends yet.";
+        arkListe.appendChild(empty);
         return;
       }
-      liste.forEach((a) => {
-        const satir = document.createElement("li");
-        satir.className = "friend-row";
+      list.forEach((a) => {
+        const row = document.createElement("li");
+        row.className = "friend-row";
 
-        const ad = document.createElement("span");
-        ad.className = "friend-name";
-        ad.textContent = a.handle || a.display_name || "someone";
+        const name = document.createElement("span");
+        name.className = "friend-name";
+        name.textContent = a.handle || a.display_name || "someone";
 
-        const durum = document.createElement("span");
-        durum.className = "friend-status-label";
-        durum.textContent =
+        const status = document.createElement("span");
+        status.className = "friend-status-label";
+        status.textContent =
           a.status === "accepted" ? "friends"
           : a.yon === "gelen" ? "wants to be friends" : "waiting";
 
-        satir.appendChild(ad);
-        satir.appendChild(durum);
+        row.appendChild(name);
+        row.appendChild(status);
 
         if (a.status === "pending" && a.yon === "gelen") {
           const kabul = document.createElement("button");
@@ -93,8 +93,8 @@
           kabul.type = "button";
           kabul.textContent = "accept";
           kabul.addEventListener("click", () =>
-            AH.friendAccept(a.other_id).then(arkadaslariYukle));
-          satir.appendChild(kabul);
+            AH.friendAccept(a.other_id).then(loadFriends));
+          row.appendChild(kabul);
         }
 
         const cikar = document.createElement("button");
@@ -102,10 +102,10 @@
         cikar.type = "button";
         cikar.textContent = a.status === "accepted" ? "remove" : "cancel";
         cikar.addEventListener("click", () =>
-          AH.friendRemove(a.other_id).then(arkadaslariYukle));
-        satir.appendChild(cikar);
+          AH.friendRemove(a.other_id).then(loadFriends));
+        row.appendChild(cikar);
 
-        arkListe.appendChild(satir);
+        arkListe.appendChild(row);
       });
     });
   }
@@ -118,26 +118,26 @@
     AH.friendRequest(h)
       .then((c) => {
         arkDurum.textContent = CEVAP[c] || String(c);
-        if (c === "sent" || c === "accepted") { arkAlan.value = ""; arkadaslariYukle(); }
+        if (c === "sent" || c === "accepted") { arkAlan.value = ""; loadFriends(); }
       })
       .catch((h) => { arkDurum.textContent = AH.errorText(h, "couldn't send that request."); });
   });
 
   /* --- kept --- */
 
-  function tutulanlariYukle() {
+  function loadKept() {
     if (!AH.kept) return;
-    AH.kept().then((liste) => {
+    AH.kept().then((list) => {
       tutListe.textContent = "";
-      if (!liste.length) {
-        const bos = document.createElement("li");
-        bos.className = "friend-empty";
-        bos.textContent = "nothing kept yet. swipe a card right in explore.";
-        tutListe.appendChild(bos);
+      if (!list.length) {
+        const empty = document.createElement("li");
+        empty.className = "friend-empty";
+        empty.textContent = "nothing kept yet. swipe a card right in explore.";
+        tutListe.appendChild(empty);
         return;
       }
-      liste.forEach((e) => {
-        const satir = document.createElement("li");
+      list.forEach((e) => {
+        const row = document.createElement("li");
         const a = document.createElement("a");
         a.className = "kept-row";
         a.href = "../explore/" + e.slug + "/index.html";
@@ -148,19 +148,19 @@
           "../posters/" + String(e.poster || 1).padStart(2, "0") + ".svg";
         a.appendChild(g);
 
-        const yazi = document.createElement("div");
-        const ad = document.createElement("p");
-        ad.className = "kept-name";
-        ad.textContent = e.title;
+        const text = document.createElement("div");
+        const name = document.createElement("p");
+        name.className = "kept-name";
+        name.textContent = e.title;
         const meta = document.createElement("p");
         meta.className = "kept-meta";
         meta.textContent = e.meta;
-        yazi.appendChild(ad);
-        yazi.appendChild(meta);
-        a.appendChild(yazi);
+        text.appendChild(name);
+        text.appendChild(meta);
+        a.appendChild(text);
 
-        satir.appendChild(a);
-        tutListe.appendChild(satir);
+        row.appendChild(a);
+        tutListe.appendChild(row);
       });
     });
   }
@@ -169,69 +169,69 @@
 
   /* Liste girmemis birine "burada tanidiklarin var" demek icin var;
      girmis biri kendi arkadaslarini goruyor, o zaman kayboluyor. */
-  function tanidiklar(girisli) {
-    if (nrBolum) nrBolum.hidden = girisli;
+  function showFamiliarFaces(signedIn) {
+    if (nrBolum) nrBolum.hidden = signedIn;
   }
 
-  /* Icerik herkese ayni, cunku simdilik sabit bir liste.
-     Isimler; fotograf ya da rozet yok. */
-  function nachtradarCiz() {
-    const kutu = document.getElementById("nr");
+  /* Icerik herkese ayni, cunku simdilik sabit bir list.
+     Isimler; fotograf ya da badge yok. */
+  function drawNachtradar() {
+    const box = document.getElementById("nr");
     const aciklama = document.getElementById("nr-about");
     const veri = window.NACHTRADAR;
-    if (!kutu || !veri) return;
+    if (!box || !veri) return;
 
     const hepsi = [
       ...veri.crew.map((k) => ({ ...k, crew: true })),
-      ...veri.bekleyen.map((k) => ({ ...k, crew: false })),
+      ...veri.pending.map((k) => ({ ...k, crew: false })),
     ];
 
     aciklama.textContent = "hundreds of people are already on the app.";
 
-    kutu.textContent = "";
+    box.textContent = "";
     hepsi.forEach((k) => {
-      const kart = document.createElement("div");
-      kart.className = "nr-person" + (k.crew ? " crew" : "");
+      const card = document.createElement("div");
+      card.className = "nr-person" + (k.crew ? " crew" : "");
 
       /* Fotograf yok: bas harf. Hesabin kendi isareti kadar. */
       const im = document.createElement("span");
       im.className = "nr-img";
-      im.textContent = (k.ad || "?").trim()[0].toUpperCase();
-      kart.appendChild(im);
+      im.textContent = (k.name || "?").trim()[0].toUpperCase();
+      card.appendChild(im);
 
-      const yazi = document.createElement("div");
-      yazi.className = "nr-text";
+      const text = document.createElement("div");
+      text.className = "nr-text";
 
-      const ad = document.createElement("p");
-      ad.className = "nr-name";
-      ad.textContent = k.ad;
-      yazi.appendChild(ad);
+      const name = document.createElement("p");
+      name.className = "nr-name";
+      name.textContent = k.name;
+      text.appendChild(name);
 
-      const alt = document.createElement("p");
-      alt.className = "nr-handle";
-      alt.textContent = k.handle ? "@" + k.handle : "no handle";
-      yazi.appendChild(alt);
+      const sub = document.createElement("p");
+      sub.className = "nr-handle";
+      sub.textContent = k.handle ? "@" + k.handle : "no handle";
+      text.appendChild(sub);
 
-      kart.appendChild(yazi);
-      kutu.appendChild(kart);
+      card.appendChild(text);
+      box.appendChild(card);
     });
   }
 
-  nachtradarCiz();
+  drawNachtradar();
 
   /* Jeton yerelde duruyor: karari ilk boyamadan once verebiliyoruz,
-     boylece girisliye liste bir an gorunup kaybolmuyor. */
-  tanidiklar(Boolean(window.AH && AH.signedIn && AH.signedIn()));
+     boylece girisliye list bir an gorunup kaybolmuyor. */
+  showFamiliarFaces(Boolean(window.AH && AH.signedIn && AH.signedIn()));
 
   /* --- acilis --- */
 
   if (!(AYAR.url && AYAR.anonKey)) {
-    disarida.hidden = false;
-    disarida.querySelector(".page-note").textContent =
+    outside.hidden = false;
+    outside.querySelector(".page-note").textContent =
       "this opens when the backend does.";
     return;
   }
 
-  AH.sessionReady.then(ekraniKur);
-  AH.onSessionChange(ekraniKur);
+  AH.sessionReady.then(render);
+  AH.onSessionChange(render);
 })();

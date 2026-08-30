@@ -1,112 +1,112 @@
 /* afterhours — ayar sayfasi.
-   Butun is veritabanindaki fonksiyonlarda: profil profile_me()’den
-   okunuyor, profil alanlari profile_setup() ile tek istekte yaziliyor,
+   Butun is veritabanindaki fonksiyonlarda: profile profile_me()’den
+   okunuyor, profile alanlari profile_setup() ile tek istekte yaziliyor,
    ucu de anahtar olan ayarlar dogrudan profile_settings’e yaziliyor
    (kural zaten yalniz kendi satirina izin veriyor).
 
-   Girissizken ya da backend kapaliyken sayfa durust: form hic
+   Girissizken ya da backend kapaliyken page durust: form hic
    gorunmuyor, sebebi yaziyor.  */
 
 (function () {
   const AH = (window.AH = window.AH || {});
 
-  const disarida = document.getElementById("set-out");
-  const icerde = document.getElementById("set-in");
-  if (!disarida || !icerde) return;
+  const outside = document.getElementById("set-out");
+  const inside = document.getElementById("set-in");
+  if (!outside || !inside) return;
 
   const el = (id) => document.getElementById(id);
-  const handleAlan = el("set-handle");
-  const handleDurum = el("set-handle-status");
+  const handleField = el("set-handle");
+  const handleStatus = el("set-handle-status");
   const adAlan = el("set-name");
   const bioAlan = el("set-bio");
-  const sehirKutu = el("set-city");
-  const durum = el("set-status");
+  const cityBox = el("set-city");
+  const status = el("set-status");
 
-  let profil = null;      /* profile_me()’den gelen satir */
-  let sehir = null;       /* secili sehir slug’i */
+  let profile = null;      /* profile_me()’den gelen row */
+  let city = null;       /* chosen city slug’i */
 
-  const cagir = (fn, govde) =>
-    AH.request("/rpc/" + fn, { method: "POST", body: JSON.stringify(govde || {}) });
+  const call = (fn, body) =>
+    AH.request("/rpc/" + fn, { method: "POST", body: JSON.stringify(body || {}) });
 
-  const skaler = (c) => (Array.isArray(c) ? c[0] : c);
+  const scalar = (c) => (Array.isArray(c) ? c[0] : c);
 
-  function soyle(kutu, metin, tur) {
-    kutu.textContent = metin || "";
-    kutu.className = "account-status" + (tur ? " " + tur : "");
+  function say(box, text, kind) {
+    box.textContent = text || "";
+    box.className = "account-status" + (kind ? " " + kind : "");
   }
 
-  /* --- iki secenekli satirlar: secili olan koyu, digeri soluk --- */
+  /* --- iki secenekli rows: chosen olan koyu, digeri soluk --- */
 
-  function secimKur(kutu, deger, yaz) {
-    [...kutu.querySelectorAll("button")].forEach((d) => {
-      d.classList.toggle("selected", d.dataset.deger === String(deger));
+  function buildChoice(box, value, yaz) {
+    [...box.querySelectorAll("button")].forEach((d) => {
+      d.classList.toggle("selected", d.dataset.value === String(value));
       d.onclick = () => {
         if (d.classList.contains("selected")) return;
-        yaz(d.dataset.deger).then(() => secimKur(kutu, d.dataset.deger, yaz));
+        yaz(d.dataset.value).then(() => buildChoice(box, d.dataset.value, yaz));
       };
     });
   }
 
-  function ayarYaz(alan, deger) {
+  function writeSetting(field, value) {
     const id = AH.session && AH.session.user && AH.session.user.id;
-    const govde = {};
-    govde[alan] = deger === "true" ? true : deger === "false" ? false : deger;
+    const body = {};
+    body[field] = value === "true" ? true : value === "false" ? false : value;
     return AH.request("/profile_settings?user_id=eq." + id, {
       method: "PATCH",
       headers: { Prefer: "return=representation" },
-      body: JSON.stringify(govde),
+      body: JSON.stringify(body),
     })
-      .then(() => soyle(durum, "saved.", "ok"))
-      .catch((h) => soyle(durum, AH.errorText(h, "couldn't save that."), "hata"));
+      .then(() => say(status, "saved.", "ok"))
+      .catch((h) => say(status, AH.errorText(h, "couldn't save that."), "hata"));
   }
 
-  /* --- sehirler ---
-     Elli dorde cikti; duz bir liste okunmuyordu. Ulkeye gore gruplayip
-     kaydirilan bir kutuya aldik — explore’daki ulke→sehir sirasinin
-     tek kutuya sigmis hali. Yalnizca gecesi olan sehirler geliyor. */
+  /* --- cities ---
+     Elli dorde cikti; duz bir list okunmuyordu. Ulkeye gore gruplayip
+     kaydirilan bir kutuya aldik — explore’daki ulke→city sirasinin
+     tek kutuya sigmis hali. Yalnizca gecesi olan cities geliyor. */
 
-  function sehirleriKur(secili) {
-    return cagir("city_counts")
-      .then((liste) => {
-        sehirKutu.textContent = "";
-        sehir = secili;
+  function buildCities(chosen) {
+    return call("city_counts")
+      .then((list) => {
+        cityBox.textContent = "";
+        city = chosen;
 
-        const gruplar = [];
-        (liste || []).filter((c) => Number(c.n) > 0).forEach((c) => {
-          const son = gruplar[gruplar.length - 1];
-          if (son && son.country === c.country) son.sehirler.push(c);
-          else gruplar.push({ country: c.country, sehirler: [c] });
+        const groups = [];
+        (list || []).filter((c) => Number(c.n) > 0).forEach((c) => {
+          const last = groups[groups.length - 1];
+          if (last && last.country === c.country) last.cities.push(c);
+          else groups.push({ country: c.country, cities: [c] });
         });
 
-        const isaretle = () => [...sehirKutu.querySelectorAll("button")]
-          .forEach((x) => x.classList.toggle("selected", x.dataset.deger === sehir));
+        const mark = () => [...cityBox.querySelectorAll("button")]
+          .forEach((x) => x.classList.toggle("selected", x.dataset.value === city));
 
-        gruplar.forEach((g) => {
-          const ad = document.createElement("p");
-          ad.className = "set-country";
-          ad.textContent = (g.country || "").toLowerCase();
-          sehirKutu.appendChild(ad);
+        groups.forEach((g) => {
+          const name = document.createElement("p");
+          name.className = "set-country";
+          name.textContent = (g.country || "").toLowerCase();
+          cityBox.appendChild(name);
 
-          const satir = document.createElement("div");
-          satir.className = "set-choice";
-          g.sehirler.forEach((c) => {
+          const row = document.createElement("div");
+          row.className = "set-choice";
+          g.cities.forEach((c) => {
             const d = document.createElement("button");
             d.type = "button";
-            d.dataset.deger = c.slug;
+            d.dataset.value = c.slug;
             d.textContent = c.name.toLowerCase();
-            d.onclick = () => { sehir = c.slug; isaretle(); };
-            satir.appendChild(d);
+            d.onclick = () => { city = c.slug; mark(); };
+            row.appendChild(d);
           });
-          sehirKutu.appendChild(satir);
+          cityBox.appendChild(row);
         });
 
-        isaretle();
+        mark();
 
-        /* Secili sehir listenin ortasindaysa kutu onu gostersin */
-        const acik = sehirKutu.querySelector("button.selected");
-        if (acik) sehirKutu.scrollTop = Math.max(0, acik.offsetTop - 40);
+        /* Secili city listenin ortasindaysa box onu gostersin */
+        const open = cityBox.querySelector("button.selected");
+        if (open) cityBox.scrollTop = Math.max(0, open.offsetTop - 40);
       })
-      .catch(() => { sehirKutu.textContent = ""; });
+      .catch(() => { cityBox.textContent = ""; });
   }
 
   /* --- handle: yazarken musait mi diye sor --- */
@@ -116,16 +116,16 @@
     format: "lowercase letters, numbers and underscore. 3–20.", empty: "",
   };
 
-  let bekleyen = null;
-  handleAlan && handleAlan.addEventListener("input", () => {
-    clearTimeout(bekleyen);
-    const h = handleAlan.value.trim();
-    if (!h) { soyle(handleDurum, ""); return; }
-    bekleyen = setTimeout(() => {
-      cagir("handle_status", { p_handle: h })
-        .then((c) => soyle(handleDurum, SOZ[skaler(c)] || "",
-          skaler(c) === "taken" || skaler(c) === "format" ? "error" : "ok"))
-        .catch(() => soyle(handleDurum, ""));
+  let pending = null;
+  handleField && handleField.addEventListener("input", () => {
+    clearTimeout(pending);
+    const h = handleField.value.trim();
+    if (!h) { say(handleStatus, ""); return; }
+    pending = setTimeout(() => {
+      call("handle_status", { p_handle: h })
+        .then((c) => say(handleStatus, SOZ[scalar(c)] || "",
+          scalar(c) === "taken" || scalar(c) === "format" ? "error" : "ok"))
+        .catch(() => say(handleStatus, ""));
     }, 300);
   });
 
@@ -138,19 +138,19 @@
   };
 
   el("set-save").onclick = function () {
-    soyle(durum, "saving…");
-    cagir("profile_setup", {
-      p_handle: handleAlan.value.trim(),
+    say(status, "saving…");
+    call("profile_setup", {
+      p_handle: handleField.value.trim(),
       p_display_name: adAlan.value.trim(),
-      p_city_slug: sehir,
+      p_city_slug: city,
       p_bio: bioAlan.value.trim(),
     })
       .then((c) => {
-        const s = skaler(c);
-        soyle(durum, YANIT[s] || String(s), s === "ok" ? "ok" : "error");
-        if (s === "ok") yukle();
+        const s = scalar(c);
+        say(status, YANIT[s] || String(s), s === "ok" ? "ok" : "error");
+        if (s === "ok") load();
       })
-      .catch((h) => soyle(durum, AH.errorText(h, "couldn't save that."), "hata"));
+      .catch((h) => say(status, AH.errorText(h, "couldn't save that."), "hata"));
   };
 
   /* --- cikis --- */
@@ -162,7 +162,7 @@
 
   /* --- hesabi silme: iki adim, ikincisinde kendi adini yazmak var --- */
 
-  const silDurum = el("set-delete-status");
+  const deleteStatus = el("set-delete-status");
   el("set-delete").onclick = function () {
     el("set-confirm").hidden = false;
     el("set-confirm-field").focus();
@@ -170,24 +170,24 @@
 
   el("set-confirm-button").onclick = function () {
     const yazilan = el("set-confirm-field").value.trim().toLowerCase();
-    if (!profil || !profil.handle || yazilan !== profil.handle) {
-      soyle(silDurum, "type your handle exactly.", "error");
+    if (!profile || !profile.handle || yazilan !== profile.handle) {
+      say(deleteStatus, "type your handle exactly.", "error");
       return;
     }
-    soyle(silDurum, "deleting…");
-    cagir("delete_account")
+    say(deleteStatus, "deleting…");
+    call("delete_account")
       .then(() => {
         AH.dropSession();
         location.href = "../index.html";
       })
-      .catch((h) => soyle(silDurum, AH.errorText(h, "couldn't delete the account."), "hata"));
+      .catch((h) => say(deleteStatus, AH.errorText(h, "couldn't delete the account."), "hata"));
   };
 
   /* --- acilis --- */
 
-  function doldur(p) {
-    profil = p;
-    handleAlan.value = p.handle || "";
+  function fill(p) {
+    profile = p;
+    handleField.value = p.handle || "";
     adAlan.value = p.display_name || "";
     bioAlan.value = p.bio || "";
 
@@ -199,38 +199,38 @@
       [p.kept_count + " kept", p.friend_count + " friends", p.comment_count + " comments"]
         .join(" · ") + (gun ? " · here since " + gun : "");
 
-    secimKur(el("set-kept"), p.kept_visibility, (v) => ayarYaz("kept_visibility", v));
-    secimKur(el("set-found"), p.discoverable, (v) => ayarYaz("discoverable", v));
-    secimKur(el("set-mail"), p.notify_email, (v) => ayarYaz("notify_email", v));
+    buildChoice(el("set-kept"), p.kept_visibility, (v) => writeSetting("kept_visibility", v));
+    buildChoice(el("set-found"), p.discoverable, (v) => writeSetting("discoverable", v));
+    buildChoice(el("set-mail"), p.notify_email, (v) => writeSetting("notify_email", v));
 
-    return sehirleriKur(p.city_slug);
+    return buildCities(p.city_slug);
   }
 
-  function yukle() {
-    return cagir("profile_me").then((r) => {
+  function load() {
+    return call("profile_me").then((r) => {
       const p = Array.isArray(r) ? r[0] : r;
-      if (p) doldur(p);
+      if (p) fill(p);
       return p;
     });
   }
 
-  function ekraniKur() {
+  function render() {
     const AYAR = window.AH_CONFIG || {};
     if (!(AYAR.url && AYAR.anonKey)) {
-      disarida.hidden = false;
-      icerde.hidden = true;
+      outside.hidden = false;
+      inside.hidden = true;
       el("set-out-note").textContent = "this opens when the backend does.";
-      disarida.querySelector(".page-button").hidden = true;
+      outside.querySelector(".page-button").hidden = true;
       return;
     }
-    const girisli = Boolean(AH.signedIn && AH.signedIn());
-    disarida.hidden = girisli;
-    icerde.hidden = !girisli;
-    if (girisli) {
-      yukle().catch((h) => soyle(durum, AH.errorText(h, "couldn't load your profile."), "hata"));
+    const signedIn = Boolean(AH.signedIn && AH.signedIn());
+    outside.hidden = signedIn;
+    inside.hidden = !signedIn;
+    if (signedIn) {
+      load().catch((h) => say(status, AH.errorText(h, "couldn't load your profile."), "hata"));
     }
   }
 
-  AH.sessionReady.then(ekraniKur);
-  AH.onSessionChange(ekraniKur);
+  AH.sessionReady.then(render);
+  AH.onSessionChange(render);
 })();

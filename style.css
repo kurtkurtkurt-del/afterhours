@@ -783,7 +783,7 @@ body:not([data-screen="0"]) .down { opacity: 0; }
 
 /* --- What the card does when someone tries to scroll past it --- */
 
-@keyframes kart-zipla {
+@keyframes card-jump {
   0%   { transform: translateX(0); }
   22%  { transform: translateX(16px) rotate(1.4deg); }
   48%  { transform: translateX(-9px) rotate(-0.8deg); }
@@ -792,7 +792,7 @@ body:not([data-screen="0"]) .down { opacity: 0; }
 }
 
 .card2.jump {
-  animation: kart-zipla 0.46s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  animation: card-jump 0.46s cubic-bezier(0.36, 0.07, 0.19, 0.97);
 }
 
 /* ---------- Third screen: the card strip ---------- */
@@ -2562,7 +2562,7 @@ body:has(> .foot:not(.thin)) > .foot { margin-top: auto; }
 }
 
 @media (max-width: 720px) {
-  /* Telefonda uc sutun alt alta */
+  /* Three columns do not fit on a phone: stacked */
   .account-page { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .account-page .page-title, .sc-title { font-size: min(7vw, 72px); }
 

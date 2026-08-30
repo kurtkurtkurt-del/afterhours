@@ -1,71 +1,71 @@
 /* afterhours — giris sayfasi.
-   Tek is: e-posta al, baglanti istet, durumu soyle.
+   Tek is: e-posta al, baglanti istet, durumu say.
    Sifre alani yok; olmayacak da.  */
 
 (function () {
   const form = document.getElementById("page-form");
-  const alan = document.getElementById("page-email");
+  const field = document.getElementById("page-email");
   const sifreAlani = document.getElementById("page-password");
   const dugme = document.getElementById("page-button");
-  const not = document.getElementById("page-note");
-  const icerde = document.getElementById("page-in");
-  const kim = document.getElementById("page-who");
+  const note = document.getElementById("page-note");
+  const inside = document.getElementById("page-in");
+  const who = document.getElementById("page-who");
   const cik = document.getElementById("page-signout");
 
   const AYAR = window.AH_CONFIG || {};
-  const acik = Boolean(AYAR.url && AYAR.anonKey);
+  const open = Boolean(AYAR.url && AYAR.anonKey);
 
-  function soyle(metin, tur) {
-    not.textContent = metin || "";
-    not.className = "page-note" + (tur ? " " + tur : "");
+  function say(text, kind) {
+    note.textContent = text || "";
+    note.className = "page-note" + (kind ? " " + kind : "");
   }
 
   /* Backend henuz baglanmadiysa durust ol: form calismaz, sebebi yazilir. */
-  if (!acik) {
+  if (!open) {
     form.hidden = true;
-    soyle("sign-in opens when the backend does. nothing to sign into yet.", "waiting");
+    say("sign-in opens when the backend does. nothing to sign into yet.", "waiting");
     return;
   }
 
-  function ekraniKur() {
-    const girisli = window.AH && AH.signedIn();
-    form.hidden = girisli;
-    icerde.hidden = !girisli;
-    if (girisli) {
+  function render() {
+    const signedIn = window.AH && AH.signedIn();
+    form.hidden = signedIn;
+    inside.hidden = !signedIn;
+    if (signedIn) {
       const k = AH.session && AH.session.user;
-      kim.textContent = k && k.email ? "you're in as " + k.email : "you're in.";
-      soyle("");
+      who.textContent = k && k.email ? "you're in as " + k.email : "you're in.";
+      say("");
     }
   }
 
-  AH.sessionReady.then(ekraniKur);
-  AH.onSessionChange(ekraniKur);
+  AH.sessionReady.then(render);
+  AH.onSessionChange(render);
 
   /* Sifreyle giris. Sifresiz baglanti yolu duruyor (AH.requestLink) ama
      su an kullanilmiyor: Supabase'in dahili e-posta gondericisi saatte
      birkac postayla sinirli ve giris denemeleri ona takiliyordu. */
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const eposta = alan.value.trim();
-    const sifre = sifreAlani.value;
+    const email = field.value.trim();
+    const password = sifreAlani.value;
 
-    if (!eposta || eposta.indexOf("@") < 1) {
-      soyle("that doesn't look like an email.", "hata");
-      alan.focus();
+    if (!email || email.indexOf("@") < 1) {
+      say("that doesn't look like an email.", "hata");
+      field.focus();
       return;
     }
-    if (!sifre) {
-      soyle("your password is missing.", "error");
+    if (!password) {
+      say("your password is missing.", "error");
       sifreAlani.focus();
       return;
     }
 
     dugme.disabled = true;
-    soyle("signing in…");
-    AH.signInWithPassword(eposta, sifre)
-      .then(() => { sifreAlani.value = ""; ekraniKur(); soyle("you're in.", "tamam"); })
+    say("signing in…");
+    AH.signInWithPassword(email, password)
+      .then(() => { sifreAlani.value = ""; render(); say("you're in.", "tamam"); })
       .catch((h) => {
-        soyle(/invalid|credentials/i.test(h.message)
+        say(/invalid|credentials/i.test(h.message)
           ? "wrong email or password."
           : "couldn't sign in: " + h.message, "hata");
       })
@@ -73,12 +73,12 @@
   });
 
   cik.addEventListener("click", () => {
-    AH.signOut().then(() => { ekraniKur(); soyle("signed out.", "ok"); });
+    AH.signOut().then(() => { render(); say("signed out.", "ok"); });
   });
 
   /* Kullanici adi ve arkadaslar bir zamanlar buradaydi; friends&more
      sayfasina tasindilar (friends/friends.js). Kopyalari burada kaldi ve
-     olmayan ogeleri arayip dosyayi ortasinda durduruyorlardi: satir
+     olmayan ogeleri arayip dosyayi ortasinda durduruyorlardi: row
      173'te TypeError, sonrasi hic calismiyordu. Silindi. */
 
 })();

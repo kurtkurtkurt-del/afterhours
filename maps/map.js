@@ -4,25 +4,25 @@
    o her karede yuzlerce bina ciziyordu.
 
    Nokta konumu mekanin koordinatindan (venues.js) geliyor. Ayni
-   mekanda birden fazla gece varsa ust uste binmesinler diye slug'dan
+   mekanda birden fazla gece varsa top uste binmesinler diye slug'dan
    uretilen sabit bir kaydirma uygulaniyor — her acilista ayni yerde. */
 
 (function () {
   const NS = "http://www.w3.org/2000/svg";
   const katman = document.getElementById("map-dots");
   const sema = document.getElementById("map-schema");
-  const kart = document.getElementById("map-card");
+  const card = document.getElementById("map-card");
   const kartTur = document.getElementById("map-card-kind");
   const kartAd = document.getElementById("map-card-name");
   const kartMeta = document.getElementById("map-card-meta");
   const dip = document.getElementById("map-footline");
   if (!katman) return;
 
-  const kartlar = window.POSTERS || [];
-  const mekanlar = window.VENUES || [];
+  const cards = window.POSTERS || [];
+  const venues = window.VENUES || [];
 
   /* Etkinligin mekanini bul: canliyken kayittan geliyor, yerel modda
-     meta satirindaki adlari tariyoruz (tohum ureteciyle ayni mantik). */
+     meta satirindaki adlari tariyoruz (seed ureteciyle ayni mantik). */
   function mekanBul(e) {
     const adaylar = [];
     if (e.venue) adaylar.push(e.venue);
@@ -32,9 +32,9 @@
       if (!ham) continue;
       const aday = ham.toUpperCase().trim();
       const m =
-        mekanlar.find((x) => x.name === aday) ||
-        mekanlar.find((x) => aday.startsWith(x.name) || x.name.startsWith(aday)) ||
-        mekanlar.find((x) => aday.includes(x.name));
+        venues.find((x) => x.name === aday) ||
+        venues.find((x) => aday.startsWith(x.name) || x.name.startsWith(aday)) ||
+        venues.find((x) => aday.includes(x.name));
       if (m) return m;
     }
     return null;
@@ -51,7 +51,7 @@
 
   let yerlesen = 0;
 
-  kartlar.forEach((e) => {
+  cards.forEach((e) => {
     const m = mekanBul(e);
     if (!m) return;                     /* mekani olmayan gece haritada yok */
     yerlesen++;
@@ -61,45 +61,45 @@
     g.setAttribute("href", "../explore/" + e.slug + "/index.html");
     g.setAttribute("class", "map-dot");
 
-    /* Buyuk gorunmez daire: fareyle yakalamasi kolay olsun */
-    const hedef = document.createElementNS(NS, "circle");
-    hedef.setAttribute("cx", m.x + k.dx);
-    hedef.setAttribute("cy", m.y + k.dy);
-    hedef.setAttribute("r", 13);
-    hedef.setAttribute("class", "map-dot-target");
+    /* Buyuk gorunmez circle: fareyle yakalamasi kolay olsun */
+    const target = document.createElementNS(NS, "circle");
+    target.setAttribute("cx", m.x + k.dx);
+    target.setAttribute("cy", m.y + k.dy);
+    target.setAttribute("r", 13);
+    target.setAttribute("class", "map-dot-target");
 
-    const daire = document.createElementNS(NS, "circle");
-    daire.setAttribute("cx", m.x + k.dx);
-    daire.setAttribute("cy", m.y + k.dy);
-    daire.setAttribute("r", 5.2);
-    daire.setAttribute("class", "map-dot-circle");
+    const circle = document.createElementNS(NS, "circle");
+    circle.setAttribute("cx", m.x + k.dx);
+    circle.setAttribute("cy", m.y + k.dy);
+    circle.setAttribute("r", 5.2);
+    circle.setAttribute("class", "map-dot-circle");
 
-    g.appendChild(hedef);
-    g.appendChild(daire);
+    g.appendChild(target);
+    g.appendChild(circle);
 
-    const goster = () => {
-      kart.hidden = false;
+    const show = () => {
+      card.hidden = false;
       kartTur.textContent = (e.kind || "").toUpperCase();
       kartAd.textContent = e.title;
       kartMeta.textContent = e.meta;
       g.classList.add("over");
     };
-    const gizle = () => { kart.hidden = true; g.classList.remove("over"); };
+    const hide = () => { card.hidden = true; g.classList.remove("over"); };
 
-    g.addEventListener("mouseenter", goster);
-    g.addEventListener("mouseleave", gizle);
-    g.addEventListener("focus", goster);
-    g.addEventListener("blur", gizle);
+    g.addEventListener("mouseenter", show);
+    g.addEventListener("mouseleave", hide);
+    g.addEventListener("focus", show);
+    g.addEventListener("blur", hide);
 
     katman.appendChild(g);
   });
 
-  const eksik = kartlar.length - yerlesen;
+  const eksik = cards.length - yerlesen;
   dip.textContent =
     yerlesen + " nights placed" +
     (eksik ? " · " + eksik + " without a venue yet" : "") +
-    " · schematic, not to scale";
+    " · schematic, note to scale";
 
-  /* Fare haritanin bosluguna gidince kart kapansin */
-  sema.addEventListener("mouseleave", () => { kart.hidden = true; });
+  /* Fare haritanin bosluguna gidince card kapansin */
+  sema.addEventListener("mouseleave", () => { card.hidden = true; });
 })();
