@@ -41,7 +41,7 @@ console.log("\n— everyone can write —");
 {
   await asAnon();
   await db.exec(`insert into public.feedback (kind, body, contact)
-                 values ('broken', 'the deck stops after four cards', 'biri@example.com')`);
+                 values ('broken', 'the deck stops after four cards', 'someone@example.com')`);
   check(true, "someone signed out can write");
 
   await asUser(B);
@@ -100,7 +100,7 @@ console.log("\n— the admin list —");
   check(l.rows.length === 2, "list geliyor");
   check(l.rows[0].kind === "idea", "the newest one is on top");
   check(l.rows[0].author === "lena", "the signed-in writer resolves to a name");
-  check(l.rows[1].author === null && l.rows[1].contact === "biri@example.com",
+  check(l.rows[1].author === null && l.rows[1].contact === "someone@example.com",
     "the signed-out one has no name, only the contact they left");
 
   await db.exec(`update public.feedback set handled = true where kind = 'idea'`);

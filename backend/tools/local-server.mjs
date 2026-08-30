@@ -140,10 +140,10 @@ const server = createServer(async (req, reply) => {
       }
       const id = k.rows[0].id;
 
-      /* A convenience for development: make the first user an admin. In a real
-         kurulumda bu, SQL editorunde tek satirlik one guncelleme. */
-      const yon = await db.query(`select count(*)::int as n from public.profiles where is_admin`);
-      if (yon.rows[0].n === 0) {
+      /* A convenience for development: make the first user an admin. In a
+         real setup that is a one-line update in the SQL editor. */
+      const admins = await db.query(`select count(*)::int as n from public.profiles where is_admin`);
+      if (admins.rows[0].n === 0) {
         await db.query(`update public.profiles set is_admin = true where id = $1`, [id]);
         console.log("  ★ " + email + " made an admin (locally only)");
       }
@@ -171,8 +171,8 @@ const server = createServer(async (req, reply) => {
         [email, JSON.stringify(extra)]);
       const id = k.rows[0].id;
 
-      const yon = await db.query(`select count(*)::int as n from public.profiles where is_admin`);
-      if (yon.rows[0].n === 0) {
+      const admins = await db.query(`select count(*)::int as n from public.profiles where is_admin`);
+      if (admins.rows[0].n === 0) {
         await db.query(`update public.profiles set is_admin = true where id = $1`, [id]);
         console.log("  ★ " + email + " made an admin (locally only)");
       }
@@ -187,9 +187,9 @@ const server = createServer(async (req, reply) => {
     if (path === "/auth/v1/token") {
       const kind = url.searchParams.get("grant_type") || "refresh_token";
 
-      /* Signing in with a password. NOTE: the password is NOT CHECKED here
-         taklit server, sadece akisi denemek icin. Gercek Supabase sifreyi
-         dogrular. Internete acilmaz. */
+      /* Signing in with a password. NOTE: the password is NOT CHECKED
+         here — this is an imitation server, only for exercising the flow.
+         Real Supabase does verify it. Never exposed to the internet. */
       if (kind === "password") {
         const email = ((body && body.email) || "").toLowerCase();
         if (!email) return send(400, { msg: "email required" });

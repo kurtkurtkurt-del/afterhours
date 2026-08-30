@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-08-30 19:57   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-08-30 20:25   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -1288,27 +1288,27 @@ returns text
 language plpgsql
 as $$
 declare
-  hedef uuid;
+  target uuid;
 begin
-  select id into hedef from public.profiles where handle = lower(btrim(p_handle));
+  select id into target from public.profiles where handle = lower(btrim(p_handle));
 
-  if hedef is null then
+  if target is null then
     return 'notfound';
   end if;
-  if hedef = auth.uid() then
+  if target = auth.uid() then
     return 'yourself';
   end if;
 
   -- If a request is pending in the other direction, accept that one
   if exists (select 1 from public.friendships
-             where requester_id = hedef and addressee_id = auth.uid()) then
+             where requester_id = target and addressee_id = auth.uid()) then
     update public.friendships set status = 'accepted'
-    where requester_id = hedef and addressee_id = auth.uid();
+    where requester_id = target and addressee_id = auth.uid();
     return 'accepted';
   end if;
 
   insert into public.friendships (requester_id, addressee_id)
-  values (auth.uid(), hedef)
+  values (auth.uid(), target)
   on conflict (requester_id, addressee_id) do nothing;
 
   return 'sent';
@@ -1376,14 +1376,16 @@ begin
 
   -- Writing belongs to the admin alone. public.is_admin() is defined in 02_rls.sql.
   execute $q$ drop policy if exists "posters yonetici yazar" on storage.objects $q$;
+  execute $q$ drop policy if exists "posters admin writes" on storage.objects $q$;
   execute $q$
-    create policy "posters yonetici yazar" on storage.objects
+    create policy "posters admin writes" on storage.objects
       for insert with check (bucket_id = 'posters' and public.is_admin())
   $q$;
 
   execute $q$ drop policy if exists "posters yonetici gunceller" on storage.objects $q$;
+  execute $q$ drop policy if exists "posters admin updates" on storage.objects $q$;
   execute $q$
-    create policy "posters yonetici gunceller" on storage.objects
+    create policy "posters admin updates" on storage.objects
       for update using (bucket_id = 'posters' and public.is_admin())
       with check (bucket_id = 'posters' and public.is_admin())
   $q$;
@@ -1468,8 +1470,10 @@ begin
   if exists (select 1 from pg_extension where extname = 'pg_cron') then
     perform cron.unschedule('afterhours-gecmisi-dusur')
       where exists (select 1 from cron.job where jobname = 'afterhours-gecmisi-dusur');
+    perform cron.unschedule('afterhours-drop-past')
+      where exists (select 1 from cron.job where jobname = 'afterhours-drop-past');
     perform cron.schedule(
-      'afterhours-gecmisi-dusur',
+      'afterhours-drop-past',
       '30 5 * * *',                       -- 05:30 UTC daily, after the night is over
       $job$ select public.hide_past_events(); $job$
     );
@@ -2660,13 +2664,17 @@ alter table public.profiles
 alter table public.profiles
   drop constraint if exists profiles_bio_uzunluk;
 alter table public.profiles
-  add constraint profiles_bio_uzunluk
+  drop constraint if exists profiles_bio_length;
+alter table public.profiles
+  add constraint profiles_bio_length
   check (bio is null or length(btrim(bio)) between 1 and 160);
 
 alter table public.profiles
   drop constraint if exists profiles_ad_uzunluk;
 alter table public.profiles
-  add constraint profiles_ad_uzunluk
+  drop constraint if exists profiles_name_length;
+alter table public.profiles
+  add constraint profiles_name_length
   check (display_name is null or length(btrim(display_name)) between 1 and 40);
 
 create index if not exists profiles_city_idx on public.profiles (city_id);
@@ -3055,26 +3063,26 @@ returns text
 language plpgsql
 as $$
 declare
-  hedef uuid;
+  target uuid;
 begin
-  hedef := public.handle_to_id(p_handle);
+  target := public.handle_to_id(p_handle);
 
-  if hedef is null then
+  if target is null then
     return 'notfound';
   end if;
-  if hedef = auth.uid() then
+  if target = auth.uid() then
     return 'yourself';
   end if;
 
   if exists (select 1 from public.friendships
-             where requester_id = hedef and addressee_id = auth.uid()) then
+             where requester_id = target and addressee_id = auth.uid()) then
     update public.friendships set status = 'accepted'
-    where requester_id = hedef and addressee_id = auth.uid();
+    where requester_id = target and addressee_id = auth.uid();
     return 'accepted';
   end if;
 
   insert into public.friendships (requester_id, addressee_id)
-  values (auth.uid(), hedef)
+  values (auth.uid(), target)
   on conflict do nothing;
   return 'sent';
 end;

@@ -139,7 +139,7 @@ console.log("\n— the relations —");
   const tahmin = await db.query(`select count(*)::int as n from public.events where starts_at_estimated`);
   check(tahmin.rows[0].n === 24, "24 dates are marked as unconfirmed", `found ${tahmin.rows[0].n}`);
 
-  /* Ulke alanlari taken mu: filtre before ulkeye gore ayiriyor */
+  /* Are the country fields filled in: the filter splits by country first */
   const noCountry = await db.query(
     `select count(*)::int as n from public.cities where country_slug is null`);
   check(noCountry.rows[0].n === 0, "every city has a country");

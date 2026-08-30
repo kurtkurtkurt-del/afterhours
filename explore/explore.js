@@ -1,19 +1,19 @@
 /* afterhours — explore: the deck you swipe left and right.
-   Ustteki card surukleniyor; esigi asinca ucup gidiyor ve altindaki
-   one geliyor. Sagi begenmek, solu gecmek. */
+   The top card is the one you drag; past the threshold it flies off and
+   the one below comes forward. Right is keep, left is pass. */
 
 (function () {
   const deck = document.getElementById("ex-deck");
   if (!deck) return;
 
-  const ESIK = 120;              // px
+  const THRESHOLD = 120;              // px
   const VISIBLE = 3;             // how many cards sit on the pile
   let index = 0;
 
   /* Where the deck comes from. The buttons on the left change it:
-     global deck   → POSTERS (filtreli normal deck)
-     friends liked → arkadaslarin saga attiklari
-     i feel lucky  → ayni cards, karisik sirayla           */
+     global deck   → POSTERS (the normal deck, filtered)
+     friends liked → what your friends swiped right
+     i feel lucky  → the same cards, in a shuffled order    */
   let CARDS = POSTERS;
 
   /* --- what you swipe right piles up here --- */
@@ -25,7 +25,7 @@
   const boxBody = document.getElementById("ex-box-body");
   const badge = document.getElementById("ex-badge");
 
-  function tut(event) {
+  function keep(event) {
     if (kept.some((e) => e.slug === event.slug)) return;
     kept.push(event);
     if (!badge) return;
@@ -51,13 +51,13 @@
     /* The most recently kept on top */
     kept.slice().reverse().forEach((e) => {
       const no = String(e.poster || CARDS.indexOf(e) + 1).padStart(2, "0");
-      const yol = e.posterPath || "../posters/" + no + ".svg";
+      const path = e.posterPath || "../posters/" + no + ".svg";
       const a = document.createElement("a");
       a.className = "ex-box-row";
       a.href = e.slug + "/index.html";
       const g = document.createElement("object");
       g.type = "image/svg+xml";
-      g.data = yol;
+      g.data = path;
       a.appendChild(g);
       const text = document.createElement("div");
       const name = document.createElement("p");
@@ -96,27 +96,26 @@
   }
 
   /* Fly the card off in the given direction and drop it from the deck.
-     Used both by dragging
-     hem klavye bunu kullanir. */
+     Used both by dragging and by the keyboard. */
   function fly(card, direction) {
     if (card.dataset.uctu) return;
     card.dataset.uctu = "1";
-    const atilan = CARDS[Number(card.dataset.no)];
-    if (direction > 0) tut(atilan);
-    /* Both directions are recorded: right means keep, left means do not show again.
-       Girisliyken veritabanina, degilse tarayiciya. */
-    if (window.AH && AH.saveSwipe) AH.saveSwipe(atilan, direction);
+    const swiped = CARDS[Number(card.dataset.no)];
+    if (direction > 0) keep(swiped);
+    /* Both directions are recorded: right means keep, left means do not
+       show it again. To the database when signed in, to the browser if not. */
+    if (window.AH && AH.saveSwipe) AH.saveSwipe(swiped, direction);
     card.classList.remove("held");
     card.classList.add("soft");
     card.style.transform = "translateX(" + (direction * 120) + "vw) rotate(" + (direction * 22) + "deg)";
     card.style.opacity = "0";
 
-    /* transitionend on its own is not enough: an interrupted transition
-       hic gelmiyor, bu yuzden zamanlayici yedegi var. */
-    let silindi = false;
+    /* transitionend on its own is not enough: it never fires on an
+       interrupted transition, so there is a timer as a backstop. */
+    let removed = false;
     const remove = () => {
-      if (silindi) return;
-      silindi = true;
+      if (removed) return;
+      removed = true;
       card.remove();
       fill();
     };
@@ -138,31 +137,31 @@
   });
 
   function makeCard(i) {
-    /* The poster number comes from the record itself; should the database
-       list dondurdugunde posterler kaymasin diye siraya guvenmiyoruz. */
+    /* The poster number comes from the record itself; we do not trust the
+       position, so that a short list from the database cannot shift them. */
     const no = String(CARDS[i].poster || i + 1).padStart(2, "0");
-    const yol = CARDS[i].posterPath || "../posters/" + no + ".svg";
+    const path = CARDS[i].posterPath || "../posters/" + no + ".svg";
     const card = document.createElement("div");
     card.className = "ex-card";
     card.dataset.no = String(i);
 
     const image = document.createElement("object");
     image.type = "image/svg+xml";
-    image.data = yol;
+    image.data = path;
     card.appendChild(image);
 
-    /* The info strip under the poster: kind + venue/date.
-       Veri events-data.js'ten, poster ile hic celismesin diye. */
-    const veri = CARDS[i];
+    /* The info strip under the poster: kind + venue/date. The data comes
+       from events-data.js, so it can never contradict the poster. */
+    const data = CARDS[i];
     const info = document.createElement("div");
     info.className = "ex-info";
-    const tur = document.createElement("p");
-    tur.className = "ex-kind";
-    tur.textContent = veri.kind;
+    const kind = document.createElement("p");
+    kind.className = "ex-kind";
+    kind.textContent = data.kind;
     const meta = document.createElement("p");
     meta.className = "ex-meta";
-    meta.textContent = veri.meta;
-    info.appendChild(tur);
+    meta.textContent = data.meta;
+    info.appendChild(kind);
     info.appendChild(meta);
     card.appendChild(info);
 
@@ -189,7 +188,7 @@
       card.classList.remove("held");
       card.classList.add("soft");
 
-      if (Math.abs(dx) > ESIK) {
+      if (Math.abs(dx) > THRESHOLD) {
         fly(card, dx > 0 ? 1 : -1);
       } else {
         card.style.transform = "";
@@ -205,14 +204,14 @@
 
   const commentArea = document.getElementById("ex-comment-list");
 
-  /* Pressing the heading opens and closes the comment area; on close
-     sutun daralir ve deck ortaya dogru genisler. */
-  const yorumDugme = document.getElementById("ex-comment-button");
+  /* Pressing the heading opens and closes the comment area; on close the
+     column narrows and the deck widens towards the middle. */
+  const commentButton = document.getElementById("ex-comment-button");
   const area = document.querySelector(".ex-field");
-  if (yorumDugme && area) {
-    yorumDugme.addEventListener("click", () => {
-      const kapali = area.classList.toggle("comment-closed");
-      yorumDugme.setAttribute("aria-expanded", String(!kapali));
+  if (commentButton && area) {
+    commentButton.addEventListener("click", () => {
+      const closed = area.classList.toggle("comment-closed");
+      commentButton.setAttribute("aria-expanded", String(!closed));
     });
   }
 
@@ -223,7 +222,7 @@
     return e;
   }
 
-  function konuYap(topic) {
+  function makeTopic(topic) {
     const k = document.createElement("div");
     k.className = "c-topic";
     const top = document.createElement("div");
@@ -252,16 +251,17 @@
     return k;
   }
 
-  function makeGroup(baslik, konular, eski) {
+  function makeGroup(title, topics, old) {
     const g = document.createElement("div");
-    g.className = "c-group" + (eski ? " old" : "");
-    g.appendChild(row("c-group-title", baslik));
-    konular.forEach((topic) => g.appendChild(konuYap(topic)));
+    g.className = "c-group" + (old ? " old" : "");
+    g.appendChild(row("c-group-title", title));
+    topics.forEach((topic) => g.appendChild(makeTopic(topic)));
     return g;
   }
 
   /* The box you write a comment in. With the backend off it never shows
-     yok); acikken ama girissizken tek satirlik bir davet. */
+     (there is nowhere to write to); on, but signed out, it is a one-line
+     invitation. */
   function writeArea(event) {
     const wrap = document.createElement("div");
     wrap.className = "c-write";
@@ -310,8 +310,8 @@
     if (!commentArea) return;
     const top = deck.lastElementChild;
 
-    /* Live, the comments come from the database; otherwise from
-       ikisi de ayni bicimi dondurur, ekran ayni kalir. */
+    /* Live, the comments come from the database; otherwise from the pool.
+       Both return the same shape, so the screen stays the same. */
     const source = (event) =>
       window.AH && AH.comments
         ? AH.comments(event)
@@ -351,18 +351,18 @@
     }
   }
 
-  /* Keep VISIBLE cards on the deck at all times: add at the back and
-     en ustteki (son cocuk) surukleniyor. */
-  /* A card already swiped must not come back. When signed in, that filtering
-     zaten veritabaninda yapiliyor (deck fonksiyonu), burasi girissiz
-     gezenler icin. */
-  const atlanacak = new Set(
+  /* Keep VISIBLE cards on the deck at all times: new ones go at the back,
+     and the top one (the last child) is what gets dragged. */
+  /* A card already swiped must not come back. When signed in, the database
+     does that filtering already (the deck function); this is for people
+     looking around signed out. */
+  const skip = new Set(
     window.AH && AH.swipedSlugs ? AH.swipedSlugs() : []
   );
 
   function fill() {
     while (deck.children.length < VISIBLE && index < CARDS.length) {
-      if (atlanacak.has(CARDS[index].slug)) { index++; continue; }
+      if (skip.has(CARDS[index].slug)) { index++; continue; }
       deck.insertBefore(makeCard(index), deck.firstChild);
       index++;
     }
@@ -527,7 +527,7 @@
         if (badge) { badge.textContent = "0"; badge.hidden = true; }
         if (box) box.classList.remove("taken");
         if (boxList) openBox(false);
-        atlanacak.clear();
+        skip.clear();
         if (done) done.textContent = "that's everyone for tonight.";
         return redeal(currentMode());
       }).finally(() => { resetButton.disabled = false; });
@@ -537,7 +537,7 @@
   /* Bring back what was kept in an earlier session (badge and list). */
   if (window.AH && AH.kept) {
     AH.kept().then((list) => {
-      list.slice().reverse().forEach(tut);
+      list.slice().reverse().forEach(keep);
     });
   }
 

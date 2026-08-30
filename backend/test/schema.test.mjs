@@ -73,7 +73,7 @@ await db.exec(`
   where c.slug = 'munchen' and t.slug = 'konzert';
 
   insert into public.events (slug, city_id, type_id, title, meta, is_published, poster_no)
-  select 'gizli-gece', c.id, t.id, 'Gizli', 'x', false, 2
+  select 'hidden-night', c.id, t.id, 'Hidden', 'x', false, 2
   from public.cities c, public.event_types t
   where c.slug = 'munchen' and t.slug = 'rave';
 
@@ -156,7 +156,7 @@ console.log("\n— are the swipes private —");
 
   await asService(db);
   await db.exec(`insert into public.swipes (user_id, event_id, direction)
-                 select '${FRIEND}', id, 'left' from public.events where slug = 'gizli-gece'`);
+                 select '${FRIEND}', id, 'left' from public.events where slug = 'hidden-night'`);
   await asUser(db, STRANGER);
   const l = await db.query(`select count(*)::int as n from public.swipes where direction = 'left'`);
   check(l.rows[0].n === 0, "what a friend swiped LEFT stays hidden");
@@ -182,7 +182,7 @@ console.log("\n— the comments —");
 
   await mustBeRefused(db,
     `insert into public.comments (event_id, parent_id, author_name, body)
-     select id, '${topicId}', 'x', 'reply on another event' from public.events where slug = 'gizli-gece'`,
+     select id, '${topicId}', 'x', 'reply on another event' from public.events where slug = 'hidden-night'`,
     "a reply cannot hang off another event");
 
   await asUser(db, STRANGER);

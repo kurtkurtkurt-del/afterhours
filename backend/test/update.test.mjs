@@ -1,10 +1,10 @@
-/* afterhours — guncelleme dosyasi.
+/* afterhours — the update file.
    Buradaki asil mesele SU: one goc dosyasini GUNCEL semaya karsi test
-   etmek hicbir sey kanitlamiyor. Ilk denemede tam bu oldu — guncelleme
+   proves nothing. That is exactly what happened the first time: the
    bende passed, Ahmet'in projesinde "column c.continent does not exist"
-   ile durdu, cunku onun semasinda o sutun yoktu.
+   update stopped on a live project, because its schema had no such column.
 
-   Bu yuzden burada before semayi ESKI haline dusuruyoruz.  */
+   So here we roll the schema back to its OLD state first.  */
 
 import { PGlite } from "@electric-sql/pglite";
 import { readFile } from "node:fs/promises";

@@ -1,6 +1,6 @@
 /* afterhours — a deck of ten night cards (the user's own design).
-      Taken from kartlar-10.html; only the demo render was removed, and it was
-      wrapped in its own scope so it does not pollute the global names. */
+   Taken from an earlier sketch; only the demo render was removed, and it
+   was wrapped in its own scope so it does not pollute the global names. */
 
 const CARDS = (function () {
 
@@ -163,52 +163,52 @@ const EVENTS = [
  {t:'A$AP Rocky',   ty:'KONZERT',    v:'OLYMPIAHALLE',      d:'11.09.26', metal:'gold',       motif:'rays',
   in:'23:47', out:'03:12', dur:'3H 25M', crew:['L','E','J','M'], more:9, aud:'0:38', msg:14, who:'MIRA',
   froze:'13.09', no:'0147', at1:'01:04', at2:'02:19',
-  q1:['bu set neydi böyle','E','04:12'], q2:['kim hâlâ ayakta','L','05:47']},
+  q1:['what even was that set','E','04:12'], q2:['who is still standing','L','05:47']},
 
  {t:'Nick Cave',    ty:'KONZERT',    v:'OLYMPIAPARK',       d:'23.08.26', metal:'nickel',     motif:'oval',
   in:'20:12', out:'23:40', dur:'3H 28M', crew:['S','K','T'], more:4, aud:'1:12', msg:6, who:'KAAN',
   froze:'25.08', no:'0092', at1:'21:38', at2:'22:50',
-  q1:['orkestra girdiğinde tüylerim','S','22:04'], q2:['bu geceyi unutmam','T','23:31']},
+  q1:['when the strings came in','S','22:04'], q2:['i will not forget tonight','T','23:31']},
 
  {t:'Bonez & RAF',  ty:'KONZERT',    v:'OLYMPIAHALLE',      d:'21.12.26', metal:'brass',      motif:'diagonal',
   in:'20:03', out:'01:18', dur:'5H 15M', crew:['D','Y','B','N','C'], more:16, aud:'0:22', msg:31, who:'DENİZ',
   froze:'23.12', no:'0311', at1:'22:47', at2:'00:16',
-  q1:['10 yıl geçmiş inanmıyorum','Y','23:12'], q2:['dışarısı buz gibi','B','01:22']},
+  q1:['ten years, i do not believe it','Y','23:12'], q2:['it is freezing outside','B','01:22']},
 
  {t:'Thirty Seconds to Mars', ty:'KONZERT', v:'OLYMPIAHALLE', d:'12.04.27', metal:'titanium', motif:'orbit',
   in:'19:52', out:'23:14', dur:'3H 22M', crew:['A','R'], more:2, aud:'0:47', msg:9, who:'ARDA',
   froze:'14.04', no:'0428', at1:'21:20', at2:'22:36',
-  q1:['tam öndeydik resmen','A','21:44'], q2:['kulaklarım çınlıyor','R','23:26']},
+  q1:['we were right at the front','A','21:44'], q2:['my ears are ringing','R','23:26']},
 
  {t:'AnnenMayKantereit', ty:'KONZERT', v:'OLYMPIAPARK',     d:'15.09.26', metal:'copper',     motif:'bands',
   in:'19:30', out:'23:02', dur:'3H 32M', crew:['F','P','G'], more:6, aud:'1:04', msg:12, who:'PINAR',
   froze:'17.09', no:'0163', at1:'20:58', at2:'22:14',
-  q1:['herkes birlikte söylüyordu','F','21:36'], q2:['çimlerde oturmak iyi geldi','G','22:48']},
+  q1:['everyone was singing along','F','21:36'], q2:['sitting on the grass helped','G','22:48']},
 
  {t:'Elysium',      ty:'FESTIVAL',   v:'MAXVORSTADT',       d:'12.09.26', metal:'chrome',     motif:'grid',
   in:'22:14', out:'06:02', dur:'7H 48M', crew:['V','H','O','Z'], more:22, aud:'0:31', msg:47, who:'ZEYNEP',
   froze:'14.09', no:'0158', at1:'01:22', at2:'03:48',
-  q1:['üç sahne de dolu','V','00:41'], q2:['güneş doğuyor çıkalım mı','O','05:54']},
+  q1:['all three stages are full','V','00:41'], q2:['sun is up, shall we go','O','05:54']},
 
  {t:'Mondscheinexpress', ty:'FESTIVAL', v:'BAHNWÄRTER THIEL', d:'19.11.26', metal:'gunmetal', motif:'moon',
   in:'21:06', out:'02:44', dur:'5H 38M', crew:['I','U','W'], more:8, aud:'0:56', msg:18, who:'İLKE',
   froze:'21.11', no:'0219', at1:'23:12', at2:'01:30',
-  q1:['kar yağmaya başladı','I','23:48'], q2:['ateşin yanına geçtik','U','01:52']},
+  q1:['it started to snow','I','23:48'], q2:['we moved next to the fire','U','01:52']},
 
  {t:'Blitz',        ty:'RAVE',       v:'MUSEUMSINSEL 1',    d:'05.09.26', metal:'anthracite', motif:'moire',
   in:'23:59', out:'07:18', dur:'7H 19M', crew:['L','E','J','M'], more:11, aud:'0:38', msg:26, who:'LINA',
   froze:'07.09', no:'0151', at1:'02:15', at2:'04:40',
-  q1:['telefon yok, iyi ki','J','02:31'], q2:['bu b2b bitmesin','M','05:12']},
+  q1:['no phones, thank god','J','02:31'], q2:['let this b2b never end','M','05:12']},
 
  {t:'Silo West',    ty:'RAVE',       v:'MÜNCHEN',           d:'05.09.26', metal:'steel',      motif:'iso',
   in:'14:22', out:'21:05', dur:'6H 43M', crew:['B','N'], more:5, aud:'0:44', msg:15, who:'BERK',
   froze:'07.09', no:'0149', at1:'16:40', at2:'18:52',
-  q1:['gündüz rave başka şey','B','17:18'], q2:['gün batımı tam vaktinde','N','20:04']},
+  q1:['a daytime rave is another thing','B','17:18'], q2:['the sunset came right on time','N','20:04']},
 
  {t:'Unterwelt',    ty:'CLUB NIGHT', v:'SUNNY RED',         d:'02.10.26', metal:'rose',       motif:'descend',
   in:'22:38', out:'04:26', dur:'5H 48M', crew:['C','Ş','A'], more:7, aud:'0:29', msg:21, who:'CEREN',
   froze:'04.10', no:'0186', at1:'00:52', at2:'02:38',
-  q1:['aşağı indikçe ısınıyor','Ş','01:10'], q2:['son şarkı efsaneydi','C','04:12']}
+  q1:['it gets warmer further down','Ş','01:10'], q2:['that last track was a legend','C','04:12']}
 ];
 
 // ─────────── DEFS ───────────
@@ -318,6 +318,5 @@ function back(e,i){
 })();
 
 /* A global `const` is not written onto window; the card collection page
-   reads it from here
-   okuyor (POSTERS ve VENUES ile ayni durum). */
+   reads it from here (the same situation as POSTERS and VENUES). */
 window.CARDS = CARDS;

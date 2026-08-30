@@ -1,8 +1,9 @@
 /* ---------------------------------------------------------------
-   DENEME 02 — yatay kayan seritler
-   Uc serit farkli hizlarda zit yonlerde kayar, metin ortada sabit.
-   Bir posterin ustune gelince o serit durur, poster hafif buyur.
-   Ana sayfaya dokunmaz; sadece bu sayfada gecerlidir.
+   SKETCH 02 — strips scrolling sideways
+   Three strips move at different speeds in opposite directions, with the
+   text fixed in the middle. Move onto a poster and that strip stops while
+   the poster grows a little.
+   It does not touch the landing page; it applies to this page alone.
    --------------------------------------------------------------- */
 
 body.strip-page {
@@ -10,7 +11,7 @@ body.strip-page {
   --top-gap: 92px;
   --serit-bosluk: 14px;
   /* Three strips divide the screen; the poster height follows from that */
-  --serit-h: calc((100vh - var(--top-gap) - 2 * var(--serit-bosluk)) / 3);
+  --strip-h: calc((100vh - var(--top-gap) - 2 * var(--serit-bosluk)) / 3);
 }
 
 .strips {
@@ -59,7 +60,7 @@ body.strip-page {
 
 .strip .poster {
   flex: 0 0 auto;
-  height: calc(var(--serit-h) * 0.86);   /* buyume payi icin %14 bosluk */
+  height: calc(var(--strip-h) * 0.86);   /* 14% left over, room to grow */
   width: auto;
   aspect-ratio: 2 / 3;
   transition: transform 0.22s ease;

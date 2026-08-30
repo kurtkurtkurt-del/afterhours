@@ -161,7 +161,7 @@ console.log("\n— set to private, not even a friend sees it —");
 
 console.log("\n— list gezilemiyor —");
 {
-  await asUser(C);   /* kimseyle bagi olmayan biri */
+  await asUser(C);   /* someone with no link to anyone */
   const t = await db.query(`select count(*)::int as n from public.profiles`);
   check(t.rows[0].n === 1, "a stranger sees only their own row", "it saw " + t.rows[0].n);
 
@@ -169,7 +169,7 @@ console.log("\n— list gezilemiyor —");
   const a = await db.query(`select count(*)::int as n from public.profiles`);
   check(a.rows[0].n === 0, "signed out, no profile is visible", "it saw " + a.rows[0].n);
 
-  await asUser(B);   /* A ile arkadas */
+  await asUser(B);   /* a friend of A */
   const f = await db.query(`select count(*)::int as n from public.profiles`);
   check(f.rows[0].n === 2, "you can see a friend's row", "it saw " + f.rows[0].n);
 }
@@ -215,8 +215,8 @@ console.log("\n— last seen, as a day —");
   await asUser(A);
   await db.exec(`select public.seen()`);
   await asUser(B);
-  /* Metin olarak soruyoruz: surucu date’i JS Date’e cevirip saat
-     uyduruyor, biz veritabanindan ne CIKTIGINI olcmek istiyoruz. */
+  /* We ask for it as text: the driver would turn a date into a JS Date and
+     invent a clock time, and we want to measure what LEAVES the database. */
   const f = await db.query(`select last_seen_day::text as g from public.profile_card('ahmet')`);
   check(f.rows[0].g !== null, "a friend sees the day");
   check(/^\d{4}-\d{2}-\d{2}$/.test(f.rows[0].g),
@@ -228,10 +228,10 @@ console.log("\n— older paths the new rule must not break —");
   await asService();
   await db.exec(`
     insert into public.comments (event_id, author_id, body)
-    select id, '${A}', 'burada olacagim' from public.events where slug = 'blitz';
+    select id, '${A}', 'i will be there' from public.events where slug = 'blitz';
   `);
   await db.exec(`set role anon; set request.jwt.claims = '';`);
-  const c = await db.query(`select author from public.comments_public where body = 'burada olacagim'`);
+  const c = await db.query(`select author from public.comments_public where body = 'i will be there'`);
   check(c.rows[0].author === "ahmet", "a signed-out reader still sees who wrote a comment", String(c.rows[0].author));
 
   await asUser(C);

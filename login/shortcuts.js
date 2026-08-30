@@ -1,10 +1,10 @@
 /* afterhours — the middle block on the account page.
    Girmemis birine "first time?" (kayit cagrisi), girmis birine
-   "account settings." gorunuyor. Ikisi de sayfada duruyor, sadece
-   biri gizleniyor.
+   "account settings." shows. Both sit in the page, one is simply hidden.
 
-   Neden login.js'in icinde degil: login.js friends sayfasinin
-   ogelerini ariyor, bulamayinca ortasinda hata verip duruyor ve
+   Why it is not inside login.js: login.js used to look for elements
+   belonging to the friends page, threw halfway when it could not find
+   them, and
    sonrasindaki hicbir sey calismiyor. Ayri dosya ondan etkilenmez.  */
 
 (function () {

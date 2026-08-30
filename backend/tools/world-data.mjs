@@ -322,7 +322,7 @@ export const CONTINENTS = [
           ["Festival", "Comuna Abierta", "Comuna 13", "12.09", "15:00",
            "Escalators up the hillside, sound at every landing."],
           ["Meetup", "Intercambio", "Laureles", "01.11", "17:00",
-           "Bring something to swap and something to count about it."],
+           "Bring something to swap and something to say about it."],
         ]},
         { slug: "cali", name: "cali", nights: [
           ["Konzert", "Salsa Vieja", "Barrio Obrero", "17.10", "21:00",

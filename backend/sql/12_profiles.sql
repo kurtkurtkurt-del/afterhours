@@ -24,13 +24,17 @@ alter table public.profiles
 alter table public.profiles
   drop constraint if exists profiles_bio_uzunluk;
 alter table public.profiles
-  add constraint profiles_bio_uzunluk
+  drop constraint if exists profiles_bio_length;
+alter table public.profiles
+  add constraint profiles_bio_length
   check (bio is null or length(btrim(bio)) between 1 and 160);
 
 alter table public.profiles
   drop constraint if exists profiles_ad_uzunluk;
 alter table public.profiles
-  add constraint profiles_ad_uzunluk
+  drop constraint if exists profiles_name_length;
+alter table public.profiles
+  add constraint profiles_name_length
   check (display_name is null or length(btrim(display_name)) between 1 and 40);
 
 create index if not exists profiles_city_idx on public.profiles (city_id);
@@ -419,26 +423,26 @@ returns text
 language plpgsql
 as $$
 declare
-  hedef uuid;
+  target uuid;
 begin
-  hedef := public.handle_to_id(p_handle);
+  target := public.handle_to_id(p_handle);
 
-  if hedef is null then
+  if target is null then
     return 'notfound';
   end if;
-  if hedef = auth.uid() then
+  if target = auth.uid() then
     return 'yourself';
   end if;
 
   if exists (select 1 from public.friendships
-             where requester_id = hedef and addressee_id = auth.uid()) then
+             where requester_id = target and addressee_id = auth.uid()) then
     update public.friendships set status = 'accepted'
-    where requester_id = hedef and addressee_id = auth.uid();
+    where requester_id = target and addressee_id = auth.uid();
     return 'accepted';
   end if;
 
   insert into public.friendships (requester_id, addressee_id)
-  values (auth.uid(), hedef)
+  values (auth.uid(), target)
   on conflict do nothing;
   return 'sent';
 end;

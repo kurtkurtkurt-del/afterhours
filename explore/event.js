@@ -1,13 +1,14 @@
 /* afterhours — the event page (a contact sheet).
 
-   Otuz alti night icin otuz alti sayfa yazmiyoruz: duzen tek, icerik
+   We do not write thirty-six pages for thirty-six nights: one layout,
+   and the content
    and the content comes from the event's own record (data.js / events-data.js)
    and from the pools kept per type (event-data.js). Which piece lands on which
    night is picked with a seed made from the slug, so an event shows the same
    thing on every visit while no two events look alike.
 
-   Yeni bir night eklemek: events-data.js'e (ya da veritabanina) bir
-   row, explore/<slug>/index.html'e de bos kabuk. Gerisi buradan. */
+   To add a night: one row in events-data.js (or in the database), and an
+   empty shell at explore/<slug>/index.html. The rest comes from here. */
 
 (function () {
   const area = document.querySelector(".cs");
@@ -101,7 +102,7 @@
 
     area.textContent = "";
 
-    /* ---- sol ray ---- */
+    /* ---- the left rail ---- */
     const ray = el("aside", "cs-rail");
     const poster = document.createElement("object");
     poster.className = "cs-poster";
@@ -121,9 +122,9 @@
     const middle = el("div", "cs-field");
 
     const crumb = el("nav", "crumb");
-    const geri = el("a", null, "explore");
-    geri.href = "../index.html";
-    crumb.appendChild(geri);
+    const back = el("a", null, "explore");
+    back.href = "../index.html";
+    crumb.appendChild(back);
     crumb.appendChild(el("span", null, "/"));
     crumb.appendChild(el("span", null, (e.title || "").toLowerCase()));
     middle.appendChild(crumb);
@@ -204,7 +205,7 @@
     const friends = shuffle(rnd, V.FRIEND_NAMES).slice(0, 5);
     const states = V.STATES;
     friends.forEach((name, i) => {
-      const row = el("li", states[i] === "can't" ? "yok" : null);
+      const row = el("li", states[i] === "can't" ? "out" : null);
       row.appendChild(el("span", "cs-who-name", name));
       row.appendChild(el("span", "cs-who-status", states[i]));
       who.appendChild(row);

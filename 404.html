@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
 
-  <!-- Bu sayfa herhangi bir derinlikte gosterilebiliyor (Pages her
-       bulunamayan adres icin bunu doner ve adres cubugu degismez), o
-       yuzden disaridan hicbir dosya cagirmiyor: stil burada. -->
+  <!-- This page can be shown at any depth (Pages returns it for every
+       address it cannot find, and the address bar does not change), so it
+       asks for no file from outside: the styling lives here. -->
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -73,11 +73,11 @@
   </nav>
 
   <script>
-    /* Site alt klasorde de yayinlanabiliyor; kokun neresi oldugunu
-       adresten cikariyoruz ki baglantilar iki yerde de calissin. */
-    var kok = location.pathname.indexOf("/afterhours/") === 0 ? "/afterhours/" : "/";
+    /* The site can also be published inside a sub-folder; we work out
+       where the root is from the address, so the links work either way. */
+    var root = location.pathname.indexOf("/afterhours/") === 0 ? "/afterhours/" : "/";
     document.querySelectorAll("nav a").forEach(function (a) {
-      a.href = kok + a.dataset.yol;
+      a.href = root + a.dataset.yol;
     });
   </script>
 </body>

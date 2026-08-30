@@ -1,11 +1,11 @@
 /* afterhours — maps.
-   Sehir semasi HTML'de elle cizildi; burasi sadece noktalari koyuyor.
-   Hicbir animasyon dongusu yok: kureyi degistirmesinin sebebi de bu,
-   o her karede yuzlerce bina ciziyordu.
+   The city schematic is drawn by hand in the HTML; this only places the
+   dots. There is no animation loop at all, which is why it replaced the
+   globe: that drew hundreds of buildings on every frame.
 
-   Nokta konumu mekanin koordinatindan (venues.js) geliyor. Ayni
-   mekanda birden fazla gece varsa top uste binmesinler diye slug'dan
-   uretilen sabit bir kaydirma uygulaniyor — her acilista ayni yerde. */
+   A dot's position comes from the venue's coordinates (venues.js). When
+   one venue has more than one night, a fixed offset made from the slug
+   keeps them from stacking — in the same place every time. */
 
 (function () {
   const NS = "http://www.w3.org/2000/svg";
@@ -22,13 +22,14 @@
   const venues = window.VENUES || [];
 
   /* Find the event's venue: live it comes from the record, in local mode
-     meta satirindaki adlari tariyoruz (seed ureteciyle ayni mantik). */
-  function mekanBul(e) {
-    const adaylar = [];
-    if (e.venue) adaylar.push(e.venue);
-    (e.meta || "").split("·").forEach((p) => adaylar.push(p.trim()));
+     we scan the names in the meta line (the same logic as the seed
+     builder). */
+  function findVenue(e) {
+    const candidates = [];
+    if (e.venue) candidates.push(e.venue);
+    (e.meta || "").split("·").forEach((p) => candidates.push(p.trim()));
 
-    for (const ham of adaylar) {
+    for (const ham of candidates) {
       if (!ham) continue;
       const aday = ham.toUpperCase().trim();
       const m =
@@ -52,7 +53,7 @@
   let yerlesen = 0;
 
   cards.forEach((e) => {
-    const m = mekanBul(e);
+    const m = findVenue(e);
     if (!m) return;                     /* a night with no venue is not on the map */
     yerlesen++;
 

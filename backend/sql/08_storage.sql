@@ -25,14 +25,16 @@ begin
 
   -- Writing belongs to the admin alone. public.is_admin() is defined in 02_rls.sql.
   execute $q$ drop policy if exists "posters yonetici yazar" on storage.objects $q$;
+  execute $q$ drop policy if exists "posters admin writes" on storage.objects $q$;
   execute $q$
-    create policy "posters yonetici yazar" on storage.objects
+    create policy "posters admin writes" on storage.objects
       for insert with check (bucket_id = 'posters' and public.is_admin())
   $q$;
 
   execute $q$ drop policy if exists "posters yonetici gunceller" on storage.objects $q$;
+  execute $q$ drop policy if exists "posters admin updates" on storage.objects $q$;
   execute $q$
-    create policy "posters yonetici gunceller" on storage.objects
+    create policy "posters admin updates" on storage.objects
       for update using (bucket_id = 'posters' and public.is_admin())
       with check (bucket_id = 'posters' and public.is_admin())
   $q$;

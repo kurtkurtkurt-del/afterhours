@@ -1,4 +1,5 @@
-/* afterhours — etkinlik verisi (36 kayit). index 20'sini, serit sayfasi hepsini kullanir. */
+/* afterhours — the event data (36 records). The landing page uses 20 of
+   them, the strip page uses all of them. */
 
 const POSTERS = [
 

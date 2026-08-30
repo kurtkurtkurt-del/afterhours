@@ -1,14 +1,16 @@
 /* afterhours — registration.
-   Iki adim, tek page:
-     1 · e-posta + password  → hesap acilir (auth), profile tetikleyiciyle gelir
-     2 · handle (+ city) → profile_setup() kaydi BITMIS sayar
+   Two steps, one page:
+     1 · email + password  → the account opens (auth), the profile arrives
+                             with the trigger
+     2 · handle (+ city)   → profile_setup() marks the registration DONE
 
-   Ikinci adim susleme degil: handle yoksa kimse seni bulamaz, arkadaslik
-   kurulamaz. O yuzden "kayit handle secilene kadar bitmemistir" (bkz.
-   backend/sql/12_profiles.sql, onboarded_at).
+   The second step is not decoration: without a handle nobody can find
+   you and no friendship can be made. That is why "registration is not
+   finished until a handle is chosen" (see backend/sql/12_profiles.sql,
+   onboarded_at).
 
-   Sayfa yarida birakilirsa da kayboluyor bir sey yok: signedIn ama
-   handle'siz biri buraya donunce dogrudan ikinci adimi goruyor.  */
+   Nothing is lost if the page is abandoned halfway: someone signed in
+   without a handle comes back straight to the second step.  */
 
 (function () {
   const AH = (window.AH = window.AH || {});
@@ -38,7 +40,7 @@
     const note = el("reg-note");
 
     if (!email || email.indexOf("@") < 1) {
-      say(note, "that doesn't look like an email.", "hata");
+      say(note, "that doesn't look like an email.", "error");
       el("reg-email").focus();
       return;
     }
@@ -70,7 +72,7 @@
         const m = String(h.message || "");
         say(note, /already registered|exists/i.test(m)
           ? "there is already an account with that email. sign in instead."
-          : AH.errorText(h, "couldn't open the account."), "hata");
+          : AH.errorText(h, "couldn't open the account."), "error");
       });
   });
 
@@ -168,7 +170,7 @@
       })
       .catch((h2) => {
         el("reg-finish").disabled = false;
-        say(el("reg-status"), AH.errorText(h2, "couldn't finish the account."), "hata");
+        say(el("reg-status"), AH.errorText(h2, "couldn't finish the account."), "error");
       });
   };
 

@@ -1,28 +1,29 @@
 #!/usr/bin/env python3
-"""afterhours — paylasim onizleme gorselleri (og:image).
+"""afterhours — the sharing preview images (og:image).
 
-Bir gece linki WhatsApp'a ya da Instagram'a dusunce onizleme botu
-sayfayi JS calistirmadan okuyor: bizim etkinlik sayfalarimiz o anda
-bombos. Cozumun yarisi <meta> etiketleri, digeri de bu gorseller.
+When a link to a night lands in WhatsApp or Instagram, the preview bot
+reads the page without running any JS: at that moment our event pages are
+completely empty. Half the answer is the <meta> tags, the other half is
+these images.
 
-Her gece icin 1200x630 bir kart uretiliyor: solda gecenin KENDI posteri,
-sagda adi ve satiri. Poster SVG oldugu icin once headless Chrome ile
-PNG'ye cevriliyor (PIL SVG okumuyor).
+For every night a 1200x630 card is made: that night's OWN poster on the
+left, its name and its line on the right. Because the poster is an SVG it
+first goes through headless Chrome to become a PNG (PIL does not read SVG).
 
-    python3 tools-previews.py            # hepsi
-    python3 tools-previews.py asap-rocky # tek gece
+    python3 tools-previews.py            # all of them
+    python3 tools-previews.py asap-rocky # a single night
 """
 import pathlib, re, subprocess, sys, tempfile, urllib.request
 
-KOK = pathlib.Path(__file__).resolve().parent
-CIKTI = KOK / "og"
+ROOT = pathlib.Path(__file__).resolve().parent
+OUT = ROOT / "og"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 FONT = pathlib.Path("/tmp/InterTight.ttf")
 FONT_URL = ("https://raw.githubusercontent.com/google/fonts/main/ofl/"
             "intertight/InterTight%5Bwght%5D.ttf")
 
 W, H = 1200, 630
-SIYAH, BEYAZ, SOLUK = (10, 10, 10), (242, 242, 240), (140, 140, 138)
+BLACK, WHITE, FAINT = (10, 10, 10), (242, 242, 240), (140, 140, 138)
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -36,106 +37,106 @@ def font(boy, agirlik=500):
 
 
 def events():
-    ham = (KOK / "events-data.js").read_text(encoding="utf-8")
+    raw = (ROOT / "events-data.js").read_text(encoding="utf-8")
     return [
-        {"slug": s, "tur": t, "baslik": b, "meta": m, "poster": i + 1}
+        {"slug": s, "kind": t, "title": b, "meta": m, "poster": i + 1}
         for i, (s, t, b, m) in enumerate(re.findall(
-            r'\{ slug: "([^"]+)", kind: "([^"]+)", *title: "([^"]+)", *meta: "([^"]+)"', ham))
+            r'\{ slug: "([^"]+)", kind: "([^"]+)", *title: "([^"]+)", *meta: "([^"]+)"', raw))
     ]
 
 
-def posteri_cevir(no, hedef):
-    """SVG'yi PNG'ye: PIL SVG okumuyor, Chrome okuyor."""
-    kaynak = KOK / "posters" / f"{no:02d}.svg"
-    if not kaynak.exists():
+def poster_to_png(no, target):
+    """SVG to PNG: PIL does not read SVG, Chrome does."""
+    source = ROOT / "posters" / f"{no:02d}.svg"
+    if not source.exists():
         return None
     subprocess.run(
         [CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars",
          f"--window-size=560,840", "--virtual-time-budget=4000",
-         f"--screenshot={hedef}", kaynak.as_uri()],
+         f"--screenshot={target}", source.as_uri()],
         capture_output=True, timeout=60)
-    return hedef if hedef.exists() else None
+    return target if target.exists() else None
 
 
-def sar(cizim, yazi, f, genislik):
-    """Verilen genisligi asmayan satirlara bol."""
-    satirlar, simdi = [], ""
-    for kelime in yazi.split():
-        deneme = (simdi + " " + kelime).strip()
-        if cizim.textlength(deneme, font=f) <= genislik:
-            simdi = deneme
+def wrap(draw, text, f, width):
+    """Break into lines that do not exceed the given width."""
+    lines, current = [], ""
+    for word in text.split():
+        attempt = (current + " " + word).strip()
+        if draw.textlength(attempt, font=f) <= width:
+            current = attempt
         else:
-            if simdi:
-                satirlar.append(simdi)
-            simdi = kelime
-    if simdi:
-        satirlar.append(simdi)
-    return satirlar
+            if current:
+                lines.append(current)
+            current = word
+    if current:
+        lines.append(current)
+    return lines
 
 
-def kart(e, poster_png):
-    tuval = Image.new("RGB", (W, H), SIYAH)
-    ciz = ImageDraw.Draw(tuval)
+def card(e, poster_png):
+    canvas = Image.new("RGB", (W, H), BLACK)
+    draw = ImageDraw.Draw(canvas)
 
-    sol = 72
+    left = 72
     if poster_png:
         p = Image.open(poster_png).convert("RGB")
-        yuk = H - 140
-        gen = int(p.width * yuk / p.height)
-        tuval.paste(p.resize((gen, yuk), Image.LANCZOS), (sol, 70))
-        sol += gen + 64
+        top = H - 140
+        avail = int(p.width * top / p.height)
+        canvas.paste(p.resize((avail, top), Image.LANCZOS), (left, 70))
+        left += avail + 64
 
-    gen = W - sol - 72
+    avail = W - left - 72
 
-    ciz.text((sol, 84), e["tur"].upper(), font=font(19, 500), fill=SOLUK)
+    draw.text((left, 84), e["kind"].upper(), font=font(19, 500), fill=FAINT)
 
-    f_baslik = font(58, 500)
-    satirlar = sar(ciz, e["baslik"], f_baslik, gen)
-    if len(satirlar) > 3:                       # cok uzun ad: kucult
-        f_baslik = font(44, 500)
-        satirlar = sar(ciz, e["baslik"], f_baslik, gen)[:3]
+    f_title = font(58, 500)
+    lines = wrap(draw, e["title"], f_title, avail)
+    if len(lines) > 3:                       # a very long name: shrink it
+        f_title = font(44, 500)
+        lines = wrap(draw, e["title"], f_title, avail)[:3]
     y = 132
-    for s in satirlar:
-        ciz.text((sol, y), s, font=f_baslik, fill=BEYAZ)
-        y += int(f_baslik.size * 1.06)
+    for s in lines:
+        draw.text((left, y), s, font=f_title, fill=WHITE)
+        y += int(f_title.size * 1.06)
 
     y += 18
-    for s in sar(ciz, e["meta"], font(24, 400), gen)[:2]:
-        ciz.text((sol, y), s, font=font(24, 400), fill=SOLUK)
+    for s in wrap(draw, e["meta"], font(24, 400), avail)[:2]:
+        draw.text((left, y), s, font=font(24, 400), fill=FAINT)
         y += 34
 
-    ciz.text((sol, H - 106), "afterhours", font=font(28, 500), fill=BEYAZ)
-    ciz.text((sol, H - 68), "one card at a time. no search.",
-             font=font(19, 400), fill=SOLUK)
-    return tuval
+    draw.text((left, H - 106), "afterhours", font=font(28, 500), fill=WHITE)
+    draw.text((left, H - 68), "one card at a time. no search.",
+             font=font(19, 400), fill=FAINT)
+    return canvas
 
 
-def genel():
-    """Etkinlik olmayan sayfalar icin tek kart."""
-    tuval = Image.new("RGB", (W, H), SIYAH)
-    ciz = ImageDraw.Draw(tuval)
-    ciz.text((80, 208), "afterhours", font=font(104, 500), fill=BEYAZ)
-    ciz.text((84, 344), "your scene, one card at a time.", font=font(34, 400), fill=SOLUK)
-    ciz.text((84, 400), "raves · club nights · konzert · festival · meetup · hausparty",
-             font=font(21, 400), fill=SOLUK)
-    tuval.save(CIKTI / "afterhours.png", quality=90)
+def general():
+    """A single card for the pages that are not events."""
+    canvas = Image.new("RGB", (W, H), BLACK)
+    draw = ImageDraw.Draw(canvas)
+    draw.text((80, 208), "afterhours", font=font(104, 500), fill=WHITE)
+    draw.text((84, 344), "your scene, one card at a time.", font=font(34, 400), fill=FAINT)
+    draw.text((84, 400), "raves · club nights · konzert · festival · meetup · hausparty",
+             font=font(21, 400), fill=FAINT)
+    canvas.save(OUT / "afterhours.png", quality=90)
     print("  og/afterhours.png")
 
 
 if __name__ == "__main__":
-    CIKTI.mkdir(exist_ok=True)
+    OUT.mkdir(exist_ok=True)
     istenen = sys.argv[1] if len(sys.argv) > 1 else None
 
     if not istenen:
-        genel()
+        general()
 
-    gecici = pathlib.Path(tempfile.mkdtemp())
+    tmpdir = pathlib.Path(tempfile.mkdtemp())
     n = 0
     for e in events():
         if istenen and e["slug"] != istenen:
             continue
-        png = posteri_cevir(e["poster"], gecici / f"{e['poster']:02d}.png")
-        kart(e, png).save(CIKTI / f"{e['slug']}.png", quality=90)
+        png = poster_to_png(e["poster"], tmpdir / f"{e['poster']:02d}.png")
+        card(e, png).save(OUT / f"{e['slug']}.png", quality=90)
         n += 1
         print(f"  og/{e['slug']}.png")
-    print(f"{n} onizleme uretildi")
+    print(f"{n} previews made")

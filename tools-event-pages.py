@@ -1,28 +1,28 @@
 #!/usr/bin/env python3
-"""afterhours — etkinlik sayfalarinin kabugunu uretir.
+"""afterhours — writes the shell of the event pages.
 
-Her gecenin sayfasi ayni: menu, bos <main class="cs">, dipnot, betikler.
-Icerigi explore/event.js kuruyor. Yeni bir gece eklemek icin
-events-data.js'e satiri yaz ve bu betigi calistir:
+Every night's page is the same: the menu, an empty <main class="cs">, the
+footer, the scripts. explore/event.js builds the content. To add a new
+night, write its line into events-data.js and run this script:
 
     python3 tools-event-pages.py
 """
 import pathlib, re, sys
 
-KOK = pathlib.Path(__file__).resolve().parent
-SURUM = sys.argv[1] if len(sys.argv) > 1 else "100"
+ROOT = pathlib.Path(__file__).resolve().parent
+VERSION = sys.argv[1] if len(sys.argv) > 1 else "100"
 
-KABUK = """<!DOCTYPE html>
+SHELL = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{baslik} | afterhours</title>
-  <meta name="description" content="{metin}" />
+  <title>{title} | afterhours</title>
+  <meta name="description" content="{body}" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="afterhours" />
-  <meta property="og:title" content="{baslik} &mdash; {tur}, {meta}" />
-  <meta property="og:description" content="{metin}" />
+  <meta property="og:title" content="{title} &mdash; {kind}, {meta}" />
+  <meta property="og:description" content="{body}" />
   <meta property="og:url" content="{site}/explore/{slug}/index.html" />
   <meta property="og:image" content="{site}/og/{slug}.png" />
   <meta property="og:image:width" content="1200" />
@@ -54,8 +54,9 @@ KABUK = """<!DOCTYPE html>
     </nav>
   </header>
 
-  <!-- Icerigi explore/event.js kuruyor: duzen tek, gece basina degisen
-       her sey etkinligin kendi verisinden ve tur havuzlarindan geliyor. -->
+  <!-- explore/event.js builds the content: one layout, and everything that
+       changes from night to night comes from the event's own data and the
+       pools for its kind. -->
   <main id="content" tabindex="-1" class="cs"></main>
 
   <footer class="foot">
@@ -82,25 +83,25 @@ KABUK = """<!DOCTYPE html>
 
 SITE = "https://kurtkurtkurt-del.github.io/afterhours"
 
-def kacir(y):
+def escape(y):
     return y.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
 
-ham = (KOK / "events-data.js").read_text(encoding="utf-8")
-kayitlar = re.findall(
+raw = (ROOT / "events-data.js").read_text(encoding="utf-8")
+records = re.findall(
     r'\{ slug: "([^"]+)", kind: "([^"]+)", *title: "([^"]+)", *meta: "([^"]+)", *body: "([^"]+)"',
-    ham)
-if not kayitlar:
-    raise SystemExit("events-data.js'te kayit bulunamadi")
+    raw)
+if not records:
+    raise SystemExit("no records found in events-data.js")
 
-yeni, guncel = 0, 0
-for slug, tur, baslik, meta, metin in kayitlar:
-    klasor = KOK / "explore" / slug
-    vardi = klasor.exists()
-    klasor.mkdir(parents=True, exist_ok=True)
-    (klasor / "index.html").write_text(
-        KABUK.format(baslik=kacir(baslik), tur=kacir(tur.lower()), meta=kacir(meta),
-                     metin=kacir(metin), slug=slug, site=SITE, v=SURUM), encoding="utf-8")
-    guncel += 1
-    yeni += 0 if vardi else 1
+fresh, written = 0, 0
+for slug, kind, title, meta, body in records:
+    folder = ROOT / "explore" / slug
+    existed = folder.exists()
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder / "index.html").write_text(
+        SHELL.format(title=escape(title), kind=escape(kind.lower()), meta=escape(meta),
+                     body=escape(body), slug=slug, site=SITE, v=VERSION), encoding="utf-8")
+    written += 1
+    fresh += 0 if existed else 1
 
-print(f"{guncel} etkinlik sayfasi yazildi ({yeni} yeni), surum ?v={SURUM}")
+print(f"{written} event pages written ({fresh} new), version ?v={VERSION}")

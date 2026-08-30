@@ -43,27 +43,27 @@ returns text
 language plpgsql
 as $$
 declare
-  hedef uuid;
+  target uuid;
 begin
-  select id into hedef from public.profiles where handle = lower(btrim(p_handle));
+  select id into target from public.profiles where handle = lower(btrim(p_handle));
 
-  if hedef is null then
+  if target is null then
     return 'notfound';
   end if;
-  if hedef = auth.uid() then
+  if target = auth.uid() then
     return 'yourself';
   end if;
 
   -- If a request is pending in the other direction, accept that one
   if exists (select 1 from public.friendships
-             where requester_id = hedef and addressee_id = auth.uid()) then
+             where requester_id = target and addressee_id = auth.uid()) then
     update public.friendships set status = 'accepted'
-    where requester_id = hedef and addressee_id = auth.uid();
+    where requester_id = target and addressee_id = auth.uid();
     return 'accepted';
   end if;
 
   insert into public.friendships (requester_id, addressee_id)
-  values (auth.uid(), hedef)
+  values (auth.uid(), target)
   on conflict (requester_id, addressee_id) do nothing;
 
   return 'sent';

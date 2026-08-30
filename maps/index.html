@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=130" />
+  <link rel="stylesheet" href="../style.css?v=131" />
 </head>
 <body>
 
@@ -47,8 +47,9 @@
       <p class="map-sub" id="map-sub">the city, roughly. hover a dot.</p>
     </div>
 
-    <!-- Sehir semasi: elle cizildi, olcekli degil. Isar, ring, park ve
-         birkac mahalle — noktalarin nerede durdugu anlasilsin diye. -->
+    <!-- The city schematic: drawn by hand, not to scale. The Isar, the
+         ring, the park and a few neighbourhoods — just enough to make
+         sense of where the dots sit. -->
     <div class="map-schema-box">
     <svg class="map-schema" id="map-schema" viewBox="450 130 760 640"
          preserveAspectRatio="xMidYMid meet" aria-label="a schematic map of munich">
@@ -98,12 +99,12 @@
         <text x="700" y="486" class="map-label-station">HBF</text>
       </g>
 
-      <!-- Noktalar map.js ile -->
+      <!-- The dots come from map.js -->
       <g id="map-dots"></g>
     </svg>
     </div>
 
-    <!-- Uzerine gelinen etkinlik -->
+    <!-- The event under the pointer -->
     <div class="map-card" id="map-card" hidden>
       <p class="map-card-kind" id="map-card-kind"></p>
       <p class="map-card-name" id="map-card-name"></p>
@@ -123,13 +124,13 @@
     </nav>
   </footer>
 
-  <script src="../config.js?v=130"></script>
-  <script src="../session.js?v=130"></script>
-  <script src="../venues.js?v=130"></script>
-  <script src="../data.js?v=130"
-          data-fallback="../events-data.js?v=130"
-          data-after="map.js?v=130"></script>
-  <script src="../menu.js?v=130"></script>
+  <script src="../config.js?v=131"></script>
+  <script src="../session.js?v=131"></script>
+  <script src="../venues.js?v=131"></script>
+  <script src="../data.js?v=131"
+          data-fallback="../events-data.js?v=131"
+          data-after="map.js?v=131"></script>
+  <script src="../menu.js?v=131"></script>
 
 </body>
 </html>

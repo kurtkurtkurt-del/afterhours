@@ -1,7 +1,8 @@
 /* afterhours — the turning city globe.
-   Three.js yok: kendi izdusum matematigi, SVG'ye cizim.
-   Bir atlasa yukaridan bakiyormus gibi: binalar kurenin uzerinde,
-   sadece one bakan yarikure gorunur, cevirince arkasi one gelir. */
+   No Three.js: its own projection maths, drawn onto a canvas.
+   As if you were looking down at an atlas: the buildings sit on the
+   globe, only the near hemisphere is visible, and turning it brings the
+   far side round. */
 
 (function () {
   const stage = document.getElementById("s4-stage");
@@ -120,7 +121,7 @@
     ["Spiegelsaal", "CLUB NIGHT", "23:00", 18, "#c9d6ff", "35"],
     ["Pegel", "CLUB NIGHT", "22:00", 15, "#ff5c1f", "36"],
   ].map((g) => ({
-    ad: g[0], tip: g[1], saat: g[2], dk: g[3], renk: g[4],
+    name: g[0], kind: g[1], time: g[2], mins: g[3], colour: g[4],
     page: "explore/" + SLUG[+g[5] - 1] + "/index.html",
   }));
 
@@ -130,7 +131,7 @@
 
   /* The camera looks from 44 degrees of latitude. We spread the events
      across that band so that
-     kure donerken her an birkaci kadrajda olsun. */
+     a few of them are in frame at any moment as the globe turns. */
   GECELER.forEach((g, i) => {
     const lat = 0.77 + ((i % 5) - 2) * 0.09;          // the band the frame sees
     const lon = (i / GECELER.length) * Math.PI * 2 + (i % 3) * 0.05;
@@ -150,7 +151,7 @@
   // ---------- projection ----------
   let aci = 0.4, egim2 = 0.12;
 
-  function yansit(p) {
+  function project(p) {
     const rx = p[0];
     const rz = p[2];
     const ty = p[1] - KAM_Y;
@@ -162,7 +163,7 @@
   }
 
   /* First longitude (Y axis), then latitude (X axis) */
-  function dondur(v, cosA, sinA, cosT, sinT) {
+  function rotate(v, cosA, sinA, cosT, sinT) {
     const x = v[0] * cosA - v[2] * sinA;
     const z = v[0] * sinA + v[2] * cosA;
     return [x, v[1] * cosT - z * sinT, v[1] * sinT + z * cosT];
@@ -194,7 +195,7 @@
     const n = [];
     for (let i = 0; i < 96; i++) {
       const t = (i / 96) * Math.PI * 2;
-      n.push(yansit([
+      n.push(project([
         BAKIS[0] * merkezMesafe + (e1[0] * Math.cos(t) + e2[0] * Math.sin(t)) * yaricap,
         BAKIS[1] * merkezMesafe + (e1[1] * Math.cos(t) + e2[1] * Math.sin(t)) * yaricap,
         BAKIS[2] * merkezMesafe + (e1[2] * Math.cos(t) + e2[2] * Math.sin(t)) * yaricap,
@@ -206,7 +207,7 @@
   // ---------- colour mixing ----------
   const rgb = (h) => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
   const onalti = (c) => "#" + c.map((v) => Math.round(Math.max(0, Math.min(255, v))).toString(16).padStart(2, "0")).join("");
-  const karistir = (a, b, t) => {
+  const mix = (a, b, t) => {
     const x = rgb(a), y = rgb(b);
     return onalti([x[0] + (y[0] - x[0]) * t, x[1] + (y[1] - x[1]) * t, x[2] + (y[2] - x[2]) * t]);
   };
@@ -216,33 +217,33 @@
      canlandiriyor. Bir kez hesaplanir, cizim dongusu ucuz kalir. */
   const HALO_ACI = 0.12;
   BINALAR.forEach((b) => {
-    b.yuz = [CATI[b.ton], YAN_A[b.ton], YAN_B[b.ton]];
+    b.faces = [CATI[b.ton], YAN_A[b.ton], YAN_B[b.ton]];
   });
   GECELER.forEach((g) => {
     BINALAR.forEach((b) => {
       const s2 = nokta(b.u, g.bina.u);
       if (s2 < Math.cos(HALO_ACI)) return;
       const t = (1 - Math.acos(Math.min(1, s2)) / HALO_ACI) * 0.8;
-      b.yuz = [
-        karistir(b.yuz[0], g.renk, t),
-        karistir(b.yuz[1], g.renk, t * 0.7),
-        karistir(b.yuz[2], g.renk, t * 0.5),
+      b.faces = [
+        mix(b.faces[0], g.colour, t),
+        mix(b.faces[1], g.colour, t * 0.7),
+        mix(b.faces[2], g.colour, t * 0.5),
       ];
     });
   });
 
   /* The stain on the ground: graded rings under every event */
-  function yuzeyHalka(u, acisal, adim) {
+  function surfaceRing(u, angular, steps) {
     const ref = Math.abs(u[1]) > 0.9 ? [1, 0, 0] : [0, 1, 0];
     const e1 = birim(capraz(ref, u));
     const e2 = capraz(u, e1);
     const n = [];
-    for (let i = 0; i < adim; i++) {
-      const t = (i / adim) * Math.PI * 2;
+    for (let i = 0; i < steps; i++) {
+      const t = (i / steps) * Math.PI * 2;
       n.push(birim([
-        u[0] * Math.cos(acisal) + (e1[0] * Math.cos(t) + e2[0] * Math.sin(t)) * Math.sin(acisal),
-        u[1] * Math.cos(acisal) + (e1[1] * Math.cos(t) + e2[1] * Math.sin(t)) * Math.sin(acisal),
-        u[2] * Math.cos(acisal) + (e1[2] * Math.cos(t) + e2[2] * Math.sin(t)) * Math.sin(acisal),
+        u[0] * Math.cos(angular) + (e1[0] * Math.cos(t) + e2[0] * Math.sin(t)) * Math.sin(angular),
+        u[1] * Math.cos(angular) + (e1[1] * Math.cos(t) + e2[1] * Math.sin(t)) * Math.sin(angular),
+        u[2] * Math.cos(angular) + (e1[2] * Math.cos(t) + e2[2] * Math.sin(t)) * Math.sin(angular),
       ]));
     }
     return n;
@@ -252,7 +253,7 @@
     { a: 0.155, o: 0.09 }, { a: 0.105, o: 0.12 }, { a: 0.06, o: 0.18 },
   ];
   GECELER.forEach((g) => {
-    g.leke = LEKE.map((l) => yuzeyHalka(g.bina.u, l.a, 20));
+    g.leke = LEKE.map((l) => surfaceRing(g.bina.u, l.a, 20));
   });
 
   const KABUK = [
@@ -264,19 +265,19 @@
 
   // ---------- dragging (both axes inverted) ----------
   let hiz = 0.11;
-  let surukluyor = false, sonX = 0, sonY = 0, bosZaman = 0;
+  let dragging = false, lastX = 0, lastY = 0, idleTime = 0;
 
   stage.addEventListener("pointerdown", (e) => {
-    surukluyor = true; sonX = e.clientX; sonY = e.clientY;
+    dragging = true; lastX = e.clientX; lastY = e.clientY;
     try { stage.setPointerCapture(e.pointerId); } catch (_) {}
   });
 
   stage.addEventListener("pointermove", (e) => {
-    if (surukluyor) {
-      aci -= (e.clientX - sonX) * 0.006;
-      egim2 += (e.clientY - sonY) * 0.005;
+    if (dragging) {
+      aci -= (e.clientX - lastX) * 0.006;
+      egim2 += (e.clientY - lastY) * 0.005;
       egim2 = Math.max(-0.62, Math.min(0.62, egim2));
-      sonX = e.clientX; sonY = e.clientY;
+      lastX = e.clientX; lastY = e.clientY;
       return;
     }
     // Are we over a beacon? (no DOM on a canvas, so a hit test by hand)
@@ -286,19 +287,19 @@
     let en = null, enYakin = 16 * OLCEK;
     beaconlar.forEach((b) => {
       if (!b.gorunur || b.gorunur < 0.4) return;
-      const d = mesafeSegmente(px, py, b.altE, b.ustE);
+      const d = mesafeSegmente(px, py, b.bottomE, b.topE);
       if (d < enYakin) { enYakin = d; en = b.g; }
     });
     hovered = en;
     stage.style.cursor = en ? "pointer" : "grab";
   });
 
-  const release = () => { if (surukluyor) { surukluyor = false; bosZaman = 0; } };
+  const release = () => { if (dragging) { dragging = false; idleTime = 0; } };
   stage.addEventListener("pointerup", release);
   stage.addEventListener("pointercancel", release);
   stage.addEventListener("pointerleave", () => { hovered = null; });
   stage.addEventListener("click", () => {
-    if (hovered) window.open(hovered.sayfa, "_blank", "noopener");
+    if (hovered) window.open(hovered.page, "_blank", "noopener");
   });
 
   function mesafeSegmente(px, py, a, b) {
@@ -311,7 +312,7 @@
 
   // ---------- drawing ----------
   const BEACON_BOY = 132;
-  const beaconlar = GECELER.map((g) => ({ g: g, gorunur: 0, altE: null, ustE: null }));
+  const beaconlar = GECELER.map((g) => ({ g: g, gorunur: 0, bottomE: null, topE: null }));
   let oncekiZaman = performance.now();
 
   const E = (q) => ({ x: KAY_X + q.x * OLCEK, y: KAY_Y + q.y * OLCEK });
@@ -320,9 +321,9 @@
     const dt = Math.min(0.05, (simdi - oncekiZaman) / 1000);
     oncekiZaman = simdi;
 
-    if (!surukluyor) {
-      bosZaman += dt;
-      if (bosZaman > 2.5) aci -= hiz * dt;
+    if (!dragging) {
+      idleTime += dt;
+      if (idleTime > 2.5) aci -= hiz * dt;
     }
 
     const cosA = Math.cos(aci), sinA = Math.sin(aci);
@@ -344,18 +345,18 @@
 
     // --- the event stains (under the buildings) ---
     GECELER.forEach((g) => {
-      const ur = dondur(g.bina.u, cosA, sinA, cosT, sinT);
+      const ur = rotate(g.bina.u, cosA, sinA, cosT, sinT);
       if (nokta(ur, birim(cikar(KAMERA, [ur[0] * R, ur[1] * R, ur[2] * R]))) < 0.06) return;
       g.leke.forEach((halka, k) => {
         ctx.beginPath();
         halka.forEach((v, i) => {
-          const w = dondur(v, cosA, sinA, cosT, sinT);
-          const q = yansit([w[0] * (R + 0.6), w[1] * (R + 0.6), w[2] * (R + 0.6)]);
+          const w = rotate(v, cosA, sinA, cosT, sinT);
+          const q = project([w[0] * (R + 0.6), w[1] * (R + 0.6), w[2] * (R + 0.6)]);
           i ? ctx.lineTo(q.x, q.y) : ctx.moveTo(q.x, q.y);
         });
         ctx.closePath();
         ctx.globalAlpha = LEKE[k].o;
-        ctx.fillStyle = g.renk;
+        ctx.fillStyle = g.colour;
         ctx.fill();
       });
     });
@@ -364,22 +365,22 @@
     // --- the buildings ---
     const liste = [];
     BINALAR.forEach((b) => {
-      const ur = dondur(b.u, cosA, sinA, cosT, sinT);
+      const ur = rotate(b.u, cosA, sinA, cosT, sinT);
       const merkez = [ur[0] * R, ur[1] * R, ur[2] * R];
       const bakis = nokta(ur, birim(cikar(KAMERA, merkez)));
       if (bakis < 0.02) return;
-      const om = yansit(merkez);
+      const om = project(merkez);
       if (om.x < -260 || om.x > G + 260 || om.y < -260 || om.y > Y + 260) return;
       // fade out at the horizon instead of cutting hard
       const solma = Math.min(1, (bakis - 0.02) / 0.16);
 
-      const dr = dondur(b.dogu, cosA, sinA, cosT, sinT);
-      const kr = dondur(b.kuzey, cosA, sinA, cosT, sinT);
+      const dr = rotate(b.dogu, cosA, sinA, cosT, sinT);
+      const kr = rotate(b.kuzey, cosA, sinA, cosT, sinT);
       const k = [];
       [[-1, -1], [1, -1], [1, 1], [-1, 1]].forEach(([sx, sz]) => {
         [0, b.h].forEach((yy) => {
           const rr = R + yy;
-          k.push(yansit([
+          k.push(project([
             ur[0] * rr + dr[0] * sx * b.g / 2 + kr[0] * sz * b.d / 2,
             ur[1] * rr + dr[1] * sx * b.g / 2 + kr[1] * sz * b.d / 2,
             ur[2] * rr + dr[2] * sx * b.g / 2 + kr[2] * sz * b.d / 2,
@@ -389,11 +390,11 @@
       const T = [k[1], k[3], k[5], k[7]];
       const A = [k[0], k[2], k[4], k[6]];
       [
-        { p: T, ton: b.yuz[0] },
-        { p: [A[0], A[1], T[1], T[0]], ton: b.yuz[1] },
-        { p: [A[2], A[3], T[3], T[2]], ton: b.yuz[1] },
-        { p: [A[1], A[2], T[2], T[1]], ton: b.yuz[2] },
-        { p: [A[3], A[0], T[0], T[3]], ton: b.yuz[2] },
+        { p: T, ton: b.faces[0] },
+        { p: [A[0], A[1], T[1], T[0]], ton: b.faces[1] },
+        { p: [A[2], A[3], T[3], T[2]], ton: b.faces[1] },
+        { p: [A[1], A[2], T[2], T[1]], ton: b.faces[2] },
+        { p: [A[3], A[0], T[0], T[3]], ton: b.faces[2] },
       ].forEach((f) => {
         let alan = 0;
         for (let i = 0; i < 4; i++) {
@@ -433,45 +434,45 @@
     ctx.textAlign = "center";
     beaconlar.forEach((b) => {
       const g = b.g, bina = g.bina;
-      const ur = dondur(bina.u, cosA, sinA, cosT, sinT);
-      const taban = [ur[0] * (R + bina.h), ur[1] * (R + bina.h), ur[2] * (R + bina.h)];
-      const tepeR = R + bina.h + BEACON_BOY;
-      const alt = yansit(taban);
-      const ust = yansit([ur[0] * tepeR, ur[1] * tepeR, ur[2] * tepeR]);
+      const ur = rotate(bina.u, cosA, sinA, cosT, sinT);
+      const base = [ur[0] * (R + bina.h), ur[1] * (R + bina.h), ur[2] * (R + bina.h)];
+      const topR = R + bina.h + BEACON_BOY;
+      const bottom = project(base);
+      const top = project([ur[0] * topR, ur[1] * topR, ur[2] * topR]);
 
-      const yuz = nokta(ur, birim(cikar(KAMERA, taban)));
-      b.gorunur = Math.max(0, Math.min(1, (yuz - 0.03) * 2.6));
-      b.altE = E(alt); b.ustE = E(ust);
+      const faces = nokta(ur, birim(cikar(KAMERA, base)));
+      b.gorunur = Math.max(0, Math.min(1, (faces - 0.03) * 2.6));
+      b.bottomE = E(bottom); b.topE = E(top);
       if (b.gorunur <= 0.01) return;
 
-      const dx = ust.x - alt.x, dy = ust.y - alt.y;
+      const dx = top.x - bottom.x, dy = top.y - bottom.y;
       const uz = Math.hypot(dx, dy) || 1;
       const nx = -dy / uz, ny = dx / uz;
 
       const parlak = hovered === g ? 1.35 : 1;
       KABUK.forEach((kb) => {
-        const wa = kb.g * alt.s, wu = kb.g * ust.s;
+        const wa = kb.g * bottom.s, wu = kb.g * top.s;
         ctx.globalAlpha = Math.min(1, kb.o * b.gorunur * parlak);
-        ctx.fillStyle = g.renk;
+        ctx.fillStyle = g.colour;
         ctx.beginPath();
-        ctx.moveTo(alt.x - nx * wa, alt.y - ny * wa);
-        ctx.lineTo(alt.x + nx * wa, alt.y + ny * wa);
-        ctx.lineTo(ust.x + nx * wu, ust.y + ny * wu);
-        ctx.lineTo(ust.x - nx * wu, ust.y - ny * wu);
+        ctx.moveTo(bottom.x - nx * wa, bottom.y - ny * wa);
+        ctx.lineTo(bottom.x + nx * wa, bottom.y + ny * wa);
+        ctx.lineTo(top.x + nx * wu, top.y + ny * wu);
+        ctx.lineTo(top.x - nx * wu, top.y - ny * wu);
         ctx.closePath();
         ctx.fill();
       });
 
       ctx.globalAlpha = b.gorunur;
-      ctx.fillStyle = g.renk;
-      ctx.fillText(g.saat, ust.x, ust.y - 12);
+      ctx.fillStyle = g.colour;
+      ctx.fillText(g.time, top.x, top.y - 12);
       ctx.globalAlpha = 1;
     });
 
     // --- the hover label ---
     if (hovered) {
       const b = beaconlar.find((x) => x.g === hovered);
-      const u = yansitTers(b.ustE);
+      const u = yansitTers(b.topE);
       const x = u.x + 26, y = u.y - 40;
       ctx.textAlign = "left";
       ctx.strokeStyle = "#f0f0ee";
@@ -481,11 +482,11 @@
       ctx.stroke();
       ctx.fillStyle = "#f0f0ee";
       ctx.font = "500 19px 'Inter Tight', sans-serif";
-      ctx.fillText(hovered.ad, x, y + 12);
+      ctx.fillText(hovered.name, x, y + 12);
       ctx.font = "10.5px 'JetBrains Mono', ui-monospace, monospace";
       ctx.globalAlpha = 0.72;
-      ctx.fillText(hovered.tip + " · " + hovered.saat, x, y + 32);
-      ctx.fillText(hovered.dk + " MIN WALK", x, y + 50);
+      ctx.fillText(hovered.kind + " · " + hovered.time, x, y + 32);
+      ctx.fillText(hovered.mins + " MIN WALK", x, y + 50);
       ctx.globalAlpha = 1;
     }
   }

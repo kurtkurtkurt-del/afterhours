@@ -1,9 +1,9 @@
 /* afterhours — friends & more.
-   Kullanici adi, arkadaslar ve biriktirdiklerin. Hepsi giris ister;
-   girissizken page sadece bir davet gosterir.
+   Your handle, your friends and what you kept. All of it needs an
+   account; signed out, the page shows only an invitation.
 
-   Bu bolumler once giris sayfasindaydi; oraya ait degillerdi. Giris
-   sayfasi artik yalnizca giris.  */
+   These sections used to live on the sign-in page, where they did not
+   belong. That page is now nothing but signing in.  */
 
 (function () {
   const CONFIG = window.AH_CONFIG || {};
@@ -178,18 +178,18 @@
   function drawNachtradar() {
     const box = document.getElementById("nr");
     const about = document.getElementById("nr-about");
-    const veri = window.NACHTRADAR;
-    if (!box || !veri) return;
+    const data = window.NACHTRADAR;
+    if (!box || !data) return;
 
-    const hepsi = [
-      ...veri.crew.map((k) => ({ ...k, crew: true })),
-      ...veri.pending.map((k) => ({ ...k, crew: false })),
+    const everyone = [
+      ...data.crew.map((k) => ({ ...k, crew: true })),
+      ...data.pending.map((k) => ({ ...k, crew: false })),
     ];
 
     about.textContent = "hundreds of people are already on the app.";
 
     box.textContent = "";
-    hepsi.forEach((k) => {
+    everyone.forEach((k) => {
       const card = document.createElement("div");
       card.className = "nr-person" + (k.crew ? " crew" : "");
 

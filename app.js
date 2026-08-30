@@ -255,7 +255,7 @@ sesSatirlari.forEach((row) => {
     if (playingRow !== row) {
       calmaDurdur();
       playingRow = row;
-      soundSource.src = row.dataset.kaynak;
+      soundSource.src = row.dataset.source;
     }
     soundSource.play();
   });

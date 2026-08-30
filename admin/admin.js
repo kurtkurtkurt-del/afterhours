@@ -2,8 +2,8 @@
    Only useful to an account with is_admin. Anyone may open this page;
    the protection is not in the page but in the database
    (backend/sql/02_rls.sql). An admin
-   olmayan biri buraya gelse hicbir sey yazamaz, yayinda olmayani bile
-   goremez.  */
+   who is not one can write nothing here, and cannot even see what is
+   unpublished.  */
 
 (function () {
   const CONFIG = window.AH_CONFIG || {};
@@ -83,7 +83,7 @@
     })
     .catch((h) => showGate("couldn't check the account: " + h.message, false));
 
-  /* --- veri --- */
+  /* --- the data --- */
 
   function start() {
     return Promise.all([
@@ -373,8 +373,8 @@
     })
       .then(async (c) => {
         if (!c.ok) throw new Error(c.status + " " + (await c.text()).slice(0, 120));
-        /* Stamp the record's poster_path: from now on the site uses
-           gosterir, posters/NN.svg yerine. */
+        /* Stamp the record's poster_path: from now on the site shows this
+           file instead of posters/NN.svg. */
         return AH.request("/events?id=eq." + chosen.id, {
           method: "PATCH",
           headers: { Prefer: "return=representation" },
@@ -397,11 +397,11 @@
   /* --- moderating the comments --- */
 
   /* --- feedback ---
-     feedback tablosunu yalniz yonetici okuyor; yazan kendi yazdigini
-     bile goremiyor (backend/sql/13_feedback.sql). Yani burasi o
-     mesajlarin gorulebildigi TEK yer. */
+     Only the admin reads the feedback table; not even the writer can see
+     their own (backend/sql/13_feedback.sql). So this is the ONLY place
+     those messages can be seen. */
 
-  const TUR = { broken: "broken", idea: "idea", event: "event", other: "other" };
+  const KINDS = { broken: "broken", idea: "idea", event: "event", other: "other" };
 
   function fetchFeedback() {
     return AH.request("/rpc/feedback_list", {
@@ -435,20 +435,20 @@
 
       const kind = document.createElement("span");
       kind.className = "adm-feedback-kind";
-      kind.textContent = TUR[g.kind] || g.kind;
+      kind.textContent = KINDS[g.kind] || g.kind;
       top.appendChild(kind);
 
       const who = document.createElement("span");
       who.className = "adm-feedback-who";
       /* A signed-in writer shows by handle, a signed-out one by the
-         hicbirini vermeyen "anonymous" olarak gorunuyor. */
+         contact they left, and someone who gave neither as "anonymous". */
       who.textContent = g.author ? "@" + g.author : (g.contact || "anonymous");
       top.appendChild(who);
 
-      const ne = document.createElement("span");
-      ne.className = "adm-feedback-when";
-      ne.textContent = String(g.created_at || "").slice(0, 10);
-      top.appendChild(ne);
+      const what = document.createElement("span");
+      what.className = "adm-feedback-when";
+      what.textContent = String(g.created_at || "").slice(0, 10);
+      top.appendChild(what);
 
       const isaret = document.createElement("button");
       isaret.className = "adm-comment-action";

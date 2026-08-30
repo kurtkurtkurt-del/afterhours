@@ -1,13 +1,13 @@
 /* afterhours — sketch 02: strips scrolling sideways */
 
 const seritler = document.getElementById("strips");
-const bilgi = document.getElementById("info");
+const info = document.getElementById("info");
 const yan = document.getElementById("side");
-const alanIndex = bilgi.querySelector(".info-index");
-const alanTur = bilgi.querySelector(".info-type");
-const alanBaslik = bilgi.querySelector(".info-title");
-const alanMeta = bilgi.querySelector(".info-meta");
-const alanMetin = bilgi.querySelector(".info-body");
+const fieldIndex = info.querySelector(".info-index");
+const fieldKind = info.querySelector(".info-type");
+const fieldTitle = info.querySelector(".info-title");
+const fieldMeta = info.querySelector(".info-meta");
+const fieldBody = info.querySelector(".info-body");
 
 let gizleZamani;
 
@@ -35,11 +35,11 @@ function posterYap(i) {
     clearTimeout(gizleZamani);
     box.closest(".strip").classList.add("stopped");   // the strip halts
     box.classList.add("big");                        // the poster grows a little
-    alanIndex.textContent = no + " / " + POSTERS.length;
-    alanTur.textContent = p.kind;
-    alanBaslik.textContent = p.title;
-    alanMeta.textContent = p.meta;
-    alanMetin.textContent = p.body;
+    fieldIndex.textContent = no + " / " + POSTERS.length;
+    fieldKind.textContent = p.kind;
+    fieldTitle.textContent = p.title;
+    fieldMeta.textContent = p.meta;
+    fieldBody.textContent = p.body;
     yan.classList.add("poster-hover");
   });
 

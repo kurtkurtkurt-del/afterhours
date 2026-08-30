@@ -1,9 +1,9 @@
 /* afterhours — card collection.
-   Kartlari kendimiz cizmiyoruz: ana sayfadaki seritte kullanilan
-   cards.js ureteci ayni isi yapiyor (CARDS.front = on yuz).
-   Burada sadece uc geceyi ona veriyoruz.
+   We do not draw the cards ourselves: the cards.js generator used by the
+   strip on the landing page does the same job (CARDS.front = the front).
+   Here we only hand it three nights.
 
-   Tiklayinca card cevriliyor: arka yuz gecenin zaman cizelgesi. */
+   A click turns the card over: the back is that night's timeline. */
 
 (function () {
   const field = document.getElementById("cc-cards");

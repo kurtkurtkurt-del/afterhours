@@ -1,11 +1,12 @@
 /* afterhours — how the card collection changes with the session.
-   Girisliysen page empty: "sign in" dugmesi de, ornek cards da
-   gitmis oluyor. Ikisi de girmemis birine ne oldugunu anlatmak icin
-   duruyordu; girmis biri kendi (henuz empty) koleksiyonunu goruyor.
+   Signed in, the page is empty: the "sign in" button and the sample cards
+   both go. Both were there to explain to someone signed out what this is;
+   someone signed in sees their own (still empty) collection.
 
-   Ayri dosya, cunku cards.js session.js'ten ONCE yukleniyor ve orada
-   AH heniz yok. Bu betik en sonda: oturum localStorage'dan zaten
-   okunmus oluyor, yani ilk boyamadan once dogru karari veriyor.  */
+   A separate file, because cards.js loads BEFORE session.js and AH does
+   not exist there yet. This script comes last: the session has already
+   been read from localStorage, so it makes the right call before the
+   first paint.  */
 
 (function () {
   const AH = window.AH;

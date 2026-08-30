@@ -1,11 +1,11 @@
 /* afterhours — the sign-in page.
-   Tek is: e-posta al, baglanti istet, durumu say.
-   Sifre alani yok; olmayacak da.  */
+   One job: take an email and a password, sign in, and say what
+   happened.  */
 
 (function () {
   const form = document.getElementById("page-form");
   const field = document.getElementById("page-email");
-  const sifreAlani = document.getElementById("page-password");
+  const passwordField = document.getElementById("page-password");
   const dugme = document.getElementById("page-button");
   const note = document.getElementById("page-note");
   const inside = document.getElementById("page-in");
@@ -15,7 +15,7 @@
   const AYAR = window.AH_CONFIG || {};
   const open = Boolean(AYAR.url && AYAR.anonKey);
 
-  function say(text, kind) {
+  function report(text, kind) {
     note.textContent = text || "";
     note.className = "page-note" + (kind ? " " + kind : "");
   }
@@ -24,7 +24,7 @@
      and it says why. */
   if (!open) {
     form.hidden = true;
-    say("sign-in opens when the backend does. nothing to sign into yet.", "waiting");
+    report("sign-in opens when the backend does. nothing to sign into yet.", "waiting");
     return;
   }
 
@@ -35,7 +35,7 @@
     if (signedIn) {
       const k = AH.session && AH.session.user;
       who.textContent = k && k.email ? "you're in as " + k.email : "you're in.";
-      say("");
+      report("");
     }
   }
 
@@ -43,44 +43,45 @@
   AH.onSessionChange(render);
 
   /* Signing in with a password. The password-less link route is still
-     there (AH.requestLink) but
-     su an kullanilmiyor: Supabase'in dahili e-posta gondericisi saatte
-     birkac postayla sinirli ve giris denemeleri ona takiliyordu. */
+     there (AH.requestLink) but is not in use: the built-in Supabase mailer
+     is limited to a few messages an hour, and sign-in attempts kept
+     running into it. */
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = field.value.trim();
-    const password = sifreAlani.value;
+    const password = passwordField.value;
 
     if (!email || email.indexOf("@") < 1) {
-      say("that doesn't look like an email.", "hata");
+      report("that doesn't look like an email.", "error");
       field.focus();
       return;
     }
     if (!password) {
-      say("your password is missing.", "error");
-      sifreAlani.focus();
+      report("your password is missing.", "error");
+      passwordField.focus();
       return;
     }
 
     dugme.disabled = true;
-    say("signing in…");
+    report("signing in…");
     AH.signInWithPassword(email, password)
-      .then(() => { sifreAlani.value = ""; render(); say("you're in.", "tamam"); })
+      .then(() => { passwordField.value = ""; render(); report("you're in.", "ok"); })
       .catch((h) => {
-        say(/invalid|credentials/i.test(h.message)
+        report(/invalid|credentials/i.test(h.message)
           ? "wrong email or password."
-          : "couldn't sign in: " + h.message, "hata");
+          : "couldn't sign in: " + h.message, "error");
       })
       .finally(() => { dugme.disabled = false; });
   });
 
   cik.addEventListener("click", () => {
-    AH.signOut().then(() => { render(); say("signed out.", "ok"); });
+    AH.signOut().then(() => { render(); report("signed out.", "ok"); });
   });
 
-  /* The handle and the friends used to live here; the friends&more
-     sayfasina tasindilar (friends/friends.js). Kopyalari burada kaldi ve
-     olmayan ogeleri arayip dosyayi ortasinda durduruyorlardi: row
-     173'te TypeError, sonrasi hic calismiyordu. Silindi. */
+  /* The handle and the friends used to live here; they moved to the
+     friends&more page (friends/friends.js). Copies were left behind, went
+     looking for elements that were not there, and stopped the file
+     halfway: a TypeError on line 173, and nothing after it ever ran.
+     Removed. */
 
 })();

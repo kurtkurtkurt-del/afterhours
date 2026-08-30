@@ -46,10 +46,10 @@ console.log("\n— the handle —");
   check(Boolean(err), "a handle that does not fit the shape is refused");
 
   await db.exec(`update public.profiles set handle = 'ahmet' where id = '${A}'`);
-  let ikinci = null;
+  let second = null;
   try { await db.exec(`update public.profiles set handle = 'ahmet' where id = '${B}'`); }
-  catch (e) { ikinci = e.message; }
-  check(Boolean(ikinci), "two people cannot hold the same handle");
+  catch (e) { second = e.message; }
+  check(Boolean(second), "two people cannot hold the same handle");
   await db.exec(`update public.profiles set handle = 'lena' where id = '${B}'`);
 }
 

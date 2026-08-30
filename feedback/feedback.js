@@ -1,12 +1,12 @@
 /* afterhours — the feedback page.
    Tek is: yazilani feedback tablosuna eklemek. Giris istemiyor —
-   bozuk bir seyi bildirmek icin once hesap acmak sacma olurdu.
+   opening an account just to report something broken would be absurd.
    Girisliyken who oldugun kendiliginden yaziliyor (author_id
-   varsayilani auth.uid()), girissizken istersen bir iletisim
+   defaults to auth.uid()); signed out you may leave a way to reach
    satiri birakiyorsun.
 
-   Yazileni kimse geri okuyamiyor, yonetici disinda: bu bir gelen
-   kutusu, konusma degil (backend/sql/13_feedback.sql).  */
+   Nobody but the admin can read any of it back: this is an inbox, not a
+   conversation (backend/sql/13_feedback.sql).  */
 
 (function () {
   const AH = (window.AH = window.AH || {});
@@ -19,9 +19,9 @@
 
   let kind = "broken";
 
-  function say(text, cesit) {
+  function say(text, kind) {
     status.textContent = text || "";
-    status.className = "account-status" + (cesit ? " " + cesit : "");
+    status.className = "account-status" + (kind ? " " + kind : "");
   }
 
   /* --- choosing a subject --- */
@@ -74,7 +74,7 @@
       })
       .catch((h) => {
         el("fb-send").disabled = false;
-        say(AH.errorText(h, "couldn't send it. the words are still here."), "hata");
+        say(AH.errorText(h, "couldn't send it. the words are still here."), "error");
       });
   };
 

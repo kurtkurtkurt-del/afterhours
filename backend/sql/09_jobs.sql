@@ -65,8 +65,10 @@ begin
   if exists (select 1 from pg_extension where extname = 'pg_cron') then
     perform cron.unschedule('afterhours-gecmisi-dusur')
       where exists (select 1 from cron.job where jobname = 'afterhours-gecmisi-dusur');
+    perform cron.unschedule('afterhours-drop-past')
+      where exists (select 1 from cron.job where jobname = 'afterhours-drop-past');
     perform cron.schedule(
-      'afterhours-gecmisi-dusur',
+      'afterhours-drop-past',
       '30 5 * * *',                       -- 05:30 UTC daily, after the night is over
       $job$ select public.hide_past_events(); $job$
     );

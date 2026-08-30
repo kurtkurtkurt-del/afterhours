@@ -2,406 +2,455 @@
 
 **[kurtkurtkurt-del.github.io/afterhours](https://kurtkurtkurt-del.github.io/afterhours/)**
 
-Münih'in (ve İstanbul'un) gecesini bulma sitesi: rave, club night, konzert,
-festival, meetup, hausparty. Tek kart, tek gece, sağa kaydır sakla.
+A site for finding your night in Munich (and Istanbul): rave, club night,
+konzert, festival, meetup, hausparty. One card, one night, swipe right to
+keep it.
 
-> **Bu dosya projenin tek referansı.** Her değişiklikten sonra güncellenir —
-> yeni bir sayfa, yeni bir betik, yeni bir kural buraya da yazılır. Sıfırdan
-> gelen biri (ya da altı ay sonraki sen) yalnızca bunu okuyup devam
-> edebilmeli.
-
----
-
-## 1. Ne yapmaya çalışıyor
-
-Üç cümlelik ürün:
-
-1. **Arama yok.** Hiçbir yerde. Gece, aradığın şey değil, karşına çıkan şey.
-   Deste sana tek kart verir: sağa atarsan saklarsın, sola atarsan bir daha
-   göremezsin.
-2. **Gecenin kendisi değil, devamlılığı önemli.** Gittiğin her gece bir
-   *afterhours kartına* dönüşür: o gecenin sesi, konuşmaları, kimler vardı.
-   Koleksiyon geçmişi tutar; "şimdi ve gelecek" ayrı yerde durur.
-3. **Sayfa sana bir gece satmaz.** Etkinlik sayfası "bu gece ne var" demez,
-   "bu senin kaçıncı kez oluşun" der. Bilet düğmesi var ama sayfanın
-   merkezinde değil.
-
-### Ruhu
-
-- Siyah-beyaz. Renk yalnızca posterlerde ve kartlarda var.
-- Kutu yok, gölge yok, köşe yuvarlaması yok. Ayırıcı = 1px saç teli çizgi.
-- İki yazı tipi: **Inter Tight** (PP Neue Montreal'in ulaşılabilir karşılığı)
-  ve **JetBrains Mono** (bütün ince yazılar: 10px, 0.14–0.18em aralık,
-  büyük harf, %38–50 opaklık).
-- Arayüz metni **İngilizce ve küçük harf**; kod yorumları ve bu dosya
-  **Türkçe**; hukuk sayfaları **Almanca**.
-- Sayfadaki her şey elle üretildi: posterler elde yazılmış SVG, ses
-  sentezlendi. `foto.jpg` dışında dışarıdan medya yok.
-- Bağımlılık yok, derleme adımı yok. Ne npm ne bundler. Tarayıcı ne
-  anlıyorsa o.
+> **This file is the project's only reference.** It is updated after every
+> change — a new page, a new script, a new rule gets written down here too.
+> Someone arriving cold (or you in six months) should be able to read only
+> this and carry on.
 
 ---
 
-## 2. Çalıştırmak
+## 1. What it is trying to do
+
+The product in three sentences:
+
+1. **There is no search.** Anywhere. A night is not the thing you look for,
+   it is the thing that comes to you. The deck hands you one card: swipe
+   right and you keep it, swipe left and you never see it again.
+2. **What matters is not the night but the continuity.** Every night you go
+   to turns into an *afterhours card*: the sound of that night, the talk,
+   who was there. The collection holds the past; "now and next" lives
+   somewhere else.
+3. **A page does not sell you a night.** The event page does not say "here
+   is what is on tonight", it says "this is how many times it has been
+   you". There is a ticket button, but it is not the centre of the page.
+
+### The spirit
+
+- Black and white. Colour lives only in the posters and the cards.
+- No boxes, no shadows, no rounded corners. The divider is a 1px hairline.
+- Two typefaces: **Inter Tight** (the freely available answer to PP Neue
+  Montreal) and **JetBrains Mono** (every small line: 10px, 0.14–0.18em
+  tracking, uppercase, 38–50% opacity).
+- The interface text is **English and lower case**; the code and this file
+  are **English too** (they were Turkish until 30.08.2026 — see §12); the
+  legal pages are **German**.
+- Everything on the page was made by hand: the posters are hand-written
+  SVG, the sound is synthesised. Apart from `foto.jpg` there is no media
+  from outside.
+- No dependencies, no build step. No npm, no bundler. Whatever the browser
+  understands, that is what is used.
+
+---
+
+## 2. Running it
 
 ```bash
 python3 -m http.server 4340
 ```
 
-Sonra `http://localhost:4340`. `file://` ile açma — SVG posterler `<object>`
-içinde yüklendiği için harici CSS/font gelmiyor.
+Then `http://localhost:4340`. Do not open it with `file://` — the SVG
+posters load inside `<object>`, and external CSS and fonts do not arrive
+that way.
 
-Backend olmadan da tam çalışır: `config.js` boşsa veri `events-data.js`'ten
-okunur ve site aynı davranır.
+It works in full without a backend: with `config.js` empty the data is read
+from `events-data.js` and the site behaves exactly the same.
 
 ---
 
-## 3. Sayfa haritası
+## 3. The map of pages
 
-| Yol | Ne | Durum |
+| Path | What | State |
 |---|---|---|
-| `index.html` | İniş sayfası, beş ekran derinliğinde: poster vitrini → swipe anlatımı → kart şeridi → dönen şehir küresi → siyah footer ekranı | çalışıyor |
-| `explore/` | **Deste.** Tek kart, sağa/sola. Filtreler (ülke/şehir/tür/tarih), üç kaynak (global deck / friends liked swipes / i feel lucky), yanda beforehours yorumları | çalışıyor |
-| `explore/<slug>/` | **Etkinlik sayfası** (kontak baskısı) — 36 gece, hepsi tek düzenden. Bkz. §6 | çalışıyor |
-| `maps/` | Şehir şeması, mekânlar nokta olarak | çalışıyor, **menüden bağlantısı yok** |
-| `cards/` | **Card collection** — afterhours kartları. Girişliyken boş (kart mantığı henüz yok) | iskelet |
-| `friends/` | Handle, arkadaş ekleme, sakladıkların; altta nachtradar'dan tanıdık yüzler | çalışıyor |
-| `login/` | Giriş + hesap sayfası. Üç sütun: giriş · (first time? / account settings) · give feedback | çalışıyor |
-| `settings/` | **Hesap ayarları** — handle, ad, bir satır, şehir; sakladıklarını kim görsün, adınla bulunabilir misin, e-posta; hesabı silme | çalışıyor |
-| `feedback/` | **Geri bildirim** — konu, mesaj, isteğe bağlı iletişim. Giriş istemiyor | çalışıyor |
-| `register/` | **Kayıt** — iki adım: e-posta + şifre, sonra handle (+ şehir). Handle seçilene kadar kayıt bitmiş sayılmıyor | çalışıyor |
-| `help/` | Sitenin nasıl çalıştığı. Tepesinde üç sayılık şerit: friend connections · cards swiped · afterhours cards gathered | çalışıyor, **sayılar sabit** |
-| `impressum/` `datenschutz/` `agb/` | Almanca hukuk sayfaları | **Muster** (köşeli parantezler doldurulacak) |
-| `admin/` | Etkinlik düzenleme, poster kontrolü, yorum moderasyonu | sadece `is_admin` |
-| `posters/` | 36 SVG poster, gece başına bir tane | — |
-| `ses/` | İki kısa kayıt, tamamen sentezlenmiş | — |
-| `404.html` | Yanlış adres. Dışarıdan hiçbir dosya çağırmıyor (her derinlikte gösterilebiliyor), kök yolu adresten çıkarıyor | çalışıyor |
-| `og/` | Paylaşım önizlemeleri: her gece için 1200×630, solda kendi posteri | üretilmiş |
-| `strip.html` | Park edilmiş deneme (yatay şeritler) | dokunma |
+| `index.html` | The landing page, five screens deep: the poster wall → how swiping works → a strip of cards → the turning city globe → a black footer screen | works |
+| `explore/` | **The deck.** One card, left or right. Filters (country/city/kind/date), three sources (global deck / friends liked swipes / i feel lucky), the beforehours comments alongside | works |
+| `explore/<slug>/` | **The event page** (a contact sheet) — 36 nights, all from one layout. See §6 | works |
+| `maps/` | The city schematic, the venues as dots | works, **not linked from the menu** |
+| `cards/` | **The card collection** — afterhours cards. Empty when signed in (there is no card logic yet) | a skeleton |
+| `friends/` | Handle, adding friends, what you kept; familiar faces from nachtradar below | works |
+| `login/` | Sign-in and account page. Three columns: sign in · (first time? / account settings) · give feedback | works |
+| `settings/` | **Account settings** — handle, name, one line, city; who may see what you kept, whether you are findable by name, email; deleting the account | works |
+| `feedback/` | **Feedback** — subject, message, an optional way to reach you. No sign-in needed | works |
+| `register/` | **Registration** — two steps: email + password, then the handle (+ city). Registration does not count as finished until a handle is chosen | works |
+| `help/` | How the site works. A band of three numbers at the top: friend connections · cards swiped · afterhours cards gathered | works, **the numbers are fixed** |
+| `impressum/` `datenschutz/` `agb/` | The German legal pages | **placeholder** (the square brackets are still to be filled in) |
+| `admin/` | Editing events, checking posters, moderating comments, the feedback inbox | `is_admin` only |
+| `posters/` | 36 SVG posters, one per night | — |
+| `sound/` | Two short recordings, entirely synthesised | — |
+| `404.html` | A wrong address. It asks for no file from outside (it can be shown at any depth) and works the root path out from the address | works |
+| `og/` | The sharing previews: 1200×630 per night, its own poster on the left | generated |
+| `strip.html` | A parked sketch (horizontal strips) | leave it alone |
 
-Her sayfanın altında **dipnot** var: `© 2026 afterhours` + impressum ·
-datenschutz · agb. İki hâli: akışta duran normal hâl ve tam ekran sayfalar
-(`explore`, `maps`) için köşede duran `dipnot ince`. Dipnotu olmayan üç
-sayfa: `index.html` (kendi siyah footer ekranı var), `admin/`, `strip.html`.
+Every page has a **footer**: `© 2026 afterhours` + impressum · datenschutz
+· agb. It has two forms: the normal one that sits in the flow, and
+`foot thin` for the full-screen pages (`explore`, `maps`) where it sits in
+the corner. Three pages have no footer: `index.html` (it has its own black
+footer screen), `admin/` and `strip.html`.
 
 ---
 
-## 4. Veri akışı
+## 4. How the data flows
 
 ```
-config.js          Supabase URL + publishable key (ikisi de herkese açık)
+config.js        Supabase URL + publishable key (both public)
    ↓
-data.js          canlı mı yerel mi karar verir
-   ├── canlı  →  Supabase REST → satırları sitenin biçimine çevirir
-   └── yerel  →  data-fallback ile events-data.js
+data.js          decides whether it is live or local
+   ├── live   →  Supabase REST → turns the rows into the site's shape
+   └── local  →  events-data.js, via data-fallback
    ↓
-window.POSTERS   36 etkinlik: { slug, tur, baslik, meta, metin, poster }
+window.POSTERS   36 events: { slug, kind, title, meta, body, poster }
    ↓
-data-after       sayfanın kendi betikleri ANCAK veri geldikten sonra yüklenir
+data-after       the page's own scripts load ONLY after the data has arrived
 ```
 
-Sayfalardaki kalıp:
+The pattern on every page:
 
 ```html
-<script src="../data.js?v=101"
-        data-fallback="../events-data.js?v=101"
-        data-after="explore.js?v=101, filters.js?v=101"></script>
+<script src="../data.js?v=131"
+        data-fallback="../events-data.js?v=131"
+        data-after="explore.js?v=131, filters.js?v=131"></script>
 ```
 
-Ortak `AH` nesnesi: `AH.durum` (`canli` / `yerel`), `AH.istek()`, `AH.hataMetni()`,
-`AH.oturum`, `AH.girisliMi()`, `AH.oturumHazir` (promise),
-`AH.oturumDegisti(cb)`, `AH.kayitOl()`, `AH.etkinlikler()`, `AH.atislar`,
-`AH.arkadaslar()`.
+The shared `AH` object: `AH.mode` (`live` / `local`), `AH.request()`,
+`AH.errorText()`, `AH.session`, `AH.signedIn()`, `AH.sessionReady`
+(a promise), `AH.onSessionChange(cb)`, `AH.signUp()`,
+`AH.signInWithPassword()`, `AH.events()`, `AH.kept()`, `AH.saveSwipe()`,
+`AH.friends()`, `AH.comments()`, `AH.myProfile()`.
 
-**Güvenlik:** `config.js`'teki anahtar gizli değil, gizli olması da gerekmiyor.
-Veriyi koruyan şey `backend/sql/02_rls.sql`'deki satır düzeyi kurallar.
-`service_role` anahtarı bu depoya **asla** yazılmaz.
-
----
-
-## 5. Dosya dosya
-
-**Kök**
-
-| Dosya | İş |
-|---|---|
-| `data.js` | Veri katmanı. Önce o çalışır, sonra sayfanın betiklerini yükler |
-| `config.js` | Supabase URL + anon anahtar + varsayılan şehir |
-| `session.js` | Oturum: Supabase Auth REST'ine doğrudan konuşur, jeton `localStorage`'da |
-| `menu.js` | Menünün oturuma göre hâli: "welcome <ad>", yöneticiye admin bağlantısı |
-| `swipes.js` | Sağa/sola atılanlar. Girişsizken `localStorage`, girişliyken veritabanı |
-| `friendships.js` | Arkadaşlık istekleri; işin tamamı veritabanı fonksiyonlarında |
-| `beforehours.js` | Etkinlik yorumları (okuma herkese, yazma girişe bağlı) |
-| `app.js` | İniş sayfasının beş ekranı, poster vitrini, kaydırma mantığı |
-| `globe.js` | Dönen şehir küresi. Three.js yok — kendi izdüşüm matematiği, canvas'a çizer |
-| `venues.js` | Münih mekânlarının şema koordinatları |
-| `cards.js` | **Afterhours kartı üreteci.** `KARTLAR.on(gece, id)` / `.arka(gece, id)` SVG döndürür |
-| `events-data.js` | 36 etkinlik, backend kapalıyken kullanılan yedek |
-| `tools-event-pages.py` | Etkinlik sayfalarının kabuğunu üretir (§6) |
-| `tools-favicon.py` | Favicon'ları üretir (boyuta göre farklı çizim) |
-| `tools-previews.py` | `og/` önizlemelerini üretir: posteri Chrome ile PNG'ye çevirip kartı PIL ile kurar |
-
-**Sayfa betikleri**
-
-| Dosya | İş |
-|---|---|
-| `explore/explore.js` | Deste: sürükleme, uçurma, yeniden dağıtma, saklanan kutusu |
-| `explore/filters.js` | Kendi açılır listelerimiz (native `<select>` değil) |
-| `explore/comment-pools.js` | Beforehours havuzu — tür bazlı, slug tohumuyla seçilir |
-| `explore/event.js` | **Etkinlik sayfasını kuran tek şablon** (§6) |
-| `explore/event-data.js` | Etkinlik sayfasının tür bazlı içerik havuzları |
-| `cards/cards.js` · `card-data.js` · `session-state.js` | Koleksiyon: örnek kartlar, oturuma göre gizleme |
-| `friends/friends.js` · `nachtradar.js` | Handle/arkadaş/sakladıkların; tanıdık yüzler listesi |
-| `login/login.js` · `shortcuts.js` | Giriş formu; ortadaki bloğun oturuma göre değişmesi |
-| `settings/settings.js` | Ayar sayfası: `profile_me()` okur, `profile_setup()` yazar, anahtarları doğrudan `profile_settings`'e PATCH'ler |
-| `feedback/feedback.js` | Geri bildirim: tek iş, yazılanı `feedback` tablosuna eklemek |
-| `register/register.js` | Kayıt: `AH.kayitOl()` hesabı açar, `profile_setup()` handle'ı yazıp kaydı bitirir |
-| `maps/map.js` | Şemaya mekânları yerleştirir |
-| `admin/admin.js` | Yönetim paneli |
+**Security:** the key in `config.js` is not a secret and does not need to
+be one. What protects the data is the row-level rules in
+`backend/sql/02_rls.sql`. The `service_role` key is **never** written into
+this repository.
 
 ---
 
-## 6. Etkinlik sayfası: kontak baskısı
+## 5. File by file
 
-36 gece için 36 sayfa yazmıyoruz. **Düzen tek, içerik veriden geliyor.**
+**The root**
 
-Fikir fotoğrafçılıktan: kontak baskısı bir sonuç değil, envanterdir —
-"elimde bunlar var". Sayfa da tek bir geceyi değil, tekrar eden bir şeyin bu
-ayki karesini anlatır.
+| File | Job |
+|---|---|
+| `data.js` | The data layer. It runs first, then loads the page's scripts |
+| `config.js` | Supabase URL + anon key + the default city |
+| `session.js` | The session: talks straight to Supabase Auth's REST, the token lives in `localStorage` |
+| `menu.js` | The menu as the session leaves it: "welcome \<name\>", an admin link for the admin |
+| `swipes.js` | What was swiped left and right. `localStorage` when signed out, the database when signed in |
+| `friendships.js` | Friend requests; the whole job is in database functions |
+| `beforehours.js` | The event comments (reading is public, writing needs an account) |
+| `app.js` | The landing page's five screens, the poster wall, the scrolling logic |
+| `globe.js` | The turning city globe. No Three.js — its own projection maths, drawn onto a canvas |
+| `venues.js` | The schematic coordinates of the Munich venues |
+| `cards.js` | **The afterhours card generator.** `CARDS.front(night, id)` / `CARDS.back(night, id)` return SVG |
+| `events-data.js` | The 36 events, the fallback used when the backend is off |
+| `tools-event-pages.py` | Writes the shell of the event pages (§6) |
+| `tools-favicon.py` | Generates the favicons (a different drawing per size) |
+| `tools-previews.py` | Generates the `og/` previews: the poster through Chrome to PNG, the card assembled with PIL |
+
+**The page scripts**
+
+| File | Job |
+|---|---|
+| `explore/explore.js` | The deck: dragging, flying off, dealing again, the kept box |
+| `explore/filters.js` | Our own drop-downs (not a native `<select>`) |
+| `explore/comment-pools.js` | The beforehours pool — per kind, chosen with a seed from the slug |
+| `explore/event.js` | **The one template that builds the event page** (§6) |
+| `explore/event-data.js` | The event page's content pools, per kind |
+| `cards/cards.js` · `card-data.js` · `session-state.js` | The collection: sample cards, hidden according to the session |
+| `friends/friends.js` · `nachtradar.js` | Handle/friends/what you kept; the familiar-faces list |
+| `login/login.js` · `shortcuts.js` | The sign-in form; the middle block changing with the session |
+| `settings/settings.js` | The settings page: reads `profile_me()`, writes `profile_setup()`, PATCHes the switches straight onto `profile_settings` |
+| `feedback/feedback.js` | Feedback: one job, adding what was written to the `feedback` table |
+| `register/register.js` | Registration: `AH.signUp()` opens the account, `profile_setup()` writes the handle and finishes it |
+| `maps/map.js` | Places the venues on the schematic |
+| `admin/admin.js` | The admin panel |
+
+---
+
+## 6. The event page: a contact sheet
+
+We do not write 36 pages for 36 nights. **One layout, and the content
+comes from the data.**
+
+The idea comes from photography: a contact sheet is not a result, it is an
+inventory — "here is what I have". The page does not describe a single
+night either, but this month's frame of something that keeps happening.
 
 ```
 ┌──────────┬────────────────────────────────┬──────────────┐
-│ SOL RAY  │ ORTA                           │ SAĞ          │
-│ (sabit)  │                                │              │
-│ poster   │ explore / <ad>                 │ which        │
+│ LEFT RAIL│ MIDDLE                         │ RIGHT        │
+│ (fixed)  │                                │              │
+│ poster   │ explore / <name>               │ which        │
 │          │ edition 05 · your 3rd          │ friends are  │
-│ künye:   │ <BAŞLIK>                       │ going        │
-│ doors    │ tür · gün tarih                │  ↓           │
+│ credits: │ <TITLE>                        │ going        │
+│ doors    │ kind · day date                │  ↓           │
 │ curfew   │                                │ get the      │
-│ capacity │ üç paragraf                    │ ticket       │
+│ capacity │ three paragraphs               │ ticket       │
 │ door     │                                │  ↓           │
-│ payment  │ THE ROLL — beş kare, biri boş  │ beforehours  │
-│ photos   │ [][][][ ][]                    │ · arkadaşlar │
+│ payment  │ THE ROLL — five frames, one    │ beforehours  │
+│ photos   │ empty  [][][][ ][]             │ · friends    │
 │ walk     │                                │              │
-│ room     │ ─ ilk ekran burada biter ─     │              │
-│ from     │ editions you were at (kartlar) │              │
+│ room     │ ─ the first screen ends here ─ │              │
+│ from     │ editions you were at (cards)   │              │
 └──────────┴────────────────────────────────┴──────────────┘
 ```
 
-- **Sol ray** sayfa kaysa da yerinde kalır. Bilerek sıkıcı: serinin kimliği
-  değişkenlerde değil, değişmeyenlerde. Sadece her edisyonda aynı olan
-  şeyler burada — **saatler burada değil, karelerde.**
-- **Kareler** eşit boyda. Rezidans da konuk da aynı kutuda; biri büyük isim
-  değil, hepsi aynı rulodan çıktı. Dördüncü kare boş: "not shot yet /
-  fills at the door". Boş kare de bir bilgidir.
-- **Sağ sütun** önce kimin geleceğini, sonra bileti, sonra arkadaşların o
-  geceye/mekâna/tarihe dair yorumlarını gösterir.
-- **Altta** gittiğin geçmiş edisyonlar — gerçek afterhours kartları olarak.
+- **The left rail** stays put as the page scrolls. Deliberately dull: the
+  identity of a series is not in what changes but in what does not. Only
+  the things that are the same every edition live here — **the times are
+  not here, they are in the frames.**
+- **The frames** are all the same size. The resident and the guest sit in
+  the same box; nobody is the big name, they all came off the same roll.
+  The fourth frame is empty: "not shot yet / fills at the door". An empty
+  frame is information too.
+- **The right column** shows who is going first, then the ticket, then what
+  your friends said about that night, that room or that date.
+- **Below** are the past editions you were at — as real afterhours cards.
 
-### İçerik nereden geliyor
+### Where the content comes from
 
-| Parça | Kaynak |
+| Part | Source |
 |---|---|
-| Başlık, tür, meta, ilk paragraf, poster | Etkinliğin kendi verisi (`POSTERS`) |
-| Künye satırları, roller, isimler, paragraflar, fiyat, bilet yazısı, yorumlar | `explore/event-data.js` — **tür bazlı havuzlar** |
-| Hangi parçanın hangi geceye düşeceği | **slug'dan üretilen mulberry32 tohumu** |
+| Title, kind, meta, first paragraph, poster | The event's own data (`POSTERS`) |
+| The credit lines, roles, names, paragraphs, price, ticket wording, comments | `explore/event-data.js` — **pools per kind** |
+| Which part lands on which night | **a mulberry32 seed made from the slug** |
 
-Yani bir etkinlik her açılışta aynı şeyi gösterir, iki etkinlik birbirine
-benzemez. (`explore/comment-pools.js` de aynı deseni kullanıyor.)
+So an event shows the same thing every time it is opened, and no two events
+look alike. (`explore/comment-pools.js` uses the same pattern.)
 
-Tür başına değişenler — konzert `get the ticket`, rave `get on the list`,
-hausparty `ask for the address`, meetup `save a seat`; roller `dj set /
-support / headline` yerine `kitchen / living room / balcony` olur; künye
-`card only` yerine `bring something` der.
+What changes per kind — konzert says `get the ticket`, rave `get on the
+list`, hausparty `ask for the address`, meetup `save a seat`; the roles
+`dj set / support / headline` become `kitchen / living room / balcony`; the
+credits say `bring something` instead of `card only`.
 
-### Kareler neden posterden kesiliyor
+### Why the frames are cut from the poster
 
-Gerçek fotoğraf yok. Her kare, etkinliğin **kendi posterinin başka bir
-şeridi** (`--kay: 0 / 42 / 83 / 125`, poster 2:3, kare 3:2). Her gecenin
-posteri farklı olduğu için her rulo da farklı. Siyah-beyaza çekiliyor.
-Gerçek fotoğraflar geldiğinde tek yapılacak `event.js`'te karenin
-kaynağını değiştirmek.
+There are no real photographs. Every frame is **another band of the event's
+own poster** (`--shift: 0 / 42 / 83 / 125`, poster 2:3, frame 3:2). Because
+every night's poster is different, so is every roll. It is pulled to black
+and white. When real photographs arrive, the only thing to do is change
+where the frame gets its source in `event.js`.
 
-### Yeni etkinlik eklemek
+### Adding a new event
 
-1. `events-data.js`'e satırı yaz (ya da veritabanına ekle) — `slug`, `tur`,
-   `baslik`, `meta`, `metin`, poster numarası.
-2. Posteri `posters/NN.svg` olarak koy (2:3, `xmlns` şart, fontlar SVG'nin
-   kendi `<style>@import`'unda).
-3. Kabuğu üret:
+1. Write the line into `events-data.js` (or add it to the database) —
+   `slug`, `kind`, `title`, `meta`, `body`, the poster number.
+2. Put the poster at `posters/NN.svg` (2:3, `xmlns` is required, the fonts
+   go in the SVG's own `<style>@import`).
+3. Write the shell:
 
 ```bash
-python3 tools-event-pages.py 102
+python3 tools-event-pages.py 132
 ```
 
-Argüman sürüm numarası (§9). Klasörü ve `index.html`'i açar, düzen
-kendiliğinden gelir.
+The argument is the version number (§9). It creates the folder and the
+`index.html`, and the layout follows by itself.
 
 ---
 
-## 7. Afterhours kartı
+## 7. The afterhours card
 
-`cards.js` gecenin verisinden SVG kart üretir. Kullanan üç yer:
-iniş sayfasının şeridi, `cards/`, etkinlik sayfasının geçmiş edisyonları.
+`cards.js` builds an SVG card out of a night's data. Three places use it:
+the strip on the landing page, `cards/`, and the past editions on an event
+page.
 
 ```js
-KARTLAR.on(gece, "benzersiz-id")    // ön yüz
-KARTLAR.arka(gece, "benzersiz-id")  // arka yüz: gecenin zaman çizelgesi
+CARDS.front(night, "unique-id")   // the front
+CARDS.back(night, "unique-id")    // the back: that night's timeline
 ```
 
-`gece` nesnesi: `sehir t ty v d metal motif in out dur crew more aud msg
-who froze no at1 at2 q1 q2`. Örnek için `cards/card-data.js`.
+The `night` object: `city t ty v d metal motif in out dur crew more aud
+msg who froze no at1 at2 q1 q2`. See `cards/card-data.js` for an example.
 
-- **Metaller:** steel, gold, chrome, copper, gunmetal, brass, rose,
-  titanium, nickel, anthracite
-- **Motifler:** rays, oval, diagonal, orbit, grid, moon, moire, bands, iso,
+- **Metals:** steel, gold, chrome, copper, gunmetal, brass, rose, titanium,
+  nickel, anthracite
+- **Motifs:** rays, oval, diagonal, orbit, grid, moon, moire, bands, iso,
   descend
 
 ---
 
-## 8. Backend
+## 8. The backend
 
-Postgres + Supabase. Tablolar: `cities`, `event_types`, `venues`, `events`,
-`profiles`, `profile_settings`, `swipes`, `comments`, `friendships`, `feedback`.
+Postgres + Supabase. The tables: `cities`, `event_types`, `venues`,
+`events`, `profiles`, `profile_settings`, `swipes`, `comments`,
+`friendships`, `feedback`.
 
-**Profil ikiye ayrılmış** — herkese açık kart (`profiles`: handle, görünen
-ad, bir satır, şehir, katılma, son görülme) ile yalnız sahibinin okuduğu
-ayarlar (`profile_settings`: sakladıklarını kim görsün, adınla bulunabilir
-misin, e-posta, dil). Ayırmasaydık `profiles`'ın okuma kuralı ayarları da
-açardı.
+**The profile is split in two** — the public card (`profiles`: handle,
+display name, one line, city, joined, last seen) and the settings only the
+owner reads (`profile_settings`: who may see what you kept, whether you are
+findable by name, email, language). Without the split, the read rule on
+`profiles` would have opened the settings as well.
 
-**Üye listesi gezilemiyor.** Profil tablosunu doğrudan yalnızca kendine,
-onaylı arkadaşlarına ve aranızda bekleyen isteği olanlara açık. Yabancının
-gördüğü her şey tek tek seçilmiş alanları veren fonksiyonlardan geçiyor:
-adını bilen kartını görür (ayardan kapatılabilir), ama sakladıklarının
-sayısını göremez ve son görülme dışarı hiçbir zaman saatiyle çıkmaz —
-yalnızca gün olarak, yalnızca arkadaşa.
+**The member list cannot be browsed.** The profile table is open directly
+only to yourself, your confirmed friends, and anyone with a request pending
+between you. Everything a stranger sees goes through functions that hand
+back individually chosen fields: whoever knows your handle sees your card
+(and that can be switched off in the settings), but cannot see how many
+cards you kept, and last seen never leaves with its clock time — only as a
+day, and only to a friend.
 
-Kayıt akışı: hesap açılınca tetikleyici profili **ve** ayar satırını kurar,
-ama kayıt **handle seçilene kadar bitmiş sayılmaz** (`onboarded_at`).
-Ön yüzün çağırdığı fonksiyonlar: `handle_status()`, `profile_setup()`,
-`profile_me()`, `profile_card()`, `seen()`, `delete_account()`.
+The signup flow: opening an account fires a trigger that creates the
+profile **and** the settings row, but registration **does not count as
+finished until a handle is chosen** (`onboarded_at`). The functions the
+front end calls: `handle_status()`, `profile_setup()`, `profile_me()`,
+`profile_card()`, `seen()`, `delete_account()`.
 
-**Hesabı silmek gerçekten siliyor** — hesap, profil, ayarlar, atışlar ve
-arkadaşlıklar zincirle gidiyor. Tek istisna yorumlar: metin kalıyor, isim
-düşüyor (`someone`). Sebebi iki tane — bir konuyu silmek ona gelen
-başkalarının cevaplarını da götürürdü, ve `comments` tablosundaki kısıt
-yazarsız satır kabul etmiyor. Ayar sayfası bunu silmeden önce yazıyor.
+**Deleting an account really deletes it** — the account, the profile, the
+settings, the swipes and the friendships all go with it. Comments are the
+one exception: the text stays and the name falls away (`someone`). Two
+reasons — deleting a topic would take other people's replies with it, and
+the constraint on the `comments` table refuses a row with no author. The
+settings page says so before it deletes.
 
-Kurulum, testler (171 kontrol) ve yerel Supabase taklidi
-(`tools/local-server.mjs`, PGlite üstünde PostgREST + GoTrue) için →
+For the setup, the tests (171 checks) and the local imitation of Supabase
+(`tools/local-server.mjs`, PostgREST + GoTrue on top of PGlite) →
 **[backend/README.md](backend/README.md)**
 
 ---
 
-## 9. Yayın ve önbellek
+## 9. Publishing and caching
 
-GitHub Pages, `main` dalından. `.nojekyll` var (alt çizgili yollar için).
+GitHub Pages, from `main`. `.nojekyll` is there (for the paths with an
+underscore).
 
-**Paylaşım ve arama.** Her sayfada `description` + `og:*` etiketleri var;
-etkinlik sayfalarında başlık, açıklama ve görsel gecenin kendisinden geliyor.
-`robots.txt` ve `sitemap.xml` kökte (`admin/` hariç tutuldu). Önizleme
-görselleri `python3 tools-previews.py` ile yeniden üretiliyor.
+**Sharing and search.** Every page carries `description` + `og:*` tags; on
+an event page the title, the description and the image come from the night
+itself. `robots.txt` and `sitemap.xml` are at the root (`admin/` is
+excluded). The preview images are regenerated with
+`python3 tools-previews.py`.
 
-**Sürüm numarası kuralı:** bütün HTML'lerdeki `?v=NN`. CSS ya da bir betik
-değiştiğinde hepsi birden artırılır, yoksa tarayıcı eski dosyayı kullanır:
+**The version-number rule:** the `?v=NN` on every asset in every HTML file.
+When CSS or a script changes, all of them go up together, otherwise the
+browser keeps using the old file:
 
 ```bash
-sed -i '' -E 's|\?v=101|?v=102|g' $(find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*")
+find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=131/?v=132/g'
 ```
 
-Şu anki sürüm: **115**.
+The current version: **131**.
 
 ---
 
-## 10. Sıfırdan adım adım
+## 10. From nothing, step by step
 
-Sıra önemli: her adım bir öncekinin açtığı yolu kapatıyor.
+The order matters: each step closes the road the one before it opened.
 
-**Bitmiş olanlar**
+**Done**
 
-- [x] İniş sayfası, beş ekran
-- [x] Deste: sürükleme, filtreler, üç kaynak, saklananlar
-- [x] Beforehours yorumları (okuma + yazma)
-- [x] Oturum, handle, arkadaşlık, sakladıkların
-- [x] Backend: şema, RLS, seed, testler, yerel taklit
-- [x] Yönetim paneli
-- [x] Dipnot + hukuk sayfaları (Muster)
-- [x] Hesap sayfası kısayolları
-- [x] **Etkinlik sayfası sistemi** — 36 gece, tek düzen
-- [x] **Profil yapısı** — kart + ayarlar, kayıt adımı, gizlilik kuralları, 57 test
-- [x] **Ayar sayfası** — `settings/`, arkasıyla birlikte çalışıyor
-- [x] **Geri bildirim** — `feedback/` + `feedback` tablosu, 16 test
-- [x] **Kayıt** — `register/`, iki adım, handle seçilmeden bitmiyor
-- [x] **Paylaşım ve arama** — meta/og etiketleri, gece başına önizleme görseli, robots, sitemap
-- [x] **404, `maps/` menüde, erişilebilirlik turu, insan diline çevrilmiş hatalar**
-- [x] **Geri bildirim gelen kutusu** — yönetim panelinde
+- [x] The landing page, five screens
+- [x] The deck: dragging, filters, three sources, the kept ones
+- [x] The beforehours comments (reading + writing)
+- [x] Session, handle, friendship, what you kept
+- [x] Backend: schema, RLS, seed, tests, the local imitation
+- [x] The admin panel
+- [x] The footer + the legal pages (placeholder)
+- [x] The account page shortcuts
+- [x] **The event page system** — 36 nights, one layout
+- [x] **The profile structure** — card + settings, the signup step, the privacy rules, 57 tests
+- [x] **The settings page** — `settings/`, working together with its backend
+- [x] **Feedback** — `feedback/` + the `feedback` table, 16 tests
+- [x] **Registration** — `register/`, two steps, unfinished until a handle is chosen
+- [x] **Sharing and search** — meta/og tags, a preview image per night, robots, sitemap
+- [x] **404, `maps/` in the menu, an accessibility pass, errors in human language**
+- [x] **The feedback inbox** — in the admin panel
+- [x] **The code translated into English** — classes, ids, filenames, the `AH` API, the data fields, the comments, the docs (§12)
 
-**Sırada (önerilen sıra)**
+**Next (a suggested order)**
 
-1. **Etkinlik verisinin genişlemesi.** Bugün beş alan var
-   (`slug tur baslik meta metin`). Etkinlik sayfasındaki her şey — kadro,
-   saatler, kapasite, fiyat, kurallar — şu an havuzdan uyduruluyor. Gerçek
-   olması için `events` tablosuna alan eklemek gerekiyor. Bu yapıldığında
-   `event-data.js` havuzları yalnızca **yedek** olur.
-2. **Card collection.** Konseptin kalbi ama en pahalısı: geçmiş gece verisi,
-   "o gecenin sesi/konuşmaları" ne demek olduğuna karar vermek, kart üretimi.
-3. **Hukuk sayfalarının doldurulması** — köşeli parantezler + gerçek Stand
-   tarihi.
-4. **Gerçek fotoğraflar** — kareler poster şeritleri yerine gerçek kareler.
-5. **Help sayfasındaki üç sayı gerçek olsun** — ikisi bugün de hesaplanabilir
-   (`swipes`, `friendships`); üçüncüsü kart koleksiyonu kurulmadan mümkün değil.
-
----
-
-## 11. Bilinen tuzaklar
-
-Hepsi bir kere canımızı yaktı:
-
-- **`login/login.js` yarıda hata veriyor.** `handle-form` / `arkadas-form`
-  arıyor, o ögeler friends sayfasında. Satır 173'te `TypeError`, sonrası
-  hiç çalışmıyor. Giriş formu daha önce bağlandığı için giriş çalışıyor.
-  *Bu yüzden `login/shortcuts.js` ayrı dosya.*
-- **`<object>` içindeki SVG'ye `filter` işlemez** (ayrı belge). Kareleri
-  gri yapan şey `mix-blend-mode: saturation` katmanı.
-- **`<img>` içindeki SVG webfont yükleyemez.** Posterler bu yüzden
-  `<object>` ile geliyor; `<object>` de `pointer-events: none` ister.
-- **`[hidden]` `display`'e yenilir.** `style.css`'te
-  `[hidden] { display: none !important }` var, sebebi bu.
-- **`lang="tr"` + `text-transform: uppercase`** Türkçe i→İ üretir
-  ("CLUB NİGHT"). Sayfalar `lang="en"`, hukuk sayfaları `lang="de"`.
-- **`overflow-x: clip` tek başına `body`'de kesmez** — `html:has(body.explore)`
-  da gerekiyor.
-- **Flex/grid ögesine `min-width: 0`** verilmezse uzun paragraf sayfayı
-  yatayda taşırır.
-- **Google Fonts** IP'yi Google'a gönderiyor; datenschutz'ta yazılı. Yerel
-  servis edilirse o madde düşer.
-- **`<main>`'e ikinci bir `id` eklemek sayfayı sessizce kırar.** Atlama
-  bağlantısı için `id="icerik"` eklerken kendi `id`'si olan iki `<main>`
-  vardı; tarayıcı ilkini tutuyor, `getElementById` eskisini bulamıyor ve
-  yönetim paneli açılmıyordu. Toplu düzenlemede önce mevcut özniteliğe bak.
-- **Takvime bağlı test kendiliğinden bozulur.** `jobs.test.mjs` tohumdaki
-  gerçek tarihlerle çalışıyordu; 29.08.26 geçince ölçtüğü sayı kaydı.
-  Test kuralı ölçmeli, günü değil: kurulum bloğu artık bütün etkinlikleri
-  önce geleceğe itiyor.
-- **Önizleme paneli** kaydırılmış içeriği yeniden boyamıyor; ekran görüntüsü
-  için taze yükleme gerekiyor. Ölçüm için panel yerine
-  `getBoundingClientRect` güvenilir.
+1. **Widening the event data.** Today there are five fields
+   (`slug kind title meta body`). Everything on the event page — the
+   line-up, the times, the capacity, the price, the rules — is currently
+   invented from a pool. To make it real, fields have to be added to the
+   `events` table. Once that is done the `event-data.js` pools become only
+   a **fallback**.
+2. **The card collection.** The heart of the concept and the most expensive
+   part: past-night data, deciding what "that night's sound and talk" even
+   means, and generating the cards.
+3. **Filling in the legal pages** — the square brackets and a real Stand
+   date.
+4. **Real photographs** — real frames instead of bands of the poster.
+5. **Making the three numbers on the help page real** — two of them can be
+   worked out today (`swipes`, `friendships`); the third is impossible
+   before the card collection exists.
 
 ---
 
-## 12. Sözlük
+## 11. Known traps
 
-**Kod İngilizceye çevriliyor (2026-08-30).** Sınıf adları, id'ler ve dosya
-adları çevrildi; değişken adları ve yorumlar sırada. Bu tablo eski adı
-arayanlar için duruyor:
+Every one of these cost us something:
 
-| Kod | Anlam |
+- **`filter` does not work on an SVG inside `<object>`** (it is a separate
+  document). What makes the frames grey is a `mix-blend-mode: saturation`
+  layer.
+- **An SVG inside `<img>` cannot load a webfont.** That is why the posters
+  come through `<object>`; and `<object>` in turn wants
+  `pointer-events: none`.
+- **`[hidden]` loses to `display`.** That is why `style.css` has
+  `[hidden] { display: none !important }`.
+- **`lang="tr"` + `text-transform: uppercase`** turns i into İ in Turkish
+  ("CLUB NİGHT"). The pages are `lang="en"`, the legal pages `lang="de"`.
+- **`overflow-x: clip` on `body` alone does not clip** — it also needs
+  `html:has(body.explore)`.
+- **A flex/grid item without `min-width: 0`** lets a long paragraph push
+  the page sideways.
+- **Google Fonts** sends the IP to Google; that is written into
+  datenschutz. Serving them locally would drop that clause.
+- **Adding a second `id` to a `<main>` breaks the page silently.** While
+  adding `id="content"` for the skip link, two `<main>` elements already
+  had their own `id`; the browser keeps the first, `getElementById` no
+  longer finds the old one, and the admin panel would not open. In a bulk
+  edit, look at the existing attribute first.
+- **A test tied to the calendar breaks by itself.** `jobs.test.mjs` ran on
+  the real dates in the seed; once 29.08.26 went past, the number it
+  measured shifted. A test should measure the rule, not the day: the setup
+  block now pushes every event into the future first.
+- **The preview panel** does not repaint scrolled content; a screenshot
+  needs a fresh load. For measuring, `getBoundingClientRect` is more
+  reliable than the panel.
+- **A bulk rename quietly breaks the tools nobody runs daily.** The English
+  pass left `world-sql.mjs` reading a file that no longer existed,
+  `build-seed.mjs` reading field names that had moved, `backup.mjs` writing
+  into a folder that did not exist, two `<label for=…>` pointing at ids
+  that had been renamed, and ten `"hata"` status classes the stylesheet no
+  longer knew. None of it showed in the browser. After a rename, run every
+  tool once and check every cross-file reference.
+- **An apostrophe in a SQL comment breaks the Supabase editor.** Its parser
+  counts quotes and counts the ones inside comments too, so a single `'`
+  turns the rest of the file into code. `seed.test.mjs` enforces this.
+- **`perl -pi -e` with `|` as the delimiter and a `?v=` pattern** is a way
+  to shred a file: the escaping is nested three deep (shell, perl, regex).
+  For version bumps, use the command above and read the diff afterwards.
+
+---
+
+## 12. The old names
+
+**The code was translated into English on 30.08.2026.** Class names, ids,
+filenames, the `AH` API, the data fields, the comments and the
+documentation are all English now. This table is here for anyone reading
+older commits:
+
+| Old | Now |
 |---|---|
-| `deste` / `atis` / `ucur` | deste / sağa-sola atış / kartı uçurmak |
+| `ayar.js` / `oturum.js` / `veri.js` / `atislar.js` | `config.js` / `session.js` / `data.js` / `swipes.js` |
+| `data-yedek` / `data-sonra` | `data-fallback` / `data-after` |
+| `AH.durum` / `AH.istek` / `AH.girisliMi` | `AH.mode` / `AH.request` / `AH.signedIn` |
+| `KARTLAR.on` / `KARTLAR.arka` | `CARDS.front` / `CARDS.back` |
+| `deste` / `atis` / `ucur` | deck / swipe / fly the card away |
 | `kirinti` / `dipnot` / `kunye` | breadcrumb / footer / colophon |
 | `ray` / `kare` / `poz` | rail / frame / exposure |
 | `oturum` / `girisli` / `jeton` | session / signed in / token |
 | `serit` / `sehir` / `mekan` | strip / city / venue |
 | `yorum` / `konu` / `cevap` | comment / thread / reply |
 | `tohum` / `havuz` / `karistir` | seed / pool / shuffle |
+| `sira` (SQL column) | `sort_order` |
+| `yon` with `giden` / `gelen` | `direction` with `outgoing` / `incoming` |
+| `hedef` (SQL variable) | `target` |
+| `profiles_ad_uzunluk` / `profiles_bio_uzunluk` | `profiles_name_length` / `profiles_bio_length` |
+| `feedback_yeni_idx` | `feedback_recent_idx` |
+| `"posters yonetici yazar"` (policy) | `"posters admin writes"` |
+| `afterhours-gecmisi-dusur` (cron job) | `afterhours-drop-past` |
+| `ses/` | `sound/` |
+| `backend/yedek/` | `backend/backup/` |

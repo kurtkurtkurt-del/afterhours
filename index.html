@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=Archivo:wght@400;500;600;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=130" />
+  <link rel="stylesheet" href="style.css?v=131" />
 </head>
 <body class="home" data-ekran="0">
 
@@ -40,16 +40,16 @@
     </nav>
   </header>
 
-  <!-- Menunun altinda: dun geceden kisa kayitlar -->
+  <!-- Under the menu: short recordings from last night -->
   <div class="sound" id="sound">
-    <div class="sound-row" data-kaynak="ses/yesterday-munich.mp3">
+    <div class="sound-row" data-source="sound/yesterday-munich.mp3">
       <button class="sound-button" type="button">
         <span class="sound-label">yesterday, munich:</span>
         <span class="sound-icon"></span>
       </button>
       <div class="sound-line"><span></span></div>
     </div>
-    <div class="sound-row" data-kaynak="ses/yesterday-istanbul.mp3">
+    <div class="sound-row" data-source="sound/yesterday-istanbul.mp3">
       <button class="sound-button" type="button">
         <span class="sound-label">yesterday, istanbul:</span>
         <span class="sound-icon"></span>
@@ -63,14 +63,14 @@
 
     <section class="screen">
   <main id="content" tabindex="-1" class="showcase">
-    <div class="posters" id="posters"><!-- posterler app.js ile olusturuluyor --></div>
+    <div class="posters" id="posters"><!-- the posters are built by app.js --></div>
     <div class="side" id="side">
       <div class="intro">
         <p class="intro-1">Discover what's happening tonight in your city: raves, club nights, concerts, house parties.</p>
         <p class="intro-2">Swipe to find them, plan with friends, keep the ones you went to.</p>
         <a class="explore-btn" href="explore/index.html">explore</a>
 
-        <!-- Asagida dort ekran daha var; kimse kendiliginden bilmiyor -->
+        <!-- Four more screens below; nobody finds out on their own -->
         <p class="down" aria-hidden="true">
           <span class="down-text">keep scrolling</span>
           <span class="down-arrow"></span>
@@ -90,7 +90,7 @@
     <!-- Ikinci ekran -->
     <section class="screen screen2">
       <div class="deck2" id="deck2">
-        <!-- Iki kart da kaydirilinca acilir -->
+        <!-- It opens once both cards have been swiped -->
         <div class="phone" id="phone">
           <div class="phone-body">
             <div class="phone-top">
@@ -128,24 +128,24 @@
           </div>
         </div>
 
-        <!-- Telefon kaybolduktan sonra gelir -->
+        <!-- Arrives after the phone has faded -->
         <p class="last-line" id="last-line">Let your friends know you want to go.</p>
 
         <p class="swipe-hint" id="swipe-hint">swipe right &#8594;</p>
 
-        <!-- kartlar app.js ile olusturuluyor -->
+        <!-- the cards are built by app.js -->
       </div>
       <h2 class="screen2-title">Swipe through every event in your city.</h2>
     </section>
 
     <!-- Ucuncu ekran: toplanan afterhours kartlari -->
     <section class="screen screen3">
-      <div class="s3-strip"><div class="s3-rail" id="s3-rail"><!-- kartlar app.js ile --></div></div>
+      <div class="s3-strip"><div class="s3-rail" id="s3-rail"><!-- the cards come from app.js --></div></div>
       <p class="s3-left">make the night unforgettable</p>
       <p class="s3-right">collect your afterhours card</p>
     </section>
 
-    <!-- Dorduncu ekran: donen sehir maketi -->
+    <!-- The fourth screen: the turning city model -->
     <section class="screen screen4">
       <canvas class="s4-stage" id="s4-stage"></canvas>
 
@@ -210,14 +210,14 @@
     <img src="foto.jpg" alt="" />
   </div>
 
-  <script src="config.js?v=130"></script>
-  <script src="session.js?v=130"></script>
-  <script src="menu.js?v=130"></script>
-  <script src="venues.js?v=130"></script>
-  <script src="cards.js?v=130"></script>
-  <script src="data.js?v=130"
-          data-fallback="events-data.js?v=130"
-          data-after="globe.js?v=130, app.js?v=130"></script>
+  <script src="config.js?v=131"></script>
+  <script src="session.js?v=131"></script>
+  <script src="menu.js?v=131"></script>
+  <script src="venues.js?v=131"></script>
+  <script src="cards.js?v=131"></script>
+  <script src="data.js?v=131"
+          data-fallback="events-data.js?v=131"
+          data-after="globe.js?v=131, app.js?v=131"></script>
 
 </body>
 </html>

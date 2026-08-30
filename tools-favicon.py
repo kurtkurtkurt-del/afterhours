@@ -12,7 +12,8 @@ def line_img(text, weight, px):
 
 def make(S, w_bold=700, w_light=300, pad=0.07, gap=0.05,
          single=False, radius=0.0, soft=0.0):
-    """radius: kose yuvarlakligi (kenar orani). soft: kenar yumusatma (son piksel orani)."""
+    """radius: how round the corners are (as a share of the edge).
+       soft: how much the edge is softened (as a share of the last pixel)."""
     B = S * SS
     padpx, gappx = pad * B, gap * B
     avail = B - 2*padpx

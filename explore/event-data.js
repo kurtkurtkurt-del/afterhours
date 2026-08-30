@@ -1,12 +1,12 @@
 /* afterhours — the content of the event page.
 
-   Her night icin ayri sayfa yazmiyoruz: sayfanin duzeni tek, icerigi
-   buradan geliyor. Havuzlar etkinlik TURUNE gore ayrilmis; hangi
-   parcanin hangi geceye dustugunu slug'dan uretilen tohum seciyor —
-   yani ayni etkinlik her acilista ayni seyi gosteriyor, ama iki
-   etkinlik birbirine benzemiyor. (explore/comment-pools.js de boyle.)
+   We do not write a page per night: the layout is one, and the content
+   comes from here. The pools are split by the KIND of event; which part
+   lands on which night is chosen by a seed made from the slug — so the
+   same event shows the same thing every time it is opened, while no two
+   events look alike. (explore/comment-pools.js works the same way.)
 
-   Elle yazilmis bir night varsa OZEL'e konuyor ve havuzu eziyor.  */
+   A hand-written night goes into SPECIAL and overrides the pool.  */
 
 window.EVENT_POOLS = (function () {
 

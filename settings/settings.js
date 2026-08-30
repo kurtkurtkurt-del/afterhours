@@ -1,8 +1,9 @@
 /* afterhours — the settings page.
    Butun is veritabanindaki fonksiyonlarda: profile profile_me()’den
-   okunuyor, profile alanlari profile_setup() ile tek istekte yaziliyor,
-   ucu de anahtar olan ayarlar dogrudan profile_settings’e yaziliyor
-   (kural zaten yalniz kendi satirina izin veriyor).
+   is read, the profile fields are written in one request with
+   profile_setup(), and the three settings that are switches are written
+   straight onto profile_settings (the rule already allows nothing but
+   your own row).
 
    Girissizken ya da backend kapaliyken page durust: form hic
    gorunmuyor, sebebi yaziyor.  */
@@ -57,13 +58,13 @@
       body: JSON.stringify(body),
     })
       .then(() => say(status, "saved.", "ok"))
-      .catch((h) => say(status, AH.errorText(h, "couldn't save that."), "hata"));
+      .catch((h) => say(status, AH.errorText(h, "couldn't save that."), "error"));
   }
 
   /* --- cities ---
-     Elli dorde cikti; duz bir list okunmuyordu. Ulkeye gore gruplayip
-     kaydirilan bir kutuya aldik — explore’daki ulke→city sirasinin
-     tek kutuya sigmis hali. Yalnizca gecesi olan cities geliyor. */
+     It grew to fifty-four; a flat list would not read. We grouped them by
+     country inside a scrolling box — the country→city order from explore,
+     folded into one box. Only cities that have a night appear. */
 
   function buildCities(chosen) {
     return call("city_counts")
@@ -150,7 +151,7 @@
         say(status, YANIT[s] || String(s), s === "ok" ? "ok" : "error");
         if (s === "ok") load();
       })
-      .catch((h) => say(status, AH.errorText(h, "couldn't save that."), "hata"));
+      .catch((h) => say(status, AH.errorText(h, "couldn't save that."), "error"));
   };
 
   /* --- signing out --- */
@@ -180,7 +181,7 @@
         AH.dropSession();
         location.href = "../index.html";
       })
-      .catch((h) => say(deleteStatus, AH.errorText(h, "couldn't delete the account."), "hata"));
+      .catch((h) => say(deleteStatus, AH.errorText(h, "couldn't delete the account."), "error"));
   };
 
   /* --- start --- */
@@ -227,7 +228,7 @@
     outside.hidden = signedIn;
     inside.hidden = !signedIn;
     if (signedIn) {
-      load().catch((h) => say(status, AH.errorText(h, "couldn't load your profile."), "hata"));
+      load().catch((h) => say(status, AH.errorText(h, "couldn't load your profile."), "error"));
     }
   }
 
