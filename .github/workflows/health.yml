@@ -1,0 +1,33 @@
+# afterhours — ask the live site every morning whether it is still there.
+#
+# It needs no secret: the key in config.js is the public one, protected by
+# the row-level rules and not by being hidden. The check reads it the same
+# way the site does.
+#
+# What makes this worth having is not uptime — GitHub Pages does not fall
+# over. It is the quieter kind of wrong: a database whose content vanished,
+# a project that is a SQL file behind, past events still on the deck.
+# health.mjs exits non-zero for those, and a failed run sends the email.
+
+name: health
+
+on:
+  schedule:
+    # 06:20 UTC daily. Late enough that the 05:30 job which drops past
+    # events has already run, so what it reports is the settled state.
+    - cron: "20 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Ask the database how it is
+        working-directory: backend
+        run: node tools/health.mjs
