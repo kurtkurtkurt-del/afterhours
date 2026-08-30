@@ -1,17 +1,17 @@
 /* afterhours — etkinlik sayfasinin icerigi.
 
-   Her gece icin ayri sayfa yazmiyoruz: sayfanin duzeni tek, icerigi
+   Her night icin ayri sayfa yazmiyoruz: sayfanin duzeni tek, icerigi
    buradan geliyor. Havuzlar etkinlik TURUNE gore ayrilmis; hangi
    parcanin hangi geceye dustugunu slug'dan uretilen tohum seciyor —
    yani ayni etkinlik her acilista ayni seyi gosteriyor, ama iki
    etkinlik birbirine benzemiyor. (explore/comment-pools.js de boyle.)
 
-   Elle yazilmis bir gece varsa OZEL'e konuyor ve havuzu eziyor.  */
+   Elle yazilmis bir night varsa OZEL'e konuyor ve havuzu eziyor.  */
 
 window.EVENT_POOLS = (function () {
 
   /* --- kunye: her edisyonda ayni olan seyler --- */
-  const KUNYE = {
+  const FACTS = {
     "Konzert": [
       ["curfew", "23:00"], ["capacity", "11 000"], ["door", "no re-entry"],
       ["payment", "card only"], ["photos", "allowed"], ["walk", "9 min"],
@@ -39,7 +39,7 @@ window.EVENT_POOLS = (function () {
   };
 
   /* --- karelerdeki roller --- */
-  const ROL = {
+  const ROLES = {
     "Konzert":    ["dj set", "support", "headline", "special guest", "after"],
     "Festival":   ["opening", "second stage", "headline", "special guest", "closing"],
     "Rave":       ["opening", "resident", "b2b", "special guest", "closing"],
@@ -49,7 +49,7 @@ window.EVENT_POOLS = (function () {
   };
 
   /* --- kareye dusecek isimler --- */
-  const AD = {
+  const NAMES = {
     "Konzert": ["Keys Open Doors", "Lou Capri", "Neon Ferry", "Vera Sound", "Club Set", "Hall Light", "The Long Way"],
     "Festival": ["Morgenrot", "Feldweg", "Zwei Uhr", "Sonnenbank", "Waldbühne DJs", "Letzte Bahn", "Platzregen"],
     "Rave": ["Kessel", "Nachtform", "Untertag", "Halle 4", "Bitterfeld", "Stahlbad", "Nordwand"],
@@ -63,7 +63,7 @@ window.EVENT_POOLS = (function () {
      Ilk paragraf etkinligin kendi metni; buradakiler onun USTUNE bir sey
      koymali, ayni seyi baska kelimelerle soylememeli. Yine de carpisma
      olursa event.js ortak kelimeye bakip eliyor. */
-  const METIN = {
+  const BODY = {
     "Konzert": [
       "The floor fills politely for the first half hour — everyone still holding a drink with both hands, still working out where their friends ended up — and then the lights drop and the room stops behaving like a room.",
       "Three or four times in the set the whole thing falls quiet enough that you can hear the ceiling. Those are the parts people describe badly afterwards and remember for years.",
@@ -103,7 +103,7 @@ window.EVENT_POOLS = (function () {
   };
 
   /* --- bilet dugmesi: her tur ayni seyi satmiyor --- */
-  const BILET = {
+  const TICKET = {
     "Konzert":    ["get the ticket", "goes to the venue's own shop"],
     "Festival":   ["get the ticket", "day and weekend passes"],
     "Rave":       ["get on the list", "door price is cash only"],
@@ -113,18 +113,18 @@ window.EVENT_POOLS = (function () {
   };
 
   /* --- arkadaslar --- */
-  const ARKADASLAR = [
+  const FRIEND_NAMES = [
     "Lina", "Emre", "Mira", "Jonas", "Selin", "Deniz", "Kaya", "Nora",
     "Bosse", "Ada", "Tuna", "Ilay", "Marek", "Juli", "Ege", "Rana",
   ];
 
-  const DURUM = ["going", "going", "going", "maybe", "can't"];
+  const STATES = ["going", "going", "going", "maybe", "can't"];
 
 
   /* --- arkadaslarin bu geceye birakdiklari (beforehours) ---
      {mekan}, {ad} ve {gun} yerlerine etkinligin kendi bilgisi giriyor,
      boylece yorum gercekten O geceden bahsediyor. */
-  const YORUM = {
+  const COMMENTS = {
     "Konzert": [
       { m: "Third time for me. They play the record front to back, so don't turn up only for the singles." },
       { m: "{mekan} is flat until about halfway. If you're short, the side seats are the honest choice." },
@@ -181,7 +181,7 @@ window.EVENT_POOLS = (function () {
     ],
   };
 
-  const ZAMAN = ["3 days ago", "2 days ago", "yesterday", "9 h ago", "6 h ago", "3 h ago"];
+  const WHEN = ["3 days ago", "2 days ago", "yesterday", "9 h ago", "6 h ago", "3 h ago"];
 
-  return { KUNYE, ROL, AD, METIN, BILET, ARKADASLAR, DURUM, YORUM, ZAMAN };
+  return { FACTS, ROLES, NAMES, BODY, TICKET, FRIEND_NAMES, STATES, COMMENTS, WHEN };
 })();

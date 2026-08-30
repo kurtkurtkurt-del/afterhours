@@ -1,12 +1,12 @@
 /* afterhours — event sayfasi (kontak baskisi).
 
-   Otuz alti gece icin otuz alti sayfa yazmiyoruz: duzen tek, icerik
-   etkinligin kendi verisinden (data.js / events-data.js) ve tur
-   havuzlarindan (event-data.js) geliyor. Hangi parcanin hangi
-   geceye dustugunu slug'dan uretilen seed seciyor, yani bir event
-   her acilista ayni seyi gosteriyor ama iki event ayni gorunmuyor.
+   Otuz alti night icin otuz alti sayfa yazmiyoruz: duzen tek, icerik
+   and the content comes from the event's own record (data.js / events-data.js)
+   and from the pools kept per type (event-data.js). Which piece lands on which
+   night is picked with a seed made from the slug, so an event shows the same
+   thing on every visit while no two events look alike.
 
-   Yeni bir gece eklemek: events-data.js'e (ya da veritabanina) bir
+   Yeni bir night eklemek: events-data.js'e (ya da veritabanina) bir
    row, explore/<slug>/index.html'e de bos kabuk. Gerisi buradan. */
 
 (function () {
@@ -15,14 +15,14 @@
 
   const V = window.EVENT_POOLS || {};
 
-  /* --- seed: ayni slug hep ayni geceyi kurar --- */
+  /* --- the seed: the same slug always builds the same night --- */
   function tohumla(text) {
     let h = 2166136261;
     for (let i = 0; i < text.length; i++) {
       h ^= text.charCodeAt(i);
       h = Math.imul(h, 16777619);
     }
-    /* mulberry32 — globe.js'te de ayni sebeple: carpim 2^53'u asmasin */
+    /* mulberry32 — same reason as in globe.js: the multiply must not pass 2^53 */
     let t = h >>> 0;
     return function () {
       t = (t + 0x6d2b79f5) >>> 0;
@@ -48,34 +48,34 @@
 
   /* --- meta tek row: "Olympiahalle · 11.09.26 · 18:30" --- */
   function parseMeta(meta) {
-    const parça = String(meta || "").split("·").map((p) => p.trim()).filter(Boolean);
-    const out = { venue: "", date: "", saat: "" };
-    parça.forEach((p) => {
-      if (!out.saat && /^\d{1,2}:\d{2}/.test(p)) out.saat = p;
+    const parts = String(meta || "").split("·").map((p) => p.trim()).filter(Boolean);
+    const out = { venue: "", date: "", time: "" };
+    parts.forEach((p) => {
+      if (!out.time && /^\d{1,2}:\d{2}/.test(p)) out.time = p;
       else if (!out.date && /\d{1,2}\.\d{1,2}/.test(p)) out.date = p;
       else if (!out.venue) out.venue = p;
       else if (!out.date) out.date = p;
     });
-    if (!out.venue) out.venue = parça[0] || "";
+    if (!out.venue) out.venue = parts[0] || "";
     return out;
   }
 
-  const GÜNLER = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+  const WEEKDAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
 
-  function weekdayFor(tarih, rnd) {
-    const m = /^(\d{1,2})\.(\d{1,2})\.(\d{2})$/.exec(tarih || "");
+  function weekdayFor(date, rnd) {
+    const m = /^(\d{1,2})\.(\d{1,2})\.(\d{2})$/.exec(date || "");
     if (m) {
       const d = new Date(2000 + +m[3], +m[2] - 1, +m[1]);
-      if (!isNaN(d)) return GÜNLER[d.getDay()];
+      if (!isNaN(d)) return WEEKDAYS[d.getDay()];
     }
     return pick(rnd, ["friday", "saturday", "thursday"]);
   }
 
   /* --- kucuk yardimcilar --- */
-  function el(etiket, sınıf, yazı) {
-    const e = document.createElement(etiket);
-    if (sınıf) e.className = sınıf;
-    if (yazı != null) e.textContent = yazı;
+  function el(tag, cls, text) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
     return e;
   }
 
@@ -110,8 +110,8 @@
     ray.appendChild(poster);
 
     const facts = el("dl", "cs-facts");
-    if (m.saat) facts.appendChild(factRow("doors", m.saat));
-    (V.KUNYE[kind] || []).forEach(([a, b]) => facts.appendChild(factRow(a, b)));
+    if (m.time) facts.appendChild(factRow("doors", m.time));
+    (V.FACTS[kind] || []).forEach(([a, b]) => facts.appendChild(factRow(a, b)));
     if (m.venue) facts.appendChild(factRow("room", m.venue.toLowerCase()));
     facts.appendChild(factRow("from", price(kind, rnd)));
     ray.appendChild(facts);
@@ -134,10 +134,10 @@
     middle.appendChild(el("p", "cs-meta",
       [kind.toLowerCase(), m.date ? day + " " + m.date : day].join(" · ")));
 
-    /* Ilk paragraf etkinligin kendi metni, sonrakiler tur havuzundan.
-       Havuzdan gelen bir paragraf etkinligin kendi cumlesiyle ayni seyi
+    /* The first paragraph is the event's own line, the rest come from the pool
+          for its type. A pooled paragraph that says the same thing as the event's
        soyluyorsa atlaniyor: iki kez "bring something" yaziyordu. */
-    const pool = shuffle(rnd, V.METIN[kind] || []).filter((p) => !çakışır(p, e.body));
+    const pool = shuffle(rnd, V.BODY[kind] || []).filter((p) => !overlaps(p, e.body));
     [e.body, pool[0], pool[1]].filter(Boolean).forEach((p) =>
       middle.appendChild(el("p", "cs-text", p)));
 
@@ -145,9 +145,9 @@
     const section = el("section", "cs-section");
     section.appendChild(el("p", "cs-label", "the roll · five frames, one still blank"));
 
-    const roles = V.ROL[kind] || [];
-    const names = shuffle(rnd, V.AD[kind] || []);
-    const times = buildTimes(m.saat, kind, rnd);
+    const roles = V.ROLES[kind] || [];
+    const names = shuffle(rnd, V.NAMES[kind] || []);
+    const times = buildTimes(m.time, kind, rnd);
     const strip = el("ol", "cs-frames");
 
     for (let i = 0; i < 5; i++) {
@@ -157,7 +157,7 @@
       if (i === 3) {
         shot.textContent = "not shot yet";
       } else {
-        /* Kare = posterin bir seridi. Dort frame, dort farkli bant. */
+        /* A frame is a band of the poster. Four frames, four different bands. */
         const img = document.createElement("object");
         img.className = "cs-shot-img";
         img.type = "image/svg+xml";
@@ -172,7 +172,7 @@
       frame.appendChild(el("p", "cs-name",
         i === 3 ? "not announced" : (i === 2 ? e.title : names[i] || "—")));
       /* Bos karenin saati YOK: dolacagi an kapinin acildigi an.
-         Sayi yazmak baska bir karenin saatini tekrar ediyordu. */
+            Printing a number repeated the time on another frame. */
       frame.appendChild(el("p", "cs-clock",
         i === 3 ? "fills at the door" : times[i] || ""));
       strip.appendChild(frame);
@@ -190,7 +190,7 @@
       : "your first one · " + (edition - 1) + " happened without you"));
     const box = el("div", "cs-past");
     past.appendChild(box);
-    /* Hic gitmediysen box bos kalir; orayi bir cumle dolduruyor. */
+    /* If you never went, the box stays empty; a sentence fills it. */
     if (!picked) past.appendChild(el("p", "cs-note",
       "Keep this one and the collection starts here."));
     middle.appendChild(past);
@@ -200,30 +200,30 @@
     const right = el("aside", "cs-right");
     right.appendChild(el("p", "cs-label", "which friends are going"));
 
-    const kimler = el("ul", "cs-who");
-    const friends = shuffle(rnd, V.ARKADASLAR).slice(0, 5);
-    const durumlar = V.DURUM;
+    const who = el("ul", "cs-who");
+    const friends = shuffle(rnd, V.FRIEND_NAMES).slice(0, 5);
+    const states = V.STATES;
     friends.forEach((name, i) => {
-      const satır = el("li", durumlar[i] === "can't" ? "yok" : null);
-      satır.appendChild(el("span", "cs-who-name", name));
-      satır.appendChild(el("span", "cs-who-status", durumlar[i]));
-      kimler.appendChild(satır);
+      const row = el("li", states[i] === "can't" ? "yok" : null);
+      row.appendChild(el("span", "cs-who-name", name));
+      row.appendChild(el("span", "cs-who-status", states[i]));
+      who.appendChild(row);
     });
-    right.appendChild(kimler);
+    right.appendChild(who);
     right.appendChild(el("p", "cs-tally", "3 going · 1 maybe · 1 out"));
 
-    const [button, altYazı] = V.BILET[kind] || V.BILET["Konzert"];
+    const [button, sub] = V.TICKET[kind] || V.TICKET["Konzert"];
     const bilet = el("a", "cs-ticket", button);
     bilet.href = "#";
     right.appendChild(bilet);
-    right.appendChild(el("p", "cs-ticket-sub", altYazı));
+    right.appendChild(el("p", "cs-ticket-sub", sub));
 
-    /* beforehours: arkadaslarin bu geceye, bu mekana, bu tarihe dair */
+    /* beforehours: what friends said about this night, this room, this date */
     const comments = el("section", "cs-comments");
     comments.appendChild(el("p", "cs-label", "beforehours · your friends"));
 
-    const zamanlar = V.ZAMAN;
-    shuffle(rnd, V.YORUM[kind] || []).slice(0, 4).forEach((y, i) => {
+    const zamanlar = V.WHEN;
+    shuffle(rnd, V.COMMENTS[kind] || []).slice(0, 4).forEach((y, i) => {
       comments.appendChild(buildComment(
         friends[i] || "someone", zamanlar[i + 1] || "today",
         fill(y.m, e, m, day),
@@ -233,24 +233,24 @@
     right.appendChild(comments);
     area.appendChild(right);
 
-    /* ---- gecmis kartlari (cards.js ile) ---- */
+    /* ---- the past-edition cards (drawn by cards.js) ---- */
     drawCards(box, e, m, kind, picked, edition, rnd, friends);
   }
 
-  /* Iki text ayni nadir kelimeyi paylasiyorsa ayni seyi anlatiyorlardir.
+  /* If two texts share an uncommon word they are probably saying the same
      Kisa kelimeler (the, room, night) sayilmiyor. */
   const SIK = /^(the|and|that|with|this|there|their|which|about|after|before|until|people|night|nights|every|other|first|still|where|would)$/;
 
-  function çakışır(a, b) {
+  function overlaps(a, b) {
     if (!a || !b) return false;
-    const kelime = (y) => new Set(String(y).toLowerCase().match(/[a-zäöüß]{6,}/g) || []);
-    const A = kelime(a), B = kelime(b);
+    const words = (y) => new Set(String(y).toLowerCase().match(/[a-zäöüß]{6,}/g) || []);
+    const A = words(a), B = words(b);
     for (const k of A) if (!SIK.test(k) && B.has(k)) return true;
     return false;
   }
 
-  function fill(yazı, e, m, day) {
-    return String(yazı)
+  function fill(text, e, m, day) {
+    return String(text)
       .replace(/\{mekan\}/g, m.venue || "the room")
       .replace(/\{name\}/g, e.title || "this one")
       .replace(/\{gun\}/g, day);
@@ -258,17 +258,17 @@
 
   function buildComment(who, when, text, reply) {
     const k = el("div", "c-topic");
-    const üst = el("div", "c-top");
-    üst.appendChild(el("span", "c-who", who));
-    üst.appendChild(el("span", "c-when", when));
-    k.appendChild(üst);
+    const top = el("div", "c-top");
+    top.appendChild(el("span", "c-who", who));
+    top.appendChild(el("span", "c-when", when));
+    k.appendChild(top);
     k.appendChild(el("p", "c-text", text));
     if (reply) {
       const c = el("div", "c-replies");
       const box = el("div", "c-reply");
       const u = el("div", "c-top");
-      u.appendChild(el("span", "c-who", reply.kim));
-      u.appendChild(el("span", "c-when", reply.zaman));
+      u.appendChild(el("span", "c-who", reply.who));
+      u.appendChild(el("span", "c-when", reply.when));
       box.appendChild(u);
       box.appendChild(el("p", "c-text", reply.body));
       c.appendChild(box);
@@ -277,34 +277,34 @@
     return k;
   }
 
-  const FIYAT = {
+  const PRICE = {
     "Konzert": [49, 89], "Festival": [59, 129], "Rave": [15, 28],
     "Club Night": [10, 18], "Hausparty": null, "Meetup": null,
   };
 
   function price(kind, rnd) {
-    const a = FIYAT[kind];
+    const a = PRICE[kind];
     if (!a) return "free";
     return "€" + (a[0] + Math.floor(rnd() * (a[1] - a[0])));
   }
 
   /* Kapi saatinden yola cikip bes karenin saatini kuruyoruz. */
-  function buildTimes(kapı, kind, rnd) {
-    const m = /^(\d{1,2}):(\d{2})/.exec(kapı || "");
-    let dk = m ? +m[1] * 60 + +m[2] : (kind === "Rave" || kind === "Club Night" ? 23 * 60 : 19 * 60);
-    const aralık = kind === "Meetup" ? 45 : 60 + Math.floor(rnd() * 30);
+  function buildTimes(doors, kind, rnd) {
+    const m = /^(\d{1,2}):(\d{2})/.exec(doors || "");
+    let mins = m ? +m[1] * 60 + +m[2] : (kind === "Rave" || kind === "Club Night" ? 23 * 60 : 19 * 60);
+    const gap = kind === "Meetup" ? 45 : 60 + Math.floor(rnd() * 30);
     const out = [];
     for (let i = 0; i < 5; i++) {
-      dk += i === 0 ? 15 : aralık;
-      const s = Math.floor(dk / 60) % 24;
-      out.push(String(s).padStart(2, "0") + ":" + String(dk % 60).padStart(2, "0"));
+      mins += i === 0 ? 15 : gap;
+      const s = Math.floor(mins / 60) % 24;
+      out.push(String(s).padStart(2, "0") + ":" + String(mins % 60).padStart(2, "0"));
     }
     return out;
   }
 
-  const METALLER = ["steel", "chrome", "gunmetal", "titanium", "nickel", "anthracite", "brass", "copper"];
-  const MOTIFLER = ["rays", "oval", "diagonal", "orbit", "grid", "moon", "moire", "bands", "iso", "descend"];
-  const SÖZLER = [
+  const METAL_LIST = ["steel", "chrome", "gunmetal", "titanium", "nickel", "anthracite", "brass", "copper"];
+  const MOTIF_LIST = ["rays", "oval", "diagonal", "orbit", "grid", "moon", "moire", "bands", "iso", "descend"];
+  const OVERHEARD = [
     "nobody in the front row sat down", "we lost each other by midnight",
     "the back room was better", "phones stayed in pockets",
     "side seats were the right call", "they said no encore. there was one",
@@ -315,41 +315,41 @@
     if (!window.CARDS || !picked) return;
 
     for (let i = 0; i < picked; i++) {
-      const yıl = 26 - (i + 1) * 2;
-      const gece = {
+      const year = 26 - (i + 1) * 2;
+      const night = {
         city: "münchen",
         t: e.title, ty: (kind || "").toUpperCase(),
         v: (m.venue || "münchen").toUpperCase(),
-        d: "1" + (2 + i) + ".0" + (5 + i) + "." + yıl,
-        metal: pick(rnd, METALLER), motif: pick(rnd, MOTIFLER),
+        d: "1" + (2 + i) + ".0" + (5 + i) + "." + year,
+        metal: pick(rnd, METAL_LIST), motif: pick(rnd, MOTIF_LIST),
         in: "19:4" + i, out: "23:2" + i, dur: "3H 4" + i + "M",
         crew: friends.slice(0, 3).map((a) => a[0]),
         more: 3 + Math.floor(rnd() * 8), aud: "0:" + (20 + Math.floor(rnd() * 39)),
         msg: 8 + Math.floor(rnd() * 20), who: (friends[0] || "you").toUpperCase(),
         froze: "1" + (4 + i) + ".0" + (5 + i), no: "0" + (100 + Math.floor(rnd() * 800)),
         at1: "20:1" + i, at2: "22:3" + i,
-        q1: [pick(rnd, SÖZLER), (friends[1] || "L")[0], "21:1" + i],
-        q2: [pick(rnd, SÖZLER), (friends[2] || "M")[0], "23:0" + i],
+        q1: [pick(rnd, OVERHEARD), (friends[1] || "L")[0], "21:1" + i],
+        q2: [pick(rnd, OVERHEARD), (friends[2] || "M")[0], "23:0" + i],
       };
 
       const card = el("figure", "cs-past-card");
-      const yüz = el("div", "cs-past-face");
-      yüz.innerHTML = CARDS.front(gece, "g" + i);
-      card.appendChild(yüz);
+      const face = el("div", "cs-past-face");
+      face.innerHTML = CARDS.front(night, "g" + i);
+      card.appendChild(face);
       card.appendChild(el("figcaption", null,
         "edition " + String(edition - 1 - i).padStart(2, "0") +
-        " · " + (m.venue || "münchen").toLowerCase() + " · " + gece.d));
+        " · " + (m.venue || "münchen").toLowerCase() + " · " + night.d));
       box.appendChild(card);
     }
   }
 
-  /* --- hangi event? adres cubugundaki klasor adi --- */
+  /* --- which event? the folder name in the address bar --- */
   function slugFromPath() {
     const p = location.pathname.replace(/\/index\.html?$/, "").split("/").filter(Boolean);
     return p[p.length - 1] || "";
   }
 
-  /* data.js bu betigi data-sonra ile cagiriyor: POSTERS o an hazir. */
+  /* data.js loads this through data-sonra, so POSTERS is ready by now. */
   const slug = slugFromPath();
   const e = (window.POSTERS || []).filter((x) => x.slug === slug)[0];
   if (e) build(e);

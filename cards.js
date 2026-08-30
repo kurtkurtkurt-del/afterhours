@@ -1,30 +1,30 @@
-/* afterhours — 10 gecelik kart destesi (kullanicinin tasarimi).
-   kartlar-10.html'den alindi; sadece demo render bolumu cikarildi ve
-   global isimler kirletmesin diye kendi kapsamina alindi. */
+/* afterhours — a deck of ten night cards (the user's own design).
+      Taken from kartlar-10.html; only the demo render was removed, and it was
+      wrapped in its own scope so it does not pollute the global names. */
 
 const CARDS = (function () {
 
-// ─────────── METAL TEMALARI ───────────
+// ─────────── METAL THEMES ───────────
 const METALS = {
-  steel:{name:'fırçalanmış çelik',
+  steel:{name:'brushed steel',
     grad:['#3e4147','#8d939b','#4a4e55','#b9bfc7','#5a5f67','#d8dde3','#666b73','#a7adb5','#41454b','#9ba1a9','#787e86'],
     edge:['#e8edf2','#6a6f77','#dfe4ea','#585d64','#c2c8cf'],
     plate:['#22252a','#171a1e','#2b2f35','#15181c'],
     deep:'#0a0b0d', poster:'#141619', dim:'#5c6169', mid:'#8e949c',
     hi:'#d8dde3', txt:'#f0ece3', sub:'#7b8189', faint:'#4e535a', line:'#3a3e44', accent:'#c9ced5', hair:'#ffffff', hairO:.04},
-  gold:{name:'altın',
+  gold:{name:'gold',
     grad:['#6b4c13','#d9b45c','#7a5a1c','#f3dc9a','#8a6522','#ffeec2','#96702a','#e6c876','#6f5217','#d4b160','#b99447'],
     edge:['#ffeec2','#8a6522','#f3dc9a','#6f5217','#dcbb6b'],
     plate:['#241a08','#161005','#2b2009','#130e04'],
     deep:'#0d0903', poster:'#171105', dim:'#7a5a1c', mid:'#b8913c',
     hi:'#ffeec2', txt:'#f7e9c4', sub:'#96702a', faint:'#6f5217', line:'#4a3712', accent:'#f3dc9a', hair:'#ffd98a', hairO:.05},
-  chrome:{name:'krom',
+  chrome:{name:'chrome',
     grad:['#7d8894','#ffffff','#5f6a76','#eef3f8','#46505b','#ffffff','#6d7883','#dde4eb','#3d4650','#f5f9fc','#c3ccd5'],
     edge:['#ffffff','#5f6a76','#eef3f8','#46505b','#c3ccd5'],
     plate:['#dfe5eb','#f7fafc','#c4cdd6','#aeb8c2'],
     deep:'#8a949e', poster:'#1a1e23', dim:'#535d68', mid:'#9aa5b0',
     hi:'#2f3740', txt:'#232a31', sub:'#59636d', faint:'#98a2ac', line:'#a8b2bc', accent:'#46505b', hair:'#5c6670', hairO:.11, light:1},
-  copper:{name:'oksitlenmiş bakır',
+  copper:{name:'oxidised copper',
     grad:['#5a2f1c','#c9784b','#6b3a22','#e8a274','#7d4527','#f7c9a4','#8a4d2b','#d68d5e','#603322','#bd7047','#8f5030'],
     edge:['#f7c9a4','#7d4527','#4a9c8a','#6b3a22','#d68d5e'],
     plate:['#241309','#150c06','#1c2a26','#120a04'],
@@ -36,31 +36,31 @@ const METALS = {
     plate:['#181b21','#101318','#1e222a','#0d1014'],
     deep:'#080a0d', poster:'#111419', dim:'#3a404b', mid:'#5c6474',
     hi:'#9aa2b4', txt:'#c8cdd8', sub:'#5f6674', faint:'#383e49', line:'#2a2f38', accent:'#8a92a4', hair:'#aab2c4', hairO:.035},
-  brass:{name:'pirinç',
+  brass:{name:'brass',
     grad:['#5e4a17','#c4a648','#6d5620','#e3cb7e','#7b6226','#f5e3a8','#876e2c','#d4bb62','#5f4c1a','#bda653','#96803a'],
     edge:['#f5e3a8','#7b6226','#e3cb7e','#5f4c1a','#c9b25c'],
     plate:['#201a0a','#141006','#26200c','#110d05'],
     deep:'#0c0904', poster:'#161206', dim:'#6d5620', mid:'#a68d3c',
     hi:'#f5e3a8', txt:'#ece0b8', sub:'#876e2c', faint:'#5f4c1a', line:'#403316', accent:'#e3cb7e', hair:'#e3cb7e', hairO:.045},
-  rose:{name:'gül altını',
+  rose:{name:'rose gold',
     grad:['#6b3a34','#d99a8c','#7d4640','#f2c2b4','#8a524a','#ffd9cc','#96605a','#e6ab9c','#6f423c','#d4948a','#b97f74'],
     edge:['#ffd9cc','#8a524a','#f2c2b4','#6f423c','#dca79c'],
     plate:['#241413','#16100f','#2b1a18','#130d0c'],
     deep:'#0d0706', poster:'#170f0e', dim:'#7d4640', mid:'#b8776c',
     hi:'#ffd9cc', txt:'#f5ded6', sub:'#96605a', faint:'#6f423c', line:'#4a2b28', accent:'#f2c2b4', hair:'#ffb8a8', hairO:.05},
-  titanium:{name:'titanyum',
+  titanium:{name:'titanium',
     grad:['#2a3644','#6a8299','#33414f','#8ea6bd','#3d4d5d','#aec6dd','#48596b','#7d94aa','#2e3a48','#688096','#54697d'],
     edge:['#aec6dd','#3d4d5d','#8ea6bd','#2e3a48','#7d94aa'],
     plate:['#151d26','#0e141b','#1b242e','#0b1015'],
     deep:'#070b0f', poster:'#101720', dim:'#3a4a5a', mid:'#5f7688',
     hi:'#aec6dd', txt:'#cfdde9', sub:'#5f7688', faint:'#3d4d5d', line:'#28333f', accent:'#8ea6bd', hair:'#b8d4ea', hairO:.04},
-  nickel:{name:'nikel',
+  nickel:{name:'nickel',
     grad:['#2f3a34','#748a7e','#3a463f','#96ab9e','#45524a','#b6cabd','#505e55','#84998c','#33403a','#6f8478','#5c6a62'],
     edge:['#b6cabd','#45524a','#96ab9e','#33403a','#84998c'],
     plate:['#1a211d','#121814','#212a24','#0f1411'],
     deep:'#090d0b', poster:'#131a16', dim:'#3d4a43', mid:'#65786c',
     hi:'#b6cabd', txt:'#d4e0d8', sub:'#65786c', faint:'#45524a', line:'#2b352f', accent:'#96ab9e', hair:'#a8c4b4', hairO:.04},
-  anthracite:{name:'antrasit',
+  anthracite:{name:'anthracite',
     grad:['#1c1c1e','#4e4e52','#232326','#6c6c72','#2a2a2e','#88888f','#333338','#5c5c62','#1f1f22','#4a4a4f','#3c3c41'],
     edge:['#88888f','#2a2a2e','#6c6c72','#1f1f22','#5c5c62'],
     plate:['#151517','#0e0e10','#1b1b1e','#0b0b0d'],
@@ -68,8 +68,8 @@ const METALS = {
     hi:'#88888f', txt:'#b8b8bf', sub:'#5a5a60', faint:'#333338', line:'#252529', accent:'#9a9aa2', hair:'#c8c8d0', hairO:.03}
 };
 
-// ─────────── POSTER MOTİFLERİ ───────────
-// her biri (id, m) alır, metalik renk kullanır
+// ─────────── POSTER MOTIFS ───────────
+// each takes (id, m) and uses the metal palette
 const MOTIFS = {
   rays:(id,m)=>{let s=`<g transform="translate(200,140)">`;
     const A=[[-170,-52,-170,-12],[-158,40,-134,78],[-86,118,-46,142],[12,170,52,160],[114,98,142,66],[170,18,168,-24],[130,-96,106,-128],[32,-170,-8,-172]];
@@ -158,7 +158,7 @@ const MOTIFS = {
       <path d="M200 196 L200 250"/><path d="M178 230 L200 252 L222 230"/></g>`
 };
 
-// ─────────── ETKİNLİKLER ───────────
+// ─────────── NIGHTS ───────────
 const EVENTS = [
  {t:'A$AP Rocky',   ty:'KONZERT',    v:'OLYMPIAHALLE',      d:'11.09.26', metal:'gold',       motif:'rays',
   in:'23:47', out:'03:12', dur:'3H 25M', crew:['L','E','J','M'], more:9, aud:'0:38', msg:14, who:'MIRA',
