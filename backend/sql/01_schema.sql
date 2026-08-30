@@ -5,6 +5,24 @@
 
 -- gen_random_uuid() Postgres 13’ten beri cekirdekte; uzanti gerekmiyor.
 
+-- The two ordering columns were called `sira` before the code moved to
+-- English. On a fresh database this does nothing; on one that already
+-- exists it renames them, so the rest of this file lines up either way.
+do $$
+begin
+  if exists (select 1 from information_schema.columns
+             where table_schema = 'public' and table_name = 'cities'
+               and column_name = 'sira') then
+    alter table public.cities rename column sira to sort_order;
+  end if;
+  if exists (select 1 from information_schema.columns
+             where table_schema = 'public' and table_name = 'event_types'
+               and column_name = 'sira') then
+    alter table public.event_types rename column sira to sort_order;
+  end if;
+end
+$$;
+
 -- ---------------------------------------------------------------- city
 
 create table if not exists public.cities (
@@ -13,7 +31,7 @@ create table if not exists public.cities (
   name    text not null,
   -- the honest city list on the landing page: live / soon / planned
   status  text not null default 'live' check (status in ('live', 'soon', 'planned')),
-  sira    int  not null default 0,
+  sort_order    int  not null default 0,
   -- The filter picks a country first, then the cities in that country;
   -- ulkeler de kitalarina gore gruplaniyor
   country         text,
@@ -22,7 +40,7 @@ create table if not exists public.cities (
   continent_slug  text
 );
 
-create index if not exists cities_country_idx on public.cities (country_slug, sira);
+create index if not exists cities_country_idx on public.cities (country_slug, sort_order);
 
 -- ----------------------------------------------------------------- kind
 
@@ -31,7 +49,7 @@ create table if not exists public.event_types (
   slug  text unique not null,
   name  text not null,
   -- the order from the spec itself: rave, club night, konzert, festival, meetup, hausparty
-  sira  int  not null
+  sort_order  int  not null
 );
 
 -- ---------------------------------------------------------------- venue

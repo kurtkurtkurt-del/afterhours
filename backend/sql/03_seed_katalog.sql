@@ -1,7 +1,7 @@
 -- URETILMIS DOSYA — elle duzenleme. Kaynak: backend/tools/seed-uret.mjs
 -- Cities, types and venues. This one first, then 04.
 
-insert into public.cities (slug, name, status, sira, country, country_slug) values
+insert into public.cities (slug, name, status, sort_order, country, country_slug) values
   ('munchen', 'münchen', 'live', 1, 'Deutschland', 'de'),
   ('istanbul', 'istanbul', 'live', 2, 'Türkiye', 'tr'),
   ('ankara', 'ankara', 'soon', 3, 'Türkiye', 'tr'),
@@ -15,7 +15,7 @@ insert into public.cities (slug, name, status, sira, country, country_slug) valu
   ('graz', 'graz', 'planned', 11, 'Österreich', 'at')
 on conflict (slug) do nothing;
 
-insert into public.event_types (slug, name, sira) values
+insert into public.event_types (slug, name, sort_order) values
   ('rave', 'Rave', 1),
   ('club-night', 'Club Night', 2),
   ('konzert', 'Konzert', 3),

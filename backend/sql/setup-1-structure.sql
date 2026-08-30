@@ -1,14 +1,14 @@
 -- ============================================================
 --  afterhours — KURULUM 1 / 2 : YAPI
---  SURUM: 2026-08-30 19:09   ← editorde bu satir gorunuyorsa dogru kopya
+--  SURUM: 2026-08-30 19:23   ← editorde bu satir gorunuyorsa dogru kopya
 --
 --  Supabase panelinde: SQL Editor → New query → bu dosyanin
 --  TAMAMINI yapistir → Run.
 --
 --  Bittiginde "Success. No rows returned" gormelisin.
---  Sonra kurulum-2-yorumlar.sql dosyasini ayni sekilde calistir.
+--  Sonra setup-2-yorumlar.sql dosyasini ayni sekilde calistir.
 --
---  URETILMIS DOSYA — kaynak: backend/tools/kurulum-uret.mjs
+--  URETILMIS DOSYA — source: backend/tools/setup-build.mjs
 -- ============================================================
 
 
@@ -22,6 +22,24 @@
 -- here is only the public schema that hangs off it.
 
 -- gen_random_uuid() Postgres 13’ten beri cekirdekte; uzanti gerekmiyor.
+
+-- The two ordering columns were called `sira` before the code moved to
+-- English. On a fresh database this does nothing; on one that already
+-- exists it renames them, so the rest of this file lines up either way.
+do $$
+begin
+  if exists (select 1 from information_schema.columns
+             where table_schema = 'public' and table_name = 'cities'
+               and column_name = 'sira') then
+    alter table public.cities rename column sira to sort_order;
+  end if;
+  if exists (select 1 from information_schema.columns
+             where table_schema = 'public' and table_name = 'event_types'
+               and column_name = 'sira') then
+    alter table public.event_types rename column sira to sort_order;
+  end if;
+end
+$$;
 
 -- ---------------------------------------------------------------- city
 

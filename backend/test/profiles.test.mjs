@@ -3,11 +3,11 @@
 import { PGlite } from "@electric-sql/pglite";
 import { readFile } from "node:fs/promises";
 
-const oku = (y) => readFile(new URL(y, import.meta.url), "utf8");
-let gecti = 0, kaldi = 0;
-const olmali = (k, ad, ek = "") => {
-  if (k) { gecti++; console.log("  ✓ " + ad); }
-  else { kaldi++; console.log("  ✗ " + ad + (ek ? "  → " + ek : "")); }
+const read = (y) => readFile(new URL(y, import.meta.url), "utf8");
+let passed = 0, failed = 0;
+const check = (k, name, extra = "") => {
+  if (k) { passed++; console.log("  ✓ " + name); }
+  else { failed++; console.log("  ✗ " + name + (extra ? "  → " + extra : "")); }
 };
 process.on("unhandledRejection", (e) => {
   console.log("\nHATA: " + ((e && e.message) || e));
@@ -19,34 +19,34 @@ const db = new PGlite();
 for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02_rls.sql",
                  "../sql/03_seed_katalog.sql", "../sql/04_seed_events.sql",
                  "../sql/06_views.sql", "../sql/07_friends.sql", "../sql/12_profiles.sql"]) {
-  await db.exec(await oku(d));
+  await db.exec(await read(d));
 }
 
 const A = "aaaaaaaa-1111-1111-1111-111111111111";
 const B = "bbbbbbbb-2222-2222-2222-222222222222";
 const C = "cccccccc-3333-3333-3333-333333333333";
 
-const kimlik = (id) => db.exec(`set role authenticated; set request.jwt.claims = '{"sub":"${id}"}';`);
-const yonetim = () => db.exec(`reset role; set request.jwt.claims = '';`);
+const asUser = (id) => db.exec(`set role authenticated; set request.jwt.claims = '{"sub":"${id}"}';`);
+const asService = () => db.exec(`reset role; set request.jwt.claims = '';`);
 
-console.log("\n— kayit: profil kendiliginden aciliyor —");
+console.log("\n— record: profil kendiliginden aciliyor —");
 {
-  await yonetim();
+  await asService();
   await db.exec(`insert into auth.users (id, email) values ('${A}', 'a@x.com')`);
 
   const p = await db.query(`select display_name, handle, onboarded_at from public.profiles where id = '${A}'`);
-  olmali(p.rows.length === 1, "hesap acilinca profil olusuyor");
-  olmali(p.rows[0].display_name === "a", "gorunen ad e-postanin basindan geliyor");
-  olmali(p.rows[0].handle === null, "handle empty: kayit henuz bitmedi");
-  olmali(p.rows[0].onboarded_at === null, "onboarded_at bos");
+  check(p.rows.length === 1, "hesap acilinca profil olusuyor");
+  check(p.rows[0].display_name === "a", "gorunen name e-postanin basindan geliyor");
+  check(p.rows[0].handle === null, "handle empty: record henuz bitmedi");
+  check(p.rows[0].onboarded_at === null, "onboarded_at empty");
 
   const s = await db.query(`select count(*)::int as n from public.profile_settings where user_id = '${A}'`);
-  olmali(s.rows[0].n === 1, "ayar satiri da aciliyor");
+  check(s.rows[0].n === 1, "ayar satiri da aciliyor");
 }
 
-console.log("\n— kayit formu handle ve sehir gonderirse —");
+console.log("\n— record formu handle ve sehir gonderirse —");
 {
-  await yonetim();
+  await asService();
   await db.exec(`insert into auth.users (id, email, raw_user_meta_data) values
     ('${B}', 'b@x.com', '{"name":"Lena","handle":"lena","city":"munchen"}'::jsonb)`);
 
@@ -54,221 +54,221 @@ console.log("\n— kayit formu handle ve sehir gonderirse —");
     select p.handle, p.display_name, c.slug as city, p.onboarded_at is not null as bitti
     from public.profiles p left join public.cities c on c.id = p.city_id
     where p.id = '${B}'`);
-  olmali(p.rows[0].handle === "lena", "handle kayitta alindi");
-  olmali(p.rows[0].display_name === "Lena", "gorunen ad kayitta alindi");
-  olmali(p.rows[0].city === "munchen", "sehir baglandi");
-  olmali(p.rows[0].bitti === true, "handle geldiyse kayit bitmis sayiliyor");
+  check(p.rows[0].handle === "lena", "handle kayitta alindi");
+  check(p.rows[0].display_name === "Lena", "gorunen name kayitta alindi");
+  check(p.rows[0].city === "munchen", "sehir baglandi");
+  check(p.rows[0].bitti === true, "handle geldiyse record bitmis sayiliyor");
 
   /* Dolu handle sessizce dusuyor, hesap yine de aciliyor */
   await db.exec(`insert into auth.users (id, email, raw_user_meta_data) values
     ('${C}', 'c@x.com', '{"handle":"lena"}'::jsonb)`);
   const c = await db.query(`select handle from public.profiles where id = '${C}'`);
-  olmali(c.rows[0].handle === null, "dolu handle aliniyor ama hesap acilmayi surduruyor");
+  check(c.rows[0].handle === null, "taken handle aliniyor ama hesap acilmayi surduruyor");
 }
 
 console.log("\n— handle musait mi —");
 {
-  await kimlik(A);
+  await asUser(A);
   const s = (h) => db.query(`select public.handle_status(${h}) as s`).then((r) => r.rows[0].s);
-  olmali(await s("''") === "empty", "bos handle");
-  olmali(await s("'AB'") === "format", "kisa/bicimsiz handle");
-  olmali(await s("'Büyük'") === "format", "buyuk harf ve turkce harf reddediliyor");
-  olmali(await s("'lena'") === "taken", "alinmis handle");
-  olmali(await s("'ahmet'") === "ok", "musait handle");
+  check(await s("''") === "empty", "empty handle");
+  check(await s("'AB'") === "format", "kisa/bicimsiz handle");
+  check(await s("'Büyük'") === "format", "buyuk harf ve turkce harf reddediliyor");
+  check(await s("'lena'") === "taken", "alinmis handle");
+  check(await s("'ahmet'") === "ok", "musait handle");
 }
 
 console.log("\n— kaydi tamamlama —");
 {
-  await kimlik(A);
+  await asUser(A);
   const r = await db.query(`select public.profile_setup('ahmet', 'Ahmet', 'munchen', 'nights out, mostly') as s`);
-  olmali(r.rows[0].s === "ok", "profil kuruldu");
+  check(r.rows[0].s === "ok", "profil kuruldu");
 
   const p = await db.query(`select handle, display_name, bio, onboarded_at is not null as bitti from public.profiles where id = '${A}'`);
-  olmali(p.rows[0].handle === "ahmet" && p.rows[0].bio === "nights out, mostly", "alanlar yazildi");
-  olmali(p.rows[0].bitti === true, "kayit bitmis sayiliyor");
+  check(p.rows[0].handle === "ahmet" && p.rows[0].bio === "nights out, mostly", "alanlar yazildi");
+  check(p.rows[0].bitti === true, "record bitmis sayiliyor");
 
   const d = await db.query(`select public.profile_setup('lena') as s`);
-  olmali(d.rows[0].s === "taken", "baskasinin handle'i alinamiyor");
+  check(d.rows[0].s === "taken", "baskasinin handle'i alinamiyor");
 
   const y = await db.query(`select public.profile_setup('ahmet', null, 'yokboyle') as s`);
-  olmali(y.rows[0].s === "nocity", "olmayan sehir reddediliyor");
+  check(y.rows[0].s === "nocity", "olmayan sehir reddediliyor");
 
   const t = await db.query(`select public.profile_setup('ahmet', null, null, null) as s`);
-  olmali(t.rows[0].s === "ok", "kendi handle'ini tekrar yazmak sorun degil");
+  check(t.rows[0].s === "ok", "kendi handle'ini tekrar yazmak sorun degil");
 }
 
 console.log("\n— kendi profilin —");
 {
-  await kimlik(A);
+  await asUser(A);
   await db.exec(`select public.swipe_set('asap-rocky', 'right')`);
   await db.exec(`select public.swipe_set('blitz', 'left')`);
   const m = await db.query(`select * from public.profile_me()`);
-  olmali(m.rows.length === 1, "profile_me tek satir donuyor");
-  olmali(m.rows[0].handle === "ahmet" && m.rows[0].city_slug === "munchen", "kimlik ve sehir geliyor");
-  olmali(m.rows[0].kept_count === 1, "yalniz saga atilanlar sayiliyor");
-  olmali(m.rows[0].kept_visibility === "friends" && m.rows[0].notify_email === true,
+  check(m.rows.length === 1, "profile_me tek satir donuyor");
+  check(m.rows[0].handle === "ahmet" && m.rows[0].city_slug === "munchen", "asUser ve sehir geliyor");
+  check(m.rows[0].kept_count === 1, "yalniz saga atilanlar sayiliyor");
+  check(m.rows[0].kept_visibility === "friends" && m.rows[0].notify_email === true,
     "ayarlar varsayilanlariyla geliyor");
 }
 
 console.log("\n— ayarlar kisiye ozel —");
 {
-  await kimlik(B);
+  await asUser(B);
   const o = await db.query(`select count(*)::int as n from public.profile_settings`);
-  olmali(o.rows[0].n === 1, "kisi yalniz kendi ayarini goruyor");
+  check(o.rows[0].n === 1, "kisi yalniz kendi ayarini goruyor");
 
   let hata = null;
   try { await db.exec(`update public.profile_settings set notify_email = false where user_id = '${A}'`); }
   catch (e) { hata = e.message; }
   const kalan = await db.query(`select notify_email from public.profile_settings where user_id = '${A}'`);
-  olmali(hata !== null || kalan.rows.length === 0, "baskasinin ayari degistirilemiyor");
+  check(hata !== null || kalan.rows.length === 0, "baskasinin ayari degistirilemiyor");
 }
 
 console.log("\n— baskasinin profili —");
 {
-  await kimlik(B);
+  await asUser(B);
   const k = await db.query(`select * from public.profile_card('ahmet')`);
-  olmali(k.rows.length === 1 && k.rows[0].handle === "ahmet", "kart geliyor");
-  olmali(k.rows[0].is_friend === false, "arkadas degiliz");
-  olmali(k.rows[0].kept_count === null, "arkadas olmayana sayilar kapali");
+  check(k.rows.length === 1 && k.rows[0].handle === "ahmet", "kart geliyor");
+  check(k.rows[0].is_friend === false, "arkadas degiliz");
+  check(k.rows[0].kept_count === null, "arkadas olmayana sayilar kapali");
 
   await db.exec(`select public.friend_request('ahmet')`);
-  await kimlik(A);
+  await asUser(A);
   await db.exec(`select public.friend_request('lena')`);
-  await kimlik(B);
+  await asUser(B);
   const a = await db.query(`select is_friend, kept_count from public.profile_card('ahmet')`);
-  olmali(a.rows[0].is_friend === true && a.rows[0].kept_count === 1,
+  check(a.rows[0].is_friend === true && a.rows[0].kept_count === 1,
     "arkadas olunca sayilar aciliyor");
 }
 
 console.log("\n— 'private' dendiginde arkadas da goremiyor —");
 {
-  await kimlik(A);
+  await asUser(A);
   await db.exec(`update public.profile_settings set kept_visibility = 'private' where user_id = '${A}'`);
 
-  await kimlik(B);
+  await asUser(B);
   const k = await db.query(`select kept_count from public.profile_card('ahmet')`);
-  olmali(k.rows[0].kept_count === null, "kartta sayilar kapandi");
+  check(k.rows[0].kept_count === null, "kartta sayilar kapandi");
 
   const f = await db.query(`select count(*)::int as n from public.friends_kept()`);
-  olmali(f.rows[0].n === 0, "arkadasin destesinde de gorunmuyor");
+  check(f.rows[0].n === 0, "arkadasin destesinde de gorunmuyor");
 
-  await kimlik(A);
+  await asUser(A);
   await db.exec(`update public.profile_settings set kept_visibility = 'friends' where user_id = '${A}'`);
-  await kimlik(B);
+  await asUser(B);
   const g = await db.query(`select count(*)::int as n from public.friends_kept()`);
-  olmali(g.rows[0].n === 1, "geri acilinca yine gorunuyor");
+  check(g.rows[0].n === 1, "geri acilinca yine gorunuyor");
 }
 
-console.log("\n— liste gezilemiyor —");
+console.log("\n— list gezilemiyor —");
 {
-  await kimlik(C);   /* kimseyle bagi olmayan biri */
+  await asUser(C);   /* kimseyle bagi olmayan biri */
   const t = await db.query(`select count(*)::int as n from public.profiles`);
-  olmali(t.rows[0].n === 1, "yabanci yalniz kendi satirini goruyor", "gordugu " + t.rows[0].n);
+  check(t.rows[0].n === 1, "yabanci yalniz kendi satirini goruyor", "gordugu " + t.rows[0].n);
 
   await db.exec(`set role anon; set request.jwt.claims = '';`);
   const a = await db.query(`select count(*)::int as n from public.profiles`);
-  olmali(a.rows[0].n === 0, "girissiz hicbir profil goremiyor", "gordugu " + a.rows[0].n);
+  check(a.rows[0].n === 0, "girissiz hicbir profil goremiyor", "gordugu " + a.rows[0].n);
 
-  await kimlik(B);   /* A ile arkadas */
+  await asUser(B);   /* A ile arkadas */
   const f = await db.query(`select count(*)::int as n from public.profiles`);
-  olmali(f.rows[0].n === 2, "arkadasinin satirini gorebiliyor", "gordugu " + f.rows[0].n);
+  check(f.rows[0].n === 2, "arkadasinin satirini gorebiliyor", "gordugu " + f.rows[0].n);
 }
 
 console.log("\n— adini bilen karti goruyor —");
 {
-  await kimlik(C);
+  await asUser(C);
   const k = await db.query(`select * from public.profile_card('ahmet')`);
-  olmali(k.rows.length === 1 && k.rows[0].display_name === "Ahmet",
+  check(k.rows.length === 1 && k.rows[0].display_name === "Ahmet",
     "yabanci ada gore karti goruyor");
-  olmali(k.rows[0].kept_count === null, "sayilar yabanciya kapali");
-  olmali(k.rows[0].last_seen_day === null, "son gorulme yabanciya kapali");
+  check(k.rows[0].kept_count === null, "sayilar yabanciya kapali");
+  check(k.rows[0].last_seen_day === null, "son gorulme yabanciya kapali");
 
   const y = await db.query(`select count(*)::int as n from public.profile_card('yokboyle')`);
-  olmali(y.rows[0].n === 0, "olmayan ad bos donuyor");
+  check(y.rows[0].n === 0, "olmayan name empty donuyor");
 }
 
 console.log("\n— ayardan kapatinca kart kayboluyor —");
 {
-  await kimlik(A);
+  await asUser(A);
   await db.exec(`update public.profile_settings set discoverable = false where user_id = '${A}'`);
 
-  await kimlik(C);
+  await asUser(C);
   const k = await db.query(`select count(*)::int as n from public.profile_card('ahmet')`);
-  olmali(k.rows[0].n === 0, "yabanci artik karti goremiyor");
+  check(k.rows[0].n === 0, "yabanci artik karti goremiyor");
 
-  /* Ama adini bilen yine istek gonderebiliyor: yoksa kimse ekleyemezdi */
+  /* Ama adini bilen yine req gonderebiliyor: yoksa kimse ekleyemezdi */
   const i = await db.query(`select public.friend_request('ahmet') as s`);
-  olmali(i.rows[0].s === "sent", "istek gondermek hala calisiyor");
+  check(i.rows[0].s === "sent", "req gondermek hala calisiyor");
 
-  await kimlik(B);   /* arkadasi */
+  await asUser(B);   /* arkadasi */
   const f = await db.query(`select count(*)::int as n from public.profile_card('ahmet')`);
-  olmali(f.rows[0].n === 1, "arkadasi gormeye devam ediyor");
+  check(f.rows[0].n === 1, "arkadasi gormeye devam ediyor");
 
-  await kimlik(A);
+  await asUser(A);
   const kendi = await db.query(`select count(*)::int as n from public.profile_card('ahmet')`);
-  olmali(kendi.rows[0].n === 1, "kendi kartini her zaman gorursun");
+  check(kendi.rows[0].n === 1, "kendi kartini her zaman gorursun");
   await db.exec(`update public.profile_settings set discoverable = true where user_id = '${A}'`);
 }
 
 console.log("\n— son gorulme gun olarak —");
 {
-  await kimlik(A);
+  await asUser(A);
   await db.exec(`select public.seen()`);
-  await kimlik(B);
+  await asUser(B);
   /* Metin olarak soruyoruz: surucu date’i JS Date’e cevirip saat
      uyduruyor, biz veritabanindan ne CIKTIGINI olcmek istiyoruz. */
   const f = await db.query(`select last_seen_day::text as g from public.profile_card('ahmet')`);
-  olmali(f.rows[0].g !== null, "arkadasi gunu goruyor");
-  olmali(/^\d{4}-\d{2}-\d{2}$/.test(f.rows[0].g),
+  check(f.rows[0].g !== null, "arkadasi gunu goruyor");
+  check(/^\d{4}-\d{2}-\d{2}$/.test(f.rows[0].g),
     "yalniz gun tasiniyor, saat yok", String(f.rows[0].g));
 }
 
 console.log("\n— kurala takilmayan eski isler —");
 {
-  await yonetim();
+  await asService();
   await db.exec(`
     insert into public.comments (event_id, author_id, body)
     select id, '${A}', 'burada olacagim' from public.events where slug = 'blitz';
   `);
   await db.exec(`set role anon; set request.jwt.claims = '';`);
   const c = await db.query(`select author from public.comments_public where body = 'burada olacagim'`);
-  olmali(c.rows[0].author === "ahmet", "girissiz okuyucu yorumun yazarini goruyor", String(c.rows[0].author));
+  check(c.rows[0].author === "ahmet", "girissiz okuyucu yorumun yazarini goruyor", String(c.rows[0].author));
 
-  await kimlik(C);
+  await asUser(C);
   const h = await db.query(`select public.handle_status('ahmet') as s`);
-  olmali(h.rows[0].s === "taken", "ad musaitlik kontrolu hala calisiyor");
+  check(h.rows[0].s === "taken", "name musaitlik kontrolu hala calisiyor");
 }
 
 console.log("\n— goruldu damgasi —");
 {
-  await kimlik(A);
+  await asUser(A);
   await db.exec(`select public.seen()`);
   const s = await db.query(`select last_seen_at is not null as v from public.profiles where id = '${A}'`);
-  olmali(s.rows[0].v === true, "kendi satirini damgaliyor");
+  check(s.rows[0].v === true, "kendi satirini damgaliyor");
 
-  await kimlik(B);
+  await asUser(B);
   await db.exec(`select public.seen()`);
   const b = await db.query(`select last_seen_at from public.profiles where id = '${A}'`);
-  olmali(b.rows.length === 1, "baskasininki degismiyor (kural durduruyor)");
+  check(b.rows.length === 1, "baskasininki degismiyor (kural durduruyor)");
 }
 
 console.log("\n— sinirlar —");
 {
-  await kimlik(A);
+  await asUser(A);
   let hata = null;
   try { await db.exec(`update public.profiles set bio = repeat('x', 200) where id = '${A}'`); }
   catch (e) { hata = e.message; }
-  olmali(Boolean(hata), "160 karakteri gecen bir satir reddediliyor");
+  check(Boolean(hata), "160 karakteri gecen one satir reddediliyor");
 }
 
 console.log("\n— hesabi silme —");
 {
-  await yonetim();
+  await asService();
   const D = "dddddddd-4444-4444-4444-444444444444";
   await db.exec(`insert into auth.users (id, email) values ('${D}', 'd@x.com')`);
   await db.exec(`update public.profiles set handle = 'silinecek' where id = '${D}'`);
 
-  await kimlik(D);
+  await asUser(D);
   await db.exec(`select public.swipe_set('blitz', 'right')`);
   await db.exec(`
     insert into public.comments (event_id, author_id, body)
@@ -277,23 +277,23 @@ console.log("\n— hesabi silme —");
 
   await db.exec(`select public.delete_account()`);
 
-  await yonetim();
+  await asService();
   const h = await db.query(`select count(*)::int as n from auth.users where id = '${D}'`);
-  olmali(h.rows[0].n === 0, "hesap gitti");
+  check(h.rows[0].n === 0, "hesap gitti");
 
   const pr = await db.query(`select count(*)::int as n from public.profiles where id = '${D}'`);
-  olmali(pr.rows[0].n === 0, "profil zincirle gitti");
+  check(pr.rows[0].n === 0, "profil zincirle gitti");
 
   const ay = await db.query(`select count(*)::int as n from public.profile_settings where user_id = '${D}'`);
-  olmali(ay.rows[0].n === 0, "ayarlar zincirle gitti");
+  check(ay.rows[0].n === 0, "ayarlar zincirle gitti");
 
   const at = await db.query(`select count(*)::int as n from public.swipes where user_id = '${D}'`);
-  olmali(at.rows[0].n === 0, "atislari gitti");
+  check(at.rows[0].n === 0, "atislari gitti");
 
   const y = await db.query(`select author_id, author_name from public.comments where body = 'ben de geliyorum'`);
-  olmali(y.rows.length === 1 && y.rows[0].author_id === null && y.rows[0].author_name === "someone",
-    "yorumun metni kaldi, adi dustu");
+  check(y.rows.length === 1 && y.rows[0].author_id === null && y.rows[0].author_name === "someone",
+    "yorumun metni failed, adi dustu");
 }
 
-console.log(`\n${gecti} gecti, ${kaldi} kaldi\n`);
-process.exit(kaldi ? 1 : 0);
+console.log(`\n${passed} passed, ${failed} failed\n`);
+process.exit(failed ? 1 : 0);

@@ -36,7 +36,7 @@ update public.cities set country = 'Österreich', country_slug = 'at'
 
 -- Listeyi biraz genislet. Hicbirinde henuz gece yok; filtrede sayilariyla
 -- gorunuyorlar, yani bos olduklari sakli degil.
-insert into public.cities (slug, name, status, sira, country, country_slug) values
+insert into public.cities (slug, name, status, sort_order, country, country_slug) values
   ('hamburg',   'hamburg',   'planned', 7,  'Deutschland', 'de'),
   ('frankfurt', 'frankfurt', 'planned', 8,  'Deutschland', 'de'),
   ('leipzig',   'leipzig',   'planned', 9,  'Deutschland', 'de'),
@@ -44,7 +44,7 @@ insert into public.cities (slug, name, status, sira, country, country_slug) valu
   ('graz',      'graz',      'planned', 11, 'Österreich',  'at')
 on conflict (slug) do nothing;
 
-create index if not exists cities_country_idx on public.cities (country_slug, sira);
+create index if not exists cities_country_idx on public.cities (country_slug, sort_order);
 
 -- Filtrede her sehrin yanindaki sayi. Bos sehirler bos gorunsun diye
 -- yayindaki etkinlikler sayiliyor.
@@ -55,7 +55,7 @@ returns table (
   slug          text,
   name          text,
   status        text,
-  sira          int,
+  sort_order          int,
   country       text,
   country_slug  text,
   n             bigint
@@ -63,12 +63,12 @@ returns table (
 language sql
 stable
 as $$
-  select c.slug, c.name, c.status, c.sira, c.country, c.country_slug,
+  select c.slug, c.name, c.status, c.sort_order, c.country, c.country_slug,
          count(e.id) filter (where e.is_published)
   from public.cities c
   left join public.events e on e.city_id = c.id
-  group by c.slug, c.name, c.status, c.sira, c.country, c.country_slug
-  order by c.sira;
+  group by c.slug, c.name, c.status, c.sort_order, c.country, c.country_slug
+  order by c.sort_order;
 $$;
 
 grant execute on function public.city_counts() to anon, authenticated;
@@ -102,7 +102,7 @@ select
   e.is_published,
   t.slug  as type_slug,
   t.name  as type_name,
-  t.sira  as type_sira,
+  t.sort_order  as type_sort_order,
   c.slug  as city_slug,
   c.name  as city_name,
   v.slug  as venue_slug,
@@ -254,15 +254,15 @@ $$;
 -- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.event_counts(text);
 create or replace function public.event_counts(p_city text default 'munchen')
-returns table (type_slug text, type_name text, sira int, n bigint)
+returns table (type_slug text, type_name text, sort_order int, n bigint)
 language sql
 stable
 as $$
-  select e.type_slug, e.type_name, e.type_sira, count(*)
+  select e.type_slug, e.type_name, e.type_sort_order, count(*)
   from public.events_public e
   where e.is_published and e.city_slug = p_city
-  group by e.type_slug, e.type_name, e.type_sira
-  order by e.type_sira;
+  group by e.type_slug, e.type_name, e.type_sort_order
+  order by e.type_sort_order;
 $$;
 
 -- Bir etkinligi kac kisi biriktirmis. Kimin biriktirdigi gorunmez —
@@ -290,7 +290,7 @@ returns table (
   slug            text,
   name            text,
   status          text,
-  sira            int,
+  sort_order            int,
   country         text,
   country_slug    text,
   continent       text,
@@ -300,14 +300,14 @@ returns table (
 language sql
 stable
 as $$
-  select c.slug, c.name, c.status, c.sira, c.country, c.country_slug,
+  select c.slug, c.name, c.status, c.sort_order, c.country, c.country_slug,
          c.continent, c.continent_slug,
          count(e.id) filter (where e.is_published)
   from public.cities c
   left join public.events e on e.city_id = c.id
-  group by c.slug, c.name, c.status, c.sira, c.country, c.country_slug,
+  group by c.slug, c.name, c.status, c.sort_order, c.country, c.country_slug,
            c.continent, c.continent_slug
-  order by c.sira;
+  order by c.sort_order;
 $$;
 
 grant execute on function public.city_counts()         to anon, authenticated;
@@ -344,7 +344,7 @@ where slug in ('hamburg', 'frankfurt', 'leipzig')
   and not exists (select 1 from public.events e where e.city_id = cities.id);
 
 insert into public.cities
-  (slug, name, status, sira, country, country_slug, continent, continent_slug)
+  (slug, name, status, sort_order, country, country_slug, continent, continent_slug)
 values
   ('munchen', 'münchen', 'live', 1, 'Deutschland', 'de', 'Europe', 'eu'),
   ('berlin', 'berlin', 'live', 2, 'Deutschland', 'de', 'Europe', 'eu'),
@@ -403,14 +403,14 @@ values
 on conflict (slug) do update set
   name = excluded.name,
   status = excluded.status,
-  sira = excluded.sira,
+  sort_order = excluded.sort_order,
   country = excluded.country,
   country_slug = excluded.country_slug,
   continent = excluded.continent,
   continent_slug = excluded.continent_slug;
 
 create index if not exists cities_continent_idx
-  on public.cities (continent_slug, country_slug, sira);
+  on public.cities (continent_slug, country_slug, sort_order);
 
 insert into public.events
   (slug, city_id, type_id, title, meta, body, poster_no, starts_at,

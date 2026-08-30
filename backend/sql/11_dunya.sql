@@ -16,7 +16,7 @@ where slug in ('hamburg', 'frankfurt', 'leipzig')
   and not exists (select 1 from public.events e where e.city_id = cities.id);
 
 insert into public.cities
-  (slug, name, status, sira, country, country_slug, continent, continent_slug)
+  (slug, name, status, sort_order, country, country_slug, continent, continent_slug)
 values
   ('munchen', 'münchen', 'live', 1, 'Deutschland', 'de', 'Europe', 'eu'),
   ('berlin', 'berlin', 'live', 2, 'Deutschland', 'de', 'Europe', 'eu'),
@@ -75,14 +75,14 @@ values
 on conflict (slug) do update set
   name = excluded.name,
   status = excluded.status,
-  sira = excluded.sira,
+  sort_order = excluded.sort_order,
   country = excluded.country,
   country_slug = excluded.country_slug,
   continent = excluded.continent,
   continent_slug = excluded.continent_slug;
 
 create index if not exists cities_continent_idx
-  on public.cities (continent_slug, country_slug, sira);
+  on public.cities (continent_slug, country_slug, sort_order);
 
 insert into public.events
   (slug, city_id, type_id, title, meta, body, poster_no, starts_at,

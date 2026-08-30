@@ -85,8 +85,8 @@
 
   function start() {
     return Promise.all([
-      AH.request("/event_types?order=sira"),
-      AH.request("/cities?order=sira"),
+      AH.request("/event_types?order=sort_order"),
+      AH.request("/cities?order=sort_order"),
       AH.request("/venues?order=name"),
       reload(),
       comments(),

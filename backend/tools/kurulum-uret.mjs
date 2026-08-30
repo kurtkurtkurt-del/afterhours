@@ -1,13 +1,13 @@
 /* afterhours — 9 SQL dosyasini iki yapistirilabilir parcaya birlestirir.
-   Supabase panelinde tek tek dosya acmak yerine iki kere Run yeter.
+   Supabase panelinde tek tek file acmak yerine iki kere Run yeter.
 
-     node tools/kurulum-uret.mjs                                        */
+     node tools/setup-build.mjs                                        */
 
 import { readFile, writeFile } from "node:fs/promises";
 
-const oku = (d) => readFile(new URL("../sql/" + d, import.meta.url), "utf8");
+const read = (d) => readFile(new URL("../sql/" + d, import.meta.url), "utf8");
 
-const yapi = [
+const structure = [
   ["01_schema.sql", "TABLOLAR"],
   ["02_rls.sql", "KURALLAR — guvenlik burada"],
   ["03_seed_katalog.sql", "SEHIR, TUR, MEKAN"],
@@ -21,47 +21,47 @@ const yapi = [
   ["13_feedback.sql", "GERI BILDIRIM"],
 ];
 
-/* Dosyanin basina gorunur bir surum damgasi koyuyoruz: editorde hangi
+/* Dosyanin basina gorunur one surum damgasi koyuyoruz: editorde hangi
    kopyanin durdugu tek bakista anlasilsin. Pano guvenilmez cikti. */
-const damga = new Date().toISOString().slice(0, 16).replace("T", " ");
+const stamp = new Date().toISOString().slice(0, 16).replace("T", " ");
 
-let bir = `-- ============================================================
+let one = `-- ============================================================
 --  afterhours — KURULUM 1 / 2 : YAPI
---  SURUM: ${damga}   ← editorde bu satir gorunuyorsa dogru kopya
+--  SURUM: ${stamp}   ← editorde bu satir gorunuyorsa dogru kopya
 --
 --  Supabase panelinde: SQL Editor → New query → bu dosyanin
 --  TAMAMINI yapistir → Run.
 --
 --  Bittiginde "Success. No rows returned" gormelisin.
---  Sonra kurulum-2-yorumlar.sql dosyasini ayni sekilde calistir.
+--  Sonra setup-2-yorumlar.sql dosyasini ayni sekilde calistir.
 --
---  URETILMIS DOSYA — kaynak: backend/tools/kurulum-uret.mjs
+--  URETILMIS DOSYA — source: backend/tools/setup-build.mjs
 -- ============================================================
 `;
 
-for (const [dosya, baslik] of yapi) {
-  bir += `\n\n-- ============================================================\n`;
-  bir += `--  ${baslik}   (${dosya})\n`;
-  bir += `-- ============================================================\n\n`;
-  bir += await oku(dosya);
+for (const [file, heading] of structure) {
+  one += `\n\n-- ============================================================\n`;
+  one += `--  ${heading}   (${file})\n`;
+  one += `-- ============================================================\n\n`;
+  one += await read(file);
 }
 
 const iki = `-- ============================================================
 --  afterhours — KURULUM 2 / 2 : ORNEK YORUMLAR
---  SURUM: ${damga}
+--  SURUM: ${stamp}
 --
---  Once kurulum-1-yapi.sql calistirilmis olmali.
---  beforehours panelindeki ornek tartismalar: 180 konu, 131 cevap.
---  Bunlar UYDURMA ornek veridir; hic calistirmasan da site calisir,
---  yorum alani bos gorunur.
+--  Once setup-1-structure.sql calistirilmis check.
+--  beforehours panelindeki sample tartismalar: 180 topic, 131 reply.
+--  Bunlar UYDURMA sample veridir; hic calistirmasan da site calisir,
+--  yorum alani empty gorunur.
 --
---  URETILMIS DOSYA — kaynak: backend/tools/kurulum-uret.mjs
+--  URETILMIS DOSYA — source: backend/tools/setup-build.mjs
 -- ============================================================
 
-` + await oku("05_seed_comments.sql");
+` + await read("05_seed_comments.sql");
 
-await writeFile(new URL("../sql/kurulum-1-yapi.sql", import.meta.url), bir);
-await writeFile(new URL("../sql/kurulum-2-yorumlar.sql", import.meta.url), iki);
+await writeFile(new URL("../sql/setup-1-structure.sql", import.meta.url), one);
+await writeFile(new URL("../sql/setup-2-yorumlar.sql", import.meta.url), iki);
 
-console.log("kurulum-1-yapi.sql      " + Buffer.byteLength(bir).toLocaleString() + " bayt");
-console.log("kurulum-2-yorumlar.sql  " + Buffer.byteLength(iki).toLocaleString() + " bayt");
+console.log("setup-1-structure.sql      " + Buffer.byteLength(one).toLocaleString() + " bayt");
+console.log("setup-2-yorumlar.sql  " + Buffer.byteLength(iki).toLocaleString() + " bayt");

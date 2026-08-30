@@ -22,7 +22,7 @@ select
   e.is_published,
   t.slug  as type_slug,
   t.name  as type_name,
-  t.sira  as type_sira,
+  t.sort_order  as type_sort_order,
   c.slug  as city_slug,
   c.name  as city_name,
   v.slug  as venue_slug,
@@ -174,15 +174,15 @@ $$;
 -- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.event_counts(text);
 create or replace function public.event_counts(p_city text default 'munchen')
-returns table (type_slug text, type_name text, sira int, n bigint)
+returns table (type_slug text, type_name text, sort_order int, n bigint)
 language sql
 stable
 as $$
-  select e.type_slug, e.type_name, e.type_sira, count(*)
+  select e.type_slug, e.type_name, e.type_sort_order, count(*)
   from public.events_public e
   where e.is_published and e.city_slug = p_city
-  group by e.type_slug, e.type_name, e.type_sira
-  order by e.type_sira;
+  group by e.type_slug, e.type_name, e.type_sort_order
+  order by e.type_sort_order;
 $$;
 
 -- Bir etkinligi kac kisi biriktirmis. Kimin biriktirdigi gorunmez —
@@ -210,7 +210,7 @@ returns table (
   slug            text,
   name            text,
   status          text,
-  sira            int,
+  sort_order            int,
   country         text,
   country_slug    text,
   continent       text,
@@ -220,14 +220,14 @@ returns table (
 language sql
 stable
 as $$
-  select c.slug, c.name, c.status, c.sira, c.country, c.country_slug,
+  select c.slug, c.name, c.status, c.sort_order, c.country, c.country_slug,
          c.continent, c.continent_slug,
          count(e.id) filter (where e.is_published)
   from public.cities c
   left join public.events e on e.city_id = c.id
-  group by c.slug, c.name, c.status, c.sira, c.country, c.country_slug,
+  group by c.slug, c.name, c.status, c.sort_order, c.country, c.country_slug,
            c.continent, c.continent_slug
-  order by c.sira;
+  order by c.sort_order;
 $$;
 
 grant execute on function public.city_counts()         to anon, authenticated;

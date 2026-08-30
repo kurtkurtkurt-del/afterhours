@@ -1,16 +1,16 @@
 /* afterhours — dunya verisinden SQL uretir.
    Cikti: backend/sql/11_dunya.sql  (54 sehir, 106 gece)
 
-   Mevcut projede bir kez calistirilir; temiz kurulumda birlestirilmis
+   Mevcut projede one kez calistirilir; temiz kurulumda birlestirilmis
    dosyanin icinde zaten geliyor.                                      */
 
 import { readFile, writeFile } from "node:fs/promises";
 
-const kayit = JSON.parse(
-  await readFile(new URL("./dunya-kayit.json", import.meta.url), "utf8"));
+const record = JSON.parse(
+  await readFile(new URL("./dunya-record.json", import.meta.url), "utf8"));
 const { KITALAR } = await import("./dunya-veri.mjs");
 
-/* Kacisli tirnak: SQL editorlerinin ayristiricisi icin dengeli */
+/* Kacisli quote: SQL editorlerinin ayristiricisi icin dengeli */
 const q = (v) => (v === null || v === undefined)
   ? "null" : "'" + String(v).replace(/'/g, "''") + "'";
 
@@ -31,7 +31,7 @@ function anaCevir(gun, saat) {
 let sql = `-- ============================================================
 --  afterhours — DUNYA: 6 kita, 18 ulke, 54 sehir, 106 gece
 --
---  URETILMIS DOSYA — kaynak: backend/tools/dunya-sql.mjs
+--  URETILMIS DOSYA — source: backend/tools/dunya-sql.mjs
 --  Icerik uydurma ama elle yazildi; posterleri de uretildi
 --  (posters/37.svg … 142.svg).
 -- ============================================================
@@ -47,42 +47,42 @@ where slug in ('hamburg', 'frankfurt', 'leipzig')
 
 `;
 
-/* --- sehirler --- */
+/* --- cities --- */
 
-let sira = 0;
-const satirlar = [];
+let sort_order = 0;
+const rows = [];
 for (const k of KITALAR) {
   for (const u of k.ulkeler) {
-    for (const s of u.sehirler) {
-      sira++;
-      const durum = s.geceler.length || s.slug === "munchen" ? "live" : "planned";
-      satirlar.push(`  (${q(s.slug)}, ${q(s.ad)}, ${q(durum)}, ${sira}, ` +
-        `${q(u.ad)}, ${q(u.kod)}, ${q(k.kita)}, ${q(k.kitaKod)})`);
+    for (const s of u.cities) {
+      sort_order++;
+      const status = s.nights.length || s.slug === "munchen" ? "live" : "planned";
+      rows.push(`  (${q(s.slug)}, ${q(s.name)}, ${q(status)}, ${sort_order}, ` +
+        `${q(u.name)}, ${q(u.code)}, ${q(k.kita)}, ${q(k.kitaKod)})`);
     }
   }
 }
 
 sql += `insert into public.cities
-  (slug, name, status, sira, country, country_slug, continent, continent_slug)
+  (slug, name, status, sort_order, country, country_slug, continent, continent_slug)
 values
-${satirlar.join(",\n")}
+${rows.join(",\n")}
 on conflict (slug) do update set
   name = excluded.name,
   status = excluded.status,
-  sira = excluded.sira,
+  sort_order = excluded.sort_order,
   country = excluded.country,
   country_slug = excluded.country_slug,
   continent = excluded.continent,
   continent_slug = excluded.continent_slug;
 
 create index if not exists cities_continent_idx
-  on public.cities (continent_slug, country_slug, sira);
+  on public.cities (continent_slug, country_slug, sort_order);
 
 `;
 
-/* --- geceler --- */
+/* --- nights --- */
 
-for (const g of kayit) {
+for (const g of record) {
   const slug = slugla(g.city + "-" + g.title);
   const meta = `${g.venue} · ${g.gun} · ${g.saat}`;
   sql += `insert into public.events
@@ -99,5 +99,5 @@ on conflict (slug) do nothing;
 }
 
 await writeFile(new URL("../sql/11_dunya.sql", import.meta.url), sql);
-console.log("11_dunya.sql yazildi: " + satirlar.length + " sehir, " + kayit.length + " gece, " +
+console.log("11_dunya.sql yazildi: " + rows.length + " sehir, " + record.length + " gece, " +
             Buffer.byteLength(sql).toLocaleString() + " bayt");

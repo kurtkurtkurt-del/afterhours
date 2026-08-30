@@ -1,6 +1,6 @@
 /* afterhours — on yuzdeki veriyi SQL'e cevirir.
    Kaynak: events-data.js (36 etkinlik), app.js icindeki VENUES,
-   explore/comment-pools.js (ornek yorumlar).
+   explore/comment-pools.js (sample yorumlar).
    Cikti: sql/03_seed_katalog.sql, 04_seed_events.sql, 05_seed_comments.sql
 
    Elle yazilmis veri tek yerde kalsin diye uretiliyor: ileride
@@ -9,19 +9,19 @@
 import { readFile, writeFile } from "node:fs/promises";
 
 const kok = new URL("../../", import.meta.url);
-const oku = (yol) => readFile(new URL(yol, kok), "utf8");
+const read = (path) => readFile(new URL(path, kok), "utf8");
 
 /* ---- kaynaklari yukle (DOM'suz, duz eval) ---------------------------- */
 
-const eventsJs = await oku("events-data.js");
+const eventsJs = await read("events-data.js");
 const { POSTERS } = new Function(eventsJs + "\n;return { POSTERS };")();
 
 /* VENUES app.js'in icindeydi, venues.js'e tasindi (maps sayfasi da
    ayni koordinatlari kullaniyor). */
-const mekanJs = await oku("venues.js");
+const mekanJs = await read("venues.js");
 const { VENUES } = new Function("window", mekanJs + "\n;return { VENUES };")({});
 
-const yorumJs = await oku("explore/comment-pools.js");
+const yorumJs = await read("explore/comment-pools.js");
 const { COMMENT_POOL, COMMENTS_FOR } =
   new Function(yorumJs + "\n;return { COMMENT_POOL, COMMENTS_FOR };")();
 
@@ -31,16 +31,16 @@ const { COMMENT_POOL, COMMENTS_FOR } =
 
    Kesme isareti iceren metinleri kacisli tirnakla ('') yazmak Postgres
    icin dogru, ama SQL EDITORLERININ ayristiricisi icin degil: Supabase
-   panelinde '...aren''t...' satiri tirnak sayimini kaydirdi ve metnin
-   gerisi kod sanildi ("relation \"one\" does not exist"). Dolar tirnagi
+   panelinde '...aren''t...' satiri quote sayimini kaydirdi ve metnin
+   gerisi code sanildi ("relation \"one\" does not exist"). Dolar tirnagi
    bu sorunu tamamen ortadan kaldiriyor. */
 const q = (v) => {
   if (v === null || v === undefined) return "null";
-  /* Kacisli tirnak ('') kullaniyoruz: hem Postgres icin dogru, hem de
+  /* Kacisli quote ('') kullaniyoruz: hem Postgres icin dogru, hem de
      tirnaklari sayarak ilerleyen basit ayristiricilar icin DENGELI
      (iki isaret = iki gecis). Dolar tirnagi denendi ve daha kotuydu:
      icindeki tek kesme isareti ("aren't") sayimi kaydirip metnin
-     gerisini kod haline getiriyor. */
+     gerisini code haline getiriyor. */
   return "'" + String(v).replace(/'/g, "''") + "'";
 };
 const slugla = (s) =>
@@ -50,7 +50,7 @@ const slugla = (s) =>
     .replace(/\$/g, "s")
     .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
-/* Sitenin "bugun"u. Yilsiz tarihlerin yili buna gore cikariliyor. */
+/* Sitenin "today"u. Yilsiz tarihlerin yili buna gore cikariliyor. */
 const BUGUN = new Date("2026-08-29T00:00:00+02:00");
 
 /* meta = "Olympiahalle · 11.09.26 · 18:30"
@@ -108,23 +108,23 @@ function metayiCoz(meta) {
 function mekanBul(adayHam) {
   if (!adayHam) return null;
   const aday = adayHam.toUpperCase().trim();
-  let m = VENUES.find((x) => x.ad === aday);
+  let m = VENUES.find((x) => x.name === aday);
   if (m) return m;
-  m = VENUES.find((x) => aday.startsWith(x.ad) || x.ad.startsWith(aday));
+  m = VENUES.find((x) => aday.startsWith(x.name) || x.name.startsWith(aday));
   if (m) return m;
   // "ab Isartor" gibi on ekli yazimlar
-  m = VENUES.find((x) => aday.includes(x.ad));
+  m = VENUES.find((x) => aday.includes(x.name));
   return m || null;
 }
 
-/* zaman metnini gercek bir ana cevir: "3 days ago", "Nov 2023", "6 h ago" */
-function zamaniCoz(metin) {
+/* zaman metnini gercek one main shape: "3 days ago", "Nov 2023", "6 h ago" */
+function zamaniCoz(text) {
   const simdi = new Date("2026-08-29T21:00:00+02:00");
   let m;
-  if (/^yesterday$/i.test(metin)) return new Date(simdi - 864e5);
-  if ((m = metin.match(/^(\d+)\s*h ago$/i)))     return new Date(simdi - m[1] * 36e5);
-  if ((m = metin.match(/^(\d+)\s*days? ago$/i))) return new Date(simdi - m[1] * 864e5);
-  if ((m = metin.match(/^([A-Za-z]{3,9})\s+(\d{4})$/))) {
+  if (/^yesterday$/i.test(text)) return new Date(simdi - 864e5);
+  if ((m = text.match(/^(\d+)\s*h ago$/i)))     return new Date(simdi - m[1] * 36e5);
+  if ((m = text.match(/^(\d+)\s*days? ago$/i))) return new Date(simdi - m[1] * 864e5);
+  if ((m = text.match(/^([A-Za-z]{3,9})\s+(\d{4})$/))) {
     const aylar = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
     const i = aylar.indexOf(m[1].slice(0, 3).toLowerCase());
     if (i >= 0) return new Date(Date.UTC(+m[2], i, 15, 20, 0, 0));
@@ -132,10 +132,10 @@ function zamaniCoz(metin) {
   return simdi;                       // cozulemezse simdi; time_text zaten dogru
 }
 
-/* ---- 03: sehir, tur, mekan ------------------------------------------ */
+/* ---- 03: sehir, kind, mekan ------------------------------------------ */
 
-/* slug, ad, durum, sira, ulke, ulke kodu */
-const sehirler = [
+/* slug, name, status, sort_order, ulke, ulke kodu */
+const cities = [
   ["munchen", "münchen", "live", 1, "Deutschland", "de"],
   ["istanbul", "istanbul", "live", 2, "Türkiye", "tr"],
   ["ankara", "ankara", "soon", 3, "Türkiye", "tr"],
@@ -152,15 +152,15 @@ const sehirler = [
 /* spec'in kendi sirasi */
 const turler = ["Rave", "Club Night", "Konzert", "Festival", "Meetup", "Hausparty"];
 
-let sql = `-- URETILMIS DOSYA — elle duzenleme. Kaynak: backend/tools/seed-uret.mjs
+let sql = `-- URETILMIS DOSYA — elle duzenleme. Kaynak: backend/tools/seed-build.mjs
 -- Sehirler, turler ve mekanlar. Once bu, sonra 04.
 
-insert into public.cities (slug, name, status, sira, country, country_slug) values
-${sehirler.map(([s, a, d, i, u, uk]) =>
+insert into public.cities (slug, name, status, sort_order, country, country_slug) values
+${cities.map(([s, a, d, i, u, uk]) =>
   `  (${q(s)}, ${q(a)}, ${q(d)}, ${i}, ${q(u)}, ${q(uk)})`).join(",\n")}
 on conflict (slug) do nothing;
 
-insert into public.event_types (slug, name, sira) values
+insert into public.event_types (slug, name, sort_order) values
 ${turler.map((t, i) => `  (${q(slugla(t))}, ${q(t)}, ${i + 1})`).join(",\n")}
 on conflict (slug) do nothing;
 
@@ -168,7 +168,7 @@ on conflict (slug) do nothing;
 
 for (const m of VENUES) {
   sql += `insert into public.venues (city_id, slug, name, map_x, map_y, opens_hour, open_hours)
-select id, ${q(slugla(m.ad))}, ${q(m.ad)}, ${m.x}, ${m.y}, ${m.saat}, ${m.sure}
+select id, ${q(slugla(m.name))}, ${q(m.name)}, ${m.x}, ${m.y}, ${m.saat}, ${m.sure}
 from public.cities where slug = 'munchen'
 on conflict (city_id, slug) do nothing;
 `;
@@ -178,7 +178,7 @@ await writeFile(new URL("../sql/03_seed_katalog.sql", import.meta.url), sql);
 
 /* ---- 04: 36 etkinlik ------------------------------------------------- */
 
-let etkinlikSql = `-- URETILMIS DOSYA — kaynak: events-data.js (${POSTERS.length} kayit)
+let etkinlikSql = `-- URETILMIS DOSYA — source: events-data.js (${POSTERS.length} record)
 -- meta alani ekranda gorunen satirin ta kendisi; degistirilmemeli.
 
 `;
@@ -199,7 +199,7 @@ select ${q(e.slug)}, c.id, t.id, ${mekan ? `v.id` : `null`},
        ${baslangic ? `${q(baslangic)}::timestamptz` : "null"}, ${tahmin}, ${q(tarihMetni)}
 from public.cities c
 join public.event_types t on t.slug = ${q(slugla(e.kind))}
-${mekan ? `join public.venues v on v.city_id = c.id and v.slug = ${q(slugla(mekan.ad))}\n` : ""}where c.slug = 'munchen'
+${mekan ? `join public.venues v on v.city_id = c.id and v.slug = ${q(slugla(mekan.name))}\n` : ""}where c.slug = 'munchen'
 on conflict (slug) do nothing;
 
 `;
@@ -207,38 +207,38 @@ on conflict (slug) do nothing;
 
 await writeFile(new URL("../sql/04_seed_events.sql", import.meta.url), etkinlikSql);
 
-/* ---- 05: ornek yorumlar --------------------------------------------- */
+/* ---- 05: sample yorumlar --------------------------------------------- */
 
-let yorumSql = `-- URETILMIS DOSYA — kaynak: explore/comment-pools.js
+let yorumSql = `-- URETILMIS DOSYA — source: explore/comment-pools.js
 -- Ornek yorumlar: gercek kullanicisi yok, author_name ile duruyorlar.
--- Sitenin bugun gosterdigi secimin aynisi (ayni tohum, ayni kartlar).
+-- Sitenin today gosterdigi secimin aynisi (ayni seed, ayni kartlar).
 
 `;
 let konuSayisi = 0, cevapSayisi = 0;
 
 for (const e of POSTERS) {
   const { older, recent } = COMMENTS_FOR(e);
-  for (const konu of [...recent, ...older]) {
+  for (const topic of [...recent, ...older]) {
     konuSayisi++;
-    const zaman = zamaniCoz(konu.zaman).toISOString();
-    yorumSql += `with konu as (
+    const zaman = zamaniCoz(topic.zaman).toISOString();
+    yorumSql += `with topic as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, ${q(konu.kim)}, ${q(konu.body)}, ${q(konu.zaman)}, ${q(zaman)}::timestamptz
+  select id, ${q(topic.kim)}, ${q(topic.body)}, ${q(topic.zaman)}, ${q(zaman)}::timestamptz
   from public.events where slug = ${q(e.slug)}
   returning id, event_id
 )
 `;
-    if (konu.cevaplar && konu.cevaplar.length) {
-      const satirlar = konu.cevaplar.map((c) => {
+    if (topic.cevaplar && topic.cevaplar.length) {
+      const rows = topic.cevaplar.map((c) => {
         cevapSayisi++;
-        return `  select konu.event_id, konu.id, ${q(c.kim)}, ${q(c.body)}, ${q(c.zaman)}, ${q(zamaniCoz(c.zaman).toISOString())}::timestamptz from konu`;
+        return `  select topic.event_id, topic.id, ${q(c.kim)}, ${q(c.body)}, ${q(c.zaman)}, ${q(zamaniCoz(c.zaman).toISOString())}::timestamptz from topic`;
       }).join("\n  union all\n");
       yorumSql += `insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
-${satirlar};
+${rows};
 
 `;
     } else {
-      yorumSql += `select 1 from konu;\n\n`;
+      yorumSql += `select 1 from topic;\n\n`;
     }
   }
 }
@@ -248,6 +248,6 @@ await writeFile(new URL("../sql/05_seed_comments.sql", import.meta.url), yorumSq
 console.log(`etkinlik      : ${POSTERS.length}`);
 console.log(`  tarihi var    : ${tarihli}  (${tahminli} tanesi yil cikarimi — admin'de dogrulanacak)`);
 console.log(`  mekani eslesti: ${mekanli} / ${POSTERS.length}`);
-console.log(`yorum         : ${konuSayisi} konu, ${cevapSayisi} cevap`);
+console.log(`yorum         : ${konuSayisi} topic, ${cevapSayisi} reply`);
 console.log(`mekan         : ${VENUES.length}`);
-console.log(`tur           : ${turler.length}, city: ${sehirler.length}`);
+console.log(`kind           : ${turler.length}, city: ${cities.length}`);

@@ -21,7 +21,7 @@ update public.cities set country = 'Österreich', country_slug = 'at'
 
 -- Listeyi biraz genislet. Hicbirinde henuz gece yok; filtrede sayilariyla
 -- gorunuyorlar, yani bos olduklari sakli degil.
-insert into public.cities (slug, name, status, sira, country, country_slug) values
+insert into public.cities (slug, name, status, sort_order, country, country_slug) values
   ('hamburg',   'hamburg',   'planned', 7,  'Deutschland', 'de'),
   ('frankfurt', 'frankfurt', 'planned', 8,  'Deutschland', 'de'),
   ('leipzig',   'leipzig',   'planned', 9,  'Deutschland', 'de'),
@@ -29,7 +29,7 @@ insert into public.cities (slug, name, status, sira, country, country_slug) valu
   ('graz',      'graz',      'planned', 11, 'Österreich',  'at')
 on conflict (slug) do nothing;
 
-create index if not exists cities_country_idx on public.cities (country_slug, sira);
+create index if not exists cities_country_idx on public.cities (country_slug, sort_order);
 
 -- Filtrede her sehrin yanindaki sayi. Bos sehirler bos gorunsun diye
 -- yayindaki etkinlikler sayiliyor.
@@ -40,7 +40,7 @@ returns table (
   slug          text,
   name          text,
   status        text,
-  sira          int,
+  sort_order          int,
   country       text,
   country_slug  text,
   n             bigint
@@ -48,12 +48,12 @@ returns table (
 language sql
 stable
 as $$
-  select c.slug, c.name, c.status, c.sira, c.country, c.country_slug,
+  select c.slug, c.name, c.status, c.sort_order, c.country, c.country_slug,
          count(e.id) filter (where e.is_published)
   from public.cities c
   left join public.events e on e.city_id = c.id
-  group by c.slug, c.name, c.status, c.sira, c.country, c.country_slug
-  order by c.sira;
+  group by c.slug, c.name, c.status, c.sort_order, c.country, c.country_slug
+  order by c.sort_order;
 $$;
 
 grant execute on function public.city_counts() to anon, authenticated;
