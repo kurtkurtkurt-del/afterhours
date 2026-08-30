@@ -3,12 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node test/schema.test.mjs && node test/seed.test.mjs && node test/views.test.mjs && node test/friends.test.mjs && node test/profiles.test.mjs && node test/feedback.test.mjs && node test/jobs.test.mjs && node test/update.test.mjs && node test/setup.test.mjs",
+    "test": "node test/schema.test.mjs && node test/seed.test.mjs && node test/views.test.mjs && node test/friends.test.mjs && node test/profiles.test.mjs && node test/feedback.test.mjs && node test/jobs.test.mjs && node test/update.test.mjs && node test/setup.test.mjs && node test/backup.test.mjs",
     "seed": "node tools/build-seed.mjs",
     "setup": "node tools/build-setup.mjs",
     "server": "node tools/local-server.mjs",
     "backup": "node tools/backup.mjs",
-    "health": "node tools/health.mjs"
+    "health": "node tools/health.mjs",
+    "restore": "node tools/restore.mjs"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.8"

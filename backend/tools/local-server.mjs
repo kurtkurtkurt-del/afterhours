@@ -72,33 +72,33 @@ async function argumentTypes(fn) {
 
 /* --- a small subset of the PostgREST filters ------------------------- */
 
-/* ?event_id=eq.<uuid>&sort_order=created_at.desc&limit=60 */
-function translateFilters(arama, counter) {
+/* ?event_id=eq.<uuid>&order=created_at.desc&limit=60 */
+function translateFilters(search, counter) {
   const conditions = [];
   const params = [];
-  let sort_order = "";
+  let orderBy = "";
   let limit = "";
 
-  for (const [field, value] of arama) {
+  for (const [field, value] of search) {
     if (field === "select" || field === "apikey") continue;
-    if (field === "sort_order") {
+    if (field === "order") {
       const [k, y] = value.split(".");
-      sort_order = ` order by ${k.replace(/[^a-z_]/gi, "")} ${/desc/i.test(y) ? "desc" : "asc"}`;
+      orderBy = ` order by ${k.replace(/[^a-z_]/gi, "")} ${/desc/i.test(y) ? "desc" : "asc"}`;
       continue;
     }
     if (field === "limit") { limit = ` limit ${Number(value) || 50}`; continue; }
 
-    const [islem, ...kalan] = value.split(".");
-    const v = kalan.join(".");
+    const [op, ...rest] = value.split(".");
+    const v = rest.join(".");
     const column = field.replace(/[^a-z_0-9]/gi, "");
-    const operator = { eq: "=", neq: "<>", gt: ">", lt: "<", gte: ">=", lte: "<=" }[islem];
+    const operator = { eq: "=", neq: "<>", gt: ">", lt: "<", gte: ">=", lte: "<=" }[op];
     if (!operator) continue;
     params.push(v);
     conditions.push(`${column} ${operator} $${counter.n++}`);
   }
   return {
     where: conditions.length ? " where " + conditions.join(" and ") : "",
-    sort_order, limit, params,
+    orderBy, limit, params,
   };
 }
 
@@ -278,12 +278,12 @@ const server = createServer(async (req, reply) => {
 
       const table = name.split("?")[0].replace(/[^a-z_0-9]/gi, "");
       const counter = { n: 1 };
-      const { where, sort_order, limit, params } = translateFilters(url.searchParams, counter);
+      const { where, orderBy, limit, params } = translateFilters(url.searchParams, counter);
       const prefer = String(req.headers.prefer || "");
 
       if (req.method === "GET") {
         const r = await db.query(
-          `select * from public.${table}${where}${sort_order}${limit}`, params);
+          `select * from public.${table}${where}${orderBy}${limit}`, params);
         return send(200, r.rows);
       }
 
@@ -293,8 +293,8 @@ const server = createServer(async (req, reply) => {
         const columns = Object.keys(rows[0]);
         const values = [];
         const parts = rows.map((s) => {
-          const yer = columns.map((k) => { values.push(s[k]); return `$${values.length}`; });
-          return `(${yer.join(", ")})`;
+          const slots = columns.map((k) => { values.push(s[k]); return `$${values.length}`; });
+          return `(${slots.join(", ")})`;
         });
         const conflict = /merge-duplicates/.test(prefer)
           ? ` on conflict (user_id, event_id) do update set direction = excluded.direction,
@@ -316,8 +316,8 @@ const server = createServer(async (req, reply) => {
         const f = translateFilters(url.searchParams, shifted);
         const assignments = columns.map((k, i) => `${k} = $${i + 1}`);
         const r = await db.query(
-          `update public.${table} set ${assignments.join(", ")}${f.nerede} returning *`,
-          [...kolonlar.map((k) => body[k]), ...f.parametreler]);
+          `update public.${table} set ${assignments.join(", ")}${f.where} returning *`,
+          [...columns.map((k) => body[k]), ...f.params]);
         return send(200, r.rows);
       }
 
@@ -327,7 +327,7 @@ const server = createServer(async (req, reply) => {
       }
     }
 
-    send(404, { message: "bilinmeyen uc: " + path });
+    send(404, { message: "unknown endpoint: " + path });
   } catch (e) {
     console.error("  ✗ " + req.method + " " + path + " → " + e.message);
     send(400, { message: e.message });

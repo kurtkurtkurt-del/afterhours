@@ -29,9 +29,10 @@ tools/build-posters.mjs  generates the posters for the new cities
 tools/local-server.mjs   an imitation of Supabase — for development
 tools/world-sql.mjs      turns the world data into 11_world.sql
 tools/backup.mjs         backs the content up to JSON
+tools/restore.mjs        turns a backup back into SQL
 tools/health.mjs         the status check
 
-test/                    187 checks, all on a real Postgres (PGlite)
+test/                    204 checks, all on a real Postgres (PGlite)
 ```
 
 ## Day to day
@@ -43,6 +44,7 @@ npm run seed       # rebuild the SQL after events-data.js changed
 npm run setup      # rebuild the two combined setup files
 npm run health     # the state of the published database, and which SQL is in
 npm run backup     # take a copy of the content
+npm run restore    # turn one of those copies back into SQL
 ```
 
 To try the site against the local server: start the server, then open a
@@ -130,6 +132,23 @@ every numbered file stamps its own name when it runs, so the answer to
 **9 · Backups** — Supabase takes a daily backup. On top of that, run
 `npm run backup` once a month; a copy of the texts, independent of the
 project, lands under `backend/backup/`.
+
+Putting one back:
+
+```bash
+npm run restore backup/afterhours-2026-08-30.json
+```
+
+That writes `backup/restore-2026-08-30.sql` next to it, to paste into the
+SQL editor. It only fills gaps — every statement is `on conflict do
+nothing`, so content that is still there is left alone and running it
+twice changes nothing. It restores the cities, kinds, venues, events and
+sample comments; it does not restore accounts, swipes or friendships,
+which are people's and were never in the backup.
+
+`backup.test.mjs` is the reason to trust it: it builds a full database,
+takes a backup, restores into an empty one, and compares the two field for
+field.
 
 ## The profile (12_profiles.sql)
 

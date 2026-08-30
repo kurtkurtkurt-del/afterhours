@@ -1,12 +1,12 @@
-/* afterhours — icerik yedegi.
+/* afterhours — a backup of the content.
    What needs backing up is what cannot be made again: the event
    texts, the venues and the comments. The daily backup Supabase takes
    is a separate thing; this is your own copy, independent of the project.
 
-     node tools/backup.mjs                       (config.js'teki adrese)
+     node tools/backup.mjs                       (the address in config.js)
      node tools/backup.mjs http://localhost:4350 (against another address)
 
-   Cikti: backend/backup/afterhours-YYYY-AA-GG.json  */
+   Output: backend/backup/afterhours-YYYY-MM-DD.json  */
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 
@@ -35,13 +35,13 @@ const pull = async (path) => {
 };
 
 const backup = {
-  alindi: new Date().toISOString(),
+  taken_at: new Date().toISOString(),
   source: address,
-  cities: await pull("/cities?sort_order=sort_order"),
-  event_types: await pull("/event_types?sort_order=sort_order"),
-  venues: await pull("/venues?sort_order=name"),
-  events: await pull("/events_public?sort_order=poster_no&limit=1000"),
-  comments: await pull("/comments_public?sort_order=created_at&limit=5000"),
+  cities: await pull("/cities?order=sort_order"),
+  event_types: await pull("/event_types?order=sort_order"),
+  venues: await pull("/venues?order=name"),
+  events: await pull("/events_public?order=poster_no&limit=1000"),
+  comments: await pull("/comments_public?order=created_at&limit=5000"),
 };
 
 const day = new Date().toISOString().slice(0, 10);
@@ -50,7 +50,7 @@ await mkdir(folder, { recursive: true });
 const file = new URL("afterhours-" + day + ".json", folder);
 await writeFile(file, JSON.stringify(backup, null, 2));
 
-console.log("backup alindi: " + file.pathname);
+console.log("backup taken: " + file.pathname);
 for (const [name, list] of Object.entries(backup)) {
   if (Array.isArray(list)) console.log(`  ${name.padEnd(14)} ${list.length}`);
 }

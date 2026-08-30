@@ -313,7 +313,7 @@ reasons — deleting a topic would take other people's replies with it, and
 the constraint on the `comments` table refuses a row with no author. The
 settings page says so before it deletes.
 
-For the setup, the tests (187 checks) and the local imitation of Supabase
+For the setup, the tests (204 checks) and the local imitation of Supabase
 (`tools/local-server.mjs`, PostgREST + GoTrue on top of PGlite) →
 **[backend/README.md](backend/README.md)**
 
@@ -326,7 +326,7 @@ request. Three jobs, none of which needs a secret:
 
 | job | what it refuses to let through |
 |---|---|
-| `backend` | the 187 checks, on a real Postgres (PGlite) |
+| `backend` | the 204 checks, on a real Postgres (PGlite) |
 | `generated` | SQL that has drifted from the files it was built from — it rebuilds and asks git whether anything moved |
 | `versions` | more than one `?v=NN` across the pages, which would serve a stale script against a new stylesheet |
 
@@ -457,6 +457,12 @@ Every one of these cost us something:
   `const text = text.value.trim()` — a ReferenceError on every click, and
   the feedback page could not send anything. A rename tool must refuse a
   target name that is already an identifier in that file.
+- **`npm run backup` did not work at all.** The bulk rename of the `sira`
+  column had also renamed PostgREST's `order=` query parameter to
+  `sort_order=`, and the API answers 400 to that — so the tool failed on
+  its first request. The local server had the mirror of it and ignored
+  ordering entirely. A parameter that belongs to somebody else's API is not
+  yours to rename.
 - **Pasting a setup file twice used to double every conversation.** The
   structure files were already repeatable (`on conflict do nothing`), but
   the comment seed had no guard. It now clears the previous sample set
