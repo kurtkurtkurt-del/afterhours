@@ -2280,9 +2280,16 @@ body.arkadaslar .giris {
 
 /* Giris/friends sayfalariyla ayni dil, ama icerik uzun oldugu icin
    dikeyde ortalanmiyor: yukaridan basliyor ve akiyor. */
+/* Serit sayfanin tamamini kaplasin diye kap genis; okunacak metin ise
+   yine dar bir sutunda, ama bu sayfada ORTALANMIS. */
 .yardim {
-  max-width: 660px;
+  max-width: 1400px;
   padding: 128px 32px 96px;
+}
+
+.yr-govde {
+  max-width: 660px;
+  margin: 0 auto;
 }
 
 /* Basligin ustundeki serit: uc sayi yan yana, aralarinda sac teli.
@@ -2292,11 +2299,11 @@ body.arkadaslar .giris {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  margin-bottom: 44px;
+  margin-bottom: 64px;
 }
 
 .yr-sayi {
-  padding: 18px 16px 20px;
+  padding: 22px 24px 24px;
   border-left: 1px solid rgba(0, 0, 0, 0.09);
 }
 
@@ -2315,8 +2322,8 @@ body.arkadaslar .giris {
 }
 
 .yr-sayi-n {
-  margin-top: 6px;
-  font-size: 30px;
+  margin-top: 8px;
+  font-size: clamp(30px, 3.4vw, 46px);
   font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1;
@@ -2324,6 +2331,7 @@ body.arkadaslar .giris {
 
 @media (max-width: 720px) {
   /* Telefonda yan yana sigmiyor: alt alta, hepsi sola hizali */
+  .yardim { padding: 104px 16px 64px; }
   .yr-sayilar { grid-template-columns: minmax(0, 1fr); margin-bottom: 34px; }
   .yr-sayi {
     display: flex;
@@ -2338,9 +2346,13 @@ body.arkadaslar .giris {
   .yr-sayi:first-child { border-top: 0; }
   .yr-sayi-ad { min-height: 0; }
   .yr-sayi-n { margin-top: 0; font-size: 22px; }
+  .yr-sayi { padding: 12px 0; }
 }
 
-.yardim .giris-baslik { margin-bottom: 20px; }
+.yardim .giris-baslik {
+  margin-bottom: 20px;
+  text-align: center;
+}
 
 .yardim-metin {
   font-size: 16px;
