@@ -253,10 +253,21 @@ who froze no at1 at2 q1 q2`. Örnek için `cards/kartlar-veri.js`.
 ## 8. Backend
 
 Postgres + Supabase. Tablolar: `cities`, `event_types`, `venues`, `events`,
-`profiles`, `swipes`, `comments`, `friendships`.
+`profiles`, `profile_settings`, `swipes`, `comments`, `friendships`.
 
-Kurulum, testler ve yerel Supabase taklidi (`tools/yerel-sunucu.mjs`,
-PGlite üstünde PostgREST + GoTrue) için → **[backend/README.md](backend/README.md)**
+**Profil ikiye ayrılmış** — herkese açık kart (`profiles`: handle, görünen
+ad, bir satır, şehir, katılma, son görülme) ile yalnız sahibinin okuduğu
+ayarlar (`profile_settings`: sakladıklarını kim görsün, e-posta, dil).
+Ayırmasaydık `profiles`'ın "herkes okur" kuralı ayarları da açardı.
+
+Kayıt akışı: hesap açılınca tetikleyici profili **ve** ayar satırını kurar,
+ama kayıt **handle seçilene kadar bitmiş sayılmaz** (`onboarded_at`).
+Ön yüzün çağıracağı fonksiyonlar: `handle_status()`, `profile_setup()`,
+`profile_me()`, `profile_card()`, `seen()`.
+
+Kurulum, testler (135 kontrol) ve yerel Supabase taklidi
+(`tools/yerel-sunucu.mjs`, PGlite üstünde PostgREST + GoTrue) için →
+**[backend/README.md](backend/README.md)**
 
 ---
 
@@ -290,14 +301,18 @@ Sıra önemli: her adım bir öncekinin açtığı yolu kapatıyor.
 - [x] Dipnot + hukuk sayfaları (Muster)
 - [x] Hesap sayfası kısayolları
 - [x] **Etkinlik sayfası sistemi** — 36 gece, tek düzen
+- [x] **Profil yapısı** — kart + ayarlar, kayıt adımı, kurallar, 37 test
 
 **Sırada (önerilen sıra)**
 
-1. **Kayıt yolu.** `login.js`'te sign-up yok; yeni kimse hesap açamıyor.
+1. **Kayıt yolu — ön yüz.** Arkası hazır (`12_profiles.sql`), önü yok:
+   `login.js`'te sign-up yok, `register/` boş. Yapılacak iki ekran:
+   (a) e-posta + şifre ile hesap açma, (b) hemen ardından handle seçme —
+   `handle_status()` ile canlı kontrol, `profile_setup()` ile bitirme.
    Bu olmadan kart biriktirme, arkadaşlık ve yorum yazma herkese kapalı.
-   Hedef sayfa hazır: `register/`.
 2. **`maps/` menüye.** Sayfa var, hiçbir yerden bağlantısı yok.
-3. **`settings/`** — profil, handle, hesap silme (DSGVO için de gerekli).
+3. **`settings/`** — profil düzenleme (`profile_me()` okur), sakladıklarının
+   görünürlüğü, e-posta tercihi, hesap silme (DSGVO için de gerekli).
 4. **`feedback/`** — "give feedback" bir yere gitmeli.
 5. **Etkinlik verisinin genişlemesi.** Bugün beş alan var
    (`slug tur baslik meta metin`). Etkinlik sayfasındaki her şey — kadro,

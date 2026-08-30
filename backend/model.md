@@ -21,6 +21,8 @@ city ──< venue ──< event >── event_type
                     └──< comment >── profile      (beforehours; cevaplar parent_id ile)
 
 profile ──< friendship >── profile                (karşılıklı, onaylı)
+profile ──1 profile_settings                      (yalnız sahibi okur)
+profile >── city                                  (memleket şehri)
 ```
 
 ### city — şehir
@@ -86,3 +88,26 @@ gerçek yorumlarda `author_id` dolu olur.
 
 Son satır önemli: kimin neyi beğendiği kişiseldir. Admin bile tek tek göremez,
 sadece toplam sayıları görür.
+
+### profile — kişi  *(2026-08-30'da genişledi)*
+
+Kayıttan sonra ortaya çıkan şey. **İkiye ayrıldı**: herkese açık kart ile
+yalnız sahibinin okuduğu ayarlar. Ayırmanın sebebi teknik değil, karar:
+`profiles` üzerindeki "herkes okur" kuralı ayarları da açardı, ve "kimin
+neyi beğendiği kimseye açık değil" ilkesi ancak ayar gizliyse tutar.
+
+| alan | ne | not |
+|---|---|---|
+| `handle` | `ahmet` | arkadaşlık bunun üzerinden; `^[a-z0-9_]{3,20}$` |
+| `display_name` | görünen ad | 1–40 karakter |
+| `bio` | bir satır | en fazla 160 karakter |
+| `city_id` | memleket şehri | destenin varsayılanı buradan gelebilir |
+| `onboarded_at` | **kayıt ne zaman bitti** | handle seçilince damgalanır |
+| `last_seen_at` | son görülme | friends&more listesi için |
+| `is_admin` | | yalnız SQL editöründen verilir |
+
+Ayarlar (`profile_settings`): `kept_visibility` (`friends` / `private`),
+`notify_email`, `locale`.
+
+**Bilerek yok:** profil fotoğrafı. Site baş harf çiziyor, foto yüklemek
+depo + moderasyon + DSGVO demek. Şimdilik gerekmiyor.

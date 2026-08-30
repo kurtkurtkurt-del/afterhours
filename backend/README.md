@@ -16,13 +16,15 @@ sql/06_views.sql         deste, biriktirilenler, sayaclar
 sql/07_friends.sql       arkadaslik islemleri
 sql/08_storage.sql       poster deposu (yalniz Supabase'de)
 sql/09_jobs.sql          gecmisi dusurme + saglik ozeti
+sql/11_dunya.sql         54 sehir, 106 gece
+sql/12_profiles.sql      kisi profilleri: kart + ayarlar + kayit adimi
 
 tools/seed-uret.mjs      on yuzdeki veriden 03/04/05'i uretir
 tools/yerel-sunucu.mjs   Supabase taklidi — gelistirme icin
 tools/yedek.mjs          icerigi JSON'a yedekler
 tools/saglik.mjs         durum kontrolu
 
-test/                    82 kontrol; hepsi gercek Postgres'te (PGlite)
+test/                    135 kontrol; hepsi gercek Postgres'te (PGlite)
 ```
 
 ## Gunluk isler
@@ -108,6 +110,48 @@ calistirabilirsin.
 **8 · Yedek** — Supabase gunluk yedek aliyor. Ayrica ayda bir
 `npm run yedek` calistir; metinlerin projeden bagimsiz bir kopyasi
 `backend/yedek/` altina duser.
+
+## Profil (12_profiles.sql)
+
+Kayit olduktan sonra ortaya cikan sey. Ikiye ayrilmis, cunku ikisi ayni
+sey degil:
+
+| tablo | ne | kim gorur |
+|---|---|---|
+| `profiles` | handle, gorunen ad, bir satirlik tanim, sehir, katilma tarihi, son gorulme | **herkes** |
+| `profile_settings` | sakladiklarini kim gorsun, e-posta istiyor musun, dil | **yalniz sahibi** — yonetici bile degil |
+
+Ayirmasaydik `profiles`'in "herkes okur" kurali ayarlari da acardi.
+
+**Kayit akisi.** Hesap acilinca tetikleyici (`handle_new_user`) profili ve
+ayar satirini kendiliginden kurar. Ama kayit **handle secilene kadar
+bitmis sayilmaz**: `onboarded_at` o an damgalanir. Kayit formu handle ve
+sehri metadata ile gonderirse tetikleyici onlari dener; handle doluysa
+sessizce bos birakir, kisi sonra secer.
+
+```
+auth.users’a satir  →  handle_new_user()  →  profiles + profile_settings
+                                              (handle bos, onboarded_at bos)
+                              ↓
+                       profile_setup(handle, ad, sehir, bir satir)
+                              ↓
+                       onboarded_at damgalandi — kayit bitti
+```
+
+**Fonksiyonlar**
+
+| ad | ne yapar |
+|---|---|
+| `handle_status(handle)` | `ok` · `bos` · `bicim` · `dolu` · `senin` — kayit formu her tusta sorar |
+| `profile_setup(handle, ad, sehir, bio)` | kaydi tamamlar, tek istekte |
+| `profile_me()` | kendi profilin + sayilar (sakladigin, arkadas, yorum) + ayarlar |
+| `profile_card(handle)` | baskasinin gordugu kart; sayilar ancak arkadassan ve ayar izin veriyorsa |
+| `seen()` | son gorulme damgasi |
+| `kept_visible(id)` | ayara gore "sakladiklari gorunur mu" — RLS bunu kullaniyor |
+
+**Kural degisikligi:** 02'deki "onayli arkadas SAGA attiklarini gorur"
+kurali artik ayara da bakiyor. Kisi `private` dediyse arkadasi da goremez,
+`friends_kept()` destesinde de cikmaz.
 
 ## Bilerek yapilmayanlar
 
