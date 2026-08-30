@@ -12,14 +12,14 @@
 
   const disarida = document.getElementById("sc-out");
   const icerde = document.getElementById("sc-in");
-  if (!disarida || !icerde || !AH.oturumHazir) return;
+  if (!disarida || !icerde || !AH.sessionReady) return;
 
   function bak() {
-    const girisli = Boolean(AH.girisliMi && AH.girisliMi());
+    const girisli = Boolean(AH.signedIn && AH.signedIn());
     disarida.hidden = girisli;
     icerde.hidden = !girisli;
   }
 
-  AH.oturumHazir.then(bak);
-  if (AH.oturumDegisti) AH.oturumDegisti(bak);
+  AH.sessionReady.then(bak);
+  if (AH.onSessionChange) AH.onSessionChange(bak);
 })();

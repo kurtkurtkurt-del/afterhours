@@ -6,8 +6,8 @@
    Guvenlik veritabanindaki kurallarla saglanir (backend/sql/02_rls.sql).
    Gizli olan "service_role" anahtari BURAYA ASLA YAZILMAZ.  */
 
-window.AH_AYAR = {
+window.AH_CONFIG = {
   url: "https://elmnnyxgavwjxvwjgjcu.supabase.co",
   anonKey: "sb_publishable_rrXU52Q7NnESxbEcp-6WfA_612THnnN",
-  sehir: "munchen",
+  city: "munchen",
 };

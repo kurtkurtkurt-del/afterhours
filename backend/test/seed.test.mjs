@@ -58,10 +58,10 @@ console.log("\n— ekranda gorunen metinler birebir mi —");
   r.rows.forEach((satir, i) => {
     const kaynak = POSTERS[i];
     if (satir.slug !== kaynak.slug) farkli.push(`${i}: slug ${satir.slug} ≠ ${kaynak.slug}`);
-    if (satir.title !== kaynak.baslik) farkli.push(`${kaynak.slug}: baslik`);
+    if (satir.title !== kaynak.title) farkli.push(`${kaynak.slug}: baslik`);
     if (satir.meta !== kaynak.meta) farkli.push(`${kaynak.slug}: meta "${satir.meta}" ≠ "${kaynak.meta}"`);
-    if (satir.body !== kaynak.metin) farkli.push(`${kaynak.slug}: metin`);
-    if (satir.tur !== kaynak.tur) farkli.push(`${kaynak.slug}: tur ${satir.tur} ≠ ${kaynak.tur}`);
+    if (satir.body !== kaynak.body) farkli.push(`${kaynak.slug}: metin`);
+    if (satir.kind !== kaynak.kind) farkli.push(`${kaynak.slug}: tur ${satir.kind} ≠ ${kaynak.kind}`);
     if (satir.poster_no !== i + 1) farkli.push(`${kaynak.slug}: poster no`);
   });
 
@@ -83,7 +83,7 @@ console.log("\n— yorumlarin sitedeki secimle ayni oldugu —");
     where e.slug = $1 and c.parent_id is null
     order by c.created_at desc`, [ornek.slug]);
 
-  const beklenen = [...yeni, ...eski].map((k) => k.metin).sort();
+  const beklenen = [...yeni, ...eski].map((k) => k.body).sort();
   const gelen = r.rows.map((x) => x.body).sort();
   olmali(JSON.stringify(beklenen) === JSON.stringify(gelen),
     `${ornek.slug}: konular sitedekiyle ayni (${gelen.length} konu)`);

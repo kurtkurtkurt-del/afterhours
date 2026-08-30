@@ -9,7 +9,7 @@
    calisir. Bu bilincli: baglanti kurulana kadar hicbir sey bozulmasin. */
 
 (function () {
-  const AYAR = window.AH_AYAR || {};
+  const AYAR = window.AH_CONFIG || {};
 
   /* Gelistirme kolayligi: yerel taklit sunucuya yonlendirme.
      SADECE localhost'ta gecerli — yayindaki sitenin verisi adres
@@ -17,7 +17,7 @@
   const yerelMi = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
   if (yerelMi) {
     const p = new URLSearchParams(location.search).get("backend");
-    if (p) { AYAR.url = p; AYAR.anonKey = AYAR.anonKey || "yerel"; }
+    if (p) { AYAR.url = p; AYAR.anonKey = AYAR.anonKey || "local"; }
   }
 
   const acik = Boolean(AYAR.url && AYAR.anonKey);
@@ -27,17 +27,17 @@
   const sonraki = (benBetik.dataset.sonra || "").split(",").map((s) => s.trim()).filter(Boolean);
 
   const AH = (window.AH = window.AH || {});
-  AH.ayar = AYAR;
-  AH.durum = "yerel";
+  AH.config = AYAR;
+  AH.mode = "local";
 
   /* Poster dosyasi bugun dizideki siradan hesaplaniyor (index + 1).
      Veritabani bir gun eksik liste dondurdugunde posterler kaymasin
      diye her kayda kendi numarasini yaziyoruz. */
-  function numaralandir(liste) {
+  function numberEvents(liste) {
     liste.forEach((e, i) => { if (!e.poster) e.poster = i + 1; });
     return liste;
   }
-  AH.numaralandir = numaralandir;
+  AH.numberEvents = numberEvents;
 
   /* Betikleri SIRAYLA yukle. Dinamik eklenen betikler varsayilan olarak
      async'tir; async=false olmadan sira bozulur ve app.js verisiz kalir. */
@@ -60,14 +60,14 @@
   }
 
   function yedegeDon(sebep) {
-    AH.durum = "yerel";
+    AH.mode = "local";
     if (sebep) console.warn("[afterhours] veritabanina baglanilamadi, yerel veri:", sebep);
     return betikleriYukle(yedekYol ? [yedekYol] : []).then(() => {
       /* events-data.js POSTERS'i `const` ile tanimliyor: global sozluksel
          bir bag, window'un ozelligi degil. window.POSTERS undefined'dir,
          cikplak POSTERS ise calisir. */
       try {
-        numaralandir(POSTERS);
+        numberEvents(POSTERS);
         /* Diger modullerin (swipes.js) gorebilmesi icin window'a da
            bagla; `const` tek basina window'a yazmiyor. */
         window.POSTERS = POSTERS;
@@ -77,11 +77,11 @@
 
   /* --- Supabase (PostgREST) --------------------------------------- */
 
-  AH.istek = function (yol, secenek = {}) {
+  AH.request = function (yol, secenek = {}) {
     if (!acik) return Promise.reject(new Error("backend kapali"));
     const bas = {
       apikey: AYAR.anonKey,
-      Authorization: "Bearer " + (AH.jeton || AYAR.anonKey),
+      Authorization: "Bearer " + (AH.token || AYAR.anonKey),
       "Content-Type": "application/json",
     };
     return fetch(AYAR.url.replace(/\/$/, "") + "/rest/v1" + yol, {
@@ -101,7 +101,7 @@
      "404 {"code":"PGRST202","details":"Searched for the function..."}
      diye bir sey kullaniciya bir sey anlatmiyor; ona ne yapabilecegini
      soyleyen kisa bir cumle lazim. Ayrinti konsola dusuyor. */
-  AH.hataMetni = function (hata, yedek) {
+  AH.errorText = function (hata, yedek) {
     const ham = String((hata && hata.message) || hata || "");
     console.warn("afterhours:", ham);
 
@@ -124,45 +124,45 @@
 
   /* Veritabani satirini sayfanin bekledigi bicime cevir.
      Alan adlari events-data.js ile ayni kalmali; ekran degismesin. */
-  function satiriCevir(r) {
+  function rowToEvent(r) {
     return {
       slug: r.slug,
-      tur: r.type_name,
-      baslik: r.title,
+      kind: r.type_name,
+      title: r.title,
       meta: r.meta,
-      metin: r.body,
+      body: r.body,
       poster: r.poster_no,
       /* Depoya yuklenmis poster varsa onun tam adresi; yoksa bos
          kalir ve posters/NN.svg kullanilir. */
-      posterYolu: r.poster_path
+      posterPath: r.poster_path
         ? (AYAR.url || "").replace(/\/$/, "") + "/storage/v1/object/public/posters/" + r.poster_path
         : null,
       // ekranin kullanmadigi ama ileride lazim olacaklar
       id: r.id,
-      basliyor: r.starts_at,
-      mekan: r.venue_name,
-      sehir: r.city_slug,
+      startsAt: r.starts_at,
+      venue: r.venue_name,
+      city: r.city_slug,
     };
   }
-  AH.satiriCevir = satiriCevir;
+  AH.rowToEvent = rowToEvent;
 
-  AH.etkinlikler = function (tur, sehir) {
+  AH.events = function (tur, sehir) {
     const iste = () =>
-      AH.istek("/rpc/deck", {
+      AH.request("/rpc/deck", {
         method: "POST",
         body: JSON.stringify({
-          p_city: sehir || AYAR.sehir || "munchen",
+          p_city: sehir || AYAR.city || "munchen",
           p_type: tur || null,
         }),
-      }).then((satirlar) => satirlar.map(satiriCevir));
+      }).then((satirlar) => satirlar.map(rowToEvent));
 
     return iste().catch((h) => {
       /* Elde eskimis/gecersiz bir jeton varsa sunucu 401 doner ve site
          bos kalirdi. Jetonu birakip anonim olarak tekrar deniyoruz:
          giris gecersizse bile gezinme calismali. */
-      if (!/^401/.test(h.message) || !AH.jeton) throw h;
+      if (!/^401/.test(h.message) || !AH.token) throw h;
       console.warn("[afterhours] oturum gecersiz, anonim devam ediliyor");
-      if (AH.oturumuBirak) AH.oturumuBirak();
+      if (AH.dropSession) AH.dropSession();
       return iste();
     });
   };
@@ -173,30 +173,30 @@
      degil. Yedek ve sonraki betik verilmemisse liste cekilmez. */
   const sadeceBaglanti = !yedekYol && !sonraki.length;
   if (sadeceBaglanti) {
-    AH.durum = acik ? "canli" : "yerel";
-    AH.hazir = Promise.resolve(AH.durum);
+    AH.mode = acik ? "live" : "local";
+    AH.ready = Promise.resolve(AH.mode);
     return;
   }
 
   /* Oturum once cozulsun: deste "daha once attiklarimi" eleyecekse
      istek jetonla gitmeli. session.js yoksa beklenecek bir sey de yok. */
-  const oturum = Promise.resolve(AH.oturumHazir || null).catch(() => null);
+  const oturum = Promise.resolve(AH.sessionReady || null).catch(() => null);
 
   const hazir = !acik
     ? yedegeDon(null)
     : oturum
         /* Once yereldeki atislari hesaba tasi: deste ondan sonra
            gelsin ki tasinan kartlar zaten elenmis olsun. */
-        .then(() => (AH.girisliMi && AH.girisliMi() && AH.atislariBirlestir
+        .then(() => (AH.signedIn && AH.signedIn() && AH.atislariBirlestir
           ? AH.atislariBirlestir().catch(() => 0)
           : null))
-        .then(() => AH.etkinlikler())
+        .then(() => AH.events())
         .then((liste) => {
           if (!liste.length) throw new Error("veritabani empty");
-          window.POSTERS = numaralandir(liste);
-          AH.durum = "canli";
+          window.POSTERS = numberEvents(liste);
+          AH.mode = "live";
         })
         .catch(yedegeDon);
 
-  AH.hazir = hazir.then(() => betikleriYukle(sonraki)).then(() => AH.durum);
+  AH.ready = hazir.then(() => betikleriYukle(sonraki)).then(() => AH.mode);
 })();

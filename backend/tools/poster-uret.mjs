@@ -165,7 +165,7 @@ for (const k of KITALAR) {
         await writeFile(new URL(dosya, KOK),
           poster({ tur, baslik, mekan, gun, saat, sehirAd: s.ad }));
         kayit.push({ no, tur, baslik, mekan, gun, saat, metin,
-                     sehir: s.slug, sehirAd: s.ad, ulke: u.ad, ulkeKod: u.kod,
+                     city: s.slug, sehirAd: s.ad, country: u.ad, ulkeKod: u.kod,
                      kita: k.kita, kitaKod: k.kitaKod });
       }
     }

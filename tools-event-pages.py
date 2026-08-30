@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """afterhours — etkinlik sayfalarinin kabugunu uretir.
 
-Her gecenin sayfasi ayni: menu, bos <main class="ks">, dipnot, betikler.
+Her gecenin sayfasi ayni: menu, bos <main class="cs">, dipnot, betikler.
 Icerigi explore/event.js kuruyor. Yeni bir gece eklemek icin
 events-data.js'e satiri yaz ve bu betigi calistir:
 
@@ -40,7 +40,7 @@ KABUK = """<!DOCTYPE html>
 </head>
 <body>
 
-  <a class="atla" href="#icerik">skip to the content</a>
+  <a class="skip" href="#content">skip to the content</a>
 
   <header class="header">
     <a class="logo" href="../../index.html">afterhours</a>
@@ -56,11 +56,11 @@ KABUK = """<!DOCTYPE html>
 
   <!-- Icerigi explore/event.js kuruyor: duzen tek, gece basina degisen
        her sey etkinligin kendi verisinden ve tur havuzlarindan geliyor. -->
-  <main id="icerik" tabindex="-1" class="ks"></main>
+  <main id="content" tabindex="-1" class="cs"></main>
 
-  <footer class="dipnot">
-    <p class="dipnot-ad">&copy; 2026 afterhours</p>
-    <nav class="dipnot-linkler">
+  <footer class="foot">
+    <p class="foot-name">&copy; 2026 afterhours</p>
+    <nav class="foot-links">
       <a href="../../impressum/index.html">impressum</a>
       <a href="../../datenschutz/index.html">datenschutz</a>
       <a href="../../agb/index.html">agb</a>
@@ -87,7 +87,7 @@ def kacir(y):
 
 ham = (KOK / "events-data.js").read_text(encoding="utf-8")
 kayitlar = re.findall(
-    r'\{ slug: "([^"]+)", tur: "([^"]+)", *baslik: "([^"]+)", *meta: "([^"]+)", *metin: "([^"]+)"',
+    r'\{ slug: "([^"]+)", kind: "([^"]+)", *title: "([^"]+)", *meta: "([^"]+)", *body: "([^"]+)"',
     ham)
 if not kayitlar:
     raise SystemExit("events-data.js'te kayit bulunamadi")

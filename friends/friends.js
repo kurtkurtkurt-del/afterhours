@@ -6,7 +6,7 @@
    sayfasi artik yalnizca giris.  */
 
 (function () {
-  const AYAR = window.AH_AYAR || {};
+  const AYAR = window.AH_CONFIG || {};
   const disarida = document.getElementById("fr-out");
   const icerde = document.getElementById("fr-in");
 
@@ -29,7 +29,7 @@
   };
 
   function ekraniKur() {
-    const girisli = Boolean(window.AH && AH.girisliMi && AH.girisliMi());
+    const girisli = Boolean(window.AH && AH.signedIn && AH.signedIn());
     disarida.hidden = girisli;
     icerde.hidden = !girisli;
     tanidiklar(girisli);
@@ -39,13 +39,13 @@
   /* --- kullanici adi --- */
 
   function handleYukle() {
-    AH.profilim().then((p) => { if (p && p.handle) handleAlan.value = p.handle; });
+    AH.myProfile().then((p) => { if (p && p.handle) handleAlan.value = p.handle; });
   }
 
   handleForm.addEventListener("submit", (e) => {
     e.preventDefault();
     handleDurum.textContent = "saving…";
-    AH.handleAyarla(handleAlan.value)
+    AH.setHandle(handleAlan.value)
       .then((satirlar) => {
         handleDurum.textContent = satirlar && satirlar.length
           ? "saved."
@@ -54,14 +54,14 @@
       .catch((h) => {
         handleDurum.textContent = /duplicate|unique/i.test(h.message)
           ? "someone already has that one."
-          : AH.hataMetni(h, "couldn't save that handle.");
+          : AH.errorText(h, "couldn't save that handle.");
       });
   });
 
   /* --- arkadaslar --- */
 
   function arkadaslariYukle() {
-    AH.arkadaslar().then((liste) => {
+    AH.friends().then((liste) => {
       arkListe.textContent = "";
       if (!liste.length) {
         const bos = document.createElement("li");
@@ -93,7 +93,7 @@
           kabul.type = "button";
           kabul.textContent = "accept";
           kabul.addEventListener("click", () =>
-            AH.arkadasKabul(a.other_id).then(arkadaslariYukle));
+            AH.friendAccept(a.other_id).then(arkadaslariYukle));
           satir.appendChild(kabul);
         }
 
@@ -102,7 +102,7 @@
         cikar.type = "button";
         cikar.textContent = a.status === "accepted" ? "remove" : "cancel";
         cikar.addEventListener("click", () =>
-          AH.arkadasCikar(a.other_id).then(arkadaslariYukle));
+          AH.friendRemove(a.other_id).then(arkadaslariYukle));
         satir.appendChild(cikar);
 
         arkListe.appendChild(satir);
@@ -115,19 +115,19 @@
     const h = arkAlan.value.trim();
     if (!h) return;
     arkDurum.textContent = "…";
-    AH.arkadasIste(h)
+    AH.friendRequest(h)
       .then((c) => {
         arkDurum.textContent = CEVAP[c] || String(c);
         if (c === "gonderildi" || c === "kabul") { arkAlan.value = ""; arkadaslariYukle(); }
       })
-      .catch((h) => { arkDurum.textContent = AH.hataMetni(h, "couldn't send that request."); });
+      .catch((h) => { arkDurum.textContent = AH.errorText(h, "couldn't send that request."); });
   });
 
-  /* --- biriktirilenler --- */
+  /* --- kept --- */
 
   function tutulanlariYukle() {
-    if (!AH.biriktirilenler) return;
-    AH.biriktirilenler().then((liste) => {
+    if (!AH.kept) return;
+    AH.kept().then((liste) => {
       tutListe.textContent = "";
       if (!liste.length) {
         const bos = document.createElement("li");
@@ -144,14 +144,14 @@
 
         const g = document.createElement("object");
         g.type = "image/svg+xml";
-        g.data = e.posterYolu ||
+        g.data = e.posterPath ||
           "../posters/" + String(e.poster || 1).padStart(2, "0") + ".svg";
         a.appendChild(g);
 
         const yazi = document.createElement("div");
         const ad = document.createElement("p");
         ad.className = "kept-name";
-        ad.textContent = e.baslik;
+        ad.textContent = e.title;
         const meta = document.createElement("p");
         meta.className = "kept-meta";
         meta.textContent = e.meta;
@@ -221,7 +221,7 @@
 
   /* Jeton yerelde duruyor: karari ilk boyamadan once verebiliyoruz,
      boylece girisliye liste bir an gorunup kaybolmuyor. */
-  tanidiklar(Boolean(window.AH && AH.girisliMi && AH.girisliMi()));
+  tanidiklar(Boolean(window.AH && AH.signedIn && AH.signedIn()));
 
   /* --- acilis --- */
 
@@ -232,6 +232,6 @@
     return;
   }
 
-  AH.oturumHazir.then(ekraniKur);
-  AH.oturumDegisti(ekraniKur);
+  AH.sessionReady.then(ekraniKur);
+  AH.onSessionChange(ekraniKur);
 })();

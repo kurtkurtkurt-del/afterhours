@@ -68,7 +68,7 @@ console.log("\n— atilan kart bir daha gelmiyor —");
     "atilan iki kart desteden dustu", `${once.rows[0].n} → ${sonra.rows[0].n}`);
 }
 
-console.log("\n— biriktirilenler —");
+console.log("\n— kept —");
 {
   await kimlik(BEN);
   const r = await db.query(`select slug from public.kept()`);

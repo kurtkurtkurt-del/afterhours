@@ -30,15 +30,15 @@ GOSTERILEN.forEach((p, i) => {
   const gorsel = document.createElement("object");
   gorsel.className = "poster-image";
   gorsel.type = "image/svg+xml";
-  gorsel.data = p.posterYolu || "posters/" + no + ".svg";
+  gorsel.data = p.posterPath || "posters/" + no + ".svg";
   kutu.appendChild(gorsel);
   kutu.addEventListener("mouseenter", () => {
     clearTimeout(gizleZamani);
     alanIndex.textContent = String(i + 1).padStart(2, "0") + " / " + GOSTERILEN.length;
-    alanTur.textContent = p.tur;
-    alanBaslik.textContent = p.baslik;
+    alanTur.textContent = p.kind;
+    alanBaslik.textContent = p.title;
     alanMeta.textContent = p.meta;
-    alanMetin.textContent = p.metin;
+    alanMetin.textContent = p.body;
     yan.classList.add("poster-hover");
   });
 
@@ -233,7 +233,7 @@ DESTE_POSTERLERI.slice().reverse().forEach((no) => {
 
 /* ---------- Ses: dun geceden kisa kayitlar (3 sehir) ---------- */
 
-const sesKaynak = document.getElementById("sound-kaynak");
+const sesKaynak = document.getElementById("sound-source");
 const sesSatirlari = [...document.querySelectorAll(".sound-row")];
 let calanSatir = null;
 
@@ -283,16 +283,16 @@ const k3Ray = document.getElementById("s3-rail");
 // Her gece bir cift: on yuz + arka yuz bitisik, sonra bosluk.
 // Dizi iki kez basilir; SVG id'leri cakismasin diye sayac devam eder.
 for (let tekrar = 0; tekrar < 2; tekrar++) {
-  KARTLAR.gece.forEach((gece, i) => {
-    const sira = tekrar * KARTLAR.gece.length + i;
+  CARDS.gece.forEach((gece, i) => {
+    const sira = tekrar * CARDS.gece.length + i;
     const cift = document.createElement("div");
     cift.className = "s3-pair";
-    cift.innerHTML = KARTLAR.on(gece, sira) + KARTLAR.arka(gece, sira);
+    cift.innerHTML = CARDS.on(gece, sira) + CARDS.arka(gece, sira);
     k3Ray.appendChild(cift);
   });
 }
 
-/* MEKANLAR venues.js'te — hem ana sayfa hem maps kullaniyor */
+/* VENUES venues.js'te — hem ana sayfa hem maps kullaniyor */
 
 
 /* ---------- Altinci ekran: footer ----------
@@ -314,7 +314,7 @@ function k6Guncelle() {
 
   // Su an acik olan mekanlar (gece saatleri 24'u asarak yazildi)
   const saat = s + d / 60;
-  const acik = MEKANLAR.filter((m) => {
+  const acik = VENUES.filter((m) => {
     const bas = m.saat;
     const son = m.saat + m.sure;
     return (saat >= bas && saat < son) || (saat + 24 >= bas && saat + 24 < son);

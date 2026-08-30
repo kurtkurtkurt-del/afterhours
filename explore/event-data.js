@@ -8,7 +8,7 @@
 
    Elle yazilmis bir gece varsa OZEL'e konuyor ve havuzu eziyor.  */
 
-window.ETKINLIK_VERI = (function () {
+window.EVENT_POOLS = (function () {
 
   /* --- kunye: her edisyonda ayni olan seyler --- */
   const KUNYE = {

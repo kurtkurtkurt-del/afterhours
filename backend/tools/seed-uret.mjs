@@ -1,5 +1,5 @@
 /* afterhours — on yuzdeki veriyi SQL'e cevirir.
-   Kaynak: events-data.js (36 etkinlik), app.js icindeki MEKANLAR,
+   Kaynak: events-data.js (36 etkinlik), app.js icindeki VENUES,
    explore/comment-pools.js (ornek yorumlar).
    Cikti: sql/03_seed_katalog.sql, 04_seed_events.sql, 05_seed_comments.sql
 
@@ -16,14 +16,14 @@ const oku = (yol) => readFile(new URL(yol, kok), "utf8");
 const eventsJs = await oku("events-data.js");
 const { POSTERS } = new Function(eventsJs + "\n;return { POSTERS };")();
 
-/* MEKANLAR app.js'in icindeydi, venues.js'e tasindi (maps sayfasi da
+/* VENUES app.js'in icindeydi, venues.js'e tasindi (maps sayfasi da
    ayni koordinatlari kullaniyor). */
 const mekanJs = await oku("venues.js");
-const { MEKANLAR } = new Function("window", mekanJs + "\n;return { MEKANLAR };")({});
+const { VENUES } = new Function("window", mekanJs + "\n;return { VENUES };")({});
 
 const yorumJs = await oku("explore/comment-pools.js");
-const { YORUM_HAVUZU, YORUMLARI_GETIR } =
-  new Function(yorumJs + "\n;return { YORUM_HAVUZU, YORUMLARI_GETIR };")();
+const { COMMENT_POOL, YORUMLARI_GETIR } =
+  new Function(yorumJs + "\n;return { COMMENT_POOL, YORUMLARI_GETIR };")();
 
 /* ---- yardimcilar ----------------------------------------------------- */
 
@@ -103,17 +103,17 @@ function metayiCoz(meta) {
            tarihMetni: parcalar.slice(1).join(" · ") || null };
 }
 
-/* MEKANLAR icinde ada gore ara: "Olympiahalle" → OLYMPIAHALLE,
+/* VENUES icinde ada gore ara: "Olympiahalle" → OLYMPIAHALLE,
    "Bahnwärter Thiel" → BAHNWÄRTER THIEL, "Milla Club" → MILLA */
 function mekanBul(adayHam) {
   if (!adayHam) return null;
   const aday = adayHam.toUpperCase().trim();
-  let m = MEKANLAR.find((x) => x.ad === aday);
+  let m = VENUES.find((x) => x.ad === aday);
   if (m) return m;
-  m = MEKANLAR.find((x) => aday.startsWith(x.ad) || x.ad.startsWith(aday));
+  m = VENUES.find((x) => aday.startsWith(x.ad) || x.ad.startsWith(aday));
   if (m) return m;
   // "ab Isartor" gibi on ekli yazimlar
-  m = MEKANLAR.find((x) => aday.includes(x.ad));
+  m = VENUES.find((x) => aday.includes(x.ad));
   return m || null;
 }
 
@@ -166,7 +166,7 @@ on conflict (slug) do nothing;
 
 `;
 
-for (const m of MEKANLAR) {
+for (const m of VENUES) {
   sql += `insert into public.venues (city_id, slug, name, map_x, map_y, opens_hour, open_hours)
 select id, ${q(slugla(m.ad))}, ${q(m.ad)}, ${m.x}, ${m.y}, ${m.saat}, ${m.sure}
 from public.cities where slug = 'munchen'
@@ -195,10 +195,10 @@ POSTERS.forEach((e, i) => {
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
 select ${q(e.slug)}, c.id, t.id, ${mekan ? `v.id` : `null`},
-       ${q(e.baslik)}, ${q(e.meta)}, ${q(e.metin)}, ${i + 1},
+       ${q(e.title)}, ${q(e.meta)}, ${q(e.body)}, ${i + 1},
        ${baslangic ? `${q(baslangic)}::timestamptz` : "null"}, ${tahmin}, ${q(tarihMetni)}
 from public.cities c
-join public.event_types t on t.slug = ${q(slugla(e.tur))}
+join public.event_types t on t.slug = ${q(slugla(e.kind))}
 ${mekan ? `join public.venues v on v.city_id = c.id and v.slug = ${q(slugla(mekan.ad))}\n` : ""}where c.slug = 'munchen'
 on conflict (slug) do nothing;
 
@@ -223,7 +223,7 @@ for (const e of POSTERS) {
     const zaman = zamaniCoz(konu.zaman).toISOString();
     yorumSql += `with konu as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, ${q(konu.kim)}, ${q(konu.metin)}, ${q(konu.zaman)}, ${q(zaman)}::timestamptz
+  select id, ${q(konu.kim)}, ${q(konu.body)}, ${q(konu.zaman)}, ${q(zaman)}::timestamptz
   from public.events where slug = ${q(e.slug)}
   returning id, event_id
 )
@@ -231,7 +231,7 @@ for (const e of POSTERS) {
     if (konu.cevaplar && konu.cevaplar.length) {
       const satirlar = konu.cevaplar.map((c) => {
         cevapSayisi++;
-        return `  select konu.event_id, konu.id, ${q(c.kim)}, ${q(c.metin)}, ${q(c.zaman)}, ${q(zamaniCoz(c.zaman).toISOString())}::timestamptz from konu`;
+        return `  select konu.event_id, konu.id, ${q(c.kim)}, ${q(c.body)}, ${q(c.zaman)}, ${q(zamaniCoz(c.zaman).toISOString())}::timestamptz from konu`;
       }).join("\n  union all\n");
       yorumSql += `insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
 ${satirlar};
@@ -249,5 +249,5 @@ console.log(`etkinlik      : ${POSTERS.length}`);
 console.log(`  tarihi var    : ${tarihli}  (${tahminli} tanesi yil cikarimi — admin'de dogrulanacak)`);
 console.log(`  mekani eslesti: ${mekanli} / ${POSTERS.length}`);
 console.log(`yorum         : ${konuSayisi} konu, ${cevapSayisi} cevap`);
-console.log(`mekan         : ${MEKANLAR.length}`);
-console.log(`tur           : ${turler.length}, sehir: ${sehirler.length}`);
+console.log(`mekan         : ${VENUES.length}`);
+console.log(`tur           : ${turler.length}, city: ${sehirler.length}`);

@@ -21,8 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=115" />
-  <link rel="stylesheet" href="admin.css?v=115" />
+  <link rel="stylesheet" href="../style.css?v=118" />
+  <link rel="stylesheet" href="admin.css?v=118" />
 </head>
 <body class="admin">
 
@@ -45,9 +45,9 @@
     <p class="adm-gate-text" id="adm-gate-text">checking…</p>
 
     <form class="adm-intro" id="adm-intro" hidden>
-      <input class="adm-intro-field" id="adm-eposta" type="email"
+      <input class="adm-intro-field" id="adm-email" type="email"
              placeholder="email" autocomplete="username" />
-      <input class="adm-intro-field" id="adm-sifre" type="password"
+      <input class="adm-intro-field" id="adm-password" type="password"
              placeholder="password" autocomplete="current-password" />
       <button class="adm-intro-button" type="submit">sign in</button>
     </form>
@@ -127,11 +127,11 @@
 
       <div class="adm-edit-right">
         <p class="adm-label">poster</p>
-        <div class="adm-poster" id="a-poster-onizleme"></div>
+        <div class="adm-poster" id="a-poster-preview"></div>
         <p class="adm-poster-note" id="a-poster-note"></p>
 
         <label class="adm-upload">
-          <input type="file" id="a-poster-dosya" accept=".svg,image/svg+xml" hidden />
+          <input type="file" id="a-poster-file" accept=".svg,image/svg+xml" hidden />
           <span>check an svg</span>
         </label>
         <button class="adm-poster-upload" id="a-poster-upload" type="button" hidden>
@@ -156,10 +156,10 @@
 
   </main>
 
-  <script src="../config.js?v=115"></script>
-  <script src="../session.js?v=115"></script>
-  <script src="../data.js?v=115"></script>
-  <script src="admin.js?v=115"></script>
+  <script src="../config.js?v=118"></script>
+  <script src="../session.js?v=118"></script>
+  <script src="../data.js?v=118"></script>
+  <script src="admin.js?v=118"></script>
 
 </body>
 </html>

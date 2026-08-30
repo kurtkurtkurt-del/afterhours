@@ -36,10 +36,10 @@ function posterYap(i) {
     kutu.closest(".strip").classList.add("stopped");   // serit durur
     kutu.classList.add("big");                        // poster hafif buyur
     alanIndex.textContent = no + " / " + POSTERS.length;
-    alanTur.textContent = p.tur;
-    alanBaslik.textContent = p.baslik;
+    alanTur.textContent = p.kind;
+    alanBaslik.textContent = p.title;
     alanMeta.textContent = p.meta;
-    alanMetin.textContent = p.metin;
+    alanMetin.textContent = p.body;
     yan.classList.add("poster-hover");
   });
 

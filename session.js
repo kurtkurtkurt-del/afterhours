@@ -10,22 +10,22 @@
 
 (function () {
   const AH = (window.AH = window.AH || {});
-  const AYAR = window.AH_AYAR || {};
+  const AYAR = window.AH_CONFIG || {};
 
   /* data.js ile ayni gelistirme yonlendirmesi; sadece localhost'ta. */
   if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
     const p = new URLSearchParams(location.search).get("backend");
-    if (p) { AYAR.url = p; AYAR.anonKey = AYAR.anonKey || "yerel"; }
+    if (p) { AYAR.url = p; AYAR.anonKey = AYAR.anonKey || "local"; }
   }
 
   const acik = Boolean(AYAR.url && AYAR.anonKey);
   const KUTU = "afterhours.oturum";
 
   const dinleyiciler = [];
-  AH.oturumDegisti = (f) => { dinleyiciler.push(f); return () => {
+  AH.onSessionChange = (f) => { dinleyiciler.push(f); return () => {
     const i = dinleyiciler.indexOf(f); if (i >= 0) dinleyiciler.splice(i, 1);
   }; };
-  const duyur = () => dinleyiciler.forEach((f) => { try { f(AH.oturum); } catch (e) { console.warn(e); } });
+  const duyur = () => dinleyiciler.forEach((f) => { try { f(AH.session); } catch (e) { console.warn(e); } });
 
   function oku() {
     try { return JSON.parse(localStorage.getItem(KUTU) || "null"); } catch (_) { return null; }
@@ -33,13 +33,13 @@
   function yaz(o) {
     try { o ? localStorage.setItem(KUTU, JSON.stringify(o)) : localStorage.removeItem(KUTU); }
     catch (_) {}
-    AH.oturum = o;
-    AH.jeton = o && o.access_token;
+    AH.session = o;
+    AH.token = o && o.access_token;
     duyur();
   }
 
-  AH.oturum = oku();
-  AH.jeton = AH.oturum && AH.oturum.access_token;
+  AH.session = oku();
+  AH.token = AH.session && AH.session.access_token;
 
   function auth(yol, secenek = {}) {
     if (!acik) return Promise.reject(new Error("backend kapali"));
@@ -66,8 +66,8 @@
     const o = {
       access_token: c.access_token,
       refresh_token: c.refresh_token,
-      bitis: Date.now() + (c.expires_in || 3600) * 1000,
-      kullanici: c.user || (!yeniGiris && AH.oturum && AH.oturum.kullanici) || null,
+      expiresAt: Date.now() + (c.expires_in || 3600) * 1000,
+      user: c.user || (!yeniGiris && AH.session && AH.session.user) || null,
     };
     yaz(o);
     return o;
@@ -75,7 +75,7 @@
 
   /* --- disa acilan --- */
 
-  AH.girisIste = function (eposta) {
+  AH.requestLink = function (eposta) {
     return auth("/otp", {
       method: "POST",
       body: JSON.stringify({
@@ -90,7 +90,7 @@
      Bu yol yalniz yonetim paneli icin, e-posta kotasina takilmadan
      girebilmek adina. Sifre hicbir yerde saklanmiyor; dogrudan
      Supabase'e gidiyor ve karsiliginda jeton geliyor. */
-  AH.sifreyleGir = function (eposta, sifre) {
+  AH.signInWithPassword = function (eposta, sifre) {
     return auth("/token?grant_type=password", {
       method: "POST",
       body: JSON.stringify({ email: eposta, password: sifre }),
@@ -108,7 +108,7 @@
 
      Projede e-posta dogrulamasi ACIKSA cevapta oturum gelmiyor; o zaman
      null donuyoruz ve sayfa "postana bak" diyor. */
-  AH.kayitOl = function (eposta, sifre, ekstra) {
+  AH.signUp = function (eposta, sifre, ekstra) {
     return auth("/signup", {
       method: "POST",
       body: JSON.stringify({
@@ -123,24 +123,24 @@
     });
   };
 
-  AH.cikis = function () {
-    const j = AH.jeton;
+  AH.signOut = function () {
+    const j = AH.token;
     yaz(null);
     if (!j) return Promise.resolve();
     return auth("/logout", { method: "POST", headers: { Authorization: "Bearer " + j } })
       .catch(() => {});           /* sunucu ne derse desin, yerelde cikildi */
   };
 
-  AH.kullanici = function () {
-    if (!AH.jeton) return Promise.resolve(null);
-    return auth("/user", { headers: { Authorization: "Bearer " + AH.jeton } }).catch(() => null);
+  AH.fetchUser = function () {
+    if (!AH.token) return Promise.resolve(null);
+    return auth("/user", { headers: { Authorization: "Bearer " + AH.token } }).catch(() => null);
   };
 
-  AH.girisliMi = () => Boolean(AH.jeton);
+  AH.signedIn = () => Boolean(AH.token);
 
   /* Sunucuya sormadan yerel oturumu birak. Jeton artik gecerli degilse
      (baska bir projeye ait, suresi gecmis) sunucuya gitmenin anlami yok. */
-  AH.oturumuBirak = function () { yaz(null); };
+  AH.dropSession = function () { yaz(null); };
 
   /* --- acilista: adresteki jetonu al, sureli olani yenile --- */
 
@@ -158,9 +158,9 @@
   }
 
   function yenile() {
-    const o = AH.oturum;
+    const o = AH.session;
     if (!o || !o.refresh_token) return Promise.resolve(null);
-    if (o.bitis && o.bitis - Date.now() > 60000) return Promise.resolve(o);   /* daha var */
+    if (o.expiresAt && o.expiresAt - Date.now() > 60000) return Promise.resolve(o);   /* daha var */
     return auth("/token?grant_type=refresh_token", {
       method: "POST",
       body: JSON.stringify({ refresh_token: o.refresh_token }),
@@ -169,16 +169,16 @@
       .catch(() => { yaz(null); return null; });        /* yenilenemiyorsa cik */
   }
 
-  AH.oturumHazir = !acik
+  AH.sessionReady = !acik
     ? Promise.resolve(null)
     : Promise.resolve(adrestenAl() || yenile()).then(() => {
         /* kullanici bilgisi yoksa bir kere cek */
-        if (AH.jeton && AH.oturum && !AH.oturum.kullanici) {
-          return AH.kullanici().then((k) => {
-            if (k) yaz({ ...AH.oturum, kullanici: k });
-            return AH.oturum;
+        if (AH.token && AH.session && !AH.session.user) {
+          return AH.fetchUser().then((k) => {
+            if (k) yaz({ ...AH.session, user: k });
+            return AH.session;
           });
         }
-        return AH.oturum;
+        return AH.session;
       });
 })();

@@ -26,7 +26,7 @@
   let sehir = null;       /* secili sehir slug’i */
 
   const cagir = (fn, govde) =>
-    AH.istek("/rpc/" + fn, { method: "POST", body: JSON.stringify(govde || {}) });
+    AH.request("/rpc/" + fn, { method: "POST", body: JSON.stringify(govde || {}) });
 
   const skaler = (c) => (Array.isArray(c) ? c[0] : c);
 
@@ -48,16 +48,16 @@
   }
 
   function ayarYaz(alan, deger) {
-    const id = AH.oturum && AH.oturum.kullanici && AH.oturum.kullanici.id;
+    const id = AH.session && AH.session.user && AH.session.user.id;
     const govde = {};
     govde[alan] = deger === "true" ? true : deger === "false" ? false : deger;
-    return AH.istek("/profile_settings?user_id=eq." + id, {
+    return AH.request("/profile_settings?user_id=eq." + id, {
       method: "PATCH",
       headers: { Prefer: "return=representation" },
       body: JSON.stringify(govde),
     })
       .then(() => soyle(durum, "saved.", "ok"))
-      .catch((h) => soyle(durum, AH.hataMetni(h, "couldn't save that."), "hata"));
+      .catch((h) => soyle(durum, AH.errorText(h, "couldn't save that."), "hata"));
   }
 
   /* --- sehirler ---
@@ -74,8 +74,8 @@
         const gruplar = [];
         (liste || []).filter((c) => Number(c.n) > 0).forEach((c) => {
           const son = gruplar[gruplar.length - 1];
-          if (son && son.ulke === c.country) son.sehirler.push(c);
-          else gruplar.push({ ulke: c.country, sehirler: [c] });
+          if (son && son.country === c.country) son.sehirler.push(c);
+          else gruplar.push({ country: c.country, sehirler: [c] });
         });
 
         const isaretle = () => [...sehirKutu.querySelectorAll("button")]
@@ -84,7 +84,7 @@
         gruplar.forEach((g) => {
           const ad = document.createElement("p");
           ad.className = "set-country";
-          ad.textContent = (g.ulke || "").toLowerCase();
+          ad.textContent = (g.country || "").toLowerCase();
           sehirKutu.appendChild(ad);
 
           const satir = document.createElement("div");
@@ -134,7 +134,7 @@
   const YANIT = {
     ok: "saved.", dolu: "someone already has that handle.",
     bicim: "that handle doesn't fit the format.", bos: "pick a handle first.",
-    sehir: "that city isn't on the list.", giris: "sign in again.",
+    city: "that city isn't on the list.", giris: "sign in again.",
   };
 
   el("set-save").onclick = function () {
@@ -150,13 +150,13 @@
         soyle(durum, YANIT[s] || String(s), s === "ok" ? "ok" : "error");
         if (s === "ok") yukle();
       })
-      .catch((h) => soyle(durum, AH.hataMetni(h, "couldn't save that."), "hata"));
+      .catch((h) => soyle(durum, AH.errorText(h, "couldn't save that."), "hata"));
   };
 
   /* --- cikis --- */
 
   el("set-signout").onclick = function () {
-    AH.oturumuBirak();
+    AH.dropSession();
     location.href = "../login/index.html";
   };
 
@@ -177,10 +177,10 @@
     soyle(silDurum, "deleting…");
     cagir("delete_account")
       .then(() => {
-        AH.oturumuBirak();
+        AH.dropSession();
         location.href = "../index.html";
       })
-      .catch((h) => soyle(silDurum, AH.hataMetni(h, "couldn't delete the account."), "hata"));
+      .catch((h) => soyle(silDurum, AH.errorText(h, "couldn't delete the account."), "hata"));
   };
 
   /* --- acilis --- */
@@ -191,8 +191,8 @@
     adAlan.value = p.display_name || "";
     bioAlan.value = p.bio || "";
 
-    el("set-who").textContent = (AH.oturum && AH.oturum.kullanici && AH.oturum.kullanici.email)
-      ? "you're in as " + AH.oturum.kullanici.email : "you're in.";
+    el("set-who").textContent = (AH.session && AH.session.user && AH.session.user.email)
+      ? "you're in as " + AH.session.user.email : "you're in.";
 
     const gun = p.created_at ? String(p.created_at).slice(0, 10) : "";
     el("set-numbers").textContent =
@@ -200,8 +200,8 @@
         .join(" · ") + (gun ? " · here since " + gun : "");
 
     secimKur(el("set-kept"), p.kept_visibility, (v) => ayarYaz("kept_visibility", v));
-    secimKur(el("set-bulun"), p.discoverable, (v) => ayarYaz("discoverable", v));
-    secimKur(el("set-posta"), p.notify_email, (v) => ayarYaz("notify_email", v));
+    secimKur(el("set-found"), p.discoverable, (v) => ayarYaz("discoverable", v));
+    secimKur(el("set-mail"), p.notify_email, (v) => ayarYaz("notify_email", v));
 
     return sehirleriKur(p.city_slug);
   }
@@ -215,7 +215,7 @@
   }
 
   function ekraniKur() {
-    const AYAR = window.AH_AYAR || {};
+    const AYAR = window.AH_CONFIG || {};
     if (!(AYAR.url && AYAR.anonKey)) {
       disarida.hidden = false;
       icerde.hidden = true;
@@ -223,14 +223,14 @@
       disarida.querySelector(".page-button").hidden = true;
       return;
     }
-    const girisli = Boolean(AH.girisliMi && AH.girisliMi());
+    const girisli = Boolean(AH.signedIn && AH.signedIn());
     disarida.hidden = girisli;
     icerde.hidden = !girisli;
     if (girisli) {
-      yukle().catch((h) => soyle(durum, AH.hataMetni(h, "couldn't load your profile."), "hata"));
+      yukle().catch((h) => soyle(durum, AH.errorText(h, "couldn't load your profile."), "hata"));
     }
   }
 
-  AH.oturumHazir.then(ekraniKur);
-  AH.oturumDegisti(ekraniKur);
+  AH.sessionReady.then(ekraniKur);
+  AH.onSessionChange(ekraniKur);
 })();

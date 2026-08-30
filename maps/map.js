@@ -9,7 +9,7 @@
 
 (function () {
   const NS = "http://www.w3.org/2000/svg";
-  const katman = document.getElementById("map-noktalar");
+  const katman = document.getElementById("map-dots");
   const sema = document.getElementById("map-schema");
   const kart = document.getElementById("map-card");
   const kartTur = document.getElementById("map-card-kind");
@@ -19,13 +19,13 @@
   if (!katman) return;
 
   const kartlar = window.POSTERS || [];
-  const mekanlar = window.MEKANLAR || [];
+  const mekanlar = window.VENUES || [];
 
   /* Etkinligin mekanini bul: canliyken kayittan geliyor, yerel modda
      meta satirindaki adlari tariyoruz (tohum ureteciyle ayni mantik). */
   function mekanBul(e) {
     const adaylar = [];
-    if (e.mekan) adaylar.push(e.mekan);
+    if (e.venue) adaylar.push(e.venue);
     (e.meta || "").split("·").forEach((p) => adaylar.push(p.trim()));
 
     for (const ham of adaylar) {
@@ -79,8 +79,8 @@
 
     const goster = () => {
       kart.hidden = false;
-      kartTur.textContent = (e.tur || "").toUpperCase();
-      kartAd.textContent = e.baslik;
+      kartTur.textContent = (e.kind || "").toUpperCase();
+      kartAd.textContent = e.title;
       kartMeta.textContent = e.meta;
       g.classList.add("over");
     };

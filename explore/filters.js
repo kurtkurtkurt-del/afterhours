@@ -12,10 +12,10 @@
   if (!alan) return;
 
   const AH = (window.AH = window.AH || {});
-  const canli = () => AH.durum === "canli";
+  const canli = () => AH.mode === "live";
 
   /* Secili durum. Deste bunu okuyor. */
-  AH.filtre = { ulke: "de", sehir: "munchen", tur: null, tarih: "tonight" };
+  AH.filter = { country: "de", city: "munchen", kind: null, date: "tonight" };
 
   const TURLER = [
     { deger: null, ad: "all events" },
@@ -48,16 +48,16 @@
     const panel = kutu.querySelector(".fl-list");
 
     const secili = secenekler.find((s) => s.deger === seciliDeger) ||
-      secenekler.find((s) => !s.baslik);
+      secenekler.find((s) => !s.title);
     deger.textContent = secili ? secili.ad : "—";
 
     panel.textContent = "";
     secenekler.forEach((s) => {
       /* Grup basligi: tiklanmaz, sadece ayirir */
-      if (s.baslik) {
+      if (s.title) {
         const b = document.createElement("p");
         b.className = "fl-group";
-        b.textContent = s.baslik;
+        b.textContent = s.title;
         panel.appendChild(b);
         return;
       }
@@ -116,10 +116,10 @@
   /* ---------- filtreler ---------- */
 
   const kutular = {
-    ulke: alan.querySelector('[data-alan="ulke"]'),
-    sehir: alan.querySelector('[data-alan="sehir"]'),
-    tur: alan.querySelector('[data-alan="tur"]'),
-    tarih: alan.querySelector('[data-alan="tarih"]'),
+    country: alan.querySelector('[data-field="country"]'),
+    city: alan.querySelector('[data-field="city"]'),
+    kind: alan.querySelector('[data-field="kind"]'),
+    date: alan.querySelector('[data-field="date"]'),
   };
 
   /* Ulkeler kitalarina gore gruplanip listeleniyor: 18 ulke duz bir
@@ -147,7 +147,7 @@
     [...kitalar.values()]
       .sort((a, b) => b.n - a.n || a.ad.localeCompare(b.ad))
       .forEach((k) => {
-        if (k.ad) sirali.push({ baslik: k.ad });
+        if (k.ad) sirali.push({ title: k.ad });
         k.ulkeler
           .sort((a, b) => b.n - a.n || a.ad.localeCompare(b.ad))
           .forEach((u) => sirali.push({
@@ -160,7 +160,7 @@
 
   function sehirSecenekleri() {
     return sehirler
-      .filter((s) => s.country_slug === AH.filtre.ulke)
+      .filter((s) => s.country_slug === AH.filter.country)
       .map((s) => ({
         deger: s.slug,
         ad: s.name,
@@ -170,32 +170,32 @@
   }
 
   function ciz() {
-    liste(kutular.ulke, ulkeSecenekleri(), AH.filtre.ulke, (v) => {
-      AH.filtre.ulke = v;
+    liste(kutular.country, ulkeSecenekleri(), AH.filter.country, (v) => {
+      AH.filter.country = v;
       /* Ulke degisince o ulkenin ilk dolu sehrine gec */
       const o = sehirSecenekleri();
       const dolu = o.find((x) => !x.bos) || o[0];
-      AH.filtre.sehir = dolu ? dolu.deger : null;
+      AH.filter.city = dolu ? dolu.deger : null;
       ciz();
       yenile();
     });
 
-    liste(kutular.sehir, sehirSecenekleri(), AH.filtre.sehir, (v) => {
-      AH.filtre.sehir = v;
+    liste(kutular.city, sehirSecenekleri(), AH.filter.city, (v) => {
+      AH.filter.city = v;
       ciz();
       yenile();
     });
 
-    liste(kutular.tur, TURLER, AH.filtre.tur, (v) => {
-      AH.filtre.tur = v;
+    liste(kutular.kind, TURLER, AH.filter.kind, (v) => {
+      AH.filter.kind = v;
       ciz();
       yenile();
     });
 
     /* Tarih henuz bir sey yapmiyor: etkinliklerin dortte ucunde tarih
        cikarimla dolduruldu, ona gore filtrelemek yaniltici olurdu. */
-    liste(kutular.tarih, TARIHLER, AH.filtre.tarih, (v) => {
-      AH.filtre.tarih = v;
+    liste(kutular.date, TARIHLER, AH.filter.date, (v) => {
+      AH.filter.date = v;
       ciz();
     });
   }
@@ -207,15 +207,15 @@
   /* "i feel lucky": seni gecesi olan rastgele bir sehre atar. Bulundugun
      sehri secmez — ayni yerde kalmak sansli hissettirmiyor. Tur de
      sifirlanir, gittigin yerde her sey acik olsun. */
-  AH.filtreRastgele = function () {
+  AH.randomCity = function () {
     const dolu = sehirler.filter(
-      (s) => Number(s.n) > 0 && s.slug !== AH.filtre.sehir);
+      (s) => Number(s.n) > 0 && s.slug !== AH.filter.city);
     if (!dolu.length) return null;
 
     const secim = dolu[Math.floor(Math.random() * dolu.length)];
-    AH.filtre.ulke = secim.country_slug;
-    AH.filtre.sehir = secim.slug;
-    AH.filtre.tur = null;
+    AH.filter.country = secim.country_slug;
+    AH.filter.city = secim.slug;
+    AH.filter.kind = null;
     ciz();
     return secim;
   };
@@ -224,16 +224,16 @@
 
   function sehirleriGetir() {
     if (!canli()) return Promise.resolve(YEREL_SEHIRLER);
-    return AH.istek("/rpc/city_counts", { method: "POST", body: "{}" })
+    return AH.request("/rpc/city_counts", { method: "POST", body: "{}" })
       .catch(() => YEREL_SEHIRLER);
   }
 
-  Promise.resolve(AH.hazir)
+  Promise.resolve(AH.ready)
     .then(sehirleriGetir)
     .then((liste) => {
       if (liste && liste.length) sehirler = liste;
-      const benim = sehirler.find((s) => s.slug === AH.filtre.sehir);
-      if (benim) AH.filtre.ulke = benim.country_slug || AH.filtre.ulke;
+      const benim = sehirler.find((s) => s.slug === AH.filter.city);
+      if (benim) AH.filter.country = benim.country_slug || AH.filter.country;
       ciz();
     });
 })();

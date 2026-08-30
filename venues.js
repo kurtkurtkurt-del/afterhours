@@ -9,7 +9,7 @@
 /* ---------- Mekan saatleri ----------
    Footer'daki "kac oda open" sayaci bunu kullanir. */
 
-const MEKANLAR = [
+const VENUES = [
   { ad: "OLYMPIAHALLE",      x: 512, y: 236, saat: 18.5, sure: 4 },
   { ad: "OLYMPIAPARK",       x: 556, y: 288, saat: 19.5, sure: 4 },
   { ad: "ZENITH",            x: 946, y: 196, saat: 25.0, sure: 5 },
@@ -34,4 +34,4 @@ const MEKANLAR = [
 
 /* `const` global window'a yazilmaz; diger modullerin gorebilmesi icin
    acikca bagliyoruz (POSTERS ile ayni durum). */
-window.MEKANLAR = MEKANLAR;
+window.VENUES = VENUES;

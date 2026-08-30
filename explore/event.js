@@ -13,7 +13,7 @@
   const alan = document.querySelector(".cs");
   if (!alan) return;
 
-  const V = window.ETKINLIK_VERI || {};
+  const V = window.EVENT_POOLS || {};
 
   /* --- tohum: ayni slug hep ayni geceyi kurar --- */
   function tohumla(yazi) {
@@ -49,14 +49,14 @@
   /* --- meta tek satir: "Olympiahalle · 11.09.26 · 18:30" --- */
   function metayıAç(meta) {
     const parça = String(meta || "").split("·").map((p) => p.trim()).filter(Boolean);
-    const çıktı = { mekan: "", tarih: "", saat: "" };
+    const çıktı = { venue: "", date: "", saat: "" };
     parça.forEach((p) => {
       if (!çıktı.saat && /^\d{1,2}:\d{2}/.test(p)) çıktı.saat = p;
-      else if (!çıktı.tarih && /\d{1,2}\.\d{1,2}/.test(p)) çıktı.tarih = p;
-      else if (!çıktı.mekan) çıktı.mekan = p;
-      else if (!çıktı.tarih) çıktı.tarih = p;
+      else if (!çıktı.date && /\d{1,2}\.\d{1,2}/.test(p)) çıktı.date = p;
+      else if (!çıktı.venue) çıktı.venue = p;
+      else if (!çıktı.date) çıktı.date = p;
     });
-    if (!çıktı.mekan) çıktı.mekan = parça[0] || "";
+    if (!çıktı.venue) çıktı.venue = parça[0] || "";
     return çıktı;
   }
 
@@ -89,10 +89,10 @@
   /* --- sayfayi kur --- */
   function kur(e) {
     const rnd = tohumla(e.slug || "afterhours");
-    const tür = e.tur || "Konzert";
+    const tür = e.kind || "Konzert";
     const m = metayıAç(e.meta);
-    const gün = günBul(m.tarih, rnd);
-    const posterYolu = e.posterYolu ||
+    const gün = günBul(m.date, rnd);
+    const posterPath = e.posterPath ||
       "../../posters/" + String(e.poster || 1).padStart(2, "0") + ".svg";
 
     /* kacinci edisyon, sen kacinci kez */
@@ -106,13 +106,13 @@
     const poster = document.createElement("object");
     poster.className = "cs-poster";
     poster.type = "image/svg+xml";
-    poster.data = posterYolu;
+    poster.data = posterPath;
     ray.appendChild(poster);
 
     const künye = el("dl", "cs-facts");
     if (m.saat) künye.appendChild(kunyeSatırı("doors", m.saat));
     (V.KUNYE[tür] || []).forEach(([a, b]) => künye.appendChild(kunyeSatırı(a, b)));
-    if (m.mekan) künye.appendChild(kunyeSatırı("room", m.mekan.toLowerCase()));
+    if (m.venue) künye.appendChild(kunyeSatırı("room", m.venue.toLowerCase()));
     künye.appendChild(kunyeSatırı("from", fiyat(tür, rnd)));
     ray.appendChild(künye);
     alan.appendChild(ray);
@@ -125,20 +125,20 @@
     geri.href = "../index.html";
     kırıntı.appendChild(geri);
     kırıntı.appendChild(el("span", null, "/"));
-    kırıntı.appendChild(el("span", null, (e.baslik || "").toLowerCase()));
+    kırıntı.appendChild(el("span", null, (e.title || "").toLowerCase()));
     orta.appendChild(kırıntı);
 
     orta.appendChild(el("p", "cs-edition",
       "edition " + String(edisyon).padStart(2, "0") + " · your " + sıra(gidilen + 1)));
-    orta.appendChild(el("h1", "cs-title", e.baslik || ""));
+    orta.appendChild(el("h1", "cs-title", e.title || ""));
     orta.appendChild(el("p", "cs-meta",
-      [tür.toLowerCase(), m.tarih ? gün + " " + m.tarih : gün].join(" · ")));
+      [tür.toLowerCase(), m.date ? gün + " " + m.date : gün].join(" · ")));
 
     /* Ilk paragraf etkinligin kendi metni, sonrakiler tur havuzundan.
        Havuzdan gelen bir paragraf etkinligin kendi cumlesiyle ayni seyi
        soyluyorsa atlaniyor: iki kez "bring something" yaziyordu. */
-    const havuz = karıştır(rnd, V.METIN[tür] || []).filter((p) => !çakışır(p, e.metin));
-    [e.metin, havuz[0], havuz[1]].filter(Boolean).forEach((p) =>
+    const havuz = karıştır(rnd, V.METIN[tür] || []).filter((p) => !çakışır(p, e.body));
+    [e.body, havuz[0], havuz[1]].filter(Boolean).forEach((p) =>
       orta.appendChild(el("p", "cs-text", p)));
 
     /* ---- kareler ---- */
@@ -161,7 +161,7 @@
         const im = document.createElement("object");
         im.className = "cs-shot-img";
         im.type = "image/svg+xml";
-        im.data = posterYolu;
+        im.data = posterPath;
         im.style.setProperty("--kay", [0, 42, 83, 125][i > 3 ? 3 : i]);
         poz.appendChild(im);
       }
@@ -170,7 +170,7 @@
       kare.appendChild(el("span", "cs-no", String(i + 1).padStart(2, "0")));
       kare.appendChild(el("p", "cs-role", roller[i] || ""));
       kare.appendChild(el("p", "cs-name",
-        i === 3 ? "not announced" : (i === 2 ? e.baslik : adlar[i] || "—")));
+        i === 3 ? "not announced" : (i === 2 ? e.title : adlar[i] || "—")));
       /* Bos karenin saati YOK: dolacagi an kapinin acildigi an.
          Sayi yazmak baska bir karenin saatini tekrar ediyordu. */
       kare.appendChild(el("p", "cs-clock",
@@ -228,7 +228,7 @@
         arkadaşlar[i] || "someone", zamanlar[i + 1] || "today",
         doldur(y.m, e, m, gün),
         y.c ? { kim: arkadaşlar[(i + 2) % 5], zaman: zamanlar[i + 2] || "today",
-                metin: doldur(y.c.m, e, m, gün) } : null));
+                body: doldur(y.c.m, e, m, gün) } : null));
     });
     sağ.appendChild(yorumlar);
     alan.appendChild(sağ);
@@ -251,8 +251,8 @@
 
   function doldur(yazı, e, m, gün) {
     return String(yazı)
-      .replace(/\{mekan\}/g, m.mekan || "the room")
-      .replace(/\{ad\}/g, e.baslik || "this one")
+      .replace(/\{mekan\}/g, m.venue || "the room")
+      .replace(/\{ad\}/g, e.title || "this one")
       .replace(/\{gun\}/g, gün);
   }
 
@@ -270,7 +270,7 @@
       u.appendChild(el("span", "c-who", cevap.kim));
       u.appendChild(el("span", "c-when", cevap.zaman));
       kutu.appendChild(u);
-      kutu.appendChild(el("p", "c-text", cevap.metin));
+      kutu.appendChild(el("p", "c-text", cevap.body));
       c.appendChild(kutu);
       k.appendChild(c);
     }
@@ -312,14 +312,14 @@
   ];
 
   function kartlarıÇiz(kutu, e, m, tür, gidilen, edisyon, rnd, arkadaşlar) {
-    if (!window.KARTLAR || !gidilen) return;
+    if (!window.CARDS || !gidilen) return;
 
     for (let i = 0; i < gidilen; i++) {
       const yıl = 26 - (i + 1) * 2;
       const gece = {
-        sehir: "münchen",
-        t: e.baslik, ty: (tür || "").toUpperCase(),
-        v: (m.mekan || "münchen").toUpperCase(),
+        city: "münchen",
+        t: e.title, ty: (tür || "").toUpperCase(),
+        v: (m.venue || "münchen").toUpperCase(),
         d: "1" + (2 + i) + ".0" + (5 + i) + "." + yıl,
         metal: seç(rnd, METALLER), motif: seç(rnd, MOTIFLER),
         in: "19:4" + i, out: "23:2" + i, dur: "3H 4" + i + "M",
@@ -334,11 +334,11 @@
 
       const kart = el("figure", "cs-past-card");
       const yüz = el("div", "cs-past-face");
-      yüz.innerHTML = KARTLAR.on(gece, "g" + i);
+      yüz.innerHTML = CARDS.on(gece, "g" + i);
       kart.appendChild(yüz);
       kart.appendChild(el("figcaption", null,
         "edition " + String(edisyon - 1 - i).padStart(2, "0") +
-        " · " + (m.mekan || "münchen").toLowerCase() + " · " + gece.d));
+        " · " + (m.venue || "münchen").toLowerCase() + " · " + gece.d));
       kutu.appendChild(kart);
     }
   }

@@ -9,10 +9,10 @@ import { readFile } from "node:fs/promises";
 const metin = await readFile(new URL("../../config.js", import.meta.url), "utf8");
 const kutu = {};
 new Function("window", metin)(kutu);
-const ayar = kutu.AH_AYAR || {};
+const ayar = kutu.AH_CONFIG || {};
 
 const adres = (process.argv[2] || ayar.url || "").replace(/\/$/, "");
-const anahtar = process.argv[3] || ayar.anonKey || "yerel";
+const anahtar = process.argv[3] || ayar.anonKey || "local";
 if (!adres) { console.error("Adres yok."); process.exit(1); }
 
 const basla = Date.now();

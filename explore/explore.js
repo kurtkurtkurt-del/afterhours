@@ -14,7 +14,7 @@
      global deck   → POSTERS (filtreli normal deste)
      friends liked → arkadaslarin saga attiklari
      i feel lucky  → ayni kartlar, karisik sirayla           */
-  let KARTLAR = POSTERS;
+  let CARDS = POSTERS;
 
   /* --- Saga atilanlar burada birikir --- */
 
@@ -50,8 +50,8 @@
     }
     /* En son tutulan ustte */
     tutulan.slice().reverse().forEach((e) => {
-      const no = String(e.poster || KARTLAR.indexOf(e) + 1).padStart(2, "0");
-      const yol = e.posterYolu || "../posters/" + no + ".svg";
+      const no = String(e.poster || CARDS.indexOf(e) + 1).padStart(2, "0");
+      const yol = e.posterPath || "../posters/" + no + ".svg";
       const a = document.createElement("a");
       a.className = "ex-box-row";
       a.href = e.slug + "/index.html";
@@ -62,7 +62,7 @@
       const yazi = document.createElement("div");
       const ad = document.createElement("p");
       ad.className = "ex-box-name";
-      ad.textContent = e.baslik;
+      ad.textContent = e.title;
       const meta = document.createElement("p");
       meta.className = "ex-box-meta";
       meta.textContent = e.meta;
@@ -100,7 +100,7 @@
   function ucur(kart, yon) {
     if (kart.dataset.uctu) return;
     kart.dataset.uctu = "1";
-    const atilan = KARTLAR[Number(kart.dataset.no)];
+    const atilan = CARDS[Number(kart.dataset.no)];
     if (yon > 0) tut(atilan);
     /* Her iki yon de kaydediliyor: sag biriktirmek, sol "bir daha gosterme".
        Girisliyken veritabanina, degilse tarayiciya. */
@@ -139,8 +139,8 @@
   function kartYap(i) {
     /* Poster numarasi kaydin kendisinden geliyor; veritabani eksik bir
        liste dondurdugunde posterler kaymasin diye siraya guvenmiyoruz. */
-    const no = String(KARTLAR[i].poster || i + 1).padStart(2, "0");
-    const yol = KARTLAR[i].posterYolu || "../posters/" + no + ".svg";
+    const no = String(CARDS[i].poster || i + 1).padStart(2, "0");
+    const yol = CARDS[i].posterPath || "../posters/" + no + ".svg";
     const kart = document.createElement("div");
     kart.className = "ex-card";
     kart.dataset.no = String(i);
@@ -152,12 +152,12 @@
 
     /* Posterin altindaki bilgi seridi: tur + mekan/tarih.
        Veri events-data.js'ten, poster ile hic celismesin diye. */
-    const veri = KARTLAR[i];
+    const veri = CARDS[i];
     const bilgi = document.createElement("div");
     bilgi.className = "ex-info";
     const tur = document.createElement("p");
     tur.className = "ex-kind";
-    tur.textContent = veri.tur;
+    tur.textContent = veri.kind;
     const meta = document.createElement("p");
     meta.className = "ex-meta";
     meta.textContent = veri.meta;
@@ -230,7 +230,7 @@
     ust.appendChild(satir("c-who", konu.kim));
     ust.appendChild(satir("c-when", konu.zaman));
     k.appendChild(ust);
-    k.appendChild(satir("c-text", konu.metin));
+    k.appendChild(satir("c-text", konu.body));
 
     if (konu.cevaplar && konu.cevaplar.length) {
       const c = document.createElement("div");
@@ -243,7 +243,7 @@
         u.appendChild(satir("c-who", cev.kim));
         u.appendChild(satir("c-when", cev.zaman));
         kutu.appendChild(u);
-        kutu.appendChild(satir("c-text", cev.metin));
+        kutu.appendChild(satir("c-text", cev.body));
         c.appendChild(kutu);
       });
       k.appendChild(c);
@@ -325,7 +325,7 @@
         return;
       }
 
-      const etkinlik = KARTLAR[Number(ust.dataset.no)];
+      const etkinlik = CARDS[Number(ust.dataset.no)];
       kaynak(etkinlik).then(({ eski, yeni }) => {
         /* Bu arada baska bir kart ustte olabilir; gec gelen cevabi basma */
         if (deste.lastElementChild !== ust) return;
@@ -360,8 +360,8 @@
   );
 
   function doldur() {
-    while (deste.children.length < GORUNEN && sira < KARTLAR.length) {
-      if (atlanacak.has(KARTLAR[sira].slug)) { sira++; continue; }
+    while (deste.children.length < GORUNEN && sira < CARDS.length) {
+      if (atlanacak.has(CARDS[sira].slug)) { sira++; continue; }
       deste.insertBefore(kartYap(sira), deste.firstChild);
       sira++;
     }
@@ -395,26 +395,26 @@
   /* Ustteki filtre: sehir ve tur. Canliyken sorgu veritabaninda
      yapiliyor, yerel modda elimizdeki listeden suzuluyor. */
   function filtrele(liste) {
-    const f = (window.AH && AH.filtre) || {};
-    if (!f.tur) return liste;
-    const ad = f.tur.replace(/-/g, " ");
-    return liste.filter((e) => (e.tur || "").toLowerCase() === ad);
+    const f = (window.AH && AH.filter) || {};
+    if (!f.kind) return liste;
+    const ad = f.kind.replace(/-/g, " ");
+    return liste.filter((e) => (e.kind || "").toLowerCase() === ad);
   }
 
   /* Modun kart kaynagini getir. Hepsi ayni bicimde kayit dondurur. */
   function kaynakGetir(mod) {
     if (mod === "friends liked swipes") {
-      return window.AH && AH.arkadasBegenileri
-        ? AH.arkadasBegenileri()
+      return window.AH && AH.friendsKept
+        ? AH.friendsKept()
         : Promise.resolve([]);
     }
     if (mod === "i feel lucky") {
       /* Rastgele bir sehre atla, sonra oranin destesini karistir.
          Filtre kendini de guncelliyor, boylece nereye dustugun
          ustteki secimlerden okunuyor. */
-      const gidilen = window.AH && AH.filtreRastgele ? AH.filtreRastgele() : null;
-      const kaynak = gidilen && AH.durum === "canli" && AH.etkinlikler
-        ? AH.etkinlikler(null, gidilen.slug).catch(() => filtrele(POSTERS))
+      const gidilen = window.AH && AH.randomCity ? AH.randomCity() : null;
+      const kaynak = gidilen && AH.mode === "live" && AH.events
+        ? AH.events(null, gidilen.slug).catch(() => filtrele(POSTERS))
         : Promise.resolve(filtrele(POSTERS));
 
       return kaynak.then((liste) => {
@@ -427,9 +427,9 @@
       });
     }
 
-    const f = (window.AH && AH.filtre) || {};
-    if (window.AH && AH.durum === "canli" && AH.etkinlikler) {
-      return AH.etkinlikler(f.tur, f.sehir).catch(() => filtrele(POSTERS));
+    const f = (window.AH && AH.filter) || {};
+    if (window.AH && AH.mode === "live" && AH.events) {
+      return AH.events(f.kind, f.city).catch(() => filtrele(POSTERS));
     }
     return Promise.resolve(filtrele(POSTERS));
   }
@@ -439,12 +439,12 @@
     if (bitti && mod) bitti.textContent = BOS_MESAJ[mod] || BOS_MESAJ["global deck"];
 
     return kaynakGetir(mod || "global deck").then((liste) => {
-      KARTLAR = liste.length ? liste : [];
+      CARDS = liste.length ? liste : [];
       /* Bos deste: neden bos oldugunu soyle */
       if (!liste.length && bitti && (mod || "global deck") === "global deck") {
-        const f = (window.AH && AH.filtre) || {};
-        bitti.textContent = f.sehir
-          ? "no nights in " + f.sehir + " yet."
+        const f = (window.AH && AH.filter) || {};
+        bitti.textContent = f.city
+          ? "no nights in " + f.city + " yet."
           : "that's everyone for tonight.";
       }
       dagitmayaBasla();
@@ -514,7 +514,7 @@
   if (sifirlaDugmesi) {
     sifirlaDugmesi.addEventListener("click", () => {
       if (!window.AH || !AH.atislariSifirla) return;
-      /* Geri alinamaz: biriktirilenler de gidiyor */
+      /* Geri alinamaz: kept de gidiyor */
       if (!window.confirm(
         "reset the deck? everything you kept and everything you passed on is forgotten."
       )) return;
@@ -533,9 +533,9 @@
     });
   }
 
-  /* Onceki oturumdan biriktirilenler geri gelsin (rozet ve liste). */
-  if (window.AH && AH.biriktirilenler) {
-    AH.biriktirilenler().then((liste) => {
+  /* Onceki oturumdan kept geri gelsin (rozet ve liste). */
+  if (window.AH && AH.kept) {
+    AH.kept().then((liste) => {
       liste.slice().reverse().forEach(tut);
     });
   }

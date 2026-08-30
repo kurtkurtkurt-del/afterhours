@@ -1,13 +1,13 @@
 /* afterhours — card collection'daki uc ornek gece.
    Bicim cards.js'in EVENTS yapisiyla ayni; kartlar da onun kendi
-   ureteciyle ciziliyor (KARTLAR.on / KARTLAR.arka). Poster degil,
+   ureteciyle ciziliyor (CARDS.on / CARDS.arka). Poster degil,
    gercek afterhours karti.
 
    Metaller bilerek acik ucundan secildi: krom, cirilanmis celik,
    titanyum.  */
 
-window.KART_ORNEKLERI = [
-  { sehir: "istanbul",
+window.CARD_SAMPLES = [
+  { city: "istanbul",
     t: "Karaköy Alt Kat", ty: "CLUB NIGHT", v: "KARAKÖY", d: "19.09.26",
     metal: "chrome", motif: "moire",
     in: "23:12", out: "04:40", dur: "5H 28M",
@@ -16,7 +16,7 @@ window.KART_ORNEKLERI = [
     q1: ["vapur düdüğü duvardan geldi", "B", "02:14"],
     q2: ["bu saatte simit nereden", "E", "04:31"] },
 
-  { sehir: "münchen",
+  { city: "münchen",
     t: "Blitz", ty: "RAVE", v: "MUSEUMSINSEL 1", d: "23.09.26",
     metal: "steel", motif: "grid",
     in: "00:20", out: "06:05", dur: "5H 45M",
@@ -25,7 +25,7 @@ window.KART_ORNEKLERI = [
     q1: ["telefonlar cepte kaldı", "L", "03:02"],
     q2: ["arka oda daha iyiydi", "M", "05:40"] },
 
-  { sehir: "berlin",
+  { city: "berlin",
     t: "Betonhalle", ty: "RAVE", v: "KRAFTWERK MITTE", d: "12.09.26",
     metal: "titanium", motif: "iso",
     in: "23:50", out: "07:30", dur: "7H 40M",

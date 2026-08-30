@@ -56,7 +56,7 @@ console.log("\n— kayit formu handle ve sehir gonderirse —");
     where p.id = '${B}'`);
   olmali(p.rows[0].handle === "lena", "handle kayitta alindi");
   olmali(p.rows[0].display_name === "Lena", "gorunen ad kayitta alindi");
-  olmali(p.rows[0].sehir === "munchen", "sehir baglandi");
+  olmali(p.rows[0].city === "munchen", "sehir baglandi");
   olmali(p.rows[0].bitti === true, "handle geldiyse kayit bitmis sayiliyor");
 
   /* Dolu handle sessizce dusuyor, hesap yine de aciliyor */

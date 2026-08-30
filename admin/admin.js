@@ -5,7 +5,7 @@
    goremez.  */
 
 (function () {
-  const AYAR = window.AH_AYAR || {};
+  const AYAR = window.AH_CONFIG || {};
   const kapi = document.getElementById("adm-gate");
   const kapiYazi = document.getElementById("adm-gate-text");
   const kapiLink = document.getElementById("adm-gate-link");
@@ -18,7 +18,7 @@
   const duzen = $("adm-edit");
   const durum = $("a-status");
 
-  let etkinlikler = [];
+  let events = [];
   let turler = [];
   let sehirler = [];
   let mekanlar = [];
@@ -40,11 +40,11 @@
      Sifre burada tutulmuyor, dogrudan Supabase'e gidiyor. */
   girisForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const eposta = document.getElementById("adm-eposta").value.trim();
-    const sifre = document.getElementById("adm-sifre").value;
+    const eposta = document.getElementById("adm-email").value.trim();
+    const sifre = document.getElementById("adm-password").value;
     if (!eposta || !sifre) return;
     girisNot.textContent = "signing in…";
-    AH.sifreyleGir(eposta, sifre)
+    AH.signInWithPassword(eposta, sifre)
       .then(() => { location.reload(); })
       .catch((h) => {
         girisNot.textContent = /invalid/i.test(h.message)
@@ -60,14 +60,14 @@
     return;
   }
 
-  AH.oturumHazir
+  AH.sessionReady
     .then(() => {
-      if (!AH.girisliMi()) {
+      if (!AH.signedIn()) {
         kapiyiGoster("sign in with the admin account to continue.", true);
         return null;
       }
-      const id = AH.oturum.kullanici && AH.oturum.kullanici.id;
-      return AH.istek("/profiles?id=eq." + id).then((r) => (r && r[0]) || null);
+      const id = AH.session.user && AH.session.user.id;
+      return AH.request("/profiles?id=eq." + id).then((r) => (r && r[0]) || null);
     })
     .then((profil) => {
       if (!profil) return;
@@ -85,9 +85,9 @@
 
   function baslat() {
     return Promise.all([
-      AH.istek("/event_types?order=sira"),
-      AH.istek("/cities?order=sira"),
-      AH.istek("/venues?order=name"),
+      AH.request("/event_types?order=sira"),
+      AH.request("/cities?order=sira"),
+      AH.request("/venues?order=name"),
       yenile(),
       yorumlariGetir(),
       geriGetir(),
@@ -99,10 +99,10 @@
 
   function yenile() {
     return Promise.all([
-      AH.istek("/events?order=poster_no"),
-      AH.istek("/rpc/keep_counts", { method: "POST", body: "{}" }).catch(() => []),
+      AH.request("/events?order=poster_no"),
+      AH.request("/rpc/keep_counts", { method: "POST", body: "{}" }).catch(() => []),
     ]).then(([e, k]) => {
-      etkinlikler = e;
+      events = e;
       sayilar = {};
       (k || []).forEach((r) => { sayilar[r.event_id] = Number(r.n); });
       listeyiCiz();
@@ -142,7 +142,7 @@
 
   function listeyiCiz() {
     const arama = (araAlan.value || "").trim().toLowerCase();
-    const gosterilecek = etkinlikler.filter(
+    const gosterilecek = events.filter(
       (e) => !arama ||
         (e.title + " " + e.slug + " " + e.meta).toLowerCase().includes(arama)
     );
@@ -174,9 +174,9 @@
       listeAlan.appendChild(li);
     });
 
-    const sorunlu = etkinlikler.filter((e) => uyarilar(e).length).length;
+    const sorunlu = events.filter((e) => uyarilar(e).length).length;
     ozet.textContent =
-      `${etkinlikler.length} events · ${sorunlu} need attention` +
+      `${events.length} events · ${sorunlu} need attention` +
       (arama ? ` · showing ${gosterilecek.length}` : "");
   }
 
@@ -208,7 +208,7 @@
   }
 
   function posteriGoster(no) {
-    const kutu = $("a-poster-onizleme");
+    const kutu = $("a-poster-preview");
     kutu.textContent = "";
     $("a-poster-note").textContent = "";
     if (!no) { kutu.textContent = "—"; return; }
@@ -257,12 +257,12 @@
     durum.textContent = "saving…";
 
     const istek = secili
-      ? AH.istek("/events?id=eq." + secili.id, {
+      ? AH.request("/events?id=eq." + secili.id, {
           method: "PATCH",
           headers: { Prefer: "return=representation" },
           body: JSON.stringify(g),
         })
-      : AH.istek("/events", {
+      : AH.request("/events", {
           method: "POST",
           headers: { Prefer: "return=representation" },
           body: JSON.stringify(g),
@@ -272,7 +272,7 @@
       .then((satirlar) => {
         if (!satirlar || !satirlar.length) throw new Error("nothing was written");
         return yenile().then(() => {
-          const yeni = etkinlikler.find((e) => e.id === satirlar[0].id);
+          const yeni = events.find((e) => e.id === satirlar[0].id);
           if (yeni) sec(yeni);
           /* sec() durumu temizliyor; mesaji ondan SONRA yaz */
           durum.textContent = "saved.";
@@ -286,7 +286,7 @@
     /* Silmek geri alinamaz; once ne silindigini soyle */
     if (!window.confirm('delete "' + secili.title + '" and everything attached to it?')) return;
     durum.textContent = "deleting…";
-    AH.istek("/events?id=eq." + secili.id, { method: "DELETE" })
+    AH.request("/events?id=eq." + secili.id, { method: "DELETE" })
       .then(() => { secili = null; duzen.hidden = true; return yenile(); })
       .catch((h) => { durum.textContent = "couldn't delete: " + h.message; });
   });
@@ -296,14 +296,14 @@
      basliklar bu cerceveyi tasabiliyor (36'lik sette dordu tasmisti),
      o yuzden yuklenen SVG'yi olcup soyluyoruz. */
 
-  $("a-poster-dosya").addEventListener("change", (olay) => {
+  $("a-poster-file").addEventListener("change", (olay) => {
     const dosya = olay.target.files && olay.target.files[0];
     if (!dosya) return;
     const not = $("a-poster-note");
     not.textContent = "checking…";
 
     dosya.text().then((metin) => {
-      const kutu = $("a-poster-onizleme");
+      const kutu = $("a-poster-preview");
       kutu.textContent = "";
       const sarmal = document.createElement("div");
       sarmal.className = "adm-poster-inner";
@@ -363,7 +363,7 @@
       method: "POST",
       headers: {
         apikey: AYAR.anonKey,
-        Authorization: "Bearer " + AH.jeton,
+        Authorization: "Bearer " + AH.token,
         "Content-Type": "image/svg+xml",
         "x-upsert": "true",
       },
@@ -373,7 +373,7 @@
         if (!c.ok) throw new Error(c.status + " " + (await c.text()).slice(0, 120));
         /* Kaydin poster_path'ini isaretle: site bundan sonra bu dosyayi
            gosterir, posters/NN.svg yerine. */
-        return AH.istek("/events?id=eq." + secili.id, {
+        return AH.request("/events?id=eq." + secili.id, {
           method: "PATCH",
           headers: { Prefer: "return=representation" },
           body: JSON.stringify({ poster_path: ad }),
@@ -402,7 +402,7 @@
   const TUR = { broken: "broken", idea: "idea", event: "event", other: "other" };
 
   function geriGetir() {
-    return AH.istek("/rpc/feedback_list", {
+    return AH.request("/rpc/feedback_list", {
       method: "POST",
       body: JSON.stringify({ p_limit: 60 }),
     }).then(geriCiz).catch(() => {});
@@ -453,7 +453,7 @@
       isaret.type = "button";
       isaret.textContent = g.handled ? "reopen" : "handled";
       isaret.addEventListener("click", () => {
-        AH.istek("/feedback?id=eq." + g.id, {
+        AH.request("/feedback?id=eq." + g.id, {
           method: "PATCH",
           body: JSON.stringify({ handled: !g.handled }),
         }).then(geriGetir);
@@ -471,7 +471,7 @@
   }
 
   function yorumlariGetir() {
-    return AH.istek("/comments?order=created_at.desc&limit=30")
+    return AH.request("/comments?order=created_at.desc&limit=30")
       .then(yorumlariCiz)
       .catch(() => {});
   }
@@ -496,7 +496,7 @@
       gizle.type = "button";
       gizle.textContent = y.is_hidden ? "show" : "hide";
       gizle.addEventListener("click", () => {
-        AH.istek("/comments?id=eq." + y.id, {
+        AH.request("/comments?id=eq." + y.id, {
           method: "PATCH",
           body: JSON.stringify({ is_hidden: !y.is_hidden }),
         }).then(yorumlariGetir);

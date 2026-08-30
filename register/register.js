@@ -14,11 +14,11 @@
   const AH = (window.AH = window.AH || {});
   const el = (id) => document.getElementById(id);
 
-  const adimlar = ["reg-1", "reg-2", "reg-3", "reg-posta", "reg-zaten"];
+  const adimlar = ["reg-1", "reg-2", "reg-3", "reg-mail", "reg-already"];
   const goster = (id) => adimlar.forEach((a) => { el(a).hidden = a !== id; });
 
   const cagir = (fn, govde) =>
-    AH.istek("/rpc/" + fn, { method: "POST", body: JSON.stringify(govde || {}) });
+    AH.request("/rpc/" + fn, { method: "POST", body: JSON.stringify(govde || {}) });
   const skaler = (c) => (Array.isArray(c) ? c[0] : c);
 
   function soyle(kutu, yazi, cesit) {
@@ -33,44 +33,44 @@
 
   el("reg-form").addEventListener("submit", function (e) {
     e.preventDefault();
-    const eposta = el("reg-eposta").value.trim();
-    const sifre = el("reg-sifre").value;
+    const eposta = el("reg-email").value.trim();
+    const sifre = el("reg-password").value;
     const not = el("reg-note");
 
     if (!eposta || eposta.indexOf("@") < 1) {
       soyle(not, "that doesn't look like an email.", "hata");
-      el("reg-eposta").focus();
+      el("reg-email").focus();
       return;
     }
     if (sifre.length < 8) {
       soyle(not, "eight characters or more, please.", "error");
-      el("reg-sifre").focus();
+      el("reg-password").focus();
       return;
     }
 
-    el("reg-ac").disabled = true;
+    el("reg-create").disabled = true;
     soyle(not, "opening it…");
 
-    AH.kayitOl(eposta, sifre)
+    AH.signUp(eposta, sifre)
       .then((oturum) => {
-        el("reg-ac").disabled = false;
+        el("reg-create").disabled = false;
         if (!oturum) {
           /* Dogrulama acik: jeton gelmedi, once postasina bakacak */
-          el("reg-posta-note").textContent =
+          el("reg-mail-note").textContent =
             "We sent a link to " + eposta + ". Open it and you land back here to " +
             "pick a handle — the account is not finished until you do.";
-          goster("reg-posta");
+          goster("reg-mail");
           return;
         }
         soyle(not, "");
         ikinciAdim();
       })
       .catch((h) => {
-        el("reg-ac").disabled = false;
+        el("reg-create").disabled = false;
         const m = String(h.message || "");
         soyle(not, /already registered|exists/i.test(m)
           ? "there is already an account with that email. sign in instead."
-          : AH.hataMetni(h, "couldn't open the account."), "hata");
+          : AH.errorText(h, "couldn't open the account."), "hata");
       });
   });
 
@@ -105,14 +105,14 @@
         const gruplar = [];
         (liste || []).filter((c) => Number(c.n) > 0).forEach((c) => {
           const son = gruplar[gruplar.length - 1];
-          if (son && son.ulke === c.country) son.sehirler.push(c);
-          else gruplar.push({ ulke: c.country, sehirler: [c] });
+          if (son && son.country === c.country) son.sehirler.push(c);
+          else gruplar.push({ country: c.country, sehirler: [c] });
         });
 
         gruplar.forEach((g) => {
           const ad = document.createElement("p");
           ad.className = "set-country";
-          ad.textContent = (g.ulke || "").toLowerCase();
+          ad.textContent = (g.country || "").toLowerCase();
           kutu.appendChild(ad);
 
           const satir = document.createElement("div");
@@ -139,36 +139,36 @@
     dolu: "someone already has that handle.",
     bicim: "that handle doesn't fit the format.",
     bos: "pick a handle first.",
-    sehir: "that city isn't on the list.",
+    city: "that city isn't on the list.",
     giris: "sign in again — the session went away.",
   };
 
-  el("reg-bitir").onclick = function () {
+  el("reg-finish").onclick = function () {
     const h = el("reg-handle").value.trim();
     if (!h) {
       soyle(el("reg-status"), "pick a handle first.", "error");
       el("reg-handle").focus();
       return;
     }
-    el("reg-bitir").disabled = true;
+    el("reg-finish").disabled = true;
     soyle(el("reg-status"), "finishing…");
 
     cagir("profile_setup", { p_handle: h, p_city_slug: sehir })
       .then((c) => {
         const s = skaler(c);
-        el("reg-bitir").disabled = false;
+        el("reg-finish").disabled = false;
         if (s !== "ok") {
           soyle(el("reg-status"), YANIT[s] || String(s), "error");
           return;
         }
-        el("reg-hosgeldin").textContent =
+        el("reg-welcome").textContent =
           "You are @" + h.toLowerCase() + ". Your deck is waiting, and what you keep " +
           "from here on is yours to look back at.";
         goster("reg-3");
       })
       .catch((h2) => {
-        el("reg-bitir").disabled = false;
-        soyle(el("reg-status"), AH.hataMetni(h2, "couldn't finish the account."), "hata");
+        el("reg-finish").disabled = false;
+        soyle(el("reg-status"), AH.errorText(h2, "couldn't finish the account."), "hata");
       });
   };
 
@@ -181,7 +181,7 @@
   /* ---------------- acilis ---------------- */
 
   function ekraniKur() {
-    const AYAR = window.AH_AYAR || {};
+    const AYAR = window.AH_CONFIG || {};
     if (!(AYAR.url && AYAR.anonKey)) {
       goster("reg-1");
       el("reg-form").hidden = true;
@@ -189,16 +189,16 @@
       return;
     }
 
-    if (!(AH.girisliMi && AH.girisliMi())) { goster("reg-1"); return; }
+    if (!(AH.signedIn && AH.signedIn())) { goster("reg-1"); return; }
 
     /* Girisli: kaydi bitmis mi? Bitmemisse dogrudan ikinci adim. */
     cagir("profile_me")
       .then((r) => {
         const p = Array.isArray(r) ? r[0] : r;
         if (p && p.onboarded) {
-          el("reg-zaten-note").textContent =
+          el("reg-already-note").textContent =
             "You are signed in as @" + (p.handle || "you") + ". Nothing to fill in twice.";
-          goster("reg-zaten");
+          goster("reg-already");
         } else {
           ikinciAdim();
         }
@@ -206,5 +206,5 @@
       .catch(() => ikinciAdim());
   }
 
-  AH.oturumHazir.then(ekraniKur).catch(ekraniKur);
+  AH.sessionReady.then(ekraniKur).catch(ekraniKur);
 })();

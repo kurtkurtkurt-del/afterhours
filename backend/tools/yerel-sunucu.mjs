@@ -338,5 +338,5 @@ sunucu.listen(PORT, () => {
   console.log(`\nYEREL taklit sunucu: http://localhost:${PORT}`);
   console.log("Bu Supabase DEGIL; sadece gelistirme icin.\n");
   console.log("config.js icin:");
-  console.log(`  url: "http://localhost:${PORT}", anonKey: "yerel"\n`);
+  console.log(`  url: "http://localhost:${PORT}", anonKey: "local"\n`);
 });

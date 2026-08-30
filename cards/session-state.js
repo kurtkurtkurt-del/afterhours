@@ -15,12 +15,12 @@
   const kartlar = document.getElementById("cc-cards");
 
   function bak() {
-    const girisli = Boolean(AH.girisliMi && AH.girisliMi());
+    const girisli = Boolean(AH.signedIn && AH.signedIn());
     if (dugme) dugme.hidden = girisli;
     if (kartlar) kartlar.hidden = girisli;
   }
 
   bak();                                   /* jeton yerelde: hemen bilinir */
-  if (AH.oturumHazir) AH.oturumHazir.then(bak);
-  if (AH.oturumDegisti) AH.oturumDegisti(bak);
+  if (AH.sessionReady) AH.sessionReady.then(bak);
+  if (AH.onSessionChange) AH.onSessionChange(bak);
 })();

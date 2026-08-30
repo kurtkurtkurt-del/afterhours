@@ -4,7 +4,7 @@
 
    Icerik uydurma ama rastgele degil: her sehrin gecesi o sehirde
    inandirici olacak sekilde elle yazildi. Mekan adlari gercek yerlerden
-   ilham aliyor, etkinlikler kurgusal.
+   ilham aliyor, events kurgusal.
 
    [tur, baslik, mekan, gun (2026), saat, metin]  */
 

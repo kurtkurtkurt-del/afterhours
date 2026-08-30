@@ -35,12 +35,12 @@ def font(boy, agirlik=500):
     return f
 
 
-def etkinlikler():
+def events():
     ham = (KOK / "events-data.js").read_text(encoding="utf-8")
     return [
         {"slug": s, "tur": t, "baslik": b, "meta": m, "poster": i + 1}
         for i, (s, t, b, m) in enumerate(re.findall(
-            r'\{ slug: "([^"]+)", tur: "([^"]+)", *baslik: "([^"]+)", *meta: "([^"]+)"', ham))
+            r'\{ slug: "([^"]+)", kind: "([^"]+)", *title: "([^"]+)", *meta: "([^"]+)"', ham))
     ]
 
 
@@ -131,7 +131,7 @@ if __name__ == "__main__":
 
     gecici = pathlib.Path(tempfile.mkdtemp())
     n = 0
-    for e in etkinlikler():
+    for e in events():
         if istenen and e["slug"] != istenen:
             continue
         png = posteri_cevir(e["poster"], gecici / f"{e['poster']:02d}.png")

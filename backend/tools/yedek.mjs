@@ -14,12 +14,12 @@ async function ayariOku() {
   const metin = await readFile(new URL("../../config.js", import.meta.url), "utf8");
   const kutu = {};
   new Function("window", metin)(kutu);
-  return kutu.AH_AYAR || {};
+  return kutu.AH_CONFIG || {};
 }
 
 const ayar = await ayariOku();
 const adres = (process.argv[2] || ayar.url || "").replace(/\/$/, "");
-const anahtar = process.argv[3] || ayar.anonKey || "yerel";
+const anahtar = process.argv[3] || ayar.anonKey || "local";
 
 if (!adres) {
   console.error("Adres yok. config.js'i doldur ya da adresi arguman olarak ver.");

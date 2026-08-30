@@ -7,8 +7,8 @@
   const AH = (window.AH = window.AH || {});
   const OTUZ_GUN = 30 * 24 * 3600 * 1000;
 
-  const AYAR = window.AH_AYAR || {};
-  const canli = () => Boolean(AYAR.url && AYAR.anonKey && AH.durum === "canli");
+  const AYAR = window.AH_CONFIG || {};
+  const canli = () => Boolean(AYAR.url && AYAR.anonKey && AH.mode === "live");
 
   /* Veritabani satirlarini ekranin bekledigi bicime cevir.
      time_text ornek yorumlarda dolu ("4 days ago"); gercek yorumlarda
@@ -33,12 +33,12 @@
       id: s.id,
       kim: s.author || "someone",
       zaman: zamanYazisi(s),
-      metin: s.body,
+      body: s.body,
       an: new Date(s.created_at).getTime(),
       cevaplar: cevaplar
         .filter((c) => c.parent_id === s.id)
         .sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
-        .map((c) => ({ kim: c.author || "someone", zaman: zamanYazisi(c), metin: c.body })),
+        .map((c) => ({ kim: c.author || "someone", zaman: zamanYazisi(c), body: c.body })),
     });
 
     const hepsi = konular.map(cevir).sort((a, b) => b.an - a.an);
@@ -55,7 +55,7 @@
       try { return Promise.resolve(YORUMLARI_GETIR(etkinlik)); }
       catch (_) { return Promise.resolve({ yeni: [], eski: [] }); }
     }
-    return AH.istek(
+    return AH.request(
       "/comments_public?event_id=eq." + encodeURIComponent(etkinlik.id) +
       "&order=created_at.desc&limit=60"
     )
@@ -69,16 +69,16 @@
   /* Yazmak giris ister. author_id'yi veritabani oturumdan dolduruyor. */
   AH.yorumYaz = function (etkinlik, metin, ustId) {
     if (!canli()) return Promise.reject(new Error("backend kapali"));
-    if (!(AH.girisliMi && AH.girisliMi())) return Promise.reject(new Error("page gerekli"));
+    if (!(AH.signedIn && AH.signedIn())) return Promise.reject(new Error("page gerekli"));
     const govde = { event_id: etkinlik.id, body: String(metin).trim() };
     if (ustId) govde.parent_id = ustId;
-    return AH.istek("/comments", {
+    return AH.request("/comments", {
       method: "POST",
       headers: { Prefer: "return=representation" },
       body: JSON.stringify(govde),
     });
   };
 
-  AH.yorumYazilabilir = () => canli() && AH.girisliMi && AH.girisliMi();
+  AH.yorumYazilabilir = () => canli() && AH.signedIn && AH.signedIn();
   AH.yorumBackendAcik = canli;
 })();

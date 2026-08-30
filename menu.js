@@ -9,7 +9,7 @@
 
 (function () {
   const AH = (window.AH = window.AH || {});
-  if (!AH.oturumHazir) return;
+  if (!AH.sessionReady) return;
 
   /* Sayfalar farkli derinliklerde (kok, explore/, explore/<slug>/).
      Menudeki logonun adresinden kok yolunu cikariyoruz — boylece site
@@ -69,22 +69,22 @@
     if (profil && profil.handle) return profil.handle;
     const ham =
       (profil && profil.display_name) ||
-      (AH.oturum && AH.oturum.kullanici && AH.oturum.kullanici.email) ||
+      (AH.session && AH.session.user && AH.session.user.email) ||
       "";
     const bas = String(ham).split("@")[0].split(/[.\s_]/)[0];
     return bas ? bas.toLowerCase() : "you";
   }
 
   function bak() {
-    if (!(AH.girisliMi && AH.girisliMi() && AH.istek)) {
+    if (!(AH.signedIn && AH.signedIn() && AH.request)) {
       kaldir();
       selamiKaldir();
       return;
     }
-    const id = AH.oturum && AH.oturum.kullanici && AH.oturum.kullanici.id;
+    const id = AH.session && AH.session.user && AH.session.user.id;
     if (!id) { kaldir(); selamiKaldir(); return; }
 
-    AH.istek("/profiles?id=eq." + id + "&select=handle,display_name,is_admin")
+    AH.request("/profiles?id=eq." + id + "&select=handle,display_name,is_admin")
       .then((r) => {
         const profil = (r && r[0]) || null;
         selamla(adBul(profil));
@@ -94,13 +94,13 @@
         /* Istek 401 ile dondugunde oturum bu arada dusurulmus olabilir
            (data.js gecersiz jetonu birakiyor). O zaman selamlamak yanlis:
            girissiz birine "welcome you" yaziyordu. */
-        if (AH.girisliMi && AH.girisliMi()) selamla(adBul(null));
+        if (AH.signedIn && AH.signedIn()) selamla(adBul(null));
         else selamiKaldir();
         kaldir();
       });
   }
 
-  /* AH.istek'i data.js tanimliyor ve bazi sayfalarda o BIZDEN SONRA
+  /* AH.request'i data.js tanimliyor ve bazi sayfalarda o BIZDEN SONRA
      yukleniyor. Betik siralamasina guvenmek yerine butun betikler
      calistiktan sonra bakiyoruz. */
   function hazirOlunca(f) {
@@ -112,7 +112,7 @@
   }
 
   hazirOlunca(() => {
-    AH.oturumHazir.then(bak);
-    if (AH.oturumDegisti) AH.oturumDegisti(bak);
+    AH.sessionReady.then(bak);
+    if (AH.onSessionChange) AH.onSessionChange(bak);
   });
 })();

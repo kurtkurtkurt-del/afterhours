@@ -43,26 +43,26 @@
   });
 
   /* --- gonder --- */
-  el("fb-yolla").onclick = function () {
+  el("fb-send").onclick = function () {
     const yazi = metin.value.trim();
     if (yazi.length < 10) {
       soyle("a few more words, so it can be acted on.", "error");
       metin.focus();
       return;
     }
-    if (!AH.istek) {
+    if (!AH.request) {
       soyle("this opens when the backend does.", "error");
       return;
     }
 
     const govde = { kind: tur, body: yazi };
-    const iletisim = el("fb-iletisim").value.trim();
-    if (iletisim && !AH.girisliMi()) govde.contact = iletisim;
+    const iletisim = el("fb-contact").value.trim();
+    if (iletisim && !AH.signedIn()) govde.contact = iletisim;
 
     soyle("sending…");
-    el("fb-yolla").disabled = true;
+    el("fb-send").disabled = true;
 
-    AH.istek("/feedback", {
+    AH.request("/feedback", {
       method: "POST",
       headers: { Prefer: "return=minimal" },
       body: JSON.stringify(govde),
@@ -73,15 +73,15 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       })
       .catch((h) => {
-        el("fb-yolla").disabled = false;
-        soyle(AH.hataMetni(h, "couldn't send it. the words are still here."), "hata");
+        el("fb-send").disabled = false;
+        soyle(AH.errorText(h, "couldn't send it. the words are still here."), "hata");
       });
   };
 
   el("fb-again").onclick = function () {
     metin.value = "";
     el("fb-counter").textContent = "";
-    el("fb-yolla").disabled = false;
+    el("fb-send").disabled = false;
     soyle("");
     el("fb-thanks").hidden = true;
     form.hidden = false;
@@ -90,16 +90,16 @@
 
   /* --- girisliysen iletisim satirini sormuyoruz --- */
   function ekraniKur() {
-    const girisli = Boolean(AH.girisliMi && AH.girisliMi());
-    const eposta = AH.oturum && AH.oturum.kullanici && AH.oturum.kullanici.email;
-    el("fb-iletisim").hidden = girisli;
-    el("fb-iletisim-note").textContent = girisli
+    const girisli = Boolean(AH.signedIn && AH.signedIn());
+    const eposta = AH.session && AH.session.user && AH.session.user.email;
+    el("fb-contact").hidden = girisli;
+    el("fb-contact-note").textContent = girisli
       ? "You are signed in" + (eposta ? " as " + eposta : "") +
         ", so we already know where to find you."
       : "Optional. Leave it out and the message still gets read — there just will " +
         "not be an answer.";
   }
 
-  AH.oturumHazir.then(ekraniKur).catch(ekraniKur);
-  AH.oturumDegisti(ekraniKur);
+  AH.sessionReady.then(ekraniKur).catch(ekraniKur);
+  AH.onSessionChange(ekraniKur);
 })();

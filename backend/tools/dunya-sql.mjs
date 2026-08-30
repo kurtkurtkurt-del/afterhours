@@ -83,16 +83,16 @@ create index if not exists cities_continent_idx
 /* --- geceler --- */
 
 for (const g of kayit) {
-  const slug = slugla(g.sehir + "-" + g.baslik);
-  const meta = `${g.mekan} · ${g.gun} · ${g.saat}`;
+  const slug = slugla(g.city + "-" + g.title);
+  const meta = `${g.venue} · ${g.gun} · ${g.saat}`;
   sql += `insert into public.events
   (slug, city_id, type_id, title, meta, body, poster_no, starts_at,
    starts_at_estimated, date_text)
-select ${q(slug)}, c.id, t.id, ${q(g.baslik)}, ${q(meta)}, ${q(g.metin)},
+select ${q(slug)}, c.id, t.id, ${q(g.title)}, ${q(meta)}, ${q(g.body)},
        ${g.no}, ${q(anaCevir(g.gun, g.saat))}::timestamptz, false, ${q(g.gun + " · " + g.saat)}
 from public.cities c
-join public.event_types t on t.slug = ${q(slugla(g.tur))}
-where c.slug = ${q(g.sehir)}
+join public.event_types t on t.slug = ${q(slugla(g.kind))}
+where c.slug = ${q(g.city)}
 on conflict (slug) do nothing;
 
 `;

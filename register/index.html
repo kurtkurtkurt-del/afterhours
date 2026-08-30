@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=115" />
+  <link rel="stylesheet" href="../style.css?v=118" />
 </head>
 <body>
 
@@ -52,14 +52,14 @@
 
       <form class="page-form" id="reg-form" novalidate>
         <label class="page-label" for="kt-eposta">your email</label>
-        <input class="page-field" id="reg-eposta" type="email" name="email"
+        <input class="page-field" id="reg-email" type="email" name="email"
                autocomplete="email" placeholder="you@example.com" required />
 
         <label class="page-label" for="kt-sifre">a password</label>
-        <input class="page-field" id="reg-sifre" type="password" name="password"
+        <input class="page-field" id="reg-password" type="password" name="password"
                autocomplete="new-password" placeholder="at least 8 characters" required />
 
-        <button class="page-button" id="reg-ac" type="submit">create account</button>
+        <button class="page-button" id="reg-create" type="submit">create account</button>
       </form>
       <p class="page-note" id="reg-note"></p>
 
@@ -88,7 +88,7 @@
       </section>
 
       <div class="set-save">
-        <button class="account-button" id="reg-bitir" type="button">finish</button>
+        <button class="account-button" id="reg-finish" type="button">finish</button>
         <span class="account-status" id="reg-status"></span>
       </div>
     </section>
@@ -97,7 +97,7 @@
     <section class="reg-step" id="reg-3" hidden>
       <p class="reg-edition">that is all of it</p>
       <h1 class="page-title">you are<br />in.</h1>
-      <p class="reg-intro" id="reg-hosgeldin"></p>
+      <p class="reg-intro" id="reg-welcome"></p>
       <div class="fb-links">
         <a class="sc-link" href="../explore/index.html">start swiping</a>
         <a class="sc-link" href="../friends/index.html">find your friends</a>
@@ -106,17 +106,17 @@
     </section>
 
     <!-- e-posta dogrulamasi acikken -->
-    <section class="reg-step" id="reg-posta" hidden>
+    <section class="reg-step" id="reg-mail" hidden>
       <p class="reg-edition">one link away</p>
       <h1 class="page-title">check your<br />email.</h1>
-      <p class="reg-intro" id="reg-posta-note"></p>
+      <p class="reg-intro" id="reg-mail-note"></p>
     </section>
 
     <!-- zaten girisli ve kaydi bitmis -->
-    <section class="reg-step" id="reg-zaten" hidden>
+    <section class="reg-step" id="reg-already" hidden>
       <p class="reg-edition">nothing to do here</p>
       <h1 class="page-title">you already<br />have one.</h1>
-      <p class="reg-intro" id="reg-zaten-note"></p>
+      <p class="reg-intro" id="reg-already-note"></p>
       <div class="fb-links">
         <a class="sc-link" href="../explore/index.html">back to the deck</a>
         <a class="sc-link" href="../settings/index.html">settings</a>
@@ -134,11 +134,11 @@
     </nav>
   </footer>
 
-  <script src="../config.js?v=115"></script>
-  <script src="../session.js?v=115"></script>
-  <script src="../menu.js?v=115"></script>
-  <script src="../data.js?v=115"></script>
-  <script src="register.js?v=115"></script>
+  <script src="../config.js?v=118"></script>
+  <script src="../session.js?v=118"></script>
+  <script src="../menu.js?v=118"></script>
+  <script src="../data.js?v=118"></script>
+  <script src="register.js?v=118"></script>
 
 </body>
 </html>

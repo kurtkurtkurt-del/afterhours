@@ -2,7 +2,7 @@
    kartlar-10.html'den alindi; sadece demo render bolumu cikarildi ve
    global isimler kirletmesin diye kendi kapsamina alindi. */
 
-const KARTLAR = (function () {
+const CARDS = (function () {
 
 // ─────────── METAL TEMALARI ───────────
 const METALS = {
@@ -318,5 +318,5 @@ function back(e,i){
 })();
 
 /* `const` global window'a yazilmaz; card collection sayfasi buradan
-   okuyor (POSTERS ve MEKANLAR ile ayni durum). */
-window.KARTLAR = KARTLAR;
+   okuyor (POSTERS ve VENUES ile ayni durum). */
+window.CARDS = CARDS;

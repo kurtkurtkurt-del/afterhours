@@ -1,4 +1,4 @@
-/* afterhours — atislar ve biriktirilenler.
+/* afterhours — atislar ve kept.
    Giris yapmadan gezilebiliyor, o yuzden iki yer var:
      · girisliyken  → veritabani (her cihazda ayni)
      · girissizken  → localStorage (en azindan sayfa yenilenince durur)
@@ -36,14 +36,14 @@
     if (!etkinlik || !etkinlik.slug) return Promise.resolve();
     const kayit = yon > 0 || yon === "right" ? "right" : "left";
 
-    if (!(AH.girisliMi && AH.girisliMi())) {
+    if (!(AH.signedIn && AH.signedIn())) {
       yerelEkle(etkinlik.slug, kayit);
       return Promise.resolve();
     }
 
     /* slug ile yaziyoruz: id bilmeye gerek yok, ayni karta ikinci atis
        da uzerine yaziyor (fonksiyonun icinde on conflict var). */
-    return kuyruga(AH.istek("/rpc/swipe_set", {
+    return kuyruga(AH.request("/rpc/swipe_set", {
       method: "POST",
       body: JSON.stringify({ p_slug: etkinlik.slug, p_direction: kayit }),
     })).catch((h) => {
@@ -56,12 +56,12 @@
 
   /* Biriktirilenler: girisliyken veritabanindan, degilse yerelden.
      Ikisi de ayni bicimde doner: en son biriktirilen basta. */
-  AH.biriktirilenler = function () {
-    if (AH.girisliMi && AH.girisliMi()) {
-      return AH.istek("/rpc/kept", { method: "POST", body: "{}" })
-        .then((satirlar) => satirlar.map(AH.satiriCevir))
+  AH.kept = function () {
+    if (AH.signedIn && AH.signedIn()) {
+      return AH.request("/rpc/kept", { method: "POST", body: "{}" })
+        .then((satirlar) => satirlar.map(AH.rowToEvent))
         .catch((h) => {
-          console.warn("[afterhours] biriktirilenler alinamadi:", h.message);
+          console.warn("[afterhours] kept alinamadi:", h.message);
           return yereldenEtkinlikler();
         });
     }
@@ -80,7 +80,7 @@
   /* Daha once atilmis kartlar — deste bunlari atlayabilsin diye.
      Girisliyken veritabani zaten eliyor (deck fonksiyonu). */
   AH.atilanlar = function () {
-    if (AH.girisliMi && AH.girisliMi()) return [];
+    if (AH.signedIn && AH.signedIn()) return [];
     return yerelOku().map((a) => a.slug);
   };
 
@@ -90,11 +90,11 @@
      degilse tarayicidan. Geri alinamaz — cagiran once sormali. */
   AH.atislariSifirla = function () {
     yerelYaz([]);
-    if (!(AH.girisliMi && AH.girisliMi())) return Promise.resolve(0);
+    if (!(AH.signedIn && AH.signedIn())) return Promise.resolve(0);
     /* Once ucan yazmalar insin; sonra sil. */
     return bekleyenYazmalar
       .catch(() => {})
-      .then(() => AH.istek("/rpc/swipes_reset", { method: "POST", body: "{}" }))
+      .then(() => AH.request("/rpc/swipes_reset", { method: "POST", body: "{}" }))
       .then((n) => (typeof n === "number" ? n : 0))
       .catch((h) => {
         console.warn("[afterhours] atislar sifirlanamadi:", h.message);
@@ -109,13 +109,13 @@
      yerelde id yok. */
   AH.atislariBirlestir = function () {
     const yerel = yerelOku();
-    if (!yerel.length || !(AH.girisliMi && AH.girisliMi())) return Promise.resolve(0);
+    if (!yerel.length || !(AH.signedIn && AH.signedIn())) return Promise.resolve(0);
 
     /* Slug ile yaziliyor, o yuzden etkinlik listesinin yuklenmis
        olmasi gerekmiyor: giris aninda hemen calisabiliyor. */
     return Promise.all(
       yerel.map((a) =>
-        AH.istek("/rpc/swipe_set", {
+        AH.request("/rpc/swipe_set", {
           method: "POST",
           body: JSON.stringify({ p_slug: a.slug, p_direction: a.yon }),
         }).then(() => true, () => false)
@@ -128,7 +128,7 @@
     });
   };
 
-  if (AH.oturumDegisti) {
-    AH.oturumDegisti((o) => { if (o && o.access_token) AH.atislariBirlestir(); });
+  if (AH.onSessionChange) {
+    AH.onSessionChange((o) => { if (o && o.access_token) AH.atislariBirlestir(); });
   }
 })();
