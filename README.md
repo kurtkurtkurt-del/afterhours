@@ -344,8 +344,20 @@ The site itself has no build step and nothing to check: it is plain HTML
 the browser reads as it is. What can break in silence is the database and
 the generated SQL, so that is what is watched.
 
+A second workflow, `health.yml`, asks the live database how it is every
+morning at 06:20 UTC — after the 05:30 job that drops past events, so what
+it reports is the settled state. It needs no secret: the key in
+`config.js` is the public one. `npm run health` exits non-zero when the
+content is gone, when a SQL file has not been run, or when past events are
+still on the deck, and a failed run is what sends the email.
+
 `backend/package-lock.json` is committed — CI installs with `npm ci`, and
 a lockfile is the only thing that makes that reproducible.
+
+> **Both workflow files are on disk but not in the repository yet.** The
+> token here has no `workflow` scope, so a push carrying
+> `.github/workflows/` is refused. Adding that scope to the token, or
+> pasting the two files through the GitHub web UI, is all that is left.
 
 ---
 
@@ -396,6 +408,8 @@ The order matters: each step closes the road the one before it opened.
 - [x] **The feedback inbox** — in the admin panel
 - [x] **The code translated into English** — classes, ids, filenames, the `AH` API, the data fields, the comments, the docs (§13)
 - [x] **CI, a migration log, and a repeatable setup** — §9, and `npm run health` says which SQL is live
+- [x] **A backup that is provably restorable** — `npm run restore`, checked field for field by `backup.test.mjs`
+- [x] **Take your data with you** — `export_me()` and a button on the settings page (GDPR Art. 15 and 20)
 
 **Next (a suggested order)**
 
