@@ -257,15 +257,23 @@ Postgres + Supabase. Tablolar: `cities`, `event_types`, `venues`, `events`,
 
 **Profil ikiye ayrılmış** — herkese açık kart (`profiles`: handle, görünen
 ad, bir satır, şehir, katılma, son görülme) ile yalnız sahibinin okuduğu
-ayarlar (`profile_settings`: sakladıklarını kim görsün, e-posta, dil).
-Ayırmasaydık `profiles`'ın "herkes okur" kuralı ayarları da açardı.
+ayarlar (`profile_settings`: sakladıklarını kim görsün, adınla bulunabilir
+misin, e-posta, dil). Ayırmasaydık `profiles`'ın okuma kuralı ayarları da
+açardı.
+
+**Üye listesi gezilemiyor.** Profil tablosunu doğrudan yalnızca kendine,
+onaylı arkadaşlarına ve aranızda bekleyen isteği olanlara açık. Yabancının
+gördüğü her şey tek tek seçilmiş alanları veren fonksiyonlardan geçiyor:
+adını bilen kartını görür (ayardan kapatılabilir), ama sakladıklarının
+sayısını göremez ve son görülme dışarı hiçbir zaman saatiyle çıkmaz —
+yalnızca gün olarak, yalnızca arkadaşa.
 
 Kayıt akışı: hesap açılınca tetikleyici profili **ve** ayar satırını kurar,
 ama kayıt **handle seçilene kadar bitmiş sayılmaz** (`onboarded_at`).
 Ön yüzün çağıracağı fonksiyonlar: `handle_status()`, `profile_setup()`,
 `profile_me()`, `profile_card()`, `seen()`.
 
-Kurulum, testler (135 kontrol) ve yerel Supabase taklidi
+Kurulum, testler (150 kontrol) ve yerel Supabase taklidi
 (`tools/yerel-sunucu.mjs`, PGlite üstünde PostgREST + GoTrue) için →
 **[backend/README.md](backend/README.md)**
 
@@ -301,7 +309,7 @@ Sıra önemli: her adım bir öncekinin açtığı yolu kapatıyor.
 - [x] Dipnot + hukuk sayfaları (Muster)
 - [x] Hesap sayfası kısayolları
 - [x] **Etkinlik sayfası sistemi** — 36 gece, tek düzen
-- [x] **Profil yapısı** — kart + ayarlar, kayıt adımı, kurallar, 37 test
+- [x] **Profil yapısı** — kart + ayarlar, kayıt adımı, gizlilik kuralları, 52 test
 
 **Sırada (önerilen sıra)**
 

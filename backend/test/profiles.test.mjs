@@ -159,6 +159,86 @@ console.log("\n— 'private' dendiginde arkadas da goremiyor —");
   olmali(g.rows[0].n === 1, "geri acilinca yine gorunuyor");
 }
 
+console.log("\n— liste gezilemiyor —");
+{
+  await kimlik(C);   /* kimseyle bagi olmayan biri */
+  const t = await db.query(`select count(*)::int as n from public.profiles`);
+  olmali(t.rows[0].n === 1, "yabanci yalniz kendi satirini goruyor", "gordugu " + t.rows[0].n);
+
+  await db.exec(`set role anon; set request.jwt.claims = '';`);
+  const a = await db.query(`select count(*)::int as n from public.profiles`);
+  olmali(a.rows[0].n === 0, "girissiz hicbir profil goremiyor", "gordugu " + a.rows[0].n);
+
+  await kimlik(B);   /* A ile arkadas */
+  const f = await db.query(`select count(*)::int as n from public.profiles`);
+  olmali(f.rows[0].n === 2, "arkadasinin satirini gorebiliyor", "gordugu " + f.rows[0].n);
+}
+
+console.log("\n— adini bilen karti goruyor —");
+{
+  await kimlik(C);
+  const k = await db.query(`select * from public.profile_card('ahmet')`);
+  olmali(k.rows.length === 1 && k.rows[0].display_name === "Ahmet",
+    "yabanci ada gore karti goruyor");
+  olmali(k.rows[0].kept_count === null, "sayilar yabanciya kapali");
+  olmali(k.rows[0].last_seen_day === null, "son gorulme yabanciya kapali");
+
+  const y = await db.query(`select count(*)::int as n from public.profile_card('yokboyle')`);
+  olmali(y.rows[0].n === 0, "olmayan ad bos donuyor");
+}
+
+console.log("\n— ayardan kapatinca kart kayboluyor —");
+{
+  await kimlik(A);
+  await db.exec(`update public.profile_settings set discoverable = false where user_id = '${A}'`);
+
+  await kimlik(C);
+  const k = await db.query(`select count(*)::int as n from public.profile_card('ahmet')`);
+  olmali(k.rows[0].n === 0, "yabanci artik karti goremiyor");
+
+  /* Ama adini bilen yine istek gonderebiliyor: yoksa kimse ekleyemezdi */
+  const i = await db.query(`select public.friend_request('ahmet') as s`);
+  olmali(i.rows[0].s === "gonderildi", "istek gondermek hala calisiyor");
+
+  await kimlik(B);   /* arkadasi */
+  const f = await db.query(`select count(*)::int as n from public.profile_card('ahmet')`);
+  olmali(f.rows[0].n === 1, "arkadasi gormeye devam ediyor");
+
+  await kimlik(A);
+  const kendi = await db.query(`select count(*)::int as n from public.profile_card('ahmet')`);
+  olmali(kendi.rows[0].n === 1, "kendi kartini her zaman gorursun");
+  await db.exec(`update public.profile_settings set discoverable = true where user_id = '${A}'`);
+}
+
+console.log("\n— son gorulme gun olarak —");
+{
+  await kimlik(A);
+  await db.exec(`select public.seen()`);
+  await kimlik(B);
+  /* Metin olarak soruyoruz: surucu date’i JS Date’e cevirip saat
+     uyduruyor, biz veritabanindan ne CIKTIGINI olcmek istiyoruz. */
+  const f = await db.query(`select last_seen_day::text as g from public.profile_card('ahmet')`);
+  olmali(f.rows[0].g !== null, "arkadasi gunu goruyor");
+  olmali(/^\d{4}-\d{2}-\d{2}$/.test(f.rows[0].g),
+    "yalniz gun tasiniyor, saat yok", String(f.rows[0].g));
+}
+
+console.log("\n— kurala takilmayan eski isler —");
+{
+  await yonetim();
+  await db.exec(`
+    insert into public.comments (event_id, author_id, body)
+    select id, '${A}', 'burada olacagim' from public.events where slug = 'blitz';
+  `);
+  await db.exec(`set role anon; set request.jwt.claims = '';`);
+  const c = await db.query(`select author from public.comments_public where body = 'burada olacagim'`);
+  olmali(c.rows[0].author === "ahmet", "girissiz okuyucu yorumun yazarini goruyor", String(c.rows[0].author));
+
+  await kimlik(C);
+  const h = await db.query(`select public.handle_status('ahmet') as s`);
+  olmali(h.rows[0].s === "dolu", "ad musaitlik kontrolu hala calisiyor");
+}
+
 console.log("\n— goruldu damgasi —");
 {
   await kimlik(A);

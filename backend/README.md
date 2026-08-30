@@ -24,7 +24,7 @@ tools/yerel-sunucu.mjs   Supabase taklidi — gelistirme icin
 tools/yedek.mjs          icerigi JSON'a yedekler
 tools/saglik.mjs         durum kontrolu
 
-test/                    135 kontrol; hepsi gercek Postgres'te (PGlite)
+test/                    150 kontrol; hepsi gercek Postgres'te (PGlite)
 ```
 
 ## Gunluk isler
@@ -119,7 +119,7 @@ sey degil:
 | tablo | ne | kim gorur |
 |---|---|---|
 | `profiles` | handle, gorunen ad, bir satirlik tanim, sehir, katilma tarihi, son gorulme | **herkes** |
-| `profile_settings` | sakladiklarini kim gorsun, e-posta istiyor musun, dil | **yalniz sahibi** — yonetici bile degil |
+| `profile_settings` | sakladiklarini kim gorsun, adinla bulunabilir misin, e-posta, dil | **yalniz sahibi** — yonetici bile degil |
 
 Ayirmasaydik `profiles`'in "herkes okur" kurali ayarlari da acardi.
 
@@ -148,10 +148,37 @@ auth.users’a satir  →  handle_new_user()  →  profiles + profile_settings
 | `profile_card(handle)` | baskasinin gordugu kart; sayilar ancak arkadassan ve ayar izin veriyorsa |
 | `seen()` | son gorulme damgasi |
 | `kept_visible(id)` | ayara gore "sakladiklari gorunur mu" — RLS bunu kullaniyor |
+| `card_visible(id)` | ayara gore "karti yabanciya acik mi" |
+| `is_linked(id)` | arkadas ya da bekleyen istek — profil okuma kurali bunu kullaniyor |
+| `handle_to_id(handle)` | ada gore kimlik; arkadaslik istegi buradan geciyor |
+| `author_name(id, yedek)` | yorumun altindaki isim, profil tablosuna dokunmadan |
 
 **Kural degisikligi:** 02'deki "onayli arkadas SAGA attiklarini gorur"
 kurali artik ayara da bakiyor. Kisi `private` dediyse arkadasi da goremez,
 `friends_kept()` destesinde de cikmaz.
+
+### Liste gezilemiyor
+
+02'de `profiles` "herkes okur" idi: hesabi olmayan biri tek istekle butun
+uye listesini indirebilirdi. Artik tabloyu **dogrudan** okuyabildigin
+satirlar: kendin, onayli arkadaslarin, aranizda bekleyen istek olanlar,
+bir de yonetici. Yabancinin gordugu her sey `security definer`
+fonksiyonlardan geciyor ve her biri yalnizca gerekli alani veriyor.
+
+| kim | ne gorur |
+|---|---|
+| girissiz ziyaretci | hicbir profil satiri. Yorumlarin altindaki isim `author_name()`'den geliyor |
+| adini bilen yabanci | `profile_card()` — ad, bir satir, sehir, katilma. Sayilar ve son gorulme YOK |
+| ayarini kapatmis kisinin yabancisi | hicbir sey. Ama adini bilen yine **istek gonderebilir** — yoksa o kisiyi kimse ekleyemezdi |
+| onayli arkadas | kart + sakladigi sayisi (ayari izin veriyorsa) + son gorulme **gun olarak** |
+| kendisi | hepsi, saatiyle |
+
+**Son gorulme hicbir zaman saatiyle disari cikmiyor** (`last_seen_at::date`):
+kimin ne zaman ayakta oldugu cikarilmasin.
+
+Kurala takilan iki eski tanim 12'de yeniden yazildi: `comments_public`
+artik profil tablosuna join etmiyor, `friend_request` ada gore kimligi
+`handle_to_id()`'den aliyor.
 
 ## Bilerek yapilmayanlar
 

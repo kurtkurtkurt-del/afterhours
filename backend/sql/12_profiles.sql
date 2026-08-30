@@ -42,6 +42,10 @@ create table if not exists public.profile_settings (
   -- Sola attiklarin zaten hicbir secenekte gorunmuyor.
   kept_visibility text not null default 'friends'
                   check (kept_visibility in ('friends', 'private')),
+  -- Adini bilen bir yabanci kartini gorsun mu. Kapatirsan kart
+  -- gorunmez; ama adini bilen yine arkadaslik istegi gonderebilir,
+  -- yoksa kimse seni hic ekleyemezdi.
+  discoverable    boolean not null default true,
   -- Arkadaslik istegi, gecenin hatirlatmasi gibi seyler icin.
   notify_email    boolean not null default true,
   locale          text not null default 'en' check (locale in ('en', 'de', 'tr')),
@@ -132,6 +136,8 @@ create or replace function public.handle_status(p_handle text)
 returns text
 language sql
 stable
+security definer
+set search_path = public
 as $$
   select case
     when coalesce(btrim(p_handle), '') = ''            then 'bos'
@@ -206,6 +212,7 @@ returns table (
   friend_count    int,
   comment_count   int,
   kept_visibility text,
+  discoverable    boolean,
   notify_email    boolean,
   locale          text
 )
@@ -224,12 +231,84 @@ as $$
          (select count(*)::int from public.comments m
            where m.author_id = p.id and not m.is_hidden),
          coalesce(s.kept_visibility, 'friends'),
+         coalesce(s.discoverable, true),
          coalesce(s.notify_email, true),
          coalesce(s.locale, 'en')
   from public.profiles p
   left join public.cities c on c.id = p.city_id
   left join public.profile_settings s on s.user_id = p.id
   where p.id = auth.uid();
+$$;
+
+-- ------------------------------------------------------------ gizlilik
+
+-- 02’de profil tablosu "herkes okur" idi: hesabi olmayan biri tek
+-- istekle butun uye listesini indirebiliyordu. Artik tabloyu dogrudan
+-- yalniz kendini, onayli arkadaslarini ve aranizda bekleyen istek
+-- olanlari okuyabiliyorsun. Yabancinin gordugu her sey asagidaki
+-- fonksiyonlardan geciyor; her biri sadece gerekli alani veriyor.
+
+-- Arkadas ya da bekleyen istek — iki yonde de.
+create or replace function public.is_linked(other uuid)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (
+    select 1 from public.friendships f
+    where (f.requester_id = auth.uid() and f.addressee_id = other)
+       or (f.addressee_id = auth.uid() and f.requester_id = other)
+  );
+$$;
+
+drop policy if exists profiles_read on public.profiles;
+create policy profiles_read on public.profiles for select
+  using (
+    id = auth.uid()
+    or public.is_linked(id)
+    or public.is_admin()
+  );
+
+-- Ada gore kimlik. Kural artik yabanciyi durdurdugu icin ad aramasi
+-- buradan geciyor; disari sizan tek sey "boyle biri var mi".
+create or replace function public.handle_to_id(p_handle text)
+returns uuid
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select id from public.profiles where handle = lower(btrim(p_handle));
+$$;
+
+-- Ayarindaki bulunabilirlik. Kendini ve arkadasini her zaman gorursun.
+create or replace function public.card_visible(other uuid)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select other = auth.uid()
+      or public.is_friend(other)
+      or coalesce((select s.discoverable from public.profile_settings s
+                   where s.user_id = other), true);
+$$;
+
+-- Yorumun altindaki isim. comments_public artik profil tablosuna
+-- dokunmuyor: girissiz okuyucu da yazarin adini gorebilmeli.
+create or replace function public.author_name(p_author uuid, p_fallback text)
+returns text
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select coalesce(
+    (select coalesce(p.handle, p.display_name) from public.profiles p where p.id = p_author),
+    p_fallback);
 $$;
 
 -- Ayari baskasi adina okuyabilmek icin: profile_settings’i yalniz sahibi
@@ -254,30 +333,36 @@ $$;
 drop function if exists public.profile_card(text);
 create or replace function public.profile_card(p_handle text)
 returns table (
-  handle       text,
-  display_name text,
-  bio          text,
-  city_name    text,
-  created_at   timestamptz,
-  last_seen_at timestamptz,
-  is_friend    boolean,
-  kept_count   int
+  handle        text,
+  display_name  text,
+  bio           text,
+  city_name     text,
+  created_at    timestamptz,
+  last_seen_day date,
+  is_friend     boolean,
+  kept_count    int
 )
 language sql
 stable
+security definer
+set search_path = public
 as $$
-  select p.handle, p.display_name, p.bio, c.name, p.created_at, p.last_seen_at,
+  select p.handle, p.display_name, p.bio, c.name, p.created_at,
+         -- Son gorulme yalniz arkadasa, yalniz GUN olarak. Saat/dakika
+         -- kimseye gitmiyor: kimin ne zaman ayakta oldugu cikarilmasin.
+         case when p.id = auth.uid() or public.is_friend(p.id)
+              then p.last_seen_at::date end,
          public.is_friend(p.id),
          case
            when p.id = auth.uid()
              or (public.is_friend(p.id) and public.kept_visible(p.id))
            then (select count(*)::int from public.swipes w
                   where w.user_id = p.id and w.direction = 'right')
-           else null
          end
   from public.profiles p
   left join public.cities c on c.id = p.city_id
-  where p.handle = lower(btrim(p_handle));
+  where p.handle = lower(btrim(p_handle))
+    and public.card_visible(p.id);
 $$;
 
 -- ------------------------------------------------------------- goruldu
@@ -306,6 +391,58 @@ create policy swipes_read on public.swipes for select
         and public.kept_visible(user_id))
   );
 
+-- ----------------------------------- kurala takilan iki eski tanim
+
+-- comments_public profil tablosuna join ediyordu; kural kapaninca
+-- girissiz okuyucuya yazar adi bos donuyordu. Artik adi definer bir
+-- fonksiyon veriyor, gorunum profile hic dokunmuyor.
+create or replace view public.comments_public
+with (security_invoker = true) as
+select
+  c.id,
+  c.event_id,
+  c.parent_id,
+  c.body,
+  c.time_text,
+  c.created_at,
+  public.author_name(c.author_id, c.author_name) as author,
+  c.author_id is not null as is_real
+from public.comments c
+where not c.is_hidden;
+
+-- friend_request ada gore kimlik ariyordu; o arama artik yardimcidan
+-- geciyor. Fonksiyonun kendisi definer DEGIL: arkadaslik satirini yine
+-- cagiranin haklariyla yaziyor.
+create or replace function public.friend_request(p_handle text)
+returns text
+language plpgsql
+as $$
+declare
+  hedef uuid;
+begin
+  hedef := public.handle_to_id(p_handle);
+
+  if hedef is null then
+    return 'bulunamadi';
+  end if;
+  if hedef = auth.uid() then
+    return 'kendine';
+  end if;
+
+  if exists (select 1 from public.friendships
+             where requester_id = hedef and addressee_id = auth.uid()) then
+    update public.friendships set status = 'accepted'
+    where requester_id = hedef and addressee_id = auth.uid();
+    return 'kabul';
+  end if;
+
+  insert into public.friendships (requester_id, addressee_id)
+  values (auth.uid(), hedef)
+  on conflict do nothing;
+  return 'gonderildi';
+end;
+$$;
+
 -- ------------------------------------------------------------- izinler
 
 -- Supabase yeni tabloya kendiliginden izin vermiyor; 02’deki gibi elle.
@@ -314,6 +451,10 @@ grant select, insert, update on public.profile_settings to authenticated;
 grant execute on function public.handle_status(text)                   to anon, authenticated;
 grant execute on function public.profile_card(text)                    to anon, authenticated;
 grant execute on function public.kept_visible(uuid)                    to anon, authenticated;
+grant execute on function public.is_linked(uuid)                       to anon, authenticated;
+grant execute on function public.card_visible(uuid)                    to anon, authenticated;
+grant execute on function public.handle_to_id(text)                    to anon, authenticated;
+grant execute on function public.author_name(uuid, text)               to anon, authenticated;
 grant execute on function public.profile_setup(text, text, text, text) to authenticated;
 grant execute on function public.profile_me()                          to authenticated;
 grant execute on function public.seen()                                to authenticated;

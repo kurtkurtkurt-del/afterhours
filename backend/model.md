@@ -107,7 +107,17 @@ neyi beğendiği kimseye açık değil" ilkesi ancak ayar gizliyse tutar.
 | `is_admin` | | yalnız SQL editöründen verilir |
 
 Ayarlar (`profile_settings`): `kept_visibility` (`friends` / `private`),
-`notify_email`, `locale`.
+`discoverable`, `notify_email`, `locale`.
+
+**Gizlilik kararı (2026-08-30).** Kullanıcı adı doğası gereği bulunabilir
+kalmak zorunda — arkadaş eklemenin tek yolu o. Ama "adını bilen bulabilir"
+ile "herkes bütün listeyi indirebilir" arasında dağlar var; kapatılan
+ikincisi. Profil tablosu artık yalnızca kendine, onaylı arkadaşlarına ve
+aranızda bekleyen isteği olanlara açık; yabancının gördüğü her şey tek tek
+seçilmiş alanları veren fonksiyonlardan geçiyor. `discoverable` kapalıysa
+kart hiç görünmüyor, ama adını bilen yine istek gönderebiliyor — yoksa o
+kişiyi kimse ekleyemezdi. Son görülme dışarı hiçbir zaman saatiyle
+çıkmıyor, yalnızca gün olarak ve yalnızca arkadaşa.
 
 **Bilerek yok:** profil fotoğrafı. Site baş harf çiziyor, foto yüklemek
 depo + moderasyon + DSGVO demek. Şimdilik gerekmiyor.
