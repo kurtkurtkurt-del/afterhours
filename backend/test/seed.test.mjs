@@ -72,18 +72,18 @@ console.log("\n— ekranda gorunen metinler birebir mi —");
 
 console.log("\n— yorumlarin sitedeki secimle ayni oldugu —");
 {
-  const { YORUMLARI_GETIR } = new Function(
-    await okuKok("explore/comment-pools.js") + ";return { YORUMLARI_GETIR };")();
+  const { COMMENTS_FOR } = new Function(
+    await okuKok("explore/comment-pools.js") + ";return { COMMENTS_FOR };")();
 
   const ornek = POSTERS[0];
-  const { eski, yeni } = YORUMLARI_GETIR(ornek);
+  const { older, recent } = COMMENTS_FOR(ornek);
   const r = await db.query(`
     select c.body, c.author_name, c.time_text
     from public.comments c join public.events e on e.id = c.event_id
     where e.slug = $1 and c.parent_id is null
     order by c.created_at desc`, [ornek.slug]);
 
-  const beklenen = [...yeni, ...eski].map((k) => k.body).sort();
+  const beklenen = [...recent, ...older].map((k) => k.body).sort();
   const gelen = r.rows.map((x) => x.body).sort();
   olmali(JSON.stringify(beklenen) === JSON.stringify(gelen),
     `${ornek.slug}: konular sitedekiyle ayni (${gelen.length} konu)`);

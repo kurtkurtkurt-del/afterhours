@@ -79,12 +79,12 @@ grant execute on function public.city_counts() to anon, authenticated;
 -- ============================================================
 
 -- afterhours — on yuzun kullandigi gorunumler ve fonksiyonlar
--- Sorgu mantigi burada dursun; tarayicidaki JS sadece cagirsin.
+-- Keep the query logic here; the JS in the browser should only call it.
 
 -- security_invoker: gorunum, cagirani kimse onun haklariyla calisir.
 -- Bu olmazsa gorunum RLS’i atlar ve yayinda olmayan etkinlikler sizar.
 
--- ------------------------------------------------- etkinlik (okunur hali)
+-- ------------------------------------------------- event (readable form)
 
 create or replace view public.events_public
 with (security_invoker = true) as
@@ -112,7 +112,7 @@ join public.event_types t on t.id = e.type_id
 join public.cities      c on c.id = e.city_id
 left join public.venues v on v.id = e.venue_id;
 
--- ------------------------------------------------------------ yorumlar
+-- ------------------------------------------------------------ comments
 
 create or replace view public.comments_public
 with (security_invoker = true) as
@@ -129,11 +129,11 @@ from public.comments c
 left join public.profiles p on p.id = c.author_id
 where not c.is_hidden;
 
--- ------------------------------------------------------------- deste
+-- ---------------------------------------------------------------- deck
 
--- Explore’un destesi. Giris yapilmissa daha once atilan kartlar dusuyor;
--- anonimde 36’sinin hepsi geliyor. Sira poster numarasi (bugunku sira).
--- Donus tipi degisirse create or replace yetmiyor; once dusuruyoruz.
+-- The deck in explore. Signed in, the cards already swiped drop out;
+-- anonymous gets all 36. Ordered by poster number (the order used today).
+-- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.deck(text, text, int);
 create or replace function public.deck(
   p_city text default 'munchen',
@@ -143,10 +143,10 @@ create or replace function public.deck(
 returns setof public.events_public
 language sql
 stable
--- security definer: anonimin swipes tablosunda hicbir yetkisi yok, ama
--- deste "daha once atilmis mi" diye oraya bakmak zorunda. Fonksiyon
--- sahibin haklariyla calisiyor; disari sizmamasi icin yayin filtresi
--- ve kullanici filtresi asagida ELLE yaziliyor.
+-- security definer: anonymous has no rights on the swipes table at all, but
+-- the deck has to look there to ask "was this already swiped". The function
+-- runs with the rights of its owner, so the published filter and the user
+-- filter are written out BY HAND below to stop anything leaking.
 security definer
 set search_path = public
 as $$
@@ -163,11 +163,11 @@ as $$
   limit p_limit;
 $$;
 
--- ------------------------------------------------------- atis yazma
+-- -------------------------------------------------------- writing a swipe
 
 -- Tarayici etkinligin id’sini bilmek zorunda kalmasin: slug yeter.
--- Bu sayede girissizken biriken atislar, deste yuklenmeden once
--- hesaba tasinabiliyor. user_id yine oturumdan geliyor.
+-- This is what lets the swipes collected while signed out be carried to
+-- the account before the deck loads. user_id still comes from the session.
 create or replace function public.swipe_set(p_slug text, p_direction text)
 returns void
 language sql
@@ -178,9 +178,9 @@ as $$
   do update set direction = excluded.direction, created_at = now();
 $$;
 
--- Destemi sifirla: butun atislarim silinir, kartlar geri gelir.
--- Sadece kendi satirlarina dokunuyor; RLS zaten bunu zorluyor ama
--- niyetin acik olmasi icin burada da yaziyor.
+-- Reset my deck: every swipe of mine goes and the cards come back.
+-- It only touches your own rows; RLS already forces that, but it is
+-- written here too so the intent is visible.
 create or replace function public.swipes_reset()
 returns integer
 language sql
@@ -193,10 +193,10 @@ $$;
 
 -- --------------------------------------------------- biriktirilenler
 
--- "kept tonight": kendi saga attiklarin, en son ustte.
--- Duz satir donuyor, bilesik tip degil: bilesik tipler REST katmaninda
--- surumden surume farkli seriellesiyor, duz kolonlar her yerde ayni.
--- Donus tipi degisirse create or replace yetmiyor; once dusuruyoruz.
+-- "kept tonight": the ones you threw right, newest first.
+-- It returns flat rows, not a composite type: composite types serialise
+-- differently from version to version in REST; flat columns are the same everywhere.
+-- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.kept();
 create or replace function public.kept()
 returns setof public.events_public
@@ -213,8 +213,8 @@ $$;
 -- ------------------------------------------- arkadaslarin begendikleri
 
 -- "friends liked swipes" modunun kaynagi. Sadece onayli arkadaslar,
--- sadece saga atilanlar; RLS zaten bunu zorluyor, burada niyet acik olsun.
--- Donus tipi degisirse create or replace yetmiyor; once dusuruyoruz.
+-- right swipes only; RLS already forces it, this makes the intent visible.
+-- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.friends_kept(int);
 create or replace function public.friends_kept(p_limit int default 60)
 returns table (
@@ -250,8 +250,8 @@ $$;
 -- --------------------------------------------------------- sayaclar
 
 -- Ana sayfadaki "36 nights in Munich this week · 7 Rave · ..." satirinin
--- kaynagi. Bugun JS’te sayiliyor; ayni sayi buradan da gelebilsin.
--- Donus tipi degisirse create or replace yetmiyor; once dusuruyoruz.
+-- comes from. Today it is counted in JS; the same number can come from here.
+-- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.event_counts(text);
 create or replace function public.event_counts(p_city text default 'munchen')
 returns table (type_slug text, type_name text, sira int, n bigint)
@@ -267,7 +267,7 @@ $$;
 
 -- Bir etkinligi kac kisi biriktirmis. Kimin biriktirdigi gorunmez —
 -- security definer sadece SAYIYI disari veriyor.
--- Donus tipi degisirse create or replace yetmiyor; once dusuruyoruz.
+-- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.keep_counts();
 create or replace function public.keep_counts()
 returns table (event_id uuid, n bigint)
@@ -283,7 +283,7 @@ as $$
 $$;
 
 -- Filtredeki sehir listesi: her sehir ve kac gecesi var.
--- Donus tipi degisirse create or replace yetmiyor; once dusuruyoruz.
+-- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.city_counts();
 create or replace function public.city_counts()
 returns table (
@@ -327,10 +327,10 @@ grant select on public.events_public, public.comments_public to anon, authentica
 -- ============================================================
 
 -- ============================================================
---  afterhours — DUNYA: 6 kita, 18 ulke, 54 sehir, 106 gece
+--  afterhours — THE WORLD: 6 continents, 18 countries, 54 cities, 106 nights
 --
 --  URETILMIS DOSYA — kaynak: backend/tools/dunya-sql.mjs
---  Icerik uydurma ama elle yazildi; posterleri de uretildi
+--  The content is invented but hand-written; the posters were generated too
 --  (posters/37.svg … 142.svg).
 -- ============================================================
 
@@ -338,7 +338,7 @@ grant select on public.events_public, public.comments_public to anon, authentica
 alter table public.cities add column if not exists continent text;
 alter table public.cities add column if not exists continent_slug text;
 
--- Yapiyi bozan, gecesi olmayan sehirleri kaldir (her ulkeye uc sehir).
+-- Drop the cities with no nights that break the shape (three per country).
 delete from public.cities
 where slug in ('hamburg', 'frankfurt', 'leipzig')
   and not exists (select 1 from public.events e where e.city_id = cities.id);

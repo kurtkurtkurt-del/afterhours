@@ -22,8 +22,8 @@ const mekanJs = await oku("venues.js");
 const { VENUES } = new Function("window", mekanJs + "\n;return { VENUES };")({});
 
 const yorumJs = await oku("explore/comment-pools.js");
-const { COMMENT_POOL, YORUMLARI_GETIR } =
-  new Function(yorumJs + "\n;return { COMMENT_POOL, YORUMLARI_GETIR };")();
+const { COMMENT_POOL, COMMENTS_FOR } =
+  new Function(yorumJs + "\n;return { COMMENT_POOL, COMMENTS_FOR };")();
 
 /* ---- yardimcilar ----------------------------------------------------- */
 
@@ -217,8 +217,8 @@ let yorumSql = `-- URETILMIS DOSYA — kaynak: explore/comment-pools.js
 let konuSayisi = 0, cevapSayisi = 0;
 
 for (const e of POSTERS) {
-  const { eski, yeni } = YORUMLARI_GETIR(e);
-  for (const konu of [...yeni, ...eski]) {
+  const { older, recent } = COMMENTS_FOR(e);
+  for (const konu of [...recent, ...older]) {
     konuSayisi++;
     const zaman = zamaniCoz(konu.zaman).toISOString();
     yorumSql += `with konu as (

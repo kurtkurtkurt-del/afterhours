@@ -1,10 +1,10 @@
 -- afterhours — kimin neyi gorebilecegi / yazabilecegi
--- Bu dosya guvenligin kendisi. Sayfayi gizlemek guvenlik degil; kural burada.
+-- This file IS the security. Hiding a page is not security; the rule is here.
 
 -- ------------------------------------------------------------ yardimcilar
 
--- profiles uzerinde RLS var; policy icinden profiles okumak sonsuz donguye
--- girer. security definer bu yuzden: fonksiyon RLS’i atlar.
+-- profiles has RLS on it; reading profiles from inside a policy loops for
+-- ever. Hence security definer: the function steps around RLS.
 create or replace function public.is_admin()
 returns boolean
 language sql
@@ -36,13 +36,13 @@ returns trigger
 language plpgsql
 as $$
 begin
-  -- auth.uid() bos ise istek servis rolunden / SQL editorunden geliyor
-  -- demektir; ilk yonetici oradan atanir. Anonim buraya hic ulasamaz,
-  -- cunku profiles_update_own politikasi onu zaten durdurur.
+  -- An empty auth.uid() means the request came from the service role or the
+  -- SQL editor; that is where the first admin is appointed. Anonymous never
+  -- gets this far, because profiles_update_own already stops it.
   if new.is_admin is distinct from old.is_admin
      and auth.uid() is not null
      and not public.is_admin() then
-    raise exception 'is_admin sadece yonetici tarafindan degistirilebilir';
+    raise exception 'is_admin can only be changed by an admin';
   end if;
   return new;
 end;
@@ -84,7 +84,7 @@ drop policy if exists venues_write on public.venues;
 create policy venues_write on public.venues for all
   using (public.is_admin()) with check (public.is_admin());
 
--- --------------------------------------------------------------- etkinlik
+-- ---------------------------------------------------------------- event
 
 -- Giris yapmadan gezilebilir: yayindaki etkinlikleri herkes okur.
 drop policy if exists events_read on public.events;
@@ -105,7 +105,7 @@ create policy profiles_update_own on public.profiles for update
   using (id = auth.uid() or public.is_admin())
   with check (id = auth.uid() or public.is_admin());
 
--- ----------------------------------------------------------------- atis
+-- ---------------------------------------------------------------- swipe
 
 -- Kendi atislarin + onayli arkadaslarinin SAGA attiklari.
 -- Arkadasinin sola attigi kimseyi ilgilendirmiyor.
@@ -134,7 +134,7 @@ drop policy if exists comments_read on public.comments;
 create policy comments_read on public.comments for select
   using (not is_hidden or public.is_admin());
 
--- Yazmak giris ister ve baskasinin adina yazilamaz.
+-- Writing needs an account, and nobody can write as somebody else.
 drop policy if exists comments_insert on public.comments;
 create policy comments_insert on public.comments for insert
   with check (author_id = auth.uid());
@@ -158,7 +158,7 @@ drop policy if exists friendships_insert on public.friendships;
 create policy friendships_insert on public.friendships for insert
   with check (requester_id = auth.uid());
 
--- Karsi taraf kabul eder, iki taraf da geri alabilir.
+-- The other side accepts; either side can undo it.
 drop policy if exists friendships_update on public.friendships;
 create policy friendships_update on public.friendships for update
   using (requester_id = auth.uid() or addressee_id = auth.uid())

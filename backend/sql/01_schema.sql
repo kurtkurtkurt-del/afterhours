@@ -1,20 +1,20 @@
 -- afterhours — tablolar
 -- Supabase SQL editorunde sirayla calistirilir: 01 → 02 → 03 → ...
--- Kimlik dogrulama Supabase’in auth semasindan gelir; burada sadece
--- ona baglanan public sema var.
+-- Authentication comes from the auth schema Supabase provides; what is
+-- here is only the public schema that hangs off it.
 
 -- gen_random_uuid() Postgres 13’ten beri cekirdekte; uzanti gerekmiyor.
 
--- ---------------------------------------------------------------- sehir
+-- ---------------------------------------------------------------- city
 
 create table if not exists public.cities (
   id      uuid primary key default gen_random_uuid(),
   slug    text unique not null,
   name    text not null,
-  -- ana sayfadaki durust sehir listesi: yayinda / yakinda / hedefte
+  -- the honest city list on the landing page: live / soon / planned
   status  text not null default 'live' check (status in ('live', 'soon', 'planned')),
   sira    int  not null default 0,
-  -- Filtrede once ulke seciliyor, sonra o ulkenin sehirleri geliyor;
+  -- The filter picks a country first, then the cities in that country;
   -- ulkeler de kitalarina gore gruplaniyor
   country         text,
   country_slug    text,
@@ -24,24 +24,24 @@ create table if not exists public.cities (
 
 create index if not exists cities_country_idx on public.cities (country_slug, sira);
 
--- ------------------------------------------------------------------ tur
+-- ----------------------------------------------------------------- kind
 
 create table if not exists public.event_types (
   id    uuid primary key default gen_random_uuid(),
   slug  text unique not null,
   name  text not null,
-  -- spec’in kendi sirasi: rave, club night, konzert, festival, meetup, hausparty
+  -- the order from the spec itself: rave, club night, konzert, festival, meetup, hausparty
   sira  int  not null
 );
 
--- ----------------------------------------------------------------- mekan
+-- ---------------------------------------------------------------- venue
 
 create table if not exists public.venues (
   id          uuid primary key default gen_random_uuid(),
   city_id     uuid not null references public.cities on delete restrict,
   slug        text not null,
   name        text not null,
-  -- sehir kuresi/harita icin; footerdaki "kac oda acik" sayaci saatleri kullanir
+  -- for the globe and the map; the "rooms open" counter uses the hours
   map_x       int,
   map_y       int,
   opens_hour  numeric(4,1),
@@ -49,7 +49,7 @@ create table if not exists public.venues (
   unique (city_id, slug)
 );
 
--- ------------------------------------------------------------- etkinlik
+-- ---------------------------------------------------------------- event
 
 create table if not exists public.events (
   id            uuid primary key default gen_random_uuid(),
@@ -59,21 +59,21 @@ create table if not exists public.events (
   venue_id      uuid references public.venues on delete set null,
 
   title         text not null,
-  -- ekranda birebir gorunen satir. Kaynak burasi; bozulmamali.
+  -- the line shown on screen word for word. This is the source; do not break it.
   meta          text not null,
   body          text not null default '',
 
   poster_no     int check (poster_no > 0),
-  -- doluysa depodaki dosya, bossa posters/NN.svg kullanilir
+  -- when set, the file in storage; when empty, posters/NN.svg is used
   poster_path   text,
 
-  -- Mevcut veride "Sommer 2027", "Mittwochs", "TBA" gibi tarih olmayan
-  -- tarihler var; bu yuzden bos olabilir. meta her zaman dogrudur.
+  -- The data holds non-dates like "Sommer 2027", "Mittwochs" and "TBA",
+  -- so this can be empty. meta is always right.
   starts_at     timestamptz,
   date_text     text,
-  -- Eldeki veride cogu tarihte yil yok ("05.09"). Yil cikarim ile
-  -- dolduruldu; bu bayrak "dogrulanmadi" demek. Admin panelinde uyari
-  -- olarak gorunur. meta her zaman dogru oldugu icin ekran etkilenmez.
+  -- Most dates in the data carry no year ("05.09"). The year was filled in
+  -- by inference; this flag means "not verified". It shows as a warning in
+  -- the admin panel. Since meta is always right, the screen is unaffected.
   starts_at_estimated boolean not null default false,
 
   is_published  boolean not null default true,
@@ -88,23 +88,23 @@ create index if not exists events_published_idx on public.events (is_published);
 
 -- --------------------------------------------------------------- kisiler
 
--- auth.users gizli kalir (e-posta orada); herkese acik olan kisim burasi.
+-- auth.users stays private (the email lives there); this is the public part.
 create table if not exists public.profiles (
   id            uuid primary key references auth.users on delete cascade,
   handle        text unique,
   display_name  text,
-  -- etkinlik yazma yetkisi buradan cikiyor. Sadece Ahmet’te true.
+  -- the right to write events comes from here. True for Ahmet only.
   is_admin      boolean not null default false,
   created_at    timestamptz not null default now()
 );
 
--- --------------------------------------------------------------- atislar
+-- --------------------------------------------------------------- swipes
 
--- Biriktirilen kartlar ayri bir tablo degil: yonu ’right’ olan atislardir.
+-- Kept cards are not a separate table: they are the swipes going right.
 create table if not exists public.swipes (
   id          uuid primary key default gen_random_uuid(),
   -- Varsayilan oturumdaki kisi: tarayici kimin adina yazdigini
-  -- hic gondermiyor, uydurma sansi da kalmiyor.
+  -- never sends it, so it cannot be faked.
   user_id     uuid not null default auth.uid() references public.profiles on delete cascade,
   event_id    uuid not null references public.events on delete cascade,
   direction   text not null check (direction in ('left', 'right')),
@@ -117,19 +117,19 @@ create index if not exists swipes_user_dir_idx on public.swipes (user_id, direct
 
 -- ----------------------------------------------------------- beforehours
 
--- Tek tablo, iki seviye: parent_id bossa konu, doluysa cevap.
+-- One table, two levels: empty parent_id means a topic, a set one a reply.
 create table if not exists public.comments (
   id          uuid primary key default gen_random_uuid(),
   event_id    uuid not null references public.events on delete cascade,
   parent_id   uuid references public.comments on delete cascade,
   author_id   uuid default auth.uid() references public.profiles on delete set null,
-  -- gercek kullanicisi olmayan ornek yorumlar icin
+  -- for the sample comments that have no real user behind them
   author_name text,
   body        text not null check (length(btrim(body)) > 0),
   is_hidden   boolean not null default false,
   created_at  timestamptz not null default now(),
-  -- Ornek yorumlarin ekranda gorunen zaman metni ("4 days ago", "Nov 2023").
-  -- Gercek yorumlarda bos kalir; o zaman created_at’ten uretilir.
+  -- The time text shown for sample comments ("4 days ago", "Nov 2023").
+  -- Empty on real comments; then it is worked out from created_at.
   time_text   text,
   constraint comments_author_var check (author_id is not null or author_name is not null)
 );
@@ -137,8 +137,8 @@ create table if not exists public.comments (
 create index if not exists comments_event_idx on public.comments (event_id, created_at);
 create index if not exists comments_parent_idx on public.comments (parent_id);
 
--- Ucuncu seviye yok (ekran iki seviye gosteriyor) ve cevap, konusuyla
--- ayni etkinlige ait olmak zorunda.
+-- There is no third level (the screen shows two) and a reply has to
+-- belong to the same event as its topic.
 create or replace function public.comments_check_depth()
 returns trigger
 language plpgsql
@@ -153,11 +153,11 @@ begin
   select * into ust from public.comments where id = new.parent_id;
 
   if ust.parent_id is not null then
-    raise exception 'yoruma verilen cevaba cevap yazilamaz (iki seviye)';
+    raise exception 'a reply cannot be replied to (two levels only)';
   end if;
 
   if ust.event_id <> new.event_id then
-    raise exception 'cevap, konusuyla ayni etkinlige ait olmali';
+    raise exception 'a reply must belong to the same event as its topic';
   end if;
 
   return new;

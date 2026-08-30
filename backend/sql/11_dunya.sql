@@ -1,8 +1,8 @@
 -- ============================================================
---  afterhours — DUNYA: 6 kita, 18 ulke, 54 sehir, 106 gece
+--  afterhours — THE WORLD: 6 continents, 18 countries, 54 cities, 106 nights
 --
 --  URETILMIS DOSYA — kaynak: backend/tools/dunya-sql.mjs
---  Icerik uydurma ama elle yazildi; posterleri de uretildi
+--  The content is invented but hand-written; the posters were generated too
 --  (posters/37.svg … 142.svg).
 -- ============================================================
 
@@ -10,7 +10,7 @@
 alter table public.cities add column if not exists continent text;
 alter table public.cities add column if not exists continent_slug text;
 
--- Yapiyi bozan, gecesi olmayan sehirleri kaldir (her ulkeye uc sehir).
+-- Drop the cities with no nights that break the shape (three per country).
 delete from public.cities
 where slug in ('hamburg', 'frankfurt', 'leipzig')
   and not exists (select 1 from public.events e where e.city_id = cities.id);

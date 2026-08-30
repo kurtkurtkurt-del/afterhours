@@ -1,5 +1,5 @@
 -- URETILMIS DOSYA — elle duzenleme. Kaynak: backend/tools/seed-uret.mjs
--- Sehirler, turler ve mekanlar. Once bu, sonra 04.
+-- Cities, types and venues. This one first, then 04.
 
 insert into public.cities (slug, name, status, sira, country, country_slug) values
   ('munchen', 'münchen', 'live', 1, 'Deutschland', 'de'),

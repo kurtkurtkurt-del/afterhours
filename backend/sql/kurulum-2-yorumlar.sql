@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — KURULUM 2 / 2 : ORNEK YORUMLAR
---  SURUM: 2026-08-30 09:57
+--  SURUM: 2026-08-30 19:09
 --
 --  Once kurulum-1-yapi.sql calistirilmis olmali.
 --  beforehours panelindeki ornek tartismalar: 180 konu, 131 cevap.
@@ -10,7 +10,7 @@
 --  URETILMIS DOSYA — kaynak: backend/tools/kurulum-uret.mjs
 -- ============================================================
 
--- URETILMIS DOSYA — kaynak: explore/yorumlar.js
+-- GENERATED FILE — source: explore/comment-pools.js
 -- Ornek yorumlar: gercek kullanicisi yok, author_name ile duruyorlar.
 -- Sitenin bugun gosterdigi secimin aynisi (ayni tohum, ayni kartlar).
 

@@ -1,4 +1,4 @@
--- URETILMIS DOSYA — kaynak: explore/yorumlar.js
+-- GENERATED FILE — source: explore/comment-pools.js
 -- Ornek yorumlar: gercek kullanicisi yok, author_name ile duruyorlar.
 -- Sitenin bugun gosterdigi secimin aynisi (ayni tohum, ayni kartlar).
 

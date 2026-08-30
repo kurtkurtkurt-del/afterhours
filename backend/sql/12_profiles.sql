@@ -1,17 +1,17 @@
 -- afterhours — kisi profilleri
--- 01’de profil sadece "kimlik + yonetici mi" idi. Kayittan sonra ortaya
--- cikan gercek profil burada tanimlaniyor.
+-- In 01 a profile was only "who you are + are you an admin". The real
+-- profile, the one that appears after signing up, is defined here.
 --
--- Ikiye ayirdik, cunku ikisi ayni sey degil:
+-- Split in two, because the two are not the same thing:
 --
---   profiles           HERKESE ACIK kart — handle, ad, bir satir, sehir.
---                      Arkadasin gordugu, yabancinin gordugu sey bu.
---   profile_settings   YALNIZ SANA ait — kim ne gorebilir, e-posta
---                      isteyip istemedigin. Yonetici bile okuyamaz.
+--   profiles           the PUBLIC card — handle, name, one line, city.
+--                      This is what a friend and a stranger both see.
+--   profile_settings   YOURS ALONE — who may see what, whether we may
+--                      email you. Not even an admin can read it.
 --
--- Ayirmasaydik profiles’in "herkes okur" kurali ayarlari da acardi.
+-- Without the split, the "everyone reads" rule on profiles would have
 
--- --------------------------------------------------- herkese acik kart
+-- ------------------------------------------------------- the public card
 
 alter table public.profiles
   add column if not exists bio          text,
@@ -38,15 +38,15 @@ create index if not exists profiles_city_idx on public.profiles (city_id);
 
 create table if not exists public.profile_settings (
   user_id         uuid primary key references public.profiles on delete cascade,
-  -- Sakladiklarini kim gorsun: onayli arkadaslar mi, hic kimse mi.
-  -- Sola attiklarin zaten hicbir secenekte gorunmuyor.
+  -- Who may see what you kept: confirmed friends, or nobody.
+  -- What you threw left is shown under no setting at all.
   kept_visibility text not null default 'friends'
                   check (kept_visibility in ('friends', 'private')),
-  -- Adini bilen bir yabanci kartini gorsun mu. Kapatirsan kart
-  -- gorunmez; ama adini bilen yine arkadaslik istegi gonderebilir,
-  -- yoksa kimse seni hic ekleyemezdi.
+  -- Whether a stranger who knows your handle sees your card. Turn it off
+  -- and the card is hidden; but someone who knows the handle can still
+  -- send a request, or nobody could ever add you.
   discoverable    boolean not null default true,
-  -- Arkadaslik istegi, gecenin hatirlatmasi gibi seyler icin.
+  -- For friend requests, the odd reminder about a night, that sort of thing.
   notify_email    boolean not null default true,
   locale          text not null default 'en' check (locale in ('en', 'de', 'tr')),
   updated_at      timestamptz not null default now()
@@ -74,10 +74,10 @@ create trigger settings_touch
 
 -- --------------------------------------------- kayit: profil kendiliginden
 
--- 01’deki tetikleyicinin yerine geciyor. Iki fark var:
---   · ayar satiri da aciliyor (yoksa kisi ayarlarini hic goremiyor)
---   · kayit formu handle/sehir gonderdiyse deneniyor; handle doluysa
---     sessizce bos birakiliyor, kisi sonra secer
+-- This replaces the trigger from 01. Two differences:
+--   · the settings row is opened too (without it nobody sees their settings)
+--   · if the register form sent a handle/city they are tried; a taken
+--     handle is quietly left empty and picked later
 create or replace function public.handle_new_user()
 returns trigger
 language plpgsql
@@ -86,16 +86,16 @@ set search_path = public
 as $$
 declare
   istenen text := lower(btrim(coalesce(new.raw_user_meta_data ->> 'handle', '')));
-  sehir   text := lower(btrim(coalesce(new.raw_user_meta_data ->> 'city', '')));
-  sehir_id uuid;
+  city_slug_in   text := lower(btrim(coalesce(new.raw_user_meta_data ->> 'city', '')));
+  city_uuid uuid;
 begin
   if istenen !~ '^[a-z0-9_]{3,20}$'
      or exists (select 1 from public.profiles where handle = istenen) then
     istenen := null;
   end if;
 
-  if sehir <> '' then
-    select id into sehir_id from public.cities where slug = sehir;
+  if city_slug_in <> '' then
+    select id into city_uuid from public.cities where slug = city_slug_in;
   end if;
 
   insert into public.profiles (id, display_name, handle, city_id, onboarded_at)
@@ -103,7 +103,7 @@ begin
     new.id,
     coalesce(new.raw_user_meta_data ->> 'name', split_part(new.email, '@', 1)),
     istenen,
-    sehir_id,
+    city_uuid,
     case when istenen is null then null else now() end
   )
   on conflict (id) do nothing;
@@ -121,7 +121,7 @@ create trigger on_auth_user_created
   after insert on auth.users
   for each row execute function public.handle_new_user();
 
--- Once acilmis hesaplarda ayar satiri yok; bir kerelik tamamla.
+-- Accounts opened earlier have no settings row; fill them in once.
 insert into public.profile_settings (user_id)
 select p.id from public.profiles p
 left join public.profile_settings s on s.user_id = p.id
@@ -129,8 +129,8 @@ where s.user_id is null;
 
 -- ----------------------------------------------------- handle musait mi
 
--- Kayit formu her tusa basista soruyor. Donen degerler ekranda birebir
--- kullanilmiyor; on yuz kendi cumlesini yaziyor.
+-- The register form asks on every keystroke. The returned values are not
+-- shown as they are; the page writes its own sentence.
 --   ok · bos · bicim · dolu · senin
 create or replace function public.handle_status(p_handle text)
 returns text
@@ -152,8 +152,8 @@ $$;
 
 -- ------------------------------------------------ kaydi tamamlayan adim
 
--- Hesap acildiktan sonraki tek zorunlu adim: handle. Digerleri istege
--- bagli. Hepsi tek istekte gidiyor ki yarim kalmis profil olmasin.
+-- The one thing that must happen after the account opens: a handle. The
+-- rest is optional. It all goes in one request so no profile is left half done.
 create or replace function public.profile_setup(
   p_handle       text,
   p_display_name text default null,
@@ -165,20 +165,20 @@ language plpgsql
 as $$
 declare
   durum    text := public.handle_status(p_handle);
-  sehir_id uuid;
+  city_uuid uuid;
 begin
   if auth.uid() is null then return 'signedout'; end if;
   if durum not in ('ok', 'yours') then return durum; end if;
 
   if coalesce(btrim(p_city_slug), '') <> '' then
-    select id into sehir_id from public.cities where slug = lower(btrim(p_city_slug));
-    if sehir_id is null then return 'nocity'; end if;
+    select id into city_uuid from public.cities where slug = lower(btrim(p_city_slug));
+    if city_uuid is null then return 'nocity'; end if;
   end if;
 
   update public.profiles set
     handle       = lower(btrim(p_handle)),
     display_name = coalesce(nullif(btrim(p_display_name), ''), display_name),
-    city_id      = coalesce(sehir_id, city_id),
+    city_id      = coalesce(city_uuid, city_id),
     bio          = case when p_bio is null then bio
                         else nullif(btrim(p_bio), '') end,
     onboarded_at = coalesce(onboarded_at, now())
@@ -191,10 +191,10 @@ begin
 end;
 $$;
 
--- --------------------------------------------------------- kendi profilin
+-- ------------------------------------------------------------ your profile
 
--- Ayar sayfasinin ve hesap sayfasinin okudugu tek yer. Sayilar burada
--- toplaniyor ki on yuz uc ayri istek atmasin.
+-- The one place the settings page and the account page read. The counts
+-- are gathered here so the front end does not make three requests.
 drop function if exists public.profile_me();
 create or replace function public.profile_me()
 returns table (
@@ -242,13 +242,13 @@ $$;
 
 -- ------------------------------------------------------------ gizlilik
 
--- 02’de profil tablosu "herkes okur" idi: hesabi olmayan biri tek
+-- In 02 the profile table was "everyone reads": somebody without an
 -- istekle butun uye listesini indirebiliyordu. Artik tabloyu dogrudan
--- yalniz kendini, onayli arkadaslarini ve aranizda bekleyen istek
--- olanlari okuyabiliyorsun. Yabancinin gordugu her sey asagidaki
--- fonksiyonlardan geciyor; her biri sadece gerekli alani veriyor.
+-- read directly are your own, your confirmed friends, and anyone with a
+-- request pending between you. Everything a stranger sees goes through
+-- the functions below; each hands back only the field it owes.
 
--- Arkadas ya da bekleyen istek — iki yonde de.
+-- A friend, or a request pending — in either direction.
 create or replace function public.is_linked(other uuid)
 returns boolean
 language sql
@@ -271,8 +271,8 @@ create policy profiles_read on public.profiles for select
     or public.is_admin()
   );
 
--- Ada gore kimlik. Kural artik yabanciyi durdurdugu icin ad aramasi
--- buradan geciyor; disari sizan tek sey "boyle biri var mi".
+-- Identity by handle. The rule now stops a stranger, so the lookup goes
+-- through here; the only thing that leaks is whether such a person exists.
 create or replace function public.handle_to_id(p_handle text)
 returns uuid
 language sql
@@ -283,7 +283,7 @@ as $$
   select id from public.profiles where handle = lower(btrim(p_handle));
 $$;
 
--- Ayarindaki bulunabilirlik. Kendini ve arkadasini her zaman gorursun.
+-- Discoverability from the settings. You always see yourself and a friend.
 create or replace function public.card_visible(other uuid)
 returns boolean
 language sql
@@ -297,7 +297,7 @@ as $$
                    where s.user_id = other), true);
 $$;
 
--- Yorumun altindaki isim. comments_public artik profil tablosuna
+-- The name under a comment. comments_public no longer touches the profile
 -- dokunmuyor: girissiz okuyucu da yazarin adini gorebilmeli.
 create or replace function public.author_name(p_author uuid, p_fallback text)
 returns text
@@ -311,9 +311,9 @@ as $$
     p_fallback);
 $$;
 
--- Ayari baskasi adina okuyabilmek icin: profile_settings’i yalniz sahibi
--- gorebiliyor, o yuzden bu fonksiyon RLS’i atliyor. Disari sizan tek sey
--- "gorunur mu" sorusunun evet/hayiri.
+-- To read the setting for another person: only the owner can see
+-- profile_settings, so this function steps around RLS. The only thing that
+-- leaks is the yes or no of "is it visible".
 create or replace function public.kept_visible(other uuid)
 returns boolean
 language sql
@@ -328,7 +328,7 @@ $$;
 
 -- ------------------------------------------------- baskasinin profili
 
--- Yabancinin gordugu kart. Sakladiklarinin SAYISI bile ancak onayli
+-- The card a stranger sees. Even the NUMBER of things you kept is only
 -- arkadaslara ve ayar izin veriyorsa gorunuyor.
 drop function if exists public.profile_card(text);
 create or replace function public.profile_card(p_handle text)
@@ -348,8 +348,8 @@ security definer
 set search_path = public
 as $$
   select p.handle, p.display_name, p.bio, c.name, p.created_at,
-         -- Son gorulme yalniz arkadasa, yalniz GUN olarak. Saat/dakika
-         -- kimseye gitmiyor: kimin ne zaman ayakta oldugu cikarilmasin.
+         -- Last seen goes to friends only, and only as a DAY. The hour and minute
+         -- reach nobody: who is awake when should not be worked out from this.
          case when p.id = auth.uid() or public.is_friend(p.id)
               then p.last_seen_at::date end,
          public.is_friend(p.id),
@@ -367,7 +367,7 @@ $$;
 
 -- ------------------------------------------------------------- goruldu
 
--- friends&more’daki "already on the app" listesi icin. Kisi kendi
+-- For the "already on the app" list in friends&more. A person stamps
 -- satirini damgaliyor; baskasininkine dokunamaz (RLS).
 create or replace function public.seen()
 returns void
@@ -379,9 +379,9 @@ $$;
 
 -- ------------------------------------- sakladiklarin: ayara saygi duyan kural
 
--- 02’deki kural "onayli arkadas SAGA attiklarini gorur" diyordu. Ayar
--- eklendi: kisi gizli dediyse arkadas da goremez. Kurali burada
--- yeniden yaziyoruz — 02 tek basina calistirildiginda eski hali gecerli.
+-- The rule in 02 said "a confirmed friend sees the RIGHT swipes". A
+-- setting was added: say private and a friend cannot see them either. We
+-- rewrite the rule here — run 02 on its own and the old one still applies.
 drop policy if exists swipes_read on public.swipes;
 create policy swipes_read on public.swipes for select
   using (
@@ -391,11 +391,11 @@ create policy swipes_read on public.swipes for select
         and public.kept_visible(user_id))
   );
 
--- ----------------------------------- kurala takilan iki eski tanim
+-- ------------------------------ two older definitions the rule broke
 
 -- comments_public profil tablosuna join ediyordu; kural kapaninca
--- girissiz okuyucuya yazar adi bos donuyordu. Artik adi definer bir
--- fonksiyon veriyor, gorunum profile hic dokunmuyor.
+-- table; a signed-out reader was getting an empty author. A definer
+-- function hands back the name and the view never reaches for profiles.
 create or replace view public.comments_public
 with (security_invoker = true) as
 select
@@ -410,7 +410,7 @@ select
 from public.comments c
 where not c.is_hidden;
 
--- friend_request ada gore kimlik ariyordu; o arama artik yardimcidan
+-- friend_request looked identity up by handle; that lookup goes through
 -- geciyor. Fonksiyonun kendisi definer DEGIL: arkadaslik satirini yine
 -- cagiranin haklariyla yaziyor.
 create or replace function public.friend_request(p_handle text)
@@ -445,14 +445,14 @@ $$;
 
 -- ---------------------------------------------------------- hesabi silme
 
--- Ayar sayfasindaki son dugme. Silmek gercekten silmek: hesap, profil,
--- ayarlar, atislar ve arkadasliklar zincirle gidiyor.
+-- The last button on the settings page. Deleting really deletes: the
+-- account, profile, settings, swipes and friendships all cascade away.
 --
 -- Yorumlar ISTISNA. Iki sebep: (1) comments.author_id "on delete set
 -- null" ve author_name bos olamaz — dokunmadan silersek kisit patlar;
--- (2) bir konuyu silmek ona gelen BASKALARININ cevaplarini da goturur.
--- O yuzden metin kaliyor, isim dusuyor: yorum "someone"a gecmis oluyor.
--- Ayar sayfasi bunu silmeden once yaziyor.
+-- (2) deleting a topic would take the replies of OTHER PEOPLE with it.
+-- So the text stays and the name goes: the comment becomes "someone".
+-- The settings page says so before you press it.
 create or replace function public.delete_account()
 returns void
 language plpgsql
@@ -461,7 +461,7 @@ set search_path = public
 as $$
 begin
   if auth.uid() is null then
-    raise exception 'giris gerekli';
+    raise exception 'sign in first';
   end if;
 
   update public.comments
@@ -474,7 +474,7 @@ $$;
 
 -- ------------------------------------------------------------- izinler
 
--- Supabase yeni tabloya kendiliginden izin vermiyor; 02’deki gibi elle.
+-- Supabase does not grant on a new table by itself; by hand, as in 02.
 grant select, insert, update on public.profile_settings to authenticated;
 
 grant execute on function public.handle_status(text)                   to anon, authenticated;
