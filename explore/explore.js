@@ -16,7 +16,7 @@
      i feel lucky  → ayni kartlar, karisik sirayla           */
   let CARDS = POSTERS;
 
-  /* --- Saga atilanlar burada birikir --- */
+  /* --- Saga swipedSlugs burada birikir --- */
 
   const tutulan = [];
   const kutu = document.querySelector(".ex-box");
@@ -104,7 +104,7 @@
     if (yon > 0) tut(atilan);
     /* Her iki yon de kaydediliyor: sag biriktirmek, sol "bir daha gosterme".
        Girisliyken veritabanina, degilse tarayiciya. */
-    if (window.AH && AH.atisKaydet) AH.atisKaydet(atilan, yon);
+    if (window.AH && AH.saveSwipe) AH.saveSwipe(atilan, yon);
     kart.classList.remove("held");
     kart.classList.add("soft");
     kart.style.transform = "translateX(" + (yon * 120) + "vw) rotate(" + (yon * 22) + "deg)";
@@ -356,7 +356,7 @@
      zaten veritabaninda yapiliyor (deck fonksiyonu), burasi girissiz
      gezenler icin. */
   const atlanacak = new Set(
-    window.AH && AH.atilanlar ? AH.atilanlar() : []
+    window.AH && AH.swipedSlugs ? AH.swipedSlugs() : []
   );
 
   function doldur() {
@@ -513,14 +513,14 @@
   const sifirlaDugmesi = document.getElementById("ex-reset");
   if (sifirlaDugmesi) {
     sifirlaDugmesi.addEventListener("click", () => {
-      if (!window.AH || !AH.atislariSifirla) return;
+      if (!window.AH || !AH.resetSwipes) return;
       /* Geri alinamaz: kept de gidiyor */
       if (!window.confirm(
         "reset the deck? everything you kept and everything you passed on is forgotten."
       )) return;
 
       sifirlaDugmesi.disabled = true;
-      AH.atislariSifirla().then(() => {
+      AH.resetSwipes().then(() => {
         /* Ekrandaki izleri de sil */
         tutulan.length = 0;
         if (rozet) { rozet.textContent = "0"; rozet.hidden = true; }

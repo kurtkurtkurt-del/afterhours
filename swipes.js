@@ -1,134 +1,146 @@
-/* afterhours — atislar ve kept.
-   Giris yapmadan gezilebiliyor, o yuzden iki yer var:
-     · girisliyken  → veritabani (her cihazda ayni)
-     · girissizken  → localStorage (en azindan sayfa yenilenince durur)
-   Giris yapildigi anda yereldekiler veritabanina tasinip siliniyor.  */
+/* afterhours — swipes and the cards you keep.
+   The site can be used without an account, so there are two places a
+   swipe can live:
+     · signed in  → the database (the same on every device)
+     · signed out → localStorage (at least it survives a reload)
+   The moment someone signs in, what is in the browser is pushed up and
+   cleared.  */
 
 (function () {
   const AH = (window.AH = window.AH || {});
-  const KUTU = "afterhours.atislar";
+  const KEY = "afterhours.swipes";
+  const OLD_KEY = "afterhours.atislar";      /* before the code spoke English */
 
-  const yerelOku = () => {
-    try { return JSON.parse(localStorage.getItem(KUTU) || "[]"); } catch (_) { return []; }
+  const readLocal = () => {
+    try {
+      const raw = localStorage.getItem(KEY) || localStorage.getItem(OLD_KEY) || "[]";
+      /* The old rows carried Turkish field names; read them either way. */
+      return JSON.parse(raw).map((s) => ({
+        slug: s.slug,
+        direction: s.direction || s.yon,
+        at: s.at || s.an,
+      }));
+    } catch (_) { return []; }
   };
-  const yerelYaz = (l) => {
-    try { localStorage.setItem(KUTU, JSON.stringify(l)); } catch (_) {}
+  const writeLocal = (list) => {
+    try {
+      localStorage.setItem(KEY, JSON.stringify(list));
+      localStorage.removeItem(OLD_KEY);
+    } catch (_) {}
   };
 
-  function yerelEkle(slug, yon) {
-    const l = yerelOku().filter((a) => a.slug !== slug);
-    l.push({ slug, yon, an: Date.now() });
-    yerelYaz(l);
+  function addLocal(slug, direction) {
+    const list = readLocal().filter((s) => s.slug !== slug);
+    list.push({ slug, direction, at: Date.now() });
+    writeLocal(list);
   }
 
-  /* --- yazma ------------------------------------------------------- */
+  /* --- writing ------------------------------------------------------ */
 
-  /* Ucan yazmalarin zinciri. Sifirlama bunu bekliyor: yoksa son atis
-     silme isleminden SONRA sunucuya varip kartı tekrar atilmis
-     gosteriyordu. */
-  let bekleyenYazmalar = Promise.resolve();
-  const kuyruga = (p) => {
-    bekleyenYazmalar = bekleyenYazmalar.then(() => p, () => p);
+  /* The chain of writes still in the air. Reset waits on this: without it
+     the last swipe could land on the server AFTER the delete and show the
+     card as swiped again. */
+  let pendingWrites = Promise.resolve();
+  const queue = (p) => {
+    pendingWrites = pendingWrites.then(() => p, () => p);
     return p;
   };
 
-  AH.atisKaydet = function (etkinlik, yon) {
-    if (!etkinlik || !etkinlik.slug) return Promise.resolve();
-    const kayit = yon > 0 || yon === "right" ? "right" : "left";
+  AH.saveSwipe = function (event, direction) {
+    if (!event || !event.slug) return Promise.resolve();
+    const value = direction > 0 || direction === "right" ? "right" : "left";
 
     if (!(AH.signedIn && AH.signedIn())) {
-      yerelEkle(etkinlik.slug, kayit);
+      addLocal(event.slug, value);
       return Promise.resolve();
     }
 
-    /* slug ile yaziyoruz: id bilmeye gerek yok, ayni karta ikinci atis
-       da uzerine yaziyor (fonksiyonun icinde on conflict var). */
-    return kuyruga(AH.request("/rpc/swipe_set", {
+    /* Written by slug: no need to know the id, and a second swipe on the
+       same card overwrites the first (the function has an on-conflict). */
+    return queue(AH.request("/rpc/swipe_set", {
       method: "POST",
-      body: JSON.stringify({ p_slug: etkinlik.slug, p_direction: kayit }),
-    })).catch((h) => {
-      console.warn("[afterhours] atis kaydedilemedi, yerele yazildi:", h.message);
-      yerelEkle(etkinlik.slug, kayit);
+      body: JSON.stringify({ p_slug: event.slug, p_direction: value }),
+    })).catch((err) => {
+      console.warn("[afterhours] swipe not saved, kept locally:", err.message);
+      addLocal(event.slug, value);
     });
   };
 
-  /* --- okuma ------------------------------------------------------- */
+  /* --- reading ------------------------------------------------------ */
 
-  /* Biriktirilenler: girisliyken veritabanindan, degilse yerelden.
-     Ikisi de ayni bicimde doner: en son biriktirilen basta. */
+  /* What you kept: from the database when signed in, from the browser
+     otherwise. Both come back the same way, newest first. */
   AH.kept = function () {
     if (AH.signedIn && AH.signedIn()) {
       return AH.request("/rpc/kept", { method: "POST", body: "{}" })
-        .then((satirlar) => satirlar.map(AH.rowToEvent))
-        .catch((h) => {
-          console.warn("[afterhours] kept alinamadi:", h.message);
-          return yereldenEtkinlikler();
+        .then((rows) => rows.map(AH.rowToEvent))
+        .catch((err) => {
+          console.warn("[afterhours] couldn't load what you kept:", err.message);
+          return keptFromLocal();
         });
     }
-    return Promise.resolve(yereldenEtkinlikler());
+    return Promise.resolve(keptFromLocal());
   };
 
-  function yereldenEtkinlikler() {
-    const liste = window.POSTERS || [];
-    return yerelOku()
-      .filter((a) => a.yon === "right")
-      .sort((a, b) => b.an - a.an)
-      .map((a) => liste.find((e) => e.slug === a.slug))
+  function keptFromLocal() {
+    const all = window.POSTERS || [];
+    return readLocal()
+      .filter((s) => s.direction === "right")
+      .sort((a, b) => b.at - a.at)
+      .map((s) => all.find((e) => e.slug === s.slug))
       .filter(Boolean);
   }
 
-  /* Daha once atilmis kartlar — deste bunlari atlayabilsin diye.
-     Girisliyken veritabani zaten eliyor (deck fonksiyonu). */
-  AH.atilanlar = function () {
+  /* Cards already swiped, so the deck can skip them. Signed in the
+     database has already dropped them (the deck function does it). */
+  AH.swipedSlugs = function () {
     if (AH.signedIn && AH.signedIn()) return [];
-    return yerelOku().map((a) => a.slug);
+    return readLocal().map((s) => s.slug);
   };
 
-  /* --- sifirlama ---------------------------------------------------- */
+  /* --- reset -------------------------------------------------------- */
 
-  /* Destemi bastan al: butun atislar silinir. Girisliyken veritabanindan,
-     degilse tarayicidan. Geri alinamaz — cagiran once sormali. */
-  AH.atislariSifirla = function () {
-    yerelYaz([]);
+  /* Deal me a fresh deck: every swipe goes. From the database when signed
+     in, from the browser otherwise. There is no undo — ask first. */
+  AH.resetSwipes = function () {
+    writeLocal([]);
     if (!(AH.signedIn && AH.signedIn())) return Promise.resolve(0);
-    /* Once ucan yazmalar insin; sonra sil. */
-    return bekleyenYazmalar
+    /* Let the writes in the air land, then delete. */
+    return pendingWrites
       .catch(() => {})
       .then(() => AH.request("/rpc/swipes_reset", { method: "POST", body: "{}" }))
       .then((n) => (typeof n === "number" ? n : 0))
-      .catch((h) => {
-        console.warn("[afterhours] atislar sifirlanamadi:", h.message);
+      .catch((err) => {
+        console.warn("[afterhours] couldn't reset swipes:", err.message);
         return 0;
       });
   };
 
-  /* --- giriste tasima ---------------------------------------------- */
+  /* --- carrying them over at sign-in -------------------------------- */
 
-  /* Girissizken atilanlar kaybolmasin: giris yapilinca veritabanina
-     gonderilip yerelden siliniyor. Slug → id cevirisi lazim, cunku
-     yerelde id yok. */
-  AH.atislariBirlestir = function () {
-    const yerel = yerelOku();
-    if (!yerel.length || !(AH.signedIn && AH.signedIn())) return Promise.resolve(0);
+  /* What was swiped signed out should not be lost: on sign-in it is sent
+     up and cleared locally. Slugs are enough, so this can run the moment
+     the session appears — the event list does not need to be loaded. */
+  AH.mergeSwipes = function () {
+    const local = readLocal();
+    if (!local.length || !(AH.signedIn && AH.signedIn())) return Promise.resolve(0);
 
-    /* Slug ile yaziliyor, o yuzden etkinlik listesinin yuklenmis
-       olmasi gerekmiyor: giris aninda hemen calisabiliyor. */
     return Promise.all(
-      yerel.map((a) =>
+      local.map((s) =>
         AH.request("/rpc/swipe_set", {
           method: "POST",
-          body: JSON.stringify({ p_slug: a.slug, p_direction: a.yon }),
+          body: JSON.stringify({ p_slug: s.slug, p_direction: s.direction }),
         }).then(() => true, () => false)
       )
-    ).then((sonuclar) => {
-      if (sonuclar.every(Boolean)) { yerelYaz([]); return sonuclar.length; }
-      /* Bir kismi gecmediyse yerelde kalsin, bir dahaki sefere denenir */
-      console.warn("[afterhours] bazi atislar tasinamadi, yerelde tutuluyor");
-      return sonuclar.filter(Boolean).length;
+    ).then((results) => {
+      if (results.every(Boolean)) { writeLocal([]); return results.length; }
+      /* If some failed, keep them locally and try again next time. */
+      console.warn("[afterhours] some swipes did not carry over, keeping them local");
+      return results.filter(Boolean).length;
     });
   };
 
   if (AH.onSessionChange) {
-    AH.onSessionChange((o) => { if (o && o.access_token) AH.atislariBirlestir(); });
+    AH.onSessionChange((s) => { if (s && s.access_token) AH.mergeSwipes(); });
   }
 })();

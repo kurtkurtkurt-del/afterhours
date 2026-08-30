@@ -1,57 +1,61 @@
-/* afterhours — veri katmani.
-   Sayfa acilirken once burasi calisir: veriyi ya Supabase'den ya da
-   events-data.js'ten alir, window.POSTERS'a koyar, sonra sayfanin kendi
-   betiklerini yukler. Boylece app.js / explore.js hic degismedi.
+/* afterhours — the data layer.
+   This runs first on every page: it fetches the events either from
+   Supabase or from events-data.js, puts them on window.POSTERS, and only
+   then loads the page's own scripts. That is why app.js and explore.js
+   never had to change when the backend arrived.
 
    <script src="data.js" data-yedek="events-data.js" data-sonra="app.js"></script>
 
-   Backend kapaliyken (config.js bos) site bugunku haliyle birebir ayni
-   calisir. Bu bilincli: baglanti kurulana kadar hicbir sey bozulmasin. */
+   With the backend off (config.js empty) the site behaves exactly as it
+   did before there was one. That is deliberate: nothing may break while
+   the connection is still being set up. */
 
 (function () {
-  const AYAR = window.AH_CONFIG || {};
+  const CONFIG = window.AH_CONFIG || {};
 
-  /* Gelistirme kolayligi: yerel taklit sunucuya yonlendirme.
-     SADECE localhost'ta gecerli — yayindaki sitenin verisi adres
-     cubugundan degistirilemesin. */
-  const yerelMi = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
-  if (yerelMi) {
-    const p = new URLSearchParams(location.search).get("backend");
-    if (p) { AYAR.url = p; AYAR.anonKey = AYAR.anonKey || "local"; }
+  /* A convenience for development: point the site at the local mock
+     server. ONLY on localhost — the published site's data must not be
+     switchable from the address bar. */
+  const onLocalhost = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+  if (onLocalhost) {
+    const override = new URLSearchParams(location.search).get("backend");
+    if (override) { CONFIG.url = override; CONFIG.anonKey = CONFIG.anonKey || "local"; }
   }
 
-  const acik = Boolean(AYAR.url && AYAR.anonKey);
+  const enabled = Boolean(CONFIG.url && CONFIG.anonKey);
 
-  const benBetik = document.currentScript;
-  const yedekYol = benBetik.dataset.yedek;
-  const sonraki = (benBetik.dataset.sonra || "").split(",").map((s) => s.trim()).filter(Boolean);
+  const thisScript = document.currentScript;
+  const fallbackPath = thisScript.dataset.yedek;
+  const thenLoad = (thisScript.dataset.sonra || "")
+    .split(",").map((s) => s.trim()).filter(Boolean);
 
   const AH = (window.AH = window.AH || {});
-  AH.config = AYAR;
+  AH.config = CONFIG;
   AH.mode = "local";
 
-  /* Poster dosyasi bugun dizideki siradan hesaplaniyor (index + 1).
-     Veritabani bir gun eksik liste dondurdugunde posterler kaymasin
-     diye her kayda kendi numarasini yaziyoruz. */
-  function numberEvents(liste) {
-    liste.forEach((e, i) => { if (!e.poster) e.poster = i + 1; });
-    return liste;
+  /* Today the poster file is worked out from the position in the array
+     (index + 1). Should the database ever return a short list, we write
+     each record's own number onto it so the posters cannot shift. */
+  function numberEvents(list) {
+    list.forEach((e, i) => { if (!e.poster) e.poster = i + 1; });
+    return list;
   }
   AH.numberEvents = numberEvents;
 
-  /* Betikleri SIRAYLA yukle. Dinamik eklenen betikler varsayilan olarak
-     async'tir; async=false olmadan sira bozulur ve app.js verisiz kalir. */
-  function betikleriYukle(yollar) {
-    return yollar.reduce(
-      (zincir, yol) =>
-        zincir.then(
+  /* Load scripts IN ORDER. Dynamically added scripts are async by
+     default; without async=false the order breaks and app.js runs with
+     no data. */
+  function loadScripts(paths) {
+    return paths.reduce(
+      (chain, path) =>
+        chain.then(
           () =>
-            new Promise((tamam, hata) => {
+            new Promise((done, fail) => {
               const s = document.createElement("script");
-              s.src = yol;
+              s.src = path;
               s.async = false;
-              s.onload = tamam;
-              s.onerror = () => hata(new Error("yuklenemedi: " + yol));
+              s.onload = done;
+              s.onerror = () => fail(new Error("could not load: " + path));
               document.head.appendChild(s);
             })
         ),
@@ -59,17 +63,17 @@
     );
   }
 
-  function yedegeDon(sebep) {
+  function fallBack(reason) {
     AH.mode = "local";
-    if (sebep) console.warn("[afterhours] veritabanina baglanilamadi, yerel veri:", sebep);
-    return betikleriYukle(yedekYol ? [yedekYol] : []).then(() => {
-      /* events-data.js POSTERS'i `const` ile tanimliyor: global sozluksel
-         bir bag, window'un ozelligi degil. window.POSTERS undefined'dir,
-         cikplak POSTERS ise calisir. */
+    if (reason) console.warn("[afterhours] no database, using local data:", reason);
+    return loadScripts(fallbackPath ? [fallbackPath] : []).then(() => {
+      /* events-data.js declares POSTERS with `const`: a global lexical
+         binding, not a property of window. window.POSTERS is undefined
+         there, while a bare POSTERS works. */
       try {
         numberEvents(POSTERS);
-        /* Diger modullerin (swipes.js) gorebilmesi icin window'a da
-           bagla; `const` tek basina window'a yazmiyor. */
+        /* Bind it onto window as well so other modules (swipes.js) can
+           see it; `const` alone does not write to window. */
         window.POSTERS = POSTERS;
       } catch (_) {}
     });
@@ -77,53 +81,53 @@
 
   /* --- Supabase (PostgREST) --------------------------------------- */
 
-  AH.request = function (yol, secenek = {}) {
-    if (!acik) return Promise.reject(new Error("backend kapali"));
-    const bas = {
-      apikey: AYAR.anonKey,
-      Authorization: "Bearer " + (AH.token || AYAR.anonKey),
+  AH.request = function (path, options = {}) {
+    if (!enabled) return Promise.reject(new Error("backend is off"));
+    const headers = {
+      apikey: CONFIG.anonKey,
+      Authorization: "Bearer " + (AH.token || CONFIG.anonKey),
       "Content-Type": "application/json",
     };
-    return fetch(AYAR.url.replace(/\/$/, "") + "/rest/v1" + yol, {
-      ...secenek,
-      headers: { ...bas, ...(secenek.headers || {}) },
-    }).then(async (c) => {
-      const yazi = await c.text();
-      if (!c.ok) throw new Error(c.status + " " + yazi.slice(0, 200));
-      /* Prefer: return=minimal 201'i BOS govdeyle donuyor; bunu JSON
-         diye ayristirmaya calismak istegi basarisiz gosteriyordu. */
-      if (!yazi) return null;
-      try { return JSON.parse(yazi); } catch (_) { return null; }
+    return fetch(CONFIG.url.replace(/\/$/, "") + "/rest/v1" + path, {
+      ...options,
+      headers: { ...headers, ...(options.headers || {}) },
+    }).then(async (res) => {
+      const text = await res.text();
+      if (!res.ok) throw new Error(res.status + " " + text.slice(0, 200));
+      /* Prefer: return=minimal answers a 201 with an EMPTY body; trying to
+         parse that as JSON was making successful requests look failed. */
+      if (!text) return null;
+      try { return JSON.parse(text); } catch (_) { return null; }
     });
   };
 
-  /* Veritabani ne derse desin, ekrana insan cumlesi cikmali.
-     "404 {"code":"PGRST202","details":"Searched for the function..."}
-     diye bir sey kullaniciya bir sey anlatmiyor; ona ne yapabilecegini
-     soyleyen kisa bir cumle lazim. Ayrinti konsola dusuyor. */
-  AH.errorText = function (hata, yedek) {
-    const ham = String((hata && hata.message) || hata || "");
-    console.warn("afterhours:", ham);
+  /* Whatever the database says, a person should read a sentence.
+     `404 {"code":"PGRST202","details":"Searched for the function..."}`
+     tells them nothing; they need one short line about what they can do.
+     The detail goes to the console. */
+  AH.errorText = function (error, fallbackLine) {
+    const raw = String((error && error.message) || error || "");
+    console.warn("afterhours:", raw);
 
-    if (/PGRST202|Searched for the function/i.test(ham))
+    if (/PGRST202|Searched for the function/i.test(raw))
       return "this part isn't switched on yet. it should be soon.";
-    if (/^40[13]\b|JWT|token is expired/i.test(ham))
+    if (/^40[13]\b|JWT|token is expired/i.test(raw))
       return "your session ran out. sign in again.";
-    if (/duplicate key|already exists|unique constraint/i.test(ham))
+    if (/duplicate key|already exists|unique constraint/i.test(raw))
       return "that one is taken already.";
-    if (/violates .*constraint|invalid input/i.test(ham))
+    if (/violates .*constraint|invalid input/i.test(raw))
       return "that doesn't fit — check the field and try again.";
-    if (/^429\b|rate limit/i.test(ham))
+    if (/^429\b|rate limit/i.test(raw))
       return "too fast. give it a minute.";
-    if (/^5\d\d\b/.test(ham))
+    if (/^5\d\d\b/.test(raw))
       return "the other end is having a moment. try again shortly.";
-    if (/failed to fetch|networkerror|load failed|backend kapali/i.test(ham))
+    if (/failed to fetch|networkerror|load failed|backend is off/i.test(raw))
       return "no connection to the backend right now.";
-    return yedek || "something went wrong. it has been noted.";
+    return fallbackLine || "something went wrong. it has been noted.";
   };
 
-  /* Veritabani satirini sayfanin bekledigi bicime cevir.
-     Alan adlari events-data.js ile ayni kalmali; ekran degismesin. */
+  /* Turn a database row into the shape the screen expects. The field
+     names have to match events-data.js so nothing on screen changes. */
   function rowToEvent(r) {
     return {
       slug: r.slug,
@@ -132,12 +136,13 @@
       meta: r.meta,
       body: r.body,
       poster: r.poster_no,
-      /* Depoya yuklenmis poster varsa onun tam adresi; yoksa bos
-         kalir ve posters/NN.svg kullanilir. */
+      /* The full address of an uploaded poster, if there is one; empty
+         otherwise, and then posters/NN.svg is used. */
       posterPath: r.poster_path
-        ? (AYAR.url || "").replace(/\/$/, "") + "/storage/v1/object/public/posters/" + r.poster_path
+        ? (CONFIG.url || "").replace(/\/$/, "") +
+          "/storage/v1/object/public/posters/" + r.poster_path
         : null,
-      // ekranin kullanmadigi ama ileride lazim olacaklar
+      // not used on screen yet, but wanted later
       id: r.id,
       startsAt: r.starts_at,
       venue: r.venue_name,
@@ -146,57 +151,58 @@
   }
   AH.rowToEvent = rowToEvent;
 
-  AH.events = function (tur, sehir) {
-    const iste = () =>
+  AH.events = function (kind, city) {
+    const ask = () =>
       AH.request("/rpc/deck", {
         method: "POST",
         body: JSON.stringify({
-          p_city: sehir || AYAR.city || "munchen",
-          p_type: tur || null,
+          p_city: city || CONFIG.city || "munchen",
+          p_type: kind || null,
         }),
-      }).then((satirlar) => satirlar.map(rowToEvent));
+      }).then((rows) => rows.map(rowToEvent));
 
-    return iste().catch((h) => {
-      /* Elde eskimis/gecersiz bir jeton varsa sunucu 401 doner ve site
-         bos kalirdi. Jetonu birakip anonim olarak tekrar deniyoruz:
-         giris gecersizse bile gezinme calismali. */
-      if (!/^401/.test(h.message) || !AH.token) throw h;
-      console.warn("[afterhours] oturum gecersiz, anonim devam ediliyor");
+    return ask().catch((err) => {
+      /* An old or invalid token makes the server answer 401 and the site
+         would sit empty. Drop the token and try again anonymously:
+         browsing has to work even when the sign-in does not. */
+      if (!/^401/.test(err.message) || !AH.token) throw err;
+      console.warn("[afterhours] session no longer valid, continuing anonymously");
       if (AH.dropSession) AH.dropSession();
-      return iste();
+      return ask();
     });
   };
 
-  /* --- acilis ------------------------------------------------------ */
+  /* --- start ------------------------------------------------------- */
 
-  /* Bazi sayfalar (login) sadece baglantiyi istiyor, etkinlik listesini
-     degil. Yedek ve sonraki betik verilmemisse liste cekilmez. */
-  const sadeceBaglanti = !yedekYol && !sonraki.length;
-  if (sadeceBaglanti) {
-    AH.mode = acik ? "live" : "local";
+  /* Some pages (login) only want the connection, not the event list. If
+     no fallback and no follow-up script were given, we do not fetch. */
+  const connectionOnly = !fallbackPath && !thenLoad.length;
+  if (connectionOnly) {
+    AH.mode = enabled ? "live" : "local";
     AH.ready = Promise.resolve(AH.mode);
     return;
   }
 
-  /* Oturum once cozulsun: deste "daha once attiklarimi" eleyecekse
-     istek jetonla gitmeli. session.js yoksa beklenecek bir sey de yok. */
-  const oturum = Promise.resolve(AH.sessionReady || null).catch(() => null);
+  /* Settle the session first: if the deck is going to drop "the ones I
+     already swiped", the request has to carry a token. With no
+     session.js there is nothing to wait for. */
+  const session = Promise.resolve(AH.sessionReady || null).catch(() => null);
 
-  const hazir = !acik
-    ? yedegeDon(null)
-    : oturum
-        /* Once yereldeki atislari hesaba tasi: deste ondan sonra
-           gelsin ki tasinan kartlar zaten elenmis olsun. */
-        .then(() => (AH.signedIn && AH.signedIn() && AH.atislariBirlestir
-          ? AH.atislariBirlestir().catch(() => 0)
+  const ready = !enabled
+    ? fallBack(null)
+    : session
+        /* Carry the local swipes up to the account first, so the deck
+           comes back with those cards already dropped. */
+        .then(() => (AH.signedIn && AH.signedIn() && AH.mergeSwipes
+          ? AH.mergeSwipes().catch(() => 0)
           : null))
         .then(() => AH.events())
-        .then((liste) => {
-          if (!liste.length) throw new Error("veritabani empty");
-          window.POSTERS = numberEvents(liste);
+        .then((list) => {
+          if (!list.length) throw new Error("the database came back empty");
+          window.POSTERS = numberEvents(list);
           AH.mode = "live";
         })
-        .catch(yedegeDon);
+        .catch(fallBack);
 
-  AH.ready = hazir.then(() => betikleriYukle(sonraki)).then(() => AH.mode);
+  AH.ready = ready.then(() => loadScripts(thenLoad)).then(() => AH.mode);
 })();

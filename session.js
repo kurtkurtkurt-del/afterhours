@@ -1,181 +1,202 @@
-/* afterhours — oturum.
-   Supabase Auth'un REST ucuna dogrudan konusuyoruz; SDK yok, sitenin
-   sifir bagimlilik kurali bozulmasin diye.
+/* afterhours — the session.
+   We talk straight to Supabase Auth's REST endpoint. No SDK, because the
+   site's rule is zero dependencies.
 
-   Sifre YOK: e-postaya bir baglanti gidiyor, tiklayinca donuyorsun.
-   Adres cubugundaki #access_token=... yakalanip saklaniyor, sonra
-   adresten siliniyor ki jeton gecmiste durmasin.
+   Two ways in are wired up: a password (what the site actually uses) and
+   a link sent by email (AH.requestLink, kept because it needs no password
+   at all — it is unused for now because the built-in mailer is rate
+   limited). A token arriving in the address bar as #access_token=... is
+   picked up, stored, and then wiped from the URL so it does not sit in
+   history or in a shared link.
 
-   config.js bos ise burasi sessizce devre disi kalir.  */
+   With config.js empty this whole file quietly does nothing.  */
 
 (function () {
   const AH = (window.AH = window.AH || {});
-  const AYAR = window.AH_CONFIG || {};
+  const CONFIG = window.AH_CONFIG || {};
 
-  /* data.js ile ayni gelistirme yonlendirmesi; sadece localhost'ta. */
+  /* Same development redirect as data.js; localhost only. */
   if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
-    const p = new URLSearchParams(location.search).get("backend");
-    if (p) { AYAR.url = p; AYAR.anonKey = AYAR.anonKey || "local"; }
+    const override = new URLSearchParams(location.search).get("backend");
+    if (override) { CONFIG.url = override; CONFIG.anonKey = CONFIG.anonKey || "local"; }
   }
 
-  const acik = Boolean(AYAR.url && AYAR.anonKey);
-  const KUTU = "afterhours.oturum";
+  const enabled = Boolean(CONFIG.url && CONFIG.anonKey);
+  const KEY = "afterhours.session";
+  const OLD_KEY = "afterhours.oturum";        /* before the code spoke English */
 
-  const dinleyiciler = [];
-  AH.onSessionChange = (f) => { dinleyiciler.push(f); return () => {
-    const i = dinleyiciler.indexOf(f); if (i >= 0) dinleyiciler.splice(i, 1);
-  }; };
-  const duyur = () => dinleyiciler.forEach((f) => { try { f(AH.session); } catch (e) { console.warn(e); } });
+  const listeners = [];
+  AH.onSessionChange = (fn) => {
+    listeners.push(fn);
+    return () => {
+      const i = listeners.indexOf(fn);
+      if (i >= 0) listeners.splice(i, 1);
+    };
+  };
+  const announce = () =>
+    listeners.forEach((fn) => { try { fn(AH.session); } catch (e) { console.warn(e); } });
 
-  function oku() {
-    try { return JSON.parse(localStorage.getItem(KUTU) || "null"); } catch (_) { return null; }
+  function read() {
+    try {
+      return JSON.parse(localStorage.getItem(KEY) || localStorage.getItem(OLD_KEY) || "null");
+    } catch (_) { return null; }
   }
-  function yaz(o) {
-    try { o ? localStorage.setItem(KUTU, JSON.stringify(o)) : localStorage.removeItem(KUTU); }
-    catch (_) {}
-    AH.session = o;
-    AH.token = o && o.access_token;
-    duyur();
+  function write(session) {
+    try {
+      if (session) localStorage.setItem(KEY, JSON.stringify(session));
+      else localStorage.removeItem(KEY);
+      localStorage.removeItem(OLD_KEY);
+    } catch (_) {}
+    AH.session = session;
+    AH.token = session && session.access_token;
+    announce();
   }
 
-  AH.session = oku();
+  AH.session = read();
   AH.token = AH.session && AH.session.access_token;
 
-  function auth(yol, secenek = {}) {
-    if (!acik) return Promise.reject(new Error("backend kapali"));
-    return fetch(AYAR.url.replace(/\/$/, "") + "/auth/v1" + yol, {
-      ...secenek,
+  function auth(path, options = {}) {
+    if (!enabled) return Promise.reject(new Error("backend is off"));
+    return fetch(CONFIG.url.replace(/\/$/, "") + "/auth/v1" + path, {
+      ...options,
       headers: {
-        apikey: AYAR.anonKey,
+        apikey: CONFIG.anonKey,
         "Content-Type": "application/json",
-        ...(secenek.headers || {}),
+        ...(options.headers || {}),
       },
-    }).then(async (c) => {
-      const govde = c.status === 204 ? null : await c.json().catch(() => null);
-      if (!c.ok) throw new Error((govde && (govde.msg || govde.error_description || govde.message)) || c.status);
-      return govde;
+    }).then(async (res) => {
+      const body = res.status === 204 ? null : await res.json().catch(() => null);
+      if (!res.ok) {
+        throw new Error(
+          (body && (body.msg || body.error_description || body.message)) || res.status);
+      }
+      return body;
     });
   }
   AH.auth = auth;
 
-  /* Donen jetonu sakla. expires_in saniye cinsinden.
-     yeniGiris: adresten taze bir jeton geldi demek — o zaman saklanan
-     kullanici bilgisi BASKA birine ait olabilir, atilmali. */
-  function jetonuKaydet(c, yeniGiris) {
-    if (!c || !c.access_token) return null;
-    const o = {
-      access_token: c.access_token,
-      refresh_token: c.refresh_token,
-      expiresAt: Date.now() + (c.expires_in || 3600) * 1000,
-      user: c.user || (!yeniGiris && AH.session && AH.session.user) || null,
+  /* Store the token that came back. expires_in is in seconds.
+     `fresh` means a new token arrived from the address bar — the stored
+     user may then belong to SOMEBODY ELSE and has to be dropped. */
+  function storeToken(answer, fresh) {
+    if (!answer || !answer.access_token) return null;
+    const session = {
+      access_token: answer.access_token,
+      refresh_token: answer.refresh_token,
+      expiresAt: Date.now() + (answer.expires_in || 3600) * 1000,
+      user: answer.user || (!fresh && AH.session && AH.session.user) || null,
     };
-    yaz(o);
-    return o;
+    write(session);
+    return session;
   }
 
-  /* --- disa acilan --- */
+  /* --- what the pages use --- */
 
-  AH.requestLink = function (eposta) {
+  AH.requestLink = function (email) {
     return auth("/otp", {
       method: "POST",
       body: JSON.stringify({
-        email: eposta,
+        email,
         create_user: true,
         options: { email_redirect_to: location.origin + location.pathname },
       }),
     });
   };
 
-  /* Sifreyle giris. Sitenin genelinde YOK: orada sifresiz baglanti var.
-     Bu yol yalniz yonetim paneli icin, e-posta kotasina takilmadan
-     girebilmek adina. Sifre hicbir yerde saklanmiyor; dogrudan
-     Supabase'e gidiyor ve karsiliginda jeton geliyor. */
-  AH.signInWithPassword = function (eposta, sifre) {
+  /* Signing in with a password. Nothing is stored here; it goes straight
+     to Supabase and a token comes back. */
+  AH.signInWithPassword = function (email, password) {
     return auth("/token?grant_type=password", {
       method: "POST",
-      body: JSON.stringify({ email: eposta, password: sifre }),
-    }).then((c) => {
-      const o = jetonuKaydet(c, true);
-      if (!o) throw new Error("jeton gelmedi");
-      return o;
+      body: JSON.stringify({ email, password }),
+    }).then((answer) => {
+      const session = storeToken(answer, true);
+      if (!session) throw new Error("no token came back");
+      return session;
     });
   };
 
-  /* Hesap acma. Ustteki iki yol var olan bir hesabi acar, bu yenisini
-     kurar. `ekstra` kayit formundan gelen handle/sehir/ad — Supabase
-     bunu raw_user_meta_data'ya koyuyor ve profil tetikleyicisi oradan
-     okuyor (backend/sql/12_profiles.sql).
+  /* Opening an account. The two calls above sign into one that exists;
+     this one creates it. `extra` is the handle/city/name the register form
+     collected — Supabase puts it in raw_user_meta_data and the profile
+     trigger reads it from there (backend/sql/12_profiles.sql).
 
-     Projede e-posta dogrulamasi ACIKSA cevapta oturum gelmiyor; o zaman
-     null donuyoruz ve sayfa "postana bak" diyor. */
-  AH.signUp = function (eposta, sifre, ekstra) {
+     If the project asks for email confirmation there is no session in the
+     answer; we return null and the page says to go and open the link. */
+  AH.signUp = function (email, password, extra) {
     return auth("/signup", {
       method: "POST",
       body: JSON.stringify({
-        email: eposta,
-        password: sifre,
-        data: ekstra || {},
+        email,
+        password,
+        data: extra || {},
         options: { email_redirect_to: location.origin + location.pathname },
       }),
-    }).then((c) => {
-      const oturum = (c && c.session) || (c && c.access_token ? c : null);
-      return oturum ? jetonuKaydet(oturum, true) : null;
+    }).then((answer) => {
+      const session = (answer && answer.session) ||
+                      (answer && answer.access_token ? answer : null);
+      return session ? storeToken(session, true) : null;
     });
   };
 
   AH.signOut = function () {
-    const j = AH.token;
-    yaz(null);
-    if (!j) return Promise.resolve();
-    return auth("/logout", { method: "POST", headers: { Authorization: "Bearer " + j } })
-      .catch(() => {});           /* sunucu ne derse desin, yerelde cikildi */
+    const token = AH.token;
+    write(null);
+    if (!token) return Promise.resolve();
+    return auth("/logout", { method: "POST", headers: { Authorization: "Bearer " + token } })
+      .catch(() => {});          /* whatever the server says, we are out locally */
   };
 
   AH.fetchUser = function () {
     if (!AH.token) return Promise.resolve(null);
-    return auth("/user", { headers: { Authorization: "Bearer " + AH.token } }).catch(() => null);
+    return auth("/user", { headers: { Authorization: "Bearer " + AH.token } })
+      .catch(() => null);
   };
 
   AH.signedIn = () => Boolean(AH.token);
 
-  /* Sunucuya sormadan yerel oturumu birak. Jeton artik gecerli degilse
-     (baska bir projeye ait, suresi gecmis) sunucuya gitmenin anlami yok. */
-  AH.dropSession = function () { yaz(null); };
+  /* Drop the local session without asking the server. If the token is no
+     longer valid (it belongs to another project, or it expired) there is
+     nothing to ask. */
+  AH.dropSession = function () { write(null); };
 
-  /* --- acilista: adresteki jetonu al, sureli olani yenile --- */
+  /* --- on load: take the token from the URL, refresh an expiring one --- */
 
-  function adrestenAl() {
+  function tokenFromUrl() {
     if (!location.hash || location.hash.indexOf("access_token") < 0) return null;
-    const p = new URLSearchParams(location.hash.slice(1));
-    const c = {
-      access_token: p.get("access_token"),
-      refresh_token: p.get("refresh_token"),
-      expires_in: Number(p.get("expires_in") || 3600),
+    const params = new URLSearchParams(location.hash.slice(1));
+    const answer = {
+      access_token: params.get("access_token"),
+      refresh_token: params.get("refresh_token"),
+      expires_in: Number(params.get("expires_in") || 3600),
     };
-    /* Jeton adres cubugunda kalmasin: gecmise, paylasilan baglantiya girer */
+    /* Keep the token out of the address bar: it ends up in history and in
+       whatever link gets shared. */
     history.replaceState(null, "", location.pathname + location.search);
-    return jetonuKaydet(c, true);
+    return storeToken(answer, true);
   }
 
-  function yenile() {
-    const o = AH.session;
-    if (!o || !o.refresh_token) return Promise.resolve(null);
-    if (o.expiresAt && o.expiresAt - Date.now() > 60000) return Promise.resolve(o);   /* daha var */
+  function refresh() {
+    const session = AH.session;
+    if (!session || !session.refresh_token) return Promise.resolve(null);
+    if (session.expiresAt && session.expiresAt - Date.now() > 60000) {
+      return Promise.resolve(session);       /* still good */
+    }
     return auth("/token?grant_type=refresh_token", {
       method: "POST",
-      body: JSON.stringify({ refresh_token: o.refresh_token }),
+      body: JSON.stringify({ refresh_token: session.refresh_token }),
     })
-      .then(jetonuKaydet)
-      .catch(() => { yaz(null); return null; });        /* yenilenemiyorsa cik */
+      .then(storeToken)
+      .catch(() => { write(null); return null; });   /* cannot refresh: sign out */
   }
 
-  AH.sessionReady = !acik
+  AH.sessionReady = !enabled
     ? Promise.resolve(null)
-    : Promise.resolve(adrestenAl() || yenile()).then(() => {
-        /* kullanici bilgisi yoksa bir kere cek */
+    : Promise.resolve(tokenFromUrl() || refresh()).then(() => {
+        /* Fetch the user once if we do not have them yet */
         if (AH.token && AH.session && !AH.session.user) {
-          return AH.fetchUser().then((k) => {
-            if (k) yaz({ ...AH.session, user: k });
+          return AH.fetchUser().then((user) => {
+            if (user) write({ ...AH.session, user });
             return AH.session;
           });
         }
