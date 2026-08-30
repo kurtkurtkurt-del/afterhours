@@ -1,4 +1,4 @@
-/* afterhours — geri bildirim sayfasi.
+/* afterhours — the feedback page.
    Tek is: yazilani feedback tablosuna eklemek. Giris istemiyor —
    bozuk bir seyi bildirmek icin once hesap acmak sacma olurdu.
    Girisliyken who oldugun kendiliginden yaziliyor (author_id
@@ -24,7 +24,7 @@
     status.className = "account-status" + (cesit ? " " + cesit : "");
   }
 
-  /* --- konu secimi --- */
+  /* --- choosing a subject --- */
   const kindBox = el("fb-kind");
   [...kindBox.querySelectorAll("button")].forEach((d) => {
     d.onclick = () => {
@@ -35,14 +35,14 @@
   });
   kindBox.querySelector("button").classList.add("selected");
 
-  /* --- sayac: sinira yaklasinca gorunuyor --- */
+  /* --- the counter: it appears as you near the limit --- */
   text.addEventListener("input", () => {
     const n = text.value.trim().length;
     el("fb-counter").textContent = n > 1700 ? (2000 - n) + " characters left" : "";
     if (status.textContent) say("");
   });
 
-  /* --- gonder --- */
+  /* --- sending --- */
   el("fb-send").onclick = function () {
     const text = text.value.trim();
     if (text.length < 10) {
@@ -88,7 +88,7 @@
     text.focus();
   };
 
-  /* --- girisliysen iletisim satirini sormuyoruz --- */
+  /* --- signed in, we do not ask for a contact line --- */
   function render() {
     const signedIn = Boolean(AH.signedIn && AH.signedIn());
     const email = AH.session && AH.session.user && AH.session.user.email;

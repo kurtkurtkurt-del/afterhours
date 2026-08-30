@@ -1,15 +1,15 @@
-/* afterhours — nachtradar'dan gelenler.
-   Simdilik sabit bir list: nachtradar.com'daki crew ve gonderilmis
-   istekler. Fotograf, biyografi, seviye rozeti tasinmadi — sadece
-   who olduklari.
+/* afterhours — the people from nachtradar.
+   A fixed list for now: the crew on nachtradar.com and the requests that
+   were sent. No photograph, no biography, no level badge was carried
+   over — only who they are.
 
-   Disarida birakilanlar: test hesaplari (wefwef, Neu, probekonto,
-   Versuche, suitedmemo, PinTest) ve adi e-posta adresi olan kayit;
-   sonuncusu herkese open bir sayfada durmamali. Ayni kisinin ikinci
-   hesabi (miray turper) da bir kez yazildi.
+   Left out: the test accounts (wefwef, Neu, probekonto, Versuche,
+   suitedmemo, PinTest) and the record whose name is an email address;
+   that last one should not sit on a page open to everyone. A second
+   account belonging to the same person (miray turper) is listed once.
 
-   Ileride nachtradar'in kendi verisinden cekilecek; o yuzden bicim
-   sade: name + kullanici adi.  */
+   Later this will be pulled from nachtradar's own data, which is why the
+   shape is plain: name + handle.  */
 
 window.NACHTRADAR = {
   crew: [

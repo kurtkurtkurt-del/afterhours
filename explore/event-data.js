@@ -1,4 +1,4 @@
-/* afterhours — etkinlik sayfasinin icerigi.
+/* afterhours — the content of the event page.
 
    Her night icin ayri sayfa yazmiyoruz: sayfanin duzeni tek, icerigi
    buradan geliyor. Havuzlar etkinlik TURUNE gore ayrilmis; hangi
@@ -10,7 +10,7 @@
 
 window.EVENT_POOLS = (function () {
 
-  /* --- kunye: her edisyonda ayni olan seyler --- */
+  /* --- the credits: the things that are the same every edition --- */
   const FACTS = {
     "Konzert": [
       ["curfew", "23:00"], ["capacity", "11 000"], ["door", "no re-entry"],
@@ -38,7 +38,7 @@ window.EVENT_POOLS = (function () {
     ],
   };
 
-  /* --- karelerdeki roller --- */
+  /* --- the roles in the frames --- */
   const ROLES = {
     "Konzert":    ["dj set", "support", "headline", "special guest", "after"],
     "Festival":   ["opening", "second stage", "headline", "special guest", "closing"],
@@ -48,7 +48,7 @@ window.EVENT_POOLS = (function () {
     "Meetup":     ["host", "table one", "table two", "whoever turns up", "afterwards"],
   };
 
-  /* --- kareye dusecek isimler --- */
+  /* --- the names that land in the frames --- */
   const NAMES = {
     "Konzert": ["Keys Open Doors", "Lou Capri", "Neon Ferry", "Vera Sound", "Club Set", "Hall Light", "The Long Way"],
     "Festival": ["Morgenrot", "Feldweg", "Zwei Uhr", "Sonnenbank", "Waldbühne DJs", "Letzte Bahn", "Platzregen"],
@@ -58,11 +58,10 @@ window.EVENT_POOLS = (function () {
     "Meetup": ["Ida", "Bosse", "Nele & Tim", "The quiet table", "Whoever stays"],
   };
 
-  /* --- tanitim paragraflari: ilki etkinligin kendi metni, sonrakiler burada --- */
-  /* --- tanitim paragraflari ---
-     Ilk paragraf etkinligin kendi metni; buradakiler onun USTUNE bir sey
-     koymali, ayni seyi baska kelimelerle soylememeli. Yine de carpisma
-     olursa event.js ortak kelimeye bakip eliyor. */
+  /* --- the introduction paragraphs ---
+     The first paragraph is the event's own text; the ones here have to add
+     something ON TOP of it, not say the same thing in other words. Should
+     they still collide, event.js looks for a shared word and drops one. */
   const BODY = {
     "Konzert": [
       "The floor fills politely for the first half hour — everyone still holding a drink with both hands, still working out where their friends ended up — and then the lights drop and the room stops behaving like a room.",
@@ -102,7 +101,7 @@ window.EVENT_POOLS = (function () {
     ],
   };
 
-  /* --- bilet dugmesi: her tur ayni seyi satmiyor --- */
+  /* --- the ticket button: not every kind is selling the same thing --- */
   const TICKET = {
     "Konzert":    ["get the ticket", "goes to the venue's own shop"],
     "Festival":   ["get the ticket", "day and weekend passes"],
@@ -121,14 +120,14 @@ window.EVENT_POOLS = (function () {
   const STATES = ["going", "going", "going", "maybe", "can't"];
 
 
-  /* --- arkadaslarin bu geceye birakdiklari (beforehours) ---
-     {mekan}, {ad} ve {gun} yerlerine etkinligin kendi bilgisi giriyor,
-     boylece yorum gercekten O geceden bahsediyor. */
+  /* --- what friends left on this night (beforehours) ---
+     {venue}, {name} and {day} are filled in from the event itself, so the
+     comment really is about THAT night. */
   const COMMENTS = {
     "Konzert": [
       { m: "Third time for me. They play the record front to back, so don't turn up only for the singles." },
-      { m: "{mekan} is flat until about halfway. If you're short, the side seats are the honest choice." },
-      { m: "It's on a {gun}. Everyone leaves through one station — walk out during the encore or make peace with it." },
+      { m: "{venue} is flat until about halfway. If you're short, the side seats are the honest choice." },
+      { m: "It's on a {day}. Everyone leaves through one station — walk out during the encore or make peace with it." },
       { m: "Who is on before? I can't find a single thing about them.",
         c: { m: "Support from the berlin dates. Worth being early for." } },
       { m: "Not making this one. Someone record the quiet part for me." },
@@ -136,45 +135,45 @@ window.EVENT_POOLS = (function () {
     ],
     "Festival": [
       { m: "Bring cash for the food stalls. Half of them still don't take it off the wristband and the queue for the machine is its own festival." },
-      { m: "{mekan} gets muddy in one hour flat if it rains. Shoes you don't like." },
+      { m: "{venue} gets muddy in one hour flat if it rains. Shoes you don't like." },
       { m: "Went alone the first year and left with six people I still go out with. It's that kind of field." },
-      { m: "Is anyone doing the {gun} one or is everyone going the other day?",
+      { m: "Is anyone doing the {day} one or is everyone going the other day?",
         c: { m: "We're doing both. It's the same wristband." } },
       { m: "The small stage is the whole point. Don't spend the night in front of the big one." },
       { m: "Meeting at the entrance at four, then we lose each other for six hours as usual." },
     ],
     "Rave": [
       { m: "Doors say early but nothing happens for two hours. Come late or come alone, both are fine." },
-      { m: "{mekan} has one corridor and it's where everyone actually talks." },
+      { m: "{venue} has one corridor and it's where everyone actually talks." },
       { m: "Stickers at the door again. Just leave the phone in your jacket, it's easier." },
-      { m: "Anyone driving back? {gun} means no trains until five.",
+      { m: "Anyone driving back? {day} means no trains until five.",
         c: { m: "I've got two seats. Leaving whenever it ends." } },
       { m: "Last time I stayed until the lights came up and I'd still do it again." },
       { m: "Cash only, and the machine on the corner is always empty. Bring it with you." },
     ],
     "Club Night": [
       { m: "Cheaper before midnight and the room is better then anyway." },
-      { m: "{mekan} does one in one out after one. If we're going, we go together." },
+      { m: "{venue} does one in one out after one. If we're going, we go together." },
       { m: "The back room is the reason to come. Nobody tells you that." },
       { m: "Is this the same booking as last month?",
         c: { m: "Same two, different order. The handover is the good bit." } },
-      { m: "I'll be there but I'm leaving at three. {gun} and I have a shift." },
+      { m: "I'll be there but I'm leaving at three. {day} and I have a shift." },
       { m: "Don't eat first. There's nothing open after and you'll regret it." },
     ],
     "Hausparty": [
       { m: "I'm bringing the speaker again, someone else bring the cable this time." },
-      { m: "{mekan} — fourth floor, no lift. Wear something you can climb in." },
+      { m: "{venue} — fourth floor, no lift. Wear something you can climb in." },
       { m: "Quiet by two means quiet by two. The neighbours were decent about it last time." },
       { m: "What are people bringing? I don't want four bottles of the same thing.",
         c: { m: "Put it in the group. I've got the ice." } },
-      { m: "It's a {gun}, so I'm coming late and staying to the end." },
+      { m: "It's a {day}, so I'm coming late and staying to the end." },
       { m: "Last one turned into breakfast. No promises." },
     ],
     "Meetup": [
       { m: "You don't need to bring anything or know anyone. That is genuinely how it works." },
-      { m: "{mekan} is easy to miss from the street — it's the door next to the bakery." },
+      { m: "{venue} is easy to miss from the street — it's the door next to the bakery." },
       { m: "First time I came I said nothing for an hour and it was still worth it." },
-      { m: "Is there space this {gun}?",
+      { m: "Is there space this {day}?",
         c: { m: "Always. Somebody drops out every time." } },
       { m: "We usually end up around the corner afterwards. That part is the best part." },
       { m: "Bring a page if you've got one. If not, come anyway." },

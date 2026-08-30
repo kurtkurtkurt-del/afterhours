@@ -1,140 +1,136 @@
-/* afterhours — on yuzdeki veriyi SQL'e cevirir.
-   Kaynak: events-data.js (36 etkinlik), app.js icindeki VENUES,
-   explore/comment-pools.js (sample yorumlar).
-   Cikti: sql/03_seed_catalog.sql, 04_seed_events.sql, 05_seed_comments.sql
+/* afterhours — turns the front-end data into SQL.
+   Sources: events-data.js (36 events), VENUES in venues.js,
+   explore/comment-pools.js (the sample comments).
+   Output: sql/03_seed_catalog.sql, 04_seed_events.sql, 05_seed_comments.sql
 
-   Elle yazilmis veri tek yerde kalsin diye uretiliyor: ileride
-   events-data.js degisirse bu script tekrar kosulur.  */
+   Generated so the hand-written data lives in exactly one place: when
+   events-data.js changes, this script is run again.  */
 
 import { readFile, writeFile } from "node:fs/promises";
 
-const kok = new URL("../../", import.meta.url);
-const read = (path) => readFile(new URL(path, kok), "utf8");
+const root = new URL("../../", import.meta.url);
+const read = (path) => readFile(new URL(path, root), "utf8");
 
-/* ---- kaynaklari yukle (DOM'suz, duz eval) ---------------------------- */
+/* ---- load the sources (no DOM, plain eval) --------------------------- */
 
 const eventsJs = await read("events-data.js");
 const { POSTERS } = new Function(eventsJs + "\n;return { POSTERS };")();
 
-/* VENUES app.js'in icindeydi, venues.js'e tasindi (maps sayfasi da
-   ayni koordinatlari kullaniyor). */
-const mekanJs = await read("venues.js");
-const { VENUES } = new Function("window", mekanJs + "\n;return { VENUES };")({});
+/* VENUES used to sit inside app.js and moved to venues.js (the maps page
+   needs the same coordinates). */
+const venuesJs = await read("venues.js");
+const { VENUES } = new Function("window", venuesJs + "\n;return { VENUES };")({});
 
-const yorumJs = await read("explore/comment-pools.js");
+const commentsJs = await read("explore/comment-pools.js");
 const { COMMENT_POOL, COMMENTS_FOR } =
-  new Function(yorumJs + "\n;return { COMMENT_POOL, COMMENTS_FOR };")();
+  new Function(commentsJs + "\n;return { COMMENT_POOL, COMMENTS_FOR };")();
 
-/* ---- yardimcilar ----------------------------------------------------- */
+/* ---- helpers --------------------------------------------------------- */
 
-/* Metin degerleri.
+/* Text values.
 
-   Kesme isareti iceren metinleri kacisli tirnakla ('') yazmak Postgres
-   icin dogru, ama SQL EDITORLERININ ayristiricisi icin degil: Supabase
-   panelinde '...aren''t...' satiri quote sayimini kaydirdi ve metnin
-   gerisi code sanildi ("relation \"one\" does not exist"). Dolar tirnagi
-   bu sorunu tamamen ortadan kaldiriyor. */
+   We use the escaped quote (''): correct for Postgres, and BALANCED for
+   the simple parsers that walk along counting quotes (two marks = two
+   crossings). Dollar quoting was tried and was worse: a single
+   apostrophe inside it ("aren't") shifts the count and turns the rest of
+   the text into code. */
 const q = (v) => {
   if (v === null || v === undefined) return "null";
-  /* Kacisli quote ('') kullaniyoruz: hem Postgres icin dogru, hem de
-     tirnaklari sayarak ilerleyen basit ayristiricilar icin DENGELI
-     (iki isaret = iki gecis). Dolar tirnagi denendi ve daha kotuydu:
-     icindeki tek kesme isareti ("aren't") sayimi kaydirip metnin
-     gerisini code haline getiriyor. */
   return "'" + String(v).replace(/'/g, "''") + "'";
 };
-const slugla = (s) =>
+
+const slugify = (s) =>
   s.toLowerCase()
     .replace(/ü/g, "u").replace(/ö/g, "o").replace(/ä/g, "a").replace(/ß/g, "ss")
     .replace(/ş/g, "s").replace(/ç/g, "c").replace(/ı/g, "i").replace(/ğ/g, "g")
     .replace(/\$/g, "s")
     .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
-/* Sitenin "today"u. Yilsiz tarihlerin yili buna gore cikariliyor. */
-const BUGUN = new Date("2026-08-29T00:00:00+02:00");
+/* The site's "today". The year of a year-less date is inferred from it. */
+const TODAY = new Date("2026-08-29T00:00:00+02:00");
 
 /* meta = "Olympiahalle · 11.09.26 · 18:30"
-   Mekan adi parcalarin herhangi birinde olabilir (bazi metalar tarihle
-   basliyor). Tarih uc bicimde geliyor:
-     gg.aa.yy          → kesin
-     gg.aa  /  gg—gg.aa → yil yok, cikarim (estimated)
-     "Sommer 2027", "Mittwochs", "TBA" → tarih yok, sadece date_text  */
-function metayiCoz(meta) {
-  const parcalar = meta.split("·").map((p) => p.trim()).filter(Boolean);
+   The venue name can be in any of the parts (some metas start with the
+   date). The date arrives in three shapes:
+     dd.mm.yy          → certain
+     dd.mm  /  dd—dd.mm → no year, inferred (estimated)
+     "Sommer 2027", "Mittwochs", "TBA" → no date at all, only date_text  */
+function parseMeta(meta) {
+  const parts = meta.split("·").map((p) => p.trim()).filter(Boolean);
 
-  const saat = meta.match(/\b(\d{2}):(\d{2})\b/);
-  const ss = saat ? saat[1] : "20";
-  const dd = saat ? saat[2] : "00";
+  const clock = meta.match(/\b(\d{2}):(\d{2})\b/);
+  const hh = clock ? clock[1] : "20";
+  const mi = clock ? clock[2] : "00";
 
-  const tam = meta.match(/\b(\d{2})\.(\d{2})\.(\d{2})\b/);
-  if (tam) {
-    const [, gg, aa, yy] = tam;
+  const full = meta.match(/\b(\d{2})\.(\d{2})\.(\d{2})\b/);
+  if (full) {
+    const [, dd, mm, yy] = full;
     return {
-      parcalar,
-      baslangic: `20${yy}-${aa}-${gg}T${ss}:${dd}:00+02:00`,
-      tahmin: false,
-      tarihMetni: parcalar.slice(1).join(" · ") || null,
+      parts,
+      startsAt: `20${yy}-${mm}-${dd}T${hh}:${mi}:00+02:00`,
+      estimated: false,
+      dateText: parts.slice(1).join(" · ") || null,
     };
   }
 
   /* "15—16.09" → 15.09 ; "19.11 — 23.12" → 19.11 ; "05.09" → 05.09 */
-  const aralik = meta.match(/\b(\d{2})\s*[—–-]\s*(\d{2})\.(\d{2})\b/);
-  const yilsiz = aralik
-    ? { gg: aralik[1], aa: aralik[3] }
+  const range = meta.match(/\b(\d{2})\s*[—–-]\s*(\d{2})\.(\d{2})\b/);
+  const yearless = range
+    ? { dd: range[1], mm: range[3] }
     : (() => {
         const m = meta.match(/\b(\d{2})\.(\d{2})\b(?!\.)/);
-        return m ? { gg: m[1], aa: m[2] } : null;
+        return m ? { dd: m[1], mm: m[2] } : null;
       })();
 
-  if (yilsiz) {
-    // Yili, tarihi bugunden cok geride birakmayacak sekilde sec.
-    let yil = BUGUN.getFullYear();
-    const kur = (y) => new Date(`${y}-${yilsiz.aa}-${yilsiz.gg}T${ss}:${dd}:00+02:00`);
-    if (kur(yil) < new Date(BUGUN.getTime() - 30 * 864e5)) yil += 1;
+  if (yearless) {
+    // Pick the year that does not leave the date far behind today.
+    let year = TODAY.getFullYear();
+    const build = (y) => new Date(`${y}-${yearless.mm}-${yearless.dd}T${hh}:${mi}:00+02:00`);
+    if (build(year) < new Date(TODAY.getTime() - 30 * 864e5)) year += 1;
     return {
-      parcalar,
-      baslangic: kur(yil).toISOString(),
-      tahmin: true,
-      tarihMetni: parcalar.slice(1).join(" · ") || null,
+      parts,
+      startsAt: build(year).toISOString(),
+      estimated: true,
+      dateText: parts.slice(1).join(" · ") || null,
     };
   }
 
-  return { parcalar, baslangic: null, tahmin: false,
-           tarihMetni: parcalar.slice(1).join(" · ") || null };
+  return { parts, startsAt: null, estimated: false,
+           dateText: parts.slice(1).join(" · ") || null };
 }
 
-/* VENUES icinde ada gore ara: "Olympiahalle" → OLYMPIAHALLE,
+/* Look a venue up in VENUES by name: "Olympiahalle" → OLYMPIAHALLE,
    "Bahnwärter Thiel" → BAHNWÄRTER THIEL, "Milla Club" → MILLA */
-function mekanBul(adayHam) {
-  if (!adayHam) return null;
-  const aday = adayHam.toUpperCase().trim();
-  let m = VENUES.find((x) => x.name === aday);
+function findVenue(rawCandidate) {
+  if (!rawCandidate) return null;
+  const candidate = rawCandidate.toUpperCase().trim();
+  let m = VENUES.find((x) => x.name === candidate);
   if (m) return m;
-  m = VENUES.find((x) => aday.startsWith(x.name) || x.name.startsWith(aday));
+  m = VENUES.find((x) => candidate.startsWith(x.name) || x.name.startsWith(candidate));
   if (m) return m;
-  // "ab Isartor" gibi on ekli yazimlar
-  m = VENUES.find((x) => aday.includes(x.name));
+  // Spellings with a prefix, such as "ab Isartor"
+  m = VENUES.find((x) => candidate.includes(x.name));
   return m || null;
 }
 
-/* zaman metnini gercek one main shape: "3 days ago", "Nov 2023", "6 h ago" */
-function zamaniCoz(text) {
-  const simdi = new Date("2026-08-29T21:00:00+02:00");
+/* Turn a written time into a real one: "3 days ago", "Nov 2023", "6 h ago" */
+function parseWhen(text) {
+  const now = new Date("2026-08-29T21:00:00+02:00");
   let m;
-  if (/^yesterday$/i.test(text)) return new Date(simdi - 864e5);
-  if ((m = text.match(/^(\d+)\s*h ago$/i)))     return new Date(simdi - m[1] * 36e5);
-  if ((m = text.match(/^(\d+)\s*days? ago$/i))) return new Date(simdi - m[1] * 864e5);
+  if (/^yesterday$/i.test(text)) return new Date(now - 864e5);
+  if ((m = text.match(/^(\d+)\s*h ago$/i)))     return new Date(now - m[1] * 36e5);
+  if ((m = text.match(/^(\d+)\s*days? ago$/i))) return new Date(now - m[1] * 864e5);
   if ((m = text.match(/^([A-Za-z]{3,9})\s+(\d{4})$/))) {
-    const aylar = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
-    const i = aylar.indexOf(m[1].slice(0, 3).toLowerCase());
+    const months = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
+    const i = months.indexOf(m[1].slice(0, 3).toLowerCase());
     if (i >= 0) return new Date(Date.UTC(+m[2], i, 15, 20, 0, 0));
   }
-  return simdi;                       // cozulemezse simdi; time_text zaten dogru
+  return now;                    // if it will not parse, now; time_text is right anyway
 }
 
-/* ---- 03: sehir, kind, mekan ------------------------------------------ */
+/* ---- 03: cities, types, venues --------------------------------------- */
 
-/* slug, name, status, sort_order, ulke, ulke kodu */
+/* slug, name, status, sort_order, country, country code */
 const cities = [
   ["munchen", "münchen", "live", 1, "Deutschland", "de"],
   ["istanbul", "istanbul", "live", 2, "Türkiye", "tr"],
@@ -149,26 +145,26 @@ const cities = [
   ["graz", "graz", "planned", 11, "Österreich", "at"],
 ];
 
-/* spec'in kendi sirasi */
-const turler = ["Rave", "Club Night", "Konzert", "Festival", "Meetup", "Hausparty"];
+/* the order the spec itself uses */
+const kinds = ["Rave", "Club Night", "Konzert", "Festival", "Meetup", "Hausparty"];
 
-let sql = `-- URETILMIS DOSYA — elle duzenleme. Kaynak: backend/tools/seed-build.mjs
--- Sehirler, turler ve mekanlar. Once bu, sonra 04.
+let sql = `-- GENERATED FILE - do not edit by hand. Source: backend/tools/build-seed.mjs
+-- Cities, types and venues. This first, then 04.
 
 insert into public.cities (slug, name, status, sort_order, country, country_slug) values
-${cities.map(([s, a, d, i, u, uk]) =>
-  `  (${q(s)}, ${q(a)}, ${q(d)}, ${i}, ${q(u)}, ${q(uk)})`).join(",\n")}
+${cities.map(([s, n, st, i, c, cc]) =>
+  `  (${q(s)}, ${q(n)}, ${q(st)}, ${i}, ${q(c)}, ${q(cc)})`).join(",\n")}
 on conflict (slug) do nothing;
 
 insert into public.event_types (slug, name, sort_order) values
-${turler.map((t, i) => `  (${q(slugla(t))}, ${q(t)}, ${i + 1})`).join(",\n")}
+${kinds.map((t, i) => `  (${q(slugify(t))}, ${q(t)}, ${i + 1})`).join(",\n")}
 on conflict (slug) do nothing;
 
 `;
 
-for (const m of VENUES) {
+for (const v of VENUES) {
   sql += `insert into public.venues (city_id, slug, name, map_x, map_y, opens_hour, open_hours)
-select id, ${q(slugla(m.name))}, ${q(m.name)}, ${m.x}, ${m.y}, ${m.saat}, ${m.sure}
+select id, ${q(slugify(v.name))}, ${q(v.name)}, ${v.x}, ${v.y}, ${v.opensAt}, ${v.hours}
 from public.cities where slug = 'munchen'
 on conflict (city_id, slug) do nothing;
 `;
@@ -176,78 +172,78 @@ on conflict (city_id, slug) do nothing;
 
 await writeFile(new URL("../sql/03_seed_catalog.sql", import.meta.url), sql);
 
-/* ---- 04: 36 etkinlik ------------------------------------------------- */
+/* ---- 04: the 36 events ----------------------------------------------- */
 
-let etkinlikSql = `-- URETILMIS DOSYA — source: events-data.js (${POSTERS.length} record)
--- meta alani ekranda gorunen satirin ta kendisi; degistirilmemeli.
+let eventSql = `-- GENERATED FILE - source: events-data.js (${POSTERS.length} records)
+-- The meta field is the very line shown on screen; it must not be changed.
 
 `;
-let tarihli = 0, mekanli = 0, tahminli = 0;
+let dated = 0, venued = 0, estimatedCount = 0;
 
 POSTERS.forEach((e, i) => {
-  const { parcalar, baslangic, tahmin, tarihMetni } = metayiCoz(e.meta);
-  const mekan = parcalar.map(mekanBul).find(Boolean) || null;
-  if (baslangic) tarihli++;
-  if (tahmin) tahminli++;
-  if (mekan) mekanli++;
+  const { parts, startsAt, estimated, dateText } = parseMeta(e.meta);
+  const venue = parts.map(findVenue).find(Boolean) || null;
+  if (startsAt) dated++;
+  if (estimated) estimatedCount++;
+  if (venue) venued++;
 
-  etkinlikSql += `insert into public.events
+  eventSql += `insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
    starts_at, starts_at_estimated, date_text)
-select ${q(e.slug)}, c.id, t.id, ${mekan ? `v.id` : `null`},
+select ${q(e.slug)}, c.id, t.id, ${venue ? `v.id` : `null`},
        ${q(e.title)}, ${q(e.meta)}, ${q(e.body)}, ${i + 1},
-       ${baslangic ? `${q(baslangic)}::timestamptz` : "null"}, ${tahmin}, ${q(tarihMetni)}
+       ${startsAt ? `${q(startsAt)}::timestamptz` : "null"}, ${estimated}, ${q(dateText)}
 from public.cities c
-join public.event_types t on t.slug = ${q(slugla(e.kind))}
-${mekan ? `join public.venues v on v.city_id = c.id and v.slug = ${q(slugla(mekan.name))}\n` : ""}where c.slug = 'munchen'
+join public.event_types t on t.slug = ${q(slugify(e.kind))}
+${venue ? `join public.venues v on v.city_id = c.id and v.slug = ${q(slugify(venue.name))}\n` : ""}where c.slug = 'munchen'
 on conflict (slug) do nothing;
 
 `;
 });
 
-await writeFile(new URL("../sql/04_seed_events.sql", import.meta.url), etkinlikSql);
+await writeFile(new URL("../sql/04_seed_events.sql", import.meta.url), eventSql);
 
-/* ---- 05: sample yorumlar --------------------------------------------- */
+/* ---- 05: the sample comments ----------------------------------------- */
 
-let yorumSql = `-- URETILMIS DOSYA — source: explore/comment-pools.js
--- Ornek yorumlar: gercek kullanicisi yok, author_name ile duruyorlar.
--- Sitenin today gosterdigi secimin aynisi (ayni seed, ayni kartlar).
+let commentSql = `-- GENERATED FILE - source: explore/comment-pools.js
+-- Sample comments: no real user behind them, they carry an author_name.
+-- The same selection the site shows today (same seed, same cards).
 
 `;
-let konuSayisi = 0, cevapSayisi = 0;
+let topicCount = 0, replyCount = 0;
 
 for (const e of POSTERS) {
   const { older, recent } = COMMENTS_FOR(e);
   for (const topic of [...recent, ...older]) {
-    konuSayisi++;
-    const zaman = zamaniCoz(topic.zaman).toISOString();
-    yorumSql += `with topic as (
+    topicCount++;
+    const when = parseWhen(topic.when).toISOString();
+    commentSql += `with topic as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
-  select id, ${q(topic.kim)}, ${q(topic.body)}, ${q(topic.zaman)}, ${q(zaman)}::timestamptz
+  select id, ${q(topic.who)}, ${q(topic.body)}, ${q(topic.when)}, ${q(when)}::timestamptz
   from public.events where slug = ${q(e.slug)}
   returning id, event_id
 )
 `;
-    if (topic.cevaplar && topic.cevaplar.length) {
-      const rows = topic.cevaplar.map((c) => {
-        cevapSayisi++;
-        return `  select topic.event_id, topic.id, ${q(c.kim)}, ${q(c.body)}, ${q(c.zaman)}, ${q(zamaniCoz(c.zaman).toISOString())}::timestamptz from topic`;
+    if (topic.replies && topic.replies.length) {
+      const rows = topic.replies.map((c) => {
+        replyCount++;
+        return `  select topic.event_id, topic.id, ${q(c.who)}, ${q(c.body)}, ${q(c.when)}, ${q(parseWhen(c.when).toISOString())}::timestamptz from topic`;
       }).join("\n  union all\n");
-      yorumSql += `insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
+      commentSql += `insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
 ${rows};
 
 `;
     } else {
-      yorumSql += `select 1 from topic;\n\n`;
+      commentSql += `select 1 from topic;\n\n`;
     }
   }
 }
 
-await writeFile(new URL("../sql/05_seed_comments.sql", import.meta.url), yorumSql);
+await writeFile(new URL("../sql/05_seed_comments.sql", import.meta.url), commentSql);
 
-console.log(`etkinlik      : ${POSTERS.length}`);
-console.log(`  tarihi var    : ${tarihli}  (${tahminli} tanesi yil cikarimi — admin'de dogrulanacak)`);
-console.log(`  mekani eslesti: ${mekanli} / ${POSTERS.length}`);
-console.log(`yorum         : ${konuSayisi} topic, ${cevapSayisi} reply`);
-console.log(`mekan         : ${VENUES.length}`);
-console.log(`kind           : ${turler.length}, city: ${cities.length}`);
+console.log(`events        : ${POSTERS.length}`);
+console.log(`  with a date : ${dated}  (${estimatedCount} of them a guessed year - to confirm in admin)`);
+console.log(`  venue found : ${venued} / ${POSTERS.length}`);
+console.log(`comments      : ${topicCount} topics, ${replyCount} replies`);
+console.log(`venues        : ${VENUES.length}`);
+console.log(`kinds         : ${kinds.length}, cities: ${cities.length}`);

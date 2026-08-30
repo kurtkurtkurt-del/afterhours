@@ -6,7 +6,7 @@
    sayfasi artik yalnizca giris.  */
 
 (function () {
-  const AYAR = window.AH_CONFIG || {};
+  const CONFIG = window.AH_CONFIG || {};
   const outside = document.getElementById("fr-out");
   const inside = document.getElementById("fr-in");
 
@@ -19,7 +19,7 @@
   const arkDurum = document.getElementById("friend-status");
   const arkListe = document.getElementById("friend-list");
   const tutListe = document.getElementById("kept-list");
-  const nrBolum = document.querySelector(".nr-section");
+  const nrSection = document.querySelector(".nr-section");
 
   const CEVAP = {
     sent: "request sent.",
@@ -36,7 +36,7 @@
     if (signedIn) { loadHandle(); loadFriends(); loadKept(); }
   }
 
-  /* --- kullanici adi --- */
+  /* --- the handle --- */
 
   function loadHandle() {
     AH.myProfile().then((p) => { if (p && p.handle) handleField.value = p.handle; });
@@ -58,7 +58,7 @@
       });
   });
 
-  /* --- arkadaslar --- */
+  /* --- the friends --- */
 
   function loadFriends() {
     AH.friends().then((list) => {
@@ -82,12 +82,12 @@
         status.className = "friend-status-label";
         status.textContent =
           a.status === "accepted" ? "friends"
-          : a.yon === "gelen" ? "wants to be friends" : "waiting";
+          : a.direction === "incoming" ? "wants to be friends" : "waiting";
 
         row.appendChild(name);
         row.appendChild(status);
 
-        if (a.status === "pending" && a.yon === "gelen") {
+        if (a.status === "pending" && a.direction === "incoming") {
           const kabul = document.createElement("button");
           kabul.className = "friend-action";
           kabul.type = "button";
@@ -165,19 +165,19 @@
     });
   }
 
-  /* --- nachtradar'dan gelenler --- */
+  /* --- the people from nachtradar --- */
 
-  /* Liste girmemis birine "burada tanidiklarin var" demek icin var;
-     girmis biri kendi arkadaslarini goruyor, o zaman kayboluyor. */
+  /* The list is there to tell someone signed out "there are people you
+     know here"; once signed in you see your own friends and it goes. */
   function showFamiliarFaces(signedIn) {
-    if (nrBolum) nrBolum.hidden = signedIn;
+    if (nrSection) nrSection.hidden = signedIn;
   }
 
-  /* Icerik herkese ayni, cunku simdilik sabit bir list.
-     Isimler; fotograf ya da badge yok. */
+  /* The content is the same for everyone, because for now it is a fixed
+     list. Names only; no photograph, no badge. */
   function drawNachtradar() {
     const box = document.getElementById("nr");
-    const aciklama = document.getElementById("nr-about");
+    const about = document.getElementById("nr-about");
     const veri = window.NACHTRADAR;
     if (!box || !veri) return;
 
@@ -186,14 +186,14 @@
       ...veri.pending.map((k) => ({ ...k, crew: false })),
     ];
 
-    aciklama.textContent = "hundreds of people are already on the app.";
+    about.textContent = "hundreds of people are already on the app.";
 
     box.textContent = "";
     hepsi.forEach((k) => {
       const card = document.createElement("div");
       card.className = "nr-person" + (k.crew ? " crew" : "");
 
-      /* Fotograf yok: bas harf. Hesabin kendi isareti kadar. */
+      /* No photograph: an initial. As much as an account is its own mark. */
       const im = document.createElement("span");
       im.className = "nr-img";
       im.textContent = (k.name || "?").trim()[0].toUpperCase();
@@ -219,13 +219,13 @@
 
   drawNachtradar();
 
-  /* Jeton yerelde duruyor: karari ilk boyamadan once verebiliyoruz,
-     boylece girisliye list bir an gorunup kaybolmuyor. */
+  /* The token is held locally, so the decision can be made before the
+     first paint: a signed-in visitor never sees the list flash by. */
   showFamiliarFaces(Boolean(window.AH && AH.signedIn && AH.signedIn()));
 
-  /* --- acilis --- */
+  /* --- start --- */
 
-  if (!(AYAR.url && AYAR.anonKey)) {
+  if (!(CONFIG.url && CONFIG.anonKey)) {
     outside.hidden = false;
     outside.querySelector(".page-note").textContent =
       "this opens when the backend does.";

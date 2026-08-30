@@ -1,4 +1,4 @@
--- afterhours — kisi profilleri
+-- afterhours — people profiles
 -- In 01 a profile was only "who you are + are you an admin". The real
 -- profile, the one that appears after signing up, is defined here.
 --
@@ -16,7 +16,8 @@
 alter table public.profiles
   add column if not exists bio          text,
   add column if not exists city_id      uuid references public.cities on delete set null,
-  -- Kayit bitmis sayilmiyor: hesap acilir, handle secilince biter.
+  -- Registration is not finished yet: the account opens, and choosing a
+  -- handle is what finishes it.
   add column if not exists onboarded_at timestamptz,
   add column if not exists last_seen_at timestamptz;
 
@@ -34,7 +35,7 @@ alter table public.profiles
 
 create index if not exists profiles_city_idx on public.profiles (city_id);
 
--- ------------------------------------------------------- kisiye ozel ayarlar
+-- ------------------------------------------------------ per-person settings
 
 create table if not exists public.profile_settings (
   user_id         uuid primary key references public.profiles on delete cascade,
@@ -54,7 +55,7 @@ create table if not exists public.profile_settings (
 
 alter table public.profile_settings enable row level security;
 
--- Sadece kendin. Yonetici de dahil kimse baskasininkini goremez.
+-- Yours alone. Nobody, admin included, can read another person row.
 drop policy if exists settings_read_own on public.profile_settings;
 create policy settings_read_own on public.profile_settings for select
   using (user_id = auth.uid());
@@ -72,7 +73,7 @@ create trigger settings_touch
   before update on public.profile_settings
   for each row execute function public.touch_updated_at();
 
--- --------------------------------------------- kayit: profil kendiliginden
+-- ------------------------------- signing up: the profile appears by itself
 
 -- This replaces the trigger from 01. Two differences:
 --   · the settings row is opened too (without it nobody sees their settings)
@@ -127,11 +128,11 @@ select p.id from public.profiles p
 left join public.profile_settings s on s.user_id = p.id
 where s.user_id is null;
 
--- ----------------------------------------------------- handle musait mi
+-- ------------------------------------------------ is the handle available
 
 -- The register form asks on every keystroke. The returned values are not
 -- shown as they are; the page writes its own sentence.
---   ok · bos · bicim · dolu · senin
+--   ok · empty · format · taken · yours
 create or replace function public.handle_status(p_handle text)
 returns text
 language sql
@@ -150,7 +151,7 @@ as $$
   end;
 $$;
 
--- ------------------------------------------------ kaydi tamamlayan adim
+-- ------------------------------------------ the step that finishes signup
 
 -- The one thing that must happen after the account opens: a handle. The
 -- rest is optional. It all goes in one request so no profile is left half done.
@@ -240,10 +241,10 @@ as $$
   where p.id = auth.uid();
 $$;
 
--- ------------------------------------------------------------ gizlilik
+-- ------------------------------------------------------------- privacy
 
 -- In 02 the profile table was "everyone reads": somebody without an
--- istekle butun uye listesini indirebiliyordu. Artik tabloyu dogrudan
+-- an account could pull down the whole member list in one request. The
 -- read directly are your own, your confirmed friends, and anyone with a
 -- request pending between you. Everything a stranger sees goes through
 -- the functions below; each hands back only the field it owes.
@@ -298,7 +299,7 @@ as $$
 $$;
 
 -- The name under a comment. comments_public no longer touches the profile
--- dokunmuyor: girissiz okuyucu da yazarin adini gorebilmeli.
+-- table any more: a signed-out reader should still see who wrote it.
 create or replace function public.author_name(p_author uuid, p_fallback text)
 returns text
 language sql
@@ -326,10 +327,10 @@ as $$
 $$;
 
 
--- ------------------------------------------------- baskasinin profili
+-- --------------------------------------------- the profile of another
 
 -- The card a stranger sees. Even the NUMBER of things you kept is only
--- arkadaslara ve ayar izin veriyorsa gorunuyor.
+-- to friends, and only when the setting allows it.
 drop function if exists public.profile_card(text);
 create or replace function public.profile_card(p_handle text)
 returns table (
@@ -365,10 +366,10 @@ as $$
     and public.card_visible(p.id);
 $$;
 
--- ------------------------------------------------------------- goruldu
+-- ---------------------------------------------------------------- seen
 
 -- For the "already on the app" list in friends&more. A person stamps
--- satirini damgaliyor; baskasininkine dokunamaz (RLS).
+-- stamps their own row only; no other row is reachable (RLS).
 create or replace function public.seen()
 returns void
 language sql
@@ -377,7 +378,7 @@ as $$
   update public.profiles set last_seen_at = now() where id = auth.uid();
 $$;
 
--- ------------------------------------- sakladiklarin: ayara saygi duyan kural
+-- ------------------------------- what you kept: a rule that obeys the setting
 
 -- The rule in 02 said "a confirmed friend sees the RIGHT swipes". A
 -- setting was added: say private and a friend cannot see them either. We
@@ -393,7 +394,7 @@ create policy swipes_read on public.swipes for select
 
 -- ------------------------------ two older definitions the rule broke
 
--- comments_public profil tablosuna join ediyordu; kural kapaninca
+-- comments_public used to join the profile table; once that rule closed,
 -- table; a signed-out reader was getting an empty author. A definer
 -- function hands back the name and the view never reaches for profiles.
 create or replace view public.comments_public
@@ -411,8 +412,8 @@ from public.comments c
 where not c.is_hidden;
 
 -- friend_request looked identity up by handle; that lookup goes through
--- geciyor. Fonksiyonun kendisi definer DEGIL: arkadaslik satirini yine
--- cagiranin haklariyla yaziyor.
+-- a definer helper. The function itself is NOT definer: it still writes
+-- the friendship row with the rights of whoever called it.
 create or replace function public.friend_request(p_handle text)
 returns text
 language plpgsql
@@ -443,13 +444,14 @@ begin
 end;
 $$;
 
--- ---------------------------------------------------------- hesabi silme
+-- ------------------------------------------------- deleting the account
 
 -- The last button on the settings page. Deleting really deletes: the
 -- account, profile, settings, swipes and friendships all cascade away.
 --
--- Yorumlar ISTISNA. Iki sebep: (1) comments.author_id "on delete set
--- null" ve author_name bos olamaz — dokunmadan silersek kisit patlar;
+-- Comments are the EXCEPTION, for two reasons: (1) comments.author_id is
+-- "on delete set
+-- null" and author_name cannot be empty - deleting without touching it
 -- (2) deleting a topic would take the replies of OTHER PEOPLE with it.
 -- So the text stays and the name goes: the comment becomes "someone".
 -- The settings page says so before you press it.
@@ -472,7 +474,7 @@ begin
 end;
 $$;
 
--- ------------------------------------------------------------- izinler
+-- ----------------------------------------------------------- privileges
 
 -- Supabase does not grant on a new table by itself; by hand, as in 02.
 grant select, insert, update on public.profile_settings to authenticated;

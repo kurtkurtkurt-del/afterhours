@@ -93,19 +93,19 @@ config.js          Supabase URL + publishable key (ikisi de herkese açık)
    ↓
 data.js          canlı mı yerel mi karar verir
    ├── canlı  →  Supabase REST → satırları sitenin biçimine çevirir
-   └── yerel  →  data-yedek ile events-data.js
+   └── yerel  →  data-fallback ile events-data.js
    ↓
 window.POSTERS   36 etkinlik: { slug, tur, baslik, meta, metin, poster }
    ↓
-data-sonra       sayfanın kendi betikleri ANCAK veri geldikten sonra yüklenir
+data-after       sayfanın kendi betikleri ANCAK veri geldikten sonra yüklenir
 ```
 
 Sayfalardaki kalıp:
 
 ```html
 <script src="../data.js?v=101"
-        data-yedek="../events-data.js?v=101"
-        data-sonra="explore.js?v=101, filters.js?v=101"></script>
+        data-fallback="../events-data.js?v=101"
+        data-after="explore.js?v=101, filters.js?v=101"></script>
 ```
 
 Ortak `AH` nesnesi: `AH.durum` (`canli` / `yerel`), `AH.istek()`, `AH.hataMetni()`,

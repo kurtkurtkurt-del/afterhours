@@ -1,4 +1,4 @@
-/* afterhours — ayar sayfasi.
+/* afterhours — the settings page.
    Butun is veritabanindaki fonksiyonlarda: profile profile_me()’den
    okunuyor, profile alanlari profile_setup() ile tek istekte yaziliyor,
    ucu de anahtar olan ayarlar dogrudan profile_settings’e yaziliyor
@@ -22,7 +22,7 @@
   const cityBox = el("set-city");
   const status = el("set-status");
 
-  let profile = null;      /* profile_me()’den gelen row */
+  let profile = null;      /* the row from profile_me() */
   let city = null;       /* chosen city slug’i */
 
   const call = (fn, body) =>
@@ -35,7 +35,7 @@
     box.className = "account-status" + (kind ? " " + kind : "");
   }
 
-  /* --- iki secenekli rows: chosen olan koyu, digeri soluk --- */
+  /* --- two-option rows: the chosen one dark, the other faint --- */
 
   function buildChoice(box, value, yaz) {
     [...box.querySelectorAll("button")].forEach((d) => {
@@ -102,14 +102,14 @@
 
         mark();
 
-        /* Secili city listenin ortasindaysa box onu gostersin */
+        /* If the chosen city is mid-list, scroll the box to it */
         const open = cityBox.querySelector("button.selected");
         if (open) cityBox.scrollTop = Math.max(0, open.offsetTop - 40);
       })
       .catch(() => { cityBox.textContent = ""; });
   }
 
-  /* --- handle: yazarken musait mi diye sor --- */
+  /* --- the handle: ask whether it is free as you type --- */
 
   const SOZ = {
     ok: "free.", yours: "this one is yours.", taken: "someone already has that one.",
@@ -129,7 +129,7 @@
     }, 300);
   });
 
-  /* --- profilin dort alani: tek istekte --- */
+  /* --- the four profile fields: in one request --- */
 
   const YANIT = {
     ok: "saved.", taken: "someone already has that handle.",
@@ -153,14 +153,14 @@
       .catch((h) => say(status, AH.errorText(h, "couldn't save that."), "hata"));
   };
 
-  /* --- cikis --- */
+  /* --- signing out --- */
 
   el("set-signout").onclick = function () {
     AH.dropSession();
     location.href = "../login/index.html";
   };
 
-  /* --- hesabi silme: iki adim, ikincisinde kendi adini yazmak var --- */
+  /* --- deleting the account: two steps, the second asks you to type your own handle --- */
 
   const deleteStatus = el("set-delete-status");
   el("set-delete").onclick = function () {
@@ -183,7 +183,7 @@
       .catch((h) => say(deleteStatus, AH.errorText(h, "couldn't delete the account."), "hata"));
   };
 
-  /* --- acilis --- */
+  /* --- start --- */
 
   function fill(p) {
     profile = p;

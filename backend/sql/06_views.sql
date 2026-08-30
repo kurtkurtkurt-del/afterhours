@@ -1,8 +1,8 @@
--- afterhours — on yuzun kullandigi gorunumler ve fonksiyonlar
+-- afterhours — the views and functions the front end uses
 -- Keep the query logic here; the JS in the browser should only call it.
 
--- security_invoker: gorunum, cagirani kimse onun haklariyla calisir.
--- Bu olmazsa gorunum RLS’i atlar ve yayinda olmayan etkinlikler sizar.
+-- security_invoker: the view runs with the rights of whoever calls it.
+-- Without it the view steps around RLS and unpublished events leak.
 
 -- ------------------------------------------------- event (readable form)
 
@@ -85,7 +85,7 @@ $$;
 
 -- -------------------------------------------------------- writing a swipe
 
--- Tarayici etkinligin id’sini bilmek zorunda kalmasin: slug yeter.
+-- The browser should not need to know the event id: the slug is enough.
 -- This is what lets the swipes collected while signed out be carried to
 -- the account before the deck loads. user_id still comes from the session.
 create or replace function public.swipe_set(p_slug text, p_direction text)
@@ -111,7 +111,7 @@ as $$
   select count(*)::int from silinen;
 $$;
 
--- --------------------------------------------------- biriktirilenler
+-- --------------------------------------------------------- kept cards
 
 -- "kept tonight": the ones you threw right, newest first.
 -- It returns flat rows, not a composite type: composite types serialise
@@ -130,9 +130,9 @@ as $$
   order by s.created_at desc;
 $$;
 
--- ------------------------------------------- arkadaslarin begendikleri
+-- ------------------------------------------------- what your friends kept
 
--- "friends liked swipes" modunun kaynagi. Sadece onayli arkadaslar,
+-- What feeds the "friends liked swipes" mode. Confirmed friends only,
 -- right swipes only; RLS already forces it, this makes the intent visible.
 -- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.friends_kept(int);
@@ -167,10 +167,11 @@ as $$
   limit p_limit;
 $$;
 
--- --------------------------------------------------------- sayaclar
+-- --------------------------------------------------------- counters
 
--- Ana sayfadaki "36 nights in Munich this week · 7 Rave · ..." satirinin
--- comes from. Today it is counted in JS; the same number can come from here.
+-- Where the line on the landing page — "36 nights in Munich this week ·
+-- 7 Rave · ..." — comes from. Today it is counted in JS; the same number
+-- can come from here.
 -- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.event_counts(text);
 create or replace function public.event_counts(p_city text default 'munchen')
@@ -185,8 +186,8 @@ as $$
   order by e.type_sort_order;
 $$;
 
--- Bir etkinligi kac kisi biriktirmis. Kimin biriktirdigi gorunmez —
--- security definer sadece SAYIYI disari veriyor.
+-- How many people have kept an event. Who kept it stays hidden:
+-- security definer hands out the COUNT and nothing else.
 -- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.keep_counts();
 create or replace function public.keep_counts()
@@ -202,7 +203,7 @@ as $$
   group by s.event_id;
 $$;
 
--- Filtredeki sehir listesi: her sehir ve kac gecesi var.
+-- The city list for the filter: every city and how many nights it has.
 -- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.city_counts();
 create or replace function public.city_counts()

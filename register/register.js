@@ -1,4 +1,4 @@
-/* afterhours — kayit.
+/* afterhours — registration.
    Iki adim, tek page:
      1 · e-posta + password  → hesap acilir (auth), profile tetikleyiciyle gelir
      2 · handle (+ city) → profile_setup() kaydi BITMIS sayar
@@ -29,7 +29,7 @@
 
   let city = null;
 
-  /* ---------------- 1 · hesap ---------------- */
+  /* ---------------- 1 · the account ---------------- */
 
   el("reg-form").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -55,7 +55,7 @@
       .then((oturum) => {
         el("reg-create").disabled = false;
         if (!oturum) {
-          /* Dogrulama open: jeton gelmedi, once postasina bakacak */
+          /* Confirmation is on: no token came, they check their email first */
           el("reg-mail-note").textContent =
             "We sent a link to " + email + ". Open it and you land back here to " +
             "pick a handle — the account is note finished until you do.";
@@ -178,7 +178,7 @@
     el("reg-handle").focus();
   }
 
-  /* ---------------- acilis ---------------- */
+  /* ---------------- start ---------------- */
 
   function render() {
     const AYAR = window.AH_CONFIG || {};
@@ -191,7 +191,7 @@
 
     if (!(AH.signedIn && AH.signedIn())) { show("reg-1"); return; }
 
-    /* Girisli: kaydi bitmis mi? Bitmemisse dogrudan ikinci adim. */
+    /* Signed in: is the registration finished? If not, go straight to step two. */
     call("profile_me")
       .then((r) => {
         const p = Array.isArray(r) ? r[0] : r;

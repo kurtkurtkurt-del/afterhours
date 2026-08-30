@@ -1,5 +1,5 @@
--- SADECE TEST ICIN. Supabase'de bunlar zaten var; uretime gitmez.
--- PGlite duz Postgres oldugu icin auth semasini elle kuruyoruz.
+-- FOR THE TESTS ONLY. Supabase already has these; this never ships.
+-- PGlite is plain Postgres, so we build the auth schema by hand.
 
 create schema if not exists auth;
 
@@ -10,8 +10,8 @@ create table if not exists auth.users (
   created_at          timestamptz not null default now()
 );
 
--- Supabase'in kendi tanimiyla birebir. Dikkat: nullif CAST'TAN ONCE
--- geliyor -- claims bos string oldugunda ''::json patliyor.
+-- Identical to the definition Supabase uses. Note: nullif comes BEFORE
+-- the cast; with claims an empty string, .::json blows up.
 create or replace function auth.uid()
 returns uuid
 language sql
@@ -34,6 +34,6 @@ begin
 end
 $$;
 
--- Supabase'de bu izinler hazir geliyor; taklidini burada kuruyoruz.
+-- On Supabase these grants come ready made; here we imitate them.
 grant usage on schema auth to anon, authenticated;
 grant execute on function auth.uid() to anon, authenticated;

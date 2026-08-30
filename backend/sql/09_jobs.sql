@@ -1,12 +1,12 @@
--- afterhours — arka planda calisan isler
--- pg_cron uzantisi Supabase’de Database → Extensions altindan acilir.
--- Uzanti yoksa fonksiyonlar yine calisir, sadece kendiliginden
--- tetiklenmez; elle de cagirabilirsin.
+-- afterhours — the jobs that run in the background
+-- The pg_cron extension is switched on under Database → Extensions.
+-- Without the extension the functions still work, they just do not run
+-- on their own; you can also call them by hand.
 
--- Gecmis etkinlikleri listeden dusur.
--- ONEMLI: sadece tarihi DOGRULANMIS olanlara dokunuyor. Yil cikarimiyla
--- doldurulmus 24 tarih yanlis olabilir; onlari kendiliginden gizlemek
--- gercek bir etkinligi siteden silmek olurdu.
+-- Drop past events off the list.
+-- IMPORTANT: it only touches events with a CONFIRMED date. Dropping one
+-- of the 24 inferred dates could be wrong, and hiding those on their own
+-- whose year was merely guessed would take a real event off the site.
 create or replace function public.hide_past_events()
 returns integer
 language sql
@@ -19,14 +19,14 @@ as $$
     where is_published
       and starts_at is not null
       and not starts_at_estimated
-      and starts_at < now() - interval '12 hours'   -- gece bitsin, sonra dussun
+      and starts_at < now() - interval '12 hours'   -- let the night end first
     returning 1
   )
   select count(*)::int from kapatilan;
 $$;
 
--- Bakim ozeti: neyin ilgi bekledigini tek satirda soyler.
--- Yonetim panelindeki uyarilarin veritabanindaki karsiligi.
+-- The maintenance summary: one row saying what wants attention.
+-- The database side of the warnings in the admin panel.
 create or replace function public.health()
 returns table (
   events            bigint,
@@ -59,7 +59,7 @@ $$;
 
 grant execute on function public.health() to anon, authenticated;
 
--- Zamanlama. pg_cron acik degilse bu blok sessizce atlanir.
+-- The schedule. If pg_cron is off, this block is skipped quietly.
 do $$
 begin
   if exists (select 1 from pg_extension where extname = 'pg_cron') then
@@ -67,7 +67,7 @@ begin
       where exists (select 1 from cron.job where jobname = 'afterhours-gecmisi-dusur');
     perform cron.schedule(
       'afterhours-gecmisi-dusur',
-      '30 5 * * *',                       -- her gun 05:30 UTC, gece bittikten sonra
+      '30 5 * * *',                       -- 05:30 UTC daily, after the night is over
       $job$ select public.hide_past_events(); $job$
     );
   end if;

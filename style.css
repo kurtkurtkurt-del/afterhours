@@ -90,7 +90,7 @@ body {
   text-underline-offset: 6px;
 }
 
-/* ---------- Ekranlar ---------- */
+/* ---------- The screens ---------- */
 
 /* Two full screens stacked; moving between them is a vertical scroll */
 .screens {
@@ -108,7 +108,7 @@ body {
   height: 100dvh;   /* iOS Safari: the height actually visible, minus the address bar */
 }
 
-/* ---------- Sag alt foto ---------- */
+/* ---------- The photo at the bottom right ---------- */
 
 /* The whole photograph, uncropped. 1600x893 -> 780px wide (scaled down, stays sharp) */
 .photo {
@@ -2022,7 +2022,7 @@ html:has(body.explore) {
 .map-label-park { fill: rgba(0, 0, 0, 0.22) !important; }
 .map-label-station { font-size: 8.5px !important; }
 
-/* --- geceler --- */
+/* --- the nights --- */
 
 .map-dot { cursor: pointer; }
 .map-dot-target { fill: transparent; }
@@ -2372,7 +2372,7 @@ body.friends .page {
   .help-text { font-size: 15px; }
 }
 
-/* ---------- explore: telefon ---------- */
+/* ---------- explore: on a phone ---------- */
 
 @media (max-width: 720px) {
 
@@ -2633,7 +2633,7 @@ body:has(> .foot:not(.thin)) > .foot { margin-top: auto; }
 .cs-facts dt { opacity: 0.38; white-space: nowrap; }
 .cs-facts dd { text-align: right; }
 
-/* --- orta sutun --- */
+/* --- the middle column --- */
 
 /* A grid item should not try to be as wide as its own content */
 .cs-field { min-width: 0; }

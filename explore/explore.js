@@ -1,4 +1,4 @@
-/* afterhours — explore: saga/sola kaydirilan deck.
+/* afterhours — explore: the deck you swipe left and right.
    Ustteki card surukleniyor; esigi asinca ucup gidiyor ve altindaki
    one geliyor. Sagi begenmek, solu gecmek. */
 
@@ -7,16 +7,16 @@
   if (!deck) return;
 
   const ESIK = 120;              // px
-  const GORUNEN = 3;             // top uste duran card sayisi
+  const VISIBLE = 3;             // how many cards sit on the pile
   let index = 0;
 
-  /* Destenin kaynagi. Soldaki tuslar bunu degistiriyor:
+  /* Where the deck comes from. The buttons on the left change it:
      global deck   → POSTERS (filtreli normal deck)
      friends liked → arkadaslarin saga attiklari
      i feel lucky  → ayni cards, karisik sirayla           */
   let CARDS = POSTERS;
 
-  /* --- Saga swipedSlugs burada birikir --- */
+  /* --- what you swipe right piles up here --- */
 
   const kept = [];
   const box = document.querySelector(".ex-box");
@@ -33,7 +33,7 @@
     badge.hidden = false;
     if (box) box.classList.add("taken");
     badge.classList.remove("up");
-    void badge.offsetWidth;          /* animasyonu bastan baslat */
+    void badge.offsetWidth;          /* restart the animation */
     badge.classList.add("up");
     if (boxList && !boxList.hidden) kutuyuYaz();
   }
@@ -48,7 +48,7 @@
       boxBody.appendChild(p);
       return;
     }
-    /* En son kept ustte */
+    /* The most recently kept on top */
     kept.slice().reverse().forEach((e) => {
       const no = String(e.poster || CARDS.indexOf(e) + 1).padStart(2, "0");
       const yol = e.posterPath || "../posters/" + no + ".svg";
@@ -85,7 +85,7 @@
       e.stopPropagation();
       openBox(boxList.hidden);
     });
-    /* Disariya tiklayinca ve Esc ile kapansin */
+    /* Close it on a click outside, and on Esc */
     document.addEventListener("click", (e) => {
       if (!boxList || boxList.hidden) return;
       if (!box.contains(e.target)) openBox(false);
@@ -95,14 +95,15 @@
     });
   }
 
-  /* Karti verilen yone fly ve desteden dus. Hem surukleme
+  /* Fly the card off in the given direction and drop it from the deck.
+     Used both by dragging
      hem klavye bunu kullanir. */
   function fly(card, direction) {
     if (card.dataset.uctu) return;
     card.dataset.uctu = "1";
     const atilan = CARDS[Number(card.dataset.no)];
     if (direction > 0) tut(atilan);
-    /* Her iki direction de kaydediliyor: sag biriktirmek, sol "bir daha gosterme".
+    /* Both directions are recorded: right means keep, left means do not show again.
        Girisliyken veritabanina, degilse tarayiciya. */
     if (window.AH && AH.saveSwipe) AH.saveSwipe(atilan, direction);
     card.classList.remove("held");
@@ -110,26 +111,26 @@
     card.style.transform = "translateX(" + (direction * 120) + "vw) rotate(" + (direction * 22) + "deg)";
     card.style.opacity = "0";
 
-    /* transitionend tek basina yetmiyor: kesintiye ugrayan gecislerde
+    /* transitionend on its own is not enough: an interrupted transition
        hic gelmiyor, bu yuzden zamanlayici yedegi var. */
     let silindi = false;
-    const sil = () => {
+    const remove = () => {
       if (silindi) return;
       silindi = true;
       card.remove();
       fill();
     };
-    card.addEventListener("transitionend", sil, { once: true });
-    setTimeout(sil, 420);
+    card.addEventListener("transitionend", remove, { once: true });
+    setTimeout(remove, 420);
   }
 
-  /* Sol/sag ok tuslari da karti atar. Filtredeyken oklar
+  /* The left/right arrow keys swipe too. Inside the filter the arrows
      secenek degistirmeli, o yuzden form ogelerinde karisma. */
   document.addEventListener("keydown", (e) => {
     if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
     if (e.metaKey || e.ctrlKey || e.altKey) return;
-    const hedef = e.target;
-    if (hedef && hedef.closest && hedef.closest("select, input, textarea, [contenteditable]")) return;
+    const target = e.target;
+    if (target && target.closest && target.closest("select, input, textarea, [contenteditable]")) return;
     const top = deck.lastElementChild;
     if (!top) return;
     e.preventDefault();
@@ -137,7 +138,7 @@
   });
 
   function makeCard(i) {
-    /* Poster numarasi kaydin kendisinden geliyor; veritabani eksik bir
+    /* The poster number comes from the record itself; should the database
        list dondurdugunde posterler kaymasin diye siraya guvenmiyoruz. */
     const no = String(CARDS[i].poster || i + 1).padStart(2, "0");
     const yol = CARDS[i].posterPath || "../posters/" + no + ".svg";
@@ -145,12 +146,12 @@
     card.className = "ex-card";
     card.dataset.no = String(i);
 
-    const gorsel = document.createElement("object");
-    gorsel.type = "image/svg+xml";
-    gorsel.data = yol;
-    card.appendChild(gorsel);
+    const image = document.createElement("object");
+    image.type = "image/svg+xml";
+    image.data = yol;
+    card.appendChild(image);
 
-    /* Posterin altindaki info seridi: tur + mekan/tarih.
+    /* The info strip under the poster: kind + venue/date.
        Veri events-data.js'ten, poster ile hic celismesin diye. */
     const veri = CARDS[i];
     const info = document.createElement("div");
@@ -182,7 +183,7 @@
       card.style.transform = "translateX(" + dx + "px) rotate(" + (dx / 24) + "deg)";
     });
 
-    function birak() {
+    function release() {
       if (startX === null) return;
       startX = null;
       card.classList.remove("held");
@@ -195,16 +196,16 @@
       }
     }
 
-    card.addEventListener("pointerup", birak);
-    card.addEventListener("pointercancel", birak);
+    card.addEventListener("pointerup", release);
+    card.addEventListener("pointercancel", release);
     return card;
   }
 
-  /* --- Ustteki kartin yorumlari --- */
+  /* --- the comments on the top card --- */
 
   const commentArea = document.getElementById("ex-comment-list");
 
-  /* Basliga basinca yorum alani acilip kapanir; kapaninca
+  /* Pressing the heading opens and closes the comment area; on close
      sutun daralir ve deck ortaya dogru genisler. */
   const yorumDugme = document.getElementById("ex-comment-button");
   const area = document.querySelector(".ex-field");
@@ -259,7 +260,7 @@
     return g;
   }
 
-  /* Yorum yazma kutusu. Backend kapaliyken hic gorunmez (yazacak yer
+  /* The box you write a comment in. With the backend off it never shows
      yok); acikken ama girissizken tek satirlik bir davet. */
   function writeArea(event) {
     const wrap = document.createElement("div");
@@ -309,7 +310,7 @@
     if (!commentArea) return;
     const top = deck.lastElementChild;
 
-    /* Yorumlar canliyken veritabanindan, degilse comment-pools.js'ten gelir;
+    /* Live, the comments come from the database; otherwise from
        ikisi de ayni bicimi dondurur, ekran ayni kalir. */
     const source = (event) =>
       window.AH && AH.comments
@@ -341,7 +342,7 @@
       });
     };
 
-    /* Kart degisince text da degissin: once soner, sonra yenisi gelir */
+    /* When the card changes so does the text: it fades, then the new one arrives */
     if (commentArea.children.length) {
       commentArea.classList.add("faded");
       setTimeout(doldurYorum, 200);
@@ -350,9 +351,9 @@
     }
   }
 
-  /* Desteyi hep GORUNEN card full tut: en arkaya ekleyip
+  /* Keep VISIBLE cards on the deck at all times: add at the back and
      en ustteki (son cocuk) surukleniyor. */
-  /* Daha once atilmis cards bir daha gelmesin. Girisliyken bu eleme
+  /* A card already swiped must not come back. When signed in, that filtering
      zaten veritabaninda yapiliyor (deck fonksiyonu), burasi girissiz
      gezenler icin. */
   const atlanacak = new Set(
@@ -360,7 +361,7 @@
   );
 
   function fill() {
-    while (deck.children.length < GORUNEN && index < CARDS.length) {
+    while (deck.children.length < VISIBLE && index < CARDS.length) {
       if (atlanacak.has(CARDS[index].slug)) { index++; continue; }
       deck.insertBefore(makeCard(index), deck.firstChild);
       index++;
@@ -370,21 +371,21 @@
     yorumlariBas();
   }
 
-  /* Arkadakiler biraz kucuk ve asagida dursun */
+  /* The ones behind sit a little smaller and a little lower */
   function stack() {
     const n = deck.children.length;
     [...deck.children].forEach((k, i) => {
-      const derinlik = n - 1 - i;          // 0 = en ustteki
+      const depth = n - 1 - i;          // 0 = the top one
       k.style.zIndex = String(i);
-      if (derinlik > 0) {
-        k.style.transform = "translateY(" + derinlik * 14 + "px) scale(" + (1 - derinlik * 0.045) + ")";
+      if (depth > 0) {
+        k.style.transform = "translateY(" + depth * 14 + "px) scale(" + (1 - depth * 0.045) + ")";
       }
     });
   }
 
-  /* --- Soldaki tuslar: desteyi yeniden dagit --- */
+  /* --- the buttons on the left: deal the deck again --- */
 
-  /* Ayni cards, bastan. Kartlar soldan ucup gelir ve
+  /* The same cards, from the start. They fly in from the left and
      top uste dusler; en ustteki en son iner. */
   const BOS_MESAJ = {
     "global deck": "that's everyone for tonight.",
@@ -392,7 +393,7 @@
     "i feel lucky": "nowhere left to be sent tonight.",
   };
 
-  /* Ustteki filtre: sehir ve tur. Canliyken sorgu veritabaninda
+  /* The filter at the top: city and kind. Live, the query runs in the
      yapiliyor, yerel modda elimizdeki listeden suzuluyor. */
   function applyFilter(list) {
     const f = (window.AH && AH.filter) || {};
@@ -401,7 +402,7 @@
     return list.filter((e) => (e.kind || "").toLowerCase() === name);
   }
 
-  /* Modun card kaynagini getir. Hepsi ayni bicimde kayit dondurur. */
+  /* Fetch the card source for the mode. They all return the same shape. */
   function sourceFor(mode) {
     if (mode === "friends liked swipes") {
       return window.AH && AH.friendsKept
@@ -409,7 +410,7 @@
         : Promise.resolve([]);
     }
     if (mode === "i feel lucky") {
-      /* Rastgele bir sehre atla, sonra oranin destesini karistir.
+      /* Jump to a random city, then shuffle that city's deck.
          Filtre kendini de guncelliyor, boylece nereye dustugun
          ustteki secimlerden okunuyor. */
       const picked = window.AH && AH.randomCity ? AH.randomCity() : null;
@@ -440,7 +441,7 @@
 
     return sourceFor(mode || "global deck").then((list) => {
       CARDS = list.length ? list : [];
-      /* Bos deck: neden bos oldugunu soyle */
+      /* An empty deck: say why it is empty */
       if (!list.length && done && (mode || "global deck") === "global deck") {
         const f = (window.AH && AH.filter) || {};
         done.textContent = f.city
@@ -454,7 +455,7 @@
   function startDealing() {
     while (deck.firstChild) deck.removeChild(deck.firstChild);
     index = 0;
-    fill();                       /* son hallerini stack() kurar */
+    fill();                       /* stack() puts them in their final places */
 
     const cards = [...deck.children];
     cards.forEach((k) => {
@@ -465,18 +466,18 @@
       k.style.opacity = "0";
     });
 
-    void deck.offsetWidth;         /* baslangic hali yazilsin */
+    void deck.offsetWidth;         /* let the starting state be written */
 
     cards.forEach((k, i) => {
-      const gecikme = i * 95;       /* DOM'da son cocuk en ustteki card */
+      const delay = i * 95;       /* in the DOM the last child is the top card */
       k.style.transition =
-        "transform 0.52s cubic-bezier(0.2, 0.75, 0.25, 1) " + gecikme + "ms, " +
-        "opacity 0.3s ease " + gecikme + "ms";
+        "transform 0.52s cubic-bezier(0.2, 0.75, 0.25, 1) " + delay + "ms, " +
+        "opacity 0.3s ease " + delay + "ms";
       k.style.transform = k.dataset.sonHal;
       k.style.opacity = "1";
     });
 
-    /* Gecis yarida kalirsa cards gorunmez kalmasin: sure
+    /* If a transition is cut short the cards must not stay invisible:
        dolunca son hali elle yaz. Elde kept karta dokunma. */
     setTimeout(() => {
       cards.forEach((k) => {
@@ -488,7 +489,7 @@
     }, 95 * cards.length + 600);
   }
 
-  /* Filtre degisince deck yeniden dagitilsin */
+  /* When the filter changes, deal the deck again */
   window.AH = window.AH || {};
   AH.redeal = (mode) => redeal(mode || currentMode());
 
@@ -508,20 +509,20 @@
     });
   });
 
-  /* --- desteyi sifirla --- */
+  /* --- reset the deck --- */
 
   const resetButton = document.getElementById("ex-reset");
   if (resetButton) {
     resetButton.addEventListener("click", () => {
       if (!window.AH || !AH.resetSwipes) return;
-      /* Geri alinamaz: kept de gidiyor */
+      /* Cannot be undone: the kept ones go too */
       if (!window.confirm(
         "reset the deck? everything you kept and everything you passed on is forgotten."
       )) return;
 
       resetButton.disabled = true;
       AH.resetSwipes().then(() => {
-        /* Ekrandaki izleri de sil */
+        /* Clear the traces on screen too */
         kept.length = 0;
         if (badge) { badge.textContent = "0"; badge.hidden = true; }
         if (box) box.classList.remove("taken");
@@ -533,7 +534,7 @@
     });
   }
 
-  /* Onceki oturumdan kept geri gelsin (badge ve list). */
+  /* Bring back what was kept in an earlier session (badge and list). */
   if (window.AH && AH.kept) {
     AH.kept().then((list) => {
       list.slice().reverse().forEach(tut);

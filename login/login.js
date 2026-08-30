@@ -1,4 +1,4 @@
-/* afterhours — giris sayfasi.
+/* afterhours — the sign-in page.
    Tek is: e-posta al, baglanti istet, durumu say.
    Sifre alani yok; olmayacak da.  */
 
@@ -20,7 +20,8 @@
     note.className = "page-note" + (kind ? " " + kind : "");
   }
 
-  /* Backend henuz baglanmadiysa durust ol: form calismaz, sebebi yazilir. */
+  /* If the backend is not connected yet, be honest: the form does not work
+     and it says why. */
   if (!open) {
     form.hidden = true;
     say("sign-in opens when the backend does. nothing to sign into yet.", "waiting");
@@ -41,7 +42,8 @@
   AH.sessionReady.then(render);
   AH.onSessionChange(render);
 
-  /* Sifreyle giris. Sifresiz baglanti yolu duruyor (AH.requestLink) ama
+  /* Signing in with a password. The password-less link route is still
+     there (AH.requestLink) but
      su an kullanilmiyor: Supabase'in dahili e-posta gondericisi saatte
      birkac postayla sinirli ve giris denemeleri ona takiliyordu. */
   form.addEventListener("submit", (e) => {
@@ -76,7 +78,7 @@
     AH.signOut().then(() => { render(); say("signed out.", "ok"); });
   });
 
-  /* Kullanici adi ve arkadaslar bir zamanlar buradaydi; friends&more
+  /* The handle and the friends used to live here; the friends&more
      sayfasina tasindilar (friends/friends.js). Kopyalari burada kaldi ve
      olmayan ogeleri arayip dosyayi ortasinda durduruyorlardi: row
      173'te TypeError, sonrasi hic calismiyordu. Silindi. */

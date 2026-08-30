@@ -1,12 +1,12 @@
-/* afterhours — YEREL GELISTIRME SUNUCUSU. Supabase DEGIL.
-   Supabase'in kullandigimiz uclarini (PostgREST + GoTrue'nun kucuk one
-   alt kumesi) PGlite'in ustunde taklit eder. Amaci tek: proje acilmadan
-   once canli yolu gercekten calistirip test edebilmek.
+/* afterhours — A LOCAL DEVELOPMENT SERVER. NOT Supabase.
+   It imitates the endpoints we use (a small subset of PostgREST and
+   GoTrue) on top of PGlite. It exists for one reason: to run and test the
+   live path for real before the project is opened.
 
-   Kimlik dogrulama SAHTEDIR: jeton = user id'si. Uretimde
-   kullanilmaz, internete acilmaz.
+   Authentication is FAKE: the token is the user id. Never used in
+   production, never exposed to the internet.
 
-     node tools/yerel-server.mjs          → http://localhost:4350
+     node tools/local-server.mjs          → http://localhost:4350
 */
 
 import { PGlite } from "@electric-sql/pglite";
@@ -25,23 +25,23 @@ for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02
                  "../sql/13_feedback.sql"]) {
   await db.exec(await read(d));
 }
-console.log("veritabani hazir (bellekte)");
+console.log("database ready (in memory)");
 
-/* Depo taklidi: dosyalar bellekte, server kapaninca gider.
-   Gercek Supabase Storage'in yerine sadece akisi denemek icin. */
-const depo = new Map();
+/* An imitation store: the files live in memory and go when the server
+   stops. It stands in for Supabase Storage only to exercise the flow. */
+const store = new Map();
 
-/* --- istegi kimin yaptigi ------------------------------------------- */
+/* --- who made the request ------------------------------------------- */
 
-/* Gercek Supabase'de bu one JWT. Burada duz user id'si; sahte
-   oldugu belli olsun diye "yerel-" onekiyle geliyor. */
-function jetondanKullanici(bas) {
+/* On real Supabase this is a JWT. Here it is the plain user id, carrying
+   a "local-" prefix so it is obvious that it is fake. */
+function userFromToken(bas) {
   const yetki = bas.authorization || "";
-  const m = yetki.match(/^Bearer\s+yerel-(.+)$/);
+  const m = yetki.match(/^Bearer\s+local-(.+)$/);
   return m ? m[1] : null;
 }
 
-async function rolAyarla(user) {
+async function setRole(user) {
   if (user) {
     await db.exec(`set role authenticated;
                    set request.jwt.claims = '{"sub":"${user}"}';`);
@@ -49,32 +49,32 @@ async function rolAyarla(user) {
     await db.exec(`set role anon; set request.jwt.claims = '';`);
   }
 }
-const rolBirak = () => db.exec(`reset role; set request.jwt.claims = '';`);
+const dropRole = () => db.exec(`reset role; set request.jwt.claims = '';`);
 
-/* Fonksiyon argumanlarinin adi → tipi. Bir kere okunup saklaniyor. */
-const tipBellegi = new Map();
-async function argumanTipleri(fn) {
-  if (tipBellegi.has(fn)) return tipBellegi.get(fn);
+/* Function argument name → type. Read once and kept. */
+const typeCache = new Map();
+async function argumentTypes(fn) {
+  if (typeCache.has(fn)) return typeCache.get(fn);
   const r = await db.query(
-    `select p.proargnames as adlar,
-            array(select t::regtype::text from unnest(p.proargtypes) as t) as tipler
+    `select p.proargnames as names,
+            array(select t::regtype::text from unnest(p.proargtypes) as t) as types
      from pg_proc p join pg_namespace n on n.oid = p.pronamespace
      where n.nspname = 'public' and p.proname = $1 limit 1`, [fn]);
   const esle = {};
   if (r.rows.length && r.rows[0].adlar) {
-    const adlar = r.rows[0].adlar, tipler = r.rows[0].tipler;
-    adlar.forEach((a, i) => { if (a && tipler[i]) esle[a] = tipler[i]; });
+    const names = r.rows[0].adlar, types = r.rows[0].tipler;
+    names.forEach((a, i) => { if (a && types[i]) esle[a] = types[i]; });
   }
-  tipBellegi.set(fn, esle);
+  typeCache.set(fn, esle);
   return esle;
 }
 
-/* --- PostgREST suzgeclerinin kucuk one alt kumesi -------------------- */
+/* --- a small subset of the PostgREST filters ------------------------- */
 
 /* ?event_id=eq.<uuid>&sort_order=created_at.desc&limit=60 */
-function suzgecCevir(arama, sayac) {
-  const kosullar = [];
-  const parametreler = [];
+function translateFilters(arama, counter) {
+  const conditions = [];
+  const params = [];
   let sort_order = "";
   let limit = "";
 
@@ -89,19 +89,19 @@ function suzgecCevir(arama, sayac) {
 
     const [islem, ...kalan] = value.split(".");
     const v = kalan.join(".");
-    const kolon = field.replace(/[^a-z_0-9]/gi, "");
-    const isaret = { eq: "=", neq: "<>", gt: ">", lt: "<", gte: ">=", lte: "<=" }[islem];
-    if (!isaret) continue;
-    parametreler.push(v);
-    kosullar.push(`${kolon} ${isaret} $${sayac.n++}`);
+    const column = field.replace(/[^a-z_0-9]/gi, "");
+    const operator = { eq: "=", neq: "<>", gt: ">", lt: "<", gte: ">=", lte: "<=" }[islem];
+    if (!operator) continue;
+    params.push(v);
+    conditions.push(`${column} ${operator} $${counter.n++}`);
   }
   return {
-    nerede: kosullar.length ? " where " + kosullar.join(" and ") : "",
-    sort_order, limit, parametreler,
+    where: conditions.length ? " where " + conditions.join(" and ") : "",
+    sort_order, limit, params,
   };
 }
 
-const govdeOku = (req) =>
+const readBody = (req) =>
   new Promise((tamam) => {
     let v = "";
     req.on("data", (p) => (v += p));
@@ -119,50 +119,50 @@ const server = createServer(async (req, reply) => {
   reply.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE, OPTIONS");
   if (req.method === "OPTIONS") { reply.writeHead(204); return reply.end(); }
 
-  const send = (code, veri) => {
+  const send = (code, data) => {
     reply.writeHead(code, { "Content-Type": "application/json" });
-    reply.end(veri === undefined ? "" : JSON.stringify(veri));
+    reply.end(data === undefined ? "" : JSON.stringify(data));
   };
 
-  const user = jetondanKullanici(req.headers);
-  const body = ["POST", "PATCH", "PUT"].includes(req.method) ? await govdeOku(req) : null;
+  const user = userFromToken(req.headers);
+  const body = ["POST", "PATCH", "PUT"].includes(req.method) ? await readBody(req) : null;
 
   try {
-    /* ---------- GoTrue taklidi ---------- */
+    /* ---------- imitating GoTrue ---------- */
 
     if (path === "/auth/v1/otp") {
       const email = (body && body.email || "").toLowerCase();
-      if (!email) return send(400, { msg: "email gerekli" });
-      await rolBirak();
+      if (!email) return send(400, { msg: "email required" });
+      await dropRole();
       let k = await db.query(`select id from auth.users where email = $1`, [email]);
       if (!k.rows.length) {
         k = await db.query(`insert into auth.users (email) values ($1) returning id`, [email]);
       }
       const id = k.rows[0].id;
 
-      /* Gelistirme kolayligi: ilk user yonetici olsun. Gercek
+      /* A convenience for development: make the first user an admin. In a real
          kurulumda bu, SQL editorunde tek satirlik one guncelleme. */
       const yon = await db.query(`select count(*)::int as n from public.profiles where is_admin`);
       if (yon.rows[0].n === 0) {
         await db.query(`update public.profiles set is_admin = true where id = $1`, [id]);
-        console.log("  ★ " + email + " yonetici yapildi (sadece yerelde)");
+        console.log("  ★ " + email + " made an admin (locally only)");
       }
 
-      const donus = (body.options && body.options.email_redirect_to) || "http://localhost:4340/";
-      console.log("\n  ✉  giris baglantisi (" + email + "):");
-      console.log("     " + donus + "#access_token=yerel-" + id +
-                  "&refresh_token=yerel-" + id + "&expires_in=3600\n");
+      const back = (body.options && body.options.email_redirect_to) || "http://localhost:4340/";
+      console.log("\n  ✉  sign-in link (" + email + "):");
+      console.log("     " + back + "#access_token=local-" + id +
+                  "&refresh_token=local-" + id + "&expires_in=3600\n");
       return send(200, {});
     }
 
-    /* Hesap acma. Gercek Supabase burada e-posta dogrulamasi isteyebilir;
-       taklit server istemiyor, hemen jeton veriyor. */
+    /* Opening an account. Real Supabase may ask for email confirmation
+       here; the imitation does not, it hands back a token at once. */
     if (path === "/auth/v1/signup") {
       const email = ((body && body.email) || "").toLowerCase();
-      if (!email) return send(400, { msg: "email gerekli" });
-      await rolBirak();
-      const varMi = await db.query(`select id from auth.users where email = $1`, [email]);
-      if (varMi.rows.length) {
+      if (!email) return send(400, { msg: "email required" });
+      await dropRole();
+      const exists = await db.query(`select id from auth.users where email = $1`, [email]);
+      if (exists.rows.length) {
         return send(400, { msg: "User already registered" });
       }
       const extra = (body && body.data) || {};
@@ -174,12 +174,12 @@ const server = createServer(async (req, reply) => {
       const yon = await db.query(`select count(*)::int as n from public.profiles where is_admin`);
       if (yon.rows[0].n === 0) {
         await db.query(`update public.profiles set is_admin = true where id = $1`, [id]);
-        console.log("  ★ " + email + " yonetici yapildi (sadece yerelde)");
+        console.log("  ★ " + email + " made an admin (locally only)");
       }
 
-      console.log("  ✚ hesap acildi: " + email);
+      console.log("  ✚ account opened: " + email);
       return send(200, {
-        access_token: "yerel-" + id, refresh_token: "yerel-" + id, expires_in: 3600,
+        access_token: "local-" + id, refresh_token: "local-" + id, expires_in: 3600,
         user: { id, email: email },
       });
     }
@@ -187,140 +187,141 @@ const server = createServer(async (req, reply) => {
     if (path === "/auth/v1/token") {
       const kind = url.searchParams.get("grant_type") || "refresh_token";
 
-      /* Sifreyle giris. DIKKAT: burada sifre KONTROL EDILMIYOR — bu one
+      /* Signing in with a password. NOTE: the password is NOT CHECKED here
          taklit server, sadece akisi denemek icin. Gercek Supabase sifreyi
          dogrular. Internete acilmaz. */
       if (kind === "password") {
         const email = ((body && body.email) || "").toLowerCase();
-        if (!email) return send(400, { msg: "email gerekli" });
-        await rolBirak();
+        if (!email) return send(400, { msg: "email required" });
+        await dropRole();
         let k = await db.query(`select id from auth.users where email = $1`, [email]);
         if (!k.rows.length) {
           return send(400, { error_description: "Invalid login credentials" });
         }
         const id = k.rows[0].id;
-        console.log("  🔑 sifreyle giris: " + email + " (sifre dogrulanmadi — taklit)");
+        console.log("  🔑 password sign-in: " + email + " (password not checked - imitation)");
         return send(200, {
-          access_token: "yerel-" + id, refresh_token: "yerel-" + id, expires_in: 3600,
+          access_token: "local-" + id, refresh_token: "local-" + id, expires_in: 3600,
           user: { id, email: email },
         });
       }
 
-      const id = (body && body.refresh_token || "").replace(/^yerel-/, "");
+      const id = (body && body.refresh_token || "").replace(/^local-/, "");
       if (!id) return send(400, { msg: "refresh_token gerekli" });
-      return send(200, { access_token: "yerel-" + id, refresh_token: "yerel-" + id, expires_in: 3600 });
+      return send(200, { access_token: "local-" + id, refresh_token: "local-" + id, expires_in: 3600 });
     }
 
     if (path === "/auth/v1/user") {
-      if (!user) return send(401, { msg: "jeton yok" });
-      await rolBirak();
+      if (!user) return send(401, { msg: "no token" });
+      await dropRole();
       const r = await db.query(`select id, email from auth.users where id = $1`, [user]);
       return send(200, r.rows[0] || null);
     }
 
     if (path === "/auth/v1/logout") return send(204);
 
-    /* ---------- Storage taklidi (bellekte) ---------- */
+    /* ---------- imitating Storage (in memory) ---------- */
 
     if (path.startsWith("/storage/v1/object/")) {
-      /* Yukleme: /storage/v1/object/posters/<name> */
+      /* Upload: /storage/v1/object/posters/<name> */
       if (req.method === "POST" || req.method === "PUT") {
-        if (!user) return send(401, { message: "jeton yok" });
-        await rolAyarla(user);
+        if (!user) return send(401, { message: "no token" });
+        await setRole(user);
         const y = await db.query(`select public.is_admin() as y`);
-        await rolBirak();
-        if (!y.rows[0].y) return send(403, { message: "sadece yonetici yukleyebilir" });
+        await dropRole();
+        if (!y.rows[0].y) return send(403, { message: "only an admin may upload" });
 
         const name = path.split("/").slice(5).join("/");
-        const parcalar = [];
-        for await (const p of req) parcalar.push(p);
-        depo.set(name, Buffer.concat(parcalar));
-        console.log("  ⇧ poster yuklendi: " + name + " (" + depo.get(name).length + " bayt)");
+        const parts = [];
+        for await (const p of req) parts.push(p);
+        store.set(name, Buffer.concat(parts));
+        console.log("  ⇧ poster yuklendi: " + name + " (" + store.get(name).length + " bayt)");
         return send(200, { Key: "posters/" + name });
       }
 
-      /* Okuma: /storage/v1/object/public/posters/<name> */
+      /* Read: /storage/v1/object/public/posters/<name> */
       if (req.method === "GET") {
         const name = path.replace("/storage/v1/object/public/posters/", "");
-        const veri = depo.get(name);
-        if (!veri) return send(404, { message: "yok" });
+        const data = store.get(name);
+        if (!data) return send(404, { message: "not found" });
         reply.writeHead(200, { "Content-Type": "image/svg+xml" });
-        return reply.end(veri);
+        return reply.end(data);
       }
     }
 
-    /* ---------- PostgREST taklidi ---------- */
+    /* ---------- imitating PostgREST ---------- */
 
     if (path.startsWith("/rest/v1/")) {
       const name = path.slice("/rest/v1/".length);
-      await rolAyarla(user);
+      await setRole(user);
 
-      /* fonksiyon cagrisi */
+      /* a function call */
       if (name.startsWith("rpc/")) {
         const fn = name.slice(4).replace(/[^a-z_0-9]/gi, "");
-        const anahtarlar = Object.keys(body || {});
-        const tipler = await argumanTipleri(fn);
-        /* Tip verilmezse Postgres argumani "unknown" sayip fonksiyonu
-           bulamiyor; imzayi katalogdan okuyup her argumani donusturuyoruz. */
-        const args = anahtarlar
-          .map((k, i) => `${k} => $${i + 1}::${tipler[k] || "text"}`)
+        const keys = Object.keys(body || {});
+        const types = await argumentTypes(fn);
+        /* With no type given, Postgres treats the argument as "unknown"
+           and cannot find the function; we read the signature from the
+           catalogue and cast every argument. */
+        const args = keys
+          .map((k, i) => `${k} => $${i + 1}::${types[k] || "text"}`)
           .join(", ");
         const r = await db.query(`select * from public.${fn}(${args})`,
-                                 anahtarlar.map((k) => body[k]));
-        /* PostgREST skaler donen fonksiyonlarda ciplak degeri dondurur,
-           satir sarmalamaz. Ayni davranis. */
-        const skaler = r.rows.length === 1 && r.fields && r.fields.length === 1
+                                 keys.map((k) => body[k]));
+        /* For a function returning a scalar, PostgREST hands back the bare
+           value rather than wrapping it in a row. Same behaviour here. */
+        const scalar = r.rows.length === 1 && r.fields && r.fields.length === 1
           && r.fields[0].name === fn;
-        return send(200, skaler ? r.rows[0][fn] : r.rows);
+        return send(200, scalar ? r.rows[0][fn] : r.rows);
       }
 
-      const tablo = name.split("?")[0].replace(/[^a-z_0-9]/gi, "");
-      const sayac = { n: 1 };
-      const { nerede, sort_order, limit, parametreler } = suzgecCevir(url.searchParams, sayac);
+      const table = name.split("?")[0].replace(/[^a-z_0-9]/gi, "");
+      const counter = { n: 1 };
+      const { where, sort_order, limit, params } = translateFilters(url.searchParams, counter);
       const tercih = String(req.headers.prefer || "");
 
       if (req.method === "GET") {
         const r = await db.query(
-          `select * from public.${tablo}${nerede}${sort_order}${limit}`, parametreler);
+          `select * from public.${table}${where}${sort_order}${limit}`, params);
         return send(200, r.rows);
       }
 
       if (req.method === "POST") {
         const rows = Array.isArray(body) ? body : [body];
         if (!rows.length || !rows[0]) return send(400, { message: "body empty" });
-        const kolonlar = Object.keys(rows[0]);
+        const columns = Object.keys(rows[0]);
         const degerler = [];
-        const parcalar = rows.map((s) => {
-          const yer = kolonlar.map((k) => { degerler.push(s[k]); return `$${degerler.length}`; });
+        const parts = rows.map((s) => {
+          const yer = columns.map((k) => { degerler.push(s[k]); return `$${degerler.length}`; });
           return `(${yer.join(", ")})`;
         });
-        const catisma = /merge-duplicates/.test(tercih)
+        const conflict = /merge-duplicates/.test(tercih)
           ? ` on conflict (user_id, event_id) do update set direction = excluded.direction,
               created_at = now()`
           : "";
-        const donus = /return=minimal/.test(tercih) ? "" : " returning *";
+        const back = /return=minimal/.test(tercih) ? "" : " returning *";
         const r = await db.query(
-          `insert into public.${tablo} (${kolonlar.join(", ")}) values ${parcalar.join(", ")}${catisma}${donus}`,
+          `insert into public.${table} (${columns.join(", ")}) values ${parts.join(", ")}${conflict}${back}`,
           degerler);
-        return donus ? send(201, r.rows) : send(201);
+        return back ? send(201, r.rows) : send(201);
       }
 
       if (req.method === "PATCH") {
-        /* SET degerleri $1..$n, suzgecler ondan SONRA baslamali.
-           Suzgecler yukarida $1'den numaralandigi icin burada
-           kaydirilmis one sayacla yeniden hesapliyoruz. */
-        const kolonlar = Object.keys(body || {});
-        const kaydirilmis = { n: kolonlar.length + 1 };
-        const f = suzgecCevir(url.searchParams, kaydirilmis);
-        const atamalar = kolonlar.map((k, i) => `${k} = $${i + 1}`);
+        /* The SET values take $1..$n, so the filters have to start AFTER
+           them. Since the filters are numbered from $1 above, we work them
+           out again here with a shifted counter. */
+        const columns = Object.keys(body || {});
+        const shifted = { n: columns.length + 1 };
+        const f = translateFilters(url.searchParams, shifted);
+        const assignments = columns.map((k, i) => `${k} = $${i + 1}`);
         const r = await db.query(
-          `update public.${tablo} set ${atamalar.join(", ")}${f.nerede} returning *`,
+          `update public.${table} set ${assignments.join(", ")}${f.nerede} returning *`,
           [...kolonlar.map((k) => body[k]), ...f.parametreler]);
         return send(200, r.rows);
       }
 
       if (req.method === "DELETE") {
-        await db.query(`delete from public.${tablo}${nerede}`, parametreler);
+        await db.query(`delete from public.${table}${where}`, params);
         return send(204);
       }
     }
@@ -330,13 +331,13 @@ const server = createServer(async (req, reply) => {
     console.error("  ✗ " + req.method + " " + path + " → " + e.message);
     send(400, { message: e.message });
   } finally {
-    await rolBirak().catch(() => {});
+    await dropRole().catch(() => {});
   }
 });
 
 server.listen(PORT, () => {
-  console.log(`\nYEREL taklit server: http://localhost:${PORT}`);
-  console.log("Bu Supabase DEGIL; sadece gelistirme icin.\n");
-  console.log("config.js icin:");
+  console.log(`\nLOCAL imitation server: http://localhost:${PORT}`);
+  console.log("This is NOT Supabase; for development only.\n");
+  console.log("for config.js:");
   console.log(`  url: "http://localhost:${PORT}", anonKey: "local"\n`);
 });

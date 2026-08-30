@@ -4,7 +4,7 @@
    then loads the page's own scripts. That is why app.js and explore.js
    never had to change when the backend arrived.
 
-   <script src="data.js" data-yedek="events-data.js" data-sonra="app.js"></script>
+   <script src="data.js" data-fallback="events-data.js" data-after="app.js"></script>
 
    With the backend off (config.js empty) the site behaves exactly as it
    did before there was one. That is deliberate: nothing may break while
@@ -25,8 +25,8 @@
   const enabled = Boolean(CONFIG.url && CONFIG.anonKey);
 
   const thisScript = document.currentScript;
-  const fallbackPath = thisScript.dataset.yedek;
-  const thenLoad = (thisScript.dataset.sonra || "")
+  const fallbackPath = thisScript.dataset.fallback;
+  const thenLoad = (thisScript.dataset.after || "")
     .split(",").map((s) => s.trim()).filter(Boolean);
 
   const AH = (window.AH = window.AH || {});

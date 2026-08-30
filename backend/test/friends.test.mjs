@@ -10,7 +10,7 @@ const check = (k, name, extra = "") => {
   else { failed++; console.log("  ✗ " + name + (extra ? "  → " + extra : "")); }
 };
 process.on("unhandledRejection", (e) => {
-  console.log("\nHATA: " + ((e && e.message) || e));
+  console.log("\nERROR: " + ((e && e.message) || e));
   if (e && e.where) console.log("  " + e.where);
   process.exit(1);
 });
@@ -37,55 +37,55 @@ await db.exec(`
 const asUser = (id) => db.exec(`set role authenticated; set request.jwt.claims = '{"sub":"${id}"}';`);
 const asService = () => db.exec(`reset role; set request.jwt.claims = '';`);
 
-console.log("\n— user adi —");
+console.log("\n— the handle —");
 {
   await asService();
-  let hata = null;
+  let err = null;
   try { await db.exec(`update public.profiles set handle = 'Büyük Harf' where id = '${A}'`); }
-  catch (e) { hata = e.message; }
-  check(Boolean(hata), "bicime uymayan user adi reddediliyor");
+  catch (e) { err = e.message; }
+  check(Boolean(err), "a handle that does not fit the shape is refused");
 
   await db.exec(`update public.profiles set handle = 'ahmet' where id = '${A}'`);
   let ikinci = null;
   try { await db.exec(`update public.profiles set handle = 'ahmet' where id = '${B}'`); }
   catch (e) { ikinci = e.message; }
-  check(Boolean(ikinci), "ayni user adi iki kiside olamiyor");
+  check(Boolean(ikinci), "two people cannot hold the same handle");
   await db.exec(`update public.profiles set handle = 'lena' where id = '${B}'`);
 }
 
-console.log("\n— req gonderme —");
+console.log("\n— sending a request —");
 {
   await asUser(A);
   const r = await db.query(`select public.friend_request('lena') as s`);
-  check(r.rows[0].s === "sent", "req gonderildi");
+  check(r.rows[0].s === "sent", "the request was sent");
 
-  const y = await db.query(`select public.friend_request('yokboyle') as s`);
-  check(y.rows[0].s === "notfound", "olmayan kullaniciya req gitmiyor");
+  const y = await db.query(`select public.friend_request('nosuchperson') as s`);
+  check(y.rows[0].s === "notfound", "no request goes to a handle that does not exist");
 
   const k = await db.query(`select public.friend_request('ahmet') as s`);
-  check(k.rows[0].s === "yourself", "kendine req gonderilemiyor");
+  check(k.rows[0].s === "yourself", "you cannot send a request to yourself");
 
-  const l = await db.query(`select other_id, status, yon from public.friends_list()`);
-  check(l.rows.length === 1 && l.rows[0].status === "pending" && l.rows[0].yon === "giden",
-    "kendi listesinde giden one req gorunuyor");
+  const l = await db.query(`select other_id, status, direction from public.friends_list()`);
+  check(l.rows.length === 1 && l.rows[0].status === "pending" && l.rows[0].direction === "outgoing",
+    "an outgoing request shows in your own list");
 }
 
-console.log("\n— karsi taraf —");
+console.log("\n— the other side —");
 {
   await asUser(B);
-  const l = await db.query(`select handle, status, yon from public.friends_list()`);
-  check(l.rows.length === 1 && l.rows[0].yon === "gelen" && l.rows[0].handle === "ahmet",
-    "req karsi tarafta 'gelen' olarak gorunuyor");
+  const l = await db.query(`select handle, status, direction from public.friends_list()`);
+  check(l.rows.length === 1 && l.rows[0].direction === "incoming" && l.rows[0].handle === "ahmet",
+    "on the other side it shows as incoming");
 
-  /* Ayni kisiye ters yonde req gondermek = kabul etmek */
+  /* Sending a request back the other way to the same person = accepting */
   const r = await db.query(`select public.friend_request('ahmet') as s`);
-  check(r.rows[0].s === "accepted", "ters yonde req, bekleyeni kabul ediyor");
+  check(r.rows[0].s === "accepted", "a request in the other direction accepts the pending one");
 
   const s = await db.query(`select status from public.friends_list()`);
-  check(s.rows[0].status === "accepted", "arkadaslik onaylandi");
+  check(s.rows[0].status === "accepted", "the friendship is confirmed");
 }
 
-console.log("\n— arkadasin begendikleri —");
+console.log("\n— what a friend kept —");
 {
   await asUser(B);
   await db.exec(`select public.swipe_set('asap-rocky', 'right')`);
@@ -94,15 +94,15 @@ console.log("\n— arkadasin begendikleri —");
   await asUser(A);
   const r = await db.query(`select slug, friend from public.friends_kept()`);
   check(r.rows.length === 1 && r.rows[0].slug === "asap-rocky",
-    "arkadasin saga attigi geliyor, sola attigi gelmiyor");
-  check(r.rows[0].friend === "lena", "kimin begendigi yaziyor");
+    "what a friend swiped right comes through, what they swiped left does not");
+  check(r.rows[0].friend === "lena", "it says who kept it");
 
   await asUser(C);
   const y = await db.query(`select count(*)::int as n from public.friends_kept()`);
-  check(y.rows[0].n === 0, "arkadas olmayan hicbir sey gormuyor");
+  check(y.rows[0].n === 0, "a non-friend sees nothing");
 }
 
-console.log("\n— arkadasligi bitirme —");
+console.log("\n— ending the friendship —");
 {
   await asUser(C);
   const y = await db.query(`select public.friend_remove('${A}') as s`);
@@ -110,13 +110,13 @@ console.log("\n— arkadasligi bitirme —");
 
   await asUser(A);
   const r = await db.query(`select public.friend_remove('${B}') as s`);
-  check(r.rows[0].s === true, "arkadaslik bitirildi");
+  check(r.rows[0].s === true, "the friendship was ended");
 
   const l = await db.query(`select count(*)::int as n from public.friends_list()`);
   check(l.rows[0].n === 0, "list bosaldi");
 
   const k = await db.query(`select count(*)::int as n from public.friends_kept()`);
-  check(k.rows[0].n === 0, "eski arkadasin begendikleri artik gorunmuyor");
+  check(k.rows[0].n === 0, "what a former friend kept is no longer visible");
 }
 
 console.log(`\n${passed} passed, ${failed} failed\n`);

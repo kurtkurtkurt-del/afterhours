@@ -1,41 +1,43 @@
-/* afterhours — 9 SQL dosyasini iki yapistirilabilir parcaya birlestirir.
-   Supabase panelinde tek tek file acmak yerine iki kere Run yeter.
+/* afterhours — joins the 9 SQL files into two pasteable parts.
+   Instead of opening each file in the Supabase panel one by one, two
+   presses of Run are enough.
 
-     node tools/setup-build.mjs                                        */
+     node tools/build-setup.mjs                                        */
 
 import { readFile, writeFile } from "node:fs/promises";
 
 const read = (d) => readFile(new URL("../sql/" + d, import.meta.url), "utf8");
 
 const structure = [
-  ["01_schema.sql", "TABLOLAR"],
-  ["02_rls.sql", "KURALLAR — guvenlik burada"],
-  ["03_seed_catalog.sql", "SEHIR, TUR, MEKAN"],
-  ["04_seed_events.sql", "36 ETKINLIK"],
-  ["06_views.sql", "DESTE, BIRIKTIRILENLER, SAYACLAR"],
-  ["07_friends.sql", "ARKADASLIK"],
-  ["08_storage.sql", "POSTER DEPOSU"],
-  ["09_jobs.sql", "ARKA PLAN ISLERI"],
-  ["11_world.sql", "DUNYA — 54 SEHIR, 106 GECE"],
-  ["12_profiles.sql", "KISI PROFILLERI"],
-  ["13_feedback.sql", "GERI BILDIRIM"],
+  ["01_schema.sql", "TABLES"],
+  ["02_rls.sql", "RULES — the security lives here"],
+  ["03_seed_catalog.sql", "CITIES, TYPES, VENUES"],
+  ["04_seed_events.sql", "36 EVENTS"],
+  ["06_views.sql", "DECK, KEPT, COUNTERS"],
+  ["07_friends.sql", "FRIENDSHIP"],
+  ["08_storage.sql", "POSTER STORE"],
+  ["09_jobs.sql", "BACKGROUND JOBS"],
+  ["11_world.sql", "THE WORLD — 54 CITIES, 106 NIGHTS"],
+  ["12_profiles.sql", "PEOPLE PROFILES"],
+  ["13_feedback.sql", "FEEDBACK"],
 ];
 
-/* Dosyanin basina gorunur one surum damgasi koyuyoruz: editorde hangi
-   kopyanin durdugu tek bakista anlasilsin. Pano guvenilmez cikti. */
+/* A visible version stamp goes at the top of the file, so one look at the
+   editor tells you which copy is sitting there. The clipboard has proven
+   unreliable. */
 const stamp = new Date().toISOString().slice(0, 16).replace("T", " ");
 
 let one = `-- ============================================================
---  afterhours — KURULUM 1 / 2 : YAPI
---  SURUM: ${stamp}   ← editorde bu satir gorunuyorsa dogru kopya
+--  afterhours — SETUP 1 / 2 : THE STRUCTURE
+--  VERSION: ${stamp}   ← if the editor shows this line, it is the right copy
 --
---  Supabase panelinde: SQL Editor → New query → bu dosyanin
---  TAMAMINI yapistir → Run.
+--  In the Supabase panel: SQL Editor → New query → paste this file
+--  IN FULL → Run.
 --
---  Bittiginde "Success. No rows returned" gormelisin.
---  Sonra setup-2-comments.sql dosyasini ayni sekilde calistir.
+--  When it finishes you should see "Success. No rows returned".
+--  Then run setup-2-comments.sql the same way.
 --
---  URETILMIS DOSYA — source: backend/tools/setup-build.mjs
+--  GENERATED FILE — source: backend/tools/build-setup.mjs
 -- ============================================================
 `;
 
@@ -46,22 +48,22 @@ for (const [file, heading] of structure) {
   one += await read(file);
 }
 
-const iki = `-- ============================================================
---  afterhours — KURULUM 2 / 2 : ORNEK YORUMLAR
---  SURUM: ${stamp}
+const two = `-- ============================================================
+--  afterhours — SETUP 2 / 2 : SAMPLE COMMENTS
+--  VERSION: ${stamp}
 --
---  Once setup-1-structure.sql calistirilmis check.
---  beforehours panelindeki sample tartismalar: 180 topic, 131 reply.
---  Bunlar UYDURMA sample veridir; hic calistirmasan da site calisir,
---  yorum alani empty gorunur.
+--  Run setup-1-structure.sql first.
+--  The sample conversations in the beforehours panel: 180 topics, 131
+--  replies. This is MADE-UP sample data; the site works without it, the
+--  comment area simply looks empty.
 --
---  URETILMIS DOSYA — source: backend/tools/setup-build.mjs
+--  GENERATED FILE — source: backend/tools/build-setup.mjs
 -- ============================================================
 
 ` + await read("05_seed_comments.sql");
 
 await writeFile(new URL("../sql/setup-1-structure.sql", import.meta.url), one);
-await writeFile(new URL("../sql/setup-2-comments.sql", import.meta.url), iki);
+await writeFile(new URL("../sql/setup-2-comments.sql", import.meta.url), two);
 
-console.log("setup-1-structure.sql      " + Buffer.byteLength(one).toLocaleString() + " bayt");
-console.log("setup-2-comments.sql  " + Buffer.byteLength(iki).toLocaleString() + " bayt");
+console.log("setup-1-structure.sql  " + Buffer.byteLength(one).toLocaleString() + " bytes");
+console.log("setup-2-comments.sql   " + Buffer.byteLength(two).toLocaleString() + " bytes");

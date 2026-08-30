@@ -1,37 +1,39 @@
--- afterhours — geri bildirim
--- "give feedback → help us" sayfasinin arkasi. Tek tablo, iki kural:
--- herkes yazabilir, yalniz yonetici okuyabilir.
+-- afterhours — feedback
+-- What sits behind the "give feedback → help us" page. One table, two rules:
+-- everyone may write, only the admin may read.
 --
--- Girissiz de yazilabiliyor, cunku bozuk bir seyi bildirmek icin once
--- hesap acmak sacma. O zaman yazan kisi isterse bir iletisim satiri
--- birakiyor; birakmazsa da yazdigi okunuyor, cevabi olmuyor.
+-- You can write without signing in, because opening an account just to
+-- report something broken is absurd. Whoever writes may then leave a
+-- way to reach them; if not, what they wrote is still read, they just get
+-- no answer.
 
 create table if not exists public.feedback (
   id          uuid primary key default gen_random_uuid(),
-  -- Girisliyse kim oldugu kendiliginden yaziliyor; hesap silinirse
-  -- yazdigi kaliyor ama adi dusuyor.
+  -- If signed in, who wrote it is filled in automatically; if the account
+  -- is deleted the text stays and the name falls away.
   author_id   uuid default auth.uid() references public.profiles on delete set null,
-  -- Girissizin biraktigi e-posta ya da baska bir yol. Istege bagli.
+  -- An email or some other way back, left by a signed-out writer. Optional.
   contact     text check (contact is null or length(btrim(contact)) between 3 and 120),
   kind        text not null default 'other'
               check (kind in ('broken', 'idea', 'event', 'other')),
   body        text not null check (length(btrim(body)) between 10 and 2000),
-  -- Yonetim tarafinda "bununla ilgilenildi" isareti.
+  -- The "this has been dealt with" mark on the admin side.
   handled     boolean not null default false,
   created_at  timestamptz not null default now()
 );
 
-create index if not exists feedback_yeni_idx on public.feedback (created_at desc);
+drop index if exists public.feedback_yeni_idx;   -- the name from before the code spoke English
+create index if not exists feedback_recent_idx on public.feedback (created_at desc);
 
 alter table public.feedback enable row level security;
 
--- Herkes yazar — girisli de girissiz de. Tek sart: baskasinin adina yazma.
+-- Everyone writes, signed in or not. One condition: not in another name.
 drop policy if exists feedback_write on public.feedback;
 create policy feedback_write on public.feedback for insert
   with check (author_id is null or author_id = auth.uid());
 
--- Yalniz yonetici okur. Yazan kendi yazdigini bile geri okumuyor:
--- bu bir gelen kutusu, konusma degil.
+-- Only the admin reads. Not even the writer can read their own back:
+-- this is an inbox, not a conversation.
 drop policy if exists feedback_read on public.feedback;
 create policy feedback_read on public.feedback for select
   using (public.is_admin());
@@ -40,7 +42,7 @@ drop policy if exists feedback_handle on public.feedback;
 create policy feedback_handle on public.feedback for update
   using (public.is_admin()) with check (public.is_admin());
 
--- Yonetim panelinin okudugu liste: yazani cozulmus, yenisi ustte.
+-- The list the admin panel reads: the writer resolved, the newest on top.
 drop function if exists public.feedback_list(int);
 create or replace function public.feedback_list(p_limit int default 100)
 returns table (

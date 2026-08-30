@@ -1,27 +1,27 @@
-/* afterhours — seed verisinin dogrulugu.
-   Asil soru: veritabanina konan sey, sitenin BUGUN gosterdiginin
-   aynisi mi? Ekranda gorunen her text karsilastiriliyor. */
+/* afterhours — is the seed data right.
+   The real question: is what went into the database the same thing the
+   site shows TODAY? Every line that appears on screen is compared. */
 
 import { PGlite } from "@electric-sql/pglite";
 import { readFile } from "node:fs/promises";
 
 const read = (path) => readFile(new URL(path, import.meta.url), "utf8");
-const okuKok = (path) => readFile(new URL("../../" + path, import.meta.url), "utf8");
+const readRoot = (path) => readFile(new URL("../../" + path, import.meta.url), "utf8");
 
 let passed = 0, failed = 0;
-const check = (kosul, name, extra = "") => {
-  if (kosul) { passed++; console.log("  ✓ " + name); }
+const check = (condition, name, extra = "") => {
+  if (condition) { passed++; console.log("  ✓ " + name); }
   else { failed++; console.log("  ✗ " + name + (extra ? "  → " + extra : "")); }
 };
 
 process.on("unhandledRejection", (e) => {
-  console.log("\nHATA: " + ((e && e.message) || e));
+  console.log("\nERROR: " + ((e && e.message) || e));
   if (e && e.where) console.log("  " + e.where);
   process.exit(1);
 });
 
 const db = new PGlite();
-console.log("\n— sema + seed —");
+console.log("\n— schema + seed —");
 for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02_rls.sql",
                  "../sql/03_seed_catalog.sql", "../sql/04_seed_events.sql",
                  "../sql/05_seed_comments.sql"]) {
@@ -29,25 +29,25 @@ for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02
   console.log("  · " + d.split("/").pop());
 }
 
-/* on yuzdeki source veri */
-const { POSTERS } = new Function(await okuKok("events-data.js") + ";return { POSTERS };")();
+/* the source data from the front end */
+const { POSTERS } = new Function(await readRoot("events-data.js") + ";return { POSTERS };")();
 
-console.log("\n— sayilar —");
+console.log("\n— counts —");
 {
   const count = async (t) => (await db.query(`select count(*)::int as n from public.${t}`)).rows[0].n;
-  check(await count("events") === POSTERS.length, `${POSTERS.length} etkinlik yuklendi`);
-  check(await count("cities") === 11, "11 sehir (uc ulke)");
-  check(await count("event_types") === 6, "6 kind");
-  check(await count("venues") === 20, "20 mekan");
+  check(await count("events") === POSTERS.length, `${POSTERS.length} events loaded`);
+  check(await count("cities") === 11, "11 cities (three countries)");
+  check(await count("event_types") === 6, "6 kinds");
+  check(await count("venues") === 20, "20 venues");
 
   const k = await db.query(`select count(*) filter (where parent_id is null)::int as topic,
                                    count(*) filter (where parent_id is not null)::int as reply
                             from public.comments`);
-  check(k.rows[0].topic === 180, "180 yorum konusu", `found ${k.rows[0].topic}`);
-  check(k.rows[0].reply === 131, "131 reply", `found ${k.rows[0].reply}`);
+  check(k.rows[0].topic === 180, "180 comment topics", `found ${k.rows[0].topic}`);
+  check(k.rows[0].reply === 131, "131 replies", `found ${k.rows[0].reply}`);
 }
 
-console.log("\n— ekranda gorunen metinler birebir mi —");
+console.log("\n— do the lines on screen match exactly —");
 {
   const r = await db.query(`
     select e.slug, e.title, e.meta, e.body, e.poster_no, t.name as kind
@@ -55,25 +55,25 @@ console.log("\n— ekranda gorunen metinler birebir mi —");
     order by e.poster_no`);
 
   const different = [];
-  r.rows.forEach((satir, i) => {
+  r.rows.forEach((row, i) => {
     const source = POSTERS[i];
-    if (satir.slug !== source.slug) different.push(`${i}: slug ${satir.slug} ≠ ${source.slug}`);
-    if (satir.title !== source.title) different.push(`${source.slug}: heading`);
-    if (satir.meta !== source.meta) different.push(`${source.slug}: meta "${satir.meta}" ≠ "${source.meta}"`);
-    if (satir.body !== source.body) different.push(`${source.slug}: text`);
-    if (satir.kind !== source.kind) different.push(`${source.slug}: kind ${satir.kind} ≠ ${source.kind}`);
-    if (satir.poster_no !== i + 1) different.push(`${source.slug}: poster no`);
+    if (row.slug !== source.slug) different.push(`${i}: slug ${row.slug} ≠ ${source.slug}`);
+    if (row.title !== source.title) different.push(`${source.slug}: heading`);
+    if (row.meta !== source.meta) different.push(`${source.slug}: meta "${row.meta}" ≠ "${source.meta}"`);
+    if (row.body !== source.body) different.push(`${source.slug}: text`);
+    if (row.kind !== source.kind) different.push(`${source.slug}: kind ${row.kind} ≠ ${source.kind}`);
+    if (row.poster_no !== i + 1) different.push(`${source.slug}: poster no`);
   });
 
-  check(r.rows.length === POSTERS.length, "sort_order poster numarasiyla ayni");
-  check(different.length === 0, "36 kaydin slug/heading/meta/text/kind/poster alanlari birebir",
+  check(r.rows.length === POSTERS.length, "sort_order matches the poster number");
+  check(different.length === 0, "all 36 records match on slug/title/meta/body/kind/poster",
     different.slice(0, 3).join(" | "));
 }
 
-console.log("\n— yorumlarin sitedeki secimle ayni oldugu —");
+console.log("\n— the comments match the selection the site makes —");
 {
   const { COMMENTS_FOR } = new Function(
-    await okuKok("explore/comment-pools.js") + ";return { COMMENTS_FOR };")();
+    await readRoot("explore/comment-pools.js") + ";return { COMMENTS_FOR };")();
 
   const sample = POSTERS[0];
   const { older, recent } = COMMENTS_FOR(sample);
@@ -84,77 +84,77 @@ console.log("\n— yorumlarin sitedeki secimle ayni oldugu —");
     order by c.created_at desc`, [sample.slug]);
 
   const expected = [...recent, ...older].map((k) => k.body).sort();
-  const gelen = r.rows.map((x) => x.body).sort();
-  check(JSON.stringify(expected) === JSON.stringify(gelen),
-    `${sample.slug}: konular sitedekiyle ayni (${gelen.length} topic)`);
+  const got = r.rows.map((x) => x.body).sort();
+  check(JSON.stringify(expected) === JSON.stringify(got),
+    `${sample.slug}: the topics match the site (${got.length} topics)`);
 
   const z = await db.query(`select count(*)::int as n from public.comments where time_text is null`);
-  check(z.rows[0].n === 0, "her sample yorumun ekran zamani duruyor");
+  check(z.rows[0].n === 0, "every sample comment kept its on-screen time");
 
-  const oksuz = await db.query(`
+  const orphans = await db.query(`
     select count(*)::int as n from public.comments c
     where c.parent_id is not null
       and not exists (select 1 from public.comments p
                       where p.id = c.parent_id and p.parent_id is null)`);
-  check(oksuz.rows[0].n === 0, "her reply one konuya bagli");
+  check(orphans.rows[0].n === 0, "every reply hangs off exactly one topic");
 }
 
-console.log("— SQL editorlerinde ayristirilabilirlik —");
+console.log("— can the SQL editors parse it —");
 {
-  /* Asil tuzak buydu: Supabase panelinin ayristiricisi tirnaklari
-     sayarak ilerliyor ve YORUMLARIN icindeki kesme isaretini de sayiyor.
-     "Supabase'in" gibi tek one isaret sayimi cevirince, ileride gecen
-     "...condensed into one night..." metni KOD olarak okunuyor ve
-     "relation \"one\" does not exist" hatasi cikiyor.
-     Yorumlarda ASCII kesme isareti olmamali; tipografik ’ kullaniyoruz. */
+  /* This was the real trap: the Supabase panel parser walks along
+     counting quotes, and it counts the apostrophe inside COMMENTS too.
+     A single mark, as in "the database of Supabase", flips the count, and
+     a later "...condensed into one night..." is then read as CODE, giving
+     "relation \"one\" does not exist".
+     No ASCII apostrophe in a comment; use the typographic ’ instead. */
   for (const d of ["../sql/setup-1-structure.sql", "../sql/setup-2-comments.sql"]) {
     const text = await read(d);
 
-    const yorumlu = text.split("\n").filter((r) => {
+    const withApostrophe = text.split("\n").filter((r) => {
       const i = r.indexOf("--");
       return i >= 0 && r.slice(i).includes("'");
     });
-    check(yorumlu.length === 0,
-      d.split("/").pop() + ": yorumlarda kesme isareti yok",
-      yorumlu[0] && yorumlu[0].trim().slice(0, 60));
+    check(withApostrophe.length === 0,
+      d.split("/").pop() + ": no apostrophe in the comments",
+      withApostrophe[0] && withApostrophe[0].trim().slice(0, 60));
 
-    /* Naif ayristiriciyi taklit et: file sonunda dize icinde kalmamali */
-    let tirnakta = false;
-    for (const c of text) if (c === "'") tirnakta = !tirnakta;
-    check(!tirnakta, d.split("/").pop() + ": quote sayimi dengeli bitiyor");
+    /* Imitate the naive parser: it must not still be inside a string at the end */
+    let inString = false;
+    for (const c of text) if (c === "'") inString = !inString;
+    check(!inString, d.split("/").pop() + ": the quote count ends balanced");
   }
 }
 
-console.log("\n— iliskiler —");
+console.log("\n— the relations —");
 {
   const eksik = await db.query(`
     select count(*)::int as n from public.events
     where city_id is null or type_id is null`);
-  check(eksik.rows[0].n === 0, "her etkinligin sehri ve turu var");
+  check(eksik.rows[0].n === 0, "every event has a city and a kind");
 
-  const mekansiz = await db.query(`select count(*)::int as n from public.events where venue_id is null`);
-  check(mekansiz.rows[0].n === 8,
-    "8 etkinligin mekani empty (meta'da mekan degil semt/sehir yaziyor)", `found ${mekansiz.rows[0].n}`);
+  const noVenue = await db.query(`select count(*)::int as n from public.events where venue_id is null`);
+  check(noVenue.rows[0].n === 8,
+    "8 events have no venue (their meta names a district or a city)", `found ${noVenue.rows[0].n}`);
 
   const tahmin = await db.query(`select count(*)::int as n from public.events where starts_at_estimated`);
-  check(tahmin.rows[0].n === 24, "24 tarih 'dogrulanmadi' olarak isaretli", `found ${tahmin.rows[0].n}`);
+  check(tahmin.rows[0].n === 24, "24 dates are marked as unconfirmed", `found ${tahmin.rows[0].n}`);
 
-  /* Ulke alanlari taken mu: filtre once ulkeye gore ayiriyor */
-  const ulkesiz = await db.query(
+  /* Ulke alanlari taken mu: filtre before ulkeye gore ayiriyor */
+  const noCountry = await db.query(
     `select count(*)::int as n from public.cities where country_slug is null`);
-  check(ulkesiz.rows[0].n === 0, "her sehrin ulkesi var");
+  check(noCountry.rows[0].n === 0, "every city has a country");
 
-  const ulkeler = await db.query(
+  const countries = await db.query(
     `select count(distinct country_slug)::int as n from public.cities`);
-  check(ulkeler.rows[0].n === 3, "uc ulke", "found " + ulkeler.rows[0].n);
+  check(countries.rows[0].n === 3, "three countries", "found " + countries.rows[0].n);
 
   const turDagilim = await db.query(`
     select t.name, count(*)::int as n from public.events e
     join public.event_types t on t.id = e.type_id group by t.name order by t.name`);
   const expected = { "Club Night": 7, "Festival": 5, "Hausparty": 6, "Konzert": 5, "Meetup": 6, "Rave": 7 };
-  const gelen = Object.fromEntries(turDagilim.rows.map((r) => [r.name, r.n]));
-  check(JSON.stringify(gelen) === JSON.stringify(expected),
-    "kind dagilimi main sayfadaki sayacla ayni", JSON.stringify(gelen));
+  const got = Object.fromEntries(turDagilim.rows.map((r) => [r.name, r.n]));
+  check(JSON.stringify(got) === JSON.stringify(expected),
+    "the spread of kinds matches the counter on the landing page", JSON.stringify(got));
 }
 
 console.log(`\n${passed} passed, ${failed} failed\n`);

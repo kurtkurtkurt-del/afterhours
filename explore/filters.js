@@ -1,11 +1,12 @@
-/* afterhours — explore filtresi.
-   Native <select> yerine kendi listemiz: basinca acilan beyaz bir panel,
-   chosen olan isaretli, empty cities kac gecesi oldugunu soyleyerek
-   soluk duruyor.
+/* afterhours — the explore filter.
+   Our own list instead of a native <select>: a white panel that opens on
+   click, the chosen row marked, empty cities left faint while still
+   saying how many nights they have.
 
-   Bu ayni zamanda eski bir hileyi de gereksiz kildi: select'ler en uzun
-   secenege gore genisledigi icin oku yaziya yapistirmak adina metni
-   olcup genislik ayarliyorduk. Kendi dugmemiz zaten icerigi kadar. */
+   This also retired an old trick: because a select is as wide as its
+   longest option, we used to measure the text and set the width by hand
+   just to keep the arrow next to the label. Our own button is already
+   only as wide as its contents. */
 
 (function () {
   const area = document.querySelector(".ex-filter");
@@ -14,10 +15,10 @@
   const AH = (window.AH = window.AH || {});
   const live = () => AH.mode === "live";
 
-  /* Secili status. Deste bunu okuyor. */
+  /* The chosen state. The deck reads this. */
   AH.filter = { country: "de", city: "munchen", kind: null, date: "tonight" };
 
-  const TURLER = [
+  const KINDS = [
     { value: null, name: "all events" },
     { value: "rave", name: "rave" },
     { value: "club-night", name: "club night" },
@@ -27,10 +28,10 @@
     { value: "hausparty", name: "hausparty" },
   ];
 
-  const TARIHLER = ["tonight", "tomorrow", "this weekend", "this week", "this month"]
+  const DATES = ["tonight", "tomorrow", "this weekend", "this week", "this month"]
     .map((t) => ({ value: t, name: t }));
 
-  /* Backend kapaliyken elimizde tek sehir var; uydurmuyoruz. */
+  /* With the backend off we have exactly one city; we do not invent more. */
   const LOCAL_CITIES = [
     { slug: "munchen", name: "münchen", country: "Deutschland",
       country_slug: "de", n: (window.POSTERS || []).length },
@@ -38,22 +39,22 @@
 
   let cities = LOCAL_CITIES;
 
-  /* ---------- acilir list ---------- */
+  /* ---------- the drop-down ---------- */
 
-  const acikOlanlar = [];
+  const openOnes = [];
 
-  function list(box, secenekler, seciliDeger, secildi) {
+  function list(box, options, currentValue, onPick) {
     const button = box.querySelector(".fl-button");
     const value = box.querySelector(".fl-value");
     const panel = box.querySelector(".fl-list");
 
-    const chosen = secenekler.find((s) => s.value === seciliDeger) ||
-      secenekler.find((s) => !s.title);
+    const chosen = options.find((s) => s.value === currentValue) ||
+      options.find((s) => !s.title);
     value.textContent = chosen ? chosen.name : "—";
 
     panel.textContent = "";
-    secenekler.forEach((s) => {
-      /* Grup basligi: tiklanmaz, sadece ayirir */
+    options.forEach((s) => {
+      /* A group heading: not clickable, it only separates */
       if (s.title) {
         const b = document.createElement("p");
         b.className = "fl-group";
@@ -64,32 +65,32 @@
 
       const item = document.createElement("button");
       item.type = "button";
-      item.className = "fl-item" + (s.value === seciliDeger ? " selected" : "") +
+      item.className = "fl-item" + (s.value === currentValue ? " selected" : "") +
         (s.empty ? " empty" : "");
 
       const name = document.createElement("span");
       name.textContent = s.name;
       item.appendChild(name);
 
-      if (s.not) {
-        const not = document.createElement("em");
-        not.className = "fl-note";
-        not.textContent = s.not;
-        item.appendChild(not);
+      if (s.note) {
+        const note = document.createElement("em");
+        note.className = "fl-note";
+        note.textContent = s.note;
+        item.appendChild(note);
       }
 
       item.addEventListener("click", () => {
-        kapat(box);
-        if (s.value !== seciliDeger) secildi(s.value);
+        close(box);
+        if (s.value !== currentValue) onPick(s.value);
       });
       panel.appendChild(item);
     });
 
     button.onclick = (e) => {
       e.stopPropagation();
-      const acikMi = box.classList.contains("open");
-      hepsiniKapat();
-      if (!acikMi) open(box);
+      const wasOpen = box.classList.contains("open");
+      closeAll();
+      if (!wasOpen) open(box);
     };
   }
 
@@ -97,23 +98,23 @@
     box.classList.add("open");
     box.querySelector(".fl-button").setAttribute("aria-expanded", "true");
     box.querySelector(".fl-list").hidden = false;
-    acikOlanlar.push(box);
+    openOnes.push(box);
   }
 
-  function kapat(box) {
+  function close(box) {
     box.classList.remove("open");
     box.querySelector(".fl-button").setAttribute("aria-expanded", "false");
     box.querySelector(".fl-list").hidden = true;
   }
 
-  function hepsiniKapat() {
-    document.querySelectorAll(".fl.open").forEach(kapat);
+  function closeAll() {
+    document.querySelectorAll(".fl.open").forEach(close);
   }
 
-  document.addEventListener("click", hepsiniKapat);
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") hepsiniKapat(); });
+  document.addEventListener("click", closeAll);
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeAll(); });
 
-  /* ---------- filtreler ---------- */
+  /* ---------- the filters ---------- */
 
   const boxes = {
     country: area.querySelector('[data-field="country"]'),
@@ -122,25 +123,25 @@
     date: area.querySelector('[data-field="date"]'),
   };
 
-  /* Ulkeler kitalarina gore gruplanip listeleniyor: 18 ulke duz bir
-     list olarak okunmuyor. Gecesi olan continents once. */
-  function ulkeSecenekleri() {
-    const gorulen = new Map();
+  /* Countries are grouped by continent: 18 countries do not read as one
+     flat list. Continents that have nights come first. */
+  function countryOptions() {
+    const seen = new Map();
     cities.forEach((s) => {
       if (!s.country_slug) return;
-      const o = gorulen.get(s.country_slug) ||
+      const o = seen.get(s.country_slug) ||
         { value: s.country_slug, name: s.country, continent: s.continent || "", n: 0 };
       o.n += Number(s.n || 0);
-      gorulen.set(s.country_slug, o);
+      seen.set(s.country_slug, o);
     });
 
-    const countries = [...gorulen.values()];
+    const countries = [...seen.values()];
     const continents = new Map();
-    countries.forEach((u) => {
-      const g = continents.get(u.continent) || { name: u.continent, n: 0, countries: [] };
-      g.n += u.n;
-      g.countries.push(u);
-      continents.set(u.continent, g);
+    countries.forEach((c) => {
+      const g = continents.get(c.continent) || { name: c.continent, n: 0, countries: [] };
+      g.n += c.n;
+      g.countries.push(c);
+      continents.set(c.continent, g);
     });
 
     const ordered = [];
@@ -150,63 +151,63 @@
         if (k.name) ordered.push({ title: k.name });
         k.countries
           .sort((a, b) => b.n - a.n || a.name.localeCompare(b.name))
-          .forEach((u) => ordered.push({
-            value: u.value, name: u.name, empty: !u.n,
-            not: u.n ? u.n + " nights" : "nothing yet",
+          .forEach((c) => ordered.push({
+            value: c.value, name: c.name, empty: !c.n,
+            note: c.n ? c.n + " nights" : "nothing yet",
           }));
       });
     return ordered;
   }
 
-  function sehirSecenekleri() {
+  function cityOptions() {
     return cities
       .filter((s) => s.country_slug === AH.filter.country)
       .map((s) => ({
         value: s.slug,
         name: s.name,
         empty: !Number(s.n),
-        not: Number(s.n) ? Number(s.n) + " nights" : "nothing yet",
+        note: Number(s.n) ? Number(s.n) + " nights" : "nothing yet",
       }));
   }
 
   function draw() {
-    list(boxes.country, ulkeSecenekleri(), AH.filter.country, (v) => {
+    list(boxes.country, countryOptions(), AH.filter.country, (v) => {
       AH.filter.country = v;
-      /* Ulke degisince o ulkenin ilk full sehrine gec */
-      const o = sehirSecenekleri();
+      /* When the country changes, move to its first city that has nights */
+      const o = cityOptions();
       const full = o.find((x) => !x.empty) || o[0];
       AH.filter.city = full ? full.value : null;
       draw();
-      yenile();
+      redeal();
     });
 
-    list(boxes.city, sehirSecenekleri(), AH.filter.city, (v) => {
+    list(boxes.city, cityOptions(), AH.filter.city, (v) => {
       AH.filter.city = v;
       draw();
-      yenile();
+      redeal();
     });
 
-    list(boxes.kind, TURLER, AH.filter.kind, (v) => {
+    list(boxes.kind, KINDS, AH.filter.kind, (v) => {
       AH.filter.kind = v;
       draw();
-      yenile();
+      redeal();
     });
 
-    /* Tarih henuz bir sey yapmiyor: etkinliklerin dortte ucunde tarih
-       cikarimla dolduruldu, ona gore filtrelemek yaniltici olurdu. */
-    list(boxes.date, TARIHLER, AH.filter.date, (v) => {
+    /* The date does nothing yet: on three quarters of the events the date
+       was filled in by inference, so filtering on it would mislead. */
+    list(boxes.date, DATES, AH.filter.date, (v) => {
       AH.filter.date = v;
       draw();
     });
   }
 
-  function yenile() {
+  function redeal() {
     if (AH.redeal) AH.redeal("global deck");
   }
 
-  /* "i feel lucky": seni gecesi olan rastgele bir sehre atar. Bulundugun
-     sehri secmez — ayni yerde kalmak sansli hissettirmiyor. Tur de
-     sifirlanir, gittigin yerde her sey acik olsun. */
+  /* "i feel lucky": throws you at a random city that has nights. It never
+     picks the one you are in — staying put does not feel lucky. The kind
+     is cleared too, so everything is open where you land. */
   AH.randomCity = function () {
     const full = cities.filter(
       (s) => Number(s.n) > 0 && s.slug !== AH.filter.city);
@@ -220,7 +221,7 @@
     return choice;
   };
 
-  /* ---------- acilis ---------- */
+  /* ---------- start ---------- */
 
   function fetchCities() {
     if (!live()) return Promise.resolve(LOCAL_CITIES);
@@ -230,8 +231,8 @@
 
   Promise.resolve(AH.ready)
     .then(fetchCities)
-    .then((list) => {
-      if (list && list.length) cities = list;
+    .then((rows) => {
+      if (rows && rows.length) cities = rows;
       const mine = cities.find((s) => s.slug === AH.filter.city);
       if (mine) AH.filter.country = mine.country_slug || AH.filter.country;
       draw();

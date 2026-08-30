@@ -1,4 +1,4 @@
-/* afterhours — event sayfasi (kontak baskisi).
+/* afterhours — the event page (a contact sheet).
 
    Otuz alti night icin otuz alti sayfa yazmiyoruz: duzen tek, icerik
    and the content comes from the event's own record (data.js / events-data.js)
@@ -46,7 +46,7 @@
   const ordinal = (n) => n + (["th", "st", "nd", "rd"][(n % 100 - 20) % 10] ||
                            ["th", "st", "nd", "rd"][n % 100] || "th");
 
-  /* --- meta tek row: "Olympiahalle · 11.09.26 · 18:30" --- */
+  /* --- the one meta line: "Olympiahalle · 11.09.26 · 18:30" --- */
   function parseMeta(meta) {
     const parts = String(meta || "").split("·").map((p) => p.trim()).filter(Boolean);
     const out = { venue: "", date: "", time: "" };
@@ -71,7 +71,7 @@
     return pick(rnd, ["friday", "saturday", "thursday"]);
   }
 
-  /* --- kucuk yardimcilar --- */
+  /* --- small helpers --- */
   function el(tag, cls, text) {
     const e = document.createElement(tag);
     if (cls) e.className = cls;
@@ -86,7 +86,7 @@
     return box;
   }
 
-  /* --- sayfayi build --- */
+  /* --- building the page --- */
   function build(e) {
     const rnd = tohumla(e.slug || "afterhours");
     const kind = e.kind || "Konzert";
@@ -95,7 +95,7 @@
     const posterPath = e.posterPath ||
       "../../posters/" + String(e.poster || 1).padStart(2, "0") + ".svg";
 
-    /* kacinci edition, sen kacinci kez */
+    /* which edition this is, and how many times it has been you */
     const edition = 2 + Math.floor(rnd() * 11);
     const picked = Math.min(edition - 1, Math.floor(rnd() * 3));
 
@@ -117,7 +117,7 @@
     ray.appendChild(facts);
     area.appendChild(ray);
 
-    /* ---- middle sutun ---- */
+    /* ---- the middle column ---- */
     const middle = el("div", "cs-field");
 
     const crumb = el("nav", "crumb");
@@ -141,7 +141,7 @@
     [e.body, pool[0], pool[1]].filter(Boolean).forEach((p) =>
       middle.appendChild(el("p", "cs-text", p)));
 
-    /* ---- kareler ---- */
+    /* ---- the frames ---- */
     const section = el("section", "cs-section");
     section.appendChild(el("p", "cs-label", "the roll · five frames, one still blank"));
 
@@ -171,7 +171,7 @@
       frame.appendChild(el("p", "cs-role", roles[i] || ""));
       frame.appendChild(el("p", "cs-name",
         i === 3 ? "not announced" : (i === 2 ? e.title : names[i] || "—")));
-      /* Bos karenin saati YOK: dolacagi an kapinin acildigi an.
+      /* The empty frame has NO time: it fills the moment the door opens.
             Printing a number repeated the time on another frame. */
       frame.appendChild(el("p", "cs-clock",
         i === 3 ? "fills at the door" : times[i] || ""));
@@ -183,7 +183,7 @@
       "An empty frame is not a gap. Nothing is announced until the doors are open."));
     middle.appendChild(section);
 
-    /* ---- gittigin edisyonlar ---- */
+    /* ---- the editions you were at ---- */
     const past = el("section", "cs-section cs-section-past");
     past.appendChild(el("p", "cs-label", picked
       ? "editions you were at · " + picked + " of " + (edition - 1)
@@ -196,7 +196,7 @@
     middle.appendChild(past);
     area.appendChild(middle);
 
-    /* ---- sag sutun ---- */
+    /* ---- the right column ---- */
     const right = el("aside", "cs-right");
     right.appendChild(el("p", "cs-label", "which friends are going"));
 
@@ -251,9 +251,9 @@
 
   function fill(text, e, m, day) {
     return String(text)
-      .replace(/\{mekan\}/g, m.venue || "the room")
+      .replace(/\{venue\}/g, m.venue || "the room")
       .replace(/\{name\}/g, e.title || "this one")
-      .replace(/\{gun\}/g, day);
+      .replace(/\{day\}/g, day);
   }
 
   function buildComment(who, when, text, reply) {
@@ -288,7 +288,7 @@
     return "€" + (a[0] + Math.floor(rnd() * (a[1] - a[0])));
   }
 
-  /* Kapi saatinden yola cikip bes karenin saatini kuruyoruz. */
+  /* Starting from the door time, we build the times of the five frames. */
   function buildTimes(doors, kind, rnd) {
     const m = /^(\d{1,2}):(\d{2})/.exec(doors || "");
     let mins = m ? +m[1] * 60 + +m[2] : (kind === "Rave" || kind === "Club Night" ? 23 * 60 : 19 * 60);
@@ -349,7 +349,7 @@
     return p[p.length - 1] || "";
   }
 
-  /* data.js loads this through data-sonra, so POSTERS is ready by now. */
+  /* data.js loads this through data-after, so POSTERS is ready by now. */
   const slug = slugFromPath();
   const e = (window.POSTERS || []).filter((x) => x.slug === slug)[0];
   if (e) build(e);

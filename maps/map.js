@@ -21,7 +21,7 @@
   const cards = window.POSTERS || [];
   const venues = window.VENUES || [];
 
-  /* Etkinligin mekanini bul: canliyken kayittan geliyor, yerel modda
+  /* Find the event's venue: live it comes from the record, in local mode
      meta satirindaki adlari tariyoruz (seed ureteciyle ayni mantik). */
   function mekanBul(e) {
     const adaylar = [];
@@ -40,7 +40,7 @@
     return null;
   }
 
-  /* Ayni noktada yigilmasinlar: slug'a bagli kucuk, sabit bir kaydirma */
+  /* Keep them from stacking on one point: a small fixed offset from the slug */
   function kaydir(slug) {
     let h = 0;
     for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
@@ -53,7 +53,7 @@
 
   cards.forEach((e) => {
     const m = mekanBul(e);
-    if (!m) return;                     /* mekani olmayan gece haritada yok */
+    if (!m) return;                     /* a night with no venue is not on the map */
     yerlesen++;
 
     const k = kaydir(e.slug);
@@ -61,7 +61,7 @@
     g.setAttribute("href", "../explore/" + e.slug + "/index.html");
     g.setAttribute("class", "map-dot");
 
-    /* Buyuk gorunmez circle: fareyle yakalamasi kolay olsun */
+    /* A large invisible circle: easy to catch with the pointer */
     const target = document.createElementNS(NS, "circle");
     target.setAttribute("cx", m.x + k.dx);
     target.setAttribute("cy", m.y + k.dy);
@@ -100,6 +100,6 @@
     (eksik ? " · " + eksik + " without a venue yet" : "") +
     " · schematic, note to scale";
 
-  /* Fare haritanin bosluguna gidince card kapansin */
+  /* When the pointer moves to empty map, the card closes */
   sema.addEventListener("mouseleave", () => { card.hidden = true; });
 })();

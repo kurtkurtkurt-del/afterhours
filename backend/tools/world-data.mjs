@@ -1,19 +1,19 @@
-/* afterhours — dunya listesi.
-   Alti kita, her kitadan uc ulke, her ulkeden uc sehir. Munih zaten
-   burada ve kendi 36 gecesini koruyor; digerlerine ikiser gece.
+/* afterhours — the world list.
+   Six continents, three countries each, three cities each. Munich is
+   already here and keeps its own 36 nights; everyone else gets two.
 
-   Icerik uydurma ama rastgele degil: her sehrin gecesi o sehirde
-   inandirici olacak sekilde elle yazildi. Mekan adlari gercek yerlerden
-   ilham aliyor, events kurgusal.
+   The content is invented but not random: each city's night was written
+   by hand to be believable in that city. The venue names take after real
+   places, the events are fiction.
 
-   [kind, heading, mekan, gun (2026), saat, text]  */
+   [kind, heading, venue, day (2026), time, text]  */
 
-export const KITALAR = [
+export const CONTINENTS = [
   {
-    kita: "Europe", kitaKod: "eu",
-    ulkeler: [
+    continent: "Europe", continentSlug: "eu",
+    countries: [
       { name: "Deutschland", code: "de", cities: [
-        { slug: "munchen", name: "münchen", nights: [] },   /* 36 gecesi zaten var */
+        { slug: "munchen", name: "münchen", nights: [] },   /* it already has its own 36 */
         { slug: "berlin", name: "berlin", nights: [
           ["Rave", "Betonhalle", "Kraftwerk Mitte", "12.09", "23:30",
            "Concrete, three storeys of it, and a sound system that treats the building as a cabinet."],
@@ -71,8 +71,8 @@ export const KITALAR = [
   },
 
   {
-    kita: "Asia", kitaKod: "as",
-    ulkeler: [
+    continent: "Asia", continentSlug: "as",
+    countries: [
       { name: "日本", code: "jp", cities: [
         { slug: "tokyo", name: "tokyo", nights: [
           ["Club Night", "Shibuya Chika", "Dogenzaka basement", "13.09", "23:00",
@@ -137,8 +137,8 @@ export const KITALAR = [
   },
 
   {
-    kita: "Africa", kitaKod: "af",
-    ulkeler: [
+    continent: "Africa", continentSlug: "af",
+    countries: [
       { name: "Nigeria", code: "ng", cities: [
         { slug: "lagos", name: "lagos", nights: [
           ["Club Night", "Yaba Backroom", "Yaba", "19.09", "23:00",
@@ -203,8 +203,8 @@ export const KITALAR = [
   },
 
   {
-    kita: "North America", kitaKod: "na",
-    ulkeler: [
+    continent: "North America", continentSlug: "na",
+    countries: [
       { name: "United States", code: "us", cities: [
         { slug: "new-york", name: "new york", nights: [
           ["Club Night", "Bushwick Loft", "Bushwick", "12.09", "23:00",
@@ -269,8 +269,8 @@ export const KITALAR = [
   },
 
   {
-    kita: "South America", kitaKod: "sa",
-    ulkeler: [
+    continent: "South America", continentSlug: "sa",
+    countries: [
       { name: "Brasil", code: "br", cities: [
         { slug: "sao-paulo", name: "são paulo", nights: [
           ["Club Night", "Barra Funda", "Barra Funda", "19.09", "23:59",
@@ -335,8 +335,8 @@ export const KITALAR = [
   },
 
   {
-    kita: "Oceania", kitaKod: "oc",
-    ulkeler: [
+    continent: "Oceania", continentSlug: "oc",
+    countries: [
       { name: "Australia", code: "au", cities: [
         { slug: "sydney", name: "sydney", nights: [
           ["Club Night", "Marrickville Warehouse", "Marrickville", "26.09", "22:00",

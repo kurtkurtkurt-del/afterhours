@@ -1,15 +1,15 @@
-/* afterhours — donen sehir kuresi.
+/* afterhours — the turning city globe.
    Three.js yok: kendi izdusum matematigi, SVG'ye cizim.
    Bir atlasa yukaridan bakiyormus gibi: binalar kurenin uzerinde,
    sadece one bakan yarikure gorunur, cevirince arkasi one gelir. */
 
 (function () {
-  const sahne = document.getElementById("s4-stage");
-  if (!sahne) return;
+  const stage = document.getElementById("s4-stage");
+  if (!stage) return;
 
   const NS = "http://www.w3.org/2000/svg";
   const G = 1440, Y = 900;
-  const R = 540;                              // kure yaricapi
+  const R = 540;                              // radius of the globe
   const KAM_Y = 1150, KAM_Z = 1180;
   const UZAKLIK = Math.hypot(KAM_Y, KAM_Z);
   const EGIM = Math.atan2(KAM_Y, KAM_Z);
@@ -21,7 +21,8 @@
   const YAN_B = ["#1b1e22", "#181a1e", "#15171b", "#1f2227", "#141619"];
   const KONTUR = "#5c626b";
 
-  /* Onceki LCG carpimi 2^53'u asip hassasiyet kaybediyordu; uretec bozulunca
+  /* The previous LCG multiply ran past 2^53 and lost precision; once the
+     generator breaks
      kurede duzenli bosluklar olusuyordu. mulberry32 32 bitte guvenli. */
   let tohum = 20260828 >>> 0;
   function rnd() {
@@ -34,7 +35,7 @@
 
   const cosE = Math.cos(EGIM), sinE = Math.sin(EGIM);
 
-  // ---------- vektor yardimcilari ----------
+  // ---------- vector helpers ----------
   const cikar = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
   const capraz = (a, b) => [
     a[1] * b[2] - a[2] * b[1],
@@ -47,7 +48,7 @@
   const KAMERA = [0, KAM_Y, KAM_Z];
   const BAKIS = birim(KAMERA);
 
-  // ---------- kure uzerine binalar (fibonacci dagilimi) ----------
+  // ---------- buildings on the globe (fibonacci spread) ----------
   const BINALAR = [];
   const ADET = 4200;
 
@@ -57,14 +58,14 @@
     const aci = i * 2.399963;
     const u = [Math.cos(aci) * halka, yy, Math.sin(aci) * halka];
 
-    // Kitalar: bosluklu bolgeler olussun diye birkac dalga
+    // Continents: a few waves so that empty regions appear
     const kara =
       Math.sin(u[0] * 3.1 + 0.6) +
       Math.cos(u[2] * 2.7 - 1.1) +
       Math.sin((u[1] + u[0]) * 2.2);
     if (rnd() > 0.93) continue;
 
-    // Kutupta [0,1,0] ile capraz sifir cikar; orada baska bir referans kullan
+    // At the pole the cross product with [0,1,0] is zero; use another reference there
     const ref = Math.abs(u[1]) > 0.9 ? [1, 0, 0] : [0, 1, 0];
     const dogu = birim(capraz(ref, u));
     const kuzey = capraz(u, dogu);
@@ -78,7 +79,7 @@
     });
   }
 
-  // ---------- beacon'lar: renk o gecenin posterinden ----------
+  // ---------- the beacons: the colour comes from that night's poster ----------
   const SLUG = ["asap-rocky", "nick-cave", "bonez-mc-raf-camora", "thirty-seconds-to-mars", "annenmaykantereit", "elysium", "tollwood", "mondscheinexpress", "isle-of-summer", "zamanand", "blitz", "rote-sonne-bahnwarter", "silo-west", "cfu-open-air", "daytime-rave", "echonomist", "10-years-blurred-vision", "legal-blitz", "bahnwarter-techno-nacht", "unterwelt", "kuchentisch", "3-stock-links", "boxenturm", "klingel-14", "plattenabend", "vierter-stock", "zine-klub", "kaffee-karten", "nachtlinie", "sprechstunde", "riso-abend", "lange-tafel", "strobo", "tunnelblick", "spiegelsaal", "pegel"];
 
   const GECELER = [
@@ -120,22 +121,23 @@
     ["Pegel", "CLUB NIGHT", "22:00", 15, "#ff5c1f", "36"],
   ].map((g) => ({
     ad: g[0], tip: g[1], saat: g[2], dk: g[3], renk: g[4],
-    sayfa: "explore/" + SLUG[+g[5] - 1] + "/index.html",
+    page: "explore/" + SLUG[+g[5] - 1] + "/index.html",
   }));
 
 
 
 
 
-  /* Kamera 44 derece enlemden bakiyor. Etkinlikleri o kusaga yayiyoruz ki
+  /* The camera looks from 44 degrees of latitude. We spread the events
+     across that band so that
      kure donerken her an birkaci kadrajda olsun. */
   GECELER.forEach((g, i) => {
-    const enlem = 0.77 + ((i % 5) - 2) * 0.09;          // kadrajin gordugu kusak
-    const boylam = (i / GECELER.length) * Math.PI * 2 + (i % 3) * 0.05;
+    const lat = 0.77 + ((i % 5) - 2) * 0.09;          // the band the frame sees
+    const lon = (i / GECELER.length) * Math.PI * 2 + (i % 3) * 0.05;
     const hedef = [
-      Math.cos(boylam) * Math.cos(enlem),
-      Math.sin(enlem),
-      Math.sin(boylam) * Math.cos(enlem),
+      Math.cos(lon) * Math.cos(lat),
+      Math.sin(lat),
+      Math.sin(lon) * Math.cos(lat),
     ];
     let en = null, enYakin = -2;
     BINALAR.forEach((b) => {
@@ -145,7 +147,7 @@
     g.bina = en;
   });
 
-  // ---------- izdusum ----------
+  // ---------- projection ----------
   let aci = 0.4, egim2 = 0.12;
 
   function yansit(p) {
@@ -159,7 +161,7 @@
     return { x: MERKEZ_X + rx * s, y: MERKEZ_Y - y2 * s, d: -z2, s: s };
   }
 
-  /* Once boylam (Y ekseni), sonra enlem (X ekseni) donusu */
+  /* First longitude (Y axis), then latitude (X axis) */
   function dondur(v, cosA, sinA, cosT, sinT) {
     const x = v[0] * cosA - v[2] * sinA;
     const z = v[0] * sinA + v[2] * cosA;
@@ -167,23 +169,23 @@
   }
 
   // ---------- canvas ----------
-  const ctx = sahne.getContext("2d");
+  const ctx = stage.getContext("2d");
   let OLCEK = 1, KAY_X = 0, KAY_Y = 0;
 
   function boyutla() {
-    const r = sahne.getBoundingClientRect();
+    const r = stage.getBoundingClientRect();
     const dpr = Math.min(2, window.devicePixelRatio || 1);
-    sahne.width = Math.round(r.width * dpr);
-    sahne.height = Math.round(r.height * dpr);
-    // Tasarim alani 1440x900; kadraji doldur (kenarlardan tassin)
+    stage.width = Math.round(r.width * dpr);
+    stage.height = Math.round(r.height * dpr);
+    // The design space is 1440x900; fill the frame (let it run past the edges)
     OLCEK = Math.max(r.width / G, r.height / Y) * dpr;
-    KAY_X = (sahne.width - G * OLCEK) / 2;
-    KAY_Y = (sahne.height - Y * OLCEK) / 2;
+    KAY_X = (stage.width - G * OLCEK) / 2;
+    KAY_Y = (stage.height - Y * OLCEK) / 2;
   }
   boyutla();
   window.addEventListener("resize", boyutla);
 
-  // Kurenin silueti donusten etkilenmez: bir kez hesapla
+  // The silhouette of the globe does not change as it turns: work it out once
   const LIMB = (function () {
     const e1 = birim(capraz(BAKIS, [0, 1, 0]));
     const e2 = capraz(BAKIS, e1);
@@ -201,7 +203,7 @@
     return n;
   })();
 
-  // ---------- renk karistirma ----------
+  // ---------- colour mixing ----------
   const rgb = (h) => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
   const onalti = (c) => "#" + c.map((v) => Math.round(Math.max(0, Math.min(255, v))).toString(16).padStart(2, "0")).join("");
   const karistir = (a, b, t) => {
@@ -209,7 +211,8 @@
     return onalti([x[0] + (y[0] - x[0]) * t, x[1] + (y[1] - x[1]) * t, x[2] + (y[2] - x[2]) * t]);
   };
 
-  /* Etkinligin cevresi o gecenin rengine boyanir: etkinlik mahalleyi
+  /* Around an event, everything takes that night's colour: the event
+     colours the neighbourhood
      canlandiriyor. Bir kez hesaplanir, cizim dongusu ucuz kalir. */
   const HALO_ACI = 0.12;
   BINALAR.forEach((b) => {
@@ -228,7 +231,7 @@
     });
   });
 
-  /* Zemin lekesi: her etkinligin altinda kademeli halkalar */
+  /* The stain on the ground: graded rings under every event */
   function yuzeyHalka(u, acisal, adim) {
     const ref = Math.abs(u[1]) > 0.9 ? [1, 0, 0] : [0, 1, 0];
     const e1 = birim(capraz(ref, u));
@@ -257,18 +260,18 @@
     { g: 3.8, o: 0.34 }, { g: 1.6, o: 0.92 },
   ];
 
-  let secili = null;
+  let hovered = null;
 
-  // ---------- surukleme (iki eksen de ters) ----------
+  // ---------- dragging (both axes inverted) ----------
   let hiz = 0.11;
   let surukluyor = false, sonX = 0, sonY = 0, bosZaman = 0;
 
-  sahne.addEventListener("pointerdown", (e) => {
+  stage.addEventListener("pointerdown", (e) => {
     surukluyor = true; sonX = e.clientX; sonY = e.clientY;
-    try { sahne.setPointerCapture(e.pointerId); } catch (_) {}
+    try { stage.setPointerCapture(e.pointerId); } catch (_) {}
   });
 
-  sahne.addEventListener("pointermove", (e) => {
+  stage.addEventListener("pointermove", (e) => {
     if (surukluyor) {
       aci -= (e.clientX - sonX) * 0.006;
       egim2 += (e.clientY - sonY) * 0.005;
@@ -276,26 +279,26 @@
       sonX = e.clientX; sonY = e.clientY;
       return;
     }
-    // Beacon uzerinde miyiz? (canvas'ta DOM yok, elle vurus testi)
-    const r = sahne.getBoundingClientRect();
-    const px = (e.clientX - r.left) * (sahne.width / r.width);
-    const py = (e.clientY - r.top) * (sahne.height / r.height);
+    // Are we over a beacon? (no DOM on a canvas, so a hit test by hand)
+    const r = stage.getBoundingClientRect();
+    const px = (e.clientX - r.left) * (stage.width / r.width);
+    const py = (e.clientY - r.top) * (stage.height / r.height);
     let en = null, enYakin = 16 * OLCEK;
     beaconlar.forEach((b) => {
       if (!b.gorunur || b.gorunur < 0.4) return;
       const d = mesafeSegmente(px, py, b.altE, b.ustE);
       if (d < enYakin) { enYakin = d; en = b.g; }
     });
-    secili = en;
-    sahne.style.cursor = en ? "pointer" : "grab";
+    hovered = en;
+    stage.style.cursor = en ? "pointer" : "grab";
   });
 
-  const birak = () => { if (surukluyor) { surukluyor = false; bosZaman = 0; } };
-  sahne.addEventListener("pointerup", birak);
-  sahne.addEventListener("pointercancel", birak);
-  sahne.addEventListener("pointerleave", () => { secili = null; });
-  sahne.addEventListener("click", () => {
-    if (secili) window.open(secili.sayfa, "_blank", "noopener");
+  const release = () => { if (surukluyor) { surukluyor = false; bosZaman = 0; } };
+  stage.addEventListener("pointerup", release);
+  stage.addEventListener("pointercancel", release);
+  stage.addEventListener("pointerleave", () => { hovered = null; });
+  stage.addEventListener("click", () => {
+    if (hovered) window.open(hovered.sayfa, "_blank", "noopener");
   });
 
   function mesafeSegmente(px, py, a, b) {
@@ -306,7 +309,7 @@
     return Math.hypot(px - (a.x + dx * t), py - (a.y + dy * t));
   }
 
-  // ---------- cizim ----------
+  // ---------- drawing ----------
   const BEACON_BOY = 132;
   const beaconlar = GECELER.map((g) => ({ g: g, gorunur: 0, altE: null, ustE: null }));
   let oncekiZaman = performance.now();
@@ -326,10 +329,10 @@
     const cosT = Math.cos(egim2), sinT = Math.sin(egim2);
 
     ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.clearRect(0, 0, sahne.width, sahne.height);
+    ctx.clearRect(0, 0, stage.width, stage.height);
     ctx.setTransform(OLCEK, 0, 0, OLCEK, KAY_X, KAY_Y);
 
-    // --- kure zemini ---
+    // --- the ground of the globe ---
     ctx.beginPath();
     LIMB.forEach((q, i) => (i ? ctx.lineTo(q.x, q.y) : ctx.moveTo(q.x, q.y)));
     ctx.closePath();
@@ -339,7 +342,7 @@
     ctx.lineWidth = 1;
     ctx.stroke();
 
-    // --- etkinlik lekeleri (binalarin altinda) ---
+    // --- the event stains (under the buildings) ---
     GECELER.forEach((g) => {
       const ur = dondur(g.bina.u, cosA, sinA, cosT, sinT);
       if (nokta(ur, birim(cikar(KAMERA, [ur[0] * R, ur[1] * R, ur[2] * R]))) < 0.06) return;
@@ -358,7 +361,7 @@
     });
     ctx.globalAlpha = 1;
 
-    // --- binalar ---
+    // --- the buildings ---
     const liste = [];
     BINALAR.forEach((b) => {
       const ur = dondur(b.u, cosA, sinA, cosT, sinT);
@@ -367,7 +370,7 @@
       if (bakis < 0.02) return;
       const om = yansit(merkez);
       if (om.x < -260 || om.x > G + 260 || om.y < -260 || om.y > Y + 260) return;
-      // ufukta sert kesme yerine sonumleme
+      // fade out at the horizon instead of cutting hard
       const solma = Math.min(1, (bakis - 0.02) / 0.16);
 
       const dr = dondur(b.dogu, cosA, sinA, cosT, sinT);
@@ -445,7 +448,7 @@
       const uz = Math.hypot(dx, dy) || 1;
       const nx = -dy / uz, ny = dx / uz;
 
-      const parlak = secili === g ? 1.35 : 1;
+      const parlak = hovered === g ? 1.35 : 1;
       KABUK.forEach((kb) => {
         const wa = kb.g * alt.s, wu = kb.g * ust.s;
         ctx.globalAlpha = Math.min(1, kb.o * b.gorunur * parlak);
@@ -465,9 +468,9 @@
       ctx.globalAlpha = 1;
     });
 
-    // --- hover etiketi ---
-    if (secili) {
-      const b = beaconlar.find((x) => x.g === secili);
+    // --- the hover label ---
+    if (hovered) {
+      const b = beaconlar.find((x) => x.g === hovered);
       const u = yansitTers(b.ustE);
       const x = u.x + 26, y = u.y - 40;
       ctx.textAlign = "left";
@@ -478,23 +481,25 @@
       ctx.stroke();
       ctx.fillStyle = "#f0f0ee";
       ctx.font = "500 19px 'Inter Tight', sans-serif";
-      ctx.fillText(secili.ad, x, y + 12);
+      ctx.fillText(hovered.ad, x, y + 12);
       ctx.font = "10.5px 'JetBrains Mono', ui-monospace, monospace";
       ctx.globalAlpha = 0.72;
-      ctx.fillText(secili.tip + " · " + secili.saat, x, y + 32);
-      ctx.fillText(secili.dk + " MIN WALK", x, y + 50);
+      ctx.fillText(hovered.tip + " · " + hovered.saat, x, y + 32);
+      ctx.fillText(hovered.dk + " MIN WALK", x, y + 50);
       ctx.globalAlpha = 1;
     }
   }
 
-  /* Kuredeki geceler disaridan da okunabilsin: maps sayfasi yanindaki
-     "yurume mesafesinde" listesini bu gercek dakikalardan doldurur. */
+  /* The nights on the globe are readable from outside too: the maps page
+     fills its
+     "within walking distance" list from these real minutes. */
   window.AH_GECELER = GECELER;
 
-  // Ekran koordinatindan tasarim koordinatina geri
+  // From screen coordinates back to design coordinates
   const yansitTers = (q) => ({ x: (q.x - KAY_X) / OLCEK, y: (q.y - KAY_Y) / OLCEK });
 
-  /* Sadece bu ekran ondeyken ciz. rAF onizleme panelinde hic tetiklenmiyor
+  /* Draw only while this screen is in front. rAF never fires in the preview
+     panel
      (panel belgeyi "hidden" sayiyor), o yuzden zamanlayici kullaniyoruz. */
   ciz(performance.now());
   setInterval(() => {

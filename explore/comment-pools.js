@@ -136,7 +136,7 @@ const COMMENT_POOL = {
   ]
 };
 
-/* Slug'dan sabit tohum — ayni kart hep ayni tartismayi gostersin */
+/* A fixed seed from the slug — the same card always shows the same talk */
 function COMMENT_SEED(slug) {
   let h = 2166136261;
   for (let i = 0; i < slug.length; i++) {
@@ -146,7 +146,7 @@ function COMMENT_SEED(slug) {
   return h >>> 0;
 }
 
-/* mulberry32 — globe.js'deki ile ayni sebep: basit LCG 2^53'u asip bozuluyor */
+/* mulberry32 — same reason as in globe.js: a plain LCG breaks past 2^53 */
 function COMMENT_RAND(seed) {
   return function () {
     seed |= 0; seed = (seed + 0x6D2B79F5) | 0;

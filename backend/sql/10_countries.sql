@@ -1,14 +1,14 @@
--- afterhours — sehirlere ulke
--- Kurulumdan sonra eklendi; mevcut projede bir kez calistirilir.
--- (03_seed_catalog.sql yeniden uretildigi icin temiz kurulumda zaten var.)
+-- afterhours — a country for every city
+-- Added after the setup; run once against an existing project.
+-- (03_seed_catalog.sql was regenerated, so a clean install already has it.)
 
 alter table public.cities add column if not exists country text;
 alter table public.cities add column if not exists country_slug text;
 
--- Kita alanlari da burada aciliyor. 11_world.sql onlari dolduruyor ama
--- ARADAKI 06_views.sql city_counts icinde onlara BAKIYOR — sutunlar
--- burada olmazsa guncelleme ortasinda "column c.continent does not
--- exist" ile duruyor. (Tam olarak bu yasandi.)
+-- The continent fields open up here too. 11_world.sql fills them, but
+-- the 06_views.sql IN BETWEEN LOOKS AT them inside city_counts: without
+-- the columns here, the update stops halfway with "column c.continent
+-- does not exist". (That is exactly what happened.)
 alter table public.cities add column if not exists continent text;
 alter table public.cities add column if not exists continent_slug text;
 
@@ -19,8 +19,8 @@ update public.cities set country = 'Türkiye', country_slug = 'tr'
 update public.cities set country = 'Österreich', country_slug = 'at'
   where slug in ('wien');
 
--- Listeyi biraz genislet. Hicbirinde henuz gece yok; filtrede sayilariyla
--- gorunuyorlar, yani bos olduklari sakli degil.
+-- Widen the list a little. None of these has a night yet; the filter
+-- shows them with their counts, so their emptiness is not hidden.
 insert into public.cities (slug, name, status, sort_order, country, country_slug) values
   ('hamburg',   'hamburg',   'planned', 7,  'Deutschland', 'de'),
   ('frankfurt', 'frankfurt', 'planned', 8,  'Deutschland', 'de'),
@@ -31,9 +31,9 @@ on conflict (slug) do nothing;
 
 create index if not exists cities_country_idx on public.cities (country_slug, sort_order);
 
--- Filtrede her sehrin yanindaki sayi. Bos sehirler bos gorunsun diye
--- yayindaki etkinlikler sayiliyor.
--- Once dusur: donus tipi degisirse create or replace yetmiyor.
+-- The number next to each city in the filter. Only published events are
+-- counted, so that an empty city looks empty.
+-- Drop it first: create or replace is not enough when the type changes.
 drop function if exists public.city_counts();
 create or replace function public.city_counts()
 returns table (

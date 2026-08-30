@@ -232,7 +232,7 @@ const WAVE=[26,42,62,30,78,50,22,70,38,86,54,26,74,46,94,58,30,82,50,22,70,42,90
 function wave(id,m,x0,yc){return `<g fill="url(#g${id})">`+WAVE.map((h,i)=>
   `<rect x="${x0+i*9}" y="${yc-h/2}" width="4" height="${h}"/>`).join('')+`</g>`;}
 
-// ─────────── ÖN YÜZ ───────────
+// ─────────── THE FRONT ───────────
 function front(e,i){
   const m=METALS[e.metal], id='f'+i;
   const av=e.crew.map((c,k)=>
@@ -271,7 +271,7 @@ function front(e,i){
   <rect x="13" y="13" width="374" height="574" fill="none" stroke="${m.deep}" stroke-width="1"/>
 </svg>`;}
 
-// ─────────── ARKA YÜZ ───────────
+// ─────────── THE BACK ───────────
 function back(e,i){
   const m=METALS[e.metal], id='b'+i;
   const marks=[[e.in,'ARRIVED · WITH '+e.crew.length,m.hi,1],
@@ -317,6 +317,7 @@ function back(e,i){
   return { nights: EVENTS, front, back };
 })();
 
-/* `const` global window'a yazilmaz; card collection sayfasi buradan
+/* A global `const` is not written onto window; the card collection page
+   reads it from here
    okuyor (POSTERS ve VENUES ile ayni durum). */
 window.CARDS = CARDS;

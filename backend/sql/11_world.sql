@@ -1,16 +1,16 @@
 -- ============================================================
 --  afterhours — THE WORLD: 6 continents, 18 countries, 54 cities, 106 nights
 --
---  URETILMIS DOSYA — kaynak: backend/tools/world-sql.mjs
---  The content is invented but hand-written; the posters were generated too
---  (posters/37.svg … 142.svg).
+--  GENERATED FILE — source: backend/tools/world-sql.mjs
+--  The content is invented but written by hand; the posters were
+--  generated alongside it (posters/37.svg … 142.svg).
 -- ============================================================
 
--- Sehirlere kita alanlari
+-- Continent fields on the cities
 alter table public.cities add column if not exists continent text;
 alter table public.cities add column if not exists continent_slug text;
 
--- Drop the cities with no nights that break the shape (three per country).
+-- Drop the cities with no nights that broke the shape (three per country).
 delete from public.cities
 where slug in ('hamburg', 'frankfurt', 'leipzig')
   and not exists (select 1 from public.events e where e.city_id = cities.id);

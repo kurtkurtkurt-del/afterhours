@@ -1,21 +1,22 @@
-/* afterhours — yonetim paneli.
-   Sadece is_admin olan hesap ise yarar. Bu sayfayi herkes acabilir;
-   koruma sayfada degil veritabaninda (backend/sql/02_rls.sql). Yonetici
+/* afterhours — the admin panel.
+   Only useful to an account with is_admin. Anyone may open this page;
+   the protection is not in the page but in the database
+   (backend/sql/02_rls.sql). An admin
    olmayan biri buraya gelse hicbir sey yazamaz, yayinda olmayani bile
    goremez.  */
 
 (function () {
-  const AYAR = window.AH_CONFIG || {};
-  const kapi = document.getElementById("adm-gate");
-  const kapiYazi = document.getElementById("adm-gate-text");
-  const kapiLink = document.getElementById("adm-gate-link");
+  const CONFIG = window.AH_CONFIG || {};
+  const gate = document.getElementById("adm-gate");
+  const gateText = document.getElementById("adm-gate-text");
+  const gateLink = document.getElementById("adm-gate-link");
   const panel = document.getElementById("adm");
 
   const $ = (id) => document.getElementById(id);
-  const listeAlan = $("adm-list");
-  const ozet = $("adm-summary");
+  const listArea = $("adm-list");
+  const summary = $("adm-summary");
   const araAlan = $("adm-search");
-  const duzen = $("adm-edit");
+  const editor = $("adm-edit");
   const status = $("a-status");
 
   let events = [];
@@ -25,37 +26,38 @@
   let counts = {};
   let chosen = null;
 
-  const girisForm = document.getElementById("adm-intro");
-  const girisNot = document.getElementById("adm-intro-note");
+  const signInForm = document.getElementById("adm-intro");
+  const signInNote = document.getElementById("adm-intro-note");
 
-  function showGate(text, girisIster) {
-    kapi.hidden = false;
+  function showGate(text, wantsSignIn) {
+    gate.hidden = false;
     panel.hidden = true;
-    kapiYazi.textContent = text;
-    kapiLink.hidden = !girisIster;
-    girisForm.hidden = !girisIster;
+    gateText.textContent = text;
+    gateLink.hidden = !wantsSignIn;
+    signInForm.hidden = !wantsSignIn;
   }
 
-  /* Sifreyle giris: e-posta kotasina takilmadan yonetime girebilmek icin.
-     Sifre burada tutulmuyor, dogrudan Supabase'e gidiyor. */
-  girisForm.addEventListener("submit", (e) => {
+  /* Signing in with a password: a way into the panel that does not run
+     into the email quota. Nothing is stored here, it goes straight to
+     Supabase. */
+  signInForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = document.getElementById("adm-email").value.trim();
     const password = document.getElementById("adm-password").value;
     if (!email || !password) return;
-    girisNot.textContent = "signing in…";
+    signInNote.textContent = "signing in…";
     AH.signInWithPassword(email, password)
       .then(() => { location.reload(); })
       .catch((h) => {
-        girisNot.textContent = /invalid/i.test(h.message)
+        signInNote.textContent = /invalid/i.test(h.message)
           ? "wrong email or password."
           : "couldn't sign in: " + h.message;
       });
   });
 
-  /* --- acilis: once kimlik, sonra yetki --- */
+  /* --- start: identity first, then permission --- */
 
-  if (!(AYAR.url && AYAR.anonKey)) {
+  if (!(CONFIG.url && CONFIG.anonKey)) {
     showGate("no backend configured. fill in config.js first.", false);
     return;
   }
@@ -75,7 +77,7 @@
         showGate("this account isn't an admin. nothing to do here.", false);
         return;
       }
-      kapi.hidden = true;
+      gate.hidden = true;
       panel.hidden = false;
       return start();
     })
@@ -147,7 +149,7 @@
         (e.title + " " + e.slug + " " + e.meta).toLowerCase().includes(query)
     );
 
-    listeAlan.textContent = "";
+    listArea.textContent = "";
     visible.forEach((e) => {
       const li = document.createElement("li");
       li.className = "adm-row" + (chosen && chosen.id === e.id ? " selected" : "");
@@ -171,22 +173,22 @@
       });
 
       li.addEventListener("click", () => select(e));
-      listeAlan.appendChild(li);
+      listArea.appendChild(li);
     });
 
-    const sorunlu = events.filter((e) => warnings(e).length).length;
-    ozet.textContent =
-      `${events.length} events · ${sorunlu} need attention` +
+    const flagged = events.filter((e) => warnings(e).length).length;
+    summary.textContent =
+      `${events.length} events · ${flagged} need attention` +
       (query ? ` · showing ${visible.length}` : "");
   }
 
   araAlan.addEventListener("input", drawList);
 
-  /* --- duzenleme --- */
+  /* --- editing --- */
 
   function select(e) {
     chosen = e;
-    duzen.hidden = false;
+    editor.hidden = false;
     status.textContent = "";
 
     $("a-title").value = e.title || "";
@@ -199,7 +201,7 @@
     $("a-venue").value = e.venue_id || "";
     $("a-published").checked = Boolean(e.is_published);
     $("a-estimated").checked = Boolean(e.starts_at_estimated);
-    /* datetime-local saniye ve zaman dilimi istemiyor */
+    /* datetime-local wants neither seconds nor a time zone */
     $("a-starts").value = e.starts_at ? new Date(e.starts_at).toISOString().slice(0, 16) : "";
     $("a-number").textContent = counts[e.id] ? counts[e.id] + " people" : "nobody yet";
 
@@ -212,15 +214,15 @@
     box.textContent = "";
     $("a-poster-note").textContent = "";
     if (!no) { box.textContent = "—"; return; }
-    const nesne = document.createElement("object");
-    nesne.type = "image/svg+xml";
-    nesne.data = "../posters/" + String(no).padStart(2, "0") + ".svg";
-    box.appendChild(nesne);
+    const object = document.createElement("object");
+    object.type = "image/svg+xml";
+    object.data = "../posters/" + String(no).padStart(2, "0") + ".svg";
+    box.appendChild(object);
   }
 
   $("adm-new").addEventListener("click", () => {
     chosen = null;
-    duzen.hidden = false;
+    editor.hidden = false;
     status.textContent = "";
     ["a-title", "a-slug", "a-meta", "a-body", "a-poster", "a-starts"].forEach((i) => ($(i).value = ""));
     $("a-published").checked = true;
@@ -256,7 +258,7 @@
     }
     status.textContent = "saving…";
 
-    const istek = chosen
+    const request = chosen
       ? AH.request("/events?id=eq." + chosen.id, {
           method: "PATCH",
           headers: { Prefer: "return=representation" },
@@ -268,13 +270,13 @@
           body: JSON.stringify(g),
         });
 
-    istek
+    request
       .then((rows) => {
         if (!rows || !rows.length) throw new Error("nothing was written");
         return reload().then(() => {
-          const yeni = events.find((e) => e.id === rows[0].id);
-          if (yeni) select(yeni);
-          /* select() durumu temizliyor; mesaji ondan SONRA yaz */
+          const fresh = events.find((e) => e.id === rows[0].id);
+          if (fresh) select(fresh);
+          /* select() clears the status; write the message AFTER it */
           status.textContent = "saved.";
         });
       })
@@ -283,26 +285,26 @@
 
   $("a-delete").addEventListener("click", () => {
     if (!chosen) return;
-    /* Silmek geri alinamaz; once ne silindigini say */
+    /* Deleting cannot be undone; say what is going first */
     if (!window.confirm('delete "' + chosen.title + '" and everything attached to it?')) return;
     status.textContent = "deleting…";
     AH.request("/events?id=eq." + chosen.id, { method: "DELETE" })
-      .then(() => { chosen = null; duzen.hidden = true; return reload(); })
+      .then(() => { chosen = null; editor.hidden = true; return reload(); })
       .catch((h) => { status.textContent = "couldn't delete: " + h.message; });
   });
 
-  /* --- poster kontrolu ---
-     Posterlerin cercevesi 12px inside ve 400x600 kutuda. Archivo 900
-     basliklar bu cerceveyi tasabiliyor (36'lik sette dordu tasmisti),
-     o yuzden yuklenen SVG'yi olcup soyluyoruz. */
+  /* --- checking a poster ---
+     A poster's frame sits 12px inside a 400x600 box. Archivo 900 titles
+     can run past that frame (four did in the set of 36), so we measure
+     the uploaded SVG and say so. */
 
-  $("a-poster-file").addEventListener("change", (olay) => {
-    const dosya = olay.target.files && olay.target.files[0];
-    if (!dosya) return;
+  $("a-poster-file").addEventListener("change", (event) => {
+    const file = event.target.files && event.target.files[0];
+    if (!file) return;
     const note = $("a-poster-note");
     note.textContent = "checking…";
 
-    dosya.text().then((text) => {
+    file.text().then((text) => {
       const box = $("a-poster-preview");
       box.textContent = "";
       const sarmal = document.createElement("div");
@@ -314,21 +316,21 @@
       if (!svg) { note.textContent = "that file has no <svg> in it."; return; }
 
       const kutuOlcu = (svg.getAttribute("viewBox") || "").split(/\s+/);
-      const genislik = Number(kutuOlcu[2]) || 400;
-      const yukseklik = Number(kutuOlcu[3]) || 600;
+      const width = Number(kutuOlcu[2]) || 400;
+      const height = Number(kutuOlcu[3]) || 600;
 
       const problems = [];
-      if (Math.abs(genislik / yukseklik - 2 / 3) > 0.01) {
-        problems.push(`viewBox ${genislik}×${yukseklik} — should be 2:3 (400×600)`);
+      if (Math.abs(width / height - 2 / 3) > 0.01) {
+        problems.push(`viewBox ${width}×${height} — should be 2:3 (400×600)`);
       }
 
-      /* Yazilar cerceveyi tasiyor mu: x + width <= 388 */
-      const sinir = genislik - 12;
+      /* Does the text run past the frame: x + width <= 388 */
+      const limit = width - 12;
       svg.querySelectorAll("text").forEach((t) => {
         let k;
         try { k = t.getBBox(); } catch (_) { return; }
-        if (k.x + k.width > sinir + 0.5) {
-          problems.push(`"${(t.textContent || "").slice(0, 18)}" runs ${Math.round(k.x + k.width - sinir)}px past the frame`);
+        if (k.x + k.width > limit + 0.5) {
+          problems.push(`"${(t.textContent || "").slice(0, 18)}" runs ${Math.round(k.x + k.width - limit)}px past the frame`);
         }
         if (k.x < 12 - 0.5) {
           problems.push(`"${(t.textContent || "").slice(0, 18)}" starts left of the frame`);
@@ -340,14 +342,14 @@
         : "looks fine: 2:3 and nothing crosses the frame.";
       note.className = "adm-poster-note" + (problems.length ? " bad" : " good");
 
-      /* Sorun yoksa yuklenebilir. Sorunluysa yukleme dugmesi hic
+      /* If nothing is wrong it can be uploaded. If something is, the
          gorunmuyor: bozuk poster siteye gitmesin. */
       yukleDugmesi.hidden = Boolean(problems.length) || !chosen;
-      bekleyenDosya = problems.length ? null : dosya;
+      bekleyenDosya = problems.length ? null : file;
     });
   });
 
-  /* --- depoya yukleme --- */
+  /* --- uploading to the store --- */
 
   let bekleyenDosya = null;
   const yukleDugmesi = document.getElementById("a-poster-upload");
@@ -359,10 +361,10 @@
     note.textContent = "uploading…";
     note.className = "adm-poster-note";
 
-    fetch(AYAR.url.replace(/\/$/, "") + "/storage/v1/object/posters/" + name, {
+    fetch(CONFIG.url.replace(/\/$/, "") + "/storage/v1/object/posters/" + name, {
       method: "POST",
       headers: {
-        apikey: AYAR.anonKey,
+        apikey: CONFIG.anonKey,
         Authorization: "Bearer " + AH.token,
         "Content-Type": "image/svg+xml",
         "x-upsert": "true",
@@ -371,7 +373,7 @@
     })
       .then(async (c) => {
         if (!c.ok) throw new Error(c.status + " " + (await c.text()).slice(0, 120));
-        /* Kaydin poster_path'ini mark: site bundan sonra bu dosyayi
+        /* Stamp the record's poster_path: from now on the site uses
            gosterir, posters/NN.svg yerine. */
         return AH.request("/events?id=eq." + chosen.id, {
           method: "PATCH",
@@ -392,9 +394,9 @@
       });
   });
 
-  /* --- yorum denetimi --- */
+  /* --- moderating the comments --- */
 
-  /* --- geri bildirim ---
+  /* --- feedback ---
      feedback tablosunu yalniz yonetici okuyor; yazan kendi yazdigini
      bile goremiyor (backend/sql/13_feedback.sql). Yani burasi o
      mesajlarin gorulebildigi TEK yer. */
@@ -438,7 +440,7 @@
 
       const who = document.createElement("span");
       who.className = "adm-feedback-who";
-      /* Girisli yazan handle ile, girissiz biraktigi iletisimle,
+      /* A signed-in writer shows by handle, a signed-out one by the
          hicbirini vermeyen "anonymous" olarak gorunuyor. */
       who.textContent = g.author ? "@" + g.author : (g.contact || "anonymous");
       top.appendChild(who);

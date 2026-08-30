@@ -1,22 +1,22 @@
-/* afterhours — poster vitrini (yer tutucu icerik) */
+/* afterhours — the poster wall (placeholder content) */
 
-// 20 poster: 2 sutun x 10 index. Metinler simdilik lorem ipsum.
-const GOSTERILEN = POSTERS.slice(0, 20);
+// 20 posters: 2 columns x 10 rows.
+const SHOWN = POSTERS.slice(0, 20);
 
 const grid = document.getElementById("posters");
 const info = document.getElementById("info");
 const side = document.getElementById("side");
-const alanIndex = info.querySelector(".info-index");
-const alanTur = info.querySelector(".info-type");
-const alanBaslik = info.querySelector(".info-title");
-const alanMeta = info.querySelector(".info-meta");
-const alanMetin = info.querySelector(".info-body");
+const fieldIndex = info.querySelector(".info-index");
+const fieldKind = info.querySelector(".info-type");
+const fieldTitle = info.querySelector(".info-title");
+const fieldMeta = info.querySelector(".info-meta");
+const fieldBody = info.querySelector(".info-body");
 
 // A short delay so the text does not flicker while the pointer crosses
 // the gap between two posters
 let hideTimer;
 
-GOSTERILEN.forEach((p, i) => {
+SHOWN.forEach((p, i) => {
   // The poster number comes from the record itself, not from its position
   const no = String(p.poster || i + 1).padStart(2, "0");
 
@@ -35,11 +35,11 @@ GOSTERILEN.forEach((p, i) => {
   box.appendChild(image);
   box.addEventListener("mouseenter", () => {
     clearTimeout(hideTimer);
-    alanIndex.textContent = String(i + 1).padStart(2, "0") + " / " + GOSTERILEN.length;
-    alanTur.textContent = p.kind;
-    alanBaslik.textContent = p.title;
-    alanMeta.textContent = p.meta;
-    alanMetin.textContent = p.body;
+    fieldIndex.textContent = String(i + 1).padStart(2, "0") + " / " + SHOWN.length;
+    fieldKind.textContent = p.kind;
+    fieldTitle.textContent = p.title;
+    fieldMeta.textContent = p.meta;
+    fieldBody.textContent = p.body;
     side.classList.add("poster-hover");
   });
 
@@ -50,23 +50,23 @@ GOSTERILEN.forEach((p, i) => {
   grid.appendChild(box);
 });
 
-/* ---------- Ekran gecisi ----------
-   Once the posters run out, a little more scrolling
-   sonraki ekrana gecilir; yukari kaydirinca geri donulur.
-   Ekran sayisi HTML'den okunur, yeni <section class="screen"> eklemek yeterli. */
+/* ---------- Moving between screens ----------
+   Once the posters run out, a little more scrolling takes you to the next
+   screen; scrolling back up returns you. The number of screens is read
+   from the HTML, so adding a <section class="screen"> is enough. */
 
 const screens = document.getElementById("screens");
 const SCREEN_COUNT = screens.querySelectorAll(".screen").length;
 const THRESHOLD = 240;        // extra scrolling needed before a screen changes (px)
 let screen = 0;
 let scrolled = 0;
-let direction = 0;             // 1 down, -1 yukari
+let direction = 0;             // 1 down, -1 up
 let moving = false;
 
 function goToScreen(target) {
   if (target === screen || target < 0 || target >= SCREEN_COUNT) return;
 
-  // Kart kaydirilmadan ikinci ekrandan ileri gecilemez; deck zipar
+  // You cannot pass the second screen without swiping a card; the deck jumps
   if (screen === 1 && target > screen && deck.querySelector(".card2")) {
     destiZiplat();
     return;
@@ -96,7 +96,7 @@ window.addEventListener("wheel", (e) => {
     }
   }
 
-  // Yon degistiyse scrolled sifirlanir
+  // If the direction changed, the scroll total resets
   if ((down ? 1 : -1) !== direction) {
     direction = down ? 1 : -1;
     scrolled = 0;
@@ -124,31 +124,31 @@ window.addEventListener("touchend", (e) => {
   touchY = null;
   if (start === null || touchOnCard || moving) return;
 
-  const gap = start - e.changedTouches[0].clientY;   // yukari surtme pozitif
+  const gap = start - e.changedTouches[0].clientY;   // swiping up is positive
   if (Math.abs(gap) < DOKUNUS_ESIGI) return;
 
   const down = gap > 0;
-  // Ilk ekranda ancak poster listesinin sonundayken ilerlenir
+  // On the first screen you only move on at the end of the poster list
   if (screen === 0 && (!down || !touchAtEnd)) return;
 
   goToScreen(screen + (down ? 1 : -1));
 }, { passive: true });
 
-/* ---------- Ikinci screen: 2 kartlik deck ----------
-   Saga cekince begenilir ve kaybolur. Yeterince cekilmezse yerine doner. */
+/* ---------- The second screen: a deck of 2 cards ----------
+   Pull it right and it is kept and gone. Pull too little and it returns. */
 
 const deck = document.getElementById("deck2");
 const phone = document.getElementById("phone");
-const sonMesaj = document.getElementById("last-line");
+const lastLine = document.getElementById("last-line");
 const kaydirIpucu = document.getElementById("swipe-hint");
 
-// Kaydirmadan gecilmeye calisilinca kartin verdigi kucuk tepki
+// The small nudge the card gives when you try to pass without swiping
 let jumpTimer;
 function destiZiplat() {
   const card = deck.querySelector(".card2");
   if (!card) return;
   card.classList.remove("jump");
-  void card.offsetWidth;               // animasyonu bastan baslat
+  void card.offsetWidth;               // restart the animation
   card.classList.add("jump");
   clearTimeout(jumpTimer);
   jumpTimer = setTimeout(() => card.classList.remove("jump"), 520);
@@ -169,7 +169,7 @@ DECK_POSTERS.slice().reverse().forEach((no) => {
   let dx = 0;
 
   card.addEventListener("pointerdown", (e) => {
-    // Sadece en ustteki card surukleneblir
+    // Only the top card can be dragged
     if (card !== deck.lastElementChild) return;
     startX = e.clientX;
     dx = 0;
@@ -184,7 +184,7 @@ DECK_POSTERS.slice().reverse().forEach((no) => {
     card.style.transform = "translateX(" + dx + "px) rotate(" + (dx / 26) + "deg)";
   });
 
-  function birak() {
+  function release() {
     if (startX === null) return;
     startX = null;
     card.classList.remove("dragging");
@@ -201,16 +201,16 @@ DECK_POSTERS.slice().reverse().forEach((no) => {
         if (silindi) return;
         silindi = true;
         card.remove();
-        // Deste bitti: phone ekrani acilir
+        // The deck is done: the phone screen opens
         if (!deck.querySelector(".card2")) {
           kaydirIpucu.classList.add("hidden");
           phone.classList.add("open");
-          // Telefon 1.6 sn durur, kaybolur, yerine kapanis yazisi gelir.
+          // The phone holds for 1.6s, fades, and the closing line takes its place.
           // After 2s the text slides up and the phone returns beneath it.
           setTimeout(() => {
             phone.classList.remove("open");
             setTimeout(() => {
-              sonMesaj.classList.add("open");
+              lastLine.classList.add("open");
               setTimeout(() => {
                 deck.classList.add("last-state");
                 phone.classList.add("open");
@@ -226,8 +226,8 @@ DECK_POSTERS.slice().reverse().forEach((no) => {
     }
   }
 
-  card.addEventListener("pointerup", birak);
-  card.addEventListener("pointercancel", birak);
+  card.addEventListener("pointerup", release);
+  card.addEventListener("pointercancel", release);
 
   deck.appendChild(card);
 });
@@ -278,7 +278,7 @@ soundSource.addEventListener("timeupdate", () => {
 soundSource.addEventListener("ended", calmaDurdur);
 
 
-/* ---------- Ucuncu screen: seritte akan afterhours kartlari ---------- */
+/* ---------- The third screen: afterhours cards running along a strip ---------- */
 
 const k3Ray = document.getElementById("s3-rail");
 
@@ -298,12 +298,12 @@ for (let again = 0; again < 2; again++) {
 /* VENUES lives in venues.js — the landing page and maps both use it */
 
 
-/* ---------- Altinci screen: footer ----------
+/* ---------- The sixth screen: the footer ----------
    The ground is always black. The clock is the visitor's own; the counter
    is worked out from the venues open at that moment. */
 
-const k6Saat = document.getElementById("s6-clock");
-const k6Sayac = document.getElementById("s6-counter");
+const clockField = document.getElementById("s6-clock");
+const counterField = document.getElementById("s6-counter");
 
 document.body.dataset.footerTone = "dark";   // the menu and the sound bar invert
 
@@ -312,7 +312,7 @@ function k6Guncelle() {
   const s = now.getHours();
   const d = now.getMinutes();
 
-  k6Saat.textContent =
+  clockField.textContent =
     String(s).padStart(2, "0") + ":" + String(d).padStart(2, "0") + " · münchen";
 
   // The venues open right now (night hours are written past 24)
@@ -323,7 +323,7 @@ function k6Guncelle() {
     return (hour >= bas && hour < son) || (hour + 24 >= bas && hour + 24 < son);
   }).length;
 
-  k6Sayac.textContent = open
+  counterField.textContent = open
     ? open + (open === 1 ? " room open in münchen right now" : " rooms open in münchen right now")
     : "no rooms open yet — come back after dark";
 }

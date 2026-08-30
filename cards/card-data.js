@@ -1,4 +1,4 @@
-/* afterhours — card collection'daki uc ornek gece.
+/* afterhours — the three sample nights in the card collection.
    Bicim cards.js'in EVENTS yapisiyla ayni; cards da onun kendi
    ureteciyle ciziliyor (CARDS.front / CARDS.back). Poster degil,
    gercek afterhours karti.

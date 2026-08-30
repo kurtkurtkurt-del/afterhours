@@ -10,7 +10,7 @@ const check = (k, name, extra = "") => {
   else { failed++; console.log("  ✗ " + name + (extra ? "  → " + extra : "")); }
 };
 process.on("unhandledRejection", (e) => {
-  console.log("\nHATA: " + ((e && e.message) || e)); process.exit(1);
+  console.log("\nERROR: " + ((e && e.message) || e)); process.exit(1);
 });
 
 const db = new PGlite();
@@ -20,19 +20,19 @@ for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02
   await db.exec(await read(d));
 }
 
-console.log("\n— gecmisi dusurme —");
+console.log("\n— dropping what is past —");
 {
-  /* Once butun tohumu gelecege itiyoruz. Yoksa test takvime bagli
-     kaliyor: tohumdaki one gecenin tarihi gercekten gecince (29.08.26,
-     rote-sonne-bahnwarter) is onu da dusuruyor ve sayilar kayiyor.
-     Testin olctugu sey tarih degil, kuralin kendisi. */
+  /* First push the whole seed into the future. Otherwise the test hangs
+     on the calendar: before a night in the seed really does go past
+     (29.08.26, rote-sonne-bahnwarter) the job drops that one too and the
+     counts shift. What this test measures is the rule, not the date. */
   await db.exec(`
     update public.events set starts_at = now() + interval '30 days'
       where starts_at is not null;
   `);
 
-  /* Dort status kuruyoruz: gecmis+dogrulanmis, gecmis+tahmin, gelecek,
-     ve daha gece bitmemis olan */
+  /* Four situations: past+confirmed, past+guessed, future, and one
+     whose night is not over yet */
   await db.exec(`
     update public.events set starts_at = now() - interval '3 days',
                              starts_at_estimated = false
@@ -49,30 +49,30 @@ console.log("\n— gecmisi dusurme —");
   `);
 
   const n = await db.query(`select public.hide_past_events() as n`);
-  check(n.rows[0].n === 1, "sadece one etkinlik dusuruldu", "dusen " + n.rows[0].n);
+  check(n.rows[0].n === 1, "exactly one event was dropped", "dropped " + n.rows[0].n);
 
   const d = await db.query(`select slug, is_published from public.events
                             where slug in ('asap-rocky','nick-cave','blitz','strobo')
                             order by slug`);
   const status = Object.fromEntries(d.rows.map((r) => [r.slug, r.is_published]));
-  check(status["asap-rocky"] === false, "gecmis + dogrulanmis tarih → dusuruldu");
+  check(status["asap-rocky"] === false, "past + confirmed date → dropped");
   check(status["nick-cave"] === true,
-    "gecmis ama DOGRULANMAMIS tarih → dokunulmadi (yanlis olabilir)");
-  check(status["blitz"] === true, "gelecekteki etkinlik duruyor");
-  check(status["strobo"] === true, "2 saat once baslayan hala duruyor (gece bitmedi)");
+    "past but UNCONFIRMED date → left alone (it could be wrong)");
+  check(status["blitz"] === true, "a future event stays");
+  check(status["strobo"] === true, "one that started 2 hours ago stays (the night is not over)");
 
   const tekrar = await db.query(`select public.hide_past_events() as n`);
   check(tekrar.rows[0].n === 0, "ikinci calisma one sey degistirmiyor");
 }
 
-console.log("\n— health ozeti —");
+console.log("\n— the health summary —");
 {
   const h = await db.query(`select * from public.health()`);
   const s = h.rows[0];
-  check(Number(s.events) === 36, "36 etkinlik sayildi");
-  check(Number(s.published) === 35, "biri dusurulmus olarak gorunuyor");
-  check(Number(s.unverified_date) > 0, "dogrulanmamis tarihler raporlaniyor");
-  check(Number(s.missing_venue) === 8, "mekansizlar raporlaniyor");
+  check(Number(s.events) === 36, "36 events counted");
+  check(Number(s.published) === 35, "one shows as dropped");
+  check(Number(s.unverified_date) > 0, "unconfirmed dates are reported");
+  check(Number(s.missing_venue) === 8, "the ones with no venue are reported");
 }
 
 console.log(`\n${passed} passed, ${failed} failed\n`);

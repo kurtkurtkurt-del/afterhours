@@ -1,27 +1,27 @@
 -- ============================================================
---  afterhours — KURULUM 1 / 2 : YAPI
---  SURUM: 2026-08-30 19:25   ← editorde bu satir gorunuyorsa dogru kopya
+--  afterhours — SETUP 1 / 2 : THE STRUCTURE
+--  VERSION: 2026-08-30 19:57   ← if the editor shows this line, it is the right copy
 --
---  Supabase panelinde: SQL Editor → New query → bu dosyanin
---  TAMAMINI yapistir → Run.
+--  In the Supabase panel: SQL Editor → New query → paste this file
+--  IN FULL → Run.
 --
---  Bittiginde "Success. No rows returned" gormelisin.
---  Sonra setup-2-comments.sql dosyasini ayni sekilde calistir.
+--  When it finishes you should see "Success. No rows returned".
+--  Then run setup-2-comments.sql the same way.
 --
---  URETILMIS DOSYA — source: backend/tools/setup-build.mjs
+--  GENERATED FILE — source: backend/tools/build-setup.mjs
 -- ============================================================
 
 
 -- ============================================================
---  TABLOLAR   (01_schema.sql)
+--  TABLES   (01_schema.sql)
 -- ============================================================
 
--- afterhours — tablolar
--- Supabase SQL editorunde sirayla calistirilir: 01 → 02 → 03 → ...
+-- afterhours — the tables
+-- Run them in order in the Supabase SQL editor: 01 → 02 → 03 → ...
 -- Authentication comes from the auth schema Supabase provides; what is
 -- here is only the public schema that hangs off it.
 
--- gen_random_uuid() Postgres 13’ten beri cekirdekte; uzanti gerekmiyor.
+-- gen_random_uuid() has been core since Postgres 13; no extension needed.
 
 -- The two ordering columns were called `sira` before the code moved to
 -- English. On a fresh database this does nothing; on one that already
@@ -51,7 +51,7 @@ create table if not exists public.cities (
   status  text not null default 'live' check (status in ('live', 'soon', 'planned')),
   sort_order    int  not null default 0,
   -- The filter picks a country first, then the cities in that country;
-  -- ulkeler de kitalarina gore gruplaniyor
+  -- and the countries themselves are grouped by continent
   country         text,
   country_slug    text,
   continent       text,
@@ -122,7 +122,7 @@ create index if not exists events_type_idx    on public.events (type_id);
 create index if not exists events_starts_idx  on public.events (starts_at);
 create index if not exists events_published_idx on public.events (is_published);
 
--- --------------------------------------------------------------- kisiler
+-- ---------------------------------------------------------------- people
 
 -- auth.users stays private (the email lives there); this is the public part.
 create table if not exists public.profiles (
@@ -139,7 +139,7 @@ create table if not exists public.profiles (
 -- Kept cards are not a separate table: they are the swipes going right.
 create table if not exists public.swipes (
   id          uuid primary key default gen_random_uuid(),
-  -- Varsayilan oturumdaki kisi: tarayici kimin adina yazdigini
+  -- Defaults to the person in the session: the browser never sends
   -- never sends it, so it cannot be faked.
   user_id     uuid not null default auth.uid() references public.profiles on delete cascade,
   event_id    uuid not null references public.events on delete cascade,
@@ -180,19 +180,19 @@ returns trigger
 language plpgsql
 as $$
 declare
-  ust public.comments%rowtype;
+  parent public.comments%rowtype;
 begin
   if new.parent_id is null then
     return new;
   end if;
 
-  select * into ust from public.comments where id = new.parent_id;
+  select * into parent from public.comments where id = new.parent_id;
 
-  if ust.parent_id is not null then
+  if parent.parent_id is not null then
     raise exception 'a reply cannot be replied to (two levels only)';
   end if;
 
-  if ust.event_id <> new.event_id then
+  if parent.event_id <> new.event_id then
     raise exception 'a reply must belong to the same event as its topic';
   end if;
 
@@ -205,7 +205,7 @@ create trigger comments_depth
   before insert or update on public.comments
   for each row execute function public.comments_check_depth();
 
--- ------------------------------------------------------------ arkadaslik
+-- ------------------------------------------------------------ friendship
 
 create table if not exists public.friendships (
   requester_id  uuid not null default auth.uid() references public.profiles on delete cascade,
@@ -235,7 +235,7 @@ create trigger events_touch
   before update on public.events
   for each row execute function public.touch_updated_at();
 
--- ------------------------------------- yeni kullaniciya otomatik profil
+-- ------------------------------- an automatic profile for a new user
 
 create or replace function public.handle_new_user()
 returns trigger
@@ -258,13 +258,13 @@ create trigger on_auth_user_created
 
 
 -- ============================================================
---  KURALLAR — guvenlik burada   (02_rls.sql)
+--  RULES — the security lives here   (02_rls.sql)
 -- ============================================================
 
--- afterhours — kimin neyi gorebilecegi / yazabilecegi
+-- afterhours — who may read what, and who may write it
 -- This file IS the security. Hiding a page is not security; the rule is here.
 
--- ------------------------------------------------------------ yardimcilar
+-- ------------------------------------------------------------- helpers
 
 -- profiles has RLS on it; reading profiles from inside a policy loops for
 -- ever. Hence security definer: the function steps around RLS.
@@ -293,7 +293,7 @@ as $$
   );
 $$;
 
--- Kimse kendini yonetici yapamasin.
+-- Nobody may make themselves an admin.
 create or replace function public.guard_is_admin()
 returns trigger
 language plpgsql
@@ -327,7 +327,7 @@ alter table public.swipes       enable row level security;
 alter table public.comments     enable row level security;
 alter table public.friendships  enable row level security;
 
--- ------------------------------------------- katalog: herkes okur, admin yazar
+-- ------------------------------- the catalogue: everyone reads, the admin writes
 
 drop policy if exists cities_read on public.cities;
 create policy cities_read on public.cities for select using (true);
@@ -349,7 +349,7 @@ create policy venues_write on public.venues for all
 
 -- ---------------------------------------------------------------- event
 
--- Giris yapmadan gezilebilir: yayindaki etkinlikleri herkes okur.
+-- You can look around without signing in: published events are public.
 drop policy if exists events_read on public.events;
 create policy events_read on public.events for select
   using (is_published or public.is_admin());
@@ -358,7 +358,7 @@ drop policy if exists events_write on public.events;
 create policy events_write on public.events for all
   using (public.is_admin()) with check (public.is_admin());
 
--- ---------------------------------------------------------------- profil
+-- --------------------------------------------------------------- profile
 
 drop policy if exists profiles_read on public.profiles;
 create policy profiles_read on public.profiles for select using (true);
@@ -370,8 +370,8 @@ create policy profiles_update_own on public.profiles for update
 
 -- ---------------------------------------------------------------- swipe
 
--- Kendi atislarin + onayli arkadaslarinin SAGA attiklari.
--- Arkadasinin sola attigi kimseyi ilgilendirmiyor.
+-- Your own swipes + what your confirmed friends swiped RIGHT.
+-- What a friend swiped left concerns nobody but them.
 drop policy if exists swipes_read on public.swipes;
 create policy swipes_read on public.swipes for select
   using (
@@ -411,7 +411,7 @@ drop policy if exists comments_delete on public.comments;
 create policy comments_delete on public.comments for delete
   using (author_id = auth.uid() or public.is_admin());
 
--- ------------------------------------------------------------ arkadaslik
+-- ------------------------------------------------------------ friendship
 
 drop policy if exists friendships_read on public.friendships;
 create policy friendships_read on public.friendships for select
@@ -431,7 +431,7 @@ drop policy if exists friendships_delete on public.friendships;
 create policy friendships_delete on public.friendships for delete
   using (requester_id = auth.uid() or addressee_id = auth.uid());
 
--- ---------------------------------------------------------------- izinler
+-- ------------------------------------------------------------ privileges
 
 grant usage on schema public to anon, authenticated;
 
@@ -446,11 +446,11 @@ grant insert, update, delete on public.cities, public.event_types,
 
 
 -- ============================================================
---  SEHIR, TUR, MEKAN   (03_seed_catalog.sql)
+--  CITIES, TYPES, VENUES   (03_seed_catalog.sql)
 -- ============================================================
 
--- URETILMIS DOSYA — elle duzenleme. Kaynak: backend/tools/build-seed.mjs
--- Cities, types and venues. This one first, then 04.
+-- GENERATED FILE - do not edit by hand. Source: backend/tools/build-seed.mjs
+-- Cities, types and venues. This first, then 04.
 
 insert into public.cities (slug, name, status, sort_order, country, country_slug) values
   ('munchen', 'münchen', 'live', 1, 'Deutschland', 'de'),
@@ -558,11 +558,11 @@ on conflict (city_id, slug) do nothing;
 
 
 -- ============================================================
---  36 ETKINLIK   (04_seed_events.sql)
+--  36 EVENTS   (04_seed_events.sql)
 -- ============================================================
 
--- URETILMIS DOSYA — kaynak: events-data.js (36 kayit)
--- meta alani ekranda gorunen satirin ta kendisi; degistirilmemeli.
+-- GENERATED FILE - source: events-data.js (36 records)
+-- The meta field is the very line shown on screen; it must not be changed.
 
 insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,
@@ -991,14 +991,14 @@ on conflict (slug) do nothing;
 
 
 -- ============================================================
---  DESTE, BIRIKTIRILENLER, SAYACLAR   (06_views.sql)
+--  DECK, KEPT, COUNTERS   (06_views.sql)
 -- ============================================================
 
--- afterhours — on yuzun kullandigi gorunumler ve fonksiyonlar
+-- afterhours — the views and functions the front end uses
 -- Keep the query logic here; the JS in the browser should only call it.
 
--- security_invoker: gorunum, cagirani kimse onun haklariyla calisir.
--- Bu olmazsa gorunum RLS’i atlar ve yayinda olmayan etkinlikler sizar.
+-- security_invoker: the view runs with the rights of whoever calls it.
+-- Without it the view steps around RLS and unpublished events leak.
 
 -- ------------------------------------------------- event (readable form)
 
@@ -1081,7 +1081,7 @@ $$;
 
 -- -------------------------------------------------------- writing a swipe
 
--- Tarayici etkinligin id’sini bilmek zorunda kalmasin: slug yeter.
+-- The browser should not need to know the event id: the slug is enough.
 -- This is what lets the swipes collected while signed out be carried to
 -- the account before the deck loads. user_id still comes from the session.
 create or replace function public.swipe_set(p_slug text, p_direction text)
@@ -1107,7 +1107,7 @@ as $$
   select count(*)::int from silinen;
 $$;
 
--- --------------------------------------------------- biriktirilenler
+-- --------------------------------------------------------- kept cards
 
 -- "kept tonight": the ones you threw right, newest first.
 -- It returns flat rows, not a composite type: composite types serialise
@@ -1126,9 +1126,9 @@ as $$
   order by s.created_at desc;
 $$;
 
--- ------------------------------------------- arkadaslarin begendikleri
+-- ------------------------------------------------- what your friends kept
 
--- "friends liked swipes" modunun kaynagi. Sadece onayli arkadaslar,
+-- What feeds the "friends liked swipes" mode. Confirmed friends only,
 -- right swipes only; RLS already forces it, this makes the intent visible.
 -- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.friends_kept(int);
@@ -1163,10 +1163,11 @@ as $$
   limit p_limit;
 $$;
 
--- --------------------------------------------------------- sayaclar
+-- --------------------------------------------------------- counters
 
--- Ana sayfadaki "36 nights in Munich this week · 7 Rave · ..." satirinin
--- comes from. Today it is counted in JS; the same number can come from here.
+-- Where the line on the landing page — "36 nights in Munich this week ·
+-- 7 Rave · ..." — comes from. Today it is counted in JS; the same number
+-- can come from here.
 -- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.event_counts(text);
 create or replace function public.event_counts(p_city text default 'munchen')
@@ -1181,8 +1182,8 @@ as $$
   order by e.type_sort_order;
 $$;
 
--- Bir etkinligi kac kisi biriktirmis. Kimin biriktirdigi gorunmez —
--- security definer sadece SAYIYI disari veriyor.
+-- How many people have kept an event. Who kept it stays hidden:
+-- security definer hands out the COUNT and nothing else.
 -- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.keep_counts();
 create or replace function public.keep_counts()
@@ -1198,7 +1199,7 @@ as $$
   group by s.event_id;
 $$;
 
--- Filtredeki sehir listesi: her sehir ve kac gecesi var.
+-- The city list for the filter: every city and how many nights it has.
 -- create or replace is not enough when the return type changes; drop first.
 drop function if exists public.city_counts();
 create or replace function public.city_counts()
@@ -1239,47 +1240,49 @@ grant select on public.events_public, public.comments_public to anon, authentica
 
 
 -- ============================================================
---  ARKADASLIK   (07_friends.sql)
+--  FRIENDSHIP   (07_friends.sql)
 -- ============================================================
 
--- afterhours — arkadaslik islemleri
--- Tablo ve kurallar 01/02’de; burasi gunluk islerin fonksiyonlari.
+-- afterhours — the friendship calls
+-- The table and the rules live in 01/02; these are the day-to-day calls.
 
--- Kullanici adi: arkadaslik bunun uzerinden kuruluyor, o yuzden
--- bicimi zorunlu. Kucuk harf, rakam, alt cizgi; 3-20 karakter.
+-- The handle: friendship is built on it, so the shape is enforced.
+-- Lower case, digits, underscore; 3-20 characters.
 alter table public.profiles
   drop constraint if exists profiles_handle_bicim;
 alter table public.profiles
-  add constraint profiles_handle_bicim
+  drop constraint if exists profiles_handle_format;
+alter table public.profiles
+  add constraint profiles_handle_format
   check (handle is null or handle ~ '^[a-z0-9_]{3,20}$');
 
--- Kendi arkadaslarin ve bekleyen istekler, tek listede.
--- yon: ’giden’ = sen istedin, ’gelen’ = sana geldi.
+-- Your friends and the pending requests, in one list.
+-- direction: outgoing = you asked for it, incoming = they asked you.
 create or replace function public.friends_list()
 returns table (
   other_id      uuid,
   handle        text,
   display_name  text,
   status        text,
-  yon           text
+  direction     text
 )
 language sql
 stable
 as $$
-  select f.addressee_id, p.handle, p.display_name, f.status, 'giden'
+  select f.addressee_id, p.handle, p.display_name, f.status, 'outgoing'
   from public.friendships f
   join public.profiles p on p.id = f.addressee_id
   where f.requester_id = auth.uid()
   union all
-  select f.requester_id, p.handle, p.display_name, f.status, 'gelen'
+  select f.requester_id, p.handle, p.display_name, f.status, 'incoming'
   from public.friendships f
   join public.profiles p on p.id = f.requester_id
   where f.addressee_id = auth.uid()
   order by 4, 2;
 $$;
 
--- Kullanici adiyla istek gonder. Karsi taraf zaten sana istek
--- gonderdiyse istegi kabul etmis olursun — iki kere sormaya gerek yok.
+-- Send a request by handle. If the other side
+-- has already sent you one, this accepts it: no need to ask twice.
 create or replace function public.friend_request(p_handle text)
 returns text
 language plpgsql
@@ -1296,7 +1299,7 @@ begin
     return 'yourself';
   end if;
 
-  -- Karsi yonde bekleyen bir istek varsa onu kabul et
+  -- If a request is pending in the other direction, accept that one
   if exists (select 1 from public.friendships
              where requester_id = hedef and addressee_id = auth.uid()) then
     update public.friendships set status = 'accepted'
@@ -1312,7 +1315,7 @@ begin
 end;
 $$;
 
--- Sana gelen istegi kabul et.
+-- Accept a request that came to you.
 create or replace function public.friend_accept(p_other uuid)
 returns boolean
 language sql
@@ -1322,7 +1325,7 @@ as $$
   returning true;
 $$;
 
--- Arkadasligi bitir / istegi geri al. Iki yon de calisir.
+-- End a friendship / take a request back. Works in both directions.
 create or replace function public.friend_remove(p_other uuid)
 returns boolean
 language sql
@@ -1343,35 +1346,35 @@ grant execute on function public.friend_remove(uuid)     to authenticated;
 
 
 -- ============================================================
---  POSTER DEPOSU   (08_storage.sql)
+--  POSTER STORE   (08_storage.sql)
 -- ============================================================
 
--- afterhours — poster deposu (Supabase Storage)
--- storage semasi yalnizca Supabase’de var; yerel testlerde bu blok
--- kendiliginden atlanir. Bu yuzden butun ifadeler dinamik (execute).
+-- afterhours — the poster store (Supabase Storage)
+-- The storage schema only exists on Supabase; in the local tests this
+-- block skips itself. That is why every statement is dynamic (execute).
 
 do $$
 begin
   if not exists (select 1 from information_schema.schemata where schema_name = 'storage') then
-    raise notice 'storage semasi yok — poster deposu atlandi (yerel calisma)';
+    raise notice 'no storage schema - poster store skipped (running locally)';
     return;
   end if;
 
-  -- Herkese acik kova: posterler zaten sitede gorunuyor, gizli degiller.
+  -- A public bucket: the posters are already on the site, nothing secret.
   execute $q$
     insert into storage.buckets (id, name, public)
     values ('posters', 'posters', true)
     on conflict (id) do nothing
   $q$;
 
-  -- Okuma herkese acik
+  -- Reading is open to everyone
   execute $q$ drop policy if exists "posters okunur" on storage.objects $q$;
   execute $q$
     create policy "posters okunur" on storage.objects
       for select using (bucket_id = 'posters')
   $q$;
 
-  -- Yazma yalniz yoneticide. public.is_admin() 02_rls.sql’de tanimli.
+  -- Writing belongs to the admin alone. public.is_admin() is defined in 02_rls.sql.
   execute $q$ drop policy if exists "posters yonetici yazar" on storage.objects $q$;
   execute $q$
     create policy "posters yonetici yazar" on storage.objects
@@ -1395,18 +1398,18 @@ $$;
 
 
 -- ============================================================
---  ARKA PLAN ISLERI   (09_jobs.sql)
+--  BACKGROUND JOBS   (09_jobs.sql)
 -- ============================================================
 
--- afterhours — arka planda calisan isler
--- pg_cron uzantisi Supabase’de Database → Extensions altindan acilir.
--- Uzanti yoksa fonksiyonlar yine calisir, sadece kendiliginden
--- tetiklenmez; elle de cagirabilirsin.
+-- afterhours — the jobs that run in the background
+-- The pg_cron extension is switched on under Database → Extensions.
+-- Without the extension the functions still work, they just do not run
+-- on their own; you can also call them by hand.
 
--- Gecmis etkinlikleri listeden dusur.
--- ONEMLI: sadece tarihi DOGRULANMIS olanlara dokunuyor. Yil cikarimiyla
--- doldurulmus 24 tarih yanlis olabilir; onlari kendiliginden gizlemek
--- gercek bir etkinligi siteden silmek olurdu.
+-- Drop past events off the list.
+-- IMPORTANT: it only touches events with a CONFIRMED date. Dropping one
+-- of the 24 inferred dates could be wrong, and hiding those on their own
+-- whose year was merely guessed would take a real event off the site.
 create or replace function public.hide_past_events()
 returns integer
 language sql
@@ -1419,14 +1422,14 @@ as $$
     where is_published
       and starts_at is not null
       and not starts_at_estimated
-      and starts_at < now() - interval '12 hours'   -- gece bitsin, sonra dussun
+      and starts_at < now() - interval '12 hours'   -- let the night end first
     returning 1
   )
   select count(*)::int from kapatilan;
 $$;
 
--- Bakim ozeti: neyin ilgi bekledigini tek satirda soyler.
--- Yonetim panelindeki uyarilarin veritabanindaki karsiligi.
+-- The maintenance summary: one row saying what wants attention.
+-- The database side of the warnings in the admin panel.
 create or replace function public.health()
 returns table (
   events            bigint,
@@ -1459,7 +1462,7 @@ $$;
 
 grant execute on function public.health() to anon, authenticated;
 
--- Zamanlama. pg_cron acik degilse bu blok sessizce atlanir.
+-- The schedule. If pg_cron is off, this block is skipped quietly.
 do $$
 begin
   if exists (select 1 from pg_extension where extname = 'pg_cron') then
@@ -1467,7 +1470,7 @@ begin
       where exists (select 1 from cron.job where jobname = 'afterhours-gecmisi-dusur');
     perform cron.schedule(
       'afterhours-gecmisi-dusur',
-      '30 5 * * *',                       -- her gun 05:30 UTC, gece bittikten sonra
+      '30 5 * * *',                       -- 05:30 UTC daily, after the night is over
       $job$ select public.hide_past_events(); $job$
     );
   end if;
@@ -1476,22 +1479,22 @@ $$;
 
 
 -- ============================================================
---  DUNYA — 54 SEHIR, 106 GECE   (11_world.sql)
+--  THE WORLD — 54 CITIES, 106 NIGHTS   (11_world.sql)
 -- ============================================================
 
 -- ============================================================
 --  afterhours — THE WORLD: 6 continents, 18 countries, 54 cities, 106 nights
 --
---  URETILMIS DOSYA — kaynak: backend/tools/world-sql.mjs
---  The content is invented but hand-written; the posters were generated too
---  (posters/37.svg … 142.svg).
+--  GENERATED FILE — source: backend/tools/world-sql.mjs
+--  The content is invented but written by hand; the posters were
+--  generated alongside it (posters/37.svg … 142.svg).
 -- ============================================================
 
--- Sehirlere kita alanlari
+-- Continent fields on the cities
 alter table public.cities add column if not exists continent text;
 alter table public.cities add column if not exists continent_slug text;
 
--- Drop the cities with no nights that break the shape (three per country).
+-- Drop the cities with no nights that broke the shape (three per country).
 delete from public.cities
 where slug in ('hamburg', 'frankfurt', 'leipzig')
   and not exists (select 1 from public.events e where e.city_id = cities.id);
@@ -2628,10 +2631,10 @@ on conflict (slug) do nothing;
 
 
 -- ============================================================
---  KISI PROFILLERI   (12_profiles.sql)
+--  PEOPLE PROFILES   (12_profiles.sql)
 -- ============================================================
 
--- afterhours — kisi profilleri
+-- afterhours — people profiles
 -- In 01 a profile was only "who you are + are you an admin". The real
 -- profile, the one that appears after signing up, is defined here.
 --
@@ -2649,7 +2652,8 @@ on conflict (slug) do nothing;
 alter table public.profiles
   add column if not exists bio          text,
   add column if not exists city_id      uuid references public.cities on delete set null,
-  -- Kayit bitmis sayilmiyor: hesap acilir, handle secilince biter.
+  -- Registration is not finished yet: the account opens, and choosing a
+  -- handle is what finishes it.
   add column if not exists onboarded_at timestamptz,
   add column if not exists last_seen_at timestamptz;
 
@@ -2667,7 +2671,7 @@ alter table public.profiles
 
 create index if not exists profiles_city_idx on public.profiles (city_id);
 
--- ------------------------------------------------------- kisiye ozel ayarlar
+-- ------------------------------------------------------ per-person settings
 
 create table if not exists public.profile_settings (
   user_id         uuid primary key references public.profiles on delete cascade,
@@ -2687,7 +2691,7 @@ create table if not exists public.profile_settings (
 
 alter table public.profile_settings enable row level security;
 
--- Sadece kendin. Yonetici de dahil kimse baskasininkini goremez.
+-- Yours alone. Nobody, admin included, can read another person row.
 drop policy if exists settings_read_own on public.profile_settings;
 create policy settings_read_own on public.profile_settings for select
   using (user_id = auth.uid());
@@ -2705,7 +2709,7 @@ create trigger settings_touch
   before update on public.profile_settings
   for each row execute function public.touch_updated_at();
 
--- --------------------------------------------- kayit: profil kendiliginden
+-- ------------------------------- signing up: the profile appears by itself
 
 -- This replaces the trigger from 01. Two differences:
 --   · the settings row is opened too (without it nobody sees their settings)
@@ -2760,11 +2764,11 @@ select p.id from public.profiles p
 left join public.profile_settings s on s.user_id = p.id
 where s.user_id is null;
 
--- ----------------------------------------------------- handle musait mi
+-- ------------------------------------------------ is the handle available
 
 -- The register form asks on every keystroke. The returned values are not
 -- shown as they are; the page writes its own sentence.
---   ok · bos · bicim · dolu · senin
+--   ok · empty · format · taken · yours
 create or replace function public.handle_status(p_handle text)
 returns text
 language sql
@@ -2783,7 +2787,7 @@ as $$
   end;
 $$;
 
--- ------------------------------------------------ kaydi tamamlayan adim
+-- ------------------------------------------ the step that finishes signup
 
 -- The one thing that must happen after the account opens: a handle. The
 -- rest is optional. It all goes in one request so no profile is left half done.
@@ -2873,10 +2877,10 @@ as $$
   where p.id = auth.uid();
 $$;
 
--- ------------------------------------------------------------ gizlilik
+-- ------------------------------------------------------------- privacy
 
 -- In 02 the profile table was "everyone reads": somebody without an
--- istekle butun uye listesini indirebiliyordu. Artik tabloyu dogrudan
+-- an account could pull down the whole member list in one request. The
 -- read directly are your own, your confirmed friends, and anyone with a
 -- request pending between you. Everything a stranger sees goes through
 -- the functions below; each hands back only the field it owes.
@@ -2931,7 +2935,7 @@ as $$
 $$;
 
 -- The name under a comment. comments_public no longer touches the profile
--- dokunmuyor: girissiz okuyucu da yazarin adini gorebilmeli.
+-- table any more: a signed-out reader should still see who wrote it.
 create or replace function public.author_name(p_author uuid, p_fallback text)
 returns text
 language sql
@@ -2959,10 +2963,10 @@ as $$
 $$;
 
 
--- ------------------------------------------------- baskasinin profili
+-- --------------------------------------------- the profile of another
 
 -- The card a stranger sees. Even the NUMBER of things you kept is only
--- arkadaslara ve ayar izin veriyorsa gorunuyor.
+-- to friends, and only when the setting allows it.
 drop function if exists public.profile_card(text);
 create or replace function public.profile_card(p_handle text)
 returns table (
@@ -2998,10 +3002,10 @@ as $$
     and public.card_visible(p.id);
 $$;
 
--- ------------------------------------------------------------- goruldu
+-- ---------------------------------------------------------------- seen
 
 -- For the "already on the app" list in friends&more. A person stamps
--- satirini damgaliyor; baskasininkine dokunamaz (RLS).
+-- stamps their own row only; no other row is reachable (RLS).
 create or replace function public.seen()
 returns void
 language sql
@@ -3010,7 +3014,7 @@ as $$
   update public.profiles set last_seen_at = now() where id = auth.uid();
 $$;
 
--- ------------------------------------- sakladiklarin: ayara saygi duyan kural
+-- ------------------------------- what you kept: a rule that obeys the setting
 
 -- The rule in 02 said "a confirmed friend sees the RIGHT swipes". A
 -- setting was added: say private and a friend cannot see them either. We
@@ -3026,7 +3030,7 @@ create policy swipes_read on public.swipes for select
 
 -- ------------------------------ two older definitions the rule broke
 
--- comments_public profil tablosuna join ediyordu; kural kapaninca
+-- comments_public used to join the profile table; once that rule closed,
 -- table; a signed-out reader was getting an empty author. A definer
 -- function hands back the name and the view never reaches for profiles.
 create or replace view public.comments_public
@@ -3044,8 +3048,8 @@ from public.comments c
 where not c.is_hidden;
 
 -- friend_request looked identity up by handle; that lookup goes through
--- geciyor. Fonksiyonun kendisi definer DEGIL: arkadaslik satirini yine
--- cagiranin haklariyla yaziyor.
+-- a definer helper. The function itself is NOT definer: it still writes
+-- the friendship row with the rights of whoever called it.
 create or replace function public.friend_request(p_handle text)
 returns text
 language plpgsql
@@ -3076,13 +3080,14 @@ begin
 end;
 $$;
 
--- ---------------------------------------------------------- hesabi silme
+-- ------------------------------------------------- deleting the account
 
 -- The last button on the settings page. Deleting really deletes: the
 -- account, profile, settings, swipes and friendships all cascade away.
 --
--- Yorumlar ISTISNA. Iki sebep: (1) comments.author_id "on delete set
--- null" ve author_name bos olamaz — dokunmadan silersek kisit patlar;
+-- Comments are the EXCEPTION, for two reasons: (1) comments.author_id is
+-- "on delete set
+-- null" and author_name cannot be empty - deleting without touching it
 -- (2) deleting a topic would take the replies of OTHER PEOPLE with it.
 -- So the text stays and the name goes: the comment becomes "someone".
 -- The settings page says so before you press it.
@@ -3105,7 +3110,7 @@ begin
 end;
 $$;
 
--- ------------------------------------------------------------- izinler
+-- ----------------------------------------------------------- privileges
 
 -- Supabase does not grant on a new table by itself; by hand, as in 02.
 grant select, insert, update on public.profile_settings to authenticated;
@@ -3124,43 +3129,45 @@ grant execute on function public.delete_account()                      to authen
 
 
 -- ============================================================
---  GERI BILDIRIM   (13_feedback.sql)
+--  FEEDBACK   (13_feedback.sql)
 -- ============================================================
 
--- afterhours — geri bildirim
--- "give feedback → help us" sayfasinin arkasi. Tek tablo, iki kural:
--- herkes yazabilir, yalniz yonetici okuyabilir.
+-- afterhours — feedback
+-- What sits behind the "give feedback → help us" page. One table, two rules:
+-- everyone may write, only the admin may read.
 --
--- Girissiz de yazilabiliyor, cunku bozuk bir seyi bildirmek icin once
--- hesap acmak sacma. O zaman yazan kisi isterse bir iletisim satiri
--- birakiyor; birakmazsa da yazdigi okunuyor, cevabi olmuyor.
+-- You can write without signing in, because opening an account just to
+-- report something broken is absurd. Whoever writes may then leave a
+-- way to reach them; if not, what they wrote is still read, they just get
+-- no answer.
 
 create table if not exists public.feedback (
   id          uuid primary key default gen_random_uuid(),
-  -- Girisliyse kim oldugu kendiliginden yaziliyor; hesap silinirse
-  -- yazdigi kaliyor ama adi dusuyor.
+  -- If signed in, who wrote it is filled in automatically; if the account
+  -- is deleted the text stays and the name falls away.
   author_id   uuid default auth.uid() references public.profiles on delete set null,
-  -- Girissizin biraktigi e-posta ya da baska bir yol. Istege bagli.
+  -- An email or some other way back, left by a signed-out writer. Optional.
   contact     text check (contact is null or length(btrim(contact)) between 3 and 120),
   kind        text not null default 'other'
               check (kind in ('broken', 'idea', 'event', 'other')),
   body        text not null check (length(btrim(body)) between 10 and 2000),
-  -- Yonetim tarafinda "bununla ilgilenildi" isareti.
+  -- The "this has been dealt with" mark on the admin side.
   handled     boolean not null default false,
   created_at  timestamptz not null default now()
 );
 
-create index if not exists feedback_yeni_idx on public.feedback (created_at desc);
+drop index if exists public.feedback_yeni_idx;   -- the name from before the code spoke English
+create index if not exists feedback_recent_idx on public.feedback (created_at desc);
 
 alter table public.feedback enable row level security;
 
--- Herkes yazar — girisli de girissiz de. Tek sart: baskasinin adina yazma.
+-- Everyone writes, signed in or not. One condition: not in another name.
 drop policy if exists feedback_write on public.feedback;
 create policy feedback_write on public.feedback for insert
   with check (author_id is null or author_id = auth.uid());
 
--- Yalniz yonetici okur. Yazan kendi yazdigini bile geri okumuyor:
--- bu bir gelen kutusu, konusma degil.
+-- Only the admin reads. Not even the writer can read their own back:
+-- this is an inbox, not a conversation.
 drop policy if exists feedback_read on public.feedback;
 create policy feedback_read on public.feedback for select
   using (public.is_admin());
@@ -3169,7 +3176,7 @@ drop policy if exists feedback_handle on public.feedback;
 create policy feedback_handle on public.feedback for update
   using (public.is_admin()) with check (public.is_admin());
 
--- Yonetim panelinin okudugu liste: yazani cozulmus, yenisi ustte.
+-- The list the admin panel reads: the writer resolved, the newest on top.
 drop function if exists public.feedback_list(int);
 create or replace function public.feedback_list(p_limit int default 100)
 returns table (

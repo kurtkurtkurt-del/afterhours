@@ -1,7 +1,7 @@
--- afterhours — kimin neyi gorebilecegi / yazabilecegi
+-- afterhours — who may read what, and who may write it
 -- This file IS the security. Hiding a page is not security; the rule is here.
 
--- ------------------------------------------------------------ yardimcilar
+-- ------------------------------------------------------------- helpers
 
 -- profiles has RLS on it; reading profiles from inside a policy loops for
 -- ever. Hence security definer: the function steps around RLS.
@@ -30,7 +30,7 @@ as $$
   );
 $$;
 
--- Kimse kendini yonetici yapamasin.
+-- Nobody may make themselves an admin.
 create or replace function public.guard_is_admin()
 returns trigger
 language plpgsql
@@ -64,7 +64,7 @@ alter table public.swipes       enable row level security;
 alter table public.comments     enable row level security;
 alter table public.friendships  enable row level security;
 
--- ------------------------------------------- katalog: herkes okur, admin yazar
+-- ------------------------------- the catalogue: everyone reads, the admin writes
 
 drop policy if exists cities_read on public.cities;
 create policy cities_read on public.cities for select using (true);
@@ -86,7 +86,7 @@ create policy venues_write on public.venues for all
 
 -- ---------------------------------------------------------------- event
 
--- Giris yapmadan gezilebilir: yayindaki etkinlikleri herkes okur.
+-- You can look around without signing in: published events are public.
 drop policy if exists events_read on public.events;
 create policy events_read on public.events for select
   using (is_published or public.is_admin());
@@ -95,7 +95,7 @@ drop policy if exists events_write on public.events;
 create policy events_write on public.events for all
   using (public.is_admin()) with check (public.is_admin());
 
--- ---------------------------------------------------------------- profil
+-- --------------------------------------------------------------- profile
 
 drop policy if exists profiles_read on public.profiles;
 create policy profiles_read on public.profiles for select using (true);
@@ -107,8 +107,8 @@ create policy profiles_update_own on public.profiles for update
 
 -- ---------------------------------------------------------------- swipe
 
--- Kendi atislarin + onayli arkadaslarinin SAGA attiklari.
--- Arkadasinin sola attigi kimseyi ilgilendirmiyor.
+-- Your own swipes + what your confirmed friends swiped RIGHT.
+-- What a friend swiped left concerns nobody but them.
 drop policy if exists swipes_read on public.swipes;
 create policy swipes_read on public.swipes for select
   using (
@@ -148,7 +148,7 @@ drop policy if exists comments_delete on public.comments;
 create policy comments_delete on public.comments for delete
   using (author_id = auth.uid() or public.is_admin());
 
--- ------------------------------------------------------------ arkadaslik
+-- ------------------------------------------------------------ friendship
 
 drop policy if exists friendships_read on public.friendships;
 create policy friendships_read on public.friendships for select
@@ -168,7 +168,7 @@ drop policy if exists friendships_delete on public.friendships;
 create policy friendships_delete on public.friendships for delete
   using (requester_id = auth.uid() or addressee_id = auth.uid());
 
--- ---------------------------------------------------------------- izinler
+-- ------------------------------------------------------------ privileges
 
 grant usage on schema public to anon, authenticated;
 

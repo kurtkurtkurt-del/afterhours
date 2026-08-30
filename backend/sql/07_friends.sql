@@ -1,41 +1,43 @@
--- afterhours — arkadaslik islemleri
--- Tablo ve kurallar 01/02’de; burasi gunluk islerin fonksiyonlari.
+-- afterhours — the friendship calls
+-- The table and the rules live in 01/02; these are the day-to-day calls.
 
--- Kullanici adi: arkadaslik bunun uzerinden kuruluyor, o yuzden
--- bicimi zorunlu. Kucuk harf, rakam, alt cizgi; 3-20 karakter.
+-- The handle: friendship is built on it, so the shape is enforced.
+-- Lower case, digits, underscore; 3-20 characters.
 alter table public.profiles
   drop constraint if exists profiles_handle_bicim;
 alter table public.profiles
-  add constraint profiles_handle_bicim
+  drop constraint if exists profiles_handle_format;
+alter table public.profiles
+  add constraint profiles_handle_format
   check (handle is null or handle ~ '^[a-z0-9_]{3,20}$');
 
--- Kendi arkadaslarin ve bekleyen istekler, tek listede.
--- yon: ’giden’ = sen istedin, ’gelen’ = sana geldi.
+-- Your friends and the pending requests, in one list.
+-- direction: outgoing = you asked for it, incoming = they asked you.
 create or replace function public.friends_list()
 returns table (
   other_id      uuid,
   handle        text,
   display_name  text,
   status        text,
-  yon           text
+  direction     text
 )
 language sql
 stable
 as $$
-  select f.addressee_id, p.handle, p.display_name, f.status, 'giden'
+  select f.addressee_id, p.handle, p.display_name, f.status, 'outgoing'
   from public.friendships f
   join public.profiles p on p.id = f.addressee_id
   where f.requester_id = auth.uid()
   union all
-  select f.requester_id, p.handle, p.display_name, f.status, 'gelen'
+  select f.requester_id, p.handle, p.display_name, f.status, 'incoming'
   from public.friendships f
   join public.profiles p on p.id = f.requester_id
   where f.addressee_id = auth.uid()
   order by 4, 2;
 $$;
 
--- Kullanici adiyla istek gonder. Karsi taraf zaten sana istek
--- gonderdiyse istegi kabul etmis olursun — iki kere sormaya gerek yok.
+-- Send a request by handle. If the other side
+-- has already sent you one, this accepts it: no need to ask twice.
 create or replace function public.friend_request(p_handle text)
 returns text
 language plpgsql
@@ -52,7 +54,7 @@ begin
     return 'yourself';
   end if;
 
-  -- Karsi yonde bekleyen bir istek varsa onu kabul et
+  -- If a request is pending in the other direction, accept that one
   if exists (select 1 from public.friendships
              where requester_id = hedef and addressee_id = auth.uid()) then
     update public.friendships set status = 'accepted'
@@ -68,7 +70,7 @@ begin
 end;
 $$;
 
--- Sana gelen istegi kabul et.
+-- Accept a request that came to you.
 create or replace function public.friend_accept(p_other uuid)
 returns boolean
 language sql
@@ -78,7 +80,7 @@ as $$
   returning true;
 $$;
 
--- Arkadasligi bitir / istegi geri al. Iki yon de calisir.
+-- End a friendship / take a request back. Works in both directions.
 create or replace function public.friend_remove(p_other uuid)
 returns boolean
 language sql

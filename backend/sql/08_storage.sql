@@ -1,29 +1,29 @@
--- afterhours — poster deposu (Supabase Storage)
--- storage semasi yalnizca Supabase’de var; yerel testlerde bu blok
--- kendiliginden atlanir. Bu yuzden butun ifadeler dinamik (execute).
+-- afterhours — the poster store (Supabase Storage)
+-- The storage schema only exists on Supabase; in the local tests this
+-- block skips itself. That is why every statement is dynamic (execute).
 
 do $$
 begin
   if not exists (select 1 from information_schema.schemata where schema_name = 'storage') then
-    raise notice 'storage semasi yok — poster deposu atlandi (yerel calisma)';
+    raise notice 'no storage schema - poster store skipped (running locally)';
     return;
   end if;
 
-  -- Herkese acik kova: posterler zaten sitede gorunuyor, gizli degiller.
+  -- A public bucket: the posters are already on the site, nothing secret.
   execute $q$
     insert into storage.buckets (id, name, public)
     values ('posters', 'posters', true)
     on conflict (id) do nothing
   $q$;
 
-  -- Okuma herkese acik
+  -- Reading is open to everyone
   execute $q$ drop policy if exists "posters okunur" on storage.objects $q$;
   execute $q$
     create policy "posters okunur" on storage.objects
       for select using (bucket_id = 'posters')
   $q$;
 
-  -- Yazma yalniz yoneticide. public.is_admin() 02_rls.sql’de tanimli.
+  -- Writing belongs to the admin alone. public.is_admin() is defined in 02_rls.sql.
   execute $q$ drop policy if exists "posters yonetici yazar" on storage.objects $q$;
   execute $q$
     create policy "posters yonetici yazar" on storage.objects

@@ -1,4 +1,4 @@
-/* afterhours — geri bildirim: herkes yazar, yalniz yonetici okur */
+/* afterhours — feedback: everyone writes, only the admin reads */
 
 import { PGlite } from "@electric-sql/pglite";
 import { readFile } from "node:fs/promises";
@@ -10,7 +10,7 @@ const check = (k, name, extra = "") => {
   else { failed++; console.log("  ✗ " + name + (extra ? "  → " + extra : "")); }
 };
 process.on("unhandledRejection", (e) => {
-  console.log("\nHATA: " + ((e && e.message) || e));
+  console.log("\nERROR: " + ((e && e.message) || e));
   if (e && e.where) console.log("  " + e.where);
   process.exit(1);
 });
@@ -24,7 +24,7 @@ for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02
 }
 
 const A = "aaaaaaaa-1111-1111-1111-111111111111";   /* yonetici */
-const B = "bbbbbbbb-2222-2222-2222-222222222222";   /* siradan kisi */
+const B = "bbbbbbbb-2222-2222-2222-222222222222";   /* an ordinary person */
 
 const asUser = (id) => db.exec(`set role authenticated; set request.jwt.claims = '{"sub":"${id}"}';`);
 const asAnon = () => db.exec(`set role anon; set request.jwt.claims = '';`);
@@ -37,92 +37,92 @@ await db.exec(`
   update public.profiles set handle = 'lena' where id = '${B}';
 `);
 
-console.log("\n— herkes yazabiliyor —");
+console.log("\n— everyone can write —");
 {
   await asAnon();
   await db.exec(`insert into public.feedback (kind, body, contact)
                  values ('broken', 'the deck stops after four cards', 'biri@example.com')`);
-  check(true, "girissiz biri yazabiliyor");
+  check(true, "someone signed out can write");
 
   await asUser(B);
   await db.exec(`insert into public.feedback (kind, body)
-                 values ('idea', 'let me undo the last swipe, just once')`);
-  check(true, "girisli biri yazabiliyor");
+                 values ('idea', 'let me undo the last swipe, just before')`);
+  check(true, "someone signed in can write");
 }
 
-console.log("\n— sinirlar —");
+console.log("\n— the limits —");
 {
   await asUser(B);
   let kisa = null;
-  try { await db.exec(`insert into public.feedback (body) values ('yok')`); }
+  try { await db.exec(`insert into public.feedback (body) values ('no')`); }
   catch (e) { kisa = e.message; }
-  check(Boolean(kisa), "cok kisa mesaj reddediliyor");
+  check(Boolean(kisa), "a message that is too short is refused");
 
   let kind = null;
-  try { await db.exec(`insert into public.feedback (kind, body) values ('spam', 'buyurun one mesaj daha')`); }
+  try { await db.exec(`insert into public.feedback (kind, body) values ('spam', 'here is another message')`); }
   catch (e) { kind = e.message; }
-  check(Boolean(kind), "tanimsiz kind reddediliyor");
+  check(Boolean(kind), "an unknown kind is refused");
 
   let sahte = null;
   try {
     await db.exec(`insert into public.feedback (author_id, body)
                    values ('${A}', 'baskasinin adina yazilan one mesaj')`);
   } catch (e) { sahte = e.message; }
-  check(Boolean(sahte), "baskasinin adina yazilamiyor");
+  check(Boolean(sahte), "you cannot write in someone else's name");
 }
 
-console.log("\n— yalniz yonetici okuyor —");
+console.log("\n— only the admin reads —");
 {
-  /* Girissize okuma izni hic VERILMEDI: kural degil, yetki durduruyor.
-     Yani hata almasi dogru sonuc. */
+  /* A signed-out reader was never GRANTED read at all: it is the
+     privilege stopping them, not a policy. So an error is the right result. */
   await asAnon();
   let anonHata = null, anonSatir = null;
   try {
     const a = await db.query(`select count(*)::int as n from public.feedback`);
     anonSatir = a.rows[0].n;
   } catch (e) { anonHata = e.message; }
-  check(anonHata !== null || anonSatir === 0, "girissiz hicbir sey goremiyor",
-    "gordugu " + anonSatir);
+  check(anonHata !== null || anonSatir === 0, "signed out, nothing is visible",
+    "it saw " + anonSatir);
 
   await asUser(B);
   const b = await db.query(`select count(*)::int as n from public.feedback`);
-  check(b.rows[0].n === 0, "yazan kendi yazdigini bile geri okumuyor", "gordugu " + b.rows[0].n);
+  check(b.rows[0].n === 0, "even the writer cannot read their own back", "it saw " + b.rows[0].n);
 
   await asUser(A);
   const y = await db.query(`select count(*)::int as n from public.feedback`);
-  check(y.rows[0].n === 2, "yonetici hepsini goruyor", "gordugu " + y.rows[0].n);
+  check(y.rows[0].n === 2, "the admin sees all of it", "it saw " + y.rows[0].n);
 }
 
-console.log("\n— asService listesi —");
+console.log("\n— the admin list —");
 {
   await asUser(A);
   const l = await db.query(`select * from public.feedback_list(10)`);
   check(l.rows.length === 2, "list geliyor");
-  check(l.rows[0].kind === "idea", "yenisi ustte");
-  check(l.rows[0].author === "lena", "girislinin adi cozuldu");
+  check(l.rows[0].kind === "idea", "the newest one is on top");
+  check(l.rows[0].author === "lena", "the signed-in writer resolves to a name");
   check(l.rows[1].author === null && l.rows[1].contact === "biri@example.com",
-    "girissizin adi yok, biraktigi iletisim var");
+    "the signed-out one has no name, only the contact they left");
 
   await db.exec(`update public.feedback set handled = true where kind = 'idea'`);
   const s = await db.query(`select count(*)::int as n from public.feedback where handled`);
-  check(s.rows[0].n === 1, "yonetici isaretleyebiliyor");
+  check(s.rows[0].n === 1, "the admin can mark one handled");
 
   await asUser(B);
   await db.exec(`update public.feedback set handled = true`);
   const k = await db.query(`select count(*)::int as n from public.feedback where handled`);
   await asUser(A);
   const t = await db.query(`select count(*)::int as n from public.feedback where handled`);
-  check(t.rows[0].n === 1, "siradan kisi isaretleyemiyor");
+  check(t.rows[0].n === 1, "an ordinary person cannot mark one");
 }
 
-console.log("\n— hesap silinince —");
+console.log("\n— when the account is deleted —");
 {
   await asUser(B);
   await db.exec(`select public.delete_account()`);
   await asUser(A);
   const l = await db.query(`select author, body from public.feedback_list(10)`);
-  check(l.rows.length === 2, "yazdigi duruyor");
-  check(l.rows[0].author === null, "adi dustu");
+  check(l.rows.length === 2, "what they wrote stays");
+  check(l.rows[0].author === null, "the name fell away");
 }
 
 console.log(`\n${passed} passed, ${failed} failed\n`);

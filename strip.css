@@ -9,7 +9,7 @@ body.strip-page {
   overflow: hidden;
   --top-gap: 92px;
   --serit-bosluk: 14px;
-  /* Uc serit ekrani boler; poster yuksekligi buradan cikar */
+  /* Three strips divide the screen; the poster height follows from that */
   --serit-h: calc((100vh - var(--top-gap) - 2 * var(--serit-bosluk)) / 3);
 }
 
@@ -32,9 +32,9 @@ body.strip-page {
   overflow: hidden;
 }
 
-/* Kayan ray: icerik iki kez basilir, -%50'ye kayinca dikissiz doner */
+/* The sliding rail: the content is printed twice, so at -50% it loops seamlessly */
 .rail {
-  flex: 0 0 auto;          /* ray icerigi kadar genis olmali, yoksa -%50 dongusu kayar */
+  flex: 0 0 auto;          /* the rail must be as wide as its content, or the -50% loop drifts */
   display: flex;
   gap: 14px;
   will-change: transform;
@@ -48,12 +48,12 @@ body.strip-page {
   to   { transform: translateX(-50%); }
 }
 
-/* Farkli hizlar, zit yonler */
+/* Different speeds, opposite directions */
 .strip:nth-child(1) .rail { animation-duration: 64s; }
 .strip:nth-child(2) .rail { animation-duration: 46s; animation-direction: reverse; }
 .strip:nth-child(3) .rail { animation-duration: 88s; }
 
-/* Fare bir posterin ustundeyken o serit durur */
+/* While the pointer is over a poster, that strip stops */
 .strip:hover .rail,
 .strip.stopped .rail { animation-play-state: paused; }
 
@@ -72,7 +72,7 @@ body.strip-page {
   z-index: 2;
 }
 
-/* Ortadaki sabit metin */
+/* The fixed text in the middle */
 .middle {
   position: fixed;
   top: 50%;

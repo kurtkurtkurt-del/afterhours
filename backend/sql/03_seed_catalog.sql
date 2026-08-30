@@ -1,5 +1,5 @@
--- URETILMIS DOSYA — elle duzenleme. Kaynak: backend/tools/build-seed.mjs
--- Cities, types and venues. This one first, then 04.
+-- GENERATED FILE - do not edit by hand. Source: backend/tools/build-seed.mjs
+-- Cities, types and venues. This first, then 04.
 
 insert into public.cities (slug, name, status, sort_order, country, country_slug) values
   ('munchen', 'münchen', 'live', 1, 'Deutschland', 'de'),

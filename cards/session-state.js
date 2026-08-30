@@ -1,4 +1,4 @@
-/* afterhours — card collection'in oturuma gore hali.
+/* afterhours — how the card collection changes with the session.
    Girisliysen page empty: "sign in" dugmesi de, ornek cards da
    gitmis oluyor. Ikisi de girmemis birine ne oldugunu anlatmak icin
    duruyordu; girmis biri kendi (henuz empty) koleksiyonunu goruyor.
@@ -20,7 +20,7 @@
     if (cards) cards.hidden = signedIn;
   }
 
-  refresh();                                   /* jeton yerelde: hemen bilinir */
+  refresh();                                   /* the token is local: known at once */
   if (AH.sessionReady) AH.sessionReady.then(refresh);
   if (AH.onSessionChange) AH.onSessionChange(refresh);
 })();

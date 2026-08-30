@@ -1,4 +1,4 @@
-/* afterhours — hesap sayfasindaki ortadaki blok.
+/* afterhours — the middle block on the account page.
    Girmemis birine "first time?" (kayit cagrisi), girmis birine
    "account settings." gorunuyor. Ikisi de sayfada duruyor, sadece
    biri gizleniyor.

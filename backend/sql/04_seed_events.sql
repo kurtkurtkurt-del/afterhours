@@ -1,5 +1,5 @@
--- URETILMIS DOSYA — kaynak: events-data.js (36 kayit)
--- meta alani ekranda gorunen satirin ta kendisi; degistirilmemeli.
+-- GENERATED FILE - source: events-data.js (36 records)
+-- The meta field is the very line shown on screen; it must not be changed.
 
 insert into public.events
   (slug, city_id, type_id, venue_id, title, meta, body, poster_no,

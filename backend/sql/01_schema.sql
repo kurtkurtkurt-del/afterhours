@@ -1,9 +1,9 @@
--- afterhours — tablolar
--- Supabase SQL editorunde sirayla calistirilir: 01 → 02 → 03 → ...
+-- afterhours — the tables
+-- Run them in order in the Supabase SQL editor: 01 → 02 → 03 → ...
 -- Authentication comes from the auth schema Supabase provides; what is
 -- here is only the public schema that hangs off it.
 
--- gen_random_uuid() Postgres 13’ten beri cekirdekte; uzanti gerekmiyor.
+-- gen_random_uuid() has been core since Postgres 13; no extension needed.
 
 -- The two ordering columns were called `sira` before the code moved to
 -- English. On a fresh database this does nothing; on one that already
@@ -33,7 +33,7 @@ create table if not exists public.cities (
   status  text not null default 'live' check (status in ('live', 'soon', 'planned')),
   sort_order    int  not null default 0,
   -- The filter picks a country first, then the cities in that country;
-  -- ulkeler de kitalarina gore gruplaniyor
+  -- and the countries themselves are grouped by continent
   country         text,
   country_slug    text,
   continent       text,
@@ -104,7 +104,7 @@ create index if not exists events_type_idx    on public.events (type_id);
 create index if not exists events_starts_idx  on public.events (starts_at);
 create index if not exists events_published_idx on public.events (is_published);
 
--- --------------------------------------------------------------- kisiler
+-- ---------------------------------------------------------------- people
 
 -- auth.users stays private (the email lives there); this is the public part.
 create table if not exists public.profiles (
@@ -121,7 +121,7 @@ create table if not exists public.profiles (
 -- Kept cards are not a separate table: they are the swipes going right.
 create table if not exists public.swipes (
   id          uuid primary key default gen_random_uuid(),
-  -- Varsayilan oturumdaki kisi: tarayici kimin adina yazdigini
+  -- Defaults to the person in the session: the browser never sends
   -- never sends it, so it cannot be faked.
   user_id     uuid not null default auth.uid() references public.profiles on delete cascade,
   event_id    uuid not null references public.events on delete cascade,
@@ -162,19 +162,19 @@ returns trigger
 language plpgsql
 as $$
 declare
-  ust public.comments%rowtype;
+  parent public.comments%rowtype;
 begin
   if new.parent_id is null then
     return new;
   end if;
 
-  select * into ust from public.comments where id = new.parent_id;
+  select * into parent from public.comments where id = new.parent_id;
 
-  if ust.parent_id is not null then
+  if parent.parent_id is not null then
     raise exception 'a reply cannot be replied to (two levels only)';
   end if;
 
-  if ust.event_id <> new.event_id then
+  if parent.event_id <> new.event_id then
     raise exception 'a reply must belong to the same event as its topic';
   end if;
 
@@ -187,7 +187,7 @@ create trigger comments_depth
   before insert or update on public.comments
   for each row execute function public.comments_check_depth();
 
--- ------------------------------------------------------------ arkadaslik
+-- ------------------------------------------------------------ friendship
 
 create table if not exists public.friendships (
   requester_id  uuid not null default auth.uid() references public.profiles on delete cascade,
@@ -217,7 +217,7 @@ create trigger events_touch
   before update on public.events
   for each row execute function public.touch_updated_at();
 
--- ------------------------------------- yeni kullaniciya otomatik profil
+-- ------------------------------- an automatic profile for a new user
 
 create or replace function public.handle_new_user()
 returns trigger

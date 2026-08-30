@@ -73,8 +73,8 @@ KABUK = """<!DOCTYPE html>
   <script src="../../session.js?v={v}"></script>
   <script src="../../menu.js?v={v}"></script>
   <script src="../../data.js?v={v}"
-          data-yedek="../../events-data.js?v={v}"
-          data-sonra="../event.js?v={v}"></script>
+          data-fallback="../../events-data.js?v={v}"
+          data-after="../event.js?v={v}"></script>
 
 </body>
 </html>
