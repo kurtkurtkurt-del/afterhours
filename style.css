@@ -3153,3 +3153,52 @@ body:has(> .dipnot:not(.ince)) > .dipnot { margin-top: auto; }
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+/* ---------- Erisilebilirlik ---------- */
+
+/* Klavyeyle gezen biri her sayfada once menuyu geciyordu. Bu baglanti
+   gorunmuyor; sekme tusuna basilinca beliriyor. */
+.atla {
+  position: fixed;
+  z-index: 100;
+  top: 10px;
+  left: 10px;
+  padding: 12px 18px;
+  background: var(--siyah);
+  color: var(--beyaz);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform 0.18s ease;
+}
+
+.atla:focus { transform: translateY(0); }
+
+/* Tarayici varsayilani cogu yerde gorunmuyordu (siyah uzerine siyah).
+   Yalniz KLAVYE odaginda cikiyor, farede degil. */
+:focus-visible {
+  outline: 2px solid var(--siyah);
+  outline-offset: 3px;
+}
+
+.ekran6 :focus-visible,
+.ekran4 :focus-visible,
+.k6-buton:focus-visible { outline-color: #f2f2f0; }
+
+/* Odaklanmak icin verilen tabindex, tiklaninca halka cizmesin */
+[tabindex="-1"]:focus { outline: none; }
+
+/* Hareketi azaltilmis sistemlerde site duruyor: kartlar yine ucuyor
+   ama animasyonla degil, tek adimda. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

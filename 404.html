@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>nothing here | afterhours</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+  <!-- Bu sayfa herhangi bir derinlikte gosterilebiliyor (Pages her
+       bulunamayan adres icin bunu doner ve adres cubugu degismez), o
+       yuzden disaridan hicbir dosya cagirmiyor: stil burada. -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 48px 32px;
+      background: #fff;
+      color: #000;
+      font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .no {
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.42;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: min(9vw, 76px);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 0.98;
+    }
+    p {
+      margin-top: 22px;
+      max-width: 44ch;
+      font-size: 16px;
+      line-height: 1.62;
+      opacity: 0.78;
+    }
+    nav { display: flex; flex-wrap: wrap; gap: 26px; margin-top: 34px; }
+    nav a {
+      color: #000;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      padding-bottom: 2px;
+    }
+    nav a:hover { border-bottom-color: #000; }
+  </style>
+</head>
+<body>
+  <p class="no">404</p>
+  <h1>this one is<br />gone for good.</h1>
+  <p>Like a card thrown left. The address does not lead anywhere — the night
+    may have passed, or the link lost a piece on the way.</p>
+
+  <nav>
+    <a data-yol="explore/index.html">the deck</a>
+    <a data-yol="maps/index.html">maps</a>
+    <a data-yol="help/index.html">how this works</a>
+    <a data-yol="index.html">home</a>
+  </nav>
+
+  <script>
+    /* Site alt klasorde de yayinlanabiliyor; kokun neresi oldugunu
+       adresten cikariyoruz ki baglantilar iki yerde de calissin. */
+    var kok = location.pathname.indexOf("/afterhours/") === 0 ? "/afterhours/" : "/";
+    document.querySelectorAll("nav a").forEach(function (a) {
+      a.href = kok + a.dataset.yol;
+    });
+  </script>
+</body>
+</html>

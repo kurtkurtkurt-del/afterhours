@@ -74,7 +74,7 @@
       })
       .catch((h) => {
         el("gb-yolla").disabled = false;
-        soyle("couldn't send: " + h.message, "hata");
+        soyle(AH.hataMetni(h, "couldn't send it. the words are still here."), "hata");
       });
   };
 

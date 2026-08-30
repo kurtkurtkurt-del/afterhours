@@ -70,7 +70,7 @@
         const m = String(h.message || "");
         soyle(not, /already registered|exists/i.test(m)
           ? "there is already an account with that email. sign in instead."
-          : "couldn't open it: " + m, "hata");
+          : AH.hataMetni(h, "couldn't open the account."), "hata");
       });
   });
 
@@ -168,7 +168,7 @@
       })
       .catch((h2) => {
         el("kt-bitir").disabled = false;
-        soyle(el("kt-durum"), "couldn't finish: " + h2.message, "hata");
+        soyle(el("kt-durum"), AH.hataMetni(h2, "couldn't finish the account."), "hata");
       });
   };
 

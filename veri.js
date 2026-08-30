@@ -97,6 +97,31 @@
     });
   };
 
+  /* Veritabani ne derse desin, ekrana insan cumlesi cikmali.
+     "404 {"code":"PGRST202","details":"Searched for the function..."}
+     diye bir sey kullaniciya bir sey anlatmiyor; ona ne yapabilecegini
+     soyleyen kisa bir cumle lazim. Ayrinti konsola dusuyor. */
+  AH.hataMetni = function (hata, yedek) {
+    const ham = String((hata && hata.message) || hata || "");
+    console.warn("afterhours:", ham);
+
+    if (/PGRST202|Searched for the function/i.test(ham))
+      return "this part isn't switched on yet. it should be soon.";
+    if (/^40[13]\b|JWT|token is expired/i.test(ham))
+      return "your session ran out. sign in again.";
+    if (/duplicate key|already exists|unique constraint/i.test(ham))
+      return "that one is taken already.";
+    if (/violates .*constraint|invalid input/i.test(ham))
+      return "that doesn't fit — check the field and try again.";
+    if (/^429\b|rate limit/i.test(ham))
+      return "too fast. give it a minute.";
+    if (/^5\d\d\b/.test(ham))
+      return "the other end is having a moment. try again shortly.";
+    if (/failed to fetch|networkerror|load failed|backend kapali/i.test(ham))
+      return "no connection to the backend right now.";
+    return yedek || "something went wrong. it has been noted.";
+  };
+
   /* Veritabani satirini sayfanin bekledigi bicime cevir.
      Alan adlari events-data.js ile ayni kalmali; ekran degismesin. */
   function satiriCevir(r) {

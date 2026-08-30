@@ -57,7 +57,7 @@
       body: JSON.stringify(govde),
     })
       .then(() => soyle(durum, "saved.", "tamam"))
-      .catch((h) => soyle(durum, "couldn't save: " + h.message, "hata"));
+      .catch((h) => soyle(durum, AH.hataMetni(h, "couldn't save that."), "hata"));
   }
 
   /* --- sehirler ---
@@ -150,7 +150,7 @@
         soyle(durum, YANIT[s] || String(s), s === "ok" ? "tamam" : "hata");
         if (s === "ok") yukle();
       })
-      .catch((h) => soyle(durum, "couldn't save: " + h.message, "hata"));
+      .catch((h) => soyle(durum, AH.hataMetni(h, "couldn't save that."), "hata"));
   };
 
   /* --- cikis --- */
@@ -180,7 +180,7 @@
         AH.oturumuBirak();
         location.href = "../index.html";
       })
-      .catch((h) => soyle(silDurum, "couldn't delete: " + h.message, "hata"));
+      .catch((h) => soyle(silDurum, AH.hataMetni(h, "couldn't delete the account."), "hata"));
   };
 
   /* --- acilis --- */
@@ -227,7 +227,7 @@
     disarida.hidden = girisli;
     icerde.hidden = !girisli;
     if (girisli) {
-      yukle().catch((h) => soyle(durum, "couldn't load: " + h.message, "hata"));
+      yukle().catch((h) => soyle(durum, AH.hataMetni(h, "couldn't load your profile."), "hata"));
     }
   }
 

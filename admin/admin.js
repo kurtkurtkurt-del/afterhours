@@ -90,6 +90,7 @@
       AH.istek("/venues?order=name"),
       yenile(),
       yorumlariGetir(),
+      geriGetir(),
     ]).then(([t, s, m]) => {
       turler = t; sehirler = s; mekanlar = m;
       secenekleriDoldur();
@@ -392,6 +393,82 @@
   });
 
   /* --- yorum denetimi --- */
+
+  /* --- geri bildirim ---
+     feedback tablosunu yalniz yonetici okuyor; yazan kendi yazdigini
+     bile goremiyor (backend/sql/13_feedback.sql). Yani burasi o
+     mesajlarin gorulebildigi TEK yer. */
+
+  const TUR = { broken: "broken", idea: "idea", event: "event", other: "other" };
+
+  function geriGetir() {
+    return AH.istek("/rpc/feedback_list", {
+      method: "POST",
+      body: JSON.stringify({ p_limit: 60 }),
+    }).then(geriCiz).catch(() => {});
+  }
+
+  function geriCiz(satirlar) {
+    const liste = $("yn-geri-liste");
+    const sayac = $("yn-geri-sayi");
+    liste.textContent = "";
+
+    const acik = (satirlar || []).filter((g) => !g.handled).length;
+    sayac.textContent = acik ? "· " + acik + " waiting" : "· all handled";
+
+    if (!satirlar || !satirlar.length) {
+      const bos = document.createElement("li");
+      bos.className = "yn-geri-bos";
+      bos.textContent = "nothing yet.";
+      liste.appendChild(bos);
+      return;
+    }
+
+    satirlar.forEach((g) => {
+      const li = document.createElement("li");
+      li.className = "yn-geri-satir" + (g.handled ? " bitti" : "");
+
+      const ust = document.createElement("div");
+      ust.className = "yn-geri-ust";
+
+      const tur = document.createElement("span");
+      tur.className = "yn-geri-tur";
+      tur.textContent = TUR[g.kind] || g.kind;
+      ust.appendChild(tur);
+
+      const kim = document.createElement("span");
+      kim.className = "yn-geri-kim";
+      /* Girisli yazan handle ile, girissiz biraktigi iletisimle,
+         hicbirini vermeyen "anonymous" olarak gorunuyor. */
+      kim.textContent = g.author ? "@" + g.author : (g.contact || "anonymous");
+      ust.appendChild(kim);
+
+      const ne = document.createElement("span");
+      ne.className = "yn-geri-zaman";
+      ne.textContent = String(g.created_at || "").slice(0, 10);
+      ust.appendChild(ne);
+
+      const isaret = document.createElement("button");
+      isaret.className = "yn-yorum-islem";
+      isaret.type = "button";
+      isaret.textContent = g.handled ? "reopen" : "handled";
+      isaret.addEventListener("click", () => {
+        AH.istek("/feedback?id=eq." + g.id, {
+          method: "PATCH",
+          body: JSON.stringify({ handled: !g.handled }),
+        }).then(geriGetir);
+      });
+      ust.appendChild(isaret);
+
+      const metin = document.createElement("p");
+      metin.className = "yn-geri-metin";
+      metin.textContent = g.body;
+
+      li.appendChild(ust);
+      li.appendChild(metin);
+      liste.appendChild(li);
+    });
+  }
 
   function yorumlariGetir() {
     return AH.istek("/comments?order=created_at.desc&limit=30")

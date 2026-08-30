@@ -54,7 +54,7 @@
       .catch((h) => {
         handleDurum.textContent = /duplicate|unique/i.test(h.message)
           ? "someone already has that one."
-          : "couldn't save: " + h.message;
+          : AH.hataMetni(h, "couldn't save that handle.");
       });
   });
 
@@ -120,7 +120,7 @@
         arkDurum.textContent = CEVAP[c] || String(c);
         if (c === "gonderildi" || c === "kabul") { arkAlan.value = ""; arkadaslariYukle(); }
       })
-      .catch((h) => { arkDurum.textContent = "couldn't do that: " + h.message; });
+      .catch((h) => { arkDurum.textContent = AH.hataMetni(h, "couldn't send that request."); });
   });
 
   /* --- biriktirilenler --- */

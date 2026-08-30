@@ -33,7 +33,7 @@
   padding: 96px 26px 40px;
   display: grid;
   grid-template-columns: minmax(260px, 340px) 1fr;
-  grid-template-areas: "liste duzen" "liste yorum";
+  grid-template-areas: "liste duzen" "liste yorum" "liste geri";
   grid-template-rows: auto 1fr;
   gap: 26px 34px;
   align-items: start;
@@ -262,7 +262,7 @@
 @media (max-width: 900px) {
   .yn {
     grid-template-columns: 1fr;
-    grid-template-areas: "liste" "duzen" "yorum";
+    grid-template-areas: "liste" "duzen" "yorum" "geri";
     padding: 88px 16px 40px;
   }
   .yn-duzen { grid-template-columns: 1fr; }
@@ -317,3 +317,37 @@
 }
 
 .yn-giris-not { font-size: 13px; opacity: 0.6; min-height: 18px; margin-top: 4px; }
+
+/* --- geri bildirim kutusu --- */
+
+.yn-geri { grid-area: geri; margin-top: 26px; }
+.yn-geri-sayi { font-weight: 400; opacity: 0.55; }
+.yn-geri-liste { list-style: none; margin-top: 12px; }
+.yn-geri-bos { font-size: 14px; opacity: 0.45; }
+
+.yn-geri-satir {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+/* Ilgilenilmis olan soluyor ama silinmiyor: kayit kalsin */
+.yn-geri-satir.bitti { opacity: 0.4; }
+
+.yn-geri-ust {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.yn-geri-tur {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.yn-geri-kim { font-weight: 500; }
+.yn-geri-zaman { opacity: 0.4; margin-right: auto; }
+.yn-geri-metin { margin-top: 5px; font-size: 14px; line-height: 1.5; }

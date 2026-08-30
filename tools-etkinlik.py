@@ -18,6 +18,17 @@ KABUK = """<!DOCTYPE html>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{baslik} | afterhours</title>
+  <meta name="description" content="{metin}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="afterhours" />
+  <meta property="og:title" content="{baslik} &mdash; {tur}, {meta}" />
+  <meta property="og:description" content="{metin}" />
+  <meta property="og:url" content="{site}/explore/{slug}/index.html" />
+  <meta property="og:image" content="{site}/og/{slug}.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#000000" />
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png" />
   <link rel="icon" type="image/png" sizes="48x48" href="../../favicon-48.png" />
@@ -29,10 +40,13 @@ KABUK = """<!DOCTYPE html>
 </head>
 <body>
 
+  <a class="atla" href="#icerik">skip to the content</a>
+
   <header class="header">
     <a class="logo" href="../../index.html">afterhours</a>
     <nav class="header-links">
       <a href="../../explore/index.html" aria-current="page">explore</a>
+      <a href="../../maps/index.html">maps</a>
       <a href="../../friends/index.html">friends&amp;more</a>
       <a href="../../cards/index.html">card collection</a>
       <a href="../../help/index.html">help</a>
@@ -42,7 +56,7 @@ KABUK = """<!DOCTYPE html>
 
   <!-- Icerigi explore/etkinlik.js kuruyor: duzen tek, gece basina degisen
        her sey etkinligin kendi verisinden ve tur havuzlarindan geliyor. -->
-  <main class="ks"></main>
+  <main id="icerik" tabindex="-1" class="ks"></main>
 
   <footer class="dipnot">
     <p class="dipnot-ad">&copy; 2026 afterhours</p>
@@ -66,18 +80,26 @@ KABUK = """<!DOCTYPE html>
 </html>
 """
 
+SITE = "https://kurtkurtkurt-del.github.io/afterhours"
+
+def kacir(y):
+    return y.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
+
 ham = (KOK / "events-data.js").read_text(encoding="utf-8")
-kayitlar = re.findall(r'\{\s*slug:\s*"([^"]+)".*?baslik:\s*"([^"]+)"', ham, re.S)
+kayitlar = re.findall(
+    r'\{ slug: "([^"]+)", tur: "([^"]+)", *baslik: "([^"]+)", *meta: "([^"]+)", *metin: "([^"]+)"',
+    ham)
 if not kayitlar:
     raise SystemExit("events-data.js'te kayit bulunamadi")
 
 yeni, guncel = 0, 0
-for slug, baslik in kayitlar:
+for slug, tur, baslik, meta, metin in kayitlar:
     klasor = KOK / "explore" / slug
     vardi = klasor.exists()
     klasor.mkdir(parents=True, exist_ok=True)
     (klasor / "index.html").write_text(
-        KABUK.format(baslik=baslik.replace("&", "&amp;"), v=SURUM), encoding="utf-8")
+        KABUK.format(baslik=kacir(baslik), tur=kacir(tur.lower()), meta=kacir(meta),
+                     metin=kacir(metin), slug=slug, site=SITE, v=SURUM), encoding="utf-8")
     guncel += 1
     yeni += 0 if vardi else 1
 

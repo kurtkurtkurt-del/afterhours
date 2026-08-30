@@ -75,6 +75,8 @@ okunur ve site aynı davranır.
 | `admin/` | Etkinlik düzenleme, poster kontrolü, yorum moderasyonu | sadece `is_admin` |
 | `posters/` | 36 SVG poster, gece başına bir tane | — |
 | `ses/` | İki kısa kayıt, tamamen sentezlenmiş | — |
+| `404.html` | Yanlış adres. Dışarıdan hiçbir dosya çağırmıyor (her derinlikte gösterilebiliyor), kök yolu adresten çıkarıyor | çalışıyor |
+| `og/` | Paylaşım önizlemeleri: her gece için 1200×630, solda kendi posteri | üretilmiş |
 | `serit.html` | Park edilmiş deneme (yatay şeritler) | dokunma |
 
 Her sayfanın altında **dipnot** var: `© 2026 afterhours` + impressum ·
@@ -106,7 +108,7 @@ Sayfalardaki kalıp:
         data-sonra="explore.js?v=101, filtre.js?v=101"></script>
 ```
 
-Ortak `AH` nesnesi: `AH.durum` (`canli` / `yerel`), `AH.istek()`,
+Ortak `AH` nesnesi: `AH.durum` (`canli` / `yerel`), `AH.istek()`, `AH.hataMetni()`,
 `AH.oturum`, `AH.girisliMi()`, `AH.oturumHazir` (promise),
 `AH.oturumDegisti(cb)`, `AH.kayitOl()`, `AH.etkinlikler()`, `AH.atislar`,
 `AH.arkadaslar()`.
@@ -137,6 +139,7 @@ Veriyi koruyan şey `backend/sql/02_rls.sql`'deki satır düzeyi kurallar.
 | `events-data.js` | 36 etkinlik, backend kapalıyken kullanılan yedek |
 | `tools-etkinlik.py` | Etkinlik sayfalarının kabuğunu üretir (§6) |
 | `tools-favicon.py` | Favicon'ları üretir (boyuta göre farklı çizim) |
+| `tools-onizleme.py` | `og/` önizlemelerini üretir: posteri Chrome ile PNG'ye çevirip kartı PIL ile kurar |
 
 **Sayfa betikleri**
 
@@ -295,6 +298,11 @@ Kurulum, testler (171 kontrol) ve yerel Supabase taklidi
 
 GitHub Pages, `main` dalından. `.nojekyll` var (alt çizgili yollar için).
 
+**Paylaşım ve arama.** Her sayfada `description` + `og:*` etiketleri var;
+etkinlik sayfalarında başlık, açıklama ve görsel gecenin kendisinden geliyor.
+`robots.txt` ve `sitemap.xml` kökte (`admin/` hariç tutuldu). Önizleme
+görselleri `python3 tools-onizleme.py` ile yeniden üretiliyor.
+
 **Sürüm numarası kuralı:** bütün HTML'lerdeki `?v=NN`. CSS ya da bir betik
 değiştiğinde hepsi birden artırılır, yoksa tarayıcı eski dosyayı kullanır:
 
@@ -325,21 +333,23 @@ Sıra önemli: her adım bir öncekinin açtığı yolu kapatıyor.
 - [x] **Ayar sayfası** — `settings/`, arkasıyla birlikte çalışıyor
 - [x] **Geri bildirim** — `feedback/` + `feedback` tablosu, 16 test
 - [x] **Kayıt** — `register/`, iki adım, handle seçilmeden bitmiyor
+- [x] **Paylaşım ve arama** — meta/og etiketleri, gece başına önizleme görseli, robots, sitemap
+- [x] **404, `maps/` menüde, erişilebilirlik turu, insan diline çevrilmiş hatalar**
+- [x] **Geri bildirim gelen kutusu** — yönetim panelinde
 
 **Sırada (önerilen sıra)**
 
-1. **`maps/` menüye.** Sayfa var, hiçbir yerden bağlantısı yok. Beş dakika.
-2. **Etkinlik verisinin genişlemesi.** Bugün beş alan var
+1. **Etkinlik verisinin genişlemesi.** Bugün beş alan var
    (`slug tur baslik meta metin`). Etkinlik sayfasındaki her şey — kadro,
    saatler, kapasite, fiyat, kurallar — şu an havuzdan uyduruluyor. Gerçek
    olması için `events` tablosuna alan eklemek gerekiyor. Bu yapıldığında
    `etkinlik-veri.js` havuzları yalnızca **yedek** olur.
-3. **Card collection.** Konseptin kalbi ama en pahalısı: geçmiş gece verisi,
+2. **Card collection.** Konseptin kalbi ama en pahalısı: geçmiş gece verisi,
    "o gecenin sesi/konuşmaları" ne demek olduğuna karar vermek, kart üretimi.
-4. **Hukuk sayfalarının doldurulması** — köşeli parantezler + gerçek Stand
+3. **Hukuk sayfalarının doldurulması** — köşeli parantezler + gerçek Stand
    tarihi.
-5. **Gerçek fotoğraflar** — kareler poster şeritleri yerine gerçek kareler.
-6. **Help sayfasındaki üç sayı gerçek olsun** — ikisi bugün de hesaplanabilir
+4. **Gerçek fotoğraflar** — kareler poster şeritleri yerine gerçek kareler.
+5. **Help sayfasındaki üç sayı gerçek olsun** — ikisi bugün de hesaplanabilir
    (`swipes`, `friendships`); üçüncüsü kart koleksiyonu kurulmadan mümkün değil.
 
 ---
@@ -366,6 +376,10 @@ Hepsi bir kere canımızı yaktı:
   yatayda taşırır.
 - **Google Fonts** IP'yi Google'a gönderiyor; datenschutz'ta yazılı. Yerel
   servis edilirse o madde düşer.
+- **`<main>`'e ikinci bir `id` eklemek sayfayı sessizce kırar.** Atlama
+  bağlantısı için `id="icerik"` eklerken kendi `id`'si olan iki `<main>`
+  vardı; tarayıcı ilkini tutuyor, `getElementById` eskisini bulamıyor ve
+  yönetim paneli açılmıyordu. Toplu düzenlemede önce mevcut özniteliğe bak.
 - **Takvime bağlı test kendiliğinden bozulur.** `jobs.test.mjs` tohumdaki
   gerçek tarihlerle çalışıyordu; 29.08.26 geçince ölçtüğü sayı kaydı.
   Test kuralı ölçmeli, günü değil: kurulum bloğu artık bütün etkinlikleri
