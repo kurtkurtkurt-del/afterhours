@@ -22,7 +22,17 @@ for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02
 
 console.log("\n— gecmisi dusurme —");
 {
-  /* Uc durum kuruyoruz: gecmis+dogrulanmis, gecmis+tahmin, gelecek */
+  /* Once butun tohumu gelecege itiyoruz. Yoksa test takvime bagli
+     kaliyor: tohumdaki bir gecenin tarihi gercekten gecince (29.08.26,
+     rote-sonne-bahnwarter) is onu da dusuruyor ve sayilar kayiyor.
+     Testin olctugu sey tarih degil, kuralin kendisi. */
+  await db.exec(`
+    update public.events set starts_at = now() + interval '30 days'
+      where starts_at is not null;
+  `);
+
+  /* Dort durum kuruyoruz: gecmis+dogrulanmis, gecmis+tahmin, gelecek,
+     ve daha gece bitmemis olan */
   await db.exec(`
     update public.events set starts_at = now() - interval '3 days',
                              starts_at_estimated = false

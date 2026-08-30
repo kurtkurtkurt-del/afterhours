@@ -349,6 +349,10 @@ Hepsi bir kere canımızı yaktı:
   yatayda taşırır.
 - **Google Fonts** IP'yi Google'a gönderiyor; datenschutz'ta yazılı. Yerel
   servis edilirse o madde düşer.
+- **Takvime bağlı test kendiliğinden bozulur.** `jobs.test.mjs` tohumdaki
+  gerçek tarihlerle çalışıyordu; 29.08.26 geçince ölçtüğü sayı kaydı.
+  Test kuralı ölçmeli, günü değil: kurulum bloğu artık bütün etkinlikleri
+  önce geleceğe itiyor.
 - **Önizleme paneli** kaydırılmış içeriği yeniden boyamıyor; ekran görüntüsü
   için taze yükleme gerekiyor. Ölçüm için panel yerine
   `getBoundingClientRect` güvenilir.
