@@ -67,7 +67,8 @@ okunur ve site aynı davranır.
 | `cards/` | **Card collection** — afterhours kartları. Girişliyken boş (kart mantığı henüz yok) | iskelet |
 | `friends/` | Handle, arkadaş ekleme, sakladıkların; altta nachtradar'dan tanıdık yüzler | çalışıyor |
 | `login/` | Giriş + hesap sayfası. Üç sütun: giriş · (first time? / account settings) · give feedback | çalışıyor |
-| `register/` `settings/` `feedback/` | Boş kabuklar, hesap sayfasındaki bağlantıların hedefi | **boş** |
+| `settings/` | **Hesap ayarları** — handle, ad, bir satır, şehir; sakladıklarını kim görsün, adınla bulunabilir misin, e-posta; hesabı silme | çalışıyor |
+| `register/` `feedback/` | Boş kabuklar, hesap sayfasındaki bağlantıların hedefi | **boş** |
 | `help/` | Sitenin nasıl çalıştığı | çalışıyor |
 | `impressum/` `datenschutz/` `agb/` | Almanca hukuk sayfaları | **Muster** (köşeli parantezler doldurulacak) |
 | `admin/` | Etkinlik düzenleme, poster kontrolü, yorum moderasyonu | sadece `is_admin` |
@@ -147,6 +148,7 @@ Veriyi koruyan şey `backend/sql/02_rls.sql`'deki satır düzeyi kurallar.
 | `cards/cards.js` · `kartlar-veri.js` · `kk.js` | Koleksiyon: örnek kartlar, oturuma göre gizleme |
 | `friends/friends.js` · `nachtradar.js` | Handle/arkadaş/sakladıkların; tanıdık yüzler listesi |
 | `login/login.js` · `hesap.js` | Giriş formu; ortadaki bloğun oturuma göre değişmesi |
+| `settings/ayarlar.js` | Ayar sayfası: `profile_me()` okur, `profile_setup()` yazar, anahtarları doğrudan `profile_settings`'e PATCH'ler |
 | `maps/harita.js` | Şemaya mekânları yerleştirir |
 | `admin/admin.js` | Yönetim paneli |
 
@@ -270,10 +272,16 @@ yalnızca gün olarak, yalnızca arkadaşa.
 
 Kayıt akışı: hesap açılınca tetikleyici profili **ve** ayar satırını kurar,
 ama kayıt **handle seçilene kadar bitmiş sayılmaz** (`onboarded_at`).
-Ön yüzün çağıracağı fonksiyonlar: `handle_status()`, `profile_setup()`,
-`profile_me()`, `profile_card()`, `seen()`.
+Ön yüzün çağırdığı fonksiyonlar: `handle_status()`, `profile_setup()`,
+`profile_me()`, `profile_card()`, `seen()`, `delete_account()`.
 
-Kurulum, testler (150 kontrol) ve yerel Supabase taklidi
+**Hesabı silmek gerçekten siliyor** — hesap, profil, ayarlar, atışlar ve
+arkadaşlıklar zincirle gidiyor. Tek istisna yorumlar: metin kalıyor, isim
+düşüyor (`someone`). Sebebi iki tane — bir konuyu silmek ona gelen
+başkalarının cevaplarını da götürürdü, ve `comments` tablosundaki kısıt
+yazarsız satır kabul etmiyor. Ayar sayfası bunu silmeden önce yazıyor.
+
+Kurulum, testler (155 kontrol) ve yerel Supabase taklidi
 (`tools/yerel-sunucu.mjs`, PGlite üstünde PostgREST + GoTrue) için →
 **[backend/README.md](backend/README.md)**
 
@@ -309,7 +317,8 @@ Sıra önemli: her adım bir öncekinin açtığı yolu kapatıyor.
 - [x] Dipnot + hukuk sayfaları (Muster)
 - [x] Hesap sayfası kısayolları
 - [x] **Etkinlik sayfası sistemi** — 36 gece, tek düzen
-- [x] **Profil yapısı** — kart + ayarlar, kayıt adımı, gizlilik kuralları, 52 test
+- [x] **Profil yapısı** — kart + ayarlar, kayıt adımı, gizlilik kuralları, 57 test
+- [x] **Ayar sayfası** — `settings/`, arkasıyla birlikte çalışıyor
 
 **Sırada (önerilen sıra)**
 
@@ -319,8 +328,7 @@ Sıra önemli: her adım bir öncekinin açtığı yolu kapatıyor.
    `handle_status()` ile canlı kontrol, `profile_setup()` ile bitirme.
    Bu olmadan kart biriktirme, arkadaşlık ve yorum yazma herkese kapalı.
 2. **`maps/` menüye.** Sayfa var, hiçbir yerden bağlantısı yok.
-3. **`settings/`** — profil düzenleme (`profile_me()` okur), sakladıklarının
-   görünürlüğü, e-posta tercihi, hesap silme (DSGVO için de gerekli).
+3. ~~`settings/`~~ — **bitti.**
 4. **`feedback/`** — "give feedback" bir yere gitmeli.
 5. **Etkinlik verisinin genişlemesi.** Bugün beş alan var
    (`slug tur baslik meta metin`). Etkinlik sayfasındaki her şey — kadro,

@@ -24,7 +24,7 @@ tools/yerel-sunucu.mjs   Supabase taklidi — gelistirme icin
 tools/yedek.mjs          icerigi JSON'a yedekler
 tools/saglik.mjs         durum kontrolu
 
-test/                    150 kontrol; hepsi gercek Postgres'te (PGlite)
+test/                    155 kontrol; hepsi gercek Postgres'te (PGlite)
 ```
 
 ## Gunluk isler
@@ -152,6 +152,7 @@ auth.users’a satir  →  handle_new_user()  →  profiles + profile_settings
 | `is_linked(id)` | arkadas ya da bekleyen istek — profil okuma kurali bunu kullaniyor |
 | `handle_to_id(handle)` | ada gore kimlik; arkadaslik istegi buradan geciyor |
 | `author_name(id, yedek)` | yorumun altindaki isim, profil tablosuna dokunmadan |
+| `delete_account()` | hesabi siler; yorumlarin metni kalir, adi `someone`a doner |
 
 **Kural degisikligi:** 02'deki "onayli arkadas SAGA attiklarini gorur"
 kurali artik ayara da bakiyor. Kisi `private` dediyse arkadasi da goremez,

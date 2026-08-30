@@ -261,5 +261,39 @@ console.log("\n— sinirlar —");
   olmali(Boolean(hata), "160 karakteri gecen bir satir reddediliyor");
 }
 
+console.log("\n— hesabi silme —");
+{
+  await yonetim();
+  const D = "dddddddd-4444-4444-4444-444444444444";
+  await db.exec(`insert into auth.users (id, email) values ('${D}', 'd@x.com')`);
+  await db.exec(`update public.profiles set handle = 'silinecek' where id = '${D}'`);
+
+  await kimlik(D);
+  await db.exec(`select public.swipe_set('blitz', 'right')`);
+  await db.exec(`
+    insert into public.comments (event_id, author_id, body)
+    select id, '${D}', 'ben de geliyorum' from public.events where slug = 'blitz';
+  `);
+
+  await db.exec(`select public.delete_account()`);
+
+  await yonetim();
+  const h = await db.query(`select count(*)::int as n from auth.users where id = '${D}'`);
+  olmali(h.rows[0].n === 0, "hesap gitti");
+
+  const pr = await db.query(`select count(*)::int as n from public.profiles where id = '${D}'`);
+  olmali(pr.rows[0].n === 0, "profil zincirle gitti");
+
+  const ay = await db.query(`select count(*)::int as n from public.profile_settings where user_id = '${D}'`);
+  olmali(ay.rows[0].n === 0, "ayarlar zincirle gitti");
+
+  const at = await db.query(`select count(*)::int as n from public.swipes where user_id = '${D}'`);
+  olmali(at.rows[0].n === 0, "atislari gitti");
+
+  const y = await db.query(`select author_id, author_name from public.comments where body = 'ben de geliyorum'`);
+  olmali(y.rows.length === 1 && y.rows[0].author_id === null && y.rows[0].author_name === "someone",
+    "yorumun metni kaldi, adi dustu");
+}
+
 console.log(`\n${gecti} gecti, ${kaldi} kaldi\n`);
 process.exit(kaldi ? 1 : 0);

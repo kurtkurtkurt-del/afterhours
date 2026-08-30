@@ -443,6 +443,35 @@ begin
 end;
 $$;
 
+-- ---------------------------------------------------------- hesabi silme
+
+-- Ayar sayfasindaki son dugme. Silmek gercekten silmek: hesap, profil,
+-- ayarlar, atislar ve arkadasliklar zincirle gidiyor.
+--
+-- Yorumlar ISTISNA. Iki sebep: (1) comments.author_id "on delete set
+-- null" ve author_name bos olamaz — dokunmadan silersek kisit patlar;
+-- (2) bir konuyu silmek ona gelen BASKALARININ cevaplarini da goturur.
+-- O yuzden metin kaliyor, isim dusuyor: yorum "someone"a gecmis oluyor.
+-- Ayar sayfasi bunu silmeden once yaziyor.
+create or replace function public.delete_account()
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if auth.uid() is null then
+    raise exception 'giris gerekli';
+  end if;
+
+  update public.comments
+     set author_id = null, author_name = 'someone'
+   where author_id = auth.uid();
+
+  delete from auth.users where id = auth.uid();
+end;
+$$;
+
 -- ------------------------------------------------------------- izinler
 
 -- Supabase yeni tabloya kendiliginden izin vermiyor; 02’deki gibi elle.
@@ -458,3 +487,4 @@ grant execute on function public.author_name(uuid, text)               to anon, 
 grant execute on function public.profile_setup(text, text, text, text) to authenticated;
 grant execute on function public.profile_me()                          to authenticated;
 grant execute on function public.seen()                                to authenticated;
+grant execute on function public.delete_account()                      to authenticated;
