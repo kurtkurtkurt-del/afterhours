@@ -21,6 +21,7 @@ const structure = [
   ["11_world.sql", "THE WORLD — 54 CITIES, 106 NIGHTS"],
   ["12_profiles.sql", "PEOPLE PROFILES"],
   ["13_feedback.sql", "FEEDBACK"],
+  ["14_export.sql", "TAKE YOUR DATA WITH YOU"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

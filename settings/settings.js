@@ -161,6 +161,36 @@
     location.href = "../login/index.html";
   };
 
+  /* --- taking your data with you ---
+     The GDPR right of access, and the one page a person would look for it
+     on. One call, one file; the browser saves it without anything leaving
+     for a third party. */
+
+  const exportStatus = el("set-export-status");
+  el("set-export").onclick = function () {
+    say(exportStatus, "gathering…");
+    call("export_me")
+      .then((data) => {
+        if (!data) throw new Error("nothing came back");
+        const name = "afterhours-" + (profile && profile.handle ? profile.handle : "me")
+          + "-" + new Date().toISOString().slice(0, 10) + ".json";
+        const file = new Blob([JSON.stringify(data, null, 2)],
+                              { type: "application/json" });
+        const url = URL.createObjectURL(file);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = name;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        /* Let the download start before the address is thrown away. */
+        setTimeout(() => URL.revokeObjectURL(url), 30000);
+        say(exportStatus, "saved as " + name, "ok");
+      })
+      .catch((h) => say(exportStatus,
+        AH.errorText(h, "couldn't put the file together."), "error"));
+  };
+
   /* --- deleting the account: two steps, the second asks you to type your own handle --- */
 
   const deleteStatus = el("set-delete-status");

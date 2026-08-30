@@ -6,6 +6,7 @@
      node tools/health.mjs [address] [key]  */
 
 import { readFile } from "node:fs/promises";
+import { EXPECTED_SQL } from "./expected-sql.mjs";
 
 const text = await readFile(new URL("../../config.js", import.meta.url), "utf8");
 const box = {};
@@ -56,22 +57,15 @@ if (count(reply.unverified_date)) warnings.push(`${count(reply.unverified_date)}
    The setup is pasted in by hand, so a project can sit a file behind
    without anything looking broken: a page just answers PGRST202 because
    the function it wanted was never created. This is the one place that
-   says so out loud. 10_countries.sql is not in the list on purpose — a
-   clean install gets its columns through 03 and 11 instead. */
+   says so out loud. The list itself lives in tools/expected-sql.mjs. */
 
-const EXPECTED = [
-  "00_migrations.sql", "01_schema.sql", "02_rls.sql", "03_seed_catalog.sql",
-  "04_seed_events.sql", "05_seed_comments.sql", "06_views.sql", "07_friends.sql",
-  "08_storage.sql", "09_jobs.sql", "11_world.sql", "12_profiles.sql",
-  "13_feedback.sql",
-];
 
 let missing = [], behind = false;
 try {
   const rows = await call("migrations_applied");
   const applied = new Set(rows.map((r) => r.name));
-  missing = EXPECTED.filter((f) => !applied.has(f));
-  console.log(`\nSQL applied         ${applied.size} of ${EXPECTED.length}`);
+  missing = EXPECTED_SQL.filter((f) => !applied.has(f));
+  console.log(`\nSQL applied         ${applied.size} of ${EXPECTED_SQL.length}`);
   if (missing.length) {
     console.log("\nnot run yet:");
     missing.forEach((f) => console.log("  · " + f));

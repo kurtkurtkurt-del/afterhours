@@ -23,7 +23,7 @@ for (const d of ["../test/supabase-shim.sql", "../sql/00_migrations.sql",
                  "../sql/05_seed_comments.sql", "../sql/06_views.sql",
                  "../sql/07_friends.sql", "../sql/08_storage.sql", "../sql/09_jobs.sql",
                  "../sql/11_world.sql", "../sql/12_profiles.sql",
-                 "../sql/13_feedback.sql"]) {
+                 "../sql/13_feedback.sql", "../sql/14_export.sql"]) {
   await db.exec(await read(d));
 }
 console.log("database ready (in memory)");

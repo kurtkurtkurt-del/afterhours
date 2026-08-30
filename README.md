@@ -109,9 +109,9 @@ data-after       the page's own scripts load ONLY after the data has arrived
 The pattern on every page:
 
 ```html
-<script src="../data.js?v=134"
-        data-fallback="../events-data.js?v=134"
-        data-after="explore.js?v=134, filters.js?v=134"></script>
+<script src="../data.js?v=135"
+        data-fallback="../events-data.js?v=135"
+        data-after="explore.js?v=135, filters.js?v=135"></script>
 ```
 
 The shared `AH` object: `AH.mode` (`live` / `local`), `AH.request()`,
@@ -242,7 +242,7 @@ where the frame gets its source in `event.js`.
 3. Write the shell:
 
 ```bash
-python3 tools-event-pages.py 135
+python3 tools-event-pages.py 136
 ```
 
 The argument is the version number (§10). It creates the folder and the
@@ -306,6 +306,16 @@ finished until a handle is chosen** (`onboarded_at`). The functions the
 front end calls: `handle_status()`, `profile_setup()`, `profile_me()`,
 `profile_card()`, `seen()`, `delete_account()`.
 
+**A person can take their data with you.** `export_me()` hands back one
+JSON object with everything tied to the caller — profile, settings, every
+swipe named by its event slug, what they wrote, who they are connected to
+and in which direction, and the feedback they left. The settings page saves
+it as a file. It is the GDPR right of access and portability, and
+datenschutz now points at the button instead of asking for an email. The
+function takes no argument, so there is no way to aim it at somebody else;
+`export.test.mjs` checks both halves — that everything of mine is in, and
+that nothing of anybody else's is.
+
 **Deleting an account really deletes it** — the account, the profile, the
 settings, the swipes and the friendships all go with it. Comments are the
 one exception: the text stays and the name falls away (`someone`). Two
@@ -313,7 +323,7 @@ reasons — deleting a topic would take other people's replies with it, and
 the constraint on the `comments` table refuses a row with no author. The
 settings page says so before it deletes.
 
-For the setup, the tests (204 checks) and the local imitation of Supabase
+For the setup, the tests (224 checks) and the local imitation of Supabase
 (`tools/local-server.mjs`, PostgREST + GoTrue on top of PGlite) →
 **[backend/README.md](backend/README.md)**
 
@@ -326,7 +336,7 @@ request. Three jobs, none of which needs a secret:
 
 | job | what it refuses to let through |
 |---|---|
-| `backend` | the 204 checks, on a real Postgres (PGlite) |
+| `backend` | the 224 checks, on a real Postgres (PGlite) |
 | `generated` | SQL that has drifted from the files it was built from — it rebuilds and asks git whether anything moved |
 | `versions` | more than one `?v=NN` across the pages, which would serve a stale script against a new stylesheet |
 
@@ -355,10 +365,10 @@ When CSS or a script changes, all of them go up together, otherwise the
 browser keeps using the old file:
 
 ```bash
-find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=134/?v=134/g'
+find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **134**.
+The current version: **135**.
 
 ---
 

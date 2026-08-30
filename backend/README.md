@@ -22,6 +22,7 @@ sql/10_countries.sql     a country and a continent for every city
 sql/11_world.sql         54 cities, 106 nights
 sql/12_profiles.sql      people profiles: the card + the settings + the signup step
 sql/13_feedback.sql      feedback: everyone writes, the admin reads
+sql/14_export.sql        everything we hold about one person, in one call
 
 tools/build-seed.mjs     builds 03/04/05 from the front-end data
 tools/build-setup.mjs    joins the SQL files into two pasteable parts
@@ -32,7 +33,7 @@ tools/backup.mjs         backs the content up to JSON
 tools/restore.mjs        turns a backup back into SQL
 tools/health.mjs         the status check
 
-test/                    204 checks, all on a real Postgres (PGlite)
+test/                    224 checks, all on a real Postgres (PGlite)
 ```
 
 ## Day to day
@@ -194,6 +195,7 @@ a row in auth.users  →  handle_new_user()  →  profiles + profile_settings
 | `handle_to_id(handle)` | identity by handle; a friend request goes through it |
 | `author_name(id, fallback)` | the name under a comment, without touching the profile table |
 | `delete_account()` | deletes the account; comment texts stay, the name becomes `someone` |
+| `export_me()` | everything held about the caller, as one JSON object (14_export.sql) |
 
 **A changed rule:** the "a confirmed friend sees what you swiped RIGHT"
 rule in 02 now looks at the setting too. If a person says `private`, not
