@@ -304,7 +304,7 @@ reasons — deleting a topic would take other people's replies with it, and
 the constraint on the `comments` table refuses a row with no author. The
 settings page says so before it deletes.
 
-For the setup, the tests (171 checks) and the local imitation of Supabase
+For the setup, the tests (183 checks) and the local imitation of Supabase
 (`tools/local-server.mjs`, PostgREST + GoTrue on top of PGlite) →
 **[backend/README.md](backend/README.md)**
 
@@ -427,6 +427,12 @@ Every one of these cost us something:
   `const text = text.value.trim()` — a ReferenceError on every click, and
   the feedback page could not send anything. A rename tool must refuse a
   target name that is already an identifier in that file.
+- **Pasting a setup file twice used to double every conversation.** The
+  structure files were already repeatable (`on conflict do nothing`), but
+  the comment seed had no guard. It now clears the previous sample set
+  first, recognising it by `time_text` — the one column only the seed ever
+  writes. `setup.test.mjs` runs the whole setup twice and insists nothing
+  moved.
 - **An apostrophe in a SQL comment breaks the Supabase editor.** Its parser
   counts quotes and counts the ones inside comments too, so a single `'`
   turns the rest of the file into code. `seed.test.mjs` enforces this.

@@ -2,6 +2,14 @@
 -- Sample comments: no real user behind them, they carry an author_name.
 -- The same selection the site shows today (same seed, same cards).
 
+-- Running this file twice used to double every conversation. The sample
+-- rows are exactly the ones carrying time_text ("4 days ago", "Nov 2023"):
+-- nothing in the app ever writes that column, only this file does. So we
+-- clear the previous sample set first and the file becomes repeatable.
+-- A real comment whose author deleted their account keeps time_text null,
+-- so it is never touched here.
+delete from public.comments where time_text is not null;
+
 with topic as (
   insert into public.comments (event_id, author_name, body, time_text, created_at)
   select id, 'dnk', 'Tram 20 back to the centre after is packed. U3 from Olympiazentrum is emptier even if it''s a longer walk.', 'yesterday', '2026-08-28T19:00:00.000Z'::timestamptz

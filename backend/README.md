@@ -30,13 +30,13 @@ tools/world-sql.mjs      turns the world data into 11_world.sql
 tools/backup.mjs         backs the content up to JSON
 tools/health.mjs         the status check
 
-test/                    171 checks, all on a real Postgres (PGlite)
+test/                    183 checks, all on a real Postgres (PGlite)
 ```
 
 ## Day to day
 
 ```bash
-npm test           # schema, seed, views, friendship, profiles, feedback, jobs, update
+npm test           # schema, seed, views, friendship, profiles, feedback, jobs, update, setup
 npm run server     # http://localhost:4350 — development without Supabase
 npm run seed       # rebuild the SQL after events-data.js changed
 npm run setup      # rebuild the two combined setup files
@@ -57,7 +57,9 @@ the panel. In order:
 **1 · Open a Supabase project** — supabase.com, new project, region
 Frankfurt (the closest one to Munich). The free plan is enough.
 
-**2 · Run the SQL in order** — SQL Editor in the Supabase panel.
+**2 · Run the SQL in order** — SQL Editor in the Supabase panel. Running
+either file twice is harmless: the structure uses `on conflict do nothing`
+and the comment seed clears its own previous sample set before inserting.
 
 > **Important:** keep the role/RLS option next to the Run button
 > **off** ("run without RLS"). With role impersonation on, the editor does
