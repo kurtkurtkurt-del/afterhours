@@ -104,3 +104,10 @@ insert into public.venues (city_id, slug, name, map_x, map_y, opens_hour, open_h
 select id, 'riem', 'RIEM', 1128, 512, 20, 8
 from public.cities where slug = 'munchen'
 on conflict (city_id, slug) do nothing;
+
+-- Stamp the migration log, if it is there (00_migrations.sql).
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('03_seed_catalog.sql');
+  end if;
+end $$;

@@ -425,3 +425,10 @@ join public.venues v on v.city_id = c.id and v.slug = 'milla'
 where c.slug = 'munchen'
 on conflict (slug) do nothing;
 
+
+-- Stamp the migration log, if it is there (00_migrations.sql).
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('04_seed_events.sql');
+  end if;
+end $$;

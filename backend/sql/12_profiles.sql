@@ -494,3 +494,11 @@ grant execute on function public.profile_setup(text, text, text, text) to authen
 grant execute on function public.profile_me()                          to authenticated;
 grant execute on function public.seen()                                to authenticated;
 grant execute on function public.delete_account()                      to authenticated;
+
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('12_profiles.sql');
+  end if;
+end $$;

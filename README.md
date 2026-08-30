@@ -291,6 +291,15 @@ back individually chosen fields: whoever knows your handle sees your card
 cards you kept, and last seen never leaves with its clock time — only as a
 day, and only to a friend.
 
+**Which files have been run is written down.** The setup is pasted into
+the Supabase editor by hand, so a project can sit a file behind while
+everything still looks fine — a page just answers PGRST202 because the
+function it wanted was never created. Every numbered file now stamps its
+own name into `public.migrations` (00_migrations.sql), and
+`npm run health` says how many of the thirteen are in and names the ones
+that are not. Each file still runs on its own: the stamp is skipped when
+the log is not there.
+
 The signup flow: opening an account fires a trigger that creates the
 profile **and** the settings row, but registration **does not count as
 finished until a handle is chosen** (`onboarded_at`). The functions the
@@ -304,7 +313,7 @@ reasons — deleting a topic would take other people's replies with it, and
 the constraint on the `comments` table refuses a row with no author. The
 settings page says so before it deletes.
 
-For the setup, the tests (183 checks) and the local imitation of Supabase
+For the setup, the tests (187 checks) and the local imitation of Supabase
 (`tools/local-server.mjs`, PostgREST + GoTrue on top of PGlite) →
 **[backend/README.md](backend/README.md)**
 

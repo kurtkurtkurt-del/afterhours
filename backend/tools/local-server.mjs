@@ -17,10 +17,11 @@ const PORT = Number(process.env.PORT || 4350);
 const read = (y) => readFile(new URL(y, import.meta.url), "utf8");
 
 const db = new PGlite();
-for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02_rls.sql",
+for (const d of ["../test/supabase-shim.sql", "../sql/00_migrations.sql",
+                 "../sql/01_schema.sql", "../sql/02_rls.sql",
                  "../sql/03_seed_catalog.sql", "../sql/04_seed_events.sql",
                  "../sql/05_seed_comments.sql", "../sql/06_views.sql",
-                 "../sql/07_friends.sql", "../sql/09_jobs.sql",
+                 "../sql/07_friends.sql", "../sql/08_storage.sql", "../sql/09_jobs.sql",
                  "../sql/11_world.sql", "../sql/12_profiles.sql",
                  "../sql/13_feedback.sql"]) {
   await db.exec(await read(d));

@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 2 / 2 : SAMPLE COMMENTS
---  VERSION: 2026-08-30 21:01
+--  VERSION: 2026-08-30 21:07
 --
 --  Run setup-1-structure.sql first.
 --  The sample conversations in the beforehours panel: 180 topics, 131
@@ -1598,3 +1598,10 @@ with topic as (
 insert into public.comments (event_id, parent_id, author_name, body, time_text, created_at)
   select topic.event_id, topic.id, 'n_than', 'The Thursday version is the one people still talk about.', 'Dec 2023', '2023-12-15T20:00:00.000Z'::timestamptz from topic;
 
+
+-- Stamp the migration log, if it is there (00_migrations.sql).
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('05_seed_comments.sql');
+  end if;
+end $$;

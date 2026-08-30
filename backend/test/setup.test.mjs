@@ -93,5 +93,40 @@ console.log("\n— a real comment is not swept away —");
     String(samples.rows[0].n));
 }
 
+/* The migration log is the answer to "which of these files did I actually
+   run". A project that is a file behind looks fine until a page asks for a
+   function nobody created, so this has to be right. */
+console.log("\n— the migration log —");
+{
+  const EXPECTED = [
+    "00_migrations.sql", "01_schema.sql", "02_rls.sql", "03_seed_catalog.sql",
+    "04_seed_events.sql", "05_seed_comments.sql", "06_views.sql",
+    "07_friends.sql", "08_storage.sql", "09_jobs.sql", "11_world.sql",
+    "12_profiles.sql", "13_feedback.sql",
+  ];
+  const rows = await db.query(`select name from public.migrations_applied()`);
+  const applied = rows.rows.map((r) => r.name);
+  check(applied.length === EXPECTED.length,
+    `all ${EXPECTED.length} files stamped themselves`, applied.join(", "));
+  const missing = EXPECTED.filter((f) => !applied.includes(f));
+  check(missing.length === 0, "none of the expected files is missing", missing.join(", "));
+
+  /* Stamping twice must move the date, not add a row. */
+  await db.exec(`select public.migration_done('01_schema.sql')`);
+  const again = await db.query(`select count(*)::int as n from public.migrations`);
+  check(again.rows[0].n === EXPECTED.length, "stamping again does not add a row",
+    String(again.rows[0].n));
+
+  /* Every numbered file still has to run on its own, without the log. */
+  const bare = new PGlite();
+  let standalone = true;
+  try {
+    await bare.exec(await read("../test/supabase-shim.sql"));
+    await bare.exec(await read("../sql/01_schema.sql"));
+    await bare.exec(await read("../sql/02_rls.sql"));
+  } catch (e) { standalone = false; console.log("     " + e.message.slice(0, 90)); }
+  check(standalone, "01 and 02 still run without 00_migrations.sql");
+}
+
 console.log(`\n${passed} passed, ${failed} failed`);
 process.exit(failed ? 1 : 0);

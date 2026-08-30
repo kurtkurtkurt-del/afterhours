@@ -68,3 +68,11 @@ $$;
 grant insert on public.feedback to anon, authenticated;
 grant select, update on public.feedback to authenticated;
 grant execute on function public.feedback_list(int) to authenticated;
+
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('13_feedback.sql');
+  end if;
+end $$;

@@ -241,3 +241,11 @@ grant execute on function public.event_counts(text)     to anon, authenticated;
 grant execute on function public.keep_counts()          to anon, authenticated;
 
 grant select on public.events_public, public.comments_public to anon, authenticated;
+
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('06_views.sql');
+  end if;
+end $$;

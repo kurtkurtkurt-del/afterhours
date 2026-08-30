@@ -8,6 +8,7 @@ nothing changes.
 ## The files
 
 ```
+sql/00_migrations.sql    which of these files has been run
 sql/01_schema.sql        the tables
 sql/02_rls.sql           who may read and write what   ← the security lives here
 sql/03_seed_catalog.sql  cities, types, venues        (generated)
@@ -30,7 +31,7 @@ tools/world-sql.mjs      turns the world data into 11_world.sql
 tools/backup.mjs         backs the content up to JSON
 tools/health.mjs         the status check
 
-test/                    183 checks, all on a real Postgres (PGlite)
+test/                    187 checks, all on a real Postgres (PGlite)
 ```
 
 ## Day to day
@@ -40,7 +41,7 @@ npm test           # schema, seed, views, friendship, profiles, feedback, jobs, 
 npm run server     # http://localhost:4350 — development without Supabase
 npm run seed       # rebuild the SQL after events-data.js changed
 npm run setup      # rebuild the two combined setup files
-npm run health     # the state of the published database
+npm run health     # the state of the published database, and which SQL is in
 npm run backup     # take a copy of the content
 ```
 
@@ -120,7 +121,13 @@ Then run `09_jobs.sql` once more; the job that drops past events gets
 scheduled. Without it you can run `select public.hide_past_events();` by
 hand.
 
-**8 · Backups** — Supabase takes a daily backup. On top of that, run
+**8 · Check what is actually in** — `npm run health` ends with a line like
+`SQL applied  13 of 13`. If a file is missing it names it, and exits
+non-zero. That count is what the migration log (00_migrations.sql) is for:
+every numbered file stamps its own name when it runs, so the answer to
+"did I run that one?" stops being a memory.
+
+**9 · Backups** — Supabase takes a daily backup. On top of that, run
 `npm run backup` once a month; a copy of the texts, independent of the
 project, lands under `backend/backup/`.
 

@@ -237,3 +237,11 @@ drop trigger if exists on_auth_user_created on auth.users;
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute function public.handle_new_user();
+
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('01_schema.sql');
+  end if;
+end $$;

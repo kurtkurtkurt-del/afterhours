@@ -98,3 +98,11 @@ grant execute on function public.friends_list()          to authenticated;
 grant execute on function public.friend_request(text)    to authenticated;
 grant execute on function public.friend_accept(uuid)     to authenticated;
 grant execute on function public.friend_remove(uuid)     to authenticated;
+
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('07_friends.sql');
+  end if;
+end $$;

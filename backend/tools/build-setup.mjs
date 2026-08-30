@@ -9,6 +9,7 @@ import { readFile, writeFile } from "node:fs/promises";
 const read = (d) => readFile(new URL("../sql/" + d, import.meta.url), "utf8");
 
 const structure = [
+  ["00_migrations.sql", "THE MIGRATION LOG — which files have been run"],
   ["01_schema.sql", "TABLES"],
   ["02_rls.sql", "RULES — the security lives here"],
   ["03_seed_catalog.sql", "CITIES, TYPES, VENUES"],

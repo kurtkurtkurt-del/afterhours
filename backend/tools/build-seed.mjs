@@ -170,6 +170,14 @@ on conflict (city_id, slug) do nothing;
 `;
 }
 
+sql += `
+-- Stamp the migration log, if it is there (00_migrations.sql).
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('03_seed_catalog.sql');
+  end if;
+end $$;
+`;
 await writeFile(new URL("../sql/03_seed_catalog.sql", import.meta.url), sql);
 
 /* ---- 04: the 36 events ----------------------------------------------- */
@@ -201,6 +209,14 @@ on conflict (slug) do nothing;
 `;
 });
 
+eventSql += `
+-- Stamp the migration log, if it is there (00_migrations.sql).
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('04_seed_events.sql');
+  end if;
+end $$;
+`;
 await writeFile(new URL("../sql/04_seed_events.sql", import.meta.url), eventSql);
 
 /* ---- 05: the sample comments ----------------------------------------- */
@@ -247,6 +263,14 @@ ${rows};
   }
 }
 
+commentSql += `
+-- Stamp the migration log, if it is there (00_migrations.sql).
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('05_seed_comments.sql');
+  end if;
+end $$;
+`;
 await writeFile(new URL("../sql/05_seed_comments.sql", import.meta.url), commentSql);
 
 console.log(`events        : ${POSTERS.length}`);

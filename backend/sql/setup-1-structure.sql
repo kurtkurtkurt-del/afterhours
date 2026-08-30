@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-08-30 21:01   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-08-30 21:07   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -10,6 +10,60 @@
 --
 --  GENERATED FILE — source: backend/tools/build-setup.mjs
 -- ============================================================
+
+
+-- ============================================================
+--  THE MIGRATION LOG — which files have been run   (00_migrations.sql)
+-- ============================================================
+
+-- afterhours — which of these files has actually been run
+-- The setup is pasted into the Supabase editor by hand, so a project can
+-- easily be a file or two behind without anything looking wrong: a page
+-- just answers PGRST202 because the function it wants was never created.
+-- This table is the record. Every numbered file stamps its own name at
+-- the end, so the answer to "what is live" stops being a memory.
+--
+-- It has to come first. Everything after it writes into it.
+
+create table if not exists public.migrations (
+  name        text primary key,
+  applied_at  timestamptz not null default now()
+);
+
+alter table public.migrations enable row level security;
+
+-- RLS is on with no policy yet, so the table is closed to every browser
+-- until 02_rls.sql opens it to the admin. is_admin() does not exist this
+-- early, which is why the policy lives there and not here. Nothing writes
+-- to this table from a browser in any case: the stamps come from the SQL
+-- editor, which is above RLS.
+
+-- The list itself is only filenames and dates, so the health check may
+-- read it with the public key. Nothing about the content leaks through it.
+create or replace function public.migrations_applied()
+returns table (name text, applied_at timestamptz)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select m.name, m.applied_at from public.migrations m order by m.name;
+$$;
+
+grant execute on function public.migrations_applied() to anon, authenticated;
+
+-- Used by every file below to stamp itself.
+create or replace function public.migration_done(p_name text)
+returns void
+language sql
+security definer
+set search_path = public
+as $$
+  insert into public.migrations (name) values (p_name)
+  on conflict (name) do update set applied_at = now();
+$$;
+
+select public.migration_done('00_migrations.sql');
 
 
 -- ============================================================
@@ -256,6 +310,14 @@ create trigger on_auth_user_created
   after insert on auth.users
   for each row execute function public.handle_new_user();
 
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('01_schema.sql');
+  end if;
+end $$;
+
 
 -- ============================================================
 --  RULES — the security lives here   (02_rls.sql)
@@ -431,6 +493,22 @@ drop policy if exists friendships_delete on public.friendships;
 create policy friendships_delete on public.friendships for delete
   using (requester_id = auth.uid() or addressee_id = auth.uid());
 
+-- ------------------------------------------------------- the migration log
+
+-- Only the admin reads the table itself. The public list goes through
+-- migrations_applied(), which is security definer and returns nothing but
+-- filenames and dates (00_migrations.sql).
+-- Guarded the same way as the stamps: 02 has to run on its own too (the
+-- test suites load it without 00).
+do $$ begin
+  if to_regclass('public.migrations') is not null then
+    execute 'drop policy if exists migrations_read_admin on public.migrations';
+    execute 'create policy migrations_read_admin on public.migrations
+               for select using (public.is_admin())';
+  end if;
+end $$;
+
+
 -- ------------------------------------------------------------ privileges
 
 grant usage on schema public to anon, authenticated;
@@ -443,6 +521,14 @@ grant select on public.swipes, public.friendships to authenticated;
 grant update on public.profiles to authenticated;
 grant insert, update, delete on public.cities, public.event_types,
                                  public.venues, public.events to authenticated;
+
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('02_rls.sql');
+  end if;
+end $$;
 
 
 -- ============================================================
@@ -555,6 +641,13 @@ insert into public.venues (city_id, slug, name, map_x, map_y, opens_hour, open_h
 select id, 'riem', 'RIEM', 1128, 512, 20, 8
 from public.cities where slug = 'munchen'
 on conflict (city_id, slug) do nothing;
+
+-- Stamp the migration log, if it is there (00_migrations.sql).
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('03_seed_catalog.sql');
+  end if;
+end $$;
 
 
 -- ============================================================
@@ -989,6 +1082,13 @@ where c.slug = 'munchen'
 on conflict (slug) do nothing;
 
 
+-- Stamp the migration log, if it is there (00_migrations.sql).
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('04_seed_events.sql');
+  end if;
+end $$;
+
 
 -- ============================================================
 --  DECK, KEPT, COUNTERS   (06_views.sql)
@@ -1238,6 +1338,14 @@ grant execute on function public.keep_counts()          to anon, authenticated;
 
 grant select on public.events_public, public.comments_public to anon, authenticated;
 
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('06_views.sql');
+  end if;
+end $$;
+
 
 -- ============================================================
 --  FRIENDSHIP   (07_friends.sql)
@@ -1344,6 +1452,14 @@ grant execute on function public.friend_request(text)    to authenticated;
 grant execute on function public.friend_accept(uuid)     to authenticated;
 grant execute on function public.friend_remove(uuid)     to authenticated;
 
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('07_friends.sql');
+  end if;
+end $$;
+
 
 -- ============================================================
 --  POSTER STORE   (08_storage.sql)
@@ -1397,6 +1513,14 @@ begin
   $q$;
 end
 $$;
+
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('08_storage.sql');
+  end if;
+end $$;
 
 
 -- ============================================================
@@ -1480,6 +1604,14 @@ begin
   end if;
 end
 $$;
+
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('09_jobs.sql');
+  end if;
+end $$;
 
 
 -- ============================================================
@@ -2633,6 +2765,14 @@ where c.slug = 'lautoka'
 on conflict (slug) do nothing;
 
 
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('11_world.sql');
+  end if;
+end $$;
+
 
 -- ============================================================
 --  PEOPLE PROFILES   (12_profiles.sql)
@@ -3135,6 +3275,14 @@ grant execute on function public.profile_me()                          to authen
 grant execute on function public.seen()                                to authenticated;
 grant execute on function public.delete_account()                      to authenticated;
 
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('12_profiles.sql');
+  end if;
+end $$;
+
 
 -- ============================================================
 --  FEEDBACK   (13_feedback.sql)
@@ -3210,3 +3358,11 @@ $$;
 grant insert on public.feedback to anon, authenticated;
 grant select, update on public.feedback to authenticated;
 grant execute on function public.feedback_list(int) to authenticated;
+
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('13_feedback.sql');
+  end if;
+end $$;

@@ -168,6 +168,22 @@ drop policy if exists friendships_delete on public.friendships;
 create policy friendships_delete on public.friendships for delete
   using (requester_id = auth.uid() or addressee_id = auth.uid());
 
+-- ------------------------------------------------------- the migration log
+
+-- Only the admin reads the table itself. The public list goes through
+-- migrations_applied(), which is security definer and returns nothing but
+-- filenames and dates (00_migrations.sql).
+-- Guarded the same way as the stamps: 02 has to run on its own too (the
+-- test suites load it without 00).
+do $$ begin
+  if to_regclass('public.migrations') is not null then
+    execute 'drop policy if exists migrations_read_admin on public.migrations';
+    execute 'create policy migrations_read_admin on public.migrations
+               for select using (public.is_admin())';
+  end if;
+end $$;
+
+
 -- ------------------------------------------------------------ privileges
 
 grant usage on schema public to anon, authenticated;
@@ -180,3 +196,11 @@ grant select on public.swipes, public.friendships to authenticated;
 grant update on public.profiles to authenticated;
 grant insert, update, delete on public.cities, public.event_types,
                                  public.venues, public.events to authenticated;
+
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('02_rls.sql');
+  end if;
+end $$;

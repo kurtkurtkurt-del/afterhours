@@ -1144,3 +1144,11 @@ join public.event_types t on t.slug = 'rave'
 where c.slug = 'lautoka'
 on conflict (slug) do nothing;
 
+
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('11_world.sql');
+  end if;
+end $$;
