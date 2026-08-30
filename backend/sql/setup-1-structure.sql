@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-08-30 21:07   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-08-30 21:12   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -2765,8 +2765,7 @@ where c.slug = 'lautoka'
 on conflict (slug) do nothing;
 
 
--- Stamp the migration log, if it is there. Each numbered file still runs on
--- its own (the tests load them one at a time), so this cannot insist.
+-- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
   if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('11_world.sql');

@@ -36,7 +36,7 @@ The product in three sentences:
   Montreal) and **JetBrains Mono** (every small line: 10px, 0.14–0.18em
   tracking, uppercase, 38–50% opacity).
 - The interface text is **English and lower case**; the code and this file
-  are **English too** (they were Turkish until 30.08.2026 — see §12); the
+  are **English too** (they were Turkish until 30.08.2026 — see §13); the
   legal pages are **German**.
 - Everything on the page was made by hand: the posters are hand-written
   SVG, the sound is synthesised. Apart from `foto.jpg` there is no media
@@ -245,7 +245,7 @@ where the frame gets its source in `event.js`.
 python3 tools-event-pages.py 135
 ```
 
-The argument is the version number (§9). It creates the folder and the
+The argument is the version number (§10). It creates the folder and the
 `index.html`, and the layout follows by itself.
 
 ---
@@ -319,7 +319,27 @@ For the setup, the tests (187 checks) and the local imitation of Supabase
 
 ---
 
-## 9. Publishing and caching
+## 9. What runs on its own
+
+**GitHub Actions** (`.github/workflows/test.yml`), on every push and pull
+request. Three jobs, none of which needs a secret:
+
+| job | what it refuses to let through |
+|---|---|
+| `backend` | the 187 checks, on a real Postgres (PGlite) |
+| `generated` | SQL that has drifted from the files it was built from — it rebuilds and asks git whether anything moved |
+| `versions` | more than one `?v=NN` across the pages, which would serve a stale script against a new stylesheet |
+
+The site itself has no build step and nothing to check: it is plain HTML
+the browser reads as it is. What can break in silence is the database and
+the generated SQL, so that is what is watched.
+
+`backend/package-lock.json` is committed — CI installs with `npm ci`, and
+a lockfile is the only thing that makes that reproducible.
+
+---
+
+## 10. Publishing and caching
 
 GitHub Pages, from `main`. `.nojekyll` is there (for the paths with an
 underscore).
@@ -342,7 +362,7 @@ The current version: **134**.
 
 ---
 
-## 10. From nothing, step by step
+## 11. From nothing, step by step
 
 The order matters: each step closes the road the one before it opened.
 
@@ -364,7 +384,8 @@ The order matters: each step closes the road the one before it opened.
 - [x] **Sharing and search** — meta/og tags, a preview image per night, robots, sitemap
 - [x] **404, `maps/` in the menu, an accessibility pass, errors in human language**
 - [x] **The feedback inbox** — in the admin panel
-- [x] **The code translated into English** — classes, ids, filenames, the `AH` API, the data fields, the comments, the docs (§12)
+- [x] **The code translated into English** — classes, ids, filenames, the `AH` API, the data fields, the comments, the docs (§13)
+- [x] **CI, a migration log, and a repeatable setup** — §9, and `npm run health` says which SQL is live
 
 **Next (a suggested order)**
 
@@ -386,7 +407,7 @@ The order matters: each step closes the road the one before it opened.
 
 ---
 
-## 11. Known traps
+## 12. Known traps
 
 Every one of these cost us something:
 
@@ -451,7 +472,7 @@ Every one of these cost us something:
 
 ---
 
-## 12. The old names
+## 13. The old names
 
 **The code was translated into English on 30.08.2026.** Class names, ids,
 filenames, the `AH` API, the data fields, the comments and the

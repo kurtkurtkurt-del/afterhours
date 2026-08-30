@@ -98,6 +98,15 @@ on conflict (slug) do nothing;
 `;
 }
 
+sql += `
+-- Stamp the migration log, if it is there (00_migrations.sql).
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('11_world.sql');
+  end if;
+end $$;
+`;
+
 await writeFile(new URL("../sql/11_world.sql", import.meta.url), sql);
 console.log("11_world.sql written: " + rows.length + " cities, " + record.length + " nights, " +
             Buffer.byteLength(sql).toLocaleString() + " bytes");
