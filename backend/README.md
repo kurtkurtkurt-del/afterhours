@@ -18,13 +18,14 @@ sql/08_storage.sql       poster deposu (yalniz Supabase'de)
 sql/09_jobs.sql          gecmisi dusurme + saglik ozeti
 sql/11_dunya.sql         54 sehir, 106 gece
 sql/12_profiles.sql      kisi profilleri: kart + ayarlar + kayit adimi
+sql/13_feedback.sql      geri bildirim: herkes yazar, yonetici okur
 
 tools/seed-uret.mjs      on yuzdeki veriden 03/04/05'i uretir
 tools/yerel-sunucu.mjs   Supabase taklidi — gelistirme icin
 tools/yedek.mjs          icerigi JSON'a yedekler
 tools/saglik.mjs         durum kontrolu
 
-test/                    155 kontrol; hepsi gercek Postgres'te (PGlite)
+test/                    171 kontrol; hepsi gercek Postgres'te (PGlite)
 ```
 
 ## Gunluk isler
@@ -180,6 +181,25 @@ kimin ne zaman ayakta oldugu cikarilmasin.
 Kurala takilan iki eski tanim 12'de yeniden yazildi: `comments_public`
 artik profil tablosuna join etmiyor, `friend_request` ada gore kimligi
 `handle_to_id()`'den aliyor.
+
+## Geri bildirim (13_feedback.sql)
+
+`feedback/` sayfasinin arkasi. Tek tablo, iki kural: **herkes yazar,
+yalniz yonetici okur.** Giris istemiyor — bozuk bir seyi bildirmek icin
+once hesap acmak sacma olurdu; girissiz yazan isterse bir iletisim satiri
+birakiyor.
+
+- `kind`: `broken` · `idea` · `event` · `other`
+- `body`: 10-2000 karakter (bos ya da tek kelimelik bildirim ise yaramiyor)
+- Girisliyse `author_id` kendiliginden yaziliyor; **baskasinin adina
+  yazilamiyor** (kural bunu kontrol ediyor)
+- Yazan **kendi yazdigini bile geri okumuyor**: burasi bir gelen kutusu,
+  konusma degil
+- Hesap silinince yazdigi kaliyor, adi dusuyor
+- `feedback_list(limit)` yonetim tarafinin okudugu liste
+
+**Not:** girissiz yazmaya acik oldugu icin hiz siniri yok. Spam gelirse
+ilk care `feedback_write` kuralini girise baglamak.
 
 ## Bilerek yapilmayanlar
 

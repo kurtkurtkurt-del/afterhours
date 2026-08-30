@@ -21,7 +21,8 @@ for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02
                  "../sql/03_seed_katalog.sql", "../sql/04_seed_events.sql",
                  "../sql/05_seed_comments.sql", "../sql/06_views.sql",
                  "../sql/07_friends.sql", "../sql/09_jobs.sql",
-                 "../sql/11_dunya.sql", "../sql/12_profiles.sql"]) {
+                 "../sql/11_dunya.sql", "../sql/12_profiles.sql",
+                 "../sql/13_feedback.sql"]) {
   await db.exec(await oku(d));
 }
 console.log("veritabani hazir (bellekte)");

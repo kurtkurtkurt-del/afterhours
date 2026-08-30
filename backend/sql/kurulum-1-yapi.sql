@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — KURULUM 1 / 2 : YAPI
---  SURUM: 2026-08-30 09:33   ← editorde bu satir gorunuyorsa dogru kopya
+--  SURUM: 2026-08-30 09:57   ← editorde bu satir gorunuyorsa dogru kopya
 --
 --  Supabase panelinde: SQL Editor → New query → bu dosyanin
 --  TAMAMINI yapistir → Run.
@@ -3058,6 +3058,35 @@ begin
 end;
 $$;
 
+-- ---------------------------------------------------------- hesabi silme
+
+-- Ayar sayfasindaki son dugme. Silmek gercekten silmek: hesap, profil,
+-- ayarlar, atislar ve arkadasliklar zincirle gidiyor.
+--
+-- Yorumlar ISTISNA. Iki sebep: (1) comments.author_id "on delete set
+-- null" ve author_name bos olamaz — dokunmadan silersek kisit patlar;
+-- (2) bir konuyu silmek ona gelen BASKALARININ cevaplarini da goturur.
+-- O yuzden metin kaliyor, isim dusuyor: yorum "someone"a gecmis oluyor.
+-- Ayar sayfasi bunu silmeden once yaziyor.
+create or replace function public.delete_account()
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if auth.uid() is null then
+    raise exception 'giris gerekli';
+  end if;
+
+  update public.comments
+     set author_id = null, author_name = 'someone'
+   where author_id = auth.uid();
+
+  delete from auth.users where id = auth.uid();
+end;
+$$;
+
 -- ------------------------------------------------------------- izinler
 
 -- Supabase yeni tabloya kendiliginden izin vermiyor; 02’deki gibi elle.
@@ -3073,3 +3102,78 @@ grant execute on function public.author_name(uuid, text)               to anon, 
 grant execute on function public.profile_setup(text, text, text, text) to authenticated;
 grant execute on function public.profile_me()                          to authenticated;
 grant execute on function public.seen()                                to authenticated;
+grant execute on function public.delete_account()                      to authenticated;
+
+
+-- ============================================================
+--  GERI BILDIRIM   (13_feedback.sql)
+-- ============================================================
+
+-- afterhours — geri bildirim
+-- "give feedback → help us" sayfasinin arkasi. Tek tablo, iki kural:
+-- herkes yazabilir, yalniz yonetici okuyabilir.
+--
+-- Girissiz de yazilabiliyor, cunku bozuk bir seyi bildirmek icin once
+-- hesap acmak sacma. O zaman yazan kisi isterse bir iletisim satiri
+-- birakiyor; birakmazsa da yazdigi okunuyor, cevabi olmuyor.
+
+create table if not exists public.feedback (
+  id          uuid primary key default gen_random_uuid(),
+  -- Girisliyse kim oldugu kendiliginden yaziliyor; hesap silinirse
+  -- yazdigi kaliyor ama adi dusuyor.
+  author_id   uuid default auth.uid() references public.profiles on delete set null,
+  -- Girissizin biraktigi e-posta ya da baska bir yol. Istege bagli.
+  contact     text check (contact is null or length(btrim(contact)) between 3 and 120),
+  kind        text not null default 'other'
+              check (kind in ('broken', 'idea', 'event', 'other')),
+  body        text not null check (length(btrim(body)) between 10 and 2000),
+  -- Yonetim tarafinda "bununla ilgilenildi" isareti.
+  handled     boolean not null default false,
+  created_at  timestamptz not null default now()
+);
+
+create index if not exists feedback_yeni_idx on public.feedback (created_at desc);
+
+alter table public.feedback enable row level security;
+
+-- Herkes yazar — girisli de girissiz de. Tek sart: baskasinin adina yazma.
+drop policy if exists feedback_write on public.feedback;
+create policy feedback_write on public.feedback for insert
+  with check (author_id is null or author_id = auth.uid());
+
+-- Yalniz yonetici okur. Yazan kendi yazdigini bile geri okumuyor:
+-- bu bir gelen kutusu, konusma degil.
+drop policy if exists feedback_read on public.feedback;
+create policy feedback_read on public.feedback for select
+  using (public.is_admin());
+
+drop policy if exists feedback_handle on public.feedback;
+create policy feedback_handle on public.feedback for update
+  using (public.is_admin()) with check (public.is_admin());
+
+-- Yonetim panelinin okudugu liste: yazani cozulmus, yenisi ustte.
+drop function if exists public.feedback_list(int);
+create or replace function public.feedback_list(p_limit int default 100)
+returns table (
+  id         uuid,
+  kind       text,
+  body       text,
+  author     text,
+  contact    text,
+  handled    boolean,
+  created_at timestamptz
+)
+language sql
+stable
+as $$
+  select f.id, f.kind, f.body,
+         public.author_name(f.author_id, null),
+         f.contact, f.handled, f.created_at
+  from public.feedback f
+  order by f.created_at desc
+  limit greatest(1, least(coalesce(p_limit, 100), 500));
+$$;
+
+grant insert on public.feedback to anon, authenticated;
+grant select, update on public.feedback to authenticated;
+grant execute on function public.feedback_list(int) to authenticated;

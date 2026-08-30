@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=104" />
+  <link rel="stylesheet" href="../style.css?v=105" />
 </head>
 <body>
 
@@ -26,6 +26,62 @@
     </nav>
   </header>
 
+  <main class="gb">
+    <h1 class="giris-baslik">give<br />feedback.</h1>
+    <p class="gb-giris">What is broken, what is missing, what you would rather it did.
+      No account needed. It gets read by one person, and that person is building this.</p>
+
+    <div class="gb-form" id="gb-form">
+
+      <section class="hesap">
+        <p class="hesap-baslik">what is this about</p>
+        <div class="ay-secim" id="gb-tur">
+          <button type="button" data-deger="broken">something is broken</button>
+          <button type="button" data-deger="idea">an idea</button>
+          <button type="button" data-deger="event">a wrong event</button>
+          <button type="button" data-deger="other">something else</button>
+        </div>
+      </section>
+
+      <section class="hesap">
+        <p class="hesap-baslik">your message</p>
+        <p class="hesap-aciklama">Be as specific as you can stand to be — which page,
+          what you did, what happened instead.</p>
+        <textarea class="gb-metin" id="gb-metin" rows="7" maxlength="2000"
+                  placeholder="the deck stopped after four cards on my phone…"></textarea>
+        <p class="gb-sayac" id="gb-sayac"></p>
+      </section>
+
+      <section class="hesap" id="gb-iletisim-bolum">
+        <p class="hesap-baslik">how we reach you</p>
+        <p class="hesap-aciklama" id="gb-iletisim-not">Optional. Leave it out and the
+          message still gets read — there just will not be an answer.</p>
+        <input class="hesap-alan ay-genis" id="gb-iletisim" type="text"
+               placeholder="you@example.com" autocomplete="email" />
+      </section>
+
+      <div class="ay-kaydet">
+        <button class="hesap-dugme" id="gb-yolla" type="button">send</button>
+        <span class="hesap-durum" id="gb-durum"></span>
+      </div>
+    </div>
+
+    <!-- Gonderdikten sonra formun yerine bu geciyor -->
+    <div class="gb-tesekkur" id="gb-tesekkur" hidden>
+      <p class="gb-tesekkur-baslik">it is in.</p>
+      <p class="gb-giris">Thank you. Nothing is automated here, so there is no ticket
+        number and no reply from a robot — it lands in a list that gets read.</p>
+      <div class="gb-yollar">
+        <a class="hs-link" href="../explore/index.html">back to the deck</a>
+        <button class="hs-link gb-yeniden" id="gb-yeniden" type="button">write another</button>
+      </div>
+    </div>
+
+    <p class="gb-not">An event with the wrong date or a night that already happened is
+      faster to fix from the event itself — write it in beforehours under that event and
+      it shows up next to the night it is about.</p>
+  </main>
+
   <footer class="dipnot">
     <p class="dipnot-ad">&copy; 2026 afterhours</p>
     <nav class="dipnot-linkler">
@@ -35,10 +91,11 @@
     </nav>
   </footer>
 
-  <script src="../ayar.js?v=104"></script>
-  <script src="../oturum.js?v=104"></script>
-  <script src="../veri.js?v=104"></script>
-  <script src="../menu.js?v=104"></script>
+  <script src="../ayar.js?v=105"></script>
+  <script src="../oturum.js?v=105"></script>
+  <script src="../menu.js?v=105"></script>
+  <script src="../veri.js?v=105"></script>
+  <script src="geri.js?v=105"></script>
 
 </body>
 </html>

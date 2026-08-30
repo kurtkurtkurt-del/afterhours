@@ -2844,12 +2844,14 @@ body:has(> .dipnot:not(.ince)) > .dipnot { margin-top: auto; }
 
 /* Tek sutun, yardim sayfasiyla ayni olcu: okunacak bir sayfa, doldurulacak
    bir form degil. Bolumler ince cizgiyle ayriliyor. */
-.ay {
+.ay,
+.gb {
   max-width: 620px;
   padding: 132px 32px 96px;
 }
 
 .ay .giris-baslik { margin-bottom: 34px; }
+.gb .giris-baslik { margin-bottom: 22px; }
 
 .ay-disarida {
   display: flex;
@@ -2967,7 +2969,82 @@ body:has(> .dipnot:not(.ince)) > .dipnot { margin-top: auto; }
 .hesap-durum.hata { opacity: 1; color: #c22a1f; }
 
 @media (max-width: 720px) {
-  .ay { padding: 104px 16px 64px; }
-  .ay .giris-baslik { font-size: 38px; }
+  .ay, .gb { padding: 104px 16px 64px; }
+  .ay .giris-baslik, .gb .giris-baslik { font-size: 38px; }
   .ay-secim { gap: 16px; }
+}
+
+/* ---------- Geri bildirim ---------- */
+
+.gb-giris {
+  max-width: 52ch;
+  font-size: 16px;
+  line-height: 1.62;
+  opacity: 0.78;
+}
+
+.gb .hesap { margin-top: 34px; }
+.gb .hesap-aciklama { max-width: 48ch; }
+
+/* Tek kutu, cerceve degil alt cizgi — sitenin geri kalani gibi */
+.gb-metin {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  margin-top: 12px;
+  padding: 10px 0;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--siyah);
+  background: none;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  resize: vertical;
+}
+
+.gb-metin::placeholder { color: rgba(0, 0, 0, 0.28); }
+.gb-metin:focus { outline: none; border-bottom-color: var(--siyah); }
+
+.gb-sayac {
+  margin-top: 8px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.4;
+  min-height: 14px;
+}
+
+.gb-tesekkur { margin-top: 12px; }
+
+.gb-tesekkur-baslik {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.gb-yollar { display: flex; flex-wrap: wrap; gap: 26px; margin-top: 24px; }
+
+/* Dugme ama link gibi duruyor: .hs-link’in buton hali */
+.gb-yeniden {
+  font-family: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+/* Sayfanin sonundaki yol tarifi: burasi her sey icin dogru yer degil */
+.gb-not {
+  margin-top: 64px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(0, 0, 0, 0.09);
+  max-width: 52ch;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.45;
+}
+
+@media (max-width: 720px) {
+  .gb-metin { max-width: none; }
 }

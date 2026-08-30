@@ -68,7 +68,8 @@ okunur ve site aynı davranır.
 | `friends/` | Handle, arkadaş ekleme, sakladıkların; altta nachtradar'dan tanıdık yüzler | çalışıyor |
 | `login/` | Giriş + hesap sayfası. Üç sütun: giriş · (first time? / account settings) · give feedback | çalışıyor |
 | `settings/` | **Hesap ayarları** — handle, ad, bir satır, şehir; sakladıklarını kim görsün, adınla bulunabilir misin, e-posta; hesabı silme | çalışıyor |
-| `register/` `feedback/` | Boş kabuklar, hesap sayfasındaki bağlantıların hedefi | **boş** |
+| `feedback/` | **Geri bildirim** — konu, mesaj, isteğe bağlı iletişim. Giriş istemiyor | çalışıyor |
+| `register/` | Boş kabuk, hesap sayfasındaki "here you go" bağlantısının hedefi | **boş** |
 | `help/` | Sitenin nasıl çalıştığı | çalışıyor |
 | `impressum/` `datenschutz/` `agb/` | Almanca hukuk sayfaları | **Muster** (köşeli parantezler doldurulacak) |
 | `admin/` | Etkinlik düzenleme, poster kontrolü, yorum moderasyonu | sadece `is_admin` |
@@ -149,6 +150,7 @@ Veriyi koruyan şey `backend/sql/02_rls.sql`'deki satır düzeyi kurallar.
 | `friends/friends.js` · `nachtradar.js` | Handle/arkadaş/sakladıkların; tanıdık yüzler listesi |
 | `login/login.js` · `hesap.js` | Giriş formu; ortadaki bloğun oturuma göre değişmesi |
 | `settings/ayarlar.js` | Ayar sayfası: `profile_me()` okur, `profile_setup()` yazar, anahtarları doğrudan `profile_settings`'e PATCH'ler |
+| `feedback/geri.js` | Geri bildirim: tek iş, yazılanı `feedback` tablosuna eklemek |
 | `maps/harita.js` | Şemaya mekânları yerleştirir |
 | `admin/admin.js` | Yönetim paneli |
 
@@ -255,7 +257,7 @@ who froze no at1 at2 q1 q2`. Örnek için `cards/kartlar-veri.js`.
 ## 8. Backend
 
 Postgres + Supabase. Tablolar: `cities`, `event_types`, `venues`, `events`,
-`profiles`, `profile_settings`, `swipes`, `comments`, `friendships`.
+`profiles`, `profile_settings`, `swipes`, `comments`, `friendships`, `feedback`.
 
 **Profil ikiye ayrılmış** — herkese açık kart (`profiles`: handle, görünen
 ad, bir satır, şehir, katılma, son görülme) ile yalnız sahibinin okuduğu
@@ -281,7 +283,7 @@ düşüyor (`someone`). Sebebi iki tane — bir konuyu silmek ona gelen
 başkalarının cevaplarını da götürürdü, ve `comments` tablosundaki kısıt
 yazarsız satır kabul etmiyor. Ayar sayfası bunu silmeden önce yazıyor.
 
-Kurulum, testler (155 kontrol) ve yerel Supabase taklidi
+Kurulum, testler (171 kontrol) ve yerel Supabase taklidi
 (`tools/yerel-sunucu.mjs`, PGlite üstünde PostgREST + GoTrue) için →
 **[backend/README.md](backend/README.md)**
 
@@ -319,6 +321,7 @@ Sıra önemli: her adım bir öncekinin açtığı yolu kapatıyor.
 - [x] **Etkinlik sayfası sistemi** — 36 gece, tek düzen
 - [x] **Profil yapısı** — kart + ayarlar, kayıt adımı, gizlilik kuralları, 57 test
 - [x] **Ayar sayfası** — `settings/`, arkasıyla birlikte çalışıyor
+- [x] **Geri bildirim** — `feedback/` + `feedback` tablosu, 16 test
 
 **Sırada (önerilen sıra)**
 
@@ -329,7 +332,7 @@ Sıra önemli: her adım bir öncekinin açtığı yolu kapatıyor.
    Bu olmadan kart biriktirme, arkadaşlık ve yorum yazma herkese kapalı.
 2. **`maps/` menüye.** Sayfa var, hiçbir yerden bağlantısı yok.
 3. ~~`settings/`~~ — **bitti.**
-4. **`feedback/`** — "give feedback" bir yere gitmeli.
+4. ~~`feedback/`~~ — **bitti.**
 5. **Etkinlik verisinin genişlemesi.** Bugün beş alan var
    (`slug tur baslik meta metin`). Etkinlik sayfasındaki her şey — kadro,
    saatler, kapasite, fiyat, kurallar — şu an havuzdan uyduruluyor. Gerçek
