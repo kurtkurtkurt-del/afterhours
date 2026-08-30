@@ -1,241 +1,243 @@
 /* afterhours — poster vitrini (yer tutucu icerik) */
 
-// 20 poster: 2 sutun x 10 sira. Metinler simdilik lorem ipsum.
+// 20 poster: 2 sutun x 10 index. Metinler simdilik lorem ipsum.
 const GOSTERILEN = POSTERS.slice(0, 20);
 
-const izgara = document.getElementById("posters");
-const bilgi = document.getElementById("info");
-const yan = document.getElementById("side");
-const alanIndex = bilgi.querySelector(".info-index");
-const alanTur = bilgi.querySelector(".info-type");
-const alanBaslik = bilgi.querySelector(".info-title");
-const alanMeta = bilgi.querySelector(".info-meta");
-const alanMetin = bilgi.querySelector(".info-body");
+const grid = document.getElementById("posters");
+const info = document.getElementById("info");
+const side = document.getElementById("side");
+const alanIndex = info.querySelector(".info-index");
+const alanTur = info.querySelector(".info-type");
+const alanBaslik = info.querySelector(".info-title");
+const alanMeta = info.querySelector(".info-meta");
+const alanMetin = info.querySelector(".info-body");
 
-// Iki poster arasindaki bosluktan gecerken yazi yanip sonmesin diye kisa gecikme
-let gizleZamani;
+// A short delay so the text does not flicker while the pointer crosses
+// the gap between two posters
+let hideTimer;
 
 GOSTERILEN.forEach((p, i) => {
-  // Poster numarasi kaydin kendisinde; siraya bagli degil
+  // The poster number comes from the record itself, not from its position
   const no = String(p.poster || i + 1).padStart(2, "0");
 
-  // Cerceve: tiklanabilir, kendi event sayfasini yeni sekmede acar
-  const kutu = document.createElement("a");
-  kutu.className = "poster";
-  kutu.href = "explore/" + p.slug + "/index.html";
-  kutu.target = "_blank";
-  kutu.rel = "noopener";
+  // The frame: clickable, opens the event's own page in a new tab
+  const box = document.createElement("a");
+  box.className = "poster";
+  box.href = "explore/" + p.slug + "/index.html";
+  box.target = "_blank";
+  box.rel = "noopener";
 
-  // Gorsel: ayri bir SVG dosyasi olarak yuklenir (gomulu degil)
-  const gorsel = document.createElement("object");
-  gorsel.className = "poster-image";
-  gorsel.type = "image/svg+xml";
-  gorsel.data = p.posterPath || "posters/" + no + ".svg";
-  kutu.appendChild(gorsel);
-  kutu.addEventListener("mouseenter", () => {
-    clearTimeout(gizleZamani);
+  // The image: loaded as a separate SVG file, not embedded
+  const image = document.createElement("object");
+  image.className = "poster-image";
+  image.type = "image/svg+xml";
+  image.data = p.posterPath || "posters/" + no + ".svg";
+  box.appendChild(image);
+  box.addEventListener("mouseenter", () => {
+    clearTimeout(hideTimer);
     alanIndex.textContent = String(i + 1).padStart(2, "0") + " / " + GOSTERILEN.length;
     alanTur.textContent = p.kind;
     alanBaslik.textContent = p.title;
     alanMeta.textContent = p.meta;
     alanMetin.textContent = p.body;
-    yan.classList.add("poster-hover");
+    side.classList.add("poster-hover");
   });
 
-  // Posterin ustunden cikinca yazi kaybolur
-  kutu.addEventListener("mouseleave", () => {
-    gizleZamani = setTimeout(() => yan.classList.remove("poster-hover"), 80);
+  // Leaving the poster takes the text away again
+  box.addEventListener("mouseleave", () => {
+    hideTimer = setTimeout(() => side.classList.remove("poster-hover"), 80);
   });
-  izgara.appendChild(kutu);
+  grid.appendChild(box);
 });
 
 /* ---------- Ekran gecisi ----------
-   Posterlerin sonuna gelindikten sonra biraz daha asagi kaydirinca
+   Once the posters run out, a little more scrolling
    sonraki ekrana gecilir; yukari kaydirinca geri donulur.
    Ekran sayisi HTML'den okunur, yeni <section class="screen"> eklemek yeterli. */
 
-const ekranlar = document.getElementById("screens");
-const EKRAN_SAYISI = ekranlar.querySelectorAll(".screen").length;
-const ESIK = 240;        // gecis icin gereken fazladan kaydirma miktari (px)
-let ekran = 0;
-let birikim = 0;
-let yon = 0;             // 1 asagi, -1 yukari
-let gecisSuruyor = false;
+const screens = document.getElementById("screens");
+const SCREEN_COUNT = screens.querySelectorAll(".screen").length;
+const THRESHOLD = 240;        // extra scrolling needed before a screen changes (px)
+let screen = 0;
+let scrolled = 0;
+let direction = 0;             // 1 down, -1 yukari
+let moving = false;
 
-function ekranaGec(hedef) {
-  if (hedef === ekran || hedef < 0 || hedef >= EKRAN_SAYISI) return;
+function goToScreen(target) {
+  if (target === screen || target < 0 || target >= SCREEN_COUNT) return;
 
-  // Kart kaydirilmadan ikinci ekrandan ileri gecilemez; deste zipar
-  if (ekran === 1 && hedef > ekran && deste.querySelector(".card2")) {
+  // Kart kaydirilmadan ikinci ekrandan ileri gecilemez; deck zipar
+  if (screen === 1 && target > screen && deck.querySelector(".card2")) {
     destiZiplat();
     return;
   }
-  ekran = hedef;
-  birikim = 0;
-  gecisSuruyor = true;
-  ekranlar.style.setProperty("--ekran", String(hedef));
-  document.body.dataset.ekran = String(hedef);
-  setTimeout(() => { gecisSuruyor = false; }, 760);
+  screen = target;
+  scrolled = 0;
+  moving = true;
+  screens.style.setProperty("--screen", String(target));
+  document.body.dataset.screen = String(target);
+  setTimeout(() => { moving = false; }, 760);
 }
 
 window.addEventListener("wheel", (e) => {
-  if (gecisSuruyor) return;
+  if (moving) return;
 
-  const asagi = e.deltaY > 0;
+  const down = e.deltaY > 0;
 
-  // Ilk ekranda tekerlek once poster sutununu kaydirir
-  if (ekran === 0) {
-    const hedef = e.target instanceof Node ? e.target : null;
-    if (!hedef || !izgara.contains(hedef)) izgara.scrollTop += e.deltaY;
+  // On the first screen the wheel scrolls the poster column first
+  if (screen === 0) {
+    const target = e.target instanceof Node ? e.target : null;
+    if (!target || !grid.contains(target)) grid.scrollTop += e.deltaY;
 
-    const sonda = izgara.scrollTop + izgara.clientHeight >= izgara.scrollHeight - 2;
-    if (!asagi || !sonda) {
-      birikim = 0;
+    const sonda = grid.scrollTop + grid.clientHeight >= grid.scrollHeight - 2;
+    if (!down || !sonda) {
+      scrolled = 0;
       return;
     }
   }
 
-  // Yon degistiyse birikim sifirlanir
-  if ((asagi ? 1 : -1) !== yon) {
-    yon = asagi ? 1 : -1;
-    birikim = 0;
+  // Yon degistiyse scrolled sifirlanir
+  if ((down ? 1 : -1) !== direction) {
+    direction = down ? 1 : -1;
+    scrolled = 0;
   }
 
-  birikim += Math.abs(e.deltaY);
-  if (birikim >= ESIK) ekranaGec(ekran + (asagi ? 1 : -1));
+  scrolled += Math.abs(e.deltaY);
+  if (scrolled >= THRESHOLD) goToScreen(screen + (down ? 1 : -1));
 }, { passive: true });
 
-/* Dokunmatikte tekerlek olayi yok: ayni gecisi parmak surtmesiyle yap */
+/* Touch has no wheel event: do the same move with a swipe */
 const DOKUNUS_ESIGI = 70;   // px
-let dokunusY = null;
-let dokunusKartta = false;
-let dokunusSonda = false;
+let touchY = null;
+let touchOnCard = false;
+let touchAtEnd = false;
 
 window.addEventListener("touchstart", (e) => {
-  dokunusY = e.touches[0].clientY;
+  touchY = e.touches[0].clientY;
   const h = e.target;
-  dokunusKartta = !!(h && h.closest && h.closest(".card2"));
-  dokunusSonda = izgara.scrollTop + izgara.clientHeight >= izgara.scrollHeight - 4;
+  touchOnCard = !!(h && h.closest && h.closest(".card2"));
+  touchAtEnd = grid.scrollTop + grid.clientHeight >= grid.scrollHeight - 4;
 }, { passive: true });
 
 window.addEventListener("touchend", (e) => {
-  const baslangic = dokunusY;
-  dokunusY = null;
-  if (baslangic === null || dokunusKartta || gecisSuruyor) return;
+  const start = touchY;
+  touchY = null;
+  if (start === null || touchOnCard || moving) return;
 
-  const fark = baslangic - e.changedTouches[0].clientY;   // yukari surtme pozitif
-  if (Math.abs(fark) < DOKUNUS_ESIGI) return;
+  const gap = start - e.changedTouches[0].clientY;   // yukari surtme pozitif
+  if (Math.abs(gap) < DOKUNUS_ESIGI) return;
 
-  const asagi = fark > 0;
+  const down = gap > 0;
   // Ilk ekranda ancak poster listesinin sonundayken ilerlenir
-  if (ekran === 0 && (!asagi || !dokunusSonda)) return;
+  if (screen === 0 && (!down || !touchAtEnd)) return;
 
-  ekranaGec(ekran + (asagi ? 1 : -1));
+  goToScreen(screen + (down ? 1 : -1));
 }, { passive: true });
 
-/* ---------- Ikinci ekran: 2 kartlik deste ----------
+/* ---------- Ikinci screen: 2 kartlik deck ----------
    Saga cekince begenilir ve kaybolur. Yeterince cekilmezse yerine doner. */
 
-const deste = document.getElementById("deck2");
-const telefon = document.getElementById("phone");
+const deck = document.getElementById("deck2");
+const phone = document.getElementById("phone");
 const sonMesaj = document.getElementById("last-line");
 const kaydirIpucu = document.getElementById("swipe-hint");
 
 // Kaydirmadan gecilmeye calisilinca kartin verdigi kucuk tepki
-let ziplamaZamani;
+let jumpTimer;
 function destiZiplat() {
-  const kart = deste.querySelector(".card2");
-  if (!kart) return;
-  kart.classList.remove("jump");
-  void kart.offsetWidth;               // animasyonu bastan baslat
-  kart.classList.add("jump");
-  clearTimeout(ziplamaZamani);
-  ziplamaZamani = setTimeout(() => kart.classList.remove("jump"), 520);
+  const card = deck.querySelector(".card2");
+  if (!card) return;
+  card.classList.remove("jump");
+  void card.offsetWidth;               // animasyonu bastan baslat
+  card.classList.add("jump");
+  clearTimeout(jumpTimer);
+  jumpTimer = setTimeout(() => card.classList.remove("jump"), 520);
 }
-const DESTE_POSTERLERI = ["01"];         // tek poster: A$AP Rocky
+const DECK_POSTERS = ["01"];         // a single poster: A$AP Rocky
 const CEKME_ESIGI = 120;                 // px
 
-DESTE_POSTERLERI.slice().reverse().forEach((no) => {
-  const kart = document.createElement("div");
-  kart.className = "card2";
+DECK_POSTERS.slice().reverse().forEach((no) => {
+  const card = document.createElement("div");
+  card.className = "card2";
 
-  const gorsel = document.createElement("object");
-  gorsel.type = "image/svg+xml";
-  gorsel.data = "posters/" + no + ".svg";
-  kart.appendChild(gorsel);
+  const image = document.createElement("object");
+  image.type = "image/svg+xml";
+  image.data = "posters/" + no + ".svg";
+  card.appendChild(image);
 
-  let baslangicX = null;
+  let startX = null;
   let dx = 0;
 
-  kart.addEventListener("pointerdown", (e) => {
-    // Sadece en ustteki kart surukleneblir
-    if (kart !== deste.lastElementChild) return;
-    baslangicX = e.clientX;
+  card.addEventListener("pointerdown", (e) => {
+    // Sadece en ustteki card surukleneblir
+    if (card !== deck.lastElementChild) return;
+    startX = e.clientX;
     dx = 0;
-    try { kart.setPointerCapture(e.pointerId); } catch (_) {}
-    kart.classList.add("dragging");
-    kart.classList.remove("soft");
+    try { card.setPointerCapture(e.pointerId); } catch (_) {}
+    card.classList.add("dragging");
+    card.classList.remove("soft");
   });
 
-  kart.addEventListener("pointermove", (e) => {
-    if (baslangicX === null) return;
-    dx = e.clientX - baslangicX;
-    kart.style.transform = "translateX(" + dx + "px) rotate(" + (dx / 26) + "deg)";
+  card.addEventListener("pointermove", (e) => {
+    if (startX === null) return;
+    dx = e.clientX - startX;
+    card.style.transform = "translateX(" + dx + "px) rotate(" + (dx / 26) + "deg)";
   });
 
   function birak() {
-    if (baslangicX === null) return;
-    baslangicX = null;
-    kart.classList.remove("dragging");
-    kart.classList.add("soft");
+    if (startX === null) return;
+    startX = null;
+    card.classList.remove("dragging");
+    card.classList.add("soft");
 
     if (dx > CEKME_ESIGI) {
-      // Begenildi: sagdan ucup gider
-      kart.style.transform = "translateX(120vw) rotate(18deg)";
-      kart.style.opacity = "0";
-      // Gecis bitince sil; gecis hic tetiklenmezse zaman asimi yedegi devreye girer
+      // Kept: it flies off to the right
+      card.style.transform = "translateX(120vw) rotate(18deg)";
+      card.style.opacity = "0";
+      // Drop it when the transition ends; if the transition never fires, the
+      // timeout is the safety net
       let silindi = false;
-      const sil = () => {
+      const drop = () => {
         if (silindi) return;
         silindi = true;
-        kart.remove();
-        // Deste bitti: telefon ekrani acilir
-        if (!deste.querySelector(".card2")) {
+        card.remove();
+        // Deste bitti: phone ekrani acilir
+        if (!deck.querySelector(".card2")) {
           kaydirIpucu.classList.add("hidden");
-          telefon.classList.add("open");
+          phone.classList.add("open");
           // Telefon 1.6 sn durur, kaybolur, yerine kapanis yazisi gelir.
-          // Yazi 2 sn sonra yukari kayar ve telefon altinda geri gelir.
+          // After 2s the text slides up and the phone returns beneath it.
           setTimeout(() => {
-            telefon.classList.remove("open");
+            phone.classList.remove("open");
             setTimeout(() => {
               sonMesaj.classList.add("open");
               setTimeout(() => {
-                deste.classList.add("last-state");
-                telefon.classList.add("open");
+                deck.classList.add("last-state");
+                phone.classList.add("open");
               }, 2000);
             }, 300);
           }, 1600);
         }
       };
-      kart.addEventListener("transitionend", sil, { once: true });
-      setTimeout(sil, 400);
+      card.addEventListener("transitionend", drop, { once: true });
+      setTimeout(drop, 400);
     } else {
-      kart.style.transform = "";
+      card.style.transform = "";
     }
   }
 
-  kart.addEventListener("pointerup", birak);
-  kart.addEventListener("pointercancel", birak);
+  card.addEventListener("pointerup", birak);
+  card.addEventListener("pointercancel", birak);
 
-  deste.appendChild(kart);
+  deck.appendChild(card);
 });
 
 
-/* ---------- Ses: dun geceden kisa kayitlar (3 sehir) ---------- */
+/* ---------- Sound: short recordings from last night (3 cities) ---------- */
 
-const sesKaynak = document.getElementById("sound-source");
+const soundSource = document.getElementById("sound-source");
 const sesSatirlari = [...document.querySelectorAll(".sound-row")];
-let calanSatir = null;
+let playingRow = null;
 
 function calmaDurdur() {
   sesSatirlari.forEach((s) => {
@@ -244,84 +246,85 @@ function calmaDurdur() {
   });
 }
 
-sesSatirlari.forEach((satir) => {
-  satir.querySelector(".sound-button").addEventListener("click", () => {
-    if (calanSatir === satir && !sesKaynak.paused) {
-      sesKaynak.pause();
+sesSatirlari.forEach((row) => {
+  row.querySelector(".sound-button").addEventListener("click", () => {
+    if (playingRow === row && !soundSource.paused) {
+      soundSource.pause();
       return;
     }
-    if (calanSatir !== satir) {
+    if (playingRow !== row) {
       calmaDurdur();
-      calanSatir = satir;
-      sesKaynak.src = satir.dataset.kaynak;
+      playingRow = row;
+      soundSource.src = row.dataset.kaynak;
     }
-    sesKaynak.play();
+    soundSource.play();
   });
 });
 
-sesKaynak.addEventListener("play", () => {
-  if (calanSatir) calanSatir.classList.add("playing");
+soundSource.addEventListener("play", () => {
+  if (playingRow) playingRow.classList.add("playing");
 });
 
-sesKaynak.addEventListener("pause", () => {
-  if (calanSatir) calanSatir.classList.remove("playing");
+soundSource.addEventListener("pause", () => {
+  if (playingRow) playingRow.classList.remove("playing");
 });
 
-sesKaynak.addEventListener("timeupdate", () => {
-  if (!calanSatir || !sesKaynak.duration) return;
-  calanSatir.querySelector(".sound-line span").style.width =
-    (sesKaynak.currentTime / sesKaynak.duration) * 100 + "%";
+soundSource.addEventListener("timeupdate", () => {
+  if (!playingRow || !soundSource.duration) return;
+  playingRow.querySelector(".sound-line span").style.width =
+    (soundSource.currentTime / soundSource.duration) * 100 + "%";
 });
 
-sesKaynak.addEventListener("ended", calmaDurdur);
+soundSource.addEventListener("ended", calmaDurdur);
 
 
-/* ---------- Ucuncu ekran: seritte akan afterhours kartlari ---------- */
+/* ---------- Ucuncu screen: seritte akan afterhours kartlari ---------- */
 
 const k3Ray = document.getElementById("s3-rail");
 
-// Her gece bir cift: on yuz + arka yuz bitisik, sonra bosluk.
-// Dizi iki kez basilir; SVG id'leri cakismasin diye sayac devam eder.
-for (let tekrar = 0; tekrar < 2; tekrar++) {
-  CARDS.gece.forEach((gece, i) => {
-    const sira = tekrar * CARDS.gece.length + i;
-    const cift = document.createElement("div");
-    cift.className = "s3-pair";
-    cift.innerHTML = CARDS.on(gece, sira) + CARDS.arka(gece, sira);
-    k3Ray.appendChild(cift);
+// One pair per night: front and back touching, then a gap.
+// The list is printed twice; the counter keeps running so the SVG ids
+  // never collide.
+for (let again = 0; again < 2; again++) {
+  CARDS.nights.forEach((night, i) => {
+    const index = again * CARDS.nights.length + i;
+    const pair = document.createElement("div");
+    pair.className = "s3-pair";
+    pair.innerHTML = CARDS.front(night, index) + CARDS.back(night, index);
+    k3Ray.appendChild(pair);
   });
 }
 
-/* VENUES venues.js'te — hem ana sayfa hem maps kullaniyor */
+/* VENUES lives in venues.js — the landing page and maps both use it */
 
 
-/* ---------- Altinci ekran: footer ----------
-   Zemin her zaman siyah. Saat kullanicinin kendi saati; sayac o an
-   acik olan mekanlardan hesaplanir. */
+/* ---------- Altinci screen: footer ----------
+   The ground is always black. The clock is the visitor's own; the counter
+   is worked out from the venues open at that moment. */
 
 const k6Saat = document.getElementById("s6-clock");
 const k6Sayac = document.getElementById("s6-counter");
 
-document.body.dataset.footerTon = "koyu";   // menu ve ses bari tersine doner
+document.body.dataset.footerTone = "dark";   // the menu and the sound bar invert
 
 function k6Guncelle() {
-  const simdi = new Date();
-  const s = simdi.getHours();
-  const d = simdi.getMinutes();
+  const now = new Date();
+  const s = now.getHours();
+  const d = now.getMinutes();
 
   k6Saat.textContent =
     String(s).padStart(2, "0") + ":" + String(d).padStart(2, "0") + " · münchen";
 
-  // Su an acik olan mekanlar (gece saatleri 24'u asarak yazildi)
-  const saat = s + d / 60;
-  const acik = VENUES.filter((m) => {
+  // The venues open right now (night hours are written past 24)
+  const hour = s + d / 60;
+  const open = VENUES.filter((m) => {
     const bas = m.opensAt;
     const son = m.opensAt + m.hours;
-    return (saat >= bas && saat < son) || (saat + 24 >= bas && saat + 24 < son);
+    return (hour >= bas && hour < son) || (hour + 24 >= bas && hour + 24 < son);
   }).length;
 
-  k6Sayac.textContent = acik
-    ? acik + (acik === 1 ? " room open in münchen right now" : " rooms open in münchen right now")
+  k6Sayac.textContent = open
+    ? open + (open === 1 ? " room open in münchen right now" : " rooms open in münchen right now")
     : "no rooms open yet — come back after dark";
 }
 

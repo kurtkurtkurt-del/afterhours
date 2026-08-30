@@ -1,6 +1,6 @@
 /* afterhours — card collection.
    Kartlari kendimiz cizmiyoruz: ana sayfadaki seritte kullanilan
-   cards.js ureteci ayni isi yapiyor (CARDS.on = on yuz).
+   cards.js ureteci ayni isi yapiyor (CARDS.front = on yuz).
    Burada sadece uc geceyi ona veriyoruz.
 
    Tiklayinca kart cevriliyor: arka yuz gecenin zaman cizelgesi. */
@@ -15,11 +15,11 @@
 
     const yuz = document.createElement("div");
     yuz.className = "cc-face";
-    yuz.innerHTML = CARDS.on(gece, "k" + i);
+    yuz.innerHTML = CARDS.front(gece, "k" + i);
 
     const arka = document.createElement("div");
     arka.className = "cc-face cc-back";
-    arka.innerHTML = CARDS.arka(gece, "a" + i);
+    arka.innerHTML = CARDS.back(gece, "a" + i);
 
     const cevir = document.createElement("button");
     cevir.className = "cc-flip";

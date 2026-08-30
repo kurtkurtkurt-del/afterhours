@@ -7,10 +7,10 @@
 
 body.strip-page {
   overflow: hidden;
-  --ust: 92px;
+  --top-gap: 92px;
   --serit-bosluk: 14px;
   /* Uc serit ekrani boler; poster yuksekligi buradan cikar */
-  --serit-h: calc((100vh - var(--ust) - 2 * var(--serit-bosluk)) / 3);
+  --serit-h: calc((100vh - var(--top-gap) - 2 * var(--serit-bosluk)) / 3);
 }
 
 .strips {
@@ -82,7 +82,7 @@ body.strip-page {
   width: 660px;
   max-width: calc(100vw - 64px);
   padding: 52px 56px;
-  background: var(--beyaz);
+  background: var(--white);
   text-align: center;
 }
 

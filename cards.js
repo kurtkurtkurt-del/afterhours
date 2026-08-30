@@ -314,7 +314,7 @@ function back(e,i){
   <rect x="13" y="13" width="374" height="574" fill="none" stroke="${m.deep}" stroke-width="1"/>
 </svg>`;}
 
-  return { gece: EVENTS, on: front, arka: back };
+  return { nights: EVENTS, front, back };
 })();
 
 /* `const` global window'a yazilmaz; card collection sayfasi buradan

@@ -162,7 +162,7 @@
         im.className = "cs-shot-img";
         im.type = "image/svg+xml";
         im.data = posterPath;
-        im.style.setProperty("--kay", [0, 42, 83, 125][i > 3 ? 3 : i]);
+        im.style.setProperty("--shift", [0, 42, 83, 125][i > 3 ? 3 : i]);
         poz.appendChild(im);
       }
 
@@ -334,7 +334,7 @@
 
       const kart = el("figure", "cs-past-card");
       const yüz = el("div", "cs-past-face");
-      yüz.innerHTML = CARDS.on(gece, "g" + i);
+      yüz.innerHTML = CARDS.front(gece, "g" + i);
       kart.appendChild(yüz);
       kart.appendChild(el("figcaption", null,
         "edition " + String(edisyon - 1 - i).padStart(2, "0") +

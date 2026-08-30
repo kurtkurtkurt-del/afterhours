@@ -1,6 +1,6 @@
 /* afterhours — card collection'daki uc ornek gece.
    Bicim cards.js'in EVENTS yapisiyla ayni; kartlar da onun kendi
-   ureteciyle ciziliyor (CARDS.on / CARDS.arka). Poster degil,
+   ureteciyle ciziliyor (CARDS.front / CARDS.back). Poster degil,
    gercek afterhours karti.
 
    Metaller bilerek acik ucundan secildi: krom, cirilanmis celik,
