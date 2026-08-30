@@ -101,6 +101,28 @@
     });
   };
 
+  /* Hesap acma. Ustteki iki yol var olan bir hesabi acar, bu yenisini
+     kurar. `ekstra` kayit formundan gelen handle/sehir/ad — Supabase
+     bunu raw_user_meta_data'ya koyuyor ve profil tetikleyicisi oradan
+     okuyor (backend/sql/12_profiles.sql).
+
+     Projede e-posta dogrulamasi ACIKSA cevapta oturum gelmiyor; o zaman
+     null donuyoruz ve sayfa "postana bak" diyor. */
+  AH.kayitOl = function (eposta, sifre, ekstra) {
+    return auth("/signup", {
+      method: "POST",
+      body: JSON.stringify({
+        email: eposta,
+        password: sifre,
+        data: ekstra || {},
+        options: { email_redirect_to: location.origin + location.pathname },
+      }),
+    }).then((c) => {
+      const oturum = (c && c.session) || (c && c.access_token ? c : null);
+      return oturum ? jetonuKaydet(oturum, true) : null;
+    });
+  };
+
   AH.cikis = function () {
     const j = AH.jeton;
     yaz(null);

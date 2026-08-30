@@ -155,6 +155,35 @@ const sunucu = createServer(async (istek, cevap) => {
       return yolla(200, {});
     }
 
+    /* Hesap acma. Gercek Supabase burada e-posta dogrulamasi isteyebilir;
+       taklit sunucu istemiyor, hemen jeton veriyor. */
+    if (yol === "/auth/v1/signup") {
+      const eposta = ((govde && govde.email) || "").toLowerCase();
+      if (!eposta) return yolla(400, { msg: "email gerekli" });
+      await rolBirak();
+      const varMi = await db.query(`select id from auth.users where email = $1`, [eposta]);
+      if (varMi.rows.length) {
+        return yolla(400, { msg: "User already registered" });
+      }
+      const ek = (govde && govde.data) || {};
+      const k = await db.query(
+        `insert into auth.users (email, raw_user_meta_data) values ($1, $2) returning id`,
+        [eposta, JSON.stringify(ek)]);
+      const id = k.rows[0].id;
+
+      const yon = await db.query(`select count(*)::int as n from public.profiles where is_admin`);
+      if (yon.rows[0].n === 0) {
+        await db.query(`update public.profiles set is_admin = true where id = $1`, [id]);
+        console.log("  ★ " + eposta + " yonetici yapildi (sadece yerelde)");
+      }
+
+      console.log("  ✚ hesap acildi: " + eposta);
+      return yolla(200, {
+        access_token: "yerel-" + id, refresh_token: "yerel-" + id, expires_in: 3600,
+        user: { id, email: eposta },
+      });
+    }
+
     if (yol === "/auth/v1/token") {
       const tur = url.searchParams.get("grant_type") || "refresh_token";
 

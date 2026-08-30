@@ -69,7 +69,7 @@ okunur ve site aynı davranır.
 | `login/` | Giriş + hesap sayfası. Üç sütun: giriş · (first time? / account settings) · give feedback | çalışıyor |
 | `settings/` | **Hesap ayarları** — handle, ad, bir satır, şehir; sakladıklarını kim görsün, adınla bulunabilir misin, e-posta; hesabı silme | çalışıyor |
 | `feedback/` | **Geri bildirim** — konu, mesaj, isteğe bağlı iletişim. Giriş istemiyor | çalışıyor |
-| `register/` | Boş kabuk, hesap sayfasındaki "here you go" bağlantısının hedefi | **boş** |
+| `register/` | **Kayıt** — iki adım: e-posta + şifre, sonra handle (+ şehir). Handle seçilene kadar kayıt bitmiş sayılmıyor | çalışıyor |
 | `help/` | Sitenin nasıl çalıştığı | çalışıyor |
 | `impressum/` `datenschutz/` `agb/` | Almanca hukuk sayfaları | **Muster** (köşeli parantezler doldurulacak) |
 | `admin/` | Etkinlik düzenleme, poster kontrolü, yorum moderasyonu | sadece `is_admin` |
@@ -108,7 +108,8 @@ Sayfalardaki kalıp:
 
 Ortak `AH` nesnesi: `AH.durum` (`canli` / `yerel`), `AH.istek()`,
 `AH.oturum`, `AH.girisliMi()`, `AH.oturumHazir` (promise),
-`AH.oturumDegisti(cb)`, `AH.etkinlikler()`, `AH.atislar`, `AH.arkadaslar()`.
+`AH.oturumDegisti(cb)`, `AH.kayitOl()`, `AH.etkinlikler()`, `AH.atislar`,
+`AH.arkadaslar()`.
 
 **Güvenlik:** `ayar.js`'teki anahtar gizli değil, gizli olması da gerekmiyor.
 Veriyi koruyan şey `backend/sql/02_rls.sql`'deki satır düzeyi kurallar.
@@ -151,6 +152,7 @@ Veriyi koruyan şey `backend/sql/02_rls.sql`'deki satır düzeyi kurallar.
 | `login/login.js` · `hesap.js` | Giriş formu; ortadaki bloğun oturuma göre değişmesi |
 | `settings/ayarlar.js` | Ayar sayfası: `profile_me()` okur, `profile_setup()` yazar, anahtarları doğrudan `profile_settings`'e PATCH'ler |
 | `feedback/geri.js` | Geri bildirim: tek iş, yazılanı `feedback` tablosuna eklemek |
+| `register/kayit.js` | Kayıt: `AH.kayitOl()` hesabı açar, `profile_setup()` handle'ı yazıp kaydı bitirir |
 | `maps/harita.js` | Şemaya mekânları yerleştirir |
 | `admin/admin.js` | Yönetim paneli |
 
@@ -322,27 +324,21 @@ Sıra önemli: her adım bir öncekinin açtığı yolu kapatıyor.
 - [x] **Profil yapısı** — kart + ayarlar, kayıt adımı, gizlilik kuralları, 57 test
 - [x] **Ayar sayfası** — `settings/`, arkasıyla birlikte çalışıyor
 - [x] **Geri bildirim** — `feedback/` + `feedback` tablosu, 16 test
+- [x] **Kayıt** — `register/`, iki adım, handle seçilmeden bitmiyor
 
 **Sırada (önerilen sıra)**
 
-1. **Kayıt yolu — ön yüz.** Arkası hazır (`12_profiles.sql`), önü yok:
-   `login.js`'te sign-up yok, `register/` boş. Yapılacak iki ekran:
-   (a) e-posta + şifre ile hesap açma, (b) hemen ardından handle seçme —
-   `handle_status()` ile canlı kontrol, `profile_setup()` ile bitirme.
-   Bu olmadan kart biriktirme, arkadaşlık ve yorum yazma herkese kapalı.
-2. **`maps/` menüye.** Sayfa var, hiçbir yerden bağlantısı yok.
-3. ~~`settings/`~~ — **bitti.**
-4. ~~`feedback/`~~ — **bitti.**
-5. **Etkinlik verisinin genişlemesi.** Bugün beş alan var
+1. **`maps/` menüye.** Sayfa var, hiçbir yerden bağlantısı yok. Beş dakika.
+2. **Etkinlik verisinin genişlemesi.** Bugün beş alan var
    (`slug tur baslik meta metin`). Etkinlik sayfasındaki her şey — kadro,
    saatler, kapasite, fiyat, kurallar — şu an havuzdan uyduruluyor. Gerçek
    olması için `events` tablosuna alan eklemek gerekiyor. Bu yapıldığında
    `etkinlik-veri.js` havuzları yalnızca **yedek** olur.
-6. **Card collection.** Konseptin kalbi ama en pahalısı: geçmiş gece verisi,
+3. **Card collection.** Konseptin kalbi ama en pahalısı: geçmiş gece verisi,
    "o gecenin sesi/konuşmaları" ne demek olduğuna karar vermek, kart üretimi.
-7. **Hukuk sayfalarının doldurulması** — köşeli parantezler + gerçek Stand
+4. **Hukuk sayfalarının doldurulması** — köşeli parantezler + gerçek Stand
    tarihi.
-8. **Gerçek fotoğraflar** — kareler poster şeritleri yerine gerçek kareler.
+5. **Gerçek fotoğraflar** — kareler poster şeritleri yerine gerçek kareler.
 
 ---
 

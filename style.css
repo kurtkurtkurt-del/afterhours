@@ -2845,13 +2845,15 @@ body:has(> .dipnot:not(.ince)) > .dipnot { margin-top: auto; }
 /* Tek sutun, yardim sayfasiyla ayni olcu: okunacak bir sayfa, doldurulacak
    bir form degil. Bolumler ince cizgiyle ayriliyor. */
 .ay,
-.gb {
+.gb,
+.kt {
   max-width: 620px;
   padding: 132px 32px 96px;
 }
 
 .ay .giris-baslik { margin-bottom: 34px; }
 .gb .giris-baslik { margin-bottom: 22px; }
+.kt .giris-baslik { margin-bottom: 22px; }
 
 .ay-disarida {
   display: flex;
@@ -2969,8 +2971,8 @@ body:has(> .dipnot:not(.ince)) > .dipnot { margin-top: auto; }
 .hesap-durum.hata { opacity: 1; color: #c22a1f; }
 
 @media (max-width: 720px) {
-  .ay, .gb { padding: 104px 16px 64px; }
-  .ay .giris-baslik, .gb .giris-baslik { font-size: 38px; }
+  .ay, .gb, .kt { padding: 104px 16px 64px; }
+  .ay .giris-baslik, .gb .giris-baslik, .kt .giris-baslik { font-size: 38px; }
   .ay-secim { gap: 16px; }
 }
 
@@ -3047,4 +3049,40 @@ body:has(> .dipnot:not(.ince)) > .dipnot { margin-top: auto; }
 
 @media (max-width: 720px) {
   .gb-metin { max-width: none; }
+}
+
+/* ---------- Kayit ---------- */
+
+/* Iki adim ust uste durmuyor: her seferinde biri gorunuyor. */
+.kt-sira {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.42;
+  margin-bottom: 14px;
+}
+
+.kt-giris {
+  max-width: 52ch;
+  font-size: 16px;
+  line-height: 1.62;
+  opacity: 0.78;
+  margin-bottom: 30px;
+}
+
+.kt .hesap { margin-top: 30px; }
+.kt .hesap-aciklama { max-width: 48ch; }
+.kt .giris-form { margin-top: 4px; }
+
+.kt-alt {
+  margin-top: 40px;
+  font-size: 15px;
+  opacity: 0.55;
+}
+
+.kt-alt a {
+  color: var(--siyah);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
