@@ -32,9 +32,9 @@
       if (!ham) continue;
       const aday = ham.toUpperCase().trim();
       const m =
-        mekanlar.find((x) => x.ad === aday) ||
-        mekanlar.find((x) => aday.startsWith(x.ad) || x.ad.startsWith(aday)) ||
-        mekanlar.find((x) => aday.includes(x.ad));
+        mekanlar.find((x) => x.name === aday) ||
+        mekanlar.find((x) => aday.startsWith(x.name) || x.name.startsWith(aday)) ||
+        mekanlar.find((x) => aday.includes(x.name));
       if (m) return m;
     }
     return null;

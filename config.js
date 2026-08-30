@@ -1,10 +1,12 @@
-/* afterhours — backend ayari.
-   Supabase projesi acilinca bu iki alan doldurulacak. Bos oldugu surece
-   site eskisi gibi calisir: veriyi events-data.js'ten okur.
+/* afterhours — backend configuration.
+   These two fields get filled in once a Supabase project exists. While
+   they are empty the site behaves exactly as it did before there was a
+   backend: the data is read from events-data.js.
 
-   Buradaki anahtar "anon" anahtaridir; herkese aciktir, gizli degildir.
-   Guvenlik veritabanindaki kurallarla saglanir (backend/sql/02_rls.sql).
-   Gizli olan "service_role" anahtari BURAYA ASLA YAZILMAZ.  */
+   The key below is the "anon" key. It is public on purpose and is not a
+   secret. What protects the data is the row-level rules in the database
+   (backend/sql/02_rls.sql), not the obscurity of this string. The
+   "service_role" key is NEVER written here.  */
 
 window.AH_CONFIG = {
   url: "https://elmnnyxgavwjxvwjgjcu.supabase.co",

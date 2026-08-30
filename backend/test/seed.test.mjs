@@ -50,7 +50,7 @@ console.log("\n— sayilar —");
 console.log("\n— ekranda gorunen metinler birebir mi —");
 {
   const r = await db.query(`
-    select e.slug, e.title, e.meta, e.body, e.poster_no, t.name as tur
+    select e.slug, e.title, e.meta, e.body, e.poster_no, t.name as kind
     from public.events e join public.event_types t on t.id = e.type_id
     order by e.poster_no`);
 

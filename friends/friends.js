@@ -22,10 +22,10 @@
   const nrBolum = document.querySelector(".nr-section");
 
   const CEVAP = {
-    gonderildi: "request sent.",
-    kabul: "you're friends now.",
-    bulunamadi: "nobody here by that handle.",
-    kendine: "that's you.",
+    sent: "request sent.",
+    accepted: "you're friends now.",
+    notfound: "nobody here by that handle.",
+    yourself: "that's you.",
   };
 
   function ekraniKur() {
@@ -118,7 +118,7 @@
     AH.friendRequest(h)
       .then((c) => {
         arkDurum.textContent = CEVAP[c] || String(c);
-        if (c === "gonderildi" || c === "kabul") { arkAlan.value = ""; arkadaslariYukle(); }
+        if (c === "sent" || c === "accepted") { arkAlan.value = ""; arkadaslariYukle(); }
       })
       .catch((h) => { arkDurum.textContent = AH.errorText(h, "couldn't send that request."); });
   });

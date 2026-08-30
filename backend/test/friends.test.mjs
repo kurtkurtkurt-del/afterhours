@@ -57,13 +57,13 @@ console.log("\n— istek gonderme —");
 {
   await kimlik(A);
   const r = await db.query(`select public.friend_request('lena') as s`);
-  olmali(r.rows[0].s === "gonderildi", "istek gonderildi");
+  olmali(r.rows[0].s === "sent", "istek gonderildi");
 
   const y = await db.query(`select public.friend_request('yokboyle') as s`);
-  olmali(y.rows[0].s === "bulunamadi", "olmayan kullaniciya istek gitmiyor");
+  olmali(y.rows[0].s === "notfound", "olmayan kullaniciya istek gitmiyor");
 
   const k = await db.query(`select public.friend_request('ahmet') as s`);
-  olmali(k.rows[0].s === "kendine", "kendine istek gonderilemiyor");
+  olmali(k.rows[0].s === "yourself", "kendine istek gonderilemiyor");
 
   const l = await db.query(`select other_id, status, yon from public.friends_list()`);
   olmali(l.rows.length === 1 && l.rows[0].status === "pending" && l.rows[0].yon === "giden",
@@ -79,7 +79,7 @@ console.log("\n— karsi taraf —");
 
   /* Ayni kisiye ters yonde istek gondermek = kabul etmek */
   const r = await db.query(`select public.friend_request('ahmet') as s`);
-  olmali(r.rows[0].s === "kabul", "ters yonde istek, bekleyeni kabul ediyor");
+  olmali(r.rows[0].s === "accepted", "ters yonde istek, bekleyeni kabul ediyor");
 
   const s = await db.query(`select status from public.friends_list()`);
   olmali(s.rows[0].status === "accepted", "arkadaslik onaylandi");

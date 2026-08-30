@@ -37,7 +37,7 @@ console.log("\n— kayit: profil kendiliginden aciliyor —");
   const p = await db.query(`select display_name, handle, onboarded_at from public.profiles where id = '${A}'`);
   olmali(p.rows.length === 1, "hesap acilinca profil olusuyor");
   olmali(p.rows[0].display_name === "a", "gorunen ad e-postanin basindan geliyor");
-  olmali(p.rows[0].handle === null, "handle bos: kayit henuz bitmedi");
+  olmali(p.rows[0].handle === null, "handle empty: kayit henuz bitmedi");
   olmali(p.rows[0].onboarded_at === null, "onboarded_at bos");
 
   const s = await db.query(`select count(*)::int as n from public.profile_settings where user_id = '${A}'`);
@@ -51,7 +51,7 @@ console.log("\n— kayit formu handle ve sehir gonderirse —");
     ('${B}', 'b@x.com', '{"name":"Lena","handle":"lena","city":"munchen"}'::jsonb)`);
 
   const p = await db.query(`
-    select p.handle, p.display_name, c.slug as sehir, p.onboarded_at is not null as bitti
+    select p.handle, p.display_name, c.slug as city, p.onboarded_at is not null as bitti
     from public.profiles p left join public.cities c on c.id = p.city_id
     where p.id = '${B}'`);
   olmali(p.rows[0].handle === "lena", "handle kayitta alindi");
@@ -70,10 +70,10 @@ console.log("\n— handle musait mi —");
 {
   await kimlik(A);
   const s = (h) => db.query(`select public.handle_status(${h}) as s`).then((r) => r.rows[0].s);
-  olmali(await s("''") === "bos", "bos handle");
-  olmali(await s("'AB'") === "bicim", "kisa/bicimsiz handle");
-  olmali(await s("'Büyük'") === "bicim", "buyuk harf ve turkce harf reddediliyor");
-  olmali(await s("'lena'") === "dolu", "alinmis handle");
+  olmali(await s("''") === "empty", "bos handle");
+  olmali(await s("'AB'") === "format", "kisa/bicimsiz handle");
+  olmali(await s("'Büyük'") === "format", "buyuk harf ve turkce harf reddediliyor");
+  olmali(await s("'lena'") === "taken", "alinmis handle");
   olmali(await s("'ahmet'") === "ok", "musait handle");
 }
 
@@ -88,10 +88,10 @@ console.log("\n— kaydi tamamlama —");
   olmali(p.rows[0].bitti === true, "kayit bitmis sayiliyor");
 
   const d = await db.query(`select public.profile_setup('lena') as s`);
-  olmali(d.rows[0].s === "dolu", "baskasinin handle'i alinamiyor");
+  olmali(d.rows[0].s === "taken", "baskasinin handle'i alinamiyor");
 
   const y = await db.query(`select public.profile_setup('ahmet', null, 'yokboyle') as s`);
-  olmali(y.rows[0].s === "sehir", "olmayan sehir reddediliyor");
+  olmali(y.rows[0].s === "nocity", "olmayan sehir reddediliyor");
 
   const t = await db.query(`select public.profile_setup('ahmet', null, null, null) as s`);
   olmali(t.rows[0].s === "ok", "kendi handle'ini tekrar yazmak sorun degil");
@@ -198,7 +198,7 @@ console.log("\n— ayardan kapatinca kart kayboluyor —");
 
   /* Ama adini bilen yine istek gonderebiliyor: yoksa kimse ekleyemezdi */
   const i = await db.query(`select public.friend_request('ahmet') as s`);
-  olmali(i.rows[0].s === "gonderildi", "istek gondermek hala calisiyor");
+  olmali(i.rows[0].s === "sent", "istek gondermek hala calisiyor");
 
   await kimlik(B);   /* arkadasi */
   const f = await db.query(`select count(*)::int as n from public.profile_card('ahmet')`);
@@ -236,7 +236,7 @@ console.log("\n— kurala takilmayan eski isler —");
 
   await kimlik(C);
   const h = await db.query(`select public.handle_status('ahmet') as s`);
-  olmali(h.rows[0].s === "dolu", "ad musaitlik kontrolu hala calisiyor");
+  olmali(h.rows[0].s === "taken", "ad musaitlik kontrolu hala calisiyor");
 }
 
 console.log("\n— goruldu damgasi —");

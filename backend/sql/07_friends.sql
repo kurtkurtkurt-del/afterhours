@@ -46,10 +46,10 @@ begin
   select id into hedef from public.profiles where handle = lower(btrim(p_handle));
 
   if hedef is null then
-    return 'bulunamadi';
+    return 'notfound';
   end if;
   if hedef = auth.uid() then
-    return 'kendine';
+    return 'yourself';
   end if;
 
   -- Karsi yonde bekleyen bir istek varsa onu kabul et
@@ -57,14 +57,14 @@ begin
              where requester_id = hedef and addressee_id = auth.uid()) then
     update public.friendships set status = 'accepted'
     where requester_id = hedef and addressee_id = auth.uid();
-    return 'kabul';
+    return 'accepted';
   end if;
 
   insert into public.friendships (requester_id, addressee_id)
   values (auth.uid(), hedef)
   on conflict (requester_id, addressee_id) do nothing;
 
-  return 'gonderildi';
+  return 'sent';
 end;
 $$;
 

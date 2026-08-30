@@ -89,7 +89,7 @@
       AH.request("/cities?order=sira"),
       AH.request("/venues?order=name"),
       yenile(),
-      yorumlariGetir(),
+      comments(),
       geriGetir(),
     ]).then(([t, s, m]) => {
       turler = t; sehirler = s; mekanlar = m;
@@ -470,7 +470,7 @@
     });
   }
 
-  function yorumlariGetir() {
+  function comments() {
     return AH.request("/comments?order=created_at.desc&limit=30")
       .then(yorumlariCiz)
       .catch(() => {});
@@ -499,7 +499,7 @@
         AH.request("/comments?id=eq." + y.id, {
           method: "PATCH",
           body: JSON.stringify({ is_hidden: !y.is_hidden }),
-        }).then(yorumlariGetir);
+        }).then(comments);
       });
 
       li.appendChild(kim);

@@ -315,8 +315,8 @@ function k6Guncelle() {
   // Su an acik olan mekanlar (gece saatleri 24'u asarak yazildi)
   const saat = s + d / 60;
   const acik = VENUES.filter((m) => {
-    const bas = m.saat;
-    const son = m.saat + m.sure;
+    const bas = m.opensAt;
+    const son = m.opensAt + m.hours;
     return (saat >= bas && saat < son) || (saat + 24 >= bas && saat + 24 < son);
   }).length;
 

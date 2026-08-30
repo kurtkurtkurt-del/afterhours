@@ -77,8 +77,8 @@
   /* ---------------- 2 · handle ---------------- */
 
   const SOZ = {
-    ok: "free.", senin: "this one is yours.", dolu: "someone already has that one.",
-    bicim: "lowercase letters, numbers and underscore. 3–20.", bos: "",
+    ok: "free.", yours: "this one is yours.", taken: "someone already has that one.",
+    format: "lowercase letters, numbers and underscore. 3–20.", empty: "",
   };
 
   let bekleyen = null;
@@ -91,7 +91,7 @@
         .then((c) => {
           const s = skaler(c);
           soyle(el("reg-handle-status"), SOZ[s] || "",
-            s === "taken" || s === "bicim" ? "error" : "ok");
+            s === "taken" || s === "format" ? "error" : "ok");
         })
         .catch(() => soyle(el("reg-handle-status"), ""));
     }, 300);
@@ -136,11 +136,11 @@
   }
 
   const YANIT = {
-    dolu: "someone already has that handle.",
-    bicim: "that handle doesn't fit the format.",
-    bos: "pick a handle first.",
+    taken: "someone already has that handle.",
+    format: "that handle doesn't fit the format.",
+    empty: "pick a handle first.",
     city: "that city isn't on the list.",
-    giris: "sign in again — the session went away.",
+    signedout: "sign in again — the session went away.",
   };
 
   el("reg-finish").onclick = function () {

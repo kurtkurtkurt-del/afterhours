@@ -112,8 +112,8 @@
   /* --- handle: yazarken musait mi diye sor --- */
 
   const SOZ = {
-    ok: "free.", senin: "this one is yours.", dolu: "someone already has that one.",
-    bicim: "lowercase letters, numbers and underscore. 3–20.", bos: "",
+    ok: "free.", yours: "this one is yours.", taken: "someone already has that one.",
+    format: "lowercase letters, numbers and underscore. 3–20.", empty: "",
   };
 
   let bekleyen = null;
@@ -124,7 +124,7 @@
     bekleyen = setTimeout(() => {
       cagir("handle_status", { p_handle: h })
         .then((c) => soyle(handleDurum, SOZ[skaler(c)] || "",
-          skaler(c) === "taken" || skaler(c) === "bicim" ? "error" : "ok"))
+          skaler(c) === "taken" || skaler(c) === "format" ? "error" : "ok"))
         .catch(() => soyle(handleDurum, ""));
     }, 300);
   });
@@ -132,9 +132,9 @@
   /* --- profilin dort alani: tek istekte --- */
 
   const YANIT = {
-    ok: "saved.", dolu: "someone already has that handle.",
-    bicim: "that handle doesn't fit the format.", bos: "pick a handle first.",
-    city: "that city isn't on the list.", giris: "sign in again.",
+    ok: "saved.", taken: "someone already has that handle.",
+    format: "that handle doesn't fit the format.", empty: "pick a handle first.",
+    city: "that city isn't on the list.", signedout: "sign in again.",
   };
 
   el("set-save").onclick = function () {

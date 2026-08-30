@@ -227,21 +227,21 @@
     k.className = "c-topic";
     const ust = document.createElement("div");
     ust.className = "c-top";
-    ust.appendChild(satir("c-who", konu.kim));
-    ust.appendChild(satir("c-when", konu.zaman));
+    ust.appendChild(satir("c-who", konu.who));
+    ust.appendChild(satir("c-when", konu.when));
     k.appendChild(ust);
     k.appendChild(satir("c-text", konu.body));
 
-    if (konu.cevaplar && konu.cevaplar.length) {
+    if (konu.replies && konu.replies.length) {
       const c = document.createElement("div");
       c.className = "c-replies";
-      konu.cevaplar.forEach((cev) => {
+      konu.replies.forEach((cev) => {
         const kutu = document.createElement("div");
         kutu.className = "c-reply";
         const u = document.createElement("div");
         u.className = "c-top";
-        u.appendChild(satir("c-who", cev.kim));
-        u.appendChild(satir("c-when", cev.zaman));
+        u.appendChild(satir("c-who", cev.who));
+        u.appendChild(satir("c-when", cev.when));
         kutu.appendChild(u);
         kutu.appendChild(satir("c-text", cev.body));
         c.appendChild(kutu);
@@ -264,9 +264,9 @@
   function yazmaAlani(etkinlik) {
     const sarmal = document.createElement("div");
     sarmal.className = "c-write";
-    if (!(window.AH && AH.yorumBackendAcik && AH.yorumBackendAcik())) return sarmal;
+    if (!(window.AH && AH.commentsLive && AH.commentsLive())) return sarmal;
 
-    if (!AH.yorumYazilabilir()) {
+    if (!AH.canComment()) {
       const d = document.createElement("a");
       d.className = "c-write-invite";
       d.href = "../login/index.html";
@@ -293,7 +293,7 @@
       if (!metin) { kutu.focus(); return; }
       dugme.disabled = true;
       durum.textContent = "posting…";
-      AH.yorumYaz(etkinlik, metin)
+      AH.postComment(etkinlik, metin)
         .then(() => { kutu.value = ""; durum.textContent = ""; yorumlariBas(); })
         .catch((h) => { durum.textContent = "couldn't post: " + h.message; })
         .finally(() => { dugme.disabled = false; });
@@ -312,9 +312,9 @@
     /* Yorumlar canliyken veritabanindan, degilse comment-pools.js'ten gelir;
        ikisi de ayni bicimi dondurur, ekran ayni kalir. */
     const kaynak = (etkinlik) =>
-      window.AH && AH.yorumlariGetir
-        ? AH.yorumlariGetir(etkinlik)
-        : Promise.resolve(YORUMLARI_GETIR(etkinlik));
+      window.AH && AH.comments
+        ? AH.comments(etkinlik)
+        : Promise.resolve(COMMENTS_FOR(etkinlik));
 
     const doldurYorum = () => {
       if (!ust) {
@@ -326,14 +326,14 @@
       }
 
       const etkinlik = CARDS[Number(ust.dataset.no)];
-      kaynak(etkinlik).then(({ eski, yeni }) => {
-        /* Bu arada baska bir kart ustte olabilir; gec gelen cevabi basma */
+      kaynak(etkinlik).then(({ older, recent }) => {
+        /* Another card may be on top by now; do not print a late answer */
         if (deste.lastElementChild !== ust) return;
         yorumAlani.textContent = "";
         yorumAlani.appendChild(yazmaAlani(etkinlik));
-        if (yeni.length) yorumAlani.appendChild(grupYap("this week", yeni, false));
-        if (eski.length) yorumAlani.appendChild(grupYap("from earlier nights", eski, true));
-        if (!yeni.length && !eski.length) {
+        if (recent.length) yorumAlani.appendChild(grupYap("this week", recent, false));
+        if (older.length) yorumAlani.appendChild(grupYap("from earlier nights", older, true));
+        if (!recent.length && !older.length) {
           yorumAlani.appendChild(satir("c-none", "nobody has said anything yet."));
         }
         yorumAlani.scrollTop = 0;

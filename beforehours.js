@@ -1,84 +1,93 @@
-/* afterhours — beforehours yorumlari.
-   Canliyken veritabanindan, degilse comment-pools.js'teki ornek havuzdan.
-   Iki durumda da ayni bicim doner: { yeni: [...], eski: [...] }
-   ve her konu { kim, zaman, metin, cevaplar: [...] }.  */
+/* afterhours — beforehours comments.
+   Live, they come from the database; otherwise from the sample pool in
+   comment-pools.js. Both paths return the same shape:
+
+     { recent: [...], older: [...] }
+
+   and every topic is { id, who, when, body, at, replies: [...] }.  */
 
 (function () {
   const AH = (window.AH = window.AH || {});
-  const OTUZ_GUN = 30 * 24 * 3600 * 1000;
+  const THIRTY_DAYS = 30 * 24 * 3600 * 1000;
 
-  const AYAR = window.AH_CONFIG || {};
-  const canli = () => Boolean(AYAR.url && AYAR.anonKey && AH.mode === "live");
+  const CONFIG = window.AH_CONFIG || {};
+  const live = () => Boolean(CONFIG.url && CONFIG.anonKey && AH.mode === "live");
 
-  /* Veritabani satirlarini ekranin bekledigi bicime cevir.
-     time_text ornek yorumlarda dolu ("4 days ago"); gercek yorumlarda
-     bos, o zaman created_at'ten uretiyoruz. */
-  function zamanYazisi(satir) {
-    if (satir.time_text) return satir.time_text;
-    const fark = Date.now() - new Date(satir.created_at).getTime();
-    const saat = Math.floor(fark / 3600e3);
-    if (saat < 1) return "just now";
-    if (saat < 24) return saat + " h ago";
-    const gun = Math.floor(saat / 24);
-    if (gun === 1) return "yesterday";
-    if (gun < 30) return gun + " days ago";
-    return new Date(satir.created_at).toLocaleDateString("en-GB", { month: "short", year: "numeric" });
+  /* Turn a database row into what the screen expects. time_text is filled
+     in on the sample comments ("4 days ago"); on real ones it is empty and
+     we work it out from created_at. */
+  function whenText(row) {
+    if (row.time_text) return row.time_text;
+    const gap = Date.now() - new Date(row.created_at).getTime();
+    const hours = Math.floor(gap / 3600e3);
+    if (hours < 1) return "just now";
+    if (hours < 24) return hours + " h ago";
+    const days = Math.floor(hours / 24);
+    if (days === 1) return "yesterday";
+    if (days < 30) return days + " days ago";
+    return new Date(row.created_at)
+      .toLocaleDateString("en-GB", { month: "short", year: "numeric" });
   }
 
-  function grupla(satirlar) {
-    const konular = satirlar.filter((s) => !s.parent_id);
-    const cevaplar = satirlar.filter((s) => s.parent_id);
+  /* One table, two levels: a row without parent_id is a topic, a row with
+     one is a reply to it. */
+  function group(rows) {
+    const topics = rows.filter((r) => !r.parent_id);
+    const replies = rows.filter((r) => r.parent_id);
 
-    const cevir = (s) => ({
-      id: s.id,
-      kim: s.author || "someone",
-      zaman: zamanYazisi(s),
-      body: s.body,
-      an: new Date(s.created_at).getTime(),
-      cevaplar: cevaplar
-        .filter((c) => c.parent_id === s.id)
+    const shape = (r) => ({
+      id: r.id,
+      who: r.author || "someone",
+      when: whenText(r),
+      body: r.body,
+      at: new Date(r.created_at).getTime(),
+      replies: replies
+        .filter((c) => c.parent_id === r.id)
         .sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
-        .map((c) => ({ kim: c.author || "someone", zaman: zamanYazisi(c), body: c.body })),
+        .map((c) => ({ who: c.author || "someone", when: whenText(c), body: c.body })),
     });
 
-    const hepsi = konular.map(cevir).sort((a, b) => b.an - a.an);
-    const sinir = Date.now() - OTUZ_GUN;
+    const all = topics.map(shape).sort((a, b) => b.at - a.at);
+    const cutoff = Date.now() - THIRTY_DAYS;
     return {
-      yeni: hepsi.filter((k) => k.an >= sinir),
-      eski: hepsi.filter((k) => k.an < sinir),
+      recent: all.filter((t) => t.at >= cutoff),
+      older: all.filter((t) => t.at < cutoff),
     };
   }
 
-  AH.yorumlariGetir = function (etkinlik) {
-    if (!canli() || !etkinlik || !etkinlik.id) {
-      /* Yerel mod: comment-pools.js'teki havuz. Ayni secim, ayni sira. */
-      try { return Promise.resolve(YORUMLARI_GETIR(etkinlik)); }
-      catch (_) { return Promise.resolve({ yeni: [], eski: [] }); }
+  const EMPTY = { recent: [], older: [] };
+
+  AH.comments = function (event) {
+    if (!live() || !event || !event.id) {
+      /* Local mode: the pool in comment-pools.js. Same picks, same order. */
+      try { return Promise.resolve(COMMENTS_FOR(event)); }
+      catch (_) { return Promise.resolve(EMPTY); }
     }
     return AH.request(
-      "/comments_public?event_id=eq." + encodeURIComponent(etkinlik.id) +
+      "/comments_public?event_id=eq." + encodeURIComponent(event.id) +
       "&order=created_at.desc&limit=60"
     )
-      .then(grupla)
-      .catch((h) => {
-        console.warn("[afterhours] yorumlar alinamadi:", h.message);
-        try { return YORUMLARI_GETIR(etkinlik); } catch (_) { return { yeni: [], eski: [] }; }
+      .then(group)
+      .catch((err) => {
+        console.warn("[afterhours] couldn't load comments:", err.message);
+        try { return COMMENTS_FOR(event); } catch (_) { return EMPTY; }
       });
   };
 
-  /* Yazmak giris ister. author_id'yi veritabani oturumdan dolduruyor. */
-  AH.yorumYaz = function (etkinlik, metin, ustId) {
-    if (!canli()) return Promise.reject(new Error("backend kapali"));
-    if (!(AH.signedIn && AH.signedIn())) return Promise.reject(new Error("page gerekli"));
-    const govde = { event_id: etkinlik.id, body: String(metin).trim() };
-    if (ustId) govde.parent_id = ustId;
+  /* Writing needs an account. The database fills author_id from the
+     session, so the browser never says who it is writing as. */
+  AH.postComment = function (event, text, parentId) {
+    if (!live()) return Promise.reject(new Error("backend is off"));
+    if (!(AH.signedIn && AH.signedIn())) return Promise.reject(new Error("sign in first"));
+    const body = { event_id: event.id, body: String(text).trim() };
+    if (parentId) body.parent_id = parentId;
     return AH.request("/comments", {
       method: "POST",
       headers: { Prefer: "return=representation" },
-      body: JSON.stringify(govde),
+      body: JSON.stringify(body),
     });
   };
 
-  AH.yorumYazilabilir = () => canli() && AH.signedIn && AH.signedIn();
-  AH.yorumBackendAcik = canli;
+  AH.canComment = () => live() && AH.signedIn && AH.signedIn();
+  AH.commentsLive = live;
 })();

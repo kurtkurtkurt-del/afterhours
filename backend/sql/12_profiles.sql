@@ -140,12 +140,12 @@ security definer
 set search_path = public
 as $$
   select case
-    when coalesce(btrim(p_handle), '') = ''            then 'bos'
-    when lower(btrim(p_handle)) !~ '^[a-z0-9_]{3,20}$' then 'bicim'
+    when coalesce(btrim(p_handle), '') = ''            then 'empty'
+    when lower(btrim(p_handle)) !~ '^[a-z0-9_]{3,20}$' then 'format'
     when exists (select 1 from public.profiles
-                 where handle = lower(btrim(p_handle)) and id = auth.uid()) then 'senin'
+                 where handle = lower(btrim(p_handle)) and id = auth.uid()) then 'yours'
     when exists (select 1 from public.profiles
-                 where handle = lower(btrim(p_handle))) then 'dolu'
+                 where handle = lower(btrim(p_handle))) then 'taken'
     else 'ok'
   end;
 $$;
@@ -167,12 +167,12 @@ declare
   durum    text := public.handle_status(p_handle);
   sehir_id uuid;
 begin
-  if auth.uid() is null then return 'giris'; end if;
-  if durum not in ('ok', 'senin') then return durum; end if;
+  if auth.uid() is null then return 'signedout'; end if;
+  if durum not in ('ok', 'yours') then return durum; end if;
 
   if coalesce(btrim(p_city_slug), '') <> '' then
     select id into sehir_id from public.cities where slug = lower(btrim(p_city_slug));
-    if sehir_id is null then return 'sehir'; end if;
+    if sehir_id is null then return 'nocity'; end if;
   end if;
 
   update public.profiles set
@@ -423,23 +423,23 @@ begin
   hedef := public.handle_to_id(p_handle);
 
   if hedef is null then
-    return 'bulunamadi';
+    return 'notfound';
   end if;
   if hedef = auth.uid() then
-    return 'kendine';
+    return 'yourself';
   end if;
 
   if exists (select 1 from public.friendships
              where requester_id = hedef and addressee_id = auth.uid()) then
     update public.friendships set status = 'accepted'
     where requester_id = hedef and addressee_id = auth.uid();
-    return 'kabul';
+    return 'accepted';
   end if;
 
   insert into public.friendships (requester_id, addressee_id)
   values (auth.uid(), hedef)
   on conflict do nothing;
-  return 'gonderildi';
+  return 'sent';
 end;
 $$;
 
