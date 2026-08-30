@@ -1,12 +1,12 @@
 -- ============================================================
 --  afterhours — KURULUM 1 / 2 : YAPI
---  SURUM: 2026-08-30 19:23   ← editorde bu satir gorunuyorsa dogru kopya
+--  SURUM: 2026-08-30 19:25   ← editorde bu satir gorunuyorsa dogru kopya
 --
 --  Supabase panelinde: SQL Editor → New query → bu dosyanin
 --  TAMAMINI yapistir → Run.
 --
 --  Bittiginde "Success. No rows returned" gormelisin.
---  Sonra setup-2-yorumlar.sql dosyasini ayni sekilde calistir.
+--  Sonra setup-2-comments.sql dosyasini ayni sekilde calistir.
 --
 --  URETILMIS DOSYA — source: backend/tools/setup-build.mjs
 -- ============================================================
@@ -446,10 +446,10 @@ grant insert, update, delete on public.cities, public.event_types,
 
 
 -- ============================================================
---  SEHIR, TUR, MEKAN   (03_seed_katalog.sql)
+--  SEHIR, TUR, MEKAN   (03_seed_catalog.sql)
 -- ============================================================
 
--- URETILMIS DOSYA — elle duzenleme. Kaynak: backend/tools/seed-uret.mjs
+-- URETILMIS DOSYA — elle duzenleme. Kaynak: backend/tools/build-seed.mjs
 -- Cities, types and venues. This one first, then 04.
 
 insert into public.cities (slug, name, status, sort_order, country, country_slug) values
@@ -1476,13 +1476,13 @@ $$;
 
 
 -- ============================================================
---  DUNYA — 54 SEHIR, 106 GECE   (11_dunya.sql)
+--  DUNYA — 54 SEHIR, 106 GECE   (11_world.sql)
 -- ============================================================
 
 -- ============================================================
 --  afterhours — THE WORLD: 6 continents, 18 countries, 54 cities, 106 nights
 --
---  URETILMIS DOSYA — kaynak: backend/tools/dunya-sql.mjs
+--  URETILMIS DOSYA — kaynak: backend/tools/world-sql.mjs
 --  The content is invented but hand-written; the posters were generated too
 --  (posters/37.svg … 142.svg).
 -- ============================================================

@@ -9,7 +9,7 @@
      node tools/poster-build.mjs                                        */
 
 import { writeFile, mkdir } from "node:fs/promises";
-import { KITALAR } from "./dunya-veri.mjs";
+import { KITALAR } from "./world-data.mjs";
 
 const KOK = new URL("../../posters/", import.meta.url);
 

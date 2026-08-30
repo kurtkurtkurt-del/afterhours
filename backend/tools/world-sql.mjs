@@ -1,5 +1,5 @@
 /* afterhours — dunya verisinden SQL uretir.
-   Cikti: backend/sql/11_dunya.sql  (54 sehir, 106 gece)
+   Cikti: backend/sql/11_world.sql  (54 sehir, 106 gece)
 
    Mevcut projede one kez calistirilir; temiz kurulumda birlestirilmis
    dosyanin icinde zaten geliyor.                                      */
@@ -8,7 +8,7 @@ import { readFile, writeFile } from "node:fs/promises";
 
 const record = JSON.parse(
   await readFile(new URL("./dunya-record.json", import.meta.url), "utf8"));
-const { KITALAR } = await import("./dunya-veri.mjs");
+const { KITALAR } = await import("./world-data.mjs");
 
 /* Kacisli quote: SQL editorlerinin ayristiricisi icin dengeli */
 const q = (v) => (v === null || v === undefined)
@@ -31,7 +31,7 @@ function anaCevir(gun, saat) {
 let sql = `-- ============================================================
 --  afterhours — DUNYA: 6 kita, 18 ulke, 54 sehir, 106 gece
 --
---  URETILMIS DOSYA — source: backend/tools/dunya-sql.mjs
+--  URETILMIS DOSYA — source: backend/tools/world-sql.mjs
 --  Icerik uydurma ama elle yazildi; posterleri de uretildi
 --  (posters/37.svg … 142.svg).
 -- ============================================================
@@ -98,6 +98,6 @@ on conflict (slug) do nothing;
 `;
 }
 
-await writeFile(new URL("../sql/11_dunya.sql", import.meta.url), sql);
-console.log("11_dunya.sql yazildi: " + rows.length + " sehir, " + record.length + " gece, " +
+await writeFile(new URL("../sql/11_world.sql", import.meta.url), sql);
+console.log("11_world.sql yazildi: " + rows.length + " sehir, " + record.length + " gece, " +
             Buffer.byteLength(sql).toLocaleString() + " bayt");

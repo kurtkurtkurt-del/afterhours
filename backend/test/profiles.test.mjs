@@ -17,7 +17,7 @@ process.on("unhandledRejection", (e) => {
 
 const db = new PGlite();
 for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02_rls.sql",
-                 "../sql/03_seed_katalog.sql", "../sql/04_seed_events.sql",
+                 "../sql/03_seed_catalog.sql", "../sql/04_seed_events.sql",
                  "../sql/06_views.sql", "../sql/07_friends.sql", "../sql/12_profiles.sql"]) {
   await db.exec(await read(d));
 }

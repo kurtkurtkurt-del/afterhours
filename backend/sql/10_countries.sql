@@ -1,11 +1,11 @@
 -- afterhours — sehirlere ulke
 -- Kurulumdan sonra eklendi; mevcut projede bir kez calistirilir.
--- (03_seed_katalog.sql yeniden uretildigi icin temiz kurulumda zaten var.)
+-- (03_seed_catalog.sql yeniden uretildigi icin temiz kurulumda zaten var.)
 
 alter table public.cities add column if not exists country text;
 alter table public.cities add column if not exists country_slug text;
 
--- Kita alanlari da burada aciliyor. 11_dunya.sql onlari dolduruyor ama
+-- Kita alanlari da burada aciliyor. 11_world.sql onlari dolduruyor ama
 -- ARADAKI 06_views.sql city_counts icinde onlara BAKIYOR — sutunlar
 -- burada olmazsa guncelleme ortasinda "column c.continent does not
 -- exist" ile duruyor. (Tam olarak bu yasandi.)

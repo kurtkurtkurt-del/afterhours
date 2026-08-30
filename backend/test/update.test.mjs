@@ -21,7 +21,7 @@ process.on("unhandledRejection", (e) => {
 
 const db = new PGlite();
 for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02_rls.sql",
-                 "../sql/03_seed_katalog.sql", "../sql/04_seed_events.sql",
+                 "../sql/03_seed_catalog.sql", "../sql/04_seed_events.sql",
                  "../sql/06_views.sql", "../sql/07_friends.sql"]) {
   await db.exec(await read(d));
 }
@@ -43,7 +43,7 @@ await db.exec(`
 console.log("\n— guncelleme uygulaniyor —");
 {
   let hata = null;
-  try { await db.exec(await read("../sql/guncelleme-dunya.sql")); }
+  try { await db.exec(await read("../sql/update-world.sql")); }
   catch (e) { hata = e.message; }
   check(!hata, "guncelleme eski semada calisiyor", hata);
 }
@@ -81,7 +81,7 @@ console.log("\n— guncelleme uygulaniyor —");
 
 console.log("\n— ikinci kez calistirmak —");
 {
-  await db.exec(await read("../sql/guncelleme-dunya.sql"));
+  await db.exec(await read("../sql/update-world.sql"));
   const r = await db.query(`
     select (select count(*) from public.cities) s, (select count(*) from public.events) e`);
   check(Number(r.rows[0].s) === 54 && Number(r.rows[0].e) === 142,

@@ -289,7 +289,7 @@ başkalarının cevaplarını da götürürdü, ve `comments` tablosundaki kıs�
 yazarsız satır kabul etmiyor. Ayar sayfası bunu silmeden önce yazıyor.
 
 Kurulum, testler (171 kontrol) ve yerel Supabase taklidi
-(`tools/yerel-sunucu.mjs`, PGlite üstünde PostgREST + GoTrue) için →
+(`tools/local-server.mjs`, PGlite üstünde PostgREST + GoTrue) için →
 **[backend/README.md](backend/README.md)**
 
 ---

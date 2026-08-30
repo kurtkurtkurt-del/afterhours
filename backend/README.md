@@ -9,21 +9,21 @@ veri `events-data.js`'ten okunur ve hicbir sey degismez.
 ```
 sql/01_schema.sql        tablolar
 sql/02_rls.sql           kimin neyi gorup yazabilecegi  ← guvenlik burada
-sql/03_seed_katalog.sql  sehir, tur, mekan          (uretilmis)
+sql/03_seed_catalog.sql  sehir, tur, mekan          (uretilmis)
 sql/04_seed_events.sql   36 etkinlik                (uretilmis)
 sql/05_seed_comments.sql ornek beforehours yorumlari (uretilmis)
 sql/06_views.sql         deste, biriktirilenler, sayaclar
 sql/07_friends.sql       arkadaslik islemleri
 sql/08_storage.sql       poster deposu (yalniz Supabase'de)
 sql/09_jobs.sql          gecmisi dusurme + saglik ozeti
-sql/11_dunya.sql         54 sehir, 106 gece
+sql/11_world.sql         54 sehir, 106 gece
 sql/12_profiles.sql      kisi profilleri: kart + ayarlar + kayit adimi
 sql/13_feedback.sql      geri bildirim: herkes yazar, yonetici okur
 
-tools/seed-uret.mjs      on yuzdeki veriden 03/04/05'i uretir
-tools/yerel-sunucu.mjs   Supabase taklidi — gelistirme icin
-tools/yedek.mjs          icerigi JSON'a yedekler
-tools/saglik.mjs         durum kontrolu
+tools/build-seed.mjs      on yuzdeki veriden 03/04/05'i uretir
+tools/local-server.mjs   Supabase taklidi — gelistirme icin
+tools/backup.mjs          icerigi JSON'a yedekler
+tools/health.mjs         durum kontrolu
 
 test/                    171 kontrol; hepsi gercek Postgres'te (PGlite)
 ```
@@ -60,13 +60,13 @@ Frankfurt (Munih'e en yakini). Ucretsiz plan yeter.
 > bu yasandi.)
 
 Sirasiyla:
-`sql/kurulum-1-yapi.sql` → `sql/kurulum-2-yorumlar.sql`. Bu ikisi
+`sql/setup-1-structure.sql` → `sql/setup-2-comments.sql`. Bu ikisi
 `01..09`'un birlestirilmis hali (`npm run kurulum` ile yeniden uretilir);
 tek tek de calistirabilirsin. 08 (depo) ve 09'daki zamanlama satirlari
 yalniz Supabase'de anlamli, baska yerde kendilerini atlarlar.
 
 Panodan yapistirmakta sorun yasarsan dosyayi dogrudan kaynagindan al:
-`raw.githubusercontent.com/kurtkurtkurt-del/afterhours/main/backend/sql/kurulum-1-yapi.sql`
+`raw.githubusercontent.com/kurtkurtkurt-del/afterhours/main/backend/sql/setup-1-structure.sql`
 
 Her dosyanin 3. satirinda bir SURUM damgasi var; editorde hangi kopyanin
 durdugunu oradan anlarsin.

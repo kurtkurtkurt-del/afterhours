@@ -1,4 +1,4 @@
--- URETILMIS DOSYA — elle duzenleme. Kaynak: backend/tools/seed-uret.mjs
+-- URETILMIS DOSYA — elle duzenleme. Kaynak: backend/tools/build-seed.mjs
 -- Cities, types and venues. This one first, then 04.
 
 insert into public.cities (slug, name, status, sort_order, country, country_slug) values

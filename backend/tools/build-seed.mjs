@@ -1,7 +1,7 @@
 /* afterhours — on yuzdeki veriyi SQL'e cevirir.
    Kaynak: events-data.js (36 etkinlik), app.js icindeki VENUES,
    explore/comment-pools.js (sample yorumlar).
-   Cikti: sql/03_seed_katalog.sql, 04_seed_events.sql, 05_seed_comments.sql
+   Cikti: sql/03_seed_catalog.sql, 04_seed_events.sql, 05_seed_comments.sql
 
    Elle yazilmis veri tek yerde kalsin diye uretiliyor: ileride
    events-data.js degisirse bu script tekrar kosulur.  */
@@ -174,7 +174,7 @@ on conflict (city_id, slug) do nothing;
 `;
 }
 
-await writeFile(new URL("../sql/03_seed_katalog.sql", import.meta.url), sql);
+await writeFile(new URL("../sql/03_seed_catalog.sql", import.meta.url), sql);
 
 /* ---- 04: 36 etkinlik ------------------------------------------------- */
 

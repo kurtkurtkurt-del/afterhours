@@ -23,7 +23,7 @@ process.on("unhandledRejection", (e) => {
 const db = new PGlite();
 console.log("\n— sema + seed —");
 for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02_rls.sql",
-                 "../sql/03_seed_katalog.sql", "../sql/04_seed_events.sql",
+                 "../sql/03_seed_catalog.sql", "../sql/04_seed_events.sql",
                  "../sql/05_seed_comments.sql"]) {
   await db.exec(await read(d));
   console.log("  · " + d.split("/").pop());
@@ -107,7 +107,7 @@ console.log("— SQL editorlerinde ayristirilabilirlik —");
      "...condensed into one night..." metni KOD olarak okunuyor ve
      "relation \"one\" does not exist" hatasi cikiyor.
      Yorumlarda ASCII kesme isareti olmamali; tipografik ’ kullaniyoruz. */
-  for (const d of ["../sql/setup-1-structure.sql", "../sql/setup-2-yorumlar.sql"]) {
+  for (const d of ["../sql/setup-1-structure.sql", "../sql/setup-2-comments.sql"]) {
     const text = await read(d);
 
     const yorumlu = text.split("\n").filter((r) => {

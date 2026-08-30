@@ -10,13 +10,13 @@ const read = (d) => readFile(new URL("../sql/" + d, import.meta.url), "utf8");
 const structure = [
   ["01_schema.sql", "TABLOLAR"],
   ["02_rls.sql", "KURALLAR — guvenlik burada"],
-  ["03_seed_katalog.sql", "SEHIR, TUR, MEKAN"],
+  ["03_seed_catalog.sql", "SEHIR, TUR, MEKAN"],
   ["04_seed_events.sql", "36 ETKINLIK"],
   ["06_views.sql", "DESTE, BIRIKTIRILENLER, SAYACLAR"],
   ["07_friends.sql", "ARKADASLIK"],
   ["08_storage.sql", "POSTER DEPOSU"],
   ["09_jobs.sql", "ARKA PLAN ISLERI"],
-  ["11_dunya.sql", "DUNYA — 54 SEHIR, 106 GECE"],
+  ["11_world.sql", "DUNYA — 54 SEHIR, 106 GECE"],
   ["12_profiles.sql", "KISI PROFILLERI"],
   ["13_feedback.sql", "GERI BILDIRIM"],
 ];
@@ -33,7 +33,7 @@ let one = `-- ============================================================
 --  TAMAMINI yapistir → Run.
 --
 --  Bittiginde "Success. No rows returned" gormelisin.
---  Sonra setup-2-yorumlar.sql dosyasini ayni sekilde calistir.
+--  Sonra setup-2-comments.sql dosyasini ayni sekilde calistir.
 --
 --  URETILMIS DOSYA — source: backend/tools/setup-build.mjs
 -- ============================================================
@@ -61,7 +61,7 @@ const iki = `-- ============================================================
 ` + await read("05_seed_comments.sql");
 
 await writeFile(new URL("../sql/setup-1-structure.sql", import.meta.url), one);
-await writeFile(new URL("../sql/setup-2-yorumlar.sql", import.meta.url), iki);
+await writeFile(new URL("../sql/setup-2-comments.sql", import.meta.url), iki);
 
 console.log("setup-1-structure.sql      " + Buffer.byteLength(one).toLocaleString() + " bayt");
-console.log("setup-2-yorumlar.sql  " + Buffer.byteLength(iki).toLocaleString() + " bayt");
+console.log("setup-2-comments.sql  " + Buffer.byteLength(iki).toLocaleString() + " bayt");
