@@ -145,7 +145,7 @@ function YORUM_TOHUM(slug) {
   return h >>> 0;
 }
 
-/* mulberry32 — sehir.js'deki ile ayni sebep: basit LCG 2^53'u asip bozuluyor */
+/* mulberry32 — globe.js'deki ile ayni sebep: basit LCG 2^53'u asip bozuluyor */
 function YORUM_ZAR(tohum) {
   return function () {
     tohum |= 0; tohum = (tohum + 0x6D2B79F5) | 0;

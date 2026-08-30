@@ -3,9 +3,9 @@
    events-data.js'ten alir, window.POSTERS'a koyar, sonra sayfanin kendi
    betiklerini yukler. Boylece app.js / explore.js hic degismedi.
 
-   <script src="veri.js" data-yedek="events-data.js" data-sonra="app.js"></script>
+   <script src="data.js" data-yedek="events-data.js" data-sonra="app.js"></script>
 
-   Backend kapaliyken (ayar.js bos) site bugunku haliyle birebir ayni
+   Backend kapaliyken (config.js bos) site bugunku haliyle birebir ayni
    calisir. Bu bilincli: baglanti kurulana kadar hicbir sey bozulmasin. */
 
 (function () {
@@ -68,7 +68,7 @@
          cikplak POSTERS ise calisir. */
       try {
         numaralandir(POSTERS);
-        /* Diger modullerin (atislar.js) gorebilmesi icin window'a da
+        /* Diger modullerin (swipes.js) gorebilmesi icin window'a da
            bagla; `const` tek basina window'a yazmiyor. */
         window.POSTERS = POSTERS;
       } catch (_) {}
@@ -179,7 +179,7 @@
   }
 
   /* Oturum once cozulsun: deste "daha once attiklarimi" eleyecekse
-     istek jetonla gitmeli. oturum.js yoksa beklenecek bir sey de yok. */
+     istek jetonla gitmeli. session.js yoksa beklenecek bir sey de yok. */
   const oturum = Promise.resolve(AH.oturumHazir || null).catch(() => null);
 
   const hazir = !acik
@@ -192,7 +192,7 @@
           : null))
         .then(() => AH.etkinlikler())
         .then((liste) => {
-          if (!liste.length) throw new Error("veritabani bos");
+          if (!liste.length) throw new Error("veritabani empty");
           window.POSTERS = numaralandir(liste);
           AH.durum = "canli";
         })

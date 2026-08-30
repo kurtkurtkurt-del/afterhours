@@ -1,5 +1,5 @@
 /* afterhours — beforehours yorumlari.
-   Canliyken veritabanindan, degilse yorumlar.js'teki ornek havuzdan.
+   Canliyken veritabanindan, degilse comment-pools.js'teki ornek havuzdan.
    Iki durumda da ayni bicim doner: { yeni: [...], eski: [...] }
    ve her konu { kim, zaman, metin, cevaplar: [...] }.  */
 
@@ -51,7 +51,7 @@
 
   AH.yorumlariGetir = function (etkinlik) {
     if (!canli() || !etkinlik || !etkinlik.id) {
-      /* Yerel mod: yorumlar.js'teki havuz. Ayni secim, ayni sira. */
+      /* Yerel mod: comment-pools.js'teki havuz. Ayni secim, ayni sira. */
       try { return Promise.resolve(YORUMLARI_GETIR(etkinlik)); }
       catch (_) { return Promise.resolve({ yeni: [], eski: [] }); }
     }
@@ -69,7 +69,7 @@
   /* Yazmak giris ister. author_id'yi veritabani oturumdan dolduruyor. */
   AH.yorumYaz = function (etkinlik, metin, ustId) {
     if (!canli()) return Promise.reject(new Error("backend kapali"));
-    if (!(AH.girisliMi && AH.girisliMi())) return Promise.reject(new Error("giris gerekli"));
+    if (!(AH.girisliMi && AH.girisliMi())) return Promise.reject(new Error("page gerekli"));
     const govde = { event_id: etkinlik.id, body: String(metin).trim() };
     if (ustId) govde.parent_id = ustId;
     return AH.istek("/comments", {

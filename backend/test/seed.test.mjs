@@ -73,7 +73,7 @@ console.log("\n— ekranda gorunen metinler birebir mi —");
 console.log("\n— yorumlarin sitedeki secimle ayni oldugu —");
 {
   const { YORUMLARI_GETIR } = new Function(
-    await okuKok("explore/yorumlar.js") + ";return { YORUMLARI_GETIR };")();
+    await okuKok("explore/comment-pools.js") + ";return { YORUMLARI_GETIR };")();
 
   const ornek = POSTERS[0];
   const { eski, yeni } = YORUMLARI_GETIR(ornek);

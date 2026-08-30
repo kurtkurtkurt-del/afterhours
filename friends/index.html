@@ -22,11 +22,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=111" />
+  <link rel="stylesheet" href="../style.css?v=115" />
 </head>
-<body class="arkadaslar">
+<body class="friends">
 
-  <a class="atla" href="#icerik">skip to the content</a>
+  <a class="skip" href="#content">skip to the content</a>
 
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
@@ -40,77 +40,77 @@
     </nav>
   </header>
 
-  <main id="icerik" tabindex="-1" class="giris ark">
-   <div class="ark-sol">
-    <h1 class="giris-baslik">your people,<br />your nights.</h1>
+  <main id="content" tabindex="-1" class="page fr">
+   <div class="fr-left">
+    <h1 class="page-title">your people,<br />your nights.</h1>
 
     <!-- Girissizken: davet -->
-    <div class="ark-disarida" id="ark-disarida" hidden>
-      <p class="giris-not">sign in to keep nights and see where your friends are going.</p>
-      <a class="giris-dugme" href="../login/index.html">sign in</a>
+    <div class="fr-out" id="fr-out" hidden>
+      <p class="page-note">sign in to keep nights and see where your friends are going.</p>
+      <a class="page-button" href="../login/index.html">sign in</a>
     </div>
 
-    <div class="ark-icerde" id="ark-icerde" hidden>
+    <div class="fr-in" id="fr-in" hidden>
 
-      <section class="hesap">
-        <p class="hesap-baslik">your handle</p>
-        <p class="hesap-aciklama">friends find you by this. lowercase, 3–20 characters.</p>
-        <form class="hesap-satir" id="handle-form">
-          <input class="hesap-alan" id="handle-alan" type="text" placeholder="yourname"
+      <section class="account">
+        <p class="account-title">your handle</p>
+        <p class="account-about">friends find you by this. lowercase, 3–20 characters.</p>
+        <form class="account-row" id="handle-form">
+          <input class="account-field" id="handle-field" type="text" placeholder="yourname"
                  autocomplete="off" spellcheck="false" />
-          <button class="hesap-dugme" type="submit">save</button>
+          <button class="account-button" type="submit">save</button>
         </form>
-        <p class="hesap-durum" id="handle-durum"></p>
+        <p class="account-status" id="handle-status"></p>
       </section>
 
-      <section class="hesap">
-        <p class="hesap-baslik">your friends</p>
-        <p class="hesap-aciklama">what they keep shows up in your deck.</p>
-        <form class="hesap-satir" id="arkadas-form">
-          <input class="hesap-alan" id="arkadas-alan" type="text" placeholder="their handle"
+      <section class="account">
+        <p class="account-title">your friends</p>
+        <p class="account-about">what they keep shows up in your deck.</p>
+        <form class="account-row" id="friend-form">
+          <input class="account-field" id="friend-field" type="text" placeholder="their handle"
                  autocomplete="off" spellcheck="false" />
-          <button class="hesap-dugme" type="submit">add</button>
+          <button class="account-button" type="submit">add</button>
         </form>
-        <p class="hesap-durum" id="arkadas-durum"></p>
-        <ul class="arkadas-liste" id="arkadas-liste"></ul>
+        <p class="account-status" id="friend-status"></p>
+        <ul class="friend-list" id="friend-list"></ul>
       </section>
 
-      <section class="hesap">
-        <p class="hesap-baslik">what you kept</p>
-        <p class="hesap-aciklama">every card you swiped right.</p>
-        <ul class="tutulan-liste" id="tutulan-liste"></ul>
+      <section class="account">
+        <p class="account-title">what you kept</p>
+        <p class="account-about">every card you swiped right.</p>
+        <ul class="kept-list" id="kept-list"></ul>
       </section>
 
     </div>
    </div>
 
    <!-- Girise bagli degil: nachtradar'dan tanidik yuzler -->
-   <section class="hesap nr-bolum">
-     <p class="hesap-baslik">these people are already on the app</p>
-     <p class="hesap-aciklama" id="nr-aciklama"></p>
+   <section class="account nr-section">
+     <p class="account-title">these people are already on the app</p>
+     <p class="account-about" id="nr-about"></p>
      <div class="nr" id="nr"></div>
    </section>
   </main>
 
 
-  <footer class="dipnot">
-    <p class="dipnot-ad">&copy; 2026 afterhours</p>
-    <nav class="dipnot-linkler">
+  <footer class="foot">
+    <p class="foot-name">&copy; 2026 afterhours</p>
+    <nav class="foot-links">
       <a href="../impressum/index.html">impressum</a>
       <a href="../datenschutz/index.html">datenschutz</a>
       <a href="../agb/index.html">agb</a>
     </nav>
   </footer>
 
-  <script src="../ayar.js?v=111"></script>
-  <script src="../oturum.js?v=111"></script>
-  <script src="../veri.js?v=111"
-          data-yedek="../events-data.js?v=111"></script>
-  <script src="../atislar.js?v=111"></script>
-  <script src="../arkadaslar.js?v=111"></script>
-  <script src="../menu.js?v=111"></script>
-  <script src="nachtradar.js?v=111"></script>
-  <script src="friends.js?v=111"></script>
+  <script src="../config.js?v=115"></script>
+  <script src="../session.js?v=115"></script>
+  <script src="../data.js?v=115"
+          data-yedek="../events-data.js?v=115"></script>
+  <script src="../swipes.js?v=115"></script>
+  <script src="../friendships.js?v=115"></script>
+  <script src="../menu.js?v=115"></script>
+  <script src="nachtradar.js?v=115"></script>
+  <script src="friends.js?v=115"></script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
    metinleri, mekanlar ve yorumlar. Supabase'in kendi gunluk yedegi
    ayri bir sey; bu, projeden bagimsiz duran kopyan.
 
-     node tools/yedek.mjs                       (ayar.js'teki adrese)
+     node tools/yedek.mjs                       (config.js'teki adrese)
      node tools/yedek.mjs http://localhost:4350 (baska bir adrese)
 
    Cikti: backend/yedek/afterhours-YYYY-AA-GG.json  */
@@ -11,7 +11,7 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 
 async function ayariOku() {
-  const metin = await readFile(new URL("../../ayar.js", import.meta.url), "utf8");
+  const metin = await readFile(new URL("../../config.js", import.meta.url), "utf8");
   const kutu = {};
   new Function("window", metin)(kutu);
   return kutu.AH_AYAR || {};
@@ -22,7 +22,7 @@ const adres = (process.argv[2] || ayar.url || "").replace(/\/$/, "");
 const anahtar = process.argv[3] || ayar.anonKey || "yerel";
 
 if (!adres) {
-  console.error("Adres yok. ayar.js'i doldur ya da adresi arguman olarak ver.");
+  console.error("Adres yok. config.js'i doldur ya da adresi arguman olarak ver.");
   process.exit(1);
 }
 

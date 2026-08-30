@@ -1,8 +1,8 @@
 /* afterhours — deneme 02: yatay kayan seritler */
 
-const seritler = document.getElementById("seritler");
+const seritler = document.getElementById("strips");
 const bilgi = document.getElementById("info");
-const yan = document.getElementById("yan");
+const yan = document.getElementById("side");
 const alanIndex = bilgi.querySelector(".info-index");
 const alanTur = bilgi.querySelector(".info-type");
 const alanBaslik = bilgi.querySelector(".info-title");
@@ -26,29 +26,29 @@ function posterYap(i) {
   kutu.rel = "noopener";
 
   const gorsel = document.createElement("object");
-  gorsel.className = "poster-gorsel";
+  gorsel.className = "poster-image";
   gorsel.type = "image/svg+xml";
   gorsel.data = "posters/" + no + ".svg";
   kutu.appendChild(gorsel);
 
   kutu.addEventListener("mouseenter", () => {
     clearTimeout(gizleZamani);
-    kutu.closest(".serit").classList.add("duruyor");   // serit durur
-    kutu.classList.add("buyuk");                        // poster hafif buyur
+    kutu.closest(".strip").classList.add("stopped");   // serit durur
+    kutu.classList.add("big");                        // poster hafif buyur
     alanIndex.textContent = no + " / " + POSTERS.length;
     alanTur.textContent = p.tur;
     alanBaslik.textContent = p.baslik;
     alanMeta.textContent = p.meta;
     alanMetin.textContent = p.metin;
-    yan.classList.add("poster-uzerinde");
+    yan.classList.add("poster-hover");
   });
 
   kutu.addEventListener("mouseleave", () => {
-    const serit = kutu.closest(".serit");
-    kutu.classList.remove("buyuk");
+    const serit = kutu.closest(".strip");
+    kutu.classList.remove("big");
     gizleZamani = setTimeout(() => {
-      serit.classList.remove("duruyor");
-      yan.classList.remove("poster-uzerinde");
+      serit.classList.remove("stopped");
+      yan.classList.remove("poster-hover");
     }, 80);
   });
 
@@ -57,10 +57,10 @@ function posterYap(i) {
 
 for (let s = 0; s < SERIT_SAYISI; s++) {
   const serit = document.createElement("div");
-  serit.className = "serit";
+  serit.className = "strip";
 
   const ray = document.createElement("div");
-  ray.className = "ray";
+  ray.className = "rail";
 
   // Dikissiz dongu icin ayni dizi iki kez basilir
   for (let tekrar = 0; tekrar < 2; tekrar++) {

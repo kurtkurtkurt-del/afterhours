@@ -22,11 +22,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=111" />
+  <link rel="stylesheet" href="../style.css?v=115" />
 </head>
 <body class="explore">
 
-  <a class="atla" href="#icerik">skip to the content</a>
+  <a class="skip" href="#content">skip to the content</a>
 
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
@@ -40,62 +40,62 @@
     </nav>
   </header>
 
-  <main id="icerik" tabindex="-1" class="ex-alan">
+  <main id="content" tabindex="-1" class="ex-field">
 
-    <nav class="ex-modlar">
-      <button class="ex-mod secili" type="button" aria-current="true">global deck</button>
-      <button class="ex-mod" type="button">friends liked swipes</button>
-      <button class="ex-mod" type="button">i feel lucky</button>
+    <nav class="ex-modes">
+      <button class="ex-mode selected" type="button" aria-current="true">global deck</button>
+      <button class="ex-mode" type="button">friends liked swipes</button>
+      <button class="ex-mode" type="button">i feel lucky</button>
 
       <!-- Mod degil, islem: atilan her sey silinir -->
-      <button class="ex-sifirla" id="ex-sifirla" type="button">reset deck</button>
+      <button class="ex-reset" id="ex-reset" type="button">reset deck</button>
     </nav>
 
-    <div class="ex-sol">
-      <div class="ex-filtre">
+    <div class="ex-left">
+      <div class="ex-filter">
         <div class="fl" data-alan="ulke">
-          <button class="fl-dugme" type="button" aria-expanded="false" aria-label="country">
-            <span class="fl-deger">deutschland</span>
+          <button class="fl-button" type="button" aria-expanded="false" aria-label="country">
+            <span class="fl-value">deutschland</span>
           </button>
-          <div class="fl-liste" hidden></div>
+          <div class="fl-list" hidden></div>
         </div>
 
         <div class="fl" data-alan="sehir">
-          <button class="fl-dugme" type="button" aria-expanded="false" aria-label="city">
-            <span class="fl-deger">münchen</span>
+          <button class="fl-button" type="button" aria-expanded="false" aria-label="city">
+            <span class="fl-value">münchen</span>
           </button>
-          <div class="fl-liste" hidden></div>
+          <div class="fl-list" hidden></div>
         </div>
 
         <div class="fl" data-alan="tur">
-          <button class="fl-dugme" type="button" aria-expanded="false" aria-label="category">
-            <span class="fl-deger">all events</span>
+          <button class="fl-button" type="button" aria-expanded="false" aria-label="category">
+            <span class="fl-value">all events</span>
           </button>
-          <div class="fl-liste" hidden></div>
+          <div class="fl-list" hidden></div>
         </div>
 
         <div class="fl" data-alan="tarih">
-          <button class="fl-dugme" type="button" aria-expanded="false" aria-label="date">
-            <span class="fl-deger">tonight</span>
+          <button class="fl-button" type="button" aria-expanded="false" aria-label="date">
+            <span class="fl-value">tonight</span>
           </button>
-          <div class="fl-liste" hidden></div>
+          <div class="fl-list" hidden></div>
         </div>
       </div>
 
-      <p class="ex-servis">your deck is served</p>
+      <p class="ex-served">your deck is served</p>
       <!-- Kartin ustunde: sol gecmek, sag begenip biriktirmek -->
-      <div class="ex-yonler">
-        <span class="ex-yon">
-          <svg class="ex-yon-cizim" viewBox="0 0 20 20" aria-hidden="true">
+      <div class="ex-ways">
+        <span class="ex-way">
+          <svg class="ex-way-drawing" viewBox="0 0 20 20" aria-hidden="true">
             <path d="M12.5 10 H4.5 M7.5 6.5 L4 10 L7.5 13.5" />
             <path d="M14 6.5 L18 13.5 M18 6.5 L14 13.5" />
           </svg>
-          <span class="ex-yon-yazi">not for me</span>
+          <span class="ex-way-text">not for me</span>
         </span>
 
-        <span class="ex-yon sag">
-          <span class="ex-yon-yazi">keep it</span>
-          <svg class="ex-yon-cizim" viewBox="0 0 28 20" aria-hidden="true">
+        <span class="ex-way right">
+          <span class="ex-way-text">keep it</span>
+          <svg class="ex-way-drawing" viewBox="0 0 28 20" aria-hidden="true">
             <path d="M0.5 10 H8.5 M5.5 6.5 L9 10 L5.5 13.5" />
             <rect x="13.6" y="3.2" width="9.8" height="13.6" rx="1.9"
                   transform="rotate(-11 18.5 10)" />
@@ -104,77 +104,77 @@
         </span>
       </div>
 
-      <div class="ex-deste" id="ex-deste"><!-- kartlar explore.js ile --></div>
-      <p class="ex-bitti" id="ex-bitti">that's everyone for tonight.</p>
+      <div class="ex-deck" id="ex-deck"><!-- kartlar explore.js ile --></div>
+      <p class="ex-done" id="ex-done">that's everyone for tonight.</p>
 
       <!-- En altta: solda klavye, sagda fare ile kontrol -->
-      <div class="ex-ipuclari">
-        <span class="ex-ipucu">
-          <svg class="ex-ipucu-cizim" viewBox="0 0 46 20" aria-hidden="true">
+      <div class="ex-hints">
+        <span class="ex-hint">
+          <svg class="ex-hint-drawing" viewBox="0 0 46 20" aria-hidden="true">
             <rect x="0.8" y="0.8" width="18.4" height="18.4" rx="3.4" />
             <path d="M13 10 H7 M10 7 L7 10 L10 13" />
             <rect x="26.8" y="0.8" width="18.4" height="18.4" rx="3.4" />
             <path d="M33 10 H39 M36 7 L39 10 L36 13" />
           </svg>
-          <span class="ex-ipucu-yazi">arrow keys</span>
+          <span class="ex-hint-text">arrow keys</span>
         </span>
 
-        <span class="ex-ipucu">
-          <svg class="ex-ipucu-cizim" viewBox="0 0 46 20" aria-hidden="true">
+        <span class="ex-hint">
+          <svg class="ex-hint-drawing" viewBox="0 0 46 20" aria-hidden="true">
             <path d="M6 10 H1 M3.5 7.5 L1 10 L3.5 12.5" />
             <rect x="16.8" y="0.8" width="12.4" height="18.4" rx="6.2" />
             <path d="M23 4.6 V8" />
             <path d="M40 10 H45 M42.5 7.5 L45 10 L42.5 12.5" />
           </svg>
-          <span class="ex-ipucu-yazi">or drag it</span>
+          <span class="ex-hint-text">or drag it</span>
         </span>
       </div>
     </div>
 
-    <div class="ex-kutu">
-      <button class="ex-kutu-dugme" id="ex-kutu-dugme" type="button"
+    <div class="ex-box">
+      <button class="ex-box-button" id="ex-box-button" type="button"
               aria-expanded="false" aria-label="kept tonight">
-        <svg class="ex-kutu-simge" viewBox="0 0 28 28" aria-hidden="true">
+        <svg class="ex-box-icon" viewBox="0 0 28 28" aria-hidden="true">
           <rect x="7.5" y="5" width="13" height="18.5" rx="2.4"
                 transform="rotate(-11 14 14.25)" />
           <rect x="7.5" y="5" width="13" height="18.5" rx="2.4" />
         </svg>
-        <span class="ex-rozet" id="ex-rozet" hidden>0</span>
+        <span class="ex-badge" id="ex-badge" hidden>0</span>
       </button>
 
-      <div class="ex-kutu-liste" id="ex-kutu-liste" hidden>
-        <p class="ex-kutu-baslik">kept tonight</p>
-        <div id="ex-kutu-icerik"><!-- explore.js --></div>
+      <div class="ex-box-list" id="ex-box-list" hidden>
+        <p class="ex-box-title">kept tonight</p>
+        <div id="ex-box-body"><!-- explore.js --></div>
       </div>
     </div>
 
-    <aside class="ex-yorum">
-      <button class="ex-yorum-baslik" id="ex-yorum-dugme" type="button" aria-expanded="true">beforehours</button>
-      <div class="ex-yorum-liste" id="ex-yorum-liste"><!-- yorumlar explore.js ile --></div>
+    <aside class="ex-comment">
+      <button class="ex-comment-title" id="ex-comment-button" type="button" aria-expanded="true">beforehours</button>
+      <div class="ex-comment-list" id="ex-comment-list"><!-- yorumlar explore.js ile --></div>
     </aside>
 
   </main>
 
 
-  <footer class="dipnot ince">
-    <p class="dipnot-ad">&copy; 2026 afterhours</p>
-    <nav class="dipnot-linkler">
+  <footer class="foot thin">
+    <p class="foot-name">&copy; 2026 afterhours</p>
+    <nav class="foot-links">
       <a href="../impressum/index.html">impressum</a>
       <a href="../datenschutz/index.html">datenschutz</a>
       <a href="../agb/index.html">agb</a>
     </nav>
   </footer>
 
-  <script src="../ayar.js?v=111"></script>
-  <script src="../oturum.js?v=111"></script>
-  <script src="../menu.js?v=111"></script>
-  <script src="../atislar.js?v=111"></script>
-  <script src="../beforehours.js?v=111"></script>
-  <script src="../arkadaslar.js?v=111"></script>
-  <script src="yorumlar.js?v=111"></script>
-  <script src="../veri.js?v=111"
-          data-yedek="../events-data.js?v=111"
-          data-sonra="explore.js?v=111, filtre.js?v=111"></script>
+  <script src="../config.js?v=115"></script>
+  <script src="../session.js?v=115"></script>
+  <script src="../menu.js?v=115"></script>
+  <script src="../swipes.js?v=115"></script>
+  <script src="../beforehours.js?v=115"></script>
+  <script src="../friendships.js?v=115"></script>
+  <script src="comment-pools.js?v=115"></script>
+  <script src="../data.js?v=115"
+          data-yedek="../events-data.js?v=115"
+          data-sonra="explore.js?v=115, filters.js?v=115"></script>
 
 </body>
 </html>

@@ -22,24 +22,24 @@
 
   function ekle() {
     const baslik = document.querySelector(".header");
-    if (!baslik || document.querySelector(".header-yonetim")) return;
+    if (!baslik || document.querySelector(".header-admin")) return;
 
     const a = document.createElement("a");
-    a.className = "header-yonetim";
+    a.className = "header-admin";
     a.href = kokYolu() + "admin/index.html";
     a.textContent = "admin panel";
 
     /* Menunun ortasi: logo ile baglantilarin arasina giriyor */
     const nav = baslik.querySelector(".header-links");
     baslik.insertBefore(a, nav);
-    baslik.classList.add("yonetici");
+    baslik.classList.add("isadmin");
   }
 
   function kaldir() {
-    const a = document.querySelector(".header-yonetim");
+    const a = document.querySelector(".header-admin");
     if (a) a.remove();
     const baslik = document.querySelector(".header");
-    if (baslik) baslik.classList.remove("yonetici");
+    if (baslik) baslik.classList.remove("isadmin");
   }
 
   /* --- sagdaki "login" baglantisi --- */
@@ -92,7 +92,7 @@
       })
       .catch(() => {
         /* Istek 401 ile dondugunde oturum bu arada dusurulmus olabilir
-           (veri.js gecersiz jetonu birakiyor). O zaman selamlamak yanlis:
+           (data.js gecersiz jetonu birakiyor). O zaman selamlamak yanlis:
            girissiz birine "welcome you" yaziyordu. */
         if (AH.girisliMi && AH.girisliMi()) selamla(adBul(null));
         else selamiKaldir();
@@ -100,7 +100,7 @@
       });
   }
 
-  /* AH.istek'i veri.js tanimliyor ve bazi sayfalarda o BIZDEN SONRA
+  /* AH.istek'i data.js tanimliyor ve bazi sayfalarda o BIZDEN SONRA
      yukleniyor. Betik siralamasina guvenmek yerine butun betikler
      calistiktan sonra bakiyoruz. */
   function hazirOlunca(f) {

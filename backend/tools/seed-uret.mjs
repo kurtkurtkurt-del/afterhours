@@ -1,6 +1,6 @@
 /* afterhours — on yuzdeki veriyi SQL'e cevirir.
    Kaynak: events-data.js (36 etkinlik), app.js icindeki MEKANLAR,
-   explore/yorumlar.js (ornek yorumlar).
+   explore/comment-pools.js (ornek yorumlar).
    Cikti: sql/03_seed_katalog.sql, 04_seed_events.sql, 05_seed_comments.sql
 
    Elle yazilmis veri tek yerde kalsin diye uretiliyor: ileride
@@ -16,12 +16,12 @@ const oku = (yol) => readFile(new URL(yol, kok), "utf8");
 const eventsJs = await oku("events-data.js");
 const { POSTERS } = new Function(eventsJs + "\n;return { POSTERS };")();
 
-/* MEKANLAR app.js'in icindeydi, mekanlar.js'e tasindi (maps sayfasi da
+/* MEKANLAR app.js'in icindeydi, venues.js'e tasindi (maps sayfasi da
    ayni koordinatlari kullaniyor). */
-const mekanJs = await oku("mekanlar.js");
+const mekanJs = await oku("venues.js");
 const { MEKANLAR } = new Function("window", mekanJs + "\n;return { MEKANLAR };")({});
 
-const yorumJs = await oku("explore/yorumlar.js");
+const yorumJs = await oku("explore/comment-pools.js");
 const { YORUM_HAVUZU, YORUMLARI_GETIR } =
   new Function(yorumJs + "\n;return { YORUM_HAVUZU, YORUMLARI_GETIR };")();
 
@@ -209,7 +209,7 @@ await writeFile(new URL("../sql/04_seed_events.sql", import.meta.url), etkinlikS
 
 /* ---- 05: ornek yorumlar --------------------------------------------- */
 
-let yorumSql = `-- URETILMIS DOSYA — kaynak: explore/yorumlar.js
+let yorumSql = `-- URETILMIS DOSYA — kaynak: explore/comment-pools.js
 -- Ornek yorumlar: gercek kullanicisi yok, author_name ile duruyorlar.
 -- Sitenin bugun gosterdigi secimin aynisi (ayni tohum, ayni kartlar).
 

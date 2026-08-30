@@ -1,13 +1,13 @@
 /* afterhours — Munih mekanlari.
    x/y, sehir semasinin 1440x900 tasarim uzayindaki konum; saat/sure
    mekanin ne zaman acildigi ve kac saat acik kaldigi (footerdaki
-   "kac oda acik" sayaci bunu kullaniyor).
+   "kac oda open" sayaci bunu kullaniyor).
 
    Bu dizi once app.js'in icindeydi; maps sayfasi da ayni koordinatlari
    kullaniyor, o yuzden tek yere tasindi. */
 
 /* ---------- Mekan saatleri ----------
-   Footer'daki "kac oda acik" sayaci bunu kullanir. */
+   Footer'daki "kac oda open" sayaci bunu kullanir. */
 
 const MEKANLAR = [
   { ad: "OLYMPIAHALLE",      x: 512, y: 236, saat: 18.5, sure: 4 },

@@ -14,7 +14,7 @@
   const AH = (window.AH = window.AH || {});
   const el = (id) => document.getElementById(id);
 
-  const adimlar = ["kt-1", "kt-2", "kt-3", "kt-posta", "kt-zaten"];
+  const adimlar = ["reg-1", "reg-2", "reg-3", "reg-posta", "reg-zaten"];
   const goster = (id) => adimlar.forEach((a) => { el(a).hidden = a !== id; });
 
   const cagir = (fn, govde) =>
@@ -23,7 +23,7 @@
 
   function soyle(kutu, yazi, cesit) {
     kutu.textContent = yazi || "";
-    kutu.className = (kutu.id === "kt-not" ? "giris-not" : "hesap-durum") +
+    kutu.className = (kutu.id === "reg-note" ? "page-note" : "account-status") +
       (cesit ? " " + cesit : "");
   }
 
@@ -31,42 +31,42 @@
 
   /* ---------------- 1 · hesap ---------------- */
 
-  el("kt-form").addEventListener("submit", function (e) {
+  el("reg-form").addEventListener("submit", function (e) {
     e.preventDefault();
-    const eposta = el("kt-eposta").value.trim();
-    const sifre = el("kt-sifre").value;
-    const not = el("kt-not");
+    const eposta = el("reg-eposta").value.trim();
+    const sifre = el("reg-sifre").value;
+    const not = el("reg-note");
 
     if (!eposta || eposta.indexOf("@") < 1) {
       soyle(not, "that doesn't look like an email.", "hata");
-      el("kt-eposta").focus();
+      el("reg-eposta").focus();
       return;
     }
     if (sifre.length < 8) {
-      soyle(not, "eight characters or more, please.", "hata");
-      el("kt-sifre").focus();
+      soyle(not, "eight characters or more, please.", "error");
+      el("reg-sifre").focus();
       return;
     }
 
-    el("kt-ac").disabled = true;
+    el("reg-ac").disabled = true;
     soyle(not, "opening it…");
 
     AH.kayitOl(eposta, sifre)
       .then((oturum) => {
-        el("kt-ac").disabled = false;
+        el("reg-ac").disabled = false;
         if (!oturum) {
           /* Dogrulama acik: jeton gelmedi, once postasina bakacak */
-          el("kt-posta-not").textContent =
+          el("reg-posta-note").textContent =
             "We sent a link to " + eposta + ". Open it and you land back here to " +
             "pick a handle — the account is not finished until you do.";
-          goster("kt-posta");
+          goster("reg-posta");
           return;
         }
         soyle(not, "");
         ikinciAdim();
       })
       .catch((h) => {
-        el("kt-ac").disabled = false;
+        el("reg-ac").disabled = false;
         const m = String(h.message || "");
         soyle(not, /already registered|exists/i.test(m)
           ? "there is already an account with that email. sign in instead."
@@ -82,23 +82,23 @@
   };
 
   let bekleyen = null;
-  el("kt-handle").addEventListener("input", function () {
+  el("reg-handle").addEventListener("input", function () {
     clearTimeout(bekleyen);
     const h = this.value.trim();
-    if (!h) { soyle(el("kt-handle-durum"), ""); return; }
+    if (!h) { soyle(el("reg-handle-status"), ""); return; }
     bekleyen = setTimeout(() => {
       cagir("handle_status", { p_handle: h })
         .then((c) => {
           const s = skaler(c);
-          soyle(el("kt-handle-durum"), SOZ[s] || "",
-            s === "dolu" || s === "bicim" ? "hata" : "tamam");
+          soyle(el("reg-handle-status"), SOZ[s] || "",
+            s === "taken" || s === "bicim" ? "error" : "ok");
         })
-        .catch(() => soyle(el("kt-handle-durum"), ""));
+        .catch(() => soyle(el("reg-handle-status"), ""));
     }, 300);
   });
 
   function sehirleriKur() {
-    const kutu = el("kt-sehir");
+    const kutu = el("reg-city");
     return cagir("city_counts")
       .then((liste) => {
         kutu.textContent = "";
@@ -111,12 +111,12 @@
 
         gruplar.forEach((g) => {
           const ad = document.createElement("p");
-          ad.className = "ay-ulke";
+          ad.className = "set-country";
           ad.textContent = (g.ulke || "").toLowerCase();
           kutu.appendChild(ad);
 
           const satir = document.createElement("div");
-          satir.className = "ay-secim";
+          satir.className = "set-choice";
           g.sehirler.forEach((c) => {
             const d = document.createElement("button");
             d.type = "button";
@@ -125,7 +125,7 @@
             d.onclick = () => {
               sehir = c.slug;
               [...kutu.querySelectorAll("button")].forEach((x) =>
-                x.classList.toggle("secili", x === d));
+                x.classList.toggle("selected", x === d));
             };
             satir.appendChild(d);
           });
@@ -143,39 +143,39 @@
     giris: "sign in again — the session went away.",
   };
 
-  el("kt-bitir").onclick = function () {
-    const h = el("kt-handle").value.trim();
+  el("reg-bitir").onclick = function () {
+    const h = el("reg-handle").value.trim();
     if (!h) {
-      soyle(el("kt-durum"), "pick a handle first.", "hata");
-      el("kt-handle").focus();
+      soyle(el("reg-status"), "pick a handle first.", "error");
+      el("reg-handle").focus();
       return;
     }
-    el("kt-bitir").disabled = true;
-    soyle(el("kt-durum"), "finishing…");
+    el("reg-bitir").disabled = true;
+    soyle(el("reg-status"), "finishing…");
 
     cagir("profile_setup", { p_handle: h, p_city_slug: sehir })
       .then((c) => {
         const s = skaler(c);
-        el("kt-bitir").disabled = false;
+        el("reg-bitir").disabled = false;
         if (s !== "ok") {
-          soyle(el("kt-durum"), YANIT[s] || String(s), "hata");
+          soyle(el("reg-status"), YANIT[s] || String(s), "error");
           return;
         }
-        el("kt-hosgeldin").textContent =
+        el("reg-hosgeldin").textContent =
           "You are @" + h.toLowerCase() + ". Your deck is waiting, and what you keep " +
           "from here on is yours to look back at.";
-        goster("kt-3");
+        goster("reg-3");
       })
       .catch((h2) => {
-        el("kt-bitir").disabled = false;
-        soyle(el("kt-durum"), AH.hataMetni(h2, "couldn't finish the account."), "hata");
+        el("reg-bitir").disabled = false;
+        soyle(el("reg-status"), AH.hataMetni(h2, "couldn't finish the account."), "hata");
       });
   };
 
   function ikinciAdim() {
-    goster("kt-2");
+    goster("reg-2");
     sehirleriKur();
-    el("kt-handle").focus();
+    el("reg-handle").focus();
   }
 
   /* ---------------- acilis ---------------- */
@@ -183,22 +183,22 @@
   function ekraniKur() {
     const AYAR = window.AH_AYAR || {};
     if (!(AYAR.url && AYAR.anonKey)) {
-      goster("kt-1");
-      el("kt-form").hidden = true;
-      soyle(el("kt-not"), "sign-up opens when the backend does.", "bekliyor");
+      goster("reg-1");
+      el("reg-form").hidden = true;
+      soyle(el("reg-note"), "sign-up opens when the backend does.", "waiting");
       return;
     }
 
-    if (!(AH.girisliMi && AH.girisliMi())) { goster("kt-1"); return; }
+    if (!(AH.girisliMi && AH.girisliMi())) { goster("reg-1"); return; }
 
     /* Girisli: kaydi bitmis mi? Bitmemisse dogrudan ikinci adim. */
     cagir("profile_me")
       .then((r) => {
         const p = Array.isArray(r) ? r[0] : r;
         if (p && p.onboarded) {
-          el("kt-zaten-not").textContent =
+          el("reg-zaten-note").textContent =
             "You are signed in as @" + (p.handle || "you") + ". Nothing to fill in twice.";
-          goster("kt-zaten");
+          goster("reg-zaten");
         } else {
           ikinciAdim();
         }

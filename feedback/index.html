@@ -22,11 +22,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=111" />
+  <link rel="stylesheet" href="../style.css?v=115" />
 </head>
 <body>
 
-  <a class="atla" href="#icerik">skip to the content</a>
+  <a class="skip" href="#content">skip to the content</a>
 
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
@@ -40,16 +40,16 @@
     </nav>
   </header>
 
-  <main id="icerik" tabindex="-1" class="gb">
-    <h1 class="giris-baslik">give<br />feedback.</h1>
-    <p class="gb-giris">What is broken, what is missing, what you would rather it did.
+  <main id="content" tabindex="-1" class="fb">
+    <h1 class="page-title">give<br />feedback.</h1>
+    <p class="fb-intro">What is broken, what is missing, what you would rather it did.
       No account needed. It gets read by one person, and that person is building this.</p>
 
-    <div class="gb-form" id="gb-form">
+    <div class="fb-form" id="fb-form">
 
-      <section class="hesap">
-        <p class="hesap-baslik">what is this about</p>
-        <div class="ay-secim" id="gb-tur">
+      <section class="account">
+        <p class="account-title">what is this about</p>
+        <div class="set-choice" id="fb-kind">
           <button type="button" data-deger="broken">something is broken</button>
           <button type="button" data-deger="idea">an idea</button>
           <button type="button" data-deger="event">a wrong event</button>
@@ -57,59 +57,59 @@
         </div>
       </section>
 
-      <section class="hesap">
-        <p class="hesap-baslik">your message</p>
-        <p class="hesap-aciklama">Be as specific as you can stand to be — which page,
+      <section class="account">
+        <p class="account-title">your message</p>
+        <p class="account-about">Be as specific as you can stand to be — which page,
           what you did, what happened instead.</p>
-        <textarea class="gb-metin" id="gb-metin" rows="7" maxlength="2000"
+        <textarea class="fb-text" id="fb-text" rows="7" maxlength="2000"
                   placeholder="the deck stopped after four cards on my phone…"></textarea>
-        <p class="gb-sayac" id="gb-sayac"></p>
+        <p class="fb-counter" id="fb-counter"></p>
       </section>
 
-      <section class="hesap" id="gb-iletisim-bolum">
-        <p class="hesap-baslik">how we reach you</p>
-        <p class="hesap-aciklama" id="gb-iletisim-not">Optional. Leave it out and the
+      <section class="account" id="fb-iletisim-section">
+        <p class="account-title">how we reach you</p>
+        <p class="account-about" id="fb-iletisim-note">Optional. Leave it out and the
           message still gets read — there just will not be an answer.</p>
-        <input class="hesap-alan ay-genis" id="gb-iletisim" type="text"
+        <input class="account-field set-wide" id="fb-iletisim" type="text"
                placeholder="you@example.com" autocomplete="email" />
       </section>
 
-      <div class="ay-kaydet">
-        <button class="hesap-dugme" id="gb-yolla" type="button">send</button>
-        <span class="hesap-durum" id="gb-durum"></span>
+      <div class="set-save">
+        <button class="account-button" id="fb-yolla" type="button">send</button>
+        <span class="account-status" id="fb-status"></span>
       </div>
     </div>
 
     <!-- Gonderdikten sonra formun yerine bu geciyor -->
-    <div class="gb-tesekkur" id="gb-tesekkur" hidden>
-      <p class="gb-tesekkur-baslik">it is in.</p>
-      <p class="gb-giris">Thank you. Nothing is automated here, so there is no ticket
+    <div class="fb-thanks" id="fb-thanks" hidden>
+      <p class="fb-thanks-title">it is in.</p>
+      <p class="fb-intro">Thank you. Nothing is automated here, so there is no ticket
         number and no reply from a robot — it lands in a list that gets read.</p>
-      <div class="gb-yollar">
-        <a class="hs-link" href="../explore/index.html">back to the deck</a>
-        <button class="hs-link gb-yeniden" id="gb-yeniden" type="button">write another</button>
+      <div class="fb-links">
+        <a class="sc-link" href="../explore/index.html">back to the deck</a>
+        <button class="sc-link fb-again" id="fb-again" type="button">write another</button>
       </div>
     </div>
 
-    <p class="gb-not">An event with the wrong date or a night that already happened is
+    <p class="fb-note">An event with the wrong date or a night that already happened is
       faster to fix from the event itself — write it in beforehours under that event and
       it shows up next to the night it is about.</p>
   </main>
 
-  <footer class="dipnot">
-    <p class="dipnot-ad">&copy; 2026 afterhours</p>
-    <nav class="dipnot-linkler">
+  <footer class="foot">
+    <p class="foot-name">&copy; 2026 afterhours</p>
+    <nav class="foot-links">
       <a href="../impressum/index.html">impressum</a>
       <a href="../datenschutz/index.html">datenschutz</a>
       <a href="../agb/index.html">agb</a>
     </nav>
   </footer>
 
-  <script src="../ayar.js?v=111"></script>
-  <script src="../oturum.js?v=111"></script>
-  <script src="../menu.js?v=111"></script>
-  <script src="../veri.js?v=111"></script>
-  <script src="geri.js?v=111"></script>
+  <script src="../config.js?v=115"></script>
+  <script src="../session.js?v=115"></script>
+  <script src="../menu.js?v=115"></script>
+  <script src="../data.js?v=115"></script>
+  <script src="feedback.js?v=115"></script>
 
 </body>
 </html>

@@ -22,11 +22,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=111" />
+  <link rel="stylesheet" href="../style.css?v=115" />
 </head>
 <body>
 
-  <a class="atla" href="#icerik">skip to the content</a>
+  <a class="skip" href="#content">skip to the content</a>
 
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
@@ -40,105 +40,105 @@
     </nav>
   </header>
 
-  <main id="icerik" tabindex="-1" class="kt">
+  <main id="content" tabindex="-1" class="reg">
 
     <!-- 1 · hesap -->
-    <section class="kt-adim" id="kt-1" hidden>
-      <p class="kt-sira">step one of two</p>
-      <h1 class="giris-baslik">make an<br />account.</h1>
-      <p class="kt-giris">Swiping works without one. An account is for keeping the
+    <section class="reg-step" id="reg-1" hidden>
+      <p class="reg-edition">step one of two</p>
+      <h1 class="page-title">make an<br />account.</h1>
+      <p class="reg-intro">Swiping works without one. An account is for keeping the
         nights you went to, finding the people you go with, and writing in
         beforehours.</p>
 
-      <form class="giris-form" id="kt-form" novalidate>
-        <label class="giris-etiket" for="kt-eposta">your email</label>
-        <input class="giris-alan" id="kt-eposta" type="email" name="email"
+      <form class="page-form" id="reg-form" novalidate>
+        <label class="page-label" for="kt-eposta">your email</label>
+        <input class="page-field" id="reg-eposta" type="email" name="email"
                autocomplete="email" placeholder="you@example.com" required />
 
-        <label class="giris-etiket" for="kt-sifre">a password</label>
-        <input class="giris-alan" id="kt-sifre" type="password" name="password"
+        <label class="page-label" for="kt-sifre">a password</label>
+        <input class="page-field" id="reg-sifre" type="password" name="password"
                autocomplete="new-password" placeholder="at least 8 characters" required />
 
-        <button class="giris-dugme" id="kt-ac" type="submit">create account</button>
+        <button class="page-button" id="reg-ac" type="submit">create account</button>
       </form>
-      <p class="giris-not" id="kt-not"></p>
+      <p class="page-note" id="reg-note"></p>
 
-      <p class="kt-alt">Already have one? <a href="../login/index.html">sign in</a>.</p>
+      <p class="reg-sub">Already have one? <a href="../login/index.html">sign in</a>.</p>
     </section>
 
     <!-- 2 · handle -->
-    <section class="kt-adim" id="kt-2" hidden>
-      <p class="kt-sira">step two of two</p>
-      <h1 class="giris-baslik">pick a<br />handle.</h1>
-      <p class="kt-giris">This is the one part you cannot skip: friends find you by it,
+    <section class="reg-step" id="reg-2" hidden>
+      <p class="reg-edition">step two of two</p>
+      <h1 class="page-title">pick a<br />handle.</h1>
+      <p class="reg-intro">This is the one part you cannot skip: friends find you by it,
         and nobody can add you until it exists. Lowercase letters, numbers and
         underscore, 3–20 characters.</p>
 
-      <section class="hesap">
-        <p class="hesap-baslik">your handle</p>
-        <input class="hesap-alan" id="kt-handle" type="text" placeholder="yourname"
+      <section class="account">
+        <p class="account-title">your handle</p>
+        <input class="account-field" id="reg-handle" type="text" placeholder="yourname"
                autocomplete="off" spellcheck="false" />
-        <p class="hesap-durum" id="kt-handle-durum"></p>
+        <p class="account-status" id="reg-handle-status"></p>
       </section>
 
-      <section class="hesap">
-        <p class="hesap-baslik">your city</p>
-        <p class="hesap-aciklama">Where your deck starts. You can change it later.</p>
-        <div class="ay-sehirler" id="kt-sehir"></div>
+      <section class="account">
+        <p class="account-title">your city</p>
+        <p class="account-about">Where your deck starts. You can change it later.</p>
+        <div class="set-cities" id="reg-city"></div>
       </section>
 
-      <div class="ay-kaydet">
-        <button class="hesap-dugme" id="kt-bitir" type="button">finish</button>
-        <span class="hesap-durum" id="kt-durum"></span>
+      <div class="set-save">
+        <button class="account-button" id="reg-bitir" type="button">finish</button>
+        <span class="account-status" id="reg-status"></span>
       </div>
     </section>
 
     <!-- 3 · bitti -->
-    <section class="kt-adim" id="kt-3" hidden>
-      <p class="kt-sira">that is all of it</p>
-      <h1 class="giris-baslik">you are<br />in.</h1>
-      <p class="kt-giris" id="kt-hosgeldin"></p>
-      <div class="gb-yollar">
-        <a class="hs-link" href="../explore/index.html">start swiping</a>
-        <a class="hs-link" href="../friends/index.html">find your friends</a>
-        <a class="hs-link" href="../settings/index.html">settings</a>
+    <section class="reg-step" id="reg-3" hidden>
+      <p class="reg-edition">that is all of it</p>
+      <h1 class="page-title">you are<br />in.</h1>
+      <p class="reg-intro" id="reg-hosgeldin"></p>
+      <div class="fb-links">
+        <a class="sc-link" href="../explore/index.html">start swiping</a>
+        <a class="sc-link" href="../friends/index.html">find your friends</a>
+        <a class="sc-link" href="../settings/index.html">settings</a>
       </div>
     </section>
 
     <!-- e-posta dogrulamasi acikken -->
-    <section class="kt-adim" id="kt-posta" hidden>
-      <p class="kt-sira">one link away</p>
-      <h1 class="giris-baslik">check your<br />email.</h1>
-      <p class="kt-giris" id="kt-posta-not"></p>
+    <section class="reg-step" id="reg-posta" hidden>
+      <p class="reg-edition">one link away</p>
+      <h1 class="page-title">check your<br />email.</h1>
+      <p class="reg-intro" id="reg-posta-note"></p>
     </section>
 
     <!-- zaten girisli ve kaydi bitmis -->
-    <section class="kt-adim" id="kt-zaten" hidden>
-      <p class="kt-sira">nothing to do here</p>
-      <h1 class="giris-baslik">you already<br />have one.</h1>
-      <p class="kt-giris" id="kt-zaten-not"></p>
-      <div class="gb-yollar">
-        <a class="hs-link" href="../explore/index.html">back to the deck</a>
-        <a class="hs-link" href="../settings/index.html">settings</a>
+    <section class="reg-step" id="reg-zaten" hidden>
+      <p class="reg-edition">nothing to do here</p>
+      <h1 class="page-title">you already<br />have one.</h1>
+      <p class="reg-intro" id="reg-zaten-note"></p>
+      <div class="fb-links">
+        <a class="sc-link" href="../explore/index.html">back to the deck</a>
+        <a class="sc-link" href="../settings/index.html">settings</a>
       </div>
     </section>
 
   </main>
 
-  <footer class="dipnot">
-    <p class="dipnot-ad">&copy; 2026 afterhours</p>
-    <nav class="dipnot-linkler">
+  <footer class="foot">
+    <p class="foot-name">&copy; 2026 afterhours</p>
+    <nav class="foot-links">
       <a href="../impressum/index.html">impressum</a>
       <a href="../datenschutz/index.html">datenschutz</a>
       <a href="../agb/index.html">agb</a>
     </nav>
   </footer>
 
-  <script src="../ayar.js?v=111"></script>
-  <script src="../oturum.js?v=111"></script>
-  <script src="../menu.js?v=111"></script>
-  <script src="../veri.js?v=111"></script>
-  <script src="kayit.js?v=111"></script>
+  <script src="../config.js?v=115"></script>
+  <script src="../session.js?v=115"></script>
+  <script src="../menu.js?v=115"></script>
+  <script src="../data.js?v=115"></script>
+  <script src="register.js?v=115"></script>
 
 </body>
 </html>

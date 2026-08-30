@@ -1,33 +1,33 @@
 /* afterhours — card collection.
    Kartlari kendimiz cizmiyoruz: ana sayfadaki seritte kullanilan
-   kartlar.js ureteci ayni isi yapiyor (KARTLAR.on = on yuz).
+   cards.js ureteci ayni isi yapiyor (KARTLAR.on = on yuz).
    Burada sadece uc geceyi ona veriyoruz.
 
    Tiklayinca kart cevriliyor: arka yuz gecenin zaman cizelgesi. */
 
 (function () {
-  const alan = document.getElementById("kk-kartlar");
+  const alan = document.getElementById("cc-cards");
   if (!alan || !window.KARTLAR || !window.KART_ORNEKLERI) return;
 
   KART_ORNEKLERI.forEach((gece, i) => {
     const kutu = document.createElement("figure");
-    kutu.className = "kk-kart";
+    kutu.className = "cc-card";
 
     const yuz = document.createElement("div");
-    yuz.className = "kk-yuz";
+    yuz.className = "cc-face";
     yuz.innerHTML = KARTLAR.on(gece, "k" + i);
 
     const arka = document.createElement("div");
-    arka.className = "kk-yuz kk-arka";
+    arka.className = "cc-face cc-back";
     arka.innerHTML = KARTLAR.arka(gece, "a" + i);
 
     const cevir = document.createElement("button");
-    cevir.className = "kk-cevir";
+    cevir.className = "cc-flip";
     cevir.type = "button";
     cevir.setAttribute("aria-label", "flip " + gece.t);
     cevir.appendChild(yuz);
     cevir.appendChild(arka);
-    cevir.addEventListener("click", () => kutu.classList.toggle("cevrik"));
+    cevir.addEventListener("click", () => kutu.classList.toggle("flipped"));
 
     const alt = document.createElement("figcaption");
     alt.textContent = gece.sehir;

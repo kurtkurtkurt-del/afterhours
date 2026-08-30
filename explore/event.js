@@ -1,8 +1,8 @@
 /* afterhours — etkinlik sayfasi (kontak baskisi).
 
    Otuz alti gece icin otuz alti sayfa yazmiyoruz: duzen tek, icerik
-   etkinligin kendi verisinden (veri.js / events-data.js) ve tur
-   havuzlarindan (etkinlik-veri.js) geliyor. Hangi parcanin hangi
+   etkinligin kendi verisinden (data.js / events-data.js) ve tur
+   havuzlarindan (event-data.js) geliyor. Hangi parcanin hangi
    geceye dustugunu slug'dan uretilen tohum seciyor, yani bir etkinlik
    her acilista ayni seyi gosteriyor ama iki etkinlik ayni gorunmuyor.
 
@@ -10,7 +10,7 @@
    satir, explore/<slug>/index.html'e de bos kabuk. Gerisi buradan. */
 
 (function () {
-  const alan = document.querySelector(".ks");
+  const alan = document.querySelector(".cs");
   if (!alan) return;
 
   const V = window.ETKINLIK_VERI || {};
@@ -22,7 +22,7 @@
       h ^= yazi.charCodeAt(i);
       h = Math.imul(h, 16777619);
     }
-    /* mulberry32 — sehir.js'te de ayni sebeple: carpim 2^53'u asmasin */
+    /* mulberry32 — globe.js'te de ayni sebeple: carpim 2^53'u asmasin */
     let t = h >>> 0;
     return function () {
       t = (t + 0x6d2b79f5) >>> 0;
@@ -102,14 +102,14 @@
     alan.textContent = "";
 
     /* ---- sol ray ---- */
-    const ray = el("aside", "ks-ray");
+    const ray = el("aside", "cs-rail");
     const poster = document.createElement("object");
-    poster.className = "ks-poster";
+    poster.className = "cs-poster";
     poster.type = "image/svg+xml";
     poster.data = posterYolu;
     ray.appendChild(poster);
 
-    const künye = el("dl", "ks-kunye");
+    const künye = el("dl", "cs-facts");
     if (m.saat) künye.appendChild(kunyeSatırı("doors", m.saat));
     (V.KUNYE[tür] || []).forEach(([a, b]) => künye.appendChild(kunyeSatırı(a, b)));
     if (m.mekan) künye.appendChild(kunyeSatırı("room", m.mekan.toLowerCase()));
@@ -118,9 +118,9 @@
     alan.appendChild(ray);
 
     /* ---- orta sutun ---- */
-    const orta = el("div", "ks-alan");
+    const orta = el("div", "cs-field");
 
-    const kırıntı = el("nav", "kirinti");
+    const kırıntı = el("nav", "crumb");
     const geri = el("a", null, "explore");
     geri.href = "../index.html";
     kırıntı.appendChild(geri);
@@ -128,10 +128,10 @@
     kırıntı.appendChild(el("span", null, (e.baslik || "").toLowerCase()));
     orta.appendChild(kırıntı);
 
-    orta.appendChild(el("p", "ks-sira",
+    orta.appendChild(el("p", "cs-edition",
       "edition " + String(edisyon).padStart(2, "0") + " · your " + sıra(gidilen + 1)));
-    orta.appendChild(el("h1", "ks-baslik", e.baslik || ""));
-    orta.appendChild(el("p", "ks-meta",
+    orta.appendChild(el("h1", "cs-title", e.baslik || ""));
+    orta.appendChild(el("p", "cs-meta",
       [tür.toLowerCase(), m.tarih ? gün + " " + m.tarih : gün].join(" · ")));
 
     /* Ilk paragraf etkinligin kendi metni, sonrakiler tur havuzundan.
@@ -139,27 +139,27 @@
        soyluyorsa atlaniyor: iki kez "bring something" yaziyordu. */
     const havuz = karıştır(rnd, V.METIN[tür] || []).filter((p) => !çakışır(p, e.metin));
     [e.metin, havuz[0], havuz[1]].filter(Boolean).forEach((p) =>
-      orta.appendChild(el("p", "ks-metin", p)));
+      orta.appendChild(el("p", "cs-text", p)));
 
     /* ---- kareler ---- */
-    const bölüm = el("section", "ks-bolum");
-    bölüm.appendChild(el("p", "ks-etiket", "the roll · five frames, one still blank"));
+    const bölüm = el("section", "cs-section");
+    bölüm.appendChild(el("p", "cs-label", "the roll · five frames, one still blank"));
 
     const roller = V.ROL[tür] || [];
     const adlar = karıştır(rnd, V.AD[tür] || []);
     const saatler = saatleriKur(m.saat, tür, rnd);
-    const şerit = el("ol", "ks-kareler");
+    const şerit = el("ol", "cs-frames");
 
     for (let i = 0; i < 5; i++) {
-      const kare = el("li", "ks-kare" + (i === 3 ? " bos" : ""));
-      const poz = el("div", "ks-poz" + (i === 3 ? " bos" : ""));
+      const kare = el("li", "cs-frame" + (i === 3 ? " empty" : ""));
+      const poz = el("div", "cs-shot" + (i === 3 ? " empty" : ""));
 
       if (i === 3) {
         poz.textContent = "not shot yet";
       } else {
         /* Kare = posterin bir seridi. Dort kare, dort farkli bant. */
         const im = document.createElement("object");
-        im.className = "ks-poz-im";
+        im.className = "cs-shot-img";
         im.type = "image/svg+xml";
         im.data = posterYolu;
         im.style.setProperty("--kay", [0, 42, 83, 125][i > 3 ? 3 : i]);
@@ -167,60 +167,60 @@
       }
 
       kare.appendChild(poz);
-      kare.appendChild(el("span", "ks-no", String(i + 1).padStart(2, "0")));
-      kare.appendChild(el("p", "ks-rol", roller[i] || ""));
-      kare.appendChild(el("p", "ks-ad",
+      kare.appendChild(el("span", "cs-no", String(i + 1).padStart(2, "0")));
+      kare.appendChild(el("p", "cs-role", roller[i] || ""));
+      kare.appendChild(el("p", "cs-name",
         i === 3 ? "not announced" : (i === 2 ? e.baslik : adlar[i] || "—")));
       /* Bos karenin saati YOK: dolacagi an kapinin acildigi an.
          Sayi yazmak baska bir karenin saatini tekrar ediyordu. */
-      kare.appendChild(el("p", "ks-saat",
+      kare.appendChild(el("p", "cs-clock",
         i === 3 ? "fills at the door" : saatler[i] || ""));
       şerit.appendChild(kare);
     }
 
     bölüm.appendChild(şerit);
-    bölüm.appendChild(el("p", "ks-not",
+    bölüm.appendChild(el("p", "cs-note",
       "An empty frame is not a gap. Nothing is announced until the doors are open."));
     orta.appendChild(bölüm);
 
     /* ---- gittigin edisyonlar ---- */
-    const geçmiş = el("section", "ks-bolum ks-bolum-gecmis");
-    geçmiş.appendChild(el("p", "ks-etiket", gidilen
+    const geçmiş = el("section", "cs-section cs-section-past");
+    geçmiş.appendChild(el("p", "cs-label", gidilen
       ? "editions you were at · " + gidilen + " of " + (edisyon - 1)
       : "your first one · " + (edisyon - 1) + " happened without you"));
-    const kutu = el("div", "ks-gecmis");
+    const kutu = el("div", "cs-past");
     geçmiş.appendChild(kutu);
     /* Hic gitmediysen kutu bos kalir; orayi bir cumle dolduruyor. */
-    if (!gidilen) geçmiş.appendChild(el("p", "ks-not",
+    if (!gidilen) geçmiş.appendChild(el("p", "cs-note",
       "Keep this one and the collection starts here."));
     orta.appendChild(geçmiş);
     alan.appendChild(orta);
 
     /* ---- sag sutun ---- */
-    const sağ = el("aside", "ks-sag");
-    sağ.appendChild(el("p", "ks-etiket", "which friends are going"));
+    const sağ = el("aside", "cs-right");
+    sağ.appendChild(el("p", "cs-label", "which friends are going"));
 
-    const kimler = el("ul", "ks-kimler");
+    const kimler = el("ul", "cs-who");
     const arkadaşlar = karıştır(rnd, V.ARKADASLAR).slice(0, 5);
     const durumlar = V.DURUM;
     arkadaşlar.forEach((ad, i) => {
       const satır = el("li", durumlar[i] === "can't" ? "yok" : null);
-      satır.appendChild(el("span", "ks-kim-ad", ad));
-      satır.appendChild(el("span", "ks-kim-durum", durumlar[i]));
+      satır.appendChild(el("span", "cs-who-name", ad));
+      satır.appendChild(el("span", "cs-who-status", durumlar[i]));
       kimler.appendChild(satır);
     });
     sağ.appendChild(kimler);
-    sağ.appendChild(el("p", "ks-sayim", "3 going · 1 maybe · 1 out"));
+    sağ.appendChild(el("p", "cs-tally", "3 going · 1 maybe · 1 out"));
 
     const [dugme, altYazı] = V.BILET[tür] || V.BILET["Konzert"];
-    const bilet = el("a", "ks-bilet", dugme);
+    const bilet = el("a", "cs-ticket", dugme);
     bilet.href = "#";
     sağ.appendChild(bilet);
-    sağ.appendChild(el("p", "ks-bilet-alt", altYazı));
+    sağ.appendChild(el("p", "cs-ticket-sub", altYazı));
 
     /* beforehours: arkadaslarin bu geceye, bu mekana, bu tarihe dair */
-    const yorumlar = el("section", "ks-yorumlar");
-    yorumlar.appendChild(el("p", "ks-etiket", "beforehours · your friends"));
+    const yorumlar = el("section", "cs-comments");
+    yorumlar.appendChild(el("p", "cs-label", "beforehours · your friends"));
 
     const zamanlar = V.ZAMAN;
     karıştır(rnd, V.YORUM[tür] || []).slice(0, 4).forEach((y, i) => {
@@ -233,7 +233,7 @@
     sağ.appendChild(yorumlar);
     alan.appendChild(sağ);
 
-    /* ---- gecmis kartlari (kartlar.js ile) ---- */
+    /* ---- gecmis kartlari (cards.js ile) ---- */
     kartlarıÇiz(kutu, e, m, tür, gidilen, edisyon, rnd, arkadaşlar);
   }
 
@@ -257,20 +257,20 @@
   }
 
   function yorumKur(kim, zaman, metin, cevap) {
-    const k = el("div", "y-konu");
-    const üst = el("div", "y-ust");
-    üst.appendChild(el("span", "y-kim", kim));
-    üst.appendChild(el("span", "y-zaman", zaman));
+    const k = el("div", "c-topic");
+    const üst = el("div", "c-top");
+    üst.appendChild(el("span", "c-who", kim));
+    üst.appendChild(el("span", "c-when", zaman));
     k.appendChild(üst);
-    k.appendChild(el("p", "y-metin", metin));
+    k.appendChild(el("p", "c-text", metin));
     if (cevap) {
-      const c = el("div", "y-cevaplar");
-      const kutu = el("div", "y-cevap");
-      const u = el("div", "y-ust");
-      u.appendChild(el("span", "y-kim", cevap.kim));
-      u.appendChild(el("span", "y-zaman", cevap.zaman));
+      const c = el("div", "c-replies");
+      const kutu = el("div", "c-reply");
+      const u = el("div", "c-top");
+      u.appendChild(el("span", "c-who", cevap.kim));
+      u.appendChild(el("span", "c-when", cevap.zaman));
       kutu.appendChild(u);
-      kutu.appendChild(el("p", "y-metin", cevap.metin));
+      kutu.appendChild(el("p", "c-text", cevap.metin));
       c.appendChild(kutu);
       k.appendChild(c);
     }
@@ -332,8 +332,8 @@
         q2: [seç(rnd, SÖZLER), (arkadaşlar[2] || "M")[0], "23:0" + i],
       };
 
-      const kart = el("figure", "ks-gec-kart");
-      const yüz = el("div", "ks-gec-yuz");
+      const kart = el("figure", "cs-past-card");
+      const yüz = el("div", "cs-past-face");
       yüz.innerHTML = KARTLAR.on(gece, "g" + i);
       kart.appendChild(yüz);
       kart.appendChild(el("figcaption", null,
@@ -349,7 +349,7 @@
     return p[p.length - 1] || "";
   }
 
-  /* veri.js bu betigi data-sonra ile cagiriyor: POSTERS o an hazir. */
+  /* data.js bu betigi data-sonra ile cagiriyor: POSTERS o an hazir. */
   const slug = slugBul();
   const e = (window.POSTERS || []).filter((x) => x.slug === slug)[0];
   if (e) kur(e);

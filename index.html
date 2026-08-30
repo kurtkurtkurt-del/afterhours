@@ -22,11 +22,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=Archivo:wght@400;500;600;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=111" />
+  <link rel="stylesheet" href="style.css?v=115" />
 </head>
 <body class="home" data-ekran="0">
 
-  <a class="atla" href="#icerik">skip to the content</a>
+  <a class="skip" href="#content">skip to the content</a>
 
   <header class="header">
     <a class="logo" href="index.html">afterhours</a>
@@ -41,39 +41,39 @@
   </header>
 
   <!-- Menunun altinda: dun geceden kisa kayitlar -->
-  <div class="ses" id="ses">
-    <div class="ses-satir" data-kaynak="ses/yesterday-munich.mp3">
-      <button class="ses-dugme" type="button">
-        <span class="ses-etiket">yesterday, munich:</span>
-        <span class="ses-ikon"></span>
+  <div class="sound" id="sound">
+    <div class="sound-row" data-kaynak="ses/yesterday-munich.mp3">
+      <button class="sound-button" type="button">
+        <span class="sound-label">yesterday, munich:</span>
+        <span class="sound-icon"></span>
       </button>
-      <div class="ses-cizgi"><span></span></div>
+      <div class="sound-line"><span></span></div>
     </div>
-    <div class="ses-satir" data-kaynak="ses/yesterday-istanbul.mp3">
-      <button class="ses-dugme" type="button">
-        <span class="ses-etiket">yesterday, istanbul:</span>
-        <span class="ses-ikon"></span>
+    <div class="sound-row" data-kaynak="ses/yesterday-istanbul.mp3">
+      <button class="sound-button" type="button">
+        <span class="sound-label">yesterday, istanbul:</span>
+        <span class="sound-icon"></span>
       </button>
-      <div class="ses-cizgi"><span></span></div>
+      <div class="sound-line"><span></span></div>
     </div>
-    <audio id="ses-kaynak" preload="none"></audio>
+    <audio id="sound-kaynak" preload="none"></audio>
   </div>
 
-  <div class="ekranlar" id="ekranlar" data-ekran="0">
+  <div class="screens" id="screens" data-ekran="0">
 
-    <section class="ekran">
-  <main id="icerik" tabindex="-1" class="showcase">
+    <section class="screen">
+  <main id="content" tabindex="-1" class="showcase">
     <div class="posters" id="posters"><!-- posterler app.js ile olusturuluyor --></div>
-    <div class="yan" id="yan">
+    <div class="side" id="side">
       <div class="intro">
         <p class="intro-1">Discover what's happening tonight in your city: raves, club nights, concerts, house parties.</p>
         <p class="intro-2">Swipe to find them, plan with friends, keep the ones you went to.</p>
         <a class="explore-btn" href="explore/index.html">explore</a>
 
         <!-- Asagida dort ekran daha var; kimse kendiliginden bilmiyor -->
-        <p class="asagi" aria-hidden="true">
-          <span class="asagi-yazi">keep scrolling</span>
-          <span class="asagi-ok"></span>
+        <p class="down" aria-hidden="true">
+          <span class="down-text">keep scrolling</span>
+          <span class="down-arrow"></span>
         </p>
       </div>
       <aside class="info" id="info">
@@ -88,74 +88,74 @@
     </section>
 
     <!-- Ikinci ekran -->
-    <section class="ekran ekran2">
-      <div class="deste2" id="deste2">
+    <section class="screen screen2">
+      <div class="deck2" id="deck2">
         <!-- Iki kart da kaydirilinca acilir -->
-        <div class="telefon" id="telefon">
-          <div class="tel-icerik">
-            <div class="tel-ust">
-              <object class="tel-poster" type="image/svg+xml" data="posters/01.svg"></object>
+        <div class="phone" id="phone">
+          <div class="phone-body">
+            <div class="phone-top">
+              <object class="phone-poster" type="image/svg+xml" data="posters/01.svg"></object>
               <div>
-                <p class="tel-baslik">A$AP Rocky</p>
-                <p class="tel-meta">OLYMPIAHALLE · 11.09</p>
+                <p class="phone-title">A$AP Rocky</p>
+                <p class="phone-meta">OLYMPIAHALLE · 11.09</p>
               </div>
             </div>
 
-            <p class="tel-etiket">your crew</p>
+            <p class="phone-label">your crew</p>
 
-            <ul class="tel-liste">
+            <ul class="phone-list">
               <li>
-                <div class="tel-satir"><span class="tel-ad">Lina</span><span class="tel-durum">going</span></div>
-                <p class="tel-mesaj">tickets are in my pocket</p>
+                <div class="phone-row"><span class="phone-name">Lina</span><span class="phone-status">going</span></div>
+                <p class="phone-line">tickets are in my pocket</p>
               </li>
               <li>
-                <div class="tel-satir"><span class="tel-ad">Emre</span><span class="tel-durum">going</span></div>
-                <p class="tel-mesaj">u-bahn at 21, don't be late</p>
+                <div class="phone-row"><span class="phone-name">Emre</span><span class="phone-status">going</span></div>
+                <p class="phone-line">u-bahn at 21, don't be late</p>
               </li>
               <li>
-                <div class="tel-satir"><span class="tel-ad">Jonas</span><span class="tel-durum">maybe</span></div>
-                <p class="tel-mesaj">depends on my shift, i'll know friday</p>
+                <div class="phone-row"><span class="phone-name">Jonas</span><span class="phone-status">maybe</span></div>
+                <p class="phone-line">depends on my shift, i'll know friday</p>
               </li>
               <li>
-                <div class="tel-satir"><span class="tel-ad">Mira</span><span class="tel-durum">going</span></div>
-                <p class="tel-mesaj">third time this year, no regrets</p>
+                <div class="phone-row"><span class="phone-name">Mira</span><span class="phone-status">going</span></div>
+                <p class="phone-line">third time this year, no regrets</p>
               </li>
               <li>
-                <div class="tel-satir"><span class="tel-ad">Selin</span><span class="tel-durum">can't</span></div>
-                <p class="tel-mesaj">in berlin that week — send videos</p>
+                <div class="phone-row"><span class="phone-name">Selin</span><span class="phone-status">can't</span></div>
+                <p class="phone-line">in berlin that week — send videos</p>
               </li>
             </ul>
           </div>
         </div>
 
         <!-- Telefon kaybolduktan sonra gelir -->
-        <p class="son-mesaj" id="son-mesaj">Let your friends know you want to go.</p>
+        <p class="last-line" id="last-line">Let your friends know you want to go.</p>
 
-        <p class="kaydir-ipucu" id="kaydir-ipucu">swipe right &#8594;</p>
+        <p class="swipe-hint" id="swipe-hint">swipe right &#8594;</p>
 
         <!-- kartlar app.js ile olusturuluyor -->
       </div>
-      <h2 class="ekran2-baslik">Swipe through every event in your city.</h2>
+      <h2 class="screen2-title">Swipe through every event in your city.</h2>
     </section>
 
     <!-- Ucuncu ekran: toplanan afterhours kartlari -->
-    <section class="ekran ekran3">
-      <div class="k3-serit"><div class="k3-ray" id="k3-ray"><!-- kartlar app.js ile --></div></div>
-      <p class="k3-sol">make the night unforgettable</p>
-      <p class="k3-sag">collect your afterhours card</p>
+    <section class="screen screen3">
+      <div class="s3-strip"><div class="s3-rail" id="s3-rail"><!-- kartlar app.js ile --></div></div>
+      <p class="s3-left">make the night unforgettable</p>
+      <p class="s3-right">collect your afterhours card</p>
     </section>
 
     <!-- Dorduncu ekran: donen sehir maketi -->
-    <section class="ekran ekran4">
-      <canvas class="k4-sahne" id="k4-sahne"></canvas>
+    <section class="screen screen4">
+      <canvas class="s4-stage" id="s4-stage"></canvas>
 
-      <div class="k4-metin">
-        <h2 class="k4-baslik">go local.</h2>
-        <p class="k4-alt">Maps is now in the app. Roam your city.</p>
+      <div class="s4-text">
+        <h2 class="s4-title">go local.</h2>
+        <p class="s4-sub">Maps is now in the app. Roam your city.</p>
       </div>
 
-      <div class="k4-yakin">
-        <p class="k4-yakin-baslik">within reach tonight</p>
+      <div class="s4-near">
+        <p class="s4-near-title">within reach tonight</p>
         <ul>
           <li><span>Zine Klub</span><em>meetup</em><b>3 min</b></li>
           <li><span>3. Stock Links</span><em>hausparty</em><b>4 min</b></li>
@@ -165,32 +165,32 @@
           <li><span>Blurred Vision</span><em>club night</em><b>11 min</b></li>
           <li><span>Elysium</span><em>festival</em><b>12 min</b></li>
         </ul>
-        <p class="k4-yakin-alt">36 nights on the globe · spin to find the rest</p>
+        <p class="s4-near-sub">36 nights on the globe · spin to find the rest</p>
       </div>
     </section>
 
     <!-- Altinci ekran: footer -->
-    <section class="ekran ekran6" id="ekran6" data-ton="koyu">
-      <div class="k6-ust">
-        <span class="k6-saat" id="k6-saat">--:--</span>
-        <span class="k6-sayac" id="k6-sayac"></span>
+    <section class="screen screen6" id="screen6" data-ton="koyu">
+      <div class="s6-top">
+        <span class="s6-clock" id="s6-clock">--:--</span>
+        <span class="s6-counter" id="s6-counter"></span>
       </div>
 
-      <p class="k6-manifesto">A festival once beamed music at a star 12 light
-        years away.<span class="k6-not">sónar festival</span><br />The reply comes
+      <p class="s6-manifesto">A festival once beamed music at a star 12 light
+        years away.<span class="s6-note">sónar festival</span><br />The reply comes
         in 2042. Your night is sooner.</p>
 
-      <div class="k6-alt">
-        <ul class="k6-sehirler">
-          <li class="acik">münchen</li>
-          <li class="acik">istanbul</li>
-          <li class="yakinda">ankara <span>soon</span></li>
+      <div class="s6-sub">
+        <ul class="s6-cities">
+          <li class="open">münchen</li>
+          <li class="open">istanbul</li>
+          <li class="soon">ankara <span>soon</span></li>
           <li>berlin</li>
           <li>wien</li>
           <li>köln</li>
         </ul>
 
-        <ul class="k6-linkler">
+        <ul class="s6-links">
           <li><a href="help/index.html">about</a></li>
           <li><a href="help/index.html">help</a></li>
           <li><a href="impressum/index.html">impressum</a></li>
@@ -199,25 +199,25 @@
           <li><a href="explore/index.html">instagram</a></li>
         </ul>
 
-        <a class="k6-buton" href="explore/index.html">go outside</a>
+        <a class="s6-button" href="explore/index.html">go outside</a>
       </div>
     </section>
 
   </div>
 
   <!-- Sag altta duran foto (tamami); ikinci ekrana gecince asagi iner -->
-  <div class="foto">
+  <div class="photo">
     <img src="foto.jpg" alt="" />
   </div>
 
-  <script src="ayar.js?v=111"></script>
-  <script src="oturum.js?v=111"></script>
-  <script src="menu.js?v=111"></script>
-  <script src="mekanlar.js?v=111"></script>
-  <script src="kartlar.js?v=111"></script>
-  <script src="veri.js?v=111"
-          data-yedek="events-data.js?v=111"
-          data-sonra="sehir.js?v=111, app.js?v=111"></script>
+  <script src="config.js?v=115"></script>
+  <script src="session.js?v=115"></script>
+  <script src="menu.js?v=115"></script>
+  <script src="venues.js?v=115"></script>
+  <script src="cards.js?v=115"></script>
+  <script src="data.js?v=115"
+          data-yedek="events-data.js?v=115"
+          data-sonra="globe.js?v=115, app.js?v=115"></script>
 
 </body>
 </html>

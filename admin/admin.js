@@ -6,17 +6,17 @@
 
 (function () {
   const AYAR = window.AH_AYAR || {};
-  const kapi = document.getElementById("yn-kapi");
-  const kapiYazi = document.getElementById("yn-kapi-yazi");
-  const kapiLink = document.getElementById("yn-kapi-link");
-  const panel = document.getElementById("yn");
+  const kapi = document.getElementById("adm-gate");
+  const kapiYazi = document.getElementById("adm-gate-text");
+  const kapiLink = document.getElementById("adm-gate-link");
+  const panel = document.getElementById("adm");
 
   const $ = (id) => document.getElementById(id);
-  const listeAlan = $("yn-liste");
-  const ozet = $("yn-ozet");
-  const araAlan = $("yn-ara");
-  const duzen = $("yn-duzen");
-  const durum = $("a-durum");
+  const listeAlan = $("adm-list");
+  const ozet = $("adm-summary");
+  const araAlan = $("adm-search");
+  const duzen = $("adm-edit");
+  const durum = $("a-status");
 
   let etkinlikler = [];
   let turler = [];
@@ -25,8 +25,8 @@
   let sayilar = {};
   let secili = null;
 
-  const girisForm = document.getElementById("yn-giris");
-  const girisNot = document.getElementById("yn-giris-not");
+  const girisForm = document.getElementById("adm-intro");
+  const girisNot = document.getElementById("adm-intro-note");
 
   function kapiyiGoster(metin, girisIster) {
     kapi.hidden = false;
@@ -40,8 +40,8 @@
      Sifre burada tutulmuyor, dogrudan Supabase'e gidiyor. */
   girisForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const eposta = document.getElementById("yn-eposta").value.trim();
-    const sifre = document.getElementById("yn-sifre").value;
+    const eposta = document.getElementById("adm-eposta").value.trim();
+    const sifre = document.getElementById("adm-sifre").value;
     if (!eposta || !sifre) return;
     girisNot.textContent = "signing in…";
     AH.sifreyleGir(eposta, sifre)
@@ -56,7 +56,7 @@
   /* --- acilis: once kimlik, sonra yetki --- */
 
   if (!(AYAR.url && AYAR.anonKey)) {
-    kapiyiGoster("no backend configured. fill in ayar.js first.", false);
+    kapiyiGoster("no backend configured. fill in config.js first.", false);
     return;
   }
 
@@ -150,14 +150,14 @@
     listeAlan.textContent = "";
     gosterilecek.forEach((e) => {
       const li = document.createElement("li");
-      li.className = "yn-satir" + (secili && secili.id === e.id ? " secili" : "");
+      li.className = "adm-row" + (secili && secili.id === e.id ? " selected" : "");
 
       const no = document.createElement("span");
-      no.className = "yn-no";
+      no.className = "adm-no";
       no.textContent = String(e.poster_no || "–").padStart(2, "0");
 
       const ad = document.createElement("span");
-      ad.className = "yn-ad";
+      ad.className = "adm-name";
       ad.textContent = e.title;
 
       li.appendChild(no);
@@ -165,7 +165,7 @@
 
       uyarilar(e).forEach((u) => {
         const rozet = document.createElement("span");
-        rozet.className = "yn-rozet" + (u === "unpublished" ? " sessiz" : "");
+        rozet.className = "adm-badge" + (u === "unpublished" ? " quiet" : "");
         rozet.textContent = u;
         li.appendChild(rozet);
       });
@@ -201,7 +201,7 @@
     $("a-estimated").checked = Boolean(e.starts_at_estimated);
     /* datetime-local saniye ve zaman dilimi istemiyor */
     $("a-starts").value = e.starts_at ? new Date(e.starts_at).toISOString().slice(0, 16) : "";
-    $("a-sayi").textContent = sayilar[e.id] ? sayilar[e.id] + " people" : "nobody yet";
+    $("a-number").textContent = sayilar[e.id] ? sayilar[e.id] + " people" : "nobody yet";
 
     posteriGoster(e.poster_no);
     listeyiCiz();
@@ -210,7 +210,7 @@
   function posteriGoster(no) {
     const kutu = $("a-poster-onizleme");
     kutu.textContent = "";
-    $("a-poster-not").textContent = "";
+    $("a-poster-note").textContent = "";
     if (!no) { kutu.textContent = "—"; return; }
     const nesne = document.createElement("object");
     nesne.type = "image/svg+xml";
@@ -218,7 +218,7 @@
     kutu.appendChild(nesne);
   }
 
-  $("yn-yeni").addEventListener("click", () => {
+  $("adm-new").addEventListener("click", () => {
     secili = null;
     duzen.hidden = false;
     durum.textContent = "";
@@ -226,7 +226,7 @@
     $("a-published").checked = true;
     $("a-estimated").checked = false;
     $("a-venue").value = "";
-    $("a-sayi").textContent = "—";
+    $("a-number").textContent = "—";
     posteriGoster(null);
     $("a-title").focus();
   });
@@ -248,7 +248,7 @@
     return g;
   }
 
-  $("a-kaydet").addEventListener("click", () => {
+  $("a-save").addEventListener("click", () => {
     const g = formdanOku();
     if (!g.title || !g.slug || !g.meta) {
       durum.textContent = "title, slug and meta are required.";
@@ -281,7 +281,7 @@
       .catch((h) => { durum.textContent = "couldn't save: " + h.message; });
   });
 
-  $("a-sil").addEventListener("click", () => {
+  $("a-delete").addEventListener("click", () => {
     if (!secili) return;
     /* Silmek geri alinamaz; once ne silindigini soyle */
     if (!window.confirm('delete "' + secili.title + '" and everything attached to it?')) return;
@@ -299,14 +299,14 @@
   $("a-poster-dosya").addEventListener("change", (olay) => {
     const dosya = olay.target.files && olay.target.files[0];
     if (!dosya) return;
-    const not = $("a-poster-not");
+    const not = $("a-poster-note");
     not.textContent = "checking…";
 
     dosya.text().then((metin) => {
       const kutu = $("a-poster-onizleme");
       kutu.textContent = "";
       const sarmal = document.createElement("div");
-      sarmal.className = "yn-poster-ic";
+      sarmal.className = "adm-poster-inner";
       sarmal.innerHTML = metin;
       kutu.appendChild(sarmal);
 
@@ -338,7 +338,7 @@
       not.textContent = sorunlar.length
         ? sorunlar.join("  ·  ")
         : "looks fine: 2:3 and nothing crosses the frame.";
-      not.className = "yn-poster-not" + (sorunlar.length ? " kotu" : " iyi");
+      not.className = "adm-poster-note" + (sorunlar.length ? " bad" : " good");
 
       /* Sorun yoksa yuklenebilir. Sorunluysa yukleme dugmesi hic
          gorunmuyor: bozuk poster siteye gitmesin. */
@@ -350,14 +350,14 @@
   /* --- depoya yukleme --- */
 
   let bekleyenDosya = null;
-  const yukleDugmesi = document.getElementById("a-poster-yukle");
+  const yukleDugmesi = document.getElementById("a-poster-upload");
 
   yukleDugmesi.addEventListener("click", () => {
     if (!bekleyenDosya || !secili) return;
-    const not = $("a-poster-not");
+    const not = $("a-poster-note");
     const ad = secili.slug + "-" + Date.now() + ".svg";
     not.textContent = "uploading…";
-    not.className = "yn-poster-not";
+    not.className = "adm-poster-note";
 
     fetch(AYAR.url.replace(/\/$/, "") + "/storage/v1/object/posters/" + ad, {
       method: "POST",
@@ -381,14 +381,14 @@
       })
       .then(() => {
         not.textContent = "uploaded. the site uses this file now.";
-        not.className = "yn-poster-not iyi";
+        not.className = "adm-poster-note good";
         yukleDugmesi.hidden = true;
         bekleyenDosya = null;
         return yenile();
       })
       .catch((h) => {
         not.textContent = "couldn't upload: " + h.message;
-        not.className = "yn-poster-not kotu";
+        not.className = "adm-poster-note bad";
       });
   });
 
@@ -409,8 +409,8 @@
   }
 
   function geriCiz(satirlar) {
-    const liste = $("yn-geri-liste");
-    const sayac = $("yn-geri-sayi");
+    const liste = $("adm-feedback-list");
+    const sayac = $("adm-feedback-number");
     liste.textContent = "";
 
     const acik = (satirlar || []).filter((g) => !g.handled).length;
@@ -418,7 +418,7 @@
 
     if (!satirlar || !satirlar.length) {
       const bos = document.createElement("li");
-      bos.className = "yn-geri-bos";
+      bos.className = "adm-feedback-empty";
       bos.textContent = "nothing yet.";
       liste.appendChild(bos);
       return;
@@ -426,30 +426,30 @@
 
     satirlar.forEach((g) => {
       const li = document.createElement("li");
-      li.className = "yn-geri-satir" + (g.handled ? " bitti" : "");
+      li.className = "adm-feedback-row" + (g.handled ? " done" : "");
 
       const ust = document.createElement("div");
-      ust.className = "yn-geri-ust";
+      ust.className = "adm-feedback-top";
 
       const tur = document.createElement("span");
-      tur.className = "yn-geri-tur";
+      tur.className = "adm-feedback-kind";
       tur.textContent = TUR[g.kind] || g.kind;
       ust.appendChild(tur);
 
       const kim = document.createElement("span");
-      kim.className = "yn-geri-kim";
+      kim.className = "adm-feedback-who";
       /* Girisli yazan handle ile, girissiz biraktigi iletisimle,
          hicbirini vermeyen "anonymous" olarak gorunuyor. */
       kim.textContent = g.author ? "@" + g.author : (g.contact || "anonymous");
       ust.appendChild(kim);
 
       const ne = document.createElement("span");
-      ne.className = "yn-geri-zaman";
+      ne.className = "adm-feedback-when";
       ne.textContent = String(g.created_at || "").slice(0, 10);
       ust.appendChild(ne);
 
       const isaret = document.createElement("button");
-      isaret.className = "yn-yorum-islem";
+      isaret.className = "adm-comment-action";
       isaret.type = "button";
       isaret.textContent = g.handled ? "reopen" : "handled";
       isaret.addEventListener("click", () => {
@@ -461,7 +461,7 @@
       ust.appendChild(isaret);
 
       const metin = document.createElement("p");
-      metin.className = "yn-geri-metin";
+      metin.className = "adm-feedback-text";
       metin.textContent = g.body;
 
       li.appendChild(ust);
@@ -477,22 +477,22 @@
   }
 
   function yorumlariCiz(satirlar) {
-    const liste = $("yn-yorum-liste");
+    const liste = $("adm-comment-list");
     liste.textContent = "";
     (satirlar || []).forEach((y) => {
       const li = document.createElement("li");
-      li.className = "yn-yorum" + (y.is_hidden ? " gizli" : "");
+      li.className = "adm-comment" + (y.is_hidden ? " hidden" : "");
 
       const kim = document.createElement("span");
-      kim.className = "yn-yorum-kim";
+      kim.className = "adm-comment-who";
       kim.textContent = y.author_name || "member";
 
       const metin = document.createElement("span");
-      metin.className = "yn-yorum-metin";
+      metin.className = "adm-comment-text";
       metin.textContent = y.body;
 
       const gizle = document.createElement("button");
-      gizle.className = "yn-yorum-islem";
+      gizle.className = "adm-comment-action";
       gizle.type = "button";
       gizle.textContent = y.is_hidden ? "show" : "hide";
       gizle.addEventListener("click", () => {

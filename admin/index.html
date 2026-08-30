@@ -21,12 +21,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=111" />
-  <link rel="stylesheet" href="admin.css?v=111" />
+  <link rel="stylesheet" href="../style.css?v=115" />
+  <link rel="stylesheet" href="admin.css?v=115" />
 </head>
-<body class="yonetim">
+<body class="admin">
 
-  <a class="atla" href="#yn-kapi">skip to the content</a>
+  <a class="skip" href="#adm-gate">skip to the content</a>
 
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
@@ -41,125 +41,125 @@
   </header>
 
   <!-- Kapi: giris yoksa ya da yonetici degilse buraya kadar -->
-  <main tabindex="-1" class="yn-kapi" id="yn-kapi">
-    <p class="yn-kapi-yazi" id="yn-kapi-yazi">checking…</p>
+  <main tabindex="-1" class="adm-gate" id="adm-gate">
+    <p class="adm-gate-text" id="adm-gate-text">checking…</p>
 
-    <form class="yn-giris" id="yn-giris" hidden>
-      <input class="yn-giris-alan" id="yn-eposta" type="email"
+    <form class="adm-intro" id="adm-intro" hidden>
+      <input class="adm-intro-field" id="adm-eposta" type="email"
              placeholder="email" autocomplete="username" />
-      <input class="yn-giris-alan" id="yn-sifre" type="password"
+      <input class="adm-intro-field" id="adm-sifre" type="password"
              placeholder="password" autocomplete="current-password" />
-      <button class="yn-giris-dugme" type="submit">sign in</button>
+      <button class="adm-intro-button" type="submit">sign in</button>
     </form>
-    <p class="yn-giris-not" id="yn-giris-not"></p>
+    <p class="adm-intro-note" id="adm-intro-note"></p>
 
-    <a class="yn-kapi-link" id="yn-kapi-link" href="../login/index.html" hidden>use a link instead</a>
+    <a class="adm-gate-link" id="adm-gate-link" href="../login/index.html" hidden>use a link instead</a>
   </main>
 
-  <main class="yn" id="yn" hidden>
+  <main class="adm" id="adm" hidden>
 
-    <aside class="yn-liste-alan">
-      <div class="yn-arac">
-        <input class="yn-ara" id="yn-ara" type="search" placeholder="search events" />
-        <button class="yn-yeni" id="yn-yeni" type="button">new</button>
+    <aside class="adm-list-field">
+      <div class="adm-tools">
+        <input class="adm-search" id="adm-search" type="search" placeholder="search events" />
+        <button class="adm-new" id="adm-new" type="button">new</button>
       </div>
-      <p class="yn-ozet" id="yn-ozet"></p>
-      <ul class="yn-liste" id="yn-liste"></ul>
+      <p class="adm-summary" id="adm-summary"></p>
+      <ul class="adm-list" id="adm-list"></ul>
     </aside>
 
-    <section class="yn-duzen" id="yn-duzen" hidden>
-      <div class="yn-duzen-sol">
-        <label class="yn-etiket">title
-          <input class="yn-alan" id="a-title" type="text" />
+    <section class="adm-edit" id="adm-edit" hidden>
+      <div class="adm-edit-left">
+        <label class="adm-label">title
+          <input class="adm-field" id="a-title" type="text" />
         </label>
 
-        <label class="yn-etiket">slug <span class="yn-ipucu">changing this breaks existing links</span>
-          <input class="yn-alan" id="a-slug" type="text" spellcheck="false" />
+        <label class="adm-label">slug <span class="adm-hint">changing this breaks existing links</span>
+          <input class="adm-field" id="a-slug" type="text" spellcheck="false" />
         </label>
 
-        <div class="yn-ikili">
-          <label class="yn-etiket">type
-            <select class="yn-alan" id="a-type"></select>
+        <div class="adm-pair">
+          <label class="adm-label">type
+            <select class="adm-field" id="a-type"></select>
           </label>
-          <label class="yn-etiket">city
-            <select class="yn-alan" id="a-city"></select>
+          <label class="adm-label">city
+            <select class="adm-field" id="a-city"></select>
           </label>
         </div>
 
-        <div class="yn-ikili">
-          <label class="yn-etiket">venue
-            <select class="yn-alan" id="a-venue"></select>
+        <div class="adm-pair">
+          <label class="adm-label">venue
+            <select class="adm-field" id="a-venue"></select>
           </label>
-          <label class="yn-etiket">poster no
-            <input class="yn-alan" id="a-poster" type="number" min="1" />
+          <label class="adm-label">poster no
+            <input class="adm-field" id="a-poster" type="number" min="1" />
           </label>
         </div>
 
-        <label class="yn-etiket">meta <span class="yn-ipucu">shown on screen exactly as typed</span>
-          <input class="yn-alan" id="a-meta" type="text" />
+        <label class="adm-label">meta <span class="adm-hint">shown on screen exactly as typed</span>
+          <input class="adm-field" id="a-meta" type="text" />
         </label>
 
-        <div class="yn-ikili">
-          <label class="yn-etiket">starts at
-            <input class="yn-alan" id="a-starts" type="datetime-local" />
+        <div class="adm-pair">
+          <label class="adm-label">starts at
+            <input class="adm-field" id="a-starts" type="datetime-local" />
           </label>
-          <label class="yn-etiket yn-onay">
+          <label class="adm-label adm-confirm">
             <input type="checkbox" id="a-estimated" />
             <span>date not verified</span>
           </label>
         </div>
 
-        <label class="yn-etiket">body
-          <textarea class="yn-alan yn-uzun" id="a-body" rows="4"></textarea>
+        <label class="adm-label">body
+          <textarea class="adm-field adm-long" id="a-body" rows="4"></textarea>
         </label>
 
-        <label class="yn-etiket yn-onay">
+        <label class="adm-label adm-confirm">
           <input type="checkbox" id="a-published" />
           <span>published</span>
         </label>
 
-        <div class="yn-islemler">
-          <button class="yn-kaydet" id="a-kaydet" type="button">save</button>
-          <button class="yn-sil" id="a-sil" type="button">delete</button>
-          <span class="yn-durum" id="a-durum"></span>
+        <div class="adm-actions">
+          <button class="adm-save" id="a-save" type="button">save</button>
+          <button class="adm-delete" id="a-delete" type="button">delete</button>
+          <span class="adm-status" id="a-status"></span>
         </div>
       </div>
 
-      <div class="yn-duzen-sag">
-        <p class="yn-etiket">poster</p>
-        <div class="yn-poster" id="a-poster-onizleme"></div>
-        <p class="yn-poster-not" id="a-poster-not"></p>
+      <div class="adm-edit-right">
+        <p class="adm-label">poster</p>
+        <div class="adm-poster" id="a-poster-onizleme"></div>
+        <p class="adm-poster-note" id="a-poster-note"></p>
 
-        <label class="yn-yukle">
+        <label class="adm-upload">
           <input type="file" id="a-poster-dosya" accept=".svg,image/svg+xml" hidden />
           <span>check an svg</span>
         </label>
-        <button class="yn-poster-yukle" id="a-poster-yukle" type="button" hidden>
+        <button class="adm-poster-upload" id="a-poster-upload" type="button" hidden>
           use this poster
         </button>
 
-        <p class="yn-etiket" style="margin-top: 26px">kept by</p>
-        <p class="yn-sayi" id="a-sayi">—</p>
+        <p class="adm-label" style="margin-top: 26px">kept by</p>
+        <p class="adm-number" id="a-number">—</p>
       </div>
     </section>
 
-    <section class="yn-yorumlar">
-      <p class="yn-etiket">latest comments</p>
-      <ul class="yn-yorum-liste" id="yn-yorum-liste"></ul>
+    <section class="adm-comments">
+      <p class="adm-label">latest comments</p>
+      <ul class="adm-comment-list" id="adm-comment-list"></ul>
     </section>
 
     <!-- Geri bildirim: yazan geri okuyamiyor, tek okuyan burasi -->
-    <section class="yn-geri">
-      <p class="yn-etiket">feedback <span class="yn-geri-sayi" id="yn-geri-sayi"></span></p>
-      <ul class="yn-geri-liste" id="yn-geri-liste"></ul>
+    <section class="adm-feedback">
+      <p class="adm-label">feedback <span class="adm-feedback-number" id="adm-feedback-number"></span></p>
+      <ul class="adm-feedback-list" id="adm-feedback-list"></ul>
     </section>
 
   </main>
 
-  <script src="../ayar.js?v=111"></script>
-  <script src="../oturum.js?v=111"></script>
-  <script src="../veri.js?v=111"></script>
-  <script src="admin.js?v=111"></script>
+  <script src="../config.js?v=115"></script>
+  <script src="../session.js?v=115"></script>
+  <script src="../data.js?v=115"></script>
+  <script src="admin.js?v=115"></script>
 
 </body>
 </html>

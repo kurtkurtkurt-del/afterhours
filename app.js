@@ -5,7 +5,7 @@ const GOSTERILEN = POSTERS.slice(0, 20);
 
 const izgara = document.getElementById("posters");
 const bilgi = document.getElementById("info");
-const yan = document.getElementById("yan");
+const yan = document.getElementById("side");
 const alanIndex = bilgi.querySelector(".info-index");
 const alanTur = bilgi.querySelector(".info-type");
 const alanBaslik = bilgi.querySelector(".info-title");
@@ -28,7 +28,7 @@ GOSTERILEN.forEach((p, i) => {
 
   // Gorsel: ayri bir SVG dosyasi olarak yuklenir (gomulu degil)
   const gorsel = document.createElement("object");
-  gorsel.className = "poster-gorsel";
+  gorsel.className = "poster-image";
   gorsel.type = "image/svg+xml";
   gorsel.data = p.posterYolu || "posters/" + no + ".svg";
   kutu.appendChild(gorsel);
@@ -39,12 +39,12 @@ GOSTERILEN.forEach((p, i) => {
     alanBaslik.textContent = p.baslik;
     alanMeta.textContent = p.meta;
     alanMetin.textContent = p.metin;
-    yan.classList.add("poster-uzerinde");
+    yan.classList.add("poster-hover");
   });
 
   // Posterin ustunden cikinca yazi kaybolur
   kutu.addEventListener("mouseleave", () => {
-    gizleZamani = setTimeout(() => yan.classList.remove("poster-uzerinde"), 80);
+    gizleZamani = setTimeout(() => yan.classList.remove("poster-hover"), 80);
   });
   izgara.appendChild(kutu);
 });
@@ -52,10 +52,10 @@ GOSTERILEN.forEach((p, i) => {
 /* ---------- Ekran gecisi ----------
    Posterlerin sonuna gelindikten sonra biraz daha asagi kaydirinca
    sonraki ekrana gecilir; yukari kaydirinca geri donulur.
-   Ekran sayisi HTML'den okunur, yeni <section class="ekran"> eklemek yeterli. */
+   Ekran sayisi HTML'den okunur, yeni <section class="screen"> eklemek yeterli. */
 
-const ekranlar = document.getElementById("ekranlar");
-const EKRAN_SAYISI = ekranlar.querySelectorAll(".ekran").length;
+const ekranlar = document.getElementById("screens");
+const EKRAN_SAYISI = ekranlar.querySelectorAll(".screen").length;
 const ESIK = 240;        // gecis icin gereken fazladan kaydirma miktari (px)
 let ekran = 0;
 let birikim = 0;
@@ -66,7 +66,7 @@ function ekranaGec(hedef) {
   if (hedef === ekran || hedef < 0 || hedef >= EKRAN_SAYISI) return;
 
   // Kart kaydirilmadan ikinci ekrandan ileri gecilemez; deste zipar
-  if (ekran === 1 && hedef > ekran && deste.querySelector(".kart2")) {
+  if (ekran === 1 && hedef > ekran && deste.querySelector(".card2")) {
     destiZiplat();
     return;
   }
@@ -114,7 +114,7 @@ let dokunusSonda = false;
 window.addEventListener("touchstart", (e) => {
   dokunusY = e.touches[0].clientY;
   const h = e.target;
-  dokunusKartta = !!(h && h.closest && h.closest(".kart2"));
+  dokunusKartta = !!(h && h.closest && h.closest(".card2"));
   dokunusSonda = izgara.scrollTop + izgara.clientHeight >= izgara.scrollHeight - 4;
 }, { passive: true });
 
@@ -136,28 +136,28 @@ window.addEventListener("touchend", (e) => {
 /* ---------- Ikinci ekran: 2 kartlik deste ----------
    Saga cekince begenilir ve kaybolur. Yeterince cekilmezse yerine doner. */
 
-const deste = document.getElementById("deste2");
-const telefon = document.getElementById("telefon");
-const sonMesaj = document.getElementById("son-mesaj");
-const kaydirIpucu = document.getElementById("kaydir-ipucu");
+const deste = document.getElementById("deck2");
+const telefon = document.getElementById("phone");
+const sonMesaj = document.getElementById("last-line");
+const kaydirIpucu = document.getElementById("swipe-hint");
 
 // Kaydirmadan gecilmeye calisilinca kartin verdigi kucuk tepki
 let ziplamaZamani;
 function destiZiplat() {
-  const kart = deste.querySelector(".kart2");
+  const kart = deste.querySelector(".card2");
   if (!kart) return;
-  kart.classList.remove("zipla");
+  kart.classList.remove("jump");
   void kart.offsetWidth;               // animasyonu bastan baslat
-  kart.classList.add("zipla");
+  kart.classList.add("jump");
   clearTimeout(ziplamaZamani);
-  ziplamaZamani = setTimeout(() => kart.classList.remove("zipla"), 520);
+  ziplamaZamani = setTimeout(() => kart.classList.remove("jump"), 520);
 }
 const DESTE_POSTERLERI = ["01"];         // tek poster: A$AP Rocky
 const CEKME_ESIGI = 120;                 // px
 
 DESTE_POSTERLERI.slice().reverse().forEach((no) => {
   const kart = document.createElement("div");
-  kart.className = "kart2";
+  kart.className = "card2";
 
   const gorsel = document.createElement("object");
   gorsel.type = "image/svg+xml";
@@ -173,8 +173,8 @@ DESTE_POSTERLERI.slice().reverse().forEach((no) => {
     baslangicX = e.clientX;
     dx = 0;
     try { kart.setPointerCapture(e.pointerId); } catch (_) {}
-    kart.classList.add("suruklenirken");
-    kart.classList.remove("yumusak");
+    kart.classList.add("dragging");
+    kart.classList.remove("soft");
   });
 
   kart.addEventListener("pointermove", (e) => {
@@ -186,8 +186,8 @@ DESTE_POSTERLERI.slice().reverse().forEach((no) => {
   function birak() {
     if (baslangicX === null) return;
     baslangicX = null;
-    kart.classList.remove("suruklenirken");
-    kart.classList.add("yumusak");
+    kart.classList.remove("dragging");
+    kart.classList.add("soft");
 
     if (dx > CEKME_ESIGI) {
       // Begenildi: sagdan ucup gider
@@ -200,18 +200,18 @@ DESTE_POSTERLERI.slice().reverse().forEach((no) => {
         silindi = true;
         kart.remove();
         // Deste bitti: telefon ekrani acilir
-        if (!deste.querySelector(".kart2")) {
-          kaydirIpucu.classList.add("gizli");
-          telefon.classList.add("acik");
+        if (!deste.querySelector(".card2")) {
+          kaydirIpucu.classList.add("hidden");
+          telefon.classList.add("open");
           // Telefon 1.6 sn durur, kaybolur, yerine kapanis yazisi gelir.
           // Yazi 2 sn sonra yukari kayar ve telefon altinda geri gelir.
           setTimeout(() => {
-            telefon.classList.remove("acik");
+            telefon.classList.remove("open");
             setTimeout(() => {
-              sonMesaj.classList.add("acik");
+              sonMesaj.classList.add("open");
               setTimeout(() => {
-                deste.classList.add("son-hal");
-                telefon.classList.add("acik");
+                deste.classList.add("last-state");
+                telefon.classList.add("open");
               }, 2000);
             }, 300);
           }, 1600);
@@ -233,19 +233,19 @@ DESTE_POSTERLERI.slice().reverse().forEach((no) => {
 
 /* ---------- Ses: dun geceden kisa kayitlar (3 sehir) ---------- */
 
-const sesKaynak = document.getElementById("ses-kaynak");
-const sesSatirlari = [...document.querySelectorAll(".ses-satir")];
+const sesKaynak = document.getElementById("sound-kaynak");
+const sesSatirlari = [...document.querySelectorAll(".sound-row")];
 let calanSatir = null;
 
 function calmaDurdur() {
   sesSatirlari.forEach((s) => {
-    s.classList.remove("caliyor");
-    s.querySelector(".ses-cizgi span").style.width = "0%";
+    s.classList.remove("playing");
+    s.querySelector(".sound-line span").style.width = "0%";
   });
 }
 
 sesSatirlari.forEach((satir) => {
-  satir.querySelector(".ses-dugme").addEventListener("click", () => {
+  satir.querySelector(".sound-button").addEventListener("click", () => {
     if (calanSatir === satir && !sesKaynak.paused) {
       sesKaynak.pause();
       return;
@@ -260,16 +260,16 @@ sesSatirlari.forEach((satir) => {
 });
 
 sesKaynak.addEventListener("play", () => {
-  if (calanSatir) calanSatir.classList.add("caliyor");
+  if (calanSatir) calanSatir.classList.add("playing");
 });
 
 sesKaynak.addEventListener("pause", () => {
-  if (calanSatir) calanSatir.classList.remove("caliyor");
+  if (calanSatir) calanSatir.classList.remove("playing");
 });
 
 sesKaynak.addEventListener("timeupdate", () => {
   if (!calanSatir || !sesKaynak.duration) return;
-  calanSatir.querySelector(".ses-cizgi span").style.width =
+  calanSatir.querySelector(".sound-line span").style.width =
     (sesKaynak.currentTime / sesKaynak.duration) * 100 + "%";
 });
 
@@ -278,7 +278,7 @@ sesKaynak.addEventListener("ended", calmaDurdur);
 
 /* ---------- Ucuncu ekran: seritte akan afterhours kartlari ---------- */
 
-const k3Ray = document.getElementById("k3-ray");
+const k3Ray = document.getElementById("s3-rail");
 
 // Her gece bir cift: on yuz + arka yuz bitisik, sonra bosluk.
 // Dizi iki kez basilir; SVG id'leri cakismasin diye sayac devam eder.
@@ -286,21 +286,21 @@ for (let tekrar = 0; tekrar < 2; tekrar++) {
   KARTLAR.gece.forEach((gece, i) => {
     const sira = tekrar * KARTLAR.gece.length + i;
     const cift = document.createElement("div");
-    cift.className = "k3-cift";
+    cift.className = "s3-pair";
     cift.innerHTML = KARTLAR.on(gece, sira) + KARTLAR.arka(gece, sira);
     k3Ray.appendChild(cift);
   });
 }
 
-/* MEKANLAR mekanlar.js'te — hem ana sayfa hem maps kullaniyor */
+/* MEKANLAR venues.js'te — hem ana sayfa hem maps kullaniyor */
 
 
 /* ---------- Altinci ekran: footer ----------
    Zemin her zaman siyah. Saat kullanicinin kendi saati; sayac o an
    acik olan mekanlardan hesaplanir. */
 
-const k6Saat = document.getElementById("k6-saat");
-const k6Sayac = document.getElementById("k6-sayac");
+const k6Saat = document.getElementById("s6-clock");
+const k6Sayac = document.getElementById("s6-counter");
 
 document.body.dataset.footerTon = "koyu";   // menu ve ses bari tersine doner
 

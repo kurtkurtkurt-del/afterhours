@@ -5,7 +5,7 @@
    Ana sayfaya dokunmaz; sadece bu sayfada gecerlidir.
    --------------------------------------------------------------- */
 
-body.serit-sayfa {
+body.strip-page {
   overflow: hidden;
   --ust: 92px;
   --serit-bosluk: 14px;
@@ -13,7 +13,7 @@ body.serit-sayfa {
   --serit-h: calc((100vh - var(--ust) - 2 * var(--serit-bosluk)) / 3);
 }
 
-.seritler {
+.strips {
   position: fixed;
   top: 92px;
   left: 0;
@@ -24,7 +24,7 @@ body.serit-sayfa {
   gap: var(--serit-bosluk);
 }
 
-.serit {
+.strip {
   position: relative;
   flex: 1;
   display: flex;
@@ -33,7 +33,7 @@ body.serit-sayfa {
 }
 
 /* Kayan ray: icerik iki kez basilir, -%50'ye kayinca dikissiz doner */
-.ray {
+.rail {
   flex: 0 0 auto;          /* ray icerigi kadar genis olmali, yoksa -%50 dongusu kayar */
   display: flex;
   gap: 14px;
@@ -49,15 +49,15 @@ body.serit-sayfa {
 }
 
 /* Farkli hizlar, zit yonler */
-.serit:nth-child(1) .ray { animation-duration: 64s; }
-.serit:nth-child(2) .ray { animation-duration: 46s; animation-direction: reverse; }
-.serit:nth-child(3) .ray { animation-duration: 88s; }
+.strip:nth-child(1) .rail { animation-duration: 64s; }
+.strip:nth-child(2) .rail { animation-duration: 46s; animation-direction: reverse; }
+.strip:nth-child(3) .rail { animation-duration: 88s; }
 
 /* Fare bir posterin ustundeyken o serit durur */
-.serit:hover .ray,
-.serit.duruyor .ray { animation-play-state: paused; }
+.strip:hover .rail,
+.strip.stopped .rail { animation-play-state: paused; }
 
-.serit .poster {
+.strip .poster {
   flex: 0 0 auto;
   height: calc(var(--serit-h) * 0.86);   /* buyume payi icin %14 bosluk */
   width: auto;
@@ -65,15 +65,15 @@ body.serit-sayfa {
   transition: transform 0.22s ease;
 }
 
-.serit .poster:hover,
-.serit .poster.buyuk {
+.strip .poster:hover,
+.strip .poster.big {
   transform: scale(1.07);
   position: relative;
   z-index: 2;
 }
 
 /* Ortadaki sabit metin */
-.orta {
+.middle {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -86,6 +86,6 @@ body.serit-sayfa {
   text-align: center;
 }
 
-.orta .intro { max-width: none; }
-.orta .info { max-width: none; }
-.orta .explore-btn { margin-top: 34px; }
+.middle .intro { max-width: none; }
+.middle .info { max-width: none; }
+.middle .explore-btn { margin-top: 34px; }

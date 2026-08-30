@@ -3,27 +3,27 @@
    Sifre alani yok; olmayacak da.  */
 
 (function () {
-  const form = document.getElementById("giris-form");
-  const alan = document.getElementById("giris-eposta");
-  const sifreAlani = document.getElementById("giris-sifre");
-  const dugme = document.getElementById("giris-dugme");
-  const not = document.getElementById("giris-not");
-  const icerde = document.getElementById("giris-icerde");
-  const kim = document.getElementById("giris-kim");
-  const cik = document.getElementById("giris-cik");
+  const form = document.getElementById("page-form");
+  const alan = document.getElementById("page-eposta");
+  const sifreAlani = document.getElementById("page-sifre");
+  const dugme = document.getElementById("page-button");
+  const not = document.getElementById("page-note");
+  const icerde = document.getElementById("page-in");
+  const kim = document.getElementById("page-who");
+  const cik = document.getElementById("page-signout");
 
   const AYAR = window.AH_AYAR || {};
   const acik = Boolean(AYAR.url && AYAR.anonKey);
 
   function soyle(metin, tur) {
     not.textContent = metin || "";
-    not.className = "giris-not" + (tur ? " " + tur : "");
+    not.className = "page-note" + (tur ? " " + tur : "");
   }
 
   /* Backend henuz baglanmadiysa durust ol: form calismaz, sebebi yazilir. */
   if (!acik) {
     form.hidden = true;
-    soyle("sign-in opens when the backend does. nothing to sign into yet.", "bekliyor");
+    soyle("sign-in opens when the backend does. nothing to sign into yet.", "waiting");
     return;
   }
 
@@ -55,7 +55,7 @@
       return;
     }
     if (!sifre) {
-      soyle("your password is missing.", "hata");
+      soyle("your password is missing.", "error");
       sifreAlani.focus();
       return;
     }
@@ -73,7 +73,7 @@
   });
 
   cik.addEventListener("click", () => {
-    AH.cikis().then(() => { ekraniKur(); soyle("signed out.", "tamam"); });
+    AH.cikis().then(() => { ekraniKur(); soyle("signed out.", "ok"); });
   });
 
   /* Kullanici adi ve arkadaslar bir zamanlar buradaydi; friends&more

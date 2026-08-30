@@ -1,7 +1,7 @@
 # afterhours — backend
 
 Veritabani, kurallar, yonetim paneli ve bunlari sinayan testler.
-Site (ust klasor) bunlar olmadan da calisir: `ayar.js` bos oldugu surece
+Site (ust klasor) bunlar olmadan da calisir: `config.js` bos oldugu surece
 veri `events-data.js`'ten okunur ve hicbir sey degismez.
 
 ## Dosyalar
@@ -83,12 +83,12 @@ Bu satiri SQL Editor'den calistirmak zorundasin: kimse kendini
 tarayicidan yonetici yapamiyor, kural bunu engelliyor.
 
 **4 · Anahtarlari al** — Project Settings → API. Iki deger var:
-- `Project URL` ve `anon public` → `ayar.js`'e yazilir. Bunlar aciktir,
+- `Project URL` ve `anon public` → `config.js`'e yazilir. Bunlar aciktir,
   herkes gorebilir, sorun degil.
 - `service_role` → **hicbir yere yazilmaz.** Bu anahtar butun kurallari
   atlar. Tarayiciya konursa veritabani herkese acilir.
 
-**5 · `ayar.js`'i doldur** (ust klasorde):
+**5 · `config.js`'i doldur** (ust klasorde):
 
 ```js
 window.AH_AYAR = {

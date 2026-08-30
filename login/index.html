@@ -22,11 +22,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=111" />
+  <link rel="stylesheet" href="../style.css?v=115" />
 </head>
 <body>
 
-  <a class="atla" href="#icerik">skip to the content</a>
+  <a class="skip" href="#content">skip to the content</a>
 
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
@@ -40,70 +40,70 @@
     </nav>
   </header>
 
-  <main id="icerik" tabindex="-1" class="giris hesap-sayfa">
-   <div class="hs-sol">
-    <h1 class="giris-baslik">good to see you<br />again.</h1>
+  <main id="content" tabindex="-1" class="page account-page">
+   <div class="sc-left">
+    <h1 class="page-title">good to see you<br />again.</h1>
 
-    <form class="giris-form" id="giris-form" novalidate>
-      <label class="giris-etiket" for="giris-eposta">your email</label>
-      <input class="giris-alan" id="giris-eposta" type="email" name="email"
+    <form class="page-form" id="page-form" novalidate>
+      <label class="page-label" for="giris-eposta">your email</label>
+      <input class="page-field" id="page-eposta" type="email" name="email"
              autocomplete="username" placeholder="you@example.com" required />
 
-      <label class="giris-etiket" for="giris-sifre">your password</label>
-      <input class="giris-alan" id="giris-sifre" type="password" name="password"
+      <label class="page-label" for="giris-sifre">your password</label>
+      <input class="page-field" id="page-sifre" type="password" name="password"
              autocomplete="current-password" placeholder="••••••••" required />
 
-      <button class="giris-dugme" id="giris-dugme" type="submit">sign in</button>
+      <button class="page-button" id="page-button" type="submit">sign in</button>
     </form>
 
-    <p class="giris-not" id="giris-not"></p>
+    <p class="page-note" id="page-note"></p>
 
-    <div class="giris-icerde" id="giris-icerde" hidden>
-      <p class="giris-kim" id="giris-kim"></p>
+    <div class="page-in" id="page-in" hidden>
+      <p class="page-who" id="page-who"></p>
 
-      <button class="giris-cik" id="giris-cik" type="button">sign out</button>
+      <button class="page-signout" id="page-signout" type="button">sign out</button>
     </div>
    </div>
 
    <!-- Girisin yanindaki iki kisa yol; basliklariyla ayni satirda.
-        Ortadaki oturuma gore degisiyor (login/hesap.js). -->
-   <section class="hs-yol">
-     <div id="hs-disarida">
-       <h2 class="hs-baslik">first<br />time?</h2>
-       <p class="hs-alt">register to afterhours</p>
-       <a class="hs-link" href="../register/index.html">here you go</a>
+        Ortadaki oturuma gore degisiyor (login/shortcuts.js). -->
+   <section class="sc-item">
+     <div id="sc-out">
+       <h2 class="sc-title">first<br />time?</h2>
+       <p class="sc-sub">register to afterhours</p>
+       <a class="sc-link" href="../register/index.html">here you go</a>
      </div>
 
-     <div id="hs-icerde" hidden>
-       <h2 class="hs-baslik">account<br />settings.</h2>
-       <p class="hs-alt">control your profile</p>
-       <a class="hs-link" href="../settings/index.html">settings</a>
+     <div id="sc-in" hidden>
+       <h2 class="sc-title">account<br />settings.</h2>
+       <p class="sc-sub">control your profile</p>
+       <a class="sc-link" href="../settings/index.html">settings</a>
      </div>
    </section>
 
-   <section class="hs-yol">
-     <h2 class="hs-baslik">give<br />feedback.</h2>
-     <p class="hs-alt">tell us what is missing</p>
-     <a class="hs-link" href="../feedback/index.html">help us</a>
+   <section class="sc-item">
+     <h2 class="sc-title">give<br />feedback.</h2>
+     <p class="sc-sub">tell us what is missing</p>
+     <a class="sc-link" href="../feedback/index.html">help us</a>
    </section>
   </main>
 
 
-  <footer class="dipnot">
-    <p class="dipnot-ad">&copy; 2026 afterhours</p>
-    <nav class="dipnot-linkler">
+  <footer class="foot">
+    <p class="foot-name">&copy; 2026 afterhours</p>
+    <nav class="foot-links">
       <a href="../impressum/index.html">impressum</a>
       <a href="../datenschutz/index.html">datenschutz</a>
       <a href="../agb/index.html">agb</a>
     </nav>
   </footer>
 
-  <script src="../ayar.js?v=111"></script>
-  <script src="../oturum.js?v=111"></script>
-  <script src="../menu.js?v=111"></script>
-  <script src="../veri.js?v=111"></script>
-  <script src="login.js?v=111"></script>
-  <script src="hesap.js?v=111"></script>
+  <script src="../config.js?v=115"></script>
+  <script src="../session.js?v=115"></script>
+  <script src="../menu.js?v=115"></script>
+  <script src="../data.js?v=115"></script>
+  <script src="login.js?v=115"></script>
+  <script src="shortcuts.js?v=115"></script>
 
 </body>
 </html>

@@ -12,55 +12,55 @@
   const AH = (window.AH = window.AH || {});
   const el = (id) => document.getElementById(id);
 
-  const form = el("gb-form");
-  const metin = el("gb-metin");
-  const durum = el("gb-durum");
+  const form = el("fb-form");
+  const metin = el("fb-text");
+  const durum = el("fb-status");
   if (!form || !metin) return;
 
   let tur = "broken";
 
   function soyle(yazi, cesit) {
     durum.textContent = yazi || "";
-    durum.className = "hesap-durum" + (cesit ? " " + cesit : "");
+    durum.className = "account-status" + (cesit ? " " + cesit : "");
   }
 
   /* --- konu secimi --- */
-  const turKutu = el("gb-tur");
+  const turKutu = el("fb-kind");
   [...turKutu.querySelectorAll("button")].forEach((d) => {
     d.onclick = () => {
       tur = d.dataset.deger;
       [...turKutu.querySelectorAll("button")].forEach((x) =>
-        x.classList.toggle("secili", x === d));
+        x.classList.toggle("selected", x === d));
     };
   });
-  turKutu.querySelector("button").classList.add("secili");
+  turKutu.querySelector("button").classList.add("selected");
 
   /* --- sayac: sinira yaklasinca gorunuyor --- */
   metin.addEventListener("input", () => {
     const n = metin.value.trim().length;
-    el("gb-sayac").textContent = n > 1700 ? (2000 - n) + " characters left" : "";
+    el("fb-counter").textContent = n > 1700 ? (2000 - n) + " characters left" : "";
     if (durum.textContent) soyle("");
   });
 
   /* --- gonder --- */
-  el("gb-yolla").onclick = function () {
+  el("fb-yolla").onclick = function () {
     const yazi = metin.value.trim();
     if (yazi.length < 10) {
-      soyle("a few more words, so it can be acted on.", "hata");
+      soyle("a few more words, so it can be acted on.", "error");
       metin.focus();
       return;
     }
     if (!AH.istek) {
-      soyle("this opens when the backend does.", "hata");
+      soyle("this opens when the backend does.", "error");
       return;
     }
 
     const govde = { kind: tur, body: yazi };
-    const iletisim = el("gb-iletisim").value.trim();
+    const iletisim = el("fb-iletisim").value.trim();
     if (iletisim && !AH.girisliMi()) govde.contact = iletisim;
 
     soyle("sending…");
-    el("gb-yolla").disabled = true;
+    el("fb-yolla").disabled = true;
 
     AH.istek("/feedback", {
       method: "POST",
@@ -69,21 +69,21 @@
     })
       .then(() => {
         form.hidden = true;
-        el("gb-tesekkur").hidden = false;
+        el("fb-thanks").hidden = false;
         window.scrollTo({ top: 0, behavior: "smooth" });
       })
       .catch((h) => {
-        el("gb-yolla").disabled = false;
+        el("fb-yolla").disabled = false;
         soyle(AH.hataMetni(h, "couldn't send it. the words are still here."), "hata");
       });
   };
 
-  el("gb-yeniden").onclick = function () {
+  el("fb-again").onclick = function () {
     metin.value = "";
-    el("gb-sayac").textContent = "";
-    el("gb-yolla").disabled = false;
+    el("fb-counter").textContent = "";
+    el("fb-yolla").disabled = false;
     soyle("");
-    el("gb-tesekkur").hidden = true;
+    el("fb-thanks").hidden = true;
     form.hidden = false;
     metin.focus();
   };
@@ -92,8 +92,8 @@
   function ekraniKur() {
     const girisli = Boolean(AH.girisliMi && AH.girisliMi());
     const eposta = AH.oturum && AH.oturum.kullanici && AH.oturum.kullanici.email;
-    el("gb-iletisim").hidden = girisli;
-    el("gb-iletisim-not").textContent = girisli
+    el("fb-iletisim").hidden = girisli;
+    el("fb-iletisim-note").textContent = girisli
       ? "You are signed in" + (eposta ? " as " + eposta : "") +
         ", so we already know where to find you."
       : "Optional. Leave it out and the message still gets read — there just will " +

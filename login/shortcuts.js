@@ -10,8 +10,8 @@
 (function () {
   const AH = (window.AH = window.AH || {});
 
-  const disarida = document.getElementById("hs-disarida");
-  const icerde = document.getElementById("hs-icerde");
+  const disarida = document.getElementById("sc-out");
+  const icerde = document.getElementById("sc-in");
   if (!disarida || !icerde || !AH.oturumHazir) return;
 
   function bak() {

@@ -3,19 +3,19 @@
    Hicbir animasyon dongusu yok: kureyi degistirmesinin sebebi de bu,
    o her karede yuzlerce bina ciziyordu.
 
-   Nokta konumu mekanin koordinatindan (mekanlar.js) geliyor. Ayni
+   Nokta konumu mekanin koordinatindan (venues.js) geliyor. Ayni
    mekanda birden fazla gece varsa ust uste binmesinler diye slug'dan
    uretilen sabit bir kaydirma uygulaniyor — her acilista ayni yerde. */
 
 (function () {
   const NS = "http://www.w3.org/2000/svg";
-  const katman = document.getElementById("ha-noktalar");
-  const sema = document.getElementById("ha-sema");
-  const kart = document.getElementById("ha-kart");
-  const kartTur = document.getElementById("ha-kart-tur");
-  const kartAd = document.getElementById("ha-kart-ad");
-  const kartMeta = document.getElementById("ha-kart-meta");
-  const dip = document.getElementById("ha-dip");
+  const katman = document.getElementById("map-noktalar");
+  const sema = document.getElementById("map-schema");
+  const kart = document.getElementById("map-card");
+  const kartTur = document.getElementById("map-card-kind");
+  const kartAd = document.getElementById("map-card-name");
+  const kartMeta = document.getElementById("map-card-meta");
+  const dip = document.getElementById("map-footline");
   if (!katman) return;
 
   const kartlar = window.POSTERS || [];
@@ -59,20 +59,20 @@
     const k = kaydir(e.slug);
     const g = document.createElementNS(NS, "a");
     g.setAttribute("href", "../explore/" + e.slug + "/index.html");
-    g.setAttribute("class", "ha-nokta");
+    g.setAttribute("class", "map-dot");
 
     /* Buyuk gorunmez daire: fareyle yakalamasi kolay olsun */
     const hedef = document.createElementNS(NS, "circle");
     hedef.setAttribute("cx", m.x + k.dx);
     hedef.setAttribute("cy", m.y + k.dy);
     hedef.setAttribute("r", 13);
-    hedef.setAttribute("class", "ha-nokta-hedef");
+    hedef.setAttribute("class", "map-dot-target");
 
     const daire = document.createElementNS(NS, "circle");
     daire.setAttribute("cx", m.x + k.dx);
     daire.setAttribute("cy", m.y + k.dy);
     daire.setAttribute("r", 5.2);
-    daire.setAttribute("class", "ha-nokta-daire");
+    daire.setAttribute("class", "map-dot-circle");
 
     g.appendChild(hedef);
     g.appendChild(daire);
@@ -82,9 +82,9 @@
       kartTur.textContent = (e.tur || "").toUpperCase();
       kartAd.textContent = e.baslik;
       kartMeta.textContent = e.meta;
-      g.classList.add("ustunde");
+      g.classList.add("over");
     };
-    const gizle = () => { kart.hidden = true; g.classList.remove("ustunde"); };
+    const gizle = () => { kart.hidden = true; g.classList.remove("over"); };
 
     g.addEventListener("mouseenter", goster);
     g.addEventListener("mouseleave", gizle);

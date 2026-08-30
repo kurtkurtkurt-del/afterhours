@@ -2,10 +2,10 @@
 """afterhours — etkinlik sayfalarinin kabugunu uretir.
 
 Her gecenin sayfasi ayni: menu, bos <main class="ks">, dipnot, betikler.
-Icerigi explore/etkinlik.js kuruyor. Yeni bir gece eklemek icin
+Icerigi explore/event.js kuruyor. Yeni bir gece eklemek icin
 events-data.js'e satiri yaz ve bu betigi calistir:
 
-    python3 tools-etkinlik.py
+    python3 tools-event-pages.py
 """
 import pathlib, re, sys
 
@@ -54,7 +54,7 @@ KABUK = """<!DOCTYPE html>
     </nav>
   </header>
 
-  <!-- Icerigi explore/etkinlik.js kuruyor: duzen tek, gece basina degisen
+  <!-- Icerigi explore/event.js kuruyor: duzen tek, gece basina degisen
        her sey etkinligin kendi verisinden ve tur havuzlarindan geliyor. -->
   <main id="icerik" tabindex="-1" class="ks"></main>
 
@@ -67,14 +67,14 @@ KABUK = """<!DOCTYPE html>
     </nav>
   </footer>
 
-  <script src="../../kartlar.js?v={v}"></script>
-  <script src="../etkinlik-veri.js?v={v}"></script>
-  <script src="../../ayar.js?v={v}"></script>
-  <script src="../../oturum.js?v={v}"></script>
+  <script src="../../cards.js?v={v}"></script>
+  <script src="../event-data.js?v={v}"></script>
+  <script src="../../config.js?v={v}"></script>
+  <script src="../../session.js?v={v}"></script>
   <script src="../../menu.js?v={v}"></script>
-  <script src="../../veri.js?v={v}"
+  <script src="../../data.js?v={v}"
           data-yedek="../../events-data.js?v={v}"
-          data-sonra="../etkinlik.js?v={v}"></script>
+          data-sonra="../event.js?v={v}"></script>
 
 </body>
 </html>

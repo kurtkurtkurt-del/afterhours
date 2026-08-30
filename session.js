@@ -6,13 +6,13 @@
    Adres cubugundaki #access_token=... yakalanip saklaniyor, sonra
    adresten siliniyor ki jeton gecmiste durmasin.
 
-   ayar.js bos ise burasi sessizce devre disi kalir.  */
+   config.js bos ise burasi sessizce devre disi kalir.  */
 
 (function () {
   const AH = (window.AH = window.AH || {});
   const AYAR = window.AH_AYAR || {};
 
-  /* veri.js ile ayni gelistirme yonlendirmesi; sadece localhost'ta. */
+  /* data.js ile ayni gelistirme yonlendirmesi; sadece localhost'ta. */
   if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
     const p = new URLSearchParams(location.search).get("backend");
     if (p) { AYAR.url = p; AYAR.anonKey = AYAR.anonKey || "yerel"; }

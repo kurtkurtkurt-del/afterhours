@@ -9,8 +9,8 @@ Her gece icin 1200x630 bir kart uretiliyor: solda gecenin KENDI posteri,
 sagda adi ve satiri. Poster SVG oldugu icin once headless Chrome ile
 PNG'ye cevriliyor (PIL SVG okumuyor).
 
-    python3 tools-onizleme.py            # hepsi
-    python3 tools-onizleme.py asap-rocky # tek gece
+    python3 tools-previews.py            # hepsi
+    python3 tools-previews.py asap-rocky # tek gece
 """
 import pathlib, re, subprocess, sys, tempfile, urllib.request
 

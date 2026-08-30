@@ -6,7 +6,7 @@
 
 import { readFile } from "node:fs/promises";
 
-const metin = await readFile(new URL("../../ayar.js", import.meta.url), "utf8");
+const metin = await readFile(new URL("../../config.js", import.meta.url), "utf8");
 const kutu = {};
 new Function("window", metin)(kutu);
 const ayar = kutu.AH_AYAR || {};

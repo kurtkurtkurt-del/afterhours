@@ -3,7 +3,7 @@
    one geliyor. Sagi begenmek, solu gecmek. */
 
 (function () {
-  const deste = document.getElementById("ex-deste");
+  const deste = document.getElementById("ex-deck");
   if (!deste) return;
 
   const ESIK = 120;              // px
@@ -19,11 +19,11 @@
   /* --- Saga atilanlar burada birikir --- */
 
   const tutulan = [];
-  const kutu = document.querySelector(".ex-kutu");
-  const kutuDugme = document.getElementById("ex-kutu-dugme");
-  const kutuListe = document.getElementById("ex-kutu-liste");
-  const kutuIcerik = document.getElementById("ex-kutu-icerik");
-  const rozet = document.getElementById("ex-rozet");
+  const kutu = document.querySelector(".ex-box");
+  const kutuDugme = document.getElementById("ex-box-button");
+  const kutuListe = document.getElementById("ex-box-list");
+  const kutuIcerik = document.getElementById("ex-box-body");
+  const rozet = document.getElementById("ex-badge");
 
   function tut(etkinlik) {
     if (tutulan.some((e) => e.slug === etkinlik.slug)) return;
@@ -31,10 +31,10 @@
     if (!rozet) return;
     rozet.textContent = String(tutulan.length);
     rozet.hidden = false;
-    if (kutu) kutu.classList.add("dolu");
-    rozet.classList.remove("artti");
+    if (kutu) kutu.classList.add("taken");
+    rozet.classList.remove("up");
     void rozet.offsetWidth;          /* animasyonu bastan baslat */
-    rozet.classList.add("artti");
+    rozet.classList.add("up");
     if (kutuListe && !kutuListe.hidden) kutuyuYaz();
   }
 
@@ -43,7 +43,7 @@
     kutuIcerik.textContent = "";
     if (!tutulan.length) {
       const p = document.createElement("p");
-      p.className = "ex-kutu-bos";
+      p.className = "ex-box-empty";
       p.textContent = "nothing kept yet. swipe a card right to keep it.";
       kutuIcerik.appendChild(p);
       return;
@@ -53,7 +53,7 @@
       const no = String(e.poster || KARTLAR.indexOf(e) + 1).padStart(2, "0");
       const yol = e.posterYolu || "../posters/" + no + ".svg";
       const a = document.createElement("a");
-      a.className = "ex-kutu-satir";
+      a.className = "ex-box-row";
       a.href = e.slug + "/index.html";
       const g = document.createElement("object");
       g.type = "image/svg+xml";
@@ -61,10 +61,10 @@
       a.appendChild(g);
       const yazi = document.createElement("div");
       const ad = document.createElement("p");
-      ad.className = "ex-kutu-ad";
+      ad.className = "ex-box-name";
       ad.textContent = e.baslik;
       const meta = document.createElement("p");
-      meta.className = "ex-kutu-meta";
+      meta.className = "ex-box-meta";
       meta.textContent = e.meta;
       yazi.appendChild(ad);
       yazi.appendChild(meta);
@@ -105,8 +105,8 @@
     /* Her iki yon de kaydediliyor: sag biriktirmek, sol "bir daha gosterme".
        Girisliyken veritabanina, degilse tarayiciya. */
     if (window.AH && AH.atisKaydet) AH.atisKaydet(atilan, yon);
-    kart.classList.remove("tutuluyor");
-    kart.classList.add("yumusak");
+    kart.classList.remove("held");
+    kart.classList.add("soft");
     kart.style.transform = "translateX(" + (yon * 120) + "vw) rotate(" + (yon * 22) + "deg)";
     kart.style.opacity = "0";
 
@@ -142,7 +142,7 @@
     const no = String(KARTLAR[i].poster || i + 1).padStart(2, "0");
     const yol = KARTLAR[i].posterYolu || "../posters/" + no + ".svg";
     const kart = document.createElement("div");
-    kart.className = "ex-kart";
+    kart.className = "ex-card";
     kart.dataset.no = String(i);
 
     const gorsel = document.createElement("object");
@@ -154,9 +154,9 @@
        Veri events-data.js'ten, poster ile hic celismesin diye. */
     const veri = KARTLAR[i];
     const bilgi = document.createElement("div");
-    bilgi.className = "ex-bilgi";
+    bilgi.className = "ex-info";
     const tur = document.createElement("p");
-    tur.className = "ex-tur";
+    tur.className = "ex-kind";
     tur.textContent = veri.tur;
     const meta = document.createElement("p");
     meta.className = "ex-meta";
@@ -171,8 +171,8 @@
       if (kart !== deste.lastElementChild) return;
       baslangicX = e.clientX;
       dx = 0;
-      kart.classList.add("tutuluyor");
-      kart.classList.remove("yumusak");
+      kart.classList.add("held");
+      kart.classList.remove("soft");
       try { kart.setPointerCapture(e.pointerId); } catch (_) {}
     });
 
@@ -185,8 +185,8 @@
     function birak() {
       if (baslangicX === null) return;
       baslangicX = null;
-      kart.classList.remove("tutuluyor");
-      kart.classList.add("yumusak");
+      kart.classList.remove("held");
+      kart.classList.add("soft");
 
       if (Math.abs(dx) > ESIK) {
         ucur(kart, dx > 0 ? 1 : -1);
@@ -202,15 +202,15 @@
 
   /* --- Ustteki kartin yorumlari --- */
 
-  const yorumAlani = document.getElementById("ex-yorum-liste");
+  const yorumAlani = document.getElementById("ex-comment-list");
 
   /* Basliga basinca yorum alani acilip kapanir; kapaninca
      sutun daralir ve deste ortaya dogru genisler. */
-  const yorumDugme = document.getElementById("ex-yorum-dugme");
-  const alan = document.querySelector(".ex-alan");
+  const yorumDugme = document.getElementById("ex-comment-button");
+  const alan = document.querySelector(".ex-field");
   if (yorumDugme && alan) {
     yorumDugme.addEventListener("click", () => {
-      const kapali = alan.classList.toggle("yorum-kapali");
+      const kapali = alan.classList.toggle("comment-closed");
       yorumDugme.setAttribute("aria-expanded", String(!kapali));
     });
   }
@@ -224,26 +224,26 @@
 
   function konuYap(konu) {
     const k = document.createElement("div");
-    k.className = "y-konu";
+    k.className = "c-topic";
     const ust = document.createElement("div");
-    ust.className = "y-ust";
-    ust.appendChild(satir("y-kim", konu.kim));
-    ust.appendChild(satir("y-zaman", konu.zaman));
+    ust.className = "c-top";
+    ust.appendChild(satir("c-who", konu.kim));
+    ust.appendChild(satir("c-when", konu.zaman));
     k.appendChild(ust);
-    k.appendChild(satir("y-metin", konu.metin));
+    k.appendChild(satir("c-text", konu.metin));
 
     if (konu.cevaplar && konu.cevaplar.length) {
       const c = document.createElement("div");
-      c.className = "y-cevaplar";
+      c.className = "c-replies";
       konu.cevaplar.forEach((cev) => {
         const kutu = document.createElement("div");
-        kutu.className = "y-cevap";
+        kutu.className = "c-reply";
         const u = document.createElement("div");
-        u.className = "y-ust";
-        u.appendChild(satir("y-kim", cev.kim));
-        u.appendChild(satir("y-zaman", cev.zaman));
+        u.className = "c-top";
+        u.appendChild(satir("c-who", cev.kim));
+        u.appendChild(satir("c-when", cev.zaman));
         kutu.appendChild(u);
-        kutu.appendChild(satir("y-metin", cev.metin));
+        kutu.appendChild(satir("c-text", cev.metin));
         c.appendChild(kutu);
       });
       k.appendChild(c);
@@ -253,8 +253,8 @@
 
   function grupYap(baslik, konular, eski) {
     const g = document.createElement("div");
-    g.className = "y-grup" + (eski ? " eski" : "");
-    g.appendChild(satir("y-grup-baslik", baslik));
+    g.className = "c-group" + (eski ? " old" : "");
+    g.appendChild(satir("c-group-title", baslik));
     konular.forEach((konu) => g.appendChild(konuYap(konu)));
     return g;
   }
@@ -263,12 +263,12 @@
      yok); acikken ama girissizken tek satirlik bir davet. */
   function yazmaAlani(etkinlik) {
     const sarmal = document.createElement("div");
-    sarmal.className = "y-yaz";
+    sarmal.className = "c-write";
     if (!(window.AH && AH.yorumBackendAcik && AH.yorumBackendAcik())) return sarmal;
 
     if (!AH.yorumYazilabilir()) {
       const d = document.createElement("a");
-      d.className = "y-yaz-davet";
+      d.className = "c-write-invite";
       d.href = "../login/index.html";
       d.textContent = "sign in to say something";
       sarmal.appendChild(d);
@@ -276,17 +276,17 @@
     }
 
     const kutu = document.createElement("textarea");
-    kutu.className = "y-yaz-alan";
+    kutu.className = "c-write-field";
     kutu.rows = 2;
     kutu.placeholder = "say something about this night";
 
     const dugme = document.createElement("button");
-    dugme.className = "y-yaz-dugme";
+    dugme.className = "c-write-button";
     dugme.type = "button";
     dugme.textContent = "post";
 
     const durum = document.createElement("p");
-    durum.className = "y-yaz-durum";
+    durum.className = "c-write-status";
 
     dugme.addEventListener("click", () => {
       const metin = kutu.value.trim();
@@ -309,7 +309,7 @@
     if (!yorumAlani) return;
     const ust = deste.lastElementChild;
 
-    /* Yorumlar canliyken veritabanindan, degilse yorumlar.js'ten gelir;
+    /* Yorumlar canliyken veritabanindan, degilse comment-pools.js'ten gelir;
        ikisi de ayni bicimi dondurur, ekran ayni kalir. */
     const kaynak = (etkinlik) =>
       window.AH && AH.yorumlariGetir
@@ -319,9 +319,9 @@
     const doldurYorum = () => {
       if (!ust) {
         yorumAlani.textContent = "";
-        yorumAlani.appendChild(satir("y-yok", "nothing left to talk about tonight."));
+        yorumAlani.appendChild(satir("c-none", "nothing left to talk about tonight."));
         yorumAlani.scrollTop = 0;
-        yorumAlani.classList.remove("solgun");
+        yorumAlani.classList.remove("faded");
         return;
       }
 
@@ -334,16 +334,16 @@
         if (yeni.length) yorumAlani.appendChild(grupYap("this week", yeni, false));
         if (eski.length) yorumAlani.appendChild(grupYap("from earlier nights", eski, true));
         if (!yeni.length && !eski.length) {
-          yorumAlani.appendChild(satir("y-yok", "nobody has said anything yet."));
+          yorumAlani.appendChild(satir("c-none", "nobody has said anything yet."));
         }
         yorumAlani.scrollTop = 0;
-        yorumAlani.classList.remove("solgun");
+        yorumAlani.classList.remove("faded");
       });
     };
 
     /* Kart degisince yazi da degissin: once soner, sonra yenisi gelir */
     if (yorumAlani.children.length) {
-      yorumAlani.classList.add("solgun");
+      yorumAlani.classList.add("faded");
       setTimeout(doldurYorum, 200);
     } else {
       doldurYorum();
@@ -366,7 +366,7 @@
       sira++;
     }
     katmanla();
-    document.getElementById("ex-bitti").classList.toggle("acik", deste.children.length === 0);
+    document.getElementById("ex-done").classList.toggle("open", deste.children.length === 0);
     yorumlariBas();
   }
 
@@ -435,7 +435,7 @@
   }
 
   function yenidenDagit(mod) {
-    const bitti = document.getElementById("ex-bitti");
+    const bitti = document.getElementById("ex-done");
     if (bitti && mod) bitti.textContent = BOS_MESAJ[mod] || BOS_MESAJ["global deck"];
 
     return kaynakGetir(mod || "global deck").then((liste) => {
@@ -459,7 +459,7 @@
     const kartlar = [...deste.children];
     kartlar.forEach((k) => {
       k.dataset.sonHal = k.style.transform || "";
-      k.classList.remove("yumusak");
+      k.classList.remove("soft");
       k.style.transition = "none";
       k.style.transform = "translate(-46vw, -7vh) rotate(-17deg)";
       k.style.opacity = "0";
@@ -480,7 +480,7 @@
        dolunca son hali elle yaz. Elde tutulan karta dokunma. */
     setTimeout(() => {
       kartlar.forEach((k) => {
-        if (!k.isConnected || k.classList.contains("tutuluyor")) return;
+        if (!k.isConnected || k.classList.contains("held")) return;
         k.style.transition = "";
         k.style.transform = k.dataset.sonHal;
         k.style.opacity = "1";
@@ -493,14 +493,14 @@
   AH.desteyiYenile = (mod) => yenidenDagit(mod || secilenMod());
 
   function secilenMod() {
-    const d = document.querySelector(".ex-mod.secili");
+    const d = document.querySelector(".ex-mode.selected");
     return d ? d.textContent.trim() : "global deck";
   }
 
-  document.querySelectorAll(".ex-mod").forEach((dugme) => {
+  document.querySelectorAll(".ex-mode").forEach((dugme) => {
     dugme.addEventListener("click", () => {
-      document.querySelectorAll(".ex-mod").forEach((d) => {
-        d.classList.toggle("secili", d === dugme);
+      document.querySelectorAll(".ex-mode").forEach((d) => {
+        d.classList.toggle("selected", d === dugme);
         if (d === dugme) d.setAttribute("aria-current", "true");
         else d.removeAttribute("aria-current");
       });
@@ -510,7 +510,7 @@
 
   /* --- desteyi sifirla --- */
 
-  const sifirlaDugmesi = document.getElementById("ex-sifirla");
+  const sifirlaDugmesi = document.getElementById("ex-reset");
   if (sifirlaDugmesi) {
     sifirlaDugmesi.addEventListener("click", () => {
       if (!window.AH || !AH.atislariSifirla) return;
@@ -524,7 +524,7 @@
         /* Ekrandaki izleri de sil */
         tutulan.length = 0;
         if (rozet) { rozet.textContent = "0"; rozet.hidden = true; }
-        if (kutu) kutu.classList.remove("dolu");
+        if (kutu) kutu.classList.remove("taken");
         if (kutuListe) kutuyuAc(false);
         atlanacak.clear();
         if (bitti) bitti.textContent = "that's everyone for tonight.";

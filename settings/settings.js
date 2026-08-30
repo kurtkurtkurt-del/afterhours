@@ -10,17 +10,17 @@
 (function () {
   const AH = (window.AH = window.AH || {});
 
-  const disarida = document.getElementById("ay-disarida");
-  const icerde = document.getElementById("ay-icerde");
+  const disarida = document.getElementById("set-out");
+  const icerde = document.getElementById("set-in");
   if (!disarida || !icerde) return;
 
   const el = (id) => document.getElementById(id);
-  const handleAlan = el("ay-handle");
-  const handleDurum = el("ay-handle-durum");
-  const adAlan = el("ay-ad");
-  const bioAlan = el("ay-bio");
-  const sehirKutu = el("ay-sehir");
-  const durum = el("ay-durum");
+  const handleAlan = el("set-handle");
+  const handleDurum = el("set-handle-status");
+  const adAlan = el("set-name");
+  const bioAlan = el("set-bio");
+  const sehirKutu = el("set-city");
+  const durum = el("set-status");
 
   let profil = null;      /* profile_me()’den gelen satir */
   let sehir = null;       /* secili sehir slug’i */
@@ -32,16 +32,16 @@
 
   function soyle(kutu, metin, tur) {
     kutu.textContent = metin || "";
-    kutu.className = "hesap-durum" + (tur ? " " + tur : "");
+    kutu.className = "account-status" + (tur ? " " + tur : "");
   }
 
   /* --- iki secenekli satirlar: secili olan koyu, digeri soluk --- */
 
   function secimKur(kutu, deger, yaz) {
     [...kutu.querySelectorAll("button")].forEach((d) => {
-      d.classList.toggle("secili", d.dataset.deger === String(deger));
+      d.classList.toggle("selected", d.dataset.deger === String(deger));
       d.onclick = () => {
-        if (d.classList.contains("secili")) return;
+        if (d.classList.contains("selected")) return;
         yaz(d.dataset.deger).then(() => secimKur(kutu, d.dataset.deger, yaz));
       };
     });
@@ -56,7 +56,7 @@
       headers: { Prefer: "return=representation" },
       body: JSON.stringify(govde),
     })
-      .then(() => soyle(durum, "saved.", "tamam"))
+      .then(() => soyle(durum, "saved.", "ok"))
       .catch((h) => soyle(durum, AH.hataMetni(h, "couldn't save that."), "hata"));
   }
 
@@ -79,16 +79,16 @@
         });
 
         const isaretle = () => [...sehirKutu.querySelectorAll("button")]
-          .forEach((x) => x.classList.toggle("secili", x.dataset.deger === sehir));
+          .forEach((x) => x.classList.toggle("selected", x.dataset.deger === sehir));
 
         gruplar.forEach((g) => {
           const ad = document.createElement("p");
-          ad.className = "ay-ulke";
+          ad.className = "set-country";
           ad.textContent = (g.ulke || "").toLowerCase();
           sehirKutu.appendChild(ad);
 
           const satir = document.createElement("div");
-          satir.className = "ay-secim";
+          satir.className = "set-choice";
           g.sehirler.forEach((c) => {
             const d = document.createElement("button");
             d.type = "button";
@@ -103,7 +103,7 @@
         isaretle();
 
         /* Secili sehir listenin ortasindaysa kutu onu gostersin */
-        const acik = sehirKutu.querySelector("button.secili");
+        const acik = sehirKutu.querySelector("button.selected");
         if (acik) sehirKutu.scrollTop = Math.max(0, acik.offsetTop - 40);
       })
       .catch(() => { sehirKutu.textContent = ""; });
@@ -124,7 +124,7 @@
     bekleyen = setTimeout(() => {
       cagir("handle_status", { p_handle: h })
         .then((c) => soyle(handleDurum, SOZ[skaler(c)] || "",
-          skaler(c) === "dolu" || skaler(c) === "bicim" ? "hata" : "tamam"))
+          skaler(c) === "taken" || skaler(c) === "bicim" ? "error" : "ok"))
         .catch(() => soyle(handleDurum, ""));
     }, 300);
   });
@@ -137,7 +137,7 @@
     sehir: "that city isn't on the list.", giris: "sign in again.",
   };
 
-  el("ay-kaydet").onclick = function () {
+  el("set-save").onclick = function () {
     soyle(durum, "saving…");
     cagir("profile_setup", {
       p_handle: handleAlan.value.trim(),
@@ -147,7 +147,7 @@
     })
       .then((c) => {
         const s = skaler(c);
-        soyle(durum, YANIT[s] || String(s), s === "ok" ? "tamam" : "hata");
+        soyle(durum, YANIT[s] || String(s), s === "ok" ? "ok" : "error");
         if (s === "ok") yukle();
       })
       .catch((h) => soyle(durum, AH.hataMetni(h, "couldn't save that."), "hata"));
@@ -155,23 +155,23 @@
 
   /* --- cikis --- */
 
-  el("ay-cik").onclick = function () {
+  el("set-signout").onclick = function () {
     AH.oturumuBirak();
     location.href = "../login/index.html";
   };
 
   /* --- hesabi silme: iki adim, ikincisinde kendi adini yazmak var --- */
 
-  const silDurum = el("ay-sil-durum");
-  el("ay-sil").onclick = function () {
-    el("ay-onay").hidden = false;
-    el("ay-onay-alan").focus();
+  const silDurum = el("set-delete-status");
+  el("set-delete").onclick = function () {
+    el("set-confirm").hidden = false;
+    el("set-confirm-field").focus();
   };
 
-  el("ay-onay-dugme").onclick = function () {
-    const yazilan = el("ay-onay-alan").value.trim().toLowerCase();
+  el("set-confirm-button").onclick = function () {
+    const yazilan = el("set-confirm-field").value.trim().toLowerCase();
     if (!profil || !profil.handle || yazilan !== profil.handle) {
-      soyle(silDurum, "type your handle exactly.", "hata");
+      soyle(silDurum, "type your handle exactly.", "error");
       return;
     }
     soyle(silDurum, "deleting…");
@@ -191,17 +191,17 @@
     adAlan.value = p.display_name || "";
     bioAlan.value = p.bio || "";
 
-    el("ay-kim").textContent = (AH.oturum && AH.oturum.kullanici && AH.oturum.kullanici.email)
+    el("set-who").textContent = (AH.oturum && AH.oturum.kullanici && AH.oturum.kullanici.email)
       ? "you're in as " + AH.oturum.kullanici.email : "you're in.";
 
     const gun = p.created_at ? String(p.created_at).slice(0, 10) : "";
-    el("ay-sayilar").textContent =
+    el("set-numbers").textContent =
       [p.kept_count + " kept", p.friend_count + " friends", p.comment_count + " comments"]
         .join(" · ") + (gun ? " · here since " + gun : "");
 
-    secimKur(el("ay-kept"), p.kept_visibility, (v) => ayarYaz("kept_visibility", v));
-    secimKur(el("ay-bulun"), p.discoverable, (v) => ayarYaz("discoverable", v));
-    secimKur(el("ay-posta"), p.notify_email, (v) => ayarYaz("notify_email", v));
+    secimKur(el("set-kept"), p.kept_visibility, (v) => ayarYaz("kept_visibility", v));
+    secimKur(el("set-bulun"), p.discoverable, (v) => ayarYaz("discoverable", v));
+    secimKur(el("set-posta"), p.notify_email, (v) => ayarYaz("notify_email", v));
 
     return sehirleriKur(p.city_slug);
   }
@@ -219,8 +219,8 @@
     if (!(AYAR.url && AYAR.anonKey)) {
       disarida.hidden = false;
       icerde.hidden = true;
-      el("ay-disarida-not").textContent = "this opens when the backend does.";
-      disarida.querySelector(".giris-dugme").hidden = true;
+      el("set-out-note").textContent = "this opens when the backend does.";
+      disarida.querySelector(".page-button").hidden = true;
       return;
     }
     const girisli = Boolean(AH.girisliMi && AH.girisliMi());

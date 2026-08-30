@@ -4,7 +4,7 @@
    buradan geliyor. Havuzlar etkinlik TURUNE gore ayrilmis; hangi
    parcanin hangi geceye dustugunu slug'dan uretilen tohum seciyor —
    yani ayni etkinlik her acilista ayni seyi gosteriyor, ama iki
-   etkinlik birbirine benzemiyor. (explore/yorumlar.js de boyle.)
+   etkinlik birbirine benzemiyor. (explore/comment-pools.js de boyle.)
 
    Elle yazilmis bir gece varsa OZEL'e konuyor ve havuzu eziyor.  */
 
@@ -62,7 +62,7 @@ window.ETKINLIK_VERI = (function () {
   /* --- tanitim paragraflari ---
      Ilk paragraf etkinligin kendi metni; buradakiler onun USTUNE bir sey
      koymali, ayni seyi baska kelimelerle soylememeli. Yine de carpisma
-     olursa etkinlik.js ortak kelimeye bakip eliyor. */
+     olursa event.js ortak kelimeye bakip eliyor. */
   const METIN = {
     "Konzert": [
       "The floor fills politely for the first half hour — everyone still holding a drink with both hands, still working out where their friends ended up — and then the lights drop and the room stops behaving like a room.",

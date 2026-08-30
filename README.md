@@ -51,7 +51,7 @@ python3 -m http.server 4340
 Sonra `http://localhost:4340`. `file://` ile açma — SVG posterler `<object>`
 içinde yüklendiği için harici CSS/font gelmiyor.
 
-Backend olmadan da tam çalışır: `ayar.js` boşsa veri `events-data.js`'ten
+Backend olmadan da tam çalışır: `config.js` boşsa veri `events-data.js`'ten
 okunur ve site aynı davranır.
 
 ---
@@ -77,21 +77,21 @@ okunur ve site aynı davranır.
 | `ses/` | İki kısa kayıt, tamamen sentezlenmiş | — |
 | `404.html` | Yanlış adres. Dışarıdan hiçbir dosya çağırmıyor (her derinlikte gösterilebiliyor), kök yolu adresten çıkarıyor | çalışıyor |
 | `og/` | Paylaşım önizlemeleri: her gece için 1200×630, solda kendi posteri | üretilmiş |
-| `serit.html` | Park edilmiş deneme (yatay şeritler) | dokunma |
+| `strip.html` | Park edilmiş deneme (yatay şeritler) | dokunma |
 
 Her sayfanın altında **dipnot** var: `© 2026 afterhours` + impressum ·
 datenschutz · agb. İki hâli: akışta duran normal hâl ve tam ekran sayfalar
 (`explore`, `maps`) için köşede duran `dipnot ince`. Dipnotu olmayan üç
-sayfa: `index.html` (kendi siyah footer ekranı var), `admin/`, `serit.html`.
+sayfa: `index.html` (kendi siyah footer ekranı var), `admin/`, `strip.html`.
 
 ---
 
 ## 4. Veri akışı
 
 ```
-ayar.js          Supabase URL + publishable key (ikisi de herkese açık)
+config.js          Supabase URL + publishable key (ikisi de herkese açık)
    ↓
-veri.js          canlı mı yerel mi karar verir
+data.js          canlı mı yerel mi karar verir
    ├── canlı  →  Supabase REST → satırları sitenin biçimine çevirir
    └── yerel  →  data-yedek ile events-data.js
    ↓
@@ -103,9 +103,9 @@ data-sonra       sayfanın kendi betikleri ANCAK veri geldikten sonra yüklenir
 Sayfalardaki kalıp:
 
 ```html
-<script src="../veri.js?v=101"
+<script src="../data.js?v=101"
         data-yedek="../events-data.js?v=101"
-        data-sonra="explore.js?v=101, filtre.js?v=101"></script>
+        data-sonra="explore.js?v=101, filters.js?v=101"></script>
 ```
 
 Ortak `AH` nesnesi: `AH.durum` (`canli` / `yerel`), `AH.istek()`, `AH.hataMetni()`,
@@ -113,7 +113,7 @@ Ortak `AH` nesnesi: `AH.durum` (`canli` / `yerel`), `AH.istek()`, `AH.hataMetni(
 `AH.oturumDegisti(cb)`, `AH.kayitOl()`, `AH.etkinlikler()`, `AH.atislar`,
 `AH.arkadaslar()`.
 
-**Güvenlik:** `ayar.js`'teki anahtar gizli değil, gizli olması da gerekmiyor.
+**Güvenlik:** `config.js`'teki anahtar gizli değil, gizli olması da gerekmiyor.
 Veriyi koruyan şey `backend/sql/02_rls.sql`'deki satır düzeyi kurallar.
 `service_role` anahtarı bu depoya **asla** yazılmaz.
 
@@ -125,38 +125,38 @@ Veriyi koruyan şey `backend/sql/02_rls.sql`'deki satır düzeyi kurallar.
 
 | Dosya | İş |
 |---|---|
-| `veri.js` | Veri katmanı. Önce o çalışır, sonra sayfanın betiklerini yükler |
-| `ayar.js` | Supabase URL + anon anahtar + varsayılan şehir |
-| `oturum.js` | Oturum: Supabase Auth REST'ine doğrudan konuşur, jeton `localStorage`'da |
+| `data.js` | Veri katmanı. Önce o çalışır, sonra sayfanın betiklerini yükler |
+| `config.js` | Supabase URL + anon anahtar + varsayılan şehir |
+| `session.js` | Oturum: Supabase Auth REST'ine doğrudan konuşur, jeton `localStorage`'da |
 | `menu.js` | Menünün oturuma göre hâli: "welcome <ad>", yöneticiye admin bağlantısı |
-| `atislar.js` | Sağa/sola atılanlar. Girişsizken `localStorage`, girişliyken veritabanı |
-| `arkadaslar.js` | Arkadaşlık istekleri; işin tamamı veritabanı fonksiyonlarında |
+| `swipes.js` | Sağa/sola atılanlar. Girişsizken `localStorage`, girişliyken veritabanı |
+| `friendships.js` | Arkadaşlık istekleri; işin tamamı veritabanı fonksiyonlarında |
 | `beforehours.js` | Etkinlik yorumları (okuma herkese, yazma girişe bağlı) |
 | `app.js` | İniş sayfasının beş ekranı, poster vitrini, kaydırma mantığı |
-| `sehir.js` | Dönen şehir küresi. Three.js yok — kendi izdüşüm matematiği, canvas'a çizer |
-| `mekanlar.js` | Münih mekânlarının şema koordinatları |
-| `kartlar.js` | **Afterhours kartı üreteci.** `KARTLAR.on(gece, id)` / `.arka(gece, id)` SVG döndürür |
+| `globe.js` | Dönen şehir küresi. Three.js yok — kendi izdüşüm matematiği, canvas'a çizer |
+| `venues.js` | Münih mekânlarının şema koordinatları |
+| `cards.js` | **Afterhours kartı üreteci.** `KARTLAR.on(gece, id)` / `.arka(gece, id)` SVG döndürür |
 | `events-data.js` | 36 etkinlik, backend kapalıyken kullanılan yedek |
-| `tools-etkinlik.py` | Etkinlik sayfalarının kabuğunu üretir (§6) |
+| `tools-event-pages.py` | Etkinlik sayfalarının kabuğunu üretir (§6) |
 | `tools-favicon.py` | Favicon'ları üretir (boyuta göre farklı çizim) |
-| `tools-onizleme.py` | `og/` önizlemelerini üretir: posteri Chrome ile PNG'ye çevirip kartı PIL ile kurar |
+| `tools-previews.py` | `og/` önizlemelerini üretir: posteri Chrome ile PNG'ye çevirip kartı PIL ile kurar |
 
 **Sayfa betikleri**
 
 | Dosya | İş |
 |---|---|
 | `explore/explore.js` | Deste: sürükleme, uçurma, yeniden dağıtma, saklanan kutusu |
-| `explore/filtre.js` | Kendi açılır listelerimiz (native `<select>` değil) |
-| `explore/yorumlar.js` | Beforehours havuzu — tür bazlı, slug tohumuyla seçilir |
-| `explore/etkinlik.js` | **Etkinlik sayfasını kuran tek şablon** (§6) |
-| `explore/etkinlik-veri.js` | Etkinlik sayfasının tür bazlı içerik havuzları |
-| `cards/cards.js` · `kartlar-veri.js` · `kk.js` | Koleksiyon: örnek kartlar, oturuma göre gizleme |
+| `explore/filters.js` | Kendi açılır listelerimiz (native `<select>` değil) |
+| `explore/comment-pools.js` | Beforehours havuzu — tür bazlı, slug tohumuyla seçilir |
+| `explore/event.js` | **Etkinlik sayfasını kuran tek şablon** (§6) |
+| `explore/event-data.js` | Etkinlik sayfasının tür bazlı içerik havuzları |
+| `cards/cards.js` · `card-data.js` · `session-state.js` | Koleksiyon: örnek kartlar, oturuma göre gizleme |
 | `friends/friends.js` · `nachtradar.js` | Handle/arkadaş/sakladıkların; tanıdık yüzler listesi |
-| `login/login.js` · `hesap.js` | Giriş formu; ortadaki bloğun oturuma göre değişmesi |
-| `settings/ayarlar.js` | Ayar sayfası: `profile_me()` okur, `profile_setup()` yazar, anahtarları doğrudan `profile_settings`'e PATCH'ler |
-| `feedback/geri.js` | Geri bildirim: tek iş, yazılanı `feedback` tablosuna eklemek |
-| `register/kayit.js` | Kayıt: `AH.kayitOl()` hesabı açar, `profile_setup()` handle'ı yazıp kaydı bitirir |
-| `maps/harita.js` | Şemaya mekânları yerleştirir |
+| `login/login.js` · `shortcuts.js` | Giriş formu; ortadaki bloğun oturuma göre değişmesi |
+| `settings/settings.js` | Ayar sayfası: `profile_me()` okur, `profile_setup()` yazar, anahtarları doğrudan `profile_settings`'e PATCH'ler |
+| `feedback/feedback.js` | Geri bildirim: tek iş, yazılanı `feedback` tablosuna eklemek |
+| `register/register.js` | Kayıt: `AH.kayitOl()` hesabı açar, `profile_setup()` handle'ı yazıp kaydı bitirir |
+| `maps/map.js` | Şemaya mekânları yerleştirir |
 | `admin/admin.js` | Yönetim paneli |
 
 ---
@@ -203,11 +203,11 @@ ayki karesini anlatır.
 | Parça | Kaynak |
 |---|---|
 | Başlık, tür, meta, ilk paragraf, poster | Etkinliğin kendi verisi (`POSTERS`) |
-| Künye satırları, roller, isimler, paragraflar, fiyat, bilet yazısı, yorumlar | `explore/etkinlik-veri.js` — **tür bazlı havuzlar** |
+| Künye satırları, roller, isimler, paragraflar, fiyat, bilet yazısı, yorumlar | `explore/event-data.js` — **tür bazlı havuzlar** |
 | Hangi parçanın hangi geceye düşeceği | **slug'dan üretilen mulberry32 tohumu** |
 
 Yani bir etkinlik her açılışta aynı şeyi gösterir, iki etkinlik birbirine
-benzemez. (`explore/yorumlar.js` de aynı deseni kullanıyor.)
+benzemez. (`explore/comment-pools.js` de aynı deseni kullanıyor.)
 
 Tür başına değişenler — konzert `get the ticket`, rave `get on the list`,
 hausparty `ask for the address`, meetup `save a seat`; roller `dj set /
@@ -219,7 +219,7 @@ support / headline` yerine `kitchen / living room / balcony` olur; künye
 Gerçek fotoğraf yok. Her kare, etkinliğin **kendi posterinin başka bir
 şeridi** (`--kay: 0 / 42 / 83 / 125`, poster 2:3, kare 3:2). Her gecenin
 posteri farklı olduğu için her rulo da farklı. Siyah-beyaza çekiliyor.
-Gerçek fotoğraflar geldiğinde tek yapılacak `etkinlik.js`'te karenin
+Gerçek fotoğraflar geldiğinde tek yapılacak `event.js`'te karenin
 kaynağını değiştirmek.
 
 ### Yeni etkinlik eklemek
@@ -231,7 +231,7 @@ kaynağını değiştirmek.
 3. Kabuğu üret:
 
 ```bash
-python3 tools-etkinlik.py 102
+python3 tools-event-pages.py 102
 ```
 
 Argüman sürüm numarası (§9). Klasörü ve `index.html`'i açar, düzen
@@ -241,7 +241,7 @@ kendiliğinden gelir.
 
 ## 7. Afterhours kartı
 
-`kartlar.js` gecenin verisinden SVG kart üretir. Kullanan üç yer:
+`cards.js` gecenin verisinden SVG kart üretir. Kullanan üç yer:
 iniş sayfasının şeridi, `cards/`, etkinlik sayfasının geçmiş edisyonları.
 
 ```js
@@ -250,7 +250,7 @@ KARTLAR.arka(gece, "benzersiz-id")  // arka yüz: gecenin zaman çizelgesi
 ```
 
 `gece` nesnesi: `sehir t ty v d metal motif in out dur crew more aud msg
-who froze no at1 at2 q1 q2`. Örnek için `cards/kartlar-veri.js`.
+who froze no at1 at2 q1 q2`. Örnek için `cards/card-data.js`.
 
 - **Metaller:** steel, gold, chrome, copper, gunmetal, brass, rose,
   titanium, nickel, anthracite
@@ -301,7 +301,7 @@ GitHub Pages, `main` dalından. `.nojekyll` var (alt çizgili yollar için).
 **Paylaşım ve arama.** Her sayfada `description` + `og:*` etiketleri var;
 etkinlik sayfalarında başlık, açıklama ve görsel gecenin kendisinden geliyor.
 `robots.txt` ve `sitemap.xml` kökte (`admin/` hariç tutuldu). Önizleme
-görselleri `python3 tools-onizleme.py` ile yeniden üretiliyor.
+görselleri `python3 tools-previews.py` ile yeniden üretiliyor.
 
 **Sürüm numarası kuralı:** bütün HTML'lerdeki `?v=NN`. CSS ya da bir betik
 değiştiğinde hepsi birden artırılır, yoksa tarayıcı eski dosyayı kullanır:
@@ -310,7 +310,7 @@ değiştiğinde hepsi birden artırılır, yoksa tarayıcı eski dosyayı kullan
 sed -i '' -E 's|\?v=101|?v=102|g' $(find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*")
 ```
 
-Şu anki sürüm: **101**.
+Şu anki sürüm: **115**.
 
 ---
 
@@ -343,7 +343,7 @@ Sıra önemli: her adım bir öncekinin açtığı yolu kapatıyor.
    (`slug tur baslik meta metin`). Etkinlik sayfasındaki her şey — kadro,
    saatler, kapasite, fiyat, kurallar — şu an havuzdan uyduruluyor. Gerçek
    olması için `events` tablosuna alan eklemek gerekiyor. Bu yapıldığında
-   `etkinlik-veri.js` havuzları yalnızca **yedek** olur.
+   `event-data.js` havuzları yalnızca **yedek** olur.
 2. **Card collection.** Konseptin kalbi ama en pahalısı: geçmiş gece verisi,
    "o gecenin sesi/konuşmaları" ne demek olduğuna karar vermek, kart üretimi.
 3. **Hukuk sayfalarının doldurulması** — köşeli parantezler + gerçek Stand
@@ -361,7 +361,7 @@ Hepsi bir kere canımızı yaktı:
 - **`login/login.js` yarıda hata veriyor.** `handle-form` / `arkadas-form`
   arıyor, o ögeler friends sayfasında. Satır 173'te `TypeError`, sonrası
   hiç çalışmıyor. Giriş formu daha önce bağlandığı için giriş çalışıyor.
-  *Bu yüzden `login/hesap.js` ayrı dosya.*
+  *Bu yüzden `login/shortcuts.js` ayrı dosya.*
 - **`<object>` içindeki SVG'ye `filter` işlemez** (ayrı belge). Kareleri
   gri yapan şey `mix-blend-mode: saturation` katmanı.
 - **`<img>` içindeki SVG webfont yükleyemez.** Posterler bu yüzden
@@ -392,7 +392,9 @@ Hepsi bir kere canımızı yaktı:
 
 ## 12. Sözlük
 
-Kod Türkçe yazılıyor. Karşılıkları:
+**Kod İngilizceye çevriliyor (2026-08-30).** Sınıf adları, id'ler ve dosya
+adları çevrildi; değişken adları ve yorumlar sırada. Bu tablo eski adı
+arayanlar için duruyor:
 
 | Kod | Anlam |
 |---|---|

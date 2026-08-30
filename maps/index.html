@@ -22,11 +22,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=111" />
+  <link rel="stylesheet" href="../style.css?v=115" />
 </head>
 <body>
 
-  <a class="atla" href="#icerik">skip to the content</a>
+  <a class="skip" href="#content">skip to the content</a>
 
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
@@ -40,38 +40,38 @@
     </nav>
   </header>
 
-  <main id="icerik" tabindex="-1" class="ha">
+  <main id="content" tabindex="-1" class="map">
 
-    <div class="ha-yazi">
-      <h1 class="ha-baslik">go local.</h1>
-      <p class="ha-alt" id="ha-alt">the city, roughly. hover a dot.</p>
+    <div class="map-text">
+      <h1 class="map-title">go local.</h1>
+      <p class="map-sub" id="map-sub">the city, roughly. hover a dot.</p>
     </div>
 
     <!-- Sehir semasi: elle cizildi, olcekli degil. Isar, ring, park ve
          birkac mahalle — noktalarin nerede durdugu anlasilsin diye. -->
-    <div class="ha-sema-kutu">
-    <svg class="ha-sema" id="ha-sema" viewBox="450 130 760 640"
+    <div class="map-schema-box">
+    <svg class="map-schema" id="map-schema" viewBox="450 130 760 640"
          preserveAspectRatio="xMidYMid meet" aria-label="a schematic map of munich">
 
       <!-- Englischer Garten -->
-      <path class="ha-park"
+      <path class="map-park"
             d="M 800 190 L 858 178 L 868 262 L 858 352 L 826 404 L 800 392 L 790 300 Z" />
 
       <!-- Isar -->
-      <path class="ha-nehir"
+      <path class="map-river"
             d="M 903 130 C 892 220 876 300 864 380 C 852 452 840 500 822 560
                C 802 632 782 702 764 772" />
 
       <!-- Mittlerer Ring -->
-      <path class="ha-ring-dis"
+      <path class="map-ring-outer"
             d="M 762 236 C 872 236 962 320 962 434 C 962 560 878 664 762 664
                C 646 664 562 560 562 434 C 562 320 652 236 762 236 Z" />
 
       <!-- Altstadtring -->
-      <circle class="ha-ring-ic" cx="770" cy="470" r="58" />
+      <circle class="map-ring-inner" cx="770" cy="470" r="58" />
 
       <!-- birkac ana eksen -->
-      <g class="ha-yol">
+      <g class="map-link">
         <path d="M 770 412 L 770 250" />
         <path d="M 770 528 L 770 690" />
         <path d="M 712 470 L 560 470" />
@@ -82,9 +82,9 @@
       </g>
 
       <!-- Hauptbahnhof -->
-      <rect class="ha-gar" x="666" y="462" width="16" height="16" />
+      <rect class="map-station" x="666" y="462" width="16" height="16" />
 
-      <g class="ha-etiket">
+      <g class="map-label">
         <text x="700" y="255">SCHWABING</text>
         <text x="614" y="392">MAXVORSTADT</text>
         <text x="906" y="470">HAIDHAUSEN</text>
@@ -94,42 +94,42 @@
         <text x="650" y="640">SENDLING</text>
         <text x="500" y="270">OLYMPIAPARK</text>
         <text x="1090" y="540">RIEM</text>
-        <text x="806" y="215" class="ha-etiket-park">ENGLISCHER GARTEN</text>
-        <text x="700" y="486" class="ha-etiket-gar">HBF</text>
+        <text x="806" y="215" class="map-label-park">ENGLISCHER GARTEN</text>
+        <text x="700" y="486" class="map-label-station">HBF</text>
       </g>
 
-      <!-- Noktalar harita.js ile -->
-      <g id="ha-noktalar"></g>
+      <!-- Noktalar map.js ile -->
+      <g id="map-noktalar"></g>
     </svg>
     </div>
 
     <!-- Uzerine gelinen etkinlik -->
-    <div class="ha-kart" id="ha-kart" hidden>
-      <p class="ha-kart-tur" id="ha-kart-tur"></p>
-      <p class="ha-kart-ad" id="ha-kart-ad"></p>
-      <p class="ha-kart-meta" id="ha-kart-meta"></p>
+    <div class="map-card" id="map-card" hidden>
+      <p class="map-card-kind" id="map-card-kind"></p>
+      <p class="map-card-name" id="map-card-name"></p>
+      <p class="map-card-meta" id="map-card-meta"></p>
     </div>
 
-    <p class="ha-dip" id="ha-dip"></p>
+    <p class="map-footline" id="map-footline"></p>
   </main>
 
 
-  <footer class="dipnot ince sag">
-    <p class="dipnot-ad">&copy; 2026 afterhours</p>
-    <nav class="dipnot-linkler">
+  <footer class="foot thin right">
+    <p class="foot-name">&copy; 2026 afterhours</p>
+    <nav class="foot-links">
       <a href="../impressum/index.html">impressum</a>
       <a href="../datenschutz/index.html">datenschutz</a>
       <a href="../agb/index.html">agb</a>
     </nav>
   </footer>
 
-  <script src="../ayar.js?v=111"></script>
-  <script src="../oturum.js?v=111"></script>
-  <script src="../mekanlar.js?v=111"></script>
-  <script src="../veri.js?v=111"
-          data-yedek="../events-data.js?v=111"
-          data-sonra="harita.js?v=111"></script>
-  <script src="../menu.js?v=111"></script>
+  <script src="../config.js?v=115"></script>
+  <script src="../session.js?v=115"></script>
+  <script src="../venues.js?v=115"></script>
+  <script src="../data.js?v=115"
+          data-yedek="../events-data.js?v=115"
+          data-sonra="map.js?v=115"></script>
+  <script src="../menu.js?v=115"></script>
 
 </body>
 </html>

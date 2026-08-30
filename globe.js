@@ -4,7 +4,7 @@
    sadece one bakan yarikure gorunur, cevirince arkasi one gelir. */
 
 (function () {
-  const sahne = document.getElementById("k4-sahne");
+  const sahne = document.getElementById("s4-stage");
   if (!sahne) return;
 
   const NS = "http://www.w3.org/2000/svg";
@@ -495,7 +495,7 @@
   const yansitTers = (q) => ({ x: (q.x - KAY_X) / OLCEK, y: (q.y - KAY_Y) / OLCEK });
 
   /* Sadece bu ekran ondeyken ciz. rAF onizleme panelinde hic tetiklenmiyor
-     (panel belgeyi "gizli" sayiyor), o yuzden zamanlayici kullaniyoruz. */
+     (panel belgeyi "hidden" sayiyor), o yuzden zamanlayici kullaniyoruz. */
   ciz(performance.now());
   setInterval(() => {
     if (document.body.dataset.ekran === "3") ciz(performance.now());

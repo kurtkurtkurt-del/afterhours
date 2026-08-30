@@ -8,7 +8,7 @@
    olcup genislik ayarliyorduk. Kendi dugmemiz zaten icerigi kadar. */
 
 (function () {
-  const alan = document.querySelector(".ex-filtre");
+  const alan = document.querySelector(".ex-filter");
   if (!alan) return;
 
   const AH = (window.AH = window.AH || {});
@@ -43,9 +43,9 @@
   const acikOlanlar = [];
 
   function liste(kutu, secenekler, seciliDeger, secildi) {
-    const dugme = kutu.querySelector(".fl-dugme");
-    const deger = kutu.querySelector(".fl-deger");
-    const panel = kutu.querySelector(".fl-liste");
+    const dugme = kutu.querySelector(".fl-button");
+    const deger = kutu.querySelector(".fl-value");
+    const panel = kutu.querySelector(".fl-list");
 
     const secili = secenekler.find((s) => s.deger === seciliDeger) ||
       secenekler.find((s) => !s.baslik);
@@ -56,7 +56,7 @@
       /* Grup basligi: tiklanmaz, sadece ayirir */
       if (s.baslik) {
         const b = document.createElement("p");
-        b.className = "fl-grup";
+        b.className = "fl-group";
         b.textContent = s.baslik;
         panel.appendChild(b);
         return;
@@ -64,8 +64,8 @@
 
       const oge = document.createElement("button");
       oge.type = "button";
-      oge.className = "fl-oge" + (s.deger === seciliDeger ? " secili" : "") +
-        (s.bos ? " bos" : "");
+      oge.className = "fl-item" + (s.deger === seciliDeger ? " selected" : "") +
+        (s.bos ? " empty" : "");
 
       const ad = document.createElement("span");
       ad.textContent = s.ad;
@@ -73,7 +73,7 @@
 
       if (s.not) {
         const not = document.createElement("em");
-        not.className = "fl-not";
+        not.className = "fl-note";
         not.textContent = s.not;
         oge.appendChild(not);
       }
@@ -87,27 +87,27 @@
 
     dugme.onclick = (e) => {
       e.stopPropagation();
-      const acikMi = kutu.classList.contains("acik");
+      const acikMi = kutu.classList.contains("open");
       hepsiniKapat();
       if (!acikMi) ac(kutu);
     };
   }
 
   function ac(kutu) {
-    kutu.classList.add("acik");
-    kutu.querySelector(".fl-dugme").setAttribute("aria-expanded", "true");
-    kutu.querySelector(".fl-liste").hidden = false;
+    kutu.classList.add("open");
+    kutu.querySelector(".fl-button").setAttribute("aria-expanded", "true");
+    kutu.querySelector(".fl-list").hidden = false;
     acikOlanlar.push(kutu);
   }
 
   function kapat(kutu) {
-    kutu.classList.remove("acik");
-    kutu.querySelector(".fl-dugme").setAttribute("aria-expanded", "false");
-    kutu.querySelector(".fl-liste").hidden = true;
+    kutu.classList.remove("open");
+    kutu.querySelector(".fl-button").setAttribute("aria-expanded", "false");
+    kutu.querySelector(".fl-list").hidden = true;
   }
 
   function hepsiniKapat() {
-    document.querySelectorAll(".fl.acik").forEach(kapat);
+    document.querySelectorAll(".fl.open").forEach(kapat);
   }
 
   document.addEventListener("click", hepsiniKapat);

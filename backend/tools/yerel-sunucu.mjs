@@ -337,6 +337,6 @@ const sunucu = createServer(async (istek, cevap) => {
 sunucu.listen(PORT, () => {
   console.log(`\nYEREL taklit sunucu: http://localhost:${PORT}`);
   console.log("Bu Supabase DEGIL; sadece gelistirme icin.\n");
-  console.log("ayar.js icin:");
+  console.log("config.js icin:");
   console.log(`  url: "http://localhost:${PORT}", anonKey: "yerel"\n`);
 });

@@ -26,7 +26,7 @@
 
   AH.handleAyarla = function (handle) {
     const id = AH.oturum && AH.oturum.kullanici && AH.oturum.kullanici.id;
-    if (!canli() || !id) return Promise.reject(new Error("giris gerekli"));
+    if (!canli() || !id) return Promise.reject(new Error("page gerekli"));
     const h = String(handle).trim().toLowerCase();
     if (!/^[a-z0-9_]{3,20}$/.test(h)) {
       return Promise.reject(new Error("3-20 karakter, kucuk harf/rakam/alt cizgi"));
