@@ -17,7 +17,7 @@
   const V = window.EVENT_POOLS || {};
 
   /* --- the seed: the same slug always builds the same night --- */
-  function tohumla(text) {
+  function seeded(text) {
     let h = 2166136261;
     for (let i = 0; i < text.length; i++) {
       h ^= text.charCodeAt(i);
@@ -89,7 +89,7 @@
 
   /* --- building the page --- */
   function build(e) {
-    const rnd = tohumla(e.slug || "afterhours");
+    const rnd = seeded(e.slug || "afterhours");
     const kind = e.kind || "Konzert";
     const m = parseMeta(e.meta);
     const day = weekdayFor(m.date, rnd);
@@ -135,9 +135,9 @@
     middle.appendChild(el("p", "cs-meta",
       [kind.toLowerCase(), m.date ? day + " " + m.date : day].join(" · ")));
 
-    /* The first paragraph is the event's own line, the rest come from the pool
-          for its type. A pooled paragraph that says the same thing as the event's
-       soyluyorsa atlaniyor: iki kez "bring something" yaziyordu. */
+    /* The first paragraph is the event's own line, the rest come from the
+       pool for its kind. A pooled paragraph that says the same thing as the
+       event's own is skipped: it was printing "bring something" twice. */
     const pool = shuffle(rnd, V.BODY[kind] || []).filter((p) => !overlaps(p, e.body));
     [e.body, pool[0], pool[1]].filter(Boolean).forEach((p) =>
       middle.appendChild(el("p", "cs-text", p)));
@@ -214,21 +214,21 @@
     right.appendChild(el("p", "cs-tally", "3 going · 1 maybe · 1 out"));
 
     const [button, sub] = V.TICKET[kind] || V.TICKET["Konzert"];
-    const bilet = el("a", "cs-ticket", button);
-    bilet.href = "#";
-    right.appendChild(bilet);
+    const ticket = el("a", "cs-ticket", button);
+    ticket.href = "#";
+    right.appendChild(ticket);
     right.appendChild(el("p", "cs-ticket-sub", sub));
 
     /* beforehours: what friends said about this night, this room, this date */
     const comments = el("section", "cs-comments");
     comments.appendChild(el("p", "cs-label", "beforehours · your friends"));
 
-    const zamanlar = V.WHEN;
+    const clockTimes = V.WHEN;
     shuffle(rnd, V.COMMENTS[kind] || []).slice(0, 4).forEach((y, i) => {
       comments.appendChild(buildComment(
-        friends[i] || "someone", zamanlar[i + 1] || "today",
+        friends[i] || "someone", clockTimes[i + 1] || "today",
         fill(y.m, e, m, day),
-        y.c ? { who: friends[(i + 2) % 5], when: zamanlar[i + 2] || "today",
+        y.c ? { who: friends[(i + 2) % 5], when: clockTimes[i + 2] || "today",
                 body: fill(y.c.m, e, m, day) } : null));
     });
     right.appendChild(comments);

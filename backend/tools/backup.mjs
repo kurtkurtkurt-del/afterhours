@@ -26,7 +26,7 @@ if (!address) {
   process.exit(1);
 }
 
-const cek = async (path) => {
+const pull = async (path) => {
   const c = await fetch(address + "/rest/v1" + path, {
     headers: { apikey: key, Authorization: "Bearer " + key },
   });
@@ -37,11 +37,11 @@ const cek = async (path) => {
 const backup = {
   alindi: new Date().toISOString(),
   source: address,
-  cities: await cek("/cities?sort_order=sort_order"),
-  event_types: await cek("/event_types?sort_order=sort_order"),
-  venues: await cek("/venues?sort_order=name"),
-  events: await cek("/events_public?sort_order=poster_no&limit=1000"),
-  comments: await cek("/comments_public?sort_order=created_at&limit=5000"),
+  cities: await pull("/cities?sort_order=sort_order"),
+  event_types: await pull("/event_types?sort_order=sort_order"),
+  venues: await pull("/venues?sort_order=name"),
+  events: await pull("/events_public?sort_order=poster_no&limit=1000"),
+  comments: await pull("/comments_public?sort_order=created_at&limit=5000"),
 };
 
 const day = new Date().toISOString().slice(0, 10);

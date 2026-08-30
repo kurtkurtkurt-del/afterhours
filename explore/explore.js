@@ -35,10 +35,10 @@
     badge.classList.remove("up");
     void badge.offsetWidth;          /* restart the animation */
     badge.classList.add("up");
-    if (boxList && !boxList.hidden) kutuyuYaz();
+    if (boxList && !boxList.hidden) drawBox();
   }
 
-  function kutuyuYaz() {
+  function drawBox() {
     if (!boxBody) return;
     boxBody.textContent = "";
     if (!kept.length) {
@@ -75,7 +75,7 @@
 
   function openBox(open) {
     if (!boxList || !boxButton) return;
-    if (open) kutuyuYaz();
+    if (open) drawBox();
     boxList.hidden = !open;
     boxButton.setAttribute("aria-expanded", String(open));
   }
@@ -98,8 +98,8 @@
   /* Fly the card off in the given direction and drop it from the deck.
      Used both by dragging and by the keyboard. */
   function fly(card, direction) {
-    if (card.dataset.uctu) return;
-    card.dataset.uctu = "1";
+    if (card.dataset.flew) return;
+    card.dataset.flew = "1";
     const swiped = CARDS[Number(card.dataset.no)];
     if (direction > 0) keep(swiped);
     /* Both directions are recorded: right means keep, left means do not
@@ -295,7 +295,7 @@
       button.disabled = true;
       status.textContent = "posting…";
       AH.postComment(event, text)
-        .then(() => { box.value = ""; status.textContent = ""; yorumlariBas(); })
+        .then(() => { box.value = ""; status.textContent = ""; printComments(); })
         .catch((h) => { status.textContent = "couldn't post: " + h.message; })
         .finally(() => { button.disabled = false; });
     });
@@ -306,7 +306,7 @@
     return wrap;
   }
 
-  function yorumlariBas() {
+  function printComments() {
     if (!commentArea) return;
     const top = deck.lastElementChild;
 
@@ -317,7 +317,7 @@
         ? AH.comments(event)
         : Promise.resolve(COMMENTS_FOR(event));
 
-    const doldurYorum = () => {
+    const fillComments = () => {
       if (!top) {
         commentArea.textContent = "";
         commentArea.appendChild(row("c-none", "nothing left to talk about tonight."));
@@ -345,9 +345,9 @@
     /* When the card changes so does the text: it fades, then the new one arrives */
     if (commentArea.children.length) {
       commentArea.classList.add("faded");
-      setTimeout(doldurYorum, 200);
+      setTimeout(fillComments, 200);
     } else {
-      doldurYorum();
+      fillComments();
     }
   }
 
@@ -368,7 +368,7 @@
     }
     stack();
     document.getElementById("ex-done").classList.toggle("open", deck.children.length === 0);
-    yorumlariBas();
+    printComments();
   }
 
   /* The ones behind sit a little smaller and a little lower */
@@ -459,7 +459,7 @@
 
     const cards = [...deck.children];
     cards.forEach((k) => {
-      k.dataset.sonHal = k.style.transform || "";
+      k.dataset.lastState = k.style.transform || "";
       k.classList.remove("soft");
       k.style.transition = "none";
       k.style.transform = "translate(-46vw, -7vh) rotate(-17deg)";
@@ -473,7 +473,7 @@
       k.style.transition =
         "transform 0.52s cubic-bezier(0.2, 0.75, 0.25, 1) " + delay + "ms, " +
         "opacity 0.3s ease " + delay + "ms";
-      k.style.transform = k.dataset.sonHal;
+      k.style.transform = k.dataset.lastState;
       k.style.opacity = "1";
     });
 
@@ -483,7 +483,7 @@
       cards.forEach((k) => {
         if (!k.isConnected || k.classList.contains("held")) return;
         k.style.transition = "";
-        k.style.transform = k.dataset.sonHal;
+        k.style.transform = k.dataset.lastState;
         k.style.opacity = "1";
       });
     }, 95 * cards.length + 600);

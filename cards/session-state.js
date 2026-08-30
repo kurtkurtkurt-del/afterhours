@@ -12,12 +12,12 @@
   const AH = window.AH;
   if (!AH) return;
 
-  const dugme = document.querySelector(".cc-left .page-button");
+  const button = document.querySelector(".cc-left .page-button");
   const cards = document.getElementById("cc-cards");
 
   function refresh() {
     const signedIn = Boolean(AH.signedIn && AH.signedIn());
-    if (dugme) dugme.hidden = signedIn;
+    if (button) button.hidden = signedIn;
     if (cards) cards.hidden = signedIn;
   }
 

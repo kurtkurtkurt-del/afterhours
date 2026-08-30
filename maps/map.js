@@ -9,14 +9,14 @@
 
 (function () {
   const NS = "http://www.w3.org/2000/svg";
-  const katman = document.getElementById("map-dots");
-  const sema = document.getElementById("map-schema");
+  const layer = document.getElementById("map-dots");
+  const schema = document.getElementById("map-schema");
   const card = document.getElementById("map-card");
-  const kartTur = document.getElementById("map-card-kind");
-  const kartAd = document.getElementById("map-card-name");
-  const kartMeta = document.getElementById("map-card-meta");
+  const cardKind = document.getElementById("map-card-kind");
+  const cardName = document.getElementById("map-card-name");
+  const cardMeta = document.getElementById("map-card-meta");
   const dip = document.getElementById("map-footline");
-  if (!katman) return;
+  if (!layer) return;
 
   const cards = window.POSTERS || [];
   const venues = window.VENUES || [];
@@ -42,22 +42,22 @@
   }
 
   /* Keep them from stacking on one point: a small fixed offset from the slug */
-  function kaydir(slug) {
+  function offset(slug) {
     let h = 0;
     for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
-    const aci = (h % 360) * (Math.PI / 180);
-    const uzaklik = 7 + (h % 11);
-    return { dx: Math.cos(aci) * uzaklik, dy: Math.sin(aci) * uzaklik };
+    const angle = (h % 360) * (Math.PI / 180);
+    const distance = 7 + (h % 11);
+    return { dx: Math.cos(angle) * distance, dy: Math.sin(angle) * distance };
   }
 
-  let yerlesen = 0;
+  let placed = 0;
 
   cards.forEach((e) => {
     const m = findVenue(e);
     if (!m) return;                     /* a night with no venue is not on the map */
-    yerlesen++;
+    placed++;
 
-    const k = kaydir(e.slug);
+    const k = offset(e.slug);
     const g = document.createElementNS(NS, "a");
     g.setAttribute("href", "../explore/" + e.slug + "/index.html");
     g.setAttribute("class", "map-dot");
@@ -80,9 +80,9 @@
 
     const show = () => {
       card.hidden = false;
-      kartTur.textContent = (e.kind || "").toUpperCase();
-      kartAd.textContent = e.title;
-      kartMeta.textContent = e.meta;
+      cardKind.textContent = (e.kind || "").toUpperCase();
+      cardName.textContent = e.title;
+      cardMeta.textContent = e.meta;
       g.classList.add("over");
     };
     const hide = () => { card.hidden = true; g.classList.remove("over"); };
@@ -92,15 +92,15 @@
     g.addEventListener("focus", show);
     g.addEventListener("blur", hide);
 
-    katman.appendChild(g);
+    layer.appendChild(g);
   });
 
-  const eksik = cards.length - yerlesen;
+  const missing = cards.length - placed;
   dip.textContent =
-    yerlesen + " nights placed" +
-    (eksik ? " · " + eksik + " without a venue yet" : "") +
+    placed + " nights placed" +
+    (missing ? " · " + missing + " without a venue yet" : "") +
     " · schematic, note to scale";
 
   /* When the pointer moves to empty map, the card closes */
-  sema.addEventListener("mouseleave", () => { card.hidden = true; });
+  schema.addEventListener("mouseleave", () => { card.hidden = true; });
 })();

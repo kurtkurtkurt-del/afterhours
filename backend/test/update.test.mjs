@@ -71,12 +71,12 @@ console.log("\n— applying the update —");
   check(threeEach.rows[0].n === 0, "every country has exactly three cities");
 
   /* The poster numbers must not collide: each event shows its own */
-  const cakisan = await db.query(`
+  const clashing = await db.query(`
     select count(*)::int as n from (
       select poster_no from public.events
       where poster_no is not null group by poster_no having count(*) > 1
     ) x`);
-  check(cakisan.rows[0].n === 0, "no poster is used by two events");
+  check(clashing.rows[0].n === 0, "no poster is used by two events");
 }
 
 console.log("\n— running it a second time —");

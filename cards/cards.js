@@ -13,20 +13,20 @@
     const box = document.createElement("figure");
     box.className = "cc-card";
 
-    const yuz = document.createElement("div");
-    yuz.className = "cc-face";
-    yuz.innerHTML = CARDS.front(gece, "k" + i);
+    const face = document.createElement("div");
+    face.className = "cc-face";
+    face.innerHTML = CARDS.front(gece, "k" + i);
 
-    const arka = document.createElement("div");
-    arka.className = "cc-face cc-back";
-    arka.innerHTML = CARDS.back(gece, "a" + i);
+    const backFace = document.createElement("div");
+    backFace.className = "cc-face cc-back";
+    backFace.innerHTML = CARDS.back(gece, "a" + i);
 
     const shape = document.createElement("button");
     shape.className = "cc-flip";
     shape.type = "button";
     shape.setAttribute("aria-label", "flip " + gece.t);
-    shape.appendChild(yuz);
-    shape.appendChild(arka);
+    shape.appendChild(face);
+    shape.appendChild(backFace);
     shape.addEventListener("click", () => box.classList.toggle("flipped"));
 
     const sub = document.createElement("figcaption");

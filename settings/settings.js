@@ -1,12 +1,12 @@
 /* afterhours — the settings page.
-   Butun is veritabanindaki fonksiyonlarda: profile profile_me()’den
-   is read, the profile fields are written in one request with
+   The whole job is in database functions: the profile is read with
+   profile_me(), its fields are written in one request with
    profile_setup(), and the three settings that are switches are written
    straight onto profile_settings (the rule already allows nothing but
    your own row).
 
-   Girissizken ya da backend kapaliyken page durust: form hic
-   gorunmuyor, sebebi yaziyor.  */
+   Signed out, or with the backend off, the page is honest: the form
+   does not appear at all, and it says why.  */
 
 (function () {
   const AH = (window.AH = window.AH || {});
@@ -19,7 +19,7 @@
   const handleField = el("set-handle");
   const handleStatus = el("set-handle-status");
   const adAlan = el("set-name");
-  const bioAlan = el("set-bio");
+  const bioField = el("set-bio");
   const cityBox = el("set-city");
   const status = el("set-status");
 
@@ -144,7 +144,7 @@
       p_handle: handleField.value.trim(),
       p_display_name: adAlan.value.trim(),
       p_city_slug: city,
-      p_bio: bioAlan.value.trim(),
+      p_bio: bioField.value.trim(),
     })
       .then((c) => {
         const s = scalar(c);
@@ -170,8 +170,8 @@
   };
 
   el("set-confirm-button").onclick = function () {
-    const yazilan = el("set-confirm-field").value.trim().toLowerCase();
-    if (!profile || !profile.handle || yazilan !== profile.handle) {
+    const written = el("set-confirm-field").value.trim().toLowerCase();
+    if (!profile || !profile.handle || written !== profile.handle) {
       say(deleteStatus, "type your handle exactly.", "error");
       return;
     }
@@ -190,7 +190,7 @@
     profile = p;
     handleField.value = p.handle || "";
     adAlan.value = p.display_name || "";
-    bioAlan.value = p.bio || "";
+    bioField.value = p.bio || "";
 
     el("set-who").textContent = (AH.session && AH.session.user && AH.session.user.email)
       ? "you're in as " + AH.session.user.email : "you're in.";

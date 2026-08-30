@@ -109,9 +109,9 @@ data-after       the page's own scripts load ONLY after the data has arrived
 The pattern on every page:
 
 ```html
-<script src="../data.js?v=131"
-        data-fallback="../events-data.js?v=131"
-        data-after="explore.js?v=131, filters.js?v=131"></script>
+<script src="../data.js?v=134"
+        data-fallback="../events-data.js?v=134"
+        data-after="explore.js?v=134, filters.js?v=134"></script>
 ```
 
 The shared `AH` object: `AH.mode` (`live` / `local`), `AH.request()`,
@@ -242,7 +242,7 @@ where the frame gets its source in `event.js`.
 3. Write the shell:
 
 ```bash
-python3 tools-event-pages.py 132
+python3 tools-event-pages.py 135
 ```
 
 The argument is the version number (§9). It creates the folder and the
@@ -326,10 +326,10 @@ When CSS or a script changes, all of them go up together, otherwise the
 browser keeps using the old file:
 
 ```bash
-find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=131/?v=132/g'
+find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=134/?v=134/g'
 ```
 
-The current version: **131**.
+The current version: **134**.
 
 ---
 
@@ -416,6 +416,17 @@ Every one of these cost us something:
   that had been renamed, and ten `"hata"` status classes the stylesheet no
   longer knew. None of it showed in the browser. After a rename, run every
   tool once and check every cross-file reference.
+- **A rename that treats an object key and a property read differently
+  breaks the page in silence.** A word-boundary regex that excludes a
+  leading dot renames `east:` in an object literal but leaves `b.dogu`
+  alone, so the read returns `undefined`. That is what froze the globe.
+  Rename a key and every read of it in the same pass, and afterwards check
+  that no property is read that no key defines.
+- **Two Turkish names can translate to one English name.** `metin` (the
+  textarea) and `yazi` (its trimmed text) both became `text`, producing
+  `const text = text.value.trim()` — a ReferenceError on every click, and
+  the feedback page could not send anything. A rename tool must refuse a
+  target name that is already an identifier in that file.
 - **An apostrophe in a SQL comment breaks the Supabase editor.** Its parser
   counts quotes and counts the ones inside comments too, so a single `'`
   turns the rest of the file into code. `seed.test.mjs` enforces this.

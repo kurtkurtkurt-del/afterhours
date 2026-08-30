@@ -68,7 +68,7 @@ function goToScreen(target) {
 
   // You cannot pass the second screen without swiping a card; the deck jumps
   if (screen === 1 && target > screen && deck.querySelector(".card2")) {
-    destiZiplat();
+    nudgeDeck();
     return;
   }
   screen = target;
@@ -89,8 +89,8 @@ window.addEventListener("wheel", (e) => {
     const target = e.target instanceof Node ? e.target : null;
     if (!target || !grid.contains(target)) grid.scrollTop += e.deltaY;
 
-    const sonda = grid.scrollTop + grid.clientHeight >= grid.scrollHeight - 2;
-    if (!down || !sonda) {
+    const atEnd = grid.scrollTop + grid.clientHeight >= grid.scrollHeight - 2;
+    if (!down || !atEnd) {
       scrolled = 0;
       return;
     }
@@ -140,11 +140,11 @@ window.addEventListener("touchend", (e) => {
 const deck = document.getElementById("deck2");
 const phone = document.getElementById("phone");
 const lastLine = document.getElementById("last-line");
-const kaydirIpucu = document.getElementById("swipe-hint");
+const swipeHint = document.getElementById("swipe-hint");
 
 // The small nudge the card gives when you try to pass without swiping
 let jumpTimer;
-function destiZiplat() {
+function nudgeDeck() {
   const card = deck.querySelector(".card2");
   if (!card) return;
   card.classList.remove("jump");
@@ -196,14 +196,14 @@ DECK_POSTERS.slice().reverse().forEach((no) => {
       card.style.opacity = "0";
       // Drop it when the transition ends; if the transition never fires, the
       // timeout is the safety net
-      let silindi = false;
+      let removed = false;
       const drop = () => {
-        if (silindi) return;
-        silindi = true;
+        if (removed) return;
+        removed = true;
         card.remove();
         // The deck is done: the phone screen opens
         if (!deck.querySelector(".card2")) {
-          kaydirIpucu.classList.add("hidden");
+          swipeHint.classList.add("hidden");
           phone.classList.add("open");
           // The phone holds for 1.6s, fades, and the closing line takes its place.
           // After 2s the text slides up and the phone returns beneath it.
@@ -236,24 +236,24 @@ DECK_POSTERS.slice().reverse().forEach((no) => {
 /* ---------- Sound: short recordings from last night (3 cities) ---------- */
 
 const soundSource = document.getElementById("sound-source");
-const sesSatirlari = [...document.querySelectorAll(".sound-row")];
+const soundRows = [...document.querySelectorAll(".sound-row")];
 let playingRow = null;
 
-function calmaDurdur() {
-  sesSatirlari.forEach((s) => {
+function stopPlaying() {
+  soundRows.forEach((s) => {
     s.classList.remove("playing");
     s.querySelector(".sound-line span").style.width = "0%";
   });
 }
 
-sesSatirlari.forEach((row) => {
+soundRows.forEach((row) => {
   row.querySelector(".sound-button").addEventListener("click", () => {
     if (playingRow === row && !soundSource.paused) {
       soundSource.pause();
       return;
     }
     if (playingRow !== row) {
-      calmaDurdur();
+      stopPlaying();
       playingRow = row;
       soundSource.src = row.dataset.source;
     }
@@ -275,7 +275,7 @@ soundSource.addEventListener("timeupdate", () => {
     (soundSource.currentTime / soundSource.duration) * 100 + "%";
 });
 
-soundSource.addEventListener("ended", calmaDurdur);
+soundSource.addEventListener("ended", stopPlaying);
 
 
 /* ---------- The third screen: afterhours cards running along a strip ---------- */
@@ -305,9 +305,8 @@ for (let again = 0; again < 2; again++) {
 const clockField = document.getElementById("s6-clock");
 const counterField = document.getElementById("s6-counter");
 
-document.body.dataset.footerTone = "dark";   // the menu and the sound bar invert
 
-function k6Guncelle() {
+function updateFooter() {
   const now = new Date();
   const s = now.getHours();
   const d = now.getMinutes();
@@ -328,5 +327,5 @@ function k6Guncelle() {
     : "no rooms open yet — come back after dark";
 }
 
-k6Guncelle();
-setInterval(k6Guncelle, 20000);
+updateFooter();
+setInterval(updateFooter, 20000);

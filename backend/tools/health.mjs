@@ -15,7 +15,7 @@ const address = (process.argv[2] || config.url || "").replace(/\/$/, "");
 const key = process.argv[3] || config.anonKey || "local";
 if (!address) { console.error("No address."); process.exit(1); }
 
-const basla = Date.now();
+const started = Date.now();
 let reply;
 try {
   const c = await fetch(address + "/rest/v1/rpc/health", {
@@ -31,7 +31,7 @@ try {
   process.exit(1);
 }
 
-const took = Date.now() - basla;
+const took = Date.now() - started;
 const count = (a) => Number(a || 0);
 
 console.log(`\nafterhours · ${address}`);

@@ -83,24 +83,24 @@ function motif(kind, t, main, secondary) {
     const cx = 200, cy = 230;
     const n = 10 + Math.floor(r(11) * 8);
     for (let i = 0; i < n; i++) {
-      const aci = (i / n) * Math.PI * 2 + r(13);
+      const angle = (i / n) * Math.PI * 2 + r(13);
       const uz = 90 + r(i + 3) * 90;
-      p.push(`<line x1="${cx}" y1="${cy}" x2="${(cx + Math.cos(aci) * uz).toFixed(1)}" y2="${(cy + Math.sin(aci) * uz).toFixed(1)}" stroke="${i % 3 ? main : secondary}" stroke-width="${3 + (i % 4)}" stroke-linecap="round"/>`);
+      p.push(`<line x1="${cx}" y1="${cy}" x2="${(cx + Math.cos(angle) * uz).toFixed(1)}" y2="${(cy + Math.sin(angle) * uz).toFixed(1)}" stroke="${i % 3 ? main : secondary}" stroke-width="${3 + (i % 4)}" stroke-linecap="round"/>`);
     }
     p.push(`<circle cx="${cx}" cy="${cy}" r="${26 + r(17) * 16}" fill="${secondary}"/>`);
   } else if (kind === "Festival") {
-    const taban = 330;
+    const base = 330;
     for (let i = 0; i < 4; i++) {
       const rr = 150 - i * 32;
-      p.push(`<path d="M ${200 - rr} ${taban} A ${rr} ${rr} 0 0 1 ${200 + rr} ${taban} Z" fill="${i % 2 ? main : secondary}" opacity="${0.9 - i * 0.15}"/>`);
+      p.push(`<path d="M ${200 - rr} ${base} A ${rr} ${rr} 0 0 1 ${200 + rr} ${base} Z" fill="${i % 2 ? main : secondary}" opacity="${0.9 - i * 0.15}"/>`);
     }
-    p.push(`<rect x="12" y="${taban}" width="376" height="3" fill="${main}"/>`);
+    p.push(`<rect x="12" y="${base}" width="376" height="3" fill="${main}"/>`);
   } else if (kind === "Meetup") {
-    const sut = 6 + Math.floor(r(3) * 3);
+    const column = 6 + Math.floor(r(3) * 3);
     for (let y = 0; y < 6; y++) {
-      for (let x = 0; x < sut; x++) {
+      for (let x = 0; x < column; x++) {
         const taken = ((x * 7 + y * 13 + t) >>> 0) % 3 !== 0;
-        p.push(`<circle cx="${60 + x * (280 / (sut - 1))}" cy="${150 + y * 34}" r="${taken ? 7 : 4}" fill="${taken ? main : secondary}" opacity="${taken ? 0.95 : 0.5}"/>`);
+        p.push(`<circle cx="${60 + x * (280 / (column - 1))}" cy="${150 + y * 34}" r="${taken ? 7 : 4}" fill="${taken ? main : secondary}" opacity="${taken ? 0.95 : 0.5}"/>`);
       }
     }
   } else {
@@ -117,8 +117,8 @@ function motif(kind, t, main, secondary) {
 
 function poster({ kind, title, venue, day, time, cityName }) {
   const t = seed(title + venue + day);
-  const secenekler = PALET[kind] || PALET["Club Night"];
-  const [zemin, main, secondary] = secenekler[t % secenekler.length];
+  const options = PALET[kind] || PALET["Club Night"];
+  const [zemin, main, secondary] = options[t % options.length];
 
   const rows = titleLines(title);
   const bt = fontSize(rows);

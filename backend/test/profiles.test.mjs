@@ -119,8 +119,8 @@ console.log("\n— the settings are private to the person —");
   let err = null;
   try { await db.exec(`update public.profile_settings set notify_email = false where user_id = '${A}'`); }
   catch (e) { err = e.message; }
-  const kalan = await db.query(`select notify_email from public.profile_settings where user_id = '${A}'`);
-  check(err !== null || kalan.rows.length === 0, "someone else's settings cannot be changed");
+  const remaining = await db.query(`select notify_email from public.profile_settings where user_id = '${A}'`);
+  check(err !== null || remaining.rows.length === 0, "someone else's settings cannot be changed");
 }
 
 console.log("\n— someone else's profile —");

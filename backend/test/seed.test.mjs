@@ -127,17 +127,17 @@ console.log("— can the SQL editors parse it —");
 
 console.log("\n— the relations —");
 {
-  const eksik = await db.query(`
+  const missing = await db.query(`
     select count(*)::int as n from public.events
     where city_id is null or type_id is null`);
-  check(eksik.rows[0].n === 0, "every event has a city and a kind");
+  check(missing.rows[0].n === 0, "every event has a city and a kind");
 
   const noVenue = await db.query(`select count(*)::int as n from public.events where venue_id is null`);
   check(noVenue.rows[0].n === 8,
     "8 events have no venue (their meta names a district or a city)", `found ${noVenue.rows[0].n}`);
 
-  const tahmin = await db.query(`select count(*)::int as n from public.events where starts_at_estimated`);
-  check(tahmin.rows[0].n === 24, "24 dates are marked as unconfirmed", `found ${tahmin.rows[0].n}`);
+  const estimated = await db.query(`select count(*)::int as n from public.events where starts_at_estimated`);
+  check(estimated.rows[0].n === 24, "24 dates are marked as unconfirmed", `found ${estimated.rows[0].n}`);
 
   /* Are the country fields filled in: the filter splits by country first */
   const noCountry = await db.query(
@@ -148,11 +148,11 @@ console.log("\n— the relations —");
     `select count(distinct country_slug)::int as n from public.cities`);
   check(countries.rows[0].n === 3, "three countries", "found " + countries.rows[0].n);
 
-  const turDagilim = await db.query(`
+  const kindSpread = await db.query(`
     select t.name, count(*)::int as n from public.events e
     join public.event_types t on t.id = e.type_id group by t.name order by t.name`);
   const expected = { "Club Night": 7, "Festival": 5, "Hausparty": 6, "Konzert": 5, "Meetup": 6, "Rave": 7 };
-  const got = Object.fromEntries(turDagilim.rows.map((r) => [r.name, r.n]));
+  const got = Object.fromEntries(kindSpread.rows.map((r) => [r.name, r.n]));
   check(JSON.stringify(got) === JSON.stringify(expected),
     "the spread of kinds matches the counter on the landing page", JSON.stringify(got));
 }

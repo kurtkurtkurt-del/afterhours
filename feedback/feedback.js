@@ -1,9 +1,9 @@
 /* afterhours — the feedback page.
-   Tek is: yazilani feedback tablosuna eklemek. Giris istemiyor —
-   opening an account just to report something broken would be absurd.
-   Girisliyken who oldugun kendiliginden yaziliyor (author_id
-   defaults to auth.uid()); signed out you may leave a way to reach
-   satiri birakiyorsun.
+   One job: adding what was written to the feedback table. It does not
+   ask you to sign in — opening an account just to report something broken
+   would be absurd. Signed in, who you are is filled in automatically
+   (author_id defaults to auth.uid()); signed out you may leave a way to
+   reach you.
 
    Nobody but the admin can read any of it back: this is an inbox, not a
    conversation (backend/sql/13_feedback.sql).  */
@@ -44,8 +44,8 @@
 
   /* --- sending --- */
   el("fb-send").onclick = function () {
-    const text = text.value.trim();
-    if (text.length < 10) {
+    const words = text.value.trim();
+    if (words.length < 10) {
       say("a few more words, so it can be acted on.", "error");
       text.focus();
       return;
@@ -55,9 +55,9 @@
       return;
     }
 
-    const body = { kind: kind, body: text };
-    const iletisim = el("fb-contact").value.trim();
-    if (iletisim && !AH.signedIn()) body.contact = iletisim;
+    const body = { kind: kind, body: words };
+    const contact = el("fb-contact").value.trim();
+    if (contact && !AH.signedIn()) body.contact = contact;
 
     say("sending…");
     el("fb-send").disabled = true;

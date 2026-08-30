@@ -66,10 +66,10 @@
     may have passed, or the link lost a piece on the way.</p>
 
   <nav>
-    <a data-yol="explore/index.html">the deck</a>
-    <a data-yol="maps/index.html">maps</a>
-    <a data-yol="help/index.html">how this works</a>
-    <a data-yol="index.html">home</a>
+    <a data-path="explore/index.html">the deck</a>
+    <a data-path="maps/index.html">maps</a>
+    <a data-path="help/index.html">how this works</a>
+    <a data-path="index.html">home</a>
   </nav>
 
   <script>
@@ -77,7 +77,7 @@
        where the root is from the address, so the links work either way. */
     var root = location.pathname.indexOf("/afterhours/") === 0 ? "/afterhours/" : "/";
     document.querySelectorAll("nav a").forEach(function (a) {
-      a.href = root + a.dataset.yol;
+      a.href = root + a.dataset.path;
     });
   </script>
 </body>

@@ -53,22 +53,22 @@ console.log("\n— everyone can write —");
 console.log("\n— the limits —");
 {
   await asUser(B);
-  let kisa = null;
+  let tooShort = null;
   try { await db.exec(`insert into public.feedback (body) values ('no')`); }
-  catch (e) { kisa = e.message; }
-  check(Boolean(kisa), "a message that is too short is refused");
+  catch (e) { tooShort = e.message; }
+  check(Boolean(tooShort), "a message that is too short is refused");
 
   let kind = null;
   try { await db.exec(`insert into public.feedback (kind, body) values ('spam', 'here is another message')`); }
   catch (e) { kind = e.message; }
   check(Boolean(kind), "an unknown kind is refused");
 
-  let sahte = null;
+  let forged = null;
   try {
     await db.exec(`insert into public.feedback (author_id, body)
                    values ('${A}', 'baskasinin adina yazilan one mesaj')`);
-  } catch (e) { sahte = e.message; }
-  check(Boolean(sahte), "you cannot write in someone else's name");
+  } catch (e) { forged = e.message; }
+  check(Boolean(forged), "you cannot write in someone else's name");
 }
 
 console.log("\n— only the admin reads —");
@@ -76,12 +76,12 @@ console.log("\n— only the admin reads —");
   /* A signed-out reader was never GRANTED read at all: it is the
      privilege stopping them, not a policy. So an error is the right result. */
   await asAnon();
-  let anonHata = null, anonSatir = null;
+  let anonError = null, anonSatir = null;
   try {
     const a = await db.query(`select count(*)::int as n from public.feedback`);
     anonSatir = a.rows[0].n;
-  } catch (e) { anonHata = e.message; }
-  check(anonHata !== null || anonSatir === 0, "signed out, nothing is visible",
+  } catch (e) { anonError = e.message; }
+  check(anonError !== null || anonSatir === 0, "signed out, nothing is visible",
     "it saw " + anonSatir);
 
   await asUser(B);

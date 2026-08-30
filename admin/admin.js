@@ -112,7 +112,7 @@
   }
 
   function fillOptions() {
-    const koy = (field, kayitlar, bosMu) => {
+    const add = (field, kayitlar, bosMu) => {
       field.textContent = "";
       if (bosMu) {
         const o = document.createElement("option");
@@ -126,9 +126,9 @@
         field.appendChild(o);
       });
     };
-    koy($("a-type"), kinds, false);
-    koy($("a-city"), cities, false);
-    koy($("a-venue"), venues, true);
+    add($("a-type"), kinds, false);
+    add($("a-city"), cities, false);
+    add($("a-venue"), venues, true);
   }
 
   /* --- list --- */
@@ -307,17 +307,17 @@
     file.text().then((text) => {
       const box = $("a-poster-preview");
       box.textContent = "";
-      const sarmal = document.createElement("div");
-      sarmal.className = "adm-poster-inner";
-      sarmal.innerHTML = text;
-      box.appendChild(sarmal);
+      const wrapper = document.createElement("div");
+      wrapper.className = "adm-poster-inner";
+      wrapper.innerHTML = text;
+      box.appendChild(wrapper);
 
-      const svg = sarmal.querySelector("svg");
+      const svg = wrapper.querySelector("svg");
       if (!svg) { note.textContent = "that file has no <svg> in it."; return; }
 
-      const kutuOlcu = (svg.getAttribute("viewBox") || "").split(/\s+/);
-      const width = Number(kutuOlcu[2]) || 400;
-      const height = Number(kutuOlcu[3]) || 600;
+      const boxSize = (svg.getAttribute("viewBox") || "").split(/\s+/);
+      const width = Number(boxSize[2]) || 400;
+      const height = Number(boxSize[3]) || 600;
 
       const problems = [];
       if (Math.abs(width / height - 2 / 3) > 0.01) {
@@ -344,18 +344,18 @@
 
       /* If nothing is wrong it can be uploaded. If something is, the
          gorunmuyor: bozuk poster siteye gitmesin. */
-      yukleDugmesi.hidden = Boolean(problems.length) || !chosen;
-      bekleyenDosya = problems.length ? null : file;
+      uploadButton.hidden = Boolean(problems.length) || !chosen;
+      pendingFile = problems.length ? null : file;
     });
   });
 
   /* --- uploading to the store --- */
 
-  let bekleyenDosya = null;
-  const yukleDugmesi = document.getElementById("a-poster-upload");
+  let pendingFile = null;
+  const uploadButton = document.getElementById("a-poster-upload");
 
-  yukleDugmesi.addEventListener("click", () => {
-    if (!bekleyenDosya || !chosen) return;
+  uploadButton.addEventListener("click", () => {
+    if (!pendingFile || !chosen) return;
     const note = $("a-poster-note");
     const name = chosen.slug + "-" + Date.now() + ".svg";
     note.textContent = "uploading…";
@@ -369,7 +369,7 @@
         "Content-Type": "image/svg+xml",
         "x-upsert": "true",
       },
-      body: bekleyenDosya,
+      body: pendingFile,
     })
       .then(async (c) => {
         if (!c.ok) throw new Error(c.status + " " + (await c.text()).slice(0, 120));
@@ -384,8 +384,8 @@
       .then(() => {
         note.textContent = "uploaded. the site uses this file now.";
         note.className = "adm-poster-note good";
-        yukleDugmesi.hidden = true;
-        bekleyenDosya = null;
+        uploadButton.hidden = true;
+        pendingFile = null;
         return reload();
       })
       .catch((h) => {
@@ -412,11 +412,11 @@
 
   function drawFeedback(rows) {
     const list = $("adm-feedback-list");
-    const sayac = $("adm-feedback-number");
+    const counter = $("adm-feedback-number");
     list.textContent = "";
 
     const open = (rows || []).filter((g) => !g.handled).length;
-    sayac.textContent = open ? "· " + open + " waiting" : "· all handled";
+    counter.textContent = open ? "· " + open + " waiting" : "· all handled";
 
     if (!rows || !rows.length) {
       const empty = document.createElement("li");
@@ -450,17 +450,17 @@
       what.textContent = String(g.created_at || "").slice(0, 10);
       top.appendChild(what);
 
-      const isaret = document.createElement("button");
-      isaret.className = "adm-comment-action";
-      isaret.type = "button";
-      isaret.textContent = g.handled ? "reopen" : "handled";
-      isaret.addEventListener("click", () => {
+      const mark = document.createElement("button");
+      mark.className = "adm-comment-action";
+      mark.type = "button";
+      mark.textContent = g.handled ? "reopen" : "handled";
+      mark.addEventListener("click", () => {
         AH.request("/feedback?id=eq." + g.id, {
           method: "PATCH",
           body: JSON.stringify({ handled: !g.handled }),
         }).then(fetchFeedback);
       });
-      top.appendChild(isaret);
+      top.appendChild(mark);
 
       const text = document.createElement("p");
       text.className = "adm-feedback-text";

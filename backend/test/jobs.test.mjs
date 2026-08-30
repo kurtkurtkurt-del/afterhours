@@ -61,8 +61,8 @@ console.log("\n— dropping what is past —");
   check(status["blitz"] === true, "a future event stays");
   check(status["strobo"] === true, "one that started 2 hours ago stays (the night is not over)");
 
-  const tekrar = await db.query(`select public.hide_past_events() as n`);
-  check(tekrar.rows[0].n === 0, "ikinci calisma one sey degistirmiyor");
+  const again = await db.query(`select public.hide_past_events() as n`);
+  check(again.rows[0].n === 0, "ikinci calisma one sey degistirmiyor");
 }
 
 console.log("\n— the health summary —");

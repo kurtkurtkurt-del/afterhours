@@ -106,17 +106,17 @@ console.log("\n— do the views leak past RLS —");
   check(g.rows[0].n > 0, "signed out, the comments can be read");
 
   await asService();
-  const gizli = await db.query(`update public.comments set is_hidden = true
+  const hidden = await db.query(`update public.comments set is_hidden = true
                                 where id = (select id from public.comments limit 1)
                                 returning id`);
-  const gizliId = gizli.rows[0].id;
+  const hiddenId = hidden.rows[0].id;
 
   await asAnon();
   const h = await db.query(`select count(*)::int as n from public.comments_public where id = $1`,
-                           [gizliId]);
+                           [hiddenId]);
   check(h.rows[0].n === 0, "a hidden comment is not in the view");
   /* It must not show in the table either - the view is not the only line of defence */
-  const d = await db.query(`select count(*)::int as n from public.comments where id = $1`, [gizliId]);
+  const d = await db.query(`select count(*)::int as n from public.comments where id = $1`, [hiddenId]);
   check(d.rows[0].n === 0, "a hidden comment is closed to anonymous in the table as well");
 }
 

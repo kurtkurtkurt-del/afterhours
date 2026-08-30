@@ -36,8 +36,8 @@ const store = new Map();
 /* On real Supabase this is a JWT. Here it is the plain user id, carrying
    a "local-" prefix so it is obvious that it is fake. */
 function userFromToken(bas) {
-  const yetki = bas.authorization || "";
-  const m = yetki.match(/^Bearer\s+local-(.+)$/);
+  const role = bas.authorization || "";
+  const m = role.match(/^Bearer\s+local-(.+)$/);
   return m ? m[1] : null;
 }
 
@@ -60,13 +60,13 @@ async function argumentTypes(fn) {
             array(select t::regtype::text from unnest(p.proargtypes) as t) as types
      from pg_proc p join pg_namespace n on n.oid = p.pronamespace
      where n.nspname = 'public' and p.proname = $1 limit 1`, [fn]);
-  const esle = {};
+  const match = {};
   if (r.rows.length && r.rows[0].adlar) {
     const names = r.rows[0].adlar, types = r.rows[0].tipler;
-    names.forEach((a, i) => { if (a && types[i]) esle[a] = types[i]; });
+    names.forEach((a, i) => { if (a && types[i]) match[a] = types[i]; });
   }
-  typeCache.set(fn, esle);
-  return esle;
+  typeCache.set(fn, match);
+  return match;
 }
 
 /* --- a small subset of the PostgREST filters ------------------------- */
@@ -278,7 +278,7 @@ const server = createServer(async (req, reply) => {
       const table = name.split("?")[0].replace(/[^a-z_0-9]/gi, "");
       const counter = { n: 1 };
       const { where, sort_order, limit, params } = translateFilters(url.searchParams, counter);
-      const tercih = String(req.headers.prefer || "");
+      const prefer = String(req.headers.prefer || "");
 
       if (req.method === "GET") {
         const r = await db.query(
@@ -290,19 +290,19 @@ const server = createServer(async (req, reply) => {
         const rows = Array.isArray(body) ? body : [body];
         if (!rows.length || !rows[0]) return send(400, { message: "body empty" });
         const columns = Object.keys(rows[0]);
-        const degerler = [];
+        const values = [];
         const parts = rows.map((s) => {
-          const yer = columns.map((k) => { degerler.push(s[k]); return `$${degerler.length}`; });
+          const yer = columns.map((k) => { values.push(s[k]); return `$${values.length}`; });
           return `(${yer.join(", ")})`;
         });
-        const conflict = /merge-duplicates/.test(tercih)
+        const conflict = /merge-duplicates/.test(prefer)
           ? ` on conflict (user_id, event_id) do update set direction = excluded.direction,
               created_at = now()`
           : "";
-        const back = /return=minimal/.test(tercih) ? "" : " returning *";
+        const back = /return=minimal/.test(prefer) ? "" : " returning *";
         const r = await db.query(
           `insert into public.${table} (${columns.join(", ")}) values ${parts.join(", ")}${conflict}${back}`,
-          degerler);
+          values);
         return back ? send(201, r.rows) : send(201);
       }
 

@@ -16,9 +16,9 @@
 
   const arkForm = document.getElementById("friend-form");
   const arkAlan = document.getElementById("friend-field");
-  const arkDurum = document.getElementById("friend-status");
-  const arkListe = document.getElementById("friend-list");
-  const tutListe = document.getElementById("kept-list");
+  const friendStatus = document.getElementById("friend-status");
+  const friendList = document.getElementById("friend-list");
+  const keptList = document.getElementById("kept-list");
   const nrSection = document.querySelector(".nr-section");
 
   const CEVAP = {
@@ -62,12 +62,12 @@
 
   function loadFriends() {
     AH.friends().then((list) => {
-      arkListe.textContent = "";
+      friendList.textContent = "";
       if (!list.length) {
         const empty = document.createElement("li");
         empty.className = "friend-empty";
         empty.textContent = "no friends yet.";
-        arkListe.appendChild(empty);
+        friendList.appendChild(empty);
         return;
       }
       list.forEach((a) => {
@@ -88,24 +88,24 @@
         row.appendChild(status);
 
         if (a.status === "pending" && a.direction === "incoming") {
-          const kabul = document.createElement("button");
-          kabul.className = "friend-action";
-          kabul.type = "button";
-          kabul.textContent = "accept";
-          kabul.addEventListener("click", () =>
+          const accept = document.createElement("button");
+          accept.className = "friend-action";
+          accept.type = "button";
+          accept.textContent = "accept";
+          accept.addEventListener("click", () =>
             AH.friendAccept(a.other_id).then(loadFriends));
-          row.appendChild(kabul);
+          row.appendChild(accept);
         }
 
-        const cikar = document.createElement("button");
-        cikar.className = "friend-action delete";
-        cikar.type = "button";
-        cikar.textContent = a.status === "accepted" ? "remove" : "cancel";
-        cikar.addEventListener("click", () =>
+        const remove = document.createElement("button");
+        remove.className = "friend-action delete";
+        remove.type = "button";
+        remove.textContent = a.status === "accepted" ? "remove" : "cancel";
+        remove.addEventListener("click", () =>
           AH.friendRemove(a.other_id).then(loadFriends));
-        row.appendChild(cikar);
+        row.appendChild(remove);
 
-        arkListe.appendChild(row);
+        friendList.appendChild(row);
       });
     });
   }
@@ -114,13 +114,13 @@
     e.preventDefault();
     const h = arkAlan.value.trim();
     if (!h) return;
-    arkDurum.textContent = "…";
+    friendStatus.textContent = "…";
     AH.friendRequest(h)
       .then((c) => {
-        arkDurum.textContent = CEVAP[c] || String(c);
+        friendStatus.textContent = CEVAP[c] || String(c);
         if (c === "sent" || c === "accepted") { arkAlan.value = ""; loadFriends(); }
       })
-      .catch((h) => { arkDurum.textContent = AH.errorText(h, "couldn't send that request."); });
+      .catch((h) => { friendStatus.textContent = AH.errorText(h, "couldn't send that request."); });
   });
 
   /* --- kept --- */
@@ -128,12 +128,12 @@
   function loadKept() {
     if (!AH.kept) return;
     AH.kept().then((list) => {
-      tutListe.textContent = "";
+      keptList.textContent = "";
       if (!list.length) {
         const empty = document.createElement("li");
         empty.className = "friend-empty";
         empty.textContent = "nothing kept yet. swipe a card right in explore.";
-        tutListe.appendChild(empty);
+        keptList.appendChild(empty);
         return;
       }
       list.forEach((e) => {
@@ -160,7 +160,7 @@
         a.appendChild(text);
 
         row.appendChild(a);
-        tutListe.appendChild(row);
+        keptList.appendChild(row);
       });
     });
   }

@@ -6,11 +6,11 @@
   const form = document.getElementById("page-form");
   const field = document.getElementById("page-email");
   const passwordField = document.getElementById("page-password");
-  const dugme = document.getElementById("page-button");
+  const submitButton = document.getElementById("page-button");
   const note = document.getElementById("page-note");
   const inside = document.getElementById("page-in");
   const who = document.getElementById("page-who");
-  const cik = document.getElementById("page-signout");
+  const signOutButton = document.getElementById("page-signout");
 
   const AYAR = window.AH_CONFIG || {};
   const open = Boolean(AYAR.url && AYAR.anonKey);
@@ -62,7 +62,7 @@
       return;
     }
 
-    dugme.disabled = true;
+    submitButton.disabled = true;
     report("signing in…");
     AH.signInWithPassword(email, password)
       .then(() => { passwordField.value = ""; render(); report("you're in.", "ok"); })
@@ -71,10 +71,10 @@
           ? "wrong email or password."
           : "couldn't sign in: " + h.message, "error");
       })
-      .finally(() => { dugme.disabled = false; });
+      .finally(() => { submitButton.disabled = false; });
   });
 
-  cik.addEventListener("click", () => {
+  signOutButton.addEventListener("click", () => {
     AH.signOut().then(() => { render(); report("signed out.", "ok"); });
   });
 
