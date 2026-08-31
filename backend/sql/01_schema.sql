@@ -166,9 +166,16 @@ create index if not exists comments_parent_idx on public.comments (parent_id);
 
 -- There is no third level (the screen shows two) and a reply has to
 -- belong to the same event as its topic.
+-- security definer, because the SELECT below otherwise runs under the
+-- caller’s read rule: a HIDDEN parent came back as no row at all, both
+-- checks passed on NULL, and a reply could land on a hidden reply (a
+-- third level) or carry the wrong event. The check has to see every
+-- parent to mean anything.
 create or replace function public.comments_check_depth()
 returns trigger
 language plpgsql
+security definer
+set search_path = public
 as $$
 declare
   parent public.comments%rowtype;

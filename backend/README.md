@@ -33,7 +33,7 @@ tools/backup.mjs         backs the content up to JSON
 tools/restore.mjs        turns a backup back into SQL
 tools/health.mjs         the status check
 
-test/                    260 checks, all on a real Postgres (PGlite)
+test/                    262 checks, all on a real Postgres (PGlite)
 ```
 
 ## Day to day

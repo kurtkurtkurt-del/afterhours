@@ -123,8 +123,8 @@
     setTimeout(remove, 420);
   }
 
-  /* The left/right arrow keys swipe too. Inside the filter the arrows
-     secenek degistirmeli, o yuzden form ogelerinde karisma. */
+  /* The left/right arrow keys swipe too. Inside a form control the
+     arrows must keep their own meaning, so those are left alone. */
   document.addEventListener("keydown", (e) => {
     if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
     if (e.metaKey || e.ctrlKey || e.altKey) return;
@@ -215,9 +215,9 @@
     });
   }
 
-  function row(sinif, text) {
+  function row(cls, text) {
     const e = document.createElement("p");
-    e.className = sinif;
+    e.className = cls;
     e.textContent = text;
     return e;
   }
@@ -387,15 +387,15 @@
   /* --- the buttons on the left: deal the deck again --- */
 
   /* The same cards, from the start. They fly in from the left and
-     top uste dusler; en ustteki en son iner. */
-  const BOS_MESAJ = {
+     land on the pile; the top card comes down last. */
+  const EMPTY_MESSAGE = {
     "global deck": "that's everyone for tonight.",
     "friends liked swipes": "no friends have kept anything yet.",
     "i feel lucky": "nowhere left to be sent tonight.",
   };
 
-  /* The filter at the top: city and kind. Live, the query runs in the
-     yapiliyor, yerel modda elimizdeki listeden suzuluyor. */
+  /* The filter at the top: city and kind. Live, the filtering happens
+     in the database query; in local mode the list we hold is sifted. */
   function applyFilter(list) {
     const f = (window.AH && AH.filter) || {};
     if (!f.kind) return list;
@@ -411,9 +411,9 @@
         : Promise.resolve([]);
     }
     if (mode === "i feel lucky") {
-      /* Jump to a random city, then shuffle that city's deck.
-         Filtre kendini de guncelliyor, boylece nereye dustugun
-         ustteki secimlerden okunuyor. */
+      /* Jump to a random city, then shuffle that city's deck. The
+         filter updates itself too, so where you landed can be read off
+         the choices above the deck. */
       const picked = window.AH && AH.randomCity ? AH.randomCity() : null;
       const source = picked && AH.mode === "live" && AH.events
         ? AH.events(null, picked.slug).catch(() => applyFilter(POSTERS))
@@ -438,7 +438,7 @@
 
   function redeal(mode) {
     const done = document.getElementById("ex-done");
-    if (done && mode) done.textContent = BOS_MESAJ[mode] || BOS_MESAJ["global deck"];
+    if (done && mode) done.textContent = EMPTY_MESSAGE[mode] || EMPTY_MESSAGE["global deck"];
 
     return sourceFor(mode || "global deck").then((list) => {
       CARDS = list.length ? list : [];
@@ -479,7 +479,8 @@
     });
 
     /* If a transition is cut short the cards must not stay invisible:
-       dolunca son hali elle yaz. Elde kept karta dokunma. */
+       when the time is up, write the final state by hand. A card being
+       held is left alone. */
     setTimeout(() => {
       cards.forEach((k) => {
         if (!k.isConnected || k.classList.contains("held")) return;

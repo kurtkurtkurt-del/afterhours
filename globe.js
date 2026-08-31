@@ -24,7 +24,7 @@
 
   /* The previous LCG multiply ran past 2^53 and lost precision; once the
      generator breaks
-     kurede duzenli bosluklar olusuyordu. mulberry32 32 bitte guvenli. */
+     regular gaps appeared across the globe. mulberry32 is safe in 32 bits. */
   let seed = 20260828 >>> 0;
   function rnd() {
     seed = (seed + 0x6D2B79F5) >>> 0;
@@ -140,16 +140,16 @@
       Math.sin(lat),
       Math.sin(lon) * Math.cos(lat),
     ];
-    let en = null, enYakin = -2;
+    let best = null, bestDot = -2;
     BUILDINGS.forEach((b) => {
       const s = dot(b.u, target);
-      if (s > enYakin) { enYakin = s; en = b; }
+      if (s > bestDot) { bestDot = s; best = b; }
     });
-    g.building = en;
+    g.building = best;
   });
 
   // ---------- projection ----------
-  let angle = 0.4, egim2 = 0.12;
+  let angle = 0.4, dragTilt = 0.12;
 
   function project(p) {
     const rx = p[0];
@@ -214,7 +214,8 @@
 
   /* Around an event, everything takes that night's colour: the event
      colours the neighbourhood
-     canlandiriyor. Bir kez hesaplanir, cizim dongusu ucuz kalir. */
+     brings the neighbourhood to life. Computed once, so the draw loop
+     stays cheap. */
   const HALO_ANGLE = 0.12;
   BUILDINGS.forEach((b) => {
     b.faces = [ROOF[b.tone], SIDE_A[b.tone], SIDE_B[b.tone]];
@@ -275,8 +276,8 @@
   stage.addEventListener("pointermove", (e) => {
     if (dragging) {
       angle -= (e.clientX - lastX) * 0.006;
-      egim2 += (e.clientY - lastY) * 0.005;
-      egim2 = Math.max(-0.62, Math.min(0.62, egim2));
+      dragTilt += (e.clientY - lastY) * 0.005;
+      dragTilt = Math.max(-0.62, Math.min(0.62, dragTilt));
       lastX = e.clientX; lastY = e.clientY;
       return;
     }
@@ -284,14 +285,14 @@
     const r = stage.getBoundingClientRect();
     const px = (e.clientX - r.left) * (stage.width / r.width);
     const py = (e.clientY - r.top) * (stage.height / r.height);
-    let en = null, enYakin = 16 * SCALE;
+    let hit = null, nearest = 16 * SCALE;
     beacons.forEach((b) => {
       if (!b.visible || b.visible < 0.4) return;
       const d = distanceToSegment(px, py, b.bottomE, b.topE);
-      if (d < enYakin) { enYakin = d; en = b.g; }
+      if (d < nearest) { nearest = d; hit = b.g; }
     });
-    hovered = en;
-    stage.style.cursor = en ? "pointer" : "grab";
+    hovered = hit;
+    stage.style.cursor = hit ? "pointer" : "grab";
   });
 
   const release = () => { if (dragging) { dragging = false; idleTime = 0; } };
@@ -304,8 +305,8 @@
 
   function distanceToSegment(px, py, a, b) {
     const dx = b.x - a.x, dy = b.y - a.y;
-    const uz = dx * dx + dy * dy;
-    let t = uz ? ((px - a.x) * dx + (py - a.y) * dy) / uz : 0;
+    const lengthSq = dx * dx + dy * dy;
+    let t = lengthSq ? ((px - a.x) * dx + (py - a.y) * dy) / lengthSq : 0;
     t = Math.max(0, Math.min(1, t));
     return Math.hypot(px - (a.x + dx * t), py - (a.y + dy * t));
   }
@@ -317,9 +318,9 @@
 
   const E = (q) => ({ x: SHIFT_X + q.x * SCALE, y: SHIFT_Y + q.y * SCALE });
 
-  function draw(simdi) {
-    const dt = Math.min(0.05, (simdi - lastTime) / 1000);
-    lastTime = simdi;
+  function draw(now) {
+    const dt = Math.min(0.05, (now - lastTime) / 1000);
+    lastTime = now;
 
     if (!dragging) {
       idleTime += dt;
@@ -327,7 +328,7 @@
     }
 
     const cosA = Math.cos(angle), sinA = Math.sin(angle);
-    const cosT = Math.cos(egim2), sinT = Math.sin(egim2);
+    const cosT = Math.cos(dragTilt), sinT = Math.sin(dragTilt);
 
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, stage.width, stage.height);
@@ -396,12 +397,12 @@
         { p: [A[1], A[2], T[2], T[1]], tone: b.faces[2] },
         { p: [A[3], A[0], T[0], T[3]], tone: b.faces[2] },
       ].forEach((f) => {
-        let alan = 0;
+        let area = 0;
         for (let i = 0; i < 4; i++) {
           const a = f.p[i], c = f.p[(i + 1) % 4];
-          alan += a.x * c.y - c.x * a.y;
+          area += a.x * c.y - c.x * a.y;
         }
-        if (alan >= 0) return;
+        if (area >= 0) return;
         list.push({
           d: (f.p[0].d + f.p[1].d + f.p[2].d + f.p[3].d) / 4,
           p: f.p, tone: f.tone, fade: fade,
@@ -414,9 +415,9 @@
     ctx.lineWidth = 0.7;
     ctx.lineJoin = "round";
     ctx.strokeStyle = OUTLINE;
-    let sonAlfa = -1;
+    let lastAlpha = -1;
     list.forEach((f) => {
-      if (f.fade !== sonAlfa) { ctx.globalAlpha = f.fade; sonAlfa = f.fade; }
+      if (f.fade !== lastAlpha) { ctx.globalAlpha = f.fade; lastAlpha = f.fade; }
       ctx.beginPath();
       ctx.moveTo(f.p[0].x, f.p[0].y);
       ctx.lineTo(f.p[1].x, f.p[1].y);
@@ -429,7 +430,7 @@
     });
     ctx.globalAlpha = 1;
 
-    // --- beacon'lar ---
+    // --- the beacons ---
     ctx.font = "10.5px 'JetBrains Mono', ui-monospace, monospace";
     ctx.textAlign = "center";
     beacons.forEach((b) => {
@@ -446,8 +447,8 @@
       if (b.visible <= 0.01) return;
 
       const dx = top.x - bottom.x, dy = top.y - bottom.y;
-      const uz = Math.hypot(dx, dy) || 1;
-      const nx = -dy / uz, ny = dx / uz;
+      const length = Math.hypot(dx, dy) || 1;
+      const nx = -dy / length, ny = dx / length;
 
       const bright = hovered === g ? 1.35 : 1;
       SHELL.forEach((kb) => {
@@ -499,11 +500,15 @@
   // From screen coordinates back to design coordinates
   const unproject = (q) => ({ x: (q.x - SHIFT_X) / SCALE, y: (q.y - SHIFT_Y) / SCALE });
 
-  /* Draw only while this screen is in front. rAF never fires in the preview
-     panel
-     (panel belgeyi "hidden" sayiyor), o yuzden zamanlayici kullaniyoruz. */
+  /* Draw only while this screen is in front. A timer, not rAF, because
+     the preview panel reports the document as hidden and rAF never fires
+     there — but a fixed 16ms interval also ticked all day on the other
+     five screens. The timer stretches to 200ms while the globe is off
+     screen and tightens back the moment it is on. */
   draw(performance.now());
-  setInterval(() => {
-    if (document.body.dataset.screen === "3") draw(performance.now());
-  }, 16);
+  (function tick() {
+    const active = document.body.dataset.screen === "3";
+    if (active) draw(performance.now());
+    setTimeout(tick, active ? 16 : 200);
+  })();
 })();

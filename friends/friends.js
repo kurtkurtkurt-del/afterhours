@@ -14,14 +14,14 @@
   const handleField = document.getElementById("handle-field");
   const handleStatus = document.getElementById("handle-status");
 
-  const arkForm = document.getElementById("friend-form");
-  const arkAlan = document.getElementById("friend-field");
+  const friendForm = document.getElementById("friend-form");
+  const friendField = document.getElementById("friend-field");
   const friendStatus = document.getElementById("friend-status");
   const friendList = document.getElementById("friend-list");
   const keptList = document.getElementById("kept-list");
   const nrSection = document.querySelector(".nr-section");
 
-  const CEVAP = {
+  const REQUEST_WORDS = {
     sent: "request sent.",
     accepted: "you're friends now.",
     notfound: "nobody here by that handle.",
@@ -115,15 +115,15 @@
     });
   }
 
-  arkForm.addEventListener("submit", (e) => {
+  friendForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const h = arkAlan.value.trim();
+    const h = friendField.value.trim();
     if (!h) return;
     friendStatus.textContent = "…";
     AH.friendRequest(h)
       .then((c) => {
-        friendStatus.textContent = CEVAP[c] || String(c);
-        if (c === "sent" || c === "accepted") { arkAlan.value = ""; loadFriends(); }
+        friendStatus.textContent = REQUEST_WORDS[c] || String(c);
+        if (c === "sent" || c === "accepted") { friendField.value = ""; loadFriends(); }
       })
       .catch((h) => { friendStatus.textContent = AH.errorText(h, "couldn't send that request."); });
   });

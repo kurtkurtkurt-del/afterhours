@@ -266,7 +266,12 @@ grant execute on function public.swipes_reset()         to authenticated;
 grant execute on function public.kept()                 to authenticated;
 grant execute on function public.friends_kept(int)      to authenticated;
 grant execute on function public.event_counts(text)     to anon, authenticated;
-grant execute on function public.keep_counts()          to anon, authenticated;
+
+-- keep_counts is the admin panel’s number; nothing signed out reads it.
+-- Definer functions hand out exactly what they select, so the fewer keys
+-- to this one the better (it was open to anonymous for no reason).
+revoke execute on function public.keep_counts() from public, anon;
+grant execute on function public.keep_counts()          to authenticated;
 
 grant select on public.events_public, public.comments_public to anon, authenticated;
 

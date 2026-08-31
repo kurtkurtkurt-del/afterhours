@@ -12,8 +12,8 @@
   const who = document.getElementById("page-who");
   const signOutButton = document.getElementById("page-signout");
 
-  const AYAR = window.AH_CONFIG || {};
-  const open = Boolean(AYAR.url && AYAR.anonKey);
+  const CONFIG = window.AH_CONFIG || {};
+  const open = Boolean(CONFIG.url && CONFIG.anonKey);
 
   function report(text, kind) {
     note.textContent = text || "";

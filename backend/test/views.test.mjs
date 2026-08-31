@@ -129,8 +129,16 @@ console.log("\n— the counters —");
   check(got["Rave"] === 6 && got["Konzert"] === 5,
     "the counter counts the published ones", JSON.stringify(got));
 
+  /* keep_counts serves the admin panel alone; anonymous lost EXECUTE. */
+  let countsError = false;
+  try { await db.query(`select count(*)::int as n from public.keep_counts()`); }
+  catch (e) { countsError = /permission denied/i.test(e.message); }
+  check(countsError, "the keep counts are closed to anonymous");
+
+  await asUser(ME);
   const k = await db.query(`select count(*)::int as n from public.keep_counts()`);
-  check(k.rows[0].n === 1, "the keep counts are open to anonymous too (not who did it)");
+  check(k.rows[0].n === 1, "signed in they answer (the count, never who)");
+  await asAnon();
 
   /* Anonymous has no privilege on the swipes table at all: not an empty
      dogrudan yetki hatasi almali. */
@@ -184,6 +192,31 @@ console.log("\n— moderation sticks —");
                    select id, repeat('x', 2001) from public.events where slug = 'blitz'`);
   } catch (e) { tooLong = e.message; }
   check(Boolean(tooLong), "a comment past 2000 characters is refused");
+
+  /* The depth check runs a SELECT, and under the caller's read rule a
+     HIDDEN parent came back as no row: both checks passed on NULL and a
+     reply could land on a hidden reply — a third level. The trigger is
+     definer now, so it sees every parent. */
+  await asService();
+  const t2 = await db.query(`insert into public.comments (event_id, author_name, body)
+                             select id, 'someone', 'a topic for the depth test'
+                             from public.events where slug = 'blitz' returning id`);
+  await asUser(STRANGER);
+  const r2 = await db.query(`insert into public.comments (event_id, parent_id, body)
+                             select event_id, id, 'a reply that will be hidden'
+                             from public.comments where id = '${t2.rows[0].id}' returning id`);
+  await asUser(ME);
+  await db.exec(`update public.comments set is_hidden = true where id = '${r2.rows[0].id}'`);
+
+  await asUser(STRANGER);
+  let third = null;
+  try {
+    await db.exec(`insert into public.comments (event_id, parent_id, body)
+                   select id, '${r2.rows[0].id}', 'a reply to the hidden reply'
+                   from public.events where slug = 'blitz'`);
+  } catch (e) { third = e.message; }
+  check(/cannot be replied to/i.test(third || ""),
+    "a hidden reply still refuses a third level");
 }
 
 console.log(`\n${passed} passed, ${failed} failed\n`);

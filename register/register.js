@@ -23,10 +23,10 @@
     AH.request("/rpc/" + fn, { method: "POST", body: JSON.stringify(body || {}) });
   const scalar = (c) => (Array.isArray(c) ? c[0] : c);
 
-  function say(box, text, cesit) {
+  function say(box, text, tone) {
     box.textContent = text || "";
     box.className = (box.id === "reg-note" ? "page-note" : "account-status") +
-      (cesit ? " " + cesit : "");
+      (tone ? " " + tone : "");
   }
 
   let city = null;
@@ -54,9 +54,9 @@
     say(note, "opening it…");
 
     AH.signUp(email, password)
-      .then((oturum) => {
+      .then((session) => {
         el("reg-create").disabled = false;
-        if (!oturum) {
+        if (!session) {
           /* Confirmation is on: no token came, they check their email first */
           el("reg-mail-note").textContent =
             "We sent a link to " + email + ". Open it and you land back here to " +
@@ -78,24 +78,29 @@
 
   /* ---------------- 2 · handle ---------------- */
 
-  const SOZ = {
+  const HANDLE_WORDS = {
     ok: "free.", yours: "this one is yours.", taken: "someone already has that one.",
     format: "lowercase letters, numbers and underscore. 3–20.", empty: "",
   };
 
-  let pending = null;
+  /* checkNo guards against answers landing out of order: with only the
+     debounce, a slow reply to "ahm" could overwrite the verdict already
+     shown for "ahmet". Only the latest check may speak. */
+  let pending = null, checkNo = 0;
   el("reg-handle").addEventListener("input", function () {
     clearTimeout(pending);
+    const mine = ++checkNo;
     const h = this.value.trim();
     if (!h) { say(el("reg-handle-status"), ""); return; }
     pending = setTimeout(() => {
       call("handle_status", { p_handle: h })
         .then((c) => {
+          if (mine !== checkNo) return;
           const s = scalar(c);
-          say(el("reg-handle-status"), SOZ[s] || "",
+          say(el("reg-handle-status"), HANDLE_WORDS[s] || "",
             s === "taken" || s === "format" ? "error" : "ok");
         })
-        .catch(() => say(el("reg-handle-status"), ""));
+        .catch(() => { if (mine === checkNo) say(el("reg-handle-status"), ""); });
     }, 300);
   });
 
@@ -137,7 +142,7 @@
       .catch(() => { box.textContent = ""; });
   }
 
-  const YANIT = {
+  const ANSWERS = {
     taken: "someone already has that handle.",
     format: "that handle doesn't fit the format.",
     empty: "pick a handle first.",
@@ -160,7 +165,7 @@
         const s = scalar(c);
         el("reg-finish").disabled = false;
         if (s !== "ok") {
-          say(el("reg-status"), YANIT[s] || String(s), "error");
+          say(el("reg-status"), ANSWERS[s] || String(s), "error");
           return;
         }
         el("reg-welcome").textContent =
@@ -183,8 +188,8 @@
   /* ---------------- start ---------------- */
 
   function render() {
-    const AYAR = window.AH_CONFIG || {};
-    if (!(AYAR.url && AYAR.anonKey)) {
+    const CONFIG = window.AH_CONFIG || {};
+    if (!(CONFIG.url && CONFIG.anonKey)) {
       show("reg-1");
       el("reg-form").hidden = true;
       say(el("reg-note"), "sign-up opens when the backend does.", "waiting");

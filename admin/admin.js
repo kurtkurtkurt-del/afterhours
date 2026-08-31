@@ -15,7 +15,7 @@
   const $ = (id) => document.getElementById(id);
   const listArea = $("adm-list");
   const summary = $("adm-summary");
-  const araAlan = $("adm-search");
+  const searchField = $("adm-search");
   const editor = $("adm-edit");
   const status = $("a-status");
 
@@ -112,14 +112,14 @@
   }
 
   function fillOptions() {
-    const add = (field, kayitlar, bosMu) => {
+    const add = (field, records, withEmpty) => {
       field.textContent = "";
-      if (bosMu) {
+      if (withEmpty) {
         const o = document.createElement("option");
         o.value = ""; o.textContent = "—";
         field.appendChild(o);
       }
-      kayitlar.forEach((k) => {
+      records.forEach((k) => {
         const o = document.createElement("option");
         o.value = k.id;
         o.textContent = k.name;
@@ -143,7 +143,7 @@
   }
 
   function drawList() {
-    const query = (araAlan.value || "").trim().toLowerCase();
+    const query = (searchField.value || "").trim().toLowerCase();
     const visible = events.filter(
       (e) => !query ||
         (e.title + " " + e.slug + " " + e.meta).toLowerCase().includes(query)
@@ -182,7 +182,7 @@
       (query ? ` · showing ${visible.length}` : "");
   }
 
-  araAlan.addEventListener("input", drawList);
+  searchField.addEventListener("input", drawList);
 
   /* --- editing --- */
 
@@ -375,7 +375,7 @@
       note.className = "adm-poster-note" + (problems.length ? " bad" : " good");
 
       /* If nothing is wrong it can be uploaded. If something is, the
-         gorunmuyor: bozuk poster siteye gitmesin. */
+         button stays hidden: a broken poster must not reach the site. */
       uploadButton.hidden = Boolean(problems.length) || !chosen;
       pendingFile = problems.length ? null : file;
     });
@@ -506,7 +506,24 @@
 
   function comments() {
     return AH.request("/comments?order=created_at.desc&limit=30")
-      .then(drawComments)
+      .then((rows) => {
+        /* The table only carries author_name on the sample rows; a real
+           comment has author_id, and the list was calling every real
+           person "member". The admin may read all profiles, so one
+           request resolves the lot. */
+        const ids = [...new Set((rows || []).map((y) => y.author_id).filter(Boolean))];
+        if (!ids.length) return drawComments(rows);
+        return AH.request("/profiles?id=in.(" + ids.join(",") + ")&select=id,handle,display_name")
+          .then((people) => {
+            const names = {};
+            (people || []).forEach((p) => { names[p.id] = p.handle || p.display_name; });
+            rows.forEach((y) => {
+              if (!y.author_name && names[y.author_id]) y.author_name = names[y.author_id];
+            });
+            return drawComments(rows);
+          })
+          .catch(() => drawComments(rows));
+      })
       .catch(() => {});
   }
 

@@ -120,12 +120,19 @@
 
   /* What was swiped signed out should not be lost: on sign-in it is sent
      up and cleared locally. Slugs are enough, so this can run the moment
-     the session appears — the event list does not need to be loaded. */
+     the session appears — the event list does not need to be loaded.
+
+     Two callers fire it at load (the data layer's chain and the
+     session-change listener), and when both landed before the local list
+     was cleared every swipe went up twice. Harmless (the write upserts)
+     but wasteful; one merge at a time, the second caller joins it. */
+  let merging = null;
   AH.mergeSwipes = function () {
+    if (merging) return merging;
     const local = readLocal();
     if (!local.length || !(AH.signedIn && AH.signedIn())) return Promise.resolve(0);
 
-    return Promise.all(
+    merging = Promise.all(
       local.map((s) =>
         AH.request("/rpc/swipe_set", {
           method: "POST",
@@ -137,7 +144,8 @@
       /* If some failed, keep them locally and try again next time. */
       console.warn("[afterhours] some swipes did not carry over, keeping them local");
       return results.filter(Boolean).length;
-    });
+    }).finally(() => { merging = null; });
+    return merging;
   };
 
   if (AH.onSessionChange) {

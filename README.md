@@ -339,7 +339,7 @@ reasons — deleting a topic would take other people's replies with it, and
 the constraint on the `comments` table refuses a row with no author. The
 settings page says so before it deletes.
 
-For the setup, the tests (260 checks) and the local imitation of Supabase
+For the setup, the tests (262 checks) and the local imitation of Supabase
 (`tools/local-server.mjs`, PostgREST + GoTrue on top of PGlite) →
 **[backend/README.md](backend/README.md)**
 
@@ -352,7 +352,7 @@ request. Three jobs, none of which needs a secret:
 
 | job | what it refuses to let through |
 |---|---|
-| `backend` | the 260 checks, on a real Postgres (PGlite) |
+| `backend` | the 262 checks, on a real Postgres (PGlite) |
 | `generated` | SQL that has drifted from the files it was built from — it rebuilds and asks git whether anything moved |
 | `versions` | more than one `?v=NN` across the pages, which would serve a stale script against a new stylesheet |
 
@@ -396,7 +396,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **137**.
+The current version: **138**.
 
 ---
 
@@ -444,6 +444,12 @@ The order matters: each step closes the road the one before it opened.
 5. **Making the three numbers on the help page real** — two of them can be
    worked out today (`swipes`, `friendships`); the third is impossible
    before the card collection exists.
+6. **The landing page's fixed lists.** The globe's 36 nights (`NIGHTS` /
+   `SLUG` in `globe.js`), the "within reach tonight" list and the poster
+   wall's first 20 are hand-written; as the cron job drops past events
+   they slowly drift from the real deck. Deriving them from `POSTERS`
+   ends the drift. (A dropped night's page already says "this night has
+   passed", so a stale link degrades honestly in the meantime.)
 
 ---
 
@@ -544,7 +550,12 @@ Every one of these cost us something:
 
 **The code was translated into English on 30.08.2026.** Class names, ids,
 filenames, the `AH` API, the data fields, the comments and the
-documentation are all English now. This table is here for anyone reading
+documentation are all English now — a second pass on 31.08.2026 caught
+the stragglers the first left behind (`egim2`, `enYakin`, `araAlan`,
+`BOS_MESAJ`, the Turkish halves of mixed comments), so only `strip.html`
+(parked, untouched on purpose) and the legacy `afterhours.oturum`
+localStorage key (kept so old sessions still migrate) remember the old
+names. This table is here for anyone reading
 older commits:
 
 | Old | Now |

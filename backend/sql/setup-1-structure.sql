@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-08-31 10:12   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-08-31 10:54   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -247,9 +247,16 @@ create index if not exists comments_parent_idx on public.comments (parent_id);
 
 -- There is no third level (the screen shows two) and a reply has to
 -- belong to the same event as its topic.
+-- security definer, because the SELECT below otherwise runs under the
+-- caller’s read rule: a HIDDEN parent came back as no row at all, both
+-- checks passed on NULL, and a reply could land on a hidden reply (a
+-- third level) or carry the wrong event. The check has to see every
+-- parent to mean anything.
 create or replace function public.comments_check_depth()
 returns trigger
 language plpgsql
+security definer
+set search_path = public
 as $$
 declare
   parent public.comments%rowtype;
@@ -1425,7 +1432,12 @@ grant execute on function public.swipes_reset()         to authenticated;
 grant execute on function public.kept()                 to authenticated;
 grant execute on function public.friends_kept(int)      to authenticated;
 grant execute on function public.event_counts(text)     to anon, authenticated;
-grant execute on function public.keep_counts()          to anon, authenticated;
+
+-- keep_counts is the admin panel’s number; nothing signed out reads it.
+-- Definer functions hand out exactly what they select, so the fewer keys
+-- to this one the better (it was open to anonymous for no reason).
+revoke execute on function public.keep_counts() from public, anon;
+grant execute on function public.keep_counts()          to authenticated;
 
 grant select on public.events_public, public.comments_public to anon, authenticated;
 

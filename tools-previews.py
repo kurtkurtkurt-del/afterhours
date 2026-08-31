@@ -28,11 +28,11 @@ BLACK, WHITE, FAINT = (10, 10, 10), (242, 242, 240), (140, 140, 138)
 from PIL import Image, ImageDraw, ImageFont
 
 
-def font(boy, agirlik=500):
+def font(size, weight=500):
     if not FONT.exists():
         urllib.request.urlretrieve(FONT_URL, FONT)
-    f = ImageFont.truetype(str(FONT), boy)
-    f.set_variation_by_axes([agirlik])
+    f = ImageFont.truetype(str(FONT), size)
+    f.set_variation_by_axes([weight])
     return f
 
 
@@ -125,15 +125,15 @@ def general():
 
 if __name__ == "__main__":
     OUT.mkdir(exist_ok=True)
-    istenen = sys.argv[1] if len(sys.argv) > 1 else None
+    wanted = sys.argv[1] if len(sys.argv) > 1 else None
 
-    if not istenen:
+    if not wanted:
         general()
 
     tmpdir = pathlib.Path(tempfile.mkdtemp())
     n = 0
     for e in events():
-        if istenen and e["slug"] != istenen:
+        if wanted and e["slug"] != wanted:
             continue
         png = poster_to_png(e["poster"], tmpdir / f"{e['poster']:02d}.png")
         card(e, png).save(OUT / f"{e['slug']}.png", quality=90)

@@ -3,7 +3,7 @@
 # The site itself has no build step and nothing to check here: it is plain
 # HTML that the browser reads as it is. What can break silently is the
 # database — the rules about who may read what, the seed matching the
-# screen, the setup staying repeatable. That is what these 260 checks are
+# screen, the setup staying repeatable. That is what these 262 checks are
 # for, and they run on a real Postgres (PGlite, compiled to WASM) so there
 # is nothing to install and no service to wait for.
 
@@ -62,8 +62,6 @@ jobs:
 
       - name: It should not have changed
         run: |
-          # The two setup files carry a build timestamp, so only their
-          # content below the header is compared.
           git diff --stat -- backend/sql/03_seed_catalog.sql \
                              backend/sql/04_seed_events.sql \
                              backend/sql/05_seed_comments.sql \
@@ -77,6 +75,17 @@ jobs:
                         backend/sql/04_seed_events.sql \
                         backend/sql/05_seed_comments.sql \
                         backend/sql/11_world.sql | head -60
+            exit 1
+          fi
+          # The two setup files are what actually gets pasted into the
+          # editor, so their drift matters MOST — an earlier version of
+          # this step skipped them entirely because of the build stamp.
+          # -I ignores exactly the VERSION line and nothing else.
+          if ! git diff --quiet -I '^--  VERSION:' -- backend/sql/setup-1-structure.sql \
+                                                      backend/sql/setup-2-comments.sql; then
+            echo "::error::The setup SQL is out of date. Run 'npm run setup' and commit."
+            git diff -I '^--  VERSION:' -- backend/sql/setup-1-structure.sql \
+                                           backend/sql/setup-2-comments.sql | head -60
             exit 1
           fi
           echo "generated SQL matches its sources"

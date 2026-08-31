@@ -18,13 +18,13 @@
   const el = (id) => document.getElementById(id);
   const handleField = el("set-handle");
   const handleStatus = el("set-handle-status");
-  const adAlan = el("set-name");
+  const nameField = el("set-name");
   const bioField = el("set-bio");
   const cityBox = el("set-city");
   const status = el("set-status");
 
   let profile = null;      /* the row from profile_me() */
-  let city = null;       /* chosen city slug’i */
+  let city = null;         /* the chosen city slug */
 
   const call = (fn, body) =>
     AH.request("/rpc/" + fn, { method: "POST", body: JSON.stringify(body || {}) });
@@ -38,12 +38,12 @@
 
   /* --- two-option rows: the chosen one dark, the other faint --- */
 
-  function buildChoice(box, value, yaz) {
+  function buildChoice(box, value, save) {
     [...box.querySelectorAll("button")].forEach((d) => {
       d.classList.toggle("selected", d.dataset.value === String(value));
       d.onclick = () => {
         if (d.classList.contains("selected")) return;
-        yaz(d.dataset.value).then(() => buildChoice(box, d.dataset.value, yaz));
+        save(d.dataset.value).then(() => buildChoice(box, d.dataset.value, save));
       };
     });
   }
@@ -112,27 +112,33 @@
 
   /* --- the handle: ask whether it is free as you type --- */
 
-  const SOZ = {
+  const HANDLE_WORDS = {
     ok: "free.", yours: "this one is yours.", taken: "someone already has that one.",
     format: "lowercase letters, numbers and underscore. 3–20.", empty: "",
   };
 
-  let pending = null;
+  /* checkNo keeps a slow answer for an old spelling from overwriting the
+     verdict already shown for the current one. */
+  let pending = null, checkNo = 0;
   handleField && handleField.addEventListener("input", () => {
     clearTimeout(pending);
+    const mine = ++checkNo;
     const h = handleField.value.trim();
     if (!h) { say(handleStatus, ""); return; }
     pending = setTimeout(() => {
       call("handle_status", { p_handle: h })
-        .then((c) => say(handleStatus, SOZ[scalar(c)] || "",
-          scalar(c) === "taken" || scalar(c) === "format" ? "error" : "ok"))
-        .catch(() => say(handleStatus, ""));
+        .then((c) => {
+          if (mine !== checkNo) return;
+          say(handleStatus, HANDLE_WORDS[scalar(c)] || "",
+            scalar(c) === "taken" || scalar(c) === "format" ? "error" : "ok");
+        })
+        .catch(() => { if (mine === checkNo) say(handleStatus, ""); });
     }, 300);
   });
 
   /* --- the four profile fields: in one request --- */
 
-  const YANIT = {
+  const ANSWERS = {
     ok: "saved.", taken: "someone already has that handle.",
     format: "that handle doesn't fit the format.", empty: "pick a handle first.",
     nocity: "that city isn't on the list.", signedout: "sign in again.",
@@ -142,13 +148,13 @@
     say(status, "saving…");
     call("profile_setup", {
       p_handle: handleField.value.trim(),
-      p_display_name: adAlan.value.trim(),
+      p_display_name: nameField.value.trim(),
       p_city_slug: city,
       p_bio: bioField.value.trim(),
     })
       .then((c) => {
         const s = scalar(c);
-        say(status, YANIT[s] || String(s), s === "ok" ? "ok" : "error");
+        say(status, ANSWERS[s] || String(s), s === "ok" ? "ok" : "error");
         if (s === "ok") load();
       })
       .catch((h) => say(status, AH.errorText(h, "couldn't save that."), "error"));
@@ -219,16 +225,16 @@
   function fill(p) {
     profile = p;
     handleField.value = p.handle || "";
-    adAlan.value = p.display_name || "";
+    nameField.value = p.display_name || "";
     bioField.value = p.bio || "";
 
     el("set-who").textContent = (AH.session && AH.session.user && AH.session.user.email)
       ? "you're in as " + AH.session.user.email : "you're in.";
 
-    const gun = p.created_at ? String(p.created_at).slice(0, 10) : "";
+    const day = p.created_at ? String(p.created_at).slice(0, 10) : "";
     el("set-numbers").textContent =
       [p.kept_count + " kept", p.friend_count + " friends", p.comment_count + " comments"]
-        .join(" · ") + (gun ? " · here since " + gun : "");
+        .join(" · ") + (day ? " · here since " + day : "");
 
     buildChoice(el("set-kept"), p.kept_visibility, (v) => writeSetting("kept_visibility", v));
     buildChoice(el("set-found"), p.discoverable, (v) => writeSetting("discoverable", v));
@@ -246,8 +252,8 @@
   }
 
   function render() {
-    const AYAR = window.AH_CONFIG || {};
-    if (!(AYAR.url && AYAR.anonKey)) {
+    const CONFIG = window.AH_CONFIG || {};
+    if (!(CONFIG.url && CONFIG.anonKey)) {
       outside.hidden = false;
       inside.hidden = true;
       el("set-out-note").textContent = "this opens when the backend does.";

@@ -238,15 +238,15 @@
     drawCards(box, e, m, kind, picked, edition, rnd, friends);
   }
 
-  /* If two texts share an uncommon word they are probably saying the same
-     Kisa kelimeler (the, room, night) sayilmiyor. */
-  const SIK = /^(the|and|that|with|this|there|their|which|about|after|before|until|people|night|nights|every|other|first|still|where|would)$/;
+  /* If two texts share an uncommon word they are probably saying the
+     same thing. Short and common words do not count. */
+  const COMMON = /^(the|and|that|with|this|there|their|which|about|after|before|until|people|night|nights|every|other|first|still|where|would)$/;
 
   function overlaps(a, b) {
     if (!a || !b) return false;
     const words = (y) => new Set(String(y).toLowerCase().match(/[a-zäöüß]{6,}/g) || []);
     const A = words(a), B = words(b);
-    for (const k of A) if (!SIK.test(k) && B.has(k)) return true;
+    for (const k of A) if (!COMMON.test(k) && B.has(k)) return true;
     return false;
   }
 

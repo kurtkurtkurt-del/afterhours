@@ -9,28 +9,28 @@
   const field = document.getElementById("cc-cards");
   if (!field || !window.CARDS || !window.CARD_SAMPLES) return;
 
-  CARD_SAMPLES.forEach((gece, i) => {
+  CARD_SAMPLES.forEach((night, i) => {
     const box = document.createElement("figure");
     box.className = "cc-card";
 
     const face = document.createElement("div");
     face.className = "cc-face";
-    face.innerHTML = CARDS.front(gece, "k" + i);
+    face.innerHTML = CARDS.front(night, "k" + i);
 
     const backFace = document.createElement("div");
     backFace.className = "cc-face cc-back";
-    backFace.innerHTML = CARDS.back(gece, "a" + i);
+    backFace.innerHTML = CARDS.back(night, "a" + i);
 
     const shape = document.createElement("button");
     shape.className = "cc-flip";
     shape.type = "button";
-    shape.setAttribute("aria-label", "flip " + gece.t);
+    shape.setAttribute("aria-label", "flip " + night.t);
     shape.appendChild(face);
     shape.appendChild(backFace);
     shape.addEventListener("click", () => box.classList.toggle("flipped"));
 
     const sub = document.createElement("figcaption");
-    sub.textContent = gece.city;
+    sub.textContent = night.city;
 
     box.appendChild(shape);
     box.appendChild(sub);

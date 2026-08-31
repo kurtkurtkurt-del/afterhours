@@ -15,7 +15,7 @@
   const cardKind = document.getElementById("map-card-kind");
   const cardName = document.getElementById("map-card-name");
   const cardMeta = document.getElementById("map-card-meta");
-  const dip = document.getElementById("map-footline");
+  const footline = document.getElementById("map-footline");
   if (!layer) return;
 
   const cards = window.POSTERS || [];
@@ -29,13 +29,13 @@
     if (e.venue) candidates.push(e.venue);
     (e.meta || "").split("·").forEach((p) => candidates.push(p.trim()));
 
-    for (const ham of candidates) {
-      if (!ham) continue;
-      const aday = ham.toUpperCase().trim();
+    for (const raw of candidates) {
+      if (!raw) continue;
+      const name = raw.toUpperCase().trim();
       const m =
-        venues.find((x) => x.name === aday) ||
-        venues.find((x) => aday.startsWith(x.name) || x.name.startsWith(aday)) ||
-        venues.find((x) => aday.includes(x.name));
+        venues.find((x) => x.name === name) ||
+        venues.find((x) => name.startsWith(x.name) || x.name.startsWith(name)) ||
+        venues.find((x) => name.includes(x.name));
       if (m) return m;
     }
     return null;
@@ -96,7 +96,7 @@
   });
 
   const missing = cards.length - placed;
-  dip.textContent =
+  footline.textContent =
     placed + " nights placed" +
     (missing ? " · " + missing + " without a venue yet" : "") +
     " · schematic, note to scale";

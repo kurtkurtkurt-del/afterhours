@@ -107,7 +107,7 @@ window.addEventListener("wheel", (e) => {
 }, { passive: true });
 
 /* Touch has no wheel event: do the same move with a swipe */
-const DOKUNUS_ESIGI = 70;   // px
+const TOUCH_THRESHOLD = 70;   // px
 let touchY = null;
 let touchOnCard = false;
 let touchAtEnd = false;
@@ -125,7 +125,7 @@ window.addEventListener("touchend", (e) => {
   if (start === null || touchOnCard || moving) return;
 
   const gap = start - e.changedTouches[0].clientY;   // swiping up is positive
-  if (Math.abs(gap) < DOKUNUS_ESIGI) return;
+  if (Math.abs(gap) < TOUCH_THRESHOLD) return;
 
   const down = gap > 0;
   // On the first screen you only move on at the end of the poster list
@@ -154,7 +154,7 @@ function nudgeDeck() {
   jumpTimer = setTimeout(() => card.classList.remove("jump"), 520);
 }
 const DECK_POSTERS = ["01"];         // a single poster: A$AP Rocky
-const CEKME_ESIGI = 120;                 // px
+const PULL_THRESHOLD = 120;              // px
 
 DECK_POSTERS.slice().reverse().forEach((no) => {
   const card = document.createElement("div");
@@ -190,7 +190,7 @@ DECK_POSTERS.slice().reverse().forEach((no) => {
     card.classList.remove("dragging");
     card.classList.add("soft");
 
-    if (dx > CEKME_ESIGI) {
+    if (dx > PULL_THRESHOLD) {
       // Kept: it flies off to the right
       card.style.transform = "translateX(120vw) rotate(18deg)";
       card.style.opacity = "0";
@@ -280,7 +280,7 @@ soundSource.addEventListener("ended", stopPlaying);
 
 /* ---------- The third screen: afterhours cards running along a strip ---------- */
 
-const k3Ray = document.getElementById("s3-rail");
+const s3Rail = document.getElementById("s3-rail");
 
 // One pair per night: front and back touching, then a gap.
 // The list is printed twice; the counter keeps running so the SVG ids
@@ -291,7 +291,7 @@ for (let again = 0; again < 2; again++) {
     const pair = document.createElement("div");
     pair.className = "s3-pair";
     pair.innerHTML = CARDS.front(night, index) + CARDS.back(night, index);
-    k3Ray.appendChild(pair);
+    s3Rail.appendChild(pair);
   });
 }
 
@@ -308,18 +308,18 @@ const counterField = document.getElementById("s6-counter");
 
 function updateFooter() {
   const now = new Date();
-  const s = now.getHours();
-  const d = now.getMinutes();
+  const h = now.getHours();
+  const min = now.getMinutes();
 
   clockField.textContent =
-    String(s).padStart(2, "0") + ":" + String(d).padStart(2, "0") + " · münchen";
+    String(h).padStart(2, "0") + ":" + String(min).padStart(2, "0") + " · münchen";
 
   // The venues open right now (night hours are written past 24)
-  const hour = s + d / 60;
+  const hour = h + min / 60;
   const open = VENUES.filter((m) => {
-    const bas = m.opensAt;
-    const son = m.opensAt + m.hours;
-    return (hour >= bas && hour < son) || (hour + 24 >= bas && hour + 24 < son);
+    const from = m.opensAt;
+    const until = m.opensAt + m.hours;
+    return (hour >= from && hour < until) || (hour + 24 >= from && hour + 24 < until);
   }).length;
 
   counterField.textContent = open
