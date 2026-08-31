@@ -19,7 +19,14 @@ jobs:
   backend:
     runs-on: ubuntu-latest
     steps:
+      # upgrade.test.mjs rebuilds the pre-rename database by reading the
+      # old SQL out of commit 5dabbd2 (`git show 5dabbd2:…`). The default
+      # checkout is SHALLOW — only the tip commit — so that read failed
+      # and took the whole job down with it, on every run since the test
+      # arrived. Full history is what the test actually needs.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:

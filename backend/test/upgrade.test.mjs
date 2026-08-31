@@ -21,8 +21,23 @@ const read = (path) => readFile(new URL(path, import.meta.url), "utf8");
 const root = new URL("../../", import.meta.url).pathname;
 /* The old files carry their old names too; 5dabbd2 is the last commit
    before the code moved to English. */
-const before = (path) =>
-  execFileSync("git", ["show", `5dabbd2:${path}`], { cwd: root, encoding: "utf8" });
+const before = (path) => {
+  try {
+    return execFileSync("git", ["show", `5dabbd2:${path}`],
+                        { cwd: root, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+  } catch (_) {
+    /* A SHALLOW clone has only the tip commit, so this read fails and the
+       raw crash says nothing about why. It cost a whole red CI run once:
+       actions/checkout is shallow by default and the workflow now asks
+       for fetch-depth: 0. */
+    console.error(
+      "\nThis test rebuilds the pre-rename database from commit 5dabbd2, " +
+      "which is not in\nthis checkout — a shallow clone holds only the tip. " +
+      "Fetch the history:\n  git fetch --unshallow      " +
+      "(in CI: actions/checkout with fetch-depth: 0)\n");
+    process.exit(1);
+  }
+};
 
 let passed = 0, failed = 0;
 const check = (condition, name, extra = "") => {
