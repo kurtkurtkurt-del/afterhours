@@ -135,7 +135,7 @@
   const YANIT = {
     ok: "saved.", taken: "someone already has that handle.",
     format: "that handle doesn't fit the format.", empty: "pick a handle first.",
-    city: "that city isn't on the list.", signedout: "sign in again.",
+    nocity: "that city isn't on the list.", signedout: "sign in again.",
   };
 
   el("set-save").onclick = function () {

@@ -28,18 +28,16 @@
       .catch(() => null);
   };
 
+  /* Returns 'ok' | 'taken' | 'format' | 'empty' | 'signedout'. It goes
+     through profile_setup(), the same road registration takes — so
+     choosing a handle here also finishes an unfinished registration.
+     The direct PATCH this replaced left onboarded_at unset, and the
+     register page then sent the person back to "pick a handle". */
   AH.setHandle = function (handle) {
-    const id = AH.session && AH.session.user && AH.session.user.id;
-    if (!live() || !id) return Promise.reject(new Error("sign in first"));
+    if (!live()) return Promise.reject(new Error("sign in first"));
     const h = String(handle).trim().toLowerCase();
-    if (!/^[a-z0-9_]{3,20}$/.test(h)) {
-      return Promise.reject(new Error("3-20 characters, lowercase, digits or underscore"));
-    }
-    return AH.request("/profiles?id=eq." + id, {
-      method: "PATCH",
-      headers: { Prefer: "return=representation" },
-      body: JSON.stringify({ handle: h }),
-    });
+    if (!/^[a-z0-9_]{3,20}$/.test(h)) return Promise.resolve("format");
+    return call("profile_setup", { p_handle: h }).then(scalar("profile_setup"));
   };
 
   AH.friends = function () {

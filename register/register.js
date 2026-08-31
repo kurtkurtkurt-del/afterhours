@@ -60,7 +60,7 @@
           /* Confirmation is on: no token came, they check their email first */
           el("reg-mail-note").textContent =
             "We sent a link to " + email + ". Open it and you land back here to " +
-            "pick a handle — the account is note finished until you do.";
+            "pick a handle — the account is not finished until you do.";
           show("reg-mail");
           return;
         }
@@ -141,7 +141,7 @@
     taken: "someone already has that handle.",
     format: "that handle doesn't fit the format.",
     empty: "pick a handle first.",
-    city: "that city isn't on the list.",
+    nocity: "that city isn't on the list.",
     signedout: "sign in again — the session went away.",
   };
 

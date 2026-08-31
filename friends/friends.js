@@ -42,19 +42,24 @@
     AH.myProfile().then((p) => { if (p && p.handle) handleField.value = p.handle; });
   }
 
+  /* What profile_setup() answers, in this page's words. */
+  const HANDLE_WORDS = {
+    ok: "saved.",
+    taken: "someone already has that one.",
+    format: "3–20 characters: lowercase letters, digits, underscore.",
+    empty: "write a handle first.",
+    signedout: "sign in again — the session went away.",
+  };
+
   handleForm.addEventListener("submit", (e) => {
     e.preventDefault();
     handleStatus.textContent = "saving…";
     AH.setHandle(handleField.value)
-      .then((rows) => {
-        handleStatus.textContent = rows && rows.length
-          ? "saved."
-          : "couldn't save — try signing in again.";
+      .then((s) => {
+        handleStatus.textContent = HANDLE_WORDS[s] || "couldn't save that handle.";
       })
       .catch((h) => {
-        handleStatus.textContent = /duplicate|unique/i.test(h.message)
-          ? "someone already has that one."
-          : AH.errorText(h, "couldn't save that handle.");
+        handleStatus.textContent = AH.errorText(h, "couldn't save that handle.");
       });
   });
 

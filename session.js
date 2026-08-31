@@ -187,8 +187,23 @@
       body: JSON.stringify({ refresh_token: session.refresh_token }),
     })
       .then(storeToken)
-      .catch(() => { write(null); return null; });   /* cannot refresh: sign out */
+      .catch((err) => {
+        /* Only a real answer from the server means the token is dead. A
+           network failure (a tunnel, a dead wifi, a reload while offline)
+           says nothing about the token — dropping the session there was
+           signing people out for losing signal for a second. */
+        if (/failed to fetch|networkerror|load failed/i.test(String(err && err.message))) {
+          return session;                    /* keep it, try again next time */
+        }
+        write(null);
+        return null;                         /* refused: really signed out */
+      });
   }
+
+  /* The data layer calls this before a request when the token is close to
+     running out, so a page left open past the expiry keeps working. Cheap
+     when nothing is due: the early return above answers without a fetch. */
+  AH.refreshSession = refresh;
 
   AH.sessionReady = !enabled
     ? Promise.resolve(null)

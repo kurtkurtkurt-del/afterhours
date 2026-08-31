@@ -186,6 +186,14 @@
 
   /* --- editing --- */
 
+  /* "2026-09-11T18:30" in the browser's own time zone, which is what a
+     datetime-local field both shows and gives back. */
+  function localInputValue(d) {
+    const p = (n) => String(n).padStart(2, "0");
+    return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate()) +
+           "T" + p(d.getHours()) + ":" + p(d.getMinutes());
+  }
+
   function select(e) {
     chosen = e;
     editor.hidden = false;
@@ -201,8 +209,11 @@
     $("a-venue").value = e.venue_id || "";
     $("a-published").checked = Boolean(e.is_published);
     $("a-estimated").checked = Boolean(e.starts_at_estimated);
-    /* datetime-local wants neither seconds nor a time zone */
-    $("a-starts").value = e.starts_at ? new Date(e.starts_at).toISOString().slice(0, 16) : "";
+    /* datetime-local speaks LOCAL wall time. toISOString() hands back UTC,
+       and the save path parses the field as local again — that mismatch
+       shifted every date two hours earlier per open-and-save. Build the
+       value from the local clock so the round trip is a no-op. */
+    $("a-starts").value = e.starts_at ? localInputValue(new Date(e.starts_at)) : "";
     $("a-number").textContent = counts[e.id] ? counts[e.id] + " people" : "nobody yet";
 
     showPoster(e.poster_no);

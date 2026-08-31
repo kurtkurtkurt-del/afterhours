@@ -74,6 +74,20 @@
     return first ? first.toLowerCase() : "you";
   }
 
+  /* The "last seen" a friend gets from profile_card() only moves when
+     seen() is called, and nothing was calling it — the day shown was
+     forever the registration day. This page-load stamp is enough (the
+     value only ever leaves the database as a DAY), throttled so walking
+     around the site is one request an hour, not one per page. */
+  function stampSeen() {
+    const KEY = "afterhours.seen";
+    try {
+      if (Date.now() - Number(localStorage.getItem(KEY) || 0) < 3600e3) return;
+      localStorage.setItem(KEY, String(Date.now()));
+    } catch (_) {}
+    AH.request("/rpc/seen", { method: "POST", body: "{}" }).catch(() => {});
+  }
+
   function refresh() {
     if (!(AH.signedIn && AH.signedIn() && AH.request)) {
       removeAdminLink();
@@ -88,6 +102,7 @@
         const profile = (rows && rows[0]) || null;
         greet(nameFor(profile));
         if (profile && profile.is_admin) addAdminLink(); else removeAdminLink();
+        stampSeen();
       })
       .catch(() => {
         /* A 401 can mean the session was dropped in the meantime (data.js

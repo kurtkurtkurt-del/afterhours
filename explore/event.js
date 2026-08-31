@@ -350,8 +350,38 @@
     return p[p.length - 1] || "";
   }
 
+  /* A night that is no longer in the data — the date went by and the
+     cron job dropped it, or the address never led anywhere. The shell
+     page still exists (and the globe, the sitemap and old links still
+     point here), so an empty <main> is what a visitor got: header,
+     footer, and nothing between. Say what happened instead. */
+  function buildGone() {
+    area.textContent = "";
+    const middle = el("div", "cs-field");
+    middle.style.gridColumn = "1 / -1";
+
+    const crumb = el("nav", "crumb");
+    const back = el("a", null, "explore");
+    back.href = "../index.html";
+    crumb.appendChild(back);
+    crumb.appendChild(el("span", null, "/"));
+    crumb.appendChild(el("span", null, "gone"));
+    middle.appendChild(crumb);
+
+    middle.appendChild(el("h1", "cs-title", "this night has passed."));
+    middle.appendChild(el("p", "cs-text",
+      "It was here, and now it is not — the date went by and the card left " +
+      "the deck. Nights do that; it is the whole point of going."));
+
+    const out = el("a", "cs-ticket", "back to the deck");
+    out.href = "../index.html";
+    middle.appendChild(out);
+    area.appendChild(middle);
+  }
+
   /* data.js loads this through data-after, so POSTERS is ready by now. */
   const slug = slugFromPath();
   const e = (window.POSTERS || []).filter((x) => x.slug === slug)[0];
   if (e) build(e);
+  else buildGone();
 })();

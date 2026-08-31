@@ -116,7 +116,9 @@ The pattern on every page:
 
 The shared `AH` object: `AH.mode` (`live` / `local`), `AH.request()`,
 `AH.errorText()`, `AH.session`, `AH.signedIn()`, `AH.sessionReady`
-(a promise), `AH.onSessionChange(cb)`, `AH.signUp()`,
+(a promise), `AH.onSessionChange(cb)`, `AH.refreshSession()` (renews an
+expiring token; `AH.request` calls it before every request, so a page
+left open past the hour keeps working), `AH.signUp()`,
 `AH.signInWithPassword()`, `AH.events()`, `AH.kept()`, `AH.saveSwipe()`,
 `AH.friends()`, `AH.comments()`, `AH.myProfile()`.
 
@@ -394,7 +396,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **136**.
+The current version: **137**.
 
 ---
 
@@ -518,6 +520,12 @@ Every one of these cost us something:
 - **An apostrophe in a SQL comment breaks the Supabase editor.** Its parser
   counts quotes and counts the ones inside comments too, so a single `'`
   turns the rest of the file into code. `seed.test.mjs` enforces this.
+- **`datetime-local` speaks local time; `toISOString()` speaks UTC.**
+  Filling the field with `toISOString().slice(0, 16)` and reading it back
+  with `new Date(value)` shifts the stored time by the UTC offset on
+  every open-and-save — in Munich, two hours earlier each time, and the
+  drift walked events into the cron job's "past" window. Build the field
+  value from the local clock (`admin.js`, `localInputValue`).
 - **A bare UPDATE slips past the read rule; a WHERE does not.** An update
   that has to READ the row (a `where id = …`, a `returning`) also obeys
   the SELECT policy, so a hidden comment cannot even be aimed at by its

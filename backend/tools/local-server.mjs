@@ -91,6 +91,23 @@ function translateFilters(search, counter) {
     const [op, ...rest] = value.split(".");
     const v = rest.join(".");
     const column = field.replace(/[^a-z_0-9]/gi, "");
+
+    /* is.null and in.(a,b) — beforehours fetches topics and their replies
+       with these. Skipping a filter we do not know would silently return
+       the WHOLE table, which is the worst possible answer; refuse the row
+       set instead when the list is empty. */
+    if (op === "is" && v === "null") {
+      conditions.push(`${column} is null`);
+      continue;
+    }
+    if (op === "in") {
+      const list = v.replace(/^\(/, "").replace(/\)$/, "").split(",").filter(Boolean);
+      if (!list.length) { conditions.push("false"); continue; }
+      const slots = list.map((x) => { params.push(x); return "$" + counter.n++; });
+      conditions.push(`${column} in (${slots.join(", ")})`);
+      continue;
+    }
+
     const operator = { eq: "=", neq: "<>", gt: ">", lt: "<", gte: ">=", lte: "<=" }[op];
     if (!operator) continue;
     params.push(v);

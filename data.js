@@ -83,14 +83,24 @@
 
   AH.request = function (path, options = {}) {
     if (!enabled) return Promise.reject(new Error("backend is off"));
-    const headers = {
-      apikey: CONFIG.anonKey,
-      Authorization: "Bearer " + (AH.token || CONFIG.anonKey),
-      "Content-Type": "application/json",
-    };
-    return fetch(CONFIG.url.replace(/\/$/, "") + "/rest/v1" + path, {
-      ...options,
-      headers: { ...headers, ...(options.headers || {}) },
+    /* A token expires after about an hour, and the session only refreshed
+       itself at page load — a deck left open past that had every write
+       fail. Ask the session to renew first; it answers without a fetch
+       while the token is still good, and the headers are built AFTER so
+       they carry the fresh token. */
+    const renewed = AH.refreshSession
+      ? Promise.resolve(AH.refreshSession()).catch(() => null)
+      : Promise.resolve(null);
+    return renewed.then(() => {
+      const headers = {
+        apikey: CONFIG.anonKey,
+        Authorization: "Bearer " + (AH.token || CONFIG.anonKey),
+        "Content-Type": "application/json",
+      };
+      return fetch(CONFIG.url.replace(/\/$/, "") + "/rest/v1" + path, {
+        ...options,
+        headers: { ...headers, ...(options.headers || {}) },
+      });
     }).then(async (res) => {
       const text = await res.text();
       if (!res.ok) throw new Error(res.status + " " + text.slice(0, 200));

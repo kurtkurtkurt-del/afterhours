@@ -63,10 +63,19 @@
       try { return Promise.resolve(COMMENTS_FOR(event)); }
       catch (_) { return Promise.resolve(EMPTY); }
     }
-    return AH.request(
-      "/comments_public?event_id=eq." + encodeURIComponent(event.id) +
-      "&order=created_at.desc&limit=60"
-    )
+    /* Topics first, then THEIR replies. One mixed fetch with a limit cut
+       threads at random: a reply past the sixtieth row vanished, and an
+       orphan whose topic fell outside the window used up a slot for
+       nothing. Two requests always hand back whole conversations. */
+    const base = "/comments_public?event_id=eq." + encodeURIComponent(event.id);
+    return AH.request(base + "&parent_id=is.null&order=created_at.desc&limit=30")
+      .then((topics) => {
+        if (!topics.length) return [];
+        const ids = topics.map((t) => t.id).join(",");
+        return AH.request(
+          base + "&parent_id=in.(" + ids + ")&order=created_at.asc&limit=200"
+        ).then((replies) => topics.concat(replies));
+      })
       .then(group)
       .catch((err) => {
         console.warn("[afterhours] couldn't load comments:", err.message);

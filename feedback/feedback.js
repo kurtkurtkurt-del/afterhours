@@ -96,8 +96,8 @@
     el("fb-contact-note").textContent = signedIn
       ? "You are signed in" + (email ? " as " + email : "") +
         ", so we already know where to find you."
-      : "Optional. Leave it out and the message still gets read — there just will " +
-        "note be an answer.";
+      : "Optional. Leave it out and the message still gets read — there just " +
+        "won't be an answer.";
   }
 
   AH.sessionReady.then(render).catch(render);
