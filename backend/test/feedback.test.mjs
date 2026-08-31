@@ -69,6 +69,15 @@ console.log("\n— the limits —");
                    values ('${A}', 'baskasinin adina yazilan one mesaj')`);
   } catch (e) { forged = e.message; }
   check(Boolean(forged), "you cannot write in someone else's name");
+
+  /* handled is the admin's mark. If a writer could send it along, the
+     message would arrive already filed away and never be seen. */
+  let preHandled = null;
+  try {
+    await db.exec(`insert into public.feedback (body, handled)
+                   values ('mark this one done already', true)`);
+  } catch (e) { preHandled = e.message; }
+  check(Boolean(preHandled), "handled is not the writer's to send");
 }
 
 console.log("\n— only the admin reads —");

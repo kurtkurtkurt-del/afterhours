@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-08-31 09:26   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-08-31 10:12   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -64,6 +64,13 @@ as $$
   insert into public.migrations (name) values (p_name)
   on conflict (name) do update set applied_at = now();
 $$;
+
+-- The stamps come from the SQL editor, which runs as the table owner.
+-- Postgres hands EXECUTE on a new function to everyone by default, and
+-- through the API that would let any visitor forge the log — including
+-- stamping a file as applied that never ran, which is exactly the lie
+-- the health check exists to catch.
+revoke execute on function public.migration_done(text) from public, anon, authenticated;
 
 select public.migration_done('00_migrations.sql');
 
@@ -225,6 +232,15 @@ create table if not exists public.comments (
   time_text   text,
   constraint comments_author_var check (author_id is not null or author_name is not null)
 );
+
+-- The inline check above only says "not empty"; a ceiling matters just as
+-- much, or one signed-in account can store megabytes per row. Named and
+-- added separately so a database built before this line gets it too.
+alter table public.comments
+  drop constraint if exists comments_body_length;
+alter table public.comments
+  add constraint comments_body_length
+  check (length(btrim(body)) between 1 and 2000);
 
 create index if not exists comments_event_idx on public.comments (event_id, created_at);
 create index if not exists comments_parent_idx on public.comments (parent_id);
@@ -475,21 +491,50 @@ drop policy if exists comments_delete on public.comments;
 create policy comments_delete on public.comments for delete
   using (author_id = auth.uid() or public.is_admin());
 
+-- Hiding a comment is moderation, and moderation has to stick: the
+-- update rule above lets an author edit their own row, and without this
+-- guard that included quietly writing is_hidden back to false.
+create or replace function public.guard_comment_hidden()
+returns trigger
+language plpgsql
+as $$
+begin
+  -- An empty auth.uid() is the service role or the SQL editor, same as
+  -- in guard_is_admin above.
+  if new.is_hidden is distinct from old.is_hidden
+     and auth.uid() is not null
+     and not public.is_admin() then
+    raise exception 'is_hidden can only be changed by an admin';
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists comments_guard_hidden on public.comments;
+create trigger comments_guard_hidden
+  before update on public.comments
+  for each row execute function public.guard_comment_hidden();
+
 -- ------------------------------------------------------------ friendship
 
 drop policy if exists friendships_read on public.friendships;
 create policy friendships_read on public.friendships for select
   using (requester_id = auth.uid() or addressee_id = auth.uid());
 
+-- A request is born pending. Without the status check here, a row could
+-- be INSERTED as ’accepted’ and skip the other side’s consent entirely.
 drop policy if exists friendships_insert on public.friendships;
 create policy friendships_insert on public.friendships for insert
-  with check (requester_id = auth.uid());
+  with check (requester_id = auth.uid() and status = 'pending');
 
--- The other side accepts; either side can undo it.
+-- Only the side that RECEIVED the request may change it: that is what
+-- accepting is. The requester’s tools are insert and delete — with
+-- update too, a requester could flip their own request to ’accepted’
+-- and walk into everything a friend may see.
 drop policy if exists friendships_update on public.friendships;
 create policy friendships_update on public.friendships for update
-  using (requester_id = auth.uid() or addressee_id = auth.uid())
-  with check (requester_id = auth.uid() or addressee_id = auth.uid());
+  using (addressee_id = auth.uid())
+  with check (addressee_id = auth.uid());
 
 drop policy if exists friendships_delete on public.friendships;
 create policy friendships_delete on public.friendships for delete
@@ -518,8 +563,24 @@ grant usage on schema public to anon, authenticated;
 grant select on public.cities, public.event_types, public.venues,
                 public.events, public.profiles, public.comments to anon, authenticated;
 
-grant insert, update, delete on public.swipes, public.comments, public.friendships to authenticated;
+grant insert, update, delete on public.swipes to authenticated;
 grant select on public.swipes, public.friendships to authenticated;
+
+-- Comments and friendships accept writes only on the columns the site
+-- actually sends. The others either default (author_id, created_at,
+-- status) or belong to the seed and the tools, which run as the table
+-- owner and are not bound by these grants. Grants pile up, so the old
+-- broad ones are taken back first — a database that ran the previous
+-- version of this file keeps them otherwise.
+revoke insert, update on public.comments from authenticated;
+grant delete                                  on public.comments to authenticated;
+grant insert (event_id, parent_id, author_id, body) on public.comments to authenticated;
+grant update (body, is_hidden)                on public.comments to authenticated;
+
+revoke insert, update on public.friendships from authenticated;
+grant delete                                  on public.friendships to authenticated;
+grant insert (requester_id, addressee_id)     on public.friendships to authenticated;
+grant update (status)                         on public.friendships to authenticated;
 grant update on public.profiles to authenticated;
 grant insert, update, delete on public.cities, public.event_types,
                                  public.venues, public.events to authenticated;
@@ -1586,6 +1647,11 @@ as $$
   )
   select count(*)::int from closed;
 $$;
+
+-- This is the cron job’s tool (pg_cron runs it as the owner). Postgres
+-- hands EXECUTE to everyone by default, and there is no reason a browser
+-- should be able to trigger it through the API.
+revoke execute on function public.hide_past_events() from public, anon, authenticated;
 
 -- The maintenance summary: one row saying what wants attention.
 -- The database side of the warnings in the admin panel.
@@ -2973,6 +3039,9 @@ $$;
 
 -- The one thing that must happen after the account opens: a handle. The
 -- rest is optional. It all goes in one request so no profile is left half done.
+-- security definer, because the direct UPDATE grant on profiles is
+-- limited to the four fields a person may edit (see the privileges at
+-- the bottom); onboarded_at is stamped only through here.
 create or replace function public.profile_setup(
   p_handle       text,
   p_display_name text default null,
@@ -2981,6 +3050,8 @@ create or replace function public.profile_setup(
 )
 returns text
 language plpgsql
+security definer
+set search_path = public
 as $$
 declare
   handle_state    text := public.handle_status(p_handle);
@@ -3187,11 +3258,15 @@ $$;
 -- ---------------------------------------------------------------- seen
 
 -- For the "already on the app" list in friends&more. A person stamps
--- stamps their own row only; no other row is reachable (RLS).
+-- their own row only: the update is pinned to auth.uid(). Definer,
+-- because last_seen_at is not in the direct UPDATE grant — the stamp
+-- goes through here or not at all.
 create or replace function public.seen()
 returns void
 language sql
 volatile
+security definer
+set search_path = public
 as $$
   update public.profiles set last_seen_at = now() where id = auth.uid();
 $$;
@@ -3297,13 +3372,32 @@ $$;
 -- Supabase does not grant on a new table by itself; by hand, as in 02.
 grant select, insert, update on public.profile_settings to authenticated;
 
+-- The direct UPDATE on profiles covers exactly the four fields a person
+-- edits about themselves. created_at, last_seen_at and onboarded_at are
+-- the record’s own truth — writable only through seen() and
+-- profile_setup(), which are definer and set them honestly. The old
+-- table-wide grant from 02 is taken back first (grants pile up).
+revoke update on public.profiles from authenticated;
+grant update (handle, display_name, bio, city_id) on public.profiles to authenticated;
+
 grant execute on function public.handle_status(text)                   to anon, authenticated;
 grant execute on function public.profile_card(text)                    to anon, authenticated;
-grant execute on function public.kept_visible(uuid)                    to anon, authenticated;
 grant execute on function public.is_linked(uuid)                       to anon, authenticated;
-grant execute on function public.card_visible(uuid)                    to anon, authenticated;
-grant execute on function public.handle_to_id(text)                    to anon, authenticated;
+grant execute on function public.kept_visible(uuid)                    to authenticated;
+grant execute on function public.handle_to_id(text)                    to authenticated;
 grant execute on function public.author_name(uuid, text)               to anon, authenticated;
+
+-- The uuid→fact helpers exist for the rules and views that call them,
+-- not as a public API — each one is a small oracle on somebody’s data.
+-- Two have to stay callable by the browser roles: is_linked runs inside
+-- the profiles read rule, author_name inside comments_public (both are
+-- invoker, so the caller needs EXECUTE). The rest close: kept_visible
+-- only serves the swipes rule (authenticated), handle_to_id only
+-- friend_request (authenticated), and card_visible only profile_card,
+-- which is definer and needs no grant at all.
+revoke execute on function public.card_visible(uuid) from public, anon, authenticated;
+revoke execute on function public.kept_visible(uuid) from public, anon;
+revoke execute on function public.handle_to_id(text) from public, anon;
 grant execute on function public.profile_setup(text, text, text, text) to authenticated;
 grant execute on function public.profile_me()                          to authenticated;
 grant execute on function public.seen()                                to authenticated;
@@ -3389,8 +3483,14 @@ as $$
   limit greatest(1, least(coalesce(p_limit, 100), 500));
 $$;
 
-grant insert on public.feedback to anon, authenticated;
-grant select, update on public.feedback to authenticated;
+-- Writers may fill in exactly what the form asks: the subject, the words
+-- and a way back. handled belongs to the admin’s PATCH, created_at to the
+-- clock — neither is anyone’s to send. (The old broad grants are taken
+-- back first; grants pile up on a database that ran an earlier version.)
+revoke insert, update on public.feedback from anon, authenticated;
+grant insert (author_id, kind, body, contact) on public.feedback to anon, authenticated;
+grant update (handled) on public.feedback to authenticated;
+grant select on public.feedback to authenticated;
 grant execute on function public.feedback_list(int) to authenticated;
 
 -- Stamp the migration log, if it is there. Each numbered file still runs on

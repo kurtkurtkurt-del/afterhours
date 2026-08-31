@@ -261,6 +261,29 @@ console.log("\n— the limits —");
   check(Boolean(err), "a line longer than 160 characters is refused");
 }
 
+console.log("\n— the record's own truth is not editable —");
+{
+  /* The direct UPDATE grant covers the four fields a person edits about
+     themselves. joined, last seen and onboarded are what the record SAYS
+     about them — writable only through seen() and profile_setup(). */
+  await asUser(A);
+  let joined = null;
+  try { await db.exec(`update public.profiles set created_at = '2020-01-01' where id = '${A}'`); }
+  catch (e) { joined = e.message; }
+  check(/permission denied/i.test(joined || ""), "\"here since\" cannot be backdated");
+
+  let lastSeen = null;
+  try { await db.exec(`update public.profiles set last_seen_at = now() where id = '${A}'`); }
+  catch (e) { lastSeen = e.message; }
+  check(/permission denied/i.test(lastSeen || ""), "last seen only moves through seen()");
+
+  let onboarded = null;
+  try { await db.exec(`update public.profiles set onboarded_at = now() where id = '${A}'`); }
+  catch (e) { onboarded = e.message; }
+  check(/permission denied/i.test(onboarded || ""),
+    "onboarded_at only moves through profile_setup()");
+}
+
 console.log("\n— deleting the account —");
 {
   await asService();

@@ -25,6 +25,11 @@ as $$
   select count(*)::int from closed;
 $$;
 
+-- This is the cron job’s tool (pg_cron runs it as the owner). Postgres
+-- hands EXECUTE to everyone by default, and there is no reason a browser
+-- should be able to trigger it through the API.
+revoke execute on function public.hide_past_events() from public, anon, authenticated;
+
 -- The maintenance summary: one row saying what wants attention.
 -- The database side of the warnings in the admin panel.
 -- create or replace is not enough when the return type changes; drop first.

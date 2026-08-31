@@ -140,5 +140,51 @@ console.log("\n— the counters —");
   check(gotError, "but the swipes themselves are entirely closed to anonymous");
 }
 
+console.log("\n— moderation sticks —");
+{
+  /* FRIEND writes a comment and the admin hides it. The writer may still
+     edit their own row (the body is theirs), but the flag is not: without
+     the guard they could quietly write is_hidden back to false. */
+  await asService();
+  await db.exec(`update public.profiles set is_admin = true where id = '${ME}'`);
+
+  await asUser(FRIEND);
+  await db.exec(`insert into public.comments (event_id, body)
+                 select id, 'the queue was the whole night' from public.events where slug = 'blitz'`);
+
+  await asUser(ME);
+  const hid = await db.query(`update public.comments set is_hidden = true
+                              where author_id = '${FRIEND}' returning id`);
+  check(hid.rows.length === 1, "an admin can hide a comment");
+  const target = hid.rows.length ? hid.rows[0].id : null;
+
+  await asUser(FRIEND);
+  /* A hidden row is invisible to its writer, so an update that has to
+     READ it (a WHERE on its id) already finds nothing. The one road in
+     is a bare UPDATE — no WHERE reads no row values, so it reaches every
+     row the update rule allows, hidden included. The trigger closes it. */
+  const blind = await db.query(`update public.comments set is_hidden = false
+                                where id = '${target}' returning id`);
+  check(blind.rows.length === 0, "a hidden comment cannot even be aimed at by its writer");
+
+  let lifted = null;
+  try { await db.exec(`update public.comments set is_hidden = false`); }
+  catch (e) { lifted = e.message; }
+  check(Boolean(lifted), "the writer cannot lift the flag back off");
+
+  let forgedTime = null;
+  try { await db.exec(`update public.comments set time_text = '4 days ago'
+                       where author_id = '${FRIEND}'`); }
+  catch (e) { forgedTime = e.message; }
+  check(Boolean(forgedTime), "the shown time is not the writer's to change");
+
+  let tooLong = null;
+  try {
+    await db.exec(`insert into public.comments (event_id, body)
+                   select id, repeat('x', 2001) from public.events where slug = 'blitz'`);
+  } catch (e) { tooLong = e.message; }
+  check(Boolean(tooLong), "a comment past 2000 characters is refused");
+}
+
 console.log(`\n${passed} passed, ${failed} failed\n`);
 process.exit(failed ? 1 : 0);

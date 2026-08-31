@@ -3,7 +3,7 @@
 # The site itself has no build step and nothing to check here: it is plain
 # HTML that the browser reads as it is. What can break silently is the
 # database — the rules about who may read what, the seed matching the
-# screen, the setup staying repeatable. That is what these 187 checks are
+# screen, the setup staying repeatable. That is what these 260 checks are
 # for, and they run on a real Postgres (PGlite, compiled to WASM) so there
 # is nothing to install and no service to wait for.
 

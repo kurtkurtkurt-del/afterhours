@@ -70,6 +70,30 @@ console.log("\n— sending a request —");
     "an outgoing request shows in your own list");
 }
 
+console.log("\n— consent cannot be skipped —");
+{
+  /* The pending request A→B is on the table. Accepting belongs to the
+     side that RECEIVED it; the requester's tools are insert and delete. */
+  await asUser(A);
+  await db.exec(`update public.friendships set status = 'accepted' where addressee_id = '${B}'`);
+  const s = await db.query(`select status from public.friends_list()`);
+  check(s.rows[0].status === "pending", "the requester cannot accept their own request");
+
+  let born = null;
+  try {
+    await db.exec(`insert into public.friendships (requester_id, addressee_id, status)
+                   values ('${A}', '${C}', 'accepted')`);
+  } catch (e) { born = e.message; }
+  check(Boolean(born), "a friendship cannot be INSERTed as already accepted");
+
+  let repointed = null;
+  try {
+    await db.exec(`update public.friendships set addressee_id = '${C}'
+                   where requester_id = '${A}'`);
+  } catch (e) { repointed = e.message; }
+  check(Boolean(repointed), "an accepted-side swap is not the requester's to make");
+}
+
 console.log("\n— the other side —");
 {
   await asUser(B);

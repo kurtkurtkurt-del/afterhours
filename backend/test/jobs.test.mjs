@@ -75,5 +75,25 @@ console.log("\n— the health summary —");
   check(Number(s.missing_venue) === 8, "the ones with no venue are reported");
 }
 
+console.log("\n— who may run the job —");
+{
+  /* The drop is pg_cron's to run (as the owner). Postgres hands EXECUTE
+     on a new function to everyone; the revoke in 09 takes it back, or any
+     browser could fire it through the API. */
+  await db.exec(`set role authenticated;
+                 set request.jwt.claims = '{"sub":"11111111-1111-1111-1111-111111111111"}';`);
+  let refused = null;
+  try { await db.query(`select public.hide_past_events()`); }
+  catch (e) { refused = e.message; }
+  check(/permission denied/i.test(refused || ""), "a signed-in browser cannot trigger the drop");
+
+  await db.exec(`set role anon; set request.jwt.claims = '';`);
+  let anonRefused = null;
+  try { await db.query(`select public.hide_past_events()`); }
+  catch (e) { anonRefused = e.message; }
+  check(/permission denied/i.test(anonRefused || ""), "anonymous cannot either");
+  await db.exec(`reset role; set request.jwt.claims = '';`);
+}
+
 console.log(`\n${passed} passed, ${failed} failed\n`);
 process.exit(failed ? 1 : 0);

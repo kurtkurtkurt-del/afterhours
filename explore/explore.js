@@ -279,6 +279,7 @@
     const box = document.createElement("textarea");
     box.className = "c-write-field";
     box.rows = 2;
+    box.maxLength = 2000;              /* the database refuses more anyway */
     box.placeholder = "say something about this night";
 
     const button = document.createElement("button");
@@ -522,14 +523,16 @@
 
       resetButton.disabled = true;
       AH.resetSwipes().then(() => {
-        /* Clear the traces on screen too */
+        /* Clear the traces on screen too; redeal writes the empty-deck
+           message itself, so nothing else touches it here. */
         kept.length = 0;
         if (badge) { badge.textContent = "0"; badge.hidden = true; }
         if (box) box.classList.remove("taken");
         if (boxList) openBox(false);
         skip.clear();
-        if (done) done.textContent = "that's everyone for tonight.";
         return redeal(currentMode());
+      }).catch((err) => {
+        console.warn("[afterhours] couldn't redeal after the reset:", err);
       }).finally(() => { resetButton.disabled = false; });
     });
   }

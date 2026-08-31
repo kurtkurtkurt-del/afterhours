@@ -152,6 +152,15 @@ create table if not exists public.comments (
   constraint comments_author_var check (author_id is not null or author_name is not null)
 );
 
+-- The inline check above only says "not empty"; a ceiling matters just as
+-- much, or one signed-in account can store megabytes per row. Named and
+-- added separately so a database built before this line gets it too.
+alter table public.comments
+  drop constraint if exists comments_body_length;
+alter table public.comments
+  add constraint comments_body_length
+  check (length(btrim(body)) between 1 and 2000);
+
 create index if not exists comments_event_idx on public.comments (event_id, created_at);
 create index if not exists comments_parent_idx on public.comments (parent_id);
 

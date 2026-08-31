@@ -112,6 +112,16 @@ console.log("\n— the migration log —");
   check(again.rows[0].n === EXPECTED_SQL.length, "stamping again does not add a row",
     String(again.rows[0].n));
 
+  /* The stamps come from the SQL editor alone. Through the API the log is
+     read-only: a visitor who could stamp a file as applied would be
+     telling the health check exactly the lie it exists to catch. */
+  await db.exec(`set role anon; set request.jwt.claims = '';`);
+  let forged = null;
+  try { await db.exec(`select public.migration_done('99_never_ran.sql')`); }
+  catch (e) { forged = e.message; }
+  check(/permission denied/i.test(forged || ""), "the log cannot be stamped through the API");
+  await db.exec(`reset role; set request.jwt.claims = '';`);
+
   /* Every numbered file still has to run on its own, without the log. */
   const bare = new PGlite();
   let standalone = true;

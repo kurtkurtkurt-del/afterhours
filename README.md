@@ -291,6 +291,20 @@ back individually chosen fields: whoever knows your handle sees your card
 cards you kept, and last seen never leaves with its clock time — only as a
 day, and only to a friend.
 
+**A write may only say what the form asks.** The grants on `comments`,
+`friendships`, `feedback` and `profiles` are per column: a comment arrives
+as event, parent and body; a friend request as the two ends of it — born
+`pending`, and only the side that received it may flip the status, so
+consent cannot be skipped by inserting or self-accepting an `accepted`
+row. `handled` belongs to the admin's PATCH, `created_at` to the clock,
+`is_hidden` to a trigger that lets nobody but an admin move it (hiding a
+comment is moderation, and moderation sticks). On the profile the direct
+grant covers the four fields a person edits about themselves; joined,
+last seen and onboarded move only through `seen()` and `profile_setup()`,
+which are definer and set them honestly. The two owner-side functions —
+`migration_done()` and `hide_past_events()` — had EXECUTE taken back from
+the browser roles: the log and the cron job are not a public API.
+
 **Which files have been run is written down.** The setup is pasted into
 the Supabase editor by hand, so a project can sit a file behind while
 everything still looks fine — a page just answers PGRST202 because the
@@ -323,7 +337,7 @@ reasons — deleting a topic would take other people's replies with it, and
 the constraint on the `comments` table refuses a row with no author. The
 settings page says so before it deletes.
 
-For the setup, the tests (245 checks) and the local imitation of Supabase
+For the setup, the tests (260 checks) and the local imitation of Supabase
 (`tools/local-server.mjs`, PostgREST + GoTrue on top of PGlite) →
 **[backend/README.md](backend/README.md)**
 
@@ -336,7 +350,7 @@ request. Three jobs, none of which needs a secret:
 
 | job | what it refuses to let through |
 |---|---|
-| `backend` | the 245 checks, on a real Postgres (PGlite) |
+| `backend` | the 260 checks, on a real Postgres (PGlite) |
 | `generated` | SQL that has drifted from the files it was built from — it rebuilds and asks git whether anything moved |
 | `versions` | more than one `?v=NN` across the pages, which would serve a stale script against a new stylesheet |
 
@@ -380,7 +394,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **135**.
+The current version: **136**.
 
 ---
 
@@ -504,6 +518,14 @@ Every one of these cost us something:
 - **An apostrophe in a SQL comment breaks the Supabase editor.** Its parser
   counts quotes and counts the ones inside comments too, so a single `'`
   turns the rest of the file into code. `seed.test.mjs` enforces this.
+- **A bare UPDATE slips past the read rule; a WHERE does not.** An update
+  that has to READ the row (a `where id = …`, a `returning`) also obeys
+  the SELECT policy, so a hidden comment cannot even be aimed at by its
+  writer — but `update … set is_hidden = false` with no WHERE reads
+  nothing and reaches every row the update rule allows, hidden included.
+  A row an update rule exposes is only protected if a trigger or a column
+  grant stands behind it; the write-a-test-first way is the only way this
+  showed up at all.
 - **`perl -pi -e` with `|` as the delimiter and a `?v=` pattern** is a way
   to shred a file: the escaping is nested three deep (shell, perl, regex).
   For version bumps, use the command above and read the diff afterwards.

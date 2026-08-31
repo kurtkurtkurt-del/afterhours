@@ -307,13 +307,34 @@
     file.text().then((text) => {
       const box = $("a-poster-preview");
       box.textContent = "";
+
+      /* The upload is data, not code: an SVG can carry <script> and on*
+         handlers, and this page runs with the admin's session. Parse it
+         detached, strip anything that could run, and only then let it
+         near the document. */
+      const doc = new DOMParser().parseFromString(text, "image/svg+xml");
+      const parsed = doc.documentElement;
+      if (doc.querySelector("parsererror") || parsed.nodeName.toLowerCase() !== "svg") {
+        note.textContent = "that file has no <svg> in it.";
+        return;
+      }
+      doc.querySelectorAll("script, foreignObject").forEach((el) => el.remove());
+      doc.querySelectorAll("*").forEach((el) => {
+        [...el.attributes].forEach((a) => {
+          if (/^on/i.test(a.name) || /^\s*javascript:/i.test(a.value)) {
+            el.removeAttribute(a.name);
+          }
+        });
+      });
+
       const wrapper = document.createElement("div");
       wrapper.className = "adm-poster-inner";
-      wrapper.innerHTML = text;
+      wrapper.appendChild(document.importNode(parsed, true));
       box.appendChild(wrapper);
 
+      /* getBBox only answers on a rendered element: measure the copy in
+         the document, not the detached parse. */
       const svg = wrapper.querySelector("svg");
-      if (!svg) { note.textContent = "that file has no <svg> in it."; return; }
 
       const boxSize = (svg.getAttribute("viewBox") || "").split(/\s+/);
       const width = Number(boxSize[2]) || 400;

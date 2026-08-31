@@ -47,4 +47,11 @@ as $$
   on conflict (name) do update set applied_at = now();
 $$;
 
+-- The stamps come from the SQL editor, which runs as the table owner.
+-- Postgres hands EXECUTE on a new function to everyone by default, and
+-- through the API that would let any visitor forge the log — including
+-- stamping a file as applied that never ran, which is exactly the lie
+-- the health check exists to catch.
+revoke execute on function public.migration_done(text) from public, anon, authenticated;
+
 select public.migration_done('00_migrations.sql');

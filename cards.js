@@ -233,38 +233,43 @@ function wave(id,m,x0,yc){return `<g fill="url(#g${id})">`+WAVE.map((h,i)=>
   `<rect x="${x0+i*9}" y="${yc-h/2}" width="4" height="${h}"/>`).join('')+`</g>`;}
 
 // ─────────── THE FRONT ───────────
+// Every piece of night data goes through esc() on its way into the SVG
+// string: the callers hand the result to innerHTML, so a title carrying
+// a < or & must arrive as text, never as markup.
+const esc=(v)=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
 function front(e,i){
-  const m=METALS[e.metal], id='f'+i;
+  const m=METALS[e.metal]||METALS.steel, id='f'+i;
   const av=e.crew.map((c,k)=>
     `<rect x="${34+k*54}" y="442" width="44" height="44" fill="${m.light?'#2f3740':m.poster}" stroke="${m.mid}" stroke-width="1"/>
-     <text x="${56+k*54}" y="472" text-anchor="middle" font-family="JetBrains Mono" font-size="17" fill="${m.light?'#eef3f8':m.hi}">${c}</text>`).join('')
+     <text x="${56+k*54}" y="472" text-anchor="middle" font-family="JetBrains Mono" font-size="17" fill="${m.light?'#eef3f8':m.hi}">${esc(c)}</text>`).join('')
    +`<rect x="${34+e.crew.length*54}" y="442" width="44" height="44" fill="none" stroke="${m.faint}" stroke-width="1.2" stroke-dasharray="4 4"/>
-     <text x="${56+e.crew.length*54}" y="471" text-anchor="middle" font-family="JetBrains Mono" font-size="15" fill="${m.sub}">+${e.more}</text>`;
+     <text x="${56+e.crew.length*54}" y="471" text-anchor="middle" font-family="JetBrains Mono" font-size="15" fill="${m.sub}">+${esc(e.more)}</text>`;
   return `<svg viewBox="0 0 400 600">${defs(id,m)}
   <rect width="400" height="600" fill="url(#p${id})"/>
   ${hairlines(m,[322,332,344,358,376,398,424,454,490,530,572])}
   ${m.patina?`<g fill="#3f7d6f" opacity="0.13"><path d="M0 400 C 60 380, 90 430, 150 410 C 200 394, 230 440, 280 424 L 400 440 L 400 600 L 0 600 Z"/></g>`:''}
   <g clip-path="url(#c${id})">
     <rect width="400" height="300" fill="${m.poster}"/>
-    ${MOTIFS[e.motif](id,m)}
+    ${(MOTIFS[e.motif]||MOTIFS.rays)(id,m)}
     <path d="M-40 0 L110 0 L30 300 L-120 300 Z" fill="#fff" opacity="0.05"/>
   </g>
   <line x1="0" y1="300" x2="400" y2="300" stroke="${m.deep}" stroke-width="2"/>
   <line x1="0" y1="302" x2="400" y2="302" stroke="${m.mid}" stroke-width="1"/>
 
-  <text x="34" y="52" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${m.mid}">${e.ty}</text>
+  <text x="34" y="52" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${m.mid}">${esc(e.ty)}</text>
   <text x="366" y="52" text-anchor="end" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${m.light?m.hi:m.accent}">CHECKED IN</text>
 
-  <text x="34" y="348" font-family="-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="${e.t.length>16?26:(e.t.length>12?31:37)}" letter-spacing="-1.4" fill="url(#g${id})">${e.t.toUpperCase()}</text>
-  <text x="34" y="372" font-family="JetBrains Mono" font-size="10.5" letter-spacing="2" fill="${m.sub}">${e.d} · ${e.v} · ${e.in}</text>
+  <text x="34" y="348" font-family="-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="${e.t.length>16?26:(e.t.length>12?31:37)}" letter-spacing="-1.4" fill="url(#g${id})">${esc(e.t.toUpperCase())}</text>
+  <text x="34" y="372" font-family="JetBrains Mono" font-size="10.5" letter-spacing="2" fill="${m.sub}">${esc(e.d)} · ${esc(e.v)} · ${esc(e.in)}</text>
 
   ${rule(m,398)}
   <text x="34" y="424" font-family="JetBrains Mono" font-size="10" letter-spacing="3" fill="${m.sub}">WHO WAS THERE</text>
   ${av}
   ${rule(m,514)}
   <g font-family="JetBrains Mono" font-size="10.5" letter-spacing="1.6">
-    <text x="34" y="540" fill="${m.sub}">AUDIO</text><text x="34" y="558" fill="${m.hi}">${e.aud}</text>
-    <text x="140" y="540" fill="${m.sub}">MESSAGES</text><text x="140" y="558" fill="${m.hi}">${e.msg}</text>
+    <text x="34" y="540" fill="${m.sub}">AUDIO</text><text x="34" y="558" fill="${m.hi}">${esc(e.aud)}</text>
+    <text x="140" y="540" fill="${m.sub}">MESSAGES</text><text x="140" y="558" fill="${m.hi}">${esc(e.msg)}</text>
     <text x="260" y="540" fill="${m.sub}">ROOM</text><text x="260" y="558" fill="${m.faint}">FROZEN</text>
   </g>
   <rect x="7" y="7" width="386" height="586" fill="none" stroke="url(#e${id})" stroke-width="4"/>
@@ -273,7 +278,7 @@ function front(e,i){
 
 // ─────────── THE BACK ───────────
 function back(e,i){
-  const m=METALS[e.metal], id='b'+i;
+  const m=METALS[e.metal]||METALS.steel, id='b'+i;
   const marks=[[e.in,'ARRIVED · WITH '+e.crew.length,m.hi,1],
                [e.at1,'VOICE NOTE',m.accent,1],
                [e.at2,e.msg+' MESSAGES',m.mid,1],
@@ -282,8 +287,8 @@ function back(e,i){
     const y=106+n*56;
     return (k[3]?`<rect x="42" y="${y}" width="12" height="12" fill="${k[2]}"/>`
                 :`<rect x="42" y="${y}" width="12" height="12" fill="none" stroke="${m.mid}" stroke-width="1.5"/>`)
-      +`<text x="74" y="${y+10}" font-size="12" fill="${k[2]}">${k[0]}</text>`
-      +`<text x="150" y="${y+10}" font-size="10" fill="${m.sub}">${k[1]}</text>`;}).join('');
+      +`<text x="74" y="${y+10}" font-size="12" fill="${k[2]}">${esc(k[0])}</text>`
+      +`<text x="150" y="${y+10}" font-size="10" fill="${m.sub}">${esc(k[1])}</text>`;}).join('');
   return `<svg viewBox="0 0 400 600">${defs(id,m)}
   <rect width="400" height="600" fill="url(#p${id})"/>
   ${hairlines(m,[70,96,128,168,214,266,324,388,458,534])}
@@ -291,24 +296,24 @@ function back(e,i){
   <path d="M-40 0 L90 0 L10 600 L-120 600 Z" fill="#fff" opacity="0.026"/>
 
   <text x="34" y="52" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${m.mid}">THE NIGHT</text>
-  <text x="366" y="52" text-anchor="end" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${m.light?m.hi:m.accent}">${e.dur}</text>
+  <text x="366" y="52" text-anchor="end" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${m.light?m.hi:m.accent}">${esc(e.dur)}</text>
   ${rule(m,70)}
 
   <line x1="48" y1="104" x2="48" y2="286" stroke="${m.line}" stroke-width="1.5"/>
   <g font-family="JetBrains Mono" letter-spacing="1.4">${tl}</g>
 
   ${rule(m,318)}
-  <text x="34" y="344" font-family="JetBrains Mono" font-size="10" letter-spacing="3" fill="${m.sub}">VOICE NOTE · ${e.aud}</text>
+  <text x="34" y="344" font-family="JetBrains Mono" font-size="10" letter-spacing="3" fill="${m.sub}">VOICE NOTE · ${esc(e.aud)}</text>
   ${wave(id,m,34,387)}
   <g transform="translate(34,444)"><rect width="34" height="34" fill="url(#g${id})"/><path d="M12 9 L25 17 L12 25 Z" fill="${m.poster}"/></g>
-  <text x="80" y="466" font-family="JetBrains Mono" font-size="10.5" letter-spacing="1.6" fill="${m.sub}">${e.who} · ${e.at1}</text>
+  <text x="80" y="466" font-family="JetBrains Mono" font-size="10.5" letter-spacing="1.6" fill="${m.sub}">${esc(e.who)} · ${esc(e.at1)}</text>
 
   ${rule(m,498)}
   <g font-family="JetBrains Mono" font-size="11">
-    <text x="34" y="524" fill="${m.light?m.accent:m.txt}">"${e.q1[0]}"</text><text x="366" y="524" text-anchor="end" font-size="9.5" fill="${m.faint}">${e.q1[1]} · ${e.q1[2]}</text>
-    <text x="34" y="548" fill="${m.light?m.accent:m.txt}">"${e.q2[0]}"</text><text x="366" y="548" text-anchor="end" font-size="9.5" fill="${m.faint}">${e.q2[1]} · ${e.q2[2]}</text>
+    <text x="34" y="524" fill="${m.light?m.accent:m.txt}">"${esc(e.q1[0])}"</text><text x="366" y="524" text-anchor="end" font-size="9.5" fill="${m.faint}">${esc(e.q1[1])} · ${esc(e.q1[2])}</text>
+    <text x="34" y="548" fill="${m.light?m.accent:m.txt}">"${esc(e.q2[0])}"</text><text x="366" y="548" text-anchor="end" font-size="9.5" fill="${m.faint}">${esc(e.q2[1])} · ${esc(e.q2[2])}</text>
   </g>
-  <text x="34" y="578" font-family="JetBrains Mono" font-size="9.5" letter-spacing="2" fill="${m.faint}">ROOM FROZEN ${e.froze} · NO. ${e.no}</text>
+  <text x="34" y="578" font-family="JetBrains Mono" font-size="9.5" letter-spacing="2" fill="${m.faint}">ROOM FROZEN ${esc(e.froze)} · NO. ${esc(e.no)}</text>
 
   <rect x="7" y="7" width="386" height="586" fill="none" stroke="url(#e${id})" stroke-width="4"/>
   <rect x="13" y="13" width="374" height="574" fill="none" stroke="${m.deep}" stroke-width="1"/>

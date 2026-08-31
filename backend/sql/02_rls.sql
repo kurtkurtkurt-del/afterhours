@@ -148,21 +148,50 @@ drop policy if exists comments_delete on public.comments;
 create policy comments_delete on public.comments for delete
   using (author_id = auth.uid() or public.is_admin());
 
+-- Hiding a comment is moderation, and moderation has to stick: the
+-- update rule above lets an author edit their own row, and without this
+-- guard that included quietly writing is_hidden back to false.
+create or replace function public.guard_comment_hidden()
+returns trigger
+language plpgsql
+as $$
+begin
+  -- An empty auth.uid() is the service role or the SQL editor, same as
+  -- in guard_is_admin above.
+  if new.is_hidden is distinct from old.is_hidden
+     and auth.uid() is not null
+     and not public.is_admin() then
+    raise exception 'is_hidden can only be changed by an admin';
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists comments_guard_hidden on public.comments;
+create trigger comments_guard_hidden
+  before update on public.comments
+  for each row execute function public.guard_comment_hidden();
+
 -- ------------------------------------------------------------ friendship
 
 drop policy if exists friendships_read on public.friendships;
 create policy friendships_read on public.friendships for select
   using (requester_id = auth.uid() or addressee_id = auth.uid());
 
+-- A request is born pending. Without the status check here, a row could
+-- be INSERTED as ’accepted’ and skip the other side’s consent entirely.
 drop policy if exists friendships_insert on public.friendships;
 create policy friendships_insert on public.friendships for insert
-  with check (requester_id = auth.uid());
+  with check (requester_id = auth.uid() and status = 'pending');
 
--- The other side accepts; either side can undo it.
+-- Only the side that RECEIVED the request may change it: that is what
+-- accepting is. The requester’s tools are insert and delete — with
+-- update too, a requester could flip their own request to ’accepted’
+-- and walk into everything a friend may see.
 drop policy if exists friendships_update on public.friendships;
 create policy friendships_update on public.friendships for update
-  using (requester_id = auth.uid() or addressee_id = auth.uid())
-  with check (requester_id = auth.uid() or addressee_id = auth.uid());
+  using (addressee_id = auth.uid())
+  with check (addressee_id = auth.uid());
 
 drop policy if exists friendships_delete on public.friendships;
 create policy friendships_delete on public.friendships for delete
@@ -191,8 +220,24 @@ grant usage on schema public to anon, authenticated;
 grant select on public.cities, public.event_types, public.venues,
                 public.events, public.profiles, public.comments to anon, authenticated;
 
-grant insert, update, delete on public.swipes, public.comments, public.friendships to authenticated;
+grant insert, update, delete on public.swipes to authenticated;
 grant select on public.swipes, public.friendships to authenticated;
+
+-- Comments and friendships accept writes only on the columns the site
+-- actually sends. The others either default (author_id, created_at,
+-- status) or belong to the seed and the tools, which run as the table
+-- owner and are not bound by these grants. Grants pile up, so the old
+-- broad ones are taken back first — a database that ran the previous
+-- version of this file keeps them otherwise.
+revoke insert, update on public.comments from authenticated;
+grant delete                                  on public.comments to authenticated;
+grant insert (event_id, parent_id, author_id, body) on public.comments to authenticated;
+grant update (body, is_hidden)                on public.comments to authenticated;
+
+revoke insert, update on public.friendships from authenticated;
+grant delete                                  on public.friendships to authenticated;
+grant insert (requester_id, addressee_id)     on public.friendships to authenticated;
+grant update (status)                         on public.friendships to authenticated;
 grant update on public.profiles to authenticated;
 grant insert, update, delete on public.cities, public.event_types,
                                  public.venues, public.events to authenticated;

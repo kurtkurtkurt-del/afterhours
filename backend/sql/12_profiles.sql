@@ -159,6 +159,9 @@ $$;
 
 -- The one thing that must happen after the account opens: a handle. The
 -- rest is optional. It all goes in one request so no profile is left half done.
+-- security definer, because the direct UPDATE grant on profiles is
+-- limited to the four fields a person may edit (see the privileges at
+-- the bottom); onboarded_at is stamped only through here.
 create or replace function public.profile_setup(
   p_handle       text,
   p_display_name text default null,
@@ -167,6 +170,8 @@ create or replace function public.profile_setup(
 )
 returns text
 language plpgsql
+security definer
+set search_path = public
 as $$
 declare
   handle_state    text := public.handle_status(p_handle);
@@ -373,11 +378,15 @@ $$;
 -- ---------------------------------------------------------------- seen
 
 -- For the "already on the app" list in friends&more. A person stamps
--- stamps their own row only; no other row is reachable (RLS).
+-- their own row only: the update is pinned to auth.uid(). Definer,
+-- because last_seen_at is not in the direct UPDATE grant — the stamp
+-- goes through here or not at all.
 create or replace function public.seen()
 returns void
 language sql
 volatile
+security definer
+set search_path = public
 as $$
   update public.profiles set last_seen_at = now() where id = auth.uid();
 $$;
@@ -483,13 +492,32 @@ $$;
 -- Supabase does not grant on a new table by itself; by hand, as in 02.
 grant select, insert, update on public.profile_settings to authenticated;
 
+-- The direct UPDATE on profiles covers exactly the four fields a person
+-- edits about themselves. created_at, last_seen_at and onboarded_at are
+-- the record’s own truth — writable only through seen() and
+-- profile_setup(), which are definer and set them honestly. The old
+-- table-wide grant from 02 is taken back first (grants pile up).
+revoke update on public.profiles from authenticated;
+grant update (handle, display_name, bio, city_id) on public.profiles to authenticated;
+
 grant execute on function public.handle_status(text)                   to anon, authenticated;
 grant execute on function public.profile_card(text)                    to anon, authenticated;
-grant execute on function public.kept_visible(uuid)                    to anon, authenticated;
 grant execute on function public.is_linked(uuid)                       to anon, authenticated;
-grant execute on function public.card_visible(uuid)                    to anon, authenticated;
-grant execute on function public.handle_to_id(text)                    to anon, authenticated;
+grant execute on function public.kept_visible(uuid)                    to authenticated;
+grant execute on function public.handle_to_id(text)                    to authenticated;
 grant execute on function public.author_name(uuid, text)               to anon, authenticated;
+
+-- The uuid→fact helpers exist for the rules and views that call them,
+-- not as a public API — each one is a small oracle on somebody’s data.
+-- Two have to stay callable by the browser roles: is_linked runs inside
+-- the profiles read rule, author_name inside comments_public (both are
+-- invoker, so the caller needs EXECUTE). The rest close: kept_visible
+-- only serves the swipes rule (authenticated), handle_to_id only
+-- friend_request (authenticated), and card_visible only profile_card,
+-- which is definer and needs no grant at all.
+revoke execute on function public.card_visible(uuid) from public, anon, authenticated;
+revoke execute on function public.kept_visible(uuid) from public, anon;
+revoke execute on function public.handle_to_id(text) from public, anon;
 grant execute on function public.profile_setup(text, text, text, text) to authenticated;
 grant execute on function public.profile_me()                          to authenticated;
 grant execute on function public.seen()                                to authenticated;

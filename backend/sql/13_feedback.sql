@@ -65,8 +65,14 @@ as $$
   limit greatest(1, least(coalesce(p_limit, 100), 500));
 $$;
 
-grant insert on public.feedback to anon, authenticated;
-grant select, update on public.feedback to authenticated;
+-- Writers may fill in exactly what the form asks: the subject, the words
+-- and a way back. handled belongs to the admin’s PATCH, created_at to the
+-- clock — neither is anyone’s to send. (The old broad grants are taken
+-- back first; grants pile up on a database that ran an earlier version.)
+revoke insert, update on public.feedback from anon, authenticated;
+grant insert (author_id, kind, body, contact) on public.feedback to anon, authenticated;
+grant update (handled) on public.feedback to authenticated;
+grant select on public.feedback to authenticated;
 grant execute on function public.feedback_list(int) to authenticated;
 
 -- Stamp the migration log, if it is there. Each numbered file still runs on
