@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-08-30 21:46   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-08-31 09:26   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -40,6 +40,8 @@ alter table public.migrations enable row level security;
 
 -- The list itself is only filenames and dates, so the health check may
 -- read it with the public key. Nothing about the content leaks through it.
+-- create or replace is not enough when the return type changes; drop first.
+drop function if exists public.migrations_applied();
 create or replace function public.migrations_applied()
 returns table (name text, applied_at timestamptz)
 language sql
@@ -1100,6 +1102,34 @@ end $$;
 -- security_invoker: the view runs with the rights of whoever calls it.
 -- Without it the view steps around RLS and unpublished events leak.
 
+-- ------------------------------------------- a column a view cannot rename
+
+-- `create or replace view` can add a column but it cannot RENAME one, and
+-- the column carrying the type order was called type_sira before the code
+-- moved to English. On a database built before that rename this file used
+-- to stop dead with
+--     42P16: cannot change name of view column "type_sira" to "type_sort_order"
+-- and nothing after it ran. Dropping the view first is the only way.
+--
+-- cascade is safe here and nowhere else: the only things that depend on
+-- events_public are deck() and kept(), which say `returns setof
+-- public.events_public`, and both are recreated further down this same
+-- file. On a fresh database the block does nothing at all.
+do $$
+begin
+  if exists (
+    select 1 from information_schema.columns
+    where table_schema = 'public'
+      and table_name   = 'events_public'
+      and column_name  = 'type_sira'
+  ) then
+    drop view public.events_public cascade;
+    raise notice 'events_public dropped so its renamed column can come back';
+  end if;
+end
+$$;
+
+
 -- ------------------------------------------------- event (readable form)
 
 create or replace view public.events_public
@@ -1366,6 +1396,8 @@ alter table public.profiles
 
 -- Your friends and the pending requests, in one list.
 -- direction: outgoing = you asked for it, incoming = they asked you.
+-- create or replace is not enough when the return type changes; drop first.
+drop function if exists public.friends_list();
 create or replace function public.friends_list()
 returns table (
   other_id      uuid,
@@ -1557,6 +1589,8 @@ $$;
 
 -- The maintenance summary: one row saying what wants attention.
 -- The database side of the warnings in the admin panel.
+-- create or replace is not enough when the return type changes; drop first.
+drop function if exists public.health();
 create or replace function public.health()
 returns table (
   events            bigint,

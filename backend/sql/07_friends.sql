@@ -13,6 +13,8 @@ alter table public.profiles
 
 -- Your friends and the pending requests, in one list.
 -- direction: outgoing = you asked for it, incoming = they asked you.
+-- create or replace is not enough when the return type changes; drop first.
+drop function if exists public.friends_list();
 create or replace function public.friends_list()
 returns table (
   other_id      uuid,

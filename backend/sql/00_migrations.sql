@@ -22,6 +22,8 @@ alter table public.migrations enable row level security;
 
 -- The list itself is only filenames and dates, so the health check may
 -- read it with the public key. Nothing about the content leaks through it.
+-- create or replace is not enough when the return type changes; drop first.
+drop function if exists public.migrations_applied();
 create or replace function public.migrations_applied()
 returns table (name text, applied_at timestamptz)
 language sql

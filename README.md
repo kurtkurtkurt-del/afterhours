@@ -323,7 +323,7 @@ reasons — deleting a topic would take other people's replies with it, and
 the constraint on the `comments` table refuses a row with no author. The
 settings page says so before it deletes.
 
-For the setup, the tests (224 checks) and the local imitation of Supabase
+For the setup, the tests (245 checks) and the local imitation of Supabase
 (`tools/local-server.mjs`, PostgREST + GoTrue on top of PGlite) →
 **[backend/README.md](backend/README.md)**
 
@@ -336,7 +336,7 @@ request. Three jobs, none of which needs a secret:
 
 | job | what it refuses to let through |
 |---|---|
-| `backend` | the 224 checks, on a real Postgres (PGlite) |
+| `backend` | the 245 checks, on a real Postgres (PGlite) |
 | `generated` | SQL that has drifted from the files it was built from — it rebuilds and asks git whether anything moved |
 | `versions` | more than one `?v=NN` across the pages, which would serve a stale script against a new stylesheet |
 
@@ -487,6 +487,14 @@ Every one of these cost us something:
   its first request. The local server had the mirror of it and ignored
   ordering entirely. A parameter that belongs to somebody else's API is not
   yours to rename.
+- **`create or replace view` can add a column but never rename one.** The
+  live project was built while the code was Turkish, so its `events_public`
+  carried `type_sira`; today's file wanted `type_sort_order` and the paste
+  stopped dead with `42P16: cannot change name of view column`. The same is
+  true of a function's OUT parameters — `friends_list()` and `health()`
+  came next. Both need a `drop` first, and `upgrade.test.mjs` now rebuilds
+  the pre-rename database from git and pastes today's setup onto it, which
+  is the only way to see this at all.
 - **Pasting a setup file twice used to double every conversation.** The
   structure files were already repeatable (`on conflict do nothing`), but
   the comment seed had no guard. It now clears the previous sample set

@@ -33,13 +33,14 @@ tools/backup.mjs         backs the content up to JSON
 tools/restore.mjs        turns a backup back into SQL
 tools/health.mjs         the status check
 
-test/                    224 checks, all on a real Postgres (PGlite)
+test/                    245 checks, all on a real Postgres (PGlite)
 ```
 
 ## Day to day
 
 ```bash
-npm test           # schema, seed, views, friendship, profiles, feedback, jobs, update, setup
+npm test           # schema, seed, views, friendship, profiles, feedback, jobs,
+                   # update, setup, backup, export, upgrade
 npm run server     # http://localhost:4350 — development without Supabase
 npm run seed       # rebuild the SQL after events-data.js changed
 npm run setup      # rebuild the two combined setup files

@@ -4,6 +4,34 @@
 -- security_invoker: the view runs with the rights of whoever calls it.
 -- Without it the view steps around RLS and unpublished events leak.
 
+-- ------------------------------------------- a column a view cannot rename
+
+-- `create or replace view` can add a column but it cannot RENAME one, and
+-- the column carrying the type order was called type_sira before the code
+-- moved to English. On a database built before that rename this file used
+-- to stop dead with
+--     42P16: cannot change name of view column "type_sira" to "type_sort_order"
+-- and nothing after it ran. Dropping the view first is the only way.
+--
+-- cascade is safe here and nowhere else: the only things that depend on
+-- events_public are deck() and kept(), which say `returns setof
+-- public.events_public`, and both are recreated further down this same
+-- file. On a fresh database the block does nothing at all.
+do $$
+begin
+  if exists (
+    select 1 from information_schema.columns
+    where table_schema = 'public'
+      and table_name   = 'events_public'
+      and column_name  = 'type_sira'
+  ) then
+    drop view public.events_public cascade;
+    raise notice 'events_public dropped so its renamed column can come back';
+  end if;
+end
+$$;
+
+
 -- ------------------------------------------------- event (readable form)
 
 create or replace view public.events_public

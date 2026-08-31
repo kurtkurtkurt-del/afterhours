@@ -27,6 +27,8 @@ $$;
 
 -- The maintenance summary: one row saying what wants attention.
 -- The database side of the warnings in the admin panel.
+-- create or replace is not enough when the return type changes; drop first.
+drop function if exists public.health();
 create or replace function public.health()
 returns table (
   events            bigint,
