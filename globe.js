@@ -80,50 +80,94 @@
     });
   }
 
-  // ---------- the beacons: the colour comes from that night's poster ----------
-  const SLUG = ["asap-rocky", "nick-cave", "bonez-mc-raf-camora", "thirty-seconds-to-mars", "annenmaykantereit", "elysium", "tollwood", "mondscheinexpress", "isle-of-summer", "zamanand", "blitz", "rote-sonne-bahnwarter", "silo-west", "cfu-open-air", "daytime-rave", "echonomist", "10-years-blurred-vision", "legal-blitz", "bahnwarter-techno-nacht", "unterwelt", "kuchentisch", "3-stock-links", "boxenturm", "klingel-14", "plattenabend", "vierter-stock", "zine-klub", "kaffee-karten", "nachtlinie", "sprechstunde", "riso-abend", "lange-tafel", "strobo", "tunnelblick", "spiegelsaal", "pegel"];
+  // ---------- the beacons: the nights come from the DECK ----------
 
-  const NIGHTS = [
-    ["A$AP Rocky", "KONZERT", "18:30", 21, "#ffd93d", "01"],
-    ["Nick Cave", "KONZERT", "20:00", 26, "#e8d9b8", "02"],
-    ["Bonez & RAF", "KONZERT", "20:00", 21, "#1fa88a", "03"],
-    ["Thirty Seconds", "KONZERT", "19:52", 21, "#d94a6a", "04"],
-    ["AnnenMayKantereit", "KONZERT", "19:30", 26, "#c2452c", "05"],
-    ["Elysium", "FESTIVAL", "22:00", 12, "#2ee6c0", "06"],
-    ["Tollwood", "FESTIVAL", "18:00", 26, "#8fd14f", "07"],
-    ["Mondscheinexpress", "FESTIVAL", "21:00", 25, "#c9d6ff", "08"],
-    ["Isle of Summer", "FESTIVAL", "16:00", 44, "#ff3f6e", "09"],
-    ["Zamanand", "FESTIVAL", "16:00", 18, "#f0b23f", "10"],
-    ["Blitz", "RAVE", "23:59", 8, "#00e0d0", "11"],
-    ["Rote Sonne", "RAVE", "12:00", 15, "#ffd45e", "12"],
-    ["Silo West", "RAVE", "14:00", 32, "#ffb03f", "13"],
-    ["CFU Open Air", "RAVE", "14:00", 24, "#4ee0b0", "14"],
-    ["Daytime Rave", "RAVE", "17:00", 20, "#ff7a2f", "15"],
-    ["Echonomist", "CLUB NIGHT", "22:00", 14, "#d63f5e", "16"],
-    ["Blurred Vision", "CLUB NIGHT", "22:00", 11, "#2ee6ff", "17"],
-    ["Legal × Blitz", "CLUB NIGHT", "23:00", 9, "#c2352a", "18"],
-    ["Bahnwärter Thiel", "CLUB NIGHT", "22:00", 19, "#e8b53f", "19"],
-    ["Unterwelt", "CLUB NIGHT", "22:00", 17, "#ffcf3d", "20"],
-    ["Küchentisch", "HAUSPARTY", "21:00", 6, "#d1452e", "21"],
-    ["3. Stock Links", "HAUSPARTY", "20:00", 4, "#ffd166", "22"],
-    ["Boxenturm", "HAUSPARTY", "22:00", 5, "#e05a2b", "23"],
-    ["Klingel 14", "HAUSPARTY", "22:00", 7, "#c2352a", "24"],
-    ["Plattenabend", "HAUSPARTY", "20:00", 10, "#f0c93d", "25"],
-    ["Vierter Stock", "HAUSPARTY", "21:00", 12, "#e0a53d", "26"],
-    ["Zine Klub", "MEETUP", "19:00", 3, "#f2b33d", "27"],
-    ["Kaffee & Karten", "MEETUP", "15:00", 8, "#8a5a3c", "28"],
-    ["Nachtlinie", "MEETUP", "18:00", 13, "#4fc4a8", "29"],
-    ["Sprechstunde", "MEETUP", "19:30", 16, "#f6d64a", "30"],
-    ["Riso Abend", "MEETUP", "18:00", 22, "#ff4d8d", "31"],
-    ["Lange Tafel", "MEETUP", "18:30", 27, "#d97b3f", "32"],
-    ["Strobo", "RAVE", "01:00", 29, "#c8ff3d", "33"],
-    ["Tunnelblick", "RAVE", "22:00", 23, "#ff2ea6", "34"],
-    ["Spiegelsaal", "CLUB NIGHT", "23:00", 18, "#c9d6ff", "35"],
-    ["Pegel", "CLUB NIGHT", "22:00", 15, "#ff5c1f", "36"],
-  ].map((g) => ({
-    name: g[0], kind: g[1], time: g[2], mins: g[3], colour: g[4],
-    page: "explore/" + SLUG[+g[5] - 1] + "/index.html",
-  }));
+  /* Derived from window.POSTERS, so the globe shows what tonight actually
+     holds — the hand-written list drifted every time the cron dropped a
+     past night (README §11.6). Two things cannot be derived and stay
+     hand-picked per slug: the beacon COLOUR (it echoes the poster's own
+     palette) and the walking MINUTES. A night these maps do not know gets
+     a seeded fallback, so a new event can never break the globe. */
+  const COLOUR = {
+    "asap-rocky": "#ffd93d", "nick-cave": "#e8d9b8", "bonez-mc-raf-camora": "#1fa88a",
+    "thirty-seconds-to-mars": "#d94a6a", "annenmaykantereit": "#c2452c", "elysium": "#2ee6c0",
+    "tollwood": "#8fd14f", "mondscheinexpress": "#c9d6ff", "isle-of-summer": "#ff3f6e",
+    "zamanand": "#f0b23f", "blitz": "#00e0d0", "rote-sonne-bahnwarter": "#ffd45e",
+    "silo-west": "#ffb03f", "cfu-open-air": "#4ee0b0", "daytime-rave": "#ff7a2f",
+    "echonomist": "#d63f5e", "10-years-blurred-vision": "#2ee6ff", "legal-blitz": "#c2352a",
+    "bahnwarter-techno-nacht": "#e8b53f", "unterwelt": "#ffcf3d", "kuchentisch": "#d1452e",
+    "3-stock-links": "#ffd166", "boxenturm": "#e05a2b", "klingel-14": "#c2352a",
+    "plattenabend": "#f0c93d", "vierter-stock": "#e0a53d", "zine-klub": "#f2b33d",
+    "kaffee-karten": "#8a5a3c", "nachtlinie": "#4fc4a8", "sprechstunde": "#f6d64a",
+    "riso-abend": "#ff4d8d", "lange-tafel": "#d97b3f", "strobo": "#c8ff3d",
+    "tunnelblick": "#ff2ea6", "spiegelsaal": "#c9d6ff", "pegel": "#ff5c1f",
+  };
+  const MINS = {
+    "asap-rocky": 21, "nick-cave": 26, "bonez-mc-raf-camora": 21,
+    "thirty-seconds-to-mars": 21, "annenmaykantereit": 26, "elysium": 12,
+    "tollwood": 26, "mondscheinexpress": 25, "isle-of-summer": 44, "zamanand": 18,
+    "blitz": 8, "rote-sonne-bahnwarter": 15, "silo-west": 32, "cfu-open-air": 24,
+    "daytime-rave": 20, "echonomist": 14, "10-years-blurred-vision": 11,
+    "legal-blitz": 9, "bahnwarter-techno-nacht": 19, "unterwelt": 17,
+    "kuchentisch": 6, "3-stock-links": 4, "boxenturm": 5, "klingel-14": 7,
+    "plattenabend": 10, "vierter-stock": 12, "zine-klub": 3, "kaffee-karten": 8,
+    "nachtlinie": 13, "sprechstunde": 16, "riso-abend": 22, "lange-tafel": 27,
+    "strobo": 29, "tunnelblick": 23, "spiegelsaal": 18, "pegel": 15,
+  };
+  /* A long title does not fit next to a beacon; these are the short forms. */
+  const SHORT = {
+    "bonez-mc-raf-camora": "Bonez & RAF",
+    "thirty-seconds-to-mars": "Thirty Seconds",
+    "rote-sonne-bahnwarter": "Rote Sonne",
+    "10-years-blurred-vision": "Blurred Vision",
+    "bahnwarter-techno-nacht": "Bahnw\u00e4rter Thiel",
+  };
+  const FALLBACK_COLOURS = ["#ffd93d", "#2ee6c0", "#ff3f6e", "#f0b23f", "#00e0d0",
+                            "#ff7a2f", "#c8ff3d", "#ff2ea6", "#c9d6ff", "#4fc4a8"];
+  const DEFAULT_TIME = { "Rave": "23:00", "Club Night": "23:00", "Konzert": "20:00",
+                         "Festival": "18:00", "Meetup": "19:00", "Hausparty": "21:00" };
+
+  const hash32 = (s) => {
+    let h = 0;
+    for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    return h;
+  };
+
+  const NIGHTS = (window.POSTERS || []).map((e) => {
+    const h = hash32(e.slug || "");
+    const time = (String(e.meta || "").match(/\b(\d{1,2}:\d{2})\b/) || [])[1] ||
+                 DEFAULT_TIME[e.kind] || "21:00";
+    return {
+      name: SHORT[e.slug] || e.title,
+      kind: (e.kind || "").toUpperCase(),
+      time: time,
+      mins: MINS[e.slug] || 3 + (h % 42),
+      colour: COLOUR[e.slug] || FALLBACK_COLOURS[h % FALLBACK_COLOURS.length],
+      page: "explore/" + e.slug + "/index.html",
+    };
+  });
+  if (!NIGHTS.length) return;
+
+  /* The "within reach tonight" list on the right is the same data: the
+     seven closest, instead of a hand-written <ul> that aged in silence. */
+  (function fillNear() {
+    const box = document.querySelector(".s4-near ul");
+    const sub = document.querySelector(".s4-near-sub");
+    if (!box) return;
+    box.textContent = "";
+    NIGHTS.slice().sort((a, b) => a.mins - b.mins).slice(0, 7).forEach((g) => {
+      const li = document.createElement("li");
+      const name = document.createElement("span");
+      name.textContent = g.name;
+      const kind = document.createElement("em");
+      kind.textContent = g.kind.toLowerCase();
+      const min = document.createElement("b");
+      min.textContent = g.mins + " min";
+      li.appendChild(name); li.appendChild(kind); li.appendChild(min);
+      box.appendChild(li);
+    });
+    if (sub) sub.textContent = NIGHTS.length + " nights on the globe \u00b7 spin to find the rest";
+  })();
 
 
 

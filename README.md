@@ -67,7 +67,7 @@ from `events-data.js` and the site behaves exactly the same.
 |---|---|---|
 | `index.html` | The landing page, five screens deep: the poster wall → how swiping works → a strip of cards → the turning city globe → a black footer screen | works |
 | `explore/` | **The deck.** One card, left or right. Filters (country/city/kind/date), three sources (global deck / friends liked swipes / i feel lucky), the beforehours comments alongside | works |
-| `explore/<slug>/` | **The event page** (a contact sheet) — 36 nights, all from one layout. See §6 | works |
+| `explore/<slug>/` | **The event page** (a contact sheet) — all 142 nights, Munich and the world, from one layout. A night missing from the deck is fetched live by its slug. See §6 | works |
 | `maps/` | The city schematic, the venues as dots | works, **not linked from the menu** |
 | `cards/` | **The card collection** — afterhours cards. Empty when signed in (there is no card logic yet) | a skeleton |
 | `friends/` | Handle, adding friends, what you kept; familiar faces from nachtradar below | works |
@@ -75,13 +75,14 @@ from `events-data.js` and the site behaves exactly the same.
 | `settings/` | **Account settings** — handle, name, one line, city; who may see what you kept, whether you are findable by name, email; deleting the account | works |
 | `feedback/` | **Feedback** — subject, message, an optional way to reach you. No sign-in needed | works |
 | `register/` | **Registration** — two steps: email + password, then the handle (+ city). Registration does not count as finished until a handle is chosen | works |
-| `help/` | How the site works. A band of three numbers at the top: friend connections · cards swiped · afterhours cards gathered | works, **the numbers are fixed** |
+| `reset/` | **A new password** — sends the recovery link signed out; sets the new password once the link lands you back signed in | works |
+| `help/` | How the site works. A band of three numbers at the top: the first two are live from `health()`, the third waits for the card collection | works |
 | `impressum/` `datenschutz/` `agb/` | The German legal pages | **placeholder** (the square brackets are still to be filled in) |
 | `admin/` | Editing events, checking posters, moderating comments, the feedback inbox | `is_admin` only |
-| `posters/` | 36 SVG posters, one per night | — |
+| `posters/` | 142 SVG posters, one per night | — |
 | `sound/` | Two short recordings, entirely synthesised | — |
 | `404.html` | A wrong address. It asks for no file from outside (it can be shown at any depth) and works the root path out from the address | works |
-| `og/` | The sharing previews: 1200×630 per night, its own poster on the left | generated |
+| `og/` | The sharing previews: 1200×630 per night, its own poster on the left, all 142 | generated |
 | `strip.html` | A parked sketch (horizontal strips) | leave it alone |
 
 Every page has a **footer**: `© 2026 afterhours` + impressum · datenschutz
@@ -132,7 +133,8 @@ The shared `AH` object: `AH.mode` (`live` / `local`), `AH.request()`,
 (a promise), `AH.onSessionChange(cb)`, `AH.refreshSession()` (renews an
 expiring token; `AH.request` calls it before every request, so a page
 left open past the hour keeps working), `AH.signUp()`,
-`AH.signInWithPassword()`, `AH.events()`, `AH.kept()`, `AH.saveSwipe()`,
+`AH.signInWithPassword()`, `AH.requestRecovery()`, `AH.updatePassword()`,
+`AH.events()`, `AH.kept()`, `AH.saveSwipe()`,
 `AH.friends()`, `AH.comments()`, `AH.myProfile()`.
 
 **Security:** the key in `config.js` is not a secret and does not need to
@@ -160,9 +162,12 @@ this repository.
 | `venues.js` | The schematic coordinates of the Munich venues |
 | `cards.js` | **The afterhours card generator.** `CARDS.front(night, id)` / `CARDS.back(night, id)` return SVG |
 | `events-data.js` | The 36 events, the fallback used when the backend is off |
-| `tools-event-pages.py` | Writes the shell of the event pages (§6) |
+| `tools-event-pages.py` | Writes the shell of ALL 142 event pages and the sitemap (§6) |
 | `tools-favicon.py` | Generates the favicons (a different drawing per size) |
-| `tools-previews.py` | Generates the `og/` previews: the poster through Chrome to PNG, the card assembled with PIL |
+| `tools-previews.py` | Generates the `og/` previews for all 142 nights: the poster through Chrome to PNG, the card assembled with PIL |
+| `tools-site-check.py` | Walks every reference on the site: every href/src resolves, every event has page+poster+og, one `?v=` (the CI `site` job) |
+| `fonts/` | The three typefaces as woff2 + `fonts.css`, served from here — no request leaves for Google |
+| `manifest.webmanifest` | The site as an installable app: name, colours, icons |
 
 **The page scripts**
 
@@ -352,7 +357,7 @@ reasons — deleting a topic would take other people's replies with it, and
 the constraint on the `comments` table refuses a row with no author. The
 settings page says so before it deletes.
 
-For the setup, the tests (262 checks) and the local imitation of Supabase
+For the setup, the tests (263 checks) and the local imitation of Supabase
 (`tools/local-server.mjs`, PostgREST + GoTrue on top of PGlite) →
 **[backend/README.md](backend/README.md)**
 
@@ -365,9 +370,10 @@ request. Three jobs, none of which needs a secret:
 
 | job | what it refuses to let through |
 |---|---|
-| `backend` | the 262 checks, on a real Postgres (PGlite) |
+| `backend` | the 263 checks, on a real Postgres (PGlite) |
 | `generated` | SQL that has drifted from the files it was built from — it rebuilds and asks git whether anything moved |
 | `versions` | more than one `?v=NN` across the pages, which would serve a stale script against a new stylesheet |
+| `site` | a reference that leads nowhere — every href/src in every page, and page+poster+og for all 142 events |
 
 The site itself has no build step and nothing to check: it is plain HTML
 the browser reads as it is. What can break in silence is the database and
@@ -409,7 +415,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **138**.
+The current version: **140**.
 
 ---
 
@@ -439,6 +445,16 @@ The order matters: each step closes the road the one before it opened.
 - [x] **CI, a migration log, and a repeatable setup** — §9, and `npm run health` says which SQL is live
 - [x] **A backup that is provably restorable** — `npm run restore`, checked field for field by `backup.test.mjs`
 - [x] **Take your data with you** — `export_me()` and a button on the settings page (GDPR Art. 15 and 20)
+- [x] **The whole audit closed** — 29 findings in three passes: consent, moderation, grants, session, and the rest (§8, §12)
+- [x] **Every surface** — the width bands in §3, measured at five widths
+- [x] **Fonts served from here** — `fonts/`, no request leaves for Google; datenschutz says so
+- [x] **All 142 nights have pages** — world shells, og previews, sitemap; a missing slug is fetched live in `event.js`
+- [x] **The landing page derives itself** — globe nights and the near list come from `POSTERS` (colour and minutes stay hand-picked per slug)
+- [x] **Two help numbers are real** — `health()` counts swipes and friendships, `help.js` writes them in
+- [x] **A new password** — `reset/`, request + set, and the forgot link under sign-in
+- [x] **Replies, a deck count, and two ways out of an empty deck** — beforehours answers, "03 / 36", deal-again / try-another-city
+- [x] **The site checks itself** — `tools-site-check.py` walks every reference; the CI `site` job runs it
+- [x] **Installable** — `manifest.webmanifest`, and the poster wall lazy-loads below the fold
 
 **Next (a suggested order)**
 
@@ -454,15 +470,8 @@ The order matters: each step closes the road the one before it opened.
 3. **Filling in the legal pages** — the square brackets and a real Stand
    date.
 4. **Real photographs** — real frames instead of bands of the poster.
-5. **Making the three numbers on the help page real** — two of them can be
-   worked out today (`swipes`, `friendships`); the third is impossible
-   before the card collection exists.
-6. **The landing page's fixed lists.** The globe's 36 nights (`NIGHTS` /
-   `SLUG` in `globe.js`), the "within reach tonight" list and the poster
-   wall's first 20 are hand-written; as the cron job drops past events
-   they slowly drift from the real deck. Deriving them from `POSTERS`
-   ends the drift. (A dropped night's page already says "this night has
-   passed", so a stale link degrades honestly in the meantime.)
+5. **The third help number** — impossible before the card collection
+   exists; the first two are live now.
 
 ---
 
@@ -484,8 +493,11 @@ Every one of these cost us something:
   `html:has(body.explore)`.
 - **A flex/grid item without `min-width: 0`** lets a long paragraph push
   the page sideways.
-- **Google Fonts** sends the IP to Google; that is written into
-  datenschutz. Serving them locally would drop that clause.
+- **Google Fonts** used to send the IP to Google with every page and
+  every poster. The fonts live in `fonts/` now (woff2 + one CSS), the
+  posters `@import` it relatively, and datenschutz says so. 404.html is
+  the one page with NO webfont: it renders at any depth, so no relative
+  href can be trusted there.
 - **Adding a second `id` to a `<main>` breaks the page silently.** While
   adding `id="content"` for the skip link, two `<main>` elements already
   had their own `id`; the browser keeps the first, `getElementById` no

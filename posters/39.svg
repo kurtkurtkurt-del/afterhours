@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
-  <style>@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;900&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap');</style>
+  <style>@import url('../fonts/fonts.css');</style>
 
   <rect width="400" height="600" fill="#0f1418"/>
   <rect x="12" y="12" width="376" height="576" fill="none" stroke="#e8e4d9" stroke-width="1" opacity="0.5"/>

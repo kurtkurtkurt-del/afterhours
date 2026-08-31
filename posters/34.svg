@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
-<style>@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;900&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap');</style>
+<style>@import url('../fonts/fonts.css');</style>
 <rect width="400" height="600" fill="#10001a"/>
 <clipPath id="c34"><rect width="400" height="600"/></clipPath>
 

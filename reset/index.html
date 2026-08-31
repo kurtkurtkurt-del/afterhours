@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>new password | afterhours</title>
+  <meta name="description" content="Forgot your password? A link lands in your inbox, and a new one is set right here." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="stylesheet" href="../fonts/fonts.css?v=140" />
+  <link rel="stylesheet" href="../style.css?v=140" />
+</head>
+<body>
+
+  <a class="skip" href="#content">skip to the content</a>
+
+  <header class="header">
+    <a class="logo" href="../index.html">afterhours</a>
+    <nav class="header-links">
+      <a href="../explore/index.html">explore</a>
+      <a href="../maps/index.html">maps</a>
+      <a href="../friends/index.html">friends&amp;more</a>
+      <a href="../cards/index.html">card collection</a>
+      <a href="../help/index.html">help</a>
+      <a href="../login/index.html">login</a>
+    </nav>
+  </header>
+
+  <main id="content" tabindex="-1" class="page">
+
+    <!-- Step one: ask for the link. -->
+    <div id="rs-request">
+      <h1 class="page-title">a new<br />password.</h1>
+      <form class="page-form" id="rs-form">
+        <label class="page-label" for="rs-email">your email</label>
+        <input class="page-field" id="rs-email" type="email"
+               autocomplete="email" placeholder="you@example.com" />
+        <button class="page-button" id="rs-send" type="submit">send me the link</button>
+      </form>
+      <p class="page-note" id="rs-note"></p>
+    </div>
+
+    <!-- Step two: the link brought them back signed in; set the new one. -->
+    <div id="rs-set" hidden>
+      <h1 class="page-title">pick a<br />new one.</h1>
+      <form class="page-form" id="rs-set-form">
+        <label class="page-label" for="rs-password">new password</label>
+        <input class="page-field" id="rs-password" type="password"
+               autocomplete="new-password" placeholder="eight characters or more" />
+        <button class="page-button" id="rs-save" type="submit">set the password</button>
+      </form>
+      <p class="page-note" id="rs-set-note"></p>
+    </div>
+
+    <!-- It worked. -->
+    <div id="rs-done" hidden>
+      <h1 class="page-title">that's it.</h1>
+      <p class="page-note">Your password is set and you are signed in.</p>
+      <a class="page-button" href="../explore/index.html">back to the deck</a>
+    </div>
+
+  </main>
+
+  <footer class="foot">
+    <p class="foot-name">&copy; 2026 afterhours</p>
+    <nav class="foot-links">
+      <a href="../impressum/index.html">impressum</a>
+      <a href="../datenschutz/index.html">datenschutz</a>
+      <a href="../agb/index.html">agb</a>
+    </nav>
+  </footer>
+
+  <script src="../config.js?v=140"></script>
+  <script src="../session.js?v=140"></script>
+  <script src="../menu.js?v=140"></script>
+  <script src="../data.js?v=140"></script>
+  <script src="reset.js?v=140"></script>
+
+</body>
+</html>

@@ -16,6 +16,25 @@ const fieldBody = info.querySelector(".info-body");
 // the gap between two posters
 let hideTimer;
 
+/* The wall is twenty separate SVG documents, each parsing its own fonts —
+   the heaviest thing on the page, and on a phone most of them start below
+   the fold. Only the frames near the viewport load; scrolling brings the
+   rest. The first rows load eagerly so the opening paint is instant. */
+const EAGER = 6;
+const lazyPosters = "IntersectionObserver" in window
+  ? new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const object = entry.target.querySelector("object");
+        if (object && object.dataset.src) {
+          object.data = object.dataset.src;
+          delete object.dataset.src;
+        }
+        lazyPosters.unobserve(entry.target);
+      });
+    }, { rootMargin: "600px" })
+  : null;
+
 SHOWN.forEach((p, i) => {
   // The poster number comes from the record itself, not from its position
   const no = String(p.poster || i + 1).padStart(2, "0");
@@ -31,7 +50,13 @@ SHOWN.forEach((p, i) => {
   const image = document.createElement("object");
   image.className = "poster-image";
   image.type = "image/svg+xml";
-  image.data = p.posterPath || "posters/" + no + ".svg";
+  const path = p.posterPath || "posters/" + no + ".svg";
+  if (lazyPosters && i >= EAGER) {
+    image.dataset.src = path;
+    lazyPosters.observe(box);
+  } else {
+    image.data = path;
+  }
   box.appendChild(image);
   box.addEventListener("mouseenter", () => {
     clearTimeout(hideTimer);

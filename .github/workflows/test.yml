@@ -3,7 +3,7 @@
 # The site itself has no build step and nothing to check here: it is plain
 # HTML that the browser reads as it is. What can break silently is the
 # database — the rules about who may read what, the seed matching the
-# screen, the setup staying repeatable. That is what these 262 checks are
+# screen, the setup staying repeatable. That is what these 263 checks are
 # for, and they run on a real Postgres (PGlite, compiled to WASM) so there
 # is nothing to install and no service to wait for.
 
@@ -105,3 +105,13 @@ jobs:
             echo "::error::More than one ?v= in the pages; bump them all together."
             exit 1
           fi
+
+  # Does every reference on the site lead somewhere: every href/src in
+  # every page, and page+poster+og for all 142 events. The class of break
+  # the browser never shows (a kept-list link to a page nobody generated).
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Walk every reference
+        run: python3 tools-site-check.py

@@ -103,6 +103,27 @@
     });
   };
 
+  /* The "forgot password" road (reset/). The recovery mail lands the
+     person back on that page with a fresh token in the hash — the
+     tokenFromUrl below picks it up like any other — and updatePassword
+     writes the new one against that session. */
+  AH.requestRecovery = function (email, redirectTo) {
+    return auth("/recover?redirect_to=" +
+        encodeURIComponent(redirectTo || location.origin + location.pathname), {
+      method: "POST",
+      body: JSON.stringify({ email }),
+    });
+  };
+
+  AH.updatePassword = function (password) {
+    if (!AH.token) return Promise.reject(new Error("sign in first"));
+    return auth("/user", {
+      method: "PUT",
+      headers: { Authorization: "Bearer " + AH.token },
+      body: JSON.stringify({ password }),
+    });
+  };
+
   /* Signing in with a password. Nothing is stored here; it goes straight
      to Supabase and a token comes back. */
   AH.signInWithPassword = function (email, password) {

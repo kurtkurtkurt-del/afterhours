@@ -46,6 +46,7 @@ console.log(`events              ${count(reply.events)} (${count(reply.published
 console.log(`comments            ${count(reply.comments)} (${count(reply.hidden_comments)} hidden)`);
 console.log(`people              ${count(reply.people)}`);
 console.log(`swipes              ${count(reply.swipes)}`);
+console.log(`friendships         ${count(reply.friendships)}`);
 
 const warnings = [];
 if (count(reply.events) === 0) warnings.push("no events at all — the data may be gone");

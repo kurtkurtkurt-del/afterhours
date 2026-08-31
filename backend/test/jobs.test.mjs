@@ -73,6 +73,7 @@ console.log("\n— the health summary —");
   check(Number(s.published) === 35, "one shows as dropped");
   check(Number(s.unverified_date) > 0, "unconfirmed dates are reported");
   check(Number(s.missing_venue) === 8, "the ones with no venue are reported");
+  check(Number(s.friendships) === 0, "friend connections are counted (none yet)");
 }
 
 console.log("\n— who may run the job —");

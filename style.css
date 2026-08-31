@@ -3276,3 +3276,111 @@ body:has(> .foot:not(.thin)) > .foot { margin-top: auto; }
   }
   body.explore .foot.thin .foot-name { display: block; }
 }
+
+/* ---------- explore: the count, the exits, the reply box ---------- */
+
+/* Only for screen readers: the deck announces what a swipe did. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* "03 / 36" under the served line: where the night stands. */
+.ex-count {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-align: center;
+  opacity: 0.4;
+  margin-top: 2px;
+  min-height: 14px;
+}
+
+/* The end of the deck is not a wall: the two ways out appear with it. */
+.ex-done-actions {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  margin-top: 14px;
+}
+
+.ex-done-actions button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--black);
+  opacity: 0.55;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding-bottom: 2px;
+}
+
+.ex-done-actions button:hover { opacity: 1; }
+
+/* Replying to a topic: a small word after the text, a slim box below. */
+.c-reply-button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin-top: 6px;
+  cursor: pointer;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--black);
+  opacity: 0.4;
+}
+
+.c-reply-button:hover { opacity: 0.9; }
+
+.c-reply-write {
+  margin: 8px 0 4px 14px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(0, 0, 0, 0.14);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.c-reply-write textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  background: none;
+  padding: 2px 0 6px;
+  resize: vertical;
+}
+
+.c-reply-write textarea:focus { outline: none; border-bottom-color: var(--black); }
+
+/* The quiet way out under the sign-in button */
+.page-forgot {
+  margin-top: 10px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--black);
+  opacity: 0.45;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding-bottom: 2px;
+}
+
+.page-forgot:hover { opacity: 0.9; }

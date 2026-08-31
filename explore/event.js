@@ -379,9 +379,23 @@
     area.appendChild(middle);
   }
 
-  /* data.js loads this through data-after, so POSTERS is ready by now. */
+  /* data.js loads this through data-after, so POSTERS is ready by now.
+     POSTERS is the DECK, and the deck is one city's — a Berlin night is
+     not in it while the site sits on München. Before declaring a page
+     gone, ask the database for that one slug; only local mode (which
+     truly holds nothing but the 36) goes straight to the gone page. */
   const slug = slugFromPath();
   const e = (window.POSTERS || []).filter((x) => x.slug === slug)[0];
-  if (e) build(e);
-  else buildGone();
+  if (e) {
+    build(e);
+  } else if (window.AH && AH.mode === "live" && AH.request) {
+    AH.request("/events_public?slug=eq." + encodeURIComponent(slug) + "&limit=1")
+      .then((rows) => {
+        if (rows && rows[0] && AH.rowToEvent) build(AH.rowToEvent(rows[0]));
+        else buildGone();
+      })
+      .catch(buildGone);
+  } else {
+    buildGone();
+  }
 })();

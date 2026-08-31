@@ -18,6 +18,10 @@
   /* The chosen state. The deck reads this. */
   AH.filter = { country: "de", city: "munchen", kind: null, date: "tonight" };
 
+  /* explore/?tur=<kind> — a shared address may point straight at one
+     kind. Only a kind the list below knows is accepted. */
+  const wantedKind = new URLSearchParams(location.search).get("tur");
+
   const KINDS = [
     { value: null, name: "all events" },
     { value: "rave", name: "rave" },
@@ -91,6 +95,40 @@
       const wasOpen = box.classList.contains("open");
       closeAll();
       if (!wasOpen) open(box);
+    };
+
+    /* The arrows drive the list the way they would a native select:
+       down/up from the button opens it on the first or last row, the
+       same keys walk the rows, Escape hands the focus back. */
+    button.onkeydown = (e) => {
+      if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+      e.preventDefault();
+      closeAll();
+      open(box);
+      const items = panel.querySelectorAll(".fl-item");
+      const first = e.key === "ArrowDown" ? items[0] : items[items.length - 1];
+      if (first) first.focus();
+    };
+
+    panel.onkeydown = (e) => {
+      const items = [...panel.querySelectorAll(".fl-item")];
+      const at = items.indexOf(document.activeElement);
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        (items[at + 1] || items[0]).focus();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        (items[at - 1] || items[items.length - 1]).focus();
+      } else if (e.key === "Home" && items.length) {
+        e.preventDefault();
+        items[0].focus();
+      } else if (e.key === "End" && items.length) {
+        e.preventDefault();
+        items[items.length - 1].focus();
+      } else if (e.key === "Escape") {
+        close(box);
+        button.focus();
+      }
     };
   }
 
@@ -235,6 +273,15 @@
       if (rows && rows.length) cities = rows;
       const mine = cities.find((s) => s.slug === AH.filter.city);
       if (mine) AH.filter.country = mine.country_slug || AH.filter.country;
+
+      /* The address asked for one kind: set it and deal again — the
+         first deal ran unfiltered before this file had a say. */
+      if (wantedKind && KINDS.some((k) => k.value === wantedKind)) {
+        AH.filter.kind = wantedKind;
+        draw();
+        redeal();
+        return;
+      }
       draw();
     });
 })();

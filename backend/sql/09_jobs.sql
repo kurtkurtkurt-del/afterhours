@@ -44,7 +44,10 @@ returns table (
   comments          bigint,
   hidden_comments   bigint,
   people            bigint,
-  swipes            bigint
+  swipes            bigint,
+  -- confirmed pairs only: the number the help page shows as
+  -- "friend connections". A pending request is not a connection yet.
+  friendships       bigint
 )
 language sql
 security definer
@@ -61,7 +64,8 @@ as $$
     (select count(*) from public.comments),
     (select count(*) from public.comments where is_hidden),
     (select count(*) from public.profiles),
-    (select count(*) from public.swipes);
+    (select count(*) from public.swipes),
+    (select count(*) from public.friendships where status = 'accepted');
 $$;
 
 grant execute on function public.health() to anon, authenticated;

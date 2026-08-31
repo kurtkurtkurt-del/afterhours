@@ -13,7 +13,7 @@ first goes through headless Chrome to become a PNG (PIL does not read SVG).
     python3 tools-previews.py            # all of them
     python3 tools-previews.py asap-rocky # a single night
 """
-import pathlib, re, subprocess, sys, tempfile, urllib.request
+import json, pathlib, re, subprocess, sys, tempfile, urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent
 OUT = ROOT / "og"
@@ -36,12 +36,37 @@ def font(size, weight=500):
     return f
 
 
+def slugify(s):
+    """The SAME rule as backend/tools/world-sql.mjs — change both or neither."""
+    s = s.lower()
+    for a, b in [("\u00fc", "u"), ("\u00f6", "o"), ("\u00e4", "a"), ("\u00df", "ss"),
+                 ("\u015f", "s"), ("\u00e7", "c"), ("\u0131", "i"), ("\u011f", "g"),
+                 ("\u00e9", "e"), ("\u00e8", "e"), ("\u00ea", "e"),
+                 ("\u00e1", "a"), ("\u00e0", "a"), ("\u00e2", "a"),
+                 ("\u00ed", "i"), ("\u00ec", "i"),
+                 ("\u00f3", "o"), ("\u00f2", "o"), ("\u00f4", "o"),
+                 ("\u00fa", "u"), ("\u00f9", "u"), ("\u00fb", "u"), ("\u00f1", "n"),
+                 ("$", "s")]:
+        s = s.replace(a, b)
+    s = re.sub(r"[^a-z0-9]+", "-", s)
+    return s.strip("-")
+
+
 def events():
     raw = (ROOT / "events-data.js").read_text(encoding="utf-8")
-    return [
+    munich = [
         {"slug": s, "kind": t, "title": b, "meta": m, "poster": i + 1}
         for i, (s, t, b, m) in enumerate(re.findall(
             r'\{ slug: "([^"]+)", kind: "([^"]+)", *title: "([^"]+)", *meta: "([^"]+)"', raw))
+    ]
+    world = json.loads(
+        (ROOT / "backend" / "tools" / "world-record.json").read_text(encoding="utf-8"))
+    return munich + [
+        {"slug": slugify(g["city"] + "-" + g["title"]), "kind": g["kind"],
+         "title": g["title"],
+         "meta": f"{g['venue']} \u00b7 {g['day']} \u00b7 {g['time']} \u00b7 {g['cityName']}",
+         "poster": g["no"]}
+        for g in world
     ]
 
 

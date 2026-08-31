@@ -19,10 +19,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
   <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=139" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="stylesheet" href="../fonts/fonts.css?v=140" />
+  <link rel="stylesheet" href="../style.css?v=140" />
 </head>
 <body>
 
@@ -43,21 +42,21 @@
   <main id="content" tabindex="-1" class="help">
 
     <!-- At the top of the page, ahead of the title: how much the site has
-         been touched. The numbers are FIXED for now — the real ones will
-         come from the swipes/friendships tables, and the third once the
-         card collection exists. -->
+         been touched. The first two are REAL — help.js asks health() and
+         writes what the database counted. The third stays a dash until
+         the card collection exists: an invented number would be a lie. -->
     <div class="stats">
       <div class="stat">
         <p class="stat-label">friend connections</p>
-        <p class="stat-value">1,284</p>
+        <p class="stat-value" id="stat-friendships">&mdash;</p>
       </div>
       <div class="stat">
         <p class="stat-label">cards swiped</p>
-        <p class="stat-value">46,912</p>
+        <p class="stat-value" id="stat-swipes">&mdash;</p>
       </div>
       <div class="stat">
         <p class="stat-label">afterhours cards gathered</p>
-        <p class="stat-value">3,507</p>
+        <p class="stat-value" id="stat-cards">&mdash;</p>
       </div>
     </div>
 
@@ -132,10 +131,11 @@
     </nav>
   </footer>
 
-  <script src="../config.js?v=139"></script>
-  <script src="../session.js?v=139"></script>
-  <script src="../data.js?v=139"></script>
-  <script src="../menu.js?v=139"></script>
+  <script src="../config.js?v=140"></script>
+  <script src="../session.js?v=140"></script>
+  <script src="../data.js?v=140"></script>
+  <script src="../menu.js?v=140"></script>
+  <script src="help.js?v=140"></script>
 
 </body>
 </html>

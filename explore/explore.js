@@ -10,6 +10,24 @@
   const VISIBLE = 3;             // how many cards sit on the pile
   let index = 0;
 
+  /* "03 / 36" under the served line, and the live region a screen reader
+     hears the swipes through. dealTotal is fixed per deal; swipedCount
+     climbs with every card that flies. */
+  const counter = document.getElementById("ex-count");
+  const liveRegion = document.getElementById("ex-live");
+  let swipedCount = 0;
+  let dealTotal = 0;
+
+  const announce = (text) => { if (liveRegion) liveRegion.textContent = text; };
+
+  function printCount() {
+    if (!counter) return;
+    counter.textContent = deck.children.length && dealTotal
+      ? String(Math.min(swipedCount + 1, dealTotal)).padStart(2, "0") +
+        " / " + String(dealTotal).padStart(2, "0")
+      : "";
+  }
+
   /* Where the deck comes from. The buttons on the left change it:
      global deck   → POSTERS (the normal deck, filtered)
      friends liked → what your friends swiped right
@@ -105,6 +123,8 @@
     /* Both directions are recorded: right means keep, left means do not
        show it again. To the database when signed in, to the browser if not. */
     if (window.AH && AH.saveSwipe) AH.saveSwipe(swiped, direction);
+    swipedCount++;
+    if (swiped) announce((direction > 0 ? "kept: " : "passed: ") + swiped.title);
     card.classList.remove("held");
     card.classList.add("soft");
     card.style.transform = "translateX(" + (direction * 120) + "vw) rotate(" + (direction * 22) + "deg)";
@@ -222,7 +242,7 @@
     return e;
   }
 
-  function makeTopic(topic) {
+  function makeTopic(topic, event) {
     const k = document.createElement("div");
     k.className = "c-topic";
     const top = document.createElement("div");
@@ -235,27 +255,80 @@
     if (topic.replies && topic.replies.length) {
       const c = document.createElement("div");
       c.className = "c-replies";
-      topic.replies.forEach((cev) => {
+      topic.replies.forEach((reply) => {
         const box = document.createElement("div");
         box.className = "c-reply";
         const u = document.createElement("div");
         u.className = "c-top";
-        u.appendChild(row("c-who", cev.who));
-        u.appendChild(row("c-when", cev.when));
+        u.appendChild(row("c-who", reply.who));
+        u.appendChild(row("c-when", reply.when));
         box.appendChild(u);
-        box.appendChild(row("c-text", cev.body));
+        box.appendChild(row("c-text", reply.body));
         c.appendChild(box);
       });
       k.appendChild(c);
     }
+
+    /* Answering a topic. Only live topics carry a real id, and only a
+       signed-in account may write — the same rule as the box above. */
+    if (topic.id && event && window.AH && AH.canComment && AH.canComment()) {
+      const replyButton = document.createElement("button");
+      replyButton.type = "button";
+      replyButton.className = "c-reply-button";
+      replyButton.textContent = "reply";
+      replyButton.addEventListener("click", () => toggleReplyBox(k, topic, event));
+      k.appendChild(replyButton);
+    }
     return k;
   }
 
-  function makeGroup(title, topics, old) {
+  /* One reply box at a time: opening a second closes the first. */
+  function toggleReplyBox(topicBox, topic, event) {
+    const mine = topicBox.querySelector(".c-reply-write");
+    commentArea.querySelectorAll(".c-reply-write").forEach((b) => b.remove());
+    if (mine) return;                     /* it was open: the wipe closed it */
+
+    const wrap = document.createElement("div");
+    wrap.className = "c-reply-write";
+
+    const box = document.createElement("textarea");
+    box.rows = 2;
+    box.maxLength = 2000;
+    box.placeholder = "answer " + topic.who;
+
+    const button = document.createElement("button");
+    button.className = "c-write-button";
+    button.type = "button";
+    button.textContent = "post";
+
+    const status = document.createElement("p");
+    status.className = "c-write-status";
+
+    button.addEventListener("click", () => {
+      const text = box.value.trim();
+      if (!text) { box.focus(); return; }
+      button.disabled = true;
+      status.textContent = "posting…";
+      AH.postComment(event, text, topic.id)
+        .then(() => printComments())
+        .catch((h) => {
+          status.textContent = "couldn't post: " + AH.errorText(h, "try again.");
+          button.disabled = false;
+        });
+    });
+
+    wrap.appendChild(box);
+    wrap.appendChild(button);
+    wrap.appendChild(status);
+    topicBox.appendChild(wrap);
+    box.focus();
+  }
+
+  function makeGroup(title, topics, old, event) {
     const g = document.createElement("div");
     g.className = "c-group" + (old ? " old" : "");
     g.appendChild(row("c-group-title", title));
-    topics.forEach((topic) => g.appendChild(makeTopic(topic)));
+    topics.forEach((topic) => g.appendChild(makeTopic(topic, event)));
     return g;
   }
 
@@ -333,8 +406,8 @@
         if (deck.lastElementChild !== top) return;
         commentArea.textContent = "";
         commentArea.appendChild(writeArea(event));
-        if (recent.length) commentArea.appendChild(makeGroup("this week", recent, false));
-        if (older.length) commentArea.appendChild(makeGroup("from earlier nights", older, true));
+        if (recent.length) commentArea.appendChild(makeGroup("this week", recent, false, event));
+        if (older.length) commentArea.appendChild(makeGroup("from earlier nights", older, true, event));
         if (!recent.length && !older.length) {
           commentArea.appendChild(row("c-none", "nobody has said anything yet."));
         }
@@ -368,7 +441,11 @@
       index++;
     }
     stack();
-    document.getElementById("ex-done").classList.toggle("open", deck.children.length === 0);
+    const empty = deck.children.length === 0;
+    document.getElementById("ex-done").classList.toggle("open", empty);
+    const exits = document.getElementById("ex-done-actions");
+    if (exits) exits.hidden = !empty;
+    printCount();
     printComments();
   }
 
@@ -456,6 +533,9 @@
   function startDealing() {
     while (deck.firstChild) deck.removeChild(deck.firstChild);
     index = 0;
+    swipedCount = 0;
+    dealTotal = CARDS.filter((e) => !skip.has(e.slug)).length;
+    announce("deck dealt: " + dealTotal + " cards");
     fill();                       /* stack() puts them in their final places */
 
     const cards = [...deck.children];
@@ -538,6 +618,22 @@
     });
   }
 
+  /* --- the two ways out of an empty deck --- */
+
+  const againButton = document.getElementById("ex-again");
+  if (againButton && resetButton) {
+    /* The same road as "reset deck", confirmation included. */
+    againButton.addEventListener("click", () => resetButton.click());
+  }
+  const elsewhereButton = document.getElementById("ex-elsewhere");
+  if (elsewhereButton) {
+    elsewhereButton.addEventListener("click", () => {
+      const lucky = [...document.querySelectorAll(".ex-mode")]
+        .find((d) => d.textContent.trim() === "i feel lucky");
+      if (lucky) lucky.click();
+    });
+  }
+
   /* Bring back what was kept in an earlier session (badge and list). */
   if (window.AH && AH.kept) {
     AH.kept().then((list) => {
@@ -545,5 +641,6 @@
     });
   }
 
+  dealTotal = CARDS.filter((e) => !skip.has(e.slug)).length;
   fill();
 })();
