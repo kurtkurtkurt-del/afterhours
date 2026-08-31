@@ -2372,9 +2372,12 @@ body.friends .page {
   .help-text { font-size: 15px; }
 }
 
-/* ---------- explore: on a phone ---------- */
+/* ---------- explore: on a phone, and on a tablet held upright ---------- */
 
-@media (max-width: 720px) {
+/* Up to 1000px, not 720: the four-column desktop grid needs about a
+   thousand pixels to breathe, and between the two the comment column was
+   running off the right edge, clipped mid-word. */
+@media (max-width: 1000px) {
 
   /* One column: filter, deck, then the comments. Let the page flow. */
   .ex-field {
@@ -3210,4 +3213,66 @@ body:has(> .foot:not(.thin)) > .foot { margin-top: auto; }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ---------- Every surface: what the first mobile pass missed ---------- */
+
+/* The landing page's globe and footer screens had no rules below the
+   desktop at all: at phone width "go local." printed straight over the
+   walking-distance list, the sónar footnote lay across the manifesto,
+   and the "go outside" button ran off the right edge. */
+
+@media (max-width: 900px) {
+  /* Screen 3, the globe: title top, the near list moves to the BOTTOM of
+     the frame — the two shared the same band and collided. */
+  .s4-text { top: 96px; left: 16px; right: 16px; max-width: none; }
+  .s4-title { font-size: min(15vw, 72px); }
+  .s4-sub { font-size: 15px; }
+
+  .s4-near {
+    top: auto;
+    bottom: 24px;
+    left: 16px;
+    right: 16px;
+    width: auto;
+  }
+  .s4-near li { padding: 4px 0; font-size: 13px; }
+  .s4-near li b { min-width: 44px; font-size: 12px; }
+  .s4-near-title { padding-bottom: 8px; margin-bottom: 2px; }
+  .s4-near-sub { margin-top: 8px; padding-top: 8px; font-size: 11px; }
+
+  /* Screen 5, the footer: the footnote becomes its own line instead of a
+     superscript that no longer fits, and the button takes a full row
+     rather than being cut off at the edge. */
+  .screen6 { padding: 84px 16px 40px; }
+  .s6-manifesto { max-width: none; }
+  .s6-note {
+    display: block;
+    margin: 12px 0 0;
+    vertical-align: baseline;
+    white-space: normal;
+  }
+  .s6-sub { flex-wrap: wrap; gap: 26px 44px; align-items: flex-start; }
+  .s6-button { flex: 1 0 100%; text-align: center; padding: 18px 20px; font-size: 18px; }
+}
+
+/* The band between the phone and the desktop (721–1180): the fixed
+   sound box sat on top of the intro copy, and the photo — 780px flat —
+   swallowed half the layout. The photo now scales with the surface; the
+   intro starts below the sound rows. */
+@media (min-width: 721px) and (max-width: 1180px) {
+  .intro { padding-top: 76px; }
+  .photo { width: min(780px, 46vw); }
+}
+
+/* explore flows like a page below 1000px, so its footer must sit at the
+   end of that flow — the fixed corner strip was printing over the
+   keyboard hints. (The same rule the phone block has, one step wider.) */
+@media (max-width: 1000px) {
+  body.explore .foot.thin {
+    position: static;
+    padding: 20px 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.09);
+  }
+  body.explore .foot.thin .foot-name { display: block; }
 }

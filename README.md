@@ -90,6 +90,19 @@ Every page has a **footer**: `© 2026 afterhours` + impressum · datenschutz
 the corner. Three pages have no footer: `index.html` (it has its own black
 footer screen), `admin/` and `strip.html`.
 
+**Every surface.** The layout is desktop-first and narrows in bands, each
+a `@media` block in `style.css`: below **1180px** the photo scales with
+the viewport (`min(780px, 46vw)`) and the intro starts under the sound
+rows — the two were printing over each other on a tablet; below
+**1000px** explore gives up its four-column grid and flows as one column
+(its corner footer joins the flow at the end); below **900px** the globe
+screen moves the walking-distance list to the bottom of the frame (it
+shared a band with "go local." and they collided) and the footer screen
+gives the sónar note its own line and the button a full row; below
+**720px** the rest stacks — the menu wraps, the sound rows become a
+bottom bar, the photo leaves. The desktop at 1440 is untouched by all of
+it: poster 146×219, photo 780px, measured after every pass.
+
 ---
 
 ## 4. How the data flows
