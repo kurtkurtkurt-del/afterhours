@@ -178,28 +178,97 @@
     return object;
   }
 
+  /* "National Stadium · 02.10.26 → 03.10.26 · 20:00" — the room, then
+     everything else. The meta line is built by the sync in that order and
+     nothing in it carries a second interpunct. */
+  function splitMeta(meta) {
+    const parts = String(meta || "").split("·").map((s) => s.trim()).filter(Boolean);
+    return { where: parts[0] || "", when: parts.slice(1).join(" · ") };
+  }
+
+  /* A synced night is a photograph, and a photograph off the listings is
+     16:9. Cropping one to fill a 2:3 poster frame keeps 37.5% of its
+     width and throws the rest away from the centre outwards, which is how
+     you end up with half a face and the left third of a name.
+
+     So the picture keeps its own shape as a band across the top and the
+     rest of the card is set in type. That is the same order the card in
+     the collection is built in — art, a rule, then the night in writing
+     (cards.js draws the artwork to y=300 and rules under it) — so the
+     thing you swipe and the thing you keep are speaking one language.
+
+     The band and the body are hung on the card itself rather than on a
+     wrapper inside it. A wrapper looked tidier and cost an afternoon: the
+     card is absolutely positioned with inset:0, and with a single
+     full-height child in the way its width stopped resolving from the
+     deck — it measured 780px inside a 317px deck. Two flex children, the
+     same shape the drawn card has always had, and it resolves. */
+  function fillPhotoCard(card, e) {
+    const band = document.createElement("div");
+    band.className = "ex-band";
+    const img = document.createElement("img");
+    img.src = e.image;
+    img.alt = "";
+    img.loading = "lazy";
+    band.appendChild(img);
+    card.appendChild(band);
+
+    const body = document.createElement("div");
+    body.className = "ex-body";
+
+    const kind = document.createElement("p");
+    kind.className = "ex-kind";
+    kind.textContent = e.kind || "";
+    body.appendChild(kind);
+
+    const title = document.createElement("p");
+    title.className = "ex-title";
+    title.textContent = e.title || "";
+    body.appendChild(title);
+
+    const cut = splitMeta(e.meta);
+    const foot = document.createElement("div");
+    foot.className = "ex-foot";
+    const where = document.createElement("p");
+    where.className = "ex-where";
+    where.textContent = [cut.where, e.city].filter(Boolean).join(" · ");
+    const when = document.createElement("p");
+    when.className = "ex-when";
+    when.textContent = cut.when;
+    foot.appendChild(where);
+    foot.appendChild(when);
+    body.appendChild(foot);
+    card.appendChild(body);
+  }
+
   function makeCard(i) {
     /* The poster number comes from the record itself; we do not trust the
        position, so that a short list from the database cannot shift them. */
     const card = document.createElement("div");
     card.className = "ex-card";
     card.dataset.no = String(i);
-    card.appendChild(posterElement(CARDS[i], i));
 
-    /* The info strip under the poster: kind + venue/date. The data comes
-       from events-data.js, so it can never contradict the poster. */
     const data = CARDS[i];
-    const info = document.createElement("div");
-    info.className = "ex-info";
-    const kind = document.createElement("p");
-    kind.className = "ex-kind";
-    kind.textContent = data.kind;
-    const meta = document.createElement("p");
-    meta.className = "ex-meta";
-    meta.textContent = data.meta;
-    info.appendChild(kind);
-    info.appendChild(meta);
-    card.appendChild(info);
+
+    if (data && data.image) {
+      card.classList.add("ex-photo");
+      fillPhotoCard(card, data);
+    } else {
+      /* A drawn night, which today means the offline deck: the poster is
+         the card and the strip under it says when and where. */
+      card.appendChild(posterElement(data, i));
+      const info = document.createElement("div");
+      info.className = "ex-info";
+      const kind = document.createElement("p");
+      kind.className = "ex-kind";
+      kind.textContent = data.kind;
+      const meta = document.createElement("p");
+      meta.className = "ex-meta";
+      meta.textContent = data.meta;
+      info.appendChild(kind);
+      info.appendChild(meta);
+      card.appendChild(info);
+    }
 
     let startX = null, dx = 0;
 

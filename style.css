@@ -1374,6 +1374,105 @@ body[data-screen="3"] .sound { opacity: 0; pointer-events: none; }
    showing underneath. The top card is the deck's last child. */
 .ex-card:not(:last-child) .ex-info { opacity: 0; }
 
+/* --- a synced night: the photograph keeps its own shape ---
+
+   A listing photograph is 16:9 and this frame is 2:3. Filling one with the
+   other keeps 37.5% of the picture's width and throws the rest away from
+   the centre out, which is how a card ends up showing half a face. So the
+   band is 16:9 and never cropped, and the two thirds of the card that are
+   left become type — the same order the card in the collection is built
+   in: artwork, a rule, then the night in writing.
+
+   The card grows an edge for the first time here. It has to: without one
+   the text under the picture reads as a caption lying on the page instead
+   of the lower half of an object you are holding.
+
+   The class is ex-photo and not photo: a bare `.photo` already belongs to
+   the portrait block on the landing page, and further down this file it is
+   given `width: min(780px, 46vw)`. An empty card in a 317px deck measured
+   780px wide and every explanation was wrong until the class list was the
+   thing that got read. Explore classes keep the prefix. */
+.ex-card.ex-photo {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.ex-band {
+  flex: 0 0 auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #ececea;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+/* object-fit still, but now it is cropping 16:9 into 16:9 — which is to
+   say it is correcting a few pixels of rounding, not editing the picture. */
+.ex-card.ex-photo .ex-band img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.ex-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 17px 17px 15px;
+}
+
+.ex-card.ex-photo .ex-kind { margin-bottom: 0; opacity: 0.5; }
+
+/* The title carries the card now, so it is allowed to be big. Four lines
+   is the ceiling: the longest listing titles are tour names with a colon
+   in them and the fifth line is always the word "Tour" on its own.
+
+   Both this and the foot take `margin-top: auto`, which splits the free
+   space between them: the title settles in the middle of the card and the
+   foot stays on the floor. Without it a two-word name sat under the
+   picture with 250px of nothing beneath it. */
+.ex-title {
+  margin-top: auto;
+  font-size: clamp(20px, calc(var(--ex-w) * 0.105), 36px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.09;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* The room and the date are the last thing read, the way they are the last
+   line on a ticket. */
+.ex-foot {
+  margin-top: auto;
+  padding-top: 13px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ex-where {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.ex-when {
+  margin-top: 6px;
+  font-size: 13.5px;
+  opacity: 0.62;
+}
+
+/* Behind the top card there is nothing to read. The stack offsets each one
+   14px down, so without this the foot of the second card printed itself
+   under the first — the same fault the strip had. */
+.ex-card:not(:last-child) .ex-body { opacity: 0; }
+
 .ex-done {
   font-size: 19px;
   font-weight: 400;

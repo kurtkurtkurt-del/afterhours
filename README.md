@@ -312,6 +312,25 @@ one. A night that ends in the afternoon waits for nine. Closing times are
 whole hours between four and eight hours out, so nothing shuts at two in
 the afternoon.
 
+### The deck card, for a night with a photograph
+
+A listing photograph is **16:9** and the deck frame is **2:3**. Filling one
+with the other keeps 37.5% of the picture's width and throws the rest away
+from the centre out, which is how a card ends up showing half a face. So a
+synced night (`.ex-card.ex-photo`, built by `fillPhotoCard`) does not crop:
+the picture is a **16:9 band across the top**, and the two thirds of the
+card left under it are set in type — kind, then the title in the middle of
+the space, then the room and the date on the floor of the card. That is the
+same order the card in the collection is built in (artwork, a rule, then
+the night in writing), so the thing you swipe and the thing you keep speak
+one language. The card grows a hairline edge here for the first time,
+because without one the type reads as a caption lying on the page instead
+of the lower half of an object.
+
+The deck box is unchanged (`--ex-w * 1.5 + --ex-info-h`), so nothing else
+in the column had to be re-derived. A **drawn** night — today only the
+offline deck — still gets the old poster plus the strip underneath.
+
 ### The faces
 
 Nobody has uploaded a photograph, and an initial in a box was standing in
@@ -525,7 +544,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **162**.
+The current version: **163**.
 
 The explore date filter is real now (every synced night carries a true
 date): tonight / tomorrow / this weekend / this week / this month /
@@ -603,6 +622,12 @@ Every one of these cost us something:
   straight down over the top of it — measured at 1111→1698 against a band
   that started at 1243. The band is a sibling of the contact sheet now,
   which also spared it the negative margins it needed to reach the edges.
+- **Bare class names collide across pages.** The explore card was given
+  `photo`, which the landing page's portrait block already owns and which
+  is handed `width: min(780px, 46vw)` further down the same file. An empty
+  card in a 317px deck measured 780px wide and every theory about grid
+  containing blocks and `aspect-ratio` was wrong — the class list was the
+  thing that needed reading. Explore classes keep the `ex-` prefix.
 - **`filter` does not work on an SVG inside `<object>`** (it is a separate
   document). Anything that needs an SVG poster pulled to grey has to lay a
   `mix-blend-mode: saturation` layer over it instead.
