@@ -313,9 +313,14 @@
 
   /* The preview chip on the poster: the act's most famous song, served
      from the Apple Music preview Apple hands out for exactly this
-     purpose — the small arrow beside it leads to the store, as they
-     ask. The URL is fetched right away so the first press plays; if
-     Apple has nothing, the chip quietly leaves. */
+     purpose — the small arrow beside it leads to the store, as they ask.
+
+     The search service rate-limits and stumbles now and then, so a
+     failed lookup must NOT take the chip with it (it used to, and the
+     chip "sometimes disappeared"): a stumble keeps the chip and the
+     press simply asks again. Only a real "no such song" answer removes
+     it. A found preview is remembered in the browser for a week, so a
+     return visit plays without asking Apple anything. */
   function previewChip(frame, f) {
     const chip = el("div", "cs-preview");
     const button = el("button", "cs-preview-button");
@@ -329,42 +334,88 @@
     const fill = document.createElement("span");
     line.appendChild(fill);
 
-    let audio = null;
+    const CACHE = "afterhours.preview." + f.slug;
+    const WEEK = 7 * 24 * 60 * 60 * 1000;
 
-    fetch("https://itunes.apple.com/search?media=music&entity=song&limit=1&term=" +
-        encodeURIComponent(f.artist + " " + f.song))
-      .then((r) => r.json())
-      .then((j) => {
-        const hit = j.results && j.results[0];
-        if (!hit || !hit.previewUrl) throw new Error("no preview");
-        audio = new Audio(hit.previewUrl);
-        audio.addEventListener("timeupdate", () => {
-          if (audio.duration) fill.style.width = (audio.currentTime / audio.duration) * 100 + "%";
+    let audio = null;
+    let asking = null;
+
+    function ready(url, storeUrl) {
+      audio = new Audio(url);
+      audio.addEventListener("timeupdate", () => {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration) * 100 + "%";
+      });
+      audio.addEventListener("play", () => {
+        chip.classList.add("playing");
+        label.textContent = f.song.toLowerCase();
+      });
+      audio.addEventListener("pause", () => chip.classList.remove("playing"));
+      audio.addEventListener("ended", () => {
+        fill.style.width = "0";
+        label.textContent = "preview artist";
+      });
+      if (storeUrl && !chip.querySelector(".cs-preview-store")) {
+        const store = el("a", "cs-preview-store", "↗");
+        store.href = storeUrl;
+        store.target = "_blank";
+        store.rel = "noopener";
+        store.title = "on apple music";
+        chip.appendChild(store);
+      }
+      return audio;
+    }
+
+    function lookUp() {
+      if (asking) return asking;
+      asking = fetch("https://itunes.apple.com/search?media=music&entity=song&limit=1&term=" +
+          encodeURIComponent(f.artist + " " + f.song))
+        .then((r) => { if (!r.ok) throw new Error("answered " + r.status); return r.json(); })
+        .then((j) => {
+          const hit = j.results && j.results[0];
+          if (!hit || !hit.previewUrl) {
+            /* Apple truly has nothing: only now does the chip leave */
+            chip.remove();
+            line.remove();
+            throw new Error("no such song");
+          }
+          try {
+            localStorage.setItem(CACHE, JSON.stringify(
+              { at: Date.now(), url: hit.previewUrl, store: hit.trackViewUrl || null }));
+          } catch (_) {}
+          return ready(hit.previewUrl, hit.trackViewUrl);
+        })
+        .catch((err) => {
+          /* A stumble (rate limit, network): forget the attempt so the
+             next press can try again. The chip stays. */
+          asking = null;
+          throw err;
         });
-        audio.addEventListener("play", () => {
-          chip.classList.add("playing");
-          label.textContent = f.song.toLowerCase();
-        });
-        audio.addEventListener("pause", () => chip.classList.remove("playing"));
-        audio.addEventListener("ended", () => {
-          fill.style.width = "0";
-          label.textContent = "preview artist";
-        });
-        if (hit.trackViewUrl) {
-          const store = el("a", "cs-preview-store", "↗");
-          store.href = hit.trackViewUrl;
-          store.target = "_blank";
-          store.rel = "noopener";
-          store.title = "on apple music";
-          chip.appendChild(store);
-        }
-      })
-      .catch(() => { chip.remove(); line.remove(); });
+      return asking;
+    }
+
+    /* Yesterday's answer, if the browser still holds it */
+    let remembered = null;
+    try {
+      const kept = JSON.parse(localStorage.getItem(CACHE) || "null");
+      if (kept && Date.now() - kept.at < WEEK && kept.url) remembered = kept;
+    } catch (_) {}
+
+    if (remembered) ready(remembered.url, remembered.store);
+    else lookUp().catch(() => {});      /* warm it up; a miss can wait for the press */
 
     button.addEventListener("click", () => {
-      if (!audio) return;
-      if (audio.paused) audio.play();
-      else audio.pause();
+      if (audio) {
+        if (audio.paused) audio.play();
+        else audio.pause();
+        return;
+      }
+      label.textContent = "finding it…";
+      lookUp()
+        .then((a) => { label.textContent = f.song.toLowerCase(); a.play(); })
+        .catch(() => {
+          if (!chip.isConnected) return;   /* the no-such-song road */
+          label.textContent = "preview artist";
+        });
     });
 
     frame.appendChild(chip);
