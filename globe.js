@@ -141,7 +141,9 @@
       name: SHORT[e.slug] || e.title,
       kind: (e.kind || "").toUpperCase(),
       time: time,
-      mins: MINS[e.slug] || 3 + (h % 42),
+      /* Where the night is — real data, unlike the walking minutes the
+         globe used to invent for the drawn era. */
+      city: (e.city || "münchen").replace(/-/g, " "),
       colour: COLOUR[e.slug] || FALLBACK_COLOURS[h % FALLBACK_COLOURS.length],
       /* A synced night has no folder of its own; the shared shell reads
          the slug off the address (index.html written out — a bare folder
@@ -160,14 +162,15 @@
     const sub = document.querySelector(".s4-near-sub");
     if (!box) return;
     box.textContent = "";
-    NIGHTS.slice().sort((a, b) => a.mins - b.mins).slice(0, 7).forEach((g) => {
+    /* The first seven of the wall — the hand-picked nights lead it */
+    NIGHTS.slice(0, 7).forEach((g) => {
       const li = document.createElement("li");
       const name = document.createElement("span");
       name.textContent = g.name;
       const kind = document.createElement("em");
       kind.textContent = g.kind.toLowerCase();
       const min = document.createElement("b");
-      min.textContent = g.mins + " min";
+      min.textContent = g.city;
       li.appendChild(name); li.appendChild(kind); li.appendChild(min);
       box.appendChild(li);
     });
@@ -536,7 +539,7 @@
       ctx.font = "10.5px 'Inter Tight', sans-serif";
       ctx.globalAlpha = 0.72;
       ctx.fillText(hovered.kind + " · " + hovered.time, x, y + 32);
-      ctx.fillText(hovered.mins + " MIN WALK", x, y + 50);
+      ctx.fillText(hovered.city.toUpperCase(), x, y + 50);
       ctx.globalAlpha = 1;
     }
   }

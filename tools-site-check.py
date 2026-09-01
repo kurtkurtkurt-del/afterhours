@@ -71,22 +71,12 @@ if t404.exists():
         if not (ROOT / ref).exists():
             problems.append(f"404.html: data-path {ref} leads nowhere")
 
-# ------------------------------------------ 2 · every event, three pieces
+# ------------------------------------------ 2 · (retired with the seeds)
 
-raw = (ROOT / "events-data.js").read_text(encoding="utf-8")
-slugs = [(s, i + 1) for i, s in enumerate(re.findall(r'\{ slug: "([^"]+)"', raw))]
-
-world = json.loads((ROOT / "backend" / "tools" / "world-record.json")
-                   .read_text(encoding="utf-8"))
-slugs += [(slugify(g["city"] + "-" + g["title"]), g["no"]) for g in world]
-
-for slug, no in slugs:
-    if not (ROOT / "explore" / slug / "index.html").exists():
-        problems.append(f"event {slug}: no page shell (run tools-event-pages.py)")
-    if not (ROOT / "posters" / f"{no:02d}.svg").exists():
-        problems.append(f"event {slug}: poster {no:02d}.svg missing")
-    if not (ROOT / "og" / f"{slug}.png").exists():
-        problems.append(f"event {slug}: og preview missing (run tools-previews.py)")
+# The per-event page/poster/og requirement is gone: real events live in
+# the database and are served by the shared shell explore/event/, no
+# generated folder per night. The walk above still proves every link
+# that EXISTS leads somewhere.
 
 # ----------------------------------------------------- 3 · one version
 
@@ -101,5 +91,5 @@ if problems:
         print("  · " + p)
     sys.exit(1)
 
-print(f"clean: {len(pages)} pages walked, {len(slugs)} events complete, "
+print(f"clean: {len(pages)} pages walked, "
       f"one version (?v={versions.pop() if versions else '—'})")

@@ -198,16 +198,42 @@ function nudgeDeck() {
   clearTimeout(jumpTimer);
   jumpTimer = setTimeout(() => card.classList.remove("jump"), 520);
 }
-const DECK_POSTERS = ["01"];         // a single poster: A$AP Rocky
 const PULL_THRESHOLD = 120;              // px
 
-DECK_POSTERS.slice().reverse().forEach((no) => {
+/* The demo card is the FIRST night on the wall — live, that is the top
+   hand-picked cover; offline, the old drawn poster stands in. The phone
+   mock inside speaks about the same night, so the demo never lies. */
+const demoNight = (window.POSTERS || [])[0];
+
+if (demoNight && demoNight.image) {
+  const oldPoster = document.querySelector(".phone-poster");
+  if (oldPoster) {
+    const img = document.createElement("img");
+    img.className = "phone-poster";
+    img.src = demoNight.image;
+    img.alt = "";
+    oldPoster.replaceWith(img);
+  }
+  const phoneTitle = document.querySelector(".phone-title");
+  if (phoneTitle) phoneTitle.textContent = demoNight.title;
+  const phoneMeta = document.querySelector(".phone-meta");
+  if (phoneMeta) phoneMeta.textContent = (demoNight.meta || "").toUpperCase();
+}
+
+(function buildDemoCard() {
   const card = document.createElement("div");
   card.className = "card2";
 
-  const image = document.createElement("object");
-  image.type = "image/svg+xml";
-  image.data = "posters/" + no + ".svg";
+  let image;
+  if (demoNight && demoNight.image) {
+    image = document.createElement("img");
+    image.src = demoNight.image;
+    image.alt = "";
+  } else {
+    image = document.createElement("object");
+    image.type = "image/svg+xml";
+    image.data = "posters/01.svg";
+  }
   card.appendChild(image);
 
   let startX = null;
@@ -275,7 +301,7 @@ DECK_POSTERS.slice().reverse().forEach((no) => {
   card.addEventListener("pointercancel", release);
 
   deck.appendChild(card);
-});
+})();
 
 
 /* ---------- Sound: short recordings from last night (3 cities) ---------- */
@@ -374,3 +400,33 @@ function updateFooter() {
 
 updateFooter();
 setInterval(updateFooter, 20000);
+
+/* ---------- The honest city list, honestly derived ---------- */
+
+/* The footer named six cities by hand while the coverage grew to
+   ninety-odd; now the six brightest come from the database itself and
+   the rest are counted, not promised. The hand-written list stays in
+   the HTML as the offline answer. */
+(function liveCityList() {
+  const box = document.querySelector(".s6-cities");
+  if (!box || !window.AH || !AH.request || AH.mode !== "live") return;
+  AH.request("/rpc/city_counts", { method: "POST", body: "{}" })
+    .then((rows) => {
+      const full = (rows || []).filter((c) => Number(c.n) > 0)
+        .sort((a, b) => Number(b.n) - Number(a.n));
+      if (full.length < 4) return;         /* thin data: keep the old words */
+      box.textContent = "";
+      full.slice(0, 6).forEach((c) => {
+        const li = document.createElement("li");
+        li.className = "open";
+        li.textContent = c.name;
+        box.appendChild(li);
+      });
+      if (full.length > 6) {
+        const li = document.createElement("li");
+        li.textContent = "+ " + (full.length - 6) + " more cities";
+        box.appendChild(li);
+      }
+    })
+    .catch(() => {});
+})();
