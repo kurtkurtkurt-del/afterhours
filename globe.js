@@ -349,7 +349,7 @@
   stage.addEventListener("pointercancel", release);
   stage.addEventListener("pointerleave", () => { hovered = null; });
   stage.addEventListener("click", () => {
-    if (hovered) window.open(hovered.page, "_blank", "noopener");
+    if (hovered) location.href = hovered.page;    /* our own page: this tab */
   });
 
   function distanceToSegment(px, py, a, b) {
@@ -480,7 +480,7 @@
     ctx.globalAlpha = 1;
 
     // --- the beacons ---
-    ctx.font = "10.5px 'JetBrains Mono', ui-monospace, monospace";
+    ctx.font = "10.5px 'Inter Tight', sans-serif";
     ctx.textAlign = "center";
     beacons.forEach((b) => {
       const g = b.g, building = g.building;
@@ -533,7 +533,7 @@
       ctx.fillStyle = "#f0f0ee";
       ctx.font = "500 19px 'Inter Tight', sans-serif";
       ctx.fillText(hovered.name, x, y + 12);
-      ctx.font = "10.5px 'JetBrains Mono', ui-monospace, monospace";
+      ctx.font = "10.5px 'Inter Tight', sans-serif";
       ctx.globalAlpha = 0.72;
       ctx.fillText(hovered.kind + " · " + hovered.time, x, y + 32);
       ctx.fillText(hovered.mins + " MIN WALK", x, y + 50);

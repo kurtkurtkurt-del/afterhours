@@ -34,7 +34,7 @@
     { value: "hausparty", name: "hausparty" },
   ];
 
-  const DATES = ["tonight", "tomorrow", "this weekend", "this week", "this month"]
+  const DATES = ["tonight", "tomorrow", "this weekend", "this week", "this month", "any night"]
     .map((t) => ({ value: t, name: t }));
 
   /* With the backend off we have exactly one city; we do not invent more. */
@@ -244,11 +244,12 @@
       redeal();
     });
 
-    /* The date does nothing yet: on three quarters of the events the date
-       was filled in by inference, so filtering on it would mislead. */
+    /* The date filters for real now — every synced night carries a true
+       date. (It sat inert while the invented nights had guessed ones.) */
     list(boxes.date, DATES, AH.filter.date, (v) => {
       AH.filter.date = v;
       draw();
+      redeal();
     });
   }
 

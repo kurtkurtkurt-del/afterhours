@@ -496,6 +496,50 @@
     return list.filter((e) => (e.kind || "").toLowerCase() === name);
   }
 
+  /* The date window, computed on the visitor's own calendar and applied
+     to the date PART of starts_at (the stored value is venue-local, so
+     shifting it through timezones would move nights across midnight). */
+  function pad2(n) { return String(n).padStart(2, "0"); }
+  function dayString(d) {
+    return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
+  }
+
+  function dateWindow(choice) {
+    if (!choice || choice === "any night") return null;
+    const now = new Date();
+    const day = (n) => {
+      const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + n);
+      return dayString(d);
+    };
+    if (choice === "tonight") return [day(0), day(0)];
+    if (choice === "tomorrow") return [day(1), day(1)];
+    if (choice === "this weekend") {
+      /* Friday to Sunday — the one we are in, or the one ahead */
+      const dow = now.getDay();                 /* sunday = 0 */
+      const friday = dow === 0 ? -2 : 5 - dow;
+      return [day(Math.max(friday, 0)), day(dow === 0 ? 0 : 7 - dow)];
+    }
+    if (choice === "this week") {
+      const dow = now.getDay();
+      return [day(0), day(dow === 0 ? 0 : 7 - dow)];
+    }
+    if (choice === "this month") {
+      const last = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+      return [day(0), dayString(last)];
+    }
+    return null;
+  }
+
+  function applyDate(list) {
+    const f = (window.AH && AH.filter) || {};
+    const window_ = dateWindow(f.date);
+    if (!window_) return list;
+    return list.filter((e) => {
+      const d = (e.startsAt || "").slice(0, 10);
+      return d >= window_[0] && d <= window_[1];
+    });
+  }
+
   /* Fetch the card source for the mode. They all return the same shape. */
   function sourceFor(mode) {
     if (mode === "friends liked swipes") {
@@ -509,7 +553,8 @@
          the choices above the deck. */
       const picked = window.AH && AH.randomCity ? AH.randomCity() : null;
       const source = picked && AH.mode === "live" && AH.events
-        ? AH.events(null, picked.slug, 99 + skip.size).catch(() => applyFilter(POSTERS))
+        ? AH.events(null, picked.slug, fetchSize()).then(applyDate)
+            .catch(() => applyFilter(POSTERS))
         : Promise.resolve(applyFilter(POSTERS));
 
       return source.then((list) => {
@@ -526,10 +571,22 @@
     if (window.AH && AH.mode === "live" && AH.events) {
       /* Signed in, the database already leaves out what was swiped, so
          99 comes back as the NEXT 99. Signed out it cannot know: ask
-         for 99 more than the local swipes and sift below (capDeck). */
-      return AH.events(f.kind, f.city, 99 + skip.size).catch(() => applyFilter(POSTERS));
+         for 99 more than the local swipes and sift below (capDeck).
+         With a date window on, the pull is wider still — the window is
+         cut out of it client-side, and the nights come date-ordered so
+         the near windows always sit at the front of the pull. */
+      return AH.events(f.kind, f.city, fetchSize()).then(applyDate)
+        .catch(() => applyFilter(POSTERS));
     }
     return Promise.resolve(applyFilter(POSTERS));
+  }
+
+  /* How much to pull: 99, plus the local swipes, plus room for a date
+     window to cut from. */
+  function fetchSize() {
+    const f = (window.AH && AH.filter) || {};
+    const windowed = f.date && f.date !== "any night";
+    return (windowed ? 500 : 99) + skip.size;
   }
 
   /* A deck is 99 cards. The list may hold more (the signed-out
@@ -684,7 +741,10 @@
     });
   }
 
-  CARDS = capDeck(CARDS);
+  /* The first deal respects the default date window too ("tonight");
+     the first pull is only 99 deep, so this hand may run short — the
+     next press of a filter or "deal the next 99" pulls the wide way. */
+  CARDS = capDeck(AH.mode === "live" ? applyDate(CARDS) : CARDS);
   dealTotal = CARDS.filter((e) => !skip.has(e.slug)).length;
   fill();
 })();

@@ -412,7 +412,12 @@ at 04:10 UTC it runs `backend/tools/sync-ticketmaster.mjs`, which asks
 Ticketmaster city by city (the coverage of `16_coverage.sql`), files each
 event under one of the six kinds, composes the meta line, picks a 16:9
 photograph, upserts on `external_id` and prunes the nights that have
-passed. It needs the two secrets named inside it; run it by hand from the
+passed. Three house rules hold, on the way in and swept over what is
+already there: nothing before 18:00 (festivals and raves exempt — real
+ones start in the afternoon), no add-on listings ("VIP Ticket",
+"Box-Seat", "Parking permit" — receipts, not nights), and a show that
+repeats is ONE package — the soonest night stands for the run and its
+meta line carries the span ("Venue · 20.11.26 → 23.12.26 · 20:00"). It needs the two secrets named inside it; run it by hand from the
 Actions tab any time. `--dry` locally shows what it would write.
 
 The site itself has no build step and nothing to check: it is plain HTML
@@ -455,7 +460,13 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **152**.
+The current version: **153**.
+
+The explore date filter is real now (every synced night carries a true
+date): tonight / tomorrow / this weekend / this week / this month /
+any night, cut client-side out of a date-ordered pull. And one type
+rule: the small labels are Inter Tight like everything else — JetBrains
+Mono lives on only inside the drawn poster and card artwork.
 
 ---
 

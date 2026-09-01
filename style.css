@@ -276,7 +276,7 @@ img.poster-image {
 body:not([data-screen="0"]) .down { opacity: 0; }
 
 .down-text {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -472,14 +472,14 @@ body:not([data-screen="0"]) .down { opacity: 0; }
 }
 
 .phone-meta {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.1em;
   opacity: 0.6;
 }
 
 .phone-label {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -512,7 +512,7 @@ body:not([data-screen="0"]) .down { opacity: 0; }
 }
 
 .phone-status {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -569,7 +569,7 @@ body:not([data-screen="0"]) .down { opacity: 0; }
   padding: 0;
   cursor: pointer;
   color: var(--black);
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10.5px;
   letter-spacing: 0.12em;
 }
@@ -613,7 +613,7 @@ body:not([data-screen="0"]) .down { opacity: 0; }
   right: calc(50% + 186px);
   transform: translateY(-50%);
   white-space: nowrap;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   letter-spacing: 0.14em;
   transition: opacity 0.35s ease;
@@ -1006,7 +1006,7 @@ body[data-screen="4"] .sound {
 }
 
 .s4-eyebrow {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -1240,7 +1240,7 @@ body[data-screen="3"] .sound { opacity: 0; pointer-events: none; }
 
 /* Continent heading: it separates the list and is not clickable */
 .fl-group {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1258,7 +1258,7 @@ body[data-screen="3"] .sound { opacity: 0; pointer-events: none; }
 
 .fl-note {
   margin-left: auto;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1394,7 +1394,7 @@ body[data-screen="3"] .sound { opacity: 0; pointer-events: none; }
 .ex-way.right .ex-way-drawing { width: 28px; }
 
 .ex-way-text {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1430,7 +1430,7 @@ body[data-screen="3"] .sound { opacity: 0; pointer-events: none; }
 }
 
 .ex-hint-text {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1475,7 +1475,7 @@ body[data-screen="3"] .sound { opacity: 0; pointer-events: none; }
 /* Not a mode but an action: keep it apart from the modes */
 .ex-reset {
   margin-top: 18px;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1538,7 +1538,7 @@ body[data-screen="3"] .sound { opacity: 0; pointer-events: none; }
   border-radius: 10px;
   background: #e02b20;
   color: var(--white);
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: 500;
   line-height: 19px;
@@ -1818,7 +1818,7 @@ html:has(body.explore) {
 }
 
 .page-label {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1877,7 +1877,7 @@ html:has(body.explore) {
 .page-note.ok { opacity: 1; }
 
 .page-note.waiting {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1890,7 +1890,7 @@ html:has(body.explore) {
 .account { margin-top: 40px; }
 
 .account-title {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1942,7 +1942,7 @@ html:has(body.explore) {
 .friend-name { font-size: 16px; font-weight: 500; }
 
 .friend-status-label {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2102,7 +2102,7 @@ html:has(body.explore) {
 .map-station { fill: none; stroke: rgba(0, 0, 0, 0.35); stroke-width: 1.4; }
 
 .map-label text {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.14em;
   fill: rgba(0, 0, 0, 0.38);
@@ -2140,7 +2140,7 @@ html:has(body.explore) {
 }
 
 .map-card-kind {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.18em;
   opacity: 0.5;
@@ -2155,7 +2155,7 @@ html:has(body.explore) {
   left: 32px;
   bottom: 26px;
   z-index: 2;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2227,7 +2227,7 @@ html:has(body.explore) {
 
 .cc-card figcaption {
   margin-top: 10px;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -2275,7 +2275,7 @@ html:has(body.explore) {
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.18);
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   opacity: 0.6;
 }
@@ -2302,7 +2302,7 @@ html:has(body.explore) {
 .nr-person.crew .nr-name { font-weight: 500; }
 
 .nr-handle {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.06em;
   opacity: 0.4;
@@ -2406,7 +2406,7 @@ body.friends .page {
 .stat:first-child { border-left: 0; }
 
 .stat-label {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -2509,7 +2509,7 @@ body.friends .page {
   gap: 14px 24px;
   padding: 22px 32px;
   border-top: 1px solid rgba(0, 0, 0, 0.09);
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2622,7 +2622,7 @@ body:has(> .foot:not(.thin)) > .foot { margin-top: auto; }
 
 /* Until these texts settle, let them say for themselves what they are */
 .legal-warning {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2645,7 +2645,7 @@ body:has(> .foot:not(.thin)) > .foot { margin-top: auto; }
 .legal-list li::before { content: "—"; position: absolute; left: 0; opacity: 0.5; }
 
 .legal-date {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2731,7 +2731,7 @@ img.cs-poster {
   border: none;
   cursor: pointer;
   color: var(--black);
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2761,7 +2761,7 @@ img.cs-poster {
   padding: 7px 10px 7px 2px;
   color: var(--black);
   text-decoration: none;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
 }
 
@@ -2788,7 +2788,7 @@ img.cs-poster {
 .cs-facts {
   margin-top: 18px;
   border-top: 1px solid rgba(0, 0, 0, 0.14);
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2818,7 +2818,7 @@ img.cs-poster {
 }
 
 .cs-edition {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -2850,7 +2850,7 @@ img.cs-poster {
 
 .cs-label {
   margin-bottom: 12px;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -2913,7 +2913,7 @@ img.cs-poster {
   justify-content: center;
   background: #f4f4f2;
   border-color: rgba(0, 0, 0, 0.08);
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.14em;
   opacity: 0.4;
@@ -2922,7 +2922,7 @@ img.cs-poster {
 .cs-no {
   display: block;
   margin-top: 7px;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9px;
   letter-spacing: 0.14em;
   opacity: 0.3;
@@ -2930,7 +2930,7 @@ img.cs-poster {
 
 .cs-role {
   margin-top: 5px;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -2947,7 +2947,7 @@ img.cs-poster {
 
 .cs-clock {
   margin-top: 3px;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9px;
   letter-spacing: 0.14em;
   opacity: 0.45;
@@ -2986,7 +2986,7 @@ img.cs-poster {
 .cs-who-name { font-size: 15px; letter-spacing: -0.01em; }
 
 .cs-who-status {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2997,7 +2997,7 @@ img.cs-poster {
 
 .cs-tally {
   margin-top: 10px;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -3019,7 +3019,7 @@ img.cs-poster {
 
 .cs-ticket-sub {
   margin-top: 9px;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -3052,7 +3052,7 @@ img.cs-poster {
 
 .cs-past-card figcaption {
   margin-top: 10px;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -3185,7 +3185,7 @@ img.cs-poster {
 }
 
 .set-country {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -3264,7 +3264,7 @@ img.cs-poster {
 
 .fb-counter {
   margin-top: 8px;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -3309,7 +3309,7 @@ img.cs-poster {
 
 /* The two steps never stand together: one of them is visible at a time. */
 .reg-edition {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -3470,7 +3470,7 @@ img.cs-poster {
 
 /* "03 / 36" under the served line: where the night stands. */
 .ex-count {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.18em;
   text-align: center;
@@ -3492,7 +3492,7 @@ img.cs-poster {
   background: none;
   padding: 0;
   cursor: pointer;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -3511,7 +3511,7 @@ img.cs-poster {
   padding: 0;
   margin-top: 6px;
   cursor: pointer;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -3548,7 +3548,7 @@ img.cs-poster {
 /* The quiet way out under the sign-in button */
 .page-forgot {
   margin-top: 10px;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;

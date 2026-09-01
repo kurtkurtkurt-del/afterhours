@@ -40,7 +40,7 @@ SHOWN.forEach((p, i) => {
   // The poster number comes from the record itself, not from its position
   const no = String(p.poster || i + 1).padStart(2, "0");
 
-  // The frame: clickable, opens the event's own page in a new tab.
+  // The frame: clickable, opens the event's own page in THIS tab.
   // A synced night has no folder; the shared shell reads its slug.
   // index.html is written out, as everywhere on this site: a bare
   // folder address only resolves on a server, not opened as a file.
@@ -49,8 +49,8 @@ SHOWN.forEach((p, i) => {
   box.href = p.image
     ? "explore/event/index.html?slug=" + encodeURIComponent(p.slug)
     : "explore/" + p.slug + "/index.html";
-  box.target = "_blank";
-  box.rel = "noopener";
+  /* An internal page: stay in this tab. Only the OUTWARD links
+     (the ticket page, the store) may open a new one. */
 
   /* The image. A synced night is a photograph in an <img>, cropped to
      the frame; a drawn night stays an <object> (the SVG needs its own

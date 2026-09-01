@@ -147,6 +147,31 @@ const PLACES = {
   monterrey: { cc: "MX", names: ["Monterrey"] },
 };
 
+/* --------------------------------------------------- what gets refused
+
+   Two house rules, applied on the way in AND swept over what is already
+   there (below, after the upsert), so the database converges on them.
+
+   1. Nothing before 18:00 — a 10:00 museum ticket is not a night out.
+      Festivals and raves are exempt: real ones start in the afternoon.
+   2. No add-on listings. Ticketmaster files upsells as events of their
+      own — "VIP Ticket", "Box-Seat", "Parking permit", even "M&G
+      Add-On (No Ticket Included)". They are not nights, they are
+      receipts. */
+
+const EARLIEST = "18:00";
+const LATE_KINDS = new Set(["festival", "rave"]);
+const ADDON = new RegExp(
+  "parking|park.?and.?ride|box.?seat|\\bvip\\b|premium (package|suite|ticket|aitiolippu|upgrade)|" +
+  "platinum|golden circle|meet\\s*[&+]\\s*greet|\\bm&g\\b|add.?on|no ticket included|" +
+  "aitiolippu|legazy seat|logen.?seat|ticketmaster suite|upgrade", "i");
+
+function refused(kind, title, time) {
+  if (ADDON.test(title)) return "addon";
+  if (time && time < EARLIEST && !LATE_KINDS.has(kind)) return "early";
+  return null;
+}
+
 /* --------------------------------------------------- kind, image, slug */
 
 /* Ticketmaster classifies with segment/genre/subGenre; we file under the
@@ -271,6 +296,7 @@ function rowFor(e, city, types) {
   const date = e.dates && e.dates.start && e.dates.start.localDate;
   if (!date) return null;
   const time = ((e.dates.start.localTime || "") + "").slice(0, 5);
+  if (refused(kind, e.name || "", time)) return null;
 
   const [y, mo, d] = date.split("-");
   const shortDate = d + "." + mo + "." + y.slice(2);
@@ -330,8 +356,33 @@ for (const city of cities) {
        (Mexico City vs Ciudad de México was exactly this). */
     if (cityRows.length >= 15) break;
   }
-  rows.push(...cityRows);
-  report.push(city.slug + ": " + cityRows.length);
+  /* A show that repeats — one title, many dates — is ONE package: the
+     soonest night stands for the whole run, and its meta line carries
+     the span ("Venue · 20.11.26 → 23.12.26 · 20:00"). The queries come
+     back date-ascending, so the first of a title is the soonest. */
+  const runs = new Map();
+  for (const row of cityRows) {
+    const key = row.title.toLowerCase();
+    const kept = runs.get(key);
+    if (!kept) runs.set(key, row);
+    else kept._runEnd = row.starts_at.slice(0, 10);
+  }
+  const packaged = [...runs.values()].map((row) => {
+    if (row._runEnd) {
+      const [ry, rm, rd] = row._runEnd.split("-");
+      const endShort = rd + "." + rm + "." + ry.slice(2);
+      const startShort = row.date_text.split(" · ")[0];
+      const span = startShort + " → " + endShort;
+      row.meta = row.meta.replace(startShort, span);
+      row.date_text = row.date_text.replace(startShort, span);
+    }
+    delete row._runEnd;
+    return row;
+  });
+
+  rows.push(...packaged);
+  report.push(city.slug + ": " + packaged.length +
+    (packaged.length < cityRows.length ? " (" + cityRows.length + " dates)" : ""));
 }
 
 console.log("ticketmaster → " + rows.length + " events\n  " + report.join("\n  "));
@@ -348,7 +399,7 @@ const bySlug = new Map();
 for (const row of rows) if (!bySlug.has(row.slug)) bySlug.set(row.slug, row);
 const unique = [...bySlug.values()];
 
-let written = 0, refused = 0;
+let written = 0, turnedAway = 0;
 for (let i = 0; i < unique.length; i += 100) {
   const slice = unique.slice(i, i + 100);
   try {
@@ -359,7 +410,7 @@ for (let i = 0; i < unique.length; i += 100) {
     });
     written += slice.length;
   } catch (e) {
-    refused += slice.length;
+    turnedAway += slice.length;
     console.warn("  a slice of " + slice.length + " was refused: " + e.message);
   }
 }
@@ -369,7 +420,32 @@ for (let i = 0; i < unique.length; i += 100) {
 const today = new Date().toISOString().slice(0, 10);
 await db("/events?source=eq.ticketmaster&starts_at=lt." + today, { method: "DELETE" });
 
+/* The house rules, swept over what is ALREADY there — add-ons, early
+   starts and repeated dates that arrived before the rules did. The
+   database converges on the style instead of only new rows obeying it. */
+const held = [];
+for (let from = 0; ; from += 1000) {
+  const page = await db("/events_public?select=id,title,type_slug,city_slug,starts_at" +
+    "&source=eq.ticketmaster&order=starts_at&limit=1000&offset=" + from);
+  held.push(...page);
+  if (page.length < 1000) break;
+}
+const kill = [];
+const runsSeen = new Set();
+for (const r of held) {
+  const time = (r.starts_at || "").slice(11, 16);
+  if (refused(r.type_slug, r.title, time)) { kill.push(r.id); continue; }
+  const key = r.city_slug + "|" + r.title.toLowerCase();
+  if (runsSeen.has(key)) kill.push(r.id);      /* date order: the soonest stays */
+  else runsSeen.add(key);
+}
+for (let i = 0; i < kill.length; i += 60) {
+  await db("/events?source=eq.ticketmaster&id=in.(" + kill.slice(i, i + 60).join(",") + ")",
+    { method: "DELETE" });
+}
+if (kill.length) console.log("swept: " + kill.length + " rows against the house rules");
+
 console.log("written: " + written + " upserted"
-  + (refused ? ", " + refused + " refused (see above)" : "")
+  + (turnedAway ? ", " + turnedAway + " refused (see above)" : "")
   + ", past ticketmaster nights pruned before " + today);
-if (refused && !written) process.exit(1);
+if (turnedAway && !written) process.exit(1);
