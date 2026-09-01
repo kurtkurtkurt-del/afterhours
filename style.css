@@ -214,6 +214,12 @@ body:not([data-screen="0"]) .photo {
   pointer-events: none;
 }
 
+/* A synced night is a photograph: fill the same frame, crop, never squash */
+img.poster-image {
+  object-fit: cover;
+  background: #ececea;
+}
+
 /* The right column: two layers in the same place, fading into each other */
 .side {
   display: grid;
@@ -1306,6 +1312,21 @@ body[data-screen="3"] .sound { opacity: 0; pointer-events: none; }
   display: block;
   object-fit: cover;
   pointer-events: none;
+  background: #ececea;
+}
+
+/* A synced night with no photograph at all: a bare face, never borrowed art */
+.ex-card .no-art {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background: #ececea;
+  pointer-events: none;
+}
+
+.ex-box-row .no-art {
+  width: 32px;
+  height: 48px;
+  flex: 0 0 auto;
   background: #ececea;
 }
 

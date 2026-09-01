@@ -146,10 +146,12 @@ whole world, soonest first — and the explore filter opens on
 everywhere/everywhere. A synced night renders as an `<img>` (2:3, cropped
 with `object-fit: cover`) wherever a drawn night renders an `<object>`,
 and its event page is the shared shell `explore/event/?slug=...` — no
-folder is generated for it. The one page that does NOT go live is the
-landing: `index.html` carries `data-source="local"` on its data.js tag,
-because the poster wall, the counter and the globe are built around the
-drawn 2:3 artwork. The coverage (which cities exist at all) is
+folder is generated for it. The landing is live too, dealt a
+RANDOM worldwide hand: `data-sample="36"` on its data.js tag pulls a wide
+pool (`deck(null)`, limit 300), keeps only nights with a photograph, hangs
+a recurring show once, shuffles, and cuts to 36 — the wall shows the
+first 20, the globe the lot. The drawn posters remain only as the offline
+fallback and on the seed pages; they are being retired. The coverage (which cities exist at all) is
 `backend/sql/16_coverage.sql` — all of Europe, key Asia, North America —
 and it moves together with the city map in
 `backend/tools/sync-ticketmaster.mjs`.
@@ -440,7 +442,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **141**.
+The current version: **142**.
 
 ---
 

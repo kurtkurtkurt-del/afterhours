@@ -29,12 +29,21 @@
   const thenLoad = (thisScript.dataset.after || "")
     .split(",").map((s) => s.trim()).filter(Boolean);
 
-  /* data-source="local" pins a page to events-data.js even when the
-     backend is on. The landing page uses it: its poster wall, counter
-     and globe are built around the drawn 2:3 artwork, and the synced
-     nights are photographs — a different page, for another day. The
-     connection itself stays up (menu, session and seen() still work). */
-  const pinned = thisScript.dataset.source === "local";
+  /* data-sample="N" deals the page a RANDOM worldwide hand instead of
+     the deck's soonest-first order. The landing uses it: its wall wants
+     twenty nights from anywhere, not whatever happens to start next in
+     one timezone. A larger pool is fetched and shuffled here, because
+     the database orders, it does not gamble. */
+  const sample = parseInt(thisScript.dataset.sample || "", 10) || 0;
+  const SAMPLE_POOL = 300;
+
+  function shuffle(list) {
+    for (let i = list.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [list[i], list[j]] = [list[j], list[i]];
+    }
+    return list;
+  }
 
   const AH = (window.AH = window.AH || {});
   AH.config = CONFIG;
@@ -43,10 +52,12 @@
   /* Today the poster file is worked out from the position in the array
      (index + 1). Should the database ever return a short list, we write
      each record's own number onto it so the posters cannot shift.
-     A synced night carries a photograph instead of a drawn poster; it
-     must NOT be handed a number, or it would wear someone else's art. */
+     A synced night must NOT be handed a number — with or without a
+     photograph, it would be wearing someone else's art. */
   function numberEvents(list) {
-    list.forEach((e, i) => { if (!e.poster && !e.image) e.poster = i + 1; });
+    list.forEach((e, i) => {
+      if (!e.poster && !e.image && e.source !== "ticketmaster") e.poster = i + 1;
+    });
     return list;
   }
   AH.numberEvents = numberEvents;
@@ -215,7 +226,23 @@
      session.js there is nothing to wait for. */
   const session = Promise.resolve(AH.sessionReady || null).catch(() => null);
 
-  const ready = (!enabled || pinned)
+  /* The sampled hand: a wide worldwide pull, shuffled, cut to size.
+     Only nights with a photograph make the wall — a night without one
+     has nothing to hang — and a recurring show (the same title on ten
+     dates) hangs once, not three times. */
+  const askSample = () =>
+    AH.request("/rpc/deck", {
+      method: "POST",
+      body: JSON.stringify({ p_city: null, p_type: null, p_limit: SAMPLE_POOL }),
+    }).then((rows) => {
+      const byTitle = new Map();
+      shuffle(rows.filter((r) => r.image_url)).forEach((r) => {
+        if (!byTitle.has(r.title)) byTitle.set(r.title, r);
+      });
+      return [...byTitle.values()].slice(0, sample).map(rowToEvent);
+    });
+
+  const ready = !enabled
     ? fallBack(null)
     : session
         /* Carry the local swipes up to the account first, so the deck
@@ -223,7 +250,7 @@
         .then(() => (AH.signedIn && AH.signedIn() && AH.mergeSwipes
           ? AH.mergeSwipes().catch(() => 0)
           : null))
-        .then(() => AH.events())
+        .then(() => (sample ? askSample() : AH.events()))
         .then((list) => {
           if (!list.length) throw new Error("the database came back empty");
           window.POSTERS = numberEvents(list);

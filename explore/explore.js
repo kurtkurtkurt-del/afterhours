@@ -156,7 +156,9 @@
 
   /* The face of a card. A drawn night is an <object> (the SVG needs its
      webfonts, an <img> cannot fetch them); a synced night is a plain
-     photograph in an <img>, cropped to the same 2:3 frame. */
+     photograph in an <img>, cropped to the same 2:3 frame. A synced
+     night WITHOUT a photograph gets a bare grey face — never someone
+     else's drawn poster. */
   function posterElement(e, i) {
     if (e && e.image) {
       const img = document.createElement("img");
@@ -164,6 +166,9 @@
       img.alt = "";
       img.loading = "lazy";
       return img;
+    }
+    if (e && !e.poster && !e.posterPath) {
+      return Object.assign(document.createElement("div"), { className: "no-art" });
     }
     const no = String((e && e.poster) || i + 1).padStart(2, "0");
     const object = document.createElement("object");

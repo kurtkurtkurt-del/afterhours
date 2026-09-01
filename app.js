@@ -25,10 +25,11 @@ const lazyPosters = "IntersectionObserver" in window
   ? new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        const object = entry.target.querySelector("object");
-        if (object && object.dataset.src) {
-          object.data = object.dataset.src;
-          delete object.dataset.src;
+        const image = entry.target.querySelector("object, img");
+        if (image && image.dataset.src) {
+          if (image.tagName === "IMG") image.src = image.dataset.src;
+          else image.data = image.dataset.src;
+          delete image.dataset.src;
         }
         lazyPosters.unobserve(entry.target);
       });
@@ -39,21 +40,36 @@ SHOWN.forEach((p, i) => {
   // The poster number comes from the record itself, not from its position
   const no = String(p.poster || i + 1).padStart(2, "0");
 
-  // The frame: clickable, opens the event's own page in a new tab
+  // The frame: clickable, opens the event's own page in a new tab.
+  // A synced night has no folder; the shared shell reads its slug.
   const box = document.createElement("a");
   box.className = "poster";
-  box.href = "explore/" + p.slug + "/index.html";
+  box.href = p.image
+    ? "explore/event/?slug=" + encodeURIComponent(p.slug)
+    : "explore/" + p.slug + "/index.html";
   box.target = "_blank";
   box.rel = "noopener";
 
-  // The image: loaded as a separate SVG file, not embedded
-  const image = document.createElement("object");
+  /* The image. A synced night is a photograph in an <img>, cropped to
+     the frame; a drawn night stays an <object> (the SVG needs its own
+     webfonts, which an <img> cannot fetch). */
+  let image;
+  let path;
+  if (p.image) {
+    image = document.createElement("img");
+    image.alt = "";
+    path = p.image;
+  } else {
+    image = document.createElement("object");
+    image.type = "image/svg+xml";
+    path = p.posterPath || "posters/" + no + ".svg";
+  }
   image.className = "poster-image";
-  image.type = "image/svg+xml";
-  const path = p.posterPath || "posters/" + no + ".svg";
   if (lazyPosters && i >= EAGER) {
     image.dataset.src = path;
     lazyPosters.observe(box);
+  } else if (image.tagName === "IMG") {
+    image.src = path;
   } else {
     image.data = path;
   }
