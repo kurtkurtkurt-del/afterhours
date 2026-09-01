@@ -100,6 +100,8 @@
     const edition = 2 + Math.floor(rnd() * 11);
 
     area.textContent = "";
+    const stale = document.querySelector(".cs-earn");
+    if (stale) stale.remove();
 
     /* ---- the left rail ---- */
     const ray = el("aside", "cs-rail");
@@ -166,19 +168,12 @@
 
     /* ---- the right column ---- */
     const right = el("aside", "cs-right");
-    right.appendChild(el("p", "cs-label", "which friends are going"));
+    right.appendChild(el("p", "cs-label", "who is going · and how you know them"));
 
-    const who = el("ul", "cs-who");
-    const friends = shuffle(rnd, V.FRIEND_NAMES).slice(0, 5);
-    const states = V.STATES;
-    friends.forEach((name, i) => {
-      const row = el("li", states[i] === "can't" ? "out" : null);
-      row.appendChild(el("span", "cs-who-name", name));
-      row.appendChild(el("span", "cs-who-status", states[i]));
-      who.appendChild(row);
-    });
-    right.appendChild(who);
-    right.appendChild(el("p", "cs-tally", "3 going · 1 maybe · 1 out"));
+    const roster = buildRoster(rnd);
+    const friends = roster.map((p) => p.name);
+    right.appendChild(rosterList(roster));
+    right.appendChild(rosterTally(roster));
 
     const [button, sub] = V.TICKET[kind] || V.TICKET["Konzert"];
     const ticket = el("a", "cs-ticket", button);
@@ -208,8 +203,15 @@
     right.appendChild(comments);
     area.appendChild(right);
 
-    /* ---- what the night leaves you ---- */
-    area.appendChild(buildCard(e, m, kind, handPicked, rnd));
+    /* ---- what the night leaves you ----
+       Deliberately NOT a fourth item in the grid. A sticky column is
+       clamped to the grid CONTAINER, not to its own row, so as a grid
+       child the band had the poster and the column of faces sliding down
+       over the top of it — three sets of pictures on one screen with the
+       black underneath them. Outside the grid the columns can only reach
+       the end of the contact sheet, and the band is what comes after. */
+    const band = buildCard(e, m, kind, handPicked, rnd);
+    area.insertAdjacentElement("afterend", band);
   }
 
   /* If two texts share an uncommon word they are probably saying the
@@ -250,6 +252,112 @@
       k.appendChild(c);
     }
     return k;
+  }
+
+  /* --- who is going ---
+     Not everybody on this list is yours, and that is the entire reason to
+     look at it. Two of them you know. The rest arrive through somebody:
+     a friend of Emre, a friend of a friend of Kurt — people who are going
+     to the same room as you on the same night and are one introduction
+     away. "Somebody is going" is not information. "A friend of Emre is
+     going" is a plan.
+
+     There is always exactly one person two steps out, because that is the
+     one the section exists for. */
+  function buildRoster(rnd) {
+    const pool = shuffle(rnd, V.FRIEND_NAMES);
+    /* A fixed hand rather than five separate rolls: a night where nobody
+       is going, or everybody is, happens often enough with five coin
+       flips to make the column useless. */
+    const answers = shuffle(rnd, V.STATES);
+    const near = pool.slice(0, 2);
+    return [
+      { name: near[0], degree: 1, via: [] },
+      { name: near[1], degree: 1, via: [] },
+      { name: pool[2], degree: 2, via: [pick(rnd, near)] },
+      { name: pool[3], degree: 2, via: [pick(rnd, near)] },
+      { name: pool[4], degree: 3, via: [pick(rnd, near), pool[5]] },
+    ].map((p, i) => Object.assign(p, { status: answers[i] }));
+  }
+
+  /* How you reach them, spelled out. The first hop is the one worth
+     naming: it is the person you would actually ask. */
+  function relation(p) {
+    if (p.degree === 1) return "you two are friends";
+    if (p.degree === 2) return "friend of " + p.via[0].toLowerCase();
+    return "friend of friend of " + p.via[0].toLowerCase();
+  }
+
+  const face = (name) => {
+    const box = el("span", "cs-face");
+    if (window.AVATAR) box.innerHTML = AVATAR(name);
+    return box;
+  };
+
+  function rosterList(roster) {
+    const list = el("ul", "cs-who");
+
+    roster.forEach((p) => {
+      const row = el("li", "cs-who-row " +
+        (p.status === "can't" ? "out" : p.status === "kept it" ? "kept" : "in"));
+
+      const portrait = face(p.name);
+      portrait.classList.add("cs-who-face");
+      row.appendChild(portrait);
+
+      const body = el("span", "cs-who-body");
+      body.appendChild(el("span", "cs-who-name", p.name));
+
+      /* One slot, two things in it, both absolute: the handle at rest and
+         the path on hover. If the row grew a line instead, every row under
+         it would jump on the way past. */
+      const slot = el("span", "cs-who-slot");
+      slot.appendChild(el("span", "cs-who-rel", "@" + p.name.toLowerCase()));
+      slot.appendChild(chain(p));
+      body.appendChild(slot);
+      row.appendChild(body);
+
+      row.appendChild(el("span", "cs-who-status", p.status));
+      list.appendChild(row);
+    });
+
+    return list;
+  }
+
+  /* The path, drawn. You are the filled square — the same mark the after
+     hangs its bracket from — and every hop after it is a face. Seeing two
+     tiles between you and somebody says the thing faster than the sentence
+     beside it does. */
+  function chain(p) {
+    const box = el("span", "cs-chain");
+    box.appendChild(el("span", "cs-chain-you"));
+    [].concat(p.via, p.name).forEach((name) => {
+      box.appendChild(el("span", "cs-chain-link"));
+      const tile = face(name);
+      tile.classList.add("cs-chain-face");
+      box.appendChild(tile);
+    });
+    box.appendChild(el("span", "cs-chain-word", relation(p)));
+    return box;
+  }
+
+  /* Two lines under the list: what they answered, then how far away they
+     are. The second one is the new sentence — the room is not only your
+     own people. */
+  function rosterTally(roster) {
+    const count = (fn) => roster.filter(fn).length;
+    const box = document.createElement("div");
+    const going = count((p) => p.status === "going");
+    const kept = count((p) => p.status === "kept it");
+    const out = count((p) => p.status === "can't");
+    box.appendChild(el("p", "cs-tally", [
+      going + " going", kept && kept + " kept it", out && out + " can't",
+    ].filter(Boolean).join(" · ")));
+
+    const yours = count((p) => p.degree === 1);
+    box.appendChild(el("p", "cs-reach",
+      yours + " you know · " + (roster.length - yours) + " a step or two out"));
+    return box;
   }
 
   /* --- the after ---

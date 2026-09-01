@@ -126,7 +126,11 @@ window.EVENT_POOLS = (function () {
     "Bosse", "Ada", "Tuna", "Ilay", "Marek", "Juli", "Ege", "Rana",
   ];
 
-  const STATES = ["going", "going", "going", "maybe", "can't"];
+  /* What a person's answer to a night can be. "kept it" is the swipe and
+     nothing more: the card is in their collection, there is no ticket.
+     Three answers is the whole vocabulary — "maybe" was doing the work of
+     both of the first two and telling you neither. */
+  const STATES = ["going", "going", "going", "kept it", "can't"];
 
 
   /* --- what friends left on this night (beforehours) ---

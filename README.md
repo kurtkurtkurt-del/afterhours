@@ -262,8 +262,19 @@ night either, but this month's frame of something that keeps happening.
   cards are at the foot, and between them this has to read like a departure
   board rather than a third gallery.
 - **The right column** shows who is going first, then the ticket, then what
-  your friends said about that night, that room or that date.
-- **The band at the foot** is the only black on the page and the last thing
+  your friends said about that night, that room or that date. The list is
+  no longer only *your* friends, and that is the point of it: two of the
+  five you know, the rest arrive **through** somebody. Each row is a face,
+  a name, and an answer — `going`, `kept it` (the swipe, no ticket) or
+  `can't` — and the answer is also readable without reading, because a
+  face dims as the answer weakens. Hovering a row swaps the handle under
+  the name for **the path back to you**: you as a filled square, then a
+  small face per hop, then *friend of emre* or *friend of friend of kurt*.
+  Somebody is going is not information; a friend of Emre is going is a
+  plan. Where there is no pointer (`@media (hover: none)`) the path is
+  simply always the one showing.
+- **The band at the foot** is a sibling of the contact sheet, not a fourth
+  item in it (see the traps). It is the only black on the page and the last thing
   on it: paper, then the band, then the metal. It carries **both faces** of
   the card this night would leave you — the front is who stood there, the
   back is what the night sounded like and what got said in it. Nothing on
@@ -281,6 +292,7 @@ night either, but this month's frame of something that keeps happening.
 | The credit lines, the after rooms, paragraphs, price, ticket wording, comments | `explore/event-data.js` — **pools per kind** |
 | Which part lands on which night | **a mulberry32 seed made from the slug** |
 | The card's metal and motif | `featured.js` for a hand-picked night, otherwise the seed |
+| Everybody's face | `avatars.js` — drawn from the name, so a person keeps one |
 
 So an event shows the same thing every time it is opened, and no two events
 look alike. (`explore/comment-pools.js` uses the same pattern.)
@@ -299,6 +311,24 @@ simply has no after, which the section says out loud instead of inventing
 one. A night that ends in the afternoon waits for nine. Closing times are
 whole hours between four and eight hours out, so nothing shuts at two in
 the afternoon.
+
+### The faces
+
+Nobody has uploaded a photograph, and an initial in a box was standing in
+for one. `avatars.js` draws the placeholder instead: **a frame shot in a
+dark room** — one lamp, a silhouette cropped by the edge of the picture,
+and grain over the top. You can tell two people apart and you cannot see
+either of their faces, which is the honest amount to show for a night that
+has not happened. Everything comes from the name, so a person wears the
+same face on every page.
+
+The crop is the whole trick and it took three passes to learn it: a head
+that fits neatly inside a square, centred, with two clean shoulders under
+it **is** the little grey person every site shows when there is no
+photograph. So the head is drawn big enough that the frame cuts it, and it
+is placed in the outer thirds and never in the middle. When real
+photographs arrive the only thing to change is the `<img>` that replaces
+what this function returns.
 
 ### The unearned card
 
@@ -495,7 +525,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **161**.
+The current version: **162**.
 
 The explore date filter is real now (every synced night carries a true
 date): tonight / tomorrow / this weekend / this week / this month /
@@ -567,6 +597,12 @@ The order matters: each step closes the road the one before it opened.
 
 Every one of these cost us something:
 
+- **A sticky grid item is clamped to the grid CONTAINER, not to its own
+  row.** The card band began life as a fourth child of `.cs` spanning all
+  three columns, and the sticky poster and the sticky right column slid
+  straight down over the top of it — measured at 1111→1698 against a band
+  that started at 1243. The band is a sibling of the contact sheet now,
+  which also spared it the negative margins it needed to reach the edges.
 - **`filter` does not work on an SVG inside `<object>`** (it is a separate
   document). Anything that needs an SVG poster pulled to grey has to lay a
   `mix-blend-mode: saturation` layer over it instead.

@@ -2700,17 +2700,25 @@ body:has(> .foot:not(.thin)) > .foot { margin-top: auto; }
    only the editions you went to are further down. */
 .cs {
   display: grid;
-  grid-template-columns: 232px minmax(0, 1fr) 300px;
+  grid-template-columns: 232px minmax(0, 1fr) 336px;
   gap: 52px;
   align-items: start;
   max-width: 1400px;
   padding: 100px 32px 56px;
 }
 
-/* The rail: it stays where it is however far the page scrolls */
+/* The rail: it stays where it is however far the page scrolls — but it lets
+   go before the page runs out. A sticky column is pinned for the whole of
+   its grid row, so without this the poster and the column of faces were
+   still hanging at the top of the screen while the black band came up from
+   the bottom: three sets of pictures on one screen, none of them finished
+   with. The bottom margin ends the pinning early, and the band's own top
+   margin does the rest. Nothing is pushed by it — the middle column is
+   taller than both of these. */
 .cs-rail {
   position: sticky;
   top: 100px;
+  margin-bottom: 130px;
 }
 
 .cs-poster {
@@ -2991,33 +2999,132 @@ img.cs-poster {
 
 /* --- right column: who is coming, then the ticket --- */
 
-.cs-right { position: sticky; top: 100px; }
+.cs-right { position: sticky; top: 100px; margin-bottom: 130px; }
 
 .cs-who {
   list-style: none;
   border-top: 1px solid rgba(0, 0, 0, 0.14);
 }
 
-.cs-who li {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 8px 0;
+.cs-who-row {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
 
-.cs-who-name { font-size: 15px; letter-spacing: -0.01em; }
+/* A face: the generated frame from avatars.js, kept in a box with the same
+   hairline as everything else on this page so it sits on the paper rather
+   than floating above it. */
+.cs-face {
+  display: block;
+  overflow: hidden;
+  background: #e6e6e4;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.cs-face svg { display: block; width: 100%; height: 100%; }
+
+.cs-who-face { width: 42px; height: 42px; }
+
+/* The answer, read without reading it: someone who is coming is in full
+   light, someone who only kept the card is dimmer, someone who cannot make
+   it has nearly gone out. */
+.cs-who-row.kept .cs-who-face { opacity: 0.72; }
+.cs-who-row.out .cs-who-face { opacity: 0.3; }
+.cs-who-row.out .cs-who-name { opacity: 0.45; }
+
+.cs-who-body { min-width: 0; }
+
+.cs-who-name {
+  display: block;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+
+/* One slot holding two things, both taken out of the flow: the handle at
+   rest, the path on hover. A row that grew a line instead would shove every
+   row under it down on the way past. */
+.cs-who-slot {
+  position: relative;
+  display: block;
+  height: 17px;
+  margin-top: 3px;
+}
+
+.cs-who-rel,
+.cs-chain {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 17px;
+  white-space: nowrap;
+  transition: opacity 0.16s ease;
+}
+
+.cs-who-rel {
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  opacity: 0.4;
+}
+
+.cs-chain { opacity: 0; pointer-events: none; }
+
+.cs-who-row:hover .cs-who-rel,
+.cs-who-row:focus-within .cs-who-rel { opacity: 0; }
+
+.cs-who-row:hover .cs-chain,
+.cs-who-row:focus-within .cs-chain { opacity: 1; }
+
+/* Nothing hovers on a phone, and the path is the entire reason this column
+   was rebuilt. Where there is no pointer the chain is simply always the one
+   showing, and the handle is the thing you never see. */
+@media (hover: none) {
+  .cs-who-rel { opacity: 0; }
+  .cs-chain { opacity: 1; }
+}
+
+/* You are the filled square — the same mark the after hangs its bracket
+   from. Everything after it is a face, and the hairlines between them are
+   the introductions you would have to ask for. */
+.cs-chain-you {
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  background: var(--black);
+}
+
+.cs-chain-link {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.cs-chain-face { flex: 0 0 auto; width: 15px; height: 15px; }
+
+.cs-chain-word {
+  margin-left: 9px;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
 
 .cs-who-status {
+  align-self: center;
   font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   opacity: 0.45;
 }
-
-.cs-who li.none .cs-who-name { opacity: 0.4; }
 
 .cs-tally {
   margin-top: 10px;
@@ -3026,6 +3133,16 @@ img.cs-poster {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   opacity: 0.38;
+}
+
+/* The line the column is really for: how much of this room is not yours. */
+.cs-reach {
+  margin-top: 4px;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.55;
 }
 
 .cs-ticket {
@@ -3069,16 +3186,18 @@ img.cs-poster {
    page stops being paper and the card is metal. That is the whole reason
    the band is here rather than a fourth section in the middle column.
 
-   It spans all three columns and eats the page's own padding, so it runs
-   edge to edge and sits flush against the footer. */
+   It is a sibling of the contact sheet rather than a fourth item inside it.
+   As a grid child it looked right and behaved badly: a sticky column is
+   clamped to the grid CONTAINER and not to its own row, so the poster and
+   the column of faces slid down over the black. Out here the sheet ends
+   where the columns end, the band is what comes after, and it runs the full
+   width of the window on its own without a negative margin in sight. */
 .cs-earn {
-  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: minmax(0, auto) minmax(0, 1fr);
   align-items: start;
   gap: 40px 56px;
-  margin: 64px -32px -56px;
-  padding: 56px 32px 60px;
+  padding: 60px 32px 64px;
   background: var(--black);
   color: var(--white);
 }
@@ -3135,9 +3254,9 @@ img.cs-poster {
    the first screen. */
 @media (max-width: 1100px) {
   .cs { grid-template-columns: 216px minmax(0, 1fr); gap: 40px; }
-  .cs-rail { position: static; }
+  .cs-rail { position: static; margin-bottom: 0; }
   .cs-field { grid-row: 1 / span 2; grid-column: 2; }
-  .cs-right { grid-column: 1; position: static; margin-top: 26px; }
+  .cs-right { grid-column: 1; position: static; margin-top: 26px; margin-bottom: 0; }
 }
 
 @media (max-width: 900px) {
@@ -3173,9 +3292,7 @@ img.cs-poster {
   .cs-earn {
     grid-template-columns: minmax(0, 1fr);
     gap: 30px;
-    margin: 44px -16px -64px;
-    padding: 40px 16px 48px;
-    order: 5;
+    padding: 46px 16px 52px;
   }
 
   .cs-earn-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
