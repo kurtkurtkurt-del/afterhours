@@ -145,7 +145,7 @@ survive. The deck's default is now **everywhere** — `deck(null)` deals the
 whole world, soonest first — and the explore filter opens on
 everywhere/everywhere. A synced night renders as an `<img>` (2:3, cropped
 with `object-fit: cover`) wherever a drawn night renders an `<object>`,
-and its event page is the shared shell `explore/event/?slug=...` — no
+and its event page is the shared shell `explore/event/index.html?slug=...` — no
 folder is generated for it. The landing is live, and its wall is CURATED:
 `featured.js` names twenty hand-picked nights (01.10.2026 → 01.01.2027;
 the best covers, the most gloriously absurd, the loudest names — The
@@ -450,7 +450,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **144**.
+The current version: **145**.
 
 ---
 

@@ -143,7 +143,12 @@
       time: time,
       mins: MINS[e.slug] || 3 + (h % 42),
       colour: COLOUR[e.slug] || FALLBACK_COLOURS[h % FALLBACK_COLOURS.length],
-      page: "explore/" + e.slug + "/index.html",
+      /* A synced night has no folder of its own; the shared shell reads
+         the slug off the address (index.html written out — a bare folder
+         only resolves on a server). */
+      page: e.image
+        ? "explore/event/index.html?slug=" + encodeURIComponent(e.slug)
+        : "explore/" + e.slug + "/index.html",
     };
   });
   if (!NIGHTS.length) return;

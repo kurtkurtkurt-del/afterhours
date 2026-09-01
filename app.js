@@ -42,10 +42,12 @@ SHOWN.forEach((p, i) => {
 
   // The frame: clickable, opens the event's own page in a new tab.
   // A synced night has no folder; the shared shell reads its slug.
+  // index.html is written out, as everywhere on this site: a bare
+  // folder address only resolves on a server, not opened as a file.
   const box = document.createElement("a");
   box.className = "poster";
   box.href = p.image
-    ? "explore/event/?slug=" + encodeURIComponent(p.slug)
+    ? "explore/event/index.html?slug=" + encodeURIComponent(p.slug)
     : "explore/" + p.slug + "/index.html";
   box.target = "_blank";
   box.rel = "noopener";

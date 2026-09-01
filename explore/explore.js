@@ -71,8 +71,9 @@
       const a = document.createElement("a");
       a.className = "ex-box-row";
       /* A drawn night has a folder of its own; a synced one is served by
-         the shared shell, which reads the slug off the address. */
-      a.href = e.image ? "event/?slug=" + encodeURIComponent(e.slug)
+         the shared shell, which reads the slug off the address.
+         index.html written out: a bare folder only resolves on a server. */
+      a.href = e.image ? "event/index.html?slug=" + encodeURIComponent(e.slug)
                        : e.slug + "/index.html";
       a.appendChild(posterElement(e, CARDS.indexOf(e)));
       const text = document.createElement("div");
