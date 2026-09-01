@@ -39,7 +39,12 @@
   /* --- the handle --- */
 
   function loadHandle() {
-    AH.myProfile().then((p) => { if (p && p.handle) handleField.value = p.handle; });
+    AH.myProfile().then((p) => {
+      if (p && p.handle) {
+        handleField.value = p.handle;
+        handleStatus.textContent = "yours — change it if you like.";
+      }
+    });
   }
 
   /* What profile_setup() answers, in this page's words. */
@@ -237,6 +242,11 @@
     return;
   }
 
-  AH.sessionReady.then(render);
+  /* The handle, the friends and the kept pile need the DATA LAYER as
+     well as the session: every call behind them asks "is the mode
+     live", and data.js only settles that after its own fetch. Waiting
+     on the session alone was a race — signed in, the page could paint
+     with an empty handle and empty lists when the session won it. */
+  Promise.all([AH.sessionReady, AH.ready]).then(render);
   AH.onSessionChange(render);
 })();

@@ -63,8 +63,11 @@ async function argumentTypes(fn) {
      from pg_proc p join pg_namespace n on n.oid = p.pronamespace
      where n.nspname = 'public' and p.proname = $1 limit 1`, [fn]);
   const match = {};
-  if (r.rows.length && r.rows[0].adlar) {
-    const names = r.rows[0].adlar, types = r.rows[0].tipler;
+  /* .adlar/.tipler survived the English migration here — the SQL says
+     "as names/as types", so the map came back empty and every argument
+     fell to ::text. Nothing noticed until deck() gained an int argument. */
+  if (r.rows.length && r.rows[0].names) {
+    const names = r.rows[0].names, types = r.rows[0].types;
     names.forEach((a, i) => { if (a && types[i]) match[a] = types[i]; });
   }
   typeCache.set(fn, match);
