@@ -229,17 +229,46 @@
   /* The sampled hand: a wide worldwide pull, shuffled, cut to size.
      Only nights with a photograph make the wall — a night without one
      has nothing to hang — and a recurring show (the same title on ten
-     dates) hangs once, not three times. */
+     dates) hangs once, not three times.
+
+     When featured.js is on the page, its hand-picked twenty come FIRST,
+     in their written order; the random pool only fills what is left
+     (and the gaps the calendar tears — a featured night whose date has
+     passed is gone from the database, and the pool covers for it). */
+  const askFeatured = () => {
+    const wanted = (window.FEATURED || []).filter((f) => f.slug);
+    if (!wanted.length) return Promise.resolve([]);
+    const list = wanted.map((f) => '"' + f.slug + '"').join(",");
+    return AH.request("/events_public?slug=in.(" + encodeURIComponent(list) + ")")
+      .then((rows) => {
+        const bySlug = new Map(rows.map((r) => [r.slug, r]));
+        return wanted
+          .filter((f) => bySlug.has(f.slug))
+          .map((f) => {
+            const e = rowToEvent(bySlug.get(f.slug));
+            if (f.pos) e.pos = f.pos;
+            return e;
+          });
+      })
+      .catch(() => []);
+  };
+
   const askSample = () =>
-    AH.request("/rpc/deck", {
-      method: "POST",
-      body: JSON.stringify({ p_city: null, p_type: null, p_limit: SAMPLE_POOL }),
-    }).then((rows) => {
-      const byTitle = new Map();
-      shuffle(rows.filter((r) => r.image_url)).forEach((r) => {
-        if (!byTitle.has(r.title)) byTitle.set(r.title, r);
+    askFeatured().then((featured) => {
+      const taken = new Set(featured.map((e) => e.slug));
+      return AH.request("/rpc/deck", {
+        method: "POST",
+        body: JSON.stringify({ p_city: null, p_type: null, p_limit: SAMPLE_POOL }),
+      }).then((rows) => {
+        const byTitle = new Map();
+        shuffle(rows.filter((r) => r.image_url && !taken.has(r.slug))).forEach((r) => {
+          if (!byTitle.has(r.title)) byTitle.set(r.title, r);
+        });
+        const fill = [...byTitle.values()]
+          .slice(0, Math.max(0, sample - featured.length))
+          .map(rowToEvent);
+        return featured.concat(fill);
       });
-      return [...byTitle.values()].slice(0, sample).map(rowToEvent);
     });
 
   const ready = !enabled

@@ -65,6 +65,8 @@ SHOWN.forEach((p, i) => {
     path = p.posterPath || "posters/" + no + ".svg";
   }
   image.className = "poster-image";
+  /* A hand-picked cover may carry its own crop position (featured.js) */
+  if (p.pos) image.style.objectPosition = p.pos;
   if (lazyPosters && i >= EAGER) {
     image.dataset.src = path;
     lazyPosters.observe(box);

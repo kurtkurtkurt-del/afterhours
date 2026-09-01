@@ -146,8 +146,13 @@ whole world, soonest first — and the explore filter opens on
 everywhere/everywhere. A synced night renders as an `<img>` (2:3, cropped
 with `object-fit: cover`) wherever a drawn night renders an `<object>`,
 and its event page is the shared shell `explore/event/?slug=...` — no
-folder is generated for it. The landing is live too, dealt a
-RANDOM worldwide hand: `data-sample="36"` on its data.js tag pulls a wide
+folder is generated for it. The landing is live, and its wall is CURATED:
+`featured.js` names twenty hand-picked nights (01.10.2026 → 01.01.2027;
+the best covers, the most gloriously absurd, the loudest names — The
+Weeknd's After Hours Til Dawn leads, for the obvious reason) that hold
+the wall in written order until their dates pass; each entry may carry a
+`pos` (object-position) to seat its cover in the 2:3 frame. Whatever the
+calendar takes, a random hand covers: `data-sample="36"` on its data.js tag pulls a wide
 pool (`deck(null)`, limit 300), keeps only nights with a photograph, hangs
 a recurring show once, shuffles, and cuts to 36 — the wall shows the
 first 20, the globe the lot. The drawn posters remain only as the offline
@@ -442,7 +447,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **142**.
+The current version: **143**.
 
 ---
 
