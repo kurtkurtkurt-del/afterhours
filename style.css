@@ -2877,105 +2877,109 @@ img.cs-poster {
   opacity: 0.5;
 }
 
-/* The frames: one strip, five frames. Resident and guest in the same box — none
-   of them is a big name, they all came off the same roll. */
-.cs-frames {
+/* --- the after: a bracket that drops out of the closing time ---
+
+   Four columns and no pictures. The second column is 1px of nothing that
+   carries the whole drawing: a vertical rule down its left edge and a tick
+   across it at the height of the mark. Because the rows sit against each
+   other with no gap, those fragments join into one continuous bracket
+   whatever the rows are — the line never has to be measured. */
+.cs-rooms {
   list-style: none;
+  margin-top: 6px;
+}
+
+.cs-room {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 7px;
+  grid-template-columns: 54px 20px minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 0;
+  min-height: 52px;
 }
 
-/* The exposure: the frame itself. Every frame is a different band of the poster
-   — four frames, four bands, all from one roll. Black and white, like a contact
-   sheet. <object> rather than <img>: that is the only way an SVG poster can load
-   its own type (a webfont never arrives inside an img). */
-.cs-shot {
+.cs-room-rule {
   position: relative;
-  aspect-ratio: 3 / 2;
-  overflow: hidden;
-  background: #ececea;
-  border: 1px solid rgba(0, 0, 0, 0.16);
+  align-self: stretch;
 }
 
-.cs-shot-img {
-  position: absolute;
-  left: 0;
-  top: calc(var(--shift, 0) * -1%);
-  width: 100%;
-  aspect-ratio: 2 / 3;
-  height: auto;
-  pointer-events: none;
-}
-
-/* The photograph version keeps the same four-band trick, cropped */
-.cs-shot-img.photo {
-  object-fit: cover;
-}
-
-/* The poster is in colour, a contact sheet is not. `filter` does not reach the
-   document INSIDE an <object> (it is a separate document), so instead we lay a
-   black layer over the frame with the "saturation" blend mode: it pulls the
-   colour out and leaves the brightness. */
-.cs-shot:not(.empty)::after {
+/* the vertical */
+.cs-room-rule::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: #000;
-  mix-blend-mode: saturation;
-  pointer-events: none;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.16);
 }
 
-/* An empty frame is information too: not having been announced is not a mistake */
-.cs-shot.empty {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f4f4f2;
-  border-color: rgba(0, 0, 0, 0.08);
+/* the tick into the room */
+.cs-room-rule::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 20px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+/* The bracket hangs from the first mark and stops at the last: above the
+   one and below the other there is nothing to hold. */
+.cs-room.origin .cs-room-rule::before { top: 50%; }
+.cs-room:last-child .cs-room-rule::before { bottom: 50%; }
+
+/* This night going dark is a filled square, not a branch — the same mark
+   the cards use for something that has happened. */
+.cs-room.origin .cs-room-rule::after {
+  left: -2px;
+  top: calc(50% - 2px);
+  width: 5px;
+  height: 5px;
+  background: var(--black);
+}
+
+.cs-room-time {
   font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10px;
   letter-spacing: 0.14em;
-  opacity: 0.4;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.5;
 }
 
-.cs-no {
+.cs-room-body { min-width: 0; padding-left: 14px; }
+
+.cs-room-name {
   display: block;
-  margin-top: 7px;
-  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.14em;
-  opacity: 0.3;
+  font-size: 15px;
+  letter-spacing: -0.01em;
 }
 
-.cs-role {
-  margin-top: 5px;
+.cs-room-kind {
+  display: block;
+  margin-top: 3px;
   font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 9px;
+  font-size: 9.5px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   opacity: 0.45;
 }
 
-.cs-name {
-  margin-top: 3px;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.12;
-}
-
-.cs-clock {
-  margin-top: 3px;
+.cs-room-walk {
   font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 9px;
+  font-size: 9.5px;
   letter-spacing: 0.14em;
-  opacity: 0.45;
+  text-transform: uppercase;
+  text-align: right;
+  white-space: nowrap;
+  opacity: 0.38;
 }
 
-.cs-frame.empty .cs-name { opacity: 0.3; }
-.cs-frame.empty .cs-role,
-.cs-frame.empty .cs-clock { opacity: 0.3; }
+/* The night this page is about is stated, not offered */
+.cs-room.origin .cs-room-name {
+  font-size: 13px;
+  opacity: 0.4;
+}
 
 .cs-note {
   margin-top: 16px;
@@ -3087,7 +3091,6 @@ img.cs-poster {
   .cs-rail { position: static; }
   .cs-field { grid-row: 1 / span 2; grid-column: 2; }
   .cs-right { grid-column: 1; position: static; margin-top: 26px; }
-  .cs-frames { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 900px) {
@@ -3108,7 +3111,14 @@ img.cs-poster {
   .cs-right { order: 3; max-width: none; }
   .cs-facts { order: 4; margin-top: 0; }
 
-  .cs-frames { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  /* The bracket keeps its shape on a phone — it is four short columns, and
+     four short columns fit. Only the measurements tighten. Dropping the walk
+     onto a second line was tried and it broke the rule into segments. */
+  .cs-room { grid-template-columns: 46px 16px minmax(0, 1fr) auto; min-height: 46px; }
+  .cs-room-rule::after { width: 16px; }
+  .cs-room-body { padding-left: 11px; }
+  .cs-room-name { font-size: 14px; }
+  .cs-room-walk { font-size: 9px; letter-spacing: 0.1em; }
   .cs-title { font-size: min(11vw, 52px); }
   .cs-text, .cs-note { max-width: none; }
   .cs-past { gap: 12px; }

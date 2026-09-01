@@ -241,8 +241,8 @@ night either, but this month's frame of something that keeps happening.
 │ curfew   │                                │ get the      │
 │ capacity │ three paragraphs               │ ticket       │
 │ door     │                                │  ↓           │
-│ payment  │ THE ROLL — five frames, one    │ beforehours  │
-│ photos   │ empty  [][][][ ][]             │ · friends    │
+│ payment  │ THE AFTER — a bracket out of   │ beforehours  │
+│ photos   │ the closing time  ■─┬──┬──┘     │ · friends    │
 │ walk     │                                │              │
 │ room     │ ─ the first screen ends here ─ │              │
 │ from     │ editions you were at (cards)   │              │
@@ -251,12 +251,13 @@ night either, but this month's frame of something that keeps happening.
 
 - **The left rail** stays put as the page scrolls. Deliberately dull: the
   identity of a series is not in what changes but in what does not. Only
-  the things that are the same every edition live here — **the times are
-  not here, they are in the frames.**
-- **The frames** are all the same size. The resident and the guest sit in
-  the same box; nobody is the big name, they all came off the same roll.
-  The fourth frame is empty: "not shot yet / fills at the door". An empty
-  frame is information too.
+  the things that are the same every edition live here.
+- **The after** is the section this page exists for. A bracket drops out of
+  the moment the room empties and every branch is a room that is still
+  open, in the order they open — the time is the story, the walk is a
+  footnote. No pictures in it on purpose: the poster is on the rail and the
+  cards are at the foot, and between them this has to read like a departure
+  board rather than a third gallery.
 - **The right column** shows who is going first, then the ticket, then what
   your friends said about that night, that room or that date.
 - **Below** are the past editions you were at — as real afterhours cards.
@@ -266,24 +267,32 @@ night either, but this month's frame of something that keeps happening.
 | Part | Source |
 |---|---|
 | Title, kind, meta, first paragraph, poster | The event's own data (`POSTERS`) |
-| The credit lines, roles, names, paragraphs, price, ticket wording, comments | `explore/event-data.js` — **pools per kind** |
+| The credit lines, the after rooms, paragraphs, price, ticket wording, comments | `explore/event-data.js` — **pools per kind** |
 | Which part lands on which night | **a mulberry32 seed made from the slug** |
 
 So an event shows the same thing every time it is opened, and no two events
 look alike. (`explore/comment-pools.js` uses the same pattern.)
 
 What changes per kind — konzert says `get the ticket`, rave `get on the
-list`, hausparty `ask for the address`, meetup `save a seat`; the roles
-`dj set / support / headline` become `kitchen / living room / balcony`; the
-credits say `bring something` instead of `card only`.
+list`, hausparty `ask for the address`, meetup `save a seat`; how long the
+night runs before the after starts counting (`RUNS`: a konzert three hours,
+a rave eight); the credits say `bring something` instead of `card only`.
 
-### Why the frames are cut from the poster
+### How the after keeps its clock
 
-There are no real photographs. Every frame is **another band of the event's
-own poster** (`--shift: 0 / 42 / 83 / 125`, poster 2:3, frame 3:2). Because
-every night's poster is different, so is every roll. It is pulled to black
-and white. When real photographs arrive, the only thing to do is change
-where the frame gets its source in `event.js`.
+Doors plus the run of the kind is when the room empties, and the bracket
+hangs off that. A room may only open between **21:00 and 04:00** — past
+four nothing opens any more, and a night that already ran into the morning
+simply has no after, which the section says out loud instead of inventing
+one. A night that ends in the afternoon waits for nine. Closing times are
+whole hours between four and eight hours out, so nothing shuts at two in
+the afternoon.
+
+**The rooms are invented for now** (`AFTERS` in `explore/event-data.js`) —
+they are placeholders, not real venues. The moment the after is wired to
+the deck they come out of our own events: same city, same night, a later
+start. Nothing in the section is booked with the ticket, which is the
+entire point of it.
 
 ### Adding a new event
 
@@ -460,7 +469,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **159**.
+The current version: **160**.
 
 The explore date filter is real now (every synced night carries a true
 date): tonight / tomorrow / this weekend / this week / this month /
@@ -521,7 +530,8 @@ The order matters: each step closes the road the one before it opened.
    means, and generating the cards.
 3. **Filling in the legal pages** — the square brackets and a real Stand
    date.
-4. **Real photographs** — real frames instead of bands of the poster.
+4. **The after, wired to the deck** — the rooms come out of our own events
+   (same city, same night, a later start) instead of the placeholder pool.
 5. **The third help number** — impossible before the card collection
    exists; the first two are live now.
 
@@ -532,8 +542,8 @@ The order matters: each step closes the road the one before it opened.
 Every one of these cost us something:
 
 - **`filter` does not work on an SVG inside `<object>`** (it is a separate
-  document). What makes the frames grey is a `mix-blend-mode: saturation`
-  layer.
+  document). Anything that needs an SVG poster pulled to grey has to lay a
+  `mix-blend-mode: saturation` layer over it instead.
 - **An SVG inside `<img>` cannot load a webfont.** That is why the posters
   come through `<object>`; and `<object>` in turn wants
   `pointer-events: none`.

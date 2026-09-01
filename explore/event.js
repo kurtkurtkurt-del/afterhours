@@ -160,55 +160,8 @@
     [e.body, pool[0], pool[1]].filter(Boolean).forEach((p) =>
       middle.appendChild(el("p", "cs-text", p)));
 
-    /* ---- the frames ---- */
-    const section = el("section", "cs-section");
-    section.appendChild(el("p", "cs-label", "the roll · five frames, one still blank"));
-
-    const roles = V.ROLES[kind] || [];
-    const names = shuffle(rnd, V.NAMES[kind] || []);
-    const times = buildTimes(m.time, kind, rnd);
-    const strip = el("ol", "cs-frames");
-
-    for (let i = 0; i < 5; i++) {
-      const frame = el("li", "cs-frame" + (i === 3 ? " empty" : ""));
-      const shot = el("div", "cs-shot" + (i === 3 ? " empty" : ""));
-
-      if (i === 3) {
-        shot.textContent = "not shot yet";
-      } else if (e.image) {
-        /* Four bands of the photograph, the same trick as the poster. */
-        const img = document.createElement("img");
-        img.className = "cs-shot-img photo";
-        img.src = e.image;
-        img.alt = "";
-        img.style.setProperty("--shift", [0, 42, 83, 125][i > 3 ? 3 : i]);
-        shot.appendChild(img);
-      } else {
-        /* A frame is a band of the poster. Four frames, four different bands. */
-        const img = document.createElement("object");
-        img.className = "cs-shot-img";
-        img.type = "image/svg+xml";
-        img.data = posterPath;
-        img.style.setProperty("--shift", [0, 42, 83, 125][i > 3 ? 3 : i]);
-        shot.appendChild(img);
-      }
-
-      frame.appendChild(shot);
-      frame.appendChild(el("span", "cs-no", String(i + 1).padStart(2, "0")));
-      frame.appendChild(el("p", "cs-role", roles[i] || ""));
-      frame.appendChild(el("p", "cs-name",
-        i === 3 ? "not announced" : (i === 2 ? e.title : names[i] || "—")));
-      /* The empty frame has NO time: it fills the moment the door opens.
-            Printing a number repeated the time on another frame. */
-      frame.appendChild(el("p", "cs-clock",
-        i === 3 ? "fills at the door" : times[i] || ""));
-      strip.appendChild(frame);
-    }
-
-    section.appendChild(strip);
-    section.appendChild(el("p", "cs-note",
-      "An empty frame is not a gap. Nothing is announced until the doors are open."));
-    middle.appendChild(section);
+    /* ---- the after ---- */
+    middle.appendChild(buildAfter(m, kind, rnd));
 
     /* ---- the editions you were at ---- */
     const past = el("section", "cs-section cs-section-past");
@@ -309,6 +262,127 @@
       k.appendChild(c);
     }
     return k;
+  }
+
+  /* --- the after ---
+     The night does not end when the room empties, and this is the one
+     section on the page that is about the hours nobody sells a ticket
+     for. A bracket drops out of the closing time and every branch is a
+     room that is still open, in the order they open: the time is the
+     story, the walk is a footnote.
+
+     No photograph on purpose. The poster is already on the rail and the
+     card is at the foot of the page — between them this has to read like
+     a departure board, not a third gallery. */
+  function buildAfter(m, kind, rnd) {
+    const section = el("section", "cs-section cs-after");
+    section.appendChild(el("p", "cs-label",
+      "the after · what is still open when this one ends"));
+
+    /* Doors plus the run of its kind. A night with no time on it is read
+       as a late one when it is a floor, an evening one otherwise. */
+    const doors = minutes(m.time, kind === "Rave" || kind === "Club Night" ? 23 * 60 : 20 * 60);
+    const first = firstDoor(doors + (V.RUNS[kind] || 3) * 60);
+
+    /* Three rooms, and never three of the same sort: a bracket that says
+       AFTER three times over is a list, not a choice. */
+    const rooms = [];
+    const sorts = {};
+    for (const room of shuffle(rnd, V.AFTERS || [])) {
+      if (rooms.length >= 3) break;
+      if ((sorts[room[1]] || 0) >= 2) continue;
+      sorts[room[1]] = (sorts[room[1]] || 0) + 1;
+      rooms.push(room);
+    }
+
+    const list = el("ol", "cs-rooms");
+    /* The first mark is this night going dark — the bracket has to hang
+       off something, and that something is the event you are reading. */
+    list.appendChild(roomRow({
+      time: clock(doors + (V.RUNS[kind] || 3) * 60), name: "this one ends", origin: true,
+    }));
+
+    let drawn = 0;
+    rooms.forEach((room, i) => {
+      const opens = first === null ? null : first + i * 60;
+      /* Past four in the morning nothing opens any more. A night that
+         already ran that long simply has no after, and the bracket is
+         allowed to be one mark long. */
+      if (opens === null || !atNight(opens)) return;
+      list.appendChild(roomRow({
+        time: clock(opens),
+        name: room[0],
+        sort: room[1],
+        until: clock(closing(opens, rnd)),
+        walk: (6 + Math.floor(rnd() * 20)) + " min on foot",
+      }));
+      drawn++;
+    });
+    section.appendChild(list);
+
+    section.appendChild(el("p", "cs-note", drawn
+      ? "None of it is booked with the ticket. It is only what is still " +
+        "standing when the lights come up here."
+      : "Nothing opens after this one. The night ends where it ends."));
+    return section;
+  }
+
+  /* Whether a whole hour falls in the hours a room can be entered:
+     nine in the evening until four in the morning. */
+  function atNight(mins) {
+    const h = Math.floor((((mins % 1440) + 1440) % 1440) / 60);
+    return h >= 21 || h < 4;
+  }
+
+  /* When the first room can take you, counted from the moment this one
+     empties. Inside the night: straight away. Late afternoon or evening:
+     it waits for nine. Morning — the night has already been had, and the
+     answer is that there is no after. */
+  function firstDoor(ends) {
+    if (atNight(ends)) return Math.floor(ends / 60) * 60;
+    const h = Math.floor((((ends % 1440) + 1440) % 1440) / 60);
+    if (h < 12) return null;
+    return ends - (ends % 1440) + 21 * 60;
+  }
+
+  /* When the room shuts: a real closing on the clock, four to eight hours
+     out. A room that opens at nine and shuts at nine is not a room. */
+  function closing(opens, rnd) {
+    const open = Math.floor((((opens % 1440) + 1440) % 1440) / 60);
+    const spans = [];
+    for (let h = 4; h <= 9; h++) {
+      const span = (h - open + 24) % 24;
+      if (span >= 4 && span <= 8) spans.push(span);
+    }
+    return opens + (spans.length ? pick(rnd, spans) : 5) * 60;
+  }
+
+  /* One row of the bracket. The empty span in the middle is not empty:
+     the rule and its tick are drawn on it, and a row that is the last one
+     stops the rule at its own mark. */
+  function roomRow(r) {
+    const row = el("li", "cs-room" + (r.origin ? " origin" : ""));
+    row.appendChild(el("span", "cs-room-time", r.time));
+    row.appendChild(el("span", "cs-room-rule"));
+    const body = el("span", "cs-room-body");
+    body.appendChild(el("span", "cs-room-name", r.name));
+    if (r.sort) body.appendChild(el("span", "cs-room-kind", r.sort + " · until " + r.until));
+    row.appendChild(body);
+    if (r.walk) row.appendChild(el("span", "cs-room-walk", r.walk));
+    return row;
+  }
+
+  /* "20:00" → minutes since midnight, and back again past midnight:
+     a night that runs to 04:00 must not print 28:00. */
+  function minutes(time, fallback) {
+    const m = /^(\d{1,2}):(\d{2})/.exec(time || "");
+    return m ? +m[1] * 60 + +m[2] : fallback;
+  }
+
+  function clock(mins) {
+    const m = ((mins % 1440) + 1440) % 1440;
+    return String(Math.floor(m / 60)).padStart(2, "0") + ":" +
+           String(m % 60).padStart(2, "0");
   }
 
   /* The preview chip on the poster: the act's most famous song, served
@@ -441,20 +515,6 @@
     const a = PRICE[kind];
     if (!a) return "free";
     return "€" + (a[0] + Math.floor(rnd() * (a[1] - a[0])));
-  }
-
-  /* Starting from the door time, we build the times of the five frames. */
-  function buildTimes(doors, kind, rnd) {
-    const m = /^(\d{1,2}):(\d{2})/.exec(doors || "");
-    let mins = m ? +m[1] * 60 + +m[2] : (kind === "Rave" || kind === "Club Night" ? 23 * 60 : 19 * 60);
-    const gap = kind === "Meetup" ? 45 : 60 + Math.floor(rnd() * 30);
-    const out = [];
-    for (let i = 0; i < 5; i++) {
-      mins += i === 0 ? 15 : gap;
-      const s = Math.floor(mins / 60) % 24;
-      out.push(String(s).padStart(2, "0") + ":" + String(mins % 60).padStart(2, "0"));
-    }
-    return out;
   }
 
   const METAL_LIST = ["steel", "chrome", "gunmetal", "titanium", "nickel", "anthracite", "brass", "copper"];

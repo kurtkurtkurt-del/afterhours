@@ -38,24 +38,33 @@ window.EVENT_POOLS = (function () {
     ],
   };
 
-  /* --- the roles in the frames --- */
-  const ROLES = {
-    "Konzert":    ["dj set", "support", "headline", "special guest", "after"],
-    "Festival":   ["opening", "second stage", "headline", "special guest", "closing"],
-    "Rave":       ["opening", "resident", "b2b", "special guest", "closing"],
-    "Club Night": ["warm up", "resident", "main floor", "special guest", "back room"],
-    "Hausparty":  ["kitchen", "living room", "balcony", "whoever brings it", "last hour"],
-    "Meetup":     ["host", "table one", "table two", "whoever turns up", "afterwards"],
-  };
+  /* --- the after: what is still open once a night ends ---
+     Rooms, not line-ups. They are invented while the after is a sketch;
+     the moment it is wired to the deck they come out of our own events —
+     same city, same night, later start. Nothing here is booked with the
+     event, which is the whole point of the section. */
+  const AFTERS = [
+    ["Basement Nine", "club night"],
+    ["Room Two", "after"],
+    ["The Late Hold", "club night"],
+    ["Concrete Garden", "rave"],
+    ["Blue Hour", "after"],
+    ["Third Floor", "club night"],
+    ["Nightform", "rave"],
+    ["The Annex", "after"],
+    ["Long Player", "club night"],
+    ["Back Room Radio", "after"],
+    ["Six Til Late", "club night"],
+    ["The Slow Room", "after"],
+  ];
 
-  /* --- the names that land in the frames --- */
-  const NAMES = {
-    "Konzert": ["Keys Open Doors", "Lou Capri", "Neon Ferry", "Vera Sound", "Club Set", "Hall Light", "The Long Way"],
-    "Festival": ["Morgenrot", "Feldweg", "Zwei Uhr", "Sonnenbank", "Waldbühne DJs", "Letzte Bahn", "Platzregen"],
-    "Rave": ["Kessel", "Nachtform", "Untertag", "Halle 4", "Bitterfeld", "Stahlbad", "Nordwand"],
-    "Club Night": ["Spätdienst", "Marmor", "Kleiner Raum", "Grauzone", "Radio Süd", "Zwischenwand"],
-    "Hausparty": ["Someone's brother", "The record box", "Two speakers", "Whoever cooks", "The stairwell"],
-    "Meetup": ["Ida", "Bosse", "Nele & Tim", "The quiet table", "Whoever stays"],
+  /* --- how long a night of each kind runs, in hours ---
+     Doors plus this is when the room empties, and the after starts
+     counting from there. A rave does not need an after at midnight; it
+     needs one at six. */
+  const RUNS = {
+    "Konzert": 3, "Festival": 7, "Rave": 8,
+    "Club Night": 6, "Hausparty": 5, "Meetup": 3,
   };
 
   /* --- the introduction paragraphs ---
@@ -182,5 +191,5 @@ window.EVENT_POOLS = (function () {
 
   const WHEN = ["3 days ago", "2 days ago", "yesterday", "9 h ago", "6 h ago", "3 h ago"];
 
-  return { FACTS, ROLES, NAMES, BODY, TICKET, FRIEND_NAMES, STATES, COMMENTS, WHEN };
+  return { FACTS, AFTERS, RUNS, BODY, TICKET, FRIEND_NAMES, STATES, COMMENTS, WHEN };
 })();
