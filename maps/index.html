@@ -20,8 +20,8 @@
   <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png" />
   <link rel="manifest" href="../manifest.webmanifest" />
-  <link rel="stylesheet" href="../fonts/fonts.css?v=149" />
-  <link rel="stylesheet" href="../style.css?v=149" />
+  <link rel="stylesheet" href="../fonts/fonts.css?v=150" />
+  <link rel="stylesheet" href="../style.css?v=150" />
 </head>
 <body>
 
@@ -39,12 +39,16 @@
     </nav>
   </header>
 
-  <main id="content" tabindex="-1" class="map">
+  <main id="content" tabindex="-1" class="map closed">
 
     <div class="map-text">
       <h1 class="map-title">go local.</h1>
       <p class="map-sub" id="map-sub">the city, roughly. hover a dot.</p>
     </div>
+
+    <!-- The web version is closed: the schematic stays faded behind the
+         one line that says where maps lives now. -->
+    <p class="map-closed">only available in the app.</p>
 
     <!-- The city schematic: drawn by hand, not to scale. The Isar, the
          ring, the park and a few neighbourhoods — just enough to make
@@ -123,13 +127,13 @@
     </nav>
   </footer>
 
-  <script src="../config.js?v=149"></script>
-  <script src="../session.js?v=149"></script>
-  <script src="../venues.js?v=149"></script>
-  <script src="../data.js?v=149"
-          data-fallback="../events-data.js?v=149"
-          data-after="map.js?v=149"></script>
-  <script src="../menu.js?v=149"></script>
+  <script src="../config.js?v=150"></script>
+  <script src="../session.js?v=150"></script>
+  <script src="../venues.js?v=150"></script>
+  <script src="../data.js?v=150"
+          data-fallback="../events-data.js?v=150"
+          data-after="map.js?v=150"></script>
+  <script src="../menu.js?v=150"></script>
 
 </body>
 </html>

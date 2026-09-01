@@ -2025,6 +2025,32 @@ html:has(body.explore) {
   inset: 72px 24px 52px;
 }
 
+/* --- maps is closed on the web ---
+   The schematic stays, faded to a memory, and nothing on it answers;
+   one line in the middle says where it lives now. */
+.map.closed .map-schema-box {
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+.map.closed .map-sub { display: none; }   /* hover advice would be a lie */
+.map.closed .map-footline { display: none; }   /* so would the tally */
+
+.map-closed {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  pointer-events: none;
+  font-size: min(5.2vw, 44px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
 .map-schema { width: 100%; height: 100%; display: block; }
 
 /* --- the lines of the schematic --- */
