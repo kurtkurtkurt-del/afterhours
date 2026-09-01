@@ -117,7 +117,16 @@
       poster.type = "image/svg+xml";
       poster.data = posterPath;
     }
-    ray.appendChild(poster);
+    /* The frame exists so the preview chip can sit ON the poster —
+       nothing on the page moves for it. */
+    const frame = el("div", "cs-poster-frame");
+    frame.appendChild(poster);
+    ray.appendChild(frame);
+
+    /* A hand-picked night carries its most famous song (featured.js,
+       when the page loads it); the chip plays the Apple Music preview. */
+    const handPicked = (window.FEATURED || []).find((f) => f.slug === e.slug);
+    if (handPicked && handPicked.song && handPicked.artist) previewChip(frame, handPicked);
 
     const facts = el("dl", "cs-facts");
     if (m.time) facts.appendChild(factRow("doors", m.time));
@@ -300,6 +309,66 @@
       k.appendChild(c);
     }
     return k;
+  }
+
+  /* The preview chip on the poster: the act's most famous song, served
+     from the Apple Music preview Apple hands out for exactly this
+     purpose — the small arrow beside it leads to the store, as they
+     ask. The URL is fetched right away so the first press plays; if
+     Apple has nothing, the chip quietly leaves. */
+  function previewChip(frame, f) {
+    const chip = el("div", "cs-preview");
+    const button = el("button", "cs-preview-button");
+    button.type = "button";
+    button.appendChild(el("span", "cs-preview-icon"));
+    const label = el("span", null, "preview artist");
+    button.appendChild(label);
+    chip.appendChild(button);
+
+    const line = el("div", "cs-preview-line");
+    const fill = document.createElement("span");
+    line.appendChild(fill);
+
+    let audio = null;
+
+    fetch("https://itunes.apple.com/search?media=music&entity=song&limit=1&term=" +
+        encodeURIComponent(f.artist + " " + f.song))
+      .then((r) => r.json())
+      .then((j) => {
+        const hit = j.results && j.results[0];
+        if (!hit || !hit.previewUrl) throw new Error("no preview");
+        audio = new Audio(hit.previewUrl);
+        audio.addEventListener("timeupdate", () => {
+          if (audio.duration) fill.style.width = (audio.currentTime / audio.duration) * 100 + "%";
+        });
+        audio.addEventListener("play", () => {
+          chip.classList.add("playing");
+          label.textContent = f.song.toLowerCase();
+        });
+        audio.addEventListener("pause", () => chip.classList.remove("playing"));
+        audio.addEventListener("ended", () => {
+          fill.style.width = "0";
+          label.textContent = "preview artist";
+        });
+        if (hit.trackViewUrl) {
+          const store = el("a", "cs-preview-store", "↗");
+          store.href = hit.trackViewUrl;
+          store.target = "_blank";
+          store.rel = "noopener";
+          store.title = "on apple music";
+          chip.appendChild(store);
+        }
+      })
+      .catch(() => { chip.remove(); line.remove(); });
+
+    button.addEventListener("click", () => {
+      if (!audio) return;
+      if (audio.paused) audio.play();
+      else audio.pause();
+    });
+
+    frame.appendChild(chip);
+    frame.appendChild(line);
   }
 
   const PRICE = {

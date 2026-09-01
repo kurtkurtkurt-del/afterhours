@@ -2657,6 +2657,81 @@ img.cs-poster {
   background: #ececea;
 }
 
+/* --- the preview chip ON the poster (hand-picked nights only) ---
+   Absolute inside the frame, so the page gains no height for it. */
+.cs-poster-frame {
+  position: relative;
+}
+
+.cs-preview {
+  position: absolute;
+  left: 10px;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--black);
+}
+
+.cs-preview-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--black);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cs-preview-icon {
+  width: 0;
+  height: 0;
+  border-left: 7px solid var(--black);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  flex: 0 0 auto;
+}
+
+/* A pause mark instead of a triangle while it plays — the same trick
+   as the sound rows on the landing page */
+.cs-preview.playing .cs-preview-icon {
+  width: 7px;
+  height: 10px;
+  border: none;
+  background: linear-gradient(to right,
+    var(--black) 0 2.5px, transparent 2.5px 4.5px, var(--black) 4.5px 7px);
+}
+
+.cs-preview-store {
+  padding: 7px 10px 7px 2px;
+  color: var(--black);
+  text-decoration: none;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+}
+
+/* How far in the song is: a hairline along the poster's bottom edge */
+.cs-preview-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+}
+
+.cs-preview-line span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--black);
+}
+
 /* The colophon: all of it in one language, one size, one order. Deliberately
    boring — a series is identified by what does not change, not by what does.
    ONLY the things that are the same in every edition are here; the times are on
@@ -2958,7 +3033,8 @@ img.cs-poster {
      then the night itself, the colophon last. Otherwise reaching the event's
      name meant passing ten lines of colophon. */
   .cs-rail { display: contents; }
-  .cs-poster { order: 1; max-width: 190px; }
+  .cs-poster-frame { order: 1; max-width: 190px; }
+  .cs-poster { max-width: 190px; }
   .cs-field { order: 2; width: 100%; }
   .cs-right { order: 3; max-width: none; }
   .cs-facts { order: 4; margin-top: 0; }

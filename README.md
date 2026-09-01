@@ -154,7 +154,12 @@ the wall in written order until their dates pass; each entry may carry a
 `pos` (object-position) to seat its cover in the 2:3 frame, and a `body`
 — the line the hover panel speaks for that night, each of the twenty in
 a different register (a customs form, a shipping forecast, a bug ticket,
-a diplomatic cable...). Whatever the
+a diplomatic cable...) — and an `artist` + `song`: the act's most famous
+track, hand-picked. On the event page a small chip sits ON the poster
+(no height added) and plays the Apple Music preview of that song — no
+key, no account; the arrow beside it leads to the store, which is the
+use Apple hands the previews out for. The two non-music nights carry no
+song and show no chip. Whatever the
 calendar takes, a random hand covers: `data-sample="36"` on its data.js tag pulls a wide
 pool (`deck(null)`, limit 300), keeps only nights with a photograph, hangs
 a recurring show once, shuffles, and cuts to 36 — the wall shows the
@@ -450,7 +455,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **145**.
+The current version: **146**.
 
 ---
 
