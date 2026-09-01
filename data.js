@@ -247,6 +247,8 @@
           .map((f) => {
             const e = rowToEvent(bySlug.get(f.slug));
             if (f.pos) e.pos = f.pos;
+            /* The wall speaks its own line for a hand-picked night */
+            if (f.body) e.body = f.body;
             return e;
           });
       })
