@@ -1,0 +1,27 @@
+# afterhours — the daily Ticketmaster sync.
+# Two secrets in Settings → Secrets and variables → Actions:
+#   TICKETMASTER_KEY       the Discovery API consumer key
+#   SUPABASE_SERVICE_ROLE  the service_role key from the Supabase panel
+# Run it by hand from the Actions tab any time; the schedule fires at
+# 04:10 UTC, before anyone in any of the 54 cities is thinking about tonight.
+
+name: sync events
+
+on:
+  schedule:
+    - cron: "10 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: pull events from Ticketmaster into Supabase
+        env:
+          TICKETMASTER_KEY: ${{ secrets.TICKETMASTER_KEY }}
+          SUPABASE_SERVICE_ROLE: ${{ secrets.SUPABASE_SERVICE_ROLE }}
+        run: node backend/tools/sync-ticketmaster.mjs

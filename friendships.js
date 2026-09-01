@@ -61,6 +61,7 @@
         rows.map((r) => ({
           slug: r.slug, kind: r.type_name, title: r.title, meta: r.meta,
           body: r.body, poster: r.poster_no, id: r.id,
+          image: r.image_url || null,
           friend: r.friend, startsAt: r.starts_at, venue: r.venue_name,
         }))
       )

@@ -23,6 +23,9 @@ sql/11_world.sql         54 cities, 106 nights
 sql/12_profiles.sql      people profiles: the card + the settings + the signup step
 sql/13_feedback.sql      feedback: everyone writes, the admin reads
 sql/14_export.sql        everything we hold about one person, in one call
+sql/15_ticketmaster.sql  real events: source/external_id/image_url/ticket_url + the worldwide deck
+sql/16_coverage.sql      the service area: all of Europe, key Asia, North America (94 cities)
+sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities
 
 tools/build-seed.mjs     builds 03/04/05 from the front-end data
 tools/build-setup.mjs    joins the SQL files into two pasteable parts
@@ -32,8 +35,9 @@ tools/world-sql.mjs      turns the world data into 11_world.sql
 tools/backup.mjs         backs the content up to JSON
 tools/restore.mjs        turns a backup back into SQL
 tools/health.mjs         the status check
+tools/sync-ticketmaster.mjs  the daily Ticketmaster pull (GitHub Action; --dry to look without writing)
 
-test/                    263 checks, all on a real Postgres (PGlite)
+test/                    278 checks, all on a real Postgres (PGlite)
 ```
 
 ## Day to day
@@ -47,6 +51,12 @@ npm run setup      # rebuild the two combined setup files
 npm run health     # the state of the published database, and which SQL is in
 npm run backup     # take a copy of the content
 npm run restore    # turn one of those copies back into SQL
+```
+
+```bash
+# the Ticketmaster sync, by hand (the Action runs it daily at 04:10 UTC)
+TICKETMASTER_KEY=... SUPABASE_SERVICE_ROLE=... node tools/sync-ticketmaster.mjs
+TICKETMASTER_KEY=... node tools/sync-ticketmaster.mjs --dry   # look, do not write
 ```
 
 To try the site against the local server: start the server, then open a
@@ -131,7 +141,26 @@ non-zero. That count is what the migration log (00_migrations.sql) is for:
 every numbered file stamps its own name when it runs, so the answer to
 "did I run that one?" stops being a memory.
 
-**9 · Backups** — Supabase takes a daily backup. On top of that, run
+**10 · Ticketmaster (real events)** — three moves, in order:
+
+- Paste the CURRENT `sql/setup-1-structure.sql` (it now carries 15 and 16:
+  the event columns, the worldwide deck, the coverage cities). Same rules
+  as step 2 — role/RLS toggle off.
+- Paste `sql/cleanup-seed-events.sql` **once**. It deletes the 142
+  invented nights, and with them the sample comments and any swipes on
+  them; the out-of-coverage showcase cities leave the filter in the same
+  breath. This is the point of no return for the fiction — the seeds can
+  always be re-pasted from `04_seed_events.sql` + `11_world.sql` if you
+  ever miss them.
+- In GitHub: Settings → Secrets and variables → Actions → two secrets:
+  `TICKETMASTER_KEY` (the Discovery consumer key) and
+  `SUPABASE_SERVICE_ROLE` (Supabase panel → Project Settings → API →
+  service_role — it goes into a GitHub secret and NOWHERE else). Then
+  Actions → "sync events" → Run workflow. From then on it runs every
+  morning at 04:10 UTC on its own: upserts what Ticketmaster lists for
+  the coverage cities, prunes what has passed.
+
+**11 · Backups** — Supabase takes a daily backup. On top of that, run
 `npm run backup` once a month; a copy of the texts, independent of the
 project, lands under `backend/backup/`.
 

@@ -68,15 +68,13 @@
     }
     /* The most recently kept on top */
     kept.slice().reverse().forEach((e) => {
-      const no = String(e.poster || CARDS.indexOf(e) + 1).padStart(2, "0");
-      const path = e.posterPath || "../posters/" + no + ".svg";
       const a = document.createElement("a");
       a.className = "ex-box-row";
-      a.href = e.slug + "/index.html";
-      const g = document.createElement("object");
-      g.type = "image/svg+xml";
-      g.data = path;
-      a.appendChild(g);
+      /* A drawn night has a folder of its own; a synced one is served by
+         the shared shell, which reads the slug off the address. */
+      a.href = e.image ? "event/?slug=" + encodeURIComponent(e.slug)
+                       : e.slug + "/index.html";
+      a.appendChild(posterElement(e, CARDS.indexOf(e)));
       const text = document.createElement("div");
       const name = document.createElement("p");
       name.className = "ex-box-name";
@@ -156,19 +154,31 @@
     fly(top, e.key === "ArrowRight" ? 1 : -1);
   });
 
+  /* The face of a card. A drawn night is an <object> (the SVG needs its
+     webfonts, an <img> cannot fetch them); a synced night is a plain
+     photograph in an <img>, cropped to the same 2:3 frame. */
+  function posterElement(e, i) {
+    if (e && e.image) {
+      const img = document.createElement("img");
+      img.src = e.image;
+      img.alt = "";
+      img.loading = "lazy";
+      return img;
+    }
+    const no = String((e && e.poster) || i + 1).padStart(2, "0");
+    const object = document.createElement("object");
+    object.type = "image/svg+xml";
+    object.data = (e && e.posterPath) || "../posters/" + no + ".svg";
+    return object;
+  }
+
   function makeCard(i) {
     /* The poster number comes from the record itself; we do not trust the
        position, so that a short list from the database cannot shift them. */
-    const no = String(CARDS[i].poster || i + 1).padStart(2, "0");
-    const path = CARDS[i].posterPath || "../posters/" + no + ".svg";
     const card = document.createElement("div");
     card.className = "ex-card";
     card.dataset.no = String(i);
-
-    const image = document.createElement("object");
-    image.type = "image/svg+xml";
-    image.data = path;
-    card.appendChild(image);
+    card.appendChild(posterElement(CARDS[i], i));
 
     /* The info strip under the poster: kind + venue/date. The data comes
        from events-data.js, so it can never contradict the poster. */

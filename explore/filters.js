@@ -15,8 +15,10 @@
   const AH = (window.AH = window.AH || {});
   const live = () => AH.mode === "live";
 
-  /* The chosen state. The deck reads this. */
-  AH.filter = { country: "de", city: "munchen", kind: null, date: "tonight" };
+  /* The chosen state. The deck reads this. A null country and city mean
+     everywhere: the deck opens on the whole world and the choices below
+     narrow it down. */
+  AH.filter = { country: null, city: null, kind: null, date: "tonight" };
 
   /* explore/?tur=<kind> — a shared address may point straight at one
      kind. Only a kind the list below knows is accepted. */
@@ -162,18 +164,25 @@
   };
 
   /* Countries are grouped by continent: 18 countries do not read as one
-     flat list. Continents that have nights come first. */
+     flat list. Continents that have nights come first, and the whole
+     world sits above all of them. */
   function countryOptions() {
     const seen = new Map();
+    let total = 0;
     cities.forEach((s) => {
       if (!s.country_slug) return;
       const o = seen.get(s.country_slug) ||
         { value: s.country_slug, name: s.country, continent: s.continent || "", n: 0 };
       o.n += Number(s.n || 0);
+      total += Number(s.n || 0);
       seen.set(s.country_slug, o);
     });
 
     const countries = [...seen.values()];
+    const everywhere = [{
+      value: null, name: "everywhere",
+      note: total ? total + " nights" : "", empty: !total,
+    }];
     const continents = new Map();
     countries.forEach((c) => {
       const g = continents.get(c.continent) || { name: c.continent, n: 0, countries: [] };
@@ -194,10 +203,14 @@
             note: c.n ? c.n + " nights" : "nothing yet",
           }));
       });
-    return ordered;
+    return everywhere.concat(ordered);
   }
 
+  /* No country picked: the one honest answer is everywhere. */
   function cityOptions() {
+    if (!AH.filter.country) {
+      return [{ value: null, name: "everywhere" }];
+    }
     return cities
       .filter((s) => s.country_slug === AH.filter.country)
       .map((s) => ({

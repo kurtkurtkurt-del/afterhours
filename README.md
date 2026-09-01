@@ -137,6 +137,23 @@ left open past the hour keeps working), `AH.signUp()`,
 `AH.events()`, `AH.kept()`, `AH.saveSwipe()`,
 `AH.friends()`, `AH.comments()`, `AH.myProfile()`.
 
+**Real events (Ticketmaster).** Since v141 the database also holds synced
+nights: `source = 'ticketmaster'`, an `image_url` (a photograph instead of
+a drawn poster), a `ticket_url` (a real ticket page) and an `external_id`
+the daily sync upserts on, so a night keeps its uuid and the swipes on it
+survive. The deck's default is now **everywhere** — `deck(null)` deals the
+whole world, soonest first — and the explore filter opens on
+everywhere/everywhere. A synced night renders as an `<img>` (2:3, cropped
+with `object-fit: cover`) wherever a drawn night renders an `<object>`,
+and its event page is the shared shell `explore/event/?slug=...` — no
+folder is generated for it. The one page that does NOT go live is the
+landing: `index.html` carries `data-source="local"` on its data.js tag,
+because the poster wall, the counter and the globe are built around the
+drawn 2:3 artwork. The coverage (which cities exist at all) is
+`backend/sql/16_coverage.sql` — all of Europe, key Asia, North America —
+and it moves together with the city map in
+`backend/tools/sync-ticketmaster.mjs`.
+
 **Security:** the key in `config.js` is not a secret and does not need to
 be one. What protects the data is the row-level rules in
 `backend/sql/02_rls.sql`. The `service_role` key is **never** written into
@@ -357,7 +374,7 @@ reasons — deleting a topic would take other people's replies with it, and
 the constraint on the `comments` table refuses a row with no author. The
 settings page says so before it deletes.
 
-For the setup, the tests (263 checks) and the local imitation of Supabase
+For the setup, the tests (278 checks) and the local imitation of Supabase
 (`tools/local-server.mjs`, PostgREST + GoTrue on top of PGlite) →
 **[backend/README.md](backend/README.md)**
 
@@ -370,10 +387,18 @@ request. Three jobs, none of which needs a secret:
 
 | job | what it refuses to let through |
 |---|---|
-| `backend` | the 263 checks, on a real Postgres (PGlite) |
+| `backend` | the 278 checks, on a real Postgres (PGlite) |
 | `generated` | SQL that has drifted from the files it was built from — it rebuilds and asks git whether anything moved |
 | `versions` | more than one `?v=NN` across the pages, which would serve a stale script against a new stylesheet |
 | `site` | a reference that leads nowhere — every href/src in every page, and page+poster+og for all 142 events |
+
+A third workflow, `sync-events.yml`, pulls the real events: every morning
+at 04:10 UTC it runs `backend/tools/sync-ticketmaster.mjs`, which asks
+Ticketmaster city by city (the coverage of `16_coverage.sql`), files each
+event under one of the six kinds, composes the meta line, picks a 16:9
+photograph, upserts on `external_id` and prunes the nights that have
+passed. It needs the two secrets named inside it; run it by hand from the
+Actions tab any time. `--dry` locally shows what it would write.
 
 The site itself has no build step and nothing to check: it is plain HTML
 the browser reads as it is. What can break in silence is the database and
@@ -415,7 +440,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **140**.
+The current version: **141**.
 
 ---
 
@@ -454,6 +479,7 @@ The order matters: each step closes the road the one before it opened.
 - [x] **A new password** — `reset/`, request + set, and the forgot link under sign-in
 - [x] **Replies, a deck count, and two ways out of an empty deck** — beforehours answers, "03 / 36", deal-again / try-another-city
 - [x] **The site checks itself** — `tools-site-check.py` walks every reference; the CI `site` job runs it
+- [x] **Real events** — the Ticketmaster sync (§4, §9): the worldwide deck, the everywhere filter, photographs and real ticket pages; the invented nights retire via `cleanup-seed-events.sql`
 - [x] **Installable** — `manifest.webmanifest`, and the poster wall lazy-loads below the fold
 
 **Next (a suggested order)**

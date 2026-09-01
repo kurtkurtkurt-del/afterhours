@@ -104,10 +104,19 @@
 
     /* ---- the left rail ---- */
     const ray = el("aside", "cs-rail");
-    const poster = document.createElement("object");
-    poster.className = "cs-poster";
-    poster.type = "image/svg+xml";
-    poster.data = posterPath;
+    let poster;
+    if (e.image) {
+      /* A synced night: a photograph in the same 2:3 frame. */
+      poster = document.createElement("img");
+      poster.className = "cs-poster";
+      poster.src = e.image;
+      poster.alt = "";
+    } else {
+      poster = document.createElement("object");
+      poster.className = "cs-poster";
+      poster.type = "image/svg+xml";
+      poster.data = posterPath;
+    }
     ray.appendChild(poster);
 
     const facts = el("dl", "cs-facts");
@@ -157,6 +166,14 @@
 
       if (i === 3) {
         shot.textContent = "not shot yet";
+      } else if (e.image) {
+        /* Four bands of the photograph, the same trick as the poster. */
+        const img = document.createElement("img");
+        img.className = "cs-shot-img photo";
+        img.src = e.image;
+        img.alt = "";
+        img.style.setProperty("--shift", [0, 42, 83, 125][i > 3 ? 3 : i]);
+        shot.appendChild(img);
       } else {
         /* A frame is a band of the poster. Four frames, four different bands. */
         const img = document.createElement("object");
@@ -215,7 +232,14 @@
 
     const [button, sub] = V.TICKET[kind] || V.TICKET["Konzert"];
     const ticket = el("a", "cs-ticket", button);
-    ticket.href = "#";
+    /* A synced night has a real ticket page; the invented ones do not. */
+    if (e.ticketUrl) {
+      ticket.href = e.ticketUrl;
+      ticket.target = "_blank";
+      ticket.rel = "noopener";
+    } else {
+      ticket.href = "#";
+    }
     right.appendChild(ticket);
     right.appendChild(el("p", "cs-ticket-sub", sub));
 
@@ -383,8 +407,12 @@
      POSTERS is the DECK, and the deck is one city's — a Berlin night is
      not in it while the site sits on München. Before declaring a page
      gone, ask the database for that one slug; only local mode (which
-     truly holds nothing but the 36) goes straight to the gone page. */
-  const slug = slugFromPath();
+     truly holds nothing but the 36) goes straight to the gone page.
+
+     A drawn night reads its slug off its own folder; a synced night has
+     no folder and arrives at the shared shell as event/?slug=... — the
+     address bar wins when it names one. */
+  const slug = new URLSearchParams(location.search).get("slug") || slugFromPath();
   const e = (window.POSTERS || []).filter((x) => x.slug === slug)[0];
   if (e) {
     build(e);

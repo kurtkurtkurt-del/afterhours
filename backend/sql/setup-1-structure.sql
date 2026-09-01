@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-08-31 12:31   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-09-01 13:25   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -1193,6 +1193,19 @@ begin
   ) then
     drop view public.events_public cascade;
     raise notice 'events_public dropped so its renamed column can come back';
+  end if;
+
+  -- The same dance for a SECOND paste: 15_ticketmaster.sql widens this
+  -- view, and `create or replace` cannot narrow it back. On a database
+  -- that already ran 15 the view is dropped here and widened again there.
+  if exists (
+    select 1 from information_schema.columns
+    where table_schema = 'public'
+      and table_name   = 'events_public'
+      and column_name  = 'image_url'
+  ) then
+    drop view public.events_public cascade;
+    raise notice 'events_public dropped so 15_ticketmaster.sql can widen it again';
   end if;
 end
 $$;
@@ -3613,5 +3626,321 @@ grant execute on function public.export_me() to authenticated;
 do $$ begin
   if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('14_export.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  REAL EVENTS — TICKETMASTER COLUMNS, WORLDWIDE DECK   (15_ticketmaster.sql)
+-- ============================================================
+
+-- afterhours — real events from Ticketmaster
+--
+-- Four columns on events, and the deck learns to serve the whole world.
+-- The rows themselves are written by backend/tools/sync-ticketmaster.mjs
+-- (a daily GitHub Action with the service key); nothing in the browser
+-- can write them, the same as every other event.
+--
+--   source       "seed" for the hand-written nights, "ticketmaster" for
+--                the synced ones. The cleanup script and the daily prune
+--                only ever touch their own source.
+--   external_id  the Ticketmaster id. The sync upserts on it, so a night
+--                keeps its uuid between runs and swipes on it survive.
+--   image_url    a photograph instead of a drawn poster. The front end
+--                shows an <img> when this is set, posters/NN.svg when not.
+--   ticket_url   the real ticket page; the button on the event page uses
+--                it when it is there.
+
+alter table public.events add column if not exists source text not null default 'seed';
+alter table public.events add column if not exists external_id text;
+alter table public.events add column if not exists image_url text;
+alter table public.events add column if not exists ticket_url text;
+
+create unique index if not exists events_external_idx
+  on public.events (external_id);
+
+create index if not exists events_source_idx on public.events (source);
+
+-- ------------------------------------------------- the view grows a little
+
+-- The three new columns the screen needs, appended at the end. The view
+-- is dropped rather than replaced: deck() and kept() return its row type,
+-- and both are recreated right below (the same dance as in 06_views.sql).
+drop view if exists public.events_public cascade;
+
+create view public.events_public
+with (security_invoker = true) as
+select
+  e.id,
+  e.slug,
+  e.title,
+  e.meta,
+  e.body,
+  e.poster_no,
+  e.poster_path,
+  e.starts_at,
+  e.starts_at_estimated,
+  e.date_text,
+  e.is_published,
+  t.slug  as type_slug,
+  t.name  as type_name,
+  t.sort_order  as type_sort_order,
+  c.slug  as city_slug,
+  c.name  as city_name,
+  v.slug  as venue_slug,
+  v.name  as venue_name,
+  e.image_url,
+  e.ticket_url,
+  e.source
+from public.events e
+join public.event_types t on t.id = e.type_id
+join public.cities      c on c.id = e.city_id
+left join public.venues v on v.id = e.venue_id;
+
+-- ---------------------------------------------------- the deck, worldwide
+
+-- One change of meaning: a NULL city now says "everywhere" instead of
+-- "nowhere". The filter on explore sends null when the person has picked
+-- no city, and the deck answers with the whole world, soonest night
+-- inside a city block first. Hand-drawn posters keep their own order;
+-- synced nights (no poster number) follow, by date.
+create or replace function public.deck(
+  p_city text default 'munchen',
+  p_type text default null,
+  p_limit int  default 60
+)
+returns setof public.events_public
+language sql
+stable
+-- security definer: anonymous has no rights on the swipes table at all, but
+-- the deck has to look there to ask "was this already swiped". The function
+-- runs with the rights of its owner, so the published filter and the user
+-- filter are written out BY HAND below to stop anything leaking.
+security definer
+set search_path = public
+as $$
+  select e.*
+  from public.events_public e
+  where e.is_published
+    and (p_city is null or e.city_slug = p_city)
+    and (p_type is null or e.type_slug = p_type)
+    and not exists (
+      select 1 from public.swipes s
+      where s.event_id = e.id and s.user_id = auth.uid()
+    )
+  order by e.poster_no nulls last, e.starts_at nulls last, e.slug
+  limit p_limit;
+$$;
+
+-- --------------------------------------------------------- kept cards
+
+-- Unchanged in meaning; recreated because the cascade above took it.
+create or replace function public.kept()
+returns setof public.events_public
+language sql
+stable
+as $$
+  select e.*
+  from public.swipes s
+  join public.events_public e on e.id = s.event_id
+  where s.user_id = auth.uid() and s.direction = 'right'
+  order by s.created_at desc;
+$$;
+
+-- ------------------------------------------------- what your friends kept
+
+-- Same rows as before plus the photograph, so a synced night in the
+-- friends deck does not fall back to the wrong drawn poster.
+-- create or replace is not enough when the return type changes; drop first.
+drop function if exists public.friends_kept(int);
+create or replace function public.friends_kept(p_limit int default 60)
+returns table (
+  friend      text,
+  kept_at     timestamptz,
+  id          uuid,
+  slug        text,
+  title       text,
+  meta        text,
+  body        text,
+  poster_no   int,
+  type_name   text,
+  venue_name  text,
+  city_slug   text,
+  starts_at   timestamptz,
+  image_url   text
+)
+language sql
+stable
+as $$
+  select coalesce(p.handle, p.display_name, 'a friend'), s.created_at,
+         e.id, e.slug, e.title, e.meta, e.body, e.poster_no,
+         e.type_name, e.venue_name, e.city_slug, e.starts_at, e.image_url
+  from public.swipes s
+  join public.events_public e on e.id = s.event_id
+  join public.profiles p on p.id = s.user_id
+  where s.direction = 'right'
+    and s.user_id <> auth.uid()
+    and public.is_friend(s.user_id)
+  order by s.created_at desc
+  limit p_limit;
+$$;
+
+-- ------------------------------------------------------------- the keys
+
+-- Dropping a view or a function takes its grants with it; everything the
+-- cascade touched gets its keys back here.
+grant select on public.events_public to anon, authenticated;
+grant execute on function public.deck(text, text, int) to anon, authenticated;
+grant execute on function public.kept()                to authenticated;
+grant execute on function public.friends_kept(int)     to authenticated;
+
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('15_ticketmaster.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  THE COVERAGE — EUROPE, KEY ASIA, NORTH AMERICA   (16_coverage.sql)
+-- ============================================================
+
+-- afterhours — the coverage: all of Europe, the key Asian countries,
+-- North America.
+--
+-- The 54 showcase cities of 11_world.sql were a demonstration; this is
+-- the real service area, chosen with the Ticketmaster sync in mind.
+-- Every city here is also on the sync map in
+-- backend/tools/sync-ticketmaster.mjs — the two lists move together.
+--
+-- Cities that already exist keep their uuid (and their events); the
+-- upsert only refreshes name, country and order. Cities outside the
+-- coverage are not touched here — the live cleanup script drops the
+-- event-less ones, and the tests keep them for the seed nights.
+
+insert into public.cities
+  (slug, name, status, sort_order, country, country_slug, continent, continent_slug)
+values
+  -- ---------------------------------------------------------- Europe
+  ('munchen', 'münchen', 'live', 1, 'Deutschland', 'de', 'Europe', 'eu'),
+  ('berlin', 'berlin', 'live', 2, 'Deutschland', 'de', 'Europe', 'eu'),
+  ('koln', 'köln', 'live', 3, 'Deutschland', 'de', 'Europe', 'eu'),
+  ('hamburg', 'hamburg', 'live', 4, 'Deutschland', 'de', 'Europe', 'eu'),
+  ('frankfurt', 'frankfurt', 'live', 5, 'Deutschland', 'de', 'Europe', 'eu'),
+  ('stuttgart', 'stuttgart', 'live', 6, 'Deutschland', 'de', 'Europe', 'eu'),
+  ('dusseldorf', 'düsseldorf', 'live', 7, 'Deutschland', 'de', 'Europe', 'eu'),
+  ('leipzig', 'leipzig', 'live', 8, 'Deutschland', 'de', 'Europe', 'eu'),
+  ('istanbul', 'istanbul', 'live', 9, 'Türkiye', 'tr', 'Europe', 'eu'),
+  ('ankara', 'ankara', 'live', 10, 'Türkiye', 'tr', 'Europe', 'eu'),
+  ('izmir', 'izmir', 'live', 11, 'Türkiye', 'tr', 'Europe', 'eu'),
+  ('wien', 'wien', 'live', 12, 'Österreich', 'at', 'Europe', 'eu'),
+  ('graz', 'graz', 'live', 13, 'Österreich', 'at', 'Europe', 'eu'),
+  ('salzburg', 'salzburg', 'live', 14, 'Österreich', 'at', 'Europe', 'eu'),
+  ('zurich', 'zürich', 'live', 15, 'Schweiz', 'ch', 'Europe', 'eu'),
+  ('geneva', 'genève', 'live', 16, 'Schweiz', 'ch', 'Europe', 'eu'),
+  ('basel', 'basel', 'live', 17, 'Schweiz', 'ch', 'Europe', 'eu'),
+  ('london', 'london', 'live', 18, 'United Kingdom', 'gb', 'Europe', 'eu'),
+  ('manchester', 'manchester', 'live', 19, 'United Kingdom', 'gb', 'Europe', 'eu'),
+  ('birmingham', 'birmingham', 'live', 20, 'United Kingdom', 'gb', 'Europe', 'eu'),
+  ('glasgow', 'glasgow', 'live', 21, 'United Kingdom', 'gb', 'Europe', 'eu'),
+  ('dublin', 'dublin', 'live', 22, 'Ireland', 'ie', 'Europe', 'eu'),
+  ('cork', 'cork', 'live', 23, 'Ireland', 'ie', 'Europe', 'eu'),
+  ('paris', 'paris', 'live', 24, 'France', 'fr', 'Europe', 'eu'),
+  ('lyon', 'lyon', 'live', 25, 'France', 'fr', 'Europe', 'eu'),
+  ('marseille', 'marseille', 'live', 26, 'France', 'fr', 'Europe', 'eu'),
+  ('amsterdam', 'amsterdam', 'live', 27, 'Nederland', 'nl', 'Europe', 'eu'),
+  ('rotterdam', 'rotterdam', 'live', 28, 'Nederland', 'nl', 'Europe', 'eu'),
+  ('utrecht', 'utrecht', 'live', 29, 'Nederland', 'nl', 'Europe', 'eu'),
+  ('brussel', 'brussel', 'live', 30, 'België', 'be', 'Europe', 'eu'),
+  ('antwerpen', 'antwerpen', 'live', 31, 'België', 'be', 'Europe', 'eu'),
+  ('gent', 'gent', 'live', 32, 'België', 'be', 'Europe', 'eu'),
+  ('madrid', 'madrid', 'live', 33, 'España', 'es', 'Europe', 'eu'),
+  ('barcelona', 'barcelona', 'live', 34, 'España', 'es', 'Europe', 'eu'),
+  ('valencia', 'valencia', 'live', 35, 'España', 'es', 'Europe', 'eu'),
+  ('sevilla', 'sevilla', 'live', 36, 'España', 'es', 'Europe', 'eu'),
+  ('milano', 'milano', 'live', 37, 'Italia', 'it', 'Europe', 'eu'),
+  ('roma', 'roma', 'live', 38, 'Italia', 'it', 'Europe', 'eu'),
+  ('torino', 'torino', 'live', 39, 'Italia', 'it', 'Europe', 'eu'),
+  ('bologna', 'bologna', 'live', 40, 'Italia', 'it', 'Europe', 'eu'),
+  ('lisboa', 'lisboa', 'live', 41, 'Portugal', 'pt', 'Europe', 'eu'),
+  ('porto', 'porto', 'live', 42, 'Portugal', 'pt', 'Europe', 'eu'),
+  ('warszawa', 'warszawa', 'live', 43, 'Polska', 'pl', 'Europe', 'eu'),
+  ('krakow', 'kraków', 'live', 44, 'Polska', 'pl', 'Europe', 'eu'),
+  ('wroclaw', 'wrocław', 'live', 45, 'Polska', 'pl', 'Europe', 'eu'),
+  ('praha', 'praha', 'live', 46, 'Česko', 'cz', 'Europe', 'eu'),
+  ('brno', 'brno', 'live', 47, 'Česko', 'cz', 'Europe', 'eu'),
+  ('kobenhavn', 'københavn', 'live', 48, 'Danmark', 'dk', 'Europe', 'eu'),
+  ('aarhus', 'aarhus', 'live', 49, 'Danmark', 'dk', 'Europe', 'eu'),
+  ('stockholm', 'stockholm', 'live', 50, 'Sverige', 'se', 'Europe', 'eu'),
+  ('goteborg', 'göteborg', 'live', 51, 'Sverige', 'se', 'Europe', 'eu'),
+  ('malmo', 'malmö', 'live', 52, 'Sverige', 'se', 'Europe', 'eu'),
+  ('oslo', 'oslo', 'live', 53, 'Norge', 'no', 'Europe', 'eu'),
+  ('bergen', 'bergen', 'live', 54, 'Norge', 'no', 'Europe', 'eu'),
+  ('helsinki', 'helsinki', 'live', 55, 'Suomi', 'fi', 'Europe', 'eu'),
+  ('tampere', 'tampere', 'live', 56, 'Suomi', 'fi', 'Europe', 'eu'),
+  ('athina', 'athína', 'live', 57, 'Ελλάδα', 'gr', 'Europe', 'eu'),
+  ('thessaloniki', 'thessaloníki', 'live', 58, 'Ελλάδα', 'gr', 'Europe', 'eu'),
+  ('budapest', 'budapest', 'live', 59, 'Magyarország', 'hu', 'Europe', 'eu'),
+  -- ------------------------------------------------------------ Asia
+  ('tokyo', 'tokyo', 'live', 60, '日本', 'jp', 'Asia', 'as'),
+  ('osaka', 'osaka', 'live', 61, '日本', 'jp', 'Asia', 'as'),
+  ('seoul', 'seoul', 'live', 62, '한국', 'kr', 'Asia', 'as'),
+  ('busan', 'busan', 'live', 63, '한국', 'kr', 'Asia', 'as'),
+  ('singapore', 'singapore', 'live', 64, 'Singapore', 'sg', 'Asia', 'as'),
+  ('dubai', 'dubai', 'live', 65, 'United Arab Emirates', 'ae', 'Asia', 'as'),
+  ('abu-dhabi', 'abu dhabi', 'live', 66, 'United Arab Emirates', 'ae', 'Asia', 'as'),
+  ('hong-kong', 'hong kong', 'live', 67, '香港', 'hk', 'Asia', 'as'),
+  ('taipei', 'taipei', 'live', 68, '台灣', 'tw', 'Asia', 'as'),
+  -- --------------------------------------------------- North America
+  ('new-york', 'new york', 'live', 69, 'United States', 'us', 'North America', 'na'),
+  ('los-angeles', 'los angeles', 'live', 70, 'United States', 'us', 'North America', 'na'),
+  ('chicago', 'chicago', 'live', 71, 'United States', 'us', 'North America', 'na'),
+  ('detroit', 'detroit', 'live', 72, 'United States', 'us', 'North America', 'na'),
+  ('miami', 'miami', 'live', 73, 'United States', 'us', 'North America', 'na'),
+  ('san-francisco', 'san francisco', 'live', 74, 'United States', 'us', 'North America', 'na'),
+  ('las-vegas', 'las vegas', 'live', 75, 'United States', 'us', 'North America', 'na'),
+  ('seattle', 'seattle', 'live', 76, 'United States', 'us', 'North America', 'na'),
+  ('austin', 'austin', 'live', 77, 'United States', 'us', 'North America', 'na'),
+  ('boston', 'boston', 'live', 78, 'United States', 'us', 'North America', 'na'),
+  ('atlanta', 'atlanta', 'live', 79, 'United States', 'us', 'North America', 'na'),
+  ('philadelphia', 'philadelphia', 'live', 80, 'United States', 'us', 'North America', 'na'),
+  ('washington', 'washington', 'live', 81, 'United States', 'us', 'North America', 'na'),
+  ('denver', 'denver', 'live', 82, 'United States', 'us', 'North America', 'na'),
+  ('nashville', 'nashville', 'live', 83, 'United States', 'us', 'North America', 'na'),
+  ('new-orleans', 'new orleans', 'live', 84, 'United States', 'us', 'North America', 'na'),
+  ('houston', 'houston', 'live', 85, 'United States', 'us', 'North America', 'na'),
+  ('dallas', 'dallas', 'live', 86, 'United States', 'us', 'North America', 'na'),
+  ('toronto', 'toronto', 'live', 87, 'Canada', 'ca', 'North America', 'na'),
+  ('montreal', 'montréal', 'live', 88, 'Canada', 'ca', 'North America', 'na'),
+  ('vancouver', 'vancouver', 'live', 89, 'Canada', 'ca', 'North America', 'na'),
+  ('calgary', 'calgary', 'live', 90, 'Canada', 'ca', 'North America', 'na'),
+  ('ottawa', 'ottawa', 'live', 91, 'Canada', 'ca', 'North America', 'na'),
+  ('ciudad-de-mexico', 'ciudad de méxico', 'live', 92, 'México', 'mx', 'North America', 'na'),
+  ('guadalajara', 'guadalajara', 'live', 93, 'México', 'mx', 'North America', 'na'),
+  ('monterrey', 'monterrey', 'live', 94, 'México', 'mx', 'North America', 'na')
+on conflict (slug) do update set
+  name = excluded.name,
+  status = excluded.status,
+  sort_order = excluded.sort_order,
+  country = excluded.country,
+  country_slug = excluded.country_slug,
+  continent = excluded.continent,
+  continent_slug = excluded.continent_slug;
+
+-- Showcase cities outside the coverage lose their place in the filter as
+-- soon as nothing points at them. Here that only catches cities that
+-- never had a night; the live cleanup (which removes the seed nights
+-- first) catches the rest.
+delete from public.cities c
+where c.continent_slug not in ('eu', 'as', 'na')
+  and not exists (select 1 from public.events e where e.city_id = c.id);
+
+-- Stamp the migration log, if it is there. Each numbered file still runs on
+-- its own (the tests load them one at a time), so this cannot insist.
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('16_coverage.sql');
   end if;
 end $$;

@@ -22,4 +22,6 @@ export const EXPECTED_SQL = [
   "12_profiles.sql",
   "13_feedback.sql",
   "14_export.sql",
+  "15_ticketmaster.sql",
+  "16_coverage.sql",
 ];

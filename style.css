@@ -1299,6 +1299,16 @@ body[data-screen="3"] .sound { opacity: 0; pointer-events: none; }
   pointer-events: none;   /* let the drag reach the card */
 }
 
+/* A synced night wears a photograph: same 2:3 frame, cropped not squashed */
+.ex-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  display: block;
+  object-fit: cover;
+  pointer-events: none;
+  background: #ececea;
+}
+
 /* The poster says what it is, the strip says when and where */
 .ex-info {
   padding-top: 14px;
@@ -1565,6 +1575,15 @@ body[data-screen="3"] .sound { opacity: 0; pointer-events: none; }
   height: 48px;
   flex: 0 0 auto;
   display: block;
+  pointer-events: none;
+}
+
+.ex-box-row img {
+  width: 32px;
+  height: 48px;
+  flex: 0 0 auto;
+  display: block;
+  object-fit: cover;
   pointer-events: none;
 }
 
@@ -2611,6 +2630,12 @@ body:has(> .foot:not(.thin)) > .foot { margin-top: auto; }
   pointer-events: none;      /* an object swallows the click */
 }
 
+/* When the poster is a photograph (synced nights): crop, never squash */
+img.cs-poster {
+  object-fit: cover;
+  background: #ececea;
+}
+
 /* The colophon: all of it in one language, one size, one order. Deliberately
    boring — a series is identified by what does not change, not by what does.
    ONLY the things that are the same in every edition are here; the times are on
@@ -2716,6 +2741,11 @@ body:has(> .foot:not(.thin)) > .foot { margin-top: auto; }
   aspect-ratio: 2 / 3;
   height: auto;
   pointer-events: none;
+}
+
+/* The photograph version keeps the same four-band trick, cropped */
+.cs-shot-img.photo {
+  object-fit: cover;
 }
 
 /* The poster is in colour, a contact sheet is not. `filter` does not reach the

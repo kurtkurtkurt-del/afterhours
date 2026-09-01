@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node test/schema.test.mjs && node test/seed.test.mjs && node test/views.test.mjs && node test/friends.test.mjs && node test/profiles.test.mjs && node test/feedback.test.mjs && node test/jobs.test.mjs && node test/update.test.mjs && node test/setup.test.mjs && node test/backup.test.mjs && node test/export.test.mjs && node test/upgrade.test.mjs",
+    "test": "node test/schema.test.mjs && node test/seed.test.mjs && node test/views.test.mjs && node test/friends.test.mjs && node test/profiles.test.mjs && node test/feedback.test.mjs && node test/jobs.test.mjs && node test/update.test.mjs && node test/setup.test.mjs && node test/backup.test.mjs && node test/export.test.mjs && node test/upgrade.test.mjs && node test/ticketmaster.test.mjs",
     "seed": "node tools/build-seed.mjs",
     "setup": "node tools/build-setup.mjs",
     "server": "node tools/local-server.mjs",

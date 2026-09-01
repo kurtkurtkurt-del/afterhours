@@ -28,6 +28,19 @@ begin
     drop view public.events_public cascade;
     raise notice 'events_public dropped so its renamed column can come back';
   end if;
+
+  -- The same dance for a SECOND paste: 15_ticketmaster.sql widens this
+  -- view, and `create or replace` cannot narrow it back. On a database
+  -- that already ran 15 the view is dropped here and widened again there.
+  if exists (
+    select 1 from information_schema.columns
+    where table_schema = 'public'
+      and table_name   = 'events_public'
+      and column_name  = 'image_url'
+  ) then
+    drop view public.events_public cascade;
+    raise notice 'events_public dropped so 15_ticketmaster.sql can widen it again';
+  end if;
 end
 $$;
 

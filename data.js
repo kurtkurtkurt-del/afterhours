@@ -29,15 +29,24 @@
   const thenLoad = (thisScript.dataset.after || "")
     .split(",").map((s) => s.trim()).filter(Boolean);
 
+  /* data-source="local" pins a page to events-data.js even when the
+     backend is on. The landing page uses it: its poster wall, counter
+     and globe are built around the drawn 2:3 artwork, and the synced
+     nights are photographs — a different page, for another day. The
+     connection itself stays up (menu, session and seen() still work). */
+  const pinned = thisScript.dataset.source === "local";
+
   const AH = (window.AH = window.AH || {});
   AH.config = CONFIG;
   AH.mode = "local";
 
   /* Today the poster file is worked out from the position in the array
      (index + 1). Should the database ever return a short list, we write
-     each record's own number onto it so the posters cannot shift. */
+     each record's own number onto it so the posters cannot shift.
+     A synced night carries a photograph instead of a drawn poster; it
+     must NOT be handed a number, or it would wear someone else's art. */
   function numberEvents(list) {
-    list.forEach((e, i) => { if (!e.poster) e.poster = i + 1; });
+    list.forEach((e, i) => { if (!e.poster && !e.image) e.poster = i + 1; });
     return list;
   }
   AH.numberEvents = numberEvents;
@@ -152,6 +161,11 @@
         ? (CONFIG.url || "").replace(/\/$/, "") +
           "/storage/v1/object/public/posters/" + r.poster_path
         : null,
+      /* A synced night (Ticketmaster) has a photograph and a real ticket
+         page instead of a drawn poster and a folder of its own. */
+      image: r.image_url || null,
+      ticketUrl: r.ticket_url || null,
+      source: r.source || "seed",
       // not used on screen yet, but wanted later
       id: r.id,
       startsAt: r.starts_at,
@@ -161,12 +175,15 @@
   }
   AH.rowToEvent = rowToEvent;
 
+  /* A null city means the whole world — the deck function reads it that
+     way — and null is also the default: the deck opens on everywhere,
+     the filter narrows it down. */
   AH.events = function (kind, city) {
     const ask = () =>
       AH.request("/rpc/deck", {
         method: "POST",
         body: JSON.stringify({
-          p_city: city || CONFIG.city || "munchen",
+          p_city: city || null,
           p_type: kind || null,
         }),
       }).then((rows) => rows.map(rowToEvent));
@@ -198,7 +215,7 @@
      session.js there is nothing to wait for. */
   const session = Promise.resolve(AH.sessionReady || null).catch(() => null);
 
-  const ready = !enabled
+  const ready = (!enabled || pinned)
     ? fallBack(null)
     : session
         /* Carry the local swipes up to the account first, so the deck

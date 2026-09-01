@@ -22,6 +22,8 @@ const structure = [
   ["12_profiles.sql", "PEOPLE PROFILES"],
   ["13_feedback.sql", "FEEDBACK"],
   ["14_export.sql", "TAKE YOUR DATA WITH YOU"],
+  ["15_ticketmaster.sql", "REAL EVENTS — TICKETMASTER COLUMNS, WORLDWIDE DECK"],
+  ["16_coverage.sql", "THE COVERAGE — EUROPE, KEY ASIA, NORTH AMERICA"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
