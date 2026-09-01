@@ -189,15 +189,18 @@
   /* A null city means the whole world — the deck function reads it that
      way — and null is also the default: the deck opens on everywhere,
      the filter narrows it down. A deck is 99 cards: the database would
-     default to 60, so the size is asked for by name. */
-  AH.events = function (kind, city) {
+     default to 60, so the size is asked for by name. Signed out, the
+     caller may ask for MORE than 99 — the server does not know what was
+     swiped in this browser, so explore over-fetches by the number of
+     local swipes and sifts them out itself. */
+  AH.events = function (kind, city, limit) {
     const ask = () =>
       AH.request("/rpc/deck", {
         method: "POST",
         body: JSON.stringify({
           p_city: city || null,
           p_type: kind || null,
-          p_limit: 99,
+          p_limit: limit || 99,
         }),
       }).then((rows) => rows.map(rowToEvent));
 

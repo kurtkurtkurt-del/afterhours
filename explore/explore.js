@@ -509,7 +509,7 @@
          the choices above the deck. */
       const picked = window.AH && AH.randomCity ? AH.randomCity() : null;
       const source = picked && AH.mode === "live" && AH.events
-        ? AH.events(null, picked.slug).catch(() => applyFilter(POSTERS))
+        ? AH.events(null, picked.slug, 99 + skip.size).catch(() => applyFilter(POSTERS))
         : Promise.resolve(applyFilter(POSTERS));
 
       return source.then((list) => {
@@ -524,9 +524,24 @@
 
     const f = (window.AH && AH.filter) || {};
     if (window.AH && AH.mode === "live" && AH.events) {
-      return AH.events(f.kind, f.city).catch(() => applyFilter(POSTERS));
+      /* Signed in, the database already leaves out what was swiped, so
+         99 comes back as the NEXT 99. Signed out it cannot know: ask
+         for 99 more than the local swipes and sift below (capDeck). */
+      return AH.events(f.kind, f.city, 99 + skip.size).catch(() => applyFilter(POSTERS));
     }
     return Promise.resolve(applyFilter(POSTERS));
+  }
+
+  /* A deck is 99 cards. The list may hold more (the signed-out
+     over-fetch) or carry cards already swiped; the first 99 unswiped
+     are the deck, in the order they came. */
+  function capDeck(list) {
+    const fresh = [];
+    for (const e of list) {
+      if (fresh.length >= 99) break;
+      if (!skip.has(e.slug)) fresh.push(e);
+    }
+    return fresh;
   }
 
   function redeal(mode) {
@@ -534,9 +549,10 @@
     if (done && mode) done.textContent = EMPTY_MESSAGE[mode] || EMPTY_MESSAGE["global deck"];
 
     return sourceFor(mode || "global deck").then((list) => {
-      CARDS = list.length ? list : [];
-      /* An empty deck: say why it is empty */
-      if (!list.length && done && (mode || "global deck") === "global deck") {
+      CARDS = capDeck(list);
+      /* An empty deck: say why it is empty. The list itself may be full
+         while every card in it was already swiped — same message. */
+      if (!CARDS.length && done && (mode || "global deck") === "global deck") {
         const f = (window.AH && AH.filter) || {};
         done.textContent = f.city
           ? "no nights in " + f.city + " yet."
@@ -636,6 +652,17 @@
 
   /* --- the two ways out of an empty deck --- */
 
+  /* "deal the next 99": nothing is forgotten — the swiped cards stay
+     swiped, and the deal simply reaches further down the pile. */
+  const nextButton = document.getElementById("ex-next");
+  if (nextButton) {
+    nextButton.addEventListener("click", () => {
+      nextButton.disabled = true;
+      Promise.resolve(redeal(currentMode()))
+        .finally(() => { nextButton.disabled = false; });
+    });
+  }
+
   const againButton = document.getElementById("ex-again");
   if (againButton && resetButton) {
     /* The same road as "reset deck", confirmation included. */
@@ -657,6 +684,7 @@
     });
   }
 
+  CARDS = capDeck(CARDS);
   dealTotal = CARDS.filter((e) => !skip.has(e.slug)).length;
   fill();
 })();
