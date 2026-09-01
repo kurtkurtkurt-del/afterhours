@@ -21,6 +21,8 @@
      (we do not know the venue offset), so it is roughly right; meta is
      always right. */
 
+import { createHash } from "node:crypto";
+
 const TM_KEY = process.env.TICKETMASTER_KEY || "";
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE || "";
 const DB_URL = (process.env.SUPABASE_URL || "https://elmnnyxgavwjxvwjgjcu.supabase.co").replace(/\/$/, "");
@@ -196,15 +198,16 @@ function imageFor(images) {
 }
 
 /* The site rule: lowercase, transliterate, $ reads as s, the rest
-   becomes hyphens. The Ticketmaster id rides along so two nights with
-   one title cannot collide. */
+   becomes hyphens. The tail is a hash of the Ticketmaster id, NOT the id
+   lowercased: those ids are case-sensitive, and folding the case made
+   two different nights land on one slug (a 409 killed the first run). */
 function slugify(text, id) {
   const base = String(text)
     .replace(/\$/g, "s").replace(/ß/g, "ss").replace(/&/g, " and ")
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
     .slice(0, 48).replace(/-+$/, "");
-  const tail = String(id).toLowerCase().replace(/[^a-z0-9]+/g, "").slice(-8);
+  const tail = createHash("md5").update(String(id)).digest("hex").slice(0, 8);
   return (base || "night") + "-" + tail;
 }
 
@@ -339,13 +342,26 @@ if (DRY) {
 }
 
 /* Upsert in slices; on_conflict keeps the uuid of a night that is
-   already there, so swipes on it stay attached. */
-for (let i = 0; i < rows.length; i += 100) {
-  await db("/events?on_conflict=external_id", {
-    method: "POST",
-    headers: { Prefer: "resolution=merge-duplicates,return=minimal" },
-    body: JSON.stringify(rows.slice(i, i + 100)),
-  });
+   already there, so swipes on it stay attached. One bad slice must not
+   cost the whole day, so a failure is reported and the rest continues. */
+const bySlug = new Map();
+for (const row of rows) if (!bySlug.has(row.slug)) bySlug.set(row.slug, row);
+const unique = [...bySlug.values()];
+
+let written = 0, refused = 0;
+for (let i = 0; i < unique.length; i += 100) {
+  const slice = unique.slice(i, i + 100);
+  try {
+    await db("/events?on_conflict=external_id", {
+      method: "POST",
+      headers: { Prefer: "resolution=merge-duplicates,return=minimal" },
+      body: JSON.stringify(slice),
+    });
+    written += slice.length;
+  } catch (e) {
+    refused += slice.length;
+    console.warn("  a slice of " + slice.length + " was refused: " + e.message);
+  }
 }
 
 /* Nights that have passed leave the deck for good. Only our own rows:
@@ -353,4 +369,7 @@ for (let i = 0; i < rows.length; i += 100) {
 const today = new Date().toISOString().slice(0, 10);
 await db("/events?source=eq.ticketmaster&starts_at=lt." + today, { method: "DELETE" });
 
-console.log("written: " + rows.length + " upserted, past ticketmaster nights pruned before " + today);
+console.log("written: " + written + " upserted"
+  + (refused ? ", " + refused + " refused (see above)" : "")
+  + ", past ticketmaster nights pruned before " + today);
+if (refused && !written) process.exit(1);
