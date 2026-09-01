@@ -37,7 +37,15 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 28px 32px;
+  /* A solid block: scrolling text used to run through the menu */
+  background: var(--white);
 }
+
+/* On the landing's dark footer screen the menu inverts; a white slab
+   there would be a bandage across the black. Nothing scrolls under the
+   menu on the landing (the poster column clips itself), so transparent
+   is safe exactly there. */
+body.home .header { background: transparent; }
 
 /* With an admin signed in a third item joins the menu. We move to three columns
    so the middle one is really in the MIDDLE: space-between cannot do it because
