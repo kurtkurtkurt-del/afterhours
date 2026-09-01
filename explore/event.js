@@ -393,15 +393,25 @@
       return asking;
     }
 
-    /* Yesterday's answer, if the browser still holds it */
-    let remembered = null;
-    try {
-      const kept = JSON.parse(localStorage.getItem(CACHE) || "null");
-      if (kept && Date.now() - kept.at < WEEK && kept.url) remembered = kept;
-    } catch (_) {}
-
-    if (remembered) ready(remembered.url, remembered.store);
-    else lookUp().catch(() => {});      /* warm it up; a miss can wait for the press */
+    /* The address baked into featured.js comes first — no network, no
+       rate limit, the chip is ready the moment the page is. The live
+       search only runs for an entry without one, or as the fallback
+       when a baked preview has died (the audio error below). */
+    if (f.preview) {
+      ready(f.preview, f.store);
+      audio.addEventListener("error", () => {
+        audio = null;
+        lookUp().catch(() => {});
+      }, { once: true });
+    } else {
+      let remembered = null;
+      try {
+        const kept = JSON.parse(localStorage.getItem(CACHE) || "null");
+        if (kept && Date.now() - kept.at < WEEK && kept.url) remembered = kept;
+      } catch (_) {}
+      if (remembered) ready(remembered.url, remembered.store);
+      else lookUp().catch(() => {});    /* warm it up; a miss can wait for the press */
+    }
 
     button.addEventListener("click", () => {
       if (audio) {
