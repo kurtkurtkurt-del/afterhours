@@ -56,7 +56,7 @@
   /* The "friends liked swipes" deck. */
   AH.friendsKept = function () {
     if (!live()) return Promise.resolve([]);
-    return call("friends_kept", { p_limit: 60 })
+    return call("friends_kept", { p_limit: 99 })
       .then((rows) =>
         rows.map((r) => ({
           slug: r.slug, kind: r.type_name, title: r.title, meta: r.meta,
