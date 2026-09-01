@@ -28,7 +28,12 @@ window.FEATURED = [
     artist: "The Weeknd", song: "Blinding Lights",
     preview: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/17/b4/8f/17b48f9a-0b93-6bb8-fe1d-3a16623c2cfb/mzaf_9560252727299052414.plus.aac.p.m4a",
     store: "https://music.apple.com/us/album/blinding-lights/1488408555?i=1488408568&uo=4",
-    body: "The one tour we were legally obliged to hang first: it runs from after hours til dawn, and we have never related to anything more." },
+    body: "The one tour we were legally obliged to hang first: it runs from after hours til dawn, and we have never related to anything more.",
+    /* Art direction for the card at the foot of the page. Rose gold is
+       the colour dawn actually is, and the moon motif runs three rows of
+       phases down the plate — the tour name, printed as metal. */
+    metal: "rose", motif: "moon",
+    card: "After hours til dawn is four marks on the back of this card: when you got there, when somebody spoke, when the room was loudest, when you left." },
   { slug: "tyla-the-a-pop-world-tour-3da81ac5",
     artist: "Tyla", song: "Water",
     preview: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9a/62/e6/9a62e688-9080-feed-2411-cc793c4545cf/mzaf_4449175929344535361.plus.aac.p.m4a",

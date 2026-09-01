@@ -3062,25 +3062,72 @@ img.cs-poster {
 .cs-comments .c-replies { margin-top: 10px; padding-left: 12px; }
 .cs-comments .c-replies .c-text { font-size: 13px; }
 
-/* Past editions: real afterhours cards. They stay below the first screen — the
-   page is not selling a night, it is reminding you of a continuity. */
-.cs-past {
+/* --- what the night leaves you ---
+
+   The last thing on the page and the only black on it. Everything above is
+   paper: the poster, the bracket, the column of who is coming. Then the
+   page stops being paper and the card is metal. That is the whole reason
+   the band is here rather than a fourth section in the middle column.
+
+   It spans all three columns and eats the page's own padding, so it runs
+   edge to edge and sits flush against the footer. */
+.cs-earn {
+  grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-  max-width: 560px;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  align-items: start;
+  gap: 40px 56px;
+  margin: 64px -32px -56px;
+  padding: 56px 32px 60px;
+  background: var(--black);
+  color: var(--white);
 }
 
-.cs-past-card { min-width: 0; }
-.cs-past-face svg { display: block; width: 100%; height: auto; }
+.cs-earn-label {
+  grid-column: 1 / -1;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
 
-.cs-past-card figcaption {
-  margin-top: 10px;
+/* Both faces, side by side and the same size: neither of them is the
+   preview of the other. */
+.cs-earn-pair {
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  gap: 26px;
+}
+
+.cs-earn-card { min-width: 0; }
+.cs-earn-face svg { display: block; width: 100%; height: auto; }
+
+.cs-earn-card figcaption {
+  margin-top: 12px;
   font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   opacity: 0.4;
+}
+
+/* The offer, next to the thing being offered. No button: the ticket is
+   already in the right column and a second one here would turn a promise
+   into an advert. */
+.cs-earn-say { max-width: 46ch; padding-top: 2px; }
+
+.cs-earn-line {
+  font-size: 21px;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.cs-earn-sub {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.55;
 }
 
 /* On a narrow desktop the third column does not fit: who is coming and the
@@ -3121,7 +3168,27 @@ img.cs-poster {
   .cs-room-walk { font-size: 9px; letter-spacing: 0.1em; }
   .cs-title { font-size: min(11vw, 52px); }
   .cs-text, .cs-note { max-width: none; }
-  .cs-past { gap: 12px; }
+  /* On a phone the two faces halve and the words go under them. The band
+     keeps its black and its full bleed — that is the point of it. */
+  .cs-earn {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    margin: 44px -16px -64px;
+    padding: 40px 16px 48px;
+    order: 5;
+  }
+
+  .cs-earn-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .cs-earn-line { font-size: 18px; }
+}
+
+/* A card at 166px is a thumbnail of a card. On a narrow phone the two faces
+   stop sharing a row and take the full measure instead: the band is the end
+   of the page and can afford the height, and none of the small print on the
+   plate survives being halved. */
+@media (max-width: 720px) {
+  .cs-earn-pair { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .cs-earn-card { max-width: 340px; }
 }
 
 /* ---------- Settings page ---------- */

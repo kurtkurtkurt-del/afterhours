@@ -240,7 +240,13 @@ const esc=(v)=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g
 
 function front(e,i){
   const m=METALS[e.metal]||METALS.steel, id='f'+i;
-  const av=e.crew.map((c,k)=>
+  /* A card that has not been earned yet is the same plate with the night
+     missing from it. Nothing is hidden and nothing is blurred: the slots
+     are all drawn, they are simply empty, which is the whole argument —
+     you are looking at what the room fills in for you. */
+  const av=e.blank?[0,1,2,3].map(k=>
+    `<rect x="${34+k*54}" y="442" width="44" height="44" fill="none" stroke="${m.faint}" stroke-width="1.2" stroke-dasharray="4 4"/>`).join('')
+   :e.crew.map((c,k)=>
     `<rect x="${34+k*54}" y="442" width="44" height="44" fill="${m.light?'#2f3740':m.poster}" stroke="${m.mid}" stroke-width="1"/>
      <text x="${56+k*54}" y="472" text-anchor="middle" font-family="JetBrains Mono" font-size="17" fill="${m.light?'#eef3f8':m.hi}">${esc(c)}</text>`).join('')
    +`<rect x="${34+e.crew.length*54}" y="442" width="44" height="44" fill="none" stroke="${m.faint}" stroke-width="1.2" stroke-dasharray="4 4"/>
@@ -258,19 +264,19 @@ function front(e,i){
   <line x1="0" y1="302" x2="400" y2="302" stroke="${m.mid}" stroke-width="1"/>
 
   <text x="34" y="52" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${m.mid}">${esc(e.ty)}</text>
-  <text x="366" y="52" text-anchor="end" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${m.light?m.hi:m.accent}">CHECKED IN</text>
+  <text x="366" y="52" text-anchor="end" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${e.blank?m.faint:(m.light?m.hi:m.accent)}">${e.blank?'NOT YET':'CHECKED IN'}</text>
 
-  <text x="34" y="348" font-family="-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="${e.t.length>16?26:(e.t.length>12?31:37)}" letter-spacing="-1.4" fill="url(#g${id})">${esc(e.t.toUpperCase())}</text>
-  <text x="34" y="372" font-family="JetBrains Mono" font-size="10.5" letter-spacing="2" fill="${m.sub}">${esc(e.d)} · ${esc(e.v)} · ${esc(e.in)}</text>
+  <text x="34" y="348" font-family="-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="${e.t.length>26?19:(e.t.length>16?26:(e.t.length>12?31:37))}" letter-spacing="-1.4" fill="url(#g${id})">${esc(e.t.toUpperCase())}</text>
+  <text x="34" y="372" font-family="JetBrains Mono" font-size="10.5" letter-spacing="2" fill="${m.sub}">${[e.d,e.v,e.blank?'':e.in].filter(Boolean).map(esc).join(' · ')}</text>
 
   ${rule(m,398)}
   <text x="34" y="424" font-family="JetBrains Mono" font-size="10" letter-spacing="3" fill="${m.sub}">WHO WAS THERE</text>
   ${av}
   ${rule(m,514)}
   <g font-family="JetBrains Mono" font-size="10.5" letter-spacing="1.6">
-    <text x="34" y="540" fill="${m.sub}">AUDIO</text><text x="34" y="558" fill="${m.hi}">${esc(e.aud)}</text>
-    <text x="140" y="540" fill="${m.sub}">MESSAGES</text><text x="140" y="558" fill="${m.hi}">${esc(e.msg)}</text>
-    <text x="260" y="540" fill="${m.sub}">ROOM</text><text x="260" y="558" fill="${m.faint}">FROZEN</text>
+    <text x="34" y="540" fill="${m.sub}">AUDIO</text><text x="34" y="558" fill="${e.blank?m.faint:m.hi}">${e.blank?'—:—':esc(e.aud)}</text>
+    <text x="140" y="540" fill="${m.sub}">MESSAGES</text><text x="140" y="558" fill="${e.blank?m.faint:m.hi}">${e.blank?'—':esc(e.msg)}</text>
+    <text x="260" y="540" fill="${m.sub}">ROOM</text><text x="260" y="558" fill="${m.faint}">${e.blank?'OPEN':'FROZEN'}</text>
   </g>
   <rect x="7" y="7" width="386" height="586" fill="none" stroke="url(#e${id})" stroke-width="4"/>
   <rect x="13" y="13" width="374" height="574" fill="none" stroke="${m.deep}" stroke-width="1"/>
@@ -279,10 +285,18 @@ function front(e,i){
 // ─────────── THE BACK ───────────
 function back(e,i){
   const m=METALS[e.metal]||METALS.steel, id='b'+i;
-  const marks=[[e.in,'ARRIVED · WITH '+e.crew.length,m.hi,1],
-               [e.at1,'VOICE NOTE',m.accent,1],
-               [e.at2,e.msg+' MESSAGES',m.mid,1],
-               [e.out,'LEFT',m.sub,0]];
+  /* The unearned back: the same four marks, none of them struck. A
+     timeline with nothing on it yet is still a timeline, and it says
+     what the night is going to be asked to fill. */
+  const marks=e.blank
+    ?[['—:—','ARRIVED',m.faint,0],
+      ['—:—','VOICE NOTE',m.faint,0],
+      ['—:—','MESSAGES',m.faint,0],
+      ['—:—','LEFT',m.faint,0]]
+    :[[e.in,'ARRIVED · WITH '+e.crew.length,m.hi,1],
+      [e.at1,'VOICE NOTE',m.accent,1],
+      [e.at2,e.msg+' MESSAGES',m.mid,1],
+      [e.out,'LEFT',m.sub,0]];
   const tl=marks.map((k,n)=>{
     const y=106+n*56;
     return (k[3]?`<rect x="42" y="${y}" width="12" height="12" fill="${k[2]}"/>`
@@ -296,24 +310,28 @@ function back(e,i){
   <path d="M-40 0 L90 0 L10 600 L-120 600 Z" fill="#fff" opacity="0.026"/>
 
   <text x="34" y="52" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${m.mid}">THE NIGHT</text>
-  <text x="366" y="52" text-anchor="end" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${m.light?m.hi:m.accent}">${esc(e.dur)}</text>
+  <text x="366" y="52" text-anchor="end" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${e.blank?m.faint:(m.light?m.hi:m.accent)}">${e.blank?'—H —M':esc(e.dur)}</text>
   ${rule(m,70)}
 
   <line x1="48" y1="104" x2="48" y2="286" stroke="${m.line}" stroke-width="1.5"/>
   <g font-family="JetBrains Mono" letter-spacing="1.4">${tl}</g>
 
   ${rule(m,318)}
-  <text x="34" y="344" font-family="JetBrains Mono" font-size="10" letter-spacing="3" fill="${m.sub}">VOICE NOTE · ${esc(e.aud)}</text>
-  ${wave(id,m,34,387)}
-  <g transform="translate(34,444)"><rect width="34" height="34" fill="url(#g${id})"/><path d="M12 9 L25 17 L12 25 Z" fill="${m.poster}"/></g>
-  <text x="80" y="466" font-family="JetBrains Mono" font-size="10.5" letter-spacing="1.6" fill="${m.sub}">${esc(e.who)} · ${esc(e.at1)}</text>
+  <text x="34" y="344" font-family="JetBrains Mono" font-size="10" letter-spacing="3" fill="${m.sub}">VOICE NOTE · ${e.blank?'NOT RECORDED':esc(e.aud)}</text>
+  ${e.blank?`<g opacity="0.16">${wave(id,m,34,387)}</g>`:wave(id,m,34,387)}
+  ${e.blank
+    ?`<g transform="translate(34,444)"><rect width="34" height="34" fill="none" stroke="${m.faint}" stroke-width="1.2" stroke-dasharray="4 4"/><path d="M12 9 L25 17 L12 25 Z" fill="${m.faint}"/></g>`
+    :`<g transform="translate(34,444)"><rect width="34" height="34" fill="url(#g${id})"/><path d="M12 9 L25 17 L12 25 Z" fill="${m.poster}"/></g>`}
+  <text x="80" y="466" font-family="JetBrains Mono" font-size="10.5" letter-spacing="1.6" fill="${m.sub}">${e.blank?'NOBODY HAS SPOKEN YET':esc(e.who)+' · '+esc(e.at1)}</text>
 
   ${rule(m,498)}
-  <g font-family="JetBrains Mono" font-size="11">
-    <text x="34" y="524" fill="${m.light?m.accent:m.txt}">"${esc(e.q1[0])}"</text><text x="366" y="524" text-anchor="end" font-size="9.5" fill="${m.faint}">${esc(e.q1[1])} · ${esc(e.q1[2])}</text>
-    <text x="34" y="548" fill="${m.light?m.accent:m.txt}">"${esc(e.q2[0])}"</text><text x="366" y="548" text-anchor="end" font-size="9.5" fill="${m.faint}">${esc(e.q2[1])} · ${esc(e.q2[2])}</text>
+  <g font-family="JetBrains Mono" font-size="11">${e.blank
+    ?`<text x="34" y="524" letter-spacing="1.6" font-size="10" fill="${m.faint}">OVERHEARD · NOTHING YET</text>
+      <line x1="34" y1="546" x2="366" y2="546" stroke="${m.faint}" stroke-width="1" stroke-dasharray="4 5" opacity="0.7"/>`
+    :`<text x="34" y="524" fill="${m.light?m.accent:m.txt}">"${esc(e.q1[0])}"</text><text x="366" y="524" text-anchor="end" font-size="9.5" fill="${m.faint}">${esc(e.q1[1])} · ${esc(e.q1[2])}</text>
+      <text x="34" y="548" fill="${m.light?m.accent:m.txt}">"${esc(e.q2[0])}"</text><text x="366" y="548" text-anchor="end" font-size="9.5" fill="${m.faint}">${esc(e.q2[1])} · ${esc(e.q2[2])}</text>`}
   </g>
-  <text x="34" y="578" font-family="JetBrains Mono" font-size="9.5" letter-spacing="2" fill="${m.faint}">ROOM FROZEN ${esc(e.froze)} · NO. ${esc(e.no)}</text>
+  <text x="34" y="578" font-family="JetBrains Mono" font-size="9.5" letter-spacing="2" fill="${m.faint}">${e.blank?'ROOM NOT FROZEN · NO. NOT ISSUED':'ROOM FROZEN '+esc(e.froze)+' · NO. '+esc(e.no)}</text>
 
   <rect x="7" y="7" width="386" height="586" fill="none" stroke="url(#e${id})" stroke-width="4"/>
   <rect x="13" y="13" width="374" height="574" fill="none" stroke="${m.deep}" stroke-width="1"/>

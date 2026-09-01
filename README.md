@@ -245,8 +245,11 @@ night either, but this month's frame of something that keeps happening.
 │ photos   │ the closing time  ■─┬──┬──┘     │ · friends    │
 │ walk     │                                │              │
 │ room     │ ─ the first screen ends here ─ │              │
-│ from     │ editions you were at (cards)   │              │
-└──────────┴────────────────────────────────┴──────────────┘
+│ from     │                                │              │
+├──────────┴────────────────────────────────┴──────────────┤
+│ IF YOU GO — a black band, both faces of the card the     │
+│ night leaves you, with nothing written on them yet       │
+└──────────────────────────────────────────────────────────┘
 ```
 
 - **The left rail** stays put as the page scrolls. Deliberately dull: the
@@ -260,7 +263,15 @@ night either, but this month's frame of something that keeps happening.
   board rather than a third gallery.
 - **The right column** shows who is going first, then the ticket, then what
   your friends said about that night, that room or that date.
-- **Below** are the past editions you were at — as real afterhours cards.
+- **The band at the foot** is the only black on the page and the last thing
+  on it: paper, then the band, then the metal. It carries **both faces** of
+  the card this night would leave you — the front is who stood there, the
+  back is what the night sounded like and what got said in it. Nothing on
+  it has happened, so nothing on it is filled: `NOT YET`, dashed crew
+  squares, `AUDIO —:—`, `ROOM OPEN`, `NO. NOT ISSUED`. The slots are drawn
+  and left empty rather than hidden or blurred — **a blur says pay me, an
+  empty slot says go.** It used to say "editions you were at", which we had
+  no way of knowing.
 
 ### Where the content comes from
 
@@ -269,6 +280,7 @@ night either, but this month's frame of something that keeps happening.
 | Title, kind, meta, first paragraph, poster | The event's own data (`POSTERS`) |
 | The credit lines, the after rooms, paragraphs, price, ticket wording, comments | `explore/event-data.js` — **pools per kind** |
 | Which part lands on which night | **a mulberry32 seed made from the slug** |
+| The card's metal and motif | `featured.js` for a hand-picked night, otherwise the seed |
 
 So an event shows the same thing every time it is opened, and no two events
 look alike. (`explore/comment-pools.js` uses the same pattern.)
@@ -287,6 +299,20 @@ simply has no after, which the section says out loud instead of inventing
 one. A night that ends in the afternoon waits for nine. Closing times are
 whole hours between four and eight hours out, so nothing shuts at two in
 the afternoon.
+
+### The unearned card
+
+`cards.js` draws the same plate either way; `blank: true` on the night is
+what empties it. A hand-picked night in `featured.js` may carry `metal`,
+`motif` and a `card` line of its own — The Weeknd gets **rose gold and the
+moon motif**, because rose gold is the colour dawn actually is and the
+motif runs three rows of phases down the plate. That is the tour name,
+printed as metal. Everything else is dealt a metal from the slug, so a
+night always turns up wearing the same card.
+
+The plate is 400 units wide and a listing title is not: the card takes the
+artist from `featured.js` when there is one, and otherwise cuts the title
+at the colon — `Artist: Tour Name` is how the listings are written.
 
 **The rooms are invented for now** (`AFTERS` in `explore/event-data.js`) —
 they are placeholders, not real venues. The moment the after is wired to
@@ -469,7 +495,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **160**.
+The current version: **161**.
 
 The explore date filter is real now (every synced night carries a true
 date): tonight / tomorrow / this weekend / this week / this month /

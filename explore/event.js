@@ -44,9 +44,6 @@
     return l;
   }
 
-  const ordinal = (n) => n + (["th", "st", "nd", "rd"][(n % 100 - 20) % 10] ||
-                           ["th", "st", "nd", "rd"][n % 100] || "th");
-
   /* --- the one meta line: "Olympiahalle · 11.09.26 · 18:30" --- */
   function parseMeta(meta) {
     const parts = String(meta || "").split("·").map((p) => p.trim()).filter(Boolean);
@@ -96,9 +93,11 @@
     const posterPath = e.posterPath ||
       "../../posters/" + String(e.poster || 1).padStart(2, "0") + ".svg";
 
-    /* which edition this is, and how many times it has been you */
+    /* which edition of the series this is. It used to add "your 3rd" —
+       we have never known that, and the foot of the page now offers you
+       a card you have not earned, so the two were calling each other a
+       liar in the same column. */
     const edition = 2 + Math.floor(rnd() * 11);
-    const picked = Math.min(edition - 1, Math.floor(rnd() * 3));
 
     area.textContent = "";
 
@@ -148,7 +147,7 @@
     middle.appendChild(crumb);
 
     middle.appendChild(el("p", "cs-edition",
-      "edition " + String(edition).padStart(2, "0") + " · your " + ordinal(picked + 1)));
+      "edition " + String(edition).padStart(2, "0")));
     middle.appendChild(el("h1", "cs-title", e.title || ""));
     middle.appendChild(el("p", "cs-meta",
       [kind.toLowerCase(), m.date ? day + " " + m.date : day].join(" · ")));
@@ -163,17 +162,6 @@
     /* ---- the after ---- */
     middle.appendChild(buildAfter(m, kind, rnd));
 
-    /* ---- the editions you were at ---- */
-    const past = el("section", "cs-section cs-section-past");
-    past.appendChild(el("p", "cs-label", picked
-      ? "editions you were at · " + picked + " of " + (edition - 1)
-      : "your first one · " + (edition - 1) + " happened without you"));
-    const box = el("div", "cs-past");
-    past.appendChild(box);
-    /* If you never went, the box stays empty; a sentence fills it. */
-    if (!picked) past.appendChild(el("p", "cs-note",
-      "Keep this one and the collection starts here."));
-    middle.appendChild(past);
     area.appendChild(middle);
 
     /* ---- the right column ---- */
@@ -220,8 +208,8 @@
     right.appendChild(comments);
     area.appendChild(right);
 
-    /* ---- the past-edition cards (drawn by cards.js) ---- */
-    drawCards(box, e, m, kind, picked, edition, rnd, friends);
+    /* ---- what the night leaves you ---- */
+    area.appendChild(buildCard(e, m, kind, handPicked, rnd));
   }
 
   /* If two texts share an uncommon word they are probably saying the
@@ -519,43 +507,74 @@
 
   const METAL_LIST = ["steel", "chrome", "gunmetal", "titanium", "nickel", "anthracite", "brass", "copper"];
   const MOTIF_LIST = ["rays", "oval", "diagonal", "orbit", "grid", "moon", "moire", "bands", "iso", "descend"];
-  const OVERHEARD = [
-    "nobody in the front row sat down", "we lost each other by midnight",
-    "the back room was better", "phones stayed in pockets",
-    "side seats were the right call", "they said no encore. there was one",
-    "we stayed until the lights came up", "the queue was the best part",
-  ];
 
-  function drawCards(box, e, m, kind, picked, edition, rnd, friends) {
-    if (!window.CARDS || !picked) return;
+  /* --- the card you leave with ---
+     The only black on a white page and the last thing on it: paper, then
+     the band, then the metal. Both faces, because the front is only who
+     stood there — the back is where the night is actually written down.
 
-    for (let i = 0; i < picked; i++) {
-      const year = 26 - (i + 1) * 2;
-      const night = {
-        city: "münchen",
-        t: e.title, ty: (kind || "").toUpperCase(),
-        v: (m.venue || "münchen").toUpperCase(),
-        d: "1" + (2 + i) + ".0" + (5 + i) + "." + year,
-        metal: pick(rnd, METAL_LIST), motif: pick(rnd, MOTIF_LIST),
-        in: "19:4" + i, out: "23:2" + i, dur: "3H 4" + i + "M",
-        crew: friends.slice(0, 3).map((a) => a[0]),
-        more: 3 + Math.floor(rnd() * 8), aud: "0:" + (20 + Math.floor(rnd() * 39)),
-        msg: 8 + Math.floor(rnd() * 20), who: (friends[0] || "you").toUpperCase(),
-        froze: "1" + (4 + i) + ".0" + (5 + i), no: "0" + (100 + Math.floor(rnd() * 800)),
-        at1: "20:1" + i, at2: "22:3" + i,
-        q1: [pick(rnd, OVERHEARD), (friends[1] || "L")[0], "21:1" + i],
-        q2: [pick(rnd, OVERHEARD), (friends[2] || "M")[0], "23:0" + i],
-      };
+     Nothing on it has happened yet. The slots are drawn and left empty
+     rather than hidden or blurred: a blur says pay me, an empty slot says
+     go. */
+  function buildCard(e, m, kind, handPicked, rnd) {
+    const band = el("section", "cs-earn");
+    if (!window.CARDS) return band;
 
-      const card = el("figure", "cs-past-card");
-      const face = el("div", "cs-past-face");
-      face.innerHTML = CARDS.front(night, "g" + i);
-      card.appendChild(face);
-      card.appendChild(el("figcaption", null,
-        "edition " + String(edition - 1 - i).padStart(2, "0") +
-        " · " + (m.venue || "münchen").toLowerCase() + " · " + night.d));
-      box.appendChild(card);
-    }
+    band.appendChild(el("p", "cs-earn-label",
+      "if you go · the card this night leaves you"));
+
+    const night = {
+      t: cardTitle(e, handPicked),
+      ty: (kind || "").toUpperCase(),
+      v: (m.venue || e.city || "").toUpperCase(),
+      d: m.date || "",
+      /* A hand-picked night carries its own art direction — the metal and
+         the motif are part of what makes it that night and not another.
+         Everything else is dealt one from the slug, so a night always
+         turns up wearing the same card. */
+      metal: (handPicked && handPicked.metal) || pick(rnd, METAL_LIST),
+      motif: (handPicked && handPicked.motif) || pick(rnd, MOTIF_LIST),
+      blank: true,
+      crew: [], more: 0, aud: "", msg: "", in: "", out: "", dur: "",
+      who: "", at1: "", at2: "", froze: "", no: "",
+      q1: ["", "", ""], q2: ["", "", ""],
+    };
+
+    const pair = el("div", "cs-earn-pair");
+    [["front", CARDS.front(night, "e")], ["back", CARDS.back(night, "e")]]
+      .forEach(([side, svg]) => {
+        const fig = el("figure", "cs-earn-card");
+        const face = el("div", "cs-earn-face");
+        face.innerHTML = svg;
+        fig.appendChild(face);
+        fig.appendChild(el("figcaption", null, side));
+        pair.appendChild(fig);
+      });
+    band.appendChild(pair);
+
+    const say = el("div", "cs-earn-say");
+    say.appendChild(el("p", "cs-earn-line",
+      "It fills itself while you are in the room."));
+    say.appendChild(el("p", "cs-earn-sub",
+      (handPicked && handPicked.card) ||
+      "The front is who stood there with you. The back is what the night " +
+      "sounded like and what got said in it. Neither of them is written by you."));
+    band.appendChild(say);
+
+    return band;
+  }
+
+  /* The plate is 400 units wide and a listing title is not. A hand-picked
+     night knows whose night it is; everything else is cut at the colon —
+     "Artist: Tour Name" is how the listings are written — and, failing
+     that, at the last word that still fits. */
+  function cardTitle(e, handPicked) {
+    if (handPicked && handPicked.artist) return handPicked.artist;
+    const t = String(e.title || "").split(/[:\u2013\u2014|(]/)[0].trim();
+    if (t.length <= 26) return t;
+    const cut = t.slice(0, 26);
+    const space = cut.lastIndexOf(" ");
+    return (space > 12 ? cut.slice(0, space) : cut).trim();
   }
 
   /* --- which event? the folder name in the address bar --- */
