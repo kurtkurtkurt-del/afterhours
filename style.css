@@ -3523,6 +3523,230 @@ img.cs-poster {
   .cs-earn-card { max-width: 340px; }
 }
 
+/* ---------- Somebody's page ---------- */
+
+/* Three things from three sketches, in the order the question arrives:
+   how you reach them (the path), who they are and what they kept (the
+   roll), and what those nights left them with (the shelf, which is the
+   same black band the event page ends on). One column, the contact
+   sheet's measure. */
+.pf {
+  max-width: 1160px;
+  padding: 118px 32px 64px;
+}
+
+.pf-none { font-size: 17px; opacity: 0.5; }
+
+/* --- the path --- */
+.pf-path { margin-bottom: 52px; }
+
+.pf-hops {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-top: 6px;
+}
+
+.pf-hop {
+  flex: 0 0 auto;
+  width: 150px;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* You are the filled square, the size of a face */
+.pf-hop-mark {
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: var(--black);
+}
+
+.pf-hop-face { display: block; width: 150px; height: 150px; }
+
+.pf-hop-name {
+  margin-top: 12px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.pf-hop-rel {
+  margin-top: 4px;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+/* The introductions you would have to ask for */
+.pf-hop-link {
+  flex: 1 1 40px;
+  max-width: 120px;
+  height: 1px;
+  margin-top: 75px;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+a.pf-hop:hover .pf-hop-name { text-decoration: underline; text-underline-offset: 3px; }
+
+/* --- the head --- */
+.pf-head {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  padding-top: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.pf-portrait { display: block; width: 132px; height: 132px; }
+
+.pf-name {
+  font-size: min(6vw, 56px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.pf-meta { margin-top: 12px; font-size: 15px; opacity: 0.5; }
+.pf-bio { margin-top: 16px; max-width: 60ch; font-size: 16px; line-height: 1.55; opacity: 0.8; }
+
+/* --- the roll --- */
+.pf-roll { margin-top: 56px; }
+
+.pf-frames {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 30px 16px;
+}
+
+/* A frame is a photograph pulled to black and white, like a contact
+   sheet, with the number of the exposure under it. */
+.pf-shot {
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: #ececea;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.pf-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+  transition: filter 0.25s ease;
+}
+
+.pf-frame:hover .pf-shot img { filter: grayscale(0); }
+
+.pf-shot.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f2;
+  border-color: rgba(0, 0, 0, 0.08);
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+.pf-frame-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 9px;
+  min-width: 0;
+}
+
+.pf-no {
+  flex: 0 0 auto;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  opacity: 0.3;
+}
+
+.pf-frame-name {
+  font-size: 13.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pf-frame-name.dim { opacity: 0.4; }
+
+.pf-frame-meta {
+  margin-top: 4px;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 8.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.42;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- which friends, and you and them --- */
+.pf-friends {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 40px;
+  align-items: start;
+  margin-top: 56px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.pf-faces { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pf-face-link { display: block; }
+.pf-small-face { display: block; width: 40px; height: 40px; }
+.pf-more { font-size: 12px; opacity: 0.4; margin-left: 4px; }
+
+/* On this page the path is always showing — there is nothing to hover
+   away from, and the whole page is the hover. */
+.pf-you .cs-chain { position: static; opacity: 1; pointer-events: auto; height: auto; }
+
+/* --- the shelf --- */
+.pf-shelf { margin-top: 64px; }
+
+.pf-cards {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+
+.pf-cards::-webkit-scrollbar { display: none; }
+.pf-cards .cs-earn-card { flex: 0 0 230px; }
+
+@media (max-width: 900px) {
+  .pf { padding: 104px 16px 56px; }
+  /* Four hops have to fit a phone: 4 × 78 plus three hairlines is 343
+     with nothing to spare, so the row may also scroll rather than push
+     the page sideways. */
+  .pf-hops { overflow-x: auto; scrollbar-width: none; }
+  .pf-hops::-webkit-scrollbar { display: none; }
+  .pf-hop, .pf-hop-mark, .pf-hop-face { width: 78px; }
+  .pf-hop-mark, .pf-hop-face { height: 78px; }
+  .pf-hop-link { flex-basis: 10px; min-width: 10px; margin-top: 39px; }
+  .pf-hop-name { font-size: 15px; }
+  .pf-hop-rel { font-size: 8.5px; letter-spacing: 0.1em; }
+  .pf-head { grid-template-columns: 88px minmax(0, 1fr); gap: 18px; }
+  .pf-portrait { width: 88px; height: 88px; }
+  .pf-frames { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 12px; }
+  .pf-friends { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .pf-cards .cs-earn-card { flex-basis: 200px; }
+}
+
 /* ---------- Settings page ---------- */
 
 /* One column, the same measure as the help page: something to be read, not a

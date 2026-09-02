@@ -306,7 +306,13 @@
       row.appendChild(portrait);
 
       const body = el("span", "cs-who-body");
-      body.appendChild(el("span", "cs-who-name", p.name));
+      /* The name is the way to the person, and the link carries the path:
+         the profile draws "you → emre → mira" from ?via=, because a page
+         about somebody you do not know should open on how you know them. */
+      const name = el("a", "cs-who-name", p.name);
+      name.href = "../../profile/index.html?handle=" + encodeURIComponent(p.name.toLowerCase()) +
+        (p.via.length ? "&via=" + encodeURIComponent(p.via.map((v) => v.toLowerCase()).join(",")) : "");
+      body.appendChild(name);
 
       /* One slot, two things in it, both absolute: the handle at rest and
          the path on hover. If the row grew a line instead, every row under

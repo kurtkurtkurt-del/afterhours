@@ -396,6 +396,34 @@ Found on the way: `stack()` never cleared the transform of the card that
 had just come to the top, so it stayed 4.5% smaller and 14px lower until
 touched. It does now.
 
+### Somebody's page — `profile/?handle=…&via=…`
+
+You get here from a name in the column of who is going, and the link
+carries the path (`via=jonas,nils`), because a page about somebody you do
+not know should open on how you know them. Three things from three
+sketches, in the order the question arrives:
+
+1. **The path** — you as the filled square, a face per hop, the person at
+   the end, hairlines between; "friend of friend of jonas"; the last hop
+   can introduce you. Each hop is a link to its own page, path included.
+2. **The head and the roll** — face, name, `@handle · city · since`, one
+   line; then the nights they kept as a **contact sheet**: nine real nights
+   from the listings in their city, black and white until hovered,
+   numbered, each leading to its night, and a tenth frame "not shot yet".
+3. **The shelf** — the same black band the event page ends on, with the
+   cards those nights left them with on `cards.js` plates, metals dealt by
+   the seed; and the sentence that none of them are real yet.
+
+Everything is drawn from the handle with the event page's seed, so a
+person looks the same from every night. **A real account** with that
+handle (`profile_card`, callable signed out) takes over its own name, line,
+city and date — and nothing from the pools is said about a real person: no
+line if they wrote none, no counts the database did not hand over. What is
+still missing for real people is their kept nights (no RPC lets one person
+read another's; the roll shows their city's nights instead) and real
+cards, which do not exist for anybody yet. Everybody is public for now,
+as agreed.
+
 ### The faces
 
 Nobody has uploaded a photograph, and an initial in a box was standing in
@@ -609,7 +637,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **166**.
+The current version: **167**.
 
 The explore date filter is real now (every synced night carries a true
 date): tonight / tomorrow / this weekend / this week / this month /
