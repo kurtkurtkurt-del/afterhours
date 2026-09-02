@@ -56,3 +56,15 @@ def make(S, w_bold=700, w_light=300, pad=0.07, gap=0.05,
     out = rgb.convert("RGBA")
     out.putalpha(square)
     return out.resize((S, S), Image.LANCZOS)
+
+
+# The mark is "af" alone, centred, at every size. The two-line "af / hr"
+# version sat visibly off-centre once the site was on a phone's home
+# screen, so it went. No rounding: iOS and Android cut their own corners,
+# and a corner cut twice shows a seam. (The shipped PNGs were drawn from
+# the site's own Inter Tight 700 woff2, decompressed with fontTools, on
+# exactly this recipe; this needs the variable TTF at FONT to redraw.)
+if __name__ == "__main__":
+    for S in (16, 32, 48, 64, 180, 512):
+        make(S, single=True, pad=0.21).save("favicon-%d.png" % S, optimize=True)
+        print("favicon-%d.png" % S)
