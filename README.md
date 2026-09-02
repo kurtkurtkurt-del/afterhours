@@ -684,7 +684,7 @@ The order matters: each step closes the road the one before it opened.
 - [x] **Replies, a deck count, and two ways out of an empty deck** — beforehours answers, "03 / 36", deal-again / try-another-city
 - [x] **The site checks itself** — `tools-site-check.py` walks every reference; the CI `site` job runs it
 - [x] **Real events** — the Ticketmaster sync (§4, §9): the worldwide deck, the everywhere filter, photographs and real ticket pages; the invented nights retire via `cleanup-seed-events.sql`
-| `backend/sql/rename-test-users.sql` | One-shot for the live database: every account becomes `testuser1…n` in the order they were opened (handle and display name; sign-in is email and password and does not change) — paste into the Supabase SQL editor |
+| `backend/sql/rename-test-users.sql` | One-shot for the live database: every account except `offdutykurt` and `kurt2` becomes `testuser1…n` in the order they were opened (handle and display name; sign-in is email and password and does not change) — paste into the Supabase SQL editor |
 - [x] **Installable** — `manifest.webmanifest`, and the poster wall lazy-loads below the fold
 
 **Next (a suggested order)**
