@@ -352,6 +352,33 @@ The deck box is unchanged (`--ex-w * 1.5 + --ex-info-h`), so nothing else
 in the column had to be re-derived. A **drawn** night — today only the
 offline deck — still gets the old poster plus the strip underneath.
 
+### Holding a card up, and the way back
+
+Two taps on the top card and it comes forward over a white veil, about
+1.5× the size (`zoomIn` in explore.js — the same element moved by
+transform, measured from where the deck is; nothing is cloned). One more
+tap on it opens the night; a tap on the veil or Esc puts it back. It is
+read from pointer events, not `dblclick`, so a thumb and a mouse are the
+same gesture, and a tap is a press that did not travel — a short drag that
+snapped back is not half of one. Arrow keys are inert while a card is up.
+
+The back button finds the deck the way it was left. Before leaving, a note
+goes into `sessionStorage` (`afterhours.deck`): the mode, the filter, the
+**order of the whole deck** by slug, the card, the counter, and whether it
+was held up. It is read only on a `back_forward` arrival (a plain visit to
+explore starts clean) and goes stale after half an hour. On arrival the
+filter is written into the object filters.js draws from, the deck is
+pulled again wide (no date window) and rebuilt in the remembered order —
+the order and not the filter, because the window moves at midnight and the
+first deal of the day does not apply it the way a redeal does — and the
+remembered card is dealt to the top, held up again if it was. Cards swiped
+in between simply are not there. Through the bfcache none of this runs:
+the DOM comes back intact, card still up.
+
+Found on the way: `stack()` never cleared the transform of the card that
+had just come to the top, so it stayed 4.5% smaller and 14px lower until
+touched. It does now.
+
 ### The faces
 
 Nobody has uploaded a photograph, and an initial in a box was standing in
@@ -565,7 +592,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **164**.
+The current version: **165**.
 
 The explore date filter is real now (every synced night carries a true
 date): tonight / tomorrow / this weekend / this week / this month /

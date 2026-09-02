@@ -43,6 +43,14 @@
   const boxBody = document.getElementById("ex-box-body");
   const badge = document.getElementById("ex-badge");
 
+  /* A drawn night has a folder of its own; a synced one is served by the
+     shared shell, which reads the slug off the address. index.html written
+     out: a bare folder only resolves on a server. */
+  function pageFor(e) {
+    return e.image ? "event/index.html?slug=" + encodeURIComponent(e.slug)
+                   : e.slug + "/index.html";
+  }
+
   function keep(event) {
     if (kept.some((e) => e.slug === event.slug)) return;
     kept.push(event);
@@ -70,11 +78,7 @@
     kept.slice().reverse().forEach((e) => {
       const a = document.createElement("a");
       a.className = "ex-box-row";
-      /* A drawn night has a folder of its own; a synced one is served by
-         the shared shell, which reads the slug off the address.
-         index.html written out: a bare folder only resolves on a server. */
-      a.href = e.image ? "event/index.html?slug=" + encodeURIComponent(e.slug)
-                       : e.slug + "/index.html";
+      a.href = pageFor(e);
       a.appendChild(posterElement(e, CARDS.indexOf(e)));
       const text = document.createElement("div");
       const name = document.createElement("p");
@@ -145,8 +149,10 @@
   /* The left/right arrow keys swipe too. Inside a form control the
      arrows must keep their own meaning, so those are left alone. */
   document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { zoomOut(); return; }
     if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
     if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (zoomed) return;               /* a card held up is read, not swiped */
     const target = e.target;
     if (target && target.closest && target.closest("select, input, textarea, [contenteditable]")) return;
     const top = deck.lastElementChild;
@@ -325,10 +331,13 @@
       card.appendChild(infoStrip(data));
     }
 
-    let startX = null, dx = 0;
+    let startX = null, dx = 0, lastTap = 0;
 
     card.addEventListener("pointerdown", (e) => {
       if (card !== deck.lastElementChild) return;
+      /* Held up, the card is not dragged: one more press opens its page,
+         and the press is read on the way up so a slip does not count. */
+      if (zoomed) return;
       startX = e.clientX;
       dx = 0;
       card.classList.add("held");
@@ -342,7 +351,16 @@
       card.style.transform = "translateX(" + dx + "px) rotate(" + (dx / 24) + "deg)";
     });
 
-    function release() {
+    /* Two taps inside 350ms and the card comes up; while it is up, one
+       tap goes to the night. Read from pointer events rather than
+       dblclick, so a thumb and a mouse are the same gesture — and a tap
+       is a press that did not travel, otherwise every short drag that
+       snapped back would have counted as half of one. */
+    function release(e) {
+      if (zoomed && card === zoomed && e.type === "pointerup") {
+        visit(card);
+        return;
+      }
       if (startX === null) return;
       startX = null;
       card.classList.remove("held");
@@ -350,15 +368,144 @@
 
       if (Math.abs(dx) > THRESHOLD) {
         fly(card, dx > 0 ? 1 : -1);
-      } else {
-        card.style.transform = "";
+        return;
       }
+      card.style.transform = "";
+      if (e.type !== "pointerup" || Math.abs(dx) > 6) return;
+      const now = Date.now();
+      if (now - lastTap < 350) { lastTap = 0; zoomIn(card); }
+      else lastTap = now;
     }
 
     card.addEventListener("pointerup", release);
     card.addEventListener("pointercancel", release);
     return card;
   }
+
+  /* --- holding a card up ---
+     Two taps and the top card comes forward to fill the screen, over a
+     white veil; the rest of the page is still there, only quieter. It is
+     the same element, moved by transform — nothing is cloned, so the
+     picture and the type are exactly what was dealt. One more tap on it
+     opens the night; a tap on the veil or Esc puts it back. The move is
+     measured from where the deck is, so it works wherever the column
+     lands the deck. */
+  let zoomed = null;
+  const veil = document.createElement("div");
+  veil.className = "ex-veil";
+  const veilHint = document.createElement("p");
+  veilHint.className = "ex-veil-hint";
+  veilHint.textContent = "tap the card to open the night · tap outside to put it back";
+  veil.appendChild(veilHint);
+  document.body.appendChild(veil);
+  veil.addEventListener("click", () => zoomOut());
+
+  function place(card) {
+    const r = deck.getBoundingClientRect();
+    const scale = Math.min(0.88 * window.innerHeight / r.height,
+                           0.9 * window.innerWidth / r.width);
+    const tx = window.innerWidth / 2 - (r.left + r.width / 2);
+    const ty = window.innerHeight / 2 - (r.top + r.height / 2);
+    card.style.transform = "translate(" + tx + "px, " + ty + "px) scale(" + scale + ")";
+  }
+
+  function zoomIn(card) {
+    if (zoomed || card !== deck.lastElementChild) return;
+    zoomed = card;
+    card.classList.add("soft", "zoomed");
+    card.style.zIndex = "200";
+    veil.classList.add("open");
+    place(card);
+    announce("card held up: tap it to open, escape to put it back");
+  }
+
+  function zoomOut() {
+    if (!zoomed) return;
+    const card = zoomed;
+    zoomed = null;
+    card.classList.remove("zoomed");
+    card.classList.add("soft");
+    card.style.transform = "";
+    veil.classList.remove("open");
+    stack();                           /* hands the z-index back */
+  }
+
+  window.addEventListener("resize", () => { if (zoomed) place(zoomed); });
+
+  /* Off to the night — and a note left behind, so that the back button
+     finds the deck the way it was left: same filter, same card, still
+     held up. */
+  function visit(card) {
+    const e = CARDS[Number(card.dataset.no)];
+    if (!e) return;
+    remember(e.slug);
+    location.href = pageFor(e);
+  }
+
+  /* --- coming back to where you were ---
+     The deck is dealt fresh on every visit and the filter lives in
+     memory, so on its own the back button would land on the first card
+     of tonight, in München. The note in sessionStorage says which mode,
+     which filter, which card, and whether it was held up; it is read only
+     on a back/forward arrival (a plain visit to explore starts clean) and
+     it goes stale after half an hour. */
+  const NOTE = "afterhours.deck";
+
+  function remember(slug) {
+    try {
+      sessionStorage.setItem(NOTE, JSON.stringify({
+        mode: currentMode(),
+        filter: Object.assign({}, (window.AH && AH.filter) || {}),
+        /* The order of the whole deck, not only the card: a deck is dealt
+           against a date window and the window moves at midnight, so the
+           same filter does not promise the same deck. The slugs do. */
+        slugs: CARDS.map((e) => e.slug),
+        slug: slug,
+        count: swipedCount,
+        total: dealTotal,
+        zoomed: Boolean(zoomed),
+        at: Date.now(),
+      }));
+    } catch (_) {}
+  }
+
+  function noteToRestore() {
+    try {
+      const nav = performance.getEntriesByType("navigation")[0];
+      if (!nav || nav.type !== "back_forward") return null;
+      const note = JSON.parse(sessionStorage.getItem(NOTE) || "null");
+      if (!note || !note.slug || Date.now() - note.at > 30 * 60 * 1000) return null;
+      return note;
+    } catch (_) { return null; }
+  }
+
+  /* Deal the deck already in CARDS with the given card on top: the ones
+     before it are stepped over, not swiped — nothing is recorded — and
+     the counter reads as if you had got here by hand. */
+  function dealAt(note) {
+    const at = CARDS.findIndex((e) => e.slug === note.slug);
+    if (at < 0) return false;
+    while (deck.firstChild) deck.removeChild(deck.firstChild);
+    index = at;
+    /* The counter comes back as it was read on the way out — "03 / 95"
+       and not "01 / 93" — because the two cards swiped on the way to
+       this one have since left the pull, and counting again would forget
+       them. */
+    dealTotal = note.total || CARDS.filter((e) => !skip.has(e.slug)).length;
+    swipedCount = note.count != null ? note.count
+      : CARDS.slice(0, at).filter((e) => !skip.has(e.slug)).length;
+    fill();
+    if (note.zoomed && deck.lastElementChild) {
+      const card = deck.lastElementChild;
+      card.classList.remove("soft");   /* it appears held up, it does not travel there */
+      zoomIn(card);
+      requestAnimationFrame(() => card.classList.add("soft"));
+    }
+    announce("back on the deck at: " + note.slug);
+    return true;
+  }
+
+  let pendingRestore = null;
 
   /* --- the comments on the top card --- */
 
@@ -597,6 +744,11 @@
       k.style.zIndex = String(i);
       if (depth > 0) {
         k.style.transform = "translateY(" + depth * 14 + "px) scale(" + (1 - depth * 0.045) + ")";
+      } else if (!k.classList.contains("held") && !k.classList.contains("zoomed")) {
+        /* The card that has just come to the top was drawn 4.5% smaller
+           and 14px lower a moment ago; it stays that way until somebody
+           touches it unless the transform is taken off here. */
+        k.style.transform = "";
       }
     });
   }
@@ -665,7 +817,7 @@
   }
 
   /* Fetch the card source for the mode. They all return the same shape. */
-  function sourceFor(mode) {
+  function sourceFor(mode, wide) {
     if (mode === "friends liked swipes") {
       return window.AH && AH.friendsKept
         ? AH.friendsKept()
@@ -699,7 +851,8 @@
          With a date window on, the pull is wider still — the window is
          cut out of it client-side, and the nights come date-ordered so
          the near windows always sit at the front of the pull. */
-      return AH.events(f.kind, f.city, fetchSize()).then(applyDate)
+      return AH.events(f.kind, f.city, fetchSize())
+        .then((list) => (wide ? list : applyDate(list)))
         .catch(() => applyFilter(POSTERS));
     }
     return Promise.resolve(applyFilter(POSTERS));
@@ -729,8 +882,20 @@
     const done = document.getElementById("ex-done");
     if (done && mode) done.textContent = EMPTY_MESSAGE[mode] || EMPTY_MESSAGE["global deck"];
 
-    return sourceFor(mode || "global deck").then((list) => {
+    const note = pendingRestore;
+    pendingRestore = null;
+
+    return sourceFor(mode || "global deck", Boolean(note)).then((list) => {
       CARDS = capDeck(list);
+
+      /* Coming back: the deck in the order it was left, built from the
+         fresh pull by slug. Whatever the pull no longer carries (swiped
+         since, dropped by the sync) simply is not there. */
+      if (note && note.slugs) {
+        const by = new Map(list.map((e) => [e.slug, e]));
+        const again = note.slugs.map((s) => by.get(s)).filter((e) => e && !skip.has(e.slug));
+        if (again.some((e) => e.slug === note.slug)) CARDS = again;
+      }
       /* An empty deck: say why it is empty. The list itself may be full
          while every card in it was already swiped — same message. */
       if (!CARDS.length && done && (mode || "global deck") === "global deck") {
@@ -739,6 +904,7 @@
           ? "no nights in " + f.city + " yet."
           : "that's everyone for tonight.";
       }
+      if (note && dealAt(note)) return;
       startDealing();
     });
   }
@@ -871,4 +1037,37 @@
   CARDS = capDeck(AH.mode === "live" ? applyDate(CARDS) : CARDS);
   dealTotal = CARDS.filter((e) => !skip.has(e.slug)).length;
   fill();
+
+  /* Arrived by the back button: restore the filter and deal the deck at
+     the card that was open. This waits on AH.ready like filters.js does,
+     and it must run AFTER filters.js has set its defaults — it does,
+     because this script is parsed first and the callbacks run in the
+     order they were registered. The filter is written into the same
+     object filters.js draws from, so the choices above the deck read
+     right when they arrive. "i feel lucky" cannot be re-rolled, but the
+     city it landed on is in the note, so the plain deck of that city is
+     what comes back. */
+  const note = noteToRestore();
+  if (note) {
+    Promise.resolve(window.AH && AH.ready).then(() => {
+      if (window.AH && AH.filter && note.filter) Object.assign(AH.filter, note.filter);
+      const mode = note.mode === "friends liked swipes" ? note.mode : "global deck";
+      document.querySelectorAll(".ex-mode").forEach((d) => {
+        const mine = d.textContent.trim() === mode;
+        d.classList.toggle("selected", mine);
+        if (mine) d.setAttribute("aria-current", "true");
+        else d.removeAttribute("aria-current");
+      });
+      pendingRestore = note;
+      return redeal(mode);
+    }).catch((err) => {
+      console.warn("[afterhours] couldn't put the deck back:", err);
+    });
+  }
+
+  /* Back from the page through the bfcache: the DOM is intact, the card
+     is still up. Nothing to restore, the veil is simply still there. */
+  window.addEventListener("pageshow", (e) => {
+    if (e.persisted && zoomed) place(zoomed);
+  });
 })();

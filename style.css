@@ -1517,6 +1517,50 @@ body[data-screen="3"] .sound { opacity: 0; pointer-events: none; }
   padding: 12px 17px 0;
 }
 
+/* --- a card held up ---
+
+   Two taps and the top card comes forward over a white veil. It is the
+   same element moved by transform (explore.js measures the move from the
+   deck), so nothing is cloned and nothing reloads. The veil is white and
+   not black: the page does not go away, it goes quiet. No shadow — the
+   card already has its hairline, and a shadow would be the first one on
+   the site. */
+.ex-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(255, 255, 255, 0.82);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.26s ease;
+}
+
+.ex-veil.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ex-veil-hint {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 26px;
+  text-align: center;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.ex-card.zoomed {
+  cursor: pointer;
+  transform-origin: center;
+}
+
+/* The no-art face has no edge of its own; held up over white it needs one */
+.ex-card.zoomed .no-art { border: 1px solid rgba(0, 0, 0, 0.16); }
+
 .ex-done {
   font-size: 19px;
   font-weight: 400;
