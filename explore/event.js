@@ -170,10 +170,30 @@
     const right = el("aside", "cs-right");
     right.appendChild(el("p", "cs-label", "who is going · and how you know them"));
 
-    const roster = buildRoster(rnd);
-    const friends = roster.map((p) => p.name);
-    right.appendChild(rosterList(roster));
-    right.appendChild(rosterTally(roster));
+    /* Live, the column is the database: who kept this night and how you
+       know each of them. The pools only stand in with the backend off. */
+    const rosterBox = el("div", "cs-roster");
+    right.appendChild(rosterBox);
+    const drawn = buildRoster(rnd);
+    if (window.AH && AH.mode === "live" && AH.request && e.slug) {
+      rosterBox.appendChild(el("p", "cs-note", "looking for who kept this…"));
+      AH.request("/rpc/event_people", { method: "POST", body: JSON.stringify({ p_slug: e.slug }) })
+        .then((rows) => rosterFromRows(Array.isArray(rows) ? rows : []))
+        .catch(() => [])
+        .then((roster) => {
+          rosterBox.textContent = "";
+          if (!roster.length) {
+            rosterBox.appendChild(el("p", "cs-note",
+              "Nobody has kept this one yet. Keep it and you are the first name here."));
+            return;
+          }
+          rosterBox.appendChild(rosterList(roster));
+          rosterBox.appendChild(rosterTally(roster));
+        });
+    } else {
+      rosterBox.appendChild(rosterList(drawn));
+      rosterBox.appendChild(rosterTally(drawn));
+    }
 
     const [button, sub] = V.TICKET[kind] || V.TICKET["Konzert"];
     const ticket = el("a", "cs-ticket", button);
@@ -188,19 +208,24 @@
     right.appendChild(ticket);
     right.appendChild(el("p", "cs-ticket-sub", sub));
 
-    /* beforehours: what friends said about this night, this room, this date */
+    /* beforehours: what people said about this night. Live, from the
+       database, with a place to write; off, the pool for its kind. */
     const comments = el("section", "cs-comments");
-    comments.appendChild(el("p", "cs-label", "beforehours · your friends"));
-
-    const clockTimes = V.WHEN;
-    shuffle(rnd, V.COMMENTS[kind] || []).slice(0, 4).forEach((y, i) => {
-      comments.appendChild(buildComment(
-        friends[i] || "someone", clockTimes[i + 1] || "today",
-        fill(y.m, e, m, day),
-        y.c ? { who: friends[(i + 2) % 5], when: clockTimes[i + 2] || "today",
-                body: fill(y.c.m, e, m, day) } : null));
-    });
+    comments.appendChild(el("p", "cs-label", "beforehours"));
     right.appendChild(comments);
+    if (window.AH && AH.comments && AH.mode === "live" && e.id) {
+      liveComments(comments, e);
+    } else {
+      const names = shuffle(rnd, V.FRIEND_NAMES).slice(0, 5);
+      const clockTimes = V.WHEN;
+      shuffle(rnd, V.COMMENTS[kind] || []).slice(0, 4).forEach((y, i) => {
+        comments.appendChild(buildComment(
+          names[i] || "someone", clockTimes[i + 1] || "today",
+          fill(y.m, e, m, day),
+          y.c ? { who: names[(i + 2) % 5], when: clockTimes[i + 2] || "today",
+                  body: fill(y.c.m, e, m, day) } : null));
+      });
+    }
     area.appendChild(right);
 
     /* ---- what the night leaves you ----
@@ -231,6 +256,55 @@
       .replace(/\{venue\}/g, m.venue || "the room")
       .replace(/\{name\}/g, e.title || "this one")
       .replace(/\{day\}/g, day);
+  }
+
+  /* The conversation on this night from the database, and a box to add
+     to it when signed in. Replies are drawn under their topic. */
+  function liveComments(box, e) {
+    const draw = () => AH.comments(e).then(({ recent, older }) => {
+      [...box.querySelectorAll(".c-topic, .c-none, .c-write")].forEach((n) => n.remove());
+      box.appendChild(writeBox(e, draw));
+      const all = recent.concat(older);
+      if (!all.length) {
+        box.appendChild(el("p", "c-none", "nobody has said anything yet."));
+        return;
+      }
+      all.forEach((t) => box.appendChild(buildComment(t.who, t.when, t.body, t.replies && t.replies[0]
+        ? { who: t.replies[0].who, when: t.replies[0].when, body: t.replies[0].body } : null)));
+    });
+    draw();
+  }
+
+  function writeBox(e, redraw) {
+    const wrap = el("div", "c-write");
+    if (!(AH.commentsLive && AH.commentsLive())) return wrap;
+    if (!AH.canComment()) {
+      const a = el("a", "c-write-invite", "sign in to say something");
+      a.href = "../../login/index.html";
+      wrap.appendChild(a);
+      return wrap;
+    }
+    const field = el("textarea", "c-write-field");
+    field.rows = 2;
+    field.maxLength = 2000;
+    field.placeholder = "say something about this night";
+    const button = el("button", "c-write-button", "post");
+    button.type = "button";
+    const status = el("p", "c-write-status");
+    button.addEventListener("click", () => {
+      const text = field.value.trim();
+      if (!text) { field.focus(); return; }
+      button.disabled = true;
+      status.textContent = "posting…";
+      AH.postComment(e, text)
+        .then(() => { field.value = ""; status.textContent = ""; redraw(); })
+        .catch((err) => { status.textContent = "couldn't post: " + err.message; })
+        .finally(() => { button.disabled = false; });
+    });
+    wrap.appendChild(field);
+    wrap.appendChild(button);
+    wrap.appendChild(status);
+    return wrap;
   }
 
   function buildComment(who, when, text, reply) {
@@ -280,12 +354,26 @@
     ].map((p, i) => Object.assign(p, { status: answers[i] }));
   }
 
+  /* Rows from event_people → the shape the column draws. Real people
+     carry a handle; the name shown is their display name or the handle.
+     Nobody has a ticket in the database, so everybody here "kept it". */
+  function rosterFromRows(rows) {
+    return rows.map((r) => ({
+      name: r.display_name || r.handle,
+      handle: r.handle,
+      degree: Number(r.degree) || 0,
+      via: [r.via, r.via2].filter(Boolean),
+      status: "kept it",
+    }));
+  }
+
   /* How you reach them, spelled out. The first hop is the one worth
      naming: it is the person you would actually ask. */
   function relation(p) {
     if (p.degree === 1) return "you two are friends";
     if (p.degree === 2) return "friend of " + p.via[0].toLowerCase();
-    return "friend of friend of " + p.via[0].toLowerCase();
+    if (p.degree === 3) return "friend of friend of " + p.via[0].toLowerCase();
+    return "no path to you yet";
   }
 
   const face = (name) => {
@@ -310,7 +398,8 @@
          the profile draws "you → emre → mira" from ?via=, because a page
          about somebody you do not know should open on how you know them. */
       const name = el("a", "cs-who-name", p.name);
-      name.href = "../../profile/index.html?handle=" + encodeURIComponent(p.name.toLowerCase()) +
+      const handle = (p.handle || p.name).toLowerCase();
+      name.href = "../../profile/index.html?handle=" + encodeURIComponent(handle) +
         (p.via.length ? "&via=" + encodeURIComponent(p.via.map((v) => v.toLowerCase()).join(",")) : "");
       body.appendChild(name);
 
@@ -318,7 +407,7 @@
          the path on hover. If the row grew a line instead, every row under
          it would jump on the way past. */
       const slot = el("span", "cs-who-slot");
-      slot.appendChild(el("span", "cs-who-rel", "@" + p.name.toLowerCase()));
+      slot.appendChild(el("span", "cs-who-rel", "@" + (p.handle || p.name).toLowerCase()));
       slot.appendChild(chain(p));
       body.appendChild(slot);
       row.appendChild(body);
@@ -361,8 +450,11 @@
     ].filter(Boolean).join(" · ")));
 
     const yours = count((p) => p.degree === 1);
-    box.appendChild(el("p", "cs-reach",
-      yours + " you know · " + (roster.length - yours) + " a step or two out"));
+    const near = count((p) => p.degree === 2 || p.degree === 3);
+    const far = roster.length - yours - near;
+    box.appendChild(el("p", "cs-reach", [
+      yours + " you know", near && near + " a step or two out", far && far + " no path yet",
+    ].filter(Boolean).join(" · ")));
     return box;
   }
 

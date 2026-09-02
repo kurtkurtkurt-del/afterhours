@@ -141,9 +141,18 @@
 
   const me = () => (AH.myProfile ? AH.myProfile().catch(() => null) : Promise.resolve(null));
 
+  /* A real person's roll is what they kept — from the database, newest
+     first. Nothing else may stand on their page as theirs. */
+  function keptBy() {
+    if (!(AH.mode === "live" && AH.request)) return Promise.resolve(null);
+    return AH.request("/rpc/profile_kept", { method: "POST", body: JSON.stringify({ p_handle: handle }) })
+      .then((rows) => (Array.isArray(rows) ? rows : []).map(AH.rowToEvent || ((r) => r)))
+      .catch(() => null);
+  }
+
   Promise.resolve(AH.ready)
-    .then(() => Promise.all([realProfile(), nightsFor(person.city[0]), me()]))
-    .then(([real, nights, mine]) => {
+    .then(() => Promise.all([realProfile(), nightsFor(person.city[0]), me(), keptBy()]))
+    .then(([real, nights, mine, kept]) => {
       /* A real account: nothing drawn from the pools may be said about
          a real person. No line if they wrote none, no counts the database
          did not hand over — the roll and the friends row then carry no
@@ -159,7 +168,12 @@
         person.isFriend = real.isFriend;
       }
       const isMe = Boolean(mine && mine.handle && mine.handle === handle);
-      build(person, shuffle(rnd, nights).slice(0, 9), isMe);
+      if (real) {
+        person.kept = kept ? kept.length : person.kept;
+        build(person, (kept || []).slice(0, 9), isMe);
+      } else {
+        build(person, shuffle(rnd, nights).slice(0, 9), isMe);
+      }
     })
     .catch((err) => {
       console.warn("[afterhours] couldn't build the page:", err);
@@ -191,8 +205,9 @@
     /* ---- which friends, and you and them ---- */
     area.appendChild(buildFriends(p, isMe));
 
-    /* ---- the shelf (C): what those nights left them with ---- */
-    area.insertAdjacentElement("afterend", buildShelf(p, nights));
+    /* ---- the shelf (C): what those nights left them with ----
+       No nights, no shelf: a black band saying "0" is not a shelf. */
+    if (nights.length) area.insertAdjacentElement("afterend", buildShelf(p, nights));
   }
 
   /* You are the filled square, as everywhere on the site. Every hop is a
@@ -245,6 +260,9 @@
       ? "the roll · " + p.kept + " nights kept, " + nights.length + " shot"
       : "the roll · " + nights.length + " shot"));
     const grid = el("ol", "pf-frames");
+    if (p.real && !nights.length) {
+      box.appendChild(el("p", "cs-note", "Nothing kept yet. The roll starts with the first card swiped right."));
+    }
 
     nights.forEach((e, i) => {
       const li = el("li", "pf-frame");

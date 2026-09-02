@@ -425,6 +425,31 @@ read another's; the roll shows their city's nights instead) and real
 cards, which do not exist for anybody yet. Everybody is public for now,
 as agreed.
 
+### Real people on a night — `17_real_people.sql`
+
+The column of who is going and the beforehours on an event page, and the
+roll on somebody's page, are the database now (the pools only stand in
+with the backend off):
+
+| call | what it answers |
+|---|---|
+| `event_people(slug)` | everybody who kept the night, each with the path back to the caller: degree 1 a friend, 2 a friend of a friend (`via`), 3 one further (`via`, `via2`), 0 no path — signed out, everybody is 0 |
+| `profile_kept(handle)` | the nights one person kept, newest first |
+| `friends_of(uid)` | the helper under both; not callable from the browser |
+
+Both readers are definer — swipes are closed to strangers by the rule in
+02 and this is the one place they open, everybody being public for now by
+decision, except a person whose `kept_visibility` is private. Nobody has
+a ticket in the database, so everybody in the column "kept it".
+Beforehours reads `comments_public` and writes through `AH.postComment`,
+the same road explore takes; the write box shows signed in.
+
+`seed-test-people.sql` is the one-shot that gives the test accounts a
+life — friendships in a graph that shows every distance from kurt2,
+the Weeknd night kept by all of them plus a staggered handful of München
+nights each, and one line each on the Weeknd. Paste order: rename, 17,
+seed.
+
 ### The faces
 
 Nobody has uploaded a photograph, and an initial in a box was standing in
@@ -638,7 +663,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **168**.
+The current version: **169**.
 
 The explore date filter is real now (every synced night carries a true
 date): tonight / tomorrow / this weekend / this week / this month /
