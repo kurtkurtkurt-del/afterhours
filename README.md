@@ -327,6 +327,27 @@ one language. The card grows a hairline edge here for the first time,
 because without one the type reads as a caption lying on the page instead
 of the lower half of an object.
 
+**The shape of the card follows the shape of the picture.** The band is
+not fixed at 16:9: once the picture has loaded, `shapeCard` sets the band's
+`aspect-ratio` inline to the picture's own, clamped between 1:1 and 2:1, and
+the type takes whatever is left (a square band keeps three title lines,
+wider ones four). Under 1:1 the picture is a **poster**, and it gets the
+poster's layout (`.ex-card.ex-poster`): shown whole on the white of the
+card, never cropped, the small strip beneath — the layout a drawn night has
+always had. The real posters earned it: they carry the room, the date and
+the line-up in their own hand, so printing the title again underneath would
+only repeat them. Of 1000 live pictures, 865 are Ticketmaster 16:9 press
+shots; the rest (ticketweb, universe) are 3:2, square, and true upright gig
+posters — Nashville and New York are full of them.
+
+The ratio is read at load time (`img.onload` → `naturalWidth/Height`), so
+a card assumes 16:9 until the picture lands and may settle once; the deck's
+pictures load eagerly (only three cards exist at a time) to keep that
+settle ahead of paint. The next step, if the layout stays: store `image_w`
+and `image_h` at sync time — Ticketmaster hands them over and the other
+two hosts write them into the URL — so the card knows its shape before the
+picture arrives.
+
 The deck box is unchanged (`--ex-w * 1.5 + --ex-info-h`), so nothing else
 in the column had to be re-derived. A **drawn** night — today only the
 offline deck — still gets the old poster plus the strip underneath.
@@ -544,7 +565,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **163**.
+The current version: **164**.
 
 The explore date filter is real now (every synced night carries a true
 date): tonight / tomorrow / this weekend / this week / this month /

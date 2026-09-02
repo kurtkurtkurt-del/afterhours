@@ -1473,6 +1473,50 @@ body[data-screen="3"] .sound { opacity: 0; pointer-events: none; }
    under the first — the same fault the strip had. */
 .ex-card:not(:last-child) .ex-body { opacity: 0; }
 
+/* --- the shape of the card follows the shape of the picture ---
+
+   The band's ratio is not fixed at 16:9: explore.js sets it inline to the
+   picture's own, clamped between 1:1 and 2:1, once the picture has arrived,
+   and the type takes whatever is left. Under 1:1 the picture is a poster,
+   and a poster gets the poster's layout — shown whole on the white of the
+   card, never cropped, the small strip beneath. A poster carries its own
+   writing; the card does not repeat it in a bigger size underneath. */
+.ex-card.ex-poster {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+/* The sheet is what is left of the card above the strip, and the poster
+   sits in the middle of it. A 3:4 poster leaves a little white above and
+   below; on a white card that reads as a mount, not as a gap. */
+.ex-sheet {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ex-card.ex-poster .ex-sheet img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+  pointer-events: none;
+  background: transparent;
+}
+
+/* The strip keeps its height budget and gains the card's side margins,
+   now that there is an edge for the text to stand away from. */
+.ex-card.ex-poster .ex-info {
+  flex: 0 0 auto;
+  padding: 12px 17px 0;
+}
+
 .ex-done {
   font-size: 19px;
   font-weight: 400;

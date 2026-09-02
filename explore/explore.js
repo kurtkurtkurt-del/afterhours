@@ -207,9 +207,19 @@
     const band = document.createElement("div");
     band.className = "ex-band";
     const img = document.createElement("img");
-    img.src = e.image;
     img.alt = "";
-    img.loading = "lazy";
+    /* Eager, not lazy: the card assumes 16:9 until the picture says
+       otherwise, and only three cards are ever in the deck at once. The
+       sooner the picture lands the sooner the card settles into its real
+       shape — and a picture the browser already has settles before paint. */
+    img.loading = "eager";
+    img.addEventListener("load", () => {
+      shapeCard(card, e, img.naturalWidth / img.naturalHeight);
+    }, { once: true });
+    img.src = e.image;
+    if (img.complete && img.naturalWidth) {
+      shapeCard(card, e, img.naturalWidth / img.naturalHeight);
+    }
     band.appendChild(img);
     card.appendChild(band);
 
@@ -241,6 +251,61 @@
     card.appendChild(body);
   }
 
+  /* The strip under a poster: kind + venue/date, small. A poster carries
+     its own writing, so this only says what the poster cannot be trusted
+     to — what kind of night the deck filed it as, and the meta line. */
+  function infoStrip(data) {
+    const info = document.createElement("div");
+    info.className = "ex-info";
+    const kind = document.createElement("p");
+    kind.className = "ex-kind";
+    kind.textContent = data.kind;
+    const meta = document.createElement("p");
+    meta.className = "ex-meta";
+    meta.textContent = data.meta;
+    info.appendChild(kind);
+    info.appendChild(meta);
+    return info;
+  }
+
+  /* --- the shape of the card follows the shape of the picture ---
+     Called once the picture has arrived and its ratio is known. Wider than
+     it is tall: a photograph, and the band takes the picture's own ratio
+     (clamped between 1:1 and 2:1) while the type takes what is left — a
+     16:9 press shot leaves two thirds of the card for type, a square
+     leaves a third. Taller than it is wide: a POSTER, and a poster is
+     treated as one — shown whole on the white of the card, never cropped,
+     with the small strip under it. That is the layout a drawn night has
+     always had, and the real posters have earned it: they carry the room,
+     the date and the line-up in their own hand, and printing the title
+     again underneath in a bigger size would only repeat them. */
+  function shapeCard(card, e, ratio) {
+    if (!ratio || !isFinite(ratio) || card.dataset.shaped) return;
+    card.dataset.shaped = "1";
+
+    if (ratio >= 1) {
+      const band = card.querySelector(".ex-band");
+      const title = card.querySelector(".ex-title");
+      const r = Math.min(2, Math.max(1, ratio));
+      if (band) band.style.aspectRatio = String(r);
+      /* A square band leaves 0.5w + 56px for the type: three lines of
+         title fit there, four run into the foot. */
+      if (title) title.style.webkitLineClamp = r < 1.4 ? "3" : "4";
+      return;
+    }
+
+    /* The same <img> moves house rather than loading twice. */
+    const img = card.querySelector("img");
+    card.classList.remove("ex-photo");
+    card.classList.add("ex-poster");
+    card.textContent = "";
+    const sheet = document.createElement("div");
+    sheet.className = "ex-sheet";
+    if (img) sheet.appendChild(img);
+    card.appendChild(sheet);
+    card.appendChild(infoStrip(e));
+  }
+
   function makeCard(i) {
     /* The poster number comes from the record itself; we do not trust the
        position, so that a short list from the database cannot shift them. */
@@ -257,17 +322,7 @@
       /* A drawn night, which today means the offline deck: the poster is
          the card and the strip under it says when and where. */
       card.appendChild(posterElement(data, i));
-      const info = document.createElement("div");
-      info.className = "ex-info";
-      const kind = document.createElement("p");
-      kind.className = "ex-kind";
-      kind.textContent = data.kind;
-      const meta = document.createElement("p");
-      meta.className = "ex-meta";
-      meta.textContent = data.meta;
-      info.appendChild(kind);
-      info.appendChild(meta);
-      card.appendChild(info);
+      card.appendChild(infoStrip(data));
     }
 
     let startX = null, dx = 0;
