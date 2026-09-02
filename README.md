@@ -408,8 +408,9 @@ sketches, in the order the question arrives:
    can introduce you. Each hop is a link to its own page, path included.
 2. **The head and the roll** — face, name, `@handle · city · since`, one
    line; then the nights they kept as a **contact sheet**: nine real nights
-   from the listings in their city, black and white until hovered,
-   numbered, each leading to its night, and a tenth frame "not shot yet".
+   from the listings in their city, in colour (the proof-sheet grey was
+   tried and taken off — on this page the nights are the person), numbered,
+   each leading to its night, and a tenth frame "not shot yet".
 3. **The shelf** — the same black band the event page ends on, with the
    cards those nights left them with on `cards.js` plates, metals dealt by
    the seed; and the sentence that none of them are real yet.
@@ -637,7 +638,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **167**.
+The current version: **168**.
 
 The explore date filter is real now (every synced night carries a true
 date): tonight / tomorrow / this weekend / this week / this month /

@@ -3623,8 +3623,9 @@ a.pf-hop:hover .pf-hop-name { text-decoration: underline; text-underline-offset:
   gap: 30px 16px;
 }
 
-/* A frame is a photograph pulled to black and white, like a contact
-   sheet, with the number of the exposure under it. */
+/* A frame is a photograph with the number of the exposure under it. In
+   colour: the contact-sheet grey was tried and taken off again — on this
+   page the nights are the person, and a person is not a proof sheet. */
 .pf-shot {
   display: block;
   aspect-ratio: 3 / 2;
@@ -3638,11 +3639,7 @@ a.pf-hop:hover .pf-hop-name { text-decoration: underline; text-underline-offset:
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
-  transition: filter 0.25s ease;
 }
-
-.pf-frame:hover .pf-shot img { filter: grayscale(0); }
 
 .pf-shot.empty {
   display: flex;
