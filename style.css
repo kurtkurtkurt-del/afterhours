@@ -1517,6 +1517,34 @@ body[data-screen="3"] .sound { opacity: 0; pointer-events: none; }
   padding: 12px 17px 0;
 }
 
+/* --- a night with no picture: the card is type ---
+
+   Same box, same grammar as the other two, minus the picture. The kind
+   becomes a masthead with a rule under it — the rule the band's bottom
+   edge draws on a photograph card — the title takes the size the missing
+   picture leaves it, and the foot is where it always is. The grey box it
+   replaces said "nothing here"; this says the night's name in letters
+   you can read from across the room. */
+.ex-card.ex-type {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.ex-card.ex-type .ex-body { flex: 1 1 auto; padding-top: 19px; }
+
+.ex-card.ex-type .ex-kind {
+  padding-bottom: 13px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  opacity: 0.5;
+}
+
+.ex-card.ex-type .ex-title {
+  font-size: clamp(24px, calc(var(--ex-w) * 0.135), 46px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  -webkit-line-clamp: 5;
+}
+
 /* --- a card held up ---
 
    Two taps and the top card comes forward over a white veil. It is the

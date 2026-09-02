@@ -229,6 +229,12 @@
     band.appendChild(img);
     card.appendChild(band);
 
+    card.appendChild(bodyFor(e));
+  }
+
+  /* The written half of a card: the kind, the title in the middle of the
+     space, the room and the date on the floor. */
+  function bodyFor(e) {
     const body = document.createElement("div");
     body.className = "ex-body";
 
@@ -254,7 +260,7 @@
     foot.appendChild(where);
     foot.appendChild(when);
     body.appendChild(foot);
-    card.appendChild(body);
+    return body;
   }
 
   /* The strip under a poster: kind + venue/date, small. A poster carries
@@ -324,6 +330,16 @@
     if (data && data.image) {
       card.classList.add("ex-photo");
       fillPhotoCard(card, data);
+    } else if (data && !data.poster && !data.posterPath) {
+      /* A synced night with no picture at all — one in nine, most of them
+         Türkiye, where the listings hand over nothing but a generic
+         placeholder that the sync rightly refuses. It used to be a grey
+         box. Now the card is the written half on its own, set large: the
+         kind as a masthead, the title carrying the card, the room and the
+         date on the floor. That is where this site started — a poster
+         made of type — and it is a better thing to swipe than grey. */
+      card.classList.add("ex-type");
+      card.appendChild(bodyFor(data));
     } else {
       /* A drawn night, which today means the offline deck: the poster is
          the card and the strip under it says when and where. */

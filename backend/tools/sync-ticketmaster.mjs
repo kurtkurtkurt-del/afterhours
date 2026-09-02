@@ -219,7 +219,11 @@ function imageFor(images) {
   };
   const best = usable.map((i) => [score(i), i]).filter(([s]) => s >= 0)
     .sort((a, b) => b[0] - a[0])[0];
-  return best ? best[1].url : (usable[0] && usable[0].url) || null;
+  /* No last resort. It used to fall back to whatever was left, and what
+     was left was a 305px thumbnail that the deck then blew up to twice
+     its size on a retina screen. Under 500px wide, a picture is worse
+     than no picture: the card is set in type instead. */
+  return best ? best[1].url : null;
 }
 
 /* The site rule: lowercase, transliterate, $ reads as s, the rest

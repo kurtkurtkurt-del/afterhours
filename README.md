@@ -348,6 +348,23 @@ and `image_h` at sync time — Ticketmaster hands them over and the other
 two hosts write them into the URL — so the card knows its shape before the
 picture arrives.
 
+**A night with no picture is set in type** (`.ex-card.ex-type`). One in
+nine synced nights carries no picture at all — most of them İzmir,
+İstanbul and Ankara, where the listings hand over only a generic
+placeholder the sync rightly refuses. It used to be a grey box. Now the
+card is the written half on its own, set large: the kind as a masthead
+with a rule under it (the rule a photograph card's band draws with its
+bottom edge), the title at up to five lines in the size the missing
+picture leaves it, the room and the date on the floor. Three card states,
+one grammar: picture-and-type, poster-and-strip, type alone.
+
+And the sync no longer keeps a picture under 500px wide: `imageFor` used
+to fall back to whatever was left, which was a 305px thumbnail the deck
+then blew up to twice its size on a retina screen. Under 500px a picture
+is worse than none; those nights are set in type after the next daily
+run. (Of 3618 live nights: 2759 Ticketmaster 1136px press shots, 417
+without a picture, 264 ticketweb 640px, 148 universe 1024px, 29 tiny.)
+
 The deck box is unchanged (`--ex-w * 1.5 + --ex-info-h`), so nothing else
 in the column had to be re-derived. A **drawn** night — today only the
 offline deck — still gets the old poster plus the strip underneath.
@@ -592,7 +609,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **165**.
+The current version: **166**.
 
 The explore date filter is real now (every synced night carries a true
 date): tonight / tomorrow / this weekend / this week / this month /
