@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Stack } from 'expo-router';
+import { View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import {
   useFonts,
@@ -19,14 +20,15 @@ export default function RootLayout() {
     if (loaded) SplashScreen.hideAsync();
   }, [loaded]);
 
-  if (!loaded) return null;
+  // fontlar gelene kadar beyaz değil, kâğıt rengi
+  if (!loaded) return <View style={{ flex: 1, backgroundColor: colors.paper }} />;
 
   return (
     <Stack
       screenOptions={{
         headerShown: false,
         animation: 'none',
-        contentStyle: { backgroundColor: colors.ink },
+        contentStyle: { backgroundColor: colors.paper },
       }}
     />
   );

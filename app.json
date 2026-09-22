@@ -36,6 +36,7 @@
     "scheme": "afterhours",
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "backgroundColor": "#F3F1EC"
   }
 }

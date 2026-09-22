@@ -6,8 +6,10 @@ import Backdrop from '@/components/Backdrop';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// yer tutucu. introdan aynı kareyle devralır: isim ortada başlar, köşeye kayar.
-export default function CityScreen() {
+type Props = { play: boolean };
+
+// yer tutucu. intro kalkınca isim ortadan köşeye kayar.
+export default function City({ play }: Props) {
   const { width, height } = useWindowDimensions();
   const [size, setSize] = useState<{ w: number; h: number } | null>(null);
   const t = useSharedValue(0);
@@ -17,8 +19,8 @@ export default function CityScreen() {
   };
 
   useEffect(() => {
-    if (size) t.set(withTiming(1, { duration: brand.move, easing: Easing.inOut(Easing.cubic) }));
-  }, [size, t]);
+    if (play && size) t.set(withTiming(1, { duration: brand.move, easing: Easing.inOut(Easing.cubic) }));
+  }, [play, size, t]);
 
   const scale = brand.smallSize / brand.bigSize;
   // ortadaki merkezden, sol üstteki küçük halin merkezine olan yol
