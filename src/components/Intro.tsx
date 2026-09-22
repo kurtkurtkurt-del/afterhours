@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Pressable, StyleSheet, Text } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Animated, {
   Easing,
@@ -16,7 +16,6 @@ type Props = { onDone: () => void };
 export default function Intro({ onDone }: Props) {
   const veil = useSharedValue(0);
   const word = useSharedValue(0);
-  const next = useSharedValue(0);
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
@@ -25,7 +24,6 @@ export default function Intro({ onDone }: Props) {
       withTiming(1, { duration: intro.dusk, easing: Easing.bezier(0.5, 0, 0.9, 0.4) }),
     );
     word.value = withDelay(intro.wordDelay, withTiming(1, { duration: intro.word }));
-    next.value = withDelay(intro.nextDelay, withTiming(1, { duration: intro.next }));
 
     const bar = setTimeout(() => setDark(true), intro.hold + intro.dusk * 0.55);
     const leave = setTimeout(onDone, intro.leaveAt);
@@ -33,21 +31,16 @@ export default function Intro({ onDone }: Props) {
       clearTimeout(bar);
       clearTimeout(leave);
     };
-  }, [veil, word, next, onDone]);
+  }, [veil, word, onDone]);
 
   const veilStyle = useAnimatedStyle(() => ({ opacity: veil.value }));
   const wordStyle = useAnimatedStyle(() => ({ opacity: word.value }));
-  const nextStyle = useAnimatedStyle(() => ({ opacity: next.value }));
 
   return (
     <Pressable style={styles.root} onPress={onDone}>
       <StatusBar style={dark ? 'light' : 'dark'} />
       <Animated.View style={[styles.veil, veilStyle]} />
       <Animated.Text style={[styles.word, wordStyle]}>afterhours</Animated.Text>
-      <Animated.View style={[styles.next, nextStyle]}>
-        <Text style={styles.nextText}>bu gece nerede?</Text>
-        <Text style={styles.nextText}>münih · istanbul</Text>
-      </Animated.View>
     </Pressable>
   );
 }
@@ -61,6 +54,4 @@ const styles = StyleSheet.create({
     letterSpacing: -0.6,
     color: colors.paper,
   },
-  next: { position: 'absolute', top: '56%', alignItems: 'center', gap: 2 },
-  nextText: { fontFamily: fonts.regular, fontSize: 14, color: colors.paper2, opacity: 0.8 },
 });

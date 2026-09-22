@@ -19,7 +19,5 @@ export const intro = {
   dusk: 2400,         // kâğıdın mürekkebe dönmesi
   wordDelay: 2500,    // ismin belirmeye başladığı an
   word: 900,          // ismin belirme süresi
-  nextDelay: 3600,    // ilk sorunun belirdiği an
-  next: 600,
   leaveAt: 4800,      // şehir ekranına geçiş
 } as const;

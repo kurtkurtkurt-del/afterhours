@@ -8,10 +8,6 @@ export default function CityScreen() {
     <View style={styles.root}>
       <StatusBar style="light" />
       <Text style={styles.title}>afterhours</Text>
-      <View style={styles.center}>
-        <Text style={styles.q}>bu gece nerede?</Text>
-        <Text style={styles.q}>münih · istanbul</Text>
-      </View>
     </View>
   );
 }
@@ -19,6 +15,4 @@ export default function CityScreen() {
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink, paddingTop: 72, paddingHorizontal: 24 },
   title: { fontFamily: fonts.medium, fontSize: 18, letterSpacing: -0.3, color: colors.paper },
-  center: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: 2 },
-  q: { fontFamily: fonts.regular, fontSize: 14, color: colors.paper2, opacity: 0.8 },
 });
