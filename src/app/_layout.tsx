@@ -26,7 +26,7 @@ export default function RootLayout() {
       screenOptions={{
         headerShown: false,
         animation: 'none',
-        contentStyle: { backgroundColor: colors.paper },
+        contentStyle: { backgroundColor: colors.ink },
       }}
     />
   );
