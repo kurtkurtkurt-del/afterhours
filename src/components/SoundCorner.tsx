@@ -4,11 +4,13 @@ import { useAmbient } from '@/audio/AmbientContext';
 import { brand } from '@/theme/layout';
 
 // sağ üst köşe, geri tuşuyla aynı hizada. iç sayfaların hepsinde.
-export default function SoundCorner() {
+type Props = { tone?: 'paper' | 'ink' };
+
+export default function SoundCorner({ tone = 'paper' }: Props) {
   const { on, toggle } = useAmbient();
   return (
     <View style={styles.corner}>
-      <SoundToggle on={on} onPress={toggle} />
+      <SoundToggle on={on} onPress={toggle} tone={tone} />
     </View>
   );
 }
