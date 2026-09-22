@@ -5,6 +5,7 @@ import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Backdrop from '@/components/Backdrop';
 import BackButton from '@/components/BackButton';
+import SoundCorner from '@/components/SoundCorner';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
 import { colors, fonts } from '@/theme/tokens';
@@ -23,6 +24,7 @@ export default function SignUpScreen() {
       <StatusBar style="light" />
       <Backdrop />
       <BackButton />
+      <SoundCorner />
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         style={[styles.body, { paddingBottom: insets.bottom + 24 }]}

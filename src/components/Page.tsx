@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Backdrop from '@/components/Backdrop';
 import BackButton from '@/components/BackButton';
+import SoundCorner from '@/components/SoundCorner';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -14,6 +15,7 @@ export default function Page({ title }: Props) {
       <StatusBar style="light" />
       <Backdrop />
       <BackButton />
+      <SoundCorner />
       <View style={styles.centre} pointerEvents="none">
         <Text style={styles.title}>{title}</Text>
       </View>

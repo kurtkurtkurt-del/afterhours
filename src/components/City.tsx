@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   centre: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center' },
   gap: { height: 16 },
   // ismin küçük haliyle aynı hizada, sağda
-  corner: { position: 'absolute', right: brand.left, top: brand.top + (brand.smallSize * 1.2 - 16) / 2 },
+  corner: { position: 'absolute', right: brand.left, top: brand.top },
   actions: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingHorizontal: brand.left, gap: 12 },
   word: { fontFamily: fonts.medium, fontSize: brand.bigSize, letterSpacing: -0.6, color: colors.paper },
 });
