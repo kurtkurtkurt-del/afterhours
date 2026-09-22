@@ -9,6 +9,7 @@ import {
   InterTight_500Medium,
 } from '@expo-google-fonts/inter-tight';
 import { colors } from '@/theme/tokens';
+import { AmbientProvider } from '@/audio/AmbientContext';
 
 // native splash, fontlar gelene kadar açık kalır; sonra geçiş görünmez olur
 SplashScreen.preventAutoHideAsync();
@@ -28,12 +29,16 @@ export default function RootLayout() {
   if (!loaded) return <View style={{ flex: 1, backgroundColor: colors.paper }} />;
 
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-        animation: 'none',
-        contentStyle: { backgroundColor: colors.paper },
-      }}
-    />
+    <AmbientProvider>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          // sayfalar aynı zemini paylaşır; içerik yumuşakça birbirine karışır
+          animation: 'fade',
+          animationDuration: 350,
+          contentStyle: { backgroundColor: colors.paper },
+        }}
+      />
+    </AmbientProvider>
   );
 }

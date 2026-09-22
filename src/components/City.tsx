@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { LayoutChangeEvent, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { router } from 'expo-router';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Button from '@/components/Button';
@@ -67,8 +68,8 @@ export default function City({ play, soundOn, onToggleSound }: Props) {
       >
         <Taglines play={play} />
         <View style={styles.gap} />
-        <Button label="sign up" onPress={() => {}} />
-        <Button label="explore your city" kind="line" onPress={() => {}} />
+        <Button label="sign up" onPress={() => router.push('/signup')} />
+        <Button label="explore your city" kind="line" onPress={() => router.push('/explore')} />
       </Animated.View>
     </View>
   );
