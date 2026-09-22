@@ -3,7 +3,6 @@ import { KeyboardAvoidingView, Platform, StyleSheet, Text, View } from 'react-na
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Backdrop from '@/components/Backdrop';
 import BackButton from '@/components/BackButton';
 import SoundCorner from '@/components/SoundCorner';
 import Button from '@/components/Button';
@@ -22,7 +21,6 @@ export default function SignUpScreen() {
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
-      <Backdrop />
       <BackButton />
       <SoundCorner />
       <KeyboardAvoidingView

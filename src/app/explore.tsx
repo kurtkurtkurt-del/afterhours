@@ -3,7 +3,6 @@ import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Storage from 'expo-sqlite/kv-store';
-import Backdrop from '@/components/Backdrop';
 import BackButton from '@/components/BackButton';
 import SoundCorner from '@/components/SoundCorner';
 import { cities } from '@/content/cities';
@@ -22,7 +21,6 @@ export default function ExploreScreen() {
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
-      <Backdrop />
       <BackButton />
       <SoundCorner />
       <ScrollView

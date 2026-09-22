@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import Backdrop from '@/components/Backdrop';
 import BackButton from '@/components/BackButton';
 import SoundCorner from '@/components/SoundCorner';
 import { colors, fonts } from '@/theme/tokens';
@@ -8,12 +7,11 @@ import { brand } from '@/theme/layout';
 
 type Props = { title: string };
 
-// boş iç sayfa: aynı zemin, sol üstte geri, ortada sayfa adı.
+// boş iç sayfa: mat mürekkep zemin, sol üstte geri, ortada sayfa adı.
 export default function Page({ title }: Props) {
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
-      <Backdrop />
       <BackButton />
       <SoundCorner />
       <View style={styles.centre} pointerEvents="none">
