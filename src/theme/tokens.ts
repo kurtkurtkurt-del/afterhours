@@ -15,13 +15,9 @@ export const fonts = {
 
 // açılış zamanlaması, milisaniye. "biraz daha yavaş" dendiğinde burası değişir.
 export const intro = {
-  clockIn: 400,       // saatin belirmesi
-  spinStart: 500,     // akreple yelkovanın dönmeye başladığı an
-  spin: 2600,         // dönüş süresi; hız giderek artar
-  turns: 16,          // yelkovanın toplam tur sayısı
-  burstAt: 3000,      // saatin toza ayrıldığı an
-  dust: 1800,         // tozun yere dökülme süresi
-  photoIn: 1500,      // arkadaki fotoğrafın belirmesi
-  boxAt: 4500,        // "join now" kutusunun geldiği an
-  box: 500,
+  hold: 300,       // kâğıt boş dururken bekleme
+  photoIn: 1400,   // fotoğrafın belirmesi
+  wordDelay: 900,  // ismin belirmeye başladığı an
+  word: 800,       // ismin belirme süresi
+  leaveAt: 3200,   // sonraki ekrana geçiş
 } as const;
