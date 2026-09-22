@@ -5,14 +5,15 @@ import Animated, { Easing, useAnimatedStyle, useSharedValue, withDelay, withTimi
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Button from '@/components/Button';
 import Taglines from '@/components/Taglines';
+import SoundToggle from '@/components/SoundToggle';
 import Backdrop from '@/components/Backdrop';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-type Props = { play: boolean };
+type Props = { play: boolean; soundOn: boolean; onToggleSound: () => void };
 
 // yer tutucu. intro kalkınca isim ortadan köşeye kayar.
-export default function City({ play }: Props) {
+export default function City({ play, soundOn, onToggleSound }: Props) {
   const { width, height } = useWindowDimensions();
   const [size, setSize] = useState<{ w: number; h: number } | null>(null);
   const t = useSharedValue(0);
@@ -57,6 +58,9 @@ export default function City({ play }: Props) {
           afterhours
         </Animated.Text>
       </View>
+      <Animated.View style={[styles.corner, actionsStyle]} pointerEvents={play ? 'auto' : 'none'}>
+        <SoundToggle on={soundOn} onPress={onToggleSound} />
+      </Animated.View>
       <Animated.View
         style={[styles.actions, { paddingBottom: insets.bottom + 24 }, actionsStyle]}
         pointerEvents={play ? 'auto' : 'none'}
@@ -74,6 +78,8 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   centre: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center' },
   gap: { height: 16 },
+  // ismin küçük haliyle aynı hizada, sağda
+  corner: { position: 'absolute', right: brand.left, top: brand.top + (brand.smallSize * 1.2 - 16) / 2 },
   actions: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingHorizontal: brand.left, gap: 12 },
   word: { fontFamily: fonts.medium, fontSize: brand.bigSize, letterSpacing: -0.6, color: colors.paper },
 });
