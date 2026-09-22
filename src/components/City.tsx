@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { LayoutChangeEvent, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+import Animated, { Easing, useAnimatedStyle, useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Button from '@/components/Button';
 import Backdrop from '@/components/Backdrop';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -13,14 +15,19 @@ export default function City({ play }: Props) {
   const { width, height } = useWindowDimensions();
   const [size, setSize] = useState<{ w: number; h: number } | null>(null);
   const t = useSharedValue(0);
+  const actions = useSharedValue(0);
+  const insets = useSafeAreaInsets();
 
   const onLayout = (e: LayoutChangeEvent) => {
     if (!size) setSize({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height });
   };
 
   useEffect(() => {
-    if (play && size) t.set(withTiming(1, { duration: brand.move, easing: Easing.inOut(Easing.cubic) }));
-  }, [play, size, t]);
+    if (play && size) {
+      t.set(withTiming(1, { duration: brand.move, easing: Easing.inOut(Easing.cubic) }));
+      actions.set(withDelay(brand.move * 0.6, withTiming(1, { duration: 500, easing: Easing.out(Easing.cubic) })));
+    }
+  }, [play, size, t, actions]);
 
   const scale = brand.smallSize / brand.bigSize;
   // ortadaki merkezden, sol üstteki küçük halin merkezine olan yol
@@ -35,6 +42,11 @@ export default function City({ play }: Props) {
     ],
   }));
 
+  const actionsStyle = useAnimatedStyle(() => ({
+    opacity: actions.value,
+    transform: [{ translateY: (1 - actions.value) * 16 }],
+  }));
+
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
@@ -44,6 +56,13 @@ export default function City({ play }: Props) {
           afterhours
         </Animated.Text>
       </View>
+      <Animated.View
+        style={[styles.actions, { paddingBottom: insets.bottom + 24 }, actionsStyle]}
+        pointerEvents={play ? 'auto' : 'none'}
+      >
+        <Button label="sign up" onPress={() => {}} />
+        <Button label="explore your city" kind="line" onPress={() => {}} />
+      </Animated.View>
     </View>
   );
 }
@@ -51,5 +70,6 @@ export default function City({ play }: Props) {
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   centre: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center' },
+  actions: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingHorizontal: brand.left, gap: 12 },
   word: { fontFamily: fonts.medium, fontSize: brand.bigSize, letterSpacing: -0.6, color: colors.paper },
 });
