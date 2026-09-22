@@ -4,6 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Button from '@/components/Button';
+import Taglines from '@/components/Taglines';
 import Backdrop from '@/components/Backdrop';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -60,6 +61,8 @@ export default function City({ play }: Props) {
         style={[styles.actions, { paddingBottom: insets.bottom + 24 }, actionsStyle]}
         pointerEvents={play ? 'auto' : 'none'}
       >
+        <Taglines play={play} />
+        <View style={styles.gap} />
         <Button label="sign up" onPress={() => {}} />
         <Button label="explore your city" kind="line" onPress={() => {}} />
       </Animated.View>
@@ -70,6 +73,7 @@ export default function City({ play }: Props) {
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   centre: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center' },
+  gap: { height: 16 },
   actions: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingHorizontal: brand.left, gap: 12 },
   word: { fontFamily: fonts.medium, fontSize: brand.bigSize, letterSpacing: -0.6, color: colors.paper },
 });
