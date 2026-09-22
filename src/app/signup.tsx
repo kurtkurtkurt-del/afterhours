@@ -23,10 +23,9 @@ export default function SignUpScreen() {
       <StatusBar style="light" />
       <BackButton />
       <SoundCorner />
-      <KeyboardAvoidingView
-        behavior="padding"
-        style={[styles.body, { paddingBottom: insets.bottom + 24 }]}
-      >
+      <KeyboardAvoidingView behavior="padding" style={styles.body}>
+        {/* alt boşluk burada: klavye sarmalayıcısı kendi paddingBottom'unu ezer */}
+        <View style={{ paddingBottom: insets.bottom + 24 }}>
         <View style={styles.heading}>
           <Text style={styles.line}>first time?</Text>
           <Text style={styles.line}>welcome in.</Text>
@@ -51,6 +50,7 @@ export default function SignUpScreen() {
           />
           <View style={styles.gap} />
           <Button label="enter" onPress={enter} />
+        </View>
         </View>
       </KeyboardAvoidingView>
     </View>
