@@ -25,6 +25,7 @@ sql/13_feedback.sql      feedback: everyone writes, the admin reads
 sql/14_export.sql        everything we hold about one person, in one call
 sql/15_ticketmaster.sql  real events: source/external_id/image_url/ticket_url + the worldwide deck
 sql/16_coverage.sql      the service area: all of Europe, key Asia, North America (94 cities)
+sql/18_geo.sql           lat/lng on events and venues + nights_near(): the map in the app
 sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities
 
 tools/build-seed.mjs     builds 03/04/05 from the front-end data

@@ -321,6 +321,10 @@ function rowFor(e, city, types) {
     external_id: e.id,
     image_url: imageFor(e.images),
     ticket_url: e.url || null,
+    /* the venue's point, for the map (18_geo.sql). Ticketmaster gives it
+       as strings; a missing one stays NULL and the pin is simply not drawn. */
+    lat: venue.location && venue.location.latitude ? Number(venue.location.latitude) : null,
+    lng: venue.location && venue.location.longitude ? Number(venue.location.longitude) : null,
   };
 }
 

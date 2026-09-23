@@ -25,6 +25,7 @@ const structure = [
   ["15_ticketmaster.sql", "REAL EVENTS — TICKETMASTER COLUMNS, WORLDWIDE DECK"],
   ["16_coverage.sql", "THE COVERAGE — EUROPE, KEY ASIA, NORTH AMERICA"],
   ["17_real_people.sql", "REAL PEOPLE — WHO KEPT A NIGHT, AND THE WAY YOU REACH THEM"],
+  ["18_geo.sql", "THE MAP — WHERE A NIGHT IS, AND WHAT IS NEAR YOU"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
