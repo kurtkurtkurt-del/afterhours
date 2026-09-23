@@ -20,9 +20,9 @@ export type Night = {
   source: string | null;
 };
 
-// deste: şehrin henüz kaydırılmamış geceleri. null şehir = dünya.
-export async function fetchDeck(city: string | null, limit = 40) {
-  const { data, error } = await supabase.rpc('deck', { p_city: city, p_type: null, p_limit: limit });
+// deste: şehrin henüz kaydırılmamış geceleri. null şehir = dünya, null tür = hepsi.
+export async function fetchDeck(city: string | null, type: string | null = null, limit = 40) {
+  const { data, error } = await supabase.rpc('deck', { p_city: city, p_type: type, p_limit: limit });
   if (error) throw error;
   return (data ?? []) as Night[];
 }
