@@ -9,69 +9,106 @@ import Animated, {
   useSharedValue,
   withSpring,
   withTiming,
+  type SharedValue,
 } from 'react-native-reanimated';
 import NightCard from '@/components/NightCard';
 import { colors, fonts } from '@/theme/tokens';
 import type { Night } from '@/data/deck';
 
-type Props = { nights: Night[]; onSwipe: (night: Night, direction: 'left' | 'right') => void };
+type Direction = 'left' | 'right';
+type Props = { nights: Night[]; onSwipe: (night: Night, direction: Direction) => void };
 
 const THRESHOLD = 110; // px: bunun ötesinde bırakılırsa karar verilmiş sayılır
 const VELOCITY = 800;
 
-// deste: üstteki kart parmağı izler, eğilir, eşiği geçince uçar; arkadaki öne gelir.
-export default function Deck({ nights, onSwipe }: Props) {
+// her kartın kendi konumu var: üstteki uçup gittiğinde arkadaki zaten sıfırda
+// duruyor, sıfırlama ve göz kırpma olmuyor. ortak olan tek şey "drag":
+// üsttekinin ne kadar çekildiği; arkadaki ona göre büyür.
+function SwipeCard({
+  night,
+  active,
+  drag,
+  onDone,
+}: {
+  night: Night;
+  active: boolean;
+  drag: SharedValue<number>;
+  onDone: (direction: Direction) => void;
+}) {
   const { width } = useWindowDimensions();
-  const [i, setI] = useState(0);
   const x = useSharedValue(0);
   const y = useSharedValue(0);
 
-  const top = nights[i];
-  const next = nights[i + 1];
-
-  const advance = useCallback(
-    (direction: 'left' | 'right') => {
-      if (top) onSwipe(top, direction);
-      setI((n) => n + 1);
-      x.set(0);
-      y.set(0);
-    },
-    [top, onSwipe, x, y],
-  );
-
   const pan = Gesture.Pan()
+    .enabled(active)
     .onUpdate((e) => {
       x.set(e.translationX);
       y.set(e.translationY * 0.4);
+      drag.set(Math.min(1, Math.abs(e.translationX) / THRESHOLD));
     })
     .onEnd((e) => {
       const flung = Math.abs(e.velocityX) > VELOCITY;
       if (Math.abs(x.get()) > THRESHOLD || flung) {
-        const dir = x.get() > 0 || (flung && e.velocityX > 0) ? 'right' : 'left';
-        x.set(withTiming(dir === 'right' ? width * 1.5 : -width * 1.5, { duration: 260 }, () => runOnJS(advance)(dir)));
+        const dir: Direction = x.get() > 0 || (flung && e.velocityX > 0) ? 'right' : 'left';
+        drag.set(withTiming(1, { duration: 200 }));
+        x.set(withTiming(dir === 'right' ? width * 1.5 : -width * 1.5, { duration: 260 }, () => runOnJS(onDone)(dir)));
       } else {
         x.set(withSpring(0, { damping: 18, stiffness: 180 }));
         y.set(withSpring(0, { damping: 18, stiffness: 180 }));
+        drag.set(withSpring(0, { damping: 18, stiffness: 180 }));
       }
     });
 
-  const topStyle = useAnimatedStyle(() => ({
-    transform: [
-      { translateX: x.value },
-      { translateY: y.value },
-      { rotate: `${interpolate(x.value, [-width, 0, width], [-14, 0, 14])}deg` },
-    ],
-  }));
+  const style = useAnimatedStyle(() => {
+    if (active) {
+      return {
+        opacity: 1,
+        transform: [
+          { translateX: x.value },
+          { translateY: y.value },
+          { rotate: `${interpolate(x.value, [-width, 0, width], [-14, 0, 14])}deg` },
+        ],
+      };
+    }
+    const p = drag.value;
+    return { opacity: 0.7 + 0.3 * p, transform: [{ scale: 0.94 + 0.06 * p }, { translateY: 12 - 12 * p }] };
+  });
   const keepStyle = useAnimatedStyle(() => ({
     opacity: interpolate(x.value, [20, THRESHOLD], [0, 1], Extrapolation.CLAMP),
   }));
   const letGoStyle = useAnimatedStyle(() => ({
     opacity: interpolate(x.value, [-THRESHOLD, -20], [1, 0], Extrapolation.CLAMP),
   }));
-  const nextStyle = useAnimatedStyle(() => {
-    const p = interpolate(Math.abs(x.value), [0, THRESHOLD], [0, 1], Extrapolation.CLAMP);
-    return { transform: [{ scale: 0.94 + 0.06 * p }, { translateY: 12 - 12 * p }], opacity: 0.7 + 0.3 * p };
-  });
+
+  return (
+    <GestureDetector gesture={pan}>
+      <Animated.View style={[styles.slot, style]}>
+        <NightCard night={night} />
+        {active && (
+          <>
+            <Animated.Text style={[styles.stamp, styles.keep, keepStyle]}>keep</Animated.Text>
+            <Animated.Text style={[styles.stamp, styles.letGo, letGoStyle]}>let go</Animated.Text>
+          </>
+        )}
+      </Animated.View>
+    </GestureDetector>
+  );
+}
+
+export default function Deck({ nights, onSwipe }: Props) {
+  const [i, setI] = useState(0);
+  const drag = useSharedValue(0);
+  const top = nights[i];
+  const next = nights[i + 1];
+
+  const done = useCallback(
+    (direction: Direction) => {
+      if (top) onSwipe(top, direction);
+      drag.set(0);
+      setI((n) => n + 1);
+    },
+    [top, onSwipe, drag],
+  );
 
   if (!top) {
     return (
@@ -82,20 +119,12 @@ export default function Deck({ nights, onSwipe }: Props) {
     );
   }
 
+  // sıra önemli: arkadaki önce çizilir. anahtar gecenin kimliği, böylece
+  // arkadaki kart öne geçerken yeniden yaratılmaz.
   return (
     <View style={styles.stage}>
-      {next && (
-        <Animated.View key={next.id} style={[styles.slot, nextStyle]}>
-          <NightCard night={next} />
-        </Animated.View>
-      )}
-      <GestureDetector gesture={pan}>
-        <Animated.View key={top.id} style={[styles.slot, topStyle]}>
-          <NightCard night={top} />
-          <Animated.Text style={[styles.stamp, styles.keep, keepStyle]}>keep</Animated.Text>
-          <Animated.Text style={[styles.stamp, styles.letGo, letGoStyle]}>let go</Animated.Text>
-        </Animated.View>
-      </GestureDetector>
+      {next && <SwipeCard key={next.id} night={next} active={false} drag={drag} onDone={done} />}
+      <SwipeCard key={top.id} night={top} active drag={drag} onDone={done} />
     </View>
   );
 }
