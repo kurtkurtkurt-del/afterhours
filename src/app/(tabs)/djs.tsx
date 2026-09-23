@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
@@ -35,7 +36,7 @@ export default function DjsScreen() {
       </View>
       <ScrollView contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom }]} showsVerticalScrollIndicator={false}>
         {/* şimdi */}
-        <Pressable style={styles.hero}>
+        <Pressable style={styles.hero} onPress={() => router.push(`/dj/${(live ?? next).dj}`)}>
           <Image source={djById((live ?? next).dj).photo} style={styles.heroPhoto} />
           <View style={styles.heroShade} />
           <View style={styles.heroText}>
@@ -71,7 +72,7 @@ export default function DjsScreen() {
 function Row({ set, right }: { set: DjSet; right: string }) {
   const dj = djById(set.dj);
   return (
-    <Pressable style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
+    <Pressable onPress={() => router.push(`/dj/${set.dj}`)} style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
       <Image source={dj.photo} style={styles.sq} />
       <View style={styles.rowText}>
         <Text style={styles.name}>{dj.name}</Text>
