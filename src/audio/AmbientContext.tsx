@@ -92,38 +92,58 @@ function Engine({ genre, on }: { genre: Genre; on: boolean }) {
   }, [playlist]);
 
   const fade = useRef<ReturnType<typeof setInterval> | null>(null);
-  // motor kapanınca (tür değişti) zamanlayıcı da dursun; kapanmış çalara dokunmasın
+  // motor kapanınca (tür değişti) zamanlayıcı dursun ve kapanmış çalara kimse dokunmasın
+  const alive = useRef(true);
   useEffect(
     () => () => {
+      alive.current = false;
       if (fade.current) clearInterval(fade.current);
       fade.current = null;
     },
     [],
   );
+  // kapanmış nesneye erişim native tarafta fırlatır; sessizce yut
+  const safe = (fn: () => void) => {
+    if (!alive.current) return;
+    try {
+      fn();
+    } catch {
+      /* çalar serbest bırakılmış */
+    }
+  };
+
   const fadeTo = useCallback((target: number, then?: () => void) => {
     if (fade.current) clearInterval(fade.current);
+    if (!alive.current) return;
     const steps = Math.max(1, Math.round(FADE_MS / STEP_MS));
-    const from = p.current.volume;
+    let from = 0;
+    safe(() => {
+      from = p.current.volume;
+    });
     let i = 0;
     fade.current = setInterval(() => {
       i += 1;
-      p.current.volume = from + ((target - from) * i) / steps;
-      if (i >= steps) {
+      safe(() => {
+        p.current.volume = from + ((target - from) * i) / steps;
+      });
+      if (i >= steps || !alive.current) {
         if (fade.current) clearInterval(fade.current);
         fade.current = null;
-        then?.();
+        if (alive.current) then?.();
       }
     }, STEP_MS);
   }, []);
 
   const start = useCallback(() => {
-    if (!p.current.playing) {
-      p.current.volume = 0;
-      p.current.play();
-    }
+    safe(() => {
+      if (!p.current.playing) {
+        p.current.volume = 0;
+        p.current.play();
+      }
+    });
     fadeTo(VOLUME);
   }, [fadeTo]);
-  const stop = useCallback(() => fadeTo(0, () => p.current.pause()), [fadeTo]);
+  const stop = useCallback(() => fadeTo(0, () => safe(() => p.current.pause())), [fadeTo]);
 
   useEffect(() => {
     if (!loaded) return;
@@ -136,7 +156,7 @@ function Engine({ genre, on }: { genre: Genre; on: boolean }) {
       if (state === 'active') {
         if (on) start();
       } else {
-        p.current.pause();
+        safe(() => p.current.pause());
       }
     });
     return () => sub.remove();
