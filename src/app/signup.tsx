@@ -8,7 +8,7 @@ import BackButton from '@/components/BackButton';
 import SoundCorner from '@/components/SoundCorner';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
-import { useAuth } from '@/auth/AuthContext';
+import { DEMO, useAuth } from '@/auth/AuthContext';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -22,16 +22,21 @@ export default function SignUpScreen() {
   const { signUp } = useAuth();
 
   // hesap açar (varsa giriş yapar) ve uygulamaya alır.
-  // alanlar boşsa hesapsız girer: şimdilik bakmak serbest.
+  // alanlar boşsa deneme hesabıyla girer: bakmak serbest, ama kaydırmalar kaydolsun.
   const enter = async () => {
     if (busy) return;
-    if (!email.trim() && !password) {
+    const guest = !email.trim() && !password;
+    setBusy(true);
+    setNote(null);
+    const err = guest
+      ? await signUp(DEMO.email, DEMO.password)
+      : await signUp(email.trim(), password, Storage.getItemSync('city') ?? undefined);
+    if (guest && err) {
+      // deneme hesabına giriş olmazsa yine de içeri al; sadece söylemeden geçme
+      setBusy(false);
       router.replace('/yours');
       return;
     }
-    setBusy(true);
-    setNote(null);
-    const err = await signUp(email.trim(), password, Storage.getItemSync('city') ?? undefined);
     setBusy(false);
     if (err) setNote(err);
     else router.replace('/yours');

@@ -2,6 +2,10 @@ import { createContext, useCallback, useContext, useEffect, useState, type React
 import type { Session } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabase';
 
+// deneme hesabı: boş formla girenler buna bağlanır, böylece keep/let go ve profil çalışır.
+// ilk girişte hesap yoksa açılır. herkes aynı hesabı paylaşır; gizli bir şey yok.
+export const DEMO = { email: 'demo@afterhours.app', password: 'afterhours-demo-2026' };
+
 type Auth = {
   session: Session | null;
   ready: boolean;
