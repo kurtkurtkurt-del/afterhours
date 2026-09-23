@@ -29,6 +29,14 @@ export function AmbientProvider({ children }: { children: ReactNode }) {
   }, [playlist]);
 
   const [on, setOn] = useState<boolean>(() => Storage.getItemSync(KEY) === '1');
+  // parçalar yüklenmeden play() sessiz kalır; yüklenmeyi bekleyip öyle başlarız
+  const [loaded, setLoaded] = useState(() => playlist.isLoaded);
+  useEffect(() => {
+    const sub = playlist.addListener('playlistStatusUpdate', (status) => {
+      if (status.isLoaded) setLoaded(true);
+    });
+    return () => sub.remove();
+  }, [playlist]);
   const fade = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const fadeTo = useCallback((target: number, then?: () => void) => {
@@ -58,14 +66,15 @@ export function AmbientProvider({ children }: { children: ReactNode }) {
   const stop = useCallback(() => fadeTo(0, () => p.current.pause()), [fadeTo]);
 
   useEffect(() => {
-    // sessiz moda saygı, diğer uygulamaların sesini kesme, arka planda çalma
-    setAudioModeAsync({ playsInSilentMode: false, shouldPlayInBackground: false, interruptionMode: 'mixWithOthers' });
+    // kullanıcı sesi kendisi açıyor; android'de titreşim modu bile müziği susturmasın
+    setAudioModeAsync({ playsInSilentMode: true, shouldPlayInBackground: false, interruptionMode: 'mixWithOthers' });
   }, []);
 
   useEffect(() => {
+    if (!loaded) return;
     if (on) start();
     else stop();
-  }, [on, start, stop]);
+  }, [on, loaded, start, stop]);
 
   useEffect(() => {
     const sub = AppState.addEventListener('change', (state) => {
