@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
 import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, {
@@ -21,23 +21,24 @@ type Props = { nights: Night[]; onSwipe: (night: Night, direction: Direction) =>
 const THRESHOLD = 110; // px: bunun ötesinde bırakılırsa karar verilmiş sayılır
 const VELOCITY = 800;
 
+type CardHandle = { promote: () => void };
+
 // her kartın kendi konumu var: üstteki uçup gittiğinde arkadaki zaten sıfırda
 // duruyor, sıfırlama ve göz kırpma olmuyor. ortak olan tek şey "drag":
 // üsttekinin ne kadar çekildiği; arkadaki ona göre büyür.
-function SwipeCard({
-  night,
-  active,
-  drag,
-  onDone,
-}: {
+// "promoted" ui tarafında yaşar: arkadaki kart üste geçerken react'ın yeniden
+// çizmesini beklemeden tam boya sabitlenir, böylece arada çökme olmaz.
+const SwipeCard = forwardRef<CardHandle, {
   night: Night;
   active: boolean;
   drag: SharedValue<number>;
   onDone: (direction: Direction) => void;
-}) {
+}>(function SwipeCard({ night, active, drag, onDone }, ref) {
   const { width } = useWindowDimensions();
   const x = useSharedValue(0);
   const y = useSharedValue(0);
+  const promoted = useSharedValue(active ? 1 : 0);
+  useImperativeHandle(ref, () => ({ promote: () => promoted.set(1) }), [promoted]);
 
   const pan = Gesture.Pan()
     .enabled(active)
@@ -60,7 +61,7 @@ function SwipeCard({
     });
 
   const style = useAnimatedStyle(() => {
-    if (active) {
+    if (active || promoted.value === 1) {
       return {
         opacity: 1,
         transform: [
@@ -93,18 +94,20 @@ function SwipeCard({
       </Animated.View>
     </GestureDetector>
   );
-}
+});
 
 export default function Deck({ nights, onSwipe }: Props) {
   const [i, setI] = useState(0);
   const drag = useSharedValue(0);
+  const nextRef = useRef<CardHandle>(null);
   const top = nights[i];
   const next = nights[i + 1];
 
   const done = useCallback(
     (direction: Direction) => {
       if (top) onSwipe(top, direction);
-      drag.set(0);
+      nextRef.current?.promote(); // arkadaki artık tam boy, react yetişmeden
+      drag.set(0); // yeni arkadaki küçük başlasın
       setI((n) => n + 1);
     },
     [top, onSwipe, drag],
@@ -123,7 +126,7 @@ export default function Deck({ nights, onSwipe }: Props) {
   // arkadaki kart öne geçerken yeniden yaratılmaz.
   return (
     <View style={styles.stage}>
-      {next && <SwipeCard key={next.id} night={next} active={false} drag={drag} onDone={done} />}
+      {next && <SwipeCard ref={nextRef} key={next.id} night={next} active={false} drag={drag} onDone={done} />}
       <SwipeCard key={top.id} night={top} active drag={drag} onDone={done} />
     </View>
   );
