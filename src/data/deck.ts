@@ -17,6 +17,7 @@ export type Night = {
   city_slug: string;
   city_name: string;
   venue_name: string | null;
+  source: string | null;
 };
 
 // deste: şehrin henüz kaydırılmamış geceleri. null şehir = dünya.
