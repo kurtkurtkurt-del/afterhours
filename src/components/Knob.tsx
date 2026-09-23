@@ -1,12 +1,13 @@
 import { StyleSheet, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, { useAnimatedStyle, useSharedValue, type SharedValue } from 'react-native-reanimated';
-import Svg, { Circle, Defs, G, Line, RadialGradient, Stop } from 'react-native-svg';
+import Svg, { Circle, Defs, Ellipse, G, Line, LinearGradient, Path, RadialGradient, Stop } from 'react-native-svg';
 
-type Props = { size?: number; angle: SharedValue<number>; onTurn?: (deltaDeg: number) => void };
+type Props = { size?: number; angle: SharedValue<number> };
 
-// eski tip bakalit ayar düğmesi. parmak merkez etrafında döndükçe "angle" derece olarak birikir.
-export default function Knob({ size = 220, angle }: Props) {
+// eski radyo ayar düğmesi: krom bilezik, kaburgalı bakalit gövde, kubbe kapak,
+// tepede krem işaret. parmak merkez etrafında döndükçe "angle" derece olarak birikir.
+export default function Knob({ size = 230, angle }: Props) {
   const r = size / 2;
   const start = useSharedValue(0);
   const base = useSharedValue(0);
@@ -18,7 +19,6 @@ export default function Knob({ size = 220, angle }: Props) {
     })
     .onUpdate((e) => {
       let d = Math.atan2(e.y - r, e.x - r) - start.get();
-      // -π..π sarmalını aç: parmak sıfır çizgisini geçince zıplamasın
       if (d > Math.PI) d -= 2 * Math.PI;
       if (d < -Math.PI) d += 2 * Math.PI;
       angle.set(base.get() + (d * 180) / Math.PI);
@@ -26,59 +26,75 @@ export default function Knob({ size = 220, angle }: Props) {
 
   const spin = useAnimatedStyle(() => ({ transform: [{ rotate: `${angle.value}deg` }] }));
 
-  const knurls = Array.from({ length: 48 }, (_, i) => (i * 360) / 48);
+  // 36 kaburga: her biri aydınlık ve gölgeli yüzden oluşur, döndükçe ışık oynar
+  const ribs = Array.from({ length: 36 }, (_, i) => (i * 360) / 36);
+  const rib = (a: number, r1: number, r2: number) => {
+    const w = 3.2; // derece cinsinden yarım genişlik
+    const p = (deg: number, rad: number) => [115 + Math.cos((deg * Math.PI) / 180) * rad, 115 + Math.sin((deg * Math.PI) / 180) * rad];
+    const [x1, y1] = p(a - w, r1), [x2, y2] = p(a + w, r1), [x3, y3] = p(a + w, r2), [x4, y4] = p(a - w, r2);
+    return `M${x1} ${y1}L${x2} ${y2}L${x3} ${y3}L${x4} ${y4}Z`;
+  };
 
   return (
     <GestureDetector gesture={pan}>
       <View style={{ width: size, height: size }}>
-        {/* sabit kısım: tabla ve gölge halkası */}
-        <Svg width={size} height={size} viewBox="0 0 220 220" style={StyleSheet.absoluteFill}>
+        {/* sabit: gölge ve krom bilezik */}
+        <Svg width={size} height={size} viewBox="0 0 230 230" style={StyleSheet.absoluteFill}>
           <Defs>
-            <RadialGradient id="plate" cx="50%" cy="45%" r="55%">
-              <Stop offset="0" stopColor="#3a2b20" />
-              <Stop offset="1" stopColor="#1c1512" />
+            <RadialGradient id="shadow" cx="50%" cy="50%" r="50%">
+              <Stop offset="0.7" stopColor="#000" stopOpacity="0.55" />
+              <Stop offset="1" stopColor="#000" stopOpacity="0" />
             </RadialGradient>
+            <LinearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+              <Stop offset="0" stopColor="#e8e2d6" />
+              <Stop offset="0.35" stopColor="#8f887c" />
+              <Stop offset="0.5" stopColor="#f2ede4" />
+              <Stop offset="0.7" stopColor="#6d665b" />
+              <Stop offset="1" stopColor="#c9c2b5" />
+            </LinearGradient>
           </Defs>
-          <Circle cx="110" cy="110" r="108" fill="url(#plate)" />
-          <Circle cx="110" cy="110" r="108" fill="none" stroke="#0d0a08" strokeWidth="2" />
+          <Ellipse cx="115" cy="124" rx="112" ry="108" fill="url(#shadow)" />
+          <Circle cx="115" cy="115" r="110" fill="url(#chrome)" />
+          <Circle cx="115" cy="115" r="110" fill="none" stroke="#2a2621" strokeWidth="1" />
+          <Circle cx="115" cy="115" r="102" fill="#0f0c0a" />
         </Svg>
-        {/* dönen kısım */}
+
+        {/* dönen: kaburgalı gövde ve kapak */}
         <Animated.View style={[StyleSheet.absoluteFill, spin]}>
-          <Svg width={size} height={size} viewBox="0 0 220 220">
+          <Svg width={size} height={size} viewBox="0 0 230 230">
             <Defs>
-              <RadialGradient id="body" cx="42%" cy="38%" r="65%">
-                <Stop offset="0" stopColor="#8a5a3c" />
-                <Stop offset="0.55" stopColor="#5a3826" />
-                <Stop offset="1" stopColor="#2a1a12" />
+              <RadialGradient id="body" cx="40%" cy="35%" r="70%">
+                <Stop offset="0" stopColor="#7d4f34" />
+                <Stop offset="0.6" stopColor="#4a2d1e" />
+                <Stop offset="1" stopColor="#1e120c" />
               </RadialGradient>
-              <RadialGradient id="cap" cx="40%" cy="35%" r="70%">
-                <Stop offset="0" stopColor="#a9765a" />
-                <Stop offset="0.6" stopColor="#6b4630" />
-                <Stop offset="1" stopColor="#3a2418" />
+              <RadialGradient id="cap" cx="38%" cy="32%" r="72%">
+                <Stop offset="0" stopColor="#b8825f" />
+                <Stop offset="0.45" stopColor="#7a4e33" />
+                <Stop offset="1" stopColor="#3b2416" />
+              </RadialGradient>
+              <RadialGradient id="gloss" cx="35%" cy="25%" r="45%">
+                <Stop offset="0" stopColor="#ffffff" stopOpacity="0.35" />
+                <Stop offset="1" stopColor="#ffffff" stopOpacity="0" />
               </RadialGradient>
             </Defs>
-            {/* tırtıklı kenar */}
-            <G stroke="#1a110c" strokeWidth="3" strokeLinecap="round">
-              {knurls.map((a) => {
-                const rad = (a * Math.PI) / 180;
-                return (
-                  <Line
-                    key={a}
-                    x1={110 + Math.cos(rad) * 92}
-                    y1={110 + Math.sin(rad) * 92}
-                    x2={110 + Math.cos(rad) * 102}
-                    y2={110 + Math.sin(rad) * 102}
-                  />
-                );
-              })}
+            {/* kaburgalar: aydınlık yüz, sonra gölgeli yüz */}
+            <G>
+              {ribs.map((a) => (
+                <Path key={`l${a}`} d={rib(a - 2.4, 78, 100)} fill="#8a5a3c" />
+              ))}
+              {ribs.map((a) => (
+                <Path key={`d${a}`} d={rib(a + 2.4, 78, 100)} fill="#2b1a11" />
+              ))}
             </G>
-            <Circle cx="110" cy="110" r="90" fill="url(#body)" />
-            <Circle cx="110" cy="110" r="90" fill="none" stroke="#1a110c" strokeWidth="1.5" />
-            <Circle cx="110" cy="110" r="58" fill="url(#cap)" />
-            <Circle cx="110" cy="110" r="58" fill="none" stroke="#2a1a12" strokeWidth="1" />
-            {/* işaret çizgisi: krem, düğmenin tepesinden kapağa */}
-            <Line x1="110" y1="26" x2="110" y2="62" stroke="#f3f1ec" strokeWidth="3" strokeLinecap="round" />
-            <Circle cx="110" cy="110" r="5" fill="#1a110c" />
+            <Circle cx="115" cy="115" r="80" fill="url(#body)" />
+            <Circle cx="115" cy="115" r="80" fill="none" stroke="#150d09" strokeWidth="1.5" />
+            <Circle cx="115" cy="115" r="56" fill="url(#cap)" />
+            <Circle cx="115" cy="115" r="56" fill="url(#gloss)" />
+            <Circle cx="115" cy="115" r="56" fill="none" stroke="#2a1a12" strokeWidth="1" />
+            {/* işaret: krem çizgi, gövdeden kapağın içine */}
+            <Line x1="115" y1="40" x2="115" y2="74" stroke="#f3f1ec" strokeWidth="3.5" strokeLinecap="round" />
+            <Circle cx="115" cy="115" r="4" fill="#150d09" />
           </Svg>
         </Animated.View>
       </View>

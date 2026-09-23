@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as Haptics from 'expo-haptics';
 import { runOnJS, useAnimatedReaction, useSharedValue } from 'react-native-reanimated';
@@ -7,6 +7,7 @@ import Knob from '@/components/Knob';
 import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
 import { BAND, LOCK, djs } from '@/content/djs';
+import { useAmbient } from '@/audio/AmbientContext';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -18,6 +19,7 @@ export default function DjsScreen() {
   const angle = useSharedValue(0);
   const [freq, setFreq] = useState(startFreq);
   const [locked, setLocked] = useState<string | null>(djs[2].id);
+  const { setGenre } = useAmbient();
 
   const onFreq = useCallback(
     (f: number) => {
@@ -25,13 +27,17 @@ export default function DjsScreen() {
       const hit = djs.find((d) => Math.abs(d.freq - f) <= LOCK) ?? null;
       setLocked((prev) => {
         if (hit?.id !== prev) {
-          if (hit) Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-          else Haptics.selectionAsync();
+          if (hit) {
+            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+            setGenre(hit.sound); // istasyon yakalandı: dj'nin türü çalar
+          } else {
+            Haptics.selectionAsync();
+          }
         }
         return hit?.id ?? null;
       });
     },
-    [],
+    [setGenre],
   );
 
   useAnimatedReaction(
@@ -62,11 +68,14 @@ export default function DjsScreen() {
         <Text style={styles.mhz}>fm · münih</Text>
         <View style={styles.station}>
           {dj ? (
-            <>
-              <Text style={styles.name}>{dj.name}</Text>
-              <Text style={styles.line}>{dj.genre} · {dj.where}</Text>
-              <Text style={styles.line}>next · {dj.next}</Text>
-            </>
+            <View style={styles.row}>
+              <View style={styles.info}>
+                <Text style={styles.name}>{dj.name}</Text>
+                <Text style={styles.line}>{dj.genre} · {dj.where}</Text>
+                <Text style={styles.line}>next · {dj.next}</Text>
+              </View>
+              <Image source={dj.photo} style={styles.photo} />
+            </View>
           ) : (
             <>
               <Text style={[styles.name, styles.ghost, { opacity: 0.25 + closeness * 0.5 }]}>{nearest.name}</Text>
@@ -91,6 +100,9 @@ const styles = StyleSheet.create({
   freq: { fontFamily: fonts.medium, fontSize: 96, lineHeight: 100, letterSpacing: -5, color: colors.paper, fontVariant: ['tabular-nums'] },
   mhz: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.6, textTransform: 'uppercase', color: colors.mute, marginTop: 2 },
   station: { marginTop: 28, gap: 4, minHeight: 90 },
+  row: { flexDirection: 'row', alignItems: 'flex-start', gap: 16 },
+  info: { flex: 1, gap: 4 },
+  photo: { width: 84, height: 84, backgroundColor: colors.ink2 },
   name: { fontFamily: fonts.medium, fontSize: 34, lineHeight: 38, letterSpacing: -1, color: colors.paper },
   ghost: { color: colors.mute },
   line: { fontFamily: fonts.regular, fontSize: 14, color: colors.mute },
