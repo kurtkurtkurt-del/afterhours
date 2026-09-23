@@ -92,6 +92,14 @@ function Engine({ genre, on }: { genre: Genre; on: boolean }) {
   }, [playlist]);
 
   const fade = useRef<ReturnType<typeof setInterval> | null>(null);
+  // motor kapanınca (tür değişti) zamanlayıcı da dursun; kapanmış çalara dokunmasın
+  useEffect(
+    () => () => {
+      if (fade.current) clearInterval(fade.current);
+      fade.current = null;
+    },
+    [],
+  );
   const fadeTo = useCallback((target: number, then?: () => void) => {
     if (fade.current) clearInterval(fade.current);
     const steps = Math.max(1, Math.round(FADE_MS / STEP_MS));
