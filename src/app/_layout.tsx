@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Stack } from 'expo-router';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
+import { NavigationBar } from 'expo-navigation-bar';
 import * as SplashScreen from 'expo-splash-screen';
 import Constants, { ExecutionEnvironment } from 'expo-constants';
 import {
@@ -25,6 +26,11 @@ export default function RootLayout() {
   useEffect(() => {
     if (loaded) SplashScreen.hideAsync();
   }, [loaded]);
+
+  // android'in alttaki sistem tuşları gizli; yukarı kaydırınca geçici görünür
+  useEffect(() => {
+    if (Platform.OS === 'android') NavigationBar.setHidden(true);
+  }, []);
 
   // fontlar gelene kadar beyaz değil, kâğıt rengi
   if (!loaded) return <View style={{ flex: 1, backgroundColor: colors.paper }} />;

@@ -31,7 +31,13 @@
           "imageWidth": 1
         }
       ],
-      "expo-font"
+      "expo-font",
+      [
+        "expo-navigation-bar",
+        {
+          "hidden": true
+        }
+      ]
     ],
     "scheme": "afterhours",
     "experiments": {
