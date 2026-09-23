@@ -3,10 +3,12 @@ import { KeyboardAvoidingView, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Storage from 'expo-sqlite/kv-store';
 import BackButton from '@/components/BackButton';
 import SoundCorner from '@/components/SoundCorner';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
+import { useAuth } from '@/auth/AuthContext';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -15,8 +17,20 @@ export default function SignUpScreen() {
   const insets = useSafeAreaInsets();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [note, setNote] = useState<string | null>(null);
+  const { signUp } = useAuth();
 
-  const enter = () => router.replace('/yours');
+  // hesap açar (varsa giriş yapar) ve uygulamaya alır
+  const enter = async () => {
+    if (busy) return;
+    setBusy(true);
+    setNote(null);
+    const err = await signUp(email.trim(), password, Storage.getItemSync('city') ?? undefined);
+    setBusy(false);
+    if (err) setNote(err);
+    else router.replace('/yours');
+  };
 
   return (
     <View style={styles.root}>
@@ -48,8 +62,9 @@ export default function SignUpScreen() {
             returnKeyType="go"
             onSubmitEditing={enter}
           />
+          {note && <Text style={styles.note}>{note}</Text>}
           <View style={styles.gap} />
-          <Button label="enter" onPress={enter} />
+          <Button label={busy ? 'one moment' : 'enter'} onPress={enter} />
         </View>
         </View>
       </KeyboardAvoidingView>
@@ -64,4 +79,5 @@ const styles = StyleSheet.create({
   line: { fontFamily: fonts.medium, fontSize: 34, lineHeight: 40, letterSpacing: -0.8, color: colors.paper },
   form: { gap: 16 },
   gap: { height: 8 },
+  note: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper2, opacity: 0.8 },
 });

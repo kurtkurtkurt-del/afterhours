@@ -10,6 +10,7 @@ import {
 } from '@expo-google-fonts/inter-tight';
 import { colors } from '@/theme/tokens';
 import { AmbientProvider } from '@/audio/AmbientContext';
+import { AuthProvider } from '@/auth/AuthContext';
 
 // native splash, fontlar gelene kadar açık kalır; sonra geçiş görünmez olur
 SplashScreen.preventAutoHideAsync();
@@ -29,6 +30,7 @@ export default function RootLayout() {
   if (!loaded) return <View style={{ flex: 1, backgroundColor: colors.paper }} />;
 
   return (
+    <AuthProvider>
     <AmbientProvider>
       <Stack
         screenOptions={{
@@ -40,5 +42,6 @@ export default function RootLayout() {
         }}
       />
     </AmbientProvider>
+    </AuthProvider>
   );
 }

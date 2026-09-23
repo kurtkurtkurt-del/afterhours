@@ -1,15 +1,17 @@
 import { StyleSheet, Text } from 'react-native';
 import Storage from 'expo-sqlite/kv-store';
 import TabPage from '@/components/TabPage';
-import { cityById } from '@/content/cities';
+import { useAuth } from '@/auth/AuthContext';
 import { colors, fonts } from '@/theme/tokens';
 
 // arkadaş sekmesi. yer tutucu; seçilen şehri gösterir.
 export default function YoursScreen() {
-  const city = cityById(Storage.getItemSync('city') ?? undefined);
+  const city = Storage.getItemSync('city.name');
+  const { session } = useAuth();
   return (
     <TabPage title="yours">
-      {city && <Text style={styles.city}>{city.name}</Text>}
+      {city && <Text style={styles.city}>{city}</Text>}
+      <Text style={styles.city}>{session ? session.user.email : 'not signed in'}</Text>
     </TabPage>
   );
 }

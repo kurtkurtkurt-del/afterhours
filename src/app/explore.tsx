@@ -5,16 +5,18 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Storage from 'expo-sqlite/kv-store';
 import BackButton from '@/components/BackButton';
 import SoundCorner from '@/components/SoundCorner';
-import { cities } from '@/content/cities';
+import { useCities } from '@/data/cities';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // şehir seçimi. seçilen şehir saklanır, fotoğraf bırakılır, asıl uygulama açılır.
 export default function ExploreScreen() {
   const insets = useSafeAreaInsets();
+  const { cities, live } = useCities();
 
   const pick = (id: string) => {
     Storage.setItemSync('city', id);
+    Storage.setItemSync('city.name', cities.find((c) => c.id === id)?.name ?? id);
     router.replace('/yours');
   };
 
@@ -40,7 +42,7 @@ export default function ExploreScreen() {
               </Text>
             </Pressable>
           ))}
-          <Text style={styles.note}>nights listed this week</Text>
+          <Text style={styles.note}>{live ? 'nights listed right now' : 'sample numbers · offline'}</Text>
         </View>
       </ScrollView>
     </View>
