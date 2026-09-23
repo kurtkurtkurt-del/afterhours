@@ -16,7 +16,7 @@ import { colors, fonts } from '@/theme/tokens';
 import type { Night } from '@/data/deck';
 
 type Direction = 'left' | 'right';
-type Props = { nights: Night[]; onSwipe: (night: Night, direction: Direction) => void };
+type Props = { nights: Night[]; onSwipe: (night: Night, direction: Direction) => void; onOpen?: (night: Night) => void };
 
 const THRESHOLD = 110; // px: bunun ötesinde bırakılırsa karar verilmiş sayılır
 const VELOCITY = 800;
@@ -33,7 +33,8 @@ const SwipeCard = forwardRef<CardHandle, {
   active: boolean;
   drag: SharedValue<number>;
   onDone: (direction: Direction) => void;
-}>(function SwipeCard({ night, active, drag, onDone }, ref) {
+  onOpen?: () => void;
+}>(function SwipeCard({ night, active, drag, onDone, onOpen }, ref) {
   const { width } = useWindowDimensions();
   const x = useSharedValue(0);
   const y = useSharedValue(0);
@@ -60,6 +61,15 @@ const SwipeCard = forwardRef<CardHandle, {
       }
     });
 
+  // çift dokunuş gecenin sayfasını açar; sürükleme ile yarışır, hangisi önce belirginse o kazanır
+  const doubleTap = Gesture.Tap()
+    .enabled(active)
+    .numberOfTaps(2)
+    .onEnd(() => {
+      if (onOpen) runOnJS(onOpen)();
+    });
+  const gesture = Gesture.Race(doubleTap, pan);
+
   const style = useAnimatedStyle(() => {
     if (active || promoted.value === 1) {
       return {
@@ -82,7 +92,7 @@ const SwipeCard = forwardRef<CardHandle, {
   }));
 
   return (
-    <GestureDetector gesture={pan}>
+    <GestureDetector gesture={gesture}>
       <Animated.View style={[styles.slot, style]}>
         <NightCard night={night} />
         {active && (
@@ -96,7 +106,7 @@ const SwipeCard = forwardRef<CardHandle, {
   );
 });
 
-export default function Deck({ nights, onSwipe }: Props) {
+export default function Deck({ nights, onSwipe, onOpen }: Props) {
   const [i, setI] = useState(0);
   const drag = useSharedValue(0);
   const nextRef = useRef<CardHandle>(null);
@@ -127,7 +137,7 @@ export default function Deck({ nights, onSwipe }: Props) {
   return (
     <View style={styles.stage}>
       {next && <SwipeCard ref={nextRef} key={next.id} night={next} active={false} drag={drag} onDone={done} />}
-      <SwipeCard key={top.id} night={top} active drag={drag} onDone={done} />
+      <SwipeCard key={top.id} night={top} active drag={drag} onDone={done} onOpen={onOpen ? () => onOpen(top) : undefined} />
     </View>
   );
 }

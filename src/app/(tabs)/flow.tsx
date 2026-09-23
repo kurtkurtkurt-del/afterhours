@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { router } from 'expo-router';
 import Storage from 'expo-sqlite/kv-store';
 import Deck from '@/components/Deck';
 import PickerSheet from '@/components/PickerSheet';
@@ -104,7 +105,7 @@ export default function FlowScreen() {
         {error ? (
           <Text style={styles.note}>{error}</Text>
         ) : nights ? (
-          <Deck key={`${city}/${type}/${when}`} nights={nights} onSwipe={onSwipe} />
+          <Deck key={`${city}/${type}/${when}`} nights={nights} onSwipe={onSwipe} onOpen={(n) => router.push(`/night/${n.slug}`)} />
         ) : (
           <Text style={styles.note}>loading the night…</Text>
         )}

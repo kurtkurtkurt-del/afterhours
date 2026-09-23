@@ -11,6 +11,7 @@ export type Night = {
   image_url: string | null;
   ticket_url: string | null;
   starts_at: string | null;
+  starts_at_estimated: boolean;
   date_text: string | null;
   type_slug: string;
   type_name: string;
