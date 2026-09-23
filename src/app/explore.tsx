@@ -15,7 +15,7 @@ export default function ExploreScreen() {
 
   const pick = (id: string) => {
     Storage.setItemSync('city', id);
-    router.replace({ pathname: '/app', params: { city: id } });
+    router.replace('/yours');
   };
 
   return (

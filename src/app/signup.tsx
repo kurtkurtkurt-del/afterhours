@@ -16,7 +16,7 @@ export default function SignUpScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const enter = () => router.replace('/app');
+  const enter = () => router.replace('/yours');
 
   return (
     <View style={styles.root}>
