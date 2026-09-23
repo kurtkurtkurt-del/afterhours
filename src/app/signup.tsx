@@ -21,9 +21,14 @@ export default function SignUpScreen() {
   const [note, setNote] = useState<string | null>(null);
   const { signUp } = useAuth();
 
-  // hesap açar (varsa giriş yapar) ve uygulamaya alır
+  // hesap açar (varsa giriş yapar) ve uygulamaya alır.
+  // alanlar boşsa hesapsız girer: şimdilik bakmak serbest.
   const enter = async () => {
     if (busy) return;
+    if (!email.trim() && !password) {
+      router.replace('/yours');
+      return;
+    }
     setBusy(true);
     setNote(null);
     const err = await signUp(email.trim(), password, Storage.getItemSync('city') ?? undefined);
