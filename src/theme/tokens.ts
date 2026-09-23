@@ -6,6 +6,7 @@ export const colors = {
   ink2: '#6C6961',
   rule: '#D9D5CC',
   spot: '#2B3ECF',
+  ink3: '#2E2C29',   // koyu zeminde ayırıcı çizgi
   mute: '#8A877F',   // koyu zeminde soluk ikon ve yazı
 } as const;
 

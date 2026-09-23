@@ -12,7 +12,7 @@ export default function Home() {
   const ambient = useAmbient();
   return (
     <View style={styles.root}>
-      <City play={introDone} soundOn={ambient.on} onToggleSound={ambient.toggle} />
+      <City play={introDone} soundOn={ambient.on} onToggleSound={ambient.toggle} onPickSound={ambient.openPicker} />
       {!introDone && (
         <View style={StyleSheet.absoluteFill}>
           <Intro onDone={done} />

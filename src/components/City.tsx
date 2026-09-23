@@ -11,10 +11,10 @@ import Backdrop from '@/components/Backdrop';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-type Props = { play: boolean; soundOn: boolean; onToggleSound: () => void };
+type Props = { play: boolean; soundOn: boolean; onToggleSound: () => void; onPickSound: () => void };
 
 // yer tutucu. intro kalkınca isim ortadan köşeye kayar.
-export default function City({ play, soundOn, onToggleSound }: Props) {
+export default function City({ play, soundOn, onToggleSound, onPickSound }: Props) {
   const { width, height } = useWindowDimensions();
   const [size, setSize] = useState<{ w: number; h: number } | null>(null);
   const t = useSharedValue(0);
@@ -60,7 +60,7 @@ export default function City({ play, soundOn, onToggleSound }: Props) {
         </Animated.Text>
       </View>
       <Animated.View style={[styles.corner, actionsStyle]} pointerEvents={play ? 'auto' : 'none'}>
-        <SoundToggle on={soundOn} onPress={onToggleSound} />
+        <SoundToggle on={soundOn} onPress={onToggleSound} onLongPress={onPickSound} />
       </Animated.View>
       <Animated.View
         style={[styles.actions, { paddingBottom: insets.bottom + 24 }, actionsStyle]}

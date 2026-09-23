@@ -13,6 +13,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { colors } from '@/theme/tokens';
 import { AmbientProvider } from '@/audio/AmbientContext';
 import { AuthProvider } from '@/auth/AuthContext';
+import GenrePicker from '@/components/GenrePicker';
 
 // native splash, fontlar gelene kadar açık kalır; sonra geçiş görünmez olur
 SplashScreen.preventAutoHideAsync();
@@ -49,6 +50,7 @@ export default function RootLayout() {
           contentStyle: { backgroundColor: colors.ink },
         }}
       />
+      <GenrePicker />
     </AmbientProvider>
     </AuthProvider>
     </GestureHandlerRootView>
