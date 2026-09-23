@@ -17,5 +17,5 @@ export default function YoursScreen() {
 }
 
 const styles = StyleSheet.create({
-  city: { fontFamily: fonts.regular, fontSize: 14, color: colors.ink2 },
+  city: { fontFamily: fonts.regular, fontSize: 14, color: colors.mute },
 });

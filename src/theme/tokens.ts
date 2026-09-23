@@ -6,6 +6,7 @@ export const colors = {
   ink2: '#6C6961',
   rule: '#D9D5CC',
   spot: '#2B3ECF',
+  mute: '#8A877F',   // koyu zeminde soluk ikon ve yazı
 } as const;
 
 export const fonts = {

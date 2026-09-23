@@ -1,63 +1,56 @@
 import type { ReactNode } from 'react';
-import { Pressable, StyleSheet, Text, View, type PressableProps } from 'react-native';
+import { Pressable, StyleSheet, View, type PressableProps } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { colors, fonts } from '@/theme/tokens';
+import Icon, { type IconName } from '@/components/Icon';
+import { colors } from '@/theme/tokens';
 
-type ItemProps = PressableProps & { label: string; isFocused?: boolean; raised?: boolean };
+// seçenek 2, "yüzen hap": kenarlardan boşluklu, kâğıt çerçeveli, mürekkep dolgulu.
+// ortadaki sekme dolu kâğıt dairede. başka bir tasarıma geçmek = bu dosyayı değiştirmek;
+// tetikleyiciler (tabs)/_layout.tsx içinde kalır.
 
-// tek sekme: yazı ve altında bir nokta. seçili olan mürekkep, diğerleri soluk.
-export function TabItem({ label, isFocused, raised, ...props }: ItemProps) {
+export const TAB_BAR_SPACE = 100; // sayfaların altta bırakması gereken boşluk
+
+type ItemProps = PressableProps & { icon: IconName; isFocused?: boolean; raised?: boolean };
+
+export function TabItem({ icon, isFocused, raised, ...props }: ItemProps) {
   return (
-    <Pressable {...props} style={[styles.item, raised && styles.raised]}>
+    <Pressable {...props} hitSlop={8} style={({ pressed }) => [styles.item, pressed && styles.pressed]}>
       {raised ? (
-        <View style={[styles.ring, isFocused && styles.ringOn]}>
-          <Text style={[styles.label, isFocused && styles.labelRaisedOn]}>{label}</Text>
+        <View style={styles.mid}>
+          <Icon name={icon} color={colors.ink} />
         </View>
       ) : (
-        <>
-          <Text style={[styles.label, isFocused && styles.labelOn]}>{label}</Text>
-          <View style={[styles.dot, isFocused && styles.dotOn]} />
-        </>
+        <Icon name={icon} color={isFocused ? colors.paper : colors.mute} />
       )}
     </Pressable>
   );
 }
 
-// alt panelin kabı. tetikleyiciler layout'ta durmak zorunda: expo-router onları
-// doğrudan Tabs'ın çocukları arasında arar, ayrı bileşen içinde göremez.
 export function TabBarFrame({ children }: { children: ReactNode }) {
   const insets = useSafeAreaInsets();
-  return <View style={[styles.bar, { paddingBottom: insets.bottom + 10 }]}>{children}</View>;
+  return (
+    <View style={[styles.wrap, { bottom: insets.bottom + 14 }]} pointerEvents="box-none">
+      <View style={styles.pill}>{children}</View>
+    </View>
+  );
 }
 
-const RING = 64;
+const MID = 44;
 
 const styles = StyleSheet.create({
-  bar: {
+  wrap: { position: 'absolute', left: 14, right: 14 },
+  pill: {
     flexDirection: 'row',
-    alignItems: 'flex-end',
-    backgroundColor: colors.paper,
-    borderTopWidth: 1,
-    borderTopColor: colors.ink,
-    paddingTop: 12,
-    paddingHorizontal: 8,
-  },
-  item: { flex: 1, alignItems: 'center', justifyContent: 'flex-end', gap: 6, paddingVertical: 6 },
-  raised: { marginTop: -RING / 2 - 12 },
-  ring: {
-    width: RING,
-    height: RING,
-    borderRadius: RING / 2,
-    borderWidth: 1.5,
-    borderColor: colors.ink,
-    backgroundColor: colors.paper,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
+    backgroundColor: colors.ink,
+    borderWidth: 1,
+    borderColor: colors.paper,
+    borderRadius: 999,
+    paddingVertical: 12,
+    paddingHorizontal: 10,
   },
-  ringOn: { backgroundColor: colors.ink },
-  label: { fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.1, color: colors.ink2 },
-  labelOn: { color: colors.ink },
-  labelRaisedOn: { color: colors.paper },
-  dot: { width: 4, height: 4, borderRadius: 2, backgroundColor: 'transparent' },
-  dotOn: { backgroundColor: colors.spot },
+  item: { alignItems: 'center', justifyContent: 'center', minWidth: 44, height: MID },
+  pressed: { opacity: 0.6 },
+  mid: { width: MID, height: MID, borderRadius: MID / 2, backgroundColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
 });

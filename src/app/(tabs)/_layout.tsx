@@ -1,7 +1,7 @@
 import { TabList, TabSlot, TabTrigger, Tabs } from 'expo-router/ui';
 import { TabBarFrame, TabItem } from '@/components/TabBar';
 
-// asıl uygulama: beş sekme, altta özel panel. flow · djs · [yours] · map · account
+// asıl uygulama: beş sekme, altta yüzen panel. flow · djs · [yours] · map · account
 export default function TabsLayout() {
   return (
     <Tabs>
@@ -9,19 +9,19 @@ export default function TabsLayout() {
       <TabList asChild>
         <TabBarFrame>
           <TabTrigger name="flow" href="/flow" asChild>
-            <TabItem label="flow" />
+            <TabItem icon="flow" />
           </TabTrigger>
           <TabTrigger name="djs" href="/djs" asChild>
-            <TabItem label="djs" />
+            <TabItem icon="djs" />
           </TabTrigger>
           <TabTrigger name="yours" href="/yours" asChild>
-            <TabItem label="yours" raised />
+            <TabItem icon="yours" raised />
           </TabTrigger>
           <TabTrigger name="map" href="/map" asChild>
-            <TabItem label="map" />
+            <TabItem icon="map" />
           </TabTrigger>
           <TabTrigger name="account" href="/account" asChild>
-            <TabItem label="account" />
+            <TabItem icon="account" />
           </TabTrigger>
         </TabBarFrame>
       </TabList>

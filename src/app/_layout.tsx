@@ -38,7 +38,7 @@ export default function RootLayout() {
           // sayfalar aynı zemini paylaşır; içerik yumuşakça birbirine karışır
           animation: 'fade',
           animationDuration: 350,
-          contentStyle: { backgroundColor: colors.paper },
+          contentStyle: { backgroundColor: colors.ink },
         }}
       />
     </AmbientProvider>
