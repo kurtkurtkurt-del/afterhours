@@ -43,12 +43,6 @@
         {
           "locationWhenInUsePermission": "afterhours uses your location to show the nights near you."
         }
-      ],
-      [
-        "react-native-maps",
-        {
-          "androidGoogleMapsApiKey": "process.env.EXPO_PUBLIC_GOOGLE_MAPS_KEY"
-        }
       ]
     ],
     "scheme": "afterhours",

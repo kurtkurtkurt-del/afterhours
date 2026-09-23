@@ -1,16 +1,15 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import * as Location from 'expo-location';
-import MapView, { Marker, PROVIDER_GOOGLE, type Region } from 'react-native-maps';
+import MapWeb, { type Pin } from '@/components/MapWeb';
 import Storage from 'expo-sqlite/kv-store';
 import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
 import { fetchNear, type NearNight } from '@/data/near';
 import { swipe } from '@/data/deck';
-import { inkMapStyle } from '@/theme/mapStyle';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -27,10 +26,9 @@ const CENTRES: Record<string, [number, number]> = {
 
 const short: Record<string, string> = { rave: 'rv', 'club-night': 'cn', konzert: 'kz', festival: 'fs', meetup: 'mu', hausparty: 'hp' };
 
-// harita: konum izni, mürekkep stilinde google maps, yakındaki geceler kare pin.
+// harita: konum izni, webview içinde leaflet + carto karoları (anahtarsız), yakındaki geceler kare pin.
 export default function MapScreen() {
   const { session } = useAuth();
-  const map = useRef<MapView>(null);
   const [me, setMe] = useState<[number, number] | null>(null);
   const [denied, setDenied] = useState(false);
   const [km, setKm] = useState(3);
@@ -61,6 +59,7 @@ export default function MapScreen() {
   }, []);
 
   const [lat, lng] = centre;
+  const pins = useMemo<Pin[]>(() => rows.map((n) => ({ id: n.id, lat: n.lat, lng: n.lng, code: short[n.type_slug] ?? n.type_slug.slice(0, 2) })), [rows]);
   useEffect(() => {
     let cancelled = false;
     fetchNear(lat, lng, km)
@@ -75,17 +74,6 @@ export default function MapScreen() {
     };
   }, [lat, lng, km]);
 
-  const region: Region = {
-    latitude: centre[0],
-    longitude: centre[1],
-    latitudeDelta: km * 0.02,
-    longitudeDelta: km * 0.02,
-  };
-
-  useEffect(() => {
-    map.current?.animateToRegion({ latitude: lat, longitude: lng, latitudeDelta: km * 0.02, longitudeDelta: km * 0.02 }, 500);
-  }, [lat, lng, km]);
-
   const keep = (n: NearNight) => {
     setKept((k) => ({ ...k, [n.slug]: true }));
     if (session) swipe(n.slug, 'right').catch(() => {});
@@ -94,26 +82,7 @@ export default function MapScreen() {
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
-      <MapView
-        ref={map}
-        provider={PROVIDER_GOOGLE}
-        style={StyleSheet.absoluteFill}
-        initialRegion={region}
-        customMapStyle={inkMapStyle}
-        showsUserLocation={!!me}
-        showsMyLocationButton={false}
-        showsCompass={false}
-        toolbarEnabled={false}
-        onPress={() => setPicked(null)}
-      >
-        {rows.map((n) => (
-          <Marker key={n.id} coordinate={{ latitude: n.lat, longitude: n.lng }} onPress={() => setPicked(n)} tracksViewChanges={false}>
-            <View style={[styles.pin, picked?.id === n.id && styles.pinOn]}>
-              <Text style={[styles.pinText, picked?.id === n.id && styles.pinTextOn]}>{short[n.type_slug] ?? n.type_slug.slice(0, 2)}</Text>
-            </View>
-          </Marker>
-        ))}
-      </MapView>
+      <MapWeb lat={lat} lng={lng} km={km} me={me} pins={pins} picked={picked?.id ?? null} onPick={(id) => setPicked(id ? (rows.find((r) => r.id === id) ?? null) : null)} />
 
       <View style={styles.band} pointerEvents="box-none">
         <Text style={styles.title}>map</Text>
@@ -164,10 +133,6 @@ const styles = StyleSheet.create({
   chipText: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
   chipTextOn: { color: colors.ink },
   count: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1, textTransform: 'uppercase', color: colors.mute, marginLeft: 6 },
-  pin: { paddingVertical: 4, paddingHorizontal: 6, backgroundColor: colors.paper, borderWidth: 1, borderColor: colors.ink },
-  pinOn: { backgroundColor: colors.spot, borderColor: colors.spot },
-  pinText: { fontFamily: fonts.medium, fontSize: 10, letterSpacing: 0.5, color: colors.ink },
-  pinTextOn: { color: colors.paper },
   sheet: { position: 'absolute', left: brand.left, right: brand.left, backgroundColor: colors.ink, borderWidth: 1, borderColor: colors.paper, padding: 14, gap: 6 },
   sheetTitle: { fontFamily: fonts.medium, fontSize: 20, lineHeight: 22, letterSpacing: -0.5, color: colors.paper },
   mono: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute },
