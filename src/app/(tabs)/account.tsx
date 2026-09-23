@@ -5,6 +5,7 @@ import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Storage from 'expo-sqlite/kv-store';
 import AfterhoursCard from '@/components/AfterhoursCard';
+import Icon from '@/components/Icon';
 import Button from '@/components/Button';
 import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
@@ -39,6 +40,9 @@ export default function AccountScreen() {
       <StatusBar style="light" />
       <View style={styles.band}>
         <Text style={styles.title}>account</Text>
+        <Pressable onPress={() => router.push('/settings')} hitSlop={12} style={({ pressed }) => [styles.gear, pressed && styles.pressed]}>
+          <Icon name="settings" size={20} color={colors.paper} />
+        </Pressable>
         <SoundCorner />
       </View>
       <ScrollView contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom }]} showsVerticalScrollIndicator={false}>
@@ -63,8 +67,8 @@ export default function AccountScreen() {
               <Detail k="home" v={(profile?.city_name ?? city ?? 'not set').toLowerCase()} />
               <Detail k="handle" v={handle ?? 'not chosen yet'} />
             </View>
-            <Pressable onPress={() => router.push('/settings')} hitSlop={8} style={styles.edit}>
-              <Text style={styles.link}>edit profile</Text>
+            <Pressable onPress={() => signOut().then(() => router.replace('/'))} hitSlop={8} style={styles.edit}>
+              <Text style={styles.link}>sign out</Text>
             </Pressable>
           </>
         ) : (
@@ -90,17 +94,6 @@ export default function AccountScreen() {
           ))}
         </View>
 
-        <View style={styles.rule} />
-        <View style={styles.links}>
-          <Pressable hitSlop={10} onPress={() => router.push('/settings')}>
-            <Text style={styles.link}>settings</Text>
-          </Pressable>
-          {session ? (
-            <Pressable hitSlop={10} onPress={() => signOut().then(() => router.replace('/'))}>
-              <Text style={styles.link}>sign out</Text>
-            </Pressable>
-          ) : null}
-        </View>
       </ScrollView>
 
       {/* kart büyütme: dokununca ön/arka döner */}
@@ -159,7 +152,7 @@ const styles = StyleSheet.create({
   section: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute, marginBottom: 10 },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: GAP },
   pressed: { opacity: 0.7 },
-  links: { flexDirection: 'row', justifyContent: 'space-between' },
+  gear: { position: 'absolute', top: brand.top - 3, right: brand.left + 84 },
   link: { fontFamily: fonts.regular, fontSize: 14, color: colors.mute },
   dim: { flex: 1, backgroundColor: 'rgba(22,21,18,0.92)', alignItems: 'center', justifyContent: 'center', gap: 18 },
   flipHint: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute },
