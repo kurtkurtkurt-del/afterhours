@@ -9,7 +9,6 @@ import {
   InterTight_400Regular,
   InterTight_500Medium,
 } from '@expo-google-fonts/inter-tight';
-import { JetBrainsMono_400Regular } from '@expo-google-fonts/jetbrains-mono';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { colors } from '@/theme/tokens';
 import { AmbientProvider } from '@/audio/AmbientContext';
@@ -23,7 +22,7 @@ if (Constants.executionEnvironment !== ExecutionEnvironment.StoreClient) {
 }
 
 export default function RootLayout() {
-  const [loaded] = useFonts({ InterTight_400Regular, InterTight_500Medium, JetBrainsMono_400Regular });
+  const [loaded] = useFonts({ InterTight_400Regular, InterTight_500Medium });
 
   useEffect(() => {
     if (loaded) SplashScreen.hideAsync();

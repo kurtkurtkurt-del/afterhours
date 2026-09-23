@@ -12,7 +12,7 @@ export const colors = {
 export const fonts = {
   regular: 'InterTight_400Regular',
   medium: 'InterTight_500Medium',
-  mono: 'JetBrainsMono_400Regular', // küçük satırlar: büyük harf, geniş aralık
+  mono: 'InterTight_400Regular',    // küçük büyük harfli satırlar da aynı fontta; tek aile
 } as const;
 
 // açılış zamanlaması, milisaniye. "biraz daha yavaş" dendiğinde burası değişir.
