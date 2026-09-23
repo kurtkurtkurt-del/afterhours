@@ -1,12 +1,12 @@
+import type { ReactNode } from 'react';
 import { Pressable, StyleSheet, Text, View, type PressableProps } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { TabList, TabTrigger } from 'expo-router/ui';
 import { colors, fonts } from '@/theme/tokens';
 
 type ItemProps = PressableProps & { label: string; isFocused?: boolean; raised?: boolean };
 
 // tek sekme: yazı ve altında bir nokta. seçili olan mürekkep, diğerleri soluk.
-function Item({ label, isFocused, raised, ...props }: ItemProps) {
+export function TabItem({ label, isFocused, raised, ...props }: ItemProps) {
   return (
     <Pressable {...props} style={[styles.item, raised && styles.raised]}>
       {raised ? (
@@ -23,20 +23,11 @@ function Item({ label, isFocused, raised, ...props }: ItemProps) {
   );
 }
 
-// alt panel: flow · djs · [yours] · map · account
-export default function TabBar() {
+// alt panelin kabı. tetikleyiciler layout'ta durmak zorunda: expo-router onları
+// doğrudan Tabs'ın çocukları arasında arar, ayrı bileşen içinde göremez.
+export function TabBarFrame({ children }: { children: ReactNode }) {
   const insets = useSafeAreaInsets();
-  return (
-    <TabList asChild>
-      <View style={[styles.bar, { paddingBottom: insets.bottom + 10 }]}>
-        <TabTrigger name="flow" href="/flow" asChild><Item label="flow" /></TabTrigger>
-        <TabTrigger name="djs" href="/djs" asChild><Item label="djs" /></TabTrigger>
-        <TabTrigger name="yours" href="/yours" asChild><Item label="yours" raised /></TabTrigger>
-        <TabTrigger name="map" href="/map" asChild><Item label="map" /></TabTrigger>
-        <TabTrigger name="account" href="/account" asChild><Item label="account" /></TabTrigger>
-      </View>
-    </TabList>
-  );
+  return <View style={[styles.bar, { paddingBottom: insets.bottom + 10 }]}>{children}</View>;
 }
 
 const RING = 64;
