@@ -30,13 +30,17 @@ export default function AccountScreen() {
   const city = profile?.city_name ?? Storage.getItemSync('city.name');
   const since = profile ? new Date(profile.created_at) : null;
   const sinceText = since ? `since ${String(since.getMonth() + 1).padStart(2, '0')}.${String(since.getFullYear()).slice(2)}` : null;
+  const joined = since ? since.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).toLowerCase() : null;
+  const seen = profile?.last_seen_at ? new Date(profile.last_seen_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }).toLowerCase() : null;
   const cardW = (width - brand.left * 2 - GAP * 2) / 3;
 
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
-      <Text style={styles.title}>account</Text>
-      <SoundCorner />
+      <View style={styles.band}>
+        <Text style={styles.title}>account</Text>
+        <SoundCorner />
+      </View>
       <ScrollView contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom }]} showsVerticalScrollIndicator={false}>
         <View style={styles.initial}>
           <Text style={styles.initialText}>{name.charAt(0)}</Text>
@@ -46,11 +50,23 @@ export default function AccountScreen() {
         {profile?.bio ? <Text style={styles.bio}>{profile.bio}</Text> : null}
 
         {session ? (
-          <View style={styles.counts}>
-            <Count n={collection.length} label="nights" />
-            <Count n={profile?.kept_count ?? 0} label="kept" />
-            <Count n={profile?.friend_count ?? 0} label="friends" />
-          </View>
+          <>
+            <View style={styles.counts}>
+              <Count n={collection.length} label="nights" />
+              <Count n={profile?.kept_count ?? 0} label="kept" />
+              <Count n={profile?.friend_count ?? 0} label="friends" />
+              <Count n={profile?.comment_count ?? 0} label="said" />
+            </View>
+            <View style={styles.details}>
+              {joined ? <Detail k="joined" v={joined} /> : null}
+              {seen ? <Detail k="last seen" v={seen} /> : null}
+              <Detail k="home" v={(profile?.city_name ?? city ?? 'not set').toLowerCase()} />
+              <Detail k="handle" v={handle ?? 'not chosen yet'} />
+            </View>
+            <Pressable onPress={() => router.push('/settings')} hitSlop={8} style={styles.edit}>
+              <Text style={styles.link}>edit profile</Text>
+            </Pressable>
+          </>
         ) : (
           <View style={styles.cta}>
             <Button label="sign up" onPress={() => router.push('/signup')} />
@@ -76,7 +92,7 @@ export default function AccountScreen() {
 
         <View style={styles.rule} />
         <View style={styles.links}>
-          <Pressable hitSlop={10}>
+          <Pressable hitSlop={10} onPress={() => router.push('/settings')}>
             <Text style={styles.link}>settings</Text>
           </Pressable>
           {session ? (
@@ -102,6 +118,15 @@ export default function AccountScreen() {
   );
 }
 
+function Detail({ k, v }: { k: string; v: string }) {
+  return (
+    <View style={styles.detail}>
+      <Text style={styles.detailK}>{k}</Text>
+      <Text style={styles.detailV}>{v}</Text>
+    </View>
+  );
+}
+
 function Count({ n, label }: { n: number; label: string }) {
   return (
     <View>
@@ -113,6 +138,7 @@ function Count({ n, label }: { n: number; label: string }) {
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
+  band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top, left: brand.left, fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper, zIndex: 1 },
   body: { paddingTop: brand.top + 56, paddingHorizontal: brand.left },
   initial: { width: 64, height: 64, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center', marginBottom: 14 },
@@ -123,6 +149,11 @@ const styles = StyleSheet.create({
   counts: { flexDirection: 'row', gap: 28, marginTop: 20 },
   countN: { fontFamily: fonts.medium, fontSize: 24, letterSpacing: -0.6, color: colors.paper, fontVariant: ['tabular-nums'] },
   countL: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute },
+  details: { marginTop: 18, gap: 6 },
+  detail: { flexDirection: 'row', justifyContent: 'space-between' },
+  detailK: { fontFamily: fonts.regular, fontSize: 13, color: colors.mute },
+  detailV: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper2 },
+  edit: { marginTop: 14, alignSelf: 'flex-start' },
   cta: { marginTop: 20 },
   rule: { borderTopWidth: 1, borderTopColor: colors.ink3, marginVertical: 20 },
   section: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute, marginBottom: 10 },

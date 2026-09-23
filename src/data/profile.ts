@@ -11,6 +11,7 @@ export type Profile = {
   city_slug: string | null;
   city_name: string | null;
   created_at: string;
+  last_seen_at: string | null;
   kept_count: number;
   friend_count: number;
   comment_count: number;

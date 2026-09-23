@@ -13,8 +13,10 @@ export default function TabPage({ title, children }: Props) {
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
-      <Text style={styles.title}>{title}</Text>
-      <SoundCorner />
+      <View style={styles.band}>
+        <Text style={styles.title}>{title}</Text>
+        <SoundCorner />
+      </View>
       <View style={styles.body}>{children}</View>
     </View>
   );
@@ -22,6 +24,7 @@ export default function TabPage({ title, children }: Props) {
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
+  band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top, left: brand.left, fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },
   body: { flex: 1, paddingTop: brand.top + 48, paddingHorizontal: brand.left, paddingBottom: TAB_BAR_SPACE },
 });
