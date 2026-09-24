@@ -1,7 +1,8 @@
 -- afterhours — djs, their sets, and who follows them
 --
 --   djs        the person: name, genre, which of the three sounds plays
---              when you tune in, home city, photo, since when.
+--              when you tune in, home city, photo, since when. Follower
+--              numbers are counted from dj_follows (dj_follow_counts), never stored.
 --   dj_sets    a night they play: venue, start, length. The app builds
 --              "live now / later tonight / this week" from these.
 --   dj_follows one row per person per dj. Only the owner reads their own.
@@ -19,7 +20,6 @@ create table if not exists public.djs (
   city_id     uuid references public.cities on delete set null,
   photo_url   text,
   since       int,
-  followers   int not null default 0,
   source      text not null default 'seed',
   sort_order  int not null default 0,
   created_at  timestamptz not null default now()
@@ -65,23 +65,23 @@ grant select, insert, delete on public.dj_follows to authenticated;
 
 -- ---------------------------------------------------------------- seed
 
-insert into public.djs (slug, name, genre, sound, city_id, since, followers, sort_order)
-select v.slug, v.name, v.genre, v.sound, c.id, v.since, v.followers, v.o
+insert into public.djs (slug, name, genre, sound, city_id, since, sort_order)
+select v.slug, v.name, v.genre, v.sound, c.id, v.since, v.o
 from (values
-  ('mara-volt',    'mara volt',    'techno',     'techno', 'munchen',  2023, 1200, 1),
-  ('levent-ok',    'levent ok',    'house',      'house',  'munchen',  2021, 3400, 2),
-  ('nachtfalter',  'nachtfalter',  'rave',       'techno', 'munchen',  2024,  680, 3),
-  ('ines-okur',    'ines okur',    'deep house', 'house',  'istanbul', 2022, 2100, 4),
-  ('tuesday-club', 'tuesday club', 'house',      'house',  'munchen',  2020,  940, 5),
-  ('dilan-k',      'dilan k.',     'rap',        'rap',    'munchen',  2024, 1500, 6),
-  ('orbit-9',      'orbit 9',      'techno',     'techno', 'berlin',   2019, 5200, 7),
-  ('selin',        'selin',        'house',      'house',  'munchen',  2025,  310, 8)
-) as v(slug, name, genre, sound, city, since, followers, o)
+  ('mara-volt', 'mara volt', 'techno', 'techno', 'munchen', 2023, 1),
+  ('levent-ok', 'levent ok', 'house', 'house', 'munchen', 2021, 2),
+  ('nachtfalter', 'nachtfalter', 'rave', 'techno', 'munchen', 2024, 3),
+  ('ines-okur', 'ines okur', 'deep house', 'house', 'istanbul', 2022, 4),
+  ('tuesday-club', 'tuesday club', 'house', 'house', 'munchen', 2020, 5),
+  ('dilan-k', 'dilan k.', 'rap', 'rap', 'munchen', 2024, 6),
+  ('orbit-9', 'orbit 9', 'techno', 'techno', 'berlin', 2019, 7),
+  ('selin', 'selin', 'house', 'house', 'munchen', 2025, 8)
+) as v(slug, name, genre, sound, city, since, o)
 left join public.cities c on c.slug = v.city
 on conflict (slug) do nothing;
 
--- sets: the coming fridays and saturdays from whenever this runs, so the
--- screen shows a week of nights. re-running adds nothing (one set per dj/venue/day).
+-- sets: the next six days from whenever this runs, so the screen shows a
+-- week of nights. re-running adds nothing (one seed set per dj and venue).
 insert into public.dj_sets (dj_id, venue, city_id, starts_at, hours)
 select d.id, v.venue, d.city_id, v.at, v.h
 from (values
@@ -97,7 +97,7 @@ from (values
 join public.djs d on d.slug = v.slug
 where not exists (
   select 1 from public.dj_sets s
-  where s.dj_id = d.id and s.venue = v.venue and date_trunc('day', s.starts_at) = date_trunc('day', v.at)
+  where s.dj_id = d.id and s.venue = v.venue
 );
 
 do $$ begin

@@ -288,6 +288,9 @@ async function db(path, options = {}) {
   return text ? JSON.parse(text) : null;
 }
 
+/* a coordinate string → number, or null when missing or not a number */
+const finite = (v) => { const n = Number(v); return v != null && v !== "" && Number.isFinite(n) ? n : null; };
+
 /* ------------------------------------------------------- one TM event */
 
 function rowFor(e, city, types) {
@@ -323,8 +326,8 @@ function rowFor(e, city, types) {
     ticket_url: e.url || null,
     /* the venue's point, for the map (18_geo.sql). Ticketmaster gives it
        as strings; a missing one stays NULL and the pin is simply not drawn. */
-    lat: venue.location && venue.location.latitude ? Number(venue.location.latitude) : null,
-    lng: venue.location && venue.location.longitude ? Number(venue.location.longitude) : null,
+    lat: finite(venue.location && venue.location.latitude),
+    lng: finite(venue.location && venue.location.longitude),
   };
 }
 

@@ -29,6 +29,7 @@ sql/18_geo.sql           lat/lng on events and venues + nights_near(): the map i
 sql/19_checkins.sql      check-in, the afterhours card (my_cards), the room (room_*), friends_live
 sql/20_djs.sql           djs, dj_sets, dj_follows + eight seed djs
 sql/21_sound.sql         the sound bucket: background music streams from here
+sql/22_hardening.sql     what the review closed: column grants, guests, door test, follow counts
 sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities
 
 tools/build-seed.mjs     builds 03/04/05 from the front-end data

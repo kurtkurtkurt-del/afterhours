@@ -18,8 +18,8 @@ const box = {}; new Function("window", text)(box);
 const URL_ = box.AH_CONFIG.url;
 
 let n = 0;
-for (const genre of await readdir(dir)) {
-  const files = (await readdir(join(dir, genre))).filter((f) => f.endsWith(".m4a")).sort();
+for (const genre of ["house", "techno", "rap"]) {
+  const files = (await readdir(join(dir, genre)).catch(() => [])).filter((f) => f.endsWith(".m4a")).sort();
   for (const f of files) {
     const body = await readFile(join(dir, genre, f));
     const res = await fetch(`${URL_}/storage/v1/object/sound/${genre}/${f}`, {
