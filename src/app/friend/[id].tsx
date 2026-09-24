@@ -20,7 +20,7 @@ export default function FriendScreen() {
   const [sent, setSent] = useState(false);
   const f = friends.find((x) => x.id === id);
 
-  if (id === 'add' || !f) {
+  if (id === 'add') {
     return (
       <View style={styles.root}>
         <StatusBar style="light" />
@@ -36,6 +36,21 @@ export default function FriendScreen() {
             <Button label={sent ? 'request sent' : 'send request'} onPress={() => handle && setSent(true)} />
           </View>
           <Text style={[styles.note, { marginTop: 24 }]}>or show your code at the door: qr comes with check-in.</Text>
+        </View>
+      </View>
+    );
+  }
+
+  if (!f) {
+    return (
+      <View style={styles.root}>
+        <StatusBar style="light" />
+        <View style={styles.band}>
+          <BackButton />
+          <SoundCorner />
+        </View>
+        <View style={styles.body}>
+          <Text style={styles.big}>no such friend</Text>
         </View>
       </View>
     );

@@ -43,7 +43,8 @@
         {
           "locationWhenInUsePermission": "afterhours uses your location to show the nights near you."
         }
-      ]
+      ],
+      "expo-secure-store"
     ],
     "scheme": "afterhours",
     "experiments": {

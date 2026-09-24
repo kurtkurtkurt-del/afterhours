@@ -1,16 +1,18 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
+import { leafletCss, leafletJs } from '@/vendor/leaflet';
 
 export type Pin = { id: string; lat: number; lng: number; code: string };
 type Props = { lat: number; lng: number; km: number; me: [number, number] | null; pins: Pin[]; picked: string | null; onPick: (id: string | null) => void };
 
-// harita, webview içinde: leaflet + carto "dark matter" karoları. anahtar gerekmez.
+// harita, webview içinde: leaflet (pakete gömülü) + carto "dark matter" karoları. anahtar gerekmez.
+// webview dışarıya gidemez: sayfa içi gezinme kapalı, dosya erişimi kapalı, sadece karo isteği çıkar.
 // mürekkep görünümü css ile: karolar hafif koyulaştırılır, pinler kâğıt kareler.
 const html = `<!doctype html><html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>${leafletCss}</style>
+<script>${leafletJs}</script>
 <style>
   html,body,#m{margin:0;height:100%;background:#161512}
   .leaflet-tile{filter:brightness(.72) contrast(1.05) saturate(0)}
@@ -67,8 +69,13 @@ export default function MapWeb({ lat, lng, km, me, pins, picked, onPick }: Props
       style={StyleSheet.absoluteFill}
       containerStyle={{ backgroundColor: '#161512' }}
       javaScriptEnabled
-      domStorageEnabled
-      originWhitelist={['*']}
+      domStorageEnabled={false}
+      allowFileAccess={false}
+      allowFileAccessFromFileURLs={false}
+      allowUniversalAccessFromFileURLs={false}
+      setSupportMultipleWindows={false}
+      originWhitelist={['about:blank', 'about:srcdoc']}
+      onShouldStartLoadWithRequest={(req) => req.url.startsWith('about:')}
       onMessage={(e) => {
         try {
           const m = JSON.parse(e.nativeEvent.data);

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { KeyboardAvoidingView, StyleSheet, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -8,7 +8,7 @@ import BackButton from '@/components/BackButton';
 import SoundCorner from '@/components/SoundCorner';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
-import { DEMO, useAuth } from '@/auth/AuthContext';
+import { useAuth } from '@/auth/AuthContext';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -19,20 +19,19 @@ export default function SignUpScreen() {
   const [password, setPassword] = useState('');
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState<string | null>(null);
-  const { signUp } = useAuth();
+  const { signUp, signInAsGuest, resetPassword } = useAuth();
 
   // hesap açar (varsa giriş yapar) ve uygulamaya alır.
-  // alanlar boşsa deneme hesabıyla girer: bakmak serbest, ama kaydırmalar kaydolsun.
+  // alanlar boşsa cihaza özel anonim kullanıcı: bakmak serbest, kaydırmalar yine de kaydolur,
+  // sonra e-posta girince aynı kullanıcı hesaba dönüşür.
   const enter = async () => {
     if (busy) return;
     const guest = !email.trim() && !password;
     setBusy(true);
     setNote(null);
-    const err = guest
-      ? await signUp(DEMO.email, DEMO.password)
-      : await signUp(email.trim(), password, Storage.getItemSync('city') ?? undefined);
+    const err = guest ? await signInAsGuest() : await signUp(email.trim(), password, Storage.getItemSync('city') ?? undefined);
     if (guest && err) {
-      // deneme hesabına giriş olmazsa yine de içeri al; sadece söylemeden geçme
+      // anonim giriş panelde kapalıysa yine de içeri al; kaydırmalar kaydolmaz
       setBusy(false);
       router.replace('/yours');
       return;
@@ -75,6 +74,16 @@ export default function SignUpScreen() {
           {note && <Text style={styles.note}>{note}</Text>}
           <View style={styles.gap} />
           <Button label={busy ? 'one moment' : 'enter'} onPress={enter} />
+          <Pressable
+            hitSlop={8}
+            onPress={async () => {
+              const err = await resetPassword(email);
+              setNote(err ?? 'reset link sent, check your inbox');
+            }}
+          >
+            <Text style={styles.small}>forgot password? enter your email and tap here</Text>
+          </Pressable>
+          <Text style={styles.small}>leave both empty to look around first</Text>
         </View>
         </View>
       </KeyboardAvoidingView>
@@ -90,4 +99,5 @@ const styles = StyleSheet.create({
   form: { gap: 16 },
   gap: { height: 8 },
   note: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper2, opacity: 0.8 },
+  small: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute, marginTop: 6 },
 });

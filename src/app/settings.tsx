@@ -31,7 +31,7 @@ const handleWords: Record<string, string> = {
 
 // ayarlar: profil, gizlilik, ses, hesap. veritabanındaki kurallarla bire bir.
 export default function SettingsScreen() {
-  const { session, signOut } = useAuth();
+  const { session, signOut, isAnonymous } = useAuth();
   const profile = useProfile();
   const { cities } = useCities();
   const ambient = useAmbient();
@@ -163,7 +163,10 @@ export default function SettingsScreen() {
         <Row label="genre" hint="ten tracks each" right={<Value text={soundName} />} onPress={() => setSheet('sound')} />
 
         <Section title="account" />
-        <Row label="email" right={<Value text={session?.user.email ?? 'none'} />} />
+        {isAnonymous ? (
+          <Row label="finish your account" hint="you are browsing as a guest; add an email to keep your nights" onPress={() => router.push('/signup')} />
+        ) : null}
+        <Row label="email" right={<Value text={session?.user.email ?? (isAnonymous ? 'guest' : 'none')} />} />
         {session ? <Row label="download my data" hint="everything we hold about you, as json" onPress={doExport} /> : null}
         {session ? <Row label="sign out" onPress={() => signOut().then(() => router.replace('/'))} /> : null}
         {session ? <Row label="delete account" hint="comments stay, name becomes “someone”" onPress={confirmDelete} /> : null}
