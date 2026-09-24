@@ -13,7 +13,7 @@ import { swipe } from '@/data/deck';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-const RADII = [1, 3, 10];
+const RADII = [1, 3, 10, 30];
 // konum yoksa seçili şehrin merkezi; o da yoksa münih
 const CENTRES: Record<string, [number, number]> = {
   munchen: [48.137, 11.575],
@@ -31,6 +31,7 @@ export default function MapScreen() {
   const { session } = useAuth();
   const tabSpace = useTabBarSpace();
   const [me, setMe] = useState<[number, number] | null>(null);
+  const [follow, setFollow] = useState<'me' | 'city'>('me'); // harita merkezi: ben mi, seçili şehir mi
   const [denied, setDenied] = useState(false);
   const [km, setKm] = useState(3);
   const [rows, setRows] = useState<NearNight[]>([]);
@@ -39,7 +40,8 @@ export default function MapScreen() {
   const [kept, setKept] = useState<Record<string, boolean>>({});
 
   const city = Storage.getItemSync('city') ?? 'munchen';
-  const centre = me ?? CENTRES[city] ?? CENTRES.munchen;
+  const cityCentre = CENTRES[city] ?? CENTRES.munchen;
+  const centre = follow === 'me' && me ? me : cityCentre;
 
   useEffect(() => {
     let cancelled = false;
@@ -103,8 +105,17 @@ export default function MapScreen() {
           </Pressable>
         ))}
         <Text style={styles.count}>
-          {missing ? 'map data not live yet' : denied && !me ? `${rows.length} near ${city} · location off` : `${rows.length} near you`}
+          {missing ? 'map data not live yet' : follow === 'city' || !me ? `${rows.length} in ${city}` : `${rows.length} near you`}
         </Text>
+      </View>
+      {/* merkez: konumum / şehir merkezi */}
+      <View style={styles.centreRow}>
+        <Pressable onPress={() => setFollow('me')} disabled={!me} style={[styles.chip, follow === 'me' && me && styles.chipOn, !me && styles.chipOff]}>
+          <Text style={[styles.chipText, follow === 'me' && me && styles.chipTextOn]}>{me ? 'near me' : denied ? 'location off' : 'locating…'}</Text>
+        </Pressable>
+        <Pressable onPress={() => setFollow('city')} style={[styles.chip, (follow === 'city' || !me) && styles.chipOn]}>
+          <Text style={[styles.chipText, (follow === 'city' || !me) && styles.chipTextOn]}>{city} centre</Text>
+        </Pressable>
       </View>
 
       {/* seçili gece */}
@@ -134,7 +145,9 @@ const styles = StyleSheet.create({
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36 },
   title: { position: 'absolute', top: brand.top, left: brand.left, fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },
   chips: { position: 'absolute', top: brand.top + 40, left: brand.left, right: brand.left, flexDirection: 'row', alignItems: 'center', gap: 6 },
+  centreRow: { position: 'absolute', top: brand.top + 76, left: brand.left, right: brand.left, flexDirection: 'row', gap: 6 },
   chip: { paddingVertical: 5, paddingHorizontal: 10, borderWidth: 1, borderColor: colors.mute, backgroundColor: colors.ink },
+  chipOff: { opacity: 0.5 },
   chipOn: { borderColor: colors.paper, backgroundColor: colors.paper },
   chipText: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
   chipTextOn: { color: colors.ink },

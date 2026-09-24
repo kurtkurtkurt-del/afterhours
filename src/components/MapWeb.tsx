@@ -44,7 +44,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
 </script></body></html>`;
 
 // yarıçap → zoom: 1 km 15, 3 km 13.5, 10 km 12
-const zoomFor = (km: number) => (km <= 1 ? 15 : km <= 3 ? 13.5 : 11.5);
+const zoomFor = (km: number) => (km <= 1 ? 15 : km <= 3 ? 13.5 : km <= 10 ? 11.5 : 10);
 
 export default function MapWeb({ lat, lng, km, me, pins, picked, onPick }: Props) {
   const ref = useRef<WebView>(null);
