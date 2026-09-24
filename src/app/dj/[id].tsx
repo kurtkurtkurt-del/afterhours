@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useLocalSearchParams } from 'expo-router';
@@ -6,7 +6,9 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import Vinyl from '@/components/Vinyl';
 import { useAmbient } from '@/audio/AmbientContext';
-import { djById, djs, sets, tracksFor } from '@/content/djs';
+import { djs as localDjs, sets as localSets, tracksFor, type Dj, type DjSet } from '@/content/djs';
+import { isFollowing, loadDjs, setFollow } from '@/data/djs';
+import { useAuth } from '@/auth/AuthContext';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -20,11 +22,26 @@ export default function DjScreen() {
   const ambient = useAmbient();
   const [following, setFollowing] = useState(false);
   const [playing, setPlaying] = useState<number | null>(null);
+  const { session } = useAuth();
+  const [data, setData] = useState<{ djs: Dj[]; sets: DjSet[] }>({ djs: localDjs, sets: localSets() });
+  useEffect(() => {
+    let cancelled = false;
+    loadDjs().then((d) => !cancelled && setData({ djs: d.djs, sets: d.sets })).catch(() => {});
+    if (session && id) isFollowing(id).then((f) => !cancelled && setFollowing(f)).catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [id, session]);
 
-  const dj = djById(id ?? djs[0].id);
+  const dj = data.djs.find((d) => d.id === id) ?? localDjs.find((d) => d.id === id) ?? localDjs[0];
   const tracks = tracksFor(dj);
-  const photos = djs.filter((d) => d.id !== dj.id).slice(0, 4).map((d) => d.photo); // yer tutucu: gecelerin fotoğrafları
-  const next = sets().find((s) => s.dj === dj.id);
+  const photos = localDjs.filter((d) => d.id !== dj.id).slice(0, 4).map((d) => d.photo); // yer tutucu: gecelerin fotoğrafları
+  const next = data.sets.find((s) => s.dj === dj.id);
+  const toggleFollow = () => {
+    const on = !following;
+    setFollowing(on);
+    if (session) setFollow(dj.id, on).catch(() => setFollowing(!on));
+  };
   const tile = (width - brand.left * 2 - GAP) / 2;
   const disc = tile - 24;
 
@@ -43,14 +60,14 @@ export default function DjScreen() {
       <StatusBar style="light" />
       <View style={styles.band}>
         <BackButton />
-        <Pressable onPress={() => setFollowing((f) => !f)} hitSlop={12} style={styles.follow}>
+        <Pressable onPress={toggleFollow} hitSlop={12} style={styles.follow}>
           <Text style={[styles.followText, following && styles.followOn]}>{following ? 'following' : 'follow'}</Text>
         </Pressable>
       </View>
       <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false}>
         {/* kapak */}
         <View style={[styles.hero, { height: width * 1.05 }]}>
-          <Image source={dj.photo} style={styles.heroPhoto} />
+          <Image source={dj.photoUrl ? { uri: dj.photoUrl } : dj.photo} style={styles.heroPhoto} />
           <View style={styles.heroShade} />
           <View style={styles.heroText}>
             <Text style={styles.mono}>{dj.genre}{next ? ` · ${next.venue} resident` : ''}</Text>

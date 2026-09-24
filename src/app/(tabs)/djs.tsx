@@ -1,11 +1,12 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
-import { djById, sets, type DjSet } from '@/content/djs';
+import { djs as localDjs, sets as localSets, type Dj, type DjSet } from '@/content/djs';
+import { loadDjs } from '@/data/djs';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -17,7 +18,16 @@ const dayName = (d: Date) => d.toLocaleDateString('en-GB', { weekday: 'short' })
 export default function DjsScreen() {
   const insets = useSafeAreaInsets();
   const now = useMemo(() => new Date(), []);
-  const all = useMemo(() => sets(now), [now]);
+  const [data, setData] = useState<{ djs: Dj[]; sets: DjSet[] }>({ djs: localDjs, sets: localSets(now) });
+  useEffect(() => {
+    let cancelled = false;
+    loadDjs().then((d) => !cancelled && setData({ djs: d.djs, sets: d.sets })).catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+  const all = data.sets;
+  const djById = (id: string) => data.djs.find((d) => d.id === id) ?? localDjs[0];
 
   const live = all.find((s) => s.startsAt <= now && s.startsAt.getTime() + s.hours * H > now.getTime());
   const nightEnd = new Date(now);
@@ -25,7 +35,7 @@ export default function DjsScreen() {
   if (nightEnd <= now) nightEnd.setDate(nightEnd.getDate() + 1);
   const tonight = all.filter((s) => s !== live && s.startsAt > now && s.startsAt <= nightEnd);
   const week = all.filter((s) => s.startsAt > nightEnd);
-  const next = tonight[0] ?? week[0];
+  const next = tonight[0] ?? week[0] ?? all[0];
 
   return (
     <View style={styles.root}>
@@ -35,9 +45,11 @@ export default function DjsScreen() {
         <SoundCorner />
       </View>
       <ScrollView contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom }]} showsVerticalScrollIndicator={false}>
+        {!next ? <Text style={styles.mono}>no sets listed yet</Text> : null}
         {/* şimdi */}
+        {next ? (
         <Pressable style={styles.hero} onPress={() => router.push(`/dj/${(live ?? next).dj}`)}>
-          <Image source={djById((live ?? next).dj).photo} style={styles.heroPhoto} />
+          <Image source={djById((live ?? next).dj).photoUrl ? { uri: djById((live ?? next).dj).photoUrl! } : djById((live ?? next).dj).photo} style={styles.heroPhoto} />
           <View style={styles.heroShade} />
           <View style={styles.heroText}>
             <Text style={[styles.mono, live ? styles.live : null]}>
@@ -50,30 +62,30 @@ export default function DjsScreen() {
             </Text>
           </View>
         </Pressable>
+        ) : null}
 
         {tonight.length > 0 && (
           <>
             <Text style={styles.section}>later tonight</Text>
             {tonight.map((s) => (
-              <Row key={s.dj + s.startsAt.toISOString()} set={s} right={hhmm(s.startsAt)} />
+              <Row key={s.dj + s.startsAt.toISOString()} set={s} dj={djById(s.dj)} right={hhmm(s.startsAt)} />
             ))}
           </>
         )}
 
         <Text style={styles.section}>this week</Text>
         {week.map((s) => (
-          <Row key={s.dj + s.startsAt.toISOString()} set={s} right={`${dayName(s.startsAt)} · ${hhmm(s.startsAt)}`} />
+          <Row key={s.dj + s.startsAt.toISOString()} set={s} dj={djById(s.dj)} right={`${dayName(s.startsAt)} · ${hhmm(s.startsAt)}`} />
         ))}
       </ScrollView>
     </View>
   );
 }
 
-function Row({ set, right }: { set: DjSet; right: string }) {
-  const dj = djById(set.dj);
+function Row({ set, dj, right }: { set: DjSet; dj: Dj; right: string }) {
   return (
     <Pressable onPress={() => router.push(`/dj/${set.dj}`)} style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
-      <Image source={dj.photo} style={styles.sq} />
+      <Image source={dj.photoUrl ? { uri: dj.photoUrl } : dj.photo} style={styles.sq} />
       <View style={styles.rowText}>
         <Text style={styles.name}>{dj.name}</Text>
         <Text style={styles.mono}>{dj.genre} · {set.venue}</Text>

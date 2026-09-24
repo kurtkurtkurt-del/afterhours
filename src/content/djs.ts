@@ -2,7 +2,7 @@
 // fotoğraflar assets/djs/<id>.jpg — yer tutucu kesitler; dosyayı değiştirmek yeter.
 import type { Genre } from '@/content/music';
 
-export type Dj = { id: string; name: string; genre: string; sound: Genre; city: string; since: number; followers: string; photo: number };
+export type Dj = { id: string; name: string; genre: string; sound: Genre; city: string; since: number; followers: string; photo: number; photoUrl?: string | null };
 export type Track = { title: string; where: string; date: string; length: string };
 export type DjSet = { dj: string; venue: string; startsAt: Date; hours: number };
 

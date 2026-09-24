@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import Button from '@/components/Button';
@@ -9,6 +9,8 @@ import Input from '@/components/Input';
 import SoundCorner from '@/components/SoundCorner';
 import { Row, Section, Value } from '@/components/Row';
 import { friends, nights } from '@/content/friends';
+import { friendAccept, friendRemove, friendRequest } from '@/data/friends';
+import { useYours } from '@/data/yours';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -17,8 +19,10 @@ export default function FriendScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const insets = useSafeAreaInsets();
   const [handle, setHandle] = useState('');
-  const [sent, setSent] = useState(false);
-  const f = friends.find((x) => x.id === id);
+  const [sent, setSent] = useState<string | null>(null);
+  const real = useYours();
+  const rf = real.friends.find((x) => x.id === id);
+  const f = rf ? { id: rf.id, name: rf.name, handle: rf.handle ?? '', live: rf.live, kept: rf.kept, seen: '' } : friends.find((x) => x.id === id);
 
   if (id === 'add') {
     return (
@@ -33,7 +37,15 @@ export default function FriendScreen() {
           <Text style={styles.note}>by handle. they get a request; nothing is shared until they say yes.</Text>
           <Input value={handle} onChangeText={(v) => setHandle(v.toLowerCase())} placeholder="@handle" autoCapitalize="none" />
           <View style={{ marginTop: 16 }}>
-            <Button label={sent ? 'request sent' : 'send request'} onPress={() => handle && setSent(true)} />
+            <Button
+              label={sent ?? 'send request'}
+              onPress={() =>
+                handle &&
+                friendRequest(handle.replace(/^@/, ''))
+                  .then((r) => setSent(r === 'ok' || r === 'accepted' ? (r === 'accepted' ? 'you are friends now' : 'request sent') : r))
+                  .catch((e) => setSent(String(e.message).toLowerCase()))
+              }
+            />
           </View>
           <Text style={[styles.note, { marginTop: 24 }]}>or show your code at the door: qr comes with check-in.</Text>
         </View>
@@ -56,7 +68,7 @@ export default function FriendScreen() {
     );
   }
 
-  const shared = nights.filter((n) => n.friends.includes(f.id));
+  const shared = rf ? real.nights.filter((n) => n.friends.includes(rf.name)).map((n) => ({ id: n.id, title: n.title, venue: n.venue, when: n.when })) : nights.filter((n) => n.friends.includes(f.id));
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
@@ -69,7 +81,7 @@ export default function FriendScreen() {
           <Text style={[styles.initialText, f.live && styles.liveText]}>{f.name.charAt(0)}</Text>
         </View>
         <Text style={styles.big}>{f.name}</Text>
-        <Text style={styles.mono}>@{f.handle} · {f.live ? `at ${f.live} now` : `seen ${f.seen}`}</Text>
+        <Text style={styles.mono}>@{f.handle}{f.live ? ` · at ${f.live} now` : f.seen ? ` · seen ${f.seen}` : ''}</Text>
 
         <Section title={`kept · ${shared.length}`} />
         {shared.map((n) => (
@@ -79,11 +91,13 @@ export default function FriendScreen() {
 
         <Section title="together" />
         <Row label="nights out together" right={<Value text={String(Math.max(0, f.kept - 1))} />} />
-        <Row label="friends since" right={<Value text="05.26" />} />
 
         <Section title="" />
-        <Pressable hitSlop={8}>
-          <Text style={styles.remove}>remove friend</Text>
+        {rf?.pending === 'incoming' ? (
+          <Button label="accept" onPress={() => friendAccept(rf.id).then(() => router.back())} />
+        ) : null}
+        <Pressable hitSlop={8} onPress={() => rf && friendRemove(rf.id).then(() => router.back())}>
+          <Text style={styles.remove}>{rf?.pending === 'outgoing' ? 'cancel request' : 'remove friend'}</Text>
         </Pressable>
       </ScrollView>
     </View>

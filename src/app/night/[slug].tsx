@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Image, Linking, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image, Linking, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import * as Location from 'expo-location';
+import AfterhoursCard from '@/components/AfterhoursCard';
+import { checkIn, myCards, reason, roomInfo, toCardData, type CardRow, type RoomInfo } from '@/data/checkin';
 import { StatusBar } from 'expo-status-bar';
-import { useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import Button from '@/components/Button';
@@ -23,6 +26,10 @@ export default function NightScreen() {
   const [night, setNight] = useState<Night | null>(null);
   const [missing, setMissing] = useState(false);
   const [kept, setKept] = useState(false);
+  const [room, setRoom] = useState<RoomInfo | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [note, setNote] = useState<string | null>(null);
+  const [card, setCard] = useState<CardRow | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -40,6 +47,39 @@ export default function NightScreen() {
       cancelled = true;
     };
   }, [slug]);
+
+  useEffect(() => {
+    if (!session || !slug) return;
+    roomInfo(slug).then(setRoom).catch(() => {});
+  }, [session, slug]);
+
+  // check-in: konum varsa gönderilir (500 m kuralı), yoksa sadece zaman kuralı
+  const doCheckIn = async () => {
+    if (!night || busy) return;
+    if (!session) {
+      router.push('/signup');
+      return;
+    }
+    setBusy(true);
+    setNote(null);
+    try {
+      let lat: number | undefined;
+      let lng: number | undefined;
+      const perm = await Location.getForegroundPermissionsAsync();
+      if (perm.granted) {
+        const pos = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
+        lat = pos.coords.latitude;
+        lng = pos.coords.longitude;
+      }
+      await checkIn(night.slug, lat, lng);
+      const mine = (await myCards()).find((c) => c.slug === night.slug) ?? null;
+      setCard(mine);
+      setRoom(await roomInfo(night.slug));
+    } catch (e) {
+      setNote(reason(e));
+    }
+    setBusy(false);
+  };
 
   const keep = () => {
     setKept(true);
@@ -70,14 +110,23 @@ export default function NightScreen() {
           <View style={styles.body}>
             <View style={styles.actions}>
               <View style={{ flex: 1 }}>
-                <Button label={kept ? 'kept' : 'keep'} onPress={keep} />
+                {room?.checked_in ? (
+                  <Button label="the room" kind="line" onPress={() => router.push(`/room/${night.slug}`)} />
+                ) : (
+                  <Button label={busy ? 'one moment' : 'check in'} onPress={doCheckIn} />
+                )}
               </View>
-              {night.ticket_url ? (
-                <View style={{ flex: 1 }}>
-                  <Button label="ticket" kind="line" onPress={() => Linking.openURL(night.ticket_url!)} />
-                </View>
-              ) : null}
+              <View style={{ flex: 1 }}>
+                <Button label={kept ? 'kept' : 'keep'} kind={room?.checked_in ? 'fill' : 'line'} onPress={keep} />
+              </View>
             </View>
+            {note ? <Text style={styles.mono}>{note}</Text> : null}
+            {night.ticket_url ? <Button label="ticket" kind="line" onPress={() => Linking.openURL(night.ticket_url!)} /> : null}
+            {room ? (
+              <Text style={styles.mono}>
+                {room.who_count} checked in · {room.frozen ? 'room frozen' : 'room open'}
+              </Text>
+            ) : null}
 
             {night.body ? <Text style={styles.text}>{night.body}</Text> : null}
 
@@ -91,7 +140,25 @@ export default function NightScreen() {
             <Text style={styles.mono}>the room opens at check-in and freezes 48h after the night</Text>
           </View>
         </ScrollView>
-      ) : (
+      ) : null}
+
+      {/* kart çıktı: ilk gösterim, sonra oda */}
+      <Modal visible={!!card} transparent animationType="fade" onRequestClose={() => setCard(null)}>
+        <Pressable style={styles.dim} onPress={() => setCard(null)}>
+          <Text style={styles.cardLabel}>you were there · card no. {card ? String(card.card_no).padStart(4, '0') : ''}</Text>
+          {card ? <AfterhoursCard data={toCardData(card)} index={card.card_no} width={Math.min(width - 48, 340)} /> : null}
+          <Pressable
+            onPress={() => {
+              setCard(null);
+              if (night) router.push(`/room/${night.slug}`);
+            }}
+            style={styles.roomBtn}
+          >
+            <Text style={styles.roomBtnText}>open the room</Text>
+          </Pressable>
+        </Pressable>
+      </Modal>
+      {!night && (
         <View style={styles.centre}>
           <Text style={styles.mono}>{missing ? 'this night is gone' : 'loading…'}</Text>
         </View>
@@ -126,4 +193,8 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row', justifyContent: 'space-between', gap: 16, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: colors.ink3 },
   rowK: { fontFamily: fonts.regular, fontSize: 13, color: colors.mute },
   rowV: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper2, flex: 1, textAlign: 'right' },
+  dim: { flex: 1, backgroundColor: 'rgba(22,21,18,0.94)', alignItems: 'center', justifyContent: 'center', gap: 18 },
+  cardLabel: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.spot },
+  roomBtn: { backgroundColor: colors.paper, paddingVertical: 10, paddingHorizontal: 18 },
+  roomBtnText: { fontFamily: fonts.medium, fontSize: 14, color: colors.ink },
 });

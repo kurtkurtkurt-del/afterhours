@@ -6,13 +6,30 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import PickerSheet from '@/components/PickerSheet';
 import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
-import { friendById, friends, matches, nights, type NightCard } from '@/content/friends';
+import { swipe } from '@/data/deck';
+import { friendById as sampleFriendById, friends as sampleFriends, matches as sampleMatches, nights as sampleNights } from '@/content/friends';
+import { useYours, type YoursFriend, type YoursMatch, type YoursNight } from '@/data/yours';
+import { useAuth } from '@/auth/AuthContext';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+
+const fallbackPhoto = require('../../../assets/intro/concert.jpg');
 
 // yours: üstte iki satır kayan arkadaşlar, altında bu gecenin kartları ve eşleşmeler.
 export default function YoursScreen() {
   const insets = useSafeAreaInsets();
+  const { session } = useAuth();
+  const real = useYours();
+  // arkadaş yoksa örnek veri, üstünde "sample" notu; olunca gerçek
+  const sample = real.ready && real.friends.length === 0;
+  const friends: YoursFriend[] = sample
+    ? sampleFriends.map((f) => ({ id: f.id, name: f.name, handle: f.handle, live: f.live, kept: f.kept }))
+    : real.friends;
+  const nights: YoursNight[] = sample
+    ? sampleNights.map((n) => ({ id: n.id, slug: '', title: n.title, venue: n.venue, when: n.when, image: null, friends: n.friends.map((id) => sampleFriendById(id).name), photo: n.photo } as YoursNight & { photo: number }))
+    : real.nights;
+  const matches: YoursMatch[] = sample ? sampleMatches.map((m) => ({ friend: sampleFriendById(m.friend).name, night: m.night })) : real.matches;
+  const nightById = (id: string) => nights.find((n) => n.id === id);
   const [meToo, setMeToo] = useState<Record<string, boolean>>({});
   const [asking, setAsking] = useState<string | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -22,7 +39,7 @@ export default function YoursScreen() {
   for (let i = 0; i < friends.length; i += 2) cols.push(friends.slice(i, i + 2));
 
   // kartlar ve eşleşmeler karışık: her ikinci karttan sonra bir eşleşme
-  const feed: ({ kind: 'night'; n: NightCard } | { kind: 'match'; friend: string; night: string })[] = [];
+  const feed: ({ kind: 'night'; n: YoursNight } | { kind: 'match'; friend: string; night: string })[] = [];
   let m = 0;
   nights.forEach((n, i) => {
     feed.push({ kind: 'night', n });
@@ -46,11 +63,11 @@ export default function YoursScreen() {
             <View key={i} style={styles.col}>
               {col.map((f) => (
                 <Pressable key={f.id} onPress={() => router.push(`/friend/${f.id}`)} style={({ pressed }) => [styles.person, pressed && styles.pressed]}>
-                  <View style={[styles.initial, f.live && styles.initialLive]}>
+                  <View style={[styles.initial, f.live && styles.initialLive, f.pending && styles.initialPending]}>
                     <Text style={[styles.initialText, f.live && styles.liveText]}>{f.name.charAt(0)}</Text>
                   </View>
                   <Text style={[styles.personLabel, f.live && styles.liveText]} numberOfLines={1}>
-                    {f.live ? f.live : f.kept ? `kept ${f.kept}` : f.seen}
+                    {f.pending ? (f.pending === 'incoming' ? 'wants in' : 'asked') : f.live ? f.live : f.kept ? `kept ${f.kept}` : f.name}
                   </Text>
                 </Pressable>
               ))}
@@ -66,20 +83,22 @@ export default function YoursScreen() {
           </View>
         </ScrollView>
 
-        <Text style={styles.section}>tonight · {nights.filter((n) => n.when.startsWith('tonight')).length} nights your friends kept</Text>
+        <Text style={styles.section}>
+          {sample ? 'sample · add friends to see yours' : `${nights.length} nights your friends kept`}
+        </Text>
 
         {feed.map((item, i) =>
           item.kind === 'night' ? (
             <View key={item.n.id} style={styles.card}>
-              <Image source={item.n.photo} style={styles.cardPhoto} />
+              <Image source={(item.n as YoursNight & { photo?: number }).photo ?? (item.n.image ? { uri: item.n.image } : fallbackPhoto)} style={styles.cardPhoto} />
               <View style={styles.cardShade} />
               <View style={styles.cardText}>
                 <Text style={styles.mono}>{item.n.when} · {item.n.venue}</Text>
                 <Text style={styles.cardTitle}>{item.n.title}</Text>
                 <View style={styles.avatars}>
-                  {item.n.friends.map((id) => (
-                    <View key={id} style={styles.av}>
-                      <Text style={styles.avText}>{friendById(id).name.charAt(0)}</Text>
+                  {item.n.friends.map((name) => (
+                    <View key={name} style={styles.av}>
+                      <Text style={styles.avText}>{name.charAt(0)}</Text>
                     </View>
                   ))}
                   <Text style={styles.avNote}>
@@ -87,7 +106,13 @@ export default function YoursScreen() {
                   </Text>
                 </View>
                 <View style={styles.actions}>
-                  <Pressable onPress={() => setMeToo((s) => ({ ...s, [item.n.id]: !s[item.n.id] }))} style={[styles.btn, meToo[item.n.id] && styles.btnOn]}>
+                  <Pressable
+                    onPress={() => {
+                      setMeToo((s) => ({ ...s, [item.n.id]: !s[item.n.id] }));
+                      if (!sample && session && item.n.slug && !meToo[item.n.id]) swipe(item.n.slug, 'right').catch(() => {});
+                    }}
+                    style={[styles.btn, meToo[item.n.id] && styles.btnOn]}
+                  >
                     <Text style={[styles.btnText, meToo[item.n.id] && styles.btnTextOn]}>{meToo[item.n.id] ? 'kept' : 'me too'}</Text>
                   </Pressable>
                   <Pressable onPress={() => setAsking(item.n.id)} style={[styles.btn, styles.btnLine]}>
@@ -100,8 +125,8 @@ export default function YoursScreen() {
             <View key={`m${i}`} style={styles.match}>
               <Text style={[styles.mono, styles.matchLabel]}>match</Text>
               <Text style={styles.matchText}>
-                you and <Text style={styles.strong}>{friendById(item.friend).name}.</Text> both kept{' '}
-                <Text style={styles.strong}>{nights.find((n) => n.id === item.night)?.title}</Text>
+                you and <Text style={styles.strong}>{item.friend}.</Text> both kept{' '}
+                <Text style={styles.strong}>{nightById(item.night)?.title}</Text>
               </Text>
               <Pressable onPress={() => setAnswers((a) => ({ ...a, [item.night]: 'in' }))} style={[styles.btn, styles.btnSpot]}>
                 <Text style={styles.btnText}>{answers[item.night] === 'in' ? "you're in" : "say you're in"}</Text>
@@ -119,7 +144,7 @@ export default function YoursScreen() {
         open={asking !== null}
         title="who's coming?"
         options={[
-          { id: 'in', label: "i'm in", extra: asking ? `${nightById(asking).friends.length} said yes` : undefined },
+          { id: 'in', label: "i'm in", extra: asking ? `${nightById(asking)?.friends.length ?? 0} kept it` : undefined },
           { id: 'maybe', label: 'maybe' },
           { id: 'out', label: 'not tonight' },
         ]}
@@ -131,8 +156,6 @@ export default function YoursScreen() {
     </View>
   );
 }
-
-const nightById = (id: string) => nights.find((n) => n.id === id)!;
 
 const AV = 22;
 
@@ -147,6 +170,7 @@ const styles = StyleSheet.create({
   pressed: { opacity: 0.6 },
   initial: { width: 44, height: 44, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   initialLive: { borderColor: colors.spot },
+  initialPending: { borderStyle: 'dashed', borderColor: colors.mute },
   initialAdd: { borderStyle: 'dashed', borderColor: colors.mute },
   initialText: { fontFamily: fonts.medium, fontSize: 18, color: colors.paper },
   liveText: { color: colors.spot },

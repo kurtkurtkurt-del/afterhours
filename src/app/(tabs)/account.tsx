@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
@@ -11,7 +11,9 @@ import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
 import { useProfile } from '@/data/profile';
-import { collection } from '@/content/collection';
+import { collection as samples } from '@/content/collection';
+import { myCards, toCardData, type CardRow } from '@/data/checkin';
+import type { NightCardData } from '@/content/cardsgen';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -25,6 +27,18 @@ export default function AccountScreen() {
   const { width } = useWindowDimensions();
   const [open, setOpen] = useState<number | null>(null);
   const [side, setSide] = useState<'front' | 'back'>('front');
+  const [cards, setCards] = useState<CardRow[] | null>(null);
+  useEffect(() => {
+    if (!session) return;
+    let cancelled = false;
+    myCards().then((c) => !cancelled && setCards(c)).catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [session]);
+  // gerçek kartlar; hiç yoksa örnekler, üstünde "sample" yazısıyla
+  const real = cards && cards.length > 0;
+  const collection: NightCardData[] = real ? cards.map(toCardData) : samples;
 
   const name = (profile?.display_name ?? session?.user.email?.split('@')[0] ?? 'you').toLowerCase();
   const handle = profile?.handle ? `@${profile.handle}` : null;
@@ -56,7 +70,7 @@ export default function AccountScreen() {
         {session ? (
           <>
             <View style={styles.counts}>
-              <Count n={collection.length} label="nights" />
+              <Count n={real ? collection.length : 0} label="nights" />
               <Count n={profile?.kept_count ?? 0} label="kept" />
               <Count n={profile?.friend_count ?? 0} label="friends" />
               <Count n={profile?.comment_count ?? 0} label="said" />
@@ -78,7 +92,7 @@ export default function AccountScreen() {
         )}
 
         <View style={styles.rule} />
-        <Text style={styles.section}>collection</Text>
+        <Text style={styles.section}>{real ? `collection · ${collection.length}` : 'collection · samples until your first check-in'}</Text>
         <View style={styles.grid}>
           {collection.map((c, i) => (
             <Pressable
