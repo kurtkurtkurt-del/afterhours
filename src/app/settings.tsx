@@ -3,6 +3,7 @@ import { Alert, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Storage from 'expo-sqlite/kv-store';
 import BackButton from '@/components/BackButton';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
@@ -168,6 +169,7 @@ export default function SettingsScreen() {
         {session ? <Row label="delete account" hint="comments stay, name becomes “someone”" onPress={confirmDelete} /> : null}
 
         <Section title="about" />
+        <Row label="show the intro again" hint="the six steps you saw on first visit" onPress={() => { Storage.removeItemSync('intro.seen'); router.push('/explore'); }} />
         <Row label="music credits" hint="play house, tommaso croce, ketsa, 1000 handz, alex morgan, nokings xxx · cc0 / cc by 4.0" />
         <Row label="version" right={<Value text="0.1 · expo go" />} />
       </ScrollView>

@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Storage from 'expo-sqlite/kv-store';
+import { useAuth } from '@/auth/AuthContext';
 import BackButton from '@/components/BackButton';
+import Onboarding from '@/components/Onboarding';
 import SoundCorner from '@/components/SoundCorner';
 import { useCities } from '@/data/cities';
 import { colors, fonts } from '@/theme/tokens';
@@ -12,13 +15,31 @@ import { brand } from '@/theme/layout';
 // şehir seçimi. seçilen şehir saklanır, fotoğraf bırakılır, asıl uygulama açılır.
 export default function ExploreScreen() {
   const insets = useSafeAreaInsets();
+  const { session } = useAuth();
+  // ilk gelişte tanıtım; bir kez görüldü mü bir daha çıkmaz (ayarlardan tekrar açılır)
+  const [intro, setIntro] = useState(() => Storage.getItemSync('intro.seen') !== '1');
+  const finishIntro = () => {
+    Storage.setItemSync('intro.seen', '1');
+    setIntro(false);
+  };
   const { cities, live } = useCities();
 
   const pick = (id: string) => {
     Storage.setItemSync('city', id);
     Storage.setItemSync('city.name', cities.find((c) => c.id === id)?.name ?? id);
-    router.replace('/yours');
+    // şehirden sonra kayıt; oturumu olan doğrudan içeri
+    router.replace(session ? '/yours' : '/signup');
   };
+
+  if (intro) {
+    return (
+      <View style={styles.root}>
+        <StatusBar style="light" />
+        <BackButton />
+        <Onboarding onDone={finishIntro} />
+      </View>
+    );
+  }
 
   return (
     <View style={styles.root}>
