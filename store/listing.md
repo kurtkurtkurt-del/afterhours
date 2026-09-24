@@ -61,4 +61,4 @@ first closed test. deck, night pages, map, sign up, guest mode, background music
 - [ ] website: an English privacy summary linked from datenschutz (Play reviewers read English)
 - [ ] EAS: `npx eas-cli@latest login` → `npx eas-cli@latest init` → `npx eas-cli@latest build -p android --profile production`
 - [ ] Play Console: create app, upload the AAB to Internal testing, add 12 testers for the 14-day closed test
-- [ ] Google Maps not used (Leaflet + CARTO); CARTO attribution shown on the map and in credits
+- [ ] Google Maps not used (Leaflet + Esri dark gray canvas tiles); attribution shown on the map and in credits

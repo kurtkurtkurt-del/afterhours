@@ -6,7 +6,8 @@ import { leafletCss, leafletJs } from '@/vendor/leaflet';
 export type Pin = { id: string; lat: number; lng: number; code: string };
 type Props = { lat: number; lng: number; km: number; me: [number, number] | null; pins: Pin[]; picked: string | null; onPick: (id: string | null) => void };
 
-// harita, webview içinde: leaflet (pakete gömülü) + carto "dark matter" karoları. anahtar gerekmez.
+// harita, webview içinde: leaflet (pakete gömülü) + esri "dark gray canvas" karoları. anahtar gerekmez;
+// carto'nun ücretsiz karoları anahtarsız isteklere filigran basıyor, o yüzden esri.
 // webview dışarıya gidemez: sayfa içi gezinme kapalı, dosya erişimi kapalı, sadece karo isteği çıkar.
 // mürekkep görünümü css ile: karolar hafif koyulaştırılır, pinler kâğıt kareler.
 const html = `<!doctype html><html><head><meta charset="utf-8">
@@ -15,7 +16,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
 <script>${leafletJs}</script>
 <style>
   html,body,#m{margin:0;height:100%;background:#161512}
-  .leaflet-tile{filter:brightness(.72) contrast(1.05) saturate(0)}
+  .leaflet-tile{filter:brightness(.55) contrast(1.15) saturate(0)}
   .leaflet-control-attribution{background:rgba(22,21,18,.8)!important;color:#8a877f!important;font:10px Inter,system-ui,sans-serif;padding:2px 6px}
   .leaflet-control-attribution a{color:#8a877f!important}
   .pin{background:#f3f1ec;color:#161512;border:1px solid #161512;font:500 10px/1 Inter,system-ui,sans-serif;letter-spacing:.5px;padding:4px 6px;white-space:nowrap;box-sizing:border-box}
@@ -25,8 +26,9 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   var map=L.map('m',{zoomControl:false,attributionControl:true,zoomSnap:0.5}).setView([48.137,11.575],13);
   map.attributionControl.setPrefix(false);
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:19,attribution:'&copy; OpenStreetMap &copy; CARTO'}).addTo(map);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:19,opacity:.55}).addTo(map);
+  var esri='https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
+  L.tileLayer(esri+'World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxNativeZoom:16,maxZoom:18,attribution:'&copy; Esri, HERE, Garmin, OpenStreetMap contributors'}).addTo(map);
+  L.tileLayer(esri+'World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',{maxNativeZoom:16,maxZoom:18,opacity:.6}).addTo(map);
   var layer=L.layerGroup().addTo(map), meMarker=null, markers={};
   function post(m){window.ReactNativeWebView&&window.ReactNativeWebView.postMessage(JSON.stringify(m));}
   map.on('click',function(){post({pick:null});});

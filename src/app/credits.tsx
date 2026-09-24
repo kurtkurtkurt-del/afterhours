@@ -34,7 +34,7 @@ export default function CreditsScreen() {
           </View>
         ))}
         <Text style={styles.section}>map</Text>
-        <Text style={styles.note}>tiles © openstreetmap contributors, © carto. rendered with leaflet (bsd-2).</Text>
+        <Text style={styles.note}>tiles © esri, here, garmin, openstreetmap contributors (world dark gray canvas). rendered with leaflet (bsd-2).</Text>
         <Text style={styles.section}>type</Text>
         <Text style={styles.note}>inter tight, sil open font license.</Text>
         <Text style={styles.section}>nights</Text>
