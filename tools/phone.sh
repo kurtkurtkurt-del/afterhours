@@ -13,4 +13,4 @@ if ! "$S/adb" devices | grep -q "device$"; then
 fi
 # expo go, sunucuya wi-fi yerine kablo üzerinden ulaşır: telefonun localhost:PORT'u = mac'in PORT'u
 "$S/adb" reverse "tcp:$PORT" "tcp:$PORT" && echo "kablo bağlantısı hazır: exp://localhost:$PORT"
-exec "$S/scrcpy" --window-title afterhours --max-size 1080 --stay-awake --turn-screen-off=false
+exec "$S/scrcpy" --window-title afterhours --max-size 1080 --stay-awake
