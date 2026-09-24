@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import RangeSlider from '@/components/RangeSlider';
+import { filterWhen, whens, type When } from '@/data/when';
+import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import * as Location from 'expo-location';
@@ -13,7 +15,6 @@ import { swipe } from '@/data/deck';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-const RADII = [1, 3, 10, 30];
 // konum yoksa seçili şehrin merkezi; o da yoksa münih
 const CENTRES: Record<string, [number, number]> = {
   munchen: [48.137, 11.575],
@@ -33,7 +34,9 @@ export default function MapScreen() {
   const [me, setMe] = useState<[number, number] | null>(null);
   const [follow, setFollow] = useState<'me' | 'city'>('me'); // harita merkezi: ben mi, seçili şehir mi
   const [denied, setDenied] = useState(false);
-  const [km, setKm] = useState(3);
+  const [km, setKm] = useState(3); // ağ isteği ve zoom bunu izler; sürgü bırakılınca değişir
+  const [when, setWhen] = useState<When | null>(null);
+  const { width } = useWindowDimensions();
   const [rows, setRows] = useState<NearNight[]>([]);
   const [missing, setMissing] = useState(false);
   const [picked, setPicked] = useState<NearNight | null>(null);
@@ -66,10 +69,11 @@ export default function MapScreen() {
   }, []);
 
   const [lat, lng] = centre;
-  const pins = useMemo<Pin[]>(() => rows.map((n) => ({ id: n.id, lat: n.lat, lng: n.lng, code: short[n.type_slug] ?? n.type_slug.slice(0, 2) })), [rows]);
+  const shown = useMemo(() => filterWhen(rows, when) as NearNight[], [rows, when]); // filtre türü daraltmaz, aynı satırlar
+  const pins = useMemo<Pin[]>(() => shown.map((n) => ({ id: n.id, lat: n.lat, lng: n.lng, code: short[n.type_slug] ?? n.type_slug.slice(0, 2) })), [shown]);
   useEffect(() => {
     let cancelled = false;
-    fetchNear(lat, lng, km)
+    fetchNear(lat, lng, km, 200)
       .catch(() => ({ rows: [] as NearNight[], missing: false }))
       .then((r) => {
         if (cancelled) return;
@@ -97,18 +101,15 @@ export default function MapScreen() {
         <SoundCorner />
       </View>
 
-      {/* yarıçap çipleri */}
+      {/* zaman aralığı */}
       <View style={styles.chips}>
-        {RADII.map((r) => (
-          <Pressable key={r} onPress={() => setKm(r)} style={[styles.chip, km === r && styles.chipOn]}>
-            <Text style={[styles.chipText, km === r && styles.chipTextOn]}>{r} km</Text>
+        {[{ id: null as When | null, label: 'any time' }, ...whens.map((w) => ({ id: w.id as When | null, label: w.label }))].map((w) => (
+          <Pressable key={w.id ?? 'any'} onPress={() => setWhen(w.id)} style={[styles.chip, when === w.id && styles.chipOn]}>
+            <Text style={[styles.chipText, when === w.id && styles.chipTextOn]}>{w.label}</Text>
           </Pressable>
         ))}
-        <Text style={styles.count}>
-          {missing ? 'map data not live yet' : follow === 'city' || !me ? `${rows.length} in ${city}` : `${rows.length} near you`}
-        </Text>
       </View>
-      {/* merkez: konumum / şehir merkezi */}
+      {/* merkez: konumum / şehir merkezi, ve sayı */}
       <View style={styles.centreRow}>
         <Pressable onPress={() => setFollow('me')} disabled={!me} style={[styles.chip, follow === 'me' && me && styles.chipOn, !me && styles.chipOff]}>
           <Text style={[styles.chipText, follow === 'me' && me && styles.chipTextOn]}>{me ? 'near me' : denied ? 'location off' : 'locating…'}</Text>
@@ -116,7 +117,25 @@ export default function MapScreen() {
         <Pressable onPress={() => setFollow('city')} style={[styles.chip, (follow === 'city' || !me) && styles.chipOn]}>
           <Text style={[styles.chipText, (follow === 'city' || !me) && styles.chipTextOn]}>{city} centre</Text>
         </Pressable>
+        <Text style={styles.count}>
+          {missing ? 'not live yet' : `${shown.length} ${follow === 'city' || !me ? `in ${city}` : 'near you'}`}
+        </Text>
       </View>
+
+      {/* alt: yarıçap sürgüsü */}
+      {!picked && (
+        <View style={[styles.slider, { bottom: tabSpace + 6 }]}>
+          <RangeSlider
+            min={0.5}
+            max={30}
+            value={km}
+            width={width - brand.left * 2}
+            format={(v) => (v < 1 ? `${Math.round(v * 100) * 10} m` : `${v < 10 ? v.toFixed(1) : Math.round(v)} km`)}
+            onChange={() => {}}
+            onEnd={(v) => setKm(Math.round(v * 10) / 10)}
+          />
+        </View>
+      )}
 
       {/* seçili gece */}
       {picked && (
@@ -144,8 +163,9 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36 },
   title: { position: 'absolute', top: brand.top, left: brand.left, fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },
-  chips: { position: 'absolute', top: brand.top + 40, left: brand.left, right: brand.left, flexDirection: 'row', alignItems: 'center', gap: 6 },
-  centreRow: { position: 'absolute', top: brand.top + 76, left: brand.left, right: brand.left, flexDirection: 'row', gap: 6 },
+  chips: { position: 'absolute', top: brand.top + 40, left: brand.left, right: brand.left, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 6 },
+  slider: { position: 'absolute', left: brand.left, right: brand.left, backgroundColor: colors.ink, paddingVertical: 10, paddingHorizontal: 0 },
+  centreRow: { position: 'absolute', top: brand.top + 112, left: brand.left, right: brand.left, flexDirection: 'row', alignItems: 'center', gap: 6 },
   chip: { paddingVertical: 5, paddingHorizontal: 10, borderWidth: 1, borderColor: colors.mute, backgroundColor: colors.ink },
   chipOff: { opacity: 0.5 },
   chipOn: { borderColor: colors.paper, backgroundColor: colors.paper },
