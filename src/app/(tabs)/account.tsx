@@ -40,7 +40,7 @@ export default function AccountScreen() {
       <StatusBar style="light" />
       <View style={styles.band}>
         <Text style={styles.title}>account</Text>
-        <Pressable onPress={() => router.push('/settings')} hitSlop={12} style={({ pressed }) => [styles.gear, pressed && styles.pressed]}>
+        <Pressable onPress={() => router.push('/settings')} hitSlop={12} accessibilityRole="button" accessibilityLabel="settings" style={({ pressed }) => [styles.gear, pressed && styles.pressed]}>
           <Icon name="settings" size={20} color={colors.paper} />
         </Pressable>
         <SoundCorner />

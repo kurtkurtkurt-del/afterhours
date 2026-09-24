@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Alert, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Alert, KeyboardAvoidingView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -111,6 +111,7 @@ export default function SettingsScreen() {
         <Text style={styles.title}>settings</Text>
         <SoundCorner />
       </View>
+      <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 40 }]} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         {!session ? (
           <>
@@ -176,6 +177,7 @@ export default function SettingsScreen() {
         <Row label="music credits" hint="play house, tommaso croce, ketsa, 1000 handz, alex morgan, nokings xxx · cc0 / cc by 4.0" />
         <Row label="version" right={<Value text="0.1 · expo go" />} />
       </ScrollView>
+      </KeyboardAvoidingView>
 
       <PickerSheet
         open={sheet === 'city'}

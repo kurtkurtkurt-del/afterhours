@@ -14,7 +14,7 @@ type ItemProps = PressableProps & { icon: IconName; isFocused?: boolean; raised?
 
 export function TabItem({ icon, isFocused, raised, ...props }: ItemProps) {
   return (
-    <Pressable {...props} hitSlop={8} style={({ pressed }) => [styles.item, pressed && styles.pressed]}>
+    <Pressable {...props} hitSlop={8} accessibilityRole="tab" accessibilityLabel={icon} accessibilityState={{ selected: !!isFocused }} style={({ pressed }) => [styles.item, pressed && styles.pressed]}>
       {raised ? (
         <View style={styles.mid}>
           <Icon name={icon} color={colors.ink} />

@@ -1,16 +1,16 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import Storage from 'expo-sqlite/kv-store';
-import Deck from '@/components/Deck';
+import Deck, { type DeckHandle } from '@/components/Deck';
 import PickerSheet from '@/components/PickerSheet';
 import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
 import { useCities } from '@/data/cities';
 import { useEventTypes } from '@/data/types';
-import { fetchDeck, swipe, type Night } from '@/data/deck';
+import { fetchDeck, resetSwipes, swipe, unswipe, type Night } from '@/data/deck';
 import { filterWhen, whens, type When } from '@/data/when';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -28,10 +28,13 @@ export default function FlowScreen() {
     return whens.some((w) => w.id === v) ? (v as When) : null;
   });
   const [sheet, setSheet] = useState<'city' | 'type' | 'when' | null>(null);
+  const deck = useRef<DeckHandle>(null);
+  const [swiped, setSwiped] = useState(0);
+  const [reloads, setReloads] = useState(0);
 
   // sonuç, hangi seçim için geldiğiyle birlikte saklanır; seçim değişince eskisi
   // kendiliğinden "yükleniyor" sayılır, ayrıca sıfırlamaya gerek kalmaz
-  const key = `${city}/${type}/${session?.user.id ?? ''}`;
+  const key = `${city}/${type}/${session?.user.id ?? ''}/${reloads}`;
   const [result, setResult] = useState<{ key: string; rows: Night[] | null; error: string | null }>({ key: '', rows: null, error: null });
   const nights = result.key === key && result.rows ? filterWhen(result.rows, when) : null;
   const error = result.key === key ? result.error : null;
@@ -49,10 +52,22 @@ export default function FlowScreen() {
 
   const onSwipe = useCallback(
     (night: Night, direction: 'left' | 'right') => {
+      setSwiped((n) => n + 1);
       if (session) swipe(night.slug, direction).catch(() => {}); // hesapsızken sadece geçilir
     },
     [session],
   );
+  const onUndo = useCallback(
+    (night: Night) => {
+      setSwiped((n) => Math.max(0, n - 1));
+      if (session) unswipe(night.id).catch(() => {});
+    },
+    [session],
+  );
+  const onReset = useCallback(() => {
+    setSwiped(0);
+    (session ? resetSwipes() : Promise.resolve()).catch(() => {}).then(() => setReloads((n) => n + 1));
+  }, [session]);
 
   const pickCity = (id: string) => {
     const v = id === '*' ? null : id;
@@ -100,12 +115,17 @@ export default function FlowScreen() {
         </Pressable>
       </View>
       <SoundCorner />
+      {swiped > 0 && (
+        <Pressable onPress={() => deck.current?.undo()} hitSlop={10} style={styles.undo}>
+          <Text style={styles.undoText}>undo</Text>
+        </Pressable>
+      )}
 
       <View style={styles.stage}>
         {error ? (
           <Text style={styles.note}>{error}</Text>
         ) : nights ? (
-          <Deck key={`${city}/${type}/${when}`} nights={nights} onSwipe={onSwipe} onOpen={(n) => router.push(`/night/${n.slug}`)} />
+          <Deck ref={deck} key={`${city}/${type}/${when}/${reloads}`} nights={nights} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} onOpen={(n) => router.push(`/night/${n.slug}`)} />
         ) : (
           <Text style={styles.note}>loading the night…</Text>
         )}
@@ -146,6 +166,8 @@ const styles = StyleSheet.create({
   pick: { fontFamily: fonts.medium, fontSize: 16, letterSpacing: -0.3, color: colors.paper, textDecorationLine: 'underline', textDecorationColor: colors.mute },
   sep: { fontFamily: fonts.regular, fontSize: 16, color: colors.mute },
   pressed: { opacity: 0.6 },
+  undo: { position: 'absolute', right: brand.left, top: brand.top + 30, zIndex: 1 },
+  undoText: { fontFamily: fonts.regular, fontSize: 12, letterSpacing: 0.2, color: colors.mute },
   stage: { flex: 1, marginTop: brand.top + 60, marginHorizontal: 14, marginBottom: TAB_BAR_SPACE - 14 },
   note: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute, textAlign: 'center', marginTop: 40 },
 });

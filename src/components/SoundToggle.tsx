@@ -7,7 +7,7 @@ type Props = { on: boolean; onPress: () => void; onLongPress?: () => void; tone?
 export default function SoundToggle({ on, onPress, onLongPress, tone = 'paper' }: Props) {
   const ink = tone === 'ink';
   return (
-    <Pressable onPress={onPress} onLongPress={onLongPress} delayLongPress={350} hitSlop={16} style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
+    <Pressable onPress={onPress} onLongPress={onLongPress} delayLongPress={350} hitSlop={16} accessibilityRole="switch" accessibilityLabel="background music" accessibilityHint="hold to pick a genre" accessibilityState={{ checked: on }} style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
       <Text style={[styles.label, ink && styles.labelInk]}>{on ? 'sound on' : 'sound'}</Text>
       <View style={[styles.dot, ink && styles.dotInk, on && styles.dotOn]} />
     </Pressable>

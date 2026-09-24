@@ -9,7 +9,7 @@ type Props = { tone?: 'paper' | 'ink' };
 export default function BackButton({ tone = 'paper' }: Props) {
   const go = () => (router.canGoBack() ? router.back() : router.replace('/'));
   return (
-    <Pressable onPress={go} hitSlop={16} style={({ pressed }) => [styles.back, pressed && styles.pressed]}>
+    <Pressable onPress={go} hitSlop={16} accessibilityRole="button" accessibilityLabel="back" style={({ pressed }) => [styles.back, pressed && styles.pressed]}>
       <Text style={[styles.text, tone === 'ink' && styles.ink]}>back</Text>
     </Pressable>
   );

@@ -1,7 +1,8 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { SvgUri } from 'react-native-svg';
 import { colors, fonts } from '@/theme/tokens';
-import type { Night } from '@/data/deck';
+import { posterUrl, type Night } from '@/data/deck';
 
 const fallback = require('../../assets/intro/concert.jpg');
 
@@ -10,7 +11,16 @@ export default function NightCard({ night }: { night: Night }) {
   const line = [night.type_name, night.source === 'ticketmaster' ? 'ticket' : 'szene'].filter(Boolean).join(' · ');
   return (
     <View style={styles.card}>
-      <Image source={night.image_url ? { uri: night.image_url } : fallback} style={styles.photo} resizeMode="cover" />
+      {night.image_url ? (
+        <Image source={{ uri: night.image_url }} style={styles.photo} resizeMode="cover" />
+      ) : posterUrl(night) ? (
+        // fotoğrafsız gece: sitedeki el çizimi afiş; her gecenin kendi yüzü olsun
+        <View style={styles.posterBox}>
+          <SvgUri uri={posterUrl(night)!} width="100%" height="100%" />
+        </View>
+      ) : (
+        <Image source={fallback} style={styles.photo} resizeMode="cover" />
+      )}
       <LinearGradient
         colors={['rgba(22,21,18,0)', 'rgba(22,21,18,0.25)', 'rgba(22,21,18,0.92)']}
         locations={[0, 0.45, 1]}
@@ -29,6 +39,7 @@ export default function NightCard({ night }: { night: Night }) {
 
 const styles = StyleSheet.create({
   card: { flex: 1, backgroundColor: colors.ink2, overflow: 'hidden' },
+  posterBox: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.ink2 },
   photo: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
   shade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: '60%' },
   text: { position: 'absolute', left: 18, right: 18, bottom: 18, gap: 6 },

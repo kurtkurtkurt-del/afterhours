@@ -1,4 +1,5 @@
 import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
+import Button from '@/components/Button';
 import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, {
@@ -16,7 +17,8 @@ import { colors, fonts } from '@/theme/tokens';
 import type { Night } from '@/data/deck';
 
 type Direction = 'left' | 'right';
-type Props = { nights: Night[]; onSwipe: (night: Night, direction: Direction) => void; onOpen?: (night: Night) => void };
+type Props = { nights: Night[]; onSwipe: (night: Night, direction: Direction) => void; onOpen?: (night: Night) => void; onUndo?: (night: Night) => void; onReset?: () => void };
+export type DeckHandle = { undo: () => void };
 
 const THRESHOLD = 110; // px: bunun ötesinde bırakılırsa karar verilmiş sayılır
 const VELOCITY = 800;
@@ -106,7 +108,7 @@ const SwipeCard = forwardRef<CardHandle, {
   );
 });
 
-export default function Deck({ nights, onSwipe, onOpen }: Props) {
+const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, onSwipe, onOpen, onUndo, onReset }, ref) {
   const [i, setI] = useState(0);
   const drag = useSharedValue(0);
   const nextRef = useRef<CardHandle>(null);
@@ -123,11 +125,31 @@ export default function Deck({ nights, onSwipe, onOpen }: Props) {
     [top, onSwipe, drag],
   );
 
+  // geri al: bir önceki kart geri gelir (üstteki tekrar arkaya)
+  useImperativeHandle(
+    ref,
+    () => ({
+      undo: () => {
+        if (i === 0) return;
+        const prev = nights[i - 1];
+        setI(i - 1);
+        drag.set(0);
+        if (prev && onUndo) onUndo(prev);
+      },
+    }),
+    [i, nights, onUndo, drag],
+  );
+
   if (!top) {
     return (
       <View style={styles.empty}>
         <Text style={styles.emptyText}>no more nights here.</Text>
-        <Text style={styles.emptyMono}>come back tomorrow</Text>
+        <Text style={styles.emptyMono}>{nights.length ? 'you have seen them all' : 'nothing listed yet'}</Text>
+        {onReset && nights.length > 0 ? (
+          <View style={styles.resetBtn}>
+            <Button label="start over" kind="line" onPress={onReset} />
+          </View>
+        ) : null}
       </View>
     );
   }
@@ -140,7 +162,9 @@ export default function Deck({ nights, onSwipe, onOpen }: Props) {
       <SwipeCard key={top.id} night={top} active drag={drag} onDone={done} onOpen={onOpen ? () => onOpen(top) : undefined} />
     </View>
   );
-}
+});
+
+export default Deck;
 
 const styles = StyleSheet.create({
   stage: { flex: 1 },
@@ -159,6 +183,7 @@ const styles = StyleSheet.create({
   keep: { right: 18, color: colors.spot, borderColor: colors.spot, transform: [{ rotate: '-8deg' }] },
   letGo: { left: 18, color: colors.paper, borderColor: colors.paper, transform: [{ rotate: '8deg' }] },
   empty: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 6 },
+  resetBtn: { marginTop: 18, alignSelf: 'stretch', paddingHorizontal: 40 },
   emptyText: { fontFamily: fonts.medium, fontSize: 22, letterSpacing: -0.5, color: colors.paper },
   emptyMono: { fontFamily: fonts.mono, fontSize: 10, letterSpacing: 1.6, textTransform: 'uppercase', color: colors.mute },
 });

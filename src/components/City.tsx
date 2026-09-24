@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { LayoutChangeEvent, StyleSheet, View, useWindowDimensions } from 'react-native';
+import Storage from 'expo-sqlite/kv-store';
+import { LayoutChangeEvent, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
@@ -20,6 +21,15 @@ export default function City({ play, soundOn, onToggleSound, onPickSound }: Prop
   const t = useSharedValue(0);
   const actions = useSharedValue(0);
   const insets = useSafeAreaInsets();
+  const [hint, setHint] = useState(() => Storage.getItemSync('hint.sound') !== '1');
+  useEffect(() => {
+    if (!play || !hint) return;
+    const t = setTimeout(() => {
+      Storage.setItemSync('hint.sound', '1');
+      setHint(false);
+    }, 7000);
+    return () => clearTimeout(t);
+  }, [play, hint]);
 
   const onLayout = (e: LayoutChangeEvent) => {
     if (!size) setSize({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height });
@@ -61,6 +71,7 @@ export default function City({ play, soundOn, onToggleSound, onPickSound }: Prop
       </View>
       <Animated.View style={[styles.corner, actionsStyle]} pointerEvents={play ? 'auto' : 'none'}>
         <SoundToggle on={soundOn} onPress={onToggleSound} onLongPress={onPickSound} />
+        {hint ? <Text style={styles.hint}>tap for sound · hold to pick a genre</Text> : null}
       </Animated.View>
       <Animated.View
         style={[styles.actions, { paddingBottom: insets.bottom + 24 }, actionsStyle]}
@@ -80,7 +91,8 @@ const styles = StyleSheet.create({
   centre: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center' },
   gap: { height: 16 },
   // ismin küçük haliyle aynı hizada, sağda
-  corner: { position: 'absolute', right: brand.left, top: brand.top },
+  corner: { position: 'absolute', right: brand.left, top: brand.top, alignItems: 'flex-end', gap: 6 },
+  hint: { fontFamily: fonts.regular, fontSize: 11, color: colors.mute },
   actions: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingHorizontal: brand.left, gap: 12 },
   word: { fontFamily: fonts.medium, fontSize: brand.bigSize, letterSpacing: -0.6, color: colors.paper },
 });

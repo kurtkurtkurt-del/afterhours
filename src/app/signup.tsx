@@ -9,6 +9,7 @@ import SoundCorner from '@/components/SoundCorner';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
 import { useAuth } from '@/auth/AuthContext';
+import { supabase } from '@/lib/supabase';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -19,7 +20,8 @@ export default function SignUpScreen() {
   const [password, setPassword] = useState('');
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState<string | null>(null);
-  const { signUp, signInAsGuest, resetPassword } = useAuth();
+  const { signUp, signIn, signInAsGuest, resetPassword } = useAuth();
+  const [mode, setMode] = useState<'up' | 'in'>('up');
 
   // hesap açar (varsa giriş yapar) ve uygulamaya alır.
   // alanlar boşsa cihaza özel anonim kullanıcı: bakmak serbest, kaydırmalar yine de kaydolur,
@@ -29,7 +31,11 @@ export default function SignUpScreen() {
     const guest = !email.trim() && !password;
     setBusy(true);
     setNote(null);
-    const err = guest ? await signInAsGuest() : await signUp(email.trim(), password, Storage.getItemSync('city') ?? undefined);
+    const err = guest
+      ? await signInAsGuest()
+      : mode === 'in'
+        ? await signIn(email.trim(), password)
+        : await signUp(email.trim(), password, Storage.getItemSync('city') ?? undefined);
     if (guest && err) {
       // anonim giriş panelde kapalıysa yine de içeri al; kaydırmalar kaydolmaz
       setBusy(false);
@@ -37,8 +43,18 @@ export default function SignUpScreen() {
       return;
     }
     setBusy(false);
-    if (err) setNote(err);
-    else router.replace('/yours');
+    if (err) {
+      setNote(err);
+      return;
+    }
+    if (guest) {
+      router.replace('/yours');
+      return;
+    }
+    // handle seçilmediyse kayıt bitmemiş sayılır: önce o adım
+    const { data } = await supabase.rpc('profile_me');
+    const row = Array.isArray(data) ? data[0] : data;
+    router.replace(row?.handle ? '/yours' : '/welcome');
   };
 
   return (
@@ -50,8 +66,8 @@ export default function SignUpScreen() {
         {/* alt boşluk burada: klavye sarmalayıcısı kendi paddingBottom'unu ezer */}
         <View style={{ paddingBottom: insets.bottom + 24 }}>
         <View style={styles.heading}>
-          <Text style={styles.line}>first time?</Text>
-          <Text style={styles.line}>welcome in.</Text>
+          <Text style={styles.line}>{mode === 'up' ? 'first time?' : 'welcome back.'}</Text>
+          <Text style={styles.line}>{mode === 'up' ? 'welcome in.' : 'sign in.'}</Text>
         </View>
         <View style={styles.form}>
           <Input
@@ -73,7 +89,10 @@ export default function SignUpScreen() {
           />
           {note && <Text style={styles.note}>{note}</Text>}
           <View style={styles.gap} />
-          <Button label={busy ? 'one moment' : 'enter'} onPress={enter} />
+          <Button label={busy ? 'one moment' : mode === 'up' ? 'create account' : 'sign in'} onPress={enter} />
+          <Pressable hitSlop={8} onPress={() => setMode((m) => (m === 'up' ? 'in' : 'up'))}>
+            <Text style={styles.small}>{mode === 'up' ? 'already have an account? sign in' : 'new here? create an account'}</Text>
+          </Pressable>
           <Pressable
             hitSlop={8}
             onPress={async () => {
