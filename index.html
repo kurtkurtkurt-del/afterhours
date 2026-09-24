@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>afterhours | your scene</title>
-  <meta name="description" content="Discover what's happening tonight in your city — raves, club nights, concerts, festivals, meetups and house parties. One card at a time, and no search anywhere." />
+  <title>afterhours | find your night</title>
+  <meta name="description" content="find your night. one card at a time: rave, club night, konzert, festival, meetup, hausparty. no search anywhere." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="afterhours" />
   <meta property="og:title" content="afterhours" />
-  <meta property="og:description" content="Discover what's happening tonight in your city — raves, club nights, concerts, festivals, meetups and house parties. One card at a time, and no search anywhere." />
+  <meta property="og:description" content="find your night. one card at a time: rave, club night, konzert, festival, meetup, hausparty. no search anywhere." />
   <meta property="og:url" content="https://kurtkurtkurt-del.github.io/afterhours/index.html" />
   <meta property="og:image" content="https://kurtkurtkurt-del.github.io/afterhours/og/afterhours.png" />
   <meta property="og:image:width" content="1200" />
@@ -20,8 +20,8 @@
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png" />
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="fonts/fonts.css?v=169" />
-  <link rel="stylesheet" href="style.css?v=169" />
+  <link rel="stylesheet" href="fonts/fonts.css?v=175" />
+  <link rel="stylesheet" href="style.css?v=175" />
 </head>
 <body class="home" data-screen="0">
 
@@ -31,11 +31,12 @@
     <a class="logo" href="index.html">afterhours</a>
     <nav class="header-links">
       <a href="explore/index.html">explore</a>
-      <a href="maps/index.html">maps</a>
-      <a href="friends/index.html">friends&amp;more</a>
-      <a href="cards/index.html">card collection</a>
+      <a href="djs/index.html">djs</a>
+      <a href="friends/index.html">yours</a>
+      <a href="maps/index.html">map</a>
+      <a href="cards/index.html">collection</a>
       <a href="help/index.html">help</a>
-      <a href="login/index.html">login</a>
+      <a href="login/index.html">account</a>
     </nav>
   </header>
 
@@ -58,8 +59,8 @@
     <div class="posters" id="posters"><!-- the posters are built by app.js --></div>
     <div class="side" id="side">
       <div class="intro">
-        <p class="intro-1">Discover what's happening tonight in your city: raves, club nights, concerts, house parties.</p>
-        <p class="intro-2">Swipe to find them, plan with friends, keep the ones you went to.</p>
+        <p class="intro-1">find your night: rave, club night, konzert, festival, meetup, hausparty.</p>
+        <p class="intro-2">one card at a time. keep the ones you want, plan with friends, collect the ones you went to.</p>
         <a class="explore-btn" href="explore/index.html">explore</a>
 
         <!-- Four more screens below; nobody finds out on their own -->
@@ -93,15 +94,15 @@
               </div>
             </div>
 
-            <p class="phone-label">your crew</p>
+            <p class="phone-label">who's coming</p>
 
             <ul class="phone-list">
               <li>
-                <div class="phone-row"><span class="phone-name">Lina</span><span class="phone-status">going</span></div>
+                <div class="phone-row"><span class="phone-name">Lina</span><span class="phone-status">i'm in</span></div>
                 <p class="phone-line">tickets are in my pocket</p>
               </li>
               <li>
-                <div class="phone-row"><span class="phone-name">Emre</span><span class="phone-status">going</span></div>
+                <div class="phone-row"><span class="phone-name">Emre</span><span class="phone-status">i'm in</span></div>
                 <p class="phone-line">u-bahn at 21, don't be late</p>
               </li>
               <li>
@@ -109,11 +110,11 @@
                 <p class="phone-line">depends on my shift, i'll know friday</p>
               </li>
               <li>
-                <div class="phone-row"><span class="phone-name">Mira</span><span class="phone-status">going</span></div>
+                <div class="phone-row"><span class="phone-name">Mira</span><span class="phone-status">i'm in</span></div>
                 <p class="phone-line">third time this year, no regrets</p>
               </li>
               <li>
-                <div class="phone-row"><span class="phone-name">Selin</span><span class="phone-status">can't</span></div>
+                <div class="phone-row"><span class="phone-name">Selin</span><span class="phone-status">not tonight</span></div>
                 <p class="phone-line">in berlin that week — send videos</p>
               </li>
             </ul>
@@ -121,13 +122,13 @@
         </div>
 
         <!-- Arrives after the phone has faded -->
-        <p class="last-line" id="last-line">Let your friends know you want to go.</p>
+        <p class="last-line" id="last-line">let your friends know you want to go.</p>
 
         <p class="swipe-hint" id="swipe-hint">swipe right &#8594;</p>
 
         <!-- the cards are built by app.js -->
       </div>
-      <h2 class="screen2-title">Swipe through every event in your city.</h2>
+      <h2 class="screen2-title">swipe through every night in your city.</h2>
     </section>
 
     <!-- The third screen: the gathered afterhours cards -->
@@ -137,13 +138,48 @@
       <p class="s3-right">collect your afterhours card</p>
     </section>
 
-    <!-- The fourth screen: the turning city model -->
+    <!-- The fourth screen: the room after the night. Same language as the
+         phone on screen two: a small white sheet, two lines each, and a
+         countdown that ends in a freeze. -->
+    <section class="screen screen-room">
+      <div class="sr-text">
+        <h2 class="sr-title">the room closes<br />in 48 hours.</h2>
+        <p class="sr-sub">check in at the door and the night becomes a card. who was there talks in the room: two lines, a voice note (soon). then it freezes, forever.</p>
+      </div>
+      <div class="sr-sheet" aria-hidden="true">
+        <p class="sr-sheet-top"><span>the room · blitz</span><span>47h 12m left</span></p>
+        <ul class="sr-posts">
+          <li><span class="sr-who">lina</span><span class="sr-line">the back room was better</span></li>
+          <li><span class="sr-who">emre</span><span class="sr-line">phones stayed in pockets</span></li>
+          <li><span class="sr-who">jonas</span><span class="sr-line">we stayed until the lights came up</span></li>
+          <li><span class="sr-who">you</span><span class="sr-line sr-cursor">two lines, at most</span></li>
+        </ul>
+        <p class="sr-sheet-foot">then it freezes · card no. 0163</p>
+      </div>
+    </section>
+
+    <!-- The fifth screen: who is playing. The dj tab of the app, as a list. -->
+    <section class="screen screen-djs">
+      <div class="sd-text">
+        <h2 class="sd-title">who is<br />playing.</h2>
+        <p class="sd-sub">live now, later tonight, this week. their sets, their photos, their next night.</p>
+      </div>
+      <ul class="sd-list" aria-hidden="true">
+        <li class="sd-live"><span class="sd-when">live now · harry klein</span><b>levent ok</b><em>house · until 02:00</em></li>
+        <li><span class="sd-when">later tonight</span><b>mara volt</b><em>blitz · 01:00</em></li>
+        <li><span class="sd-when">later tonight</span><b>nachtfalter</b><em>rote sonne · 01:30</em></li>
+        <li><span class="sd-when">this week</span><b>dilan k</b><em>fri · muffathalle</em></li>
+        <li><span class="sd-when">this week</span><b>orbit 9</b><em>sat · bahnwärter thiel</em></li>
+      </ul>
+    </section>
+
+    <!-- The sixth screen: the turning city model -->
     <section class="screen screen4">
       <canvas class="s4-stage" id="s4-stage"></canvas>
 
       <div class="s4-text">
         <h2 class="s4-title">go local.</h2>
-        <p class="s4-sub">Maps is now in the app. Roam your city.</p>
+        <p class="s4-sub">the map is in the app. roam your city.</p>
       </div>
 
       <div class="s4-near">
@@ -161,7 +197,7 @@
       </div>
     </section>
 
-    <!-- The sixth screen: the footer -->
+    <!-- The seventh screen: the footer -->
     <section class="screen screen6" id="screen6">
       <div class="s6-top">
         <span class="s6-clock" id="s6-clock">--:--</span>
@@ -190,7 +226,10 @@
           <li><a href="agb/index.html">agb</a></li>
         </ul>
 
-        <a class="s6-button" href="explore/index.html">go outside</a>
+        <div class="s6-buttons">
+          <a class="s6-button" href="explore/index.html">go outside</a>
+          <a class="s6-button s6-app" href="help/index.html">get the app</a>
+        </div>
       </div>
     </section>
 
@@ -198,19 +237,19 @@
 
   <!-- The photo in the bottom right (whole); it slides down on screen two -->
   <div class="photo">
-    <img src="foto.jpg?v=169" alt="" />
+    <img src="foto.jpg?v=175" alt="" />
   </div>
 
-  <script src="config.js?v=169"></script>
-  <script src="session.js?v=169"></script>
-  <script src="menu.js?v=169"></script>
-  <script src="venues.js?v=169"></script>
-  <script src="cards.js?v=169"></script>
-  <script src="featured.js?v=169"></script>
-  <script src="data.js?v=169"
+  <script src="config.js?v=175"></script>
+  <script src="session.js?v=175"></script>
+  <script src="menu.js?v=175"></script>
+  <script src="venues.js?v=175"></script>
+  <script src="cards.js?v=175"></script>
+  <script src="featured.js?v=175"></script>
+  <script src="data.js?v=175"
           data-sample="36"
-          data-fallback="events-data.js?v=169"
-          data-after="globe.js?v=169, app.js?v=169"></script>
+          data-fallback="events-data.js?v=175"
+          data-after="globe.js?v=175, app.js?v=175"></script>
 
 </body>
 </html>

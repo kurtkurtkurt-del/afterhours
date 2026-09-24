@@ -559,7 +559,7 @@
      screen and tightens back the moment it is on. */
   draw(performance.now());
   (function tick() {
-    const active = document.body.dataset.screen === "3";
+    const active = document.body.dataset.screen === "5";
     if (active) draw(performance.now());
     setTimeout(tick, active ? 16 : 200);
   })();

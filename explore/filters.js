@@ -15,17 +15,17 @@
   const AH = (window.AH = window.AH || {});
   const live = () => AH.mode === "live";
 
-  /* The chosen state. The deck reads this. A null country and city mean
-     everywhere: the deck opens on the whole world and the choices below
-     narrow it down. */
-  AH.filter = { country: null, city: null, kind: null, date: "tonight" };
+  /* The chosen state. The wall reads this. A null country and city mean
+     everywhere. The page may have set it before this file ran (the wall
+     opens on the home city, any night); only then is nothing set here. */
+  AH.filter = AH.filter || { country: null, city: null, kind: null, date: "tonight" };
 
-  /* explore/?tur=<kind> — a shared address may point straight at one
+  /* explore/?kind=<kind> — a shared address may point straight at one
      kind. Only a kind the list below knows is accepted. */
-  const wantedKind = new URLSearchParams(location.search).get("tur");
+  const wantedKind = new URLSearchParams(location.search).get("kind");
 
   const KINDS = [
-    { value: null, name: "all events" },
+    { value: null, name: "all nights" },
     { value: "rave", name: "rave" },
     { value: "club-night", name: "club night" },
     { value: "konzert", name: "konzert" },

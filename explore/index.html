@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>explore | afterhours</title>
-  <meta name="description" content="The deck. One night at a time: throw it right to keep it, left and it is gone. No search, on purpose." />
+  <meta name="description" content="Every night that fits, on one wall: rave, club night, konzert, festival, meetup, hausparty. Pick a city, a kind, a night." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="afterhours" />
   <meta property="og:title" content="explore — afterhours" />
-  <meta property="og:description" content="The deck. One night at a time: throw it right to keep it, left and it is gone. No search, on purpose." />
+  <meta property="og:description" content="Every night that fits, on one wall: rave, club night, konzert, festival, meetup, hausparty. Pick a city, a kind, a night." />
   <meta property="og:url" content="https://kurtkurtkurt-del.github.io/afterhours/explore/index.html" />
   <meta property="og:image" content="https://kurtkurtkurt-del.github.io/afterhours/og/afterhours.png" />
   <meta property="og:image:width" content="1200" />
@@ -20,8 +20,8 @@
   <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png" />
   <link rel="manifest" href="../manifest.webmanifest" />
-  <link rel="stylesheet" href="../fonts/fonts.css?v=169" />
-  <link rel="stylesheet" href="../style.css?v=169" />
+  <link rel="stylesheet" href="../fonts/fonts.css?v=175" />
+  <link rel="stylesheet" href="../style.css?v=175" />
 </head>
 <body class="explore">
 
@@ -31,139 +31,57 @@
     <a class="logo" href="../index.html">afterhours</a>
     <nav class="header-links">
       <a href="../explore/index.html" aria-current="page">explore</a>
-      <a href="../maps/index.html">maps</a>
-      <a href="../friends/index.html">friends&amp;more</a>
-      <a href="../cards/index.html">card collection</a>
+      <a href="../djs/index.html">djs</a>
+      <a href="../friends/index.html">yours</a>
+      <a href="../maps/index.html">map</a>
+      <a href="../cards/index.html">collection</a>
       <a href="../help/index.html">help</a>
-      <a href="../login/index.html">login</a>
+      <a href="../login/index.html">account</a>
     </nav>
   </header>
 
-  <main id="content" tabindex="-1" class="ex-field">
+  <main id="content" tabindex="-1" class="ex-wall-page">
 
-    <nav class="ex-modes">
-      <button class="ex-mode selected" type="button" aria-current="true">global deck</button>
-      <button class="ex-mode" type="button">friends liked swipes</button>
-      <button class="ex-mode" type="button">i feel lucky</button>
-
-      <!-- Not a mode but an action: everything swiped is cleared -->
-      <button class="ex-reset" id="ex-reset" type="button">reset deck</button>
-    </nav>
-
-    <div class="ex-left">
-      <div class="ex-filter">
-        <div class="fl" data-field="country">
-          <button class="fl-button" type="button" aria-expanded="false" aria-label="country">
-            <span class="fl-value">deutschland</span>
-          </button>
-          <div class="fl-list" hidden></div>
-        </div>
-
-        <div class="fl" data-field="city">
-          <button class="fl-button" type="button" aria-expanded="false" aria-label="city">
-            <span class="fl-value">münchen</span>
-          </button>
-          <div class="fl-list" hidden></div>
-        </div>
-
-        <div class="fl" data-field="kind">
-          <button class="fl-button" type="button" aria-expanded="false" aria-label="category">
-            <span class="fl-value">all events</span>
-          </button>
-          <div class="fl-list" hidden></div>
-        </div>
-
-        <div class="fl" data-field="date">
-          <button class="fl-button" type="button" aria-expanded="false" aria-label="date">
-            <span class="fl-value">tonight</span>
-          </button>
-          <div class="fl-list" hidden></div>
-        </div>
+    <!-- The deck's filter line, unchanged: country / city / kind / date -->
+    <div class="ex-filter">
+      <div class="fl" data-field="country">
+        <button class="fl-button" type="button" aria-expanded="false" aria-label="country">
+          <span class="fl-value">deutschland</span>
+        </button>
+        <div class="fl-list" hidden></div>
       </div>
 
-      <p class="ex-served">your deck is served</p>
-    <p class="ex-count" id="ex-count" aria-hidden="true"></p>
-    <p class="sr-only" aria-live="polite" id="ex-live"></p>
-      <!-- Above the card: left is pass, right is keep -->
-      <div class="ex-ways">
-        <span class="ex-way">
-          <svg class="ex-way-drawing" viewBox="0 0 20 20" aria-hidden="true">
-            <path d="M12.5 10 H4.5 M7.5 6.5 L4 10 L7.5 13.5" />
-            <path d="M14 6.5 L18 13.5 M18 6.5 L14 13.5" />
-          </svg>
-          <span class="ex-way-text">not for me</span>
-        </span>
-
-        <span class="ex-way right">
-          <span class="ex-way-text">keep it</span>
-          <svg class="ex-way-drawing" viewBox="0 0 28 20" aria-hidden="true">
-            <path d="M0.5 10 H8.5 M5.5 6.5 L9 10 L5.5 13.5" />
-            <rect x="13.6" y="3.2" width="9.8" height="13.6" rx="1.9"
-                  transform="rotate(-11 18.5 10)" />
-            <rect x="15.6" y="3.2" width="9.8" height="13.6" rx="1.9" />
-          </svg>
-        </span>
+      <div class="fl" data-field="city">
+        <button class="fl-button" type="button" aria-expanded="false" aria-label="city">
+          <span class="fl-value">münchen</span>
+        </button>
+        <div class="fl-list" hidden></div>
       </div>
 
-      <div class="ex-deck" id="ex-deck"><!-- the cards come from explore.js --></div>
-      <p class="ex-done" id="ex-done">that's everyone for tonight.</p>
-      <!-- The end of the deck is not a wall: three ways out -->
-      <div class="ex-done-actions" id="ex-done-actions" hidden>
-        <button type="button" id="ex-next">deal the next 99</button>
-        <button type="button" id="ex-again">start over</button>
-        <button type="button" id="ex-elsewhere">try another city</button>
+      <div class="fl" data-field="kind">
+        <button class="fl-button" type="button" aria-expanded="false" aria-label="category">
+          <span class="fl-value">all events</span>
+        </button>
+        <div class="fl-list" hidden></div>
       </div>
 
-      <!-- At the bottom: keyboard on the left, pointer on the right -->
-      <div class="ex-hints">
-        <span class="ex-hint">
-          <svg class="ex-hint-drawing" viewBox="0 0 46 20" aria-hidden="true">
-            <rect x="0.8" y="0.8" width="18.4" height="18.4" rx="3.4" />
-            <path d="M13 10 H7 M10 7 L7 10 L10 13" />
-            <rect x="26.8" y="0.8" width="18.4" height="18.4" rx="3.4" />
-            <path d="M33 10 H39 M36 7 L39 10 L36 13" />
-          </svg>
-          <span class="ex-hint-text">arrow keys</span>
-        </span>
-
-        <span class="ex-hint">
-          <svg class="ex-hint-drawing" viewBox="0 0 46 20" aria-hidden="true">
-            <path d="M6 10 H1 M3.5 7.5 L1 10 L3.5 12.5" />
-            <rect x="16.8" y="0.8" width="12.4" height="18.4" rx="6.2" />
-            <path d="M23 4.6 V8" />
-            <path d="M40 10 H45 M42.5 7.5 L45 10 L42.5 12.5" />
-          </svg>
-          <span class="ex-hint-text">or drag it</span>
-        </span>
+      <div class="fl" data-field="date">
+        <button class="fl-button" type="button" aria-expanded="false" aria-label="date">
+          <span class="fl-value">any night</span>
+        </button>
+        <div class="fl-list" hidden></div>
       </div>
     </div>
 
-    <div class="ex-box">
-      <button class="ex-box-button" id="ex-box-button" type="button"
-              aria-expanded="false" aria-label="kept tonight">
-        <svg class="ex-box-icon" viewBox="0 0 28 28" aria-hidden="true">
-          <rect x="7.5" y="5" width="13" height="18.5" rx="2.4"
-                transform="rotate(-11 14 14.25)" />
-          <rect x="7.5" y="5" width="13" height="18.5" rx="2.4" />
-        </svg>
-        <span class="ex-badge" id="ex-badge" hidden>0</span>
-      </button>
+    <!-- The wall: every night that fits, soonest first. wall.js hangs them. -->
+    <div class="ex-wall" id="ex-wall"></div>
+    <p class="ex-empty" id="ex-empty" hidden></p>
 
-      <div class="ex-box-list" id="ex-box-list" hidden>
-        <p class="ex-box-title">kept tonight</p>
-        <div id="ex-box-body"><!-- explore.js --></div>
-      </div>
-    </div>
-
-    <aside class="ex-comment">
-      <button class="ex-comment-title" id="ex-comment-button" type="button" aria-expanded="true">beforehours</button>
-      <div class="ex-comment-list" id="ex-comment-list"><!-- the comments come from explore.js --></div>
-    </aside>
-
+    <p class="ex-tally" id="ex-tally" aria-live="polite"></p>
   </main>
 
 
-  <footer class="foot thin">
+  <footer class="foot thin right">
     <p class="foot-name">&copy; 2026 afterhours</p>
     <nav class="foot-links">
       <a href="../impressum/index.html">impressum</a>
@@ -172,16 +90,12 @@
     </nav>
   </footer>
 
-  <script src="../config.js?v=169"></script>
-  <script src="../session.js?v=169"></script>
-  <script src="../menu.js?v=169"></script>
-  <script src="../swipes.js?v=169"></script>
-  <script src="../beforehours.js?v=169"></script>
-  <script src="../friendships.js?v=169"></script>
-  <script src="comment-pools.js?v=169"></script>
-  <script src="../data.js?v=169"
-          data-fallback="../events-data.js?v=169"
-          data-after="explore.js?v=169, filters.js?v=169"></script>
+  <script src="../config.js?v=175"></script>
+  <script src="../session.js?v=175"></script>
+  <script src="../menu.js?v=175"></script>
+  <script src="../data.js?v=175"
+          data-fallback="../events-data.js?v=175"
+          data-after="wall.js?v=175, filters.js?v=175"></script>
 
 </body>
 </html>

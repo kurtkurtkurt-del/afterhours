@@ -58,7 +58,10 @@
     return out;
   }
 
-  const WEEKDAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+  const WEEKDAYS = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+
+  /* "11.09.26" → "11.09": the year is not news on a page about tonight */
+  function shortDate(date) { return String(date || "").replace(/^(\d{1,2}\.\d{1,2})\.\d{2}$/, "$1"); }
 
   function weekdayFor(date, rnd) {
     const m = /^(\d{1,2})\.(\d{1,2})\.(\d{2})$/.exec(date || "");
@@ -66,7 +69,7 @@
       const d = new Date(2000 + +m[3], +m[2] - 1, +m[1]);
       if (!isNaN(d)) return WEEKDAYS[d.getDay()];
     }
-    return pick(rnd, ["friday", "saturday", "thursday"]);
+    return pick(rnd, ["fri", "sat", "thu"]);
   }
 
   /* --- small helpers --- */
@@ -129,11 +132,12 @@
     const handPicked = (window.FEATURED || []).find((f) => f.slug === e.slug);
     if (handPicked && handPicked.song && handPicked.artist) previewChip(frame, handPicked);
 
+    /* where · when · kind — the same three rows the app's night page has */
     const facts = el("dl", "cs-facts");
-    if (m.time) facts.appendChild(factRow("doors", m.time));
+    if (m.venue) facts.appendChild(factRow("where", m.venue.toLowerCase()));
+    facts.appendChild(factRow("when", [day + (m.date ? " " + shortDate(m.date) : ""), m.time].filter(Boolean).join(" · ")));
+    facts.appendChild(factRow("kind", kind.toLowerCase() + " · " + (e.source === "ticketmaster" ? "ticket" : "szene")));
     (V.FACTS[kind] || []).forEach(([a, b]) => facts.appendChild(factRow(a, b)));
-    if (m.venue) facts.appendChild(factRow("room", m.venue.toLowerCase()));
-    facts.appendChild(factRow("from", price(kind, rnd)));
     ray.appendChild(facts);
     area.appendChild(ray);
 
@@ -152,7 +156,7 @@
       "edition " + String(edition).padStart(2, "0")));
     middle.appendChild(el("h1", "cs-title", e.title || ""));
     middle.appendChild(el("p", "cs-meta",
-      [kind.toLowerCase(), m.date ? day + " " + m.date : day].join(" · ")));
+      [kind.toLowerCase(), m.date ? day + " " + shortDate(m.date) : day].join(" · ")));
 
     /* The first paragraph is the event's own line, the rest come from the
        pool for its kind. A pooled paragraph that says the same thing as the
@@ -168,7 +172,7 @@
 
     /* ---- the right column ---- */
     const right = el("aside", "cs-right");
-    right.appendChild(el("p", "cs-label", "who is going · and how you know them"));
+    right.appendChild(el("p", "cs-label", "who's coming · and how you know them"));
 
     /* Live, the column is the database: who kept this night and how you
        know each of them. The pools only stand in with the backend off. */
@@ -195,8 +199,9 @@
       rosterBox.appendChild(rosterTally(drawn));
     }
 
-    const [button, sub] = V.TICKET[kind] || V.TICKET["Konzert"];
-    const ticket = el("a", "cs-ticket", button);
+    /* One word, the same as in the app; the line under it is the kind's own note */
+    const [, sub] = V.TICKET[kind] || V.TICKET["Konzert"];
+    const ticket = el("a", "cs-ticket", "ticket");
     /* A synced night has a real ticket page; the invented ones do not. */
     if (e.ticketUrl) {
       ticket.href = e.ticketUrl;
@@ -442,11 +447,12 @@
   function rosterTally(roster) {
     const count = (fn) => roster.filter(fn).length;
     const box = document.createElement("div");
-    const going = count((p) => p.status === "going");
+    const going = count((p) => p.status === "i'm in");
+    const maybe = count((p) => p.status === "maybe");
     const kept = count((p) => p.status === "kept it");
-    const out = count((p) => p.status === "can't");
+    const out = count((p) => p.status === "not tonight");
     box.appendChild(el("p", "cs-tally", [
-      going + " going", kept && kept + " kept it", out && out + " can't",
+      going + " in", maybe && maybe + " maybe", kept && kept + " kept it", out && out + " not tonight",
     ].filter(Boolean).join(" · ")));
 
     const yours = count((p) => p.degree === 1);
@@ -809,10 +815,10 @@
 
     middle.appendChild(el("h1", "cs-title", "this night has passed."));
     middle.appendChild(el("p", "cs-text",
-      "It was here, and now it is not — the date went by and the card left " +
-      "the deck. Nights do that; it is the whole point of going."));
+      "It was here, and now it is not — the date went by and the night left " +
+      "the wall. Nights do that; it is the whole point of going."));
 
-    const out = el("a", "cs-ticket", "back to the deck");
+    const out = el("a", "cs-ticket", "back to explore");
     out.href = "../index.html";
     middle.appendChild(out);
     area.appendChild(middle);

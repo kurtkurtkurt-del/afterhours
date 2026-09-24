@@ -66,11 +66,11 @@ from `events-data.js` and the site behaves exactly the same.
 | Path | What | State |
 |---|---|---|
 | `index.html` | The landing page, five screens deep: the poster wall → how swiping works → a strip of cards → the turning city globe → a black footer screen | works |
-| `explore/` | **The deck.** One card, left or right. Filters (country/city/kind/date), three sources (global deck / friends liked swipes / i feel lucky), the beforehours comments alongside | works |
+| `explore/` | **The wall.** Every night that fits, six posters across, soonest first; the words come on hover. The deck's filter line (country/city/kind/date) above it, unchanged. The deck itself lives in the app now | works |
 | `explore/<slug>/` | **The event page** (a contact sheet) — all 142 nights, Munich and the world, from one layout. A night missing from the deck is fetched live by its slug. See §6 | works |
 | `maps/` | The city schematic, the venues as dots | works, **not linked from the menu** |
 | `cards/` | **The card collection** — afterhours cards. Empty when signed in (there is no card logic yet) | a skeleton |
-| `friends/` | Handle, adding friends, what you kept; familiar faces from nachtradar below | works |
+| `friends/` | Closed on the web: the title, then empty; "only available in the app." and a "preview." button wired to nothing | **closed**, lives in the app |
 | `login/` | Sign-in and account page. Three columns: sign in · (first time? / account settings) · give feedback | works |
 | `settings/` | **Account settings** — handle, name, one line, city; who may see what you kept, whether you are findable by name, email; deleting the account | works |
 | `feedback/` | **Feedback** — subject, message, an optional way to reach you. No sign-in needed | works |
@@ -87,16 +87,15 @@ from `events-data.js` and the site behaves exactly the same.
 
 Every page has a **footer**: `© 2026 afterhours` + impressum · datenschutz
 · agb. It has two forms: the normal one that sits in the flow, and
-`foot thin` for the full-screen pages (`explore`, `maps`) where it sits in
-the corner. Three pages have no footer: `index.html` (it has its own black
+`foot thin` for the full-screen pages (`maps`) and for `explore`, where it
+sits in the corner. Three pages have no footer: `index.html` (it has its own black
 footer screen), `admin/` and `strip.html`.
 
 **Every surface.** The layout is desktop-first and narrows in bands, each
 a `@media` block in `style.css`: below **1180px** the photo scales with
 the viewport (`min(780px, 46vw)`) and the intro starts under the sound
 rows — the two were printing over each other on a tablet; below
-**1000px** explore gives up its four-column grid and flows as one column
-(its corner footer joins the flow at the end); below **900px** the globe
+**1180px** the wall drops from six posters across to four; below **900px** the globe
 screen moves the walking-distance list to the bottom of the frame (it
 shared a band with "go local." and they collided) and the footer screen
 gives the sónar note its own line and the button a full row; below
@@ -125,7 +124,7 @@ The pattern on every page:
 ```html
 <script src="../data.js?v=135"
         data-fallback="../events-data.js?v=135"
-        data-after="explore.js?v=135, filters.js?v=135"></script>
+        data-after="wall.js?v=135, filters.js?v=135"></script>
 ```
 
 The shared `AH` object: `AH.mode` (`live` / `local`), `AH.request()`,
@@ -205,13 +204,12 @@ this repository.
 
 | File | Job |
 |---|---|
-| `explore/explore.js` | The deck: dragging, flying off, dealing again, the kept box |
+| `explore/wall.js` | The wall: pulls the nights for the filter and hangs them; the date window cut client-side |
 | `explore/filters.js` | Our own drop-downs (not a native `<select>`) |
 | `explore/comment-pools.js` | The beforehours pool — per kind, chosen with a seed from the slug |
 | `explore/event.js` | **The one template that builds the event page** (§6) |
 | `explore/event-data.js` | The event page's content pools, per kind |
 | `cards/cards.js` · `card-data.js` · `session-state.js` | The collection: sample cards, hidden according to the session |
-| `friends/friends.js` · `nachtradar.js` | Handle/friends/what you kept; the familiar-faces list |
 | `login/login.js` · `shortcuts.js` | The sign-in form; the middle block changing with the session |
 | `settings/settings.js` | The settings page: reads `profile_me()`, writes `profile_setup()`, PATCHes the switches straight onto `profile_settings` |
 | `feedback/feedback.js` | Feedback: one job, adding what was written to the `feedback` table |
@@ -663,11 +661,15 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **169**.
+The current version: **175**.
 
-The explore date filter is real now (every synced night carries a true
+The explore date filter is real (every synced night carries a true
 date): tonight / tomorrow / this weekend / this week / this month /
-any night, cut client-side out of a date-ordered pull. And one type
+any night, cut client-side out of a date-ordered pull. Since v174 explore
+is **the wall**, not the deck: the swiping moved into the app, and the web
+shows every night that fits the filter as a grid of posters (`wall.js`).
+The wall opens on the home city (`AH_CONFIG.city`) and any night — the
+whole world for tonight is four hundred posters of somewhere else. And one type
 rule: the small labels are Inter Tight like everything else — JetBrains
 Mono lives on only inside the drawn poster and card artwork.
 

@@ -111,13 +111,15 @@ window.EVENT_POOLS = (function () {
   };
 
   /* --- the ticket button: not every kind is selling the same thing --- */
+  /* The button says "ticket" everywhere (as in the app); only the note
+     under it changes with the kind. */
   const TICKET = {
-    "Konzert":    ["get the ticket", "goes to the venue's own shop"],
-    "Festival":   ["get the ticket", "day and weekend passes"],
-    "Rave":       ["get on the list", "door price is cash only"],
-    "Club Night": ["get on the list", "cheaper before midnight"],
-    "Hausparty":  ["ask for the address", "you get it the day before"],
-    "Meetup":     ["save a seat", "free, but the table is small"],
+    "Konzert":    ["ticket", "goes to the venue's own shop"],
+    "Festival":   ["ticket", "day and weekend passes"],
+    "Rave":       ["ticket", "door price is cash only"],
+    "Club Night": ["ticket", "cheaper before midnight"],
+    "Hausparty":  ["ticket", "the address comes the day before"],
+    "Meetup":     ["ticket", "free, but the table is small"],
   };
 
   /* --- arkadaslar --- */
@@ -126,11 +128,10 @@ window.EVENT_POOLS = (function () {
     "Bosse", "Ada", "Tuna", "Ilay", "Marek", "Juli", "Ege", "Rana",
   ];
 
-  /* What a person's answer to a night can be. "kept it" is the swipe and
-     nothing more: the card is in their collection, there is no ticket.
-     Three answers is the whole vocabulary — "maybe" was doing the work of
-     both of the first two and telling you neither. */
-  const STATES = ["going", "going", "going", "kept it", "can't"];
+  /* What a person's answer to a night can be — the app's three answers to
+     "who's coming?" (i'm in · maybe · not tonight), plus "kept it": the
+     swipe and nothing more, the card is in their collection. */
+  const STATES = ["i'm in", "i'm in", "i'm in", "kept it", "maybe", "not tonight"];
 
 
   /* --- what friends left on this night (beforehours) ---

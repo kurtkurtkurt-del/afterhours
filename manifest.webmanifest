@@ -1,7 +1,7 @@
 {
   "name": "afterhours",
   "short_name": "afterhours",
-  "description": "your scene, one card at a time. no search.",
+  "description": "find your night. one card at a time.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

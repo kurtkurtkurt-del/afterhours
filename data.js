@@ -1,7 +1,7 @@
 /* afterhours — the data layer.
    This runs first on every page: it fetches the events either from
    Supabase or from events-data.js, puts them on window.POSTERS, and only
-   then loads the page's own scripts. That is why app.js and explore.js
+   then loads the page's own scripts. That is why app.js and wall.js
    never had to change when the backend arrived.
 
    <script src="data.js" data-fallback="events-data.js" data-after="app.js"></script>

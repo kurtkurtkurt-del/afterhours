@@ -257,11 +257,11 @@
   function buildRoll(p, nights) {
     const box = el("section", "pf-roll");
     box.appendChild(el("p", "cs-label", p.kept != null
-      ? "the roll · " + p.kept + " nights kept, " + nights.length + " shot"
-      : "the roll · " + nights.length + " shot"));
+      ? "kept · " + p.kept
+      : "kept · " + nights.length));
     const grid = el("ol", "pf-frames");
     if (p.real && !nights.length) {
-      box.appendChild(el("p", "cs-note", "Nothing kept yet. The roll starts with the first card swiped right."));
+      box.appendChild(el("p", "cs-note", "nothing kept yet. it starts with the first night kept."));
     }
 
     nights.forEach((e, i) => {
@@ -344,7 +344,7 @@
     const band = el("section", "cs-earn pf-shelf");
     const count = Math.min(nights.length, 3 + Math.floor(rnd() * 3));
     band.appendChild(el("p", "cs-earn-label",
-      "the cards " + p.name.toLowerCase() + " left with · " + count));
+      "cards · " + count));
     if (!window.CARDS) return band;
 
     const shelf = el("div", "pf-cards");

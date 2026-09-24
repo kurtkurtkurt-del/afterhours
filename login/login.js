@@ -79,7 +79,7 @@
   });
 
   /* The handle and the friends used to live here; they moved to the
-     friends&more page (friends/friends.js). Copies were left behind, went
+     friends&more page (since closed on the web). Copies were left behind, went
      looking for elements that were not there, and stopped the file
      halfway: a TypeError on line 173, and nothing after it ever ran.
      Removed. */

@@ -89,7 +89,7 @@ const MOTIFS = {
   diagonal:(id,m)=>`<path d="M0 0 L400 0 L0 300 Z" fill="${m.dim}"/>
     <g stroke="url(#e${id})" stroke-width="2"><path d="M0 130 L400 130"/><path d="M0 146 L400 146"/><path d="M0 162 L400 162"/></g>
     <circle cx="200" cy="146" r="44" fill="${m.poster}" stroke="url(#e${id})" stroke-width="2.5"/>
-    <text x="200" y="156" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="25" fill="url(#g${id})">10</text>`,
+    <text x="200" y="156" text-anchor="middle" font-family="Inter Tight" font-weight="700" font-size="25" fill="url(#g${id})">10</text>`,
 
   orbit:(id,m)=>`<g fill="none" stroke="${m.mid}" stroke-width="2">
       <ellipse cx="200" cy="146" rx="150" ry="56"/>
@@ -248,9 +248,9 @@ function front(e,i){
     `<rect x="${34+k*54}" y="442" width="44" height="44" fill="none" stroke="${m.faint}" stroke-width="1.2" stroke-dasharray="4 4"/>`).join('')
    :e.crew.map((c,k)=>
     `<rect x="${34+k*54}" y="442" width="44" height="44" fill="${m.light?'#2f3740':m.poster}" stroke="${m.mid}" stroke-width="1"/>
-     <text x="${56+k*54}" y="472" text-anchor="middle" font-family="JetBrains Mono" font-size="17" fill="${m.light?'#eef3f8':m.hi}">${esc(c)}</text>`).join('')
+     <text x="${56+k*54}" y="472" text-anchor="middle" font-family="Inter Tight" font-size="17" fill="${m.light?'#eef3f8':m.hi}">${esc(c)}</text>`).join('')
    +`<rect x="${34+e.crew.length*54}" y="442" width="44" height="44" fill="none" stroke="${m.faint}" stroke-width="1.2" stroke-dasharray="4 4"/>
-     <text x="${56+e.crew.length*54}" y="471" text-anchor="middle" font-family="JetBrains Mono" font-size="15" fill="${m.sub}">+${esc(e.more)}</text>`;
+     <text x="${56+e.crew.length*54}" y="471" text-anchor="middle" font-family="Inter Tight" font-size="15" fill="${m.sub}">+${esc(e.more)}</text>`;
   return `<svg viewBox="0 0 400 600">${defs(id,m)}
   <rect width="400" height="600" fill="url(#p${id})"/>
   ${hairlines(m,[322,332,344,358,376,398,424,454,490,530,572])}
@@ -263,17 +263,17 @@ function front(e,i){
   <line x1="0" y1="300" x2="400" y2="300" stroke="${m.deep}" stroke-width="2"/>
   <line x1="0" y1="302" x2="400" y2="302" stroke="${m.mid}" stroke-width="1"/>
 
-  <text x="34" y="52" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${m.mid}">${esc(e.ty)}</text>
-  <text x="366" y="52" text-anchor="end" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${e.blank?m.faint:(m.light?m.hi:m.accent)}">${e.blank?'NOT YET':'CHECKED IN'}</text>
+  <text x="34" y="52" font-family="Inter Tight" font-size="11" letter-spacing="3" fill="${m.mid}">${esc(e.ty)}</text>
+  <text x="366" y="52" text-anchor="end" font-family="Inter Tight" font-size="11" letter-spacing="3" fill="${e.blank?m.faint:(m.light?m.hi:m.accent)}">${e.blank?'NOT YET':'CHECKED IN'}</text>
 
-  <text x="34" y="348" font-family="-apple-system,Helvetica,Arial,sans-serif" font-weight="700" font-size="${e.t.length>26?19:(e.t.length>16?26:(e.t.length>12?31:37))}" letter-spacing="-1.4" fill="url(#g${id})">${esc(e.t.toUpperCase())}</text>
-  <text x="34" y="372" font-family="JetBrains Mono" font-size="10.5" letter-spacing="2" fill="${m.sub}">${[e.d,e.v,e.blank?'':e.in].filter(Boolean).map(esc).join(' · ')}</text>
+  <text x="34" y="348" font-family="Inter Tight" font-weight="500" font-size="${e.t.length>26?19:(e.t.length>16?26:(e.t.length>12?31:37))}" letter-spacing="-1.4" fill="url(#g${id})">${esc(e.t.toUpperCase())}</text>
+  <text x="34" y="372" font-family="Inter Tight" font-size="10.5" letter-spacing="2" fill="${m.sub}">${[e.d,e.v,e.blank?'':e.in].filter(Boolean).map(esc).join(' · ')}</text>
 
   ${rule(m,398)}
-  <text x="34" y="424" font-family="JetBrains Mono" font-size="10" letter-spacing="3" fill="${m.sub}">WHO WAS THERE</text>
+  <text x="34" y="424" font-family="Inter Tight" font-size="10" letter-spacing="3" fill="${m.sub}">WHO WAS THERE</text>
   ${av}
   ${rule(m,514)}
-  <g font-family="JetBrains Mono" font-size="10.5" letter-spacing="1.6">
+  <g font-family="Inter Tight" font-size="10.5" letter-spacing="1.6">
     <text x="34" y="540" fill="${m.sub}">AUDIO</text><text x="34" y="558" fill="${e.blank?m.faint:m.hi}">${e.blank?'—:—':esc(e.aud)}</text>
     <text x="140" y="540" fill="${m.sub}">MESSAGES</text><text x="140" y="558" fill="${e.blank?m.faint:m.hi}">${e.blank?'—':esc(e.msg)}</text>
     <text x="260" y="540" fill="${m.sub}">ROOM</text><text x="260" y="558" fill="${m.faint}">${e.blank?'OPEN':'FROZEN'}</text>
@@ -309,29 +309,29 @@ function back(e,i){
   ${m.patina?`<g fill="#4a9c8a" opacity="0.07"><path d="M0 470 C 60 458, 96 492, 156 478 C 210 466, 250 500, 300 488 L 400 498 L 400 600 L 0 600 Z"/></g>`:''}
   <path d="M-40 0 L90 0 L10 600 L-120 600 Z" fill="#fff" opacity="0.026"/>
 
-  <text x="34" y="52" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${m.mid}">THE NIGHT</text>
-  <text x="366" y="52" text-anchor="end" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="${e.blank?m.faint:(m.light?m.hi:m.accent)}">${e.blank?'—H —M':esc(e.dur)}</text>
+  <text x="34" y="52" font-family="Inter Tight" font-size="11" letter-spacing="3" fill="${m.mid}">THE NIGHT</text>
+  <text x="366" y="52" text-anchor="end" font-family="Inter Tight" font-size="11" letter-spacing="3" fill="${e.blank?m.faint:(m.light?m.hi:m.accent)}">${e.blank?'—H —M':esc(e.dur)}</text>
   ${rule(m,70)}
 
   <line x1="48" y1="104" x2="48" y2="286" stroke="${m.line}" stroke-width="1.5"/>
-  <g font-family="JetBrains Mono" letter-spacing="1.4">${tl}</g>
+  <g font-family="Inter Tight" letter-spacing="1.4">${tl}</g>
 
   ${rule(m,318)}
-  <text x="34" y="344" font-family="JetBrains Mono" font-size="10" letter-spacing="3" fill="${m.sub}">VOICE NOTE · ${e.blank?'NOT RECORDED':esc(e.aud)}</text>
+  <text x="34" y="344" font-family="Inter Tight" font-size="10" letter-spacing="3" fill="${m.sub}">VOICE NOTE · SOON</text>
   ${e.blank?`<g opacity="0.16">${wave(id,m,34,387)}</g>`:wave(id,m,34,387)}
   ${e.blank
     ?`<g transform="translate(34,444)"><rect width="34" height="34" fill="none" stroke="${m.faint}" stroke-width="1.2" stroke-dasharray="4 4"/><path d="M12 9 L25 17 L12 25 Z" fill="${m.faint}"/></g>`
     :`<g transform="translate(34,444)"><rect width="34" height="34" fill="url(#g${id})"/><path d="M12 9 L25 17 L12 25 Z" fill="${m.poster}"/></g>`}
-  <text x="80" y="466" font-family="JetBrains Mono" font-size="10.5" letter-spacing="1.6" fill="${m.sub}">${e.blank?'NOBODY HAS SPOKEN YET':esc(e.who)+' · '+esc(e.at1)}</text>
+  <text x="80" y="466" font-family="Inter Tight" font-size="10.5" letter-spacing="1.6" fill="${m.sub}">${e.blank?'NOBODY HAS SPOKEN YET':esc(e.who)+' · '+esc(e.at1)}</text>
 
   ${rule(m,498)}
-  <g font-family="JetBrains Mono" font-size="11">${e.blank
+  <g font-family="Inter Tight" font-size="11">${e.blank
     ?`<text x="34" y="524" letter-spacing="1.6" font-size="10" fill="${m.faint}">OVERHEARD · NOTHING YET</text>
       <line x1="34" y1="546" x2="366" y2="546" stroke="${m.faint}" stroke-width="1" stroke-dasharray="4 5" opacity="0.7"/>`
     :`<text x="34" y="524" fill="${m.light?m.accent:m.txt}">"${esc(e.q1[0])}"</text><text x="366" y="524" text-anchor="end" font-size="9.5" fill="${m.faint}">${esc(e.q1[1])} · ${esc(e.q1[2])}</text>
       <text x="34" y="548" fill="${m.light?m.accent:m.txt}">"${esc(e.q2[0])}"</text><text x="366" y="548" text-anchor="end" font-size="9.5" fill="${m.faint}">${esc(e.q2[1])} · ${esc(e.q2[2])}</text>`}
   </g>
-  <text x="34" y="578" font-family="JetBrains Mono" font-size="9.5" letter-spacing="2" fill="${m.faint}">${e.blank?'ROOM NOT FROZEN · NO. NOT ISSUED':'ROOM FROZEN '+esc(e.froze)+' · NO. '+esc(e.no)}</text>
+  <text x="34" y="578" font-family="Inter Tight" font-size="9.5" letter-spacing="2" fill="${m.faint}">${e.blank?'ROOM NOT FROZEN · NO. NOT ISSUED':'ROOM FROZEN '+esc(e.froze)+' · NO. '+esc(e.no)}</text>
 
   <rect x="7" y="7" width="386" height="586" fill="none" stroke="url(#e${id})" stroke-width="4"/>
   <rect x="13" y="13" width="374" height="574" fill="none" stroke="${m.deep}" stroke-width="1"/>

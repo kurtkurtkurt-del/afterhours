@@ -169,8 +169,8 @@
           return;
         }
         el("reg-welcome").textContent =
-          "You are @" + h.toLowerCase() + ". Your deck is waiting, and what you keep " +
-          "from here on is yours to look back at.";
+          "You are @" + h.toLowerCase() + ". What you keep from here on is " +
+          "yours to look back at.";
         show("reg-3");
       })
       .catch((h2) => {
