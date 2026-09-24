@@ -34,8 +34,8 @@ export default function RootLayout() {
     if (Platform.OS === 'android') NavigationBar.setHidden(true);
   }, []);
 
-  // fontlar gelene kadar beyaz değil, kâğıt rengi
-  if (!loaded) return <View style={{ flex: 1, backgroundColor: colors.paper }} />;
+  // fontlar gelene kadar splash ile aynı zemin: mürekkep
+  if (!loaded) return <View style={{ flex: 1, backgroundColor: colors.ink }} />;
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Alert, KeyboardAvoidingView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Alert, KeyboardAvoidingView, Linking, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Constants, { ExecutionEnvironment } from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -174,8 +175,9 @@ export default function SettingsScreen() {
 
         <Section title="about" />
         <Row label="show the intro again" hint="the six steps you saw on first visit" onPress={() => { Storage.removeItemSync('intro.seen'); router.push('/explore'); }} />
-        <Row label="music credits" hint="play house, tommaso croce, ketsa, 1000 handz, alex morgan, nokings xxx · cc0 / cc by 4.0" />
-        <Row label="version" right={<Value text="0.1 · expo go" />} />
+        <Row label="credits" hint="music, map, type" onPress={() => router.push('/credits')} />
+        <Row label="privacy" hint="what we keep and why" onPress={() => Linking.openURL('https://kurtkurtkurt-del.github.io/afterhours/datenschutz/')} />
+        <Row label="version" right={<Value text={`${Constants.expoConfig?.version ?? '0.1.0'} · ${Constants.executionEnvironment === ExecutionEnvironment.StoreClient ? 'expo go' : 'build'}`} />} />
       </ScrollView>
       </KeyboardAvoidingView>
 
