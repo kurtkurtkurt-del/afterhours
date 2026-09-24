@@ -331,8 +331,8 @@ function back(e,i){
   <g font-family="InterTight_400Regular" font-size="11">${e.blank
     ?`<text x="34" y="524" letter-spacing="1.6" font-size="10" fill="${m.faint}">OVERHEARD · NOTHING YET</text>
       <line x1="34" y1="546" x2="366" y2="546" stroke="${m.faint}" stroke-width="1" stroke-dasharray="4 5" opacity="0.7"/>`
-    :`<text x="34" y="524" fill="${m.light?m.accent:m.txt}">"${esc(e.q1[0])}"</text><text x="366" y="524" text-anchor="end" font-size="9.5" fill="${m.faint}">${esc(e.q1[1])} · ${esc(e.q1[2])}</text>
-      <text x="34" y="548" fill="${m.light?m.accent:m.txt}">"${esc(e.q2[0])}"</text><text x="366" y="548" text-anchor="end" font-size="9.5" fill="${m.faint}">${esc(e.q2[1])} · ${esc(e.q2[2])}</text>`}
+    :`${e.q1?`<text x="34" y="524" fill="${m.light?m.accent:m.txt}">"${esc(e.q1[0])}"</text><text x="366" y="524" text-anchor="end" font-size="9.5" fill="${m.faint}">${esc(e.q1[1])} · ${esc(e.q1[2])}</text>`:''}
+      ${e.q2?`<text x="34" y="548" fill="${m.light?m.accent:m.txt}">"${esc(e.q2[0])}"</text><text x="366" y="548" text-anchor="end" font-size="9.5" fill="${m.faint}">${esc(e.q2[1])} · ${esc(e.q2[2])}</text>`:''}`}
   </g>
   <text x="34" y="578" font-family="InterTight_400Regular" font-size="9.5" letter-spacing="2" fill="${m.faint}">${e.blank?'ROOM NOT FROZEN · NO. NOT ISSUED':'ROOM FROZEN '+esc(e.froze)+' · NO. '+esc(e.no)}</text>
 

@@ -77,7 +77,7 @@ export function toCardData(r: CardRow): NightCardData {
   const start = r.starts_at ?? r.checked_at;
   const end = new Date(new Date(start).getTime() + 6 * 3600_000).toISOString();
   return {
-    t: r.title, ty: r.type_name.toUpperCase(), v: (r.venue_name ?? r.city_name).toUpperCase(), d: ddmm(start, true),
+    t: r.title.length > 28 ? r.title.slice(0, 27).trimEnd() + '…' : r.title, ty: r.type_name.toUpperCase(), v: (r.venue_name ?? r.city_name).toUpperCase(), d: ddmm(start, true),
     metal: METALS[h % METALS.length], motif: MOTIFS[(h >> 4) % MOTIFS.length],
     in: hhmm(r.checked_at), out: hhmm(end), dur: '6H 00M',
     crew: r.crew.map((c) => c.toUpperCase()), more: r.crew_more, aud: '0:00', msg: r.post_count,

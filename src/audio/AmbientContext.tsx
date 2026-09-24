@@ -40,6 +40,9 @@ export function AmbientProvider({ children }: { children: ReactNode }) {
     return isGenre(v) ? v : 'house';
   });
   const [pickerOpen, setPickerOpen] = useState(false);
+  // ses hiç açılmadıysa motor boş listeyle durur: kapalıyken ağdan parça çekilmez
+  const [armedOnce, setArmedOnce] = useState(false);
+  const armed = on || armedOnce;
 
   useEffect(() => {
     // kullanıcı sesi kendisi açıyor; android'de titreşim modu bile müziği susturmasın
@@ -47,6 +50,7 @@ export function AmbientProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const toggle = useCallback(() => {
+    setArmedOnce(true);
     setOn((v) => {
       Storage.setItemSync(KEY, v ? '0' : '1');
       return !v;
@@ -56,6 +60,7 @@ export function AmbientProvider({ children }: { children: ReactNode }) {
   const setGenre = useCallback((g: Genre) => {
     Storage.setItemSync(KEY_GENRE, g);
     setGenreState(g);
+    setArmedOnce(true);
     setOn(() => {
       Storage.setItemSync(KEY, '1'); // tür seçen dinlemek istiyor
       return true;
@@ -68,15 +73,15 @@ export function AmbientProvider({ children }: { children: ReactNode }) {
   return (
     <Ctx.Provider value={{ on, toggle, genre, setGenre, pickerOpen, openPicker, closePicker }}>
       {/* tür değişince motor baştan kurulur: yeni liste, sıfırdan */}
-      <Engine key={genre} genre={genre} on={on} />
+      <Engine key={genre} genre={genre} on={on} armed={armed} />
       {children}
     </Ctx.Provider>
   );
 }
 
 // çalar. görünmez; sadece listeyi sürer.
-function Engine({ genre, on }: { genre: Genre; on: boolean }) {
-  const playlist = useAudioPlaylist({ sources: tracks[genre], loop: 'all' });
+function Engine({ genre, on, armed }: { genre: Genre; on: boolean; armed: boolean }) {
+  const playlist = useAudioPlaylist({ sources: armed ? tracks[genre] : [], loop: 'all' });
   const p = useRef(playlist);
   useEffect(() => {
     p.current = playlist;
@@ -88,20 +93,27 @@ function Engine({ genre, on }: { genre: Genre; on: boolean }) {
     const sub = playlist.addListener('playlistStatusUpdate', (status) => {
       if (status.isLoaded) setLoaded(true);
     });
-    return () => sub.remove();
+    // dinleyici takılmadan önce yüklendiyse: bir sonraki döngüde bak
+    const t = setTimeout(() => {
+      if (playlist.isLoaded) setLoaded(true);
+    }, 0);
+    return () => {
+      clearTimeout(t);
+      sub.remove();
+    };
   }, [playlist]);
 
   const fade = useRef<ReturnType<typeof setInterval> | null>(null);
   // motor kapanınca (tür değişti) zamanlayıcı dursun ve kapanmış çalara kimse dokunmasın
   const alive = useRef(true);
-  useEffect(
-    () => () => {
+  useEffect(() => {
+    alive.current = true; // yeniden kurulursa (fast refresh) tekrar canlan
+    return () => {
       alive.current = false;
       if (fade.current) clearInterval(fade.current);
       fade.current = null;
-    },
-    [],
-  );
+    };
+  }, []);
   // kapanmış nesneye erişim native tarafta fırlatır; sessizce yut
   const safe = (fn: () => void) => {
     if (!alive.current) return;
@@ -153,9 +165,10 @@ function Engine({ genre, on }: { genre: Genre; on: boolean }) {
 
   useEffect(() => {
     const sub = AppState.addEventListener('change', (state) => {
+      // sadece arka plan: ios'ta 'inactive' izin kutusu ve bildirim paneli için de gelir
       if (state === 'active') {
         if (on) start();
-      } else {
+      } else if (state === 'background') {
         safe(() => p.current.pause());
       }
     });

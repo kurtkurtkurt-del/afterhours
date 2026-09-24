@@ -22,7 +22,9 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   .pin.on{background:#2b3ecf;color:#f3f1ec;border-color:#2b3ecf}
   .me{width:12px;height:12px;border-radius:50%;background:#2b3ecf;border:2px solid #f3f1ec;box-sizing:border-box}
 </style></head><body><div id="m"></div><script>
-  var map=L.map('m',{zoomControl:false,attributionControl:true}).setView([48.137,11.575],13);
+  var map=L.map('m',{zoomControl:false,attributionControl:true,zoomSnap:0.5}).setView([48.137,11.575],13);
+  map.attributionControl.setPrefix(false);
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:19,attribution:'&copy; OpenStreetMap &copy; CARTO'}).addTo(map);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:19,opacity:.55}).addTo(map);
   var layer=L.layerGroup().addTo(map), meMarker=null, markers={};
@@ -32,7 +34,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
     if(s.view){map.setView([s.view.lat,s.view.lng],s.view.zoom,{animate:true});}
     if(s.me){if(!meMarker){meMarker=L.marker([s.me[0],s.me[1]],{icon:L.divIcon({className:'',html:'<div class="me"></div>',iconSize:[12,12],iconAnchor:[6,6]}),interactive:false}).addTo(map);}else{meMarker.setLatLng([s.me[0],s.me[1]]);}}
     if(s.pins){layer.clearLayers();markers={};s.pins.forEach(function(p){
-      var ic=L.divIcon({className:'',html:'<div class="pin'+(p.id===s.picked?' on':'')+'">'+p.code+'</div>',iconSize:null,iconAnchor:[14,10]});
+      var ic=L.divIcon({className:'',html:'<div class="pin'+(p.id===s.picked?' on':'')+'">'+esc(p.code)+'</div>',iconSize:null,iconAnchor:[14,10]});
       var mk=L.marker([p.lat,p.lng],{icon:ic}).addTo(layer);mk.on('click',function(e){L.DomEvent.stopPropagation(e);post({pick:p.id});});markers[p.id]=mk;});}
     else if(s.picked!==undefined){Object.keys(markers).forEach(function(id){var el=markers[id].getElement();if(el){var d=el.querySelector('.pin');if(d)d.className='pin'+(id===s.picked?' on':'');}});}
   };
@@ -40,7 +42,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
 </script></body></html>`;
 
 // yarıçap → zoom: 1 km 15, 3 km 13.5, 10 km 12
-const zoomFor = (km: number) => (km <= 1 ? 15 : km <= 3 ? 13.5 : 12);
+const zoomFor = (km: number) => (km <= 1 ? 15 : km <= 3 ? 13.5 : 11.5);
 
 export default function MapWeb({ lat, lng, km, me, pins, picked, onPick }: Props) {
   const ref = useRef<WebView>(null);

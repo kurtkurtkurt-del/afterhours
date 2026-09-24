@@ -38,9 +38,10 @@ export default function NightScreen() {
       .select('*')
       .eq('slug', slug)
       .maybeSingle()
-      .then(({ data }) => {
+      .then(({ data, error }) => {
         if (cancelled) return;
-        if (data) setNight(data as Night);
+        if (error) setNote(String(error.message).toLowerCase());
+        else if (data) setNight(data as Night);
         else setMissing(true);
       });
     return () => {
@@ -56,7 +57,8 @@ export default function NightScreen() {
   // check-in: konum varsa gönderilir (500 m kuralı), yoksa sadece zaman kuralı
   const doCheckIn = async () => {
     if (!night || busy) return;
-    if (!session) {
+    if (!session || session.user.is_anonymous) {
+      // kart bir hesaba bağlanır; misafir önce e-posta ekler
       router.push('/signup');
       return;
     }
@@ -65,7 +67,9 @@ export default function NightScreen() {
     try {
       let lat: number | undefined;
       let lng: number | undefined;
-      const perm = await Location.getForegroundPermissionsAsync();
+      // kapı testi konum ister; izin yoksa şimdi sor
+      let perm = await Location.getForegroundPermissionsAsync();
+      if (!perm.granted) perm = await Location.requestForegroundPermissionsAsync();
       if (perm.granted) {
         const pos = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
         lat = pos.coords.latitude;
@@ -160,7 +164,7 @@ export default function NightScreen() {
       </Modal>
       {!night && (
         <View style={styles.centre}>
-          <Text style={styles.mono}>{missing ? 'this night is gone' : 'loading…'}</Text>
+          <Text style={styles.mono}>{missing ? 'this night is gone' : (note ?? 'loading…')}</Text>
         </View>
       )}
     </View>

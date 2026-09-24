@@ -7,6 +7,7 @@ import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
 import { djs as localDjs, sets as localSets, type Dj, type DjSet } from '@/content/djs';
 import { loadDjs } from '@/data/djs';
+import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -17,15 +18,19 @@ const dayName = (d: Date) => d.toLocaleDateString('en-GB', { weekday: 'short' })
 // seçenek 6, "şimdi / sonra": en üstte çalan, altında bu gece, sonra bu hafta.
 export default function DjsScreen() {
   const insets = useSafeAreaInsets();
-  const now = useMemo(() => new Date(), []);
-  const [data, setData] = useState<{ djs: Dj[]; sets: DjSet[] }>({ djs: localDjs, sets: localSets(now) });
+  const tick = useRefreshOnFocus();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const now = useMemo(() => new Date(), [tick]); // sekme her açıldığında saat tazelenir
+  const [data, setData] = useState<{ djs: Dj[]; sets: DjSet[]; live: boolean | null }>({ djs: localDjs, sets: [], live: null });
   useEffect(() => {
     let cancelled = false;
-    loadDjs().then((d) => !cancelled && setData({ djs: d.djs, sets: d.sets })).catch(() => {});
+    loadDjs()
+      .then((d) => !cancelled && setData({ djs: d.djs, sets: d.sets, live: d.live }))
+      .catch(() => !cancelled && setData({ djs: localDjs, sets: localSets(new Date()), live: false }));
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [tick]);
   const all = data.sets;
   const djById = (id: string) => data.djs.find((d) => d.id === id) ?? localDjs[0];
 
@@ -45,7 +50,9 @@ export default function DjsScreen() {
         <SoundCorner />
       </View>
       <ScrollView contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom }]} showsVerticalScrollIndicator={false}>
-        {!next ? <Text style={styles.mono}>no sets listed yet</Text> : null}
+        {data.live === null ? <Text style={styles.mono}>loading…</Text> : null}
+        {data.live === false ? <Text style={styles.mono}>sample · not connected</Text> : null}
+        {data.live && !next ? <Text style={styles.mono}>no sets listed yet</Text> : null}
         {/* şimdi */}
         {next ? (
         <Pressable style={styles.hero} onPress={() => router.push(`/dj/${(live ?? next).dj}`)}>

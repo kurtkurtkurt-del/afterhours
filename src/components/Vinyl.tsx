@@ -11,6 +11,7 @@ export default function Vinyl({ size, label, spinning }: Props) {
   useEffect(() => {
     if (spinning) rot.set(withRepeat(withTiming(rot.get() + 360, { duration: 2400, easing: Easing.linear }), -1, false));
     else cancelAnimation(rot);
+    return () => cancelAnimation(rot);
   }, [spinning, rot]);
   const style = useAnimatedStyle(() => ({ transform: [{ rotate: `${rot.value}deg` }] }));
   const r = size / 2;

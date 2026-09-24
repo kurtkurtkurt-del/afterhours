@@ -71,12 +71,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (bad) return bad;
       const { data: cur } = await supabase.auth.getSession();
       if (cur.session?.user.is_anonymous) {
-        // anonim oturum hesaba dönüşür: kaydırmalar ve profil aynı kullanıcıda kalır
-        const { error } = await supabase.auth.updateUser({ email: email.trim(), password, data: city ? { city } : undefined });
+        // anonim oturum hesaba dönüşür: kaydırmalar ve profil aynı kullanıcıda kalır.
+        // e-posta onayı açıksa kullanıcı bağlantıya tıklayana kadar anonim kalır.
+        const { data, error } = await supabase.auth.updateUser({ email: email.trim(), password });
         if (error) {
-          if (/already|registered|exists/i.test(error.message)) return signIn(email, password);
+          if (/already|registered|exists/i.test(error.message)) {
+            return 'that email already has an account. sign in from the link below; what you kept as a guest stays behind';
+          }
           return plain(error.message);
         }
+        if (data.user?.is_anonymous || data.user?.new_email) return 'check your inbox to confirm your email';
         return null;
       }
       const { data, error } = await supabase.auth.signUp({ email: email.trim(), password, options: { data: city ? { city } : {} } });
@@ -84,6 +88,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         if (/already|registered|exists/i.test(error.message)) return signIn(email, password);
         return plain(error.message);
       }
+      // onay açıkken mevcut e-postaya sahte bir kullanıcı döner (kimliksiz): aslında hesap var, giriş dene
+      if (data.user && (data.user.identities?.length ?? 0) === 0) return signIn(email, password);
       if (!data.session) return 'check your inbox to confirm your email';
       return null;
     },

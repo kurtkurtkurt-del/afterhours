@@ -6,10 +6,12 @@ const photos: Record<string, number> = Object.fromEntries(localDjs.map((d) => [d
 const fallbackPhoto = localDjs[0].photo;
 
 export async function loadDjs(): Promise<{ djs: Dj[]; sets: DjSet[]; live: boolean }> {
-  const [a, b] = await Promise.all([
-    supabase.from('djs').select('slug,name,genre,sound,since,followers,photo_url,cities(name)').order('sort_order'),
+  const [a, b, c] = await Promise.all([
+    supabase.from('djs').select('id,slug,name,genre,sound,since,photo_url,cities(name)').order('sort_order'),
     supabase.from('dj_sets').select('venue,starts_at,hours,djs(slug)').gte('starts_at', new Date(Date.now() - 12 * 3600_000).toISOString()).order('starts_at'),
+    supabase.rpc('dj_follow_counts'),
   ]);
+  const counts = new Map<string, number>(((c.data ?? []) as { dj_id: string; n: number }[]).map((r) => [r.dj_id, Number(r.n)]));
   if (a.error || b.error || !a.data?.length) return { djs: localDjs, sets: localSets(), live: false };
   const djs: Dj[] = a.data.map((r) => ({
     id: r.slug as string,
@@ -18,7 +20,7 @@ export async function loadDjs(): Promise<{ djs: Dj[]; sets: DjSet[]; live: boole
     sound: r.sound as Dj['sound'],
     city: ((r as { cities?: { name?: string } | null }).cities?.name ?? '').toLowerCase(),
     since: (r.since as number) ?? 0,
-    followers: fmt(r.followers as number),
+    followers: fmt(counts.get(r.id as string) ?? 0),
     photo: photos[r.slug as string] ?? fallbackPhoto,
     photoUrl: (r.photo_url as string | null) ?? null,
   }));

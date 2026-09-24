@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import Button from '@/components/Button';
 import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
@@ -42,6 +42,9 @@ const SwipeCard = forwardRef<CardHandle, {
   const y = useSharedValue(0);
   const promoted = useSharedValue(active ? 1 : 0);
   useImperativeHandle(ref, () => ({ promote: () => promoted.set(1) }), [promoted]);
+  useEffect(() => {
+    if (!active) promoted.set(0); // geri alınıp arkaya dönen kart yeniden küçük
+  }, [active, promoted]);
 
   const pan = Gesture.Pan()
     .enabled(active)

@@ -19,9 +19,10 @@ export type Profile = {
 
 export function useProfile() {
   const { session } = useAuth();
+  const uid = session?.user.id;
   const [profile, setProfile] = useState<Profile | null>(null);
   useEffect(() => {
-    if (!session) return;
+    if (!uid) return;
     let cancelled = false;
     supabase.rpc('profile_me').then(({ data }) => {
       if (cancelled) return;
@@ -31,6 +32,6 @@ export function useProfile() {
     return () => {
       cancelled = true;
     };
-  }, [session]);
+  }, [uid]);
   return session ? profile : null;
 }

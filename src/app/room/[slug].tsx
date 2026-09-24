@@ -26,6 +26,11 @@ export default function RoomScreen() {
   const [posts, setPosts] = useState<RoomPost[]>([]);
   const [text, setText] = useState('');
   const [note, setNote] = useState<string | null>(null);
+  const [, setTick] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setTick((n) => n + 1), 60_000); // kalan süre dakikada bir tazelenir
+    return () => clearInterval(t);
+  }, []);
 
   const load = useCallback(async () => {
     const i = await roomInfo(slug).catch(() => null);

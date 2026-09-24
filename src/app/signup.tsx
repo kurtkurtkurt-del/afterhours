@@ -31,30 +31,30 @@ export default function SignUpScreen() {
     const guest = !email.trim() && !password;
     setBusy(true);
     setNote(null);
-    const err = guest
-      ? await signInAsGuest()
-      : mode === 'in'
-        ? await signIn(email.trim(), password)
-        : await signUp(email.trim(), password, Storage.getItemSync('city') ?? undefined);
-    if (guest && err) {
-      // anonim giriş panelde kapalıysa yine de içeri al; kaydırmalar kaydolmaz
+    try {
+      const err = guest
+        ? await signInAsGuest()
+        : mode === 'in'
+          ? await signIn(email.trim(), password)
+          : await signUp(email.trim(), password, Storage.getItemSync('city') ?? undefined);
+      if (guest) {
+        // anonim giriş panelde kapalıysa yine de içeri al; kaydırmalar kaydolmaz
+        router.replace('/yours');
+        return;
+      }
+      if (err) {
+        setNote(err);
+        return;
+      }
+      // handle seçilmediyse kayıt bitmemiş sayılır: önce o adım
+      const { data } = await supabase.rpc('profile_me');
+      const row = Array.isArray(data) ? data[0] : data;
+      router.replace(row?.handle ? '/yours' : '/welcome');
+    } catch (e) {
+      setNote(String((e as Error).message ?? e).toLowerCase());
+    } finally {
       setBusy(false);
-      router.replace('/yours');
-      return;
     }
-    setBusy(false);
-    if (err) {
-      setNote(err);
-      return;
-    }
-    if (guest) {
-      router.replace('/yours');
-      return;
-    }
-    // handle seçilmediyse kayıt bitmemiş sayılır: önce o adım
-    const { data } = await supabase.rpc('profile_me');
-    const row = Array.isArray(data) ? data[0] : data;
-    router.replace(row?.handle ? '/yours' : '/welcome');
   };
 
   return (

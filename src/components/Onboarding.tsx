@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
-import Animated, { Easing, interpolate, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withTiming, type SharedValue } from 'react-native-reanimated';
+import Animated, { Easing, cancelAnimation, interpolate, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withTiming, type SharedValue } from 'react-native-reanimated';
 import Button from '@/components/Button';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -13,6 +13,7 @@ type Props = { onDone: () => void };
 export default function Onboarding({ onDone }: Props) {
   const { width } = useWindowDimensions();
   const [page, setPage] = useState(0);
+  const pager = useRef<ScrollView>(null);
   const steps = [
     { key: 'deck', demo: <DeckDemo />, h: 'one card. one night.', p: 'swipe right to keep it, left and it never comes back. no search, no feed.' },
     { key: 'card', demo: <CardDemo />, h: 'go, and it becomes a card.', p: 'check in at the door. the night turns into an afterhours card, yours to keep.' },
@@ -29,7 +30,7 @@ export default function Onboarding({ onDone }: Props) {
       <Pressable onPress={onDone} hitSlop={12} style={styles.skip}>
         <Text style={styles.skipText}>skip</Text>
       </Pressable>
-      <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false} onMomentumScrollEnd={onEnd} style={styles.pager}>
+      <ScrollView ref={pager} horizontal pagingEnabled showsHorizontalScrollIndicator={false} onMomentumScrollEnd={onEnd} style={styles.pager}>
         {steps.map((s) => (
           <View key={s.key} style={[styles.step, { width }]}>
             <View style={styles.demo}>{s.demo}</View>
@@ -44,7 +45,15 @@ export default function Onboarding({ onDone }: Props) {
         ))}
       </View>
       <View style={styles.cta}>
-        <Button label={last ? 'pick your city' : 'next'} onPress={last ? onDone : undefined} kind={last ? 'fill' : 'line'} />
+        <Button
+          label={last ? 'pick your city' : 'next'}
+          kind={last ? 'fill' : 'line'}
+          onPress={() => {
+            if (last) return onDone();
+            pager.current?.scrollTo({ x: (page + 1) * width, animated: true });
+            setPage(page + 1);
+          }}
+        />
       </View>
     </View>
   );
@@ -55,6 +64,7 @@ function useLoop(ms: number, delay = 0) {
   const v = useSharedValue(0);
   useEffect(() => {
     v.set(withDelay(delay, withRepeat(withTiming(1, { duration: ms, easing: Easing.linear }), -1, false)));
+    return () => cancelAnimation(v);
   }, [v, ms, delay]);
   return v;
 }

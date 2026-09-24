@@ -13,7 +13,7 @@ import { handleStatus, saveProfile } from '@/data/settings';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-const words: Record<string, string> = { ok: 'available', yours: 'that is you', format: '3–20 letters, numbers or _', taken: 'taken', signedout: 'sign in first', nocity: 'unknown city' };
+const words: Record<string, string> = { ok: 'available', yours: 'that is you', empty: 'pick a handle first', format: '3–20 letters, numbers or _', taken: 'taken', signedout: 'sign in first', nocity: 'unknown city' };
 
 // kaydın son adımı: handle (arkadaşlar seni bununla bulur), isim, şehir.
 // web sitesiyle aynı kural: handle seçilince kayıt tamamlanmış sayılır.
@@ -30,8 +30,12 @@ export default function WelcomeScreen() {
 
   useEffect(() => {
     if (!handle) return;
-    const t = setTimeout(() => handleStatus(handle).then((s) => setStatus(words[s] ?? s)).catch(() => {}), 250);
-    return () => clearTimeout(t);
+    let live = true;
+    const t = setTimeout(() => handleStatus(handle).then((s) => live && setStatus(words[s] ?? s)).catch(() => {}), 250);
+    return () => {
+      live = false;
+      clearTimeout(t);
+    };
   }, [handle]);
 
   const done = async () => {

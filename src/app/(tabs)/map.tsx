@@ -6,7 +6,7 @@ import * as Location from 'expo-location';
 import MapWeb, { type Pin } from '@/components/MapWeb';
 import Storage from 'expo-sqlite/kv-store';
 import SoundCorner from '@/components/SoundCorner';
-import { TAB_BAR_SPACE } from '@/components/TabBar';
+import { useTabBarSpace } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
 import { fetchNear, type NearNight } from '@/data/near';
 import { swipe } from '@/data/deck';
@@ -29,6 +29,7 @@ const short: Record<string, string> = { rave: 'rv', 'club-night': 'cn', konzert:
 // harita: konum izni, webview içinde leaflet + carto karoları (anahtarsız), yakındaki geceler kare pin.
 export default function MapScreen() {
   const { session } = useAuth();
+  const tabSpace = useTabBarSpace();
   const [me, setMe] = useState<[number, number] | null>(null);
   const [denied, setDenied] = useState(false);
   const [km, setKm] = useState(3);
@@ -49,9 +50,13 @@ export default function MapScreen() {
         setDenied(true);
         return;
       }
-      const pos = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
-      if (cancelled) return;
-      setMe([pos.coords.latitude, pos.coords.longitude]);
+      try {
+        const pos = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
+        if (cancelled) return;
+        setMe([pos.coords.latitude, pos.coords.longitude]);
+      } catch {
+        if (!cancelled) setDenied(true); // izin var ama konum alınamadı: şehir merkezi
+      }
     })();
     return () => {
       cancelled = true;
@@ -68,6 +73,7 @@ export default function MapScreen() {
         if (cancelled) return;
         setRows(r.rows);
         setMissing(r.missing);
+        setPicked((p) => (p && r.rows.some((x) => x.id === p.id) ? p : null));
       });
     return () => {
       cancelled = true;
@@ -103,7 +109,7 @@ export default function MapScreen() {
 
       {/* seçili gece */}
       {picked && (
-        <View style={[styles.sheet, { bottom: TAB_BAR_SPACE + 4 }]}>
+        <View style={[styles.sheet, { bottom: tabSpace + 4 }]}>
           <Text style={styles.mono}>
             {picked.type_name} · {picked.distance_km < 1 ? `${Math.round(picked.distance_km * 1000)} m` : `${picked.distance_km.toFixed(1)} km`}
           </Text>

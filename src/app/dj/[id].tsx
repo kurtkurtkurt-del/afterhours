@@ -33,7 +33,20 @@ export default function DjScreen() {
     };
   }, [id, session]);
 
-  const dj = data.djs.find((d) => d.id === id) ?? localDjs.find((d) => d.id === id) ?? localDjs[0];
+  const dj = data.djs.find((d) => d.id === id) ?? localDjs.find((d) => d.id === id);
+  if (!dj) {
+    return (
+      <View style={styles.root}>
+        <StatusBar style="light" />
+        <View style={styles.band}>
+          <BackButton />
+        </View>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <Text style={styles.mono}>no such dj</Text>
+        </View>
+      </View>
+    );
+  }
   const tracks = tracksFor(dj);
   const photos = localDjs.filter((d) => d.id !== dj.id).slice(0, 4).map((d) => d.photo); // yer tutucu: gecelerin fotoğrafları
   const next = data.sets.find((s) => s.dj === dj.id);

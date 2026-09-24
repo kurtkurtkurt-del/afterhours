@@ -13,6 +13,7 @@ import { useAuth } from '@/auth/AuthContext';
 import { useProfile } from '@/data/profile';
 import { collection as samples } from '@/content/collection';
 import { myCards, toCardData, type CardRow } from '@/data/checkin';
+import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import type { NightCardData } from '@/content/cardsgen';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -28,14 +29,16 @@ export default function AccountScreen() {
   const [open, setOpen] = useState<number | null>(null);
   const [side, setSide] = useState<'front' | 'back'>('front');
   const [cards, setCards] = useState<CardRow[] | null>(null);
+  const tick = useRefreshOnFocus();
+  const uid = session?.user.id;
   useEffect(() => {
-    if (!session) return;
+    if (!uid) return;
     let cancelled = false;
     myCards().then((c) => !cancelled && setCards(c)).catch(() => {});
     return () => {
       cancelled = true;
     };
-  }, [session]);
+  }, [uid, tick]);
   // gerçek kartlar; hiç yoksa örnekler, üstünde "sample" yazısıyla
   const real = cards && cards.length > 0;
   const collection: NightCardData[] = real ? cards.map(toCardData) : samples;
@@ -113,7 +116,7 @@ export default function AccountScreen() {
       {/* kart büyütme: dokununca ön/arka döner */}
       <Modal visible={open !== null} transparent animationType="fade" onRequestClose={() => setOpen(null)}>
         <Pressable style={styles.dim} onPress={() => setOpen(null)}>
-          {open !== null && (
+          {open !== null && collection[open] && (
             <Pressable onPress={() => setSide((s) => (s === 'front' ? 'back' : 'front'))}>
               <AfterhoursCard data={collection[open]} index={open} side={side} width={Math.min(width - 48, 360)} />
             </Pressable>

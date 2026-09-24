@@ -92,11 +92,12 @@ export default function FriendScreen() {
         <Section title="together" />
         <Row label="nights out together" right={<Value text={String(Math.max(0, f.kept - 1))} />} />
 
+        {sent ? <Text style={styles.note}>{sent}</Text> : null}
         <Section title="" />
         {rf?.pending === 'incoming' ? (
-          <Button label="accept" onPress={() => friendAccept(rf.id).then(() => router.back())} />
+          <Button label="accept" onPress={() => friendAccept(rf.id).then(() => router.back()).catch((e) => setSent(String(e.message).toLowerCase()))} />
         ) : null}
-        <Pressable hitSlop={8} onPress={() => rf && friendRemove(rf.id).then(() => router.back())}>
+        <Pressable hitSlop={8} onPress={() => rf && friendRemove(rf.id).then(() => router.back()).catch((e) => setSent(String(e.message).toLowerCase()))}>
           <Text style={styles.remove}>{rf?.pending === 'outgoing' ? 'cancel request' : 'remove friend'}</Text>
         </Pressable>
       </ScrollView>

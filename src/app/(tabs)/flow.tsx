@@ -6,7 +6,7 @@ import Storage from 'expo-sqlite/kv-store';
 import Deck, { type DeckHandle } from '@/components/Deck';
 import PickerSheet from '@/components/PickerSheet';
 import SoundCorner from '@/components/SoundCorner';
-import { TAB_BAR_SPACE } from '@/components/TabBar';
+import { useTabBarSpace } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
 import { useCities } from '@/data/cities';
 import { useEventTypes } from '@/data/types';
@@ -29,6 +29,7 @@ export default function FlowScreen() {
   });
   const [sheet, setSheet] = useState<'city' | 'type' | 'when' | null>(null);
   const deck = useRef<DeckHandle>(null);
+  const tabSpace = useTabBarSpace();
   const [swiped, setSwiped] = useState(0);
   const [reloads, setReloads] = useState(0);
 
@@ -71,6 +72,7 @@ export default function FlowScreen() {
 
   const pickCity = (id: string) => {
     const v = id === '*' ? null : id;
+    setSwiped(0);
     setCity(v);
     if (v) {
       Storage.setItemSync('city', v);
@@ -82,6 +84,7 @@ export default function FlowScreen() {
   };
   const pickType = (id: string) => {
     const v = id === '*' ? null : id;
+    setSwiped(0);
     setType(v);
     if (v) Storage.setItemSync('type', v);
     else Storage.removeItemSync('type');
@@ -89,6 +92,7 @@ export default function FlowScreen() {
 
   const pickWhen = (id: string) => {
     const v = id === '*' ? null : (id as When);
+    setSwiped(0);
     setWhen(v);
     if (v) Storage.setItemSync('when', v);
     else Storage.removeItemSync('when');
@@ -121,7 +125,7 @@ export default function FlowScreen() {
         </Pressable>
       )}
 
-      <View style={styles.stage}>
+      <View style={[styles.stage, { marginBottom: tabSpace - 14 }]}>
         {error ? (
           <Text style={styles.note}>{error}</Text>
         ) : nights ? (
@@ -168,6 +172,6 @@ const styles = StyleSheet.create({
   pressed: { opacity: 0.6 },
   undo: { position: 'absolute', right: brand.left, top: brand.top + 30, zIndex: 1 },
   undoText: { fontFamily: fonts.regular, fontSize: 12, letterSpacing: 0.2, color: colors.mute },
-  stage: { flex: 1, marginTop: brand.top + 60, marginHorizontal: 14, marginBottom: TAB_BAR_SPACE - 14 },
+  stage: { flex: 1, marginTop: brand.top + 60, marginHorizontal: 14 },
   note: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute, textAlign: 'center', marginTop: 40 },
 });

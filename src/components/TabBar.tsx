@@ -8,7 +8,12 @@ import { colors } from '@/theme/tokens';
 // ortadaki sekme dolu kâğıt dairede. başka bir tasarıma geçmek = bu dosyayı değiştirmek;
 // tetikleyiciler (tabs)/_layout.tsx içinde kalır.
 
-export const TAB_BAR_SPACE = 100; // sayfaların altta bırakması gereken boşluk
+export const TAB_BAR_SPACE = 100; // sayfaların altta bırakması gereken boşluk (inset hariç)
+// inset dahil: çentikli telefonlarda çubuk daha yukarıda durur
+export function useTabBarSpace() {
+  const insets = useSafeAreaInsets();
+  return TAB_BAR_SPACE + insets.bottom;
+}
 
 type ItemProps = PressableProps & { icon: IconName; isFocused?: boolean; raised?: boolean };
 

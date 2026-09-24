@@ -54,16 +54,25 @@ export default function SettingsScreen() {
   const [settings, setSettings] = useState<Settings | null>(null);
   const [sheet, setSheet] = useState<'city' | 'sound' | 'locale' | null>(null);
 
+  const uid = session?.user.id;
   useEffect(() => {
-    if (!session) return;
-    fetchSettings(session.user.id).then((s) => s && setSettings(s));
-  }, [session]);
+    if (!uid) return;
+    let live = true;
+    fetchSettings(uid).then((s) => live && s && setSettings(s));
+    return () => {
+      live = false;
+    };
+  }, [uid]);
 
   // handle her tuşta sorulur
   useEffect(() => {
     if (!handle) return;
-    const t = setTimeout(() => handleStatus(handle).then((s) => setStatus(handleWords[s] ?? s)).catch(() => {}), 250);
-    return () => clearTimeout(t);
+    let live = true; // geç gelen eski cevap yeni değeri ezmesin
+    const t = setTimeout(() => handleStatus(handle).then((s) => live && setStatus(handleWords[s] ?? s)).catch(() => {}), 250);
+    return () => {
+      live = false;
+      clearTimeout(t);
+    };
   }, [handle]);
 
   const save = async () => {
@@ -80,10 +89,10 @@ export default function SettingsScreen() {
   };
 
   const patch = (p: Partial<Settings>) => {
-    if (!session || !settings) return;
-    const next = { ...settings, ...p };
-    setSettings(next);
-    saveSettings(session.user.id, p).catch(() => setSettings(settings));
+    if (!uid || !settings) return;
+    setSettings((cur) => (cur ? { ...cur, ...p } : cur));
+    // olmazsa sunucudaki gerçek hali geri çek; iki hızlı dokunuş birbirini bozmasın
+    saveSettings(uid, p).catch(() => fetchSettings(uid).then((s) => s && setSettings(s)));
   };
 
   const confirmDelete = () =>
@@ -92,7 +101,11 @@ export default function SettingsScreen() {
       {
         text: 'delete',
         style: 'destructive',
-        onPress: () => deleteAccount().then(() => signOut()).then(() => router.replace('/')),
+        onPress: () =>
+          deleteAccount()
+            .then(() => signOut())
+            .then(() => router.replace('/'))
+            .catch((e) => Alert.alert('could not delete', String(e.message ?? e).toLowerCase())),
       },
     ]);
 
@@ -170,7 +183,19 @@ export default function SettingsScreen() {
         ) : null}
         <Row label="email" right={<Value text={session?.user.email ?? (isAnonymous ? 'guest' : 'none')} />} />
         {session ? <Row label="download my data" hint="everything we hold about you, as json" onPress={doExport} /> : null}
-        {session ? <Row label="sign out" onPress={() => signOut().then(() => router.replace('/'))} /> : null}
+        {session && !isAnonymous ? <Row label="sign out" onPress={() => signOut().then(() => router.replace('/'))} /> : null}
+        {isAnonymous ? (
+          <Row
+            label="leave guest mode"
+            hint="a guest has no password: what you kept cannot be recovered afterwards"
+            onPress={() =>
+              Alert.alert('leave guest mode', 'your kept nights and cards on this device will be lost. add an email first to keep them.', [
+                { text: 'stay', style: 'cancel' },
+                { text: 'leave', style: 'destructive', onPress: () => signOut().then(() => router.replace('/')) },
+              ])
+            }
+          />
+        ) : null}
         {session ? <Row label="delete account" hint="comments stay, name becomes “someone”" onPress={confirmDelete} /> : null}
 
         <Section title="about" />
