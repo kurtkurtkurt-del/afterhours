@@ -1,6 +1,6 @@
 import { whenLabel } from '@/data/when';
 import { useEffect, useState } from 'react';
-import { Image, Linking, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image, Linking, Modal, Pressable, ScrollView, Share, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import * as Location from 'expo-location';
 import AfterhoursCard from '@/components/AfterhoursCard';
 import { checkIn, myCards, reason, roomInfo, toCardData, type CardRow, type RoomInfo } from '@/data/checkin';
@@ -12,11 +12,15 @@ import Button from '@/components/Button';
 import SoundCorner from '@/components/SoundCorner';
 import { useAuth } from '@/auth/AuthContext';
 import { supabase } from '@/lib/supabase';
-import { swipe, type Night } from '@/data/deck';
+import { SITE, swipe, type Night } from '@/data/deck';
+import { fetchComments, type Comment } from '@/data/comments';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const fallback = require('../../../assets/intro/concert.jpg');
+
+// bir gecenin web sayfası; paylaşılan bağlantı budur
+const webUrl = (slug: string) => `${SITE}explore/event/index.html?slug=${encodeURIComponent(slug)}`;
 
 // gece sayfası: fotoğraf, künye, metin, mekân; keep ve varsa bilet.
 export default function NightScreen() {
@@ -31,6 +35,7 @@ export default function NightScreen() {
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState<string | null>(null);
   const [card, setCard] = useState<CardRow | null>(null);
+  const [talk, setTalk] = useState<Comment[] | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -42,7 +47,11 @@ export default function NightScreen() {
       .then(({ data, error }) => {
         if (cancelled) return;
         if (error) setNote(String(error.message).toLowerCase());
-        else if (data) setNight(data as Night);
+        else if (data) {
+          setNight(data as Night);
+          // beforehours, gece bilinir bilinmez; hata sessizce boş liste
+          fetchComments((data as Night).id).then((c) => { if (!cancelled) setTalk(c); }).catch(() => { if (!cancelled) setTalk([]); });
+        }
         else setMissing(true);
       });
     return () => {
@@ -126,7 +135,17 @@ export default function NightScreen() {
               </View>
             </View>
             {note ? <Text style={styles.mono}>{note}</Text> : null}
-            {night.ticket_url ? <Button label="ticket" kind="line" onPress={() => Linking.openURL(night.ticket_url!)} /> : null}
+            <View style={styles.actions}>
+              {night.ticket_url ? (
+                <View style={{ flex: 1 }}>
+                  <Button label="ticket" kind="line" onPress={() => Linking.openURL(night.ticket_url!)} />
+                </View>
+              ) : null}
+              <View style={{ flex: 1 }}>
+                {/* paylaşım: gecenin web sayfası. sitedeki "open in the app" geri getirir. */}
+                <Button label="share" kind="line" onPress={() => Share.share({ message: `${night.title.toLowerCase()} · ${webUrl(night.slug)}`, url: webUrl(night.slug) })} />
+              </View>
+            </View>
             {room ? (
               <Text style={styles.mono}>
                 {room.who_count} checked in · {room.frozen ? 'room frozen' : 'room open'}
@@ -143,6 +162,32 @@ export default function NightScreen() {
             </View>
 
             <Text style={styles.mono}>the room opens at check-in and freezes 48h after the night</Text>
+
+            {/* beforehours: geceden önce söylenenler. web'de yazılır, burada (şimdilik) okunur. */}
+            <View style={styles.talk}>
+              <Text style={styles.mono}>beforehours</Text>
+              {talk === null ? (
+                <Text style={styles.talkNone}>loading…</Text>
+              ) : talk.length === 0 ? (
+                <Text style={styles.talkNone}>nobody has said anything yet.</Text>
+              ) : (
+                talk.map((t) => (
+                  <View key={t.id} style={styles.topic}>
+                    <Text style={styles.talkWho}>{t.who} · {t.when}</Text>
+                    <Text style={styles.talkBody}>{t.body}</Text>
+                    {t.replies.map((r, i) => (
+                      <View key={i} style={styles.reply}>
+                        <Text style={styles.talkWho}>{r.who} · {r.when}</Text>
+                        <Text style={styles.talkBody}>{r.body}</Text>
+                      </View>
+                    ))}
+                  </View>
+                ))
+              )}
+              <Pressable onPress={() => Linking.openURL(webUrl(night.slug))}>
+                <Text style={styles.talkLink}>say something on the web</Text>
+              </Pressable>
+            </View>
           </View>
         </ScrollView>
       ) : null}
@@ -200,6 +245,13 @@ const styles = StyleSheet.create({
   rowV: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper2, flex: 1, textAlign: 'right' },
   dim: { flex: 1, backgroundColor: 'rgba(22,21,18,0.94)', alignItems: 'center', justifyContent: 'center', gap: 18 },
   cardLabel: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.spot },
+  talk: { marginTop: 28, paddingTop: 18, borderTopWidth: 1, borderTopColor: colors.ink3, gap: 10 },
+  topic: { gap: 4, paddingTop: 8 },
+  reply: { marginLeft: 14, paddingTop: 6, gap: 2 },
+  talkWho: { fontFamily: fonts.regular, fontSize: 11, color: colors.paper, opacity: 0.5 },
+  talkBody: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 21, color: colors.paper },
+  talkNone: { fontFamily: fonts.regular, fontSize: 14, color: colors.paper, opacity: 0.5 },
+  talkLink: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper, textDecorationLine: 'underline', marginTop: 4 },
   roomBtn: { backgroundColor: colors.paper, paddingVertical: 10, paddingHorizontal: 18 },
   roomBtnText: { fontFamily: fonts.medium, fontSize: 14, color: colors.ink },
 });

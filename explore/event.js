@@ -213,6 +213,24 @@
     right.appendChild(ticket);
     right.appendChild(el("p", "cs-ticket-sub", sub));
 
+    /* The same night in the app: check in, keep, the room. The scheme
+       link opens the app when it is installed; the line under it is
+       the way to get it when it is not. */
+    const APP = (window.AH_CONFIG && AH_CONFIG.app) || {};
+    if (e.slug && APP.scheme) {
+      const inApp = el("a", "cs-ticket cs-app", "open in the app");
+      inApp.href = APP.scheme + "night/" + encodeURIComponent(e.slug);
+      right.appendChild(inApp);
+      const get = el("p", "cs-ticket-sub");
+      get.appendChild(document.createTextNode("check in, keep it, the room · "));
+      const link = el("a", null, "get the app");
+      link.href = APP.android || "../../help/index.html";
+      link.target = "_blank";
+      link.rel = "noopener";
+      get.appendChild(link);
+      right.appendChild(get);
+    }
+
     /* beforehours: what people said about this night. Live, from the
        database, with a place to write; off, the pool for its kind. */
     const comments = el("section", "cs-comments");

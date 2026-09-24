@@ -12,4 +12,12 @@ window.AH_CONFIG = {
   url: "https://elmnnyxgavwjxvwjgjcu.supabase.co",
   anonKey: "sb_publishable_rrXU52Q7NnESxbEcp-6WfA_612THnnN",
   city: "munchen",
+  /* Where the app lives. The Android listing is the closed test for now;
+     the iOS entry arrives with the App Store. The scheme opens a night in
+     the app from its web page: afterhours://night/<slug>. */
+  app: {
+    android: "https://play.google.com/store/apps/details?id=app.afterhours.android",
+    ios: null,
+    scheme: "afterhours://",
+  },
 };

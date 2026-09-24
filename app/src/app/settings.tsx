@@ -1,3 +1,4 @@
+import { SITE } from '@/data/deck';
 import { useEffect, useState } from 'react';
 import { Alert, KeyboardAvoidingView, Linking, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Constants, { ExecutionEnvironment } from 'expo-constants';
@@ -200,6 +201,7 @@ export default function SettingsScreen() {
 
         <Section title="about" />
         <Row label="show the intro again" hint="the six steps you saw on first visit" onPress={() => { Storage.removeItemSync('intro.seen'); router.push('/explore'); }} />
+        <Row label="afterhours on the web" hint="the wall, every night's page, your account" onPress={() => Linking.openURL(SITE)} />
         <Row label="credits" hint="music, map, type" onPress={() => router.push('/credits')} />
         <Row label="privacy" hint="what we keep and why" onPress={() => Linking.openURL('https://kurtkurtkurt-del.github.io/afterhours/datenschutz/')} />
         <Row label="version" right={<Value text={`${Constants.expoConfig?.version ?? '0.1.0'} · ${Constants.executionEnvironment === ExecutionEnvironment.StoreClient ? 'expo go' : 'build'}`} />} />

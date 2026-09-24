@@ -1818,6 +1818,21 @@ body[data-screen="5"] .sound { opacity: 0; pointer-events: none; }
 
 .map-preview:hover { border-bottom-color: var(--black); }
 
+/* Under "preview.": the way to the app, small */
+.map-get {
+  pointer-events: auto;
+  margin-top: 14px;
+  font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--black);
+  opacity: 0.45;
+  text-decoration: none;
+}
+
+.map-get:hover { opacity: 1; }
+
 .map-schema { width: 100%; height: 100%; display: block; }
 
 /* --- the lines of the schematic --- */
@@ -2756,6 +2771,20 @@ img.cs-poster {
   letter-spacing: -0.01em;
   text-align: center;
   text-decoration: none;
+}
+
+/* The second button, for the app: same shape, drawn with a rule */
+.cs-app {
+  margin-top: 12px;
+  background: none;
+  color: var(--black);
+  border: 1px solid var(--black);
+}
+
+.cs-ticket-sub a {
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .cs-ticket-sub {

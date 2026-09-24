@@ -505,12 +505,29 @@ hand around), `--profile production` (app bundle, auto-incrementing);
 `npx eas-cli submit` goes to the Play internal track. Nothing native is
 edited by hand: `ios/` and `android/` are generated.
 
-**The app and the site.** The app opens the site for three things — the
-poster SVGs (`SITE` in `data/deck.ts`), the password reset (`reset/`) and
-the privacy page (`datenschutz/`); the Play listing names `settings/` as
-the account-deletion page. The site points back with `get the app` on the
-landing and the three closed pages. Deep links (`afterhours://`, a night
-shared from the app opening its web page) are the next step.
+**The app and the site.** Both directions are wired:
+
+- *App → site.* `share` on a night page hands out that night's web address
+  (`explore/event/index.html?slug=…`). The app opens the site for the
+  poster SVGs (`SITE` in `data/deck.ts`), the password reset (`reset/`),
+  the privacy page (`datenschutz/`) and "afterhours on the web" in
+  settings → about; the Play listing names `settings/` as the
+  account-deletion page. The night page reads **beforehours** from
+  `comments_public` (`data/comments.ts`); writing still happens on the web
+  ("say something on the web").
+- *Site → app.* Every night page has **open in the app**
+  (`afterhours://night/<slug>` — the route `night/[slug]` answers it) with
+  "get the app" under it; the landing's footer screen and the three closed
+  pages carry `get the app` → the Play listing
+  (`AH_CONFIG.app` in `config.js` holds the addresses). `app.json`
+  declares an Android intent filter for
+  `https://kurtkurtkurt-del.github.io/afterhours/explore/event`, and
+  `app/src/app/+native-intent.ts` turns that address into `/night/<slug>`
+  when the app receives it. **Still to do:** Android only opens https
+  links without asking once `.well-known/assetlinks.json` on the site
+  carries the app's signing certificate — `npx eas-cli credentials` prints
+  the SHA-256, and the file goes at the site root; the iOS entry in
+  `AH_CONFIG.app` waits for the App Store.
 
 ### One vocabulary
 
@@ -697,7 +714,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" -not -path "./app/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **175**.
+The current version: **176**.
 
 The explore date filter is real (every synced night carries a true
 date): tonight / tomorrow / this weekend / this week / this month /
@@ -751,6 +768,7 @@ The order matters: each step closes the road the one before it opened.
 - [x] **Installable** — `manifest.webmanifest`, and the poster wall lazy-loads below the fold
 - [x] **The app** — `app/`: deck, night pages, map, yours, djs, check-in, the room, the collection, guest mode, background music; first closed test on Play
 - [x] **The web follows the app** — the wall instead of the deck, `friends/` `maps/` `djs/` closed, one vocabulary (§6), the landing's room and djs screens, the app in this repository
+- [x] **App and site linked** — share → web page, open in the app → `afterhours://night/<slug>`, get the app → Play, beforehours read in the app (§6)
 
 **Next (a suggested order)**
 
@@ -770,10 +788,9 @@ The order matters: each step closes the road the one before it opened.
    placeholder pool.
 5. **The third help number** — impossible before the card collection
    exists; the first two are live now.
-6. **The full link between app and site** — `get the app` pointing at the
-   Play listing, a share sheet in the app that opens the night's web page,
-   `afterhours://night/<slug>` opening the app from that page, and
-   beforehours readable in the app.
+6. **`assetlinks.json`** — so that a night's web address opens the app
+   without asking (§6, "The app and the site"); and writing beforehours
+   from the app.
 
 ---
 
