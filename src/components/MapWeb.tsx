@@ -27,7 +27,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   map.attributionControl.setPrefix(false);
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   var esri='https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
-  L.tileLayer(esri+'World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxNativeZoom:16,maxZoom:18,attribution:'&copy; Esri, HERE, Garmin, OpenStreetMap contributors'}).addTo(map);
+  L.tileLayer(esri+'World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxNativeZoom:16,maxZoom:18,attribution:'&copy; Esri, HERE, Garmin, OpenStreetMap contributors · v2'}).addTo(map);
   L.tileLayer(esri+'World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',{maxNativeZoom:16,maxZoom:18,opacity:.6}).addTo(map);
   var layer=L.layerGroup().addTo(map), meMarker=null, markers={};
   function post(m){window.ReactNativeWebView&&window.ReactNativeWebView.postMessage(JSON.stringify(m));}
@@ -70,6 +70,10 @@ export default function MapWeb({ lat, lng, km, me, pins, picked, onPick }: Props
     <WebView
       ref={ref}
       source={{ html }}
+      key={String(html.length)}
+      incognito
+      cacheEnabled={false}
+      cacheMode="LOAD_NO_CACHE"
       style={StyleSheet.absoluteFill}
       containerStyle={{ backgroundColor: '#161512' }}
       javaScriptEnabled
