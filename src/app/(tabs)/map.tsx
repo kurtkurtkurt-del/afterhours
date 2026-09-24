@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import RangeSlider from '@/components/RangeSlider';
 import { filterWhen, whens, type When } from '@/data/when';
+import { cityCentre, detectCity } from '@/data/geo';
+import { useCities } from '@/data/cities';
 import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
@@ -32,7 +34,10 @@ export default function MapScreen() {
   const { session } = useAuth();
   const tabSpace = useTabBarSpace();
   const [me, setMe] = useState<[number, number] | null>(null);
-  const [follow, setFollow] = useState<'me' | 'city'>('me'); // harita merkezi: ben mi, seçili şehir mi
+  const [follow, setFollow] = useState<'me' | 'city'>('me'); // harita merkezi: ben mi, bulunduğum şehir mi
+  const { cities } = useCities();
+  // bulunduğun şehir: konumdan bulunur; bulunamazsa kayıtlı şehir
+  const [here, setHere] = useState<{ slug: string; name: string; centre: [number, number] } | null>(null);
   const [denied, setDenied] = useState(false);
   const [km, setKm] = useState(3); // ağ isteği ve zoom bunu izler; sürgü bırakılınca değişir
   const [when, setWhen] = useState<When | null>(null);
@@ -42,9 +47,10 @@ export default function MapScreen() {
   const [picked, setPicked] = useState<NearNight | null>(null);
   const [kept, setKept] = useState<Record<string, boolean>>({});
 
-  const city = Storage.getItemSync('city') ?? 'munchen';
-  const cityCentre = CENTRES[city] ?? CENTRES.munchen;
-  const centre = follow === 'me' && me ? me : cityCentre;
+  const stored = Storage.getItemSync('city') ?? 'munchen';
+  const cityName = here?.name ?? stored;
+  const fallbackCentre = CENTRES[stored] ?? CENTRES.munchen;
+  const centre = follow === 'me' && me ? me : (here?.centre ?? fallbackCentre);
 
   useEffect(() => {
     let cancelled = false;
@@ -67,6 +73,25 @@ export default function MapScreen() {
       cancelled = true;
     };
   }, []);
+
+  // konum gelince bulunduğun şehri bul ve merkezini hesapla
+  const meLat = me?.[0];
+  const meLng = me?.[1];
+  useEffect(() => {
+    if (meLat === undefined || meLng === undefined || cities.length === 0) return;
+    let cancelled = false;
+    (async () => {
+      const c = await detectCity(meLat, meLng, cities);
+      const slug = c?.id ?? stored;
+      const name = c?.name ?? stored;
+      const centre = (await cityCentre(slug).catch(() => null)) ?? CENTRES[slug] ?? fallbackCentre;
+      if (!cancelled) setHere({ slug, name, centre });
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [meLat, meLng, cities.length]);
 
   const [lat, lng] = centre;
   const shown = useMemo(() => filterWhen(rows, when) as NearNight[], [rows, when]); // filtre türü daraltmaz, aynı satırlar
@@ -115,10 +140,10 @@ export default function MapScreen() {
           <Text style={[styles.chipText, follow === 'me' && me && styles.chipTextOn]}>{me ? 'near me' : denied ? 'location off' : 'locating…'}</Text>
         </Pressable>
         <Pressable onPress={() => setFollow('city')} style={[styles.chip, (follow === 'city' || !me) && styles.chipOn]}>
-          <Text style={[styles.chipText, (follow === 'city' || !me) && styles.chipTextOn]}>{city} centre</Text>
+          <Text style={[styles.chipText, (follow === 'city' || !me) && styles.chipTextOn]}>{cityName} centre</Text>
         </Pressable>
         <Text style={styles.count}>
-          {missing ? 'not live yet' : `${shown.length} ${follow === 'city' || !me ? `in ${city}` : 'near you'}`}
+          {missing ? 'not live yet' : `${shown.length} ${follow === 'city' || !me ? `in ${cityName}` : 'near you'}`}
         </Text>
       </View>
 
