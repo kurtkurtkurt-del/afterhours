@@ -1,3 +1,4 @@
+import { whenLabel } from '@/data/when';
 import { useEffect, useState } from 'react';
 import { Image, Linking, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import * as Location from 'expo-location';
@@ -136,7 +137,7 @@ export default function NightScreen() {
 
             <View style={styles.rows}>
               <Row k="where" v={night.venue_name ?? (night.source === 'ticketmaster' ? night.city_name : 'address opens at check-in')} />
-              <Row k="when" v={night.starts_at ? new Date(night.starts_at).toLocaleString('en-GB', { weekday: 'short', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }).toLowerCase() : (night.date_text ?? 'tba')} />
+              <Row k="when" v={night.starts_at ? whenLabel(night.starts_at) : (night.date_text ?? 'tba')} />
               <Row k="kind" v={night.type_name.toLowerCase()} />
               {night.starts_at_estimated ? <Row k="date" v="estimated" /> : null}
             </View>

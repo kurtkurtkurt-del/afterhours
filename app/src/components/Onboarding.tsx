@@ -17,7 +17,7 @@ export default function Onboarding({ onDone }: Props) {
   const steps = [
     { key: 'deck', demo: <DeckDemo />, h: 'one card. one night.', p: 'swipe right to keep it, left and it never comes back. no search, no feed.' },
     { key: 'card', demo: <CardDemo />, h: 'go, and it becomes a card.', p: 'check in at the door. the night turns into an afterhours card, yours to keep.' },
-    { key: 'room', demo: <RoomDemo />, h: 'the room closes in 48 hours.', p: 'who was there talks there: a voice note, two lines. then it freezes, forever.' },
+    { key: 'room', demo: <RoomDemo />, h: 'the room closes in 48 hours.', p: 'who was there talks there: two lines, a voice note (soon). then it freezes, forever.' },
     { key: 'friends', demo: <FriendsDemo />, h: 'see who is going.', p: 'your friends’ kept nights, who is coming, and a match when you both keep the same one.' },
     { key: 'map', demo: <MapDemo />, h: 'what is near you, right now.', p: 'the map shows the nights around you tonight. szene nights open their address at check-in.' },
     { key: 'djs', demo: <DjsDemo />, h: 'who is playing.', p: 'live now, later tonight, this week. their sets, their photos, their next night.' },

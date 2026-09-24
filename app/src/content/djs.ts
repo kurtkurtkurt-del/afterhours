@@ -7,14 +7,14 @@ export type Track = { title: string; where: string; date: string; length: string
 export type DjSet = { dj: string; venue: string; startsAt: Date; hours: number };
 
 export const djs: Dj[] = [
-  { id: 'mara-volt', name: 'mara volt', genre: 'techno', sound: 'techno', city: 'münih', since: 2023, followers: '1.2k', photo: require('../../assets/djs/mara-volt.jpg') },
-  { id: 'levent-ok', name: 'levent ok', genre: 'house', sound: 'house', city: 'münih', since: 2021, followers: '3.4k', photo: require('../../assets/djs/levent-ok.jpg') },
-  { id: 'nachtfalter', name: 'nachtfalter', genre: 'rave', sound: 'techno', city: 'münih', since: 2024, followers: '680', photo: require('../../assets/djs/nachtfalter.jpg') },
+  { id: 'mara-volt', name: 'mara volt', genre: 'techno', sound: 'techno', city: 'münchen', since: 2023, followers: '1.2k', photo: require('../../assets/djs/mara-volt.jpg') },
+  { id: 'levent-ok', name: 'levent ok', genre: 'house', sound: 'house', city: 'münchen', since: 2021, followers: '3.4k', photo: require('../../assets/djs/levent-ok.jpg') },
+  { id: 'nachtfalter', name: 'nachtfalter', genre: 'rave', sound: 'techno', city: 'münchen', since: 2024, followers: '680', photo: require('../../assets/djs/nachtfalter.jpg') },
   { id: 'ines-okur', name: 'ines okur', genre: 'deep house', sound: 'house', city: 'istanbul', since: 2022, followers: '2.1k', photo: require('../../assets/djs/ines-okur.jpg') },
-  { id: 'tuesday-club', name: 'tuesday club', genre: 'house', sound: 'house', city: 'münih', since: 2020, followers: '940', photo: require('../../assets/djs/tuesday-club.jpg') },
-  { id: 'dilan-k', name: 'dilan k.', genre: 'rap', sound: 'rap', city: 'münih', since: 2024, followers: '1.5k', photo: require('../../assets/djs/dilan-k.jpg') },
+  { id: 'tuesday-club', name: 'tuesday club', genre: 'house', sound: 'house', city: 'münchen', since: 2020, followers: '940', photo: require('../../assets/djs/tuesday-club.jpg') },
+  { id: 'dilan-k', name: 'dilan k.', genre: 'rap', sound: 'rap', city: 'münchen', since: 2024, followers: '1.5k', photo: require('../../assets/djs/dilan-k.jpg') },
   { id: 'orbit-9', name: 'orbit 9', genre: 'techno', sound: 'techno', city: 'berlin', since: 2019, followers: '5.2k', photo: require('../../assets/djs/orbit-9.jpg') },
-  { id: 'selin', name: 'selin', genre: 'house', sound: 'house', city: 'münih', since: 2025, followers: '310', photo: require('../../assets/djs/selin.jpg') },
+  { id: 'selin', name: 'selin', genre: 'house', sound: 'house', city: 'münchen', since: 2025, followers: '310', photo: require('../../assets/djs/selin.jpg') },
 ];
 
 export const djById = (id: string) => djs.find((d) => d.id === id)!;

@@ -1,9 +1,10 @@
 import type { Night } from '@/data/deck';
 
-export type When = 'tonight' | 'weekend' | 'week' | 'month';
+export type When = 'tonight' | 'tomorrow' | 'weekend' | 'week' | 'month';
 
 export const whens: { id: When; label: string }[] = [
   { id: 'tonight', label: 'tonight' },
+  { id: 'tomorrow', label: 'tomorrow' },
   { id: 'weekend', label: 'this weekend' },
   { id: 'week', label: 'this week' },
   { id: 'month', label: 'this month' },
@@ -22,6 +23,13 @@ export function windowFor(when: When, now = new Date()): [number, number] {
     if (end.getTime() <= t) end.setTime(end.getTime() + D);
     return [t - 6 * H, end.getTime()]; // 6 saat önce başlamış gece hâlâ "bu gece"
   }
+  if (when === 'tomorrow') {
+    // yarın 08:00 → öbür gün 08:00
+    const start = new Date(now);
+    start.setDate(now.getDate() + 1);
+    start.setHours(8, 0, 0, 0);
+    return [start.getTime(), start.getTime() + D];
+  }
   if (when === 'weekend') {
     // cuma 18:00 → pazartesi 06:00; hafta içiyse gelecek cuma
     const day = now.getDay(); // 0 pazar
@@ -38,6 +46,22 @@ export function windowFor(when: When, now = new Date()): [number, number] {
   }
   if (when === 'week') return [t - 6 * H, t + 7 * D];
   return [t - 6 * H, t + 31 * D];
+}
+
+// tarih ve saat, web ile aynı biçimde: "thu 26.09 · 20:00" / "thu 26.09"
+const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+const two = (n: number) => String(n).padStart(2, '0');
+export function dayLabel(iso: string | null): string {
+  if (!iso) return 'tba';
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return 'tba';
+  return `${DAYS[d.getDay()]} ${two(d.getDate())}.${two(d.getMonth() + 1)}`;
+}
+export function whenLabel(iso: string | null): string {
+  if (!iso) return 'tba';
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return 'tba';
+  return `${dayLabel(iso)} · ${two(d.getHours())}:${two(d.getMinutes())}`;
 }
 
 // tarihi olmayan geceler ("sommer 2027", "mittwochs") pencereye sığmaz, elenir.

@@ -3,13 +3,14 @@ import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useAuth } from '@/auth/AuthContext';
 import { friendsKept, friendsList, kept, type FriendKept, type FriendRow } from '@/data/friends';
 import { friendsLive, type LiveFriend } from '@/data/checkin';
+import { dayLabel } from '@/data/when';
 
 // yours ekranının verisi: arkadaşlar, canlı olanlar, keep'ledikleri geceler, eşleşmeler.
 export type YoursNight = { id: string; slug: string; title: string; venue: string; when: string; image: string | null; friends: string[] };
 export type YoursFriend = { id: string; name: string; handle: string | null; live?: string; kept: number; pending?: 'incoming' | 'outgoing' };
 export type YoursMatch = { friend: string; night: string };
 
-const day = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString('en-GB', { weekday: 'short', day: '2-digit', month: '2-digit' }).toLowerCase() : 'tba');
+const day = (iso: string | null) => dayLabel(iso);
 // friends_kept 'friend' sütunu handle'ı önce alır; her yerde aynı anahtar
 const nameOf = (f: { display_name: string | null; handle: string | null }) => (f.handle ?? f.display_name ?? 'a friend').toLowerCase();
 

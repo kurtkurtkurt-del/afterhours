@@ -1,15 +1,22 @@
 # afterhours
 
-**[kurtkurtkurt-del.github.io/afterhours](https://kurtkurtkurt-del.github.io/afterhours/)**
+**find your night. one card at a time.**
 
-A site for finding your night in Munich (and Istanbul): rave, club night,
-konzert, festival, meetup, hausparty. One card, one night, swipe right to
-keep it.
+Three things in one repository, sharing one Supabase project:
 
-> **This file is the project's only reference.** It is updated after every
-> change — a new page, a new script, a new rule gets written down here too.
-> Someone arriving cold (or you in six months) should be able to read only
-> this and carry on.
+| Where | What |
+|---|---|
+| `/` (this folder) | **The website** — [kurtkurtkurt-del.github.io/afterhours](https://kurtkurtkurt-del.github.io/afterhours/). Plain HTML/CSS/JS, no build. The landing, the wall, the night pages, the account. |
+| `app/` | **The app** — Expo / React Native, Android first. The deck, the map, yours, the collection, the djs, check-in and the room. §6 |
+| `backend/` | **The database** — the SQL, the tests, the Ticketmaster sync, the backup. §8–§9 |
+
+A night: rave, club night, konzert, festival, meetup, hausparty. Munich
+first, Istanbul next, and the cities the sync reaches.
+
+> **This file is the project's only reference** for all three. It is
+> updated after every change — a new page, a new screen, a new rule gets
+> written down here too. Someone arriving cold (or you in six months)
+> should be able to read only this and carry on.
 
 ---
 
@@ -18,35 +25,51 @@ keep it.
 The product in three sentences:
 
 1. **There is no search.** Anywhere. A night is not the thing you look for,
-   it is the thing that comes to you. The deck hands you one card: swipe
-   right and you keep it, swipe left and you never see it again.
+   it is the thing that comes to you. In the app the deck hands you one
+   card: swipe right and you **keep** it, swipe left and you **let it go**.
+   On the web the same nights hang on **the wall**, soonest first.
 2. **What matters is not the night but the continuity.** Every night you go
    to turns into an *afterhours card*: the sound of that night, the talk,
    who was there. The collection holds the past; "now and next" lives
    somewhere else.
-3. **A page does not sell you a night.** The event page does not say "here
+3. **A page does not sell you a night.** The night page does not say "here
    is what is on tonight", it says "this is how many times it has been
-   you". There is a ticket button, but it is not the centre of the page.
+   you". There is a ticket button — one word, `ticket` — but it is not the
+   centre of the page.
+
+**Two surfaces, one product.** The app is where the night happens: the
+deck, the map, who's coming, check-in, the room, the collection, the djs.
+The web is the door and the archive: the landing, the wall, every night's
+page with beforehours, the account and its settings — and for what lives
+in the app, a page that says so (`friends/`, `maps/`, `djs/`: "only
+available in the app."). The words are the same on both sides; the list
+is in §6.
 
 ### The spirit
 
-- Black and white. Colour lives only in the posters and the cards.
+- Black and white on the web (`#000` on `#fff`); ink on paper in the app
+  (`#161512` on `#F3F1EC`, one blue `#2B3ECF`). Different on purpose.
+  Colour otherwise lives only in the posters and the cards.
 - No boxes, no shadows, no rounded corners. The divider is a 1px hairline.
-- Two typefaces: **Inter Tight** (the freely available answer to PP Neue
-  Montreal) and **JetBrains Mono** (every small line: 10px, 0.14–0.18em
-  tracking, uppercase, 38–50% opacity).
+- One typeface on both: **Inter Tight** (the freely available answer to PP
+  Neue Montreal). The small lines are Inter Tight too — 10px, 0.14–0.18em
+  tracking, uppercase, 38–50% opacity. JetBrains Mono and Archivo survive
+  only inside the drawn posters.
 - The interface text is **English and lower case**; the code and this file
   are **English too** (they were Turkish until 30.08.2026 — see §13); the
   legal pages are **German**.
 - Everything on the page was made by hand: the posters are hand-written
-  SVG, the sound is synthesised. Apart from `foto.jpg` there is no media
-  from outside.
-- No dependencies, no build step. No npm, no bundler. Whatever the browser
-  understands, that is what is used.
+  SVG, the sound is synthesised. Apart from `foto.jpg`, the synced
+  photographs and the app's music excerpts there is no media from outside.
+- The site has no dependencies and no build step. No npm, no bundler.
+  Whatever the browser understands, that is what is used. (The app is an
+  Expo project and has both; see §6.)
 
 ---
 
 ## 2. Running it
+
+**The site**
 
 ```bash
 python3 -m http.server 4340
@@ -54,10 +77,19 @@ python3 -m http.server 4340
 
 Then `http://localhost:4340`. Do not open it with `file://` — the SVG
 posters load inside `<object>`, and external CSS and fonts do not arrive
-that way.
+that way. It works in full without a backend: with `config.js` empty the
+data is read from `events-data.js` and the site behaves exactly the same.
 
-It works in full without a backend: with `config.js` empty the data is read
-from `events-data.js` and the site behaves exactly the same.
+**The app**
+
+```bash
+cd app && npm install && npx expo start
+```
+
+Expo Go on the phone reads the QR; `npx expo run:android` builds a
+development client (the map needs one). `npx tsc --noEmit` and
+`npx expo lint` before declaring anything done. Cloud builds and the Play
+listing: §6.
 
 ---
 
@@ -65,47 +97,60 @@ from `events-data.js` and the site behaves exactly the same.
 
 | Path | What | State |
 |---|---|---|
-| `index.html` | The landing page, five screens deep: the poster wall → how swiping works → a strip of cards → the turning city globe → a black footer screen | works |
-| `explore/` | **The wall.** Every night that fits, six posters across, soonest first; the words come on hover. The deck's filter line (country/city/kind/date) above it, unchanged. The deck itself lives in the app now | works |
-| `explore/<slug>/` | **The event page** (a contact sheet) — all 142 nights, Munich and the world, from one layout. A night missing from the deck is fetched live by its slug. See §6 | works |
-| `maps/` | The city schematic, the venues as dots | works, **not linked from the menu** |
-| `cards/` | **The card collection** — afterhours cards. Empty when signed in (there is no card logic yet) | a skeleton |
-| `friends/` | Closed on the web: the title, then empty; "only available in the app." and a "preview." button wired to nothing | **closed**, lives in the app |
-| `login/` | Sign-in and account page. Three columns: sign in · (first time? / account settings) · give feedback | works |
-| `settings/` | **Account settings** — handle, name, one line, city; who may see what you kept, whether you are findable by name, email; deleting the account | works |
+| `index.html` | The landing page, seven screens deep: the poster wall and the hero → how swiping works → a strip of cards → the room → who is playing → the turning city globe → a black footer screen with `go outside` and `get the app` | works |
+| `explore/` | **The wall.** Every night that fits, six posters across, soonest first; the words come on hover. The filter line (country / city / kind / date) above it. The deck itself lives in the app | works |
+| `explore/event/?slug=…` | **The night page** (a contact sheet): where · when · kind (ticket / szene), the ticket, who's coming, the after, beforehours, the card it leaves you. One shell for every night; the night is fetched by slug. §5 | works |
+| `djs/` · `friends/` · `maps/` | **Closed on the web.** The title (`who is playing.` / `yours.` / `go local.`), then "only available in the app." and a `preview.` button wired to nothing | closed, live in the app |
+| `cards/` | **The collection** — afterhours cards. Three samples; empty when signed in until the first check-in | a skeleton |
+| `login/` | Sign-in (`account` in the menu). Three columns: sign in · (first time? / settings) · give feedback | works |
+| `register/` | **Registration** — two steps: email + password, then the handle (+ city). Not finished until a handle is chosen | works |
+| `reset/` | **A new password** — sends the recovery link signed out; sets the new password once the link lands you back signed in. The app's reset mail points here too | works |
+| `settings/` | **Settings** — profile (handle, name, one line, city) · privacy (who sees what you kept, findable by handle, email me) · account (download my data, delete account — type your handle to confirm) | works |
+| `profile/?handle=…` | **Somebody's page** — how you reach them, what they kept, their cards | works |
 | `feedback/` | **Feedback** — subject, message, an optional way to reach you. No sign-in needed | works |
-| `register/` | **Registration** — two steps: email + password, then the handle (+ city). Registration does not count as finished until a handle is chosen | works |
-| `reset/` | **A new password** — sends the recovery link signed out; sets the new password once the link lands you back signed in | works |
-| `help/` | How the site works. A band of three numbers at the top: the first two are live from `health()`, the third waits for the card collection | works |
+| `help/` | How this works: the app's six steps (one card · it becomes a card · the room · who is going · near you · who is playing), then what the web shows. Two live numbers at the top from `health()` | works |
+| `privacy/` | The English summary of the datenschutz page, covering the app too | works |
 | `impressum/` `datenschutz/` `agb/` | The German legal pages | **placeholder** (the square brackets are still to be filled in) |
-| `admin/` | Editing events, checking posters, moderating comments, the feedback inbox | `is_admin` only |
-| `posters/` | 142 SVG posters, one per night | — |
-| `sound/` | Two short recordings, entirely synthesised | — |
-| `404.html` | A wrong address. It asks for no file from outside (it can be shown at any depth) and works the root path out from the address | works |
-| `og/` | The sharing previews: 1200×630 per night, its own poster on the left, all 142 | generated |
+| `404.html` | "this one is gone for good." — four ways out | works |
+| `admin/` | The admin panel: events, venues, types, feedback, comments, profiles, poster uploads | works, admins only |
+| `sound/` · `posters/` | Empty index pages over the sound files and the drawn posters | leave them |
 | `strip.html` | A parked sketch (horizontal strips) | leave it alone |
 
 Every page has a **footer**: `© 2026 afterhours` + impressum · datenschutz
 · agb. It has two forms: the normal one that sits in the flow, and
-`foot thin` for the full-screen pages (`maps`) and for `explore`, where it
-sits in the corner. Three pages have no footer: `index.html` (it has its own black
-footer screen), `admin/` and `strip.html`.
+`foot thin` for the full-screen pages (`explore`, `maps`, `friends`,
+`djs`) where it sits in the corner. Three pages have no footer:
+`index.html` (it has its own black footer screen), `admin/` and
+`strip.html`.
+
+**The menu** is the app's tab order: `explore · djs · yours · map ·
+collection · help · account` (`yours` → `friends/`, `map` → `maps/`,
+`collection` → `cards/`, `account` → `login/`). Signed in, `account`
+becomes "welcome <name> (:".
 
 **Every surface.** The layout is desktop-first and narrows in bands, each
 a `@media` block in `style.css`: below **1180px** the photo scales with
-the viewport (`min(780px, 46vw)`) and the intro starts under the sound
-rows — the two were printing over each other on a tablet; below
-**1180px** the wall drops from six posters across to four; below **900px** the globe
-screen moves the walking-distance list to the bottom of the frame (it
-shared a band with "go local." and they collided) and the footer screen
-gives the sónar note its own line and the button a full row; below
-**720px** the rest stacks — the menu wraps, the sound rows become a
-bottom bar, the photo leaves. The desktop at 1440 is untouched by all of
-it: poster 146×219, photo 780px, measured after every pass.
+the viewport (`min(780px, 46vw)`), the intro starts under the sound rows
+and the wall drops from six posters across to four; below **900px** the
+globe screen moves the walking-distance list to the bottom of the frame,
+the room and djs screens stack, and the footer screen gives the sónar
+note its own line and the buttons a full row; below **720px** the rest
+stacks — the menu wraps, the sound rows become a bottom bar, the photo
+leaves, the wall is two across with the caption under the poster. The
+desktop at 1440 is untouched by all of it: poster 146×219, photo 780px,
+measured after every pass.
 
 ---
 
 ## 4. How the data flows
+
+Both clients read the same Supabase project (`elmnnyxgavwjxvwjgjcu`) with
+the same public key and the same RPCs — `deck`, `city_counts`,
+`swipe_set`, `kept`, `friends_*`, `profile_*`, `event_people`,
+`check_in`, `room_*`, `nights_near`, `export_me`, `delete_account` (§8).
+The site's copy of the key is `config.js`, the app's is `app/.env`.
+
+**On the site:**
 
 ```
 config.js        Supabase URL + publishable key (both public)
@@ -114,7 +159,7 @@ data.js          decides whether it is live or local
    ├── live   →  Supabase REST → turns the rows into the site's shape
    └── local  →  events-data.js, via data-fallback
    ↓
-window.POSTERS   36 events: { slug, kind, title, meta, body, poster }
+window.POSTERS   the nights: { slug, kind, title, meta, body, poster | image, startsAt, venue, city, source }
    ↓
 data-after       the page's own scripts load ONLY after the data has arrived
 ```
@@ -175,7 +220,7 @@ this repository.
 
 ---
 
-## 5. File by file
+### File by file
 
 **The root**
 
@@ -185,15 +230,13 @@ this repository.
 | `config.js` | Supabase URL + anon key + the default city |
 | `session.js` | The session: talks straight to Supabase Auth's REST, the token lives in `localStorage` |
 | `menu.js` | The menu as the session leaves it: "welcome \<name\>", an admin link for the admin |
-| `swipes.js` | What was swiped left and right. `localStorage` when signed out, the database when signed in |
-| `friendships.js` | Friend requests; the whole job is in database functions |
-| `beforehours.js` | The event comments (reading is public, writing needs an account) |
-| `app.js` | The landing page's five screens, the poster wall, the scrolling logic |
+| `beforehours.js` | The comments before a night (reading is public, writing needs an account) |
+| `app.js` | The landing page's seven screens, the poster wall, the scrolling logic |
 | `globe.js` | The turning city globe. No Three.js — its own projection maths, drawn onto a canvas |
 | `venues.js` | The schematic coordinates of the Munich venues |
-| `cards.js` | **The afterhours card generator.** `CARDS.front(night, id)` / `CARDS.back(night, id)` return SVG |
+| `cards.js` | **The afterhours card generator.** `CARDS.front(night, id)` / `CARDS.back(night, id)` return SVG. `app/src/content/cardsgen.js` is the same file with the app's font names — change both |
 | `events-data.js` | The 36 events, the fallback used when the backend is off |
-| `tools-event-pages.py` | Writes the shell of ALL 142 event pages and the sitemap (§6) |
+| `tools-event-pages.py` | Writes the shell of ALL 142 event pages and the sitemap (§5) |
 | `tools-favicon.py` | Generates the favicons: the same `af`, centred on black, at every size (the `af` + `hr` two-line mark sat visibly off-centre on a phone's home screen) |
 | `tools-previews.py` | Generates the `og/` previews for all 142 nights: the poster through Chrome to PNG, the card assembled with PIL |
 | `tools-site-check.py` | Walks every reference on the site: every href/src resolves, every event has page+poster+og, one `?v=` (the CI `site` job) |
@@ -207,22 +250,24 @@ this repository.
 | `explore/wall.js` | The wall: pulls the nights for the filter and hangs them; the date window cut client-side |
 | `explore/filters.js` | Our own drop-downs (not a native `<select>`) |
 | `explore/comment-pools.js` | The beforehours pool — per kind, chosen with a seed from the slug |
-| `explore/event.js` | **The one template that builds the event page** (§6) |
-| `explore/event-data.js` | The event page's content pools, per kind |
+| `explore/event.js` | **The one template that builds the night page** (§5) |
+| `explore/event-data.js` | The night page's content pools, per kind |
 | `cards/cards.js` · `card-data.js` · `session-state.js` | The collection: sample cards, hidden according to the session |
 | `login/login.js` · `shortcuts.js` | The sign-in form; the middle block changing with the session |
 | `settings/settings.js` | The settings page: reads `profile_me()`, writes `profile_setup()`, PATCHes the switches straight onto `profile_settings` |
 | `feedback/feedback.js` | Feedback: one job, adding what was written to the `feedback` table |
 | `register/register.js` | Registration: `AH.signUp()` opens the account, `profile_setup()` writes the handle and finishes it |
-| `maps/map.js` | Places the venues on the schematic |
+| `maps/map.js` | Places the venues on the schematic (faded behind the closed page) |
 | `admin/admin.js` | The admin panel |
 
 ---
 
-## 6. The event page: a contact sheet
+## 5. The night page: a contact sheet
 
-We do not write 36 pages for 36 nights. **One layout, and the content
-comes from the data.**
+We do not write a page per night. **One layout, and the content comes
+from the data.** The three fact rows are the app's: where · when · kind,
+with `ticket` or `szene` after the kind; the date reads `thu 26.09` on
+both.
 
 The idea comes from photography: a contact sheet is not a result, it is an
 inventory — "here is what I have". The page does not describe a single
@@ -309,90 +354,6 @@ simply has no after, which the section says out loud instead of inventing
 one. A night that ends in the afternoon waits for nine. Closing times are
 whole hours between four and eight hours out, so nothing shuts at two in
 the afternoon.
-
-### The deck card, for a night with a photograph
-
-A listing photograph is **16:9** and the deck frame is **2:3**. Filling one
-with the other keeps 37.5% of the picture's width and throws the rest away
-from the centre out, which is how a card ends up showing half a face. So a
-synced night (`.ex-card.ex-photo`, built by `fillPhotoCard`) does not crop:
-the picture is a **16:9 band across the top**, and the two thirds of the
-card left under it are set in type — kind, then the title in the middle of
-the space, then the room and the date on the floor of the card. That is the
-same order the card in the collection is built in (artwork, a rule, then
-the night in writing), so the thing you swipe and the thing you keep speak
-one language. The card grows a hairline edge here for the first time,
-because without one the type reads as a caption lying on the page instead
-of the lower half of an object.
-
-**The shape of the card follows the shape of the picture.** The band is
-not fixed at 16:9: once the picture has loaded, `shapeCard` sets the band's
-`aspect-ratio` inline to the picture's own, clamped between 1:1 and 2:1, and
-the type takes whatever is left (a square band keeps three title lines,
-wider ones four). Under 1:1 the picture is a **poster**, and it gets the
-poster's layout (`.ex-card.ex-poster`): shown whole on the white of the
-card, never cropped, the small strip beneath — the layout a drawn night has
-always had. The real posters earned it: they carry the room, the date and
-the line-up in their own hand, so printing the title again underneath would
-only repeat them. Of 1000 live pictures, 865 are Ticketmaster 16:9 press
-shots; the rest (ticketweb, universe) are 3:2, square, and true upright gig
-posters — Nashville and New York are full of them.
-
-The ratio is read at load time (`img.onload` → `naturalWidth/Height`), so
-a card assumes 16:9 until the picture lands and may settle once; the deck's
-pictures load eagerly (only three cards exist at a time) to keep that
-settle ahead of paint. The next step, if the layout stays: store `image_w`
-and `image_h` at sync time — Ticketmaster hands them over and the other
-two hosts write them into the URL — so the card knows its shape before the
-picture arrives.
-
-**A night with no picture is set in type** (`.ex-card.ex-type`). One in
-nine synced nights carries no picture at all — most of them İzmir,
-İstanbul and Ankara, where the listings hand over only a generic
-placeholder the sync rightly refuses. It used to be a grey box. Now the
-card is the written half on its own, set large: the kind as a masthead
-with a rule under it (the rule a photograph card's band draws with its
-bottom edge), the title at up to five lines in the size the missing
-picture leaves it, the room and the date on the floor. Three card states,
-one grammar: picture-and-type, poster-and-strip, type alone.
-
-And the sync no longer keeps a picture under 500px wide: `imageFor` used
-to fall back to whatever was left, which was a 305px thumbnail the deck
-then blew up to twice its size on a retina screen. Under 500px a picture
-is worse than none; those nights are set in type after the next daily
-run. (Of 3618 live nights: 2759 Ticketmaster 1136px press shots, 417
-without a picture, 264 ticketweb 640px, 148 universe 1024px, 29 tiny.)
-
-The deck box is unchanged (`--ex-w * 1.5 + --ex-info-h`), so nothing else
-in the column had to be re-derived. A **drawn** night — today only the
-offline deck — still gets the old poster plus the strip underneath.
-
-### Holding a card up, and the way back
-
-Two taps on the top card and it comes forward over a white veil, about
-1.5× the size (`zoomIn` in explore.js — the same element moved by
-transform, measured from where the deck is; nothing is cloned). One more
-tap on it opens the night; a tap on the veil or Esc puts it back. It is
-read from pointer events, not `dblclick`, so a thumb and a mouse are the
-same gesture, and a tap is a press that did not travel — a short drag that
-snapped back is not half of one. Arrow keys are inert while a card is up.
-
-The back button finds the deck the way it was left. Before leaving, a note
-goes into `sessionStorage` (`afterhours.deck`): the mode, the filter, the
-**order of the whole deck** by slug, the card, the counter, and whether it
-was held up. It is read only on a `back_forward` arrival (a plain visit to
-explore starts clean) and goes stale after half an hour. On arrival the
-filter is written into the object filters.js draws from, the deck is
-pulled again wide (no date window) and rebuilt in the remembered order —
-the order and not the filter, because the window moves at midnight and the
-first deal of the day does not apply it the way a redeal does — and the
-remembered card is dealt to the top, held up again if it was. Cards swiped
-in between simply are not there. Through the bfcache none of this runs:
-the DOM comes back intact, card still up.
-
-Found on the way: `stack()` never cleared the transform of the card that
-had just come to the top, so it stayed 4.5% smaller and 14px lower until
-touched. It does now.
 
 ### Somebody's page — `profile/?handle=…&via=…`
 
@@ -503,11 +464,86 @@ The argument is the version number (§10). It creates the folder and the
 
 ---
 
+## 6. The app
+
+`app/` — Expo SDK 57, React Native, Expo Router, TypeScript. Android
+first (`app.afterhours.android`), iOS configured (`app.afterhours.ios`)
+but not yet shipped. It came into this repository on 25.09.2026 with its
+own history (65 commits); `app/AGENTS.md` is the working rulebook Expo
+asks for and stays with it.
+
+**Screens** (`app/src/app/`, every file a route):
+
+| Route | What |
+|---|---|
+| `index` | The intro (the wordmark), then the home screen: a rotating tagline, `sign up`, `explore your city`, the sound toggle. Signed in, straight to `yours` |
+| `explore` | First open: six onboarding steps, then `where are you based?` |
+| `(tabs)/flow` | **The deck.** One card, `keep` / `let go`, `undo`; the picker row `everywhere · all nights · any night` |
+| `(tabs)/djs` | **Who is playing:** live now · later tonight · this week |
+| `(tabs)/yours` | **Yours:** your friends' kept nights, `who's coming?` (i'm in · maybe · not tonight), the match box, the friends row |
+| `(tabs)/map` | **The map:** tonight's nights around you; `near me` / `<city> centre`; the radius slider |
+| `(tabs)/account` | **Account:** the counts (nights · kept · friends · said), the collection |
+| `night/[slug]` | **The night page:** the photograph, `check in` / `keep` / `ticket`, where · when · kind, the room line |
+| `room/[slug]` | **The room:** open for 48h after check-in, `two lines, at most`, then frozen |
+| `dj/[id]` · `friend/[id]` · `friend/add` | A dj (follow, sets, next), a friend (kept · n, nights out together), adding one by handle |
+| `signup` · `welcome` | Email + password (or `leave both empty to look around first`), then the handle |
+| `settings` | profile · privacy · sound · account · about — the same labels as `settings/` on the web |
+| `credits` | The music (Free Music Archive, CC BY), the map tiles, the type |
+
+**Under `app/src/`:** `data/` (the RPC calls: `deck.ts`, `checkin.ts`,
+`friends.ts`, `when.ts` — the time windows and the two date formatters),
+`content/` (the sample djs, friends, music, taglines, and `cardsgen.js`),
+`components/` (`Deck`, `NightCard`, `Onboarding`, `TabBar`, `MapWeb`),
+`auth/AuthContext.tsx` (Supabase auth, guest sessions, the reset mail →
+`reset/` on the site), `theme/tokens.ts` (ink, paper, blue, Inter Tight).
+`app/store/listing.md` is the Play Console text; `app/CREDITS.md` the
+music attribution; `app/tools/phone.sh` mirrors a USB phone with scrcpy.
+
+**Building and shipping** (`app/eas.json`): `npx eas-cli build
+--profile development` (a dev client, APK), `--profile preview` (APK to
+hand around), `--profile production` (app bundle, auto-incrementing);
+`npx eas-cli submit` goes to the Play internal track. Nothing native is
+edited by hand: `ios/` and `android/` are generated.
+
+**The app and the site.** The app opens the site for three things — the
+poster SVGs (`SITE` in `data/deck.ts`), the password reset (`reset/`) and
+the privacy page (`datenschutz/`); the Play listing names `settings/` as
+the account-deletion page. The site points back with `get the app` on the
+landing and the three closed pages. Deep links (`afterhours://`, a night
+shared from the app opening its web page) are the next step.
+
+### One vocabulary
+
+Decided on 25.09.2026, and the app's wording wins where the two disagree:
+
+- a **night**, never an event; kinds lowercase (rave, club night, konzert,
+  festival, meetup, hausparty); the filter reads **all nights**
+- **keep / let go**; the kept list is **yours**
+- **who's coming?** → i'm in · maybe · not tonight
+- **where · when · kind**, with **ticket / szene** after the kind; the
+  button is the one word **ticket**
+- the date is **thu 26.09 · 20:00** (the card keeps `26.09.26`)
+- the time filter is **tonight · tomorrow · this weekend · this week ·
+  this month · any night**
+- settings: who sees what you kept · findable by handle · email me ·
+  download my data · delete account (the web asks you to type your handle,
+  the app asks twice)
+- the tagline is **find your night. one card at a time.**; UI text is
+  lowercase English on both; the voice note is marked **soon** until it
+  exists; the language setting is hidden until there are translations
+- the palettes stay different (see *The spirit*); the type is Inter Tight
+  on both, so the card renders identically
+
+---
+
 ## 7. The afterhours card
 
-`cards.js` builds an SVG card out of a night's data. Three places use it:
-the strip on the landing page, `cards/`, and the past editions on an event
-page.
+`cards.js` builds an SVG card out of a night's data. Three places on the
+site use it — the strip on the landing page, `cards/`, the past editions
+on a night page — and the app draws the same SVG through
+`app/src/content/cardsgen.js` (identical apart from the font names; the
+app renders it with `SvgXml`). Both are set in Inter Tight; the voice note
+line reads `VOICE NOTE · SOON` until recording exists.
 
 ```js
 CARDS.front(night, "unique-id")   // the front
@@ -658,7 +694,7 @@ When CSS or a script changes, all of them go up together, otherwise the
 browser keeps using the old file:
 
 ```bash
-find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
+find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" -not -path "./app/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
 The current version: **175**.
@@ -681,8 +717,8 @@ The order matters: each step closes the road the one before it opened.
 
 **Done**
 
-- [x] The landing page, five screens
-- [x] The deck: dragging, filters, three sources, the kept ones
+- [x] The landing page, five screens (seven since 25.09.2026)
+- [x] The deck: dragging, filters, three sources, the kept ones — since 25.09.2026 in the app; the web shows the wall
 - [x] The beforehours comments (reading + writing)
 - [x] Session, handle, friendship, what you kept
 - [x] Backend: schema, RLS, seed, tests, the local imitation
@@ -713,6 +749,8 @@ The order matters: each step closes the road the one before it opened.
 - [x] **Real events** — the Ticketmaster sync (§4, §9): the worldwide deck, the everywhere filter, photographs and real ticket pages; the invented nights retire via `cleanup-seed-events.sql`
 | `backend/sql/rename-test-users.sql` | One-shot for the live database: every account except `offdutykurt` and `kurt2` becomes `testuser1…n` in the order they were opened (handle and display name; sign-in is email and password and does not change) — paste into the Supabase SQL editor |
 - [x] **Installable** — `manifest.webmanifest`, and the poster wall lazy-loads below the fold
+- [x] **The app** — `app/`: deck, night pages, map, yours, djs, check-in, the room, the collection, guest mode, background music; first closed test on Play
+- [x] **The web follows the app** — the wall instead of the deck, `friends/` `maps/` `djs/` closed, one vocabulary (§6), the landing's room and djs screens, the app in this repository
 
 **Next (a suggested order)**
 
@@ -727,10 +765,15 @@ The order matters: each step closes the road the one before it opened.
    means, and generating the cards.
 3. **Filling in the legal pages** — the square brackets and a real Stand
    date.
-4. **The after, wired to the deck** — the rooms come out of our own events
-   (same city, same night, a later start) instead of the placeholder pool.
+4. **The after, wired to the listings** — the rooms come out of our own
+   nights (same city, same night, a later start) instead of the
+   placeholder pool.
 5. **The third help number** — impossible before the card collection
    exists; the first two are live now.
+6. **The full link between app and site** — `get the app` pointing at the
+   Play listing, a share sheet in the app that opens the night's web page,
+   `afterhours://night/<slug>` opening the app from that page, and
+   beforehours readable in the app.
 
 ---
 

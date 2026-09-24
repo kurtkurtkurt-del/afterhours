@@ -100,7 +100,7 @@ export default function FlowScreen() {
 
   const cityLabel = city ? (cities.find((c) => c.id === city)?.name ?? city) : 'everywhere';
   const typeLabel = type ? (types.find((t) => t.id === type)?.label ?? type) : 'all nights';
-  const whenLabel = when ? (whens.find((w) => w.id === when)?.label ?? when) : 'any time';
+  const whenLabel = when ? (whens.find((w) => w.id === when)?.label ?? when) : 'any night';
 
   return (
     <View style={styles.root}>
@@ -154,11 +154,11 @@ export default function FlowScreen() {
       <PickerSheet
         open={sheet === 'when'}
         title="when"
-        options={[{ id: '*', label: 'any time' }, ...whens]}
+        options={[{ id: '*', label: 'any night' }, ...whens]}
         selected={when ?? '*'}
         onSelect={pickWhen}
         onClose={() => setSheet(null)}
-        note="nights without a fixed date only show under any time"
+        note="nights without a fixed date only show under any night"
       />
     </View>
   );

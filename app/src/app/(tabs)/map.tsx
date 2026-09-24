@@ -128,7 +128,7 @@ export default function MapScreen() {
 
       {/* zaman aralığı */}
       <View style={styles.chips}>
-        {[{ id: null as When | null, label: 'any time' }, ...whens.map((w) => ({ id: w.id as When | null, label: w.label }))].map((w) => (
+        {[{ id: null as When | null, label: 'any night' }, ...whens.map((w) => ({ id: w.id as When | null, label: w.label }))].map((w) => (
           <Pressable key={w.id ?? 'any'} onPress={() => setWhen(w.id)} style={[styles.chip, when === w.id && styles.chipOn]}>
             <Text style={[styles.chipText, when === w.id && styles.chipTextOn]}>{w.label}</Text>
           </Pressable>

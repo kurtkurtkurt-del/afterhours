@@ -320,7 +320,7 @@ function back(e,i){
   <g font-family="InterTight_400Regular" letter-spacing="1.4">${tl}</g>
 
   ${rule(m,318)}
-  <text x="34" y="344" font-family="InterTight_400Regular" font-size="10" letter-spacing="3" fill="${m.sub}">VOICE NOTE · ${e.blank?'NOT RECORDED':esc(e.aud)}</text>
+  <text x="34" y="344" font-family="InterTight_400Regular" font-size="10" letter-spacing="3" fill="${m.sub}">VOICE NOTE · SOON</text>
   ${e.blank?`<g opacity="0.16">${wave(id,m,34,387)}</g>`:wave(id,m,34,387)}
   ${e.blank
     ?`<g transform="translate(34,444)"><rect width="34" height="34" fill="none" stroke="${m.faint}" stroke-width="1.2" stroke-dasharray="4 4"/><path d="M12 9 L25 17 L12 25 Z" fill="${m.faint}"/></g>`

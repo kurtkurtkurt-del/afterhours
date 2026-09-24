@@ -169,7 +169,7 @@ export default function SettingsScreen() {
               right={<Switch on={settings?.notify_email ?? true} />}
               onPress={() => patch({ notify_email: !(settings?.notify_email ?? true) })}
             />
-            <Row label="language" right={<Value text={settings?.locale ?? 'en'} />} onPress={() => setSheet('locale')} />
+        {/* language: hidden until there are translations; profile_settings.locale stays in the database */}
           </>
         )}
 
@@ -220,18 +220,6 @@ export default function SettingsScreen() {
         options={genres}
         selected={ambient.genre}
         onSelect={(id) => ambient.setGenre(id as Genre)}
-        onClose={() => setSheet(null)}
-      />
-      <PickerSheet
-        open={sheet === 'locale'}
-        title="language"
-        options={[
-          { id: 'en', label: 'english' },
-          { id: 'de', label: 'deutsch' },
-          { id: 'tr', label: 'türkçe' },
-        ]}
-        selected={settings?.locale ?? 'en'}
-        onSelect={(id) => patch({ locale: id as Settings['locale'] })}
         onClose={() => setSheet(null)}
       />
     </View>

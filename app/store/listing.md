@@ -18,7 +18,7 @@ afterhours is for deciding whether to go out tonight.
 
 there is no search and no feed. the deck hands you one night at a time: a rave, a club night, a konzert, a festival, a meetup, a hausparty. swipe right to keep it, left and it never comes back.
 
-go, and the night becomes a card. check in at the door and it turns into an afterhours card, yours to keep. the room after the night stays open for 48 hours: a voice note, two lines, who was there. then it freezes, forever.
+go, and the night becomes a card. check in at the door and it turns into an afterhours card, yours to keep. the room after the night stays open for 48 hours: two lines, a voice note (soon), who was there. then it freezes, forever.
 
 see who is going. your friends' kept nights, who is coming, and a match when you both keep the same one. nothing you let go is ever shown to anyone.
 
