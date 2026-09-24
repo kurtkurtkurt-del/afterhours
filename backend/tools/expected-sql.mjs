@@ -26,4 +26,7 @@ export const EXPECTED_SQL = [
   "16_coverage.sql",
   "17_real_people.sql",
   "18_geo.sql",
+  "19_checkins.sql",
+  "20_djs.sql",
+  "21_sound.sql",
 ];

@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-09-23 22:42   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-09-24 08:38   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -4226,5 +4226,512 @@ grant execute on function public.nights_near(double precision, double precision,
 do $$ begin
   if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('18_geo.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  CHECK-IN, THE CARD, THE ROOM   (19_checkins.sql)
+-- ============================================================
+
+-- afterhours — check-in, the afterhours card, and the room
+--
+-- The heart of the product, in three tables and a handful of calls.
+--
+--   checkins    one row per person per night: "I was there". Written only
+--               through check_in(), which asks two questions: is it that
+--               night right now (six hours before the start until twelve
+--               after), and are you close (500 m) when both sides have a
+--               point. Every row takes a card number from one shared
+--               sequence, so NO. 0208 means the 208th card ever issued.
+--   room_posts  what the people who were there say, up to 200 characters.
+--               Only they can read it, only they can write it, and only
+--               until the room freezes: 48 hours after the night ends.
+--   my_cards    everything the card generator needs, one row per card.
+--
+-- Nobody sees who checked in where except the person, their confirmed
+-- friends (if show_friends is on), and the others in the same room, who
+-- see initials only.
+
+create sequence if not exists public.card_no_seq;
+
+create table if not exists public.checkins (
+  id            uuid primary key default gen_random_uuid(),
+  user_id       uuid not null default auth.uid() references public.profiles on delete cascade,
+  event_id      uuid not null references public.events on delete cascade,
+  card_no       bigint not null default nextval('public.card_no_seq'),
+  checked_at    timestamptz not null default now(),
+  lat           double precision,
+  lng           double precision,
+  show_friends  boolean not null default true,
+  unique (user_id, event_id)
+);
+create index if not exists checkins_event_idx on public.checkins (event_id);
+create index if not exists checkins_user_idx  on public.checkins (user_id, checked_at desc);
+
+create table if not exists public.room_posts (
+  id          uuid primary key default gen_random_uuid(),
+  event_id    uuid not null references public.events on delete cascade,
+  user_id     uuid default auth.uid() references public.profiles on delete set null,
+  body        text not null check (length(btrim(body)) between 1 and 200),
+  created_at  timestamptz not null default now()
+);
+create index if not exists room_posts_event_idx on public.room_posts (event_id, created_at);
+
+alter table public.checkins   enable row level security;
+alter table public.room_posts enable row level security;
+
+-- ------------------------------------------------------------ helpers
+
+-- confirmed friends, either direction
+create or replace function public.is_friend(other uuid)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (
+    select 1 from public.friendships f
+    where f.status = 'accepted'
+      and ((f.requester_id = auth.uid() and f.addressee_id = other)
+        or (f.addressee_id = auth.uid() and f.requester_id = other))
+  );
+$$;
+
+-- when a room freezes: the night ends eight hours after it starts, the
+-- room stays open 48 hours after that. A night without a date runs from
+-- its first check-in.
+create or replace function public.room_freeze_at(p_event uuid)
+returns timestamptz
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select coalesce(e.starts_at, (select min(c.checked_at) from public.checkins c where c.event_id = e.id), now())
+         + interval '8 hours' + interval '48 hours'
+  from public.events e where e.id = p_event;
+$$;
+
+create or replace function public.checked_in(p_event uuid)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (select 1 from public.checkins c where c.event_id = p_event and c.user_id = auth.uid());
+$$;
+
+-- ------------------------------------------------------------- rules
+
+drop policy if exists checkins_read on public.checkins;
+create policy checkins_read on public.checkins for select
+  using (user_id = auth.uid() or (show_friends and public.is_friend(user_id)));
+
+drop policy if exists checkins_update on public.checkins;
+create policy checkins_update on public.checkins for update
+  using (user_id = auth.uid()) with check (user_id = auth.uid());
+
+-- no insert policy on purpose: rows come through check_in() below
+
+drop policy if exists room_posts_read on public.room_posts;
+create policy room_posts_read on public.room_posts for select
+  using (public.checked_in(event_id));
+
+drop policy if exists room_posts_write on public.room_posts;
+create policy room_posts_write on public.room_posts for insert
+  with check (user_id = auth.uid() and public.checked_in(event_id) and now() < public.room_freeze_at(event_id));
+
+drop policy if exists room_posts_delete on public.room_posts;
+create policy room_posts_delete on public.room_posts for delete
+  using (user_id = auth.uid());
+
+-- ----------------------------------------------------------- check in
+
+-- Returns the card number. Errors are short codes the app turns into
+-- sentences: signedout, nonight, notnow, far.
+create or replace function public.check_in(
+  p_slug text,
+  p_lat  double precision default null,
+  p_lng  double precision default null
+)
+returns bigint
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  e   public.events%rowtype;
+  n   bigint;
+  km  double precision;
+begin
+  if auth.uid() is null then raise exception 'signedout'; end if;
+  select * into e from public.events where slug = p_slug and is_published;
+  if not found then raise exception 'nonight'; end if;
+
+  if e.starts_at is not null
+     and (now() < e.starts_at - interval '6 hours' or now() > e.starts_at + interval '12 hours') then
+    raise exception 'notnow';
+  end if;
+
+  if e.lat is not null and e.lng is not null and p_lat is not null and p_lng is not null then
+    km := 2 * 6371.0 * asin(sqrt(
+            power(sin(radians(e.lat - p_lat) / 2), 2)
+            + cos(radians(p_lat)) * cos(radians(e.lat))
+            * power(sin(radians(e.lng - p_lng) / 2), 2)));
+    if km > 0.5 then raise exception 'far'; end if;
+  end if;
+
+  insert into public.checkins (user_id, event_id, lat, lng)
+  values (auth.uid(), e.id, p_lat, p_lng)
+  on conflict (user_id, event_id) do nothing;
+
+  select card_no into n from public.checkins where user_id = auth.uid() and event_id = e.id;
+  return n;
+end;
+$$;
+
+-- ------------------------------------------------------------- cards
+
+-- One row per card, shaped for the generator: the night, when you came,
+-- who else was there (initials, never ids), how many spoke, the first two
+-- lines from the room, and when it froze.
+drop function if exists public.my_cards();
+create or replace function public.my_cards()
+returns table (
+  card_no     bigint,
+  checked_at  timestamptz,
+  freeze_at   timestamptz,
+  frozen      boolean,
+  slug        text,
+  title       text,
+  type_name   text,
+  venue_name  text,
+  city_name   text,
+  starts_at   timestamptz,
+  image_url   text,
+  crew        text[],
+  crew_more   int,
+  who_count   int,
+  post_count  int,
+  q1_body     text,
+  q1_who      text,
+  q1_at       timestamptz,
+  q2_body     text,
+  q2_who      text,
+  q2_at       timestamptz
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  with mine as (
+    select c.*, public.room_freeze_at(c.event_id) as freeze_at
+    from public.checkins c where c.user_id = auth.uid()
+  ),
+  others as (
+    select c.event_id,
+           array_agg(lower(left(coalesce(p.display_name, p.handle, 's'), 1)) order by c.checked_at) as initials,
+           count(*)::int as n
+    from public.checkins c
+    join public.profiles p on p.id = c.user_id
+    where c.user_id <> auth.uid() and c.event_id in (select event_id from mine)
+    group by c.event_id
+  ),
+  posts as (
+    select r.event_id, r.body, lower(left(coalesce(p.display_name, p.handle, 's'), 1)) as who, r.created_at,
+           row_number() over (partition by r.event_id order by r.created_at) as rn,
+           count(*) over (partition by r.event_id)::int as total
+    from public.room_posts r
+    left join public.profiles p on p.id = r.user_id
+    where r.event_id in (select event_id from mine)
+  )
+  select m.card_no, m.checked_at, m.freeze_at, now() >= m.freeze_at,
+         e.slug, e.title, t.name, v.name, ci.name, e.starts_at, e.image_url,
+         coalesce(o.initials[1:4], '{}'), greatest(coalesce(o.n, 0) - 4, 0),
+         coalesce(o.n, 0) + 1,
+         coalesce((select total from posts p where p.event_id = m.event_id limit 1), 0),
+         (select body from posts p where p.event_id = m.event_id and rn = 1),
+         (select who  from posts p where p.event_id = m.event_id and rn = 1),
+         (select created_at from posts p where p.event_id = m.event_id and rn = 1),
+         (select body from posts p where p.event_id = m.event_id and rn = 2),
+         (select who  from posts p where p.event_id = m.event_id and rn = 2),
+         (select created_at from posts p where p.event_id = m.event_id and rn = 2)
+  from mine m
+  join public.events e on e.id = m.event_id
+  join public.event_types t on t.id = e.type_id
+  join public.cities ci on ci.id = e.city_id
+  left join public.venues v on v.id = e.venue_id
+  left join others o on o.event_id = m.event_id
+  order by m.checked_at desc;
+$$;
+
+-- -------------------------------------------------------------- room
+
+create or replace function public.room_info(p_slug text)
+returns table (
+  event_id    uuid,
+  checked_in  boolean,
+  freeze_at   timestamptz,
+  frozen      boolean,
+  who_count   int,
+  initials    text[]
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select e.id, public.checked_in(e.id), public.room_freeze_at(e.id), now() >= public.room_freeze_at(e.id),
+         (select count(*)::int from public.checkins c where c.event_id = e.id),
+         case when public.checked_in(e.id)
+              then (select coalesce(array_agg(lower(left(coalesce(p.display_name, p.handle, 's'), 1)) order by c.checked_at), '{}')
+                    from public.checkins c join public.profiles p on p.id = c.user_id where c.event_id = e.id)
+              else '{}' end
+  from public.events e where e.slug = p_slug;
+$$;
+
+create or replace function public.room_list(p_slug text)
+returns table (
+  id          uuid,
+  body        text,
+  who         text,
+  mine        boolean,
+  created_at  timestamptz
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select r.id, r.body, lower(left(coalesce(p.display_name, p.handle, 's'), 1)), r.user_id = auth.uid(), r.created_at
+  from public.room_posts r
+  join public.events e on e.id = r.event_id
+  left join public.profiles p on p.id = r.user_id
+  where e.slug = p_slug and public.checked_in(e.id)
+  order by r.created_at;
+$$;
+
+create or replace function public.room_post(p_slug text, p_body text)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  ev uuid;
+  n  uuid;
+begin
+  if auth.uid() is null then raise exception 'signedout'; end if;
+  select id into ev from public.events where slug = p_slug;
+  if ev is null then raise exception 'nonight'; end if;
+  if not public.checked_in(ev) then raise exception 'notthere'; end if;
+  if now() >= public.room_freeze_at(ev) then raise exception 'frozen'; end if;
+  insert into public.room_posts (event_id, user_id, body) values (ev, auth.uid(), btrim(p_body)) returning id into n;
+  return n;
+end;
+$$;
+
+-- --------------------------------------------------- friends, tonight
+
+-- where your confirmed friends are right now (last 8 hours), if they let you see
+create or replace function public.friends_live()
+returns table (
+  friend_id     uuid,
+  handle        text,
+  display_name  text,
+  slug          text,
+  title         text,
+  venue_name    text,
+  checked_at    timestamptz
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select c.user_id, p.handle, p.display_name, e.slug, e.title, v.name, c.checked_at
+  from public.checkins c
+  join public.profiles p on p.id = c.user_id
+  join public.events e on e.id = c.event_id
+  left join public.venues v on v.id = e.venue_id
+  where c.show_friends
+    and c.checked_at > now() - interval '8 hours'
+    and public.is_friend(c.user_id)
+  order by c.checked_at desc;
+$$;
+
+grant execute on function public.is_friend(uuid)                         to authenticated;
+grant execute on function public.room_freeze_at(uuid)                    to anon, authenticated;
+grant execute on function public.checked_in(uuid)                        to authenticated;
+grant execute on function public.check_in(text, double precision, double precision) to authenticated;
+grant execute on function public.my_cards()                              to authenticated;
+grant execute on function public.room_info(text)                         to anon, authenticated;
+grant execute on function public.room_list(text)                         to authenticated;
+grant execute on function public.room_post(text, text)                   to authenticated;
+grant execute on function public.friends_live()                          to authenticated;
+grant select, update on public.checkins to authenticated;
+grant select, insert, delete on public.room_posts to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('19_checkins.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  DJS, SETS, FOLLOWS   (20_djs.sql)
+-- ============================================================
+
+-- afterhours — djs, their sets, and who follows them
+--
+--   djs        the person: name, genre, which of the three sounds plays
+--              when you tune in, home city, photo, since when.
+--   dj_sets    a night they play: venue, start, length. The app builds
+--              "live now / later tonight / this week" from these.
+--   dj_follows one row per person per dj. Only the owner reads their own.
+--
+-- Everyone reads djs and sets; only the admin writes them. Eight seed rows
+-- so the screen is not empty on day one; they carry source = seed and can
+-- be deleted the same way the invented nights were.
+
+create table if not exists public.djs (
+  id          uuid primary key default gen_random_uuid(),
+  slug        text unique not null,
+  name        text not null,
+  genre       text not null,
+  sound       text not null default 'house' check (sound in ('house', 'techno', 'rap')),
+  city_id     uuid references public.cities on delete set null,
+  photo_url   text,
+  since       int,
+  followers   int not null default 0,
+  source      text not null default 'seed',
+  sort_order  int not null default 0,
+  created_at  timestamptz not null default now()
+);
+
+create table if not exists public.dj_sets (
+  id          uuid primary key default gen_random_uuid(),
+  dj_id       uuid not null references public.djs on delete cascade,
+  venue       text not null,
+  city_id     uuid references public.cities on delete set null,
+  starts_at   timestamptz not null,
+  hours       numeric(4,1) not null default 3
+);
+create index if not exists dj_sets_time_idx on public.dj_sets (starts_at);
+
+create table if not exists public.dj_follows (
+  user_id     uuid not null default auth.uid() references public.profiles on delete cascade,
+  dj_id       uuid not null references public.djs on delete cascade,
+  created_at  timestamptz not null default now(),
+  primary key (user_id, dj_id)
+);
+
+alter table public.djs        enable row level security;
+alter table public.dj_sets    enable row level security;
+alter table public.dj_follows enable row level security;
+
+drop policy if exists djs_read on public.djs;
+create policy djs_read on public.djs for select using (true);
+drop policy if exists djs_admin on public.djs;
+create policy djs_admin on public.djs for all using (public.is_admin()) with check (public.is_admin());
+
+drop policy if exists dj_sets_read on public.dj_sets;
+create policy dj_sets_read on public.dj_sets for select using (true);
+drop policy if exists dj_sets_admin on public.dj_sets;
+create policy dj_sets_admin on public.dj_sets for all using (public.is_admin()) with check (public.is_admin());
+
+drop policy if exists dj_follows_own on public.dj_follows;
+create policy dj_follows_own on public.dj_follows for all
+  using (user_id = auth.uid()) with check (user_id = auth.uid());
+
+grant select on public.djs, public.dj_sets to anon, authenticated;
+grant select, insert, delete on public.dj_follows to authenticated;
+
+-- ---------------------------------------------------------------- seed
+
+insert into public.djs (slug, name, genre, sound, city_id, since, followers, sort_order)
+select v.slug, v.name, v.genre, v.sound, c.id, v.since, v.followers, v.o
+from (values
+  ('mara-volt',    'mara volt',    'techno',     'techno', 'munchen',  2023, 1200, 1),
+  ('levent-ok',    'levent ok',    'house',      'house',  'munchen',  2021, 3400, 2),
+  ('nachtfalter',  'nachtfalter',  'rave',       'techno', 'munchen',  2024,  680, 3),
+  ('ines-okur',    'ines okur',    'deep house', 'house',  'istanbul', 2022, 2100, 4),
+  ('tuesday-club', 'tuesday club', 'house',      'house',  'munchen',  2020,  940, 5),
+  ('dilan-k',      'dilan k.',     'rap',        'rap',    'munchen',  2024, 1500, 6),
+  ('orbit-9',      'orbit 9',      'techno',     'techno', 'berlin',   2019, 5200, 7),
+  ('selin',        'selin',        'house',      'house',  'munchen',  2025,  310, 8)
+) as v(slug, name, genre, sound, city, since, followers, o)
+left join public.cities c on c.slug = v.city
+on conflict (slug) do nothing;
+
+-- sets: the coming fridays and saturdays from whenever this runs, so the
+-- screen shows a week of nights. re-running adds nothing (one set per dj/venue/day).
+insert into public.dj_sets (dj_id, venue, city_id, starts_at, hours)
+select d.id, v.venue, d.city_id, v.at, v.h
+from (values
+  ('levent-ok',    'harry klein',       date_trunc('day', now()) + interval '22 hours',            3),
+  ('mara-volt',    'blitz',             date_trunc('day', now()) + interval '23 hours 30 minutes', 4),
+  ('nachtfalter',  'szene',             date_trunc('day', now()) + interval '1 day 1 hour',        5),
+  ('ines-okur',    'kadıköy · alt kat', date_trunc('day', now()) + interval '1 day 23 hours',      4),
+  ('tuesday-club', 'rote sonne',        date_trunc('day', now()) + interval '2 days 23 hours',     3),
+  ('orbit-9',      'blitz',             date_trunc('day', now()) + interval '3 days 23 hours',     5),
+  ('dilan-k',      'bahnwärter thiel',  date_trunc('day', now()) + interval '4 days 21 hours',     2),
+  ('selin',        'harry klein',       date_trunc('day', now()) + interval '5 days 22 hours',     3)
+) as v(slug, venue, at, h)
+join public.djs d on d.slug = v.slug
+where not exists (
+  select 1 from public.dj_sets s
+  where s.dj_id = d.id and s.venue = v.venue and date_trunc('day', s.starts_at) = date_trunc('day', v.at)
+);
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('20_djs.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  THE SOUND STORE   (21_sound.sql)
+-- ============================================================
+
+-- afterhours — the sound store
+--
+-- The background music leaves the app package (14 MB) and streams from a
+-- public bucket: sound/<genre>/NN.m4a. Everyone reads; the files are put
+-- there once with the service key (backend/tools/upload-sound.mjs).
+-- Supabase only: skipped elsewhere, like the poster store.
+
+do $$
+begin
+  if not exists (select 1 from information_schema.schemata where schema_name = 'storage') then
+    raise notice 'no storage schema - sound store skipped (running locally)';
+    return;
+  end if;
+  execute $q$
+    insert into storage.buckets (id, name, public)
+    values ('sound', 'sound', true)
+    on conflict (id) do nothing
+  $q$;
+  execute $q$ drop policy if exists "sound is read by everyone" on storage.objects $q$;
+  execute $q$
+    create policy "sound is read by everyone" on storage.objects
+      for select using (bucket_id = 'sound')
+  $q$;
+  execute $q$ drop policy if exists "sound admin writes" on storage.objects $q$;
+  execute $q$
+    create policy "sound admin writes" on storage.objects
+      for insert with check (bucket_id = 'sound' and public.is_admin())
+  $q$;
+end $$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('21_sound.sql');
   end if;
 end $$;

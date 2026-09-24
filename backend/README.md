@@ -26,6 +26,9 @@ sql/14_export.sql        everything we hold about one person, in one call
 sql/15_ticketmaster.sql  real events: source/external_id/image_url/ticket_url + the worldwide deck
 sql/16_coverage.sql      the service area: all of Europe, key Asia, North America (94 cities)
 sql/18_geo.sql           lat/lng on events and venues + nights_near(): the map in the app
+sql/19_checkins.sql      check-in, the afterhours card (my_cards), the room (room_*), friends_live
+sql/20_djs.sql           djs, dj_sets, dj_follows + eight seed djs
+sql/21_sound.sql         the sound bucket: background music streams from here
 sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities
 
 tools/build-seed.mjs     builds 03/04/05 from the front-end data
@@ -37,6 +40,7 @@ tools/backup.mjs         backs the content up to JSON
 tools/restore.mjs        turns a backup back into SQL
 tools/health.mjs         the status check
 tools/sync-ticketmaster.mjs  the daily Ticketmaster pull (GitHub Action; --dry to look without writing)
+tools/upload-sound.mjs   puts the 30 music excerpts into the sound bucket (service key, once)
 
 test/                    278 checks, all on a real Postgres (PGlite)
 ```

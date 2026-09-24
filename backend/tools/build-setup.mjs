@@ -26,6 +26,9 @@ const structure = [
   ["16_coverage.sql", "THE COVERAGE — EUROPE, KEY ASIA, NORTH AMERICA"],
   ["17_real_people.sql", "REAL PEOPLE — WHO KEPT A NIGHT, AND THE WAY YOU REACH THEM"],
   ["18_geo.sql", "THE MAP — WHERE A NIGHT IS, AND WHAT IS NEAR YOU"],
+  ["19_checkins.sql", "CHECK-IN, THE CARD, THE ROOM"],
+  ["20_djs.sql", "DJS, SETS, FOLLOWS"],
+  ["21_sound.sql", "THE SOUND STORE"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
