@@ -1,0 +1,73 @@
+{
+  "expo": {
+    "name": "afterhours",
+    "slug": "afterhours",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "bundleIdentifier": "app.afterhours.ios",
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "afterhours uses your location to show the nights near you."
+      }
+    },
+    "android": {
+      "package": "app.afterhours.android",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#161512",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#161512",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 220,
+          "resizeMode": "contain"
+        }
+      ],
+      "expo-font",
+      [
+        "expo-navigation-bar",
+        {
+          "hidden": true
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "afterhours uses your location to show the nights near you."
+        }
+      ],
+      "expo-secure-store",
+      "expo-asset"
+    ],
+    "scheme": "afterhours",
+    "experiments": {
+      "typedRoutes": true
+    },
+    "backgroundColor": "#161512",
+    "description": "find your night. one card at a time."
+  }
+}
