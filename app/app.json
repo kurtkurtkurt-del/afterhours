@@ -24,7 +24,9 @@
       },
       "permissions": [
         "ACCESS_COARSE_LOCATION",
-        "ACCESS_FINE_LOCATION"
+        "ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
       ],
       "blockedPermissions": [
         "android.permission.RECORD_AUDIO",
@@ -85,6 +87,15 @@
       "typedRoutes": true
     },
     "backgroundColor": "#161512",
-    "description": "find your night. one card at a time."
+    "description": "find your night. one card at a time.",
+    "extra": {
+      "router": {},
+      "expo-navigation-bar": {
+        "hidden": true
+      },
+      "eas": {
+        "projectId": "34222e72-1878-4555-9293-daeaf33dfd88"
+      }
+    }
   }
 }
