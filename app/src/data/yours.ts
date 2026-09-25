@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useAuth } from '@/auth/AuthContext';
 import { friendsKept, friendsList, kept, type FriendKept, type FriendRow } from '@/data/friends';
+import type { Night } from '@/data/deck';
 import { friendsLive, type LiveFriend } from '@/data/checkin';
 import { dayLabel } from '@/data/when';
 
@@ -18,7 +19,8 @@ export function useYours() {
   const { session } = useAuth();
   const uid = session?.user.id;
   const tick = useRefreshOnFocus();
-  const [state, setState] = useState<{ friends: YoursFriend[]; nights: YoursNight[]; matches: YoursMatch[]; ready: boolean }>({ friends: [], nights: [], matches: [], ready: false });
+  // mine: sağa kaydırdıklarım (your deck) · swipes: arkadaşların sağa kaydırdıkları, tek tek (friends' deck)
+  const [state, setState] = useState<{ friends: YoursFriend[]; nights: YoursNight[]; matches: YoursMatch[]; mine: Night[]; swipes: FriendKept[]; ready: boolean }>({ friends: [], nights: [], matches: [], mine: [], swipes: [], ready: false });
 
   useEffect(() => {
     if (!uid) return;
@@ -52,7 +54,7 @@ export function useYours() {
       const nights = [...byNight.values()];
       const mineIds = new Set(mine.map((m) => m.id));
       const matches: YoursMatch[] = fk.filter((k) => mineIds.has(k.id)).map((k) => ({ friend: k.friend.toLowerCase(), night: k.id }));
-      setState({ friends, nights, matches, ready: true });
+      setState({ friends, nights, matches, mine: mine as Night[], swipes: fk, ready: true });
     })();
     return () => {
       cancelled = true;
@@ -60,5 +62,5 @@ export function useYours() {
   }, [uid, tick]);
 
   // oturum yoksa bekleyecek bir şey yok
-  return session ? state : { friends: [], nights: [], matches: [], ready: true };
+  return session ? state : { friends: [], nights: [], matches: [], mine: [], swipes: [], ready: true };
 }

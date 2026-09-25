@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { KeyboardAvoidingView, Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Storage from 'expo-sqlite/kv-store';
 import BackButton from '@/components/BackButton';
@@ -21,7 +21,9 @@ export default function SignUpScreen() {
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState<string | null>(null);
   const { signUp, signIn, signInAsGuest, resetPassword } = useAuth();
-  const [mode, setMode] = useState<'up' | 'in'>('up');
+  // ana ekrandaki "sign in" ?mode=in ile gelir; "sign up" parametresiz
+  const params = useLocalSearchParams<{ mode?: string }>();
+  const [mode, setMode] = useState<'up' | 'in'>(params.mode === 'in' ? 'in' : 'up');
 
   // hesap açar (varsa giriş yapar) ve uygulamaya alır.
   // alanlar boşsa cihaza özel anonim kullanıcı: bakmak serbest, kaydırmalar yine de kaydolur,

@@ -20,8 +20,8 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   .leaflet-control-attribution{background:rgba(22,21,18,.8)!important;color:#8a877f!important;font:10px Inter,system-ui,sans-serif;padding:2px 6px}
   .leaflet-control-attribution a{color:#8a877f!important}
   .pin{background:#f3f1ec;color:#161512;border:1px solid #161512;font:500 10px/1 Inter,system-ui,sans-serif;letter-spacing:.5px;padding:4px 6px;white-space:nowrap;box-sizing:border-box}
-  .pin.on{background:#2b3ecf;color:#f3f1ec;border-color:#2b3ecf}
-  .me{width:12px;height:12px;border-radius:50%;background:#2b3ecf;border:2px solid #f3f1ec;box-sizing:border-box}
+  .pin.on{background:#d8251f;color:#f3f1ec;border-color:#d8251f}
+  .me{width:12px;height:12px;border-radius:50%;background:#d8251f;border:2px solid #f3f1ec;box-sizing:border-box}
 </style></head><body><div id="m"></div><script>
   var map=L.map('m',{zoomControl:false,attributionControl:true,zoomSnap:0.5}).setView([48.137,11.575],13);
   map.attributionControl.setPrefix(false);

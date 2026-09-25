@@ -5,7 +5,7 @@ export const colors = {
   ink: '#161512',
   ink2: '#6C6961',
   rule: '#D9D5CC',
-  spot: '#2B3ECF',
+  spot: '#D8251F',   // kırmızı: canlı, tutulan, senin; logodaki nokta
   ink3: '#2E2C29',   // koyu zeminde ayırıcı çizgi
   mute: '#8A877F',   // koyu zeminde soluk ikon ve yazı
 } as const;
@@ -14,6 +14,7 @@ export const fonts = {
   regular: 'InterTight_400Regular',
   medium: 'InterTight_500Medium',
   mono: 'InterTight_400Regular',    // küçük büyük harfli satırlar da aynı fontta; tek aile
+  logo: 'ArchivoLogo',              // sadece isim: archivo, genişlik 62, ağırlık 900 (assets/fonts)
 } as const;
 
 // açılış zamanlaması, milisaniye. "biraz daha yavaş" dendiğinde burası değişir.

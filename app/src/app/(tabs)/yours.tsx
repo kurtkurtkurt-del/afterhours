@@ -10,6 +10,7 @@ import { swipe } from '@/data/deck';
 import { friendById as sampleFriendById, friends as sampleFriends, matches as sampleMatches, nights as sampleNights } from '@/content/friends';
 import { useYours, type YoursFriend, type YoursMatch, type YoursNight } from '@/data/yours';
 import { useAuth } from '@/auth/AuthContext';
+import { dayLabel } from '@/data/when';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -33,6 +34,12 @@ export default function YoursScreen() {
   const [meToo, setMeToo] = useState<Record<string, boolean>>({});
   const [asking, setAsking] = useState<string | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>({});
+  // alt köşeler: solda benim sağa kaydırdıklarım, sağda arkadaşlarımınkiler
+  const [deck, setDeck] = useState<'mine' | 'friends' | null>(null);
+  const openNight = (slug: string) => {
+    setDeck(null);
+    if (slug) router.push(`/night/${slug}`);
+  };
 
   // iki satır: arkadaşlar sütun sütun dizilir, sütunlar sağa akar
   const cols: (typeof friends)[] = [];
@@ -136,9 +143,33 @@ export default function YoursScreen() {
         )}
       </ScrollView>
 
-      <Pressable onPress={() => router.push('/flow')} style={({ pressed }) => [styles.fab, { bottom: TAB_BAR_SPACE + insets.bottom - 6 }, pressed && styles.pressed]}>
-        <Text style={styles.fabText}>friends&apos; deck</Text>
+      <Pressable onPress={() => setDeck('mine')} style={({ pressed }) => [styles.fab, styles.fabLeft, { bottom: TAB_BAR_SPACE + insets.bottom - 6 }, pressed && styles.pressed]}>
+        <Text style={styles.fabTextLine}>your deck{real.mine.length ? ` · ${real.mine.length}` : ''}</Text>
       </Pressable>
+      <Pressable onPress={() => setDeck('friends')} style={({ pressed }) => [styles.fab, { bottom: TAB_BAR_SPACE + insets.bottom - 6 }, pressed && styles.pressed]}>
+        <Text style={styles.fabText}>friends&apos; deck{real.swipes.length ? ` · ${real.swipes.length}` : ''}</Text>
+      </Pressable>
+
+      {/* your deck: sağa kaydırdığım geceler, en yeni önce; satıra dokununca gece sayfası */}
+      <PickerSheet
+        open={deck === 'mine'}
+        title="your deck"
+        options={real.mine.map((n) => ({ id: n.id, label: n.title.toLowerCase(), extra: `${dayLabel(n.starts_at)} · ${(n.venue_name ?? n.city_name).toLowerCase()}` }))}
+        selected={null}
+        onSelect={(id) => openNight(real.mine.find((n) => n.id === id)?.slug ?? '')}
+        onClose={() => setDeck(null)}
+        note={real.mine.length ? 'everything you swiped right' : session ? 'nothing here yet · swipe right in the deck' : 'sign in and the cards you keep land here'}
+      />
+      {/* friends' deck: arkadaşlarımın sağa kaydırdıkları, tek tek, kim kaydırdıysa adıyla */}
+      <PickerSheet
+        open={deck === 'friends'}
+        title="friends' deck"
+        options={real.swipes.map((k, i) => ({ id: `${k.id}-${k.friend}-${i}`, label: k.title.toLowerCase(), extra: `${k.friend.toLowerCase()} · ${dayLabel(k.starts_at)}` }))}
+        selected={null}
+        onSelect={(id) => openNight(real.swipes[Number(id.split('-').pop())]?.slug ?? '')}
+        onClose={() => setDeck(null)}
+        note={real.swipes.length ? 'what your friends swiped right' : real.friends.length ? 'your friends have not kept anything yet' : 'add friends to see what they keep'}
+      />
 
       <PickerSheet
         open={asking !== null}
@@ -199,5 +230,7 @@ const styles = StyleSheet.create({
   matchText: { fontFamily: fonts.regular, fontSize: 16, color: colors.paper, marginTop: 4 },
   strong: { fontFamily: fonts.medium },
   fab: { position: 'absolute', right: brand.left, backgroundColor: colors.paper, paddingVertical: 10, paddingHorizontal: 14 },
+  fabLeft: { right: undefined, left: brand.left, backgroundColor: colors.ink, borderWidth: 1, borderColor: colors.paper },
+  fabTextLine: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper },
   fabText: { fontFamily: fonts.medium, fontSize: 13, color: colors.ink },
 });

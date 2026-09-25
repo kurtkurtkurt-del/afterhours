@@ -42,7 +42,7 @@ export default function City({ play, soundOn, onToggleSound, onPickSound }: Prop
     }
   }, [play, size, t, actions]);
 
-  const scale = brand.smallSize / brand.bigSize;
+  const scale = brand.logoSmall / brand.logoBig;
   // ortadaki merkezden, sol üstteki küçük halin merkezine olan yol
   const dx = size ? brand.left + (size.w * scale) / 2 - width / 2 : 0;
   const dy = size ? brand.top + (size.h * scale) / 2 - height / 2 : 0;
@@ -66,7 +66,7 @@ export default function City({ play, soundOn, onToggleSound, onPickSound }: Prop
       <Backdrop />
       <View style={styles.centre} pointerEvents="none">
         <Animated.Text onLayout={onLayout} style={[styles.word, wordStyle]}>
-          afterhours
+          afterhours<Text style={styles.dot}>.</Text>
         </Animated.Text>
       </View>
       <Animated.View style={[styles.corner, actionsStyle]} pointerEvents={play ? 'auto' : 'none'}>
@@ -79,7 +79,8 @@ export default function City({ play, soundOn, onToggleSound, onPickSound }: Prop
       >
         <Taglines play={play} />
         <View style={styles.gap} />
-        <Button label="sign up" onPress={() => router.push('/signup')} />
+        <Button label="sign in" onPress={() => router.push({ pathname: '/signup', params: { mode: 'in' } })} />
+        <Button label="sign up" kind="line" onPress={() => router.push('/signup')} />
         <Button label="explore your city" kind="line" onPress={() => router.push('/explore')} />
       </Animated.View>
     </View>
@@ -94,5 +95,6 @@ const styles = StyleSheet.create({
   corner: { position: 'absolute', right: brand.left, top: brand.top, alignItems: 'flex-end', gap: 6 },
   hint: { fontFamily: fonts.regular, fontSize: 11, color: colors.mute },
   actions: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingHorizontal: brand.left, gap: 12 },
-  word: { fontFamily: fonts.medium, fontSize: brand.bigSize, letterSpacing: -0.6, color: colors.paper },
+  word: { fontFamily: fonts.logo, fontSize: brand.logoBig, letterSpacing: -0.5, color: colors.paper },
+  dot: { color: colors.spot },
 });

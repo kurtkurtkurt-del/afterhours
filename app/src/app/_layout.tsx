@@ -23,7 +23,7 @@ if (Constants.executionEnvironment !== ExecutionEnvironment.StoreClient) {
 }
 
 export default function RootLayout() {
-  const [loaded] = useFonts({ InterTight_400Regular, InterTight_500Medium });
+  const [loaded] = useFonts({ InterTight_400Regular, InterTight_500Medium, ArchivoLogo: require('../../assets/fonts/ArchivoLogo.ttf') });
 
   useEffect(() => {
     if (loaded) SplashScreen.hideAsync();

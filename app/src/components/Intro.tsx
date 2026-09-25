@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Pressable, StyleSheet } from 'react-native';
+import { Pressable, StyleSheet, Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Animated, { useAnimatedStyle, useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
 import { colors, fonts, intro } from '@/theme/tokens';
@@ -34,12 +34,15 @@ export default function Intro({ onDone }: Props) {
       <Animated.View style={[StyleSheet.absoluteFill, photoStyle]}>
         <Backdrop />
       </Animated.View>
-      <Animated.Text style={[styles.word, wordStyle]}>afterhours</Animated.Text>
+      <Animated.Text style={[styles.word, wordStyle]}>
+        afterhours<Text style={styles.dot}>.</Text>
+      </Animated.Text>
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
-  word: { fontFamily: fonts.medium, fontSize: brand.bigSize, letterSpacing: -0.6, color: colors.paper },
+  word: { fontFamily: fonts.logo, fontSize: brand.logoBig, letterSpacing: -0.5, color: colors.paper },
+  dot: { color: colors.spot },
 });

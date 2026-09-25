@@ -5,4 +5,6 @@ export const brand = {
   top: 72,     // küçük halin üst boşluğu
   left: 24,    // küçük halin sol boşluğu
   move: 600,   // ortadan köşeye kayma süresi, ms
+  logoBig: 46,   // logo (archivo dar, siyah): introda ortada
+  logoSmall: 24, // logo: ana ekranda sol üst köşede
 } as const;
