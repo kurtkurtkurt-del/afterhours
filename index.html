@@ -20,8 +20,8 @@
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png" />
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="fonts/fonts.css?v=176" />
-  <link rel="stylesheet" href="style.css?v=176" />
+  <link rel="stylesheet" href="fonts/fonts.css?v=189" />
+  <link rel="stylesheet" href="style.css?v=189" />
 </head>
 <body class="home" data-screen="0">
 
@@ -41,15 +41,20 @@
   </header>
 
   <!-- Under the menu: short recordings from last night -->
+  <!-- Background music, the same control as the app: tap for on/off,
+       hold for the genre. Tracks live in app/sound (see app/CREDITS.md). -->
   <div class="sound" id="sound">
-    <div class="sound-row" data-source="sound/yesterday-munich.mp3">
-      <button class="sound-button" type="button">
-        <span class="sound-label">yesterday, munich:</span>
-        <span class="sound-icon"></span>
-      </button>
-      <div class="sound-line"><span></span></div>
+    <button class="sound-toggle" id="sound-toggle" type="button" role="switch"
+            aria-checked="false" aria-label="background music" title="hold to pick a genre">
+      <span class="sound-label">sound</span><span class="sound-dot"></span>
+    </button>
+    <div class="sound-genres" id="sound-genres" hidden>
+      <p class="sound-head">sound</p>
+      <button type="button" data-genre="house"><span>house</span><span class="sound-dot"></span></button>
+      <button type="button" data-genre="techno"><span>techno</span><span class="sound-dot"></span></button>
+      <button type="button" data-genre="rap"><span>rap</span><span class="sound-dot"></span></button>
+      <p class="sound-note">ten tracks each · plays while you browse</p>
     </div>
-    <audio id="sound-source" preload="none"></audio>
   </div>
 
   <div class="screens" id="screens" data-screen="0">
@@ -61,7 +66,7 @@
       <div class="intro">
         <p class="intro-1">find your night: rave, club night, konzert, festival, meetup, hausparty.</p>
         <p class="intro-2">one card at a time. keep the ones you want, plan with friends, collect the ones you went to.</p>
-        <a class="explore-btn" href="explore/index.html">explore</a>
+        <a class="explore-btn" id="show-me" href="#next">show me</a>
 
         <!-- Four more screens below; nobody finds out on their own -->
         <p class="down" aria-hidden="true">
@@ -138,39 +143,15 @@
       <p class="s3-right">collect your afterhours card</p>
     </section>
 
-    <!-- The fourth screen: the room after the night. Same language as the
-         phone on screen two: a small white sheet, two lines each, and a
-         countdown that ends in a freeze. -->
-    <section class="screen screen-room">
-      <div class="sr-text">
-        <h2 class="sr-title">the room closes<br />in 48 hours.</h2>
-        <p class="sr-sub">check in at the door and the night becomes a card. who was there talks in the room: two lines, a voice note (soon). then it freezes, forever.</p>
-      </div>
-      <div class="sr-sheet" aria-hidden="true">
-        <p class="sr-sheet-top"><span>the room · blitz</span><span>47h 12m left</span></p>
-        <ul class="sr-posts">
-          <li><span class="sr-who">lina</span><span class="sr-line">the back room was better</span></li>
-          <li><span class="sr-who">emre</span><span class="sr-line">phones stayed in pockets</span></li>
-          <li><span class="sr-who">jonas</span><span class="sr-line">we stayed until the lights came up</span></li>
-          <li><span class="sr-who">you</span><span class="sr-line sr-cursor">two lines, at most</span></li>
-        </ul>
-        <p class="sr-sheet-foot">then it freezes · card no. 0163</p>
-      </div>
-    </section>
-
-    <!-- The fifth screen: who is playing. The dj tab of the app, as a list. -->
+    <!-- The fourth screen: who is playing. The heading sits top centre. -->
     <section class="screen screen-djs">
-      <div class="sd-text">
+      <div class="sd-text" aria-live="polite">
         <h2 class="sd-title">who is<br />playing.</h2>
         <p class="sd-sub">live now, later tonight, this week. their sets, their photos, their next night.</p>
       </div>
-      <ul class="sd-list" aria-hidden="true">
-        <li class="sd-live"><span class="sd-when">live now · harry klein</span><b>levent ok</b><em>house · until 02:00</em></li>
-        <li><span class="sd-when">later tonight</span><b>mara volt</b><em>blitz · 01:00</em></li>
-        <li><span class="sd-when">later tonight</span><b>nachtfalter</b><em>rote sonne · 01:30</em></li>
-        <li><span class="sd-when">this week</span><b>dilan k</b><em>fri · muffathalle</em></li>
-        <li><span class="sd-when">this week</span><b>orbit 9</b><em>sat · bahnwärter thiel</em></li>
-      </ul>
+      <!-- The walnut tuning knob: drawn by knob.js (built from knob.src.js) -->
+      <div class="sd-knob" id="knob" tabindex="0" role="slider"
+           aria-label="tuning knob, turn it" aria-valuemin="0" aria-valuemax="359" aria-valuenow="115"></div>
     </section>
 
     <!-- The sixth screen: the turning city model -->
@@ -228,7 +209,10 @@
 
         <div class="s6-buttons">
           <a class="s6-button" href="explore/index.html">go outside</a>
-          <a class="s6-button s6-app" href="https://play.google.com/store/apps/details?id=app.afterhours.android" target="_blank" rel="noopener">get the app</a>
+          <div class="stores">
+            <a class="store store-play" href="https://play.google.com/store/apps/details?id=app.afterhours.android" target="_blank" rel="noopener"><span><small>get it on</small><b>google play</b></span></a>
+            <span class="store store-ios soon" aria-disabled="true" title="soon"><span><small>soon on the</small><b>app store</b></span></span>
+          </div>
         </div>
       </div>
     </section>
@@ -237,19 +221,19 @@
 
   <!-- The photo in the bottom right (whole); it slides down on screen two -->
   <div class="photo">
-    <img src="foto.jpg?v=176" alt="" />
+    <img src="foto.jpg?v=189" alt="" />
   </div>
 
-  <script src="config.js?v=176"></script>
-  <script src="session.js?v=176"></script>
-  <script src="menu.js?v=176"></script>
-  <script src="venues.js?v=176"></script>
-  <script src="cards.js?v=176"></script>
-  <script src="featured.js?v=176"></script>
-  <script src="data.js?v=176"
+  <script src="config.js?v=189"></script>
+  <script src="session.js?v=189"></script>
+  <script src="menu.js?v=189"></script>
+  <script src="venues.js?v=189"></script>
+  <script src="cards.js?v=189"></script>
+  <script src="featured.js?v=189"></script>
+  <script src="data.js?v=189"
           data-sample="36"
-          data-fallback="events-data.js?v=176"
-          data-after="globe.js?v=176, app.js?v=176"></script>
+          data-fallback="events-data.js?v=189"
+          data-after="globe.js?v=189, app.js?v=189"></script>
 
 </body>
 </html>

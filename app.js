@@ -108,6 +108,21 @@ let scrolled = 0;
 let direction = 0;             // 1 down, -1 up
 let moving = false;
 
+// The walnut knob (three.js, ~130 KB zipped) loads only once the visitor
+// leaves the first screen, so the landing page opens as fast as before.
+let knobLoaded = false;
+function loadKnob() {
+  if (knobLoaded || !document.getElementById("knob")) return;
+  knobLoaded = true;
+  // A classic script, not a module: modules are blocked on file:// pages
+  for (const src of ["knob.js?v=188", "radio.js?v=188"]) {
+    const s = document.createElement("script");
+    s.src = src;
+    s.async = false;            // radio.js runs after knob.js
+    document.body.appendChild(s);
+  }
+}
+
 function goToScreen(target) {
   if (target === screen || target < 0 || target >= SCREEN_COUNT) return;
 
@@ -118,11 +133,18 @@ function goToScreen(target) {
   }
   screen = target;
   scrolled = 0;
+  if (target >= 1) loadKnob();
   moving = true;
   screens.style.setProperty("--screen", String(target));
   document.body.dataset.screen = String(target);
   setTimeout(() => { moving = false; }, 760);
 }
+
+// The first screen's button takes you one screen down instead of leaving
+document.getElementById("show-me").addEventListener("click", (e) => {
+  e.preventDefault();
+  goToScreen(1);
+});
 
 window.addEventListener("wheel", (e) => {
   if (moving) return;
@@ -160,7 +182,7 @@ let touchAtEnd = false;
 window.addEventListener("touchstart", (e) => {
   touchY = e.touches[0].clientY;
   const h = e.target;
-  touchOnCard = !!(h && h.closest && h.closest(".card2"));
+  touchOnCard = !!(h && h.closest && h.closest(".card2, .sd-knob"));
   touchAtEnd = grid.scrollTop + grid.clientHeight >= grid.scrollHeight - 4;
 }, { passive: true });
 
@@ -306,47 +328,117 @@ if (demoNight && demoNight.image) {
 
 /* ---------- Sound: short recordings from last night (3 cities) ---------- */
 
-const soundSource = document.getElementById("sound-source");
-const soundRows = [...document.querySelectorAll(".sound-row")];
-let playingRow = null;
+/* ---------- Background music: the app's sound control ----------
+   Tap: on / off with a soft fade. Hold: pick house, techno or rap; picking
+   one also turns it on. Ten tracks per genre, played in order, looping.
+   The genre is remembered; the music itself always starts off, because
+   browsers do not let a page start sound on its own. radio.js turns it
+   down while the knob plays a channel (window.ambient.duck). */
 
-function stopPlaying() {
-  soundRows.forEach((s) => {
-    s.classList.remove("playing");
-    s.querySelector(".sound-line span").style.width = "0%";
-  });
-}
+const ambient = (() => {
+  const toggle = document.getElementById("sound-toggle");
+  const list = document.getElementById("sound-genres");
+  if (!toggle || !list) return null;
 
-soundRows.forEach((row) => {
-  row.querySelector(".sound-button").addEventListener("click", () => {
-    if (playingRow === row && !soundSource.paused) {
-      soundSource.pause();
-      return;
+  const GENRES = ["house", "techno", "rap"];
+  const VOLUME = 0.7, FADE_MS = 600, HOLD_MS = 350;
+  const store = (k, v) => { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (err) { return null; } };
+
+  let genre = GENRES.includes(store("ambient.genre")) ? store("ambient.genre") : "house";
+  let index = 0;
+  let on = false;
+  let ducked = false;
+  let fader = null;
+  const audio = new Audio();
+  audio.preload = "none";
+
+  const src = () => "app/sound/" + genre + "/" + String(index + 1).padStart(2, "0") + ".m4a";
+  const level = () => (on && !ducked ? VOLUME : 0);
+
+  function fade() {
+    clearInterval(fader);
+    const target = level(), from = audio.volume, t0 = performance.now();
+    if (target > 0 && audio.paused) {
+      if (!audio.src) audio.src = src();
+      audio.play().catch(() => {});
     }
-    if (playingRow !== row) {
-      stopPlaying();
-      playingRow = row;
-      soundSource.src = row.dataset.source;
-    }
-    soundSource.play();
+    fader = setInterval(() => {
+      const t = Math.min(1, (performance.now() - t0) / FADE_MS);
+      try { audio.volume = from + (target - from) * t; } catch (err) { /* iOS */ }
+      if (t >= 1) {
+        clearInterval(fader);
+        if (target === 0) audio.pause();
+      }
+    }, 40);
+  }
+
+  audio.addEventListener("ended", () => {
+    index = (index + 1) % 10;
+    audio.src = src();
+    audio.play().catch(() => {});
   });
-});
 
-soundSource.addEventListener("play", () => {
-  if (playingRow) playingRow.classList.add("playing");
-});
+  function paint() {
+    toggle.classList.toggle("on", on);
+    toggle.setAttribute("aria-checked", String(on));
+    toggle.querySelector(".sound-label").textContent = on ? "sound on" : "sound";
+    list.querySelectorAll("[data-genre]").forEach((b) => b.classList.toggle("on", b.dataset.genre === genre));
+  }
 
-soundSource.addEventListener("pause", () => {
-  if (playingRow) playingRow.classList.remove("playing");
-});
+  function setOn(v) { on = v; paint(); fade(); }
+  function setGenre(g) {
+    store("ambient.genre", g);
+    if (g !== genre) {
+      genre = g;
+      index = 0;
+      audio.pause();
+      audio.volume = 0;
+      audio.src = src();
+    }
+    setOn(true);
+  }
 
-soundSource.addEventListener("timeupdate", () => {
-  if (!playingRow || !soundSource.duration) return;
-  playingRow.querySelector(".sound-line span").style.width =
-    (soundSource.currentTime / soundSource.duration) * 100 + "%";
-});
+  const openList = () => { list.hidden = false; paint(); };
+  const closeList = () => { list.hidden = true; };
 
-soundSource.addEventListener("ended", stopPlaying);
+  // tap vs hold
+  let holdTimer = null, held = false;
+  toggle.addEventListener("pointerdown", () => {
+    held = false;
+    holdTimer = setTimeout(() => { held = true; openList(); }, HOLD_MS);
+  });
+  const cancelHold = () => clearTimeout(holdTimer);
+  toggle.addEventListener("pointerup", cancelHold);
+  toggle.addEventListener("pointerleave", cancelHold);
+  toggle.addEventListener("contextmenu", (e) => { e.preventDefault(); openList(); });
+  toggle.addEventListener("click", () => {
+    if (held) { held = false; return; }
+    closeList();
+    setOn(!on);
+  });
+  // keyboard: the arrow opens the genres
+  toggle.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown") { e.preventDefault(); openList(); list.querySelector(".on, [data-genre]").focus(); }
+  });
+
+  list.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-genre]");
+    if (!b) return;
+    setGenre(b.dataset.genre);
+    closeList();
+    toggle.focus();
+  });
+  document.addEventListener("pointerdown", (e) => {
+    if (!list.hidden && !e.target.closest("#sound")) closeList();
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeList(); });
+
+  paint();
+  return window.ambient = {
+    get on() { return on; },
+    duck(v) { ducked = !!v; fade(); },
+  };
+})();
 
 
 /* ---------- The third screen: afterhours cards running along a strip ---------- */

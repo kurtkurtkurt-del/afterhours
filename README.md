@@ -100,7 +100,7 @@ listing: §6.
 | `index.html` | The landing page, seven screens deep: the poster wall and the hero → how swiping works → a strip of cards → the room → who is playing → the turning city globe → a black footer screen with `go outside` and `get the app` | works |
 | `explore/` | **The wall.** Every night that fits, six posters across, soonest first; the words come on hover. The filter line (country / city / kind / date) above it. The deck itself lives in the app | works |
 | `explore/event/?slug=…` | **The night page** (a contact sheet): where · when · kind (ticket / szene), the ticket, who's coming, the after, beforehours, the card it leaves you. One shell for every night; the night is fetched by slug. §5 | works |
-| `djs/` · `friends/` · `maps/` | **Closed on the web.** The title (`who is playing.` / `yours.` / `go local.`), then "only available in the app." and a `preview.` button wired to nothing | closed, live in the app |
+| `djs/` · `friends/` · `maps/` | **Closed on the web.** The title (`who is playing.` / `yours.` / `go local.`), then "only available in the app." and a `preview.` button that opens a phone (`phone.js`) playing the app's real screenshots from `phone/` with a finger tapping and dragging (`djs-1/2`, `yours-1/2`, `map-1/2/3` .jpg, portrait phone captures; finger positions per shot are set in `phone.js`) | closed, live in the app |
 | `cards/` | **The collection** — afterhours cards. Three samples; empty when signed in until the first check-in | a skeleton |
 | `login/` | Sign-in (`account` in the menu). Three columns: sign in · (first time? / settings) · give feedback | works |
 | `register/` | **Registration** — two steps: email + password, then the handle (+ city). Not finished until a handle is chosen | works |
@@ -517,8 +517,8 @@ edited by hand: `ios/` and `android/` are generated.
   ("say something on the web").
 - *Site → app.* Every night page has **open in the app**
   (`afterhours://night/<slug>` — the route `night/[slug]` answers it) with
-  "get the app" under it; the landing's footer screen and the three closed
-  pages carry `get the app` → the Play listing
+  "get the app" under it; the landing's footer screen, the three closed
+  pages, the phone preview and the night page carry the **store badges** (`.stores`: google play → the Play listing; the app store box sits dimmed until `AH_CONFIG.app.ios` is set)
   (`AH_CONFIG.app` in `config.js` holds the addresses). `app.json`
   declares an Android intent filter for
   `https://kurtkurtkurt-del.github.io/afterhours/explore/event`, and

@@ -221,14 +221,24 @@
       const inApp = el("a", "cs-ticket cs-app", "open in the app");
       inApp.href = APP.scheme + "night/" + encodeURIComponent(e.slug);
       right.appendChild(inApp);
-      const get = el("p", "cs-ticket-sub");
-      get.appendChild(document.createTextNode("check in, keep it, the room · "));
-      const link = el("a", null, "get the app");
-      link.href = APP.android || "../../help/index.html";
-      link.target = "_blank";
-      link.rel = "noopener";
-      get.appendChild(link);
+      const get = el("p", "cs-ticket-sub", "check in, keep it, the room.");
       right.appendChild(get);
+      /* the two store boxes; the app store one waits, dimmed, for an address */
+      const stores = el("div", "stores stores-small");
+      const play = el("a", "store store-play");
+      play.href = APP.android || "../../help/index.html";
+      play.target = "_blank";
+      play.rel = "noopener";
+      play.innerHTML = "<span><small>get it on</small><b>google play</b></span>";
+      stores.appendChild(play);
+      const ios = el(APP.ios ? "a" : "span", "store store-ios" + (APP.ios ? "" : " soon"));
+      if (APP.ios) { ios.href = APP.ios; ios.target = "_blank"; ios.rel = "noopener"; }
+      else { ios.setAttribute("aria-disabled", "true"); ios.title = "soon"; }
+      ios.innerHTML = APP.ios
+        ? "<span><small>download on the</small><b>app store</b></span>"
+        : "<span><small>soon on the</small><b>app store</b></span>";
+      stores.appendChild(ios);
+      right.appendChild(stores);
     }
 
     /* beforehours: what people said about this night. Live, from the

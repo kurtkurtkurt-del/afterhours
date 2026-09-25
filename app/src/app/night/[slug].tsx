@@ -1,6 +1,6 @@
 import { whenLabel } from '@/data/when';
 import { useEffect, useState } from 'react';
-import { Image, Linking, Modal, Pressable, ScrollView, Share, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image, KeyboardAvoidingView, Linking, Modal, Pressable, ScrollView, Share, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import * as Location from 'expo-location';
 import AfterhoursCard from '@/components/AfterhoursCard';
 import { checkIn, myCards, reason, roomInfo, toCardData, type CardRow, type RoomInfo } from '@/data/checkin';
@@ -9,11 +9,12 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import Button from '@/components/Button';
+import Input from '@/components/Input';
 import SoundCorner from '@/components/SoundCorner';
 import { useAuth } from '@/auth/AuthContext';
 import { supabase } from '@/lib/supabase';
 import { SITE, swipe, type Night } from '@/data/deck';
-import { fetchComments, type Comment } from '@/data/comments';
+import { fetchComments, postComment, type Comment } from '@/data/comments';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -36,6 +37,10 @@ export default function NightScreen() {
   const [note, setNote] = useState<string | null>(null);
   const [card, setCard] = useState<CardRow | null>(null);
   const [talk, setTalk] = useState<Comment[] | null>(null);
+  const [text, setText] = useState('');
+  const [replyTo, setReplyTo] = useState<Comment | null>(null);
+  const [sending, setSending] = useState(false);
+  const [talkNote, setTalkNote] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -100,6 +105,27 @@ export default function NightScreen() {
     if (session && night) swipe(night.slug, 'right').catch(() => {});
   };
 
+  // beforehours: yaz, listeyi yeniden çek. cevapsa replyTo'nun altına düşer.
+  const say = async () => {
+    const body = text.trim();
+    if (!night || !body || sending) return;
+    if (!session) {
+      setTalkNote('sign in to say something');
+      return;
+    }
+    setSending(true);
+    setTalkNote(null);
+    try {
+      await postComment(night.id, body, replyTo?.id);
+      setText('');
+      setReplyTo(null);
+      setTalk(await fetchComments(night.id));
+    } catch (e) {
+      setTalkNote(reason(e));
+    }
+    setSending(false);
+  };
+
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
@@ -108,7 +134,8 @@ export default function NightScreen() {
         <SoundCorner />
       </View>
       {night ? (
-        <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false}>
+        <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
+        <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
           <View style={[styles.hero, { height: width * 1.1 }]}>
             <Image source={night.image_url ? { uri: night.image_url } : fallback} style={styles.heroPhoto} resizeMode="cover" />
             <View style={styles.heroShade} />
@@ -163,7 +190,7 @@ export default function NightScreen() {
 
             <Text style={styles.mono}>the room opens at check-in and freezes 48h after the night</Text>
 
-            {/* beforehours: geceden önce söylenenler. web'de yazılır, burada (şimdilik) okunur. */}
+            {/* beforehours: geceden önce söylenenler. herkes yazar, misafir de. */}
             <View style={styles.talk}>
               <Text style={styles.mono}>beforehours</Text>
               {talk === null ? (
@@ -181,15 +208,33 @@ export default function NightScreen() {
                         <Text style={styles.talkBody}>{r.body}</Text>
                       </View>
                     ))}
+                    <Pressable onPress={() => setReplyTo(replyTo?.id === t.id ? null : t)} hitSlop={8}>
+                      <Text style={[styles.talkLink, replyTo?.id === t.id && styles.talkLinkOn]}>{replyTo?.id === t.id ? 'replying · cancel' : 'reply'}</Text>
+                    </Pressable>
                   </View>
                 ))
               )}
-              <Pressable onPress={() => Linking.openURL(webUrl(night.slug))}>
-                <Text style={styles.talkLink}>say something on the web</Text>
-              </Pressable>
+              <View style={styles.compose}>
+                {replyTo ? <Text style={styles.talkWho}>to {replyTo.who}</Text> : null}
+                <Input
+                  value={text}
+                  onChangeText={setText}
+                  placeholder={replyTo ? 'your answer' : 'say something before the night'}
+                  maxLength={500}
+                  multiline
+                  returnKeyType="send"
+                  blurOnSubmit
+                  onSubmitEditing={say}
+                />
+                {talkNote ? <Text style={styles.talkNote}>{talkNote}</Text> : null}
+                <Pressable onPress={say} disabled={sending || !text.trim()} style={[styles.sendBtn, (sending || !text.trim()) && styles.sendBtnOff]}>
+                  <Text style={styles.sendText}>{sending ? 'one moment' : 'say it'}</Text>
+                </Pressable>
+              </View>
             </View>
           </View>
         </ScrollView>
+        </KeyboardAvoidingView>
       ) : null}
 
       {/* kart çıktı: ilk gösterim, sonra oda */}
@@ -251,7 +296,13 @@ const styles = StyleSheet.create({
   talkWho: { fontFamily: fonts.regular, fontSize: 11, color: colors.paper, opacity: 0.5 },
   talkBody: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 21, color: colors.paper },
   talkNone: { fontFamily: fonts.regular, fontSize: 14, color: colors.paper, opacity: 0.5 },
-  talkLink: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper, textDecorationLine: 'underline', marginTop: 4 },
+  talkLink: { fontFamily: fonts.medium, fontSize: 12, color: colors.paper, opacity: 0.55, marginTop: 2 },
+  talkLinkOn: { opacity: 1, color: colors.spot },
+  compose: { marginTop: 10, gap: 8 },
+  talkNote: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
+  sendBtn: { alignSelf: 'flex-end', backgroundColor: colors.paper, paddingVertical: 8, paddingHorizontal: 14 },
+  sendBtnOff: { opacity: 0.4 },
+  sendText: { fontFamily: fonts.medium, fontSize: 13, color: colors.ink },
   roomBtn: { backgroundColor: colors.paper, paddingVertical: 10, paddingHorizontal: 18 },
   roomBtnText: { fontFamily: fonts.medium, fontSize: 14, color: colors.ink },
 });

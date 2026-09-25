@@ -555,11 +555,11 @@
   /* Draw only while this screen is in front. A timer, not rAF, because
      the preview panel reports the document as hidden and rAF never fires
      there — but a fixed 16ms interval also ticked all day on the other
-     five screens. The timer stretches to 200ms while the globe is off
+     four screens. The timer stretches to 200ms while the globe is off
      screen and tightens back the moment it is on. */
   draw(performance.now());
   (function tick() {
-    const active = document.body.dataset.screen === "5";
+    const active = document.body.dataset.screen === "4";
     if (active) draw(performance.now());
     setTimeout(tick, active ? 16 : 200);
   })();

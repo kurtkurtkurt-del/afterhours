@@ -1,7 +1,8 @@
 import { supabase } from '@/lib/supabase';
 
 // beforehours: geceden önce söylenenler. web ile aynı tablo (comments_public),
-// aynı iki adım: önce konular, sonra onların cevapları. şimdilik salt okunur.
+// aynı iki adım: önce konular, sonra onların cevapları. yazmak da buradan:
+// herkes yazabilir, misafir dahil (author_id oturumdan dolar, isim yoksa "someone").
 export type Comment = { id: string; who: string; when: string; body: string; replies: { who: string; when: string; body: string }[] };
 
 type Row = { id: string; parent_id: string | null; author: string | null; body: string; created_at: string };
@@ -42,4 +43,15 @@ export async function fetchComments(eventId: string): Promise<Comment[]> {
     body: t.body,
     replies: reps.filter((r) => r.parent_id === t.id).map((r) => ({ who: (r.author ?? 'someone').toLowerCase(), when: whenText(r.created_at), body: r.body })),
   }));
+}
+
+// bir konu (parentId yok) ya da bir cevap. veritabanı author_id'yi oturumdan
+// doldurur; RLS misafir oturumlarını da kabul eder (rol authenticated).
+export async function postComment(eventId: string, body: string, parentId?: string) {
+  const text = body.trim();
+  if (!text) throw new Error('empty');
+  const row: { event_id: string; body: string; parent_id?: string } = { event_id: eventId, body: text };
+  if (parentId) row.parent_id = parentId;
+  const { error } = await supabase.from('comments').insert(row);
+  if (error) throw error;
 }
