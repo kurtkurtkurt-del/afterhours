@@ -30,4 +30,5 @@ export const EXPECTED_SQL = [
   "20_djs.sql",
   "21_sound.sql",
   "22_hardening.sql",
+  "23_checkin_open.sql",
 ];

@@ -25,7 +25,7 @@ export default function AccountScreen() {
   const { session, signOut } = useAuth();
   const profile = useProfile();
   const insets = useSafeAreaInsets();
-  const { width } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
   const [open, setOpen] = useState<number | null>(null);
   const [side, setSide] = useState<'front' | 'back'>('front');
   const [cards, setCards] = useState<CardRow[] | null>(null);
@@ -118,10 +118,26 @@ export default function AccountScreen() {
         <Pressable style={styles.dim} onPress={() => setOpen(null)}>
           {open !== null && collection[open] && (
             <Pressable onPress={() => setSide((s) => (s === 'front' ? 'back' : 'front'))}>
-              <AfterhoursCard data={collection[open]} index={open} side={side} width={Math.min(width - 48, 360)} />
+              <AfterhoursCard data={collection[open]} index={open} side={side} width={Math.min(width - 48, 360, Math.floor((height - 300) / 1.5))} />
             </Pressable>
           )}
           <Text style={styles.flipHint}>tap the card to turn it</Text>
+          {/* kartın altında: o gecenin odası. örnek kartların odası yok */}
+          {open !== null && real && cards?.[open] ? (
+            <Pressable
+              onPress={() => {
+                // android: modal kapanırken açılan sayfa modalın altında kalıyordu; önce kapat, sonra git
+                const slug = cards[open].slug;
+                setOpen(null);
+                setTimeout(() => router.push(`/room/${slug}`), 260);
+              }}
+              hitSlop={12}
+              style={({ pressed }) => [styles.roomLink, pressed && styles.pressed]}
+            >
+              <Text style={styles.roomLinkText}>afterhours</Text>
+              <Text style={styles.roomLinkSub}>{cards[open].frozen ? 'the room, frozen' : 'the room is open'}</Text>
+            </Pressable>
+          ) : null}
         </Pressable>
       </Modal>
     </View>
@@ -171,6 +187,9 @@ const styles = StyleSheet.create({
   pressed: { opacity: 0.7 },
   gear: { position: 'absolute', top: brand.top - 3, right: brand.left + 84 },
   link: { fontFamily: fonts.regular, fontSize: 14, color: colors.mute },
-  dim: { flex: 1, backgroundColor: 'rgba(22,21,18,0.92)', alignItems: 'center', justifyContent: 'center', gap: 18 },
+  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.92)', alignItems: 'center', justifyContent: 'center', gap: 18 },
+  roomLink: { alignItems: 'center', gap: 4, marginTop: 6, paddingHorizontal: 22, paddingVertical: 10, borderWidth: 1, borderColor: colors.spot },
+  roomLinkText: { fontFamily: fonts.logo, fontSize: 26, letterSpacing: -0.5, color: colors.spotText },
+  roomLinkSub: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.meta },
   flipHint: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute },
 });

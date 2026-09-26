@@ -1,12 +1,15 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { router } from 'expo-router';
 import Storage from 'expo-sqlite/kv-store';
 import Deck, { type DeckHandle } from '@/components/Deck';
 import PickerSheet from '@/components/PickerSheet';
 import SoundCorner from '@/components/SoundCorner';
 import { useTabBarSpace } from '@/components/TabBar';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import type { DeckFriend } from '@/components/CardFace';
+import { friendsKept, type FriendKept } from '@/data/friends';
+import { friendsLive, type LiveFriend } from '@/data/checkin';
 import { useAuth } from '@/auth/AuthContext';
 import { useCities } from '@/data/cities';
 import { useEventTypes } from '@/data/types';
@@ -30,6 +33,7 @@ export default function FlowScreen() {
   const [sheet, setSheet] = useState<'city' | 'type' | 'when' | null>(null);
   const deck = useRef<DeckHandle>(null);
   const tabSpace = useTabBarSpace();
+  const insets = useSafeAreaInsets();
   const [swiped, setSwiped] = useState(0);
   const [reloads, setReloads] = useState(0);
 
@@ -50,6 +54,32 @@ export default function FlowScreen() {
       cancelled = true;
     };
   }, [city, type, key]);
+
+  // arkadaşların tuttuğu geceler: kartın altyazısında kareler; canlı olanlar kırmızı
+  const [fk, setFk] = useState<FriendKept[]>([]);
+  const [liveIds, setLiveIds] = useState<Set<string>>(new Set());
+  useEffect(() => {
+    if (!session) return;
+    let cancelled = false;
+    Promise.all([friendsKept(200).catch(() => [] as FriendKept[]), friendsLive().catch(() => [] as LiveFriend[])]).then(([k, l]) => {
+      if (cancelled) return;
+      setFk(k);
+      setLiveIds(new Set(l.map((x) => (x.handle ?? x.display_name ?? '').toLowerCase())));
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [session, reloads]);
+  const friendsOf = useMemo(() => {
+    const by = new Map<string, DeckFriend[]>();
+    fk.forEach((k) => {
+      const name = k.friend.toLowerCase();
+      const list = by.get(k.id) ?? [];
+      if (!list.some((f) => f.name === name)) list.push({ name, live: liveIds.has(name) });
+      by.set(k.id, list);
+    });
+    return (n: Night) => by.get(n.id) ?? [];
+  }, [fk, liveIds]);
 
   const onSwipe = useCallback(
     (night: Night, direction: 'left' | 'right') => {
@@ -105,7 +135,7 @@ export default function FlowScreen() {
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
-      <View style={styles.head}>
+      <View style={[styles.head, { top: Math.max(brand.top, insets.top + 24) }]}>
         <Pressable onPress={() => setSheet('city')} hitSlop={10} style={({ pressed }) => pressed && styles.pressed}>
           <Text style={styles.pick}>{cityLabel}</Text>
         </Pressable>
@@ -125,11 +155,11 @@ export default function FlowScreen() {
         </Pressable>
       )}
 
-      <View style={[styles.stage, { marginBottom: tabSpace - 14 }]}>
+      <View style={styles.stage}>
         {error ? (
           <Text style={styles.note}>{error}</Text>
         ) : nights ? (
-          <Deck ref={deck} key={`${city}/${type}/${when}/${reloads}`} nights={nights} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} onOpen={(n) => router.push(`/night/${n.slug}`)} />
+          <Deck ref={deck} key={`${city}/${type}/${when}/${reloads}`} nights={nights} friendsOf={friendsOf} bottom={tabSpace + 4} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} />
         ) : (
           <Text style={styles.note}>loading the night…</Text>
         )}
@@ -166,12 +196,13 @@ export default function FlowScreen() {
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
-  head: { position: 'absolute', top: brand.top, left: brand.left, right: 96, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'baseline', gap: 8, zIndex: 1 },
-  pick: { fontFamily: fonts.medium, fontSize: 16, letterSpacing: -0.3, color: colors.paper, textDecorationLine: 'underline', textDecorationColor: colors.mute },
-  sep: { fontFamily: fonts.regular, fontSize: 16, color: colors.mute },
+  // fotoğrafın üstünde okunsun diye mürekkep şerit; friends' deck'teki "ist · 03/24" çipiyle aynı dil
+  head: { position: 'absolute', left: brand.left, right: 110, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'baseline', gap: 8, zIndex: 1, backgroundColor: colors.ink, paddingVertical: 5, paddingHorizontal: 8, alignSelf: 'flex-start' },
+  pick: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 0.8, color: colors.paper, textDecorationLine: 'underline' },
+  sep: { fontFamily: fonts.jet, fontSize: 10.5, color: colors.meta },
   pressed: { opacity: 0.6 },
-  undo: { position: 'absolute', right: brand.left, top: brand.top + 30, zIndex: 1 },
-  undoText: { fontFamily: fonts.regular, fontSize: 12, letterSpacing: 0.2, color: colors.mute },
-  stage: { flex: 1, marginTop: brand.top + 60, marginHorizontal: 14 },
+  undo: { position: 'absolute', right: brand.left, top: brand.top + 34, zIndex: 1, backgroundColor: colors.ink, paddingVertical: 4, paddingHorizontal: 8 },
+  undoText: { fontFamily: fonts.regular, fontSize: 12, letterSpacing: 0.2, color: colors.paper, textDecorationLine: 'underline' },
+  stage: { flex: 1 },
   note: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute, textAlign: 'center', marginTop: 40 },
 });

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Image, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
+import PullDownScroll from '@/components/PullDownScroll';
 import Vinyl from '@/components/Vinyl';
 import { useAmbient } from '@/audio/AmbientContext';
 import { djs as localDjs, sets as localSets, tracksFor, type Dj, type DjSet } from '@/content/djs';
@@ -77,7 +78,7 @@ export default function DjScreen() {
           <Text style={[styles.followText, following && styles.followOn]}>{following ? 'following' : 'follow'}</Text>
         </Pressable>
       </View>
-      <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false}>
+      <PullDownScroll contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false}>
         {/* kapak */}
         <View style={[styles.hero, { height: width * 1.05 }]}>
           <Image source={dj.photoUrl ? { uri: dj.photoUrl } : dj.photo} style={styles.heroPhoto} />
@@ -127,7 +128,7 @@ export default function DjScreen() {
             </View>
           </>
         )}
-      </ScrollView>
+      </PullDownScroll>
     </View>
   );
 }

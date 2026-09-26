@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
+import PullDownScroll from '@/components/PullDownScroll';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
 import SoundCorner from '@/components/SoundCorner';
@@ -76,7 +77,8 @@ export default function FriendScreen() {
         <BackButton />
         <SoundCorner />
       </View>
-      <ScrollView contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 40 }]} showsVerticalScrollIndicator={false}>
+      {/* dj ve gece sayfaları gibi: en üstteyken aşağı çekince kapanır */}
+      <PullDownScroll contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 40 }]} showsVerticalScrollIndicator={false}>
         <View style={[styles.initial, f.live && styles.initialLive]}>
           <Text style={[styles.initialText, f.live && styles.liveText]}>{f.name.charAt(0)}</Text>
         </View>
@@ -100,7 +102,7 @@ export default function FriendScreen() {
         <Pressable hitSlop={8} onPress={() => rf && friendRemove(rf.id).then(() => router.back()).catch((e) => setSent(String(e.message).toLowerCase()))}>
           <Text style={styles.remove}>{rf?.pending === 'outgoing' ? 'cancel request' : 'remove friend'}</Text>
         </Pressable>
-      </ScrollView>
+      </PullDownScroll>
     </View>
   );
 }

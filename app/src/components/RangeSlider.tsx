@@ -4,13 +4,13 @@ import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, { runOnJS, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 import { colors, fonts } from '@/theme/tokens';
 
-type Props = { min: number; max: number; value: number; onChange: (v: number) => void; onEnd: (v: number) => void; format: (v: number) => string; width: number };
+type Props = { min: number; max: number; value: number; onChange: (v: number) => void; onEnd: (v: number) => void; format: (v: number) => string; width: number; showLabel?: boolean; accent?: string };
 
 const KNOB = 18;
 
 // tek tutamaçlı sürgü, logaritmik: küçük mesafeler hassas, büyükler hızlı.
 // sürüklerken onChange (etiket için), bırakınca onEnd (ağ isteği için).
-export default function RangeSlider({ min, max, value, onChange, onEnd, format, width }: Props) {
+export default function RangeSlider({ min, max, value, onChange, onEnd, format, width, showLabel = true, accent }: Props) {
   const track = width - KNOB;
   const toPos = (v: number) => ((Math.log(v) - Math.log(min)) / (Math.log(max) - Math.log(min))) * track;
   const toVal = (p: number) => Math.exp(Math.log(min) + (Math.min(track, Math.max(0, p)) / track) * (Math.log(max) - Math.log(min)));
@@ -50,12 +50,12 @@ export default function RangeSlider({ min, max, value, onChange, onEnd, format, 
 
   return (
     <View style={{ width }}>
-      <Text style={styles.label}>{label}</Text>
+      {showLabel ? <Text style={styles.label}>{label}</Text> : null}
       <GestureDetector gesture={pan}>
         <View style={styles.hit}>
           <View style={styles.track} />
-          <Animated.View style={[styles.fill, fill]} />
-          <Animated.View style={[styles.knob, knob]} />
+          <Animated.View style={[styles.fill, accent ? { backgroundColor: accent } : null, fill]} />
+          <Animated.View style={[styles.knob, accent ? { backgroundColor: accent, borderColor: accent } : null, knob]} />
         </View>
       </GestureDetector>
     </View>

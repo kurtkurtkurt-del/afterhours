@@ -4,6 +4,7 @@
   "main": "expo-router/entry",
   "dependencies": {
     "@expo-google-fonts/inter-tight": "^0.4.2",
+    "@expo-google-fonts/jetbrains-mono": "^0.4.1",
     "@supabase/supabase-js": "^2.117.1",
     "aes-js": "^3.1.2",
     "babel-preset-expo": "~57.0.0",

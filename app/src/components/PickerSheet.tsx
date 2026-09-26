@@ -50,7 +50,7 @@ export default function PickerSheet({ open, title, options, selected, onSelect, 
 }
 
 const styles = StyleSheet.create({
-  dim: { flex: 1, backgroundColor: 'rgba(22,21,18,0.6)' },
+  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.6)' },
   sheet: { backgroundColor: colors.ink, borderTopWidth: 1, borderTopColor: colors.paper, paddingHorizontal: brand.left, paddingTop: 20, maxHeight: '70%' },
   head: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute, marginBottom: 6 },
   list: { flexGrow: 0 },

@@ -22,7 +22,7 @@ export default function NightCard({ night }: { night: Night }) {
         <Image source={fallback} style={styles.photo} resizeMode="cover" />
       )}
       <LinearGradient
-        colors={['rgba(22,21,18,0)', 'rgba(22,21,18,0.25)', 'rgba(22,21,18,0.92)']}
+        colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.25)', 'rgba(14,13,12,0.92)']}
         locations={[0, 0.45, 1]}
         style={styles.shade}
       />

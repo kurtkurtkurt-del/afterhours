@@ -17,7 +17,7 @@
       "package": "app.afterhours.android",
       "versionCode": 1,
       "adaptiveIcon": {
-        "backgroundColor": "#161512",
+        "backgroundColor": "#0E0D0C",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -60,9 +60,9 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#161512",
+          "backgroundColor": "#0E0D0C",
           "image": "./assets/splash-icon.png",
-          "imageWidth": 220,
+          "imageWidth": 200,
           "resizeMode": "contain"
         }
       ],
@@ -86,7 +86,7 @@
     "experiments": {
       "typedRoutes": true
     },
-    "backgroundColor": "#161512",
+    "backgroundColor": "#0E0D0C",
     "description": "find your night. one card at a time.",
     "extra": {
       "router": {},

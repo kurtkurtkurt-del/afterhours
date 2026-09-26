@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Storage from 'expo-sqlite/kv-store';
-import BackButton from '@/components/BackButton';
+import BackButton, { EdgeBack } from '@/components/BackButton';
 import SoundCorner from '@/components/SoundCorner';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
@@ -62,7 +62,7 @@ export default function SignUpScreen() {
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
-      <BackButton />
+      <EdgeBack />
       <SoundCorner />
       <KeyboardAvoidingView behavior="padding" style={styles.body}>
         {/* alt boşluk burada: klavye sarmalayıcısı kendi paddingBottom'unu ezer */}
@@ -105,6 +105,7 @@ export default function SignUpScreen() {
             <Text style={styles.small}>forgot password? enter your email and tap here</Text>
           </Pressable>
           <Text style={styles.small}>leave both empty to look around first</Text>
+          <BackButton inline />
         </View>
         </View>
       </KeyboardAvoidingView>

@@ -1,6 +1,6 @@
 import { whenLabel } from '@/data/when';
 import { useEffect, useState } from 'react';
-import { Image, KeyboardAvoidingView, Linking, Modal, Pressable, ScrollView, Share, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image, KeyboardAvoidingView, Linking, Modal, Pressable, Share, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import * as Location from 'expo-location';
 import AfterhoursCard from '@/components/AfterhoursCard';
 import { checkIn, myCards, reason, roomInfo, toCardData, type CardRow, type RoomInfo } from '@/data/checkin';
@@ -10,6 +10,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
+import PullDownScroll from '@/components/PullDownScroll';
 import SoundCorner from '@/components/SoundCorner';
 import { useAuth } from '@/auth/AuthContext';
 import { supabase } from '@/lib/supabase';
@@ -82,13 +83,21 @@ export default function NightScreen() {
     try {
       let lat: number | undefined;
       let lng: number | undefined;
-      // kapı testi konum ister; izin yoksa şimdi sor
+      // kapı testi konum ister; izin yoksa şimdi sor. kapalı mekânda taze konum dakikalarca
+      // gelmeyebilir ("one moment"da takılıyordu): önce son bilinen, sonra en çok 6 sn taze.
       let perm = await Location.getForegroundPermissionsAsync();
       if (!perm.granted) perm = await Location.requestForegroundPermissionsAsync();
       if (perm.granted) {
-        const pos = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
-        lat = pos.coords.latitude;
-        lng = pos.coords.longitude;
+        const last = await Location.getLastKnownPositionAsync({ maxAge: 5 * 60_000 }).catch(() => null);
+        const fresh = await Promise.race([
+          Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced }).catch(() => null),
+          new Promise<null>((ok) => setTimeout(() => ok(null), 6000)),
+        ]);
+        const pos = fresh ?? last;
+        if (pos) {
+          lat = pos.coords.latitude;
+          lng = pos.coords.longitude;
+        }
       }
       await checkIn(night.slug, lat, lng);
       const mine = (await myCards()).find((c) => c.slug === night.slug) ?? null;
@@ -135,7 +144,7 @@ export default function NightScreen() {
       </View>
       {night ? (
         <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
-        <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
+        <PullDownScroll contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
           <View style={[styles.hero, { height: width * 1.1 }]}>
             <Image source={night.image_url ? { uri: night.image_url } : fallback} style={styles.heroPhoto} resizeMode="cover" />
             <View style={styles.heroShade} />
@@ -233,7 +242,7 @@ export default function NightScreen() {
               </View>
             </View>
           </View>
-        </ScrollView>
+        </PullDownScroll>
         </KeyboardAvoidingView>
       ) : null}
 
@@ -288,7 +297,7 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row', justifyContent: 'space-between', gap: 16, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: colors.ink3 },
   rowK: { fontFamily: fonts.regular, fontSize: 13, color: colors.mute },
   rowV: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper2, flex: 1, textAlign: 'right' },
-  dim: { flex: 1, backgroundColor: 'rgba(22,21,18,0.94)', alignItems: 'center', justifyContent: 'center', gap: 18 },
+  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.94)', alignItems: 'center', justifyContent: 'center', gap: 18 },
   cardLabel: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.spot },
   talk: { marginTop: 28, paddingTop: 18, borderTopWidth: 1, borderTopColor: colors.ink3, gap: 10 },
   topic: { gap: 4, paddingTop: 8 },
