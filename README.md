@@ -237,7 +237,7 @@ this repository.
 | `cards.js` | **The afterhours card generator.** `CARDS.front(night, id)` / `CARDS.back(night, id)` return SVG. `app/src/content/cardsgen.js` is the same file with the app's font names — change both |
 | `events-data.js` | The 36 events, the fallback used when the backend is off |
 | `tools-event-pages.py` | Writes the shell of ALL 142 event pages and the sitemap (§5) |
-| `tools-favicon.py` | Generates the favicons: the same `af`, centred on black, at every size (the `af` + `hr` two-line mark sat visibly off-centre on a phone's home screen) |
+| `tools-favicon.py` | Generates the favicons from the logo set: the `a.` mark on ink (16/32 a centred `a` without the dot, 48/64 `a.` centred, 180 the app icon with the mark bottom-left, 512 maskable). Type from `app/assets/fonts/ArchivoLogo.ttf` |
 | `tools-previews.py` | Generates the `og/` previews for all 142 nights: the poster through Chrome to PNG, the card assembled with PIL |
 | `tools-site-check.py` | Walks every reference on the site: every href/src resolves, every event has page+poster+og, one `?v=` (the CI `site` job) |
 | `fonts/` | The three typefaces as woff2 + `fonts.css`, served from here — no request leaves for Google |

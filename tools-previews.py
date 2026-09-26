@@ -28,6 +28,17 @@ BLACK, WHITE, FAINT = (10, 10, 10), (242, 242, 240), (140, 140, 138)
 from PIL import Image, ImageDraw, ImageFont
 
 
+LOGO_FONT = pathlib.Path("app/assets/fonts/ArchivoLogo.ttf")  # the logo set: archivo, width 62, weight 900
+LOGO_RED = (215, 38, 30)
+
+
+def wordmark(draw, x, y, size, fill):
+    """the wordmark: "afterhours" in the logo cut, with the red full stop"""
+    f = ImageFont.truetype(str(LOGO_FONT), size)
+    draw.text((x, y), "afterhours", font=f, fill=fill)
+    draw.text((x + f.getlength("afterhours") - size * 0.012, y), ".", font=f, fill=LOGO_RED)
+
+
 def font(size, weight=500):
     if not FONT.exists():
         urllib.request.urlretrieve(FONT_URL, FONT)
@@ -130,7 +141,7 @@ def card(e, poster_png):
         draw.text((left, y), s, font=font(24, 400), fill=FAINT)
         y += 34
 
-    draw.text((left, H - 106), "afterhours", font=font(28, 500), fill=WHITE)
+    wordmark(draw, left, H - 108, 30, WHITE)
     draw.text((left, H - 68), "one card at a time. no search.",
              font=font(19, 400), fill=FAINT)
     return canvas
@@ -140,7 +151,7 @@ def general():
     """A single card for the pages that are not events."""
     canvas = Image.new("RGB", (W, H), BLACK)
     draw = ImageDraw.Draw(canvas)
-    draw.text((80, 208), "afterhours", font=font(104, 500), fill=WHITE)
+    wordmark(draw, 80, 196, 120, WHITE)
     draw.text((84, 344), "your scene, one card at a time.", font=font(34, 400), fill=FAINT)
     draw.text((84, 400), "raves · club nights · konzert · festival · meetup · hausparty",
              font=font(21, 400), fill=FAINT)

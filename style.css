@@ -71,11 +71,19 @@ body.home .header { background: transparent; }
 }
 
 .logo {
-  font-size: 19px;
-  font-weight: 500;
+  font-family: "ArchivoLogo", "Archivo", "Inter Tight", sans-serif;
+  font-size: 26px;
+  font-weight: 900;
   letter-spacing: -0.02em;
+  line-height: 1;
   color: var(--black);
   text-decoration: none;
+}
+
+/* the full stop is the mark: always red, whatever the ground */
+.logo::after {
+  content: ".";
+  color: #d7261e;
 }
 
 .header-links {
@@ -689,7 +697,7 @@ img.phone-poster { object-fit: cover; background: #ececea; }
 
   .header.isadmin { display: flex; }   /* three columns are unnecessary on a phone */
 
-  .logo { font-size: 17px; flex: 1 0 100%; }
+  .logo { font-size: 22px; flex: 1 0 100%; }
 
   .header-links {
     flex: 1 0 100%;
@@ -3741,4 +3749,68 @@ body.pv-open { overflow: hidden; }
 .s6-buttons .stores { align-self: center; }
 @media (max-width: 720px) {
   .s6-buttons .stores { flex: 1 0 100%; justify-content: center; }
+}
+
+/* ---------- Phones and tablets, second pass (2026-09-26) ----------
+   Fixes found by walking every page at 375 and 768: the night's photo was
+   half a phone wide with white beside it, the explore tally and the thin
+   footer sat over the wall while it scrolled, the globe's list lay on the
+   city with nothing behind it, the collection showed three tiny cards.
+   Everything here comes last in the file on purpose: same specificity,
+   later rule wins. */
+
+/* --- tablet: 721–1180 --- */
+@media (min-width: 721px) and (max-width: 1180px) {
+  /* explore scrolls here as well: nothing fixed over the wall */
+  body.explore .foot.thin,
+  .ex-wall-page ~ .foot.thin {
+    position: static;
+    padding: 24px 32px;
+    border-top: 1px solid rgba(0, 0, 0, 0.09);
+  }
+  .ex-tally { position: static; padding: 26px 0 0; }
+}
+
+/* the event page between phone and desktop: one column, a poster that is not a stamp */
+@media (min-width: 721px) and (max-width: 900px) {
+  .cs-poster-frame { max-width: 300px; }
+  .cs-poster { max-width: 300px; }
+  .cs-facts { max-width: 420px; }
+}
+
+/* --- phone: up to 720 --- */
+@media (max-width: 720px) {
+  /* the night: photo across the whole width; a photograph is cropped 4:3,
+     a drawn poster keeps its 2:3 sheet */
+  .cs-poster-frame { max-width: none; width: 100%; }
+  .cs-poster { max-width: none; width: 100%; }
+  img.cs-poster { aspect-ratio: 4 / 3; }
+  .cs-facts { max-width: none; width: 100%; }
+
+  /* the tally goes under the wall, not over it */
+  .ex-tally { position: static; padding: 26px 0 0; }
+
+  /* the globe: the list of nearby nights stands on its own dark band at the
+     foot of the screen, left-aligned, instead of floating on the buildings */
+  .s4-near {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 16px 16px 20px;
+    text-align: left;
+    background: linear-gradient(to top, rgba(10, 10, 10, 0.96) 0%, rgba(10, 10, 10, 0.92) 78%, rgba(10, 10, 10, 0) 100%);
+    padding-top: 40px;
+  }
+  .s4-near li { justify-content: flex-start; }
+  .s4-near li b { min-width: 0; margin-left: auto; text-align: right; }
+  .s4-near-title { text-align: left; }
+
+  /* the collection: two cards a row, big enough to read */
+  .cc-cards { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+
+/* very small phones: one card a row */
+@media (max-width: 380px) {
+  .cc-cards { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .ex-wall { gap: 6px; }
 }
