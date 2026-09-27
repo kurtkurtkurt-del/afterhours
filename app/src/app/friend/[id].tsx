@@ -12,6 +12,7 @@ import { Row, Section, Value } from '@/components/Row';
 import { friends, nights } from '@/content/friends';
 import { friendAccept, friendRemove, friendRequest } from '@/data/friends';
 import { useYours } from '@/data/yours';
+import { upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -19,8 +20,11 @@ import { brand } from '@/theme/layout';
 export default function FriendScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const insets = useSafeAreaInsets();
+  const { t, tx, up } = useLang();
   const [handle, setHandle] = useState('');
   const [sent, setSent] = useState<string | null>(null);
+  // sent: sunucunun kodu ya da hata metni; söz çizerken gelir
+  const said = sent ? tx('friend.result.' + sent, sent) : null;
   const real = useYours();
   const rf = real.friends.find((x) => x.id === id);
   const f = rf ? { id: rf.id, name: rf.name, handle: rf.handle ?? '', live: rf.live, kept: rf.kept, seen: '' } : friends.find((x) => x.id === id);
@@ -34,21 +38,21 @@ export default function FriendScreen() {
           <SoundCorner />
         </View>
         <View style={[styles.body, { paddingBottom: insets.bottom + 24 }]}>
-          <Text style={styles.big}>add a friend</Text>
-          <Text style={styles.note}>by handle. they get a request; nothing is shared until they say yes.</Text>
-          <Input value={handle} onChangeText={(v) => setHandle(v.toLowerCase())} placeholder="@handle" autoCapitalize="none" />
+          <Text style={styles.big}>{t('friend.add')}</Text>
+          <Text style={styles.note}>{t('friend.add.note')}</Text>
+          <Input value={handle} onChangeText={(v) => setHandle(v.toLowerCase())} placeholder={t('friend.placeholder')} autoCapitalize="none" />
           <View style={{ marginTop: 16 }}>
             <Button
-              label={sent ?? 'send request'}
+              label={said ?? t('friend.send')}
               onPress={() =>
                 handle &&
                 friendRequest(handle.replace(/^@/, ''))
-                  .then((r) => setSent(r === 'ok' || r === 'accepted' ? (r === 'accepted' ? 'you are friends now' : 'request sent') : r))
+                  .then((r) => setSent(r))
                   .catch((e) => setSent(String(e.message).toLowerCase()))
               }
             />
           </View>
-          <Text style={[styles.note, { marginTop: 24 }]}>or show your code at the door: qr comes with check-in.</Text>
+          <Text style={[styles.note, { marginTop: 24 }]}>{t('friend.qr')}</Text>
         </View>
       </View>
     );
@@ -63,7 +67,7 @@ export default function FriendScreen() {
           <SoundCorner />
         </View>
         <View style={styles.body}>
-          <Text style={styles.big}>no such friend</Text>
+          <Text style={styles.big}>{t('friend.none')}</Text>
         </View>
       </View>
     );
@@ -83,24 +87,24 @@ export default function FriendScreen() {
           <Text style={[styles.initialText, f.live && styles.liveText]}>{f.name.charAt(0)}</Text>
         </View>
         <Text style={styles.big}>{f.name}</Text>
-        <Text style={styles.mono}>@{f.handle}{f.live ? ` · at ${f.live} now` : f.seen ? ` · seen ${f.seen}` : ''}</Text>
+        <Text style={styles.mono}>@{upperData(f.handle)}{f.live ? ` · ${up(t('friend.at', { venue: upperData(f.live) }))}` : f.seen ? ` · ${up(t('friend.seen', { when: upperData(f.seen) }))}` : ''}</Text>
 
-        <Section title={`kept · ${shared.length}`} />
+        <Section title={t('friend.kept', { n: shared.length })} />
         {shared.map((n) => (
           <Row key={n.id} label={n.title} hint={n.venue} right={<Value text={n.when} />} />
         ))}
-        {shared.length === 0 && <Text style={styles.note}>nothing kept this week.</Text>}
+        {shared.length === 0 && <Text style={styles.note}>{t('friend.nothing')}</Text>}
 
-        <Section title="together" />
-        <Row label="nights out together" right={<Value text={String(Math.max(0, f.kept - 1))} />} />
+        <Section title={t('friend.together')} />
+        <Row label={t('friend.nights')} right={<Value text={String(Math.max(0, f.kept - 1))} />} />
 
-        {sent ? <Text style={styles.note}>{sent}</Text> : null}
+        {said ? <Text style={styles.note}>{said}</Text> : null}
         <Section title="" />
         {rf?.pending === 'incoming' ? (
-          <Button label="accept" onPress={() => friendAccept(rf.id).then(() => router.back()).catch((e) => setSent(String(e.message).toLowerCase()))} />
+          <Button label={t('friend.accept')} onPress={() => friendAccept(rf.id).then(() => router.back()).catch((e) => setSent(String(e.message).toLowerCase()))} />
         ) : null}
         <Pressable hitSlop={8} onPress={() => rf && friendRemove(rf.id).then(() => router.back()).catch((e) => setSent(String(e.message).toLowerCase()))}>
-          <Text style={styles.remove}>{rf?.pending === 'outgoing' ? 'cancel request' : 'remove friend'}</Text>
+          <Text style={styles.remove}>{rf?.pending === 'outgoing' ? t('friend.cancel') : t('friend.remove')}</Text>
         </Pressable>
       </PullDownScroll>
     </View>
@@ -116,7 +120,7 @@ const styles = StyleSheet.create({
   initialText: { fontFamily: fonts.medium, fontSize: 30, color: colors.paper },
   liveText: { color: colors.spot },
   big: { fontFamily: fonts.medium, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
-  mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute, marginTop: 6 },
+  mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginTop: 6 },
   note: { fontFamily: fonts.regular, fontSize: 14, color: colors.mute, marginTop: 8, marginBottom: 16 },
   remove: { fontFamily: fonts.regular, fontSize: 14, color: colors.mute, marginTop: 8 },
 });

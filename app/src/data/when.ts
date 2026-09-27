@@ -1,7 +1,9 @@
 import type { Night } from '@/data/deck';
+import { t, tx } from '@/i18n';
 
 export type When = 'tonight' | 'tomorrow' | 'weekend' | 'week' | 'month';
 
+// label ingilizce yedek; ekranda tx('when.' + id, label) ile çevrilir
 export const whens: { id: When; label: string }[] = [
   { id: 'tonight', label: 'tonight' },
   { id: 'tomorrow', label: 'tomorrow' },
@@ -15,13 +17,13 @@ const D = 24 * H;
 
 // zaman penceresi [from, to]. deste sunucudan tarih filtresiz gelir, burada elenir.
 export function windowFor(when: When, now = new Date()): [number, number] {
-  const t = now.getTime();
+  const ms = now.getTime();
   if (when === 'tonight') {
     // gece sabaha kadar sürer: yarın 08:00'e kadar
     const end = new Date(now);
     end.setHours(8, 0, 0, 0);
-    if (end.getTime() <= t) end.setTime(end.getTime() + D);
-    return [t - 6 * H, end.getTime()]; // 6 saat önce başlamış gece hâlâ "bu gece"
+    if (end.getTime() <= ms) end.setTime(end.getTime() + D);
+    return [ms - 6 * H, end.getTime()]; // 6 saat önce başlamış gece hâlâ "bu gece"
   }
   if (when === 'tomorrow') {
     // yarın 08:00 → öbür gün 08:00
@@ -44,23 +46,25 @@ export function windowFor(when: When, now = new Date()): [number, number] {
     }
     return [fri.getTime(), mon];
   }
-  if (when === 'week') return [t - 6 * H, t + 7 * D];
-  return [t - 6 * H, t + 31 * D];
+  if (when === 'week') return [ms - 6 * H, ms + 7 * D];
+  return [ms - 6 * H, ms + 31 * D];
 }
 
 // tarih ve saat, web ile aynı biçimde: "thu 26.09 · 20:00" / "thu 26.09"
+// gün adı çağrıldığı andaki dilde (çizim sırasında çağrılır)
 const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const two = (n: number) => String(n).padStart(2, '0');
+export const dayName = (d: Date) => tx('day.' + DAYS[d.getDay()], DAYS[d.getDay()]);
 export function dayLabel(iso: string | null): string {
-  if (!iso) return 'tba';
+  if (!iso) return t('deck.tba');
   const d = new Date(iso);
-  if (isNaN(d.getTime())) return 'tba';
-  return `${DAYS[d.getDay()]} ${two(d.getDate())}.${two(d.getMonth() + 1)}`;
+  if (isNaN(d.getTime())) return t('deck.tba');
+  return `${dayName(d)} ${two(d.getDate())}.${two(d.getMonth() + 1)}`;
 }
 export function whenLabel(iso: string | null): string {
-  if (!iso) return 'tba';
+  if (!iso) return t('deck.tba');
   const d = new Date(iso);
-  if (isNaN(d.getTime())) return 'tba';
+  if (isNaN(d.getTime())) return t('deck.tba');
   return `${dayLabel(iso)} · ${two(d.getHours())}:${two(d.getMinutes())}`;
 }
 

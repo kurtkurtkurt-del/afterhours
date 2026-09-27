@@ -23,6 +23,14 @@
   AH.filter = { country: null, city: CONFIG.city || null, kind: null, date: "any night" };
 
   const DAYS = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+
+  /* The date window is kept as the english code the code compares
+     ("this weekend"); only what is SHOWN goes through the dictionary. */
+  const WHEN_KEY = {
+    "tonight": "when.tonight", "tomorrow": "when.tomorrow",
+    "this weekend": "when.weekend", "this week": "when.week",
+    "this month": "when.month", "any night": "when.any",
+  };
   const pad2 = (n) => String(n).padStart(2, "0");
 
   /* --- the date window, on the visitor's own calendar --- */
@@ -76,7 +84,7 @@
     const m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(e.startsAt || "");
     if (!m) return e.meta || "";
     const d = new Date(+m[1], +m[2] - 1, +m[3]);
-    return DAYS[d.getDay()] + " " + m[3] + "." + m[2] + " · " + m[4] + ":" + m[5];
+    return AH.t("day." + DAYS[d.getDay()]) + " " + m[3] + "." + m[2] + " · " + m[4] + ":" + m[5];
   }
 
   function place(e) {
@@ -142,12 +150,15 @@
     const n = list.length;
     const city = AH.filter.city
       ? AH.filter.city.replace(/-/g, " ")
-      : "everywhere";
-    if (tally) tally.textContent = n ? n + (n === 1 ? " night · " : " nights · ") + city : "";
+      : AH.t("filter.everywhere");
+    if (tally) tally.textContent = n ? AH.tn("explore.tally", n, { where: city }) : "";
 
     if (empty) {
       empty.hidden = n > 0;
-      empty.textContent = "nothing " + (AH.filter.date === "any night" ? "here" : AH.filter.date) + ". try another night, or another city.";
+      const key = WHEN_KEY[AH.filter.date];
+      empty.textContent = AH.filter.date === "any night" || !key
+        ? AH.t("explore.empty.here")
+        : AH.t("explore.empty.when", { when: AH.t(key) });
     }
   }
 

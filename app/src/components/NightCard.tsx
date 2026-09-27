@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SvgUri } from 'react-native-svg';
+import { upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { posterUrl, type Night } from '@/data/deck';
 
@@ -8,7 +9,10 @@ const fallback = require('../../assets/intro/concert.jpg');
 
 // seçenek 1, "tam kart": fotoğraf kartın tamamı, yazı altta koyu bantta.
 export default function NightCard({ night }: { night: Night }) {
-  const line = [night.type_name, night.source === 'ticketmaster' ? 'ticket' : 'szene'].filter(Boolean).join(' · ');
+  const { t, tx, up } = useLang();
+  // tür sözlükte varsa çevrilmiş söz, yoksa veritabanındaki ad (veri)
+  const kind = tx('type.' + night.type_slug, '');
+  const line = [kind ? up(kind) : upperData(night.type_name), up(night.source === 'ticketmaster' ? t('word.ticket') : t('word.szene'))].filter(Boolean).join(' · ');
   return (
     <View style={styles.card}>
       {night.image_url ? (
@@ -27,11 +31,11 @@ export default function NightCard({ night }: { night: Night }) {
         style={styles.shade}
       />
       <View style={styles.text}>
-        <Text style={styles.mono}>{line.toLowerCase()}</Text>
+        <Text style={styles.mono}>{line}</Text>
         <Text style={styles.title} numberOfLines={3}>
           {night.title.toLowerCase()}
         </Text>
-        <Text style={styles.mono}>{night.meta.toLowerCase()}</Text>
+        <Text style={styles.mono}>{upperData(night.meta)}</Text>
       </View>
     </View>
   );
@@ -43,6 +47,6 @@ const styles = StyleSheet.create({
   photo: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
   shade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: '60%' },
   text: { position: 'absolute', left: 18, right: 18, bottom: 18, gap: 6 },
-  mono: { fontFamily: fonts.mono, fontSize: 10, letterSpacing: 1.6, textTransform: 'uppercase', color: colors.paper2, opacity: 0.7 },
+  mono: { fontFamily: fonts.mono, fontSize: 10, letterSpacing: 1.6, color: colors.paper2, opacity: 0.7 },
   title: { fontFamily: fonts.medium, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
 });

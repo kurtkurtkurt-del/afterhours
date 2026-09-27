@@ -1,5 +1,6 @@
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -17,11 +18,12 @@ type Props = {
 // alttan açılan liste. mürekkep zemin, üstte kâğıt çizgi, seçili satırda spot nokta.
 export default function PickerSheet({ open, title, options, selected, onSelect, onClose, note }: Props) {
   const insets = useSafeAreaInsets();
+  const { up } = useLang();
   return (
     <Modal visible={open} transparent animationType="fade" onRequestClose={onClose}>
       <Pressable style={styles.dim} onPress={onClose} />
       <View style={[styles.sheet, { paddingBottom: insets.bottom + 24 }]}>
-        <Text style={styles.head}>{title}</Text>
+        <Text style={styles.head}>{up(title)}</Text>
         <ScrollView style={styles.list} showsVerticalScrollIndicator={false}>
           {options.map((o) => {
             const on = o.id === selected;
@@ -52,7 +54,7 @@ export default function PickerSheet({ open, title, options, selected, onSelect, 
 const styles = StyleSheet.create({
   dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.6)' },
   sheet: { backgroundColor: colors.ink, borderTopWidth: 1, borderTopColor: colors.paper, paddingHorizontal: brand.left, paddingTop: 20, maxHeight: '70%' },
-  head: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute, marginBottom: 6 },
+  head: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginBottom: 6 },
   list: { flexGrow: 0 },
   row: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: colors.ink3 },
   pressed: { opacity: 0.6 },

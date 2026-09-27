@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withSequence, withTiming } from 'react-native-reanimated';
 import { colors, fonts } from '@/theme/tokens';
 import { tagline, taglines } from '@/content/taglines';
+import { useT } from '@/i18n';
 
 type Props = { play: boolean };
 
@@ -10,10 +11,12 @@ type Props = { play: boolean };
 export default function Taglines({ play }: Props) {
   const [i, setI] = useState(0);
   const v = useSharedValue(0);
+  const t = useT();
+  const line = t(taglines[i]);
 
   useEffect(() => {
     if (!play) return;
-    const words = taglines[i].split(' ').length;
+    const words = line.split(' ').length;
     const hold = tagline.base + words * tagline.perWord;
     v.set(
       withSequence(
@@ -24,7 +27,7 @@ export default function Taglines({ play }: Props) {
     );
     const next = setTimeout(() => setI((n) => (n + 1) % taglines.length), tagline.in + hold + tagline.out);
     return () => clearTimeout(next);
-  }, [play, i, v]);
+  }, [play, i, v, line]);
 
   const style = useAnimatedStyle(() => ({
     opacity: v.value,
@@ -33,7 +36,7 @@ export default function Taglines({ play }: Props) {
 
   return (
     <View style={styles.box} pointerEvents="none">
-      <Animated.Text style={[styles.text, style]}>{taglines[i]}</Animated.Text>
+      <Animated.Text style={[styles.text, style]}>{line}</Animated.Text>
     </View>
   );
 }

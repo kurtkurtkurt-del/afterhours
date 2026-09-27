@@ -9,6 +9,8 @@ import Button from '@/components/Button';
 import Taglines from '@/components/Taglines';
 import SoundToggle from '@/components/SoundToggle';
 import Backdrop from '@/components/Backdrop';
+import LangRow from '@/components/LangRow';
+import { useT } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -18,17 +20,18 @@ type Props = { play: boolean; soundOn: boolean; onToggleSound: () => void; onPic
 export default function City({ play, soundOn, onToggleSound, onPickSound }: Props) {
   const { width, height } = useWindowDimensions();
   const [size, setSize] = useState<{ w: number; h: number } | null>(null);
-  const t = useSharedValue(0);
+  const move = useSharedValue(0);
+  const t = useT();
   const actions = useSharedValue(0);
   const insets = useSafeAreaInsets();
   const [hint, setHint] = useState(() => Storage.getItemSync('hint.sound') !== '1');
   useEffect(() => {
     if (!play || !hint) return;
-    const t = setTimeout(() => {
+    const timer = setTimeout(() => {
       Storage.setItemSync('hint.sound', '1');
       setHint(false);
     }, 7000);
-    return () => clearTimeout(t);
+    return () => clearTimeout(timer);
   }, [play, hint]);
 
   const onLayout = (e: LayoutChangeEvent) => {
@@ -37,10 +40,10 @@ export default function City({ play, soundOn, onToggleSound, onPickSound }: Prop
 
   useEffect(() => {
     if (play && size) {
-      t.set(withTiming(1, { duration: brand.move, easing: Easing.inOut(Easing.cubic) }));
+      move.set(withTiming(1, { duration: brand.move, easing: Easing.inOut(Easing.cubic) }));
       actions.set(withDelay(brand.move * 0.6, withTiming(1, { duration: 500, easing: Easing.out(Easing.cubic) })));
     }
-  }, [play, size, t, actions]);
+  }, [play, size, move, actions]);
 
   const scale = brand.logoSmall / brand.logoBig;
   // ortadaki merkezden, sol üstteki küçük halin merkezine olan yol
@@ -49,9 +52,9 @@ export default function City({ play, soundOn, onToggleSound, onPickSound }: Prop
 
   const wordStyle = useAnimatedStyle(() => ({
     transform: [
-      { translateX: dx * t.value },
-      { translateY: dy * t.value },
-      { scale: 1 - (1 - scale) * t.value },
+      { translateX: dx * move.value },
+      { translateY: dy * move.value },
+      { scale: 1 - (1 - scale) * move.value },
     ],
   }));
 
@@ -71,7 +74,10 @@ export default function City({ play, soundOn, onToggleSound, onPickSound }: Prop
       </View>
       <Animated.View style={[styles.corner, actionsStyle]} pointerEvents={play ? 'auto' : 'none'}>
         <SoundToggle on={soundOn} onPress={onToggleSound} onLongPress={onPickSound} />
-        {hint ? <Text style={styles.hint}>tap for sound · hold to pick a genre</Text> : null}
+        {hint ? <Text style={styles.hint}>{t('sound.hint')}</Text> : null}
+      </Animated.View>
+      <Animated.View style={[styles.lang, actionsStyle]} pointerEvents={play ? 'auto' : 'none'}>
+        <LangRow />
       </Animated.View>
       <Animated.View
         style={[styles.actions, { paddingBottom: insets.bottom + 24 }, actionsStyle]}
@@ -79,9 +85,9 @@ export default function City({ play, soundOn, onToggleSound, onPickSound }: Prop
       >
         <Taglines play={play} />
         <View style={styles.gap} />
-        <Button label="sign in" onPress={() => router.push({ pathname: '/signup', params: { mode: 'in' } })} />
-        <Button label="sign up" kind="line" onPress={() => router.push('/signup')} />
-        <Button label="explore your city" kind="line" onPress={() => router.push('/explore')} />
+        <Button label={t('word.signin')} onPress={() => router.push({ pathname: '/signup', params: { mode: 'in' } })} />
+        <Button label={t('word.signup')} kind="line" onPress={() => router.push('/signup')} />
+        <Button label={t('home.explore')} kind="line" onPress={() => router.push('/explore')} />
       </Animated.View>
     </View>
   );
@@ -93,6 +99,8 @@ const styles = StyleSheet.create({
   gap: { height: 16 },
   // ismin küçük haliyle aynı hizada, sağda
   corner: { position: 'absolute', right: brand.left, top: brand.top, alignItems: 'flex-end', gap: 6 },
+  // küçük ismin hemen altında, sol üstte
+  lang: { position: 'absolute', left: brand.left, top: brand.top + 46 },
   hint: { fontFamily: fonts.regular, fontSize: 11, color: colors.mute },
   actions: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingHorizontal: brand.left, gap: 12 },
   word: { fontFamily: fonts.logo, fontSize: brand.logoBig, letterSpacing: -0.5, color: colors.paper },

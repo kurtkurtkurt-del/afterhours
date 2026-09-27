@@ -1,20 +1,28 @@
 import { supabase } from '@/lib/supabase';
 import type { NightCardData } from '@/content/cardsgen';
+import { t } from '@/i18n';
+import type { Key } from '@/i18n/dict';
 
 // 19_checkins.sql: check_in, my_cards, room_info, room_list, room_post, friends_live
 
-export const reasons: Record<string, string> = {
-  signedout: 'sign in to check in',
-  nonight: 'this night is gone',
-  notnow: 'check in opens six hours before the night',
-  far: 'you need to be at the door for this one',
-  notthere: 'only the people who were there can write here',
-  frozen: 'this room is frozen',
+// kod → söz anahtarı. söz çizim anında çözülür: t(reasons[kod])
+export const reasons: Record<string, Key> = {
+  signedout: 'checkin.reason.signedout',
+  nonight: 'checkin.reason.nonight',
+  notnow: 'checkin.reason.notnow',
+  far: 'checkin.reason.far',
+  notthere: 'checkin.reason.notthere',
+  frozen: 'checkin.reason.frozen',
 };
-export const reason = (e: unknown) => {
+// hatanın kodu; bilinmeyen hata olduğu gibi (küçük harfle) döner. ekranlar bunu saklar.
+export const reasonCode = (e: unknown) => {
   const m = String((e as Error)?.message ?? e);
-  const code = Object.keys(reasons).find((k) => m.includes(k));
-  return code ? reasons[code] : m.toLowerCase();
+  return Object.keys(reasons).find((k) => m.includes(k)) ?? m.toLowerCase();
+};
+// bileşen dışı kullanım için: o anki dilde cümle
+export const reason = (e: unknown) => {
+  const code = reasonCode(e);
+  return reasons[code] ? t(reasons[code]) : code;
 };
 
 export async function checkIn(slug: string, lat?: number, lng?: number): Promise<number> {

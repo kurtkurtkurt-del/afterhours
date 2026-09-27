@@ -27,7 +27,7 @@
     const a = document.createElement("a");
     a.className = "header-admin";
     a.href = rootPath() + "admin/index.html";
-    a.textContent = "admin panel";
+    a.textContent = AH.t ? AH.t("menu.admin") : "admin panel";
 
     /* The middle of the menu: between the logo and the links */
     const nav = header.querySelector(".header-links");
@@ -50,7 +50,7 @@
     const a = loginLink();
     if (!a) return;
     if (!a.dataset.wasText) a.dataset.wasText = a.textContent;
-    a.textContent = "welcome " + name + " (:";
+    a.textContent = AH.t ? AH.t("menu.welcome", { name: name }) : "welcome " + name + " (:";
   }
 
   function unGreet() {
@@ -71,7 +71,7 @@
       (AH.session && AH.session.user && AH.session.user.email) ||
       "";
     const first = String(raw).split("@")[0].split(/[.\s_]/)[0];
-    return first ? first.toLowerCase() : "you";
+    return first ? first.toLowerCase() : (AH.t ? AH.t("menu.you") : "you");
   }
 
   /* The "last seen" a friend gets from profile_card() only moves when

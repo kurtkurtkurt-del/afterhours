@@ -122,3 +122,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Walk every reference
         run: python3 tools-site-check.py
+
+      # Three languages: every key carries en, de and tr, and every key a
+      # page or a script asks for exists. A half-translated sentence shows
+      # up as its own key on the screen, and only in the language nobody
+      # on the team happened to open.
+      - name: Every word in three languages
+        run: python3 tools-lang.py --check

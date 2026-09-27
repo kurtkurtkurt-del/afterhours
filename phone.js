@@ -28,20 +28,20 @@
   // hold: how long the shot stays after the gesture (ms)
   const SCENES = {
     djs: [
-      { shot: "djs-1.jpg", say: "who is playing: next up, later tonight, this week.", gesture: { type: "drag", from: [50, 78], to: [50, 58] }, hold: 1200 },
-      { shot: "djs-1.jpg", say: "tap a name.", gesture: { type: "tap", at: [27, 37] }, hold: 700 },
-      { shot: "djs-2.jpg", say: "their sets, their photos, their next night.", gesture: { type: "drag", from: [50, 80], to: [50, 56] }, hold: 2200 },
+      { shot: "djs-1.jpg", say: AH.t("phone.djs.1"), gesture: { type: "drag", from: [50, 78], to: [50, 58] }, hold: 1200 },
+      { shot: "djs-1.jpg", say: AH.t("phone.djs.2"), gesture: { type: "tap", at: [27, 37] }, hold: 700 },
+      { shot: "djs-2.jpg", say: AH.t("phone.djs.3"), gesture: { type: "drag", from: [50, 80], to: [50, 56] }, hold: 2200 },
     ],
     friends: [
-      { shot: "yours-1.jpg", say: "where your friends are going tonight.", gesture: { type: "drag", from: [80, 17], to: [34, 17] }, hold: 1200 },
-      { shot: "yours-1.jpg", say: "me too.", gesture: { type: "tap", at: [18, 58] }, hold: 700 },
-      { shot: "yours-2.jpg", say: "kept. you are on the list for that night.", gesture: { type: "none" }, hold: 2400 },
+      { shot: "yours-1.jpg", say: AH.t("phone.friends.1"), gesture: { type: "drag", from: [80, 17], to: [34, 17] }, hold: 1200 },
+      { shot: "yours-1.jpg", say: AH.t("phone.friends.2"), gesture: { type: "tap", at: [18, 58] }, hold: 700 },
+      { shot: "yours-2.jpg", say: AH.t("phone.friends.3"), gesture: { type: "none" }, hold: 2400 },
     ],
     maps: [
-      { shot: "map-1.jpg", say: "the city, tonight. every square is a night.", gesture: { type: "drag", from: [64, 62], to: [44, 48] }, hold: 1100 },
-      { shot: "map-1.jpg", say: "tap a square.", gesture: { type: "tap", at: [54, 51.5] }, hold: 700 },
-      { shot: "map-2.jpg", say: "keep it for later, or open the night.", gesture: { type: "tap", at: [17.5, 83.5] }, hold: 900 },
-      { shot: "map-3.jpg", say: "kept.", gesture: { type: "none" }, hold: 2000 },
+      { shot: "map-1.jpg", say: AH.t("phone.maps.1"), gesture: { type: "drag", from: [64, 62], to: [44, 48] }, hold: 1100 },
+      { shot: "map-1.jpg", say: AH.t("phone.maps.2"), gesture: { type: "tap", at: [54, 51.5] }, hold: 700 },
+      { shot: "map-2.jpg", say: AH.t("phone.maps.3"), gesture: { type: "tap", at: [17.5, 83.5] }, hold: 900 },
+      { shot: "map-3.jpg", say: AH.t("phone.maps.4"), gesture: { type: "none" }, hold: 2000 },
     ],
   };
   const scene = SCENES[page];
@@ -56,9 +56,9 @@
   root.hidden = true;
   root.setAttribute("role", "dialog");
   root.setAttribute("aria-modal", "true");
-  root.setAttribute("aria-label", "a preview of the app");
+  root.setAttribute("aria-label", AH.t("phone.aria"));
   root.innerHTML = `
-    <button class="pv-close" type="button" aria-label="close the preview">close</button>
+    <button class="pv-close" type="button" aria-label="${AH.t("phone.close.aria")}">${AH.t("word.close")}</button>
     <div class="pv-stage">
       <div class="pv-frame">
         <div class="pv-screen">
@@ -71,10 +71,10 @@
       <p class="pv-say" aria-live="polite"></p>
       <div class="pv-end" hidden>
         <div class="stores">
-          <a class="store store-play" href="${APP}" target="_blank" rel="noopener"><span><small>get it on</small><b>google play</b></span></a>
-          ${IOS ? `<a class="store store-ios" href="${IOS}" target="_blank" rel="noopener"><span><small>download on the</small><b>app store</b></span></a>` : `<span class="store store-ios soon" aria-disabled="true" title="soon"><span><small>soon on the</small><b>app store</b></span></span>`}
+          <a class="store store-play" href="${APP}" target="_blank" rel="noopener"><span><small>${AH.t("store.play.small")}</small><b>${AH.t("store.play.big")}</b></span></a>
+          ${IOS ? `<a class="store store-ios" href="${IOS}" target="_blank" rel="noopener"><span><small>${AH.t("store.ios.small.live")}</small><b>${AH.t("store.ios.big")}</b></span></a>` : `<span class="store store-ios soon" aria-disabled="true" title="${AH.t("store.soon")}"><span><small>${AH.t("store.ios.small")}</small><b>${AH.t("store.ios.big")}</b></span></span>`}
         </div>
-        <button class="pv-again" type="button">watch again</button>
+        <button class="pv-again" type="button">${AH.t("phone.again")}</button>
       </div>
     </div>`;
   document.body.appendChild(root);
@@ -162,7 +162,7 @@
     }
     if (id !== run) return;
     finger.hidden = true;
-    say.textContent = "only in the app.";
+    say.textContent = AH.t("phone.only");
     end.hidden = false;
   }
 

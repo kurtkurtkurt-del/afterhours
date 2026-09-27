@@ -16,6 +16,7 @@ import { useTabBarSpace } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
 import { fetchNear, type NearNight } from '@/data/near';
 import { friendsKept } from '@/data/friends';
+import { upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -37,6 +38,7 @@ const distText = (km: number) => (km < 1 ? `${Math.round(km * 1000)} m` : `${km.
 // (arkadaşın tuttuğu kırmızı). kareye dokununca sürgü söner, kart 300ms'de alttan kayar.
 export default function MapScreen() {
   const { session } = useAuth();
+  const { t, tn, tx, up } = useLang();
   const tabSpace = useTabBarSpace();
   const { width } = useWindowDimensions();
   const [me, setMe] = useState<[number, number] | null>(null);
@@ -149,15 +151,15 @@ export default function MapScreen() {
   const restStyle = useAnimatedStyle(() => ({ opacity: 1 - open.value }));
   const cardStyle = useAnimatedStyle(() => ({ opacity: open.value, transform: [{ translateY: (1 - open.value) * 40 }] }));
 
-  const whenLabel = when ? (whens.find((w) => w.id === when)?.label ?? when) : 'any night';
-  const placeLabel = atCity ? `${cityName} centre` : 'near me';
+  const whenLabel = when ? tx('when.' + when, when) : t('when.any');
+  const placeLabel = atCity ? t('map.centre', { city: cityName }) : t('map.nearMe');
   const bigKm = dragKm ?? km;
   const pickedIndex = picked ? shown.findIndex((n) => n.id === picked.id) : -1;
   const pickedFriends = picked ? (keptBy.get(picked.id) ?? []) : [];
   const time = (iso: string | null) => {
-    if (!iso) return 'tba';
+    if (!iso) return t('deck.tba');
     const d = new Date(iso);
-    return isNaN(d.getTime()) ? 'tba' : `${two(d.getHours())}:${two(d.getMinutes())}`;
+    return isNaN(d.getTime()) ? t('deck.tba') : `${two(d.getHours())}:${two(d.getMinutes())}`;
   };
 
   return (
@@ -176,11 +178,11 @@ export default function MapScreen() {
       />
 
       <View style={styles.band} pointerEvents="box-none">
-        <Text style={styles.title}>map.</Text>
+        <Text style={styles.title}>{t('map.title')}</Text>
         <View style={styles.subRow}>
           <Text style={styles.sub}>{whenLabel} · {placeLabel}</Text>
           <Pressable onPress={() => setSheet(true)} hitSlop={10}>
-            <Text style={styles.change}>change</Text>
+            <Text style={styles.change}>{t('word.change')}</Text>
           </Pressable>
         </View>
         <SoundCorner />
@@ -194,8 +196,8 @@ export default function MapScreen() {
             <Text style={styles.bigUnit}>{bigKm < 1 ? 'm' : 'km'}</Text>
           </Text>
           <View style={styles.counts}>
-            <Text style={styles.jetMeta}>{missing ? 'not live yet' : `${shown.length} nights`}</Text>
-            {withFriends > 0 ? <Text style={styles.jetRed}>{withFriends} with friends</Text> : null}
+            <Text style={styles.jetMeta}>{up(missing ? t('map.notLive') : tn('map.nights', shown.length))}</Text>
+            {withFriends > 0 ? <Text style={styles.jetRed}>{up(t('map.withFriends', { n: withFriends }))}</Text> : null}
           </View>
         </View>
         <RangeSlider
@@ -220,28 +222,28 @@ export default function MapScreen() {
           <View style={styles.block}>
             <View style={styles.capTop}>
               <Text style={styles.jetMeta}>
-                {pickedIndex + 1} of {shown.length} · {distText(picked.distance_km)}
+                {up(t('map.of', { i: pickedIndex + 1, n: shown.length }))} · {upperData(distText(picked.distance_km))}
               </Text>
               <Pressable onPress={() => setPicked(null)} hitSlop={10}>
-                <Text style={styles.change}>close</Text>
+                <Text style={styles.change}>{t('word.close')}</Text>
               </Pressable>
             </View>
             <Text style={styles.capTitle} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>
               {(picked.venue_name ?? picked.title).toLowerCase()}
             </Text>
-            <Text style={styles.jet} numberOfLines={1}>{picked.title} · {picked.type_name}</Text>
+            <Text style={styles.jet} numberOfLines={1}>{upperData(picked.title)} · {tx('type.' + picked.type_slug, '') ? up(tx('type.' + picked.type_slug, '')) : upperData(picked.type_name)}</Text>
             <Text style={styles.jet}>
-              {time(picked.starts_at)} · {distText(picked.distance_km)} · {Math.max(1, Math.round((picked.distance_km / 5) * 60))} min walk
+              {up(time(picked.starts_at))} · {upperData(distText(picked.distance_km))} · {up(t('map.walk', { n: Math.max(1, Math.round((picked.distance_km / 5) * 60)) }))}
             </Text>
-            {pickedFriends.length ? <Text style={styles.jet} numberOfLines={1}>{pickedFriends.join(', ')} kept it</Text> : null}
+            {pickedFriends.length ? <Text style={styles.jet} numberOfLines={1}>{up(tn('map.keptBy', pickedFriends.length, { names: upperData(pickedFriends.join(', ')) }))}</Text> : null}
           </View>
           <Pressable
             style={({ pressed }) => [styles.strip, pressed && { opacity: 0.75 }]}
             onPress={() => router.push(`/night/${picked.slug}`)}
             accessibilityRole="button"
-            accessibilityLabel="go to the night"
+            accessibilityLabel={t('map.goLabel')}
           >
-            <Text style={styles.stripText}>go →</Text>
+            <Text style={styles.stripText}>{up(t('map.go'))} →</Text>
           </Pressable>
         </Animated.View>
       ) : null}
@@ -249,12 +251,12 @@ export default function MapScreen() {
       {/* change: zaman ve merkez */}
       <PickerSheet
         open={sheet}
-        title="when · where"
+        title={`${t('filter.when')} · ${t('filter.where')}`}
         options={[
-          { id: 'w:any', label: 'any night', extra: !when ? 'on' : undefined },
-          ...whens.map((w) => ({ id: `w:${w.id}`, label: w.label, extra: when === w.id ? 'on' : undefined })),
-          { id: 'c:me', label: me ? 'near me' : denied ? 'near me · location off' : 'near me · locating…', extra: !atCity ? 'on' : undefined },
-          { id: 'c:city', label: `${cityName} centre`, extra: atCity ? 'on' : undefined },
+          { id: 'w:any', label: t('when.any'), extra: !when ? t('filter.on') : undefined },
+          ...whens.map((w) => ({ id: `w:${w.id}`, label: tx('when.' + w.id, w.label), extra: when === w.id ? t('filter.on') : undefined })),
+          { id: 'c:me', label: me ? t('map.nearMe') : `${t('map.nearMe')} · ${denied ? t('map.locationOff') : t('map.locating')}`, extra: !atCity ? t('filter.on') : undefined },
+          { id: 'c:city', label: t('map.centre', { city: cityName }), extra: atCity ? t('filter.on') : undefined },
         ]}
         selected={null}
         onSelect={(id) => {
@@ -265,7 +267,7 @@ export default function MapScreen() {
           setPicked(null);
         }}
         onClose={() => setSheet(false)}
-        note="the circle is how far you would walk"
+        note={t('map.note')}
       />
     </View>
   );
@@ -283,13 +285,13 @@ const styles = StyleSheet.create({
   big: { fontFamily: fonts.logo, fontSize: 64, lineHeight: 60, letterSpacing: -1.5, color: colors.paper },
   bigUnit: { fontSize: 28, letterSpacing: -0.5 },
   counts: { alignItems: 'flex-end', gap: 4, paddingBottom: 6 },
-  jet: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1.2, textTransform: 'uppercase', color: colors.paper },
-  jetMeta: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, textTransform: 'uppercase', color: colors.meta },
-  jetRed: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, textTransform: 'uppercase', color: colors.spotText },
+  jet: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1.2, color: colors.paper },
+  jetMeta: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.meta },
+  jetRed: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.spotText },
   caption: { position: 'absolute', left: 0, right: 0, flexDirection: 'row', alignItems: 'stretch' },
   block: { flex: 1, backgroundColor: colors.ink, paddingHorizontal: brand.left, paddingTop: 14, paddingBottom: 14, gap: 3 },
   capTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
   capTitle: { fontFamily: fonts.logo, fontSize: 54, lineHeight: 46, letterSpacing: -1, color: colors.spotText, marginBottom: 10 },
   strip: { width: 56, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center' },
-  stripText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: colors.ink, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },
+  stripText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.ink, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },
 });

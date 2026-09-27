@@ -15,6 +15,7 @@ import { useCities } from '@/data/cities';
 import { useEventTypes } from '@/data/types';
 import { fetchDeck, resetSwipes, swipe, unswipe, type Night } from '@/data/deck';
 import { filterWhen, whens, type When } from '@/data/when';
+import { upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -23,6 +24,7 @@ export default function FlowScreen() {
   const { session } = useAuth();
   const { cities } = useCities();
   const types = useEventTypes();
+  const { t, tx, up } = useLang();
 
   const [city, setCity] = useState<string | null>(() => Storage.getItemSync('city'));
   const [type, setType] = useState<string | null>(() => Storage.getItemSync('type'));
@@ -128,9 +130,9 @@ export default function FlowScreen() {
     else Storage.removeItemSync('when');
   };
 
-  const cityLabel = city ? (cities.find((c) => c.id === city)?.name ?? city) : 'everywhere';
-  const typeLabel = type ? (types.find((t) => t.id === type)?.label ?? type) : 'all nights';
-  const whenLabel = when ? (whens.find((w) => w.id === when)?.label ?? when) : 'any night';
+  const cityLabel = city ? (cities.find((c) => c.id === city)?.name ?? city) : t('filter.everywhere');
+  const typeLabel = type ? tx('type.' + type, types.find((ty) => ty.id === type)?.label ?? type) : t('type.all');
+  const whenLabel = when ? tx('when.' + when, when) : t('when.any');
 
   return (
     <View style={styles.root}>
@@ -151,44 +153,44 @@ export default function FlowScreen() {
       <SoundCorner />
       {swiped > 0 && (
         <Pressable onPress={() => deck.current?.undo()} hitSlop={10} style={styles.undo}>
-          <Text style={styles.undoText}>undo</Text>
+          <Text style={styles.undoText}>{t('flow.undo')}</Text>
         </Pressable>
       )}
 
       <View style={styles.stage}>
         {error ? (
-          <Text style={styles.note}>{error}</Text>
+          <Text style={styles.note}>{upperData(error)}</Text>
         ) : nights ? (
           <Deck ref={deck} key={`${city}/${type}/${when}/${reloads}`} nights={nights} friendsOf={friendsOf} bottom={tabSpace + 4} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} />
         ) : (
-          <Text style={styles.note}>loading the night…</Text>
+          <Text style={styles.note}>{up(t('flow.loading'))}</Text>
         )}
       </View>
 
       <PickerSheet
         open={sheet === 'city'}
-        title="where"
-        options={[{ id: '*', label: 'everywhere' }, ...cities.map((c) => ({ id: c.id, label: c.name, extra: `${c.nights}` }))]}
+        title={t('filter.where')}
+        options={[{ id: '*', label: t('filter.everywhere') }, ...cities.map((c) => ({ id: c.id, label: c.name, extra: `${c.nights}` }))]}
         selected={city ?? '*'}
         onSelect={pickCity}
         onClose={() => setSheet(null)}
       />
       <PickerSheet
         open={sheet === 'type'}
-        title="what"
-        options={[{ id: '*', label: 'all nights' }, ...types]}
+        title={t('filter.what')}
+        options={[{ id: '*', label: t('type.all') }, ...types.map((ty) => ({ id: ty.id, label: tx('type.' + ty.id, ty.label) }))]}
         selected={type ?? '*'}
         onSelect={pickType}
         onClose={() => setSheet(null)}
       />
       <PickerSheet
         open={sheet === 'when'}
-        title="when"
-        options={[{ id: '*', label: 'any night' }, ...whens]}
+        title={t('filter.when')}
+        options={[{ id: '*', label: t('when.any') }, ...whens.map((w) => ({ id: w.id, label: tx('when.' + w.id, w.label) }))]}
         selected={when ?? '*'}
         onSelect={pickWhen}
         onClose={() => setSheet(null)}
-        note="nights without a fixed date only show under any night"
+        note={t('filter.whenNote', { any: t('when.any') })}
       />
     </View>
   );
@@ -204,5 +206,5 @@ const styles = StyleSheet.create({
   undo: { position: 'absolute', right: brand.left, top: brand.top + 34, zIndex: 1, backgroundColor: colors.ink, paddingVertical: 4, paddingHorizontal: 8 },
   undoText: { fontFamily: fonts.regular, fontSize: 12, letterSpacing: 0.2, color: colors.paper, textDecorationLine: 'underline' },
   stage: { flex: 1 },
-  note: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute, textAlign: 'center', marginTop: 40 },
+  note: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, textAlign: 'center', marginTop: 40 },
 });

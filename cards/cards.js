@@ -24,7 +24,8 @@
     const shape = document.createElement("button");
     shape.className = "cc-flip";
     shape.type = "button";
-    shape.setAttribute("aria-label", "flip " + night.t);
+    shape.setAttribute("aria-label",
+      window.AH && AH.t ? AH.t("cards.flip", { name: night.t }) : "flip " + night.t);
     shape.appendChild(face);
     shape.appendChild(backFace);
     shape.addEventListener("click", () => box.classList.toggle("flipped"));

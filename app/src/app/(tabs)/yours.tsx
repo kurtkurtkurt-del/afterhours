@@ -10,9 +10,11 @@ import { toDeckCard, type DeckCard } from '@/components/CardFace';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
 import { posterUrl, swipe } from '@/data/deck';
 import { supabase } from '@/lib/supabase';
-import { friendById as sampleFriendById, friends as sampleFriends, matches as sampleMatches, nights as sampleNights } from '@/content/friends';
+import { friendById as sampleFriendById, friends as sampleFriends, matches as sampleMatches, nights as sampleNights, sampleText } from '@/content/friends';
 import { useYours, type YoursFriend, type YoursMatch, type YoursNight } from '@/data/yours';
 import { useAuth } from '@/auth/AuthContext';
+import { dayLabel } from '@/data/when';
+import { upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -25,13 +27,14 @@ export default function YoursScreen() {
   const insets = useSafeAreaInsets();
   const { session } = useAuth();
   const real = useYours();
+  const { t, tn, tx, up } = useLang();
   // arkadaş yoksa örnek veri, üstünde "sample" notu; olunca gerçek
   const sample = real.ready && real.friends.length === 0;
   const friends: YoursFriend[] = sample
     ? sampleFriends.map((f) => ({ id: f.id, name: f.name, handle: f.handle, live: f.live, kept: f.kept }))
     : real.friends;
   const nights: YoursNight[] = sample
-    ? sampleNights.map((n) => ({ id: n.id, slug: '', title: n.title, venue: n.venue, when: n.when, image: null, friends: n.friends.map((id) => sampleFriendById(id).name), photo: n.photo } as YoursNight & { photo: number }))
+    ? sampleNights.map((n) => ({ id: n.id, slug: '', title: n.title, venue: sampleText(n.venue, tx), when: sampleText(n.when, tx), image: null, friends: n.friends.map((id) => sampleFriendById(id).name), photo: n.photo } as YoursNight & { photo: number }))
     : real.nights;
   const matches: YoursMatch[] = sample ? sampleMatches.map((m) => ({ friend: sampleFriendById(m.friend).name, night: m.night })) : real.matches;
   const nightById = (id: string) => nights.find((n) => n.id === id);
@@ -53,9 +56,9 @@ export default function YoursScreen() {
       .in('id', swipeIds.split(','))
       .then(({ data }) => {
         if (cancelled || !data) return;
-        const t: Record<string, string | null> = {};
-        (data as { id: string; ticket_url: string | null }[]).forEach((r) => (t[r.id] = r.ticket_url));
-        setTickets(t);
+        const urls: Record<string, string | null> = {};
+        (data as { id: string; ticket_url: string | null }[]).forEach((r) => (urls[r.id] = r.ticket_url));
+        setTickets(urls);
       });
     return () => {
       cancelled = true;
@@ -112,7 +115,7 @@ export default function YoursScreen() {
     <View style={styles.root}>
       <StatusBar style="light" />
       <View style={styles.band}>
-        <Text style={styles.title}>yours.</Text>
+        <Text style={styles.title}>{t('yours.title')}</Text>
         <SoundCorner />
       </View>
       <ScrollView contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom + 60 }]} showsVerticalScrollIndicator={false}>
@@ -126,7 +129,7 @@ export default function YoursScreen() {
                     <Text style={[styles.initialText, f.live && styles.initialTextLive]}>{f.name.charAt(0)}</Text>
                   </View>
                   <Text style={[styles.personLabel, f.live && styles.liveText]} numberOfLines={1}>
-                    {f.pending ? (f.pending === 'incoming' ? 'wants in' : 'asked') : f.live ? f.live : f.kept ? `kept ${f.kept}` : f.name}
+                    {f.pending ? (f.pending === 'incoming' ? t('yours.wantsIn') : t('yours.asked')) : f.live ? f.live : f.kept ? t('yours.keptN', { n: f.kept }) : f.name}
                   </Text>
                 </Pressable>
               ))}
@@ -137,12 +140,12 @@ export default function YoursScreen() {
               <View style={[styles.initial, styles.initialAdd]}>
                 <Text style={styles.initialText}>+</Text>
               </View>
-              <Text style={styles.personLabel}>add</Text>
+              <Text style={styles.personLabel}>{t('yours.add')}</Text>
             </Pressable>
           </View>
         </ScrollView>
 
-        {sample ? <Text style={styles.section}>sample · add friends to see yours</Text> : null}
+        {sample ? <Text style={styles.section}>{up(t('yours.sample'))}</Text> : null}
 
         {feed.map((item, i) =>
           item.kind === 'night' ? (
@@ -150,7 +153,7 @@ export default function YoursScreen() {
               <View style={styles.cardRow}>
                 <Image source={(item.n as YoursNight & { photo?: number }).photo ?? (item.n.image ? { uri: item.n.image } : fallbackPhoto)} style={styles.cardPhoto} />
                 <View style={styles.cardText}>
-                  <Text style={styles.cardMeta} numberOfLines={1}>{item.n.when} · {item.n.venue}</Text>
+                  <Text style={styles.cardMeta} numberOfLines={1}>{item.n.startsAt !== undefined ? up(dayLabel(item.n.startsAt)) : upperData(item.n.when)} · {upperData(item.n.venue)}</Text>
                   <Text style={styles.cardTitle} numberOfLines={2}>{item.n.title}</Text>
                 </View>
               </View>
@@ -161,7 +164,7 @@ export default function YoursScreen() {
                   </View>
                 ))}
                 <Text style={styles.avNote}>
-                  {item.n.friends.length} {item.n.friends.length === 1 ? 'friend' : 'friends'} kept it
+                  {tn('yours.friendsKept', item.n.friends.length)}
                 </Text>
               </View>
               <View style={styles.actions}>
@@ -172,24 +175,24 @@ export default function YoursScreen() {
                   }}
                   style={({ pressed }) => [meToo[item.n.id] ? styles.btnLine : styles.btnRed, pressed && styles.pressed]}
                 >
-                  <Text style={meToo[item.n.id] ? styles.btnTextLine : styles.btnTextRed}>{meToo[item.n.id] ? 'kept' : 'me too'}</Text>
+                  <Text style={meToo[item.n.id] ? styles.btnTextLine : styles.btnTextRed}>{meToo[item.n.id] ? t('deck.kept') : t('yours.meToo')}</Text>
                 </Pressable>
                 <Pressable onPress={() => setAsking(item.n.id)} style={({ pressed }) => [styles.btnLine, pressed && styles.pressed]}>
-                  <Text style={styles.btnTextLine}>{answers[item.n.id] ? `you: ${answers[item.n.id]}` : "who's coming?"}</Text>
+                  <Text style={styles.btnTextLine}>{answers[item.n.id] ? t('yours.you', { answer: tx('yours.answer.' + answers[item.n.id], answers[item.n.id]) }) : t('who.coming')}</Text>
                 </Pressable>
               </View>
             </View>
           ) : (
             <View key={`m${i}`} style={styles.match}>
               <View style={{ flex: 1, gap: 4 }}>
-                <Text style={styles.matchLabel}>match</Text>
+                <Text style={styles.matchLabel}>{up(t('yours.match'))}</Text>
                 <Text style={styles.matchText}>
-                  you and {item.friend} both kept it.
+                  {t('yours.matchLine', { friend: item.friend })}
                 </Text>
                 {nightById(item.night) ? <Text style={styles.matchNight} numberOfLines={1}>{nightById(item.night)?.title}</Text> : null}
               </View>
               <Pressable onPress={() => setAnswers((a) => ({ ...a, [item.night]: 'in' }))} style={({ pressed }) => [styles.btnRed, pressed && styles.pressed]}>
-                <Text style={styles.btnTextRed}>{answers[item.night] === 'in' ? "you're in" : "say you're in"}</Text>
+                <Text style={styles.btnTextRed}>{answers[item.night] === 'in' ? t('yours.youreIn') : t('yours.sayIn')}</Text>
               </Pressable>
             </View>
           ),
@@ -197,24 +200,24 @@ export default function YoursScreen() {
       </ScrollView>
 
       <Pressable onPress={() => setDeck('mine')} style={({ pressed }) => [styles.fab, styles.fabLeft, { bottom: TAB_BAR_SPACE + insets.bottom - 6 }, pressed && styles.pressed]}>
-        <Text style={styles.btnTextLine}>your deck{real.mine.length ? ` · ${real.mine.length}` : ''}</Text>
+        <Text style={styles.btnTextLine}>{t('deck.yours')}{real.mine.length ? ` · ${real.mine.length}` : ''}</Text>
       </Pressable>
       <Pressable onPress={() => setDeck('friends')} style={({ pressed }) => [styles.fab, { bottom: TAB_BAR_SPACE + insets.bottom - 6 }, pressed && styles.pressed]}>
-        <Text style={styles.btnTextRed}>friends&apos; deck{friendsCards.length ? ` · ${friendsCards.length}` : ''}</Text>
+        <Text style={styles.btnTextRed}>{t('deck.friends')}{friendsCards.length ? ` · ${friendsCards.length}` : ''}</Text>
       </Pressable>
 
       <PickerSheet
         open={asking !== null}
-        title="who's coming?"
+        title={t('who.coming')}
         options={[
-          { id: 'in', label: "i'm in", extra: asking ? `${nightById(asking)?.friends.length ?? 0} kept it` : undefined },
-          { id: 'maybe', label: 'maybe' },
-          { id: 'out', label: 'not tonight' },
+          { id: 'in', label: t('who.in'), extra: asking ? t('yours.nKept', { n: nightById(asking)?.friends.length ?? 0 }) : undefined },
+          { id: 'maybe', label: t('who.maybe') },
+          { id: 'out', label: t('who.not') },
         ]}
         selected={asking ? (answers[asking] ?? null) : null}
         onSelect={(id) => asking && setAnswers((a) => ({ ...a, [asking]: id }))}
         onClose={() => setAsking(null)}
-        note="your friends see only what you answer"
+        note={t('yours.askNote')}
       />
 
       {/* kart görünümü: alt menünün altında kalır, menü üstte yüzmeye devam eder */}
@@ -227,8 +230,8 @@ export default function YoursScreen() {
           onClose={closeDeck}
           empty={
             deck === 'mine'
-              ? session ? 'nothing here yet. swipe right in the deck.' : 'sign in and the cards you keep land here.'
-              : real.friends.length ? 'your friends have not kept anything yet.' : 'add friends to see what they keep.'
+              ? session ? t('yours.emptyMine') : t('yours.emptyMineGuest')
+              : real.friends.length ? t('yours.emptyFriends') : t('yours.emptyNoFriends')
           }
         />
       ) : null}
@@ -255,12 +258,12 @@ const styles = StyleSheet.create({
   initialTextLive: { color: colors.ink },
   liveText: { color: colors.spotText },
   personLabel: { fontFamily: fonts.regular, fontSize: 9, color: colors.meta, letterSpacing: 0.2 },
-  section: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, textTransform: 'uppercase', color: colors.meta, marginTop: 26, paddingHorizontal: brand.left },
+  section: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta, marginTop: 26, paddingHorizontal: brand.left },
   card: { marginHorizontal: brand.left, marginTop: 22, paddingTop: 16, borderTopWidth: 1, borderTopColor: colors.ink3, gap: 8 },
   cardRow: { flexDirection: 'row', gap: 12, alignItems: 'center' },
   cardPhoto: { width: 72, height: 72, backgroundColor: colors.ink2, filter: [{ grayscale: 1 }] },
   cardText: { flex: 1, gap: 3 },
-  cardMeta: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.spotText },
+  cardMeta: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.4, color: colors.spotText },
   cardTitle: { fontFamily: fonts.semibold, fontSize: 20, lineHeight: 22, letterSpacing: -0.5, color: colors.paper },
   avatars: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2 },
   av: { width: AV, height: AV, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
@@ -274,7 +277,7 @@ const styles = StyleSheet.create({
   btnTextRed: { fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.1, color: colors.ink },
   btnTextLine: { fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.1, color: colors.paper },
   match: { marginHorizontal: brand.left, marginTop: 26, padding: 14, borderWidth: 1, borderColor: colors.spot, flexDirection: 'row', alignItems: 'center', gap: 12 },
-  matchLabel: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, textTransform: 'uppercase', color: colors.spotText },
+  matchLabel: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.spotText },
   matchText: { fontFamily: fonts.regular, fontSize: 15, color: colors.paper },
   matchNight: { fontFamily: fonts.regular, fontSize: 12, color: colors.meta },
   fab: { position: 'absolute', right: brand.left, backgroundColor: colors.spot, paddingVertical: 10, paddingHorizontal: 14 },

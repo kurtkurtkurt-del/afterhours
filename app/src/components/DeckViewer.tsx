@@ -6,6 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import CardFace, { Hint, openDetails, openTicket, type DeckCard } from '@/components/CardFace';
 import SoundCorner from '@/components/SoundCorner';
 import { useTabBarSpace } from '@/components/TabBar';
+import { useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -31,6 +32,7 @@ export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty }
   const insets = useSafeAreaInsets();
   const tabSpace = useTabBarSpace();
   const [index, setIndex] = useState(0);
+  const { t } = useLang();
 
   // android geri tuşu desteyi kapatır
   useEffect(() => {
@@ -48,9 +50,9 @@ export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty }
     <View style={[StyleSheet.absoluteFill, styles.layer]}>
       <View style={styles.root}>
         {total === 0 ? (
-          <Pressable onPress={onClose} style={[styles.empty, { paddingBottom: tabSpace }]} accessibilityRole="button" accessibilityLabel="close">
+          <Pressable onPress={onClose} style={[styles.empty, { paddingBottom: tabSpace }]} accessibilityRole="button" accessibilityLabel={t('word.close')}>
             <Text style={styles.emptyText}>{empty}</Text>
-            <Text style={styles.emptyHint}>tap to go back</Text>
+            <Text style={styles.emptyHint}>{t('deck.tapBack')}</Text>
           </Pressable>
         ) : (
           <FlatList
@@ -69,10 +71,10 @@ export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty }
         {/* üst: şehir · sıra, sağda ses */}
         <View style={[styles.top, { top: Math.max(brand.top, insets.top + 24) }]} pointerEvents="box-none">
           <View style={styles.chip}>
-            <Text style={styles.chipText}>{total ? `${city} · ${two(index + 1)}/${two(total)}` : mode === 'mine' ? 'your deck' : "friends' deck"}</Text>
+            <Text style={styles.chipText}>{total ? `${city} · ${two(index + 1)}/${two(total)}` : mode === 'mine' ? t('deck.yours') : t('deck.friends')}</Text>
           </View>
           <Pressable onPress={onClose} hitSlop={10} style={styles.close}>
-            <Text style={styles.closeText}>close</Text>
+            <Text style={styles.closeText}>{t('word.close')}</Text>
           </Pressable>
         </View>
         <SoundCorner />
@@ -82,6 +84,7 @@ export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty }
 }
 
 function Card({ card, mode, isKept, onKeep, width, bottom }: { card: DeckCard; mode: 'friends' | 'mine'; isKept: boolean; onKeep: (c: DeckCard) => void; width: number; bottom: number }) {
+  const { t } = useLang();
   const y = useSharedValue(0);
   const ticket = () => openTicket(card);
   const details = () => openDetails(card);
@@ -103,7 +106,8 @@ function Card({ card, mode, isKept, onKeep, width, bottom }: { card: DeckCard; m
   const upHint = useAnimatedStyle(() => ({ opacity: interpolate(y.value, [-PULL * 0.6, -10], [1, 0], Extrapolation.CLAMP) }));
   const downHint = useAnimatedStyle(() => ({ opacity: interpolate(y.value, [10, PULL * 0.6], [0, 1], Extrapolation.CLAMP) }));
 
-  const rightLabel = mode === 'mine' ? (card.ticketUrl ? 'ticket ↑' : 'open ↑') : isKept ? 'kept' : 'keep';
+  const up = `${card.ticketUrl ? t('word.ticket') : t('deck.open')} ↑`;
+  const rightLabel = mode === 'mine' ? up : isKept ? t('deck.kept') : t('word.keep');
   const rightPress = () => (mode === 'mine' ? ticket() : isKept ? undefined : onKeep(card));
 
   return (
@@ -111,10 +115,10 @@ function Card({ card, mode, isKept, onKeep, width, bottom }: { card: DeckCard; m
       <Animated.View style={[{ width, flex: 1 }, move]}>
         <CardFace card={card} bottom={bottom} rightLabel={rightLabel} rightDone={mode === 'friends' && isKept} onRight={rightPress} />
         <Animated.View style={[styles.hint, styles.hintUp, upHint]} pointerEvents="none">
-          <Hint label={card.ticketUrl ? 'ticket ↑' : 'open ↑'} />
+          <Hint label={up} />
         </Animated.View>
         <Animated.View style={[styles.hint, { bottom: bottom + 8 }, downHint]} pointerEvents="none">
-          <Hint label="details ↓" />
+          <Hint label={`${t('word.details')} ↓`} />
         </Animated.View>
       </Animated.View>
     </GestureDetector>

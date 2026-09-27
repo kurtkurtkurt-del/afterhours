@@ -8,7 +8,8 @@ import BackButton, { EdgeBack } from '@/components/BackButton';
 import SoundCorner from '@/components/SoundCorner';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
-import { useAuth } from '@/auth/AuthContext';
+import { authMessage, useAuth } from '@/auth/AuthContext';
+import { useT } from '@/i18n';
 import { supabase } from '@/lib/supabase';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -16,6 +17,7 @@ import { brand } from '@/theme/layout';
 // kayıt. şimdilik ne yazılırsa yazılsın kabul edip uygulamaya alır.
 export default function SignUpScreen() {
   const insets = useSafeAreaInsets();
+  const t = useT();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [busy, setBusy] = useState(false);
@@ -53,7 +55,7 @@ export default function SignUpScreen() {
       const row = Array.isArray(data) ? data[0] : data;
       router.replace(row?.handle ? '/yours' : '/welcome');
     } catch (e) {
-      setNote(String((e as Error).message ?? e).toLowerCase());
+      setNote(authMessage(String((e as Error).message ?? e)).toLowerCase());
     } finally {
       setBusy(false);
     }
@@ -68,12 +70,12 @@ export default function SignUpScreen() {
         {/* alt boşluk burada: klavye sarmalayıcısı kendi paddingBottom'unu ezer */}
         <View style={{ paddingBottom: insets.bottom + 24 }}>
         <View style={styles.heading}>
-          <Text style={styles.line}>{mode === 'up' ? 'first time?' : 'welcome back.'}</Text>
-          <Text style={styles.line}>{mode === 'up' ? 'welcome in.' : 'sign in.'}</Text>
+          <Text style={styles.line}>{mode === 'up' ? t('signup.up.line1') : t('signup.in.line1')}</Text>
+          <Text style={styles.line}>{mode === 'up' ? t('signup.up.line2') : t('signup.in.line2')}</Text>
         </View>
         <View style={styles.form}>
           <Input
-            placeholder="email"
+            placeholder={t('signup.email')}
             value={email}
             onChangeText={setEmail}
             keyboardType="email-address"
@@ -81,7 +83,7 @@ export default function SignUpScreen() {
             returnKeyType="next"
           />
           <Input
-            placeholder="password"
+            placeholder={t('signup.password')}
             value={password}
             onChangeText={setPassword}
             secureTextEntry
@@ -91,20 +93,20 @@ export default function SignUpScreen() {
           />
           {note && <Text style={styles.note}>{note}</Text>}
           <View style={styles.gap} />
-          <Button label={busy ? 'one moment' : mode === 'up' ? 'create account' : 'sign in'} onPress={enter} />
+          <Button label={busy ? t('word.moment') : mode === 'up' ? t('signup.create') : t('word.signin')} onPress={enter} />
           <Pressable hitSlop={8} onPress={() => setMode((m) => (m === 'up' ? 'in' : 'up'))}>
-            <Text style={styles.small}>{mode === 'up' ? 'already have an account? sign in' : 'new here? create an account'}</Text>
+            <Text style={styles.small}>{mode === 'up' ? t('signup.toIn') : t('signup.toUp')}</Text>
           </Pressable>
           <Pressable
             hitSlop={8}
             onPress={async () => {
               const err = await resetPassword(email);
-              setNote(err ?? 'reset link sent, check your inbox');
+              setNote(err ?? t('signup.sent'));
             }}
           >
-            <Text style={styles.small}>forgot password? enter your email and tap here</Text>
+            <Text style={styles.small}>{t('signup.forgot')}</Text>
           </Pressable>
-          <Text style={styles.small}>leave both empty to look around first</Text>
+          <Text style={styles.small}>{t('signup.guest')}</Text>
           <BackButton inline />
         </View>
         </View>

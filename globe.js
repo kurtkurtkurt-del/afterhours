@@ -133,6 +133,13 @@
     return h;
   };
 
+  /* The kind arrives as a display name ("Club Night"); its dictionary key
+     is the same words as a slug. An unknown kind is shown as it came. */
+  const kindText = (kind) => {
+    const key = "type." + String(kind || "").trim().toLowerCase().replace(/\s+/g, "-");
+    return kind && AH.has(key) ? AH.t(key) : (kind || "");
+  };
+
   const NIGHTS = (window.POSTERS || []).map((e) => {
     const h = hash32(e.slug || "");
     const time = (String(e.meta || "").match(/\b(\d{1,2}:\d{2})\b/) || [])[1] ||
@@ -140,6 +147,8 @@
     return {
       name: SHORT[e.slug] || e.title,
       kind: (e.kind || "").toUpperCase(),
+      /* what the screen shows; `kind` stays the record's own word */
+      kindText: kindText(e.kind),
       time: time,
       /* Where the night is — real data, unlike the walking minutes the
          globe used to invent for the drawn era. */
@@ -168,13 +177,17 @@
       const name = document.createElement("span");
       name.textContent = g.name;
       const kind = document.createElement("em");
-      kind.textContent = g.kind.toLowerCase();
+      kind.textContent = g.kindText.toLocaleLowerCase(AH.lang);
       const min = document.createElement("b");
       min.textContent = g.city;
       li.appendChild(name); li.appendChild(kind); li.appendChild(min);
       box.appendChild(li);
     });
-    if (sub) sub.textContent = NIGHTS.length + " nights on the globe \u00b7 spin to find the rest";
+    if (sub) {
+      /* the count is written here; the static line's key must not write over it */
+      sub.removeAttribute("data-i18n");
+      sub.textContent = AH.tn("globe.near.sub", NIGHTS.length);
+    }
   })();
 
 
@@ -538,7 +551,7 @@
       ctx.fillText(hovered.name, x, y + 12);
       ctx.font = "10.5px 'Inter Tight', sans-serif";
       ctx.globalAlpha = 0.72;
-      ctx.fillText(hovered.kind + " · " + hovered.time, x, y + 32);
+      ctx.fillText(hovered.kindText.toLocaleUpperCase(AH.lang) + " · " + hovered.time, x, y + 32);
       ctx.fillText(hovered.city.toUpperCase(), x, y + 50);
       ctx.globalAlpha = 1;
     }

@@ -9,6 +9,7 @@ import BackButton from '@/components/BackButton';
 import Onboarding from '@/components/Onboarding';
 import SoundCorner from '@/components/SoundCorner';
 import { useCities } from '@/data/cities';
+import { useT } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -16,6 +17,7 @@ import { brand } from '@/theme/layout';
 export default function ExploreScreen() {
   const insets = useSafeAreaInsets();
   const { session } = useAuth();
+  const t = useT();
   // ilk gelişte tanıtım; bir kez görüldü mü bir daha çıkmaz (ayarlardan tekrar açılır)
   const [intro, setIntro] = useState(() => Storage.getItemSync('intro.seen') !== '1');
   const finishIntro = () => {
@@ -51,19 +53,17 @@ export default function ExploreScreen() {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.heading}>
-          <Text style={styles.line}>where are</Text>
-          <Text style={styles.line}>you based?</Text>
+          <Text style={styles.line}>{t('home.city.line1')}</Text>
+          <Text style={styles.line}>{t('home.city.line2')}</Text>
         </View>
         <View style={styles.list}>
           {cities.map((c) => (
             <Pressable key={c.id} onPress={() => pick(c.id)} style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
               <Text style={styles.city}>{c.name}</Text>
-              <Text style={styles.nights}>
-                {c.nights} {c.nights === 1 ? 'night' : 'nights'}
-              </Text>
+              <Text style={styles.nights}>{t(c.nights === 1 ? 'home.city.nights.one' : 'home.city.nights.other', { n: c.nights })}</Text>
             </Pressable>
           ))}
-          <Text style={styles.note}>{live ? 'nights listed right now' : 'sample numbers · offline'}</Text>
+          <Text style={styles.note}>{live ? t('home.city.live') : t('home.city.offline')}</Text>
         </View>
       </ScrollView>
     </View>

@@ -220,6 +220,89 @@ this repository.
 
 ---
 
+### Three languages — english · deutsch · türkçe
+
+Since 27.09.2026 the whole site and the whole app speak three languages.
+The database already had the column (`profile_settings.locale`, checked
+against `en / de / tr`); what was missing was the words.
+
+**On the site** `i18n.js` is the first script of every page, in the
+`<head>`, blocking on purpose. It decides the language — `?lang=de` in
+the address → what was chosen before (`localStorage afterhours.lang`) →
+the browser's languages → english — writes it onto `<html lang>`, and
+pulls in `lang/en.js` (always, it is the fallback) plus the chosen
+dictionary with `document.write`, so every later script finds `AH.t()`
+answering in the right language. No fetch, no module: the site is also
+opened straight from disk.
+
+| In the markup | Does |
+|---|---|
+| `data-i18n="key"` | textContent |
+| `data-i18n-html="key"` | innerHTML, for text carrying `<br />`, `<span>`, `<a>` |
+| `data-i18n-attr="placeholder:key; aria-label:key2"` | attributes (also `content:` on the meta description) |
+| `data-lang-block="de"` | a long page written out once per language (the four legal pages); `style.css` shows the matching block |
+| `data-lang-pick` | an empty element that becomes the `en de tr` switch (`data-lang-names` writes the names out) |
+
+| In a script | Does |
+|---|---|
+| `AH.t("key", { name })` | the sentence, `{name}` filled in; a list comes back as a list (the content pools) |
+| `AH.tn("key", n)` | picks `key.one` / `key.other`, `{n}` filled in |
+| `AH.has("key")` | is there such a key — used for `type.<slug>` and `featured.<slug>.body` |
+| `AH.i18nApply(el)` | translates markup a script has just built |
+| `AH.setLang("tr")` | remembers, PATCHes `profile_settings.locale` when signed in, reloads |
+
+The english text stays in the HTML: it is the fallback, and what a
+crawler reads (`og:` tags are not translated — crawlers run no scripts).
+While a page in another language is being swapped the body is hidden
+(`html.i18n-wait`), for 1.5 s at the very most.
+
+**The switch** sits at the right end of the menu on every page (beside
+the logo on a phone, where the menu row scrolls sideways instead of
+wrapping), written out in the landing's footer and in `settings/` —
+where it works signed out too. A choice made on a device wins; somebody
+who signs in on a device that has never chosen gets the language of
+their account.
+
+**The words** live in `lang/src/*.json`, the three languages side by
+side, one file per area (`common` · `landing` · `explore` · `account` ·
+`pages` · `legal`), each with its own key prefixes.
+`python3 tools-lang.py` builds `lang/en.js`, `de.js`, `tr.js` and
+refuses to if a key lacks a language, a translation lost a
+`{placeholder}`, a pool has a different length, or a page or script
+asks for a key nobody defined. CI runs it with `--check` (the `site`
+job). **Edit the json, never the generated files.**
+
+**What is not translated:** data — titles, venues, artists, cities,
+handles, what people wrote; the brand words (afterhours, beforehours,
+szene); the drawn artwork (posters, the afterhours card). Kinds of night
+ARE translated, through `type.<slug>`. `404.html` loads no file from
+outside, so it carries its own small three-language table inline.
+The legal pages: german is the binding text, english and turkish say so
+under their title.
+
+**The voice** is the same in all three: lowercase, short, dry — german
+nouns lowercase too (*finde deine nacht.*), `du` and `sen`. Where the
+english is a sentence-case paragraph (help, the featured nights, the
+manifesto) the translation uses its own orthography. The glossary:
+night *nacht / gece* · keep *behalten / sakla* · let go *ziehen lassen /
+bırak* · deck *stapel / deste* · card *karte / kart* · wall *wand /
+duvar* · collection *sammlung / koleksiyon* · map *karte / harita* ·
+yours *deins / seninkiler* · handle *handle / kullanıcı adı* · the room
+*der raum / oda*.
+
+**In the app** the same thing is `app/src/i18n/`: `index.tsx`
+(`LanguageProvider`, `useLang()` → `t · tn · tx · up · lang · setLang`),
+`dict.ts`, and the words in `parts/*.ts` (`common` · `home` · `tabs` ·
+`pages`). The keys are TYPED — a key that does not exist fails `tsc`.
+Every component that shows text calls the hook itself, which is what
+redraws it when the language changes (no restart, no remount).
+The language is chosen on the home screen and in onboarding
+(`components/LangRow.tsx`, before signing in) and in settings; it is kept
+in the kv-store and in `profile_settings.locale`, so the site and the
+app follow the same account. Nothing is uppercased by style any more:
+React Native uppercases with the PHONE's locale, so `up()` (the app's
+language) and `upperData()` (data) do it by hand.
+
 ### File by file
 
 **The root**
@@ -229,6 +312,9 @@ this repository.
 | `data.js` | The data layer. It runs first, then loads the page's scripts |
 | `config.js` | Supabase URL + anon key + the default city |
 | `session.js` | The session: talks straight to Supabase Auth's REST, the token lives in `localStorage` |
+| `i18n.js` | **The three languages.** First script of every page; decides the language, loads `lang/*.js`, translates the markup, builds the switch |
+| `lang/src/*.json` → `lang/*.js` | The words, three languages side by side; the generated dictionaries the pages load |
+| `tools-lang.py` | Builds the dictionaries and refuses a half-translated one (CI runs `--check`) |
 | `menu.js` | The menu as the session leaves it: "welcome \<name\>", an admin link for the admin |
 | `beforehours.js` | The comments before a night (reading is public, writing needs an account) |
 | `app.js` | The landing page's seven screens, the poster wall, the scrolling logic |
@@ -547,7 +633,8 @@ Decided on 25.09.2026, and the app's wording wins where the two disagree:
   the app asks twice)
 - the tagline is **find your night. one card at a time.**; UI text is
   lowercase English on both; the voice note is marked **soon** until it
-  exists; the language setting is hidden until there are translations
+  exists; the wording above is the ENGLISH of three languages
+  (see *Three languages*), and the language setting is live on both
 - the palettes stay different (see *The spirit*); the type is Inter Tight
   on both, so the card renders identically
 
@@ -714,7 +801,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" -not -path "./app/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **176**.
+The current version: **194**.
 
 The explore date filter is real (every synced night carries a true
 date): tonight / tomorrow / this weekend / this week / this month /
@@ -899,6 +986,26 @@ Every one of these cost us something:
 - **`perl -pi -e` with `|` as the delimiter and a `?v=` pattern** is a way
   to shred a file: the escaping is nested three deep (shell, perl, regex).
   For version bumps, use the command above and read the diff afterwards.
+
+---
+
+### Traps of the three languages
+
+- **`lang="tr"` + `text-transform: uppercase`** turns every `i` into `İ`.
+  Right for turkish words, wrong for data (`PİTBULL`). An element that
+  carries data and is uppercased by CSS needs its own `lang="en"`.
+- **A script that writes into an element which also carries `data-i18n`**
+  loses to the markup pass at DOMContentLoaded. Remove the attribute
+  before writing (`settings.js` and `globe.js` do), or write from the
+  script only.
+- **Codes are not words.** `ok / taken / format`, `data-value`, the
+  filter values and the feedback kinds go to the database as they are;
+  only what is shown goes through `AH.t`.
+- **Turkish suffixes depend on the word before them**, so a sentence
+  never hangs a suffix on a `{placeholder}`: *katılım {when}*, not
+  *{when}'den beri*.
+- **After editing `lang/src/*.json` run `python3 tools-lang.py`** — the
+  pages load the generated files, not the json.
 
 ---
 

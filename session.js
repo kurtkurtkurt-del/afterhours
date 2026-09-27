@@ -75,6 +75,34 @@
   }
   AH.auth = auth;
 
+  /* What Supabase Auth says arrives in english ("Invalid login
+     credentials"). The ones we know get a sentence in the chosen
+     language; anything else is shown as the server wrote it. The Error
+     objects themselves keep the english text — other code matches on it. */
+  const AUTH_WORDS = [
+    [/invalid login credentials|invalid_credentials|invalid_grant/i, "session.auth.credentials"],
+    [/email not confirmed/i, "session.auth.unconfirmed"],
+    [/already registered|already exists|already been registered/i, "session.auth.registered"],
+    [/password should be|password is too short|weak password/i, "session.auth.weak"],
+    [/should be different from the old password/i, "session.auth.same"],
+    [/email rate limit/i, "session.auth.rate"],
+    [/for security purposes|rate limit|too many requests|^429$/i, "session.auth.wait"],
+    [/signups? not allowed|signups? (is|are) disabled/i, "session.auth.closed"],
+    [/unable to validate email|invalid format|email address .* is invalid/i, "session.auth.email"],
+    [/jwt|token is expired|session (not found|expired)|refresh token/i, "session.auth.expired"],
+    [/^sign in first$/i, "session.auth.signin"],
+    [/^no token came back$/i, "session.auth.notoken"],
+    [/failed to fetch|networkerror|load failed|backend is off/i, "session.auth.offline"],
+  ];
+  AH.authText = function (error) {
+    const raw = String((error && error.message) || error || "");
+    for (let i = 0; i < AUTH_WORDS.length; i++) {
+      const key = AUTH_WORDS[i][1];
+      if (AUTH_WORDS[i][0].test(raw) && AH.t && AH.has && AH.has(key)) return AH.t(key);
+    }
+    return raw;
+  };
+
   /* Store the token that came back. expires_in is in seconds.
      `fresh` means a new token arrived from the address bar — the stored
      user may then belong to SOMEBODY ELSE and has to be dropped. */

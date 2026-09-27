@@ -20,13 +20,13 @@
     if (row.time_text) return row.time_text;
     const gap = Date.now() - new Date(row.created_at).getTime();
     const hours = Math.floor(gap / 3600e3);
-    if (hours < 1) return "just now";
-    if (hours < 24) return hours + " h ago";
+    if (hours < 1) return AH.t("before.when.now");
+    if (hours < 24) return AH.t("before.when.hours", { n: hours });
     const days = Math.floor(hours / 24);
-    if (days === 1) return "yesterday";
-    if (days < 30) return days + " days ago";
+    if (days === 1) return AH.t("before.when.yesterday");
+    if (days < 30) return AH.t("before.when.days", { n: days });
     return new Date(row.created_at)
-      .toLocaleDateString("en-GB", { month: "short", year: "numeric" });
+      .toLocaleDateString(DATE_LOCALE[AH.lang] || "en-GB", { month: "short", year: "numeric" });
   }
 
   /* One table, two levels: a row without parent_id is a topic, a row with
@@ -37,14 +37,14 @@
 
     const shape = (r) => ({
       id: r.id,
-      who: r.author || "someone",
+      who: r.author || AH.t("word.someone"),
       when: whenText(r),
       body: r.body,
       at: new Date(r.created_at).getTime(),
       replies: replies
         .filter((c) => c.parent_id === r.id)
         .sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
-        .map((c) => ({ who: c.author || "someone", when: whenText(c), body: c.body })),
+        .map((c) => ({ who: c.author || AH.t("word.someone"), when: whenText(c), body: c.body })),
     });
 
     const all = topics.map(shape).sort((a, b) => b.at - a.at);
@@ -54,6 +54,8 @@
       older: all.filter((t) => t.at < cutoff),
     };
   }
+
+  const DATE_LOCALE = { en: "en-GB", de: "de-DE", tr: "tr-TR" };
 
   const EMPTY = { recent: [], older: [] };
 

@@ -1,6 +1,7 @@
 import { Image, Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import { SvgUri } from 'react-native-svg';
+import { upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { posterUrl, type Night } from '@/data/deck';
 
@@ -42,9 +43,9 @@ export function toDeckCard(n: Night, friends: DeckFriend[] = []): DeckCard {
 
 const two = (n: number) => String(n).padStart(2, '0');
 const stamp = (iso: string | null) => {
-  if (!iso) return 'date tba';
+  if (!iso) return null;
   const d = new Date(iso);
-  if (isNaN(d.getTime())) return 'date tba';
+  if (isNaN(d.getTime())) return null;
   return `${two(d.getDate())}.${two(d.getMonth() + 1)}.${String(d.getFullYear()).slice(2)} · ${two(d.getHours())}:${two(d.getMinutes())}`;
 };
 
@@ -66,6 +67,13 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight 
   const shown = card.friends.slice(0, 2);
   const more = card.friends.length - shown.length;
   const details = () => openDetails(card);
+  const { t, tx, up } = useLang();
+  // tür adı veritabanından gelir ("club night"); anahtar slug ile kurulur.
+  // sözlükte varsa çevrilmiş söz, yoksa veri: büyük harf ona göre
+  const kindWord = tx('type.' + card.kind.replace(/\s+/g, '-'), '');
+  const kind = kindWord ? up(kindWord) : upperData(card.kind);
+  const sourceWord = card.source ? tx('word.' + card.source, '') : '';
+  const source = sourceWord ? up(sourceWord) : upperData(card.source);
   return (
     <>
       {card.image ? (
@@ -78,16 +86,16 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight 
         <Image source={fallback} style={styles.photo} resizeMode="cover" />
       )}
       <View style={[styles.caption, { bottom }]}>
-        <Pressable style={styles.stripLeft} onPress={details} accessibilityRole="button" accessibilityLabel="details">
-          <Text style={styles.stripLeftText}>details ↓</Text>
+        <Pressable style={styles.stripLeft} onPress={details} accessibilityRole="button" accessibilityLabel={t('word.details')}>
+          <Text style={styles.stripLeftText}>{up(t('word.details'))} ↓</Text>
         </Pressable>
         <Pressable style={styles.block} onPress={details}>
           <Text style={styles.title} numberOfLines={3} adjustsFontSizeToFit minimumFontScale={0.6}>
             {card.title.toLowerCase()}
           </Text>
-          <Text style={styles.jet}>{card.source ? `${card.kind} · ${card.source}` : card.kind}</Text>
-          {card.venue ? <Text style={styles.jet} numberOfLines={1}>{card.venue}</Text> : null}
-          <Text style={styles.jet}>{stamp(card.startsAt)}</Text>
+          <Text style={styles.jet}>{source ? `${kind} · ${source}` : kind}</Text>
+          {card.venue ? <Text style={styles.jet} numberOfLines={1}>{upperData(card.venue)}</Text> : null}
+          <Text style={styles.jet}>{stamp(card.startsAt) ?? up(t('deck.dateTba'))}</Text>
           {card.friends.length > 0 ? (
             <View style={styles.friends}>
               {shown.map((f) => (
@@ -95,7 +103,7 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight 
                   <Text style={[styles.sqText, f.live && styles.sqTextLive]}>{f.name.charAt(0)}</Text>
                 </View>
               ))}
-              <Text style={styles.keptNote}>{more > 0 ? `+${more} kept it` : 'kept it'}</Text>
+              <Text style={styles.keptNote}>{more > 0 ? t('deck.moreKeptIt', { n: more }) : t('deck.keptIt')}</Text>
             </View>
           ) : null}
         </Pressable>
@@ -105,7 +113,7 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight 
           accessibilityRole="button"
           accessibilityLabel={rightLabel}
         >
-          <Text style={[styles.stripText, rightDone && styles.stripTextDone]}>{rightLabel}</Text>
+          <Text style={[styles.stripText, rightDone && styles.stripTextDone]}>{up(rightLabel)}</Text>
         </Pressable>
       </View>
     </>
@@ -114,7 +122,8 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight 
 
 // çekerken beliren ipucu etiketi
 export function Hint({ label }: { label: string }) {
-  return <Text style={styles.hintText}>{label}</Text>;
+  const { up } = useLang();
+  return <Text style={styles.hintText}>{up(label)}</Text>;
 }
 
 const styles = StyleSheet.create({
@@ -123,7 +132,7 @@ const styles = StyleSheet.create({
   caption: { position: 'absolute', left: 0, right: 0, flexDirection: 'row', alignItems: 'stretch' },
   block: { flex: 1, backgroundColor: colors.ink, paddingHorizontal: 16, paddingTop: 16, paddingBottom: 14, gap: 3 },
   title: { fontFamily: fonts.logo, fontSize: 48, lineHeight: 42, letterSpacing: -1, color: colors.spotText, marginBottom: 12 },
-  jet: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1.2, textTransform: 'uppercase', color: colors.paper },
+  jet: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1.2, color: colors.paper },
   friends: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 12 },
   sq: { width: 24, height: 24, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   sqLive: { backgroundColor: colors.spot, borderColor: colors.spot },
@@ -132,10 +141,10 @@ const styles = StyleSheet.create({
   keptNote: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute, marginLeft: 6 },
   strip: { width: 56, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center' },
   stripDone: { backgroundColor: colors.ink, borderLeftWidth: 1, borderLeftColor: colors.ink3 },
-  stripText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: colors.ink, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },
+  stripText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.ink, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },
   stripTextDone: { color: colors.spotText },
   stripLeft: { width: 44, backgroundColor: colors.ink, borderRightWidth: 1, borderRightColor: colors.ink3, alignItems: 'center', justifyContent: 'center' },
-  stripLeftText: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 2, textTransform: 'uppercase', color: colors.paper, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },
-  hintText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: colors.ink, backgroundColor: colors.paper, paddingVertical: 6, paddingHorizontal: 10 },
+  stripLeftText: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 2, color: colors.paper, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },
+  hintText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.ink, backgroundColor: colors.paper, paddingVertical: 6, paddingHorizontal: 10 },
   pressed: { opacity: 0.75 },
 });

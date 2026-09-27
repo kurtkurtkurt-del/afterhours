@@ -40,18 +40,18 @@
     const note = el("reg-note");
 
     if (!email || email.indexOf("@") < 1) {
-      say(note, "that doesn't look like an email.", "error");
+      say(note, AH.t("login.bad.email"), "error");
       el("reg-email").focus();
       return;
     }
     if (password.length < 8) {
-      say(note, "eight characters or more, please.", "error");
+      say(note, AH.t("register.short"), "error");
       el("reg-password").focus();
       return;
     }
 
     el("reg-create").disabled = true;
-    say(note, "opening it…");
+    say(note, AH.t("register.working"));
 
     AH.signUp(email, password)
       .then((session) => {
@@ -59,8 +59,7 @@
         if (!session) {
           /* Confirmation is on: no token came, they check their email first */
           el("reg-mail-note").textContent =
-            "We sent a link to " + email + ". Open it and you land back here to " +
-            "pick a handle — the account is not finished until you do.";
+            AH.t("register.mail.note", { email: email });
           show("reg-mail");
           return;
         }
@@ -71,16 +70,17 @@
         el("reg-create").disabled = false;
         const m = String(h.message || "");
         say(note, /already registered|exists/i.test(m)
-          ? "there is already an account with that email. sign in instead."
-          : AH.errorText(h, "couldn't open the account."), "error");
+          ? AH.t("register.exists")
+          : AH.errorText(h, AH.t("register.failed")), "error");
       });
   });
 
   /* ---------------- 2 · handle ---------------- */
 
   const HANDLE_WORDS = {
-    ok: "free.", yours: "this one is yours.", taken: "someone already has that one.",
-    format: "lowercase letters, numbers and underscore. 3–20.", empty: "",
+    ok: AH.t("settings.handle.ok"), yours: AH.t("settings.handle.yours"),
+    taken: AH.t("settings.handle.taken"),
+    format: AH.t("settings.handle.format"), empty: "",
   };
 
   /* checkNo guards against answers landing out of order: with only the
@@ -143,22 +143,22 @@
   }
 
   const ANSWERS = {
-    taken: "someone already has that handle.",
-    format: "that handle doesn't fit the format.",
-    empty: "pick a handle first.",
-    nocity: "that city isn't on the list.",
-    signedout: "sign in again — the session went away.",
+    taken: AH.t("settings.answer.taken"),
+    format: AH.t("settings.answer.format"),
+    empty: AH.t("settings.answer.empty"),
+    nocity: AH.t("settings.answer.nocity"),
+    signedout: AH.t("register.answer.signedout"),
   };
 
   el("reg-finish").onclick = function () {
     const h = el("reg-handle").value.trim();
     if (!h) {
-      say(el("reg-status"), "pick a handle first.", "error");
+      say(el("reg-status"), AH.t("settings.answer.empty"), "error");
       el("reg-handle").focus();
       return;
     }
     el("reg-finish").disabled = true;
-    say(el("reg-status"), "finishing…");
+    say(el("reg-status"), AH.t("register.finishing"));
 
     call("profile_setup", { p_handle: h, p_city_slug: city })
       .then((c) => {
@@ -169,13 +169,12 @@
           return;
         }
         el("reg-welcome").textContent =
-          "You are @" + h.toLowerCase() + ". What you keep from here on is " +
-          "yours to look back at.";
+          AH.t("register.welcome", { handle: h.toLowerCase() });
         show("reg-3");
       })
       .catch((h2) => {
         el("reg-finish").disabled = false;
-        say(el("reg-status"), AH.errorText(h2, "couldn't finish the account."), "error");
+        say(el("reg-status"), AH.errorText(h2, AH.t("register.finish.failed")), "error");
       });
   };
 
@@ -192,7 +191,7 @@
     if (!(CONFIG.url && CONFIG.anonKey)) {
       show("reg-1");
       el("reg-form").hidden = true;
-      say(el("reg-note"), "sign-up opens when the backend does.", "waiting");
+      say(el("reg-note"), AH.t("register.closed"), "waiting");
       return;
     }
 
@@ -204,7 +203,7 @@
         const p = Array.isArray(r) ? r[0] : r;
         if (p && p.onboarded) {
           el("reg-already-note").textContent =
-            "You are signed in as @" + (p.handle || "you") + ". Nothing to fill in twice.";
+            AH.t("register.already.note", { handle: p.handle || AH.t("menu.you") });
           show("reg-already");
         } else {
           stepTwo();

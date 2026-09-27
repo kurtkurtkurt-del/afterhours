@@ -135,25 +135,31 @@
      `404 {"code":"PGRST202","details":"Searched for the function..."}`
      tells them nothing; they need one short line about what they can do.
      The detail goes to the console. */
+  /* The sentence in the chosen language; the english one if this page
+     carries no dictionary. */
+  function say(key, english) {
+    return AH.t && AH.has && AH.has(key) ? AH.t(key) : english;
+  }
+
   AH.errorText = function (error, fallbackLine) {
     const raw = String((error && error.message) || error || "");
     console.warn("afterhours:", raw);
 
     if (/PGRST202|Searched for the function/i.test(raw))
-      return "this part isn't switched on yet. it should be soon.";
+      return say("session.error.off", "this part isn't switched on yet. it should be soon.");
     if (/^40[13]\b|JWT|token is expired/i.test(raw))
-      return "your session ran out. sign in again.";
+      return say("session.error.expired", "your session ran out. sign in again.");
     if (/duplicate key|already exists|unique constraint/i.test(raw))
-      return "that one is taken already.";
+      return say("session.error.taken", "that one is taken already.");
     if (/violates .*constraint|invalid input/i.test(raw))
-      return "that doesn't fit — check the field and try again.";
+      return say("session.error.fit", "that doesn't fit — check the field and try again.");
     if (/^429\b|rate limit/i.test(raw))
-      return "too fast. give it a minute.";
+      return say("session.error.fast", "too fast. give it a minute.");
     if (/^5\d\d\b/.test(raw))
-      return "the other end is having a moment. try again shortly.";
+      return say("session.error.server", "the other end is having a moment. try again shortly.");
     if (/failed to fetch|networkerror|load failed|backend is off/i.test(raw))
-      return "no connection to the backend right now.";
-    return fallbackLine || "something went wrong. it has been noted.";
+      return say("session.error.offline", "no connection to the backend right now.");
+    return fallbackLine || say("session.error.unknown", "something went wrong. it has been noted.");
   };
 
   /* Turn a database row into the shape the screen expects. The field

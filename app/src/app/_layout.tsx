@@ -15,6 +15,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { colors } from '@/theme/tokens';
 import { AmbientProvider } from '@/audio/AmbientContext';
 import { AuthProvider } from '@/auth/AuthContext';
+import { LanguageProvider } from '@/i18n';
 import GenrePicker from '@/components/GenrePicker';
 
 // native splash, fontlar gelene kadar açık kalır; sonra geçiş görünmez olur
@@ -42,6 +43,7 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
     <AuthProvider>
+    <LanguageProvider>
     <AmbientProvider>
       <Stack
         screenOptions={{
@@ -54,6 +56,7 @@ export default function RootLayout() {
       />
       <GenrePicker />
     </AmbientProvider>
+    </LanguageProvider>
     </AuthProvider>
     </GestureHandlerRootView>
   );

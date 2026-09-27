@@ -64,7 +64,7 @@
       sub.classList.remove("swap");
     }, 160);
   }
-  const freqText = (f) => "fm " + f.toFixed(1);
+  const freqText = (f) => AH.t("radio.fm", { freq: f.toFixed(1) });
 
   // ---------- Sound ----------
   function startStatic() {

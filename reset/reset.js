@@ -23,7 +23,7 @@
   const CONFIG = window.AH_CONFIG || {};
   if (!(CONFIG.url && CONFIG.anonKey)) {
     el("rs-form").hidden = true;
-    say(el("rs-note"), "this opens when the backend does.", "waiting");
+    say(el("rs-note"), AH.t("reset.closed"), "waiting");
     return;
   }
 
@@ -37,22 +37,22 @@
     e.preventDefault();
     const email = el("rs-email").value.trim();
     if (!email || email.indexOf("@") < 1) {
-      say(el("rs-note"), "that doesn't look like an email.", "error");
+      say(el("rs-note"), AH.t("login.bad.email"), "error");
       el("rs-email").focus();
       return;
     }
     el("rs-send").disabled = true;
-    say(el("rs-note"), "sending…");
+    say(el("rs-note"), AH.t("reset.sending"));
     AH.requestRecovery(email, location.origin + location.pathname)
       .then(() => {
         say(el("rs-note"),
-          "sent. open the link in your inbox and you land back here.", "ok");
+          AH.t("reset.sent"), "ok");
       })
       .catch((h) => {
         /* The built-in mailer allows only a few messages an hour. */
         say(el("rs-note"), /rate|429/i.test(String(h.message))
-          ? "too many mails just went out. give it a few minutes."
-          : AH.errorText(h, "couldn't send the link."), "error");
+          ? AH.t("reset.rate")
+          : AH.errorText(h, AH.t("reset.send.failed")), "error");
       })
       .finally(() => { el("rs-send").disabled = false; });
   });
@@ -61,12 +61,12 @@
     e.preventDefault();
     const password = el("rs-password").value;
     if (password.length < 8) {
-      say(el("rs-set-note"), "eight characters or more, please.", "error");
+      say(el("rs-set-note"), AH.t("reset.short"), "error");
       el("rs-password").focus();
       return;
     }
     el("rs-save").disabled = true;
-    say(el("rs-set-note"), "setting…");
+    say(el("rs-set-note"), AH.t("reset.setting"));
     AH.updatePassword(password)
       .then(() => {
         set.hidden = true;
@@ -75,7 +75,7 @@
       .catch((h) => {
         el("rs-save").disabled = false;
         say(el("rs-set-note"),
-          AH.errorText(h, "couldn't set it. try the link once more."), "error");
+          AH.errorText(h, AH.t("reset.set.failed")), "error");
       });
   });
 

@@ -1,11 +1,7 @@
-// sign up ekranında dönüşümlü satırlar. sıra burada.
-export const taglines = [
-  'explore the nights your city hides.',
-  'find tonight before it finds you.',
-  'every city has an afterhours. find yours.',
-  'the night is a map. start walking.',
-  "explore what's still going at 4am.",
-] as const;
+import type { Key } from '@/i18n/dict';
+
+// sign up ekranında dönüşümlü satırlar. sıra burada; sözler i18n/parts/home.ts içinde.
+export const taglines: readonly Key[] = ['tagline.1', 'tagline.2', 'tagline.3', 'tagline.4', 'tagline.5'];
 
 export const tagline = {
   size: 34,          // font boyutu

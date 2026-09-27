@@ -29,6 +29,11 @@
   const signInForm = document.getElementById("adm-intro");
   const signInNote = document.getElementById("adm-intro-note");
 
+  /* Written here and not with data-i18n: the markup is translated when
+     the page has finished loading, which would put "checking…" back over
+     whatever the gate has said by then. */
+  gateText.textContent = AH.t("admin.checking");
+
   function showGate(text, wantsSignIn) {
     gate.hidden = false;
     panel.hidden = true;
@@ -45,27 +50,27 @@
     const email = document.getElementById("adm-email").value.trim();
     const password = document.getElementById("adm-password").value;
     if (!email || !password) return;
-    signInNote.textContent = "signing in…";
+    signInNote.textContent = AH.t("admin.signin.wait");
     AH.signInWithPassword(email, password)
       .then(() => { location.reload(); })
       .catch((h) => {
         signInNote.textContent = /invalid/i.test(h.message)
-          ? "wrong email or password."
-          : "couldn't sign in: " + h.message;
+          ? AH.t("admin.signin.wrong")
+          : AH.t("admin.signin.failed", { why: h.message });
       });
   });
 
   /* --- start: identity first, then permission --- */
 
   if (!(CONFIG.url && CONFIG.anonKey)) {
-    showGate("no backend configured. fill in config.js first.", false);
+    showGate(AH.t("admin.gate.nobackend"), false);
     return;
   }
 
   AH.sessionReady
     .then(() => {
       if (!AH.signedIn()) {
-        showGate("sign in with the admin account to continue.", true);
+        showGate(AH.t("admin.gate.signin"), true);
         return null;
       }
       const id = AH.session.user && AH.session.user.id;
@@ -74,14 +79,14 @@
     .then((profile) => {
       if (!profile) return;
       if (!profile.is_admin) {
-        showGate("this account isn't an admin. nothing to do here.", false);
+        showGate(AH.t("admin.gate.notadmin"), false);
         return;
       }
       gate.hidden = true;
       panel.hidden = false;
       return start();
     })
-    .catch((h) => showGate("couldn't check the account: " + h.message, false));
+    .catch((h) => showGate(AH.t("admin.gate.failed", { why: h.message }), false));
 
   /* --- the data --- */
 
@@ -133,12 +138,13 @@
 
   /* --- list --- */
 
+  /* These are codes; what the badge says is admin.warn.<code> */
   function warnings(e) {
     const u = [];
     if (!e.is_published) u.push("unpublished");
-    if (e.starts_at_estimated) u.push("date?");
-    if (!e.venue_id) u.push("no venue");
-    if (!e.poster_no) u.push("no poster");
+    if (e.starts_at_estimated) u.push("date");
+    if (!e.venue_id) u.push("venue");
+    if (!e.poster_no) u.push("poster");
     return u;
   }
 
@@ -168,7 +174,7 @@
       warnings(e).forEach((u) => {
         const badge = document.createElement("span");
         badge.className = "adm-badge" + (u === "unpublished" ? " quiet" : "");
-        badge.textContent = u;
+        badge.textContent = AH.t("admin.warn." + u);
         li.appendChild(badge);
       });
 
@@ -178,8 +184,9 @@
 
     const flagged = events.filter((e) => warnings(e).length).length;
     summary.textContent =
-      `${events.length} events · ${flagged} need attention` +
-      (query ? ` · showing ${visible.length}` : "");
+      AH.tn("admin.summary.events", events.length) + " · " +
+      AH.tn("admin.summary.flagged", flagged) +
+      (query ? " · " + AH.t("admin.summary.showing", { n: visible.length }) : "");
   }
 
   searchField.addEventListener("input", drawList);
@@ -214,7 +221,9 @@
        shifted every date two hours earlier per open-and-save. Build the
        value from the local clock so the round trip is a no-op. */
     $("a-starts").value = e.starts_at ? localInputValue(new Date(e.starts_at)) : "";
-    $("a-number").textContent = counts[e.id] ? counts[e.id] + " people" : "nobody yet";
+    $("a-number").textContent = counts[e.id]
+      ? AH.tn("admin.kept.people", counts[e.id])
+      : AH.t("admin.kept.nobody");
 
     showPoster(e.poster_no);
     drawList();
@@ -264,10 +273,10 @@
   $("a-save").addEventListener("click", () => {
     const g = readForm();
     if (!g.title || !g.slug || !g.meta) {
-      status.textContent = "title, slug and meta are required.";
+      status.textContent = AH.t("admin.required");
       return;
     }
-    status.textContent = "saving…";
+    status.textContent = AH.t("admin.saving");
 
     const request = chosen
       ? AH.request("/events?id=eq." + chosen.id, {
@@ -283,25 +292,25 @@
 
     request
       .then((rows) => {
-        if (!rows || !rows.length) throw new Error("nothing was written");
+        if (!rows || !rows.length) throw new Error(AH.t("admin.nothing.written"));
         return reload().then(() => {
           const fresh = events.find((e) => e.id === rows[0].id);
           if (fresh) select(fresh);
           /* select() clears the status; write the message AFTER it */
-          status.textContent = "saved.";
+          status.textContent = AH.t("word.saved");
         });
       })
-      .catch((h) => { status.textContent = "couldn't save: " + h.message; });
+      .catch((h) => { status.textContent = AH.t("admin.save.failed", { why: h.message }); });
   });
 
   $("a-delete").addEventListener("click", () => {
     if (!chosen) return;
     /* Deleting cannot be undone; say what is going first */
-    if (!window.confirm('delete "' + chosen.title + '" and everything attached to it?')) return;
-    status.textContent = "deleting…";
+    if (!window.confirm(AH.t("admin.delete.confirm", { title: chosen.title }))) return;
+    status.textContent = AH.t("admin.deleting");
     AH.request("/events?id=eq." + chosen.id, { method: "DELETE" })
       .then(() => { chosen = null; editor.hidden = true; return reload(); })
-      .catch((h) => { status.textContent = "couldn't delete: " + h.message; });
+      .catch((h) => { status.textContent = AH.t("admin.delete.failed", { why: h.message }); });
   });
 
   /* --- checking a poster ---
@@ -313,7 +322,7 @@
     const file = event.target.files && event.target.files[0];
     if (!file) return;
     const note = $("a-poster-note");
-    note.textContent = "checking…";
+    note.textContent = AH.t("admin.checking");
 
     file.text().then((text) => {
       const box = $("a-poster-preview");
@@ -326,7 +335,7 @@
       const doc = new DOMParser().parseFromString(text, "image/svg+xml");
       const parsed = doc.documentElement;
       if (doc.querySelector("parsererror") || parsed.nodeName.toLowerCase() !== "svg") {
-        note.textContent = "that file has no <svg> in it.";
+        note.textContent = AH.t("admin.poster.nosvg");
         return;
       }
       doc.querySelectorAll("script, foreignObject").forEach((el) => el.remove());
@@ -353,7 +362,7 @@
 
       const problems = [];
       if (Math.abs(width / height - 2 / 3) > 0.01) {
-        problems.push(`viewBox ${width}×${height} — should be 2:3 (400×600)`);
+        problems.push(AH.t("admin.poster.ratio", { w: width, h: height }));
       }
 
       /* Does the text run past the frame: x + width <= 388 */
@@ -362,16 +371,19 @@
         let k;
         try { k = t.getBBox(); } catch (_) { return; }
         if (k.x + k.width > limit + 0.5) {
-          problems.push(`"${(t.textContent || "").slice(0, 18)}" runs ${Math.round(k.x + k.width - limit)}px past the frame`);
+          problems.push(AH.t("admin.poster.past", {
+            text: (t.textContent || "").slice(0, 18),
+            px: Math.round(k.x + k.width - limit),
+          }));
         }
         if (k.x < 12 - 0.5) {
-          problems.push(`"${(t.textContent || "").slice(0, 18)}" starts left of the frame`);
+          problems.push(AH.t("admin.poster.left", { text: (t.textContent || "").slice(0, 18) }));
         }
       });
 
       note.textContent = problems.length
         ? problems.join("  ·  ")
-        : "looks fine: 2:3 and nothing crosses the frame.";
+        : AH.t("admin.poster.fine");
       note.className = "adm-poster-note" + (problems.length ? " bad" : " good");
 
       /* If nothing is wrong it can be uploaded. If something is, the
@@ -390,7 +402,7 @@
     if (!pendingFile || !chosen) return;
     const note = $("a-poster-note");
     const name = chosen.slug + "-" + Date.now() + ".svg";
-    note.textContent = "uploading…";
+    note.textContent = AH.t("admin.uploading");
     note.className = "adm-poster-note";
 
     fetch(CONFIG.url.replace(/\/$/, "") + "/storage/v1/object/posters/" + name, {
@@ -414,14 +426,14 @@
         });
       })
       .then(() => {
-        note.textContent = "uploaded. the site uses this file now.";
+        note.textContent = AH.t("admin.uploaded");
         note.className = "adm-poster-note good";
         uploadButton.hidden = true;
         pendingFile = null;
         return reload();
       })
       .catch((h) => {
-        note.textContent = "couldn't upload: " + h.message;
+        note.textContent = AH.t("admin.upload.failed", { why: h.message });
         note.className = "adm-poster-note bad";
       });
   });
@@ -433,7 +445,12 @@
      their own (backend/sql/13_feedback.sql). So this is the ONLY place
      those messages can be seen. */
 
-  const KINDS = { broken: "broken", idea: "idea", event: "event", other: "other" };
+  const KINDS = {
+    broken: AH.t("admin.kind.broken"),
+    idea: AH.t("admin.kind.idea"),
+    event: AH.t("admin.kind.event"),
+    other: AH.t("admin.kind.other"),
+  };
 
   function fetchFeedback() {
     return AH.request("/rpc/feedback_list", {
@@ -448,12 +465,14 @@
     list.textContent = "";
 
     const open = (rows || []).filter((g) => !g.handled).length;
-    counter.textContent = open ? "· " + open + " waiting" : "· all handled";
+    counter.textContent = open
+      ? AH.t("admin.feedback.waiting", { n: open })
+      : AH.t("admin.feedback.allhandled");
 
     if (!rows || !rows.length) {
       const empty = document.createElement("li");
       empty.className = "adm-feedback-empty";
-      empty.textContent = "nothing yet.";
+      empty.textContent = AH.t("admin.feedback.empty");
       list.appendChild(empty);
       return;
     }
@@ -474,7 +493,7 @@
       who.className = "adm-feedback-who";
       /* A signed-in writer shows by handle, a signed-out one by the
          contact they left, and someone who gave neither as "anonymous". */
-      who.textContent = g.author ? "@" + g.author : (g.contact || "anonymous");
+      who.textContent = g.author ? "@" + g.author : (g.contact || AH.t("admin.anonymous"));
       top.appendChild(who);
 
       const what = document.createElement("span");
@@ -485,7 +504,7 @@
       const mark = document.createElement("button");
       mark.className = "adm-comment-action";
       mark.type = "button";
-      mark.textContent = g.handled ? "reopen" : "handled";
+      mark.textContent = g.handled ? AH.t("admin.reopen") : AH.t("admin.handled");
       mark.addEventListener("click", () => {
         AH.request("/feedback?id=eq." + g.id, {
           method: "PATCH",
@@ -536,7 +555,7 @@
 
       const who = document.createElement("span");
       who.className = "adm-comment-who";
-      who.textContent = y.author_name || "member";
+      who.textContent = y.author_name || AH.t("admin.member");
 
       const text = document.createElement("span");
       text.className = "adm-comment-text";
@@ -545,7 +564,7 @@
       const hide = document.createElement("button");
       hide.className = "adm-comment-action";
       hide.type = "button";
-      hide.textContent = y.is_hidden ? "show" : "hide";
+      hide.textContent = y.is_hidden ? AH.t("admin.show") : AH.t("admin.hide");
       hide.addEventListener("click", () => {
         AH.request("/comments?id=eq." + y.id, {
           method: "PATCH",

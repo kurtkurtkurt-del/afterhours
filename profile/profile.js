@@ -65,7 +65,13 @@
     ["zurich", "zürich"], ["london", "london"], ["amsterdam", "amsterdam"], ["istanbul", "istanbul"],
     ["paris", "paris"], ["frankfurt", "frankfurt"],
   ];
-  const BIOS = [
+  /* The pools that are sentences come from the dictionary, the same
+     length in every language, so the seed deals the same person. */
+  const pool = (key, english) => {
+    const list = AH.t(key);
+    return Array.isArray(list) && list.length === english.length ? list : english;
+  };
+  const BIOS = pool("profile.bios", [
     "goes early, leaves late. side seats, always.",
     "front row or nothing. asks for the setlist after.",
     "the back room is usually better.",
@@ -74,8 +80,10 @@
     "here for the support act, honestly.",
     "one night a week, no exceptions, no plans.",
     "will walk out during the encore to catch the last train.",
-  ];
-  const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august"];
+  ]);
+  const YEAR = pool("profile.months", ["january", "february", "march", "april", "may", "june",
+    "july", "august", "september", "october", "november", "december"]);
+  const MONTHS = YEAR.slice(0, 8);
   const NAMES = ["Lina", "Emre", "Mira", "Jonas", "Selin", "Deniz", "Kaya", "Nora",
                  "Bosse", "Ada", "Tuna", "Ilay", "Marek", "Juli", "Ege", "Rana"];
   const METALS = ["steel", "chrome", "gunmetal", "titanium", "nickel", "anthracite", "brass", "copper", "rose", "gold"];
@@ -88,7 +96,7 @@
   ];
 
   if (!handle) {
-    area.appendChild(el("p", "pf-none", "nobody here by that name."));
+    area.appendChild(el("p", "pf-none", AH.t("profile.none")));
     return;
   }
 
@@ -118,7 +126,7 @@
           name: r.display_name || cap(handle),
           bio: r.bio || "",
           cityName: r.city_name || null,
-          since: d && !isNaN(d) ? MONTHS.concat(["september", "october", "november", "december"])[d.getMonth()] + " " + String(d.getFullYear()).slice(2) : null,
+          since: d && !isNaN(d) ? YEAR[d.getMonth()] + " " + String(d.getFullYear()).slice(2) : null,
           kept: r.kept_count != null ? r.kept_count : null,
           isFriend: Boolean(r.is_friend),
         };
@@ -194,7 +202,7 @@
     head.appendChild(face(p.name, "pf-portrait"));
     const id = el("div", "pf-id");
     id.appendChild(el("h1", "pf-name", p.name));
-    id.appendChild(el("p", "pf-meta", ["@" + p.handle, p.city[1], "since " + p.since].join(" · ")));
+    id.appendChild(el("p", "pf-meta", ["@" + p.handle, p.city[1], AH.t("profile.since", { when: p.since })].join(" · ")));
     if (p.bio) id.appendChild(el("p", "pf-bio", p.bio));
     head.appendChild(id);
     area.appendChild(head);
@@ -216,13 +224,13 @@
   function buildPath(p) {
     const box = el("section", "pf-path");
     box.appendChild(el("p", "cs-label", via.length
-      ? "how you reach " + p.name.toLowerCase()
-      : "you and " + p.name.toLowerCase()));
+      ? AH.t("profile.path.reach", { name: p.name.toLowerCase() })
+      : AH.t("profile.path.both", { name: p.name.toLowerCase() })));
     const row = el("div", "pf-hops");
 
     const you = el("div", "pf-hop you");
     you.appendChild(el("span", "pf-hop-mark"));
-    you.appendChild(el("p", "pf-hop-name", "you"));
+    you.appendChild(el("p", "pf-hop-name", AH.t("menu.you")));
     row.appendChild(you);
 
     via.forEach((h, i) => {
@@ -231,7 +239,7 @@
       hop.href = "index.html?handle=" + encodeURIComponent(h) + (i ? "&via=" + encodeURIComponent(via.slice(0, i).join(",")) : "");
       hop.appendChild(face(cap(h), "pf-hop-face"));
       hop.appendChild(el("p", "pf-hop-name", cap(h)));
-      hop.appendChild(el("p", "pf-hop-rel", i === 0 ? "your friend" : "friend of " + via[i - 1]));
+      hop.appendChild(el("p", "pf-hop-rel", i === 0 ? AH.t("profile.rel.friend") : AH.t("profile.rel.of", { name: via[i - 1] })));
       row.appendChild(hop);
     });
 
@@ -240,14 +248,14 @@
     them.appendChild(face(p.name, "pf-hop-face"));
     them.appendChild(el("p", "pf-hop-name", p.name));
     them.appendChild(el("p", "pf-hop-rel",
-      via.length === 0 ? (p.isFriend ? "your friend" : "not yet a friend")
-      : via.length === 1 ? "friend of " + via[0]
-      : "friend of friend of " + via[0]));
+      via.length === 0 ? AH.t(p.isFriend ? "profile.rel.friend" : "profile.rel.notyet")
+      : via.length === 1 ? AH.t("profile.rel.of", { name: via[0] })
+      : AH.t("profile.rel.ofof", { name: via[0] })));
     row.appendChild(them);
     box.appendChild(row);
 
     if (via.length) box.appendChild(el("p", "cs-note",
-      cap(via[via.length - 1]) + " can introduce you. Nothing on this page is a message; that still has to happen in a room."));
+      AH.t("profile.path.note", { name: cap(via[via.length - 1]) })));
     return box;
   }
 
@@ -257,11 +265,11 @@
   function buildRoll(p, nights) {
     const box = el("section", "pf-roll");
     box.appendChild(el("p", "cs-label", p.kept != null
-      ? "kept · " + p.kept
-      : "kept · " + nights.length));
+      ? AH.t("profile.kept", { n: p.kept })
+      : AH.t("profile.kept", { n: nights.length })));
     const grid = el("ol", "pf-frames");
     if (p.real && !nights.length) {
-      box.appendChild(el("p", "cs-note", "nothing kept yet. it starts with the first night kept."));
+      box.appendChild(el("p", "cs-note", AH.t("profile.kept.none")));
     }
 
     nights.forEach((e, i) => {
@@ -290,12 +298,12 @@
 
     /* The empty frame: the next one. Not a gap. */
     const blank = el("li", "pf-frame");
-    blank.appendChild(el("span", "pf-shot empty", "not shot yet"));
+    blank.appendChild(el("span", "pf-shot empty", AH.t("profile.frame.empty")));
     const line = el("p", "pf-frame-line");
     line.appendChild(el("span", "pf-no", String(nights.length + 1).padStart(2, "0")));
-    line.appendChild(el("span", "pf-frame-name dim", "the next one"));
+    line.appendChild(el("span", "pf-frame-name dim", AH.t("profile.frame.next")));
     blank.appendChild(line);
-    blank.appendChild(el("p", "pf-frame-meta", "fills at the door"));
+    blank.appendChild(el("p", "pf-frame-meta", AH.t("profile.frame.door")));
     grid.appendChild(blank);
 
     box.appendChild(grid);
@@ -305,7 +313,7 @@
   function buildFriends(p, isMe) {
     const box = el("section", "pf-friends");
     const left = el("div", "pf-friends-list");
-    left.appendChild(el("p", "cs-label", p.friends != null ? "which friends · " + p.friends : "which friends"));
+    left.appendChild(el("p", "cs-label", p.friends != null ? AH.t("profile.friends.count", { n: p.friends }) : AH.t("profile.friends")));
     const row = el("div", "pf-faces");
     others.forEach((n) => {
       const a = el("a", "pf-face-link");
@@ -320,7 +328,7 @@
 
     if (!isMe) {
       const right = el("div", "pf-you");
-      right.appendChild(el("p", "cs-label", "you and " + p.name.toLowerCase()));
+      right.appendChild(el("p", "cs-label", AH.t("profile.path.both", { name: p.name.toLowerCase() })));
       const chain = el("span", "cs-chain open");
       chain.appendChild(el("span", "cs-chain-you"));
       via.concat([p.name]).forEach((n) => {
@@ -328,9 +336,9 @@
         chain.appendChild(face(cap(n), "cs-chain-face"));
       });
       chain.appendChild(el("span", "cs-chain-word",
-        via.length === 0 ? (p.isFriend ? "your friend" : "not yet a friend")
-        : via.length === 1 ? "friend of " + via[0]
-        : "friend of friend of " + via[0]));
+        via.length === 0 ? AH.t(p.isFriend ? "profile.rel.friend" : "profile.rel.notyet")
+        : via.length === 1 ? AH.t("profile.rel.of", { name: via[0] })
+        : AH.t("profile.rel.ofof", { name: via[0] })));
       right.appendChild(chain);
       box.appendChild(right);
     }
@@ -344,7 +352,7 @@
     const band = el("section", "cs-earn pf-shelf");
     const count = Math.min(nights.length, 3 + Math.floor(rnd() * 3));
     band.appendChild(el("p", "cs-earn-label",
-      "cards · " + count));
+      AH.t("profile.cards", { n: count })));
     if (!window.CARDS) return band;
 
     const shelf = el("div", "pf-cards");
@@ -367,16 +375,15 @@
       const faceBox = el("div", "cs-earn-face");
       faceBox.innerHTML = CARDS.front(night, "s" + i);
       fig.appendChild(faceBox);
-      fig.appendChild(el("figcaption", null, night.metal + " · " + (night.d || "").toLowerCase()));
+      fig.appendChild(el("figcaption", null, AH.t("profile.metal." + night.metal) + " · " + (night.d || "").toLowerCase()));
       shelf.appendChild(fig);
     });
     band.appendChild(shelf);
 
     const say = el("div", "cs-earn-say");
-    say.appendChild(el("p", "cs-earn-line", "One card per night, written by the room."));
+    say.appendChild(el("p", "cs-earn-line", AH.t("profile.cards.line")));
     say.appendChild(el("p", "cs-earn-sub",
-      "The front is who stood there. The back is what the night sounded like and what got said in it. " +
-      "None of these are real yet — a collection starts with the first night actually gone to."));
+      AH.t("profile.cards.sub")));
     band.appendChild(say);
     return band;
   }

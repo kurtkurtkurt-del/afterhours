@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>privacy | afterhours</title>
-  <meta name="description" content="What afterhours keeps about you, why, and how to delete it. English summary of the datenschutz page." />
+  <title data-i18n="legal.privacy.title">privacy | afterhours</title>
+  <meta name="description" content="What afterhours keeps about you, why, and how to delete it. Summary of the datenschutz page." data-i18n-attr="content:legal.privacy.desc" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="afterhours" />
   <meta property="og:title" content="privacy — afterhours" />
@@ -15,27 +15,29 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png" />
   <link rel="manifest" href="../manifest.webmanifest" />
-  <link rel="stylesheet" href="../fonts/fonts.css?v=192" />
-  <link rel="stylesheet" href="../style.css?v=192" />
+  <link rel="stylesheet" href="../fonts/fonts.css?v=194" />
+  <link rel="stylesheet" href="../style.css?v=194" />
+  <script src="../i18n.js?v=194"></script>
 </head>
 <body>
 
-  <a class="skip" href="#content">skip to the content</a>
+  <a class="skip" href="#content" data-i18n="skip">skip to the content</a>
 
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
     <nav class="header-links">
-      <a href="../explore/index.html">explore</a>
-      <a href="../djs/index.html">djs</a>
-      <a href="../friends/index.html">yours</a>
-      <a href="../maps/index.html">map</a>
-      <a href="../cards/index.html">collection</a>
-      <a href="../help/index.html">help</a>
-      <a href="../login/index.html">account</a>
+      <a href="../explore/index.html" data-i18n="nav.explore">explore</a>
+      <a href="../djs/index.html" data-i18n="nav.djs">djs</a>
+      <a href="../friends/index.html" data-i18n="nav.yours">yours</a>
+      <a href="../maps/index.html" data-i18n="nav.map">map</a>
+      <a href="../cards/index.html" data-i18n="nav.collection">collection</a>
+      <a href="../help/index.html" data-i18n="nav.help">help</a>
+      <a href="../login/index.html" data-i18n="nav.account">account</a>
     </nav>
   </header>
 
-  <main id="content" tabindex="-1" class="help legal" lang="en">
+  <main id="content" tabindex="-1" class="help legal">
+    <div data-lang-block="en" lang="en" style="display: contents">
     <p class="legal-warning">English summary. The binding version is the German <a href="../datenschutz/index.html">datenschutz</a> page.</p>
     <h1 class="page-title">privacy.</h1>
 
@@ -88,22 +90,131 @@
     </section>
 
     <p class="legal-date">Last updated: 24.09.2026 · draft</p>
+    </div>
+    <div data-lang-block="de" lang="de" style="display: contents">
+    <p class="legal-warning">Zusammenfassung. Verbindlich ist die deutsche Seite <a href="../datenschutz/index.html">datenschutz</a>.</p>
+    <h1 class="page-title">privatsphäre.</h1>
+
+    <section class="account">
+      <p class="account-title">Kurz gesagt</p>
+      <p class="help-text">
+        afterhours funktioniert ohne Konto: Die Nächte, die Karte und die DJs kannst du dir als Gast ansehen.
+        Mit einem Konto (oder einer Gastsitzung in der App) speichern wir nur, was das Produkt zum Funktionieren braucht:
+        deine E-Mail, dein Handle, die Nächte, die du behalten hast, deine Check-ins, deine Freundschaften und das, was du in einem Raum geschrieben hast.
+        Was du ziehen lässt, wird niemals jemandem gezeigt. Wer was gemocht hat, steht niemandem offen, im Einzelnen nicht einmal uns.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Was wir speichern und warum</p>
+      <p class="help-text">
+        <strong>E-Mail und Passwort</strong> — um dich anzumelden. Gespeichert bei Supabase (unserem Anbieter für Datenbank und Authentifizierung, Server in Frankfurt, EU). Gäste in der App erhalten ein anonymes Konto ohne E-Mail.<br />
+        <strong>Profil</strong> — Handle, Anzeigename, eine Zeile, Heimatstadt. Über dein Handle finden dich Freunde; in den Einstellungen kannst du abschalten, dass Fremde dich finden können.<br />
+        <strong>Swipes</strong> — behaltene und ziehen gelassene Nächte, damit sich der Stapel nicht wiederholt. Behaltene Nächte sind für bestätigte Freunde nur sichtbar, wenn du es erlaubst. Ziehen gelassene Nächte sieht niemand.<br />
+        <strong>Check-ins</strong> — dass du bei einer Nacht warst, die Uhrzeit und (nur wenn du den Standort erlaubt hast) wo du gestanden hast, damit die Karte ausgestellt werden kann. Sichtbar für dich, für bestätigte Freunde, wenn du es erlaubst, und als Initiale für die anderen im selben Raum.<br />
+        <strong>Beiträge im Raum</strong> — bis zu 200 Zeichen, lesbar nur für die Menschen, die bei derselben Nacht eingecheckt haben, eingefroren 48 Stunden nach der Nacht.<br />
+        <strong>Freundschaften</strong> — Anfragen und Bestätigungen.<br />
+        <strong>Standort</strong> — in der App, nur solange sie geöffnet ist, nur wenn du es erlaubst, um Nächte in deiner Nähe zu zeigen und um einzuchecken. Er wird nicht gespeichert, außer als Teil eines Check-ins.<br />
+        <strong>Hintergrundmusik</strong> — standardmäßig aus; deine Genre-Auswahl wird nur auf deinem Gerät gespeichert.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Was wir nicht tun</p>
+      <p class="help-text">
+        Keine Werbung, keine Werbe-ID, kein Analyse-SDK, kein Tracking über Apps oder Websites hinweg, kein Verkauf und keine Weitergabe personenbezogener Daten.
+        Die App spricht mit genau drei Diensten: Supabase (Datenbank, Anmeldung, Dateien), Ticketmaster (öffentliche Veranstaltungslisten, es werden keine personenbezogenen Daten gesendet) und Esri (Kartenkacheln für das Gebiet, das du dir ansiehst; es werden keine personenbezogenen Daten gesendet, nur die Koordinaten der Kacheln).
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Deine Rechte</p>
+      <p class="help-text">
+        Alles, was wir über dich gespeichert haben, kannst du in der App (Einstellungen → meine Daten herunterladen) oder auf dieser Seite (Einstellungen → Export) einsehen.
+        Dein Konto kannst du in der App (Einstellungen → Konto löschen) oder auf dieser Seite (<a href="../settings/index.html">Einstellungen</a>) löschen. Die Löschung entfernt dein Profil, deine Swipes, Check-ins und Freundschaften sofort; Texte, die du geschrieben hast, bleiben, wobei dein Name durch „jemand“ ersetzt wird.
+        Nach der DSGVO hast du außerdem das Recht auf Berichtigung, Einschränkung, Datenübertragbarkeit und Widerspruch; schreib an die Adresse im <a href="../impressum/index.html">Impressum</a>.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Hosting</p>
+      <p class="help-text">
+        Diese Seite wird bei GitHub Pages (GitHub B.V., Amsterdam) gehostet. Server-Logs (IP-Adresse, Uhrzeit, aufgerufene Datei, Browser) werden von GitHub für Sicherheit und Stabilität verarbeitet. Die App wird über Google Play und später über den App Store vertrieben; für den Download gelten deren eigene Datenschutzbestimmungen.
+      </p>
+    </section>
+
+    <p class="legal-date">Stand: 24.09.2026 · Entwurf</p>
+    </div>
+    <div data-lang-block="tr" lang="tr" style="display: contents">
+    <p class="legal-warning">Özet. Bağlayıcı olan, Almanca <a href="../datenschutz/index.html">datenschutz</a> sayfasıdır.</p>
+    <h1 class="page-title">gizlilik, kısaca.</h1>
+
+    <section class="account">
+      <p class="account-title">Kısaca</p>
+      <p class="help-text">
+        afterhours hesap olmadan da çalışır: gecelere, haritaya ve DJ'lere misafir olarak bakabilirsin.
+        Hesabın varsa (ya da uygulamada misafir oturumu açtıysan) yalnızca ürünün çalışması için gerekeni saklarız:
+        e-postan, kullanıcı adın, sakladığın geceler, check-in'lerin, arkadaşlıkların ve bir odada yazdıkların.
+        Bıraktığın hiçbir şey hiç kimseye gösterilmez. Kimin neyi beğendiği kimseye açık değildir; tek tek bakıldığında bize bile.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Neyi saklıyoruz, neden</p>
+      <p class="help-text">
+        <strong>E-posta ve parola</strong> — giriş yapabilmen için. Supabase'de saklanır (veritabanı ve kimlik doğrulama sağlayıcımız, sunucular Frankfurt'ta, AB). Uygulamadaki misafirler e-postasız, anonim bir hesap alır.<br />
+        <strong>Profil</strong> — kullanıcı adı, görünen ad, tek satır, yaşadığın şehir. Arkadaşların seni kullanıcı adınla bulur; yabancıların seni bulabilmesini ayarlardan kapatabilirsin.<br />
+        <strong>Kaydırmalar</strong> — sakladığın ve bıraktığın geceler; deste kendini tekrar etmesin diye. Sakladığın geceleri onaylanmış arkadaşların yalnızca sen izin verirsen görür. Bıraktığın geceleri kimse görmez.<br />
+        <strong>Check-in'ler</strong> — bir gecede bulunduğun, saati ve (yalnızca konuma izin verdiysen) nerede durduğun; kartın düzenlenebilmesi için. Sana, izin verirsen onaylanmış arkadaşlarına ve aynı odadaki diğerlerine baş harf olarak görünür.<br />
+        <strong>Oda yazıları</strong> — en fazla 200 karakter; yalnızca aynı geceye check-in yapanlar okuyabilir, geceden 48 saat sonra dondurulur.<br />
+        <strong>Arkadaşlıklar</strong> — istekler ve onaylar.<br />
+        <strong>Konum</strong> — uygulamada, yalnızca uygulama açıkken, yalnızca sen izin verdiğinde; yakınındaki geceleri göstermek ve check-in yapmak için. Bir check-in'in parçası olması dışında saklanmaz.<br />
+        <strong>Arka plan müziği</strong> — varsayılan olarak kapalıdır; tür seçimin yalnızca cihazında saklanır.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Neyi yapmıyoruz</p>
+      <p class="help-text">
+        Reklam yok, reklam kimliği yok, analiz SDK'sı yok, uygulamalar veya siteler arasında izleme yok, kişisel verilerin satışı veya paylaşımı yok.
+        Uygulama tam olarak üç hizmetle konuşur: Supabase (veritabanı, giriş, dosyalar), Ticketmaster (herkese açık etkinlik listeleri, kişisel veri gönderilmez) ve Esri (baktığın bölgenin harita karoları; kişisel veri gönderilmez, yalnızca karo koordinatları gönderilir).
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Hakların</p>
+      <p class="help-text">
+        Hakkında tuttuğumuz her şeyi uygulamada (ayarlar → verilerimi indir) veya bu sitede (ayarlar → dışa aktar) görebilirsin.
+        Hesabını uygulamada (ayarlar → hesabı sil) veya bu sitede (<a href="../settings/index.html">ayarlar</a>) silebilirsin. Silme işlemi profilini, kaydırmalarını, check-in'lerini ve arkadaşlıklarını hemen kaldırır; yazdığın metinler kalır, adının yerine "biri" yazılır.
+        GDPR (DSGVO) uyarınca ayrıca düzeltme, kısıtlama, taşınabilirlik ve itiraz hakların vardır; <a href="../impressum/index.html">künyedeki</a> adrese yaz.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Barındırma</p>
+      <p class="help-text">
+        Bu site GitHub Pages'te barındırılır (GitHub B.V., Amsterdam). Sunucu günlükleri (IP adresi, saat, istenen dosya, tarayıcı) güvenlik ve istikrar için GitHub tarafından işlenir. Uygulama Google Play ve ileride App Store üzerinden dağıtılır; indirme için onların kendi gizlilik koşulları geçerlidir.
+      </p>
+    </section>
+
+    <p class="legal-date">Son güncelleme: 24.09.2026 · taslak</p>
+    </div>
   </main>
 
   <footer class="foot">
-    <p class="foot-name">&copy; 2026 afterhours</p>
+    <p class="foot-name" data-i18n="foot.name">&copy; 2026 afterhours</p>
     <nav class="foot-links">
-      <a href="../impressum/index.html">impressum</a>
-      <a href="../datenschutz/index.html">datenschutz</a>
-      <a href="../privacy/index.html" aria-current="page">privacy (en)</a>
-      <a href="../agb/index.html">agb</a>
+      <a href="../impressum/index.html" data-i18n="foot.impressum">impressum</a>
+      <a href="../datenschutz/index.html" data-i18n="foot.datenschutz">datenschutz</a>
+      <a href="../privacy/index.html" aria-current="page" data-i18n="foot.privacy">privacy, in short</a>
+      <a href="../agb/index.html" data-i18n="foot.agb">agb</a>
     </nav>
   </footer>
 
-  <script src="../config.js?v=192"></script>
-  <script src="../session.js?v=192"></script>
-  <script src="../data.js?v=192"></script>
-  <script src="../menu.js?v=192"></script>
+  <script src="../config.js?v=194"></script>
+  <script src="../session.js?v=194"></script>
+  <script src="../data.js?v=194"></script>
+  <script src="../menu.js?v=194"></script>
 
 </body>
 </html>

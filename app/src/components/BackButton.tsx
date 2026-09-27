@@ -3,6 +3,7 @@ import { router } from 'expo-router';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, { Extrapolation, interpolate, runOnJS, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useT } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -25,15 +26,16 @@ type Props = { tone?: 'paper' | 'ink'; lift?: number; inline?: boolean };
 export default function BackButton({ tone = 'paper', lift = 0, inline = false }: Props) {
   const { height } = useWindowDimensions();
   const insets = useSafeAreaInsets();
+  const t = useT();
   const button = (
     <Pressable
       onPress={go}
       hitSlop={{ top: 14, bottom: 14, left: 24, right: 24 }}
       accessibilityRole="button"
-      accessibilityLabel="back"
+      accessibilityLabel={t('word.back')}
       style={({ pressed }) => [inline ? styles.inline : [styles.fixed, { top: height - insets.bottom - 30 - lift }], pressed && styles.pressed]}
     >
-      <Text style={[styles.text, tone === 'ink' && styles.textInk]}>back</Text>
+      <Text style={[styles.text, tone === 'ink' && styles.textInk]}>{t('word.back')}</Text>
     </Pressable>
   );
   if (inline) return button;

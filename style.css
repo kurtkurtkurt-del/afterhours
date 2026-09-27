@@ -768,6 +768,11 @@ img.phone-poster { object-fit: cover; background: #ececea; }
 
   .deck2 { flex: 1; margin-top: 18px; }
 
+  /* The closing line rises to where the heading stands, and the two were
+     printed on top of each other. The heading steps aside for it. */
+  .screen2-title { transition: opacity 0.4s ease; }
+  .screen2.closing .screen2-title { opacity: 0; }
+
   .card2 {
     width: 56vw;
     height: calc(56vw * 1.5);
@@ -3813,4 +3818,82 @@ body.pv-open { overflow: hidden; }
 @media (max-width: 380px) {
   .cc-cards { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .ex-wall { gap: 6px; }
+}
+
+
+/* ---------- Three languages (i18n.js) ---------- */
+
+/* The page is written in english; until i18n.js has swapped the words
+   the body stays hidden, so nobody watches it change language. */
+html.i18n-wait body { visibility: hidden; }
+
+/* Long pages (impressum, datenschutz, agb, privacy) are written out once
+   per language; only the block in the page's language shows. */
+html[lang="en"] [data-lang-block]:not([data-lang-block="en"]),
+html[lang="de"] [data-lang-block]:not([data-lang-block="de"]),
+html[lang="tr"] [data-lang-block]:not([data-lang-block="tr"]) { display: none !important; }
+
+/* The switch: en de tr. The same language as the other choices on the
+   site — the one in force at full weight, the others faded. */
+.lang {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.lang-code {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: none;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: inherit;
+  opacity: 0.42;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.lang-code:hover { opacity: 0.8; }
+
+.lang-code[aria-pressed="true"] {
+  opacity: 1;
+  font-weight: 500;
+  cursor: default;
+}
+
+.lang-code:focus-visible { outline: 1px solid currentColor; outline-offset: 3px; }
+
+/* In the menu it takes the colour of the links, so it inverts with them
+   on the landing's dark screens. */
+.header-links .lang { color: var(--black); transition: color 0.5s ease; }
+body[data-screen="4"] .header-links .lang { color: #f0f0ee; }
+body[data-screen="5"] .header-links .lang { color: #f2f2f0; }
+
+/* Written out in full where there is room (settings, the landing footer) */
+.lang[data-lang-names] { gap: 22px; }
+
+@media (max-width: 720px) {
+  .lang { gap: 9px; }
+  .header-links .lang-code { font-size: 12px; }
+
+  /* On a phone the menu has one row and the translated words are longer
+     than the english ones. The switch moves up beside the logo, and the
+     row scrolls sideways instead of breaking onto a third line that the
+     page under the fixed menu never made room for. */
+  .header-links .lang {
+    position: absolute;
+    top: 18px;
+    right: 16px;
+  }
+
+  .header-links {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .header-links::-webkit-scrollbar { display: none; }
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>admin | afterhours</title>
+  <title data-i18n="admin.title">admin | afterhours</title>
   <meta name="description" content="find your night. one card at a time: rave, club night, konzert, festival, meetup, hausparty. no search anywhere." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="afterhours" />
@@ -19,24 +19,25 @@
   <link rel="manifest" href="../manifest.webmanifest" />
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
-  <link rel="stylesheet" href="../fonts/fonts.css?v=192" />
-  <link rel="stylesheet" href="../style.css?v=192" />
-  <link rel="stylesheet" href="admin.css?v=192" />
+  <link rel="stylesheet" href="../fonts/fonts.css?v=194" />
+  <link rel="stylesheet" href="../style.css?v=194" />
+  <link rel="stylesheet" href="admin.css?v=194" />
+  <script src="../i18n.js?v=194"></script>
 </head>
 <body class="admin">
 
-  <a class="skip" href="#adm-gate">skip to the content</a>
+  <a class="skip" href="#adm-gate" data-i18n="skip">skip to the content</a>
 
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
     <nav class="header-links">
-      <a href="../explore/index.html">explore</a>
-      <a href="../djs/index.html">djs</a>
-      <a href="../friends/index.html">yours</a>
-      <a href="../maps/index.html">map</a>
-      <a href="../cards/index.html">collection</a>
-      <a href="../help/index.html">help</a>
-      <a href="../login/index.html">account</a>
+      <a href="../explore/index.html" data-i18n="nav.explore">explore</a>
+      <a href="../djs/index.html" data-i18n="nav.djs">djs</a>
+      <a href="../friends/index.html" data-i18n="nav.yours">yours</a>
+      <a href="../maps/index.html" data-i18n="nav.map">map</a>
+      <a href="../cards/index.html" data-i18n="nav.collection">collection</a>
+      <a href="../help/index.html" data-i18n="nav.help">help</a>
+      <a href="../login/index.html" data-i18n="nav.account">account</a>
     </nav>
   </header>
 
@@ -46,22 +47,25 @@
 
     <form class="adm-intro" id="adm-intro" hidden>
       <input class="adm-intro-field" id="adm-email" type="email"
-             placeholder="email" autocomplete="username" />
+             placeholder="email" autocomplete="username"
+             data-i18n-attr="placeholder:admin.email" />
       <input class="adm-intro-field" id="adm-password" type="password"
-             placeholder="password" autocomplete="current-password" />
-      <button class="adm-intro-button" type="submit">sign in</button>
+             placeholder="password" autocomplete="current-password"
+             data-i18n-attr="placeholder:admin.password" />
+      <button class="adm-intro-button" type="submit" data-i18n="word.signin">sign in</button>
     </form>
     <p class="adm-intro-note" id="adm-intro-note"></p>
 
-    <a class="adm-gate-link" id="adm-gate-link" href="../login/index.html" hidden>use a link instead</a>
+    <a class="adm-gate-link" id="adm-gate-link" href="../login/index.html" hidden data-i18n="admin.link">use a link instead</a>
   </main>
 
   <main class="adm" id="adm" hidden>
 
     <aside class="adm-list-field">
       <div class="adm-tools">
-        <input class="adm-search" id="adm-search" type="search" placeholder="search events" />
-        <button class="adm-new" id="adm-new" type="button">new</button>
+        <input class="adm-search" id="adm-search" type="search" placeholder="search events"
+               data-i18n-attr="placeholder:admin.search" />
+        <button class="adm-new" id="adm-new" type="button" data-i18n="admin.new">new</button>
       </div>
       <p class="adm-summary" id="adm-summary"></p>
       <ul class="adm-list" id="adm-list"></ul>
@@ -69,97 +73,98 @@
 
     <section class="adm-edit" id="adm-edit" hidden>
       <div class="adm-edit-left">
-        <label class="adm-label">title
+        <label class="adm-label"><span data-i18n="admin.field.title">title</span>
           <input class="adm-field" id="a-title" type="text" />
         </label>
 
-        <label class="adm-label">slug <span class="adm-hint">changing this breaks existing links</span>
+        <label class="adm-label">slug <span class="adm-hint" data-i18n="admin.field.slug.hint">changing this breaks existing links</span>
           <input class="adm-field" id="a-slug" type="text" spellcheck="false" />
         </label>
 
         <div class="adm-pair">
-          <label class="adm-label">type
+          <label class="adm-label"><span data-i18n="admin.field.type">type</span>
             <select class="adm-field" id="a-type"></select>
           </label>
-          <label class="adm-label">city
+          <label class="adm-label"><span data-i18n="admin.field.city">city</span>
             <select class="adm-field" id="a-city"></select>
           </label>
         </div>
 
         <div class="adm-pair">
-          <label class="adm-label">venue
+          <label class="adm-label"><span data-i18n="admin.field.venue">venue</span>
             <select class="adm-field" id="a-venue"></select>
           </label>
-          <label class="adm-label">poster no
+          <label class="adm-label"><span data-i18n="admin.field.posterno">poster no</span>
             <input class="adm-field" id="a-poster" type="number" min="1" />
           </label>
         </div>
 
-        <label class="adm-label">meta <span class="adm-hint">shown on screen exactly as typed</span>
+        <label class="adm-label">meta <span class="adm-hint" data-i18n="admin.field.meta.hint">shown on screen exactly as typed</span>
           <input class="adm-field" id="a-meta" type="text" />
         </label>
 
         <div class="adm-pair">
-          <label class="adm-label">starts at
+          <label class="adm-label"><span data-i18n="admin.field.starts">starts at</span>
             <input class="adm-field" id="a-starts" type="datetime-local" />
           </label>
           <label class="adm-label adm-confirm">
             <input type="checkbox" id="a-estimated" />
-            <span>date not verified</span>
+            <span data-i18n="admin.field.estimated">date not verified</span>
           </label>
         </div>
 
-        <label class="adm-label">body
+        <label class="adm-label"><span data-i18n="admin.field.body">body</span>
           <textarea class="adm-field adm-long" id="a-body" rows="4"></textarea>
         </label>
 
         <label class="adm-label adm-confirm">
           <input type="checkbox" id="a-published" />
-          <span>published</span>
+          <span data-i18n="admin.field.published">published</span>
         </label>
 
         <div class="adm-actions">
-          <button class="adm-save" id="a-save" type="button">save</button>
-          <button class="adm-delete" id="a-delete" type="button">delete</button>
+          <button class="adm-save" id="a-save" type="button" data-i18n="word.save">save</button>
+          <button class="adm-delete" id="a-delete" type="button" data-i18n="admin.delete">delete</button>
           <span class="adm-status" id="a-status"></span>
         </div>
       </div>
 
       <div class="adm-edit-right">
-        <p class="adm-label">poster</p>
+        <p class="adm-label" data-i18n="admin.poster">poster</p>
         <div class="adm-poster" id="a-poster-preview"></div>
         <p class="adm-poster-note" id="a-poster-note"></p>
 
         <label class="adm-upload">
           <input type="file" id="a-poster-file" accept=".svg,image/svg+xml" hidden />
-          <span>check an svg</span>
+          <span data-i18n="admin.poster.check">check an svg</span>
         </label>
-        <button class="adm-poster-upload" id="a-poster-upload" type="button" hidden>
+        <button class="adm-poster-upload" id="a-poster-upload" type="button" hidden
+                data-i18n="admin.poster.use">
           use this poster
         </button>
 
-        <p class="adm-label" style="margin-top: 26px">kept by</p>
+        <p class="adm-label" style="margin-top: 26px" data-i18n="admin.kept">kept by</p>
         <p class="adm-number" id="a-number">—</p>
       </div>
     </section>
 
     <section class="adm-comments">
-      <p class="adm-label">latest comments</p>
+      <p class="adm-label" data-i18n="admin.comments">latest comments</p>
       <ul class="adm-comment-list" id="adm-comment-list"></ul>
     </section>
 
     <!-- Feedback: the writer cannot read it back, this is the only reader -->
     <section class="adm-feedback">
-      <p class="adm-label">feedback <span class="adm-feedback-number" id="adm-feedback-number"></span></p>
+      <p class="adm-label"><span data-i18n="admin.feedback">feedback</span> <span class="adm-feedback-number" id="adm-feedback-number"></span></p>
       <ul class="adm-feedback-list" id="adm-feedback-list"></ul>
     </section>
 
   </main>
 
-  <script src="../config.js?v=192"></script>
-  <script src="../session.js?v=192"></script>
-  <script src="../data.js?v=192"></script>
-  <script src="admin.js?v=192"></script>
+  <script src="../config.js?v=194"></script>
+  <script src="../session.js?v=194"></script>
+  <script src="../data.js?v=194"></script>
+  <script src="admin.js?v=194"></script>
 
 </body>
 </html>

@@ -10,10 +10,13 @@ import { useAmbient } from '@/audio/AmbientContext';
 import { djs as localDjs, sets as localSets, tracksFor, type Dj, type DjSet } from '@/content/djs';
 import { isFollowing, loadDjs, setFollow } from '@/data/djs';
 import { useAuth } from '@/auth/AuthContext';
+import { upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const GAP = 12;
+const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+const two = (n: number) => String(n).padStart(2, '0');
 
 // dj sayfası: büyük fotoğraf ve künye, küçük fotoğraf şeridi, iki sütun plaklı set listesi.
 export default function DjScreen() {
@@ -24,6 +27,7 @@ export default function DjScreen() {
   const [following, setFollowing] = useState(false);
   const [playing, setPlaying] = useState<number | null>(null);
   const { session } = useAuth();
+  const { t, tx, up } = useLang();
   const [data, setData] = useState<{ djs: Dj[]; sets: DjSet[] }>({ djs: localDjs, sets: localSets() });
   useEffect(() => {
     let cancelled = false;
@@ -43,7 +47,7 @@ export default function DjScreen() {
           <BackButton />
         </View>
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text style={styles.mono}>no such dj</Text>
+          <Text style={styles.mono}>{up(t('dj.none'))}</Text>
         </View>
       </View>
     );
@@ -75,7 +79,7 @@ export default function DjScreen() {
       <View style={styles.band}>
         <BackButton />
         <Pressable onPress={toggleFollow} hitSlop={12} style={styles.follow}>
-          <Text style={[styles.followText, following && styles.followOn]}>{following ? 'following' : 'follow'}</Text>
+          <Text style={[styles.followText, following && styles.followOn]}>{following ? t('dj.following') : t('dj.follow')}</Text>
         </Pressable>
       </View>
       <PullDownScroll contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false}>
@@ -84,9 +88,9 @@ export default function DjScreen() {
           <Image source={dj.photoUrl ? { uri: dj.photoUrl } : dj.photo} style={styles.heroPhoto} />
           <View style={styles.heroShade} />
           <View style={styles.heroText}>
-            <Text style={styles.mono}>{dj.genre}{next ? ` · ${next.venue} resident` : ''}</Text>
+            <Text style={styles.mono}>{upperData(dj.genre)}{next ? ` · ${up(t('dj.resident', { venue: upperData(next.venue) }))}` : ''}</Text>
             <Text style={styles.name}>{dj.name}</Text>
-            <Text style={styles.mono}>{dj.city} · since {dj.since} · {dj.followers} followers</Text>
+            <Text style={styles.mono}>{upperData(dj.city)} · {up(t('dj.since', { year: dj.since }))} · {up(t('dj.followers', { n: upperData(dj.followers) }))}</Text>
           </View>
         </View>
 
@@ -99,19 +103,19 @@ export default function DjScreen() {
 
         {/* setler: iki sütun, her biri bir plak */}
         <View style={styles.head}>
-          <Text style={styles.mono}>sets</Text>
-          <Text style={styles.mono}>{tracks.length} recorded</Text>
+          <Text style={styles.mono}>{up(t('dj.sets'))}</Text>
+          <Text style={styles.mono}>{up(t('dj.recorded', { n: tracks.length }))}</Text>
         </View>
         <View style={styles.gridWrap}>
-          {tracks.map((t, i) => {
+          {tracks.map((track, i) => {
             const on = playing === i;
             return (
-              <Pressable key={t.title + i} onPress={() => play(i)} style={({ pressed }) => [styles.tile, { width: tile }, pressed && styles.pressed]}>
+              <Pressable key={track.title + i} onPress={() => play(i)} style={({ pressed }) => [styles.tile, { width: tile }, pressed && styles.pressed]}>
                 <View style={styles.discBox}>
                   <Vinyl size={disc} label={dj.photo} spinning={on} />
                 </View>
-                <Text style={[styles.trackTitle, on && styles.trackOn]} numberOfLines={1}>{t.title}</Text>
-                <Text style={styles.mono}>{t.date} · {t.length}</Text>
+                <Text style={[styles.trackTitle, on && styles.trackOn]} numberOfLines={1}>{track.title}</Text>
+                <Text style={styles.mono}>{track.date} · {upperData(track.length)}</Text>
               </Pressable>
             );
           })}
@@ -120,11 +124,11 @@ export default function DjScreen() {
         {next && (
           <>
             <View style={styles.head}>
-              <Text style={styles.mono}>next</Text>
+              <Text style={styles.mono}>{up(t('dj.next'))}</Text>
             </View>
             <View style={styles.nextRow}>
               <Text style={styles.nextVenue}>{next.venue}</Text>
-              <Text style={styles.mono}>{next.startsAt.toLocaleDateString('en-GB', { weekday: 'short', day: '2-digit', month: '2-digit' }).toLowerCase()}</Text>
+              <Text style={styles.mono}>{`${up(tx('day.' + DAYS[next.startsAt.getDay()]))}, ${two(next.startsAt.getDate())}/${two(next.startsAt.getMonth() + 1)}`}</Text>
             </View>
           </>
         )}
@@ -144,7 +148,7 @@ const styles = StyleSheet.create({
   heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 150, backgroundColor: colors.ink, opacity: 0.75 },
   heroText: { position: 'absolute', left: brand.left, right: brand.left, bottom: 18, gap: 5 },
   name: { fontFamily: fonts.medium, fontSize: 40, lineHeight: 42, letterSpacing: -1.4, color: colors.paper },
-  mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute },
+  mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
   strip: { flexDirection: 'row', gap: 4, paddingHorizontal: brand.left, marginTop: 4 },
   small: { flex: 1, aspectRatio: 1, backgroundColor: colors.ink2 },
   head: { flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: brand.left, marginTop: 28, marginBottom: 10 },

@@ -38,7 +38,7 @@
   /* --- the counter: it appears as you near the limit --- */
   text.addEventListener("input", () => {
     const n = text.value.trim().length;
-    el("fb-counter").textContent = n > 1700 ? (2000 - n) + " characters left" : "";
+    el("fb-counter").textContent = n > 1700 ? AH.tn("feedback.left", 2000 - n) : "";
     if (status.textContent) say("");
   });
 
@@ -46,12 +46,12 @@
   el("fb-send").onclick = function () {
     const words = text.value.trim();
     if (words.length < 10) {
-      say("a few more words, so it can be acted on.", "error");
+      say(AH.t("feedback.short"), "error");
       text.focus();
       return;
     }
     if (!AH.request) {
-      say("this opens when the backend does.", "error");
+      say(AH.t("feedback.off"), "error");
       return;
     }
 
@@ -59,7 +59,7 @@
     const contact = el("fb-contact").value.trim();
     if (contact && !AH.signedIn()) body.contact = contact;
 
-    say("sending…");
+    say(AH.t("feedback.sending"));
     el("fb-send").disabled = true;
 
     AH.request("/feedback", {
@@ -74,7 +74,7 @@
       })
       .catch((h) => {
         el("fb-send").disabled = false;
-        say(AH.errorText(h, "couldn't send it. the words are still here."), "error");
+        say(AH.errorText(h, AH.t("feedback.failed")), "error");
       });
   };
 
@@ -94,11 +94,15 @@
     const email = AH.session && AH.session.user && AH.session.user.email;
     el("fb-contact").hidden = signedIn;
     el("fb-contact-note").textContent = signedIn
-      ? "You are signed in" + (email ? " as " + email : "") +
-        ", so we already know where to find you."
-      : "Optional. Leave it out and the message still gets read — there just " +
-        "won't be an answer.";
+      ? (email
+          ? AH.t("feedback.contact.signed.as", { email: email })
+          : AH.t("feedback.contact.signed"))
+      : AH.t("feedback.contact.optional");
   }
+
+  /* Not data-i18n in the markup: that is applied once the page has
+     loaded, and would write over what render() said about the session. */
+  el("fb-contact-note").textContent = AH.t("feedback.contact.optional");
 
   AH.sessionReady.then(render).catch(render);
   AH.onSessionChange(render);

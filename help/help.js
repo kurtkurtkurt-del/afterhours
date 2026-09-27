@@ -9,10 +9,14 @@
   const CONFIG = window.AH_CONFIG || {};
   if (!(CONFIG.url && CONFIG.anonKey)) return;   /* the dashes stay */
 
+  /* The numbers are grouped the way the reader's language groups them */
+  const LOCALES = { en: "en-GB", de: "de-DE", tr: "tr-TR" };
+  const locale = LOCALES[window.AH && window.AH.lang] || "en-GB";
+
   const put = (id, n) => {
     const box = document.getElementById(id);
     if (box && typeof n === "number" && isFinite(n)) {
-      box.textContent = n.toLocaleString("en-GB");
+      box.textContent = n.toLocaleString(locale);
     }
   };
 

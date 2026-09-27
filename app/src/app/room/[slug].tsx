@@ -5,7 +5,8 @@ import { useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import Input from '@/components/Input';
-import { reason, roomInfo, roomList, roomPost, type RoomInfo, type RoomPost } from '@/data/checkin';
+import { reasonCode, reasons, roomInfo, roomList, roomPost, type RoomInfo, type RoomPost } from '@/data/checkin';
+import { upperData, useLang } from '@/i18n';
 import { supabase } from '@/lib/supabase';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -14,7 +15,7 @@ const two = (n: number) => String(n).padStart(2, '0');
 const left = (iso: string) => {
   const ms = new Date(iso).getTime() - Date.now();
   if (ms <= 0) return null;
-  return `${Math.floor(ms / 3600_000)}h ${two(Math.floor((ms % 3600_000) / 60_000))}m`;
+  return { h: Math.floor(ms / 3600_000), m: two(Math.floor((ms % 3600_000) / 60_000)) };
 };
 const hhmm = (iso: string) => {
   const d = new Date(iso);
@@ -31,6 +32,7 @@ const ddmm = (iso: string | null) => {
 export default function RoomScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const insets = useSafeAreaInsets();
+  const { t, tn, up } = useLang();
   const [info, setInfo] = useState<RoomInfo | null>(null);
   const [night, setNight] = useState<{ title: string; starts_at: string | null } | null>(null);
   const [posts, setPosts] = useState<RoomPost[]>([]);
@@ -41,8 +43,8 @@ export default function RoomScreen() {
   const scroll = useRef<ScrollView>(null);
 
   useEffect(() => {
-    const t = setInterval(() => setTick((n) => n + 1), 60_000); // kalan süre dakikada bir tazelenir
-    return () => clearInterval(t);
+    const timer = setInterval(() => setTick((n) => n + 1), 60_000); // kalan süre dakikada bir tazelenir
+    return () => clearInterval(timer);
   }, []);
 
   const load = useCallback(async () => {
@@ -69,10 +71,10 @@ export default function RoomScreen() {
   const open = !!info?.checked_in && !info.frozen;
   useEffect(() => {
     if (!open) return;
-    const t = setInterval(() => {
+    const timer = setInterval(() => {
       roomList(slug).then(setPosts).catch(() => {});
     }, 20_000);
-    return () => clearInterval(t);
+    return () => clearInterval(timer);
   }, [open, slug]);
 
   const send = async () => {
@@ -85,13 +87,15 @@ export default function RoomScreen() {
       setNote(null);
       await load();
     } catch (e) {
-      setNote(reason(e));
+      setNote(reasonCode(e)); // kod saklanır, söz çizerken gelir
     }
     setSending(false);
   };
 
   const remaining = info ? left(info.freeze_at) : null;
   const frozen = !!info && (info.frozen || !remaining);
+  // tek satırlık başlık da olur: boş satır atlanır
+  const title = [t('room.title.1'), t('room.title.2')].filter(Boolean).join('\n');
 
   return (
     <View style={styles.root}>
@@ -109,29 +113,29 @@ export default function RoomScreen() {
         >
           {/* başlık: the / moment. — solda; sağda süre */}
           <View style={styles.head}>
-            <Text style={[styles.moment, frozen && styles.momentFrozen]}>the{'\n'}moment.</Text>
+            <Text style={[styles.moment, frozen && styles.momentFrozen]}>{title}</Text>
             <View style={styles.clock}>
-              <Text style={frozen ? styles.jetMeta : styles.jetRed}>{frozen ? 'sealed' : remaining}</Text>
-              <Text style={styles.jetMeta}>{frozen ? 'read-only · forever' : 'then read-only'}</Text>
+              <Text style={frozen ? styles.jetMeta : styles.jetRed}>{frozen ? up(t('room.sealed')) : remaining ? up(t('room.left', remaining)) : null}</Text>
+              <Text style={styles.jetMeta}>{up(frozen ? t('room.forever') : t('room.then'))}</Text>
             </View>
           </View>
           <Text style={styles.jetMeta}>
-            {[night?.title.toLowerCase(), ddmm(night?.starts_at ?? null), info ? `${info.who_count} in the room` : null].filter(Boolean).join(' · ')}
+            {[night ? upperData(night.title) : null, ddmm(night?.starts_at ?? null), info ? up(tn('room.count', info.who_count)) : null].filter(Boolean).join(' · ')}
           </Text>
 
           {/* satırlar: alttan yukarı dolar */}
           <View style={styles.thread}>
             {!info ? (
-              <Text style={styles.note}>opening the room…</Text>
+              <Text style={styles.note}>{t('room.opening')}</Text>
             ) : !info.checked_in ? (
-              <Text style={styles.note}>only the people who were there can read the room.</Text>
+              <Text style={styles.note}>{t('room.only')}</Text>
             ) : posts.length === 0 ? (
-              <Text style={styles.note}>{frozen ? 'nobody said anything. sealed as it is.' : 'nobody has said anything yet. you first.'}</Text>
+              <Text style={styles.note}>{frozen ? t('room.empty.frozen') : t('room.empty.open')}</Text>
             ) : (
               posts.map((p) => (
                 <View key={p.id} style={[styles.line, p.mine && styles.lineMine]}>
                   <Text style={[styles.jetMeta, p.mine && styles.jetRed]}>
-                    {p.mine ? 'you' : p.who} · {hhmm(p.created_at)}
+                    {p.mine ? up(t('room.you')) : upperData(p.who)} · {hhmm(p.created_at)}
                   </Text>
                   <Text style={[styles.text, p.mine && styles.textMine]}>{p.body}</Text>
                 </View>
@@ -144,13 +148,13 @@ export default function RoomScreen() {
           <View style={[styles.compose, { paddingBottom: insets.bottom + 44 }]}>
             <View style={styles.composeRow}>
               <View style={{ flex: 1 }}>
-                <Input value={text} onChangeText={setText} placeholder="say something" maxLength={200} returnKeyType="send" onSubmitEditing={send} />
+                <Input value={text} onChangeText={setText} placeholder={t('room.placeholder')} maxLength={200} returnKeyType="send" onSubmitEditing={send} />
               </View>
               <Pressable onPress={send} disabled={!text.trim() || sending} style={({ pressed }) => [styles.sendBtn, (!text.trim() || sending) && styles.sendOff, pressed && styles.pressed]}>
-                <Text style={styles.sendText}>{sending ? '…' : 'say it'}</Text>
+                <Text style={styles.sendText}>{sending ? '…' : t('comments.say')}</Text>
               </Pressable>
             </View>
-            {note ? <Text style={styles.noteSmall}>{note}</Text> : null}
+            {note ? <Text style={styles.noteSmall}>{reasons[note] ? t(reasons[note]) : note}</Text> : null}
           </View>
         ) : (
           <View style={{ height: insets.bottom + 44 }} />
@@ -168,8 +172,8 @@ const styles = StyleSheet.create({
   moment: { fontFamily: fonts.logo, fontSize: 56, lineHeight: 48, letterSpacing: -1.5, color: colors.spotText },
   momentFrozen: { color: colors.meta },
   clock: { alignItems: 'flex-end', gap: 3, paddingBottom: 4 },
-  jetRed: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, textTransform: 'uppercase', color: colors.spotText },
-  jetMeta: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, textTransform: 'uppercase', color: colors.meta },
+  jetRed: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.spotText },
+  jetMeta: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.meta },
   thread: { flexGrow: 1, justifyContent: 'flex-end', gap: 14, paddingTop: 22 },
   line: { gap: 3, maxWidth: '82%', alignSelf: 'flex-start' },
   lineMine: { alignSelf: 'flex-end', alignItems: 'flex-end' },

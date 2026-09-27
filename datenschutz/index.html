@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>datenschutz | afterhours</title>
-  <meta name="description" content="Welche Daten afterhours verarbeitet, warum, und welche Rechte du hast." />
+  <title data-i18n="legal.datenschutz.title">privacy policy | afterhours</title>
+  <meta name="description" content="Which data afterhours processes, why, and which rights you have." data-i18n-attr="content:legal.datenschutz.desc" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="afterhours" />
   <meta property="og:title" content="datenschutz — afterhours" />
@@ -20,27 +20,29 @@
   <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png" />
   <link rel="manifest" href="../manifest.webmanifest" />
-  <link rel="stylesheet" href="../fonts/fonts.css?v=192" />
-  <link rel="stylesheet" href="../style.css?v=192" />
+  <link rel="stylesheet" href="../fonts/fonts.css?v=194" />
+  <link rel="stylesheet" href="../style.css?v=194" />
+  <script src="../i18n.js?v=194"></script>
 </head>
 <body>
 
-  <a class="skip" href="#content">skip to the content</a>
+  <a class="skip" href="#content" data-i18n="skip">skip to the content</a>
 
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
     <nav class="header-links">
-      <a href="../explore/index.html">explore</a>
-      <a href="../djs/index.html">djs</a>
-      <a href="../friends/index.html">yours</a>
-      <a href="../maps/index.html">map</a>
-      <a href="../cards/index.html">collection</a>
-      <a href="../help/index.html">help</a>
-      <a href="../login/index.html">account</a>
+      <a href="../explore/index.html" data-i18n="nav.explore">explore</a>
+      <a href="../djs/index.html" data-i18n="nav.djs">djs</a>
+      <a href="../friends/index.html" data-i18n="nav.yours">yours</a>
+      <a href="../maps/index.html" data-i18n="nav.map">map</a>
+      <a href="../cards/index.html" data-i18n="nav.collection">collection</a>
+      <a href="../help/index.html" data-i18n="nav.help">help</a>
+      <a href="../login/index.html" data-i18n="nav.account">account</a>
     </nav>
   </header>
 
-  <main id="content" tabindex="-1" class="help legal" lang="de">
+  <main id="content" tabindex="-1" class="help legal">
+    <div data-lang-block="de" lang="de" style="display: contents">
     <p class="legal-warning">Muster — Platzhalter, noch nicht verbindlich · <a href="../privacy/index.html">english summary</a></p>
     <h1 class="page-title">datenschutz.</h1>
 
@@ -186,22 +188,316 @@
     </section>
 
     <p class="legal-date">Stand: [Datum] · Entwurf</p>
+    </div>
+    <div data-lang-block="en" lang="en" style="display: contents">
+    <p class="legal-warning">Template — placeholders, not yet binding · <a href="../privacy/index.html">short summary</a></p>
+    <h1 class="page-title">privacy policy.</h1>
+    <p class="legal-warning">this is a translation for convenience. the german version is the binding one.</p>
+
+    <section class="account">
+      <p class="account-title">Controller</p>
+      <p class="help-text">
+        The controller responsible for data processing on this website is:<br />
+        [First and last name], [Street and house number], [Postcode] Munich,
+        email: [name@example.com]. The full details are in the
+        <a href="../impressum/index.html">legal notice</a>.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">In short</p>
+      <p class="help-text">
+        This site can be used without an account. Without signing in, your
+        swipes stay in your browser only. With an account we store what is
+        needed for the site to work: email, handle, the cards you kept, your
+        friendships and your comments.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Hosting and server log files</p>
+      <p class="help-text">
+        The website is hosted by [host, e.g. GitHub Pages, GitHub B.V.,
+        Vijzelstraat 68-72, 1017 HL Amsterdam, Netherlands]. When a page is
+        requested, access data is processed automatically: IP address, date
+        and time, requested file, amount of data transferred, referrer,
+        browser type and operating system. The legal basis is
+        Art. 6(1)(f) GDPR — our legitimate interest in stable and secure
+        operation.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Account and sign-in</p>
+      <p class="help-text">
+        For an account we need an email address and a password. The password
+        is stored exclusively as a cryptographic hash. Account and content
+        data are held by our service provider [Supabase, region: EU] as a
+        processor under Art. 28 GDPR. The legal basis is
+        Art. 6(1)(b) GDPR — the use of the account that you requested.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">What data this creates</p>
+      <ul class="legal-list">
+        <li>Profile: email, handle, display name, time of creation</li>
+        <li>Cards: which events you kept or let go</li>
+        <li>Friendships: requested and confirmed connections</li>
+        <li>beforehours: your comments on events, with their time</li>
+      </ul>
+      <p class="help-text">
+        What you kept is seen only by confirmed friends. What you let go is
+        seen by no one but you. Comments in beforehours are publicly visible
+        under your handle — do not write anything there that is not meant to
+        be public.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Storage in the browser</p>
+      <p class="help-text">
+        We set no advertising or analytics cookies. We place in your
+        browser's local storage: your sign-in token and — if you are not
+        signed in — your swipes so far, so that the site does not start over
+        when it reloads. These entries are necessary for operation
+        (§ 25 Abs. 2 Nr. 2 TDDDG) and stay on your device until you delete
+        them or sign out.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Fonts</p>
+      <p class="help-text">
+        All fonts are served locally from our own server. When the page
+        loads, no connection is made to Google Fonts or other font
+        providers; your IP address does not leave the site for this.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Recipients</p>
+      <p class="help-text">
+        We pass data only to service providers that are necessary for
+        operation: [host] and [Supabase]. Data is not passed on for
+        advertising purposes.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Storage period</p>
+      <p class="help-text">
+        We store account data for as long as your account exists. After it
+        is deleted we remove the data, unless statutory retention
+        obligations stand in the way. Server log files are deleted after
+        [number] days.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Your rights</p>
+      <ul class="legal-list">
+        <li>Access to your data (Art. 15 GDPR)</li>
+        <li>Rectification (Art. 16 GDPR)</li>
+        <li>Erasure (Art. 17 GDPR)</li>
+        <li>Restriction of processing (Art. 18 GDPR)</li>
+        <li>Data portability (Art. 20 GDPR)</li>
+        <li>Objection to processing based on legitimate interests (Art. 21 GDPR)</li>
+        <li>Withdrawal of consent given, with effect for the future (Art. 7(3) GDPR)</li>
+      </ul>
+      <p class="help-text">
+        Access and data portability (Art. 15 and Art. 20 GDPR) are rights
+        you can exercise yourself: under
+        <a href="../settings/index.html">account settings</a> you download
+        with one click everything this site has stored about you
+        &mdash; as a JSON file. There you also delete your account yourself
+        (Art. 17 GDPR). For everything else an informal email to
+        [name@example.com] is enough.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Right to lodge a complaint</p>
+      <p class="help-text">
+        You can lodge a complaint with a supervisory authority, for example
+        the Bayerisches Landesamt für Datenschutzaufsicht (BayLDA),
+        Promenade 18, 91522 Ansbach.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Changes</p>
+      <p class="help-text">
+        When the site changes, this policy changes too. The version
+        published here is the one that applies.
+      </p>
+    </section>
+
+    <p class="legal-date">Last updated: [date] · draft</p>
+    </div>
+    <div data-lang-block="tr" lang="tr" style="display: contents">
+    <p class="legal-warning">Taslak — yer tutucular, henüz bağlayıcı değil · <a href="../privacy/index.html">kısa özet</a></p>
+    <h1 class="page-title">gizlilik.</h1>
+    <p class="legal-warning">bu metin kolaylık olsun diye çevrildi. bağlayıcı olan almanca sürümdür.</p>
+
+    <section class="account">
+      <p class="account-title">Veri sorumlusu</p>
+      <p class="help-text">
+        Bu web sitesindeki veri işlemeden sorumlu olan:<br />
+        [Ad ve soyad], [Cadde ve kapı numarası], [Posta kodu] Münih,
+        e-posta: [ad@ornek.com]. Bilgilerin tamamı
+        <a href="../impressum/index.html">künyede</a> yer alır.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Kısaca</p>
+      <p class="help-text">
+        Bu site hesap olmadan kullanılabilir. Giriş yapmadığında
+        kaydırmaların yalnızca tarayıcında kalır. Hesabın varsa sitenin
+        çalışması için gerekli olanı saklarız: e-posta, kullanıcı adı,
+        sakladığın kartlar, arkadaşlıkların ve yorumların.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Barındırma ve sunucu günlük dosyaları</p>
+      <p class="help-text">
+        Web sitesi [barındırma sağlayıcısı, örn. GitHub Pages, GitHub B.V.,
+        Vijzelstraat 68-72, 1017 HL Amsterdam, Hollanda] üzerinde
+        barındırılır. Site açıldığında erişim verileri otomatik olarak
+        işlenir: IP adresi, tarih ve saat, istenen dosya, aktarılan veri
+        miktarı, yönlendiren sayfa, tarayıcı türü ve işletim sistemi.
+        Hukuki dayanak GDPR (DSGVO) m. 6(1)(f)'dir — istikrarlı ve güvenli
+        bir işletime yönelik meşru menfaatimiz.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Hesap ve giriş</p>
+      <p class="help-text">
+        Hesap için bir e-posta adresine ve bir parolaya ihtiyacımız var.
+        Parola yalnızca kriptografik özet (hash) olarak saklanır. Hesap ve
+        içerik verileri, GDPR (DSGVO) m. 28 uyarınca veri işleyen sıfatıyla
+        hizmet sağlayıcımız [Supabase, bölge: AB] nezdinde tutulur. Hukuki
+        dayanak GDPR (DSGVO) m. 6(1)(b)'dir — senin talep ettiğin hesap
+        kullanımı.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Bu sırada hangi veriler oluşur</p>
+      <ul class="legal-list">
+        <li>Profil: e-posta, kullanıcı adı, görünen ad, oluşturulma zamanı</li>
+        <li>Kartlar: hangi etkinlikleri sakladığın veya bıraktığın</li>
+        <li>Arkadaşlıklar: istenen ve onaylanan bağlantılar</li>
+        <li>beforehours: etkinliklere yazdığın yorumlar ve zamanları</li>
+      </ul>
+      <p class="help-text">
+        Sakladıklarını yalnızca onaylanmış arkadaşların görür.
+        Bıraktıklarını senden başka kimse görmez. beforehours'taki yorumlar
+        kullanıcı adınla herkese açık olarak görünür — herkese açık olmasını
+        istemediğin hiçbir şeyi oraya yazma.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Tarayıcıda saklama</p>
+      <p class="help-text">
+        Reklam veya analiz çerezi kullanmıyoruz. Tarayıcının yerel
+        depolamasına şunları kaydederiz: giriş anahtarın (token) ve — giriş
+        yapmadıysan — o ana kadarki kaydırmaların; böylece site yeniden
+        yüklendiğinde baştan başlamaz. Bu kayıtlar işletim için gereklidir
+        (§ 25 Abs. 2 Nr. 2 TDDDG) ve sen onları silene ya da çıkış yapana
+        kadar cihazında kalır.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Yazı tipleri</p>
+      <p class="help-text">
+        Bütün yazı tipleri yerel olarak kendi sunucumuzdan sunulur. Sayfa
+        yüklenirken Google Fonts'a veya başka yazı tipi sağlayıcılarına
+        bağlantı kurulmaz; IP adresin bunun için siteden dışarı çıkmaz.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Alıcılar</p>
+      <p class="help-text">
+        Verileri yalnızca işletim için gerekli olan hizmet sağlayıcılara
+        aktarırız: [barındırma sağlayıcısı] ve [Supabase]. Reklam amacıyla
+        veri aktarımı yapılmaz.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Saklama süresi</p>
+      <p class="help-text">
+        Hesap verilerini hesabın var olduğu sürece saklarız. Hesap
+        silindikten sonra, yasal saklama yükümlülükleri engel olmadığı
+        ölçüde bu verileri kaldırırız. Sunucu günlük dosyaları [sayı] gün
+        sonra silinir.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Hakların</p>
+      <ul class="legal-list">
+        <li>Verilerin hakkında bilgi alma (GDPR (DSGVO) m. 15)</li>
+        <li>Düzeltme (GDPR (DSGVO) m. 16)</li>
+        <li>Silme (GDPR (DSGVO) m. 17)</li>
+        <li>İşlemenin kısıtlanması (GDPR (DSGVO) m. 18)</li>
+        <li>Veri taşınabilirliği (GDPR (DSGVO) m. 20)</li>
+        <li>Meşru menfaate dayanan işlemelere itiraz (GDPR (DSGVO) m. 21)</li>
+        <li>Verilen rızanın ileriye dönük olarak geri alınması (GDPR (DSGVO) m. 7(3))</li>
+      </ul>
+      <p class="help-text">
+        Bilgi alma ve veri taşınabilirliği haklarını (GDPR (DSGVO) m. 15 ve
+        m. 20) kendin kullanabilirsin:
+        <a href="../settings/index.html">hesap ayarları</a> altında bu
+        sitenin senin hakkında sakladığı her şeyi tek tıkla indirirsin
+        &mdash; JSON dosyası olarak. Hesabını da orada kendin silersin
+        (GDPR (DSGVO) m. 17). Geri kalan her şey için [ad@ornek.com]
+        adresine yazacağın serbest biçimli bir e-posta yeterlidir.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Şikâyet hakkı</p>
+      <p class="help-text">
+        Bir denetim makamına şikâyette bulunabilirsin; örneğin Bayerisches
+        Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18,
+        91522 Ansbach.
+      </p>
+    </section>
+
+    <section class="account">
+      <p class="account-title">Değişiklikler</p>
+      <p class="help-text">
+        Site değiştikçe bu açıklama da değişir. Her zaman burada
+        yayımlanan sürüm geçerlidir.
+      </p>
+    </section>
+
+    <p class="legal-date">Güncelleme: [tarih] · taslak</p>
+    </div>
   </main>
 
 
   <footer class="foot">
-    <p class="foot-name">&copy; 2026 afterhours</p>
+    <p class="foot-name" data-i18n="foot.name">&copy; 2026 afterhours</p>
     <nav class="foot-links">
-      <a href="../impressum/index.html">impressum</a>
-      <a href="../datenschutz/index.html" aria-current="page">datenschutz</a>
-      <a href="../agb/index.html">agb</a>
+      <a href="../impressum/index.html" data-i18n="foot.impressum">impressum</a>
+      <a href="../datenschutz/index.html" aria-current="page" data-i18n="foot.datenschutz">datenschutz</a>
+      <a href="../agb/index.html" data-i18n="foot.agb">agb</a>
     </nav>
   </footer>
 
-  <script src="../config.js?v=192"></script>
-  <script src="../session.js?v=192"></script>
-  <script src="../data.js?v=192"></script>
-  <script src="../menu.js?v=192"></script>
+  <script src="../config.js?v=194"></script>
+  <script src="../session.js?v=194"></script>
+  <script src="../data.js?v=194"></script>
+  <script src="../menu.js?v=194"></script>
 
 </body>
 </html>

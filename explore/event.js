@@ -15,6 +15,38 @@
   if (!area) return;
 
   const V = window.EVENT_POOLS || {};
+  const AH = (window.AH = window.AH || {});
+
+  /* --- the words ---
+     The kind, the weekday and a person's answer stay the english codes
+     the data and the code compare; these say them in the visitor's
+     language. A kind the dictionary does not know is shown as it came. */
+  function kindName(kind) {
+    const key = "type." + String(kind || "").toLowerCase().replace(/\s+/g, "-");
+    return AH.has(key) ? AH.t(key) : String(kind || "").toLowerCase();
+  }
+
+  const dayName = (code) => (AH.has("day." + code) ? AH.t("day." + code) : code);
+
+  const STATUS_KEY = {
+    "i'm in": "who.in", "maybe": "who.maybe",
+    "not tonight": "who.not", "kept it": "night.status.kept",
+  };
+  const statusName = (code) => (STATUS_KEY[code] ? AH.t(STATUS_KEY[code]) : code);
+
+  /* a room of the after: "club night" and "rave" are kinds, "after" is ours */
+  function sortName(sort) {
+    return sort === "after" ? AH.t("night.after.kind") : kindName(sort);
+  }
+
+  /* postComment refuses with two codes of its own; anything else is the
+     database speaking and is passed on as it is */
+  function whyNot(err) {
+    const raw = (err && err.message) || "";
+    if (raw === "backend is off") return AH.t("before.error.off");
+    if (raw === "sign in first") return AH.t("before.error.signin");
+    return raw;
+  }
 
   /* --- the seed: the same slug always builds the same night --- */
   function seeded(text) {
@@ -92,7 +124,7 @@
     const rnd = seeded(e.slug || "afterhours");
     const kind = e.kind || "Konzert";
     const m = parseMeta(e.meta);
-    const day = weekdayFor(m.date, rnd);
+    const day = dayName(weekdayFor(m.date, rnd));
     const posterPath = e.posterPath ||
       "../../posters/" + String(e.poster || 1).padStart(2, "0") + ".svg";
 
@@ -134,9 +166,9 @@
 
     /* where · when · kind — the same three rows the app's night page has */
     const facts = el("dl", "cs-facts");
-    if (m.venue) facts.appendChild(factRow("where", m.venue.toLowerCase()));
-    facts.appendChild(factRow("when", [day + (m.date ? " " + shortDate(m.date) : ""), m.time].filter(Boolean).join(" · ")));
-    facts.appendChild(factRow("kind", kind.toLowerCase() + " · " + (e.source === "ticketmaster" ? "ticket" : "szene")));
+    if (m.venue) facts.appendChild(factRow(AH.t("night.fact.where"), m.venue.toLowerCase()));
+    facts.appendChild(factRow(AH.t("night.fact.when"), [day + (m.date ? " " + shortDate(m.date) : ""), m.time].filter(Boolean).join(" · ")));
+    facts.appendChild(factRow(AH.t("night.fact.kind"), kindName(kind) + " · " + AH.t(e.source === "ticketmaster" ? "word.ticket" : "word.szene")));
     (V.FACTS[kind] || []).forEach(([a, b]) => facts.appendChild(factRow(a, b)));
     ray.appendChild(facts);
     area.appendChild(ray);
@@ -145,7 +177,7 @@
     const middle = el("div", "cs-field");
 
     const crumb = el("nav", "crumb");
-    const back = el("a", null, "explore");
+    const back = el("a", null, AH.t("nav.explore"));
     back.href = "../index.html";
     crumb.appendChild(back);
     crumb.appendChild(el("span", null, "/"));
@@ -153,16 +185,16 @@
     middle.appendChild(crumb);
 
     middle.appendChild(el("p", "cs-edition",
-      "edition " + String(edition).padStart(2, "0")));
+      AH.t("night.edition", { n: String(edition).padStart(2, "0") })));
     middle.appendChild(el("h1", "cs-title", e.title || ""));
     middle.appendChild(el("p", "cs-meta",
-      [kind.toLowerCase(), m.date ? day + " " + shortDate(m.date) : day].join(" · ")));
+      [kindName(kind), m.date ? day + " " + shortDate(m.date) : day].join(" · ")));
 
     /* The first paragraph is the event's own line, the rest come from the
        pool for its kind. A pooled paragraph that says the same thing as the
        event's own is skipped: it was printing "bring something" twice. */
     const pool = shuffle(rnd, V.BODY[kind] || []).filter((p) => !overlaps(p, e.body));
-    [e.body, pool[0], pool[1]].filter(Boolean).forEach((p) =>
+    [AH.bodyText(e.body), pool[0], pool[1]].filter(Boolean).forEach((p) =>
       middle.appendChild(el("p", "cs-text", p)));
 
     /* ---- the after ---- */
@@ -172,7 +204,7 @@
 
     /* ---- the right column ---- */
     const right = el("aside", "cs-right");
-    right.appendChild(el("p", "cs-label", "who's coming · and how you know them"));
+    right.appendChild(el("p", "cs-label", AH.t("night.who.label")));
 
     /* Live, the column is the database: who kept this night and how you
        know each of them. The pools only stand in with the backend off. */
@@ -180,7 +212,7 @@
     right.appendChild(rosterBox);
     const drawn = buildRoster(rnd);
     if (window.AH && AH.mode === "live" && AH.request && e.slug) {
-      rosterBox.appendChild(el("p", "cs-note", "looking for who kept this…"));
+      rosterBox.appendChild(el("p", "cs-note", AH.t("night.who.looking")));
       AH.request("/rpc/event_people", { method: "POST", body: JSON.stringify({ p_slug: e.slug }) })
         .then((rows) => rosterFromRows(Array.isArray(rows) ? rows : []))
         .catch(() => [])
@@ -188,7 +220,7 @@
           rosterBox.textContent = "";
           if (!roster.length) {
             rosterBox.appendChild(el("p", "cs-note",
-              "Nobody has kept this one yet. Keep it and you are the first name here."));
+              AH.t("night.who.nobody")));
             return;
           }
           rosterBox.appendChild(rosterList(roster));
@@ -201,7 +233,7 @@
 
     /* One word, the same as in the app; the line under it is the kind's own note */
     const [, sub] = V.TICKET[kind] || V.TICKET["Konzert"];
-    const ticket = el("a", "cs-ticket", "ticket");
+    const ticket = el("a", "cs-ticket", AH.t("word.ticket"));
     /* A synced night has a real ticket page; the invented ones do not. */
     if (e.ticketUrl) {
       ticket.href = e.ticketUrl;
@@ -218,10 +250,10 @@
        the way to get it when it is not. */
     const APP = (window.AH_CONFIG && AH_CONFIG.app) || {};
     if (e.slug && APP.scheme) {
-      const inApp = el("a", "cs-ticket cs-app", "open in the app");
+      const inApp = el("a", "cs-ticket cs-app", AH.t("night.app.open"));
       inApp.href = APP.scheme + "night/" + encodeURIComponent(e.slug);
       right.appendChild(inApp);
-      const get = el("p", "cs-ticket-sub", "check in, keep it, the room.");
+      const get = el("p", "cs-ticket-sub", AH.t("night.app.sub"));
       right.appendChild(get);
       /* the two store boxes; the app store one waits, dimmed, for an address */
       const stores = el("div", "stores stores-small");
@@ -229,14 +261,14 @@
       play.href = APP.android || "../../help/index.html";
       play.target = "_blank";
       play.rel = "noopener";
-      play.innerHTML = "<span><small>get it on</small><b>google play</b></span>";
+      const badge = (small, big) =>
+        "<span><small>" + AH.t(small) + "</small><b>" + AH.t(big) + "</b></span>";
+      play.innerHTML = badge("store.play.small", "store.play.big");
       stores.appendChild(play);
       const ios = el(APP.ios ? "a" : "span", "store store-ios" + (APP.ios ? "" : " soon"));
       if (APP.ios) { ios.href = APP.ios; ios.target = "_blank"; ios.rel = "noopener"; }
-      else { ios.setAttribute("aria-disabled", "true"); ios.title = "soon"; }
-      ios.innerHTML = APP.ios
-        ? "<span><small>download on the</small><b>app store</b></span>"
-        : "<span><small>soon on the</small><b>app store</b></span>";
+      else { ios.setAttribute("aria-disabled", "true"); ios.title = AH.t("store.soon"); }
+      ios.innerHTML = badge(APP.ios ? "store.ios.small.live" : "store.ios.small", "store.ios.big");
       stores.appendChild(ios);
       right.appendChild(stores);
     }
@@ -253,9 +285,9 @@
       const clockTimes = V.WHEN;
       shuffle(rnd, V.COMMENTS[kind] || []).slice(0, 4).forEach((y, i) => {
         comments.appendChild(buildComment(
-          names[i] || "someone", clockTimes[i + 1] || "today",
+          names[i] || AH.t("word.someone"), clockTimes[i + 1] || AH.t("night.today"),
           fill(y.m, e, m, day),
-          y.c ? { who: names[(i + 2) % 5], when: clockTimes[i + 2] || "today",
+          y.c ? { who: names[(i + 2) % 5], when: clockTimes[i + 2] || AH.t("night.today"),
                   body: fill(y.c.m, e, m, day) } : null));
       });
     }
@@ -286,8 +318,8 @@
 
   function fill(text, e, m, day) {
     return String(text)
-      .replace(/\{venue\}/g, m.venue || "the room")
-      .replace(/\{name\}/g, e.title || "this one")
+      .replace(/\{venue\}/g, m.venue || AH.t("night.fill.venue"))
+      .replace(/\{name\}/g, e.title || AH.t("night.fill.name"))
       .replace(/\{day\}/g, day);
   }
 
@@ -299,7 +331,7 @@
       box.appendChild(writeBox(e, draw));
       const all = recent.concat(older);
       if (!all.length) {
-        box.appendChild(el("p", "c-none", "nobody has said anything yet."));
+        box.appendChild(el("p", "c-none", AH.t("before.none")));
         return;
       }
       all.forEach((t) => box.appendChild(buildComment(t.who, t.when, t.body, t.replies && t.replies[0]
@@ -312,7 +344,7 @@
     const wrap = el("div", "c-write");
     if (!(AH.commentsLive && AH.commentsLive())) return wrap;
     if (!AH.canComment()) {
-      const a = el("a", "c-write-invite", "sign in to say something");
+      const a = el("a", "c-write-invite", AH.t("before.invite"));
       a.href = "../../login/index.html";
       wrap.appendChild(a);
       return wrap;
@@ -320,18 +352,18 @@
     const field = el("textarea", "c-write-field");
     field.rows = 2;
     field.maxLength = 2000;
-    field.placeholder = "say something about this night";
-    const button = el("button", "c-write-button", "post");
+    field.placeholder = AH.t("before.placeholder");
+    const button = el("button", "c-write-button", AH.t("before.post"));
     button.type = "button";
     const status = el("p", "c-write-status");
     button.addEventListener("click", () => {
       const text = field.value.trim();
       if (!text) { field.focus(); return; }
       button.disabled = true;
-      status.textContent = "posting…";
+      status.textContent = AH.t("before.posting");
       AH.postComment(e, text)
         .then(() => { field.value = ""; status.textContent = ""; redraw(); })
-        .catch((err) => { status.textContent = "couldn't post: " + err.message; })
+        .catch((err) => { status.textContent = AH.t("before.failed", { why: whyNot(err) }); })
         .finally(() => { button.disabled = false; });
     });
     wrap.appendChild(field);
@@ -403,10 +435,10 @@
   /* How you reach them, spelled out. The first hop is the one worth
      naming: it is the person you would actually ask. */
   function relation(p) {
-    if (p.degree === 1) return "you two are friends";
-    if (p.degree === 2) return "friend of " + p.via[0].toLowerCase();
-    if (p.degree === 3) return "friend of friend of " + p.via[0].toLowerCase();
-    return "no path to you yet";
+    if (p.degree === 1) return AH.t("night.rel.friends");
+    if (p.degree === 2) return AH.t("night.rel.second", { name: p.via[0].toLowerCase() });
+    if (p.degree === 3) return AH.t("night.rel.third", { name: p.via[0].toLowerCase() });
+    return AH.t("night.rel.none");
   }
 
   const face = (name) => {
@@ -445,7 +477,7 @@
       body.appendChild(slot);
       row.appendChild(body);
 
-      row.appendChild(el("span", "cs-who-status", p.status));
+      row.appendChild(el("span", "cs-who-status", statusName(p.status)));
       list.appendChild(row);
     });
 
@@ -480,14 +512,19 @@
     const kept = count((p) => p.status === "kept it");
     const out = count((p) => p.status === "not tonight");
     box.appendChild(el("p", "cs-tally", [
-      going + " in", maybe && maybe + " maybe", kept && kept + " kept it", out && out + " not tonight",
+      AH.t("night.tally.in", { n: going }),
+      maybe && AH.t("night.tally.maybe", { n: maybe }),
+      kept && AH.t("night.tally.kept", { n: kept }),
+      out && AH.t("night.tally.not", { n: out }),
     ].filter(Boolean).join(" · ")));
 
     const yours = count((p) => p.degree === 1);
     const near = count((p) => p.degree === 2 || p.degree === 3);
     const far = roster.length - yours - near;
     box.appendChild(el("p", "cs-reach", [
-      yours + " you know", near && near + " a step or two out", far && far + " no path yet",
+      AH.t("night.reach.yours", { n: yours }),
+      near && AH.t("night.reach.near", { n: near }),
+      far && AH.t("night.reach.far", { n: far }),
     ].filter(Boolean).join(" · ")));
     return box;
   }
@@ -505,7 +542,7 @@
   function buildAfter(m, kind, rnd) {
     const section = el("section", "cs-section cs-after");
     section.appendChild(el("p", "cs-label",
-      "the after · what is still open when this one ends"));
+      AH.t("night.after.label")));
 
     /* Doors plus the run of its kind. A night with no time on it is read
        as a late one when it is a floor, an evening one otherwise. */
@@ -527,7 +564,7 @@
     /* The first mark is this night going dark — the bracket has to hang
        off something, and that something is the event you are reading. */
     list.appendChild(roomRow({
-      time: clock(doors + (V.RUNS[kind] || 3) * 60), name: "this one ends", origin: true,
+      time: clock(doors + (V.RUNS[kind] || 3) * 60), name: AH.t("night.after.ends"), origin: true,
     }));
 
     let drawn = 0;
@@ -542,16 +579,15 @@
         name: room[0],
         sort: room[1],
         until: clock(closing(opens, rnd)),
-        walk: (6 + Math.floor(rnd() * 20)) + " min on foot",
+        walk: AH.t("night.after.walk", { n: 6 + Math.floor(rnd() * 20) }),
       }));
       drawn++;
     });
     section.appendChild(list);
 
     section.appendChild(el("p", "cs-note", drawn
-      ? "None of it is booked with the ticket. It is only what is still " +
-        "standing when the lights come up here."
-      : "Nothing opens after this one. The night ends where it ends."));
+      ? AH.t("night.after.note")
+      : AH.t("night.after.none")));
     return section;
   }
 
@@ -594,7 +630,7 @@
     row.appendChild(el("span", "cs-room-rule"));
     const body = el("span", "cs-room-body");
     body.appendChild(el("span", "cs-room-name", r.name));
-    if (r.sort) body.appendChild(el("span", "cs-room-kind", r.sort + " · until " + r.until));
+    if (r.sort) body.appendChild(el("span", "cs-room-kind", AH.t("night.after.until", { kind: sortName(r.sort), time: r.until })));
     row.appendChild(body);
     if (r.walk) row.appendChild(el("span", "cs-room-walk", r.walk));
     return row;
@@ -628,7 +664,7 @@
     const button = el("button", "cs-preview-button");
     button.type = "button";
     button.appendChild(el("span", "cs-preview-icon"));
-    const label = el("span", null, "preview artist");
+    const label = el("span", null, AH.t("night.preview.label"));
     button.appendChild(label);
     chip.appendChild(button);
 
@@ -654,14 +690,14 @@
       audio.addEventListener("pause", () => chip.classList.remove("playing"));
       audio.addEventListener("ended", () => {
         fill.style.width = "0";
-        label.textContent = "preview artist";
+        label.textContent = AH.t("night.preview.label");
       });
       if (storeUrl && !chip.querySelector(".cs-preview-store")) {
         const store = el("a", "cs-preview-store", "↗");
         store.href = storeUrl;
         store.target = "_blank";
         store.rel = "noopener";
-        store.title = "on apple music";
+        store.title = AH.t("night.preview.store");
         chip.appendChild(store);
       }
       return audio;
@@ -721,12 +757,12 @@
         else audio.pause();
         return;
       }
-      label.textContent = "finding it…";
+      label.textContent = AH.t("night.preview.finding");
       lookUp()
         .then((a) => { label.textContent = f.song.toLowerCase(); a.play(); })
         .catch(() => {
           if (!chip.isConnected) return;   /* the no-such-song road */
-          label.textContent = "preview artist";
+          label.textContent = AH.t("night.preview.label");
         });
     });
 
@@ -741,7 +777,7 @@
 
   function price(kind, rnd) {
     const a = PRICE[kind];
-    if (!a) return "free";
+    if (!a) return AH.t("night.free");
     return "€" + (a[0] + Math.floor(rnd() * (a[1] - a[0])));
   }
 
@@ -761,7 +797,7 @@
     if (!window.CARDS) return band;
 
     band.appendChild(el("p", "cs-earn-label",
-      "if you go · the card this night leaves you"));
+      AH.t("night.card.label")));
 
     const night = {
       t: cardTitle(e, handPicked),
@@ -781,7 +817,7 @@
     };
 
     const pair = el("div", "cs-earn-pair");
-    [["front", CARDS.front(night, "e")], ["back", CARDS.back(night, "e")]]
+    [[AH.t("night.card.front"), CARDS.front(night, "e")], [AH.t("night.card.back"), CARDS.back(night, "e")]]
       .forEach(([side, svg]) => {
         const fig = el("figure", "cs-earn-card");
         const face = el("div", "cs-earn-face");
@@ -794,11 +830,10 @@
 
     const say = el("div", "cs-earn-say");
     say.appendChild(el("p", "cs-earn-line",
-      "It fills itself while you are in the room."));
+      AH.t("night.card.line")));
     say.appendChild(el("p", "cs-earn-sub",
       (handPicked && handPicked.card) ||
-      "The front is who stood there with you. The back is what the night " +
-      "sounded like and what got said in it. Neither of them is written by you."));
+      AH.t("night.card.sub")));
     band.appendChild(say);
 
     return band;
@@ -834,19 +869,18 @@
     middle.style.gridColumn = "1 / -1";
 
     const crumb = el("nav", "crumb");
-    const back = el("a", null, "explore");
+    const back = el("a", null, AH.t("nav.explore"));
     back.href = "../index.html";
     crumb.appendChild(back);
     crumb.appendChild(el("span", null, "/"));
-    crumb.appendChild(el("span", null, "gone"));
+    crumb.appendChild(el("span", null, AH.t("night.gone.crumb")));
     middle.appendChild(crumb);
 
-    middle.appendChild(el("h1", "cs-title", "this night has passed."));
+    middle.appendChild(el("h1", "cs-title", AH.t("night.gone.title")));
     middle.appendChild(el("p", "cs-text",
-      "It was here, and now it is not — the date went by and the night left " +
-      "the wall. Nights do that; it is the whole point of going."));
+      AH.t("night.gone.text")));
 
-    const out = el("a", "cs-ticket", "back to explore");
+    const out = el("a", "cs-ticket", AH.t("night.gone.back"));
     out.href = "../index.html";
     middle.appendChild(out);
     area.appendChild(middle);

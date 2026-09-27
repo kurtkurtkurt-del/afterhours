@@ -50,6 +50,16 @@
     return { dx: Math.cos(angle) * distance, dy: Math.sin(angle) * distance };
   }
 
+  /* The kind of night in the reader's language: "Club Night" is the
+     name the record carries, type.club-night the key it is filed under. */
+  function kindName(kind) {
+    const name = String(kind || "");
+    const key = "type." + name.trim().toLowerCase().replace(/\s+/g, "-");
+    const AH = window.AH;
+    const word = AH && AH.has && AH.has(key) ? AH.t(key) : name;
+    return word.toLocaleUpperCase((AH && AH.lang) || "en");
+  }
+
   let placed = 0;
 
   cards.forEach((e) => {
@@ -80,7 +90,7 @@
 
     const show = () => {
       card.hidden = false;
-      cardKind.textContent = (e.kind || "").toUpperCase();
+      cardKind.textContent = kindName(e.kind);
       cardName.textContent = e.title;
       cardMeta.textContent = e.meta;
       g.classList.add("over");
@@ -97,9 +107,9 @@
 
   const missing = cards.length - placed;
   footline.textContent =
-    placed + " nights placed" +
-    (missing ? " · " + missing + " without a venue yet" : "") +
-    " · schematic, note to scale";
+    AH.tn("maps.placed", placed) +
+    (missing ? " · " + AH.tn("maps.missing", missing) : "") +
+    " · " + AH.t("maps.schematic");
 
   /* When the pointer moves to empty map, the card closes */
   schema.addEventListener("mouseleave", () => { card.hidden = true; });

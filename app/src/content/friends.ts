@@ -50,5 +50,26 @@ export const matches: Match[] = [
   { friend: 'deniz', night: 'bt' },
 ];
 
+// örnek verideki ui sözleri ("tonight · 23:00", "next fri", "yesterday") çizim anında çevrilir;
+// isimler ve mekânlar olduğu gibi kalır. tx: useLang()'den gelen.
+type Tx = (key: string, fallback?: string, vars?: Record<string, string | number>) => string;
+const DAY = /^(mon|tue|wed|thu|fri|sat|sun)$/;
+const WORDS: Record<string, string> = {
+  tonight: 'when.tonight',
+  now: 'yours.sample.now',
+  yesterday: 'yours.sample.yesterday',
+  'address at check-in': 'yours.sample.address',
+};
+export function sampleText(text: string, tx: Tx): string {
+  return text
+    .split(' · ')
+    .map((part) => {
+      if (DAY.test(part)) return tx('day.' + part, part);
+      if (part.startsWith('next ') && DAY.test(part.slice(5))) return tx('yours.sample.next', part, { day: tx('day.' + part.slice(5), part.slice(5)) });
+      return WORDS[part] ? tx(WORDS[part], part) : part;
+    })
+    .join(' · ');
+}
+
 export const friendById = (id: string) => friends.find((f) => f.id === id)!;
 export const nightById = (id: string) => nights.find((n) => n.id === id)!;

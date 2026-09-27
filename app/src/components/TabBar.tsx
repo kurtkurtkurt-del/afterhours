@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { Pressable, StyleSheet, View, type PressableProps } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Icon, { type IconName } from '@/components/Icon';
+import { useLang } from '@/i18n';
 import { colors } from '@/theme/tokens';
 
 // seçenek 2, "yüzen hap": kenarlardan boşluklu, kâğıt çerçeveli, mürekkep dolgulu.
@@ -18,8 +19,9 @@ export function useTabBarSpace() {
 type ItemProps = PressableProps & { icon: IconName; isFocused?: boolean; raised?: boolean };
 
 export function TabItem({ icon, isFocused, raised, ...props }: ItemProps) {
+  const { tx } = useLang();
   return (
-    <Pressable {...props} hitSlop={8} accessibilityRole="tab" accessibilityLabel={icon} accessibilityState={{ selected: !!isFocused }} style={({ pressed }) => [styles.item, pressed && styles.pressed]}>
+    <Pressable {...props} hitSlop={8} accessibilityRole="tab" accessibilityLabel={tx('tab.' + icon, icon)} accessibilityState={{ selected: !!isFocused }} style={({ pressed }) => [styles.item, pressed && styles.pressed]}>
       {raised ? (
         <View style={styles.mid}>
           <Icon name={icon} color={colors.ink} />

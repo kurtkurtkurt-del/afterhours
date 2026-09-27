@@ -13,6 +13,7 @@ import Animated, {
   type SharedValue,
 } from 'react-native-reanimated';
 import CardFace, { Hint, openDetails, openTicket, toDeckCard, type DeckFriend } from '@/components/CardFace';
+import { useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import type { Night } from '@/data/deck';
 
@@ -49,6 +50,7 @@ const SwipeCard = forwardRef<CardHandle, {
   const y = useSharedValue(0);
   const promoted = useSharedValue(active ? 1 : 0);
   const card = toDeckCard(night, friends);
+  const { t, up } = useLang();
 
   const flyOff = useCallback(
     (dir: Direction) => {
@@ -111,18 +113,18 @@ const SwipeCard = forwardRef<CardHandle, {
   return (
     <GestureDetector gesture={pan}>
       <Animated.View style={[styles.slot, style]}>
-        <CardFace card={card} bottom={bottom} rightLabel="keep →" onRight={() => flyOff('right')} />
+        <CardFace card={card} bottom={bottom} rightLabel={`${t('word.keep')} →`} onRight={() => flyOff('right')} />
         {active && (
           <>
             <Animated.View pointerEvents="none" style={[styles.edgeRight, keepEdge]} />
             <Animated.View pointerEvents="none" style={[styles.edgeLeft, letGoEdge]}>
-              <Text style={styles.letGo}>let go</Text>
+              <Text style={styles.letGo}>{up(t('word.letgo'))}</Text>
             </Animated.View>
             <Animated.View style={[styles.hint, styles.hintUp, upHint]} pointerEvents="none">
-              <Hint label={card.ticketUrl ? 'ticket ↑' : 'open ↑'} />
+              <Hint label={`${card.ticketUrl ? t('word.ticket') : t('deck.open')} ↑`} />
             </Animated.View>
             <Animated.View style={[styles.hint, { bottom: bottom + 8 }, downHint]} pointerEvents="none">
-              <Hint label="details ↓" />
+              <Hint label={`${t('word.details')} ↓`} />
             </Animated.View>
           </>
         )}
@@ -132,6 +134,7 @@ const SwipeCard = forwardRef<CardHandle, {
 });
 
 const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bottom, onSwipe, onUndo, onReset }, ref) {
+  const { t, up } = useLang();
   const [i, setI] = useState(0);
   const drag = useSharedValue(0);
   const nextRef = useRef<CardHandle>(null);
@@ -166,11 +169,11 @@ const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bo
   if (!top) {
     return (
       <View style={[styles.empty, { paddingBottom: bottom }]}>
-        <Text style={styles.emptyText}>no more nights here.</Text>
-        <Text style={styles.emptyMono}>{nights.length ? 'you have seen them all' : 'nothing listed yet'}</Text>
+        <Text style={styles.emptyText}>{t('deck.empty')}</Text>
+        <Text style={styles.emptyMono}>{up(nights.length ? t('deck.seenAll') : t('deck.nothing'))}</Text>
         {onReset && nights.length > 0 ? (
           <View style={styles.resetBtn}>
-            <Button label="start over" kind="line" onPress={onReset} />
+            <Button label={t('deck.startOver')} kind="line" onPress={onReset} />
           </View>
         ) : null}
       </View>
@@ -194,11 +197,11 @@ const styles = StyleSheet.create({
   slot: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colors.ink, overflow: 'hidden' },
   edgeRight: { position: 'absolute', top: 0, right: 0, bottom: 0, width: 56, backgroundColor: colors.spot },
   edgeLeft: { position: 'absolute', top: 0, left: 0, bottom: 0, width: 56, borderRightWidth: 1.5, borderRightColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
-  letGo: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: colors.paper, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },
+  letGo: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.paper, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },
   hint: { position: 'absolute', left: 0, right: 0, alignItems: 'center' },
   hintUp: { top: '38%' },
   empty: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 6 },
   resetBtn: { marginTop: 18, alignSelf: 'stretch', paddingHorizontal: 40 },
   emptyText: { fontFamily: fonts.medium, fontSize: 22, letterSpacing: -0.5, color: colors.paper },
-  emptyMono: { fontFamily: fonts.mono, fontSize: 10, letterSpacing: 1.6, textTransform: 'uppercase', color: colors.mute },
+  emptyMono: { fontFamily: fonts.mono, fontSize: 10, letterSpacing: 1.6, color: colors.mute },
 });

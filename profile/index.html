@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>profile | afterhours</title>
-  <meta name="description" content="One person, the nights they kept, and the way you reach them." />
+  <title data-i18n="profile.title">profile | afterhours</title>
+  <meta name="description" data-i18n-attr="content:profile.description" content="One person, the nights they kept, and the way you reach them." />
   <!-- The shared shell for everybody's page. Which person is read from
        ?handle=... by profile/profile.js, and the path back to you from
        ?via=... — the event page writes both into the link. Not indexed:
@@ -16,23 +16,24 @@
   <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png" />
   <link rel="manifest" href="../manifest.webmanifest" />
-  <link rel="stylesheet" href="../fonts/fonts.css?v=192" />
-  <link rel="stylesheet" href="../style.css?v=192" />
+  <link rel="stylesheet" href="../fonts/fonts.css?v=194" />
+  <link rel="stylesheet" href="../style.css?v=194" />
+  <script src="../i18n.js?v=194"></script>
 </head>
 <body>
 
-  <a class="skip" href="#content">skip to the content</a>
+  <a class="skip" href="#content" data-i18n="skip">skip to the content</a>
 
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
     <nav class="header-links">
-      <a href="../explore/index.html">explore</a>
-      <a href="../djs/index.html">djs</a>
-      <a href="../friends/index.html">yours</a>
-      <a href="../maps/index.html">map</a>
-      <a href="../cards/index.html">collection</a>
-      <a href="../help/index.html">help</a>
-      <a href="../login/index.html">account</a>
+      <a href="../explore/index.html" data-i18n="nav.explore">explore</a>
+      <a href="../djs/index.html" data-i18n="nav.djs">djs</a>
+      <a href="../friends/index.html" data-i18n="nav.yours">yours</a>
+      <a href="../maps/index.html" data-i18n="nav.map">map</a>
+      <a href="../cards/index.html" data-i18n="nav.collection">collection</a>
+      <a href="../help/index.html" data-i18n="nav.help">help</a>
+      <a href="../login/index.html" data-i18n="nav.account">account</a>
     </nav>
   </header>
 
@@ -40,22 +41,22 @@
   <main id="content" tabindex="-1" class="pf"></main>
 
   <footer class="foot">
-    <p class="foot-name">&copy; 2026 afterhours</p>
+    <p class="foot-name" data-i18n="foot.name">&copy; 2026 afterhours</p>
     <nav class="foot-links">
-      <a href="../impressum/index.html">impressum</a>
-      <a href="../datenschutz/index.html">datenschutz</a>
-      <a href="../agb/index.html">agb</a>
+      <a href="../impressum/index.html" data-i18n="foot.impressum">impressum</a>
+      <a href="../datenschutz/index.html" data-i18n="foot.datenschutz">datenschutz</a>
+      <a href="../agb/index.html" data-i18n="foot.agb">agb</a>
     </nav>
   </footer>
 
-  <script src="../cards.js?v=192"></script>
-  <script src="../avatars.js?v=192"></script>
-  <script src="../config.js?v=192"></script>
-  <script src="../session.js?v=192"></script>
-  <script src="../menu.js?v=192"></script>
-  <script src="../data.js?v=192"
-          data-fallback="../events-data.js?v=192"
-          data-after="profile.js?v=192"></script>
+  <script src="../cards.js?v=194"></script>
+  <script src="../avatars.js?v=194"></script>
+  <script src="../config.js?v=194"></script>
+  <script src="../session.js?v=194"></script>
+  <script src="../menu.js?v=194"></script>
+  <script src="../data.js?v=194"
+          data-fallback="../events-data.js?v=194"
+          data-after="profile.js?v=194"></script>
 
 </body>
 </html>

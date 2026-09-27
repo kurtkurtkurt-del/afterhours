@@ -24,18 +24,33 @@
      kind. Only a kind the list below knows is accepted. */
   const wantedKind = new URLSearchParams(location.search).get("kind");
 
+  /* The values are what the database and the wall compare; only the
+     names are words, and they come from the dictionary. */
   const KINDS = [
-    { value: null, name: "all nights" },
-    { value: "rave", name: "rave" },
-    { value: "club-night", name: "club night" },
-    { value: "konzert", name: "konzert" },
-    { value: "festival", name: "festival" },
-    { value: "meetup", name: "meetup" },
-    { value: "hausparty", name: "hausparty" },
+    { value: null, name: AH.t("type.all") },
+    { value: "rave", name: AH.t("type.rave") },
+    { value: "club-night", name: AH.t("type.club-night") },
+    { value: "konzert", name: AH.t("type.konzert") },
+    { value: "festival", name: AH.t("type.festival") },
+    { value: "meetup", name: AH.t("type.meetup") },
+    { value: "hausparty", name: AH.t("type.hausparty") },
   ];
 
-  const DATES = ["tonight", "tomorrow", "this weekend", "this week", "this month", "any night"]
-    .map((t) => ({ value: t, name: t }));
+  const DATES = [
+    ["tonight", "when.tonight"], ["tomorrow", "when.tomorrow"],
+    ["this weekend", "when.weekend"], ["this week", "when.week"],
+    ["this month", "when.month"], ["any night", "when.any"],
+  ].map(([value, key]) => ({ value: value, name: AH.t(key) }));
+
+  const nights = (n) => AH.tn("filter.nights", n);
+
+  /* A continent has a stable code, so it can be said in the visitor's
+     language; one the dictionary does not know keeps the database's name.
+     Countries stay as the database writes them — in their own language. */
+  function continentName(slug, name) {
+    const key = "filter.continent." + slug;
+    return slug && AH.has(key) ? AH.t(key) : name;
+  }
 
   /* With the backend off we have exactly one city; we do not invent more. */
   const LOCAL_CITIES = [
@@ -172,7 +187,8 @@
     cities.forEach((s) => {
       if (!s.country_slug) return;
       const o = seen.get(s.country_slug) ||
-        { value: s.country_slug, name: s.country, continent: s.continent || "", n: 0 };
+        { value: s.country_slug, name: s.country, continent: s.continent || "",
+          continentSlug: s.continent_slug || "", n: 0 };
       o.n += Number(s.n || 0);
       total += Number(s.n || 0);
       seen.set(s.country_slug, o);
@@ -180,12 +196,12 @@
 
     const countries = [...seen.values()];
     const everywhere = [{
-      value: null, name: "everywhere",
-      note: total ? total + " nights" : "", empty: !total,
+      value: null, name: AH.t("filter.everywhere"),
+      note: total ? nights(total) : "", empty: !total,
     }];
     const continents = new Map();
     countries.forEach((c) => {
-      const g = continents.get(c.continent) || { name: c.continent, n: 0, countries: [] };
+      const g = continents.get(c.continent) || { name: c.continent, slug: c.continentSlug, n: 0, countries: [] };
       g.n += c.n;
       g.countries.push(c);
       continents.set(c.continent, g);
@@ -195,12 +211,12 @@
     [...continents.values()]
       .sort((a, b) => b.n - a.n || a.name.localeCompare(b.name))
       .forEach((k) => {
-        if (k.name) ordered.push({ title: k.name });
+        if (k.name) ordered.push({ title: continentName(k.slug, k.name) });
         k.countries
           .sort((a, b) => b.n - a.n || a.name.localeCompare(b.name))
           .forEach((c) => ordered.push({
             value: c.value, name: c.name, empty: !c.n,
-            note: c.n ? c.n + " nights" : "nothing yet",
+            note: c.n ? nights(c.n) : AH.t("filter.nothing"),
           }));
       });
     return everywhere.concat(ordered);
@@ -209,7 +225,7 @@
   /* No country picked: the one honest answer is everywhere. */
   function cityOptions() {
     if (!AH.filter.country) {
-      return [{ value: null, name: "everywhere" }];
+      return [{ value: null, name: AH.t("filter.everywhere") }];
     }
     return cities
       .filter((s) => s.country_slug === AH.filter.country)
@@ -217,7 +233,7 @@
         value: s.slug,
         name: s.name,
         empty: !Number(s.n),
-        note: Number(s.n) ? Number(s.n) + " nights" : "nothing yet",
+        note: Number(s.n) ? nights(Number(s.n)) : AH.t("filter.nothing"),
       }));
   }
 

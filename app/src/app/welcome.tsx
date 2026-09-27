@@ -10,15 +10,20 @@ import PickerSheet from '@/components/PickerSheet';
 import { Row, Value } from '@/components/Row';
 import { useCities } from '@/data/cities';
 import { handleStatus, saveProfile } from '@/data/settings';
+import { useLang } from '@/i18n';
+import type { Key } from '@/i18n/dict';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-const words: Record<string, string> = { ok: 'available', yours: 'that is you', empty: 'pick a handle first', format: '3–20 letters, numbers or _', taken: 'taken', signedout: 'sign in first', nocity: 'unknown city' };
+// sunucudan gelen kod → söz anahtarı; söz çizim anında seçilir
+const words: Record<string, Key> = { ok: 'signup.handle.ok', yours: 'signup.handle.yours', empty: 'signup.handle.empty', format: 'signup.handle.format', taken: 'signup.handle.taken', signedout: 'signup.handle.signedout', nocity: 'signup.handle.nocity' };
 
 // kaydın son adımı: handle (arkadaşlar seni bununla bulur), isim, şehir.
 // web sitesiyle aynı kural: handle seçilince kayıt tamamlanmış sayılır.
 export default function WelcomeScreen() {
   const insets = useSafeAreaInsets();
+  const { t, up } = useLang();
+  const say = (code: string) => (words[code] ? t(words[code]) : code);
   const { cities } = useCities();
   const [handle, setHandle] = useState('');
   const [name, setName] = useState('');
@@ -31,10 +36,10 @@ export default function WelcomeScreen() {
   useEffect(() => {
     if (!handle) return;
     let live = true;
-    const t = setTimeout(() => handleStatus(handle).then((s) => live && setStatus(words[s] ?? s)).catch(() => {}), 250);
+    const timer = setTimeout(() => handleStatus(handle).then((s) => live && setStatus(s)).catch(() => {}), 250);
     return () => {
       live = false;
-      clearTimeout(t);
+      clearTimeout(timer);
     };
   }, [handle]);
 
@@ -49,38 +54,38 @@ export default function WelcomeScreen() {
         router.replace('/yours');
         return;
       }
-      setNote(words[r] ?? r);
+      setNote(r);
     } catch (e) {
       setNote(String((e as Error).message).toLowerCase());
     }
     setBusy(false);
   };
 
-  const cityName = city ? (cities.find((c) => c.id === city)?.name ?? city) : 'pick one';
+  const cityName = city ? (cities.find((c) => c.id === city)?.name ?? city) : t('signup.city.pick');
 
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
       <KeyboardAvoidingView behavior="padding" style={styles.body}>
         <View style={{ paddingBottom: insets.bottom + 24 }}>
-          <Text style={styles.line}>one last thing.</Text>
-          <Text style={styles.line}>what do we call you?</Text>
-          <Text style={styles.label}>handle</Text>
-          <Input value={handle} onChangeText={(v) => setHandle(v.toLowerCase())} placeholder="friends find you by this" autoCapitalize="none" maxLength={20} autoFocus />
-          {handle && status ? <Text style={styles.hint}>{status}</Text> : null}
-          <Text style={styles.label}>name</Text>
-          <Input value={name} onChangeText={setName} placeholder="how you are shown" maxLength={40} />
-          <Row label="city" hint="the deck opens here" right={<Value text={cityName} />} onPress={() => setSheet(true)} />
-          {note ? <Text style={styles.hint}>{note}</Text> : null}
+          <Text style={styles.line}>{t('signup.welcome.line1')}</Text>
+          <Text style={styles.line}>{t('signup.welcome.line2')}</Text>
+          <Text style={styles.label}>{up(t('signup.handle'))}</Text>
+          <Input value={handle} onChangeText={(v) => setHandle(v.toLowerCase())} placeholder={t('signup.handle.hint')} autoCapitalize="none" maxLength={20} autoFocus />
+          {handle && status ? <Text style={styles.hint}>{say(status)}</Text> : null}
+          <Text style={styles.label}>{up(t('signup.name'))}</Text>
+          <Input value={name} onChangeText={setName} placeholder={t('signup.name.hint')} maxLength={40} />
+          <Row label={t('signup.city')} hint={t('signup.city.hint')} right={<Value text={cityName} />} onPress={() => setSheet(true)} />
+          {note ? <Text style={styles.hint}>{say(note)}</Text> : null}
           <View style={styles.cta}>
-            <Button label={busy ? 'one moment' : 'done'} onPress={done} />
+            <Button label={busy ? t('word.moment') : t('signup.done')} onPress={done} />
             <Text style={styles.skip} onPress={() => router.replace('/yours')}>
-              later
+              {t('signup.later')}
             </Text>
           </View>
         </View>
       </KeyboardAvoidingView>
-      <PickerSheet open={sheet} title="city" options={cities.map((c) => ({ id: c.id, label: c.name, extra: `${c.nights}` }))} selected={city} onSelect={setCity} onClose={() => setSheet(false)} />
+      <PickerSheet open={sheet} title={t('signup.city')} options={cities.map((c) => ({ id: c.id, label: c.name, extra: `${c.nights}` }))} selected={city} onSelect={setCity} onClose={() => setSheet(false)} />
     </View>
   );
 }
@@ -89,7 +94,7 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   body: { flex: 1, paddingHorizontal: brand.left, justifyContent: 'flex-end' },
   line: { fontFamily: fonts.medium, fontSize: 34, lineHeight: 40, letterSpacing: -0.8, color: colors.paper },
-  label: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute, marginTop: 22 },
+  label: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginTop: 22 },
   hint: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute, marginTop: 6 },
   cta: { marginTop: 22, gap: 14, alignItems: 'center' },
   skip: { fontFamily: fonts.regular, fontSize: 13, color: colors.mute },

@@ -24,7 +24,7 @@
      and it says why. */
   if (!open) {
     form.hidden = true;
-    report("sign-in opens when the backend does. nothing to sign into yet.", "waiting");
+    report(AH.t("login.closed"), "waiting");
     return;
   }
 
@@ -34,7 +34,7 @@
     inside.hidden = !signedIn;
     if (signedIn) {
       const k = AH.session && AH.session.user;
-      who.textContent = k && k.email ? "you're in as " + k.email : "you're in.";
+      who.textContent = k && k.email ? AH.t("login.in.as", { email: k.email }) : AH.t("login.in");
       report("");
     }
   }
@@ -52,30 +52,30 @@
     const password = passwordField.value;
 
     if (!email || email.indexOf("@") < 1) {
-      report("that doesn't look like an email.", "error");
+      report(AH.t("login.bad.email"), "error");
       field.focus();
       return;
     }
     if (!password) {
-      report("your password is missing.", "error");
+      report(AH.t("login.no.password"), "error");
       passwordField.focus();
       return;
     }
 
     submitButton.disabled = true;
-    report("signing in…");
+    report(AH.t("login.working"));
     AH.signInWithPassword(email, password)
-      .then(() => { passwordField.value = ""; render(); report("you're in.", "ok"); })
+      .then(() => { passwordField.value = ""; render(); report(AH.t("login.in"), "ok"); })
       .catch((h) => {
         report(/invalid|credentials/i.test(h.message)
-          ? "wrong email or password."
-          : "couldn't sign in: " + h.message, "error");
+          ? AH.t("login.wrong")
+          : AH.t("login.failed", { why: AH.authText(h) }), "error");
       })
       .finally(() => { submitButton.disabled = false; });
   });
 
   signOutButton.addEventListener("click", () => {
-    AH.signOut().then(() => { render(); report("signed out.", "ok"); });
+    AH.signOut().then(() => { render(); report(AH.t("login.out"), "ok"); });
   });
 
   /* The handle and the friends used to live here; they moved to the

@@ -1,9 +1,8 @@
-import { whenLabel } from '@/data/when';
 import { useEffect, useState } from 'react';
 import { Image, KeyboardAvoidingView, Linking, Modal, Pressable, Share, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import * as Location from 'expo-location';
 import AfterhoursCard from '@/components/AfterhoursCard';
-import { checkIn, myCards, reason, roomInfo, toCardData, type CardRow, type RoomInfo } from '@/data/checkin';
+import { checkIn, myCards, reasonCode, reasons, roomInfo, toCardData, type CardRow, type RoomInfo } from '@/data/checkin';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -15,13 +14,17 @@ import SoundCorner from '@/components/SoundCorner';
 import { useAuth } from '@/auth/AuthContext';
 import { supabase } from '@/lib/supabase';
 import { SITE, swipe, type Night } from '@/data/deck';
-import { fetchComments, postComment, type Comment } from '@/data/comments';
+import { commentCode, commentErrors, fetchComments, postComment, whenText, type Comment } from '@/data/comments';
+import { bodyText, upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const fallback = require('../../../assets/intro/concert.jpg');
 
 // bir gecenin web sayfası; paylaşılan bağlantı budur
+const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+const two = (n: number) => String(n).padStart(2, '0');
+
 const webUrl = (slug: string) => `${SITE}explore/event/index.html?slug=${encodeURIComponent(slug)}`;
 
 // gece sayfası: fotoğraf, künye, metin, mekân; keep ve varsa bilet.
@@ -30,6 +33,18 @@ export default function NightScreen() {
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const { session } = useAuth();
+  const { t, tn, tx, up } = useLang();
+  // note ve talkNote kod saklar; söz burada, o anki dilde çözülür
+  const words = (code: string) => {
+    const key = commentErrors[code] ?? reasons[code];
+    return key ? t(key) : code;
+  };
+  // "thu 26.09 · 20:00", gün adı seçili dilde
+  const whenLine = (iso: string) => {
+    const d = new Date(iso);
+    if (isNaN(d.getTime())) return t('night.tba');
+    return `${tx('day.' + DAYS[d.getDay()])} ${two(d.getDate())}.${two(d.getMonth() + 1)} · ${two(d.getHours())}:${two(d.getMinutes())}`;
+  };
   const [night, setNight] = useState<Night | null>(null);
   const [missing, setMissing] = useState(false);
   const [kept, setKept] = useState(false);
@@ -104,7 +119,7 @@ export default function NightScreen() {
       setCard(mine);
       setRoom(await roomInfo(night.slug));
     } catch (e) {
-      setNote(reason(e));
+      setNote(reasonCode(e));
     }
     setBusy(false);
   };
@@ -119,7 +134,7 @@ export default function NightScreen() {
     const body = text.trim();
     if (!night || !body || sending) return;
     if (!session) {
-      setTalkNote('sign in to say something');
+      setTalkNote('signin');
       return;
     }
     setSending(true);
@@ -130,7 +145,7 @@ export default function NightScreen() {
       setReplyTo(null);
       setTalk(await fetchComments(night.id));
     } catch (e) {
-      setTalkNote(reason(e));
+      setTalkNote(commentCode(e) ?? reasonCode(e));
     }
     setSending(false);
   };
@@ -150,10 +165,10 @@ export default function NightScreen() {
             <View style={styles.heroShade} />
             <View style={styles.heroText}>
               <Text style={styles.mono}>
-                {night.type_name} · {night.source === 'ticketmaster' ? 'ticket' : 'szene'} · {night.city_name}
+                {tx('type.' + night.type_slug, '') ? up(tx('type.' + night.type_slug, '')) : upperData(night.type_name)} · {up(night.source === 'ticketmaster' ? t('word.ticket') : t('word.szene'))} · {upperData(night.city_name)}
               </Text>
               <Text style={styles.title}>{night.title.toLowerCase()}</Text>
-              <Text style={styles.mono}>{night.meta}</Text>
+              <Text style={styles.mono}>{upperData(night.meta)}</Text>
             </View>
           </View>
 
@@ -161,83 +176,83 @@ export default function NightScreen() {
             <View style={styles.actions}>
               <View style={{ flex: 1 }}>
                 {room?.checked_in ? (
-                  <Button label="the room" kind="line" onPress={() => router.push(`/room/${night.slug}`)} />
+                  <Button label={t('night.room')} kind="line" onPress={() => router.push(`/room/${night.slug}`)} />
                 ) : (
-                  <Button label={busy ? 'one moment' : 'check in'} onPress={doCheckIn} />
+                  <Button label={busy ? t('word.moment') : t('night.checkin')} onPress={doCheckIn} />
                 )}
               </View>
               <View style={{ flex: 1 }}>
-                <Button label={kept ? 'kept' : 'keep'} kind={room?.checked_in ? 'fill' : 'line'} onPress={keep} />
+                <Button label={kept ? t('night.kept') : t('word.keep')} kind={room?.checked_in ? 'fill' : 'line'} onPress={keep} />
               </View>
             </View>
-            {note ? <Text style={styles.mono}>{note}</Text> : null}
+            {note ? <Text style={styles.mono}>{up(words(note))}</Text> : null}
             <View style={styles.actions}>
               {night.ticket_url ? (
                 <View style={{ flex: 1 }}>
-                  <Button label="ticket" kind="line" onPress={() => Linking.openURL(night.ticket_url!)} />
+                  <Button label={t('word.ticket')} kind="line" onPress={() => Linking.openURL(night.ticket_url!)} />
                 </View>
               ) : null}
               <View style={{ flex: 1 }}>
                 {/* paylaşım: gecenin web sayfası. sitedeki "open in the app" geri getirir. */}
-                <Button label="share" kind="line" onPress={() => Share.share({ message: `${night.title.toLowerCase()} · ${webUrl(night.slug)}`, url: webUrl(night.slug) })} />
+                <Button label={t('night.share')} kind="line" onPress={() => Share.share({ message: `${night.title.toLowerCase()} · ${webUrl(night.slug)}`, url: webUrl(night.slug) })} />
               </View>
             </View>
             {room ? (
               <Text style={styles.mono}>
-                {room.who_count} checked in · {room.frozen ? 'room frozen' : 'room open'}
+                {up(tn('night.checkedin', room.who_count))} · {up(room.frozen ? t('night.room.frozen') : t('night.room.open'))}
               </Text>
             ) : null}
 
-            {night.body ? <Text style={styles.text}>{night.body}</Text> : null}
+            {night.body ? <Text style={styles.text}>{bodyText(night.body, t)}</Text> : null}
 
             <View style={styles.rows}>
-              <Row k="where" v={night.venue_name ?? (night.source === 'ticketmaster' ? night.city_name : 'address opens at check-in')} />
-              <Row k="when" v={night.starts_at ? whenLabel(night.starts_at) : (night.date_text ?? 'tba')} />
-              <Row k="kind" v={night.type_name.toLowerCase()} />
-              {night.starts_at_estimated ? <Row k="date" v="estimated" /> : null}
+              <Row k={t('night.where')} v={night.venue_name ?? (night.source === 'ticketmaster' ? night.city_name : t('night.address'))} />
+              <Row k={t('night.when')} v={night.starts_at ? whenLine(night.starts_at) : (night.date_text ?? t('night.tba'))} />
+              <Row k={t('night.kind')} v={tx('type.' + night.type_slug, night.type_name.toLowerCase())} />
+              {night.starts_at_estimated ? <Row k={t('night.date')} v={t('night.estimated')} /> : null}
             </View>
 
-            <Text style={styles.mono}>the room opens at check-in and freezes 48h after the night</Text>
+            <Text style={styles.mono}>{up(t('night.rule'))}</Text>
 
             {/* beforehours: geceden önce söylenenler. herkes yazar, misafir de. */}
             <View style={styles.talk}>
-              <Text style={styles.mono}>beforehours</Text>
+              <Text style={styles.mono}>{upperData('beforehours')}</Text>
               {talk === null ? (
-                <Text style={styles.talkNone}>loading…</Text>
+                <Text style={styles.talkNone}>{t('night.loading')}</Text>
               ) : talk.length === 0 ? (
-                <Text style={styles.talkNone}>nobody has said anything yet.</Text>
+                <Text style={styles.talkNone}>{t('comments.none')}</Text>
               ) : (
-                talk.map((t) => (
-                  <View key={t.id} style={styles.topic}>
-                    <Text style={styles.talkWho}>{t.who} · {t.when}</Text>
-                    <Text style={styles.talkBody}>{t.body}</Text>
-                    {t.replies.map((r, i) => (
+                talk.map((c) => (
+                  <View key={c.id} style={styles.topic}>
+                    <Text style={styles.talkWho}>{c.who || t('word.someone')} · {whenText(c.at, t, tx)}</Text>
+                    <Text style={styles.talkBody}>{c.body}</Text>
+                    {c.replies.map((r, i) => (
                       <View key={i} style={styles.reply}>
-                        <Text style={styles.talkWho}>{r.who} · {r.when}</Text>
+                        <Text style={styles.talkWho}>{r.who || t('word.someone')} · {whenText(r.at, t, tx)}</Text>
                         <Text style={styles.talkBody}>{r.body}</Text>
                       </View>
                     ))}
-                    <Pressable onPress={() => setReplyTo(replyTo?.id === t.id ? null : t)} hitSlop={8}>
-                      <Text style={[styles.talkLink, replyTo?.id === t.id && styles.talkLinkOn]}>{replyTo?.id === t.id ? 'replying · cancel' : 'reply'}</Text>
+                    <Pressable onPress={() => setReplyTo(replyTo?.id === c.id ? null : c)} hitSlop={8}>
+                      <Text style={[styles.talkLink, replyTo?.id === c.id && styles.talkLinkOn]}>{replyTo?.id === c.id ? t('comments.replying') : t('comments.reply')}</Text>
                     </Pressable>
                   </View>
                 ))
               )}
               <View style={styles.compose}>
-                {replyTo ? <Text style={styles.talkWho}>to {replyTo.who}</Text> : null}
+                {replyTo ? <Text style={styles.talkWho}>{t('comments.to', { name: replyTo.who || t('word.someone') })}</Text> : null}
                 <Input
                   value={text}
                   onChangeText={setText}
-                  placeholder={replyTo ? 'your answer' : 'say something before the night'}
+                  placeholder={replyTo ? t('comments.placeholder.reply') : t('comments.placeholder')}
                   maxLength={500}
                   multiline
                   returnKeyType="send"
                   blurOnSubmit
                   onSubmitEditing={say}
                 />
-                {talkNote ? <Text style={styles.talkNote}>{talkNote}</Text> : null}
+                {talkNote ? <Text style={styles.talkNote}>{words(talkNote)}</Text> : null}
                 <Pressable onPress={say} disabled={sending || !text.trim()} style={[styles.sendBtn, (sending || !text.trim()) && styles.sendBtnOff]}>
-                  <Text style={styles.sendText}>{sending ? 'one moment' : 'say it'}</Text>
+                  <Text style={styles.sendText}>{sending ? t('word.moment') : t('comments.say')}</Text>
                 </Pressable>
               </View>
             </View>
@@ -249,7 +264,7 @@ export default function NightScreen() {
       {/* kart çıktı: ilk gösterim, sonra oda */}
       <Modal visible={!!card} transparent animationType="fade" onRequestClose={() => setCard(null)}>
         <Pressable style={styles.dim} onPress={() => setCard(null)}>
-          <Text style={styles.cardLabel}>you were there · card no. {card ? String(card.card_no).padStart(4, '0') : ''}</Text>
+          <Text style={styles.cardLabel}>{up(t('night.card', { no: card ? String(card.card_no).padStart(4, '0') : '' }))}</Text>
           {card ? <AfterhoursCard data={toCardData(card)} index={card.card_no} width={Math.min(width - 48, 340)} /> : null}
           <Pressable
             onPress={() => {
@@ -258,13 +273,13 @@ export default function NightScreen() {
             }}
             style={styles.roomBtn}
           >
-            <Text style={styles.roomBtnText}>open the room</Text>
+            <Text style={styles.roomBtnText}>{t('night.openroom')}</Text>
           </Pressable>
         </Pressable>
       </Modal>
       {!night && (
         <View style={styles.centre}>
-          <Text style={styles.mono}>{missing ? 'this night is gone' : (note ?? 'loading…')}</Text>
+          <Text style={styles.mono}>{up(missing ? t('night.gone') : note ? words(note) : t('night.loading'))}</Text>
         </View>
       )}
     </View>
@@ -289,7 +304,7 @@ const styles = StyleSheet.create({
   heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 170, backgroundColor: colors.ink, opacity: 0.78 },
   heroText: { position: 'absolute', left: brand.left, right: brand.left, bottom: 18, gap: 6 },
   title: { fontFamily: fonts.medium, fontSize: 34, lineHeight: 36, letterSpacing: -1.1, color: colors.paper },
-  mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute },
+  mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
   body: { paddingHorizontal: brand.left, paddingTop: 18, gap: 22 },
   actions: { flexDirection: 'row', gap: 10 },
   text: { fontFamily: fonts.regular, fontSize: 16, lineHeight: 24, color: colors.paper2, opacity: 0.9 },
@@ -298,7 +313,7 @@ const styles = StyleSheet.create({
   rowK: { fontFamily: fonts.regular, fontSize: 13, color: colors.mute },
   rowV: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper2, flex: 1, textAlign: 'right' },
   dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.94)', alignItems: 'center', justifyContent: 'center', gap: 18 },
-  cardLabel: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.spot },
+  cardLabel: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.spot },
   talk: { marginTop: 28, paddingTop: 18, borderTopWidth: 1, borderTopColor: colors.ink3, gap: 10 },
   topic: { gap: 4, paddingTop: 8 },
   reply: { marginLeft: 14, paddingTop: 6, gap: 2 },

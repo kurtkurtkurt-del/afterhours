@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>settings | afterhours</title>
-  <meta name="description" content="your handle, your city, and who sees what you kept." />
+  <title data-i18n="settings.title">settings | afterhours</title>
+  <meta name="description" data-i18n-attr="content:settings.description" content="your handle, your city, and who sees what you kept." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="afterhours" />
   <meta property="og:title" content="account settings — afterhours" />
@@ -20,130 +20,139 @@
   <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png" />
   <link rel="manifest" href="../manifest.webmanifest" />
-  <link rel="stylesheet" href="../fonts/fonts.css?v=192" />
-  <link rel="stylesheet" href="../style.css?v=192" />
+  <link rel="stylesheet" href="../fonts/fonts.css?v=194" />
+  <link rel="stylesheet" href="../style.css?v=194" />
+  <script src="../i18n.js?v=194"></script>
 </head>
 <body>
 
-  <a class="skip" href="#content">skip to the content</a>
+  <a class="skip" href="#content" data-i18n="skip">skip to the content</a>
 
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
     <nav class="header-links">
-      <a href="../explore/index.html">explore</a>
-      <a href="../djs/index.html">djs</a>
-      <a href="../friends/index.html">yours</a>
-      <a href="../maps/index.html">map</a>
-      <a href="../cards/index.html">collection</a>
-      <a href="../help/index.html">help</a>
-      <a href="../login/index.html">account</a>
+      <a href="../explore/index.html" data-i18n="nav.explore">explore</a>
+      <a href="../djs/index.html" data-i18n="nav.djs">djs</a>
+      <a href="../friends/index.html" data-i18n="nav.yours">yours</a>
+      <a href="../maps/index.html" data-i18n="nav.map">map</a>
+      <a href="../cards/index.html" data-i18n="nav.collection">collection</a>
+      <a href="../help/index.html" data-i18n="nav.help">help</a>
+      <a href="../login/index.html" data-i18n="nav.account">account</a>
     </nav>
   </header>
 
   <main id="content" tabindex="-1" class="set">
-    <h1 class="page-title">settings.</h1>
+    <h1 class="page-title" data-i18n="settings.heading">settings.</h1>
 
     <!-- Signed out, or with the backend off, this is as far as it goes -->
     <div class="set-out" id="set-out" hidden>
-      <p class="page-note" id="set-out-note">sign in to change any of this.</p>
-      <a class="page-button" href="../login/index.html">sign in</a>
+      <p class="page-note" id="set-out-note" data-i18n="settings.out">sign in to change any of this.</p>
+      <a class="page-button" href="../login/index.html" data-i18n="word.signin">sign in</a>
     </div>
+
+    <!-- The language: outside #set-in, because it works signed out too.
+         i18n.js builds the switch and saves the choice. -->
+    <section class="account">
+      <p class="account-title" data-i18n="lang.label">language</p>
+      <p class="account-about" data-i18n="lang.about">the whole site changes with it. the app follows your account.</p>
+      <div data-lang-pick data-lang-names></div>
+    </section>
 
     <div class="set-in" id="set-in" hidden>
 
       <!-- ---------- the card everyone sees ---------- -->
       <section class="account">
-        <p class="account-title">handle</p>
-        <p class="account-about">friends find you by this. lowercase, 3–20 characters.</p>
-        <input class="account-field" id="set-handle" type="text" placeholder="yourname"
+        <p class="account-title" data-i18n="settings.handle.title">handle</p>
+        <p class="account-about" data-i18n="settings.handle.about">friends find you by this. lowercase, 3–20 characters.</p>
+        <input class="account-field" id="set-handle" type="text" placeholder="yourname" data-i18n-attr="placeholder:settings.handle.placeholder"
                autocomplete="off" spellcheck="false" />
         <p class="account-status" id="set-handle-status"></p>
       </section>
 
       <section class="account">
-        <p class="account-title">name</p>
-        <p class="account-about">how you are shown. up to 40 characters.</p>
-        <input class="account-field" id="set-name" type="text" placeholder="your name" />
+        <p class="account-title" data-i18n="settings.name.title">name</p>
+        <p class="account-about" data-i18n="settings.name.about">how you are shown. up to 40 characters.</p>
+        <input class="account-field" id="set-name" type="text" placeholder="your name" data-i18n-attr="placeholder:settings.name.placeholder" />
       </section>
 
       <section class="account">
-        <p class="account-title">one line</p>
-        <p class="account-about">optional. 160 characters.</p>
+        <p class="account-title" data-i18n="settings.bio.title">one line</p>
+        <p class="account-about" data-i18n="settings.bio.about">optional. 160 characters.</p>
         <input class="account-field set-wide" id="set-bio" type="text"
-               placeholder="techno first, house after four." maxlength="160" />
+               placeholder="techno first, house after four." data-i18n-attr="placeholder:settings.bio.placeholder" maxlength="160" />
       </section>
 
       <section class="account">
-        <p class="account-title">city</p>
-        <p class="account-about">the wall opens here.</p>
+        <p class="account-title" data-i18n="settings.city.title">city</p>
+        <p class="account-about" data-i18n="settings.city.about">the wall opens here.</p>
         <div class="set-cities" id="set-city"></div>
       </section>
 
       <div class="set-save">
-        <button class="account-button" id="set-save" type="button">save</button>
+        <button class="account-button" id="set-save" type="button" data-i18n="word.save">save</button>
         <span class="account-status" id="set-status"></span>
       </div>
 
       <!-- ---------- who sees what ---------- -->
       <section class="account set-section">
-        <p class="account-title">who sees what you kept</p>
-        <p class="account-about">what you let go is never shown to anyone, either way.</p>
+        <p class="account-title" data-i18n="settings.kept.title">who sees what you kept</p>
+        <p class="account-about" data-i18n="settings.kept.about">what you let go is never shown to anyone, either way.</p>
         <div class="set-choice" id="set-kept">
-          <button type="button" data-value="private">nobody, not even friends</button>
-          <button type="button" data-value="friends">confirmed friends</button>
+          <button type="button" data-value="private" data-i18n="settings.kept.private">nobody, not even friends</button>
+          <button type="button" data-value="friends" data-i18n="settings.kept.friends">confirmed friends</button>
         </div>
       </section>
 
       <section class="account">
-        <p class="account-title">findable by handle</p>
-        <p class="account-about">off: strangers see no card, but can still send a request.</p>
+        <p class="account-title" data-i18n="settings.found.title">findable by handle</p>
+        <p class="account-about" data-i18n="settings.found.about">off: strangers see no card, but can still send a request.</p>
         <div class="set-choice" id="set-found">
-          <button type="button" data-value="true">on</button>
-          <button type="button" data-value="false">off</button>
+          <button type="button" data-value="true" data-i18n="word.on">on</button>
+          <button type="button" data-value="false" data-i18n="word.off">off</button>
         </div>
       </section>
 
       <section class="account">
-        <p class="account-title">email me</p>
-        <p class="account-about">friend requests, the odd reminder.</p>
+        <p class="account-title" data-i18n="settings.mail.title">email me</p>
+        <p class="account-about" data-i18n="settings.mail.about">friend requests, the odd reminder.</p>
         <div class="set-choice" id="set-mail">
-          <button type="button" data-value="true">on</button>
-          <button type="button" data-value="false">off</button>
+          <button type="button" data-value="true" data-i18n="word.on">on</button>
+          <button type="button" data-value="false" data-i18n="word.off">off</button>
         </div>
       </section>
 
       <!-- ---------- the account ---------- -->
       <section class="account set-section">
-        <p class="account-title">account</p>
+        <p class="account-title" data-i18n="nav.account">account</p>
         <p class="set-who" id="set-who"></p>
         <p class="account-about" id="set-numbers"></p>
-        <button class="page-signout" id="set-signout" type="button">sign out</button>
+        <button class="page-signout" id="set-signout" type="button" data-i18n="word.signout">sign out</button>
       </section>
 
       <!-- ---------- take it with you ---------- -->
       <section class="account set-section">
-        <p class="account-title">download my data</p>
-        <p class="account-about">everything we hold about you, as json: your profile, your
+        <p class="account-title" data-i18n="settings.export.title">download my data</p>
+        <p class="account-about" data-i18n="settings.export.about">everything we hold about you, as json: your profile, your
           settings, every night you kept or let go, what you wrote, and who you
           are connected to. your email is not in it — that sits with the sign-in
           provider, not here.</p>
-        <button class="page-signout" id="set-export" type="button">download my data</button>
+        <button class="page-signout" id="set-export" type="button" data-i18n="settings.export.title">download my data</button>
         <p class="account-status" id="set-export-status"></p>
       </section>
 
       <section class="account set-danger">
-        <p class="account-title">delete account</p>
-        <p class="account-about">your profile, your handle, every night you kept and
+        <p class="account-title" data-i18n="settings.delete.title">delete account</p>
+        <p class="account-about" data-i18n="settings.delete.about">your profile, your handle, every night you kept and
           every friendship go. comments stay, your name becomes “someone” —
           deleting a thread would take other people's replies with it. this
           cannot be undone.</p>
-        <button class="set-delete" id="set-delete" type="button">delete account</button>
+        <button class="set-delete" id="set-delete" type="button" data-i18n="settings.delete.title">delete account</button>
         <div class="set-confirm" id="set-confirm" hidden>
-          <p class="account-about">type your handle to confirm.</p>
+          <p class="account-about" data-i18n="settings.delete.confirm">type your handle to confirm.</p>
           <div class="account-row">
             <input class="account-field" id="set-confirm-field" type="text"
                    autocomplete="off" spellcheck="false" />
-            <button class="set-delete" id="set-confirm-button" type="button">delete for good</button>
+            <button class="set-delete" id="set-confirm-button" type="button" data-i18n="settings.delete.forgood">delete for good</button>
           </div>
         </div>
         <p class="account-status" id="set-delete-status"></p>
@@ -153,19 +162,19 @@
   </main>
 
   <footer class="foot">
-    <p class="foot-name">&copy; 2026 afterhours</p>
+    <p class="foot-name" data-i18n="foot.name">&copy; 2026 afterhours</p>
     <nav class="foot-links">
-      <a href="../impressum/index.html">impressum</a>
-      <a href="../datenschutz/index.html">datenschutz</a>
-      <a href="../agb/index.html">agb</a>
+      <a href="../impressum/index.html" data-i18n="foot.impressum">impressum</a>
+      <a href="../datenschutz/index.html" data-i18n="foot.datenschutz">datenschutz</a>
+      <a href="../agb/index.html" data-i18n="foot.agb">agb</a>
     </nav>
   </footer>
 
-  <script src="../config.js?v=192"></script>
-  <script src="../session.js?v=192"></script>
-  <script src="../menu.js?v=192"></script>
-  <script src="../data.js?v=192"></script>
-  <script src="settings.js?v=192"></script>
+  <script src="../config.js?v=194"></script>
+  <script src="../session.js?v=194"></script>
+  <script src="../menu.js?v=194"></script>
+  <script src="../data.js?v=194"></script>
+  <script src="settings.js?v=194"></script>
 
 </body>
 </html>

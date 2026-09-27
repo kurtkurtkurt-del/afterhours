@@ -1,21 +1,37 @@
 import { supabase } from '@/lib/supabase';
+import { t as tNow, tx as txNow } from '@/i18n';
+import type { Key } from '@/i18n/dict';
 
 // beforehours: geceden önce söylenenler. web ile aynı tablo (comments_public),
 // aynı iki adım: önce konular, sonra onların cevapları. yazmak da buradan:
 // herkes yazabilir, misafir dahil (author_id oturumdan dolar, isim yoksa "someone").
-export type Comment = { id: string; who: string; when: string; body: string; replies: { who: string; when: string; body: string }[] };
+// who boşsa isim yok demek ("someone"); at ham tarih. ikisi de ekranda, o anki dilde söze döner.
+export type Comment = { id: string; who: string; at: string; body: string; replies: { who: string; at: string; body: string }[] };
+
+// sunucu hata metni → söz anahtarı
+export const commentErrors: Record<string, Key> = {
+  signin: 'comments.error.signin',
+  'sign in first': 'comments.error.signin',
+  empty: 'comments.error.empty',
+  'two levels only': 'comments.error.deep',
+};
+export const commentCode = (e: unknown) => {
+  const m = String((e as Error)?.message ?? e);
+  return Object.keys(commentErrors).find((k) => m.includes(k)) ?? null;
+};
 
 type Row = { id: string; parent_id: string | null; author: string | null; body: string; created_at: string };
 
-const whenText = (iso: string) => {
+// bileşen içinde useLang()'den gelen t ve tx verilir; verilmezse o anki dil
+export const whenText = (iso: string, t: typeof tNow = tNow, tx: typeof txNow = txNow) => {
   const hours = Math.floor((Date.now() - new Date(iso).getTime()) / 3600e3);
-  if (hours < 1) return 'just now';
-  if (hours < 24) return `${hours} h ago`;
+  if (hours < 1) return t('comments.now');
+  if (hours < 24) return t('comments.hours', { n: hours });
   const days = Math.floor(hours / 24);
-  if (days === 1) return 'yesterday';
-  if (days < 30) return `${days} days ago`;
+  if (days === 1) return t('comments.yesterday');
+  if (days < 30) return t('comments.days', { n: days });
   const d = new Date(iso);
-  return `${['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'][d.getMonth()]} ${d.getFullYear()}`;
+  return `${tx('comments.month.' + d.getMonth())} ${d.getFullYear()}`;
 };
 
 export async function fetchComments(eventId: string): Promise<Comment[]> {
@@ -38,10 +54,10 @@ export async function fetchComments(eventId: string): Promise<Comment[]> {
   const reps = (replies ?? []) as Row[];
   return tops.map((t) => ({
     id: t.id,
-    who: (t.author ?? 'someone').toLowerCase(),
-    when: whenText(t.created_at),
+    who: (t.author ?? '').toLowerCase(),
+    at: t.created_at,
     body: t.body,
-    replies: reps.filter((r) => r.parent_id === t.id).map((r) => ({ who: (r.author ?? 'someone').toLowerCase(), when: whenText(r.created_at), body: r.body })),
+    replies: reps.filter((r) => r.parent_id === t.id).map((r) => ({ who: (r.author ?? '').toLowerCase(), at: r.created_at, body: r.body })),
   }));
 }
 

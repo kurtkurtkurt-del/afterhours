@@ -57,8 +57,8 @@
       headers: { Prefer: "return=representation" },
       body: JSON.stringify(body),
     })
-      .then(() => say(status, "saved.", "ok"))
-      .catch((h) => say(status, AH.errorText(h, "couldn't save that."), "error"));
+      .then(() => say(status, AH.t("word.saved"), "ok"))
+      .catch((h) => say(status, AH.errorText(h, AH.t("settings.save.failed")), "error"));
   }
 
   /* --- cities ---
@@ -113,8 +113,9 @@
   /* --- the handle: ask whether it is free as you type --- */
 
   const HANDLE_WORDS = {
-    ok: "free.", yours: "this one is yours.", taken: "someone already has that one.",
-    format: "lowercase letters, numbers and underscore. 3–20.", empty: "",
+    ok: AH.t("settings.handle.ok"), yours: AH.t("settings.handle.yours"),
+    taken: AH.t("settings.handle.taken"),
+    format: AH.t("settings.handle.format"), empty: "",
   };
 
   /* checkNo keeps a slow answer for an old spelling from overwriting the
@@ -139,13 +140,13 @@
   /* --- the four profile fields: in one request --- */
 
   const ANSWERS = {
-    ok: "saved.", taken: "someone already has that handle.",
-    format: "that handle doesn't fit the format.", empty: "pick a handle first.",
-    nocity: "that city isn't on the list.", signedout: "sign in again.",
+    ok: AH.t("word.saved"), taken: AH.t("settings.answer.taken"),
+    format: AH.t("settings.answer.format"), empty: AH.t("settings.answer.empty"),
+    nocity: AH.t("settings.answer.nocity"), signedout: AH.t("settings.answer.signedout"),
   };
 
   el("set-save").onclick = function () {
-    say(status, "saving…");
+    say(status, AH.t("settings.saving"));
     call("profile_setup", {
       p_handle: handleField.value.trim(),
       p_display_name: nameField.value.trim(),
@@ -157,7 +158,7 @@
         say(status, ANSWERS[s] || String(s), s === "ok" ? "ok" : "error");
         if (s === "ok") load();
       })
-      .catch((h) => say(status, AH.errorText(h, "couldn't save that."), "error"));
+      .catch((h) => say(status, AH.errorText(h, AH.t("settings.save.failed")), "error"));
   };
 
   /* --- signing out --- */
@@ -174,7 +175,7 @@
 
   const exportStatus = el("set-export-status");
   el("set-export").onclick = function () {
-    say(exportStatus, "gathering…");
+    say(exportStatus, AH.t("settings.export.working"));
     call("export_me")
       .then((data) => {
         if (!data) throw new Error("nothing came back");
@@ -191,10 +192,10 @@
         a.remove();
         /* Let the download start before the address is thrown away. */
         setTimeout(() => URL.revokeObjectURL(url), 30000);
-        say(exportStatus, "saved as " + name, "ok");
+        say(exportStatus, AH.t("settings.export.done", { name: name }), "ok");
       })
       .catch((h) => say(exportStatus,
-        AH.errorText(h, "couldn't put the file together."), "error"));
+        AH.errorText(h, AH.t("settings.export.failed")), "error"));
   };
 
   /* --- deleting the account: two steps, the second asks you to type your own handle --- */
@@ -208,16 +209,16 @@
   el("set-confirm-button").onclick = function () {
     const written = el("set-confirm-field").value.trim().toLowerCase();
     if (!profile || !profile.handle || written !== profile.handle) {
-      say(deleteStatus, "type your handle exactly.", "error");
+      say(deleteStatus, AH.t("settings.delete.exact"), "error");
       return;
     }
-    say(deleteStatus, "deleting…");
+    say(deleteStatus, AH.t("settings.delete.working"));
     call("delete_account")
       .then(() => {
         AH.dropSession();
         location.href = "../index.html";
       })
-      .catch((h) => say(deleteStatus, AH.errorText(h, "couldn't delete the account."), "error"));
+      .catch((h) => say(deleteStatus, AH.errorText(h, AH.t("settings.delete.failed")), "error"));
   };
 
   /* --- start --- */
@@ -229,12 +230,14 @@
     bioField.value = p.bio || "";
 
     el("set-who").textContent = (AH.session && AH.session.user && AH.session.user.email)
-      ? "you're in as " + AH.session.user.email : "you're in.";
+      ? AH.t("login.in.as", { email: AH.session.user.email }) : AH.t("login.in");
 
     const day = p.created_at ? String(p.created_at).slice(0, 10) : "";
     el("set-numbers").textContent =
-      [p.kept_count + " kept", p.friend_count + " friends", p.comment_count + " comments"]
-        .join(" · ") + (day ? " · here since " + day : "");
+      [AH.tn("settings.numbers.kept", p.kept_count),
+       AH.tn("settings.numbers.friends", p.friend_count),
+       AH.tn("settings.numbers.comments", p.comment_count)]
+        .join(" · ") + (day ? " · " + AH.t("settings.numbers.since", { day: day }) : "");
 
     buildChoice(el("set-kept"), p.kept_visibility, (v) => writeSetting("kept_visibility", v));
     buildChoice(el("set-found"), p.discoverable, (v) => writeSetting("discoverable", v));
@@ -256,7 +259,10 @@
     if (!(CONFIG.url && CONFIG.anonKey)) {
       outside.hidden = false;
       inside.hidden = true;
-      el("set-out-note").textContent = "this opens when the backend does.";
+      /* The note carries data-i18n for its signed-out sentence; this can
+         run before i18n.js stamps the page, which would write it back. */
+      el("set-out-note").removeAttribute("data-i18n");
+      el("set-out-note").textContent = AH.t("settings.closed");
       outside.querySelector(".page-button").hidden = true;
       return;
     }
@@ -264,7 +270,7 @@
     outside.hidden = signedIn;
     inside.hidden = !signedIn;
     if (signedIn) {
-      load().catch((h) => say(status, AH.errorText(h, "couldn't load your profile."), "error"));
+      load().catch((h) => say(status, AH.errorText(h, AH.t("settings.load.failed")), "error"));
     }
   }
 

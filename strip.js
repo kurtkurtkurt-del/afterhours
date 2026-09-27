@@ -11,6 +11,12 @@ const fieldBody = info.querySelector(".info-body");
 
 let hideTimer;
 
+// The kind arrives as a display name ("Club Night"); its key is the slug
+function kindText(kind) {
+  const key = "type." + String(kind || "").trim().toLowerCase().replace(/\s+/g, "-");
+  return kind && window.AH && AH.has(key) ? AH.t(key) : (kind || "");
+}
+
 // 36 posters, split across three strips
 const SERIT_SAYISI = 3;
 const SERIT_UZUNLUGU = POSTERS.length / SERIT_SAYISI;
@@ -36,7 +42,7 @@ function posterYap(i) {
     box.closest(".strip").classList.add("stopped");   // the strip halts
     box.classList.add("big");                        // the poster grows a little
     fieldIndex.textContent = no + " / " + POSTERS.length;
-    fieldKind.textContent = p.kind;
+    fieldKind.textContent = kindText(p.kind);
     fieldTitle.textContent = p.title;
     fieldMeta.textContent = p.meta;
     fieldBody.textContent = p.body;

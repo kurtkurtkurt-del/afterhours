@@ -12,6 +12,21 @@ const fieldTitle = info.querySelector(".info-title");
 const fieldMeta = info.querySelector(".info-meta");
 const fieldBody = info.querySelector(".info-body");
 
+/* The kind of night arrives as a display name ("Club Night", "Konzert");
+   its dictionary key is the same words as a slug. An unknown kind is
+   shown as it came. */
+function kindText(kind) {
+  const key = "type." + String(kind || "").trim().toLowerCase().replace(/\s+/g, "-");
+  return kind && AH.has(key) ? AH.t(key) : (kind || "");
+}
+
+/* A hand-picked night speaks its own line (featured.js); the dictionary
+   holds that line in all three languages, the record's own is the fallback. */
+function bodyText(p) {
+  const key = "featured." + p.slug + ".body";
+  return p.slug && AH.has(key) ? AH.t(key) : AH.bodyText(p.body);
+}
+
 // A short delay so the text does not flicker while the pointer crosses
 // the gap between two posters
 let hideTimer;
@@ -81,10 +96,10 @@ SHOWN.forEach((p, i) => {
   box.addEventListener("mouseenter", () => {
     clearTimeout(hideTimer);
     fieldIndex.textContent = String(i + 1).padStart(2, "0") + " / " + SHOWN.length;
-    fieldKind.textContent = p.kind;
+    fieldKind.textContent = kindText(p.kind);
     fieldTitle.textContent = p.title;
     fieldMeta.textContent = p.meta;
-    fieldBody.textContent = p.body;
+    fieldBody.textContent = bodyText(p);
     side.classList.add("poster-hover");
   });
 
@@ -115,7 +130,7 @@ function loadKnob() {
   if (knobLoaded || !document.getElementById("knob")) return;
   knobLoaded = true;
   // A classic script, not a module: modules are blocked on file:// pages
-  for (const src of ["knob.js?v=192", "radio.js?v=192"]) {
+  for (const src of ["knob.js?v=194", "radio.js?v=194"]) {
     const s = document.createElement("script");
     s.src = src;
     s.async = false;            // radio.js runs after knob.js
@@ -306,6 +321,10 @@ if (demoNight && demoNight.image) {
               lastLine.classList.add("open");
               setTimeout(() => {
                 deck.classList.add("last-state");
+                // On a phone the line rises to where the heading stands;
+                // the heading steps aside (style.css, .screen2.closing)
+                const screen2 = deck.closest(".screen2");
+                if (screen2) screen2.classList.add("closing");
                 phone.classList.add("open");
               }, 2000);
             }, 300);
@@ -381,7 +400,7 @@ const ambient = (() => {
   function paint() {
     toggle.classList.toggle("on", on);
     toggle.setAttribute("aria-checked", String(on));
-    toggle.querySelector(".sound-label").textContent = on ? "sound on" : "sound";
+    toggle.querySelector(".sound-label").textContent = on ? AH.t("sound.on") : AH.t("sound.label");
     list.querySelectorAll("[data-genre]").forEach((b) => b.classList.toggle("on", b.dataset.genre === genre));
   }
 
@@ -486,8 +505,8 @@ function updateFooter() {
   }).length;
 
   counterField.textContent = open
-    ? open + (open === 1 ? " room open in münchen right now" : " rooms open in münchen right now")
-    : "no rooms open yet — come back after dark";
+    ? AH.tn("home.rooms", open)
+    : AH.t("home.rooms.none");
 }
 
 updateFooter();
@@ -516,9 +535,42 @@ setInterval(updateFooter, 20000);
       });
       if (full.length > 6) {
         const li = document.createElement("li");
-        li.textContent = "+ " + (full.length - 6) + " more cities";
+        li.textContent = AH.tn("home.cities.more", full.length - 6);
         box.appendChild(li);
       }
     })
     .catch(() => {});
+})();
+
+
+/* ---------- The big heading of screen two has to FIT ----------
+   Its size was measured for the english sentence (six lines at
+   min(8.6vw, 14.5vh)). A translation has other words: the german one
+   ran to seven lines and lost "stadt." under the edge of the screen, a
+   long turkish word ran out of the column sideways. So the size in the
+   stylesheet is only where we start; from there it shrinks until the
+   last line stands clear of the bottom and no word leaves the column. */
+(function () {
+  const title = document.querySelector(".screen2-title");
+  const screen2 = document.querySelector(".screen2");
+  if (!title || !screen2) return;
+
+  function fit() {
+    title.style.fontSize = "";
+    if (window.innerWidth <= 720) return;          // on a phone it is a normal heading
+    const height = screen2.clientHeight || window.innerHeight;
+    if (!height || !title.clientWidth) return;     // hidden tab: nothing to measure
+    // rects, not offsetTop: the offset parent is the whole strip of screens
+    const room = screen2.getBoundingClientRect().bottom - title.getBoundingClientRect().top - 40;
+    let size = parseFloat(getComputedStyle(title).fontSize);
+    for (let i = 0; i < 60 && size > 40; i++) {
+      if (title.scrollHeight <= room && title.scrollWidth <= title.clientWidth + 1) break;
+      size -= 2;
+      title.style.fontSize = size + "px";
+    }
+  }
+
+  fit();
+  window.addEventListener("resize", fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
 })();

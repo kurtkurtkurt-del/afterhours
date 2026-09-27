@@ -8,16 +8,18 @@ import { TAB_BAR_SPACE } from '@/components/TabBar';
 import { djs as localDjs, sets as localSets, type Dj, type DjSet } from '@/content/djs';
 import { loadDjs } from '@/data/djs';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
+import { dayName } from '@/data/when';
+import { upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const H = 3600_000;
 const hhmm = (d: Date) => `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
-const dayName = (d: Date) => d.toLocaleDateString('en-GB', { weekday: 'short' }).toLowerCase();
 
 // seçenek 6, "şimdi / sonra": en üstte çalan, altında bu gece, sonra bu hafta.
 export default function DjsScreen() {
   const insets = useSafeAreaInsets();
+  const { t, up } = useLang();
   const tick = useRefreshOnFocus();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const now = useMemo(() => new Date(), [tick]); // sekme her açıldığında saat tazelenir
@@ -46,13 +48,13 @@ export default function DjsScreen() {
     <View style={styles.root}>
       <StatusBar style="light" />
       <View style={styles.band}>
-        <Text style={styles.title}>djs</Text>
+        <Text style={styles.title}>{t('djs.title')}</Text>
         <SoundCorner />
       </View>
       <ScrollView contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom }]} showsVerticalScrollIndicator={false}>
-        {data.live === null ? <Text style={styles.mono}>loading…</Text> : null}
-        {data.live === false ? <Text style={styles.mono}>sample · not connected</Text> : null}
-        {data.live && !next ? <Text style={styles.mono}>no sets listed yet</Text> : null}
+        {data.live === null ? <Text style={styles.mono}>{up(t('djs.loading'))}</Text> : null}
+        {data.live === false ? <Text style={styles.mono}>{up(t('djs.sample'))}</Text> : null}
+        {data.live && !next ? <Text style={styles.mono}>{up(t('djs.none'))}</Text> : null}
         {/* şimdi */}
         {next ? (
         <Pressable style={styles.hero} onPress={() => router.push(`/dj/${(live ?? next).dj}`)}>
@@ -60,12 +62,12 @@ export default function DjsScreen() {
           <View style={styles.heroShade} />
           <View style={styles.heroText}>
             <Text style={[styles.mono, live ? styles.live : null]}>
-              {live ? `live now · ${live.venue}` : `next up · ${next.venue} · ${hhmm(next.startsAt)}`}
+              {up(live ? t('djs.live', { venue: upperData(live.venue) }) : t('djs.next', { venue: upperData(next.venue), time: hhmm(next.startsAt) }))}
             </Text>
             <Text style={styles.heroName}>{djById((live ?? next).dj).name}</Text>
             <Text style={styles.mono}>
-              {djById((live ?? next).dj).genre}
-              {live ? ` · until ${hhmm(new Date(live.startsAt.getTime() + live.hours * H))}` : ''}
+              {upperData(djById((live ?? next).dj).genre)}
+              {live ? ` · ${up(t('djs.until', { time: hhmm(new Date(live.startsAt.getTime() + live.hours * H)) }))}` : ''}
             </Text>
           </View>
         </Pressable>
@@ -73,14 +75,14 @@ export default function DjsScreen() {
 
         {tonight.length > 0 && (
           <>
-            <Text style={styles.section}>later tonight</Text>
+            <Text style={styles.section}>{up(t('djs.later'))}</Text>
             {tonight.map((s) => (
               <Row key={s.dj + s.startsAt.toISOString()} set={s} dj={djById(s.dj)} right={hhmm(s.startsAt)} />
             ))}
           </>
         )}
 
-        <Text style={styles.section}>this week</Text>
+        <Text style={styles.section}>{up(t('when.week'))}</Text>
         {week.map((s) => (
           <Row key={s.dj + s.startsAt.toISOString()} set={s} dj={djById(s.dj)} right={`${dayName(s.startsAt)} · ${hhmm(s.startsAt)}`} />
         ))}
@@ -95,7 +97,7 @@ function Row({ set, dj, right }: { set: DjSet; dj: Dj; right: string }) {
       <Image source={dj.photoUrl ? { uri: dj.photoUrl } : dj.photo} style={styles.sq} />
       <View style={styles.rowText}>
         <Text style={styles.name}>{dj.name}</Text>
-        <Text style={styles.mono}>{dj.genre} · {set.venue}</Text>
+        <Text style={styles.mono}>{upperData(dj.genre)} · {upperData(set.venue)}</Text>
       </View>
       <Text style={styles.when}>{right}</Text>
     </Pressable>
@@ -112,9 +114,9 @@ const styles = StyleSheet.create({
   heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 110, backgroundColor: colors.ink, opacity: 0.72 },
   heroText: { position: 'absolute', left: 16, right: 16, bottom: 14, gap: 4 },
   heroName: { fontFamily: fonts.medium, fontSize: 34, lineHeight: 36, letterSpacing: -1, color: colors.paper },
-  mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute },
+  mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
   live: { color: colors.spot },
-  section: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, textTransform: 'uppercase', color: colors.mute, marginTop: 26, marginBottom: 4 },
+  section: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginTop: 26, marginBottom: 4 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: colors.ink3 },
   pressed: { opacity: 0.6 },
   sq: { width: 48, height: 48, backgroundColor: colors.ink2 },
