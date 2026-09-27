@@ -80,7 +80,15 @@
         }
       ],
       "expo-secure-store",
-      "expo-asset"
+      "expo-asset",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "afterhours shows the photo you choose at the top of your account.",
+          "cameraPermission": false,
+          "microphonePermission": false
+        }
+      ]
     ],
     "scheme": "afterhours",
     "experiments": {

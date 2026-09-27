@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Alert, Image, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Storage from 'expo-sqlite/kv-store';
 import AfterhoursCard from '@/components/AfterhoursCard';
 import Icon from '@/components/Icon';
-import Button from '@/components/Button';
 import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
+import { usePhoto } from '@/data/photo';
 import { useProfile } from '@/data/profile';
 import { collection as samples } from '@/content/collection';
 import { myCards, toCardData, type CardRow } from '@/data/checkin';
@@ -19,21 +20,29 @@ import { upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-const GAP = 8;
-// ay adları seçili dilde
-const LOCALE = { en: 'en-GB', de: 'de-DE', tr: 'tr-TR' } as const;
+// kartın genişliği ekranın bu kadarı; her kart bir öncekinin bu kadarını açıkta bırakır
+const CARD = 0.39;
+const STEP = 0.42;
 
-// profil, seçenek 1 "kimlik kartı": baş harf, isim, bio, üç sayı, koleksiyon ızgarası.
+function distinct(list: (string | null | undefined)[]) {
+  return new Set(list.filter(Boolean).map((c) => String(c).toLowerCase())).size;
+}
+
+// hesap, "afiş üstte, kâğıt üstünde deste": üstte kendi fotoğrafın ve adın,
+// altta kâğıt zeminde yana kayan kart destesi. sayılar iki ince satıra indi;
+// çıkış ve geri kalan her şey ayarlarda.
 export default function AccountScreen() {
-  const { session, signOut } = useAuth();
-  const profile = useProfile();
-  const { t, up, lang } = useLang();
+  const { session } = useAuth();
+  const { t, tn, up } = useLang();
   const insets = useSafeAreaInsets();
   const { width, height } = useWindowDimensions();
   const [open, setOpen] = useState<number | null>(null);
   const [side, setSide] = useState<'front' | 'back'>('front');
   const [cards, setCards] = useState<CardRow[] | null>(null);
+  const { photo, choose, remove } = usePhoto();
   const tick = useRefreshOnFocus();
+  // ayarlardan dönünce yeni isim ve şehir görünsün
+  const profile = useProfile(tick);
   const uid = session?.user.id;
   useEffect(() => {
     if (!uid) return;
@@ -43,64 +52,77 @@ export default function AccountScreen() {
       cancelled = true;
     };
   }, [uid, tick]);
-  // gerçek kartlar; hiç yoksa örnekler, üstünde "sample" yazısıyla
+  // gerçek kartlar; hiç yoksa örnekler, sağ üstte "örnekler" yazısıyla
   const real = cards && cards.length > 0;
   const collection: NightCardData[] = real ? cards.map(toCardData) : samples;
+  const cities = real ? distinct(cards.map((c) => c.city_name)) : distinct(samples.map((c) => c.city));
 
   const name = (profile?.display_name ?? session?.user.email?.split('@')[0] ?? t('account.you')).toLowerCase();
   const handle = profile?.handle ? `@${profile.handle}` : null;
   const city = profile?.city_name ?? Storage.getItemSync('city.name');
   const since = profile ? new Date(profile.created_at) : null;
   const sinceText = since ? t('account.since', { date: `${String(since.getMonth() + 1).padStart(2, '0')}.${String(since.getFullYear()).slice(2)}` }) : null;
-  const joined = since ? since.toLocaleDateString(LOCALE[lang], { day: '2-digit', month: 'short', year: 'numeric' }).toLowerCase() : null;
-  const seen = profile?.last_seen_at ? new Date(profile.last_seen_at).toLocaleDateString(LOCALE[lang], { day: '2-digit', month: 'short' }).toLowerCase() : null;
-  const cardW = (width - brand.left * 2 - GAP * 2) / 3;
+  const meta = [city ? upperData(city) : null, handle ? upperData(handle) : null, sinceText ? up(sinceText) : null].filter(Boolean).join(' · ') || up(t('account.notSignedIn'));
+
+  const cardW = Math.round(width * CARD);
+  const cardH = cardW * 1.5;
+
+  // fotoğraf bu telefonda durur (data/photo.ts)
+  const change = () =>
+    Alert.alert(t('account.photo'), t('account.photo.note'), [
+      { text: t('word.cancel'), style: 'cancel' },
+      { text: t('account.photo.remove'), style: 'destructive', onPress: remove },
+      { text: t('account.photo.change'), onPress: choose },
+    ]);
 
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
-      <View style={styles.band}>
-        <Text style={styles.title}>{t('account.title')}</Text>
-        <Pressable onPress={() => router.push('/settings')} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('account.settings')} style={({ pressed }) => [styles.gear, pressed && styles.pressed]}>
-          <Icon name="settings" size={20} color={colors.paper} />
-        </Pressable>
-        <SoundCorner />
-      </View>
-      <ScrollView contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom }]} showsVerticalScrollIndicator={false}>
-        <View style={styles.initial}>
-          <Text style={styles.initialText}>{name.charAt(0)}</Text>
-        </View>
-        <Text style={styles.name}>{name}</Text>
-        <Text style={styles.meta}>{[handle ? upperData(handle) : null, city ? upperData(city) : null, sinceText ? up(sinceText) : null].filter(Boolean).join(' · ') || up(t('account.notSignedIn'))}</Text>
-        {profile?.bio ? <Text style={styles.bio}>{profile.bio}</Text> : null}
 
-        {session ? (
-          <>
-            <View style={styles.counts}>
-              <Count n={real ? collection.length : 0} label={t('account.nights')} />
-              <Count n={profile?.kept_count ?? 0} label={t('account.kept')} />
-              <Count n={profile?.friend_count ?? 0} label={t('account.friends')} />
-              <Count n={profile?.comment_count ?? 0} label={t('account.said')} />
-            </View>
-            <View style={styles.details}>
-              {joined ? <Detail k={t('account.joined')} v={joined} /> : null}
-              {seen ? <Detail k={t('account.lastSeen')} v={seen} /> : null}
-              <Detail k={t('account.home')} v={(profile?.city_name ?? city ?? t('account.notSet')).toLowerCase()} />
-              <Detail k={t('account.handle')} v={handle ?? t('account.noHandle')} />
-            </View>
-            <Pressable onPress={() => signOut().then(() => router.replace('/'))} hitSlop={8} style={styles.edit}>
-              <Text style={styles.link}>{t('word.signout')}</Text>
-            </Pressable>
-          </>
+      {/* afiş: fotoğraf, altında koyulaşan zemin, sol altta isim */}
+      <Pressable style={styles.poster} onPress={photo ? undefined : choose} onLongPress={photo ? change : undefined} delayLongPress={350} accessibilityRole="imagebutton" accessibilityLabel={t('account.photo.a11y')}>
+        {photo ? (
+          <Image source={{ uri: photo }} style={StyleSheet.absoluteFill} resizeMode="cover" onError={remove} />
         ) : (
-          <View style={styles.cta}>
-            <Button label={t('word.signup')} onPress={() => router.push('/signup')} />
+          <View style={styles.empty}>
+            <Icon name="photo" size={30} color={colors.mute} />
+            <Text style={styles.emptyTitle}>{t('account.photo')}</Text>
+            <Text style={styles.emptyHint}>{t('account.photo.hint')}</Text>
           </View>
         )}
+        <LinearGradient colors={['rgba(14,13,12,0.55)', 'rgba(14,13,12,0)']} style={styles.shadeTop} pointerEvents="none" />
+        <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.92)']} style={styles.shadeBottom} pointerEvents="none" />
+        <View style={styles.who} pointerEvents="none">
+          <Text style={styles.name} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>
+            {name}
+          </Text>
+          <Text style={styles.meta} numberOfLines={2}>
+            {meta}
+          </Text>
+        </View>
+      </Pressable>
 
-        <View style={styles.rule} />
-        <Text style={styles.section}>{up(real ? t('account.collection', { n: collection.length }) : t('account.collectionSample'))}</Text>
-        <View style={styles.grid}>
+      <Text style={styles.title} pointerEvents="none">
+        {t('account.title')}
+      </Text>
+      <Pressable onPress={() => router.push('/settings')} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('account.settings')} style={({ pressed }) => [styles.gear, pressed && styles.pressed]}>
+        <Icon name="settings" size={20} color={colors.paper} />
+      </Pressable>
+      <SoundCorner />
+
+      {/* kâğıt: deste */}
+      <View style={[styles.paper, { paddingBottom: TAB_BAR_SPACE + insets.bottom }]}>
+        <View style={styles.row}>
+          <View style={styles.rowLeft}>
+            <Text style={styles.deckTitle}>{t('account.deck')}</Text>
+            <View style={styles.dot} />
+          </View>
+          <Text style={styles.small} numberOfLines={1}>
+            {up(real ? `${tn('account.nNights', collection.length)} · ${tn('account.nCities', cities)}` : t('account.deck.sample'))}
+          </Text>
+        </View>
+
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={[styles.deckScroll, { height: cardH }]} contentContainerStyle={styles.deck}>
           {collection.map((c, i) => (
             <Pressable
               key={`${c.t}-${i}`}
@@ -108,14 +130,25 @@ export default function AccountScreen() {
                 setSide('front');
                 setOpen(i);
               }}
-              style={({ pressed }) => pressed && styles.pressed}
+              style={({ pressed }) => [styles.card, i > 0 && { marginLeft: -Math.round(cardW * (1 - STEP)) }, pressed && styles.pressed]}
             >
               <AfterhoursCard data={c} index={i} width={cardW} />
             </Pressable>
           ))}
-        </View>
+        </ScrollView>
 
-      </ScrollView>
+        <View style={styles.rule} />
+        <View style={styles.row}>
+          <Text style={styles.small}>{up(t('account.deck.hint'))}</Text>
+          {session ? (
+            <Text style={styles.small}>{up(`${tn('account.nKept', profile?.kept_count ?? 0)} · ${tn('account.nFriends', profile?.friend_count ?? 0)}`)}</Text>
+          ) : (
+            <Pressable onPress={() => router.push('/signup')} hitSlop={12} style={({ pressed }) => pressed && styles.pressed}>
+              <Text style={styles.link}>{t('word.signup')}</Text>
+            </Pressable>
+          )}
+        </View>
+      </View>
 
       {/* kart büyütme: dokununca ön/arka döner */}
       <Modal visible={open !== null} transparent animationType="fade" onRequestClose={() => setOpen(null)}>
@@ -148,50 +181,31 @@ export default function AccountScreen() {
   );
 }
 
-function Detail({ k, v }: { k: string; v: string }) {
-  return (
-    <View style={styles.detail}>
-      <Text style={styles.detailK}>{k}</Text>
-      <Text style={styles.detailV}>{v}</Text>
-    </View>
-  );
-}
-
-function Count({ n, label }: { n: number; label: string }) {
-  const { up } = useLang();
-  return (
-    <View>
-      <Text style={styles.countN}>{n}</Text>
-      <Text style={styles.countL}>{up(label)}</Text>
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
-  band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, backgroundColor: colors.ink, zIndex: 2 },
-  title: { position: 'absolute', top: brand.top, left: brand.left, fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper, zIndex: 1 },
-  body: { paddingTop: brand.top + 56, paddingHorizontal: brand.left },
-  initial: { width: 64, height: 64, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center', marginBottom: 14 },
-  initialText: { fontFamily: fonts.medium, fontSize: 30, color: colors.paper, letterSpacing: -0.5 },
-  name: { fontFamily: fonts.medium, fontSize: 28, lineHeight: 30, letterSpacing: -0.8, color: colors.paper },
-  meta: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginTop: 6 },
-  bio: { fontFamily: fonts.regular, fontSize: 15, color: colors.paper2, opacity: 0.85, marginTop: 8 },
-  counts: { flexDirection: 'row', gap: 28, marginTop: 20 },
-  countN: { fontFamily: fonts.medium, fontSize: 24, letterSpacing: -0.6, color: colors.paper, fontVariant: ['tabular-nums'] },
-  countL: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
-  details: { marginTop: 18, gap: 6 },
-  detail: { flexDirection: 'row', justifyContent: 'space-between' },
-  detailK: { fontFamily: fonts.regular, fontSize: 13, color: colors.mute },
-  detailV: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper2 },
-  edit: { marginTop: 14, alignSelf: 'flex-start' },
-  cta: { marginTop: 20 },
-  rule: { borderTopWidth: 1, borderTopColor: colors.ink3, marginVertical: 20 },
-  section: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginBottom: 10 },
-  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: GAP },
-  pressed: { opacity: 0.7 },
+  poster: { flex: 1, minHeight: 220, backgroundColor: colors.ink, overflow: 'hidden' },
+  empty: { position: 'absolute', top: brand.top + 40, left: 0, right: 0, bottom: 110, alignItems: 'center', justifyContent: 'center', gap: 6 },
+  emptyTitle: { fontFamily: fonts.medium, fontSize: 15, color: colors.mute, marginTop: 6 },
+  emptyHint: { fontFamily: fonts.regular, fontSize: 13, color: colors.meta, textDecorationLine: 'underline' },
+  shadeTop: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 60 },
+  shadeBottom: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 190 },
+  who: { position: 'absolute', left: brand.left, right: brand.left, bottom: 22 },
+  name: { fontFamily: fonts.semibold, fontSize: 54, lineHeight: 56, letterSpacing: -2, color: colors.paper },
+  meta: { fontFamily: fonts.regular, fontSize: 12, letterSpacing: 1.4, color: colors.paper, marginTop: 8 },
+  title: { position: 'absolute', top: brand.top, left: brand.left, fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },
   gear: { position: 'absolute', top: brand.top - 3, right: brand.left + 84 },
-  link: { fontFamily: fonts.regular, fontSize: 14, color: colors.mute },
+  paper: { backgroundColor: colors.paper, paddingTop: 18 },
+  row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12, paddingHorizontal: brand.left },
+  rowLeft: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  deckTitle: { fontFamily: fonts.medium, fontSize: 15, letterSpacing: -0.2, color: colors.ink },
+  dot: { width: 6, height: 6, borderRadius: 3, backgroundColor: colors.spot },
+  small: { flexShrink: 1, fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.ink2 },
+  link: { fontFamily: fonts.regular, fontSize: 13, color: colors.ink, textDecorationLine: 'underline' },
+  deckScroll: { flexGrow: 0, marginTop: 12 },
+  deck: { paddingHorizontal: brand.left },
+  card: {},
+  rule: { borderTopWidth: 1, borderTopColor: colors.rule, marginHorizontal: brand.left, marginTop: 14, marginBottom: 12 },
+  pressed: { opacity: 0.7 },
   dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.92)', alignItems: 'center', justifyContent: 'center', gap: 18 },
   roomLink: { alignItems: 'center', gap: 4, marginTop: 6, paddingHorizontal: 22, paddingVertical: 10, borderWidth: 1, borderColor: colors.spot },
   roomLinkText: { fontFamily: fonts.logo, fontSize: 26, letterSpacing: -0.5, color: colors.spotText },

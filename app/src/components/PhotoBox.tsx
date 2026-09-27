@@ -1,0 +1,27 @@
+import { Image, StyleSheet, Text, View } from 'react-native';
+import Icon from '@/components/Icon';
+import { useT } from '@/i18n';
+import { colors, fonts } from '@/theme/tokens';
+
+// küçük kare fotoğraf (ayarlar kartı, profil sayfası). fotoğraf yoksa ince
+// çerçeve içinde ikon ve "fotoğrafın" yazısı.
+export default function PhotoBox({ uri, size, onError }: { uri: string | null; size: number; onError?: () => void }) {
+  const t = useT();
+  return (
+    <View style={[styles.box, { width: size, height: size }]}>
+      {uri ? (
+        <Image source={{ uri }} style={StyleSheet.absoluteFill} resizeMode="cover" onError={onError} />
+      ) : (
+        <>
+          <Icon name="photo" size={size > 60 ? 18 : 16} color={colors.mute} />
+          {size > 60 ? <Text style={styles.text}>{t('account.photo')}</Text> : null}
+        </>
+      )}
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  box: { borderWidth: 1, borderColor: colors.mute, alignItems: 'center', justifyContent: 'center', gap: 4, overflow: 'hidden' },
+  text: { fontFamily: fonts.medium, fontSize: 11, color: colors.mute },
+});

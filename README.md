@@ -568,12 +568,13 @@ asks for and stays with it.
 | `(tabs)/djs` | **Who is playing:** live now · later tonight · this week |
 | `(tabs)/yours` | **Yours:** your friends' kept nights, `who's coming?` (i'm in · maybe · not tonight), the match box, the friends row |
 | `(tabs)/map` | **The map:** tonight's nights around you; `near me` / `<city> centre`; the radius slider |
-| `(tabs)/account` | **Account:** the counts (nights · kept · friends · said), the collection |
+| `(tabs)/account` | **Account**, "poster on top, the deck on paper": your own photograph full-bleed with the name set large over it (city · handle · since), and under it, on paper, the collection as a sideways deck of overlapping cards — tap one to enlarge and turn it. Two thin lines carry the numbers (nights · cities, kept · friends). The photograph is chosen from the phone (`expo-image-picker`), copied into the app's own folder (`expo-file-system`) and STAYS ON THE PHONE — there is no avatar column in the database; hold the poster to change or remove it. Sign out lives in settings |
 | `night/[slug]` | **The night page:** the photograph, `check in` / `keep` / `ticket`, where · when · kind, the room line |
 | `room/[slug]` | **The room:** open for 48h after check-in, `two lines, at most`, then frozen |
 | `dj/[id]` · `friend/[id]` · `friend/add` | A dj (follow, sets, next), a friend (kept · n, nights out together), adding one by handle |
 | `signup` · `welcome` | Email + password (or `leave both empty to look around first`), then the handle |
-| `settings` | profile · privacy · sound · account · about — the same labels as `settings/` on the web |
+| `settings` | A profile card on top (photo · name · `edit ›`), then framed panels: **app** (language, background music, genre) · **privacy** · **account** · delete account in a box of its own, in red · **about**. `›` opens inside the app, `↗` leaves it. The version sits at the bottom under the wordmark |
+| `profile` | **Edit profile** — where `edit ›` leads: photo, name, handle (its status beside the label), one line with a counter, city; one `save profile` writes them through `profile_setup()` and goes back |
 | `credits` | The music (Free Music Archive, CC BY), the map tiles, the type |
 
 **Under `app/src/`:** `data/` (the RPC calls: `deck.ts`, `checkin.ts`,

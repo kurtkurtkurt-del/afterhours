@@ -1,68 +1,41 @@
 import { SITE } from '@/data/deck';
 import { useEffect, useState } from 'react';
-import { Alert, KeyboardAvoidingView, Linking, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Alert, Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Constants, { ExecutionEnvironment } from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Storage from 'expo-sqlite/kv-store';
-import BackButton from '@/components/BackButton';
-import Button from '@/components/Button';
-import Input from '@/components/Input';
+import BackButton, { EdgeBack } from '@/components/BackButton';
+import PhotoBox from '@/components/PhotoBox';
 import PickerSheet from '@/components/PickerSheet';
 import SoundCorner from '@/components/SoundCorner';
-import { Row, Section, Switch, Value } from '@/components/Row';
+import { Mark, Panel, Row, Section, Switch, Value } from '@/components/Row';
 import { useAuth } from '@/auth/AuthContext';
 import { useAmbient } from '@/audio/AmbientContext';
-import { useCities } from '@/data/cities';
+import { usePhoto } from '@/data/photo';
 import { useProfile } from '@/data/profile';
-import { deleteAccount, exportMe, fetchSettings, handleStatus, saveProfile, saveSettings, type Settings } from '@/data/settings';
+import { deleteAccount, exportMe, fetchSettings, saveSettings, type Settings } from '@/data/settings';
+import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { genres, type Genre } from '@/content/music';
-import { langNames, langs, useLang, type Lang } from '@/i18n';
-import type { Key } from '@/i18n/dict';
+import { langNames, langs, upperData, useLang, type Lang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// kod → söz anahtarı; söz çizerken çözülür. empty: söylenecek bir şey yok.
-const handleWords: Record<string, Key | null> = {
-  ok: 'settings.handle.ok',
-  yours: 'settings.handle.yours',
-  empty: null,
-  format: 'settings.handle.format',
-  taken: 'settings.handle.taken',
-  signedout: 'settings.handle.signedout',
-  nocity: 'settings.handle.nocity',
-};
-
-// ayarlar: profil, gizlilik, ses, hesap. veritabanındaki kurallarla bire bir.
+// ayarlar, ana sayfa: üstte profil kartı (fotoğraf + isim + "düzenle"), altında
+// gruplu paneller. form alanları burada değil, /profile sayfasında.
+// › sayfa içinde açılır, ↗ uygulamanın dışına çıkar.
 export default function SettingsScreen() {
   const { session, signOut, isAnonymous } = useAuth();
-  const profile = useProfile();
-  const { cities } = useCities();
+  const tick = useRefreshOnFocus();
+  // profil sayfasından dönünce kart yeni ismi göstersin
+  const profile = useProfile(tick);
   const ambient = useAmbient();
   const insets = useSafeAreaInsets();
+  const { photo, remove } = usePhoto();
   const { t, up, lang, setLang } = useLang();
-  // status ve saved kod saklar (ok, taken …); bilinmeyen kod olduğu gibi görünür
-  const word = (code: string) => {
-    const key = handleWords[code];
-    return key === undefined ? code : key ? t(key) : '';
-  };
-
-  // form alanları: kullanıcı dokunana kadar null, görünen değer profilden gelir.
-  // böylece profili forma "kopyalayan" bir effect gerekmiyor.
-  const [nameEdit, setName] = useState<string | null>(null);
-  const [handleEdit, setHandle] = useState<string | null>(null);
-  const [bioEdit, setBio] = useState<string | null>(null);
-  const [cityEdit, setCity] = useState<string | null | undefined>(undefined);
-  const name = nameEdit ?? profile?.display_name ?? '';
-  const handle = handleEdit ?? profile?.handle ?? '';
-  const bio = bioEdit ?? profile?.bio ?? '';
-  const city = cityEdit === undefined ? (profile?.city_slug ?? null) : cityEdit;
-  const [status, setStatus] = useState('');
-  const [saving, setSaving] = useState(false);
-  const [saved, setSaved] = useState<string | null>(null);
   const [settings, setSettings] = useState<Settings | null>(null);
-  const [sheet, setSheet] = useState<'city' | 'sound' | 'locale' | null>(null);
+  const [sheet, setSheet] = useState<'sound' | 'locale' | 'kept' | null>(null);
 
   const uid = session?.user.id;
   useEffect(() => {
@@ -73,30 +46,6 @@ export default function SettingsScreen() {
       live = false;
     };
   }, [uid]);
-
-  // handle her tuşta sorulur
-  useEffect(() => {
-    if (!handle) return;
-    let live = true; // geç gelen eski cevap yeni değeri ezmesin
-    const timer = setTimeout(() => handleStatus(handle).then((s) => live && setStatus(s)).catch(() => {}), 250);
-    return () => {
-      live = false;
-      clearTimeout(timer);
-    };
-  }, [handle]);
-
-  const save = async () => {
-    if (saving) return;
-    setSaving(true);
-    setSaved(null);
-    try {
-      const r = await saveProfile({ handle, name, city, bio });
-      setSaved(r);
-    } catch (e) {
-      setSaved(String((e as Error).message).toLowerCase());
-    }
-    setSaving(false);
-  };
 
   const patch = (p: Partial<Settings>) => {
     if (!uid || !settings) return;
@@ -124,108 +73,138 @@ export default function SettingsScreen() {
       .then((json) => Alert.alert(t('settings.export.title'), t('settings.export.body', { kb: (json.length / 1024).toFixed(1) })))
       .catch((e) => Alert.alert(t('settings.export.failed'), String(e.message ?? e).toLowerCase()));
 
-  const cityName = city ? (cities.find((c) => c.id === city)?.name ?? city) : t('settings.city.none');
   const soundName = genres.find((g) => g.id === ambient.genre)?.label ?? ambient.genre;
+  const hidden = settings?.kept_visibility === 'private';
+  const name = (profile?.display_name ?? session?.user.email?.split('@')[0] ?? t('account.you')).toLowerCase();
+  const under = [profile?.handle ? `@${profile.handle}` : null, profile?.city_name ?? Storage.getItemSync('city.name')]
+    .filter(Boolean)
+    .map((s) => upperData(String(s)))
+    .join(' · ');
+  const version = `${Constants.expoConfig?.version ?? '0.1.0'} · ${Constants.executionEnvironment === ExecutionEnvironment.StoreClient ? 'expo go' : 'build'}`;
 
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
+      <EdgeBack />
       <View style={styles.band}>
-        <BackButton />
         <Text style={styles.title}>{t('settings.title')}</Text>
         <SoundCorner />
       </View>
-      <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
-      <ScrollView contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 40 }]} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
-        {!session ? (
-          <>
-            <Text style={styles.note}>{t('settings.signedout')}</Text>
-            <View style={{ marginTop: 16 }}>
-              <Button label={t('word.signup')} onPress={() => router.push('/signup')} />
-            </View>
-          </>
-        ) : (
-          <>
-            <Section title={t('settings.profile')} />
-            <Text style={styles.fieldLabel}>{up(t('settings.name'))}</Text>
-            <Input value={name} onChangeText={setName} placeholder={t('settings.name.placeholder')} maxLength={40} />
-            <Text style={styles.fieldLabel}>{up(t('settings.handle'))}</Text>
-            <Input value={handle} onChangeText={(v) => setHandle(v.toLowerCase())} placeholder={t('settings.handle.placeholder')} autoCapitalize="none" maxLength={20} />
-            {handle && status && word(status) ? <Text style={styles.fieldHint}>{word(status)}</Text> : null}
-            <Text style={styles.fieldLabel}>{up(t('settings.bio'))}</Text>
-            <Input value={bio} onChangeText={setBio} placeholder={t('settings.bio.placeholder')} maxLength={160} />
-            <Row label={t('settings.city')} hint={t('settings.city.hint')} right={<Value text={cityName} />} onPress={() => setSheet('city')} />
-            <View style={styles.save}>
-              <Button label={saving ? t('word.moment') : t('settings.save')} onPress={save} />
-              {saved ? <Text style={styles.fieldHint}>{saved === 'ok' ? t('word.saved') : word(saved)}</Text> : null}
-            </View>
+      <ScrollView contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 32 }]} showsVerticalScrollIndicator={false}>
+        {/* profil kartı: girişliyse düzenlemeye, değilse kayda götürür */}
+        <Pressable
+          onPress={() => router.push(session && !isAnonymous ? '/profile' : '/signup')}
+          accessibilityRole="button"
+          style={({ pressed }) => [styles.card, pressed && styles.pressed]}
+        >
+          <PhotoBox uri={photo} size={52} onError={remove} />
+          <View style={styles.cardText}>
+            <Text style={styles.cardName} numberOfLines={1}>
+              {session ? name : t('account.you')}
+            </Text>
+            <Text style={styles.cardUnder} numberOfLines={1}>
+              {session && !isAnonymous ? under || up(t('account.noHandle')) : up(isAnonymous ? t('word.guest') : t('settings.guest.hint'))}
+            </Text>
+          </View>
+          <Value text={session && !isAnonymous ? t('settings.edit') : t('word.signup')} more />
+        </Pressable>
 
+        <Section title={t('settings.app')} />
+        <Panel>
+          <Row label={t('lang.label')} hint={t('lang.hint')} right={<Value text={langNames[lang]} more />} onPress={() => setSheet('locale')} />
+          <Row label={t('settings.music')} right={<Switch on={ambient.on} />} onPress={ambient.toggle} />
+          <Row label={t('settings.genre')} hint={t('settings.genre.hint')} right={<Value text={soundName} more />} onPress={() => setSheet('sound')} />
+        </Panel>
+
+        {session ? (
+          <>
             <Section title={t('settings.privacy')} />
-            <Row
-              label={t('settings.kept')}
-              hint={settings?.kept_visibility === 'private' ? t('settings.kept.private') : t('settings.kept.friends')}
-              right={<Value text={settings ? (settings.kept_visibility === 'private' ? t('settings.vis.private') : t('settings.vis.friends')) : '…'} />}
-              onPress={() => patch({ kept_visibility: settings?.kept_visibility === 'private' ? 'friends' : 'private' })}
-            />
-            <Row
-              label={t('settings.findable')}
-              hint={t('settings.findable.hint')}
-              right={<Switch on={settings?.discoverable ?? true} />}
-              onPress={() => patch({ discoverable: !(settings?.discoverable ?? true) })}
-            />
-            <Row
-              label={t('settings.email.me')}
-              hint={t('settings.email.me.hint')}
-              right={<Switch on={settings?.notify_email ?? true} />}
-              onPress={() => patch({ notify_email: !(settings?.notify_email ?? true) })}
-            />
+            <Panel>
+              <Row
+                label={t('settings.kept')}
+                hint={hidden ? t('settings.kept.private') : t('settings.kept.friends')}
+                right={<Value text={settings ? (hidden ? t('settings.vis.private') : t('settings.vis.friends')) : '…'} more />}
+                onPress={settings ? () => setSheet('kept') : undefined}
+              />
+              <Row
+                label={t('settings.findable')}
+                hint={t('settings.findable.hint')}
+                right={<Switch on={settings?.discoverable ?? true} />}
+                onPress={() => patch({ discoverable: !(settings?.discoverable ?? true) })}
+              />
+              <Row
+                label={t('settings.email.me')}
+                hint={t('settings.email.me.hint')}
+                right={<Switch on={settings?.notify_email ?? true} />}
+                onPress={() => patch({ notify_email: !(settings?.notify_email ?? true) })}
+              />
+            </Panel>
           </>
-        )}
-
-        {/* dil: herkes görür (girişli, misafir, girişsiz). setLang cihaza ve hesaba kendisi yazar. */}
-        <Section title={t('lang.label')} />
-        <Row label={t('lang.label')} hint={t('lang.hint')} right={<Value text={langNames[lang]} />} onPress={() => setSheet('locale')} />
-
-        <Section title={t('settings.sound')} />
-        <Row label={t('settings.music')} right={<Switch on={ambient.on} />} onPress={ambient.toggle} />
-        <Row label={t('settings.genre')} hint={t('settings.genre.hint')} right={<Value text={soundName} />} onPress={() => setSheet('sound')} />
+        ) : null}
 
         <Section title={t('settings.account')} />
-        {isAnonymous ? (
-          <Row label={t('settings.finish')} hint={t('settings.finish.hint')} onPress={() => router.push('/signup')} />
+        <Panel>
+          {isAnonymous ? <Row label={t('settings.finish')} hint={t('settings.finish.hint')} right={<Mark kind="more" />} onPress={() => router.push('/signup')} /> : null}
+          <Row label={t('settings.email')} right={<Value text={session?.user.email ?? (isAnonymous ? t('word.guest') : t('word.none'))} />} />
+          {session ? <Row label={t('settings.export')} hint={t('settings.export.hint')} right={<Mark kind="more" />} onPress={doExport} /> : null}
+          {session && !isAnonymous ? <Row label={t('word.signout')} onPress={() => signOut().then(() => router.replace('/'))} /> : null}
+          {!session ? <Row label={t('word.signup')} right={<Mark kind="more" />} onPress={() => router.push('/signup')} /> : null}
+          {isAnonymous ? (
+            <Row
+              label={t('settings.leave')}
+              hint={t('settings.leave.hint')}
+              onPress={() =>
+                Alert.alert(t('settings.leave'), t('settings.leave.body'), [
+                  { text: t('settings.leave.stay'), style: 'cancel' },
+                  { text: t('settings.leave.go'), style: 'destructive', onPress: () => signOut().then(() => router.replace('/')) },
+                ])
+              }
+            />
+          ) : null}
+        </Panel>
+
+        {/* silmek ayrı kutuda, kırmızı yazıyla: yanlışlıkla dokunulacak bir satır değil */}
+        {session ? (
+          <Panel>
+            <Row danger label={t('settings.delete')} hint={t('settings.delete.hint')} onPress={confirmDelete} />
+          </Panel>
         ) : null}
-        <Row label={t('settings.email')} right={<Value text={session?.user.email ?? (isAnonymous ? t('word.guest') : t('word.none'))} />} />
-        {session ? <Row label={t('settings.export')} hint={t('settings.export.hint')} onPress={doExport} /> : null}
-        {session && !isAnonymous ? <Row label={t('word.signout')} onPress={() => signOut().then(() => router.replace('/'))} /> : null}
-        {isAnonymous ? (
-          <Row
-            label={t('settings.leave')}
-            hint={t('settings.leave.hint')}
-            onPress={() =>
-              Alert.alert(t('settings.leave'), t('settings.leave.body'), [
-                { text: t('settings.leave.stay'), style: 'cancel' },
-                { text: t('settings.leave.go'), style: 'destructive', onPress: () => signOut().then(() => router.replace('/')) },
-              ])
-            }
-          />
-        ) : null}
-        {session ? <Row label={t('settings.delete')} hint={t('settings.delete.hint')} onPress={confirmDelete} /> : null}
 
         <Section title={t('settings.about')} />
-        <Row label={t('settings.intro')} hint={t('settings.intro.hint')} onPress={() => { Storage.removeItemSync('intro.seen'); router.push('/explore'); }} />
-        <Row label={t('settings.web')} hint={t('settings.web.hint')} onPress={() => Linking.openURL(SITE)} />
-        <Row label={t('settings.credits')} hint={t('settings.credits.hint')} onPress={() => router.push('/credits')} />
-        <Row label={t('settings.privacy.link')} hint={t('settings.privacy.hint')} onPress={() => Linking.openURL('https://kurtkurtkurt-del.github.io/afterhours/datenschutz/')} />
-        <Row label={t('settings.version')} right={<Value text={`${Constants.expoConfig?.version ?? '0.1.0'} · ${Constants.executionEnvironment === ExecutionEnvironment.StoreClient ? 'expo go' : 'build'}`} />} />
+        <Panel>
+          <Row
+            label={t('settings.intro')}
+            hint={t('settings.intro.hint')}
+            right={<Mark kind="more" />}
+            onPress={() => {
+              Storage.removeItemSync('intro.seen');
+              router.push('/explore');
+            }}
+          />
+          <Row label={t('settings.web')} hint={t('settings.web.hint')} right={<Mark kind="out" />} onPress={() => Linking.openURL(SITE)} />
+          <Row label={t('settings.credits')} hint={t('settings.credits.hint')} right={<Mark kind="more" />} onPress={() => router.push('/credits')} />
+          <Row label={t('settings.privacy.link')} hint={t('settings.privacy.hint')} right={<Mark kind="out" />} onPress={() => Linking.openURL('https://kurtkurtkurt-del.github.io/afterhours/datenschutz/')} />
+        </Panel>
+
+        <View style={styles.foot}>
+          <Text style={styles.logo}>
+            afterhours<Text style={styles.logoDot}>.</Text>
+          </Text>
+          <Text style={styles.version}>{`${up(t('settings.version'))} ${upperData(version)}`}</Text>
+        </View>
+
+        <BackButton inline />
       </ScrollView>
-      </KeyboardAvoidingView>
 
       <PickerSheet
-        open={sheet === 'city'}
-        title={t('settings.city')}
-        options={cities.map((c) => ({ id: c.id, label: c.name, extra: `${c.nights}` }))}
-        selected={city}
-        onSelect={setCity}
+        open={sheet === 'kept'}
+        title={t('settings.kept')}
+        options={[
+          { id: 'friends', label: t('settings.kept.friends') },
+          { id: 'private', label: t('settings.kept.private') },
+        ]}
+        selected={settings?.kept_visibility ?? null}
+        onSelect={(id) => patch({ kept_visibility: id as Settings['kept_visibility'] })}
         onClose={() => setSheet(null)}
       />
       <PickerSheet
@@ -252,9 +231,14 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 40, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top, left: 0, right: 0, textAlign: 'center', fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },
-  body: { paddingTop: brand.top + 40, paddingHorizontal: brand.left },
-  note: { fontFamily: fonts.regular, fontSize: 15, color: colors.paper2, opacity: 0.85, marginTop: 16 },
-  fieldLabel: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginTop: 18 },
-  fieldHint: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute, marginTop: 6 },
-  save: { marginTop: 22, gap: 8 },
+  body: { paddingTop: brand.top + 56, paddingHorizontal: brand.left },
+  pressed: { opacity: 0.6 },
+  card: { flexDirection: 'row', alignItems: 'center', gap: 14, padding: 14, borderWidth: 1, borderColor: colors.ink3 },
+  cardText: { flex: 1, gap: 3 },
+  cardName: { fontFamily: fonts.medium, fontSize: 20, letterSpacing: -0.4, color: colors.paper },
+  cardUnder: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.2, color: colors.mute },
+  foot: { alignItems: 'center', gap: 6, marginTop: 36, marginBottom: 28 },
+  logo: { fontFamily: fonts.logo, fontSize: 20, letterSpacing: -0.4, color: colors.paper },
+  logoDot: { color: colors.spot },
+  version: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta },
 });

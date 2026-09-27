@@ -17,7 +17,8 @@ export type Profile = {
   comment_count: number;
 };
 
-export function useProfile() {
+// tick: değişince profil yeniden çekilir (sayfaya dönüldüğünde)
+export function useProfile(tick = 0) {
   const { session } = useAuth();
   const uid = session?.user.id;
   const [profile, setProfile] = useState<Profile | null>(null);
@@ -32,6 +33,6 @@ export function useProfile() {
     return () => {
       cancelled = true;
     };
-  }, [uid]);
+  }, [uid, tick]);
   return session ? profile : null;
 }

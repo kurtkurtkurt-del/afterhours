@@ -1,6 +1,6 @@
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 
-export type IconName = 'flow' | 'djs' | 'yours' | 'map' | 'account' | 'settings';
+export type IconName = 'flow' | 'djs' | 'yours' | 'map' | 'account' | 'settings' | 'photo';
 type Props = { name: IconName; size?: number; color: string; strokeWidth?: number };
 
 // 24'lük ızgarada 1.5 piksel çizgi ikonlar. köşesiz, dolgusuz.
@@ -40,6 +40,13 @@ export default function Icon({ name, size = 22, color, strokeWidth = 1.5 }: Prop
           <Circle cx={12} cy={12} r={3.2} {...p} />
           <Circle cx={12} cy={12} r={7.5} {...p} />
           <Path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1" {...p} />
+        </>
+      )}
+      {name === 'photo' && (
+        <>
+          <Rect x={3.5} y={3.5} width={17} height={17} rx={2} {...p} />
+          <Circle cx={9} cy={9} r={1.6} {...p} />
+          <Path d="M20.5 15l-4.5-4.5L6 20.5" {...p} />
         </>
       )}
       {name === 'account' && (
