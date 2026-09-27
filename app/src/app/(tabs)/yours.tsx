@@ -126,7 +126,7 @@ export default function YoursScreen() {
               {col.map((f) => (
                 <Pressable key={f.id} onPress={() => router.push(`/friend/${f.id}`)} style={({ pressed }) => [styles.person, pressed && styles.pressed]}>
                   <View style={[styles.initial, f.live && styles.initialLive, f.pending && styles.initialPending]}>
-                    <Text style={[styles.initialText, f.live && styles.initialTextLive]}>{f.name.charAt(0)}</Text>
+                    {f.photo ? <Image source={{ uri: f.photo }} style={styles.face} resizeMode="cover" /> : <Text style={[styles.initialText, f.live && styles.initialTextLive]}>{f.name.charAt(0)}</Text>}
                   </View>
                   <Text style={[styles.personLabel, f.live && styles.liveText]} numberOfLines={1}>
                     {f.pending ? (f.pending === 'incoming' ? t('yours.wantsIn') : t('yours.asked')) : f.live ? f.live : f.kept ? t('yours.keptN', { n: f.kept }) : f.name}
@@ -251,6 +251,8 @@ const styles = StyleSheet.create({
   person: { width: 50, alignItems: 'center', gap: 5 },
   pressed: { opacity: 0.6 },
   initial: { width: 46, height: 46, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
+  // fotoğraf çerçevenin içini doldurur; canlıysa kırmızı çerçeve kalır
+  face: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 },
   initialLive: { backgroundColor: colors.spot, borderColor: colors.spot },
   initialPending: { borderStyle: 'dashed', borderColor: colors.mute },
   initialAdd: { borderStyle: 'dashed', borderColor: colors.mute },

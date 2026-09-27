@@ -31,6 +31,7 @@ const structure = [
   ["21_sound.sql", "THE SOUND STORE"],
   ["22_hardening.sql", "HARDENING — WHAT THE REVIEW CLOSED"],
   ["23_checkin_open.sql", "CHECK-IN, OPEN — NO DOOR TEST, NO WINDOW"],
+  ["24_photos.sql", "THE PHOTOGRAPH — YOURS TO SET, YOUR FRIENDS TO SEE"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

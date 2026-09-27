@@ -36,7 +36,7 @@ const fine = (code: string) => code === 'ok' || code === 'yours';
 // profili düzenle: ayarlardaki "düzenle ›" buraya açılır. fotoğraf, isim,
 // kullanıcı adı, tek satır, şehir; hepsi tek "kaydet" ile profile_setup()'a gider.
 export default function ProfileScreen() {
-  const { session, ready } = useAuth();
+  const { session, ready, isAnonymous } = useAuth();
   const profile = useProfile();
   const { cities } = useCities();
   const insets = useSafeAreaInsets();
@@ -117,7 +117,7 @@ export default function ProfileScreen() {
                   <Text style={styles.quiet}>{t('account.photo.remove')}</Text>
                 </Pressable>
               ) : null}
-              <Text style={styles.hint}>{t('account.photo.note')}</Text>
+              <Text style={styles.hint}>{isAnonymous ? t('account.photo.note.guest') : t('account.photo.note')}</Text>
             </View>
           </View>
 

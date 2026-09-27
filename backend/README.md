@@ -30,6 +30,8 @@ sql/19_checkins.sql      check-in, the afterhours card (my_cards), the room (roo
 sql/20_djs.sql           djs, dj_sets, dj_follows + eight seed djs
 sql/21_sound.sql         the sound bucket: background music streams from here
 sql/22_hardening.sql     what the review closed: column grants, guests, door test, follow counts
+sql/23_checkin_open.sql  check-in without the door test and the time window
+sql/24_photos.sql        the photograph on a profile: profile_photos + photo_set() + the photos bucket; yours and your confirmed friends only
 sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities
 
 tools/build-seed.mjs     builds 03/04/05 from the front-end data

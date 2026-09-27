@@ -4,11 +4,12 @@ import { useAuth } from '@/auth/AuthContext';
 import { friendsKept, friendsList, kept, type FriendKept, type FriendRow } from '@/data/friends';
 import type { Night } from '@/data/deck';
 import { friendsLive, type LiveFriend } from '@/data/checkin';
+import { friendPhotos } from '@/data/photo';
 import { dayLabel } from '@/data/when';
 
 // yours ekranının verisi: arkadaşlar, canlı olanlar, keep'ledikleri geceler, eşleşmeler.
 export type YoursNight = { id: string; slug: string; title: string; venue: string; when: string; startsAt?: string | null; image: string | null; friends: string[] };
-export type YoursFriend = { id: string; name: string; handle: string | null; live?: string; kept: number; pending?: 'incoming' | 'outgoing' };
+export type YoursFriend = { id: string; name: string; handle: string | null; photo?: string; live?: string; kept: number; pending?: 'incoming' | 'outgoing' };
 export type YoursMatch = { friend: string; night: string };
 
 const day = (iso: string | null) => dayLabel(iso);
@@ -26,11 +27,12 @@ export function useYours() {
     if (!uid) return;
     let cancelled = false;
     (async () => {
-      const [list, fk, live, mine] = await Promise.all([
+      const [list, fk, live, mine, photos] = await Promise.all([
         friendsList().catch(() => [] as FriendRow[]),
         friendsKept().catch(() => [] as FriendKept[]),
         friendsLive().catch(() => [] as LiveFriend[]),
         kept().catch(() => []),
+        friendPhotos().catch(() => new Map<string, string>()),
       ]);
       if (cancelled) return;
       const liveBy = new Map(live.map((l) => [l.friend_id, l.venue_name ?? l.title.toLowerCase()]));
@@ -40,6 +42,7 @@ export function useYours() {
         id: f.other_id,
         name: nameOf(f),
         handle: f.handle,
+        photo: photos.get(f.other_id),
         live: liveBy.get(f.other_id),
         kept: keptCount.get(nameOf(f)) ?? 0,
         pending: f.status === 'pending' ? f.direction : undefined,

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -28,6 +28,7 @@ export default function FriendScreen() {
   const real = useYours();
   const rf = real.friends.find((x) => x.id === id);
   const f = rf ? { id: rf.id, name: rf.name, handle: rf.handle ?? '', live: rf.live, kept: rf.kept, seen: '' } : friends.find((x) => x.id === id);
+  const face = rf?.photo;
 
   if (id === 'add') {
     return (
@@ -83,8 +84,8 @@ export default function FriendScreen() {
       </View>
       {/* dj ve gece sayfaları gibi: en üstteyken aşağı çekince kapanır */}
       <PullDownScroll contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 40 }]} showsVerticalScrollIndicator={false}>
-        <View style={[styles.initial, f.live && styles.initialLive]}>
-          <Text style={[styles.initialText, f.live && styles.liveText]}>{f.name.charAt(0)}</Text>
+        <View style={[styles.initial, face && styles.initialFace, f.live && styles.initialLive]}>
+          {face ? <Image source={{ uri: face }} style={styles.face} resizeMode="cover" /> : <Text style={[styles.initialText, f.live && styles.liveText]}>{f.name.charAt(0)}</Text>}
         </View>
         <Text style={styles.big}>{f.name}</Text>
         <Text style={styles.mono}>@{upperData(f.handle)}{f.live ? ` · ${up(t('friend.at', { venue: upperData(f.live) }))}` : f.seen ? ` · ${up(t('friend.seen', { when: upperData(f.seen) }))}` : ''}</Text>
@@ -116,6 +117,8 @@ const styles = StyleSheet.create({
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, backgroundColor: colors.ink, zIndex: 2 },
   body: { paddingTop: brand.top + 48, paddingHorizontal: brand.left },
   initial: { width: 64, height: 64, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center', marginBottom: 14 },
+  initialFace: { width: 96, height: 96 },
+  face: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 },
   initialLive: { borderColor: colors.spot },
   initialText: { fontFamily: fonts.medium, fontSize: 30, color: colors.paper },
   liveText: { color: colors.spot },

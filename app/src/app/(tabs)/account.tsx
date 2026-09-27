@@ -32,7 +32,7 @@ function distinct(list: (string | null | undefined)[]) {
 // altta kâğıt zeminde yana kayan kart destesi. sayılar iki ince satıra indi;
 // çıkış ve geri kalan her şey ayarlarda.
 export default function AccountScreen() {
-  const { session } = useAuth();
+  const { session, isAnonymous } = useAuth();
   const { t, tn, up } = useLang();
   const insets = useSafeAreaInsets();
   const { width, height } = useWindowDimensions();
@@ -69,7 +69,7 @@ export default function AccountScreen() {
 
   // fotoğraf bu telefonda durur (data/photo.ts)
   const change = () =>
-    Alert.alert(t('account.photo'), t('account.photo.note'), [
+    Alert.alert(t('account.photo'), !session || isAnonymous ? t('account.photo.note.guest') : t('account.photo.note'), [
       { text: t('word.cancel'), style: 'cancel' },
       { text: t('account.photo.remove'), style: 'destructive', onPress: remove },
       { text: t('account.photo.change'), onPress: choose },

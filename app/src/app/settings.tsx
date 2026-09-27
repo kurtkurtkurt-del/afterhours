@@ -13,7 +13,7 @@ import SoundCorner from '@/components/SoundCorner';
 import { Mark, Panel, Row, Section, Switch, Value } from '@/components/Row';
 import { useAuth } from '@/auth/AuthContext';
 import { useAmbient } from '@/audio/AmbientContext';
-import { usePhoto } from '@/data/photo';
+import { forgetPhoto, removePhoto, usePhoto } from '@/data/photo';
 import { useProfile } from '@/data/profile';
 import { deleteAccount, exportMe, fetchSettings, saveSettings, type Settings } from '@/data/settings';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
@@ -61,7 +61,9 @@ export default function SettingsScreen() {
         text: t('settings.delete.go'),
         style: 'destructive',
         onPress: () =>
-          deleteAccount()
+          // dosya kovadan önce gider: hesap silinince ona ulaşacak kimse kalmaz
+          removePhoto()
+            .then(() => deleteAccount())
             .then(() => signOut())
             .then(() => router.replace('/'))
             .catch((e) => Alert.alert(t('settings.delete.failed'), String(e.message ?? e).toLowerCase())),
@@ -147,7 +149,7 @@ export default function SettingsScreen() {
           {isAnonymous ? <Row label={t('settings.finish')} hint={t('settings.finish.hint')} right={<Mark kind="more" />} onPress={() => router.push('/signup')} /> : null}
           <Row label={t('settings.email')} right={<Value text={session?.user.email ?? (isAnonymous ? t('word.guest') : t('word.none'))} />} />
           {session ? <Row label={t('settings.export')} hint={t('settings.export.hint')} right={<Mark kind="more" />} onPress={doExport} /> : null}
-          {session && !isAnonymous ? <Row label={t('word.signout')} onPress={() => signOut().then(() => router.replace('/'))} /> : null}
+          {session && !isAnonymous ? <Row label={t('word.signout')} onPress={() => signOut().then(forgetPhoto).then(() => router.replace('/'))} /> : null}
           {!session ? <Row label={t('word.signup')} right={<Mark kind="more" />} onPress={() => router.push('/signup')} /> : null}
           {isAnonymous ? (
             <Row
@@ -156,7 +158,7 @@ export default function SettingsScreen() {
               onPress={() =>
                 Alert.alert(t('settings.leave'), t('settings.leave.body'), [
                   { text: t('settings.leave.stay'), style: 'cancel' },
-                  { text: t('settings.leave.go'), style: 'destructive', onPress: () => signOut().then(() => router.replace('/')) },
+                  { text: t('settings.leave.go'), style: 'destructive', onPress: () => signOut().then(forgetPhoto).then(() => router.replace('/')) },
                 ])
               }
             />
