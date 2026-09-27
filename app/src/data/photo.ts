@@ -43,10 +43,12 @@ export const photoUrl = (path: string) => supabase.storage.from(BUCKET).getPubli
 // ekranda görünen adres: telefondaki dosya, o yoksa kovadaki
 const shown = () => get(LOCAL) ?? (get(PATH) ? photoUrl(get(PATH) as string) : null);
 
-let current: string | null = shown();
+// working: seçiliyor ya da küçültülüyor · sending: hesaba yükleniyor (ekran beklemez)
+export type PhotoState = { photo: string | null; busy: 'idle' | 'working' | 'sending' };
+let current: PhotoState = { photo: shown(), busy: 'idle' };
 const listeners = new Set<() => void>();
-const tell = () => {
-  current = shown();
+const tell = (busy: PhotoState['busy'] = current.busy) => {
+  current = { photo: shown(), busy };
   listeners.forEach((fn) => fn());
 };
 
@@ -87,12 +89,26 @@ async function upload(uid: string, uri: string) {
   if (typeof was === 'string' && was && was !== path) await supabase.storage.from(BUCKET).remove([was]).catch(() => {});
 }
 
+let startedAt = 0;
+
+// ağ asılı kalırsa "gönderiliyor" yazısı da asılı kalmasın
+const within = <T,>(ms: number, work: Promise<T>) =>
+  Promise.race([work, new Promise<never>((_, no) => setTimeout(() => no(new Error('timeout')), ms))]);
+
 export async function choosePhoto() {
+  // iki kez dokunmak iki seçici açmasın. ama seçici hiç dönmezse (android
+  // uygulamayı arkada öldürüp yeniden açtıysa) düğme sonsuza dek kilitli kalmasın.
+  if (current.busy === 'working' && Date.now() - startedAt < 45_000) return;
+  startedAt = Date.now();
   let kept: File;
+  tell('working');
   try {
     const picked = await launchImageLibraryAsync({ mediaTypes: ['images'], quality: 1 });
     const asset = picked.canceled ? null : picked.assets[0];
-    if (!asset?.uri) return;
+    if (!asset?.uri) {
+      tell('idle');
+      return;
+    }
     // telefonun çektiği 12 megapiksel kimseye lazım değil: 1080 genişlik, jpeg
     const work = ImageManipulator.manipulate(asset.uri);
     if ((asset.width ?? 0) > WIDE) work.resize({ width: WIDE });
@@ -101,29 +117,41 @@ export async function choosePhoto() {
     kept = new File(Paths.document, `account-${Date.now()}.jpg`);
     new File(made.uri).copy(kept);
   } catch {
+    tell('idle');
     Alert.alert(t('account.photo'), t('account.photo.failed'));
     return;
   }
+  // kovadaki eski dosya: yenisi yüklenince photo_set eski yolu geri verir ve silinir
   setLocal(kept.uri);
   put(PATH, null);
-  tell();
+  tell('idle');
 
-  const uid = await account();
+  const uid = await account().catch(() => null);
   put(OWNER, uid);
   if (!uid) return; // misafir: telefonda kalır
+  tell('sending');
   try {
-    await upload(uid, kept.uri);
+    await within(40_000, upload(uid, kept.uri));
   } catch {
     Alert.alert(t('account.photo'), t('account.photo.offline'));
   }
+  tell('idle');
+}
+
+// resim çizilemedi. HESAPTAKİ fotoğrafa asla dokunmaz: telefondaki kopya
+// bozuksa onu bırakır ve hesaptakine döner; o da gelmiyorsa (ağ yok) bekler.
+export function photoBroken(uri: string) {
+  if (uri !== get(LOCAL)) return;
+  setLocal(null);
+  tell();
 }
 
 export async function removePhoto() {
   const path = get(PATH);
   setLocal(null);
   put(PATH, null);
-  tell();
-  const uid = await account();
+  tell('idle');
+  const uid = await account().catch(() => null);
   if (!uid) return;
   try {
     const { data: was } = await supabase.rpc('photo_set', { p_path: null });
@@ -154,6 +182,7 @@ export async function syncPhoto() {
     const { data, error } = await supabase.from('profile_photos').select('path').eq('user_id', uid).maybeSingle();
     if (error) return;
     const remote = (data?.path as string | undefined) ?? null;
+    if (current.busy !== 'idle') return; // seçim sürerken araya girme
     if (remote) {
       if (remote !== get(PATH)) {
         setLocal(null); // başka telefonda değişmiş
@@ -195,7 +224,7 @@ export function usePhoto() {
   useEffect(() => {
     syncPhoto().catch(() => {});
   }, [uid]);
-  return { photo, choose: choosePhoto, remove: removePhoto };
+  return { photo: photo.photo, busy: photo.busy, choose: choosePhoto, remove: removePhoto, broken: photoBroken };
 }
 
 // arkadaşların fotoğrafları: kimlik → adres. kural veritabanında; tablo zaten

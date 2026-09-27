@@ -40,7 +40,7 @@ export default function ProfileScreen() {
   const profile = useProfile();
   const { cities } = useCities();
   const insets = useSafeAreaInsets();
-  const { photo, choose, remove } = usePhoto();
+  const { photo, busy, choose, remove, broken } = usePhoto();
   const { t, up } = useLang();
   const word = (code: string) => {
     const key = handleWords[code];
@@ -106,11 +106,11 @@ export default function ProfileScreen() {
         <ScrollView contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 32 }]} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
           <View style={styles.photoRow}>
             <Pressable onPress={choose} accessibilityRole="imagebutton" accessibilityLabel={t('account.photo')} style={({ pressed }) => pressed && styles.pressed}>
-              <PhotoBox uri={photo} size={84} onError={remove} />
+              <PhotoBox uri={photo} size={84} onError={() => photo && broken(photo)} />
             </Pressable>
             <View style={styles.photoLinks}>
               <Pressable onPress={choose} hitSlop={10} style={({ pressed }) => pressed && styles.pressed}>
-                <Text style={styles.link}>{photo ? t('settings.photo.change') : t('settings.photo.choose')}</Text>
+                <Text style={styles.link}>{busy === 'working' ? t('word.moment') : busy === 'sending' ? t('account.photo.sending') : photo ? t('settings.photo.change') : t('settings.photo.choose')}</Text>
               </Pressable>
               {photo ? (
                 <Pressable onPress={remove} hitSlop={10} style={({ pressed }) => pressed && styles.pressed}>

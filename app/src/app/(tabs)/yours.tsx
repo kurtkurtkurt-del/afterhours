@@ -3,11 +3,13 @@ import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-nati
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Icon from '@/components/Icon';
 import PickerSheet from '@/components/PickerSheet';
 import SoundCorner from '@/components/SoundCorner';
 import DeckViewer from '@/components/DeckViewer';
 import { toDeckCard, type DeckCard } from '@/components/CardFace';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
+import { myCards } from '@/data/checkin';
 import { posterUrl, swipe } from '@/data/deck';
 import { supabase } from '@/lib/supabase';
 import { friendById as sampleFriendById, friends as sampleFriends, matches as sampleMatches, nights as sampleNights, sampleText } from '@/content/friends';
@@ -28,6 +30,19 @@ export default function YoursScreen() {
   const { session } = useAuth();
   const real = useYours();
   const { t, tn, tx, up } = useLang();
+  // açık bir oda var mı: sohbet simgesindeki nokta için
+  const [roomOpen, setRoomOpen] = useState(false);
+  const uid = session?.user.id;
+  useEffect(() => {
+    if (!uid) return;
+    let live = true;
+    myCards()
+      .then((cards) => live && setRoomOpen(cards.some((c) => !c.frozen)))
+      .catch(() => {});
+    return () => {
+      live = false;
+    };
+  }, [uid, real.ready]);
   // arkadaş yoksa örnek veri, üstünde "sample" notu; olunca gerçek
   const sample = real.ready && real.friends.length === 0;
   const friends: YoursFriend[] = sample
@@ -116,6 +131,11 @@ export default function YoursScreen() {
       <StatusBar style="light" />
       <View style={styles.band}>
         <Text style={styles.title}>{t('yours.title')}</Text>
+        {/* afterhours odaları; biri açıksa simgenin köşesinde kırmızı nokta */}
+        <Pressable onPress={() => router.push('/rooms')} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('rooms.a11y')} style={({ pressed }) => [styles.chat, pressed && styles.pressed]}>
+          <Icon name="chat" size={21} color={colors.paper} />
+          {roomOpen ? <View style={styles.chatDot} /> : null}
+        </Pressable>
         <SoundCorner />
       </View>
       <ScrollView contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom + 60 }]} showsVerticalScrollIndicator={false}>
@@ -245,6 +265,8 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 44, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
+  chat: { position: 'absolute', top: brand.top - 3, right: brand.left + 84 },
+  chatDot: { position: 'absolute', top: -2, right: -3, width: 7, height: 7, borderRadius: 4, backgroundColor: colors.spot },
   body: { paddingTop: brand.top + 56 },
   people: { paddingHorizontal: brand.left, gap: 12 },
   col: { gap: 14 },

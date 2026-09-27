@@ -74,6 +74,26 @@ export const pages = {
   'comments.month.10': { en: 'nov', de: 'nov', tr: 'kas' },
   'comments.month.11': { en: 'dec', de: 'dez', tr: 'ara' },
 
+  // odalar listesi (yours'taki sohbet simgesi)
+  'rooms.title': { en: 'your rooms.', de: 'deine räume.', tr: 'odaların.' },
+  'rooms.a11y': { en: 'your afterhours rooms', de: 'deine afterhours-räume', tr: 'afterhours odaların' },
+  'rooms.about': {
+    en: 'one room for every night you checked in to. open for 48 hours, then read-only.',
+    de: 'ein raum für jede nacht, in die du eingecheckt hast. 48 stunden offen, dann nur lesen.',
+    tr: "check-in yaptığın her gece için bir oda. 48 saat açık, sonra salt okunur.",
+  },
+  'rooms.open': { en: 'open', de: 'offen', tr: 'açık' },
+  'rooms.frozen': { en: 'frozen', de: 'eingefroren', tr: 'donmuş' },
+  'rooms.said.one': { en: '{n} line', de: '{n} zeile', tr: '{n} satır' },
+  'rooms.said.other': { en: '{n} lines', de: '{n} zeilen', tr: '{n} satır' },
+  'rooms.empty': { en: 'no rooms yet.', de: 'noch keine räume.', tr: 'henüz oda yok.' },
+  'rooms.empty.note': {
+    en: 'check in to a night and its room opens here.',
+    de: 'check in eine nacht ein, und ihr raum öffnet sich hier.',
+    tr: 'bir geceye check-in yap, odası burada açılır.',
+  },
+  'rooms.loading': { en: 'opening the rooms…', de: 'räume öffnen…', tr: 'odalar açılıyor…' },
+
   // the moment.
   'room.title.1': { en: 'the', de: 'der', tr: 'o' },
   'room.title.2': { en: 'moment.', de: 'moment.', tr: 'an.' },

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Alert, Image, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -7,6 +7,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Storage from 'expo-sqlite/kv-store';
 import AfterhoursCard from '@/components/AfterhoursCard';
 import Icon from '@/components/Icon';
+import PickerSheet from '@/components/PickerSheet';
 import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
@@ -39,7 +40,8 @@ export default function AccountScreen() {
   const [open, setOpen] = useState<number | null>(null);
   const [side, setSide] = useState<'front' | 'back'>('front');
   const [cards, setCards] = useState<CardRow[] | null>(null);
-  const { photo, choose, remove } = usePhoto();
+  const { photo, busy, choose, remove, broken } = usePhoto();
+  const [sheet, setSheet] = useState(false);
   const tick = useRefreshOnFocus();
   // ayarlardan dönünce yeni isim ve şehir görünsün
   const profile = useProfile(tick);
@@ -67,22 +69,19 @@ export default function AccountScreen() {
   const cardW = Math.round(width * CARD);
   const cardH = cardW * 1.5;
 
-  // fotoğraf bu telefonda durur (data/photo.ts)
-  const change = () =>
-    Alert.alert(t('account.photo'), !session || isAnonymous ? t('account.photo.note.guest') : t('account.photo.note'), [
-      { text: t('word.cancel'), style: 'cancel' },
-      { text: t('account.photo.remove'), style: 'destructive', onPress: remove },
-      { text: t('account.photo.change'), onPress: choose },
-    ]);
+  // afişe dokunmak: fotoğraf yoksa doğrudan seçici, varsa iki seçenekli liste.
+  // liste kapanırken seçiciyi açmak android'de ekranı kilitliyordu; önce kapansın.
+  const tap = () => (photo ? setSheet(true) : choose());
+  const picked = (id: string) => setTimeout(() => (id === 'remove' ? remove() : choose()), 320);
 
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
 
       {/* afiş: fotoğraf, altında koyulaşan zemin, sol altta isim */}
-      <Pressable style={styles.poster} onPress={photo ? undefined : choose} onLongPress={photo ? change : undefined} delayLongPress={350} accessibilityRole="imagebutton" accessibilityLabel={t('account.photo.a11y')}>
+      <Pressable style={styles.poster} onPress={tap} accessibilityRole="imagebutton" accessibilityLabel={t('account.photo.a11y')}>
         {photo ? (
-          <Image source={{ uri: photo }} style={StyleSheet.absoluteFill} resizeMode="cover" onError={remove} />
+          <Image key={photo} source={{ uri: photo }} style={StyleSheet.absoluteFill} resizeMode="cover" onError={() => broken(photo)} />
         ) : (
           <View style={styles.empty}>
             <Icon name="photo" size={30} color={colors.mute} />
@@ -92,6 +91,13 @@ export default function AccountScreen() {
         )}
         <LinearGradient colors={['rgba(14,13,12,0.55)', 'rgba(14,13,12,0)']} style={styles.shadeTop} pointerEvents="none" />
         <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.92)']} style={styles.shadeBottom} pointerEvents="none" />
+        {/* görünür düğme: fotoğrafın değiştirilebildiği belli olsun */}
+        {photo || busy !== 'idle' ? (
+          <View style={styles.edit} pointerEvents="none">
+            <Icon name="photo" size={15} color={colors.paper} />
+            <Text style={styles.editText}>{busy === 'working' ? t('word.moment') : busy === 'sending' ? t('account.photo.sending') : t('account.photo.edit')}</Text>
+          </View>
+        ) : null}
         <View style={styles.who} pointerEvents="none">
           <Text style={styles.name} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>
             {name}
@@ -150,6 +156,19 @@ export default function AccountScreen() {
         </View>
       </View>
 
+      <PickerSheet
+        open={sheet}
+        title={t('account.photo')}
+        options={[
+          { id: 'change', label: t('account.photo.change') },
+          { id: 'remove', label: t('account.photo.remove') },
+        ]}
+        selected={null}
+        onSelect={picked}
+        onClose={() => setSheet(false)}
+        note={!session || isAnonymous ? t('account.photo.note.guest') : t('account.photo.note')}
+      />
+
       {/* kart büyütme: dokununca ön/arka döner */}
       <Modal visible={open !== null} transparent animationType="fade" onRequestClose={() => setOpen(null)}>
         <Pressable style={styles.dim} onPress={() => setOpen(null)}>
@@ -189,7 +208,9 @@ const styles = StyleSheet.create({
   emptyHint: { fontFamily: fonts.regular, fontSize: 13, color: colors.meta, textDecorationLine: 'underline' },
   shadeTop: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 60 },
   shadeBottom: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 190 },
-  who: { position: 'absolute', left: brand.left, right: brand.left, bottom: 22 },
+  who: { position: 'absolute', left: brand.left, right: brand.left + 96, bottom: 22 },
+  edit: { position: 'absolute', right: brand.left, bottom: 24, flexDirection: 'row', alignItems: 'center', gap: 6 },
+  editText: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper, textDecorationLine: 'underline' },
   name: { fontFamily: fonts.semibold, fontSize: 54, lineHeight: 56, letterSpacing: -2, color: colors.paper },
   meta: { fontFamily: fonts.regular, fontSize: 12, letterSpacing: 1.4, color: colors.paper, marginTop: 8 },
   title: { position: 'absolute', top: brand.top, left: brand.left, fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },

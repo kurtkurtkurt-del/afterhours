@@ -32,7 +32,7 @@ export default function SettingsScreen() {
   const profile = useProfile(tick);
   const ambient = useAmbient();
   const insets = useSafeAreaInsets();
-  const { photo, remove } = usePhoto();
+  const { photo, broken } = usePhoto();
   const { t, up, lang, setLang } = useLang();
   const [settings, setSettings] = useState<Settings | null>(null);
   const [sheet, setSheet] = useState<'sound' | 'locale' | 'kept' | null>(null);
@@ -99,7 +99,7 @@ export default function SettingsScreen() {
           accessibilityRole="button"
           style={({ pressed }) => [styles.card, pressed && styles.pressed]}
         >
-          <PhotoBox uri={photo} size={52} onError={remove} />
+          <PhotoBox uri={photo} size={52} onError={() => photo && broken(photo)} />
           <View style={styles.cardText}>
             <Text style={styles.cardName} numberOfLines={1}>
               {session ? name : t('account.you')}
