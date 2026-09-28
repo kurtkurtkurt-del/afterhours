@@ -5,6 +5,7 @@ import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
 import { File, Paths } from 'expo-file-system';
 import Storage from 'expo-sqlite/kv-store';
 import { supabase } from '@/lib/supabase';
+import { must, remember } from '@/lib/offline';
 import { useAuth } from '@/auth/AuthContext';
 import { t } from '@/i18n';
 
@@ -230,7 +231,6 @@ export function usePhoto() {
 // arkadaşların fotoğrafları: kimlik → adres. kural veritabanında; tablo zaten
 // yalnız kendi satırını ve onaylı arkadaşlarınkini verir.
 export async function friendPhotos(): Promise<Map<string, string>> {
-  const { data, error } = await supabase.from('profile_photos').select('user_id,path');
-  if (error) return new Map();
-  return new Map((data ?? []).map((r) => [r.user_id as string, photoUrl(r.path as string)]));
+  const rows = await remember('photos', '', async () => ((await must(supabase.from('profile_photos').select('user_id,path'))) ?? []) as { user_id: string; path: string }[]).catch(() => []);
+  return new Map(rows.map((r) => [r.user_id, photoUrl(r.path)]));
 }

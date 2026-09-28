@@ -12,6 +12,9 @@ import { friendsKept, type FriendKept } from '@/data/friends';
 import { friendsLive, type LiveFriend } from '@/data/checkin';
 import { useAuth } from '@/auth/AuthContext';
 import { useCities } from '@/data/cities';
+import { chooseCity, useHere } from '@/data/here';
+import { useTabReset } from '@/hooks/useTabReset';
+import { OfflineError, onBackOnline } from '@/lib/offline';
 import { useEventTypes } from '@/data/types';
 import { fetchDeck, resetSwipes, swipe, unswipe, type Night } from '@/data/deck';
 import { filterWhen, whens, type When } from '@/data/when';
@@ -26,7 +29,8 @@ export default function FlowScreen() {
   const types = useEventTypes();
   const { t, tx, up } = useLang();
 
-  const [city, setCity] = useState<string | null>(() => Storage.getItemSync('city'));
+  const here = useHere();
+  const city = here.city;
   const [type, setType] = useState<string | null>(() => Storage.getItemSync('type'));
   const [when, setWhen] = useState<When | null>(() => {
     const v = Storage.getItemSync('when');
@@ -38,6 +42,15 @@ export default function FlowScreen() {
   const insets = useSafeAreaInsets();
   const [swiped, setSwiped] = useState(0);
   const [reloads, setReloads] = useState(0);
+  // internet gelince: deste boş kaldıysa ya da hiç gelmediyse yeniden dene (elindeki desteyi bozmaz)
+  const failed = useRef(false);
+  useEffect(() => onBackOnline(() => failed.current && setReloads((n) => n + 1)), []);
+  // yeniden basınca: seçici kapanır, deste baştan dağıtılır
+  useTabReset('flow', () => {
+    setSheet(null);
+    setSwiped(0);
+    setReloads((n) => n + 1);
+  });
 
   // sonuç, hangi seçim için geldiğiyle birlikte saklanır; seçim değişince eskisi
   // kendiliğinden "yükleniyor" sayılır, ayrıca sıfırlamaya gerek kalmaz
@@ -50,8 +63,14 @@ export default function FlowScreen() {
     let cancelled = false;
     // zaman filtresi sunucuda yok; daha geniş çekilip burada elenir
     fetchDeck(city, type, 120)
-      .then((rows) => !cancelled && setResult({ key, rows, error: null }))
-      .catch((e) => !cancelled && setResult({ key, rows: null, error: String(e.message ?? e).toLowerCase() }));
+      .then((rows) => {
+        failed.current = rows.length === 0;
+        if (!cancelled) setResult({ key, rows, error: null });
+      })
+      .catch((e) => {
+        failed.current = true;
+        if (!cancelled) setResult({ key, rows: null, error: e instanceof OfflineError ? 'offline' : String(e.message ?? e).toLowerCase() });
+      });
     return () => {
       cancelled = true;
     };
@@ -93,7 +112,7 @@ export default function FlowScreen() {
   const onUndo = useCallback(
     (night: Night) => {
       setSwiped((n) => Math.max(0, n - 1));
-      if (session) unswipe(night.id).catch(() => {});
+      if (session) unswipe(night.id, night.slug).catch(() => {});
     },
     [session],
   );
@@ -105,14 +124,7 @@ export default function FlowScreen() {
   const pickCity = (id: string) => {
     const v = id === '*' ? null : id;
     setSwiped(0);
-    setCity(v);
-    if (v) {
-      Storage.setItemSync('city', v);
-      Storage.setItemSync('city.name', cities.find((c) => c.id === v)?.name ?? v);
-    } else {
-      Storage.removeItemSync('city');
-      Storage.removeItemSync('city.name');
-    }
+    chooseCity(v, v ? (cities.find((c) => c.id === v)?.name ?? v) : null);
   };
   const pickType = (id: string) => {
     const v = id === '*' ? null : id;
@@ -130,7 +142,7 @@ export default function FlowScreen() {
     else Storage.removeItemSync('when');
   };
 
-  const cityLabel = city ? (cities.find((c) => c.id === city)?.name ?? city) : t('filter.everywhere');
+  const cityLabel = city ? (cities.find((c) => c.id === city)?.name ?? here.name ?? city) : t('filter.everywhere');
   const typeLabel = type ? tx('type.' + type, types.find((ty) => ty.id === type)?.label ?? type) : t('type.all');
   const whenLabel = when ? tx('when.' + when, when) : t('when.any');
 
@@ -159,7 +171,7 @@ export default function FlowScreen() {
 
       <View style={styles.stage}>
         {error ? (
-          <Text style={styles.note}>{upperData(error)}</Text>
+          <Text style={styles.note}>{error === 'offline' ? up(t('offline.empty')) : upperData(error)}</Text>
         ) : nights ? (
           <Deck ref={deck} key={`${city}/${type}/${when}/${reloads}`} nights={nights} friendsOf={friendsOf} bottom={tabSpace + 4} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} />
         ) : (

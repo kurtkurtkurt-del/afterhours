@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabase';
+import { isOnline, must, OfflineError, remember } from '@/lib/offline';
 import type { NightCardData } from '@/content/cardsgen';
 import { t } from '@/i18n';
 import type { Key } from '@/i18n/dict';
@@ -13,6 +14,7 @@ export const reasons: Record<string, Key> = {
   far: 'checkin.reason.far',
   notthere: 'checkin.reason.notthere',
   frozen: 'checkin.reason.frozen',
+  offline: 'offline.write',
 };
 // hatanın kodu; bilinmeyen hata olduğu gibi (küçük harfle) döner. ekranlar bunu saklar.
 export const reasonCode = (e: unknown) => {
@@ -26,6 +28,7 @@ export const reason = (e: unknown) => {
 };
 
 export async function checkIn(slug: string, lat?: number, lng?: number): Promise<number> {
+  if (!isOnline()) throw new OfflineError();
   const { data, error } = await supabase.rpc('check_in', { p_slug: slug, p_lat: lat ?? null, p_lng: lng ?? null });
   if (error) throw error;
   return Number(data);
@@ -41,35 +44,29 @@ export type CardRow = {
 };
 
 export async function myCards(): Promise<CardRow[]> {
-  const { data, error } = await supabase.rpc('my_cards');
-  if (error) throw error;
-  return (data ?? []) as CardRow[];
+  return remember('cards', '', async () => ((await must(supabase.rpc('my_cards'))) ?? []) as CardRow[]);
 }
 
 export type RoomInfo = { event_id: string; checked_in: boolean; freeze_at: string; frozen: boolean; who_count: number; initials: string[] };
 export async function roomInfo(slug: string): Promise<RoomInfo | null> {
-  const { data, error } = await supabase.rpc('room_info', { p_slug: slug });
-  if (error) throw error;
+  const data = await remember('roomInfo', slug, () => must(supabase.rpc('room_info', { p_slug: slug })), 30);
   const row = Array.isArray(data) ? data[0] : data;
   return (row as RoomInfo) ?? null;
 }
 
 export type RoomPost = { id: string; body: string; who: string; mine: boolean; created_at: string };
 export async function roomList(slug: string): Promise<RoomPost[]> {
-  const { data, error } = await supabase.rpc('room_list', { p_slug: slug });
-  if (error) throw error;
-  return (data ?? []) as RoomPost[];
+  return remember('roomList', slug, async () => ((await must(supabase.rpc('room_list', { p_slug: slug }))) ?? []) as RoomPost[], 30);
 }
 export async function roomPost(slug: string, body: string) {
+  if (!isOnline()) throw new OfflineError();
   const { error } = await supabase.rpc('room_post', { p_slug: slug, p_body: body });
   if (error) throw error;
 }
 
 export type LiveFriend = { friend_id: string; handle: string | null; display_name: string | null; slug: string; title: string; venue_name: string | null; checked_at: string };
 export async function friendsLive(): Promise<LiveFriend[]> {
-  const { data, error } = await supabase.rpc('friends_live');
-  if (error) throw error;
-  return (data ?? []) as LiveFriend[];
+  return remember('live', '', async () => ((await must(supabase.rpc('friends_live'))) ?? []) as LiveFriend[]);
 }
 
 // üreteç için: metal ve motif gecenin kimliğinden seçilir, kart hep aynı çıkar

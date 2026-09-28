@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Image, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
@@ -16,6 +16,7 @@ import { useProfile } from '@/data/profile';
 import { collection as samples } from '@/content/collection';
 import { myCards, toCardData, type CardRow } from '@/data/checkin';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
+import { useTabReset } from '@/hooks/useTabReset';
 import type { NightCardData } from '@/content/cardsgen';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
@@ -42,6 +43,12 @@ export default function AccountScreen() {
   const [cards, setCards] = useState<CardRow[] | null>(null);
   const { photo, busy, choose, remove, broken } = usePhoto();
   const [sheet, setSheet] = useState(false);
+  const strip = useRef<ScrollView>(null);
+  useTabReset('account', () => {
+    setOpen(null);
+    setSheet(false);
+    strip.current?.scrollTo({ x: 0, animated: true });
+  });
   const tick = useRefreshOnFocus();
   // ayarlardan dönünce yeni isim ve şehir görünsün
   const profile = useProfile(tick);
@@ -128,7 +135,7 @@ export default function AccountScreen() {
           </Text>
         </View>
 
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={[styles.deckScroll, { height: cardH }]} contentContainerStyle={styles.deck}>
+        <ScrollView ref={strip} horizontal showsHorizontalScrollIndicator={false} style={[styles.deckScroll, { height: cardH }]} contentContainerStyle={styles.deck}>
           {collection.map((c, i) => (
             <Pressable
               key={`${c.t}-${i}`}

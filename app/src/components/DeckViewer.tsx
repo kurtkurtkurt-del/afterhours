@@ -15,7 +15,9 @@ export type { DeckCard, DeckFriend } from '@/components/CardFace';
 type Props = {
   cards: DeckCard[];
   // friends: arkadaşların sağa attıkları (şerit: keep) · mine: benim sağa attıklarım (şerit: ticket)
-  mode: 'friends' | 'mine';
+  // wave2 / wave3: arkadaşların arkadaşlarınınkiler; friends gibi davranır (şerit: keep)
+  mode: 'friends' | 'mine' | 'wave2' | 'wave3';
+  sample?: boolean; // örnek kartlar: üstteki etikette yazar
   kept: Record<string, boolean>;
   onKeep: (card: DeckCard) => void;
   onClose: () => void;
@@ -27,12 +29,12 @@ const two = (n: number) => String(n).padStart(2, '0');
 
 // desteyi gezmek: kart yüzü (CardFace), yana kaydırınca sonraki kart, yukarı bilet, aşağı gece sayfası.
 // kart yoksa ortadaki yazıya dokununca kapanır.
-export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty }: Props) {
+export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty, sample }: Props) {
   const { width } = useWindowDimensions();
   const insets = useSafeAreaInsets();
   const tabSpace = useTabBarSpace();
   const [index, setIndex] = useState(0);
-  const { t } = useLang();
+  const { t, up } = useLang();
 
   // android geri tuşu desteyi kapatır
   useEffect(() => {
@@ -63,7 +65,7 @@ export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty }
             showsHorizontalScrollIndicator={false}
             onMomentumScrollEnd={(e) => setIndex(Math.max(0, Math.round(e.nativeEvent.contentOffset.x / width)))}
             renderItem={({ item }) => (
-              <Card card={item} mode={mode} isKept={mode === 'friends' && !!kept[item.slug]} onKeep={onKeep} width={width} bottom={tabSpace + 4} />
+              <Card card={item} mode={mode === 'mine' ? 'mine' : 'friends'} isKept={mode !== 'mine' && !!(item.slug ? kept[item.slug] : kept[item.key])} onKeep={onKeep} width={width} bottom={tabSpace + 4} />
             )}
           />
         )}
@@ -71,7 +73,15 @@ export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty }
         {/* üst: şehir · sıra, sağda ses */}
         <View style={[styles.top, { top: Math.max(brand.top, insets.top + 24) }]} pointerEvents="box-none">
           <View style={styles.chip}>
-            <Text style={styles.chipText}>{total ? `${city} · ${two(index + 1)}/${two(total)}` : mode === 'mine' ? t('deck.yours') : t('deck.friends')}</Text>
+            <Text style={styles.chipText}>
+              {[
+                mode === 'wave2' ? up(t('deck.wave2')) : mode === 'wave3' ? up(t('deck.wave3')) : null,
+                total ? `${city} · ${two(index + 1)}/${two(total)}` : mode === 'mine' ? t('deck.yours') : mode === 'friends' ? t('deck.friends') : null,
+                sample ? up(t('deck.sample')) : null,
+              ]
+                .filter(Boolean)
+                .join(' · ')}
+            </Text>
           </View>
           <Pressable onPress={onClose} hitSlop={10} style={styles.close}>
             <Text style={styles.closeText}>{t('word.close')}</Text>

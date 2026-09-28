@@ -1,5 +1,6 @@
 import * as Location from 'expo-location';
 import { supabase } from '@/lib/supabase';
+import { remember } from '@/lib/offline';
 import type { City } from '@/content/cities';
 
 // aksanları at, küçük harfe indir: "İstanbul" → "istanbul", "München" → "munchen"
@@ -33,10 +34,14 @@ const cache = new Map<string, [number, number]>();
 export async function cityCentre(slug: string): Promise<[number, number] | null> {
   const hit = cache.get(slug);
   if (hit) return hit;
-  const { data: city } = await supabase.from('cities').select('id').eq('slug', slug).maybeSingle();
-  if (!city) return null;
-  const { data } = await supabase.from('events').select('lat,lng').eq('city_id', city.id).not('lat', 'is', null).limit(400);
-  const pts = (data ?? []) as { lat: number; lng: number }[];
+  const pts = await remember('centre', slug, async () => {
+    const { data: city, error: e1 } = await supabase.from('cities').select('id').eq('slug', slug).maybeSingle();
+    if (e1) throw e1;
+    if (!city) return [];
+    const { data, error } = await supabase.from('events').select('lat,lng').eq('city_id', city.id).not('lat', 'is', null).limit(400);
+    if (error) throw error;
+    return (data ?? []) as { lat: number; lng: number }[];
+  }, 40);
   if (!pts.length) return null;
   // medyan: uç mekânlar ortalamayı kaydırmasın
   const lats = pts.map((p) => p.lat).sort((a, b) => a - b);

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
+import { must, remember } from '@/lib/offline';
 import { cities as fallback, type City } from '@/content/cities';
 
 type Row = { slug: string; name: string; status: string; sort_order: number; n: number };
@@ -11,10 +12,10 @@ export function useCities() {
 
   useEffect(() => {
     let cancelled = false;
-    supabase
-      .rpc('city_counts')
-      .then(({ data, error }) => {
-        if (cancelled || error || !data) return;
+    remember('cities', '', () => must(supabase.rpc('city_counts')))
+      .catch(() => null)
+      .then((data) => {
+        if (cancelled || !data) return;
         const rows = (data as Row[])
           .filter((r) => r.n > 0)
           .sort((a, b) => a.sort_order - b.sort_order)

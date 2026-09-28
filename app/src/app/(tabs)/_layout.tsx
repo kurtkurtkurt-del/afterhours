@@ -1,8 +1,13 @@
 import { TabList, TabSlot, TabTrigger, Tabs } from 'expo-router/ui';
 import { TabBarFrame, TabItem } from '@/components/TabBar';
+import { useCities } from '@/data/cities';
+import { useFollowLocation } from '@/data/here';
 
 // asıl uygulama: beş sekme, altta yüzen panel. flow · djs · [yours] · map · account
 export default function TabsLayout() {
+  // bulunduğun şehir: bütün sekmeler bunu izler (data/here.ts)
+  const { cities } = useCities();
+  useFollowLocation(cities);
   return (
     <Tabs>
       <TabSlot />

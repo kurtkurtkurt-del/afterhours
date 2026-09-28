@@ -12,8 +12,8 @@ import Input from '@/components/Input';
 import PullDownScroll from '@/components/PullDownScroll';
 import SoundCorner from '@/components/SoundCorner';
 import { useAuth } from '@/auth/AuthContext';
-import { supabase } from '@/lib/supabase';
-import { SITE, swipe, type Night } from '@/data/deck';
+import { fetchNight, SITE, swipe, type Night } from '@/data/deck';
+import { OfflineError } from '@/lib/offline';
 import { commentCode, commentErrors, fetchComments, postComment, whenText, type Comment } from '@/data/comments';
 import { bodyText, upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
@@ -36,6 +36,7 @@ export default function NightScreen() {
   const { t, tn, tx, up } = useLang();
   // note ve talkNote kod saklar; söz burada, o anki dilde çözülür
   const words = (code: string) => {
+    if (code === 'nosaved') return t('offline.empty'); // çevrimdışı ve bu gece kaydedilmemiş
     const key = commentErrors[code] ?? reasons[code];
     return key ? t(key) : code;
   };
@@ -60,20 +61,18 @@ export default function NightScreen() {
 
   useEffect(() => {
     let cancelled = false;
-    supabase
-      .from('events_public')
-      .select('*')
-      .eq('slug', slug)
-      .maybeSingle()
-      .then(({ data, error }) => {
+    // çevrimdışıyken desteden/haritadan kaydedilen gece açılır (data/deck.ts)
+    fetchNight(slug)
+      .then((data) => {
         if (cancelled) return;
-        if (error) setNote(String(error.message).toLowerCase());
-        else if (data) {
-          setNight(data as Night);
+        if (data) {
+          setNight(data);
           // beforehours, gece bilinir bilinmez; hata sessizce boş liste
-          fetchComments((data as Night).id).then((c) => { if (!cancelled) setTalk(c); }).catch(() => { if (!cancelled) setTalk([]); });
-        }
-        else setMissing(true);
+          fetchComments(data.id).then((c) => { if (!cancelled) setTalk(c); }).catch(() => { if (!cancelled) setTalk([]); });
+        } else setMissing(true);
+      })
+      .catch((error) => {
+        if (!cancelled) setNote(error instanceof OfflineError ? 'nosaved' : String(error.message).toLowerCase());
       });
     return () => {
       cancelled = true;

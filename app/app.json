@@ -88,7 +88,8 @@
           "cameraPermission": false,
           "microphonePermission": false
         }
-      ]
+      ],
+      "expo-web-browser"
     ],
     "scheme": "afterhours",
     "experiments": {

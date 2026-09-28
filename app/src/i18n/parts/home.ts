@@ -76,6 +76,8 @@ export const home = {
   'signup.up.line2': { en: 'welcome in.', de: 'komm rein.', tr: 'hoş geldin.' },
   'signup.in.line1': { en: 'welcome back.', de: 'willkommen zurück.', tr: 'tekrar hoş geldin.' },
   'signup.in.line2': { en: 'sign in.', de: 'melde dich an.', tr: 'giriş yap.' },
+  'signup.google': { en: 'continue with google', de: 'weiter mit google', tr: 'google ile devam et' },
+  'signup.or': { en: 'or with email', de: 'oder mit e-mail', tr: 'ya da e-postayla' },
   'signup.email': { en: 'email', de: 'e-mail', tr: 'e-posta' },
   'signup.password': { en: 'password', de: 'passwort', tr: 'şifre' },
   'signup.create': { en: 'create account', de: 'konto erstellen', tr: 'hesap aç' },

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
@@ -14,7 +14,9 @@ import { posterUrl, swipe } from '@/data/deck';
 import { supabase } from '@/lib/supabase';
 import { friendById as sampleFriendById, friends as sampleFriends, matches as sampleMatches, nights as sampleNights, sampleText } from '@/content/friends';
 import { useYours, type YoursFriend, type YoursMatch, type YoursNight } from '@/data/yours';
+import { wave2, wave3 } from '@/content/waves';
 import { useAuth } from '@/auth/AuthContext';
+import { useTabReset } from '@/hooks/useTabReset';
 import { dayLabel } from '@/data/when';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
@@ -57,7 +59,15 @@ export default function YoursScreen() {
   const [meToo, setMeToo] = useState<Record<string, boolean>>({});
   const [asking, setAsking] = useState<string | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [deck, setDeck] = useState<'mine' | 'friends' | null>(null);
+  const [deck, setDeck] = useState<'mine' | 'friends' | 'wave2' | 'wave3' | null>(null);
+  const scroll = useRef<ScrollView>(null);
+  const people = useRef<ScrollView>(null);
+  useTabReset('yours', () => {
+    setDeck(null);
+    setAsking(null);
+    people.current?.scrollTo({ x: 0, animated: true });
+    scroll.current?.scrollTo({ y: 0, animated: true });
+  });
   const [keptNow, setKeptNow] = useState<Record<string, boolean>>({});
   // arkadaşların tuttuğu gecelerin bilet adresleri (friends_kept bunu taşımıyor)
   const [tickets, setTickets] = useState<Record<string, string | null>>({});
@@ -107,7 +117,8 @@ export default function YoursScreen() {
     return k;
   }, [real.mine, keptNow]);
   const keepCard = (c: DeckCard) => {
-    setKeptNow((s) => ({ ...s, [c.slug]: true }));
+    // örnek kartların gecesi yok (slug boş): yalnız ekranda işaretlenir
+    setKeptNow((s) => ({ ...s, [c.slug || c.key]: true }));
     if (session && c.slug) swipe(c.slug, 'right').catch(() => {});
   };
 
@@ -138,9 +149,9 @@ export default function YoursScreen() {
         </Pressable>
         <SoundCorner />
       </View>
-      <ScrollView contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom + 60 }]} showsVerticalScrollIndicator={false}>
+      <ScrollView ref={scroll} contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom + 60 }]} showsVerticalScrollIndicator={false}>
         {/* arkadaşlar */}
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.people}>
+        <ScrollView ref={people} horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.people}>
           {cols.map((col, i) => (
             <View key={i} style={styles.col}>
               {col.map((f) => (
@@ -222,6 +233,13 @@ export default function YoursScreen() {
       <Pressable onPress={() => setDeck('mine')} style={({ pressed }) => [styles.fab, styles.fabLeft, { bottom: TAB_BAR_SPACE + insets.bottom - 6 }, pressed && styles.pressed]}>
         <Text style={styles.btnTextLine}>{t('deck.yours')}{real.mine.length ? ` · ${real.mine.length}` : ''}</Text>
       </Pressable>
+      {/* arkadaşların destesinin üstünde iki dalga: onların arkadaşları, onlarınkiler */}
+      <Pressable onPress={() => setDeck('wave3')} accessibilityLabel={t('deck.wave3.deck')} style={({ pressed }) => [styles.fab, styles.fabWave, { bottom: TAB_BAR_SPACE + insets.bottom - 6 + WAVE * 2 }, pressed && styles.pressed]}>
+        <Text style={styles.btnTextWave}>{t('deck.wave3')} · {wave3.length}</Text>
+      </Pressable>
+      <Pressable onPress={() => setDeck('wave2')} accessibilityLabel={t('deck.wave2.deck')} style={({ pressed }) => [styles.fab, styles.fabWave, { bottom: TAB_BAR_SPACE + insets.bottom - 6 + WAVE }, pressed && styles.pressed]}>
+        <Text style={styles.btnTextWave}>{t('deck.wave2')} · {wave2.length}</Text>
+      </Pressable>
       <Pressable onPress={() => setDeck('friends')} style={({ pressed }) => [styles.fab, { bottom: TAB_BAR_SPACE + insets.bottom - 6 }, pressed && styles.pressed]}>
         <Text style={styles.btnTextRed}>{t('deck.friends')}{friendsCards.length ? ` · ${friendsCards.length}` : ''}</Text>
       </Pressable>
@@ -244,14 +262,17 @@ export default function YoursScreen() {
       {deck ? (
         <DeckViewer
           mode={deck}
-          cards={deck === 'mine' ? mineCards : friendsCards}
+          cards={deck === 'mine' ? mineCards : deck === 'wave2' ? wave2 : deck === 'wave3' ? wave3 : friendsCards}
+          sample={deck === 'wave2' || deck === 'wave3'}
           kept={keptSlugs}
           onKeep={keepCard}
           onClose={closeDeck}
           empty={
             deck === 'mine'
               ? session ? t('yours.emptyMine') : t('yours.emptyMineGuest')
-              : real.friends.length ? t('yours.emptyFriends') : t('yours.emptyNoFriends')
+              : deck === 'wave2' || deck === 'wave3'
+                ? t('deck.waveEmpty')
+                : real.friends.length ? t('yours.emptyFriends') : t('yours.emptyNoFriends')
           }
         />
       ) : null}
@@ -260,6 +281,7 @@ export default function YoursScreen() {
 }
 
 const AV = 18;
+const WAVE = 46; // dalga düğmeleri arasındaki adım
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
@@ -305,5 +327,7 @@ const styles = StyleSheet.create({
   matchText: { fontFamily: fonts.regular, fontSize: 15, color: colors.paper },
   matchNight: { fontFamily: fonts.regular, fontSize: 12, color: colors.meta },
   fab: { position: 'absolute', right: brand.left, backgroundColor: colors.spot, paddingVertical: 10, paddingHorizontal: 14 },
+  fabWave: { backgroundColor: colors.ink, borderWidth: 1, borderColor: colors.spot, paddingVertical: 9 },
+  btnTextWave: { fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.1, color: colors.spotText },
   fabLeft: { right: undefined, left: brand.left, backgroundColor: colors.ink, borderWidth: 1, borderColor: colors.paper },
 });

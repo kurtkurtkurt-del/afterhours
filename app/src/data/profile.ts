@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
+import { must, remember } from '@/lib/offline';
 import { useAuth } from '@/auth/AuthContext';
 
 // profile_me(): kendi kartın + sayılar + ayarlar, tek çağrı (12_profiles.sql)
@@ -25,7 +26,7 @@ export function useProfile(tick = 0) {
   useEffect(() => {
     if (!uid) return;
     let cancelled = false;
-    supabase.rpc('profile_me').then(({ data }) => {
+    remember('profile', '', () => must(supabase.rpc('profile_me'))).catch(() => null).then((data) => {
       if (cancelled) return;
       const row = Array.isArray(data) ? data[0] : data;
       if (row) setProfile(row as Profile);

@@ -52,6 +52,22 @@ export const common = {
     tr: 'Gerçek bir gece, doğrudan {city} programından. Neye dönüşeceği kapıda belli olur, her zamanki gibi.',
   },
 
+  'offline.title': { en: 'offline', de: 'offline', tr: 'çevrimdışı' },
+  'offline.saved': { en: 'showing what was saved', de: 'gespeichertes wird gezeigt', tr: 'kaydedilenler gösteriliyor' },
+  'offline.pending.one': { en: '{n} waiting to send', de: '{n} wartet aufs senden', tr: '{n} gönderilmeyi bekliyor' },
+  'offline.pending.other': { en: '{n} waiting to send', de: '{n} warten aufs senden', tr: '{n} gönderilmeyi bekliyor' },
+  'offline.sending': { en: 'back online · sending…', de: 'wieder online · wird gesendet…', tr: 'tekrar bağlı · gönderiliyor…' },
+  'offline.write': {
+    en: 'no internet. this needs a connection; try again when you are back.',
+    de: 'kein internet. das braucht eine verbindung; versuch es wieder, wenn du online bist.',
+    tr: 'internet yok. bunun için bağlantı gerekiyor; bağlanınca yeniden dene.',
+  },
+  'offline.empty': {
+    en: 'no internet, and nothing saved here yet. it fills in once you are back.',
+    de: 'kein internet, und hier ist noch nichts gespeichert. es füllt sich, sobald du wieder online bist.',
+    tr: 'internet yok ve burada henüz kaydedilmiş bir şey yok. bağlanınca dolar.',
+  },
+
   'who.in': { en: "i'm in", de: 'bin dabei', tr: 'geliyorum' },
   'who.maybe': { en: 'maybe', de: 'vielleicht', tr: 'belki' },
   'who.not': { en: 'not tonight', de: 'heute nicht', tr: 'bu gece olmaz' },

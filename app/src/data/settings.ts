@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabase';
+import { must, remember, send } from '@/lib/offline';
 
 // profile_settings satırı: sadece sahibi okur/yazar (12_profiles.sql)
 export type Settings = {
@@ -9,13 +10,13 @@ export type Settings = {
 };
 
 export async function fetchSettings(userId: string): Promise<Settings | null> {
-  const { data } = await supabase.from('profile_settings').select('kept_visibility,discoverable,notify_email,locale').eq('user_id', userId).maybeSingle();
+  const data = await remember('settings', '', () => must(supabase.from('profile_settings').select('kept_visibility,discoverable,notify_email,locale').eq('user_id', userId).maybeSingle())).catch(() => null);
   return (data as Settings | null) ?? null;
 }
 
 export async function saveSettings(userId: string, patch: Partial<Settings>) {
-  const { error } = await supabase.from('profile_settings').update(patch).eq('user_id', userId);
-  if (error) throw error;
+  // anahtar değişikliği: ağ yoksa sıraya girer
+  await send({ kind: 'settings', userId, patch });
 }
 
 // ok · empty · format · taken · yours

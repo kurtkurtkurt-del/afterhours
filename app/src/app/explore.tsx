@@ -9,6 +9,7 @@ import BackButton from '@/components/BackButton';
 import Onboarding from '@/components/Onboarding';
 import SoundCorner from '@/components/SoundCorner';
 import { useCities } from '@/data/cities';
+import { chooseCity } from '@/data/here';
 import { useT } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -27,8 +28,7 @@ export default function ExploreScreen() {
   const { cities, live } = useCities();
 
   const pick = (id: string) => {
-    Storage.setItemSync('city', id);
-    Storage.setItemSync('city.name', cities.find((c) => c.id === id)?.name ?? id);
+    chooseCity(id, cities.find((c) => c.id === id)?.name ?? id);
     // şehirden sonra kayıt; oturumu olan doğrudan içeri
     router.replace(session ? '/yours' : '/signup');
   };

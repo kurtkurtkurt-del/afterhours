@@ -21,6 +21,9 @@ export type DeckCard = {
   poster: string | null; // fotoğrafsız gece: sitedeki el çizimi afiş
   ticketUrl: string | null;
   friends: DeckFriend[]; // bu geceyi tutan arkadaşlar
+  // arkadaşların arkadaşları: kimin üzerinden geldiği. path senden başlar,
+  // ilk isim senin arkadaşın, son isim geceyi tutan (tanımadığın biri)
+  via?: { wave: 2 | 3; path: string[] };
 };
 
 // events_public satırından kart; arkadaşlar dışarıdan gelir
@@ -96,6 +99,7 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight 
           <Text style={styles.jet}>{source ? `${kind} · ${source}` : kind}</Text>
           {card.venue ? <Text style={styles.jet} numberOfLines={1}>{upperData(card.venue)}</Text> : null}
           <Text style={styles.jet}>{stamp(card.startsAt) ?? up(t('deck.dateTba'))}</Text>
+          {card.via ? <Chain via={card.via} /> : null}
           {card.friends.length > 0 ? (
             <View style={styles.friends}>
               {shown.map((f) => (
@@ -120,6 +124,37 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight 
   );
 }
 
+// kimden geldiği: sen — arkadaşın — onun arkadaşı (— onunki). kareler çizgiyle
+// bağlı; geceyi tutan son kare kırmızı. altında zincirin adları.
+function Chain({ via }: { via: { wave: 2 | 3; path: string[] } }) {
+  const { t, up } = useLang();
+  const keeper = via.path[via.path.length - 1];
+  return (
+    <View style={styles.chain}>
+      <View style={styles.chainRow}>
+        <View style={[styles.sq, styles.sqYou]}>
+          <Text style={styles.sqYouText}>{up(t('deck.you'))}</Text>
+        </View>
+        {via.path.map((name, i) => {
+          const last = i === via.path.length - 1;
+          return (
+            <View key={`${name}-${i}`} style={styles.chainStep}>
+              <View style={styles.link} />
+              <View style={[styles.sq, last && styles.sqLive]}>
+                <Text style={[styles.sqText, last && styles.sqTextLive]}>{name.charAt(0)}</Text>
+              </View>
+            </View>
+          );
+        })}
+        <Text style={styles.wave}>{up(t(via.wave === 2 ? 'deck.wave2' : 'deck.wave3'))}</Text>
+      </View>
+      <Text style={styles.keptNote} numberOfLines={2}>
+        {t('deck.via', { path: via.path.slice(0, -1).join(' → ') })} · {t('deck.keptBy', { name: keeper })}
+      </Text>
+    </View>
+  );
+}
+
 // çekerken beliren ipucu etiketi
 export function Hint({ label }: { label: string }) {
   const { up } = useLang();
@@ -139,6 +174,13 @@ const styles = StyleSheet.create({
   sqText: { fontFamily: fonts.medium, fontSize: 12, color: colors.paper },
   sqTextLive: { color: colors.ink },
   keptNote: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute, marginLeft: 6 },
+  chain: { marginTop: 12, gap: 6 },
+  chainRow: { flexDirection: 'row', alignItems: 'center' },
+  chainStep: { flexDirection: 'row', alignItems: 'center' },
+  link: { width: 10, height: 1, backgroundColor: colors.mute },
+  sqYou: { width: undefined, paddingHorizontal: 5, borderColor: colors.mute },
+  sqYouText: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 0.8, color: colors.mute },
+  wave: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.spotText, marginLeft: 10 },
   strip: { width: 56, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center' },
   stripDone: { backgroundColor: colors.ink, borderLeftWidth: 1, borderLeftColor: colors.ink3 },
   stripText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.ink, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },

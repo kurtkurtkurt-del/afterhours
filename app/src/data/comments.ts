@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabase';
+import { isOnline, OfflineError, remember } from '@/lib/offline';
 import { t as tNow, tx as txNow } from '@/i18n';
 import type { Key } from '@/i18n/dict';
 
@@ -14,6 +15,7 @@ export const commentErrors: Record<string, Key> = {
   'sign in first': 'comments.error.signin',
   empty: 'comments.error.empty',
   'two levels only': 'comments.error.deep',
+  offline: 'offline.write',
 };
 export const commentCode = (e: unknown) => {
   const m = String((e as Error)?.message ?? e);
@@ -35,6 +37,10 @@ export const whenText = (iso: string, t: typeof tNow = tNow, tx: typeof txNow = 
 };
 
 export async function fetchComments(eventId: string): Promise<Comment[]> {
+  return remember('comments', eventId, () => loadComments(eventId), 40);
+}
+
+async function loadComments(eventId: string): Promise<Comment[]> {
   const { data: topics, error } = await supabase
     .from('comments_public')
     .select('id,parent_id,author,body,created_at')
@@ -66,6 +72,7 @@ export async function fetchComments(eventId: string): Promise<Comment[]> {
 export async function postComment(eventId: string, body: string, parentId?: string) {
   const text = body.trim();
   if (!text) throw new Error('empty');
+  if (!isOnline()) throw new OfflineError();
   const row: { event_id: string; body: string; parent_id?: string } = { event_id: eventId, body: text };
   if (parentId) row.parent_id = parentId;
   const { error } = await supabase.from('comments').insert(row);

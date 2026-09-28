@@ -7,7 +7,7 @@ import BackButton from '@/components/BackButton';
 import Input from '@/components/Input';
 import { reasonCode, reasons, roomInfo, roomList, roomPost, type RoomInfo, type RoomPost } from '@/data/checkin';
 import { upperData, useLang } from '@/i18n';
-import { supabase } from '@/lib/supabase';
+import { fetchNight } from '@/data/deck';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -58,9 +58,9 @@ export default function RoomScreen() {
     (async () => {
       const [, n] = await Promise.all([
         load(),
-        supabase.from('events_public').select('title,starts_at').eq('slug', slug).maybeSingle(),
+        fetchNight(slug).catch(() => null),
       ]);
-      if (!cancelled && n.data) setNight(n.data as { title: string; starts_at: string | null });
+      if (!cancelled && n) setNight({ title: n.title, starts_at: n.starts_at });
     })();
     return () => {
       cancelled = true;

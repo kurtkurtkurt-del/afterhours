@@ -17,6 +17,11 @@ import { AmbientProvider } from '@/audio/AmbientContext';
 import { AuthProvider } from '@/auth/AuthContext';
 import { LanguageProvider } from '@/i18n';
 import GenrePicker from '@/components/GenrePicker';
+import OfflineBar from '@/components/OfflineBar';
+import { startOffline } from '@/lib/offline';
+
+// bağlantıyı izlemek ve bekleyen işleri göndermek, uygulama açılır açılmaz
+startOffline();
 
 // native splash, fontlar gelene kadar açık kalır; sonra geçiş görünmez olur
 SplashScreen.preventAutoHideAsync();
@@ -55,6 +60,7 @@ export default function RootLayout() {
         }}
       />
       <GenrePicker />
+      <OfflineBar />
     </AmbientProvider>
     </LanguageProvider>
     </AuthProvider>

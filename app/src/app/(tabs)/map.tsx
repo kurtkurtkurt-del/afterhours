@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useTabReset } from '@/hooks/useTabReset';
 import RangeSlider from '@/components/RangeSlider';
 import { filterWhen, whens, type When } from '@/data/when';
-import { cityCentre, detectCity } from '@/data/geo';
-import { useCities } from '@/data/cities';
+import { cityCentre } from '@/data/geo';
+import { useHere } from '@/data/here';
 import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
@@ -10,7 +11,6 @@ import * as Location from 'expo-location';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import MapWeb, { type Pin } from '@/components/MapWeb';
 import PickerSheet from '@/components/PickerSheet';
-import Storage from 'expo-sqlite/kv-store';
 import SoundCorner from '@/components/SoundCorner';
 import { useTabBarSpace } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
@@ -43,7 +43,6 @@ export default function MapScreen() {
   const { width } = useWindowDimensions();
   const [me, setMe] = useState<[number, number] | null>(null);
   const [follow, setFollow] = useState<'me' | 'city'>('me');
-  const { cities } = useCities();
   const [here, setHere] = useState<{ slug: string; name: string; centre: [number, number] } | null>(null);
   const [denied, setDenied] = useState(false);
   const [km, setKm] = useState(3); // ağ isteği ve çember bunu izler; sürgü bırakılınca değişir
@@ -54,9 +53,21 @@ export default function MapScreen() {
   const [picked, setPicked] = useState<NearNight | null>(null);
   const [sheet, setSheet] = useState(false);
   const [keptBy, setKeptBy] = useState<Map<string, string[]>>(new Map());
+  // yeniden basınca: ilk hal. harita elle kaydırılmışsa yeniden kurulur, çembere oturur.
+  const [fresh, setFresh] = useState(0);
+  useTabReset('map', () => {
+    setPicked(null);
+    setSheet(false);
+    setFollow('me');
+    setWhen('tonight');
+    setKm(3);
+    setDragKm(null);
+    setFresh((n) => n + 1);
+  });
 
-  const stored = Storage.getItemSync('city') ?? 'munchen';
-  const cityName = here?.name ?? stored;
+  const current = useHere();
+  const stored = current.city ?? 'munchen';
+  const cityName = here?.name ?? current.name ?? stored;
   const fallbackCentre = CENTRES[stored] ?? CENTRES.munchen;
   const atCity = follow === 'city' || !me;
   const centre = !atCity && me ? me : (here?.centre ?? fallbackCentre);
@@ -83,24 +94,17 @@ export default function MapScreen() {
     };
   }, []);
 
-  // konum gelince bulunduğun şehri bul ve merkezini hesapla
-  const meLat = me?.[0];
-  const meLng = me?.[1];
+  // şehri data/here.ts bulur (bütün sekmeler için); burada yalnız merkezi hesaplanır
   useEffect(() => {
-    if (meLat === undefined || meLng === undefined || cities.length === 0) return;
     let cancelled = false;
     (async () => {
-      const c = await detectCity(meLat, meLng, cities);
-      const slug = c?.id ?? stored;
-      const name = c?.name ?? stored;
-      const centre = (await cityCentre(slug).catch(() => null)) ?? CENTRES[slug] ?? fallbackCentre;
-      if (!cancelled) setHere({ slug, name, centre });
+      const centre = (await cityCentre(stored).catch(() => null)) ?? CENTRES[stored] ?? CENTRES.munchen;
+      if (!cancelled) setHere({ slug: stored, name: current.name ?? stored, centre });
     })();
     return () => {
       cancelled = true;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [meLat, meLng, cities.length]);
+  }, [stored, current.name]);
 
   // arkadaşların tuttuğu geceler: kareyi kırmızı yapar, kartta isimleri yazar
   useEffect(() => {
@@ -166,6 +170,7 @@ export default function MapScreen() {
     <View style={styles.root}>
       <StatusBar style="light" />
       <MapWeb
+        key={fresh}
         lat={lat}
         lng={lng}
         km={km}

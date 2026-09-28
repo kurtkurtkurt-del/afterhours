@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
@@ -8,6 +8,7 @@ import { TAB_BAR_SPACE } from '@/components/TabBar';
 import { djs as localDjs, sets as localSets, type Dj, type DjSet } from '@/content/djs';
 import { loadDjs } from '@/data/djs';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
+import { useTabReset } from '@/hooks/useTabReset';
 import { dayName } from '@/data/when';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
@@ -21,6 +22,8 @@ export default function DjsScreen() {
   const insets = useSafeAreaInsets();
   const { t, up } = useLang();
   const tick = useRefreshOnFocus();
+  const scroll = useRef<ScrollView>(null);
+  useTabReset('djs', () => scroll.current?.scrollTo({ y: 0, animated: true }));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const now = useMemo(() => new Date(), [tick]); // sekme her açıldığında saat tazelenir
   const [data, setData] = useState<{ djs: Dj[]; sets: DjSet[]; live: boolean | null }>({ djs: localDjs, sets: [], live: null });
@@ -51,7 +54,7 @@ export default function DjsScreen() {
         <Text style={styles.title}>{t('djs.title')}</Text>
         <SoundCorner />
       </View>
-      <ScrollView contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom }]} showsVerticalScrollIndicator={false}>
+      <ScrollView ref={scroll} contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom }]} showsVerticalScrollIndicator={false}>
         {data.live === null ? <Text style={styles.mono}>{up(t('djs.loading'))}</Text> : null}
         {data.live === false ? <Text style={styles.mono}>{up(t('djs.sample'))}</Text> : null}
         {data.live && !next ? <Text style={styles.mono}>{up(t('djs.none'))}</Text> : null}

@@ -1,6 +1,8 @@
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
 import type { Session } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabase';
+import { forgetCache, isNetworkError } from '@/lib/offline';
+import { LargeSecureStore } from '@/lib/secureStorage';
 // döngü: '@/i18n' bu dosyayı içe alır. t yalnızca fonksiyonların içinde çağrılır.
 import { t } from '@/i18n';
 import type { Key } from '@/i18n/dict';
@@ -51,11 +53,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session);
+    supabase.auth.getSession().then(async ({ data, error }) => {
+      let s = data.session;
+      // jetonun süresi dolmuş ve internet yok: supabase yenileyemeyince oturumu
+      // boş döndürüyor, uygulama da çıkış yapılmış sanıyordu. oturum hâlâ
+      // depoda duruyor; onu kullan. bağlantı gelince supabase kendisi yeniler.
+      if (!s && error && isNetworkError(error)) s = await storedSession();
+      setSession(s);
       setReady(true);
     });
-    const { data: sub } = supabase.auth.onAuthStateChange((_event, s) => setSession(s));
+    // boş oturum yalnız gerçekten çıkış yapılınca kabul edilir; internetsiz
+    // yenileme hatası da "oturum yok" diye gelir
+    const { data: sub } = supabase.auth.onAuthStateChange((event, s) => {
+      if (s || event === 'SIGNED_OUT') setSession(s);
+    });
     return () => sub.subscription.unsubscribe();
   }, []);
 
@@ -114,13 +125,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const signOut = useCallback(async () => {
+    const { data } = await supabase.auth.getSession();
     await supabase.auth.signOut();
+    // o hesabın kaydedilmiş kopyaları telefonda kalmaz (telefonu başkası kullanabilir)
+    if (data.session) forgetCache(data.session.user.id);
   }, []);
 
   return <Ctx.Provider value={{ session, ready, isAnonymous, signUp, signIn, signInAsGuest, resetPassword, signOut }}>{children}</Ctx.Provider>;
 }
 
 export const useAuth = () => useContext(Ctx);
+
+async function storedSession(): Promise<Session | null> {
+  try {
+    const key = (supabase.auth as unknown as { storageKey: string }).storageKey;
+    const raw = await new LargeSecureStore().getItem(key);
+    const s = raw ? (JSON.parse(raw) as Session) : null;
+    return s?.user?.id ? s : null;
+  } catch {
+    return null;
+  }
+}
 
 // supabase'in bilinen ingilizce mesajları → söz anahtarı. sıra önemli: ilk uyan kazanır.
 const known: [RegExp, Key][] = [

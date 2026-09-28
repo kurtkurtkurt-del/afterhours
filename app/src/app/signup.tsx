@@ -9,6 +9,8 @@ import SoundCorner from '@/components/SoundCorner';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
 import { authMessage, useAuth } from '@/auth/AuthContext';
+import { signInWithGoogle } from '@/auth/google';
+import GoogleMark from '@/components/GoogleMark';
 import { useT } from '@/i18n';
 import { supabase } from '@/lib/supabase';
 import { colors, fonts } from '@/theme/tokens';
@@ -61,6 +63,24 @@ export default function SignUpScreen() {
     }
   };
 
+  // google: aynı kapı hem kayıt hem giriş. ilk gelişte handle adımı
+  const google = async () => {
+    if (busy) return;
+    setBusy(true);
+    setNote(null);
+    try {
+      const inside = await signInWithGoogle();
+      if (!inside) return; // pencere kapatıldı
+      const { data } = await supabase.rpc('profile_me');
+      const row = Array.isArray(data) ? data[0] : data;
+      router.replace(row?.handle ? '/yours' : '/welcome');
+    } catch (e) {
+      setNote(authMessage(String((e as Error).message ?? e)).toLowerCase());
+    } finally {
+      setBusy(false);
+    }
+  };
+
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
@@ -74,6 +94,15 @@ export default function SignUpScreen() {
           <Text style={styles.line}>{mode === 'up' ? t('signup.up.line2') : t('signup.in.line2')}</Text>
         </View>
         <View style={styles.form}>
+          <Pressable onPress={google} disabled={busy} accessibilityRole="button" accessibilityLabel={t('signup.google')} style={({ pressed }) => [styles.google, pressed && styles.pressed]}>
+            <GoogleMark />
+            <Text style={styles.googleText}>{t('signup.google')}</Text>
+          </Pressable>
+          <View style={styles.or}>
+            <View style={styles.orLine} />
+            <Text style={styles.orText}>{t('signup.or')}</Text>
+            <View style={styles.orLine} />
+          </View>
           <Input
             placeholder={t('signup.email')}
             value={email}
@@ -124,4 +153,11 @@ const styles = StyleSheet.create({
   gap: { height: 8 },
   note: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper2, opacity: 0.8 },
   small: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute, marginTop: 6 },
+  // google: çizgili buton (kâğıt çerçeve), solda google'ın kendi işareti
+  google: { height: 52, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 12, borderWidth: 1.5, borderColor: colors.paper },
+  googleText: { fontFamily: fonts.medium, fontSize: 16, letterSpacing: -0.2, color: colors.paper },
+  pressed: { opacity: 0.7 },
+  or: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  orLine: { flex: 1, height: 1, backgroundColor: colors.ink3 },
+  orText: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
 });
