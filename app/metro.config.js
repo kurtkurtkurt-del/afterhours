@@ -1,0 +1,7 @@
+// metro: tanıtım filmi (assets/film/film.html) uygulamanın içine dosya olarak girer
+const { getDefaultConfig } = require('expo/metro-config');
+
+const config = getDefaultConfig(__dirname);
+config.resolver.assetExts.push('html');
+
+module.exports = config;

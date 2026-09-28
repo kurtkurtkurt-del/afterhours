@@ -7,7 +7,7 @@ import CardFace, { Hint, openDetails, openTicket, type DeckCard } from '@/compon
 import SoundCorner from '@/components/SoundCorner';
 import { useTabBarSpace } from '@/components/TabBar';
 import { useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 export type { DeckCard, DeckFriend } from '@/components/CardFace';
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   hint: { position: 'absolute', left: 0, right: 0, alignItems: 'center' },
   hintUp: { top: '38%' },
   top: { position: 'absolute', left: brand.left, right: 120, flexDirection: 'row', alignItems: 'center', gap: 14 },
-  chip: { backgroundColor: colors.ink, paddingVertical: 5, paddingHorizontal: 8 },
+  chip: { backgroundColor: colors.ink, paddingVertical: 5, paddingHorizontal: 10, borderRadius: radius.pill },
   chipText: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 0.8, color: colors.paper },
   close: { paddingVertical: 4 },
   closeText: { fontFamily: fonts.regular, fontSize: 12, color: colors.paper, textDecorationLine: 'underline' },

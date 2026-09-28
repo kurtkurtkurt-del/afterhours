@@ -77,5 +77,5 @@ export default function PullDownScroll({ children, style, ...rest }: ScrollViewP
 const styles = StyleSheet.create({
   wrap: { flex: 1, backgroundColor: colors.ink },
   handleWrap: { position: 'absolute', left: 0, right: 0, alignItems: 'center' },
-  handle: { width: 36, height: 3, backgroundColor: colors.paper },
+  handle: { width: 36, height: 3, borderRadius: 2, backgroundColor: colors.paper },
 });

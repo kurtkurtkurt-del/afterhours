@@ -19,7 +19,7 @@ import { useEventTypes } from '@/data/types';
 import { fetchDeck, resetSwipes, swipe, unswipe, type Night } from '@/data/deck';
 import { filterWhen, whens, type When } from '@/data/when';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // deste. üstte şehir ve tür seçici; keep/let go hesap varsa veritabanına yazılır.
@@ -211,11 +211,11 @@ export default function FlowScreen() {
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   // fotoğrafın üstünde okunsun diye mürekkep şerit; friends' deck'teki "ist · 03/24" çipiyle aynı dil
-  head: { position: 'absolute', left: brand.left, right: 110, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'baseline', gap: 8, zIndex: 1, backgroundColor: colors.ink, paddingVertical: 5, paddingHorizontal: 8, alignSelf: 'flex-start' },
+  head: { position: 'absolute', left: brand.left, right: 110, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'baseline', gap: 8, zIndex: 1, backgroundColor: colors.ink, borderRadius: radius.pill, paddingVertical: 5, paddingHorizontal: 12, alignSelf: 'flex-start' },
   pick: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 0.8, color: colors.paper, textDecorationLine: 'underline' },
   sep: { fontFamily: fonts.jet, fontSize: 10.5, color: colors.meta },
   pressed: { opacity: 0.6 },
-  undo: { position: 'absolute', right: brand.left, top: brand.top + 34, zIndex: 1, backgroundColor: colors.ink, paddingVertical: 4, paddingHorizontal: 8 },
+  undo: { position: 'absolute', right: brand.left, top: brand.top + 34, zIndex: 1, backgroundColor: colors.ink, paddingVertical: 4, paddingHorizontal: 10, borderRadius: radius.pill },
   undoText: { fontFamily: fonts.regular, fontSize: 12, letterSpacing: 0.2, color: colors.paper, textDecorationLine: 'underline' },
   stage: { flex: 1 },
   note: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, textAlign: 'center', marginTop: 40 },

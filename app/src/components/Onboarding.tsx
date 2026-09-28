@@ -4,7 +4,7 @@ import Animated, { Easing, cancelAnimation, interpolate, useAnimatedStyle, useSh
 import Button from '@/components/Button';
 import LangRow from '@/components/LangRow';
 import { upperData, useLang, useT } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const photo = require('../../assets/intro/concert.jpg');
@@ -264,39 +264,39 @@ const styles = StyleSheet.create({
   h: { fontFamily: fonts.medium, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
   p: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 22, color: colors.mute, marginTop: 10 },
   dots: { flexDirection: 'row', justifyContent: 'center', gap: 6, marginBottom: 18 },
-  dot: { width: 6, height: 6, backgroundColor: colors.ink3 },
+  dot: { width: 6, height: 6, borderRadius: 3, backgroundColor: colors.ink3 },
   dotOn: { backgroundColor: colors.paper },
   cta: { paddingHorizontal: brand.left, paddingBottom: 28 },
 
   stage: { width: 280, height: 280, alignItems: 'center', justifyContent: 'center' },
-  card: { position: 'absolute', width: CARD_W, height: CARD_H, backgroundColor: colors.ink2, overflow: 'hidden', justifyContent: 'flex-end', padding: 10 },
+  card: { position: 'absolute', width: CARD_W, height: CARD_H, backgroundColor: colors.ink2, overflow: 'hidden', borderRadius: radius.md, justifyContent: 'flex-end', padding: 10 },
   cardPhoto: { position: 'absolute', top: 0, left: 0, width: CARD_W, height: CARD_H, opacity: 0.5 },
   cardTitle: { fontFamily: fonts.medium, fontSize: 15, lineHeight: 16, letterSpacing: -0.3, color: colors.paper },
   cardMeta: { fontFamily: fonts.regular, fontSize: 9, letterSpacing: 1.2, color: colors.mute, marginTop: 4 },
-  stampText: { position: 'absolute', top: 10, right: 10, fontFamily: fonts.medium, fontSize: 10, letterSpacing: 1.6, color: colors.spot, borderWidth: 1.5, borderColor: colors.spot, paddingVertical: 3, paddingHorizontal: 6, transform: [{ rotate: '-8deg' }] },
+  stampText: { position: 'absolute', top: 10, right: 10, fontFamily: fonts.medium, fontSize: 10, letterSpacing: 1.6, color: colors.spot, borderWidth: 1.5, borderColor: colors.spot, paddingVertical: 3, paddingHorizontal: 6, borderRadius: radius.xs, overflow: 'hidden', transform: [{ rotate: '-8deg' }] },
   cardPaper: { backgroundColor: colors.paper, justifyContent: 'flex-end', gap: 4 },
   paperTitle: { fontFamily: fonts.medium, fontSize: 24, letterSpacing: -0.8, color: colors.ink },
   paperMono: { fontFamily: fonts.regular, fontSize: 9, letterSpacing: 1.2, color: colors.mute },
   paperMonoDark: { fontFamily: fonts.regular, fontSize: 9, letterSpacing: 1.2, color: colors.mute },
   paperRule: { borderTopWidth: 1, borderTopColor: colors.ink, marginVertical: 6 },
-  room: { width: 240, borderWidth: 1, borderColor: colors.paper, padding: 14, gap: 10 },
+  room: { width: 240, borderWidth: 1, borderColor: colors.paper, borderRadius: radius.md, padding: 14, gap: 10 },
   roomLine: { fontFamily: fonts.regular, fontSize: 12, color: colors.paper2 },
   roomCount: { fontFamily: fonts.regular, fontSize: 9, letterSpacing: 1.4, color: colors.spot, marginTop: 4 },
-  night: { width: 240, backgroundColor: colors.ink2, padding: 14, gap: 6 },
+  night: { width: 240, backgroundColor: colors.ink2, borderRadius: radius.md, padding: 14, gap: 6 },
   nightTitle: { fontFamily: fonts.medium, fontSize: 18, letterSpacing: -0.4, color: colors.paper },
   avRow: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 4 },
-  av: { width: 22, height: 22, borderWidth: 1, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
+  av: { width: 22, height: 22, borderRadius: radius.xs, borderWidth: 1, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   avText: { fontFamily: fonts.medium, fontSize: 11, color: colors.paper },
   avNote: { fontFamily: fonts.regular, fontSize: 11, color: colors.mute, marginLeft: 6 },
-  matchBox: { width: 240, borderWidth: 1, borderColor: colors.spot, padding: 12, marginTop: 10 },
+  matchBox: { width: 240, borderWidth: 1, borderColor: colors.spot, borderRadius: radius.md, padding: 12, marginTop: 10 },
   matchLabel: { fontFamily: fonts.regular, fontSize: 9, letterSpacing: 1.4, color: colors.spot },
   matchText: { fontFamily: fonts.regular, fontSize: 14, color: colors.paper, marginTop: 2 },
   map: { width: 240, height: 240, backgroundColor: '#1c1b18', overflow: 'hidden' },
   street: { position: 'absolute', backgroundColor: colors.ink3 },
-  pin: { position: 'absolute', backgroundColor: colors.paper, paddingVertical: 3, paddingHorizontal: 5 },
+  pin: { position: 'absolute', backgroundColor: colors.paper, paddingVertical: 3, paddingHorizontal: 6, borderRadius: radius.pill },
   pinText: { fontFamily: fonts.medium, fontSize: 9, letterSpacing: 0.5, color: colors.ink },
   meDot: { position: 'absolute', left: '50%', top: '50%', width: 12, height: 12, marginLeft: -6, marginTop: -6, borderRadius: 6, backgroundColor: colors.spot, borderWidth: 2, borderColor: colors.paper },
-  djBlock: { width: 240, height: 150, backgroundColor: colors.ink2, overflow: 'hidden' },
+  djBlock: { width: 240, height: 150, backgroundColor: colors.ink2, overflow: 'hidden', borderRadius: radius.md },
   djPhoto: { position: 'absolute', top: 0, left: 0, width: 240, height: 150, opacity: 0.6 },
   djShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 90, backgroundColor: colors.ink, opacity: 0.7 },
   djText: { position: 'absolute', left: 12, right: 12, bottom: 10, gap: 3 },

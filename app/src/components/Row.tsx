@@ -1,7 +1,7 @@
 import { createContext, useContext, type ReactNode } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 
 // panel: birbirine ait satırları ince çerçeveli tek kutuda toplar (ayarlar).
 // içindeki satırlar kenardan boşluk alır; son satırın alt çizgisi çerçeveye karışır.
@@ -67,7 +67,7 @@ export function Section({ title }: { title: string }) {
 const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 16, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: colors.ink3 },
   rowBoxed: { paddingHorizontal: 14 },
-  panel: { borderWidth: 1, borderColor: colors.ink3, overflow: 'hidden', marginTop: 10 },
+  panel: { borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md, overflow: 'hidden', marginTop: 10 },
   panelIn: { marginBottom: -1 },
   danger: { color: colors.spotText },
   valueRow: { flexDirection: 'row', alignItems: 'center', gap: 8, flexShrink: 1, maxWidth: '62%' },
@@ -79,8 +79,8 @@ const styles = StyleSheet.create({
   hint: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
   value: { flexShrink: 1, fontFamily: fonts.regular, fontSize: 14, color: colors.mute },
   section: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginTop: 28, marginBottom: 2 },
-  sw: { width: 38, height: 22, borderWidth: 1, borderColor: colors.mute, justifyContent: 'center', padding: 3 },
+  sw: { width: 38, height: 22, borderWidth: 1, borderColor: colors.mute, borderRadius: radius.pill, justifyContent: 'center', padding: 3 },
   swOn: { borderColor: colors.spot },
-  knob: { width: 14, height: 14, backgroundColor: colors.mute },
+  knob: { width: 14, height: 14, borderRadius: 7, backgroundColor: colors.mute },
   knobOn: { backgroundColor: colors.spot, alignSelf: 'flex-end' },
 });

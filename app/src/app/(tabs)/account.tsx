@@ -19,7 +19,7 @@ import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useTabReset } from '@/hooks/useTabReset';
 import type { NightCardData } from '@/content/cardsgen';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // kartın genişliği ekranın bu kadarı; her kart bir öncekinin bu kadarını açıkta bırakır
@@ -215,14 +215,15 @@ const styles = StyleSheet.create({
   emptyHint: { fontFamily: fonts.regular, fontSize: 13, color: colors.meta, textDecorationLine: 'underline' },
   shadeTop: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 60 },
   shadeBottom: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 190 },
-  who: { position: 'absolute', left: brand.left, right: brand.left + 96, bottom: 22 },
-  edit: { position: 'absolute', right: brand.left, bottom: 24, flexDirection: 'row', alignItems: 'center', gap: 6 },
+  who: { position: 'absolute', left: brand.left, right: brand.left + 96, bottom: 22 + radius.lg },
+  edit: { position: 'absolute', right: brand.left, bottom: 24 + radius.lg, flexDirection: 'row', alignItems: 'center', gap: 6 },
   editText: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper, textDecorationLine: 'underline' },
   name: { fontFamily: fonts.semibold, fontSize: 54, lineHeight: 56, letterSpacing: -2, color: colors.paper },
   meta: { fontFamily: fonts.regular, fontSize: 12, letterSpacing: 1.4, color: colors.paper, marginTop: 8 },
   title: { position: 'absolute', top: brand.top, left: brand.left, fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },
   gear: { position: 'absolute', top: brand.top - 3, right: brand.left + 84 },
-  paper: { backgroundColor: colors.paper, paddingTop: 18 },
+  // kâğıt, afişin üstüne biner: yuvarlak üst köşeler
+  paper: { backgroundColor: colors.paper, paddingTop: 22, marginTop: -radius.lg, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg },
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12, paddingHorizontal: brand.left },
   rowLeft: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   deckTitle: { fontFamily: fonts.medium, fontSize: 15, letterSpacing: -0.2, color: colors.ink },
@@ -235,7 +236,7 @@ const styles = StyleSheet.create({
   rule: { borderTopWidth: 1, borderTopColor: colors.rule, marginHorizontal: brand.left, marginTop: 14, marginBottom: 12 },
   pressed: { opacity: 0.7 },
   dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.92)', alignItems: 'center', justifyContent: 'center', gap: 18 },
-  roomLink: { alignItems: 'center', gap: 4, marginTop: 6, paddingHorizontal: 22, paddingVertical: 10, borderWidth: 1, borderColor: colors.spot },
+  roomLink: { alignItems: 'center', gap: 4, marginTop: 6, paddingHorizontal: 22, paddingVertical: 10, borderWidth: 1, borderColor: colors.spot, borderRadius: radius.md },
   roomLinkText: { fontFamily: fonts.logo, fontSize: 26, letterSpacing: -0.5, color: colors.spotText },
   roomLinkSub: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.meta },
   flipHint: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },

@@ -16,7 +16,7 @@ import { fetchNight, SITE, swipe, type Night } from '@/data/deck';
 import { OfflineError } from '@/lib/offline';
 import { commentCode, commentErrors, fetchComments, postComment, whenText, type Comment } from '@/data/comments';
 import { bodyText, upperData, useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const fallback = require('../../../assets/intro/concert.jpg');
@@ -298,7 +298,7 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, zIndex: 2 },
   centre: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  hero: { backgroundColor: colors.ink2, overflow: 'hidden' },
+  hero: { backgroundColor: colors.ink2, overflow: 'hidden', borderBottomLeftRadius: radius.lg, borderBottomRightRadius: radius.lg },
   heroPhoto: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
   heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 170, backgroundColor: colors.ink, opacity: 0.78 },
   heroText: { position: 'absolute', left: brand.left, right: brand.left, bottom: 18, gap: 6 },
@@ -323,9 +323,9 @@ const styles = StyleSheet.create({
   talkLinkOn: { opacity: 1, color: colors.spot },
   compose: { marginTop: 10, gap: 8 },
   talkNote: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
-  sendBtn: { alignSelf: 'flex-end', backgroundColor: colors.paper, paddingVertical: 8, paddingHorizontal: 14 },
+  sendBtn: { alignSelf: 'flex-end', backgroundColor: colors.paper, paddingVertical: 8, paddingHorizontal: 16, borderRadius: radius.pill },
   sendBtnOff: { opacity: 0.4 },
   sendText: { fontFamily: fonts.medium, fontSize: 13, color: colors.ink },
-  roomBtn: { backgroundColor: colors.paper, paddingVertical: 10, paddingHorizontal: 18 },
+  roomBtn: { backgroundColor: colors.paper, paddingVertical: 10, paddingHorizontal: 20, borderRadius: radius.pill },
   roomBtnText: { fontFamily: fonts.medium, fontSize: 14, color: colors.ink },
 });

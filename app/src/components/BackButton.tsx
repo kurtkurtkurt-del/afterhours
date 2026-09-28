@@ -81,5 +81,5 @@ const styles = StyleSheet.create({
   text: { fontFamily: fonts.regular, fontSize: 13, letterSpacing: 0.2, color: colors.paper, textDecorationLine: 'underline' },
   textInk: { color: colors.ink },
   edge: { position: 'absolute', top: 0, left: 0, width: EDGE, zIndex: 19, elevation: 19 },
-  line: { position: 'absolute', top: '20%', bottom: '20%', left: 0, width: 3, backgroundColor: colors.spot },
+  line: { position: 'absolute', top: '20%', bottom: '20%', left: 0, width: 3, borderRadius: 2, backgroundColor: colors.spot },
 });

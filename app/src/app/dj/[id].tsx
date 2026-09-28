@@ -11,7 +11,7 @@ import { djs as localDjs, sets as localSets, tracksFor, type Dj, type DjSet } fr
 import { isFollowing, loadDjs, setFollow } from '@/data/djs';
 import { useAuth } from '@/auth/AuthContext';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const GAP = 12;
@@ -143,19 +143,19 @@ const styles = StyleSheet.create({
   follow: { position: 'absolute', top: brand.top, right: brand.left, zIndex: 1 },
   followText: { fontFamily: fonts.regular, fontSize: 13, letterSpacing: 0.2, color: colors.paper },
   followOn: { color: colors.spot },
-  hero: { backgroundColor: colors.ink2, overflow: 'hidden' },
+  hero: { backgroundColor: colors.ink2, overflow: 'hidden', borderBottomLeftRadius: radius.lg, borderBottomRightRadius: radius.lg },
   heroPhoto: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
   heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 150, backgroundColor: colors.ink, opacity: 0.75 },
   heroText: { position: 'absolute', left: brand.left, right: brand.left, bottom: 18, gap: 5 },
   name: { fontFamily: fonts.medium, fontSize: 40, lineHeight: 42, letterSpacing: -1.4, color: colors.paper },
   mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
   strip: { flexDirection: 'row', gap: 4, paddingHorizontal: brand.left, marginTop: 4 },
-  small: { flex: 1, aspectRatio: 1, backgroundColor: colors.ink2 },
+  small: { flex: 1, aspectRatio: 1, backgroundColor: colors.ink2, borderRadius: radius.md, overflow: 'hidden' },
   head: { flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: brand.left, marginTop: 28, marginBottom: 10 },
   gridWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: GAP, paddingHorizontal: brand.left },
   tile: { gap: 4 },
   pressed: { opacity: 0.7 },
-  discBox: { alignItems: 'center', justifyContent: 'center', paddingVertical: 8, backgroundColor: colors.ink2, marginBottom: 6 },
+  discBox: { alignItems: 'center', justifyContent: 'center', paddingVertical: 8, backgroundColor: colors.ink2, marginBottom: 6, borderRadius: radius.md },
   trackTitle: { fontFamily: fonts.medium, fontSize: 14, letterSpacing: -0.2, color: colors.paper },
   trackOn: { color: colors.spot },
   nextRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', paddingHorizontal: brand.left, paddingVertical: 12, borderTopWidth: 1, borderBottomWidth: 1, borderColor: colors.ink3, marginHorizontal: brand.left },

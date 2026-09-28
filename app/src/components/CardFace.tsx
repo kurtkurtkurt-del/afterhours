@@ -2,7 +2,7 @@ import { Image, Linking, Pressable, StyleSheet, Text, View } from 'react-native'
 import { router } from 'expo-router';
 import { SvgUri } from 'react-native-svg';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { posterUrl, type Night } from '@/data/deck';
 
 const fallback = require('../../assets/intro/concert.jpg');
@@ -164,12 +164,12 @@ export function Hint({ label }: { label: string }) {
 const styles = StyleSheet.create({
   photo: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%', filter: [{ grayscale: 1 }] },
   posterBox: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.ink2 },
-  caption: { position: 'absolute', left: 0, right: 0, flexDirection: 'row', alignItems: 'stretch' },
+  caption: { position: 'absolute', left: 8, right: 8, flexDirection: 'row', alignItems: 'stretch', borderRadius: radius.lg, overflow: 'hidden' },
   block: { flex: 1, backgroundColor: colors.ink, paddingHorizontal: 16, paddingTop: 16, paddingBottom: 14, gap: 3 },
   title: { fontFamily: fonts.logo, fontSize: 48, lineHeight: 42, letterSpacing: -1, color: colors.spotText, marginBottom: 12 },
   jet: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1.2, color: colors.paper },
   friends: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 12 },
-  sq: { width: 24, height: 24, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
+  sq: { width: 24, height: 24, borderRadius: radius.xs, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   sqLive: { backgroundColor: colors.spot, borderColor: colors.spot },
   sqText: { fontFamily: fonts.medium, fontSize: 12, color: colors.paper },
   sqTextLive: { color: colors.ink },
@@ -187,6 +187,6 @@ const styles = StyleSheet.create({
   stripTextDone: { color: colors.spotText },
   stripLeft: { width: 44, backgroundColor: colors.ink, borderRightWidth: 1, borderRightColor: colors.ink3, alignItems: 'center', justifyContent: 'center' },
   stripLeftText: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 2, color: colors.paper, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },
-  hintText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.ink, backgroundColor: colors.paper, paddingVertical: 6, paddingHorizontal: 10 },
+  hintText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.ink, backgroundColor: colors.paper, paddingVertical: 6, paddingHorizontal: 12, borderRadius: radius.pill, overflow: 'hidden' },
   pressed: { opacity: 0.75 },
 });

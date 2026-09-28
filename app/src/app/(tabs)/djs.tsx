@@ -11,7 +11,7 @@ import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useTabReset } from '@/hooks/useTabReset';
 import { dayName } from '@/data/when';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const H = 3600_000;
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top, left: brand.left, fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },
   body: { paddingTop: brand.top + 48, paddingHorizontal: brand.left },
-  hero: { height: 240, backgroundColor: colors.ink2, overflow: 'hidden' },
+  hero: { height: 240, backgroundColor: colors.ink2, borderRadius: radius.lg, overflow: 'hidden' },
   heroPhoto: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
   heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 110, backgroundColor: colors.ink, opacity: 0.72 },
   heroText: { position: 'absolute', left: 16, right: 16, bottom: 14, gap: 4 },
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   section: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginTop: 26, marginBottom: 4 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: colors.ink3 },
   pressed: { opacity: 0.6 },
-  sq: { width: 48, height: 48, backgroundColor: colors.ink2 },
+  sq: { width: 48, height: 48, borderRadius: radius.sm, overflow: 'hidden', backgroundColor: colors.ink2 },
   rowText: { flex: 1, gap: 2 },
   name: { fontFamily: fonts.medium, fontSize: 17, letterSpacing: -0.3, color: colors.paper },
   when: { fontFamily: fonts.regular, fontSize: 13, color: colors.mute, fontVariant: ['tabular-nums'] },

@@ -66,6 +66,6 @@ const styles = StyleSheet.create({
   label: { fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.1, color: colors.paper, marginBottom: 6, fontVariant: ['tabular-nums'] },
   hit: { height: 32, justifyContent: 'center' },
   track: { position: 'absolute', left: KNOB / 2, right: KNOB / 2, height: 1, backgroundColor: colors.mute },
-  fill: { position: 'absolute', left: KNOB / 2, height: 1.5, backgroundColor: colors.paper },
-  knob: { position: 'absolute', width: KNOB, height: KNOB, backgroundColor: colors.paper, borderWidth: 1, borderColor: colors.ink },
+  fill: { position: 'absolute', left: KNOB / 2, height: 1.5, borderRadius: 1, backgroundColor: colors.paper },
+  knob: { position: 'absolute', width: KNOB, height: KNOB, borderRadius: KNOB / 2, backgroundColor: colors.paper, borderWidth: 1, borderColor: colors.ink },
 });

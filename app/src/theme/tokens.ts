@@ -12,6 +12,17 @@ export const colors = {
   meta: '#7F7B73',     // meta: küçük büyük harfli künye satırları
 } as const;
 
+// köşeler. 26.09'daki "köşe yok" kuralı 28.09'da kalktı: bütün uygulama yuvarlak.
+// küçük kare (baş harf, işaret) xs · düğme içi, çip sm · düğme, panel, kart md ·
+// alttan açılan pencere, büyük kart lg · hap biçimli düğme pill
+export const radius = {
+  xs: 5,
+  sm: 9,
+  md: 14,
+  lg: 24,
+  pill: 999,
+} as const;
+
 export const fonts = {
   regular: 'InterTight_400Regular',
   medium: 'InterTight_500Medium',

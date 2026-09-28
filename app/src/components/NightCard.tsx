@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SvgUri } from 'react-native-svg';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { posterUrl, type Night } from '@/data/deck';
 
 const fallback = require('../../assets/intro/concert.jpg');
@@ -42,7 +42,7 @@ export default function NightCard({ night }: { night: Night }) {
 }
 
 const styles = StyleSheet.create({
-  card: { flex: 1, backgroundColor: colors.ink2, overflow: 'hidden' },
+  card: { flex: 1, backgroundColor: colors.ink2, overflow: 'hidden', borderRadius: radius.lg },
   posterBox: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.ink2 },
   photo: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
   shade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: '60%' },

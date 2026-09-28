@@ -13,7 +13,7 @@ import { friends, nights } from '@/content/friends';
 import { friendAccept, friendRemove, friendRequest } from '@/data/friends';
 import { useYours } from '@/data/yours';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // arkadaş sayfası: keep'leri, şu an nerede, ortak geceler, kaldır. id "add" ise ekleme formu.
@@ -116,8 +116,8 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, backgroundColor: colors.ink, zIndex: 2 },
   body: { paddingTop: brand.top + 48, paddingHorizontal: brand.left },
-  initial: { width: 64, height: 64, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center', marginBottom: 14 },
-  initialFace: { width: 96, height: 96 },
+  initial: { width: 64, height: 64, borderRadius: radius.md, overflow: 'hidden', borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center', marginBottom: 14 },
+  initialFace: { width: 96, height: 96, borderRadius: radius.lg },
   face: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 },
   initialLive: { borderColor: colors.spot },
   initialText: { fontFamily: fonts.medium, fontSize: 30, color: colors.paper },

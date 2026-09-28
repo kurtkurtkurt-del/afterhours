@@ -10,7 +10,7 @@ import { useAuth } from '@/auth/AuthContext';
 import { myCards, type CardRow } from '@/data/checkin';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const two = (n: number) => String(n).padStart(2, '0');
@@ -132,11 +132,11 @@ const styles = StyleSheet.create({
   cta: { marginTop: 20 },
   section: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginTop: 28 },
   sectionLive: { color: colors.spotText },
-  panel: { borderWidth: 1, borderColor: colors.ink3, overflow: 'hidden', marginTop: 10 },
+  panel: { borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md, overflow: 'hidden', marginTop: 10 },
   panelIn: { marginBottom: -1 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 14, paddingHorizontal: 14, borderBottomWidth: 1, borderBottomColor: colors.ink3 },
   pressed: { opacity: 0.6 },
-  mark: { width: 8, height: 8, borderWidth: 1, borderColor: colors.mute },
+  mark: { width: 8, height: 8, borderRadius: 4, borderWidth: 1, borderColor: colors.mute },
   markLive: { backgroundColor: colors.spot, borderColor: colors.spot },
   text: { flex: 1, gap: 3 },
   name: { fontFamily: fonts.medium, fontSize: 16, letterSpacing: -0.2, color: colors.paper },

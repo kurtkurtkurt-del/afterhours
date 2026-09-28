@@ -48,9 +48,14 @@ is in §6.
 ### The spirit
 
 - Black and white on the web (`#000` on `#fff`); ink on paper in the app
-  (`#161512` on `#F3F1EC`, one blue `#2B3ECF`). Different on purpose.
+  (`#0E0D0C` on `#F3F1EC`, one red `#D7261E`). Different on purpose.
   Colour otherwise lives only in the posters and the cards.
-- No boxes, no shadows, no rounded corners. The divider is a 1px hairline.
+- The web: no boxes, no shadows, no rounded corners; the divider is a 1px
+  hairline. The app, since 28.09.2026: **rounded everywhere**, from one
+  scale in `app/src/theme/tokens.ts` (`radius`: xs 5 small squares and
+  initials · sm 9 chips · md 14 buttons, panels, cards · lg 24 sheets,
+  the card caption, the deck card, the paper that rides over the account
+  poster · pill for small action buttons and switches). Still no shadows.
 - One typeface on both: **Inter Tight** (the freely available answer to PP
   Neue Montreal). The small lines are Inter Tight too — 10px, 0.14–0.18em
   tracking, uppercase, 38–50% opacity. JetBrains Mono and Archivo survive
@@ -563,7 +568,8 @@ asks for and stays with it.
 | Route | What |
 |---|---|
 | `index` | The intro (the wordmark), then the home screen: a rotating tagline, `sign up`, `explore your city`, the sound toggle. Signed in, straight to `yours` |
-| `explore` | First open: six onboarding steps, then `where are you based?` |
+| `film` | **The intro film** (15 s, made in Claude Design, `assets/film/film.html` — the design's standalone bundle, played in a WebView, offline). `explore your city` on the home screen and settings → `show the intro again` open it; `skip` top right; when it has played through it goes to `signup`. Changes made to the export: plays ONCE and holds the last frame (`OM_PLAYBACK` times 1), always starts at 0 (the player remembers its playhead in localStorage), no play bar, and it posts `end` to the app 1.4 s after the last frame. To replace it: export the new film as standalone HTML and redo those four edits |
+| `explore` | The old six onboarding slides + `where are you based?` — no longer linked |
 | `(tabs)/flow` | **The deck.** One card, `keep` / `let go`, `undo`; the picker row `everywhere · all nights · any night` |
 | `(tabs)/djs` | **Who is playing:** live now · later tonight · this week |
 | `(tabs)/yours` | **Yours:** your friends' kept nights, `who's coming?` (i'm in · maybe · not tonight), the match box, the friends row |

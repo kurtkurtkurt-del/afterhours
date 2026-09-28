@@ -14,7 +14,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import CardFace, { Hint, openDetails, openTicket, toDeckCard, type DeckFriend } from '@/components/CardFace';
 import { useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import type { Night } from '@/data/deck';
 
 type Direction = 'left' | 'right';
@@ -194,7 +194,7 @@ export default Deck;
 
 const styles = StyleSheet.create({
   stage: { flex: 1 },
-  slot: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colors.ink, overflow: 'hidden' },
+  slot: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colors.ink, overflow: 'hidden', borderRadius: radius.lg },
   edgeRight: { position: 'absolute', top: 0, right: 0, bottom: 0, width: 56, backgroundColor: colors.spot },
   edgeLeft: { position: 'absolute', top: 0, left: 0, bottom: 0, width: 56, borderRightWidth: 1.5, borderRightColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   letGo: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.paper, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },

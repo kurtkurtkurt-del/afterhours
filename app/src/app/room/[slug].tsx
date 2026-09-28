@@ -8,7 +8,7 @@ import Input from '@/components/Input';
 import { reasonCode, reasons, roomInfo, roomList, roomPost, type RoomInfo, type RoomPost } from '@/data/checkin';
 import { upperData, useLang } from '@/i18n';
 import { fetchNight } from '@/data/deck';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const two = (n: number) => String(n).padStart(2, '0');
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
   noteSmall: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
   compose: { paddingHorizontal: brand.left, paddingTop: 12, gap: 8, borderTopWidth: 1, borderTopColor: colors.ink3, backgroundColor: colors.ink },
   composeRow: { flexDirection: 'row', alignItems: 'stretch', gap: 8 },
-  sendBtn: { backgroundColor: colors.spot, paddingHorizontal: 14, justifyContent: 'center' },
+  sendBtn: { backgroundColor: colors.spot, paddingHorizontal: 16, justifyContent: 'center', borderRadius: radius.pill },
   sendOff: { opacity: 0.4 },
   sendText: { fontFamily: fonts.medium, fontSize: 13, color: colors.ink },
   pressed: { opacity: 0.7 },

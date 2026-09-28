@@ -17,7 +17,7 @@ import { useAuth } from '@/auth/AuthContext';
 import { fetchNear, type NearNight } from '@/data/near';
 import { friendsKept } from '@/data/friends';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // konum yoksa seçili şehrin merkezi; o da yoksa münih
@@ -293,7 +293,7 @@ const styles = StyleSheet.create({
   jet: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1.2, color: colors.paper },
   jetMeta: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.meta },
   jetRed: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.spotText },
-  caption: { position: 'absolute', left: 0, right: 0, flexDirection: 'row', alignItems: 'stretch' },
+  caption: { position: 'absolute', left: 8, right: 8, flexDirection: 'row', alignItems: 'stretch', borderRadius: radius.lg, overflow: 'hidden' },
   block: { flex: 1, backgroundColor: colors.ink, paddingHorizontal: brand.left, paddingTop: 14, paddingBottom: 14, gap: 3 },
   capTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
   capTitle: { fontFamily: fonts.logo, fontSize: 54, lineHeight: 46, letterSpacing: -1, color: colors.spotText, marginBottom: 10 },

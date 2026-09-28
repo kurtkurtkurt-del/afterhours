@@ -19,7 +19,7 @@ import { deleteAccount, exportMe, fetchSettings, saveSettings, type Settings } f
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { genres, type Genre } from '@/content/music';
 import { langNames, langs, upperData, useLang, type Lang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // ayarlar, ana sayfa: üstte profil kartı (fotoğraf + isim + "düzenle"), altında
@@ -180,7 +180,7 @@ export default function SettingsScreen() {
             right={<Mark kind="more" />}
             onPress={() => {
               Storage.removeItemSync('intro.seen');
-              router.push('/explore');
+              router.push('/film');
             }}
           />
           <Row label={t('settings.web')} hint={t('settings.web.hint')} right={<Mark kind="out" />} onPress={() => Linking.openURL(SITE)} />
@@ -235,7 +235,7 @@ const styles = StyleSheet.create({
   title: { position: 'absolute', top: brand.top, left: 0, right: 0, textAlign: 'center', fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },
   body: { paddingTop: brand.top + 56, paddingHorizontal: brand.left },
   pressed: { opacity: 0.6 },
-  card: { flexDirection: 'row', alignItems: 'center', gap: 14, padding: 14, borderWidth: 1, borderColor: colors.ink3 },
+  card: { flexDirection: 'row', alignItems: 'center', gap: 14, padding: 14, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md },
   cardText: { flex: 1, gap: 3 },
   cardName: { fontFamily: fonts.medium, fontSize: 20, letterSpacing: -0.4, color: colors.paper },
   cardUnder: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.2, color: colors.mute },

@@ -19,7 +19,7 @@ import { useAuth } from '@/auth/AuthContext';
 import { useTabReset } from '@/hooks/useTabReset';
 import { dayLabel } from '@/data/when';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const fallbackPhoto = require('../../../assets/intro/concert.jpg');
@@ -294,7 +294,7 @@ const styles = StyleSheet.create({
   col: { gap: 14 },
   person: { width: 50, alignItems: 'center', gap: 5 },
   pressed: { opacity: 0.6 },
-  initial: { width: 46, height: 46, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
+  initial: { width: 46, height: 46, borderRadius: radius.sm, overflow: 'hidden', borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   // fotoğraf çerçevenin içini doldurur; canlıysa kırmızı çerçeve kalır
   face: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 },
   initialLive: { backgroundColor: colors.spot, borderColor: colors.spot },
@@ -307,26 +307,26 @@ const styles = StyleSheet.create({
   section: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta, marginTop: 26, paddingHorizontal: brand.left },
   card: { marginHorizontal: brand.left, marginTop: 22, paddingTop: 16, borderTopWidth: 1, borderTopColor: colors.ink3, gap: 8 },
   cardRow: { flexDirection: 'row', gap: 12, alignItems: 'center' },
-  cardPhoto: { width: 72, height: 72, backgroundColor: colors.ink2, filter: [{ grayscale: 1 }] },
+  cardPhoto: { width: 72, height: 72, borderRadius: radius.md, backgroundColor: colors.ink2, filter: [{ grayscale: 1 }] },
   cardText: { flex: 1, gap: 3 },
   cardMeta: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.4, color: colors.spotText },
   cardTitle: { fontFamily: fonts.semibold, fontSize: 20, lineHeight: 22, letterSpacing: -0.5, color: colors.paper },
   avatars: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2 },
-  av: { width: AV, height: AV, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
+  av: { width: AV, height: AV, borderRadius: radius.xs, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   avLive: { backgroundColor: colors.spot, borderColor: colors.spot },
   avText: { fontFamily: fonts.medium, fontSize: 10, color: colors.paper },
   avTextLive: { color: colors.ink },
   avNote: { fontFamily: fonts.regular, fontSize: 11, color: colors.mute, marginLeft: 6 },
   actions: { flexDirection: 'row', gap: 8, marginTop: 2 },
-  btnRed: { paddingVertical: 9, paddingHorizontal: 13, backgroundColor: colors.spot },
-  btnLine: { paddingVertical: 8, paddingHorizontal: 12, borderWidth: 1, borderColor: colors.paper, backgroundColor: colors.ink },
+  btnRed: { paddingVertical: 9, paddingHorizontal: 15, backgroundColor: colors.spot, borderRadius: radius.pill },
+  btnLine: { paddingVertical: 8, paddingHorizontal: 14, borderWidth: 1, borderColor: colors.paper, backgroundColor: colors.ink, borderRadius: radius.pill },
   btnTextRed: { fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.1, color: colors.ink },
   btnTextLine: { fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.1, color: colors.paper },
-  match: { marginHorizontal: brand.left, marginTop: 26, padding: 14, borderWidth: 1, borderColor: colors.spot, flexDirection: 'row', alignItems: 'center', gap: 12 },
+  match: { marginHorizontal: brand.left, marginTop: 26, padding: 14, borderWidth: 1, borderColor: colors.spot, borderRadius: radius.md, flexDirection: 'row', alignItems: 'center', gap: 12 },
   matchLabel: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.spotText },
   matchText: { fontFamily: fonts.regular, fontSize: 15, color: colors.paper },
   matchNight: { fontFamily: fonts.regular, fontSize: 12, color: colors.meta },
-  fab: { position: 'absolute', right: brand.left, backgroundColor: colors.spot, paddingVertical: 10, paddingHorizontal: 14 },
+  fab: { position: 'absolute', right: brand.left, backgroundColor: colors.spot, paddingVertical: 10, paddingHorizontal: 16, borderRadius: radius.pill },
   fabWave: { backgroundColor: colors.ink, borderWidth: 1, borderColor: colors.spot, paddingVertical: 9 },
   btnTextWave: { fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.1, color: colors.spotText },
   fabLeft: { right: undefined, left: brand.left, backgroundColor: colors.ink, borderWidth: 1, borderColor: colors.paper },

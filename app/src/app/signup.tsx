@@ -13,7 +13,7 @@ import { signInWithGoogle } from '@/auth/google';
 import GoogleMark from '@/components/GoogleMark';
 import { useT } from '@/i18n';
 import { supabase } from '@/lib/supabase';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // kayıt. şimdilik ne yazılırsa yazılsın kabul edip uygulamaya alır.
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
   note: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper2, opacity: 0.8 },
   small: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute, marginTop: 6 },
   // google: çizgili buton (kâğıt çerçeve), solda google'ın kendi işareti
-  google: { height: 52, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 12, borderWidth: 1.5, borderColor: colors.paper },
+  google: { height: 52, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 12, borderWidth: 1.5, borderColor: colors.paper, borderRadius: radius.md },
   googleText: { fontFamily: fonts.medium, fontSize: 16, letterSpacing: -0.2, color: colors.paper },
   pressed: { opacity: 0.7 },
   or: { flexDirection: 'row', alignItems: 'center', gap: 12 },

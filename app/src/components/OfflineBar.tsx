@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useNet } from '@/lib/offline';
 import { useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, radius } from '@/theme/tokens';
 
 // çevrimdışıyken en üstte küçük bir satır: kaydedilenler gösteriliyor, kaç iş
 // sırada bekliyor. bağlantı gelip sıra gönderilirken "gönderiliyor". başka
@@ -25,7 +25,7 @@ export default function OfflineBar() {
 
 const styles = StyleSheet.create({
   wrap: { position: 'absolute', left: 0, right: 0, alignItems: 'center', zIndex: 50, elevation: 50 },
-  pill: { flexDirection: 'row', alignItems: 'center', gap: 7, backgroundColor: colors.ink, borderWidth: 1, borderColor: colors.ink3, paddingHorizontal: 10, paddingVertical: 4 },
+  pill: { flexDirection: 'row', alignItems: 'center', gap: 7, backgroundColor: colors.ink, borderWidth: 1, borderColor: colors.ink3, paddingHorizontal: 12, paddingVertical: 5, borderRadius: radius.pill },
   dot: { width: 6, height: 6, borderRadius: 3, borderWidth: 1, borderColor: colors.mute },
   dotOn: { backgroundColor: colors.spot, borderColor: colors.spot },
   text: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.3, color: colors.paper },

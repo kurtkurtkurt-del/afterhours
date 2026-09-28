@@ -87,7 +87,7 @@ export default function City({ play, soundOn, onToggleSound, onPickSound }: Prop
         <View style={styles.gap} />
         <Button label={t('word.signin')} onPress={() => router.push({ pathname: '/signup', params: { mode: 'in' } })} />
         <Button label={t('word.signup')} kind="line" onPress={() => router.push('/signup')} />
-        <Button label={t('home.explore')} kind="line" onPress={() => router.push('/explore')} />
+        <Button label={t('home.explore')} kind="line" onPress={() => router.push('/film')} />
       </Animated.View>
     </View>
   );
