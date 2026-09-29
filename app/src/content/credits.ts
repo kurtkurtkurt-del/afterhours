@@ -180,5 +180,101 @@ export const credits: Credit[] = [
     "title": "NoKings XXX - Damn Stupidity USA",
     "license": "cc by 4.0",
     "url": "https://freemusicarchive.org/music/nokings-xxx/kings-new-enema/damn-stupidity-usa/"
+  },
+  {
+    "genre": "dj clips",
+    "title": "AurosonMusic - Happy Tropical House",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/aurosonmusic/single/happy-tropical-house/"
+  },
+  {
+    "genre": "dj clips",
+    "title": "AurosonMusic - Tropical Summer",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/aurosonmusic/single/tropical-summer-1/"
+  },
+  {
+    "genre": "dj clips",
+    "title": "AurosonMusic - Beach Tropical House",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/aurosonmusic/single/beach-tropical-house/"
+  },
+  {
+    "genre": "dj clips",
+    "title": "AurosonMusic - Tropical Paradise House",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/aurosonmusic/single/tropical-paradise-house/"
+  },
+  {
+    "genre": "dj clips",
+    "title": "AurosonMusic - Tropical House Pop",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/aurosonmusic/single/tropical-house-pop-1/"
+  },
+  {
+    "genre": "dj clips",
+    "title": "AurosonMusic - Emotional Summer Memory (Tropical House)",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/aurosonmusic/single/emotional-summer-memory-tropical-house/"
+  },
+  {
+    "genre": "now playing",
+    "title": "Elijah_K - Groove",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/elijah-k/single/groove-2/"
+  },
+  {
+    "genre": "now playing",
+    "title": "Elijah_K - Funky Rhythm",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/elijah-k/single/funky-rhythm/"
+  },
+  {
+    "genre": "now playing",
+    "title": "Elijah_K - Discoteka",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/elijah-k/single/discoteka/"
+  },
+  {
+    "genre": "now playing",
+    "title": "Elijah_K - Glitter Ball",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/elijah-k/single/glitter-ball/"
+  },
+  {
+    "genre": "dj sets",
+    "title": "Elijah_K - Warm Sun",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/elijah-k/single/warm-sun/"
+  },
+  {
+    "genre": "dj sets",
+    "title": "Elijah_K - Red Sun",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/elijah-k/single/red-sun/"
+  },
+  {
+    "genre": "dj sets",
+    "title": "Elijah_K - Summer",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/elijah-k/single/summer-4/"
+  },
+  {
+    "genre": "dj sets",
+    "title": "Elijah_K - Beyond the Blue",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/elijah-k/single/beyond-the-blue/"
+  },
+  {
+    "genre": "dj sets",
+    "title": "Elijah_K - Disco Girl",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/elijah-k/single/disco-girl/"
+  },
+  {
+    "genre": "dj sets",
+    "title": "Elijah_K - Like A Disco Dream",
+    "license": "cc by 4.0",
+    "url": "https://freemusicarchive.org/music/elijah-k/single/like-a-disco-dream/"
   }
 ];

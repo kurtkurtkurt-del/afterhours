@@ -1,13 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useFocusEffect } from 'expo-router';
-import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import Vinyl from '@/components/Vinyl';
-import { useAmbient } from '@/audio/AmbientContext';
-import { CLIP_SECONDS, type Clip } from '@/content/clips';
-import { tracks } from '@/content/music';
+import { useTrack } from '@/audio/useTrack';
+import type { Clip } from '@/content/clips';
+import { clipTracks } from '@/content/soundtracks';
 import type { Dj } from '@/content/djs';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
@@ -21,58 +19,31 @@ type Props = {
 
 // Clips shared by DJs: a large card on top plays the chosen clip with its waveform;
 // a record rack underneath picks one (the record slides out of its sleeve and spins).
-// Playing a clip hushes the background music; leaving the tab stops it.
+// Playing hushes the background music; leaving the tab stops it (audio/useTrack).
 export default function ClipShelf({ clips, djOf, tonight }: Props) {
   const { t, tn, up } = useLang();
-  const { hush } = useAmbient();
-  const player = useAudioPlayer(null);
-  const status = useAudioPlayerStatus(player);
   const [featured, setFeatured] = useState<string | null>(null);
-  const [playing, setPlaying] = useState<string | null>(null);
   const [liked, setLiked] = useState<Record<string, boolean>>({});
-
+  // when a clip ends, the next one comes up on the big card and waits
+  const next = useCallback(
+    (ended: string) => {
+      const i = clips.findIndex((c) => c.id === ended);
+      if (clips.length) setFeatured(clips[(i + 1) % clips.length].id);
+    },
+    [clips],
+  );
+  const { playing, play: playTrack, elapsed, duration } = useTrack(next);
   const current = clips.find((c) => c.id === featured) ?? clips[0];
-
-  const stop = useCallback(() => {
-    try {
-      player.pause();
-    } catch {
-      /* already released */
-    }
-    setPlaying(null);
-    hush(false);
-  }, [player, hush]);
-
   const play = (clip: Clip) => {
     setFeatured(clip.id);
-    if (playing === clip.id) return stop();
-    player.replace(tracks[clip.sound][clip.track % tracks[clip.sound].length]);
-    player.play();
-    setPlaying(clip.id);
-    hush(true);
+    playTrack(clip.id, clipTracks[clip.track % clipTracks.length]);
   };
-
-  // Stop at 30 seconds (or when the track ends) and bring the next clip up, waiting.
-  const elapsed = playing ? status.currentTime : 0;
-  useEffect(() => {
-    if (!playing) return;
-    const sub = player.addListener('playbackStatusUpdate', (s) => {
-      if (s.currentTime < CLIP_SECONDS && !s.didJustFinish) return;
-      stop();
-      const i = clips.findIndex((c) => c.id === playing);
-      if (clips.length) setFeatured(clips[(i + 1) % clips.length].id);
-    });
-    return () => sub.remove();
-  }, [player, playing, clips, stop]);
-
-  // Leaving the tab (or unmounting) stops the clip and gives the music back.
-  useFocusEffect(useCallback(() => () => stop(), [stop]));
 
   if (!current) return <Text style={styles.idle}>{up(t('clips.none'))}</Text>;
 
   const dj = djOf(current.dj);
   const on = playing === current.id;
-  const progress = on ? Math.min(1, elapsed / CLIP_SECONDS) : 0;
+  const progress = on && duration ? Math.min(1, elapsed / duration) : 0;
   const who = (liked[current.id] ? ['♥'] : []).concat(current.likes).slice(0, 3);
   const set = tonight(current.dj);
   const when = current.when;

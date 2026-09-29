@@ -43,4 +43,25 @@ names below must appear in the app's credits screen and on the store listing.
 09. Tommaso Croce - sand potato — CC BY 4.0 — https://freemusicarchive.org/music/Dilating_Times/single/sand-potato/
 10. NoKings XXX - Damn Stupidity USA — CC BY 4.0 — https://freemusicarchive.org/music/nokings-xxx/kings-new-enema/damn-stupidity-usa/
 
+## dj clips, now playing, dj sets
+
+Each a 45-second faded excerpt of the loudest part, 96 kbps AAC, bundled in the app (assets/music).
+
+clips-01. AurosonMusic - Happy Tropical House — CC BY 4.0 — https://freemusicarchive.org/music/aurosonmusic/single/happy-tropical-house/
+clips-02. AurosonMusic - Tropical Summer — CC BY 4.0 — https://freemusicarchive.org/music/aurosonmusic/single/tropical-summer-1/
+clips-03. AurosonMusic - Beach Tropical House — CC BY 4.0 — https://freemusicarchive.org/music/aurosonmusic/single/beach-tropical-house/
+clips-04. AurosonMusic - Tropical Paradise House — CC BY 4.0 — https://freemusicarchive.org/music/aurosonmusic/single/tropical-paradise-house/
+clips-05. AurosonMusic - Tropical House Pop — CC BY 4.0 — https://freemusicarchive.org/music/aurosonmusic/single/tropical-house-pop-1/
+clips-06. AurosonMusic - Emotional Summer Memory (Tropical House) — CC BY 4.0 — https://freemusicarchive.org/music/aurosonmusic/single/emotional-summer-memory-tropical-house/
+listen-01. Elijah_K - Groove — CC BY 4.0 — https://freemusicarchive.org/music/elijah-k/single/groove-2/
+listen-02. Elijah_K - Funky Rhythm — CC BY 4.0 — https://freemusicarchive.org/music/elijah-k/single/funky-rhythm/
+listen-03. Elijah_K - Discoteka — CC BY 4.0 — https://freemusicarchive.org/music/elijah-k/single/discoteka/
+listen-04. Elijah_K - Glitter Ball — CC BY 4.0 — https://freemusicarchive.org/music/elijah-k/single/glitter-ball/
+sets-01. Elijah_K - Warm Sun — CC BY 4.0 — https://freemusicarchive.org/music/elijah-k/single/warm-sun/
+sets-02. Elijah_K - Red Sun — CC BY 4.0 — https://freemusicarchive.org/music/elijah-k/single/red-sun/
+sets-03. Elijah_K - Summer — CC BY 4.0 — https://freemusicarchive.org/music/elijah-k/single/summer-4/
+sets-04. Elijah_K - Beyond the Blue — CC BY 4.0 — https://freemusicarchive.org/music/elijah-k/single/beyond-the-blue/
+sets-05. Elijah_K - Disco Girl — CC BY 4.0 — https://freemusicarchive.org/music/elijah-k/single/disco-girl/
+sets-06. Elijah_K - Like A Disco Dream — CC BY 4.0 — https://freemusicarchive.org/music/elijah-k/single/like-a-disco-dream/
+
 CC BY 4.0: https://creativecommons.org/licenses/by/4.0/

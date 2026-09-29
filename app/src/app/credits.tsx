@@ -11,7 +11,7 @@ import { brand } from '@/theme/layout';
 export default function CreditsScreen() {
   const insets = useSafeAreaInsets();
   const { t, up } = useLang();
-  const genres = ['house', 'techno', 'rap'];
+  const genres = ['house', 'techno', 'rap', 'dj clips', 'now playing', 'dj sets'];
   return (
     <View style={styles.root}>
       <StatusBar style="light" />

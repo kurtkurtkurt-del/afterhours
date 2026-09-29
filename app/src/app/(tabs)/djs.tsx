@@ -11,6 +11,8 @@ import SoundCorner from '@/components/SoundCorner';
 import Vinyl from '@/components/Vinyl';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
 import { useAmbient } from '@/audio/AmbientContext';
+import { useTrack } from '@/audio/useTrack';
+import { listenTracks } from '@/content/soundtracks';
 import { useAuth } from '@/auth/AuthContext';
 import { clips as sampleClips } from '@/content/clips';
 import { stories, type Story } from '@/content/stories';
@@ -218,9 +220,11 @@ function Ring({ photo, story, live }: { photo: ImageSourcePropType; story: 'new'
 // What is playing now: a spinning record, how far into the set, and "listen".
 function NowCard({ set, dj, followed, now, ends, sample }: { set: DjSet; dj?: Dj; followed: boolean; now: Date; ends: number; sample: boolean }) {
   const { t, up } = useLang();
-  const ambient = useAmbient();
+  const track = useTrack();
+  // one of the "listen" tracks, the same one for this DJ each time
+  const pick = listenTracks[[...set.dj].reduce((a, ch) => a + ch.charCodeAt(0), 0) % listenTracks.length];
   if (!dj) return null;
-  const listening = ambient.on && ambient.genre === dj.sound;
+  const listening = track.playing === set.dj;
   const progress = Math.max(0, Math.min(1, (now.getTime() - set.startsAt.getTime()) / (ends - set.startsAt.getTime())));
   return (
     <Pressable onPress={() => router.push(`/dj/${dj.id}`)} style={styles.now}>
@@ -239,7 +243,7 @@ function NowCard({ set, dj, followed, now, ends, sample }: { set: DjSet; dj?: Dj
           <Text style={styles.time}>{hhmm(set.startsAt)}</Text>
           <Text style={styles.time}>{hhmm(new Date(ends))}</Text>
         </View>
-        <Pressable onPress={() => (listening ? ambient.toggle() : ambient.setGenre(dj.sound))} accessibilityRole="button" style={({ pressed }) => [styles.listen, listening && styles.listenOn, pressed && styles.pressed]}>
+        <Pressable onPress={() => track.play(set.dj, pick)} accessibilityRole="button" style={({ pressed }) => [styles.listen, listening && styles.listenOn, pressed && styles.pressed]}>
           <Text style={[styles.listenText, listening && styles.listenTextOn]}>{listening ? t('djs.listening') : t('djs.listen')}</Text>
         </Pressable>
       </View>

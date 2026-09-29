@@ -6,7 +6,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import PullDownScroll from '@/components/PullDownScroll';
 import Vinyl from '@/components/Vinyl';
-import { useAmbient } from '@/audio/AmbientContext';
+import { useTrack } from '@/audio/useTrack';
+import { setTracks } from '@/content/soundtracks';
 import { djs as localDjs, sets as localSets, tracksFor, type Dj, type DjSet } from '@/content/djs';
 import { isFollowing, loadDjs, setFollow } from '@/data/djs';
 import { useAuth } from '@/auth/AuthContext';
@@ -23,9 +24,8 @@ export default function DjScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
-  const ambient = useAmbient();
   const [following, setFollowing] = useState(false);
-  const [playing, setPlaying] = useState<number | null>(null);
+  const clip = useTrack();
   const { session } = useAuth();
   const { t, tx, up } = useLang();
   const [data, setData] = useState<{ djs: Dj[]; sets: DjSet[] }>({ djs: localDjs, sets: localSets() });
@@ -63,15 +63,8 @@ export default function DjScreen() {
   const tile = (width - brand.left * 2 - GAP) / 2;
   const disc = tile - 24;
 
-  const play = (i: number) => {
-    if (playing === i) {
-      setPlaying(null);
-      if (ambient.on) ambient.toggle();
-      return;
-    }
-    setPlaying(i);
-    ambient.setGenre(dj.sound); // for now, play music in the DJ's genre
-  };
+  // Each recorded set plays its own excerpt (content/soundtracks.ts: setTracks).
+  const play = (i: number) => clip.play(String(i), setTracks[i % setTracks.length]);
 
   return (
     <View style={styles.root}>
@@ -108,7 +101,7 @@ export default function DjScreen() {
         </View>
         <View style={styles.gridWrap}>
           {tracks.map((track, i) => {
-            const on = playing === i;
+            const on = clip.playing === String(i);
             return (
               <Pressable key={track.title + i} onPress={() => play(i)} style={({ pressed }) => [styles.tile, { width: tile }, pressed && styles.pressed]}>
                 <View style={styles.discBox}>

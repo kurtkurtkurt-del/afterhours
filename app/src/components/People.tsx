@@ -84,10 +84,10 @@ export function ActionButton({ relation, busy, onPress, compact, wide }: { relat
   );
 }
 
-export function Initial({ name }: { name: string }) {
+export function Initial({ name, small }: { name: string; small?: boolean }) {
   return (
-    <View style={styles.initial}>
-      <Text style={styles.initialText}>{name.charAt(0)}</Text>
+    <View style={[styles.initial, small && styles.initialSmall]}>
+      <Text style={[styles.initialText, small && styles.initialTextSmall]}>{name.charAt(0)}</Text>
     </View>
   );
 }
@@ -192,10 +192,10 @@ export function PeopleSuggested() {
           return (
             <View key={p.id} style={styles.card}>
               <Pressable onPress={() => openPerson(p.handle, sample)} accessibilityRole="button" style={({ pressed }) => [styles.cardOpen, pressed && styles.pressed]}>
-                <Initial name={name} />
+                <Initial name={name} small />
                 <Text style={styles.cardName} numberOfLines={1}>{name}</Text>
                 <Text style={styles.cardHandle} numberOfLines={1}>@{p.handle}</Text>
-                <Text style={styles.cardReason} numberOfLines={2}>{reason(p)}</Text>
+                <Text style={styles.cardReason} numberOfLines={1}>{reason(p)}</Text>
               </Pressable>
               <ActionButton
                 compact
@@ -225,18 +225,20 @@ const styles = StyleSheet.create({
   rowMeta: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 0.8, color: colors.mute },
   initial: { width: 46, height: 46, borderRadius: radius.sm, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   initialText: { fontFamily: fonts.medium, fontSize: 18, color: colors.paper },
+  initialSmall: { width: 34, height: 34, borderRadius: radius.xs + 2 },
+  initialTextSmall: { fontSize: 14 },
   suggested: { marginTop: 26 },
   section: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta, paddingHorizontal: brand.left },
   sectionNote: { color: colors.ink2 },
   cards: { flexDirection: 'row', gap: 8, paddingHorizontal: brand.left, marginTop: 12 },
-  card: { flex: 1, minWidth: 0, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md, padding: 12, alignItems: 'center', gap: 4 },
-  cardOpen: { alignItems: 'center', gap: 4, alignSelf: 'stretch' },
-  cardName: { fontFamily: fonts.semibold, fontSize: 15, letterSpacing: -0.3, color: colors.paper, marginTop: 6 },
-  cardHandle: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 0.4, color: colors.mute },
-  cardReason: { fontFamily: fonts.regular, fontSize: 11, lineHeight: 14, color: colors.meta, textAlign: 'center', minHeight: 28, marginBottom: 6 },
+  card: { flex: 1, minWidth: 0, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md, paddingVertical: 9, paddingHorizontal: 8, alignItems: 'center', gap: 2 },
+  cardOpen: { alignItems: 'center', gap: 1, alignSelf: 'stretch' },
+  cardName: { fontFamily: fonts.semibold, fontSize: 13.5, letterSpacing: -0.3, color: colors.paper, marginTop: 5 },
+  cardHandle: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 0.4, color: colors.mute },
+  cardReason: { fontFamily: fonts.regular, fontSize: 10.5, lineHeight: 13, color: colors.meta, textAlign: 'center', marginTop: 1, marginBottom: 6 },
   btnRed: { paddingVertical: 8, paddingHorizontal: 14, backgroundColor: colors.spot, borderRadius: radius.pill, minWidth: 64, alignItems: 'center' },
   btnLine: { paddingVertical: 7, paddingHorizontal: 13, borderWidth: 1, borderColor: colors.paper, borderRadius: radius.pill, minWidth: 64, alignItems: 'center' },
-  btnCompact: { alignSelf: 'stretch' },
+  btnCompact: { alignSelf: 'stretch', minWidth: 0, paddingVertical: 5, paddingHorizontal: 8 },
   btnWide: { alignSelf: 'flex-start', paddingVertical: 11, paddingHorizontal: 22 },
   btnTextRed: { fontFamily: fonts.medium, fontSize: 13, color: colors.ink },
   btnTextLine: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper },
