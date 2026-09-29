@@ -1,4 +1,4 @@
-// şehirler ve bu haftaki gece sayıları. sahte veri; supabase gelince buradan okunur.
+// Fallback cities and this week's night counts, used when the network is unavailable.
 export type City = { id: string; name: string; nights: number };
 
 export const cities: City[] = [
@@ -10,4 +10,3 @@ export const cities: City[] = [
   { id: 'ankara', name: 'ankara', nights: 6 },
 ];
 
-export const cityById = (id?: string) => cities.find((c) => c.id === id);

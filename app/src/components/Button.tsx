@@ -3,8 +3,7 @@ import { colors, fonts, radius } from '@/theme/tokens';
 
 type Props = { label: string; onPress?: () => void; kind?: 'fill' | 'line' };
 
-// koyu zemin üstünde iki buton türü: dolu (kâğıt) ve çizgili (kâğıt çerçeve).
-// köşe yok, gölge yok.
+// Two button styles on dark backgrounds: filled (paper) and outlined (paper border).
 export default function Button({ label, onPress, kind = 'fill' }: Props) {
   return (
     <Pressable

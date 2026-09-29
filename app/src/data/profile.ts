@@ -3,8 +3,8 @@ import { supabase } from '@/lib/supabase';
 import { must, remember } from '@/lib/offline';
 import { useAuth } from '@/auth/AuthContext';
 
-// profile_me(): kendi kartın + sayılar + ayarlar, tek çağrı (12_profiles.sql)
-export type Profile = {
+// profile_me(): your card + counts + settings in one call (12_profiles.sql).
+type Profile = {
   id: string;
   handle: string | null;
   display_name: string | null;
@@ -18,7 +18,7 @@ export type Profile = {
   comment_count: number;
 };
 
-// tick: değişince profil yeniden çekilir (sayfaya dönüldüğünde)
+// tick: refetch the profile when it changes (on returning to the page).
 export function useProfile(tick = 0) {
   const { session } = useAuth();
   const uid = session?.user.id;

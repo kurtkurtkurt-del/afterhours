@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Image, Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import { SvgUri } from 'react-native-svg';
@@ -18,15 +19,15 @@ export type DeckCard = {
   source: string;        // ticket / szene / ''
   startsAt: string | null;
   image: string | null;
-  poster: string | null; // fotoğrafsız gece: sitedeki el çizimi afiş
+  poster: string | null; // nights without a photo: the site's hand-drawn poster
   ticketUrl: string | null;
-  friends: DeckFriend[]; // bu geceyi tutan arkadaşlar
-  // arkadaşların arkadaşları: kimin üzerinden geldiği. path senden başlar,
-  // ilk isim senin arkadaşın, son isim geceyi tutan (tanımadığın biri)
+  friends: DeckFriend[]; // friends who kept this night
+  // Friends of friends: who it came through. path starts after you; the first name is
+  // your friend, the last is the keeper (someone you do not know).
   via?: { wave: 2 | 3; path: string[] };
 };
 
-// events_public satırından kart; arkadaşlar dışarıdan gelir
+// Card from an events_public row; friends are supplied by the caller.
 export function toDeckCard(n: Night, friends: DeckFriend[] = []): DeckCard {
   return {
     key: n.id,
@@ -53,33 +54,39 @@ const stamp = (iso: string | null) => {
 };
 
 export const openDetails = (card: DeckCard) => card.slug && router.push(`/night/${card.slug}`);
-// bilet: kaynağın sayfası; bileti olmayan gece (szene) kendi sayfasını açar
+// Ticket: the source's page; nights without a ticket (szene) open their own page.
 export const openTicket = (card: DeckCard) => (card.ticketUrl ? Linking.openURL(card.ticketUrl).catch(() => {}) : openDetails(card));
 
 type Props = {
   card: DeckCard;
-  bottom: number;         // altyazının alt kenarı (alt menünün üstü)
-  rightLabel: string;     // sağdaki kırmızı şerit
-  rightDone?: boolean;    // şerit söner (kept)
+  bottom: number;         // bottom edge of the caption (above the tab bar)
+  rightLabel: string;     // the red strip on the right
+  rightDone?: boolean;    // strip dims (kept)
   onRight: () => void;
+  // Flow: the poster is not cropped; it sits above the caption at its own ratio,
+  // over a blurred copy of itself. top: upper bound for the poster.
+  fit?: { top: number };
 };
 
-// kartın yüzü: tam ekran fotoğraf ya da afiş, altta afiş altyazısı (mürekkep blok, kırmızı archivo
-// başlık, jetbrains künye, arkadaş kareleri), solda "details ↓", sağda kırmızı ana eylem.
-export default function CardFace({ card, bottom, rightLabel, rightDone, onRight }: Props) {
+// Card face: full-bleed photo or poster, caption at the bottom (ink block, red Archivo
+// title, mono details, friend squares), "details ↓" on the left, the red main action on the right.
+export default function CardFace({ card, bottom, rightLabel, rightDone, onRight, fit }: Props) {
+  const [captionH, setCaptionH] = useState(0);
   const shown = card.friends.slice(0, 2);
   const more = card.friends.length - shown.length;
   const details = () => openDetails(card);
   const { t, tx, up } = useLang();
-  // tür adı veritabanından gelir ("club night"); anahtar slug ile kurulur.
-  // sözlükte varsa çevrilmiş söz, yoksa veri: büyük harf ona göre
+  // The type name comes from the database ("club night"); the key is built from its slug.
+  // Use the translation when there is one, otherwise the data; uppercase accordingly.
   const kindWord = tx('type.' + card.kind.replace(/\s+/g, '-'), '');
   const kind = kindWord ? up(kindWord) : upperData(card.kind);
   const sourceWord = card.source ? tx('word.' + card.source, '') : '';
   const source = sourceWord ? up(sourceWord) : upperData(card.source);
   return (
     <>
-      {card.image ? (
+      {fit ? (
+        <FitPoster card={card} top={fit.top} bottom={bottom + captionH + 12} ready={captionH > 0} />
+      ) : card.image ? (
         <Image source={{ uri: card.image }} style={styles.photo} resizeMode="cover" />
       ) : card.poster ? (
         <View style={styles.posterBox}>
@@ -88,7 +95,7 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight 
       ) : (
         <Image source={fallback} style={styles.photo} resizeMode="cover" />
       )}
-      <View style={[styles.caption, { bottom }]}>
+      <View style={[styles.caption, { bottom }]} onLayout={fit ? (e) => setCaptionH(e.nativeEvent.layout.height) : undefined}>
         <Pressable style={styles.stripLeft} onPress={details} accessibilityRole="button" accessibilityLabel={t('word.details')}>
           <Text style={styles.stripLeftText}>{up(t('word.details'))} ↓</Text>
         </Pressable>
@@ -124,8 +131,68 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight 
   );
 }
 
-// kimden geldiği: sen — arkadaşın — onun arkadaşı (— onunki). kareler çizgiyle
-// bağlı; geceyi tutan son kare kırmızı. altında zincirin adları.
+// Poster aspect ratio: Ticketmaster URLs carry it (…_16_9.jpg); otherwise measure the image.
+const ratios = new Map<string, number>();
+const fromUrl = (uri: string) => {
+  const m = /_(\d+)_(\d+)\.\w+$/.exec(uri);
+  return m ? Number(m[1]) / Number(m[2]) : null;
+};
+function useRatio(uri: string | null, fallbackRatio: number) {
+  const [ratio, setRatio] = useState(() => (uri ? (ratios.get(uri) ?? fromUrl(uri) ?? fallbackRatio) : fallbackRatio));
+  useEffect(() => {
+    if (!uri || ratios.has(uri) || fromUrl(uri)) return;
+    let alive = true;
+    Image.getSize(uri, (w, h) => {
+      if (!w || !h) return;
+      ratios.set(uri, w / h);
+      if (alive) setRatio(w / h);
+    }, () => {});
+    return () => {
+      alive = false;
+    };
+  }, [uri]);
+  return ratio;
+}
+
+const fallbackSize = Image.resolveAssetSource(fallback);
+
+// Flow card: blurred backdrop + uncropped poster, fitted and centred between the chip and the caption.
+function FitPoster({ card, top, bottom, ready }: { card: DeckCard; top: number; bottom: number; ready: boolean }) {
+  const [area, setArea] = useState<{ w: number; h: number } | null>(null);
+  const svg = !card.image && !!card.poster;
+  const ratio = useRatio(card.image, svg ? 2 / 3 : fallbackSize.width / fallbackSize.height);
+  let w = 0;
+  let h = 0;
+  if (area) {
+    w = area.w;
+    h = w / ratio;
+    if (h > area.h) {
+      h = area.h;
+      w = h * ratio;
+    }
+  }
+  const source = card.image ? { uri: card.image } : fallback;
+  return (
+    <>
+      {svg ? (
+        <View style={[styles.photo, { backgroundColor: colors.ink2 }]} />
+      ) : (
+        <Image source={source} style={styles.photo} resizeMode="cover" blurRadius={28} />
+      )}
+      <View style={styles.veil} />
+      <View style={[styles.fitArea, { top, bottom }]} onLayout={(e) => setArea({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height })}>
+        {area && ready ? (
+          <View style={[styles.fitPoster, { width: w, height: h }]}>
+            {svg ? <SvgUri uri={card.poster!} width="100%" height="100%" /> : <Image source={source} style={styles.fill} resizeMode="cover" />}
+          </View>
+        ) : null}
+      </View>
+    </>
+  );
+}
+
+// Where it came from: you — your friend — their friend (— theirs). Squares joined by
+// lines; the keeper's square is red. The chain's names underneath.
 function Chain({ via }: { via: { wave: 2 | 3; path: string[] } }) {
   const { t, up } = useLang();
   const keeper = via.path[via.path.length - 1];
@@ -155,14 +222,18 @@ function Chain({ via }: { via: { wave: 2 | 3; path: string[] } }) {
   );
 }
 
-// çekerken beliren ipucu etiketi
+// Label that appears while dragging.
 export function Hint({ label }: { label: string }) {
   const { up } = useLang();
   return <Text style={styles.hintText}>{up(label)}</Text>;
 }
 
 const styles = StyleSheet.create({
-  photo: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%', filter: [{ grayscale: 1 }] },
+  photo: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
+  veil: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(14,13,12,0.42)' },
+  fitArea: { position: 'absolute', left: 12, right: 12, alignItems: 'center', justifyContent: 'center' },
+  fitPoster: { borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink },
+  fill: { width: '100%', height: '100%' },
   posterBox: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.ink2 },
   caption: { position: 'absolute', left: 8, right: 8, flexDirection: 'row', alignItems: 'stretch', borderRadius: radius.lg, overflow: 'hidden' },
   block: { flex: 1, backgroundColor: colors.ink, paddingHorizontal: 16, paddingTop: 16, paddingBottom: 14, gap: 3 },

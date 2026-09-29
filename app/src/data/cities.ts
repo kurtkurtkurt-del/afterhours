@@ -5,7 +5,7 @@ import { cities as fallback, type City } from '@/content/cities';
 
 type Row = { slug: string; name: string; status: string; sort_order: number; n: number };
 
-// şehirler ve gece sayıları, veritabanından (city_counts). ağ yoksa sabit liste.
+// Cities and night counts from the database (city_counts); a static list when offline.
 export function useCities() {
   const [cities, setCities] = useState<City[]>(fallback);
   const [live, setLive] = useState(false);

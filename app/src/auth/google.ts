@@ -1,18 +1,18 @@
 import * as WebBrowser from 'expo-web-browser';
 import { supabase } from '@/lib/supabase';
 
-// google ile giriş. supabase'in google sağlayıcısı üzerinden, uygulamanın içinde
-// açılan bir tarayıcı penceresiyle: google'da onaylanır, supabase uygulamaya
-// afterhours://auth-callback adresiyle döner, oturum o adresten kurulur.
+// Sign in with Google through Supabase's Google provider, in an in-app browser
+// window: the user approves at Google, Supabase redirects to afterhours://auth-callback,
+// and the session is built from that URL.
 //
-// misafirken basılırsa aynı kullanıcıya google bağlanır (kaydırmalar kaybolmaz).
-// supabase panelinde "manual linking" kapalıysa bağlama reddedilir; o zaman
-// normal giriş yapılır ve misafirin kaydırmaları misafirde kalır.
-export const REDIRECT = 'afterhours://auth-callback';
+// Pressed as a guest, Google is linked to the same user (swipes are kept).
+// If "manual linking" is off in the Supabase dashboard linking is refused; then a
+// normal sign-in happens and the guest's swipes stay with the guest.
+const REDIRECT = 'afterhours://auth-callback';
 
 WebBrowser.maybeCompleteAuthSession();
 
-// dönüş adresinden oturum: #access_token=… (implicit) ya da ?code=… (pkce)
+// Session from the redirect URL: #access_token=… (implicit) or ?code=… (PKCE).
 export async function sessionFromUrl(url: string) {
   const [, query = ''] = url.split('?');
   const [, hash = ''] = url.split('#');
@@ -34,7 +34,7 @@ export async function sessionFromUrl(url: string) {
   return true;
 }
 
-// true: giriş yapıldı · false: vazgeçildi · hata: mesajıyla fırlar
+// true: signed in · false: cancelled · throws with a message on error
 export async function signInWithGoogle(): Promise<boolean> {
   const options = { redirectTo: REDIRECT, skipBrowserRedirect: true, queryParams: { prompt: 'select_account' } };
   const { data: current } = await supabase.auth.getSession();

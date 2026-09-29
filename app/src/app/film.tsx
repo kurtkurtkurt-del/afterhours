@@ -10,12 +10,12 @@ import { useT } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// tanıtım filmi: ana ekrandaki "explore your city" bunu oynatır, bitince kayıt
-// ekranı. film claude design'da yapıldı (assets/film/film.html, tek dosya,
-// internetsiz oynar). bittiğini film kendisi söyler: postMessage('end').
-// söylemezse süre dolunca geçilir; "geç" her an basılabilir.
+// Intro film: "explore your city" plays it, then the sign-up screen follows.
+// Made in Claude Design (assets/film/film.html, single file, plays offline).
+// The film signals the end itself via postMessage('end'); if it never does,
+// the timeout moves on. "Skip" is always available.
 const FILM = require('../../assets/film/film.html');
-const LONGEST = 90_000; // film ne kadar uzun olursa olsun bu kadar sonra geçilir
+const LONGEST = 90_000; // hard upper bound, whatever the film length
 
 export default function FilmScreen() {
   const t = useT();
@@ -38,7 +38,7 @@ export default function FilmScreen() {
         const text = await new File(asset.localUri ?? asset.uri).text();
         if (live) setHtml(text);
       } catch {
-        if (live) next(); // film açılamadıysa bekletme
+        if (live) next(); // the film failed to load: do not wait
       }
     })();
     const timer = setTimeout(next, LONGEST);

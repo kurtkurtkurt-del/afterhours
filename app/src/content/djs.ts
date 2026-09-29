@@ -1,9 +1,9 @@
-// sahte dj'ler ve setler. gerçek veri supabase'e sonra gelir (dj + set tabloları).
-// fotoğraflar assets/djs/<id>.jpg — yer tutucu kesitler; dosyayı değiştirmek yeter.
+// Sample DJs and sets, used when the djs table is empty or offline.
+// Photos are assets/djs/<id>.jpg placeholders; replacing the file is enough.
 import type { Genre } from '@/content/music';
 
 export type Dj = { id: string; name: string; genre: string; sound: Genre; city: string; since: number; followers: string; photo: number; photoUrl?: string | null };
-export type Track = { title: string; where: string; date: string; length: string };
+type Track = { title: string; where: string; date: string; length: string };
 export type DjSet = { dj: string; venue: string; startsAt: Date; hours: number };
 
 export const djs: Dj[] = [
@@ -17,10 +17,8 @@ export const djs: Dj[] = [
   { id: 'selin', name: 'selin', genre: 'house', sound: 'house', city: 'münchen', since: 2025, followers: '310', photo: require('../../assets/djs/selin.jpg') },
 ];
 
-export const djById = (id: string) => djs.find((d) => d.id === id)!;
-
-// setler "şimdi"ye göre kurulur ki ekran her açılışta canlı görünsün:
-// biri bir saat önce başlamış, ikisi bu gece ileride, gerisi hafta içinde.
+// Sets are built relative to "now" so the screen always looks live:
+// one started an hour ago, two later tonight, the rest during the week.
 export function sets(now = new Date()): DjSet[] {
   const at = (hoursFromNow: number) => new Date(now.getTime() + hoursFromNow * 3600_000);
   return [
@@ -35,8 +33,8 @@ export function sets(now = new Date()): DjSet[] {
   ];
 }
 
-// dj'nin kayıtlı setleri. sahte; gerçekte dj'nin yüklediği kayıt ya da soundcloud bağlantısı.
-// çalınca şimdilik dj'nin türündeki arka plan müziği başlar.
+// A DJ's recorded sets (samples; really an uploaded recording or a SoundCloud link).
+// For now, playing starts background music in the DJ's genre.
 export function tracksFor(dj: Dj): Track[] {
   const venues: Record<string, string[]> = {
     techno: ['blitz', 'rote sonne', 'blitz', 'bahnwärter thiel', 'blitz', 'szene'],

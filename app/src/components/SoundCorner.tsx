@@ -3,7 +3,7 @@ import SoundToggle from '@/components/SoundToggle';
 import { useAmbient } from '@/audio/AmbientContext';
 import { brand } from '@/theme/layout';
 
-// sağ üst köşe, geri tuşuyla aynı hizada. iç sayfaların hepsinde. basılı tutunca tür listesi.
+// Top right corner, aligned with the back button, on every inner page. Long press opens the genre list.
 type Props = { tone?: 'paper' | 'ink' };
 
 export default function SoundCorner({ tone = 'paper' }: Props) {

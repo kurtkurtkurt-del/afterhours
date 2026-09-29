@@ -15,11 +15,11 @@ import type { Key } from '@/i18n/dict';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// sunucudan gelen kod → söz anahtarı; söz çizim anında seçilir
+// Server code → string key, resolved at render time.
 const words: Record<string, Key> = { ok: 'signup.handle.ok', yours: 'signup.handle.yours', empty: 'signup.handle.empty', format: 'signup.handle.format', taken: 'signup.handle.taken', signedout: 'signup.handle.signedout', nocity: 'signup.handle.nocity' };
 
-// kaydın son adımı: handle (arkadaşlar seni bununla bulur), isim, şehir.
-// web sitesiyle aynı kural: handle seçilince kayıt tamamlanmış sayılır.
+// Last registration step: handle (how friends find you), name, city.
+// Same rule as the website: registration is complete once a handle is chosen.
 export default function WelcomeScreen() {
   const insets = useSafeAreaInsets();
   const { t, up } = useLang();

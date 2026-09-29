@@ -7,20 +7,20 @@ import { useT } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// geçmiş yoksa ana ekrana döner
+// Without history, go to the home screen.
 const go = () => (router.canGoBack() ? router.back() : router.replace('/'));
 
-const EDGE = 24;   // sol kenarda hareketi yakalayan şeridin genişliği
-const PULL = 70;   // bu kadar sağa çekilince geri gider
+const EDGE = 24;   // width of the left-edge strip that catches the gesture
+const PULL = 70;   // pull distance that triggers back
 
-// geri, iki yoldan:
-// 1. sol kenardan sağa kaydırmak (her yerden, başparmakla). çekerken kenarda kırmızı çizgi belirir.
-// 2. alt solda, başparmağın olduğu yerde, altı çizili küçük "back" — sayfadaki "change" ve "close"
-//    bağlantılarıyla aynı dilde; kutu yok, çerçeve yok.
-// çoğu sayfa bunu üstteki bandın içinde çağırır; konum pencere yüksekliğinden hesaplanır,
-// çağrıldığı yerden bağımsız alt solda çıkar.
-// lift: altta sabit bir şey varsa (oda sayfasındaki yazma alanı gibi) o kadar yukarıda durur.
-// inline: akışın içinde normal bir satır (kayıt formunun altı gibi).
+// Back, two ways:
+// 1. Swipe right from the left edge (anywhere, one-thumbed); a red line shows while pulling.
+// 2. A small underlined "back" bottom left, where the thumb is; same style as the "change"
+//    and "close" links on the page, no box, no border.
+// Most pages render it inside the top band; its position comes from the window height,
+// so it always lands bottom left regardless of where it is rendered.
+// lift: raise it when something is pinned at the bottom (like the room's input).
+// inline: a normal row in the flow (like below the sign-up form).
 type Props = { tone?: 'paper' | 'ink'; lift?: number; inline?: boolean };
 
 export default function BackButton({ tone = 'paper', lift = 0, inline = false }: Props) {
@@ -47,7 +47,7 @@ export default function BackButton({ tone = 'paper', lift = 0, inline = false }:
   );
 }
 
-// sol kenardan sağa çekince geri. sayfanın en üstünde, ekran boyu ince bir şerit.
+// Pull right from the left edge to go back: a thin full-height strip on top of the page.
 export function EdgeBack() {
   const { height } = useWindowDimensions();
   const pull = useSharedValue(0);

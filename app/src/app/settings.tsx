@@ -16,19 +16,49 @@ import { useAmbient } from '@/audio/AmbientContext';
 import { forgetPhoto, removePhoto, usePhoto } from '@/data/photo';
 import { useProfile } from '@/data/profile';
 import { deleteAccount, exportMe, fetchSettings, saveSettings, type Settings } from '@/data/settings';
+import { pushStatus, registerPush, type PushStatus } from '@/lib/push';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { genres, type Genre } from '@/content/music';
 import { langNames, langs, upperData, useLang, type Lang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// ayarlar, ana sayfa: üstte profil kartı (fotoğraf + isim + "düzenle"), altında
-// gruplu paneller. form alanları burada değil, /profile sayfasında.
-// › sayfa içinde açılır, ↗ uygulamanın dışına çıkar.
+// Settings home: profile card (photo, name, "edit") above grouped panels.
+// Form fields live on /profile, not here.
+// › opens inside the app, ↗ leaves it.
+// Notification switches in three groups (26_push.sql).
+const NOTIFY = [
+  {
+    title: 'notify.friends',
+    rows: [
+      { key: 'notify_requests', label: 'notify.requests', hint: 'notify.requests.hint' },
+      { key: 'notify_accepts', label: 'notify.accepts', hint: 'notify.accepts.hint' },
+      { key: 'notify_matches', label: 'notify.matches', hint: 'notify.matches.hint' },
+      { key: 'notify_live', label: 'notify.live', hint: 'notify.live.hint' },
+    ],
+  },
+  {
+    title: 'notify.nights.title',
+    rows: [
+      { key: 'notify_nights', label: 'notify.nights', hint: 'notify.nights.hint' },
+      { key: 'notify_rooms', label: 'notify.rooms', hint: 'notify.rooms.hint' },
+      { key: 'notify_replies', label: 'notify.replies', hint: 'notify.replies.hint' },
+    ],
+  },
+  {
+    title: 'notify.discovery',
+    rows: [
+      { key: 'notify_digest', label: 'notify.digest', hint: 'notify.digest.hint' },
+      { key: 'notify_djs', label: 'notify.djs', hint: 'notify.djs.hint' },
+      { key: 'notify_waves', label: 'notify.waves', hint: 'notify.waves.hint' },
+    ],
+  },
+] as const;
+
 export default function SettingsScreen() {
   const { session, signOut, isAnonymous } = useAuth();
   const tick = useRefreshOnFocus();
-  // profil sayfasından dönünce kart yeni ismi göstersin
+  // Refresh the card after returning from the profile page.
   const profile = useProfile(tick);
   const ambient = useAmbient();
   const insets = useSafeAreaInsets();
@@ -47,10 +77,20 @@ export default function SettingsScreen() {
     };
   }, [uid]);
 
+  // Whether this phone may show notifications; re-read when returning from the system settings.
+  const [push, setPush] = useState<PushStatus>('undetermined');
+  useEffect(() => {
+    pushStatus().then(setPush, () => setPush('unsupported'));
+  }, [tick]);
+  const allowPush = () => {
+    if (push === 'denied') return Linking.openSettings();
+    registerPush(true).then(setPush, () => {});
+  };
+
   const patch = (p: Partial<Settings>) => {
     if (!uid || !settings) return;
     setSettings((cur) => (cur ? { ...cur, ...p } : cur));
-    // olmazsa sunucudaki gerçek hali geri çek; iki hızlı dokunuş birbirini bozmasın
+    // On failure, restore the server value; two quick taps must not race.
     saveSettings(uid, p).catch(() => fetchSettings(uid).then((s) => s && setSettings(s)));
   };
 
@@ -61,7 +101,7 @@ export default function SettingsScreen() {
         text: t('settings.delete.go'),
         style: 'destructive',
         onPress: () =>
-          // dosya kovadan önce gider: hesap silinince ona ulaşacak kimse kalmaz
+          // Delete the file before the account: afterwards nobody can reach it.
           removePhoto()
             .then(() => deleteAccount())
             .then(() => signOut())
@@ -93,7 +133,7 @@ export default function SettingsScreen() {
         <SoundCorner />
       </View>
       <ScrollView contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 32 }]} showsVerticalScrollIndicator={false}>
-        {/* profil kartı: girişliyse düzenlemeye, değilse kayda götürür */}
+        {/* Profile card: edits the profile when signed in, otherwise opens sign-up. */}
         <Pressable
           onPress={() => router.push(session && !isAnonymous ? '/profile' : '/signup')}
           accessibilityRole="button"
@@ -144,6 +184,37 @@ export default function SettingsScreen() {
           </>
         ) : null}
 
+        {session && !isAnonymous ? (
+          <>
+            <Section title={t('notify.title')} />
+            {push !== 'granted' ? (
+              <Panel>
+                {push === 'unsupported' ? (
+                  <Row label={t('notify.unsupported')} hint={t('notify.unsupported.hint')} />
+                ) : (
+                  <Row
+                    label={t('notify.allow')}
+                    hint={push === 'denied' ? t('notify.allow.off') : t('notify.allow.hint')}
+                    right={<Mark kind={push === 'denied' ? 'out' : 'more'} />}
+                    onPress={allowPush}
+                  />
+                )}
+              </Panel>
+            ) : null}
+            <Text style={styles.note}>{t('notify.quiet')}</Text>
+            {NOTIFY.map((group) => (
+              <View key={group.title}>
+                <Section title={t(group.title)} />
+                <Panel>
+                  {group.rows.map(({ key, label, hint }) => (
+                    <Row key={key} label={t(label)} hint={t(hint)} right={<Switch on={settings?.[key] ?? true} />} onPress={() => patch({ [key]: !(settings?.[key] ?? true) })} />
+                  ))}
+                </Panel>
+              </View>
+            ))}
+          </>
+        ) : null}
+
         <Section title={t('settings.account')} />
         <Panel>
           {isAnonymous ? <Row label={t('settings.finish')} hint={t('settings.finish.hint')} right={<Mark kind="more" />} onPress={() => router.push('/signup')} /> : null}
@@ -165,7 +236,7 @@ export default function SettingsScreen() {
           ) : null}
         </Panel>
 
-        {/* silmek ayrı kutuda, kırmızı yazıyla: yanlışlıkla dokunulacak bir satır değil */}
+        {/* Deletion sits in its own box in red, so it is never tapped by accident. */}
         {session ? (
           <Panel>
             <Row danger label={t('settings.delete')} hint={t('settings.delete.hint')} onPress={confirmDelete} />
@@ -239,6 +310,7 @@ const styles = StyleSheet.create({
   cardText: { flex: 1, gap: 3 },
   cardName: { fontFamily: fonts.medium, fontSize: 20, letterSpacing: -0.4, color: colors.paper },
   cardUnder: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.2, color: colors.mute },
+  note: { fontFamily: fonts.regular, fontSize: 12, lineHeight: 17, color: colors.mute, marginTop: 10 },
   foot: { alignItems: 'center', gap: 6, marginTop: 36, marginBottom: 28 },
   logo: { fontFamily: fonts.logo, fontSize: 20, letterSpacing: -0.4, color: colors.paper },
   logoDot: { color: colors.spot },

@@ -3,7 +3,7 @@ import { useAmbient } from '@/audio/AmbientContext';
 import { genres, type Genre } from '@/content/music';
 import { useT } from '@/i18n';
 
-// ses düğmesine basılı tutunca açılan tür listesi. seçince kapanır ve çalar.
+// Genre list opened by long-pressing the sound control. Picking one closes it and plays.
 export default function GenrePicker() {
   const { pickerOpen, closePicker, genre, setGenre } = useAmbient();
   const t = useT();

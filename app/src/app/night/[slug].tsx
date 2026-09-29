@@ -21,26 +21,26 @@ import { brand } from '@/theme/layout';
 
 const fallback = require('../../../assets/intro/concert.jpg');
 
-// bir gecenin web sayfası; paylaşılan bağlantı budur
+// The night's web page; this is the shared link.
 const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const two = (n: number) => String(n).padStart(2, '0');
 
 const webUrl = (slug: string) => `${SITE}explore/event/index.html?slug=${encodeURIComponent(slug)}`;
 
-// gece sayfası: fotoğraf, künye, metin, mekân; keep ve varsa bilet.
+// Night page: photo, details, text, venue; keep, and a ticket when there is one.
 export default function NightScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const { session } = useAuth();
   const { t, tn, tx, up } = useLang();
-  // note ve talkNote kod saklar; söz burada, o anki dilde çözülür
+  // note and talkNote hold codes; strings are resolved here in the current language.
   const words = (code: string) => {
-    if (code === 'nosaved') return t('offline.empty'); // çevrimdışı ve bu gece kaydedilmemiş
+    if (code === 'nosaved') return t('offline.empty'); // offline and this night was never saved
     const key = commentErrors[code] ?? reasons[code];
     return key ? t(key) : code;
   };
-  // "thu 26.09 · 20:00", gün adı seçili dilde
+  // "thu 26.09 · 20:00", weekday in the selected language
   const whenLine = (iso: string) => {
     const d = new Date(iso);
     if (isNaN(d.getTime())) return t('night.tba');
@@ -61,13 +61,13 @@ export default function NightScreen() {
 
   useEffect(() => {
     let cancelled = false;
-    // çevrimdışıyken desteden/haritadan kaydedilen gece açılır (data/deck.ts)
+    // Offline, a night saved from the deck or map still opens (data/deck.ts).
     fetchNight(slug)
       .then((data) => {
         if (cancelled) return;
         if (data) {
           setNight(data);
-          // beforehours, gece bilinir bilinmez; hata sessizce boş liste
+          // Beforehours as soon as the night is known; errors quietly give an empty list.
           fetchComments(data.id).then((c) => { if (!cancelled) setTalk(c); }).catch(() => { if (!cancelled) setTalk([]); });
         } else setMissing(true);
       })
@@ -84,11 +84,11 @@ export default function NightScreen() {
     roomInfo(slug).then(setRoom).catch(() => {});
   }, [session, slug]);
 
-  // check-in: konum varsa gönderilir (500 m kuralı), yoksa sadece zaman kuralı
+  // Check-in: sends the location when available (500 m rule), otherwise only the time rule applies.
   const doCheckIn = async () => {
     if (!night || busy) return;
     if (!session || session.user.is_anonymous) {
-      // kart bir hesaba bağlanır; misafir önce e-posta ekler
+      // The card belongs to an account; guests add an email first.
       router.push('/signup');
       return;
     }
@@ -97,8 +97,8 @@ export default function NightScreen() {
     try {
       let lat: number | undefined;
       let lng: number | undefined;
-      // kapı testi konum ister; izin yoksa şimdi sor. kapalı mekânda taze konum dakikalarca
-      // gelmeyebilir ("one moment"da takılıyordu): önce son bilinen, sonra en çok 6 sn taze.
+      // The door test needs a location; ask now if not granted. Indoors a fresh fix can take minutes
+      // (it hung on "one moment"), so use the last known one first, then wait at most 6 s for a fresh one.
       let perm = await Location.getForegroundPermissionsAsync();
       if (!perm.granted) perm = await Location.requestForegroundPermissionsAsync();
       if (perm.granted) {
@@ -128,7 +128,7 @@ export default function NightScreen() {
     if (session && night) swipe(night.slug, 'right').catch(() => {});
   };
 
-  // beforehours: yaz, listeyi yeniden çek. cevapsa replyTo'nun altına düşer.
+  // Beforehours: post, then reload the list. A reply lands under replyTo.
   const say = async () => {
     const body = text.trim();
     if (!night || !body || sending) return;
@@ -192,7 +192,7 @@ export default function NightScreen() {
                 </View>
               ) : null}
               <View style={{ flex: 1 }}>
-                {/* paylaşım: gecenin web sayfası. sitedeki "open in the app" geri getirir. */}
+                {/* Share: the night's web page; "open in the app" on the site brings it back. */}
                 <Button label={t('night.share')} kind="line" onPress={() => Share.share({ message: `${night.title.toLowerCase()} · ${webUrl(night.slug)}`, url: webUrl(night.slug) })} />
               </View>
             </View>
@@ -213,7 +213,7 @@ export default function NightScreen() {
 
             <Text style={styles.mono}>{up(t('night.rule'))}</Text>
 
-            {/* beforehours: geceden önce söylenenler. herkes yazar, misafir de. */}
+            {/* Beforehours: what people said before the night. Anyone can post, guests too. */}
             <View style={styles.talk}>
               <Text style={styles.mono}>{upperData('beforehours')}</Text>
               {talk === null ? (
@@ -260,7 +260,7 @@ export default function NightScreen() {
         </KeyboardAvoidingView>
       ) : null}
 
-      {/* kart çıktı: ilk gösterim, sonra oda */}
+      {/* Card earned: first reveal, then the room. */}
       <Modal visible={!!card} transparent animationType="fade" onRequestClose={() => setCard(null)}>
         <Pressable style={styles.dim} onPress={() => setCard(null)}>
           <Text style={styles.cardLabel}>{up(t('night.card', { no: card ? String(card.card_no).padStart(4, '0') : '' }))}</Text>

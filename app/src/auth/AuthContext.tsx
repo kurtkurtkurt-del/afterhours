@@ -3,22 +3,22 @@ import type { Session } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabase';
 import { forgetCache, isNetworkError } from '@/lib/offline';
 import { LargeSecureStore } from '@/lib/secureStorage';
-// döngü: '@/i18n' bu dosyayı içe alır. t yalnızca fonksiyonların içinde çağrılır.
-import { t } from '@/i18n';
+import { unregisterPush } from '@/lib/push';
+import { t } from '@/i18n/core';
 import type { Key } from '@/i18n/dict';
 
-// şifre sıfırlama bağlantısı web sitesinin sayfasına döner; orada yeni şifre girilir
+// Password reset links open the website, where the new password is entered.
 const RESET_URL = 'https://kurtkurtkurt-del.github.io/afterhours/reset/';
 
 type Auth = {
   session: Session | null;
   ready: boolean;
   isAnonymous: boolean;
-  // hesap açar; hesap zaten varsa girişi dener; anonim oturum varsa onu hesaba yükseltir.
-  // hata mesajı döner, başarıda null.
+  // Creates an account; signs in if it exists; upgrades an anonymous session in place.
+  // Returns an error message, or null on success.
   signUp: (email: string, password: string, city?: string) => Promise<string | null>;
   signIn: (email: string, password: string) => Promise<string | null>;
-  // hesapsız bakmak: cihaza özel anonim kullanıcı. kaydırmalar ona yazılır, sonra yükseltilir.
+  // Browsing without an account: a device-bound anonymous user whose swipes are upgraded later.
   signInAsGuest: () => Promise<string | null>;
   resetPassword: (email: string) => Promise<string | null>;
   signOut: () => Promise<void>;
@@ -35,19 +35,19 @@ const Ctx = createContext<Auth>({
   signOut: async () => {},
 });
 
-// form doğrulama: supabase'e gitmeden önce, aynı sözlerle
+// Form validation before calling Supabase, with the same strings.
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-export function checkEmail(email: string) {
+function checkEmail(email: string) {
   return EMAIL.test(email.trim()) ? null : t('auth.email');
 }
-export function checkPassword(password: string) {
+function checkPassword(password: string) {
   if (password.length < 8) return t('auth.password.short');
   if (!/[a-zA-Z]/.test(password) || !/[0-9]/.test(password)) return t('auth.password.mix');
   return null;
 }
 
-// kimlik. web sitesiyle aynı: e-posta + şifre. kayıt olunca veritabanındaki
-// tetikleyici profili kendisi açar (handle_new_user); anonim kullanıcı için de.
+// Identity, same as the website: email + password. On sign-up a database trigger
+// (handle_new_user) creates the profile, for anonymous users too.
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
   const [ready, setReady] = useState(false);
@@ -55,15 +55,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     supabase.auth.getSession().then(async ({ data, error }) => {
       let s = data.session;
-      // jetonun süresi dolmuş ve internet yok: supabase yenileyemeyince oturumu
-      // boş döndürüyor, uygulama da çıkış yapılmış sanıyordu. oturum hâlâ
-      // depoda duruyor; onu kullan. bağlantı gelince supabase kendisi yeniler.
+      // Expired token and no network: Supabase cannot refresh and returns an empty
+      // session, which looked like a sign-out. The session is still in storage,
+      // so use it; Supabase refreshes once the connection is back.
       if (!s && error && isNetworkError(error)) s = await storedSession();
       setSession(s);
       setReady(true);
     });
-    // boş oturum yalnız gerçekten çıkış yapılınca kabul edilir; internetsiz
-    // yenileme hatası da "oturum yok" diye gelir
+    // Accept an empty session only on a real sign-out; an offline refresh
+    // failure also reports "no session".
     const { data: sub } = supabase.auth.onAuthStateChange((event, s) => {
       if (s || event === 'SIGNED_OUT') setSession(s);
     });
@@ -85,8 +85,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (bad) return bad;
       const { data: cur } = await supabase.auth.getSession();
       if (cur.session?.user.is_anonymous) {
-        // anonim oturum hesaba dönüşür: kaydırmalar ve profil aynı kullanıcıda kalır.
-        // e-posta onayı açıksa kullanıcı bağlantıya tıklayana kadar anonim kalır.
+        // The anonymous session becomes an account: swipes and profile stay on the same user.
+        // With email confirmation on, the user stays anonymous until they click the link.
         const { data, error } = await supabase.auth.updateUser({ email: email.trim(), password });
         if (error) {
           if (/already|registered|exists/i.test(error.message)) {
@@ -102,7 +102,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         if (/already|registered|exists/i.test(error.message)) return signIn(email, password);
         return plain(error.message);
       }
-      // onay açıkken mevcut e-postaya sahte bir kullanıcı döner (kimliksiz): aslında hesap var, giriş dene
+      // With confirmation on, an existing email returns a fake user without identities: the account exists, so sign in.
       if (data.user && (data.user.identities?.length ?? 0) === 0) return signIn(email, password);
       if (!data.session) return t('auth.confirm');
       return null;
@@ -112,7 +112,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signInAsGuest = useCallback(async () => {
     const { data: cur } = await supabase.auth.getSession();
-    if (cur.session) return null; // zaten içeride
+    if (cur.session) return null; // already signed in
     const { error } = await supabase.auth.signInAnonymously();
     return error ? plain(error.message) : null;
   }, []);
@@ -126,8 +126,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signOut = useCallback(async () => {
     const { data } = await supabase.auth.getSession();
+    // Stop this phone receiving the account's notifications while the session still works.
+    await unregisterPush();
     await supabase.auth.signOut();
-    // o hesabın kaydedilmiş kopyaları telefonda kalmaz (telefonu başkası kullanabilir)
+    // Drop this account's cached copies from the phone (someone else may use it).
     if (data.session) forgetCache(data.session.user.id);
   }, []);
 
@@ -147,7 +149,7 @@ async function storedSession(): Promise<Session | null> {
   }
 }
 
-// supabase'in bilinen ingilizce mesajları → söz anahtarı. sıra önemli: ilk uyan kazanır.
+// Known English Supabase messages → string keys. Order matters: first match wins.
 const known: [RegExp, Key][] = [
   [/invalid login credentials/i, 'auth.error.credentials'],
   [/email not confirmed/i, 'auth.error.unconfirmed'],
@@ -161,8 +163,8 @@ const known: [RegExp, Key][] = [
   [/network request failed|failed to fetch/i, 'auth.error.network'],
 ];
 
-// bilinen mesaj çevrilir; bilinmeyen sunucunun sözüyle kalır.
-// supabase mesajları büyük harfle başlar; ekran dili küçük harf
+// Known messages are translated; unknown ones keep the server's wording,
+// lower-cased to match the interface.
 export function authMessage(m: string) {
   const hit = known.find(([re]) => re.test(m));
   return hit ? t(hit[1]) : m.charAt(0).toLowerCase() + m.slice(1);

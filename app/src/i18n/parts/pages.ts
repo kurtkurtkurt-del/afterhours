@@ -1,6 +1,6 @@
-// ayrıntı sayfaları ve ayarlar: gece, oda, dj, arkadaş, ayarlar, credits.
+// Detail pages and settings: night, room, dj, friend, settings, credits.
 export const pages = {
-  // gece sayfası
+  // night page
   'night.room': { en: 'the room', de: 'der raum', tr: 'oda' },
   'night.checkin': { en: 'check in', de: 'einchecken', tr: 'check-in yap' },
   'night.kept': { en: 'kept', de: 'behalten', tr: 'saklandı' },
@@ -26,7 +26,7 @@ export const pages = {
   'night.card': { en: 'you were there · card no. {no}', de: 'du warst da · karte nr. {no}', tr: 'oradaydın · kart no. {no}' },
   'night.openroom': { en: 'open the room', de: 'raum öffnen', tr: 'odayı aç' },
 
-  // check-in ve oda: sunucudan gelen kodlar
+  // check-in and room: codes from the server
   'checkin.reason.signedout': { en: 'sign in to check in', de: 'melde dich an, um einzuchecken', tr: 'check-in için giriş yap' },
   'checkin.reason.nonight': { en: 'this night is gone', de: 'diese nacht ist weg', tr: 'bu gece artık yok' },
   'checkin.reason.notnow': {
@@ -74,7 +74,7 @@ export const pages = {
   'comments.month.10': { en: 'nov', de: 'nov', tr: 'kas' },
   'comments.month.11': { en: 'dec', de: 'dez', tr: 'ara' },
 
-  // odalar listesi (yours'taki sohbet simgesi)
+  // rooms list (chat icon on yours)
   'rooms.title': { en: 'your rooms.', de: 'deine räume.', tr: 'odaların.' },
   'rooms.a11y': { en: 'your afterhours rooms', de: 'deine afterhours-räume', tr: 'afterhours odaların' },
   'rooms.about': {
@@ -133,7 +133,7 @@ export const pages = {
   'dj.recorded': { en: '{n} recorded', de: '{n} aufgenommen', tr: '{n} kayıt' },
   'dj.next': { en: 'next', de: 'als nächstes', tr: 'sıradaki' },
 
-  // arkadaş
+  // friend
   'friend.add': { en: 'add a friend', de: 'freund hinzufügen', tr: 'arkadaş ekle' },
   'friend.add.note': {
     en: 'by handle. they get a request; nothing is shared until they say yes.',
@@ -159,11 +159,47 @@ export const pages = {
   'friend.nothing': { en: 'nothing kept this week.', de: 'diese woche nichts behalten.', tr: 'bu hafta hiçbir şey saklamadı.' },
   'friend.together': { en: 'together', de: 'zusammen', tr: 'birlikte' },
   'friend.nights': { en: 'nights out together', de: 'gemeinsame nächte', tr: 'birlikte çıkılan geceler' },
+  'person.since': { en: 'on afterhours since', de: 'bei afterhours seit', tr: "afterhours'ta" },
+  'person.city': { en: 'city', de: 'stadt', tr: 'şehir' },
+  'person.common': { en: 'in common', de: 'gemeinsam', tr: 'ortak' },
+  'person.hidden': { en: 'this profile is not visible', de: 'dieses profil ist nicht sichtbar', tr: 'bu profil görünmüyor' },
+  'person.loading': { en: 'loading…', de: 'lädt…', tr: 'yükleniyor…' },
+  'person.sample': { en: 'sample profile', de: 'beispielprofil', tr: 'örnek profil' },
+  'notify.title': { en: 'notifications', de: 'benachrichtigungen', tr: 'bildirimler' },
+  'notify.allow': { en: 'allow notifications', de: 'benachrichtigungen erlauben', tr: 'bildirimlere izin ver' },
+  'notify.allow.hint': { en: 'afterhours may tell you when friends do something', de: 'afterhours sagt dir, wenn freunde etwas tun', tr: 'arkadaşların bir şey yaptığında afterhours haber verir' },
+  'notify.allow.off': { en: 'turned off for afterhours in the phone settings', de: 'in den telefoneinstellungen für afterhours aus', tr: 'telefon ayarlarında afterhours için kapalı' },
+  'notify.unsupported': { en: 'not available here', de: 'hier nicht verfügbar', tr: 'burada kullanılamıyor' },
+  'notify.unsupported.hint': { en: 'notifications work in the installed app, not in expo go', de: 'benachrichtigungen gehen in der installierten app, nicht in expo go', tr: "bildirimler expo go'da değil, yüklü uygulamada çalışır" },
+  'notify.quiet': { en: 'between midnight and 9:00 only friends out now, rooms and nights about to start come through; the rest waits for the morning.', de: 'zwischen mitternacht und 9:00 kommen nur freunde unterwegs, räume und gleich beginnende nächte durch; der rest wartet auf den morgen.', tr: "gece yarısı ile 9:00 arasında yalnızca dışarıdaki arkadaşlar, odalar ve başlamak üzere olan geceler gelir; gerisi sabahı bekler." },
+  'notify.friends': { en: 'friends', de: 'freunde', tr: 'arkadaşlar' },
+  'notify.nights.title': { en: 'nights', de: 'nächte', tr: 'geceler' },
+  'notify.discovery': { en: 'discovery', de: 'entdecken', tr: 'keşif' },
+  'notify.nights': { en: 'nights coming up', de: 'anstehende nächte', tr: 'yaklaşan geceler' },
+  'notify.nights.hint': { en: 'a few hours before a night you kept', de: 'ein paar stunden vor einer behaltenen nacht', tr: 'sakladığın bir geceden birkaç saat önce' },
+  'notify.rooms': { en: 'rooms', de: 'räume', tr: 'odalar' },
+  'notify.rooms.hint': { en: 'when your room opens, gets a message or is about to close', de: 'wenn dein raum öffnet, eine nachricht bekommt oder bald schließt', tr: 'odan açılınca, mesaj gelince ya da kapanmak üzereyken' },
+  'notify.replies': { en: 'replies', de: 'antworten', tr: 'cevaplar' },
+  'notify.replies.hint': { en: 'when someone answers you in beforehours', de: 'wenn dir jemand in beforehours antwortet', tr: "biri beforehours'ta sana cevap verince" },
+  'notify.digest': { en: 'weekend digest', de: 'wochenend-überblick', tr: 'hafta sonu özeti' },
+  'notify.digest.hint': { en: 'thursday evening: what is on in your city', de: 'donnerstagabend: was in deiner stadt los ist', tr: 'perşembe akşamı: şehrinde neler var' },
+  'notify.djs': { en: 'djs you follow', de: 'djs, denen du folgst', tr: "takip ettiğin dj'ler" },
+  'notify.djs.hint': { en: 'when one plays within the hour', de: 'wenn einer innerhalb der stunde auflegt', tr: 'biri bir saat içinde çalacaksa' },
+  'notify.waves': { en: '2nd wave', de: '2. welle', tr: '2. dalga' },
+  'notify.waves.hint': { en: 'when a friend of a friend keeps a night in your city, once a week at most', de: 'wenn ein freund eines freundes eine nacht in deiner stadt behält, höchstens einmal pro woche', tr: 'arkadaşının arkadaşı şehrinde bir gece sakladığında, haftada en fazla bir kez' },
+  'notify.requests': { en: 'friend requests', de: 'freundschaftsanfragen', tr: 'arkadaşlık istekleri' },
+  'notify.requests.hint': { en: 'when someone wants to add you', de: 'wenn dich jemand hinzufügen will', tr: 'biri seni eklemek istediğinde' },
+  'notify.accepts': { en: 'accepted requests', de: 'angenommene anfragen', tr: 'kabul edilen istekler' },
+  'notify.accepts.hint': { en: 'when someone accepts your request', de: 'wenn jemand deine anfrage annimmt', tr: 'biri isteğini kabul ettiğinde' },
+  'notify.matches': { en: 'matches', de: 'matches', tr: 'eşleşmeler' },
+  'notify.matches.hint': { en: 'when a friend keeps a night you kept', de: 'wenn ein freund eine nacht behält, die du behalten hast', tr: 'bir arkadaşın senin sakladığın geceyi sakladığında' },
+  'notify.live': { en: 'friends out now', de: 'freunde unterwegs', tr: 'dışarıdaki arkadaşlar' },
+  'notify.live.hint': { en: 'when a friend checks in to a night', de: 'wenn ein freund in einer nacht eincheckt', tr: 'bir arkadaşın bir geceye check-in yaptığında' },
   'friend.accept': { en: 'accept', de: 'annehmen', tr: 'kabul et' },
   'friend.cancel': { en: 'cancel request', de: 'anfrage zurückziehen', tr: 'isteği geri al' },
   'friend.remove': { en: 'remove friend', de: 'freund entfernen', tr: 'arkadaşı çıkar' },
 
-  // ayarlar
+  // settings
   'settings.title': { en: 'settings', de: 'einstellungen', tr: 'ayarlar' },
   'settings.signedout': {
     en: 'you are not signed in. the profile and privacy settings need an account.',

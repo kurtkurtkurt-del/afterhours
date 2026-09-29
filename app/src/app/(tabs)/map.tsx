@@ -20,7 +20,7 @@ import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// konum yoksa seçili şehrin merkezi; o da yoksa münih
+// Without a location: the selected city's centre, else Munich.
 const CENTRES: Record<string, [number, number]> = {
   munchen: [48.137, 11.575],
   istanbul: [41.03, 28.98],
@@ -34,8 +34,8 @@ const two = (n: number) => String(n).padStart(2, '0');
 const kmText = (v: number) => (v < 10 ? v.toFixed(1) : String(Math.round(v)));
 const distText = (km: number) => (km < 1 ? `${Math.round(km * 1000)} m` : `${km.toFixed(1)} km`);
 
-// harita: konum izni, webview içinde leaflet, kırmızı yarıçap çemberi, geceler küçük kareler
-// (arkadaşın tuttuğu kırmızı). kareye dokununca sürgü söner, kart 300ms'de alttan kayar.
+// Map: location permission, Leaflet in a WebView, red radius circle, nights as small squares
+// (red when a friend kept it). Tapping a square hides the slider and slides a card up in 300 ms.
 export default function MapScreen() {
   const { session } = useAuth();
   const { t, tn, tx, up } = useLang();
@@ -45,15 +45,15 @@ export default function MapScreen() {
   const [follow, setFollow] = useState<'me' | 'city'>('me');
   const [here, setHere] = useState<{ slug: string; name: string; centre: [number, number] } | null>(null);
   const [denied, setDenied] = useState(false);
-  const [km, setKm] = useState(3); // ağ isteği ve çember bunu izler; sürgü bırakılınca değişir
-  const [dragKm, setDragKm] = useState<number | null>(null); // sürüklerken büyük rakam
+  const [km, setKm] = useState(3); // drives the query and the circle; updated when the slider is released
+  const [dragKm, setDragKm] = useState<number | null>(null); // large number shown while dragging
   const [when, setWhen] = useState<When | null>('tonight');
   const [rows, setRows] = useState<NearNight[]>([]);
   const [missing, setMissing] = useState(false);
   const [picked, setPicked] = useState<NearNight | null>(null);
   const [sheet, setSheet] = useState(false);
   const [keptBy, setKeptBy] = useState<Map<string, string[]>>(new Map());
-  // yeniden basınca: ilk hal. harita elle kaydırılmışsa yeniden kurulur, çembere oturur.
+  // Tapping the tab again resets the view and re-fits the circle, even after manual panning.
   const [fresh, setFresh] = useState(0);
   useTabReset('map', () => {
     setPicked(null);
@@ -94,7 +94,7 @@ export default function MapScreen() {
     };
   }, []);
 
-  // şehri data/here.ts bulur (bütün sekmeler için); burada yalnız merkezi hesaplanır
+  // data/here.ts picks the city for every tab; only the centre is computed here.
   useEffect(() => {
     let cancelled = false;
     (async () => {
@@ -106,7 +106,7 @@ export default function MapScreen() {
     };
   }, [stored, current.name]);
 
-  // arkadaşların tuttuğu geceler: kareyi kırmızı yapar, kartta isimleri yazar
+  // Nights friends kept: red squares, names on the card.
   useEffect(() => {
     if (!session) return;
     let cancelled = false;
@@ -147,7 +147,7 @@ export default function MapScreen() {
     };
   }, [lat, lng, km]);
 
-  // dokununca: sürgü söner, kart kayarak gelir (300ms, ease-out); kapatınca tersi
+  // On tap: slider fades, card slides in (300 ms, ease-out); reversed on close.
   const open = useSharedValue(0);
   useEffect(() => {
     open.set(withTiming(picked ? 1 : 0, { duration: 300, easing: Easing.out(Easing.cubic) }));
@@ -193,7 +193,7 @@ export default function MapScreen() {
         <SoundCorner />
       </View>
 
-      {/* dinlenirken: büyük yarıçap, sayılar, kırmızı sürgü */}
+      {/* Idle: large radius, counts, red slider. */}
       <Animated.View style={[styles.rest, { bottom: tabSpace + 8 }, restStyle]} pointerEvents={picked ? 'none' : 'auto'}>
         <View style={styles.restRow}>
           <Text style={styles.big}>
@@ -221,7 +221,7 @@ export default function MapScreen() {
         />
       </Animated.View>
 
-      {/* seçili gece: afiş altyazısı, sağda kırmızı GO şeridi */}
+      {/* Selected night: caption with the red GO strip on the right. */}
       {picked ? (
         <Animated.View style={[styles.caption, { bottom: tabSpace + 4 }, cardStyle]}>
           <View style={styles.block}>
@@ -253,7 +253,7 @@ export default function MapScreen() {
         </Animated.View>
       ) : null}
 
-      {/* change: zaman ve merkez */}
+      {/* Change: time and centre. */}
       <PickerSheet
         open={sheet}
         title={`${t('filter.when')} · ${t('filter.where')}`}

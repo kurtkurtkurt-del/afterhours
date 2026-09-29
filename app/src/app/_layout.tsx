@@ -14,18 +14,19 @@ import { JetBrainsMono_400Regular } from '@expo-google-fonts/jetbrains-mono';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { colors } from '@/theme/tokens';
 import { AmbientProvider } from '@/audio/AmbientContext';
-import { AuthProvider } from '@/auth/AuthContext';
-import { LanguageProvider } from '@/i18n';
+import { AuthProvider, useAuth } from '@/auth/AuthContext';
+import { LanguageProvider, useLang } from '@/i18n';
+import { usePushRegistration, usePushRouting } from '@/lib/push';
 import GenrePicker from '@/components/GenrePicker';
 import OfflineBar from '@/components/OfflineBar';
 import { startOffline } from '@/lib/offline';
 
-// bağlantıyı izlemek ve bekleyen işleri göndermek, uygulama açılır açılmaz
+// Watch connectivity and flush queued writes as soon as the app starts.
 startOffline();
 
-// native splash, fontlar gelene kadar açık kalır; sonra geçiş görünmez olur
+// Keep the native splash up until fonts load so the hand-off is invisible.
 SplashScreen.preventAutoHideAsync();
-// expo go kendi splash'ını kullanır, setOptions orada geçersiz ve uyarı basar
+// Expo Go uses its own splash; setOptions is a no-op there and logs a warning.
 if (Constants.executionEnvironment !== ExecutionEnvironment.StoreClient) {
   SplashScreen.setOptions({ fade: true, duration: 250 });
 }
@@ -37,12 +38,12 @@ export default function RootLayout() {
     if (loaded) SplashScreen.hideAsync();
   }, [loaded]);
 
-  // android'in alttaki sistem tuşları gizli; yukarı kaydırınca geçici görünür
+  // Hide Android's system navigation bar; a swipe up reveals it temporarily.
   useEffect(() => {
     if (Platform.OS === 'android') NavigationBar.setHidden(true);
   }, []);
 
-  // fontlar gelene kadar splash ile aynı zemin: mürekkep
+  // Same ink background as the splash while fonts load.
   if (!loaded) return <View style={{ flex: 1, backgroundColor: colors.ink }} />;
 
   return (
@@ -53,12 +54,20 @@ export default function RootLayout() {
       <Stack
         screenOptions={{
           headerShown: false,
-          // sayfalar aynı zemini paylaşır; içerik yumuşakça birbirine karışır
-          animation: 'fade',
-          animationDuration: 350,
+          // Pushed pages (night, dj, room, settings…) slide in from the right and back out on return.
+          // Back navigation is the edge swipe in BackButton; the native gesture is disabled.
+          animation: 'ios_from_right',
+          animationDuration: 320,
+          gestureEnabled: false,
           contentStyle: { backgroundColor: colors.ink },
         }}
-      />
+      >
+        {/* Flow changes (entry, sign-up, film, arriving at the tabs) cross-fade instead of sliding. */}
+        {['index', '(tabs)', 'signup', 'welcome', 'film', 'explore', 'auth-callback'].map((name) => (
+          <Stack.Screen key={name} name={name} options={{ animation: 'fade', animationDuration: 400 }} />
+        ))}
+      </Stack>
+      <PushBridge />
       <GenrePicker />
       <OfflineBar />
     </AmbientProvider>
@@ -66,4 +75,14 @@ export default function RootLayout() {
     </AuthProvider>
     </GestureHandlerRootView>
   );
+}
+
+// Registers the phone for push once there is an account (again when the language
+// changes, so notifications follow it) and opens the screen a tapped notification names.
+function PushBridge() {
+  const { session, isAnonymous } = useAuth();
+  const { lang } = useLang();
+  usePushRegistration(!!session && !isAnonymous, lang);
+  usePushRouting();
+  return null;
 }

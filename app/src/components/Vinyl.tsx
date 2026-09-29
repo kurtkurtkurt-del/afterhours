@@ -5,7 +5,7 @@ import Svg, { Circle } from 'react-native-svg';
 
 type Props = { size: number; label: number; spinning: boolean };
 
-// plak: koyu disk, ince oluklar, ortada etiket olarak fotoğraf. çalarken döner.
+// Record: dark disc, fine grooves, the photo as the label. Spins while playing.
 export default function Vinyl({ size, label, spinning }: Props) {
   const rot = useSharedValue(0);
   useEffect(() => {

@@ -6,22 +6,22 @@ import { fetchNear } from '@/data/near';
 import { detectCity } from '@/data/geo';
 import type { City } from '@/content/cities';
 
-// bulunduğun şehir. bütün uygulama buradan okur (deste, harita, kayıt).
+// The city you are in. The whole app reads it from here (deck, map, sign-up).
 //
-// kural: uygulama açılınca ve uzun aradan sonra öne gelince konum sorulur;
-// bulunan şehir seçili şehir olur. elle başka şehir seçersen o geçerli kalır,
-// ta ki gerçekten başka bir şehre geçene kadar (bulunan şehir değişince).
+// The location is checked on launch and when returning after a long pause; the
+// detected city becomes the selected one. A city picked by hand stays selected
+// until you actually move to another city (the detected city changes).
 //
-// şehir, ADINDAN değil yakındaki gecelerden bulunur: telefon ingilizceyken
-// "Munich" der, listede "münchen" yazar ve adlar eşleşmez. en yakın gecelerin
-// çoğu hangi şehirdeyse oradasın. gece yoksa adla eşlemeye düşülür.
+// The city comes from nearby nights, not its NAME: an English phone says "Munich"
+// while the list says "münchen". You are wherever most of the nearest nights are;
+// without nights it falls back to matching the name.
 const CITY = 'city';
 const NAME = 'city.name';
-const SEEN = 'city.here'; // en son konumdan bulunan şehir
-const AGAIN = 30 * 60_000; // bu kadar arkada kalınca konum yeniden sorulur
+const SEEN = 'city.here'; // city last detected from the location
+const AGAIN = 30 * 60_000; // check the location again after this long in the background
 
-export type Here = {
-  city: string | null; // seçili şehir; null = her yer
+type Here = {
+  city: string | null; // selected city; null = everywhere
   name: string | null;
   coords: [number, number] | null;
   from: 'location' | 'choice' | 'saved';
@@ -48,7 +48,7 @@ const tell = (next: Partial<Here>) => {
   listeners.forEach((fn) => fn());
 };
 
-// elle seçmek (deste, onboarding). null = her yer.
+// Picked by hand (deck, onboarding). null = everywhere.
 export function chooseCity(slug: string | null, name?: string | null) {
   write(CITY, slug);
   write(NAME, slug ? (name ?? slug) : null);
@@ -61,7 +61,7 @@ async function position(): Promise<[number, number] | null> {
   if (!granted) return null;
   const last = await Location.getLastKnownPositionAsync({ maxAge: 10 * 60_000 }).catch(() => null);
   if (last) return [last.coords.latitude, last.coords.longitude];
-  // içeride taze konum hiç gelmeyebilir: 8 saniyede vazgeç
+  // Indoors a fresh fix may never come: give up after 8 s.
   const fresh = await Promise.race([
     Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced }).catch(() => null),
     new Promise<null>((done) => setTimeout(() => done(null), 8000)),
@@ -73,7 +73,7 @@ async function cityAt([lat, lng]: [number, number], cities: City[]): Promise<{ s
   const near = await fetchNear(lat, lng, 60, 30).catch(() => null);
   const rows = near?.rows ?? [];
   if (rows.length) {
-    // en yakın gecelerin çoğunluğu; eşitlikte en yakını olan
+    // Majority of the nearest nights; ties go to the one with the closest night.
     const votes = new Map<string, { n: number; first: number; name: string }>();
     rows.forEach((r, i) => {
       const v = votes.get(r.city_slug) ?? { n: 0, first: i, name: r.city_name };
@@ -92,8 +92,8 @@ let running: Promise<void> | null = null;
 let lastRun = 0;
 let firstRun = true;
 
-// konumdan şehri bul. force: süreyi beklemeden.
-export function locate(cities: City[], force = false) {
+// Find the city from the location. force: skip the interval.
+function locate(cities: City[], force = false) {
   if (running) return running;
   if (!force && Date.now() - lastRun < AGAIN) return Promise.resolve();
   running = (async () => {
@@ -106,7 +106,7 @@ export function locate(cities: City[], force = false) {
       if (!found) return;
       const moved = read(SEEN) !== found.slug;
       write(SEEN, found.slug);
-      // açılışta hep bulunduğun şehir; sonra yalnız başka şehre geçtiysen
+      // On launch always the current city; later only if you moved to another city.
       if (firstRun || moved || state.from !== 'choice') {
         write(CITY, found.slug);
         write(NAME, found.name);
@@ -130,8 +130,8 @@ export function useHere() {
   );
 }
 
-// sekmelerin kabuğunda bir kez: açılışta ve öne gelince konuma bakar.
-// şehir listesi yalnız ad için gerekir; liste sonradan gelse de yeniden sorulmaz.
+// Called once in the tabs shell: checks the location on launch and on foreground.
+// The city list is only needed for names; a late list does not trigger another lookup.
 export function useFollowLocation(cities: City[]) {
   const list = useRef(cities);
   useEffect(() => {

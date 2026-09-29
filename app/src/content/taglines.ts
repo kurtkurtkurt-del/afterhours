@@ -1,14 +1,14 @@
 import type { Key } from '@/i18n/dict';
 
-// sign up ekranında dönüşümlü satırlar. sıra burada; sözler i18n/parts/home.ts içinde.
+// Rotating lines on the sign-up screen. Order lives here; strings in i18n/parts/home.ts.
 export const taglines: readonly Key[] = ['tagline.1', 'tagline.2', 'tagline.3', 'tagline.4', 'tagline.5'];
 
 export const tagline = {
-  size: 34,          // font boyutu
+  size: 34,          // font size
   lineHeight: 40,
-  in: 500,           // belirme süresi, ms
-  out: 350,          // kaybolma süresi
-  base: 1600,        // okuma süresi tabanı
-  perWord: 320,      // kelime başına ek okuma süresi
-  rise: 14,          // belirirken kaç px alttan gelir
+  in: 500,           // fade-in, ms
+  out: 350,          // fade-out, ms
+  base: 1600,        // base reading time, ms
+  perWord: 320,      // extra reading time per word, ms
+  rise: 14,          // px risen while fading in
 } as const;

@@ -10,25 +10,24 @@ import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-export type { DeckCard, DeckFriend } from '@/components/CardFace';
 
 type Props = {
   cards: DeckCard[];
-  // friends: arkadaşların sağa attıkları (şerit: keep) · mine: benim sağa attıklarım (şerit: ticket)
-  // wave2 / wave3: arkadaşların arkadaşlarınınkiler; friends gibi davranır (şerit: keep)
+  // friends: nights friends kept (strip: keep) · mine: nights you kept (strip: ticket)
+  // wave2 / wave3: friends of friends; behave like friends (strip: keep)
   mode: 'friends' | 'mine' | 'wave2' | 'wave3';
-  sample?: boolean; // örnek kartlar: üstteki etikette yazar
+  sample?: boolean; // sample cards: noted in the top label
   kept: Record<string, boolean>;
   onKeep: (card: DeckCard) => void;
   onClose: () => void;
   empty: string;
 };
 
-const PULL = 90; // yukarı ya da aşağı bu kadar çekilince karar verilmiş sayılır
+const PULL = 90; // pulled this far up or down counts as a decision
 const two = (n: number) => String(n).padStart(2, '0');
 
-// desteyi gezmek: kart yüzü (CardFace), yana kaydırınca sonraki kart, yukarı bilet, aşağı gece sayfası.
-// kart yoksa ortadaki yazıya dokununca kapanır.
+// Browse a deck: card face, swipe sideways for the next card, up for the ticket, down for the night page.
+// With no cards, tapping the centre text closes it.
 export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty, sample }: Props) {
   const { width } = useWindowDimensions();
   const insets = useSafeAreaInsets();
@@ -36,7 +35,7 @@ export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty, 
   const [index, setIndex] = useState(0);
   const { t, up } = useLang();
 
-  // android geri tuşu desteyi kapatır
+  // Android back closes the deck.
   useEffect(() => {
     const sub = BackHandler.addEventListener('hardwareBackPress', () => {
       onClose();
@@ -70,7 +69,7 @@ export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty, 
           />
         )}
 
-        {/* üst: şehir · sıra, sağda ses */}
+        {/* Top: city · position, sound on the right. */}
         <View style={[styles.top, { top: Math.max(brand.top, insets.top + 24) }]} pointerEvents="box-none">
           <View style={styles.chip}>
             <Text style={styles.chipText}>
@@ -99,7 +98,7 @@ function Card({ card, mode, isKept, onKeep, width, bottom }: { card: DeckCard; m
   const ticket = () => openTicket(card);
   const details = () => openDetails(card);
 
-  // dikey çekme: yukarı bilet, aşağı ayrıntılar. yana hareket kartlar arası kaydırmaya gider.
+  // Vertical pull: up = ticket, down = details. Horizontal movement pages between cards.
   const pan = Gesture.Pan()
     .activeOffsetY([-14, 14])
     .failOffsetX([-14, 14])

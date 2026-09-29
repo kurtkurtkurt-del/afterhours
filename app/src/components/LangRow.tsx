@@ -2,7 +2,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { langNames, langs, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 
-// dil seçimi: en de tr. kutu yok; seçili olan kâğıt, diğerleri soluk.
+// Language picker: en de tr. No boxes; the selected one is paper, the others dimmed.
 export default function LangRow() {
   const { lang, setLang, t } = useLang();
   return (

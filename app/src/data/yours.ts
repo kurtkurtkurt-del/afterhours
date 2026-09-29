@@ -7,20 +7,40 @@ import { friendsLive, type LiveFriend } from '@/data/checkin';
 import { friendPhotos } from '@/data/photo';
 import { dayLabel } from '@/data/when';
 
-// yours ekranının verisi: arkadaşlar, canlı olanlar, keep'ledikleri geceler, eşleşmeler.
+// Data for the yours screen: friends, who is live, the nights they kept, matches.
 export type YoursNight = { id: string; slug: string; title: string; venue: string; when: string; startsAt?: string | null; image: string | null; friends: string[] };
 export type YoursFriend = { id: string; name: string; handle: string | null; photo?: string; live?: string; kept: number; pending?: 'incoming' | 'outgoing' };
 export type YoursMatch = { friend: string; night: string };
 
 const day = (iso: string | null) => dayLabel(iso);
-// friends_kept 'friend' sütunu handle'ı önce alır; her yerde aynı anahtar
+// friends_kept's 'friend' column prefers the handle; the same key is used everywhere.
 const nameOf = (f: { display_name: string | null; handle: string | null }) => (f.handle ?? f.display_name ?? 'a friend').toLowerCase();
 
+// Adding a friend reloads yours so the pending square appears immediately.
+let bump = 0;
+const bumps = new Set<() => void>();
+export function refreshYours() {
+  bump += 1;
+  bumps.forEach((fn) => fn());
+}
+function useBump() {
+  const [n, setN] = useState(bump);
+  useEffect(() => {
+    const fn = () => setN(bump);
+    bumps.add(fn);
+    return () => {
+      bumps.delete(fn);
+    };
+  }, []);
+  return n;
+}
+
 export function useYours() {
+  const again = useBump();
   const { session } = useAuth();
   const uid = session?.user.id;
   const tick = useRefreshOnFocus();
-  // mine: sağa kaydırdıklarım (your deck) · swipes: arkadaşların sağa kaydırdıkları, tek tek (friends' deck)
+  // mine: nights you kept (your deck) · swipes: friends' right swipes, one by one (friends' deck)
   const [state, setState] = useState<{ friends: YoursFriend[]; nights: YoursNight[]; matches: YoursMatch[]; mine: Night[]; swipes: FriendKept[]; ready: boolean }>({ friends: [], nights: [], matches: [], mine: [], swipes: [], ready: false });
 
   useEffect(() => {
@@ -47,7 +67,7 @@ export function useYours() {
         kept: keptCount.get(nameOf(f)) ?? 0,
         pending: f.status === 'pending' ? f.direction : undefined,
       }));
-      // gece başına grupla
+      // Group by night.
       const byNight = new Map<string, YoursNight>();
       fk.forEach((k) => {
         const n = byNight.get(k.id) ?? { id: k.id, slug: k.slug, title: k.title.toLowerCase(), venue: k.venue_name ?? k.city_slug, when: day(k.starts_at), startsAt: k.starts_at, image: k.image_url, friends: [] };
@@ -62,8 +82,8 @@ export function useYours() {
     return () => {
       cancelled = true;
     };
-  }, [uid, tick]);
+  }, [uid, tick, again]);
 
-  // oturum yoksa bekleyecek bir şey yok
+  // Without a session there is nothing to wait for.
   return session ? state : { friends: [], nights: [], matches: [], mine: [], swipes: [], ready: true };
 }

@@ -1,4 +1,4 @@
-// giriş: ana ekran, tanıtım, şehir seçimi, kayıt, ses, dönen satırlar.
+// Entry: home screen, onboarding, city picker, sign-up, sound, rotating lines.
 export const home = {
   'home.explore': { en: 'explore your city', de: 'entdecke deine stadt', tr: 'şehrini keşfet' },
   'home.city.line1': { en: 'where are', de: 'wo bist', tr: 'hangi' },

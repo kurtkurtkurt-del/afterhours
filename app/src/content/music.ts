@@ -1,6 +1,6 @@
-// arka plan müziği: tür başına 10 kesit (60 sn, 64 kbps aac), supabase'in "sound" deposundan
-// akar (21_sound.sql). dosyalar repo'da sound/ altında durur, pakete girmez;
-// backend/tools/upload-sound.mjs ile depoya konur. kaynak ve lisanslar CREDITS.md içinde.
+// Background music: 10 clips per genre (60 s, 64 kbps AAC), streamed from Supabase's "sound"
+// bucket (21_sound.sql). The files live under sound/ in the repo, outside the bundle, and are
+// uploaded with backend/tools/upload-sound.mjs. Sources and licences are in CREDITS.md.
 export type Genre = 'house' | 'techno' | 'rap';
 
 export const genres: { id: Genre; label: string }[] = [

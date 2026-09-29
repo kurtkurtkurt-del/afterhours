@@ -4,14 +4,14 @@ import { WebView } from 'react-native-webview';
 import { leafletCss, leafletJs } from '@/vendor/leaflet';
 
 export type Pin = { id: string; lat: number; lng: number; friends: boolean };
-// pad: çemberin sığacağı alan; üstte başlık, altta sürgü ya da kart kadar boşluk bırakılır
-// liveKm: sürgü sürüklenirken çemberin o anki yarıçapı (harita yerinden oynamaz); km bırakılınca gelir
+// pad: the area the circle must fit in, leaving room for the header above and the slider or card below
+// liveKm: circle radius while the slider is dragged (the map does not move); km arrives on release
 type Props = { lat: number; lng: number; km: number; liveKm?: number; me: [number, number] | null; pins: Pin[]; picked: string | null; onPick: (id: string | null) => void; pad: { top: number; bottom: number } };
 
-// harita, webview içinde: leaflet (pakete gömülü) + esri "dark gray canvas" karoları. anahtar gerekmez;
-// carto'nun ücretsiz karoları anahtarsız isteklere filigran basıyor, o yüzden esri.
-// webview dışarıya gidemez: sayfa içi gezinme kapalı, dosya erişimi kapalı, sadece karo isteği çıkar.
-// mürekkep görünümü css ile: karolar koyulaştırılır, geceler küçük kareler, yarıçap kırmızı çember.
+// Map in a WebView: Leaflet (bundled) + Esri "Dark Gray Canvas" tiles, no key needed;
+// Carto's free tiles watermark keyless requests, hence Esri.
+// The WebView cannot navigate away: in-page navigation and file access are off; only tile requests leave.
+// The ink look is CSS: darkened tiles, nights as small squares, a red radius circle.
 const html = `<!doctype html><html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <style>${leafletCss}</style>
@@ -21,12 +21,12 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   .leaflet-tile{filter:brightness(.55) contrast(1.15) saturate(0)}
   .leaflet-control-attribution{background:rgba(14,13,12,.8)!important;color:#8a877f!important;font:10px Inter,system-ui,sans-serif;padding:2px 6px}
   .leaflet-control-attribution a{color:#8a877f!important}
-  /* geceler küçük kâğıt kareler; arkadaşın tuttuğu kırmızı; seçilince çerçeveli, diğerleri %45 */
+  /* Nights are small paper squares; red when a friend kept it; the selected one is outlined, the rest at 45%. */
   .sq{width:12px;height:12px;background:#f3f1ec;box-sizing:border-box;transition:opacity .3s ease-out}
   .sq.fr{background:#d7261e}
   .sq.on{background:#d7261e;outline:1.5px solid #f3f1ec;outline-offset:4px}
   .dim .sq:not(.on){opacity:.45}
-  /* ben: içi boş kare */
+  /* You: an empty square. */
   .me{width:12px;height:12px;border:1.5px solid #f3f1ec;box-sizing:border-box;background:transparent}
 </style></head><body><div id="m"></div><script>
   var map=L.map('m',{zoomControl:false,attributionControl:true,zoomSnap:0.5}).setView([48.137,11.575],13);
@@ -106,7 +106,7 @@ export default function MapWeb({ lat, lng, km, liveKm, me, pins, picked, onPick,
             send({ view: { lat, lng, km, top: pad.top, bottom: pad.bottom }, pins, picked, me: me ?? undefined });
           } else if ('pick' in m) onPick(m.pick);
         } catch {
-          /* yut */
+          /* ignore */
         }
       }}
     />

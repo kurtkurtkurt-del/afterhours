@@ -1,7 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import { cachedRead, markSwiped, must, remember, send, shelve, swipedHere } from '@/lib/offline';
 
-// events_public satırı; deck() ve kept() bunu döner
+// An events_public row, as returned by deck() and kept().
 export type Night = {
   id: string;
   slug: string;
@@ -23,8 +23,8 @@ export type Night = {
   source: string | null;
 };
 
-// deste: şehrin henüz kaydırılmamış geceleri. null şehir = dünya, null tür = hepsi.
-// çevrimdışıyken son kaydedilen deste, bu telefonda o arada kaydırılanlar çıkarılarak
+// The deck: the city's nights not yet swiped. null city = everywhere, null type = all.
+// Offline: the last saved deck, minus what was swiped on this phone since
 export async function fetchDeck(city: string | null, type: string | null = null, limit = 40) {
   const { value, stale } = await cachedRead('deck', `${city ?? '*'}|${type ?? '*'}|${limit}`, async () => ((await must(supabase.rpc('deck', { p_city: city, p_type: type, p_limit: limit }))) ?? []) as Night[], 12);
   if (!stale) {
@@ -35,39 +35,32 @@ export async function fetchDeck(city: string | null, type: string | null = null,
   return value.filter((n) => !gone.has(n.slug));
 }
 
-// gecenin sayfası: çevrimdışıyken desteden, tutulanlardan ya da haritadan kaydedilenden açılır
+// A night page: offline it opens from what was saved from the deck, keeps or the map.
 export const stashNights = (list: Night[]) => shelve('night', list.map((n) => [n.slug, n]), 500).catch(() => {});
 export async function fetchNight(slug: string): Promise<Night | null> {
   return remember('night', slug, async () => (await must(supabase.from('events_public').select('*').eq('slug', slug).maybeSingle())) as Night | null, 500);
 }
 
-// keep / let go. giriş gerektirir; aynı kart ikinci kez kaydırılırsa üstüne yazar.
-// ağ yoksa sıraya girer, bağlantı gelince gider (lib/offline.ts)
+// Keep / let go. Requires sign-in; swiping the same card again overwrites.
+// Offline it is queued and sent on reconnect (lib/offline.ts).
 export async function swipe(slug: string, direction: 'left' | 'right') {
   await markSwiped(slug);
   await send({ kind: 'swipe', slug, direction });
 }
 
-// tutulan kartlar, en yeni önce
-export async function fetchKept() {
-  const list = await remember('kept', '', async () => ((await must(supabase.rpc('kept'))) ?? []) as Night[]);
-  stashNights(list);
-  return list;
-}
-
-// geri al: kendi kaydırma satırını siler; kart yeniden desteye düşer
+// Undo: deletes your own swipe row; the card returns to the deck.
 export async function unswipe(eventId: string, slug?: string) {
   if (slug) await markSwiped(slug, false);
   await send({ kind: 'unswipe', eventId });
 }
 
-// hepsini sıfırla: kaydırmaların tamamı silinir, deste baştan başlar
+// Reset: deletes every swipe; the deck starts over.
 export async function resetSwipes() {
   const { error } = await supabase.rpc('swipes_reset');
   if (error) throw error;
 }
 
-// poster adresi: fotoğrafı olmayan gecelerin el çizimi svg afişi, web sitesinden
+// Poster URL: the site's hand-drawn SVG for nights without a photo.
 export const SITE = 'https://kurtkurtkurt-del.github.io/afterhours/';
 export function posterUrl(n: { poster_no: number | null; poster_path?: string | null }) {
   if (n.poster_path) return SITE + n.poster_path.replace(/^\/+/, '');

@@ -3,8 +3,8 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 
-// panel: birbirine ait satırları ince çerçeveli tek kutuda toplar (ayarlar).
-// içindeki satırlar kenardan boşluk alır; son satırın alt çizgisi çerçeveye karışır.
+// Panel: groups related rows in one thin-bordered box (settings).
+// Rows are inset from the edge; the last row's bottom rule merges into the border.
 const InPanel = createContext(false);
 
 export function Panel({ children }: { children: ReactNode }) {
@@ -19,7 +19,7 @@ export function Panel({ children }: { children: ReactNode }) {
 
 type RowProps = { label: string; hint?: string; right?: ReactNode; onPress?: () => void; danger?: boolean };
 
-// ayar satırı: solda etiket (ve altında açıklama), sağda değer ya da anahtar.
+// Settings row: label (and hint) on the left, value or switch on the right.
 export function Row({ label, hint, right, onPress, danger }: RowProps) {
   const boxed = useContext(InPanel);
   return (
@@ -33,7 +33,7 @@ export function Row({ label, hint, right, onPress, danger }: RowProps) {
   );
 }
 
-// iki durumlu anahtar: içi dolu spot nokta = açık
+// Two-state switch: filled spot dot = on.
 export function Switch({ on }: { on: boolean }) {
   return (
     <View style={[styles.sw, on && styles.swOn]}>
@@ -42,7 +42,7 @@ export function Switch({ on }: { on: boolean }) {
   );
 }
 
-// more: sayfa içinde bir yere açılır (›) · out: uygulamanın dışına çıkar (↗)
+// more: opens somewhere in the app (›) · out: leaves the app (↗)
 export function Value({ text, more }: { text: string; more?: boolean }) {
   return (
     <View style={styles.valueRow}>
@@ -59,7 +59,7 @@ export function Mark({ kind }: { kind: 'more' | 'out' }) {
 }
 
 export function Section({ title }: { title: string }) {
-  // başlık hep çevrilmiş söz: büyük harf uygulamanın dilinde
+  // The title is always a translated string, uppercased in the app language.
   const { up } = useLang();
   return <Text style={styles.section}>{up(title)}</Text>;
 }

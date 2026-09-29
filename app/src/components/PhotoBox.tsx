@@ -3,8 +3,8 @@ import Icon from '@/components/Icon';
 import { useT } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 
-// küçük kare fotoğraf (ayarlar kartı, profil sayfası). fotoğraf yoksa ince
-// çerçeve içinde ikon ve "fotoğrafın" yazısı.
+// Small square photo (settings card, profile page). Without a photo: an icon and
+// "your photo" inside a thin frame.
 export default function PhotoBox({ uri, size, onError }: { uri: string | null; size: number; onError?: () => void }) {
   const t = useT();
   return (

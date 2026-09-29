@@ -14,12 +14,12 @@ import { useT } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// şehir seçimi. seçilen şehir saklanır, fotoğraf bırakılır, asıl uygulama açılır.
+// City picker. The chosen city is stored, the photo fades out, and the app opens.
 export default function ExploreScreen() {
   const insets = useSafeAreaInsets();
   const { session } = useAuth();
   const t = useT();
-  // ilk gelişte tanıtım; bir kez görüldü mü bir daha çıkmaz (ayarlardan tekrar açılır)
+  // Intro on first visit only (it can be replayed from settings).
   const [intro, setIntro] = useState(() => Storage.getItemSync('intro.seen') !== '1');
   const finishIntro = () => {
     Storage.setItemSync('intro.seen', '1');
@@ -29,7 +29,7 @@ export default function ExploreScreen() {
 
   const pick = (id: string) => {
     chooseCity(id, cities.find((c) => c.id === id)?.name ?? id);
-    // şehirden sonra kayıt; oturumu olan doğrudan içeri
+    // Sign-up follows the city; users with a session go straight in.
     router.replace(session ? '/yours' : '/signup');
   };
 

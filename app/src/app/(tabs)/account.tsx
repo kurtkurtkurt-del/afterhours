@@ -22,7 +22,7 @@ import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// kartın genişliği ekranın bu kadarı; her kart bir öncekinin bu kadarını açıkta bırakır
+// Card width as a share of the screen; each card leaves this much of the previous one visible.
 const CARD = 0.39;
 const STEP = 0.42;
 
@@ -30,9 +30,9 @@ function distinct(list: (string | null | undefined)[]) {
   return new Set(list.filter(Boolean).map((c) => String(c).toLowerCase())).size;
 }
 
-// hesap, "afiş üstte, kâğıt üstünde deste": üstte kendi fotoğrafın ve adın,
-// altta kâğıt zeminde yana kayan kart destesi. sayılar iki ince satıra indi;
-// çıkış ve geri kalan her şey ayarlarda.
+// Account, "poster over a paper deck": your photo and name on top,
+// a sideways deck of cards on paper below. Counts sit on two thin lines;
+// sign-out and everything else lives in settings.
 export default function AccountScreen() {
   const { session, isAnonymous } = useAuth();
   const { t, tn, up } = useLang();
@@ -50,7 +50,7 @@ export default function AccountScreen() {
     strip.current?.scrollTo({ x: 0, animated: true });
   });
   const tick = useRefreshOnFocus();
-  // ayarlardan dönünce yeni isim ve şehir görünsün
+  // Show the new name and city after returning from settings.
   const profile = useProfile(tick);
   const uid = session?.user.id;
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function AccountScreen() {
       cancelled = true;
     };
   }, [uid, tick]);
-  // gerçek kartlar; hiç yoksa örnekler, sağ üstte "örnekler" yazısıyla
+  // Real cards; samples (labelled at the top right) when there are none.
   const real = cards && cards.length > 0;
   const collection: NightCardData[] = real ? cards.map(toCardData) : samples;
   const cities = real ? distinct(cards.map((c) => c.city_name)) : distinct(samples.map((c) => c.city));
@@ -76,8 +76,8 @@ export default function AccountScreen() {
   const cardW = Math.round(width * CARD);
   const cardH = cardW * 1.5;
 
-  // afişe dokunmak: fotoğraf yoksa doğrudan seçici, varsa iki seçenekli liste.
-  // liste kapanırken seçiciyi açmak android'de ekranı kilitliyordu; önce kapansın.
+  // Tapping the poster: straight to the picker without a photo, otherwise a two-option sheet.
+  // Opening the picker while the sheet closes froze Android, so close first.
   const tap = () => (photo ? setSheet(true) : choose());
   const picked = (id: string) => setTimeout(() => (id === 'remove' ? remove() : choose()), 320);
 
@@ -85,7 +85,7 @@ export default function AccountScreen() {
     <View style={styles.root}>
       <StatusBar style="light" />
 
-      {/* afiş: fotoğraf, altında koyulaşan zemin, sol altta isim */}
+      {/* Poster: photo, darkening gradient, name bottom left. */}
       <Pressable style={styles.poster} onPress={tap} accessibilityRole="imagebutton" accessibilityLabel={t('account.photo.a11y')}>
         {photo ? (
           <Image key={photo} source={{ uri: photo }} style={StyleSheet.absoluteFill} resizeMode="cover" onError={() => broken(photo)} />
@@ -98,7 +98,7 @@ export default function AccountScreen() {
         )}
         <LinearGradient colors={['rgba(14,13,12,0.55)', 'rgba(14,13,12,0)']} style={styles.shadeTop} pointerEvents="none" />
         <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.92)']} style={styles.shadeBottom} pointerEvents="none" />
-        {/* görünür düğme: fotoğrafın değiştirilebildiği belli olsun */}
+        {/* Visible button so it is obvious the photo can be changed. */}
         {photo || busy !== 'idle' ? (
           <View style={styles.edit} pointerEvents="none">
             <Icon name="photo" size={15} color={colors.paper} />
@@ -123,7 +123,7 @@ export default function AccountScreen() {
       </Pressable>
       <SoundCorner />
 
-      {/* kâğıt: deste */}
+      {/* Paper: the deck. */}
       <View style={[styles.paper, { paddingBottom: TAB_BAR_SPACE + insets.bottom }]}>
         <View style={styles.row}>
           <View style={styles.rowLeft}>
@@ -176,7 +176,7 @@ export default function AccountScreen() {
         note={!session || isAnonymous ? t('account.photo.note.guest') : t('account.photo.note')}
       />
 
-      {/* kart büyütme: dokununca ön/arka döner */}
+      {/* Enlarged card: tap to flip. */}
       <Modal visible={open !== null} transparent animationType="fade" onRequestClose={() => setOpen(null)}>
         <Pressable style={styles.dim} onPress={() => setOpen(null)}>
           {open !== null && collection[open] && (
@@ -185,11 +185,11 @@ export default function AccountScreen() {
             </Pressable>
           )}
           <Text style={styles.flipHint}>{up(t('account.flip'))}</Text>
-          {/* kartın altında: o gecenin odası. örnek kartların odası yok */}
+          {/* Under the card: that night's room. Sample cards have none. */}
           {open !== null && real && cards?.[open] ? (
             <Pressable
               onPress={() => {
-                // android: modal kapanırken açılan sayfa modalın altında kalıyordu; önce kapat, sonra git
+                // Android: a page pushed while the modal closes ended up beneath it; close first, then navigate.
                 const slug = cards[open].slug;
                 setOpen(null);
                 setTimeout(() => router.push(`/room/${slug}`), 260);
@@ -222,7 +222,7 @@ const styles = StyleSheet.create({
   meta: { fontFamily: fonts.regular, fontSize: 12, letterSpacing: 1.4, color: colors.paper, marginTop: 8 },
   title: { position: 'absolute', top: brand.top, left: brand.left, fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },
   gear: { position: 'absolute', top: brand.top - 3, right: brand.left + 84 },
-  // kâğıt, afişin üstüne biner: yuvarlak üst köşeler
+  // The paper overlaps the poster with rounded top corners.
   paper: { backgroundColor: colors.paper, paddingTop: 22, marginTop: -radius.lg, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg },
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12, paddingHorizontal: brand.left },
   rowLeft: { flexDirection: 'row', alignItems: 'center', gap: 8 },

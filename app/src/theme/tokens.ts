@@ -1,20 +1,19 @@
-// kâğıt üstüne mürekkep. saf beyaz ve saf siyah yok.
+// Ink on paper. No pure white, no pure black.
 export const colors = {
   paper: '#F3F1EC',
   paper2: '#FAF9F6',
   ink: '#0E0D0C',
   ink2: '#6C6961',
   rule: '#D9D5CC',
-  spot: '#D7261E',     // kırmızı: canlı · tutulan · açık; dolgu, çerçeve, logodaki nokta
-  spotText: '#F0443A', // mürekkep üstünde kırmızı YAZI (spot küçük yazıda okunmuyor)
-  ink3: '#2A2724',     // hairline: koyu zeminde ayırıcı çizgi
-  mute: '#A9A59C',     // muted: koyu zeminde soluk yazı ve ikon
-  meta: '#7F7B73',     // meta: küçük büyük harfli künye satırları
+  spot: '#D7261E',     // red: live · kept · on; fills, borders, the dot in the logo
+  spotText: '#F0443A', // red TEXT on ink (spot is unreadable at small sizes)
+  ink3: '#2A2724',     // hairline: divider on dark backgrounds
+  mute: '#A9A59C',     // muted text and icons on dark backgrounds
+  meta: '#7F7B73',     // small uppercase meta lines
 } as const;
 
-// köşeler. 26.09'daki "köşe yok" kuralı 28.09'da kalktı: bütün uygulama yuvarlak.
-// küçük kare (baş harf, işaret) xs · düğme içi, çip sm · düğme, panel, kart md ·
-// alttan açılan pencere, büyük kart lg · hap biçimli düğme pill
+// Corner radii: small squares (initials, marks) xs · inner buttons, chips sm ·
+// buttons, panels, cards md · bottom sheets, large cards lg · pill buttons pill.
 export const radius = {
   xs: 5,
   sm: 9,
@@ -27,16 +26,16 @@ export const fonts = {
   regular: 'InterTight_400Regular',
   medium: 'InterTight_500Medium',
   semibold: 'InterTight_600SemiBold',
-  jet: 'JetBrainsMono_400Regular',  // künye ayrıntıları: afiş altyazısı, harita kartı (10–11px)
-  mono: 'InterTight_400Regular',    // küçük büyük harfli satırlar da aynı fontta; tek aile
-  logo: 'ArchivoLogo',              // sadece isim: archivo, genişlik 62, ağırlık 900 (assets/fonts)
+  jet: 'JetBrainsMono_400Regular',  // mono details: poster captions, the map card (10–11 px)
+  mono: 'InterTight_400Regular',    // small uppercase lines use the same family
+  logo: 'ArchivoLogo',              // the name only: Archivo, width 62, weight 900 (assets/fonts)
 } as const;
 
-// açılış zamanlaması, milisaniye. "biraz daha yavaş" dendiğinde burası değişir.
+// Intro timing, ms.
 export const intro = {
-  hold: 300,       // kâğıt boş dururken bekleme
-  photoIn: 1400,   // fotoğrafın belirmesi
-  wordDelay: 900,  // ismin belirmeye başladığı an
-  word: 800,       // ismin belirme süresi
-  leaveAt: 3200,   // sonraki ekrana geçiş
+  hold: 300,       // paper holds empty
+  photoIn: 1400,   // photo fades in
+  wordDelay: 900,  // name starts to appear
+  word: 800,       // name fade duration
+  leaveAt: 3200,   // move to the next screen
 } as const;

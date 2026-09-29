@@ -1,4 +1,4 @@
-// ortak sözler: her ekranda geçenler. web sitesindeki lang/src/common.json ile aynı.
+// Shared strings used on every screen. Mirrors lang/src/common.json on the website.
 export const common = {
   'lang.label': { en: 'language', de: 'sprache', tr: 'dil' },
   'lang.hint': { en: 'the whole app changes with it', de: 'die ganze app wechselt mit', tr: 'bütün uygulama onunla değişir' },

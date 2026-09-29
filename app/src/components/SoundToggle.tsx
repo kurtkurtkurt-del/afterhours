@@ -4,7 +4,7 @@ import { colors, fonts } from '@/theme/tokens';
 
 type Props = { on: boolean; onPress: () => void; onLongPress?: () => void; tone?: 'paper' | 'ink' };
 
-// sağ üstte küçük yazı ve bir nokta. açıkken nokta spot renge döner.
+// Small text and a dot at the top right. The dot turns spot red when on.
 export default function SoundToggle({ on, onPress, onLongPress, tone = 'paper' }: Props) {
   const t = useT();
   const ink = tone === 'ink';

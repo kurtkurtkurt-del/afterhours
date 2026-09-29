@@ -1,10 +1,10 @@
-// isim: introda ortada büyük, sonraki ekranlarda sol üstte küçük
+// The name: large and centred in the intro, small top left on later screens.
 export const brand = {
   bigSize: 30,
   smallSize: 18,
-  top: 72,     // küçük halin üst boşluğu
-  left: 24,    // küçük halin sol boşluğu
-  move: 600,   // ortadan köşeye kayma süresi, ms
-  logoBig: 46,   // logo (archivo dar, siyah): introda ortada
-  logoSmall: 24, // logo: ana ekranda sol üst köşede
+  top: 72,     // top margin of the small name
+  left: 24,    // left margin of the small name
+  move: 600,   // centre-to-corner slide duration, ms
+  logoBig: 46,   // logo (Archivo condensed, black), centred in the intro
+  logoSmall: 24, // logo, top left on the home screen
 } as const;

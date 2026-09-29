@@ -1,21 +1,32 @@
 import { supabase } from '@/lib/supabase';
 import { must, remember, send } from '@/lib/offline';
 
-// profile_settings satırı: sadece sahibi okur/yazar (12_profiles.sql)
+// profile_settings row: only the owner reads and writes it (12_profiles.sql).
 export type Settings = {
   kept_visibility: 'friends' | 'private';
   discoverable: boolean;
   notify_email: boolean;
   locale: 'en' | 'de' | 'tr';
+  // 26_push.sql; missing until that file is applied, which reads as on
+  notify_requests?: boolean;
+  notify_accepts?: boolean;
+  notify_matches?: boolean;
+  notify_live?: boolean;
+  notify_nights?: boolean;
+  notify_rooms?: boolean;
+  notify_replies?: boolean;
+  notify_digest?: boolean;
+  notify_djs?: boolean;
+  notify_waves?: boolean;
 };
 
 export async function fetchSettings(userId: string): Promise<Settings | null> {
-  const data = await remember('settings', '', () => must(supabase.from('profile_settings').select('kept_visibility,discoverable,notify_email,locale').eq('user_id', userId).maybeSingle())).catch(() => null);
+  const data = await remember('settings', '', () => must(supabase.from('profile_settings').select('*').eq('user_id', userId).maybeSingle())).catch(() => null);
   return (data as Settings | null) ?? null;
 }
 
 export async function saveSettings(userId: string, patch: Partial<Settings>) {
-  // anahtar değişikliği: ağ yoksa sıraya girer
+  // Switch changes are queued while offline.
   await send({ kind: 'settings', userId, patch });
 }
 
@@ -26,7 +37,7 @@ export async function handleStatus(handle: string): Promise<string> {
   return String(data);
 }
 
-// kaydı bitirir / profili günceller. 'ok' ya da hata kodu döner.
+// Finishes registration / updates the profile. Returns 'ok' or an error code.
 export async function saveProfile(p: { handle: string; name: string; city: string | null; bio: string }): Promise<string> {
   const { data, error } = await supabase.rpc('profile_setup', {
     p_handle: p.handle,

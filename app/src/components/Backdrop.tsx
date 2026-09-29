@@ -1,7 +1,7 @@
 import { Image, StyleSheet, View } from 'react-native';
 import { colors } from '@/theme/tokens';
 
-// gece fotoğrafı ve üstünde mürekkep tonu. intro ile sonraki ekran aynı zemini paylaşır.
+// Night photo with an ink tint. The intro and the next screen share this background.
 export default function Backdrop() {
   return (
     <View style={styles.fill} pointerEvents="none">

@@ -8,7 +8,7 @@ import Backdrop from '@/components/Backdrop';
 
 type Props = { onDone: () => void };
 
-// kâğıt geceye açılır, ortada isim belirir.
+// Paper opens onto the night and the name appears in the centre.
 export default function Intro({ onDone }: Props) {
   const photo = useSharedValue(0);
   const word = useSharedValue(0);

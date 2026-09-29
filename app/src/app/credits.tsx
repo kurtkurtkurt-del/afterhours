@@ -7,7 +7,7 @@ import { useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// credits: müzik (cc0 / cc by 4.0), harita karoları, yazı tipi. mağaza ve lisans şartı.
+// Credits: music (CC0 / CC BY 4.0), map tiles, typefaces. Required by the stores and the licences.
 export default function CreditsScreen() {
   const insets = useSafeAreaInsets();
   const { t, up } = useLang();

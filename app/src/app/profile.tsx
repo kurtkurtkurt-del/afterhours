@@ -21,7 +21,7 @@ import { brand } from '@/theme/layout';
 
 const BIO = 160;
 
-// kod → söz anahtarı; söz çizerken çözülür. empty: söylenecek bir şey yok.
+// Server code → string key, resolved at render time. empty: nothing to say.
 const handleWords: Record<string, Key | null> = {
   ok: 'settings.handle.ok',
   yours: 'settings.handle.yours',
@@ -33,8 +33,8 @@ const handleWords: Record<string, Key | null> = {
 };
 const fine = (code: string) => code === 'ok' || code === 'yours';
 
-// profili düzenle: ayarlardaki "düzenle ›" buraya açılır. fotoğraf, isim,
-// kullanıcı adı, tek satır, şehir; hepsi tek "kaydet" ile profile_setup()'a gider.
+// Edit profile, opened from "edit ›" in settings. Photo, name, handle, bio and city
+// are all saved with one "save" through profile_setup().
 export default function ProfileScreen() {
   const { session, ready, isAnonymous } = useAuth();
   const profile = useProfile();
@@ -47,7 +47,7 @@ export default function ProfileScreen() {
     return key === undefined ? code : key ? t(key) : '';
   };
 
-  // form alanları: kullanıcı dokunana kadar null, görünen değer profilden gelir.
+  // Form fields stay null until touched; the displayed value comes from the profile.
   const [nameEdit, setName] = useState<string | null>(null);
   const [handleEdit, setHandle] = useState<string | null>(null);
   const [bioEdit, setBio] = useState<string | null>(null);
@@ -61,10 +61,10 @@ export default function ProfileScreen() {
   const [saved, setSaved] = useState<string | null>(null);
   const [sheet, setSheet] = useState(false);
 
-  // handle her tuşta sorulur
+  // Check handle availability on every keystroke.
   useEffect(() => {
     if (!handle) return;
-    let live = true; // geç gelen eski cevap yeni değeri ezmesin
+    let live = true; // ignore a late response for an older value
     const timer = setTimeout(() => handleStatus(handle).then((s) => live && setStatus(s)).catch(() => {}), 250);
     return () => {
       live = false;

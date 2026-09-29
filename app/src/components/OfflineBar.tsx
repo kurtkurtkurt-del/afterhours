@@ -4,9 +4,9 @@ import { useNet } from '@/lib/offline';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 
-// çevrimdışıyken en üstte küçük bir satır: kaydedilenler gösteriliyor, kaç iş
-// sırada bekliyor. bağlantı gelip sıra gönderilirken "gönderiliyor". başka
-// zaman hiçbir şey çizmez.
+// While offline, a small line at the top: saved data is shown and how many writes are
+// queued. "sending" while the queue flushes after reconnecting. Renders nothing
+// otherwise.
 export default function OfflineBar() {
   const { online, pending, sending } = useNet();
   const { t, tn, up } = useLang();

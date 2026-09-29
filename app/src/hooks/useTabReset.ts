@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 
-// zaten açık olan sekmeye yeniden basınca o sekme başına döner: en üste kayar,
-// açık pencereler kapanır, seçimler ilk haline gelir. neyin "baş" olduğunu her
-// ekran kendi bilir; bu yalnızca haberi taşır. (TabBar.tsx haber verir)
+// Pressing an already-open tab resets it: scrolls to the top, closes open sheets and
+// restores selections. Each screen decides what its start is; this only carries the
+// signal (sent by TabBar.tsx).
 type Handler = () => void;
 const handlers = new Map<string, Set<Handler>>();
 

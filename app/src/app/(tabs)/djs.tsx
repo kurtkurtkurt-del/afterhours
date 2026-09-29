@@ -17,7 +17,7 @@ import { brand } from '@/theme/layout';
 const H = 3600_000;
 const hhmm = (d: Date) => `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
 
-// seçenek 6, "şimdi / sonra": en üstte çalan, altında bu gece, sonra bu hafta.
+// "Now / later": what is playing now on top, then tonight, then this week.
 export default function DjsScreen() {
   const insets = useSafeAreaInsets();
   const { t, up } = useLang();
@@ -25,7 +25,7 @@ export default function DjsScreen() {
   const scroll = useRef<ScrollView>(null);
   useTabReset('djs', () => scroll.current?.scrollTo({ y: 0, animated: true }));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const now = useMemo(() => new Date(), [tick]); // sekme her açıldığında saat tazelenir
+  const now = useMemo(() => new Date(), [tick]); // refresh the clock whenever the tab opens
   const [data, setData] = useState<{ djs: Dj[]; sets: DjSet[]; live: boolean | null }>({ djs: localDjs, sets: [], live: null });
   useEffect(() => {
     let cancelled = false;
@@ -58,7 +58,7 @@ export default function DjsScreen() {
         {data.live === null ? <Text style={styles.mono}>{up(t('djs.loading'))}</Text> : null}
         {data.live === false ? <Text style={styles.mono}>{up(t('djs.sample'))}</Text> : null}
         {data.live && !next ? <Text style={styles.mono}>{up(t('djs.none'))}</Text> : null}
-        {/* şimdi */}
+        {/* Now */}
         {next ? (
         <Pressable style={styles.hero} onPress={() => router.push(`/dj/${(live ?? next).dj}`)}>
           <Image source={djById((live ?? next).dj).photoUrl ? { uri: djById((live ?? next).dj).photoUrl! } : djById((live ?? next).dj).photo} style={styles.heroPhoto} />

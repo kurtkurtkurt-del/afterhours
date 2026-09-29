@@ -7,7 +7,7 @@ import { useT } from '@/i18n';
 
 type Props = { play: boolean };
 
-// satır alttan hafif yükselerek belirir, okunacak kadar durur, söner, sıradaki gelir.
+// Each line rises in, holds long enough to read, fades out, and the next follows.
 export default function Taglines({ play }: Props) {
   const [i, setI] = useState(0);
   const v = useSharedValue(0);
@@ -42,7 +42,7 @@ export default function Taglines({ play }: Props) {
 }
 
 const styles = StyleSheet.create({
-  // sabit yükseklik: satır uzunluğu değişince hiçbir şey oynamaz (3 satıra kadar)
+  // Fixed height so nothing shifts when the line length changes (up to 3 lines).
   box: { height: tagline.lineHeight * 3, justifyContent: 'flex-end' },
   text: {
     fontFamily: fonts.medium,

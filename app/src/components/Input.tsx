@@ -1,7 +1,7 @@
 import { StyleSheet, TextInput, type TextInputProps } from 'react-native';
 import { colors, fonts } from '@/theme/tokens';
 
-// fotoğraf üstünde tek çizgili alan: dolgu yok, kutu yok, altta ince kâğıt çizgisi.
+// Single-line field for photo backgrounds: no fill, no box, a thin paper underline.
 export default function Input(props: TextInputProps) {
   return (
     <TextInput

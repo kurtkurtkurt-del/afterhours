@@ -6,14 +6,14 @@ import Intro from '@/components/Intro';
 import { useAmbient } from '@/audio/AmbientContext';
 import { useAuth } from '@/auth/AuthContext';
 
-// tek ekran: şehir ekranı altta hazır bekler, intro üstünde oynayıp kalkar.
-// route değişimi olmadığı için arada boş kare yok.
+// Single screen: the city screen waits underneath while the intro plays on top,
+// so there is no blank frame from a route change.
 export default function Home() {
   const [introDone, setIntroDone] = useState(false);
   const done = useCallback(() => setIntroDone(true), []);
   const ambient = useAmbient();
   const { ready, session } = useAuth();
-  // daha önce girmiş olan (hesap ya da misafir) introyu bir daha görmez
+  // Returning users (account or guest) skip the intro.
   useEffect(() => {
     if (ready && session) router.replace('/yours');
   }, [ready, session]);

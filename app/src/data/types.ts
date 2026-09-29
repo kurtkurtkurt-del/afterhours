@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 
-export type EventType = { id: string; label: string };
+type EventType = { id: string; label: string };
 
-// spec'teki altı tür, spec sırasıyla. veritabanından okunur; ağ yoksa bu liste.
+// The six event types in spec order. Read from the database; this list when offline.
 const fallback: EventType[] = [
   { id: 'rave', label: 'rave' },
   { id: 'club-night', label: 'club night' },

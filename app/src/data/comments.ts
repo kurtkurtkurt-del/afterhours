@@ -1,15 +1,15 @@
 import { supabase } from '@/lib/supabase';
 import { isOnline, OfflineError, remember } from '@/lib/offline';
-import { t as tNow, tx as txNow } from '@/i18n';
+import { t as tNow, tx as txNow } from '@/i18n/core';
 import type { Key } from '@/i18n/dict';
 
-// beforehours: geceden önce söylenenler. web ile aynı tablo (comments_public),
-// aynı iki adım: önce konular, sonra onların cevapları. yazmak da buradan:
-// herkes yazabilir, misafir dahil (author_id oturumdan dolar, isim yoksa "someone").
-// who boşsa isim yok demek ("someone"); at ham tarih. ikisi de ekranda, o anki dilde söze döner.
+// Beforehours: what people say before a night. Same table as the web (comments_public),
+// same two steps: topics first, then their replies. Anyone can post, guests included
+// (author_id comes from the session; without a name it shows "someone").
+// Empty who means no name ("someone"); at is the raw date. Both become strings at render time.
 export type Comment = { id: string; who: string; at: string; body: string; replies: { who: string; at: string; body: string }[] };
 
-// sunucu hata metni → söz anahtarı
+// Server error text → string key.
 export const commentErrors: Record<string, Key> = {
   signin: 'comments.error.signin',
   'sign in first': 'comments.error.signin',
@@ -24,7 +24,7 @@ export const commentCode = (e: unknown) => {
 
 type Row = { id: string; parent_id: string | null; author: string | null; body: string; created_at: string };
 
-// bileşen içinde useLang()'den gelen t ve tx verilir; verilmezse o anki dil
+// Components pass t and tx from useLang(); otherwise the current language is used.
 export const whenText = (iso: string, t: typeof tNow = tNow, tx: typeof txNow = txNow) => {
   const hours = Math.floor((Date.now() - new Date(iso).getTime()) / 3600e3);
   if (hours < 1) return t('comments.now');
@@ -67,8 +67,8 @@ async function loadComments(eventId: string): Promise<Comment[]> {
   }));
 }
 
-// bir konu (parentId yok) ya da bir cevap. veritabanı author_id'yi oturumdan
-// doldurur; RLS misafir oturumlarını da kabul eder (rol authenticated).
+// A topic (no parentId) or a reply. The database fills author_id from the session;
+// RLS accepts guest sessions too (role authenticated).
 export async function postComment(eventId: string, body: string, parentId?: string) {
   const text = body.trim();
   if (!text) throw new Error('empty');

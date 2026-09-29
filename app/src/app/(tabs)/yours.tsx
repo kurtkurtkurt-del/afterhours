@@ -3,8 +3,10 @@ import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-nati
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { LinearGradient } from 'expo-linear-gradient';
 import Icon from '@/components/Icon';
 import PickerSheet from '@/components/PickerSheet';
+import { PeopleResults, PeopleSearch, PeopleSuggested } from '@/components/People';
 import SoundCorner from '@/components/SoundCorner';
 import DeckViewer from '@/components/DeckViewer';
 import { toDeckCard, type DeckCard } from '@/components/CardFace';
@@ -24,15 +26,15 @@ import { brand } from '@/theme/layout';
 
 const fallbackPhoto = require('../../../assets/intro/concert.jpg');
 
-// yours: büyük başlık, iki satır arkadaş karesi (canlı olan kırmızı dolgu), altında
-// arkadaşların tuttuğu geceler (fotoğraf üstte, künye altta) ve eşleşmeler.
-// alt köşeler: solda your deck, sağda friends' deck; ikisi de kart görünümünde açılır.
+// Yours: title, friend squares in two rows (live friends filled red), then the nights
+// friends kept and matches. Bottom corners: your deck on the left, friends' deck on the
+// right; both open in the card viewer.
 export default function YoursScreen() {
   const insets = useSafeAreaInsets();
   const { session } = useAuth();
   const real = useYours();
   const { t, tn, tx, up } = useLang();
-  // açık bir oda var mı: sohbet simgesindeki nokta için
+  // Is a room open? Drives the dot on the chat icon.
   const [roomOpen, setRoomOpen] = useState(false);
   const uid = session?.user.id;
   useEffect(() => {
@@ -45,7 +47,7 @@ export default function YoursScreen() {
       live = false;
     };
   }, [uid, real.ready]);
-  // arkadaş yoksa örnek veri, üstünde "sample" notu; olunca gerçek
+  // Without friends: sample data with a "sample" note; real data otherwise.
   const sample = real.ready && real.friends.length === 0;
   const friends: YoursFriend[] = sample
     ? sampleFriends.map((f) => ({ id: f.id, name: f.name, handle: f.handle, live: f.live, kept: f.kept }))
@@ -59,17 +61,20 @@ export default function YoursScreen() {
   const [meToo, setMeToo] = useState<Record<string, boolean>>({});
   const [asking, setAsking] = useState<string | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>({});
+  // Friend search: while typing, results replace the feed.
+  const [query, setQuery] = useState('');
   const [deck, setDeck] = useState<'mine' | 'friends' | 'wave2' | 'wave3' | null>(null);
   const scroll = useRef<ScrollView>(null);
   const people = useRef<ScrollView>(null);
   useTabReset('yours', () => {
     setDeck(null);
+    setQuery('');
     setAsking(null);
     people.current?.scrollTo({ x: 0, animated: true });
     scroll.current?.scrollTo({ y: 0, animated: true });
   });
   const [keptNow, setKeptNow] = useState<Record<string, boolean>>({});
-  // arkadaşların tuttuğu gecelerin bilet adresleri (friends_kept bunu taşımıyor)
+  // Ticket URLs for friends' kept nights (friends_kept does not carry them).
   const [tickets, setTickets] = useState<Record<string, string | null>>({});
   const swipeIds = useMemo(() => [...new Set(real.swipes.map((k) => k.id))].sort().join(','), [real.swipes]);
   useEffect(() => {
@@ -91,7 +96,7 @@ export default function YoursScreen() {
   }, [swipeIds]);
   const closeDeck = () => setDeck(null);
 
-  // friends' deck: arkadaşların sağa attıkları, gece başına bir kart, tutanlar karede
+  // Friends' deck: nights friends kept, one card per night, keepers as squares.
   const friendsCards = useMemo<DeckCard[]>(() => {
     const byId = new Map<string, DeckCard>();
     real.swipes.forEach((k) => {
@@ -102,7 +107,7 @@ export default function YoursScreen() {
     });
     return [...byId.values()];
   }, [real.swipes, live, tickets]);
-  // your deck: benim sağa attıklarım; aynı geceyi tutan arkadaşlar da karede
+  // Your deck: nights you kept, with friends who kept the same night.
   const mineCards = useMemo<DeckCard[]>(
     () =>
       real.mine.map((n) => {
@@ -117,16 +122,16 @@ export default function YoursScreen() {
     return k;
   }, [real.mine, keptNow]);
   const keepCard = (c: DeckCard) => {
-    // örnek kartların gecesi yok (slug boş): yalnız ekranda işaretlenir
+    // Sample cards have no night (empty slug): only marked on screen.
     setKeptNow((s) => ({ ...s, [c.slug || c.key]: true }));
     if (session && c.slug) swipe(c.slug, 'right').catch(() => {});
   };
 
-  // iki satır: arkadaşlar sütun sütun dizilir, sütunlar sağa akar
+  // Two rows: friends fill column by column, columns flow to the right.
   const cols: (typeof friends)[] = [];
   for (let i = 0; i < friends.length; i += 2) cols.push(friends.slice(i, i + 2));
 
-  // kartlar ve eşleşmeler karışık: her ikinci karttan sonra bir eşleşme
+  // Interleave cards and matches: one match after every second card.
   const feed: ({ kind: 'night'; n: YoursNight } | { kind: 'match'; friend: string; night: string })[] = [];
   let m = 0;
   nights.forEach((n, i) => {
@@ -142,15 +147,18 @@ export default function YoursScreen() {
       <StatusBar style="light" />
       <View style={styles.band}>
         <Text style={styles.title}>{t('yours.title')}</Text>
-        {/* afterhours odaları; biri açıksa simgenin köşesinde kırmızı nokta */}
+        {/* Afterhours rooms; a red dot when one is open. */}
         <Pressable onPress={() => router.push('/rooms')} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('rooms.a11y')} style={({ pressed }) => [styles.chat, pressed && styles.pressed]}>
           <Icon name="chat" size={21} color={colors.paper} />
           {roomOpen ? <View style={styles.chatDot} /> : null}
         </Pressable>
         <SoundCorner />
       </View>
-      <ScrollView ref={scroll} contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom + 60 }]} showsVerticalScrollIndicator={false}>
-        {/* arkadaşlar */}
+      <ScrollView ref={scroll} keyboardShouldPersistTaps="handled" contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom + 60 + WAVE * 2 }]} showsVerticalScrollIndicator={false}>
+        <PeopleSearch value={query} onChange={setQuery} />
+        {query.trim() ? <PeopleResults query={query} /> : (
+        <>
+        {/* Friends */}
         <ScrollView ref={people} horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.people}>
           {cols.map((col, i) => (
             <View key={i} style={styles.col}>
@@ -175,6 +183,8 @@ export default function YoursScreen() {
             </Pressable>
           </View>
         </ScrollView>
+
+        <PeopleSuggested />
 
         {sample ? <Text style={styles.section}>{up(t('yours.sample'))}</Text> : null}
 
@@ -228,12 +238,21 @@ export default function YoursScreen() {
             </View>
           ),
         )}
+        </>
+        )}
       </ScrollView>
 
+      {/* Fade behind the buttons so the feed does not collide with them. */}
+      <LinearGradient
+        pointerEvents="none"
+        colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.88)', colors.ink]}
+        locations={[0, 0.45, 1]}
+        style={[styles.fade, { height: TAB_BAR_SPACE + insets.bottom + WAVE * 2 + 70 }]}
+      />
       <Pressable onPress={() => setDeck('mine')} style={({ pressed }) => [styles.fab, styles.fabLeft, { bottom: TAB_BAR_SPACE + insets.bottom - 6 }, pressed && styles.pressed]}>
         <Text style={styles.btnTextLine}>{t('deck.yours')}{real.mine.length ? ` · ${real.mine.length}` : ''}</Text>
       </Pressable>
-      {/* arkadaşların destesinin üstünde iki dalga: onların arkadaşları, onlarınkiler */}
+      {/* Two waves above friends' deck: friends of friends, and one step further. */}
       <Pressable onPress={() => setDeck('wave3')} accessibilityLabel={t('deck.wave3.deck')} style={({ pressed }) => [styles.fab, styles.fabWave, { bottom: TAB_BAR_SPACE + insets.bottom - 6 + WAVE * 2 }, pressed && styles.pressed]}>
         <Text style={styles.btnTextWave}>{t('deck.wave3')} · {wave3.length}</Text>
       </Pressable>
@@ -258,7 +277,7 @@ export default function YoursScreen() {
         note={t('yours.askNote')}
       />
 
-      {/* kart görünümü: alt menünün altında kalır, menü üstte yüzmeye devam eder */}
+      {/* Card viewer: sits under the tab bar, which keeps floating on top. */}
       {deck ? (
         <DeckViewer
           mode={deck}
@@ -281,7 +300,7 @@ export default function YoursScreen() {
 }
 
 const AV = 18;
-const WAVE = 46; // dalga düğmeleri arasındaki adım
+const WAVE = 46; // vertical step between the wave buttons
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
@@ -295,7 +314,7 @@ const styles = StyleSheet.create({
   person: { width: 50, alignItems: 'center', gap: 5 },
   pressed: { opacity: 0.6 },
   initial: { width: 46, height: 46, borderRadius: radius.sm, overflow: 'hidden', borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
-  // fotoğraf çerçevenin içini doldurur; canlıysa kırmızı çerçeve kalır
+  // The photo fills the frame; live friends keep the red border.
   face: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 },
   initialLive: { backgroundColor: colors.spot, borderColor: colors.spot },
   initialPending: { borderStyle: 'dashed', borderColor: colors.mute },
@@ -307,7 +326,7 @@ const styles = StyleSheet.create({
   section: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta, marginTop: 26, paddingHorizontal: brand.left },
   card: { marginHorizontal: brand.left, marginTop: 22, paddingTop: 16, borderTopWidth: 1, borderTopColor: colors.ink3, gap: 8 },
   cardRow: { flexDirection: 'row', gap: 12, alignItems: 'center' },
-  cardPhoto: { width: 72, height: 72, borderRadius: radius.md, backgroundColor: colors.ink2, filter: [{ grayscale: 1 }] },
+  cardPhoto: { width: 72, height: 72, borderRadius: radius.md, backgroundColor: colors.ink2 },
   cardText: { flex: 1, gap: 3 },
   cardMeta: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.4, color: colors.spotText },
   cardTitle: { fontFamily: fonts.semibold, fontSize: 20, lineHeight: 22, letterSpacing: -0.5, color: colors.paper },
@@ -326,6 +345,7 @@ const styles = StyleSheet.create({
   matchLabel: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.spotText },
   matchText: { fontFamily: fonts.regular, fontSize: 15, color: colors.paper },
   matchNight: { fontFamily: fonts.regular, fontSize: 12, color: colors.meta },
+  fade: { position: 'absolute', left: 0, right: 0, bottom: 0 },
   fab: { position: 'absolute', right: brand.left, backgroundColor: colors.spot, paddingVertical: 10, paddingHorizontal: 16, borderRadius: radius.pill },
   fabWave: { backgroundColor: colors.ink, borderWidth: 1, borderColor: colors.spot, paddingVertical: 9 },
   btnTextWave: { fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.1, color: colors.spotText },

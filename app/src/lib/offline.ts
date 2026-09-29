@@ -4,16 +4,16 @@ import NetInfo from '@react-native-community/netinfo';
 import Storage from 'expo-sqlite/kv-store';
 import { supabase } from '@/lib/supabase';
 
-// internet yokken uygulama durmasın.
+// Keep the app working without a connection.
 //
-// okumak: başarılı her cevap telefona yazılır (kv-store, kullanıcıya göre ayrı).
-//   ağ yoksa ya da istek düşerse son kaydedilen gösterilir. hiç kaydı olmayan
-//   ekran boş değil, "çevrimdışı" der.
-// yazmak: kaydırma, geri alma, ayar anahtarı gibi TEKRARLANSA da zararsız işler
-//   sıraya girer ve bağlantı gelince sırayla gönderilir. check-in, yorum, oda
-//   yazısı sıraya girmez (ikinci kez gitmesi yanlış olur); onlar "çevrimdışı" der.
+// Reads: every successful response is stored on the phone (kv-store, per user).
+//   Offline or on failure the last stored copy is shown. A screen with nothing
+//   stored says "offline" instead of staying blank.
+// Writes: idempotent operations (swipe, undo, settings switch) are queued and sent
+//   in order on reconnect. Check-ins, comments and room posts are not queued (sending
+//   them twice would be wrong); they report "offline".
 
-// ------------------------------------------------------------- bağlantı
+// ------------------------------------------------------------- connectivity
 
 type Net = { online: boolean; pending: number; sending: boolean };
 let net: Net = { online: true, pending: 0, sending: false };
@@ -29,7 +29,7 @@ const tell = (next: Partial<Net>) => {
 };
 const back = new Set<() => void>();
 
-// bağlantı geri gelince çağrılır (ekranlar tazelensin)
+// Called when the connection returns (so screens can refresh).
 export function onBackOnline(fn: () => void) {
   back.add(fn);
   return () => {
@@ -54,7 +54,7 @@ export function startOffline() {
   if (started) return;
   started = true;
   NetInfo.addEventListener((s) => {
-    // isInternetReachable null = henüz bilinmiyor; o durumda bağlı sayılır
+    // isInternetReachable null = unknown yet; treat as connected.
     tell({ online: !!s.isConnected && s.isInternetReachable !== false });
   });
   AppState.addEventListener('change', (s) => {
@@ -64,7 +64,7 @@ export function startOffline() {
   flush().catch(() => {});
 }
 
-// ağ hatası mı (sunucunun "hayır" demesi değil)
+// A network failure (as opposed to the server saying no).
 export function isNetworkError(e: unknown) {
   if ((e as { name?: string })?.name === 'AuthRetryableFetchError') return true;
   const m = String((e as { message?: string })?.message ?? e);
@@ -77,7 +77,7 @@ export class OfflineError extends Error {
   }
 }
 
-// ------------------------------------------------------------ okumak
+// ------------------------------------------------------------ reads
 
 const get = (key: string) => {
   try {
@@ -94,9 +94,9 @@ const put = (key: string, value: string | null) => {
 };
 
 
-// rafların sahibi. getSession()'a sorulmaz: süresi dolmuş jetonu internetsiz
-// yenileyemeyince oturumu boş döndürür ve kişinin kaydı bir anda "yok" olur.
-// kimlik oturum değiştikçe buraya yazılır, telefonda da saklanır.
+// Owner of the shelves. getSession() is not used: offline it cannot refresh an expired
+// token, returns an empty session, and the user's cache would suddenly vanish.
+// The id is written here on every auth change and persisted on the phone.
 const OWNER = 'cache.owner';
 let owner: string | null = null;
 supabase.auth.onAuthStateChange((event, session) => {
@@ -114,7 +114,7 @@ async function who() {
 
 type Shelf = Record<string, { t: number; v: unknown }>;
 
-// group: bir raf (deste, yorumlar …), key: raftaki yer, max: rafta en fazla kaç şey
+// group: a shelf (deck, comments …), key: slot on the shelf, max: shelf capacity.
 export async function cachedRead<T>(group: string, key: string, work: () => Promise<T>, max = 1): Promise<{ value: T; stale: boolean }> {
   const shelfKey = `cache.${await who()}.${group}`;
   const shelf = (): Shelf => {
@@ -135,7 +135,7 @@ export async function cachedRead<T>(group: string, key: string, work: () => Prom
     const value = await work();
     const next = shelf();
     next[key] = { t: Date.now(), v: value };
-    // raf dolunca en eskisi gider
+    // A full shelf drops its oldest entry.
     const keys = Object.keys(next).sort((a, b) => next[b].t - next[a].t);
     keys.slice(max).forEach((k) => delete next[k]);
     put(shelfKey, JSON.stringify(next));
@@ -152,7 +152,7 @@ export async function cachedRead<T>(group: string, key: string, work: () => Prom
   }
 }
 
-// bir rafa elden koymak (desteden gelen geceler, gece sayfası çevrimdışı açılsın diye)
+// Put something on a shelf directly (nights from the deck, so night pages open offline).
 export async function shelve(group: string, entries: [string, unknown][], max: number) {
   if (!entries.length) return;
   const shelfKey = `cache.${await who()}.${group}`;
@@ -167,7 +167,7 @@ export async function shelve(group: string, entries: [string, unknown][], max: n
   put(shelfKey, JSON.stringify(next));
 }
 
-// bu telefonda kaydırılanlar: eski (kayıtlı) deste gösterilirken bunlar yeniden çıkmasın
+// Swiped on this phone: keep them out while an older saved deck is shown.
 export async function markSwiped(slug: string, on = true) {
   const key = `cache.${await who()}.swiped`;
   let list: string[] = [];
@@ -190,16 +190,16 @@ export async function remember<T>(group: string, key: string, work: () => Promis
   return (await cachedRead(group, key, work, max)).value;
 }
 
-// supabase'in {data, error} cevabını fırlatan bir işe çevirir
+// Turns Supabase's {data, error} response into one that throws.
 export async function must<T>(q: PromiseLike<{ data: T | null; error: { message: string } | null }>): Promise<T | null> {
   const { data, error } = await q;
   if (error) throw error;
   return data;
 }
 
-// ------------------------------------------------------------- yazmak
+// ------------------------------------------------------------- writes
 
-export type Op =
+type Op =
   | { kind: 'swipe'; slug: string; direction: 'left' | 'right' }
   | { kind: 'unswipe'; eventId: string }
   | { kind: 'settings'; userId: string; patch: Record<string, unknown> };
@@ -230,10 +230,10 @@ async function run(op: Op) {
   }
 }
 
-// dener; ağ yoksa sıraya koyar. sunucu "hayır" derse hata olduğu gibi döner.
+// Try now; queue when offline. A server refusal is returned as an error.
 export async function send(op: Op) {
   const uid = await who();
-  // sıra boş değilse yeni iş sıranın arkasına: sıra bozulmasın (kaydır → geri al)
+  // With a non-empty queue, append so order is preserved (swipe → undo).
   if (net.online && queue().length === 0) {
     try {
       await run(op);
@@ -247,7 +247,7 @@ export async function send(op: Op) {
 }
 
 let flushing: Promise<void> | null = null;
-export function flush() {
+function flush() {
   if (flushing) return flushing;
   flushing = (async () => {
     const uid = await who();
@@ -257,7 +257,7 @@ export function flush() {
     try {
       while (list.length) {
         const op = list[0];
-        // başka hesabın işi bu hesapla gönderilmez; bırakılır
+        // Never send another account's work with this account; drop it.
         if (op.uid === uid) {
           try {
             await run(op);
@@ -266,7 +266,7 @@ export function flush() {
               tell({ online: false });
               return;
             }
-            // sunucu reddetti (gece silinmiş gibi): o iş düşer, sıra devam eder
+            // Refused by the server (e.g. the night was deleted): drop it and continue.
           }
         }
         list = list.slice(1);
@@ -280,7 +280,7 @@ export function flush() {
   return flushing;
 }
 
-// çıkışta: o hesabın okuma rafları silinir (telefonu paylaşan başkası görmesin)
+// On sign-out: remove that account's read shelves (in case someone else uses the phone).
 export function forgetCache(uid: string) {
   try {
     Storage.getAllKeysSync()

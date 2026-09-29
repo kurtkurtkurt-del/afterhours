@@ -11,7 +11,7 @@ const photo = require('../../assets/intro/concert.jpg');
 
 type Props = { onDone: () => void };
 
-// tanıtım, seçenek 1 "üç adım"ın altı adımlı hali. sağa kaydır; her adımda canlı bir örnek.
+// Onboarding in six steps. Swipe right; each step has a live example.
 export default function Onboarding({ onDone }: Props) {
   const { width } = useWindowDimensions();
   const [page, setPage] = useState(0);
@@ -65,7 +65,7 @@ export default function Onboarding({ onDone }: Props) {
   );
 }
 
-// 0 → 1 arasında sonsuz döngü; her örnek bunu kendi zamanlamasına çevirir
+// Endless 0 → 1 loop; each example maps it onto its own timing.
 function useLoop(ms: number, delay = 0) {
   const v = useSharedValue(0);
   useEffect(() => {
@@ -107,7 +107,7 @@ function DeckDemo() {
 function CardDemo() {
   const { t: say, tx, up } = useLang();
   const t = useLoop(3200);
-  // ön yüz daralıp kaybolur, kâğıt arka yüz genişler: bir çevrilme
+  // The front narrows and disappears as the paper back widens: a flip.
   const front = useAnimatedStyle(() => ({
     transform: [{ scaleX: interpolate(t.value, [0, 0.3, 0.5, 0.8, 1], [1, 1, 0, 0, 0]) }],
     opacity: t.value < 0.5 ? 1 : 0,
@@ -255,7 +255,7 @@ const CARD_H = 200;
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   skip: { position: 'absolute', top: brand.top, right: brand.left, zIndex: 2 },
-  // geri tuşu altta; sol üst boş. skip ile aynı hizada
+  // Back button at the bottom, aligned with skip; the top left stays empty.
   lang: { position: 'absolute', top: brand.top, left: brand.left, zIndex: 2 },
   skipText: { fontFamily: fonts.regular, fontSize: 13, letterSpacing: 0.2, color: colors.mute },
   pager: { flex: 1, marginTop: brand.top + 30 },

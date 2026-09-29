@@ -16,14 +16,14 @@ import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// arkadaş sayfası: keep'leri, şu an nerede, ortak geceler, kaldır. id "add" ise ekleme formu.
+// Friend page: their keeps, where they are now, nights together, remove. id "add" shows the add form.
 export default function FriendScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const insets = useSafeAreaInsets();
   const { t, tx, up } = useLang();
   const [handle, setHandle] = useState('');
   const [sent, setSent] = useState<string | null>(null);
-  // sent: sunucunun kodu ya da hata metni; söz çizerken gelir
+  // sent: a server code or error text, resolved at render time
   const said = sent ? tx('friend.result.' + sent, sent) : null;
   const real = useYours();
   const rf = real.friends.find((x) => x.id === id);
@@ -82,7 +82,7 @@ export default function FriendScreen() {
         <BackButton />
         <SoundCorner />
       </View>
-      {/* dj ve gece sayfaları gibi: en üstteyken aşağı çekince kapanır */}
+      {/* Like the DJ and night pages: pull down at the top to close. */}
       <PullDownScroll contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 40 }]} showsVerticalScrollIndicator={false}>
         <View style={[styles.initial, face && styles.initialFace, f.live && styles.initialLive]}>
           {face ? <Image source={{ uri: face }} style={styles.face} resizeMode="cover" /> : <Text style={[styles.initialText, f.live && styles.liveText]}>{f.name.charAt(0)}</Text>}

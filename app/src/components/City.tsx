@@ -16,7 +16,7 @@ import { brand } from '@/theme/layout';
 
 type Props = { play: boolean; soundOn: boolean; onToggleSound: () => void; onPickSound: () => void };
 
-// yer tutucu. intro kalkınca isim ortadan köşeye kayar.
+// Placeholder. When the intro lifts, the name slides from the centre to the corner.
 export default function City({ play, soundOn, onToggleSound, onPickSound }: Props) {
   const { width, height } = useWindowDimensions();
   const [size, setSize] = useState<{ w: number; h: number } | null>(null);
@@ -46,7 +46,7 @@ export default function City({ play, soundOn, onToggleSound, onPickSound }: Prop
   }, [play, size, move, actions]);
 
   const scale = brand.logoSmall / brand.logoBig;
-  // ortadaki merkezden, sol üstteki küçük halin merkezine olan yol
+  // Path from the centre to the centre of the small top-left position.
   const dx = size ? brand.left + (size.w * scale) / 2 - width / 2 : 0;
   const dy = size ? brand.top + (size.h * scale) / 2 - height / 2 : 0;
 
@@ -97,9 +97,9 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   centre: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center' },
   gap: { height: 16 },
-  // ismin küçük haliyle aynı hizada, sağda
+  // aligned with the small name, on the right
   corner: { position: 'absolute', right: brand.left, top: brand.top, alignItems: 'flex-end', gap: 6 },
-  // küçük ismin hemen altında, sol üstte
+  // just below the small name, top left
   lang: { position: 'absolute', left: brand.left, top: brand.top + 46 },
   hint: { fontFamily: fonts.regular, fontSize: 11, color: colors.mute },
   actions: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingHorizontal: brand.left, gap: 12 },

@@ -89,7 +89,15 @@
           "microphonePermission": false
         }
       ],
-      "expo-web-browser"
+      "expo-web-browser",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/android-icon-monochrome.png",
+          "color": "#D7261E",
+          "defaultChannel": "default"
+        }
+      ]
     ],
     "scheme": "afterhours",
     "experiments": {

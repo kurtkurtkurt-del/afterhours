@@ -2,12 +2,12 @@ import { supabase } from '@/lib/supabase';
 import { remember } from '@/lib/offline';
 import { djs as localDjs, sets as localSets, type Dj, type DjSet } from '@/content/djs';
 
-// 20_djs.sql: djs, dj_sets, dj_follows. tablo boşsa ya da ağ yoksa yerel örnekler.
+// 20_djs.sql: djs, dj_sets, dj_follows. Local samples when the table is empty or offline.
 const photos: Record<string, number> = Object.fromEntries(localDjs.map((d) => [d.id, d.photo]));
 const fallbackPhoto = localDjs[0].photo;
 
 export async function loadDjs(): Promise<{ djs: Dj[]; sets: DjSet[]; live: boolean }> {
-  // ham satırlar kaydedilir (fotoğraf numaraları sürümden sürüme değişir, onlar her seferinde eşlenir)
+  // Raw rows are cached (photo numbers change between releases and are mapped every time).
   const raw = await remember('djs', '', async () => {
     const [a, b, c] = await Promise.all([
       supabase.from('djs').select('id,slug,name,genre,sound,since,photo_url,cities(name)').order('sort_order'),

@@ -1,13 +1,13 @@
-// beş sekmenin sözleri: tab.* · flow.* · filter.* · deck.* · yours.* · map.* · djs.* · account.*
+// Strings for the five tabs: tab.* · flow.* · filter.* · deck.* · yours.* · map.* · djs.* · account.*
 export const tabs = {
-  // alt menü (ekran okuyucu etiketleri)
+  // tab bar (screen reader labels)
   'tab.flow': { en: 'flow', de: 'flow', tr: 'akış' },
   'tab.djs': { en: 'djs', de: 'djs', tr: "dj'ler" },
   'tab.yours': { en: 'yours', de: 'deins', tr: 'seninkiler' },
   'tab.map': { en: 'map', de: 'karte', tr: 'harita' },
   'tab.account': { en: 'account', de: 'konto', tr: 'hesap' },
 
-  // seçiciler: nerede · ne · ne zaman
+  // pickers: where · what · when
   'filter.where': { en: 'where', de: 'wo', tr: 'nerede' },
   'filter.what': { en: 'what', de: 'was', tr: 'ne' },
   'filter.when': { en: 'when', de: 'wann', tr: 'ne zaman' },
@@ -23,7 +23,7 @@ export const tabs = {
   'flow.undo': { en: 'undo', de: 'rückgängig', tr: 'geri al' },
   'flow.loading': { en: 'loading the night…', de: 'die nacht lädt…', tr: 'gece yükleniyor…' },
 
-  // deste, kart yüzü, deste görünümü
+  // deck, card face, deck viewer
   'deck.yours': { en: 'your deck', de: 'dein stapel', tr: 'senin desten' },
   'deck.friends': { en: "friends' deck", de: 'stapel der freunde', tr: 'arkadaşların destesi' },
   'deck.wave2': { en: '2nd wave', de: '2. welle', tr: '2. dalga' },
@@ -57,6 +57,24 @@ export const tabs = {
   'yours.asked': { en: 'asked', de: 'angefragt', tr: 'bekliyor' },
   'yours.keptN': { en: 'kept {n}', de: 'behalten {n}', tr: 'sakladı {n}' },
   'yours.add': { en: 'add', de: 'dazu', tr: 'ekle' },
+  'people.search': { en: 'find friends · name or @handle', de: 'freunde finden · name oder @handle', tr: 'arkadaş bul · isim ya da @kullanıcıadı' },
+  'people.searching': { en: 'looking…', de: 'suche…', tr: 'aranıyor…' },
+  'people.short': { en: 'two letters at least', de: 'mindestens zwei buchstaben', tr: 'en az iki harf' },
+  'people.none': { en: 'nobody by that name', de: 'niemand unter diesem namen', tr: 'bu isimde kimse yok' },
+  'people.error': { en: 'search is not working right now', de: 'die suche geht gerade nicht', tr: 'arama şu an çalışmıyor' },
+  'people.clear': { en: 'clear', de: 'leeren', tr: 'temizle' },
+  'people.suggested': { en: 'suggested', de: 'vorschläge', tr: 'önerilenler' },
+  'people.mutual.one': { en: '{n} friend in common', de: '{n} gemeinsamer freund', tr: '{n} ortak arkadaş' },
+  'people.mutual.other': { en: '{n} friends in common', de: '{n} gemeinsame freunde', tr: '{n} ortak arkadaş' },
+  'people.city': { en: 'same city · {city}', de: 'gleiche stadt · {city}', tr: 'aynı şehir · {city}' },
+  'people.new': { en: 'new here', de: 'neu hier', tr: 'yeni gelmiş' },
+  'people.add': { en: 'add', de: 'anfragen', tr: 'ekle' },
+  'people.asked': { en: 'asked', de: 'angefragt', tr: 'istendi' },
+  'people.accept': { en: 'accept', de: 'annehmen', tr: 'kabul et' },
+  'people.friend': { en: 'friends', de: 'befreundet', tr: 'arkadaşsınız' },
+  'people.sample': { en: 'sample · real ones come with an account', de: 'beispiel · echte gibt es mit konto', tr: 'örnek · gerçekleri hesapla gelir' },
+  'people.sampleMember': { en: 'sample · nobody to suggest yet', de: 'beispiel · noch niemand vorzuschlagen', tr: 'örnek · henüz önerilecek kimse yok' },
+  'people.guest': { en: 'sign up to add friends', de: 'registrier dich, um freunde hinzuzufügen', tr: 'arkadaş eklemek için kayıt ol' },
   'yours.sample': {
     en: 'sample · add friends to see yours',
     de: 'beispiel · mit freunden wird es deins',
@@ -103,13 +121,13 @@ export const tabs = {
     de: 'füg freunde hinzu und sieh, was sie behalten.',
     tr: 'ne sakladıklarını görmek için arkadaş ekle.',
   },
-  // örnek verideki sözler (content/friends.ts → sampleText)
+  // words inside the sample data (content/friends.ts → sampleText)
   'yours.sample.now': { en: 'now', de: 'jetzt', tr: 'şimdi' },
   'yours.sample.yesterday': { en: 'yesterday', de: 'gestern', tr: 'dün' },
   'yours.sample.next': { en: 'next {day}', de: 'nächsten {day}', tr: 'gelecek {day}' },
   'yours.sample.address': { en: 'address at check-in', de: 'adresse beim check-in', tr: "adres check-in'de" },
 
-  // harita
+  // map
   'map.title': { en: 'map.', de: 'karte.', tr: 'harita.' },
   'map.centre': { en: '{city} centre', de: '{city} zentrum', tr: '{city} merkez' },
   'map.nearMe': { en: 'near me', de: 'in meiner nähe', tr: 'yakınımda' },
@@ -141,7 +159,7 @@ export const tabs = {
   'djs.until': { en: 'until {time}', de: 'bis {time}', tr: 'bitiş {time}' },
   'djs.later': { en: 'later tonight', de: 'später heute nacht', tr: 'bu gece, sonra' },
 
-  // hesap
+  // account
   'account.title': { en: 'account', de: 'konto', tr: 'hesap' },
   'account.settings': { en: 'settings', de: 'einstellungen', tr: 'ayarlar' },
   'account.you': { en: 'you', de: 'du', tr: 'sen' },

@@ -1,7 +1,7 @@
-// sahte arkadaşlar, geceler ve eşleşmeler. gerçek veri: friendships, friends_kept(), check-in.
-export type Friend = { id: string; name: string; handle: string; live?: string; kept: number; seen: string };
-export type NightCard = { id: string; title: string; venue: string; when: string; photo: number; friends: string[] };
-export type Match = { friend: string; night: string };
+// Sample friends, nights and matches shown until the user has friends.
+type Friend = { id: string; name: string; handle: string; live?: string; kept: number; seen: string };
+type NightCard = { id: string; title: string; venue: string; when: string; photo: number; friends: string[] };
+type Match = { friend: string; night: string };
 
 const P = [
   require('../../assets/djs/mara-volt.jpg'),
@@ -50,8 +50,8 @@ export const matches: Match[] = [
   { friend: 'deniz', night: 'bt' },
 ];
 
-// örnek verideki ui sözleri ("tonight · 23:00", "next fri", "yesterday") çizim anında çevrilir;
-// isimler ve mekânlar olduğu gibi kalır. tx: useLang()'den gelen.
+// UI words inside the sample data ("tonight · 23:00", "next fri", "yesterday") are translated
+// at render time; names and venues stay as they are. tx comes from useLang().
 type Tx = (key: string, fallback?: string, vars?: Record<string, string | number>) => string;
 const DAY = /^(mon|tue|wed|thu|fri|sat|sun)$/;
 const WORDS: Record<string, string> = {
@@ -72,4 +72,3 @@ export function sampleText(text: string, tx: Tx): string {
 }
 
 export const friendById = (id: string) => friends.find((f) => f.id === id)!;
-export const nightById = (id: string) => nights.find((n) => n.id === id)!;

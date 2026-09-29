@@ -25,8 +25,8 @@ const ddmm = (iso: string | null) => {
   return `${two(d.getDate())}.${two(d.getMonth() + 1)}`;
 };
 
-// afterhours odaların: check-in yaptığın her gecenin odası. açık olanlar üstte,
-// kalan süresi kırmızı; donmuş olanlar altta, soluk. satıra dokununca oda açılır.
+// Your afterhours rooms: one per night you checked in to. Open rooms first with the
+// time left in red; frozen rooms below, dimmed. Tapping a row opens the room.
 export default function RoomsScreen() {
   const { session } = useAuth();
   const insets = useSafeAreaInsets();
@@ -47,7 +47,7 @@ export default function RoomsScreen() {
   }, [uid, tick]);
 
   const list = uid ? cards : [];
-  // açık olanlar önce (en az süresi kalan en üstte), sonra donmuşlar (en yenisi üstte)
+  // Open rooms first (least time left on top), then frozen ones (newest on top).
   const open = (list ?? []).filter((c) => !c.frozen && left(c.freeze_at)).sort((a, b) => a.freeze_at.localeCompare(b.freeze_at));
   const frozen = (list ?? []).filter((c) => !open.includes(c)).sort((a, b) => b.checked_at.localeCompare(a.checked_at));
 

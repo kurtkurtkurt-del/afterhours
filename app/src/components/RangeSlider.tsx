@@ -8,15 +8,15 @@ type Props = { min: number; max: number; value: number; onChange: (v: number) =>
 
 const KNOB = 18;
 
-// tek tutamaçlı sürgü, logaritmik: küçük mesafeler hassas, büyükler hızlı.
-// sürüklerken onChange (etiket için), bırakınca onEnd (ağ isteği için).
+// Single-thumb logarithmic slider: fine at short distances, fast at long ones.
+// onChange while dragging (for the label), onEnd on release (for the network request).
 export default function RangeSlider({ min, max, value, onChange, onEnd, format, width, showLabel = true, accent }: Props) {
   const track = width - KNOB;
   const toPos = (v: number) => ((Math.log(v) - Math.log(min)) / (Math.log(max) - Math.log(min))) * track;
   const toVal = (p: number) => Math.exp(Math.log(min) + (Math.min(track, Math.max(0, p)) / track) * (Math.log(max) - Math.log(min)));
   const x = useSharedValue(toPos(value));
   const start = useSharedValue(0);
-  // sürüklerken geçici etiket; bırakınca gerçek değer görünür
+  // Temporary label while dragging; the real value shows after release.
   const [dragLabel, setDragLabel] = useState<string | null>(null);
   const label = dragLabel ?? format(value);
 

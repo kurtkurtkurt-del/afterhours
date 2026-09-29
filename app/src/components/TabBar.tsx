@@ -6,12 +6,12 @@ import { useLang } from '@/i18n';
 import { tabPressedAgain } from '@/hooks/useTabReset';
 import { colors } from '@/theme/tokens';
 
-// seçenek 2, "yüzen hap": kenarlardan boşluklu, kâğıt çerçeveli, mürekkep dolgulu.
-// ortadaki sekme dolu kâğıt dairede. başka bir tasarıma geçmek = bu dosyayı değiştirmek;
-// tetikleyiciler (tabs)/_layout.tsx içinde kalır.
+// "Floating pill": inset from the edges, paper border, ink fill; the middle tab sits in a
+// filled paper circle. The triggers stay in (tabs)/_layout.tsx, so a new design only
+// touches this file.
 
-export const TAB_BAR_SPACE = 100; // sayfaların altta bırakması gereken boşluk (inset hariç)
-// inset dahil: çentikli telefonlarda çubuk daha yukarıda durur
+export const TAB_BAR_SPACE = 100; // space pages leave at the bottom (excluding the inset)
+// Including the inset: the bar sits higher on phones with a home indicator.
 export function useTabBarSpace() {
   const insets = useSafeAreaInsets();
   return TAB_BAR_SPACE + insets.bottom;
@@ -24,7 +24,7 @@ export function TabItem({ icon, isFocused, raised, onPress, ...props }: ItemProp
   return (
     <Pressable
       {...props}
-      // açık sekmeye yeniden basmak: sekme başına döner
+      // Pressing the open tab again resets it to its start.
       onPress={(e) => {
         if (isFocused) tabPressedAgain(icon);
         onPress?.(e);

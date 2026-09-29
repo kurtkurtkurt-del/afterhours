@@ -1,5 +1,5 @@
-// müzik kaynakları; CREDITS.md ile aynı. cc by olanlar için sanatçı adı görünmek zorunda.
-export type Credit = { genre: string; title: string; license: string; url: string };
+// Music sources; same as CREDITS.md. CC BY tracks must show the artist name.
+type Credit = { genre: string; title: string; license: string; url: string };
 export const credits: Credit[] = [
   {
     "genre": "house",

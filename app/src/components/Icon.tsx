@@ -3,7 +3,7 @@ import Svg, { Circle, Path, Rect } from 'react-native-svg';
 export type IconName = 'flow' | 'djs' | 'yours' | 'map' | 'account' | 'settings' | 'photo' | 'chat';
 type Props = { name: IconName; size?: number; color: string; strokeWidth?: number };
 
-// 24'lük ızgarada 1.5 piksel çizgi ikonlar. köşesiz, dolgusuz.
+// 1.5 px line icons on a 24 grid. No fills.
 export default function Icon({ name, size = 22, color, strokeWidth = 1.5 }: Props) {
   const p = { stroke: color, strokeWidth, fill: 'none', strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
   return (

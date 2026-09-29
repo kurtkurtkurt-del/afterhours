@@ -3,7 +3,7 @@ import { supabase } from '@/lib/supabase';
 import { remember } from '@/lib/offline';
 import type { City } from '@/content/cities';
 
-// aksanları at, küçük harfe indir: "İstanbul" → "istanbul", "München" → "munchen"
+// Strip accents and lower-case: "İstanbul" → "istanbul", "München" → "munchen".
 const fold = (s: string) =>
   s
     .toLowerCase()
@@ -14,7 +14,7 @@ const fold = (s: string) =>
     .replace(/ö/g, 'o')
     .replace(/ß/g, 'ss');
 
-// konumdan şehir: ters geokodlama ile ad, sonra listedeki şehirle eşleme
+// City from a location: reverse-geocode the name, then match it against the list.
 export async function detectCity(lat: number, lng: number, cities: City[]): Promise<City | null> {
   try {
     const places = await Location.reverseGeocodeAsync({ latitude: lat, longitude: lng });
@@ -24,12 +24,12 @@ export async function detectCity(lat: number, lng: number, cities: City[]): Prom
       if (hit) return hit;
     }
   } catch {
-    /* geokodlama yoksa kayıtlı şehir kalır */
+    /* without geocoding, the stored city stays */
   }
   return null;
 }
 
-// şehir merkezi: o şehrin koordinatlı gecelerinin ortalaması (cities tablosunda nokta yok)
+// City centre: the average of that city's geolocated nights (cities have no coordinates).
 const cache = new Map<string, [number, number]>();
 export async function cityCentre(slug: string): Promise<[number, number] | null> {
   const hit = cache.get(slug);
@@ -43,7 +43,7 @@ export async function cityCentre(slug: string): Promise<[number, number] | null>
     return (data ?? []) as { lat: number; lng: number }[];
   }, 40);
   if (!pts.length) return null;
-  // medyan: uç mekânlar ortalamayı kaydırmasın
+  // Median, so outlying venues do not skew it.
   const lats = pts.map((p) => p.lat).sort((a, b) => a - b);
   const lngs = pts.map((p) => p.lng).sort((a, b) => a - b);
   const c: [number, number] = [lats[Math.floor(lats.length / 2)], lngs[Math.floor(lngs.length / 2)]];

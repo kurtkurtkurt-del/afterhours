@@ -1,12 +1,11 @@
 import { supabase } from '@/lib/supabase';
 import { isOnline, must, OfflineError, remember } from '@/lib/offline';
 import type { NightCardData } from '@/content/cardsgen';
-import { t } from '@/i18n';
 import type { Key } from '@/i18n/dict';
 
 // 19_checkins.sql: check_in, my_cards, room_info, room_list, room_post, friends_live
 
-// kod → söz anahtarı. söz çizim anında çözülür: t(reasons[kod])
+// Code → string key, resolved at render time: t(reasons[code]).
 export const reasons: Record<string, Key> = {
   signedout: 'checkin.reason.signedout',
   nonight: 'checkin.reason.nonight',
@@ -16,15 +15,10 @@ export const reasons: Record<string, Key> = {
   frozen: 'checkin.reason.frozen',
   offline: 'offline.write',
 };
-// hatanın kodu; bilinmeyen hata olduğu gibi (küçük harfle) döner. ekranlar bunu saklar.
+// The error's code; unknown errors are returned as-is (lower-cased). Screens store this.
 export const reasonCode = (e: unknown) => {
   const m = String((e as Error)?.message ?? e);
   return Object.keys(reasons).find((k) => m.includes(k)) ?? m.toLowerCase();
-};
-// bileşen dışı kullanım için: o anki dilde cümle
-export const reason = (e: unknown) => {
-  const code = reasonCode(e);
-  return reasons[code] ? t(reasons[code]) : code;
 };
 
 export async function checkIn(slug: string, lat?: number, lng?: number): Promise<number> {
@@ -69,7 +63,7 @@ export async function friendsLive(): Promise<LiveFriend[]> {
   return remember('live', '', async () => ((await must(supabase.rpc('friends_live'))) ?? []) as LiveFriend[]);
 }
 
-// üreteç için: metal ve motif gecenin kimliğinden seçilir, kart hep aynı çıkar
+// For the generator: metal and motif derive from the night id, so a card always renders the same.
 const METALS = ['steel', 'gold', 'chrome', 'copper', 'gunmetal', 'brass', 'rose', 'titanium', 'nickel', 'anthracite'];
 const MOTIFS = ['rays', 'oval', 'diagonal', 'orbit', 'grid', 'moon', 'moire', 'bands', 'iso', 'descend'];
 const hash = (s: string) => Array.from(s).reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);

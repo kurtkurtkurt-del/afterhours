@@ -7,12 +7,12 @@ import { colors } from '@/theme/tokens';
 
 const go = () => (router.canGoBack() ? router.back() : router.replace('/'));
 
-const CLOSE = 120;   // bu kadar aşağı çekilince sayfa kapanır
-const FLING = 900;   // ya da bu hızla
+const CLOSE = 120;   // pulled this far down closes the page
+const FLING = 900;   // or flung this fast
 
-// dj ve gece sayfaları bir kart gibi açılır: en üstteyken aşağı çekince sayfa parmağı
-// izler ve bırakınca kapanır. üstte ince bir tutamaç bunu belli eder.
-// sayfa kaydırılmışken hareket kaydırmaya gider; tepeye gelince çekmeye döner.
+// DJ and night pages open like a card: at the top, pulling down makes the page follow
+// the finger and closes it on release. A thin handle at the top hints at this.
+// When scrolled, the gesture scrolls; back at the top it pulls again.
 export default function PullDownScroll({ children, style, ...rest }: ScrollViewProps) {
   const { height } = useWindowDimensions();
   const insets = useSafeAreaInsets();
@@ -65,7 +65,7 @@ export default function PullDownScroll({ children, style, ...rest }: ScrollViewP
             {children}
           </Animated.ScrollView>
         </GestureDetector>
-        {/* tutamaç: "buradan aşağı çek" */}
+        {/* Handle: "pull down here". */}
         <View style={[styles.handleWrap, { top: insets.top + 8 }]} pointerEvents="none">
           <Animated.View style={[styles.handle, handleStyle]} />
         </View>

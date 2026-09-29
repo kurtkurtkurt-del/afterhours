@@ -21,34 +21,37 @@ type Direction = 'left' | 'right';
 type Props = {
   nights: Night[];
   friendsOf?: (night: Night) => DeckFriend[];
-  bottom: number; // altyazının alt kenarı
+  bottom: number; // bottom edge of the caption
+  top: number;    // upper bound for the poster (below the pickers)
   onSwipe: (night: Night, direction: Direction) => void;
   onUndo?: (night: Night) => void;
   onReset?: () => void;
 };
 export type DeckHandle = { undo: () => void };
 
-const THRESHOLD = 110; // px: yana bunun ötesinde bırakılırsa karar verilmiş sayılır
+const THRESHOLD = 110; // px: released beyond this sideways counts as a decision
 const VELOCITY = 800;
-const PULL = 90;       // px: yukarı ya da aşağı bu kadar çekilince bilet / ayrıntılar
+const PULL = 90;       // px: pulled this far up or down opens the ticket / details
 
 type CardHandle = { promote: () => void; keep: () => void };
 
-// friends' deck ile aynı kart yüzü, üstüne destenin hareketi:
-// sağa = keep (kenar kırmızıya döner), sola = let go, yukarı = bilet, aşağı = gece sayfası.
-// her kartın kendi konumu var: üstteki uçup gittiğinde arkadaki zaten sıfırda duruyor.
+// Same card face as friends' deck, plus deck gestures:
+// right = keep (edge turns red), left = let go, up = ticket, down = night page.
+// Each card owns its position, so the card behind is already at rest when the top one flies off.
 const SwipeCard = forwardRef<CardHandle, {
   night: Night;
   friends: DeckFriend[];
   active: boolean;
   drag: SharedValue<number>;
   bottom: number;
+  top: number;
   onDone: (direction: Direction) => void;
-}>(function SwipeCard({ night, friends, active, drag, bottom, onDone }, ref) {
+}>(function SwipeCard({ night, friends, active, drag, bottom, top, onDone }, ref) {
   const { width } = useWindowDimensions();
   const x = useSharedValue(0);
   const y = useSharedValue(0);
-  const promoted = useSharedValue(active ? 1 : 0);
+  // The card behind is hidden and fades in once promoted.
+  const shown = useSharedValue(active ? 1 : 0);
   const card = toDeckCard(night, friends);
   const { t, up } = useLang();
 
@@ -59,10 +62,10 @@ const SwipeCard = forwardRef<CardHandle, {
     },
     [drag, x, width, onDone],
   );
-  useImperativeHandle(ref, () => ({ promote: () => promoted.set(1), keep: () => flyOff('right') }), [promoted, flyOff]);
+  useImperativeHandle(ref, () => ({ promote: () => shown.set(withTiming(1, { duration: 320 })), keep: () => flyOff('right') }), [shown, flyOff]);
   useEffect(() => {
-    if (!active) promoted.set(0); // geri alınıp arkaya dönen kart yeniden küçük
-  }, [active, promoted]);
+    if (!active) shown.set(0); // a card sent back by undo is hidden again
+  }, [active, shown]);
 
   const ticket = () => openTicket(card);
   const details = () => openDetails(card);
@@ -90,21 +93,16 @@ const SwipeCard = forwardRef<CardHandle, {
       drag.set(withSpring(0, { damping: 18, stiffness: 180 }));
     });
 
-  const style = useAnimatedStyle(() => {
-    if (active || promoted.value === 1) {
-      return {
-        opacity: 1,
-        transform: [
-          { translateX: x.value },
-          { translateY: y.value },
-          { rotate: `${interpolate(x.value, [-width, 0, width], [-10, 0, 10])}deg` },
-        ],
-      };
-    }
-    const p = drag.value;
-    return { opacity: 0.7 + 0.3 * p, transform: [{ scale: 0.96 + 0.04 * p }, { translateY: 10 - 10 * p }] };
-  });
-  // sağa çekerken kenar kırmızıya döner (%40'ta tam); sola çekerken sol kenarda kâğıt çizgi
+  const style = useAnimatedStyle(() => ({
+    opacity: shown.value,
+    transform: [
+      { translateX: x.value },
+      { translateY: y.value },
+      { rotate: `${interpolate(x.value, [-width, 0, width], [-10, 0, 10])}deg` },
+      { scale: 0.97 + 0.03 * shown.value },
+    ],
+  }));
+  // Dragging right turns the edge red (fully at 40%); dragging left shows a paper line on the left edge.
   const keepEdge = useAnimatedStyle(() => ({ opacity: interpolate(x.value, [width * 0.15, width * 0.4], [0, 1], Extrapolation.CLAMP) }));
   const letGoEdge = useAnimatedStyle(() => ({ opacity: interpolate(x.value, [-width * 0.4, -width * 0.15], [1, 0], Extrapolation.CLAMP) }));
   const upHint = useAnimatedStyle(() => ({ opacity: interpolate(y.value, [-PULL * 0.6, -10], [1, 0], Extrapolation.CLAMP) }));
@@ -113,7 +111,7 @@ const SwipeCard = forwardRef<CardHandle, {
   return (
     <GestureDetector gesture={pan}>
       <Animated.View style={[styles.slot, style]}>
-        <CardFace card={card} bottom={bottom} rightLabel={`${t('word.keep')} →`} onRight={() => flyOff('right')} />
+        <CardFace card={card} bottom={bottom} fit={{ top }} rightLabel={`${t('word.keep')} →`} onRight={() => flyOff('right')} />
         {active && (
           <>
             <Animated.View pointerEvents="none" style={[styles.edgeRight, keepEdge]} />
@@ -133,7 +131,7 @@ const SwipeCard = forwardRef<CardHandle, {
   );
 });
 
-const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bottom, onSwipe, onUndo, onReset }, ref) {
+const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bottom, top: posterTop, onSwipe, onUndo, onReset }, ref) {
   const { t, up } = useLang();
   const [i, setI] = useState(0);
   const drag = useSharedValue(0);
@@ -144,14 +142,14 @@ const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bo
   const done = useCallback(
     (direction: Direction) => {
       if (top) onSwipe(top, direction);
-      nextRef.current?.promote(); // arkadaki artık tam boy, react yetişmeden
-      drag.set(0); // yeni arkadaki küçük başlasın
+      nextRef.current?.promote(); // show the next card before React re-renders
+      drag.set(0); // the new card behind starts hidden
       setI((n) => n + 1);
     },
     [top, onSwipe, drag],
   );
 
-  // geri al: bir önceki kart geri gelir (üstteki tekrar arkaya)
+  // Undo: the previous card returns (the current one goes back behind it).
   useImperativeHandle(
     ref,
     () => ({
@@ -180,12 +178,12 @@ const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bo
     );
   }
 
-  // sıra önemli: arkadaki önce çizilir. anahtar gecenin kimliği, böylece
-  // arkadaki kart öne geçerken yeniden yaratılmaz.
+  // Order matters: the card behind renders first. Keys are night ids, so the card
+  // behind is not recreated when it moves to the front.
   return (
     <View style={styles.stage}>
-      {next && <SwipeCard ref={nextRef} key={next.id} night={next} friends={friendsOf?.(next) ?? []} active={false} drag={drag} bottom={bottom} onDone={done} />}
-      <SwipeCard key={top.id} night={top} friends={friendsOf?.(top) ?? []} active drag={drag} bottom={bottom} onDone={done} />
+      {next && <SwipeCard ref={nextRef} key={next.id} night={next} friends={friendsOf?.(next) ?? []} active={false} drag={drag} bottom={bottom} top={posterTop} onDone={done} />}
+      <SwipeCard key={top.id} night={top} friends={friendsOf?.(top) ?? []} active drag={drag} bottom={bottom} top={posterTop} onDone={done} />
     </View>
   );
 });

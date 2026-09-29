@@ -1,7 +1,7 @@
 import Svg, { Path } from 'react-native-svg';
 
-// google'ın dört renkli "G"si. google'ın marka kuralı: "google ile devam et"
-// düğmesinde bu işaret değiştirilmeden durur.
+// Google's four-colour "G". Google's brand rules require it unmodified on
+// "continue with Google" buttons.
 export default function GoogleMark({ size = 18 }: { size?: number }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 48 48">

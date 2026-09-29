@@ -27,8 +27,8 @@ const ddmm = (iso: string | null) => {
   return isNaN(d.getTime()) ? '' : `${two(d.getDate())}.${two(d.getMonth() + 1)}`;
 };
 
-// the moment: gecenin sohbet odası. gidenler 48 saat yazar, sonra sonsuza kadar okunur.
-// "a · thread": isim ve saat küçük künye, benimkiler sağa yaslı ve kırmızı çizgili; altta yazma satırı.
+// The moment: the night's chat room. Attendees can post for 48 hours; it stays readable forever.
+// "a · thread": name and time as small meta, your own lines right-aligned with a red rule, input at the bottom.
 export default function RoomScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const insets = useSafeAreaInsets();
@@ -43,7 +43,7 @@ export default function RoomScreen() {
   const scroll = useRef<ScrollView>(null);
 
   useEffect(() => {
-    const timer = setInterval(() => setTick((n) => n + 1), 60_000); // kalan süre dakikada bir tazelenir
+    const timer = setInterval(() => setTick((n) => n + 1), 60_000); // refresh the time left every minute
     return () => clearInterval(timer);
   }, []);
 
@@ -67,7 +67,7 @@ export default function RoomScreen() {
     };
   }, [slug, load]);
 
-  // oda açıkken yeni satırlar 20 saniyede bir gelir
+  // Poll for new lines every 20 s while the room is open.
   const open = !!info?.checked_in && !info.frozen;
   useEffect(() => {
     if (!open) return;
@@ -87,14 +87,14 @@ export default function RoomScreen() {
       setNote(null);
       await load();
     } catch (e) {
-      setNote(reasonCode(e)); // kod saklanır, söz çizerken gelir
+      setNote(reasonCode(e)); // store the code; the string is resolved at render time
     }
     setSending(false);
   };
 
   const remaining = info ? left(info.freeze_at) : null;
   const frozen = !!info && (info.frozen || !remaining);
-  // tek satırlık başlık da olur: boş satır atlanır
+  // A one-line heading is fine too: blank lines are skipped.
   const title = [t('room.title.1'), t('room.title.2')].filter(Boolean).join('\n');
 
   return (
@@ -111,7 +111,7 @@ export default function RoomScreen() {
           keyboardShouldPersistTaps="handled"
           onContentSizeChange={() => scroll.current?.scrollToEnd({ animated: false })}
         >
-          {/* başlık: the / moment. — solda; sağda süre */}
+          {/* Heading: the / moment. on the left, time left on the right. */}
           <View style={styles.head}>
             <Text style={[styles.moment, frozen && styles.momentFrozen]}>{title}</Text>
             <View style={styles.clock}>
@@ -123,7 +123,7 @@ export default function RoomScreen() {
             {[night ? upperData(night.title) : null, ddmm(night?.starts_at ?? null), info ? up(tn('room.count', info.who_count)) : null].filter(Boolean).join(' · ')}
           </Text>
 
-          {/* satırlar: alttan yukarı dolar */}
+          {/* Lines fill from the bottom up. */}
           <View style={styles.thread}>
             {!info ? (
               <Text style={styles.note}>{t('room.opening')}</Text>

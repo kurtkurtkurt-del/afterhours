@@ -29,3 +29,28 @@ export async function kept(): Promise<Night[]> {
   stashNights(list);
   return list;
 }
+
+// 25_people.sql: finding friends. Public card only (handle, name, city);
+// people who turned discoverable off never appear.
+export type Relation = 'none' | 'friend' | 'outgoing' | 'incoming';
+export type Person = { id: string; handle: string; display_name: string | null; city_name: string | null; mutual: number };
+export type Found = Person & { relation: Relation };
+export type Suggested = Person & { reason: 'mutual' | 'city' | 'new' };
+export async function peopleSearch(query: string): Promise<Found[]> {
+  const { data, error } = await supabase.rpc('people_search', { p_query: query, p_limit: 12 });
+  if (error) throw error;
+  return (data ?? []) as Found[];
+}
+export async function peopleSuggested(n = 3): Promise<Suggested[]> {
+  return remember('suggested', String(n), async () => ((await must(supabase.rpc('people_suggested', { p_limit: n }))) ?? []) as Suggested[]);
+}
+
+// A person's public card (12_profiles.sql profile_card) plus how you stand with them.
+export type PersonCard = { handle: string; display_name: string | null; bio: string | null; city_name: string | null; created_at: string; is_friend: boolean; kept_count: number | null };
+export async function person(handle: string): Promise<{ card: PersonCard; found: Found | null } | null> {
+  const [card, found] = await Promise.all([
+    must(supabase.rpc('profile_card', { p_handle: handle })).then((rows) => ((rows ?? []) as PersonCard[])[0] ?? null),
+    peopleSearch(handle).then((rows) => rows.find((r) => r.handle === handle) ?? null).catch(() => null),
+  ]);
+  return card ? { card, found } : null;
+}

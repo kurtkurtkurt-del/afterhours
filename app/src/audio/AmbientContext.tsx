@@ -31,8 +31,8 @@ const Ctx = createContext<Ambient>({
 
 const isGenre = (v: string | null): v is Genre => genres.some((g) => g.id === v);
 
-// uygulamanın arka plan müziği. kökte yaşar, sayfa değişince kesilmez.
-// varsayılan kapalı; tercih ve tür telefonda saklanır; yumuşak açılış/kapanış; arka planda durur.
+// Background music. Lives at the root so it survives navigation.
+// Off by default; the preference and genre persist on the device; soft fades; pauses in the background.
 export function AmbientProvider({ children }: { children: ReactNode }) {
   const [on, setOn] = useState<boolean>(() => Storage.getItemSync(KEY) === '1');
   const [genre, setGenreState] = useState<Genre>(() => {
@@ -40,12 +40,12 @@ export function AmbientProvider({ children }: { children: ReactNode }) {
     return isGenre(v) ? v : 'house';
   });
   const [pickerOpen, setPickerOpen] = useState(false);
-  // ses hiç açılmadıysa motor boş listeyle durur: kapalıyken ağdan parça çekilmez
+  // Until sound is turned on the engine gets an empty list, so nothing is fetched while off.
   const [armedOnce, setArmedOnce] = useState(false);
   const armed = on || armedOnce;
 
   useEffect(() => {
-    // kullanıcı sesi kendisi açıyor; android'de titreşim modu bile müziği susturmasın
+    // The user turned sound on themselves; do not let Android's vibrate mode silence it.
     setAudioModeAsync({ playsInSilentMode: true, shouldPlayInBackground: false, interruptionMode: 'mixWithOthers' });
   }, []);
 
@@ -62,7 +62,7 @@ export function AmbientProvider({ children }: { children: ReactNode }) {
     setGenreState(g);
     setArmedOnce(true);
     setOn(() => {
-      Storage.setItemSync(KEY, '1'); // tür seçen dinlemek istiyor
+      Storage.setItemSync(KEY, '1'); // picking a genre means they want to listen
       return true;
     });
   }, []);
@@ -72,14 +72,14 @@ export function AmbientProvider({ children }: { children: ReactNode }) {
 
   return (
     <Ctx.Provider value={{ on, toggle, genre, setGenre, pickerOpen, openPicker, closePicker }}>
-      {/* tür değişince motor baştan kurulur: yeni liste, sıfırdan */}
+      {/* A genre change remounts the engine: new playlist from scratch. */}
       <Engine key={genre} genre={genre} on={on} armed={armed} />
       {children}
     </Ctx.Provider>
   );
 }
 
-// çalar. görünmez; sadece listeyi sürer.
+// The player. Invisible; it only drives the playlist.
 function Engine({ genre, on, armed }: { genre: Genre; on: boolean; armed: boolean }) {
   const playlist = useAudioPlaylist({ sources: armed ? tracks[genre] : [], loop: 'all' });
   const p = useRef(playlist);
@@ -87,13 +87,13 @@ function Engine({ genre, on, armed }: { genre: Genre; on: boolean; armed: boolea
     p.current = playlist;
   }, [playlist]);
 
-  // parçalar yüklenmeden play() sessiz kalır; yüklenmeyi bekleyip öyle başlarız
+  // play() is silent until tracks load, so wait for loading first.
   const [loaded, setLoaded] = useState(() => playlist.isLoaded);
   useEffect(() => {
     const sub = playlist.addListener('playlistStatusUpdate', (status) => {
       if (status.isLoaded) setLoaded(true);
     });
-    // dinleyici takılmadan önce yüklendiyse: bir sonraki döngüde bak
+    // Already loaded before the listener attached: check on the next tick.
     const t = setTimeout(() => {
       if (playlist.isLoaded) setLoaded(true);
     }, 0);
@@ -104,23 +104,23 @@ function Engine({ genre, on, armed }: { genre: Genre; on: boolean; armed: boolea
   }, [playlist]);
 
   const fade = useRef<ReturnType<typeof setInterval> | null>(null);
-  // motor kapanınca (tür değişti) zamanlayıcı dursun ve kapanmış çalara kimse dokunmasın
+  // When the engine unmounts (genre change), stop the timer and leave the released player alone.
   const alive = useRef(true);
   useEffect(() => {
-    alive.current = true; // yeniden kurulursa (fast refresh) tekrar canlan
+    alive.current = true; // revive after a remount (fast refresh)
     return () => {
       alive.current = false;
       if (fade.current) clearInterval(fade.current);
       fade.current = null;
     };
   }, []);
-  // kapanmış nesneye erişim native tarafta fırlatır; sessizce yut
+  // Touching a released native object throws; swallow it.
   const safe = (fn: () => void) => {
     if (!alive.current) return;
     try {
       fn();
     } catch {
-      /* çalar serbest bırakılmış */
+      /* player already released */
     }
   };
 
@@ -165,7 +165,7 @@ function Engine({ genre, on, armed }: { genre: Genre; on: boolean; armed: boolea
 
   useEffect(() => {
     const sub = AppState.addEventListener('change', (state) => {
-      // sadece arka plan: ios'ta 'inactive' izin kutusu ve bildirim paneli için de gelir
+      // Background only: on iOS 'inactive' also fires for permission prompts and the notification shade.
       if (state === 'active') {
         if (on) start();
       } else if (state === 'background') {

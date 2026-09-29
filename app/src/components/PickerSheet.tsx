@@ -4,7 +4,7 @@ import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-export type Option = { id: string; label: string; extra?: string };
+type Option = { id: string; label: string; extra?: string };
 type Props = {
   open: boolean;
   title: string;
@@ -15,7 +15,7 @@ type Props = {
   note?: string;
 };
 
-// alttan açılan liste. mürekkep zemin, üstte kâğıt çizgi, seçili satırda spot nokta.
+// Bottom sheet list: ink background, paper rule on top, a spot dot on the selected row.
 export default function PickerSheet({ open, title, options, selected, onSelect, onClose, note }: Props) {
   const insets = useSafeAreaInsets();
   const { up } = useLang();

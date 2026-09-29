@@ -3,12 +3,12 @@ import * as SecureStore from 'expo-secure-store';
 import * as Crypto from 'expo-crypto';
 import aesjs from 'aes-js';
 
-// oturum saklama: anahtar cihazın güvenli deposunda (keystore), veri aes ile
-// şifrelenip sqlite localStorage'a yazılır. secure store 2 kb sınırını böyle aşarız.
-// supabase'in önerdiği "large secure store" deseni.
+// Session storage: the key lives in the device keystore, the data is AES-encrypted
+// into SQLite localStorage. This works around SecureStore's 2 KB limit.
+// Supabase's recommended "large secure store" pattern.
 export class LargeSecureStore {
-  // anahtar depo anahtarı başına bir kez üretilir; sonraki yazmalar tek adımdır,
-  // iki yazma üst üste gelse de anahtar ile şifreli veri birbirinden kopmaz
+  // One key per storage key, generated once; later writes are a single step,
+  // so two overlapping writes cannot separate the key from its ciphertext.
   private keys = new Map<string, Promise<Uint8Array>>();
   private keyFor(key: string) {
     let k = this.keys.get(key);
@@ -24,7 +24,7 @@ export class LargeSecureStore {
     }
     return k;
   }
-  // anahtar sabit olduğu için sayaç her yazmada rastgele: ilk 16 bayt sayaç, gerisi veri
+  // The key is fixed, so the counter is random per write: first 16 bytes counter, then data.
   private async encrypt(key: string, value: string) {
     const k = await this.keyFor(key);
     const iv = Crypto.getRandomValues(new Uint8Array(16));
@@ -37,7 +37,7 @@ export class LargeSecureStore {
     const iv = aesjs.utils.hex.toBytes(value.slice(0, 32));
     const cipher = new aesjs.ModeOfOperation.ctr(aesjs.utils.hex.toBytes(hex), new aesjs.Counter(iv));
     const text = aesjs.utils.utf8.fromBytes(cipher.decrypt(aesjs.utils.hex.toBytes(value.slice(32))));
-    // bütünlük yerine basit bir tutarlılık: oturum json'dur; değilse yok say
+    // A simple consistency check instead of integrity: the session is JSON, otherwise ignore it.
     return text.startsWith('{') ? text : null;
   }
   async getItem(key: string) {
@@ -46,7 +46,7 @@ export class LargeSecureStore {
     try {
       return await this.decrypt(key, v);
     } catch {
-      return null; // anahtar kayıpsa oturum düşer, yeniden giriş istenir
+      return null; // key lost: the session is dropped and the user signs in again
     }
   }
   async setItem(key: string, value: string) {

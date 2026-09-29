@@ -1,10 +1,10 @@
 import { SITE } from '@/data/deck';
 import type { DeckCard } from '@/components/CardFace';
 
-// örnek dalgalar: arkadaşlarının arkadaşları (2. dalga) ve onların arkadaşları
-// (3. dalga) hangi geceleri tuttu. gerçek veri gelene kadar. path: senden
-// başlayarak zincir; ilk isim senin arkadaşın, son isim geceyi tutan.
-// geceler sitedeki el çizimi afişlerle (posters/NN.svg).
+// Sample waves: nights kept by friends of friends (2nd wave) and their friends
+// (3rd wave), until real data exists. path: the chain starting after you; the first
+// name is your friend, the last is the keeper.
+// Nights use the site's hand-drawn posters (posters/NN.svg).
 const day = (n: number, h: number) => {
   const d = new Date();
   d.setDate(d.getDate() + n);

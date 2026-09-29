@@ -1,8 +1,8 @@
 import CARDS, { type NightCardData } from '@/content/cardsgen';
 
-// sitedeki kart koleksiyonu örnekleri (cards/card-data.js) + üreticinin kendi gecelerinden üçü.
-// check-in gelince burası kullanıcının gerçek kartlarıyla dolar.
-export const samples: NightCardData[] = [
+// Sample cards from the site's collection (cards/card-data.js) plus three of the generator's own nights.
+// Replaced by the user's real cards once they check in.
+const samples: NightCardData[] = [
   { city: "istanbul",
     t: "Karaköy Alt Kat", ty: "CLUB NIGHT", v: "KARAKÖY", d: "19.09.26",
     metal: "chrome", motif: "moire",

@@ -16,7 +16,7 @@ import { supabase } from '@/lib/supabase';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// kayıt. şimdilik ne yazılırsa yazılsın kabul edip uygulamaya alır.
+// Sign up / sign in.
 export default function SignUpScreen() {
   const insets = useSafeAreaInsets();
   const t = useT();
@@ -25,13 +25,13 @@ export default function SignUpScreen() {
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState<string | null>(null);
   const { signUp, signIn, signInAsGuest, resetPassword } = useAuth();
-  // ana ekrandaki "sign in" ?mode=in ile gelir; "sign up" parametresiz
+  // "sign in" on the home screen passes ?mode=in; "sign up" passes nothing.
   const params = useLocalSearchParams<{ mode?: string }>();
   const [mode, setMode] = useState<'up' | 'in'>(params.mode === 'in' ? 'in' : 'up');
 
-  // hesap açar (varsa giriş yapar) ve uygulamaya alır.
-  // alanlar boşsa cihaza özel anonim kullanıcı: bakmak serbest, kaydırmalar yine de kaydolur,
-  // sonra e-posta girince aynı kullanıcı hesaba dönüşür.
+  // Creates the account (or signs in if it exists) and enters the app.
+  // Empty fields start an anonymous, device-bound user: browsing is free and swipes are
+  // still recorded; adding an email later upgrades the same user to an account.
   const enter = async () => {
     if (busy) return;
     const guest = !email.trim() && !password;
@@ -44,7 +44,7 @@ export default function SignUpScreen() {
           ? await signIn(email.trim(), password)
           : await signUp(email.trim(), password, Storage.getItemSync('city') ?? undefined);
       if (guest) {
-        // anonim giriş panelde kapalıysa yine de içeri al; kaydırmalar kaydolmaz
+        // Anonymous sign-in disabled in the dashboard: enter anyway, swipes are not recorded.
         router.replace('/yours');
         return;
       }
@@ -52,7 +52,7 @@ export default function SignUpScreen() {
         setNote(err);
         return;
       }
-      // handle seçilmediyse kayıt bitmemiş sayılır: önce o adım
+      // No handle yet means registration is unfinished: do that step first.
       const { data } = await supabase.rpc('profile_me');
       const row = Array.isArray(data) ? data[0] : data;
       router.replace(row?.handle ? '/yours' : '/welcome');
@@ -63,14 +63,14 @@ export default function SignUpScreen() {
     }
   };
 
-  // google: aynı kapı hem kayıt hem giriş. ilk gelişte handle adımı
+  // Google: one door for both sign-up and sign-in; first visit continues to the handle step.
   const google = async () => {
     if (busy) return;
     setBusy(true);
     setNote(null);
     try {
       const inside = await signInWithGoogle();
-      if (!inside) return; // pencere kapatıldı
+      if (!inside) return; // window closed
       const { data } = await supabase.rpc('profile_me');
       const row = Array.isArray(data) ? data[0] : data;
       router.replace(row?.handle ? '/yours' : '/welcome');
@@ -87,7 +87,7 @@ export default function SignUpScreen() {
       <EdgeBack />
       <SoundCorner />
       <KeyboardAvoidingView behavior="padding" style={styles.body}>
-        {/* alt boşluk burada: klavye sarmalayıcısı kendi paddingBottom'unu ezer */}
+        {/* Bottom padding lives here: the keyboard wrapper overrides its own paddingBottom. */}
         <View style={{ paddingBottom: insets.bottom + 24 }}>
         <View style={styles.heading}>
           <Text style={styles.line}>{mode === 'up' ? t('signup.up.line1') : t('signup.in.line1')}</Text>
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   gap: { height: 8 },
   note: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper2, opacity: 0.8 },
   small: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute, marginTop: 6 },
-  // google: çizgili buton (kâğıt çerçeve), solda google'ın kendi işareti
+  // Google: outlined button (paper border) with Google's own mark on the left.
   google: { height: 52, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 12, borderWidth: 1.5, borderColor: colors.paper, borderRadius: radius.md },
   googleText: { fontFamily: fonts.medium, fontSize: 16, letterSpacing: -0.2, color: colors.paper },
   pressed: { opacity: 0.7 },

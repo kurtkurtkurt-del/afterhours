@@ -7,21 +7,21 @@ import Storage from 'expo-sqlite/kv-store';
 import { supabase } from '@/lib/supabase';
 import { must, remember } from '@/lib/offline';
 import { useAuth } from '@/auth/AuthContext';
-import { t } from '@/i18n';
+import { t } from '@/i18n/core';
 
-// profil fotoğrafı (24_photos.sql). hesaba bağlı: dosya "photos" kovasında
-// <kullanıcı>/<sayı>.jpg olarak durur, yolu profile_photos tablosunda. yalnız
-// sahibi ve ONAYLI arkadaşları okur.
+// Profile photo (24_photos.sql), tied to the account: the file lives in the "photos" bucket
+// as <user>/<number>.jpg and its path in profile_photos. Only the owner and CONFIRMED
+// friends can read it.
 //
-// telefonda bir kopyası da durur: ekran ağ beklemeden açılsın ve misafir de
-// (hesabı olmayan) kendi fotoğrafını görebilsin diye. misafirin fotoğrafı
-// yüklenmez; hesap açınca ilk fırsatta yüklenir.
+// A copy is also kept on the phone so screens open without waiting for the network and
+// guests (no account) can see their own photo. A guest's photo is not uploaded; it goes
+// up at the first chance once there is an account.
 //
-// üç ekran (hesap, ayarlar, profil) aynı fotoğrafı gösterir; biri değiştirince
-// ötekiler de yenilensin diye küçük bir ortak kayıt.
-const LOCAL = 'account.photo'; // telefondaki dosyanın adresi
-const PATH = 'account.photo.path'; // kovadaki yol; boşsa henüz yüklenmedi
-const OWNER = 'account.photo.owner'; // fotoğraf kimin: çıkış yapıp başkası girerse silinir
+// Three screens (account, settings, profile) show the same photo; a small shared store
+// keeps them in sync when one changes it.
+const LOCAL = 'account.photo'; // local file URI
+const PATH = 'account.photo.path'; // bucket path; empty until uploaded
+const OWNER = 'account.photo.owner'; // whose photo it is: removed when someone else signs in
 const BUCKET = 'photos';
 const WIDE = 1080;
 
@@ -39,13 +39,13 @@ const put = (key: string, value: string | null) => {
   } catch {}
 };
 
-export const photoUrl = (path: string) => supabase.storage.from(BUCKET).getPublicUrl(path).data.publicUrl;
+const photoUrl = (path: string) => supabase.storage.from(BUCKET).getPublicUrl(path).data.publicUrl;
 
-// ekranda görünen adres: telefondaki dosya, o yoksa kovadaki
+// The displayed URL: the local file, else the bucket's.
 const shown = () => get(LOCAL) ?? (get(PATH) ? photoUrl(get(PATH) as string) : null);
 
-// working: seçiliyor ya da küçültülüyor · sending: hesaba yükleniyor (ekran beklemez)
-export type PhotoState = { photo: string | null; busy: 'idle' | 'working' | 'sending' };
+// working: picking or resizing · sending: uploading to the account (screens do not wait)
+type PhotoState = { photo: string | null; busy: 'idle' | 'working' | 'sending' };
 let current: PhotoState = { photo: shown(), busy: 'idle' };
 const listeners = new Set<() => void>();
 const tell = (busy: PhotoState['busy'] = current.busy) => {
@@ -67,14 +67,14 @@ function setLocal(uri: string | null) {
   if (old && old !== uri) dropFile(old);
 }
 
-// hesabı olan (misafir olmayan) kullanıcının kimliği; yoksa null
+// The id of a user with an account (not a guest); otherwise null.
 async function account() {
   const { data } = await supabase.auth.getSession();
   const user = data.session?.user;
   return user && !user.is_anonymous ? user.id : null;
 }
 
-// telefondaki dosyayı kovaya yükler, yolu veritabanına yazar, eski dosyayı kaldırır
+// Uploads the local file, writes the path to the database, removes the old file.
 async function upload(uid: string, uri: string) {
   const path = `${uid}/${Date.now()}.jpg`;
   const bytes = await new File(uri).arrayBuffer();
@@ -92,13 +92,13 @@ async function upload(uid: string, uri: string) {
 
 let startedAt = 0;
 
-// ağ asılı kalırsa "gönderiliyor" yazısı da asılı kalmasın
+// If the network hangs, do not leave "sending" hanging too.
 const within = <T,>(ms: number, work: Promise<T>) =>
   Promise.race([work, new Promise<never>((_, no) => setTimeout(() => no(new Error('timeout')), ms))]);
 
-export async function choosePhoto() {
-  // iki kez dokunmak iki seçici açmasın. ama seçici hiç dönmezse (android
-  // uygulamayı arkada öldürüp yeniden açtıysa) düğme sonsuza dek kilitli kalmasın.
+async function choosePhoto() {
+  // Two taps must not open two pickers, but if the picker never returns (Android
+  // killed and restarted the app in the background) the button must not stay locked.
   if (current.busy === 'working' && Date.now() - startedAt < 45_000) return;
   startedAt = Date.now();
   let kept: File;
@@ -110,11 +110,11 @@ export async function choosePhoto() {
       tell('idle');
       return;
     }
-    // telefonun çektiği 12 megapiksel kimseye lazım değil: 1080 genişlik, jpeg
+    // Nobody needs the camera's 12 megapixels: 1080 wide, JPEG.
     const work = ImageManipulator.manipulate(asset.uri);
     if ((asset.width ?? 0) > WIDE) work.resize({ width: WIDE });
     const made = await (await work.renderAsync()).saveAsync({ format: SaveFormat.JPEG, compress: 0.8 });
-    // her seçimde yeni ad: aynı adrese yazılan yeni resmi Image önbellekten eski haliyle gösterir
+    // A new name on every pick: Image would show a cached old image for the same URL.
     kept = new File(Paths.document, `account-${Date.now()}.jpg`);
     new File(made.uri).copy(kept);
   } catch {
@@ -122,14 +122,14 @@ export async function choosePhoto() {
     Alert.alert(t('account.photo'), t('account.photo.failed'));
     return;
   }
-  // kovadaki eski dosya: yenisi yüklenince photo_set eski yolu geri verir ve silinir
+  // The old bucket file: photo_set returns the old path after the new upload, then it is removed.
   setLocal(kept.uri);
   put(PATH, null);
   tell('idle');
 
   const uid = await account().catch(() => null);
   put(OWNER, uid);
-  if (!uid) return; // misafir: telefonda kalır
+  if (!uid) return; // guest: stays on the phone
   tell('sending');
   try {
     await within(40_000, upload(uid, kept.uri));
@@ -139,9 +139,9 @@ export async function choosePhoto() {
   tell('idle');
 }
 
-// resim çizilemedi. HESAPTAKİ fotoğrafa asla dokunmaz: telefondaki kopya
-// bozuksa onu bırakır ve hesaptakine döner; o da gelmiyorsa (ağ yok) bekler.
-export function photoBroken(uri: string) {
+// The image failed to render. NEVER touches the account photo: a broken local copy is
+// dropped in favour of the account's; if that does not load either (offline) it waits.
+function photoBroken(uri: string) {
   if (uri !== get(LOCAL)) return;
   setLocal(null);
   tell();
@@ -161,19 +161,19 @@ export async function removePhoto() {
   } catch {}
 }
 
-// telefon ile hesabı eşitler. giriş yapıldığında ve hesap ekranı açıldığında.
-//   · telefondaki fotoğraf başkasınınsa (çıkış yapıp başka biri girdi) silinir
-//   · hesapta fotoğraf var, telefonda yok ya da eskisi var → hesaptaki gösterilir
-//   · telefonda var, hesapta yok → yüklenir (misafirken ya da güncellemeden önce seçilmiş)
+// Reconciles phone and account, on sign-in and when the account screen opens.
+//   · the local photo belongs to someone else (signed out, another user signed in) → removed
+//   · the account has a photo and the phone has none or an older one → the account's is shown
+//   · the phone has one and the account does not → uploaded (picked as a guest or before this feature)
 let syncing = false;
-export async function syncPhoto() {
+async function syncPhoto() {
   if (syncing) return;
   syncing = true;
   try {
     const uid = await account();
     const owner = get(OWNER);
     if (owner && owner !== uid) {
-      // önceki hesabın fotoğrafı; yeni gelen onu görmemeli
+      // The previous account's photo must not be shown to the new user.
       setLocal(null);
       put(PATH, null);
       put(OWNER, null);
@@ -183,10 +183,10 @@ export async function syncPhoto() {
     const { data, error } = await supabase.from('profile_photos').select('path').eq('user_id', uid).maybeSingle();
     if (error) return;
     const remote = (data?.path as string | undefined) ?? null;
-    if (current.busy !== 'idle') return; // seçim sürerken araya girme
+    if (current.busy !== 'idle') return; // do not interfere while a pick is in progress
     if (remote) {
       if (remote !== get(PATH)) {
-        setLocal(null); // başka telefonda değişmiş
+        setLocal(null); // changed on another phone
         put(PATH, remote);
       }
       put(OWNER, uid);
@@ -196,7 +196,7 @@ export async function syncPhoto() {
       await upload(uid, get(LOCAL) as string).catch(() => {});
       tell();
     } else if (get(PATH)) {
-      put(PATH, null); // başka telefonda kaldırılmış
+      put(PATH, null); // removed on another phone
       tell();
     }
   } finally {
@@ -204,7 +204,7 @@ export async function syncPhoto() {
   }
 }
 
-// çıkışta: fotoğraf hesabın, telefonda bırakılmaz (kovadaki dosyaya dokunulmaz)
+// On sign-out: the photo belongs to the account and is not left on the phone (the bucket file stays).
 export function forgetPhoto() {
   setLocal(null);
   put(PATH, null);
@@ -228,8 +228,8 @@ export function usePhoto() {
   return { photo: photo.photo, busy: photo.busy, choose: choosePhoto, remove: removePhoto, broken: photoBroken };
 }
 
-// arkadaşların fotoğrafları: kimlik → adres. kural veritabanında; tablo zaten
-// yalnız kendi satırını ve onaylı arkadaşlarınkini verir.
+// Friends' photos: id → URL. The database enforces access; the table only returns
+// your own row and those of confirmed friends.
 export async function friendPhotos(): Promise<Map<string, string>> {
   const rows = await remember('photos', '', async () => ((await must(supabase.from('profile_photos').select('user_id,path'))) ?? []) as { user_id: string; path: string }[]).catch(() => []);
   return new Map(rows.map((r) => [r.user_id, photoUrl(r.path)]));

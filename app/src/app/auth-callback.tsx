@@ -7,9 +7,9 @@ import { supabase } from '@/lib/supabase';
 import { useT } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 
-// google'dan dönüş. çoğu zaman tarayıcı penceresi adresi kendisi yakalar
-// (auth/google.ts); android bazen uygulamayı bu adresle açar, o zaman burası
-// oturumu kurar ve içeri alır. handle yoksa önce o adım.
+// Google OAuth return. Usually the in-app browser captures the redirect itself
+// (auth/google.ts); Android sometimes opens the app with this URL instead, in which
+// case this screen sets the session and continues. Without a handle, that step comes first.
 export default function AuthCallback() {
   const t = useT();
   const url = Linking.useLinkingURL();

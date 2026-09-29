@@ -18,7 +18,7 @@ const GAP = 12;
 const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const two = (n: number) => String(n).padStart(2, '0');
 
-// dj sayfası: büyük fotoğraf ve künye, küçük fotoğraf şeridi, iki sütun plaklı set listesi.
+// DJ page: large photo and details, a strip of small photos, sets as records in two columns.
 export default function DjScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const insets = useSafeAreaInsets();
@@ -53,7 +53,7 @@ export default function DjScreen() {
     );
   }
   const tracks = tracksFor(dj);
-  const photos = localDjs.filter((d) => d.id !== dj.id).slice(0, 4).map((d) => d.photo); // yer tutucu: gecelerin fotoğrafları
+  const photos = localDjs.filter((d) => d.id !== dj.id).slice(0, 4).map((d) => d.photo); // placeholder: photos of their nights
   const next = data.sets.find((s) => s.dj === dj.id);
   const toggleFollow = () => {
     const on = !following;
@@ -70,7 +70,7 @@ export default function DjScreen() {
       return;
     }
     setPlaying(i);
-    ambient.setGenre(dj.sound); // şimdilik dj'nin türündeki müzik çalar
+    ambient.setGenre(dj.sound); // for now, play music in the DJ's genre
   };
 
   return (
@@ -83,7 +83,7 @@ export default function DjScreen() {
         </Pressable>
       </View>
       <PullDownScroll contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false}>
-        {/* kapak */}
+        {/* Cover */}
         <View style={[styles.hero, { height: width * 1.05 }]}>
           <Image source={dj.photoUrl ? { uri: dj.photoUrl } : dj.photo} style={styles.heroPhoto} />
           <View style={styles.heroShade} />
@@ -94,14 +94,14 @@ export default function DjScreen() {
           </View>
         </View>
 
-        {/* küçük fotoğraflar */}
+        {/* Small photos */}
         <View style={styles.strip}>
           {photos.map((p, i) => (
             <Image key={i} source={p} style={styles.small} />
           ))}
         </View>
 
-        {/* setler: iki sütun, her biri bir plak */}
+        {/* Sets: two columns, one record each */}
         <View style={styles.head}>
           <Text style={styles.mono}>{up(t('dj.sets'))}</Text>
           <Text style={styles.mono}>{up(t('dj.recorded', { n: tracks.length }))}</Text>

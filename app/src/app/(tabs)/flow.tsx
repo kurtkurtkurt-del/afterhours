@@ -22,7 +22,7 @@ import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// deste. üstte şehir ve tür seçici; keep/let go hesap varsa veritabanına yazılır.
+// The deck, with city / type / time pickers on top. Keep and let go are saved when signed in.
 export default function FlowScreen() {
   const { session } = useAuth();
   const { cities } = useCities();
@@ -41,19 +41,21 @@ export default function FlowScreen() {
   const tabSpace = useTabBarSpace();
   const insets = useSafeAreaInsets();
   const [swiped, setSwiped] = useState(0);
+  // Bottom edge of the picker chip; the poster starts below it (the chip wraps in Turkish).
+  const [headBottom, setHeadBottom] = useState(0);
   const [reloads, setReloads] = useState(0);
-  // internet gelince: deste boş kaldıysa ya da hiç gelmediyse yeniden dene (elindeki desteyi bozmaz)
+  // Back online: retry if the deck is empty or never loaded (a dealt deck is left alone).
   const failed = useRef(false);
   useEffect(() => onBackOnline(() => failed.current && setReloads((n) => n + 1)), []);
-  // yeniden basınca: seçici kapanır, deste baştan dağıtılır
+  // Tapping the tab again closes the picker and deals the deck from the start.
   useTabReset('flow', () => {
     setSheet(null);
     setSwiped(0);
     setReloads((n) => n + 1);
   });
 
-  // sonuç, hangi seçim için geldiğiyle birlikte saklanır; seçim değişince eskisi
-  // kendiliğinden "yükleniyor" sayılır, ayrıca sıfırlamaya gerek kalmaz
+  // The result is stored with the selection it belongs to, so a changed selection
+  // reads as loading without an explicit reset.
   const key = `${city}/${type}/${session?.user.id ?? ''}/${reloads}`;
   const [result, setResult] = useState<{ key: string; rows: Night[] | null; error: string | null }>({ key: '', rows: null, error: null });
   const nights = result.key === key && result.rows ? filterWhen(result.rows, when) : null;
@@ -61,7 +63,7 @@ export default function FlowScreen() {
 
   useEffect(() => {
     let cancelled = false;
-    // zaman filtresi sunucuda yok; daha geniş çekilip burada elenir
+    // Time filtering is client-side: fetch wider, filter here.
     fetchDeck(city, type, 120)
       .then((rows) => {
         failed.current = rows.length === 0;
@@ -76,7 +78,7 @@ export default function FlowScreen() {
     };
   }, [city, type, key]);
 
-  // arkadaşların tuttuğu geceler: kartın altyazısında kareler; canlı olanlar kırmızı
+  // Nights your friends kept: squares in the caption, live friends in red.
   const [fk, setFk] = useState<FriendKept[]>([]);
   const [liveIds, setLiveIds] = useState<Set<string>>(new Set());
   useEffect(() => {
@@ -105,7 +107,7 @@ export default function FlowScreen() {
   const onSwipe = useCallback(
     (night: Night, direction: 'left' | 'right') => {
       setSwiped((n) => n + 1);
-      if (session) swipe(night.slug, direction).catch(() => {}); // hesapsızken sadece geçilir
+      if (session) swipe(night.slug, direction).catch(() => {}); // guests just move on
     },
     [session],
   );
@@ -149,7 +151,7 @@ export default function FlowScreen() {
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
-      <View style={[styles.head, { top: Math.max(brand.top, insets.top + 24) }]}>
+      <View style={[styles.head, { top: Math.max(brand.top, insets.top + 24) }]} onLayout={(e) => setHeadBottom(e.nativeEvent.layout.y + e.nativeEvent.layout.height)}>
         <Pressable onPress={() => setSheet('city')} hitSlop={10} style={({ pressed }) => pressed && styles.pressed}>
           <Text style={styles.pick}>{cityLabel}</Text>
         </Pressable>
@@ -173,7 +175,7 @@ export default function FlowScreen() {
         {error ? (
           <Text style={styles.note}>{error === 'offline' ? up(t('offline.empty')) : upperData(error)}</Text>
         ) : nights ? (
-          <Deck ref={deck} key={`${city}/${type}/${when}/${reloads}`} nights={nights} friendsOf={friendsOf} bottom={tabSpace + 4} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} />
+          <Deck ref={deck} key={`${city}/${type}/${when}/${reloads}`} nights={nights} friendsOf={friendsOf} bottom={tabSpace + 4} top={(headBottom || Math.max(brand.top, insets.top + 24) + 30) + 14} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} />
         ) : (
           <Text style={styles.note}>{up(t('flow.loading'))}</Text>
         )}
@@ -210,7 +212,7 @@ export default function FlowScreen() {
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
-  // fotoğrafın üstünde okunsun diye mürekkep şerit; friends' deck'teki "ist · 03/24" çipiyle aynı dil
+  // Ink pill so the pickers stay legible over the photo.
   head: { position: 'absolute', left: brand.left, right: 110, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'baseline', gap: 8, zIndex: 1, backgroundColor: colors.ink, borderRadius: radius.pill, paddingVertical: 5, paddingHorizontal: 12, alignSelf: 'flex-start' },
   pick: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 0.8, color: colors.paper, textDecorationLine: 'underline' },
   sep: { fontFamily: fonts.jet, fontSize: 10.5, color: colors.meta },
