@@ -53,3 +53,10 @@ export async function setFollow(slug: string, on: boolean) {
   if (on) await supabase.from('dj_follows').insert({ dj_id: dj.id });
   else await supabase.from('dj_follows').delete().eq('dj_id', dj.id);
 }
+
+// Slugs of the DJs you follow; empty without a session or offline.
+export async function followedSlugs(): Promise<string[]> {
+  const { data, error } = await supabase.from('dj_follows').select('djs!inner(slug)');
+  if (error || !data) return [];
+  return (data as unknown as { djs: { slug: string } | { slug: string }[] }[]).flatMap((r) => (Array.isArray(r.djs) ? r.djs : [r.djs]).map((d) => d.slug));
+}

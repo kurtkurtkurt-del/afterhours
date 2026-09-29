@@ -1,51 +1,123 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Storage from 'expo-sqlite/kv-store';
+import { Image, Pressable, ScrollView, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import ClipShelf from '@/components/ClipShelf';
+import { PeopleSearch } from '@/components/People';
+import StoryViewer from '@/components/StoryViewer';
 import SoundCorner from '@/components/SoundCorner';
+import Vinyl from '@/components/Vinyl';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
+import { useAmbient } from '@/audio/AmbientContext';
+import { useAuth } from '@/auth/AuthContext';
+import { clips as sampleClips } from '@/content/clips';
+import { stories, type Story } from '@/content/stories';
 import { djs as localDjs, sets as localSets, type Dj, type DjSet } from '@/content/djs';
-import { loadDjs } from '@/data/djs';
+import type { Genre } from '@/content/music';
+import { followedSlugs, loadDjs } from '@/data/djs';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useTabReset } from '@/hooks/useTabReset';
-import { dayName } from '@/data/when';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const H = 3600_000;
 const hhmm = (d: Date) => `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+const photoOf = (dj: Dj): ImageSourcePropType => (dj.photoUrl ? { uri: dj.photoUrl } : dj.photo);
+const GENRES: (Genre | 'all')[] = ['all', 'techno', 'house', 'rap'];
+const SEEN = 'stories.seen';
 
-// "Now / later": what is playing now on top, then tonight, then this week.
+// DJs, top to bottom: search, genre filter, stories, what is playing now, then clips
+// shared by DJs (a large card over a record rack). The page ends there. While searching,
+// the results replace everything below the field.
 export default function DjsScreen() {
   const insets = useSafeAreaInsets();
-  const { t, up } = useLang();
+  const { t, tn, up } = useLang();
+  const { session } = useAuth();
+  const ambient = useAmbient();
   const tick = useRefreshOnFocus();
   const scroll = useRef<ScrollView>(null);
-  useTabReset('djs', () => scroll.current?.scrollTo({ y: 0, animated: true }));
+  const [genre, setGenre] = useState<Genre | 'all'>('all');
+  const [query, setQuery] = useState('');
+  const [open, setOpen] = useState<Story | null>(null);
+  const [seen, setSeen] = useState<string[]>(() => (Storage.getItemSync(SEEN) ?? '').split(',').filter(Boolean));
+  useTabReset('djs', () => {
+    setGenre('all');
+    setQuery('');
+    scroll.current?.scrollTo({ y: 0, animated: true });
+  });
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const now = useMemo(() => new Date(), [tick]); // refresh the clock whenever the tab opens
   const [data, setData] = useState<{ djs: Dj[]; sets: DjSet[]; live: boolean | null }>({ djs: localDjs, sets: [], live: null });
+  const [follows, setFollows] = useState<string[]>([]);
   useEffect(() => {
     let cancelled = false;
     loadDjs()
       .then((d) => !cancelled && setData({ djs: d.djs, sets: d.sets, live: d.live }))
       .catch(() => !cancelled && setData({ djs: localDjs, sets: localSets(new Date()), live: false }));
+    if (session) followedSlugs().then((f) => !cancelled && setFollows(f), () => {});
     return () => {
       cancelled = true;
     };
-  }, [tick]);
-  const all = data.sets;
-  const djById = (id: string) => data.djs.find((d) => d.id === id) ?? localDjs[0];
+  }, [tick, session]);
 
-  const live = all.find((s) => s.startsAt <= now && s.startsAt.getTime() + s.hours * H > now.getTime());
+  const djOf = (slug: string) => data.djs.find((d) => d.id === slug) ?? localDjs.find((d) => d.id === slug);
+  const fits = (slug: string) => genre === 'all' || djOf(slug)?.sound === genre;
+  const ends = (s: DjSet) => s.startsAt.getTime() + s.hours * H;
+
+  // Nobody on right now: one sample set that started an hour ago, labelled as a sample,
+  // so the "now" card and a LIVE ring are always there to see.
+  const onNow = (s: DjSet) => s.startsAt <= now && ends(s) > now.getTime();
+  const sampleLive: DjSet | null = data.live !== null && !data.sets.some(onNow)
+    ? { dj: data.djs.some((d) => d.id === 'levent-ok') ? 'levent-ok' : (data.djs[0]?.id ?? 'levent-ok'), venue: 'harry klein', startsAt: new Date(now.getTime() - H), hours: 3 }
+    : null;
+  const sets = sampleLive ? [sampleLive, ...data.sets] : data.sets;
+
   const nightEnd = new Date(now);
   nightEnd.setHours(8, 0, 0, 0);
   if (nightEnd <= now) nightEnd.setDate(nightEnd.getDate() + 1);
-  const tonight = all.filter((s) => s !== live && s.startsAt > now && s.startsAt <= nightEnd);
-  const week = all.filter((s) => s.startsAt > nightEnd);
-  const next = tonight[0] ?? week[0] ?? all[0];
+  const tonight = sets.filter((s) => ends(s) > now.getTime() && s.startsAt <= nightEnd);
+  const live = tonight
+    .filter((s) => s.startsAt <= now && fits(s.dj))
+    .sort((a, b) => Number(follows.includes(b.dj)) - Number(follows.includes(a.dj)));
+  const liveSlugs = new Set(tonight.filter((s) => s.startsAt <= now).map((s) => s.dj));
+  const tonightOf = (slug: string) => {
+    const s = tonight.find((x) => x.dj === slug);
+    return s ? { venue: s.venue, time: hhmm(s.startsAt) } : null;
+  };
+
+  // Stories: DJs with a story first (unseen before seen), then the DJs you follow,
+  // or everyone when you follow nobody. A red ring means a story you have not seen.
+  const storyOf = (slug: string) => stories.find((st) => st.dj === slug);
+  const fresh = (slug: string) => !!storyOf(slug) && !seen.includes(slug);
+  const base = follows.length ? follows.map(djOf).filter((d): d is Dj => !!d) : data.djs;
+  const withStory = stories.map((st) => djOf(st.dj)).filter((d): d is Dj => !!d);
+  const strip = [...withStory, ...base.filter((d) => !storyOf(d.id))].sort((a, b) => Number(fresh(b.id)) - Number(fresh(a.id)));
+  const unseen = stories.filter((st) => !seen.includes(st.dj)).length;
+  const openStory = (dj: Dj) => {
+    const st = storyOf(dj.id);
+    if (!st) return router.push(`/dj/${dj.id}`);
+    setOpen(st);
+    if (!seen.includes(dj.id)) {
+      const next = [...seen, dj.id];
+      setSeen(next);
+      Storage.setItemSync(SEEN, next.join(','));
+    }
+  };
+
+  const q = query.trim().toLowerCase();
+  const found = q ? data.djs.filter((d) => [d.name, d.genre, d.city].some((f) => f.toLowerCase().includes(q))) : [];
+
+  const pickGenre = (g: Genre | 'all') => {
+    setGenre(g);
+    // follow the filter with the music, but only if it is already playing
+    if (g !== 'all' && ambient.on) ambient.setGenre(g);
+  };
+
+  const clips = sampleClips.filter((c) => fits(c.dj));
 
   return (
     <View style={styles.root}>
@@ -54,55 +126,123 @@ export default function DjsScreen() {
         <Text style={styles.title}>{t('djs.title')}</Text>
         <SoundCorner />
       </View>
-      <ScrollView ref={scroll} contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom }]} showsVerticalScrollIndicator={false}>
-        {data.live === null ? <Text style={styles.mono}>{up(t('djs.loading'))}</Text> : null}
-        {data.live === false ? <Text style={styles.mono}>{up(t('djs.sample'))}</Text> : null}
-        {data.live && !next ? <Text style={styles.mono}>{up(t('djs.none'))}</Text> : null}
-        {/* Now */}
-        {next ? (
-        <Pressable style={styles.hero} onPress={() => router.push(`/dj/${(live ?? next).dj}`)}>
-          <Image source={djById((live ?? next).dj).photoUrl ? { uri: djById((live ?? next).dj).photoUrl! } : djById((live ?? next).dj).photo} style={styles.heroPhoto} />
-          <View style={styles.heroShade} />
-          <View style={styles.heroText}>
-            <Text style={[styles.mono, live ? styles.live : null]}>
-              {up(live ? t('djs.live', { venue: upperData(live.venue) }) : t('djs.next', { venue: upperData(next.venue), time: hhmm(next.startsAt) }))}
-            </Text>
-            <Text style={styles.heroName}>{djById((live ?? next).dj).name}</Text>
-            <Text style={styles.mono}>
-              {upperData(djById((live ?? next).dj).genre)}
-              {live ? ` · ${up(t('djs.until', { time: hhmm(new Date(live.startsAt.getTime() + live.hours * H)) }))}` : ''}
-            </Text>
+      <ScrollView ref={scroll} contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom + 24 }]} showsVerticalScrollIndicator={false}>
+        {data.live === null ? <Text style={styles.note}>{up(t('djs.loading'))}</Text> : null}
+        {data.live === false ? <Text style={styles.note}>{up(t('djs.sample'))}</Text> : null}
+
+        <PeopleSearch value={query} onChange={setQuery} placeholder={t('djs.search')} />
+        {q ? (
+          <View style={styles.results}>
+            {found.length ? (
+              found.map((dj) => (
+                <Pressable key={dj.id} onPress={() => router.push(`/dj/${dj.id}`)} accessibilityRole="button" style={({ pressed }) => [styles.result, pressed && styles.pressed]}>
+                  <Image source={photoOf(dj)} style={styles.resultPhoto} />
+                  <View style={styles.resultText}>
+                    <Text style={styles.resultName} numberOfLines={1}>{dj.name}</Text>
+                    <Text style={styles.mono} numberOfLines={1}>{upperData([dj.genre, dj.city].filter(Boolean).join(' · '))}</Text>
+                  </View>
+                  {liveSlugs.has(dj.id) ? <Text style={styles.liveTagInline}>LIVE</Text> : null}
+                  <Text style={styles.chev}>›</Text>
+                </Pressable>
+              ))
+            ) : (
+              <Text style={styles.note}>{up(t('djs.noResults'))}</Text>
+            )}
           </View>
-        </Pressable>
+        ) : (
+        <>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
+          {GENRES.map((g) => (
+            <Pressable key={g} onPress={() => pickGenre(g)} accessibilityRole="button" accessibilityState={{ selected: genre === g }} style={[styles.chip, genre === g && styles.chipOn]}>
+              <Text style={[styles.chipText, genre === g && styles.chipTextOn]}>{g === 'all' ? up(t('djs.all')) : upperData(g)}</Text>
+            </Pressable>
+          ))}
+        </ScrollView>
+
+        <View style={styles.sec}>
+          <Text style={styles.secText}>{up(t('djs.stories'))}</Text>
+          {unseen ? <Text style={styles.secRed}>{up(tn('djs.newStories', unseen))}</Text> : null}
+        </View>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.strip}>
+          {strip.map((dj) => (
+            <Pressable key={dj.id} onPress={() => openStory(dj)} accessibilityRole="button" accessibilityLabel={dj.name} style={({ pressed }) => [styles.person, !fits(dj.id) && styles.dim, pressed && styles.pressed]}>
+              <Ring photo={photoOf(dj)} story={storyOf(dj.id) ? (fresh(dj.id) ? 'new' : 'seen') : 'none'} live={liveSlugs.has(dj.id)} />
+              <Text style={styles.personName} numberOfLines={1}>{dj.name}</Text>
+            </Pressable>
+          ))}
+        </ScrollView>
+
+        <View style={styles.sec}>
+          <Text style={styles.secText}>{up(t('djs.now'))}</Text>
+        </View>
+        {live[0] ? (
+          <NowCard set={live[0]} dj={djOf(live[0].dj)} followed={follows.includes(live[0].dj)} now={now} ends={ends(live[0])} sample={live[0] === sampleLive} />
+        ) : (
+          <View style={[styles.now, styles.nowEmpty]}>
+            <Text style={styles.nowEmptyText}>{genre === 'all' ? t('djs.nobody') : t('djs.nobodyGenre', { genre })}</Text>
+          </View>
+        )}
+        {live.length > 1 ? (
+          <Text style={styles.also} numberOfLines={2}>
+            {t('djs.also')} {live.slice(1).map((s) => `${djOf(s.dj)?.name ?? s.dj} · ${s.venue}`).join(', ')}
+          </Text>
         ) : null}
 
-        {tonight.length > 0 && (
-          <>
-            <Text style={styles.section}>{up(t('djs.later'))}</Text>
-            {tonight.map((s) => (
-              <Row key={s.dj + s.startsAt.toISOString()} set={s} dj={djById(s.dj)} right={hhmm(s.startsAt)} />
-            ))}
-          </>
+        <View style={styles.sec}>
+          <Text style={styles.secText}>{up(t('clips.title'))}</Text>
+          <Text style={styles.secText}>{up(t('clips.from'))}</Text>
+        </View>
+        <ClipShelf clips={clips} djOf={djOf} tonight={tonightOf} />
+        <Text style={styles.foot}>{up(t('clips.sample'))}</Text>
+        </>
         )}
-
-        <Text style={styles.section}>{up(t('when.week'))}</Text>
-        {week.map((s) => (
-          <Row key={s.dj + s.startsAt.toISOString()} set={s} dj={djById(s.dj)} right={`${dayName(s.startsAt)} · ${hhmm(s.startsAt)}`} />
-        ))}
       </ScrollView>
+      <StoryViewer story={open} name={open ? (djOf(open.dj)?.name ?? open.dj) : ''} avatar={open && djOf(open.dj) ? photoOf(djOf(open.dj)!) : undefined} onClose={() => setOpen(null)} />
     </View>
   );
 }
 
-function Row({ set, dj, right }: { set: DjSet; dj: Dj; right: string }) {
+// A DJ in the stories row: red ring for a story you have not seen, grey once seen,
+// none without a story. LIVE marks a set that is on right now.
+function Ring({ photo, story, live }: { photo: ImageSourcePropType; story: 'new' | 'seen' | 'none'; live: boolean }) {
   return (
-    <Pressable onPress={() => router.push(`/dj/${set.dj}`)} style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
-      <Image source={dj.photoUrl ? { uri: dj.photoUrl } : dj.photo} style={styles.sq} />
-      <View style={styles.rowText}>
-        <Text style={styles.name}>{dj.name}</Text>
-        <Text style={styles.mono}>{upperData(dj.genre)} · {upperData(set.venue)}</Text>
+    <View style={styles.ringBox}>
+      <View style={[styles.ring, story === 'new' && styles.ringNew, story === 'seen' && styles.ringSeen]}>
+        <Image source={photo} style={styles.ringPhoto} />
       </View>
-      <Text style={styles.when}>{right}</Text>
+      {live ? <Text style={styles.liveTag}>LIVE</Text> : null}
+    </View>
+  );
+}
+
+// What is playing now: a spinning record, how far into the set, and "listen".
+function NowCard({ set, dj, followed, now, ends, sample }: { set: DjSet; dj?: Dj; followed: boolean; now: Date; ends: number; sample: boolean }) {
+  const { t, up } = useLang();
+  const ambient = useAmbient();
+  if (!dj) return null;
+  const listening = ambient.on && ambient.genre === dj.sound;
+  const progress = Math.max(0, Math.min(1, (now.getTime() - set.startsAt.getTime()) / (ends - set.startsAt.getTime())));
+  return (
+    <Pressable onPress={() => router.push(`/dj/${dj.id}`)} style={styles.now}>
+      <Vinyl size={132} label={photoOf(dj)} spinning />
+      <View style={styles.nowText}>
+        <View style={styles.kicker}>
+          <View style={styles.dot} />
+          <Text style={styles.kickerText} numberOfLines={1}>{up(t('djs.at', { venue: set.venue }))}{sample ? ` · ${up(t('djs.example'))}` : ''}</Text>
+        </View>
+        <Text style={styles.nowName} numberOfLines={2}>{dj.name}</Text>
+        <Text style={styles.mono}>{upperData(dj.genre)}{followed ? ` · ${up(t('djs.youFollow'))}` : ''}</Text>
+        <View style={styles.bar}>
+          <View style={[styles.barFill, { width: `${progress * 100}%` }]} />
+        </View>
+        <View style={styles.times}>
+          <Text style={styles.time}>{hhmm(set.startsAt)}</Text>
+          <Text style={styles.time}>{hhmm(new Date(ends))}</Text>
+        </View>
+        <Pressable onPress={() => (listening ? ambient.toggle() : ambient.setGenre(dj.sound))} accessibilityRole="button" style={({ pressed }) => [styles.listen, listening && styles.listenOn, pressed && styles.pressed]}>
+          <Text style={[styles.listenText, listening && styles.listenTextOn]}>{listening ? t('djs.listening') : t('djs.listen')}</Text>
+        </Pressable>
+      </View>
     </Pressable>
   );
 }
@@ -110,20 +250,52 @@ function Row({ set, dj, right }: { set: DjSet; dj: Dj; right: string }) {
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, backgroundColor: colors.ink, zIndex: 2 },
-  title: { position: 'absolute', top: brand.top, left: brand.left, fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },
-  body: { paddingTop: brand.top + 48, paddingHorizontal: brand.left },
-  hero: { height: 240, backgroundColor: colors.ink2, borderRadius: radius.lg, overflow: 'hidden' },
-  heroPhoto: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
-  heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 110, backgroundColor: colors.ink, opacity: 0.72 },
-  heroText: { position: 'absolute', left: 16, right: 16, bottom: 14, gap: 4 },
-  heroName: { fontFamily: fonts.medium, fontSize: 34, lineHeight: 36, letterSpacing: -1, color: colors.paper },
-  mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
-  live: { color: colors.spot },
-  section: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginTop: 26, marginBottom: 4 },
-  row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: colors.ink3 },
-  pressed: { opacity: 0.6 },
-  sq: { width: 48, height: 48, borderRadius: radius.sm, overflow: 'hidden', backgroundColor: colors.ink2 },
-  rowText: { flex: 1, gap: 2 },
-  name: { fontFamily: fonts.medium, fontSize: 17, letterSpacing: -0.3, color: colors.paper },
-  when: { fontFamily: fonts.regular, fontSize: 13, color: colors.mute, fontVariant: ['tabular-nums'] },
+  title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
+  body: { paddingTop: brand.top + 48 },
+  pressed: { opacity: 0.7 },
+  dim: { opacity: 0.3 },
+  note: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta, paddingHorizontal: brand.left, marginBottom: 10 },
+  chips: { gap: 8, paddingHorizontal: brand.left },
+  chip: { paddingVertical: 6, paddingHorizontal: 12, borderRadius: radius.pill, borderWidth: 1, borderColor: colors.ink3 },
+  chipOn: { backgroundColor: colors.paper, borderColor: colors.paper },
+  chipText: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1, color: colors.mute },
+  chipTextOn: { color: colors.ink },
+  sec: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', paddingHorizontal: brand.left, marginTop: 26, marginBottom: 12 },
+  secText: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta },
+  secRed: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.spotText },
+  strip: { gap: 14, paddingHorizontal: brand.left },
+  person: { width: 62, alignItems: 'center', gap: 6 },
+  personName: { fontFamily: fonts.regular, fontSize: 10.5, color: colors.mute, maxWidth: 64 },
+  ringBox: { width: 60, height: 60 },
+  ring: { width: 60, height: 60, borderRadius: 30, padding: 3, borderWidth: 1.5, borderColor: colors.ink3, backgroundColor: colors.ink },
+  ringNew: { borderColor: colors.spot, borderWidth: 2.5 },
+  ringSeen: { borderColor: colors.mute },
+  ringPhoto: { width: '100%', height: '100%', borderRadius: 27 },
+  liveTag: { position: 'absolute', right: -2, bottom: 0, fontFamily: fonts.jet, fontSize: 7.5, letterSpacing: 0.6, color: colors.paper, backgroundColor: colors.spot, borderRadius: radius.pill, paddingHorizontal: 5, paddingVertical: 1, overflow: 'hidden' },
+  results: { paddingHorizontal: brand.left },
+  result: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 11, borderTopWidth: 1, borderTopColor: colors.ink3 },
+  resultPhoto: { width: 44, height: 44, borderRadius: radius.sm },
+  resultText: { flex: 1 },
+  resultName: { fontFamily: fonts.semibold, fontSize: 17, letterSpacing: -0.4, color: colors.paper },
+  liveTagInline: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 0.6, color: colors.paper, backgroundColor: colors.spot, borderRadius: radius.pill, paddingHorizontal: 6, paddingVertical: 2, overflow: 'hidden' },
+  chev: { fontSize: 20, color: colors.mute },
+  now: { marginHorizontal: 16, padding: 16, borderRadius: radius.lg, backgroundColor: colors.ink2, flexDirection: 'row', alignItems: 'center', gap: 16 },
+  nowEmpty: { paddingVertical: 28 },
+  nowEmptyText: { fontFamily: fonts.regular, fontSize: 14, color: colors.mute },
+  nowText: { flex: 1 },
+  kicker: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  dot: { width: 6, height: 6, borderRadius: 3, backgroundColor: colors.spot },
+  kickerText: { flex: 1, fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.spotText },
+  nowName: { fontFamily: fonts.semibold, fontSize: 26, lineHeight: 27, letterSpacing: -0.8, color: colors.paper, marginTop: 6 },
+  mono: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 0.8, color: colors.mute, marginTop: 3 },
+  bar: { height: 3, borderRadius: 2, backgroundColor: colors.ink3, marginTop: 12, overflow: 'hidden' },
+  barFill: { height: '100%', backgroundColor: colors.spot },
+  times: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 },
+  time: { fontFamily: fonts.jet, fontSize: 9.5, color: colors.meta },
+  listen: { alignSelf: 'flex-start', marginTop: 12, paddingVertical: 7, paddingHorizontal: 14, borderRadius: radius.pill, backgroundColor: colors.paper },
+  listenOn: { backgroundColor: colors.spot },
+  listenText: { fontFamily: fonts.medium, fontSize: 12.5, color: colors.ink },
+  listenTextOn: { color: colors.paper },
+  also: { fontFamily: fonts.regular, fontSize: 12, color: colors.meta, paddingHorizontal: brand.left, marginTop: 8 },
+  foot: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.4, color: colors.meta, paddingHorizontal: brand.left, marginTop: 14 },
 });

@@ -51,7 +51,7 @@ export default function WelcomeScreen() {
       const r = await saveProfile({ handle, name, city, bio: '' });
       if (r === 'ok') {
         if (city) Storage.setItemSync('city', city);
-        router.replace('/yours');
+        router.replace('/flow');
         return;
       }
       setNote(r);
@@ -79,7 +79,7 @@ export default function WelcomeScreen() {
           {note ? <Text style={styles.hint}>{say(note)}</Text> : null}
           <View style={styles.cta}>
             <Button label={busy ? t('word.moment') : t('signup.done')} onPress={done} />
-            <Text style={styles.skip} onPress={() => router.replace('/yours')}>
+            <Text style={styles.skip} onPress={() => router.replace('/flow')}>
               {t('signup.later')}
             </Text>
           </View>

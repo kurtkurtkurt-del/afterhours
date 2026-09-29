@@ -9,6 +9,9 @@ import type { Key } from '@/i18n/dict';
 
 // Password reset links open the website, where the new password is entered.
 const RESET_URL = 'https://kurtkurtkurt-del.github.io/afterhours/reset/';
+// The confirmation link in the sign-up email opens the website's sign-in page, which
+// picks up the session from the link. Without it Supabase falls back to its Site URL.
+const CONFIRM_URL = 'https://kurtkurtkurt-del.github.io/afterhours/login/';
 
 type Auth = {
   session: Session | null;
@@ -87,7 +90,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (cur.session?.user.is_anonymous) {
         // The anonymous session becomes an account: swipes and profile stay on the same user.
         // With email confirmation on, the user stays anonymous until they click the link.
-        const { data, error } = await supabase.auth.updateUser({ email: email.trim(), password });
+        const { data, error } = await supabase.auth.updateUser({ email: email.trim(), password }, { emailRedirectTo: CONFIRM_URL });
         if (error) {
           if (/already|registered|exists/i.test(error.message)) {
             return t('auth.exists');
@@ -97,7 +100,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         if (data.user?.is_anonymous || data.user?.new_email) return t('auth.confirm');
         return null;
       }
-      const { data, error } = await supabase.auth.signUp({ email: email.trim(), password, options: { data: city ? { city } : {} } });
+      const { data, error } = await supabase.auth.signUp({ email: email.trim(), password, options: { data: city ? { city } : {}, emailRedirectTo: CONFIRM_URL } });
       if (error) {
         if (/already|registered|exists/i.test(error.message)) return signIn(email, password);
         return plain(error.message);

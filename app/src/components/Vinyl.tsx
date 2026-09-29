@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View, type ImageSourcePropType } from 'react-native';
 import Animated, { Easing, cancelAnimation, useAnimatedStyle, useSharedValue, withRepeat, withTiming } from 'react-native-reanimated';
 import Svg, { Circle } from 'react-native-svg';
 
-type Props = { size: number; label: number; spinning: boolean };
+type Props = { size: number; label: ImageSourcePropType; spinning: boolean };
 
 // Record: dark disc, fine grooves, the photo as the label. Spins while playing.
 export default function Vinyl({ size, label, spinning }: Props) {

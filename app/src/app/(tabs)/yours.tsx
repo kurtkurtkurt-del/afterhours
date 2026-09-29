@@ -47,9 +47,12 @@ export default function YoursScreen() {
       live = false;
     };
   }, [uid, real.ready]);
-  // Without friends: sample data with a "sample" note; real data otherwise.
-  const sample = real.ready && real.friends.length === 0;
-  const friends: YoursFriend[] = sample
+  // Samples fill whatever is still empty, each with a "sample" note: the friend row
+  // until you have friends (a pending request counts), the feed until a friend keeps
+  // a night. A first friend request no longer empties the whole screen.
+  const sampleRow = real.ready && real.friends.length === 0;
+  const sample = real.ready && real.nights.length === 0;
+  const friends: YoursFriend[] = sampleRow
     ? sampleFriends.map((f) => ({ id: f.id, name: f.name, handle: f.handle, live: f.live, kept: f.kept }))
     : real.friends;
   const nights: YoursNight[] = sample
@@ -57,7 +60,11 @@ export default function YoursScreen() {
     : real.nights;
   const matches: YoursMatch[] = sample ? sampleMatches.map((m) => ({ friend: sampleFriendById(m.friend).name, night: m.night })) : real.matches;
   const nightById = (id: string) => nights.find((n) => n.id === id);
-  const live = useMemo(() => new Set(friends.filter((f) => f.live).map((f) => f.name)), [friends]);
+  // Live names for the feed's squares: sample friends go with the sample feed.
+  const live = useMemo(
+    () => new Set((sample ? sampleFriends : friends).filter((f) => f.live).map((f) => f.name)),
+    [sample, friends],
+  );
   const [meToo, setMeToo] = useState<Record<string, boolean>>({});
   const [asking, setAsking] = useState<string | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>({});

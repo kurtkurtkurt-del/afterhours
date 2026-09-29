@@ -14,7 +14,7 @@ import { brand } from '@/theme/layout';
 
 // ------------------------------------------------------------ search field
 
-export function PeopleSearch({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+export function PeopleSearch({ value, onChange, placeholder }: { value: string; onChange: (v: string) => void; placeholder?: string }) {
   const { t } = useLang();
   return (
     <View style={styles.search}>
@@ -25,7 +25,7 @@ export function PeopleSearch({ value, onChange }: { value: string; onChange: (v:
       <TextInput
         value={value}
         onChangeText={onChange}
-        placeholder={t('people.search')}
+        placeholder={placeholder ?? t('people.search')}
         placeholderTextColor={colors.meta}
         selectionColor={colors.spot}
         cursorColor={colors.paper}

@@ -1,3 +1,4 @@
+import * as Linking from 'expo-linking';
 import * as WebBrowser from 'expo-web-browser';
 import { supabase } from '@/lib/supabase';
 
@@ -8,7 +9,10 @@ import { supabase } from '@/lib/supabase';
 // Pressed as a guest, Google is linked to the same user (swipes are kept).
 // If "manual linking" is off in the Supabase dashboard linking is refused; then a
 // normal sign-in happens and the guest's swipes stay with the guest.
-const REDIRECT = 'afterhours://auth-callback';
+// afterhours://auth-callback in a real build; in Expo Go the app has no scheme of its
+// own, so the return address is Expo Go's exp://…/--/auth-callback (allowed in Supabase
+// with the redirect pattern exp://**).
+const REDIRECT = Linking.createURL('auth-callback');
 
 WebBrowser.maybeCompleteAuthSession();
 

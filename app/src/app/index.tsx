@@ -15,7 +15,7 @@ export default function Home() {
   const { ready, session } = useAuth();
   // Returning users (account or guest) skip the intro.
   useEffect(() => {
-    if (ready && session) router.replace('/yours');
+    if (ready && session) router.replace('/flow');
   }, [ready, session]);
   return (
     <View style={styles.root}>

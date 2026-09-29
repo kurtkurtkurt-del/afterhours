@@ -30,7 +30,7 @@ export default function ExploreScreen() {
   const pick = (id: string) => {
     chooseCity(id, cities.find((c) => c.id === id)?.name ?? id);
     // Sign-up follows the city; users with a session go straight in.
-    router.replace(session ? '/yours' : '/signup');
+    router.replace(session ? '/flow' : '/signup');
   };
 
   if (intro) {

@@ -18,6 +18,8 @@ type Ambient = {
   pickerOpen: boolean;
   openPicker: () => void;
   closePicker: () => void;
+  // Something else is playing (a DJ clip): fade out without changing the preference.
+  hush: (quiet: boolean) => void;
 };
 const Ctx = createContext<Ambient>({
   on: false,
@@ -27,6 +29,7 @@ const Ctx = createContext<Ambient>({
   pickerOpen: false,
   openPicker: () => {},
   closePicker: () => {},
+  hush: () => {},
 });
 
 const isGenre = (v: string | null): v is Genre => genres.some((g) => g.id === v);
@@ -40,6 +43,7 @@ export function AmbientProvider({ children }: { children: ReactNode }) {
     return isGenre(v) ? v : 'house';
   });
   const [pickerOpen, setPickerOpen] = useState(false);
+  const [hushed, setHushed] = useState(false);
   // Until sound is turned on the engine gets an empty list, so nothing is fetched while off.
   const [armedOnce, setArmedOnce] = useState(false);
   const armed = on || armedOnce;
@@ -69,19 +73,31 @@ export function AmbientProvider({ children }: { children: ReactNode }) {
 
   const openPicker = useCallback(() => setPickerOpen(true), []);
   const closePicker = useCallback(() => setPickerOpen(false), []);
+  const hush = useCallback((quiet: boolean) => setHushed(quiet), []);
 
   return (
-    <Ctx.Provider value={{ on, toggle, genre, setGenre, pickerOpen, openPicker, closePicker }}>
+    <Ctx.Provider value={{ on, toggle, genre, setGenre, pickerOpen, openPicker, closePicker, hush }}>
       {/* A genre change remounts the engine: new playlist from scratch. */}
-      <Engine key={genre} genre={genre} on={on} armed={armed} />
+      <Engine key={genre} genre={genre} on={on && !hushed} armed={armed} />
       {children}
     </Ctx.Provider>
   );
 }
 
+function shuffle<T>(items: T[]): T[] {
+  const out = [...items];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
 // The player. Invisible; it only drives the playlist.
 function Engine({ genre, on, armed }: { genre: Genre; on: boolean; armed: boolean }) {
-  const playlist = useAudioPlaylist({ sources: armed ? tracks[genre] : [], loop: 'all' });
+  // A fresh order every launch (and every genre change), so it never opens on the same track.
+  const [order] = useState(() => shuffle(tracks[genre]));
+  const playlist = useAudioPlaylist({ sources: armed ? order : [], loop: 'all' });
   const p = useRef(playlist);
   useEffect(() => {
     p.current = playlist;
