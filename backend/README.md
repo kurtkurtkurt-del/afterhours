@@ -32,6 +32,8 @@ sql/21_sound.sql         the sound bucket: background music streams from here
 sql/22_hardening.sql     what the review closed: column grants, guests, door test, follow counts
 sql/23_checkin_open.sql  check-in without the door test and the time window
 sql/24_photos.sql        the photograph on a profile: profile_photos + photo_set() + the photos bucket; yours and your confirmed friends only
+sql/25_people.sql        finding people: people_search() by handle or name, people_suggested() friends of friends then your city; discoverable people only
+sql/26_push.sql          push notifications: push_tokens + push_register() (language, time zone); ten switches on profile_settings; triggers on friendships / swipes / checkins / room_posts / comments and the hourly push_hourly() job fill push_outbox; pg_net sends to Expo, push_flush() every 5 min sends what quiet hours held back and push_prune() forgets gone phones. Needs pg_net and pg_cron
 sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities
 
 tools/build-seed.mjs     builds 03/04/05 from the front-end data
