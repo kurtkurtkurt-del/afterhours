@@ -1,7 +1,8 @@
 import type { Night } from '@/data/deck';
 import { t, tx } from '@/i18n/core';
 
-export type When = 'tonight' | 'tomorrow' | 'weekend' | 'week' | 'month';
+// A preset, or one night picked in the day strip: 'day:YYYY-MM-DD' (local date).
+export type When = 'tonight' | 'tomorrow' | 'weekend' | 'week' | 'month' | `day:${string}`;
 
 // label is the English fallback; screens translate with tx('when.' + id, label).
 export const whens: { id: When; label: string }[] = [
@@ -15,9 +16,34 @@ export const whens: { id: When; label: string }[] = [
 const H = 3600_000;
 const D = 24 * H;
 
+const two = (n: number) => String(n).padStart(2, '0');
+// 'day:2026-10-03' for a date; today and tomorrow use the presets instead.
+export const dayWhen = (d: Date): When => `day:${d.getFullYear()}-${two(d.getMonth() + 1)}-${two(d.getDate())}`;
+const dayOf = (when: string) => {
+  const m = /^day:(\d{4})-(\d{2})-(\d{2})$/.exec(when);
+  return m ? new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3])) : null;
+};
+
+// A stored choice that still makes sense: a preset, or a day that has not passed.
+export function isWhen(v: string | null): v is When {
+  if (!v) return false;
+  if (whens.some((w) => w.id === v)) return true;
+  const d = dayOf(v);
+  if (!d) return false;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return d.getTime() >= today.getTime();
+}
+
 // Time window [from, to]. The deck arrives unfiltered by date and is filtered here.
 function windowFor(when: When, now = new Date()): [number, number] {
   const ms = now.getTime();
+  const day = dayOf(when);
+  if (day) {
+    // one night: that day 12:00 → 08:00 the next morning
+    day.setHours(12, 0, 0, 0);
+    return [day.getTime(), day.getTime() + 20 * H];
+  }
   if (when === 'tonight') {
     // A night lasts until morning: until 08:00 tomorrow.
     const end = new Date(now);
@@ -53,7 +79,6 @@ function windowFor(when: When, now = new Date()): [number, number] {
 // Date and time formatted like the web: "thu 26.09 · 20:00" / "thu 26.09".
 // The weekday uses the language at call time (called during render).
 const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-const two = (n: number) => String(n).padStart(2, '0');
 export const dayName = (d: Date) => tx('day.' + DAYS[d.getDay()], DAYS[d.getDay()]);
 export function dayLabel(iso: string | null): string {
   if (!iso) return t('deck.tba');
@@ -61,6 +86,16 @@ export function dayLabel(iso: string | null): string {
   if (isNaN(d.getTime())) return t('deck.tba');
   return `${dayName(d)} ${two(d.getDate())}.${two(d.getMonth() + 1)}`;
 }
+// The pill's words for a choice: the preset's name, or "fri 3" for a picked day.
+export function whenName(when: When, say: (key: string, fallback?: string) => string): string {
+  const d = dayOf(when);
+  if (d) return `${say('day.' + DAYS[d.getDay()], DAYS[d.getDay()])} ${d.getDate()}`;
+  return say('when.' + when, when);
+}
+
+// How many of these nights fall in a window (for the counts in the picker).
+export const countWhen = (rows: Night[], when: When) => filterWhen(rows, when).length;
+
 // Nights without a date ("sommer 2027", "mittwochs") never fit a window and are dropped.
 export function filterWhen(rows: Night[], when: When | null): Night[] {
   if (!when) return rows;

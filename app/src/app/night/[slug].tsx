@@ -149,16 +149,19 @@ export default function NightScreen() {
     setSending(false);
   };
 
+  const band = (
+    <View style={styles.band}>
+      <BackButton />
+      <SoundCorner />
+    </View>
+  );
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
-      <View style={styles.band}>
-        <BackButton />
-        <SoundCorner />
-      </View>
+      {night ? null : band}
       {night ? (
         <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
-        <PullDownScroll contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
+        <PullDownScroll header={band} contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
           <View style={[styles.hero, { height: width * 1.1 }]}>
             <Image source={night.image_url ? { uri: night.image_url } : fallback} style={styles.heroPhoto} resizeMode="cover" />
             <View style={styles.heroShade} />

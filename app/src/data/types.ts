@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
+import { must, remember } from '@/lib/offline';
 
 type EventType = { id: string; label: string };
 
@@ -30,4 +31,15 @@ export function useEventTypes() {
     };
   }, []);
   return types;
+}
+
+// Published nights per type in a city (06_views.sql event_counts), for the counts in the
+// type picker. Everywhere (no city) has no counts.
+export async function typeCounts(city: string | null): Promise<Record<string, number> | null> {
+  if (!city) return null;
+  const rows = await remember('typeCounts', city, () => must(supabase.rpc('event_counts', { p_city: city })), 20).catch(() => null);
+  if (!rows) return null;
+  const out: Record<string, number> = {};
+  (rows as { type_slug: string; n: number }[]).forEach((r) => (out[r.type_slug] = Number(r.n)));
+  return out;
 }

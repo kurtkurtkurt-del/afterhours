@@ -43,10 +43,7 @@ export default function DjScreen() {
     return (
       <View style={styles.root}>
         <StatusBar style="light" />
-        <View style={styles.band}>
-          <BackButton />
-        </View>
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Text style={styles.mono}>{up(t('dj.none'))}</Text>
         </View>
       </View>
@@ -66,6 +63,11 @@ export default function DjScreen() {
   // Each recorded set plays its own excerpt (content/soundtracks.ts: setTracks).
   const play = (i: number) => clip.play(String(i), setTracks[i % setTracks.length]);
 
+  const band = (
+    <View style={styles.band}>
+        <BackButton />
+      </View>
+  );
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
@@ -75,7 +77,7 @@ export default function DjScreen() {
           <Text style={[styles.followText, following && styles.followOn]}>{following ? t('dj.following') : t('dj.follow')}</Text>
         </Pressable>
       </View>
-      <PullDownScroll contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false}>
+      <PullDownScroll header={band} contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false}>
         {/* Cover */}
         <View style={[styles.hero, { height: width * 1.05 }]}>
           <Image source={dj.photoUrl ? { uri: dj.photoUrl } : dj.photo} style={styles.heroPhoto} />

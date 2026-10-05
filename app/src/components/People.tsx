@@ -153,8 +153,11 @@ export const SAMPLES: Suggested[] = [
   { id: 'sample-3', handle: 'jonas', display_name: 'jonas', city_name: null, mutual: 0, reason: 'new' },
 ];
 
-export function PeopleSuggested() {
-  const { t, tn, up } = useLang();
+// Suggestions as small squares at the end of the friend row on yours, after "add":
+// a thin divider with the word, then people two to a column. Tap the square for the
+// profile, the red + to send a request (a check once asked).
+export function SuggestedInRow() {
+  const { t, up } = useLang();
   const { session } = useAuth();
   const { after, busy, act, member } = useConnect();
   const [rows, setRows] = useState<Suggested[] | null>(null);
@@ -164,7 +167,7 @@ export function PeopleSuggested() {
   useEffect(() => {
     if (!uid) return;
     let alive = true;
-    peopleSuggested(3)
+    peopleSuggested(6)
       .then((r) => alive && setRows(r))
       .catch(() => alive && setRows([]));
     return () => {
@@ -174,41 +177,45 @@ export function PeopleSuggested() {
 
   const sample = !uid || (rows !== null && rows.length === 0);
   const list = sample ? SAMPLES : (rows ?? []);
-  if (!sample && rows === null) return null;
-
-  const reason = (p: Suggested) =>
-    p.reason === 'mutual' ? tn('people.mutual', p.mutual) : p.reason === 'city' && p.city_name ? t('people.city', { city: p.city_name }) : t('people.new');
+  if (!list.length) return null;
+  const cols: Suggested[][] = [];
+  for (let i = 0; i < list.length; i += 2) cols.push(list.slice(i, i + 2));
 
   return (
-    <View style={styles.suggested}>
-      <Text style={styles.section}>
-        {up(t('people.suggested'))}
-        {sample ? <Text style={styles.sectionNote}>{'  ·  '}{up(member ? t('people.sampleMember') : t('people.sample'))}</Text> : null}
-      </Text>
-      <View style={styles.cards}>
-        {list.map((p) => {
-          const name = (p.display_name ?? p.handle).toLowerCase();
-          const relation: Relation = sample ? (sampleAdded[p.id] ? 'outgoing' : 'none') : (after[p.id] ?? 'none');
-          return (
-            <View key={p.id} style={styles.card}>
-              <Pressable onPress={() => openPerson(p.handle, sample)} accessibilityRole="button" style={({ pressed }) => [styles.cardOpen, pressed && styles.pressed]}>
-                <Initial name={name} small />
-                <Text style={styles.cardName} numberOfLines={1}>{name}</Text>
-                <Text style={styles.cardHandle} numberOfLines={1}>@{p.handle}</Text>
-                <Text style={styles.cardReason} numberOfLines={1}>{reason(p)}</Text>
-              </Pressable>
-              <ActionButton
-                compact
-                relation={relation}
-                busy={busy === p.id}
-                // sample person: guests go to sign-up, members only see it marked
-                onPress={() => (sample ? (member ? setSampleAdded((s) => ({ ...s, [p.id]: true })) : router.push('/signup')) : act(p, relation))}
-              />
-            </View>
-          );
-        })}
+    <>
+      <View style={styles.rowDivider}>
+        <Text style={styles.rowWord}>{up(t('people.suggested'))}</Text>
       </View>
-    </View>
+      {cols.map((col, i) => (
+        <View key={i} style={styles.rowCol}>
+          {col.map((p) => {
+            const name = (p.display_name ?? p.handle).toLowerCase();
+            const relation: Relation = sample ? (sampleAdded[p.id] ? 'outgoing' : 'none') : (after[p.id] ?? 'none');
+            const asked = relation === 'outgoing' || relation === 'friend';
+            return (
+              <View key={p.id} style={styles.mini}>
+                <Pressable onPress={() => openPerson(p.handle, sample)} accessibilityRole="button" accessibilityLabel={name} style={({ pressed }) => pressed && styles.pressed}>
+                  <View style={styles.miniSquare}>
+                    <Text style={styles.miniInitial}>{name.charAt(0)}</Text>
+                  </View>
+                </Pressable>
+                <Pressable
+                  onPress={() => (sample ? (member ? setSampleAdded((x) => ({ ...x, [p.id]: true })) : router.push('/signup')) : act(p, relation))}
+                  disabled={asked || busy === p.id}
+                  hitSlop={8}
+                  accessibilityRole="button"
+                  accessibilityLabel={t('people.add')}
+                  style={[styles.badge, asked && styles.badgeDone]}
+                >
+                  <Text style={[styles.badgeText, asked && styles.badgeTextDone]}>{asked ? '✓' : '+'}</Text>
+                </Pressable>
+                <Text style={styles.miniName} numberOfLines={1}>{name}</Text>
+              </View>
+            );
+          })}
+        </View>
+      ))}
+    </>
   );
 }
 
@@ -227,19 +234,21 @@ const styles = StyleSheet.create({
   initialText: { fontFamily: fonts.medium, fontSize: 18, color: colors.paper },
   initialSmall: { width: 34, height: 34, borderRadius: radius.xs + 2 },
   initialTextSmall: { fontSize: 14 },
-  suggested: { marginTop: 26 },
-  section: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta, paddingHorizontal: brand.left },
-  sectionNote: { color: colors.ink2 },
-  cards: { flexDirection: 'row', gap: 8, paddingHorizontal: brand.left, marginTop: 12 },
-  card: { flex: 1, minWidth: 0, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md, paddingVertical: 9, paddingHorizontal: 8, alignItems: 'center', gap: 2 },
-  cardOpen: { alignItems: 'center', gap: 1, alignSelf: 'stretch' },
-  cardName: { fontFamily: fonts.semibold, fontSize: 13.5, letterSpacing: -0.3, color: colors.paper, marginTop: 5 },
-  cardHandle: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 0.4, color: colors.mute },
-  cardReason: { fontFamily: fonts.regular, fontSize: 10.5, lineHeight: 13, color: colors.meta, textAlign: 'center', marginTop: 1, marginBottom: 6 },
   btnRed: { paddingVertical: 8, paddingHorizontal: 14, backgroundColor: colors.spot, borderRadius: radius.pill, minWidth: 64, alignItems: 'center' },
   btnLine: { paddingVertical: 7, paddingHorizontal: 13, borderWidth: 1, borderColor: colors.paper, borderRadius: radius.pill, minWidth: 64, alignItems: 'center' },
   btnCompact: { alignSelf: 'stretch', minWidth: 0, paddingVertical: 5, paddingHorizontal: 8 },
   btnWide: { alignSelf: 'flex-start', paddingVertical: 11, paddingHorizontal: 22 },
+  rowDivider: { width: 14, alignItems: 'center', justifyContent: 'center', borderLeftWidth: 1, borderLeftColor: colors.ink3, marginLeft: 4 },
+  rowWord: { position: 'absolute', width: 110, textAlign: 'center', transform: [{ rotate: '-90deg' }], fontFamily: fonts.regular, fontSize: 8.5, letterSpacing: 1.4, color: colors.meta },
+  rowCol: { gap: 14, paddingTop: 4 },
+  mini: { width: 42, alignItems: 'center', gap: 4 },
+  miniSquare: { width: 38, height: 38, borderRadius: radius.sm, borderWidth: 1.5, borderColor: colors.mute, borderStyle: 'dashed', alignItems: 'center', justifyContent: 'center' },
+  miniInitial: { fontFamily: fonts.medium, fontSize: 15, color: colors.mute },
+  badge: { position: 'absolute', top: -5, right: -3, width: 17, height: 17, borderRadius: 9, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center', borderWidth: 1.5, borderColor: colors.ink },
+  badgeDone: { backgroundColor: colors.paper },
+  badgeText: { fontFamily: fonts.semibold, fontSize: 11, lineHeight: 13, color: colors.paper },
+  badgeTextDone: { color: colors.ink, fontSize: 9 },
+  miniName: { fontFamily: fonts.regular, fontSize: 9, color: colors.meta, maxWidth: 44 },
   btnTextRed: { fontFamily: fonts.medium, fontSize: 13, color: colors.ink },
   btnTextLine: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper },
   pressed: { opacity: 0.6 },

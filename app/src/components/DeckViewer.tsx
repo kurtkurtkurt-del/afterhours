@@ -1,39 +1,44 @@
-import { useEffect, useState } from 'react';
-import { BackHandler, FlatList, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
-import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import Animated, { Extrapolation, interpolate, runOnJS, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { BackHandler, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import CardFace, { Hint, openDetails, openTicket, type DeckCard } from '@/components/CardFace';
+import Svg, { Path } from 'react-native-svg';
+import Deck, { isCard, type CardEntry, type DeckEntry, type DeckHandle } from '@/components/Deck';
+import type { DeckCard } from '@/components/CardFace';
 import SoundCorner from '@/components/SoundCorner';
 import { useTabBarSpace } from '@/components/TabBar';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-
 type Props = {
   cards: DeckCard[];
-  // friends: nights friends kept (strip: keep) · mine: nights you kept (strip: ticket)
-  // wave2 / wave3: friends of friends; behave like friends (strip: keep)
+  // friends: nights friends kept · mine: nights you kept
+  // wave2 / wave3: friends of friends; behave like friends
   mode: 'friends' | 'mine' | 'wave2' | 'wave3';
   sample?: boolean; // sample cards: noted in the top label
-  kept: Record<string, boolean>;
-  onKeep: (card: DeckCard) => void;
+  onKeep: (card: DeckCard) => void;   // swiped right (not in your own deck)
+  onLetGo: (card: DeckCard) => void;  // swiped left (not in your own deck)
+  onUndo: (card: DeckCard) => void;   // a swipe taken back
   onClose: () => void;
   empty: string;
 };
 
-const PULL = 90; // pulled this far up or down counts as a decision
 const two = (n: number) => String(n).padStart(2, '0');
 
-// Browse a deck: card face, swipe sideways for the next card, up for the ticket, down for the night page.
+// The decks on yours, played exactly like the flow: the card flies off to the right
+// (keep) or the left (let go), up opens the ticket, down the night page, and undo
+// brings the last one back. Your own deck only browses: swiping there changes nothing.
 // With no cards, tapping the centre text closes it.
-export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty, sample }: Props) {
-  const { width } = useWindowDimensions();
+export default function DeckViewer({ cards, mode, onKeep, onLetGo, onUndo, onClose, empty, sample }: Props) {
   const insets = useSafeAreaInsets();
   const tabSpace = useTabBarSpace();
-  const [index, setIndex] = useState(0);
   const { t, up } = useLang();
+  const deck = useRef<DeckHandle>(null);
+  const [swiped, setSwiped] = useState(0);
+  const [deal, setDeal] = useState(0);
+  const [headBottom, setHeadBottom] = useState(0);
+  const entries = useMemo<CardEntry[]>(() => cards.map((card) => ({ id: card.key, card })), [cards]);
+  const writes = mode !== 'mine';
 
   // Android back closes the deck.
   useEffect(() => {
@@ -45,7 +50,20 @@ export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty, 
   }, [onClose]);
 
   const total = cards.length;
-  const city = (cards[index]?.city ?? '').slice(0, 3);
+  const at = Math.min(swiped, total - 1);
+  const city = (cards[at]?.city ?? '').slice(0, 3);
+  const top = Math.max(brand.top, insets.top + 24);
+
+  const swipe = (entry: DeckEntry, direction: 'left' | 'right') => {
+    setSwiped((n) => n + 1);
+    if (!writes || !isCard(entry)) return;
+    if (direction === 'right') onKeep(entry.card);
+    else onLetGo(entry.card);
+  };
+  const undo = (entry: DeckEntry) => {
+    setSwiped((n) => Math.max(0, n - 1));
+    if (writes && isCard(entry)) onUndo(entry.card);
+  };
 
   return (
     <View style={[StyleSheet.absoluteFill, styles.layer]}>
@@ -56,32 +74,42 @@ export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty, 
             <Text style={styles.emptyHint}>{t('deck.tapBack')}</Text>
           </Pressable>
         ) : (
-          <FlatList
-            data={cards}
-            keyExtractor={(c) => c.key}
-            horizontal
-            pagingEnabled
-            showsHorizontalScrollIndicator={false}
-            onMomentumScrollEnd={(e) => setIndex(Math.max(0, Math.round(e.nativeEvent.contentOffset.x / width)))}
-            renderItem={({ item }) => (
-              <Card card={item} mode={mode === 'mine' ? 'mine' : 'friends'} isKept={mode !== 'mine' && !!(item.slug ? kept[item.slug] : kept[item.key])} onKeep={onKeep} width={width} bottom={tabSpace + 4} />
-            )}
+          <Deck
+            ref={deck}
+            key={`${mode}/${deal}`}
+            nights={entries}
+            bottom={tabSpace + 4}
+            top={(headBottom || top + 30) + 14}
+            onSwipe={swipe}
+            onUndo={undo}
+            onReset={() => {
+              setSwiped(0);
+              setDeal((n) => n + 1);
+            }}
           />
         )}
 
-        {/* Top: city · position, sound on the right. */}
-        <View style={[styles.top, { top: Math.max(brand.top, insets.top + 24) }]} pointerEvents="box-none">
+        {/* Top: which deck · position, undo, close; sound on the right. */}
+        <View style={[styles.top, { top }]} pointerEvents="box-none" onLayout={(e) => setHeadBottom(e.nativeEvent.layout.y + e.nativeEvent.layout.height)}>
           <View style={styles.chip}>
-            <Text style={styles.chipText}>
+            <Text style={styles.chipText} numberOfLines={1}>
               {[
-                mode === 'wave2' ? up(t('deck.wave2')) : mode === 'wave3' ? up(t('deck.wave3')) : null,
-                total ? `${city} · ${two(index + 1)}/${two(total)}` : mode === 'mine' ? t('deck.yours') : mode === 'friends' ? t('deck.friends') : null,
+                mode === 'wave2' ? up(t('deck.wave2')) : mode === 'wave3' ? up(t('deck.wave3')) : mode === 'mine' ? t('deck.yours') : t('deck.friends'),
+                total ? `${city} · ${two(Math.min(swiped + 1, total))}/${two(total)}` : null,
                 sample ? up(t('deck.sample')) : null,
               ]
                 .filter(Boolean)
                 .join(' · ')}
             </Text>
           </View>
+          {swiped > 0 ? (
+            <Pressable onPress={() => deck.current?.undo()} hitSlop={8} accessibilityRole="button" style={({ pressed }) => [styles.undo, pressed && styles.pressed]}>
+              <Svg width={14} height={14} viewBox="0 0 14 14">
+                <Path d="M5 3 2 6l3 3M2 6h6.5a3.5 3.5 0 0 1 0 7H6" stroke={colors.paper} strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              </Svg>
+              <Text style={styles.undoText}>{t('flow.undo')}</Text>
+            </Pressable>
+          ) : null}
           <Pressable onPress={onClose} hitSlop={10} style={styles.close}>
             <Text style={styles.closeText}>{t('word.close')}</Text>
           </Pressable>
@@ -92,56 +120,15 @@ export default function DeckViewer({ cards, mode, kept, onKeep, onClose, empty, 
   );
 }
 
-function Card({ card, mode, isKept, onKeep, width, bottom }: { card: DeckCard; mode: 'friends' | 'mine'; isKept: boolean; onKeep: (c: DeckCard) => void; width: number; bottom: number }) {
-  const { t } = useLang();
-  const y = useSharedValue(0);
-  const ticket = () => openTicket(card);
-  const details = () => openDetails(card);
-
-  // Vertical pull: up = ticket, down = details. Horizontal movement pages between cards.
-  const pan = Gesture.Pan()
-    .activeOffsetY([-14, 14])
-    .failOffsetX([-14, 14])
-    .onUpdate((e) => {
-      y.set(e.translationY * 0.6);
-    })
-    .onEnd((e) => {
-      const d = e.translationY;
-      if (d < -PULL || e.velocityY < -900) runOnJS(ticket)();
-      else if (d > PULL || e.velocityY > 900) runOnJS(details)();
-      y.set(withSpring(0, { damping: 18, stiffness: 180 }));
-    });
-  const move = useAnimatedStyle(() => ({ transform: [{ translateY: y.value }] }));
-  const upHint = useAnimatedStyle(() => ({ opacity: interpolate(y.value, [-PULL * 0.6, -10], [1, 0], Extrapolation.CLAMP) }));
-  const downHint = useAnimatedStyle(() => ({ opacity: interpolate(y.value, [10, PULL * 0.6], [0, 1], Extrapolation.CLAMP) }));
-
-  const up = `${card.ticketUrl ? t('word.ticket') : t('deck.open')} ↑`;
-  const rightLabel = mode === 'mine' ? up : isKept ? t('deck.kept') : t('word.keep');
-  const rightPress = () => (mode === 'mine' ? ticket() : isKept ? undefined : onKeep(card));
-
-  return (
-    <GestureDetector gesture={pan}>
-      <Animated.View style={[{ width, flex: 1 }, move]}>
-        <CardFace card={card} bottom={bottom} rightLabel={rightLabel} rightDone={mode === 'friends' && isKept} onRight={rightPress} />
-        <Animated.View style={[styles.hint, styles.hintUp, upHint]} pointerEvents="none">
-          <Hint label={up} />
-        </Animated.View>
-        <Animated.View style={[styles.hint, { bottom: bottom + 8 }, downHint]} pointerEvents="none">
-          <Hint label={`${t('word.details')} ↓`} />
-        </Animated.View>
-      </Animated.View>
-    </GestureDetector>
-  );
-}
-
 const styles = StyleSheet.create({
   layer: { zIndex: 10, elevation: 10 },
   root: { flex: 1, backgroundColor: colors.ink },
-  hint: { position: 'absolute', left: 0, right: 0, alignItems: 'center' },
-  hintUp: { top: '38%' },
-  top: { position: 'absolute', left: brand.left, right: 120, flexDirection: 'row', alignItems: 'center', gap: 14 },
-  chip: { backgroundColor: colors.ink, paddingVertical: 5, paddingHorizontal: 10, borderRadius: radius.pill },
+  top: { position: 'absolute', left: brand.left, right: 96, flexDirection: 'row', alignItems: 'center', gap: 10 },
+  chip: { flexShrink: 1, height: 32, justifyContent: 'center', backgroundColor: 'rgba(14,13,12,0.82)', borderWidth: 1, borderColor: colors.ink3, paddingHorizontal: 12, borderRadius: radius.pill },
   chipText: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 0.8, color: colors.paper },
+  undo: { flexDirection: 'row', alignItems: 'center', gap: 6, height: 32, paddingHorizontal: 12, borderRadius: radius.pill, backgroundColor: 'rgba(14,13,12,0.82)' },
+  undoText: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper },
+  pressed: { opacity: 0.6 },
   close: { paddingVertical: 4 },
   closeText: { fontFamily: fonts.regular, fontSize: 12, color: colors.paper, textDecorationLine: 'underline' },
   empty: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 40, gap: 10 },

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Image, Linking, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, Linking, Pressable, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
 import { router } from 'expo-router';
 import { SvgUri } from 'react-native-svg';
 import { upperData, useLang } from '@/i18n';
@@ -19,9 +19,11 @@ export type DeckCard = {
   source: string;        // ticket / szene / ''
   startsAt: string | null;
   image: string | null;
+  local?: ImageSourcePropType; // a bundled photo (sparks)
   poster: string | null; // nights without a photo: the site's hand-drawn poster
   ticketUrl: string | null;
   friends: DeckFriend[]; // friends who kept this night
+  note?: string;         // a line under the facts (sparks: who started it, or how to start it)
   // Friends of friends: who it came through. path starts after you; the first name is
   // your friend, the last is the keeper (someone you do not know).
   via?: { wave: 2 | 3; path: string[] };
@@ -66,15 +68,16 @@ type Props = {
   // Flow: the poster is not cropped; it sits above the caption at its own ratio,
   // over a blurred copy of itself. top: upper bound for the poster.
   fit?: { top: number };
+  onDetails?: () => void; // instead of the night page (sparks have their own)
 };
 
 // Card face: full-bleed photo or poster, caption at the bottom (ink block, red Archivo
 // title, mono details, friend squares), "details ↓" on the left, the red main action on the right.
-export default function CardFace({ card, bottom, rightLabel, rightDone, onRight, fit }: Props) {
+export default function CardFace({ card, bottom, rightLabel, rightDone, onRight, fit, onDetails }: Props) {
   const [captionH, setCaptionH] = useState(0);
   const shown = card.friends.slice(0, 2);
   const more = card.friends.length - shown.length;
-  const details = () => openDetails(card);
+  const details = onDetails ?? (() => openDetails(card));
   const { t, tx, up } = useLang();
   // The type name comes from the database ("club night"); the key is built from its slug.
   // Use the translation when there is one, otherwise the data; uppercase accordingly.
@@ -86,8 +89,8 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
     <>
       {fit ? (
         <FitPoster card={card} top={fit.top} bottom={bottom + captionH + 12} ready={captionH > 0} />
-      ) : card.image ? (
-        <Image source={{ uri: card.image }} style={styles.photo} resizeMode="cover" />
+      ) : card.image || card.local ? (
+        <Image source={card.image ? { uri: card.image } : card.local!} style={styles.photo} resizeMode="cover" />
       ) : card.poster ? (
         <View style={styles.posterBox}>
           <SvgUri uri={card.poster} width="100%" height="100%" />
@@ -107,6 +110,7 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
           {card.venue ? <Text style={styles.jet} numberOfLines={1}>{upperData(card.venue)}</Text> : null}
           <Text style={styles.jet}>{stamp(card.startsAt) ?? up(t('deck.dateTba'))}</Text>
           {card.via ? <Chain via={card.via} /> : null}
+          {card.note ? <Text style={styles.note} numberOfLines={2}>{card.note}</Text> : null}
           {card.friends.length > 0 ? (
             <View style={styles.friends}>
               {shown.map((f) => (
@@ -154,13 +158,16 @@ function useRatio(uri: string | null, fallbackRatio: number) {
   return ratio;
 }
 
-const fallbackSize = Image.resolveAssetSource(fallback);
+const sizeOf = (source: ImageSourcePropType) => {
+  const s = Image.resolveAssetSource(source);
+  return s.width && s.height ? s.width / s.height : 2 / 3;
+};
 
 // Flow card: blurred backdrop + uncropped poster, fitted and centred between the chip and the caption.
 function FitPoster({ card, top, bottom, ready }: { card: DeckCard; top: number; bottom: number; ready: boolean }) {
   const [area, setArea] = useState<{ w: number; h: number } | null>(null);
   const svg = !card.image && !!card.poster;
-  const ratio = useRatio(card.image, svg ? 2 / 3 : fallbackSize.width / fallbackSize.height);
+  const ratio = useRatio(card.image, svg ? 2 / 3 : sizeOf(card.local ?? fallback));
   let w = 0;
   let h = 0;
   if (area) {
@@ -171,7 +178,7 @@ function FitPoster({ card, top, bottom, ready }: { card: DeckCard; top: number; 
       w = h * ratio;
     }
   }
-  const source = card.image ? { uri: card.image } : fallback;
+  const source = card.image ? { uri: card.image } : (card.local ?? fallback);
   return (
     <>
       {svg ? (
@@ -244,6 +251,7 @@ const styles = StyleSheet.create({
   sqLive: { backgroundColor: colors.spot, borderColor: colors.spot },
   sqText: { fontFamily: fonts.medium, fontSize: 12, color: colors.paper },
   sqTextLive: { color: colors.ink },
+  note: { fontFamily: fonts.regular, fontSize: 12.5, lineHeight: 17, color: colors.mute, marginTop: 12 },
   keptNote: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute, marginLeft: 6 },
   chain: { marginTop: 12, gap: 6 },
   chainRow: { flexDirection: 'row', alignItems: 'center' },

@@ -37,3 +37,40 @@ export function useProfile(tick = 0) {
   }, [uid, tick]);
   return session ? profile : null;
 }
+
+// 29_profile_more.sql: the longer text about you and links to other networks.
+// handle null = you. about is null when empty or not visible; links is {} for non-friends.
+export type LinkKind = 'instagram' | 'tiktok' | 'spotify' | 'soundcloud' | 'x' | 'website';
+export type Extra = { about: string | null; links: Partial<Record<LinkKind, string>> };
+export function useProfileExtra(handle: string | null, tick = 0, off = false) {
+  const { session } = useAuth();
+  const uid = session?.user.id;
+  const [extra, setExtra] = useState<Extra | null>(null);
+  useEffect(() => {
+    if (!uid || off) return;
+    let cancelled = false;
+    remember('profileExtra', handle ?? '', () => must(supabase.rpc('profile_extra', { p_handle: handle })))
+      .catch(() => null)
+      .then((data) => {
+        if (cancelled) return;
+        const row = (Array.isArray(data) ? data[0] : data) as Extra | undefined;
+        setExtra(row ? { about: row.about, links: row.links ?? {} } : { about: null, links: {} });
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [uid, handle, tick, off]);
+  return session && !off ? extra : null;
+}
+
+export async function saveAbout(about: string) {
+  const { error } = await supabase.rpc('profile_about_set', { p_about: about });
+  if (error) throw error;
+}
+
+// Returns 'ok' or 'format:<kind>' for the first value that does not fit.
+export async function saveLinks(links: Partial<Record<LinkKind, string>>): Promise<string> {
+  const { data, error } = await supabase.rpc('profile_links_set', { p_links: links });
+  if (error) throw error;
+  return String(data);
+}

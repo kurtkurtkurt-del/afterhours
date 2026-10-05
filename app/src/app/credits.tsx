@@ -37,6 +37,10 @@ export default function CreditsScreen() {
         ))}
         <Text style={styles.section}>{up(t('credits.map'))}</Text>
         <Text style={styles.note}>{t('credits.map.note')}</Text>
+        <Text style={styles.section}>{up(t('credits.photos'))}</Text>
+        <Text style={styles.note}>{t('credits.photos.note')}</Text>
+        <Text style={styles.section}>{up(t('credits.djphotos'))}</Text>
+        <Text style={styles.note}>{t('credits.djphotos.note')}</Text>
         <Text style={styles.section}>{up(t('credits.type'))}</Text>
         <Text style={styles.note}>{t('credits.type.note')}</Text>
         <Text style={styles.section}>{up(t('credits.nights'))}</Text>

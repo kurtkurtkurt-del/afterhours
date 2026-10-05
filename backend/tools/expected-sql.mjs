@@ -34,4 +34,10 @@ export const EXPECTED_SQL = [
   "24_photos.sql",
   "25_people.sql",
   "26_push.sql",
+  "27_sparks.sql",
+  "28_spark_waves.sql",
+  "29_profile_more.sql",
+  "30_spark_map.sql",
+  "31_past_feed.sql",
+  "32_rsvp.sql",
 ];

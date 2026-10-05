@@ -1,5 +1,5 @@
 // Sample DJs and sets, used when the djs table is empty or offline.
-// Photos are assets/djs/<id>.jpg placeholders; replacing the file is enough.
+// Photos are assets/djs/<id>.jpg: colour CC0 photos from Wikimedia Commons (CREDITS.md); replacing the file is enough.
 import type { Genre } from '@/content/music';
 
 export type Dj = { id: string; name: string; genre: string; sound: Genre; city: string; since: number; followers: string; photo: number; photoUrl?: string | null };

@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-09-29 16:11   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-05 18:33   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -6112,5 +6112,986 @@ revoke execute on function public.push_hourly(timestamptz)               from pu
 do $$ begin
   if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('26_push.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  SPARKS — NIGHTS YOU START, INVITES TO FRIENDS   (27_sparks.sql)
+-- ============================================================
+
+-- afterhours — sparks: nights you start yourself
+-- Every other card in the deck is a night someone else organises. A spark is
+-- one nobody has organised yet: the derby at yours, a grill at the river, a
+-- hike. Swiping a spark right creates it and invites friends; the invite
+-- reaches them inside the app, as a card on top of their scene deck, and they
+-- answer with the same swipe (right = in, left = out).
+--
+--   sparks          one row per plan: who hosts it, what, when, where
+--   spark_invites   who was asked, and what they answered
+--
+-- Nobody reads or writes the tables directly (no grants, RLS on with no
+-- policies). Everything goes through five definer calls that check who you are:
+--
+--   spark_create(kind, title, starts_at, place, invite[])   host: start one
+--   spark_inbox()                                           invited: open asks
+--   spark_answer(spark, answer)                             invited: in / out
+--   spark_mine()                                            host: yours + answers
+--   spark_cancel(spark)                                     host: call it off
+--
+-- Only confirmed friends can be invited; anyone else in the list is dropped
+-- without a word, so the call cannot be used to find out who exists.
+
+create table if not exists public.sparks (
+  id          uuid primary key default gen_random_uuid(),
+  host_id     uuid not null references public.profiles on delete cascade,
+  kind        text not null check (kind in ('derby', 'grill', 'hike')),
+  title       text not null check (char_length(btrim(title)) between 1 and 80),
+  starts_at   timestamptz not null,
+  place       text check (place is null or char_length(place) <= 80),
+  created_at  timestamptz not null default now()
+);
+create index if not exists sparks_host_idx on public.sparks (host_id, starts_at);
+
+create table if not exists public.spark_invites (
+  spark_id     uuid not null references public.sparks on delete cascade,
+  user_id      uuid not null references public.profiles on delete cascade,
+  answer       text not null default 'waiting' check (answer in ('waiting', 'in', 'out')),
+  answered_at  timestamptz,
+  primary key (spark_id, user_id)
+);
+create index if not exists spark_invites_user_idx on public.spark_invites (user_id, answer);
+
+alter table public.sparks        enable row level security;
+alter table public.spark_invites enable row level security;
+revoke all on public.sparks, public.spark_invites from public, anon, authenticated;
+
+-- --------------------------------------------------------------- create
+
+-- Returns the new id. Raises when you are signed out, the time is in the past,
+-- or none of the people asked is a confirmed friend.
+drop function if exists public.spark_create(text, text, timestamptz, text, uuid[]);
+create or replace function public.spark_create(
+  p_kind      text,
+  p_title     text,
+  p_starts_at timestamptz,
+  p_place     text,
+  p_invite    uuid[]
+)
+returns uuid
+language plpgsql
+volatile
+security definer
+set search_path = public
+as $$
+declare
+  me     uuid := auth.uid();
+  new_id uuid;
+begin
+  if me is null then
+    raise exception 'sign in first' using errcode = '42501';
+  end if;
+  if p_starts_at is null or p_starts_at < now() - interval '1 hour' then
+    raise exception 'that time has passed' using errcode = '22023';
+  end if;
+  if not exists (
+    select 1 from unnest(coalesce(p_invite, '{}'::uuid[])) as u(id)
+    where u.id <> me and public.is_friend(u.id)
+  ) then
+    raise exception 'invite at least one friend' using errcode = '22023';
+  end if;
+
+  insert into public.sparks (host_id, kind, title, starts_at, place)
+  values (me, p_kind, btrim(p_title), p_starts_at, nullif(btrim(coalesce(p_place, '')), ''))
+  returning id into new_id;
+
+  insert into public.spark_invites (spark_id, user_id)
+  select distinct new_id, u.id
+  from unnest(p_invite) as u(id)
+  where u.id <> me and public.is_friend(u.id);
+
+  return new_id;
+end;
+$$;
+
+-- ---------------------------------------------------------------- inbox
+
+-- Asks you have not answered yet, for plans that have not ended (a plan counts
+-- as running for six hours after it starts). Soonest first.
+drop function if exists public.spark_inbox();
+create or replace function public.spark_inbox()
+returns table (
+  id            uuid,
+  kind          text,
+  title         text,
+  starts_at     timestamptz,
+  place         text,
+  host_handle   text,
+  host_name     text,
+  going         int
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select s.id, s.kind, s.title, s.starts_at, s.place, p.handle, p.display_name,
+         (select count(*)::int from public.spark_invites g where g.spark_id = s.id and g.answer = 'in')
+  from public.spark_invites i
+  join public.sparks s on s.id = i.spark_id
+  join public.profiles p on p.id = s.host_id
+  where i.user_id = auth.uid()
+    and i.answer = 'waiting'
+    and s.starts_at > now() - interval '6 hours'
+  order by s.starts_at;
+$$;
+
+-- --------------------------------------------------------------- answer
+
+-- in or out. Answering again changes it (the deck has an undo).
+drop function if exists public.spark_answer(uuid, text);
+create or replace function public.spark_answer(p_spark uuid, p_answer text)
+returns void
+language plpgsql
+volatile
+security definer
+set search_path = public
+as $$
+begin
+  if p_answer not in ('in', 'out', 'waiting') then
+    raise exception 'answer is in, out or waiting' using errcode = '22023';
+  end if;
+  update public.spark_invites
+     set answer = p_answer,
+         answered_at = case when p_answer = 'waiting' then null else now() end
+   where spark_id = p_spark and user_id = auth.uid();
+  if not found then
+    raise exception 'no such invite' using errcode = '42501';
+  end if;
+end;
+$$;
+
+-- ----------------------------------------------------------------- mine
+
+-- What you host, with the answers so far. Ended plans drop off after a day.
+drop function if exists public.spark_mine();
+create or replace function public.spark_mine()
+returns table (
+  id         uuid,
+  kind       text,
+  title      text,
+  starts_at  timestamptz,
+  place      text,
+  invited    int,
+  going      int,
+  not_going  int
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select s.id, s.kind, s.title, s.starts_at, s.place,
+         count(i.user_id)::int,
+         count(*) filter (where i.answer = 'in')::int,
+         count(*) filter (where i.answer = 'out')::int
+  from public.sparks s
+  left join public.spark_invites i on i.spark_id = s.id
+  where s.host_id = auth.uid()
+    and s.starts_at > now() - interval '1 day'
+  group by s.id
+  order by s.starts_at;
+$$;
+
+-- --------------------------------------------------------------- cancel
+
+drop function if exists public.spark_cancel(uuid);
+create or replace function public.spark_cancel(p_spark uuid)
+returns void
+language plpgsql
+volatile
+security definer
+set search_path = public
+as $$
+begin
+  delete from public.sparks where id = p_spark and host_id = auth.uid();
+  if not found then
+    raise exception 'not yours' using errcode = '42501';
+  end if;
+end;
+$$;
+
+revoke execute on function public.spark_create(text, text, timestamptz, text, uuid[]) from public, anon;
+revoke execute on function public.spark_inbox()                                       from public, anon;
+revoke execute on function public.spark_answer(uuid, text)                            from public, anon;
+revoke execute on function public.spark_mine()                                        from public, anon;
+revoke execute on function public.spark_cancel(uuid)                                  from public, anon;
+grant execute on function public.spark_create(text, text, timestamptz, text, uuid[])  to authenticated;
+grant execute on function public.spark_inbox()                                        to authenticated;
+grant execute on function public.spark_answer(uuid, text)                             to authenticated;
+grant execute on function public.spark_mine()                                         to authenticated;
+grant execute on function public.spark_cancel(uuid)                                   to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('27_sparks.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  SPARKS REACH A WAVE — FRIENDS, THEIR FRIENDS, ONE STEP FURTHER   (28_spark_waves.sql)
+-- ============================================================
+
+-- afterhours — sparks reach a wave, not a list
+-- 27 sent a spark to the friends the host ticked one by one. Now the host picks
+-- how far it travels, the same three waves the yours tab already speaks of:
+--
+--   1st wave   your friends
+--   2nd wave   and their friends
+--   3rd wave   one step further
+--
+-- Everyone inside the wave finds the spark in their spark panel and answers it
+-- with the same swipe (right = in, left = out). Nobody is written down in
+-- advance: an answer row appears the moment someone answers. Sparks made the
+-- old way (27, a ticked list) keep working: their invite rows are still read.
+--
+--   spark_audience()                                    how many people each wave holds
+--   spark_create(kind, title, starts_at, place, reach)  start one for a wave (no list)
+--   spark_inbox()                                       + reach-based sparks, + wave
+--   spark_answer(spark, answer)                         also for someone inside the wave
+--   spark_mine()                                        + reach
+--
+-- The wave is counted from the person looking, over CONFIRMED friendships only,
+-- and only ever up to three steps.
+
+alter table public.sparks add column if not exists reach smallint;
+alter table public.sparks drop constraint if exists sparks_reach_range;
+alter table public.sparks add constraint sparks_reach_range check (reach is null or reach between 1 and 3);
+
+-- ------------------------------------------------------------ the waves
+
+-- Everyone within three confirmed steps of you, with the fewest steps it takes.
+-- You are not in it.
+create or replace function public.spark_waves(p_me uuid)
+returns table (person uuid, hops int)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  with recursive f as (
+    select requester_id as a, addressee_id as b from public.friendships where status = 'accepted'
+    union all
+    select addressee_id, requester_id from public.friendships where status = 'accepted'
+  ),
+  walk(person, hops) as (
+    select b, 1 from f where a = p_me
+    union
+    select f.b, w.hops + 1 from walk w join f on f.a = w.person where w.hops < 3
+  )
+  select person, min(hops)::int from walk where person <> p_me group by person;
+$$;
+revoke execute on function public.spark_waves(uuid) from public, anon, authenticated;
+
+-- How many people each wave reaches, counted up (the 2nd includes the 1st).
+create or replace function public.spark_audience()
+returns table (wave1 int, wave2 int, wave3 int)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select count(*) filter (where hops <= 1)::int,
+         count(*) filter (where hops <= 2)::int,
+         count(*)::int
+  from public.spark_waves(auth.uid());
+$$;
+
+-- --------------------------------------------------------------- create
+
+-- One press: no list, a wave. Works with nobody in it yet (it waits for them).
+drop function if exists public.spark_create(text, text, timestamptz, text, int);
+create or replace function public.spark_create(
+  p_kind      text,
+  p_title     text,
+  p_starts_at timestamptz,
+  p_place     text,
+  p_reach     int
+)
+returns uuid
+language plpgsql
+volatile
+security definer
+set search_path = public
+as $$
+declare
+  me     uuid := auth.uid();
+  new_id uuid;
+begin
+  if me is null then
+    raise exception 'sign in first' using errcode = '42501';
+  end if;
+  if p_starts_at is null or p_starts_at < now() - interval '1 hour' then
+    raise exception 'that time has passed' using errcode = '22023';
+  end if;
+  if p_reach is null or p_reach not between 1 and 3 then
+    raise exception 'the wave is 1, 2 or 3' using errcode = '22023';
+  end if;
+  insert into public.sparks (host_id, kind, title, starts_at, place, reach)
+  values (me, p_kind, btrim(p_title), p_starts_at, nullif(btrim(coalesce(p_place, '')), ''), p_reach)
+  returning id into new_id;
+  return new_id;
+end;
+$$;
+
+-- ---------------------------------------------------------------- inbox
+
+-- Open sparks for you: ticked for you (27) and not answered, or inside the
+-- wave of a spark and not answered. wave = how many steps the host is from you
+-- (null when you were ticked by name). Soonest first.
+drop function if exists public.spark_inbox();
+create or replace function public.spark_inbox()
+returns table (
+  id            uuid,
+  kind          text,
+  title         text,
+  starts_at     timestamptz,
+  place         text,
+  host_handle   text,
+  host_name     text,
+  going         int,
+  wave          int
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  with near as (select person, hops from public.spark_waves(auth.uid()))
+  select s.id, s.kind, s.title, s.starts_at, s.place, p.handle, p.display_name,
+         (select count(*)::int from public.spark_invites g where g.spark_id = s.id and g.answer = 'in'),
+         n.hops
+  from public.sparks s
+  join public.profiles p on p.id = s.host_id
+  left join near n on n.person = s.host_id
+  left join public.spark_invites i on i.spark_id = s.id and i.user_id = auth.uid()
+  where auth.uid() is not null
+    and s.host_id <> auth.uid()
+    and s.starts_at > now() - interval '6 hours'
+    and (
+      (i.user_id is not null and i.answer = 'waiting')
+      or (i.user_id is null and s.reach is not null and n.hops <= s.reach)
+    )
+  order by s.starts_at;
+$$;
+
+-- --------------------------------------------------------------- answer
+
+-- in / out / waiting (undo). Someone inside the wave gets their answer row now.
+drop function if exists public.spark_answer(uuid, text);
+create or replace function public.spark_answer(p_spark uuid, p_answer text)
+returns void
+language plpgsql
+volatile
+security definer
+set search_path = public
+as $$
+declare
+  me uuid := auth.uid();
+begin
+  if p_answer not in ('in', 'out', 'waiting') then
+    raise exception 'answer is in, out or waiting' using errcode = '22023';
+  end if;
+  update public.spark_invites
+     set answer = p_answer,
+         answered_at = case when p_answer = 'waiting' then null else now() end
+   where spark_id = p_spark and user_id = me;
+  if found then
+    return;
+  end if;
+  if exists (
+    select 1 from public.sparks s
+    join public.spark_waves(me) w on w.person = s.host_id
+    where s.id = p_spark and s.reach is not null and w.hops <= s.reach and s.host_id <> me
+  ) then
+    insert into public.spark_invites (spark_id, user_id, answer, answered_at)
+    values (p_spark, me, p_answer, case when p_answer = 'waiting' then null else now() end);
+    return;
+  end if;
+  raise exception 'no such invite' using errcode = '42501';
+end;
+$$;
+
+-- ----------------------------------------------------------------- mine
+
+drop function if exists public.spark_mine();
+create or replace function public.spark_mine()
+returns table (
+  id         uuid,
+  kind       text,
+  title      text,
+  starts_at  timestamptz,
+  place      text,
+  reach      int,
+  invited    int,
+  going      int,
+  not_going  int
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select s.id, s.kind, s.title, s.starts_at, s.place, s.reach::int,
+         count(i.user_id)::int,
+         count(*) filter (where i.answer = 'in')::int,
+         count(*) filter (where i.answer = 'out')::int
+  from public.sparks s
+  left join public.spark_invites i on i.spark_id = s.id
+  where s.host_id = auth.uid()
+    and s.starts_at > now() - interval '1 day'
+  group by s.id
+  order by s.starts_at;
+$$;
+
+revoke execute on function public.spark_audience()                                  from public, anon;
+revoke execute on function public.spark_create(text, text, timestamptz, text, int)  from public, anon;
+revoke execute on function public.spark_inbox()                                     from public, anon;
+revoke execute on function public.spark_answer(uuid, text)                          from public, anon;
+revoke execute on function public.spark_mine()                                      from public, anon;
+grant execute on function public.spark_audience()                                   to authenticated;
+grant execute on function public.spark_create(text, text, timestamptz, text, int)   to authenticated;
+grant execute on function public.spark_inbox()                                      to authenticated;
+grant execute on function public.spark_answer(uuid, text)                           to authenticated;
+grant execute on function public.spark_mine()                                       to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('28_spark_waves.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  MORE OF YOU — LONGER BIO, ABOUT, LINKS TO OTHER NETWORKS   (29_profile_more.sql)
+-- ============================================================
+
+-- afterhours — more of you on your page: a longer bio, a text about you,
+-- and where else to find you
+--
+--   bio            the line under your name: 160 → 300 characters
+--   about          new: a longer text about you, up to 1500 characters
+--   profile_links  new: instagram · tiktok · spotify · soundcloud · x · website
+--
+-- Who sees what:
+--   bio, about     whoever can see your card (12: you, friends, and, unless
+--                  discoverable is off, anyone who has your handle)
+--   links          you and your CONFIRMED friends only. A handle on another
+--                  network is a way to reach you, so it is kept closer.
+--
+-- The links table is closed (RLS on, no policies, no grants); it is read and
+-- written only through the calls below.
+--
+--   profile_about_set(about)          write your text (empty clears it)
+--   profile_links_set(links jsonb)    {"instagram": "name", ...}; empty clears one
+--   profile_extra(handle)             about + links for a page; null = you
+
+alter table public.profiles add column if not exists about text;
+alter table public.profiles drop constraint if exists profiles_about_length;
+alter table public.profiles add constraint profiles_about_length
+  check (about is null or length(btrim(about)) between 1 and 1500);
+
+alter table public.profiles drop constraint if exists profiles_bio_length;
+alter table public.profiles add constraint profiles_bio_length
+  check (bio is null or length(btrim(bio)) between 1 and 300);
+
+create table if not exists public.profile_links (
+  user_id     uuid not null references public.profiles on delete cascade,
+  kind        text not null check (kind in ('instagram', 'tiktok', 'spotify', 'soundcloud', 'x', 'website')),
+  value       text not null,
+  updated_at  timestamptz not null default now(),
+  primary key (user_id, kind),
+  -- a name on the network, or for website a full address
+  constraint profile_links_value check (
+    (kind = 'website' and value ~ '^https?://[^[:space:]]{3,200}$')
+    or (kind <> 'website' and value ~ '^[A-Za-z0-9._-]{1,40}$')
+  )
+);
+alter table public.profile_links enable row level security;
+revoke all on public.profile_links from public, anon, authenticated;
+
+-- ------------------------------------------------------------------ write
+
+drop function if exists public.profile_about_set(text);
+create or replace function public.profile_about_set(p_about text)
+returns void
+language plpgsql
+volatile
+security definer
+set search_path = public
+as $$
+begin
+  if auth.uid() is null then
+    raise exception 'sign in first' using errcode = '42501';
+  end if;
+  update public.profiles set about = nullif(btrim(coalesce(p_about, '')), '') where id = auth.uid();
+end;
+$$;
+
+-- Every kind present in p_links is set (or cleared when empty); kinds that are
+-- not mentioned stay as they are. A leading @ is dropped. Returns ok, or
+-- format:<kind> for the first value that does not fit (nothing is written then).
+drop function if exists public.profile_links_set(jsonb);
+create or replace function public.profile_links_set(p_links jsonb)
+returns text
+language plpgsql
+volatile
+security definer
+set search_path = public
+as $$
+declare
+  k text;
+  v text;
+begin
+  if auth.uid() is null then
+    raise exception 'sign in first' using errcode = '42501';
+  end if;
+  if p_links is null or jsonb_typeof(p_links) <> 'object' then
+    return 'format';
+  end if;
+  for k, v in select key, btrim(coalesce(value, '')) from jsonb_each_text(p_links) loop
+    if k not in ('instagram', 'tiktok', 'spotify', 'soundcloud', 'x', 'website') then
+      return 'format:' || k;
+    end if;
+    if k <> 'website' then
+      v := regexp_replace(v, '^@+', '');
+    end if;
+    if v <> '' and not (
+      (k = 'website' and v ~ '^https?://[^[:space:]]{3,200}$')
+      or (k <> 'website' and v ~ '^[A-Za-z0-9._-]{1,40}$')
+    ) then
+      return 'format:' || k;
+    end if;
+  end loop;
+
+  for k, v in select key, btrim(coalesce(value, '')) from jsonb_each_text(p_links) loop
+    if k <> 'website' then
+      v := regexp_replace(v, '^@+', '');
+    end if;
+    if v = '' then
+      delete from public.profile_links where user_id = auth.uid() and kind = k;
+    else
+      insert into public.profile_links (user_id, kind, value) values (auth.uid(), k, v)
+      on conflict (user_id, kind) do update set value = excluded.value, updated_at = now();
+    end if;
+  end loop;
+  return 'ok';
+end;
+$$;
+
+-- ------------------------------------------------------------------- read
+
+-- about: null when the card is not visible to you (or empty).
+-- links: {} when you are not a confirmed friend (or there are none).
+drop function if exists public.profile_extra(text);
+create or replace function public.profile_extra(p_handle text default null)
+returns table (about text, links jsonb)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  target uuid;
+begin
+  if auth.uid() is null then
+    return;
+  end if;
+  if p_handle is null then
+    target := auth.uid();
+  else
+    select p.id into target from public.profiles p where p.handle = lower(btrim(regexp_replace(p_handle, '^@', '')));
+  end if;
+  if target is null or not public.card_visible(target) then
+    return;
+  end if;
+  return query
+    select p.about,
+           case when target = auth.uid() or public.is_friend(target)
+                then coalesce((select jsonb_object_agg(l.kind, l.value) from public.profile_links l where l.user_id = target), '{}'::jsonb)
+                else '{}'::jsonb end
+    from public.profiles p where p.id = target;
+end;
+$$;
+
+revoke execute on function public.profile_about_set(text)  from public, anon;
+revoke execute on function public.profile_links_set(jsonb) from public, anon;
+revoke execute on function public.profile_extra(text)      from public, anon;
+grant execute on function public.profile_about_set(text)   to authenticated;
+grant execute on function public.profile_links_set(jsonb)  to authenticated;
+grant execute on function public.profile_extra(text)       to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('29_profile_more.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  SPARKS ON THE MAP — A SPOT, BLURRED FOR STRANGERS   (30_spark_map.sql)
+-- ============================================================
+
+-- afterhours — sparks on the map
+-- A spark now has a spot: where the host was when they created it (the app
+-- sends its position). The map shows the sparks you are allowed to see as
+-- their own kind of mark, and a tap opens the spark like a night.
+--
+--   spark_create(…, reach, lat, lng)   27/28 create plus the spot
+--   sparks_near(lat, lng, km)          the sparks around a point that you can see
+--   spark_get(spark)                   one spark, for its page
+--
+-- Who can see a spark: its host, the people ticked by name (27), and everyone
+-- inside its wave (28). A spot is often a home, so it is blurred for people who
+-- are not the host or a confirmed friend of the host: rounded to two decimals,
+-- about a kilometre.
+
+alter table public.sparks add column if not exists lat double precision;
+alter table public.sparks add column if not exists lng double precision;
+alter table public.sparks drop constraint if exists sparks_spot;
+alter table public.sparks add constraint sparks_spot check (
+  (lat is null and lng is null)
+  or (lat between -90 and 90 and lng between -180 and 180)
+);
+create index if not exists sparks_spot_idx on public.sparks (lat, lng) where lat is not null;
+
+-- --------------------------------------------------------------- create
+
+drop function if exists public.spark_create(text, text, timestamptz, text, int, double precision, double precision);
+create or replace function public.spark_create(
+  p_kind      text,
+  p_title     text,
+  p_starts_at timestamptz,
+  p_place     text,
+  p_reach     int,
+  p_lat       double precision,
+  p_lng       double precision
+)
+returns uuid
+language plpgsql
+volatile
+security definer
+set search_path = public
+as $$
+declare
+  new_id uuid;
+begin
+  new_id := public.spark_create(p_kind, p_title, p_starts_at, p_place, p_reach);
+  if p_lat is not null and p_lng is not null then
+    update public.sparks set lat = p_lat, lng = p_lng where id = new_id;
+  end if;
+  return new_id;
+end;
+$$;
+
+-- ----------------------------------------------------------------- read
+
+-- Every spark you can see that has not ended, with your answer and the spot
+-- (blurred unless you are the host or a friend of the host).
+create or replace function public.spark_rows()
+returns table (
+  id          uuid,
+  kind        text,
+  title       text,
+  starts_at   timestamptz,
+  place       text,
+  host_handle text,
+  host_name   text,
+  going       int,
+  wave        int,
+  mine        boolean,
+  my_answer   text,
+  lat         double precision,
+  lng         double precision
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  with near as (select person, hops from public.spark_waves(auth.uid()))
+  select s.id, s.kind, s.title, s.starts_at, s.place, p.handle, p.display_name,
+         (select count(*)::int from public.spark_invites g where g.spark_id = s.id and g.answer = 'in'),
+         n.hops,
+         s.host_id = auth.uid(),
+         i.answer,
+         case when s.host_id = auth.uid() or n.hops = 1 then s.lat else round(s.lat::numeric, 2)::double precision end,
+         case when s.host_id = auth.uid() or n.hops = 1 then s.lng else round(s.lng::numeric, 2)::double precision end
+  from public.sparks s
+  join public.profiles p on p.id = s.host_id
+  left join near n on n.person = s.host_id
+  left join public.spark_invites i on i.spark_id = s.id and i.user_id = auth.uid()
+  where auth.uid() is not null
+    and s.starts_at > now() - interval '6 hours'
+    and (s.host_id = auth.uid()
+         or i.user_id is not null
+         or (s.reach is not null and n.hops <= s.reach));
+$$;
+revoke execute on function public.spark_rows() from public, anon, authenticated;
+
+drop function if exists public.sparks_near(double precision, double precision, double precision);
+create or replace function public.sparks_near(p_lat double precision, p_lng double precision, p_km double precision default 3)
+returns table (
+  id          uuid,
+  kind        text,
+  title       text,
+  starts_at   timestamptz,
+  place       text,
+  host_handle text,
+  host_name   text,
+  going       int,
+  wave        int,
+  mine        boolean,
+  my_answer   text,
+  lat         double precision,
+  lng         double precision,
+  distance_km double precision
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select * from (
+    select r.*,
+           2 * 6371.0 * asin(sqrt(
+             power(sin(radians(r.lat - p_lat) / 2), 2)
+             + cos(radians(p_lat)) * cos(radians(r.lat))
+             * power(sin(radians(r.lng - p_lng) / 2), 2))) as distance_km
+    from public.spark_rows() r
+    where r.lat is not null
+  ) x
+  where x.distance_km <= least(greatest(coalesce(p_km, 3), 0.1), 60)
+  order by x.distance_km
+  limit 100;
+$$;
+
+drop function if exists public.spark_get(uuid);
+create or replace function public.spark_get(p_spark uuid)
+returns table (
+  id          uuid,
+  kind        text,
+  title       text,
+  starts_at   timestamptz,
+  place       text,
+  host_handle text,
+  host_name   text,
+  going       int,
+  wave        int,
+  mine        boolean,
+  my_answer   text,
+  lat         double precision,
+  lng         double precision
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select * from public.spark_rows() r where r.id = p_spark;
+$$;
+
+revoke execute on function public.spark_create(text, text, timestamptz, text, int, double precision, double precision) from public, anon;
+revoke execute on function public.sparks_near(double precision, double precision, double precision)                   from public, anon;
+revoke execute on function public.spark_get(uuid)                                                                      from public, anon;
+grant execute on function public.spark_create(text, text, timestamptz, text, int, double precision, double precision)  to authenticated;
+grant execute on function public.sparks_near(double precision, double precision, double precision)                    to authenticated;
+grant execute on function public.spark_get(uuid)                                                                       to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('30_spark_map.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  THE PAST FEED — PHOTOS OF NIGHTS THAT HAPPENED   (31_past_feed.sql)
+-- ============================================================
+
+-- afterhours — the past feed: photos of nights that already happened
+-- The bottom of the yours tab is an endless feed, newest first, of past nights:
+-- every past night in your city that has a photograph, plus any past night
+-- (anywhere) where you or a friend checked in or kept it. Those carry who was
+-- there. It is read a page at a time: the app passes the date of the last card
+-- it has and gets the next ones.
+--
+--   past_feed(city, before, before_id, limit)   before + before_id: the last card you have
+--
+-- Who is named: you, and confirmed friends whose check-in shows to friends
+-- (19, show_friends) or who kept the night and keep their kept nights visible
+-- (12, kept_visible). Signed out: the nights only, nobody named.
+-- Past nights are unpublished by the nightly job (09) but the rows stay; this
+-- call reads them, so the feed reaches back a year.
+
+drop function if exists public.past_feed(text, timestamptz, int);
+drop function if exists public.past_feed(text, timestamptz, uuid, int);
+create or replace function public.past_feed(
+  p_city   text default null,
+  p_before    timestamptz default null,
+  p_before_id uuid default null,
+  p_limit     int default 12
+)
+returns table (
+  id          uuid,
+  slug        text,
+  title       text,
+  image_url   text,
+  venue_name  text,
+  city_name   text,
+  type_slug   text,
+  type_name   text,
+  starts_at   timestamptz,
+  people      text[],
+  mine        boolean
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  with circle as (
+    select case when f.requester_id = auth.uid() then f.addressee_id else f.requester_id end as id
+    from public.friendships f
+    where f.status = 'accepted' and auth.uid() in (f.requester_id, f.addressee_id)
+  ),
+  -- who of yours was there, per night: checked in (shown to friends) or kept it
+  went as (
+    select c.event_id, c.user_id, c.checked_at as at
+    from public.checkins c
+    where c.user_id = auth.uid()
+       or (c.show_friends and c.user_id in (select id from circle))
+    union
+    select s.event_id, s.user_id, s.created_at
+    from public.swipes s
+    where s.direction = 'right'
+      and (s.user_id = auth.uid() or (s.user_id in (select id from circle) and public.kept_visible(s.user_id)))
+  ),
+  named as (
+    select w.event_id,
+           array_agg(distinct lower(coalesce(p.handle, p.display_name, 'someone'))) filter (where w.user_id <> auth.uid()) as people,
+           bool_or(w.user_id = auth.uid()) as mine
+    from went w
+    join public.profiles p on p.id = w.user_id
+    group by w.event_id
+  )
+  select e.id, e.slug, e.title, e.image_url, v.name, ci.name, t.slug, t.name, e.starts_at,
+         coalesce(n.people, '{}'), coalesce(n.mine, false)
+  from public.events e
+  join public.event_types t on t.id = e.type_id
+  join public.cities ci on ci.id = e.city_id
+  left join public.venues v on v.id = e.venue_id
+  left join named n on n.event_id = e.id
+  where e.starts_at is not null
+    and e.starts_at < now()
+    and e.starts_at > now() - interval '365 days'
+    and (p_before is null or e.starts_at < p_before
+         or (e.starts_at = p_before and p_before_id is not null and e.id > p_before_id))
+    and e.image_url is not null
+    and (ci.slug = p_city or n.event_id is not null)
+  order by e.starts_at desc, e.id
+  limit least(greatest(coalesce(p_limit, 12), 1), 30);
+$$;
+
+revoke execute on function public.past_feed(text, timestamptz, uuid, int) from public;
+grant execute on function public.past_feed(text, timestamptz, uuid, int) to anon, authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('31_past_feed.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  WHO IS COMING — IN, MAYBE, OUT, FOR FRIENDS   (32_rsvp.sql)
+-- ============================================================
+
+-- afterhours — who is coming: your answer to a night, seen by your friends
+-- "who is coming?" on yours asks in · maybe · out. Until now the answer stayed on
+-- the phone; here it is stored, and your confirmed friends see it next to your
+-- face (and you see theirs).
+--
+--   rsvp_set(event, answer)   in · maybe · out; null or empty takes it back
+--   rsvp_for(events[])        the answers of you and your friends for these nights
+--
+-- The table is closed (RLS on, no policies, no grants). Answers are for
+-- friends only: nobody else can read them, not even who answered at all.
+
+create table if not exists public.rsvps (
+  user_id     uuid not null references public.profiles on delete cascade,
+  event_id    uuid not null references public.events on delete cascade,
+  answer      text not null check (answer in ('in', 'maybe', 'out')),
+  updated_at  timestamptz not null default now(),
+  primary key (user_id, event_id)
+);
+create index if not exists rsvps_event_idx on public.rsvps (event_id);
+alter table public.rsvps enable row level security;
+revoke all on public.rsvps from public, anon, authenticated;
+
+drop function if exists public.rsvp_set(uuid, text);
+create or replace function public.rsvp_set(p_event uuid, p_answer text)
+returns void
+language plpgsql
+volatile
+security definer
+set search_path = public
+as $$
+begin
+  if auth.uid() is null then
+    raise exception 'sign in first' using errcode = '42501';
+  end if;
+  if coalesce(p_answer, '') = '' then
+    delete from public.rsvps where user_id = auth.uid() and event_id = p_event;
+    return;
+  end if;
+  if p_answer not in ('in', 'maybe', 'out') then
+    raise exception 'answer is in, maybe or out' using errcode = '22023';
+  end if;
+  if not exists (select 1 from public.events where id = p_event) then
+    raise exception 'no such night' using errcode = '22023';
+  end if;
+  insert into public.rsvps (user_id, event_id, answer) values (auth.uid(), p_event, p_answer)
+  on conflict (user_id, event_id) do update set answer = excluded.answer, updated_at = now();
+end;
+$$;
+
+-- name: handle, else the display name (the same key friends_kept uses).
+drop function if exists public.rsvp_for(uuid[]);
+create or replace function public.rsvp_for(p_events uuid[])
+returns table (event_id uuid, user_id uuid, name text, answer text, mine boolean)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select r.event_id, r.user_id, lower(coalesce(p.handle, p.display_name, 'someone')), r.answer, r.user_id = auth.uid()
+  from public.rsvps r
+  join public.profiles p on p.id = r.user_id
+  where auth.uid() is not null
+    and r.event_id = any (coalesce(p_events, '{}'))
+    and (r.user_id = auth.uid() or public.is_friend(r.user_id))
+  order by r.event_id, (r.answer = 'in') desc, (r.answer = 'maybe') desc, r.updated_at desc;
+$$;
+
+revoke execute on function public.rsvp_set(uuid, text) from public, anon;
+revoke execute on function public.rsvp_for(uuid[])    from public, anon;
+grant execute on function public.rsvp_set(uuid, text) to authenticated;
+grant execute on function public.rsvp_for(uuid[])     to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('32_rsvp.sql');
   end if;
 end $$;

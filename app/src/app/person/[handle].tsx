@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Linking, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -9,6 +9,8 @@ import SoundCorner from '@/components/SoundCorner';
 import { ActionButton, SAMPLES, useConnect } from '@/components/People';
 import { Row, Section, Value } from '@/components/Row';
 import { person, type Found, type PersonCard } from '@/data/friends';
+import { useProfileExtra } from '@/data/profile';
+import { LINKS } from '@/content/links';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -16,9 +18,11 @@ import { brand } from '@/theme/layout';
 type Loaded = { card: PersonCard; found: Found | null } | null;
 
 // Someone's public profile, opened from search results and suggestions:
-// name, handle, city, bio, friends in common, and the add / accept button.
+// name, handle, city, bio, the text about them, friends in common, the add / accept
+// button, and (for friends only) their links elsewhere.
 export default function PersonScreen() {
   const { handle, sample } = useLocalSearchParams<{ handle: string; sample?: string }>();
+  const extra = useProfileExtra(handle ?? null, 0, !!sample);
   const insets = useSafeAreaInsets();
   const { t, tn, up } = useLang();
   const { after, busy, act } = useConnect();
@@ -49,14 +53,16 @@ export default function PersonScreen() {
   const sinceText = since && !isNaN(since.getTime()) ? `${String(since.getMonth() + 1).padStart(2, '0')}.${since.getFullYear()}` : null;
   const name = (card?.display_name ?? card?.handle ?? '').toLowerCase();
 
+  const band = (
+    <View style={styles.band}>
+      <BackButton />
+      <SoundCorner />
+    </View>
+  );
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
-      <View style={styles.band}>
-        <BackButton />
-        <SoundCorner />
-      </View>
-      <PullDownScroll contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 40 }]} showsVerticalScrollIndicator={false}>
+      <PullDownScroll header={band} contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 40 }]} showsVerticalScrollIndicator={false}>
         {!loaded ? (
           <Text style={styles.note}>{up(t('person.loading'))}</Text>
         ) : !card ? (
@@ -73,6 +79,7 @@ export default function PersonScreen() {
               {example ? ` · ${up(t('person.sample'))}` : ''}
             </Text>
             {card.bio ? <Text style={styles.bio}>{card.bio}</Text> : null}
+            {!example && extra?.about ? <Text style={styles.about}>{extra.about}</Text> : null}
 
             <View style={styles.action}>
               <ActionButton
@@ -87,6 +94,16 @@ export default function PersonScreen() {
             <Row label={t('person.common')} right={<Value text={mutual ? tn('people.mutual', mutual) : '—'} />} />
             {card.city_name ? <Row label={t('person.city')} right={<Value text={card.city_name} />} /> : null}
             {sinceText ? <Row label={t('person.since')} right={<Value text={sinceText} />} /> : null}
+
+            {!example && extra && LINKS.some((l) => extra.links[l.kind]) ? (
+              <>
+                <Section title={t('account.links')} />
+                {LINKS.filter((l) => extra.links[l.kind]).map((l) => {
+                  const v = extra.links[l.kind]!;
+                  return <Row key={l.kind} label={l.label} right={<Value text={`${l.kind === 'website' ? v.replace(/^https?:\/\//, '') : l.prefix + v} ↗`} />} onPress={() => Linking.openURL(l.url(v)).catch(() => {})} />;
+                })}
+              </>
+            ) : null}
           </>
         )}
       </PullDownScroll>
@@ -103,6 +120,7 @@ const styles = StyleSheet.create({
   big: { fontFamily: fonts.medium, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
   mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginTop: 6 },
   bio: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 21, color: colors.paper, marginTop: 14 },
+  about: { fontFamily: fonts.regular, fontSize: 14, lineHeight: 21, color: colors.mute, marginTop: 10 },
   action: { marginTop: 20 },
   note: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta },
 });

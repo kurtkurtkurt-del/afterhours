@@ -1,5 +1,6 @@
 // Shared strings used on every screen. Mirrors lang/src/common.json on the website.
 export const common = {
+  'pull.close': { en: 'let go to close', de: 'loslassen zum schließen', tr: 'bırak, kapansın' },
   'lang.label': { en: 'language', de: 'sprache', tr: 'dil' },
   'lang.hint': { en: 'the whole app changes with it', de: 'die ganze app wechselt mit', tr: 'bütün uygulama onunla değişir' },
 
@@ -9,14 +10,14 @@ export const common = {
   'type.festival': { en: 'festival', de: 'festival', tr: 'festival' },
   'type.meetup': { en: 'meetup', de: 'meetup', tr: 'buluşma' },
   'type.hausparty': { en: 'hausparty', de: 'hausparty', tr: 'ev partisi' },
-  'type.all': { en: 'all nights', de: 'alle nächte', tr: 'bütün geceler' },
+  'type.all': { en: 'all events', de: 'alle events', tr: 'bütün etkinlikler' },
 
   'when.tonight': { en: 'tonight', de: 'heute nacht', tr: 'bu gece' },
   'when.tomorrow': { en: 'tomorrow', de: 'morgen', tr: 'yarın' },
   'when.weekend': { en: 'this weekend', de: 'dieses wochenende', tr: 'bu hafta sonu' },
   'when.week': { en: 'this week', de: 'diese woche', tr: 'bu hafta' },
   'when.month': { en: 'this month', de: 'diesen monat', tr: 'bu ay' },
-  'when.any': { en: 'any night', de: 'jede nacht', tr: 'herhangi bir gece' },
+  'when.any': { en: 'any time', de: 'jederzeit', tr: 'her zaman' },
 
   'day.mon': { en: 'mon', de: 'mo', tr: 'pzt' },
   'day.tue': { en: 'tue', de: 'di', tr: 'sal' },

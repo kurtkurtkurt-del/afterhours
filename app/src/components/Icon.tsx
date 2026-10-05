@@ -1,38 +1,41 @@
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 
 export type IconName = 'flow' | 'djs' | 'yours' | 'map' | 'account' | 'settings' | 'photo' | 'chat';
-type Props = { name: IconName; size?: number; color: string; strokeWidth?: number };
+type Props = { name: IconName; size?: number; color: string; strokeWidth?: number; filled?: boolean; hole?: string };
 
-// 1.5 px line icons on a 24 grid. No fills.
-export default function Icon({ name, size = 22, color, strokeWidth = 1.5 }: Props) {
+// 1.5 px line icons on a 24 grid. filled: the solid version of the tab icons (the open tab,
+// as on Instagram); inner details are cut out in hole, the colour behind the icon.
+export default function Icon({ name, size = 22, color, strokeWidth = 1.5, filled = false, hole = '#0E0D0C' }: Props) {
   const p = { stroke: color, strokeWidth, fill: 'none', strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
+  const f = filled ? { ...p, fill: color } : p;
+  const cut = { ...p, stroke: hole, fill: hole };
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24">
       {name === 'flow' && (
         <>
-          <Rect x={7} y={4} width={12} height={16} {...p} />
+          <Rect x={7} y={4} width={12} height={16} rx={filled ? 2 : 0} {...f} />
           <Path d="M4 8v11a1 1 0 0 0 1 1h9" {...p} />
         </>
       )}
       {name === 'djs' && (
         <>
-          <Circle cx={12} cy={12} r={8.5} {...p} />
-          <Circle cx={12} cy={12} r={1.6} {...p} />
-          <Path d="M12 6.5a5.5 5.5 0 0 1 5.5 5.5" {...p} />
+          <Circle cx={12} cy={12} r={8.5} {...f} />
+          <Circle cx={12} cy={12} r={1.6} {...(filled ? cut : p)} />
+          <Path d="M12 6.5a5.5 5.5 0 0 1 5.5 5.5" {...(filled ? { ...p, stroke: hole } : p)} />
         </>
       )}
       {name === 'yours' && (
         <>
-          <Circle cx={9} cy={8.5} r={3} {...p} />
-          <Path d="M3.5 19a5.5 5.5 0 0 1 11 0" {...p} />
-          <Circle cx={16.5} cy={9.5} r={2.4} {...p} />
-          <Path d="M15.5 14.2a4.6 4.6 0 0 1 5 4.8" {...p} />
+          <Circle cx={9} cy={8.5} r={3} {...f} />
+          <Path d={filled ? 'M3.5 19a5.5 5.5 0 0 1 11 0z' : 'M3.5 19a5.5 5.5 0 0 1 11 0'} {...f} />
+          <Circle cx={16.5} cy={9.5} r={2.4} {...f} />
+          <Path d={filled ? 'M15.5 14.2a4.6 4.6 0 0 1 5 4.8h-4.6z' : 'M15.5 14.2a4.6 4.6 0 0 1 5 4.8'} {...f} />
         </>
       )}
       {name === 'map' && (
         <>
-          <Path d="M12 21s-6-6.2-6-11a6 6 0 0 1 12 0c0 4.8-6 11-6 11z" {...p} />
-          <Circle cx={12} cy={10} r={2.2} {...p} />
+          <Path d="M12 21s-6-6.2-6-11a6 6 0 0 1 12 0c0 4.8-6 11-6 11z" {...f} />
+          <Circle cx={12} cy={10} r={2.2} {...(filled ? cut : p)} />
         </>
       )}
       {name === 'settings' && (

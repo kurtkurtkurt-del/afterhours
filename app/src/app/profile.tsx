@@ -13,13 +13,15 @@ import { Mark } from '@/components/Row';
 import { useAuth } from '@/auth/AuthContext';
 import { useCities } from '@/data/cities';
 import { usePhoto } from '@/data/photo';
-import { useProfile } from '@/data/profile';
+import { saveAbout, saveLinks, useProfile, useProfileExtra, type LinkKind } from '@/data/profile';
+import { LINKS } from '@/content/links';
 import { handleStatus, saveProfile } from '@/data/settings';
 import { useLang, type Key } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-const BIO = 160;
+const BIO = 300;
+const ABOUT = 1500;
 
 // Server code → string key, resolved at render time. empty: nothing to say.
 const handleWords: Record<string, Key | null> = {
@@ -33,11 +35,13 @@ const handleWords: Record<string, Key | null> = {
 };
 const fine = (code: string) => code === 'ok' || code === 'yours';
 
-// Edit profile, opened from "edit ›" in settings. Photo, name, handle, bio and city
-// are all saved with one "save" through profile_setup().
+// Edit profile, opened from "edit ›" in settings and from the account page. Photo,
+// name, handle, bio and city go through profile_setup(); the text about you and the
+// links to other networks (29_profile_more.sql) are saved with the same "save".
 export default function ProfileScreen() {
   const { session, ready, isAnonymous } = useAuth();
   const profile = useProfile();
+  const extra = useProfileExtra(null);
   const { cities } = useCities();
   const insets = useSafeAreaInsets();
   const { photo, busy, choose, remove, broken } = usePhoto();
@@ -56,6 +60,10 @@ export default function ProfileScreen() {
   const handle = handleEdit ?? profile?.handle ?? '';
   const bio = bioEdit ?? profile?.bio ?? '';
   const city = cityEdit === undefined ? (profile?.city_slug ?? null) : cityEdit;
+  const [aboutEdit, setAbout] = useState<string | null>(null);
+  const about = aboutEdit ?? extra?.about ?? '';
+  const [linkEdits, setLinkEdits] = useState<Partial<Record<LinkKind, string>>>({});
+  const linkValue = (k: LinkKind) => linkEdits[k] ?? extra?.links[k] ?? '';
   const [status, setStatus] = useState('');
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState<string | null>(null);
@@ -80,11 +88,22 @@ export default function ProfileScreen() {
     setSaved(null);
     try {
       const r = await saveProfile({ handle, name, city, bio });
-      if (r === 'ok') {
-        router.back();
+      if (r !== 'ok') {
+        setSaved(r);
+        setSaving(false);
         return;
       }
-      setSaved(r);
+      if (aboutEdit !== null) await saveAbout(aboutEdit);
+      if (Object.keys(linkEdits).length) {
+        const l = await saveLinks(linkEdits);
+        if (l !== 'ok') {
+          setSaved(t('settings.links.format', { kind: l.replace(/^format:?/, '') }));
+          setSaving(false);
+          return;
+        }
+      }
+      router.back();
+      return;
     } catch (e) {
       setSaved(String((e as Error).message).toLowerCase());
     }
@@ -143,7 +162,13 @@ export default function ProfileScreen() {
             <Text style={styles.label}>{up(t('settings.bio'))}</Text>
             <Text style={styles.label}>{`${bio.length} / ${BIO}`}</Text>
           </View>
-          <Input value={bio} onChangeText={setBio} placeholder={t('settings.bio.placeholder')} maxLength={BIO} />
+          <Input value={bio} onChangeText={setBio} placeholder={t('settings.bio.placeholder')} maxLength={BIO} multiline style={styles.multi} />
+
+          <View style={styles.labelRow}>
+            <Text style={styles.label}>{up(t('settings.aboutYou'))}</Text>
+            <Text style={styles.label}>{`${about.length} / ${ABOUT}`}</Text>
+          </View>
+          <Input value={about} onChangeText={setAbout} placeholder={t('settings.aboutYou.placeholder')} maxLength={ABOUT} multiline textAlignVertical="top" autoCapitalize="sentences" autoCorrect style={[styles.multi, styles.about]} />
 
           <Text style={styles.label}>{up(t('settings.city'))}</Text>
           <Pressable onPress={() => setSheet(true)} accessibilityRole="button" style={({ pressed }) => [styles.city, pressed && styles.pressed]}>
@@ -153,6 +178,23 @@ export default function ProfileScreen() {
             <Mark kind="more" />
           </Pressable>
           <Text style={styles.hint}>{t('settings.city.hint')}</Text>
+
+          <Text style={styles.label}>{up(t('settings.links'))}</Text>
+          {LINKS.map((l) => (
+            <View key={l.kind} style={styles.linkRow}>
+              <Text style={styles.linkKind}>{l.label}</Text>
+              {l.prefix ? <Text style={styles.at}>{l.prefix}</Text> : null}
+              <Input
+                value={linkValue(l.kind)}
+                onChangeText={(v) => setLinkEdits((e) => ({ ...e, [l.kind]: l.kind === 'website' ? v.trim() : v.replace(/^@+/, '').trim() }))}
+                placeholder={l.kind === 'website' ? 'https://' : ''}
+                keyboardType={l.kind === 'website' ? 'url' : 'default'}
+                maxLength={l.kind === 'website' ? 200 : 40}
+                style={styles.linkInput}
+              />
+            </View>
+          ))}
+          <Text style={styles.hint}>{t('settings.links.hint')}</Text>
 
           <View style={styles.save}>
             <Button label={saving ? t('word.moment') : t('settings.save')} onPress={save} />
@@ -198,4 +240,9 @@ const styles = StyleSheet.create({
   city: { height: 48, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottomWidth: 1, borderBottomColor: colors.paper },
   cityText: { flex: 1, fontFamily: fonts.regular, fontSize: 17, letterSpacing: -0.2, color: colors.paper },
   save: { marginTop: 40, marginBottom: 18, gap: 8 },
+  multi: { height: undefined, minHeight: 48, paddingVertical: 12 },
+  about: { minHeight: 140, lineHeight: 23 },
+  linkRow: { flexDirection: 'row', alignItems: 'center', borderBottomWidth: 1, borderBottomColor: colors.ink3 },
+  linkKind: { width: 96, fontFamily: fonts.regular, fontSize: 13, color: colors.mute },
+  linkInput: { flex: 1, borderBottomWidth: 0 },
 });

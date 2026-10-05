@@ -34,6 +34,12 @@ const structure = [
   ["24_photos.sql", "THE PHOTOGRAPH — YOURS TO SET, YOUR FRIENDS TO SEE"],
   ["25_people.sql", "FINDING PEOPLE — SEARCH AND SUGGESTIONS"],
   ["26_push.sql", "PUSH NOTIFICATIONS — REQUESTS, ACCEPTS, MATCHES, OUT NOW"],
+  ["27_sparks.sql", "SPARKS — NIGHTS YOU START, INVITES TO FRIENDS"],
+  ["28_spark_waves.sql", "SPARKS REACH A WAVE — FRIENDS, THEIR FRIENDS, ONE STEP FURTHER"],
+  ["29_profile_more.sql", "MORE OF YOU — LONGER BIO, ABOUT, LINKS TO OTHER NETWORKS"],
+  ["30_spark_map.sql", "SPARKS ON THE MAP — A SPOT, BLURRED FOR STRANGERS"],
+  ["31_past_feed.sql", "THE PAST FEED — PHOTOS OF NIGHTS THAT HAPPENED"],
+  ["32_rsvp.sql", "WHO IS COMING — IN, MAYBE, OUT, FOR FRIENDS"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

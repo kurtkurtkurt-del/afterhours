@@ -1,25 +1,32 @@
 import type { ReactNode } from 'react';
-import { Pressable, StyleSheet, View, type PressableProps } from 'react-native';
+import { Image, Platform, Pressable, StyleSheet, View, type PressableProps } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Icon, { type IconName } from '@/components/Icon';
+import { usePhoto } from '@/data/photo';
 import { useLang } from '@/i18n';
 import { tabPressedAgain } from '@/hooks/useTabReset';
 import { colors } from '@/theme/tokens';
 
-// "Floating pill": inset from the edges, paper border, ink fill; the middle tab sits in a
-// filled paper circle. The triggers stay in (tabs)/_layout.tsx, so a new design only
-// touches this file.
+// Instagram-style: a full-width bar on the bottom edge, ink with a hairline on top,
+// five icons with no labels. The open tab's icon is solid, the others outlined; the
+// account tab is your photo, ringed when open. The triggers stay in (tabs)/_layout.tsx,
+// so a new design only touches this file.
 
-export const TAB_BAR_SPACE = 100; // space pages leave at the bottom (excluding the inset)
-// Including the inset: the bar sits higher on phones with a home indicator.
+const BAR = 52;
+// Android: the system navigation bar is hidden (root _layout), so the inset is 0 and the
+// icons sat in the strip where a swipe brings the system bar back. The bar keeps that
+// strip as empty ink and puts its icons above it.
+const LIFT = Platform.OS === 'android' ? 22 : 0;
+export const TAB_BAR_SPACE = BAR + 8 + LIFT; // space pages leave at the bottom (excluding the inset)
+// Including the inset: the bar grows by the home indicator's height.
 export function useTabBarSpace() {
   const insets = useSafeAreaInsets();
   return TAB_BAR_SPACE + insets.bottom;
 }
 
-type ItemProps = PressableProps & { icon: IconName; isFocused?: boolean; raised?: boolean };
+type ItemProps = PressableProps & { icon: IconName; isFocused?: boolean };
 
-export function TabItem({ icon, isFocused, raised, onPress, ...props }: ItemProps) {
+export function TabItem({ icon, isFocused, onPress, ...props }: ItemProps) {
   const { tx } = useLang();
   return (
     <Pressable
@@ -29,43 +36,41 @@ export function TabItem({ icon, isFocused, raised, onPress, ...props }: ItemProp
         if (isFocused) tabPressedAgain(icon);
         onPress?.(e);
       }}
-      hitSlop={8} accessibilityRole="tab" accessibilityLabel={tx('tab.' + icon, icon)} accessibilityState={{ selected: !!isFocused }} style={({ pressed }) => [styles.item, pressed && styles.pressed]}>
-      {raised ? (
-        <View style={styles.mid}>
-          <Icon name={icon} color={colors.ink} />
-        </View>
-      ) : (
-        <Icon name={icon} color={isFocused ? colors.paper : colors.mute} />
-      )}
+      accessibilityRole="tab"
+      accessibilityLabel={tx('tab.' + icon, icon)}
+      accessibilityState={{ selected: !!isFocused }}
+      style={({ pressed }) => [styles.item, pressed && styles.pressed]}
+    >
+      {icon === 'account' ? <Avatar on={!!isFocused} /> : <Icon name={icon} size={26} color={colors.paper} filled={!!isFocused} strokeWidth={1.7} />}
     </Pressable>
+  );
+}
+
+// Your photo in the account slot; the outline person when there is none.
+function Avatar({ on }: { on: boolean }) {
+  const { photo } = usePhoto();
+  return (
+    <View style={[styles.ring, on && styles.ringOn]}>
+      {photo ? <Image source={{ uri: photo }} style={styles.face} /> : <Icon name="account" size={24} color={colors.paper} filled={on} strokeWidth={1.7} />}
+    </View>
   );
 }
 
 export function TabBarFrame({ children }: { children: ReactNode }) {
   const insets = useSafeAreaInsets();
   return (
-    <View style={[styles.wrap, { bottom: insets.bottom + 14 }]} pointerEvents="box-none">
-      <View style={styles.pill}>{children}</View>
+    <View style={[styles.bar, { paddingBottom: insets.bottom + LIFT }]}>
+      <View style={styles.row}>{children}</View>
     </View>
   );
 }
 
-const MID = 44;
-
 const styles = StyleSheet.create({
-  wrap: { position: 'absolute', left: 14, right: 14 },
-  pill: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    backgroundColor: colors.ink,
-    borderWidth: 1,
-    borderColor: colors.paper,
-    borderRadius: 999,
-    paddingVertical: 12,
-    paddingHorizontal: 10,
-  },
-  item: { alignItems: 'center', justifyContent: 'center', minWidth: 44, height: MID },
+  bar: { position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: colors.ink, borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: colors.ink3 },
+  row: { height: BAR, flexDirection: 'row', alignItems: 'center' },
+  item: { flex: 1, height: BAR, alignItems: 'center', justifyContent: 'center' },
   pressed: { opacity: 0.6 },
-  mid: { width: MID, height: MID, borderRadius: MID / 2, backgroundColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
+  ring: { width: 30, height: 30, borderRadius: 15, alignItems: 'center', justifyContent: 'center', borderWidth: 1.5, borderColor: 'transparent' },
+  ringOn: { borderColor: colors.paper },
+  face: { width: 24, height: 24, borderRadius: 12 },
 });

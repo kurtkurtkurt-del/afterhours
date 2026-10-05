@@ -12,19 +12,55 @@ import Animated, {
   withTiming,
   type SharedValue,
 } from 'react-native-reanimated';
-import CardFace, { Hint, openDetails, openTicket, toDeckCard, type DeckFriend } from '@/components/CardFace';
+import { router } from 'expo-router';
+import CardFace, { Hint, openDetails, openTicket, toDeckCard, type DeckCard, type DeckFriend } from '@/components/CardFace';
+import { sparkTimes, type Spark } from '@/content/sparks';
+import type { SparkInvite } from '@/data/sparks';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import type { Night } from '@/data/deck';
 
 type Direction = 'left' | 'right';
+// A spark in the spark panel: one to start yourself, or (invite set) one a friend started.
+export type SparkEntry = { id: string; spark: Spark; invite?: SparkInvite };
+// A card that is already drawn (friends' deck, waves, your deck in yours).
+export type CardEntry = { id: string; card: DeckCard };
+export type DeckEntry = Night | SparkEntry | CardEntry;
+export const isSpark = (e: DeckEntry): e is SparkEntry => 'spark' in e;
+export const isCard = (e: DeckEntry): e is CardEntry => 'card' in e;
+// A spark's own page: the night page's layout with "create" (or, for an invite, in / out).
+export const openSpark = (e: SparkEntry) => router.push(e.invite ? `/spark/${e.spark.kind}?invite=${e.invite.id}` : `/spark/${e.spark.kind}`);
+
+// A spark drawn as a ticket card: its photo, its name, the suggested time and place.
+function sparkCard(e: SparkEntry, t: ReturnType<typeof useLang>['t']): DeckCard {
+  const inv = e.invite;
+  const host = inv ? (inv.host_name ?? inv.host_handle ?? '').toLowerCase() : '';
+  return {
+    key: e.id,
+    slug: '',
+    title: inv ? inv.title : t(e.spark.title).replace(/\.$/, ''),
+    venue: inv ? inv.place : t(e.spark.places[0]),
+    city: '',
+    kind: t(e.spark.label),
+    source: 'spark',
+    startsAt: inv ? inv.starts_at : (sparkTimes(e.spark)[0]?.toISOString() ?? null),
+    image: null,
+    local: e.spark.photo,
+    poster: null,
+    ticketUrl: null,
+    friends: [],
+    note: inv
+      ? [t('spark.hosting', { name: host }), inv.wave && inv.wave > 1 ? t(inv.wave === 2 ? 'deck.wave2' : 'deck.wave3') : null, t('spark.going', { n: inv.going })].filter(Boolean).join(' · ')
+      : t('spark.swipe'),
+  };
+}
 type Props = {
-  nights: Night[];
+  nights: DeckEntry[];
   friendsOf?: (night: Night) => DeckFriend[];
   bottom: number; // bottom edge of the caption
   top: number;    // upper bound for the poster (below the pickers)
-  onSwipe: (night: Night, direction: Direction) => void;
-  onUndo?: (night: Night) => void;
+  onSwipe: (entry: DeckEntry, direction: Direction) => void;
+  onUndo?: (entry: DeckEntry) => void;
   onReset?: () => void;
 };
 export type DeckHandle = { undo: () => void };
@@ -38,8 +74,9 @@ type CardHandle = { promote: () => void; keep: () => void };
 // Same card face as friends' deck, plus deck gestures:
 // right = keep (edge turns red), left = let go, up = ticket, down = night page.
 // Each card owns its position, so the card behind is already at rest when the top one flies off.
+// A spark has no ticket and no page: only sideways.
 const SwipeCard = forwardRef<CardHandle, {
-  night: Night;
+  night: DeckEntry;
   friends: DeckFriend[];
   active: boolean;
   drag: SharedValue<number>;
@@ -52,8 +89,9 @@ const SwipeCard = forwardRef<CardHandle, {
   const y = useSharedValue(0);
   // The card behind is hidden and fades in once promoted.
   const shown = useSharedValue(active ? 1 : 0);
-  const card = toDeckCard(night, friends);
+  const spark = isSpark(night) ? night : null;
   const { t, up } = useLang();
+  const card = spark ? sparkCard(spark, t) : isCard(night) ? night.card : toDeckCard(night as Night, friends);
 
   const flyOff = useCallback(
     (dir: Direction) => {
@@ -67,8 +105,10 @@ const SwipeCard = forwardRef<CardHandle, {
     if (!active) shown.set(0); // a card sent back by undo is hidden again
   }, [active, shown]);
 
+  // A spark has no ticket: up does nothing, down opens its page.
+  const upable = !spark;
   const ticket = () => openTicket(card);
-  const details = () => openDetails(card);
+  const details = () => (spark ? openSpark(spark) : openDetails(card));
 
   const pan = Gesture.Pan()
     .enabled(active)
@@ -86,7 +126,7 @@ const SwipeCard = forwardRef<CardHandle, {
         x.set(withTiming(dir === 'right' ? width * 1.5 : -width * 1.5, { duration: 260 }, () => runOnJS(onDone)(dir)));
         return;
       }
-      if (!sideways && (e.translationY < -PULL || e.velocityY < -900)) runOnJS(ticket)();
+      if (upable && !sideways && (e.translationY < -PULL || e.velocityY < -900)) runOnJS(ticket)();
       else if (!sideways && (e.translationY > PULL || e.velocityY > 900)) runOnJS(details)();
       x.set(withSpring(0, { damping: 18, stiffness: 180 }));
       y.set(withSpring(0, { damping: 18, stiffness: 180 }));
@@ -111,16 +151,25 @@ const SwipeCard = forwardRef<CardHandle, {
   return (
     <GestureDetector gesture={pan}>
       <Animated.View style={[styles.slot, style]}>
-        <CardFace card={card} bottom={bottom} fit={{ top }} rightLabel={`${t('word.keep')} →`} onRight={() => flyOff('right')} />
+        <CardFace
+          card={card}
+          bottom={bottom}
+          fit={{ top }}
+          rightLabel={`${spark ? t(spark.invite ? 'spark.in' : 'spark.create') : t('word.keep')} →`}
+          onRight={() => flyOff('right')}
+          onDetails={spark ? details : undefined}
+        />
         {active && (
           <>
             <Animated.View pointerEvents="none" style={[styles.edgeRight, keepEdge]} />
             <Animated.View pointerEvents="none" style={[styles.edgeLeft, letGoEdge]}>
               <Text style={styles.letGo}>{up(t('word.letgo'))}</Text>
             </Animated.View>
-            <Animated.View style={[styles.hint, styles.hintUp, upHint]} pointerEvents="none">
-              <Hint label={`${card.ticketUrl ? t('word.ticket') : t('deck.open')} ↑`} />
-            </Animated.View>
+            {upable ? (
+              <Animated.View style={[styles.hint, styles.hintUp, upHint]} pointerEvents="none">
+                <Hint label={`${card.ticketUrl ? t('word.ticket') : t('deck.open')} ↑`} />
+              </Animated.View>
+            ) : null}
             <Animated.View style={[styles.hint, { bottom: bottom + 8 }, downHint]} pointerEvents="none">
               <Hint label={`${t('word.details')} ↓`} />
             </Animated.View>
@@ -182,8 +231,8 @@ const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bo
   // behind is not recreated when it moves to the front.
   return (
     <View style={styles.stage}>
-      {next && <SwipeCard ref={nextRef} key={next.id} night={next} friends={friendsOf?.(next) ?? []} active={false} drag={drag} bottom={bottom} top={posterTop} onDone={done} />}
-      <SwipeCard key={top.id} night={top} friends={friendsOf?.(top) ?? []} active drag={drag} bottom={bottom} top={posterTop} onDone={done} />
+      {next && <SwipeCard ref={nextRef} key={next.id} night={next} friends={isSpark(next) || isCard(next) ? [] : (friendsOf?.(next) ?? [])} active={false} drag={drag} bottom={bottom} top={posterTop} onDone={done} />}
+      <SwipeCard key={top.id} night={top} friends={isSpark(top) || isCard(top) ? [] : (friendsOf?.(top) ?? [])} active drag={drag} bottom={bottom} top={posterTop} onDone={done} />
     </View>
   );
 });

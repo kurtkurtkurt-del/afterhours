@@ -7,7 +7,7 @@ import { TabBarFrame, TabItem } from '@/components/TabBar';
 import { useCities } from '@/data/cities';
 import { useFollowLocation } from '@/data/here';
 
-// The main app: five tabs in a floating bar. flow · djs · [yours] · map · account
+// The main app: five tabs in an edge-to-edge bottom bar. flow · djs · yours · map · account
 export default function TabsLayout() {
   // Every tab follows the city you are in (data/here.ts).
   const { cities } = useCities();
@@ -24,7 +24,7 @@ export default function TabsLayout() {
             <TabItem icon="djs" />
           </TabTrigger>
           <TabTrigger name="yours" href="/yours" asChild>
-            <TabItem icon="yours" raised />
+            <TabItem icon="yours" />
           </TabTrigger>
           <TabTrigger name="map" href="/map" asChild>
             <TabItem icon="map" />

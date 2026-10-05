@@ -64,4 +64,37 @@ sets-04. Elijah_K - Beyond the Blue — CC BY 4.0 — https://freemusicarchive.o
 sets-05. Elijah_K - Disco Girl — CC BY 4.0 — https://freemusicarchive.org/music/elijah-k/single/disco-girl/
 sets-06. Elijah_K - Like A Disco Dream — CC BY 4.0 — https://freemusicarchive.org/music/elijah-k/single/like-a-disco-dream/
 
+## photos
+
+DJ photos (assets/djs) and the intro photo (assets/intro/concert.jpg): Wikimedia Commons, all CC0 (public domain dedication), cropped and resized. City photos in the place picker load at runtime from Wikipedia; each one is credited on its card.
+
+- mara-volt.jpg — Pioneer DJM900 Nexus DJ Mixer tweaked (2015-04-25 by Aurélien) pixabay.jpg — CC0 — https://commons.wikimedia.org/wiki/File:Pioneer_DJM900_Nexus_DJ_Mixer_tweaked_(2015-04-25_by_Aur%C3%A9lien)_pixabay.jpg
+- levent-ok.jpg — DJ at work (Unsplash).jpg — CC0 — https://commons.wikimedia.org/wiki/File:DJ_at_work_(Unsplash).jpg
+- nachtfalter.jpg — DJ podium med palmer og diskokugle.jpg — CC0 — https://commons.wikimedia.org/wiki/File:DJ_podium_med_palmer_og_diskokugle.jpg
+- ines-okur.jpg — Dalibor Bosnjakovic 2017 (Unsplash).jpg — CC0 — https://commons.wikimedia.org/wiki/File:Dalibor_Bosnjakovic_2017_(Unsplash).jpg
+- tuesday-club.jpg — Le Badaboum Paris DJ booth.jpg — CC0 — https://commons.wikimedia.org/wiki/File:Le_Badaboum_Paris_DJ_booth.jpg
+- dilan-k.jpg — DJ booth with NI Traktor Kontrol S4 (2015-03-13 17.33.34 by nikkolodeon @pixabay 688549).jpg — CC0 — https://commons.wikimedia.org/wiki/File:DJ_booth_with_NI_Traktor_Kontrol_S4_(2015-03-13_17.33.34_by_nikkolodeon_@pixabay_688549).jpg
+- orbit-9.jpg — DJ turntable in close-up (Unsplash).jpg — CC0 — https://commons.wikimedia.org/wiki/File:DJ_turntable_in_close-up_(Unsplash).jpg
+- selin.jpg — Perfect Day at Coachella (Unsplash).jpg — CC0 — https://commons.wikimedia.org/wiki/File:Perfect_Day_at_Coachella_(Unsplash).jpg
+- concert.jpg — Audience enjoying a concert (Unsplash).jpg — CC0 — https://commons.wikimedia.org/wiki/File:Audience_enjoying_a_concert_(Unsplash).jpg
+
 CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+
+Spark photos (assets/sparks): Unsplash, Unsplash License (free to use, no attribution required — credited anyway), cropped to 2:3 at 900×1350.
+
+- derby.jpg — Wemax Projectors, "a group of men sitting on a couch and laughing" — https://unsplash.com/photos/XvGog4_E2cI
+- grill.jpg — Stéfano Girardelli, "man in cap standing near grill" — https://unsplash.com/photos/EhihuECaPYE
+- hike.jpg — Dan Ordze, "group of people hiking on mountain during daytime" — https://unsplash.com/photos/4GoNeNKEB1M
+
+Sample feed photos (assets/feed, the "from past nights" samples on yours): Unsplash, Unsplash License, cropped square at 900×900.
+
+- t1.jpg — Aleksandr Popov — https://unsplash.com/photos/fa5QQ63u5W4
+- t3.jpg — Aleksandr Popov — https://unsplash.com/photos/j4esZ9owgzA
+- f2.jpg — OurWhisky Foundation — https://unsplash.com/photos/SdTKkcdz9mY
+- r2.jpg — Simon Maage — https://unsplash.com/photos/tXiMrX3Gc-g
+- a2.jpg — Abstral Official — https://unsplash.com/photos/hOlmdNbFqtM
+- a3.jpg — ben frost — https://unsplash.com/photos/WWAhC6r9n8U
+- w1.jpg — Chaz McGregor — https://unsplash.com/photos/SYRRofkV9g0
+- e1.jpg — Danny Howe — https://unsplash.com/photos/bn-D2bCvpik
+- h1.jpg — peter bucks — https://unsplash.com/photos/bFhL-ov72RM
+- f3.jpg — Considerate Agency — https://unsplash.com/photos/UrzN-8K1PCE

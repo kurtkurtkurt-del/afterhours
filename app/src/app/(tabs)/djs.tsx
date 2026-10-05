@@ -1,12 +1,13 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Storage from 'expo-sqlite/kv-store';
 import { Image, Pressable, ScrollView, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 import ClipShelf from '@/components/ClipShelf';
 import { PeopleSearch } from '@/components/People';
-import StoryViewer from '@/components/StoryViewer';
+import StoryViewer, { type StoryItem } from '@/components/StoryViewer';
 import SoundCorner from '@/components/SoundCorner';
 import Vinyl from '@/components/Vinyl';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
@@ -15,7 +16,7 @@ import { useTrack } from '@/audio/useTrack';
 import { listenTracks } from '@/content/soundtracks';
 import { useAuth } from '@/auth/AuthContext';
 import { clips as sampleClips } from '@/content/clips';
-import { stories, type Story } from '@/content/stories';
+import { stories } from '@/content/stories';
 import { djs as localDjs, sets as localSets, type Dj, type DjSet } from '@/content/djs';
 import type { Genre } from '@/content/music';
 import { followedSlugs, loadDjs } from '@/data/djs';
@@ -43,7 +44,8 @@ export default function DjsScreen() {
   const scroll = useRef<ScrollView>(null);
   const [genre, setGenre] = useState<Genre | 'all'>('all');
   const [query, setQuery] = useState('');
-  const [open, setOpen] = useState<Story | null>(null);
+  // the stories being watched: the row's stories frozen at the moment one was tapped
+  const [queue, setQueue] = useState<{ items: StoryItem[]; start: number } | null>(null);
   const [seen, setSeen] = useState<string[]>(() => (Storage.getItemSync(SEEN) ?? '').split(',').filter(Boolean));
   useTabReset('djs', () => {
     setGenre('all');
@@ -100,15 +102,18 @@ export default function DjsScreen() {
   const strip = [...withStory, ...base.filter((d) => !storyOf(d.id))].sort((a, b) => Number(fresh(b.id)) - Number(fresh(a.id)));
   const unseen = stories.filter((st) => !seen.includes(st.dj)).length;
   const openStory = (dj: Dj) => {
-    const st = storyOf(dj.id);
-    if (!st) return router.push(`/dj/${dj.id}`);
-    setOpen(st);
-    if (!seen.includes(dj.id)) {
-      const next = [...seen, dj.id];
-      setSeen(next);
-      Storage.setItemSync(SEEN, next.join(','));
-    }
+    if (!storyOf(dj.id)) return router.push(`/dj/${dj.id}`);
+    const items = strip.filter((d) => storyOf(d.id)).map((d) => ({ story: storyOf(d.id)!, name: d.name, avatar: photoOf(d) }));
+    setQueue({ items, start: Math.max(0, items.findIndex((x) => x.story.dj === dj.id)) });
   };
+  const markSeen = useCallback((dj: string) => {
+    setSeen((prev) => {
+      if (prev.includes(dj)) return prev;
+      const next = [...prev, dj];
+      Storage.setItemSync(SEEN, next.join(','));
+      return next;
+    });
+  }, []);
 
   const q = query.trim().toLowerCase();
   const found = q ? data.djs.filter((d) => [d.name, d.genre, d.city].some((f) => f.toLowerCase().includes(q))) : [];
@@ -153,13 +158,7 @@ export default function DjsScreen() {
           </View>
         ) : (
         <>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
-          {GENRES.map((g) => (
-            <Pressable key={g} onPress={() => pickGenre(g)} accessibilityRole="button" accessibilityState={{ selected: genre === g }} style={[styles.chip, genre === g && styles.chipOn]}>
-              <Text style={[styles.chipText, genre === g && styles.chipTextOn]}>{g === 'all' ? up(t('djs.all')) : upperData(g)}</Text>
-            </Pressable>
-          ))}
-        </ScrollView>
+        <GenreTabs value={genre} onChange={pickGenre} label={(g) => (g === 'all' ? t('djs.all') : g)} />
 
         <View style={styles.sec}>
           <Text style={styles.secText}>{up(t('djs.stories'))}</Text>
@@ -199,7 +198,42 @@ export default function DjsScreen() {
         </>
         )}
       </ScrollView>
-      <StoryViewer story={open} name={open ? (djOf(open.dj)?.name ?? open.dj) : ''} avatar={open && djOf(open.dj) ? photoOf(djOf(open.dj)!) : undefined} onClose={() => setOpen(null)} />
+      <StoryViewer items={queue?.items ?? []} start={queue ? queue.start : null} onSeen={markSeen} onClose={() => setQueue(null)} />
+    </View>
+  );
+}
+
+// Genres as one segmented bar; a paper pill slides under the chosen one.
+function GenreTabs({ value, onChange, label }: { value: Genre | 'all'; onChange: (g: Genre | 'all') => void; label: (g: Genre | 'all') => string }) {
+  const [boxes, setBoxes] = useState<Record<string, { x: number; w: number }>>({});
+  const x = useSharedValue(0);
+  const w = useSharedValue(0);
+  const box = boxes[value];
+  useEffect(() => {
+    if (!box) return;
+    const spring = { damping: 18, stiffness: 220 };
+    x.set(w.get() === 0 ? box.x : withSpring(box.x, spring));
+    w.set(w.get() === 0 ? box.w : withSpring(box.w, spring));
+  }, [box, x, w]);
+  const pill = useAnimatedStyle(() => ({ transform: [{ translateX: x.value }], width: w.value, opacity: w.value ? 1 : 0 }));
+  return (
+    <View style={styles.tabs}>
+      <Animated.View style={[styles.tabPill, pill]} />
+      {GENRES.map((g) => (
+        <Pressable
+          key={g}
+          onPress={() => onChange(g)}
+          onLayout={(e) => {
+            const { x: gx, width } = e.nativeEvent.layout;
+            setBoxes((b) => ({ ...b, [g]: { x: gx, w: width } }));
+          }}
+          accessibilityRole="tab"
+          accessibilityState={{ selected: value === g }}
+          style={styles.tab}
+        >
+          <Text style={[styles.tabText, value === g && styles.tabTextOn]}>{label(g)}</Text>
+        </Pressable>
+      ))}
     </View>
   );
 }
@@ -259,11 +293,11 @@ const styles = StyleSheet.create({
   pressed: { opacity: 0.7 },
   dim: { opacity: 0.3 },
   note: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta, paddingHorizontal: brand.left, marginBottom: 10 },
-  chips: { gap: 8, paddingHorizontal: brand.left },
-  chip: { paddingVertical: 6, paddingHorizontal: 12, borderRadius: radius.pill, borderWidth: 1, borderColor: colors.ink3 },
-  chipOn: { backgroundColor: colors.paper, borderColor: colors.paper },
-  chipText: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1, color: colors.mute },
-  chipTextOn: { color: colors.ink },
+  tabs: { flexDirection: 'row', marginHorizontal: brand.left, padding: 4, borderRadius: radius.pill, backgroundColor: colors.ink2, borderWidth: 1, borderColor: colors.ink3 },
+  tabPill: { position: 'absolute', top: 4, bottom: 4, left: 0, borderRadius: radius.pill, backgroundColor: colors.paper },
+  tab: { flex: 1, alignItems: 'center', justifyContent: 'center', height: 34, borderRadius: radius.pill },
+  tabText: { fontFamily: fonts.medium, fontSize: 14, letterSpacing: -0.2, color: colors.mute },
+  tabTextOn: { color: colors.ink },
   sec: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', paddingHorizontal: brand.left, marginTop: 26, marginBottom: 12 },
   secText: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta },
   secRed: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.spotText },
