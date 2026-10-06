@@ -198,7 +198,7 @@
       middle.appendChild(el("p", "cs-text", p)));
 
     /* ---- the after ---- */
-    middle.appendChild(buildAfter(m, kind, rnd));
+    middle.appendChild(buildAfter(m, kind, rnd, e));
 
     area.appendChild(middle);
 
@@ -539,7 +539,7 @@
      No photograph on purpose. The poster is already on the rail and the
      card is at the foot of the page — between them this has to read like
      a departure board, not a third gallery. */
-  function buildAfter(m, kind, rnd) {
+  function buildAfter(m, kind, rnd, e) {
     const section = el("section", "cs-section cs-after");
     section.appendChild(el("p", "cs-label",
       AH.t("night.after.label")));
@@ -585,10 +585,75 @@
     });
     section.appendChild(list);
 
-    section.appendChild(el("p", "cs-note", drawn
+    const note = el("p", "cs-note", drawn
       ? AH.t("night.after.note")
-      : AH.t("night.after.none")));
+      : AH.t("night.after.none"));
+    section.appendChild(note);
+
+    /* Live, the rooms are our own nights: same city, starting from an hour
+       before this one empties until five in the morning, soonest first.
+       The invented rooms above only stand in while the backend is off;
+       live and nothing later, the bracket is honestly one mark long. */
+    if (window.AH && AH.mode === "live" && AH.request && e && e.city && e.startsAt) {
+      list.querySelectorAll(".cs-room:not(.origin)").forEach((r) => r.remove());
+      note.textContent = AH.t("night.after.none");
+      realAfters(e, kind, doors).then((found) => {
+        found.forEach((r) => list.appendChild(r));
+        note.textContent = found.length ? AH.t("night.after.note") : AH.t("night.after.none");
+      }).catch(() => {});
+    }
     return section;
+  }
+
+  /* Only floors make an after: a concert or a meetup starting late is not
+     somewhere you go on to. */
+  const AFTER_KINDS = ["Rave", "Club Night", "Hausparty"];
+
+  function realAfters(e, kind, doors) {
+    const start = new Date(e.startsAt);
+    if (isNaN(start)) return Promise.resolve([]);
+    const ends = new Date(start.getTime() + (V.RUNS[kind] || 3) * 3600e3);
+    const from = new Date(ends.getTime() - 3600e3);
+    /* five in the morning after it ends, on the clock of its own doors */
+    const endMins = doors + (V.RUNS[kind] || 3) * 60;
+    const five = endMins < 5 * 60 ? 5 * 60 : (Math.floor((endMins - 5 * 60) / 1440) + 1) * 1440 + 5 * 60;
+    const until = new Date(start.getTime() + (five - doors) * 60000);
+    if (until <= from) return Promise.resolve([]);
+    const q = "/events_public?select=slug,title,type_name,venue_name,starts_at" +
+      "&type_name=in.(" + AFTER_KINDS.map((k) => '"' + k + '"').join(",") + ")" +
+      "&city_slug=eq." + encodeURIComponent(e.city) +
+      "&starts_at=gte." + encodeURIComponent(from.toISOString()) +
+      "&starts_at=lt." + encodeURIComponent(until.toISOString()) +
+      "&slug=neq." + encodeURIComponent(e.slug) +
+      "&order=starts_at.asc&limit=12";
+    return AH.request(q).then((rows) => {
+      const out = [];
+      const venues = {};
+      (rows || []).forEach((r) => {
+        /* one per room, three at most: the first night a venue opens */
+        const room = (r.venue_name || r.title || "").trim();
+        if (!room || venues[room.toLowerCase()] || out.length >= 3) return;
+        /* on the same clock as this night's own doors, wherever the
+           browser is: minutes after this one's start, added to its doors */
+        const mins = doors + Math.round((new Date(r.starts_at) - start) / 60000);
+        if (!atNight(mins)) return;
+        venues[room.toLowerCase()] = true;
+        const row = roomRow({
+          time: clock(mins),
+          name: room,
+          sort: r.type_name,
+          until: clock(mins + (V.RUNS[r.type_name] || 3) * 60),
+          walk: null,
+        });
+        const link = document.createElement("a");
+        link.className = "cs-room-link";
+        link.href = "../event/index.html?slug=" + encodeURIComponent(r.slug);
+        link.appendChild(row.querySelector(".cs-room-body"));
+        row.insertBefore(link, row.querySelector(".cs-room-walk"));
+        out.push(row);
+      });
+      return out;
+    });
   }
 
   /* Whether a whole hour falls in the hours a room can be entered:

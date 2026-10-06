@@ -2525,6 +2525,9 @@ img.cs-poster {
 }
 
 .cs-room-body { min-width: 0; padding-left: 14px; }
+/* a real room is a night of ours: its name opens that night */
+.cs-room-link { min-width: 0; color: inherit; text-decoration: none; }
+.cs-room-link:hover .cs-room-name { text-decoration: underline; text-underline-offset: 3px; }
 
 .cs-room-name {
   display: block;

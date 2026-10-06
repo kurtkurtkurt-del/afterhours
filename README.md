@@ -532,11 +532,13 @@ The plate is 400 units wide and a listing title is not: the card takes the
 artist from `featured.js` when there is one, and otherwise cuts the title
 at the colon — `Artist: Tour Name` is how the listings are written.
 
-**The rooms are invented for now** (`AFTERS` in `explore/event-data.js`) —
-they are placeholders, not real venues. The moment the after is wired to
-the deck they come out of our own events: same city, same night, a later
-start. Nothing in the section is booked with the ticket, which is the
-entire point of it.
+**Live, the rooms are our own nights** (since 06.10.2026, `realAfters()` in
+`explore/event.js`): same city, starting from an hour before this one
+empties until five in the morning, soonest first, one per venue, three at
+most, each opening that night's page. Live and nothing later, the bracket
+is one mark long and says so. The invented rooms (`AFTERS` in
+`explore/event-data.js`) only stand in while the backend is off. Nothing
+in the section is booked with the ticket, which is the entire point of it.
 
 ### Adding a new event
 
@@ -827,7 +829,7 @@ browser keeps using the old file:
 find . -name "*.html" -not -path "./.git/*" -not -path "./backend/*" -not -path "./app/*" | xargs perl -pi -e 's/\?v=135/?v=135/g'
 ```
 
-The current version: **194**.
+The current version: **195**.
 
 The explore date filter is real (every synced night carries a true
 date): tonight / tomorrow / this weekend / this week / this month /
