@@ -18,7 +18,8 @@ import { fetchDeck, posterUrl, swipe, unswipe, type Night } from '@/data/deck';
 import { supabase } from '@/lib/supabase';
 import { friendById as sampleFriendById, friends as sampleFriends, matches as sampleMatches, nights as sampleNights, sampleText } from '@/content/friends';
 import { useYours, type YoursFriend, type YoursMatch, type YoursNight } from '@/data/yours';
-import { wave2, wave3 } from '@/content/waves';
+import { wave2 as sampleWave2, wave3 as sampleWave3 } from '@/content/waves';
+import { waveCards, wavesKept, type WaveKept } from '@/data/waves';
 import { useAuth } from '@/auth/AuthContext';
 import { useTabReset } from '@/hooks/useTabReset';
 import { dayLabel } from '@/data/when';
@@ -152,6 +153,25 @@ export default function YoursScreen() {
     };
   }, [swipeIds]);
   const closeDeck = () => setDeck(null);
+
+  // The waves (33_waves.sql): nights kept by friends of friends and one step further.
+  // Until anyone out there keeps something, the sample cards stand in, marked sample.
+  const [waveRows, setWaveRows] = useState<WaveKept[]>([]);
+  useEffect(() => {
+    if (!uid) return;
+    let live = true;
+    wavesKept()
+      .then((list) => live && setWaveRows(list))
+      .catch(() => {});
+    return () => {
+      live = false;
+    };
+  }, [uid, real.ready]);
+  const realWave2 = useMemo(() => waveCards(waveRows, 2), [waveRows]);
+  const realWave3 = useMemo(() => waveCards(waveRows, 3), [waveRows]);
+  const wave2 = realWave2.length ? realWave2 : sampleWave2;
+  const wave3 = realWave3.length ? realWave3 : sampleWave3;
+  const waveSample = (deck === 'wave2' && !realWave2.length) || (deck === 'wave3' && !realWave3.length);
 
   // Friends' deck: nights friends kept, one card per night, keepers as squares.
   const friendsCards = useMemo<DeckCard[]>(() => {
@@ -524,7 +544,7 @@ export default function YoursScreen() {
         <DeckViewer
           mode={deck}
           cards={deck === 'mine' ? mineCards : deck === 'wave2' ? wave2 : deck === 'wave3' ? wave3 : friendsDeck}
-          sample={deck === 'wave2' || deck === 'wave3' || (deck === 'friends' && friendsSample)}
+          sample={waveSample || (deck === 'friends' && friendsSample)}
           onKeep={keepCard}
           onLetGo={letGoCard}
           onUndo={undoCard}

@@ -40,6 +40,7 @@ sql/29_profile_more.sql  more of you on your page: bio 160 → 300, profiles.abo
 sql/30_spark_map.sql     sparks on the map: sparks.lat/lng (where the host was when creating), spark_create(…, reach, lat, lng), sparks_near(lat, lng, km), spark_get(id); the spot is sharp for the host and their friends, rounded to ~1 km for the 2nd/3rd wave
 sql/31_past_feed.sql     the past feed on yours: past_feed(city, before, before_id, limit) — past nights with a photo, newest first, a year back, in your city plus wherever you or friends went; names who of yours checked in (show_friends) or kept it (kept_visible); paged by (starts_at, id)
 sql/32_rsvp.sql          who is coming: rsvps (in · maybe · out per person and night, closed table), rsvp_set(event, answer) (empty takes it back), rsvp_for(events[]) — yours and confirmed friends' answers only
+sql/33_waves.sql         the waves on yours: waves_kept(limit) — upcoming nights kept in the 2nd and 3rd wave (confirmed friendships, shortest chain, via = handles from your friend to the keeper); anyone with kept_visibility private is neither shown nor named on a chain
 sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities
 
 tools/build-seed.mjs     builds 03/04/05 from the front-end data

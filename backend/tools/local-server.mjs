@@ -25,7 +25,7 @@ for (const d of ["../test/supabase-shim.sql", "../sql/00_migrations.sql",
                  "../sql/11_world.sql", "../sql/12_profiles.sql",
                  "../sql/13_feedback.sql", "../sql/14_export.sql",
                  "../sql/15_ticketmaster.sql", "../sql/16_coverage.sql",
-                 "../sql/17_real_people.sql", "../sql/18_geo.sql", "../sql/19_checkins.sql", "../sql/20_djs.sql", "../sql/21_sound.sql", "../sql/22_hardening.sql", "../sql/23_checkin_open.sql", "../sql/24_photos.sql", "../sql/25_people.sql", "../sql/26_push.sql", "../sql/27_sparks.sql", "../sql/28_spark_waves.sql", "../sql/29_profile_more.sql", "../sql/30_spark_map.sql", "../sql/31_past_feed.sql", "../sql/32_rsvp.sql"]) {
+                 "../sql/17_real_people.sql", "../sql/18_geo.sql", "../sql/19_checkins.sql", "../sql/20_djs.sql", "../sql/21_sound.sql", "../sql/22_hardening.sql", "../sql/23_checkin_open.sql", "../sql/24_photos.sql", "../sql/25_people.sql", "../sql/26_push.sql", "../sql/27_sparks.sql", "../sql/28_spark_waves.sql", "../sql/29_profile_more.sql", "../sql/30_spark_map.sql", "../sql/31_past_feed.sql", "../sql/32_rsvp.sql", "../sql/33_waves.sql"]) {
   await db.exec(await read(d));
 }
 console.log("database ready (in memory)");

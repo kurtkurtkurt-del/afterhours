@@ -40,6 +40,7 @@ const structure = [
   ["30_spark_map.sql", "SPARKS ON THE MAP — A SPOT, BLURRED FOR STRANGERS"],
   ["31_past_feed.sql", "THE PAST FEED — PHOTOS OF NIGHTS THAT HAPPENED"],
   ["32_rsvp.sql", "WHO IS COMING — IN, MAYBE, OUT, FOR FRIENDS"],
+  ["33_waves.sql", "THE WAVES — NIGHTS KEPT BY FRIENDS OF FRIENDS"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
