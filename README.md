@@ -644,7 +644,8 @@ edited by hand: `ios/` and `android/` are generated.
   and this repository is served under `/afterhours/`, so here it is only
   the copy to hand on. The root answers 404 today. Two ways to finish:
   a repository named `kurtkurtkurt-del.github.io` (a GitHub user site,
-  served at the root) holding that one file plus an empty `.nojekyll`, or
+  served at the root) — its whole content is ready in `user-site/`, with
+  the steps in `user-site/README.md` — or
   a custom domain for the site (then the intent filter's host changes
   too). When the app goes to Play with Play App Signing, the Play key's
   SHA-256 (Play Console → App integrity) joins the list in the file. The
