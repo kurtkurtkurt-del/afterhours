@@ -650,6 +650,26 @@ edited by hand: `ios/` and `android/` are generated.
   SHA-256 (Play Console → App integrity) joins the list in the file. The
   iOS entry in `AH_CONFIG.app` waits for the App Store.
 
+### iOS: what stands between the app and the App Store (06.10.2026)
+
+The code runs on iOS as it is (`app.afterhours.ios`; location and photo
+texts set; `ITSAppUsesNonExemptEncryption: false` so every upload skips
+the export question). What is missing is outside the code:
+
+1. **An Apple Developer account** (99 USD a year); then
+   `npx eas-cli@latest build -p ios --profile preview` makes the signing
+   certificate and the push key (APNs) by itself.
+2. **Sign in with Apple** — App Review rule 4.8: an app that offers
+   Google sign-in must offer Apple too. Supabase has the Apple provider;
+   the app needs `expo-apple-authentication` and a button beside Google.
+   This is the one real piece of work left.
+3. **TestFlight, then the listing**: screenshots at 6.9", the privacy
+   answers (location, photos, account), the support and privacy URLs
+   (`help/`, `privacy/` exist).
+4. App Links on iOS (universal links) need
+   `.well-known/apple-app-site-association` at the same host root as the
+   Android file — the same `kurtkurtkurt-del.github.io` problem.
+
 ### One vocabulary
 
 Decided on 25.09.2026, and the app's wording wins where the two disagree:

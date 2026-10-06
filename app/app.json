@@ -10,7 +10,8 @@
       "bundleIdentifier": "app.afterhours.ios",
       "supportsTablet": false,
       "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "afterhours uses your location to show the nights near you."
+        "NSLocationWhenInUseUsageDescription": "afterhours uses your location to show the nights near you.",
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
