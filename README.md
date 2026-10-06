@@ -637,11 +637,18 @@ edited by hand: `ios/` and `android/` are generated.
   declares an Android intent filter for
   `https://kurtkurtkurt-del.github.io/afterhours/explore/event`, and
   `app/src/app/+native-intent.ts` turns that address into `/night/<slug>`
-  when the app receives it. **Still to do:** Android only opens https
-  links without asking once `.well-known/assetlinks.json` on the site
-  carries the app's signing certificate — `npx eas-cli credentials` prints
-  the SHA-256, and the file goes at the site root; the iOS entry in
-  `AH_CONFIG.app` waits for the App Store.
+  when the app receives it. **App Links, half done (06.10.2026):** `.well-known/assetlinks.json` is
+  written, with the SHA-256 of the EAS signing key (read off the preview
+  APK with `apksigner verify --print-certs`). But Android looks for it at
+  the root of the HOST — `https://kurtkurtkurt-del.github.io/.well-known/assetlinks.json` —
+  and this repository is served under `/afterhours/`, so here it is only
+  the copy to hand on. The root answers 404 today. Two ways to finish:
+  a repository named `kurtkurtkurt-del.github.io` (a GitHub user site,
+  served at the root) holding that one file plus an empty `.nojekyll`, or
+  a custom domain for the site (then the intent filter's host changes
+  too). When the app goes to Play with Play App Signing, the Play key's
+  SHA-256 (Play Console → App integrity) joins the list in the file. The
+  iOS entry in `AH_CONFIG.app` waits for the App Store.
 
 ### One vocabulary
 
