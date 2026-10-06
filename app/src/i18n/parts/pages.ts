@@ -187,6 +187,8 @@ export const pages = {
   'notify.djs.hint': { en: 'when one plays within the hour', de: 'wenn einer innerhalb der stunde auflegt', tr: 'biri bir saat içinde çalacaksa' },
   'notify.waves': { en: '2nd wave', de: '2. welle', tr: '2. dalga' },
   'notify.waves.hint': { en: 'when a friend of a friend keeps a night in your city, once a week at most', de: 'wenn ein freund eines freundes eine nacht in deiner stadt behält, höchstens einmal pro woche', tr: 'arkadaşının arkadaşı şehrinde bir gece sakladığında, haftada en fazla bir kez' },
+  'notify.sparks': { en: 'sparks', de: 'sparks', tr: "spark'lar" },
+  'notify.sparks.hint': { en: 'when someone in your waves starts a spark, and when someone is in on yours', de: 'wenn jemand aus deinen wellen einen spark startet, und wenn jemand bei deinem dabei ist', tr: 'dalgalarından biri spark başlattığında ve biri seninkine katıldığında' },
   'notify.requests': { en: 'friend requests', de: 'freundschaftsanfragen', tr: 'arkadaşlık istekleri' },
   'notify.requests.hint': { en: 'when someone wants to add you', de: 'wenn dich jemand hinzufügen will', tr: 'biri seni eklemek istediğinde' },
   'notify.accepts': { en: 'accepted requests', de: 'angenommene anfragen', tr: 'kabul edilen istekler' },

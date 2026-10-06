@@ -18,6 +18,8 @@ export type Settings = {
   notify_digest?: boolean;
   notify_djs?: boolean;
   notify_waves?: boolean;
+  // 26 + 34_spark_push.sql
+  notify_sparks?: boolean;
 };
 
 export async function fetchSettings(userId: string): Promise<Settings | null> {

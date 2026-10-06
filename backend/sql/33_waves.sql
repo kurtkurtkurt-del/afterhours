@@ -1,5 +1,5 @@
 -- afterhours — the waves on yours: nights kept beyond your friends
--- yours has shown two decks above friends' deck with sample cards only:
+-- yours has shown two decks above the friends deck with sample cards only:
 --
 --   2nd wave   nights kept by friends of your friends
 --   3rd wave   one step further
@@ -7,7 +7,7 @@
 -- This is the real thing. The walk goes over CONFIRMED friendships only, at
 -- most three steps, and keeps the shortest chain to each person, so a card can
 -- say who it came through ("you — lina — tarık"). Your own friends are not in
--- it: their keeps are friends' deck already.
+-- it: their keeps are the friends deck already.
 --
 -- What it shows of someone you do not know: their handle (else their name) and
 -- that they kept a night that is still to come. Nothing at all of a person who

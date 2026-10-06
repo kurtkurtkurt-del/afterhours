@@ -51,6 +51,7 @@ const NOTIFY = [
       { key: 'notify_digest', label: 'notify.digest', hint: 'notify.digest.hint' },
       { key: 'notify_djs', label: 'notify.djs', hint: 'notify.djs.hint' },
       { key: 'notify_waves', label: 'notify.waves', hint: 'notify.waves.hint' },
+      { key: 'notify_sparks', label: 'notify.sparks', hint: 'notify.sparks.hint' },
     ],
   },
 ] as const;

@@ -41,6 +41,7 @@ sql/30_spark_map.sql     sparks on the map: sparks.lat/lng (where the host was w
 sql/31_past_feed.sql     the past feed on yours: past_feed(city, before, before_id, limit) — past nights with a photo, newest first, a year back, in your city plus wherever you or friends went; names who of yours checked in (show_friends) or kept it (kept_visible); paged by (starts_at, id)
 sql/32_rsvp.sql          who is coming: rsvps (in · maybe · out per person and night, closed table), rsvp_set(event, answer) (empty takes it back), rsvp_for(events[]) — yours and confirmed friends' answers only
 sql/33_waves.sql         the waves on yours: waves_kept(limit) — upcoming nights kept in the 2nd and 3rd wave (confirmed friendships, shortest chain, via = handles from your friend to the keeper); anyone with kept_visibility private is neither shown nor named on a chain
+sql/34_spark_push.sql    push for sparks: spark (a spark reaches you, by name or inside its wave; the 2nd and 3rd wave count against the ten a day) and spark_in (someone is in on yours); kinds, words and notify_sparks live in 26_push.sql
 sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities
 
 tools/build-seed.mjs     builds 03/04/05 from the front-end data

@@ -41,4 +41,5 @@ export const EXPECTED_SQL = [
   "31_past_feed.sql",
   "32_rsvp.sql",
   "33_waves.sql",
+  "34_spark_push.sql",
 ];

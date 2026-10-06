@@ -8,6 +8,8 @@
 --   discovery  digest (thursday evening: the weekend in your city)
 --              dj_live (a DJ you follow plays within the hour)
 --              wave (a friend of a friend kept a night in your city)
+--   sparks     spark (someone in your waves started one) · spark_in (someone is in on yours)
+--              the triggers live in 34_spark_push.sql, after the sparks exist
 --
 -- The path: a trigger (or the hourly job) writes one row to push_outbox,
 -- unless the person turned that kind off; a unique key keeps the same thing
@@ -45,7 +47,8 @@ alter table public.profile_settings
   add column if not exists notify_replies  boolean not null default true,
   add column if not exists notify_digest   boolean not null default true,
   add column if not exists notify_djs      boolean not null default true,
-  add column if not exists notify_waves    boolean not null default true;
+  add column if not exists notify_waves    boolean not null default true,
+  add column if not exists notify_sparks   boolean not null default true;
 
 -- ------------------------------------------------------------ the phones
 
@@ -129,7 +132,7 @@ alter table public.push_outbox drop constraint if exists push_outbox_kind_check;
 alter table public.push_outbox add constraint push_outbox_kind_check check (kind in (
   'friend_request', 'friend_accepted', 'match', 'friend_live',
   'night_soon', 'room_open', 'room_closing', 'room_message', 'reply',
-  'digest', 'dj_live', 'wave'));
+  'digest', 'dj_live', 'wave', 'spark', 'spark_in'));
 create index if not exists push_outbox_user_idx on public.push_outbox (user_id, created_at desc);
 create index if not exists push_outbox_due_idx on public.push_outbox (send_after) where sent_at is null;
 
@@ -182,6 +185,7 @@ as $$
              when p_kind = 'digest'          then s.notify_digest
              when p_kind = 'dj_live'         then s.notify_djs
              when p_kind = 'wave'            then s.notify_waves
+             when p_kind in ('spark', 'spark_in') then s.notify_sparks
            end
     from public.profile_settings s where s.user_id = p_user), true);
 $$;
@@ -281,7 +285,13 @@ begin
     ('dj_live',         'tr', '{name} birazdan çalıyor',       '{where} · {time}'),
     ('wave',            'en', '2nd wave',                      'a friend of {via} kept {title}'),
     ('wave',            'de', '2. welle',                      'ein freund von {via} hat {title} behalten'),
-    ('wave',            'tr', '2. dalga',                      '{via} üzerinden biri {title} gecesini sakladı')
+    ('wave',            'tr', '2. dalga',                      '{via} üzerinden biri {title} gecesini sakladı'),
+    ('spark',           'en', '{name} is starting something',  '{title} · {when}'),
+    ('spark',           'de', '{name} startet etwas',          '{title} · {when}'),
+    ('spark',           'tr', '{name} bir şey başlatıyor',     '{title} · {when}'),
+    ('spark_in',        'en', '{name} is in',                  '{title}'),
+    ('spark_in',        'de', '{name} ist dabei',              '{title}'),
+    ('spark_in',        'tr', '{name} geliyor',                '{title}')
   ) as x(kind, lang, title, body)
   where x.kind = p_kind and x.lang = coalesce(nullif(p_lang, ''), 'en');
 
