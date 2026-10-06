@@ -12,7 +12,8 @@
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "afterhours uses your location to show the nights near you.",
         "ITSAppUsesNonExemptEncryption": false
-      }
+      },
+      "usesAppleSignIn": true
     },
     "android": {
       "package": "app.afterhours.android",
@@ -98,7 +99,8 @@
           "color": "#D7261E",
           "defaultChannel": "default"
         }
-      ]
+      ],
+      "expo-apple-authentication"
     ],
     "scheme": "afterhours",
     "experiments": {

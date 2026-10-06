@@ -659,10 +659,13 @@ the export question). What is missing is outside the code:
 1. **An Apple Developer account** (99 USD a year); then
    `npx eas-cli@latest build -p ios --profile preview` makes the signing
    certificate and the push key (APNs) by itself.
-2. **Sign in with Apple** — App Review rule 4.8: an app that offers
-   Google sign-in must offer Apple too. Supabase has the Apple provider;
-   the app needs `expo-apple-authentication` and a button beside Google.
-   This is the one real piece of work left.
+2. **Sign in with Apple** (App Review rule 4.8) — written (`auth/apple.ts`,
+   the button under Google on `signup`, iPhone only; `usesAppleSignIn`
+   in `app.json`). Apple's sheet gives an identity token with a hashed
+   nonce, Supabase's `signInWithIdToken` makes the session; the name,
+   which Apple sends only once, goes into the user's metadata. Left for
+   the dashboard: **Supabase → Authentication → Providers → Apple** on,
+   with the bundle id `app.afterhours.ios` as the client id.
 3. **TestFlight, then the listing**: screenshots at 6.9", the privacy
    answers (location, photos, account), the support and privacy URLs
    (`help/`, `privacy/` exist).

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { KeyboardAvoidingView, Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -10,6 +10,8 @@ import Button from '@/components/Button';
 import Input from '@/components/Input';
 import { authMessage, useAuth } from '@/auth/AuthContext';
 import { signInWithGoogle } from '@/auth/google';
+import { appleAvailable, signInWithApple } from '@/auth/apple';
+import * as AppleAuthentication from 'expo-apple-authentication';
 import GoogleMark from '@/components/GoogleMark';
 import { useT } from '@/i18n';
 import { supabase } from '@/lib/supabase';
@@ -63,13 +65,21 @@ export default function SignUpScreen() {
     }
   };
 
-  // Google: one door for both sign-up and sign-in; first visit continues to the handle step.
-  const google = async () => {
+  // Apple: only on an iPhone, beside Google (App Review 4.8).
+  const [apple, setApple] = useState(false);
+  useEffect(() => {
+    appleAvailable().then(setApple);
+  }, []);
+
+  // Google and Apple: one door for both sign-up and sign-in; first visit continues to
+  // the handle step.
+  const google = () => provider(signInWithGoogle);
+  const provider = async (signInWith: () => Promise<boolean>) => {
     if (busy) return;
     setBusy(true);
     setNote(null);
     try {
-      const inside = await signInWithGoogle();
+      const inside = await signInWith();
       if (!inside) return; // window closed
       const { data } = await supabase.rpc('profile_me');
       const row = Array.isArray(data) ? data[0] : data;
@@ -98,6 +108,15 @@ export default function SignUpScreen() {
             <GoogleMark />
             <Text style={styles.googleText}>{t('signup.google')}</Text>
           </Pressable>
+          {apple ? (
+            <AppleAuthentication.AppleAuthenticationButton
+              buttonType={mode === 'up' ? AppleAuthentication.AppleAuthenticationButtonType.SIGN_UP : AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN}
+              buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.WHITE_OUTLINE}
+              cornerRadius={radius.md}
+              style={styles.apple}
+              onPress={() => provider(signInWithApple)}
+            />
+          ) : null}
           <View style={styles.or}>
             <View style={styles.orLine} />
             <Text style={styles.orText}>{t('signup.or')}</Text>
@@ -155,6 +174,7 @@ const styles = StyleSheet.create({
   small: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute, marginTop: 6 },
   // Google: outlined button (paper border) with Google's own mark on the left.
   google: { height: 52, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 12, borderWidth: 1.5, borderColor: colors.paper, borderRadius: radius.md },
+  apple: { height: 52 },
   googleText: { fontFamily: fonts.medium, fontSize: 16, letterSpacing: -0.2, color: colors.paper },
   pressed: { opacity: 0.7 },
   or: { flexDirection: 'row', alignItems: 'center', gap: 12 },
