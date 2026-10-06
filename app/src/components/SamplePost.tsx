@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { Image, Pressable, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import type { SamplePost as Post } from '@/content/posts';
@@ -12,7 +12,8 @@ import { brand } from '@/theme/layout';
 // the photo full width, a heart and a speech mark, the likes, the caption, two
 // comments and "all n comments", and a line to add your own. Likes and comments stay
 // on the phone (they are samples); marked "sample" at the top right.
-export default function SamplePost({ post }: { post: Post }) {
+// memo: yours re-renders every six seconds (the gallery); the feed under it need not.
+export default memo(function SamplePost({ post }: { post: Post }) {
   const { width } = useWindowDimensions();
   const { t, up } = useLang();
   const [liked, setLiked] = useState(false);
@@ -115,7 +116,7 @@ export default function SamplePost({ post }: { post: Post }) {
       </View>
     </View>
   );
-}
+});
 
 const styles = StyleSheet.create({
   post: { marginTop: 26 },

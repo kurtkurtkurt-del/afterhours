@@ -4,7 +4,6 @@ import type { AudioSource } from 'expo-audio';
 // so nothing repeats across the app: 45-second excerpts bundled in assets/music
 // (sources and licences in CREDITS.md and the credits screen). The background
 // music is separate (content/music.ts).
-export const EXCERPT_SECONDS = 45;
 
 // DJ clips (the record rack): AurosonMusic, tropical house.
 export const clipTracks: AudioSource[] = [

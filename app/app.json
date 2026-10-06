@@ -15,7 +15,6 @@
     },
     "android": {
       "package": "app.afterhours.android",
-      "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#0E0D0C",
         "foregroundImage": "./assets/android-icon-foreground.png",

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import Animated, { useAnimatedStyle, useSharedValue, withRepeat, withTiming } from 'react-native-reanimated';
 import { FlatList, Image, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
@@ -253,7 +253,6 @@ export default function YoursScreen() {
     if (uid && /^[0-9a-f-]{36}$/.test(nightId)) rsvpSet(nightId, again ? null : a).catch(() => {});
   };
   const comingTo = (nightId: string) => theirAnswers.filter((r) => r.event_id === nightId && r.answer === 'in').length + (answers[nightId] === 'in' ? 1 : 0);
-  const names = (list: string[]) => (list.length > 2 ? `${list.slice(0, 2).join(', ')} +${list.length - 2}` : list.join(', '));
   // Each page is the full screen width with the photo inset inside it, so paging always
   // lands on a whole photo (a snap interval plus side padding stopped halfway).
   const slideW = width - brand.left * 2;
@@ -585,7 +584,10 @@ function StackThumb({ card }: { card: DeckCard | undefined }) {
 }
 
 // A past night in the feed: venue and date, the photo, who of yours was there.
-function PastPost({ p, names }: { p: PastNight; names: (list: string[]) => string }) {
+const names = (list: string[]) => (list.length > 2 ? `${list.slice(0, 2).join(', ')} +${list.length - 2}` : list.join(', '));
+
+// memo: the gallery above re-renders yours every six seconds; a post only changes with its night.
+const PastPost = memo(function PastPost({ p, names }: { p: PastNight; names: (list: string[]) => string }) {
   const { width } = useWindowDimensions();
   const { t, tx, up } = useLang();
   return (
@@ -611,7 +613,7 @@ function PastPost({ p, names }: { p: PastNight; names: (list: string[]) => strin
       </View>
     </View>
   );
-}
+});
 
 // A section heading: the words, an optional count or note on the right.
 function Head({ label, note, red }: { label: string; note?: string; red?: boolean }) {
