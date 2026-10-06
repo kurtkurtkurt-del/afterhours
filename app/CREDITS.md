@@ -98,3 +98,8 @@ Sample feed photos (assets/feed, the "from past nights" samples on yours): Unspl
 - e1.jpg — Danny Howe — https://unsplash.com/photos/bn-D2bCvpik
 - h1.jpg — peter bucks — https://unsplash.com/photos/bFhL-ov72RM
 - f3.jpg — Considerate Agency — https://unsplash.com/photos/UrzN-8K1PCE
+
+## Data
+
+- Weather forecast for sparks: Open-Meteo — https://open-meteo.com (CC BY 4.0)
+- Football fixtures for sparks: TheSportsDB — https://www.thesportsdb.com

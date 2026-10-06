@@ -71,6 +71,8 @@ export const tabs = {
   'spark.wave': { en: 'wave', de: 'welle', tr: 'dalga' },
   'spark.wave1': { en: '1st wave · your friends', de: '1. welle · deine freunde', tr: '1. dalga · arkadaşların' },
   'spark.wave1.short': { en: '1st wave', de: '1. welle', tr: '1. dalga' },
+  'spark.dry': { en: 'dry', de: 'trocken', tr: 'yağmur yok' },
+  'spark.rain': { en: '{n}% rain', de: '{n}% regen', tr: '%{n} yağmur' },
   'spark.waveNote': { en: 'who finds it in their sparks', de: 'wer es in seinen sparks findet', tr: 'kimlerin spark destesine düşecek' },
   'spark.people.one': { en: '{n} person', de: '{n} person', tr: '{n} kişi' },
   'spark.people.other': { en: '{n} people', de: '{n} personen', tr: '{n} kişi' },

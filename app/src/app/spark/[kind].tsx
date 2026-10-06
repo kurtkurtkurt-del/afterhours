@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Image, KeyboardAvoidingView, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -10,6 +10,8 @@ import PullDownScroll from '@/components/PullDownScroll';
 import SoundCorner from '@/components/SoundCorner';
 import { useAuth } from '@/auth/AuthContext';
 import { sparkOf, sparkTimes, type Spark } from '@/content/sparks';
+import { sparkHint, type SparkHint } from '@/data/sparkHints';
+import { useHere } from '@/data/here';
 import * as Location from 'expo-location';
 import { sparkAnswer, sparkAudience, sparkCreate, sparkGet, SparksNotReady, type Audience, type Reach, type SeenSpark } from '@/data/sparks';
 import { upperData, useLang, type Key } from '@/i18n';
@@ -80,9 +82,33 @@ function Hero({ spark, title, width }: { spark: Spark; title: string; width: num
 function CreateBody({ spark, width, whenText }: { spark: Spark; width: number; whenText: (at: Date) => string }) {
   const { session } = useAuth();
   const { t, tn, up } = useLang();
-  const times = useMemo(() => sparkTimes(spark), [spark]);
+  const here = useHere();
+  // The real next match, or the days the forecast likes; the plain hours until then.
+  const [hint, setHint] = useState<SparkHint | null>(null);
+  const titled = useRef(false);
   const [title, setTitle] = useState(() => t(spark.title).replace(/\.$/, ''));
   const [when, setWhen] = useState(0);
+  useEffect(() => {
+    let live = true;
+    sparkHint(spark, here.city, here.coords).then((h) => {
+      if (!live) return;
+      setHint(h);
+      setWhen(0);
+      // the derby takes the match as its name, unless you already wrote one
+      if (h?.title && !titled.current) setTitle(h.title);
+    });
+    return () => {
+      live = false;
+    };
+  }, [spark, here.city, here.coords]);
+  const plain = useMemo(() => sparkTimes(spark), [spark]);
+  const times = hint?.times.length ? hint.times : plain;
+  const noteOf = (i: number) => {
+    const n = hint?.notes[i];
+    if (!n) return null;
+    if ('match' in n) return n.match;
+    return `${n.tmax}° · ${n.rain <= 20 ? t('spark.dry') : t('spark.rain', { n: n.rain })}`;
+  };
   const [place, setPlace] = useState(() => t(spark.places[0]));
   const [reach, setReach] = useState<Reach>(1);
   const [audience, setAudience] = useState<Audience | null>(null);
@@ -142,7 +168,7 @@ function CreateBody({ spark, width, whenText }: { spark: Spark; width: number; w
         <View style={styles.rows}>
           <View style={styles.field}>
             <Text style={styles.rowK}>{t('spark.name')}</Text>
-            <Input value={title} onChangeText={setTitle} maxLength={80} />
+            <Input value={title} onChangeText={(v) => { titled.current = true; setTitle(v); }} maxLength={80} />
           </View>
           <View style={styles.field}>
             <Text style={styles.rowK}>{t('spark.when')}</Text>
@@ -151,6 +177,7 @@ function CreateBody({ spark, width, whenText }: { spark: Spark; width: number; w
                 <Chip key={at.toISOString()} label={whenText(at)} on={i === when} onPress={() => setWhen(i)} />
               ))}
             </View>
+            {noteOf(when) ? <Text style={styles.small}>{noteOf(when)}</Text> : null}
           </View>
           <View style={styles.field}>
             <Text style={styles.rowK}>{t('spark.where')}</Text>
