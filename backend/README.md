@@ -43,6 +43,7 @@ sql/32_rsvp.sql          who is coming: rsvps (in · maybe · out per person and
 sql/33_waves.sql         the waves on yours: waves_kept(limit) — upcoming nights kept in the 2nd and 3rd wave (confirmed friendships, shortest chain, via = handles from your friend to the keeper); anyone with kept_visibility private is neither shown nor named on a chain
 sql/34_spark_push.sql    push for sparks: spark (a spark reaches you, by name or inside its wave; the 2nd and 3rd wave count against the ten a day) and spark_in (someone is in on yours); kinds, words and notify_sparks live in 26_push.sql
 sql/35_spark_people.sql  spark_people(spark) — names and answers: the host sees in and out, someone who is in sees the others who are in, nobody else sees anything
+sql/36_person_cards.sql  person_cards(handle) — a friend's collection for their profile page, same shape as my_cards; you and friends only
 sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities
 
 tools/build-seed.mjs     builds 03/04/05 from the front-end data

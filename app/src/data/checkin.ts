@@ -41,6 +41,11 @@ export async function myCards(): Promise<CardRow[]> {
   return remember('cards', '', async () => ((await must(supabase.rpc('my_cards'))) ?? []) as CardRow[]);
 }
 
+// A friend's cards (36_person_cards.sql): empty for anyone who is not a friend.
+export async function personCards(handle: string): Promise<CardRow[]> {
+  return remember('personCards', handle, async () => ((await must(supabase.rpc('person_cards', { p_handle: handle }))) ?? []) as CardRow[], 8);
+}
+
 export type RoomInfo = { event_id: string; checked_in: boolean; freeze_at: string; frozen: boolean; who_count: number; initials: string[] };
 export async function roomInfo(slug: string): Promise<RoomInfo | null> {
   const data = await remember('roomInfo', slug, () => must(supabase.rpc('room_info', { p_slug: slug })), 30);

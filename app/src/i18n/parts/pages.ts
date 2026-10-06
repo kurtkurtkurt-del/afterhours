@@ -165,6 +165,8 @@ export const pages = {
   'person.hidden': { en: 'this profile is not visible', de: 'dieses profil ist nicht sichtbar', tr: 'bu profil görünmüyor' },
   'person.loading': { en: 'loading…', de: 'lädt…', tr: 'yükleniyor…' },
   'person.sample': { en: 'sample profile', de: 'beispielprofil', tr: 'örnek profil' },
+  'person.deck.locked': { en: 'friends see the collection', de: 'die sammlung sehen nur freunde', tr: 'koleksiyonu arkadaşlar görür' },
+  'person.deck.empty': { en: 'no cards yet', de: 'noch keine karten', tr: 'henüz kart yok' },
   'notify.title': { en: 'notifications', de: 'benachrichtigungen', tr: 'bildirimler' },
   'notify.allow': { en: 'allow notifications', de: 'benachrichtigungen erlauben', tr: 'bildirimlere izin ver' },
   'notify.allow.hint': { en: 'afterhours may tell you when friends do something', de: 'afterhours sagt dir, wenn freunde etwas tun', tr: 'arkadaşların bir şey yaptığında afterhours haber verir' },
