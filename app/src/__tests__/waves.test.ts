@@ -1,4 +1,6 @@
 // The waves: rows from waves_kept() become one card per night and wave.
+/* eslint-disable import/first -- jest.mock calls are hoisted above the imports anyway */
+import { describe, expect, it, jest } from '@jest/globals';
 
 jest.mock('@/lib/supabase', () => ({ supabase: {} }));
 jest.mock('@/lib/offline', () => ({}));

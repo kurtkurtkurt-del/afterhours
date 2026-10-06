@@ -1,4 +1,6 @@
 // The offline layer: reads fall back to the shelf, writes wait in order.
+/* eslint-disable import/first -- jest.mock calls are hoisted above the imports anyway */
+import { beforeAll, beforeEach, describe, expect, it, jest } from '@jest/globals';
 
 const mockStore = new Map<string, string>();
 jest.mock('expo-sqlite/kv-store', () => ({
@@ -17,7 +19,7 @@ jest.mock('@react-native-community/netinfo', () => ({
   default: { addEventListener: (fn: typeof mockNet) => (mockNet = fn) },
 }));
 
-const mockRpc = jest.fn();
+const mockRpc = jest.fn<(...a: unknown[]) => Promise<{ error: unknown }>>();
 jest.mock('@/lib/supabase', () => ({
   supabase: {
     auth: { onAuthStateChange: jest.fn() },
@@ -107,7 +109,7 @@ describe('send', () => {
     mockNet?.({ isConnected: true, isInternetReachable: true });
     await flushAll();
     await flushAll();
-    expect(mockRpc.mock.calls.map((c) => c[1].p_slug)).toEqual(['a', 'b']);
+    expect(mockRpc.mock.calls.map((c) => (c[1] as { p_slug: string }).p_slug)).toEqual(['a', 'b']);
     expect(mockStore.get('outbox')).toBeUndefined();
   });
 
@@ -119,7 +121,7 @@ describe('send', () => {
     mockNet?.({ isConnected: true, isInternetReachable: true });
     await flushAll();
     await flushAll();
-    expect(mockRpc.mock.calls.map((c) => c[1].p_slug)).toEqual(['gone', 'next']);
+    expect(mockRpc.mock.calls.map((c) => (c[1] as { p_slug: string }).p_slug)).toEqual(['gone', 'next']);
     expect(mockStore.get('outbox')).toBeUndefined();
   });
 

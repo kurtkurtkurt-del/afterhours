@@ -1,4 +1,8 @@
 // Sparks that read the world: fixtures for the derby, the forecast for the rest.
+/* eslint-disable import/first -- jest.mock calls are hoisted above the imports anyway */
+import { afterEach, describe, expect, it, jest } from '@jest/globals';
+
+type Mock = ReturnType<typeof jest.fn>;
 
 jest.mock('@/lib/offline', () => ({ remember: (_g: string, _k: string, work: () => Promise<unknown>) => work() }));
 jest.mock('../../assets/sparks/derby.jpg', () => 1, { virtual: true });
@@ -10,7 +14,7 @@ const answer = (body: unknown) => Promise.resolve({ ok: true, json: () => Promis
 const now = new Date('2026-10-06T10:00:00Z');
 
 afterEach(() => {
-  (global.fetch as jest.Mock | undefined)?.mockReset?.();
+  (globalThis.fetch as Mock | undefined)?.mockReset?.();
 });
 
 describe('dayScore', () => {
@@ -29,7 +33,7 @@ describe('dayScore', () => {
 
 describe('sparkHint', () => {
   it('puts the best forecast days first for the grill', async () => {
-    global.fetch = jest.fn(() =>
+    globalThis.fetch = jest.fn(() =>
       answer({
         daily: {
           time: ['2026-10-06', '2026-10-07', '2026-10-08', '2026-10-09'],
@@ -37,7 +41,7 @@ describe('sparkHint', () => {
           precipitation_probability_max: [10, 0, 0, 70],
         },
       }),
-    ) as jest.Mock;
+    ) as Mock;
     const h = await sparkHint(sparkOf('grill'), 'munchen', null, now);
     expect(h).not.toBeNull();
     expect(h!.times.map((t) => t.getDate())).toEqual([8, 6]);
@@ -45,14 +49,14 @@ describe('sparkHint', () => {
   });
 
   it('uses the real next match for the derby, half an hour before kick-off', async () => {
-    global.fetch = jest.fn(() =>
+    globalThis.fetch = jest.fn(() =>
       answer({
         events: [
           { strTimestamp: '2026-10-10T13:30:00', strEvent: 'Augsburg vs Bayern Munich', strLeague: 'German Bundesliga', strHomeTeam: 'Augsburg', strAwayTeam: 'Bayern Munich' },
           { strTimestamp: '2026-10-30T18:00:00', strEvent: 'Too Far vs Away', strLeague: 'x' },
         ],
       }),
-    ) as jest.Mock;
+    ) as Mock;
     const h = await sparkHint(sparkOf('derby'), 'munchen', null, now);
     expect(h!.title).toBe('augsburg vs bayern munich');
     expect(h!.times).toHaveLength(1);
@@ -66,14 +70,14 @@ describe('sparkHint', () => {
       '133807': [{ strTimestamp: '2026-10-12T17:00:00', strEvent: 'Fenerbahçe vs Beşiktaş', strHomeTeam: 'Fenerbahçe', strAwayTeam: 'Beşiktaş' }],
       '133794': [{ strTimestamp: '2026-10-12T17:00:00', strEvent: 'Fenerbahçe vs Beşiktaş', strHomeTeam: 'Fenerbahçe', strAwayTeam: 'Beşiktaş' }],
     };
-    global.fetch = jest.fn((url: string) => answer({ events: byTeam[/id=(\d+)/.exec(url)![1]] })) as jest.Mock;
+    globalThis.fetch = jest.fn((url: string) => answer({ events: byTeam[/id=(\d+)/.exec(url)![1]] })) as Mock;
     const h = await sparkHint(sparkOf('derby'), 'istanbul', null, now);
     expect(h!.title).toBe('fenerbahçe vs beşiktaş');
     expect(h!.times).toHaveLength(2); // the same match from both teams counts once
   });
 
   it('gives nothing (the plain hours) when the source fails or the city is unknown', async () => {
-    global.fetch = jest.fn(() => Promise.reject(new Error('Network request failed'))) as jest.Mock;
+    globalThis.fetch = jest.fn(() => Promise.reject(new Error('Network request failed'))) as Mock;
     expect(await sparkHint(sparkOf('grill'), 'munchen', null, now)).toBeNull();
     expect(await sparkHint(sparkOf('derby'), 'munchen', null, now)).toBeNull();
     expect(await sparkHint(sparkOf('hike'), 'nowhere', null, now)).toBeNull();
