@@ -68,6 +68,17 @@ export async function sparksNear(lat: number, lng: number, km: number): Promise<
   if (error) return [];
   return (data ?? []) as NearSpark[];
 }
+// 35_spark_people.sql: who answered, by name (host: in and out; someone in: who else is in).
+export type SparkPerson = { name: string; answer: 'in' | 'out'; answered_at: string | null; me: boolean };
+export async function sparkPeople(id: string): Promise<SparkPerson[]> {
+  const { data, error } = await supabase.rpc('spark_people', { p_spark: id });
+  if (error) return [];
+  return (data ?? []) as SparkPerson[];
+}
+export async function sparkCancel(id: string) {
+  const { error } = await supabase.rpc('spark_cancel', { p_spark: id });
+  if (error) throw error;
+}
 export async function sparkGet(id: string): Promise<SeenSpark | null> {
   const { data, error } = await supabase.rpc('spark_get', { p_spark: id });
   if (error) throw error;

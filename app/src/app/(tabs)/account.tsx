@@ -271,7 +271,7 @@ export default function AccountScreen() {
               <Section title={t('account.sparks')}>
                 {sparks === null ? null : sparks.length ? (
                   sparks.map((sp) => (
-                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}`)} style={({ pressed }) => [styles.line, pressed && styles.pressed]}>
+                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.line, pressed && styles.pressed]}>
                       <View style={styles.lineMain}>
                         <Text style={styles.lineTitle} numberOfLines={1}>{sp.title.toLowerCase()}</Text>
                         <Text style={styles.small} numberOfLines={1}>

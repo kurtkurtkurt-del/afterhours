@@ -13,7 +13,7 @@ import { sparkOf, sparkTimes, type Spark } from '@/content/sparks';
 import { sparkHint, type SparkHint } from '@/data/sparkHints';
 import { useHere } from '@/data/here';
 import * as Location from 'expo-location';
-import { sparkAnswer, sparkAudience, sparkCreate, sparkGet, SparksNotReady, type Audience, type Reach, type SeenSpark } from '@/data/sparks';
+import { sparkAnswer, sparkAudience, sparkCancel, sparkCreate, sparkGet, sparkPeople, SparksNotReady, type Audience, type Reach, type SeenSpark, type SparkPerson } from '@/data/sparks';
 import { upperData, useLang, type Key } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -235,9 +235,13 @@ function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; 
   const [invite, setInvite] = useState<SeenSpark | null | undefined>(undefined);
   const [answer, setAnswer] = useState<'in' | 'out' | null>(null);
   const [note, setNote] = useState<string | null>(null);
+  // Who answered: the host sees in and out, someone who is in sees the others in.
+  const [people, setPeople] = useState<SparkPerson[]>([]);
+  const [calling, setCalling] = useState(false);
 
   useEffect(() => {
     let live = true;
+    sparkPeople(id).then((list) => live && setPeople(list));
     sparkGet(id)
       .then((one) => live && setInvite(one))
       .catch(() => live && setInvite(null));
@@ -268,6 +272,20 @@ function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; 
       </>
     );
   }
+  const callOff = () => {
+    if (!calling) {
+      setCalling(true); // a second press confirms
+      return;
+    }
+    sparkCancel(id)
+      .then(() => router.back())
+      .catch((e) => {
+        setCalling(false);
+        setNote(String(e?.message ?? e).toLowerCase());
+      });
+  };
+  const ins = people.filter((p) => p.answer === 'in');
+  const outs = people.filter((p) => p.answer === 'out');
   const host = invite.mine ? t('deck.you') : (invite.host_name ?? invite.host_handle ?? '').toLowerCase();
   const said = answer ?? (invite.my_answer === 'in' || invite.my_answer === 'out' ? invite.my_answer : null);
   return (
@@ -291,7 +309,10 @@ function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; 
           <Row k={t('spark.when')} v={whenText(new Date(invite.starts_at))} />
           <Row k={t('spark.where')} v={invite.place ?? '—'} />
           <Row k={t('spark.who')} v={t('spark.going', { n: invite.going })} />
+          {ins.length ? <Row k={t('spark.in.names')} v={ins.map((p) => (p.me ? t('deck.you') : p.name.toLowerCase())).join(', ')} /> : null}
+          {invite.mine && outs.length ? <Row k={t('spark.out.names')} v={outs.map((p) => p.name.toLowerCase()).join(', ')} /> : null}
         </View>
+        {invite.mine ? <Button label={calling ? t('spark.callOff.sure') : t('spark.callOff')} kind="line" onPress={callOff} /> : null}
       </View>
     </>
   );
