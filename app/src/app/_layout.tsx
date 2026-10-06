@@ -20,9 +20,12 @@ import { usePushRegistration, usePushRouting } from '@/lib/push';
 import GenrePicker from '@/components/GenrePicker';
 import OfflineBar from '@/components/OfflineBar';
 import { startOffline } from '@/lib/offline';
+import '@/data/jobs';
+import { startWarm } from '@/data/warm';
 
 // Watch connectivity and flush queued writes as soon as the app starts.
 startOffline();
+startWarm();
 
 // Keep the native splash up until fonts load so the hand-off is invisible.
 SplashScreen.preventAutoHideAsync();

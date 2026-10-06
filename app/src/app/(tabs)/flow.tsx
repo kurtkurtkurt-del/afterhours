@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import Svg, { Circle, Path } from 'react-native-svg';
 import Storage from 'expo-sqlite/kv-store';
 import Deck, { isCard, isSpark, openSpark, type DeckEntry, type DeckHandle, type SparkEntry } from '@/components/Deck';
-import { SPARKS, sparkOf } from '@/content/sparks';
+import { SPARKS, sparkIn, sparkOf } from '@/content/sparks';
 import { sparkAnswer, sparkInbox, type SparkInvite } from '@/data/sparks';
 import BigPicker from '@/components/BigPicker';
 import WhenPicker from '@/components/WhenPicker';
@@ -23,6 +23,8 @@ import { useTabReset } from '@/hooks/useTabReset';
 import { OfflineError, onBackOnline } from '@/lib/offline';
 import { typeCounts, useEventTypes } from '@/data/types';
 import { fetchDeck, resetSwipes, swipe, unswipe, type Night } from '@/data/deck';
+import { aboutFor, type About } from '@/data/about';
+import { AboutSheet } from '@/components/About';
 import { filterWhen, isWhen, whenName, type When } from '@/data/when';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
@@ -32,21 +34,25 @@ type Panel = 'tickets' | 'spark';
 
 // Spark panel: only sparks, no ticketed nights. Friends' invites first, then the
 // sparks to start yourself (derby, grill, hike), dealt from a different one each time.
-function sparkDeck(invites: SparkInvite[], seed: number): DeckEntry[] {
-  const out: DeckEntry[] = invites.map((inv): SparkEntry => ({ id: 'invite:' + inv.id, spark: sparkOf(inv.kind), invite: inv }));
+// In a city with its own versions (Munich), the cards carry its places.
+function sparkDeck(invites: SparkInvite[], seed: number, city: string | null): DeckEntry[] {
+  const out: DeckEntry[] = invites.map((inv): SparkEntry => ({ id: 'invite:' + inv.id, spark: sparkIn(sparkOf(inv.kind), city), invite: inv }));
   SPARKS.forEach((_, i) => {
-    const spark = SPARKS[(i + seed) % SPARKS.length];
+    const spark = sparkIn(SPARKS[(i + seed) % SPARKS.length], city);
     out.push({ id: `spark:${spark.kind}`, spark });
   });
   return out;
 }
+
+// Height of the button row under the deck (buttons + the room around them).
+const ACTIONS = 92;
 
 // The deck, with city / type / time pickers on top. Keep and let go are saved when signed in.
 export default function FlowScreen() {
   const { session } = useAuth();
   const { cities } = useCities();
   const types = useEventTypes();
-  const { t, tx, up } = useLang();
+  const { t, tx, up, lang } = useLang();
 
   const here = useHere();
   const city = here.city;
@@ -84,6 +90,17 @@ export default function FlowScreen() {
 
   // Invites from friends (spark panel only, signed in only).
   const [invites, setInvites] = useState<{ key: string; list: SparkInvite[] }>({ key: '', list: [] });
+  // "who is this?": the texts for the nights in this deck, and the one open in the sheet.
+  const [abouts, setAbouts] = useState<Map<string, About>>(new Map());
+  const [reading, setReading] = useState<About | null>(null);
+  useEffect(() => {
+    const ids = result.rows?.map((n) => n.id) ?? [];
+    let live = true;
+    aboutFor(ids, lang).then((m) => live && setAbouts(m));
+    return () => {
+      live = false;
+    };
+  }, [result.rows, lang]);
   useEffect(() => {
     if (panel !== 'spark' || !session) return;
     let live = true;
@@ -96,10 +113,10 @@ export default function FlowScreen() {
   const nights = useMemo<DeckEntry[] | null>(() => {
     if (panel === 'spark') {
       if (signedIn && invites.key !== key) return null; // wait for the inbox so invites land on top
-      return sparkDeck(invites.key === key ? invites.list : [], reloads);
+      return sparkDeck(invites.key === key ? invites.list : [], reloads, city);
     }
     return result.key === key && result.rows ? filterWhen(result.rows, when) : null;
-  }, [result, key, when, panel, signedIn, invites, reloads]);
+  }, [result, key, when, panel, signedIn, invites, reloads, city]);
 
   useEffect(() => {
     let cancelled = false;
@@ -217,7 +234,7 @@ export default function FlowScreen() {
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
-      {/* Where, big; under it tickets · spark with undo at the end; under that, on tickets, what and when. */}
+      {/* Where, big; under it tickets · spark; under that, on tickets, what and when. */}
       <View style={[styles.head, { top: Math.max(brand.top, insets.top + 24) - 8 }]} onLayout={(e) => setHeadBottom(e.nativeEvent.layout.y + e.nativeEvent.layout.height)}>
         <Pressable onPress={() => setSheet('city')} hitSlop={8} accessibilityRole="button" accessibilityLabel={t('filter.where')} style={({ pressed }) => [styles.city, pressed && styles.pressed]}>
           <Svg width={14} height={18} viewBox="0 0 14 18">
@@ -236,14 +253,6 @@ export default function FlowScreen() {
               </Pressable>
             ))}
           </View>
-          {swiped > 0 ? (
-            <Pressable onPress={() => deck.current?.undo()} hitSlop={8} accessibilityRole="button" style={({ pressed }) => [styles.undo, pressed && styles.pressed]}>
-              <Svg width={14} height={14} viewBox="0 0 14 14">
-                <Path d="M5 3 2 6l3 3M2 6h6.5a3.5 3.5 0 0 1 0 7H6" stroke={colors.paper} strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" fill="none" />
-              </Svg>
-              <Text style={styles.undoText}>{t('flow.undo')}</Text>
-            </Pressable>
-          ) : null}
         </View>
         {panel === 'tickets' ? (
           <View style={styles.pills}>
@@ -258,10 +267,31 @@ export default function FlowScreen() {
         {error && panel === 'tickets' ? (
           <Text style={styles.note}>{error === 'offline' ? up(t('offline.empty')) : upperData(error)}</Text>
         ) : nights ? (
-          <Deck ref={deck} key={`${panel}/${city}/${type}/${when}/${reloads}`} nights={nights} friendsOf={friendsOf} bottom={tabSpace + 4} top={(headBottom || Math.max(brand.top, insets.top + 24) + 30) + 14} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} />
+          <Deck ref={deck} key={`${panel}/${city}/${type}/${when}/${reloads}`} nights={nights} friendsOf={friendsOf} bottom={tabSpace + ACTIONS} top={(headBottom || Math.max(brand.top, insets.top + 24) + 30) + 14} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} hasAbout={(e) => abouts.has(e.id)} onAbout={(e) => setReading(abouts.get(e.id) ?? null)} />
         ) : (
           <Text style={styles.note}>{up(t('flow.loading'))}</Text>
         )}
+
+        {/* Under the card, with room around them: let go, undo, keep. The same as a swipe. */}
+        {nights && nights.length > swiped ? (
+          <View style={[styles.actions, { bottom: tabSpace + 14 }]}>
+            <Pressable onPress={() => deck.current?.swipe('left')} accessibilityRole="button" accessibilityLabel={t('word.letgo')} style={({ pressed }) => [styles.act, pressed && styles.pressed]}>
+              <Svg width={22} height={22} viewBox="0 0 22 22">
+                <Path d="M5 5l12 12M17 5L5 17" stroke={colors.paper} strokeWidth={2} strokeLinecap="round" />
+              </Svg>
+            </Pressable>
+            <Pressable onPress={() => deck.current?.undo()} disabled={swiped === 0} accessibilityRole="button" accessibilityLabel={t('flow.undo')} style={({ pressed }) => [styles.act, styles.actSmall, swiped === 0 && styles.actOff, pressed && styles.pressed]}>
+              <Svg width={18} height={18} viewBox="0 0 14 14">
+                <Path d="M5 3 2 6l3 3M2 6h6.5a3.5 3.5 0 0 1 0 7H6" stroke={colors.paper} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              </Svg>
+            </Pressable>
+            <Pressable onPress={() => deck.current?.swipe('right')} accessibilityRole="button" accessibilityLabel={t('word.keep')} style={({ pressed }) => [styles.act, styles.actKeep, pressed && styles.pressed]}>
+              <Svg width={24} height={24} viewBox="0 0 24 24">
+                <Path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2Z" fill={colors.paper} />
+              </Svg>
+            </Pressable>
+          </View>
+        ) : null}
       </View>
 
       <PlacePicker open={sheet === 'city'} cities={cities} selected={city} onSelect={(id) => pickCity(id ?? '*')} onClose={() => setSheet(null)} />
@@ -275,6 +305,15 @@ export default function FlowScreen() {
         selected={type ?? '*'}
         onSelect={pickType}
         onClose={() => setSheet(null)}
+      />
+      <AboutSheet
+        about={reading}
+        onClose={() => setReading(null)}
+        onKeep={() => {
+          // Close first, then throw the card right, so the keep animation is seen.
+          setReading(null);
+          setTimeout(() => deck.current?.swipe('right'), 280);
+        }}
       />
       <WhenPicker open={sheet === 'when'} rows={result.key === key && result.rows ? result.rows : []} selected={when} onSelect={pickWhen} onClose={() => setSheet(null)} />
     </View>
@@ -298,8 +337,11 @@ const styles = StyleSheet.create({
   panelDotOn: { backgroundColor: colors.spot },
   panelText: { fontFamily: fonts.medium, fontSize: 13.5, color: colors.paper, opacity: 0.75 },
   panelTextOn: { color: colors.ink, opacity: 1 },
-  undo: { marginLeft: 'auto', flexDirection: 'row', alignItems: 'center', gap: 6, height: 32, paddingHorizontal: 12, borderRadius: radius.pill, backgroundColor: 'rgba(14,13,12,0.82)' },
-  undoText: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper },
+  actions: { position: 'absolute', left: 0, right: 0, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 28 },
+  act: { width: 60, height: 60, borderRadius: 30, borderWidth: 1, borderColor: colors.ink3, backgroundColor: colors.ink, alignItems: 'center', justifyContent: 'center' },
+  actSmall: { width: 46, height: 46, borderRadius: 23 },
+  actOff: { opacity: 0.35 },
+  actKeep: { backgroundColor: colors.spot, borderColor: colors.spot },
   stage: { flex: 1 },
   note: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, textAlign: 'center', marginTop: 40 },
 });

@@ -120,6 +120,9 @@ function locate(cities: City[], force = false) {
   return running;
 }
 
+// The city right now, outside React (the warm-up in data/warm.ts).
+export const currentCity = () => state.city;
+
 export function useHere() {
   return useSyncExternalStore(
     (fn) => {

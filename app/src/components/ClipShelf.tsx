@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Image, Pressable, ScrollView, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
+import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import Vinyl from '@/components/Vinyl';
@@ -52,7 +53,7 @@ export default function ClipShelf({ clips, djOf, tonight }: Props) {
   return (
     <View>
       <View style={styles.feat}>
-        {dj ? <Image source={photoOf(dj)} style={StyleSheet.absoluteFill} resizeMode="cover" /> : null}
+        {dj ? <Image source={photoOf(dj)} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
         <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.94)']} locations={[0.25, 1]} style={StyleSheet.absoluteFill} />
         <Text style={styles.count}>{`${clips.indexOf(current) + 1} / ${clips.length}`}</Text>
         <Pressable onPress={() => setLiked((l) => ({ ...l, [current.id]: !l[current.id] }))} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('clips.like')} style={styles.heart}>
@@ -109,7 +110,7 @@ function Sleeve({ clip, photo, name, genre, active, onPress }: { clip: Clip; pho
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={`${name} · ${clip.title}`} style={({ pressed }) => [styles.sleeve, pressed && styles.pressed]}>
       <Animated.View style={[styles.disc, disc]}>{photo ? <Vinyl size={104} label={photo} spinning={active} /> : null}</Animated.View>
       <View style={styles.cover}>
-        {photo ? <Image source={photo} style={StyleSheet.absoluteFill} resizeMode="cover" /> : null}
+        {photo ? <Image source={photo} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
         <Text style={styles.coverGenre}>{upperData(genre)}</Text>
       </View>
       <Text style={styles.sleeveName} numberOfLines={1}>{name}</Text>

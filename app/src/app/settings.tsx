@@ -1,14 +1,15 @@
 import { SITE } from '@/data/deck';
 import { useEffect, useState } from 'react';
-import { Alert, Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Alert, Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 import Constants, { ExecutionEnvironment } from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Storage from 'expo-sqlite/kv-store';
 import BackButton, { EdgeBack } from '@/components/BackButton';
 import PhotoBox from '@/components/PhotoBox';
 import PickerSheet from '@/components/PickerSheet';
+import PullDownScroll from '@/components/PullDownScroll';
 import SoundCorner from '@/components/SoundCorner';
 import { Mark, Panel, Row, Section, Switch, Value } from '@/components/Row';
 import { useAuth } from '@/auth/AuthContext';
@@ -23,8 +24,10 @@ import { langNames, langs, upperData, useLang, type Lang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// Settings home: profile card (photo, name, "edit") above grouped panels.
-// Form fields live on /profile, not here.
+// Settings home: the profile card (photo, name, "edit"), then one row per group —
+// app, privacy, notifications, account, about — each opening its own page
+// (settings?section=…), so every setting is one or two taps away.
+// Form fields live on /profile, not here. Every page closes by pulling down.
 // › opens inside the app, ↗ leaves it.
 // Notification switches in three groups (26_push.sql).
 const NOTIFY = [
@@ -56,9 +59,14 @@ const NOTIFY = [
   },
 ] as const;
 
+type SectionId = 'app' | 'privacy' | 'notify' | 'account' | 'about';
+const TITLES = { home: 'settings.title', app: 'settings.app', privacy: 'settings.privacy', notify: 'notify.title', account: 'settings.account', about: 'settings.about' } as const;
+const openSection = (section: SectionId) => router.push({ pathname: '/settings', params: { section } });
+
 export default function SettingsScreen() {
+  const { section } = useLocalSearchParams<{ section?: SectionId }>();
   const { session, signOut, isAnonymous } = useAuth();
-  const tick = useRefreshOnFocus();
+  const tick = useRefreshOnFocus('settings');
   // Refresh the card after returning from the profile page.
   const profile = useProfile(tick);
   const ambient = useAmbient();
@@ -123,45 +131,9 @@ export default function SettingsScreen() {
     .filter(Boolean)
     .map((s) => upperData(String(s)))
     .join(' · ');
-  const version = `${Constants.expoConfig?.version ?? '0.1.0'} · ${Constants.executionEnvironment === ExecutionEnvironment.StoreClient ? 'expo go' : 'build'}`;
-
-  return (
-    <View style={styles.root}>
-      <StatusBar style="light" />
-      <EdgeBack />
-      <View style={styles.band}>
-        <Text style={styles.title}>{t('settings.title')}</Text>
-        <SoundCorner />
-      </View>
-      <ScrollView contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 32 }]} showsVerticalScrollIndicator={false}>
-        {/* Profile card: edits the profile when signed in, otherwise opens sign-up. */}
-        <Pressable
-          onPress={() => router.push(session && !isAnonymous ? '/profile' : '/signup')}
-          accessibilityRole="button"
-          style={({ pressed }) => [styles.card, pressed && styles.pressed]}
-        >
-          <PhotoBox uri={photo} size={52} onError={() => photo && broken(photo)} />
-          <View style={styles.cardText}>
-            <Text style={styles.cardName} numberOfLines={1}>
-              {session ? name : t('account.you')}
-            </Text>
-            <Text style={styles.cardUnder} numberOfLines={1}>
-              {session && !isAnonymous ? under || up(t('account.noHandle')) : up(isAnonymous ? t('word.guest') : t('settings.guest.hint'))}
-            </Text>
-          </View>
-          <Value text={session && !isAnonymous ? t('settings.edit') : t('word.signup')} more />
-        </Pressable>
-
-        <Section title={t('settings.app')} />
-        <Panel>
-          <Row label={t('lang.label')} hint={t('lang.hint')} right={<Value text={langNames[lang]} more />} onPress={() => setSheet('locale')} />
-          <Row label={t('settings.music')} right={<Switch on={ambient.on} />} onPress={ambient.toggle} />
-          <Row label={t('settings.genre')} hint={t('settings.genre.hint')} right={<Value text={soundName} more />} onPress={() => setSheet('sound')} />
-        </Panel>
-
-        {session ? (
+  // Privacy and notifications only exist with an account (null otherwise).
+  const privacy = session ? (
           <>
-            <Section title={t('settings.privacy')} />
             <Panel>
               <Row
                 label={t('settings.kept')}
@@ -183,11 +155,9 @@ export default function SettingsScreen() {
               />
             </Panel>
           </>
-        ) : null}
-
-        {session && !isAnonymous ? (
+        ) : null;
+  const notify = session && !isAnonymous ? (
           <>
-            <Section title={t('notify.title')} />
             {push !== 'granted' ? (
               <Panel>
                 {push === 'unsupported' ? (
@@ -214,9 +184,67 @@ export default function SettingsScreen() {
               </View>
             ))}
           </>
-        ) : null}
+        ) : null;
+  const version = `${Constants.expoConfig?.version ?? '0.1.0'} · ${Constants.executionEnvironment === ExecutionEnvironment.StoreClient ? 'expo go' : 'build'}`;
 
-        <Section title={t('settings.account')} />
+  return (
+    <View style={styles.root}>
+      <StatusBar style="light" />
+      <EdgeBack />
+      <PullDownScroll
+        header={
+          <View style={styles.band}>
+            <Text style={styles.title}>{t(TITLES[section ?? 'home'])}</Text>
+            <SoundCorner />
+          </View>
+        }
+        contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 32 }]}
+        showsVerticalScrollIndicator={false}
+      >
+        {!section ? (
+          <>
+        {/* Profile card: edits the profile when signed in, otherwise opens sign-up. */}
+        <Pressable
+          onPress={() => router.push(session && !isAnonymous ? '/profile' : '/signup')}
+          accessibilityRole="button"
+          style={({ pressed }) => [styles.card, pressed && styles.pressed]}
+        >
+          <PhotoBox uri={photo} size={52} onError={() => photo && broken(photo)} />
+          <View style={styles.cardText}>
+            <Text style={styles.cardName} numberOfLines={1}>
+              {session ? name : t('account.you')}
+            </Text>
+            <Text style={styles.cardUnder} numberOfLines={1}>
+              {session && !isAnonymous ? under || up(t('account.noHandle')) : up(isAnonymous ? t('word.guest') : t('settings.guest.hint'))}
+            </Text>
+          </View>
+          <Value text={session && !isAnonymous ? t('settings.edit') : t('word.signup')} more />
+        </Pressable>
+
+        {/* The groups: a row each, with what is inside as its hint. */}
+        <Panel>
+          <Row label={t('settings.app')} hint={[t('lang.label'), t('settings.music'), t('settings.genre')].join(' · ')} right={<Value text={langNames[lang]} more />} onPress={() => openSection('app')} />
+          {session ? <Row label={t('settings.privacy')} hint={[t('settings.kept'), t('settings.findable'), t('settings.email.me')].join(' · ')} right={<Mark kind="more" />} onPress={() => openSection('privacy')} /> : null}
+          {session && !isAnonymous ? <Row label={t('notify.title')} hint={NOTIFY.map((g) => t(g.title)).join(' · ')} right={<Mark kind="more" />} onPress={() => openSection('notify')} /> : null}
+          <Row label={t('settings.account')} hint={session?.user.email ?? (isAnonymous ? t('word.guest') : t('word.signup'))} right={<Mark kind="more" />} onPress={() => openSection('account')} />
+          <Row label={t('settings.about')} hint={[t('settings.intro'), t('settings.credits'), t('settings.privacy.link')].join(' · ')} right={<Mark kind="more" />} onPress={() => openSection('about')} />
+        </Panel>
+          </>
+        ) : null}
+        {section === 'app' ? (
+          <>
+        <Panel>
+          <Row label={t('lang.label')} hint={t('lang.hint')} right={<Value text={langNames[lang]} more />} onPress={() => setSheet('locale')} />
+          <Row label={t('settings.music')} right={<Switch on={ambient.on} />} onPress={ambient.toggle} />
+          <Row label={t('settings.genre')} hint={t('settings.genre.hint')} right={<Value text={soundName} more />} onPress={() => setSheet('sound')} />
+        </Panel>
+
+          </>
+        ) : null}
+        {section === 'privacy' ? privacy : null}
+        {section === 'notify' ? notify : null}
+        {section === 'account' ? (
+          <>
         <Panel>
           {isAnonymous ? <Row label={t('settings.finish')} hint={t('settings.finish.hint')} right={<Mark kind="more" />} onPress={() => router.push('/signup')} /> : null}
           <Row label={t('settings.email')} right={<Value text={session?.user.email ?? (isAnonymous ? t('word.guest') : t('word.none'))} />} />
@@ -244,7 +272,10 @@ export default function SettingsScreen() {
           </Panel>
         ) : null}
 
-        <Section title={t('settings.about')} />
+          </>
+        ) : null}
+        {section === 'about' ? (
+          <>
         <Panel>
           <Row
             label={t('settings.intro')}
@@ -260,15 +291,20 @@ export default function SettingsScreen() {
           <Row label={t('settings.privacy.link')} hint={t('settings.privacy.hint')} right={<Mark kind="out" />} onPress={() => Linking.openURL('https://kurtkurtkurt-del.github.io/afterhours/datenschutz/')} />
         </Panel>
 
+          </>
+        ) : null}
+
+        {!section || section === 'about' ? (
         <View style={styles.foot}>
           <Text style={styles.logo}>
             afterhours<Text style={styles.logoDot}>.</Text>
           </Text>
           <Text style={styles.version}>{`${up(t('settings.version'))} ${upperData(version)}`}</Text>
         </View>
+        ) : null}
 
         <BackButton inline />
-      </ScrollView>
+      </PullDownScroll>
 
       <PickerSheet
         open={sheet === 'kept'}

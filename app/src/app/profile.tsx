@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { KeyboardAvoidingView, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Pressable, StyleSheet, Text, View } from 'react-native';
+import PullDownScroll from '@/components/PullDownScroll';
 import { StatusBar } from 'expo-status-bar';
 import { Redirect, router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -117,12 +118,15 @@ export default function ProfileScreen() {
     <View style={styles.root}>
       <StatusBar style="light" />
       <EdgeBack />
-      <View style={styles.band}>
-        <Text style={styles.title}>{t('settings.profile')}</Text>
-        <SoundCorner />
-      </View>
       <KeyboardAvoidingView behavior="padding" style={styles.fill}>
-        <ScrollView contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 32 }]} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+        <PullDownScroll
+          header={
+            <View style={styles.band}>
+              <Text style={styles.title}>{t('settings.profile')}</Text>
+              <SoundCorner />
+            </View>
+          }
+          contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 32 }]} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
           <View style={styles.photoRow}>
             <Pressable onPress={choose} accessibilityRole="imagebutton" accessibilityLabel={t('account.photo')} style={({ pressed }) => pressed && styles.pressed}>
               <PhotoBox uri={photo} size={84} onError={() => photo && broken(photo)} />
@@ -187,8 +191,8 @@ export default function ProfileScreen() {
               <Input
                 value={linkValue(l.kind)}
                 onChangeText={(v) => setLinkEdits((e) => ({ ...e, [l.kind]: l.kind === 'website' ? v.trim() : v.replace(/^@+/, '').trim() }))}
-                placeholder={l.kind === 'website' ? 'https://' : ''}
-                keyboardType={l.kind === 'website' ? 'url' : 'default'}
+                placeholder={l.kind === 'website' ? 'https://' : l.kind === 'spotify' ? t('settings.links.spotify') : l.kind === 'whatsapp' ? t('settings.links.whatsapp') : ''}
+                keyboardType={l.kind === 'website' ? 'url' : l.kind === 'whatsapp' ? 'phone-pad' : 'default'}
                 maxLength={l.kind === 'website' ? 200 : 40}
                 style={styles.linkInput}
               />
@@ -202,7 +206,7 @@ export default function ProfileScreen() {
           </View>
 
           <BackButton inline />
-        </ScrollView>
+        </PullDownScroll>
       </KeyboardAvoidingView>
 
       <PickerSheet

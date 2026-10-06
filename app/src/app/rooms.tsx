@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
+import PullDownScroll from '@/components/PullDownScroll';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -31,7 +32,7 @@ export default function RoomsScreen() {
   const { session } = useAuth();
   const insets = useSafeAreaInsets();
   const { t, tn, up } = useLang();
-  const tick = useRefreshOnFocus();
+  const tick = useRefreshOnFocus('cards');
   const [cards, setCards] = useState<CardRow[] | null>(null);
   const uid = session?.user.id;
 
@@ -73,11 +74,14 @@ export default function RoomsScreen() {
     <View style={styles.root}>
       <StatusBar style="light" />
       <EdgeBack />
-      <View style={styles.band}>
-        <Text style={styles.title}>{t('rooms.title')}</Text>
-        <SoundCorner />
-      </View>
-      <ScrollView contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 32 }]} showsVerticalScrollIndicator={false}>
+      <PullDownScroll
+        header={
+          <View style={styles.band}>
+            <Text style={styles.title}>{t('rooms.title')}</Text>
+            <SoundCorner />
+          </View>
+        }
+        contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 32 }]} showsVerticalScrollIndicator={false}>
         <Text style={styles.about}>{t('rooms.about')}</Text>
 
         {list === null ? <Text style={styles.note}>{t('rooms.loading')}</Text> : null}
@@ -115,7 +119,7 @@ export default function RoomsScreen() {
         <View style={styles.back}>
           <BackButton inline />
         </View>
-      </ScrollView>
+      </PullDownScroll>
     </View>
   );
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Image, Linking, Pressable, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
+import { Linking, Pressable, StyleSheet, Text, View, type ImageSourcePropType, Image as RNImage } from 'react-native';
+import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { SvgUri } from 'react-native-svg';
 import { upperData, useLang } from '@/i18n';
@@ -90,13 +91,13 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
       {fit ? (
         <FitPoster card={card} top={fit.top} bottom={bottom + captionH + 12} ready={captionH > 0} />
       ) : card.image || card.local ? (
-        <Image source={card.image ? { uri: card.image } : card.local!} style={styles.photo} resizeMode="cover" />
+        <Image source={card.image ? { uri: card.image } : card.local!} style={styles.photo} contentFit="cover" />
       ) : card.poster ? (
         <View style={styles.posterBox}>
           <SvgUri uri={card.poster} width="100%" height="100%" />
         </View>
       ) : (
-        <Image source={fallback} style={styles.photo} resizeMode="cover" />
+        <Image source={fallback} style={styles.photo} contentFit="cover" />
       )}
       <View style={[styles.caption, { bottom }]} onLayout={fit ? (e) => setCaptionH(e.nativeEvent.layout.height) : undefined}>
         <Pressable style={styles.stripLeft} onPress={details} accessibilityRole="button" accessibilityLabel={t('word.details')}>
@@ -146,7 +147,7 @@ function useRatio(uri: string | null, fallbackRatio: number) {
   useEffect(() => {
     if (!uri || ratios.has(uri) || fromUrl(uri)) return;
     let alive = true;
-    Image.getSize(uri, (w, h) => {
+    RNImage.getSize(uri, (w, h) => {
       if (!w || !h) return;
       ratios.set(uri, w / h);
       if (alive) setRatio(w / h);
@@ -159,7 +160,7 @@ function useRatio(uri: string | null, fallbackRatio: number) {
 }
 
 const sizeOf = (source: ImageSourcePropType) => {
-  const s = Image.resolveAssetSource(source);
+  const s = RNImage.resolveAssetSource(source);
   return s.width && s.height ? s.width / s.height : 2 / 3;
 };
 
@@ -184,13 +185,13 @@ function FitPoster({ card, top, bottom, ready }: { card: DeckCard; top: number; 
       {svg ? (
         <View style={[styles.photo, { backgroundColor: colors.ink2 }]} />
       ) : (
-        <Image source={source} style={styles.photo} resizeMode="cover" blurRadius={28} />
+        <Image source={source} style={styles.photo} contentFit="cover" blurRadius={28} />
       )}
       <View style={styles.veil} />
       <View style={[styles.fitArea, { top, bottom }]} onLayout={(e) => setArea({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height })}>
         {area && ready ? (
           <View style={[styles.fitPoster, { width: w, height: h }]}>
-            {svg ? <SvgUri uri={card.poster!} width="100%" height="100%" /> : <Image source={source} style={styles.fill} resizeMode="cover" />}
+            {svg ? <SvgUri uri={card.poster!} width="100%" height="100%" /> : <Image source={source} style={styles.fill} contentFit="cover" />}
           </View>
         ) : null}
       </View>

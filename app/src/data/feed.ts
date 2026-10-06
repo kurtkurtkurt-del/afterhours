@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabase';
+import { remember } from '@/lib/offline';
 
 // 31_past_feed.sql: past nights with a photo, newest first, a page at a time.
 // people: who of yours was there (checked in or kept it); mine: you were.
@@ -17,13 +18,18 @@ export type PastNight = {
 };
 
 // after: the last card already shown (null for the first page).
+// The first page is saved on the phone (it opens at once and offline); later pages
+// are read as you scroll.
 export async function pastFeed(city: string | null, after: PastNight | null, limit = 10): Promise<PastNight[]> {
-  const { data, error } = await supabase.rpc('past_feed', {
-    p_city: city,
-    p_before: after?.starts_at ?? null,
-    p_before_id: after?.id ?? null,
-    p_limit: limit,
-  });
-  if (error) throw error;
-  return (data ?? []) as PastNight[];
+  const read = async () => {
+    const { data, error } = await supabase.rpc('past_feed', {
+      p_city: city,
+      p_before: after?.starts_at ?? null,
+      p_before_id: after?.id ?? null,
+      p_limit: limit,
+    });
+    if (error) throw error;
+    return (data ?? []) as PastNight[];
+  };
+  return after ? read() : remember('pastFeed', `${city ?? '*'}|${limit}`, read, 6);
 }

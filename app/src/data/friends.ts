@@ -1,6 +1,6 @@
 import { supabase } from '@/lib/supabase';
 import { stashNights, type Night } from '@/data/deck';
-import { must, remember } from '@/lib/offline';
+import { must, outbox, pendingJobs, remember, send } from '@/lib/offline';
 
 // 07_friends.sql + 12_profiles.sql + 15 (friends_kept) + 19 (friends_live)
 export type FriendRow = { other_id: string; handle: string | null; display_name: string | null; status: 'pending' | 'accepted'; direction: 'incoming' | 'outgoing' };
@@ -11,19 +11,68 @@ export type FriendKept = { friend: string; kept_at: string; id: string; slug: st
 export async function friendsKept(limit = 60): Promise<FriendKept[]> {
   return remember('friendsKept', String(limit), async () => ((await must(supabase.rpc('friends_kept', { p_limit: limit }))) ?? []) as FriendKept[], 3);
 }
+// Requests, accepts and removals go through the outbox; each is safe to send twice.
+const FRIEND_SHELVES = ['friends', 'friendsKept', 'live', 'suggested', 'photos', 'personCards'];
+outbox(
+  'friendRequest',
+  async (j) => {
+    const { data, error } = await supabase.rpc('friend_request', { p_handle: j.handle });
+    if (error) throw error;
+    return String(data);
+  },
+  FRIEND_SHELVES,
+);
+outbox(
+  'friendAccept',
+  async (j) => {
+    const { error } = await supabase.rpc('friend_accept', { p_other: j.other });
+    if (error) throw error;
+  },
+  FRIEND_SHELVES,
+);
+outbox(
+  'friendRemove',
+  async (j) => {
+    const { error } = await supabase.rpc('friend_remove', { p_other: j.other });
+    if (error) throw error;
+  },
+  FRIEND_SHELVES,
+);
+
+// The server's answer ('sent', 'accepted', 'notfound' …), or 'queued' while offline.
 export async function friendRequest(handle: string): Promise<string> {
-  const { data, error } = await supabase.rpc('friend_request', { p_handle: handle });
-  if (error) throw error;
-  return String(data);
+  const r = await send({ kind: 'friendRequest', handle });
+  return r.queued ? 'queued' : String(r.result);
 }
 export async function friendAccept(other: string) {
-  const { error } = await supabase.rpc('friend_accept', { p_other: other });
-  if (error) throw error;
+  await send({ kind: 'friendAccept', other });
 }
 export async function friendRemove(other: string) {
-  const { error } = await supabase.rpc('friend_remove', { p_other: other });
-  if (error) throw error;
+  await send({ kind: 'friendRemove', other });
 }
+
+// What is still waiting for this person: their handle or id → the relation it leads to.
+export function waitingRelations(): Map<string, Relation | 'none'> {
+  const m = new Map<string, Relation | 'none'>();
+  pendingJobs().forEach((j) => {
+    if (j.kind === 'friendRequest') m.set(j.handle as string, 'outgoing');
+    else if (j.kind === 'friendAccept') m.set(j.other as string, 'friend');
+    else if (j.kind === 'friendRemove') m.set(j.other as string, 'none');
+  });
+  return m;
+}
+// 38_profile_lists.sql: the lists under a profile. Yours, or a confirmed friend's
+// (their kept nights only when they show them); empty for anyone else.
+export async function personKept(handle: string): Promise<Night[]> {
+  const list = await remember('personKept', handle, async () => ((await must(supabase.rpc('person_kept', { p_handle: handle }))) ?? []) as Night[], 8);
+  stashNights(list);
+  return list;
+}
+export type PersonPerson = { handle: string | null; display_name: string | null };
+export async function personPeople(handle: string): Promise<PersonPerson[]> {
+  return remember('personPeople', handle, async () => ((await must(supabase.rpc('person_people', { p_handle: handle }))) ?? []) as PersonPerson[], 8);
+}
+
 export async function kept(): Promise<Night[]> {
   const list = await remember('kept', '', async () => ((await must(supabase.rpc('kept'))) ?? []) as Night[]);
   stashNights(list);

@@ -7,10 +7,12 @@ import { File } from 'expo-file-system';
 import { WebView } from 'react-native-webview';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useT } from '@/i18n';
+import { useAuth } from '@/auth/AuthContext';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// Intro film: "explore your city" plays it, then the sign-up screen follows.
+// Intro film: "explore your city" plays it, then the sign-up screen follows. Someone
+// signed in (settings → show the intro again) goes back where they came from instead.
 // Made in Claude Design (assets/film/film.html, single file, plays offline).
 // The film signals the end itself via postMessage('end'); if it never does,
 // the timeout moves on. "Skip" is always available.
@@ -22,11 +24,20 @@ export default function FilmScreen() {
   const insets = useSafeAreaInsets();
   const [html, setHtml] = useState<string | null>(null);
   const left = useRef(false);
+  const { session, isAnonymous } = useAuth();
+  // Read when the film ends, not when it starts (the session may still be loading).
+  const member = useRef(false);
+  useEffect(() => {
+    member.current = !!session && !isAnonymous;
+  }, [session, isAnonymous]);
 
   const next = () => {
     if (left.current) return;
     left.current = true;
-    router.replace('/signup');
+    if (member.current) {
+      if (router.canGoBack()) router.back();
+      else router.replace('/yours');
+    } else router.replace('/signup');
   };
 
   useEffect(() => {

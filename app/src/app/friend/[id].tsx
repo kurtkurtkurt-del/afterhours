@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Image, Linking, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Linking, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import Avatar from '@/components/Avatar';
 import { useProfileExtra } from '@/data/profile';
@@ -11,6 +12,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
+import PullDownScroll from '@/components/PullDownScroll';
 import SoundCorner from '@/components/SoundCorner';
 import { friends, nights } from '@/content/friends';
 import { friendAccept, friendRemove, friendRequest } from '@/data/friends';
@@ -43,7 +45,17 @@ export default function FriendScreen() {
     return (
       <View style={styles.root}>
         <StatusBar style="light" />
-          <View style={[styles.body, { paddingBottom: insets.bottom + 24 }]}>
+        {/* Pulling down from the top closes it, like the other cards. */}
+        <PullDownScroll
+          header={
+            <View style={styles.band}>
+              <BackButton />
+              <SoundCorner />
+            </View>
+          }
+          contentContainerStyle={[styles.body, styles.addBody, { paddingBottom: insets.bottom + 24 }]}
+          keyboardShouldPersistTaps="handled"
+        >
           <Text style={styles.big}>{t('friend.add')}</Text>
           <Text style={styles.note}>{t('friend.add.note')}</Text>
           <Input value={handle} onChangeText={(v) => setHandle(v.toLowerCase())} placeholder={t('friend.placeholder')} autoCapitalize="none" />
@@ -59,7 +71,7 @@ export default function FriendScreen() {
             />
           </View>
           <Text style={[styles.note, { marginTop: 24 }]}>{t('friend.qr')}</Text>
-        </View>
+        </PullDownScroll>
       </View>
     );
   }
@@ -98,7 +110,7 @@ export default function FriendScreen() {
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: insets.bottom + 40 }} style={{ flex: 1 }}>
         {/* Poster: their photo (or their drawn face) full-bleed, the name set large. */}
         <View style={[styles.poster, { height: Math.round(height * 0.62) }]}>
-          {face ? <Image source={{ uri: face }} style={StyleSheet.absoluteFill} resizeMode="cover" /> : (
+          {face ? <Image source={{ uri: face }} style={StyleSheet.absoluteFill} contentFit="cover" /> : (
             <View style={StyleSheet.absoluteFill}>
               <Avatar name={f.handle || f.name} size={Math.max(width, height * 0.62)} />
             </View>
@@ -133,7 +145,7 @@ export default function FriendScreen() {
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.strip}>
               {theirs.map((n) => (
                 <Pressable key={n.id} onPress={() => n.slug && router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.card, { width: cardW, height: cardW * 1.45 }, pressed && styles.pressed]}>
-                  <Image source={n.photo ?? (n.image ? { uri: n.image } : fallback)} style={StyleSheet.absoluteFill} resizeMode="cover" />
+                  <Image source={n.photo ?? (n.image ? { uri: n.image } : fallback)} style={StyleSheet.absoluteFill} contentFit="cover" />
                   <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.9)']} locations={[0.35, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
                   <View style={styles.cardText}>
                     <Text style={styles.cardTitle} numberOfLines={3}>{n.title}</Text>
@@ -210,6 +222,7 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, backgroundColor: colors.ink, zIndex: 2 },
   body: { paddingTop: brand.top + 48, paddingHorizontal: brand.left },
+  addBody: { flexGrow: 1 },
   initial: { width: 64, height: 64, borderRadius: radius.md, overflow: 'hidden', borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center', marginBottom: 14 },
   initialFace: { width: 96, height: 96, borderRadius: radius.lg },
   face: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 },

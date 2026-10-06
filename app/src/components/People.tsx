@@ -51,7 +51,7 @@ export function useConnect() {
   const [busy, setBusy] = useState<string | null>(null);
   const member = !!session && !isAnonymous;
   const act = async (p: { id: string; handle: string }, relation: Relation) => {
-    if (relation === 'friend') return router.push(`/friend/${p.id}`);
+    if (relation === 'friend') return openPerson(p.handle);
     if (relation === 'outgoing') return;
     if (!member) return router.push('/signup');
     setBusy(p.id);
@@ -60,6 +60,7 @@ export function useConnect() {
         await friendAccept(p.id);
         setAfter((a) => ({ ...a, [p.id]: 'friend' }));
       } else {
+        // 'queued' (offline) shows as asked; it goes out with the connection.
         const r = await friendRequest(p.handle);
         setAfter((a) => ({ ...a, [p.id]: r === 'accepted' ? 'friend' : 'outgoing' }));
       }
@@ -76,10 +77,13 @@ export function useConnect() {
 export function ActionButton({ relation, busy, onPress, compact, wide }: { relation: Relation; busy: boolean; onPress: () => void; compact?: boolean; wide?: boolean }) {
   const { t } = useLang();
   const red = relation === 'none' || relation === 'incoming';
-  const label = relation === 'none' ? t('people.add') : relation === 'incoming' ? t('people.accept') : relation === 'outgoing' ? t('people.asked') : t('people.friend');
+  // wide (a profile page): the whole words, "add friend" / "accept request".
+  const label = wide
+    ? t(relation === 'none' ? 'people.add.long' : relation === 'incoming' ? 'people.accept.long' : relation === 'outgoing' ? 'people.asked.long' : 'people.friend')
+    : relation === 'none' ? t('people.add') : relation === 'incoming' ? t('people.accept') : relation === 'outgoing' ? t('people.asked') : t('people.friend');
   return (
     <Pressable onPress={onPress} disabled={busy || relation === 'outgoing'} hitSlop={6} style={({ pressed }) => [red ? styles.btnRed : styles.btnLine, compact && styles.btnCompact, wide && styles.btnWide, pressed && styles.pressed]}>
-      {busy ? <ActivityIndicator size="small" color={red ? colors.ink : colors.paper} /> : <Text style={red ? styles.btnTextRed : styles.btnTextLine}>{label}</Text>}
+      {busy ? <ActivityIndicator size="small" color={red ? colors.ink : colors.paper} /> : <Text style={[red ? styles.btnTextRed : styles.btnTextLine, wide && styles.btnTextWide]}>{label}</Text>}
     </Pressable>
   );
 }
@@ -237,7 +241,8 @@ const styles = StyleSheet.create({
   btnRed: { paddingVertical: 8, paddingHorizontal: 14, backgroundColor: colors.spot, borderRadius: radius.pill, minWidth: 64, alignItems: 'center' },
   btnLine: { paddingVertical: 7, paddingHorizontal: 13, borderWidth: 1, borderColor: colors.paper, borderRadius: radius.pill, minWidth: 64, alignItems: 'center' },
   btnCompact: { alignSelf: 'stretch', minWidth: 0, paddingVertical: 5, paddingHorizontal: 8 },
-  btnWide: { alignSelf: 'flex-start', paddingVertical: 11, paddingHorizontal: 22 },
+  btnWide: { alignSelf: 'stretch', height: 54, borderRadius: radius.md, justifyContent: 'center', paddingVertical: 0 },
+  btnTextWide: { fontSize: 17, letterSpacing: -0.3 },
   rowDivider: { width: 14, alignItems: 'center', justifyContent: 'center', borderLeftWidth: 1, borderLeftColor: colors.ink3, marginLeft: 4 },
   rowWord: { position: 'absolute', width: 110, textAlign: 'center', transform: [{ rotate: '-90deg' }], fontFamily: fonts.regular, fontSize: 8.5, letterSpacing: 1.4, color: colors.meta },
   rowCol: { gap: 14, paddingTop: 4 },

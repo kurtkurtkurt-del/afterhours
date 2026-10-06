@@ -37,7 +37,7 @@ export function useEventTypes() {
 // type picker. Everywhere (no city) has no counts.
 export async function typeCounts(city: string | null): Promise<Record<string, number> | null> {
   if (!city) return null;
-  const rows = await remember('typeCounts', city, () => must(supabase.rpc('event_counts', { p_city: city })), 20).catch(() => null);
+  const rows = await remember('typeCounts', city, () => must(supabase.rpc('event_counts', { p_city: city })), 20, { ttl: 10 * 60_000 }).catch(() => null);
   if (!rows) return null;
   const out: Record<string, number> = {};
   (rows as { type_slug: string; n: number }[]).forEach((r) => (out[r.type_slug] = Number(r.n)));

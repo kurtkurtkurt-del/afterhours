@@ -7,12 +7,19 @@ import Animated, {
   interpolate,
   runOnJS,
   useAnimatedStyle,
+  useReducedMotion,
   useSharedValue,
+  withDelay,
+  withSequence,
   withSpring,
   withTiming,
   type SharedValue,
 } from 'react-native-reanimated';
 import { router } from 'expo-router';
+import Svg, { Path } from 'react-native-svg';
+import { AskButton } from '@/components/About';
+import ShareButton from '@/components/ShareButton';
+import { shareNight } from '@/lib/share';
 import CardFace, { Hint, openDetails, openTicket, toDeckCard, type DeckCard, type DeckFriend } from '@/components/CardFace';
 import { sparkTimes, type Spark } from '@/content/sparks';
 import type { SparkInvite } from '@/data/sparks';
@@ -62,14 +69,18 @@ type Props = {
   onSwipe: (entry: DeckEntry, direction: Direction) => void;
   onUndo?: (entry: DeckEntry) => void;
   onReset?: () => void;
+  // "who is this?": nights with a text show the button on their card (components/About.tsx).
+  hasAbout?: (entry: DeckEntry) => boolean;
+  onAbout?: (entry: DeckEntry) => void;
 };
-export type DeckHandle = { undo: () => void };
+// swipe: the same as throwing the top card that way (the buttons under the deck).
+export type DeckHandle = { undo: () => void; swipe: (direction: Direction) => void };
 
 const THRESHOLD = 110; // px: released beyond this sideways counts as a decision
 const VELOCITY = 800;
 const PULL = 90;       // px: pulled this far up or down opens the ticket / details
 
-type CardHandle = { promote: () => void; keep: () => void };
+type CardHandle = { promote: () => void; keep: () => void; fly: (direction: Direction) => void };
 
 // Same card face as friends' deck, plus deck gestures:
 // right = keep (edge turns red), left = let go, up = ticket, down = night page.
@@ -83,7 +94,8 @@ const SwipeCard = forwardRef<CardHandle, {
   bottom: number;
   top: number;
   onDone: (direction: Direction) => void;
-}>(function SwipeCard({ night, friends, active, drag, bottom, top, onDone }, ref) {
+  onAbout?: () => void;
+}>(function SwipeCard({ night, friends, active, drag, bottom, top, onDone, onAbout }, ref) {
   const { width } = useWindowDimensions();
   const x = useSharedValue(0);
   const y = useSharedValue(0);
@@ -100,7 +112,7 @@ const SwipeCard = forwardRef<CardHandle, {
     },
     [drag, x, width, onDone],
   );
-  useImperativeHandle(ref, () => ({ promote: () => shown.set(withTiming(1, { duration: 320 })), keep: () => flyOff('right') }), [shown, flyOff]);
+  useImperativeHandle(ref, () => ({ promote: () => shown.set(withTiming(1, { duration: 320 })), keep: () => flyOff('right'), fly: flyOff }), [shown, flyOff]);
   useEffect(() => {
     if (!active) shown.set(0); // a card sent back by undo is hidden again
   }, [active, shown]);
@@ -161,6 +173,9 @@ const SwipeCard = forwardRef<CardHandle, {
         />
         {active && (
           <>
+            {onAbout ? <AskButton onPress={onAbout} style={[styles.ask, { top: top + 10 }]} /> : null}
+            {/* A night can be shared straight from the card, under "who is this?" when it has one. */}
+            {!spark && !isCard(night) ? <ShareButton onPress={() => shareNight(night as Night)} style={{ top: top + (onAbout ? 54 : 10), right: 16, bottom: 'auto' }} /> : null}
             <Animated.View pointerEvents="none" style={[styles.edgeRight, keepEdge]} />
             <Animated.View pointerEvents="none" style={[styles.edgeLeft, letGoEdge]}>
               <Text style={styles.letGo}>{up(t('word.letgo'))}</Text>
@@ -180,22 +195,40 @@ const SwipeCard = forwardRef<CardHandle, {
   );
 });
 
-const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bottom, top: posterTop, onSwipe, onUndo, onReset }, ref) {
+const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bottom, top: posterTop, onSwipe, onUndo, onReset, hasAbout, onAbout }, ref) {
   const { t, up } = useLang();
   const [i, setI] = useState(0);
   const drag = useSharedValue(0);
   const nextRef = useRef<CardHandle>(null);
+  const topRef = useRef<CardHandle>(null);
   const top = nights[i];
   const next = nights[i + 1];
+
+  // Kept: a red mark pops up over the deck for a moment (0 → 1 in, 1 → 2 out).
+  const burst = useSharedValue(0);
+  const still = useReducedMotion();
+  const burstStyle = useAnimatedStyle(() => ({
+    opacity: interpolate(burst.value, [0, 0.6, 1.5, 2], [0, 1, 1, 0], Extrapolation.CLAMP),
+    transform: still
+      ? []
+      : [
+          { translateY: interpolate(burst.value, [0, 1, 2], [14, 0, -18], Extrapolation.CLAMP) },
+          { scale: interpolate(burst.value, [0, 0.7, 1, 2], [0.5, 1.12, 1, 0.96], Extrapolation.CLAMP) },
+        ],
+  }));
 
   const done = useCallback(
     (direction: Direction) => {
       if (top) onSwipe(top, direction);
+      if (top && direction === 'right' && !isSpark(top)) {
+        burst.set(0);
+        burst.set(withSequence(withTiming(1, { duration: 260 }), withDelay(420, withTiming(2, { duration: 280 }))));
+      }
       nextRef.current?.promote(); // show the next card before React re-renders
       drag.set(0); // the new card behind starts hidden
       setI((n) => n + 1);
     },
-    [top, onSwipe, drag],
+    [top, onSwipe, drag, burst],
   );
 
   // Undo: the previous card returns (the current one goes back behind it).
@@ -209,6 +242,7 @@ const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bo
         drag.set(0);
         if (prev && onUndo) onUndo(prev);
       },
+      swipe: (direction) => topRef.current?.fly(direction),
     }),
     [i, nights, onUndo, drag],
   );
@@ -232,7 +266,15 @@ const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bo
   return (
     <View style={styles.stage}>
       {next && <SwipeCard ref={nextRef} key={next.id} night={next} friends={isSpark(next) || isCard(next) ? [] : (friendsOf?.(next) ?? [])} active={false} drag={drag} bottom={bottom} top={posterTop} onDone={done} />}
-      <SwipeCard key={top.id} night={top} friends={isSpark(top) || isCard(top) ? [] : (friendsOf?.(top) ?? [])} active drag={drag} bottom={bottom} top={posterTop} onDone={done} />
+      <SwipeCard ref={topRef} key={top.id} night={top} friends={isSpark(top) || isCard(top) ? [] : (friendsOf?.(top) ?? [])} active drag={drag} bottom={bottom} top={posterTop} onDone={done} onAbout={onAbout && hasAbout?.(top) ? () => onAbout(top) : undefined} />
+      <Animated.View pointerEvents="none" style={[styles.burst, { paddingBottom: bottom }, burstStyle]} accessibilityLiveRegion="polite">
+        <View style={styles.burstMark}>
+          <Svg width={34} height={34} viewBox="0 0 24 24">
+            <Path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2Z" fill={colors.paper} />
+          </Svg>
+        </View>
+        <Text style={styles.burstText}>{up(t('deck.kept'))}</Text>
+      </Animated.View>
     </View>
   );
 });
@@ -241,6 +283,10 @@ export default Deck;
 
 const styles = StyleSheet.create({
   stage: { flex: 1 },
+  ask: { position: 'absolute', right: 16 },
+  burst: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', gap: 10 },
+  burstMark: { width: 84, height: 84, borderRadius: 42, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center', shadowColor: '#000', shadowOpacity: 0.35, shadowRadius: 18, shadowOffset: { width: 0, height: 8 }, elevation: 8 },
+  burstText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.paper, backgroundColor: colors.ink, paddingHorizontal: 10, paddingVertical: 4, borderRadius: radius.pill, overflow: 'hidden' },
   slot: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colors.ink, overflow: 'hidden', borderRadius: radius.lg },
   edgeRight: { position: 'absolute', top: 0, right: 0, bottom: 0, width: 56, backgroundColor: colors.spot },
   edgeLeft: { position: 'absolute', top: 0, left: 0, bottom: 0, width: 56, borderRightWidth: 1.5, borderRightColor: colors.paper, alignItems: 'center', justifyContent: 'center' },

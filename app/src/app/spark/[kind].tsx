@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Image, KeyboardAvoidingView, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { KeyboardAvoidingView, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -9,7 +10,7 @@ import Input from '@/components/Input';
 import PullDownScroll from '@/components/PullDownScroll';
 import SoundCorner from '@/components/SoundCorner';
 import { useAuth } from '@/auth/AuthContext';
-import { sparkOf, sparkTimes, type Spark } from '@/content/sparks';
+import { sparkIn, sparkOf, sparkTimes, type Spark } from '@/content/sparks';
 import { sparkHint, type SparkHint } from '@/data/sparkHints';
 import { useHere } from '@/data/here';
 import * as Location from 'expo-location';
@@ -29,7 +30,8 @@ const two = (n: number) => String(n).padStart(2, '0');
 // Opened with ?invite=<id>, it is someone else's spark: in / out instead.
 export default function SparkScreen() {
   const { kind, invite: inviteId } = useLocalSearchParams<{ kind: string; invite?: string }>();
-  const spark = sparkOf(kind);
+  // The city's own version when it has one (Munich: real places).
+  const spark = sparkIn(sparkOf(kind), useHere().city);
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const { t } = useLang();
@@ -68,7 +70,7 @@ function Hero({ spark, title, width }: { spark: Spark; title: string; width: num
   const { t, up } = useLang();
   return (
     <View style={[styles.hero, { height: width * 1.1 }]}>
-      <Image source={spark.photo} style={styles.heroPhoto} resizeMode="cover" />
+      <Image source={spark.photo} style={styles.heroPhoto} contentFit="cover" />
       <View style={styles.heroShade} />
       <View style={styles.heroText}>
         <Text style={styles.mono}>{up(t(spark.label))} · {upperData('spark')}</Text>

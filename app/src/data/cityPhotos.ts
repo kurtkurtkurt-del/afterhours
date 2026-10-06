@@ -108,7 +108,7 @@ async function local(id: string, remote: string): Promise<string | null> {
 
 export async function cityPhotos(cities: { id: string; name: string }[]): Promise<Record<string, CityPhoto>> {
   const key = cities.map((c) => c.id).sort().join(',');
-  const stored = await remember('cityPhotos.v3', key, () => fetchPhotos(cities), 40);
+  const stored = await remember('cityPhotos.v3', key, () => fetchPhotos(cities), 40, { ttl: 7 * 24 * 3600_000 });
   const out: Record<string, CityPhoto> = {};
   await Promise.all(
     Object.entries(stored).map(async ([id, s]) => {

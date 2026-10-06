@@ -1,5 +1,5 @@
 import { supabase } from '@/lib/supabase';
-import { remember } from '@/lib/offline';
+import { must, outbox, pendingJobs, remember, send } from '@/lib/offline';
 import { djs as localDjs, sets as localSets, type Dj, type DjSet } from '@/content/djs';
 
 // 20_djs.sql: djs, dj_sets, dj_follows. Local samples when the table is empty or offline.
@@ -43,20 +43,48 @@ export async function loadDjs(): Promise<{ djs: Dj[]; sets: DjSet[]; live: boole
 }
 const fmt = (n: number) => (n >= 1000 ? `${(n / 1000).toFixed(1).replace(/\.0$/, '')}k` : String(n));
 
-export async function isFollowing(slug: string): Promise<boolean> {
-  const { data } = await supabase.from('dj_follows').select('dj_id, djs!inner(slug)').eq('djs.slug', slug).maybeSingle();
-  return !!data;
-}
-export async function setFollow(slug: string, on: boolean) {
-  const { data: dj } = await supabase.from('djs').select('id').eq('slug', slug).maybeSingle();
-  if (!dj) return;
-  if (on) await supabase.from('dj_follows').insert({ dj_id: dj.id });
-  else await supabase.from('dj_follows').delete().eq('dj_id', dj.id);
+// Follows go through the outbox: offline they wait, a second follow is harmless.
+outbox(
+  'djFollow',
+  async (j) => {
+    const { data: dj, error } = await supabase.from('djs').select('id').eq('slug', j.slug as string).maybeSingle();
+    if (error) throw error;
+    if (!dj) return;
+    if (j.on) {
+      const r = await supabase.from('dj_follows').insert({ dj_id: dj.id });
+      // 23505: already following (a retry after the first try got through).
+      if (r.error && r.error.code !== '23505') throw r.error;
+    } else {
+      const r = await supabase.from('dj_follows').delete().eq('dj_id', dj.id);
+      if (r.error) throw r.error;
+    }
+  },
+  ['djFollows', 'djs'],
+);
+
+// Follows still waiting in the outbox, last one per DJ: slug → on.
+function waiting() {
+  const m = new Map<string, boolean>();
+  pendingJobs('djFollow').forEach((j) => m.set(j.slug as string, !!j.on));
+  return m;
 }
 
-// Slugs of the DJs you follow; empty without a session or offline.
+export async function isFollowing(slug: string): Promise<boolean> {
+  const w = waiting();
+  if (w.has(slug)) return w.get(slug)!;
+  return (await followedSlugs()).includes(slug);
+}
+export async function setFollow(slug: string, on: boolean) {
+  await send({ kind: 'djFollow', slug, on });
+}
+
+// Slugs of the DJs you follow (saved copy offline, waiting follows included).
 export async function followedSlugs(): Promise<string[]> {
-  const { data, error } = await supabase.from('dj_follows').select('djs!inner(slug)');
-  if (error || !data) return [];
-  return (data as unknown as { djs: { slug: string } | { slug: string }[] }[]).flatMap((r) => (Array.isArray(r.djs) ? r.djs : [r.djs]).map((d) => d.slug));
+  const data = await remember('djFollows', '', async () => {
+    const rows = (await must(supabase.from('dj_follows').select('djs!inner(slug)'))) ?? [];
+    return (rows as unknown as { djs: { slug: string } | { slug: string }[] }[]).flatMap((r) => (Array.isArray(r.djs) ? r.djs : [r.djs]).map((d) => d.slug));
+  }).catch(() => [] as string[]);
+  const set = new Set(data);
+  waiting().forEach((on, slug) => (on ? set.add(slug) : set.delete(slug)));
+  return [...set];
 }

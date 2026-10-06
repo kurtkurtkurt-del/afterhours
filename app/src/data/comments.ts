@@ -1,5 +1,5 @@
 import { supabase } from '@/lib/supabase';
-import { isOnline, OfflineError, remember } from '@/lib/offline';
+import { OfflineError, outbox, peek, pendingJobs, remember, send } from '@/lib/offline';
 import { t as tNow, tx as txNow } from '@/i18n/core';
 import type { Key } from '@/i18n/dict';
 
@@ -7,7 +7,7 @@ import type { Key } from '@/i18n/dict';
 // same two steps: topics first, then their replies. Anyone can post, guests included
 // (author_id comes from the session; without a name it shows "someone").
 // Empty who means no name ("someone"); at is the raw date. Both become strings at render time.
-export type Comment = { id: string; who: string; at: string; body: string; replies: { who: string; at: string; body: string }[] };
+export type Comment = { id: string; who: string; at: string; body: string; replies: { who: string; at: string; body: string; waiting?: boolean }[]; waiting?: boolean };
 
 // Server error text → string key.
 export const commentErrors: Record<string, Key> = {
@@ -37,7 +37,25 @@ export const whenText = (iso: string, t: typeof tNow = tNow, tx: typeof txNow = 
 };
 
 export async function fetchComments(eventId: string): Promise<Comment[]> {
-  return remember('comments', eventId, () => loadComments(eventId), 40);
+  const waiting = pendingJobs('comment').filter((j) => j.eventId === eventId);
+  let list: Comment[] = [];
+  try {
+    list = await remember('comments', eventId, () => loadComments(eventId), 40);
+  } catch (e) {
+    if (!(e instanceof OfflineError && waiting.length)) throw e;
+  }
+  if (!waiting.length) return list;
+  // Written offline: topics on top, replies under their topic, both marked waiting.
+  const me = peek<{ handle: string | null; display_name: string | null }>('profile', '');
+  const who = (me?.handle ?? me?.display_name ?? '').toLowerCase();
+  const out = list.map((c) => ({ ...c, replies: [...c.replies] }));
+  waiting.forEach((j) => {
+    const at = new Date(j.at).toISOString();
+    const body = j.body as string;
+    if (!j.parentId) out.unshift({ id: j.id, who, at, body, replies: [], waiting: true });
+    else out.find((c) => c.id === j.parentId)?.replies.push({ who, at, body, waiting: true });
+  });
+  return out;
 }
 
 async function loadComments(eventId: string): Promise<Comment[]> {
@@ -69,12 +87,26 @@ async function loadComments(eventId: string): Promise<Comment[]> {
 
 // A topic (no parentId) or a reply. The database fills author_id from the session;
 // RLS accepts guest sessions too (role authenticated).
+// Offline it waits in the outbox and shows at once (fetchComments). The job's id goes
+// in client_id, so a retry after a lost answer is not stored twice (37_offline.sql).
+outbox(
+  'comment',
+  async (j) => {
+    const row: { event_id: string; body: string; parent_id?: string; client_id?: string } = { event_id: j.eventId as string, body: j.body as string, client_id: j.id };
+    if (j.parentId) row.parent_id = j.parentId as string;
+    let r = await supabase.from('comments').upsert(row, { onConflict: 'author_id,client_id', ignoreDuplicates: true });
+    // Before 37_offline.sql there is no client_id column (or index): plain insert.
+    if (r.error && (r.error.code === 'PGRST204' || r.error.code === '42P10' || r.error.code === '42703' || /client_id/.test(r.error.message))) {
+      delete row.client_id;
+      r = await supabase.from('comments').insert(row);
+    }
+    if (r.error) throw r.error;
+  },
+  ['comments'],
+);
+
 export async function postComment(eventId: string, body: string, parentId?: string) {
   const text = body.trim();
   if (!text) throw new Error('empty');
-  if (!isOnline()) throw new OfflineError();
-  const row: { event_id: string; body: string; parent_id?: string } = { event_id: eventId, body: text };
-  if (parentId) row.parent_id = parentId;
-  const { error } = await supabase.from('comments').insert(row);
-  if (error) throw error;
+  await send({ kind: 'comment', eventId, body: text, parentId });
 }

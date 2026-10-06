@@ -8,6 +8,7 @@ import Input from '@/components/Input';
 import { reasonCode, reasons, roomInfo, roomList, roomPost, type RoomInfo, type RoomPost } from '@/data/checkin';
 import { upperData, useLang } from '@/i18n';
 import { fetchNight } from '@/data/deck';
+import { useShelf } from '@/lib/offline';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -52,6 +53,7 @@ export default function RoomScreen() {
     setInfo(i);
     if (i?.checked_in) setPosts(await roomList(slug).catch(() => []));
   }, [slug]);
+  const fresh = useShelf('roomInfo', 'roomList');
 
   useEffect(() => {
     let cancelled = false;
@@ -65,7 +67,7 @@ export default function RoomScreen() {
     return () => {
       cancelled = true;
     };
-  }, [slug, load]);
+  }, [slug, load, fresh]);
 
   // Poll for new lines every 20 s while the room is open.
   const open = !!info?.checked_in && !info.frozen;
@@ -135,7 +137,7 @@ export default function RoomScreen() {
               posts.map((p) => (
                 <View key={p.id} style={[styles.line, p.mine && styles.lineMine]}>
                   <Text style={[styles.jetMeta, p.mine && styles.jetRed]}>
-                    {p.mine ? up(t('room.you')) : upperData(p.who)} · {hhmm(p.created_at)}
+                    {p.mine ? up(t('room.you')) : upperData(p.who)} · {p.waiting ? up(t('offline.waiting')) : hhmm(p.created_at)}
                   </Text>
                   <Text style={[styles.text, p.mine && styles.textMine]}>{p.body}</Text>
                 </View>

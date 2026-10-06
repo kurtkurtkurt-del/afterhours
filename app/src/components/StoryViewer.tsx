@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Image, Modal, Pressable, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
+import { Modal, Pressable, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
+import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -88,7 +89,7 @@ function Frames({ item, onEnd, onBackPast, onClose }: { item: StoryItem; onEnd: 
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
-      <Image source={frame.image} style={StyleSheet.absoluteFill} resizeMode="cover" />
+      <Image source={frame.image} style={StyleSheet.absoluteFill} contentFit="cover" />
       <LinearGradient colors={['rgba(14,13,12,0.7)', 'rgba(14,13,12,0)', 'rgba(14,13,12,0)', 'rgba(14,13,12,0.85)']} locations={[0, 0.25, 0.6, 1]} style={StyleSheet.absoluteFill} />
 
       {/* tap zones: left third back, the rest forward */}

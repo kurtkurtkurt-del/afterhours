@@ -36,7 +36,7 @@ async function nextMatches(city: string): Promise<Match[]> {
   if (!ids) return [];
   const lists = await Promise.all(
     ids.map((id) =>
-      remember('fixtures', id, () => getJson(`https://www.thesportsdb.com/api/v1/json/3/eventsnext.php?id=${id}`), 2)
+      remember('fixtures', id, () => getJson(`https://www.thesportsdb.com/api/v1/json/3/eventsnext.php?id=${id}`), 2, { ttl: 6 * 3600_000 })
         .then((d) => (d?.events ?? []) as { strTimestamp?: string; strEvent?: string; strLeague?: string; strHomeTeam?: string; strAwayTeam?: string }[])
         .catch(() => []),
     ),
@@ -56,14 +56,15 @@ async function nextMatches(city: string): Promise<Match[]> {
 async function forecast(at: [number, number]): Promise<Day[]> {
   const [lat, lng] = at.map((n) => Math.round(n * 100) / 100);
   const d = await remember('forecast', `${lat},${lng}`, () =>
-    getJson(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=temperature_2m_max,precipitation_probability_max&timezone=auto&forecast_days=7`), 2);
+    getJson(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=temperature_2m_max,precipitation_probability_max&timezone=auto&forecast_days=7`), 2, { ttl: 3 * 3600_000 });
   const days = d?.daily;
   if (!days?.time) return [];
   return (days.time as string[]).map((date, i) => ({ date, tmax: Number(days.temperature_2m_max[i]), rain: Number(days.precipitation_probability_max[i] ?? 0) }));
 }
 
-// How much a day suits the spark: dry first, then warm enough (the grill) or mild
-// (the hike); weekends a little more. Below zero: not worth suggesting.
+// How much a day suits the spark: dry first, then warm enough (the grill, a rooftop,
+// above all a night swim) or mild (the hike, the sunrise); weekends a little more.
+// Below zero: not worth suggesting. Sparks indoors are not scored (0).
 export function dayScore(kind: Spark['kind'], d: Day, weekday: number): number {
   if (Number.isNaN(d.tmax)) return 0;
   const dry = 1 - Math.min(100, Math.max(0, d.rain)) / 100;
@@ -75,6 +76,19 @@ export function dayScore(kind: Spark['kind'], d: Day, weekday: number): number {
   if (kind === 'hike') {
     if (d.rain > 60 || d.tmax < 2 || d.tmax > 32) return -1;
     return dry + (1 - Math.min(1, Math.abs(d.tmax - 18) / 14)) + weekend * 2;
+  }
+  if (kind === 'sunrise') {
+    // A sky without rain matters most; a weekend morning is when the night ends.
+    if (d.rain > 50 || d.tmax < -5) return -1;
+    return dry * 2 + weekend * 2;
+  }
+  if (kind === 'rooftop') {
+    if (d.tmax < 14 || d.rain > 50) return -1;
+    return dry + Math.min(1, (d.tmax - 14) / 12) + weekend;
+  }
+  if (kind === 'swim') {
+    if (d.tmax < 22 || d.rain > 40) return -1;
+    return dry + Math.min(1, (d.tmax - 22) / 8) + weekend;
   }
   return 0;
 }
@@ -99,6 +113,8 @@ export async function sparkHint(spark: Spark, city: string | null, coords: [numb
         notes: pick.map((m) => ({ match: [m.title, m.league].filter(Boolean).join(' · ') })),
       };
     }
+    // Only the sparks outdoors read the forecast; the rest keep their own hour.
+    if (!['grill', 'hike', 'sunrise', 'rooftop', 'swim'].includes(spark.kind)) return null;
     const at = coords ?? CENTRES[city ?? ''];
     if (!at) return null;
     const days = await forecast(at);

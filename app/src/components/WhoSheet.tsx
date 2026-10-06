@@ -1,4 +1,5 @@
-import { Image, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image } from 'expo-image';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Avatar from '@/components/Avatar';
 import { useLang } from '@/i18n';
@@ -42,7 +43,7 @@ export default function WhoSheet({ open, title, people, answer, onAnswer, onPers
           {people.map((p) => (
             <Pressable key={p.name} onPress={() => onPerson?.(p)} style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
               <View style={[styles.face, p.live && styles.faceLive]}>
-                {p.photo ? <Image source={{ uri: p.photo }} style={StyleSheet.absoluteFill} resizeMode="cover" /> : <Avatar name={p.handle ?? p.name} size={44} />}
+                {p.photo ? <Image source={{ uri: p.photo }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Avatar name={p.handle ?? p.name} size={44} />}
               </View>
               <View style={styles.who}>
                 <Text style={styles.name}>{p.name}</Text>

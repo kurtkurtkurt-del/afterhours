@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTabReset } from '@/hooks/useTabReset';
 import RangeSlider from '@/components/RangeSlider';
 import { filterWhen, whenName, type When } from '@/data/when';
@@ -14,7 +14,7 @@ import BigPicker from '@/components/BigPicker';
 import WhenPicker from '@/components/WhenPicker';
 import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { router } from 'expo-router';
+import { router, useFocusEffect } from 'expo-router';
 import * as Location from 'expo-location';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import MapWeb, { type Pin } from '@/components/MapWeb';
@@ -22,6 +22,7 @@ import SoundCorner from '@/components/SoundCorner';
 import { useTabBarSpace } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
 import { fetchNear, type NearNight } from '@/data/near';
+import { useShelf } from '@/lib/offline';
 import { friendsKept } from '@/data/friends';
 import { sparksNear, type NearSpark } from '@/data/sparks';
 import { sparkOf } from '@/content/sparks';
@@ -53,10 +54,11 @@ export default function MapScreen() {
   const [me, setMe] = useState<[number, number] | null>(null);
   const [follow, setFollow] = useState<'me' | 'city'>('me');
   const [here, setHere] = useState<{ slug: string; name: string; centre: [number, number] } | null>(null);
-  const [km, setKm] = useState(3); // drives the query and the circle; updated when the slider is released
+  const [km, setKm] = useState(5); // drives the query and the circle; updated when the slider is released
   const [dragKm, setDragKm] = useState<number | null>(null); // large number shown while dragging
-  const [when, setWhen] = useState<When | null>('tonight');
+  const [when, setWhen] = useState<When | null>('week');
   const [rows, setRows] = useState<NearNight[]>([]);
+  const freshNear = useShelf('near');
   const [missing, setMissing] = useState(false);
   const [picked, setPicked] = useState<NearNight | null>(null);
   // Sparks you can see (your own, and those of your waves): gold diamonds; picked like a night.
@@ -71,14 +73,15 @@ export default function MapScreen() {
   const [keptBy, setKeptBy] = useState<Map<string, string[]>>(new Map());
   // Tapping the tab again resets the view and re-fits the circle, even after manual panning.
   const [fresh, setFresh] = useState(0);
+  const [recenter, setRecenter] = useState(0);
   useTabReset('map', () => {
     setPicked(null);
     setPickedSpark(null);
     setSheet(null);
     setType(null);
     setFollow('me');
-    setWhen('tonight');
-    setKm(3);
+    setWhen('week');
+    setKm(5);
     setDragKm(null);
     setFresh((n) => n + 1);
   });
@@ -90,13 +93,17 @@ export default function MapScreen() {
   const atCity = follow === 'city' || !me;
   const centre = !atCity && me ? me : (here?.centre ?? fallbackCentre);
 
-  useEffect(() => {
+  // Every time the map opens (from another tab too), it centres on you: the last known
+  // position at once, then a fresh fix when it comes. No permission or no fix: the map
+  // stays on the city and "near me" is not offered.
+  const locate = useCallback(() => {
     let cancelled = false;
     (async () => {
       const { status } = await Location.requestForegroundPermissionsAsync();
+      if (cancelled || status !== 'granted') return;
+      const last = await Location.getLastKnownPositionAsync({ maxAge: 10 * 60_000 }).catch(() => null);
       if (cancelled) return;
-      // No permission or no fix: the map stays on the city and "near me" is not offered.
-      if (status !== 'granted') return;
+      if (last) setMe([last.coords.latitude, last.coords.longitude]);
       try {
         const pos = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
         if (cancelled) return;
@@ -109,6 +116,15 @@ export default function MapScreen() {
       cancelled = true;
     };
   }, []);
+  useFocusEffect(
+    useCallback(() => {
+      setFollow('me');
+      setPicked(null);
+      setPickedSpark(null);
+      setRecenter((n) => n + 1);
+      return locate();
+    }, [locate]),
+  );
 
   // data/here.ts picks the city for every tab; only the centre is computed here.
   useEffect(() => {
@@ -188,7 +204,7 @@ export default function MapScreen() {
     return () => {
       cancelled = true;
     };
-  }, [lat, lng, km]);
+  }, [lat, lng, km, freshNear]);
 
   // On tap: slider fades, card slides in (300 ms, ease-out); reversed on close.
   const open = useSharedValue(0);
@@ -214,6 +230,7 @@ export default function MapScreen() {
       <StatusBar style="light" />
       <MapWeb
         key={fresh}
+        recenter={recenter}
         lat={lat}
         lng={lng}
         km={km}

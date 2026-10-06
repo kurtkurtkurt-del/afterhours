@@ -41,7 +41,7 @@ export async function cityCentre(slug: string): Promise<[number, number] | null>
     const { data, error } = await supabase.from('events').select('lat,lng').eq('city_id', city.id).not('lat', 'is', null).limit(400);
     if (error) throw error;
     return (data ?? []) as { lat: number; lng: number }[];
-  }, 40);
+  }, 40, { ttl: 7 * 24 * 3600_000 });
   if (!pts.length) return null;
   // Median, so outlying venues do not skew it.
   const lats = pts.map((p) => p.lat).sort((a, b) => a - b);

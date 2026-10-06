@@ -12,7 +12,7 @@ export function useCities() {
 
   useEffect(() => {
     let cancelled = false;
-    remember('cities', '', () => must(supabase.rpc('city_counts')))
+    remember('cities', '', () => must(supabase.rpc('city_counts')), 1, { ttl: 10 * 60_000 })
       .catch(() => null)
       .then((data) => {
         if (cancelled || !data) return;

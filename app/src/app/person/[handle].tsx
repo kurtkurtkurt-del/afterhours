@@ -1,25 +1,25 @@
 import { useEffect, useState } from 'react';
-import { Image, Linking, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useLocalSearchParams } from 'expo-router';
-import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Svg, { Circle } from 'react-native-svg';
 import AfterhoursCard from '@/components/AfterhoursCard';
 import BackButton from '@/components/BackButton';
-import LinkIcon from '@/components/LinkIcon';
+import LinkMarks from '@/components/LinkMarks';
+import ProfileCounts from '@/components/ProfileCounts';
 import PullDownScroll from '@/components/PullDownScroll';
+import Sleeve from '@/components/Sleeve';
 import SoundCorner from '@/components/SoundCorner';
 import { ActionButton, SAMPLES, useConnect } from '@/components/People';
-import { person, type Found, type PersonCard } from '@/data/friends';
+import { person, personPeople, type Found, type PersonCard } from '@/data/friends';
 import { friendPhotos } from '@/data/photo';
 import { personCards, toCardData } from '@/data/checkin';
 import { useProfileExtra } from '@/data/profile';
-import { LINKS } from '@/content/links';
+import { useShelf } from '@/lib/offline';
 import { collection as samples } from '@/content/collection';
 import type { NightCardData } from '@/content/cardsgen';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 type Loaded = { card: PersonCard; found: Found | null } | null;
@@ -43,15 +43,21 @@ export default function PersonScreen() {
   const [sampleAsked, setSampleAsked] = useState(false);
   const [photo, setPhoto] = useState<string | null>(null);
   const [cards, setCards] = useState<NightCardData[] | null>(null);
+  const [peopleCount, setPeopleCount] = useState<number | null>(null);
   const [open, setOpen] = useState<number | null>(null);
   const [side, setSide] = useState<'front' | 'back'>('front');
   const [rootH, setRootH] = useState(0);
   const [aboveH, setAboveH] = useState(0);
   const [headH, setHeadH] = useState(0);
 
-  const example = sample ? SAMPLES.find((p) => p.handle === handle) : undefined;
+  // Sample people (the suggestions, the names in the sample posts) have no account: their
+  // page is drawn from the name alone and says "sample profile".
+  const example = sample && handle ? (SAMPLES.find((p) => p.handle === handle) ?? { id: `sample-${handle}`, handle, display_name: handle, city_name: null, mutual: 0, reason: 'new' as const }) : undefined;
+  const isSample = !!example;
+  const fresh = useShelf('personCards');
+  const freshPhotos = useShelf('photos');
   useEffect(() => {
-    if (example || !handle) return;
+    if (isSample || !handle) return;
     let live = true;
     person(handle)
       .then((data) => live && setState({ handle, data }))
@@ -59,10 +65,14 @@ export default function PersonScreen() {
     personCards(handle)
       .then((rows) => live && setCards(rows.map(toCardData)))
       .catch(() => live && setCards([]));
+    // Their people: only a friend (or you) gets the list, so only then is there a count.
+    personPeople(handle)
+      .then((rows) => live && setPeopleCount(rows.length ? rows.length : null))
+      .catch(() => live && setPeopleCount(null));
     return () => {
       live = false;
     };
-  }, [handle, example]);
+  }, [handle, isSample, fresh]);
 
   const loaded = example || state?.handle === handle;
   const card = example
@@ -80,7 +90,7 @@ export default function PersonScreen() {
     return () => {
       live = false;
     };
-  }, [id, relation]);
+  }, [id, relation, freshPhotos]);
 
   const since = card?.created_at ? new Date(card.created_at) : null;
   const sinceText = since && !isNaN(since.getTime()) ? `${String(since.getMonth() + 1).padStart(2, '0')}.${since.getFullYear()}` : null;
@@ -90,12 +100,8 @@ export default function PersonScreen() {
     : '';
 
   const collection = example ? samples : (cards ?? []);
-  const links = example || !extra ? [] : LINKS.filter((l) => extra.links[l.kind]);
 
-  // The sleeve: a square cover on the left, the record peeking out on the right.
   const inner = width - brand.left * 2;
-  const cover = Math.round(inner * 0.7);
-  const disc = Math.round(cover * 0.96);
   const cardW = Math.round(width * CARD);
   const cardH = cardW * 1.5;
   const top = brand.top + 48;
@@ -119,61 +125,15 @@ export default function PersonScreen() {
         ) : (
           <>
             <View style={styles.pad} onLayout={(e) => setAboveH(e.nativeEvent.layout.height)}>
-              <View style={{ height: cover }}>
-                <View style={[styles.disc, { width: disc, height: disc, left: inner - disc, top: (cover - disc) / 2 }]}>
-                  <Svg width={disc} height={disc} style={StyleSheet.absoluteFill}>
-                    <Circle cx={disc / 2} cy={disc / 2} r={disc / 2 - 1} fill="#0e0d0b" />
-                    {[0.94, 0.86, 0.78, 0.7, 0.62, 0.54, 0.46].map((k) => (
-                      <Circle key={k} cx={disc / 2} cy={disc / 2} r={(disc / 2) * k} fill="none" stroke="#24221f" strokeWidth={1} />
-                    ))}
-                  </Svg>
-                  <View style={[styles.label, { width: disc * 0.36, height: disc * 0.36, borderRadius: disc * 0.18 }]}>
-                    {/* The label shows on the visible half: the text sits right of the hole. */}
-                    <Text style={styles.labelText} numberOfLines={1}>
-                      {up(tn('account.nNights', collection.length))}
-                    </Text>
-                  </View>
-                </View>
-
-                <View style={[styles.cover, { width: cover, height: cover }]}>
-                  {photo ? (
-                    <Image source={{ uri: photo }} style={StyleSheet.absoluteFill} resizeMode="cover" onError={() => setPhoto(null)} />
-                  ) : (
-                    <Text style={styles.coverInitial}>{name.charAt(0)}</Text>
-                  )}
-                  <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.9)']} style={styles.shade} pointerEvents="none" />
-                  <View style={styles.who}>
-                    <Text style={styles.name} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>
-                      {name.replace(' ', '\n')}
-                    </Text>
-                    <Text style={styles.meta} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.8}>
-                      {meta}
-                    </Text>
-                  </View>
-                </View>
-              </View>
+              <Sleeve width={inner} photo={photo} name={name} meta={meta} disc={up(tn('account.nNights', collection.length))} city={card.city_name} onPhotoError={() => setPhoto(null)} />
 
               {card.bio ? <Text style={styles.bio}>{card.bio}</Text> : null}
               {!example && extra?.about ? <Text style={styles.about}>{extra.about}</Text> : null}
 
-              {links.length ? (
-                <View style={styles.links}>
-                  {links.map((l) => (
-                    <Pressable
-                      key={l.kind}
-                      onPress={() => Linking.openURL(l.url(extra!.links[l.kind]!)).catch(() => {})}
-                      hitSlop={6}
-                      accessibilityRole="link"
-                      accessibilityLabel={l.label}
-                      style={({ pressed }) => [styles.linkBtn, pressed && styles.pressed]}
-                    >
-                      <LinkIcon kind={l.kind} size={19} color={colors.paper} />
-                    </Pressable>
-                  ))}
-                </View>
-              ) : null}
+              <LinkMarks links={example || !extra ? {} : extra.links} />
+              <ProfileCounts handle={card.handle} events={card.kept_count} people={peopleCount} mine={false} />
 
-              <View style={[styles.action, !links.length && styles.actionAlone]}>
+              <View style={styles.action}>
                 <ActionButton
                   wide
                   relation={relation}
@@ -245,21 +205,9 @@ const styles = StyleSheet.create({
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, backgroundColor: colors.ink, zIndex: 2 },
   body: {},
   pad: { paddingHorizontal: brand.left },
-  disc: { position: 'absolute', alignItems: 'center', justifyContent: 'center' },
-  label: { backgroundColor: colors.spot, alignItems: 'flex-end', justifyContent: 'center', paddingRight: 8 },
-  labelText: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.paper, maxWidth: '48%' },
-  cover: { borderRadius: radius.md, overflow: 'hidden', backgroundColor: '#1f1d1a', alignItems: 'center', justifyContent: 'center' },
-  coverInitial: { fontFamily: fonts.logo, fontSize: 120, color: colors.ink2 },
-  shade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: '60%' },
-  who: { position: 'absolute', left: 16, right: 16, bottom: 14 },
-  name: { fontFamily: fonts.logo, fontSize: 46, lineHeight: 44, letterSpacing: -1, color: colors.paper },
-  meta: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.mute, marginTop: 10 },
   bio: { fontFamily: fonts.medium, fontSize: 19, lineHeight: 25, letterSpacing: -0.4, color: colors.paper, marginTop: 22 },
   about: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 23, color: colors.mute, marginTop: 8 },
-  links: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 20 },
-  linkBtn: { width: 40, height: 40, borderRadius: 20, borderWidth: 1, borderColor: colors.ink3, alignItems: 'center', justifyContent: 'center' },
-  action: { marginTop: 14 },
-  actionAlone: { marginTop: 22 },
+  action: { marginTop: 20 },
   head: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12, paddingTop: 30 },
   headLeft: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   deckTitle: { fontFamily: fonts.medium, fontSize: 15, letterSpacing: -0.2, color: colors.paper },

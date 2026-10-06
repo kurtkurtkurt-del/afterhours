@@ -35,13 +35,19 @@ function useBump() {
   return n;
 }
 
+type YoursState = { friends: YoursFriend[]; nights: YoursNight[]; matches: YoursMatch[]; mine: Night[]; swipes: FriendKept[]; ready: boolean };
+const EMPTY: YoursState = { friends: [], nights: [], matches: [], mine: [], swipes: [], ready: false };
+let last: { uid: string; state: YoursState } | null = null;
+
 export function useYours() {
   const again = useBump();
   const { session } = useAuth();
   const uid = session?.user.id;
-  const tick = useRefreshOnFocus();
+  const tick = useRefreshOnFocus('friends', 'friendsKept', 'live', 'kept', 'photos');
   // mine: nights you kept (your deck) · swipes: friends' right swipes, one by one (friends' deck)
-  const [state, setState] = useState<{ friends: YoursFriend[]; nights: YoursNight[]; matches: YoursMatch[]; mine: Night[]; swipes: FriendKept[]; ready: boolean }>({ friends: [], nights: [], matches: [], mine: [], swipes: [], ready: false });
+  // The last result for this account, kept in memory: coming back to yours shows it at
+  // once (no empty page while the five reads run again behind it).
+  const [state, setState] = useState<YoursState>(() => (last && last.uid === uid ? last.state : EMPTY));
 
   useEffect(() => {
     if (!uid) return;
@@ -77,7 +83,9 @@ export function useYours() {
       const nights = [...byNight.values()];
       const mineIds = new Set(mine.map((m) => m.id));
       const matches: YoursMatch[] = fk.filter((k) => mineIds.has(k.id)).map((k) => ({ friend: k.friend.toLowerCase(), night: k.id }));
-      setState({ friends, nights, matches, mine: mine as Night[], swipes: fk, ready: true });
+      const next: YoursState = { friends, nights, matches, mine: mine as Night[], swipes: fk, ready: true };
+      if (uid) last = { uid, state: next };
+      setState(next);
     })();
     return () => {
       cancelled = true;

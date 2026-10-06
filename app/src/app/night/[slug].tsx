@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Image, KeyboardAvoidingView, Linking, Modal, Pressable, Share, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { KeyboardAvoidingView, Linking, Modal, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Image } from 'expo-image';
 import * as Location from 'expo-location';
 import AfterhoursCard from '@/components/AfterhoursCard';
 import { checkIn, myCards, reasonCode, reasons, roomInfo, toCardData, type CardRow, type RoomInfo } from '@/data/checkin';
@@ -12,8 +13,10 @@ import Input from '@/components/Input';
 import PullDownScroll from '@/components/PullDownScroll';
 import SoundCorner from '@/components/SoundCorner';
 import { useAuth } from '@/auth/AuthContext';
-import { fetchNight, SITE, swipe, type Night } from '@/data/deck';
-import { OfflineError } from '@/lib/offline';
+import { fetchNight, swipe, type Night } from '@/data/deck';
+import { OfflineError, useShelf } from '@/lib/offline';
+import { shareNight } from '@/lib/share';
+import ShareButton from '@/components/ShareButton';
 import { commentCode, commentErrors, fetchComments, postComment, whenText, type Comment } from '@/data/comments';
 import { bodyText, upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
@@ -21,11 +24,8 @@ import { brand } from '@/theme/layout';
 
 const fallback = require('../../../assets/intro/concert.jpg');
 
-// The night's web page; this is the shared link.
 const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const two = (n: number) => String(n).padStart(2, '0');
-
-const webUrl = (slug: string) => `${SITE}explore/event/index.html?slug=${encodeURIComponent(slug)}`;
 
 // Night page: photo, details, text, venue; keep, and a ticket when there is one.
 export default function NightScreen() {
@@ -59,6 +59,9 @@ export default function NightScreen() {
   const [sending, setSending] = useState(false);
   const [talkNote, setTalkNote] = useState<string | null>(null);
 
+  // A background fetch that brought a newer night or new comments reads them again.
+  const fresh = useShelf('night', 'comments');
+  const freshRoom = useShelf('roomInfo', 'cards');
   useEffect(() => {
     let cancelled = false;
     // Offline, a night saved from the deck or map still opens (data/deck.ts).
@@ -77,12 +80,12 @@ export default function NightScreen() {
     return () => {
       cancelled = true;
     };
-  }, [slug]);
+  }, [slug, fresh]);
 
   useEffect(() => {
     if (!session || !slug) return;
     roomInfo(slug).then(setRoom).catch(() => {});
-  }, [session, slug]);
+  }, [session, slug, freshRoom]);
 
   // Check-in: sends the location when available (500 m rule), otherwise only the time rule applies.
   const doCheckIn = async () => {
@@ -163,7 +166,7 @@ export default function NightScreen() {
         <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
         <PullDownScroll header={band} contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
           <View style={[styles.hero, { height: width * 1.1 }]}>
-            <Image source={night.image_url ? { uri: night.image_url } : fallback} style={styles.heroPhoto} resizeMode="cover" />
+            <Image source={night.image_url ? { uri: night.image_url } : fallback} style={styles.heroPhoto} contentFit="cover" />
             <View style={styles.heroShade} />
             <View style={styles.heroText}>
               <Text style={styles.mono}>
@@ -172,6 +175,7 @@ export default function NightScreen() {
               <Text style={styles.title}>{night.title.toLowerCase()}</Text>
               <Text style={styles.mono}>{upperData(night.meta)}</Text>
             </View>
+            <ShareButton onPress={() => shareNight(night)} style={styles.heroShare} />
           </View>
 
           <View style={styles.body}>
@@ -196,7 +200,7 @@ export default function NightScreen() {
               ) : null}
               <View style={{ flex: 1 }}>
                 {/* Share: the night's web page; "open in the app" on the site brings it back. */}
-                <Button label={t('night.share')} kind="line" onPress={() => Share.share({ message: `${night.title.toLowerCase()} · ${webUrl(night.slug)}`, url: webUrl(night.slug) })} />
+                <Button label={t('night.share')} kind="line" onPress={() => shareNight(night)} />
               </View>
             </View>
             {room ? (
@@ -226,11 +230,11 @@ export default function NightScreen() {
               ) : (
                 talk.map((c) => (
                   <View key={c.id} style={styles.topic}>
-                    <Text style={styles.talkWho}>{c.who || t('word.someone')} · {whenText(c.at, t, tx)}</Text>
+                    <Text style={styles.talkWho}>{c.who || t('word.someone')} · {c.waiting ? t('offline.waiting') : whenText(c.at, t, tx)}</Text>
                     <Text style={styles.talkBody}>{c.body}</Text>
                     {c.replies.map((r, i) => (
                       <View key={i} style={styles.reply}>
-                        <Text style={styles.talkWho}>{r.who || t('word.someone')} · {whenText(r.at, t, tx)}</Text>
+                        <Text style={styles.talkWho}>{r.who || t('word.someone')} · {r.waiting ? t('offline.waiting') : whenText(r.at, t, tx)}</Text>
                         <Text style={styles.talkBody}>{r.body}</Text>
                       </View>
                     ))}
@@ -304,7 +308,8 @@ const styles = StyleSheet.create({
   hero: { backgroundColor: colors.ink2, overflow: 'hidden', borderBottomLeftRadius: radius.lg, borderBottomRightRadius: radius.lg },
   heroPhoto: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
   heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 170, backgroundColor: colors.ink, opacity: 0.78 },
-  heroText: { position: 'absolute', left: brand.left, right: brand.left, bottom: 18, gap: 6 },
+  heroText: { position: 'absolute', left: brand.left, right: brand.left + 52, bottom: 18, gap: 6 },
+  heroShare: { right: brand.left - 4, bottom: 16 },
   title: { fontFamily: fonts.medium, fontSize: 34, lineHeight: 36, letterSpacing: -1.1, color: colors.paper },
   mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
   body: { paddingHorizontal: brand.left, paddingTop: 18, gap: 22 },

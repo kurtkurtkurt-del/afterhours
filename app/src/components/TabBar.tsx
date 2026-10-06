@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import { Image, Platform, Pressable, StyleSheet, View, type PressableProps } from 'react-native';
+import { Platform, Pressable, StyleSheet, View, type PressableProps } from 'react-native';
+import { Image } from 'expo-image';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Icon, { type IconName } from '@/components/Icon';
 import { usePhoto } from '@/data/photo';

@@ -1,6 +1,7 @@
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import Animated, { useAnimatedStyle, useSharedValue, withRepeat, withTiming } from 'react-native-reanimated';
-import { FlatList, Image, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
+import { FlatList, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
+import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -8,7 +9,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { SvgUri } from 'react-native-svg';
 import Icon from '@/components/Icon';
 import WhoSheet from '@/components/WhoSheet';
-import { PeopleResults, PeopleSearch, SuggestedInRow } from '@/components/People';
+import { PeopleResults, PeopleSearch, SuggestedInRow, openPerson } from '@/components/People';
 import SoundCorner from '@/components/SoundCorner';
 import DeckViewer from '@/components/DeckViewer';
 import { toDeckCard, type DeckCard } from '@/components/CardFace';
@@ -27,6 +28,8 @@ import { sparkInbox, type SparkInvite } from '@/data/sparks';
 import { pastFeed, type PastNight } from '@/data/feed';
 import { rsvpFor, rsvpSet, type Answer, type Rsvp } from '@/data/rsvp';
 import SamplePost from '@/components/SamplePost';
+import ShareButton from '@/components/ShareButton';
+import { shareNight } from '@/lib/share';
 import Avatar from '@/components/Avatar';
 import { SAMPLE_POSTS, type SamplePost as SamplePostData } from '@/content/posts';
 import { useHere } from '@/data/here';
@@ -367,7 +370,7 @@ export default function YoursScreen() {
                     <View style={[styles.page, { width }]}>
                       {item.kind === 'night' ? (
                         <Pressable onPress={() => item.n.slug && router.push(`/night/${item.n.slug}`)} style={[styles.hero, { width: slideW, height: slideW * 1.08 }]}>
-                          <Image source={(item.n as YoursNight & { photo?: number }).photo ?? (item.n.image ? { uri: item.n.image } : fallbackPhoto)} style={StyleSheet.absoluteFill} resizeMode="cover" />
+                          <Image source={(item.n as YoursNight & { photo?: number }).photo ?? (item.n.image ? { uri: item.n.image } : fallbackPhoto)} style={StyleSheet.absoluteFill} contentFit="cover" />
                           <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.55)', colors.ink]} locations={[0.3, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
                           {matched.has(item.n.id) ? (
                             <View style={styles.badge}>
@@ -384,7 +387,7 @@ export default function YoursScreen() {
                                   const f = friends.find((x) => x.name === name);
                                   return (
                                     <View key={name} style={[styles.keptFace, i > 0 && styles.keptOverlap, live.has(name) && styles.keptLive]}>
-                                      {f?.photo ? <Image source={{ uri: f.photo }} style={StyleSheet.absoluteFill} resizeMode="cover" /> : <Avatar name={f?.handle ?? name} size={KEPT} />}
+                                      {f?.photo ? <Image source={{ uri: f.photo }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Avatar name={f?.handle ?? name} size={KEPT} />}
                                     </View>
                                   );
                                 })}
@@ -421,7 +424,7 @@ export default function YoursScreen() {
                         </Pressable>
                       ) : (
                         <Pressable onPress={() => router.push(`/spark/${item.s.kind}?invite=${item.s.id}`)} style={[styles.hero, styles.heroGold, { width: slideW, height: slideW * 1.08 }]}>
-                          <Image source={sparkOf(item.s.kind).photo} style={StyleSheet.absoluteFill} resizeMode="cover" />
+                          <Image source={sparkOf(item.s.kind).photo} style={StyleSheet.absoluteFill} contentFit="cover" />
                           <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.55)', colors.ink]} locations={[0.3, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
                           <View style={[styles.badge, styles.badgeGold]}>
                             <Text style={styles.badgeText}>{upperData('spark')}</Text>
@@ -443,6 +446,12 @@ export default function YoursScreen() {
                     ))}
                   </View>
                 ) : null}
+              </>
+            ) : !real.ready || (sample && !upcoming.length) ? (
+              <>
+                {/* Still loading: the gallery's place is kept, so nothing below it jumps. */}
+                <Head label={t('yours.withPeople')} />
+                <View style={[styles.hero, styles.heroWait, { width: slideW, height: slideW * 1.08 }]} />
               </>
             ) : null}
 
@@ -471,9 +480,9 @@ export default function YoursScreen() {
             <Head label={t('yours.people')} note={sampleRow ? up(t('deck.sample')) : friends.length ? String(friends.length) : undefined} />
             <ScrollView ref={people} horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.rail}>
               {faces.map((f) => (
-                <Pressable key={f.id} onPress={() => router.push(`/friend/${f.id}`)} style={({ pressed }) => [styles.person, pressed && styles.pressed]}>
+                <Pressable key={f.id} onPress={() => (f.handle ? openPerson(f.handle) : router.push(`/friend/${f.id}`))} style={({ pressed }) => [styles.person, pressed && styles.pressed]}>
                   <View style={[styles.face, f.live && styles.faceLive, f.pending && styles.facePending]}>
-                    {f.photo ? <Image source={{ uri: f.photo }} style={StyleSheet.absoluteFill} resizeMode="cover" /> : <Avatar name={f.handle ?? f.name} size={FACE} />}
+                    {f.photo ? <Image source={{ uri: f.photo }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Avatar name={f.handle ?? f.name} size={FACE} />}
                   </View>
                   <Text style={styles.personName} numberOfLines={1}>{f.name}</Text>
                   {f.live ? (
@@ -533,7 +542,7 @@ export default function YoursScreen() {
           const f = friends.find((x) => x.name === p.name);
           if (!f) return;
           setAsking(null);
-          setTimeout(() => router.push(`/friend/${f.id}`), 250);
+          setTimeout(() => (f.handle ? openPerson(f.handle) : router.push(`/friend/${f.id}`)), 250);
         }}
         onClose={() => setAsking(null)}
       />
@@ -567,7 +576,7 @@ const two = (n: number) => String(n).padStart(2, '0');
 // (an empty or broken picture left blank cards before).
 function StackThumb({ card }: { card: DeckCard | undefined }) {
   const [broken, setBroken] = useState(false);
-  if (card?.image && !broken) return <Image source={{ uri: card.image }} style={StyleSheet.absoluteFill} resizeMode="cover" onError={() => setBroken(true)} />;
+  if (card?.image && !broken) return <Image source={{ uri: card.image }} style={StyleSheet.absoluteFill} contentFit="cover" onError={() => setBroken(true)} />;
   if (card?.poster && !broken) {
     return (
       <View style={[StyleSheet.absoluteFill, styles.stackPoster]}>
@@ -577,7 +586,7 @@ function StackThumb({ card }: { card: DeckCard | undefined }) {
   }
   return (
     <>
-      <Image source={fallbackPhoto} style={[StyleSheet.absoluteFill, styles.stackDim]} resizeMode="cover" />
+      <Image source={fallbackPhoto} style={[StyleSheet.absoluteFill, styles.stackDim]} contentFit="cover" />
       {card ? <Text style={styles.stackTitle} numberOfLines={3}>{card.title.toLowerCase()}</Text> : null}
     </>
   );
@@ -601,7 +610,10 @@ const PastPost = memo(function PastPost({ p, names }: { p: PastNight; names: (li
           <Text style={styles.postMeta} numberOfLines={1}>{up(dayLabel(p.starts_at))} · {upperData(p.city_name)} · {tx('type.' + p.type_slug, '') ? up(tx('type.' + p.type_slug, '')) : upperData(p.type_name)}</Text>
         </View>
       </View>
-      <Image source={{ uri: p.image_url }} style={[styles.postPhoto, { height: width }]} resizeMode="cover" />
+      <View>
+        <Image source={{ uri: p.image_url }} style={[styles.postPhoto, { height: width }]} contentFit="cover" />
+        <ShareButton onPress={() => shareNight({ slug: p.slug, title: p.title, starts_at: p.starts_at, venue_name: p.venue_name, city_name: p.city_name })} />
+      </View>
       <View style={styles.postBody}>
         {p.mine || p.people.length ? (
           <Text style={styles.postThere} numberOfLines={2}>
@@ -685,6 +697,7 @@ const styles = StyleSheet.create({
 
   // the page around it already leaves the side margins
   hero: { borderRadius: radius.lg, overflow: 'hidden', backgroundColor: colors.ink2 },
+  heroWait: { alignSelf: 'center', backgroundColor: '#1a1917' },
   heroText: { position: 'absolute', left: 16, right: 16, bottom: 16, gap: 6 },
   heroMeta: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1.2, color: colors.paper },
   heroTitle: { fontFamily: fonts.logo, fontSize: 44, lineHeight: 40, letterSpacing: -1, color: colors.spotText, marginBottom: 4 },

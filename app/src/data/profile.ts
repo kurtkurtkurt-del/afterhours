@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
-import { must, remember } from '@/lib/offline';
+import { must, outbox, pendingJobs, remember, send, useShelf } from '@/lib/offline';
 import { useAuth } from '@/auth/AuthContext';
 
 // profile_me(): your card + counts + settings in one call (12_profiles.sql).
@@ -18,15 +18,19 @@ type Profile = {
   comment_count: number;
 };
 
+// Also used by data/warm.ts to fill the shelf before the account page is opened.
+export const loadProfile = () => remember('profile', '', () => must(supabase.rpc('profile_me')));
+
 // tick: refetch the profile when it changes (on returning to the page).
 export function useProfile(tick = 0) {
   const { session } = useAuth();
   const uid = session?.user.id;
   const [profile, setProfile] = useState<Profile | null>(null);
+  const fresh = useShelf('profile');
   useEffect(() => {
     if (!uid) return;
     let cancelled = false;
-    remember('profile', '', () => must(supabase.rpc('profile_me'))).catch(() => null).then((data) => {
+    loadProfile().catch(() => null).then((data) => {
       if (cancelled) return;
       const row = Array.isArray(data) ? data[0] : data;
       if (row) setProfile(row as Profile);
@@ -34,18 +38,19 @@ export function useProfile(tick = 0) {
     return () => {
       cancelled = true;
     };
-  }, [uid, tick]);
+  }, [uid, tick, fresh]);
   return session ? profile : null;
 }
 
 // 29_profile_more.sql: the longer text about you and links to other networks.
 // handle null = you. about is null when empty or not visible; links is {} for non-friends.
-export type LinkKind = 'instagram' | 'tiktok' | 'spotify' | 'soundcloud' | 'x' | 'website';
+export type LinkKind = 'instagram' | 'tiktok' | 'spotify' | 'soundcloud' | 'x' | 'website' | 'whatsapp';
 export type Extra = { about: string | null; links: Partial<Record<LinkKind, string>> };
 export function useProfileExtra(handle: string | null, tick = 0, off = false) {
   const { session } = useAuth();
   const uid = session?.user.id;
   const [extra, setExtra] = useState<Extra | null>(null);
+  const fresh = useShelf('profileExtra');
   useEffect(() => {
     if (!uid || off) return;
     let cancelled = false;
@@ -54,23 +59,56 @@ export function useProfileExtra(handle: string | null, tick = 0, off = false) {
       .then((data) => {
         if (cancelled) return;
         const row = (Array.isArray(data) ? data[0] : data) as Extra | undefined;
-        setExtra(row ? { about: row.about, links: row.links ?? {} } : { about: null, links: {} });
+        const got: Extra = row ? { about: row.about, links: row.links ?? {} } : { about: null, links: {} };
+        // Yours: what is still waiting in the outbox shows as saved.
+        if (handle === null)
+          pendingJobs().forEach((j) => {
+            if (j.kind === 'about') got.about = (j.about as string) || null;
+            if (j.kind === 'links') got.links = j.links as Extra['links'];
+          });
+        setExtra(got);
       });
     return () => {
       cancelled = true;
     };
-  }, [uid, handle, tick, off]);
+  }, [uid, handle, tick, off, fresh]);
   return session && !off ? extra : null;
 }
 
+// The longer text and the links wait in the outbox offline.
+outbox(
+  'about',
+  async (j) => {
+    const { error } = await supabase.rpc('profile_about_set', { p_about: j.about });
+    if (error) throw error;
+  },
+  ['profileExtra'],
+);
+outbox(
+  'links',
+  async (j) => {
+    const { data, error } = await supabase.rpc('profile_links_set', { p_links: j.links });
+    if (error) throw error;
+    // A value that does not fit is a refusal (the offline bar says so when it was queued).
+    if (String(data) !== 'ok') throw Object.assign(new Error(String(data)), { result: String(data) });
+    return 'ok';
+  },
+  ['profileExtra'],
+);
+
 export async function saveAbout(about: string) {
-  const { error } = await supabase.rpc('profile_about_set', { p_about: about });
-  if (error) throw error;
+  await send({ kind: 'about', about });
 }
 
-// Returns 'ok' or 'format:<kind>' for the first value that does not fit.
+// Returns 'ok' or 'format:<kind>' for the first value that does not fit. Offline the
+// links are queued and 'ok' is returned; the server checks them when they go out.
 export async function saveLinks(links: Partial<Record<LinkKind, string>>): Promise<string> {
-  const { data, error } = await supabase.rpc('profile_links_set', { p_links: links });
-  if (error) throw error;
-  return String(data);
+  try {
+    await send({ kind: 'links', links });
+    return 'ok';
+  } catch (e) {
+    const result = (e as { result?: string }).result;
+    if (result) return result;
+    throw e;
+  }
 }

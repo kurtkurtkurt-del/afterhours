@@ -100,7 +100,8 @@
           "defaultChannel": "default"
         }
       ],
-      "expo-apple-authentication"
+      "expo-apple-authentication",
+      "expo-image"
     ],
     "scheme": "afterhours",
     "experiments": {

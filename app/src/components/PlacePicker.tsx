@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Image, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { City } from '@/content/cities';
@@ -111,7 +112,7 @@ function Cities({ country, selected, onBack, onPick }: { country: Country; selec
           const photo = photos[c.id];
           return (
             <Pressable key={c.id} onPress={() => onPick(c.id)} accessibilityRole="button" accessibilityLabel={c.name} style={({ pressed }) => [styles.card, on && styles.cardOn, pressed && styles.pressed]}>
-              {photo ? <Image source={{ uri: photo.uri }} style={StyleSheet.absoluteFill} resizeMode="cover" /> : null}
+              {photo ? <Image source={{ uri: photo.uri }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
               <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.92)']} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
               <View style={styles.cardText}>
                 <Text style={styles.cityName} numberOfLines={2}>{c.name}</Text>

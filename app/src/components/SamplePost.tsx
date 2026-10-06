@@ -1,5 +1,8 @@
 import { memo, useState } from 'react';
-import { Image, Pressable, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import { KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { openPerson } from '@/components/People';
+import { Image } from 'expo-image';
 import Svg, { Path } from 'react-native-svg';
 import type { SamplePost as Post } from '@/content/posts';
 import Avatar from '@/components/Avatar';
@@ -10,43 +13,36 @@ import { brand } from '@/theme/layout';
 
 // One sample post in the past feed, laid out like a photo app: who and where on top,
 // the photo full width, a heart and a speech mark, the likes, the caption, two
-// comments and "all n comments", and a line to add your own. Likes and comments stay
-// on the phone (they are samples); marked "sample" at the top right.
+// comments and "all n comments", and a line to add your own. Names and the face open
+// that person's profile. The comments open in a sheet that leaves the post visible
+// above it and rises with the keyboard. Likes and comments stay on the phone (they are
+// samples); marked "sample" at the top right.
 // memo: yours re-renders every six seconds (the gallery); the feed under it need not.
 export default memo(function SamplePost({ post }: { post: Post }) {
   const { width } = useWindowDimensions();
   const { t, up } = useLang();
   const [liked, setLiked] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [sheet, setSheet] = useState(false);
   const [mine, setMine] = useState<string[]>([]);
-  const [draft, setDraft] = useState('');
-  const [writing, setWriting] = useState(false);
   const [at] = useState(() => new Date(Date.now() - post.daysAgo * 86400000).toISOString());
-  const comments = open ? post.comments : post.comments.slice(0, 2);
   const you = t('deck.you');
-
-  const send = () => {
-    const text = draft.trim();
-    if (!text) return;
-    setMine((m) => [...m, text]);
-    setDraft('');
-  };
+  const person = (name: string) => openPerson(name, true);
 
   return (
     <View style={styles.post}>
       <View style={styles.head}>
-        <View style={styles.face}>
+        <Pressable onPress={() => person(post.who)} hitSlop={6} style={styles.face} accessibilityRole="button" accessibilityLabel={post.who}>
           <Avatar name={post.who} size={34} />
-        </View>
+        </Pressable>
         <View style={styles.who}>
-          <Text style={styles.name} numberOfLines={1}>{post.who}</Text>
+          <Text style={styles.name} numberOfLines={1} onPress={() => person(post.who)}>{post.who}</Text>
           <Text style={styles.meta} numberOfLines={1}>{upperData(post.venue)} · {up(dayLabel(at))}</Text>
         </View>
         <Text style={styles.sample}>{up(t('deck.sample'))}</Text>
       </View>
 
       <Pressable onLongPress={() => setLiked(true)} delayLongPress={250}>
-        <Image source={post.photo} style={[styles.photo, { height: width }]} resizeMode="cover" />
+        <Image source={post.photo} style={[styles.photo, { height: width }]} contentFit="cover" />
       </Pressable>
 
       <View style={styles.body}>
@@ -62,7 +58,7 @@ export default memo(function SamplePost({ post }: { post: Post }) {
               />
             </Svg>
           </Pressable>
-          <Pressable onPress={() => setWriting(true)} hitSlop={10} accessibilityRole="button">
+          <Pressable onPress={() => setSheet(true)} hitSlop={10} accessibilityRole="button" accessibilityLabel={t('post.addComment')}>
             <Svg width={25} height={25} viewBox="0 0 24 24">
               <Path d="M20 11.5a7.5 7.5 0 0 1-11 6.6L4.5 19.5l1.3-4.2A7.5 7.5 0 1 1 20 11.5Z" fill="none" stroke={colors.paper} strokeWidth={1.6} strokeLinejoin="round" />
             </Svg>
@@ -70,17 +66,17 @@ export default memo(function SamplePost({ post }: { post: Post }) {
         </View>
         <Text style={styles.likes}>{t('post.likes', { n: post.likes + (liked ? 1 : 0) })}</Text>
         <Text style={styles.text}>
-          <Text style={styles.strong}>{post.who} </Text>
+          <Name who={post.who} onPress={person} />
           {post.caption}
         </Text>
-        {post.comments.length > 2 && !open ? (
-          <Pressable onPress={() => setOpen(true)} hitSlop={6}>
+        {post.comments.length + mine.length > 2 ? (
+          <Pressable onPress={() => setSheet(true)} hitSlop={6}>
             <Text style={styles.all}>{t('post.allComments', { n: post.comments.length + mine.length })}</Text>
           </Pressable>
         ) : null}
-        {comments.map((c, i) => (
+        {post.comments.slice(0, 2).map((c, i) => (
           <Text key={i} style={styles.text}>
-            <Text style={styles.strong}>{c.who} </Text>
+            <Name who={c.who} onPress={person} />
             {c.text}
           </Text>
         ))}
@@ -90,7 +86,75 @@ export default memo(function SamplePost({ post }: { post: Post }) {
             {c}
           </Text>
         ))}
-        {writing ? (
+        <Pressable onPress={() => setSheet(true)} hitSlop={6}>
+          <Text style={styles.add}>{t('post.addComment')}</Text>
+        </Pressable>
+      </View>
+
+      <CommentSheet open={sheet} onClose={() => setSheet(false)} post={post} mine={mine} onSend={(text) => setMine((m) => [...m, text])} onPerson={(name) => {
+        setSheet(false);
+        setTimeout(() => person(name), 250);
+      }} />
+    </View>
+  );
+});
+
+// A name in a caption or comment: opens that person's profile.
+function Name({ who, onPress }: { who: string; onPress: (who: string) => void }) {
+  return (
+    <Text style={styles.strong} onPress={() => onPress(who)}>
+      {who}{' '}
+    </Text>
+  );
+}
+
+// All comments of a post in a sheet from the bottom: the top of the screen stays visible
+// (tap it to close), the field sits at the bottom and rises with the keyboard.
+function CommentSheet({ open, onClose, post, mine, onSend, onPerson }: { open: boolean; onClose: () => void; post: Post; mine: string[]; onSend: (text: string) => void; onPerson: (name: string) => void }) {
+  const { t } = useLang();
+  const { height } = useWindowDimensions();
+  const insets = useSafeAreaInsets();
+  const [draft, setDraft] = useState('');
+  const you = t('deck.you');
+  const send = () => {
+    const text = draft.trim();
+    if (!text) return;
+    onSend(text);
+    setDraft('');
+  };
+  return (
+    <Modal visible={open} transparent animationType="slide" onRequestClose={onClose}>
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.sheetWrap}>
+        <Pressable style={styles.sheetDim} onPress={onClose} accessibilityRole="button" accessibilityLabel={t('word.close')} />
+        <View style={[styles.sheet, { maxHeight: height * 0.7, paddingBottom: insets.bottom + 10 }]}>
+          <View style={styles.grab} />
+          <Text style={styles.sheetTitle}>{t('post.comments')}</Text>
+          <ScrollView style={styles.sheetList} contentContainerStyle={styles.sheetListIn} keyboardShouldPersistTaps="handled">
+            <Text style={styles.text}>
+              <Text style={styles.strong} onPress={() => onPerson(post.who)}>{post.who} </Text>
+              {post.caption}
+            </Text>
+            {post.comments.map((c, i) => (
+              <View key={i} style={styles.sheetLine}>
+                <Pressable onPress={() => onPerson(c.who)} hitSlop={4}>
+                  <Avatar name={c.who} size={28} />
+                </Pressable>
+                <Text style={[styles.text, styles.sheetText]}>
+                  <Text style={styles.strong} onPress={() => onPerson(c.who)}>{c.who} </Text>
+                  {c.text}
+                </Text>
+              </View>
+            ))}
+            {mine.map((c, i) => (
+              <View key={`m${i}`} style={styles.sheetLine}>
+                <Avatar name={you} size={28} />
+                <Text style={[styles.text, styles.sheetText]}>
+                  <Text style={styles.strong}>{you} </Text>
+                  {c}
+                </Text>
+              </View>
+            ))}
+          </ScrollView>
           <View style={styles.write}>
             <TextInput
               value={draft}
@@ -102,21 +166,18 @@ export default memo(function SamplePost({ post }: { post: Post }) {
               autoFocus
               returnKeyType="send"
               onSubmitEditing={send}
+              blurOnSubmit={false}
               maxLength={300}
             />
             <Pressable onPress={send} hitSlop={8} disabled={!draft.trim()}>
               <Text style={[styles.post_, !draft.trim() && styles.off]}>{t('post.send')}</Text>
             </Pressable>
           </View>
-        ) : (
-          <Pressable onPress={() => setWriting(true)} hitSlop={6}>
-            <Text style={styles.add}>{t('post.addComment')}</Text>
-          </Pressable>
-        )}
-      </View>
-    </View>
+        </View>
+      </KeyboardAvoidingView>
+    </Modal>
   );
-});
+}
 
 const styles = StyleSheet.create({
   post: { marginTop: 26 },
@@ -134,7 +195,16 @@ const styles = StyleSheet.create({
   strong: { fontFamily: fonts.semibold },
   all: { fontFamily: fonts.regular, fontSize: 13.5, color: colors.mute },
   add: { fontFamily: fonts.regular, fontSize: 13.5, color: colors.meta, marginTop: 2 },
-  write: { flexDirection: 'row', alignItems: 'center', gap: 12, borderBottomWidth: 1, borderBottomColor: colors.ink3, marginTop: 4 },
+  write: { flexDirection: 'row', alignItems: 'center', gap: 12, borderTopWidth: 1, borderTopColor: colors.ink3, marginTop: 6, paddingHorizontal: brand.left, paddingTop: 6 },
+  sheetWrap: { flex: 1, justifyContent: 'flex-end' },
+  sheetDim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.55)' },
+  sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingTop: 8 },
+  grab: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: colors.ink3, marginBottom: 10 },
+  sheetTitle: { fontFamily: fonts.semibold, fontSize: 15, color: colors.paper, textAlign: 'center', marginBottom: 8 },
+  sheetList: { flexGrow: 0 },
+  sheetListIn: { paddingHorizontal: brand.left, paddingBottom: 12, gap: 12 },
+  sheetLine: { flexDirection: 'row', alignItems: 'flex-start', gap: 10 },
+  sheetText: { flex: 1 },
   input: { flex: 1, height: 40, fontFamily: fonts.regular, fontSize: 14, color: colors.paper, paddingVertical: 0 },
   post_: { fontFamily: fonts.semibold, fontSize: 14, color: colors.spotText },
   off: { opacity: 0.4 },

@@ -1,11 +1,12 @@
-import { Image, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Image } from 'expo-image';
 import { colors } from '@/theme/tokens';
 
 // Night photo with an ink tint. The intro and the next screen share this background.
 export default function Backdrop() {
   return (
     <View style={styles.fill} pointerEvents="none">
-      <Image source={require('../../assets/intro/concert.jpg')} style={styles.fill} resizeMode="cover" />
+      <Image source={require('../../assets/intro/concert.jpg')} style={styles.fill} contentFit="cover" />
       <View style={[styles.fill, styles.tint]} />
     </View>
   );

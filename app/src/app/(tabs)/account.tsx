@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
-import { Image, Linking, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
-import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Storage from 'expo-sqlite/kv-store';
 import AfterhoursCard from '@/components/AfterhoursCard';
 import Icon from '@/components/Icon';
+import LinkMarks from '@/components/LinkMarks';
 import PickerSheet from '@/components/PickerSheet';
+import ProfileCounts from '@/components/ProfileCounts';
+import Sleeve from '@/components/Sleeve';
 import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
@@ -17,7 +19,6 @@ import { kept } from '@/data/friends';
 import { sparkMine, type MySpark } from '@/data/sparks';
 import { dayLabel } from '@/data/when';
 import type { Night } from '@/data/deck';
-import { LINKS } from '@/content/links';
 import { sparkOf } from '@/content/sparks';
 import { collection as samples } from '@/content/collection';
 import { myCards, toCardData, type CardRow } from '@/data/checkin';
@@ -36,11 +37,11 @@ function distinct(list: (string | null | undefined)[]) {
   return new Set(list.filter(Boolean).map((c) => String(c).toLowerCase())).size;
 }
 
-// Account, "poster over a paper deck": your photo and name on top,
-// a sideways deck of cards on paper below. Counts sit on two thin lines;
-// sign-out and everything else lives in settings. The first screen is exactly that;
-// the page then goes on downwards on paper: about you (bio + a longer text), your
-// links elsewhere, the nights coming up, the sparks you started, your cities.
+// Account, the same record sleeve as someone else's profile: your photo as the cover
+// with the record behind it, your bio, your links as small marks, an edit button, then
+// your collection, placed so the first screen ends halfway down the cards. Sign-out and
+// everything else lives in settings. The page then goes on downwards on paper: the
+// nights coming up, the sparks you started, your cities.
 export default function AccountScreen() {
   const { session, isAnonymous } = useAuth();
   const { t, tn, up } = useLang();
@@ -49,7 +50,7 @@ export default function AccountScreen() {
   const [open, setOpen] = useState<number | null>(null);
   const [side, setSide] = useState<'front' | 'back'>('front');
   const [cards, setCards] = useState<CardRow[] | null>(null);
-  const { photo, busy, choose, remove, broken } = usePhoto();
+  const { photo, choose, remove, broken } = usePhoto();
   const [sheet, setSheet] = useState(false);
   const strip = useRef<ScrollView>(null);
   const page = useRef<ScrollView>(null);
@@ -59,10 +60,10 @@ export default function AccountScreen() {
     strip.current?.scrollTo({ x: 0, animated: true });
     page.current?.scrollTo({ y: 0, animated: true });
   });
-  // The first screen keeps its old proportions: the poster takes what the deck leaves.
   const [rootH, setRootH] = useState(0);
-  const [deckH, setDeckH] = useState(0);
-  const tick = useRefreshOnFocus();
+  const [aboveH, setAboveH] = useState(0);
+  const [headH, setHeadH] = useState(0);
+  const tick = useRefreshOnFocus('cards', 'kept');
   // Show the new name and city after returning from settings.
   const profile = useProfile(tick);
   const uid = session?.user.id;
@@ -114,10 +115,9 @@ export default function AccountScreen() {
 
   const tabBottom = TAB_BAR_SPACE + insets.bottom;
   const screenH = rootH || height;
-  // paper = its top padding (22) + the deck block; it overlaps the poster by radius.lg
-  const posterH = Math.max(220, screenH - (deckH ? deckH + 22 : cardH + 120) - tabBottom + radius.lg);
+  // Push the collection down until half of its cards fill the bottom of the first screen.
+  const gap = aboveH && headH ? Math.max(0, screenH - tabBottom - (aboveH + headH + cardH / 2)) : 0;
   const signedIn = !!session && !isAnonymous;
-  const links = LINKS.filter((l) => extra?.links[l.kind]);
   const two = (n: number) => String(n).padStart(2, '0');
   const at = (iso: string | null) => {
     if (!iso) return dayLabel(iso);
@@ -129,37 +129,7 @@ export default function AccountScreen() {
     <View style={styles.root} onLayout={(e) => setRootH(e.nativeEvent.layout.height)}>
       <StatusBar style="light" />
       <ScrollView ref={page} showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: tabBottom }} style={styles.page}>
-        <View style={{ height: posterH }}>
-          {/* Poster: photo, darkening gradient, name bottom left. */}
-          <Pressable style={styles.poster} onPress={tap} accessibilityRole="imagebutton" accessibilityLabel={t('account.photo.a11y')}>
-            {photo ? (
-              <Image key={photo} source={{ uri: photo }} style={StyleSheet.absoluteFill} resizeMode="cover" onError={() => broken(photo)} />
-            ) : (
-              <View style={styles.empty}>
-                <Icon name="photo" size={30} color={colors.mute} />
-                <Text style={styles.emptyTitle}>{t('account.photo')}</Text>
-                <Text style={styles.emptyHint}>{t('account.photo.hint')}</Text>
-              </View>
-            )}
-            <LinearGradient colors={['rgba(14,13,12,0.55)', 'rgba(14,13,12,0)']} style={styles.shadeTop} pointerEvents="none" />
-            <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.92)']} style={styles.shadeBottom} pointerEvents="none" />
-            {/* Visible button so it is obvious the photo can be changed. */}
-            {photo || busy !== 'idle' ? (
-              <View style={styles.edit} pointerEvents="none">
-                <Icon name="photo" size={15} color={colors.paper} />
-                <Text style={styles.editText}>{busy === 'working' ? t('word.moment') : busy === 'sending' ? t('account.photo.sending') : t('account.photo.edit')}</Text>
-              </View>
-            ) : null}
-            <View style={styles.who} pointerEvents="none">
-              <Text style={styles.name} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>
-                {name}
-              </Text>
-              <Text style={styles.meta} numberOfLines={2}>
-                {meta}
-              </Text>
-            </View>
-          </Pressable>
-
+        <View style={styles.top} onLayout={(e) => setAboveH(e.nativeEvent.layout.height)}>
           <Text style={styles.title} pointerEvents="none">
             {t('account.title')}
           </Text>
@@ -167,92 +137,93 @@ export default function AccountScreen() {
             <Icon name="settings" size={20} color={colors.paper} />
           </Pressable>
           <SoundCorner />
+
+          {/* The sleeve: your photo is the cover (tap to change), the record behind it. */}
+          <Sleeve
+            width={width - brand.left * 2}
+            city={profile?.city_slug ?? city}
+            photo={photo}
+            name={name}
+            meta={meta}
+            disc={up(tn('account.nNights', real ? cards.length : 0))}
+            onPress={tap}
+            onPhotoError={() => photo && broken(photo)}
+            a11y={t('account.photo.a11y')}
+            empty={
+              <View style={styles.empty}>
+                <Icon name="photo" size={30} color={colors.mute} />
+                <Text style={styles.emptyTitle}>{t('account.photo')}</Text>
+                <Text style={styles.emptyHint}>{t('account.photo.hint')}</Text>
+              </View>
+            }
+          />
+
+          {/* Under the photo: the bio and the longer text, or a nudge to write them. */}
+          {profile?.bio ? <Text style={styles.bio}>{profile.bio}</Text> : null}
+          {extra?.about ? <Text style={styles.about}>{extra.about}</Text> : null}
+          {signedIn && !profile?.bio && !extra?.about ? (
+            <Pressable onPress={() => router.push('/profile')} style={({ pressed }) => pressed && styles.pressed}>
+              <Text style={[styles.prompt, styles.promptInk]}>{t('account.about.empty')} ›</Text>
+            </Pressable>
+          ) : null}
+
+          <LinkMarks links={extra?.links ?? {}} onMissing={signedIn ? () => router.push('/profile') : undefined} />
+          {signedIn ? <ProfileCounts handle={profile?.handle ?? null} events={profile?.kept_count ?? null} people={profile?.friend_count ?? null} mine /> : null}
+
+          <Pressable
+            onPress={() => router.push(signedIn ? '/profile' : '/signup')}
+            style={({ pressed }) => [styles.button, pressed && styles.pressed]}
+          >
+            <Text style={styles.buttonText}>{signedIn ? t('account.editProfile') : t('word.signup')}</Text>
+          </Pressable>
         </View>
 
-        {/* Paper: the deck, then the rest of you. */}
-        <View style={styles.paper}>
-          <View onLayout={(e) => setDeckH(e.nativeEvent.layout.height)}>
-            <View style={styles.row}>
-              <View style={styles.rowLeft}>
-                <Text style={styles.deckTitle}>{t('account.deck')}</Text>
-                <View style={styles.dot} />
-              </View>
-              <Text style={styles.small} numberOfLines={1}>
-                {up(real ? `${tn('account.nNights', collection.length)} · ${tn('account.nCities', cities)}` : t('account.deck.sample'))}
-              </Text>
-            </View>
-
-            <ScrollView ref={strip} horizontal showsHorizontalScrollIndicator={false} style={[styles.deckScroll, { height: cardH }]} contentContainerStyle={styles.deck}>
-              {collection.map((c, i) => (
-                <Pressable
-                  key={`${c.t}-${i}`}
-                  onPress={() => {
-                    setSide('front');
-                    setOpen(i);
-                  }}
-                  style={({ pressed }) => [styles.card, i > 0 && { marginLeft: -Math.round(cardW * (1 - STEP)) }, pressed && styles.pressed]}
-                >
-                  <AfterhoursCard data={c} index={i} width={cardW} />
-                </Pressable>
-              ))}
-            </ScrollView>
-
-            <View style={styles.rule} />
-            <View style={styles.row}>
-              <Text style={styles.small}>{up(t('account.deck.hint'))}</Text>
-              {session ? (
-                <Text style={styles.small}>{up(`${tn('account.nKept', profile?.kept_count ?? 0)} · ${tn('account.nFriends', profile?.friend_count ?? 0)}`)}</Text>
-              ) : (
-                <Pressable onPress={() => router.push('/signup')} hitSlop={12} style={({ pressed }) => pressed && styles.pressed}>
-                  <Text style={styles.link}>{t('word.signup')}</Text>
-                </Pressable>
-              )}
-            </View>
+        {/* The collection starts halfway into the bottom of the first screen. */}
+        <View style={{ height: gap }} />
+        <View onLayout={(e) => setHeadH(e.nativeEvent.layout.height)} style={[styles.row, styles.deckHead]}>
+          <View style={styles.rowLeft}>
+            <Text style={[styles.deckTitle, styles.onInk]}>{t('account.deck')}</Text>
+            <View style={styles.dot} />
           </View>
+          <Text style={[styles.small, styles.onInkSmall]} numberOfLines={1}>
+            {up(real ? `${tn('account.nNights', collection.length)} · ${tn('account.nCities', cities)}` : t('account.deck.sample'))}
+          </Text>
+        </View>
 
+        <ScrollView ref={strip} horizontal showsHorizontalScrollIndicator={false} style={[styles.deckScroll, { height: cardH }]} contentContainerStyle={styles.deck}>
+          {collection.map((c, i) => (
+            <Pressable
+              key={`${c.t}-${i}`}
+              onPress={() => {
+                setSide('front');
+                setOpen(i);
+              }}
+              style={({ pressed }) => [styles.card, i > 0 && { marginLeft: -Math.round(cardW * (1 - STEP)) }, pressed && styles.pressed]}
+            >
+              <AfterhoursCard data={c} index={i} width={cardW} />
+            </Pressable>
+          ))}
+        </ScrollView>
+
+        <View style={[styles.rule, styles.onInkRule]} />
+        <View style={[styles.row, styles.deckFoot]}>
+          <Text style={[styles.small, styles.onInkSmall]}>{up(t('account.deck.hint'))}</Text>
+          {session ? (
+            <Text style={[styles.small, styles.onInkSmall]}>{up(`${tn('account.nKept', profile?.kept_count ?? 0)} · ${tn('account.nFriends', profile?.friend_count ?? 0)}`)}</Text>
+          ) : null}
+        </View>
+
+        {/* Paper: the rest of you. */}
+        <View style={styles.paper}>
           {!signedIn ? (
-            <Section title={t('account.about')}>
+            <Section title={t('account.about')} first>
               <Pressable onPress={() => router.push('/signup')} style={({ pressed }) => pressed && styles.pressed}>
                 <Text style={styles.prompt}>{t('account.more.guest')}</Text>
               </Pressable>
             </Section>
           ) : (
             <>
-              <Section title={t('account.about')} action={t('account.edit')} onAction={() => router.push('/profile')}>
-                {profile?.bio || extra?.about ? (
-                  <>
-                    {profile?.bio ? <Text style={styles.bio}>{profile.bio}</Text> : null}
-                    {extra?.about ? <Text style={styles.about}>{extra.about}</Text> : null}
-                  </>
-                ) : (
-                  <Pressable onPress={() => router.push('/profile')} style={({ pressed }) => pressed && styles.pressed}>
-                    <Text style={styles.prompt}>{t('account.about.empty')} ›</Text>
-                  </Pressable>
-                )}
-              </Section>
-
-              <Section title={t('account.links')} action={links.length ? t('account.edit') : undefined} onAction={() => router.push('/profile')}>
-                {links.length ? (
-                  <>
-                    {links.map((l) => {
-                      const v = extra!.links[l.kind]!;
-                      return (
-                        <Pressable key={l.kind} onPress={() => Linking.openURL(l.url(v)).catch(() => {})} style={({ pressed }) => [styles.line, pressed && styles.pressed]}>
-                          <Text style={styles.lineKey}>{l.label}</Text>
-                          <Text style={styles.lineValue} numberOfLines={1}>{l.kind === 'website' ? v.replace(/^https?:\/\//, '') : `${l.prefix}${v}`} ↗</Text>
-                        </Pressable>
-                      );
-                    })}
-                    <Text style={styles.small}>{up(t('settings.links.hint'))}</Text>
-                  </>
-                ) : (
-                  <Pressable onPress={() => router.push('/profile')} style={({ pressed }) => pressed && styles.pressed}>
-                    <Text style={styles.prompt}>{t('account.links.empty')} ›</Text>
-                  </Pressable>
-                )}
-              </Section>
-
-              <Section title={t('account.next')}>
+              <Section title={t('account.next')} first>
                 {upcoming === null ? null : upcoming.length ? (
                   upcoming.map((n) => (
                     <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.line, pressed && styles.pressed]}>
@@ -348,10 +319,10 @@ export default function AccountScreen() {
 }
 
 // A part of the page under the deck: a heading with the red dot, an optional
-// "edit" on the right, a hairline above.
-function Section({ title, action, onAction, children }: { title: string; action?: string; onAction?: () => void; children: React.ReactNode }) {
+// "edit" on the right, a hairline above (none on the first).
+function Section({ title, action, onAction, first, children }: { title: string; action?: string; onAction?: () => void; first?: boolean; children: React.ReactNode }) {
   return (
-    <View style={styles.section}>
+    <View style={[styles.section, first && styles.sectionFirst]}>
       <View style={styles.row}>
         <View style={styles.rowLeft}>
           <Text style={styles.deckTitle}>{title}</Text>
@@ -371,26 +342,28 @@ function Section({ title, action, onAction, children }: { title: string; action?
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   page: { flex: 1 },
-  poster: { flex: 1, minHeight: 220, backgroundColor: colors.ink, overflow: 'hidden' },
-  empty: { position: 'absolute', top: brand.top + 40, left: 0, right: 0, bottom: 110, alignItems: 'center', justifyContent: 'center', gap: 6 },
+  top: { paddingTop: brand.top + 48, paddingHorizontal: brand.left },
+  empty: { alignItems: 'center', justifyContent: 'center', gap: 6, marginBottom: 60 },
   emptyTitle: { fontFamily: fonts.medium, fontSize: 15, color: colors.mute, marginTop: 6 },
   emptyHint: { fontFamily: fonts.regular, fontSize: 13, color: colors.meta, textDecorationLine: 'underline' },
-  shadeTop: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 60 },
-  shadeBottom: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 190 },
-  who: { position: 'absolute', left: brand.left, right: brand.left + 96, bottom: 22 + radius.lg },
-  edit: { position: 'absolute', right: brand.left, bottom: 24 + radius.lg, flexDirection: 'row', alignItems: 'center', gap: 6 },
-  editText: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper, textDecorationLine: 'underline' },
-  name: { fontFamily: fonts.semibold, fontSize: 54, lineHeight: 56, letterSpacing: -2, color: colors.paper },
-  meta: { fontFamily: fonts.regular, fontSize: 12, letterSpacing: 1.4, color: colors.paper, marginTop: 8 },
   title: { position: 'absolute', top: brand.top, left: brand.left, fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },
   gear: { position: 'absolute', top: brand.top - 3, right: brand.left + 84 },
+  button: { alignSelf: 'stretch', marginTop: 20, height: 54, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.spot, borderRadius: radius.md },
+  buttonText: { fontFamily: fonts.medium, fontSize: 17, letterSpacing: -0.3, color: colors.ink },
+  deckHead: { paddingTop: 30 },
+  deckFoot: { paddingBottom: 26 },
+  onInk: { color: colors.paper },
+  onInkSmall: { color: colors.mute },
+  onInkRule: { borderTopColor: colors.ink3 },
   // The paper overlaps the poster with rounded top corners.
-  paper: { backgroundColor: colors.paper, paddingTop: 22, paddingBottom: 18, marginTop: -radius.lg, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg },
+  paper: { backgroundColor: colors.paper, paddingTop: 22, paddingBottom: 18, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg },
   section: { marginTop: 22, paddingTop: 18, borderTopWidth: 1, borderTopColor: colors.rule, marginHorizontal: 0 },
+  sectionFirst: { marginTop: 0, paddingTop: 0, borderTopWidth: 0 },
   sectionBody: { paddingHorizontal: brand.left, marginTop: 12, gap: 2 },
-  bio: { fontFamily: fonts.medium, fontSize: 19, lineHeight: 25, letterSpacing: -0.4, color: colors.ink },
-  about: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 23, color: colors.ink2, marginTop: 10 },
+  bio: { fontFamily: fonts.medium, fontSize: 19, lineHeight: 25, letterSpacing: -0.4, color: colors.paper, marginTop: 22 },
+  about: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 23, color: colors.mute, marginTop: 8 },
   prompt: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 22, color: colors.ink2, textDecorationLine: 'underline' },
+  promptInk: { color: colors.mute, marginTop: 22 },
   line: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 14, paddingVertical: 11, borderBottomWidth: 1, borderBottomColor: colors.rule },
   lineMain: { flex: 1, gap: 3 },
   lineKey: { fontFamily: fonts.regular, fontSize: 14, color: colors.ink2 },

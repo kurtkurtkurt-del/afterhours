@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase';
-import { cachedRead, markSwiped, must, remember, send, shelve, swipedHere } from '@/lib/offline';
+import { prefetchImages } from '@/lib/images';
+import { cachedRead, forgetSwiped, invalidate, markSwiped, must, peek, remember, send, shelve, swipedHere } from '@/lib/offline';
 
 // An events_public row, as returned by deck() and kept().
 export type Night = {
@@ -24,14 +25,21 @@ export type Night = {
 };
 
 // The deck: the city's nights not yet swiped. null city = everywhere, null type = all.
-// Offline: the last saved deck, minus what was swiped on this phone since
+// The saved deck opens at once, minus what was swiped on this phone since; a fresh one
+// is fetched behind it for next time. A saved deck that is nearly used up waits for the
+// server instead (when online), so the deck does not run dry.
 export async function fetchDeck(city: string | null, type: string | null = null, limit = 40) {
-  const { value, stale } = await cachedRead('deck', `${city ?? '*'}|${type ?? '*'}|${limit}`, async () => ((await must(supabase.rpc('deck', { p_city: city, p_type: type, p_limit: limit }))) ?? []) as Night[], 12);
-  if (!stale) {
-    stashNights(value);
-    return value;
-  }
+  const key = `${city ?? '*'}|${type ?? '*'}|${limit}`;
   const gone = await swipedHere();
+  const saved = peek<Night[]>('deck', key);
+  const thin = !saved || saved.filter((n) => !gone.has(n.slug)).length < 8;
+  const { value } = await cachedRead('deck', key, async () => {
+    const rows = ((await must(supabase.rpc('deck', { p_city: city, p_type: type, p_limit: limit }))) ?? []) as Night[];
+    stashNights(rows);
+    prefetchImages(rows.slice(0, 10).map((n) => n.image_url));
+    return rows;
+  }, 12, { fresh: thin });
+  // Also on a fresh deck: a swipe still waiting in the outbox is not on the server yet.
   return value.filter((n) => !gone.has(n.slug));
 }
 
@@ -58,6 +66,8 @@ export async function unswipe(eventId: string, slug?: string) {
 export async function resetSwipes() {
   const { error } = await supabase.rpc('swipes_reset');
   if (error) throw error;
+  forgetSwiped();
+  invalidate('deck', 'kept', 'yours');
 }
 
 // Poster URL: the site's hand-drawn SVG for nights without a photo.
