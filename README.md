@@ -92,8 +92,9 @@ cd app && npm install && npx expo start
 ```
 
 Expo Go on the phone reads the QR; `npx expo run:android` builds a
-development client (the map needs one). `npx tsc --noEmit` and
-`npx expo lint` before declaring anything done. Cloud builds and the Play
+development client (the map needs one). `npx tsc --noEmit`,
+`npx expo lint` and `npm test` (jest-expo; `src/__tests__/`: the offline
+layer, the waves, the spark hints) before declaring anything done. Cloud builds and the Play
 listing: §6.
 
 ---

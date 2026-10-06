@@ -252,7 +252,12 @@ function flush() {
   flushing = (async () => {
     const uid = await who();
     let list = queue();
-    if (!list.length || !net.online) return;
+    // Nothing to send: done. (This used to return before the finally below and
+    // left `flushing` set for good, so after one empty flush nothing ever went out.)
+    if (!list.length || !net.online) {
+      flushing = null;
+      return;
+    }
     tell({ sending: true });
     try {
       while (list.length) {
