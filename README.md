@@ -701,10 +701,14 @@ msg who froze no at1 at2 q1 q2`. See `cards/card-data.js` for an example.
 
 ## 8. The backend
 
-> **Live database (06.10.2026):** 31 of the 32 files are pasted into Supabase —
-> `27_sparks` through `32_rsvp` all of them. **`30_spark_map.sql` is the one
-> still to paste**: until it is, a spark is created without a spot, so the
-> gold diamonds stay off the map. `npm run health` names whatever is
+> **Live database (06.10.2026, evening):** 31 of the 34 files are in
+> Supabase. **Still to paste: `30_spark_map.sql`, `33_waves.sql`,
+> `34_spark_push.sql`** — and `26_push.sql` again, for the sparks switch
+> and words. The one paste that does all of it is
+> `backend/sql/setup-1-structure.sql` (rebuilt today; every file in it is
+> safe to run again). Until then: sparks have no spot on the map, the
+> waves on yours show the sample cards, and sparks send no push (34 alone
+> also works; it never stops a spark). `npm run health` names whatever is
 > missing. The file list with every SQL file is in `backend/README.md`.
 
 Postgres + Supabase. The tables: `cities`, `event_types`, `venues`,

@@ -11,6 +11,16 @@
 -- A wave can be large: the 2nd and 3rd wave count against the same ten a day
 -- as the other discovery kinds; the 1st wave (your friends) always goes.
 
+-- Pasted on its own (without 26 again) it must still work: the switch and the
+-- two kinds are made sure of here too, and a push that fails never stops the
+-- spark or the answer that caused it.
+alter table public.profile_settings add column if not exists notify_sparks boolean not null default true;
+alter table public.push_outbox drop constraint if exists push_outbox_kind_check;
+alter table public.push_outbox add constraint push_outbox_kind_check check (kind in (
+  'friend_request', 'friend_accepted', 'match', 'friend_live',
+  'night_soon', 'room_open', 'room_closing', 'room_message', 'reply',
+  'digest', 'dj_live', 'wave', 'spark', 'spark_in'));
+
 -- "fri 22:00", in the zone of the phone of the person.
 create or replace function public.push_when(p_user uuid, p_at timestamptz)
 returns text
@@ -66,6 +76,9 @@ begin
     perform public.push_spark_to(w.person, new, w.hops);
   end loop;
   return new;
+exception when others then
+  raise warning 'spark push skipped: %', sqlerrm;
+  return new;
 end;
 $$;
 
@@ -101,6 +114,9 @@ begin
         'title', s.title,
         'url',   '/account'));
   end if;
+  return new;
+exception when others then
+  raise warning 'spark push skipped: %', sqlerrm;
   return new;
 end;
 $$;

@@ -103,5 +103,16 @@ console.log("\n— the words —");
   check(i[0].title === "berk ist dabei", "german words");
 }
 
+console.log("\n— a broken push never stops a spark —");
+{
+  await asService();
+  await db.exec(`alter table public.push_outbox add constraint push_outbox_no_spark check (kind <> 'spark') not valid`);
+  await asUser(A);
+  const id = (await rows(`select public.spark_create('derby', 'derby', now() + interval '1 day', null, 1) as id`))[0].id;
+  check(Boolean(id), "the spark is created even when its push cannot be written");
+  await asService();
+  await db.exec(`alter table public.push_outbox drop constraint push_outbox_no_spark`);
+}
+
 console.log(`\n${passed} passed, ${failed} failed`);
 process.exit(failed ? 1 : 0);
