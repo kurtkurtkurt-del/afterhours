@@ -328,7 +328,17 @@ function rowFor(e, city, types) {
        as strings; a missing one stays NULL and the pin is simply not drawn. */
     lat: finite(venue.location && venue.location.latitude),
     lng: finite(venue.location && venue.location.longitude),
+    /* the room by name; turned into venue_id just before the write */
+    _venue: venueName,
   };
+}
+
+/* A venue's slug: its name, without the id tail a night carries — the same
+   room is one row however many nights it holds. */
+function venueSlug(name) {
+  return String(name)
+    .replace(/&/g, " and ").normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || null;
 }
 
 /* --------------------------------------------------------------- run */
@@ -409,6 +419,39 @@ if (DRY) {
 const bySlug = new Map();
 for (const row of rows) if (!bySlug.has(row.slug)) bySlug.set(row.slug, row);
 const unique = [...bySlug.values()];
+
+/* The rooms first: every venue the nights name becomes (or already is) a
+   row in venues, one per city and slug, and each night gets its venue_id.
+   Without this the events carried their venue only inside the meta line
+   and health counted every synced night as "no venue". A failure here
+   costs the venue ids, not the nights. */
+const rooms = new Map();
+for (const row of unique) {
+  const slug = row._venue ? venueSlug(row._venue) : null;
+  if (slug) rooms.set(row.city_id + "|" + slug, { city_id: row.city_id, slug, name: row._venue.slice(0, 120) });
+}
+const roomIds = new Map();
+const roomList = [...rooms.values()];
+for (let i = 0; i < roomList.length; i += 200) {
+  try {
+    const back = await db("/venues?on_conflict=city_id,slug&select=id,city_id,slug", {
+      method: "POST",
+      headers: { Prefer: "resolution=merge-duplicates,return=representation" },
+      body: JSON.stringify(roomList.slice(i, i + 200)),
+    });
+    for (const v of back || []) roomIds.set(v.city_id + "|" + v.slug, v.id);
+  } catch (e) {
+    console.warn("  a slice of venues was refused: " + e.message);
+  }
+}
+for (const row of unique) {
+  const slug = row._venue ? venueSlug(row._venue) : null;
+  const id = slug && roomIds.get(row.city_id + "|" + slug);
+  /* every object in a PostgREST batch must carry the same keys */
+  row.venue_id = id || null;
+  delete row._venue;
+}
+console.log("venues: " + roomIds.size + " rooms");
 
 let written = 0, turnedAway = 0;
 for (let i = 0; i < unique.length; i += 100) {

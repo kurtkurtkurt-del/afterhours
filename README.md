@@ -826,7 +826,12 @@ already there: nothing before 18:00 (festivals and raves exempt — real
 ones start in the afternoon), no add-on listings ("VIP Ticket",
 "Box-Seat", "Parking permit" — receipts, not nights), and a show that
 repeats is ONE package — the soonest night stands for the run and its
-meta line carries the span ("Venue · 20.11.26 → 23.12.26 · 20:00"). It needs the two secrets named inside it; run it by hand from the
+meta line carries the span ("Venue · 20.11.26 → 23.12.26 · 20:00"). Since
+06.10.2026 it also files the **room**: each venue becomes a row in
+`venues` (one per city and name-slug) and the night gets its `venue_id`
+— before that every synced night counted as "no venue" in health and
+the after on the night page had only titles to show. The first run after
+that fills the 3822 already there. It needs the two secrets named inside it; run it by hand from the
 Actions tab any time. `--dry` locally shows what it would write.
 
 The site itself has no build step and nothing to check: it is plain HTML
