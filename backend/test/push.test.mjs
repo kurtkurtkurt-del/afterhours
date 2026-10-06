@@ -175,6 +175,8 @@ console.log("\n— rooms and replies —");
 console.log("\n— second wave —");
 {
   await asService();
+  /* berk (private since above) is the friend in the middle here: open for now */
+  await db.exec(`update public.profile_settings set kept_visibility = 'friends' where user_id = '${B}'`);
   await db.exec(`
     insert into auth.users (id, email) values ('${D}', 'd@x.com'), ('${E}', 'e@x.com');
     update public.profiles set handle = 'deniz' where id = '${D}';
@@ -197,6 +199,26 @@ console.log("\n— second wave —");
     await db.exec(`insert into public.swipes (event_id, direction) values ('${fourth.id}', 'right')`);
     check((await outbox(D, "wave")).length === 1, "at most one wave a week");
   }
+
+  /* the friend in the middle keeps their keeps private: they are not named, so nothing goes */
+  const H = "12121212-8888-8888-8888-888888888888";
+  await asService();
+  await db.exec(`
+    insert into auth.users (id, email) values ('${H}', 'h@x.com');
+    update public.profiles set handle = 'hale', city_id = '${third.city_id}' where id = '${H}';
+    insert into public.friendships (requester_id, addressee_id, status) values ('${B}', '${H}', 'accepted');
+    insert into public.profile_settings (user_id, kept_visibility) values ('${B}', 'private')
+      on conflict (user_id) do update set kept_visibility = 'private';
+  `);
+  const [fifth] = await rows(`select id from public.events where city_id = '${third.city_id}' and id not in (select event_id from public.swipes) order by slug limit 1`);
+  if (fifth) {
+    await asUser(A);
+    await db.exec(`insert into public.swipes (event_id, direction) values ('${fifth.id}', 'right')`);
+    check((await outbox(H, "wave")).length === 0, "nobody is told via a friend whose keeps are private");
+  }
+  await asService();
+  /* and private again, as the rest of the file expects */
+  await db.exec(`update public.profile_settings set kept_visibility = 'private' where user_id = '${B}'`);
 }
 
 console.log("\n— quiet hours —");

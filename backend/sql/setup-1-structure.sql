@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-06 12:33   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-06 12:36   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -5871,6 +5871,8 @@ begin
     where first.who = new.user_id
       and second.friend <> new.user_id
       and p.city_id = night.city_id
+      -- the friend in the middle is named: not someone who keeps their keeps closed
+      and public.kept_visible(first.friend)
       and not exists (select 1 from public.push_edges d where d.who = new.user_id and d.friend = second.friend)
     order by second.friend, first.friend
   loop

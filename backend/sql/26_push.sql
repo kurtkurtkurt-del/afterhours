@@ -514,6 +514,8 @@ begin
     where first.who = new.user_id
       and second.friend <> new.user_id
       and p.city_id = night.city_id
+      -- the friend in the middle is named: not someone who keeps their keeps closed
+      and public.kept_visible(first.friend)
       and not exists (select 1 from public.push_edges d where d.who = new.user_id and d.friend = second.friend)
     order by second.friend, first.friend
   loop
