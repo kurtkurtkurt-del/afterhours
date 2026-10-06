@@ -53,6 +53,9 @@ for page in pages:
     for ref in REF.findall(text):
         if ref.startswith(("http://", "https://", "mailto:", "#", "data:", "//")):
             continue
+        # a template literal inside a script: the address only exists at runtime
+        if "${" in ref:
+            continue
         path = unquote(urlparse(ref).path)
         if not path:
             continue
