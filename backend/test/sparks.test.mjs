@@ -18,7 +18,7 @@ process.on("unhandledRejection", (e) => {
 const db = new PGlite();
 for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02_rls.sql",
                  "../sql/03_seed_catalog.sql", "../sql/06_views.sql", "../sql/07_friends.sql",
-                 "../sql/12_profiles.sql", "../sql/27_sparks.sql"]) {
+                 "../sql/12_profiles.sql", "../sql/27_sparks.sql", "../sql/39_spark_kinds.sql"]) {
   await db.exec(await read(d));
 }
 /* a second run must not trip over the first */
@@ -74,6 +74,11 @@ console.log("\n— create —");
         "a time in the past is refused");
   check(Boolean(await fails(`select public.spark_create('karaoke', 'x', now() + interval '1 day', null, array['${B}']::uuid[])`)),
         "an unknown kind is refused");
+  check(!(await fails(`select public.spark_create('sunrise', 'meet the sunrise', now() + interval '1 day', null, array['${B}']::uuid[])`)),
+        "a kind added in 39 (sunrise) is taken");
+  await asService();
+  await db.exec(`delete from public.sparks where kind = 'sunrise'`);
+  await asUser(A);
   check(Boolean(await fails(`select public.spark_create('grill', '   ', now() + interval '1 day', null, array['${B}']::uuid[])`)),
         "an empty title is refused");
 

@@ -1,9 +1,9 @@
--- afterhours — someone else's collection, for their profile page
+-- afterhours — the collection of someone else, for their profile page
 -- my_cards (19) is yours only. Now:
 --
 --   person_cards(handle)   their cards, newest first, same shape as my_cards
 --
--- Friends only (and you): a stranger's check-ins say where they were, so
+-- Friends only (and you): the check-ins of a stranger say where they were, so
 -- nobody else gets a row. The room lines and crew initials are the same
 -- ones the owner sees on their own card.
 
@@ -85,3 +85,9 @@ $$;
 
 revoke all on function public.person_cards(text) from public, anon;
 grant execute on function public.person_cards(text) to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('36_person_cards.sql');
+  end if;
+end $$;

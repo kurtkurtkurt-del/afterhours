@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-06 12:36   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-06 22:07   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -7401,5 +7401,434 @@ grant execute on function public.spark_people(uuid) to authenticated;
 do $$ begin
   if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('35_spark_people.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  THE COLLECTION OF A FRIEND, ON THEIR PROFILE   (36_person_cards.sql)
+-- ============================================================
+
+-- afterhours — the collection of someone else, for their profile page
+-- my_cards (19) is yours only. Now:
+--
+--   person_cards(handle)   their cards, newest first, same shape as my_cards
+--
+-- Friends only (and you): the check-ins of a stranger say where they were, so
+-- nobody else gets a row. The room lines and crew initials are the same
+-- ones the owner sees on their own card.
+
+drop function if exists public.person_cards(text);
+create or replace function public.person_cards(p_handle text)
+returns table (
+  card_no     bigint,
+  checked_at  timestamptz,
+  freeze_at   timestamptz,
+  frozen      boolean,
+  slug        text,
+  title       text,
+  type_name   text,
+  venue_name  text,
+  city_name   text,
+  starts_at   timestamptz,
+  image_url   text,
+  crew        text[],
+  crew_more   int,
+  who_count   int,
+  post_count  int,
+  q1_body     text,
+  q1_who      text,
+  q1_at       timestamptz,
+  q2_body     text,
+  q2_who      text,
+  q2_at       timestamptz
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  with target as (
+    select p.id from public.profiles p
+    where p.handle = lower(btrim(p_handle))
+      and (p.id = auth.uid() or public.is_friend(p.id))
+  ),
+  mine as (
+    select c.*, public.room_freeze_at(c.event_id) as freeze_at
+    from public.checkins c where c.user_id = (select id from target)
+  ),
+  others as (
+    select c.event_id,
+           array_agg(lower(left(coalesce(p.display_name, p.handle, 's'), 1)) order by c.checked_at) as initials,
+           count(*)::int as n
+    from public.checkins c
+    join public.profiles p on p.id = c.user_id
+    where c.user_id <> (select id from target) and c.event_id in (select event_id from mine)
+    group by c.event_id
+  ),
+  posts as (
+    select r.event_id, r.body, lower(left(coalesce(p.display_name, p.handle, 's'), 1)) as who, r.created_at,
+           row_number() over (partition by r.event_id order by r.created_at) as rn,
+           count(*) over (partition by r.event_id)::int as total
+    from public.room_posts r
+    left join public.profiles p on p.id = r.user_id
+    where r.event_id in (select event_id from mine)
+  )
+  select m.card_no, m.checked_at, m.freeze_at, now() >= m.freeze_at,
+         e.slug, e.title, t.name, v.name, ci.name, e.starts_at, e.image_url,
+         coalesce(o.initials[1:4], '{}'), greatest(coalesce(o.n, 0) - 4, 0),
+         coalesce(o.n, 0) + 1,
+         coalesce((select total from posts p where p.event_id = m.event_id limit 1), 0),
+         (select body from posts p where p.event_id = m.event_id and rn = 1),
+         (select who  from posts p where p.event_id = m.event_id and rn = 1),
+         (select created_at from posts p where p.event_id = m.event_id and rn = 1),
+         (select body from posts p where p.event_id = m.event_id and rn = 2),
+         (select who  from posts p where p.event_id = m.event_id and rn = 2),
+         (select created_at from posts p where p.event_id = m.event_id and rn = 2)
+  from mine m
+  join public.events e on e.id = m.event_id
+  join public.event_types t on t.id = e.type_id
+  join public.cities ci on ci.id = e.city_id
+  left join public.venues v on v.id = e.venue_id
+  left join others o on o.event_id = m.event_id
+  order by m.checked_at desc;
+$$;
+
+revoke all on function public.person_cards(text) from public, anon;
+grant execute on function public.person_cards(text) to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('36_person_cards.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  WRITES MADE OFFLINE — A SECOND TRY CHANGES NOTHING   (37_offline.sql)
+-- ============================================================
+
+-- afterhours — writes made offline (37)
+--
+-- The app now keeps every write in an outbox on the phone and sends it when the
+-- connection returns (app/src/lib/offline.ts). A job can go out twice: the first try
+-- reaches the server but the answer is lost, so the phone tries again. Each job carries
+-- an id made on the phone; with it the second try finds the first and changes nothing.
+--
+--   comments.client_id     a topic or reply sent twice is stored once
+--   room_posts.client_id   the same for lines in a room
+--   room_post(slug, body, client_id)   returns the line already stored for that id
+--   check_in(slug, lat, lng, at)       at: when you pressed the button on the phone;
+--                                      checked_at of the card, never in the future and
+--                                      never more than 12 hours back (else now)
+--
+-- The freeze rule of a room still goes by the clock of the server: a line written offline
+-- that arrives after the room froze is refused (the app says so).
+-- Old app versions keep working: the new parameters have defaults.
+
+-- ------------------------------------------------------------ comments
+
+alter table public.comments add column if not exists client_id uuid;
+create unique index if not exists comments_client_idx on public.comments (author_id, client_id);
+grant insert (event_id, parent_id, author_id, body, client_id) on public.comments to authenticated;
+
+-- ------------------------------------------------------------ room lines
+
+alter table public.room_posts add column if not exists client_id uuid;
+create unique index if not exists room_posts_client_idx on public.room_posts (user_id, client_id);
+
+drop function if exists public.room_post(text, text);
+drop function if exists public.room_post(text, text, uuid);
+create or replace function public.room_post(p_slug text, p_body text, p_client_id uuid default null)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  ev uuid;
+  n  uuid;
+begin
+  if auth.uid() is null or public.is_guest() then raise exception 'signedout'; end if;
+  if p_client_id is not null then
+    select id into n from public.room_posts where user_id = auth.uid() and client_id = p_client_id;
+    if found then return n; end if;
+  end if;
+  select id into ev from public.events where slug = p_slug;
+  if ev is null then raise exception 'nonight'; end if;
+  if not public.checked_in(ev) then raise exception 'notthere'; end if;
+  if now() >= public.room_freeze_at(ev) then raise exception 'frozen'; end if;
+  insert into public.room_posts (event_id, user_id, body, client_id)
+  values (ev, auth.uid(), btrim(p_body), p_client_id)
+  returning id into n;
+  return n;
+end;
+$$;
+
+-- ------------------------------------------------------------ check-in
+
+drop function if exists public.check_in(text, double precision, double precision);
+drop function if exists public.check_in(text, double precision, double precision, timestamptz);
+create or replace function public.check_in(
+  p_slug text,
+  p_lat  double precision default null,
+  p_lng  double precision default null,
+  p_at   timestamptz default null
+)
+returns bigint
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  e  public.events%rowtype;
+  n  bigint;
+  at timestamptz := least(coalesce(p_at, now()), now());
+begin
+  if auth.uid() is null or public.is_guest() then raise exception 'signedout'; end if;
+  select * into e from public.events where slug = p_slug and is_published;
+  if not found then raise exception 'nonight'; end if;
+
+  -- One card per person per night: a second try returns the first card.
+  select card_no into n from public.checkins where user_id = auth.uid() and event_id = e.id;
+  if found then return n; end if;
+
+  if at < now() - interval '12 hours' then at := now(); end if;
+  insert into public.checkins (user_id, event_id, checked_at) values (auth.uid(), e.id, at) returning card_no into n;
+  return n;
+end;
+$$;
+
+revoke all on function public.room_post(text, text, uuid) from public, anon;
+revoke all on function public.check_in(text, double precision, double precision, timestamptz) from public, anon;
+grant execute on function public.room_post(text, text, uuid) to authenticated;
+grant execute on function public.check_in(text, double precision, double precision, timestamptz) to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('37_offline.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  WHATSAPP AMONG THE LINKS, AND THE LISTS UNDER A PROFILE   (38_profile_lists.sql)
+-- ============================================================
+
+-- afterhours — WhatsApp among the links, and the two lists under a profile (38)
+--
+--   profile_links  new kind: whatsapp, a phone number in digits (country code
+--                  first, no plus); spaces, dashes and a leading + are dropped
+--   person_kept(handle)     the nights they kept, newest first
+--   person_people(handle)   their confirmed friends (handle and name)
+--
+-- Both lists follow the same rules as the rest of a profile: you see your own,
+-- and those of your CONFIRMED friends. person_kept also needs their kept
+-- nights to be visible to friends (kept_visible). Anyone else gets no rows.
+
+-- ------------------------------------------------------------------ links
+
+alter table public.profile_links drop constraint if exists profile_links_kind_check;
+alter table public.profile_links add constraint profile_links_kind_check
+  check (kind in ('instagram', 'tiktok', 'spotify', 'soundcloud', 'x', 'website', 'whatsapp'));
+alter table public.profile_links drop constraint if exists profile_links_value;
+alter table public.profile_links add constraint profile_links_value check (
+  (kind = 'website' and value ~ '^https?://[^[:space:]]{3,200}$')
+  or (kind = 'whatsapp' and value ~ '^[0-9]{6,16}$')
+  or (kind not in ('website', 'whatsapp') and value ~ '^[A-Za-z0-9._-]{1,40}$')
+);
+
+-- Every kind present in p_links is set (or cleared when empty); kinds that are
+-- not mentioned stay as they are. A leading @ is dropped; for whatsapp everything
+-- but the digits. Returns ok, or format:<kind> for the first value that does not
+-- fit (nothing is written then).
+drop function if exists public.profile_links_set(jsonb);
+create or replace function public.profile_links_set(p_links jsonb)
+returns text
+language plpgsql
+volatile
+security definer
+set search_path = public
+as $$
+declare
+  k text;
+  v text;
+begin
+  if auth.uid() is null then
+    raise exception 'sign in first' using errcode = '42501';
+  end if;
+  if p_links is null or jsonb_typeof(p_links) <> 'object' then
+    return 'format';
+  end if;
+  for k, v in select key, btrim(coalesce(value, '')) from jsonb_each_text(p_links) loop
+    if k not in ('instagram', 'tiktok', 'spotify', 'soundcloud', 'x', 'website', 'whatsapp') then
+      return 'format:' || k;
+    end if;
+    if k = 'whatsapp' then
+      -- Something was typed but no digit in it: not a number (empty clears it).
+      if v <> '' and v !~ '[0-9]' then
+        return 'format:' || k;
+      end if;
+      v := regexp_replace(v, '[^0-9]', '', 'g');
+    elsif k <> 'website' then
+      v := regexp_replace(v, '^@+', '');
+    end if;
+    if v <> '' and not (
+      (k = 'website' and v ~ '^https?://[^[:space:]]{3,200}$')
+      or (k = 'whatsapp' and v ~ '^[0-9]{6,16}$')
+      or (k not in ('website', 'whatsapp') and v ~ '^[A-Za-z0-9._-]{1,40}$')
+    ) then
+      return 'format:' || k;
+    end if;
+  end loop;
+
+  for k, v in select key, btrim(coalesce(value, '')) from jsonb_each_text(p_links) loop
+    if k = 'whatsapp' then
+      v := regexp_replace(v, '[^0-9]', '', 'g');
+    elsif k <> 'website' then
+      v := regexp_replace(v, '^@+', '');
+    end if;
+    if v = '' then
+      delete from public.profile_links where user_id = auth.uid() and kind = k;
+    else
+      insert into public.profile_links (user_id, kind, value) values (auth.uid(), k, v)
+      on conflict (user_id, kind) do update set value = excluded.value, updated_at = now();
+    end if;
+  end loop;
+  return 'ok';
+end;
+$$;
+
+-- ------------------------------------------------------------------ lists
+
+drop function if exists public.person_kept(text);
+create or replace function public.person_kept(p_handle text)
+returns setof public.events_public
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select e.*
+  from public.profiles p
+  join public.swipes s on s.user_id = p.id and s.direction = 'right'
+  join public.events_public e on e.id = s.event_id
+  where p.handle = lower(btrim(p_handle))
+    and (p.id = auth.uid() or (public.is_friend(p.id) and public.kept_visible(p.id)))
+  order by s.created_at desc;
+$$;
+
+drop function if exists public.person_people(text);
+create or replace function public.person_people(p_handle text)
+returns table (handle text, display_name text)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  with target as (
+    select p.id from public.profiles p
+    where p.handle = lower(btrim(p_handle))
+      and (p.id = auth.uid() or public.is_friend(p.id))
+  )
+  select o.handle, o.display_name
+  from public.friendships f
+  join public.profiles o on o.id = case when f.requester_id = (select id from target) then f.addressee_id else f.requester_id end
+  where f.status = 'accepted'
+    and (f.requester_id = (select id from target) or f.addressee_id = (select id from target))
+  order by coalesce(o.handle, o.display_name);
+$$;
+
+revoke all on function public.profile_links_set(jsonb) from public, anon;
+revoke all on function public.person_kept(text) from public, anon;
+revoke all on function public.person_people(text) from public, anon;
+grant execute on function public.profile_links_set(jsonb) to authenticated;
+grant execute on function public.person_kept(text) to authenticated;
+grant execute on function public.person_people(text) to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('38_profile_lists.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  EIGHT MORE SPARKS   (39_spark_kinds.sql)
+-- ============================================================
+
+-- afterhours — eight more sparks (39)
+--
+-- The app has eleven sparks now (app/src/content/sparks.ts). The table only
+-- took the first three: this widens the list. Nothing else changes; a kind
+-- is just a word the app turns into a photo and a text.
+--
+--   sunrise · breakfast · rooftop · swim · quiz · newplace · camera · festival
+
+alter table public.sparks drop constraint if exists sparks_kind_check;
+alter table public.sparks add constraint sparks_kind_check check (kind in (
+  'derby', 'grill', 'hike',
+  'sunrise', 'breakfast', 'rooftop', 'swim', 'quiz', 'newplace', 'camera', 'festival'
+));
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('39_spark_kinds.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  WHO IS THIS — A FEW LINES ABOUT THE ACT ON A NIGHT   (40_event_about.sql)
+-- ============================================================
+
+-- afterhours — "who is this?": a few lines about the act on a night (40)
+--
+-- A night card can carry a short text about who is playing: what they are, two or
+-- three sentences, two facts, and where it comes from. The texts are written ahead
+-- of time (from a source such as Wikipedia, summarised; never invented) and stored
+-- here per night and language. A night without a row simply has no "who is this?".
+--
+--   event_about        one row per night and language (en · de · tr)
+--   about_for(ids, lang)   the rows for these nights, in that language
+--
+-- Anyone may read them (they are about public nights). Only the service role
+-- writes: the texts come from the sync job or from a reviewed SQL file.
+
+create table if not exists public.event_about (
+  event_id    uuid not null references public.events on delete cascade,
+  lang        text not null check (lang in ('en', 'de', 'tr')),
+  name        text not null,
+  kicker      text not null,
+  who         text,
+  facts       text[] not null default '{}',
+  source_url  text not null check (source_url ~ '^https://'),
+  made_at     timestamptz not null default now(),
+  primary key (event_id, lang)
+);
+
+alter table public.event_about enable row level security;
+revoke all on public.event_about from public, anon, authenticated;
+
+drop function if exists public.about_for(uuid[], text);
+create or replace function public.about_for(p_events uuid[], p_lang text)
+returns table (event_id uuid, name text, kicker text, who text, facts text[], source_url text)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select a.event_id, a.name, a.kicker, a.who, a.facts, a.source_url
+  from public.event_about a
+  join public.events e on e.id = a.event_id and e.is_published
+  where a.event_id = any(p_events)
+    and a.lang = case when p_lang in ('en', 'de', 'tr') then p_lang else 'en' end;
+$$;
+
+grant execute on function public.about_for(uuid[], text) to anon, authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('40_event_about.sql');
   end if;
 end $$;

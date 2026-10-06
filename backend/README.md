@@ -44,6 +44,11 @@ sql/33_waves.sql         the waves on yours: waves_kept(limit) — upcoming nigh
 sql/34_spark_push.sql    push for sparks: spark (a spark reaches you, by name or inside its wave; the 2nd and 3rd wave count against the ten a day) and spark_in (someone is in on yours); kinds, words and notify_sparks live in 26_push.sql
 sql/35_spark_people.sql  spark_people(spark) — names and answers: the host sees in and out, someone who is in sees the others who are in, nobody else sees anything
 sql/36_person_cards.sql  person_cards(handle) — a friend's collection for their profile page, same shape as my_cards; you and friends only
+sql/37_offline.sql       writes made offline: client_id on comments and room_posts, room_post(slug, body, client_id) and check_in(…, at) so a job the app sends twice is stored once; the card keeps the time the button was pressed (at most 12 h back)
+sql/38_profile_lists.sql whatsapp among the links (digits, country code first); person_kept(handle) and person_people(handle), the nights and friends lists under a profile: yours, and those of confirmed friends (kept nights only when they show them)
+sql/39_spark_kinds.sql   eight more spark kinds: sunrise, breakfast, rooftop, swim, quiz, newplace, camera, festival
+sql/40_event_about.sql   "who is this?": event_about (a night, a language: name, kicker, who, facts, source), about_for(ids, lang) for anyone; written only by the service
+sql/about-munich.sql     ONE-SHOT: the texts for 18 Munich nights in en · de · tr, from Wikipedia summaries, by slug
 sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities
 
 tools/build-seed.mjs     builds 03/04/05 from the front-end data

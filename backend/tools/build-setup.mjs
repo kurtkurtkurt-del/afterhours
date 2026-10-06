@@ -43,6 +43,11 @@ const structure = [
   ["33_waves.sql", "THE WAVES — NIGHTS KEPT BY FRIENDS OF FRIENDS"],
   ["34_spark_push.sql", "SPARKS SAY SO — A PUSH WHEN ONE REACHES YOU, AND WHEN SOMEONE IS IN"],
   ["35_spark_people.sql", "WHO ANSWERED A SPARK — NAMES FOR THE HOST AND FOR WHOEVER IS IN"],
+  ["36_person_cards.sql", "THE COLLECTION OF A FRIEND, ON THEIR PROFILE"],
+  ["37_offline.sql", "WRITES MADE OFFLINE — A SECOND TRY CHANGES NOTHING"],
+  ["38_profile_lists.sql", "WHATSAPP AMONG THE LINKS, AND THE LISTS UNDER A PROFILE"],
+  ["39_spark_kinds.sql", "EIGHT MORE SPARKS"],
+  ["40_event_about.sql", "WHO IS THIS — A FEW LINES ABOUT THE ACT ON A NIGHT"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
