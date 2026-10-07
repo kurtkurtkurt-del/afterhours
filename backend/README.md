@@ -48,6 +48,15 @@ sql/37_offline.sql       writes made offline: client_id on comments and room_pos
 sql/38_profile_lists.sql whatsapp among the links (digits, country code first); person_kept(handle) and person_people(handle), the nights and friends lists under a profile: yours, and those of confirmed friends (kept nights only when they show them)
 sql/39_spark_kinds.sql   eight more spark kinds: sunrise, breakfast, rooftop, swim, quiz, newplace, camera, festival
 sql/40_event_about.sql   "who is this?": event_about (a night, a language: name, kicker, who, facts, source), about_for(ids, lang) for anyone; written only by the service
+sql/41_account_types.sql profiles.account_type (user · dj · community_manager · admin), set_account_type(type, code)
+sql/42_staff.sql         the staff: is_staff(), my_role(), staff_* (nights, rooms, djs, comments), dj_save_mine and sets, admin_* (people, types, numbers, log), staff_log
+sql/43_event_submit.sql  nights sent in by people: event_submit, event_submissions (yours), staff_pending, staff_review; night_write is the one writer
+sql/44_groups.sql        groups: groups, members, invites (codes), group_swipes, live session; group_create … group_join, my_groups, group_deck (sorted by the group's taste), group_matches, live state, group_suggest
+sql/45_posts.sql         posts for friends: post_create, post_delete, posts_feed, post_report; staff_posts_reported, staff_post_hide
+sql/46_group_plans.sql   a group decides: round_start/vote/close, plan_set, plan_ticket, group_plan (one read for the plan tab), group_say/unsay/thread
+sql/47_group_nights.sql  after the night: group_nights (two or more members checked in), the album (group_photo_add/remove, group_album), group_stats (numbers and the vibe), group_set_visible, group_also_there
+sql/48_group_push.sql    push for groups and posts: switches notify_groups and notify_posts, ten kinds, triggers on members, swipes, the thread, live and posts, group_push_hourly (tickets, cron :15)
+sql/49_design_reads.sql  reads for the chosen designs: group_peek with faces and plan, group_wall, admin_people_by, admin_role_counts
 sql/about-munich.sql     ONE-SHOT: the texts for 18 Munich nights in en · de · tr, from Wikipedia summaries, by slug
 sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities
 

@@ -48,4 +48,13 @@ export const EXPECTED_SQL = [
   "38_profile_lists.sql",
   "39_spark_kinds.sql",
   "40_event_about.sql",
+  "41_account_types.sql",
+  "42_staff.sql",
+  "43_event_submit.sql",
+  "44_groups.sql",
+  "45_posts.sql",
+  "46_group_plans.sql",
+  "47_group_nights.sql",
+  "48_group_push.sql",
+  "49_design_reads.sql",
 ];

@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-06 22:07   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-07 19:04   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -7830,5 +7830,3102 @@ grant execute on function public.about_for(uuid[], text) to anon, authenticated;
 do $$ begin
   if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('40_event_about.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  ACCOUNT TYPES — USER, DJ, COMMUNITY MANAGER, ADMIN   (41_account_types.sql)
+-- ============================================================
+
+-- afterhours — account types: normal user, dj, community manager, admin (41)
+--
+-- Every profile carries a type, chosen in the settings of the app. Changing it takes
+-- a code, and the code is the name of the type as the list shows it ("dj", "admin" …),
+-- so for now it is a label, not a lock. Nothing reads it yet: no type may do
+-- anything another cannot.
+--
+-- This "admin" is NOT profiles.is_admin. is_admin is the real one (02_rls.sql)
+-- and stays where it was; no code here touches it.
+--
+--   profiles.account_type        user · dj · community_manager · admin
+--   set_account_type(type, code) changes your own type when the code is right;
+--                                returns ok · code · typeaa
+
+alter table public.profiles add column if not exists account_type text not null default 'user';
+
+do $$ begin
+  if not exists (select 1 from pg_constraint where conname = 'profiles_account_type_check') then
+    alter table public.profiles add constraint profiles_account_type_check
+      check (account_type in ('user', 'dj', 'community_manager', 'admin'));
+  end if;
+end $$;
+
+-- A plain profile update may not change the type: only set_account_type may,
+-- and it says so with a flag that lives for its own transaction only.
+create or replace function public.guard_account_type()
+returns trigger
+language plpgsql
+as $$
+begin
+  if new.account_type is distinct from old.account_type
+     and auth.uid() is not null
+     and coalesce(current_setting('afterhours.account_type', true), '') <> 'on' then
+    raise exception 'account_type changes only through set_account_type';
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists profiles_guard_account_type on public.profiles;
+create trigger profiles_guard_account_type
+  before update on public.profiles
+  for each row execute function public.guard_account_type();
+
+create or replace function public.set_account_type(p_type text, p_code text)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  name text := case p_type
+    when 'user' then 'normal user'
+    when 'dj' then 'dj'
+    when 'community_manager' then 'community manager'
+    when 'admin' then 'admin'
+  end;
+begin
+  if auth.uid() is null then raise exception 'sign in first'; end if;
+  if name is null then return 'type'; end if;
+  if lower(btrim(coalesce(p_code, ''))) <> name then return 'code'; end if;
+  perform set_config('afterhours.account_type', 'on', true);
+  update public.profiles set account_type = p_type where id = auth.uid();
+  perform set_config('afterhours.account_type', '', true);
+  return 'ok';
+end;
+$$;
+
+revoke all on function public.set_account_type(text, text) from public, anon;
+grant execute on function public.set_account_type(text, text) to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('41_account_types.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  THE STAFF — ADMIN PANEL, COMMUNITY MANAGERS, DJ PAGES, THE LOG   (42_staff.sql)
+-- ============================================================
+
+-- afterhours — the staff: admin, community managers, djs who run their own page (42)
+--
+-- 41 gave every profile a type as a label. Here the types start to mean something:
+--
+--   normal user        as before.
+--   dj                 opens and edits one dj page of their own, and lists the
+--                      nights they play (dj_save_mine, dj_set_add).
+--   community manager  creates and edits nights, rooms (venues) and djs, hides
+--                      comments. Only an admin makes someone one.
+--   admin              everything a community manager can, plus: people and
+--                      their types, feedback, the log. An admin is
+--                      profiles.is_admin, appointed in the SQL editor as before.
+--
+-- Because the types now carry power, the code that equals the name can no longer
+-- reach them: set_account_type only switches between normal user and dj.
+-- Anyone who typed their way to "admin" or "community manager" under 41 goes back
+-- to normal user below.
+--
+-- Every write by the staff goes through a function here (security definer, with
+-- its own check) and leaves a line in staff_log, so it is always clear who made
+-- what. Nights made here carry source = staff; the ticketmaster sync and the seed
+-- cleanup never touch them.
+
+-- ------------------------------------------------------------- who is who
+
+-- Under 41 anyone could pick admin or community manager with the name as code.
+update public.profiles set account_type = 'user'
+  where account_type in ('admin', 'community_manager') and not is_admin;
+update public.profiles set account_type = 'admin' where is_admin and account_type <> 'admin';
+
+create or replace function public.is_staff()
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select coalesce((select p.is_admin or p.account_type = 'community_manager'
+                   from public.profiles p where p.id = auth.uid()), false);
+$$;
+
+create or replace function public.my_role()
+returns text
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select case when p.is_admin then 'admin' else p.account_type end
+  from public.profiles p where p.id = auth.uid();
+$$;
+
+grant execute on function public.is_staff() to authenticated;
+grant execute on function public.my_role() to authenticated;
+
+-- The code still switches between normal user and dj; the other two are given.
+create or replace function public.set_account_type(p_type text, p_code text)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  name text := case p_type when 'user' then 'normal user' when 'dj' then 'dj' end;
+  me public.profiles%rowtype;
+begin
+  if auth.uid() is null then raise exception 'sign in first'; end if;
+  if p_type in ('community_manager', 'admin') then return 'locked'; end if;
+  if name is null then return 'type'; end if;
+  select * into me from public.profiles where id = auth.uid();
+  if me.is_admin or me.account_type = 'community_manager' then return 'locked'; end if;
+  if lower(btrim(coalesce(p_code, ''))) <> name then return 'code'; end if;
+  perform set_config('afterhours.account_type', 'on', true);
+  update public.profiles set account_type = p_type where id = auth.uid();
+  perform set_config('afterhours.account_type', '', true);
+  return 'ok';
+end;
+$$;
+
+-- --------------------------------------------------------------- the log
+
+create table if not exists public.staff_log (
+  id          bigserial primary key,
+  actor_id    uuid references public.profiles on delete set null,
+  action      text not null,
+  target      text not null,
+  target_id   text,
+  note        text,
+  at          timestamptz not null default now()
+);
+create index if not exists staff_log_at_idx on public.staff_log (at desc);
+alter table public.staff_log enable row level security;
+revoke all on public.staff_log from public, anon, authenticated;
+
+create or replace function public.staff_note(p_action text, p_target text, p_id text, p_note text)
+returns void
+language sql
+security definer
+set search_path = public
+as $$
+  insert into public.staff_log (actor_id, action, target, target_id, note)
+  values (auth.uid(), p_action, p_target, p_id, left(p_note, 200));
+$$;
+revoke all on function public.staff_note(text, text, text, text) from public, anon, authenticated;
+
+-- ------------------------------------------------------------- the columns
+
+alter table public.events add column if not exists created_by uuid references public.profiles on delete set null;
+alter table public.venues add column if not exists created_by uuid references public.profiles on delete set null;
+alter table public.djs add column if not exists created_by uuid references public.profiles on delete set null;
+alter table public.djs add column if not exists owner_id uuid references public.profiles on delete set null;
+alter table public.djs add column if not exists bio text check (bio is null or length(bio) <= 600);
+alter table public.dj_sets add column if not exists created_by uuid references public.profiles on delete set null;
+create unique index if not exists djs_owner_idx on public.djs (owner_id) where owner_id is not null;
+
+create or replace function public.make_slug(p_text text)
+returns text
+language sql
+volatile
+as $$
+  select coalesce(nullif(trim(both '-' from left(regexp_replace(lower(coalesce(p_text, '')), '[^a-z0-9]+', '-', 'g'), 60)), ''), 'x')
+         || '-' || substr(md5(random()::text), 1, 6);
+$$;
+
+create or replace function public.need_staff()
+returns void
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  if not public.is_staff() then raise exception 'staff only' using errcode = '42501'; end if;
+end;
+$$;
+
+-- ----------------------------------------------------------------- venues
+
+-- p_id null makes a new room; otherwise edits it. Returns the id.
+create or replace function public.staff_venue_save(p_id uuid, p_city text, p_name text, p_lat double precision, p_lng double precision)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  c uuid;
+  v uuid;
+  n text := btrim(coalesce(p_name, ''));
+begin
+  perform public.need_staff();
+  if length(n) not between 2 and 80 then raise exception 'name: 2 to 80 characters'; end if;
+  select id into c from public.cities where slug = p_city;
+  if c is null then raise exception 'unknown city'; end if;
+  if p_lat is not null and (p_lat not between -90 and 90 or p_lng is null or p_lng not between -180 and 180) then
+    raise exception 'that point is not on the map';
+  end if;
+  if p_id is null then
+    insert into public.venues (city_id, slug, name, lat, lng, created_by)
+    values (c, public.make_slug(n), n, p_lat, p_lng, auth.uid()) returning id into v;
+    perform public.staff_note('create', 'venue', v::text, n);
+  else
+    update public.venues set city_id = c, name = n, lat = p_lat, lng = p_lng where id = p_id returning id into v;
+    if v is null then raise exception 'no such room'; end if;
+    perform public.staff_note('edit', 'venue', v::text, n);
+  end if;
+  return v;
+end;
+$$;
+
+-- ----------------------------------------------------------------- nights
+
+-- p_date YYYY-MM-DD and p_time HH:MM are the local time of the night, stored
+-- the way the ticketmaster sync stores it. Returns the slug.
+create or replace function public.staff_event_save(
+  p_id uuid, p_title text, p_city text, p_type text, p_venue uuid,
+  p_date text, p_time text, p_body text, p_ticket_url text, p_image_url text, p_published boolean)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  c public.cities%rowtype;
+  ty uuid;
+  v public.venues%rowtype;
+  t text := btrim(coalesce(p_title, ''));
+  d date;
+  hm text := coalesce(nullif(btrim(p_time), ''), '22:00');
+  short text;
+  s text;
+  old public.events%rowtype;
+begin
+  perform public.need_staff();
+  if length(t) not between 2 and 120 then raise exception 'title: 2 to 120 characters'; end if;
+  select * into c from public.cities where slug = p_city;
+  if c.id is null then raise exception 'unknown city'; end if;
+  select id into ty from public.event_types where slug = p_type;
+  if ty is null then raise exception 'unknown kind'; end if;
+  if p_venue is not null then
+    select * into v from public.venues where id = p_venue;
+    if v.id is null or v.city_id <> c.id then raise exception 'that room is not in this city'; end if;
+  end if;
+  begin d := p_date::date; exception when others then raise exception 'date: YYYY-MM-DD'; end;
+  if hm !~ '^([01][0-9]|2[0-3]):[0-5][0-9]$' then raise exception 'time: HH:MM'; end if;
+  if d < current_date - 1 then raise exception 'that night is over'; end if;
+  if coalesce(p_ticket_url, '') <> '' and p_ticket_url !~ '^https://' then raise exception 'ticket link: https:// only'; end if;
+  if coalesce(p_image_url, '') <> '' and p_image_url !~ '^https://' then raise exception 'photo link: https:// only'; end if;
+  if length(coalesce(p_body, '')) > 2000 then raise exception 'text: at most 2000 characters'; end if;
+
+  short := to_char(d, 'DD.MM.YY');
+  if p_id is null then
+    insert into public.events (slug, city_id, type_id, venue_id, title, meta, body, starts_at, starts_at_estimated,
+                               date_text, is_published, source, image_url, ticket_url, lat, lng, created_by)
+    values (public.make_slug(t), c.id, ty, v.id, t, concat_ws(' · ', coalesce(v.name, c.name), short, hm),
+            coalesce(btrim(p_body), ''), (d::text || 'T' || hm)::timestamptz, false, short || ' · ' || hm,
+            coalesce(p_published, true), 'staff', nullif(btrim(p_image_url), ''), nullif(btrim(p_ticket_url), ''),
+            v.lat, v.lng, auth.uid())
+    returning slug into s;
+    perform public.staff_note('create', 'night', s, t);
+  else
+    select * into old from public.events where id = p_id;
+    if old.id is null then raise exception 'no such night'; end if;
+    if old.source <> 'staff' then raise exception 'only nights made here can be edited here'; end if;
+    update public.events set city_id = c.id, type_id = ty, venue_id = v.id, title = t,
+           meta = concat_ws(' · ', coalesce(v.name, c.name), short, hm), body = coalesce(btrim(p_body), ''),
+           starts_at = (d::text || 'T' || hm)::timestamptz, date_text = short || ' · ' || hm,
+           is_published = coalesce(p_published, true), image_url = nullif(btrim(p_image_url), ''),
+           ticket_url = nullif(btrim(p_ticket_url), ''), lat = v.lat, lng = v.lng, updated_at = now()
+     where id = p_id returning slug into s;
+    perform public.staff_note('edit', 'night', s, t);
+  end if;
+  return s;
+end;
+$$;
+
+-- An admin deletes any night made here; a community manager only their own.
+create or replace function public.staff_event_delete(p_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  e public.events%rowtype;
+begin
+  perform public.need_staff();
+  select * into e from public.events where id = p_id;
+  if e.id is null then return; end if;
+  if e.source <> 'staff' then raise exception 'only nights made here can be deleted here'; end if;
+  if not public.is_admin() and e.created_by is distinct from auth.uid() then
+    raise exception 'only the admin or whoever made it' using errcode = '42501';
+  end if;
+  delete from public.events where id = p_id;
+  perform public.staff_note('delete', 'night', e.slug, e.title);
+end;
+$$;
+
+-- The nights the staff made, newest first, unpublished ones too. (43 widens it;
+-- the drop lets this file run again after that.)
+drop function if exists public.staff_events(int);
+create or replace function public.staff_events(p_limit int default 100)
+returns table (id uuid, slug text, title text, city_slug text, type_slug text, venue_id uuid,
+               starts_at timestamptz, body text, ticket_url text, image_url text, is_published boolean,
+               created_by uuid, maker text)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select e.id, e.slug, e.title, c.slug, t.slug, e.venue_id, e.starts_at, e.body, e.ticket_url, e.image_url,
+         e.is_published, e.created_by, p.display_name
+  from public.events e
+  join public.cities c on c.id = e.city_id
+  join public.event_types t on t.id = e.type_id
+  left join public.profiles p on p.id = e.created_by
+  where e.source = 'staff' and public.is_staff()
+  order by e.created_at desc
+  limit greatest(1, least(coalesce(p_limit, 100), 500));
+$$;
+
+-- -------------------------------------------------------------------- djs
+
+create or replace function public.dj_check(p_name text, p_genre text, p_sound text, p_bio text, p_photo text)
+returns void
+language plpgsql
+immutable
+as $$
+begin
+  if length(btrim(coalesce(p_name, ''))) not between 2 and 60 then raise exception 'name: 2 to 60 characters'; end if;
+  if length(btrim(coalesce(p_genre, ''))) not between 2 and 60 then raise exception 'genre: 2 to 60 characters'; end if;
+  if p_sound not in ('house', 'techno', 'rap') then raise exception 'sound: house, techno or rap'; end if;
+  if length(coalesce(p_bio, '')) > 600 then raise exception 'about: at most 600 characters'; end if;
+  if coalesce(p_photo, '') <> '' and p_photo !~ '^https://' then raise exception 'photo link: https:// only'; end if;
+end;
+$$;
+
+-- Staff: p_id null makes a new dj page; otherwise edits one. Returns the slug.
+create or replace function public.staff_dj_save(p_id uuid, p_name text, p_genre text, p_sound text,
+                                                p_city text, p_bio text, p_photo text)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  c uuid;
+  s text;
+begin
+  perform public.need_staff();
+  perform public.dj_check(p_name, p_genre, p_sound, p_bio, p_photo);
+  select id into c from public.cities where slug = p_city;
+  if p_id is null then
+    insert into public.djs (slug, name, genre, sound, city_id, bio, photo_url, source, sort_order, created_by)
+    values (public.make_slug(p_name), btrim(p_name), btrim(p_genre), p_sound, c, nullif(btrim(p_bio), ''),
+            nullif(btrim(p_photo), ''), 'staff', 100, auth.uid())
+    returning slug into s;
+    perform public.staff_note('create', 'dj', s, btrim(p_name));
+  else
+    update public.djs set name = btrim(p_name), genre = btrim(p_genre), sound = p_sound, city_id = c,
+           bio = nullif(btrim(p_bio), ''), photo_url = nullif(btrim(p_photo), '')
+     where id = p_id returning slug into s;
+    if s is null then raise exception 'no such dj'; end if;
+    perform public.staff_note('edit', 'dj', s, btrim(p_name));
+  end if;
+  return s;
+end;
+$$;
+
+-- A dj: the one page that is theirs.
+create or replace function public.dj_mine()
+returns table (id uuid, slug text, name text, genre text, sound text, city_slug text, bio text, photo_url text)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select d.id, d.slug, d.name, d.genre, d.sound, c.slug, d.bio, d.photo_url
+  from public.djs d left join public.cities c on c.id = d.city_id
+  where d.owner_id = auth.uid();
+$$;
+
+create or replace function public.dj_save_mine(p_name text, p_genre text, p_sound text,
+                                               p_city text, p_bio text, p_photo text)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  c uuid;
+  s text;
+begin
+  if coalesce(public.my_role(), '') <> 'dj' then
+    raise exception 'switch your account to dj first' using errcode = '42501';
+  end if;
+  perform public.dj_check(p_name, p_genre, p_sound, p_bio, p_photo);
+  select id into c from public.cities where slug = p_city;
+  update public.djs set name = btrim(p_name), genre = btrim(p_genre), sound = p_sound, city_id = c,
+         bio = nullif(btrim(p_bio), ''), photo_url = nullif(btrim(p_photo), '')
+   where owner_id = auth.uid() returning slug into s;
+  if s is null then
+    insert into public.djs (slug, name, genre, sound, city_id, bio, photo_url, source, sort_order, owner_id, created_by)
+    values (public.make_slug(p_name), btrim(p_name), btrim(p_genre), p_sound, c, nullif(btrim(p_bio), ''),
+            nullif(btrim(p_photo), ''), 'self', 100, auth.uid(), auth.uid())
+    returning slug into s;
+    perform public.staff_note('create', 'dj', s, 'own page: ' || btrim(p_name));
+  end if;
+  return s;
+end;
+$$;
+
+-- A night a dj plays: the staff for any dj, a dj for their own page.
+create or replace function public.dj_set_add(p_dj uuid, p_venue text, p_city text, p_date text, p_time text, p_hours numeric)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  d date;
+  hm text := coalesce(nullif(btrim(p_time), ''), '23:00');
+  r uuid;
+begin
+  if not public.is_staff() and not exists (select 1 from public.djs where id = p_dj and owner_id = auth.uid()) then
+    raise exception 'not your page' using errcode = '42501';
+  end if;
+  if not exists (select 1 from public.djs where id = p_dj) then raise exception 'no such dj'; end if;
+  if length(btrim(coalesce(p_venue, ''))) not between 2 and 80 then raise exception 'room: 2 to 80 characters'; end if;
+  begin d := p_date::date; exception when others then raise exception 'date: YYYY-MM-DD'; end;
+  if hm !~ '^([01][0-9]|2[0-3]):[0-5][0-9]$' then raise exception 'time: HH:MM'; end if;
+  if d < current_date - 1 then raise exception 'that night is over'; end if;
+  if coalesce(p_hours, 3) not between 0.5 and 24 then raise exception 'hours: 0.5 to 24'; end if;
+  insert into public.dj_sets (dj_id, venue, city_id, starts_at, hours, created_by)
+  values (p_dj, btrim(p_venue), (select id from public.cities where slug = p_city),
+          (d::text || 'T' || hm)::timestamptz, coalesce(p_hours, 3), auth.uid())
+  returning id into r;
+  perform public.staff_note('create', 'set', r::text, btrim(p_venue) || ' · ' || p_date);
+  return r;
+end;
+$$;
+
+create or replace function public.dj_set_delete(p_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if not public.is_staff() and not exists (
+    select 1 from public.dj_sets s join public.djs d on d.id = s.dj_id where s.id = p_id and d.owner_id = auth.uid()) then
+    raise exception 'not your page' using errcode = '42501';
+  end if;
+  delete from public.dj_sets where id = p_id;
+  perform public.staff_note('delete', 'set', p_id::text, null);
+end;
+$$;
+
+-- The sets of one dj from today on, with their ids (for deleting).
+create or replace function public.dj_sets_of(p_dj uuid)
+returns table (id uuid, venue text, starts_at timestamptz, hours numeric)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select s.id, s.venue, s.starts_at, s.hours from public.dj_sets s
+  where s.dj_id = p_dj and s.starts_at > now() - interval '12 hours'
+  order by s.starts_at;
+$$;
+
+-- --------------------------------------------------------------- comments
+
+-- Hiding was for the admin alone (02_rls.sql); now for the staff.
+create or replace function public.guard_comment_hidden()
+returns trigger
+language plpgsql
+as $$
+begin
+  if new.is_hidden is distinct from old.is_hidden
+     and auth.uid() is not null
+     and not public.is_staff() then
+    raise exception 'is_hidden can only be changed by the staff';
+  end if;
+  return new;
+end;
+$$;
+
+-- Staff hide (or show again) a comment; the author is not told.
+create or replace function public.staff_comment_hide(p_id uuid, p_hidden boolean)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_staff();
+  update public.comments set is_hidden = coalesce(p_hidden, true) where id = p_id;
+  perform public.staff_note(case when coalesce(p_hidden, true) then 'hide' else 'show' end, 'comment', p_id::text, null);
+end;
+$$;
+
+create or replace function public.staff_comments(p_limit int default 60)
+returns table (id uuid, body text, author text, night text, night_slug text, is_hidden boolean, created_at timestamptz)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select m.id, m.body, coalesce(p.display_name, m.author_name), e.title, e.slug, m.is_hidden, m.created_at
+  from public.comments m
+  join public.events e on e.id = m.event_id
+  left join public.profiles p on p.id = m.author_id
+  where public.is_staff()
+  order by m.created_at desc
+  limit greatest(1, least(coalesce(p_limit, 60), 300));
+$$;
+
+-- ------------------------------------------------------------------ admin
+
+create or replace function public.need_admin()
+returns void
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  if not public.is_admin() then raise exception 'admin only' using errcode = '42501'; end if;
+end;
+$$;
+
+-- Find people by handle or name; empty query: the staff first, then the newest.
+create or replace function public.admin_people(p_query text)
+returns table (id uuid, handle text, display_name text, role text, created_at timestamptz)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  q text := lower(btrim(coalesce(p_query, '')));
+begin
+  perform public.need_admin();
+  return query
+    select p.id, p.handle, p.display_name,
+           case when p.is_admin then 'admin' else p.account_type end, p.created_at
+    from public.profiles p
+    where q = '' or lower(coalesce(p.handle, '')) like '%' || q || '%' or lower(coalesce(p.display_name, '')) like '%' || q || '%'
+    order by (p.is_admin or p.account_type <> 'user') desc, p.created_at desc
+    limit 60;
+end;
+$$;
+
+-- The admin gives a type: normal user, dj or community manager. Admins are
+-- appointed in the SQL editor, and an admin cannot be changed from here.
+create or replace function public.admin_set_type(p_user uuid, p_type text)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  who public.profiles%rowtype;
+begin
+  perform public.need_admin();
+  if p_type not in ('user', 'dj', 'community_manager') then return 'type'; end if;
+  select * into who from public.profiles where id = p_user;
+  if who.id is null then return 'none'; end if;
+  if who.is_admin then return 'admin'; end if;
+  perform set_config('afterhours.account_type', 'on', true);
+  update public.profiles set account_type = p_type where id = p_user;
+  perform set_config('afterhours.account_type', '', true);
+  perform public.staff_note('role', 'person', p_user::text, coalesce(who.handle, who.display_name) || ': ' || who.account_type || ' → ' || p_type);
+  return 'ok';
+end;
+$$;
+
+-- The numbers on the first page of the panel.
+create or replace function public.admin_overview()
+returns json
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_staff();
+  return json_build_object(
+    'people', (select count(*) from public.profiles),
+    'people_week', (select count(*) from public.profiles where created_at > now() - interval '7 days'),
+    'managers', (select count(*) from public.profiles where account_type = 'community_manager'),
+    'djs', (select count(*) from public.profiles where account_type = 'dj'),
+    'nights_ahead', (select count(*) from public.events where is_published and starts_at > now()),
+    'nights_staff', (select count(*) from public.events where source = 'staff'),
+    'venues', (select count(*) from public.venues),
+    'comments_week', (select count(*) from public.comments where created_at > now() - interval '7 days'),
+    'feedback_open', case when public.is_admin() then (select count(*) from public.feedback where not handled) end
+  );
+end;
+$$;
+
+create or replace function public.admin_log(p_limit int default 100)
+returns table (at timestamptz, who text, action text, target text, target_id text, note text)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_admin();
+  return query
+    select l.at, coalesce(p.handle, p.display_name, 'gone'), l.action, l.target, l.target_id, l.note
+    from public.staff_log l left join public.profiles p on p.id = l.actor_id
+    order by l.at desc
+    limit greatest(1, least(coalesce(p_limit, 100), 500));
+end;
+$$;
+
+-- --------------------------------------------------------------- the doors
+
+do $$
+declare f text;
+begin
+  foreach f in array array[
+    'staff_venue_save(uuid, text, text, double precision, double precision)',
+    'staff_event_save(uuid, text, text, text, uuid, text, text, text, text, text, boolean)',
+    'staff_event_delete(uuid)', 'staff_events(int)',
+    'staff_dj_save(uuid, text, text, text, text, text, text)',
+    'dj_mine()', 'dj_save_mine(text, text, text, text, text, text)',
+    'dj_set_add(uuid, text, text, text, text, numeric)', 'dj_set_delete(uuid)', 'dj_sets_of(uuid)',
+    'staff_comment_hide(uuid, boolean)', 'staff_comments(int)',
+    'admin_people(text)', 'admin_set_type(uuid, text)', 'admin_overview()', 'admin_log(int)'
+  ] loop
+    execute 'revoke all on function public.' || f || ' from public, anon';
+    execute 'grant execute on function public.' || f || ' to authenticated';
+  end loop;
+end $$;
+revoke all on function public.need_staff() from public, anon;
+revoke all on function public.need_admin() from public, anon;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('42_staff.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  NIGHTS SENT IN BY PEOPLE, LET THROUGH BY THE STAFF   (43_event_submit.sql)
+-- ============================================================
+
+-- afterhours — anyone with an account suggests a ticketed night; the staff decide (43)
+--
+-- The + on the flow opens "with a ticket" or "among friends" (a spark). With a
+-- ticket: the staff publish at once (42_staff.sql); everyone else sends it in,
+-- and it waits, unseen, until a community manager or an admin lets it through.
+--
+--   events.review         pending · rejected · null (decided, or never asked)
+--   event_submit(…)       a signed-in person (not a guest) sends a night in;
+--                         at most 5 waiting at a time. A ticket link is required.
+--   event_submissions()   your own, with where they stand
+--   staff_pending()       the staff: what waits
+--   staff_review(id, ok, note)  publish it, or turn it down with a line why
+--
+-- Nights sent in carry source = user. Once let through they show like any other;
+-- the staff can still edit or delete them in the panel.
+
+alter table public.events add column if not exists review text check (review in ('pending', 'rejected'));
+alter table public.events add column if not exists review_note text;
+create index if not exists events_review_idx on public.events (review) where review is not null;
+
+-- ------------------------------------------------- one writer for both doors
+
+-- No check of who calls: the two doors below each check first. Nobody else may call it.
+create or replace function public.night_write(
+  p_id uuid, p_title text, p_city text, p_type text, p_venue uuid,
+  p_date text, p_time text, p_body text, p_ticket_url text, p_image_url text,
+  p_published boolean, p_source text, p_review text)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  c public.cities%rowtype;
+  ty uuid;
+  v public.venues%rowtype;
+  t text := btrim(coalesce(p_title, ''));
+  d date;
+  hm text := coalesce(nullif(btrim(p_time), ''), '22:00');
+  short text;
+  s text;
+begin
+  if length(t) not between 2 and 120 then raise exception 'title: 2 to 120 characters'; end if;
+  select * into c from public.cities where slug = p_city;
+  if c.id is null then raise exception 'unknown city'; end if;
+  select id into ty from public.event_types where slug = p_type;
+  if ty is null then raise exception 'unknown kind'; end if;
+  if p_venue is not null then
+    select * into v from public.venues where id = p_venue;
+    if v.id is null or v.city_id <> c.id then raise exception 'that room is not in this city'; end if;
+  end if;
+  begin d := p_date::date; exception when others then raise exception 'date: YYYY-MM-DD'; end;
+  if hm !~ '^([01][0-9]|2[0-3]):[0-5][0-9]$' then raise exception 'time: HH:MM'; end if;
+  if d < current_date - 1 then raise exception 'that night is over'; end if;
+  if coalesce(p_ticket_url, '') <> '' and p_ticket_url !~ '^https://' then raise exception 'ticket link: https:// only'; end if;
+  if coalesce(p_image_url, '') <> '' and p_image_url !~ '^https://' then raise exception 'photo link: https:// only'; end if;
+  if length(coalesce(p_body, '')) > 2000 then raise exception 'text: at most 2000 characters'; end if;
+
+  short := to_char(d, 'DD.MM.YY');
+  if p_id is null then
+    insert into public.events (slug, city_id, type_id, venue_id, title, meta, body, starts_at, starts_at_estimated,
+                               date_text, is_published, source, image_url, ticket_url, lat, lng, created_by, review)
+    values (public.make_slug(t), c.id, ty, v.id, t, concat_ws(' · ', coalesce(v.name, c.name), short, hm),
+            coalesce(btrim(p_body), ''), (d::text || 'T' || hm)::timestamptz, false, short || ' · ' || hm,
+            coalesce(p_published, true), p_source, nullif(btrim(p_image_url), ''), nullif(btrim(p_ticket_url), ''),
+            v.lat, v.lng, auth.uid(), p_review)
+    returning slug into s;
+  else
+    update public.events set city_id = c.id, type_id = ty, venue_id = v.id, title = t,
+           meta = concat_ws(' · ', coalesce(v.name, c.name), short, hm), body = coalesce(btrim(p_body), ''),
+           starts_at = (d::text || 'T' || hm)::timestamptz, date_text = short || ' · ' || hm,
+           is_published = coalesce(p_published, true), image_url = nullif(btrim(p_image_url), ''),
+           ticket_url = nullif(btrim(p_ticket_url), ''), lat = v.lat, lng = v.lng, updated_at = now()
+     where id = p_id returning slug into s;
+  end if;
+  return s;
+end;
+$$;
+revoke all on function public.night_write(uuid, text, text, text, uuid, text, text, text, text, text, boolean, text, text) from public, anon, authenticated;
+
+-- The staff door, as in 42, now through night_write, and nights sent in by
+-- people can be edited too.
+create or replace function public.staff_event_save(
+  p_id uuid, p_title text, p_city text, p_type text, p_venue uuid,
+  p_date text, p_time text, p_body text, p_ticket_url text, p_image_url text, p_published boolean)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  old public.events%rowtype;
+  s text;
+begin
+  perform public.need_staff();
+  if p_id is not null then
+    select * into old from public.events where id = p_id;
+    if old.id is null then raise exception 'no such night'; end if;
+    if old.source not in ('staff', 'user') then raise exception 'only nights made here can be edited here'; end if;
+    if old.review = 'pending' and coalesce(p_published, true) then
+      raise exception 'let it through first (waiting for review)';
+    end if;
+  end if;
+  s := public.night_write(p_id, p_title, p_city, p_type, p_venue, p_date, p_time, p_body, p_ticket_url, p_image_url,
+                          p_published, coalesce(old.source, 'staff'), old.review);
+  perform public.staff_note(case when p_id is null then 'create' else 'edit' end, 'night', s, btrim(p_title));
+  return s;
+end;
+$$;
+
+create or replace function public.staff_event_delete(p_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  e public.events%rowtype;
+begin
+  perform public.need_staff();
+  select * into e from public.events where id = p_id;
+  if e.id is null then return; end if;
+  if e.source not in ('staff', 'user') then raise exception 'only nights made here can be deleted here'; end if;
+  if not public.is_admin() and e.source = 'staff' and e.created_by is distinct from auth.uid() then
+    raise exception 'only the admin or whoever made it' using errcode = '42501';
+  end if;
+  delete from public.events where id = p_id;
+  perform public.staff_note('delete', 'night', e.slug, e.title);
+end;
+$$;
+
+-- The panel list: nights made by the staff, and the ones sent in that were decided.
+drop function if exists public.staff_events(int);
+create or replace function public.staff_events(p_limit int default 100)
+returns table (id uuid, slug text, title text, city_slug text, type_slug text, venue_id uuid,
+               starts_at timestamptz, body text, ticket_url text, image_url text, is_published boolean,
+               created_by uuid, maker text, source text, review text)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select e.id, e.slug, e.title, c.slug, t.slug, e.venue_id, e.starts_at, e.body, e.ticket_url, e.image_url,
+         e.is_published, e.created_by, p.display_name, e.source, e.review
+  from public.events e
+  join public.cities c on c.id = e.city_id
+  join public.event_types t on t.id = e.type_id
+  left join public.profiles p on p.id = e.created_by
+  where e.source in ('staff', 'user') and public.is_staff()
+  order by e.created_at desc
+  limit greatest(1, least(coalesce(p_limit, 100), 500));
+$$;
+
+-- ------------------------------------------------------- the door for people
+
+create or replace function public.event_submit(
+  p_title text, p_city text, p_type text, p_venue uuid,
+  p_date text, p_time text, p_body text, p_ticket_url text, p_image_url text)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  s text;
+begin
+  if auth.uid() is null or public.is_guest() then
+    raise exception 'make an account first' using errcode = '42501';
+  end if;
+  if coalesce(btrim(p_ticket_url), '') = '' then raise exception 'ticket link: needed'; end if;
+  if (select count(*) from public.events where created_by = auth.uid() and review = 'pending') >= 5 then
+    raise exception 'five are already waiting; wait until they are looked at';
+  end if;
+  s := public.night_write(null, p_title, p_city, p_type, p_venue, p_date, p_time, p_body, p_ticket_url, p_image_url,
+                          false, 'user', 'pending');
+  perform public.staff_note('submit', 'night', s, btrim(p_title));
+  return s;
+end;
+$$;
+
+create or replace function public.event_submissions()
+returns table (id uuid, slug text, title text, starts_at timestamptz, review text, review_note text, is_published boolean)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select e.id, e.slug, e.title, e.starts_at, e.review, e.review_note, e.is_published
+  from public.events e
+  where e.created_by = auth.uid() and e.source = 'user'
+  order by e.created_at desc
+  limit 50;
+$$;
+
+create or replace function public.staff_pending()
+returns table (id uuid, slug text, title text, city_slug text, type_slug text, venue_name text,
+               starts_at timestamptz, body text, ticket_url text, image_url text, maker text, handle text, sent_at timestamptz)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select e.id, e.slug, e.title, c.slug, t.slug, v.name, e.starts_at, e.body, e.ticket_url, e.image_url,
+         p.display_name, p.handle, e.created_at
+  from public.events e
+  join public.cities c on c.id = e.city_id
+  join public.event_types t on t.id = e.type_id
+  left join public.venues v on v.id = e.venue_id
+  left join public.profiles p on p.id = e.created_by
+  where e.review = 'pending' and public.is_staff()
+  order by e.created_at;
+$$;
+
+create or replace function public.staff_review(p_id uuid, p_ok boolean, p_note text)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  e public.events%rowtype;
+begin
+  perform public.need_staff();
+  select * into e from public.events where id = p_id and review = 'pending';
+  if e.id is null then raise exception 'nothing waiting with that id'; end if;
+  if p_ok then
+    update public.events set review = null, review_note = null, is_published = true, updated_at = now() where id = p_id;
+  else
+    update public.events set review = 'rejected', review_note = left(nullif(btrim(p_note), ''), 300), is_published = false, updated_at = now() where id = p_id;
+  end if;
+  perform public.staff_note(case when p_ok then 'approve' else 'reject' end, 'night', e.slug, e.title);
+end;
+$$;
+
+-- The first page of the panel counts what waits.
+create or replace function public.admin_overview()
+returns json
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_staff();
+  return json_build_object(
+    'people', (select count(*) from public.profiles),
+    'people_week', (select count(*) from public.profiles where created_at > now() - interval '7 days'),
+    'managers', (select count(*) from public.profiles where account_type = 'community_manager'),
+    'djs', (select count(*) from public.profiles where account_type = 'dj'),
+    'nights_ahead', (select count(*) from public.events where is_published and starts_at > now()),
+    'nights_staff', (select count(*) from public.events where source = 'staff'),
+    'venues', (select count(*) from public.venues),
+    'comments_week', (select count(*) from public.comments where created_at > now() - interval '7 days'),
+    'pending', (select count(*) from public.events where review = 'pending'),
+    'feedback_open', case when public.is_admin() then (select count(*) from public.feedback where not handled) end
+  );
+end;
+$$;
+
+do $$
+declare f text;
+begin
+  foreach f in array array[
+    'staff_event_save(uuid, text, text, text, uuid, text, text, text, text, text, boolean)',
+    'staff_event_delete(uuid)', 'staff_events(int)',
+    'event_submit(text, text, text, uuid, text, text, text, text, text)', 'event_submissions()',
+    'staff_pending()', 'staff_review(uuid, boolean, text)', 'admin_overview()'
+  ] loop
+    execute 'revoke all on function public.' || f || ' from public, anon';
+    execute 'grant execute on function public.' || f || ' to authenticated';
+  end loop;
+end $$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('43_event_submit.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  GROUPS — FRIENDS WHO FIND A NIGHT TOGETHER   (44_groups.sql)
+-- ============================================================
+
+-- afterhours — groups: friends who find a night together (44)
+--
+-- A group is a few people (2 to 12) who swipe one deck together. Each swipes in
+-- their own time; when everyone said yes it is a match, when more than half did,
+-- most are in. Or all at once: a live session, where the same card is in front of
+-- everyone and moves on when all who are there have answered.
+--
+--   groups           name, emoji, colour, a cover photo, lasting or once (a once
+--                    group has dates and is put away when they are over), and the
+--                    deck it swipes: a city and a window of days
+--   group_members    who is in; the one who made it is the owner
+--   group_invites    a code for a link or a QR: whoever has it may join (14 days,
+--                    20 uses), friends or not
+--   group_swipes     the answer of each member to each night, inside this group only;
+--                    the personal deck is not touched
+--   group_live       a live session: who is there (seen in the last 40 s), and the
+--                    cards skipped
+--
+-- The tables are closed; everything goes through the functions below, and each
+-- one asks first whether you are in the group. Members see what the others answered:
+-- it is a group of friends deciding together.
+--
+-- The deck of a group is sorted by the taste of the group before anyone swipes: a night a
+-- member already kept on their own counts most, then nights of the kinds the
+-- members keep most often.
+
+create table if not exists public.groups (
+  id          uuid primary key default gen_random_uuid(),
+  name        text not null check (length(btrim(name)) between 1 and 40),
+  emoji       text not null default '✦' check (length(emoji) between 1 and 8),
+  color       text not null default 'red' check (color in ('red', 'gold', 'blue', 'green', 'violet', 'paper')),
+  cover_path  text,
+  kind        text not null default 'lasting' check (kind in ('lasting', 'once')),
+  city_slug   text,
+  date_from   date,
+  date_to     date,
+  created_by  uuid references public.profiles on delete set null,
+  created_at  timestamptz not null default now(),
+  constraint groups_window check (date_to is null or date_from is null or date_to >= date_from),
+  constraint groups_once_dated check (kind = 'lasting' or date_to is not null)
+);
+
+create table if not exists public.group_members (
+  group_id   uuid not null references public.groups on delete cascade,
+  user_id    uuid not null references public.profiles on delete cascade,
+  role       text not null default 'member' check (role in ('owner', 'member')),
+  joined_at  timestamptz not null default now(),
+  primary key (group_id, user_id)
+);
+create index if not exists group_members_user_idx on public.group_members (user_id);
+
+create table if not exists public.group_invites (
+  code        text primary key,
+  group_id    uuid not null references public.groups on delete cascade,
+  created_by  uuid references public.profiles on delete set null,
+  created_at  timestamptz not null default now(),
+  expires_at  timestamptz not null default now() + interval '14 days',
+  uses        int not null default 0,
+  max_uses    int not null default 20
+);
+
+create table if not exists public.group_swipes (
+  group_id   uuid not null references public.groups on delete cascade,
+  user_id    uuid not null references public.profiles on delete cascade,
+  event_id   uuid not null references public.events on delete cascade,
+  direction  text not null check (direction in ('left', 'right')),
+  at         timestamptz not null default now(),
+  primary key (group_id, user_id, event_id)
+);
+create index if not exists group_swipes_event_idx on public.group_swipes (group_id, event_id);
+
+create table if not exists public.group_live (
+  group_id  uuid not null references public.groups on delete cascade,
+  user_id   uuid not null references public.profiles on delete cascade,
+  seen_at   timestamptz not null default now(),
+  primary key (group_id, user_id)
+);
+create table if not exists public.group_live_skips (
+  group_id  uuid not null references public.groups on delete cascade,
+  event_id  uuid not null references public.events on delete cascade,
+  primary key (group_id, event_id)
+);
+
+alter table public.groups enable row level security;
+alter table public.group_members enable row level security;
+alter table public.group_invites enable row level security;
+alter table public.group_swipes enable row level security;
+alter table public.group_live enable row level security;
+alter table public.group_live_skips enable row level security;
+revoke all on public.groups, public.group_members, public.group_invites, public.group_swipes,
+              public.group_live, public.group_live_skips from public, anon, authenticated;
+
+-- ------------------------------------------------------------- helpers
+
+create or replace function public.in_group(p_group uuid)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (select 1 from public.group_members where group_id = p_group and user_id = auth.uid());
+$$;
+
+create or replace function public.need_member(p_group uuid)
+returns void
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  if auth.uid() is null or not public.in_group(p_group) then
+    raise exception 'not in this group' using errcode = '42501';
+  end if;
+end;
+$$;
+
+create or replace function public.need_account()
+returns void
+language plpgsql
+stable
+as $$
+begin
+  if auth.uid() is null or public.is_guest() then
+    raise exception 'make an account first' using errcode = '42501';
+  end if;
+end;
+$$;
+
+create or replace function public.group_check(p_name text, p_emoji text, p_color text, p_kind text,
+                                              p_city text, p_from date, p_to date)
+returns void
+language plpgsql
+stable
+set search_path = public
+as $$
+begin
+  if length(btrim(coalesce(p_name, ''))) not between 1 and 40 then raise exception 'name: 1 to 40 characters'; end if;
+  if length(coalesce(p_emoji, '')) not between 1 and 8 then raise exception 'one emoji'; end if;
+  if coalesce(p_color, 'red') not in ('red', 'gold', 'blue', 'green', 'violet', 'paper') then raise exception 'unknown colour'; end if;
+  if coalesce(p_kind, 'lasting') not in ('lasting', 'once') then raise exception 'lasting or once'; end if;
+  if p_kind = 'once' and p_to is null then raise exception 'a group for once needs its last day'; end if;
+  if p_from is not null and p_to is not null and p_to < p_from then raise exception 'the last day comes after the first'; end if;
+  if p_to is not null and p_to < current_date then raise exception 'those days are over'; end if;
+  if p_city is not null and not exists (select 1 from public.cities where slug = p_city) then raise exception 'unknown city'; end if;
+end;
+$$;
+
+-- ---------------------------------------------------------- the group
+
+-- Members: friends of the maker only (strangers come in by an invite code).
+create or replace function public.group_create(p_name text, p_emoji text, p_color text, p_kind text,
+                                               p_city text, p_from date, p_to date, p_members uuid[])
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  g uuid;
+  m uuid;
+  others uuid[] := array(select x from unnest(coalesce(p_members, '{}')) with ordinality as u(x, i)
+                         where x <> auth.uid() group by x order by min(i));
+begin
+  perform public.need_account();
+  perform public.group_check(p_name, p_emoji, p_color, p_kind, p_city, p_from, p_to);
+  if cardinality(others) > 11 then raise exception 'at most 12 in a group'; end if;
+  if (select count(*) from public.group_members where user_id = auth.uid()) >= 30 then
+    raise exception 'at most 30 groups';
+  end if;
+  foreach m in array others loop
+    if not public.is_friend(m) then raise exception 'only friends can be added; send the others a link'; end if;
+  end loop;
+  insert into public.groups (name, emoji, color, kind, city_slug, date_from, date_to, created_by)
+  values (btrim(p_name), p_emoji, coalesce(p_color, 'red'), coalesce(p_kind, 'lasting'), p_city, p_from, p_to, auth.uid())
+  returning id into g;
+  insert into public.group_members (group_id, user_id, role) values (g, auth.uid(), 'owner');
+  -- in the order they were picked, a microsecond apart, so "the oldest member" is never a tie
+  insert into public.group_members (group_id, user_id, joined_at)
+  select g, x, now() + make_interval(secs => i / 1e6) from unnest(others) with ordinality as u(x, i);
+  return g;
+end;
+$$;
+
+-- Any member may change the name, the look and the deck.
+create or replace function public.group_update(p_id uuid, p_name text, p_emoji text, p_color text, p_kind text,
+                                               p_city text, p_from date, p_to date)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_id);
+  perform public.group_check(p_name, p_emoji, p_color, p_kind, p_city, p_from, p_to);
+  update public.groups set name = btrim(p_name), emoji = p_emoji, color = coalesce(p_color, 'red'),
+         kind = coalesce(p_kind, 'lasting'), city_slug = p_city, date_from = p_from, date_to = p_to
+   where id = p_id;
+end;
+$$;
+
+-- The cover: a photo the member uploaded into their own folder of the photos bucket.
+create or replace function public.group_set_cover(p_id uuid, p_path text)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  was text;
+begin
+  perform public.need_member(p_id);
+  if p_path is not null and p_path not like auth.uid()::text || '/%' then raise exception 'not your file'; end if;
+  select cover_path into was from public.groups where id = p_id;
+  update public.groups set cover_path = p_path where id = p_id;
+  return was;
+end;
+$$;
+
+-- A member adds their own friends.
+create or replace function public.group_add(p_id uuid, p_users uuid[])
+returns int
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  m uuid;
+  n int := 0;
+begin
+  perform public.need_member(p_id);
+  foreach m in array coalesce(p_users, '{}') loop
+    if exists (select 1 from public.group_members where group_id = p_id and user_id = m) then continue; end if;
+    if not public.is_friend(m) then raise exception 'only friends can be added; send the others a link'; end if;
+    if (select count(*) from public.group_members where group_id = p_id) >= 12 then raise exception 'at most 12 in a group'; end if;
+    insert into public.group_members (group_id, user_id) values (p_id, m);
+    n := n + 1;
+  end loop;
+  return n;
+end;
+$$;
+
+-- Leaving: the oldest member becomes the owner; the last one out takes the group along.
+create or replace function public.group_leave(p_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  was text;
+begin
+  perform public.need_member(p_id);
+  select role into was from public.group_members where group_id = p_id and user_id = auth.uid();
+  delete from public.group_members where group_id = p_id and user_id = auth.uid();
+  delete from public.group_live where group_id = p_id and user_id = auth.uid();
+  if not exists (select 1 from public.group_members where group_id = p_id) then
+    delete from public.groups where id = p_id;
+  elsif was = 'owner' then
+    update public.group_members set role = 'owner'
+     where group_id = p_id and user_id = (select user_id from public.group_members where group_id = p_id order by joined_at, user_id limit 1);
+  end if;
+end;
+$$;
+
+-- The owner takes someone out (their answers stay out of the counts from then on).
+create or replace function public.group_remove(p_id uuid, p_user uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_id);
+  if p_user = auth.uid() then perform public.group_leave(p_id); return; end if;
+  if not exists (select 1 from public.group_members where group_id = p_id and user_id = auth.uid() and role = 'owner') then
+    raise exception 'only the owner' using errcode = '42501';
+  end if;
+  delete from public.group_members where group_id = p_id and user_id = p_user;
+  delete from public.group_swipes where group_id = p_id and user_id = p_user;
+  delete from public.group_live where group_id = p_id and user_id = p_user;
+end;
+$$;
+
+create or replace function public.group_delete(p_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if not exists (select 1 from public.group_members where group_id = p_id and user_id = auth.uid() and role = 'owner') then
+    raise exception 'only the owner' using errcode = '42501';
+  end if;
+  delete from public.groups where id = p_id;
+end;
+$$;
+
+-- --------------------------------------------------------- invitations
+
+-- A code for a link or a QR; the same one while it is still good.
+create or replace function public.group_invite(p_id uuid)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  c text;
+begin
+  perform public.need_member(p_id);
+  select code into c from public.group_invites
+   where group_id = p_id and expires_at > now() + interval '1 day' and uses < max_uses
+   order by created_at desc limit 1;
+  if c is not null then return c; end if;
+  loop
+    -- no 0/O, 1/I: it may be read out loud or typed
+    c := array_to_string(array(select substr('ABCDEFGHJKLMNPQRSTUVWXYZ23456789', 1 + floor(random() * 32)::int, 1)
+                               from generate_series(1, 8)), '');
+    exit when not exists (select 1 from public.group_invites where code = c);
+  end loop;
+  insert into public.group_invites (code, group_id, created_by) values (c, p_id, auth.uid());
+  return c;
+end;
+$$;
+
+-- What a code leads to, before joining. (49 widens it; the drop lets this file run again.)
+drop function if exists public.group_peek(text);
+create or replace function public.group_peek(p_code text)
+returns table (id uuid, name text, emoji text, color text, cover_path text, members int, mine boolean, open boolean)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select g.id, g.name, g.emoji, g.color, g.cover_path,
+         (select count(*)::int from public.group_members m where m.group_id = g.id),
+         public.in_group(g.id),
+         i.expires_at > now() and i.uses < i.max_uses
+  from public.group_invites i join public.groups g on g.id = i.group_id
+  where i.code = upper(btrim(p_code));
+$$;
+
+create or replace function public.group_join(p_code text)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  i public.group_invites%rowtype;
+begin
+  perform public.need_account();
+  select * into i from public.group_invites where code = upper(btrim(p_code));
+  if i.code is null then raise exception 'no group with that code'; end if;
+  if public.in_group(i.group_id) then return i.group_id; end if;
+  if i.expires_at <= now() or i.uses >= i.max_uses then raise exception 'that code is used up; ask for a new one'; end if;
+  if (select count(*) from public.group_members where group_id = i.group_id) >= 12 then raise exception 'the group is full (12)'; end if;
+  if (select count(*) from public.group_members where user_id = auth.uid()) >= 30 then raise exception 'at most 30 groups'; end if;
+  insert into public.group_members (group_id, user_id) values (i.group_id, auth.uid());
+  update public.group_invites set uses = uses + 1 where code = i.code;
+  return i.group_id;
+end;
+$$;
+
+-- ------------------------------------------------------------ reading
+
+create or replace function public.group_get(p_id uuid)
+returns json
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_id);
+  return (
+    select json_build_object(
+      'id', g.id, 'name', g.name, 'emoji', g.emoji, 'color', g.color, 'cover_path', g.cover_path,
+      'kind', g.kind, 'city_slug', g.city_slug, 'date_from', g.date_from, 'date_to', g.date_to,
+      'archived', g.kind = 'once' and g.date_to < current_date,
+      'me', auth.uid(),
+      'members', (select json_agg(json_build_object('id', p.id, 'handle', p.handle, 'name', p.display_name, 'role', m.role) order by m.joined_at)
+                  from public.group_members m join public.profiles p on p.id = m.user_id where m.group_id = g.id))
+    from public.groups g where g.id = p_id);
+end;
+$$;
+
+-- ------------------------------------------------------------ the deck
+
+-- The nights the group looks at: its city (or everywhere) and its days (from today
+-- when it has no first day), ordered by the taste of the group. No check here: callers check.
+create or replace function public.group_window(p_id uuid)
+returns setof public.events_public
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  with g as (select * from public.groups where id = p_id),
+       members as (select user_id from public.group_members where group_id = p_id),
+       liked_types as (
+         select e.type_id, count(*) as n
+         from public.swipes s join public.events e on e.id = s.event_id
+         where s.direction = 'right' and s.user_id in (select user_id from members)
+         group by e.type_id)
+  select e.* from public.events_public e, g
+  where e.is_published
+    and (g.city_slug is null or e.city_slug = g.city_slug)
+    and (e.starts_at is null or e.starts_at::date >= greatest(coalesce(g.date_from, current_date), current_date))
+    and (g.date_to is null or e.starts_at::date <= g.date_to)
+  order by
+    3 * (select count(*) from public.swipes s where s.event_id = e.id and s.direction = 'right' and s.user_id in (select user_id from members))
+    + coalesce((select least(n, 20) from liked_types lt join public.events x on x.type_id = lt.type_id where x.id = e.id), 0) / 5.0 desc,
+    e.starts_at nulls last, e.id
+  limit 400;
+$$;
+revoke all on function public.group_window(uuid) from public, anon, authenticated;
+
+-- Your deck in the group: what you have not answered yet.
+create or replace function public.group_deck(p_id uuid, p_limit int default 60)
+returns setof public.events_public
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_id);
+  return query
+    select e.* from public.group_window(p_id) e
+    where not exists (select 1 from public.group_swipes s where s.group_id = p_id and s.user_id = auth.uid() and s.event_id = e.id)
+    limit greatest(1, least(coalesce(p_limit, 60), 200));
+end;
+$$;
+
+create or replace function public.group_swipe(p_id uuid, p_event uuid, p_direction text)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_id);
+  if p_direction not in ('left', 'right') then raise exception 'left or right'; end if;
+  insert into public.group_swipes (group_id, user_id, event_id, direction) values (p_id, auth.uid(), p_event, p_direction)
+  on conflict (group_id, user_id, event_id) do update set direction = excluded.direction, at = now();
+end;
+$$;
+
+create or replace function public.group_unswipe(p_id uuid, p_event uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_id);
+  delete from public.group_swipes where group_id = p_id and user_id = auth.uid() and event_id = p_event;
+end;
+$$;
+
+-- Nights at least one member said yes to: match (everyone), most (more than half), some.
+create or replace function public.group_matches(p_id uuid)
+returns table (id uuid, slug text, title text, starts_at timestamptz, venue_name text, city_name text,
+               image_url text, poster_no int, poster_path text, yes int, no int, members int, status text, yes_ids uuid[])
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  n int;
+begin
+  perform public.need_member(p_id);
+  select count(*) into n from public.group_members where group_id = p_id;
+  return query
+    with votes as (
+      select s.event_id,
+             count(*) filter (where s.direction = 'right')::int as y,
+             count(*) filter (where s.direction = 'left')::int as l,
+             array_agg(s.user_id) filter (where s.direction = 'right') as ids
+      from public.group_swipes s
+      join public.group_members m on m.group_id = s.group_id and m.user_id = s.user_id
+      where s.group_id = p_id
+      group by s.event_id)
+    select e.id, e.slug, e.title, e.starts_at, v.name, c.name, e.image_url, e.poster_no, e.poster_path,
+           vo.y, vo.l, n,
+           case when vo.y = n then 'match' when vo.y * 2 > n then 'most' else 'some' end,
+           vo.ids
+    from votes vo
+    join public.events e on e.id = vo.event_id and e.is_published
+    join public.cities c on c.id = e.city_id
+    left join public.venues v on v.id = e.venue_id
+    where vo.y > 0 and (e.starts_at is null or e.starts_at > now() - interval '12 hours')
+    order by vo.y desc, vo.l, e.starts_at nulls last;
+end;
+$$;
+
+-- Who answered what on one night.
+create or replace function public.group_votes(p_id uuid, p_event uuid)
+returns table (user_id uuid, name text, direction text)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_id);
+  return query
+    select m.user_id, coalesce(p.display_name, p.handle), s.direction
+    from public.group_members m
+    join public.profiles p on p.id = m.user_id
+    left join public.group_swipes s on s.group_id = m.group_id and s.user_id = m.user_id and s.event_id = p_event
+    where m.group_id = p_id
+    order by m.joined_at;
+end;
+$$;
+
+-- Your groups, the live ones first; a once group whose days are over is archived.
+create or replace function public.my_groups()
+returns table (id uuid, name text, emoji text, color text, cover_path text, kind text, city_slug text,
+               date_from date, date_to date, members int, faces uuid[], matches int, to_swipe int,
+               live int, archived boolean)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  with mine as (
+    select g.* from public.groups g join public.group_members m on m.group_id = g.id and m.user_id = auth.uid()
+  )
+  select g.id, g.name, g.emoji, g.color, g.cover_path, g.kind, g.city_slug, g.date_from, g.date_to,
+         (select count(*)::int from public.group_members m where m.group_id = g.id),
+         array(select m.user_id from public.group_members m where m.group_id = g.id order by m.joined_at limit 4),
+         (select count(*)::int from public.group_matches(g.id) x where x.status = 'match'),
+         (select count(*)::int from public.group_window(g.id) e
+           where not exists (select 1 from public.group_swipes s where s.group_id = g.id and s.user_id = auth.uid() and s.event_id = e.id)),
+         (select count(*)::int from public.group_live l where l.group_id = g.id and l.seen_at > now() - interval '40 seconds'),
+         g.kind = 'once' and g.date_to < current_date
+  from mine g
+  order by (g.kind = 'once' and g.date_to < current_date), g.created_at desc;
+$$;
+
+-- ------------------------------------------------------------ live
+
+-- Being in the session: call it every few seconds. Who has not called for 40 s
+-- is no longer counted.
+create or replace function public.group_live_here(p_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_id);
+  insert into public.group_live (group_id, user_id) values (p_id, auth.uid())
+  on conflict (group_id, user_id) do update set seen_at = now();
+end;
+$$;
+
+create or replace function public.group_live_leave(p_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_id);
+  delete from public.group_live where group_id = p_id and user_id = auth.uid();
+end;
+$$;
+
+-- The card everyone sees: the first night of the deck of the group that not everyone
+-- who is there has answered and nobody skipped; with who is there and what each said.
+create or replace function public.group_live_state(p_id uuid)
+returns json
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  here uuid[];
+  card public.events_public%rowtype;
+  left_ int;
+begin
+  perform public.need_member(p_id);
+  here := array(select l.user_id from public.group_live l
+                join public.group_members m on m.group_id = l.group_id and m.user_id = l.user_id
+                where l.group_id = p_id and l.seen_at > now() - interval '40 seconds' order by l.user_id);
+  if cardinality(here) = 0 then here := array[auth.uid()]; end if;
+  select e.* into card from public.group_window(p_id) e
+   where not exists (select 1 from public.group_live_skips k where k.group_id = p_id and k.event_id = e.id)
+     and (select count(*) from public.group_swipes s where s.group_id = p_id and s.event_id = e.id and s.user_id = any(here)) < cardinality(here)
+   limit 1;
+  select count(*)::int into left_ from public.group_window(p_id) e
+   where not exists (select 1 from public.group_live_skips k where k.group_id = p_id and k.event_id = e.id)
+     and (select count(*) from public.group_swipes s where s.group_id = p_id and s.event_id = e.id and s.user_id = any(here)) < cardinality(here);
+  return json_build_object(
+    'card', case when card.id is null then null else row_to_json(card) end,
+    'left', left_,
+    'people', (select json_agg(json_build_object('id', p.id, 'name', coalesce(p.display_name, p.handle),
+                                                 'answer', (select s.direction from public.group_swipes s
+                                                            where s.group_id = p_id and s.user_id = p.id and s.event_id = card.id)))
+               from public.profiles p where p.id = any(here)));
+end;
+$$;
+
+-- Anyone in the session moves past a card nobody can agree on.
+create or replace function public.group_live_skip(p_id uuid, p_event uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_id);
+  insert into public.group_live_skips (group_id, event_id) values (p_id, p_event) on conflict do nothing;
+end;
+$$;
+
+-- ------------------------------------------------------- a group to make
+
+-- Friends who kept the same nights as you lately: the start of a group.
+create or replace function public.group_suggest()
+returns table (user_id uuid, handle text, name text, shared int)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select p.id, p.handle, p.display_name, count(*)::int
+  from public.swipes mine
+  join public.swipes theirs on theirs.event_id = mine.event_id and theirs.direction = 'right' and theirs.user_id <> mine.user_id
+  join public.profiles p on p.id = theirs.user_id
+  where mine.user_id = auth.uid() and mine.direction = 'right'
+    and mine.created_at > now() - interval '45 days'
+    and public.is_friend(theirs.user_id)
+  group by p.id, p.handle, p.display_name
+  having count(*) >= 2
+  order by count(*) desc
+  limit 8;
+$$;
+
+-- --------------------------------------------------------------- doors
+
+do $$
+declare f text;
+begin
+  foreach f in array array[
+    'group_create(text, text, text, text, text, date, date, uuid[])',
+    'group_update(uuid, text, text, text, text, text, date, date)',
+    'group_set_cover(uuid, text)', 'group_add(uuid, uuid[])', 'group_leave(uuid)', 'group_remove(uuid, uuid)',
+    'group_delete(uuid)', 'group_invite(uuid)', 'group_peek(text)', 'group_join(text)',
+    'my_groups()', 'group_get(uuid)', 'group_deck(uuid, int)', 'group_swipe(uuid, uuid, text)',
+    'group_unswipe(uuid, uuid)', 'group_matches(uuid)', 'group_votes(uuid, uuid)',
+    'group_live_here(uuid)', 'group_live_leave(uuid)', 'group_live_state(uuid)', 'group_live_skip(uuid, uuid)',
+    'group_suggest()'
+  ] loop
+    execute 'revoke all on function public.' || f || ' from public, anon';
+    execute 'grant execute on function public.' || f || ' to authenticated';
+  end loop;
+end $$;
+revoke all on function public.need_member(uuid) from public, anon;
+revoke all on function public.in_group(uuid) from public, anon;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('44_groups.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  POSTS — A PHOTO AND A FEW WORDS FOR YOUR FRIENDS   (45_posts.sql)
+-- ============================================================
+
+-- afterhours — posts: a photo and a few words for your friends (45)
+--
+-- The + on the yours tab makes a post: a photo (from the phone, into your own
+-- folder of the photos bucket), a few words, and if you like the night it was
+-- about. Your friends see it in their yours tab, newest first; so do you.
+--
+--   posts                 author, text, photo, night, hidden (by the staff)
+--   post_reports          who reported what and why; the staff look at them
+--   post_create(…)        an account (not a guest), at most 20 a day
+--   post_delete(id)       the author, or the staff
+--   posts_feed(before, n) you and your confirmed friends, a page at a time
+--   post_report(id, why)  anyone who can see it; once per person
+--   staff_posts_reported() / staff_post_hide(id, hidden)   the staff
+--
+-- A report is the store requirement for anything people write: there must be a
+-- way to flag it and someone who looks.
+
+create table if not exists public.posts (
+  id          uuid primary key default gen_random_uuid(),
+  author_id   uuid not null references public.profiles on delete cascade,
+  body        text not null default '' check (length(body) <= 500),
+  photo_path  text,
+  event_id    uuid references public.events on delete set null,
+  is_hidden   boolean not null default false,
+  created_at  timestamptz not null default now(),
+  constraint posts_something check (length(btrim(body)) > 0 or photo_path is not null)
+);
+create index if not exists posts_author_idx on public.posts (author_id, created_at desc);
+create index if not exists posts_recent_idx on public.posts (created_at desc);
+
+create table if not exists public.post_reports (
+  post_id     uuid not null references public.posts on delete cascade,
+  reporter_id uuid not null references public.profiles on delete cascade,
+  reason      text check (reason is null or length(reason) <= 300),
+  created_at  timestamptz not null default now(),
+  handled     boolean not null default false,
+  primary key (post_id, reporter_id)
+);
+
+alter table public.posts enable row level security;
+alter table public.post_reports enable row level security;
+revoke all on public.posts, public.post_reports from public, anon, authenticated;
+
+create or replace function public.can_see_post(p_author uuid)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select p_author = auth.uid() or public.is_friend(p_author);
+$$;
+revoke all on function public.can_see_post(uuid) from public, anon;
+
+create or replace function public.post_create(p_body text, p_photo text, p_event uuid)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  r uuid;
+begin
+  perform public.need_account();
+  if length(coalesce(p_body, '')) > 500 then raise exception 'at most 500 characters'; end if;
+  if length(btrim(coalesce(p_body, ''))) = 0 and p_photo is null then raise exception 'a photo or a few words'; end if;
+  if p_photo is not null and p_photo not like auth.uid()::text || '/%' then raise exception 'not your file'; end if;
+  if p_event is not null and not exists (select 1 from public.events where id = p_event) then raise exception 'no such night'; end if;
+  if (select count(*) from public.posts where author_id = auth.uid() and created_at > now() - interval '1 day') >= 20 then
+    raise exception 'twenty today is enough; more tomorrow';
+  end if;
+  insert into public.posts (author_id, body, photo_path, event_id)
+  values (auth.uid(), btrim(coalesce(p_body, '')), p_photo, p_event)
+  returning id into r;
+  return r;
+end;
+$$;
+
+-- Returns the photo path, so the app can remove the file.
+create or replace function public.post_delete(p_id uuid)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  p public.posts%rowtype;
+begin
+  select * into p from public.posts where id = p_id;
+  if p.id is null then return null; end if;
+  if p.author_id <> auth.uid() and not public.is_staff() then raise exception 'not your post' using errcode = '42501'; end if;
+  delete from public.posts where id = p_id;
+  if p.author_id <> auth.uid() then perform public.staff_note('delete', 'post', p_id::text, left(p.body, 80)); end if;
+  return p.photo_path;
+end;
+$$;
+
+create or replace function public.posts_feed(p_before timestamptz default null, p_limit int default 20)
+returns table (id uuid, author_id uuid, handle text, name text, body text, photo_path text,
+               event_slug text, event_title text, created_at timestamptz, mine boolean)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select p.id, p.author_id, pr.handle, pr.display_name, p.body, p.photo_path, e.slug, e.title, p.created_at,
+         p.author_id = auth.uid()
+  from public.posts p
+  join public.profiles pr on pr.id = p.author_id
+  left join public.events e on e.id = p.event_id
+  where auth.uid() is not null
+    and not p.is_hidden
+    and public.can_see_post(p.author_id)
+    and (p_before is null or p.created_at < p_before)
+  order by p.created_at desc
+  limit greatest(1, least(coalesce(p_limit, 20), 50));
+$$;
+
+create or replace function public.post_report(p_id uuid, p_reason text)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  a uuid;
+begin
+  if auth.uid() is null then raise exception 'sign in first'; end if;
+  select author_id into a from public.posts where id = p_id;
+  if a is null or not public.can_see_post(a) then raise exception 'no such post'; end if;
+  if a = auth.uid() then raise exception 'your own post: delete it instead'; end if;
+  insert into public.post_reports (post_id, reporter_id, reason)
+  values (p_id, auth.uid(), left(nullif(btrim(p_reason), ''), 300))
+  on conflict (post_id, reporter_id) do nothing;
+end;
+$$;
+
+create or replace function public.staff_posts_reported()
+returns table (id uuid, body text, photo_path text, author text, reports int, reasons text[], is_hidden boolean, created_at timestamptz)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_staff();
+  return query
+    select p.id, p.body, p.photo_path, coalesce(pr.handle, pr.display_name), count(r.*)::int,
+           array_remove(array_agg(r.reason), null), p.is_hidden, p.created_at
+    from public.post_reports r
+    join public.posts p on p.id = r.post_id
+    join public.profiles pr on pr.id = p.author_id
+    where not r.handled
+    group by p.id, pr.handle, pr.display_name
+    order by count(r.*) desc, max(r.created_at) desc;
+end;
+$$;
+
+-- Hiding settles the reports; showing again (a wrong report) settles them too.
+create or replace function public.staff_post_hide(p_id uuid, p_hidden boolean)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_staff();
+  update public.posts set is_hidden = coalesce(p_hidden, true) where id = p_id;
+  update public.post_reports set handled = true where post_id = p_id;
+  perform public.staff_note(case when coalesce(p_hidden, true) then 'hide' else 'show' end, 'post', p_id::text, null);
+end;
+$$;
+
+-- The panel counts what waits.
+create or replace function public.admin_overview()
+returns json
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_staff();
+  return json_build_object(
+    'people', (select count(*) from public.profiles),
+    'people_week', (select count(*) from public.profiles where created_at > now() - interval '7 days'),
+    'managers', (select count(*) from public.profiles where account_type = 'community_manager'),
+    'djs', (select count(*) from public.profiles where account_type = 'dj'),
+    'nights_ahead', (select count(*) from public.events where is_published and starts_at > now()),
+    'nights_staff', (select count(*) from public.events where source = 'staff'),
+    'venues', (select count(*) from public.venues),
+    'comments_week', (select count(*) from public.comments where created_at > now() - interval '7 days'),
+    'pending', (select count(*) from public.events where review = 'pending'),
+    'reported', (select count(distinct post_id) from public.post_reports where not handled),
+    'feedback_open', case when public.is_admin() then (select count(*) from public.feedback where not handled) end
+  );
+end;
+$$;
+
+do $$
+declare f text;
+begin
+  foreach f in array array[
+    'post_create(text, text, uuid)', 'post_delete(uuid)', 'posts_feed(timestamptz, int)',
+    'post_report(uuid, text)', 'staff_posts_reported()', 'staff_post_hide(uuid, boolean)', 'admin_overview()'
+  ] loop
+    execute 'revoke all on function public.' || f || ' from public, anon';
+    execute 'grant execute on function public.' || f || ' to authenticated';
+  end loop;
+end $$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('45_posts.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A GROUP DECIDES — VOTES, THE PLAN, TICKETS, THE CHAT   (46_group_plans.sql)
+-- ============================================================
+
+-- afterhours — a group decides and makes a plan (46, after 44_groups.sql)
+--
+-- From the matches to one night:
+--
+--   a vote      any member puts two or three nights to a vote for 1, 3, 12 or 24
+--               hours; one vote each, changeable until it closes. It closes when
+--               the time is up or everyone has voted; the night with most votes
+--               wins (a tie goes to the one more members kept in the group, then
+--               the earlier one) and becomes the plan. One vote open at a time.
+--   the plan    one night per group. Any member can set it straight from the
+--               matches too. Who comes is the usual in · maybe · out (32_rsvp.sql:
+--               rsvp_set), shown here for the members; and each says whether they
+--               have a ticket, so the group sees who still needs one.
+--   the chat    a thread for the group. Setting a plan, starting a vote and its
+--               result are written into it as well.
+--
+-- Closed tables again; every function checks membership first (need_member, 44).
+
+alter table public.groups add column if not exists plan_event_id uuid references public.events on delete set null;
+alter table public.groups add column if not exists plan_set_by uuid references public.profiles on delete set null;
+alter table public.groups add column if not exists plan_set_at timestamptz;
+
+create table if not exists public.group_rounds (
+  id           uuid primary key default gen_random_uuid(),
+  group_id     uuid not null references public.groups on delete cascade,
+  started_by   uuid references public.profiles on delete set null,
+  created_at   timestamptz not null default now(),
+  closes_at    timestamptz not null,
+  closed_at    timestamptz,
+  winner_id    uuid references public.events on delete set null
+);
+create index if not exists group_rounds_group_idx on public.group_rounds (group_id, created_at desc);
+create unique index if not exists group_rounds_one_open on public.group_rounds (group_id) where closed_at is null;
+
+create table if not exists public.group_round_options (
+  round_id  uuid not null references public.group_rounds on delete cascade,
+  event_id  uuid not null references public.events on delete cascade,
+  primary key (round_id, event_id)
+);
+
+create table if not exists public.group_ballots (
+  round_id  uuid not null references public.group_rounds on delete cascade,
+  user_id   uuid not null references public.profiles on delete cascade,
+  event_id  uuid not null references public.events on delete cascade,
+  at        timestamptz not null default now(),
+  primary key (round_id, user_id)
+);
+
+create table if not exists public.group_tickets (
+  group_id  uuid not null references public.groups on delete cascade,
+  event_id  uuid not null references public.events on delete cascade,
+  user_id   uuid not null references public.profiles on delete cascade,
+  primary key (group_id, event_id, user_id)
+);
+
+create table if not exists public.group_messages (
+  id          bigserial primary key,
+  group_id    uuid not null references public.groups on delete cascade,
+  user_id     uuid references public.profiles on delete set null,
+  kind        text not null default 'say' check (kind in ('say', 'plan', 'round', 'won')),
+  body        text not null check (length(body) between 1 and 1000),
+  event_id    uuid references public.events on delete set null,
+  created_at  timestamptz not null default now()
+);
+create index if not exists group_messages_group_idx on public.group_messages (group_id, id);
+
+alter table public.group_rounds enable row level security;
+alter table public.group_round_options enable row level security;
+alter table public.group_ballots enable row level security;
+alter table public.group_tickets enable row level security;
+alter table public.group_messages enable row level security;
+revoke all on public.group_rounds, public.group_round_options, public.group_ballots,
+              public.group_tickets, public.group_messages from public, anon, authenticated;
+
+-- ------------------------------------------------------------- helpers
+
+create or replace function public.group_note(p_group uuid, p_kind text, p_body text, p_event uuid)
+returns void
+language sql
+security definer
+set search_path = public
+as $$
+  insert into public.group_messages (group_id, user_id, kind, body, event_id)
+  values (p_group, auth.uid(), p_kind, left(p_body, 1000), p_event);
+$$;
+revoke all on function public.group_note(uuid, text, text, uuid) from public, anon, authenticated;
+
+-- A night a group can still go to.
+create or replace function public.night_ahead(p_event uuid)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (select 1 from public.events e where e.id = p_event and e.is_published
+                 and (e.starts_at is null or e.starts_at > now() - interval '6 hours'));
+$$;
+
+-- Closes a round whose time is up or that everyone voted in; the winner becomes the plan.
+create or replace function public.round_settle(p_round uuid, p_force boolean default false)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  r public.group_rounds%rowtype;
+  members int;
+  voted int;
+  w uuid;
+  title text;
+begin
+  select * into r from public.group_rounds where id = p_round for update;
+  if r.id is null or r.closed_at is not null then return r.winner_id; end if;
+  select count(*) into members from public.group_members where group_id = r.group_id;
+  select count(*) into voted from public.group_ballots b
+    join public.group_members m on m.group_id = r.group_id and m.user_id = b.user_id where b.round_id = r.id;
+  if not p_force and r.closes_at > now() and voted < members then return null; end if;
+  select o.event_id into w
+  from public.group_round_options o
+  join public.events e on e.id = o.event_id
+  where o.round_id = r.id
+  order by (select count(*) from public.group_ballots b where b.round_id = r.id and b.event_id = o.event_id) desc,
+           (select count(*) from public.group_swipes s where s.group_id = r.group_id and s.event_id = o.event_id and s.direction = 'right') desc,
+           e.starts_at nulls last, e.id
+  limit 1;
+  update public.group_rounds set closed_at = now(), winner_id = w where id = r.id;
+  if w is not null and voted > 0 then
+    update public.groups set plan_event_id = w, plan_set_by = r.started_by, plan_set_at = now() where id = r.group_id;
+    select e.title into title from public.events e where e.id = w;
+    insert into public.group_messages (group_id, user_id, kind, body, event_id) values (r.group_id, null, 'won', title, w);
+  end if;
+  return w;
+end;
+$$;
+revoke all on function public.round_settle(uuid, boolean) from public, anon, authenticated;
+
+-- --------------------------------------------------------------- votes
+
+create or replace function public.round_start(p_group uuid, p_events uuid[], p_hours int)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  open_round uuid;
+  r uuid;
+  e uuid;
+  picked uuid[] := array(select distinct x from unnest(coalesce(p_events, '{}')) x);
+begin
+  perform public.need_member(p_group);
+  select id into open_round from public.group_rounds where group_id = p_group and closed_at is null;
+  if open_round is not null then perform public.round_settle(open_round); end if;
+  if exists (select 1 from public.group_rounds where group_id = p_group and closed_at is null) then
+    raise exception 'a vote is already open';
+  end if;
+  if cardinality(picked) not between 2 and 3 then raise exception 'two or three nights'; end if;
+  if coalesce(p_hours, 0) not in (1, 3, 12, 24) then raise exception '1, 3, 12 or 24 hours'; end if;
+  foreach e in array picked loop
+    if not public.night_ahead(e) then raise exception 'one of those nights is over or gone'; end if;
+  end loop;
+  insert into public.group_rounds (group_id, started_by, closes_at)
+  values (p_group, auth.uid(), now() + make_interval(hours => p_hours)) returning id into r;
+  insert into public.group_round_options (round_id, event_id) select r, x from unnest(picked) x;
+  perform public.group_note(p_group, 'round', (select string_agg(title, ' · ') from public.events where id = any(picked)), null);
+  return r;
+end;
+$$;
+
+create or replace function public.round_vote(p_round uuid, p_event uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  r public.group_rounds%rowtype;
+begin
+  select * into r from public.group_rounds where id = p_round;
+  if r.id is null then raise exception 'no such vote'; end if;
+  perform public.need_member(r.group_id);
+  perform public.round_settle(r.id);
+  if (select closed_at from public.group_rounds where id = r.id) is not null then raise exception 'this vote is closed'; end if;
+  if not exists (select 1 from public.group_round_options where round_id = r.id and event_id = p_event) then
+    raise exception 'not one of the choices';
+  end if;
+  insert into public.group_ballots (round_id, user_id, event_id) values (r.id, auth.uid(), p_event)
+  on conflict (round_id, user_id) do update set event_id = excluded.event_id, at = now();
+  perform public.round_settle(r.id);
+end;
+$$;
+
+-- Whoever started it, or the owner, ends it early (the votes so far decide).
+create or replace function public.round_close(p_round uuid)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  r public.group_rounds%rowtype;
+begin
+  select * into r from public.group_rounds where id = p_round;
+  if r.id is null then raise exception 'no such vote'; end if;
+  perform public.need_member(r.group_id);
+  if r.started_by is distinct from auth.uid()
+     and not exists (select 1 from public.group_members where group_id = r.group_id and user_id = auth.uid() and role = 'owner') then
+    raise exception 'whoever started it, or the owner' using errcode = '42501';
+  end if;
+  return public.round_settle(r.id, true);
+end;
+$$;
+
+-- ---------------------------------------------------------------- plan
+
+create or replace function public.plan_set(p_group uuid, p_event uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_group);
+  if p_event is null then
+    update public.groups set plan_event_id = null, plan_set_by = auth.uid(), plan_set_at = now() where id = p_group;
+    return;
+  end if;
+  if not public.night_ahead(p_event) then raise exception 'that night is over or gone'; end if;
+  update public.groups set plan_event_id = p_event, plan_set_by = auth.uid(), plan_set_at = now() where id = p_group;
+  perform public.group_note(p_group, 'plan', (select title from public.events where id = p_event), p_event);
+end;
+$$;
+
+create or replace function public.plan_ticket(p_group uuid, p_got boolean)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  e uuid;
+begin
+  perform public.need_member(p_group);
+  select plan_event_id into e from public.groups where id = p_group;
+  if e is null then raise exception 'no plan yet'; end if;
+  if p_got then
+    insert into public.group_tickets (group_id, event_id, user_id) values (p_group, e, auth.uid()) on conflict do nothing;
+  else
+    delete from public.group_tickets where group_id = p_group and event_id = e and user_id = auth.uid();
+  end if;
+end;
+$$;
+
+-- Everything the plan tab shows, in one read. Settles a vote whose time is up.
+create or replace function public.group_plan(p_group uuid)
+returns json
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  g public.groups%rowtype;
+  r public.group_rounds%rowtype;
+  open_id uuid;
+begin
+  perform public.need_member(p_group);
+  select id into open_id from public.group_rounds where group_id = p_group and closed_at is null;
+  if open_id is not null then perform public.round_settle(open_id); end if;
+  select * into g from public.groups where id = p_group;
+  select * into r from public.group_rounds where group_id = p_group and closed_at is null;
+  return json_build_object(
+    'members', (select count(*) from public.group_members where group_id = p_group),
+    'round', case when r.id is null then null else json_build_object(
+      'id', r.id, 'closes_at', r.closes_at,
+      'started_by', (select coalesce(p.display_name, p.handle) from public.profiles p where p.id = r.started_by),
+      'mine', r.started_by = auth.uid(),
+      'voted', (select count(*) from public.group_ballots where round_id = r.id),
+      'my_vote', (select event_id from public.group_ballots where round_id = r.id and user_id = auth.uid()),
+      'options', (select json_agg(json_build_object(
+          'id', e.id, 'slug', e.slug, 'title', e.title, 'starts_at', e.starts_at, 'venue_name', v.name, 'image_url', e.image_url,
+          'votes', (select count(*) from public.group_ballots b where b.round_id = r.id and b.event_id = e.id),
+          'voters', (select coalesce(json_agg(coalesce(p.display_name, p.handle)), '[]'::json) from public.group_ballots b
+                     join public.profiles p on p.id = b.user_id where b.round_id = r.id and b.event_id = e.id)) order by e.starts_at)
+        from public.group_round_options o join public.events e on e.id = o.event_id left join public.venues v on v.id = e.venue_id
+        where o.round_id = r.id)) end,
+    'plan', case when g.plan_event_id is null or not public.night_ahead(g.plan_event_id) then null else (
+      select json_build_object(
+        'id', e.id, 'slug', e.slug, 'title', e.title, 'starts_at', e.starts_at, 'venue_name', v.name, 'city_name', c.name,
+        'image_url', e.image_url, 'ticket_url', e.ticket_url,
+        'set_by', (select coalesce(p.display_name, p.handle) from public.profiles p where p.id = g.plan_set_by),
+        'people', (select json_agg(json_build_object(
+            'id', p.id, 'name', coalesce(p.display_name, p.handle),
+            'answer', (select a.answer from public.rsvps a where a.user_id = p.id and a.event_id = e.id),
+            'ticket', exists (select 1 from public.group_tickets t where t.group_id = p_group and t.event_id = e.id and t.user_id = p.id))
+            order by m.joined_at)
+          from public.group_members m join public.profiles p on p.id = m.user_id where m.group_id = p_group))
+      from public.events e join public.cities c on c.id = e.city_id left join public.venues v on v.id = e.venue_id
+      where e.id = g.plan_event_id) end
+  );
+end;
+$$;
+
+-- ---------------------------------------------------------------- chat
+
+create or replace function public.group_say(p_group uuid, p_body text)
+returns bigint
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  r bigint;
+begin
+  perform public.need_member(p_group);
+  if length(btrim(coalesce(p_body, ''))) not between 1 and 1000 then raise exception '1 to 1000 characters'; end if;
+  if (select count(*) from public.group_messages where user_id = auth.uid() and created_at > now() - interval '1 minute') >= 20 then
+    raise exception 'slow down a little';
+  end if;
+  insert into public.group_messages (group_id, user_id, body) values (p_group, auth.uid(), btrim(p_body)) returning id into r;
+  return r;
+end;
+$$;
+
+create or replace function public.group_unsay(p_id bigint)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  delete from public.group_messages where id = p_id and user_id = auth.uid() and kind = 'say';
+end;
+$$;
+
+-- The thread after message p_after (0: the last 80), oldest first.
+create or replace function public.group_thread(p_group uuid, p_after bigint default 0)
+returns table (id bigint, user_id uuid, name text, kind text, body text, event_slug text, created_at timestamptz, mine boolean)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_group);
+  return query
+    select * from (
+      select m.id, m.user_id, coalesce(p.display_name, p.handle), m.kind, m.body, e.slug, m.created_at, m.user_id = auth.uid()
+      from public.group_messages m
+      left join public.profiles p on p.id = m.user_id
+      left join public.events e on e.id = m.event_id
+      where m.group_id = p_group and m.id > coalesce(p_after, 0)
+      order by m.id desc
+      limit 80) x
+    order by x.id;
+end;
+$$;
+
+do $$
+declare f text;
+begin
+  foreach f in array array[
+    'night_ahead(uuid)', 'round_start(uuid, uuid[], int)', 'round_vote(uuid, uuid)', 'round_close(uuid)',
+    'plan_set(uuid, uuid)', 'plan_ticket(uuid, boolean)', 'group_plan(uuid)',
+    'group_say(uuid, text)', 'group_unsay(bigint)', 'group_thread(uuid, bigint)'
+  ] loop
+    execute 'revoke all on function public.' || f || ' from public, anon';
+    execute 'grant execute on function public.' || f || ' to authenticated';
+  end loop;
+end $$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('46_group_plans.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  THE NIGHT AND AFTER — GROUP NIGHTS, THE ALBUM, NUMBERS, ALSO THERE   (47_group_nights.sql)
+-- ============================================================
+
+-- afterhours — the night and after, for a group (47, after 44 and 46)
+--
+--   group nights   a night at least two members checked in to (19_checkins.sql).
+--                  Nothing to press: checking in as usual is enough. It is the
+--                  card of the group: who was there, their card numbers, and "all of
+--                  us" when everyone was.
+--   the shelf      those nights, newest first: the collection of the group.
+--   the album      photos members add to one of those nights (or to the plan),
+--                  each into their own folder of the photos bucket. Members see
+--                  them; the one who added it, or the owner, takes it out.
+--   numbers        nights this year, the room you go to most, who comes most,
+--                  matches and votes; and the vibe: the kinds you say yes to most,
+--                  the hour your nights start, your room.
+--   also there     a group may let itself be seen (visible, off by default).
+--                  When such a group has the same plan as yours and one of your
+--                  friends is in it, your plan says so: name, emoji, which friends.
+
+alter table public.groups add column if not exists visible boolean not null default false;
+
+create table if not exists public.group_photos (
+  id          uuid primary key default gen_random_uuid(),
+  group_id    uuid not null references public.groups on delete cascade,
+  event_id    uuid not null references public.events on delete cascade,
+  user_id     uuid references public.profiles on delete set null,
+  path        text not null,
+  created_at  timestamptz not null default now()
+);
+create index if not exists group_photos_idx on public.group_photos (group_id, event_id, created_at);
+alter table public.group_photos enable row level security;
+revoke all on public.group_photos from public, anon, authenticated;
+
+-- ---------------------------------------------------------- group nights
+
+-- No membership check here: callers check.
+create or replace function public.group_night_rows(p_group uuid)
+returns table (event_id uuid, people uuid[], cards bigint[], first_at timestamptz)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select c.event_id, array_agg(c.user_id order by c.checked_at), array_agg(c.card_no order by c.checked_at), min(c.checked_at)
+  from public.checkins c
+  join public.group_members m on m.group_id = p_group and m.user_id = c.user_id
+  group by c.event_id
+  having count(*) >= 2;
+$$;
+revoke all on function public.group_night_rows(uuid) from public, anon, authenticated;
+
+create or replace function public.group_nights(p_group uuid)
+returns table (id uuid, slug text, title text, starts_at timestamptz, venue_name text, city_name text, image_url text,
+               people json, all_of_us boolean, photos int, cover text)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  n int;
+begin
+  perform public.need_member(p_group);
+  select count(*) into n from public.group_members where group_id = p_group;
+  return query
+    select e.id, e.slug, e.title, e.starts_at, v.name, c.name, e.image_url,
+           (select json_agg(json_build_object('id', p.id, 'name', coalesce(p.display_name, p.handle), 'card', r.cards[i]) order by i)
+              from generate_subscripts(r.people, 1) i join public.profiles p on p.id = r.people[i]),
+           cardinality(r.people) >= n,
+           (select count(*)::int from public.group_photos ph where ph.group_id = p_group and ph.event_id = e.id),
+           (select ph.path from public.group_photos ph where ph.group_id = p_group and ph.event_id = e.id order by ph.created_at limit 1)
+    from public.group_night_rows(p_group) r
+    join public.events e on e.id = r.event_id
+    join public.cities c on c.id = e.city_id
+    left join public.venues v on v.id = e.venue_id
+    order by coalesce(e.starts_at, r.first_at) desc;
+end;
+$$;
+
+-- ------------------------------------------------------------ the album
+
+-- A night a group may keep photos of: one of its nights, or its plan.
+create or replace function public.group_album_ok(p_group uuid, p_event uuid)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (select 1 from public.group_night_rows(p_group) r where r.event_id = p_event)
+      or exists (select 1 from public.groups g where g.id = p_group and g.plan_event_id = p_event);
+$$;
+revoke all on function public.group_album_ok(uuid, uuid) from public, anon, authenticated;
+
+create or replace function public.group_photo_add(p_group uuid, p_event uuid, p_path text)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  r uuid;
+begin
+  perform public.need_member(p_group);
+  if p_path is null or p_path not like auth.uid()::text || '/%' then raise exception 'not your file'; end if;
+  if not public.group_album_ok(p_group, p_event) then raise exception 'only nights the group went to (or its plan)'; end if;
+  if (select count(*) from public.group_photos where group_id = p_group and event_id = p_event) >= 200 then
+    raise exception 'this album is full (200)';
+  end if;
+  insert into public.group_photos (group_id, event_id, user_id, path) values (p_group, p_event, auth.uid(), p_path) returning id into r;
+  return r;
+end;
+$$;
+
+-- Returns the file path, so the app can remove the file when the caller added it.
+create or replace function public.group_photo_remove(p_id uuid)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  ph public.group_photos%rowtype;
+begin
+  select * into ph from public.group_photos where id = p_id;
+  if ph.id is null then return null; end if;
+  perform public.need_member(ph.group_id);
+  if ph.user_id is distinct from auth.uid()
+     and not exists (select 1 from public.group_members where group_id = ph.group_id and user_id = auth.uid() and role = 'owner') then
+    raise exception 'whoever added it, or the owner' using errcode = '42501';
+  end if;
+  delete from public.group_photos where id = p_id;
+  return ph.path;
+end;
+$$;
+
+create or replace function public.group_album(p_group uuid, p_event uuid)
+returns table (id uuid, path text, user_id uuid, name text, created_at timestamptz, mine boolean)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_group);
+  return query
+    select ph.id, ph.path, ph.user_id, coalesce(p.display_name, p.handle), ph.created_at, ph.user_id = auth.uid()
+    from public.group_photos ph left join public.profiles p on p.id = ph.user_id
+    where ph.group_id = p_group and ph.event_id = p_event
+    order by ph.created_at;
+end;
+$$;
+
+-- -------------------------------------------------------------- numbers
+
+create or replace function public.group_stats(p_group uuid)
+returns json
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  members uuid[];
+begin
+  perform public.need_member(p_group);
+  members := array(select user_id from public.group_members where group_id = p_group);
+  return json_build_object(
+    'nights', (select count(*) from public.group_night_rows(p_group)),
+    'nights_year', (select count(*) from public.group_night_rows(p_group) r join public.events e on e.id = r.event_id
+                    where coalesce(e.starts_at, r.first_at) >= date_trunc('year', now())),
+    'room', (select v.name from public.group_night_rows(p_group) r join public.events e on e.id = r.event_id
+             join public.venues v on v.id = e.venue_id group by v.name order by count(*) desc, v.name limit 1),
+    'regular', (select json_build_object('name', coalesce(p.display_name, p.handle), 'n', count(*))
+                from public.group_night_rows(p_group) r cross join lateral unnest(r.people) u(uid) join public.profiles p on p.id = u.uid
+                group by p.id, p.display_name, p.handle order by count(*) desc, p.display_name limit 1),
+    'matches', (select count(*) from (
+                  select s.event_id from public.group_swipes s where s.group_id = p_group and s.direction = 'right'
+                    and s.user_id = any(members)
+                  group by s.event_id having count(*) = cardinality(members)) x),
+    'votes', (select count(*) from public.group_rounds where group_id = p_group),
+    'photos', (select count(*) from public.group_photos where group_id = p_group),
+    -- the vibe: from every yes said in the group and every night gone to together
+    'kinds', (select coalesce(json_agg(k.name), '[]'::json) from (
+                select t.name from (
+                  select s.event_id from public.group_swipes s where s.group_id = p_group and s.direction = 'right'
+                  union all select r.event_id from public.group_night_rows(p_group) r) x
+                join public.events e on e.id = x.event_id join public.event_types t on t.id = e.type_id
+                group by t.name order by count(*) desc, t.name limit 2) k),
+    -- averaged from 18:00, so 23:00 and 01:00 make midnight, not noon
+    'hour', (select ((round(avg(((extract(hour from e.starts_at) + 6)::int % 24)))::int + 18) % 24)
+             from (select s.event_id from public.group_swipes s where s.group_id = p_group and s.direction = 'right'
+                   union all select r.event_id from public.group_night_rows(p_group) r) x
+             join public.events e on e.id = x.event_id where e.starts_at is not null)
+  );
+end;
+$$;
+
+-- ------------------------------------------------------------ also there
+
+create or replace function public.group_set_visible(p_group uuid, p_visible boolean)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_group);
+  if not exists (select 1 from public.group_members where group_id = p_group and user_id = auth.uid() and role = 'owner') then
+    raise exception 'only the owner' using errcode = '42501';
+  end if;
+  update public.groups set visible = coalesce(p_visible, false) where id = p_group;
+end;
+$$;
+
+-- Visible groups with the same plan as this one, that have a friend of yours in them.
+create or replace function public.group_also_there(p_group uuid)
+returns table (id uuid, name text, emoji text, color text, friends text[])
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  e uuid;
+begin
+  perform public.need_member(p_group);
+  select g0.plan_event_id into e from public.groups g0 where g0.id = p_group;
+  if e is null then return; end if;
+  return query
+    select g.id, g.name, g.emoji, g.color,
+           array(select coalesce(p.display_name, p.handle) from public.group_members m join public.profiles p on p.id = m.user_id
+                 where m.group_id = g.id and public.is_friend(m.user_id) order by p.display_name)
+    from public.groups g
+    where g.id <> p_group and g.visible and g.plan_event_id = e
+      and not public.in_group(g.id)
+      and exists (select 1 from public.group_members m where m.group_id = g.id and public.is_friend(m.user_id))
+    order by g.name
+    limit 10;
+end;
+$$;
+
+-- group_get now says whether the group can be seen.
+create or replace function public.group_get(p_id uuid)
+returns json
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_id);
+  return (
+    select json_build_object(
+      'id', g.id, 'name', g.name, 'emoji', g.emoji, 'color', g.color, 'cover_path', g.cover_path,
+      'kind', g.kind, 'city_slug', g.city_slug, 'date_from', g.date_from, 'date_to', g.date_to,
+      'archived', g.kind = 'once' and g.date_to < current_date, 'visible', g.visible,
+      'me', auth.uid(),
+      'members', (select json_agg(json_build_object('id', p.id, 'handle', p.handle, 'name', p.display_name, 'role', m.role) order by m.joined_at)
+                  from public.group_members m join public.profiles p on p.id = m.user_id where m.group_id = g.id))
+    from public.groups g where g.id = p_id);
+end;
+$$;
+
+do $$
+declare f text;
+begin
+  foreach f in array array[
+    'group_nights(uuid)', 'group_photo_add(uuid, uuid, text)', 'group_photo_remove(uuid)', 'group_album(uuid, uuid)',
+    'group_stats(uuid)', 'group_set_visible(uuid, boolean)', 'group_also_there(uuid)', 'group_get(uuid)'
+  ] loop
+    execute 'revoke all on function public.' || f || ' from public, anon';
+    execute 'grant execute on function public.' || f || ' to authenticated';
+  end loop;
+end $$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('47_group_nights.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  GROUPS AND POSTS SAY SO — PUSH NOTIFICATIONS   (48_group_push.sql)
+-- ============================================================
+
+-- afterhours — groups and posts say so: push notifications (48, after 26, 34, 44 to 47)
+--
+-- The same path as every other push (26_push.sql): a trigger writes a row to
+-- push_outbox, the outbox sends it. Two new switches in the settings:
+--
+--   notify_groups   group_added    someone put you in a group
+--                   group_joined   someone came in with the code
+--                   group_match    a night everyone in the group said yes to
+--                   group_round    a vote started
+--                   group_won      a vote is decided
+--                   group_plan     a member set the plan
+--                   group_message  a line in the chat; at most one per group and
+--                                  ten minutes, so a lively chat is one buzz
+--                   group_live     someone opened live and nobody else is there;
+--                                  at once, also in quiet hours (it is now or never),
+--                                  at most once per group and half hour
+--                   group_ticket   the plan is tomorrow, you said in or maybe and
+--                                  have no ticket (the hourly job below)
+--   notify_posts    post           a friend posted (counts against the ten a day)
+--
+-- Nobody hears about what they did themselves. Every trigger swallows its own
+-- errors: a push that fails never stops the thing that caused it.
+--
+-- push_wants, push_enqueue and push_text are the ones from 26 with the new kinds
+-- added; nothing else in them changes.
+
+alter table public.profile_settings add column if not exists notify_groups boolean not null default true;
+alter table public.profile_settings add column if not exists notify_posts boolean not null default true;
+
+alter table public.push_outbox drop constraint if exists push_outbox_kind_check;
+alter table public.push_outbox add constraint push_outbox_kind_check check (kind in (
+  'friend_request', 'friend_accepted', 'match', 'friend_live',
+  'night_soon', 'room_open', 'room_closing', 'room_message', 'reply',
+  'digest', 'dj_live', 'wave', 'spark', 'spark_in',
+  'group_added', 'group_joined', 'group_match', 'group_round', 'group_won', 'group_plan',
+  'group_message', 'group_live', 'group_ticket', 'post'));
+
+create or replace function public.push_wants(p_user uuid, p_kind text)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select coalesce((
+    select case
+             when p_kind = 'friend_request'  then s.notify_requests
+             when p_kind = 'friend_accepted' then s.notify_accepts
+             when p_kind = 'match'           then s.notify_matches
+             when p_kind = 'friend_live'     then s.notify_live
+             when p_kind = 'night_soon'      then s.notify_nights
+             when p_kind in ('room_open', 'room_closing', 'room_message') then s.notify_rooms
+             when p_kind = 'reply'           then s.notify_replies
+             when p_kind = 'digest'          then s.notify_digest
+             when p_kind = 'dj_live'         then s.notify_djs
+             when p_kind = 'wave'            then s.notify_waves
+             when p_kind in ('spark', 'spark_in') then s.notify_sparks
+             when p_kind like 'group\_%' then s.notify_groups
+             when p_kind = 'post'            then s.notify_posts
+           end
+    from public.profile_settings s where s.user_id = p_user), true);
+$$;
+
+
+create or replace function public.push_enqueue(p_user uuid, p_kind text, p_key text, p_data jsonb)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  zone  text;
+  here  timestamp;
+  due   timestamptz := now();
+begin
+  if not public.push_wants(p_user, p_kind) then
+    return;
+  end if;
+  -- the daily cap for the chattier kinds
+  if p_kind in ('room_message', 'digest', 'dj_live', 'wave', 'post')
+     and (select count(*) from public.push_outbox o
+          where o.user_id = p_user and o.created_at > now() - interval '1 day'
+            and o.kind in ('room_message', 'digest', 'dj_live', 'wave', 'post')) >= 10 then
+    return;
+  end if;
+  -- quiet hours: wait for 09:00 on the phone
+  if p_kind not in ('friend_live', 'room_open', 'room_closing', 'room_message', 'night_soon', 'dj_live', 'group_live') then
+    zone := public.push_zone(p_user);
+    here := now() at time zone zone;
+    if extract(hour from here) < 9 then
+      due := (date_trunc('day', here) + interval '9 hours') at time zone zone;
+    end if;
+  end if;
+  insert into public.push_outbox (user_id, kind, key, data, send_after)
+  values (p_user, p_kind, p_key, p_data, due)
+  on conflict (key) do nothing;
+end;
+$$;
+
+
+-- ------------------------------------------------------------ the words
+
+create or replace function public.push_text(p_kind text, p_lang text, p_data jsonb)
+returns table (title text, body text)
+language plpgsql
+immutable
+as $$
+declare
+  pair record;
+begin
+  select x.title, x.body into title, body
+  from (values
+    ('friend_request',  'en', 'friend request',                '{name} wants to add you'),
+    ('friend_request',  'de', 'freundschaftsanfrage',          '{name} möchte dich hinzufügen'),
+    ('friend_request',  'tr', 'arkadaşlık isteği',             '{name} seni eklemek istiyor'),
+    ('friend_accepted', 'en', 'you are friends now',           '{name} accepted your request'),
+    ('friend_accepted', 'de', 'ihr seid jetzt freunde',        '{name} hat deine anfrage angenommen'),
+    ('friend_accepted', 'tr', 'artık arkadaşsınız',            '{name} isteğini kabul etti'),
+    ('match',           'en', '{name} is going too',           '{title}'),
+    ('match',           'de', '{name} geht auch hin',          '{title}'),
+    ('match',           'tr', '{name} de gidiyor',             '{title}'),
+    ('friend_live',     'en', '{name} is out now',             '{title}'),
+    ('friend_live',     'de', '{name} ist gerade unterwegs',   '{title}'),
+    ('friend_live',     'tr', '{name} şu an dışarıda',         '{title}'),
+    ('night_soon',      'en', 'tonight · {time}',              '{title}'),
+    ('night_soon',      'de', 'heute nacht · {time}',          '{title}'),
+    ('night_soon',      'tr', 'bu gece · {time}',              '{title}'),
+    ('room_open',       'en', 'your room is open',             '{title} · 48 hours to write'),
+    ('room_open',       'de', 'dein raum ist offen',           '{title} · 48 stunden zum schreiben'),
+    ('room_open',       'tr', 'odan açık',                     '{title} · 48 saat yazabilirsin'),
+    ('room_closing',    'en', 'your room closes soon',         '{title} · the last two hours'),
+    ('room_closing',    'de', 'dein raum schließt bald',       '{title} · die letzten zwei stunden'),
+    ('room_closing',    'tr', 'odan birazdan kapanıyor',       '{title} · son iki saat'),
+    ('room_message',    'en', '{name} in {title}',             '{text}'),
+    ('room_message',    'de', '{name} in {title}',             '{text}'),
+    ('room_message',    'tr', '{title} · {name}',              '{text}'),
+    ('reply',           'en', '{name} replied',                '{text}'),
+    ('reply',           'de', '{name} hat geantwortet',        '{text}'),
+    ('reply',           'tr', '{name} cevap verdi',            '{text}'),
+    ('digest',          'en', 'this weekend in {city}',        '{n} nights · {friends} kept by friends'),
+    ('digest',          'de', 'dieses wochenende in {city}',   '{n} nächte · {friends} von freunden behalten'),
+    ('digest',          'tr', 'bu hafta sonu {city}',          '{n} gece · {friends} tanesini arkadaşların sakladı'),
+    ('dj_live',         'en', '{name} plays soon',             '{where} · {time}'),
+    ('dj_live',         'de', '{name} legt bald auf',          '{where} · {time}'),
+    ('dj_live',         'tr', '{name} birazdan çalıyor',       '{where} · {time}'),
+    ('wave',            'en', '2nd wave',                      'a friend of {via} kept {title}'),
+    ('wave',            'de', '2. welle',                      'ein freund von {via} hat {title} behalten'),
+    ('wave',            'tr', '2. dalga',                      '{via} üzerinden biri {title} gecesini sakladı'),
+    ('spark',           'en', '{name} is starting something',  '{title} · {when}'),
+    ('spark',           'de', '{name} startet etwas',          '{title} · {when}'),
+    ('spark',           'tr', '{name} bir şey başlatıyor',     '{title} · {when}'),
+    ('spark_in',        'en', '{name} is in',                  '{title}'),
+    ('spark_in',        'de', '{name} ist dabei',              '{title}'),
+    ('spark_in',        'tr', '{name} geliyor',                '{title}'),
+    ('group_added',     'en', 'you are in {group}',            '{name} added you · swipe nights together'),
+    ('group_added',     'de', 'du bist in {group}',            '{name} hat dich hinzugefügt · wischt zusammen'),
+    ('group_added',     'tr', '{group} grubundasın',           '{name} seni ekledi · birlikte gece seçin'),
+    ('group_joined',    'en', '{group}',                       '{name} joined'),
+    ('group_joined',    'de', '{group}',                       '{name} ist dazugekommen'),
+    ('group_joined',    'tr', '{group}',                       '{name} gruba katıldı'),
+    ('group_match',     'en', '{group} · everyone is in',      '{title}'),
+    ('group_match',     'de', '{group} · alle sind dabei',     '{title}'),
+    ('group_match',     'tr', '{group} · herkes var',          '{title}'),
+    ('group_round',     'en', '{group} · vote',                '{name} put {title} to a vote'),
+    ('group_round',     'de', '{group} · abstimmung',          '{name} lässt abstimmen: {title}'),
+    ('group_round',     'tr', '{group} · oylama',              '{name} oylamaya sundu: {title}'),
+    ('group_won',       'en', '{group} · the vote is in',      '{title}'),
+    ('group_won',       'de', '{group} · abgestimmt',          '{title}'),
+    ('group_won',       'tr', '{group} · oylama bitti',        '{title}'),
+    ('group_plan',      'en', '{group} · the plan',            '{name}: {title}'),
+    ('group_plan',      'de', '{group} · der plan',            '{name}: {title}'),
+    ('group_plan',      'tr', '{group} · plan',                '{name}: {title}'),
+    ('group_message',   'en', '{group} · {name}',              '{text}'),
+    ('group_message',   'de', '{group} · {name}',              '{text}'),
+    ('group_message',   'tr', '{group} · {name}',              '{text}'),
+    ('group_live',      'en', '{group} · live now',            '{name} wants to swipe together, now'),
+    ('group_live',      'de', '{group} · gerade live',         '{name} will jetzt zusammen wischen'),
+    ('group_live',      'tr', '{group} · şimdi canlı',         '{name} şimdi birlikte kaydırmak istiyor'),
+    ('group_ticket',    'en', '{group} · tomorrow',            'you are in for {title} but have no ticket yet'),
+    ('group_ticket',    'de', '{group} · morgen',              'du bist bei {title} dabei, hast aber noch kein ticket'),
+    ('group_ticket',    'tr', '{group} · yarın',               '{title} için geliyorsun ama henüz biletin yok'),
+    ('post',            'en', '{name} posted',                 '{text}'),
+    ('post',            'de', '{name} hat gepostet',           '{text}'),
+    ('post',            'tr', '{name} paylaştı',               '{text}')
+  ) as x(kind, lang, title, body)
+  where x.kind = p_kind and x.lang = coalesce(nullif(p_lang, ''), 'en');
+
+  for pair in select * from jsonb_each_text(coalesce(p_data, '{}')) loop
+    title := replace(title, '{' || pair.key || '}', coalesce(pair.value, ''));
+    body  := replace(body,  '{' || pair.key || '}', coalesce(pair.value, ''));
+  end loop;
+  return next;
+end;
+$$;
+
+
+-- ------------------------------------------------------------ helpers
+
+-- Everyone in the group but p_skip, with the words every group push carries.
+create or replace function public.push_group(p_group uuid, p_skip uuid, p_kind text, p_key text, p_data jsonb)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  m record;
+  g public.groups%rowtype;
+begin
+  select * into g from public.groups where id = p_group;
+  if g.id is null then return; end if;
+  for m in select user_id from public.group_members where group_id = p_group and user_id is distinct from p_skip loop
+    perform public.push_enqueue(m.user_id, p_kind, replace(p_key, '{user}', m.user_id::text),
+      jsonb_build_object('group', g.emoji || ' ' || g.name, 'url', '/groups/' || g.id) || coalesce(p_data, '{}'));
+  end loop;
+end;
+$$;
+revoke execute on function public.push_group(uuid, uuid, text, text, jsonb) from public, anon, authenticated;
+
+-- ------------------------------------------------------------ members
+
+-- Added by someone else: the new one hears it. Came in with a code (they added
+-- themselves): the others hear it. The maker of a new group hears nothing.
+create or replace function public.push_on_group_member()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  g public.groups%rowtype;
+begin
+  select * into g from public.groups where id = new.group_id;
+  if new.role = 'owner' then return new; end if;
+  if auth.uid() is distinct from new.user_id then
+    perform public.push_enqueue(new.user_id, 'group_added', format('group_added:%s:%s', g.id, new.user_id),
+      jsonb_build_object('group', g.emoji || ' ' || g.name, 'name', public.push_name(coalesce(auth.uid(), g.created_by)), 'url', '/groups/' || g.id));
+  else
+    perform public.push_group(g.id, new.user_id, 'group_joined', format('group_joined:%s:%s:{user}', g.id, new.user_id),
+      jsonb_build_object('name', public.push_name(new.user_id)));
+  end if;
+  return new;
+exception when others then
+  raise warning 'group push skipped: %', sqlerrm;
+  return new;
+end;
+$$;
+drop trigger if exists push_group_member on public.group_members;
+create trigger push_group_member after insert on public.group_members
+  for each row execute function public.push_on_group_member();
+
+-- ------------------------------------------------------------ a match
+
+-- The last yes, the one that makes it everyone: all members hear it, once per night.
+create or replace function public.push_on_group_swipe()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  n int;
+  y int;
+begin
+  if new.direction <> 'right' then return new; end if;
+  select count(*) into n from public.group_members where group_id = new.group_id;
+  if n < 2 then return new; end if;
+  select count(*) into y from public.group_swipes s
+    join public.group_members m on m.group_id = s.group_id and m.user_id = s.user_id
+    where s.group_id = new.group_id and s.event_id = new.event_id and s.direction = 'right';
+  if y = n then
+    perform public.push_group(new.group_id, null, 'group_match', format('group_match:%s:%s:{user}', new.group_id, new.event_id),
+      jsonb_build_object('title', (select title from public.events where id = new.event_id)));
+  end if;
+  return new;
+exception when others then
+  raise warning 'group push skipped: %', sqlerrm;
+  return new;
+end;
+$$;
+drop trigger if exists push_group_swipe on public.group_swipes;
+create trigger push_group_swipe after insert or update of direction on public.group_swipes
+  for each row execute function public.push_on_group_swipe();
+
+-- ------------------------------------------------------------ the thread
+
+-- The chat carries the moments too (46): a plan, a vote, a result, a line.
+create or replace function public.push_on_group_message()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if new.kind = 'say' then
+    -- one buzz per group, person and ten minutes
+    perform public.push_group(new.group_id, new.user_id, 'group_message',
+      format('group_message:%s:{user}:%s', new.group_id, floor(extract(epoch from new.created_at) / 600)),
+      jsonb_build_object('name', public.push_name(new.user_id), 'text', left(new.body, 120), 'url', '/groups/chat?id=' || new.group_id));
+  elsif new.kind = 'plan' then
+    perform public.push_group(new.group_id, new.user_id, 'group_plan', format('group_plan:%s:%s:{user}', new.group_id, new.id),
+      jsonb_build_object('name', public.push_name(new.user_id), 'title', new.body));
+  elsif new.kind = 'round' then
+    perform public.push_group(new.group_id, new.user_id, 'group_round', format('group_round:%s:%s:{user}', new.group_id, new.id),
+      jsonb_build_object('name', public.push_name(new.user_id), 'title', new.body));
+  elsif new.kind = 'won' then
+    perform public.push_group(new.group_id, null, 'group_won', format('group_won:%s:%s:{user}', new.group_id, new.id),
+      jsonb_build_object('title', new.body));
+  end if;
+  return new;
+exception when others then
+  raise warning 'group push skipped: %', sqlerrm;
+  return new;
+end;
+$$;
+drop trigger if exists push_group_message on public.group_messages;
+create trigger push_group_message after insert on public.group_messages
+  for each row execute function public.push_on_group_message();
+
+-- ------------------------------------------------------------ live
+
+-- Someone opens live and nobody else is there: the others are called.
+create or replace function public.push_on_group_live()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if exists (select 1 from public.group_live l where l.group_id = new.group_id and l.user_id <> new.user_id
+             and l.seen_at > now() - interval '40 seconds') then
+    return new;
+  end if;
+  perform public.push_group(new.group_id, new.user_id, 'group_live',
+    format('group_live:%s:{user}:%s', new.group_id, floor(extract(epoch from now()) / 1800)),
+    jsonb_build_object('name', public.push_name(new.user_id)));
+  return new;
+exception when others then
+  raise warning 'group push skipped: %', sqlerrm;
+  return new;
+end;
+$$;
+drop trigger if exists push_group_live on public.group_live;
+create trigger push_group_live after insert on public.group_live
+  for each row execute function public.push_on_group_live();
+
+
+-- ------------------------------------------------------------ posts
+
+create or replace function public.push_on_post()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  f record;
+begin
+  for f in
+    select case when requester_id = new.author_id then addressee_id else requester_id end as friend
+    from public.friendships
+    where status = 'accepted' and (requester_id = new.author_id or addressee_id = new.author_id)
+  loop
+    perform public.push_enqueue(f.friend, 'post', format('post:%s:%s', new.id, f.friend),
+      jsonb_build_object('name', public.push_name(new.author_id),
+                         'text', coalesce(nullif(left(new.body, 120), ''), '📷'),
+                         'url', '/yours'));
+  end loop;
+  return new;
+exception when others then
+  raise warning 'post push skipped: %', sqlerrm;
+  return new;
+end;
+$$;
+drop trigger if exists push_post on public.posts;
+create trigger push_post after insert on public.posts
+  for each row execute function public.push_on_post();
+
+-- ------------------------------------------------------------ tickets
+
+-- Hourly: a plan that starts in 20 to 28 hours, members who said in or maybe and
+-- have no ticket, when the night has a ticket link. Once per plan and person.
+create or replace function public.group_push_hourly()
+returns int
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  r record;
+  n int := 0;
+begin
+  for r in
+    select g.id as group_id, g.emoji, g.name, e.id as event_id, e.title, a.user_id
+    from public.groups g
+    join public.events e on e.id = g.plan_event_id and e.ticket_url is not null
+    join public.group_members m on m.group_id = g.id
+    join public.rsvps a on a.user_id = m.user_id and a.event_id = e.id and a.answer in ('in', 'maybe')
+    where e.starts_at between now() + interval '20 hours' and now() + interval '28 hours'
+      and not exists (select 1 from public.group_tickets t where t.group_id = g.id and t.event_id = e.id and t.user_id = m.user_id)
+  loop
+    perform public.push_enqueue(r.user_id, 'group_ticket', format('group_ticket:%s:%s:%s', r.group_id, r.event_id, r.user_id),
+      jsonb_build_object('group', r.emoji || ' ' || r.name, 'title', r.title, 'url', '/groups/' || r.group_id));
+    n := n + 1;
+  end loop;
+  return n;
+end;
+$$;
+revoke execute on function public.group_push_hourly() from public, anon, authenticated;
+
+do $$
+begin
+  if exists (select 1 from pg_extension where extname = 'pg_cron') then
+    perform cron.unschedule('afterhours-group-hourly')
+      where exists (select 1 from cron.job where jobname = 'afterhours-group-hourly');
+    perform cron.schedule('afterhours-group-hourly', '15 * * * *', $job$ select public.group_push_hourly(); $job$);
+  end if;
+end
+$$;
+
+revoke execute on function public.push_wants(uuid, text) from public, anon, authenticated;
+revoke execute on function public.push_enqueue(uuid, text, text, jsonb) from public, anon, authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('48_group_push.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  WHAT THE NEW DESIGNS READ — JOIN FACES, THE PHOTO WALL, PEOPLE BY ROLE   (49_design_reads.sql)
+-- ============================================================
+
+-- afterhours — what the chosen designs need to read (49, after 42 to 48)
+--
+--   group_peek(code)      now also says who is in (first names) and the plan, so
+--                         the join screen can show faces and what the group is up to
+--   group_wall(group)     every photo of every night of the group, newest night
+--                         first, for the photo wall on "our nights"
+--   admin_people_by(q, role)  people filtered by role, with how many nights each
+--                         kept and how many groups each is in, and the counts per
+--                         role for the filter chips
+
+drop function if exists public.group_peek(text);
+create or replace function public.group_peek(p_code text)
+returns table (id uuid, name text, emoji text, color text, cover_path text, members int, mine boolean, open boolean,
+               names text[], owner text, plan_title text)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select g.id, g.name, g.emoji, g.color, g.cover_path,
+         (select count(*)::int from public.group_members m where m.group_id = g.id),
+         public.in_group(g.id),
+         i.expires_at > now() and i.uses < i.max_uses,
+         array(select coalesce(p.display_name, p.handle) from public.group_members m join public.profiles p on p.id = m.user_id
+               where m.group_id = g.id order by m.joined_at limit 6),
+         (select coalesce(p.display_name, p.handle) from public.profiles p where p.id = i.created_by),
+         (select e.title from public.events e where e.id = g.plan_event_id and e.is_published)
+  from public.group_invites i join public.groups g on g.id = i.group_id
+  where i.code = upper(btrim(p_code));
+$$;
+
+create or replace function public.group_wall(p_group uuid)
+returns table (id uuid, path text, event_id uuid, event_title text, starts_at timestamptz, name text, mine boolean, created_at timestamptz)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_member(p_group);
+  return query
+    select ph.id, ph.path, e.id, e.title, e.starts_at, coalesce(p.display_name, p.handle), ph.user_id = auth.uid(), ph.created_at
+    from public.group_photos ph
+    join public.events e on e.id = ph.event_id
+    left join public.profiles p on p.id = ph.user_id
+    where ph.group_id = p_group
+    order by e.starts_at desc nulls last, ph.created_at
+    limit 300;
+end;
+$$;
+
+create or replace function public.admin_people_by(p_query text, p_role text)
+returns table (id uuid, handle text, display_name text, role text, created_at timestamptz, nights int, groups int)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  q text := lower(btrim(coalesce(p_query, '')));
+begin
+  perform public.need_admin();
+  return query
+    select p.id, p.handle, p.display_name,
+           case when p.is_admin then 'admin' else p.account_type end, p.created_at,
+           (select count(*)::int from public.swipes s where s.user_id = p.id and s.direction = 'right'),
+           (select count(*)::int from public.group_members m where m.user_id = p.id)
+    from public.profiles p
+    where (q = '' or lower(coalesce(p.handle, '')) like '%' || q || '%' or lower(coalesce(p.display_name, '')) like '%' || q || '%')
+      and (coalesce(p_role, '') = ''
+           or (p_role = 'new' and p.created_at > now() - interval '7 days')
+           or (p_role = 'admin' and p.is_admin)
+           or (p_role not in ('new', 'admin') and not p.is_admin and p.account_type = p_role))
+    order by (p.is_admin or p.account_type <> 'user') desc, p.created_at desc
+    limit 80;
+end;
+$$;
+
+create or replace function public.admin_role_counts()
+returns json
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_admin();
+  return json_build_object(
+    'all', (select count(*) from public.profiles),
+    'dj', (select count(*) from public.profiles where account_type = 'dj' and not is_admin),
+    'community_manager', (select count(*) from public.profiles where account_type = 'community_manager' and not is_admin),
+    'admin', (select count(*) from public.profiles where is_admin),
+    'new', (select count(*) from public.profiles where created_at > now() - interval '7 days'));
+end;
+$$;
+
+do $$
+declare f text;
+begin
+  foreach f in array array['group_peek(text)', 'group_wall(uuid)', 'admin_people_by(text, text)', 'admin_role_counts()'] loop
+    execute 'revoke all on function public.' || f || ' from public, anon';
+    execute 'grant execute on function public.' || f || ' to authenticated';
+  end loop;
+end $$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('49_design_reads.sql');
   end if;
 end $$;

@@ -48,6 +48,15 @@ const structure = [
   ["38_profile_lists.sql", "WHATSAPP AMONG THE LINKS, AND THE LISTS UNDER A PROFILE"],
   ["39_spark_kinds.sql", "EIGHT MORE SPARKS"],
   ["40_event_about.sql", "WHO IS THIS — A FEW LINES ABOUT THE ACT ON A NIGHT"],
+  ["41_account_types.sql", "ACCOUNT TYPES — USER, DJ, COMMUNITY MANAGER, ADMIN"],
+  ["42_staff.sql", "THE STAFF — ADMIN PANEL, COMMUNITY MANAGERS, DJ PAGES, THE LOG"],
+  ["43_event_submit.sql", "NIGHTS SENT IN BY PEOPLE, LET THROUGH BY THE STAFF"],
+  ["44_groups.sql", "GROUPS — FRIENDS WHO FIND A NIGHT TOGETHER"],
+  ["45_posts.sql", "POSTS — A PHOTO AND A FEW WORDS FOR YOUR FRIENDS"],
+  ["46_group_plans.sql", "A GROUP DECIDES — VOTES, THE PLAN, TICKETS, THE CHAT"],
+  ["47_group_nights.sql", "THE NIGHT AND AFTER — GROUP NIGHTS, THE ALBUM, NUMBERS, ALSO THERE"],
+  ["48_group_push.sql", "GROUPS AND POSTS SAY SO — PUSH NOTIFICATIONS"],
+  ["49_design_reads.sql", "WHAT THE NEW DESIGNS READ — JOIN FACES, THE PHOTO WALL, PEOPLE BY ROLE"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
