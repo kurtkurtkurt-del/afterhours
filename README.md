@@ -768,18 +768,37 @@ msg who froze no at1 at2 q1 q2`. See `cards/card-data.js` for an example.
 
 ---
 
+**Account types and the panel** (07.10.2026, `41_account_types.sql`, `42_staff.sql`, `data/staff.ts`, `app/panel/*`, `(tabs)/panel.tsx`). Every profile has a type: **normal user**, **dj**, **community manager**, **admin**. In settings → account a user switches between normal user and dj with a code that is the name itself (`normal user`, `dj`). **Community manager** is given by an admin in the panel; **admin** is `profiles.is_admin`, appointed in the SQL editor as before — the code cannot reach either (42 sent anyone who had typed their way there under 41 back to normal user). Admins and community managers get a sixth tab, **panel**: numbers, new night / new room / new dj, the nights made here (edit, hide, delete), and the newest comments (hide / show). The admin also sees **people and roles** (search, give a type), **feedback** (mark done) and **the log** (`staff_log`: who made, changed or deleted what). A dj gets **my dj page** in settings: one page on the djs tab of their own, and the nights they play. Every write goes through a function in `42_staff.sql` with its own check; nights made here carry `source = staff`, so the ticketmaster sync and the seed cleanup never touch them. A community manager deletes only their own nights, the admin any. 49 tests in `backend/test/staff.test.mjs`.
+
+**The + on the flow** (07.10.2026, `43_event_submit.sql`, `app/panel/night.tsx`, `app/panel/pending.tsx`). Beside the centred `tickets · spark` switch, a + offers **with a ticket** or **among friends**. Among friends lists the eleven sparks and opens the chosen one's page, where title, time, place and wave are suggested and can be changed. With a ticket opens the night form: the staff publish at once; anyone else with an account (not a guest) sends it in (`event_submit`, a ticket link required, at most five waiting) and sees it under *what you sent in* as waiting, live, or not taken with the reason. The staff find it in the panel under **sent in** (also counted on the first page): let it through, edit it first, or turn it down with a line the sender sees. 22 tests in `backend/test/event-submit.test.mjs`.
+
+**Groups** (07.10.2026, `44_groups.sql`, `data/groups.ts`, `app/groups/*`). Friends who find a night together, 2 to 12. Made from yours → groups: a name, an emoji, a colour, a cover photo (into your own folder of the photos bucket), lasting or just once (once has a last day and is archived after it), and the deck it swipes: a city (or everywhere) and a window of days. Friends are added directly; anyone else joins with a code (8 letters, 14 days, 20 uses) shown large, as a QR, and as a link (`g/?c=CODE` on the site, which opens `afterhours://groups/join?code=…`; the Android App Link needs the next build). A group page has three tabs: **swipe** (the group's deck, each in their own time; faces on a card are members who already said yes; your yes that completes everyone's stamps *everyone is in*), **matches** (match: all, most: more than half, some) and **live** (the same card for everyone there now, polled every 2.5 s, a heartbeat every 5 s, gone after 40 s; it moves on when all who are there have answered, or someone skips it for everyone). The deck is ordered by the group's taste: nights a member kept alone first, then the kinds the members keep most. Group answers never touch the personal deck. Yours also suggests a group when friends kept the same nights lately (`group_suggest`). 40 tests in `backend/test/groups.test.mjs`.
+
+**A group decides** (07.10.2026, `46_group_plans.sql`, the **plan** tab of `app/groups/[id].tsx`, `app/groups/chat.tsx`). In matches, a tap opens the night or makes it the plan; *put to a vote* picks two or three and a length (1, 3, 12, 24 h). One vote each, changeable; it closes when the time is up or everyone voted, the most votes win (tie: more group yeses, then earlier) and the winner becomes the plan. The plan tab shows the open vote (bars, who voted what, *close it now* for whoever started it) and the plan: in · maybe · out (the same answers as yours, `rsvp_set`), *i have my ticket*, who still needs one, the ticket link, *drop the plan*. The group chat (the chat mark on the group page) is read every 3 s; plans, votes and results appear in it as small lines. 26 tests in `backend/test/group-plans.test.mjs`.
+
+**After the night** (07.10.2026, `47_group_nights.sql`, `app/groups/memories.tsx`, `app/groups/album.tsx`). Tapping the group's name opens *our nights*: the vibe (the two kinds the group says yes to most, the hour its nights start — averaged from 18:00 so 23:00 and 01:00 make midnight — and its room), the numbers (nights this year, nights together, matches, votes, photos, who comes most) and the shelf: every night two or more members checked in to, with their card numbers and *all of us* when everyone was there. Nothing to press: the usual check-in is enough. Each of those nights, and the plan, has an album members add photos to (their own folder of the photos bucket; whoever added it or the owner takes it out). The owner can make the group visible; then a group with the same plan and a friend of yours in it shows on your plan as *… is going too*, with the friends. 22 tests in `backend/test/group-nights.test.mjs`.
+
+**Posts** (07.10.2026, `45_posts.sql`, `data/posts.ts`, `app/post/new.tsx`, `components/PostCard.tsx`). The + at the top of yours makes a post: a photo, up to 500 characters, and if you like one of the nights you kept. You and your confirmed friends see it in yours under *from your people*, above the past feed. ··· deletes your own or reports someone else's (with an optional reason); the staff see reports in the panel under **reported posts** and hide or keep. At most 20 a day; guests make an account first. 20 tests in `backend/test/posts.test.mjs`.
+
+**The chosen designs** (07.10.2026, `prototypes/new-pages-designs.html`, picks 1D 2A 3B 4B 5E 6D 7D 8C 9B 10D 11E 12B 13A 14E 15B 16C 17C). Tips are a full-screen demo with the title in the logo letters (`components/Tips.tsx`). A post is camera first (`app/post/new.tsx`). Groups sit on a shelf as record sleeves; a new group is made in three steps (look, who, where and when); the group deck is a full photo with the score huge on top (`components/SwipeStack.tsx`, shared with the panel queues); matches are three shelves (everyone, most, some); the plan is the group's own flyer; live gives every card 15 seconds and passes for whoever has not answered; the chat has bubbles; joining and inviting show the invitation with the faces (`components/GroupInvitation.tsx`); our nights is a photo wall (`group_wall`, 49). The + on the flow opens `app/make.tsx`: two photo cards, then the spark kinds. A night is made on a poster, with a photo from the phone. The panel queues are piles: right lets through, left turns down, down edits. The account type code is typed at a door panel (`components/DoorCode.tsx`). People are found search first, by role (`admin_people_by`, 49).
+
 ## 8. The backend
 
-> **Live database (07.10.2026):** `setup-1-structure.sql` and
+> **Live database (07.10.2026, evening):** `setup-1-structure.sql` and
 > `setup-2-comments.sql` were pasted on 06.10.2026 (everything up to
 > `38_profile_lists.sql`), then `cleanup-seed-events.sql` (the invented
 > nights are gone; pasting setup again brings 36 of them back, so the
-> cleanup has to follow it). **Still to paste: `39_spark_kinds.sql`,
-> `40_event_about.sql` and then `about-munich.sql`** — until then the eight
-> new sparks cannot be started and no card shows *who is this?*. Ahmet
-> confirms each paste; check `select * from public.migrations` to be sure.
-> `npm run health` names whatever is missing. The file list with every SQL
-> file is in `backend/README.md`.
+> cleanup has to follow it). On 07.10.2026 Ahmet pasted `41_account_types.sql`
+> and `42_staff.sql`, then `43` to `47` in one paste, then `48_group_push.sql`
+> with `seed-test-groups.sql` (six fake friends and the "(test)" groups to try
+> the groups end to end; `cleanup-test-groups.sql` removes them), then
+> `49_design_reads.sql`. **Not confirmed: `39_spark_kinds.sql`,
+> `40_event_about.sql` and `about-munich.sql`** — without them the eight
+> newer sparks cannot be started and no card shows *who is this?*. Check
+> `select * from public.migrations` to be sure; `npm run health` names
+> whatever is missing. The file list with every SQL file is in
+> `backend/README.md`. The first admin is appointed in the SQL editor:
+> `update public.profiles set is_admin = true, account_type = 'admin' where id = (select id from auth.users where email = '…');`
 
 Postgres + Supabase. The tables: `cities`, `event_types`, `venues`,
 `events`, `profiles`, `profile_settings`, `swipes`, `comments`,
