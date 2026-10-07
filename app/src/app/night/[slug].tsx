@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Tips from '@/components/Tips';
 import { KeyboardAvoidingView, Linking, Modal, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Image } from 'expo-image';
 import * as Location from 'expo-location';
@@ -288,6 +289,7 @@ export default function NightScreen() {
           <Text style={styles.mono}>{up(missing ? t('night.gone') : note ? words(note) : t('night.loading'))}</Text>
         </View>
       )}
+      <Tips page="night" tips={[{ title: 'tips.night.1.t', body: 'tips.night.1.b' }, { title: 'tips.night.2.t', body: 'tips.night.2.b' }]} bottom={insets.bottom + 84} />
     </View>
   );
 }

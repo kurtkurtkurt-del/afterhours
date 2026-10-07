@@ -1,19 +1,24 @@
-import { memo, useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import Tips from '@/components/Tips';
 import Animated, { useAnimatedStyle, useSharedValue, withRepeat, withTiming } from 'react-native-reanimated';
 import { FlatList, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
 import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
-import { router } from 'expo-router';
+import { router, useFocusEffect } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
-import { SvgUri } from 'react-native-svg';
+import Svg, { Path, SvgUri } from 'react-native-svg';
 import Icon from '@/components/Icon';
 import WhoSheet from '@/components/WhoSheet';
 import { PeopleResults, PeopleSearch, SuggestedInRow, openPerson } from '@/components/People';
+import PostCard from '@/components/PostCard';
+import { postsFeed, type Post } from '@/data/posts';
+import { myGroups, type GroupRow } from '@/data/groups';
+import GroupBadge from '@/components/GroupBadge';
 import SoundCorner from '@/components/SoundCorner';
 import DeckViewer from '@/components/DeckViewer';
 import { toDeckCard, type DeckCard } from '@/components/CardFace';
-import { TAB_BAR_SPACE } from '@/components/TabBar';
+import { TAB_BAR_SPACE, useTabBarSpace } from '@/components/TabBar';
 import { myCards } from '@/data/checkin';
 import { fetchDeck, posterUrl, swipe, unswipe, type Night } from '@/data/deck';
 import { supabase } from '@/lib/supabase';
@@ -47,6 +52,16 @@ const fallbackPhoto = require('../../../assets/intro/concert.jpg');
 // up to); and then an endless feed of photos from past nights, like a timeline.
 export default function YoursScreen() {
   const insets = useSafeAreaInsets();
+  const tabSpace = useTabBarSpace();
+  // Posts by you and your friends (45_posts.sql) and your groups (44_groups.sql), read on every visit.
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [groups, setGroups] = useState<GroupRow[]>([]);
+  useFocusEffect(
+    useCallback(() => {
+      postsFeed(null).then(setPosts, () => {});
+      myGroups().then(setGroups, () => {});
+    }, []),
+  );
   const { session } = useAuth();
   const real = useYours();
   const { t, tn, tx, up } = useLang();
@@ -336,6 +351,12 @@ export default function YoursScreen() {
           <Icon name="chat" size={21} color={colors.paper} />
           {roomOpen ? <View style={styles.chatDot} /> : null}
         </Pressable>
+        {/* + : a new post */}
+        <Pressable onPress={() => router.push('/post/new')} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('posts.a11y')} style={({ pressed }) => [styles.plus, pressed && styles.pressed]}>
+          <Svg width={14} height={14} viewBox="0 0 16 16">
+            <Path d="M8 2.5v11M2.5 8h11" stroke={colors.ink} strokeWidth={2.2} strokeLinecap="round" />
+          </Svg>
+        </Pressable>
         <SoundCorner />
       </View>
       <ScrollView
@@ -351,6 +372,23 @@ export default function YoursScreen() {
           <PeopleResults query={query} />
         ) : (
           <>
+            {/* Groups: friends who find a night together. */}
+            <Pressable onPress={() => router.push('/groups')} style={({ pressed }) => [styles.groups, pressed && styles.pressed]} accessibilityRole="button">
+              <View style={styles.groupFaces}>
+                {groups.filter((g) => !g.archived).slice(0, 4).map((g, i) => (
+                  <View key={g.id} style={i > 0 ? styles.groupOverlap : undefined}>
+                    <GroupBadge emoji={g.emoji} color={g.color} cover={g.cover_path} size={34} />
+                  </View>
+                ))}
+              </View>
+              <View style={styles.groupText}>
+                <Text style={styles.groupTitle}>{t('groups.entry')}</Text>
+                <Text style={styles.groupHint} numberOfLines={1}>
+                  {groups.some((g) => g.live) ? up(t('groups.liveNow', { n: groups.reduce((a, g) => a + g.live, 0) })) : t('groups.hint')}
+                </Text>
+              </View>
+              <Text style={styles.groupArrow}>›</Text>
+            </Pressable>
             {/* With your people: the gallery. */}
             {count ? (
               <>
@@ -507,6 +545,12 @@ export default function YoursScreen() {
               <SuggestedInRow />
             </ScrollView>
 
+            {/* Posts by you and your friends, newest first. */}
+            {posts.length ? <Head label={t('posts.section')} /> : null}
+            {posts.map((p) => (
+              <PostCard key={p.id} post={p} onGone={(gone) => setPosts((l) => l.filter((x) => x.id !== gone))} />
+            ))}
+
             {/* From past nights: an endless feed of photos, newest first. */}
             {feed.length ? <Head label={t('yours.past')} /> : null}
             {feed.map(({ kind, p: item }) => kind === 'sample' ? (
@@ -566,6 +610,7 @@ export default function YoursScreen() {
           }
         />
       ) : null}
+      <Tips page="yours" tips={[{ title: 'tips.yours.1.t', body: 'tips.yours.1.b' }, { title: 'tips.yours.2.t', body: 'tips.yours.2.b', motion: 'tap' }]} bottom={tabSpace + 12} />
     </View>
   );
 }
@@ -659,6 +704,14 @@ const styles = StyleSheet.create({
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 44, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
   chat: { position: 'absolute', top: brand.top - 3, right: brand.left + 84 },
+  plus: { position: 'absolute', top: brand.top - 6, right: brand.left + 126, width: 28, height: 28, borderRadius: 14, backgroundColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
+  groups: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 12, marginTop: 14, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md },
+  groupFaces: { flexDirection: 'row', minWidth: 34 },
+  groupOverlap: { marginLeft: -12 },
+  groupText: { flex: 1, gap: 2 },
+  groupTitle: { fontFamily: fonts.medium, fontSize: 16, color: colors.paper },
+  groupHint: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
+  groupArrow: { fontFamily: fonts.medium, fontSize: 22, color: colors.mute },
   chatDot: { position: 'absolute', top: -2, right: -3, width: 7, height: 7, borderRadius: 4, backgroundColor: colors.spot },
   body: { paddingTop: brand.top + 56 },
   pressed: { opacity: 0.6 },

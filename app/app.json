@@ -43,6 +43,11 @@
               "scheme": "https",
               "host": "kurtkurtkurt-del.github.io",
               "pathPrefix": "/afterhours/explore/event"
+            },
+            {
+              "scheme": "https",
+              "host": "kurtkurtkurt-del.github.io",
+              "pathPrefix": "/afterhours/g"
             }
           ],
           "category": [

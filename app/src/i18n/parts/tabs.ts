@@ -6,6 +6,7 @@ export const tabs = {
   'tab.yours': { en: 'yours', de: 'deins', tr: 'seninkiler' },
   'tab.map': { en: 'map', de: 'karte', tr: 'harita' },
   'tab.account': { en: 'account', de: 'konto', tr: 'hesap' },
+  'tab.panel': { en: 'panel', de: 'panel', tr: 'panel' },
 
   // pickers: where · what · when
   'filter.where': { en: 'where', de: 'wo', tr: 'nerede' },

@@ -275,6 +275,13 @@ export const pages = {
   'settings.genre': { en: 'genre', de: 'genre', tr: 'tür' },
   'settings.genre.hint': { en: 'ten tracks each', de: 'je zehn tracks', tr: 'her birinde on parça' },
   'settings.account': { en: 'account', de: 'konto', tr: 'hesap' },
+  'settings.type': { en: 'account type', de: 'kontotyp', tr: 'hesap türü' },
+  'settings.type.hint': { en: 'needs a code to change', de: 'zum ändern braucht es einen code', tr: 'değiştirmek için kod gerekir' },
+  'settings.type.code': { en: 'code for {type}', de: 'code für {type}', tr: '{type} için kod' },
+  'settings.type.go': { en: 'change', de: 'ändern', tr: 'değiştir' },
+  'settings.type.wrong': { en: 'wrong code', de: 'falscher code', tr: 'kod yanlış' },
+  'settings.type.given': { en: 'given by an admin', de: 'von einem admin vergeben', tr: 'bir admin tarafından verildi' },
+  'settings.type.locked': { en: 'an admin gives this one', de: 'diesen typ vergibt ein admin', tr: 'bu türü bir admin verir' },
   'settings.finish': { en: 'finish your account', de: 'konto fertig machen', tr: 'hesabını tamamla' },
   'settings.finish.hint': {
     en: 'you are browsing as a guest; add an email to keep your nights',

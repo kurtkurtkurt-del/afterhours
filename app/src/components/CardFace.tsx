@@ -104,7 +104,7 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
           <Text style={styles.stripLeftText}>{up(t('word.details'))} ↓</Text>
         </Pressable>
         <Pressable style={styles.block} onPress={details}>
-          <Text style={styles.title} numberOfLines={3} adjustsFontSizeToFit minimumFontScale={0.6}>
+          <Text style={styles.title} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.7}>
             {card.title.toLowerCase()}
           </Text>
           <Text style={styles.jet}>{source ? `${kind} · ${source}` : kind}</Text>
@@ -244,15 +244,16 @@ const styles = StyleSheet.create({
   fill: { width: '100%', height: '100%' },
   posterBox: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.ink2 },
   caption: { position: 'absolute', left: 8, right: 8, flexDirection: 'row', alignItems: 'stretch', borderRadius: radius.lg, overflow: 'hidden' },
-  block: { flex: 1, backgroundColor: colors.ink, paddingHorizontal: 16, paddingTop: 16, paddingBottom: 14, gap: 3 },
-  title: { fontFamily: fonts.logo, fontSize: 48, lineHeight: 42, letterSpacing: -1, color: colors.spotText, marginBottom: 12 },
+  block: { flex: 1, backgroundColor: colors.ink, paddingHorizontal: 14, paddingTop: 12, paddingBottom: 11, gap: 2 },
+  // kept small so the photo above stays the main thing
+  title: { fontFamily: fonts.logo, fontSize: 32, lineHeight: 30, letterSpacing: -0.7, color: colors.spotText, marginBottom: 7 },
   jet: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1.2, color: colors.paper },
-  friends: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 12 },
+  friends: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 8 },
   sq: { width: 24, height: 24, borderRadius: radius.xs, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   sqLive: { backgroundColor: colors.spot, borderColor: colors.spot },
   sqText: { fontFamily: fonts.medium, fontSize: 12, color: colors.paper },
   sqTextLive: { color: colors.ink },
-  note: { fontFamily: fonts.regular, fontSize: 12.5, lineHeight: 17, color: colors.mute, marginTop: 12 },
+  note: { fontFamily: fonts.regular, fontSize: 12.5, lineHeight: 17, color: colors.mute, marginTop: 8 },
   keptNote: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute, marginLeft: 6 },
   chain: { marginTop: 12, gap: 6 },
   chainRow: { flexDirection: 'row', alignItems: 'center' },

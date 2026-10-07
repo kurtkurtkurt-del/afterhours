@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import Tips from '@/components/Tips';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
@@ -11,7 +12,7 @@ import PickerSheet from '@/components/PickerSheet';
 import ProfileCounts from '@/components/ProfileCounts';
 import Sleeve from '@/components/Sleeve';
 import SoundCorner from '@/components/SoundCorner';
-import { TAB_BAR_SPACE } from '@/components/TabBar';
+import { TAB_BAR_SPACE, useTabBarSpace } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
 import { usePhoto } from '@/data/photo';
 import { useProfile, useProfileExtra } from '@/data/profile';
@@ -43,6 +44,7 @@ function distinct(list: (string | null | undefined)[]) {
 // everything else lives in settings. The page then goes on downwards on paper: the
 // nights coming up, the sparks you started, your cities.
 export default function AccountScreen() {
+  const tabSpace = useTabBarSpace();
   const { session, isAnonymous } = useAuth();
   const { t, tn, up } = useLang();
   const insets = useSafeAreaInsets();
@@ -314,6 +316,7 @@ export default function AccountScreen() {
           ) : null}
         </Pressable>
       </Modal>
+      <Tips page="account" tips={[{ title: 'tips.account.1.t', body: 'tips.account.1.b', motion: 'tap' }, { title: 'tips.account.2.t', body: 'tips.account.2.b' }]} bottom={tabSpace + 12} />
     </View>
   );
 }

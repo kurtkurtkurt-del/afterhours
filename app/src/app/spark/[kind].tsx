@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import Tips from '@/components/Tips';
 import { KeyboardAvoidingView, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
@@ -62,6 +63,7 @@ export default function SparkScreen() {
           )}
         </PullDownScroll>
       </KeyboardAvoidingView>
+      <Tips page="spark" tips={[{ title: 'tips.spark.1.t', body: 'tips.spark.1.b', motion: 'tap' }, { title: 'tips.spark.2.t', body: 'tips.spark.2.b' }]} bottom={insets.bottom + 84} />
     </View>
   );
 }

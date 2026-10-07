@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import Tips from '@/components/Tips';
 import { useTabReset } from '@/hooks/useTabReset';
 import RangeSlider from '@/components/RangeSlider';
 import { filterWhen, whenName, type When } from '@/data/when';
@@ -397,6 +398,7 @@ export default function MapScreen() {
         }}
         onClose={() => setSheet(null)}
       />
+      <Tips page="map" tips={[{ title: 'tips.map.1.t', body: 'tips.map.1.b', motion: 'tap' }]} bottom={tabSpace + 12} />
     </View>
   );
 }

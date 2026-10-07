@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import Tips from '@/components/Tips';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Svg, { Circle, Path } from 'react-native-svg';
@@ -17,6 +18,7 @@ import type { DeckFriend } from '@/components/CardFace';
 import { friendsKept, type FriendKept } from '@/data/friends';
 import { friendsLive, type LiveFriend } from '@/data/checkin';
 import { useAuth } from '@/auth/AuthContext';
+import { router } from 'expo-router';
 import { useCities } from '@/data/cities';
 import { chooseCity, useHere } from '@/data/here';
 import { useTabReset } from '@/hooks/useTabReset';
@@ -245,6 +247,11 @@ export default function FlowScreen() {
           <Chevron color={colors.paper} />
         </Pressable>
         <View style={[styles.pills, styles.switchRow]}>
+          <Pressable onPress={() => router.push('/make')} hitSlop={8} accessibilityRole="button" accessibilityLabel={t('make.title')} style={({ pressed }) => [styles.plus, pressed && styles.pressed]}>
+            <Svg width={16} height={16} viewBox="0 0 16 16">
+              <Path d="M8 2.5v11M2.5 8h11" stroke={colors.ink} strokeWidth={2} strokeLinecap="round" />
+            </Svg>
+          </Pressable>
           <View style={styles.panels} accessibilityRole="tablist">
             {(['tickets', 'spark'] as const).map((p) => (
               <Pressable key={p} onPress={() => pickPanel(p)} hitSlop={4} accessibilityRole="tab" accessibilityState={{ selected: panel === p }} style={[styles.panel, panel === p && styles.panelOn]}>
@@ -316,6 +323,7 @@ export default function FlowScreen() {
         }}
       />
       <WhenPicker open={sheet === 'when'} rows={result.key === key && result.rows ? result.rows : []} selected={when} onSelect={pickWhen} onClose={() => setSheet(null)} />
+      <Tips page="flow" tips={[{ title: 'tips.flow.1.t', body: 'tips.flow.1.b', motion: 'swipe' }, { title: 'tips.flow.2.t', body: 'tips.flow.2.b', motion: 'tap' }]} bottom={tabSpace + 92} />
     </View>
   );
 }
@@ -329,7 +337,9 @@ const styles = StyleSheet.create({
   pills: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 10 },
   pressed: { opacity: 0.6 },
   // tickets · spark: a lighter track than the filter pills, so it reads on the dark top
-  switchRow: { marginTop: 4 },
+  // the switch in the middle; the + on the right of the same row
+  switchRow: { marginTop: 4, justifyContent: 'center' },
+  plus: { position: 'absolute', right: 0, width: 34, height: 34, borderRadius: 17, backgroundColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   panels: { flexDirection: 'row', height: 34, padding: 3, borderRadius: radius.pill, backgroundColor: colors.ink3, borderWidth: 1, borderColor: '#4a4640' },
   panel: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 14, borderRadius: radius.pill },
   panelOn: { backgroundColor: colors.paper },

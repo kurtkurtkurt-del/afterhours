@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import Tips from '@/components/Tips';
 import Storage from 'expo-sqlite/kv-store';
 import { Pressable, ScrollView, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
 import { Image } from 'expo-image';
@@ -12,7 +13,7 @@ import Pill from '@/components/Pill';
 import StoryViewer, { type StoryItem } from '@/components/StoryViewer';
 import SoundCorner from '@/components/SoundCorner';
 import Vinyl from '@/components/Vinyl';
-import { TAB_BAR_SPACE } from '@/components/TabBar';
+import { TAB_BAR_SPACE, useTabBarSpace } from '@/components/TabBar';
 import { useAmbient } from '@/audio/AmbientContext';
 import { useTrack } from '@/audio/useTrack';
 import { listenTracks } from '@/content/soundtracks';
@@ -39,6 +40,7 @@ const SEEN = 'stories.seen';
 // the results replace everything below the field.
 export default function DjsScreen() {
   const insets = useSafeAreaInsets();
+  const tabSpace = useTabBarSpace();
   const { t, tn, up } = useLang();
   const { session } = useAuth();
   const ambient = useAmbient();
@@ -216,6 +218,7 @@ export default function DjsScreen() {
         onClose={() => setSheet(false)}
       />
       <StoryViewer items={queue?.items ?? []} start={queue ? queue.start : null} onSeen={markSeen} onClose={() => setQueue(null)} />
+      <Tips page="djs" tips={[{ title: 'tips.djs.1.t', body: 'tips.djs.1.b', motion: 'tap' }, { title: 'tips.djs.2.t', body: 'tips.djs.2.b' }]} bottom={tabSpace + 12} />
     </View>
   );
 }

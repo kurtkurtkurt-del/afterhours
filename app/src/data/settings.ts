@@ -20,6 +20,9 @@ export type Settings = {
   notify_waves?: boolean;
   // 26 + 34_spark_push.sql
   notify_sparks?: boolean;
+  // 48_group_push.sql
+  notify_groups?: boolean;
+  notify_posts?: boolean;
 };
 
 export async function fetchSettings(userId: string): Promise<Settings | null> {
@@ -60,4 +63,21 @@ export async function exportMe(): Promise<string> {
 export async function deleteAccount() {
   const { error } = await supabase.rpc('delete_account');
   if (error) throw error;
+}
+
+// 41_account_types.sql + 42_staff.sql. The code (the name the list shows) switches
+// between normal user and dj; community manager and admin are given.
+export type AccountType = 'user' | 'dj' | 'community_manager' | 'admin';
+export const ACCOUNT_TYPES: { id: AccountType; label: string }[] = [
+  { id: 'user', label: 'normal user' },
+  { id: 'dj', label: 'dj' },
+  { id: 'community_manager', label: 'community manager' },
+  { id: 'admin', label: 'admin' },
+];
+
+// ok · code (wrong code) · type · locked (given by an admin, 42_staff.sql)
+export async function setAccountType(type: AccountType, code: string): Promise<string> {
+  const { data, error } = await supabase.rpc('set_account_type', { p_type: type, p_code: code });
+  if (error) throw error;
+  return String(data);
 }

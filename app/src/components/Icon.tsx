@@ -1,6 +1,6 @@
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 
-export type IconName = 'flow' | 'djs' | 'yours' | 'map' | 'account' | 'settings' | 'photo' | 'chat';
+export type IconName = 'flow' | 'djs' | 'yours' | 'map' | 'account' | 'settings' | 'photo' | 'chat' | 'panel';
 type Props = { name: IconName; size?: number; color: string; strokeWidth?: number; filled?: boolean; hole?: string };
 
 // 1.5 px line icons on a 24 grid. filled: the solid version of the tab icons (the open tab,
@@ -56,6 +56,14 @@ export default function Icon({ name, size = 22, color, strokeWidth = 1.5, filled
           <Rect x={3.5} y={3.5} width={17} height={17} rx={2} {...p} />
           <Circle cx={9} cy={9} r={1.6} {...p} />
           <Path d="M20.5 15l-4.5-4.5L6 20.5" {...p} />
+        </>
+      )}
+      {name === 'panel' && (
+        <>
+          <Rect x={4} y={4} width={7} height={7} rx={1.5} {...f} />
+          <Rect x={13} y={4} width={7} height={7} rx={1.5} {...p} />
+          <Rect x={4} y={13} width={7} height={7} rx={1.5} {...p} />
+          <Rect x={13} y={13} width={7} height={7} rx={1.5} {...f} />
         </>
       )}
       {name === 'account' && (

@@ -6,12 +6,15 @@ import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from '
 import { TabBarFrame, TabItem } from '@/components/TabBar';
 import { useCities } from '@/data/cities';
 import { useFollowLocation } from '@/data/here';
+import { isStaff, useRole } from '@/data/staff';
 
-// The main app: five tabs in an edge-to-edge bottom bar. flow · djs · yours · map · account
+// The main app: five tabs in an edge-to-edge bottom bar. flow · djs · yours · map · account,
+// and a sixth, panel, for an admin or a community manager (42_staff.sql).
 export default function TabsLayout() {
   // Every tab follows the city you are in (data/here.ts).
   const { cities } = useCities();
   useFollowLocation(cities);
+  const staff = isStaff(useRole());
   return (
     <Tabs>
       <TabSlot renderFn={renderTab} />
@@ -29,6 +32,11 @@ export default function TabsLayout() {
           <TabTrigger name="map" href="/map" asChild>
             <TabItem icon="map" />
           </TabTrigger>
+          {staff ? (
+            <TabTrigger name="panel" href="/panel" asChild>
+              <TabItem icon="panel" />
+            </TabTrigger>
+          ) : null}
           <TabTrigger name="account" href="/account" asChild>
             <TabItem icon="account" />
           </TabTrigger>

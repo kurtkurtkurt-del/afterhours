@@ -16,7 +16,10 @@ import { useAuth } from '@/auth/AuthContext';
 import { useAmbient } from '@/audio/AmbientContext';
 import { forgetPhoto, removePhoto, usePhoto } from '@/data/photo';
 import { useProfile } from '@/data/profile';
-import { deleteAccount, exportMe, fetchSettings, saveSettings, type Settings } from '@/data/settings';
+import DoorCode from '@/components/DoorCode';
+import { resetTips } from '@/components/Tips';
+import { ACCOUNT_TYPES, deleteAccount, exportMe, fetchSettings, saveSettings, setAccountType, type AccountType, type Settings } from '@/data/settings';
+import { isStaff, refreshRole, useRole } from '@/data/staff';
 import { pushStatus, registerPush, type PushStatus } from '@/lib/push';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { genres, type Genre } from '@/content/music';
@@ -57,6 +60,14 @@ const NOTIFY = [
       { key: 'notify_sparks', label: 'notify.sparks', hint: 'notify.sparks.hint' },
     ],
   },
+  {
+    // 48_group_push.sql
+    title: 'notify.together',
+    rows: [
+      { key: 'notify_groups', label: 'notify.groups', hint: 'notify.groups.hint' },
+      { key: 'notify_posts', label: 'notify.posts', hint: 'notify.posts.hint' },
+    ],
+  },
 ] as const;
 
 type SectionId = 'app' | 'privacy' | 'notify' | 'account' | 'about';
@@ -74,7 +85,13 @@ export default function SettingsScreen() {
   const { photo, broken } = usePhoto();
   const { t, up, lang, setLang } = useLang();
   const [settings, setSettings] = useState<Settings | null>(null);
-  const [sheet, setSheet] = useState<'sound' | 'locale' | 'kept' | null>(null);
+  const [sheet, setSheet] = useState<'sound' | 'locale' | 'kept' | 'type' | null>(null);
+  // admin and community manager are given (42_staff.sql); the code only switches user ↔ dj.
+  const accountType = useRole();
+  const given = isStaff(accountType);
+  // The type picked in the list, waiting for its code.
+  const [wanted, setWanted] = useState<AccountType | null>(null);
+  const [codeError, setCodeError] = useState<string | null>(null);
 
   const uid = session?.user.id;
   useEffect(() => {
@@ -101,6 +118,18 @@ export default function SettingsScreen() {
     setSettings((cur) => (cur ? { ...cur, ...p } : cur));
     // On failure, restore the server value; two quick taps must not race.
     saveSettings(uid, p).catch(() => fetchSettings(uid).then((s) => s && setSettings(s)));
+  };
+
+  const typeName = (id: AccountType | null) => ACCOUNT_TYPES.find((a) => a.id === id)?.label ?? '…';
+  const submitCode = (code: string) => {
+    if (!wanted) return;
+    setAccountType(wanted, code)
+      .then((r) => {
+        if (r !== 'ok') return setCodeError(t(r === 'locked' ? 'settings.type.locked' : 'settings.type.wrong'));
+        refreshRole().catch(() => {});
+        setWanted(null);
+      })
+      .catch((e) => setCodeError(String(e.message ?? e).toLowerCase()));
   };
 
   const confirmDelete = () =>
@@ -248,6 +277,17 @@ export default function SettingsScreen() {
         <Panel>
           {isAnonymous ? <Row label={t('settings.finish')} hint={t('settings.finish.hint')} right={<Mark kind="more" />} onPress={() => router.push('/signup')} /> : null}
           <Row label={t('settings.email')} right={<Value text={session?.user.email ?? (isAnonymous ? t('word.guest') : t('word.none'))} />} />
+          {session && !isAnonymous ? (
+            <Row
+              label={t('settings.type')}
+              hint={given ? t('settings.type.given') : t('settings.type.hint')}
+              right={<Value text={typeName(accountType)} more={!given} />}
+              onPress={given ? undefined : () => setSheet('type')}
+            />
+          ) : null}
+          {accountType === 'dj' ? (
+            <Row label={t('staff.mydj')} hint={t('staff.mydj.hint')} right={<Mark kind="more" />} onPress={() => router.push({ pathname: '/panel/dj', params: { mine: '1' } })} />
+          ) : null}
           {session ? <Row label={t('settings.export')} hint={t('settings.export.hint')} right={<Mark kind="more" />} onPress={doExport} /> : null}
           {session && !isAnonymous ? <Row label={t('word.signout')} onPress={() => signOut().then(forgetPhoto).then(() => router.replace('/'))} /> : null}
           {!session ? <Row label={t('word.signup')} right={<Mark kind="more" />} onPress={() => router.push('/signup')} /> : null}
@@ -286,6 +326,14 @@ export default function SettingsScreen() {
               router.push('/film');
             }}
           />
+          <Row
+            label={t('tips.reset')}
+            hint={t('tips.reset.hint')}
+            onPress={() => {
+              resetTips();
+              Alert.alert(t('tips.reset'), t('tips.reset.done'));
+            }}
+          />
           <Row label={t('settings.web')} hint={t('settings.web.hint')} right={<Mark kind="out" />} onPress={() => Linking.openURL(SITE)} />
           <Row label={t('settings.credits')} hint={t('settings.credits.hint')} right={<Mark kind="more" />} onPress={() => router.push('/credits')} />
           <Row label={t('settings.privacy.link')} hint={t('settings.privacy.hint')} right={<Mark kind="out" />} onPress={() => Linking.openURL('https://kurtkurtkurt-del.github.io/afterhours/datenschutz/')} />
@@ -316,6 +364,26 @@ export default function SettingsScreen() {
         selected={settings?.kept_visibility ?? null}
         onSelect={(id) => patch({ kept_visibility: id as Settings['kept_visibility'] })}
         onClose={() => setSheet(null)}
+      />
+      <PickerSheet
+        open={sheet === 'type'}
+        title={t('settings.type')}
+        options={ACCOUNT_TYPES.filter((a) => a.id === 'user' || a.id === 'dj')}
+        selected={accountType}
+        onSelect={(id) => {
+          if (id === accountType) return;
+          setCodeError(null);
+          setWanted(id as AccountType);
+        }}
+        onClose={() => setSheet(null)}
+      />
+      <DoorCode
+        key={wanted ?? 'none'}
+        open={wanted !== null}
+        title={t('settings.type.code', { type: typeName(wanted) })}
+        error={codeError}
+        onSubmit={submitCode}
+        onClose={() => setWanted(null)}
       />
       <PickerSheet
         open={sheet === 'sound'}
