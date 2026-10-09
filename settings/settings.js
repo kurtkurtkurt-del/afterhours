@@ -198,7 +198,64 @@
         AH.errorText(h, AH.t("settings.export.failed")), "error"));
   };
 
+  /* --- the people you blocked (50_blocks.sql): a button each to unblock.
+     Blocking itself happens in the app, on the person's page. --- */
+  function loadBlocked() {
+    const box = el("set-blocked");
+    call("my_blocks")
+      .then((rows) => {
+        box.textContent = "";
+        if (!rows || !rows.length) {
+          const none = document.createElement("p");
+          none.className = "account-about";
+          none.textContent = AH.t("settings.blocked.none");
+          box.appendChild(none);
+          return;
+        }
+        rows.forEach((r) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.textContent = (r.display_name || r.handle || "") + " · " + AH.t("settings.blocked.undo");
+          b.onclick = () => call("unblock_user", { p_other: r.id }).then(loadBlocked, () => {});
+          box.appendChild(b);
+        });
+      })
+      .catch(() => { box.textContent = ""; });
+  }
+
   /* --- deleting the account: two steps, the second asks you to type your own handle --- */
+
+  /* Every file in your folder of the photos bucket goes first (profile photo, posts,
+     group photos), as in the app: storage cannot be emptied from SQL, and after the
+     account is gone nobody may touch them (24_photos.sql, 51_safety.sql). */
+  const storage = (path, body, method) =>
+    fetch((window.AH_CONFIG || {}).url.replace(/\/$/, "") + "/storage/v1/object" + path, {
+      method: method || "POST",
+      headers: { apikey: (window.AH_CONFIG || {}).anonKey, Authorization: "Bearer " + AH.token, "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    }).then((res) => {
+      if (!res.ok) throw new Error("storage " + res.status);
+      return res.json().catch(() => null);
+    });
+  async function listAll(dir) {
+    const out = [];
+    for (let offset = 0; ; offset += 100) {
+      const page = (await storage("/list/photos", { prefix: dir, limit: 100, offset: offset })) || [];
+      for (const f of page) {
+        if (f.id) out.push(dir + "/" + f.name);
+        else out.push(...(await listAll(dir + "/" + f.name)));
+      }
+      if (page.length < 100) return out;
+    }
+  }
+  async function removeFiles() {
+    const uid = AH.session && AH.session.user && AH.session.user.id;
+    if (!uid) return;
+    const files = await listAll(uid);
+    for (let i = 0; i < files.length; i += 100) {
+      await storage("/photos", { prefixes: files.slice(i, i + 100) }, "DELETE");
+    }
+  }
 
   const deleteStatus = el("set-delete-status");
   el("set-delete").onclick = function () {
@@ -213,7 +270,8 @@
       return;
     }
     say(deleteStatus, AH.t("settings.delete.working"));
-    call("delete_account")
+    removeFiles()
+      .then(() => call("delete_account"))
       .then(() => {
         AH.dropSession();
         location.href = "../index.html";
@@ -241,7 +299,7 @@
 
     buildChoice(el("set-kept"), p.kept_visibility, (v) => writeSetting("kept_visibility", v));
     buildChoice(el("set-found"), p.discoverable, (v) => writeSetting("discoverable", v));
-    buildChoice(el("set-mail"), p.notify_email, (v) => writeSetting("notify_email", v));
+    loadBlocked();
 
     return buildCities(p.city_slug);
   }
