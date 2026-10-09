@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { openPerson } from '@/components/People';
@@ -6,10 +6,14 @@ import { Image } from 'expo-image';
 import Svg, { Path } from 'react-native-svg';
 import type { SamplePost as Post } from '@/content/posts';
 import Avatar from '@/components/Avatar';
+import { DoubleTap, LikersSheet, LikesLine, type Liker } from '@/components/PostBits';
 import { dayLabel } from '@/data/when';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+
+// Names that like a sample post, after the people in its comments.
+const SAMPLE_LIKERS = ['lena.k', 'mert_', 'jonas', 'selin', 'deniz', 'mia', 'can', 'ela'];
 
 // One sample post in the past feed, laid out like a photo app: who and where on top,
 // the photo full width, a heart and a speech mark, the likes, the caption, two
@@ -23,9 +27,16 @@ export default memo(function SamplePost({ post }: { post: Post }) {
   const { t, up } = useLang();
   const [liked, setLiked] = useState(false);
   const [sheet, setSheet] = useState(false);
+  const [likers, setLikers] = useState(false);
+  const you = t('deck.you');
+  // Sample likers: the people in its comments first, then a few more names; you on top once liked.
+  const loadLikers = useCallback(async (): Promise<Liker[]> => {
+    const names = [...new Set([...post.comments.map((c) => c.who), ...SAMPLE_LIKERS])].filter((n) => n !== post.who);
+    const list = names.slice(0, Math.min(post.likes, SAMPLE_LIKERS.length)).map((n) => ({ key: n, name: n }));
+    return liked ? [{ key: 'you', name: you, you: true }, ...list] : list;
+  }, [post, liked, you]);
   const [mine, setMine] = useState<string[]>([]);
   const [at] = useState(() => new Date(Date.now() - post.daysAgo * 86400000).toISOString());
-  const you = t('deck.you');
   const person = (name: string) => openPerson(name, true);
 
   return (
@@ -41,9 +52,9 @@ export default memo(function SamplePost({ post }: { post: Post }) {
         <Text style={styles.sample}>{up(t('deck.sample'))}</Text>
       </View>
 
-      <Pressable onLongPress={() => setLiked(true)} delayLongPress={250}>
+      <DoubleTap onDouble={() => setLiked(true)}>
         <Image source={post.photo} style={[styles.photo, { height: width }]} contentFit="cover" />
-      </Pressable>
+      </DoubleTap>
 
       <View style={styles.body}>
         <View style={styles.icons}>
@@ -64,7 +75,7 @@ export default memo(function SamplePost({ post }: { post: Post }) {
             </Svg>
           </Pressable>
         </View>
-        <Text style={styles.likes}>{t('post.likes', { n: post.likes + (liked ? 1 : 0) })}</Text>
+        <LikesLine n={post.likes + (liked ? 1 : 0)} onPress={() => setLikers(true)} />
         <Text style={styles.text}>
           <Name who={post.who} onPress={person} />
           {post.caption}
@@ -91,6 +102,16 @@ export default memo(function SamplePost({ post }: { post: Post }) {
         </Pressable>
       </View>
 
+      <LikersSheet
+        open={likers}
+        onClose={() => setLikers(false)}
+        load={loadLikers}
+        more={Math.max(0, post.likes - SAMPLE_LIKERS.length)}
+        onPerson={(l) => {
+          setLikers(false);
+          setTimeout(() => person(l.name), 250);
+        }}
+      />
       <CommentSheet open={sheet} onClose={() => setSheet(false)} post={post} mine={mine} onSend={(text) => setMine((m) => [...m, text])} onPerson={(name) => {
         setSheet(false);
         setTimeout(() => person(name), 250);

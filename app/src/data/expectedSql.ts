@@ -56,4 +56,5 @@ export const EXPECTED_SQL = [
   '52_bans.sql',
   '53_trust.sql',
   '54_upkeep.sql',
+  '55_post_social.sql',
 ];

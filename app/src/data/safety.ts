@@ -84,7 +84,7 @@ export async function missingSql(): Promise<string[] | null> {
 // ------------------------------------------------------------------ reports
 
 // Posts keep their own (data/posts.ts postReport); everything else comes here.
-export type ReportKind = 'comment' | 'room_post' | 'group_message' | 'profile' | 'group' | 'spark';
+export type ReportKind = 'comment' | 'room_post' | 'group_message' | 'profile' | 'group' | 'spark' | 'post_comment';
 export async function report(kind: ReportKind, target: string, reason: string | null) {
   await must(supabase.rpc('report', { p_kind: kind, p_target: target, p_reason: reason }));
 }

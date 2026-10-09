@@ -16,7 +16,14 @@ export type Post = {
   event_title: string | null;
   created_at: string;
   mine: boolean;
+  // 55_post_social.sql
+  likes: number;
+  liked: boolean;
+  comments: number;
+  first_comments: { who: string | null; text: string }[];
 };
+export type PostComment = { id: string; author_id: string; handle: string | null; name: string | null; body: string; created_at: string; mine: boolean; can_delete: boolean };
+export type PostLiker = { id: string; handle: string | null; name: string | null; mine: boolean; at: string };
 export type Reported = { id: string; body: string; photo_path: string | null; author: string | null; reports: number; reasons: string[]; is_hidden: boolean; created_at: string };
 
 const rpc = async <T,>(name: string, args?: Record<string, unknown>): Promise<T> => {
@@ -32,6 +39,12 @@ export async function postDelete(id: string) {
   const path = await rpc<string | null>('post_delete', { p_id: id });
   if (path) await supabase.storage.from('photos').remove([path]).catch(() => {});
 }
+// 55_post_social.sql: a double tap or the heart; who liked it; the comments under it.
+export const postLike = (id: string, on: boolean) => rpc<number>('post_like', { p_id: id, p_on: on });
+export const postLikers = (id: string) => rpc<PostLiker[]>('post_likers', { p_id: id });
+export const postComments = (id: string) => rpc<PostComment[]>('post_comments_of', { p_id: id });
+export const postCommentAdd = (id: string, body: string) => rpc<string>('post_comment_add', { p_id: id, p_body: body });
+export const postCommentDelete = (id: string) => rpc<void>('post_comment_delete', { p_id: id });
 export const reportedPosts = () => rpc<Reported[]>('staff_posts_reported');
 export const hidePost = (id: string, hidden: boolean) => rpc<void>('staff_post_hide', { p_id: id, p_hidden: hidden });
 

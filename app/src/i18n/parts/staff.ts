@@ -123,6 +123,7 @@ export const staff = {
   'staff.reports.kind.group_message': { en: 'group message', de: 'gruppen-nachricht', tr: 'grup mesajı' },
   'staff.reports.kind.profile': { en: 'profile', de: 'profil', tr: 'profil' },
   'staff.reports.kind.group': { en: 'group', de: 'gruppe', tr: 'grup' },
+  'staff.reports.kind.post_comment': { en: 'comment on a post', de: 'kommentar unter einem post', tr: 'gönderi yorumu' },
   'staff.reports.kind.spark': { en: 'spark', de: 'spark', tr: 'spark' },
   'staff.reports.gone': { en: '(already gone)', de: '(schon weg)', tr: '(zaten silinmiş)' },
   'staff.reports.what.hide': { en: 'remove = hidden from everyone', de: 'entfernen = für alle versteckt', tr: 'kaldır = herkesten gizlenir' },
