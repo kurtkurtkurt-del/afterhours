@@ -1,7 +1,9 @@
 """afterhours — the favicons and the app-style icons, from the logo set.
 
-The mark is "a." — a paper "a" with a red full stop, sitting bottom-left in
-an ink square (the app icon). The tiny sizes drop the dot and centre the
+The mark is "a." sitting bottom-left in a square, in three grounds so the
+three can be told apart on a home screen: the site white (an ink "a", a red
+full stop), the web app red (a paper "a", an ink stop), and the phone app ink
+(app/assets/icon.png, not made here). The tiny sizes drop the dot and centre the
 letter, since a 16 px dot is a smear. Type: Archivo at width 62, weight 900,
 the static instance the app ships in app/assets/fonts/ArchivoLogo.ttf.
 
@@ -14,6 +16,10 @@ FONT = "app/assets/fonts/ArchivoLogo.ttf"
 INK = (14, 13, 12)
 PAPER = (243, 241, 236)
 RED = (215, 38, 30)
+WHITE = (255, 255, 255)
+
+SITE = (WHITE, INK, RED)   # ground, letter, full stop
+PWA = (RED, PAPER, INK)
 TRACK = -0.012  # em, between the "a" and the dot
 
 
@@ -34,9 +40,10 @@ def fit(glyph, h):
     return glyph.resize((max(1, round(glyph.width * s)), max(1, round(glyph.height * s))), Image.LANCZOS)
 
 
-def mark(size, with_dot, h_frac, left_frac=None, bottom_frac=None):
-    im = Image.new("RGBA", (size, size), INK + (255,))
-    g = fit(render("a." if with_dot else "a", 600, PAPER + (255,), RED + (255,)), size * h_frac)
+def mark(size, with_dot, h_frac, left_frac=None, bottom_frac=None, colours=SITE):
+    ground, letter, stop = colours
+    im = Image.new("RGBA", (size, size), ground + (255,))
+    g = fit(render("a." if with_dot else "a", 600, letter + (255,), stop + (255,)), size * h_frac)
     if left_frac is None:
         pos = ((size - g.width) // 2, (size - g.height) // 2)
     else:
@@ -56,3 +63,10 @@ mark(180, True, 0.40, 0.12, 0.13).save("favicon-180.png")
 # maskable: keep the mark inside the safe circle (centre 80%)
 mark(512, True, 0.30, 0.30, 0.34).save("favicon-512.png")
 print("favicons: 16 32 48 64 180 512")
+
+# the web app (app/public, published by app/tools/publish-pwa.sh)
+mark(180, True, 0.40, 0.12, 0.13, PWA).save("app/public/apple-touch-icon.png")
+mark(192, True, 0.30, 0.30, 0.34, PWA).save("app/public/icon-192.png")
+mark(512, True, 0.30, 0.30, 0.34, PWA).save("app/public/icon-512.png")
+mark(48, True, 0.50, colours=PWA).save("app/public/favicon.png")
+print("web app: 180 192 512 48")
