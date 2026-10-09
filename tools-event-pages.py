@@ -75,6 +75,7 @@ SHELL = """<!DOCTYPE html>
   <script src="../../config.js?v={v}"></script>
   <script src="../../session.js?v={v}"></script>
   <script src="../../menu.js?v={v}"></script>
+  <script src="../../webapp.js?v={v}"></script>
   <script src="../../data.js?v={v}"
           data-fallback="../../events-data.js?v={v}"
           data-after="../event.js?v={v}"></script>
