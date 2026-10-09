@@ -7,7 +7,7 @@ import type { Key } from '@/i18n/dict';
 // same two steps: topics first, then their replies. Anyone can post, guests included
 // (author_id comes from the session; without a name it shows "someone").
 // Empty who means no name ("someone"); at is the raw date. Both become strings at render time.
-export type Comment = { id: string; who: string; at: string; body: string; replies: { who: string; at: string; body: string; waiting?: boolean }[]; waiting?: boolean };
+export type Comment = { id: string; who: string; at: string; body: string; replies: { id?: string; who: string; at: string; body: string; waiting?: boolean }[]; waiting?: boolean };
 
 // Server error text → string key.
 export const commentErrors: Record<string, Key> = {
@@ -81,7 +81,7 @@ async function loadComments(eventId: string): Promise<Comment[]> {
     who: (t.author ?? '').toLowerCase(),
     at: t.created_at,
     body: t.body,
-    replies: reps.filter((r) => r.parent_id === t.id).map((r) => ({ who: (r.author ?? '').toLowerCase(), at: r.created_at, body: r.body })),
+    replies: reps.filter((r) => r.parent_id === t.id).map((r) => ({ id: r.id, who: (r.author ?? '').toLowerCase(), at: r.created_at, body: r.body })),
   }));
 }
 

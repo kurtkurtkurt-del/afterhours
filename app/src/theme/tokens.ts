@@ -1,3 +1,30 @@
+import Storage from 'expo-sqlite/kv-store';
+
+// The accent: red by default, picked in settings → app. spot fills (buttons, the dot,
+// live rings), spotText is the same colour readable as small text on ink, rgb feeds
+// the see-through tints. Read once at start: every StyleSheet below is built from it,
+// so a new pick reloads the app (data/accent.ts).
+export const ACCENTS = {
+  red: { spot: '#D7261E', spotText: '#F0443A', rgb: '215,38,30' },
+  green: { spot: '#1E9E57', spotText: '#3CC878', rgb: '30,158,87' },
+  yellow: { spot: '#E5B000', spotText: '#F5C838', rgb: '229,176,0' },
+  blue: { spot: '#2D6BE0', spotText: '#5C8FF0', rgb: '45,107,224' },
+  pink: { spot: '#DD3B8A', spotText: '#F065A8', rgb: '221,59,138' },
+} as const;
+export type AccentId = keyof typeof ACCENTS;
+const readAccent = (): AccentId => {
+  try {
+    const v = Storage.getItemSync('accent');
+    return v && v in ACCENTS ? (v as AccentId) : 'red';
+  } catch {
+    return 'red';
+  }
+};
+export const accentId: AccentId = readAccent();
+const accent = ACCENTS[accentId];
+// A see-through version of the accent: tint(0.12) → 'rgba(…,0.12)'.
+export const tint = (alpha: number) => `rgba(${accent.rgb},${alpha})`;
+
 // Ink on paper. No pure white, no pure black.
 export const colors = {
   paper: '#F3F1EC',
@@ -5,8 +32,8 @@ export const colors = {
   ink: '#0E0D0C',
   ink2: '#6C6961',
   rule: '#D9D5CC',
-  spot: '#D7261E',     // red: live · kept · on; fills, borders, the dot in the logo
-  spotText: '#F0443A', // red TEXT on ink (spot is unreadable at small sizes)
+  spot: accent.spot,         // the accent: live · kept · on; fills, borders, the dot in the logo
+  spotText: accent.spotText, // accent TEXT on ink (spot is unreadable at small sizes)
   ink3: '#2A2724',     // hairline: divider on dark backgrounds
   mute: '#A9A59C',     // muted text and icons on dark backgrounds
   meta: '#7F7B73',     // small uppercase meta lines

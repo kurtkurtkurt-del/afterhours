@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import AfterhoursCard from '@/components/AfterhoursCard';
 import BackButton from '@/components/BackButton';
@@ -10,17 +10,20 @@ import ProfileCounts from '@/components/ProfileCounts';
 import PullDownScroll from '@/components/PullDownScroll';
 import Sleeve from '@/components/Sleeve';
 import SoundCorner from '@/components/SoundCorner';
-import { ActionButton, SAMPLES, useConnect } from '@/components/People';
-import { person, personPeople, type Found, type PersonCard } from '@/data/friends';
+import { ActionButton, SAMPLES, confirmBlock, useConnect } from '@/components/People';
+import { useReport } from '@/components/ReportSheet';
+import { friendRemove, person, personPeople, type Found, type PersonCard } from '@/data/friends';
 import { friendPhotos } from '@/data/photo';
 import { personCards, toCardData } from '@/data/checkin';
 import { useProfileExtra } from '@/data/profile';
 import { useShelf } from '@/lib/offline';
+import { refreshYours } from '@/data/yours';
 import { collection as samples } from '@/content/collection';
 import type { NightCardData } from '@/content/cardsgen';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import PillAction, { PillRow } from '@/components/PillAction';
 
 type Loaded = { card: PersonCard; found: Found | null } | null;
 
@@ -38,9 +41,12 @@ export default function PersonScreen() {
   const insets = useSafeAreaInsets();
   const { width, height } = useWindowDimensions();
   const { t, tn, up } = useLang();
-  const { after, busy, act } = useConnect();
+  const { after, busy, act, member } = useConnect();
+  const reporting = useReport();
   const [state, setState] = useState<{ handle: string; data: Loaded } | null>(null);
   const [sampleAsked, setSampleAsked] = useState(false);
+  // Removed here: the button goes back to add without waiting for a reload.
+  const [removed, setRemoved] = useState(false);
   const [photo, setPhoto] = useState<string | null>(null);
   const [cards, setCards] = useState<NightCardData[] | null>(null);
   const [peopleCount, setPeopleCount] = useState<number | null>(null);
@@ -79,7 +85,23 @@ export default function PersonScreen() {
     ? { handle: example.handle, display_name: example.display_name, bio: null, city_name: example.city_name, created_at: '', is_friend: false, kept_count: null }
     : state?.data?.card;
   const found = state?.data?.found ?? null;
-  const relation = example ? (sampleAsked ? 'outgoing' : 'none') : found ? (after[found.id] ?? found.relation) : card?.is_friend ? 'friend' : 'none';
+  const relation = example ? (sampleAsked ? 'outgoing' : 'none') : found ? (after[found.id] ?? (removed ? 'none' : found.relation)) : card?.is_friend ? 'friend' : 'none';
+  // Remove a friend or take a request back, asked first.
+  const unfriend = (other: string, label: string) =>
+    Alert.alert(label, undefined, [
+      { text: t('block.keep'), style: 'cancel' },
+      {
+        text: label,
+        style: 'destructive',
+        onPress: () =>
+          friendRemove(other)
+            .then(() => {
+              setRemoved(true);
+              refreshYours();
+            })
+            .catch((e) => Alert.alert(String(e?.message ?? e).toLowerCase())),
+      },
+    ]);
 
   // The photo table only returns confirmed friends' rows; anyone else gets the initial.
   const id = found?.id;
@@ -141,6 +163,21 @@ export default function PersonScreen() {
                   onPress={() => (example ? setSampleAsked(true) : found ? act(found, relation) : undefined)}
                 />
               </View>
+              {found && member && !example ? (
+                <View style={styles.links}>
+                  <PillRow>
+                    {relation === 'friend' || relation === 'outgoing' ? (
+                      <PillAction
+                        icon={relation === 'friend' ? 'minus' : 'close'}
+                        label={t(relation === 'friend' ? 'friend.remove' : 'friend.cancel')}
+                        onPress={() => unfriend(found.id, t(relation === 'friend' ? 'friend.remove' : 'friend.cancel'))}
+                      />
+                    ) : null}
+                    <PillAction icon="flag" label={t('posts.report')} onPress={() => reporting.ask('profile', found.id)} />
+                    <PillAction icon="block" tone="danger" label={t('block.do')} onPress={() => confirmBlock({ id: found.id, name: card.display_name ?? card.handle }, t, () => router.back())} />
+                  </PillRow>
+                </View>
+              ) : null}
             </View>
 
             <View style={{ height: gap }} />
@@ -196,6 +233,7 @@ export default function PersonScreen() {
           <Text style={styles.flipHint}>{up(t('account.flip'))}</Text>
         </Pressable>
       </Modal>
+      {reporting.sheet}
     </View>
   );
 }
@@ -208,6 +246,7 @@ const styles = StyleSheet.create({
   bio: { fontFamily: fonts.medium, fontSize: 19, lineHeight: 25, letterSpacing: -0.4, color: colors.paper, marginTop: 22 },
   about: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 23, color: colors.mute, marginTop: 8 },
   action: { marginTop: 20 },
+  links: { marginTop: 14 },
   head: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12, paddingTop: 30 },
   headLeft: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   deckTitle: { fontFamily: fonts.medium, fontSize: 15, letterSpacing: -0.2, color: colors.paper },

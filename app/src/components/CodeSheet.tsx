@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { KeyboardAvoidingView, Modal, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Modal, type KeyboardTypeOptions, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
@@ -14,11 +14,14 @@ type Props = {
   error: string | null;
   onSubmit: (code: string) => void;
   onClose: () => void;
+  // a password, an email address
+  secure?: boolean;
+  keyboardType?: KeyboardTypeOptions;
 };
 
 // Bottom sheet with one field: asks for a code. Same look as PickerSheet.
 // Give it a key per request so the field starts empty each time.
-export default function CodeSheet({ open, title, go, error, onSubmit, onClose }: Props) {
+export default function CodeSheet({ open, title, go, error, onSubmit, onClose, secure, keyboardType }: Props) {
   const insets = useSafeAreaInsets();
   const { up } = useLang();
   const [code, setCode] = useState('');
@@ -28,7 +31,7 @@ export default function CodeSheet({ open, title, go, error, onSubmit, onClose }:
         <Pressable style={styles.dim} onPress={onClose} />
         <View style={[styles.sheet, { paddingBottom: insets.bottom + 24 }]}>
           <Text style={styles.head}>{up(title)}</Text>
-          <Input value={code} onChangeText={setCode} autoFocus returnKeyType="done" onSubmitEditing={() => onSubmit(code)} />
+          <Input value={code} onChangeText={setCode} autoFocus returnKeyType="done" onSubmitEditing={() => onSubmit(code)} secureTextEntry={secure} keyboardType={keyboardType} textContentType={secure ? 'newPassword' : keyboardType === 'email-address' ? 'emailAddress' : undefined} />
           {error ? <Text style={styles.error}>{error}</Text> : null}
           <View style={styles.button}>
             <Button label={go} onPress={() => onSubmit(code)} />

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Alert, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
+import { supabase } from '@/lib/supabase';
 import Button from '@/components/Button';
 import StaffPage, { Choice, Field, Quiet, Said, staffStyles } from '@/components/StaffPage';
 import { Panel, Row, Section } from '@/components/Row';
@@ -17,6 +18,12 @@ const today = () => new Date().toISOString().slice(0, 10);
 
 // /panel/dj: the staff make a dj page. /panel/dj?mine=1: a dj edits their own page
 // and lists where they play.
+// Whether a dj page still waits for the staff (djs.verified; the owner can read it).
+const waitingFor = async (id: string) => {
+  const { data } = await supabase.from('djs').select('verified').eq('id', id).maybeSingle();
+  return data ? !(data as { verified: boolean }).verified : false;
+};
+
 export default function DjPage() {
   const { mine } = useLocalSearchParams<{ mine?: string }>();
   const own = mine === '1';
@@ -24,6 +31,8 @@ export default function DjPage() {
   const [cities, setCities] = useState<Place[]>([]);
   const [f, setF] = useState<DjForm>(empty);
   const [me, setMe] = useState<MyDj | null>(null);
+  // Your own page waits for the staff until they let it through (53_trust.sql).
+  const [waiting, setWaiting] = useState(false);
   const [sets, setSets] = useState<DjSetRow[]>([]);
   const [set, setSet] = useState({ venue: '', date: today(), time: '23:00', hours: '4' });
   const [said, setSaid] = useState<{ text: string; bad?: boolean } | null>(null);
@@ -37,6 +46,7 @@ export default function DjPage() {
     myDj().then((d) => {
       if (!d) return;
       setMe(d);
+      waitingFor(d.id).then(setWaiting, () => {});
       setF({ name: d.name, genre: d.genre, sound: d.sound, city: d.city, bio: d.bio, photo: d.photo });
       loadSets(d.id);
     }, () => {});
@@ -47,7 +57,11 @@ export default function DjPage() {
     (own ? saveMyDj(f) : saveDj(f)).then(
       () => {
         setSaid({ text: t('staff.saved') });
-        if (own) myDj().then((d) => d && setMe(d), () => {});
+        if (own) myDj().then((d) => {
+          if (!d) return;
+          setMe(d);
+          waitingFor(d.id).then(setWaiting, () => {});
+        }, () => {});
         else setF(empty);
       },
       (e) => setSaid({ text: why(e), bad: true }),
@@ -72,6 +86,7 @@ export default function DjPage() {
 
   return (
     <StaffPage title={own ? t('staff.mydj') : t('staff.dj.new')}>
+      {own && me ? <Said text={waiting ? t('staff.mydj.waiting') : t('staff.mydj.live')} bad={waiting} /> : null}
       <Field label={t('staff.f.name')} value={f.name} onChangeText={(name) => patch({ name })} maxLength={60} autoCapitalize="words" />
       <Field label={t('staff.f.genre')} value={f.genre} onChangeText={(genre) => patch({ genre })} maxLength={60} />
       <Choice label={t('staff.f.sound')} value={f.sound} options={SOUNDS} onSelect={(s) => patch({ sound: s as DjForm['sound'] })} />

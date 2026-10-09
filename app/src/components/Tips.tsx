@@ -4,7 +4,7 @@ import Animated, { Easing, FadeIn, FadeOut, SlideInDown, useAnimatedStyle, useSh
 import Storage from 'expo-sqlite/kv-store';
 import { Image } from 'expo-image';
 import { useLang, type Key } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, tint } from '@/theme/tokens';
 
 // First visit to a page: a card slides up from the bottom with at most two short
 // tips, one after the other, then never again on that page. Settings → about →
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   motion: { width: 150, height: 200, alignItems: 'center', justifyContent: 'center' },
   mini: { width: 120, height: 170, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink3, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 18, shadowOffset: { width: 0, height: 10 }, elevation: 10 },
   miniTint: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 },
-  miniKeep: { backgroundColor: 'rgba(215,38,30,0.55)' },
+  miniKeep: { backgroundColor: tint(0.55) },
   miniDrop: { backgroundColor: 'rgba(243,241,236,0.3)' },
   ring: { position: 'absolute', width: 96, height: 96, borderRadius: 48, borderWidth: 2.5, borderColor: colors.spot },
   finger: { width: 26, height: 26, borderRadius: 13, backgroundColor: colors.paper },

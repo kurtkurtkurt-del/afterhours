@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef } from 'react';
 import { StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { leafletCss, leafletJs } from '@/vendor/leaflet';
+import { colors, tint } from '@/theme/tokens';
 
 export type Pin = { id: string; lat: number; lng: number; friends: boolean; spark?: boolean };
 // pad: the area the circle must fit in, leaving room for the header above and the slider or card below
@@ -30,8 +31,8 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   .pin{position:relative;width:22px;height:24px}
   .sq{position:absolute;left:3px;top:1px;width:16px;height:16px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);transform-origin:50% 50%;background:#f3f1ec;box-shadow:0 2px 6px rgba(0,0,0,.55);transition:opacity .3s ease-out,transform .2s ease-out}
   .sq:after{content:'';position:absolute;left:5px;top:5px;width:6px;height:6px;border-radius:50%;background:#0e0d0c}
-  .sq.fr{background:#d7261e}
-  .sq.on{background:#d7261e;transform:rotate(-45deg) scale(1.3);box-shadow:0 0 0 2px #f3f1ec,0 3px 10px rgba(0,0,0,.6)}
+  .sq.fr{background:${colors.spot}}
+  .sq.on{background:${colors.spot};transform:rotate(-45deg) scale(1.3);box-shadow:0 0 0 2px #f3f1ec,0 3px 10px rgba(0,0,0,.6)}
   .sq.on:after{background:#f3f1ec}
   /* Sparks: gold, a rounded diamond instead of a drop, so they never read as a night. */
   .sq.sp{background:#e8b04b;border-radius:4px;transform:rotate(45deg) scale(.85);top:4px}
@@ -44,16 +45,16 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
      3.2 s. Each starts at its own moment (from its id) and stays small, so neighbours
      ripple one after another instead of melting into one blur. */
   .rp{position:absolute;left:5px;bottom:-3px;width:12px;height:12px;border-radius:50%;box-sizing:border-box;border:1.5px solid rgba(243,241,236,.6);animation:radar 3.2s ease-out infinite both;pointer-events:none}
-  .pin.f1 .rp{border-color:rgba(215,38,30,.8)}
+  .pin.f1 .rp{border-color:${tint(0.8)}}
   .pin.fs .rp{border-color:rgba(232,176,75,.85)}
   .dim .rp{visibility:hidden}
   @keyframes radar{0%{transform:scale(1);opacity:.95}75%{opacity:0}100%{transform:scale(3.4);opacity:0}}
   /* You: a round puck, so you never read as a night (nights are pins): a paper disc
      with an ink gap and a red rim, a red core, and a slow red ping around it. */
   .me{position:relative;width:22px;height:22px}
-  .me i{position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:#d7261e;animation:ping 2.4s ease-out infinite}
-  .me b{position:absolute;left:4px;top:4px;width:14px;height:14px;border-radius:50%;background:#f3f1ec;box-shadow:0 0 0 2px #0e0d0c,0 0 0 3.5px #d7261e}
-  .me b:after{content:'';position:absolute;left:4px;top:4px;width:6px;height:6px;border-radius:50%;background:#d7261e}
+  .me i{position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:${colors.spot};animation:ping 2.4s ease-out infinite}
+  .me b{position:absolute;left:4px;top:4px;width:14px;height:14px;border-radius:50%;background:#f3f1ec;box-shadow:0 0 0 2px #0e0d0c,0 0 0 3.5px ${colors.spot}}
+  .me b:after{content:'';position:absolute;left:4px;top:4px;width:6px;height:6px;border-radius:50%;background:${colors.spot}}
   @keyframes ping{0%{transform:scale(.6);opacity:.5}100%{transform:scale(2.6);opacity:0}}
 </style></head><body><div id="m"></div><script>
   var map=L.map('m',{zoomControl:false,attributionControl:true,zoomSnap:1,doubleClickZoom:false,fadeAnimation:false}).setView([48.137,11.575],13);
@@ -135,7 +136,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
     if(s.view){
       var c=[s.view.lat,s.view.lng], r=s.view.km*1000;
       pad={top:s.view.top,bottom:s.view.bottom};
-      if(!ring){ring=L.circle(c,{radius:r,color:'#d7261e',weight:1,fill:false,interactive:false}).addTo(map);}else{ring.setLatLng(c);ring.setRadius(r);}
+      if(!ring){ring=L.circle(c,{radius:r,color:'${colors.spot}',weight:1,fill:false,interactive:false}).addTo(map);}else{ring.setLatLng(c);ring.setRadius(r);}
       fit(true);
     }
     if(s.me){if(!meMarker){meMarker=L.marker([s.me[0],s.me[1]],{icon:L.divIcon({className:'',html:'<div class="me"><i></i><b></b></div>',iconSize:[22,22],iconAnchor:[11,11]}),interactive:false,zIndexOffset:1000}).addTo(map);}else{meMarker.setLatLng([s.me[0],s.me[1]]);}}

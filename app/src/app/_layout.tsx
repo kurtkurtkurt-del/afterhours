@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Stack } from 'expo-router';
-import { Platform, View } from 'react-native';
+import { Platform, Text, View } from 'react-native';
 import { NavigationBar } from 'expo-navigation-bar';
 import * as SplashScreen from 'expo-splash-screen';
 import Constants, { ExecutionEnvironment } from 'expo-constants';
@@ -19,13 +19,19 @@ import { LanguageProvider, useLang } from '@/i18n';
 import { usePushRegistration, usePushRouting } from '@/lib/push';
 import GenrePicker from '@/components/GenrePicker';
 import OfflineBar from '@/components/OfflineBar';
+import TermsGate from '@/components/TermsGate';
+import NoticeSheet from '@/components/NoticeSheet';
+import { catchErrors, logError } from '@/data/safety';
 import { startOffline } from '@/lib/offline';
 import '@/data/jobs';
 import { startWarm } from '@/data/warm';
+import PillAction from '@/components/PillAction';
 
 // Watch connectivity and flush queued writes as soon as the app starts.
 startOffline();
 startWarm();
+// Uncaught errors are written to client_errors (51_safety.sql) for the admin.
+catchErrors();
 
 // Keep the native splash up until fonts load so the hand-off is invisible.
 SplashScreen.preventAutoHideAsync();
@@ -73,6 +79,8 @@ export default function RootLayout() {
       <PushBridge />
       <GenrePicker />
       <OfflineBar />
+      <NoticeSheet />
+      <TermsGate />
     </AmbientProvider>
     </LanguageProvider>
     </AuthProvider>
@@ -88,4 +96,22 @@ function PushBridge() {
   usePushRegistration(!!session && !isAnonymous, lang);
   usePushRouting();
   return null;
+}
+
+// A screen that throws: the error is logged and the page offers to try again instead
+// of a blank screen (expo-router renders this in place of the route).
+export function ErrorBoundary({ error, retry }: { error: Error; retry: () => Promise<void> }) {
+  return <Crashed error={error} retry={retry} />;
+}
+function Crashed({ error, retry }: { error: Error; retry: () => Promise<void> }) {
+  useEffect(() => {
+    logError(error, 'screen', true);
+  }, [error]);
+  return (
+    <View style={{ flex: 1, backgroundColor: colors.ink, alignItems: 'center', justifyContent: 'center', padding: 32, gap: 18 }}>
+      <Text style={{ fontFamily: 'InterTight_500Medium', fontSize: 22, color: colors.paper, textAlign: 'center' }}>something broke.</Text>
+      <Text style={{ fontFamily: 'JetBrainsMono_400Regular', fontSize: 11, color: colors.mute, textAlign: 'center' }} numberOfLines={3}>{error.message}</Text>
+      <PillAction icon="retry" label="try again" onPress={() => retry()} />
+    </View>
+  );
 }

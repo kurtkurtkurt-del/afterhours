@@ -1,3 +1,4 @@
+import { useReport } from '@/components/ReportSheet';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Tips from '@/components/Tips';
 import { KeyboardAvoidingView, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
@@ -19,6 +20,7 @@ import { sparkAnswer, sparkAudience, sparkCancel, sparkCreate, sparkGet, sparkPe
 import { upperData, useLang, type Key } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import PillAction from '@/components/PillAction';
 
 const DAYS: Key[] = ['day.sun', 'day.mon', 'day.tue', 'day.wed', 'day.thu', 'day.fri', 'day.sat'];
 const two = (n: number) => String(n).padStart(2, '0');
@@ -236,6 +238,7 @@ async function spotNow(): Promise<[number, number] | null> {
 // Someone's spark (from your spark deck or the map), or your own: read as it is now.
 function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; width: number; whenText: (at: Date) => string }) {
   const { t, up } = useLang();
+  const reporting = useReport();
   const [invite, setInvite] = useState<SeenSpark | null | undefined>(undefined);
   const [answer, setAnswer] = useState<'in' | 'out' | null>(null);
   const [note, setNote] = useState<string | null>(null);
@@ -317,6 +320,12 @@ function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; 
           {invite.mine && outs.length ? <Row k={t('spark.out.names')} v={outs.map((p) => p.name.toLowerCase()).join(', ')} /> : null}
         </View>
         {invite.mine ? <Button label={calling ? t('spark.callOff.sure') : t('spark.callOff')} kind="line" onPress={callOff} /> : null}
+        {invite.mine ? null : (
+          <View style={styles.report}>
+            <PillAction icon="flag" label={t('report.spark')} onPress={() => reporting.ask('spark', id)} />
+          </View>
+        )}
+        {reporting.sheet}
       </View>
     </>
   );
@@ -341,6 +350,7 @@ function Chip({ label, on, onPress }: { label: string; on: boolean; onPress: () 
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
+  report: { marginTop: 18 },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, zIndex: 2 },
   hero: { backgroundColor: colors.ink2, overflow: 'hidden', borderBottomLeftRadius: radius.lg, borderBottomRightRadius: radius.lg },
   heroPhoto: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },

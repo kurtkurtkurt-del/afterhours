@@ -1,4 +1,5 @@
 import Svg, { Circle, Ellipse, Path, Rect } from 'react-native-svg';
+import { colors } from '@/theme/tokens';
 
 // A drawn face for people without a photograph: the same name always gets the same
 // face (background, skin, hair style and colour are picked from the name). Flat
@@ -6,7 +7,7 @@ import Svg, { Circle, Ellipse, Path, Rect } from 'react-native-svg';
 const BG = ['#3B3A5C', '#5C3B3E', '#2F4A43', '#4E432C', '#36404F', '#523850', '#2E4757', '#5A4A3A'];
 const SKIN = ['#F1D3BC', '#E3B48F', '#C68E66', '#9A6646', '#6E4630'];
 const HAIR = ['#1E1A17', '#3E2A1E', '#7A4A26', '#C9A15A', '#B4472E', '#D9D2C5'];
-const SHIRT = ['#D7261E', '#F3F1EC', '#E8B04B', '#6C6961', '#2A2724'];
+const SHIRT = [colors.spot, '#F3F1EC', '#E8B04B', '#6C6961', '#2A2724'];
 
 function hash(s: string) {
   let h = 2166136261;

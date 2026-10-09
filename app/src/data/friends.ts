@@ -1,6 +1,6 @@
 import { supabase } from '@/lib/supabase';
 import { stashNights, type Night } from '@/data/deck';
-import { must, outbox, pendingJobs, remember, send } from '@/lib/offline';
+import { invalidate, must, outbox, pendingJobs, remember, send } from '@/lib/offline';
 
 // 07_friends.sql + 12_profiles.sql + 15 (friends_kept) + 19 (friends_live)
 export type FriendRow = { other_id: string; handle: string | null; display_name: string | null; status: 'pending' | 'accepted'; direction: 'incoming' | 'outgoing' };
@@ -102,4 +102,20 @@ export async function person(handle: string): Promise<{ card: PersonCard; found:
     peopleSearch(handle).then((rows) => rows.find((r) => r.handle === handle) ?? null).catch(() => null),
   ]);
   return card ? { card, found } : null;
+}
+
+// 50_blocks.sql: blocking. Across a block neither side sees the other's card, finds
+// them, or can ask; the friendship goes. The other side is not told. Online only:
+// a block that waits in the outbox would leave them seeing you meanwhile.
+export type Blocked = { id: string; handle: string | null; display_name: string | null };
+export async function blockUser(other: string) {
+  await must(supabase.rpc('block_user', { p_other: other }));
+  invalidate(...FRIEND_SHELVES, 'personKept', 'personPeople');
+}
+export async function unblockUser(other: string) {
+  await must(supabase.rpc('unblock_user', { p_other: other }));
+  invalidate(...FRIEND_SHELVES, 'personKept', 'personPeople');
+}
+export async function myBlocks(): Promise<Blocked[]> {
+  return ((await must(supabase.rpc('my_blocks'))) ?? []) as Blocked[];
 }

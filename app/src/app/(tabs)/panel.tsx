@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { missingSql, staffReports } from '@/data/safety';
+import { djsWaiting } from '@/data/staff';
 import { StyleSheet, Text, View } from 'react-native';
 import { router, type Href } from 'expo-router';
 import StaffPage, { Quiet } from '@/components/StaffPage';
@@ -18,9 +20,17 @@ export default function PanelScreen() {
   const { t, up } = useLang();
   const tabSpace = useTabBarSpace();
   const [o, setO] = useState<Overview | null>(null);
+  // Open reports other than posts (51_safety.sql), counted on the row.
+  const [reports, setReports] = useState(0);
+  const [djs, setDjs] = useState(0);
+  // The admin sees whether the live database is behind the app (null: unknown).
+  const [missing, setMissing] = useState<string[] | null>(null);
   useEffect(() => {
     if (!isStaff(role)) return;
     overview().then(setO, () => {});
+    staffReports().then((l) => setReports(l.length), () => {});
+    djsWaiting().then((l) => setDjs(l.length), () => {});
+    missingSql().then(setMissing, () => {});
   }, [role, tick]);
 
   if (!isStaff(role)) {
@@ -75,6 +85,8 @@ export default function PanelScreen() {
         <Row label={t('staff.pending')} hint={t('staff.pending.hint')} right={o?.pending ? <Value text={String(o.pending)} more /> : <Mark kind="more" />} onPress={go('/panel/pending')} />
         <Row label={t('staff.nights')} hint={t('staff.nights.hint')} right={<Mark kind="more" />} onPress={go('/panel/nights')} />
         <Row label={t('staff.reported')} hint={t('staff.reported.hint')} right={o?.reported ? <Value text={String(o.reported)} more /> : <Mark kind="more" />} onPress={go('/panel/reported')} />
+        <Row label={t('staff.reports')} hint={t('staff.reports.hint')} right={reports ? <Value text={String(reports)} more /> : <Mark kind="more" />} onPress={go('/panel/reports')} />
+        <Row label={t('staff.djs.waiting')} hint={t('staff.djs.waiting.hint')} right={djs ? <Value text={String(djs)} more /> : <Mark kind="more" />} onPress={go('/panel/djs')} />
         <Row label={t('staff.comments')} hint={t('staff.comments.hint')} right={<Mark kind="more" />} onPress={go('/panel/comments')} />
       </Panel>
 
@@ -85,6 +97,12 @@ export default function PanelScreen() {
             <Row label={t('staff.people')} hint={t('staff.people.hint')} right={<Mark kind="more" />} onPress={go('/panel/people')} />
             <Row label={t('staff.feedback')} hint={t('staff.feedback.hint')} right={<Mark kind="more" />} onPress={go('/panel/feedback')} />
             <Row label={t('staff.log')} hint={t('staff.log.hint')} right={<Mark kind="more" />} onPress={go('/panel/log')} />
+            <Row
+              label={t('staff.db')}
+              hint={missing === null ? '…' : missing.length ? t('staff.db.behind', { files: missing.join(', ') }) : t('staff.db.ok')}
+              right={missing?.length ? <Value text={String(missing.length)} /> : undefined}
+            />
+            <Row label={t('staff.errors')} hint={t('staff.errors.hint')} right={<Mark kind="more" />} onPress={go('/panel/errors')} />
           </Panel>
         </>
       ) : null}

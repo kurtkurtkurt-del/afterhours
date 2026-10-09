@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator, Alert, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { router } from 'expo-router';
 import Svg, { Circle, Line } from 'react-native-svg';
 import { useAuth } from '@/auth/AuthContext';
-import { friendAccept, friendRequest, peopleSearch, peopleSuggested, type Found, type Relation, type Suggested } from '@/data/friends';
+import { blockUser, friendAccept, friendRequest, peopleSearch, peopleSuggested, type Found, type Relation, type Suggested } from '@/data/friends';
 import { refreshYours } from '@/data/yours';
 import { upperData, useLang } from '@/i18n';
+import type { Key } from '@/i18n/dict';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
@@ -72,6 +73,24 @@ export function useConnect() {
     }
   };
   return { after, busy, act, member };
+}
+
+// Blocking (50_blocks.sql), asked first; done() runs once it went through.
+export function confirmBlock(p: { id: string; name: string }, t: (k: Key, v?: Record<string, string | number>) => string, done: () => void) {
+  Alert.alert(t('block.title', { name: p.name }), t('block.body'), [
+    { text: t('block.keep'), style: 'cancel' },
+    {
+      text: t('block.go'),
+      style: 'destructive',
+      onPress: () =>
+        blockUser(p.id)
+          .then(() => {
+            refreshYours();
+            done();
+          })
+          .catch((e) => Alert.alert(t('block.failed'), String(e?.message ?? e).toLowerCase())),
+    },
+  ]);
 }
 
 export function ActionButton({ relation, busy, onPress, compact, wide }: { relation: Relation; busy: boolean; onPress: () => void; compact?: boolean; wide?: boolean }) {

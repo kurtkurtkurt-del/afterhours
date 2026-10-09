@@ -5,12 +5,14 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import Button from '@/components/Button';
+import { useReport } from '@/components/ReportSheet';
 import GroupInvitation from '@/components/GroupInvitation';
 import StaffPage, { Field, Quiet, Said } from '@/components/StaffPage';
 import { useAuth } from '@/auth/AuthContext';
 import { groupJoin, groupPeek, why, type Peek } from '@/data/groups';
 import { useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
+import PillAction, { PillRow } from '@/components/PillAction';
 
 // Joining by code: from a link (?code=…) or typed in. Once the code is known the
 // screen becomes the invitation (design 10D): who is in, an empty place for you,
@@ -24,6 +26,7 @@ export default function Join() {
   const [peek, setPeek] = useState<Peek | null>(null);
   const [said, setSaid] = useState<string | null>(null);
   const signedIn = !!session && !isAnonymous;
+  const reporting = useReport();
 
   const show = (c: string) => groupPeek(c).then((p) => (p ? setPeek(p) : setSaid(t('groups.join.closed'))), (e) => setSaid(why(e)));
   const look = (c: string) => {
@@ -67,9 +70,17 @@ export default function Join() {
             ) : (
               <Quiet text={t('groups.join.closed')} />
             )}
+            {signedIn && !peek.mine ? (
+              <View style={styles.report}>
+                <PillRow center>
+                  <PillAction small icon="flag" label={t('report.group')} onPress={() => reporting.ask('group', peek.id)} />
+                </PillRow>
+              </View>
+            ) : null}
           </View>
         </GroupInvitation>
         <BackButton />
+        {reporting.sheet}
       </View>
     );
   }
@@ -89,4 +100,5 @@ const styles = StyleSheet.create({
   gap: { marginTop: 16 },
   about: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 22, color: colors.paper, textAlign: 'center' },
   foot: { position: 'absolute', left: 0, right: 0, bottom: 0 },
+  report: { marginTop: 14 },
 });

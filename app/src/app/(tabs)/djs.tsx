@@ -23,6 +23,7 @@ import { stories } from '@/content/stories';
 import { djs as localDjs, sets as localSets, type Dj, type DjSet } from '@/content/djs';
 import type { Genre } from '@/content/music';
 import { followedSlugs, loadDjs } from '@/data/djs';
+import { useLocalCity } from '@/data/here';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useTabReset } from '@/hooks/useTabReset';
 import { upperData, useLang } from '@/i18n';
@@ -73,6 +74,13 @@ export default function DjsScreen() {
     };
   }, [tick, session]);
 
+  // DJs from the city you are in come first everywhere on the page (followed by location).
+  const local = useLocalCity();
+  const isLocal = (slug: string) => {
+    const d = data.djs.find((x) => x.id === slug);
+    return !!d && (d.citySlug ? d.citySlug === local.slug : !!local.name && d.city === local.name.toLowerCase());
+  };
+  const localFirst = (a: string, b: string) => Number(isLocal(b)) - Number(isLocal(a));
   const djOf = (slug: string) => data.djs.find((d) => d.id === slug) ?? localDjs.find((d) => d.id === slug);
   const fits = (slug: string) => genre === 'all' || djOf(slug)?.sound === genre;
   const ends = (s: DjSet) => s.startsAt.getTime() + s.hours * H;
@@ -81,7 +89,7 @@ export default function DjsScreen() {
   // so the "now" card and a LIVE ring are always there to see.
   const onNow = (s: DjSet) => s.startsAt <= now && ends(s) > now.getTime();
   const sampleLive: DjSet | null = data.live !== null && !data.sets.some(onNow)
-    ? { dj: data.djs.some((d) => d.id === 'levent-ok') ? 'levent-ok' : (data.djs[0]?.id ?? 'levent-ok'), venue: 'harry klein', startsAt: new Date(now.getTime() - H), hours: 3 }
+    ? { dj: data.djs.find((d) => isLocal(d.id))?.id ?? (data.djs.some((d) => d.id === 'levent-ok') ? 'levent-ok' : (data.djs[0]?.id ?? 'levent-ok')), venue: 'harry klein', startsAt: new Date(now.getTime() - H), hours: 3 }
     : null;
   const sets = sampleLive ? [sampleLive, ...data.sets] : data.sets;
 
@@ -91,7 +99,7 @@ export default function DjsScreen() {
   const tonight = sets.filter((s) => ends(s) > now.getTime() && s.startsAt <= nightEnd);
   const live = tonight
     .filter((s) => s.startsAt <= now && fits(s.dj))
-    .sort((a, b) => Number(follows.includes(b.dj)) - Number(follows.includes(a.dj)));
+    .sort((a, b) => Number(follows.includes(b.dj)) - Number(follows.includes(a.dj)) || localFirst(a.dj, b.dj));
   const liveSlugs = new Set(tonight.filter((s) => s.startsAt <= now).map((s) => s.dj));
   const tonightOf = (slug: string) => {
     const s = tonight.find((x) => x.dj === slug);
@@ -104,7 +112,7 @@ export default function DjsScreen() {
   const fresh = (slug: string) => !!storyOf(slug) && !seen.includes(slug);
   const base = follows.length ? follows.map(djOf).filter((d): d is Dj => !!d) : data.djs;
   const withStory = stories.map((st) => djOf(st.dj)).filter((d): d is Dj => !!d);
-  const strip = [...withStory, ...base.filter((d) => !storyOf(d.id))].sort((a, b) => Number(fresh(b.id)) - Number(fresh(a.id)));
+  const strip = [...withStory, ...base.filter((d) => !storyOf(d.id))].sort((a, b) => Number(fresh(b.id)) - Number(fresh(a.id)) || localFirst(a.id, b.id));
   const unseen = stories.filter((st) => !seen.includes(st.dj)).length;
   const openStory = (dj: Dj) => {
     if (!storyOf(dj.id)) return router.push(`/dj/${dj.id}`);
@@ -129,7 +137,7 @@ export default function DjsScreen() {
     if (g !== 'all' && ambient.on) ambient.setGenre(g);
   };
 
-  const clips = sampleClips.filter((c) => fits(c.dj));
+  const clips = sampleClips.filter((c) => fits(c.dj)).sort((a, b) => localFirst(a.dj, b.dj));
 
   return (
     <View style={styles.root}>

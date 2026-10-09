@@ -18,6 +18,7 @@ import type { City } from '@/content/cities';
 const CITY = 'city';
 const NAME = 'city.name';
 const SEEN = 'city.here'; // city last detected from the location
+const SEEN_NAME = 'city.here.name';
 const AGAIN = 30 * 60_000; // check the location again after this long in the background
 
 type Here = {
@@ -25,6 +26,8 @@ type Here = {
   name: string | null;
   coords: [number, number] | null;
   from: 'location' | 'choice' | 'saved';
+  // Where you actually are, whatever the deck is set to (null until a location came in).
+  located: { slug: string; name: string } | null;
 };
 
 const read = (key: string) => {
@@ -41,7 +44,8 @@ const write = (key: string, value: string | null) => {
   } catch {}
 };
 
-let state: Here = { city: read(CITY), name: read(NAME), coords: null, from: 'saved' };
+const seenSlug = read(SEEN);
+let state: Here = { city: read(CITY), name: read(NAME), coords: null, from: 'saved', located: seenSlug ? { slug: seenSlug, name: read(SEEN_NAME) ?? seenSlug } : null };
 const listeners = new Set<() => void>();
 const tell = (next: Partial<Here>) => {
   state = { ...state, ...next };
@@ -106,6 +110,8 @@ function locate(cities: City[], force = false) {
       if (!found) return;
       const moved = read(SEEN) !== found.slug;
       write(SEEN, found.slug);
+      write(SEEN_NAME, found.name);
+      tell({ located: { slug: found.slug, name: found.name } });
       // On launch always the current city; later only if you moved to another city.
       if (firstRun || moved || state.from !== 'choice') {
         write(CITY, found.slug);
@@ -131,6 +137,13 @@ export function useHere() {
     },
     () => state,
   );
+}
+
+// The city you are in for the pages that follow you (yours, djs): the located city,
+// else the one picked by hand, else nothing. The deck keeps its own pick (useHere).
+export function useLocalCity(): { slug: string | null; name: string | null } {
+  const here = useHere();
+  return here.located ?? { slug: here.city, name: here.name };
 }
 
 // Called once in the tabs shell: checks the location on launch and on foreground.

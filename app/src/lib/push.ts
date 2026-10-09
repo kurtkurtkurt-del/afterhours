@@ -6,6 +6,7 @@ import Constants, { ExecutionEnvironment } from 'expo-constants';
 import Storage from 'expo-sqlite/kv-store';
 import { supabase } from '@/lib/supabase';
 import { getLang } from '@/i18n/core';
+import { colors } from '@/theme/tokens';
 
 // Push notifications (26_push.sql). The phone registers its Expo push token with
 // the account, plus the app language and the phone's time zone (for quiet hours);
@@ -52,7 +53,7 @@ export async function registerPush(ask: boolean): Promise<PushStatus> {
     await N.setNotificationChannelAsync('default', {
       name: 'afterhours',
       importance: N.AndroidImportance.HIGH,
-      lightColor: '#D7261E',
+      lightColor: colors.spot,
     });
   }
   let status = await pushStatus();

@@ -16,15 +16,19 @@ import { useAuth } from '@/auth/AuthContext';
 import { useAmbient } from '@/audio/AmbientContext';
 import { forgetPhoto, removePhoto, usePhoto } from '@/data/photo';
 import { useProfile } from '@/data/profile';
+import { myBlocks, unblockUser, type Blocked } from '@/data/friends';
 import DoorCode from '@/components/DoorCode';
 import { resetTips } from '@/components/Tips';
-import { ACCOUNT_TYPES, deleteAccount, exportMe, fetchSettings, saveSettings, setAccountType, type AccountType, type Settings } from '@/data/settings';
+import { changeEmail, changePassword, deleteEverything } from '@/data/safety';
+import CodeSheet from '@/components/CodeSheet';
+import { ACCOUNT_TYPES, exportMe, fetchSettings, saveSettings, setAccountType, type AccountType, type Settings } from '@/data/settings';
 import { isStaff, refreshRole, useRole } from '@/data/staff';
 import { pushStatus, registerPush, type PushStatus } from '@/lib/push';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { genres, type Genre } from '@/content/music';
 import { langNames, langs, upperData, useLang, type Lang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { ACCENTS, colors, fonts, radius, type AccentId } from '@/theme/tokens';
+import { chooseAccent, currentAccent } from '@/data/accent';
 import { brand } from '@/theme/layout';
 
 // Settings home: the profile card (photo, name, "edit"), then one row per group —
@@ -83,9 +87,23 @@ export default function SettingsScreen() {
   const ambient = useAmbient();
   const insets = useSafeAreaInsets();
   const { photo, broken } = usePhoto();
-  const { t, up, lang, setLang } = useLang();
+  const { t, tx, up, lang, setLang } = useLang();
   const [settings, setSettings] = useState<Settings | null>(null);
-  const [sheet, setSheet] = useState<'sound' | 'locale' | 'kept' | 'type' | null>(null);
+  const [sheet, setSheet] = useState<'sound' | 'locale' | 'kept' | 'type' | 'accent' | null>(null);
+  // Changing the sign-in (53): the field being asked for, and what came back.
+  const [ask, setAsk] = useState<'email' | 'password' | null>(null);
+  const [askError, setAskError] = useState<string | null>(null);
+  const submitAsk = (value: string) => {
+    const kind = ask;
+    setAskError(null);
+    (kind === 'email' ? changeEmail(value) : changePassword(value)).then(
+      () => {
+        setAsk(null);
+        Alert.alert(t(kind === 'email' ? 'settings.email.sent' : 'settings.password.done'));
+      },
+      (e) => setAskError(String(e?.message ?? e).toLowerCase()),
+    );
+  };
   // admin and community manager are given (42_staff.sql); the code only switches user ↔ dj.
   const accountType = useRole();
   const given = isStaff(accountType);
@@ -102,6 +120,30 @@ export default function SettingsScreen() {
       live = false;
     };
   }, [uid]);
+
+  // The people you blocked (50_blocks.sql), read when the privacy page opens.
+  const [blocked, setBlocked] = useState<Blocked[] | null>(null);
+  useEffect(() => {
+    if (!uid || section !== 'privacy') return;
+    let live = true;
+    myBlocks().then((rows) => live && setBlocked(rows), () => live && setBlocked([]));
+    return () => {
+      live = false;
+    };
+  }, [uid, section, tick]);
+  const confirmUnblock = (b: Blocked) => {
+    const name = b.display_name ?? b.handle ?? '';
+    Alert.alert(t('block.undo.title', { name }), t('block.undo.body'), [
+      { text: t('block.keep'), style: 'cancel' },
+      {
+        text: t('block.undo'),
+        onPress: () =>
+          unblockUser(b.id)
+            .then(() => setBlocked((cur) => (cur ?? []).filter((x) => x.id !== b.id)))
+            .catch((e) => Alert.alert(t('block.failed'), String(e.message ?? e).toLowerCase())),
+      },
+    ]);
+  };
 
   // Whether this phone may show notifications; re-read when returning from the system settings.
   const [push, setPush] = useState<PushStatus>('undetermined');
@@ -139,11 +181,11 @@ export default function SettingsScreen() {
         text: t('settings.delete.go'),
         style: 'destructive',
         onPress: () =>
-          // Delete the file before the account: afterwards nobody can reach it.
+          // Every file in your folder goes first (afterwards nobody can reach them), an
+          // Apple account is unlinked from Apple, then the account itself (data/safety.ts).
           removePhoto()
-            .then(() => deleteAccount())
-            .then(() => signOut())
-            .then(() => router.replace('/'))
+            .then(() => deleteEverything())
+            .then((done) => (done ? signOut().then(() => router.replace('/')) : undefined))
             .catch((e) => Alert.alert(t('settings.delete.failed'), String(e.message ?? e).toLowerCase())),
       },
     ]);
@@ -176,12 +218,24 @@ export default function SettingsScreen() {
                 right={<Switch on={settings?.discoverable ?? true} />}
                 onPress={() => patch({ discoverable: !(settings?.discoverable ?? true) })}
               />
-              <Row
-                label={t('settings.email.me')}
-                hint={t('settings.email.me.hint')}
-                right={<Switch on={settings?.notify_email ?? true} />}
-                onPress={() => patch({ notify_email: !(settings?.notify_email ?? true) })}
-              />
+            </Panel>
+            <Section title={t('block.list')} />
+            <Panel>
+              {blocked === null ? (
+                <Row label="…" />
+              ) : blocked.length ? (
+                blocked.map((b) => (
+                  <Row
+                    key={b.id}
+                    label={(b.display_name ?? b.handle ?? '').toLowerCase()}
+                    hint={b.handle ? `@${upperData(b.handle)}` : undefined}
+                    right={<Value text={t('block.undo')} />}
+                    onPress={() => confirmUnblock(b)}
+                  />
+                ))
+              ) : (
+                <Row label={t('block.none')} />
+              )}
             </Panel>
           </>
         ) : null;
@@ -253,7 +307,7 @@ export default function SettingsScreen() {
         {/* The groups: a row each, with what is inside as its hint. */}
         <Panel>
           <Row label={t('settings.app')} hint={[t('lang.label'), t('settings.music'), t('settings.genre')].join(' · ')} right={<Value text={langNames[lang]} more />} onPress={() => openSection('app')} />
-          {session ? <Row label={t('settings.privacy')} hint={[t('settings.kept'), t('settings.findable'), t('settings.email.me')].join(' · ')} right={<Mark kind="more" />} onPress={() => openSection('privacy')} /> : null}
+          {session ? <Row label={t('settings.privacy')} hint={[t('settings.kept'), t('settings.findable'), t('block.list')].join(' · ')} right={<Mark kind="more" />} onPress={() => openSection('privacy')} /> : null}
           {session && !isAnonymous ? <Row label={t('notify.title')} hint={NOTIFY.map((g) => t(g.title)).join(' · ')} right={<Mark kind="more" />} onPress={() => openSection('notify')} /> : null}
           <Row label={t('settings.account')} hint={session?.user.email ?? (isAnonymous ? t('word.guest') : t('word.signup'))} right={<Mark kind="more" />} onPress={() => openSection('account')} />
           <Row label={t('settings.about')} hint={[t('settings.intro'), t('settings.credits'), t('settings.privacy.link')].join(' · ')} right={<Mark kind="more" />} onPress={() => openSection('about')} />
@@ -266,6 +320,7 @@ export default function SettingsScreen() {
           <Row label={t('lang.label')} hint={t('lang.hint')} right={<Value text={langNames[lang]} more />} onPress={() => setSheet('locale')} />
           <Row label={t('settings.music')} right={<Switch on={ambient.on} />} onPress={ambient.toggle} />
           <Row label={t('settings.genre')} hint={t('settings.genre.hint')} right={<Value text={soundName} more />} onPress={() => setSheet('sound')} />
+          <Row label={t('accent.label')} hint={t('accent.hint')} right={<View style={styles.swatchRow}><View style={[styles.swatch, { backgroundColor: colors.spot }]} /><Value text={tx('accent.' + currentAccent(), currentAccent())} more /></View>} onPress={() => setSheet('accent')} />
         </Panel>
 
           </>
@@ -276,7 +331,13 @@ export default function SettingsScreen() {
           <>
         <Panel>
           {isAnonymous ? <Row label={t('settings.finish')} hint={t('settings.finish.hint')} right={<Mark kind="more" />} onPress={() => router.push('/signup')} /> : null}
-          <Row label={t('settings.email')} right={<Value text={session?.user.email ?? (isAnonymous ? t('word.guest') : t('word.none'))} />} />
+          <Row
+            label={t('settings.email')}
+            hint={session && !isAnonymous ? t('settings.email.change') : undefined}
+            right={<Value text={session?.user.email ?? (isAnonymous ? t('word.guest') : t('word.none'))} more={!!session && !isAnonymous} />}
+            onPress={session && !isAnonymous ? () => setAsk('email') : undefined}
+          />
+          {session && !isAnonymous ? <Row label={t('settings.password')} hint={t('settings.password.hint')} right={<Mark kind="more" />} onPress={() => setAsk('password')} /> : null}
           {session && !isAnonymous ? (
             <Row
               label={t('settings.type')}
@@ -401,11 +462,38 @@ export default function SettingsScreen() {
         onSelect={(id) => setLang(id as Lang)}
         onClose={() => setSheet(null)}
       />
+      <PickerSheet
+        open={sheet === 'accent'}
+        title={t('accent.label')}
+        options={(Object.keys(ACCENTS) as AccentId[]).map((id) => ({ id, label: `● ${tx('accent.' + id, id)}` }))}
+        selected={currentAccent()}
+        onSelect={(id) => {
+          setSheet(null);
+          chooseAccent(id as AccentId, { title: t('accent.reload'), body: t('accent.reload.body'), go: t('accent.reload.go'), later: t('accent.reload.later') });
+        }}
+        onClose={() => setSheet(null)}
+      />
+      <CodeSheet
+        key={ask ?? 'shut'}
+        open={ask !== null}
+        title={ask === 'email' ? t('settings.email.new') : t('settings.password.new')}
+        go={t('word.save')}
+        error={askError}
+        secure={ask === 'password'}
+        keyboardType={ask === 'email' ? 'email-address' : 'default'}
+        onSubmit={submitAsk}
+        onClose={() => {
+          setAsk(null);
+          setAskError(null);
+        }}
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  swatchRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  swatch: { width: 14, height: 14, borderRadius: 7 },
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 40, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top, left: 0, right: 0, textAlign: 'center', fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },

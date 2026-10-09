@@ -9,6 +9,7 @@ import { useTabBarSpace } from '@/components/TabBar';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import PillAction from '@/components/PillAction';
 
 type Props = {
   cards: DeckCard[];
@@ -110,9 +111,7 @@ export default function DeckViewer({ cards, mode, onKeep, onLetGo, onUndo, onClo
               <Text style={styles.undoText}>{t('flow.undo')}</Text>
             </Pressable>
           ) : null}
-          <Pressable onPress={onClose} hitSlop={10} style={styles.close}>
-            <Text style={styles.closeText}>{t('word.close')}</Text>
-          </Pressable>
+          <PillAction small icon="close" label={t('word.close')} onPress={onClose} />
         </View>
         <SoundCorner />
       </View>
@@ -129,8 +128,6 @@ const styles = StyleSheet.create({
   undo: { flexDirection: 'row', alignItems: 'center', gap: 6, height: 32, paddingHorizontal: 12, borderRadius: radius.pill, backgroundColor: 'rgba(14,13,12,0.82)' },
   undoText: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper },
   pressed: { opacity: 0.6 },
-  close: { paddingVertical: 4 },
-  closeText: { fontFamily: fonts.regular, fontSize: 12, color: colors.paper, textDecorationLine: 'underline' },
   empty: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 40, gap: 10 },
   emptyText: { fontFamily: fonts.medium, fontSize: 18, letterSpacing: -0.4, color: colors.paper, textAlign: 'center' },
   emptyHint: { fontFamily: fonts.regular, fontSize: 12, color: colors.meta, textDecorationLine: 'underline' },

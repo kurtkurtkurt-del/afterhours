@@ -5,6 +5,7 @@ import { useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import Input from '@/components/Input';
+import { useReport } from '@/components/ReportSheet';
 import { reasonCode, reasons, roomInfo, roomList, roomPost, type RoomInfo, type RoomPost } from '@/data/checkin';
 import { upperData, useLang } from '@/i18n';
 import { fetchNight } from '@/data/deck';
@@ -34,6 +35,8 @@ export default function RoomScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const insets = useSafeAreaInsets();
   const { t, tn, up } = useLang();
+  // A long press on someone's line reports it (51_safety.sql).
+  const reporting = useReport();
   const [info, setInfo] = useState<RoomInfo | null>(null);
   const [night, setNight] = useState<{ title: string; starts_at: string | null } | null>(null);
   const [posts, setPosts] = useState<RoomPost[]>([]);
@@ -135,12 +138,12 @@ export default function RoomScreen() {
               <Text style={styles.note}>{frozen ? t('room.empty.frozen') : t('room.empty.open')}</Text>
             ) : (
               posts.map((p) => (
-                <View key={p.id} style={[styles.line, p.mine && styles.lineMine]}>
+                <Pressable key={p.id} onLongPress={p.mine || p.waiting ? undefined : () => reporting.ask('room_post', p.id)} style={[styles.line, p.mine && styles.lineMine]}>
                   <Text style={[styles.jetMeta, p.mine && styles.jetRed]}>
                     {p.mine ? up(t('room.you')) : upperData(p.who)} · {p.waiting ? up(t('offline.waiting')) : hhmm(p.created_at)}
                   </Text>
                   <Text style={[styles.text, p.mine && styles.textMine]}>{p.body}</Text>
-                </View>
+                </Pressable>
               ))
             )}
           </View>
@@ -162,6 +165,7 @@ export default function RoomScreen() {
           <View style={{ height: insets.bottom + 44 }} />
         )}
       </KeyboardAvoidingView>
+      {reporting.sheet}
     </View>
   );
 }

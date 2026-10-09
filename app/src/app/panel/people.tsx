@@ -1,26 +1,30 @@
 import { useEffect, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import PickerSheet from '@/components/PickerSheet';
+import CodeSheet from '@/components/CodeSheet';
 import StaffPage, { Quiet, Said } from '@/components/StaffPage';
 import { ACCOUNT_TYPES, type AccountType } from '@/data/settings';
-import { peopleBy, roleCounts, setPersonType, why, type PersonRow, type RoleCounts } from '@/data/staff';
+import { banPerson, peopleBy, roleCounts, setAdmin, setPersonType, unbanPerson, why, type PersonRow, type RoleCounts } from '@/data/staff';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 
 // People, search first (design 17C): a big search field, role chips with their
 // counts, then rows with a face, a small role badge and what each does here.
 // A tap gives a type; admins are appointed in the database and cannot be changed here.
-const GIVEABLE = ACCOUNT_TYPES.filter((a) => a.id !== 'admin');
+// admin is given here too (53_trust.sql), never taken from the last one.
+const GIVEABLE = ACCOUNT_TYPES;
 const short: Record<AccountType, string> = { user: '', dj: 'dj', community_manager: 'cm', admin: 'admin' };
 
 export default function People() {
-  const { t } = useLang();
+  const { t, tx } = useLang();
   const [q, setQ] = useState('');
   const [role, setRole] = useState('');
   const [list, setList] = useState<PersonRow[] | null>(null);
   const [counts, setCounts] = useState<RoleCounts | null>(null);
   const [who, setWho] = useState<PersonRow | null>(null);
   const [said, setSaid] = useState<string | null>(null);
+  // Closing an account (52_bans.sql): the person whose reason is being typed.
+  const [banning, setBanning] = useState<PersonRow | null>(null);
 
   useEffect(() => {
     roleCounts().then(setCounts, () => {});
@@ -31,6 +35,7 @@ export default function People() {
   }, [q, role]);
 
   const give = (p: PersonRow, type: AccountType) => {
+    if (type === 'admin') return admin(p, true);
     setSaid(null);
     setPersonType(p.id, type).then(
       (r) => {
@@ -41,12 +46,49 @@ export default function People() {
       (e) => setSaid(why(e)),
     );
   };
+  const mark = (p: PersonRow, banned: boolean) => {
+    setList((l) => l?.map((x) => (x.id === p.id ? { ...x, banned } : x)) ?? l);
+    roleCounts().then(setCounts, () => {});
+  };
+  const ban = (p: PersonRow, reason: string) => {
+    setSaid(null);
+    banPerson(p.id, reason || null).then(() => mark(p, true), (e) => setSaid(why(e)));
+  };
+  const admin = (p: PersonRow, on: boolean) => {
+    setSaid(null);
+    setAdmin(p.id, on).then(
+      (r) => {
+        if (r !== 'ok') return setSaid(tx('staff.admin.' + r, r));
+        setList((l) => l?.map((x) => (x.id === p.id ? { ...x, role: on ? 'admin' : 'user' } : x)) ?? l);
+        roleCounts().then(setCounts, () => {});
+      },
+      (e) => setSaid(why(e)),
+    );
+  };
+  // A tap: change the role, make or unmake an admin, close or open the account.
+  const choose = (p: PersonRow) => {
+    const name = (p.display_name ?? p.handle ?? '').toLowerCase();
+    if (p.role === 'admin') {
+      return Alert.alert(name, t('staff.admin.is'), [
+        { text: t('staff.admin.unmake'), style: 'destructive', onPress: () => admin(p, false) },
+        { text: t('staff.delete.keep'), style: 'cancel' },
+      ]);
+    }
+    Alert.alert(name, p.banned ? t('staff.ban.closed') : undefined, [
+      { text: t('staff.ban.role'), onPress: () => setWho(p) },
+      p.banned
+        ? { text: t('staff.ban.undo'), onPress: () => unbanPerson(p.id).then(() => mark(p, false), (e) => setSaid(why(e))) }
+        : { text: t('staff.ban.do'), style: 'destructive', onPress: () => setBanning(p) },
+      { text: t('staff.delete.keep'), style: 'cancel' },
+    ]);
+  };
   const chips: { id: string; label: string; n?: number }[] = [
     { id: '', label: t('staff.people.all'), n: counts?.all },
     { id: 'dj', label: 'dj', n: counts?.dj },
     { id: 'community_manager', label: 'cm', n: counts?.community_manager },
     { id: 'admin', label: 'admin', n: counts?.admin },
     { id: 'new', label: t('staff.people.new'), n: counts?.new },
+    { id: 'banned', label: t('staff.ban.list'), n: counts?.banned },
   ];
 
   return (
@@ -69,13 +111,18 @@ export default function People() {
       {list?.map((p) => {
         const name = (p.display_name ?? p.handle ?? '—').toLowerCase();
         return (
-          <Pressable key={p.id} onPress={p.role === 'admin' ? undefined : () => setWho(p)} style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
+          <Pressable key={p.id} onPress={() => (p.role === 'community_manager' ? setWho(p) : choose(p))} style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
             <View style={styles.face}>
               <Text style={styles.faceText}>{name.charAt(0).toUpperCase()}</Text>
             </View>
             <View style={styles.text}>
               <View style={styles.nameRow}>
                 <Text style={styles.name} numberOfLines={1}>{name}</Text>
+                {p.banned ? (
+                  <View style={[styles.badge, styles.badgeRed]}>
+                    <Text style={styles.badgeText}>{t('staff.ban.badge')}</Text>
+                  </View>
+                ) : null}
                 {short[p.role] ? (
                   <View style={[styles.badge, p.role !== 'dj' && styles.badgeRed]}>
                     <Text style={styles.badgeText}>{short[p.role]}</Text>
@@ -96,6 +143,19 @@ export default function People() {
         selected={who?.role ?? null}
         onSelect={(id) => who && give(who, id as AccountType)}
         onClose={() => setWho(null)}
+      />
+      <CodeSheet
+        key={banning ? banning.id : 'shut'}
+        open={banning !== null}
+        title={t('staff.ban.why', { name: (banning?.display_name ?? banning?.handle ?? '').toLowerCase() })}
+        go={t('staff.ban.do')}
+        error={null}
+        onSubmit={(reason) => {
+          const p = banning;
+          setBanning(null);
+          if (p) ban(p, reason);
+        }}
+        onClose={() => setBanning(null)}
       />
     </StaffPage>
   );

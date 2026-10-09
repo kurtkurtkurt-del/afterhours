@@ -8,7 +8,7 @@ import { friendPhotos } from '@/data/photo';
 import { dayLabel } from '@/data/when';
 
 // Data for the yours screen: friends, who is live, the nights they kept, matches.
-export type YoursNight = { id: string; slug: string; title: string; venue: string; when: string; startsAt?: string | null; image: string | null; friends: string[] };
+export type YoursNight = { id: string; slug: string; title: string; venue: string; when: string; startsAt?: string | null; image: string | null; friends: string[]; city?: string };
 export type YoursFriend = { id: string; name: string; handle: string | null; photo?: string; live?: string; kept: number; pending?: 'incoming' | 'outgoing' };
 export type YoursMatch = { friend: string; night: string };
 
@@ -76,7 +76,7 @@ export function useYours() {
       // Group by night.
       const byNight = new Map<string, YoursNight>();
       fk.forEach((k) => {
-        const n = byNight.get(k.id) ?? { id: k.id, slug: k.slug, title: k.title.toLowerCase(), venue: k.venue_name ?? k.city_slug, when: day(k.starts_at), startsAt: k.starts_at, image: k.image_url, friends: [] };
+        const n = byNight.get(k.id) ?? { id: k.id, slug: k.slug, title: k.title.toLowerCase(), venue: k.venue_name ?? k.city_slug, when: day(k.starts_at), startsAt: k.starts_at, image: k.image_url, friends: [], city: k.city_slug };
         if (!n.friends.includes(k.friend.toLowerCase())) n.friends.push(k.friend.toLowerCase());
         byNight.set(k.id, n);
       });

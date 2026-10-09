@@ -4,6 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { Easing, FadeIn, FadeOut, ZoomIn, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+import { useReport } from '@/components/ReportSheet';
 import BackButton from '@/components/BackButton';
 import Button from '@/components/Button';
 import CardFace, { toDeckCard, openDetails } from '@/components/CardFace';
@@ -44,7 +45,7 @@ import {
   type AlsoThere,
 } from '@/data/groups';
 import { useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, tint } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 type Tab = 'swipe' | 'matches' | 'plan' | 'live';
@@ -58,6 +59,8 @@ const ACTIONS = 86;
 export default function GroupScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { t, up } = useLang();
+  // A long press on the name reports the group (51_safety.sql).
+  const reporting = useReport();
   const insets = useSafeAreaInsets();
   const [group, setGroup] = useState<Group | null>(null);
   const [tab, setTab] = useState<Tab>('swipe');
@@ -102,7 +105,7 @@ export default function GroupScreen() {
       <StatusBar style="light" />
       <View style={[styles.head, { paddingTop: top - 8 }]} onLayout={(e) => setHeadH(e.nativeEvent.layout.height)}>
         <View style={styles.headRow}>
-          <Pressable onPress={() => router.push({ pathname: '/groups/memories', params: { id } })} style={styles.headLink} accessibilityRole="button" accessibilityHint={t('groups.memories.hint')}>
+          <Pressable onPress={() => router.push({ pathname: '/groups/memories', params: { id } })} onLongPress={() => id && reporting.ask('group', id)} style={styles.headLink} accessibilityRole="button" accessibilityHint={t('groups.memories.hint')}>
           {group ? <GroupBadge emoji={group.emoji} color={group.color} cover={group.cover_path} size={44} /> : null}
           <View style={styles.headText}>
             <Text style={styles.name} numberOfLines={1}>{group?.name ?? '…'} <Text style={styles.under}>· {t('groups.memories')} ›</Text></Text>
@@ -168,6 +171,7 @@ export default function GroupScreen() {
 
       {tab !== 'swipe' ? <BackButton /> : null}
       <Tips page="group" tips={[{ title: 'tips.group.1.t', body: 'tips.group.1.b', motion: 'swipe' }, { title: 'tips.group.2.t', body: 'tips.group.2.b', motion: 'tap' }]} bottom={insets.bottom + ACTIONS + 10} />
+      {reporting.sheet}
     </View>
   );
 }
@@ -589,7 +593,7 @@ const styles = StyleSheet.create({
   personAnswer: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.mute },
   ticketNote: { marginTop: 6 },
   flyer: { marginTop: 16, minHeight: 560, borderRadius: radius.lg, overflow: 'hidden', backgroundColor: colors.ink3, justifyContent: 'space-between' },
-  flyerRed: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(215,38,30,0.42)' },
+  flyerRed: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: tint(0.42) },
   flyerHead: { padding: 20, gap: 8 },
   flyerMono: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.6, color: colors.paper },
   flyerTitle: { fontFamily: fonts.logo, fontSize: 52, lineHeight: 48, letterSpacing: -0.5, color: colors.paper },

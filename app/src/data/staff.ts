@@ -219,7 +219,17 @@ export async function markFeedback(id: string, handled: boolean) {
 export const why = (e: unknown) => String((e as { message?: string })?.message ?? e).toLowerCase();
 
 // 49_design_reads.sql: people by role, with nights kept and groups (design 17C)
-export type PersonRow = Person & { nights: number; groups: number };
-export type RoleCounts = { all: number; dj: number; community_manager: number; admin: number; new: number };
+export type PersonRow = Person & { nights: number; groups: number; banned: boolean };
+export type RoleCounts = { all: number; dj: number; community_manager: number; admin: number; new: number; banned?: number };
+// 52_bans.sql: close an account (not staff) and open it again; from the reports pile,
+// close the account behind a reported thing and take the thing away.
+// 53_trust.sql: dj pages someone made for themselves wait for the staff; admins.
+export type WaitingDj = { id: string; slug: string; name: string; genre: string | null; bio: string | null; photo_url: string | null; owner: string | null; created_at: string };
+export const djsWaiting = () => rpc<WaitingDj[]>('staff_djs_waiting');
+export const verifyDj = (id: string, ok: boolean) => rpc<void>('staff_dj_verify', { p_dj: id, p_ok: ok });
+export const setAdmin = (user: string, on: boolean) => rpc<string>('admin_set_admin', { p_user: user, p_on: on });
+export const banPerson = (user: string, reason: string | null) => rpc<void>('staff_ban', { p_user: user, p_reason: reason });
+export const unbanPerson = (user: string) => rpc<void>('staff_unban', { p_user: user });
+export const banAuthor = (kind: string, target: string, reason: string | null) => rpc<void>('staff_ban_author', { p_kind: kind, p_target: target, p_reason: reason });
 export const peopleBy = (q: string, role: string) => rpc<PersonRow[]>('admin_people_by', { p_query: q, p_role: role });
 export const roleCounts = () => rpc<RoleCounts>('admin_role_counts');

@@ -309,6 +309,8 @@ export const tabs = {
   'yours.outNow': { en: 'out now', de: 'gerade unterwegs', tr: 'şu an dışarıda' },
   'yours.people': { en: 'your people', de: 'deine leute', tr: 'insanların' },
   'yours.decks': { en: 'decks', de: 'stapel', tr: 'desteler' },
+  'yours.inCity': { en: 'coming up in {city}', de: 'demnächst in {city}', tr: '{city} şehrinde yakında' },
+  'yours.beFirst': { en: 'keep it first, your people will see', de: 'behalte sie zuerst, deine leute sehen es', tr: 'ilk sen sakla, seninkiler görsün' },
   'yours.withPeople': { en: 'with your people', de: 'mit deinen leuten', tr: 'seninkilerle' },
   'yours.moving': { en: 'what is moving', de: 'was sich bewegt', tr: 'neler oluyor' },
   'yours.keptBy': { en: '{names} kept it', de: '{names} haben sie behalten', tr: '{names} sakladı' },

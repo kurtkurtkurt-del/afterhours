@@ -37,7 +37,7 @@ import ShareButton from '@/components/ShareButton';
 import { shareNight } from '@/lib/share';
 import Avatar from '@/components/Avatar';
 import { SAMPLE_POSTS, type SamplePost as SamplePostData } from '@/content/posts';
-import { useHere } from '@/data/here';
+import { useLocalCity } from '@/data/here';
 import { sparkOf } from '@/content/sparks';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
@@ -86,13 +86,14 @@ export default function YoursScreen() {
   const friends: YoursFriend[] = sampleRow
     ? sampleFriends.map((f) => ({ id: f.id, name: f.name, handle: f.handle, live: f.live, kept: f.kept }))
     : real.friends;
-  // Samples are real nights coming up in your city (so a tap opens the night) with
-  // sample friends on them; the drawn sample nights only while those load or offline.
-  const here = useHere();
-  const feedCity = here.city ?? 'munchen';
+  // Nights coming up in the city you are in (followed by location, not the deck's pick):
+  // they fill the gallery after friends' nights there, and stand in as samples (with
+  // sample friends on them) until you have friends; the drawn sample nights only while
+  // those load or offline.
+  const local = useLocalCity();
+  const feedCity = local.slug ?? 'munchen';
   const [upcoming, setUpcoming] = useState<Night[]>([]);
   useEffect(() => {
-    if (!sample) return;
     let live = true;
     fetchDeck(feedCity, null, 12)
       .then((rows) => live && setUpcoming(rows.filter((n) => n.image_url).slice(0, 8)))
@@ -100,7 +101,7 @@ export default function YoursScreen() {
     return () => {
       live = false;
     };
-  }, [sample, feedCity]);
+  }, [feedCity]);
   const nights: YoursNight[] = sample && upcoming.length
     ? upcoming.map((n, i) => ({
         id: n.id,
@@ -116,7 +117,8 @@ export default function YoursScreen() {
     ? sampleNights.map((n) => ({ id: n.id, slug: '', title: n.title, venue: sampleText(n.venue, tx), when: sampleText(n.when, tx), image: null, friends: n.friends.map((id) => sampleFriendById(id).name), photo: n.photo } as YoursNight & { photo: number }))
     : real.nights;
   const matches: YoursMatch[] = sample ? sampleMatches.map((m) => ({ friend: sampleFriendById(m.friend).name, night: m.night })) : real.matches;
-  const nightById = (id: string) => nights.find((n) => n.id === id);
+  // Called at render, after the gallery (ranked) is built: it holds the city's nights too.
+  const nightById = (id: string) => ranked.find((n) => n.id === id);
   // Live names for the feed's squares: sample friends go with the sample feed.
   const live = useMemo(
     () => new Set((sample ? sampleFriends : friends).filter((f) => f.live).map((f) => f.name)),
@@ -236,7 +238,16 @@ export default function YoursScreen() {
 
   // The gallery: nights friends kept (most keepers first, then the soonest) and the
   // sparks waiting for your answer, one full photo each.
-  const ranked = [...nights].sort((a, b) => b.friends.length - a.friends.length || String(a.startsAt ?? '').localeCompare(String(b.startsAt ?? '')));
+  // Friends' nights in your city first, then what is coming up there, then their nights elsewhere.
+  const byKeepers = (a: YoursNight, b: YoursNight) => b.friends.length - a.friends.length || String(a.startsAt ?? '').localeCompare(String(b.startsAt ?? ''));
+  const here = sample ? nights : nights.filter((n) => n.city === feedCity).sort(byKeepers);
+  const filler: YoursNight[] = sample
+    ? []
+    : upcoming
+        .filter((u) => !nights.some((n) => n.id === u.id))
+        .map((u) => ({ id: u.id, slug: u.slug, title: u.title.toLowerCase(), venue: u.venue_name ?? u.city_name, when: dayLabel(u.starts_at), startsAt: u.starts_at, image: u.image_url, friends: [], city: feedCity }));
+  const elsewhere = sample ? [] : nights.filter((n) => n.city !== feedCity).sort(byKeepers);
+  const ranked = [...here, ...filler, ...elsewhere];
   const matched = new Set(matches.map((mt) => mt.night));
   type Slide = { kind: 'night'; key: string; n: YoursNight } | { kind: 'spark'; key: string; s: SparkInvite };
   const slides: Slide[] = [
@@ -436,9 +447,9 @@ export default function YoursScreen() {
                                 ) : null}
                               </View>
                               <View style={styles.keptText}>
-                                <Text style={styles.keptNames} numberOfLines={1}>{names(item.n.friends)}</Text>
+                                <Text style={styles.keptNames} numberOfLines={1}>{item.n.friends.length ? names(item.n.friends) : t('yours.inCity', { city: (local.name ?? '').toLowerCase() })}</Text>
                                 <Text style={styles.keptWord} numberOfLines={1}>
-                                  {up(tn('yours.friendsKept', item.n.friends.length))}
+                                  {item.n.friends.length ? up(tn('yours.friendsKept', item.n.friends.length)) : up(t('yours.beFirst'))}
                                   {comingTo(item.n.id) ? ` · ${up(tn('yours.coming', comingTo(item.n.id)))}` : ''}
                                   {item.n.friends.some((n) => live.has(n)) ? ` · ${up(t('yours.live'))}` : ''}
                                 </Text>

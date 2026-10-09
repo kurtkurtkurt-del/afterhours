@@ -4,6 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
+import { useReport } from '@/components/ReportSheet';
 import { Said } from '@/components/StaffPage';
 import { groupGet, groupSay, groupThread, groupUnsay, why, type Line } from '@/data/groups';
 import { useLang } from '@/i18n';
@@ -16,6 +17,8 @@ import { brand } from '@/theme/layout';
 export default function GroupChat() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { t, up } = useLang();
+  // A long press on someone else's bubble reports it (51_safety.sql).
+  const reporting = useReport();
   const insets = useSafeAreaInsets();
   const [name, setName] = useState('');
   const [lines, setLines] = useState<Line[]>([]);
@@ -96,9 +99,9 @@ export default function GroupChat() {
                 </View>
                 <View style={styles.theirsCol}>
                   {first ? <Text style={styles.meta}>{name}</Text> : null}
-                  <View style={styles.bubble}>
+                  <Pressable onLongPress={() => reporting.ask('group_message', String(l.id))} style={styles.bubble}>
                     <Text style={styles.text}>{l.body}</Text>
-                  </View>
+                  </Pressable>
                   <Text style={styles.metaSmall}>{time(l.created_at)}</Text>
                 </View>
               </View>
@@ -125,6 +128,7 @@ export default function GroupChat() {
         </View>
       </KeyboardAvoidingView>
       <BackButton lift={70} />
+      {reporting.sheet}
     </View>
   );
 }

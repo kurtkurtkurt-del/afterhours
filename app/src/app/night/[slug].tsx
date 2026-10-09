@@ -18,10 +18,12 @@ import { fetchNight, swipe, type Night } from '@/data/deck';
 import { OfflineError, useShelf } from '@/lib/offline';
 import { shareNight } from '@/lib/share';
 import ShareButton from '@/components/ShareButton';
+import { useReport } from '@/components/ReportSheet';
 import { commentCode, commentErrors, fetchComments, postComment, whenText, type Comment } from '@/data/comments';
 import { bodyText, upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import PillAction from '@/components/PillAction';
 
 const fallback = require('../../../assets/intro/concert.jpg');
 
@@ -57,6 +59,8 @@ export default function NightScreen() {
   const [talk, setTalk] = useState<Comment[] | null>(null);
   const [text, setText] = useState('');
   const [replyTo, setReplyTo] = useState<Comment | null>(null);
+  // A long press on someone's words reports them (51_safety.sql).
+  const reporting = useReport();
   const [sending, setSending] = useState(false);
   const [talkNote, setTalkNote] = useState<string | null>(null);
 
@@ -232,16 +236,19 @@ export default function NightScreen() {
                 talk.map((c) => (
                   <View key={c.id} style={styles.topic}>
                     <Text style={styles.talkWho}>{c.who || t('word.someone')} · {c.waiting ? t('offline.waiting') : whenText(c.at, t, tx)}</Text>
-                    <Text style={styles.talkBody}>{c.body}</Text>
+                    <Text style={styles.talkBody} onLongPress={c.waiting ? undefined : () => reporting.ask('comment', c.id)}>{c.body}</Text>
                     {c.replies.map((r, i) => (
                       <View key={i} style={styles.reply}>
                         <Text style={styles.talkWho}>{r.who || t('word.someone')} · {r.waiting ? t('offline.waiting') : whenText(r.at, t, tx)}</Text>
-                        <Text style={styles.talkBody}>{r.body}</Text>
+                        <Text style={styles.talkBody} onLongPress={r.id ? () => reporting.ask('comment', r.id!) : undefined}>{r.body}</Text>
                       </View>
                     ))}
-                    <Pressable onPress={() => setReplyTo(replyTo?.id === c.id ? null : c)} hitSlop={8}>
-                      <Text style={[styles.talkLink, replyTo?.id === c.id && styles.talkLinkOn]}>{replyTo?.id === c.id ? t('comments.replying') : t('comments.reply')}</Text>
-                    </Pressable>
+                    <View style={styles.talkLinks}>
+                      <Pressable onPress={() => setReplyTo(replyTo?.id === c.id ? null : c)} hitSlop={8}>
+                        <Text style={[styles.talkLink, replyTo?.id === c.id && styles.talkLinkOn]}>{replyTo?.id === c.id ? t('comments.replying') : t('comments.reply')}</Text>
+                      </Pressable>
+                      {c.waiting ? null : <PillAction small icon="flag" label={t('posts.report')} onPress={() => reporting.ask('comment', c.id)} />}
+                    </View>
                   </View>
                 ))
               )}
@@ -290,6 +297,7 @@ export default function NightScreen() {
         </View>
       )}
       <Tips page="night" tips={[{ title: 'tips.night.1.t', body: 'tips.night.1.b' }, { title: 'tips.night.2.t', body: 'tips.night.2.b' }]} bottom={insets.bottom + 84} />
+      {reporting.sheet}
     </View>
   );
 }
@@ -329,6 +337,7 @@ const styles = StyleSheet.create({
   talkWho: { fontFamily: fonts.regular, fontSize: 11, color: colors.paper, opacity: 0.5 },
   talkBody: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 21, color: colors.paper },
   talkNone: { fontFamily: fonts.regular, fontSize: 14, color: colors.paper, opacity: 0.5 },
+  talkLinks: { flexDirection: 'row', alignItems: 'center', gap: 14, marginTop: 6 },
   talkLink: { fontFamily: fonts.medium, fontSize: 12, color: colors.paper, opacity: 0.55, marginTop: 2 },
   talkLinkOn: { opacity: 1, color: colors.spot },
   compose: { marginTop: 10, gap: 8 },

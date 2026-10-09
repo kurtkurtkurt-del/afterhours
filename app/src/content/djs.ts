@@ -2,7 +2,7 @@
 // Photos are assets/djs/<id>.jpg: colour CC0 photos from Wikimedia Commons (CREDITS.md); replacing the file is enough.
 import type { Genre } from '@/content/music';
 
-export type Dj = { id: string; name: string; genre: string; sound: Genre; city: string; since: number; followers: string; photo: number; photoUrl?: string | null };
+export type Dj = { id: string; name: string; genre: string; sound: Genre; city: string; citySlug?: string; since: number; followers: string; photo: number; photoUrl?: string | null };
 type Track = { title: string; where: string; date: string; length: string };
 export type DjSet = { dj: string; venue: string; startsAt: Date; hours: number };
 

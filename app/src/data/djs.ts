@@ -10,7 +10,7 @@ export async function loadDjs(): Promise<{ djs: Dj[]; sets: DjSet[]; live: boole
   // Raw rows are cached (photo numbers change between releases and are mapped every time).
   const raw = await remember('djs', '', async () => {
     const [a, b, c] = await Promise.all([
-      supabase.from('djs').select('id,slug,name,genre,sound,since,photo_url,cities(name)').order('sort_order'),
+      supabase.from('djs').select('id,slug,name,genre,sound,since,photo_url,cities(slug,name)').order('sort_order'),
       supabase.from('dj_sets').select('venue,starts_at,hours,djs(slug)').gte('starts_at', new Date(Date.now() - 12 * 3600_000).toISOString()).order('starts_at'),
       supabase.rpc('dj_follow_counts'),
     ]);
@@ -28,6 +28,7 @@ export async function loadDjs(): Promise<{ djs: Dj[]; sets: DjSet[]; live: boole
     genre: r.genre as string,
     sound: r.sound as Dj['sound'],
     city: ((r as { cities?: { name?: string } | null }).cities?.name ?? '').toLowerCase(),
+    citySlug: (r as { cities?: { slug?: string } | null }).cities?.slug ?? undefined,
     since: (r.since as number) ?? 0,
     followers: fmt(counts.get(r.id as string) ?? 0),
     photo: photos[r.slug as string] ?? fallbackPhoto,

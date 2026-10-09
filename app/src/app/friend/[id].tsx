@@ -14,12 +14,14 @@ import Button from '@/components/Button';
 import Input from '@/components/Input';
 import PullDownScroll from '@/components/PullDownScroll';
 import SoundCorner from '@/components/SoundCorner';
+import { confirmBlock } from '@/components/People';
 import { friends, nights } from '@/content/friends';
 import { friendAccept, friendRemove, friendRequest } from '@/data/friends';
 import { useYours } from '@/data/yours';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import PillAction from '@/components/PillAction';
 
 // Friend page, in the account page's language: their photo (or drawn face) full-bleed
 // with the name large, then on paper their kept nights as photo cards, their text and
@@ -205,10 +207,14 @@ export default function FriendScreen() {
                   </Pressable>
                 ) : null}
                 {rf ? (
-                  <Pressable hitSlop={8} onPress={() => friendRemove(rf.id).then(() => router.back()).catch((e) => setSent(String(e.message).toLowerCase()))}>
-                    <Text style={styles.remove}>{rf.pending === 'outgoing' ? t('friend.cancel') : t('friend.remove')}</Text>
-                  </Pressable>
+                  <PillAction
+                    surface="paper"
+                    icon={rf.pending === 'outgoing' ? 'close' : 'minus'}
+                    label={rf.pending === 'outgoing' ? t('friend.cancel') : t('friend.remove')}
+                    onPress={() => friendRemove(rf.id).then(() => router.back()).catch((e) => setSent(String(e.message).toLowerCase()))}
+                  />
                 ) : null}
+                {rf ? <PillAction surface="paper" tone="danger" icon="block" label={t('block.do')} onPress={() => confirmBlock({ id: rf.id, name: rf.name }, t, () => router.back())} /> : null}
               </View>
             </View>
           </View>
@@ -232,7 +238,6 @@ const styles = StyleSheet.create({
   big: { fontFamily: fonts.medium, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
   mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginTop: 6 },
   note: { fontFamily: fonts.regular, fontSize: 14, color: colors.mute, marginTop: 8, marginBottom: 16 },
-  remove: { fontFamily: fonts.regular, fontSize: 14, color: colors.ink2, textDecorationLine: 'underline' },
   pressed: { opacity: 0.7 },
   // the profile, in the account page's language: poster on top, paper below
   poster: { backgroundColor: colors.ink, overflow: 'hidden' },
@@ -262,7 +267,7 @@ const styles = StyleSheet.create({
   line: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 14, paddingVertical: 11, borderBottomWidth: 1, borderBottomColor: colors.rule },
   lineKey: { fontFamily: fonts.regular, fontSize: 14, color: colors.ink2 },
   lineValue: { flexShrink: 1, fontFamily: fonts.medium, fontSize: 14, color: colors.ink },
-  actions: { flexDirection: 'row', alignItems: 'center', gap: 18, marginTop: 18 },
+  actions: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 8, marginTop: 18 },
   accept: { backgroundColor: colors.spot, paddingVertical: 11, paddingHorizontal: 20, borderRadius: radius.pill },
   acceptText: { fontFamily: fonts.medium, fontSize: 14, color: colors.ink },
 });
