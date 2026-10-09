@@ -1,5 +1,5 @@
 import { useEffect, useState, useSyncExternalStore } from 'react';
-import { AppState } from 'react-native';
+import { AppState, Platform } from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
 import Storage from 'expo-sqlite/kv-store';
 import { supabase } from '@/lib/supabase';
@@ -60,8 +60,10 @@ export function startOffline() {
   if (started) return;
   started = true;
   NetInfo.addEventListener((s) => {
-    // isInternetReachable null = unknown yet; treat as connected.
-    tell({ online: !!s.isConnected && s.isInternetReachable !== false });
+    // isInternetReachable null = unknown yet; treat as connected. On the web NetInfo
+    // probes the site root, which is not the PWA (it lives under a base URL) and
+    // answers 404: there the browser's own connected flag is the answer.
+    tell({ online: !!s.isConnected && (Platform.OS === 'web' || s.isInternetReachable !== false) });
   });
   AppState.addEventListener('change', (s) => {
     if (s === 'active') flush().catch(() => {});
