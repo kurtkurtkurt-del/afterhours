@@ -95,6 +95,8 @@ begin
 end;
 $$;
 
+-- 55 adds columns; a second run of the setup meets that shape first.
+drop function if exists public.posts_feed(timestamptz, int);
 create or replace function public.posts_feed(p_before timestamptz default null, p_limit int default 20)
 returns table (id uuid, author_id uuid, handle text, name text, body text, photo_path text,
                event_slug text, event_title text, created_at timestamptz, mine boolean)

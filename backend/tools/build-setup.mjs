@@ -62,6 +62,7 @@ const structure = [
   ["52_bans.sql", "CLOSING AN ACCOUNT — THE STAFF BAN, THE DATABASE REFUSES"],
   ["53_trust.sql", "TRUST — DJ PAGES CHECKED, ADMINS, NOTICES, LIMITS, BLOCKS IN GROUPS"],
   ["54_upkeep.sql", "UPKEEP — OLD GUESTS GO, THE STAFF ARE ALERTED"],
+  ["55_post_social.sql", "LIKES AND COMMENTS ON POSTS"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

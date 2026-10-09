@@ -76,10 +76,10 @@ security definer
 set search_path = public
 as $$
 declare
-  author uuid := case when TG_TABLE_NAME = 'comments' then new.author_id else new.author_id end;
+  author uuid := new.author_id;
 begin
   if new.is_hidden and not old.is_hidden and auth.uid() is distinct from author then
-    perform public.notice(author, case when TG_TABLE_NAME = 'comments' then 'comment_hidden' else 'post_hidden' end,
+    perform public.notice(author, case when TG_TABLE_NAME in ('comments', 'post_comments') then 'comment_hidden' else 'post_hidden' end,
                           jsonb_build_object('text', left(new.body, 80)));
   end if;
   return new;

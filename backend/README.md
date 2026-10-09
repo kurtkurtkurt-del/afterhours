@@ -62,6 +62,7 @@ sql/51_safety.sql        what the stores require: accept_terms / terms_status (1
 sql/52_bans.sql          closing an account: staff_ban / staff_unban (not staff), account_status; a trigger on every written table refuses a banned author; the card disappears, comments and posts hidden, upcoming sparks called off
 sql/53_trust.sql         trust: djs.verified (staff_djs_waiting, staff_dj_verify; renaming or leaving dj takes it down), admin_set_admin (never the last), notices (my_notices, notices_seen; triggers on hide, removal, cleared profile, role), guard_rate limits, no group across a block
 sql/54_upkeep.sql        upkeep: guests_prune (guests unseen 30 days, nightly cron), staff push (kind staff in 48) when a report, reported post, night sent in or dj page starts waiting, one an hour; staff_waiting()
+sql/55_post_social.sql   likes and comments on posts: post_likes, post_comments; post_like, post_likers, post_comment_add / _delete, post_comments_of; posts_feed with likes, liked, comments, first two; push post_like / post_comment; reports, bans, notices, limits cover comments
 sql/fix-clipboard-text.sql  ONE-SHOT, plain ASCII: repairs text that pbcopy turned into Mac Roman garbage on its way to the SQL editor
 sql/about-munich.sql     ONE-SHOT: the texts for 18 Munich nights in en · de · tr, from Wikipedia summaries, by slug
 sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities
@@ -327,3 +328,34 @@ being signed in.
   no year and it was filled in by inference; taking a night's listing off
   the site on the strength of that would be wrong. They are marked `date?`
   in the panel.
+
+## One account, app and site
+
+The app (`app/.env`) and the site (`config.js`) talk to the same Supabase
+project, so an account is one account: kept nights (`swipes`), the card
+collection (`my_cards`, shown on the site's `cards/` page), the profile and
+its settings (`profile_settings`, `profile_setup`), blocks and deleting the
+account are the same rows from both sides.
+
+Email and password work on both as they are. Apple and Google sign the app
+in natively (id tokens); on the site they go through Supabase's web flow
+(`AH.signInWith` in `session.js`), which needs, once, in the Supabase panel:
+
+1. **Authentication → URL Configuration → Redirect URLs:** add
+   `https://kurtkurtkurt-del.github.io/afterhours/login/`.
+2. **Google:** in Google Cloud, an OAuth client of type *Web application*
+   with the redirect URI `https://elmnnyxgavwjxvwjgjcu.supabase.co/auth/v1/callback`.
+   In Supabase → Authentication → Providers → Google: its Client ID and
+   Secret; keep the app's iOS and Android client IDs under *Authorized
+   Client IDs* so the app goes on working.
+3. **Apple:** in Apple Developer, a *Services ID* (for example
+   `app.afterhours.web`) with Sign in with Apple, domain
+   `elmnnyxgavwjxvwjgjcu.supabase.co` and return URL
+   `https://elmnnyxgavwjxvwjgjcu.supabase.co/auth/v1/callback`; a key with
+   Sign in with Apple (the same one as for `apple-revoke` will do).
+   In Supabase → Providers → Apple: the Services ID first in *Client IDs*,
+   then `app.afterhours.ios`, and the secret made from the key.
+
+Someone who signed up in the app with Apple or Google can also set a
+password in the app (settings → account → password) and use email and
+password on the site.

@@ -35,7 +35,9 @@ alter table public.push_outbox add constraint push_outbox_kind_check check (kind
   'group_added', 'group_joined', 'group_match', 'group_round', 'group_won', 'group_plan',
   'group_message', 'group_live', 'group_ticket', 'post',
   -- 54_upkeep.sql: the staff, when something waits in the panel
-  'staff'));
+  'staff',
+  -- 55_post_social.sql: someone liked or commented on your post
+  'post_like', 'post_comment'));
 
 create or replace function public.push_wants(p_user uuid, p_kind text)
 returns boolean
@@ -58,7 +60,7 @@ as $$
              when p_kind = 'wave'            then s.notify_waves
              when p_kind in ('spark', 'spark_in') then s.notify_sparks
              when p_kind like 'group\_%' then s.notify_groups
-             when p_kind = 'post'            then s.notify_posts
+             when p_kind in ('post', 'post_like', 'post_comment') then s.notify_posts
            end
     from public.profile_settings s where s.user_id = p_user), true);
 $$;
@@ -79,10 +81,10 @@ begin
     return;
   end if;
   -- the daily cap for the chattier kinds
-  if p_kind in ('room_message', 'digest', 'dj_live', 'wave', 'post')
+  if p_kind in ('room_message', 'digest', 'dj_live', 'wave', 'post', 'post_like')
      and (select count(*) from public.push_outbox o
           where o.user_id = p_user and o.created_at > now() - interval '1 day'
-            and o.kind in ('room_message', 'digest', 'dj_live', 'wave', 'post')) >= 10 then
+            and o.kind in ('room_message', 'digest', 'dj_live', 'wave', 'post', 'post_like')) >= 10 then
     return;
   end if;
   -- quiet hours: wait for 09:00 on the phone
@@ -184,6 +186,12 @@ begin
     ('post',            'en', '{name} posted',                 '{text}'),
     ('post',            'de', '{name} hat gepostet',           '{text}'),
     ('post',            'tr', '{name} paylaştı',               '{text}'),
+    ('post_like',       'en', '{name} likes your post',        '{text}'),
+    ('post_like',       'de', '{name} gefällt dein post',      '{text}'),
+    ('post_like',       'tr', '{name} gönderini beğendi',      '{text}'),
+    ('post_comment',    'en', '{name} commented',              '{text}'),
+    ('post_comment',    'de', '{name} hat kommentiert',        '{text}'),
+    ('post_comment',    'tr', '{name} yorum yaptı',            '{text}'),
     ('staff',           'en', 'the panel',                     '{n} waiting: reports, nights sent in, dj pages'),
     ('staff',           'de', 'das panel',                     '{n} warten: meldungen, eingesandte nächte, dj-seiten'),
     ('staff',           'tr', 'panel',                         '{n} iş bekliyor: şikayetler, gönderilen geceler, dj sayfaları')

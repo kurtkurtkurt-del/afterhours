@@ -55,7 +55,7 @@ grant execute on function public.terms_status()              to authenticated;
 create table if not exists public.reports (
   id           bigserial primary key,
   reporter_id  uuid not null references public.profiles on delete cascade,
-  kind         text not null check (kind in ('comment', 'room_post', 'group_message', 'profile', 'group', 'spark')),
+  kind         text not null check (kind in ('comment', 'room_post', 'group_message', 'profile', 'group', 'spark', 'post_comment')),
   target       text not null check (length(target) between 1 and 64),
   reason       text check (reason is null or length(reason) <= 300),
   handled      boolean not null default false,
@@ -65,6 +65,38 @@ create table if not exists public.reports (
 create index if not exists reports_open on public.reports (kind, target) where not handled;
 alter table public.reports enable row level security;
 revoke all on public.reports from public, anon, authenticated;
+
+-- Comments on posts live in 55; until it ran these answer null.
+create or replace function public.post_comment_body(p_id text)
+returns text
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare r text;
+begin
+  if to_regclass('public.post_comments') is null then return null; end if;
+  execute 'select body from public.post_comments where id::text = $1' into r using p_id;
+  return r;
+end;
+$$;
+create or replace function public.post_comment_author(p_id text)
+returns uuid
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare r uuid;
+begin
+  if to_regclass('public.post_comments') is null then return null; end if;
+  execute 'select author_id from public.post_comments where id::text = $1' into r using p_id;
+  return r;
+end;
+$$;
+revoke all on function public.post_comment_body(text) from public, anon, authenticated;
+revoke all on function public.post_comment_author(text) from public, anon, authenticated;
 
 -- Who wrote it, and whether it exists for you: null when it does not.
 create or replace function public.report_author(p_kind text, p_target text)
@@ -90,6 +122,9 @@ begin
     select g.created_by into a from public.groups g where g.id::text = p_target;
   elsif p_kind = 'spark' then
     select host_id into a from public.sparks where id::text = p_target;
+  elsif p_kind = 'post_comment' and to_regclass('public.post_comments') is not null then
+    execute 'select c.author_id from public.post_comments c join public.posts p on p.id = c.post_id
+             where c.id::text = $1 and public.can_see_post(p.author_id)' into a using p_target;
   end if;
   return a;
 end;
@@ -149,6 +184,7 @@ begin
              when 'profile'       then (select concat_ws(' · ', p.display_name, p.bio, p.about) from public.profiles p where p.id::text = o.target)
              when 'group'         then (select g.name from public.groups g where g.id::text = o.target)
              when 'spark'         then (select concat_ws(' · ', s.title, s.place) from public.sparks s where s.id::text = o.target)
+             when 'post_comment'  then public.post_comment_body(o.target)
            end,
            (select coalesce(p.handle, p.display_name) from public.profiles p where p.id = public.report_author_any(o.kind, o.target)),
            o.n, o.why, o.first_at
@@ -172,6 +208,7 @@ as $$
     when 'profile'       then (select id from public.profiles where id::text = p_target)
     when 'group'         then (select created_by from public.groups where id::text = p_target)
     when 'spark'         then (select host_id from public.sparks where id::text = p_target)
+    when 'post_comment'  then public.post_comment_author(p_target)
   end;
 $$;
 revoke all on function public.report_author_any(text, text) from public, anon, authenticated;
@@ -195,6 +232,8 @@ begin
       delete from public.sparks where id::text = p_target;
     elsif p_kind = 'group' then
       delete from public.groups where id::text = p_target;
+    elsif p_kind = 'post_comment' then
+      execute 'update public.post_comments set is_hidden = true where id::text = $1' using p_target;
     elsif p_kind = 'profile' then
       update public.profiles set bio = null, about = null where id::text = p_target;
       delete from public.profile_links where user_id::text = p_target;

@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-08 10:04   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-09 09:56   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -9592,6 +9592,8 @@ begin
 end;
 $$;
 
+-- 55 adds columns; a second run of the setup meets that shape first.
+drop function if exists public.posts_feed(timestamptz, int);
 create or replace function public.posts_feed(p_before timestamptz default null, p_limit int default 20)
 returns table (id uuid, author_id uuid, handle text, name text, body text, photo_path text,
                event_slug text, event_title text, created_at timestamptz, mine boolean)
@@ -10422,7 +10424,9 @@ alter table public.push_outbox add constraint push_outbox_kind_check check (kind
   'group_added', 'group_joined', 'group_match', 'group_round', 'group_won', 'group_plan',
   'group_message', 'group_live', 'group_ticket', 'post',
   -- 54_upkeep.sql: the staff, when something waits in the panel
-  'staff'));
+  'staff',
+  -- 55_post_social.sql: someone liked or commented on your post
+  'post_like', 'post_comment'));
 
 create or replace function public.push_wants(p_user uuid, p_kind text)
 returns boolean
@@ -10445,7 +10449,7 @@ as $$
              when p_kind = 'wave'            then s.notify_waves
              when p_kind in ('spark', 'spark_in') then s.notify_sparks
              when p_kind like 'group\_%' then s.notify_groups
-             when p_kind = 'post'            then s.notify_posts
+             when p_kind in ('post', 'post_like', 'post_comment') then s.notify_posts
            end
     from public.profile_settings s where s.user_id = p_user), true);
 $$;
@@ -10466,10 +10470,10 @@ begin
     return;
   end if;
   -- the daily cap for the chattier kinds
-  if p_kind in ('room_message', 'digest', 'dj_live', 'wave', 'post')
+  if p_kind in ('room_message', 'digest', 'dj_live', 'wave', 'post', 'post_like')
      and (select count(*) from public.push_outbox o
           where o.user_id = p_user and o.created_at > now() - interval '1 day'
-            and o.kind in ('room_message', 'digest', 'dj_live', 'wave', 'post')) >= 10 then
+            and o.kind in ('room_message', 'digest', 'dj_live', 'wave', 'post', 'post_like')) >= 10 then
     return;
   end if;
   -- quiet hours: wait for 09:00 on the phone
@@ -10571,6 +10575,12 @@ begin
     ('post',            'en', '{name} posted',                 '{text}'),
     ('post',            'de', '{name} hat gepostet',           '{text}'),
     ('post',            'tr', '{name} paylaştı',               '{text}'),
+    ('post_like',       'en', '{name} likes your post',        '{text}'),
+    ('post_like',       'de', '{name} gefällt dein post',      '{text}'),
+    ('post_like',       'tr', '{name} gönderini beğendi',      '{text}'),
+    ('post_comment',    'en', '{name} commented',              '{text}'),
+    ('post_comment',    'de', '{name} hat kommentiert',        '{text}'),
+    ('post_comment',    'tr', '{name} yorum yaptı',            '{text}'),
     ('staff',           'en', 'the panel',                     '{n} waiting: reports, nights sent in, dj pages'),
     ('staff',           'de', 'das panel',                     '{n} warten: meldungen, eingesandte nächte, dj-seiten'),
     ('staff',           'tr', 'panel',                         '{n} iş bekliyor: şikayetler, gönderilen geceler, dj sayfaları')
@@ -11205,7 +11215,7 @@ grant execute on function public.terms_status()              to authenticated;
 create table if not exists public.reports (
   id           bigserial primary key,
   reporter_id  uuid not null references public.profiles on delete cascade,
-  kind         text not null check (kind in ('comment', 'room_post', 'group_message', 'profile', 'group', 'spark')),
+  kind         text not null check (kind in ('comment', 'room_post', 'group_message', 'profile', 'group', 'spark', 'post_comment')),
   target       text not null check (length(target) between 1 and 64),
   reason       text check (reason is null or length(reason) <= 300),
   handled      boolean not null default false,
@@ -11215,6 +11225,38 @@ create table if not exists public.reports (
 create index if not exists reports_open on public.reports (kind, target) where not handled;
 alter table public.reports enable row level security;
 revoke all on public.reports from public, anon, authenticated;
+
+-- Comments on posts live in 55; until it ran these answer null.
+create or replace function public.post_comment_body(p_id text)
+returns text
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare r text;
+begin
+  if to_regclass('public.post_comments') is null then return null; end if;
+  execute 'select body from public.post_comments where id::text = $1' into r using p_id;
+  return r;
+end;
+$$;
+create or replace function public.post_comment_author(p_id text)
+returns uuid
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare r uuid;
+begin
+  if to_regclass('public.post_comments') is null then return null; end if;
+  execute 'select author_id from public.post_comments where id::text = $1' into r using p_id;
+  return r;
+end;
+$$;
+revoke all on function public.post_comment_body(text) from public, anon, authenticated;
+revoke all on function public.post_comment_author(text) from public, anon, authenticated;
 
 -- Who wrote it, and whether it exists for you: null when it does not.
 create or replace function public.report_author(p_kind text, p_target text)
@@ -11240,6 +11282,9 @@ begin
     select g.created_by into a from public.groups g where g.id::text = p_target;
   elsif p_kind = 'spark' then
     select host_id into a from public.sparks where id::text = p_target;
+  elsif p_kind = 'post_comment' and to_regclass('public.post_comments') is not null then
+    execute 'select c.author_id from public.post_comments c join public.posts p on p.id = c.post_id
+             where c.id::text = $1 and public.can_see_post(p.author_id)' into a using p_target;
   end if;
   return a;
 end;
@@ -11299,6 +11344,7 @@ begin
              when 'profile'       then (select concat_ws(' · ', p.display_name, p.bio, p.about) from public.profiles p where p.id::text = o.target)
              when 'group'         then (select g.name from public.groups g where g.id::text = o.target)
              when 'spark'         then (select concat_ws(' · ', s.title, s.place) from public.sparks s where s.id::text = o.target)
+             when 'post_comment'  then public.post_comment_body(o.target)
            end,
            (select coalesce(p.handle, p.display_name) from public.profiles p where p.id = public.report_author_any(o.kind, o.target)),
            o.n, o.why, o.first_at
@@ -11322,6 +11368,7 @@ as $$
     when 'profile'       then (select id from public.profiles where id::text = p_target)
     when 'group'         then (select created_by from public.groups where id::text = p_target)
     when 'spark'         then (select host_id from public.sparks where id::text = p_target)
+    when 'post_comment'  then public.post_comment_author(p_target)
   end;
 $$;
 revoke all on function public.report_author_any(text, text) from public, anon, authenticated;
@@ -11345,6 +11392,8 @@ begin
       delete from public.sparks where id::text = p_target;
     elsif p_kind = 'group' then
       delete from public.groups where id::text = p_target;
+    elsif p_kind = 'post_comment' then
+      execute 'update public.post_comments set is_hidden = true where id::text = $1' using p_target;
     elsif p_kind = 'profile' then
       update public.profiles set bio = null, about = null where id::text = p_target;
       delete from public.profile_links where user_id::text = p_target;
@@ -11782,10 +11831,10 @@ security definer
 set search_path = public
 as $$
 declare
-  author uuid := case when TG_TABLE_NAME = 'comments' then new.author_id else new.author_id end;
+  author uuid := new.author_id;
 begin
   if new.is_hidden and not old.is_hidden and auth.uid() is distinct from author then
-    perform public.notice(author, case when TG_TABLE_NAME = 'comments' then 'comment_hidden' else 'post_hidden' end,
+    perform public.notice(author, case when TG_TABLE_NAME in ('comments', 'post_comments') then 'comment_hidden' else 'post_hidden' end,
                           jsonb_build_object('text', left(new.body, 80)));
   end if;
   return new;
@@ -12233,5 +12282,278 @@ create trigger staff_alert after insert on public.events
 do $$ begin
   if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('54_upkeep.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  LIKES AND COMMENTS ON POSTS   (55_post_social.sql)
+-- ============================================================
+
+-- afterhours — likes and comments on posts (55, after 45, 48, 51 to 53)
+--
+--   post_likes            one per person and post
+--   post_comments         up to 300 characters; hidden by the staff, deleted by their
+--                         author or the author of the post
+--   post_like(id, on)     a double tap or the heart; anyone who can see the post
+--   post_likers(id)       who liked it, newest first (blocked people left out)
+--   post_comment_add(id, body) / post_comment_delete(id) / post_comments_of(id)
+--   posts_feed(…)         as in 45, plus likes, liked (by you), comments and the
+--                         first two comments, so the card needs one read
+--
+-- Whoever sees the post (its author and their confirmed friends) may like and
+-- comment. The author is told by push (post_like, post_comment in 48). Reports
+-- (51), bans (52), notices and limits (53) cover comments too.
+
+create table if not exists public.post_likes (
+  post_id     uuid not null references public.posts on delete cascade,
+  user_id     uuid not null references public.profiles on delete cascade,
+  created_at  timestamptz not null default now(),
+  primary key (post_id, user_id)
+);
+create index if not exists post_likes_user on public.post_likes (user_id);
+
+create table if not exists public.post_comments (
+  id          uuid primary key default gen_random_uuid(),
+  post_id     uuid not null references public.posts on delete cascade,
+  author_id   uuid not null references public.profiles on delete cascade,
+  body        text not null check (length(btrim(body)) between 1 and 300),
+  is_hidden   boolean not null default false,
+  created_at  timestamptz not null default now()
+);
+create index if not exists post_comments_post on public.post_comments (post_id, created_at);
+
+alter table public.post_likes enable row level security;
+alter table public.post_comments enable row level security;
+revoke all on public.post_likes, public.post_comments from public, anon, authenticated;
+
+-- Reports may name a comment on a post (the table in 51 predates it).
+alter table public.reports drop constraint if exists reports_kind_check;
+alter table public.reports add constraint reports_kind_check
+  check (kind in ('comment', 'room_post', 'group_message', 'profile', 'group', 'spark', 'post_comment'));
+
+create or replace function public.need_post(p_id uuid)
+returns uuid
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  a uuid;
+begin
+  if auth.uid() is null then raise exception 'sign in first'; end if;
+  select author_id into a from public.posts where id = p_id and not is_hidden;
+  if a is null or not public.can_see_post(a) then raise exception 'no such post'; end if;
+  return a;
+end;
+$$;
+revoke all on function public.need_post(uuid) from public, anon, authenticated;
+
+-- ------------------------------------------------------------ likes
+
+create or replace function public.post_like(p_id uuid, p_on boolean)
+returns int
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_post(p_id);
+  if coalesce(p_on, true) then
+    insert into public.post_likes (post_id, user_id) values (p_id, auth.uid()) on conflict do nothing;
+  else
+    delete from public.post_likes where post_id = p_id and user_id = auth.uid();
+  end if;
+  return (select count(*)::int from public.post_likes where post_id = p_id);
+end;
+$$;
+
+create or replace function public.post_likers(p_id uuid)
+returns table (id uuid, handle text, name text, mine boolean, at timestamptz)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_post(p_id);
+  return query
+    select p.id, p.handle, p.display_name, p.id = auth.uid(), l.created_at
+    from public.post_likes l join public.profiles p on p.id = l.user_id
+    where l.post_id = p_id and (p.id = auth.uid() or (not public.is_blocked(p.id) and p.banned_at is null))
+    order by l.created_at desc
+    limit 200;
+end;
+$$;
+
+-- ------------------------------------------------------------ comments
+
+create or replace function public.post_comment_add(p_id uuid, p_body text)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  r uuid;
+begin
+  perform public.need_account();
+  perform public.need_post(p_id);
+  if length(btrim(coalesce(p_body, ''))) = 0 then raise exception 'a few words'; end if;
+  if length(p_body) > 300 then raise exception 'at most 300 characters'; end if;
+  insert into public.post_comments (post_id, author_id, body) values (p_id, auth.uid(), btrim(p_body)) returning id into r;
+  return r;
+end;
+$$;
+
+-- Your own comment, or any comment under your post.
+create or replace function public.post_comment_delete(p_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  c record;
+begin
+  select pc.author_id, p.author_id as owner into c
+  from public.post_comments pc join public.posts p on p.id = pc.post_id where pc.id = p_id;
+  if c is null then return; end if;
+  if auth.uid() is distinct from c.author_id and auth.uid() is distinct from c.owner and not public.is_staff() then
+    raise exception 'not yours' using errcode = '42501';
+  end if;
+  delete from public.post_comments where id = p_id;
+end;
+$$;
+
+create or replace function public.post_comments_of(p_id uuid)
+returns table (id uuid, author_id uuid, handle text, name text, body text, created_at timestamptz, mine boolean, can_delete boolean)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  owner uuid;
+begin
+  owner := public.need_post(p_id);
+  return query
+    select c.id, c.author_id, p.handle, p.display_name, c.body, c.created_at,
+           c.author_id = auth.uid(), c.author_id = auth.uid() or owner = auth.uid()
+    from public.post_comments c join public.profiles p on p.id = c.author_id
+    where c.post_id = p_id and not c.is_hidden
+      and (c.author_id = auth.uid() or (not public.is_blocked(c.author_id) and p.banned_at is null))
+    order by c.created_at
+    limit 300;
+end;
+$$;
+
+revoke execute on function public.post_like(uuid, boolean)       from public, anon;
+revoke execute on function public.post_likers(uuid)              from public, anon;
+revoke execute on function public.post_comment_add(uuid, text)   from public, anon;
+revoke execute on function public.post_comment_delete(uuid)      from public, anon;
+revoke execute on function public.post_comments_of(uuid)         from public, anon;
+grant execute on function public.post_like(uuid, boolean)        to authenticated;
+grant execute on function public.post_likers(uuid)               to authenticated;
+grant execute on function public.post_comment_add(uuid, text)    to authenticated;
+grant execute on function public.post_comment_delete(uuid)       to authenticated;
+grant execute on function public.post_comments_of(uuid)          to authenticated;
+
+-- ------------------------------------------------------------ the feed
+
+drop function if exists public.posts_feed(timestamptz, int);
+create or replace function public.posts_feed(p_before timestamptz default null, p_limit int default 20)
+returns table (id uuid, author_id uuid, handle text, name text, body text, photo_path text,
+               event_slug text, event_title text, created_at timestamptz, mine boolean,
+               likes int, liked boolean, comments int, first_comments jsonb)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select p.id, p.author_id, pr.handle, pr.display_name, p.body, p.photo_path, e.slug, e.title, p.created_at,
+         p.author_id = auth.uid(),
+         (select count(*)::int from public.post_likes l where l.post_id = p.id),
+         exists (select 1 from public.post_likes l where l.post_id = p.id and l.user_id = auth.uid()),
+         (select count(*)::int from public.post_comments c where c.post_id = p.id and not c.is_hidden),
+         coalesce((select jsonb_agg(jsonb_build_object('who', coalesce(x.handle, x.display_name), 'text', x.body) order by x.created_at)
+                   from (select c.body, c.created_at, q.handle, q.display_name
+                         from public.post_comments c join public.profiles q on q.id = c.author_id
+                         where c.post_id = p.id and not c.is_hidden
+                           and (c.author_id = auth.uid() or (not public.is_blocked(c.author_id) and q.banned_at is null))
+                         order by c.created_at limit 2) x), '[]'::jsonb)
+  from public.posts p
+  join public.profiles pr on pr.id = p.author_id
+  left join public.events e on e.id = p.event_id
+  where auth.uid() is not null
+    and not p.is_hidden
+    and public.can_see_post(p.author_id)
+    and (p_before is null or p.created_at < p_before)
+  order by p.created_at desc
+  limit greatest(1, least(coalesce(p_limit, 20), 50));
+$$;
+revoke execute on function public.posts_feed(timestamptz, int) from public, anon;
+grant execute on function public.posts_feed(timestamptz, int) to authenticated;
+
+-- ------------------------------------------------------------ guards, notices, push
+
+do $$
+declare t text;
+begin
+  foreach t in array array['post_likes', 'post_comments'] loop
+    if to_regprocedure('public.guard_banned()') is not null then
+      execute format('drop trigger if exists guard_banned on public.%I', t);
+      execute format('create trigger guard_banned before insert or update on public.%I for each row execute function public.guard_banned()', t);
+    end if;
+  end loop;
+  if to_regprocedure('public.guard_rate()') is not null then
+    drop trigger if exists guard_rate on public.post_comments;
+    create trigger guard_rate before insert on public.post_comments
+      for each row execute function public.guard_rate('author_id', '1 hour', '60');
+  end if;
+  if to_regprocedure('public.notice_hidden()') is not null then
+    drop trigger if exists notice_hidden on public.post_comments;
+    create trigger notice_hidden after update of is_hidden on public.post_comments
+      for each row execute function public.notice_hidden();
+  end if;
+end $$;
+
+create or replace function public.push_post_social()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  p public.posts%rowtype;
+  -- the two tables name the person differently; read it by name
+  who uuid := coalesce(to_jsonb(new) ->> 'user_id', to_jsonb(new) ->> 'author_id')::uuid;
+begin
+  if to_regprocedure('public.push_enqueue(uuid, text, text, jsonb)') is null then return null; end if;
+  select * into p from public.posts where id = new.post_id;
+  if p.author_id is null or p.author_id = who then return null; end if;
+  if TG_TABLE_NAME = 'post_likes' then
+    perform public.push_enqueue(p.author_id, 'post_like', format('post_like:%s:%s', p.id, who),
+      jsonb_build_object('name', public.push_name(who), 'text', left(coalesce(nullif(p.body, ''), '📷'), 80), 'url', '/yours'));
+  else
+    perform public.push_enqueue(p.author_id, 'post_comment', format('post_comment:%s', to_jsonb(new) ->> 'id'),
+      jsonb_build_object('name', public.push_name(who), 'text', left(to_jsonb(new) ->> 'body', 80), 'url', '/yours'));
+  end if;
+  return null;
+end;
+$$;
+do $$ begin
+  if to_regprocedure('public.push_name(uuid)') is not null then
+    drop trigger if exists push_post_social on public.post_likes;
+    create trigger push_post_social after insert on public.post_likes for each row execute function public.push_post_social();
+    drop trigger if exists push_post_social on public.post_comments;
+    create trigger push_post_social after insert on public.post_comments for each row execute function public.push_post_social();
+  end if;
+end $$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('55_post_social.sql');
   end if;
 end $$;
