@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Linking, Pressable, StyleSheet, Text, View, type ImageSourcePropType, Image as RNImage } from 'react-native';
+import { Linking, Platform, Pressable, StyleSheet, Text, View, type ImageSourcePropType, Image as RNImage } from 'react-native';
 import { Image } from 'expo-image';
+import { Asset } from 'expo-asset';
 import { router } from 'expo-router';
 import { SvgUri } from 'react-native-svg';
 import { upperData, useLang } from '@/i18n';
@@ -159,8 +160,12 @@ function useRatio(uri: string | null, fallbackRatio: number) {
   return ratio;
 }
 
+// react-native-web has no Image.resolveAssetSource; expo-asset knows a bundled image's size there.
+const resolve = (source: ImageSourcePropType): { width?: number | null; height?: number | null } =>
+  Platform.OS === 'web' ? (typeof source === 'number' ? Asset.fromModule(source) : (source as { width?: number | null; height?: number | null })) : RNImage.resolveAssetSource(source);
+
 const sizeOf = (source: ImageSourcePropType) => {
-  const s = RNImage.resolveAssetSource(source);
+  const s = resolve(source);
   return s.width && s.height ? s.width / s.height : 2 / 3;
 };
 
