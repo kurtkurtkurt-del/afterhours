@@ -59,7 +59,7 @@
       "googleServicesFile": "./google-services.json"
     },
     "web": {
-      "favicon": "./assets/favicon.png",
+      "favicon": "./public/favicon.png",
       "output": "single",
       "name": "afterhours",
       "shortName": "afterhours",
