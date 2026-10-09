@@ -1615,6 +1615,23 @@ body[data-screen="4"] .sound { opacity: 0; pointer-events: none; }
 
 .page-button:disabled { opacity: 0.45; cursor: default; }
 
+/* Apple and Google: the same account as in the app (session.js AH.signInWith). */
+.page-oauth { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; max-width: 360px; }
+.page-or { margin: 0 0 4px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.55; }
+.page-oauth-button {
+  padding: 14px 22px;
+  background: transparent;
+  color: var(--black);
+  border: 1px solid var(--black);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+}
+.page-oauth-button:hover { background: var(--black); color: var(--white); }
+
 .page-note {
   margin-top: 22px;
   font-size: 15px;

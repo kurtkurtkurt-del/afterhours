@@ -34,19 +34,7 @@
   };
   const statusName = (code) => (STATUS_KEY[code] ? AH.t(STATUS_KEY[code]) : code);
 
-  /* a room of the after: "club night" and "rave" are kinds, "after" is ours */
-  function sortName(sort) {
-    return sort === "after" ? AH.t("night.after.kind") : kindName(sort);
-  }
 
-  /* postComment refuses with two codes of its own; anything else is the
-     database speaking and is passed on as it is */
-  function whyNot(err) {
-    const raw = (err && err.message) || "";
-    if (raw === "backend is off") return AH.t("before.error.off");
-    if (raw === "sign in first") return AH.t("before.error.signin");
-    return raw;
-  }
 
   /* --- the seed: the same slug always builds the same night --- */
   function seeded(text) {
@@ -197,40 +185,13 @@
     [AH.bodyText(e.body), pool[0], pool[1]].filter(Boolean).forEach((p) =>
       middle.appendChild(el("p", "cs-text", p)));
 
-    /* ---- the after ---- */
-    middle.appendChild(buildAfter(m, kind, rnd, e));
-
     area.appendChild(middle);
 
     /* ---- the right column ---- */
     const right = el("aside", "cs-right");
-    right.appendChild(el("p", "cs-label", AH.t("night.who.label")));
-
-    /* Live, the column is the database: who kept this night and how you
-       know each of them. The pools only stand in with the backend off. */
-    const rosterBox = el("div", "cs-roster");
-    right.appendChild(rosterBox);
-    const drawn = buildRoster(rnd);
-    if (window.AH && AH.mode === "live" && AH.request && e.slug) {
-      rosterBox.appendChild(el("p", "cs-note", AH.t("night.who.looking")));
-      AH.request("/rpc/event_people", { method: "POST", body: JSON.stringify({ p_slug: e.slug }) })
-        .then((rows) => rosterFromRows(Array.isArray(rows) ? rows : []))
-        .catch(() => [])
-        .then((roster) => {
-          rosterBox.textContent = "";
-          if (!roster.length) {
-            rosterBox.appendChild(el("p", "cs-note",
-              AH.t("night.who.nobody")));
-            return;
-          }
-          rosterBox.appendChild(rosterList(roster));
-          rosterBox.appendChild(rosterTally(roster));
-        });
-    } else {
-      rosterBox.appendChild(rosterList(drawn));
-      rosterBox.appendChild(rosterTally(drawn));
-    }
-
+    /* The site only shows the night and sells the way to it: the ticket and
+       the app. Who is going, beforehours and where the night goes on live
+       in the app. */
     /* One word, the same as in the app; the line under it is the kind's own note */
     const [, sub] = V.TICKET[kind] || V.TICKET["Konzert"];
     const ticket = el("a", "cs-ticket", AH.t("word.ticket"));
@@ -273,24 +234,6 @@
       right.appendChild(stores);
     }
 
-    /* beforehours: what people said about this night. Live, from the
-       database, with a place to write; off, the pool for its kind. */
-    const comments = el("section", "cs-comments");
-    comments.appendChild(el("p", "cs-label", "beforehours"));
-    right.appendChild(comments);
-    if (window.AH && AH.comments && AH.mode === "live" && e.id) {
-      liveComments(comments, e);
-    } else {
-      const names = shuffle(rnd, V.FRIEND_NAMES).slice(0, 5);
-      const clockTimes = V.WHEN;
-      shuffle(rnd, V.COMMENTS[kind] || []).slice(0, 4).forEach((y, i) => {
-        comments.appendChild(buildComment(
-          names[i] || AH.t("word.someone"), clockTimes[i + 1] || AH.t("night.today"),
-          fill(y.m, e, m, day),
-          y.c ? { who: names[(i + 2) % 5], when: clockTimes[i + 2] || AH.t("night.today"),
-                  body: fill(y.c.m, e, m, day) } : null));
-      });
-    }
     area.appendChild(right);
 
     /* ---- what the night leaves you ----
@@ -316,130 +259,12 @@
     return false;
   }
 
-  function fill(text, e, m, day) {
-    return String(text)
-      .replace(/\{venue\}/g, m.venue || AH.t("night.fill.venue"))
-      .replace(/\{name\}/g, e.title || AH.t("night.fill.name"))
-      .replace(/\{day\}/g, day);
-  }
 
-  /* The conversation on this night from the database, and a box to add
-     to it when signed in. Replies are drawn under their topic. */
-  function liveComments(box, e) {
-    const draw = () => AH.comments(e).then(({ recent, older }) => {
-      [...box.querySelectorAll(".c-topic, .c-none, .c-write")].forEach((n) => n.remove());
-      box.appendChild(writeBox(e, draw));
-      const all = recent.concat(older);
-      if (!all.length) {
-        box.appendChild(el("p", "c-none", AH.t("before.none")));
-        return;
-      }
-      all.forEach((t) => box.appendChild(buildComment(t.who, t.when, t.body, t.replies && t.replies[0]
-        ? { who: t.replies[0].who, when: t.replies[0].when, body: t.replies[0].body } : null)));
-    });
-    draw();
-  }
 
-  function writeBox(e, redraw) {
-    const wrap = el("div", "c-write");
-    if (!(AH.commentsLive && AH.commentsLive())) return wrap;
-    if (!AH.canComment()) {
-      const a = el("a", "c-write-invite", AH.t("before.invite"));
-      a.href = "../../login/index.html";
-      wrap.appendChild(a);
-      return wrap;
-    }
-    const field = el("textarea", "c-write-field");
-    field.rows = 2;
-    field.maxLength = 2000;
-    field.placeholder = AH.t("before.placeholder");
-    const button = el("button", "c-write-button", AH.t("before.post"));
-    button.type = "button";
-    const status = el("p", "c-write-status");
-    button.addEventListener("click", () => {
-      const text = field.value.trim();
-      if (!text) { field.focus(); return; }
-      button.disabled = true;
-      status.textContent = AH.t("before.posting");
-      AH.postComment(e, text)
-        .then(() => { field.value = ""; status.textContent = ""; redraw(); })
-        .catch((err) => { status.textContent = AH.t("before.failed", { why: whyNot(err) }); })
-        .finally(() => { button.disabled = false; });
-    });
-    wrap.appendChild(field);
-    wrap.appendChild(button);
-    wrap.appendChild(status);
-    return wrap;
-  }
 
-  function buildComment(who, when, text, reply) {
-    const k = el("div", "c-topic");
-    const top = el("div", "c-top");
-    top.appendChild(el("span", "c-who", who));
-    top.appendChild(el("span", "c-when", when));
-    k.appendChild(top);
-    k.appendChild(el("p", "c-text", text));
-    if (reply) {
-      const c = el("div", "c-replies");
-      const box = el("div", "c-reply");
-      const u = el("div", "c-top");
-      u.appendChild(el("span", "c-who", reply.who));
-      u.appendChild(el("span", "c-when", reply.when));
-      box.appendChild(u);
-      box.appendChild(el("p", "c-text", reply.body));
-      c.appendChild(box);
-      k.appendChild(c);
-    }
-    return k;
-  }
 
-  /* --- who is going ---
-     Not everybody on this list is yours, and that is the entire reason to
-     look at it. Two of them you know. The rest arrive through somebody:
-     a friend of Emre, a friend of a friend of Kurt — people who are going
-     to the same room as you on the same night and are one introduction
-     away. "Somebody is going" is not information. "A friend of Emre is
-     going" is a plan.
 
-     There is always exactly one person two steps out, because that is the
-     one the section exists for. */
-  function buildRoster(rnd) {
-    const pool = shuffle(rnd, V.FRIEND_NAMES);
-    /* A fixed hand rather than five separate rolls: a night where nobody
-       is going, or everybody is, happens often enough with five coin
-       flips to make the column useless. */
-    const answers = shuffle(rnd, V.STATES);
-    const near = pool.slice(0, 2);
-    return [
-      { name: near[0], degree: 1, via: [] },
-      { name: near[1], degree: 1, via: [] },
-      { name: pool[2], degree: 2, via: [pick(rnd, near)] },
-      { name: pool[3], degree: 2, via: [pick(rnd, near)] },
-      { name: pool[4], degree: 3, via: [pick(rnd, near), pool[5]] },
-    ].map((p, i) => Object.assign(p, { status: answers[i] }));
-  }
 
-  /* Rows from event_people → the shape the column draws. Real people
-     carry a handle; the name shown is their display name or the handle.
-     Nobody has a ticket in the database, so everybody here "kept it". */
-  function rosterFromRows(rows) {
-    return rows.map((r) => ({
-      name: r.display_name || r.handle,
-      handle: r.handle,
-      degree: Number(r.degree) || 0,
-      via: [r.via, r.via2].filter(Boolean),
-      status: "kept it",
-    }));
-  }
-
-  /* How you reach them, spelled out. The first hop is the one worth
-     naming: it is the person you would actually ask. */
-  function relation(p) {
-    if (p.degree === 1) return AH.t("night.rel.friends");
-    if (p.degree === 2) return AH.t("night.rel.second", { name: p.via[0].toLowerCase() });
-    if (p.degree === 3) return AH.t("night.rel.third", { name: p.via[0].toLowerCase() });
-    return AH.t("night.rel.none");
-  }
 
   const face = (name) => {
     const box = el("span", "cs-face");
@@ -447,272 +272,20 @@
     return box;
   };
 
-  function rosterList(roster) {
-    const list = el("ul", "cs-who");
 
-    roster.forEach((p) => {
-      const row = el("li", "cs-who-row " +
-        (p.status === "can't" ? "out" : p.status === "kept it" ? "kept" : "in"));
 
-      const portrait = face(p.name);
-      portrait.classList.add("cs-who-face");
-      row.appendChild(portrait);
 
-      const body = el("span", "cs-who-body");
-      /* The name is the way to the person, and the link carries the path:
-         the profile draws "you → emre → mira" from ?via=, because a page
-         about somebody you do not know should open on how you know them. */
-      const name = el("a", "cs-who-name", p.name);
-      const handle = (p.handle || p.name).toLowerCase();
-      name.href = "../../profile/index.html?handle=" + encodeURIComponent(handle) +
-        (p.via.length ? "&via=" + encodeURIComponent(p.via.map((v) => v.toLowerCase()).join(",")) : "");
-      body.appendChild(name);
-
-      /* One slot, two things in it, both absolute: the handle at rest and
-         the path on hover. If the row grew a line instead, every row under
-         it would jump on the way past. */
-      const slot = el("span", "cs-who-slot");
-      slot.appendChild(el("span", "cs-who-rel", "@" + (p.handle || p.name).toLowerCase()));
-      slot.appendChild(chain(p));
-      body.appendChild(slot);
-      row.appendChild(body);
-
-      row.appendChild(el("span", "cs-who-status", statusName(p.status)));
-      list.appendChild(row);
-    });
-
-    return list;
-  }
-
-  /* The path, drawn. You are the filled square — the same mark the after
-     hangs its bracket from — and every hop after it is a face. Seeing two
-     tiles between you and somebody says the thing faster than the sentence
-     beside it does. */
-  function chain(p) {
-    const box = el("span", "cs-chain");
-    box.appendChild(el("span", "cs-chain-you"));
-    [].concat(p.via, p.name).forEach((name) => {
-      box.appendChild(el("span", "cs-chain-link"));
-      const tile = face(name);
-      tile.classList.add("cs-chain-face");
-      box.appendChild(tile);
-    });
-    box.appendChild(el("span", "cs-chain-word", relation(p)));
-    return box;
-  }
-
-  /* Two lines under the list: what they answered, then how far away they
-     are. The second one is the new sentence — the room is not only your
-     own people. */
-  function rosterTally(roster) {
-    const count = (fn) => roster.filter(fn).length;
-    const box = document.createElement("div");
-    const going = count((p) => p.status === "i'm in");
-    const maybe = count((p) => p.status === "maybe");
-    const kept = count((p) => p.status === "kept it");
-    const out = count((p) => p.status === "not tonight");
-    box.appendChild(el("p", "cs-tally", [
-      AH.t("night.tally.in", { n: going }),
-      maybe && AH.t("night.tally.maybe", { n: maybe }),
-      kept && AH.t("night.tally.kept", { n: kept }),
-      out && AH.t("night.tally.not", { n: out }),
-    ].filter(Boolean).join(" · ")));
-
-    const yours = count((p) => p.degree === 1);
-    const near = count((p) => p.degree === 2 || p.degree === 3);
-    const far = roster.length - yours - near;
-    box.appendChild(el("p", "cs-reach", [
-      AH.t("night.reach.yours", { n: yours }),
-      near && AH.t("night.reach.near", { n: near }),
-      far && AH.t("night.reach.far", { n: far }),
-    ].filter(Boolean).join(" · ")));
-    return box;
-  }
-
-  /* --- the after ---
-     The night does not end when the room empties, and this is the one
-     section on the page that is about the hours nobody sells a ticket
-     for. A bracket drops out of the closing time and every branch is a
-     room that is still open, in the order they open: the time is the
-     story, the walk is a footnote.
-
-     No photograph on purpose. The poster is already on the rail and the
-     card is at the foot of the page — between them this has to read like
-     a departure board, not a third gallery. */
-  function buildAfter(m, kind, rnd, e) {
-    const section = el("section", "cs-section cs-after");
-    section.appendChild(el("p", "cs-label",
-      AH.t("night.after.label")));
-
-    /* Doors plus the run of its kind. A night with no time on it is read
-       as a late one when it is a floor, an evening one otherwise. */
-    const doors = minutes(m.time, kind === "Rave" || kind === "Club Night" ? 23 * 60 : 20 * 60);
-    const first = firstDoor(doors + (V.RUNS[kind] || 3) * 60);
-
-    /* Three rooms, and never three of the same sort: a bracket that says
-       AFTER three times over is a list, not a choice. */
-    const rooms = [];
-    const sorts = {};
-    for (const room of shuffle(rnd, V.AFTERS || [])) {
-      if (rooms.length >= 3) break;
-      if ((sorts[room[1]] || 0) >= 2) continue;
-      sorts[room[1]] = (sorts[room[1]] || 0) + 1;
-      rooms.push(room);
-    }
-
-    const list = el("ol", "cs-rooms");
-    /* The first mark is this night going dark — the bracket has to hang
-       off something, and that something is the event you are reading. */
-    list.appendChild(roomRow({
-      time: clock(doors + (V.RUNS[kind] || 3) * 60), name: AH.t("night.after.ends"), origin: true,
-    }));
-
-    let drawn = 0;
-    rooms.forEach((room, i) => {
-      const opens = first === null ? null : first + i * 60;
-      /* Past four in the morning nothing opens any more. A night that
-         already ran that long simply has no after, and the bracket is
-         allowed to be one mark long. */
-      if (opens === null || !atNight(opens)) return;
-      list.appendChild(roomRow({
-        time: clock(opens),
-        name: room[0],
-        sort: room[1],
-        until: clock(closing(opens, rnd)),
-        walk: AH.t("night.after.walk", { n: 6 + Math.floor(rnd() * 20) }),
-      }));
-      drawn++;
-    });
-    section.appendChild(list);
-
-    const note = el("p", "cs-note", drawn
-      ? AH.t("night.after.note")
-      : AH.t("night.after.none"));
-    section.appendChild(note);
-
-    /* Live, the rooms are our own nights: same city, starting from an hour
-       before this one empties until five in the morning, soonest first.
-       The invented rooms above only stand in while the backend is off;
-       live and nothing later, the bracket is honestly one mark long. */
-    if (window.AH && AH.mode === "live" && AH.request && e && e.city && e.startsAt) {
-      list.querySelectorAll(".cs-room:not(.origin)").forEach((r) => r.remove());
-      note.textContent = AH.t("night.after.none");
-      realAfters(e, kind, doors).then((found) => {
-        found.forEach((r) => list.appendChild(r));
-        note.textContent = found.length ? AH.t("night.after.note") : AH.t("night.after.none");
-      }).catch(() => {});
-    }
-    return section;
-  }
 
   /* Only floors make an after: a concert or a meetup starting late is not
      somewhere you go on to. */
   const AFTER_KINDS = ["Rave", "Club Night", "Hausparty"];
 
-  function realAfters(e, kind, doors) {
-    const start = new Date(e.startsAt);
-    if (isNaN(start)) return Promise.resolve([]);
-    const ends = new Date(start.getTime() + (V.RUNS[kind] || 3) * 3600e3);
-    const from = new Date(ends.getTime() - 3600e3);
-    /* five in the morning after it ends, on the clock of its own doors */
-    const endMins = doors + (V.RUNS[kind] || 3) * 60;
-    const five = endMins < 5 * 60 ? 5 * 60 : (Math.floor((endMins - 5 * 60) / 1440) + 1) * 1440 + 5 * 60;
-    const until = new Date(start.getTime() + (five - doors) * 60000);
-    if (until <= from) return Promise.resolve([]);
-    const q = "/events_public?select=slug,title,type_name,venue_name,starts_at" +
-      "&type_name=in.(" + AFTER_KINDS.map((k) => '"' + k + '"').join(",") + ")" +
-      "&city_slug=eq." + encodeURIComponent(e.city) +
-      "&starts_at=gte." + encodeURIComponent(from.toISOString()) +
-      "&starts_at=lt." + encodeURIComponent(until.toISOString()) +
-      "&slug=neq." + encodeURIComponent(e.slug) +
-      "&order=starts_at.asc&limit=12";
-    return AH.request(q).then((rows) => {
-      const out = [];
-      const venues = {};
-      (rows || []).forEach((r) => {
-        /* one per room, three at most: the first night a venue opens */
-        const room = (r.venue_name || r.title || "").trim();
-        if (!room || venues[room.toLowerCase()] || out.length >= 3) return;
-        /* on the same clock as this night's own doors, wherever the
-           browser is: minutes after this one's start, added to its doors */
-        const mins = doors + Math.round((new Date(r.starts_at) - start) / 60000);
-        if (!atNight(mins)) return;
-        venues[room.toLowerCase()] = true;
-        const row = roomRow({
-          time: clock(mins),
-          name: room,
-          sort: r.type_name,
-          until: clock(mins + (V.RUNS[r.type_name] || 3) * 60),
-          walk: null,
-        });
-        const link = document.createElement("a");
-        link.className = "cs-room-link";
-        link.href = "../event/index.html?slug=" + encodeURIComponent(r.slug);
-        link.appendChild(row.querySelector(".cs-room-body"));
-        row.insertBefore(link, row.querySelector(".cs-room-walk"));
-        out.push(row);
-      });
-      return out;
-    });
-  }
 
-  /* Whether a whole hour falls in the hours a room can be entered:
-     nine in the evening until four in the morning. */
-  function atNight(mins) {
-    const h = Math.floor((((mins % 1440) + 1440) % 1440) / 60);
-    return h >= 21 || h < 4;
-  }
 
-  /* When the first room can take you, counted from the moment this one
-     empties. Inside the night: straight away. Late afternoon or evening:
-     it waits for nine. Morning — the night has already been had, and the
-     answer is that there is no after. */
-  function firstDoor(ends) {
-    if (atNight(ends)) return Math.floor(ends / 60) * 60;
-    const h = Math.floor((((ends % 1440) + 1440) % 1440) / 60);
-    if (h < 12) return null;
-    return ends - (ends % 1440) + 21 * 60;
-  }
 
-  /* When the room shuts: a real closing on the clock, four to eight hours
-     out. A room that opens at nine and shuts at nine is not a room. */
-  function closing(opens, rnd) {
-    const open = Math.floor((((opens % 1440) + 1440) % 1440) / 60);
-    const spans = [];
-    for (let h = 4; h <= 9; h++) {
-      const span = (h - open + 24) % 24;
-      if (span >= 4 && span <= 8) spans.push(span);
-    }
-    return opens + (spans.length ? pick(rnd, spans) : 5) * 60;
-  }
 
-  /* One row of the bracket. The empty span in the middle is not empty:
-     the rule and its tick are drawn on it, and a row that is the last one
-     stops the rule at its own mark. */
-  function roomRow(r) {
-    const row = el("li", "cs-room" + (r.origin ? " origin" : ""));
-    row.appendChild(el("span", "cs-room-time", r.time));
-    row.appendChild(el("span", "cs-room-rule"));
-    const body = el("span", "cs-room-body");
-    body.appendChild(el("span", "cs-room-name", r.name));
-    if (r.sort) body.appendChild(el("span", "cs-room-kind", AH.t("night.after.until", { kind: sortName(r.sort), time: r.until })));
-    row.appendChild(body);
-    if (r.walk) row.appendChild(el("span", "cs-room-walk", r.walk));
-    return row;
-  }
 
-  /* "20:00" → minutes since midnight, and back again past midnight:
-     a night that runs to 04:00 must not print 28:00. */
-  function minutes(time, fallback) {
-    const m = /^(\d{1,2}):(\d{2})/.exec(time || "");
-    return m ? +m[1] * 60 + +m[2] : fallback;
-  }
 
-  function clock(mins) {
-    const m = ((mins % 1440) + 1440) % 1440;
-    return String(Math.floor(m / 60)).padStart(2, "0") + ":" +
-           String(m % 60).padStart(2, "0");
-  }
 
   /* The preview chip on the poster: the act's most famous song, served
      from the Apple Music preview Apple hands out for exactly this

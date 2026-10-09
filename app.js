@@ -130,7 +130,7 @@ function loadKnob() {
   if (knobLoaded || !document.getElementById("knob")) return;
   knobLoaded = true;
   // A classic script, not a module: modules are blocked on file:// pages
-  for (const src of ["knob.js?v=196", "radio.js?v=196"]) {
+  for (const src of ["knob.js?v=197", "radio.js?v=197"]) {
     const s = document.createElement("script");
     s.src = src;
     s.async = false;            // radio.js runs after knob.js

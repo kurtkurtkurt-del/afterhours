@@ -204,6 +204,21 @@
 
   AH.signedIn = () => Boolean(AH.token);
 
+  /* Apple or Google, the same account as in the app: Supabase sends the
+     person to the provider and back to this page with the token in the
+     hash, which tokenFromUrl below picks up. The provider has to be set up
+     for the web in Supabase (backend/README.md, "one account, app and site"). */
+  AH.signInWith = function (provider) {
+    if (!enabled) return;
+    const back = location.origin + location.pathname.replace(/register\/(index\.html)?$/, "login/");
+    location.href = CONFIG.url.replace(/\/$/, "") + "/auth/v1/authorize?provider=" +
+      encodeURIComponent(provider) + "&redirect_to=" + encodeURIComponent(back);
+  };
+  document.addEventListener("click", (ev) => {
+    const b = ev.target && ev.target.closest && ev.target.closest("[data-provider]");
+    if (b) AH.signInWith(b.getAttribute("data-provider"));
+  });
+
   /* Drop the local session without asking the server. If the token is no
      longer valid (it belongs to another project, or it expired) there is
      nothing to ask. */

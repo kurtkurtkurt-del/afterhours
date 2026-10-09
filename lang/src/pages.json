@@ -30,6 +30,10 @@
   "cards.desc": { "en": "The nights you actually went to, as afterhours cards: the sounds, the conversations, what was said at four in the morning.", "de": "Die Nächte, in denen du wirklich warst, als afterhours-Karten: die Klänge, die Gespräche, was um vier Uhr morgens gesagt wurde.", "tr": "Gerçekten gittiğin geceler, afterhours kartları olarak: sesler, sohbetler, sabahın dördünde söylenenler." },
   "cards.h1": { "en": "collection.", "de": "sammlung.", "tr": "koleksiyon." },
   "cards.empty": { "en": "nothing here yet.", "de": "noch nichts hier.", "tr": "henüz burada bir şey yok." },
+  "cards.loading": { "en": "your cards…", "de": "deine karten…", "tr": "kartların…" },
+  "cards.count": { "en": "{n} nights you were at, the same as in the app.", "de": "{n} nächte, in denen du warst, wie in der app.", "tr": "gittiğin {n} gece, uygulamadakiyle aynı." },
+  "cards.mine.empty": { "en": "no cards yet. check in at a night in the app and its card lands here too.", "de": "noch keine karten. check in der app in einer nacht ein, dann landet die karte auch hier.", "tr": "henüz kart yok. uygulamada bir geceye check-in yap, kartı buraya da gelir." },
+  "cards.failed": { "en": "the cards did not load. try again in a moment.", "de": "die karten kamen nicht. gleich nochmal versuchen.", "tr": "kartlar yüklenemedi. birazdan tekrar dene." },
   "cards.flip": { "en": "flip {name}", "de": "{name} umdrehen", "tr": "{name} kartını çevir" },
 
   "help.title": { "en": "help | afterhours", "de": "hilfe | afterhours", "tr": "yardım | afterhours" },
