@@ -33,7 +33,9 @@ alter table public.push_outbox add constraint push_outbox_kind_check check (kind
   'night_soon', 'room_open', 'room_closing', 'room_message', 'reply',
   'digest', 'dj_live', 'wave', 'spark', 'spark_in',
   'group_added', 'group_joined', 'group_match', 'group_round', 'group_won', 'group_plan',
-  'group_message', 'group_live', 'group_ticket', 'post'));
+  'group_message', 'group_live', 'group_ticket', 'post',
+  -- 54_upkeep.sql: the staff, when something waits in the panel
+  'staff'));
 
 create or replace function public.push_wants(p_user uuid, p_kind text)
 returns boolean
@@ -181,7 +183,10 @@ begin
     ('group_ticket',    'tr', '{group} · yarın',               '{title} için geliyorsun ama henüz biletin yok'),
     ('post',            'en', '{name} posted',                 '{text}'),
     ('post',            'de', '{name} hat gepostet',           '{text}'),
-    ('post',            'tr', '{name} paylaştı',               '{text}')
+    ('post',            'tr', '{name} paylaştı',               '{text}'),
+    ('staff',           'en', 'the panel',                     '{n} waiting: reports, nights sent in, dj pages'),
+    ('staff',           'de', 'das panel',                     '{n} warten: meldungen, eingesandte nächte, dj-seiten'),
+    ('staff',           'tr', 'panel',                         '{n} iş bekliyor: şikayetler, gönderilen geceler, dj sayfaları')
   ) as x(kind, lang, title, body)
   where x.kind = p_kind and x.lang = coalesce(nullif(p_lang, ''), 'en');
 

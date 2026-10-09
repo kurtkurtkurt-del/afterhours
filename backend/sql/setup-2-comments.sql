@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 2 / 2 : SAMPLE COMMENTS
---  VERSION: 2026-10-07 19:04
+--  VERSION: 2026-10-08 10:04
 --
 --  Run setup-1-structure.sql first.
 --  The sample conversations in the beforehours panel: 180 topics, 131

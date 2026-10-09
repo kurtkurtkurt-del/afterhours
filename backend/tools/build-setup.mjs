@@ -57,6 +57,11 @@ const structure = [
   ["47_group_nights.sql", "THE NIGHT AND AFTER — GROUP NIGHTS, THE ALBUM, NUMBERS, ALSO THERE"],
   ["48_group_push.sql", "GROUPS AND POSTS SAY SO — PUSH NOTIFICATIONS"],
   ["49_design_reads.sql", "WHAT THE NEW DESIGNS READ — JOIN FACES, THE PHOTO WALL, PEOPLE BY ROLE"],
+  ["50_blocks.sql", "BLOCKING SOMEONE — NO CARD, NO REQUEST, NO WAVE"],
+  ["51_safety.sql", "WHAT THE STORES REQUIRE — THE TERMS, REPORTS, CLIENT ERRORS"],
+  ["52_bans.sql", "CLOSING AN ACCOUNT — THE STAFF BAN, THE DATABASE REFUSES"],
+  ["53_trust.sql", "TRUST — DJ PAGES CHECKED, ADMINS, NOTICES, LIMITS, BLOCKS IN GROUPS"],
+  ["54_upkeep.sql", "UPKEEP — OLD GUESTS GO, THE STAFF ARE ALERTED"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

@@ -133,5 +133,10 @@ console.log("\n— the migration log —");
   check(standalone, "01 and 02 still run without 00_migrations.sql");
 }
 
+{
+  const appCopy = [...(await readFile(new URL("../../app/src/data/expectedSql.ts", import.meta.url), "utf8")).matchAll(/'(\d\d_[a-z_]+\.sql)'/g)].map((m) => m[1]);
+  check(appCopy.join() === EXPECTED_SQL.join(), "the app's copy of the file list matches", appCopy.length + " vs " + EXPECTED_SQL.length);
+}
+
 console.log(`\n${passed} passed, ${failed} failed`);
 process.exit(failed ? 1 : 0);

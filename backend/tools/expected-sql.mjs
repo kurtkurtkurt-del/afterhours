@@ -57,4 +57,9 @@ export const EXPECTED_SQL = [
   "47_group_nights.sql",
   "48_group_push.sql",
   "49_design_reads.sql",
+  "50_blocks.sql",
+  "51_safety.sql",
+  "52_bans.sql",
+  "53_trust.sql",
+  "54_upkeep.sql",
 ];

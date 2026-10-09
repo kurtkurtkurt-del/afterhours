@@ -49,6 +49,8 @@ begin
 end;
 $$;
 
+-- 52 adds a column; a second run of the setup meets that shape first.
+drop function if exists public.admin_people_by(text, text);
 create or replace function public.admin_people_by(p_query text, p_role text)
 returns table (id uuid, handle text, display_name text, role text, created_at timestamptz, nights int, groups int)
 language plpgsql

@@ -57,6 +57,12 @@ sql/46_group_plans.sql   a group decides: round_start/vote/close, plan_set, plan
 sql/47_group_nights.sql  after the night: group_nights (two or more members checked in), the album (group_photo_add/remove, group_album), group_stats (numbers and the vibe), group_set_visible, group_also_there
 sql/48_group_push.sql    push for groups and posts: switches notify_groups and notify_posts, ten kinds, triggers on members, swipes, the thread, live and posts, group_push_hourly (tickets, cron :15)
 sql/49_design_reads.sql  reads for the chosen designs: group_peek with faces and plan, group_wall, admin_people_by, admin_role_counts
+sql/50_blocks.sql        blocking: blocks, block_user / unblock_user / my_blocks; across a block no card, no search, no request, no spark wave; the friendship goes
+sql/51_safety.sql        what the stores require: accept_terms / terms_status (18+, versioned); reports on comments, room and group messages, profiles, groups, sparks (report, staff_reports, staff_report_settle); client_errors (log_error, admin_errors)
+sql/52_bans.sql          closing an account: staff_ban / staff_unban (not staff), account_status; a trigger on every written table refuses a banned author; the card disappears, comments and posts hidden, upcoming sparks called off
+sql/53_trust.sql         trust: djs.verified (staff_djs_waiting, staff_dj_verify; renaming or leaving dj takes it down), admin_set_admin (never the last), notices (my_notices, notices_seen; triggers on hide, removal, cleared profile, role), guard_rate limits, no group across a block
+sql/54_upkeep.sql        upkeep: guests_prune (guests unseen 30 days, nightly cron), staff push (kind staff in 48) when a report, reported post, night sent in or dj page starts waiting, one an hour; staff_waiting()
+sql/fix-clipboard-text.sql  ONE-SHOT, plain ASCII: repairs text that pbcopy turned into Mac Roman garbage on its way to the SQL editor
 sql/about-munich.sql     ONE-SHOT: the texts for 18 Munich nights in en · de · tr, from Wikipedia summaries, by slug
 sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities
 

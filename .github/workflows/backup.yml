@@ -1,0 +1,34 @@
+# afterhours — a copy of the content every night, kept 90 days.
+#
+# tools/backup.mjs reads with the public key in config.js, as the site does:
+# the nights, venues, djs and comments everyone can see. Each run is stored
+# as a workflow artifact (Actions → backup → the run → Artifacts) and turned
+# back into SQL with `node tools/restore.mjs <file>`. Supabase keeps its own
+# daily backup on paid plans; this one is ours and does not depend on the plan.
+
+name: backup
+
+on:
+  schedule:
+    - cron: "10 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Back up the content
+        working-directory: backend
+        run: node tools/backup.mjs
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: afterhours-${{ github.run_id }}
+          path: backend/backup/afterhours-*.json
+          retention-days: 90
