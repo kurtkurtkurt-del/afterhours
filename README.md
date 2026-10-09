@@ -742,6 +742,28 @@ Decided on 25.09.2026, and the app's wording wins where the two disagree:
 - the palettes stay different (see *The spirit*); the type is Inter Tight
   on both, so the card renders identically
 
+### The PWA: the app in a browser (09.10.2026)
+
+The same `app/` builds for the web, for trying it on an iPhone without the
+App Store: <https://kurtkurtkurt-del.github.io/afterhours-pwa/> (Safari →
+Share → Add to Home Screen; it then opens full screen, with its own sign-in,
+separate from Safari's).
+
+- the phone app is untouched: every web difference is in `app/src/web/`
+  (stand-ins that `app/metro.config.js` swaps in for the web build only),
+  `Platform.OS === 'web'` branches (Supabase session in localStorage and
+  read back from the URL, Google sign-in as a full-page redirect, accent
+  reload) or `app/public/` (the page, manifest and icons)
+- `react-native-webview` becomes an iframe with the same bridge, so the map
+  and the film work; `Alert.alert` becomes `confirm` / `alert`
+- not in the browser: push, vibration, Sign in with Apple (until Supabase has
+  the web Apple setup), background sound before the first tap; iOS may clear
+  the stored data of a PWA left unopened for weeks
+- publish: `cd app && tools/publish-pwa.sh` (export with the base URL,
+  `404.html` for deep links, force-push to `afterhours-pwa` on `main`).
+  Supabase → Authentication → URL Configuration → Redirect URLs needs
+  `https://kurtkurtkurt-del.github.io/afterhours-pwa/**`
+
 ---
 
 ## 7. The afterhours card

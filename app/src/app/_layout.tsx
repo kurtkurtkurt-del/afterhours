@@ -27,6 +27,10 @@ import '@/data/jobs';
 import { startWarm } from '@/data/warm';
 import PillAction from '@/components/PillAction';
 
+// The browser build swaps Alert.alert for window.confirm and friends (web/alert.ts).
+// eslint-disable-next-line @typescript-eslint/no-require-imports -- web only
+if (Platform.OS === 'web') require('@/web/alert');
+
 // Watch connectivity and flush queued writes as soon as the app starts.
 startOffline();
 startWarm();

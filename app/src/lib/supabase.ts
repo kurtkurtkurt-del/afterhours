@@ -1,5 +1,5 @@
 import 'expo-sqlite/localStorage/install';
-import { AppState } from 'react-native';
+import { AppState, Platform } from 'react-native';
 import { createClient } from '@supabase/supabase-js';
 import { LargeSecureStore } from '@/lib/secureStorage';
 
@@ -10,10 +10,11 @@ const key = process.env.EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY!;
 
 export const supabase = createClient(url, key, {
   auth: {
-    storage: new LargeSecureStore(),
+    // On the web supabase-js keeps the session in localStorage by itself.
+    storage: Platform.OS === 'web' ? undefined : new LargeSecureStore(),
     autoRefreshToken: true,
     persistSession: true,
-    detectSessionInUrl: false,
+    detectSessionInUrl: Platform.OS === 'web',
   },
 });
 

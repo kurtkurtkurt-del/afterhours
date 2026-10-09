@@ -59,7 +59,13 @@
       "googleServicesFile": "./google-services.json"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "output": "single",
+      "name": "afterhours",
+      "shortName": "afterhours",
+      "description": "find your night. one card at a time.",
+      "themeColor": "#0E0D0C",
+      "backgroundColor": "#0E0D0C"
     },
     "plugins": [
       "expo-router",
