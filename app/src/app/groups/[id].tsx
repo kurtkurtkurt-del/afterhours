@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -208,8 +208,8 @@ function MatchBurst({ text, onEnd }: { text: string; onEnd: () => void }) {
     return () => clearTimeout(id);
   }, [onEnd]);
   return (
-    <Animated.View entering={FadeIn.duration(160)} exiting={FadeOut.duration(300)} style={styles.burst} pointerEvents="none">
-      <Animated.View entering={ZoomIn.springify().damping(11)} style={styles.burstStamp}>
+    <Animated.View entering={Platform.OS === 'web' ? undefined : FadeIn.duration(160)} exiting={Platform.OS === 'web' ? undefined : FadeOut.duration(300)} style={styles.burst} pointerEvents="none">
+      <Animated.View entering={Platform.OS === 'web' ? undefined : ZoomIn.springify().damping(11)} style={styles.burstStamp}>
         <Text style={styles.burstText}>{text}</Text>
       </Animated.View>
     </Animated.View>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import Animated, { Easing, FadeIn, FadeOut, SlideInDown, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withTiming } from 'react-native-reanimated';
 import Storage from 'expo-sqlite/kv-store';
 import { Image } from 'expo-image';
@@ -43,6 +43,10 @@ function BigTitle({ text }: { text: string }) {
   );
 }
 
+// On the web reanimated's entering/exiting run as CSS animations that sometimes stop
+// half way (the demo stayed half drawn); there the demo simply appears.
+const web = Platform.OS === 'web';
+
 // bottom is kept for the callers; the full-screen demo (1D) does not need it.
 export default function Tips({ page, tips }: { page: Page; tips: Tip[]; bottom?: number }) {
   const { t, up } = useLang();
@@ -63,8 +67,8 @@ export default function Tips({ page, tips }: { page: Page; tips: Tip[]; bottom?:
     setStep(tips.length);
   };
   return (
-    <Animated.View entering={FadeIn.duration(260)} exiting={FadeOut.duration(220)} style={styles.screen}>
-      <Animated.View key={step} entering={SlideInDown.duration(380).easing(Easing.out(Easing.cubic))} style={styles.middle}>
+    <Animated.View entering={web ? undefined : FadeIn.duration(260)} exiting={web ? undefined : FadeOut.duration(220)} style={styles.screen}>
+      <Animated.View key={step} entering={web ? undefined : SlideInDown.duration(380).easing(Easing.out(Easing.cubic))} style={styles.middle}>
         <Motion kind={tip.motion ?? 'tap'} />
         <BigTitle text={t(tip.title)} />
         <Text style={styles.body}>{t(tip.body)}</Text>
