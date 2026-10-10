@@ -441,6 +441,8 @@ export const tabs = {
   'deck.wave3.deck': { en: '3rd wave · one step further', de: '3. welle · noch einen schritt weiter', tr: '3. dalga · bir adım daha öte' },
   'deck.sample': { en: 'sample', de: 'beispiel', tr: 'örnek' },
   'deck.you': { en: 'you', de: 'du', tr: 'sen' },
+  'deck.wave2.who': { en: 'friends of friends', de: 'freunde von freunden', tr: 'arkadaşlarının arkadaşları' },
+  'deck.wave3.who': { en: 'one step further', de: 'einen schritt weiter', tr: 'bir adım daha öte' },
   'deck.via': { en: 'via {path}', de: 'über {path}', tr: '{path} üzerinden' },
   'deck.keptBy': { en: '{name} kept it', de: '{name} hat sie behalten', tr: 'saklayan: {name}' },
   'deck.waveEmpty': {

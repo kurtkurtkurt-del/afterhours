@@ -142,7 +142,7 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
                   <Text style={[styles.sqText, f.live && styles.sqTextLive]}>{f.name.charAt(0)}</Text>
                 </View>
               ))}
-              <Text style={styles.keptNote}>{more > 0 ? t('deck.moreKeptIt', { n: more }) : t('deck.keptIt')}</Text>
+              <Text style={[styles.keptNote, styles.friendsNote]}>{more > 0 ? t('deck.moreKeptIt', { n: more }) : t('deck.keptIt')}</Text>
             </View>
           ) : null}
         </Pressable>
@@ -223,33 +223,27 @@ function FitPoster({ card, top, bottom, ready, tag }: { card: DeckCard; top: num
   );
 }
 
-// Where it came from: you — your friend — their friend (— theirs). Squares joined by
-// lines; the keeper's square is red. The chain's names underneath.
+// Where it came from (11.10.2026, design E in prototypes/via-chain.html): the wave as
+// a sign — three rings, you in the middle, the card's wave in red — then "friends of
+// friends" or "one step further", and one line: who kept it, via whom. The squares and
+// the mono sentence it used to draw said the same thing twice and read badly.
 function Chain({ via }: { via: { wave: 2 | 3; path: string[] } }) {
-  const { t, up } = useLang();
+  const { t } = useLang();
   const keeper = via.path[via.path.length - 1];
+  const through = via.path.slice(0, -1);
   return (
     <View style={styles.chain}>
-      <View style={styles.chainRow}>
-        <View style={[styles.sq, styles.sqYou]}>
-          <Text style={styles.sqYouText}>{up(t('deck.you'))}</Text>
-        </View>
-        {via.path.map((name, i) => {
-          const last = i === via.path.length - 1;
-          return (
-            <View key={`${name}-${i}`} style={styles.chainStep}>
-              <View style={styles.link} />
-              <View style={[styles.sq, last && styles.sqLive]}>
-                <Text style={[styles.sqText, last && styles.sqTextLive]}>{name.charAt(0)}</Text>
-              </View>
-            </View>
-          );
-        })}
-        <Text style={styles.wave}>{up(t(via.wave === 2 ? 'deck.wave2' : 'deck.wave3'))}</Text>
+      <View style={styles.rings}>
+        <View style={[styles.ring, styles.ringOuter, via.wave === 3 && styles.ringOn]} />
+        <View style={[styles.ring, styles.ringMid, via.wave === 2 && styles.ringOn]} />
+        <View style={styles.ringCore} />
       </View>
-      <Text style={styles.keptNote} numberOfLines={2}>
-        {t('deck.via', { path: via.path.slice(0, -1).join(' → ') })} · {t('deck.keptBy', { name: keeper })}
-      </Text>
+      <View style={styles.chainText}>
+        <Text style={styles.chainWave} numberOfLines={1}>{t(via.wave === 2 ? 'deck.wave2.who' : 'deck.wave3.who')}</Text>
+        <Text style={styles.keptNote} numberOfLines={1}>
+          {t('deck.keptBy', { name: keeper })}{through.length ? ` · ${t('deck.via', { path: through.join(', ') })}` : ''}
+        </Text>
+      </View>
     </View>
   );
 }
@@ -280,19 +274,22 @@ const styles = StyleSheet.create({
   tagTime: { fontFamily: fonts.medium, fontSize: 12.5, color: colors.paper },
   tagKind: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1.2, color: colors.mute },
   friends: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 8 },
+  friendsNote: { marginLeft: 6 },
   sq: { width: 24, height: 24, borderRadius: radius.xs, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   sqLive: { backgroundColor: colors.spot, borderColor: colors.spot },
   sqText: { fontFamily: fonts.medium, fontSize: 12, color: colors.paper },
   sqTextLive: { color: colors.ink },
   note: { fontFamily: fonts.regular, fontSize: 12.5, lineHeight: 17, color: colors.mute, marginTop: 8 },
-  keptNote: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute, marginLeft: 6 },
-  chain: { marginTop: 12, gap: 6 },
-  chainRow: { flexDirection: 'row', alignItems: 'center' },
-  chainStep: { flexDirection: 'row', alignItems: 'center' },
-  link: { width: 10, height: 1, backgroundColor: colors.mute },
-  sqYou: { width: undefined, paddingHorizontal: 5, borderColor: colors.mute },
-  sqYouText: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 0.8, color: colors.mute },
-  wave: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.spotText, marginLeft: 10 },
+  keptNote: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
+  chain: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 10 },
+  rings: { width: 34, height: 34, alignItems: 'center', justifyContent: 'center' },
+  ring: { position: 'absolute', borderRadius: 17, borderWidth: 1.5, borderColor: colors.ink3 },
+  ringOuter: { width: 34, height: 34 },
+  ringMid: { width: 22, height: 22 },
+  ringOn: { borderColor: colors.spot, borderWidth: 2 },
+  ringCore: { width: 8, height: 8, borderRadius: 4, backgroundColor: colors.paper },
+  chainText: { flex: 1, gap: 1 },
+  chainWave: { fontFamily: fonts.medium, fontSize: 12.5, color: colors.paper },
   strip: { width: 56, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center' },
   stripDone: { backgroundColor: colors.ink, borderLeftWidth: 1, borderLeftColor: colors.ink3 },
   stripText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.ink, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },
