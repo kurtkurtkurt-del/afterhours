@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { Linking, Pressable, StyleSheet, Text, View, type ImageSourcePropType, Image as RNImage } from 'react-native';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
@@ -6,6 +6,7 @@ import { SvgUri } from 'react-native-svg';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { posterUrl, type Night } from '@/data/deck';
+import { dayName } from '@/data/when';
 
 const fallback = require('../../assets/intro/concert.jpg');
 
@@ -49,12 +50,30 @@ export function toDeckCard(n: Night, friends: DeckFriend[] = []): DeckCard {
 }
 
 const two = (n: number) => String(n).padStart(2, '0');
-const stamp = (iso: string | null) => {
+// The date tag on the poster (11.10.2026, design E): "fri 17.10" in Archivo and "23:00"
+// beside it; a night without a date says "date tba".
+const stamp = (iso: string | null): { day: string; time: string } | null => {
   if (!iso) return null;
   const d = new Date(iso);
   if (isNaN(d.getTime())) return null;
-  return `${two(d.getDate())}.${two(d.getMonth() + 1)}.${String(d.getFullYear()).slice(2)} · ${two(d.getHours())}:${two(d.getMinutes())}`;
+  return { day: `${dayName(d)} ${two(d.getDate())}.${two(d.getMonth() + 1)}`, time: `${two(d.getHours())}:${two(d.getMinutes())}` };
 };
+
+// Date, time and kind in one ink tag at the poster's top left corner, so the caption
+// holds only the title, the venue and the people.
+function DateTag({ card, kind }: { card: DeckCard; kind: string }) {
+  const { t, up } = useLang();
+  const when = stamp(card.startsAt);
+  return (
+    <View style={styles.tag} pointerEvents="none">
+      <View style={styles.tagRow}>
+        <Text style={styles.tagDay}>{when ? when.day : t('deck.dateTba').toLowerCase()}</Text>
+        {when ? <Text style={styles.tagTime}>{when.time}</Text> : null}
+      </View>
+      {kind ? <Text style={styles.tagKind}>{up(kind)}</Text> : null}
+    </View>
+  );
+}
 
 export const openDetails = (card: DeckCard) => card.slug && router.push(`/night/${card.slug}`);
 // Ticket: the source's page; nights without a ticket (szene) open their own page.
@@ -72,8 +91,11 @@ type Props = {
   onDetails?: () => void; // instead of the night page (sparks have their own)
 };
 
-// Card face: full-bleed photo or poster, caption at the bottom (ink block, red Archivo
-// title, mono details, friend squares), "details ↓" on the left, the red main action on the right.
+// Card face: full-bleed photo or poster with the date tag on it, caption at the bottom
+// (ink block: red Archivo title, the venue, friend squares), "details ↓" on the left, the
+// red main action on the right. Since 11.10.2026 the caption no longer lists kind,
+// source and date in mono: the date and kind are on the poster, and "ticket" is said
+// once, by the hint that appears when the card is pulled up.
 export default function CardFace({ card, bottom, rightLabel, rightDone, onRight, fit, onDetails }: Props) {
   const [captionH, setCaptionH] = useState(0);
   const shown = card.friends.slice(0, 2);
@@ -84,12 +106,10 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
   // Use the translation when there is one, otherwise the data; uppercase accordingly.
   const kindWord = tx('type.' + card.kind.replace(/\s+/g, '-'), '');
   const kind = kindWord ? up(kindWord) : upperData(card.kind);
-  const sourceWord = card.source ? tx('word.' + card.source, '') : '';
-  const source = sourceWord ? up(sourceWord) : upperData(card.source);
   return (
     <>
       {fit ? (
-        <FitPoster card={card} top={fit.top} bottom={bottom + captionH + 12} ready={captionH > 0} />
+        <FitPoster card={card} top={fit.top} bottom={bottom + captionH + 12} ready={captionH > 0} tag={<DateTag card={card} kind={kind} />} />
       ) : card.image || card.local ? (
         <Image source={card.image ? { uri: card.image } : card.local!} style={styles.photo} contentFit="cover" />
       ) : card.poster ? (
@@ -99,6 +119,11 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
       ) : (
         <Image source={fallback} style={styles.photo} contentFit="cover" />
       )}
+      {fit ? null : (
+        <View style={styles.tagFull}>
+          <DateTag card={card} kind={kind} />
+        </View>
+      )}
       <View style={[styles.caption, { bottom }]} onLayout={fit ? (e) => setCaptionH(e.nativeEvent.layout.height) : undefined}>
         <Pressable style={styles.stripLeft} onPress={details} accessibilityRole="button" accessibilityLabel={t('word.details')}>
           <Text style={styles.stripLeftText}>{up(t('word.details'))} ↓</Text>
@@ -107,9 +132,7 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
           <Text style={styles.title} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.7}>
             {card.title.toLowerCase()}
           </Text>
-          <Text style={styles.jet}>{source ? `${kind} · ${source}` : kind}</Text>
-          {card.venue ? <Text style={styles.jet} numberOfLines={1}>{upperData(card.venue)}</Text> : null}
-          <Text style={styles.jet}>{stamp(card.startsAt) ?? up(t('deck.dateTba'))}</Text>
+          {card.venue ? <Text style={styles.venue} numberOfLines={1}>{card.venue.toLowerCase()}</Text> : null}
           {card.via ? <Chain via={card.via} /> : null}
           {card.note ? <Text style={styles.note} numberOfLines={2}>{card.note}</Text> : null}
           {card.friends.length > 0 ? (
@@ -165,7 +188,7 @@ const sizeOf = (source: ImageSourcePropType) => {
 };
 
 // Flow card: blurred backdrop + uncropped poster, fitted and centred between the chip and the caption.
-function FitPoster({ card, top, bottom, ready }: { card: DeckCard; top: number; bottom: number; ready: boolean }) {
+function FitPoster({ card, top, bottom, ready, tag }: { card: DeckCard; top: number; bottom: number; ready: boolean; tag: ReactNode }) {
   const [area, setArea] = useState<{ w: number; h: number } | null>(null);
   const svg = !card.image && !!card.poster;
   const ratio = useRatio(card.image, svg ? 2 / 3 : sizeOf(card.local ?? fallback));
@@ -192,6 +215,7 @@ function FitPoster({ card, top, bottom, ready }: { card: DeckCard; top: number; 
         {area && ready ? (
           <View style={[styles.fitPoster, { width: w, height: h }]}>
             {svg ? <SvgUri uri={card.poster!} width="100%" height="100%" /> : <Image source={source} style={styles.fill} contentFit="cover" />}
+            {tag}
           </View>
         ) : null}
       </View>
@@ -245,9 +269,16 @@ const styles = StyleSheet.create({
   posterBox: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.ink2 },
   caption: { position: 'absolute', left: 8, right: 8, flexDirection: 'row', alignItems: 'stretch', borderRadius: radius.lg, overflow: 'hidden' },
   block: { flex: 1, backgroundColor: colors.ink, paddingHorizontal: 14, paddingTop: 12, paddingBottom: 11, gap: 2 },
-  // kept small so the photo above stays the main thing
-  title: { fontFamily: fonts.logo, fontSize: 32, lineHeight: 30, letterSpacing: -0.7, color: colors.spotText, marginBottom: 7 },
-  jet: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1.2, color: colors.paper },
+  // the title grew a size when the mono lines left the block (11.10.2026)
+  title: { fontFamily: fonts.logo, fontSize: 36, lineHeight: 34, letterSpacing: -0.8, color: colors.spotText, marginBottom: 5 },
+  venue: { fontFamily: fonts.medium, fontSize: 14, letterSpacing: -0.2, color: colors.paper },
+  // the date tag on the poster
+  tag: { position: 'absolute', top: 10, left: 10, backgroundColor: colors.ink, borderRadius: radius.sm, paddingVertical: 6, paddingHorizontal: 9, gap: 1 },
+  tagFull: { position: 'absolute', top: 64, left: 2 },
+  tagRow: { flexDirection: 'row', alignItems: 'baseline', gap: 7 },
+  tagDay: { fontFamily: fonts.logo, fontSize: 17, lineHeight: 18, letterSpacing: -0.3, color: colors.paper },
+  tagTime: { fontFamily: fonts.medium, fontSize: 12.5, color: colors.paper },
+  tagKind: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1.2, color: colors.mute },
   friends: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 8 },
   sq: { width: 24, height: 24, borderRadius: radius.xs, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   sqLive: { backgroundColor: colors.spot, borderColor: colors.spot },
