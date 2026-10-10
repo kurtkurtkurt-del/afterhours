@@ -1,10 +1,14 @@
-# Gece planı (11.10.2026)
+# Gece planı (11.10.2026) — YAPILDI, sabah 12.10.2026
 
 Tek oturumda, sırayla. Her maddenin sonunda: `npx tsc --noEmit`, `npx expo lint`, `npm test` (app) ve `npm test` (backend) temiz; README güncel. EAS build yok. Commit'ler madde başına, push yok (sabah birlikte). KULA'dan çıkan backend adımları ayrı dosyada (`kula-backend-plan.md`) ve bu plana dahil DEĞİL; Ahmet söyleyince eklenir.
 
-## Yapıldı (planlama sırasında)
+## Yapıldı
 
-- yours: örnek gönderiler ve hazır yorumlar kaldırıldı (`SamplePost.tsx`, `content/posts.ts`, üç fotoğraf; README §6, CREDITS). Commit edilmedi.
+Yedi madde, yedi commit (f58895b … 05c77eb), hepsi README'ye işlendi; `tsc`, `expo lint`, app testleri (33) ve backend testleri (858 + yeni kontroller) temiz; `tools-site-check.py` temiz. Push yok.
+
+- yours: örnek gönderiler ve hazır yorumlar kaldırıldı.
+- 1 gruplar C · 2 bilet kartı E · 3 yirmi spark (`56_spark_kinds_2.sql`) · 4 zincir E · 5 haritada kart gezdirme · 6 mesajlaşma D (görülenler telefonda, `data/messages.ts`; sunucu tarafı sayaç gerekmedi) · 7 panel bio'dan (sekme çubuğu beşe indi, `app/panel/index.tsx`).
+- Not: `npm run health` canlıda 680 geçmiş geceyi hâlâ yayında sayıyor; `hide_past_events` cron'u çalışmıyor olabilir (pg_cron açık mı?). Bakılacak.
 
 ## Özellikler
 
@@ -20,7 +24,8 @@ Tek oturumda, sırayla. Her maddenin sonunda: `npx tsc --noEmit`, `npx expo lint
 
 ## Sabah (Ahmet)
 
-
+- `56_spark_kinds_2.sql` canlıya yapıştırılacak (yoksa yeni spark türleri `spark_create`'te reddedilir; panel eksik dosyayı söyler).
+- `git push` birlikte; Expo Go'da Metro'yu `--clear` ile yeniden başlat.
 - Supabase SQL editöründe, test gönderilerini silmek için:
   `delete from public.posts where author_id in (select id from auth.users where email like 'fake-%@afterhours.test');`
   (Fake arkadaşlar ve "(test)" gruplar kalır. Hepsini kaldırmak için `cleanup-test-groups.sql`.)
