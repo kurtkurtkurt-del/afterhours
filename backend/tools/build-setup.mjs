@@ -63,6 +63,7 @@ const structure = [
   ["53_trust.sql", "TRUST — DJ PAGES CHECKED, ADMINS, NOTICES, LIMITS, BLOCKS IN GROUPS"],
   ["54_upkeep.sql", "UPKEEP — OLD GUESTS GO, THE STAFF ARE ALERTED"],
   ["55_post_social.sql", "LIKES AND COMMENTS ON POSTS"],
+  ["56_spark_kinds_2.sql", "TWENTY MORE SPARKS"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

@@ -65,7 +65,12 @@ async function forecast(at: [number, number]): Promise<Day[]> {
 // How much a day suits the spark: dry first, then warm enough (the grill, a rooftop,
 // above all a night swim) or mild (the hike, the sunrise); weekends a little more.
 // Below zero: not worth suggesting. Sparks indoors are not scored (0).
-export function dayScore(kind: Spark['kind'], d: Day, weekday: number): number {
+// The sparks of 11.10.2026 that are outdoors score like their nearest cousin.
+const LIKE: Partial<Record<Spark['kind'], Spark['kind']>> = { openair: 'grill', picnic: 'grill', pingpong: 'grill', bike: 'hike', flea: 'hike', walk: 'hike', football: 'hike', stars: 'sunrise' };
+export const OUTDOORS: Spark['kind'][] = ['grill', 'hike', 'sunrise', 'rooftop', 'swim', ...(Object.keys(LIKE) as Spark['kind'][])];
+
+export function dayScore(wanted: Spark['kind'], d: Day, weekday: number): number {
+  const kind = LIKE[wanted] ?? wanted;
   if (Number.isNaN(d.tmax)) return 0;
   const dry = 1 - Math.min(100, Math.max(0, d.rain)) / 100;
   const weekend = weekday === 0 || weekday === 6 ? 0.15 : 0;
@@ -114,7 +119,7 @@ export async function sparkHint(spark: Spark, city: string | null, coords: [numb
       };
     }
     // Only the sparks outdoors read the forecast; the rest keep their own hour.
-    if (!['grill', 'hike', 'sunrise', 'rooftop', 'swim'].includes(spark.kind)) return null;
+    if (!OUTDOORS.includes(spark.kind)) return null;
     const at = coords ?? CENTRES[city ?? ''];
     if (!at) return null;
     const days = await forecast(at);

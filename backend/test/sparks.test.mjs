@@ -18,7 +18,7 @@ process.on("unhandledRejection", (e) => {
 const db = new PGlite();
 for (const d of ["../test/supabase-shim.sql", "../sql/01_schema.sql", "../sql/02_rls.sql",
                  "../sql/03_seed_catalog.sql", "../sql/06_views.sql", "../sql/07_friends.sql",
-                 "../sql/12_profiles.sql", "../sql/27_sparks.sql", "../sql/39_spark_kinds.sql"]) {
+                 "../sql/12_profiles.sql", "../sql/27_sparks.sql", "../sql/39_spark_kinds.sql", "../sql/56_spark_kinds_2.sql"]) {
   await db.exec(await read(d));
 }
 /* a second run must not trip over the first */
@@ -72,7 +72,7 @@ console.log("\n— create —");
         "inviting only strangers is refused");
   check(Boolean(await fails(`select public.spark_create('derby', 'x', now() - interval '3 hours', null, array['${B}']::uuid[])`)),
         "a time in the past is refused");
-  check(Boolean(await fails(`select public.spark_create('karaoke', 'x', now() + interval '1 day', null, array['${B}']::uuid[])`)),
+  check(Boolean(await fails(`select public.spark_create('zumba', 'x', now() + interval '1 day', null, array['${B}']::uuid[])`)),
         "an unknown kind is refused");
   check(!(await fails(`select public.spark_create('sunrise', 'meet the sunrise', now() + interval '1 day', null, array['${B}']::uuid[])`)),
         "a kind added in 39 (sunrise) is taken");
@@ -150,6 +150,15 @@ console.log("\n— old plans —");
   check((await rows(`select 1 from public.spark_inbox()`)).length === 0, "a plan that is over is not in the inbox");
   await asUser(A);
   check((await rows(`select 1 from public.spark_mine()`)).length === 0, "nor in the host's list");
+}
+
+console.log("\n— the twenty of 56 —");
+{
+  await asUser(A);
+  check(!(await fails(`select public.spark_create('karaoke', 'karaoke, no shame', now() + interval '1 day', null, array['${B}']::uuid[])`)),
+        "a kind added in 56 (karaoke) is taken");
+  check(!(await fails(`select public.spark_create('walk', 'walk the city', now() + interval '1 day', null, array['${B}']::uuid[])`)),
+        "and the last of them (walk)");
 }
 
 console.log(`\n${passed} passed, ${failed} failed`);

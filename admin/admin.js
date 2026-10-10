@@ -71,6 +71,7 @@
     "53_trust.sql",
     "54_upkeep.sql",
     "55_post_social.sql",
+    "56_spark_kinds_2.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */

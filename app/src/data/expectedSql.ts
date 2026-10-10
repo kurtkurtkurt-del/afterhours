@@ -57,4 +57,5 @@ export const EXPECTED_SQL = [
   '53_trust.sql',
   '54_upkeep.sql',
   '55_post_social.sql',
+  '56_spark_kinds_2.sql',
 ];

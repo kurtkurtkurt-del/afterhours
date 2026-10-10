@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-09 09:56   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-10 23:27   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -12555,5 +12555,35 @@ end $$;
 do $$ begin
   if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('55_post_social.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  TWENTY MORE SPARKS   (56_spark_kinds_2.sql)
+-- ============================================================
+
+-- afterhours — twenty more sparks (56, after 39)
+--
+-- The app has thirty-one sparks since 11.10.2026 (app/src/content/sparks.ts).
+-- The table takes them here; nothing else changes — a kind is a word the app
+-- turns into a photo and a text.
+--
+--   karaoke · vinyl · openair · bike · cinema · boardgames · flea · skate · cook · sauna
+--   openmic · pingpong · bouldering · picnic · crawl · stars · football · tram · jazz · walk
+
+alter table public.sparks drop constraint if exists sparks_kind_check;
+alter table public.sparks add constraint sparks_kind_check check (kind in (
+  'derby', 'grill', 'hike',
+  'sunrise', 'breakfast', 'rooftop', 'swim', 'quiz', 'newplace', 'camera', 'festival',
+  'karaoke', 'vinyl', 'openair', 'bike', 'cinema',
+  'boardgames', 'flea', 'skate', 'cook', 'sauna',
+  'openmic', 'pingpong', 'bouldering', 'picnic', 'crawl',
+  'stars', 'football', 'tram', 'jazz', 'walk'
+));
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('56_spark_kinds_2.sql');
   end if;
 end $$;
