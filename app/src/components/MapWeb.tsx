@@ -145,7 +145,9 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
       var ic=L.divIcon({className:'',html:'<div class="pin f'+f+'"><i class="rp" style="animation-delay:-'+d+'ms"></i><div class="sq'+(p.spark?' sp':p.friends?' fr':'')+(p.id===s.picked?' on':'')+'" data-f="'+(p.spark?'s':p.friends?1:0)+'"></div></div>',iconSize:[22,24],iconAnchor:[11,21]});
       var mk=L.marker([p.lat,p.lng],{icon:ic}).addTo(layer);mk.on('click',function(e){L.DomEvent.stopPropagation(e);post({pick:p.id});});markers[p.id]=mk;});}
     else if(s.picked!==undefined){Object.keys(markers).forEach(function(id){var el=markers[id].getElement();if(el){var d=el.querySelector('.sq');if(d){var f=d.getAttribute('data-f');d.className='sq'+(f==='s'?' sp':f==='1'?' fr':'')+(id===s.picked?' on':'');}}});}
-    if(s.picked!==undefined){document.body.classList.toggle('dim',!!s.picked);}
+    if(s.picked!==undefined){document.body.classList.toggle('dim',!!s.picked);
+      /* The picked pin comes into the clear part of the view (above the card) when it is not there. */
+      var pm=s.picked&&markers[s.picked];if(pm){map.panInside(pm.getLatLng(),{paddingTopLeft:[28,pad.top],paddingBottomRight:[28,pad.bottom],animate:true});}}
   };
   /* When the page gets its real size (or it changes), fit the circle again. */
   var lastSize='';

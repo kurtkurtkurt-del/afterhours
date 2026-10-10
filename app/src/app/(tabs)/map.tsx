@@ -17,7 +17,8 @@ import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-na
 import { StatusBar } from 'expo-status-bar';
 import { router, useFocusEffect } from 'expo-router';
 import * as Location from 'expo-location';
-import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+import Animated, { Easing, interpolate, runOnJS, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
+import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import MapWeb, { type Pin } from '@/components/MapWeb';
 import SoundCorner from '@/components/SoundCorner';
 import { useTabBarSpace } from '@/components/TabBar';
@@ -215,6 +216,44 @@ export default function MapScreen() {
   const restStyle = useAnimatedStyle(() => ({ opacity: 1 - open.value }));
   const cardStyle = useAnimatedStyle(() => ({ opacity: open.value, transform: [{ translateY: (1 - open.value) * 40 }] }));
 
+  // The card walks the map (11.10.2026): a swipe left takes the next night, right the one
+  // before, in the order of the pins (nearest first); the map pans to the pin when it is
+  // under the card or off the screen. Here a swipe is not keep / let go, as on the flow:
+  // the card has its own GO strip and the night's page for that.
+  const dx = useSharedValue(0);
+  const walk = (dir: 1 | -1) => {
+    setPicked((p) => {
+      if (!p || shown.length < 2) return p;
+      const i = shown.findIndex((n) => n.id === p.id);
+      return shown[(i + dir + shown.length) % shown.length] ?? p;
+    });
+  };
+  const STEP = 56;
+  const walkPan = Gesture.Pan()
+    .activeOffsetX([-12, 12])
+    .failOffsetY([-16, 16])
+    .onUpdate((e) => {
+      dx.set(e.translationX);
+    })
+    .onEnd((e) => {
+      const far = Math.abs(e.translationX) > STEP || Math.abs(e.velocityX) > 700;
+      if (far && shown.length > 1) {
+        const dir: 1 | -1 = e.translationX < 0 ? 1 : -1;
+        // out the way it went, then in from the other side with the next night
+        dx.set(withTiming(-dir * width * 0.6, { duration: 140 }, () => {
+          runOnJS(walk)(dir);
+          dx.set(dir * width * 0.4);
+          dx.set(withSpring(0, { damping: 18, stiffness: 180 }));
+        }));
+      } else {
+        dx.set(withSpring(0, { damping: 18, stiffness: 180 }));
+      }
+    });
+  const walkStyle = useAnimatedStyle(() => ({
+    transform: [{ translateX: dx.value }],
+    opacity: interpolate(Math.abs(dx.value), [0, width * 0.6], [1, 0.2]),
+  }));
+
   const whenLabel = when ? whenName(when, tx) : t('when.any');
   const typeLabel = type ? tx('type.' + type, types.find((ty) => ty.id === type)?.label ?? type) : t('type.all');
   const bigKm = dragKm ?? km;
@@ -295,11 +334,12 @@ export default function MapScreen() {
 
       {/* Selected night: caption with the red GO strip on the right. */}
       {picked ? (
-        <Animated.View style={[styles.caption, { bottom: tabSpace + 4 }, cardStyle]}>
+        <GestureDetector gesture={walkPan}>
+        <Animated.View style={[styles.caption, { bottom: tabSpace + 4 }, cardStyle, walkStyle]}>
           <View style={styles.block}>
             <View style={styles.capTop}>
               <Text style={styles.jetMeta}>
-                {up(t('map.of', { i: pickedIndex + 1, n: shown.length }))} · {upperData(distText(picked.distance_km))}
+                {shown.length > 1 ? '‹ ' : ''}{up(t('map.of', { i: pickedIndex + 1, n: shown.length }))}{shown.length > 1 ? ' ›' : ''} · {upperData(distText(picked.distance_km))}
               </Text>
               <Pressable onPress={() => setPicked(null)} hitSlop={10}>
                 <Text style={styles.change}>{t('word.close')}</Text>
@@ -323,6 +363,7 @@ export default function MapScreen() {
             <Text style={styles.stripText}>{up(t('map.go'))} →</Text>
           </Pressable>
         </Animated.View>
+        </GestureDetector>
       ) : null}
 
       {/* Selected spark: the same caption, gold where a night is red. */}
