@@ -57,13 +57,14 @@ const ACTIONS = 86;
 //   matches  what members said yes to: match (all), most (more than half), some.
 //   live     the same card for everyone here now; it moves on when all answered.
 export default function GroupScreen() {
-  const { id } = useLocalSearchParams<{ id: string }>();
+  // ?tab=plan opens straight on the plan (the gallery on people links here).
+  const { id, tab: tabParam } = useLocalSearchParams<{ id: string; tab?: string }>();
   const { t, up } = useLang();
   // A long press on the name reports the group (51_safety.sql).
   const reporting = useReport();
   const insets = useSafeAreaInsets();
   const [group, setGroup] = useState<Group | null>(null);
-  const [tab, setTab] = useState<Tab>('swipe');
+  const [tab, setTab] = useState<Tab>(tabParam === 'plan' || tabParam === 'matches' || tabParam === 'live' ? tabParam : 'swipe');
   const [deck, setDeck] = useState<Night[] | null>(null);
   const [matches, setMatches] = useState<Match[]>([]);
   const [said, setSaid] = useState<string | null>(null);

@@ -179,4 +179,13 @@ export const groups = {
   'groups.join.about': { en: 'they are swiping nights together, to find the one they all want.', de: 'sie wischen zusammen nächte, um die eine zu finden, die alle wollen.', tr: 'herkesin istediği geceyi bulmak için birlikte kaydırıyorlar.' },
   'groups.join.come': { en: 'come too', de: 'komm mit', tr: 'sen de gel' },
   'groups.wall.count': { en: '{nights} nights · {photos} photos', de: '{nights} nächte · {photos} fotos', tr: '{nights} gece · {photos} fotoğraf' },
+  // the group's plan or vote as a card on the people gallery (11.10.2026)
+  'groups.card.plan': { en: 'group plan', de: 'gruppenplan', tr: 'grup planı' },
+  'groups.card.vote': { en: 'group vote', de: 'gruppenabstimmung', tr: 'grup oylaması' },
+  'groups.card.in': { en: '{n} of {m} in', de: '{n} von {m} dabei', tr: '{m} kişiden {n} geliyor' },
+  'groups.card.imIn': { en: "i'm in", de: 'ich bin dabei', tr: 'geliyorum' },
+  'groups.card.youreIn': { en: "you're in", de: 'du bist dabei', tr: 'geliyorsun' },
+  'groups.card.closes': { en: 'closes {at}', de: 'endet {at}', tr: '{at} kapanır' },
+  'groups.card.nights': { en: '{n} nights to choose from', de: '{n} nächte zur wahl', tr: 'seçmek için {n} gece' },
+  'groups.card.voteGo': { en: 'vote', de: 'abstimmen', tr: 'oy ver' },
 } as const;

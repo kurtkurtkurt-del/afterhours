@@ -10,7 +10,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { SvgUri } from 'react-native-svg';
 import WhoSheet from '@/components/WhoSheet';
 import { PeopleResults, PeopleSearch, SuggestedInRow, openPerson } from '@/components/People';
-import { myGroups, type GroupRow } from '@/data/groups';
+import { groupPlan, myGroups, type GroupRow, type Plan, type Round } from '@/data/groups';
 import GroupBadge from '@/components/GroupBadge';
 import SoundCorner from '@/components/SoundCorner';
 import DeckViewer from '@/components/DeckViewer';
@@ -37,25 +37,55 @@ import { brand } from '@/theme/layout';
 const fallbackPhoto = require('../../../assets/intro/concert.jpg');
 
 // People: who you go out with, as yours was before 11.10.2026 minus the feed. Top to
-// bottom: search (typing replaces the page with people results); groups; "with your
-// people", a gallery of the nights your friends kept (most keepers first) and the sparks
-// waiting for your answer, one full photo each, sliding by itself every 6 s; the decks as
-// card stacks (a tap opens the viewer); your people (faces, a red ring for whoever is out
-// right now, what each is up to). Stories, posts and past nights are in yours.
+// bottom: search (typing replaces the page with people results); one thin line to the
+// groups (their badges, how many are live); "with your people", a gallery that mixes
+// the groups' plans and open votes (first), the nights your friends kept (most keepers
+// first) and the sparks waiting for your answer, one full photo each, sliding by itself
+// every 6 s; the decks as card stacks (a tap opens the viewer); your people (faces, a red
+// ring for whoever is out right now, what each is up to). Stories, posts and past nights
+// are in yours. A group without a plan or a vote is only in the line, not the gallery.
 export default function PeopleScreen() {
   const insets = useSafeAreaInsets();
   const tabSpace = useTabBarSpace();
   // Your groups (44_groups.sql), read on every visit.
   const [groups, setGroups] = useState<GroupRow[]>([]);
-  useFocusEffect(
-    useCallback(() => {
-      myGroups().then(setGroups, () => {});
-    }, []),
-  );
   const { session } = useAuth();
   const real = useYours();
   const { t, tn, tx, up } = useLang();
   const uid = session?.user.id;
+  // Who is coming: your answers (stored, friends see them) and your friends' (32_rsvp.sql).
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [theirAnswers, setTheirAnswers] = useState<Rsvp[]>([]);
+  // Each living group's plan or open vote (46_group_plans.sql), for the gallery.
+  const [plans, setPlans] = useState<{ g: GroupRow; plan: Plan | null; round: Round | null; members: number }[]>([]);
+  useFocusEffect(
+    useCallback(() => {
+      let live = true;
+      myGroups()
+        .then(async (list) => {
+          if (!live) return;
+          setGroups(list);
+          const living = list.filter((g) => !g.archived);
+          const states = await Promise.all(living.map((g) => groupPlan(g.id).then((st) => ({ g, plan: st.plan, round: st.round, members: st.members }), () => null)));
+          if (!live) return;
+          const kept = states.filter((x): x is NonNullable<typeof x> => !!x && (!!x.plan || !!x.round));
+          setPlans(kept);
+          // My own answer on each plan's night, so its button starts right.
+          setAnswers((a) => {
+            const next = { ...a };
+            kept.forEach(({ plan }) => {
+              const me = plan?.people.find((x) => x.id === uid);
+              if (plan && me?.answer && !(plan.id in next)) next[plan.id] = me.answer;
+            });
+            return next;
+          });
+        })
+        .catch(() => {});
+      return () => {
+        live = false;
+      };
+    }, [uid]),
+  );
   // Samples fill whatever is still empty, each with a "sample" note: the friend row
   // until you have friends (a pending request counts), the feed until a friend keeps
   // a night. A first friend request no longer empties the whole screen.
@@ -104,9 +134,7 @@ export default function PeopleScreen() {
   );
   const [meToo, setMeToo] = useState<Record<string, boolean>>({});
   const [asking, setAsking] = useState<string | null>(null);
-  // Who is coming: your answers (stored, friends see them) and your friends' (32_rsvp.sql).
-  const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [theirAnswers, setTheirAnswers] = useState<Rsvp[]>([]);
+
   // Friend search: while typing, results replace the page.
   const [query, setQuery] = useState('');
   const [deck, setDeck] = useState<'mine' | 'friends' | 'wave2' | 'wave3' | null>(null);
@@ -227,12 +255,22 @@ export default function PeopleScreen() {
   const elsewhere = sample ? [] : nights.filter((n) => n.city !== feedCity).sort(byKeepers);
   const ranked = [...here, ...filler, ...elsewhere];
   const matched = new Set(matches.map((mt) => mt.night));
-  type Slide = { kind: 'night'; key: string; n: YoursNight } | { kind: 'spark'; key: string; s: SparkInvite };
+  type Slide =
+    | { kind: 'night'; key: string; n: YoursNight }
+    | { kind: 'spark'; key: string; s: SparkInvite }
+    | { kind: 'plan'; key: string; g: GroupRow; p: Plan }
+    | { kind: 'round'; key: string; g: GroupRow; r: Round; members: number };
+  // The groups' plans and votes come first: they are the nights already decided, or being decided.
   const slides: Slide[] = [
+    ...plans.flatMap(({ g, plan, round, members }): Slide[] =>
+      plan ? [{ kind: 'plan', key: `p${g.id}`, g, p: plan }] : round ? [{ kind: 'round', key: `r${g.id}`, g, r: round, members }] : []),
     ...ranked.slice(0, 8).map((n): Slide => ({ kind: 'night', key: n.id, n })),
     ...sparkAsks.map((sp): Slide => ({ kind: 'spark', key: `s${sp.id}`, s: sp })),
   ];
-  const galleryIds = slides.filter((sl) => sl.kind === 'night').map((sl) => (sl as { n: YoursNight }).n.id).filter((id) => /^[0-9a-f-]{36}$/.test(id)).join(',');
+  const galleryIds = slides
+    .map((sl) => (sl.kind === 'night' ? sl.n.id : sl.kind === 'plan' ? sl.p.id : ''))
+    .filter((id) => /^[0-9a-f-]{36}$/.test(id))
+    .join(',');
   useEffect(() => {
     if (!uid || !galleryIds) return;
     let live = true;
@@ -309,21 +347,19 @@ export default function PeopleScreen() {
           <PeopleResults query={query} />
         ) : (
           <>
-            {/* Groups: friends who find a night together. */}
-            <Pressable onPress={() => router.push('/groups')} style={({ pressed }) => [styles.groups, pressed && styles.pressed]} accessibilityRole="button">
+            {/* Groups: one thin line (their badges, who is live); the plans themselves are in the gallery. */}
+            <Pressable onPress={() => router.push('/groups')} style={({ pressed }) => [styles.groupsLine, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t('groups.entry')}>
               <View style={styles.groupFaces}>
                 {groups.filter((g) => !g.archived).slice(0, 4).map((g, i) => (
                   <View key={g.id} style={i > 0 ? styles.groupOverlap : undefined}>
-                    <GroupBadge emoji={g.emoji} color={g.color} cover={g.cover_path} size={34} />
+                    <GroupBadge emoji={g.emoji} color={g.color} cover={g.cover_path} size={28} />
                   </View>
                 ))}
               </View>
-              <View style={styles.groupText}>
-                <Text style={styles.groupTitle}>{t('groups.entry')}</Text>
-                <Text style={styles.groupHint} numberOfLines={1}>
-                  {groups.some((g) => g.live) ? up(t('groups.liveNow', { n: groups.reduce((a, g) => a + g.live, 0) })) : t('groups.hint')}
-                </Text>
-              </View>
+              <Text style={styles.groupsText} numberOfLines={1}>
+                {t('groups.entry')}
+                {groups.some((g) => g.live) ? <Text style={styles.redText}> · {t('groups.liveNow', { n: groups.reduce((a, g) => a + g.live, 0) })}</Text> : groups.length ? '' : <Text> · {t('groups.hint')}</Text>}
+              </Text>
               <Text style={styles.groupArrow}>›</Text>
             </Pressable>
             {/* With your people: the gallery. */}
@@ -343,7 +379,73 @@ export default function PeopleScreen() {
                   getItemLayout={(_, i) => ({ length: step, offset: step * i, index: i })}
                   renderItem={({ item }) => (
                     <View style={[styles.page, { width }]}>
-                      {item.kind === 'night' ? (
+                      {item.kind === 'plan' ? (
+                        <Pressable onPress={() => router.push({ pathname: '/groups/[id]', params: { id: item.g.id, tab: 'plan' } })} style={[styles.hero, { width: slideW, height: slideW * 1.08 }]}>
+                          <Image source={item.p.image_url ? { uri: item.p.image_url } : fallbackPhoto} style={StyleSheet.absoluteFill} contentFit="cover" />
+                          <LinearGradient colors={['rgba(14,13,12,0.55)', 'rgba(14,13,12,0)', 'rgba(14,13,12,0.55)', colors.ink]} locations={[0, 0.25, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
+                          <View style={styles.planHead}>
+                            <GroupBadge emoji={item.g.emoji} color={item.g.color} cover={item.g.cover_path} size={40} />
+                            <View style={styles.planHeadText}>
+                              <Text style={styles.planGroup} numberOfLines={1}>{item.g.name.toLowerCase()}</Text>
+                              <Text style={styles.planMono}>{up(t('groups.card.plan'))}</Text>
+                            </View>
+                          </View>
+                          <View style={styles.heroText}>
+                            {(() => {
+                              const mineIn = answers[item.p.id] ? answers[item.p.id] === 'in' : item.p.people.find((x) => x.id === uid)?.answer === 'in';
+                              const others = item.p.people.filter((x) => x.id !== uid && x.answer === 'in');
+                              const inNames = [...others.map((x) => x.name ?? ''), ...(mineIn ? [t('posts.you')] : [])];
+                              return (
+                                <>
+                                  <Text style={[styles.heroMeta, styles.redText]} numberOfLines={1}>{up(t('groups.card.in', { n: inNames.length, m: item.p.people.length }))}</Text>
+                                  <Text style={styles.heroTitle} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>{item.p.title.toLowerCase()}</Text>
+                                  <Text style={styles.heroMeta} numberOfLines={1}>{[item.p.venue_name, dayLabel(item.p.starts_at), item.p.starts_at?.slice(11, 16)].filter(Boolean).map((x) => upperData(String(x))).join(' · ')}</Text>
+                                  <View style={styles.planRow}>
+                                    <View style={styles.keptFaces}>
+                                      {others.slice(0, 4).map((x, i) => (
+                                        <View key={x.id} style={[styles.keptFace, i > 0 && styles.keptOverlap]}>
+                                          <Avatar name={x.name ?? '?'} size={KEPT} />
+                                        </View>
+                                      ))}
+                                      {others.length > 4 ? (
+                                        <View style={[styles.keptFace, styles.keptOverlap, styles.keptMore]}>
+                                          <Text style={styles.keptMoreText}>+{others.length - 4}</Text>
+                                        </View>
+                                      ) : null}
+                                    </View>
+                                    <Pressable onPress={() => answer(item.p.id, 'in')} style={({ pressed }) => [mineIn ? styles.btnLine : styles.btnRed, pressed && styles.pressed]} accessibilityRole="button">
+                                      <Text style={mineIn ? styles.btnTextLine : styles.btnTextRed}>{mineIn ? t('groups.card.youreIn') : t('groups.card.imIn')}</Text>
+                                    </Pressable>
+                                  </View>
+                                </>
+                              );
+                            })()}
+                          </View>
+                        </Pressable>
+                      ) : item.kind === 'round' ? (
+                        <Pressable onPress={() => router.push({ pathname: '/groups/[id]', params: { id: item.g.id, tab: 'plan' } })} style={[styles.hero, { width: slideW, height: slideW * 1.08 }]}>
+                          <Image source={item.r.options.find((o) => o.image_url)?.image_url ? { uri: item.r.options.find((o) => o.image_url)!.image_url! } : fallbackPhoto} style={StyleSheet.absoluteFill} contentFit="cover" />
+                          <LinearGradient colors={['rgba(14,13,12,0.55)', 'rgba(14,13,12,0)', 'rgba(14,13,12,0.55)', colors.ink]} locations={[0, 0.25, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
+                          <View style={styles.planHead}>
+                            <GroupBadge emoji={item.g.emoji} color={item.g.color} cover={item.g.cover_path} size={40} />
+                            <View style={styles.planHeadText}>
+                              <Text style={styles.planGroup} numberOfLines={1}>{item.g.name.toLowerCase()}</Text>
+                              <Text style={styles.planMono}>{up(t('groups.card.vote'))}</Text>
+                            </View>
+                          </View>
+                          <View style={styles.heroText}>
+                            <Text style={[styles.heroMeta, styles.redText]} numberOfLines={1}>{up(t('groups.vote.voted', { n: item.r.voted, m: item.members }))} · {up(t('groups.card.closes', { at: dayLabel(item.r.closes_at) }))}</Text>
+                            <Text style={styles.heroTitle} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>{t('groups.card.nights', { n: item.r.options.length })}</Text>
+                            <Text style={styles.heroMeta} numberOfLines={1}>{item.r.options.map((o) => o.title.toLowerCase()).join(' · ')}</Text>
+                            <View style={styles.planRow}>
+                              <Text style={styles.avNote} numberOfLines={1}>{item.r.my_vote ? t('groups.vote.mine') + ': ' + (item.r.options.find((o) => o.id === item.r.my_vote)?.title.toLowerCase() ?? '') : ''}</Text>
+                              <Pressable onPress={() => router.push({ pathname: '/groups/[id]', params: { id: item.g.id, tab: 'plan' } })} style={({ pressed }) => [item.r.my_vote ? styles.btnLine : styles.btnRed, pressed && styles.pressed]} accessibilityRole="button">
+                                <Text style={item.r.my_vote ? styles.btnTextLine : styles.btnTextRed}>{t('groups.card.voteGo')}</Text>
+                              </Pressable>
+                            </View>
+                          </View>
+                        </Pressable>
+                      ) : item.kind === 'night' ? (
                         <Pressable onPress={() => item.n.slug && router.push(`/night/${item.n.slug}`)} style={[styles.hero, { width: slideW, height: slideW * 1.08 }]}>
                           <Image source={(item.n as YoursNight & { photo?: number }).photo ?? (item.n.image ? { uri: item.n.image } : fallbackPhoto)} style={StyleSheet.absoluteFill} contentFit="cover" />
                           <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.55)', colors.ink]} locations={[0.3, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
@@ -593,13 +695,17 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 44, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
-  groups: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 12, marginTop: 14, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md },
-  groupFaces: { flexDirection: 'row', minWidth: 34 },
-  groupOverlap: { marginLeft: -12 },
-  groupText: { flex: 1, gap: 2 },
-  groupTitle: { fontFamily: fonts.medium, fontSize: 16, color: colors.paper },
-  groupHint: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
+  groupsLine: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 8, marginTop: 8 },
+  groupFaces: { flexDirection: 'row', minWidth: 28 },
+  groupOverlap: { marginLeft: -10 },
+  groupsText: { flex: 1, fontFamily: fonts.regular, fontSize: 13, color: colors.mute },
   groupArrow: { fontFamily: fonts.medium, fontSize: 22, color: colors.mute },
+  // a group's plan or vote on the gallery: the badge and the name on top
+  planHead: { position: 'absolute', top: 14, left: 14, right: 14, flexDirection: 'row', alignItems: 'center', gap: 10 },
+  planHeadText: { flex: 1, gap: 1 },
+  planGroup: { fontFamily: fonts.semibold, fontSize: 16, letterSpacing: -0.3, color: colors.paper },
+  planMono: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.mute },
+  planRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginTop: 8 },
   body: { paddingTop: brand.top + 56 },
   pressed: { opacity: 0.6 },
   redText: { color: colors.spotText },
