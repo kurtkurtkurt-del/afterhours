@@ -24,7 +24,6 @@ export default function Onboarding({ onDone }: Props) {
     { key: 'room', demo: <RoomDemo />, h: t('onboarding.room.h'), p: t('onboarding.room.p') },
     { key: 'friends', demo: <FriendsDemo />, h: t('onboarding.friends.h'), p: t('onboarding.friends.p') },
     { key: 'map', demo: <MapDemo />, h: t('onboarding.map.h'), p: t('onboarding.map.p') },
-    { key: 'djs', demo: <DjsDemo />, h: t('onboarding.djs.h'), p: t('onboarding.djs.p') },
   ];
   const last = page === steps.length - 1;
   const onEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => setPage(Math.round(e.nativeEvent.contentOffset.x / width));
@@ -221,32 +220,6 @@ function MapPin({ t, delay, x, y, code }: { t: SharedValue<number>; delay: numbe
     <Animated.View style={[styles.pin, { left: `${x}%`, top: `${y}%` }, s]}>
       <Text style={styles.pinText}>{code}</Text>
     </Animated.View>
-  );
-}
-
-function DjsDemo() {
-  const { t: say, up } = useLang();
-  const t = useLoop(2000);
-  const blink = useAnimatedStyle(() => ({ opacity: interpolate(t.value, [0, 0.5, 1], [1, 0.2, 1]) }));
-  return (
-    <View style={styles.stage}>
-      <View style={styles.djBlock}>
-        <Image source={photo} style={styles.djPhoto} />
-        <View style={styles.djShade} />
-        <View style={styles.djText}>
-          <View style={styles.liveRow}>
-            <Animated.View style={[styles.liveDot, blink]} />
-            <Text style={styles.liveText}>{up(say('onboarding.demo.live'))} · {upperData('harry klein')}</Text>
-          </View>
-          <Text style={styles.djName}>levent ok</Text>
-          <Text style={styles.paperMono}>{upperData('house')} · {up(say('onboarding.demo.until', { time: '02:00' }))}</Text>
-        </View>
-      </View>
-      <View style={styles.djRow}>
-        <Text style={styles.djRowName}>mara volt</Text>
-        <Text style={styles.paperMono}>{upperData('blitz')} · 01:00</Text>
-      </View>
-    </View>
   );
 }
 

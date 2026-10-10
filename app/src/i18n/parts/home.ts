@@ -55,12 +55,6 @@ export const home = {
     de: 'die karte zeigt die nächte um dich herum, heute nacht. szene-nächte zeigen ihre adresse beim einchecken.',
     tr: "harita bu gece çevrendeki geceleri gösterir. szene geceleri adresini check-in'de açar.",
   },
-  'onboarding.djs.h': { en: 'who is playing.', de: 'wer auflegt.', tr: 'kim çalıyor.' },
-  'onboarding.djs.p': {
-    en: 'live now, later tonight, this week. their sets, their photos, their next night.',
-    de: 'jetzt live, später heute nacht, diese woche. ihre sets, ihre fotos, ihre nächste nacht.',
-    tr: 'şimdi canlı, bu gece geç saatte, bu hafta. setleri, fotoğrafları, sıradaki geceleri.',
-  },
   'onboarding.demo.kept': { en: 'kept', de: 'behalten', tr: 'saklandı' },
   'onboarding.demo.checkedin': { en: 'checked in', de: 'eingecheckt', tr: 'check-in yapıldı' },
   'onboarding.demo.whowas': { en: 'who was there', de: 'wer da war', tr: 'kimler oradaydı' },

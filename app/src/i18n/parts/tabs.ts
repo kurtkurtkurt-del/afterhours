@@ -2,7 +2,7 @@
 export const tabs = {
   // tab bar (screen reader labels)
   'tab.flow': { en: 'flow', de: 'flow', tr: 'akış' },
-  'tab.djs': { en: 'djs', de: 'djs', tr: "dj'ler" },
+  'tab.people': { en: 'people', de: 'leute', tr: 'insanlar' },
   'tab.yours': { en: 'yours', de: 'deins', tr: 'seninkiler' },
   'tab.map': { en: 'map', de: 'karte', tr: 'harita' },
   'tab.account': { en: 'account', de: 'konto', tr: 'hesap' },
@@ -337,6 +337,7 @@ export const tabs = {
   'yours.wereThere': { en: '{names} were there', de: '{names} waren da', tr: '{names} oradaydı' },
   'yours.youWereThere': { en: 'you were there', de: 'du warst da', tr: 'oradaydın' },
   'yours.pastEnd': { en: 'that is a year of nights.', de: 'das ist ein jahr voller nächte.', tr: 'bu kadar: bir yıllık gece.' },
+  'people.title': { en: 'people.', de: 'leute.', tr: 'insanlar.' },
   'people.search': { en: 'find friends · name or @handle', de: 'freunde finden · name oder @handle', tr: 'arkadaş bul · isim ya da @kullanıcıadı' },
   'people.searching': { en: 'looking…', de: 'suche…', tr: 'aranıyor…' },
   'people.short': { en: 'two letters at least', de: 'mindestens zwei buchstaben', tr: 'en az iki harf' },

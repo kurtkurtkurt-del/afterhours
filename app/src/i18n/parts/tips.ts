@@ -12,10 +12,10 @@ export const tips = {
   'tips.flow.2.t': { en: 'make your own', de: 'mach deine eigene', tr: 'kendi geceni yap' },
   'tips.flow.2.b': { en: 'tickets are nights out; sparks are nights among friends. + makes your own.', de: 'tickets sind nächte draußen; sparks nächte unter freunden. + macht deine eigene.', tr: 'biletler dışarıdaki geceler; sparklar arkadaşlar arası. + ile kendi geceni oluştur.' },
 
-  'tips.djs.1.t': { en: 'who plays tonight', de: 'wer heute spielt', tr: 'bu gece kim çalıyor' },
-  'tips.djs.1.b': { en: 'a red ring is a new story, live means on right now. tap one to listen.', de: 'roter ring: neue story, live: gerade dran. tippen zum reinhören.', tr: 'kırmızı halka yeni hikaye, live şu an çalıyor demek. dinlemek için dokun.' },
-  'tips.djs.2.t': { en: 'follow', de: 'folgen', tr: 'takip et' },
-  'tips.djs.2.b': { en: 'follow a dj and their stories come first; you hear when they play.', de: 'folg einem dj und seine stories kommen zuerst; du erfährst, wann er spielt.', tr: 'bir dj’i takip et, hikayeleri önce gelsin; ne zaman çaldığını duy.' },
+  'tips.people.1.t': { en: 'your people', de: 'deine leute', tr: 'insanların' },
+  'tips.people.1.b': { en: 'a red ring means out right now. tap a face to see what they keep.', de: 'roter ring: gerade unterwegs. tipp auf ein gesicht und sieh, was sie behalten.', tr: 'kırmızı halka şu an dışarıda demek. ne sakladığını görmek için yüze dokun.' },
+  'tips.people.2.t': { en: 'groups', de: 'gruppen', tr: 'gruplar' },
+  'tips.people.2.b': { en: 'a group finds a night together: everyone keeps, the group sees what matches.', de: 'eine gruppe findet gemeinsam eine nacht: alle behalten, die gruppe sieht, was passt.', tr: 'grup birlikte gece bulur: herkes saklar, grup neyin uyuştuğunu görür.' },
 
   'tips.yours.1.t': { en: 'with your people', de: 'mit deinen leuten', tr: 'seninkilerle' },
   'tips.yours.1.b': { en: 'the nights your friends kept, and the sparks waiting for your answer.', de: 'die nächte, die deine freunde behalten haben, und sparks, die auf deine antwort warten.', tr: 'arkadaşlarının sakladığı geceler ve cevabını bekleyen sparklar.' },

@@ -8,7 +8,7 @@ import { useCities } from '@/data/cities';
 import { useFollowLocation } from '@/data/here';
 import { isStaff, useRole } from '@/data/staff';
 
-// The main app: five tabs in an edge-to-edge bottom bar. flow · djs · yours · map · account,
+// The main app: five tabs in an edge-to-edge bottom bar. flow · people · yours · map · account,
 // and a sixth, panel, for an admin or a community manager (42_staff.sql).
 export default function TabsLayout() {
   // Every tab follows the city you are in (data/here.ts).
@@ -23,8 +23,8 @@ export default function TabsLayout() {
           <TabTrigger name="flow" href="/flow" asChild>
             <TabItem icon="flow" />
           </TabTrigger>
-          <TabTrigger name="djs" href="/djs" asChild>
-            <TabItem icon="djs" />
+          <TabTrigger name="people" href="/people" asChild>
+            <TabItem icon="people" />
           </TabTrigger>
           <TabTrigger name="yours" href="/yours" asChild>
             <TabItem icon="yours" />

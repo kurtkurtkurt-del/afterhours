@@ -86,15 +86,12 @@ Spark photos (assets/sparks): Unsplash, Unsplash License (free to use, no attrib
 - grill.jpg — Stéfano Girardelli, "man in cap standing near grill" — https://unsplash.com/photos/EhihuECaPYE
 - hike.jpg — Dan Ordze, "group of people hiking on mountain during daytime" — https://unsplash.com/photos/4GoNeNKEB1M
 
-Sample feed photos (assets/feed, the "from past nights" samples on yours): Unsplash, Unsplash License, cropped square at 900×900.
+Photos in assets/feed (the spark kinds and the ticket choice on make; the sample posts on yours that used them went on 11.10.2026): Unsplash, Unsplash License, cropped square at 900×900.
 
-- t1.jpg — Aleksandr Popov — https://unsplash.com/photos/fa5QQ63u5W4
 - t3.jpg — Aleksandr Popov — https://unsplash.com/photos/j4esZ9owgzA
 - f2.jpg — OurWhisky Foundation — https://unsplash.com/photos/SdTKkcdz9mY
 - r2.jpg — Simon Maage — https://unsplash.com/photos/tXiMrX3Gc-g
 - a2.jpg — Abstral Official — https://unsplash.com/photos/hOlmdNbFqtM
-- a3.jpg — ben frost — https://unsplash.com/photos/WWAhC6r9n8U
-- w1.jpg — Chaz McGregor — https://unsplash.com/photos/SYRRofkV9g0
 - e1.jpg — Danny Howe — https://unsplash.com/photos/bn-D2bCvpik
 - h1.jpg — peter bucks — https://unsplash.com/photos/bFhL-ov72RM
 - f3.jpg — Considerate Agency — https://unsplash.com/photos/UrzN-8K1PCE

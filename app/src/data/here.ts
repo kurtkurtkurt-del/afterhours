@@ -139,7 +139,7 @@ export function useHere() {
   );
 }
 
-// The city you are in for the pages that follow you (yours, djs): the located city,
+// The city you are in for the pages that follow you (yours, people, stories): the located city,
 // else the one picked by hand, else nothing. The deck keeps its own pick (useHere).
 export function useLocalCity(): { slug: string | null; name: string | null } {
   const here = useHere();
