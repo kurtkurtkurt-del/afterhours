@@ -13,6 +13,7 @@ import { PeopleResults, PeopleSearch, SuggestedInRow, openPerson } from '@/compo
 import { groupPlan, myGroups, type GroupRow, type Plan, type Round } from '@/data/groups';
 import GroupBadge from '@/components/GroupBadge';
 import SoundCorner from '@/components/SoundCorner';
+import MessagesButton from '@/components/MessagesButton';
 import DeckViewer from '@/components/DeckViewer';
 import { toDeckCard, type DeckCard } from '@/components/CardFace';
 import { TAB_BAR_SPACE, useTabBarSpace } from '@/components/TabBar';
@@ -634,6 +635,7 @@ export default function PeopleScreen() {
           }
         />
       ) : null}
+      <MessagesButton />
       <Tips page="people" tips={[{ title: 'tips.people.1.t', body: 'tips.people.1.b' }, { title: 'tips.people.2.t', body: 'tips.people.2.b', motion: 'tap' }]} bottom={tabSpace + 12} />
     </View>
   );

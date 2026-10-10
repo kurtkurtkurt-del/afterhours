@@ -12,8 +12,9 @@ import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useLang, type Key } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 
-// The panel tab: only there for an admin or a community manager (tabs/_layout.tsx).
-// Numbers on top, then what to make, what to look after, and the admin's own rows.
+// The panel: for an admin or a community manager, opened from the panel mark beside the
+// gear on the account page (11.10.2026; until then a sixth tab). Numbers on top, then
+// what to make, what to look after, and the admin's own rows.
 export default function PanelScreen() {
   const role = useRole();
   const tick = useRefreshOnFocus();
@@ -35,7 +36,7 @@ export default function PanelScreen() {
 
   if (!isStaff(role)) {
     return (
-      <StaffPage title={t('staff.title')} back={false}>
+      <StaffPage title={t('staff.title')}>
         <Quiet text="…" />
       </StaffPage>
     );
@@ -62,7 +63,7 @@ export default function PanelScreen() {
 
   return (
     <View style={styles.fill}>
-    <StaffPage title={t('staff.title')} back={false}>
+    <StaffPage title={t('staff.title')}>
       <Text style={styles.who}>{up(admin ? t('staff.you.admin') : t('staff.you.cm'))}</Text>
       <View style={styles.grid}>
         {numbers.map(([k, n]) => (

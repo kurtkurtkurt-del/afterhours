@@ -77,6 +77,16 @@ export const pages = {
 
   // rooms list (chat icon on yours)
   'rooms.title': { en: 'your rooms.', de: 'deine räume.', tr: 'odaların.' },
+  // messages: the rooms and the group chats in one list (11.10.2026)
+  'messages.title': { en: 'messages.', de: 'nachrichten.', tr: 'mesajlar.' },
+  'messages.a11y': { en: 'messages: your rooms and group chats', de: 'nachrichten: deine räume und gruppenchats', tr: 'mesajlar: odaların ve grup sohbetlerin' },
+  'messages.about': {
+    en: 'your rooms, one for every night you checked in to, open for 48 hours; and your groups\' chats.',
+    de: 'deine räume, einer für jede nacht, in die du eingecheckt hast, 48 stunden offen; und die chats deiner gruppen.',
+    tr: 'odaların, check-in yaptığın her gece için bir tane, 48 saat açık; ve gruplarının sohbetleri.',
+  },
+  'messages.groups': { en: 'groups', de: 'gruppen', tr: 'gruplar' },
+  'messages.quiet': { en: 'nothing said yet', de: 'noch nichts gesagt', tr: 'henüz bir şey söylenmedi' },
   'rooms.a11y': { en: 'your afterhours rooms', de: 'deine afterhours-räume', tr: 'afterhours odaların' },
   'rooms.about': {
     en: 'one room for every night you checked in to. open for 48 hours, then read-only.',

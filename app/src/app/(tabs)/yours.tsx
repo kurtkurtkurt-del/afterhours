@@ -6,13 +6,12 @@ import { StatusBar } from 'expo-status-bar';
 import { router, useFocusEffect } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
-import Icon from '@/components/Icon';
 import PostCard from '@/components/PostCard';
 import { postsFeed, type Post } from '@/data/posts';
 import StoryStrip from '@/components/StoryStrip';
 import SoundCorner from '@/components/SoundCorner';
+import MessagesButton from '@/components/MessagesButton';
 import { TAB_BAR_SPACE, useTabBarSpace } from '@/components/TabBar';
-import { myCards } from '@/data/checkin';
 import { useAuth } from '@/auth/AuthContext';
 import { useTabReset } from '@/hooks/useTabReset';
 import { dayLabel } from '@/data/when';
@@ -41,19 +40,7 @@ export default function YoursScreen() {
   );
   const { session } = useAuth();
   const { t, up } = useLang();
-  // Is a room open? Drives the dot on the chat icon.
-  const [roomOpen, setRoomOpen] = useState(false);
   const uid = session?.user.id;
-  useEffect(() => {
-    if (!uid) return;
-    let live = true;
-    myCards()
-      .then((cards) => live && setRoomOpen(cards.some((c) => !c.frozen)))
-      .catch(() => {});
-    return () => {
-      live = false;
-    };
-  }, [uid]);
   // The feed follows the city you are in.
   const local = useLocalCity();
   const feedCity = local.slug ?? 'munchen';
@@ -92,11 +79,6 @@ export default function YoursScreen() {
       <StatusBar style="light" />
       <View style={styles.band}>
         <Text style={styles.title}>{t('yours.title')}</Text>
-        {/* Afterhours rooms; a red dot when one is open. */}
-        <Pressable onPress={() => router.push('/rooms')} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('rooms.a11y')} style={({ pressed }) => [styles.chat, pressed && styles.pressed]}>
-          <Icon name="chat" size={21} color={colors.paper} />
-          {roomOpen ? <View style={styles.chatDot} /> : null}
-        </Pressable>
         {/* + : a new post */}
         <Pressable onPress={() => router.push('/post/new')} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('posts.a11y')} style={({ pressed }) => [styles.plus, pressed && styles.pressed]}>
           <Svg width={14} height={14} viewBox="0 0 16 16">
@@ -127,6 +109,7 @@ export default function YoursScreen() {
         {pastState === 'loading' ? <Text style={styles.feedEnd}>{up(t('word.moment'))}</Text> : null}
       </ScrollView>
 
+      <MessagesButton />
       <Tips page="yours" tips={[{ title: 'tips.yours.1.t', body: 'tips.yours.1.b' }, { title: 'tips.yours.2.t', body: 'tips.yours.2.b', motion: 'tap' }]} bottom={tabSpace + 12} />
     </View>
   );
@@ -185,9 +168,7 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 44, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
-  chat: { position: 'absolute', top: brand.top - 3, right: brand.left + 84 },
   plus: { position: 'absolute', top: brand.top - 6, right: brand.left + 126, width: 28, height: 28, borderRadius: 14, backgroundColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
-  chatDot: { position: 'absolute', top: -2, right: -3, width: 7, height: 7, borderRadius: 4, backgroundColor: colors.spot },
   body: { paddingTop: brand.top + 56 },
   pressed: { opacity: 0.6 },
   redText: { color: colors.spotText },

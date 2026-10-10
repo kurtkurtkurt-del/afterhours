@@ -8,7 +8,9 @@ import BackButton, { EdgeBack } from '@/components/BackButton';
 import Button from '@/components/Button';
 import SoundCorner from '@/components/SoundCorner';
 import { useAuth } from '@/auth/AuthContext';
-import { myCards, type CardRow } from '@/data/checkin';
+import { type CardRow } from '@/data/checkin';
+import { inbox, roomUnread, type GroupChat } from '@/data/messages';
+import GroupBadge from '@/components/GroupBadge';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
@@ -26,21 +28,28 @@ const ddmm = (iso: string | null) => {
   return `${two(d.getDate())}.${two(d.getMonth() + 1)}`;
 };
 
-// Your afterhours rooms: one per night you checked in to. Open rooms first with the
-// time left in red; frozen rooms below, dimmed. Tapping a row opens the room.
+// Messages (11.10.2026): your afterhours rooms and your group chats in one list. Open
+// rooms first with the time left in red and what is new; then the groups, each with its
+// last line; frozen rooms below, dimmed. Tapping a row opens the room or the chat. The
+// route keeps its old name, /rooms.
 export default function RoomsScreen() {
   const { session } = useAuth();
   const insets = useSafeAreaInsets();
   const { t, tn, up } = useLang();
   const tick = useRefreshOnFocus('cards');
   const [cards, setCards] = useState<CardRow[] | null>(null);
+  const [chats, setChats] = useState<GroupChat[]>([]);
   const uid = session?.user.id;
 
   useEffect(() => {
     if (!uid) return;
     let live = true;
-    myCards()
-      .then((c) => live && setCards(c))
+    inbox()
+      .then((i) => {
+        if (!live) return;
+        setCards(i.rooms);
+        setChats(i.groups);
+      })
       .catch(() => live && setCards([]));
     return () => {
       live = false;
@@ -65,6 +74,7 @@ export default function RoomsScreen() {
             {[ddmm(c.starts_at ?? c.checked_at), upperData(c.venue_name ?? c.city_name), up(tn('rooms.said', c.post_count))].filter(Boolean).join(' · ')}
           </Text>
         </View>
+        {live && roomUnread(c) ? <Text style={styles.count}>{roomUnread(c)}</Text> : null}
         <Text style={live ? styles.time : styles.sealed}>{remaining ? up(t('room.left', remaining)) : up(t('room.sealed'))}</Text>
       </Pressable>
     );
@@ -77,16 +87,16 @@ export default function RoomsScreen() {
       <PullDownScroll
         header={
           <View style={styles.band}>
-            <Text style={styles.title}>{t('rooms.title')}</Text>
+            <Text style={styles.title}>{t('messages.title')}</Text>
             <SoundCorner />
           </View>
         }
         contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 32 }]} showsVerticalScrollIndicator={false}>
-        <Text style={styles.about}>{t('rooms.about')}</Text>
+        <Text style={styles.about}>{t('messages.about')}</Text>
 
         {list === null ? <Text style={styles.note}>{t('rooms.loading')}</Text> : null}
 
-        {list && list.length === 0 ? (
+        {list && list.length === 0 && chats.length === 0 ? (
           <View style={styles.empty}>
             <Text style={styles.emptyTitle}>{t('rooms.empty')}</Text>
             <Text style={styles.note}>{t('rooms.empty.note')}</Text>
@@ -103,6 +113,26 @@ export default function RoomsScreen() {
             <Text style={[styles.section, styles.sectionLive]}>{up(`${t('rooms.open')} · ${open.length}`)}</Text>
             <View style={styles.panel}>
               <View style={styles.panelIn}>{open.map((c) => row(c, true))}</View>
+            </View>
+          </>
+        ) : null}
+
+        {chats.length ? (
+          <>
+            <Text style={styles.section}>{up(`${t('messages.groups')} · ${chats.length}`)}</Text>
+            <View style={styles.panel}>
+              <View style={styles.panelIn}>
+                {chats.map(({ g, last, unread }) => (
+                  <Pressable key={g.id} onPress={() => router.push({ pathname: '/groups/chat', params: { id: g.id } })} accessibilityRole="button" style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
+                    <GroupBadge emoji={g.emoji} color={g.color} cover={g.cover_path} size={34} />
+                    <View style={styles.text}>
+                      <Text style={styles.name} numberOfLines={1}>{g.name.toLowerCase()}</Text>
+                      <Text style={styles.meta} numberOfLines={1}>{last ? `${last.mine ? t('posts.you') : (last.name ?? '').toLowerCase()}: ${last.body}` : t('messages.quiet')}</Text>
+                    </View>
+                    {unread ? <Text style={styles.count}>{unread}</Text> : null}
+                  </Pressable>
+                ))}
+              </View>
             </View>
           </>
         ) : null}
@@ -136,6 +166,7 @@ const styles = StyleSheet.create({
   cta: { marginTop: 20 },
   section: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginTop: 28 },
   sectionLive: { color: colors.spotText },
+  count: { minWidth: 22, height: 22, paddingHorizontal: 6, borderRadius: 11, backgroundColor: colors.spot, color: colors.paper, fontFamily: fonts.semibold, fontSize: 11.5, lineHeight: 22, textAlign: 'center', overflow: 'hidden', marginRight: 8 },
   panel: { borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md, overflow: 'hidden', marginTop: 10 },
   panelIn: { marginBottom: -1 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 14, paddingHorizontal: 14, borderBottomWidth: 1, borderBottomColor: colors.ink3 },

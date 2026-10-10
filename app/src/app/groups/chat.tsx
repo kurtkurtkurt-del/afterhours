@@ -7,6 +7,7 @@ import BackButton from '@/components/BackButton';
 import { useReport } from '@/components/ReportSheet';
 import { Said } from '@/components/StaffPage';
 import { groupGet, groupSay, groupThread, groupUnsay, why, type Line } from '@/data/groups';
+import { markGroupSeen } from '@/data/messages';
 import { useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -32,6 +33,7 @@ export default function GroupChat() {
       groupThread(id, last.current).then((got) => {
         if (!got.length) return;
         last.current = got[got.length - 1].id;
+        markGroupSeen(id, last.current);
         setLines((l) => [...l, ...got.filter((g) => !l.some((x) => x.id === g.id))]);
       }, (e) => setSaid(why(e))),
     [id],

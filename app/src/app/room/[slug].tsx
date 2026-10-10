@@ -7,6 +7,7 @@ import BackButton from '@/components/BackButton';
 import Input from '@/components/Input';
 import { useReport } from '@/components/ReportSheet';
 import { reasonCode, reasons, roomInfo, roomList, roomPost, type RoomInfo, type RoomPost } from '@/data/checkin';
+import { markRoomSeen } from '@/data/messages';
 import { upperData, useLang } from '@/i18n';
 import { fetchNight } from '@/data/deck';
 import { useShelf } from '@/lib/offline';
@@ -50,6 +51,10 @@ export default function RoomScreen() {
     const timer = setInterval(() => setTick((n) => n + 1), 60_000); // refresh the time left every minute
     return () => clearInterval(timer);
   }, []);
+  // What is on screen is what you have seen (the messages button counts the rest).
+  useEffect(() => {
+    if (posts.length) markRoomSeen(slug, posts.length);
+  }, [slug, posts.length]);
 
   const load = useCallback(async () => {
     const i = await roomInfo(slug).catch(() => null);

@@ -24,6 +24,7 @@ import { sparkOf } from '@/content/sparks';
 import { collection as samples } from '@/content/collection';
 import { myCards, toCardData, type CardRow } from '@/data/checkin';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
+import { isStaff, useRole } from '@/data/staff';
 import { useTabReset } from '@/hooks/useTabReset';
 import type { NightCardData } from '@/content/cardsgen';
 import { upperData, useLang } from '@/i18n';
@@ -46,6 +47,7 @@ function distinct(list: (string | null | undefined)[]) {
 export default function AccountScreen() {
   const tabSpace = useTabBarSpace();
   const { session, isAnonymous } = useAuth();
+  const staff = isStaff(useRole());
   const { t, tn, up } = useLang();
   const insets = useSafeAreaInsets();
   const { width, height } = useWindowDimensions();
@@ -138,6 +140,12 @@ export default function AccountScreen() {
           <Pressable onPress={() => router.push('/settings')} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('account.settings')} style={({ pressed }) => [styles.gear, pressed && styles.pressed]}>
             <Icon name="settings" size={20} color={colors.paper} />
           </Pressable>
+          {/* The staff panel, beside the gear, for an admin or a community manager. */}
+          {staff ? (
+            <Pressable onPress={() => router.push('/panel')} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('staff.title')} style={({ pressed }) => [styles.panel, pressed && styles.pressed]}>
+              <Icon name="panel" size={20} color={colors.paper} />
+            </Pressable>
+          ) : null}
           <SoundCorner />
 
           {/* The sleeve: your photo is the cover (tap to change), the record behind it. */}
@@ -351,6 +359,7 @@ const styles = StyleSheet.create({
   emptyHint: { fontFamily: fonts.regular, fontSize: 13, color: colors.meta, textDecorationLine: 'underline' },
   title: { position: 'absolute', top: brand.top, left: brand.left, fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },
   gear: { position: 'absolute', top: brand.top - 3, right: brand.left + 84 },
+  panel: { position: 'absolute', top: brand.top - 3, right: brand.left + 128 },
   button: { alignSelf: 'stretch', marginTop: 20, height: 54, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.spot, borderRadius: radius.md },
   buttonText: { fontFamily: fonts.medium, fontSize: 17, letterSpacing: -0.3, color: colors.ink },
   deckHead: { paddingTop: 30 },
