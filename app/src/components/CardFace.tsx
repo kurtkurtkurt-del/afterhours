@@ -139,7 +139,8 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
           <Text style={styles.title} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.7}>
             {card.title.toLowerCase()}
           </Text>
-          {card.venue ? <Text style={styles.venue} numberOfLines={1}>{card.venue.toLowerCase()}</Text> : null}
+          {/* the venue, or the city when the night has none: the block keeps its second line */}
+          <Text style={styles.venue} numberOfLines={1}>{(card.venue ?? card.city).toLowerCase()}</Text>
           {card.via ? <Chain via={card.via} /> : null}
           {card.note ? <Text style={styles.note} numberOfLines={2}>{card.note}</Text> : null}
           {card.friends.length > 0 ? (
@@ -269,7 +270,8 @@ const styles = StyleSheet.create({
   fill: { width: '100%', height: '100%' },
   posterBox: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.ink2 },
   caption: { position: 'absolute', left: 8, right: 8, flexDirection: 'row', alignItems: 'stretch', borderRadius: radius.lg, overflow: 'hidden' },
-  block: { flex: 1, backgroundColor: colors.ink, paddingHorizontal: 14, paddingTop: 12, paddingBottom: 11, gap: 2 },
+  // never shorter than the strips' rotated words need (12.10.2026: a title-only block shrank to a bar)
+  block: { flex: 1, minHeight: 124, backgroundColor: colors.ink, paddingHorizontal: 14, paddingTop: 14, paddingBottom: 13, gap: 2, justifyContent: 'center' },
   // the title grew a size when the mono lines left the block (11.10.2026)
   title: { fontFamily: fonts.logo, fontSize: 36, lineHeight: 34, letterSpacing: -0.8, color: colors.spotText, marginBottom: 5 },
   venue: { fontFamily: fonts.medium, fontSize: 14, letterSpacing: -0.2, color: colors.paper },
