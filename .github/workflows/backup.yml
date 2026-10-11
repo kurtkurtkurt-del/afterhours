@@ -1,10 +1,20 @@
-# afterhours — a copy of the content every night, kept 90 days.
+# afterhours — a copy of the content every night, kept 90 days; and, since
+# 12.10.2026, a copy of EVERYTHING in the public schema (profiles, friendships,
+# cards, groups: the personal data), encrypted, kept 30 days.
 #
 # tools/backup.mjs reads with the public key in config.js, as the site does:
 # the nights, venues, djs and comments everyone can see. Each run is stored
 # as a workflow artifact (Actions → backup → the run → Artifacts) and turned
 # back into SQL with `node tools/restore.mjs <file>`. Supabase keeps its own
 # daily backup on paid plans; this one is ours and does not depend on the plan.
+#
+# The second job needs two secrets (Settings → Secrets and variables → Actions):
+#   SUPABASE_DB_URL     Supabase → Settings → Database → connection string, session mode
+#   BACKUP_PASSPHRASE   any long sentence; the dump is useless without it
+# Without them the job says so and ends green. Restoring: download the artifact,
+# `gpg --decrypt afterhours-data-<run>.sql.gpg > data.sql`, then psql it into a
+# fresh project whose structure is in (setup-1, setup-2) — never into the live one
+# without a look first.
 
 name: backup
 
@@ -32,3 +42,47 @@ jobs:
           name: afterhours-${{ github.run_id }}
           path: backend/backup/afterhours-*.json
           retention-days: 90
+
+  personal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Are the secrets there?
+        id: secrets
+        env:
+          DB: ${{ secrets.SUPABASE_DB_URL }}
+          PASS: ${{ secrets.BACKUP_PASSPHRASE }}
+        run: |
+          if [ -z "$DB" ] || [ -z "$PASS" ]; then
+            echo "SUPABASE_DB_URL or BACKUP_PASSPHRASE is not set; no personal-data backup tonight."
+            echo "ready=no" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=yes" >> "$GITHUB_OUTPUT"
+          fi
+
+      # pg_dump must be at least the server's version (Supabase runs 17).
+      - name: Postgres 17 client
+        if: steps.secrets.outputs.ready == 'yes'
+        run: |
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl -fsSL -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq postgresql-client-17
+
+      - name: Dump the public schema's data, encrypted
+        if: steps.secrets.outputs.ready == 'yes'
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+        run: |
+          /usr/lib/postgresql/17/bin/pg_dump "$SUPABASE_DB_URL" --data-only --schema=public --no-owner --no-privileges \
+            | gpg --batch --yes --symmetric --cipher-algo AES256 --passphrase "$BACKUP_PASSPHRASE" \
+            -o "afterhours-data-${{ github.run_id }}.sql.gpg"
+          ls -la afterhours-data-*.sql.gpg
+
+      - uses: actions/upload-artifact@v4
+        if: steps.secrets.outputs.ready == 'yes'
+        with:
+          name: afterhours-data-${{ github.run_id }}
+          path: afterhours-data-*.sql.gpg
+          retention-days: 30

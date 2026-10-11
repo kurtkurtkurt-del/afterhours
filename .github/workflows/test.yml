@@ -42,6 +42,35 @@ jobs:
         working-directory: backend
         run: npm test
 
+  # The app (Expo): types, lint and the unit tests. Until 12.10.2026 only the
+  # backend was checked here, and the app only when someone remembered.
+  app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install
+        working-directory: app
+        run: npm ci
+
+      - name: Types
+        working-directory: app
+        run: npx tsc --noEmit
+
+      - name: Lint
+        working-directory: app
+        run: npx expo lint
+
+      - name: Unit tests
+        working-directory: app
+        run: npm test -- --ci
+
   # The generated SQL is committed, so it can drift from the files it was
   # built from. Rebuilding it and asking git whether anything moved is the
   # cheapest way to catch that.

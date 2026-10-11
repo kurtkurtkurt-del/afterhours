@@ -1,3 +1,6 @@
 .DS_Store
 backend/node_modules/
 backend/backup/
+
+# the gate's proof (backend/tools/gate.mjs), per machine
+.qa/

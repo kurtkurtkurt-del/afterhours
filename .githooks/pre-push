@@ -1,0 +1,35 @@
+#!/bin/sh
+# afterhours — a push to main needs a passing gate proof for the exact tree it pushes.
+# Installed by `npm install` in backend/ (postinstall → git config core.hooksPath).
+# A push of documents alone (.md, .claude/, prototypes/) is let through: prose cannot
+# break code. Everything else: commit → `npm run gate` (in backend/) → push.
+# Bypassing this with --no-verify is a lie to yourself; the CI runs the same checks.
+
+while read local_ref local_sha remote_ref remote_sha; do
+  case "$remote_ref" in
+    refs/heads/main) ;;
+    *) continue ;;
+  esac
+  [ "$local_sha" = "0000000000000000000000000000000000000000" ] && continue
+
+  # docs only?
+  if [ "$remote_sha" != "0000000000000000000000000000000000000000" ] && git cat-file -e "$remote_sha" 2>/dev/null; then
+    changed=$(git diff --name-only "$remote_sha" "$local_sha")
+  else
+    changed=$(git diff-tree --no-commit-id --name-only -r "$local_sha")
+  fi
+  code=$(printf '%s\n' "$changed" | grep -vE '(\.md$|^\.claude/|^prototypes/|^\.claude/prompts/)' | grep -v '^$' || true)
+  [ -z "$code" ] && continue
+
+  tree=$(git rev-parse "$local_sha^{tree}")
+  if ! node -e "
+    const fs = require('fs');
+    let p; try { p = JSON.parse(fs.readFileSync('.qa/gate-proof.json', 'utf8')); } catch (e) { process.exit(2); }
+    process.exit(p.ok && !p.dirty && p.tree === '$tree' ? 0 : 1);
+  "; then
+    echo "REFUSED: no passing gate proof for this tree ($tree)." >&2
+    echo "         commit everything, then in backend/: npm run gate   — then push again." >&2
+    exit 1
+  fi
+done
+exit 0
