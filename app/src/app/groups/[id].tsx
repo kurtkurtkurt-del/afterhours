@@ -171,7 +171,7 @@ export default function GroupScreen() {
       {tab === 'live' ? <Live id={id} me={group?.me ?? ''} top={headH} nameOf={nameOf} onChange={() => groupMatches(id).then(setMatches, () => {})} /> : null}
 
       {tab !== 'swipe' ? <BackButton /> : null}
-      <Tips page="group" tips={[{ title: 'tips.group.1.t', body: 'tips.group.1.b', motion: 'swipe' }, { title: 'tips.group.2.t', body: 'tips.group.2.b', motion: 'tap' }]} bottom={insets.bottom + ACTIONS + 10} />
+      <Tips page="group" tip={{ title: 'tips.group.1.t', body: 'tips.group.1.b', motion: 'swipe' }} bottom={insets.bottom + ACTIONS + 10} />
       {reporting.sheet}
     </View>
   );

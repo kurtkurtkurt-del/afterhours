@@ -110,7 +110,7 @@ export default function YoursScreen() {
       </ScrollView>
 
       <MessagesButton />
-      <Tips page="yours" tips={[{ title: 'tips.yours.1.t', body: 'tips.yours.1.b' }, { title: 'tips.yours.2.t', body: 'tips.yours.2.b', motion: 'tap' }]} bottom={tabSpace + 12} />
+      <Tips page="yours" tip={{ title: 'tips.yours.1.t', body: 'tips.yours.1.b', motion: 'tap' }} bottom={tabSpace + 12} />
     </View>
   );
 }

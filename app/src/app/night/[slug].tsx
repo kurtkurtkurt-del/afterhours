@@ -375,7 +375,7 @@ export default function NightScreen() {
           <Text style={styles.mono}>{up(missing ? t('night.gone') : note ? words(note) : t('night.loading'))}</Text>
         </View>
       )}
-      <Tips page="night" tips={[{ title: 'tips.night.1.t', body: 'tips.night.1.b' }, { title: 'tips.night.2.t', body: 'tips.night.2.b' }]} bottom={insets.bottom + 84} />
+      <Tips page="night" tip={{ title: 'tips.night.1.t', body: 'tips.night.1.b', motion: 'tap' }} bottom={insets.bottom + 84} />
       {reporting.sheet}
 
       {/* Back from the ticket page: one question, once. */}

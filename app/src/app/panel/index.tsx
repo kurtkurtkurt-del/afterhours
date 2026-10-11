@@ -108,7 +108,7 @@ export default function PanelScreen() {
         </>
       ) : null}
     </StaffPage>
-      <Tips page="panel" tips={[{ title: 'tips.panel.1.t', body: 'tips.panel.1.b' }, { title: 'tips.panel.2.t', body: 'tips.panel.2.b', motion: 'tap' }]} bottom={tabSpace + 12} />
+      <Tips page="panel" tip={{ title: 'tips.panel.1.t', body: 'tips.panel.1.b', motion: 'tap' }} bottom={tabSpace + 12} />
     </View>
   );
 }

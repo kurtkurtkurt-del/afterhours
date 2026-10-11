@@ -323,7 +323,7 @@ export default function FlowScreen() {
         }}
       />
       <WhenPicker open={sheet === 'when'} rows={result.key === key && result.rows ? result.rows : []} selected={when} onSelect={pickWhen} onClose={() => setSheet(null)} />
-      <Tips page="flow" tips={[{ title: 'tips.flow.1.t', body: 'tips.flow.1.b', motion: 'swipe' }, { title: 'tips.flow.2.t', body: 'tips.flow.2.b', motion: 'tap' }]} bottom={tabSpace + 92} />
+      <Tips page="flow" tip={{ title: 'tips.flow.1.t', body: 'tips.flow.1.b', motion: 'swipe' }} bottom={tabSpace + 92} />
     </View>
   );
 }

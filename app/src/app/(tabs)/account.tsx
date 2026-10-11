@@ -324,7 +324,7 @@ export default function AccountScreen() {
           ) : null}
         </Pressable>
       </Modal>
-      <Tips page="account" tips={[{ title: 'tips.account.1.t', body: 'tips.account.1.b', motion: 'tap' }, { title: 'tips.account.2.t', body: 'tips.account.2.b' }]} bottom={tabSpace + 12} />
+      <Tips page="account" tip={{ title: 'tips.account.1.t', body: 'tips.account.1.b', motion: 'tap' }} bottom={tabSpace + 12} />
     </View>
   );
 }

@@ -76,9 +76,7 @@ export const groups = {
   'groups.join.account': { en: 'groups need an account', de: 'gruppen brauchen ein konto', tr: 'gruplar için hesap gerekir' },
 
   'tips.group.1.t': { en: 'swipe together', de: 'wischt zusammen', tr: 'birlikte kaydır' },
-  'tips.group.1.b': { en: 'when everyone keeps a night it is a match; when most do, it shows too.', de: 'behalten alle eine nacht, ist es ein match; behalten die meisten, erscheint sie auch.', tr: 'herkes saklarsa eşleşme olur; çoğu saklarsa o da görünür.' },
-  'tips.group.2.t': { en: 'or all at once', de: 'oder alle zusammen', tr: 'ya da hep birlikte' },
-  'tips.group.2.b': { en: 'live: the same card for everyone here, it moves on when all have answered.', de: 'live: dieselbe karte für alle hier, weiter, wenn alle geantwortet haben.', tr: 'canlı: buradaki herkese aynı kart, herkes cevaplayınca sıradakine geçer.' },
+  'tips.group.1.b': { en: 'when everyone keeps a night it is a match; when most do, it shows too. live gives everyone here the same card.', de: 'behalten alle eine nacht, ist es ein match; behalten die meisten, erscheint sie auch. live gibt allen hier dieselbe karte.', tr: 'herkes saklarsa eşleşme olur; çoğu saklarsa o da görünür. canlı, buradaki herkese aynı kartı verir.' },
 
   // 46_group_plans.sql
   'groups.tab.plan': { en: 'plan', de: 'plan', tr: 'plan' },

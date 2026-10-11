@@ -647,7 +647,7 @@ export default function PeopleScreen() {
         />
       ) : null}
       <MessagesButton />
-      <Tips page="people" tips={[{ title: 'tips.people.1.t', body: 'tips.people.1.b' }, { title: 'tips.people.2.t', body: 'tips.people.2.b', motion: 'tap' }]} bottom={tabSpace + 12} />
+      <Tips page="people" tip={{ title: 'tips.people.1.t', body: 'tips.people.1.b', motion: 'tap' }} bottom={tabSpace + 12} />
     </View>
   );
 }

@@ -6,8 +6,8 @@ import { Image } from 'expo-image';
 import { useLang, type Key } from '@/i18n';
 import { colors, fonts, radius, tint } from '@/theme/tokens';
 
-// First visit to a page: a card slides up from the bottom with at most two short
-// tips, one after the other, then never again on that page. Settings → about →
+// First visit to a page: one short tip over the page (since 12.10.2026 a single one;
+// two pages were too many), then never again on that page. Settings → about →
 // "show the tips again" clears them all (resetTips).
 // motion: swipe (a small card going right, then left), tap (a ring that pulses).
 
@@ -44,41 +44,33 @@ function BigTitle({ text }: { text: string }) {
 }
 
 // bottom is kept for the callers; the full-screen demo (1D) does not need it.
-export default function Tips({ page, tips }: { page: Page; tips: Tip[]; bottom?: number }) {
-  const { t, up } = useLang();
-  const [step, setStep] = useState<number | null>(null);
+export default function Tips({ page, tip }: { page: Page; tip: Tip; bottom?: number }) {
+  const { t } = useLang();
+  const [on, setOn] = useState(false);
   // A short wait, so the page is there before the demo comes.
   useEffect(() => {
     if (seen(page)) return;
-    const id = setTimeout(() => setStep(0), 900);
+    const id = setTimeout(() => setOn(true), 900);
     return () => clearTimeout(id);
   }, [page]);
-  if (step === null || step >= tips.length) return null;
-  const tip = tips[step];
-  const last = step === tips.length - 1;
+  if (!on) return null;
   const close = () => {
     try {
       Storage.setItemSync(key(page), '1');
     } catch {}
-    setStep(tips.length);
+    setOn(false);
   };
   return (
     <Animated.View entering={FadeIn.duration(260)} exiting={FadeOut.duration(220)} style={styles.screen}>
-      <Animated.View key={step} entering={SlideInDown.duration(380).easing(Easing.out(Easing.cubic))} style={styles.middle}>
+      <Animated.View entering={SlideInDown.duration(380).easing(Easing.out(Easing.cubic))} style={styles.middle}>
         <Motion kind={tip.motion ?? 'tap'} />
         <BigTitle text={t(tip.title)} />
         <Text style={styles.body}>{t(tip.body)}</Text>
       </Animated.View>
       <View style={styles.foot}>
-        <View style={styles.dots}>{tips.length > 1 ? tips.map((_, i) => <View key={i} style={[styles.dot, i === step && styles.dotOn]} />) : null}</View>
-        <Pressable onPress={last ? close : () => setStep(step + 1)} accessibilityRole="button" style={({ pressed }) => [styles.next, pressed && styles.pressed]}>
-          <Text style={styles.nextText}>{last ? t('tips.done') : t('tips.next')}</Text>
+        <Pressable onPress={close} accessibilityRole="button" style={({ pressed }) => [styles.next, pressed && styles.pressed]}>
+          <Text style={styles.nextText}>{t('tips.done')}</Text>
         </Pressable>
-        {!last ? (
-          <Pressable onPress={close} hitSlop={10} accessibilityRole="button">
-            <Text style={styles.skip}>{up(t('tips.skip'))}</Text>
-          </Pressable>
-        ) : null}
       </View>
     </Animated.View>
   );
@@ -123,12 +115,8 @@ const styles = StyleSheet.create({
   bigRed: { color: colors.spotText },
   body: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 21, color: colors.mute, textAlign: 'center', marginTop: 14, maxWidth: 300 },
   foot: { position: 'absolute', left: 28, right: 28, bottom: 56, alignItems: 'center', gap: 16 },
-  dots: { flexDirection: 'row', gap: 6, height: 6 },
-  dot: { width: 6, height: 6, borderRadius: 3, backgroundColor: 'rgba(243,241,236,0.25)' },
-  dotOn: { backgroundColor: colors.spot },
   next: { alignSelf: 'stretch', height: 50, borderRadius: radius.pill, backgroundColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   nextText: { fontFamily: fonts.medium, fontSize: 16, color: colors.ink },
-  skip: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
   pressed: { opacity: 0.6 },
   motion: { width: 150, height: 200, alignItems: 'center', justifyContent: 'center' },
   mini: { width: 120, height: 170, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink3, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 18, shadowOffset: { width: 0, height: 10 }, elevation: 10 },

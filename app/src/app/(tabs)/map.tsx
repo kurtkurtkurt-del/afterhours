@@ -439,7 +439,7 @@ export default function MapScreen() {
         }}
         onClose={() => setSheet(null)}
       />
-      <Tips page="map" tips={[{ title: 'tips.map.1.t', body: 'tips.map.1.b', motion: 'tap' }]} bottom={tabSpace + 12} />
+      <Tips page="map" tip={{ title: 'tips.map.1.t', body: 'tips.map.1.b', motion: 'tap' }} bottom={tabSpace + 12} />
     </View>
   );
 }
