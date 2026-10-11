@@ -40,7 +40,7 @@ def slugify(s):
 
 # ---------------------------------------------------- 1 · every reference
 
-SKIP_DIRS = {".git", "backend", "node_modules", "user-site"}  # user-site: another repository's content
+SKIP_DIRS = {"app", ".git", "backend", "node_modules", "user-site"}  # user-site: another repository's content
 pages = [p for p in ROOT.rglob("*.html")
          if not (set(p.relative_to(ROOT).parts) & SKIP_DIRS)]
 

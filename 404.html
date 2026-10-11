@@ -142,5 +142,13 @@
       });
     })();
   </script>
+  <!-- the web app pill: 404.html answers at any depth, so it is loaded from the root -->
+  <script>
+    (function () {
+      var s = document.createElement("script");
+      s.src = (location.pathname.indexOf("/afterhours/") === 0 ? "/afterhours/" : "/") + "webapp.js?v=197";
+      document.body.appendChild(s);
+    })();
+  </script>
 </body>
 </html>
