@@ -6,21 +6,25 @@ import { Asset } from 'expo-asset';
 import { File } from 'expo-file-system';
 import { WebView } from 'react-native-webview';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useT } from '@/i18n';
+import { useLang } from '@/i18n';
 import { useAuth } from '@/auth/AuthContext';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // Intro film: "explore your city" plays it, then the sign-up screen follows. Someone
 // signed in (settings → show the intro again) goes back where they came from instead.
-// Made in Claude Design (assets/film/film.html, single file, plays offline).
+// Second cut, 12.10.2026: written by hand in tools/film/film.html and built into
+// assets/film/film.html by `npm run film` (one file: the app's photos and type inline,
+// plays offline, about 38 s). The app writes the language in before loading it.
 // The film signals the end itself via postMessage('end'); if it never does,
 // the timeout moves on. "Skip" is always available.
 const FILM = require('../../assets/film/film.html');
-const LONGEST = 90_000; // hard upper bound, whatever the film length
+const LONGEST = 60_000; // hard upper bound, whatever the film length
 
 export default function FilmScreen() {
-  const t = useT();
+  const { t, lang } = useLang();
+  // the language the film is loaded with (read once: the effect runs on mount only)
+  const langAtStart = useRef(lang);
   const insets = useSafeAreaInsets();
   const [html, setHtml] = useState<string | null>(null);
   const left = useRef(false);
@@ -47,7 +51,7 @@ export default function FilmScreen() {
         const asset = Asset.fromModule(FILM);
         await asset.downloadAsync();
         const text = await new File(asset.localUri ?? asset.uri).text();
-        if (live) setHtml(text);
+        if (live) setHtml(text.replace('__LANG__', langAtStart.current));
       } catch {
         if (live) next(); // the film failed to load: do not wait
       }

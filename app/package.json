@@ -52,7 +52,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint",
-    "test": "jest"
+    "test": "jest",
+    "film": "node tools/build-film.mjs"
   },
   "private": true,
   "devDependencies": {
