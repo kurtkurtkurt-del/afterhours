@@ -1,11 +1,11 @@
--- afterhours — the words of a push, without the member's own (58)
+-- afterhours — the words of a push, without those of the member (58)
 --
--- Until here six kinds of push carried the member's text to the lock screen: a room
--- line, a reply, a group message, a post, a liked post's words, a comment. Someone's
--- words showed under afterhours' name on a phone lying on a table. The decision
+-- Until here six kinds of push carried the text of a member to the lock screen: a room
+-- line, a reply, a group message, a post, the words of a liked post, a comment. The
+-- words of someone showed under the name afterhours on a phone lying on a table. The decision
 -- (11.10.2026): a push says a fixed sentence and a name, never the content. The
 -- rows below say so, and push_text drops `text` from its data whatever the caller
--- passes, so an old trigger cannot leak it. The function is 48's, otherwise unchanged;
+-- passes, so an old trigger cannot leak it. The function is that of 48, otherwise unchanged;
 -- the triggers still pass the text, which goes nowhere now.
 
 create or replace function public.push_text(p_kind text, p_lang text, p_data jsonb)
@@ -106,7 +106,7 @@ begin
   ) as x(kind, lang, title, body)
   where x.kind = p_kind and x.lang = coalesce(nullif(p_lang, ''), 'en');
 
-  -- A member's words never reach a lock screen (Ahmet's decision, 11.10.2026): what the
+  -- The words of a member never reach a lock screen (the decision of Ahmet, 11.10.2026): what the
   -- triggers still pass as text is dropped here, whatever the caller.
   for pair in select * from jsonb_each_text(coalesce(p_data, '{}') - 'text') loop
     title := replace(title, '{' || pair.key || '}', coalesce(pair.value, ''));

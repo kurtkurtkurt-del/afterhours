@@ -16,7 +16,7 @@
 --                                account used to keep reading; now it reads nothing.
 --   reachable(viewer, other)     no block either way, the other not banned.
 --   visible_to(viewer, other)    reachable, and a friend or discoverable (the one
---                                sieve 52's card_visible already was, with the viewer
+--                                sieve card_visible of 52 already was, with the viewer
 --                                named so a wave can ask it for someone else).
 --   card_visible(other)          = visible_to(auth.uid(), other), kept for every caller.
 --   spark_waves                  stops at a block and at a ban (reachable), as before

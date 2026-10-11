@@ -6,10 +6,10 @@
 --   dm_send(thread, body) a line; dm_unsay(id) takes your own back
 --   dm_thread(thread, after)  the lines after a given id (0: the last 80), oldest first
 --   dm_list()             your threads, newest first: the other person, the last line
---   push 'dm'             the sender's name and a fixed sentence (58), switch notify_dms
+--   push dm               the name of the sender and a fixed sentence (58), switch notify_dms
 -- Friends only, and only while neither has blocked the other and neither is banned
 -- (reachable, 57). The tables are closed; these calls are the only way in. Who has
--- seen what is the phone's business (data/messages.ts), as for rooms and groups.
+-- seen what is the business of the phone (data/messages.ts), as for rooms and groups.
 
 create table if not exists public.dm_threads (
   id          uuid primary key default gen_random_uuid(),

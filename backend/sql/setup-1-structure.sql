@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-11 08:22   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-11 08:28   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -12611,7 +12611,7 @@ end $$;
 --                                account used to keep reading; now it reads nothing.
 --   reachable(viewer, other)     no block either way, the other not banned.
 --   visible_to(viewer, other)    reachable, and a friend or discoverable (the one
---                                sieve 52's card_visible already was, with the viewer
+--                                sieve card_visible of 52 already was, with the viewer
 --                                named so a wave can ask it for someone else).
 --   card_visible(other)          = visible_to(auth.uid(), other), kept for every caller.
 --   spark_waves                  stops at a block and at a ban (reachable), as before
@@ -13011,14 +13011,14 @@ end $$;
 --  A PUSH SAYS A SENTENCE AND A NAME, NEVER THE WORDS   (58_push_words.sql)
 -- ============================================================
 
--- afterhours — the words of a push, without the member's own (58)
+-- afterhours — the words of a push, without those of the member (58)
 --
--- Until here six kinds of push carried the member's text to the lock screen: a room
--- line, a reply, a group message, a post, a liked post's words, a comment. Someone's
--- words showed under afterhours' name on a phone lying on a table. The decision
+-- Until here six kinds of push carried the text of a member to the lock screen: a room
+-- line, a reply, a group message, a post, the words of a liked post, a comment. The
+-- words of someone showed under the name afterhours on a phone lying on a table. The decision
 -- (11.10.2026): a push says a fixed sentence and a name, never the content. The
 -- rows below say so, and push_text drops `text` from its data whatever the caller
--- passes, so an old trigger cannot leak it. The function is 48's, otherwise unchanged;
+-- passes, so an old trigger cannot leak it. The function is that of 48, otherwise unchanged;
 -- the triggers still pass the text, which goes nowhere now.
 
 create or replace function public.push_text(p_kind text, p_lang text, p_data jsonb)
@@ -13119,7 +13119,7 @@ begin
   ) as x(kind, lang, title, body)
   where x.kind = p_kind and x.lang = coalesce(nullif(p_lang, ''), 'en');
 
-  -- A member's words never reach a lock screen (Ahmet's decision, 11.10.2026): what the
+  -- The words of a member never reach a lock screen (the decision of Ahmet, 11.10.2026): what the
   -- triggers still pass as text is dropped here, whatever the caller.
   for pair in select * from jsonb_each_text(coalesce(p_data, '{}') - 'text') loop
     title := replace(title, '{' || pair.key || '}', coalesce(pair.value, ''));
@@ -13148,10 +13148,10 @@ end $$;
 --   dm_send(thread, body) a line; dm_unsay(id) takes your own back
 --   dm_thread(thread, after)  the lines after a given id (0: the last 80), oldest first
 --   dm_list()             your threads, newest first: the other person, the last line
---   push 'dm'             the sender's name and a fixed sentence (58), switch notify_dms
+--   push dm               the name of the sender and a fixed sentence (58), switch notify_dms
 -- Friends only, and only while neither has blocked the other and neither is banned
 -- (reachable, 57). The tables are closed; these calls are the only way in. Who has
--- seen what is the phone's business (data/messages.ts), as for rooms and groups.
+-- seen what is the business of the phone (data/messages.ts), as for rooms and groups.
 
 create table if not exists public.dm_threads (
   id          uuid primary key default gen_random_uuid(),
