@@ -338,7 +338,8 @@ export const SPARKS: Spark[] = [
 export const sparkOf = (kind: string) => SPARKS.find((s) => s.kind === kind) ?? SPARKS[0];
 
 // A city's own version of a spark: the same kind and photo, its text and places
-// rewritten with real spots there. Munich first; other cities keep the general text.
+// rewritten with real spots there. Munich first, Berlin since 12.10.2026 (every title names
+// its place); other cities keep the general text.
 type Local = Partial<Pick<Spark, 'title' | 'line' | 'places'>>;
 const LOCAL: Record<string, Partial<Record<SparkKind, Local>>> = {
   munchen: {
@@ -361,6 +362,40 @@ const LOCAL: Record<string, Partial<Record<SparkKind, Local>>> = {
     picnic: { places: ['spark.munchen.place.englischerGarten', 'spark.munchen.place.flaucher'] },
     stars: { places: ['spark.munchen.place.hbf', 'spark.munchen.place.kochel'] },
     jazz: { places: ['spark.munchen.place.unterfahrt'] },
+  },
+  // Berlin (12.10.2026): all thirty-one, each title naming the place — hike the grunewald, not a hike
+  berlin: {
+    derby: { title: 'spark.berlin.derby.title', line: 'spark.berlin.derby.line', places: ['spark.place.mine', 'spark.berlin.place.boxhagener'] },
+    grill: { title: 'spark.berlin.grill.title', line: 'spark.berlin.grill.line', places: ['spark.berlin.place.tempelhoferGrill', 'spark.berlin.place.volksparkFriedrichshain'] },
+    hike: { title: 'spark.berlin.hike.title', line: 'spark.berlin.hike.line', places: ['spark.berlin.place.sGrunewald', 'spark.berlin.place.teufelsberg'] },
+    sunrise: { title: 'spark.berlin.sunrise.title', line: 'spark.berlin.sunrise.line', places: ['spark.berlin.place.tempelhoferFeld', 'spark.berlin.place.oberbaumbruecke'] },
+    breakfast: { title: 'spark.berlin.breakfast.title', line: 'spark.berlin.breakfast.line', places: ['spark.berlin.place.markthalleNeun', 'spark.place.mine'] },
+    rooftop: { title: 'spark.berlin.rooftop.title', line: 'spark.berlin.rooftop.line', places: ['spark.berlin.place.klunkerkranich', 'spark.berlin.place.deck5'] },
+    swim: { title: 'spark.berlin.swim.title', line: 'spark.berlin.swim.line', places: ['spark.berlin.place.schlachtensee', 'spark.berlin.place.ploetzensee'] },
+    quiz: { title: 'spark.berlin.quiz.title', line: 'spark.berlin.quiz.line', places: ['spark.berlin.place.oranienstrasse', 'spark.berlin.place.simonDach'] },
+    newplace: { title: 'spark.berlin.newplace.title', line: 'spark.berlin.newplace.line', places: ['spark.berlin.place.weserstrasse', 'spark.berlin.place.wedding'] },
+    camera: { title: 'spark.berlin.camera.title', line: 'spark.berlin.camera.line', places: ['spark.berlin.place.kotti', 'spark.place.mine'] },
+    festival: { title: 'spark.berlin.festival.title', line: 'spark.berlin.festival.line', places: ['spark.berlin.place.karneval', 'spark.berlin.place.fete', 'spark.berlin.place.lights'] },
+    karaoke: { title: 'spark.berlin.karaoke.title', line: 'spark.berlin.karaoke.line', places: ['spark.berlin.place.bearpit', 'spark.berlin.place.monsterRonsons'] },
+    vinyl: { title: 'spark.berlin.vinyl.title', line: 'spark.berlin.vinyl.line', places: ['spark.berlin.place.hardWax', 'spark.berlin.place.spaceHall'] },
+    openair: { title: 'spark.berlin.openair.title', line: 'spark.berlin.openair.line', places: ['spark.berlin.place.rummelsburg', 'spark.berlin.place.aboutBlank'] },
+    bike: { title: 'spark.berlin.bike.title', line: 'spark.berlin.bike.line', places: ['spark.berlin.place.bornholmer', 'spark.berlin.place.mauerpark'] },
+    cinema: { title: 'spark.berlin.cinema.title', line: 'spark.berlin.cinema.line', places: ['spark.berlin.place.kinoInternational', 'spark.berlin.place.freiluftkino'] },
+    boardgames: { title: 'spark.berlin.boardgames.title', line: 'spark.berlin.boardgames.line', places: ['spark.berlin.place.spielwiese', 'spark.place.mine'] },
+    flea: { title: 'spark.berlin.flea.title', line: 'spark.berlin.flea.line', places: ['spark.berlin.place.mauerparkFlea', 'spark.berlin.place.boxhagenerFlea'] },
+    skate: { title: 'spark.berlin.skate.title', line: 'spark.berlin.skate.line', places: ['spark.berlin.place.tempelhoferFeld', 'spark.berlin.place.skatehalle'] },
+    cook: { title: 'spark.berlin.cook.title', line: 'spark.berlin.cook.line', places: ['spark.berlin.place.markthalleNeun', 'spark.place.mine'] },
+    sauna: { title: 'spark.berlin.sauna.title', line: 'spark.berlin.sauna.line', places: ['spark.berlin.place.vabali', 'spark.berlin.place.stadtbadNeukoelln'] },
+    openmic: { title: 'spark.berlin.openmic.title', line: 'spark.berlin.openmic.line', places: ['spark.berlin.place.weserstrasse', 'spark.berlin.place.oranienstrasse'] },
+    pingpong: { title: 'spark.berlin.pingpong.title', line: 'spark.berlin.pingpong.line', places: ['spark.berlin.place.drPong', 'spark.place.parkTable'] },
+    bouldering: { title: 'spark.berlin.bouldering.title', line: 'spark.berlin.bouldering.line', places: ['spark.berlin.place.boulderklub', 'spark.berlin.place.bertaBlock'] },
+    picnic: { title: 'spark.berlin.picnic.title', line: 'spark.berlin.picnic.line', places: ['spark.berlin.place.tiergarten', 'spark.berlin.place.treptowerPark'] },
+    crawl: { title: 'spark.berlin.crawl.title', line: 'spark.berlin.crawl.line', places: ['spark.berlin.place.weserstrasse', 'spark.berlin.place.simonDach'] },
+    stars: { title: 'spark.berlin.stars.title', line: 'spark.berlin.stars.line', places: ['spark.berlin.place.archenhold', 'spark.berlin.place.teufelsberg'] },
+    football: { title: 'spark.berlin.football.title', line: 'spark.berlin.football.line', places: ['spark.berlin.place.tempelhoferFeld', 'spark.berlin.place.hasenheide'] },
+    tram: { title: 'spark.berlin.tram.title', line: 'spark.berlin.tram.line', places: ['spark.berlin.place.warschauer', 'spark.berlin.place.eberswalder'] },
+    jazz: { title: 'spark.berlin.jazz.title', line: 'spark.berlin.jazz.line', places: ['spark.berlin.place.aTrane', 'spark.berlin.place.bFlat'] },
+    walk: { title: 'spark.berlin.walk.title', line: 'spark.berlin.walk.line', places: ['spark.berlin.place.oberbaumbruecke', 'spark.berlin.place.ostkreuz'] },
   },
 };
 export const sparkIn = (spark: Spark, city: string | null | undefined): Spark => ({ ...spark, ...LOCAL[city ?? '']?.[spark.kind] });
