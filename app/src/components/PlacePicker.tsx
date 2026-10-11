@@ -4,7 +4,7 @@ import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { City } from '@/content/cities';
-import { cityPhotos, type CityPhoto } from '@/data/cityPhotos';
+import { cityPhotos, cityPhotosNow, type CityPhoto } from '@/data/cityPhotos';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -89,11 +89,12 @@ export default function PlacePicker({ open, cities, selected, onSelect, onClose 
 // Step 2: the country's cities as photo cards, most nights first.
 function Cities({ country, selected, onBack, onPick }: { country: Country; selected: string | null; onBack: () => void; onPick: (id: string) => void }) {
   const { t, tn, up } = useLang();
-  const [photos, setPhotos] = useState<Record<string, CityPhoto>>({});
   const list = useMemo(() => [...country.cities].sort((a, b) => b.nights - a.nights), [country]);
+  // what the warm-up left on the phone shows at once; the rest follows when it arrives
+  const [photos, setPhotos] = useState<Record<string, CityPhoto>>(() => cityPhotosNow(list));
   useEffect(() => {
     let live = true;
-    cityPhotos(list).then((p) => live && setPhotos(p), () => {});
+    cityPhotos(list).then((p) => live && setPhotos((old) => ({ ...old, ...p })), () => {});
     return () => {
       live = false;
     };
@@ -112,7 +113,7 @@ function Cities({ country, selected, onBack, onPick }: { country: Country; selec
           const photo = photos[c.id];
           return (
             <Pressable key={c.id} onPress={() => onPick(c.id)} accessibilityRole="button" accessibilityLabel={c.name} style={({ pressed }) => [styles.card, on && styles.cardOn, pressed && styles.pressed]}>
-              {photo ? <Image source={{ uri: photo.uri }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
+              {photo ? <Image source={{ uri: photo.uri }} style={StyleSheet.absoluteFill} contentFit="cover" cachePolicy="memory-disk" transition={120} /> : null}
               <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.92)']} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
               <View style={styles.cardText}>
                 <Text style={styles.cityName} numberOfLines={2}>{c.name}</Text>

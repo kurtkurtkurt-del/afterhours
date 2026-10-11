@@ -1,11 +1,17 @@
 import { Directory, File, Paths } from 'expo-file-system';
-import { remember } from '@/lib/offline';
+import { peek, remember } from '@/lib/offline';
+import type { City } from '@/content/cities';
 
 // A photo per city for the place picker: the lead image of the city's English
 // Wikipedia article, with its author and licence from Wikimedia Commons (most are
 // CC BY-SA, so the credit is shown on the card). Two requests per country, cached.
+// Since 12.10.2026 the photos are fetched at warm-up and kept in the documents folder
+// (the cache folder could be emptied by the system), so the picker opens with them
+// already there; cityPhotosNow() reads them without waiting.
 export type CityPhoto = { uri: string; credit: string };
 type Stored = { remote: string; credit: string };
+const SHELF = 'cityPhotos.v3';
+const WEEK = 7 * 24 * 3600_000;
 
 // City names in the database are local ("münchen"); these would land on the wrong
 // English article (a disambiguation page, a surname), so they are named outright.
@@ -89,26 +95,48 @@ async function fetchPhotos(cities: { id: string; name: string }[]): Promise<Reco
 }
 
 const folder = () => {
-  const dir = new Directory(Paths.cache, 'city-photos');
+  const dir = new Directory(Paths.document, 'city-photos');
   if (!dir.exists) dir.create({ intermediates: true });
   return dir;
 };
 
+// The copy on the phone, when there is one (a synchronous look at the disk).
+function onDisk(id: string): string | null {
+  try {
+    const file = new File(folder(), `${id}.jpg`);
+    return file.exists && (file.size ?? 0) > 0 ? file.uri : null;
+  } catch {
+    return null;
+  }
+}
+
 // The local copy of one photo, downloaded once.
 async function local(id: string, remote: string): Promise<string | null> {
-  const file = new File(folder(), `${id}.jpg`);
-  if (file.exists && file.size > 0) return file.uri;
+  const have = onDisk(id);
+  if (have) return have;
   try {
-    const got = await File.downloadFileAsync(remote, file, { headers: HEADERS, idempotent: true });
+    const got = await File.downloadFileAsync(remote, new File(folder(), `${id}.jpg`), { headers: HEADERS, idempotent: true });
     return got.uri;
   } catch {
     return null;
   }
 }
 
+const keyOf = (cities: { id: string }[]) => cities.map((c) => c.id).sort().join(',');
+
+// Photos already on the phone for these cities, at once: the picker starts with them.
+export function cityPhotosNow(cities: { id: string }[]): Record<string, CityPhoto> {
+  const stored = peek<Record<string, Stored>>(SHELF, keyOf(cities)) ?? {};
+  const out: Record<string, CityPhoto> = {};
+  for (const [id, s] of Object.entries(stored)) {
+    const uri = onDisk(id);
+    if (uri) out[id] = { uri, credit: s.credit };
+  }
+  return out;
+}
+
 export async function cityPhotos(cities: { id: string; name: string }[]): Promise<Record<string, CityPhoto>> {
-  const key = cities.map((c) => c.id).sort().join(',');
-  const stored = await remember('cityPhotos.v3', key, () => fetchPhotos(cities), 40, { ttl: 7 * 24 * 3600_000 });
+  const stored = await remember(SHELF, keyOf(cities), () => fetchPhotos(cities), 40, { ttl: WEEK });
   const out: Record<string, CityPhoto> = {};
   await Promise.all(
     Object.entries(stored).map(async ([id, s]) => {
@@ -117,4 +145,16 @@ export async function cityPhotos(cities: { id: string; name: string }[]): Promis
     }),
   );
   return out;
+}
+
+// Warm-up: every country's photos, one country after another, the user's own first.
+// Costs nothing once they are on the phone (the shelf is fresh for a week, the files stay).
+export async function warmCityPhotos(cities: City[], firstCountry: string | null) {
+  const by = new Map<string, City[]>();
+  for (const c of cities) {
+    const slug = c.countrySlug || '?';
+    by.set(slug, [...(by.get(slug) ?? []), c]);
+  }
+  const order = [...by.keys()].sort((a, b) => Number(b === firstCountry) - Number(a === firstCountry));
+  for (const slug of order) await cityPhotos(by.get(slug)!).catch(() => {});
 }

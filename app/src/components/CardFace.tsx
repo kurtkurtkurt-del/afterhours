@@ -145,8 +145,9 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
           <Text style={styles.title} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.7}>
             {card.title.toLowerCase()}
           </Text>
-          {/* the venue, or the city when the night has none: the block keeps its second line */}
-          <Text style={styles.venue} numberOfLines={1}>{(card.venue ?? card.city).toLowerCase()}</Text>
+          {/* the venue only; a night without one shows none (the city stood here for a day
+              and read as a wrong place, Ahmet, 12.10.2026) — the block keeps its height */}
+          {card.venue ? <Text style={styles.venue} numberOfLines={1}>{card.venue.toLowerCase()}</Text> : null}
           {card.via ? <Chain via={card.via} /> : null}
           {card.note ? <Text style={styles.note} numberOfLines={2}>{card.note}</Text> : null}
           {card.friends.length > 0 ? (

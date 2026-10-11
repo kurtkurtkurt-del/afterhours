@@ -11,11 +11,13 @@ import { fetchDeck } from '@/data/deck';
 import { pastFeed } from '@/data/feed';
 import { wavesKept } from '@/data/waves';
 import { currentCity } from '@/data/here';
+import { loadCities } from '@/data/cities';
+import { warmCityPhotos } from '@/data/cityPhotos';
 
 // Warm-up: when the app starts with an account and when the connection returns, the
 // pages people open most are read in the background, so their shelves are full before
 // the page is opened (it then shows at once, and offline too). The pictures on them go
-// to the disk cache. At most once every two minutes.
+// to the disk cache, the cities' photos to the documents folder. At most once every two minutes.
 let last = 0;
 async function warm() {
   if (!isOnline() || Date.now() - last < 120_000) return;
@@ -44,6 +46,9 @@ async function warm() {
   if (deck.status === 'fulfilled') urls.push(...deck.value.slice(0, 12).map((n) => n.image_url));
   if (feed.status === 'fulfilled') urls.push(...feed.value.map((p) => p.image_url));
   prefetchImages(urls);
+  // the place picker's city photos, the country you are in first (nothing to do once they are on the phone)
+  const cities = await loadCities();
+  await warmCityPhotos(cities, cities.find((c) => c.id === city)?.countrySlug ?? null);
 }
 
 let started = false;
