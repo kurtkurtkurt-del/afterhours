@@ -167,15 +167,16 @@ const SwipeCard = forwardRef<CardHandle, {
           card={card}
           bottom={bottom}
           fit={{ top }}
-          rightLabel={`${spark ? t(spark.invite ? 'spark.in' : 'spark.create') : t('word.keep')} →`}
+          rightLabel={spark ? t(spark.invite ? 'spark.in' : 'spark.create') : t('word.keep')}
           onRight={() => flyOff('right')}
           onDetails={spark ? details : undefined}
         />
         {active && (
           <>
-            {onAbout ? <AskButton onPress={onAbout} style={[styles.ask, { top: top + 10 }]} /> : null}
+            {/* The poster's top right corner holds the kind tag (CardFace); these sit under it. */}
+            {onAbout ? <AskButton onPress={onAbout} style={[styles.ask, { top: top + 46 }]} /> : null}
             {/* A night can be shared straight from the card, under "who is this?" when it has one. */}
-            {!spark && !isCard(night) ? <ShareButton onPress={() => shareNight(night as Night)} style={{ top: top + (onAbout ? 54 : 10), right: 16, bottom: 'auto' }} /> : null}
+            {!spark && !isCard(night) ? <ShareButton onPress={() => shareNight(night as Night)} style={{ top: top + (onAbout ? 90 : 46), right: 16, bottom: 'auto' }} /> : null}
             <Animated.View pointerEvents="none" style={[styles.edgeRight, keepEdge]} />
             <Animated.View pointerEvents="none" style={[styles.edgeLeft, letGoEdge]}>
               <Text style={styles.letGo}>{up(t('word.letgo'))}</Text>

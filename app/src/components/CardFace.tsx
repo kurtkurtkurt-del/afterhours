@@ -59,19 +59,26 @@ const stamp = (iso: string | null): { day: string; time: string } | null => {
   return { day: `${dayName(d)} ${two(d.getDate())}.${two(d.getMonth() + 1)}`, time: `${two(d.getHours())}:${two(d.getMinutes())}` };
 };
 
-// Date, time and kind in one ink tag at the poster's top left corner, so the caption
-// holds only the title, the venue and the people.
+// Date and time in one ink tag at the poster's top left corner, the kind in a small one
+// at its top right (Ahmet, 11.10.2026), so the caption holds only the title, the venue
+// and the people.
 function DateTag({ card, kind }: { card: DeckCard; kind: string }) {
   const { t, up } = useLang();
   const when = stamp(card.startsAt);
   return (
-    <View style={styles.tag} pointerEvents="none">
-      <View style={styles.tagRow}>
-        <Text style={styles.tagDay}>{when ? when.day : t('deck.dateTba').toLowerCase()}</Text>
-        {when ? <Text style={styles.tagTime}>{when.time}</Text> : null}
+    <>
+      <View style={styles.tag} pointerEvents="none">
+        <View style={styles.tagRow}>
+          <Text style={styles.tagDay}>{when ? when.day : t('deck.dateTba').toLowerCase()}</Text>
+          {when ? <Text style={styles.tagTime}>{when.time}</Text> : null}
+        </View>
       </View>
-      {kind ? <Text style={styles.tagKind}>{up(kind)}</Text> : null}
-    </View>
+      {kind ? (
+        <View style={styles.kindTag} pointerEvents="none">
+          <Text style={styles.tagKind}>{up(kind)}</Text>
+        </View>
+      ) : null}
+    </>
   );
 }
 
@@ -267,12 +274,13 @@ const styles = StyleSheet.create({
   title: { fontFamily: fonts.logo, fontSize: 36, lineHeight: 34, letterSpacing: -0.8, color: colors.spotText, marginBottom: 5 },
   venue: { fontFamily: fonts.medium, fontSize: 14, letterSpacing: -0.2, color: colors.paper },
   // the date tag on the poster
-  tag: { position: 'absolute', top: 10, left: 10, backgroundColor: colors.ink, borderRadius: radius.sm, paddingVertical: 6, paddingHorizontal: 9, gap: 1 },
+  tag: { position: 'absolute', top: 10, left: 10, backgroundColor: colors.ink, borderRadius: radius.sm, paddingVertical: 6, paddingHorizontal: 9 },
+  kindTag: { position: 'absolute', top: 10, right: 10, backgroundColor: colors.ink, borderRadius: radius.sm, paddingVertical: 6, paddingHorizontal: 9 },
   tagFull: { position: 'absolute', top: 64, left: 2 },
   tagRow: { flexDirection: 'row', alignItems: 'baseline', gap: 7 },
   tagDay: { fontFamily: fonts.logo, fontSize: 17, lineHeight: 18, letterSpacing: -0.3, color: colors.paper },
   tagTime: { fontFamily: fonts.medium, fontSize: 12.5, color: colors.paper },
-  tagKind: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1.2, color: colors.mute },
+  tagKind: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.2, color: colors.paper },
   friends: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 8 },
   friendsNote: { marginLeft: 6 },
   sq: { width: 24, height: 24, borderRadius: radius.xs, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
@@ -296,6 +304,7 @@ const styles = StyleSheet.create({
   stripTextDone: { color: colors.spotText },
   stripLeft: { width: 44, backgroundColor: colors.ink, borderRightWidth: 1, borderRightColor: colors.ink3, alignItems: 'center', justifyContent: 'center' },
   stripLeftText: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 2, color: colors.paper, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },
-  hintText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.ink, backgroundColor: colors.paper, paddingVertical: 6, paddingHorizontal: 12, borderRadius: radius.pill, overflow: 'hidden' },
+  // the pull hints (ticket ↑ / details ↓): one line, large enough to read on the poster, air around the words
+  hintText: { fontFamily: fonts.jet, fontSize: 13, letterSpacing: 2, color: colors.ink, backgroundColor: colors.paper, paddingVertical: 9, paddingHorizontal: 18, borderRadius: radius.pill, overflow: 'hidden' },
   pressed: { opacity: 0.75 },
 });

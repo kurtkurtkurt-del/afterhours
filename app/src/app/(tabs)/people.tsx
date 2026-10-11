@@ -697,7 +697,7 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 44, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
-  groupsLine: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 8, marginTop: 8 },
+  groupsLine: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 10, paddingHorizontal: 12, marginTop: 12, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md },
   groupFaces: { flexDirection: 'row', minWidth: 28 },
   groupOverlap: { marginLeft: -10 },
   groupsText: { flex: 1, fontFamily: fonts.regular, fontSize: 13, color: colors.mute },

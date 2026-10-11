@@ -58,4 +58,6 @@ export const EXPECTED_SQL = [
   '54_upkeep.sql',
   '55_post_social.sql',
   '56_spark_kinds_2.sql',
+  '57_doors.sql',
+  '58_push_words.sql',
 ];
