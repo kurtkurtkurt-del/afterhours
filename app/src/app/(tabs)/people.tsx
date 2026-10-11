@@ -11,6 +11,7 @@ import { SvgUri } from 'react-native-svg';
 import WhoSheet from '@/components/WhoSheet';
 import { PeopleResults, PeopleSearch, SuggestedInRow, openPerson } from '@/components/People';
 import { groupPlan, myGroups, type GroupRow, type Plan, type Round } from '@/data/groups';
+import { ticketsMine } from '@/data/tickets';
 import GroupBadge from '@/components/GroupBadge';
 import SoundCorner from '@/components/SoundCorner';
 import MessagesButton from '@/components/MessagesButton';
@@ -54,6 +55,16 @@ export default function PeopleScreen() {
   const real = useYours();
   const { t, tn, tx, up } = useLang();
   const uid = session?.user.id;
+  // The nights you said you have a ticket for: a mark on their cards in your deck.
+  const [ticketed, setTicketed] = useState<Set<string>>(new Set());
+  useEffect(() => {
+    if (!uid) return;
+    let live = true;
+    ticketsMine().then((set) => live && setTicketed(set), () => {});
+    return () => {
+      live = false;
+    };
+  }, [uid, real.ready]);
   // Who is coming: your answers (stored, friends see them) and your friends' (32_rsvp.sql).
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [theirAnswers, setTheirAnswers] = useState<Rsvp[]>([]);
@@ -226,9 +237,9 @@ export default function PeopleScreen() {
     () =>
       real.mine.map((n) => {
         const names = [...new Set(real.swipes.filter((k) => k.id === n.id).map((k) => k.friend.toLowerCase()))];
-        return toDeckCard(n, names.map((name) => ({ name, live: live.has(name) })));
+        return { ...toDeckCard(n, names.map((name) => ({ name, live: live.has(name) }))), ticket: ticketed.has(n.id) };
       }),
-    [real.mine, real.swipes, live],
+    [real.mine, real.swipes, live, ticketed],
   );
   // Swiped right in a deck: keep (sample cards have no night, so nothing is written).
   const keepCard = (c: DeckCard) => {

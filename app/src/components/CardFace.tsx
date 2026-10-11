@@ -25,6 +25,7 @@ export type DeckCard = {
   poster: string | null; // nights without a photo: the site's hand-drawn poster
   ticketUrl: string | null;
   friends: DeckFriend[]; // friends who kept this night
+  ticket?: boolean;      // you said you got your ticket (60_tickets.sql)
   note?: string;         // a line under the facts (sparks: who started it, or how to start it)
   // Friends of friends: who it came through. path starts after you; the first name is
   // your friend, the last is the keeper (someone you do not know).
@@ -76,6 +77,11 @@ function DateTag({ card, kind }: { card: DeckCard; kind: string }) {
       {kind ? (
         <View style={styles.kindTag} pointerEvents="none">
           <Text style={styles.tagKind}>{up(kind)}</Text>
+        </View>
+      ) : null}
+      {card.ticket ? (
+        <View style={styles.ticketTag} pointerEvents="none">
+          <Text style={styles.ticketTagText}>{up(t('night.ticketGot'))}</Text>
         </View>
       ) : null}
     </>
@@ -283,6 +289,8 @@ const styles = StyleSheet.create({
   tagDay: { fontFamily: fonts.logo, fontSize: 17, lineHeight: 18, letterSpacing: -0.3, color: colors.paper },
   tagTime: { fontFamily: fonts.medium, fontSize: 12.5, color: colors.paper },
   tagKind: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.2, color: colors.paper },
+  ticketTag: { position: 'absolute', bottom: 10, left: 10, backgroundColor: colors.paper, borderRadius: radius.sm, paddingVertical: 5, paddingHorizontal: 8 },
+  ticketTagText: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.2, color: colors.ink },
   friends: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 8 },
   friendsNote: { marginLeft: 6 },
   sq: { width: 24, height: 24, borderRadius: radius.xs, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },

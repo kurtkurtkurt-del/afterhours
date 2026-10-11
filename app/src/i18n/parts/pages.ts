@@ -21,6 +21,12 @@ export const pages = {
   'night.doors': { en: 'doors', de: 'einlass', tr: 'kapı' },
   'night.getTicket': { en: 'get a ticket', de: 'ticket holen', tr: 'bilet al' },
   'night.noTicket': { en: 'no ticket needed', de: 'kein ticket nötig', tr: 'bilet gerekmez' },
+  'night.ticketGot': { en: 'ticket ✓', de: 'ticket ✓', tr: 'bilet ✓' },
+  'night.ticketYours': { en: 'you have your ticket', de: 'du hast dein ticket', tr: 'biletin var' },
+  'night.ask.ticket': { en: 'did you get your ticket?', de: 'hast du dein ticket?', tr: 'biletini aldın mı?' },
+  'night.ask.ticket.note': { en: 'ticketmaster tells us nothing; only you can. the night gets a mark, nobody else sees it.', de: 'ticketmaster sagt uns nichts; nur du kannst es. die nacht bekommt eine marke, sonst sieht sie niemand.', tr: 'ticketmaster bize bir şey söylemiyor; yalnızca sen söyleyebilirsin. geceye bir işaret düşer, başkası görmez.' },
+  'night.ask.got': { en: 'got it', de: 'hab ich', tr: 'aldım' },
+  'night.ask.no': { en: 'not this time', de: 'diesmal nicht', tr: 'bu sefer değil' },
   'night.rule': {
     en: 'the room opens at check-in and freezes 48h after the night',
     de: 'der raum öffnet beim einchecken und friert 48h nach der nacht ein',

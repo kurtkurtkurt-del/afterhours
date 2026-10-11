@@ -67,6 +67,7 @@ const structure = [
   ["57_doors.sql", "THE DOOR — WHO IS ASKING, WHO MAY BE SEEN"],
   ["58_push_words.sql", "A PUSH SAYS A SENTENCE AND A NAME, NEVER THE WORDS"],
   ["59_dms.sql", "DIRECT MESSAGES"],
+  ["60_tickets.sql", "DID YOU GET YOUR TICKET"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

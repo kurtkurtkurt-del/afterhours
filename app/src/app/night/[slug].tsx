@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Tips from '@/components/Tips';
-import { KeyboardAvoidingView, Linking, Modal, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { AppState, KeyboardAvoidingView, Linking, Modal, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Image } from 'expo-image';
 import * as Location from 'expo-location';
 import AfterhoursCard from '@/components/AfterhoursCard';
@@ -15,6 +15,7 @@ import PullDownScroll from '@/components/PullDownScroll';
 import SoundCorner from '@/components/SoundCorner';
 import { useAuth } from '@/auth/AuthContext';
 import { fetchNight, swipe, type Night } from '@/data/deck';
+import { ticketMark, ticketState, type TicketAnswer } from '@/data/tickets';
 import { OfflineError, useShelf } from '@/lib/offline';
 import { shareNight } from '@/lib/share';
 import ShareButton from '@/components/ShareButton';
@@ -140,6 +141,42 @@ export default function NightScreen() {
     if (session && night) swipe(night.slug, 'right').catch(() => {});
   };
 
+  // Did you get your ticket? (60_tickets.sql). The ticket page is Ticketmaster's; it
+  // tells nobody who bought what. So a tap on "get a ticket" keeps the night (you are
+  // interested), and when the app comes back to the front the page asks once: got it /
+  // not this time. The answer is stored and never asked again.
+  const [ticket, setTicket] = useState<TicketAnswer | null>(null);
+  const [askTicket, setAskTicket] = useState(false);
+  const awaiting = useRef(false);
+  useEffect(() => {
+    if (!session || !slug) return;
+    let live = true;
+    ticketState(slug).then((s) => live && setTicket(s), () => {});
+    return () => {
+      live = false;
+    };
+  }, [session, slug]);
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', (state) => {
+      if (state === 'active' && awaiting.current) {
+        awaiting.current = false;
+        setAskTicket(true);
+      }
+    });
+    return () => sub.remove();
+  }, []);
+  const openTicket = () => {
+    if (!night?.ticket_url) return;
+    if (!kept) keep();
+    if (session && ticket === null) awaiting.current = true;
+    Linking.openURL(night.ticket_url).catch(() => {});
+  };
+  const answerTicket = (a: TicketAnswer) => {
+    setAskTicket(false);
+    setTicket(a);
+    if (slug) ticketMark(slug, a).catch(() => setTicket(null));
+  };
+
   // Beforehours: post, then reload the list. A reply lands under replyTo.
   const say = async () => {
     const body = text.trim();
@@ -218,13 +255,18 @@ export default function NightScreen() {
               </View>
               <View style={styles.stubAction}>
                 {night.ticket_url ? (
-                  <Button label={`${t('night.getTicket')} ↗`} kind="red" onPress={() => Linking.openURL(night.ticket_url!)} />
+                  ticket === 'got' ? (
+                    <Button label={`${t('night.ticketGot')} ↗`} kind="line" onPress={openTicket} />
+                  ) : (
+                    <Button label={`${t('night.getTicket')} ↗`} kind="red" onPress={openTicket} />
+                  )
                 ) : room?.checked_in ? (
                   <Button label={t('night.room')} kind="red" onPress={() => router.push(`/room/${night.slug}`)} />
                 ) : (
                   <Button label={busy ? t('word.moment') : t('night.checkin')} kind="red" onPress={doCheckIn} />
                 )}
                 {!night.ticket_url ? <Text style={styles.stubNote}>{up(`${t('word.szene')} · ${t('night.noTicket')}`)}</Text> : null}
+                {night.ticket_url && ticket === 'got' ? <Text style={styles.stubNote}>{up(t('night.ticketYours'))}</Text> : null}
               </View>
             </View>
           </View>
@@ -335,6 +377,19 @@ export default function NightScreen() {
       )}
       <Tips page="night" tips={[{ title: 'tips.night.1.t', body: 'tips.night.1.b' }, { title: 'tips.night.2.t', body: 'tips.night.2.b' }]} bottom={insets.bottom + 84} />
       {reporting.sheet}
+
+      {/* Back from the ticket page: one question, once. */}
+      <Modal visible={askTicket} transparent animationType="fade" onRequestClose={() => setAskTicket(false)}>
+        <Pressable style={styles.askDim} onPress={() => setAskTicket(false)} />
+        <View style={[styles.askSheet, { paddingBottom: insets.bottom + 18 }]}>
+          <Text style={styles.askTitle}>{t('night.ask.ticket')}</Text>
+          <Text style={styles.askNote}>{t('night.ask.ticket.note')}</Text>
+          <View style={styles.actions}>
+            <View style={{ flex: 1 }}><Button label={t('night.ask.got')} kind="red" onPress={() => answerTicket('got')} /></View>
+            <View style={{ flex: 1 }}><Button label={t('night.ask.no')} kind="line" onPress={() => answerTicket('no')} /></View>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -364,6 +419,11 @@ const styles = StyleSheet.create({
   factNote: { fontFamily: fonts.regular, fontSize: 10, color: colors.mute },
   stubAction: { padding: 12, paddingTop: 10, gap: 8 },
   stubNote: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.2, color: colors.mute, textAlign: 'center' },
+  // the question on return from the ticket page
+  askDim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.6)' },
+  askSheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingHorizontal: brand.left, paddingTop: 20, gap: 14 },
+  askTitle: { fontFamily: fonts.semibold, fontSize: 22, letterSpacing: -0.5, color: colors.paper },
+  askNote: { fontFamily: fonts.regular, fontSize: 13, lineHeight: 18, color: colors.mute },
   title: { fontFamily: fonts.logo, fontSize: 34, lineHeight: 34, letterSpacing: -0.9, color: colors.spotText },
   mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
   body: { paddingHorizontal: brand.left, paddingTop: 18, gap: 22 },

@@ -23,7 +23,7 @@ file first, in the same commit. (The idea is KULA's `docs/promises.md`, 11.10.20
 
 Known gaps, written down so they are not forgotten:
 
-- Direct messages are not yet in `export_me()` (14) — the threads go with the account
+- Direct messages and ticket answers (60) are not yet in `export_me()` (14) — the threads go with the account
   (cascade), but the export does not list them. Next change to 14.
 - Guests (anonymous sessions) pass `assert_member()`; what they may not do is refused
   write by write (`is_guest()` in the writers), not at one door.
