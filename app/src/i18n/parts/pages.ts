@@ -17,6 +17,10 @@ export const pages = {
   'night.estimated': { en: 'estimated', de: 'geschätzt', tr: 'tahmini' },
   'night.address': { en: 'address opens at check-in', de: 'adresse öffnet beim einchecken', tr: 'adres check-in ile açılır' },
   'night.tba': { en: 'tba', de: 'offen', tr: 'belli değil' },
+  // the ticket stub (design B, 12.10.2026)
+  'night.doors': { en: 'doors', de: 'einlass', tr: 'kapı' },
+  'night.getTicket': { en: 'get a ticket', de: 'ticket holen', tr: 'bilet al' },
+  'night.noTicket': { en: 'no ticket needed', de: 'kein ticket nötig', tr: 'bilet gerekmez' },
   'night.rule': {
     en: 'the room opens at check-in and freezes 48h after the night',
     de: 'der raum öffnet beim einchecken und friert 48h nach der nacht ein',

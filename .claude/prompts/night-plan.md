@@ -28,7 +28,7 @@ Yedi madde, yedi commit (f58895b … 05c77eb), hepsi README'ye işlendi; `tsc`, 
 - yours sekmesinin ikonu gönderi kartı oldu (people ile karışmıyor).
 - Grup kurarken süre sorulmuyor; grup hep kalır.
 - Mesajlar: "yeni konuşma" ile bir arkadaşa yazılabiliyor (`59_dms.sql`, `dm/[id]`).
-- Gece sayfası için 5 tasarım: `prototypes/night-page.html` (seçim bekleniyor).
+- Gece sayfası: tasarım **B** (bilet) seçildi ve yapıldı (`prototypes/night-page.html`).
 - KULA backend adımlarının sekizi de yapıldı (`kula-backend-plan.md`).
 
 ## Sabah (Ahmet)

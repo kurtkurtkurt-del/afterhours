@@ -30,7 +30,11 @@ const fallback = require('../../../assets/intro/concert.jpg');
 const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const two = (n: number) => String(n).padStart(2, '0');
 
-// Night page: photo, details, text, venue; keep, and a ticket when there is one.
+// Night page (design B, prototypes/night-page.html, 12.10.2026): the top is a ticket —
+// the photo, the title and the kind, a perforated line, a stub with the date, the doors
+// and the venue large, and the red action: get a ticket, or check in when there is no
+// ticket to get. Under it check in / keep (or keep / share), the room line, the text,
+// beforehours.
 export default function NightScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const insets = useSafeAreaInsets();
@@ -170,44 +174,83 @@ export default function NightScreen() {
       {night ? (
         <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
         <PullDownScroll header={band} contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
-          <View style={[styles.hero, { height: width * 1.1 }]}>
-            <Image source={night.image_url ? { uri: night.image_url } : fallback} style={styles.heroPhoto} contentFit="cover" />
-            <View style={styles.heroShade} />
-            <View style={styles.heroText}>
-              <Text style={styles.mono}>
-                {tx('type.' + night.type_slug, '') ? up(tx('type.' + night.type_slug, '')) : upperData(night.type_name)} · {up(night.source === 'ticketmaster' ? t('word.ticket') : t('word.szene'))} · {upperData(night.city_name)}
-              </Text>
-              <Text style={styles.title}>{night.title.toLowerCase()}</Text>
-              <Text style={styles.mono}>{upperData(night.meta)}</Text>
+          <View style={styles.ticketWrap}>
+            <View style={styles.ticket}>
+              <View style={[styles.ticketPhoto, { height: (width - brand.left * 2) * 0.78 }]}>
+                <Image source={night.image_url ? { uri: night.image_url } : fallback} style={styles.heroPhoto} contentFit="cover" />
+                <ShareButton onPress={() => shareNight(night)} style={styles.ticketShare} />
+              </View>
+              <View style={styles.ticketHead}>
+                <Text style={styles.title}>{night.title.toLowerCase()}</Text>
+                <Text style={styles.mono}>
+                  {tx('type.' + night.type_slug, '') ? up(tx('type.' + night.type_slug, '')) : upperData(night.type_name)}
+                  {night.venue_name ? ` · ${upperData(night.venue_name)}` : ` · ${upperData(night.city_name)}`}
+                </Text>
+              </View>
+              {/* the perforation: a dashed line and two notches of the page's own colour */}
+              <View style={styles.perf}>
+                <View style={styles.perfLine} />
+                <View style={[styles.notch, styles.notchLeft]} />
+                <View style={[styles.notch, styles.notchRight]} />
+              </View>
+              <View style={styles.stub}>
+                {(() => {
+                  const d = night.starts_at ? new Date(night.starts_at) : null;
+                  const ok = !!d && !isNaN(d.getTime());
+                  return (
+                    <>
+                      <View style={styles.fact}>
+                        <Text style={styles.factK}>{up(t('night.date'))}</Text>
+                        <Text style={styles.factBig} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.6}>{ok ? `${two(d!.getDate())}.${two(d!.getMonth() + 1)}` : (night.date_text ?? t('night.tba')).toLowerCase()}</Text>
+                        {night.starts_at_estimated ? <Text style={styles.factNote}>{t('night.estimated')}</Text> : null}
+                      </View>
+                      <View style={styles.fact}>
+                        <Text style={styles.factK}>{up(t('night.doors'))}</Text>
+                        <Text style={styles.factBig}>{ok ? `${two(d!.getHours())}:${two(d!.getMinutes())}` : '—'}</Text>
+                      </View>
+                      <View style={[styles.fact, styles.factWide]}>
+                        <Text style={styles.factK}>{up(t('night.where'))}</Text>
+                        <Text style={styles.factV} numberOfLines={2}>{(night.venue_name ?? (night.source === 'ticketmaster' ? night.city_name : t('night.address'))).toLowerCase()}</Text>
+                      </View>
+                    </>
+                  );
+                })()}
+              </View>
+              <View style={styles.stubAction}>
+                {night.ticket_url ? (
+                  <Button label={`${t('night.getTicket')} ↗`} kind="red" onPress={() => Linking.openURL(night.ticket_url!)} />
+                ) : room?.checked_in ? (
+                  <Button label={t('night.room')} kind="red" onPress={() => router.push(`/room/${night.slug}`)} />
+                ) : (
+                  <Button label={busy ? t('word.moment') : t('night.checkin')} kind="red" onPress={doCheckIn} />
+                )}
+                {!night.ticket_url ? <Text style={styles.stubNote}>{up(`${t('word.szene')} · ${t('night.noTicket')}`)}</Text> : null}
+              </View>
             </View>
-            <ShareButton onPress={() => shareNight(night)} style={styles.heroShare} />
           </View>
 
           <View style={styles.body}>
             <View style={styles.actions}>
-              <View style={{ flex: 1 }}>
-                {room?.checked_in ? (
-                  <Button label={t('night.room')} kind="line" onPress={() => router.push(`/room/${night.slug}`)} />
-                ) : (
-                  <Button label={busy ? t('word.moment') : t('night.checkin')} onPress={doCheckIn} />
-                )}
-              </View>
-              <View style={{ flex: 1 }}>
-                <Button label={kept ? t('night.kept') : t('word.keep')} kind={room?.checked_in ? 'fill' : 'line'} onPress={keep} />
-              </View>
-            </View>
-            {note ? <Text style={styles.mono}>{up(words(note))}</Text> : null}
-            <View style={styles.actions}>
               {night.ticket_url ? (
                 <View style={{ flex: 1 }}>
-                  <Button label={t('word.ticket')} kind="line" onPress={() => Linking.openURL(night.ticket_url!)} />
+                  {room?.checked_in ? (
+                    <Button label={t('night.room')} onPress={() => router.push(`/room/${night.slug}`)} />
+                  ) : (
+                    <Button label={busy ? t('word.moment') : t('night.checkin')} onPress={doCheckIn} />
+                  )}
                 </View>
               ) : null}
               <View style={{ flex: 1 }}>
-                {/* Share: the night's web page; "open in the app" on the site brings it back. */}
-                <Button label={t('night.share')} kind="line" onPress={() => shareNight(night)} />
+                <Button label={kept ? t('night.kept') : t('word.keep')} kind="line" onPress={keep} />
               </View>
+              {!night.ticket_url ? (
+                <View style={{ flex: 1 }}>
+                  {/* Share: the night's web page; "open in the app" on the site brings it back. */}
+                  <Button label={t('night.share')} kind="line" onPress={() => shareNight(night)} />
+                </View>
+              ) : null}
             </View>
+            {note ? <Text style={styles.mono}>{up(words(note))}</Text> : null}
             {room ? (
               <Text style={styles.mono}>
                 {up(tn('night.checkedin', room.who_count))} · {up(room.frozen ? t('night.room.frozen') : t('night.room.open'))}
@@ -215,13 +258,7 @@ export default function NightScreen() {
             ) : null}
 
             {night.body ? <Text style={styles.text}>{bodyText(night.body, t)}</Text> : null}
-
-            <View style={styles.rows}>
-              <Row k={t('night.where')} v={night.venue_name ?? (night.source === 'ticketmaster' ? night.city_name : t('night.address'))} />
-              <Row k={t('night.when')} v={night.starts_at ? whenLine(night.starts_at) : (night.date_text ?? t('night.tba'))} />
-              <Row k={t('night.kind')} v={tx('type.' + night.type_slug, night.type_name.toLowerCase())} />
-              {night.starts_at_estimated ? <Row k={t('night.date')} v={t('night.estimated')} /> : null}
-            </View>
+            {night.starts_at ? <Text style={styles.mono}>{up(whenLine(night.starts_at))}</Text> : null}
 
             <Text style={styles.mono}>{up(t('night.rule'))}</Text>
 
@@ -302,33 +339,36 @@ export default function NightScreen() {
   );
 }
 
-function Row({ k, v }: { k: string; v: string }) {
-  return (
-    <View style={styles.row}>
-      <Text style={styles.rowK}>{k}</Text>
-      <Text style={styles.rowV}>{v}</Text>
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, zIndex: 2 },
   centre: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  hero: { backgroundColor: colors.ink2, overflow: 'hidden', borderBottomLeftRadius: radius.lg, borderBottomRightRadius: radius.lg },
+  // the ticket (design B)
+  ticketWrap: { paddingHorizontal: brand.left, paddingTop: brand.top + 44 },
+  ticket: { backgroundColor: '#171512', borderRadius: radius.lg, overflow: 'hidden' },
+  ticketPhoto: { backgroundColor: colors.ink2, overflow: 'hidden' },
   heroPhoto: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
-  heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 170, backgroundColor: colors.ink, opacity: 0.78 },
-  heroText: { position: 'absolute', left: brand.left, right: brand.left + 52, bottom: 18, gap: 6 },
-  heroShare: { right: brand.left - 4, bottom: 16 },
-  title: { fontFamily: fonts.medium, fontSize: 34, lineHeight: 36, letterSpacing: -1.1, color: colors.paper },
+  ticketShare: { right: 12, top: 12, bottom: 'auto' },
+  ticketHead: { paddingHorizontal: 16, paddingTop: 14, paddingBottom: 12, gap: 6 },
+  perf: { height: 2, marginHorizontal: 12, justifyContent: 'center' },
+  perfLine: { borderTopWidth: 2, borderStyle: 'dashed', borderColor: colors.ink3 },
+  notch: { position: 'absolute', top: -9, width: 18, height: 18, borderRadius: 9, backgroundColor: colors.ink },
+  notchLeft: { left: -21 },
+  notchRight: { right: -21 },
+  stub: { flexDirection: 'row', gap: 12, paddingHorizontal: 16, paddingTop: 14, paddingBottom: 4 },
+  fact: { flex: 1, gap: 2 },
+  factWide: { flex: 1.4 },
+  factK: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.2, color: colors.mute },
+  factBig: { fontFamily: fonts.logo, fontSize: 24, lineHeight: 26, letterSpacing: -0.5, color: colors.paper },
+  factV: { fontFamily: fonts.medium, fontSize: 14, lineHeight: 18, color: colors.paper, marginTop: 4 },
+  factNote: { fontFamily: fonts.regular, fontSize: 10, color: colors.mute },
+  stubAction: { padding: 12, paddingTop: 10, gap: 8 },
+  stubNote: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.2, color: colors.mute, textAlign: 'center' },
+  title: { fontFamily: fonts.logo, fontSize: 34, lineHeight: 34, letterSpacing: -0.9, color: colors.spotText },
   mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
   body: { paddingHorizontal: brand.left, paddingTop: 18, gap: 22 },
   actions: { flexDirection: 'row', gap: 10 },
   text: { fontFamily: fonts.regular, fontSize: 16, lineHeight: 24, color: colors.paper2, opacity: 0.9 },
-  rows: { borderTopWidth: 1, borderTopColor: colors.ink3 },
-  row: { flexDirection: 'row', justifyContent: 'space-between', gap: 16, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: colors.ink3 },
-  rowK: { fontFamily: fonts.regular, fontSize: 13, color: colors.mute },
-  rowV: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper2, flex: 1, textAlign: 'right' },
   dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.94)', alignItems: 'center', justifyContent: 'center', gap: 18 },
   cardLabel: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.spot },
   talk: { marginTop: 28, paddingTop: 18, borderTopWidth: 1, borderTopColor: colors.ink3, gap: 10 },
