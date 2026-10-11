@@ -22,9 +22,19 @@ Yedi madde, yedi commit (f58895b … 05c77eb), hepsi README'ye işlendi; `tsc`, 
 6. **yours · mesajlaşma: tasarım D** (`prototypes/messaging.html`). Sağ altta, sekme çubuğunun üstünde kırmızı yuvarlak kayan düğme, okunmamış sayısı açık renk rozet; yours ve people'da aynı yerde, akışla kaymaz. Dokununca "messages": açık odalar (kalan süre), grup sohbetleri, donmuş odalar tek listede (`/rooms` genişler). Banddaki balon kalkar. Okunmamış sayısı: odalardaki yeni satırlar + grup sohbetinde son görülenden sonrakiler (gerekirse `57_unread.sql`).
 7. **admin paneli bio'dan.** Hesap/bio sayfasına (`(tabs)/account.tsx`, kayıt kılıfı) staff için bir satır: "panel ›" → `/panel`. Altı sekmeli çubuktaki panel sekmesi kalkar; çubuk beş sekmeye iner. Rol kontrolü `isStaff()`.
 
+## 12.10.2026 sabahı eklenenler (Ahmet'in istekleri)
+
+- Kartta tür sağ üstte; gruplar satırına çerçeve; bilet ipucu büyük; keep üstündeki ok kalktı.
+- yours sekmesinin ikonu gönderi kartı oldu (people ile karışmıyor).
+- Grup kurarken süre sorulmuyor; grup hep kalır.
+- Mesajlar: "yeni konuşma" ile bir arkadaşa yazılabiliyor (`59_dms.sql`, `dm/[id]`).
+- Gece sayfası için 5 tasarım: `prototypes/night-page.html` (seçim bekleniyor).
+- KULA backend adımlarının sekizi de yapıldı (`kula-backend-plan.md`).
+
 ## Sabah (Ahmet)
 
-- `56_spark_kinds_2.sql` canlıya yapıştırılacak (yoksa yeni spark türleri `spark_create`'te reddedilir; panel eksik dosyayı söyler).
+- `56_spark_kinds_2.sql`, `57_doors.sql`, `58_push_words.sql`, `59_dms.sql` canlıya: ya `SUPABASE_DB_URL=… npm run migrate -- --write` (backend/) ya da editöre sırayla yapıştır. 57 ve 58 birbirine bağlı değil ama sıra numarayla.
+- GitHub → Settings → Secrets: `SUPABASE_DB_URL` ve `BACKUP_PASSPHRASE` (kişisel veri yedeği için).
 - `git push` birlikte; Expo Go'da Metro'yu `--clear` ile yeniden başlat.
 - Supabase SQL editöründe, test gönderilerini silmek için:
   `delete from public.posts where author_id in (select id from auth.users where email like 'fake-%@afterhours.test');`

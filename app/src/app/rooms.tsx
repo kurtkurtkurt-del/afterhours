@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 import PullDownScroll from '@/components/PullDownScroll';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
@@ -9,7 +9,11 @@ import Button from '@/components/Button';
 import SoundCorner from '@/components/SoundCorner';
 import { useAuth } from '@/auth/AuthContext';
 import { type CardRow } from '@/data/checkin';
-import { inbox, roomUnread, type GroupChat } from '@/data/messages';
+import { inbox, roomUnread, type Dm, type GroupChat } from '@/data/messages';
+import { dmStart, why } from '@/data/dms';
+import { friendsList, type FriendRow } from '@/data/friends';
+import Avatar from '@/components/Avatar';
+import Input from '@/components/Input';
 import GroupBadge from '@/components/GroupBadge';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { upperData, useLang } from '@/i18n';
@@ -28,10 +32,11 @@ const ddmm = (iso: string | null) => {
   return `${two(d.getDate())}.${two(d.getMonth() + 1)}`;
 };
 
-// Messages (11.10.2026): your afterhours rooms and your group chats in one list. Open
-// rooms first with the time left in red and what is new; then the groups, each with its
-// last line; frozen rooms below, dimmed. Tapping a row opens the room or the chat. The
-// route keeps its old name, /rooms.
+// Messages (11.10.2026): a new conversation with a friend (type a name), your direct
+// threads, your afterhours rooms and your group chats in one list. Open rooms with the
+// time left in red and what is new; the groups each with their last line; frozen rooms
+// below, dimmed. Tapping a row opens the thread, the room or the chat. The route keeps
+// its old name, /rooms.
 export default function RoomsScreen() {
   const { session } = useAuth();
   const insets = useSafeAreaInsets();
@@ -39,7 +44,30 @@ export default function RoomsScreen() {
   const tick = useRefreshOnFocus('cards');
   const [cards, setCards] = useState<CardRow[] | null>(null);
   const [chats, setChats] = useState<GroupChat[]>([]);
+  const [dms, setDms] = useState<Dm[]>([]);
+  // The new-conversation sheet: your confirmed friends, narrowed by what you type.
+  const [picking, setPicking] = useState(false);
+  const [query, setQuery] = useState('');
+  const [friends, setFriends] = useState<FriendRow[]>([]);
+  const [said, setSaid] = useState<string | null>(null);
   const uid = session?.user.id;
+  const pick = (f: FriendRow) => {
+    if (!f.handle) return;
+    setSaid(null);
+    dmStart(f.handle)
+      .then((id) => {
+        setPicking(false);
+        setQuery('');
+        router.push({ pathname: '/dm/[id]', params: { id, name: (f.display_name ?? f.handle ?? '').toLowerCase() } });
+      })
+      .catch((e) => setSaid(why(e)));
+  };
+  const openPicker = () => {
+    setPicking(true);
+    friendsList().then((l) => setFriends(l.filter((f) => f.status === 'accepted')), () => {});
+  };
+  const q = query.trim().toLowerCase().replace(/^@/, '');
+  const shownFriends = friends.filter((f) => !q || (f.handle ?? '').includes(q) || (f.display_name ?? '').toLowerCase().includes(q));
 
   useEffect(() => {
     if (!uid) return;
@@ -49,6 +77,7 @@ export default function RoomsScreen() {
         if (!live) return;
         setCards(i.rooms);
         setChats(i.groups);
+        setDms(i.dms);
       })
       .catch(() => live && setCards([]));
     return () => {
@@ -94,9 +123,36 @@ export default function RoomsScreen() {
         contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 32 }]} showsVerticalScrollIndicator={false}>
         <Text style={styles.about}>{t('messages.about')}</Text>
 
+        {session ? (
+          <Pressable onPress={openPicker} accessibilityRole="button" style={({ pressed }) => [styles.newRow, pressed && styles.pressed]}>
+            <View style={styles.newMark}><Text style={styles.newPlus}>+</Text></View>
+            <Text style={styles.newText}>{t('messages.new')}</Text>
+          </Pressable>
+        ) : null}
+
         {list === null ? <Text style={styles.note}>{t('rooms.loading')}</Text> : null}
 
-        {list && list.length === 0 && chats.length === 0 ? (
+        {dms.length ? (
+          <>
+            <Text style={styles.section}>{up(`${t('messages.direct')} · ${dms.length}`)}</Text>
+            <View style={styles.panel}>
+              <View style={styles.panelIn}>
+                {dms.map((d) => (
+                  <Pressable key={d.id} onPress={() => router.push({ pathname: '/dm/[id]', params: { id: d.id, name: (d.name ?? d.handle ?? '').toLowerCase() } })} accessibilityRole="button" style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
+                    <Avatar name={d.handle ?? d.name ?? '?'} size={34} />
+                    <View style={styles.text}>
+                      <Text style={styles.name} numberOfLines={1}>{(d.name ?? d.handle ?? '').toLowerCase()}</Text>
+                      <Text style={styles.meta} numberOfLines={1}>{d.last_body ? `${d.last_mine ? t('posts.you') + ': ' : ''}${d.last_body}` : t('messages.quiet')}</Text>
+                    </View>
+                    {d.unread ? <Text style={styles.count}>{d.unread}</Text> : null}
+                  </Pressable>
+                ))}
+              </View>
+            </View>
+          </>
+        ) : null}
+
+        {list && list.length === 0 && chats.length === 0 && dms.length === 0 ? (
           <View style={styles.empty}>
             <Text style={styles.emptyTitle}>{t('rooms.empty')}</Text>
             <Text style={styles.note}>{t('rooms.empty.note')}</Text>
@@ -150,6 +206,28 @@ export default function RoomsScreen() {
           <BackButton inline />
         </View>
       </PullDownScroll>
+
+      {/* Who to write to: a friend, by name. */}
+      <Modal visible={picking} animationType="slide" transparent onRequestClose={() => setPicking(false)}>
+        <Pressable style={styles.scrim} onPress={() => setPicking(false)} />
+        <View style={[styles.sheet, { paddingBottom: insets.bottom + 16 }]}>
+          <Text style={styles.sheetTitle}>{t('messages.new')}</Text>
+          <Input value={query} onChangeText={setQuery} placeholder={t('messages.new.who')} autoFocus autoCapitalize="none" autoCorrect={false} />
+          <View style={styles.sheetList}>
+            {shownFriends.slice(0, 8).map((f) => (
+              <Pressable key={f.other_id} onPress={() => pick(f)} accessibilityRole="button" style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
+                <Avatar name={f.handle ?? f.display_name ?? '?'} size={34} />
+                <View style={styles.text}>
+                  <Text style={styles.name} numberOfLines={1}>{(f.display_name ?? f.handle ?? '').toLowerCase()}</Text>
+                  <Text style={styles.meta} numberOfLines={1}>@{f.handle}</Text>
+                </View>
+              </Pressable>
+            ))}
+            {!shownFriends.length ? <Text style={styles.note}>{friends.length ? t('messages.new.none') : t('messages.new.noFriends')}</Text> : null}
+            {said ? <Text style={[styles.note, styles.bad]}>{said}</Text> : null}
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -166,6 +244,15 @@ const styles = StyleSheet.create({
   cta: { marginTop: 20 },
   section: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginTop: 28 },
   sectionLive: { color: colors.spotText },
+  newRow: { flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 18, paddingVertical: 10 },
+  newMark: { width: 34, height: 34, borderRadius: 17, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center' },
+  newPlus: { fontFamily: fonts.medium, fontSize: 20, lineHeight: 22, color: colors.paper },
+  newText: { fontFamily: fonts.medium, fontSize: 15, color: colors.paper },
+  scrim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.6)' },
+  sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingHorizontal: brand.left, paddingTop: 18, gap: 12 },
+  sheetTitle: { fontFamily: fonts.semibold, fontSize: 20, letterSpacing: -0.5, color: colors.paper },
+  sheetList: { minHeight: 120 },
+  bad: { color: colors.spotText },
   count: { minWidth: 22, height: 22, paddingHorizontal: 6, borderRadius: 11, backgroundColor: colors.spot, color: colors.paper, fontFamily: fonts.semibold, fontSize: 11.5, lineHeight: 22, textAlign: 'center', overflow: 'hidden', marginRight: 8 },
   panel: { borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md, overflow: 'hidden', marginTop: 10 },
   panelIn: { marginBottom: -1 },

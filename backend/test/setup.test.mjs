@@ -140,5 +140,17 @@ console.log("\n— the migration log —");
   check(siteCopy.join() === EXPECTED_SQL.join(), "the site panel's copy of the file list matches", siteCopy.length + " vs " + EXPECTED_SQL.length);
 }
 
+console.log("\n— the promises —");
+{
+  const text = await readFile(new URL("../promises.md", import.meta.url), "utf8");
+  const rows = [...text.matchAll(/^\| (\d+) \| .*? \| .*? \| `([a-z0-9-]+\.test\.mjs)` · "([^"]+)" \|$/gm)];
+  check(rows.length === 12, "twelve promises, each with a test", String(rows.length));
+  for (const [, n, file, words] of rows) {
+    let body = "";
+    try { body = await readFile(new URL("./" + file, import.meta.url), "utf8"); } catch {}
+    check(body.includes(words), `promise ${n}: ${file} says "${words}"`);
+  }
+}
+
 console.log(`\n${passed} passed, ${failed} failed`);
 process.exit(failed ? 1 : 0);

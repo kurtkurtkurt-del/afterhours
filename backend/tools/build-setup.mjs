@@ -64,6 +64,9 @@ const structure = [
   ["54_upkeep.sql", "UPKEEP — OLD GUESTS GO, THE STAFF ARE ALERTED"],
   ["55_post_social.sql", "LIKES AND COMMENTS ON POSTS"],
   ["56_spark_kinds_2.sql", "TWENTY MORE SPARKS"],
+  ["57_doors.sql", "THE DOOR — WHO IS ASKING, WHO MAY BE SEEN"],
+  ["58_push_words.sql", "A PUSH SAYS A SENTENCE AND A NAME, NEVER THE WORDS"],
+  ["59_dms.sql", "DIRECT MESSAGES"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

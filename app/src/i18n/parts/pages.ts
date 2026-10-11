@@ -87,6 +87,12 @@ export const pages = {
   },
   'messages.groups': { en: 'groups', de: 'gruppen', tr: 'gruplar' },
   'messages.quiet': { en: 'nothing said yet', de: 'noch nichts gesagt', tr: 'henüz bir şey söylenmedi' },
+  'messages.direct': { en: 'direct', de: 'direkt', tr: 'direkt' },
+  'messages.new': { en: 'new conversation', de: 'neue unterhaltung', tr: 'yeni konuşma' },
+  'messages.new.who': { en: 'a friend\'s name', de: 'der name eines freundes', tr: 'bir arkadaşının adı' },
+  'messages.new.none': { en: 'no friend by that name', de: 'kein freund mit dem namen', tr: 'bu adda arkadaş yok' },
+  'messages.new.noFriends': { en: 'add a friend first; messages are between friends', de: 'füg erst einen freund hinzu; nachrichten gibt es unter freunden', tr: 'önce bir arkadaş ekle; mesajlar arkadaşlar arasında' },
+  'messages.dm.none': { en: 'nothing here yet. say hi.', de: 'noch nichts hier. sag hallo.', tr: 'henüz bir şey yok. merhaba de.' },
   'rooms.a11y': { en: 'your afterhours rooms', de: 'deine afterhours-räume', tr: 'afterhours odaların' },
   'rooms.about': {
     en: 'one room for every night you checked in to. open for 48 hours, then read-only.',

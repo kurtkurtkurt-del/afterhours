@@ -70,6 +70,7 @@ const NOTIFY = [
     rows: [
       { key: 'notify_groups', label: 'notify.groups', hint: 'notify.groups.hint' },
       { key: 'notify_posts', label: 'notify.posts', hint: 'notify.posts.hint' },
+      { key: 'notify_dms', label: 'notify.dms', hint: 'notify.dms.hint' },
     ],
   },
 ] as const;

@@ -1,6 +1,6 @@
-# KULA'dan çıkarımlar — backend adımları (11.10.2026)
+# KULA'dan çıkarımlar — backend adımları (11.10.2026) — YAPILDI 12.10.2026
 
-Gece planına ŞİMDİ dahil değil; Ahmet "ekle" dediğinde eklenecek. Kaynak: KULA mimarisi ve afterhours için dersler dokümanı, 7. bölüm.
+Sekiz adımın hepsi uygulandı (commit: bkz. git log). Numaralar kaydı: kapı `57_doors.sql`, bildirim sözcükleri `58_push_words.sql`; `59_dms.sql` (direkt mesajlar) aynı gece eklendi. Sözler listesi `backend/promises.md`, kapı `backend/tools/gate.mjs` + `.githooks/pre-push`, migrasyon `backend/tools/migrate.mjs`, yedek `backup.yml` ikinci iş. Kaynak: KULA mimarisi ve afterhours için dersler dokümanı, 7. bölüm.
 
 
 Bildirim metni kararı: **hayır**, üyenin metni kilit ekranına çıkmaz.

@@ -148,14 +148,16 @@ export const groups = {
   'notify.groups.hint': { en: 'added to a group, matches, votes, the plan, the chat, live, tickets', de: 'zu einer gruppe hinzugefügt, matches, abstimmungen, der plan, der chat, live, tickets', tr: 'gruba eklenme, eşleşme, oylama, plan, sohbet, canlı, bilet' },
   'notify.posts': { en: 'posts from friends', de: 'posts von freunden', tr: 'arkadaşların gönderileri' },
   'notify.posts.hint': { en: 'a friend posted a photo or a few words', de: 'ein freund hat ein foto oder ein paar worte gepostet', tr: 'bir arkadaşın fotoğraf ya da birkaç kelime paylaştı' },
+  'notify.dms': { en: 'messages', de: 'nachrichten', tr: 'mesajlar' },
+  'notify.dms.hint': { en: 'a friend wrote to you (the name, never the words)', de: 'ein freund hat dir geschrieben (der name, nie die worte)', tr: 'bir arkadaşın sana yazdı (ad, asla metin değil)' },
 
   // design 4B: making a group in three steps
   'groups.step.look': { en: 'name and look', de: 'name und look', tr: 'ad ve görünüm' },
   'groups.step.who': { en: 'who', de: 'wer', tr: 'kimler' },
-  'groups.step.when': { en: 'where and when', de: 'wo und wann', tr: 'nerede, ne zaman' },
+  'groups.step.when': { en: 'where', de: 'wo', tr: 'nerede' },
   'groups.q.look': { en: 'what is the group called?', de: 'wie heißt die gruppe?', tr: 'grubun adı ne?' },
   'groups.q.who': { en: 'who do you go out with?', de: 'mit wem gehst du aus?', tr: 'kiminle çıkıyorsun?' },
-  'groups.q.when': { en: 'where, and for how long?', de: 'wo, und wie lange?', tr: 'nerede, ne kadar süre?' },
+  'groups.q.when': { en: 'where?', de: 'wo?', tr: 'nerede?' },
   'groups.step.link': { en: 'link later', de: 'link später', tr: 'sonra link' },
   'groups.step.next': { en: 'next', de: 'weiter', tr: 'devam' },
   'groups.step.next.n': { en: 'next · {n} people', de: 'weiter · {n} leute', tr: 'devam · {n} kişi' },

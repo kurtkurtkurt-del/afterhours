@@ -23,6 +23,7 @@ export type Settings = {
   // 48_group_push.sql
   notify_groups?: boolean;
   notify_posts?: boolean;
+  notify_dms?: boolean;
 };
 
 export async function fetchSettings(userId: string): Promise<Settings | null> {

@@ -579,8 +579,9 @@ asks for and stays with it.
 | `(tabs)/map` | **The map:** the top is the flow's: the city large (a tap opens the place picker), then pills `all events` · `this week` (the default since 07.10.2026) · `near me` (`components/Pill.tsx`, shared with the flow); the radius slider. Every mark sends out a **radar ring** every 3.2 s, each starting at its own moment (from its id) and staying small, so neighbours ripple one after another; the rings take the mark's colour (paper, red, gold) and hide while a night is picked. One-finger zoom as in Google Maps: tap, touch again and drag — down zooms in, up zooms out, around that spot; a double tap without a drag zooms in one step (`components/MapWeb.tsx`, touch handlers on window in the capture phase; Leaflet's own double-click zoom is off). Dragging the km slider moves the map live: the circle and the zoom follow the finger (unsnapped zoom, no animation), and it eases on release. While the map moves it stays lit: tiles load during the move (`updateWhenIdle: false`), six rings of tiles are kept around the screen, no fade-in, and the ground under a tile still on its way is the tiles' own tone (#1b1a19, measured) instead of black. **Sparks are on the map too** (`30_spark_map.sql`): a spark gets the spot where its host was when pressing create it (last known position, else a 6 s fix; no permission = no spot), and the map shows every spark you can see — yours, those ticked for you, those of your waves — as a **gold diamond**; `n sparks` in gold under the night count. A tap opens the same caption as a night, gold instead of red: kind · who started it, time · place · how many are in, your answer; `go →` opens the spark page (`spark/[kind]?invite=<id>`, now read with `spark_get()`, so it still opens after you answered; your own shows no buttons). The spot is sharp for the host and their friends and rounded to about a kilometre for the 2nd and 3rd wave, since it is often a home. You are a round puck — paper disc, ink gap, red rim and core, a slow red ping — so you never read as a night. **Nights are map pins** (07.10.2026): a rounded drop with an ink hole and a soft shadow, standing on its tip — paper, red when a friend kept it, the picked one larger and red with a paper ring; sparks are a rounded gold diamond. **Every time the map opens** it centres on you with a 5 km circle (the last known position at once, a fresh fix when it comes), filters kept; tapping the tab again also resets the filters. The zoom stays on whole levels (tiles are drawn for whole levels only; in between the names went blurry) except while the slider is dragged, the street names are at 90%, and the circle is only fitted once the WebView has a size (fitting into 0×0 zoomed all the way in) **The card walks the map** (11.10.2026): a swipe left on the night's card takes the next pin, right the one before, in the pins' order (nearest first; `‹ 2 of 8 ›` says so), and the map pans so the picked pin sits in the clear above the card (`panInside` in `components/MapWeb.tsx`). A swipe here is not keep / let go as on the flow: the card has `go →` and the night's page for that. |
 | `(tabs)/account` | **Account, a record sleeve** (06.10.2026, the same as someone else's profile, `components/Sleeve.tsx`): your photograph as a square cover with the name on it (tap it to change the photo), the record sliding out behind it on the right with a red label — in Munich the label reads `MÜNCHEN` over the Alps (a pale far range, the near range in rock, snow on the summits), elsewhere it carries the number of nights; the grooves are drawn light enough to read on ink. Under it the bio and the longer text, then **the links as round marks** (`components/LinkMarks.tsx`: instagram · spotify · x · whatsapp always, filled when added and only outlined when not — an empty one opens edit profile; tiktok, soundcloud, website once added), **two counts** (`events` = nights kept, `your people` = friends; each opens its list, `list/[kind]`), a full-width red `edit profile`, then the collection, placed so the first screen ends halfway down the cards. On paper below: coming up, your sparks, your cities. The photograph is chosen from the phone (`expo-image-picker`), cut down to 1080 px, kept on the phone and uploaded to the `photos` bucket (`24_photos.sql`), readable by you and CONFIRMED friends only. Sign out lives in settings |
 | `night/[slug]` | **The night page:** the photograph, `check in` / `keep` / `ticket`, where · when · kind, the room line |
-| `rooms` | **Messages** (11.10.2026, design D in `prototypes/messaging.html`; the route keeps its old name): the red round button at the bottom right of `yours` and `people`, above the tab bar, opens it — with what is new on it as a paper badge (`components/MessagesButton.tsx`). One list, `data/messages.ts`: your open rooms first (from `my_cards()`, the time left in red and the new lines counted), then your groups' chats (badge, name, the last line, the new lines counted), then the frozen rooms, dimmed; a row opens the room or the chat. What you have seen is kept on the phone, not the server: a room's line count and a chat's last line id, written while the room or the chat is open (kv-store, `ah.seen.*`). Until then rooms alone were behind a small chat mark in the title band of yours. Pulling down closes it |
+| `rooms` | **Messages** (11.10.2026, design D in `prototypes/messaging.html`; the route keeps its old name): the red round button at the bottom right of `yours` and `people`, above the tab bar, opens it — with what is new on it as a paper badge (`components/MessagesButton.tsx`). One list, `data/messages.ts`: `new conversation` on top (12.10.2026: a sheet with your confirmed friends, narrowed by what you type; a tap opens the thread, `dm/[id]`, `59_dms.sql`; messages are between friends only), then your direct threads (face, name, the last line, one unread when the last line is theirs and newer than you saw), then your open rooms (from `my_cards()`, the time left in red and the new lines counted), then your groups' chats (badge, name, the last line, the new lines counted), then the frozen rooms, dimmed; a row opens the room or the chat. What you have seen is kept on the phone, not the server: a room's line count and a chat's last line id, written while the room or the chat is open (kv-store, `ah.seen.*`). Until then rooms alone were behind a small chat mark in the title band of yours. Pulling down closes it |
 | `room/[slug]` | **The room:** open for 48h after check-in, `two lines, at most`, then frozen |
+| `dm/[id]` | **A direct conversation** (12.10.2026): you and one friend, bubbles as in a group chat, new lines every 3 s, a long press takes your own back. Notifications carry the name and `a new message`, never the words; a switch under notifications → together |
 | `person/[handle]` · `list/[kind]` | **Someone's profile** (06.10.2026), opened from search, suggestions, your people, who's coming, the names in the feed: the same record sleeve as your account — their photo (friends only; otherwise their initial), the bio, their links (friends only), their two counts, a full-width red button that says what it does (`add friend` · `accept request` · `request sent` · `friends`), then their collection (`person_cards()`, `36_person_cards.sql`, friends only). Sample people (the names in the sample friends of the people tab) get a page drawn from the name, marked sample. `list/events` and `list/people` (`?handle=` for someone else, `38_profile_lists.sql`): the nights kept and the people, each row opens the night or the profile; pulls down to close |
 | `dj/[id]` · `friend/[id]` · `friend/add` | A dj (follow, sets, next); **a friend, in the account page's language** — their photo (or drawn face) full-bleed with the name large and `live` when out, then on paper their kept nights as photo cards (tap = the night), their text and links, nights together, accept / remove; adding one by handle |
 | `signup` · `welcome` | Email + password (or `leave both empty to look around first`), then the handle |
@@ -768,7 +769,7 @@ msg who froze no at1 at2 q1 q2`. See `cards/card-data.js` for an example.
 
 ---
 
-**Account types and the panel** (07.10.2026, `41_account_types.sql`, `42_staff.sql`, `data/staff.ts`, `app/panel/*`, `app/panel/index.tsx`). Every profile has a type: **normal user**, **dj**, **community manager**, **admin**. In settings → account a user switches between normal user and dj with a code that is the name itself (`normal user`, `dj`). **Community manager** is given by an admin in the panel; **admin** is `profiles.is_admin`, appointed in the SQL editor as before — the code cannot reach either (42 sent anyone who had typed their way there under 41 back to normal user). Admins and community managers open the **panel** from the panel mark beside the gear on the account page (11.10.2026; until then it was a sixth tab, and the bar is back to five): numbers, new night / new room / new dj, the nights made here (edit, hide, delete), and the newest comments (hide / show). The admin also sees **people and roles** (search, give a type), **feedback** (mark done) and **the log** (`staff_log`: who made, changed or deleted what). A dj gets **my dj page** in settings: one page on the djs tab of their own, and the nights they play. Every write goes through a function in `42_staff.sql` with its own check; nights made here carry `source = staff`, so the ticketmaster sync and the seed cleanup never touch them. A community manager deletes only their own nights, the admin any. 49 tests in `backend/test/staff.test.mjs`.
+**Account types and the panel** (07.10.2026, `41_account_types.sql`, `42_staff.sql`, `data/staff.ts`, `app/panel/*`, `app/panel/index.tsx`). Every profile has a type: **normal user**, **dj**, **community manager**, **admin**. (Groups, since 12.10.2026: a group is for good — the `just once` kind and its dates left the form and the wizard, whose last step asks only where; groups made once before keep their dates.) In settings → account a user switches between normal user and dj with a code that is the name itself (`normal user`, `dj`). **Community manager** is given by an admin in the panel; **admin** is `profiles.is_admin`, appointed in the SQL editor as before — the code cannot reach either (42 sent anyone who had typed their way there under 41 back to normal user). Admins and community managers open the **panel** from the panel mark beside the gear on the account page (11.10.2026; until then it was a sixth tab, and the bar is back to five): numbers, new night / new room / new dj, the nights made here (edit, hide, delete), and the newest comments (hide / show). The admin also sees **people and roles** (search, give a type), **feedback** (mark done) and **the log** (`staff_log`: who made, changed or deleted what). A dj gets **my dj page** in settings: one page on the djs tab of their own, and the nights they play. Every write goes through a function in `42_staff.sql` with its own check; nights made here carry `source = staff`, so the ticketmaster sync and the seed cleanup never touch them. A community manager deletes only their own nights, the admin any. 49 tests in `backend/test/staff.test.mjs`.
 
 **The + on the flow** (07.10.2026, `43_event_submit.sql`, `app/panel/night.tsx`, `app/panel/pending.tsx`). Beside the centred `tickets · spark` switch, a + offers **with a ticket** or **among friends**. Among friends lists the eleven sparks and opens the chosen one's page, where title, time, place and wave are suggested and can be changed. With a ticket opens the night form: the staff publish at once; anyone else with an account (not a guest) sends it in (`event_submit`, a ticket link required, at most five waiting) and sees it under *what you sent in* as waiting, live, or not taken with the reason. The staff find it in the panel under **sent in** (also counted on the first page): let it through, edit it first, or turn it down with a line the sender sees. 22 tests in `backend/test/event-submit.test.mjs`.
 
@@ -852,9 +853,30 @@ which are definer and set them honestly. The two owner-side functions —
 `migration_done()` and `hide_past_events()` — had EXECUTE taken back from
 the browser roles: the log and the cron job are not a public API.
 
+**One door (12.10.2026, `57_doors.sql`).** "Who is asking?" and "may they see this
+person?" have one answer each: `assert_member()` (signed in and not banned, else an
+exception) is the first line of the group and post gates and of the big reads —
+people search and suggestions, the posts feed, the past feed, the waves — so a banned
+account reads nothing; `visible_to(viewer, other)` (no block either way, not banned,
+a friend or discoverable) is what `card_visible` was, with the viewer named, and
+`reachable()` its half without the discoverable part, which the spark waves use.
+Before this the first question was asked in 33 places in its own words and the
+second in four. `doors.test.mjs` holds both. **A push says a sentence and a name,
+never the words** (`58_push_words.sql`): six kinds carried a member's text to the
+lock screen; `push_text` now drops `text` whatever a trigger passes. **Direct
+messages** (`59_dms.sql`): one thread per pair of confirmed friends, `dm_start` /
+`dm_send` / `dm_thread` / `dm_list`, twenty lines a minute, a block or a ban closes
+the thread, push kind `dm` with its own switch. The twelve sentences the database
+keeps, each with its SQL file and the test that proves it, are in
+[backend/promises.md](backend/promises.md); the setup test refuses a row whose test
+is gone.
+
 **Which files have been run is written down.** The setup is pasted into
-the Supabase editor by hand, so a project can sit a file behind while
-everything still looks fine — a page just answers PGRST202 because the
+the Supabase editor by hand — or, since 12.10.2026, applied by `npm run migrate`
+(`backend/tools/migrate.mjs`: asks `public.migrations` what is in, lists what is
+missing, applies it in order with `--write`, each file its own transaction; needs
+`SUPABASE_DB_URL`, the session-mode connection string) — and until then a project
+could sit a file behind while everything still looked fine — a page just answers PGRST202 because the
 function it wanted was never created. Every numbered file now stamps its
 own name into `public.migrations` (00_migrations.sql), and
 `npm run health` says how many of the thirteen are in and names the ones
@@ -884,7 +906,14 @@ reasons — deleting a topic would take other people's replies with it, and
 the constraint on the `comments` table refuses a row with no author. The
 settings page says so before it deletes.
 
-For the setup, the tests (278 checks) and the local imitation of Supabase
+**The gate** (12.10.2026, `backend/tools/gate.mjs`, `npm run gate`): every check in one
+command — the backend's on PGlite, the app's types, lint and unit tests, the site walk —
+and then a proof, `.qa/gate-proof.json`, bound to the tree hash of the commit it checked.
+The pre-push hook (`.githooks/pre-push`, installed by `npm install` in `backend/`) refuses
+a push to `main` whose commit has no passing proof; a push of documents alone goes
+through. Order: commit → `npm run gate` → push. "I ran the tests" is a file now.
+
+For the setup, the tests (over 950 checks) and the local imitation of Supabase
 (`tools/local-server.mjs`, PostgREST + GoTrue on top of PGlite) →
 **[backend/README.md](backend/README.md)**
 
@@ -897,7 +926,8 @@ request. Three jobs, none of which needs a secret:
 
 | job | what it refuses to let through |
 |---|---|
-| `backend` | the 278 checks, on a real Postgres (PGlite) |
+| `backend` | the backend's checks (over 950), on a real Postgres (PGlite) |
+| `app` | the app's types, lint and unit tests (since 12.10.2026; until then only the backend was checked here) |
 | `generated` | SQL that has drifted from the files it was built from — it rebuilds and asks git whether anything moved |
 | `versions` | more than one `?v=NN` across the pages, which would serve a stale script against a new stylesheet |
 | `site` | a reference that leads nowhere — every href/src in every page, and page+poster+og for all 142 events |
@@ -923,6 +953,11 @@ Actions tab any time. `--dry` locally shows what it would write.
 The site itself has no build step and nothing to check: it is plain HTML
 the browser reads as it is. What can break in silence is the database and
 the generated SQL, so that is what is watched.
+
+`backup.yml` has a second job since 12.10.2026: a `pg_dump` of the public schema's
+data — profiles, friendships, cards, groups, messages — encrypted with `gpg` and kept 30
+days, once the two secrets `SUPABASE_DB_URL` and `BACKUP_PASSPHRASE` are set; without
+them the job says so and ends green. The content backup above stays as it was.
 
 A second workflow, `health.yml`, asks the live database how it is every
 morning at 06:20 UTC — after the 05:30 job that drops past events, so what

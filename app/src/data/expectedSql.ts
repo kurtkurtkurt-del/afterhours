@@ -60,4 +60,5 @@ export const EXPECTED_SQL = [
   '56_spark_kinds_2.sql',
   '57_doors.sql',
   '58_push_words.sql',
+  '59_dms.sql',
 ];

@@ -137,24 +137,14 @@ export default function GroupEdit() {
         ))}
       </View>
 
-      <Choice
-        label={t('groups.f.kind')}
-        value={f.kind}
-        options={[
-          { id: 'lasting', label: t('groups.f.lasting') },
-          { id: 'once', label: t('groups.f.once') },
-        ]}
-        onSelect={(k) => set({ kind: k as GroupForm['kind'] })}
-      />
-      {f.kind === 'once' ? <Quiet text={t('groups.f.once.hint')} /> : null}
+      {/* A group is for good (Ahmet, 11.10.2026): no "just once", no last day. Groups made
+          "once" before keep their dates in the table; the app no longer offers them. */}
       <Choice
         label={t('groups.f.city')}
         value={f.city ?? '*'}
         options={[{ id: '*', label: t('groups.f.anywhere') }, ...cities.map((c) => ({ id: c.slug, label: c.name.toLowerCase() }))]}
         onSelect={(c) => set({ city: c === '*' ? null : c })}
       />
-      <Field label={t('groups.f.from')} value={f.from ?? ''} onChangeText={(from) => set({ from })} maxLength={10} keyboardType="numbers-and-punctuation" />
-      <Field label={t('groups.f.to')} value={f.to ?? ''} onChangeText={(to) => set({ to })} maxLength={10} keyboardType="numbers-and-punctuation" />
 
       {group ? (
         <>
@@ -227,7 +217,7 @@ function Wizard({ f, set, cities, friends, picked, toggle, said, busy, save }: {
   const insets = useSafeAreaInsets();
   const [step, setStep] = useState(0);
   const steps = [t('groups.step.look'), t('groups.step.who'), t('groups.step.when')];
-  const ready = step === 0 ? f.name.trim().length > 0 : step === 2 ? f.kind === 'lasting' || !!f.to : true;
+  const ready = step === 0 ? f.name.trim().length > 0 : true;
   const next = () => (step < 2 ? setStep(step + 1) : save());
   return (
     <View style={styles.root}>
@@ -288,19 +278,7 @@ function Wizard({ f, set, cities, friends, picked, toggle, said, busy, save }: {
           </View>
         ) : null}
         {step === 2 ? (
-          <>
-            <View style={styles.wrap}>
-              {(['lasting', 'once'] as const).map((k) => (
-                <Pressable key={k} onPress={() => set({ kind: k })} style={[styles.kind, f.kind === k && styles.kindOn]}>
-                  <Text style={[styles.kindText, f.kind === k && styles.kindTextOn]}>{t(k === 'lasting' ? 'groups.f.lasting' : 'groups.f.once')}</Text>
-                </Pressable>
-              ))}
-            </View>
-            {f.kind === 'once' ? <Quiet text={t('groups.f.once.hint')} /> : null}
-            <Choice label={t('groups.f.city')} value={f.city ?? '*'} options={[{ id: '*', label: t('groups.f.anywhere') }, ...cities.map((c) => ({ id: c.slug, label: c.name.toLowerCase() }))]} onSelect={(c) => set({ city: c === '*' ? null : c })} />
-            <Field label={t('groups.f.from')} value={f.from ?? ''} onChangeText={(from) => set({ from })} maxLength={10} keyboardType="numbers-and-punctuation" />
-            <Field label={t('groups.f.to')} value={f.to ?? ''} onChangeText={(to) => set({ to })} maxLength={10} keyboardType="numbers-and-punctuation" />
-          </>
+          <Choice label={t('groups.f.city')} value={f.city ?? '*'} options={[{ id: '*', label: t('groups.f.anywhere') }, ...cities.map((c) => ({ id: c.slug, label: c.name.toLowerCase() }))]} onSelect={(c) => set({ city: c === '*' ? null : c })} />
         ) : null}
         <Said text={said?.text ?? null} bad={said?.bad} />
       </ScrollView>

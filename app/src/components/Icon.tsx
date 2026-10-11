@@ -19,9 +19,12 @@ export default function Icon({ name, size = 22, color, strokeWidth = 1.5, filled
       )}
       {name === 'yours' && (
         <>
+          {/* the feed: a post card — a face top left, the photo, a line of words (until
+              11.10.2026 a person in a square, too close to people) */}
           <Rect x={3.5} y={3.5} width={17} height={17} rx={3} {...f} />
-          <Circle cx={12} cy={10} r={3} {...(filled ? cut : p)} />
-          <Path d="M6.5 19.5a5.5 5.5 0 0 1 11 0" {...(filled ? { ...p, stroke: hole } : p)} />
+          <Circle cx={7.5} cy={7.5} r={1.6} {...(filled ? cut : { ...p, fill: color })} />
+          <Rect x={6} y={10.5} width={12} height={6} rx={1} {...(filled ? cut : p)} />
+          <Path d="M6 19h8" {...(filled ? { ...p, stroke: hole } : p)} />
         </>
       )}
       {name === 'people' && (
