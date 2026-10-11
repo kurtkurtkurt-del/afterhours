@@ -76,6 +76,7 @@
     "58_push_words.sql",
     "59_dms.sql",
     "60_tickets.sql",
+    "61_travel.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */

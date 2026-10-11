@@ -4,7 +4,9 @@ import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { router, useLocalSearchParams } from 'expo-router';
 import Button from '@/components/Button';
+import DayPicker, { fromIso, isoDay, shortDay } from '@/components/DayPicker';
 import GroupBadge from '@/components/GroupBadge';
+import PickerSheet from '@/components/PickerSheet';
 import StaffPage, { Choice, Field, Quiet, Said, staffStyles } from '@/components/StaffPage';
 import { Panel, Row, Section, Switch, Value } from '@/components/Row';
 import { useAuth } from '@/auth/AuthContext';
@@ -18,6 +20,7 @@ import {
   groupDelete,
   groupGet,
   groupLeave,
+  groupLegsSet,
   groupRemove,
   groupSetVisible,
   groupUpdate,
@@ -25,6 +28,7 @@ import {
   type Group,
   type GroupColor,
   type GroupForm,
+  type LegForm,
 } from '@/data/groups';
 import { allCities, type Place } from '@/data/staff';
 import { useLang } from '@/i18n';
@@ -42,7 +46,7 @@ export default function GroupEdit() {
   const [cities, setCities] = useState<Place[]>([]);
   const [friends, setFriends] = useState<FriendRow[]>([]);
   const [group, setGroup] = useState<Group | null>(null);
-  const [f, setF] = useState<GroupForm>({ name: '', emoji: GROUP_EMOJI[0], color: 'red', kind: 'lasting', city: null, from: null, to: null });
+  const [f, setF] = useState<GroupForm>({ name: '', emoji: GROUP_EMOJI[0], color: 'red', kind: 'lasting', city: null, from: null, to: null, legs: [] });
   const [picked, setPicked] = useState<Set<string>>(() => new Set(preset ? preset.split(',') : []));
   const [said, setSaid] = useState<{ text: string; bad?: boolean } | null>(null);
   const [busy, setBusy] = useState(false);
@@ -52,7 +56,7 @@ export default function GroupEdit() {
     id
       ? groupGet(id).then((g) => {
           setGroup(g);
-          setF({ name: g.name, emoji: g.emoji, color: g.color, kind: g.kind, city: g.city_slug, from: g.date_from, to: g.date_to });
+          setF({ name: g.name, emoji: g.emoji, color: g.color, kind: g.kind, city: g.city_slug, from: g.date_from, to: g.date_to, legs: (g.legs ?? []).map((l) => ({ city: l.city, from: l.from, to: l.to })) });
         }, (e) => setSaid({ text: why(e), bad: true }))
       : Promise.resolve();
   useEffect(() => {
@@ -78,6 +82,7 @@ export default function GroupEdit() {
     try {
       if (id) {
         await groupUpdate(id, f);
+        if (f.kind === 'travel') await groupLegsSet(id, f.legs);
         const add = [...picked].filter((x) => !inGroup.has(x));
         if (add.length) await groupAdd(id, add);
         setPicked(new Set());
@@ -85,6 +90,7 @@ export default function GroupEdit() {
         setSaid({ text: t('staff.saved') });
       } else {
         const made = await groupCreate(f, [...picked]);
+        if (f.kind === 'travel' && f.legs.length) await groupLegsSet(made, f.legs);
         router.replace(`/groups/${made}`);
       }
     } catch (e) {
@@ -139,12 +145,19 @@ export default function GroupEdit() {
 
       {/* A group is for good (Ahmet, 11.10.2026): no "just once", no last day. Groups made
           "once" before keep their dates in the table; the app no longer offers them. */}
-      <Choice
-        label={t('groups.f.city')}
-        value={f.city ?? '*'}
-        options={[{ id: '*', label: t('groups.f.anywhere') }, ...cities.map((c) => ({ id: c.slug, label: c.name.toLowerCase() }))]}
-        onSelect={(c) => set({ city: c === '*' ? null : c })}
-      />
+      {f.kind === 'travel' ? (
+        <>
+          <Text style={styles.label}>{t('groups.step.route').toUpperCase()}</Text>
+          <RouteEditor legs={f.legs} cities={cities} onChange={(legs) => set({ legs })} />
+        </>
+      ) : (
+        <Choice
+          label={t('groups.f.city')}
+          value={f.city ?? '*'}
+          options={[{ id: '*', label: t('groups.f.anywhere') }, ...cities.map((c) => ({ id: c.slug, label: c.name.toLowerCase() }))]}
+          onSelect={(c) => set({ city: c === '*' ? null : c })}
+        />
+      )}
 
       {group ? (
         <>
@@ -216,8 +229,9 @@ function Wizard({ f, set, cities, friends, picked, toggle, said, busy, save }: {
   const { t, up } = useLang();
   const insets = useSafeAreaInsets();
   const [step, setStep] = useState(0);
-  const steps = [t('groups.step.look'), t('groups.step.who'), t('groups.step.when')];
-  const ready = step === 0 ? f.name.trim().length > 0 : true;
+  const travel = f.kind === 'travel';
+  const steps = [t('groups.step.look'), t('groups.step.who'), t(travel ? 'groups.step.route' : 'groups.step.when')];
+  const ready = step === 0 ? f.name.trim().length > 0 : step === 2 && travel ? f.legs.length > 0 && f.legs.every((l) => l.city && l.from && l.to) : true;
   const next = () => (step < 2 ? setStep(step + 1) : save());
   return (
     <View style={styles.root}>
@@ -229,7 +243,7 @@ function Wizard({ f, set, cities, friends, picked, toggle, said, busy, save }: {
           ))}
         </View>
         <Text style={styles.stepMono}>{up(`${step + 1} / 3 · ${steps[step]}`)}</Text>
-        <Text style={styles.question}>{t(step === 0 ? 'groups.q.look' : step === 1 ? 'groups.q.who' : 'groups.q.when')}</Text>
+        <Text style={styles.question}>{t(step === 0 ? 'groups.q.look' : step === 1 ? 'groups.q.who' : travel ? 'groups.q.route' : 'groups.q.when')}</Text>
       </View>
       <ScrollView contentContainerStyle={styles.wizBody} keyboardShouldPersistTaps="handled">
         {step === 0 ? (
@@ -237,7 +251,19 @@ function Wizard({ f, set, cities, friends, picked, toggle, said, busy, save }: {
             <View style={styles.face}>
               <GroupBadge emoji={f.emoji} color={f.color} cover={null} size={110} />
             </View>
-            <Field label={t('groups.f.name')} value={f.name} onChangeText={(name) => set({ name })} placeholder={t('groups.f.name.placeholder')} maxLength={40} autoCapitalize="sentences" autoFocus />
+            {/* friends or travel (12.10.2026): a trip gets a route instead of a city */}
+            <View style={styles.kinds}>
+              {(['lasting', 'travel'] as const).map((k) => {
+                const on = (f.kind === 'travel') === (k === 'travel');
+                return (
+                  <Pressable key={k} onPress={() => set({ kind: k })} accessibilityRole="radio" accessibilityState={{ selected: on }} style={[styles.kindCard, on && styles.kindCardOn]}>
+                    <Text style={[styles.kindTitle, on && styles.kindTitleOn]}>{t(k === 'travel' ? 'groups.kind.travel' : 'groups.kind.friends')}</Text>
+                    <Text style={[styles.kindHint, on && styles.kindHintOn]}>{t(k === 'travel' ? 'groups.kind.travel.hint' : 'groups.kind.friends.hint')}</Text>
+                  </Pressable>
+                );
+              })}
+            </View>
+            <Field label={t('groups.f.name')} value={f.name} onChangeText={(name) => set({ name })} placeholder={t('groups.f.name.placeholder')} maxLength={40} autoCapitalize="sentences" />
             <Text style={styles.label}>{up(t('groups.f.emoji'))}</Text>
             <View style={styles.wrap}>
               {GROUP_EMOJI.map((e) => (
@@ -277,9 +303,10 @@ function Wizard({ f, set, cities, friends, picked, toggle, said, busy, save }: {
             {!friends.length ? <Quiet text={t('groups.f.friends.none')} /> : null}
           </View>
         ) : null}
-        {step === 2 ? (
+        {step === 2 && !travel ? (
           <Choice label={t('groups.f.city')} value={f.city ?? '*'} options={[{ id: '*', label: t('groups.f.anywhere') }, ...cities.map((c) => ({ id: c.slug, label: c.name.toLowerCase() }))]} onSelect={(c) => set({ city: c === '*' ? null : c })} />
         ) : null}
+        {step === 2 && travel ? <RouteEditor legs={f.legs} cities={cities} onChange={(legs) => set({ legs })} /> : null}
         <Said text={said?.text ?? null} bad={said?.bad} />
       </ScrollView>
       <View style={[styles.wizFoot, { paddingBottom: insets.bottom + 16 }]}>
@@ -297,8 +324,103 @@ function Wizard({ f, set, cities, friends, picked, toggle, said, busy, save }: {
   );
 }
 
+// The route of a trip: a leg per city with its first and last day, in order of travel.
+// A new leg starts the day the one before ends; the city sheet opens for it at once.
+function RouteEditor({ legs, cities, onChange }: { legs: LegForm[]; cities: Place[]; onChange: (legs: LegForm[]) => void }) {
+  const { t, up } = useLang();
+  const [cityFor, setCityFor] = useState<number | null>(null);
+  const [dayFor, setDayFor] = useState<{ i: number; which: 'from' | 'to' } | null>(null);
+  const nameOf = (slug: string) => cities.find((c) => c.slug === slug)?.name.toLowerCase() ?? slug;
+  const plus = (iso: string, n: number) => isoDay(new Date(fromIso(iso).getTime() + n * 86_400_000));
+  const patch = (i: number, p: Partial<LegForm>) =>
+    onChange(
+      legs.map((l, j) => {
+        if (j !== i) return l;
+        const next = { ...l, ...p };
+        if (next.to < next.from) next.to = next.from;
+        return next;
+      }),
+    );
+  const add = () => {
+    const last = legs[legs.length - 1];
+    const from = last ? last.to : isoDay(new Date());
+    onChange([...legs, { city: '', from, to: plus(from, 2) }]);
+    setCityFor(legs.length);
+  };
+  const leg = dayFor ? legs[dayFor.i] : null;
+  return (
+    <View>
+      {!legs.length ? <Quiet text={t('groups.route.none')} /> : null}
+      {legs.map((l, i) => (
+        <View key={i} style={styles.leg}>
+          <Text style={styles.legNo}>{String(i + 1).padStart(2, '0')}</Text>
+          <View style={styles.legBody}>
+            <Pressable onPress={() => setCityFor(i)} hitSlop={6} accessibilityRole="button">
+              <Text style={[styles.legCity, !l.city && styles.legCityNone]}>{l.city ? nameOf(l.city) : `${t('groups.route.city')}…`}</Text>
+            </Pressable>
+            <View style={styles.legDays}>
+              <Pressable onPress={() => setDayFor({ i, which: 'from' })} hitSlop={6} accessibilityRole="button" style={styles.legDay}>
+                <Text style={styles.legDayLabel}>{up(t('groups.route.arrive'))}</Text>
+                <Text style={styles.legDayValue}>{shortDay(l.from)}</Text>
+              </Pressable>
+              <Pressable onPress={() => setDayFor({ i, which: 'to' })} hitSlop={6} accessibilityRole="button" style={styles.legDay}>
+                <Text style={styles.legDayLabel}>{up(t('groups.route.leave'))}</Text>
+                <Text style={styles.legDayValue}>{shortDay(l.to)}</Text>
+              </Pressable>
+            </View>
+          </View>
+          <Pressable onPress={() => onChange(legs.filter((_, j) => j !== i))} hitSlop={10} accessibilityRole="button" accessibilityLabel={t('groups.remove')}>
+            <Text style={styles.legRemove}>✕</Text>
+          </Pressable>
+        </View>
+      ))}
+      {legs.length < 12 ? (
+        <Pressable onPress={add} style={({ pressed }) => [styles.legAdd, pressed && styles.pressed]} accessibilityRole="button">
+          <Text style={styles.legAddText}>+ {t('groups.route.add')}</Text>
+        </Pressable>
+      ) : null}
+      <PickerSheet
+        open={cityFor !== null}
+        title={t('groups.route.city')}
+        options={cities.map((c) => ({ id: c.slug, label: c.name.toLowerCase() }))}
+        selected={cityFor !== null ? (legs[cityFor]?.city ?? null) : null}
+        onSelect={(c) => cityFor !== null && patch(cityFor, { city: c })}
+        onClose={() => setCityFor(null)}
+      />
+      <DayPicker
+        open={dayFor !== null}
+        title={t(dayFor?.which === 'to' ? 'groups.route.leave' : 'groups.route.arrive')}
+        value={leg ? (dayFor?.which === 'to' ? leg.to : leg.from) : null}
+        min={dayFor ? (dayFor.which === 'to' ? leg?.from : legs[dayFor.i - 1]?.from) ?? null : null}
+        onSelect={(d) => dayFor && patch(dayFor.i, { [dayFor.which]: d })}
+        onClose={() => setDayFor(null)}
+      />
+    </View>
+  );
+}
+
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
+  pressed: { opacity: 0.7 },
+  kinds: { flexDirection: 'row', gap: 8, marginBottom: 18 },
+  kindCard: { flex: 1, borderRadius: radius.md, borderWidth: 1, borderColor: colors.ink3, padding: 12 },
+  kindCardOn: { backgroundColor: colors.paper, borderColor: colors.paper },
+  kindTitle: { fontFamily: fonts.semibold, fontSize: 17, letterSpacing: -0.3, color: colors.paper },
+  kindTitleOn: { color: colors.ink },
+  kindHint: { fontFamily: fonts.regular, fontSize: 11.5, lineHeight: 15, color: colors.mute, marginTop: 3 },
+  kindHintOn: { color: colors.ink2 },
+  leg: { flexDirection: 'row', alignItems: 'flex-start', gap: 12, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md, padding: 12, marginBottom: 8 },
+  legNo: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.spotText, paddingTop: 5 },
+  legBody: { flex: 1 },
+  legCity: { fontFamily: fonts.logo, fontSize: 26, lineHeight: 28, letterSpacing: -0.6, color: colors.paper },
+  legCityNone: { color: colors.mute },
+  legDays: { flexDirection: 'row', gap: 18, marginTop: 8 },
+  legDay: { gap: 2 },
+  legDayLabel: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.4, color: colors.meta },
+  legDayValue: { fontFamily: fonts.medium, fontSize: 15, color: colors.paper },
+  legRemove: { fontFamily: fonts.regular, fontSize: 14, color: colors.mute, paddingTop: 4 },
+  legAdd: { height: 44, borderRadius: radius.pill, borderWidth: 1, borderStyle: 'dashed', borderColor: colors.mute, alignItems: 'center', justifyContent: 'center', marginTop: 4 },
+  legAddText: { fontFamily: fonts.medium, fontSize: 14, color: colors.paper },
   flex: { flex: 1 },
   wizTop: { paddingHorizontal: brand.left },
   bars: { flexDirection: 'row', gap: 4 },

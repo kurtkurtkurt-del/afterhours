@@ -14,6 +14,7 @@ import { Image } from 'expo-image';
 import { posterUrl } from '@/data/deck';
 import { dayLabel } from '@/data/when';
 import GroupBadge from '@/components/GroupBadge';
+import Passport from '@/components/Passport';
 import Icon from '@/components/Icon';
 import PickerSheet from '@/components/PickerSheet';
 import { Switch } from '@/components/Row';
@@ -48,7 +49,7 @@ import { useLang } from '@/i18n';
 import { colors, fonts, radius, tint } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-type Tab = 'swipe' | 'matches' | 'plan' | 'live';
+type Tab = 'trip' | 'swipe' | 'matches' | 'plan' | 'live';
 const ACTIONS = 86;
 
 // One group: its face on top, then three ways to look at its nights.
@@ -64,7 +65,9 @@ export default function GroupScreen() {
   const reporting = useReport();
   const insets = useSafeAreaInsets();
   const [group, setGroup] = useState<Group | null>(null);
-  const [tab, setTab] = useState<Tab>(tabParam === 'plan' || tabParam === 'matches' || tabParam === 'live' ? tabParam : 'swipe');
+  // a travel group opens on its passport (12.10.2026); null = whichever the kind asks for
+  const [tab, setTab] = useState<Tab | null>(tabParam === 'plan' || tabParam === 'matches' || tabParam === 'live' ? tabParam : null);
+  const shown: Tab = tab ?? (group?.kind === 'travel' ? 'trip' : 'swipe');
   const [deck, setDeck] = useState<Night[] | null>(null);
   const [matches, setMatches] = useState<Match[]>([]);
   const [said, setSaid] = useState<string | null>(null);
@@ -124,10 +127,10 @@ export default function GroupScreen() {
           </Pressable>
         </View>
         <View style={styles.tabs} accessibilityRole="tablist">
-          {(['swipe', 'matches', 'plan', 'live'] as const).map((k) => (
-            <Pressable key={k} onPress={() => setTab(k)} accessibilityRole="tab" accessibilityState={{ selected: tab === k }} style={[styles.tab, tab === k && styles.tabOn]}>
+          {(group?.kind === 'travel' ? (['trip', 'swipe', 'matches', 'plan', 'live'] as const) : (['swipe', 'matches', 'plan', 'live'] as const)).map((k) => (
+            <Pressable key={k} onPress={() => setTab(k)} accessibilityRole="tab" accessibilityState={{ selected: shown === k }} style={[styles.tab, shown === k && styles.tabOn]}>
               {k === 'live' ? <View style={styles.liveDot} /> : null}
-              <Text style={[styles.tabText, tab === k && styles.tabTextOn]}>
+              <Text style={[styles.tabText, shown === k && styles.tabTextOn]}>
                 {t(`groups.tab.${k}`)}
                 {k === 'matches' && matches.some((m) => m.status === 'match') ? ` · ${matches.filter((m) => m.status === 'match').length}` : ''}
               </Text>
@@ -137,7 +140,8 @@ export default function GroupScreen() {
         <Said text={said} bad />
       </View>
 
-      {tab === 'swipe' ? (
+      {shown === 'trip' && group ? <Passport id={id} group={group} top={headH} onSwipe={() => setTab('swipe')} /> : null}
+      {shown === 'swipe' ? (
         <View style={[styles.stage, { paddingTop: headH + 6, paddingBottom: insets.bottom + 84 }]}>
           {deck ? (
             <SwipeStack
@@ -166,9 +170,9 @@ export default function GroupScreen() {
         </View>
       ) : null}
 
-      {tab === 'matches' ? <Matches id={id} matches={matches} nameOf={nameOf} top={headH} onPlan={() => setTab('plan')} /> : null}
-      {tab === 'plan' ? <PlanTab id={id} me={group?.me ?? ''} top={headH} groupName={group?.name ?? ''} /> : null}
-      {tab === 'live' ? <Live id={id} me={group?.me ?? ''} top={headH} nameOf={nameOf} onChange={() => groupMatches(id).then(setMatches, () => {})} /> : null}
+      {shown === 'matches' ? <Matches id={id} matches={matches} nameOf={nameOf} top={headH} onPlan={() => setTab('plan')} /> : null}
+      {shown === 'plan' ? <PlanTab id={id} me={group?.me ?? ''} top={headH} groupName={group?.name ?? ''} /> : null}
+      {shown === 'live' ? <Live id={id} me={group?.me ?? ''} top={headH} nameOf={nameOf} onChange={() => groupMatches(id).then(setMatches, () => {})} /> : null}
 
       {tab !== 'swipe' ? <BackButton /> : null}
       <Tips page="group" tip={{ title: 'tips.group.1.t', body: 'tips.group.1.b', motion: 'swipe' }} bottom={insets.bottom + ACTIONS + 10} />

@@ -24,7 +24,7 @@ export type GroupRow = {
   emoji: string;
   color: GroupColor;
   cover_path: string | null;
-  kind: 'lasting' | 'once';
+  kind: 'lasting' | 'once' | 'travel';
   city_slug: string | null;
   date_from: string | null;
   date_to: string | null;
@@ -36,8 +36,9 @@ export type GroupRow = {
   archived: boolean;
 };
 export type Member = { id: string; handle: string | null; name: string | null; role: 'owner' | 'member' };
-export type Group = Omit<GroupRow, 'members' | 'faces' | 'matches' | 'to_swipe' | 'live'> & { me: string; members: Member[]; visible?: boolean };
-export type GroupForm = { name: string; emoji: string; color: GroupColor; kind: 'lasting' | 'once'; city: string | null; from: string | null; to: string | null };
+export type Group = Omit<GroupRow, 'members' | 'faces' | 'matches' | 'to_swipe' | 'live'> & { me: string; members: Member[]; visible?: boolean; legs: { id: string; leg_no: number; city: string; from: string; to: string }[] };
+export type LegForm = { city: string; from: string; to: string }; // days as yyyy-mm-dd
+export type GroupForm = { name: string; emoji: string; color: GroupColor; kind: 'lasting' | 'once' | 'travel'; city: string | null; from: string | null; to: string | null; legs: LegForm[] };
 export type Match = {
   id: string;
   slug: string;
@@ -82,6 +83,16 @@ const formArgs = (f: GroupForm) => ({
 });
 export const groupCreate = (f: GroupForm, members: string[]) => rpc<string>('group_create', { ...formArgs(f), p_members: members });
 export const groupUpdate = (id: string, f: GroupForm) => rpc<void>('group_update', { p_id: id, ...formArgs(f) });
+
+// ------------------------------------------- travel groups (61_travel.sql)
+
+// The route of a travel group: one leg per city, with the days there and what the
+// group kept and photographed there.
+export type Leg = { id: string; leg_no: number; city_slug: string; city_name: string; country_slug: string | null; date_from: string; date_to: string; kept: number; photos: number };
+export type LegNight = { id: string; slug: string; title: string; starts_at: string | null; venue_name: string | null; image_url: string | null; yes: number; members: number; status: 'match' | 'most' | 'some'; yes_ids: string[] };
+export const groupLegsSet = (id: string, legs: LegForm[]) => rpc<number>('group_legs_set', { p_id: id, p_legs: legs });
+export const groupLegs = (id: string) => rpc<Leg[]>('group_legs', { p_id: id });
+export const groupLegNights = (id: string, leg: string) => rpc<LegNight[]>('group_leg_nights', { p_id: id, p_leg: leg });
 export const groupAdd = (id: string, users: string[]) => rpc<number>('group_add', { p_id: id, p_users: users });
 export const groupRemove = (id: string, user: string) => rpc<void>('group_remove', { p_id: id, p_user: user });
 export const groupLeave = (id: string) => rpc<void>('group_leave', { p_id: id });
