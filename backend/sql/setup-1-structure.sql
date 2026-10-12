@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-11 13:21   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-12 06:40   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -13707,5 +13707,42 @@ end $$;
 do $$ begin
   if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('61_travel.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A GROUP COVER FROM THE SHELF   (62_group_covers.sql)
+-- ============================================================
+
+-- afterhours — a group cover from the shelf (62)
+--
+-- A group can wear one of the photos the app ships with as its cover (club, crowd,
+-- friends), not only a photo uploaded by a member: the path is then preset/<name>
+-- instead of <user>/<file>. The app maps the name to its bundled picture; nothing is
+-- uploaded. Asked by Ahmet on 12.10.2026 so a group has a face from the first minute.
+
+create or replace function public.group_set_cover(p_id uuid, p_path text)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  was text;
+begin
+  perform public.need_member(p_id);
+  if p_path is not null and p_path not like auth.uid()::text || '/%' and p_path !~ '^preset/[a-z0-9-]{1,32}$' then
+    raise exception 'not your file';
+  end if;
+  select cover_path into was from public.groups where id = p_id;
+  update public.groups set cover_path = p_path where id = p_id;
+  return was;
+end;
+$$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('62_group_covers.sql');
   end if;
 end $$;

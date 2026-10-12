@@ -1,6 +1,7 @@
 import { launchImageLibraryAsync } from 'expo-image-picker';
 import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
 import { File } from 'expo-file-system';
+import type { ImageSourcePropType } from 'react-native';
 import { supabase } from '@/lib/supabase';
 import type { Night } from '@/data/deck';
 import { SITE } from '@/data/deck';
@@ -38,7 +39,7 @@ export type GroupRow = {
 export type Member = { id: string; handle: string | null; name: string | null; role: 'owner' | 'member' };
 export type Group = Omit<GroupRow, 'members' | 'faces' | 'matches' | 'to_swipe' | 'live'> & { me: string; members: Member[]; visible?: boolean; legs: { id: string; leg_no: number; city: string; from: string; to: string }[] };
 export type LegForm = { city: string; from: string; to: string }; // days as yyyy-mm-dd
-export type GroupForm = { name: string; emoji: string; color: GroupColor; kind: 'lasting' | 'once' | 'travel'; city: string | null; from: string | null; to: string | null; legs: LegForm[] };
+export type GroupForm = { name: string; emoji: string; color: GroupColor; kind: 'lasting' | 'once' | 'travel'; city: string | null; from: string | null; to: string | null; legs: LegForm[]; cover: string | null };
 export type Match = {
   id: string;
   slug: string;
@@ -67,6 +68,23 @@ const rpc = async <T,>(name: string, args?: Record<string, unknown>): Promise<T>
 };
 
 export const coverUrl = (path: string | null) => (path ? supabase.storage.from('photos').getPublicUrl(path).data.publicUrl : null);
+
+// Covers from the shelf (62_group_covers.sql, 12.10.2026): three photos the app ships with,
+// stored as preset/<name>; the app maps the name to the picture, nothing is uploaded.
+export const PRESET_COVERS: Record<string, ImageSourcePropType> = {
+  club: require('../../assets/feed/e1.jpg'),
+  crowd: require('../../assets/intro/concert.jpg'),
+  friends: require('../../assets/feed/r2.jpg'),
+};
+export const presetPath = (name: string) => `preset/${name}`;
+// What to draw for a cover path: a bundled picture for a preset, the storage file otherwise.
+export function coverSource(path: string | null): ImageSourcePropType | null {
+  if (!path) return null;
+  if (path.startsWith('preset/')) return PRESET_COVERS[path.slice(7)] ?? null;
+  const uri = coverUrl(path);
+  return uri ? { uri } : null;
+}
+export const groupSetCover = (id: string, path: string | null) => rpc<string | null>('group_set_cover', { p_id: id, p_path: path });
 
 export const myGroups = () => rpc<GroupRow[]>('my_groups');
 export const groupGet = (id: string) => rpc<Group>('group_get', { p_id: id });

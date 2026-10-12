@@ -5,7 +5,7 @@ import { router } from 'expo-router';
 import Button from '@/components/Button';
 import StaffPage, { Quiet, Said } from '@/components/StaffPage';
 import { useAuth } from '@/auth/AuthContext';
-import { coverUrl, GROUP_COLORS, groupSuggest, myGroups, why, type GroupRow, type Suggestion } from '@/data/groups';
+import { coverSource, GROUP_COLORS, groupSuggest, myGroups, why, type GroupRow, type Suggestion } from '@/data/groups';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
@@ -62,7 +62,7 @@ export default function Groups() {
             <View style={styles.sleeveWrap}>
               <View style={[styles.record, { backgroundColor: GROUP_COLORS[g.color] }]} />
               <View style={[styles.sleeve, { backgroundColor: GROUP_COLORS[g.color] }]}>
-                {coverUrl(g.cover_path) ? <Image source={{ uri: coverUrl(g.cover_path)! }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
+                {coverSource(g.cover_path) ? <Image source={coverSource(g.cover_path)!} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
                 {!g.cover_path ? <Text style={styles.emoji}>{g.emoji}</Text> : null}
                 {g.live ? <Text style={styles.live}>{up(t('groups.liveNow', { n: g.live }))}</Text> : null}
               </View>

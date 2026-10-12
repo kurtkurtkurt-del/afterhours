@@ -69,6 +69,7 @@ const structure = [
   ["59_dms.sql", "DIRECT MESSAGES"],
   ["60_tickets.sql", "DID YOU GET YOUR TICKET"],
   ["61_travel.sql", "TRAVEL GROUPS"],
+  ["62_group_covers.sql", "A GROUP COVER FROM THE SHELF"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

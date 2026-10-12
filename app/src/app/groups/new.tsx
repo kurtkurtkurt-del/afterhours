@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { Image } from 'expo-image';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { router, useLocalSearchParams } from 'expo-router';
 import Button from '@/components/Button';
@@ -13,6 +14,7 @@ import { useAuth } from '@/auth/AuthContext';
 import { friendsList, type FriendRow } from '@/data/friends';
 import {
   chooseCover,
+  coverUrl,
   GROUP_COLORS,
   GROUP_EMOJI,
   groupAdd,
@@ -21,6 +23,9 @@ import {
   groupGet,
   groupLeave,
   groupLegsSet,
+  groupSetCover,
+  PRESET_COVERS,
+  presetPath,
   groupRemove,
   groupSetVisible,
   groupUpdate,
@@ -46,7 +51,7 @@ export default function GroupEdit() {
   const [cities, setCities] = useState<Place[]>([]);
   const [friends, setFriends] = useState<FriendRow[]>([]);
   const [group, setGroup] = useState<Group | null>(null);
-  const [f, setF] = useState<GroupForm>({ name: '', emoji: GROUP_EMOJI[0], color: 'red', kind: 'lasting', city: null, from: null, to: null, legs: [] });
+  const [f, setF] = useState<GroupForm>({ name: '', emoji: GROUP_EMOJI[0], color: 'red', kind: 'lasting', city: null, from: null, to: null, legs: [], cover: null });
   const [picked, setPicked] = useState<Set<string>>(() => new Set(preset ? preset.split(',') : []));
   const [said, setSaid] = useState<{ text: string; bad?: boolean } | null>(null);
   const [busy, setBusy] = useState(false);
@@ -56,7 +61,7 @@ export default function GroupEdit() {
     id
       ? groupGet(id).then((g) => {
           setGroup(g);
-          setF({ name: g.name, emoji: g.emoji, color: g.color, kind: g.kind, city: g.city_slug, from: g.date_from, to: g.date_to, legs: (g.legs ?? []).map((l) => ({ city: l.city, from: l.from, to: l.to })) });
+          setF({ name: g.name, emoji: g.emoji, color: g.color, kind: g.kind, city: g.city_slug, from: g.date_from, to: g.date_to, legs: (g.legs ?? []).map((l) => ({ city: l.city, from: l.from, to: l.to })), cover: g.cover_path });
         }, (e) => setSaid({ text: why(e), bad: true }))
       : Promise.resolve();
   useEffect(() => {
@@ -83,6 +88,7 @@ export default function GroupEdit() {
       if (id) {
         await groupUpdate(id, f);
         if (f.kind === 'travel') await groupLegsSet(id, f.legs);
+        if (f.cover !== (group?.cover_path ?? null) && (f.cover === null || f.cover.startsWith('preset/'))) await groupSetCover(id, f.cover);
         const add = [...picked].filter((x) => !inGroup.has(x));
         if (add.length) await groupAdd(id, add);
         setPicked(new Set());
@@ -91,6 +97,7 @@ export default function GroupEdit() {
       } else {
         const made = await groupCreate(f, [...picked]);
         if (f.kind === 'travel' && f.legs.length) await groupLegsSet(made, f.legs);
+        if (f.cover) await groupSetCover(made, f.cover);
         router.replace(`/groups/${made}`);
       }
     } catch (e) {
@@ -119,13 +126,10 @@ export default function GroupEdit() {
   return (
     <StaffPage title={id ? t('groups.edit') : t('groups.new')}>
       <View style={styles.face}>
-        <GroupBadge emoji={f.emoji} color={f.color} cover={group?.cover_path ?? null} size={96} />
-        {id ? (
-          <Pressable onPress={cover} hitSlop={8}>
-            <Text style={styles.link}>{t('groups.f.cover.set')}</Text>
-          </Pressable>
-        ) : null}
+        <GroupBadge emoji={f.emoji} color={f.color} cover={f.cover} size={96} />
       </View>
+      <Text style={styles.label}>{t('groups.f.cover').toUpperCase()}</Text>
+      <CoverShelf value={f.cover} onPick={(c) => set({ cover: c })} onOwn={id ? cover : undefined} />
       <Field label={t('groups.f.name')} value={f.name} onChangeText={(name) => set({ name })} placeholder={t('groups.f.name.placeholder')} maxLength={40} autoCapitalize="sentences" />
 
       <Text style={styles.label}>{t('groups.f.emoji').toUpperCase()}</Text>
@@ -249,7 +253,7 @@ function Wizard({ f, set, cities, friends, picked, toggle, said, busy, save }: {
         {step === 0 ? (
           <>
             <View style={styles.face}>
-              <GroupBadge emoji={f.emoji} color={f.color} cover={null} size={110} />
+              <GroupBadge emoji={f.emoji} color={f.color} cover={f.cover} size={110} />
             </View>
             {/* friends or travel (12.10.2026): a trip gets a route instead of a city */}
             <View style={styles.kinds}>
@@ -278,6 +282,8 @@ function Wizard({ f, set, cities, friends, picked, toggle, said, busy, save }: {
                 <Pressable key={c} onPress={() => set({ color: c })} accessibilityLabel={c} style={[styles.swatch, { backgroundColor: GROUP_COLORS[c] }, f.color === c && styles.swatchOn]} />
               ))}
             </View>
+            <Text style={styles.label}>{up(t('groups.f.cover'))}</Text>
+            <CoverShelf value={f.cover} onPick={(c) => set({ cover: c })} />
           </>
         ) : null}
         {step === 1 ? (
@@ -320,6 +326,29 @@ function Wizard({ f, set, cities, friends, picked, toggle, said, busy, save }: {
           />
         </View>
       </View>
+    </View>
+  );
+}
+
+// The cover shelf (62_group_covers.sql): none (the emoji on the colour), the three photos the
+// app ships with, and, once the group exists, your own photo from the phone.
+function CoverShelf({ value, onPick, onOwn }: { value: string | null; onPick: (cover: string | null) => void; onOwn?: () => void }) {
+  const own = value && !value.startsWith('preset/') ? value : null;
+  return (
+    <View style={styles.shelf}>
+      <Pressable onPress={() => onPick(null)} style={[styles.shelfCell, styles.shelfNone, value === null && styles.shelfOn]} accessibilityRole="radio" accessibilityState={{ selected: value === null }}>
+        <Text style={styles.shelfX}>✕</Text>
+      </Pressable>
+      {Object.entries(PRESET_COVERS).map(([name, source]) => (
+        <Pressable key={name} onPress={() => onPick(presetPath(name))} style={[styles.shelfCell, value === presetPath(name) && styles.shelfOn]} accessibilityRole="radio" accessibilityLabel={name} accessibilityState={{ selected: value === presetPath(name) }}>
+          <Image source={source} style={StyleSheet.absoluteFill} contentFit="cover" />
+        </Pressable>
+      ))}
+      {onOwn ? (
+        <Pressable onPress={onOwn} style={[styles.shelfCell, styles.shelfOwn, own && styles.shelfOn]} accessibilityRole="button">
+          {own ? <Image source={{ uri: coverUrl(own)! }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Text style={styles.shelfPlus}>+</Text>}
+        </Pressable>
+      ) : null}
     </View>
   );
 }
@@ -403,6 +432,13 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   pressed: { opacity: 0.7 },
   kinds: { flexDirection: 'row', gap: 8, marginBottom: 18 },
+  shelf: { flexDirection: 'row', gap: 8 },
+  shelfCell: { width: 58, height: 58, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink3, borderWidth: 2, borderColor: 'transparent', alignItems: 'center', justifyContent: 'center' },
+  shelfOn: { borderColor: colors.paper },
+  shelfNone: { backgroundColor: 'transparent', borderColor: colors.ink3 },
+  shelfOwn: { backgroundColor: 'transparent', borderStyle: 'dashed', borderColor: colors.mute },
+  shelfX: { fontFamily: fonts.regular, fontSize: 14, color: colors.mute },
+  shelfPlus: { fontFamily: fonts.medium, fontSize: 24, color: colors.mute },
   kindCard: { flex: 1, borderRadius: radius.md, borderWidth: 1, borderColor: colors.ink3, padding: 12 },
   kindCardOn: { backgroundColor: colors.paper, borderColor: colors.paper },
   kindTitle: { fontFamily: fonts.semibold, fontSize: 17, letterSpacing: -0.3, color: colors.paper },

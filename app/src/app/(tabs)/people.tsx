@@ -9,7 +9,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { SvgUri } from 'react-native-svg';
 import WhoSheet from '@/components/WhoSheet';
 import { openPerson } from '@/components/People';
-import { coverUrl, GROUP_COLORS, groupPlan, myGroups, type GroupRow, type Plan, type Round } from '@/data/groups';
+import { coverSource, GROUP_COLORS, groupPlan, myGroups, type GroupRow, type Plan, type Round } from '@/data/groups';
 import { ticketsMine } from '@/data/tickets';
 import GroupBadge from '@/components/GroupBadge';
 import SoundCorner from '@/components/SoundCorner';
@@ -369,7 +369,7 @@ export default function PeopleScreen() {
                   const line = g.kind === 'travel' ? t('connect.group.travel', { n: g.members }) : st?.round ? t('groups.card.closes', { at: dayLabel(st.round.closes_at) }) : st?.plan ? st.plan.title.toLowerCase() : t('connect.group.people', { n: g.members });
                   return (
                     <Pressable key={g.id} onPress={() => router.push({ pathname: '/groups/[id]', params: { id: g.id } })} style={({ pressed }) => [styles.cover, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={g.name}>
-                      {g.cover_path ? <Image source={{ uri: coverUrl(g.cover_path)! }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <View style={[StyleSheet.absoluteFill, { backgroundColor: GROUP_COLORS[g.color], opacity: 0.35 }]} />}
+                      {coverSource(g.cover_path) ? <Image source={coverSource(g.cover_path)!} style={StyleSheet.absoluteFill} contentFit="cover" /> : <View style={[StyleSheet.absoluteFill, { backgroundColor: GROUP_COLORS[g.color], opacity: 0.35 }]} />}
                       <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.92)']} locations={[0.3, 1]} style={StyleSheet.absoluteFill} />
                       <View style={styles.coverBadge}><GroupBadge emoji={g.emoji} color={g.color} cover={null} size={28} /></View>
                       <View style={styles.coverText}>
@@ -688,8 +688,9 @@ const styles = StyleSheet.create({
   groupsHead: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', marginTop: 4 },
   groupsTitle: { fontFamily: fonts.medium, fontSize: 17, letterSpacing: -0.3, color: colors.paper },
   groupsAll: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
-  covers: { flexDirection: 'row', gap: 8, marginTop: 10 },
-  cover: { flex: 1, height: 150, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink3 },
+  // smaller than the page, air left and right (Ahmet, 12.10.2026)
+  covers: { flexDirection: 'row', gap: 10, marginTop: 10, marginHorizontal: 18 },
+  cover: { flex: 1, height: 126, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink3 },
   coverNew: { alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent', borderWidth: 1, borderStyle: 'dashed', borderColor: colors.mute },
   coverPlus: { fontFamily: fonts.medium, fontSize: 28, color: colors.mute },
   coverBadge: { position: 'absolute', left: 8, top: 8 },
