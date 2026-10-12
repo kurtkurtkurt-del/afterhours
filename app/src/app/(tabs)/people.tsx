@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Tips from '@/components/Tips';
-import Animated, { useAnimatedStyle, useSharedValue, withRepeat, withTiming } from 'react-native-reanimated';
 import { FlatList, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
@@ -9,8 +8,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SvgUri } from 'react-native-svg';
 import WhoSheet from '@/components/WhoSheet';
-import { PeopleResults, PeopleSearch, SuggestedInRow, openPerson } from '@/components/People';
-import { groupPlan, myGroups, type GroupRow, type Plan, type Round } from '@/data/groups';
+import { openPerson } from '@/components/People';
+import { coverUrl, GROUP_COLORS, groupPlan, myGroups, type GroupRow, type Plan, type Round } from '@/data/groups';
 import { ticketsMine } from '@/data/tickets';
 import GroupBadge from '@/components/GroupBadge';
 import SoundCorner from '@/components/SoundCorner';
@@ -38,8 +37,10 @@ import { brand } from '@/theme/layout';
 
 const fallbackPhoto = require('../../../assets/intro/concert.jpg');
 
-// People: who you go out with, as yours was before 11.10.2026 minus the feed. Top to
-// bottom: search (typing replaces the page with people results); one thin line to the
+// Connect (12.10.2026, design A in prototypes/connect.html; the tab was people): the first
+// two groups as covers, the messages button in the band, then the gallery and the decks.
+// Search and the faces of your people moved to the messages page. Before: top to
+// bottom: search (typing replaced the page with people results); one thin line to the
 // groups (their badges, how many are live); "with your people", a gallery that mixes
 // the groups' plans and open votes (first), the nights your friends kept (most keepers
 // first) and the sparks waiting for your answer, one full photo each, sliding by itself
@@ -338,14 +339,13 @@ export default function PeopleScreen() {
     { id: 'wave2', label: t('deck.wave2'), cards: wave2 },
     { id: 'wave3', label: t('deck.wave3'), cards: wave3 },
   ];
-  // Out right now first, then whoever asked you, then the rest.
-  const faces = [...friends].sort((a, b) => Number(!!b.live) - Number(!!a.live) || Number(b.pending === 'incoming') - Number(a.pending === 'incoming'));
 
   return (
     <View style={styles.root}>
       <StatusBar style="light" />
       <View style={styles.band}>
-        <Text style={styles.title}>{t('people.title')}</Text>
+        <Text style={styles.title}>{t('connect.title')}</Text>
+        <MessagesButton inline />
         <SoundCorner />
       </View>
       <ScrollView
@@ -354,26 +354,45 @@ export default function PeopleScreen() {
         contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom + 28 }]}
         showsVerticalScrollIndicator={false}
       >
-        <PeopleSearch value={query} onChange={setQuery} />
-        {query.trim() ? (
-          <PeopleResults query={query} />
-        ) : (
+        {
           <>
-            {/* Groups: one thin line (their badges, who is live); the plans themselves are in the gallery. */}
-            <Pressable onPress={() => router.push('/groups')} style={({ pressed }) => [styles.groupsLine, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t('groups.entry')}>
-              <View style={styles.groupFaces}>
-                {groups.filter((g) => !g.archived).slice(0, 4).map((g, i) => (
-                  <View key={g.id} style={i > 0 ? styles.groupOverlap : undefined}>
-                    <GroupBadge emoji={g.emoji} color={g.color} cover={g.cover_path} size={28} />
-                  </View>
-                ))}
+            {/* Groups (connect, design A, 12.10.2026): the first two as covers, side by side;
+                the plans themselves are in the gallery. A tap opens the group; the heading opens all. */}
+            <View style={styles.groupsHead}>
+              <Text style={styles.groupsTitle}>{t('groups.entry')}{groups.some((g) => g.live) ? <Text style={styles.redText}> · {t('groups.liveNow', { n: groups.reduce((a, g) => a + g.live, 0) })}</Text> : null}</Text>
+              <Pressable onPress={() => router.push('/groups')} hitSlop={8} accessibilityRole="button">
+                <Text style={styles.groupsAll}>{groups.filter((g) => !g.archived).length > 2 ? `${t('connect.groups.all')} · ${groups.filter((g) => !g.archived).length} ›` : '+'}</Text>
+              </Pressable>
+            </View>
+            {groups.filter((g) => !g.archived).length ? (
+              <View style={styles.covers}>
+                {groups.filter((g) => !g.archived).slice(0, 2).map((g) => {
+                  const st = plans.find((x) => x.g.id === g.id);
+                  const line = g.kind === 'travel' ? t('connect.group.travel', { n: g.members }) : st?.round ? t('groups.card.closes', { at: dayLabel(st.round.closes_at) }) : st?.plan ? st.plan.title.toLowerCase() : t('connect.group.people', { n: g.members });
+                  return (
+                    <Pressable key={g.id} onPress={() => router.push({ pathname: '/groups/[id]', params: { id: g.id } })} style={({ pressed }) => [styles.cover, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={g.name}>
+                      {g.cover_path ? <Image source={{ uri: coverUrl(g.cover_path)! }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <View style={[StyleSheet.absoluteFill, { backgroundColor: GROUP_COLORS[g.color], opacity: 0.35 }]} />}
+                      <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.92)']} locations={[0.3, 1]} style={StyleSheet.absoluteFill} />
+                      <View style={styles.coverBadge}><GroupBadge emoji={g.emoji} color={g.color} cover={null} size={28} /></View>
+                      <View style={styles.coverText}>
+                        <Text style={styles.coverName} numberOfLines={1}>{g.name.toLowerCase()}</Text>
+                        <Text style={[styles.coverLine, (g.live > 0 || !!st?.round) && styles.redText]} numberOfLines={1}>{g.live > 0 ? t('groups.liveNow', { n: g.live }) : line}</Text>
+                      </View>
+                    </Pressable>
+                  );
+                })}
+                {groups.filter((g) => !g.archived).length === 1 ? (
+                  <Pressable onPress={() => router.push('/groups/new')} style={({ pressed }) => [styles.cover, styles.coverNew, pressed && styles.pressed]} accessibilityRole="button">
+                    <Text style={styles.coverPlus}>+</Text>
+                  </Pressable>
+                ) : null}
               </View>
-              <Text style={styles.groupsText} numberOfLines={1}>
-                {t('groups.entry')}
-                {groups.some((g) => g.live) ? <Text style={styles.redText}> · {t('groups.liveNow', { n: groups.reduce((a, g) => a + g.live, 0) })}</Text> : groups.length ? '' : <Text> · {t('groups.hint')}</Text>}
-              </Text>
-              <Text style={styles.groupArrow}>›</Text>
-            </Pressable>
+            ) : (
+              <Pressable onPress={() => router.push('/groups/new')} style={({ pressed }) => [styles.groupsLine, pressed && styles.pressed]} accessibilityRole="button">
+                <Text style={styles.groupsText}>{t('connect.groups.none')}</Text>
+                <Text style={styles.groupArrow}>+</Text>
+              </Pressable>
+            )}
             {/* With your people: the gallery. */}
             {count ? (
               <>
@@ -565,39 +584,9 @@ export default function PeopleScreen() {
               ))}
             </ScrollView>
 
-            {/* Your people: faces with what each is up to; out right now first, ringed red. */}
-            <Head label={t('yours.people')} note={sampleRow ? up(t('deck.sample')) : friends.length ? String(friends.length) : undefined} />
-            <ScrollView ref={people} horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.rail}>
-              {faces.map((f) => (
-                <Pressable key={f.id} onPress={() => (f.handle ? openPerson(f.handle) : router.push(`/friend/${f.id}`))} style={({ pressed }) => [styles.person, pressed && styles.pressed]}>
-                  <View style={[styles.face, f.live && styles.faceLive, f.pending && styles.facePending]}>
-                    {f.photo ? <Image source={{ uri: f.photo }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Avatar name={f.handle ?? f.name} size={FACE} />}
-                  </View>
-                  <Text style={styles.personName} numberOfLines={1}>{f.name}</Text>
-                  {f.live ? (
-                    <View style={styles.liveRow}>
-                      <Pulse />
-                      <Text style={[styles.personState, styles.redText]} numberOfLines={1}>{f.live}</Text>
-                    </View>
-                  ) : (
-                    <Text style={[styles.personState, f.pending === 'incoming' && styles.redText]} numberOfLines={1}>
-                      {f.pending ? (f.pending === 'incoming' ? t('yours.wantsIn') : t('yours.asked')) : f.kept ? t('yours.keptN', { n: f.kept }) : ' '}
-                    </Text>
-                  )}
-                </Pressable>
-              ))}
-              <Pressable onPress={() => router.push('/friend/add')} style={({ pressed }) => [styles.person, pressed && styles.pressed]}>
-                <View style={[styles.face, styles.faceAdd]}>
-                  <Text style={styles.faceText}>+</Text>
-                </View>
-                <Text style={styles.personName}>{t('yours.add')}</Text>
-                <Text style={styles.personState}> </Text>
-              </Pressable>
-              <SuggestedInRow />
-            </ScrollView>
 
           </>
-        )}
+        }
       </ScrollView>
 
       <WhoSheet
@@ -646,7 +635,6 @@ export default function PeopleScreen() {
           }
         />
       ) : null}
-      <MessagesButton />
       <Tips page="people" tip={{ title: 'tips.people.1.t', body: 'tips.people.1.b', motion: 'tap' }} bottom={tabSpace + 12} />
     </View>
   );
@@ -690,16 +678,6 @@ function Head({ label, note, red }: { label: string; note?: string; red?: boolea
   );
 }
 
-// The red dot of someone out right now, breathing.
-function Pulse() {
-  const o = useSharedValue(1);
-  useEffect(() => {
-    o.set(withRepeat(withTiming(0.25, { duration: 900 }), -1, true));
-  }, [o]);
-  const style = useAnimatedStyle(() => ({ opacity: o.value }));
-  return <Animated.View style={[styles.pulse, style]} />;
-}
-
 const KEPT = 36; // the faces of who kept a night, on the gallery card
 const FACE = 62;
 const GOLD = '#E8B04B'; // sparks (as on the map)
@@ -708,7 +686,18 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 44, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
-  groupsLine: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 10, paddingHorizontal: 12, marginTop: 12, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md },
+  groupsLine: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 12, paddingHorizontal: 12, marginTop: 12, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md },
+  groupsHead: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', marginTop: 4 },
+  groupsTitle: { fontFamily: fonts.medium, fontSize: 17, letterSpacing: -0.3, color: colors.paper },
+  groupsAll: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
+  covers: { flexDirection: 'row', gap: 8, marginTop: 10 },
+  cover: { flex: 1, height: 150, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink3 },
+  coverNew: { alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent', borderWidth: 1, borderStyle: 'dashed', borderColor: colors.mute },
+  coverPlus: { fontFamily: fonts.medium, fontSize: 28, color: colors.mute },
+  coverBadge: { position: 'absolute', left: 8, top: 8 },
+  coverText: { position: 'absolute', left: 10, right: 10, bottom: 9 },
+  coverName: { fontFamily: fonts.semibold, fontSize: 14, letterSpacing: -0.2, color: colors.paper },
+  coverLine: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, color: colors.mute, marginTop: 3, textTransform: 'uppercase' },
   groupFaces: { flexDirection: 'row', minWidth: 28 },
   groupOverlap: { marginLeft: -10 },
   groupsText: { flex: 1, fontFamily: fonts.regular, fontSize: 13, color: colors.mute },

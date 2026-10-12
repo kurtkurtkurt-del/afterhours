@@ -180,12 +180,6 @@ export default function AccountScreen() {
           <LinkMarks links={extra?.links ?? {}} onMissing={signedIn ? () => router.push('/profile') : undefined} />
           {signedIn ? <ProfileCounts handle={profile?.handle ?? null} events={profile?.kept_count ?? null} people={profile?.friend_count ?? null} mine /> : null}
 
-          <Pressable
-            onPress={() => router.push(signedIn ? '/profile' : '/signup')}
-            style={({ pressed }) => [styles.button, pressed && styles.pressed]}
-          >
-            <Text style={styles.buttonText}>{signedIn ? t('account.editProfile') : t('word.signup')}</Text>
-          </Pressable>
         </View>
 
         {/* The collection starts halfway into the bottom of the first screen. */}
@@ -222,6 +216,13 @@ export default function AccountScreen() {
             <Text style={[styles.small, styles.onInkSmall]}>{up(`${tn('account.nKept', profile?.kept_count ?? 0)} · ${tn('account.nFriends', profile?.friend_count ?? 0)}`)}</Text>
           ) : null}
         </View>
+        {/* Edit profile under the collection (Ahmet, 12.10.2026): the first screen is you and your cards. */}
+        <Pressable
+          onPress={() => router.push(signedIn ? '/profile' : '/signup')}
+          style={({ pressed }) => [styles.button, styles.buttonInk, pressed && styles.pressed]}
+        >
+          <Text style={[styles.buttonText, styles.buttonInkText]}>{signedIn ? t('account.editProfile') : t('word.signup')}</Text>
+        </Pressable>
 
         {/* Paper: the rest of you. */}
         <View style={styles.paper}>
@@ -362,6 +363,8 @@ const styles = StyleSheet.create({
   panel: { position: 'absolute', top: brand.top - 3, right: brand.left + 128 },
   button: { alignSelf: 'stretch', marginTop: 20, height: 54, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.spot, borderRadius: radius.md },
   buttonText: { fontFamily: fonts.medium, fontSize: 17, letterSpacing: -0.3, color: colors.ink },
+  buttonInk: { marginTop: 14, marginHorizontal: brand.left, height: 48, backgroundColor: 'transparent', borderWidth: 1.5, borderColor: colors.paper },
+  buttonInkText: { color: colors.paper, fontSize: 16 },
   deckHead: { paddingTop: 30 },
   deckFoot: { paddingBottom: 26 },
   onInk: { color: colors.paper },

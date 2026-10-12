@@ -89,7 +89,7 @@ export const pages = {
   'rooms.title': { en: 'your rooms.', de: 'deine räume.', tr: 'odaların.' },
   // messages: the rooms and the group chats in one list (11.10.2026)
   'messages.title': { en: 'messages.', de: 'nachrichten.', tr: 'mesajlar.' },
-  'messages.a11y': { en: 'messages: your rooms and group chats', de: 'nachrichten: deine räume und gruppenchats', tr: 'mesajlar: odaların ve grup sohbetlerin' },
+  'messages.a11y': { en: 'messages: your direct conversations and your people', de: 'nachrichten: deine räume und gruppenchats', tr: 'mesajlar: odaların ve grup sohbetlerin' },
   'messages.about': {
     en: 'your rooms, one for every night you checked in to, open for 48 hours; and your groups\' chats.',
     de: 'deine räume, einer für jede nacht, in die du eingecheckt hast, 48 stunden offen; und die chats deiner gruppen.',
@@ -98,6 +98,12 @@ export const pages = {
   'messages.groups': { en: 'groups', de: 'gruppen', tr: 'gruplar' },
   'messages.quiet': { en: 'nothing said yet', de: 'noch nichts gesagt', tr: 'henüz bir şey söylenmedi' },
   'messages.direct': { en: 'direct', de: 'direkt', tr: 'direkt' },
+  'messages.tonight': { en: 'tonight', de: 'heute nacht', tr: 'bu gece' },
+  'messages.people': { en: 'people', de: 'leute', tr: 'insanlar' },
+  'messages.outNow': { en: 'out now', de: 'unterwegs', tr: 'dışarıda' },
+  'messages.requests': { en: 'requests', de: 'anfragen', tr: 'istekler' },
+  'messages.yourPeople': { en: 'your people', de: 'deine leute', tr: 'seninkiler' },
+  'messages.none': { en: 'no conversations yet. start one with a friend.', de: 'noch keine unterhaltungen. fang eine mit einem freund an.', tr: 'henüz konuşma yok. bir arkadaşla başlat.' },
   'messages.new': { en: 'new conversation', de: 'neue unterhaltung', tr: 'yeni konuşma' },
   'messages.new.who': { en: 'a friend\'s name', de: 'der name eines freundes', tr: 'bir arkadaşının adı' },
   'messages.new.none': { en: 'no friend by that name', de: 'kein freund mit dem namen', tr: 'bu adda arkadaş yok' },
