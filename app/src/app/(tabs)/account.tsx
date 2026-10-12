@@ -18,6 +18,9 @@ import { usePhoto } from '@/data/photo';
 import { useProfile, useProfileExtra } from '@/data/profile';
 import { kept } from '@/data/friends';
 import { sparkMine, type MySpark } from '@/data/sparks';
+import { ticketsMine } from '@/data/tickets';
+import { LinearGradient } from 'expo-linear-gradient';
+import { Image } from 'expo-image';
 import { dayLabel } from '@/data/when';
 import type { Night } from '@/data/deck';
 import { sparkOf } from '@/content/sparks';
@@ -82,6 +85,7 @@ export default function AccountScreen() {
   const extra = useProfileExtra(null, tick);
   const [upcoming, setUpcoming] = useState<Night[] | null>(null);
   const [sparks, setSparks] = useState<MySpark[] | null>(null);
+  const [ticketed, setTicketed] = useState<Set<string>>(new Set());
   useEffect(() => {
     if (!uid) return;
     let cancelled = false;
@@ -93,6 +97,7 @@ export default function AccountScreen() {
       })
       .catch(() => !cancelled && setUpcoming([]));
     sparkMine().then((list) => !cancelled && setSparks(list));
+    ticketsMine().then((set) => !cancelled && setTicketed(set), () => {});
     return () => {
       cancelled = true;
     };
@@ -123,6 +128,13 @@ export default function AccountScreen() {
   const gap = aboveH && headH ? Math.max(0, screenH - tabBottom - (aboveH + headH + cardH / 2)) : 0;
   const signedIn = !!session && !isAnonymous;
   const two = (n: number) => String(n).padStart(2, '0');
+  // days from today to a night (0 = tonight)
+  const daysTo = (iso: string) => Math.max(0, Math.round((new Date(iso).setHours(0, 0, 0, 0) - new Date().setHours(0, 0, 0, 0)) / 86_400_000));
+  const cityCounts = (names: string[]): [string, number][] => {
+    const m = new Map<string, number>();
+    names.filter(Boolean).forEach((c) => m.set(c, (m.get(c) ?? 0) + 1));
+    return [...m.entries()].sort((x, y) => y[1] - x[1]);
+  };
   const at = (iso: string | null) => {
     if (!iso) return dayLabel(iso);
     const d = new Date(iso);
@@ -224,61 +236,82 @@ export default function AccountScreen() {
           <Text style={[styles.buttonText, styles.buttonInkText]}>{signedIn ? t('account.editProfile') : t('word.signup')}</Text>
         </Pressable>
 
-        {/* Paper: the rest of you. */}
-        <View style={styles.paper}>
+        {/* Under the cards, on ink (design B in prototypes/account-paper.html, 12.10.2026; the
+            paper went): coming up as a rail of posters with the date and the ticket, your
+            sparks as gold-framed cards with the answers as a bar, your cities as chips. */}
+        <View style={styles.under}>
           {!signedIn ? (
-            <Section title={t('account.about')} first>
-              <Pressable onPress={() => router.push('/signup')} style={({ pressed }) => pressed && styles.pressed}>
-                <Text style={styles.prompt}>{t('account.more.guest')}</Text>
-              </Pressable>
-            </Section>
+            <Pressable onPress={() => router.push('/signup')} style={({ pressed }) => pressed && styles.pressed}>
+              <Text style={[styles.prompt, styles.promptInk]}>{t('account.more.guest')}</Text>
+            </Pressable>
           ) : (
             <>
-              <Section title={t('account.next')} first>
-                {upcoming === null ? null : upcoming.length ? (
-                  upcoming.map((n) => (
-                    <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.line, pressed && styles.pressed]}>
-                      <View style={styles.lineMain}>
-                        <Text style={styles.lineTitle} numberOfLines={1}>{n.title.toLowerCase()}</Text>
-                        <Text style={styles.small} numberOfLines={1}>{up(at(n.starts_at))} · {upperData(n.venue_name ?? n.city_name)}</Text>
-                      </View>
-                      <Text style={styles.lineValue}>›</Text>
-                    </Pressable>
-                  ))
-                ) : (
-                  <Text style={styles.prompt}>{t('account.next.empty')}</Text>
-                )}
-              </Section>
-
-              <Section title={t('account.sparks')}>
-                {sparks === null ? null : sparks.length ? (
-                  sparks.map((sp) => (
-                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.line, pressed && styles.pressed]}>
-                      <View style={styles.lineMain}>
-                        <Text style={styles.lineTitle} numberOfLines={1}>{sp.title.toLowerCase()}</Text>
-                        <Text style={styles.small} numberOfLines={1}>
-                          {up(at(sp.starts_at))}
-                          {sp.reach ? ` · ${up(t(sp.reach === 1 ? 'spark.wave1.short' : sp.reach === 2 ? 'deck.wave2' : 'deck.wave3'))}` : ''}
+              <View style={styles.underHead}>
+                <Text style={styles.underTitle}>{up(t('account.next'))}</Text>
+                {upcoming?.length && upcoming[0].starts_at ? <Text style={styles.underRed}>{up(tn('account.next.in', daysTo(upcoming[0].starts_at)))}</Text> : null}
+              </View>
+              {upcoming === null ? null : upcoming.length ? (
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.rail}>
+                  {upcoming.map((n) => (
+                    <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.poster, pressed && styles.pressed]} accessibilityRole="button">
+                      {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
+                      <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.95)']} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
+                      <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
+                      <View style={styles.posterText}>
+                        <Text style={styles.posterTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
+                        <Text style={[styles.posterMono, ticketed.has(n.slug) && styles.underRed]} numberOfLines={1}>
+                          {ticketed.has(n.slug) ? up(t('night.ticketGot')) : upperData(n.venue_name ?? n.city_name)}
                         </Text>
                       </View>
-                      <Text style={styles.answers}>{t('account.sparks.answers', { in: sp.going, out: sp.not_going })}</Text>
                     </Pressable>
-                  ))
-                ) : (
-                  <Text style={styles.prompt}>{t('account.sparks.empty')}</Text>
-                )}
-              </Section>
+                  ))}
+                </ScrollView>
+              ) : (
+                <Text style={[styles.prompt, styles.promptInk, styles.promptTight]}>{t('account.next.empty')}</Text>
+              )}
+
+              <View style={styles.underHead}>
+                <Text style={styles.underTitle}>{up(t('account.sparks'))}</Text>
+                {sparks?.length ? <Text style={styles.underGold}>{up(tn('account.sparks.open', sparks.length))}</Text> : null}
+              </View>
+              {sparks === null ? null : sparks.length ? (
+                sparks.map((sp, k) => {
+                  const quiet = Math.max(0, sp.invited - sp.going - sp.not_going);
+                  const total = Math.max(1, sp.invited);
+                  return (
+                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.spark, k === 0 && styles.sparkFirst, pressed && styles.pressed]} accessibilityRole="button">
+                      <Image source={sparkOf(sp.kind).photo} style={styles.sparkPhoto} contentFit="cover" />
+                      <View style={styles.sparkText}>
+                        <Text style={styles.sparkTitle} numberOfLines={1}>{sp.title.toLowerCase()}</Text>
+                        <Text style={styles.sparkMeta} numberOfLines={1}>{up(at(sp.starts_at))}{sp.place ? ` · ${upperData(sp.place)}` : ''}</Text>
+                        <View style={styles.bar}>
+                          <View style={[styles.barIn, { flex: sp.going / total }]} />
+                          <View style={[styles.barOut, { flex: sp.not_going / total }]} />
+                          <View style={{ flex: quiet / total }} />
+                        </View>
+                      </View>
+                      <Text style={[styles.answers, k === 0 && styles.underGold]}>{`${sp.going} ${t('spark.in.short')}\n${sp.not_going} ${t('spark.out.short')}`}</Text>
+                    </Pressable>
+                  );
+                })
+              ) : (
+                <Text style={[styles.prompt, styles.promptInk, styles.promptTight]}>{t('account.sparks.empty')}</Text>
+              )}
 
               {real ? (
-                <Section title={t('account.cities')}>
+                <>
+                  <View style={styles.underHead}>
+                    <Text style={styles.underTitle}>{up(t('account.cities'))}</Text>
+                    <Text style={styles.underMute}>{cities}</Text>
+                  </View>
                   <View style={styles.chips}>
-                    {[...new Set(cards.map((c) => (c.city_name ?? '').toLowerCase()).filter(Boolean))].map((c) => (
-                      <View key={c} style={styles.chip}>
-                        <Text style={styles.chipText}>{c}</Text>
+                    {cityCounts(cards.map((c) => (c.city_name ?? '').toLowerCase())).map(([c, n], k) => (
+                      <View key={c} style={[styles.chipInk, k === 0 && styles.chipInkOn]}>
+                        <Text style={[styles.chipInkText, k === 0 && styles.chipInkTextOn]}>{c} <Text style={k === 0 ? styles.chipInkTextOn : styles.underMute}>{n}</Text></Text>
                       </View>
                     ))}
                   </View>
-                </Section>
+                </>
               ) : null}
             </>
           )}
@@ -330,26 +363,8 @@ export default function AccountScreen() {
   );
 }
 
-// A part of the page under the deck: a heading with the red dot, an optional
-// "edit" on the right, a hairline above (none on the first).
-function Section({ title, action, onAction, first, children }: { title: string; action?: string; onAction?: () => void; first?: boolean; children: React.ReactNode }) {
-  return (
-    <View style={[styles.section, first && styles.sectionFirst]}>
-      <View style={styles.row}>
-        <View style={styles.rowLeft}>
-          <Text style={styles.deckTitle}>{title}</Text>
-          <View style={styles.dot} />
-        </View>
-        {action ? (
-          <Pressable onPress={onAction} hitSlop={12} style={({ pressed }) => pressed && styles.pressed}>
-            <Text style={styles.link}>{action}</Text>
-          </Pressable>
-        ) : null}
-      </View>
-      <View style={styles.sectionBody}>{children}</View>
-    </View>
-  );
-}
+
+const GOLD = '#E8B04B'; // sparks (as on the map)
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
@@ -371,7 +386,32 @@ const styles = StyleSheet.create({
   onInkSmall: { color: colors.mute },
   onInkRule: { borderTopColor: colors.ink3 },
   // The paper overlaps the poster with rounded top corners.
-  paper: { backgroundColor: colors.paper, paddingTop: 22, paddingBottom: 18, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg },
+  under: { paddingHorizontal: brand.left, paddingTop: 10, paddingBottom: 18 },
+  underHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', marginTop: 26, marginBottom: 10 },
+  underTitle: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
+  underRed: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.spotText },
+  underGold: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: GOLD },
+  underMute: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.meta },
+  promptTight: { marginTop: 0 },
+  rail: { gap: 8, paddingRight: brand.left },
+  poster: { width: 108, height: 140, borderRadius: radius.sm, overflow: 'hidden', backgroundColor: colors.ink3 },
+  posterDate: { position: 'absolute', left: 7, top: 7, backgroundColor: colors.ink, color: colors.paper, fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, paddingHorizontal: 6, paddingVertical: 4, borderRadius: 5, overflow: 'hidden' },
+  posterText: { position: 'absolute', left: 8, right: 8, bottom: 7 },
+  posterTitle: { fontFamily: fonts.semibold, fontSize: 12.5, lineHeight: 14, letterSpacing: -0.2, color: colors.paper },
+  posterMono: { fontFamily: fonts.jet, fontSize: 7.5, letterSpacing: 1, color: colors.mute, marginTop: 3 },
+  spark: { flexDirection: 'row', alignItems: 'center', gap: 10, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.sm, padding: 9, marginTop: 6 },
+  sparkFirst: { borderColor: GOLD, marginTop: 0 },
+  sparkPhoto: { width: 36, height: 46, borderRadius: 5, backgroundColor: colors.ink3 },
+  sparkText: { flex: 1, minWidth: 0 },
+  sparkTitle: { fontFamily: fonts.semibold, fontSize: 13, letterSpacing: -0.2, color: colors.paper },
+  sparkMeta: { fontFamily: fonts.regular, fontSize: 11, color: colors.mute, marginTop: 2 },
+  bar: { flexDirection: 'row', height: 5, borderRadius: 3, backgroundColor: colors.ink3, overflow: 'hidden', marginTop: 7 },
+  barIn: { backgroundColor: GOLD },
+  barOut: { backgroundColor: '#5a4a2a' },
+  chipInk: { height: 30, paddingHorizontal: 11, borderRadius: radius.pill, borderWidth: 1, borderColor: colors.ink3, justifyContent: 'center' },
+  chipInkOn: { backgroundColor: colors.paper, borderColor: colors.paper },
+  chipInkText: { fontFamily: fonts.medium, fontSize: 12.5, color: colors.paper },
+  chipInkTextOn: { color: colors.ink },
   section: { marginTop: 22, paddingTop: 18, borderTopWidth: 1, borderTopColor: colors.rule, marginHorizontal: 0 },
   sectionFirst: { marginTop: 0, paddingTop: 0, borderTopWidth: 0 },
   sectionBody: { paddingHorizontal: brand.left, marginTop: 12, gap: 2 },
@@ -384,7 +424,7 @@ const styles = StyleSheet.create({
   lineKey: { fontFamily: fonts.regular, fontSize: 14, color: colors.ink2 },
   lineTitle: { fontFamily: fonts.medium, fontSize: 16, letterSpacing: -0.3, color: colors.ink },
   lineValue: { flexShrink: 1, fontFamily: fonts.medium, fontSize: 14, color: colors.ink },
-  answers: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 0.6, color: colors.spot },
+  answers: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, color: colors.meta, textAlign: 'right', lineHeight: 13 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   chip: { height: 32, paddingHorizontal: 13, borderRadius: radius.pill, borderWidth: 1, borderColor: colors.rule, justifyContent: 'center' },
   chipText: { fontFamily: fonts.medium, fontSize: 13, color: colors.ink },
