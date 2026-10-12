@@ -78,6 +78,7 @@
     "60_tickets.sql",
     "61_travel.sql",
     "62_group_covers.sql",
+    "63_previews.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */

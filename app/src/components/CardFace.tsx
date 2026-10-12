@@ -102,6 +102,7 @@ type Props = {
   // over a blurred copy of itself. top: upper bound for the poster.
   fit?: { top: number };
   onDetails?: () => void; // instead of the night page (sparks have their own)
+  overlay?: ReactNode;  // drawn over the poster (the listen player)
 };
 
 // Card face: full-bleed photo or poster with the date tag on it, caption at the bottom
@@ -109,7 +110,7 @@ type Props = {
 // red main action on the right. Since 11.10.2026 the caption no longer lists kind,
 // source and date in mono: the date and kind are on the poster, and "ticket" is said
 // once, by the hint that appears when the card is pulled up.
-export default function CardFace({ card, bottom, rightLabel, rightDone, onRight, fit, onDetails }: Props) {
+export default function CardFace({ card, bottom, rightLabel, rightDone, onRight, fit, onDetails, overlay }: Props) {
   const [captionH, setCaptionH] = useState(0);
   const shown = card.friends.slice(0, 2);
   const more = card.friends.length - shown.length;
@@ -122,7 +123,7 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
   return (
     <>
       {fit ? (
-        <FitPoster card={card} top={fit.top} bottom={bottom + captionH + 12} ready={captionH > 0} tag={<DateTag card={card} kind={kind} />} />
+        <FitPoster card={card} top={fit.top} bottom={bottom + captionH + 12} ready={captionH > 0} tag={<DateTag card={card} kind={kind} />} overlay={overlay} />
       ) : card.image || card.local ? (
         <Image source={card.image ? { uri: card.image } : card.local!} style={styles.photo} contentFit="cover" />
       ) : card.poster ? (
@@ -203,7 +204,7 @@ const sizeOf = (source: ImageSourcePropType) => {
 };
 
 // Flow card: blurred backdrop + uncropped poster, fitted and centred between the chip and the caption.
-function FitPoster({ card, top, bottom, ready, tag }: { card: DeckCard; top: number; bottom: number; ready: boolean; tag: ReactNode }) {
+function FitPoster({ card, top, bottom, ready, tag, overlay }: { card: DeckCard; top: number; bottom: number; ready: boolean; tag: ReactNode; overlay?: ReactNode }) {
   const [area, setArea] = useState<{ w: number; h: number } | null>(null);
   const svg = !card.image && !!card.poster;
   const ratio = useRatio(card.image, svg ? 2 / 3 : sizeOf(card.local ?? fallback));
@@ -231,6 +232,8 @@ function FitPoster({ card, top, bottom, ready, tag }: { card: DeckCard; top: num
           <View style={[styles.fitPoster, { width: w, height: h }]}>
             {svg ? <SvgUri uri={card.poster!} width="100%" height="100%" /> : <Image source={source} style={styles.fill} contentFit="cover" />}
             {tag}
+            {/* listen to the artist (design D): the preview plays over the poster, dimmed */}
+            {overlay}
           </View>
         ) : null}
       </View>

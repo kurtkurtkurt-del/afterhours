@@ -18,6 +18,9 @@ import Animated, {
 import { router } from 'expo-router';
 import Svg, { Path } from 'react-native-svg';
 import { AskButton } from '@/components/About';
+import { ListenButton, ListenOverlay } from '@/components/Listen';
+import { useTrack } from '@/audio/useTrack';
+import type { Preview } from '@/data/previews';
 import ShareButton from '@/components/ShareButton';
 import { shareNight } from '@/lib/share';
 import CardFace, { Hint, openDetails, openTicket, toDeckCard, type DeckCard, type DeckFriend } from '@/components/CardFace';
@@ -72,6 +75,8 @@ type Props = {
   // "who is this?": nights with a text show the button on their card (components/About.tsx).
   hasAbout?: (entry: DeckEntry) => boolean;
   onAbout?: (entry: DeckEntry) => void;
+  // listen to the artist (63): nights with a preview show the button (components/Listen.tsx).
+  previewOf?: (entry: DeckEntry) => Preview | undefined;
 };
 // swipe: the same as throwing the top card that way (the buttons under the deck).
 export type DeckHandle = { undo: () => void; swipe: (direction: Direction) => void };
@@ -95,7 +100,8 @@ const SwipeCard = forwardRef<CardHandle, {
   top: number;
   onDone: (direction: Direction) => void;
   onAbout?: () => void;
-}>(function SwipeCard({ night, friends, active, drag, bottom, top, onDone, onAbout }, ref) {
+  listen?: { preview: Preview; playing: boolean; elapsed: number; duration: number; toggle: () => void; stop: () => void };
+}>(function SwipeCard({ night, friends, active, drag, bottom, top, onDone, onAbout, listen }, ref) {
   const { width } = useWindowDimensions();
   const x = useSharedValue(0);
   const y = useSharedValue(0);
@@ -170,13 +176,15 @@ const SwipeCard = forwardRef<CardHandle, {
           rightLabel={spark ? t(spark.invite ? 'spark.in' : 'spark.create') : t('word.keep')}
           onRight={() => flyOff('right')}
           onDetails={spark ? details : undefined}
+          overlay={listen?.playing ? <ListenOverlay preview={listen.preview} elapsed={listen.elapsed} duration={listen.duration} onStop={listen.stop} /> : undefined}
         />
         {active && (
           <>
             {/* The poster's top right corner holds the kind tag (CardFace); these sit under it. */}
             {onAbout ? <AskButton onPress={onAbout} style={[styles.ask, { top: top + 46 }]} /> : null}
-            {/* A night can be shared straight from the card, under "who is this?" when it has one. */}
-            {!spark && !isCard(night) ? <ShareButton onPress={() => shareNight(night as Night)} style={{ top: top + (onAbout ? 90 : 46), right: 16, bottom: 'auto' }} /> : null}
+            {listen ? <ListenButton onPress={listen.toggle} playing={listen.playing} style={[styles.ask, { top: top + 46 + (onAbout ? 44 : 0) }]} /> : null}
+            {/* A night can be shared straight from the card, under "who is this?" and "listen" when it has them. */}
+            {!spark && !isCard(night) ? <ShareButton onPress={() => shareNight(night as Night)} style={{ top: top + 46 + (onAbout ? 44 : 0) + (listen ? 44 : 0), right: 16, bottom: 'auto' }} /> : null}
             <Animated.View pointerEvents="none" style={[styles.edgeRight, keepEdge]} />
             <Animated.View pointerEvents="none" style={[styles.edgeLeft, letGoEdge]}>
               <Text style={styles.letGo}>{up(t('word.letgo'))}</Text>
@@ -196,8 +204,10 @@ const SwipeCard = forwardRef<CardHandle, {
   );
 });
 
-const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bottom, top: posterTop, onSwipe, onUndo, onReset, hasAbout, onAbout }, ref) {
+const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bottom, top: posterTop, onSwipe, onUndo, onReset, hasAbout, onAbout, previewOf }, ref) {
   const { t, up } = useLang();
+  // one preview at a time; a swipe stops it (the ambient music is hushed meanwhile)
+  const track = useTrack();
   const [i, setI] = useState(0);
   const drag = useSharedValue(0);
   const nextRef = useRef<CardHandle>(null);
@@ -267,7 +277,27 @@ const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bo
   return (
     <View style={styles.stage}>
       {next && <SwipeCard ref={nextRef} key={next.id} night={next} friends={isSpark(next) || isCard(next) ? [] : (friendsOf?.(next) ?? [])} active={false} drag={drag} bottom={bottom} top={posterTop} onDone={done} />}
-      <SwipeCard ref={topRef} key={top.id} night={top} friends={isSpark(top) || isCard(top) ? [] : (friendsOf?.(top) ?? [])} active drag={drag} bottom={bottom} top={posterTop} onDone={done} onAbout={onAbout && hasAbout?.(top) ? () => onAbout(top) : undefined} />
+      <SwipeCard
+        ref={topRef}
+        key={top.id}
+        night={top}
+        friends={isSpark(top) || isCard(top) ? [] : (friendsOf?.(top) ?? [])}
+        active
+        drag={drag}
+        bottom={bottom}
+        top={posterTop}
+        onDone={(dir) => {
+          track.stop();
+          done(dir);
+        }}
+        onAbout={onAbout && hasAbout?.(top) ? () => onAbout(top) : undefined}
+        listen={(() => {
+          const preview = previewOf?.(top);
+          if (!preview) return undefined;
+          const playing = track.playing === top.id;
+          return { preview, playing, elapsed: track.elapsed, duration: track.duration, toggle: () => track.play(top.id, { uri: preview.preview_url }), stop: track.stop };
+        })()}
+      />
       <Animated.View pointerEvents="none" style={[styles.burst, { paddingBottom: bottom }, burstStyle]} accessibilityLiveRegion="polite">
         <View style={styles.burstMark}>
           <Svg width={34} height={34} viewBox="0 0 24 24">

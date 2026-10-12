@@ -53,6 +53,12 @@ export const tabs = {
   },
 
   // flow
+  // listen to the artist (63_previews.sql, components/Listen.tsx)
+  'listen.button': { en: 'listen', de: 'anhören', tr: 'dinle' },
+  'listen.playing': { en: 'playing', de: 'läuft', tr: 'çalıyor' },
+  'listen.stop': { en: 'stop', de: 'stopp', tr: 'durdur' },
+  'listen.a11y': { en: 'listen to the artist, thirty seconds', de: 'den künstler anhören, dreißig sekunden', tr: 'sanatçıyı dinle, otuz saniye' },
+  'listen.source.apple': { en: 'apple music ↗', de: 'apple music ↗', tr: 'apple music ↗' },
   'about.ask': { en: 'who is this?', de: 'wer ist das?', tr: 'bu kim?' },
   'about.source': { en: 'source', de: 'quelle', tr: 'kaynak' },
   'about.ai': { en: 'summarised with ai', de: 'mit ki zusammengefasst', tr: 'ai ile özetlendi' },

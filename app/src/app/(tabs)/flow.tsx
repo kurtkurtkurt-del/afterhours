@@ -26,6 +26,7 @@ import { OfflineError, onBackOnline } from '@/lib/offline';
 import { typeCounts, useEventTypes } from '@/data/types';
 import { fetchDeck, resetSwipes, swipe, unswipe, type Night } from '@/data/deck';
 import { aboutFor, type About } from '@/data/about';
+import { previewsFor, type Preview } from '@/data/previews';
 import { AboutSheet } from '@/components/About';
 import { filterWhen, isWhen, whenName, type When } from '@/data/when';
 import { upperData, useLang } from '@/i18n';
@@ -95,10 +96,13 @@ export default function FlowScreen() {
   // "who is this?": the texts for the nights in this deck, and the one open in the sheet.
   const [abouts, setAbouts] = useState<Map<string, About>>(new Map());
   const [reading, setReading] = useState<About | null>(null);
+  // listen to the artist: the previews for the nights in this deck
+  const [previews, setPreviews] = useState<Map<string, Preview>>(new Map());
   useEffect(() => {
     const ids = result.rows?.map((n) => n.id) ?? [];
     let live = true;
     aboutFor(ids, lang).then((m) => live && setAbouts(m));
+    previewsFor(ids).then((m) => live && setPreviews(m));
     return () => {
       live = false;
     };
@@ -274,7 +278,7 @@ export default function FlowScreen() {
         {error && panel === 'tickets' ? (
           <Text style={styles.note}>{error === 'offline' ? up(t('offline.empty')) : upperData(error)}</Text>
         ) : nights ? (
-          <Deck ref={deck} key={`${panel}/${city}/${type}/${when}/${reloads}`} nights={nights} friendsOf={friendsOf} bottom={tabSpace + ACTIONS} top={(headBottom || Math.max(brand.top, insets.top + 24) + 30) + 14} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} hasAbout={(e) => abouts.has(e.id)} onAbout={(e) => setReading(abouts.get(e.id) ?? null)} />
+          <Deck ref={deck} key={`${panel}/${city}/${type}/${when}/${reloads}`} nights={nights} friendsOf={friendsOf} bottom={tabSpace + ACTIONS} top={(headBottom || Math.max(brand.top, insets.top + 24) + 30) + 14} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} hasAbout={(e) => abouts.has(e.id)} onAbout={(e) => setReading(abouts.get(e.id) ?? null)} previewOf={(e) => previews.get(e.id)} />
         ) : (
           <Text style={styles.note}>{up(t('flow.loading'))}</Text>
         )}
