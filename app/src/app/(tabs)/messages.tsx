@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Image } from 'expo-image';
 import PullDownScroll from '@/components/PullDownScroll';
 import { StatusBar } from 'expo-status-bar';
@@ -109,7 +109,7 @@ export default function MessagesScreen() {
 
         {!session ? (
           <View style={styles.empty}>
-            <Text style={styles.emptyTitle}>{t('rooms.empty')}</Text>
+            <Text style={styles.emptyTitle}>{t('messages.title')}</Text>
             <Text style={styles.note}>{t('messages.new.noFriends')}</Text>
             <View style={styles.cta}>
               <Button label={t('word.signup')} onPress={() => router.push('/signup')} />
@@ -208,10 +208,10 @@ export default function MessagesScreen() {
                 </View>
                 {!accepted.length ? <Text style={styles.note}>{t('messages.new.noFriends')}</Text> : null}
 
-                <Text style={styles.section}>{up(t('people.suggested'))}</Text>
-                <View style={styles.suggested}>
+                {/* suggested people: the same rail as before (the component brings its own word and columns) */}
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.suggested}>
                   <SuggestedInRow />
-                </View>
+                </ScrollView>
               </>
             )}
           </>
@@ -293,5 +293,5 @@ const styles = StyleSheet.create({
   facePlus: { fontFamily: fonts.medium, fontSize: 24, color: colors.mute },
   cellName: { fontFamily: fonts.regular, fontSize: 11.5, color: colors.paper, maxWidth: 80 },
   cellState: { fontFamily: fonts.regular, fontSize: 10, color: colors.meta },
-  suggested: { marginTop: 8, flexDirection: 'row' },
+  suggested: { marginTop: 18, gap: 10, paddingRight: brand.left },
 });
