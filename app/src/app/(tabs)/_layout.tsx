@@ -7,10 +7,10 @@ import { TabBarFrame, TabItem } from '@/components/TabBar';
 import { useCities } from '@/data/cities';
 import { useFollowLocation } from '@/data/here';
 
-// The main app: four tabs in an edge-to-edge bottom bar. flow · people · map · account.
+// The main app: five tabs in an edge-to-edge bottom bar. flow · connect (people) · messages · map · account.
 // The staff panel is a page of its own since 11.10.2026, reached from the account page.
 // yours is hidden since 12.10.2026 (Ahmet: a feed is the wrong shape; the file stays, no tab
-// leads to it) while people becomes connect (groups, the decks, the messages).
+// leads to it); people became connect (groups, the gallery, the decks) and messages is a tab of its own.
 export default function TabsLayout() {
   // Every tab follows the city you are in (data/here.ts).
   const { cities } = useCities();
@@ -25,6 +25,9 @@ export default function TabsLayout() {
           </TabTrigger>
           <TabTrigger name="people" href="/people" asChild>
             <TabItem icon="people" />
+          </TabTrigger>
+          <TabTrigger name="messages" href="/messages" asChild>
+            <TabItem icon="chat" />
           </TabTrigger>
           <TabTrigger name="map" href="/map" asChild>
             <TabItem icon="map" />

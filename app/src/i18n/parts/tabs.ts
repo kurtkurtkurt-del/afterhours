@@ -3,6 +3,7 @@ export const tabs = {
   // tab bar (screen reader labels)
   'tab.flow': { en: 'flow', de: 'flow', tr: 'akış' },
   'tab.people': { en: 'people', de: 'leute', tr: 'insanlar' },
+  'tab.chat': { en: 'messages', de: 'nachrichten', tr: 'mesajlar' },
   'tab.yours': { en: 'yours', de: 'deins', tr: 'seninkiler' },
   'tab.map': { en: 'map', de: 'karte', tr: 'harita' },
   'tab.account': { en: 'account', de: 'konto', tr: 'hesap' },

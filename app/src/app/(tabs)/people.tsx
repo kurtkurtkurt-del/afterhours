@@ -13,7 +13,6 @@ import { coverUrl, GROUP_COLORS, groupPlan, myGroups, type GroupRow, type Plan, 
 import { ticketsMine } from '@/data/tickets';
 import GroupBadge from '@/components/GroupBadge';
 import SoundCorner from '@/components/SoundCorner';
-import MessagesButton from '@/components/MessagesButton';
 import DeckViewer from '@/components/DeckViewer';
 import { toDeckCard, type DeckCard } from '@/components/CardFace';
 import { TAB_BAR_SPACE, useTabBarSpace } from '@/components/TabBar';
@@ -38,7 +37,7 @@ import { brand } from '@/theme/layout';
 const fallbackPhoto = require('../../../assets/intro/concert.jpg');
 
 // Connect (12.10.2026, design A in prototypes/connect.html; the tab was people): the first
-// two groups as covers, the messages button in the band, then the gallery and the decks.
+// two groups as covers, then the gallery and the decks (messages is the tab beside it).
 // Search and the faces of your people moved to the messages page. Before: top to
 // bottom: search (typing replaced the page with people results); one thin line to the
 // groups (their badges, how many are live); "with your people", a gallery that mixes
@@ -345,7 +344,6 @@ export default function PeopleScreen() {
       <StatusBar style="light" />
       <View style={styles.band}>
         <Text style={styles.title}>{t('connect.title')}</Text>
-        <MessagesButton inline />
         <SoundCorner />
       </View>
       <ScrollView

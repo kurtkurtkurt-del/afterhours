@@ -10,7 +10,6 @@ import PostCard from '@/components/PostCard';
 import { postsFeed, type Post } from '@/data/posts';
 import StoryStrip from '@/components/StoryStrip';
 import SoundCorner from '@/components/SoundCorner';
-import MessagesButton from '@/components/MessagesButton';
 import { TAB_BAR_SPACE, useTabBarSpace } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
 import { useTabReset } from '@/hooks/useTabReset';
@@ -109,7 +108,6 @@ export default function YoursScreen() {
         {pastState === 'loading' ? <Text style={styles.feedEnd}>{up(t('word.moment'))}</Text> : null}
       </ScrollView>
 
-      <MessagesButton />
       <Tips page="yours" tip={{ title: 'tips.yours.1.t', body: 'tips.yours.1.b', motion: 'tap' }} bottom={tabSpace + 12} />
     </View>
   );
