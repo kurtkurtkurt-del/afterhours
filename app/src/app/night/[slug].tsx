@@ -21,7 +21,8 @@ import { shareNight } from '@/lib/share';
 import ShareButton from '@/components/ShareButton';
 import { useReport } from '@/components/ReportSheet';
 import { commentCode, commentErrors, fetchComments, postComment, whenText, type Comment } from '@/data/comments';
-import { bodyText, upperData, useLang } from '@/i18n';
+import { isSyncedBody, upperData, useLang } from '@/i18n';
+import NudgeSheet from '@/components/NudgeSheet';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 import PillAction from '@/components/PillAction';
@@ -40,7 +41,7 @@ export default function NightScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
-  const { session } = useAuth();
+  const { session, isAnonymous } = useAuth();
   const { t, tn, tx, up } = useLang();
   // note and talkNote hold codes; strings are resolved here in the current language.
   const words = (code: string) => {
@@ -147,6 +148,8 @@ export default function NightScreen() {
   // not this time. The answer is stored and never asked again.
   const [ticket, setTicket] = useState<TicketAnswer | null>(null);
   const [askTicket, setAskTicket] = useState(false);
+  const [nudging, setNudging] = useState(false);
+  const [nudged, setNudged] = useState<string | null>(null);
   const awaiting = useRef(false);
   useEffect(() => {
     if (!session || !slug) return;
@@ -293,16 +296,19 @@ export default function NightScreen() {
               ) : null}
             </View>
             {note ? <Text style={styles.mono}>{up(words(note))}</Text> : null}
-            {room ? (
-              <Text style={styles.mono}>
-                {up(tn('night.checkedin', room.who_count))} · {up(room.frozen ? t('night.room.frozen') : t('night.room.open'))}
-              </Text>
+            {room ? <Text style={styles.mono}>{up(tn('night.checkedin', room.who_count))}</Text> : null}
+
+            {/* Nudge a friend about this night (Ahmet, 12.10.2026): a direct message with the link. */}
+            {session && !isAnonymous ? (
+              <View style={styles.nudgeRow}>
+                <PillAction label={nudged ? t('night.nudged', { name: nudged }) : t('night.nudge')} onPress={() => setNudging(true)} />
+              </View>
             ) : null}
 
-            {night.body ? <Text style={styles.text}>{bodyText(night.body, t)}</Text> : null}
+            {/* The synced sentence (one fixed line for every listed night) is not shown since 12.10.2026;
+                a night's own text still is. The room rule line went the same day. */}
+            {night.body && !isSyncedBody(night.body) ? <Text style={styles.text}>{night.body}</Text> : null}
             {night.starts_at ? <Text style={styles.mono}>{up(whenLine(night.starts_at))}</Text> : null}
-
-            <Text style={styles.mono}>{up(t('night.rule'))}</Text>
 
             {/* Beforehours: what people said before the night. Anyone can post, guests too. */}
             <View style={styles.talk}>
@@ -378,6 +384,8 @@ export default function NightScreen() {
       <Tips page="night" tip={{ title: 'tips.night.1.t', body: 'tips.night.1.b', motion: 'tap' }} bottom={insets.bottom + 84} />
       {reporting.sheet}
 
+      {night ? <NudgeSheet open={nudging} night={night} onClose={() => setNudging(false)} onSent={setNudged} /> : null}
+
       {/* Back from the ticket page: one question, once. */}
       <Modal visible={askTicket} transparent animationType="fade" onRequestClose={() => setAskTicket(false)}>
         <Pressable style={styles.askDim} onPress={() => setAskTicket(false)} />
@@ -429,6 +437,7 @@ const styles = StyleSheet.create({
   body: { paddingHorizontal: brand.left, paddingTop: 18, gap: 22 },
   actions: { flexDirection: 'row', gap: 10 },
   text: { fontFamily: fonts.regular, fontSize: 16, lineHeight: 24, color: colors.paper2, opacity: 0.9 },
+  nudgeRow: { flexDirection: 'row' },
   dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.94)', alignItems: 'center', justifyContent: 'center', gap: 18 },
   cardLabel: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.spot },
   talk: { marginTop: 28, paddingTop: 18, borderTopWidth: 1, borderTopColor: colors.ink3, gap: 10 },

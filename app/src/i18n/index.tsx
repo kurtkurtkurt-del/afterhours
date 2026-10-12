@@ -3,7 +3,7 @@ import { useAuth } from '@/auth/AuthContext';
 import { fetchSettings, saveSettings } from '@/data/settings';
 import { getLang, known, remembered, setCurrentLang, translator, upper, type Lang, type Translator } from './core';
 
-export { bodyText, langNames, langs, upperData, type Lang } from './core';
+export { bodyText, isSyncedBody, langNames, langs, upperData, type Lang } from './core';
 export type { Key } from './dict';
 
 type Value = Translator & { lang: Lang; setLang: (lang: Lang) => void; up: (text: string) => string };

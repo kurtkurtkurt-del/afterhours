@@ -87,6 +87,7 @@ export const tx = (key: string, fallback?: string, vars?: Vars) => translators[c
 // A synced night without its own description carries one fixed English sentence
 // (written by sync-ticketmaster.mjs). That sentence is ours, not data, so it is translated.
 const SYNCED = /^A real night, straight off the listings for (.+?)\. What it turns into is decided at the door, same as always\.$/;
+export const isSyncedBody = (body: string) => SYNCED.test(body.trim());
 export function bodyText(body: string, say: T = t) {
   const found = SYNCED.exec(body.trim());
   return found ? say('synced.body', { city: found[1] }) : body;
