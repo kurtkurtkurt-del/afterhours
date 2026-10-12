@@ -40,7 +40,7 @@ export default function FilmScreen() {
     left.current = true;
     if (member.current) {
       if (router.canGoBack()) router.back();
-      else router.replace('/yours');
+      else router.replace('/people');
     } else router.replace('/signup');
   };
 
