@@ -924,7 +924,9 @@ front end calls: `handle_status()`, `profile_setup()`, `profile_me()`,
 **A person can take their data with you.** `export_me()` hands back one
 JSON object with everything tied to the caller — profile, settings, every
 swipe named by its event slug, what they wrote, who they are connected to
-and in which direction, and the feedback they left. The settings page saves
+and in which direction, and the feedback they left; since `64_export_more.sql`
+also the direct messages they wrote (each with the friend it went to — the
+other side's lines stay out) and their ticket answers. The settings page saves
 it as a file. It is the GDPR right of access and portability, and
 datenschutz now points at the button instead of asking for an email. The
 function takes no argument, so there is no way to aim it at somebody else;

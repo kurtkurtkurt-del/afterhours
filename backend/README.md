@@ -266,7 +266,7 @@ a row in auth.users  →  handle_new_user()  →  profiles + profile_settings
 | `handle_to_id(handle)` | identity by handle; a friend request goes through it |
 | `author_name(id, fallback)` | the name under a comment, without touching the profile table |
 | `delete_account()` | deletes the account; comment texts stay, the name becomes `someone` |
-| `export_me()` | everything held about the caller, as one JSON object (14_export.sql) |
+| `export_me()` | everything held about the caller, as one JSON object (14_export.sql; messages and ticket answers since 64_export_more.sql) |
 
 **A changed rule:** the "a confirmed friend sees what you swiped RIGHT"
 rule in 02 now looks at the setting too. If a person says `private`, not

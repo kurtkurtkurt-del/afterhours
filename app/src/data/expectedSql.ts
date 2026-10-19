@@ -65,4 +65,5 @@ export const EXPECTED_SQL = [
   '61_travel.sql',
   '62_group_covers.sql',
   '63_previews.sql',
+  '64_export_more.sql',
 ];

@@ -13,7 +13,7 @@ file first, in the same commit. (The idea is KULA's `docs/promises.md`, 11.10.20
 | 3 | A friendship is born pending and only the side that received it may accept. | `07_friends.sql` | `friends.test.mjs` · "a friendship cannot be INSERTed as already accepted" |
 | 4 | Your settings are yours alone; nobody else reads or changes them. | `12_profiles.sql` | `profiles.test.mjs` · "someone else's settings cannot be changed" |
 | 5 | The member list cannot be browsed; a stranger sees their own row and named cards. | `12_profiles.sql`, `25_people.sql` | `profiles.test.mjs` · "a stranger sees only their own row" |
-| 6 | Your export holds everything of yours and nothing of anybody else's. | `14_export.sql` | `export.test.mjs` · "not their comment" |
+| 6 | Your export holds everything of yours and nothing of anybody else's. | `14_export.sql`, `64_export_more.sql` | `export.test.mjs` · "not their message" |
 | 7 | A block closes both ways: no card, no search, no request, no wave, no message. | `50_blocks.sql`, `57_doors.sql`, `59_dms.sql` | `blocks.test.mjs` · "the wave stops at the block" |
 | 8 | A banned account writes nothing and, since 57, reads no feed, finds nobody. | `52_bans.sql`, `57_doors.sql` | `doors.test.mjs` · "a banned account: refused" |
 | 9 | Nobody becomes a member of a group they were not added to; every group call asks first. | `44_groups.sql`, `57_doors.sql` | `groups.test.mjs` · "the table itself is closed" |
@@ -23,7 +23,5 @@ file first, in the same commit. (The idea is KULA's `docs/promises.md`, 11.10.20
 
 Known gaps, written down so they are not forgotten:
 
-- Direct messages and ticket answers (60) are not yet in `export_me()` (14) — the threads go with the account
-  (cascade), but the export does not list them. Next change to 14.
 - Guests (anonymous sessions) pass `assert_member()`; what they may not do is refused
   write by write (`is_guest()` in the writers), not at one door.

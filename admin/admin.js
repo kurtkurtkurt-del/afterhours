@@ -79,6 +79,7 @@
     "61_travel.sql",
     "62_group_covers.sql",
     "63_previews.sql",
+    "64_export_more.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */
