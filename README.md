@@ -115,7 +115,7 @@ listing: §6.
 | `profile/?handle=…` | **Somebody's page** — how you reach them, what they kept, their cards | works |
 | `feedback/` | **Feedback** — subject, message, an optional way to reach you. No sign-in needed | works |
 | `help/` | How this works: the app's six steps (one card · it becomes a card · the room · who is going · near you · who is playing), then what the web shows. Two live numbers at the top from `health()` | works |
-| `privacy/` | The English summary of the datenschutz page, covering the app too | works |
+| `privacy/` | The English summary of the datenschutz page, covering the app too (20.10.2026: Google/Apple sign-in, messages, groups, sparks, posts, reports and blocks, Apple Music previews, what a deletion takes; in en · de · tr). The binding German page still lags behind it | works |
 | `impressum/` `datenschutz/` `agb/` | The German legal pages | **placeholder** (the square brackets are still to be filled in) |
 | `404.html` | "this one is gone for good." — four ways out | works |
 | `admin/` | The admin panel: events, venues, types, feedback, comments, profiles, poster uploads | works, admins only |

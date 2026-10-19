@@ -59,6 +59,9 @@
         <strong>Swipes</strong> — kept and let-go nights, so the deck does not repeat itself. Kept nights are visible to confirmed friends only if you allow it. Let-go nights are visible to no one.<br />
         <strong>Check-ins</strong> — that you were at a night, the time, and (only if you allowed location) where you stood, so the card can be issued. Visible to you, to confirmed friends if you allow it, and as an initial to the others in the same room.<br />
         <strong>Room posts</strong> — up to 200 characters, readable only by the people who checked in to the same night, frozen 48 hours after the night.<br />
+        <strong>Sign-in with Google or Apple</strong> — if you choose it in the app, Google or Apple confirm who you are and pass us your email; we do not receive your password there. Deleting your account on an iPhone also withdraws the Apple sign-in.<br />
+        <strong>Messages, groups, sparks and posts</strong> — direct messages between confirmed friends, group chats, plans and album photos, the sparks you start and the answers to them, posts with their likes and comments, who-is-coming answers and whether you got a ticket. Visible only to the people each one is for.<br />
+        <strong>Reports and blocks</strong> — what you report and whom you block, so the team can act and the block holds both ways. Errors the app runs into are kept for 30 days to fix them.<br />
         <strong>Friendships</strong> — requests and confirmations.<br />
         <strong>Your photograph</strong> — if you choose one in the app. Visible to you and to your confirmed friends, to nobody else. Removing it, or deleting your account from the app, removes the file.<br />
         <strong>Notifications</strong> — if you allow them in the app. We keep your phone's push address, the app language and the phone's time zone (for quiet hours), and send a fixed sentence with a name (never the text of a message) through Expo's push service (Expo, 650 Castro St, Mountain View, USA; Google Firebase on Android, Apple on iPhone). Each kind can be switched off in the settings. Signing out or deleting your account removes the push address.<br />
@@ -71,7 +74,7 @@
       <p class="account-title">What we do not do</p>
       <p class="help-text">
         No advertising, no advertising id, no analytics sdk, no tracking across apps or sites, no selling or sharing of personal data.
-        The app talks to exactly three services: Supabase (database, sign-in, files), Ticketmaster (public event listings, no personal data sent), and Esri (map tiles for the area you look at; no personal data is sent, only the tile coordinates).
+        Besides the sign-in and push services above, the app talks to: Supabase (database, sign-in, files), Ticketmaster (public event listings, no personal data sent; a ticket link opens their page), Esri (map tiles for the area you look at; no personal data is sent, only the tile coordinates), and Apple Music (or Deezer) when you tap listen on a night: the 30 second preview streams from their servers, which see your ip address, nothing else.
       </p>
     </section>
 
@@ -79,7 +82,7 @@
       <p class="account-title">Your rights</p>
       <p class="help-text">
         You can see everything we hold about you in the app (settings → download my data) or on this site (settings → export).
-        You can delete your account in the app (settings → delete account) or on this site (<a href="../settings/index.html">settings</a>). Deletion removes your profile, swipes, check-ins and friendships at once; texts you posted stay, with your name replaced by "someone".
+        You can delete your account in the app (settings → delete account) or on this site (<a href="../settings/index.html">settings</a>). Deletion removes your profile, swipes, check-ins, friendships, messages, posts, sparks and photos at once; a group you started passes to its longest member. Comments, room posts and group chat lines stay, with your name replaced by "someone".
         Under the GDPR you also have the right to correction, restriction, portability and objection; write to the address in the <a href="../impressum/index.html">impressum</a>.
       </p>
     </section>
@@ -91,7 +94,7 @@
       </p>
     </section>
 
-    <p class="legal-date">Last updated: 24.09.2026 · draft</p>
+    <p class="legal-date">Last updated: 20.10.2026 · draft</p>
     </div>
     <div data-lang-block="de" lang="de" style="display: contents">
     <p class="legal-warning">Zusammenfassung. Verbindlich ist die deutsche Seite <a href="../datenschutz/index.html">datenschutz</a>.</p>
@@ -115,6 +118,9 @@
         <strong>Swipes</strong> — behaltene und ziehen gelassene Nächte, damit sich der Stapel nicht wiederholt. Behaltene Nächte sind für bestätigte Freunde nur sichtbar, wenn du es erlaubst. Ziehen gelassene Nächte sieht niemand.<br />
         <strong>Check-ins</strong> — dass du bei einer Nacht warst, die Uhrzeit und (nur wenn du den Standort erlaubt hast) wo du gestanden hast, damit die Karte ausgestellt werden kann. Sichtbar für dich, für bestätigte Freunde, wenn du es erlaubst, und als Initiale für die anderen im selben Raum.<br />
         <strong>Beiträge im Raum</strong> — bis zu 200 Zeichen, lesbar nur für die Menschen, die bei derselben Nacht eingecheckt haben, eingefroren 48 Stunden nach der Nacht.<br />
+        <strong>Anmeldung mit Google oder Apple</strong> — wenn du sie in der App wählst, bestätigen Google oder Apple, wer du bist, und geben uns deine E-Mail; dein Passwort dort erhalten wir nicht. Löschst du dein Konto auf dem iPhone, wird auch die Apple-Anmeldung widerrufen.<br />
+        <strong>Nachrichten, Gruppen, Sparks und Posts</strong> — Direktnachrichten zwischen bestätigten Freunden, Gruppenchats, Pläne und Albumfotos, die Sparks, die du startest, und die Antworten darauf, Posts mit ihren Likes und Kommentaren, Antworten auf „wer kommt“ und ob du ein Ticket hast. Sichtbar nur für die Menschen, für die sie bestimmt sind.<br />
+        <strong>Meldungen und Blockierungen</strong> — was du meldest und wen du blockierst, damit das Team handeln kann und die Blockierung in beide Richtungen gilt. Fehler, auf die die App stößt, werden 30 Tage aufbewahrt, um sie zu beheben.<br />
         <strong>Freundschaften</strong> — Anfragen und Bestätigungen.<br />
         <strong>Dein Foto</strong> — wenn du in der App eines wählst. Sichtbar für dich und für deine bestätigten Freunde, für sonst niemanden. Wenn du es entfernst oder dein Konto in der App löschst, wird die Datei entfernt.<br />
         <strong>Benachrichtigungen</strong> — wenn du sie in der App erlaubst. Wir speichern die Push-Adresse deines Telefons, die App-Sprache und die Zeitzone des Telefons (für die Ruhezeiten) und schicken die Nachricht über den Push-Dienst von Expo (Expo, 650 Castro St, Mountain View, USA; auf Android über Google Firebase, auf dem iPhone über Apple). Jede Art lässt sich in den Einstellungen abschalten. Abmelden oder das Konto löschen entfernt die Push-Adresse.<br />
@@ -127,7 +133,7 @@
       <p class="account-title">Was wir nicht tun</p>
       <p class="help-text">
         Keine Werbung, keine Werbe-ID, kein Analyse-SDK, kein Tracking über Apps oder Websites hinweg, kein Verkauf und keine Weitergabe personenbezogener Daten.
-        Die App spricht mit genau drei Diensten: Supabase (Datenbank, Anmeldung, Dateien), Ticketmaster (öffentliche Veranstaltungslisten, es werden keine personenbezogenen Daten gesendet) und Esri (Kartenkacheln für das Gebiet, das du dir ansiehst; es werden keine personenbezogenen Daten gesendet, nur die Koordinaten der Kacheln).
+        Neben den oben genannten Anmelde- und Push-Diensten spricht die App mit: Supabase (Datenbank, Anmeldung, Dateien), Ticketmaster (öffentliche Veranstaltungslisten, es werden keine personenbezogenen Daten gesendet; ein Ticket-Link öffnet deren Seite), Esri (Kartenkacheln für das Gebiet, das du dir ansiehst; es werden keine personenbezogenen Daten gesendet, nur die Koordinaten der Kacheln) und Apple Music (oder Deezer), wenn du bei einer Nacht auf „listen“ tippst: die 30-Sekunden-Vorschau kommt von deren Servern, die deine IP-Adresse sehen, sonst nichts.
       </p>
     </section>
 
@@ -135,7 +141,7 @@
       <p class="account-title">Deine Rechte</p>
       <p class="help-text">
         Alles, was wir über dich gespeichert haben, kannst du in der App (Einstellungen → meine Daten herunterladen) oder auf dieser Seite (Einstellungen → Export) einsehen.
-        Dein Konto kannst du in der App (Einstellungen → Konto löschen) oder auf dieser Seite (<a href="../settings/index.html">Einstellungen</a>) löschen. Die Löschung entfernt dein Profil, deine Swipes, Check-ins und Freundschaften sofort; Texte, die du geschrieben hast, bleiben, wobei dein Name durch „jemand“ ersetzt wird.
+        Dein Konto kannst du in der App (Einstellungen → Konto löschen) oder auf dieser Seite (<a href="../settings/index.html">Einstellungen</a>) löschen. Die Löschung entfernt dein Profil, deine Swipes, Check-ins, Freundschaften, Nachrichten, Posts, Sparks und Fotos sofort; eine Gruppe, die du gegründet hast, geht an ihr ältestes Mitglied. Kommentare, Beiträge im Raum und Zeilen im Gruppenchat bleiben, wobei dein Name durch „jemand“ ersetzt wird.
         Nach der DSGVO hast du außerdem das Recht auf Berichtigung, Einschränkung, Datenübertragbarkeit und Widerspruch; schreib an die Adresse im <a href="../impressum/index.html">Impressum</a>.
       </p>
     </section>
@@ -147,7 +153,7 @@
       </p>
     </section>
 
-    <p class="legal-date">Stand: 24.09.2026 · Entwurf</p>
+    <p class="legal-date">Stand: 20.10.2026 · Entwurf</p>
     </div>
     <div data-lang-block="tr" lang="tr" style="display: contents">
     <p class="legal-warning">Özet. Bağlayıcı olan, Almanca <a href="../datenschutz/index.html">datenschutz</a> sayfasıdır.</p>
@@ -171,6 +177,9 @@
         <strong>Kaydırmalar</strong> — sakladığın ve bıraktığın geceler; deste kendini tekrar etmesin diye. Sakladığın geceleri onaylanmış arkadaşların yalnızca sen izin verirsen görür. Bıraktığın geceleri kimse görmez.<br />
         <strong>Check-in'ler</strong> — bir gecede bulunduğun, saati ve (yalnızca konuma izin verdiysen) nerede durduğun; kartın düzenlenebilmesi için. Sana, izin verirsen onaylanmış arkadaşlarına ve aynı odadaki diğerlerine baş harf olarak görünür.<br />
         <strong>Oda yazıları</strong> — en fazla 200 karakter; yalnızca aynı geceye check-in yapanlar okuyabilir, geceden 48 saat sonra dondurulur.<br />
+        <strong>Google ya da Apple ile giriş</strong> — uygulamada bunu seçersen kim olduğunu Google ya da Apple doğrular ve bize e-postanı iletir; oradaki parolanı almayız. Hesabını iPhone'da silersen Apple girişi de geri çekilir.<br />
+        <strong>Mesajlar, gruplar, spark'lar ve paylaşımlar</strong> — onaylanmış arkadaşlar arasındaki doğrudan mesajlar, grup sohbetleri, planlar ve albüm fotoğrafları, başlattığın spark'lar ve onlara verilen cevaplar, beğeni ve yorumlarıyla paylaşımlar, "kim geliyor" cevapları ve bileti alıp almadığın. Yalnızca ilgili kişilere görünür.<br />
+        <strong>Şikayetler ve engeller</strong> — neyi şikayet ettiğin ve kimi engellediğin; ekip harekete geçebilsin ve engel iki yönde de geçerli olsun diye. Uygulamanın karşılaştığı hatalar düzeltilmek üzere 30 gün saklanır.<br />
         <strong>Arkadaşlıklar</strong> — istekler ve onaylar.<br />
         <strong>Fotoğrafın</strong> — uygulamada bir tane seçersen. Sana ve onaylanmış arkadaşlarına görünür, başka kimseye değil. Kaldırdığında ya da hesabını uygulamadan sildiğinde dosya da silinir.<br />
         <strong>Bildirimler</strong> — uygulamada izin verirsen. Telefonunun bildirim adresini, uygulamanın dilini ve telefonun saat dilimini (sessiz saatler için) saklarız; sabit bir cümle ve bir ad (asla mesajın metni değil) Expo'nun bildirim servisiyle gider (Expo, 650 Castro St, Mountain View, ABD; Android'de Google Firebase, iPhone'da Apple üzerinden). Her türü ayarlardan kapatabilirsin. Çıkış yaptığında ya da hesabını sildiğinde bildirim adresi silinir.<br />
@@ -183,7 +192,7 @@
       <p class="account-title">Neyi yapmıyoruz</p>
       <p class="help-text">
         Reklam yok, reklam kimliği yok, analiz SDK'sı yok, uygulamalar veya siteler arasında izleme yok, kişisel verilerin satışı veya paylaşımı yok.
-        Uygulama tam olarak üç hizmetle konuşur: Supabase (veritabanı, giriş, dosyalar), Ticketmaster (herkese açık etkinlik listeleri, kişisel veri gönderilmez) ve Esri (baktığın bölgenin harita karoları; kişisel veri gönderilmez, yalnızca karo koordinatları gönderilir).
+        Yukarıdaki giriş ve bildirim hizmetleri dışında uygulama şunlarla konuşur: Supabase (veritabanı, giriş, dosyalar), Ticketmaster (herkese açık etkinlik listeleri, kişisel veri gönderilmez; bilet bağlantısı onların sayfasını açar), Esri (baktığın bölgenin harita karoları; kişisel veri gönderilmez, yalnızca karo koordinatları gönderilir) ve bir gecede "listen"e dokunduğunda Apple Music (ya da Deezer): 30 saniyelik önizleme onların sunucularından gelir; IP adresini görürler, başka bir şey değil.
       </p>
     </section>
 
@@ -191,7 +200,7 @@
       <p class="account-title">Hakların</p>
       <p class="help-text">
         Hakkında tuttuğumuz her şeyi uygulamada (ayarlar → verilerimi indir) veya bu sitede (ayarlar → dışa aktar) görebilirsin.
-        Hesabını uygulamada (ayarlar → hesabı sil) veya bu sitede (<a href="../settings/index.html">ayarlar</a>) silebilirsin. Silme işlemi profilini, kaydırmalarını, check-in'lerini ve arkadaşlıklarını hemen kaldırır; yazdığın metinler kalır, adının yerine "biri" yazılır.
+        Hesabını uygulamada (ayarlar → hesabı sil) veya bu sitede (<a href="../settings/index.html">ayarlar</a>) silebilirsin. Silme işlemi profilini, kaydırmalarını, check-in'lerini, arkadaşlıklarını, mesajlarını, paylaşımlarını, spark'larını ve fotoğraflarını hemen kaldırır; kurduğun bir grup en eski üyesine geçer. Yorumlar, oda yazıları ve grup sohbetindeki satırlar kalır, adının yerine "biri" yazılır.
         GDPR (DSGVO) uyarınca ayrıca düzeltme, kısıtlama, taşınabilirlik ve itiraz hakların vardır; <a href="../impressum/index.html">künyedeki</a> adrese yaz.
       </p>
     </section>
@@ -203,7 +212,7 @@
       </p>
     </section>
 
-    <p class="legal-date">Son güncelleme: 24.09.2026 · taslak</p>
+    <p class="legal-date">Son güncelleme: 20.10.2026 · taslak</p>
     </div>
   </main>
 
