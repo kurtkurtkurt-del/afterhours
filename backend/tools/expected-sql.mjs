@@ -72,4 +72,5 @@ export const EXPECTED_SQL = [
   "62_group_covers.sql",
   "63_previews.sql",
   "64_export_more.sql",
+  "65_account_delete.sql",
 ];

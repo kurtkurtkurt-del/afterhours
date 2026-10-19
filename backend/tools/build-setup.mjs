@@ -72,6 +72,7 @@ const structure = [
   ["62_group_covers.sql", "A GROUP COVER FROM THE SHELF"],
   ["63_previews.sql", "LISTEN TO THE ARTIST"],
   ["64_export_more.sql", "THE EXPORT — YOUR MESSAGES AND TICKET ANSWERS TOO"],
+  ["65_account_delete.sql", "DELETING AN ACCOUNT — THE LAST ADMIN, THE GROUP OWNER"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

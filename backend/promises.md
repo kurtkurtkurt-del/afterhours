@@ -1,6 +1,6 @@
 # The promises afterhours' database keeps
 
-Twelve sentences. Each says what a person can or cannot do, which SQL file enforces it
+Thirteen sentences. Each says what a person can or cannot do, which SQL file enforces it
 and which test proves it (file and the check's own words). `node test/setup.test.mjs`
 reads this table and refuses a row whose test file or check is not there, so a test
 that goes takes its promise with it, visibly. A change to who may do what edits this
@@ -20,6 +20,7 @@ file first, in the same commit. (The idea is KULA's `docs/promises.md`, 11.10.20
 | 10 | A push never carries a member's words: a fixed sentence and a name. | `58_push_words.sql` | `doors.test.mjs` · "the title still names who and where" |
 | 11 | A direct message goes only between confirmed friends who can reach each other. | `59_dms.sql` | `dms.test.mjs` · "a pending request is not a friend yet" |
 | 12 | A burst is bounded: twenty lines a minute in a chat, forty requests a day. | `53_trust.sql`, `59_dms.sql` | `trust.test.mjs` · "the table itself is closed" |
+| 13 | A deleted account leaves no row that names the person; the last admin cannot delete theirs. | `12_profiles.sql`, `65_account_delete.sql` | `delete-account.test.mjs` · "no row of any table still points at the person" |
 
 Known gaps, written down so they are not forgotten:
 

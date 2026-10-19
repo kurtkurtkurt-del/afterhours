@@ -898,7 +898,7 @@ the thread, push kind `dm` with its own switch. **Travel groups** (`61_travel.sq
 `group_get` carries the route. **A group cover from the shelf** (`62_group_covers.sql`):
 `group_set_cover` also takes `preset/<name>` (club, crowd, friends — three photos the app
 ships with, `PRESET_COVERS` in `data/groups.ts`), so a group has a face without an upload;
-the wizard and the edit page show the shelf (none · the three · your own photo). **Listen to the artist** (`63_previews.sql`): `event_previews` (track, artist, preview address, link; service writes) and `previews_for(ids)`. The twelve sentences the database
+the wizard and the edit page show the shelf (none · the three · your own photo). **Listen to the artist** (`63_previews.sql`): `event_previews` (track, artist, preview address, link; service writes) and `previews_for(ids)`. The thirteen sentences the database
 keeps, each with its SQL file and the test that proves it, are in
 [backend/promises.md](backend/promises.md); the setup test refuses a row whose test
 is gone.
@@ -939,6 +939,13 @@ one exception: the text stays and the name falls away (`someone`). Two
 reasons — deleting a topic would take other people's replies with it, and
 the constraint on the `comments` table refuses a row with no author. The
 settings page says so before it deletes.
+Since `65_account_delete.sql` the last admin cannot delete their account (the
+same rule as `guard_last_admin`), and a group the person owned goes to its
+longest member (as in `group_leave`) or, when they were alone in it, goes too.
+`delete-account.test.mjs` puts the person in every table that names one,
+deletes the account and walks every foreign key to `profiles`: no row is left
+pointing at them. Lines in group chats and rooms stay, without a name, like
+comments.
 
 **The gate** (12.10.2026, `backend/tools/gate.mjs`, `npm run gate`): every check in one
 command — the backend's on PGlite, the app's types, lint and unit tests, the site walk —
