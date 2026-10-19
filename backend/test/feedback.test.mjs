@@ -45,6 +45,9 @@ console.log("\n— everyone can write —");
   check(true, "someone signed out can write");
 
   await asUser(B);
+  /* a breath between the two, so "newest on top" does not depend on the clock's
+     resolution (both landed in the same millisecond when the whole gate ran) */
+  await new Promise((ok) => setTimeout(ok, 5));
   await db.exec(`insert into public.feedback (kind, body)
                  values ('idea', 'let me undo the last swipe, just before')`);
   check(true, "someone signed in can write");
