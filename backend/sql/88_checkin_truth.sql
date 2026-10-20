@@ -158,7 +158,9 @@ as $$
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('88_checkin_truth.sql', '605528add79ffccba24fed96f273fce1fcabb661d185cbd11c48f810e707f015');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('88_checkin_truth.sql');
   end if;
 end $$;

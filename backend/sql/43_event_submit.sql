@@ -272,7 +272,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('43_event_submit.sql', '2fad57d8c4ba1bcaf884a71be4fddd6d07126aab1d732c8d4eb176b596de2ef6');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('43_event_submit.sql');
   end if;
 end $$;

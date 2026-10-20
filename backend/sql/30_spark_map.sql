@@ -165,7 +165,9 @@ grant execute on function public.sparks_near(double precision, double precision,
 grant execute on function public.spark_get(uuid)                                                                       to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('30_spark_map.sql', 'bd78b55bbfa774153349f89e8f3918e726f53e1b223c17d24b9d93387f42e601');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('30_spark_map.sql');
   end if;
 end $$;

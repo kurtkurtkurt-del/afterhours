@@ -51,7 +51,9 @@ $$;
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('08_storage.sql', 'dc9cf4d0234f2ff473ff628d13258e2a8c05d14d0d690b063523cf2c600b31c9');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('08_storage.sql');
   end if;
 end $$;

@@ -85,7 +85,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('77_reserved_handles.sql', 'b36a9af57fdfac6e9fa50223bed9d3d7828d41f21e3a25f0f6fb12b8f1df4b2b');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('77_reserved_handles.sql');
   end if;
 end $$;

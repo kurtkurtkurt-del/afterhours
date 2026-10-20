@@ -127,7 +127,9 @@ create trigger push_spark_invite
   for each row execute function public.push_on_spark_invite();
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('34_spark_push.sql', 'f56eac9a17c399e886530487d5bc7b7351bb107f7cce550591559202a2bbdc65');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('34_spark_push.sql');
   end if;
 end $$;

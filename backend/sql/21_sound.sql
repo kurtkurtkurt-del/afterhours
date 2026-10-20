@@ -29,7 +29,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('21_sound.sql', 'c58aeea48ea9d4e75ffee9a89e9009c82ec28c255a35f018b7ab1c8089f610b8');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('21_sound.sql');
   end if;
 end $$;

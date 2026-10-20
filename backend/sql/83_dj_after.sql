@@ -116,7 +116,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('83_dj_after.sql', '18c17fad8d80b42de42afe6e275348f34a0ea1edf993e45dc07eff43b571b861');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('83_dj_after.sql');
   end if;
 end $$;

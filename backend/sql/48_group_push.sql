@@ -435,7 +435,9 @@ revoke execute on function public.push_wants(uuid, text) from public, anon, auth
 revoke execute on function public.push_enqueue(uuid, text, text, jsonb) from public, anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('48_group_push.sql', 'a004216cd5f5813dd3b963040bbb977722b44aa59a099d56da3014b53bfa7cab');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('48_group_push.sql');
   end if;
 end $$;

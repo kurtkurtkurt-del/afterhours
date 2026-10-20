@@ -87,7 +87,9 @@ revoke all on function public.person_cards(text) from public, anon;
 grant execute on function public.person_cards(text) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('36_person_cards.sql', '234ed583b13e73533ee052fbaff4146a65e8141ac4a2b772b80bb980c05329da');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('36_person_cards.sql');
   end if;
 end $$;

@@ -371,7 +371,9 @@ do $$ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('53_trust.sql', '7ca0c1158caa08eb1d7cedbee17494dd4ef718ff69080160e0af324f71bea7ae');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('53_trust.sql');
   end if;
 end $$;

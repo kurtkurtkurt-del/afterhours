@@ -600,7 +600,9 @@ revoke all on function public.need_staff() from public, anon;
 revoke all on function public.need_admin() from public, anon;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('42_staff.sql', '7df8ea9bbca457f354c134e99f19b72a828a75a2f69a96ab56453be0f7f5c629');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('42_staff.sql');
   end if;
 end $$;

@@ -88,7 +88,9 @@ create trigger photo_gone_groups         after delete or update of cover_path   
 create trigger folder_gone_profiles      after delete                                    on public.profiles       for each row execute function public.folder_gone();
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('82_leftovers.sql', 'fd331d73d48eca15b020a2173b0828c697fd674a6e72ab30ea4759e2cc933dbf');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('82_leftovers.sql');
   end if;
 end $$;

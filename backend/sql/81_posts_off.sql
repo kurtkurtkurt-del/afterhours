@@ -36,7 +36,9 @@ as $$
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('81_posts_off.sql', '7c72d645cc6875566aa55521c252c5e172b32bd7d31347588831a2ed4da19bab');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('81_posts_off.sql');
   end if;
 end $$;

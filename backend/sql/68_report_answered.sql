@@ -61,7 +61,9 @@ revoke execute on function public.staff_report_settle(text, text, boolean) from 
 grant execute on function public.staff_report_settle(text, text, boolean)  to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('68_report_answered.sql', 'd31c57dbea50047478594749cc020ad351ba62ed92f4d92900ebac9714efe953');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('68_report_answered.sql');
   end if;
 end $$;

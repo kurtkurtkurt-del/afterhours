@@ -69,7 +69,9 @@ $$;
 grant execute on function public.staff_person(uuid) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('86_person_file.sql', 'c4ec3d2800b5dc808a1b3a53e9fa2a380fdea01912c699317cd69b9aa1ed7649');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('86_person_file.sql');
   end if;
 end $$;

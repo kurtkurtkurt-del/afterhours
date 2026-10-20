@@ -128,7 +128,9 @@ create trigger watch_posts          after insert or update of body  on public.po
 create trigger watch_profiles       after insert or update of handle, display_name, bio, about on public.profiles for each row execute function public.watch_ugc('profile', 'id', 'handle', 'display_name', 'bio', 'about');
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('79_word_watch.sql', '3a484dd375b17d135f53c7eb72bbd97bb12469d790015c60347746d280e4fec7');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('79_word_watch.sql');
   end if;
 end $$;

@@ -154,7 +154,9 @@ grant execute on function public.profile_links_set(jsonb)  to authenticated;
 grant execute on function public.profile_extra(text)       to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('29_profile_more.sql', '26a155be94d9d4347110e4a0585f9fe7fc2425f58fb2b251d8e35e69b696e84a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('29_profile_more.sql');
   end if;
 end $$;

@@ -257,7 +257,9 @@ create trigger on_auth_user_created
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('01_schema.sql', '4c9208d1d51a2d1f01aeac35265c148ebbf40666a14b7eb259f2c5c438cbde13');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('01_schema.sql');
   end if;
 end $$;

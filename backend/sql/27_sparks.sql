@@ -211,7 +211,9 @@ grant execute on function public.spark_mine()                                   
 grant execute on function public.spark_cancel(uuid)                                   to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('27_sparks.sql', '27cfc3c6b692e2e458aad2c909c131e233de71539ebf53312fa972d00a981ffb');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('27_sparks.sql');
   end if;
 end $$;

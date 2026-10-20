@@ -49,7 +49,9 @@ $$;
 grant execute on function public.health() to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('71_health_more.sql', '8454b42f5a542d7fa6e981f35678d9dd0f029d4e79f77cb64ad099e93da0e904');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('71_health_more.sql');
   end if;
 end $$;

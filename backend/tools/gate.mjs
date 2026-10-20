@@ -22,6 +22,7 @@ const head = git("rev-parse", "HEAD");
 const dirty = git("status", "--porcelain") !== "";
 
 const layers = [
+  ["sql stamps", "node", ["tools/stamp-sql.mjs", "--check"], "backend"],
   ["backend", "npm", ["test"], "backend"],
   ["app types", "npx", ["tsc", "--noEmit"], "app"],
   ["app lint", "npx", ["expo", "lint"], "app"],

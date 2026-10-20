@@ -106,6 +106,7 @@
     "88_checkin_truth.sql",
     "89_export_all.sql",
     "90_dm_seen.sql",
+    "91_checksums.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */

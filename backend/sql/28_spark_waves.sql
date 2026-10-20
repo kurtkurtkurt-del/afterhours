@@ -222,7 +222,9 @@ grant execute on function public.spark_answer(uuid, text)                       
 grant execute on function public.spark_mine()                                       to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('28_spark_waves.sql', '06299f66604c846e9f1257e5f57b60e557112216921aa35615c8cf1bf0af0821');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('28_spark_waves.sql');
   end if;
 end $$;

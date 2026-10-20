@@ -142,7 +142,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('24_photos.sql', '47f14362b094dfdfe7f59a054aedb705d0b2bc4fd310b131bcb7afa8986d0ce1');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('24_photos.sql');
   end if;
 end $$;

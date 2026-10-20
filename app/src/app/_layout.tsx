@@ -12,6 +12,7 @@ import {
 } from '@expo-google-fonts/inter-tight';
 import { JetBrainsMono_400Regular } from '@expo-google-fonts/jetbrains-mono';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import * as Sentry from '@sentry/react-native';
 import { colors } from '@/theme/tokens';
 import { AmbientProvider } from '@/audio/AmbientContext';
 import { AuthProvider, useAuth } from '@/auth/AuthContext';
@@ -45,7 +46,13 @@ if (Constants.executionEnvironment !== ExecutionEnvironment.StoreClient) {
   SplashScreen.setOptions({ fade: true, duration: 250 });
 }
 
-export default function RootLayout() {
+// Crashes and unhandled errors go to Sentry when a DSN is set (F35, 20.10.2026):
+// EXPO_PUBLIC_SENTRY_DSN in app/.env, organization and project in app.json. Without a
+// DSN nothing is sent and nothing changes; log_error (51) keeps the hand-written lines.
+const SENTRY_DSN = process.env.EXPO_PUBLIC_SENTRY_DSN ?? '';
+Sentry.init({ dsn: SENTRY_DSN, enabled: !!SENTRY_DSN && !__DEV__, tracesSampleRate: 0.1, sendDefaultPii: false });
+
+function RootLayout() {
   const [loaded] = useFonts({ InterTight_400Regular, InterTight_500Medium, InterTight_600SemiBold, JetBrainsMono_400Regular, ArchivoLogo: require('../../assets/fonts/ArchivoLogo.ttf') });
 
   useEffect(() => {
@@ -121,3 +128,5 @@ function Crashed({ error, retry }: { error: Error; retry: () => Promise<void> })
     </View>
   );
 }
+
+export default Sentry.wrap(RootLayout);

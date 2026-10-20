@@ -40,7 +40,9 @@ revoke all on function public.previews_for(uuid[]) from public;
 grant execute on function public.previews_for(uuid[]) to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('63_previews.sql', '68f08b2aca6230170b1b71d7d1449e89e8feb7b638587cf56c30babb6f0c5408');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('63_previews.sql');
   end if;
 end $$;

@@ -59,7 +59,9 @@ $$;
 grant execute on function public.set_min_app_version(text, text) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('78_min_version.sql', '1670ac287ac7ff389e9ca9c123caea56b59dd1a669dbb207ca7fc380a23ef97f');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('78_min_version.sql');
   end if;
 end $$;

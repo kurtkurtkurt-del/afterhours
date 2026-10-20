@@ -49,7 +49,9 @@ create trigger push_rsvp
   for each row execute function public.push_on_rsvp();
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('69_rsvp_push.sql', '2979cba607450c3b34c5072b421b570596c8212155ba082c72a43ff3d8a5848d');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('69_rsvp_push.sql');
   end if;
 end $$;

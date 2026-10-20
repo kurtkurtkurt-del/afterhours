@@ -161,7 +161,9 @@ grant execute on function public.friends_kept(int)     to authenticated;
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('15_ticketmaster.sql', '19395a7080f04915970864ca82a17a419dbfaa3771393edbf35ffccff81125db');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('15_ticketmaster.sql');
   end if;
 end $$;

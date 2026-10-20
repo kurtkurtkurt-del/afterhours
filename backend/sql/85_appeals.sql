@@ -103,7 +103,9 @@ $$;
 grant execute on function public.staff_appeal_settle(bigint, boolean) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('85_appeals.sql', '1c7ec869e98f4f8cff38ddc21df11bcf30cf7e7909633f92a856377cd3d6ae17');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('85_appeals.sql');
   end if;
 end $$;

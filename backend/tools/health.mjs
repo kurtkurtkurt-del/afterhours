@@ -88,6 +88,12 @@ try {
   const rows = await call("migrations_applied");
   const applied = new Set(rows.map((r) => r.name));
   missing = EXPECTED_SQL.filter((f) => !applied.has(f));
+  /* Since 91: a file edited after it was pasted, or an old copy pasted over a newer one. */
+  try {
+    const hashes = JSON.parse(await readFile(new URL("./sql-hashes.json", import.meta.url), "utf8"));
+    const edited = rows.filter((r) => r.hash && hashes[r.name] && hashes[r.name] !== r.hash).map((r) => r.name);
+    if (edited.length) warnings.push("applied but no longer the same text — paste again: " + edited.join(", "));
+  } catch {}
   console.log(`\nSQL applied         ${applied.size} of ${EXPECTED_SQL.length}`);
   if (missing.length) {
     console.log("\nnot run yet:");

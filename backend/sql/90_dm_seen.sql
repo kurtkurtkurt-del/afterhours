@@ -56,7 +56,9 @@ $$;
 grant execute on function public.dm_list() to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('90_dm_seen.sql', 'e93fc576ff72e6ef604d9d89d646857e29c995aaf0597babe77a2ea42ad9c41f');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('90_dm_seen.sql');
   end if;
 end $$;

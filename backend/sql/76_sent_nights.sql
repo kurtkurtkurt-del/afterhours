@@ -109,7 +109,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('76_sent_nights.sql', '6083e440d0d3933f27cc25255c38e079b8d251c5e3994c4741ba85b8eeccb3e8');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('76_sent_nights.sql');
   end if;
 end $$;

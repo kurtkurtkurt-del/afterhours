@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-20 08:38   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-20 08:57   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -338,7 +338,9 @@ create trigger on_auth_user_created
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('01_schema.sql', '4c9208d1d51a2d1f01aeac35265c148ebbf40666a14b7eb259f2c5c438cbde13');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('01_schema.sql');
   end if;
 end $$;
@@ -595,7 +597,9 @@ grant insert, update, delete on public.cities, public.event_types,
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('02_rls.sql', '7a25fb9614f16ecda40d256ac2e47118f2eb534d11d689bcf286d1d32325c0ee');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('02_rls.sql');
   end if;
 end $$;
@@ -714,7 +718,9 @@ on conflict (city_id, slug) do nothing;
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('03_seed_catalog.sql', 'a102818627540fe0d67e2ffaaae01c1304b648becc6e3073ad1633ec0188e285');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('03_seed_catalog.sql');
   end if;
 end $$;
@@ -1154,7 +1160,9 @@ on conflict (slug) do nothing;
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('04_seed_events.sql', '08f1b14f3204cb224c04560f90c0a4be35c5b54c8a6eeeeaf5125f90f2fc4123');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('04_seed_events.sql');
   end if;
 end $$;
@@ -1457,7 +1465,9 @@ grant select on public.events_public, public.comments_public to anon, authentica
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('06_views.sql', '21b58172054af3d9589873a119e22cf1466e70c8a991826f8f4b23fb4a4141ec');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('06_views.sql');
   end if;
 end $$;
@@ -1573,7 +1583,9 @@ grant execute on function public.friend_remove(uuid)     to authenticated;
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('07_friends.sql', 'a27ad77fe80fb499aac823f74e4bfa2038b774990cae105e839c926571a277cc');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('07_friends.sql');
   end if;
 end $$;
@@ -1636,7 +1648,9 @@ $$;
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('08_storage.sql', 'dc9cf4d0234f2ff473ff628d13258e2a8c05d14d0d690b063523cf2c600b31c9');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('08_storage.sql');
   end if;
 end $$;
@@ -1738,7 +1752,9 @@ $$;
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('09_jobs.sql', 'ccef9d46b66b63da9bdae6308b5048818171e6ece9006ce66537522fbae90030');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('09_jobs.sql');
   end if;
 end $$;
@@ -2897,7 +2913,9 @@ on conflict (slug) do nothing;
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('11_world.sql', '48e0112af2221902c7fcb5d0723a3a0f506c2a2b748beab08715a86fc65b1051');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('11_world.sql');
   end if;
 end $$;
@@ -3435,7 +3453,9 @@ grant execute on function public.delete_account()                      to authen
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('12_profiles.sql', '52f6bf13db94ca027ad9b623bb532d4e4d5956db572c73382787ace80b4cf1b0');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('12_profiles.sql');
   end if;
 end $$;
@@ -3525,7 +3545,9 @@ grant execute on function public.feedback_list(int) to authenticated;
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('13_feedback.sql', 'dea8158134bc7c0ce4786a39a1f7a9f11a5873d90caae10dc3fa604cd49f7cd2');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('13_feedback.sql');
   end if;
 end $$;
@@ -3624,7 +3646,9 @@ grant execute on function public.export_me() to authenticated;
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('14_export.sql', '6c42d037a8d8af5cf230e0832ee2cb6adde149e91c42127f2aa8ade0a997479a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('14_export.sql');
   end if;
 end $$;
@@ -3797,7 +3821,9 @@ grant execute on function public.friends_kept(int)     to authenticated;
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('15_ticketmaster.sql', '19395a7080f04915970864ca82a17a419dbfaa3771393edbf35ffccff81125db');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('15_ticketmaster.sql');
   end if;
 end $$;
@@ -3940,7 +3966,9 @@ where c.continent_slug not in ('eu', 'as', 'na')
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('16_coverage.sql', 'e99e9d89a3c29bd7e2a68e3db1818e0dc8de82565f4b1fe10a7d1816d795c667');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('16_coverage.sql');
   end if;
 end $$;
@@ -4108,7 +4136,9 @@ grant execute on function public.profile_kept(text)  to anon, authenticated;
 
 -- Stamp the migration log, if it is there.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('17_real_people.sql', '68427f8d1536603cd4b47b493a9366166812d97a8cbd3ae4808e6e07b3a6c1c7');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('17_real_people.sql');
   end if;
 end $$;
@@ -4224,7 +4254,9 @@ grant execute on function public.nights_near(double precision, double precision,
   to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('18_geo.sql', '845448c0da357dbe8834a5e72d1638b284b6c8fc39fbb4d71b64ee4fa94b06c5');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('18_geo.sql');
   end if;
 end $$;
@@ -4577,7 +4609,9 @@ grant select, update on public.checkins to authenticated;
 grant select, insert, delete on public.room_posts to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('19_checkins.sql', '20c26372a269344c166562e355958ef7a756774194c77e03adf674cf596b4b73');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('19_checkins.sql');
   end if;
 end $$;
@@ -4690,7 +4724,9 @@ where not exists (
 );
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('20_djs.sql', 'bd2925223d53fe72984c69828aa1921f90eea3cdb8959f07ff286642360a1571');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('20_djs.sql');
   end if;
 end $$;
@@ -4731,7 +4767,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('21_sound.sql', 'c58aeea48ea9d4e75ffee9a89e9009c82ec28c255a35f018b7ab1c8089f610b8');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('21_sound.sql');
   end if;
 end $$;
@@ -4980,7 +5018,9 @@ as $$
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('22_hardening.sql', '5eaab7682fd89f3291aef571b15fda540f691f9c6631d7fcc7f41011dfd51015');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('22_hardening.sql');
   end if;
 end $$;
@@ -5026,7 +5066,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('23_checkin_open.sql', 'd14b387bd619ea2e5ea761c4c191d6392275e8c1e16c2c130b10ad89cb765a59');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('23_checkin_open.sql');
   end if;
 end $$;
@@ -5180,7 +5222,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('24_photos.sql', '47f14362b094dfdfe7f59a054aedb705d0b2bc4fd310b131bcb7afa8986d0ce1');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('24_photos.sql');
   end if;
 end $$;
@@ -5345,7 +5389,9 @@ grant execute on function public.people_search(text, int)    to authenticated;
 grant execute on function public.people_suggested(int)       to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('25_people.sql', '4881b3365b5165d7527cd2210d01d09d26b2196cee59b2c3ea211bfb5817e9fb');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('25_people.sql');
   end if;
 end $$;
@@ -6122,7 +6168,9 @@ revoke execute on function public.push_prune()                           from pu
 revoke execute on function public.push_hourly(timestamptz)               from public, anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('26_push.sql', '3bb69fa2d92d5a3a13e8476335a8d2b63334576a944ebf6dfc9fbcac1f64336d');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('26_push.sql');
   end if;
 end $$;
@@ -6345,7 +6393,9 @@ grant execute on function public.spark_mine()                                   
 grant execute on function public.spark_cancel(uuid)                                   to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('27_sparks.sql', '27cfc3c6b692e2e458aad2c909c131e233de71539ebf53312fa972d00a981ffb');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('27_sparks.sql');
   end if;
 end $$;
@@ -6579,7 +6629,9 @@ grant execute on function public.spark_answer(uuid, text)                       
 grant execute on function public.spark_mine()                                       to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('28_spark_waves.sql', '06299f66604c846e9f1257e5f57b60e557112216921aa35615c8cf1bf0af0821');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('28_spark_waves.sql');
   end if;
 end $$;
@@ -6745,7 +6797,9 @@ grant execute on function public.profile_links_set(jsonb)  to authenticated;
 grant execute on function public.profile_extra(text)       to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('29_profile_more.sql', '26a155be94d9d4347110e4a0585f9fe7fc2425f58fb2b251d8e35e69b696e84a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('29_profile_more.sql');
   end if;
 end $$;
@@ -6922,7 +6976,9 @@ grant execute on function public.sparks_near(double precision, double precision,
 grant execute on function public.spark_get(uuid)                                                                       to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('30_spark_map.sql', 'bd78b55bbfa774153349f89e8f3918e726f53e1b223c17d24b9d93387f42e601');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('30_spark_map.sql');
   end if;
 end $$;
@@ -7020,7 +7076,9 @@ revoke execute on function public.past_feed(text, timestamptz, uuid, int) from p
 grant execute on function public.past_feed(text, timestamptz, uuid, int) to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('31_past_feed.sql', 'bb1fa6b0708e370eaa850822fd850d3b9fb04cb3b663cd8bba3bd1d62957d693');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('31_past_feed.sql');
   end if;
 end $$;
@@ -7103,7 +7161,9 @@ grant execute on function public.rsvp_set(uuid, text) to authenticated;
 grant execute on function public.rsvp_for(uuid[])     to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('32_rsvp.sql', 'fc4b2a54d1022c7c69ee67d70656026c078cf9cc2dfcc8b280a371ad5dd133e1');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('32_rsvp.sql');
   end if;
 end $$;
@@ -7212,7 +7272,9 @@ revoke execute on function public.waves_kept(int) from public, anon;
 grant execute on function public.waves_kept(int) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('33_waves.sql', '414c1cc87d464508f0d618ae209261c4a04a74defe6b76902f938e8bca6b0d4c');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('33_waves.sql');
   end if;
 end $$;
@@ -7351,7 +7413,9 @@ create trigger push_spark_invite
   for each row execute function public.push_on_spark_invite();
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('34_spark_push.sql', 'f56eac9a17c399e886530487d5bc7b7351bb107f7cce550591559202a2bbdc65');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('34_spark_push.sql');
   end if;
 end $$;
@@ -7399,7 +7463,9 @@ revoke execute on function public.spark_people(uuid) from public, anon;
 grant execute on function public.spark_people(uuid) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('35_spark_people.sql', '796468d9e9f4598be3cb72f4610369a1866c08b105699e1855a4ef9fc8fb37fb');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('35_spark_people.sql');
   end if;
 end $$;
@@ -7498,7 +7564,9 @@ revoke all on function public.person_cards(text) from public, anon;
 grant execute on function public.person_cards(text) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('36_person_cards.sql', '234ed583b13e73533ee052fbaff4146a65e8141ac4a2b772b80bb980c05329da');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('36_person_cards.sql');
   end if;
 end $$;
@@ -7605,7 +7673,9 @@ grant execute on function public.room_post(text, text, uuid) to authenticated;
 grant execute on function public.check_in(text, double precision, double precision, timestamptz) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('37_offline.sql', 'c7de2e6b7ae4b4ccef3496ddce998f61bb25a3d576eb909a9505d5227ab14144');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('37_offline.sql');
   end if;
 end $$;
@@ -7747,7 +7817,9 @@ grant execute on function public.person_kept(text) to authenticated;
 grant execute on function public.person_people(text) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('38_profile_lists.sql', '8bc6454831b9aa30bc2cceb0cf760eae823442d2301a43e99ffb967b15862b2b');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('38_profile_lists.sql');
   end if;
 end $$;
@@ -7772,7 +7844,9 @@ alter table public.sparks add constraint sparks_kind_check check (kind in (
 ));
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('39_spark_kinds.sql', 'b88ef1a1bd7de9f0c23bb2dfc0308ad085af09b40145bd109a347621933ecf92');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('39_spark_kinds.sql');
   end if;
 end $$;
@@ -7828,7 +7902,9 @@ $$;
 grant execute on function public.about_for(uuid[], text) to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('40_event_about.sql', '82ae672f8c140a23ae9f8e62042e3d06125789c1f39b675e3c4804564289ffe6');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('40_event_about.sql');
   end if;
 end $$;
@@ -7910,7 +7986,9 @@ revoke all on function public.set_account_type(text, text) from public, anon;
 grant execute on function public.set_account_type(text, text) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('41_account_types.sql', '48a29b4f27e4bfbc0f234c9d3ac0438a6818eccdbfb0b31d64e62931a1532c36');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('41_account_types.sql');
   end if;
 end $$;
@@ -8522,7 +8600,9 @@ revoke all on function public.need_staff() from public, anon;
 revoke all on function public.need_admin() from public, anon;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('42_staff.sql', '7df8ea9bbca457f354c134e99f19b72a828a75a2f69a96ab56453be0f7f5c629');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('42_staff.sql');
   end if;
 end $$;
@@ -8806,7 +8886,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('43_event_submit.sql', '2fad57d8c4ba1bcaf884a71be4fddd6d07126aab1d732c8d4eb176b596de2ef6');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('43_event_submit.sql');
   end if;
 end $$;
@@ -9485,7 +9567,9 @@ revoke all on function public.need_member(uuid) from public, anon;
 revoke all on function public.in_group(uuid) from public, anon;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('44_groups.sql', 'b0fa59493217b5c5ba29a1ac218427227ba470501108b1ce906501775c6344fd');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('44_groups.sql');
   end if;
 end $$;
@@ -9709,7 +9793,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('45_posts.sql', '466a971652fc35d228348cb57c334e6e0f9cd2f9347c31e343d8b7f7bcb29ae5');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('45_posts.sql');
   end if;
 end $$;
@@ -10092,7 +10178,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('46_group_plans.sql', '8f2895631eb58bb03e788cb0d06b2fb85bd9dfa6af3d34081d246d7501084feb');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('46_group_plans.sql');
   end if;
 end $$;
@@ -10377,7 +10465,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('47_group_nights.sql', '7d742346236655ea89cbb76c5bcc08bc3a959115c306282529b347ac6c86b921');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('47_group_nights.sql');
   end if;
 end $$;
@@ -10824,7 +10914,9 @@ revoke execute on function public.push_wants(uuid, text) from public, anon, auth
 revoke execute on function public.push_enqueue(uuid, text, text, jsonb) from public, anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('48_group_push.sql', 'a004216cd5f5813dd3b963040bbb977722b44aa59a099d56da3014b53bfa7cab');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('48_group_push.sql');
   end if;
 end $$;
@@ -10942,7 +11034,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('49_design_reads.sql', '3d2a0a2e99252a337af815b80935c615c29d73beef1ed57297eeb9c93f791103');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('49_design_reads.sql');
   end if;
 end $$;
@@ -11148,7 +11242,9 @@ $$;
 revoke execute on function public.spark_waves(uuid) from public, anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('50_blocks.sql', '89faa1b9187bc4632d01445a2664e4058e074ad8389e82bb2496c5ff04988c61');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('50_blocks.sql');
   end if;
 end $$;
@@ -11490,7 +11586,9 @@ do $$ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('51_safety.sql', '3b7465d17ddd94f12c1f8c5c38634997f605813c88d9784ca30e976d01104883');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('51_safety.sql');
   end if;
 end $$;
@@ -11743,7 +11841,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('52_bans.sql', '41fce784b97a0db9d912cb83000e85fb052e5d4e7f0c8180de1c13c9d9dfde12');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('52_bans.sql');
   end if;
 end $$;
@@ -12126,7 +12226,9 @@ do $$ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('53_trust.sql', '7ca0c1158caa08eb1d7cedbee17494dd4ef718ff69080160e0af324f71bea7ae');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('53_trust.sql');
   end if;
 end $$;
@@ -12280,7 +12382,9 @@ create trigger staff_alert after insert on public.events
   for each row execute function public.staff_alert_night();
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('54_upkeep.sql', '35d51a2f27242654fd57902d539828ad9875c0449af11b552f8f498c59e5ff0f');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('54_upkeep.sql');
   end if;
 end $$;
@@ -12553,7 +12657,9 @@ do $$ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('55_post_social.sql', '56ec67e5452e57f8d7d44f8cc1424a5abf2d7bc1f46590c8de02439415414676');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('55_post_social.sql');
   end if;
 end $$;
@@ -12583,7 +12689,9 @@ alter table public.sparks add constraint sparks_kind_check check (kind in (
 ));
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('56_spark_kinds_2.sql', 'dd7519b93add7f83e1a2c2fb291940ec62e8fb8c85b2ad1417adeac7db5729d2');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('56_spark_kinds_2.sql');
   end if;
 end $$;
@@ -13001,7 +13109,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('57_doors.sql', '9f7b2b2356cfeb17a3dfcf7fc3dcb04c3c41c493384de2a0b426c1ea7dff8df0');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('57_doors.sql');
   end if;
 end $$;
@@ -13130,7 +13240,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('58_push_words.sql', '774e1c235736e26cbc29e140a37e299065b11267af9067f09a4d8c48cdb6a845');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('58_push_words.sql');
   end if;
 end $$;
@@ -13353,7 +13465,9 @@ $$;
 -- (14) does not list them yet — a line in promises.md says so.
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('59_dms.sql', 'ff42a3de133b25de321f261391abc791c6ff92c428165841787a6f7a24d1032e');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('59_dms.sql');
   end if;
 end $$;
@@ -13433,7 +13547,9 @@ revoke execute on function public.tickets_mine() from public, anon;
 grant execute on function public.tickets_mine() to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('60_tickets.sql', '54fd0d0743f10a2c958b19fb80e0f7751fcfa920dea9f7cf6b69397bb15b8d60');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('60_tickets.sql');
   end if;
 end $$;
@@ -13707,7 +13823,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('61_travel.sql', '6d88a4f65688cc0895eac7faf24d741dbb2c4758297bc4889d2ba2b5574ba4fd');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('61_travel.sql');
   end if;
 end $$;
@@ -13744,7 +13862,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('62_group_covers.sql', '0fe8614187625a2762b52fb4813d73f1a9f045e33cfc579ae65299af3becc86d');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('62_group_covers.sql');
   end if;
 end $$;
@@ -13796,7 +13916,9 @@ revoke all on function public.previews_for(uuid[]) from public;
 grant execute on function public.previews_for(uuid[]) to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('63_previews.sql', '68f08b2aca6230170b1b71d7d1449e89e8feb7b638587cf56c30babb6f0c5408');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('63_previews.sql');
   end if;
 end $$;
@@ -13912,7 +14034,9 @@ $$;
 grant execute on function public.export_me() to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('64_export_more.sql', '75d37ddd068f002d692f299f8840fb3b69b703a57eae0d056f84cec6144a4bd4');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('64_export_more.sql');
   end if;
 end $$;
@@ -13975,7 +14099,9 @@ $$;
 grant execute on function public.delete_account() to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('65_account_delete.sql', '4b82eceeb5cf323a09884a8024f5fe06ee48435a83bfcb089160c9f3b6a3aa8e');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('65_account_delete.sql');
   end if;
 end $$;
@@ -14041,7 +14167,9 @@ $$;
 revoke execute on function public.events_prune_untouched(int) from public, anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('66_keep_past_nights.sql', 'c6bbe32a8697b1597cb2030db487d991b3ea853f0acc2413116ee63f59c143e6');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('66_keep_past_nights.sql');
   end if;
 end $$;
@@ -14133,7 +14261,9 @@ grant execute on function public.deck(text, text, int)  to anon, authenticated;
 grant execute on function public.event_counts(text)     to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('67_deck_today.sql', '1f9c7019e1c0d8eca57c5a6ac4fb03e867cb2dfd721e72579df6348fb379045a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('67_deck_today.sql');
   end if;
 end $$;
@@ -14206,7 +14336,9 @@ revoke execute on function public.staff_report_settle(text, text, boolean) from 
 grant execute on function public.staff_report_settle(text, text, boolean)  to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('68_report_answered.sql', 'd31c57dbea50047478594749cc020ad351ba62ed92f4d92900ebac9714efe953');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('68_report_answered.sql');
   end if;
 end $$;
@@ -14267,7 +14399,9 @@ create trigger push_rsvp
   for each row execute function public.push_on_rsvp();
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('69_rsvp_push.sql', '2979cba607450c3b34c5072b421b570596c8212155ba082c72a43ff3d8a5848d');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('69_rsvp_push.sql');
   end if;
 end $$;
@@ -14491,7 +14625,9 @@ grant execute on function public.staff_reports()                           to au
 grant execute on function public.staff_report_settle(text, text, boolean)  to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('70_blocks_and_dm_reports.sql', '674e630174dc3e2a9d58d21c9d1bfc612f9bfd8d999fc6bfeaf9a5cd98ed5bda');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('70_blocks_and_dm_reports.sql');
   end if;
 end $$;
@@ -14552,7 +14688,9 @@ $$;
 grant execute on function public.health() to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('71_health_more.sql', '8454b42f5a542d7fa6e981f35678d9dd0f029d4e79f77cb64ad099e93da0e904');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('71_health_more.sql');
   end if;
 end $$;
@@ -14786,7 +14924,9 @@ create trigger push_night_change
   for each row execute function public.push_on_night_change();
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('72_night_changed.sql', '1a25f4a251f50ad39b896be0b62c05faaacbde343e2e34b65ddf085f3ed04d9a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('72_night_changed.sql');
   end if;
 end $$;
@@ -14848,7 +14988,9 @@ $$;
 grant execute on function public.delete_account() to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('73_messages_go.sql', 'e5a4ebd79eec7fa75b790ef314df91862bcb1d04664d1079e140db065b06d41d');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('73_messages_go.sql');
   end if;
 end $$;
@@ -15001,7 +15143,9 @@ as $$
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('74_ban_stays.sql', '4a96d6ee01aed02a6fa04804d57c7446838fa3ca7cfc4d88f00caca26d26268a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('74_ban_stays.sql');
   end if;
 end $$;
@@ -15198,7 +15342,9 @@ revoke execute on function public.spark_cancel(uuid) from public, anon;
 grant execute on function public.spark_cancel(uuid)  to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('75_spark_off.sql', '6394bd2308ff8d033530520b18de931e193308296519ecb39042962c13f11930');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('75_spark_off.sql');
   end if;
 end $$;
@@ -15319,7 +15465,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('76_sent_nights.sql', '6083e440d0d3933f27cc25255c38e079b8d251c5e3994c4741ba85b8eeccb3e8');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('76_sent_nights.sql');
   end if;
 end $$;
@@ -15416,7 +15564,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('77_reserved_handles.sql', 'b36a9af57fdfac6e9fa50223bed9d3d7828d41f21e3a25f0f6fb12b8f1df4b2b');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('77_reserved_handles.sql');
   end if;
 end $$;
@@ -15487,7 +15637,9 @@ $$;
 grant execute on function public.set_min_app_version(text, text) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('78_min_version.sql', '1670ac287ac7ff389e9ca9c123caea56b59dd1a669dbb207ca7fc380a23ef97f');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('78_min_version.sql');
   end if;
 end $$;
@@ -15627,7 +15779,9 @@ create trigger watch_posts          after insert or update of body  on public.po
 create trigger watch_profiles       after insert or update of handle, display_name, bio, about on public.profiles for each row execute function public.watch_ugc('profile', 'id', 'handle', 'display_name', 'bio', 'about');
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('79_word_watch.sql', '3a484dd375b17d135f53c7eb72bbd97bb12469d790015c60347746d280e4fec7');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('79_word_watch.sql');
   end if;
 end $$;
@@ -15675,7 +15829,9 @@ $$;
 grant execute on function public.guest_merge(uuid) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('80_guest_merge.sql', '1bd08efa241f867a9b085d86ee7f7f590be64123597144c235b69ff424814f34');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('80_guest_merge.sql');
   end if;
 end $$;
@@ -15723,7 +15879,9 @@ as $$
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('81_posts_off.sql', '7c72d645cc6875566aa55521c252c5e172b32bd7d31347588831a2ed4da19bab');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('81_posts_off.sql');
   end if;
 end $$;
@@ -15823,7 +15981,9 @@ create trigger photo_gone_groups         after delete or update of cover_path   
 create trigger folder_gone_profiles      after delete                                    on public.profiles       for each row execute function public.folder_gone();
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('82_leftovers.sql', 'fd331d73d48eca15b020a2173b0828c697fd674a6e72ab30ea4759e2cc933dbf');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('82_leftovers.sql');
   end if;
 end $$;
@@ -15951,7 +16111,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('83_dj_after.sql', '18c17fad8d80b42de42afe6e275348f34a0ea1edf993e45dc07eff43b571b861');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('83_dj_after.sql');
   end if;
 end $$;
@@ -16102,7 +16264,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('84_report_snapshot.sql', 'b9411046e60764cedd725c8bdf582a81f6e04e21b8341dae5d89ba736a52b3b8');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('84_report_snapshot.sql');
   end if;
 end $$;
@@ -16217,7 +16381,9 @@ $$;
 grant execute on function public.staff_appeal_settle(bigint, boolean) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('85_appeals.sql', '1c7ec869e98f4f8cff38ddc21df11bcf30cf7e7909633f92a856377cd3d6ae17');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('85_appeals.sql');
   end if;
 end $$;
@@ -16298,7 +16464,9 @@ $$;
 grant execute on function public.staff_person(uuid) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('86_person_file.sql', 'c4ec3d2800b5dc808a1b3a53e9fa2a380fdea01912c699317cd69b9aa1ed7649');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('86_person_file.sql');
   end if;
 end $$;
@@ -16342,7 +16510,9 @@ $$;
 grant execute on function public.cron_health() to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('87_cron_health.sql', '66855abff143fb2e064f228a9169eda723792c65e627a10e8998c1f8813e3715');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('87_cron_health.sql');
   end if;
 end $$;
@@ -16512,7 +16682,9 @@ as $$
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('88_checkin_truth.sql', '605528add79ffccba24fed96f273fce1fcabb661d185cbd11c48f810e707f015');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('88_checkin_truth.sql');
   end if;
 end $$;
@@ -16683,7 +16855,9 @@ as $$
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('89_export_all.sql', '129851f1850d00fd38c30c8e8f47f1653b917869ee6ba12de031ec7d947132d3');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('89_export_all.sql');
   end if;
 end $$;
@@ -16751,7 +16925,56 @@ $$;
 grant execute on function public.dm_list() to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('90_dm_seen.sql', 'e93fc576ff72e6ef604d9d89d646857e29c995aaf0597babe77a2ea42ad9c41f');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('90_dm_seen.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A FILE REMEMBERS ITS OWN TEXT   (91_checksums.sql)
+-- ============================================================
+
+-- afterhours — a file remembers its own text (91)
+--
+-- The migration log (00) knew a file by name alone: a file edited after it was
+-- pasted, or an old copy pasted again over newer shared functions, left no trace
+-- (F33, 20.10.2026). tools/stamp-sql.mjs now writes the sha256 of each file into
+-- its own stamp block; migration_done(name, hash) keeps it here, and
+-- tools/health.mjs compares what is applied with what the repository holds.
+-- A file pasted before this one still stamps by name (the block tries both).
+-- migrations_applied returns the hash too, so it is dropped and made again.
+
+alter table public.migrations add column if not exists hash text;
+
+create or replace function public.migration_done(p_name text, p_hash text)
+returns void
+language sql
+security definer
+set search_path = public
+as $$
+  insert into public.migrations (name, hash) values (p_name, p_hash)
+  on conflict (name) do update set applied_at = now(), hash = excluded.hash;
+$$;
+
+drop function if exists public.migrations_applied();
+create or replace function public.migrations_applied()
+returns table (name text, applied_at timestamptz, hash text)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select m.name, m.applied_at, m.hash from public.migrations m order by m.name;
+$$;
+grant execute on function public.migrations_applied() to anon, authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('91_checksums.sql', '3e2d52d795b47a138cfdb605bf8c6d50fc8ebe393292a64f26aafb56e41061f0');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('91_checksums.sql');
   end if;
 end $$;

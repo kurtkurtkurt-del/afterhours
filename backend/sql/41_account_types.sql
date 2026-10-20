@@ -70,7 +70,9 @@ revoke all on function public.set_account_type(text, text) from public, anon;
 grant execute on function public.set_account_type(text, text) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('41_account_types.sql', '48a29b4f27e4bfbc0f234c9d3ac0438a6818eccdbfb0b31d64e62931a1532c36');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('41_account_types.sql');
   end if;
 end $$;

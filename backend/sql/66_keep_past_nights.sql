@@ -54,7 +54,9 @@ $$;
 revoke execute on function public.events_prune_untouched(int) from public, anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('66_keep_past_nights.sql', 'c6bbe32a8697b1597cb2030db487d991b3ea853f0acc2413116ee63f59c143e6');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('66_keep_past_nights.sql');
   end if;
 end $$;

@@ -212,7 +212,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('45_posts.sql', '466a971652fc35d228348cb57c334e6e0f9cd2f9347c31e343d8b7f7bcb29ae5');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('45_posts.sql');
   end if;
 end $$;

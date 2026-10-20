@@ -142,7 +142,9 @@ create trigger staff_alert after insert on public.events
   for each row execute function public.staff_alert_night();
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('54_upkeep.sql', '35d51a2f27242654fd57902d539828ad9875c0449af11b552f8f498c59e5ff0f');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('54_upkeep.sql');
   end if;
 end $$;

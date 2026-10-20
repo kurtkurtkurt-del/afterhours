@@ -245,7 +245,9 @@ grant insert, update, delete on public.cities, public.event_types,
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('02_rls.sql', '7a25fb9614f16ecda40d256ac2e47118f2eb534d11d689bcf286d1d32325c0ee');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('02_rls.sql');
   end if;
 end $$;

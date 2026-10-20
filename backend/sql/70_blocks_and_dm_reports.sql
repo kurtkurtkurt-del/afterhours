@@ -212,7 +212,9 @@ grant execute on function public.staff_reports()                           to au
 grant execute on function public.staff_report_settle(text, text, boolean)  to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('70_blocks_and_dm_reports.sql', '674e630174dc3e2a9d58d21c9d1bfc612f9bfd8d999fc6bfeaf9a5cd98ed5bda');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('70_blocks_and_dm_reports.sql');
   end if;
 end $$;

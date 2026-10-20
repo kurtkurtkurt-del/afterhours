@@ -18,7 +18,9 @@ alter table public.sparks add constraint sparks_kind_check check (kind in (
 ));
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('56_spark_kinds_2.sql', 'dd7519b93add7f83e1a2c2fb291940ec62e8fb8c85b2ad1417adeac7db5729d2');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('56_spark_kinds_2.sql');
   end if;
 end $$;

@@ -87,7 +87,9 @@ grant execute on function public.export_me() to authenticated;
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('14_export.sql', '6c42d037a8d8af5cf230e0832ee2cb6adde149e91c42127f2aa8ade0a997479a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('14_export.sql');
   end if;
 end $$;

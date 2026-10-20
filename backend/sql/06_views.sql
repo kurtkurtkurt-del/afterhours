@@ -291,7 +291,9 @@ grant select on public.events_public, public.comments_public to anon, authentica
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('06_views.sql', '21b58172054af3d9589873a119e22cf1466e70c8a991826f8f4b23fb4a4141ec');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('06_views.sql');
   end if;
 end $$;

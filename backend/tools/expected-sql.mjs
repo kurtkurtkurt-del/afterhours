@@ -98,4 +98,5 @@ export const EXPECTED_SQL = [
   "88_checkin_truth.sql",
   "89_export_all.sql",
   "90_dm_seen.sql",
+  "91_checksums.sql",
 ];

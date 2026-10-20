@@ -32,7 +32,9 @@ $$;
 grant execute on function public.cron_health() to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('87_cron_health.sql', '66855abff143fb2e064f228a9169eda723792c65e627a10e8998c1f8813e3715');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('87_cron_health.sql');
   end if;
 end $$;

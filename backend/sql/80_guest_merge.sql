@@ -36,7 +36,9 @@ $$;
 grant execute on function public.guest_merge(uuid) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('80_guest_merge.sql', '1bd08efa241f867a9b085d86ee7f7f590be64123597144c235b69ff424814f34');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('80_guest_merge.sql');
   end if;
 end $$;

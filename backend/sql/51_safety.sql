@@ -330,7 +330,9 @@ do $$ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('51_safety.sql', '3b7465d17ddd94f12c1f8c5c38634997f605813c88d9784ca30e976d01104883');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('51_safety.sql');
   end if;
 end $$;

@@ -98,6 +98,7 @@ const structure = [
   ["88_checkin_truth.sql", "A CHECK-IN THAT MEANS SOMETHING"],
   ["89_export_all.sql", "THE EXPORT, WHOLE"],
   ["90_dm_seen.sql", "WHO HAS READ WHAT, KEPT BY THE SERVER"],
+  ["91_checksums.sql", "A FILE REMEMBERS ITS OWN TEXT"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

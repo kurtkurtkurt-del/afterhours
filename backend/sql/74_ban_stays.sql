@@ -141,7 +141,9 @@ as $$
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('74_ban_stays.sql', '4a96d6ee01aed02a6fa04804d57c7446838fa3ca7cfc4d88f00caca26d26268a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('74_ban_stays.sql');
   end if;
 end $$;

@@ -406,7 +406,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('57_doors.sql', '9f7b2b2356cfeb17a3dfcf7fc3dcb04c3c41c493384de2a0b426c1ea7dff8df0');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('57_doors.sql');
   end if;
 end $$;

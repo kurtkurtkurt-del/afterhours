@@ -80,7 +80,9 @@ grant execute on function public.deck(text, text, int)  to anon, authenticated;
 grant execute on function public.event_counts(text)     to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('67_deck_today.sql', '1f9c7019e1c0d8eca57c5a6ac4fb03e867cb2dfd721e72579df6348fb379045a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('67_deck_today.sql');
   end if;
 end $$;

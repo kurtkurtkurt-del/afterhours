@@ -341,7 +341,9 @@ grant select, update on public.checkins to authenticated;
 grant select, insert, delete on public.room_posts to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('19_checkins.sql', '20c26372a269344c166562e355958ef7a756774194c77e03adf674cf596b4b73');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('19_checkins.sql');
   end if;
 end $$;

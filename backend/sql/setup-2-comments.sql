@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 2 / 2 : SAMPLE COMMENTS
---  VERSION: 2026-10-20 08:38
+--  VERSION: 2026-10-20 08:57
 --
 --  Run setup-1-structure.sql first.
 --  The sample conversations in the beforehours panel: 180 topics, 131
@@ -1601,7 +1601,9 @@ insert into public.comments (event_id, parent_id, author_name, body, time_text, 
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('05_seed_comments.sql', 'dba4131f9fe3a13d9a24f76601a473a25f6cef7ef80f6c99ab7064daa119b6c2');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('05_seed_comments.sql');
   end if;
 end $$;

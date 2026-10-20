@@ -51,7 +51,9 @@ $$;
 grant execute on function public.delete_account() to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('65_account_delete.sql', '4b82eceeb5cf323a09884a8024f5fe06ee48435a83bfcb089160c9f3b6a3aa8e');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('65_account_delete.sql');
   end if;
 end $$;

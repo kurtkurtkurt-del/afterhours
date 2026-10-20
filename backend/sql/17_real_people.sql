@@ -156,7 +156,9 @@ grant execute on function public.profile_kept(text)  to anon, authenticated;
 
 -- Stamp the migration log, if it is there.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('17_real_people.sql', '68427f8d1536603cd4b47b493a9366166812d97a8cbd3ae4808e6e07b3a6c1c7');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('17_real_people.sql');
   end if;
 end $$;

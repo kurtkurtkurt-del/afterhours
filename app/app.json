@@ -112,7 +112,15 @@
         }
       ],
       "expo-apple-authentication",
-      "expo-image"
+      "expo-image",
+      [
+        "@sentry/react-native/expo",
+        {
+          "organization": "afterhours",
+          "project": "app",
+          "url": "https://sentry.io/"
+        }
+      ]
     ],
     "scheme": "afterhours",
     "experiments": {

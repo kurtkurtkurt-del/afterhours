@@ -237,7 +237,9 @@ as $$
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('22_hardening.sql', '5eaab7682fd89f3291aef571b15fda540f691f9c6631d7fcc7f41011dfd51015');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('22_hardening.sql');
   end if;
 end $$;

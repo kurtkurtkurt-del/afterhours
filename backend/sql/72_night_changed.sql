@@ -222,7 +222,9 @@ create trigger push_night_change
   for each row execute function public.push_on_night_change();
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('72_night_changed.sql', '1a25f4a251f50ad39b896be0b62c05faaacbde343e2e34b65ddf085f3ed04d9a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('72_night_changed.sql');
   end if;
 end $$;

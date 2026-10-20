@@ -159,7 +159,9 @@ as $$
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('89_export_all.sql', '129851f1850d00fd38c30c8e8f47f1653b917869ee6ba12de031ec7d947132d3');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('89_export_all.sql');
   end if;
 end $$;
