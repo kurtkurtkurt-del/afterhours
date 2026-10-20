@@ -60,6 +60,8 @@ export const pages = {
     de: 'hier schreibt nur, wer da war',
     tr: 'buraya yalnızca orada olanlar yazar',
   },
+  'checkin.undo': { en: 'take the check-in back', de: 'check-in zurücknehmen', tr: 'check-in’i geri al' },
+  'checkin.reason.toolate': { en: 'an hour has passed; the card stays', de: 'eine stunde ist um; die karte bleibt', tr: 'bir saat geçti; kart kalır' },
   'checkin.reason.frozen': { en: 'this room is frozen', de: 'dieser raum ist eingefroren', tr: 'bu oda dondu' },
 
   // beforehours

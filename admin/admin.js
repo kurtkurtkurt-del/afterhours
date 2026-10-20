@@ -103,6 +103,7 @@
     "85_appeals.sql",
     "86_person_file.sql",
     "87_cron_health.sql",
+    "88_checkin_truth.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */
