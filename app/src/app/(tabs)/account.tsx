@@ -24,7 +24,8 @@ import { Image } from 'expo-image';
 import { dayLabel } from '@/data/when';
 import type { Night } from '@/data/deck';
 import { sparkOf } from '@/content/sparks';
-import { collection as samples } from '@/content/collection';
+import { collection as sampleCards } from '@/content/collection';
+import { SAMPLES } from '@/content/samples';
 import { myCards, toCardData, type CardRow } from '@/data/checkin';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { isStaff, useRole } from '@/data/staff';
@@ -104,6 +105,7 @@ export default function AccountScreen() {
   }, [uid, tick]);
   // Real cards; samples (labelled at the top right) when there are none.
   const real = cards && cards.length > 0;
+  const samples: NightCardData[] = SAMPLES ? sampleCards : [];
   const collection: NightCardData[] = real ? cards.map(toCardData) : samples;
   const cities = real ? distinct(cards.map((c) => c.city_name)) : distinct(samples.map((c) => c.city));
 
@@ -202,7 +204,7 @@ export default function AccountScreen() {
             <View style={styles.dot} />
           </View>
           <Text style={[styles.small, styles.onInkSmall]} numberOfLines={1}>
-            {up(real ? `${tn('account.nNights', collection.length)} · ${tn('account.nCities', cities)}` : t('account.deck.sample'))}
+            {up(real ? `${tn('account.nNights', collection.length)} · ${tn('account.nCities', cities)}` : (samples.length ? t('account.deck.sample') : t('account.deck.empty')))}
           </Text>
         </View>
 

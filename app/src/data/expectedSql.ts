@@ -74,4 +74,5 @@ export const EXPECTED_SQL = [
   '70_blocks_and_dm_reports.sql',
   '71_health_more.sql',
   '72_night_changed.sql',
+  '73_messages_go.sql',
 ];

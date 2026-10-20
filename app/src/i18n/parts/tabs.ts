@@ -930,6 +930,7 @@ export const tabs = {
   },
   'account.photo.failed': { en: 'the photo could not be opened', de: 'das foto ließ sich nicht öffnen', tr: 'fotoğraf açılamadı' },
   'account.deck': { en: 'collection', de: 'sammlung', tr: 'koleksiyon' },
+  'account.deck.empty': { en: 'your first check-in puts a card here', de: 'dein erster check-in legt hier eine karte ab', tr: 'ilk check-in\'in buraya bir kart koyar' },
   'account.deck.sample': { en: 'samples · until your first check-in', de: 'beispiele · bis zum ersten check-in', tr: "örnekler · ilk check-in'ine kadar" },
   'account.edit': { en: 'edit', de: 'bearbeiten', tr: 'düzenle' },
   'account.editProfile': { en: 'edit profile', de: 'profil bearbeiten', tr: 'profili düzenle' },

@@ -125,6 +125,8 @@ console.log("\n— the deletion —");
   check(left.length === 0, "no row of any table still points at the person", left.join(", "));
   check((await one(`select count(*)::int as n from public.dm_messages where body = 'hi'`)).n === 0, "the direct messages went, both sides of the thread");
   check((await one(`select author_name from public.comments where body = 'a line of mine'`)).author_name === "someone", "a comment stays, as someone");
+  check((await rows(`select 1 from public.room_posts where body = 'in the room'`)).length === 0, "a room line goes with the person (73)");
+  check((await rows(`select 1 from public.group_messages where body = 'see you'`)).length === 0, "a group line too");
 }
 
 console.log("\n— what stays with the others —");

@@ -994,7 +994,9 @@ reads Ticketmaster's `dates.status.code` into `events.status`; a cancelled night
 collections, and whoever kept it, answered in or holds a ticket gets one push — *cancelled*, *postponed*,
 *moved to thu 20:00* — in their own language, on the `notify_nights` switch. Health (`71_health_more.sql`)
 now goes red when the newest synced night is older than three days, more than fifty past nights are still
-published, or pushes sit unsent for six hours.
+published, or pushes sit unsent for six hours. **Samples are development only** (`content/samples.ts`, `SAMPLES = __DEV__`, 20.10.2026): a store
+build shows no drawn friends, nights, waves, stories, djs or cards — an empty screen says what to do. **A deleted
+account takes its room and group lines with it** (`73_messages_go.sql`); a comment on a night still stays as someone.
 The deck and the counters stopped waiting for the jobs the same day (`67_deck_today.sql`):
 a synced night leaves `deck()`, `event_counts()` and `city_counts()` by its own date, eight
 hours after it starts, whether or not `hide_past_events` ever runs; the map had done so since 18. Three house rules hold, on the way in and swept over what is

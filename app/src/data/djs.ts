@@ -1,6 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import { must, outbox, pendingJobs, remember, send } from '@/lib/offline';
 import { djs as localDjs, sets as localSets, type Dj, type DjSet } from '@/content/djs';
+import { SAMPLES } from '@/content/samples';
 
 // 20_djs.sql: djs, dj_sets, dj_follows. Local samples when the table is empty or offline.
 const photos: Record<string, number> = Object.fromEntries(localDjs.map((d) => [d.id, d.photo]));
@@ -18,7 +19,7 @@ export async function loadDjs(): Promise<{ djs: Dj[]; sets: DjSet[]; live: boole
     if (b.error) throw b.error;
     return { a: a.data ?? [], b: b.data ?? [], c: (c.data ?? []) as { dj_id: string; n: number }[] };
   }).catch(() => null);
-  if (!raw || !raw.a.length) return { djs: localDjs, sets: localSets(), live: false };
+  if (!raw || !raw.a.length) return SAMPLES ? { djs: localDjs, sets: localSets(), live: false } : { djs: [], sets: [], live: false };
   const a = { data: raw.a };
   const b = { data: raw.b };
   const counts = new Map<string, number>(raw.c.map((r) => [r.dj_id, Number(r.n)]));

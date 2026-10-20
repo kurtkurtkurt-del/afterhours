@@ -9,6 +9,7 @@ import { upperData, useLang } from '@/i18n';
 import type { Key } from '@/i18n/dict';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import { SAMPLES as SAMPLES_ON } from '@/content/samples';
 
 // Finding friends on yours: a search field on top with results while typing; when empty,
 // three suggestion cards. Requests, accepts and the friend page all start here; yours reloads afterwards.
@@ -199,7 +200,7 @@ export function SuggestedInRow() {
   }, [uid]);
 
   const sample = !uid || (rows !== null && rows.length === 0);
-  const list = sample ? SAMPLES : (rows ?? []);
+  const list = sample && SAMPLES_ON ? SAMPLES : (rows ?? []);
   if (!list.length) return null;
   const cols: Suggested[][] = [];
   for (let i = 0; i < list.length; i += 2) cols.push(list.slice(i, i + 2));

@@ -5,7 +5,8 @@ import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import StoryViewer, { type StoryItem } from '@/components/StoryViewer';
 import { useAuth } from '@/auth/AuthContext';
-import { stories } from '@/content/stories';
+import { stories as sampleStories } from '@/content/stories';
+import { SAMPLES } from '@/content/samples';
 import { djs as localDjs, type Dj } from '@/content/djs';
 import { followedSlugs, loadDjs } from '@/data/djs';
 import { useLocalCity } from '@/data/here';
@@ -13,6 +14,9 @@ import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+
+// Until people post their own, the stories are samples — and only in development (F30).
+const stories = SAMPLES ? sampleStories : [];
 
 const SEEN = 'stories.seen';
 const photoOf = (dj: Dj): ImageSourcePropType => (dj.photoUrl ? { uri: dj.photoUrl } : dj.photo);
