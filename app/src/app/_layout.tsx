@@ -13,6 +13,8 @@ import {
 import { JetBrainsMono_400Regular } from '@expo-google-fonts/jetbrains-mono';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import * as Sentry from '@sentry/react-native';
+// the boundary can sit outside the language provider: read the language directly
+import { t as tNow } from '@/i18n/core';
 import { colors } from '@/theme/tokens';
 import { AmbientProvider } from '@/audio/AmbientContext';
 import { AuthProvider, useAuth } from '@/auth/AuthContext';
@@ -119,12 +121,13 @@ export function ErrorBoundary({ error, retry }: { error: Error; retry: () => Pro
 function Crashed({ error, retry }: { error: Error; retry: () => Promise<void> }) {
   useEffect(() => {
     logError(error, 'screen', true);
+    Sentry.captureException(error);
   }, [error]);
   return (
     <View style={{ flex: 1, backgroundColor: colors.ink, alignItems: 'center', justifyContent: 'center', padding: 32, gap: 18 }}>
-      <Text style={{ fontFamily: 'InterTight_500Medium', fontSize: 22, color: colors.paper, textAlign: 'center' }}>something broke.</Text>
+      <Text style={{ fontFamily: 'InterTight_500Medium', fontSize: 22, color: colors.paper, textAlign: 'center' }}>{tNow('crash.title')}</Text>
       <Text style={{ fontFamily: 'JetBrainsMono_400Regular', fontSize: 11, color: colors.mute, textAlign: 'center' }} numberOfLines={3}>{error.message}</Text>
-      <PillAction icon="retry" label="try again" onPress={() => retry()} />
+      <PillAction icon="retry" label={tNow('crash.retry')} onPress={() => retry()} />
     </View>
   );
 }

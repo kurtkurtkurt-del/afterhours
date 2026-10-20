@@ -1,5 +1,9 @@
 // Shared strings used on every screen. Mirrors lang/src/common.json on the website.
 export const common = {
+  'crash.title': { en: 'something broke.', de: 'etwas ist kaputtgegangen.', tr: 'bir şey bozuldu.' },
+  'crash.retry': { en: 'try again', de: 'noch einmal', tr: 'tekrar dene' },
+  'door.space': { en: 'space', de: 'leerzeichen', tr: 'boşluk' },
+  'door.enter': { en: 'enter', de: 'eingabe', tr: 'gir' },
   'pull.close': { en: 'let go to close', de: 'loslassen zum schließen', tr: 'bırak, kapansın' },
   'lang.label': { en: 'language', de: 'sprache', tr: 'dil' },
   'lang.hint': { en: 'the whole app changes with it', de: 'die ganze app wechselt mit', tr: 'bütün uygulama onunla değişir' },

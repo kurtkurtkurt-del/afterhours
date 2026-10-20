@@ -826,6 +826,8 @@ export const tabs = {
   'map.nearMe': { en: 'near me', de: 'in meiner nähe', tr: 'yakınımda' },
   'map.locationOff': { en: 'location off', de: 'standort aus', tr: 'konum kapalı' },
   'map.locating': { en: 'locating…', de: 'wird gesucht…', tr: 'aranıyor…' },
+  'map.offline': { en: 'offline · the map waits', de: 'offline · die karte wartet', tr: 'çevrimdışı · harita bekliyor' },
+  'map.none': { en: 'nothing here yet · widen the circle', de: 'noch nichts hier · zieh den kreis weiter', tr: 'burada henüz bir şey yok · çemberi genişlet' },
   'map.notLive': { en: 'not live yet', de: 'noch nicht live', tr: 'henüz yayında değil' },
   'map.nights.one': { en: '{n} night', de: '{n} nacht', tr: '{n} gece' },
   'map.nights.other': { en: '{n} nights', de: '{n} nächte', tr: '{n} gece' },

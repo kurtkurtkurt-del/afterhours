@@ -28,8 +28,12 @@ import { brand } from '@/theme/layout';
 // photos from past nights. No sample posts any more (11.10.2026): what is not real is
 // not shown. The people themselves (groups, friends, the gallery of nights they kept,
 // the decks) live in the people tab.
-export default function YoursScreen() {
-  if (!POSTS_ON) return <Redirect href="/flow" />;
+// Posts are off (content/flags.ts): the route redirects before any of the screen runs.
+export default function YoursScreenGate() {
+  return POSTS_ON ? <YoursScreen /> : <Redirect href="/flow" />;
+}
+
+function YoursScreen() {
   const insets = useSafeAreaInsets();
   const tabSpace = useTabBarSpace();
   // Posts by you and your friends (45_posts.sql), read on every visit.

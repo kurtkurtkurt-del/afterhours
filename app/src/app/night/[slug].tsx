@@ -374,8 +374,9 @@ export default function NightScreen() {
           >
             <Text style={styles.roomBtnText}>{t('night.openroom')}</Text>
           </Pressable>
-          {/* Within the hour the check-in can be taken back (88_checkin_truth.sql). */}
-          {card && !card.waiting && Date.now() - new Date(card.checked_at).getTime() < 3600_000 ? (
+          {/* Within the hour the check-in can be taken back (88_checkin_truth.sql); after it
+              the server answers "toolate" and the note says the card stays. */}
+          {card && !card.waiting ? (
             <View style={styles.undoRow}>
               <PillAction
                 icon="out"
