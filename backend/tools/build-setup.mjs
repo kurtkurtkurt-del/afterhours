@@ -90,6 +90,7 @@ const structure = [
   ["80_guest_merge.sql", "WHAT A GUEST KEPT COMES ALONG"],
   ["81_posts_off.sql", "POSTS ARE OFF"],
   ["82_leftovers.sql", "A FILE GOES WITH ITS ROW"],
+  ["83_dj_after.sql", "A DJ PAGE AFTER THE DJ"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

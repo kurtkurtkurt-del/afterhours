@@ -98,6 +98,7 @@
     "80_guest_merge.sql",
     "81_posts_off.sql",
     "82_leftovers.sql",
+    "83_dj_after.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */
