@@ -648,6 +648,8 @@ window.AH_LANG.tr = {
 "register.password":"bir şifre",
 "register.password.placeholder":"en az 8 karakter",
 "register.short":"sekiz karakter ya da daha fazla, lütfen.",
+"register.terms":"18 yaşından büyüğüm; <a href=\"../agb/\">şartları</a> ve <a href=\"../datenschutz/\">gizlilik bildirimini</a> kabul ediyorum",
+"register.terms.needed":"önce kutuyu işaretle: 18 yaş, şartlar, gizlilik.",
 "register.title":"kayıt ol | afterhours",
 "register.two.edition":"iki adımın ikincisi",
 "register.two.heading":"kullanıcı adını<br />seç.",

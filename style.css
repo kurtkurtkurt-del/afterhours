@@ -3917,3 +3917,8 @@ body[data-screen="5"] .header-links .lang { color: #f2f2f0; }
 
   .header-links::-webkit-scrollbar { display: none; }
 }
+
+/* register: the 18+ and terms box (20.10.2026), the same gate the app has */
+.page-check { display: flex; align-items: flex-start; gap: 10px; margin: 6px 0 14px; font: 400 14px/1.45 "Inter Tight", system-ui, sans-serif; color: inherit; cursor: pointer; }
+.page-check input { margin: 3px 0 0; width: 16px; height: 16px; accent-color: #d7261e; flex: none; }
+.page-check a { color: inherit; text-decoration: underline; }

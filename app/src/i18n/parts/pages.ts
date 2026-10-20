@@ -314,6 +314,7 @@ export const pages = {
     tr: 'ekip, şartlara aykırı olduğu için kapattı. buradan bir şey paylaşılamaz ya da gönderilemez, kimse görmez. bir hata olduğunu düşünüyorsan siteden bize yaz.',
   },
   'closed.leave': { en: 'sign out', de: 'abmelden', tr: 'çıkış yap' },
+  'closed.delete.body': { en: 'the account and everything in it go for good. your data can be downloaded first.', de: 'das konto und alles darin gehen endgültig. deine daten lassen sich vorher laden.', tr: 'hesap ve içindeki her şey kalıcı olarak silinir. önce verilerini indirebilirsin.' },
   'report.group': { en: 'report this group', de: 'diese gruppe melden', tr: 'bu grubu şikayet et' },
   'report.spark': { en: 'report this spark', de: 'diesen spark melden', tr: 'bu spark\'ı şikayet et' },
   'block.do': { en: 'block', de: 'blockieren', tr: 'engelle' },

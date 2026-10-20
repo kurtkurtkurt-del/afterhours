@@ -648,6 +648,8 @@ window.AH_LANG.en = {
 "register.password":"a password",
 "register.password.placeholder":"at least 8 characters",
 "register.short":"eight characters or more, please.",
+"register.terms":"i am 18 or older and accept the <a href=\"../agb/\">terms</a> and the <a href=\"../datenschutz/\">privacy notice</a>",
+"register.terms.needed":"tick the box first: 18 or older, the terms, the privacy notice.",
 "register.title":"register | afterhours",
 "register.two.edition":"step two of two",
 "register.two.heading":"pick a<br />handle.",

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Linking, Modal, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Alert, Linking, Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Button from '@/components/Button';
 import { useAuth } from '@/auth/AuthContext';
-import { PRIVACY_URL, TERMS_URL, acceptTerms, accountStatus, termsAccepted, termsKnown } from '@/data/safety';
+import { PRIVACY_URL, TERMS_URL, acceptTerms, accountStatus, deleteEverything, termsAccepted, termsKnown } from '@/data/safety';
+import { exportToFile } from '@/data/settings';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -65,7 +66,31 @@ export default function TermsGate() {
           <Text style={styles.body}>{t('closed.body')}</Text>
           {closed?.reason ? <Text style={styles.checkText}>“{closed.reason}”</Text> : null}
           <View style={{ flex: 1 }} />
-          <PillAction icon="link" label={t('terms.read')} onPress={() => Linking.openURL(TERMS_URL)} />
+          {/* A closed account still owns its data: the export and the deletion stay within
+              reach (Apple 5.1.1(v), GDPR; F17, 20.10.2026). */}
+          <PillRow>
+            <PillAction icon="link" label={t('terms.read')} onPress={() => Linking.openURL(TERMS_URL)} />
+            <PillAction icon="out" label={t('settings.export')} onPress={() => exportToFile().catch((e) => Alert.alert(t('settings.export.failed'), String(e.message ?? e).toLowerCase()))} />
+          </PillRow>
+          <View style={{ height: 12 }} />
+          <PillAction
+            wide
+            icon="out"
+            label={t('settings.delete')}
+            onPress={() =>
+              Alert.alert(t('settings.delete'), t('closed.delete.body'), [
+                { text: t('word.cancel'), style: 'cancel' },
+                {
+                  text: t('settings.delete'),
+                  style: 'destructive',
+                  onPress: () =>
+                    deleteEverything()
+                      .then((done) => (done ? signOut() : undefined))
+                      .catch((e) => Alert.alert(t('settings.delete.failed'), String(e.message ?? e).toLowerCase())),
+                },
+              ])
+            }
+          />
           <View style={{ height: 24 }} />
           <Button label={t('closed.leave')} onPress={() => signOut()} />
         </View>
