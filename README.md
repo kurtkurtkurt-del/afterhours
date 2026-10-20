@@ -998,7 +998,9 @@ published, or pushes sit unsent for six hours. **Samples are development only** 
 build shows no drawn friends, nights, waves, stories, djs or cards — an empty screen says what to do. **A deleted
 account takes its room and group lines with it** (`73_messages_go.sql`); a comment on a night still stays as someone. **A ban stays** (`74_ban_stays.sql`): a banned account that deletes itself leaves a hash of its email
 and its handle behind, so the same address is banned at birth and the handle stays taken; the room no longer
-shows a banned account's lines. **A spark taken back** (`75_spark_off.sql`) tells everyone who said in.
+shows a banned account's lines. **A spark taken back** (`75_spark_off.sql`) tells everyone who said in. **A night sent in** (`76_sent_nights.sql`): the sender hears when it is let through or turned
+down (with the note), can take a waiting one back (`event_withdraw()`, "take it back" under *panel → night*), and
+a waiting night whose date passed leaves the queue by itself when the staff open it.
 The deck and the counters stopped waiting for the jobs the same day (`67_deck_today.sql`):
 a synced night leaves `deck()`, `event_counts()` and `city_counts()` by its own date, eight
 hours after it starts, whether or not `hide_past_events` ever runs; the map had done so since 18. Three house rules hold, on the way in and swept over what is

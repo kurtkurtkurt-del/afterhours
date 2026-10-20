@@ -12,7 +12,7 @@ import Button from '@/components/Button';
 import StaffPage, { Choice, Field, Quiet, Said, staffStyles } from '@/components/StaffPage';
 import { Panel, Row, Section, Switch, Value } from '@/components/Row';
 import { useEventTypes } from '@/data/types';
-import { allCities, deleteNight, isStaff, mySubmissions, saveNight, staffNights, submitNight, useRole, venuesIn, why, type Place, type Submission, type Venue } from '@/data/staff';
+import { allCities, deleteNight, isStaff, mySubmissions, saveNight, staffNights, submitNight, useRole, venuesIn, why, withdrawNight, type Place, type Submission, type Venue } from '@/data/staff';
 import { useLang } from '@/i18n';
 
 const today = () => new Date().toISOString().slice(0, 10);
@@ -158,7 +158,17 @@ export default function NightForm() {
                 label={m.title}
                 hint={[m.starts_at.slice(0, 16).replace('T', ' '), m.review === 'rejected' ? m.review_note : null].filter(Boolean).join(' · ')}
                 right={<Value text={t(m.review === 'pending' ? 'submit.pending' : m.review === 'rejected' ? 'submit.rejected' : 'submit.live')} more={m.review === null} />}
-                onPress={m.review === null ? () => router.push(`/night/${m.slug}`) : undefined}
+                onPress={
+                  m.review === null
+                    ? () => router.push(`/night/${m.slug}`)
+                    : m.review === 'pending'
+                      ? () =>
+                          Alert.alert(m.title, t('submit.withdraw.ask'), [
+                            { text: t('word.cancel'), style: 'cancel' },
+                            { text: t('submit.withdraw'), style: 'destructive', onPress: () => withdrawNight(m.id).then(() => mySubmissions().then(setMine, () => {})).catch(() => {}) },
+                          ])
+                      : undefined
+                }
               />
             ))}
           </Panel>

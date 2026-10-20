@@ -137,6 +137,8 @@ export const submitNight = (n: NightDraft) =>
   });
 export type Submission = { id: string; slug: string; title: string; starts_at: string; review: 'pending' | 'rejected' | null; review_note: string | null; is_published: boolean };
 export const mySubmissions = () => rpc<Submission[]>('event_submissions');
+// A waiting night of yours, taken back (76).
+export const withdrawNight = (id: string) => rpc<void>('event_withdraw', { p_id: id });
 export type Pending = {
   id: string;
   slug: string;

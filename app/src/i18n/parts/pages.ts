@@ -291,6 +291,8 @@ export const pages = {
   'notice.what.group': { en: 'group', de: 'gruppe', tr: 'grup' },
   'notice.what.spark': { en: 'spark', de: 'spark', tr: 'spark' },
   'notice.report_removed': { en: 'thanks for reporting: the {what} you reported was removed.', de: 'danke fürs melden: der {what}, den du gemeldet hast, wurde entfernt.', tr: 'bildirdiğin için teşekkürler: şikayet ettiğin {what} kaldırıldı.' },
+  'notice.night_ok': { en: 'the night you sent in, {title}, is live.', de: 'die nacht, die du eingesandt hast, {title}, ist drin.', tr: 'gönderdiğin gece, {title}, yayında.' },
+  'notice.night_no': { en: 'the night you sent in, {title}, was not let through. {note}', de: 'die nacht, die du eingesandt hast, {title}, wurde nicht durchgelassen. {note}', tr: 'gönderdiğin gece, {title}, yayına alınmadı. {note}' },
   'notice.report_kept': { en: 'thanks for reporting: we looked at the {what} and left it up.', de: 'danke fürs melden: wir haben uns den {what} angesehen und lassen ihn stehen.', tr: 'bildirdiğin için teşekkürler: şikayet ettiğin {what} incelendi, yerinde bırakıldı.' },
   'notice.profile_cleared': { en: 'the text, links and photo on your profile were removed for breaking the rules.', de: 'text, links und foto auf deinem profil wurden wegen eines regelverstoßes entfernt.', tr: 'profilindeki yazı, bağlantılar ve fotoğraf kurallara aykırı olduğu için kaldırıldı.' },
   'notice.role': { en: 'you are now: {role}.', de: 'du bist jetzt: {role}.', tr: 'artık: {role}.' },

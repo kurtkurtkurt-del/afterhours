@@ -88,6 +88,8 @@ export const staff = {
   'submit.sent': { en: 'sent. it shows in the flow once the team lets it through.', de: 'geschickt. sie erscheint im flow, sobald das team sie freigibt.', tr: 'gönderildi. ekip onaylayınca akışta görünür.' },
   'submit.mine': { en: 'what you sent in', de: 'was du eingeschickt hast', tr: 'gönderdiklerin' },
   'submit.pending': { en: 'waiting', de: 'wartet', tr: 'bekliyor' },
+  'submit.withdraw': { en: 'take it back', de: 'zurücknehmen', tr: 'geri al' },
+  'submit.withdraw.ask': { en: 'take this night back? it leaves the queue and is gone.', de: 'diese nacht zurücknehmen? sie verlässt die warteschlange und ist weg.', tr: 'bu geceyi geri alayım mı? kuyruktan çıkar ve silinir.' },
   'submit.rejected': { en: 'not taken', de: 'abgelehnt', tr: 'onaylanmadı' },
   'submit.live': { en: 'live', de: 'live', tr: 'yayında' },
   'staff.pending': { en: 'sent in', de: 'eingeschickt', tr: 'gönderilenler' },

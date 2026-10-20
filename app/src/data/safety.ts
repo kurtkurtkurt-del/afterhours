@@ -49,7 +49,7 @@ export async function accountStatus(): Promise<{ banned: boolean; reason: string
 }
 
 // 53_trust.sql: what the staff did to your things, told once.
-export type Notice = { id: number; kind: 'comment_hidden' | 'post_hidden' | 'removed' | 'profile_cleared' | 'role' | 'dj_verified' | 'dj_hidden' | 'report_removed' | 'report_kept'; data: Record<string, string>; created_at: string };
+export type Notice = { id: number; kind: 'comment_hidden' | 'post_hidden' | 'removed' | 'profile_cleared' | 'role' | 'dj_verified' | 'dj_hidden' | 'report_removed' | 'report_kept' | 'night_ok' | 'night_no'; data: Record<string, string>; created_at: string };
 export async function myNotices(): Promise<Notice[]> {
   const { data, error } = await supabase.rpc('my_notices');
   if (error) return [];
