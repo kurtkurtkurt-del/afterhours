@@ -469,10 +469,17 @@ for (let i = 0; i < unique.length; i += 100) {
   }
 }
 
-/* Nights that have passed leave the deck for good. Only our own rows:
-   the seeds and the admin-written events are not this script's to touch. */
+/* Nights that have passed leave the deck, but not the database: a retired night
+   (is_published = false) is still somebody's check-in card, room, swipe or answer.
+   Deleting here used to take all of that with it, every morning (F1, 20.10.2026).
+   Only our own rows: the seeds and the admin-written events are not this script's
+   to touch. Rows nobody ever touched are pruned after a year by 66. */
 const today = new Date().toISOString().slice(0, 10);
-await db("/events?source=eq.ticketmaster&starts_at=lt." + today, { method: "DELETE" });
+await db("/events?source=eq.ticketmaster&is_published=eq.true&starts_at=lt." + today, {
+  method: "PATCH", headers: { Prefer: "return=minimal" }, body: JSON.stringify({ is_published: false }),
+});
+const pruned = await db("/rpc/events_prune_untouched", { method: "POST", body: JSON.stringify({ p_days: 400 }) });
+if (pruned) console.log("pruned: " + pruned + " untouched nights older than a year");
 
 /* The house rules, swept over what is ALREADY there — add-ons, early
    starts and repeated dates that arrived before the rules did. The
@@ -480,7 +487,7 @@ await db("/events?source=eq.ticketmaster&starts_at=lt." + today, { method: "DELE
 const held = [];
 for (let from = 0; ; from += 1000) {
   const page = await db("/events_public?select=id,title,type_slug,city_slug,starts_at" +
-    "&source=eq.ticketmaster&order=starts_at&limit=1000&offset=" + from);
+    "&source=eq.ticketmaster&is_published=eq.true&order=starts_at&limit=1000&offset=" + from);
   held.push(...page);
   if (page.length < 1000) break;
 }
@@ -495,9 +502,9 @@ for (const r of held) {
 }
 for (let i = 0; i < kill.length; i += 60) {
   await db("/events?source=eq.ticketmaster&id=in.(" + kill.slice(i, i + 60).join(",") + ")",
-    { method: "DELETE" });
+    { method: "PATCH", headers: { Prefer: "return=minimal" }, body: JSON.stringify({ is_published: false }) });
 }
-if (kill.length) console.log("swept: " + kill.length + " rows against the house rules");
+if (kill.length) console.log("retired: " + kill.length + " rows against the house rules");
 
 console.log("written: " + written + " upserted"
   + (turnedAway ? ", " + turnedAway + " refused (see above)" : "")

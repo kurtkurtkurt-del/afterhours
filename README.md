@@ -977,8 +977,12 @@ A third workflow, `sync-events.yml`, pulls the real events: every morning
 at 04:10 UTC it runs `backend/tools/sync-ticketmaster.mjs`, which asks
 Ticketmaster city by city (the coverage of `16_coverage.sql`), files each
 event under one of the six kinds, composes the meta line, picks a 16:9
-photograph, upserts on `external_id` and prunes the nights that have
-passed. Three house rules hold, on the way in and swept over what is
+photograph, upserts on `external_id` and **retires** the nights that have
+passed (`is_published = false`, since 20.10.2026 — before that it deleted them,
+and every check-in card, room, swipe and answer on them went too; `66_keep_past_nights.sql`).
+A retired night stays off the deck and the map but on in the collection, the past feed
+and the export; a synced night nobody ever touched is pruned after a year by
+`events_prune_untouched()`, which refuses any row something still points at. Three house rules hold, on the way in and swept over what is
 already there: nothing before 18:00 (festivals and raves exempt — real
 ones start in the afternoon), no add-on listings ("VIP Ticket",
 "Box-Seat", "Parking permit" — receipts, not nights), and a show that
