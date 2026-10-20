@@ -148,3 +148,17 @@ Büyüklük: k küçük · o orta · b büyük. Durum hepsinde `bulundu`; Ahmet 
 4. **F11 / A7** — okuyucuda tarih filtresi + health'te cron denetimi.
 5. **F12, F13** — delil ve ban kaçışı (politika kararı gerekir).
 
+
+## Bekçi raporu · 2026-10-20 05:40 UTC
+
+(`gh` girişi yok; GitHub bağlantısı üzerinden okundu. Sayfa 200 kontrolü yapılamadı.)
+
+1. PR #3 (`release/night-2026-10-19`) açık, birleştirilebilir (clean); CI yeşil: site, generated, app, backend, versions.
+2. `main` üzerinde son test.yml (561c058, 00:00 UTC) yeşil; pages build da yeşil.
+3. sync-events: son çalışma 19.10 09:50 UTC yeşil (bugünkü çalışma henüz başlamadı, saat erken).
+4. health: son çalışma 19.10 13:21 UTC yeşil.
+5. backup: son çalışma 19.10 08:44 UTC yeşil; "iki sır var mı" satırını günlükte göremedim (veritabanı adımları listede yok, sırlar eksik olabilir — A1 F36).
+6. Tahta: `yapılıyor` maddesi yok, değiştirilecek bir şey yok.
+7. Sabah notunda prototip bağlantısı yok (yalnız PR #3); denetlenecek sayfa yok.
+
+ok
