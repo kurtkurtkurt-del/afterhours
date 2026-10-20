@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-20 16:36   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-20 16:49   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -718,9 +718,7 @@ on conflict (city_id, slug) do nothing;
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('03_seed_catalog.sql', 'a102818627540fe0d67e2ffaaae01c1304b648becc6e3073ad1633ec0188e285');
-  elsif to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('03_seed_catalog.sql');
   end if;
 end $$;
@@ -1160,9 +1158,7 @@ on conflict (slug) do nothing;
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('04_seed_events.sql', '08f1b14f3204cb224c04560f90c0a4be35c5b54c8a6eeeeaf5125f90f2fc4123');
-  elsif to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('04_seed_events.sql');
   end if;
 end $$;
@@ -2913,9 +2909,7 @@ on conflict (slug) do nothing;
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('11_world.sql', '48e0112af2221902c7fcb5d0723a3a0f506c2a2b748beab08715a86fc65b1051');
-  elsif to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('11_world.sql');
   end if;
 end $$;
