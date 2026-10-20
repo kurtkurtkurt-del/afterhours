@@ -319,7 +319,10 @@ function rowFor(e, city, types) {
     starts_at: date + "T" + (e.dates.start.localTime || "20:00:00"),
     starts_at_estimated: false,
     date_text: [shortDate, time].filter(Boolean).join(" · "),
-    is_published: true,
+    /* dates.status.code: onsale, offsale, cancelled, postponed, rescheduled. A
+       cancelled night leaves the deck but stays (72); the others keep selling. */
+    status: statusOf(e),
+    is_published: statusOf(e) !== "cancelled",
     source: "ticketmaster",
     external_id: e.id,
     image_url: imageFor(e.images),
@@ -335,6 +338,12 @@ function rowFor(e, city, types) {
 
 /* A venue's slug: its name, without the id tail a night carries — the same
    room is one row however many nights it holds. */
+const STATUSES = new Set(["onsale", "offsale", "cancelled", "postponed", "rescheduled"]);
+function statusOf(e) {
+  const code = String((e.dates && e.dates.status && e.dates.status.code) || "onsale").toLowerCase();
+  return STATUSES.has(code) ? code : "onsale";
+}
+
 function venueSlug(name) {
   return String(name)
     .replace(/&/g, " and ").normalize("NFD").replace(/[\u0300-\u036f]/g, "")

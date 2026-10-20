@@ -87,6 +87,7 @@
     "69_rsvp_push.sql",
     "70_blocks_and_dm_reports.sql",
     "71_health_more.sql",
+    "72_night_changed.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */
