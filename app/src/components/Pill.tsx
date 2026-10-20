@@ -6,7 +6,7 @@ import { colors, fonts, radius } from '@/theme/tokens';
 export default function Pill({ label, active, onPress, a11y, chevron = true }: { label: string; active: boolean; onPress: () => void; a11y: string; chevron?: boolean }) {
   return (
     <Pressable onPress={onPress} hitSlop={6} accessibilityRole="button" accessibilityLabel={a11y} style={({ pressed }) => [styles.pill, active && styles.pillOn, pressed && styles.pressed]}>
-      <Text style={[styles.pillText, active && styles.pillTextOn]} numberOfLines={1}>{label}</Text>
+      <Text style={[styles.pillText, active && styles.pillTextOn]} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.8}>{label}</Text>
       {chevron ? <Chevron color={active ? colors.ink : colors.mute} /> : null}
     </Pressable>
   );

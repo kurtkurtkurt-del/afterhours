@@ -51,10 +51,10 @@ Dal kuralı (20.10): PR #3 henüz birleşmediyse gece dalı `main`'den değil `o
 | # | İş | Yüz | Durum | Kanıt / not |
 |---|---|---|---|---|
 | D1 | Boş durumlar turu: giriş yok / arkadaş yok / şehirde gece yok / çevrimdışı — her sekme ve her sayfa; eksik ya da İngilizce kalmış olanları üç dilde yaz. | app · web app | bekliyor | |
-| D2 | Üç dil denetimi: `tools-lang.py` ve i18n parts'ta eksik anahtar, uzun Almanca kelimelerin sığmadığı yerler (adjustsFontSizeToFit). | üçü | bekliyor | |
+| D2 | Üç dil denetimi: `tools-lang.py` ve i18n parts'ta eksik anahtar, uzun Almanca kelimelerin sığmadığı yerler (adjustsFontSizeToFit). | üçü | yapıldı | yapıldı — `tools-lang.py` temiz (611 anahtar × 3, sitenin 728 isteği); uygulama i18n 1584 girdi, eksik dil 0, kullanılıp tanımsız anahtar 0. Uzun Almanca: `PillAction` ve `Pill` etiketleri artık `adjustsFontSizeToFit` (0.75 / 0.8) — "nutzungsbedingungen" gibi kelimeler "…" ile kesilmiyor. Satır etiketleri zaten kayıyor. |
 | D3 | PWA'da `Alert.alert` → `confirm` dönüşümlerinin hepsi gerçekten çalışıyor mu; iOS Safari'de bilinen 3 kısıt README'de yazılı mı. | web app | incelendi | `src/web/alert.ts` 1 / 2 / 3+ düğmeli her Alert'i alert / confirm / confirm+prompt'a çeviriyor; iOS Safari kısıtları README §6 PWA bölümünde (push yok, titreşim yok, Apple girişi yok, ilk dokunuşa kadar ses yok, haftalarca açılmayan PWA'nın verisi silinebilir). Değişiklik gerekmedi |
 | D4 | Intro film: üç dilde altyazı süreleri, `end` zamanı; `npm run film` temiz. | app | bekliyor | |
-| D5 | Site: `tools-site-check.py` temiz, `?v=` tek, og görselleri güncel sayfalar için var. | site | bekliyor | |
+| D5 | Site: `tools-site-check.py` temiz, `?v=` tek, og görselleri güncel sayfalar için var. | site | yapıldı | yapıldı — `tools-site-check.py` temiz (41 sayfa, tek `?v=198`); og önizlemesi eksik 4 sayfadan paylaşılanlar (`g/` grup daveti, `explore/event/` gece, `profile/`) og + twitter kartı aldı; `reset/` özel kaldı. |
 
 ## Sabah Ahmet (gece ajanının bıraktığı el işleri)
 

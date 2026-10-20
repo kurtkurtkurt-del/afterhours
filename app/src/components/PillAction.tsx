@@ -39,7 +39,7 @@ export default function PillAction({ label, onPress, icon, tone = 'quiet', surfa
       ]}
     >
       {icon ? <Glyph name={icon} size={size} color={look.text} /> : null}
-      <Text style={[styles.label, small && styles.labelSmall, { color: look.text }]} numberOfLines={1}>
+      <Text style={[styles.label, small && styles.labelSmall, { color: look.text }]} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.75}>
         {label}
       </Text>
     </Pressable>
