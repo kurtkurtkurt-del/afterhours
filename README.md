@@ -983,6 +983,13 @@ and every check-in card, room, swipe and answer on them went too; `66_keep_past_
 A retired night stays off the deck and the map but on in the collection, the past feed
 and the export; a synced night nobody ever touched is pruned after a year by
 `events_prune_untouched()`, which refuses any row something still points at.
+
+**Who is coming reaches the friends (20.10.2026, `69_rsvp_push.sql`):** an `in` answer sends the
+same push a keep does — *{name} is going too*, the `match` kind and switch — to the friends who kept
+that night or answered in themselves, once per answerer and night; maybe and out say nothing, and
+someone whose keeps are private tells nobody. **The reporter hears the outcome (`68_report_answered.sql`):**
+when the staff settle a report, everyone who reported that thing gets a notice — `report_removed` or
+`report_kept` — naming the kind of thing and nobody.
 The deck and the counters stopped waiting for the jobs the same day (`67_deck_today.sql`):
 a synced night leaves `deck()`, `event_counts()` and `city_counts()` by its own date, eight
 hours after it starts, whether or not `hide_past_events` ever runs; the map had done so since 18. Three house rules hold, on the way in and swept over what is

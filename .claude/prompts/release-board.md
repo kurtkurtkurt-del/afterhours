@@ -32,17 +32,17 @@ Dal kuralı (20.10): PR #3 henüz birleşmediyse gece dalı `main`'den değil `o
 | # | İş | Yüz | Durum | Kanıt / not |
 |---|---|---|---|---|
 | B1 | Şikayet akışının karşı tarafı: şikayet edilen içerik/kişi panelde görünüyor mu, işlem (gizle/yasakla) şikayet edene bildiriliyor mu? Eksik olanı listele, küçükse kapat. | app | yapıldı (yerel dal) | `68_report_answered.sql` + `report-answered.test.mjs` (5): şikayet kapanınca şikayet edene `report_removed` / `report_kept` bildirimi (ne olduğu söylenir, kim olduğu değil); NoticeSheet metinleri üç dilde. Şikayet edilen zaten 53 ile haber alıyordu. `sabah Ahmet`: 68 canlıya |
-| B2 | Şifre sıfırlama ve e-posta değişimi uçtan uca: `reset/` sayfası, Supabase redirect listesi, PWA'da deep link. Her üç yüzde dene (kodla), sonucu yaz. | üçü | bekliyor | kurtarma |
-| B3 | Yedek geri yükleme provası: `backup.yml` + `restore.mjs` ile boş PGlite'a geri yükleme testi (`backup.test.mjs` genişlet). | backend | bekliyor | veri kaybı |
-| B4 | Uygulanmamış SQL listesi: `app/src/data/expectedSql.ts` ile canlı `migration_done` farkını `npm run health` raporlasın; sabah listesi için tek komut. | backend | bekliyor | operasyon |
+| B2 | Şifre sıfırlama ve e-posta değişimi uçtan uca: `reset/` sayfası, Supabase redirect listesi, PWA'da deep link. Her üç yüzde dene (kodla), sonucu yaz. | üçü | incelendi | Site `reset/` (iste + yeni şifre), app `signup` "forgot" → siteye; ayarlar e-posta/şifre değiştiriyor (`data/safety.ts`). Kalan boşluklar F19: onay e-postasını yeniden gönderme yok, şifre değişimi mevcut şifre istemiyor, "tüm cihazlardan çık" yok, sitede e-posta değişimi yok. PWA: Supabase redirect listesinde `afterhours-pwa/**` olmalı (README §6). Kod değişmedi |
+| B3 | Yedek geri yükleme provası: `backup.yml` + `restore.mjs` ile boş PGlite'a geri yükleme testi (`backup.test.mjs` genişlet). | backend | zaten var | `backup.test.mjs` içerik yedeğini boş PGlite'a geri yükleyip karşılaştırıyor. Kalan: F36 — `pg_dump --schema=public` `auth.users` ve storage'ı almıyor; şifreli dökümün geri yüklenmesi hiç denenmedi (secret gerekir: `sabah Ahmet`) |
+| B4 | Uygulanmamış SQL listesi: `app/src/data/expectedSql.ts` ile canlı `migration_done` farkını `npm run health` raporlasın; sabah listesi için tek komut. | backend | zaten var | `npm run health` uygulanmamış dosyaları sayıyor ve kırmızı bitiyor (20.10 sabahı: 63/68, 299 geçmiş gece yayında, 370 mekânsız) |
 
 ## C · Eksik akışlar (özellik yarım)
 
 | # | İş | Yüz | Durum | Kanıt / not |
 |---|---|---|---|---|
-| C1 | "Kim geliyor" cevabına bildirim: arkadaş `geliyorum` deyince `push_outbox` satırı (26/58 kalıbı, sabit cümle + ad), ayar anahtarı `notify_matches` altında. SQL + test. | app | bekliyor | 05.10 notu: bildirim yoktu |
-| C2 | Spark sahibine cevap bildirimi (varım/yokum) aynı kalıpla. | app | bekliyor | |
-| C3 | Berlin önizlemeleri: `tools/previews.mjs` Berlin için koş, `previews-berlin.sql` üret (yapıştırma `sabah Ahmet`). | app | bekliyor | Münih 38/50 |
+| C1 | "Kim geliyor" cevabına bildirim: arkadaş `geliyorum` deyince `push_outbox` satırı (26/58 kalıbı, sabit cümle + ad), ayar anahtarı `notify_matches` altında. SQL + test. | app | yapıldı (yerel dal) | `69_rsvp_push.sql` + `rsvp-push.test.mjs` (8): `geliyorum` → o geceyi saklayan ya da geliyorum demiş arkadaşlara `match` bildirimi ("{name} de gidiyor"), anahtar `rsvp:`; notify_matches ayarı ve 58 sözleri aynen; keeps private ise sessiz. `sabah Ahmet`: 69 canlıya |
+| C2 | Spark sahibine cevap bildirimi (varım/yokum) aynı kalıpla. | app | zaten var | 34_spark_push.sql `spark_in`: varım diyen, spark sahibine bildirim gidiyor (tetikleyici `push_spark_invite`). Yokum sessiz; iptal bildirimi yok (F23) |
+| C3 | Berlin önizlemeleri: `tools/previews.mjs` Berlin için koş, `previews-berlin.sql` üret (yapıştırma `sabah Ahmet`). | app | yapıldı (yerel dal) | `sql/previews-berlin.sql`: 36 Berlin gecesi eşleşti (tools/previews.mjs, 20.10). `sabah Ahmet`: yapıştır |
 | C4 | Spark fotoğrafları: 11 tür ödünç fotoğraf kullanıyor (`content/sparks.ts` notu). Her türe Unsplash'ten kendi fotoğrafı; `CREDITS.md`. Ajan Unsplash'e ulaşamazsa aday listesi + `sabah Ahmet`. | app | bekliyor | |
 | C5 | Site ↔ app eşitliği: sitede olup app'te olmayan, app'te olup sitede olmayan özellikleri tablo olarak çıkar (A1 ile birlikte). Küçük olanları kapat. | site · app | bekliyor | |
 

@@ -84,6 +84,7 @@
     "66_keep_past_nights.sql",
     "67_deck_today.sql",
     "68_report_answered.sql",
+    "69_rsvp_push.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */
