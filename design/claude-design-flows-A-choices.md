@@ -1,4 +1,4 @@
-# afterhours — a feed that rebuilds itself around you
+# afterhours — pick your flow (choices)
 
 **Brief for Claude Design.** Build one interactive prototype. Read everything once before you start; the quality bar is at the end.
 
@@ -20,50 +20,46 @@ The project is anonymous for now. Never put a real person's name in it; the samp
 
 One flow does not fit everyone. A planner wants the whole week in a list. A tired person wants one answer. A music person wants to hear before choosing. Someone new in town wants what is near.
 
-So the main screen stops being a fixed screen. **On the first launch the app asks one question, and the answer builds the user's own flow.** Later the user can retune it at any time. The interface **reshapes itself live** — the same nights morph from cards into rows, pins, waveforms or a single verdict.
+So the main screen stops being a fixed screen. **On the first launch the app shows a gallery of flows. The user picks one and it becomes their app.** Each flow then has a few switches of its own that fine-tune it, and the user can pick another flow at any time.
 
-Think of it as an instrument the user tunes, not a set of themes. Underneath sit a few **dials**. Every flow is a setting of those dials. Eight settings get names (below), but the dials can sit anywhere in between, and the screen must still make sense there.
+Think forward. Picking should feel like trying on a new app in a second, not like opening settings: each choice previews itself live, and switching **morphs** the same nights into the new shape. This should feel like 2028 and still be calm and readable at 1 a.m. outside a club.
 
-Think forward. This should feel like the interface of 2028: it adapts and recomposes and explains itself in one line, and it stays calm and readable at 1 a.m. outside a club.
+## 3 · The choice
 
-## 3 · The dials
+A gallery of eight flows. Each tile shows a tiny live preview of its flow with real nights moving in it, the flow's name, and one line on who it is for. Tapping a tile turns the phone into that flow. Each flow has **2–4 switches** (on/off or two-way), listed below. Switching them changes the screen visibly, not just a filter.
 
-| dial | positions |
-|---|---|
-| **pace** — how many nights at once | one · a handful (3) · all of them |
-| **who chooses** | me · the app (my taste) · my friends · chance |
-| **lens** — what orders the nights | mood/energy · time · place · sound · people |
-| **horizon** | right now · tonight · this week |
-| **surface** — how a night is drawn | card · row · pin · waveform · poster tile · plan |
+## 4 · The eight flows and their switches
 
-A small **energy** slider (calm ↔ loud, 1–5) filters on any setting.
+Each one must be a complete, beautiful main screen with the sample nights in it, not a sketch. Each needs its own way to **keep**, **let go**, **open** and **get a ticket**.
 
-## 4 · The eight flows (named dial settings)
-
-Each one must be a complete, beautiful main screen with the sample nights in it, not a sketch. Each needs a one-line "who it is for" and its own way to **keep**, **let go**, **open** and **get a ticket**.
-
-1. **deck** — one · me · mood · this week · card. Today's flow: one night card at a time, full-bleed poster, swipe. Kept-by faces at the bottom.
-2. **agenda** — all · me · time · this week · row. Days as tabs, hours as a spine, nights as rows. Filters: kind, free, near. Built for the planner.
-3. **tonight's three** — handful · the app · mood · tonight · card. Three nights picked for this person's taste, with one honest line each saying why ("you kept two FKJ-like nights"). Taste chips at the top that retune it.
-4. **oracle** — one · chance/app · mood · right now · card. One verdict, full screen: "go here." A big "another" button. For decision fatigue.
-5. **radar** — handful · me · place · right now · pin. A dark map with your position, nights as pins, sparks as gold diamonds and friends out now as red rings. Distance is the first fact on every night.
-6. **crew** — all · my friends · people · tonight · row. Nights ordered by which friends kept them, with faces, "3 going" and a vote with your group. Empty-state design for a person with no friends yet is required.
-7. **listen** — one · me · sound · this week · waveform. A vertical feed: each night plays its 30-second preview; the poster breathes with the audio. Nights without a preview show a silent state.
-8. **build** — one · me · people · tonight · plan. Spark-first: "no plan? light one." Pick a kind, an hour and a place; the nights around it are suggestions to join instead.
+1. **deck** — one night card at a time, full-bleed poster, swipe right to keep and left to let go. *For people who like to discover.*
+   switches: show friends' faces on the card · sound on the card (preview plays) · only this week / any time
+2. **agenda** — days as tabs, hours as a spine, nights as rows. *For the planner.*
+   switches: group by day / by kind · compact rows / poster rows · only free · only near
+3. **tonight's three** — three nights picked for this person's taste, with one honest line each saying why. *For the busy and the tired.*
+   switches: taste chips (electronic · live bands · stand-up · …) · surprise me (one wild card) · refresh daily / hourly
+4. **oracle** — one verdict, full screen: "go here." A big "another" button. *For decision fatigue.*
+   switches: by taste / by chance · near only · with a friend going
+5. **radar** — a dark map with your position, nights as pins, sparks as gold diamonds and friends out now as red rings. Distance is the first fact. *For the spontaneous and the new in town.*
+   switches: friends layer · sparks layer · walking radius 1 / 3 / 10 km
+6. **crew** — nights ordered by which friends kept them, with faces, "3 going" and a vote with your group. *For people who don't go alone.*
+   switches: all friends / my group only · show votes · invite strip. A designed state for someone with no friends yet is required.
+7. **listen** — a vertical feed; each night plays its 30-second preview and the poster breathes with the audio. *For people who choose by sound.*
+   switches: autoplay · only nights with a preview · waveform / poster first
+8. **build** — spark-first: "no plan? light one." Pick a kind, an hour and a place; the nights around it are suggestions to join instead. *For organisers.*
+   switches: tonight / weekend · friends only / friends of friends · show nights to join
 
 ## 5 · The interface to build
 
 One page, desktop-first, that also works at phone width:
 
-- **Left: the composer.** The five dials as chips or segmented controls, the energy slider, and the eight named flows as presets. The active preset lights up when the dials match it and says "custom" when they don't.
-- **Right: the phone.** A 390 × 844 device frame rendering the flow live with the sample nights. When a dial changes, the screen **morphs**: the same night keeps its identity while it changes form (card → row → pin → waveform), around 300–450 ms with easing and no hard cuts.
-- **Above the phone:** the flow's name and one line on who it is for, rewritten as the dials move.
-- **A "first launch" toggle** that shows what a new user sees: after the city, one screen with three big choices (deck · agenda · tonight's three), each tile playing a tiny live preview of its flow. Below them it says "you can change this any time."
-- **Accent switcher** with the five accents below. The app reloads into the chosen one.
+- **Left: the gallery.** The eight flows as tiles with live mini-previews. Under the selected one, its switches.
+- **Right: the phone.** A 390 × 844 device frame rendering the chosen flow live with the sample nights. Changing flow or switch **morphs** the screen: the same night keeps its identity while it changes form (card → row → pin → waveform), around 300–450 ms with easing and no hard cuts.
+- **Above the phone:** the flow's name and its one line, plus what the switches changed ("agenda · grouped by kind · only near").
+- **A "first launch" toggle** that shows what a new user sees: after the city, one screen with three big choices (deck · agenda · tonight's three), each tile playing a tiny live preview. Below them it says "more in settings · change any time." Also show the full picker as it would sit in settings, with all eight.
+- **Accent switcher** with the five accents below.
 - **Small toggles to show states:** no friends yet · offline · nothing near.
 - Interactions inside the phone should work: keep/let go, open a night (detail sheet with date, doors, where, ticket button), play/pause a preview (a simulated waveform is fine), "another" in oracle.
-
-Hybrids matter. For example, agenda + sound lens should show a mini waveform on each row; radar + crew should make friends' rings the main layer. Show at least two hybrids as extra presets ("custom: …").
 
 ## 6 · Design language — follow it exactly
 
@@ -484,6 +480,6 @@ Real upcoming nights in Munich and Berlin, with poster images from Ticketmaster'
 
 ## 9 · Quality bar
 
-Push yourself. Each of the eight screens should be good enough to be some real app's whole identity on its own, and all of them should still be unmistakably afterhours. Make them different in structure, not just in colour. The morph between them is the signature moment, so spend your effort there. Readable at phone width, dark-first, all interactions working, no placeholder text, no lorem ipsum.
+Push yourself. Each of the eight flows should be good enough to be some real app's whole identity on its own, and all of them should still be unmistakably afterhours. Make them different in structure, not just in colour. The morph between them is the signature moment, so spend your effort there. Readable at phone width, dark-first, all interactions working, no placeholder text, no lorem ipsum.
 
-**Deliver:** one interactive prototype page (the composer + the live phone + the first-launch view), with the eight presets and at least two hybrids.
+**Deliver:** one interactive prototype page (the gallery + the live phone + the first-launch view), with all eight flows and every switch working.
