@@ -84,6 +84,7 @@ const structure = [
   ["74_ban_stays.sql", "A BAN STAYS — THE ADDRESS COMES BACK BANNED, THE HANDLE STAYS TAKEN"],
   ["75_spark_off.sql", "A SPARK TAKEN BACK TELLS THE PEOPLE WHO SAID IN"],
   ["76_sent_nights.sql", "A NIGHT SENT IN — THE SENDER HEARS, CAN TAKE IT BACK; STALE ONES LEAVE THE QUEUE"],
+  ["77_reserved_handles.sql", "SOME NAMES BELONG TO NOBODY — ADMIN, AFTERHOURS, SUPPORT"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

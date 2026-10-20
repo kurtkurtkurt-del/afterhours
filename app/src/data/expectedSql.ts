@@ -78,4 +78,5 @@ export const EXPECTED_SQL = [
   '74_ban_stays.sql',
   '75_spark_off.sql',
   '76_sent_nights.sql',
+  '77_reserved_handles.sql',
 ];
