@@ -99,4 +99,6 @@ export const EXPECTED_SQL = [
   "89_export_all.sql",
   "90_dm_seen.sql",
   "91_checksums.sql",
+  "92_timezones.sql",
+  "93_staff_backlog.sql",
 ];

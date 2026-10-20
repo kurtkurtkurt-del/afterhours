@@ -71,6 +71,12 @@ else if (count(reply.past_still_up)) warnings.push(`${count(reply.past_still_up)
 if (syncedDays !== null && syncedDays > 3) failures.push(`the newest synced night is ${syncedDays.toFixed(1)} days old — sync-events.yml is not running or writes nothing`);
 if (clock && count(clock.jobs) === 0) failures.push("pg_cron has no active afterhours job — the schedules in 09/26/48/51/54 did not run or the extension is off");
 else if (clock && (okHours === null || okHours > 2)) failures.push(`pg_cron's last good run was ${okHours === null ? "never" : okHours.toFixed(1) + " hours ago"} — pushes, hiding, pruning are all stopped`);
+/* Since 93: the promise of a look within 24 hours. Red, so the morning workflow mails. */
+let backlog = null;
+try { backlog = (await call("staff_backlog"))[0]; } catch { backlog = null; }
+if (backlog) console.log(`staff backlog       ${count(backlog.reports_waiting)} reports past 20 h · ${count(backlog.appeals_waiting)} objections past 3 days · ${count(backlog.nights_waiting)} nights past 3 days`);
+if (backlog && count(backlog.reports_waiting)) failures.push(`${count(backlog.reports_waiting)} reported thing(s) have waited over 20 hours — open the panel`);
+if (backlog && (count(backlog.appeals_waiting) || count(backlog.nights_waiting))) warnings.push(`waiting over three days: ${count(backlog.appeals_waiting)} objection(s), ${count(backlog.nights_waiting)} night(s) sent in`);
 if (clock && count(clock.failed_24h)) warnings.push(`${count(clock.failed_24h)} cron runs failed in the last day`);
 if (count(reply.outbox_stuck)) warnings.push(`${count(reply.outbox_stuck)} pushes older than six hours are still unsent — pg_net / pg_cron?`);
 if (count(reply.missing_venue)) warnings.push(`${count(reply.missing_venue)} events have no venue`);

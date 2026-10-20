@@ -88,5 +88,7 @@
   "88_checkin_truth.sql": "605528add79ffccba24fed96f273fce1fcabb661d185cbd11c48f810e707f015",
   "89_export_all.sql": "129851f1850d00fd38c30c8e8f47f1653b917869ee6ba12de031ec7d947132d3",
   "90_dm_seen.sql": "e93fc576ff72e6ef604d9d89d646857e29c995aaf0597babe77a2ea42ad9c41f",
-  "91_checksums.sql": "3e2d52d795b47a138cfdb605bf8c6d50fc8ebe393292a64f26aafb56e41061f0"
+  "91_checksums.sql": "3e2d52d795b47a138cfdb605bf8c6d50fc8ebe393292a64f26aafb56e41061f0",
+  "92_timezones.sql": "6a39dfdcfe1d157e9c02b639f4b03de15aa2fd906a1d017942edaf2bcb36b2c5",
+  "93_staff_backlog.sql": "fbc4f21a9db0099d046ecc689a1c54cd1b1a3476683c1e0da9181a290cb9b6fc"
 }

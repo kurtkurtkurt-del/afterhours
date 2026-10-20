@@ -316,7 +316,10 @@ function rowFor(e, city, types) {
     title: (e.name || "").trim().slice(0, 120),
     meta,
     body: bodyFor(e, city.name),
-    starts_at: date + "T" + (e.dates.start.localTime || "20:00:00"),
+    /* the zone Ticketmaster names, written after the time so Postgres reads the local
+       hour as that city's (92); without one the city's own zone applies at the server */
+    starts_at: date + "T" + (e.dates.start.localTime || "20:00:00") + " " + (e.dates.timezone || city.tz || "Europe/Berlin"),
+    tz: e.dates.timezone || city.tz || null,
     starts_at_estimated: false,
     date_text: [shortDate, time].filter(Boolean).join(" · "),
     /* dates.status.code: onsale, offsale, cancelled, postponed, rescheduled. A
@@ -354,7 +357,7 @@ function venueSlug(name) {
 
 const cities = DRY && !SERVICE
   ? Object.keys(PLACES).map((slug) => ({ id: slug, slug, name: slug }))
-  : await db("/cities?select=id,slug,name");
+  : await db("/cities?select=id,slug,name,tz");
 const typeRows = DRY && !SERVICE
   ? ["rave", "club-night", "konzert", "festival", "meetup"].map((slug) => ({ id: slug, slug }))
   : await db("/event_types?select=id,slug");
@@ -495,7 +498,7 @@ if (pruned) console.log("pruned: " + pruned + " untouched nights older than a ye
    database converges on the style instead of only new rows obeying it. */
 const held = [];
 for (let from = 0; ; from += 1000) {
-  const page = await db("/events_public?select=id,title,type_slug,city_slug,starts_at" +
+  const page = await db("/events_public?select=id,title,type_slug,city_slug,starts_at,date_text" +
     "&source=eq.ticketmaster&is_published=eq.true&order=starts_at&limit=1000&offset=" + from);
   held.push(...page);
   if (page.length < 1000) break;
@@ -503,7 +506,8 @@ for (let from = 0; ; from += 1000) {
 const kill = [];
 const runsSeen = new Set();
 for (const r of held) {
-  const time = (r.starts_at || "").slice(11, 16);
+  /* the local hour is the one in date_text; starts_at is an instant now (92) */
+  const time = ((r.date_text || "").match(/\b(\d\d:\d\d)\b/) || [])[1] || "";
   if (refused(r.type_slug, r.title, time)) { kill.push(r.id); continue; }
   const key = r.city_slug + "|" + r.title.toLowerCase();
   if (runsSeen.has(key)) kill.push(r.id);      /* date order: the soonest stays */

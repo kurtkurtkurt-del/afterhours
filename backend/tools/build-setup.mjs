@@ -99,6 +99,8 @@ const structure = [
   ["89_export_all.sql", "THE EXPORT, WHOLE"],
   ["90_dm_seen.sql", "WHO HAS READ WHAT, KEPT BY THE SERVER"],
   ["91_checksums.sql", "A FILE REMEMBERS ITS OWN TEXT"],
+  ["92_timezones.sql", "THE HOUR A NIGHT STARTS, IN ITS OWN CITY"],
+  ["93_staff_backlog.sql", "WHAT THE STAFF HAVE LEFT WAITING"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

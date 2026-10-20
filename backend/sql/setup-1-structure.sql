@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-20 08:57   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-20 09:03   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -16976,5 +16976,116 @@ do $$ begin
     perform public.migration_done('91_checksums.sql', '3e2d52d795b47a138cfdb605bf8c6d50fc8ebe393292a64f26aafb56e41061f0');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('91_checksums.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  THE HOUR A NIGHT STARTS, IN ITS OWN CITY   (92_timezones.sql)
+-- ============================================================
+
+-- afterhours — the hour a night starts, in its own city (92)
+--
+-- The sync wrote the local date and time of a night with no zone, and Postgres
+-- read it as UTC: every synced night sat one or two hours late in the database,
+-- and the pushes, the past cut, the rooms and the quiet hours moved with it
+-- (F37, 20.10.2026). From now on the sync sends the zone Ticketmaster names
+-- (tools/sync-ticketmaster.mjs) and keeps it on the row; the cities carry theirs
+-- by country for everything else. The rows already here are moved once: what was
+-- stored as 20:00 UTC becomes 20:00 in the city. The move runs only the first time
+-- this file does - the log of 00 says whether it has.
+
+alter table public.cities add column if not exists tz text not null default 'Europe/Berlin';
+update public.cities set tz = case country_slug
+    when 'de' then 'Europe/Berlin'
+    when 'at' then 'Europe/Vienna'
+    when 'ch' then 'Europe/Zurich'
+    when 'nl' then 'Europe/Amsterdam'
+    when 'be' then 'Europe/Brussels'
+    when 'fr' then 'Europe/Paris'
+    when 'es' then 'Europe/Madrid'
+    when 'it' then 'Europe/Rome'
+    when 'pl' then 'Europe/Warsaw'
+    when 'cz' then 'Europe/Prague'
+    when 'hu' then 'Europe/Budapest'
+    when 'dk' then 'Europe/Copenhagen'
+    when 'se' then 'Europe/Stockholm'
+    when 'no' then 'Europe/Oslo'
+    when 'fi' then 'Europe/Helsinki'
+    when 'gr' then 'Europe/Athens'
+    when 'tr' then 'Europe/Istanbul'
+    when 'gb' then 'Europe/London'
+    when 'ie' then 'Europe/Dublin'
+    when 'pt' then 'Europe/Lisbon'
+    when 'ae' then 'Asia/Dubai'
+    when 'hk' then 'Asia/Hong_Kong'
+    when 'sg' then 'Asia/Singapore'
+    when 'jp' then 'Asia/Tokyo'
+    when 'kr' then 'Asia/Seoul'
+    when 'tw' then 'Asia/Taipei'
+    when 'id' then 'Asia/Jakarta'
+    when 'au' then 'Australia/Sydney'
+    when 'nz' then 'Pacific/Auckland'
+    when 'fj' then 'Pacific/Fiji'
+    when 'ke' then 'Africa/Nairobi'
+    when 'ma' then 'Africa/Casablanca'
+    when 'ng' then 'Africa/Lagos'
+    else 'Europe/Berlin' end;
+
+alter table public.events add column if not exists tz text;
+
+do $$ begin
+  if not exists (select 1 from public.migrations where name = '92_timezones.sql') then
+    update public.events e
+       set starts_at = ((e.starts_at at time zone 'UTC') at time zone c.tz),
+           tz = c.tz
+      from public.cities c
+     where c.id = e.city_id and e.source = 'ticketmaster' and e.starts_at is not null and e.tz is null;
+  end if;
+end $$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('92_timezones.sql', '6a39dfdcfe1d157e9c02b639f4b03de15aa2fd906a1d017942edaf2bcb36b2c5');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('92_timezones.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  WHAT THE STAFF HAVE LEFT WAITING   (93_staff_backlog.sql)
+-- ============================================================
+
+-- afterhours — what the staff have left waiting (93)
+--
+-- The staff hear of a report by push alone (staff_ping); with no phone registered
+-- nobody hears, and nothing watches the promise of a look within 24 hours
+-- (F38, 20.10.2026). staff_backlog() counts what has waited too long - reports
+-- open for 20 hours, objections for 3 days, nights sent in for 3 days - and
+-- tools/health.mjs goes red on it, which the morning health workflow turns into
+-- a failed run and a mail. No new service; the repository already sends those.
+
+create or replace function public.staff_backlog()
+returns table (reports_waiting int, oldest_report timestamptz, appeals_waiting int, nights_waiting int)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select
+    (select count(distinct (r.kind, r.target))::int from public.reports r
+      where not r.handled and r.created_at < now() - interval '20 hours'),
+    (select min(r.created_at) from public.reports r where not r.handled),
+    (select count(*)::int from public.appeals a where a.settled_at is null and a.created_at < now() - interval '3 days'),
+    (select count(*)::int from public.events e where not e.is_published and e.source = 'user' and e.created_at < now() - interval '3 days');
+$$;
+grant execute on function public.staff_backlog() to anon, authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('93_staff_backlog.sql', 'fbc4f21a9db0099d046ecc689a1c54cd1b1a3476683c1e0da9181a290cb9b6fc');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('93_staff_backlog.sql');
   end if;
 end $$;
