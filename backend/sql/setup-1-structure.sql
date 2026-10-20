@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-20 08:08   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-20 08:10   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -16298,5 +16298,49 @@ grant execute on function public.staff_person(uuid) to authenticated;
 do $$ begin
   if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('86_person_file.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  IS THE CLOCK RUNNING   (87_cron_health.sql)
+-- ============================================================
+
+-- afterhours — is the clock running (87)
+--
+-- Six jobs hang off pg_cron: push_flush, push_hourly, group_push_hourly,
+-- hide_past_events, guests_prune, the error prune. If the extension is off or a job
+-- is unscheduled, every one of them dies in silence and nothing says so (F11,
+-- 20.10.2026; the deck has filtered its own dates since 67). cron_health() reads
+-- the cron schema when it is there - how many afterhours jobs are scheduled, when
+-- one last ran well, when one last failed - and tools/health.mjs goes red when the
+-- last good run is more than two hours old. Outside Supabase (the tests) the schema
+-- is missing and the answer is zero and null.
+
+create or replace function public.cron_health()
+returns table (jobs int, last_ok timestamptz, last_failed timestamptz, failed_24h int)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  if to_regclass('cron.job') is null or to_regclass('cron.job_run_details') is null then
+    return query select 0, null::timestamptz, null::timestamptz, 0;
+    return;
+  end if;
+  return query execute $q$
+    select (select count(*)::int from cron.job where active),
+           (select max(end_time) from cron.job_run_details where status = 'succeeded'),
+           (select max(end_time) from cron.job_run_details where status = 'failed'),
+           (select count(*)::int from cron.job_run_details where status = 'failed' and end_time > now() - interval '24 hours')
+  $q$;
+end;
+$$;
+grant execute on function public.cron_health() to anon, authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('87_cron_health.sql');
   end if;
 end $$;
