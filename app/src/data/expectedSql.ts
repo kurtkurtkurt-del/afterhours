@@ -68,4 +68,5 @@ export const EXPECTED_SQL = [
   '64_export_more.sql',
   '65_account_delete.sql',
   '66_keep_past_nights.sql',
+  '67_deck_today.sql',
 ];

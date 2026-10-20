@@ -82,6 +82,7 @@
     "64_export_more.sql",
     "65_account_delete.sql",
     "66_keep_past_nights.sql",
+    "67_deck_today.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */

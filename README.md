@@ -982,7 +982,10 @@ passed (`is_published = false`, since 20.10.2026 — before that it deleted them
 and every check-in card, room, swipe and answer on them went too; `66_keep_past_nights.sql`).
 A retired night stays off the deck and the map but on in the collection, the past feed
 and the export; a synced night nobody ever touched is pruned after a year by
-`events_prune_untouched()`, which refuses any row something still points at. Three house rules hold, on the way in and swept over what is
+`events_prune_untouched()`, which refuses any row something still points at.
+The deck and the counters stopped waiting for the jobs the same day (`67_deck_today.sql`):
+a synced night leaves `deck()`, `event_counts()` and `city_counts()` by its own date, eight
+hours after it starts, whether or not `hide_past_events` ever runs; the map had done so since 18. Three house rules hold, on the way in and swept over what is
 already there: nothing before 18:00 (festivals and raves exempt — real
 ones start in the afternoon), no add-on listings ("VIP Ticket",
 "Box-Seat", "Parking permit" — receipts, not nights), and a show that
