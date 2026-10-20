@@ -48,9 +48,20 @@ console.log(`people              ${count(reply.people)}`);
 console.log(`swipes              ${count(reply.swipes)}`);
 console.log(`friendships         ${count(reply.friendships)}`);
 
+/* Since 71: when the sync last brought a night, and whether pushes are leaving.
+   These go RED, not amber: a quiet failure here is exactly what went unseen for a week. */
+const synced = reply.newest_synced ? new Date(reply.newest_synced) : null;
+const syncedDays = synced ? (Date.now() - synced.getTime()) / 86400000 : null;
+console.log(`newest synced night ${synced ? synced.toISOString().slice(0, 16).replace("T", " ") + ` (${syncedDays.toFixed(1)} days ago)` : "none / before 71"}`);
+if (reply.outbox_stuck !== undefined) console.log(`pushes stuck        ${count(reply.outbox_stuck)}`);
+
 const warnings = [];
-if (count(reply.events) === 0) warnings.push("no events at all — the data may be gone");
-if (count(reply.past_still_up)) warnings.push(`${count(reply.past_still_up)} past events are still published`);
+const failures = [];
+if (count(reply.events) === 0) failures.push("no events at all — the data may be gone");
+if (count(reply.past_still_up) > 50) failures.push(`${count(reply.past_still_up)} past events are still published — the sync or hide_past_events is not running`);
+else if (count(reply.past_still_up)) warnings.push(`${count(reply.past_still_up)} past events are still published`);
+if (syncedDays !== null && syncedDays > 3) failures.push(`the newest synced night is ${syncedDays.toFixed(1)} days old — sync-events.yml is not running or writes nothing`);
+if (count(reply.outbox_stuck)) warnings.push(`${count(reply.outbox_stuck)} pushes older than six hours are still unsent — pg_net / pg_cron?`);
 if (count(reply.missing_venue)) warnings.push(`${count(reply.missing_venue)} events have no venue`);
 if (count(reply.unverified_date)) warnings.push(`${count(reply.unverified_date)} dates are unconfirmed`);
 
@@ -84,6 +95,10 @@ try {
   }
 }
 
+if (failures.length) {
+  console.log("\nRED:");
+  failures.forEach((u) => console.log("  · " + u));
+}
 if (warnings.length) {
   console.log("\nwants attention:");
   warnings.forEach((u) => console.log("  · " + u));
@@ -91,4 +106,4 @@ if (warnings.length) {
 
 /* No events at all is a real fault, and so is a file that never ran — both
    mean the site is not serving what it should. The rest is maintenance. */
-process.exit(count(reply.events) === 0 || missing.length || behind ? 1 : 0);
+process.exit(failures.length || missing.length || behind ? 1 : 0);

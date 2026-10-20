@@ -78,6 +78,7 @@ const structure = [
   ["68_report_answered.sql", "THE PERSON WHO REPORTED HEARS THE OUTCOME"],
   ["69_rsvp_push.sql", "I AM IN REACHES THE FRIENDS ON THAT NIGHT"],
   ["70_blocks_and_dm_reports.sql", "A BLOCK REACHES EVERY READER; A DIRECT MESSAGE CAN BE REPORTED"],
+  ["71_health_more.sql", "HEALTH SAYS WHEN THE SYNC LAST RAN AND WHETHER PUSHES ARE STUCK"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
