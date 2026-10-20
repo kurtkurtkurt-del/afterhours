@@ -3,7 +3,8 @@ import Tips from '@/components/Tips';
 import { Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
 import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
-import { router, useFocusEffect } from 'expo-router';
+import { Redirect, router, useFocusEffect } from 'expo-router';
+import { POSTS_ON } from '@/content/flags';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
 import PostCard from '@/components/PostCard';
@@ -28,6 +29,7 @@ import { brand } from '@/theme/layout';
 // not shown. The people themselves (groups, friends, the gallery of nights they kept,
 // the decks) live in the people tab.
 export default function YoursScreen() {
+  if (!POSTS_ON) return <Redirect href="/flow" />;
   const insets = useSafeAreaInsets();
   const tabSpace = useTabBarSpace();
   // Posts by you and your friends (45_posts.sql), read on every visit.

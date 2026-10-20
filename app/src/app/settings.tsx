@@ -21,6 +21,7 @@ import DoorCode from '@/components/DoorCode';
 import { resetTips } from '@/components/Tips';
 import { changeEmail, changePassword, deleteEverything } from '@/data/safety';
 import { exportToFile } from '@/data/settings';
+import { POSTS_ON } from '@/content/flags';
 import CodeSheet from '@/components/CodeSheet';
 import { ACCOUNT_TYPES, fetchSettings, saveSettings, setAccountType, type AccountType, type Settings } from '@/data/settings';
 import { isStaff, refreshRole, useRole } from '@/data/staff';
@@ -70,7 +71,7 @@ const NOTIFY = [
     title: 'notify.together',
     rows: [
       { key: 'notify_groups', label: 'notify.groups', hint: 'notify.groups.hint' },
-      { key: 'notify_posts', label: 'notify.posts', hint: 'notify.posts.hint' },
+      ...(POSTS_ON ? [{ key: 'notify_posts', label: 'notify.posts', hint: 'notify.posts.hint' } as const] : []),
       { key: 'notify_dms', label: 'notify.dms', hint: 'notify.dms.hint' },
     ],
   },

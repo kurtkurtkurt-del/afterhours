@@ -88,6 +88,7 @@ const structure = [
   ["78_min_version.sql", "THE OLDEST APP THAT STILL WORKS"],
   ["79_word_watch.sql", "WORDS THE STAFF WANT TO SEE — WATCHED, NOT REFUSED"],
   ["80_guest_merge.sql", "WHAT A GUEST KEPT COMES ALONG"],
+  ["81_posts_off.sql", "POSTS ARE OFF"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
