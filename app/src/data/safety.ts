@@ -3,7 +3,7 @@ import * as AppleAuthentication from 'expo-apple-authentication';
 import Constants from 'expo-constants';
 import Storage from 'expo-sqlite/kv-store';
 import { supabase } from '@/lib/supabase';
-import { must } from '@/lib/offline';
+import { isNetworkError, must } from '@/lib/offline';
 
 // 51_safety.sql: what the stores require — the terms (18+), reports, client errors —
 // and an account deletion that takes the files and the Apple link with it.
@@ -15,6 +15,41 @@ export const TERMS_VERSION = 1;
 const SITE = 'https://kurtkurtkurt-del.github.io/afterhours';
 export const TERMS_URL = `${SITE}/agb/`;
 export const PRIVACY_URL = `${SITE}/datenschutz/`;
+// Where an app that is too old is sent (78_min_version.sql; the stores come later).
+export const UPDATE_URL = `${SITE}/phone/`;
+
+// The oldest app version the server still answers; null when it cannot be read (offline).
+export async function minAppVersion(): Promise<string | null> {
+  const { data, error } = await supabase.rpc('min_app_version');
+  return error || typeof data !== 'string' ? null : data;
+}
+// 1.2.0 is below 1.10.0: by number, part by part.
+export function versionBelow(a: string, b: string): boolean {
+  const pa = a.split('.').map(Number), pb = b.split('.').map(Number);
+  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+    const x = pa[i] ?? 0, y = pb[i] ?? 0;
+    if (x !== y) return x < y;
+  }
+  return false;
+}
+
+// A guest who met an existing email is sent to sign in; the guest id is kept on the
+// phone until the account signs in and guest_merge (80) carries the swipes over.
+const GUEST_KEY = 'guest.pending';
+export function rememberGuest(uid: string) {
+  try { Storage.setItemSync(GUEST_KEY, uid); } catch {}
+}
+export async function mergeGuest(uid: string): Promise<number> {
+  let guest: string | null = null;
+  try { guest = Storage.getItemSync(GUEST_KEY); } catch {}
+  if (!guest || guest === uid) return 0;
+  const { data, error } = await supabase.rpc('guest_merge', { p_guest: guest });
+  // A guest that is already gone (or never was one) is forgotten; a network failure is retried next time.
+  if (error && !isNetworkError(error)) { try { Storage.removeItemSync(GUEST_KEY); } catch {} return 0; }
+  if (error) return 0;
+  try { Storage.removeItemSync(GUEST_KEY); } catch {}
+  return typeof data === 'number' ? data : 0;
+}
 
 // Remembered per account on the phone, so an offline start does not ask again.
 const accepted = (uid: string) => `terms.${uid}`;
@@ -49,7 +84,7 @@ export async function accountStatus(): Promise<{ banned: boolean; reason: string
 }
 
 // 53_trust.sql: what the staff did to your things, told once.
-export type Notice = { id: number; kind: 'comment_hidden' | 'post_hidden' | 'removed' | 'profile_cleared' | 'role' | 'dj_verified' | 'dj_hidden' | 'report_settled'; data: Record<string, string>; created_at: string };
+export type Notice = { id: number; kind: 'comment_hidden' | 'post_hidden' | 'removed' | 'profile_cleared' | 'role' | 'dj_verified' | 'dj_hidden' | 'report_removed' | 'report_kept' | 'night_ok' | 'night_no' | 'appeal_ok' | 'appeal_no'; data: Record<string, string>; created_at: string };
 export async function myNotices(): Promise<Notice[]> {
   const { data, error } = await supabase.rpc('my_notices');
   if (error) return [];
@@ -84,7 +119,7 @@ export async function missingSql(): Promise<string[] | null> {
 // ------------------------------------------------------------------ reports
 
 // Posts keep their own (data/posts.ts postReport); everything else comes here.
-export type ReportKind = 'comment' | 'room_post' | 'group_message' | 'profile' | 'group' | 'spark' | 'post_comment';
+export type ReportKind = 'comment' | 'room_post' | 'group_message' | 'profile' | 'group' | 'spark' | 'post_comment' | 'dm_message';
 export async function report(kind: ReportKind, target: string, reason: string | null) {
   await must(supabase.rpc('report', { p_kind: kind, p_target: target, p_reason: reason }));
 }
@@ -197,4 +232,46 @@ export async function deleteEverything(): Promise<boolean> {
   await removeFiles(user.id);
   await must(supabase.rpc('delete_account'));
   return true;
+}
+
+// ------------------------------------------------------------------ appeals (85)
+
+// A closed account objects once; the closed screen shows where it stands.
+export type MyAppeal = { sent_at: string; outcome: 'unban' | 'keep' | null; settled_at: string | null };
+export async function myAppeal(): Promise<MyAppeal | null> {
+  const { data, error } = await supabase.rpc('my_appeal');
+  if (error) return null;
+  return ((data ?? []) as MyAppeal[])[0] ?? null;
+}
+export async function sendAppeal(body: string) {
+  await must(supabase.rpc('appeal', { p_body: body }));
+}
+export type OpenAppeal = { id: number; user_id: string; handle: string | null; reason: string | null; banned_at: string; body: string; created_at: string };
+export async function staffAppeals(): Promise<OpenAppeal[]> {
+  return ((await must(supabase.rpc('staff_appeals'))) ?? []) as OpenAppeal[];
+}
+export async function settleAppeal(id: number, unban: boolean) {
+  await must(supabase.rpc('staff_appeal_settle', { p_id: id, p_unban: unban }));
+}
+
+// ------------------------------------------------------------- account security (F19)
+
+// The confirmation mail again, for an address that never clicked the first one.
+export async function resendConfirmation(email: string) {
+  const { error } = await supabase.auth.resend({ type: 'signup', email: email.trim(), options: { emailRedirectTo: CONFIRM_URL } });
+  if (error) throw error;
+}
+// Proves the person at the phone knows the password before a change that matters
+// (a new password, deleting the account). True when the account has no password
+// identity (Apple, Google): there is nothing to ask for.
+export async function hasPassword(): Promise<boolean> {
+  const { data } = await supabase.auth.getUser();
+  return (data.user?.identities ?? []).some((i) => i.provider === 'email');
+}
+export async function reauth(password: string) {
+  const { data } = await supabase.auth.getUser();
+  const email = data.user?.email;
+  if (!email) throw new Error('sign in first');
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) throw new Error('wrong password');
 }

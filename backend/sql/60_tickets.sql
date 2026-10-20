@@ -68,7 +68,9 @@ revoke execute on function public.tickets_mine() from public, anon;
 grant execute on function public.tickets_mine() to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('60_tickets.sql', '54fd0d0743f10a2c958b19fb80e0f7751fcfa920dea9f7cf6b69397bb15b8d60');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('60_tickets.sql');
   end if;
 end $$;

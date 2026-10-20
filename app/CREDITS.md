@@ -100,3 +100,34 @@ Photos in assets/feed (the spark kinds — the eight of 06.10.2026 and the twent
 
 - Weather forecast for sparks: Open-Meteo — https://open-meteo.com (CC BY 4.0)
 - Football fixtures for sparks: TheSportsDB — https://www.thesportsdb.com
+
+Spark photos, the other twenty-eight kinds (assets/sparks/<kind>.jpg, 20.10.2026): Unsplash, Unsplash License (free to use, attribution not required), cropped 2:3 at 900×1350, picked from the search pages by image id — the photographer's name is not carried by the id; the source image is linked.
+
+- sunrise.jpg — https://images.unsplash.com/photo-1511632765486-a01980e01a18
+- breakfast.jpg — https://images.unsplash.com/photo-1582298538104-fe2e74c27f59
+- rooftop.jpg — https://images.unsplash.com/photo-1695128861516-d9b48461c04c
+- swim.jpg — https://images.unsplash.com/photo-1731017035777-7550cd3a688a
+- quiz.jpg — https://images.unsplash.com/photo-1779455660544-2024e2cf3319
+- newplace.jpg — https://images.unsplash.com/photo-1528605248644-14dd04022da1
+- camera.jpg — https://images.unsplash.com/photo-1581341465638-3ac8792d0a82
+- festival.jpg — https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3
+- karaoke.jpg — https://images.unsplash.com/photo-1758525865228-7ead2d650b60
+- vinyl.jpg — https://images.unsplash.com/photo-1616714109948-c74fe5029a4d
+- openair.jpg — https://images.unsplash.com/photo-1527979809431-ea3d5c0c01c9
+- bike.jpg — https://images.unsplash.com/photo-1476631840528-13bdc7f18072
+- cinema.jpg — https://images.unsplash.com/photo-1574267432553-4b4628081c31
+- boardgames.jpg — https://images.unsplash.com/photo-1677248245752-f45092b09e5a
+- flea.jpg — https://images.unsplash.com/photo-1516382461343-35e1ba016e01
+- skate.jpg — https://images.unsplash.com/photo-1650040363953-3ce7c24cfe0d
+- cook.jpg — https://images.unsplash.com/photo-1606787503066-794bb59c64bc
+- sauna.jpg — https://images.unsplash.com/photo-1660735698223-23a4edefa264
+- openmic.jpg — https://images.unsplash.com/photo-1629327896333-7ecec1515ae5
+- pingpong.jpg — https://images.unsplash.com/photo-1782915919397-9f79e87fd3be
+- bouldering.jpg — https://images.unsplash.com/photo-1696105538782-7815474f28e0
+- picnic.jpg — https://images.unsplash.com/photo-1613109040830-ffdd96756f5e
+- crawl.jpg — https://images.unsplash.com/photo-1628551019360-66eddc7f61ab
+- stars.jpg — https://images.unsplash.com/photo-1676480239187-f89d4f1bda1d
+- football.jpg — https://images.unsplash.com/photo-1494177310973-4841f7d5a882
+- tram.jpg — https://images.unsplash.com/photo-1606152535347-ddf675903712
+- jazz.jpg — https://images.unsplash.com/photo-1781447062707-4b1371d0e62f
+- walk.jpg — https://images.unsplash.com/photo-1608776934153-5857dde89c57

@@ -86,7 +86,9 @@ revoke execute on function public.past_feed(text, timestamptz, uuid, int) from p
 grant execute on function public.past_feed(text, timestamptz, uuid, int) to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('31_past_feed.sql', 'bb1fa6b0708e370eaa850822fd850d3b9fb04cb3b663cd8bba3bd1d62957d693');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('31_past_feed.sql');
   end if;
 end $$;

@@ -273,7 +273,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('47_group_nights.sql', '7d742346236655ea89cbb76c5bcc08bc3a959115c306282529b347ac6c86b921');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('47_group_nights.sql');
   end if;
 end $$;

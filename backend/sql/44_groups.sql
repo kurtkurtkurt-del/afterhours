@@ -667,7 +667,9 @@ revoke all on function public.need_member(uuid) from public, anon;
 revoke all on function public.in_group(uuid) from public, anon;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('44_groups.sql', 'b0fa59493217b5c5ba29a1ac218427227ba470501108b1ce906501775c6344fd');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('44_groups.sql');
   end if;
 end $$;

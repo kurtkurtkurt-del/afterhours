@@ -21,6 +21,7 @@ import { supabase } from '@/lib/supabase';
 import { friendById as sampleFriendById, friends as sampleFriends, matches as sampleMatches, nights as sampleNights, sampleText } from '@/content/friends';
 import { useYours, type YoursFriend, type YoursMatch, type YoursNight } from '@/data/yours';
 import { wave2 as sampleWave2, wave3 as sampleWave3 } from '@/content/waves';
+import { SAMPLES } from '@/content/samples';
 import { waveCards, wavesKept, type WaveKept } from '@/data/waves';
 import { useAuth } from '@/auth/AuthContext';
 import { useTabReset } from '@/hooks/useTabReset';
@@ -101,8 +102,8 @@ export default function PeopleScreen() {
   // Samples fill whatever is still empty, each with a "sample" note: the friend row
   // until you have friends (a pending request counts), the feed until a friend keeps
   // a night. A first friend request no longer empties the whole screen.
-  const sampleRow = real.ready && real.friends.length === 0;
-  const sample = real.ready && real.nights.length === 0;
+  const sampleRow = SAMPLES && real.ready && real.friends.length === 0;
+  const sample = SAMPLES && real.ready && real.nights.length === 0;
   const friends: YoursFriend[] = sampleRow
     ? sampleFriends.map((f) => ({ id: f.id, name: f.name, handle: f.handle, live: f.live, kept: f.kept }))
     : real.friends;
@@ -320,17 +321,22 @@ export default function PeopleScreen() {
   const [slide, setSlide] = useState(0);
   const [touched, setTouched] = useState(0);
   const count = slides.length;
-  useEffect(() => {
-    if (count < 2 || query.trim() || deck) return;
-    const timer = setInterval(() => {
-      setSlide((i) => {
-        const next = (i + 1) % count;
-        gallery.current?.scrollToOffset({ offset: next * step, animated: true });
-        return next;
-      });
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [count, step, touched, query, deck]);
+  // Only while this tab is on screen: tabs stay mounted, and a timer here re-rendered the
+  // whole tab every 6 s while the person was on another one (the app stuttered, 20.10.2026).
+  useFocusEffect(
+    useCallback(() => {
+      if (count < 2 || query.trim() || deck) return;
+      const timer = setInterval(() => {
+        setSlide((i) => {
+          const next = (i + 1) % count;
+          gallery.current?.scrollToOffset({ offset: next * step, animated: true });
+          return next;
+        });
+      }, 6000);
+      return () => clearInterval(timer);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [count, step, touched, query, deck]),
+  );
 
   const decks: { id: 'mine' | 'friends' | 'wave2' | 'wave3'; label: string; cards: DeckCard[]; red?: boolean }[] = [
     { id: 'friends', label: t('deck.friends'), cards: friendsDeck, red: true },
@@ -688,7 +694,7 @@ const styles = StyleSheet.create({
   groupsHead: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', marginTop: 4 },
   groupsTitle: { fontFamily: fonts.medium, fontSize: 17, letterSpacing: -0.3, color: colors.paper },
   groupsAll: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
-  // smaller than the page, air left and right (Ahmet, 12.10.2026)
+  // smaller than the page, air left and right (owner, 12.10.2026)
   covers: { flexDirection: 'row', gap: 10, marginTop: 10, marginHorizontal: 18 },
   cover: { flex: 1, height: 126, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink3 },
   coverNew: { alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent', borderWidth: 1, borderStyle: 'dashed', borderColor: colors.mute },

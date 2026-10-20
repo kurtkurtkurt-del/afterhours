@@ -35,7 +35,7 @@ export default function Make() {
           <View style={styles.grid}>
             {SPARKS.map((sp) => (
               <Pressable key={sp.kind} onPress={() => router.replace(`/spark/${sp.kind}`)} style={({ pressed }) => [styles.tile, pressed && styles.pressed]} accessibilityRole="button">
-                <Image source={sp.photo} style={StyleSheet.absoluteFill} contentFit="cover" />
+                <Image source={sp.thumb} style={StyleSheet.absoluteFill} contentFit="cover" transition={0} />
                 <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.85)']} locations={[0.4, 1]} style={StyleSheet.absoluteFill} />
                 <Text style={styles.tileText}>{up(t(sp.label))}</Text>
               </Pressable>

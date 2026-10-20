@@ -153,7 +153,9 @@ grant execute on function public.people_search(text, int)    to authenticated;
 grant execute on function public.people_suggested(int)       to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('25_people.sql', '4881b3365b5165d7527cd2210d01d09d26b2196cee59b2c3ea211bfb5817e9fb');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('25_people.sql');
   end if;
 end $$;

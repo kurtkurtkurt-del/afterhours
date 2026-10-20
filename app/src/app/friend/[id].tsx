@@ -16,6 +16,7 @@ import PullDownScroll from '@/components/PullDownScroll';
 import SoundCorner from '@/components/SoundCorner';
 import { confirmBlock } from '@/components/People';
 import { friends, nights } from '@/content/friends';
+import { SAMPLES } from '@/content/samples';
 import { friendAccept, friendRemove, friendRequest } from '@/data/friends';
 import { useYours } from '@/data/yours';
 import { upperData, useLang } from '@/i18n';
@@ -37,7 +38,7 @@ export default function FriendScreen() {
   const said = sent ? tx('friend.result.' + sent, sent) : null;
   const real = useYours();
   const rf = real.friends.find((x) => x.id === id);
-  const f = rf ? { id: rf.id, name: rf.name, handle: rf.handle ?? '', live: rf.live, kept: rf.kept, seen: '' } : friends.find((x) => x.id === id);
+  const f = rf ? { id: rf.id, name: rf.name, handle: rf.handle ?? '', live: rf.live, kept: rf.kept, seen: '' } : SAMPLES ? friends.find((x) => x.id === id) : undefined;
   const face = rf?.photo;
   const { width, height } = useWindowDimensions();
   // sample friends have no account: nothing to ask for (null would mean you)

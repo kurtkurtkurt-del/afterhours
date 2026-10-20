@@ -24,7 +24,7 @@ import SoundCorner from '@/components/SoundCorner';
 import { useTabBarSpace } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
 import { fetchNear, type NearNight } from '@/data/near';
-import { useShelf } from '@/lib/offline';
+import { isNetworkError, useShelf } from '@/lib/offline';
 import { friendsKept } from '@/data/friends';
 import { sparksNear, type NearSpark } from '@/data/sparks';
 import { sparkOf } from '@/content/sparks';
@@ -62,6 +62,8 @@ export default function MapScreen() {
   const [rows, setRows] = useState<NearNight[]>([]);
   const freshNear = useShelf('near');
   const [missing, setMissing] = useState(false);
+  // the last fetch failed for want of a network: say so instead of "0 nights" (D1)
+  const [cutOff, setCutOff] = useState(false);
   const [picked, setPicked] = useState<NearNight | null>(null);
   // Sparks you can see (your own, and those of your waves): gold diamonds; picked like a night.
   const [sparks, setSparks] = useState<NearSpark[]>([]);
@@ -196,9 +198,10 @@ export default function MapScreen() {
   useEffect(() => {
     let cancelled = false;
     fetchNear(lat, lng, km, 200)
-      .catch(() => ({ rows: [] as NearNight[], missing: false }))
+      .then((r) => ({ ...r, cut: false }), (e) => ({ rows: [] as NearNight[], missing: false, cut: isNetworkError(e) }))
       .then((r) => {
         if (cancelled) return;
+        setCutOff(r.cut);
         setRows(r.rows);
         setMissing(r.missing);
         setPicked((p) => (p && r.rows.some((x) => x.id === p.id) ? p : null));
@@ -311,7 +314,8 @@ export default function MapScreen() {
             <Text style={styles.bigUnit}>{bigKm < 1 ? 'm' : 'km'}</Text>
           </Text>
           <View style={styles.counts}>
-            <Text style={styles.jetMeta}>{up(missing ? t('map.notLive') : tn('map.nights', shown.length))}</Text>
+            <Text style={styles.jetMeta}>{up(cutOff ? t('map.offline') : missing ? t('map.notLive') : tn('map.nights', shown.length))}</Text>
+            {!cutOff && !missing && shown.length === 0 && sparks.length === 0 ? <Text style={styles.jetMeta}>{up(t('map.none'))}</Text> : null}
             {withFriends > 0 ? <Text style={styles.jetRed}>{up(t('map.withFriends', { n: withFriends }))}</Text> : null}
             {sparks.length > 0 ? <Text style={styles.jetGold}>{up(tn('map.sparks', sparks.length))}</Text> : null}
           </View>

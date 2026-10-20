@@ -1,4 +1,5 @@
 import { useReport } from '@/components/ReportSheet';
+import { serverText } from '@/lib/serverText';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Tips from '@/components/Tips';
 import { KeyboardAvoidingView, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
@@ -148,7 +149,7 @@ function CreateBody({ spark, width, whenText }: { spark: Spark; width: number; w
       })
       .catch((e) => {
         setState('idle');
-        setNote(e instanceof SparksNotReady ? t('spark.notReady') : String(e?.message ?? e).toLowerCase());
+        setNote(e instanceof SparksNotReady ? t('spark.notReady') : serverText(e));
       });
   };
 
@@ -264,7 +265,7 @@ function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; 
       .then(() => setTimeout(() => router.back(), 1100))
       .catch((e) => {
         setAnswer(null);
-        setNote(String(e?.message ?? e).toLowerCase());
+        setNote(serverText(e));
       });
   };
 
@@ -288,7 +289,7 @@ function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; 
       .then(() => router.back())
       .catch((e) => {
         setCalling(false);
-        setNote(String(e?.message ?? e).toLowerCase());
+        setNote(serverText(e));
       });
   };
   const ins = people.filter((p) => p.answer === 'in');

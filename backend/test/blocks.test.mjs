@@ -31,7 +31,7 @@ const rows = async (sql) => (await db.query(sql)).rows;
 await asService();
 await db.exec(`
   insert into auth.users (id, email) values ('${A}','a@x'),('${B}','b@x'),('${C}','c@x'),('${D}','d@x');
-  update public.profiles set handle = 'ahmet' where id = '${A}';
+  update public.profiles set handle = 'ada' where id = '${A}';
   update public.profiles set handle = 'berk'  where id = '${B}';
   update public.profiles set handle = 'cansu' where id = '${C}';
   update public.profiles set handle = 'deniz' where id = '${D}';
@@ -59,9 +59,9 @@ console.log("\n— blocking —");
   check(Boolean(await fails(`select * from public.blocks`)), "the table itself is closed");
 
   await as(B);
-  check((await rows(`select * from public.people_search('ahmet')`)).length === 0, "B does not find A");
-  check((await rows(`select * from public.profile_card('ahmet')`)).length === 0, "nor A's card");
-  check((await one(`select public.friend_request('ahmet') as r`)).r === "notfound", "a request from B answers notfound");
+  check((await rows(`select * from public.people_search('ada')`)).length === 0, "B does not find A");
+  check((await rows(`select * from public.profile_card('ada')`)).length === 0, "nor A's card");
+  check((await one(`select public.friend_request('ada') as r`)).r === "notfound", "a request from B answers notfound");
   check(Boolean(await fails(`insert into public.friendships (requester_id, addressee_id) values ('${B}', '${A}')`)), "a direct insert is refused");
   check((await rows(`select * from public.my_blocks()`)).length === 0, "B's own list is empty: B is not told");
   check((await one(`select public.unblock_user('${A}') as r`)).r === false, "B cannot lift A's block");

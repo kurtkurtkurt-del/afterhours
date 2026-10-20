@@ -46,7 +46,14 @@ export async function fetchDeck(city: string | null, type: string | null = null,
 // A night page: offline it opens from what was saved from the deck, keeps or the map.
 export const stashNights = (list: Night[]) => shelve('night', list.map((n) => [n.slug, n]), 500).catch(() => {});
 export async function fetchNight(slug: string): Promise<Night | null> {
-  return remember('night', slug, async () => (await must(supabase.from('events_public').select('*').eq('slug', slug).maybeSingle())) as Night | null, 500);
+  return remember('night', slug, async () => {
+    const found = (await must(supabase.from('events_public').select('*').eq('slug', slug).maybeSingle())) as Night | null;
+    if (found) return found;
+    // A night that is over or was cancelled is off the deck but keeps its page
+    // (95_past_night_page.sql); before 95 is in the database this simply finds nothing.
+    const { data } = await supabase.rpc('night_page', { p_slug: slug });
+    return ((data ?? []) as Night[])[0] ?? null;
+  }, 500);
 }
 
 // Keep / let go. Requires sign-in; swiping the same card again overwrites.

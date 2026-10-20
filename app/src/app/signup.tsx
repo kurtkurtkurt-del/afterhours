@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { resendConfirmation } from '@/data/safety';
+import { serverText } from '@/lib/serverText';
 import { KeyboardAvoidingView, Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -154,6 +156,15 @@ export default function SignUpScreen() {
           >
             <Text style={styles.small}>{t('signup.forgot')}</Text>
           </Pressable>
+          {note === t('auth.confirm') ? (
+            <Pressable
+              onPress={async () => {
+                try { await resendConfirmation(email); setNote(t('signup.resent')); } catch (e) { setNote(serverText(e)); }
+              }}
+            >
+              <Text style={styles.small}>{t('signup.resend')}</Text>
+            </Pressable>
+          ) : null}
           <Text style={styles.small}>{t('signup.guest')}</Text>
           <BackButton inline />
         </View>

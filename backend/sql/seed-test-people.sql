@@ -3,21 +3,21 @@
 -- the Supabase SQL editor), run AFTER rename-test-users.sql and after
 -- 17_real_people.sql. Running it twice is harmless.
 --
--- The graph, from kurt2: testuser1 and testuser2 are friends; testuser3
+-- The graph, from owner2: testuser1 and testuser2 are friends; testuser3
 -- is a friend of testuser1; testuser5 a friend of testuser2; testuser4 a
 -- friend of testuser3 — so the column on a night shows every distance
--- the design draws. offdutykurt is friends with all of them. To make
--- everybody a direct friend of kurt2 instead, add the missing pairs to
+-- the design draws. owner1 is friends with all of them. To make
+-- everybody a direct friend of owner2 instead, add the missing pairs to
 -- the first list.
 
 begin;
 
 -- ----------------------------------------------------------- friends
 with pairs(a, b) as (values
-  ('kurt2', 'testuser1'), ('kurt2', 'testuser2'),
+  ('owner2', 'testuser1'), ('owner2', 'testuser2'),
   ('testuser1', 'testuser3'), ('testuser2', 'testuser5'), ('testuser3', 'testuser4'),
-  ('offdutykurt', 'testuser1'), ('offdutykurt', 'testuser2'), ('offdutykurt', 'testuser3'),
-  ('offdutykurt', 'testuser4'), ('offdutykurt', 'testuser5')
+  ('owner1', 'testuser1'), ('owner1', 'testuser2'), ('owner1', 'testuser3'),
+  ('owner1', 'testuser4'), ('owner1', 'testuser5')
 )
 insert into public.friendships (requester_id, addressee_id, status)
 select pa.id, pb.id, 'accepted'

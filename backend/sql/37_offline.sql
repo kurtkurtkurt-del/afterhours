@@ -95,7 +95,9 @@ grant execute on function public.room_post(text, text, uuid) to authenticated;
 grant execute on function public.check_in(text, double precision, double precision, timestamptz) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('37_offline.sql', 'c7de2e6b7ae4b4ccef3496ddce998f61bb25a3d576eb909a9505d5227ab14144');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('37_offline.sql');
   end if;
 end $$;

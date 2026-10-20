@@ -101,7 +101,9 @@ where not exists (
 );
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('20_djs.sql', 'bd2925223d53fe72984c69828aa1921f90eea3cdb8959f07ff286642360a1571');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('20_djs.sql');
   end if;
 end $$;

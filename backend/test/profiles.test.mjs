@@ -74,26 +74,26 @@ console.log("\n— handle musait mi —");
   check(await s("'AB'") === "format", "kisa/bicimsiz handle");
   check(await s("'Büyük'") === "format", "capitals and non-ascii letters are refused");
   check(await s("'lena'") === "taken", "alinmis handle");
-  check(await s("'ahmet'") === "ok", "musait handle");
+  check(await s("'ada'") === "ok", "musait handle");
 }
 
 console.log("\n— finishing the registration —");
 {
   await asUser(A);
-  const r = await db.query(`select public.profile_setup('ahmet', 'Ahmet', 'munchen', 'nights out, mostly') as s`);
+  const r = await db.query(`select public.profile_setup('ada', 'owner', 'munchen', 'nights out, mostly') as s`);
   check(r.rows[0].s === "ok", "the profile was set up");
 
   const p = await db.query(`select handle, display_name, bio, onboarded_at is not null as done from public.profiles where id = '${A}'`);
-  check(p.rows[0].handle === "ahmet" && p.rows[0].bio === "nights out, mostly", "the fields were written");
+  check(p.rows[0].handle === "ada" && p.rows[0].bio === "nights out, mostly", "the fields were written");
   check(p.rows[0].done === true, "registration counts as finished");
 
   const d = await db.query(`select public.profile_setup('lena') as s`);
   check(d.rows[0].s === "taken", "baskasinin handle'i alinamiyor");
 
-  const y = await db.query(`select public.profile_setup('ahmet', null, 'yokboyle') as s`);
+  const y = await db.query(`select public.profile_setup('ada', null, 'yokboyle') as s`);
   check(y.rows[0].s === "nocity", "a city that does not exist is refused");
 
-  const t = await db.query(`select public.profile_setup('ahmet', null, null, null) as s`);
+  const t = await db.query(`select public.profile_setup('ada', null, null, null) as s`);
   check(t.rows[0].s === "ok", "writing your own handle again is fine");
 }
 
@@ -104,7 +104,7 @@ console.log("\n— your own profile —");
   await db.exec(`select public.swipe_set('blitz', 'left')`);
   const m = await db.query(`select * from public.profile_me()`);
   check(m.rows.length === 1, "profile_me tek row donuyor");
-  check(m.rows[0].handle === "ahmet" && m.rows[0].city_slug === "munchen", "the handle and the city come back");
+  check(m.rows[0].handle === "ada" && m.rows[0].city_slug === "munchen", "the handle and the city come back");
   check(m.rows[0].kept_count === 1, "only the ones swiped right are counted");
   check(m.rows[0].kept_visibility === "friends" && m.rows[0].notify_email === true,
     "the settings arrive with their defaults");
@@ -126,16 +126,16 @@ console.log("\n— the settings are private to the person —");
 console.log("\n— someone else's profile —");
 {
   await asUser(B);
-  const k = await db.query(`select * from public.profile_card('ahmet')`);
-  check(k.rows.length === 1 && k.rows[0].handle === "ahmet", "the card comes back");
+  const k = await db.query(`select * from public.profile_card('ada')`);
+  check(k.rows.length === 1 && k.rows[0].handle === "ada", "the card comes back");
   check(k.rows[0].is_friend === false, "we are not friends");
   check(k.rows[0].kept_count === null, "the counts are closed to a non-friend");
 
-  await db.exec(`select public.friend_request('ahmet')`);
+  await db.exec(`select public.friend_request('ada')`);
   await asUser(A);
   await db.exec(`select public.friend_request('lena')`);
   await asUser(B);
-  const a = await db.query(`select is_friend, kept_count from public.profile_card('ahmet')`);
+  const a = await db.query(`select is_friend, kept_count from public.profile_card('ada')`);
   check(a.rows[0].is_friend === true && a.rows[0].kept_count === 1,
     "once you are friends the counts open up");
 }
@@ -146,7 +146,7 @@ console.log("\n— set to private, not even a friend sees it —");
   await db.exec(`update public.profile_settings set kept_visibility = 'private' where user_id = '${A}'`);
 
   await asUser(B);
-  const k = await db.query(`select kept_count from public.profile_card('ahmet')`);
+  const k = await db.query(`select kept_count from public.profile_card('ada')`);
   check(k.rows[0].kept_count === null, "the counts closed on the card");
 
   const f = await db.query(`select count(*)::int as n from public.friends_kept()`);
@@ -177,8 +177,8 @@ console.log("\n— list gezilemiyor —");
 console.log("\n— whoever knows the handle sees the card —");
 {
   await asUser(C);
-  const k = await db.query(`select * from public.profile_card('ahmet')`);
-  check(k.rows.length === 1 && k.rows[0].display_name === "Ahmet",
+  const k = await db.query(`select * from public.profile_card('ada')`);
+  check(k.rows.length === 1 && k.rows[0].display_name === "owner",
     "a stranger finds the card by handle");
   check(k.rows[0].kept_count === null, "the counts are closed to a stranger");
   check(k.rows[0].last_seen_day === null, "last seen is closed to a stranger");
@@ -193,19 +193,19 @@ console.log("\n— switching it off in settings hides the card —");
   await db.exec(`update public.profile_settings set discoverable = false where user_id = '${A}'`);
 
   await asUser(C);
-  const k = await db.query(`select count(*)::int as n from public.profile_card('ahmet')`);
+  const k = await db.query(`select count(*)::int as n from public.profile_card('ada')`);
   check(k.rows[0].n === 0, "a stranger can no longer see the card");
 
   /* Ama adini bilen yine req gonderebiliyor: yoksa kimse ekleyemezdi */
-  const i = await db.query(`select public.friend_request('ahmet') as s`);
+  const i = await db.query(`select public.friend_request('ada') as s`);
   check(i.rows[0].s === "sent", "sending a request still works");
 
   await asUser(B);   /* arkadasi */
-  const f = await db.query(`select count(*)::int as n from public.profile_card('ahmet')`);
+  const f = await db.query(`select count(*)::int as n from public.profile_card('ada')`);
   check(f.rows[0].n === 1, "a friend keeps seeing it");
 
   await asUser(A);
-  const mine = await db.query(`select count(*)::int as n from public.profile_card('ahmet')`);
+  const mine = await db.query(`select count(*)::int as n from public.profile_card('ada')`);
   check(mine.rows[0].n === 1, "you always see your own card");
   await db.exec(`update public.profile_settings set discoverable = true where user_id = '${A}'`);
 }
@@ -217,7 +217,7 @@ console.log("\n— last seen, as a day —");
   await asUser(B);
   /* We ask for it as text: the driver would turn a date into a JS Date and
      invent a clock time, and we want to measure what LEAVES the database. */
-  const f = await db.query(`select last_seen_day::text as g from public.profile_card('ahmet')`);
+  const f = await db.query(`select last_seen_day::text as g from public.profile_card('ada')`);
   check(f.rows[0].g !== null, "a friend sees the day");
   check(/^\d{4}-\d{2}-\d{2}$/.test(f.rows[0].g),
     "only the day travels, never the clock", String(f.rows[0].g));
@@ -232,10 +232,10 @@ console.log("\n— older paths the new rule must not break —");
   `);
   await db.exec(`set role anon; set request.jwt.claims = '';`);
   const c = await db.query(`select author from public.comments_public where body = 'i will be there'`);
-  check(c.rows[0].author === "ahmet", "a signed-out reader still sees who wrote a comment", String(c.rows[0].author));
+  check(c.rows[0].author === "ada", "a signed-out reader still sees who wrote a comment", String(c.rows[0].author));
 
   await asUser(C);
-  const h = await db.query(`select public.handle_status('ahmet') as s`);
+  const h = await db.query(`select public.handle_status('ada') as s`);
   check(h.rows[0].s === "taken", "the handle availability check still works");
 }
 

@@ -39,7 +39,7 @@ const rows = async (sql) => (await db.query(sql)).rows;
 await asService();
 await db.exec(`
   insert into auth.users (id, email) values ('${A}', 'a@x.com'), ('${B}', 'b@x.com');
-  update public.profiles set handle = 'ahmet' where id = '${A}';
+  update public.profiles set handle = 'ada' where id = '${A}';
   update public.profiles set handle = 'berk'  where id = '${B}';
 `);
 const [ev] = await rows(`select id, slug from public.events where is_published order by slug limit 1`);

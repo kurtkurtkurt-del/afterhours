@@ -1,7 +1,7 @@
 # Night run — the task of the autonomous night agent
 
 You are working alone, at night, in the afterhours repository
-(`https://github.com/kurtkurtkurt-del/afterhours`). Ahmet is asleep and will read the
+(`https://github.com/kurtkurtkurt-del/afterhours`). owner is asleep and will read the
 result at 08:00 on his phone. Nobody answers questions; do not ask any.
 
 ## Order of work
@@ -17,7 +17,7 @@ result at 08:00 on his phone. Nobody answers questions; do not ask any.
 5. Take the topmost `bekliyor` item of the board. Mark it `yapılıyor`. Do it to the
    rules. Run the checks. Commit on the branch (or, for prototypes and documents only,
    on `main`). Mark it `yapıldı <hash>` with its proof, or `karar bekliyor` with the
-   prototype URL, or `sabah Ahmet` with the exact step. Take the next.
+   prototype URL, or `sabah karar` with the exact step. Take the next.
 6. Stop after 5 items, or after 3 hours, or when the next item is `karar bekliyor` and
    nothing below it can be done without that decision.
 7. End as the rules say: board updated, `morning-YYYY-MM-DD.md` written (Turkish, ten
@@ -30,7 +30,7 @@ result at 08:00 on his phone. Nobody answers questions; do not ask any.
 
 No Supabase secrets (SQL is proved in PGlite only), no phone, no Expo Go, no Apple or
 Google account. When an item needs one of these, do the part that does not, and leave
-the rest as `sabah Ahmet` with the exact command or click.
+the rest as `sabah karar` with the exact command or click.
 
 Prototypes: one HTML file per decision in `prototypes/`, phone width (390 px), the five
 designs stacked and labelled A–E with one line each on what differs, in the app's own

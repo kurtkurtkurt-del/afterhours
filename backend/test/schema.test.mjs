@@ -78,11 +78,11 @@ await db.exec(`
   where c.slug = 'munchen' and t.slug = 'rave';
 
   insert into auth.users (id, email) values
-    ('11111111-1111-1111-1111-111111111111', 'ahmet@example.com'),
+    ('11111111-1111-1111-1111-111111111111', 'ada@example.com'),
     ('22222222-2222-2222-2222-222222222222', 'friend@example.com'),
     ('33333333-3333-3333-3333-333333333333', 'yabanci@example.com');
 
-  update public.profiles set is_admin = true, handle = 'ahmet'
+  update public.profiles set is_admin = true, handle = 'ada'
   where id = '11111111-1111-1111-1111-111111111111';
 `);
 

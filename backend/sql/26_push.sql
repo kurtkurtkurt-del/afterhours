@@ -765,7 +765,9 @@ revoke execute on function public.push_prune()                           from pu
 revoke execute on function public.push_hourly(timestamptz)               from public, anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('26_push.sql', '3bb69fa2d92d5a3a13e8476335a8d2b63334576a944ebf6dfc9fbcac1f64336d');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('26_push.sql');
   end if;
 end $$;

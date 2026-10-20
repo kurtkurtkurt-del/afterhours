@@ -34,7 +34,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('23_checkin_open.sql', 'd14b387bd619ea2e5ea761c4c191d6392275e8c1e16c2c130b10ad89cb765a59');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('23_checkin_open.sql');
   end if;
 end $$;

@@ -18,5 +18,5 @@ Check, in this order, and write one line each under "Bekçi raporu · <date time
    them back to `bekliyor` and say so.
 7. **Prototype links** in the latest `morning-*.md`: do they answer 200 on GitHub Pages?
 
-End with one line: `ok` or `dikkat: <the one thing Ahmet should look at first>`.
+End with one line: `ok` or `dikkat: <the one thing owner should look at first>`.
 Turkish, no more than twelve lines in total.

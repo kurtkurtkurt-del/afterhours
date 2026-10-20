@@ -37,7 +37,7 @@ const rows = async (sql) => (await db.query(sql)).rows;
 
 await asService();
 await db.exec(`insert into auth.users (id, email) values ('${A}','a@x'),('${B}','b@x'),('${CM}','cm@x'),('${AD}','ad@x')`);
-await db.exec(`update public.profiles set handle = 'ahmet' where id = '${A}'`);
+await db.exec(`update public.profiles set handle = 'ada' where id = '${A}'`);
 await db.exec(`update public.profiles set handle = 'berk' where id = '${B}'`);
 await db.exec(`update public.profiles set account_type = 'community_manager' where id = '${CM}'`);
 await db.exec(`update public.profiles set is_admin = true, account_type = 'admin' where id = '${AD}'`);
@@ -73,7 +73,7 @@ console.log("\n— a closed account —");
   check(s.banned === true && s.reason === "spam", "knows it is closed, and why");
   const said = await fails(`insert into public.comments (event_id, body) values ('${night.id}', 'again')`);
   check(/closed/.test(said ?? ""), "cannot comment", said);
-  check(/closed/.test(await fails(`select public.friend_request('ahmet')`) ?? ""), "cannot ask anyone");
+  check(/closed/.test(await fails(`select public.friend_request('ada')`) ?? ""), "cannot ask anyone");
   check(/closed/.test(await fails(`update public.profiles set bio = 'hi' where id = '${B}'`) ?? ""), "cannot change its words");
   await as(A);
   check((await rows(`select * from public.people_search('berk')`)).length === 0, "nobody finds it");

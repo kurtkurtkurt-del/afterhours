@@ -104,7 +104,9 @@ grant execute on function public.nights_near(double precision, double precision,
   to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('18_geo.sql', '845448c0da357dbe8834a5e72d1638b284b6c8fc39fbb4d71b64ee4fa94b06c5');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('18_geo.sql');
   end if;
 end $$;

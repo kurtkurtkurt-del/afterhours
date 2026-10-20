@@ -63,8 +63,6 @@ sql/52_bans.sql          closing an account: staff_ban / staff_unban (not staff)
 sql/53_trust.sql         trust: djs.verified (staff_djs_waiting, staff_dj_verify; renaming or leaving dj takes it down), admin_set_admin (never the last), notices (my_notices, notices_seen; triggers on hide, removal, cleared profile, role), guard_rate limits, no group across a block
 sql/54_upkeep.sql        upkeep: guests_prune (guests unseen 30 days, nightly cron), staff push (kind staff in 48) when a report, reported post, night sent in or dj page starts waiting, one an hour; staff_waiting()
 sql/55_post_social.sql   likes and comments on posts: post_likes, post_comments; post_like, post_likers, post_comment_add / _delete, post_comments_of; posts_feed with likes, liked, comments, first two; push post_like / post_comment; reports, bans, notices, limits cover comments
-sql/66_past_off.sql      the service role may run hide_past_events(): the morning sync calls it, so past nights leave the deck without pg_cron
-sql/67_report_answer.sql the reporter hears back: a notice when the staff settle a report (reports, post_reports)
 sql/fix-clipboard-text.sql  ONE-SHOT, plain ASCII: repairs text that pbcopy turned into Mac Roman garbage on its way to the SQL editor
 sql/about-munich.sql     ONE-SHOT: the texts for 18 Munich nights in en · de · tr, from Wikipedia summaries, by slug
 sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities
@@ -78,7 +76,6 @@ tools/backup.mjs         backs the content up to JSON
 tools/restore.mjs        turns a backup back into SQL
 tools/health.mjs         the status check
 tools/sync-ticketmaster.mjs  the daily Ticketmaster pull (GitHub Action; --dry to look without writing)
-tools/sync-retire.mjs        what the sync does with a night it no longer wants: unpublish, never delete
 tools/upload-sound.mjs   puts the 30 music excerpts into the sound bucket (service key, once)
 
 test/                    278 checks, all on a real Postgres (PGlite)
@@ -145,7 +142,7 @@ copy is sitting in the editor.
 below), then in the SQL Editor:
 
 ```sql
-update public.profiles set is_admin = true, handle = 'ahmet'
+update public.profiles set is_admin = true, handle = 'ada'
 where id = (select id from auth.users where email = 'your@email');
 ```
 

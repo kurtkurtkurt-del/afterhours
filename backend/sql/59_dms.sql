@@ -142,6 +142,8 @@ $$;
 revoke execute on function public.dm_thread(uuid, bigint) from public, anon;
 grant execute on function public.dm_thread(uuid, bigint) to authenticated;
 
+-- 90 adds a column to what this returns; a re-run must not trip on the old shape
+drop function if exists public.dm_list();
 create or replace function public.dm_list()
 returns table (id uuid, other_id uuid, handle text, name text, last_body text, last_mine boolean, last_id bigint, last_at timestamptz)
 language plpgsql
@@ -209,7 +211,9 @@ $$;
 -- (14) does not list them yet — a line in promises.md says so.
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('59_dms.sql', 'ff42a3de133b25de321f261391abc791c6ff92c428165841787a6f7a24d1032e');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('59_dms.sql');
   end if;
 end $$;

@@ -38,7 +38,7 @@ const rows = async (sql) => (await db.query(sql)).rows;
 
 await asService();
 await db.exec(`insert into auth.users (id, email) values ('${A}','a@x'),('${B}','b@x'),('${C}','c@x'),('${CM}','cm@x'),('${AD}','ad@x')`);
-await db.exec(`update public.profiles set handle = 'ahmet' where id = '${A}'`);
+await db.exec(`update public.profiles set handle = 'ada' where id = '${A}'`);
 await db.exec(`update public.profiles set handle = 'berk', account_type = 'dj' where id = '${B}'`);
 await db.exec(`update public.profiles set handle = 'cansu' where id = '${C}'`);
 await db.exec(`update public.profiles set account_type = 'community_manager' where id = '${CM}'`);

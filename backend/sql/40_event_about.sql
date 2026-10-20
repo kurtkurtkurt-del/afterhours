@@ -44,7 +44,9 @@ $$;
 grant execute on function public.about_for(uuid[], text) to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('40_event_about.sql', '82ae672f8c140a23ae9f8e62042e3d06125789c1f39b675e3c4804564289ffe6');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('40_event_about.sql');
   end if;
 end $$;

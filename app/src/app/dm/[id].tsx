@@ -5,7 +5,8 @@ import { useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import { Said } from '@/components/StaffPage';
-import { dmSend, dmThread, dmUnsay, why, type DmLine } from '@/data/dms';
+import { useReport } from '@/components/ReportSheet';
+import { dmListen, dmSend, dmThread, dmUnsay, dmWaiting, why, type DmLine } from '@/data/dms';
 import { markDmSeen } from '@/data/messages';
 import { useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
@@ -37,26 +38,41 @@ export default function DmScreen() {
       }, (e) => setSaid(why(e))),
     [id],
   );
+  // The thread's channel says when a line lands (data/dms.ts dmPing); the clock is only a
+  // fallback for a channel that did not connect, and for lines sent from the outbox.
   useEffect(() => {
     more();
-    const timer = setInterval(more, 3000);
-    return () => clearInterval(timer);
-  }, [more]);
+    const stop = dmListen(id, more);
+    const timer = setInterval(more, 15000);
+    return () => {
+      stop();
+      clearInterval(timer);
+    };
+  }, [id, more]);
+  const [waiting, setWaiting] = useState(() => dmWaiting(id));
 
   const send = () => {
     const body = text.trim();
     if (!body) return;
     setText('');
-    dmSend(id, body).then(more, (e) => {
-      setText(body);
-      setSaid(why(e));
-    });
+    dmSend(id, body).then(
+      (sent) => {
+        if (sent === null) setWaiting(dmWaiting(id));
+        else more();
+      },
+      (e) => {
+        setText(body);
+        setSaid(why(e));
+      },
+    );
   };
   const drop = (l: DmLine) =>
     Alert.alert(t('staff.delete'), t('groups.chat.delete'), [
       { text: t('staff.delete.keep'), style: 'cancel' },
       { text: t('staff.delete'), style: 'destructive', onPress: () => dmUnsay(l.id).then(() => setLines((x) => x.filter((y) => y.id !== l.id)), () => {}) },
     ]);
+  // A long press on their line reports it (70); on yours it takes it back.
+  const reporting = useReport();
   const time = (iso: string) => iso.slice(11, 16);
 
   return (
@@ -77,16 +93,25 @@ export default function DmScreen() {
                 <Text style={styles.metaMine}>{time(l.created_at)}</Text>
               </Pressable>
             ) : (
-              <View key={l.id} style={styles.theirsWrap}>
+              <Pressable key={l.id} onLongPress={() => reporting.ask('dm_message', String(l.id))} style={styles.theirsWrap}>
                 <View style={styles.bubble}>
                   <Text style={styles.text}>{l.body}</Text>
                 </View>
                 <Text style={styles.metaSmall}>{time(l.created_at)}</Text>
-              </View>
+              </Pressable>
             ),
           )}
+          {waiting.map((w) => (
+            <View key={w.id} style={styles.mineWrap}>
+              <View style={[styles.bubbleMine, { opacity: 0.5 }]}>
+                <Text style={styles.text}>{w.body}</Text>
+              </View>
+              <Text style={styles.metaMine}>{t('offline.waiting')}</Text>
+            </View>
+          ))}
           <Said text={said} bad />
         </ScrollView>
+        {reporting.sheet}
         <View style={[styles.input, { paddingBottom: insets.bottom + 10 }]}>
           <View style={styles.pill}>
             <TextInput

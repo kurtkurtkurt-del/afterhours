@@ -371,7 +371,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('46_group_plans.sql', '8f2895631eb58bb03e788cb0d06b2fb85bd9dfa6af3d34081d246d7501084feb');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('46_group_plans.sql');
   end if;
 end $$;

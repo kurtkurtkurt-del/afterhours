@@ -1,6 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import { must, outbox, pendingJobs, remember, send } from '@/lib/offline';
 import { djs as localDjs, sets as localSets, type Dj, type DjSet } from '@/content/djs';
+import { SAMPLES } from '@/content/samples';
 
 // 20_djs.sql: djs, dj_sets, dj_follows. Local samples when the table is empty or offline.
 const photos: Record<string, number> = Object.fromEntries(localDjs.map((d) => [d.id, d.photo]));
@@ -10,7 +11,7 @@ export async function loadDjs(): Promise<{ djs: Dj[]; sets: DjSet[]; live: boole
   // Raw rows are cached (photo numbers change between releases and are mapped every time).
   const raw = await remember('djs', '', async () => {
     const [a, b, c] = await Promise.all([
-      supabase.from('djs').select('id,slug,name,genre,sound,since,photo_url,cities(slug,name)').order('sort_order'),
+      supabase.from('djs').select('id,slug,name,genre,sound,since,photo_url,bio,cities(slug,name)').order('sort_order'),
       supabase.from('dj_sets').select('venue,starts_at,hours,djs(slug)').gte('starts_at', new Date(Date.now() - 12 * 3600_000).toISOString()).order('starts_at'),
       supabase.rpc('dj_follow_counts'),
     ]);
@@ -18,7 +19,7 @@ export async function loadDjs(): Promise<{ djs: Dj[]; sets: DjSet[]; live: boole
     if (b.error) throw b.error;
     return { a: a.data ?? [], b: b.data ?? [], c: (c.data ?? []) as { dj_id: string; n: number }[] };
   }).catch(() => null);
-  if (!raw || !raw.a.length) return { djs: localDjs, sets: localSets(), live: false };
+  if (!raw || !raw.a.length) return SAMPLES ? { djs: localDjs, sets: localSets(), live: false } : { djs: [], sets: [], live: false };
   const a = { data: raw.a };
   const b = { data: raw.b };
   const counts = new Map<string, number>(raw.c.map((r) => [r.dj_id, Number(r.n)]));
@@ -33,6 +34,7 @@ export async function loadDjs(): Promise<{ djs: Dj[]; sets: DjSet[]; live: boole
     followers: fmt(counts.get(r.id as string) ?? 0),
     photo: photos[r.slug as string] ?? fallbackPhoto,
     photoUrl: (r.photo_url as string | null) ?? null,
+    bio: (r.bio as string | null) ?? null,
   }));
   const sets: DjSet[] = b.data.map((r) => ({
     dj: (r as { djs?: { slug?: string } | null }).djs?.slug ?? '',

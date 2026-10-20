@@ -29,7 +29,7 @@ const C = "cccccccc-3333-3333-3333-333333333333";
 await db.exec(`
   insert into auth.users (id, email) values
     ('${A}', 'a@x.com'), ('${B}', 'b@x.com'), ('${C}', 'c@x.com');
-  update public.profiles set handle = 'ahmet' where id = '${A}';
+  update public.profiles set handle = 'ada' where id = '${A}';
   update public.profiles set handle = 'lena'  where id = '${B}';
   update public.profiles set handle = 'tobi'  where id = '${C}';
 `);
@@ -45,9 +45,9 @@ console.log("\n— the handle —");
   catch (e) { err = e.message; }
   check(Boolean(err), "a handle that does not fit the shape is refused");
 
-  await db.exec(`update public.profiles set handle = 'ahmet' where id = '${A}'`);
+  await db.exec(`update public.profiles set handle = 'ada' where id = '${A}'`);
   let second = null;
-  try { await db.exec(`update public.profiles set handle = 'ahmet' where id = '${B}'`); }
+  try { await db.exec(`update public.profiles set handle = 'ada' where id = '${B}'`); }
   catch (e) { second = e.message; }
   check(Boolean(second), "two people cannot hold the same handle");
   await db.exec(`update public.profiles set handle = 'lena' where id = '${B}'`);
@@ -62,7 +62,7 @@ console.log("\n— sending a request —");
   const y = await db.query(`select public.friend_request('nosuchperson') as s`);
   check(y.rows[0].s === "notfound", "no request goes to a handle that does not exist");
 
-  const k = await db.query(`select public.friend_request('ahmet') as s`);
+  const k = await db.query(`select public.friend_request('ada') as s`);
   check(k.rows[0].s === "yourself", "you cannot send a request to yourself");
 
   const l = await db.query(`select other_id, status, direction from public.friends_list()`);
@@ -98,11 +98,11 @@ console.log("\n— the other side —");
 {
   await asUser(B);
   const l = await db.query(`select handle, status, direction from public.friends_list()`);
-  check(l.rows.length === 1 && l.rows[0].direction === "incoming" && l.rows[0].handle === "ahmet",
+  check(l.rows.length === 1 && l.rows[0].direction === "incoming" && l.rows[0].handle === "ada",
     "on the other side it shows as incoming");
 
   /* Sending a request back the other way to the same person = accepting */
-  const r = await db.query(`select public.friend_request('ahmet') as s`);
+  const r = await db.query(`select public.friend_request('ada') as s`);
   check(r.rows[0].s === "accepted", "a request in the other direction accepts the pending one");
 
   const s = await db.query(`select status from public.friends_list()`);

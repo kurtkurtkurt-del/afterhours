@@ -33,7 +33,7 @@ const asService = () => db.exec(`reset role; set request.jwt.claims = '';`);
 await asService();
 await db.exec(`
   insert into auth.users (id, email) values ('${A}', 'a@x.com'), ('${B}', 'b@x.com');
-  update public.profiles set handle = 'ahmet', is_admin = true where id = '${A}';
+  update public.profiles set handle = 'ada', is_admin = true where id = '${A}';
   update public.profiles set handle = 'lena' where id = '${B}';
 `);
 

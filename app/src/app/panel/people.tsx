@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { router } from 'expo-router';
 import { Alert, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import PickerSheet from '@/components/PickerSheet';
 import CodeSheet from '@/components/CodeSheet';
@@ -75,6 +76,7 @@ export default function People() {
       ]);
     }
     Alert.alert(name, p.banned ? t('staff.ban.closed') : undefined, [
+      { text: t('staff.file'), onPress: () => router.push({ pathname: '/panel/person', params: { id: p.id } }) },
       { text: t('staff.ban.role'), onPress: () => setWho(p) },
       p.banned
         ? { text: t('staff.ban.undo'), onPress: () => unbanPerson(p.id).then(() => mark(p, false), (e) => setSaid(why(e))) }

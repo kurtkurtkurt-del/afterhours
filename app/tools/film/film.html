@@ -7,7 +7,7 @@
 <!--
   The intro film, second cut (12.10.2026). Source: app/tools/film/film.html; built by
   `npm run film` into app/assets/film/film.html with the photos and type inline.
-  A 390×844 stage scaled to the screen; nine scenes on one timeline (SCENES below);
+  A 390×844 stage scaled to the screen; nine scenes on one timeline (43 s) (SCENES below);
   each scene's own motion starts when it gets the class `on`. Posts `end` to the app.
 -->
 <style>
@@ -343,7 +343,7 @@ body { font-family: var(--sans); color: var(--paper); font-weight: 400; }
   <section class="scene" id="s2">
     <div class="cap">
       <h2 class="a rise" data-t="s2h">swipe the <b>nights.</b></h2>
-      <p class="a rise" style="--d:.25s" data-t="s2p">right keeps a night, left lets it go. up: the ticket, down: the details.</p>
+      <p class="a rise" style="--d:.25s" data-t="s2p">right keeps a night, left lets it go.</p>
     </div>
     <div class="phone in">
       <div class="blur"></div>
@@ -389,7 +389,7 @@ body { font-family: var(--sans); color: var(--paper); font-weight: 400; }
   <section class="scene" id="s3">
     <div class="cap">
       <h2 class="a rise" data-t="s3h">the night is a <b>ticket.</b></h2>
-      <p class="a rise" style="--d:.25s" data-t="s3p">date, doors, where. one tap to the seller, and the card remembers.</p>
+      <p class="a rise" style="--d:.25s" data-t="s3p">date, doors, where. one tap to the ticket.</p>
     </div>
     <div class="phone in">
       <div class="sb"><span>23:12</span><i></i></div>
@@ -417,7 +417,7 @@ body { font-family: var(--sans); color: var(--paper); font-weight: 400; }
   <section class="scene" id="s4">
     <div class="cap">
       <h2 class="a rise" data-t="s4h">see who is <b>out.</b></h2>
-      <p class="a rise" style="--d:.25s" data-t="s4p">a red ring means out right now. your people, and theirs.</p>
+      <p class="a rise" style="--d:.25s" data-t="s4p">a red ring: out right now. your people, and theirs.</p>
     </div>
     <div class="phone in">
       <div class="sb"><span>23:12</span><i></i></div>
@@ -449,7 +449,7 @@ body { font-family: var(--sans); color: var(--paper); font-weight: 400; }
   <section class="scene" id="s5">
     <div class="cap">
       <h2 class="a rise" data-t="s5h">no plan? start a <b>spark.</b></h2>
-      <p class="a rise" style="--d:.25s" data-t="s5p">a night nobody organised yet. name, time and place come suggested.</p>
+      <p class="a rise" style="--d:.25s" data-t="s5p">a night nobody planned yet. we suggest the rest.</p>
     </div>
     <div class="phone in">
       <div class="full"></div><div class="veil"></div>
@@ -470,7 +470,7 @@ body { font-family: var(--sans); color: var(--paper); font-weight: 400; }
   <section class="scene" id="s6">
     <div class="cap">
       <h2 class="a rise" data-t="s6h">what is near, <b>tonight.</b></h2>
-      <p class="a rise" style="--d:.25s" data-t="s6p">pins are nights, gold diamonds are sparks. swipe the card, the map walks.</p>
+      <p class="a rise" style="--d:.25s" data-t="s6p">pins are nights, gold diamonds are sparks.</p>
     </div>
     <div class="phone in">
       <div class="mapbg">
@@ -510,14 +510,14 @@ body { font-family: var(--sans); color: var(--paper); font-weight: 400; }
   <section class="scene" id="s7">
     <div class="cap">
       <h2 class="a rise" data-t="s7h">check in. keep the <b>card.</b></h2>
-      <p class="a rise" style="--d:.25s" data-t="s7p">every night you were at lands on your sleeve. your messages one tap away.</p>
+      <p class="a rise" style="--d:.25s" data-t="s7p">every night you were at lands on your sleeve.</p>
     </div>
     <div class="phone in">
       <div class="sb"><span>02:48</span><i></i></div>
       <div class="pad">
         <div class="sleeve">
           <div class="disc"></div>
-          <div class="cover img" style="background-image:url('{{img:t3}}')"><div class="veil"></div><div class="nm">ahmet<b style="color:var(--spot)">.</b></div></div>
+          <div class="cover img" style="background-image:url('{{img:t3}}')"><div class="veil"></div><div class="nm">ada<b style="color:var(--spot)">.</b></div></div>
         </div>
         <div class="meta"><span><b>14</b> <span data-t="nights">nights</span></span><span>münchen · berlin</span></div>
         <div class="grid">
@@ -561,35 +561,35 @@ body { font-family: var(--sans); color: var(--paper); font-weight: 400; }
   var W = {
     de: {
       s1a: 'deine stadt<b>.</b>', s1b: 'nach dunkel<b>.</b>',
-      s2h: 'wisch durch die <b>nächte.</b>', s2p: 'rechts behält eine nacht, links lässt sie los. hoch: ticket, runter: details.',
+      s2h: 'wisch durch die <b>nächte.</b>', s2p: 'rechts behält eine nacht, links lässt sie los.',
       keep: 'behalten', letgo: 'loslassen', kept1: 'cansu hat sie behalten', kept2: 'berk, lina haben sie behalten',
-      s3h: 'die nacht ist ein <b>ticket.</b>', s3p: 'datum, einlass, wo. ein tipp zum verkäufer, die karte merkt es sich.',
+      s3h: 'die nacht ist ein <b>ticket.</b>', s3p: 'datum, einlass, wo. ein tipp zum ticket.',
       date: 'datum', doors: 'einlass', where: 'wo', getticket: 'ticket holen ↗', checkin: 'einchecken', keepb: 'behalten', keptit: 'haben sie behalten', got: 'ticket ✓ · du hast dein ticket',
-      s4h: 'sieh, wer <b>draußen ist.</b>', s4p: 'ein roter ring heißt gerade unterwegs. deine leute, und ihre.',
+      s4h: 'sieh, wer <b>draußen ist.</b>', s4p: 'roter ring: gerade unterwegs. deine leute, und ihre.',
       search: 'leute suchen', groups: 'gruppen · <span class="red">2 live</span>', withyours: 'mit deinen leuten', vote: '4 von 6 dabei · abstimmung bis do', imin: 'bin dabei', yourpeople: 'deine leute', outnow: 'unterwegs', outnow2: 'unterwegs', kept3: '3 behalten',
       fof: 'freunde von freunden', via: 'cansu hat sie behalten · über berk',
-      s5h: 'kein plan? zünde einen <b>spark.</b>', s5p: 'eine nacht, die noch keiner organisiert hat. name, zeit und ort sind vorgeschlagen.',
+      s5h: 'kein plan? zünde einen <b>spark.</b>', s5p: 'eine nacht, die noch keiner plant. den rest schlagen wir vor.',
       sparkt: 'durch den grunewald auf den teufelsberg.', wherel: 'wo', w1: 'freunde', w2: 'ihre freunde', w3: 'einen schritt weiter', sendspark: 'spark schicken', sent: 'an 9 freunde geschickt · berlin',
-      s6h: 'was in der nähe ist, <b>heute nacht.</b>', s6p: 'nadeln sind nächte, goldene rauten sparks. wisch die karte, die karte wandert.',
+      s6h: 'was in der nähe ist, <b>heute nacht.</b>', s6p: 'nadeln sind nächte, goldene rauten sparks.',
       all: 'alle events', week: 'diese woche', near: 'in der nähe', of: 'von', of2: 'von',
-      s7h: 'einchecken. die karte <b>behalten.</b>', s7p: 'jede nacht, bei der du warst, landet auf deiner hülle. nachrichten einen tipp entfernt.',
+      s7h: 'einchecken. die karte <b>behalten.</b>', s7p: 'jede nacht, bei der du warst, landet auf deiner hülle.',
       nights: 'nächte', checked: 'eingecheckt · zenith',
       explore: 'entdecke deine stadt'
     },
     tr: {
       s1a: 'senin şehrin<b>.</b>', s1b: 'karanlıktan sonra<b>.</b>',
-      s2h: 'geceleri <b>kaydır.</b>', s2p: 'sağa sakla, sola geç. yukarı: bilet, aşağı: ayrıntılar.',
+      s2h: 'geceleri <b>kaydır.</b>', s2p: 'sağa sakla, sola geç.',
       keep: 'sakla', letgo: 'geç', kept1: 'cansu sakladı', kept2: 'berk, lina sakladı',
-      s3h: 'gece bir <b>bilet.</b>', s3p: 'tarih, kapı, yer. tek dokunuşla satıcıya, kart hatırlar.',
+      s3h: 'gece bir <b>bilet.</b>', s3p: 'tarih, kapı, yer. tek dokunuşla bilet.',
       date: 'tarih', doors: 'kapı', where: 'yer', getticket: 'bilet al ↗', checkin: 'check in', keepb: 'sakla', keptit: 'sakladı', got: 'bilet ✓ · biletin var',
-      s4h: 'kim dışarıda, <b>gör.</b>', s4p: 'kırmızı halka şu an dışarıda demek. seninkiler, ve onlarınkiler.',
+      s4h: 'kim dışarıda, <b>gör.</b>', s4p: 'kırmızı halka: şu an dışarıda. seninkiler, ve onlarınkiler.',
       search: 'insan ara', groups: 'gruplar · <span class="red">2 canlı</span>', withyours: 'seninkilerle', vote: '6 kişiden 4 geliyor · oylama per bitiyor', imin: 'geliyorum', yourpeople: 'seninkiler', outnow: 'dışarıda', outnow2: 'dışarıda', kept3: '3 sakladı',
       fof: 'arkadaşların arkadaşları', via: 'cansu sakladı · berk üzerinden',
-      s5h: 'plan yok mu? bir <b>spark</b> başlat.', s5p: 'henüz kimsenin düzenlemediği bir gece. isim, saat ve yer önerili.',
+      s5h: 'plan yok mu? bir <b>spark</b> başlat.', s5p: 'henüz kimsenin planlamadığı bir gece. gerisini biz öneririz.',
       sparkt: 'grunewald’dan teufelsberg’e yürüyüş.', wherel: 'yer', w1: 'arkadaşlar', w2: 'onların arkadaşları', w3: 'bir adım ötesi', sendspark: 'spark’ı gönder', sent: '9 arkadaşa gitti · berlin',
-      s6h: 'yakında ne var, <b>bu gece.</b>', s6p: 'iğneler gece, altın elmaslar spark. kartı kaydır, harita yürür.',
+      s6h: 'yakında ne var, <b>bu gece.</b>', s6p: 'iğneler gece, altın elmaslar spark.',
       all: 'tüm etkinlikler', week: 'bu hafta', near: 'yakınımda', of: '/', of2: '/',
-      s7h: 'check in yap. kartı <b>sakla.</b>', s7p: 'gittiğin her gece kapağına düşer. mesajların tek dokunuş ötede.',
+      s7h: 'check in yap. kartı <b>sakla.</b>', s7p: 'gittiğin her gece kapağına düşer.',
       nights: 'gece', checked: 'check in · zenith',
       explore: 'şehrini keşfet'
     }
@@ -605,9 +605,11 @@ body { font-family: var(--sans); color: var(--paper); font-weight: 400; }
 
   // the timeline: when each scene comes on (ms); the last entry ends the film
   var SCENES = [
-    ['s0', 0], ['s1', 2400], ['s2', 6000], ['s3', 11500], ['s4', 16000], ['s5', 21000], ['s6', 25500], ['s7', 30000], ['s8', 34000]
+    ['s0', 0], ['s1', 2400], ['s2', 6000], ['s3', 12000], ['s4', 17500], ['s5', 23000], ['s6', 28500], ['s7', 34000], ['s8', 39000]
   ];
-  var END = 38000;
+  // each scene holds long enough to read its line at about 15 letters a second in the
+  // longest language (German); measured 20.10.2026 (D4)
+  var END = 43000;
   var current = document.getElementById('s0');
   // #s4 in the address: that scene alone, held (for looking at it while making it)
   var held = /^#s[0-8]$/.test(location.hash) ? location.hash.slice(1) : null;

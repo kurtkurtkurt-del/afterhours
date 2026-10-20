@@ -1,3 +1,4 @@
+import { serverText } from '@/lib/serverText';
 import { useEffect, useState } from 'react';
 import Storage from 'expo-sqlite/kv-store';
 import { supabase } from '@/lib/supabase';
@@ -137,6 +138,8 @@ export const submitNight = (n: NightDraft) =>
   });
 export type Submission = { id: string; slug: string; title: string; starts_at: string; review: 'pending' | 'rejected' | null; review_note: string | null; is_published: boolean };
 export const mySubmissions = () => rpc<Submission[]>('event_submissions');
+// A waiting night of yours, taken back (76).
+export const withdrawNight = (id: string) => rpc<void>('event_withdraw', { p_id: id });
 export type Pending = {
   id: string;
   slug: string;
@@ -216,7 +219,7 @@ export async function markFeedback(id: string, handled: boolean) {
 }
 
 // The error a function raised, as a short line for the screen.
-export const why = (e: unknown) => String((e as { message?: string })?.message ?? e).toLowerCase();
+export const why = (e: unknown) => serverText(e);
 
 // 49_design_reads.sql: people by role, with nights kept and groups (design 17C)
 export type PersonRow = Person & { nights: number; groups: number; banned: boolean };
@@ -233,3 +236,13 @@ export const unbanPerson = (user: string) => rpc<void>('staff_unban', { p_user: 
 export const banAuthor = (kind: string, target: string, reason: string | null) => rpc<void>('staff_ban_author', { p_kind: kind, p_target: target, p_reason: reason });
 export const peopleBy = (q: string, role: string) => rpc<PersonRow[]>('admin_people_by', { p_query: q, p_role: role });
 export const roleCounts = () => rpc<RoleCounts>('admin_role_counts');
+
+// 86_person_file.sql: everything the staff know about one person, in one read.
+export type PersonFile = {
+  who: { id: string; handle: string | null; name: string | null; role: string; created_at: string; banned_at: string | null; banned_reason: string | null; banned_by: string | null; banned_by_admin: boolean | null };
+  reports_about: { kind: string; target: string; text: string | null; reason: string | null; handled: boolean; at: string }[];
+  reports_made: { kind: string; reason: string | null; handled: boolean; at: string }[];
+  appeals: { body: string; outcome: 'unban' | 'keep' | null; at: string; settled_at: string | null }[];
+  log: { action: string; note: string | null; at: string; by: string | null }[];
+};
+export const personFile = (user: string) => rpc<PersonFile>('staff_person', { p_user: user });

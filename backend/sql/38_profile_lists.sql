@@ -130,7 +130,9 @@ grant execute on function public.person_kept(text) to authenticated;
 grant execute on function public.person_people(text) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('38_profile_lists.sql', '8bc6454831b9aa30bc2cceb0cf760eae823442d2301a43e99ffb967b15862b2b');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('38_profile_lists.sql');
   end if;
 end $$;

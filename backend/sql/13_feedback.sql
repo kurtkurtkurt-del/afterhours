@@ -78,7 +78,9 @@ grant execute on function public.feedback_list(int) to authenticated;
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('13_feedback.sql', 'dea8158134bc7c0ce4786a39a1f7a9f11a5873d90caae10dc3fa604cd49f7cd2');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('13_feedback.sql');
   end if;
 end $$;

@@ -71,7 +71,9 @@ grant execute on function public.rsvp_set(uuid, text) to authenticated;
 grant execute on function public.rsvp_for(uuid[])     to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('32_rsvp.sql', 'fc4b2a54d1022c7c69ee67d70656026c078cf9cc2dfcc8b280a371ad5dd133e1');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('32_rsvp.sql');
   end if;
 end $$;

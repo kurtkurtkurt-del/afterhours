@@ -3,7 +3,8 @@ import { KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, TextInput,
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
-import { router } from 'expo-router';
+import { Redirect, router } from 'expo-router';
+import { POSTS_ON } from '@/content/flags';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Button from '@/components/Button';
 import PickerSheet from '@/components/PickerSheet';
@@ -20,7 +21,12 @@ import { brand } from '@/theme/layout';
 // A post, camera first (design 2A): the photo fills the screen, the words go on top
 // of it at the bottom, the night is a chip at the top. Without a photo the screen
 // is ink and the words stand alone. Friends see it in their yours tab.
-export default function NewPost() {
+// Posts are off (content/flags.ts): the route redirects before any of the screen runs.
+export default function NewPostGate() {
+  return POSTS_ON ? <NewPost /> : <Redirect href="/flow" />;
+}
+
+function NewPost() {
   const { t } = useLang();
   const insets = useSafeAreaInsets();
   const { session, isAnonymous } = useAuth();

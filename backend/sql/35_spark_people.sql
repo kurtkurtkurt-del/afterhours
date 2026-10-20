@@ -36,7 +36,9 @@ revoke execute on function public.spark_people(uuid) from public, anon;
 grant execute on function public.spark_people(uuid) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('35_spark_people.sql', '796468d9e9f4598be3cb72f4610369a1866c08b105699e1855a4ef9fc8fb37fb');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('35_spark_people.sql');
   end if;
 end $$;

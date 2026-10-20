@@ -40,7 +40,7 @@ const type = (await rows(`select id from public.event_types limit 1`))[0].id;
 const ago = (days) => `now() - interval '${days} days'`;
 await db.exec(`
   insert into auth.users (id, email) values ('${A}', 'a@x.com'), ('${B}', 'b@x.com'), ('${C}', 'c@x.com'), ('${D}', 'd@x.com');
-  update public.profiles set handle = 'ahmet' where id = '${A}';
+  update public.profiles set handle = 'ada' where id = '${A}';
   update public.profiles set handle = 'berk'  where id = '${B}';
   update public.profiles set handle = 'cansu' where id = '${C}';
   update public.profiles set handle = 'deniz' where id = '${D}';

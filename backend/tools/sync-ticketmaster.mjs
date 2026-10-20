@@ -9,11 +9,9 @@
 
    --dry fetches and reports but writes nothing (only the TM key needed).
 
-   Four things worth knowing:
+   Three things worth knowing:
    - The upsert conflicts on external_id, so a night keeps its uuid from
      run to run and the swipes people put on it survive.
-   - Nothing is ever deleted: a past or refused night is only taken off
-     the deck (sync-retire.mjs), so the cards and room lines on it stay.
    - Ticketmaster covers some of our cities and not others (nothing in
      Lagos or Suva). An uncovered city simply comes back empty; the
      filter already shows empty cities faded, so nothing needs hiding.
@@ -24,7 +22,6 @@
      always right. */
 
 import { createHash } from "node:crypto";
-import { retirePast, retireIds, hidePast } from "./sync-retire.mjs";
 
 const TM_KEY = process.env.TICKETMASTER_KEY || "";
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE || "";
@@ -319,10 +316,16 @@ function rowFor(e, city, types) {
     title: (e.name || "").trim().slice(0, 120),
     meta,
     body: bodyFor(e, city.name),
-    starts_at: date + "T" + (e.dates.start.localTime || "20:00:00"),
+    /* the zone Ticketmaster names, written after the time so Postgres reads the local
+       hour as that city's (92); without one the city's own zone applies at the server */
+    starts_at: date + "T" + (e.dates.start.localTime || "20:00:00") + " " + (e.dates.timezone || city.tz || "Europe/Berlin"),
+    tz: e.dates.timezone || city.tz || null,
     starts_at_estimated: false,
     date_text: [shortDate, time].filter(Boolean).join(" · "),
-    is_published: true,
+    /* dates.status.code: onsale, offsale, cancelled, postponed, rescheduled. A
+       cancelled night leaves the deck but stays (72); the others keep selling. */
+    status: statusOf(e),
+    is_published: statusOf(e) !== "cancelled",
     source: "ticketmaster",
     external_id: e.id,
     image_url: imageFor(e.images),
@@ -338,6 +341,12 @@ function rowFor(e, city, types) {
 
 /* A venue's slug: its name, without the id tail a night carries — the same
    room is one row however many nights it holds. */
+const STATUSES = new Set(["onsale", "offsale", "cancelled", "postponed", "rescheduled"]);
+function statusOf(e) {
+  const code = String((e.dates && e.dates.status && e.dates.status.code) || "onsale").toLowerCase();
+  return STATUSES.has(code) ? code : "onsale";
+}
+
 function venueSlug(name) {
   return String(name)
     .replace(/&/g, " and ").normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -348,7 +357,7 @@ function venueSlug(name) {
 
 const cities = DRY && !SERVICE
   ? Object.keys(PLACES).map((slug) => ({ id: slug, slug, name: slug }))
-  : await db("/cities?select=id,slug,name");
+  : await db("/cities?select=id,slug,name,tz");
 const typeRows = DRY && !SERVICE
   ? ["rave", "club-night", "konzert", "festival", "meetup"].map((slug) => ({ id: slug, slug }))
   : await db("/event_types?select=id,slug");
@@ -472,52 +481,45 @@ for (let i = 0; i < unique.length; i += 100) {
   }
 }
 
-/* Nights that have passed leave the deck, and stay in the database: the
-   cards, room lines and swipes people left on them hang off the row
-   (sync-retire.mjs). Only our own rows: the seeds and the admin-written
-   events are not this script's to touch. */
-const send = (req) => db(req.path, {
-  method: req.method,
-  headers: { Prefer: "return=minimal" },
-  body: JSON.stringify(req.body),
-});
+/* Nights that have passed leave the deck, but not the database: a retired night
+   (is_published = false) is still somebody's check-in card, room, swipe or answer.
+   Deleting here used to take all of that with it, every morning (F1, 20.10.2026).
+   Only our own rows: the seeds and the admin-written events are not this script's
+   to touch. Rows nobody ever touched are pruned after a year by 66. */
 const today = new Date().toISOString().slice(0, 10);
-await send(retirePast(today));
+await db("/events?source=eq.ticketmaster&is_published=eq.true&starts_at=lt." + today, {
+  method: "PATCH", headers: { Prefer: "return=minimal" }, body: JSON.stringify({ is_published: false }),
+});
+const pruned = await db("/rpc/events_prune_untouched", { method: "POST", body: JSON.stringify({ p_days: 400 }) });
+if (pruned) console.log("pruned: " + pruned + " untouched nights older than a year");
 
 /* The house rules, swept over what is ALREADY there — add-ons, early
    starts and repeated dates that arrived before the rules did. The
    database converges on the style instead of only new rows obeying it. */
 const held = [];
 for (let from = 0; ; from += 1000) {
-  const page = await db("/events_public?select=id,title,type_slug,city_slug,starts_at" +
-    "&source=eq.ticketmaster&is_published=is.true&order=starts_at&limit=1000&offset=" + from);
+  const page = await db("/events_public?select=id,title,type_slug,city_slug,starts_at,date_text" +
+    "&source=eq.ticketmaster&is_published=eq.true&order=starts_at&limit=1000&offset=" + from);
   held.push(...page);
   if (page.length < 1000) break;
 }
 const kill = [];
 const runsSeen = new Set();
 for (const r of held) {
-  const time = (r.starts_at || "").slice(11, 16);
+  /* the local hour is the one in date_text; starts_at is an instant now (92) */
+  const time = ((r.date_text || "").match(/\b(\d\d:\d\d)\b/) || [])[1] || "";
   if (refused(r.type_slug, r.title, time)) { kill.push(r.id); continue; }
   const key = r.city_slug + "|" + r.title.toLowerCase();
   if (runsSeen.has(key)) kill.push(r.id);      /* date order: the soonest stays */
   else runsSeen.add(key);
 }
-for (let i = 0; i < kill.length; i += 60) await send(retireIds(kill.slice(i, i + 60)));
-if (kill.length) console.log("swept: " + kill.length + " rows against the house rules, taken off the deck");
-
-/* Every other past night too (the seeds, the staff's), the job pg_cron should
-   run — without the extension nothing does (66). A project still before 66
-   refuses the call; that costs this line, not the run. */
-try {
-  const req = hidePast();
-  const hidden = await db(req.path, { method: req.method, body: JSON.stringify(req.body) });
-  console.log("hide_past_events: " + hidden + " past nights taken off the deck");
-} catch (e) {
-  console.warn("  hide_past_events was refused (is 66_past_off.sql in?): " + e.message);
+for (let i = 0; i < kill.length; i += 60) {
+  await db("/events?source=eq.ticketmaster&id=in.(" + kill.slice(i, i + 60).join(",") + ")",
+    { method: "PATCH", headers: { Prefer: "return=minimal" }, body: JSON.stringify({ is_published: false }) });
 }
+if (kill.length) console.log("retired: " + kill.length + " rows against the house rules");
 
 console.log("written: " + written + " upserted"
   + (turnedAway ? ", " + turnedAway + " refused (see above)" : "")
-  + ", past ticketmaster nights taken off the deck before " + today);
+  + ", past ticketmaster nights pruned before " + today);
 if (turnedAway && !written) process.exit(1);

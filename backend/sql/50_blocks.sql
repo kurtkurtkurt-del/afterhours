@@ -194,7 +194,9 @@ $$;
 revoke execute on function public.spark_waves(uuid) from public, anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('50_blocks.sql', '89faa1b9187bc4632d01445a2664e4058e074ad8389e82bb2496c5ff04988c61');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('50_blocks.sql');
   end if;
 end $$;

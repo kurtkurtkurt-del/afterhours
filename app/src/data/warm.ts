@@ -9,6 +9,7 @@ import { sparkInbox, sparkMine } from '@/data/sparks';
 import { followedSlugs, loadDjs } from '@/data/djs';
 import { fetchDeck } from '@/data/deck';
 import { pastFeed } from '@/data/feed';
+import { POSTS_ON } from '@/content/flags';
 import { wavesKept } from '@/data/waves';
 import { currentCity } from '@/data/here';
 import { loadCities } from '@/data/cities';
@@ -23,9 +24,9 @@ async function warm() {
   if (!isOnline() || Date.now() - last < 120_000) return;
   last = Date.now();
   // Every tab's first screen too, so none of them waits when it is opened: the flow's
-  // deck, yours (its gallery sample, the feed, the waves) and the DJs.
+  // deck, yours (its gallery sample, the feed while posts are on, the waves) and the DJs.
   const city = currentCity() ?? 'munchen';
-  const pages = Promise.allSettled([fetchDeck(city, null, 120), fetchDeck(city, null, 12), pastFeed(city, null, 10), wavesKept(), loadDjs()]);
+  const pages = Promise.allSettled([fetchDeck(city, null, 120), fetchDeck(city, null, 12), POSTS_ON ? pastFeed(city, null, 10) : Promise.resolve([]), wavesKept(), loadDjs()]);
   const [, , mine, theirs, , photos] = await Promise.allSettled([
     loadProfile(),
     myCards(),

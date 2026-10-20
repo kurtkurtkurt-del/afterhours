@@ -44,6 +44,11 @@
       el("reg-email").focus();
       return;
     }
+    if (!el("reg-terms").checked) {
+      say(note, AH.t("register.terms.needed"), "error");
+      el("reg-terms").focus();
+      return;
+    }
     if (password.length < 8) {
       say(note, AH.t("register.short"), "error");
       el("reg-password").focus();
@@ -85,7 +90,7 @@
 
   /* checkNo guards against answers landing out of order: with only the
      debounce, a slow reply to "ahm" could overwrite the verdict already
-     shown for "ahmet". Only the latest check may speak. */
+     shown for "ada". Only the latest check may speak. */
   let pending = null, checkNo = 0;
   el("reg-handle").addEventListener("input", function () {
     clearTimeout(pending);
@@ -178,7 +183,16 @@
       });
   };
 
+  /* The gate the app has (TermsGate, 51_safety.sql): 18 or older, the terms, the privacy
+     notice. On the site it is the box above; the answer is written to the profile the
+     moment there is a session. Sign-ups through Google or Apple land here too. */
+  function acceptTerms() {
+    return AH.request("/rpc/accept_terms", { method: "POST", body: JSON.stringify({ p_version: 1, p_adult: true }) })
+      .catch(function (e) { console.warn("[afterhours] terms not recorded:", e.message); });
+  }
+
   function stepTwo() {
+    acceptTerms();
     show("reg-2");
     buildCities();
     el("reg-handle").focus();

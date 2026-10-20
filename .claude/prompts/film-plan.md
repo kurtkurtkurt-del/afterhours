@@ -1,6 +1,6 @@
 # The intro film, second cut (12.10.2026)
 
-Ahmet: the first film (Claude Design export, 15 s) was amateurish. Redo: realistic, explains the
+owner: the first film (Claude Design export, 15 s) was amateurish. Redo: realistic, explains the
 app, uses the app's own screens, more artistic. Plan and do it.
 
 ## What it is

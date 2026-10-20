@@ -428,7 +428,9 @@ on conflict (slug) do nothing;
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('04_seed_events.sql', '08f1b14f3204cb224c04560f90c0a4be35c5b54c8a6eeeeaf5125f90f2fc4123');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('04_seed_events.sql');
   end if;
 end $$;

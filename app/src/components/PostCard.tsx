@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import { serverText } from '@/lib/serverText';
 import { Alert, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
@@ -162,7 +163,7 @@ function Comments({ open, post, who, onClose, onChange }: { open: boolean; post:
         setList(l);
         onChange(l);
       },
-      (e) => setSaid(String(e?.message ?? e).toLowerCase()),
+      (e) => setSaid(serverText(e)),
     );
   }, [post.id, onChange]);
   const send = () => {
@@ -175,7 +176,7 @@ function Comments({ open, post, who, onClose, onChange }: { open: boolean; post:
         setDraft('');
         load();
       })
-      .catch((e) => setSaid(String(e?.message ?? e).toLowerCase()))
+      .catch((e) => setSaid(serverText(e)))
       .finally(() => setSending(false));
   };
   const hold = (c: PostComment) =>

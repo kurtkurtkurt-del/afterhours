@@ -1,5 +1,6 @@
+import { serverText } from '@/lib/serverText';
 import { supabase } from '@/lib/supabase';
-import { must, OfflineError, outbox, peek, pendingJobs, remember, send, type Job } from '@/lib/offline';
+import { OfflineError, invalidate, must, outbox, peek, pendingJobs, remember, send, type Job } from '@/lib/offline';
 import type { Night } from '@/data/deck';
 import type { NightCardData } from '@/content/cardsgen';
 import type { Key } from '@/i18n/dict';
@@ -14,12 +15,13 @@ export const reasons: Record<string, Key> = {
   far: 'checkin.reason.far',
   notthere: 'checkin.reason.notthere',
   frozen: 'checkin.reason.frozen',
+  toolate: 'checkin.reason.toolate',
   offline: 'offline.write',
 };
 // The error's code; unknown errors are returned as-is (lower-cased). Screens store this.
 export const reasonCode = (e: unknown) => {
   const m = String((e as Error)?.message ?? e);
-  return Object.keys(reasons).find((k) => m.includes(k)) ?? m.toLowerCase();
+  return Object.keys(reasons).find((k) => m.includes(k)) ?? serverText(e);
 };
 
 // Until 37_offline.sql is in the database the functions have their old parameters:
@@ -56,6 +58,14 @@ outbox(
 export async function checkIn(slug: string, lat?: number, lng?: number): Promise<number | null> {
   const r = await send({ kind: 'checkIn', slug, lat, lng });
   return r.queued ? null : Number(r.result);
+}
+
+// Within an hour the card can be taken back (88_checkin_truth.sql): the row and the
+// pushes that have not left go; the room shelves are read again.
+export async function checkOut(slug: string): Promise<boolean> {
+  const r = await must(supabase.rpc('check_out', { p_slug: slug }));
+  invalidate(...ROOM_SHELVES);
+  return !!r;
 }
 
 const waitingCheckIn = (slug: string) => pendingJobs('checkIn').find((j) => j.slug === slug);

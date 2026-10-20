@@ -43,7 +43,7 @@ await db.exec(`
   insert into auth.users (id, email) values
     ('${A}', 'a@x.com'), ('${B}', 'b@x.com'), ('${C}', 'c@x.com'), ('${D}', 'd@x.com'),
     ('${E}', 'e@x.com'), ('${F}', 'f@x.com'), ('${G}', 'g@x.com');
-  update public.profiles set handle = 'ahmet',  display_name = 'Ahmet'      where id = '${A}';
+  update public.profiles set handle = 'ada',  display_name = 'owner'      where id = '${A}';
   update public.profiles set handle = 'berk',   display_name = 'Berk Aydın' where id = '${B}';
   update public.profiles set handle = 'cansu',  display_name = 'Cansu'      where id = '${C}';
   update public.profiles set handle = 'deniz',  display_name = 'Deniz Kaya' where id = '${D}';
@@ -79,7 +79,7 @@ console.log("\n— search —");
 
   check((await rows(`select 1 from public.people_search('a')`)).length === 0, "one letter finds nobody");
   check((await rows(`select 1 from public.people_search('elif')`)).length === 0, "a hidden person is not found");
-  check((await rows(`select 1 from public.people_search('ahmet')`)).length === 0, "you do not find yourself");
+  check((await rows(`select 1 from public.people_search('ada')`)).length === 0, "you do not find yourself");
   check((await rows(`select 1 from public.people_search('gökhan')`)).length === 0, "someone without a handle is not found");
   check((await rows(`select 1 from public.people_search('%%')`)).length === 0, "% is a letter, not a wildcard");
 
@@ -94,12 +94,12 @@ console.log("\n— suggestions —");
   check(s.length === 2, "two people qualify", JSON.stringify(s));
   check(s[0]?.handle === "cansu" && s[0]?.reason === "mutual" && s[0]?.mutual === 1, "a friend of a friend comes first");
   check(s[1]?.handle === "deniz" && s[1]?.reason === "city", "then the same city");
-  check(!s.some((r) => ["berk", "feride", "elif", "ahmet"].includes(r.handle)),
+  check(!s.some((r) => ["berk", "feride", "elif", "ada"].includes(r.handle)),
         "no friends, no pending requests, no hidden people, not you");
 
   await asUser(D);
   const d = await rows(`select handle, reason from public.people_suggested(3)`);
-  check(d.length === 3 && d[0].reason === "city" && d[0].handle === "ahmet", "for someone new: the city first, then the rest");
+  check(d.length === 3 && d[0].reason === "city" && d[0].handle === "ada", "for someone new: the city first, then the rest");
 
   await asAnon();
   check(Boolean(await fails(`select * from public.people_suggested(3)`)), "signed out, suggestions are closed");

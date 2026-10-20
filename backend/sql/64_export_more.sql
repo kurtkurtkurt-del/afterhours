@@ -104,7 +104,9 @@ $$;
 grant execute on function public.export_me() to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('64_export_more.sql', '75d37ddd068f002d692f299f8840fb3b69b703a57eae0d056f84cec6144a4bd4');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('64_export_more.sql');
   end if;
 end $$;

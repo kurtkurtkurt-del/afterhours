@@ -1,4 +1,4 @@
-// First-visit tips (components/Tips.tsx): one per page, short (two were too many, Ahmet, 12.10.2026).
+// First-visit tips (components/Tips.tsx): one per page, short (two were too many, owner, 12.10.2026).
 export const tips = {
   'tips.done': { en: 'got it', de: 'verstanden', tr: 'anladım' },
   'tips.reset': { en: 'show the tips again', de: 'tipps wieder zeigen', tr: 'ipuçlarını tekrar göster' },

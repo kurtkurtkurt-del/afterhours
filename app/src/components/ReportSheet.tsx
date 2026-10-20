@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { serverText } from '@/lib/serverText';
 import { Alert } from 'react-native';
 import CodeSheet from '@/components/CodeSheet';
 import { report, type ReportKind } from '@/data/safety';
@@ -22,7 +23,7 @@ export function useReport() {
         if (!w) return;
         report(w.kind, w.target, why || null).then(
           () => Alert.alert(t('posts.report'), t('posts.report.done')),
-          (e) => Alert.alert(t('posts.report'), String(e?.message ?? e).toLowerCase()),
+          (e) => Alert.alert(t('posts.report'), serverText(e)),
         );
       }}
       onClose={() => setWhat(null)}

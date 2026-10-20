@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { serverText } from '@/lib/serverText';
 import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -19,6 +20,7 @@ import { useProfileExtra } from '@/data/profile';
 import { useShelf } from '@/lib/offline';
 import { refreshYours } from '@/data/yours';
 import { collection as samples } from '@/content/collection';
+import { SAMPLES as SAMPLES_ON } from '@/content/samples';
 import type { NightCardData } from '@/content/cardsgen';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
@@ -58,7 +60,7 @@ export default function PersonScreen() {
 
   // Sample people (the suggestions, the names in the sample posts) have no account: their
   // page is drawn from the name alone and says "sample profile".
-  const example = sample && handle ? (SAMPLES.find((p) => p.handle === handle) ?? { id: `sample-${handle}`, handle, display_name: handle, city_name: null, mutual: 0, reason: 'new' as const }) : undefined;
+  const example = SAMPLES_ON && sample && handle ? (SAMPLES.find((p) => p.handle === handle) ?? { id: `sample-${handle}`, handle, display_name: handle, city_name: null, mutual: 0, reason: 'new' as const }) : undefined;
   const isSample = !!example;
   const fresh = useShelf('personCards');
   const freshPhotos = useShelf('photos');
@@ -99,7 +101,7 @@ export default function PersonScreen() {
               setRemoved(true);
               refreshYours();
             })
-            .catch((e) => Alert.alert(String(e?.message ?? e).toLowerCase())),
+            .catch((e) => Alert.alert(serverText(e))),
       },
     ]);
 

@@ -97,7 +97,9 @@ revoke execute on function public.waves_kept(int) from public, anon;
 grant execute on function public.waves_kept(int) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('33_waves.sql', '414c1cc87d464508f0d618ae209261c4a04a74defe6b76902f938e8bca6b0d4c');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('33_waves.sql');
   end if;
 end $$;

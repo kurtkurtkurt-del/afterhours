@@ -37,7 +37,7 @@ const one = async (sql) => (await rows(sql))[0];
 await asService();
 await db.exec(`
   insert into auth.users (id, email) values ('${A}', 'a@x.com'), ('${B}', 'b@x.com'), ('${C}', 'c@x.com'), ('${E}', 'e@x.com');
-  update public.profiles set handle = 'ahmet' where id = '${A}';
+  update public.profiles set handle = 'ada' where id = '${A}';
   update public.profiles set handle = 'berk'  where id = '${B}';
   update public.profiles set handle = 'cansu' where id = '${C}';
   update public.profiles set handle = 'ece'   where id = '${E}';
@@ -60,7 +60,7 @@ console.log("\n— whatsapp —");
   check(x.links.whatsapp === "491512345678", "and stored as digits", JSON.stringify(x.links));
   const bad = await one(`select public.profile_links_set('{"whatsapp": "call me"}') as r`);
   check(bad.r === "format:whatsapp", "words are not a number");
-  const old = await one(`select public.profile_links_set('{"instagram": "@ahmet"}') as r`);
+  const old = await one(`select public.profile_links_set('{"instagram": "@ada"}') as r`);
   check(old.r === "ok", "the other kinds still work");
 }
 
@@ -69,7 +69,7 @@ console.log("\n— kept nights —");
   await asUser(A);
   check((await rows(`select id from public.person_kept('berk')`)).length === 1, "a friend: their right swipes only");
   check((await rows(`select id from public.person_kept('ece')`)).length === 0, "a friend who keeps them private: nothing");
-  check((await rows(`select id from public.person_kept('ahmet')`)).length === 1, "mine");
+  check((await rows(`select id from public.person_kept('ada')`)).length === 1, "mine");
   check((await rows(`select id from public.person_kept('cansu')`)).length === 0, "a stranger: nothing");
 }
 
@@ -77,8 +77,8 @@ console.log("\n— their people —");
 {
   await asUser(A);
   const b = (await rows(`select handle from public.person_people('berk')`)).map((r) => r.handle);
-  check(b.join(",") === "ahmet,cansu", "a friend: their confirmed friends", b.join(","));
-  const me = (await rows(`select handle from public.person_people('ahmet')`)).map((r) => r.handle);
+  check(b.join(",") === "ada,cansu", "a friend: their confirmed friends", b.join(","));
+  const me = (await rows(`select handle from public.person_people('ada')`)).map((r) => r.handle);
   check(me.join(",") === "berk,ece", "mine, both directions", me.join(","));
   check((await rows(`select handle from public.person_people('cansu')`)).length === 0, "a stranger: nothing");
 }

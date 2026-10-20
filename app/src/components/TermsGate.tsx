@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Linking, Modal, Pressable, StyleSheet, Text, View } from 'react-native';
+import { serverText } from '@/lib/serverText';
+import { Alert, Linking, Modal, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Button from '@/components/Button';
 import { useAuth } from '@/auth/AuthContext';
-import { PRIVACY_URL, TERMS_URL, acceptTerms, accountStatus, termsAccepted, termsKnown } from '@/data/safety';
+import { PRIVACY_URL, TERMS_URL, acceptTerms, accountStatus, deleteEverything, myAppeal, sendAppeal, termsAccepted, termsKnown, type MyAppeal } from '@/data/safety';
+import { exportToFile } from '@/data/settings';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -28,6 +30,28 @@ export default function TermsGate() {
   const [adult, setAdult] = useState(false);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  // The objection (85_appeals.sql): what was sent before, or the box to write one.
+  const [appeal, setAppeal] = useState<MyAppeal | null | undefined>(undefined);
+  const [plea, setPlea] = useState('');
+
+  useEffect(() => {
+    if (!shut) return;
+    let live = true;
+    myAppeal().then((a) => live && setAppeal(a));
+    return () => {
+      live = false;
+    };
+  }, [shut]);
+
+  const object = () => {
+    if (busy || plea.trim().length < 20) return;
+    setBusy(true);
+    setErr(null);
+    sendAppeal(plea.trim())
+      .then(() => setAppeal({ sent_at: new Date().toISOString(), outcome: null, settled_at: null }))
+      .catch((e) => setErr(serverText(e)))
+      .finally(() => setBusy(false));
+  };
 
   useEffect(() => {
     if (!uid) return;
@@ -53,7 +77,7 @@ export default function TermsGate() {
     setErr(null);
     acceptTerms(uid)
       .then(() => setAskFor(null))
-      .catch((e) => setErr(String(e?.message ?? e).toLowerCase()))
+      .catch((e) => setErr(serverText(e)))
       .finally(() => setBusy(false));
   };
 
@@ -64,8 +88,55 @@ export default function TermsGate() {
           <Text style={styles.title}>{t('closed.title')}</Text>
           <Text style={styles.body}>{t('closed.body')}</Text>
           {closed?.reason ? <Text style={styles.checkText}>“{closed.reason}”</Text> : null}
+          {/* One objection, read by the staff in the panel (F16, 20.10.2026). */}
+          {appeal === undefined ? null : appeal && appeal.outcome === null ? (
+            <Text style={styles.body}>{t('closed.appeal.sent')}</Text>
+          ) : appeal && appeal.outcome === 'keep' ? (
+            <Text style={styles.body}>{t('closed.appeal.no')}</Text>
+          ) : (
+            <View style={styles.plea}>
+              <Text style={styles.body}>{t('closed.appeal.hint')}</Text>
+              <TextInput
+                value={plea}
+                onChangeText={setPlea}
+                placeholder={t('closed.appeal')}
+                placeholderTextColor={colors.mute}
+                multiline
+                maxLength={600}
+                style={styles.pleaBox}
+              />
+              {err ? <Text style={styles.err}>{err}</Text> : null}
+              <View style={plea.trim().length < 20 ? styles.off : undefined}>
+                <PillAction wide icon="out" label={busy ? '…' : t('closed.appeal.send')} onPress={object} />
+              </View>
+            </View>
+          )}
           <View style={{ flex: 1 }} />
-          <PillAction icon="link" label={t('terms.read')} onPress={() => Linking.openURL(TERMS_URL)} />
+          {/* A closed account still owns its data: the export and the deletion stay within
+              reach (Apple 5.1.1(v), GDPR; F17, 20.10.2026). */}
+          <PillRow>
+            <PillAction icon="link" label={t('terms.read')} onPress={() => Linking.openURL(TERMS_URL)} />
+            <PillAction icon="out" label={t('settings.export')} onPress={() => exportToFile().catch((e) => Alert.alert(t('settings.export.failed'), serverText(e)))} />
+          </PillRow>
+          <View style={{ height: 12 }} />
+          <PillAction
+            wide
+            icon="out"
+            label={t('settings.delete')}
+            onPress={() =>
+              Alert.alert(t('settings.delete'), t('closed.delete.body'), [
+                { text: t('word.cancel'), style: 'cancel' },
+                {
+                  text: t('settings.delete'),
+                  style: 'destructive',
+                  onPress: () =>
+                    deleteEverything()
+                      .then((done) => (done ? signOut() : undefined))
+                      .catch((e) => Alert.alert(t('settings.delete.failed'), serverText(e))),
+                },
+              ])
+            }
+          />
           <View style={{ height: 24 }} />
           <Button label={t('closed.leave')} onPress={() => signOut()} />
         </View>
@@ -114,4 +185,6 @@ const styles = StyleSheet.create({
   off: { opacity: 0.4 },
   err: { fontFamily: fonts.regular, fontSize: 13, color: colors.spotText, marginBottom: 10 },
   leave: { marginTop: 12 },
+  plea: { marginTop: 10, gap: 10 },
+  pleaBox: { minHeight: 96, paddingVertical: 12, paddingHorizontal: 14, borderWidth: 1, borderColor: colors.mute, borderRadius: radius.sm, fontFamily: fonts.regular, fontSize: 15, lineHeight: 22, color: colors.paper, textAlignVertical: 'top' },
 });

@@ -4,7 +4,7 @@ import { AppState, KeyboardAvoidingView, Linking, Modal, Pressable, StyleSheet, 
 import { Image } from 'expo-image';
 import * as Location from 'expo-location';
 import AfterhoursCard from '@/components/AfterhoursCard';
-import { checkIn, myCards, reasonCode, reasons, roomInfo, toCardData, type CardRow, type RoomInfo } from '@/data/checkin';
+import { checkIn, checkOut, myCards, reasonCode, reasons, roomInfo, toCardData, type CardRow, type RoomInfo } from '@/data/checkin';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -298,7 +298,7 @@ export default function NightScreen() {
             {note ? <Text style={styles.mono}>{up(words(note))}</Text> : null}
             {room ? <Text style={styles.mono}>{up(tn('night.checkedin', room.who_count))}</Text> : null}
 
-            {/* Nudge a friend about this night (Ahmet, 12.10.2026): a direct message with the link. */}
+            {/* Nudge a friend about this night (owner, 12.10.2026): a direct message with the link. */}
             {session && !isAnonymous ? (
               <View style={styles.nudgeRow}>
                 <PillAction label={nudged ? t('night.nudged', { name: nudged }) : t('night.nudge')} onPress={() => setNudging(true)} />
@@ -374,6 +374,25 @@ export default function NightScreen() {
           >
             <Text style={styles.roomBtnText}>{t('night.openroom')}</Text>
           </Pressable>
+          {/* Within the hour the check-in can be taken back (88_checkin_truth.sql); after it
+              the server answers "toolate" and the note says the card stays. */}
+          {card && !card.waiting ? (
+            <View style={styles.undoRow}>
+              <PillAction
+                icon="out"
+                label={t('checkin.undo')}
+                onPress={() => {
+                  if (!night) return;
+                  checkOut(night.slug)
+                    .then(async () => {
+                      setCard(null);
+                      setRoom(await roomInfo(night.slug));
+                    })
+                    .catch((e) => setNote(reasonCode(e)));
+                }}
+              />
+            </View>
+          ) : null}
         </Pressable>
       </Modal>
       {!night && (
@@ -456,4 +475,5 @@ const styles = StyleSheet.create({
   sendText: { fontFamily: fonts.medium, fontSize: 13, color: colors.ink },
   roomBtn: { backgroundColor: colors.paper, paddingVertical: 10, paddingHorizontal: 20, borderRadius: radius.pill },
   roomBtnText: { fontFamily: fonts.medium, fontSize: 14, color: colors.ink },
+  undoRow: { marginTop: 14 },
 });

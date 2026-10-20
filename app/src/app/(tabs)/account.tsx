@@ -24,7 +24,8 @@ import { Image } from 'expo-image';
 import { dayLabel } from '@/data/when';
 import type { Night } from '@/data/deck';
 import { sparkOf } from '@/content/sparks';
-import { collection as samples } from '@/content/collection';
+import { collection as sampleCards } from '@/content/collection';
+import { SAMPLES } from '@/content/samples';
 import { myCards, toCardData, type CardRow } from '@/data/checkin';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { isStaff, useRole } from '@/data/staff';
@@ -104,6 +105,7 @@ export default function AccountScreen() {
   }, [uid, tick]);
   // Real cards; samples (labelled at the top right) when there are none.
   const real = cards && cards.length > 0;
+  const samples: NightCardData[] = SAMPLES ? sampleCards : [];
   const collection: NightCardData[] = real ? cards.map(toCardData) : samples;
   const cities = real ? distinct(cards.map((c) => c.city_name)) : distinct(samples.map((c) => c.city));
 
@@ -202,7 +204,7 @@ export default function AccountScreen() {
             <View style={styles.dot} />
           </View>
           <Text style={[styles.small, styles.onInkSmall]} numberOfLines={1}>
-            {up(real ? `${tn('account.nNights', collection.length)} · ${tn('account.nCities', cities)}` : t('account.deck.sample'))}
+            {up(real ? `${tn('account.nNights', collection.length)} · ${tn('account.nCities', cities)}` : (samples.length ? t('account.deck.sample') : t('account.deck.empty')))}
           </Text>
         </View>
 
@@ -228,7 +230,7 @@ export default function AccountScreen() {
             <Text style={[styles.small, styles.onInkSmall]}>{up(`${tn('account.nKept', profile?.kept_count ?? 0)} · ${tn('account.nFriends', profile?.friend_count ?? 0)}`)}</Text>
           ) : null}
         </View>
-        {/* Edit profile under the collection (Ahmet, 12.10.2026): the first screen is you and your cards. */}
+        {/* Edit profile under the collection (owner, 12.10.2026): the first screen is you and your cards. */}
         <Pressable
           onPress={() => router.push(signedIn ? '/profile' : '/signup')}
           style={({ pressed }) => [styles.button, styles.buttonInk, pressed && styles.pressed]}
@@ -280,7 +282,7 @@ export default function AccountScreen() {
                   const total = Math.max(1, sp.invited);
                   return (
                     <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.spark, k === 0 && styles.sparkFirst, pressed && styles.pressed]} accessibilityRole="button">
-                      <Image source={sparkOf(sp.kind).photo} style={styles.sparkPhoto} contentFit="cover" />
+                      <Image source={sparkOf(sp.kind).thumb} style={styles.sparkPhoto} contentFit="cover" />
                       <View style={styles.sparkText}>
                         <Text style={styles.sparkTitle} numberOfLines={1}>{sp.title.toLowerCase()}</Text>
                         <Text style={styles.sparkMeta} numberOfLines={1}>{up(at(sp.starts_at))}{sp.place ? ` · ${upperData(sp.place)}` : ''}</Text>

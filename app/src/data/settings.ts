@@ -1,3 +1,6 @@
+import { Platform } from 'react-native';
+import { File, Paths } from 'expo-file-system';
+import * as Sharing from 'expo-sharing';
 import { supabase } from '@/lib/supabase';
 import { must, remember, send } from '@/lib/offline';
 
@@ -59,6 +62,27 @@ export async function exportMe(): Promise<string> {
   const { data, error } = await supabase.rpc('export_me');
   if (error) throw error;
   return JSON.stringify(data, null, 2);
+}
+
+// "download my data": the export as a file in your hands, not a number on a screen
+// (F2, 20.10.2026). On the phone it is written to the cache and handed to the share
+// sheet (Files, Drive, mail); in the browser it downloads. Returns the file name.
+export async function exportToFile(): Promise<string> {
+  const json = await exportMe();
+  const name = `afterhours-${new Date().toISOString().slice(0, 10)}.json`;
+  if (Platform.OS === 'web') {
+    const url = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = name;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 10_000);
+    return name;
+  }
+  const file = new File(Paths.cache, name);
+  file.write(json);
+  await Sharing.shareAsync(file.uri, { mimeType: 'application/json', dialogTitle: name, UTI: 'public.json' });
+  return name;
 }
 
 // 41_account_types.sql + 42_staff.sql. The code (the name the list shows) switches

@@ -1,6 +1,7 @@
 import { SITE } from '@/data/deck';
+import { serverText } from '@/lib/serverText';
 import { useEffect, useState } from 'react';
-import { Alert, Linking, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Alert, Linking, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import Constants, { ExecutionEnvironment } from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -19,9 +20,11 @@ import { useProfile } from '@/data/profile';
 import { myBlocks, unblockUser, type Blocked } from '@/data/friends';
 import DoorCode from '@/components/DoorCode';
 import { resetTips } from '@/components/Tips';
-import { changeEmail, changePassword, deleteEverything } from '@/data/safety';
+import { changeEmail, changePassword, deleteEverything, hasPassword, reauth } from '@/data/safety';
+import { exportToFile } from '@/data/settings';
+import { POSTS_ON } from '@/content/flags';
 import CodeSheet from '@/components/CodeSheet';
-import { ACCOUNT_TYPES, exportMe, fetchSettings, saveSettings, setAccountType, type AccountType, type Settings } from '@/data/settings';
+import { ACCOUNT_TYPES, fetchSettings, saveSettings, setAccountType, type AccountType, type Settings } from '@/data/settings';
 import { isStaff, refreshRole, useRole } from '@/data/staff';
 import { pushStatus, registerPush, type PushStatus } from '@/lib/push';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
@@ -69,7 +72,7 @@ const NOTIFY = [
     title: 'notify.together',
     rows: [
       { key: 'notify_groups', label: 'notify.groups', hint: 'notify.groups.hint' },
-      { key: 'notify_posts', label: 'notify.posts', hint: 'notify.posts.hint' },
+      ...(POSTS_ON ? [{ key: 'notify_posts', label: 'notify.posts', hint: 'notify.posts.hint' } as const] : []),
       { key: 'notify_dms', label: 'notify.dms', hint: 'notify.dms.hint' },
     ],
   },
@@ -92,17 +95,26 @@ export default function SettingsScreen() {
   const [settings, setSettings] = useState<Settings | null>(null);
   const [sheet, setSheet] = useState<'sound' | 'locale' | 'kept' | 'type' | 'accent' | null>(null);
   // Changing the sign-in (53): the field being asked for, and what came back.
-  const [ask, setAsk] = useState<'email' | 'password' | null>(null);
+  // current: the old password before a new one; verify: the password before deleting (F19).
+  const [ask, setAsk] = useState<'email' | 'password' | 'current' | 'verify' | null>(null);
   const [askError, setAskError] = useState<string | null>(null);
   const submitAsk = (value: string) => {
     const kind = ask;
     setAskError(null);
+    if (kind === 'current') {
+      reauth(value).then(() => setAsk('password'), (e) => setAskError(serverText(e)));
+      return;
+    }
+    if (kind === 'verify') {
+      reauth(value).then(() => { setAsk(null); confirmDelete(); }, (e) => setAskError(serverText(e)));
+      return;
+    }
     (kind === 'email' ? changeEmail(value) : changePassword(value)).then(
       () => {
         setAsk(null);
         Alert.alert(t(kind === 'email' ? 'settings.email.sent' : 'settings.password.done'));
       },
-      (e) => setAskError(String(e?.message ?? e).toLowerCase()),
+      (e) => setAskError(serverText(e)),
     );
   };
   // admin and community manager are given (42_staff.sql); the code only switches user ↔ dj.
@@ -141,7 +153,7 @@ export default function SettingsScreen() {
         onPress: () =>
           unblockUser(b.id)
             .then(() => setBlocked((cur) => (cur ?? []).filter((x) => x.id !== b.id)))
-            .catch((e) => Alert.alert(t('block.failed'), String(e.message ?? e).toLowerCase())),
+            .catch((e) => Alert.alert(t('block.failed'), serverText(e))),
       },
     ]);
   };
@@ -172,7 +184,7 @@ export default function SettingsScreen() {
         refreshRole().catch(() => {});
         setWanted(null);
       })
-      .catch((e) => setCodeError(String(e.message ?? e).toLowerCase()));
+      .catch((e) => setCodeError(serverText(e)));
   };
 
   const confirmDelete = () =>
@@ -187,14 +199,14 @@ export default function SettingsScreen() {
           removePhoto()
             .then(() => deleteEverything())
             .then((done) => (done ? signOut().then(() => router.replace('/')) : undefined))
-            .catch((e) => Alert.alert(t('settings.delete.failed'), String(e.message ?? e).toLowerCase())),
+            .catch((e) => Alert.alert(t('settings.delete.failed'), serverText(e))),
       },
     ]);
 
   const doExport = () =>
-    exportMe()
-      .then((json) => Alert.alert(t('settings.export.title'), t('settings.export.body', { kb: (json.length / 1024).toFixed(1) })))
-      .catch((e) => Alert.alert(t('settings.export.failed'), String(e.message ?? e).toLowerCase()));
+    exportToFile()
+      .then((name) => Platform.OS === 'web' && Alert.alert(t('settings.export.title'), t('settings.export.body', { name })))
+      .catch((e) => Alert.alert(t('settings.export.failed'), serverText(e)));
 
   const soundName = genres.find((g) => g.id === ambient.genre)?.label ?? ambient.genre;
   const hidden = settings?.kept_visibility === 'private';
@@ -338,7 +350,7 @@ export default function SettingsScreen() {
             right={<Value text={session?.user.email ?? (isAnonymous ? t('word.guest') : t('word.none'))} more={!!session && !isAnonymous} />}
             onPress={session && !isAnonymous ? () => setAsk('email') : undefined}
           />
-          {session && !isAnonymous ? <Row label={t('settings.password')} hint={t('settings.password.hint')} right={<Mark kind="more" />} onPress={() => setAsk('password')} /> : null}
+          {session && !isAnonymous ? <Row label={t('settings.password')} hint={t('settings.password.hint')} right={<Mark kind="more" />} onPress={() => hasPassword().then((has) => setAsk(has ? 'current' : 'password'))} /> : null}
           {session && !isAnonymous ? (
             <Row
               label={t('settings.type')}
@@ -352,6 +364,7 @@ export default function SettingsScreen() {
           ) : null}
           {session ? <Row label={t('settings.export')} hint={t('settings.export.hint')} right={<Mark kind="more" />} onPress={doExport} /> : null}
           {session && !isAnonymous ? <Row label={t('word.signout')} onPress={() => signOut().then(forgetPhoto).then(() => router.replace('/'))} /> : null}
+          {session && !isAnonymous ? <Row label={t('settings.signout.all')} hint={t('settings.signout.all.hint')} onPress={() => signOut(true).then(forgetPhoto).then(() => router.replace('/'))} /> : null}
           {!session ? <Row label={t('word.signup')} right={<Mark kind="more" />} onPress={() => router.push('/signup')} /> : null}
           {isAnonymous ? (
             <Row
@@ -370,7 +383,7 @@ export default function SettingsScreen() {
         {/* Deletion sits in its own box in red, so it is never tapped by accident. */}
         {session ? (
           <Panel>
-            <Row danger label={t('settings.delete')} hint={t('settings.delete.hint')} onPress={confirmDelete} />
+            <Row danger label={t('settings.delete')} hint={t('settings.delete.hint')} onPress={() => hasPassword().then((has) => (has ? setAsk('verify') : confirmDelete()))} />
           </Panel>
         ) : null}
 
@@ -396,6 +409,9 @@ export default function SettingsScreen() {
               Alert.alert(t('tips.reset'), t('tips.reset.done'));
             }}
           />
+          {/* The site's help and feedback pages had no way in from the app (C5, 20.10.2026). */}
+          <Row label={t('settings.help')} hint={t('settings.help.hint')} right={<Mark kind="out" />} onPress={() => Linking.openURL(SITE + 'help/')} />
+          <Row label={t('settings.feedback')} hint={t('settings.feedback.hint')} right={<Mark kind="out" />} onPress={() => Linking.openURL(SITE + 'feedback/')} />
           <Row label={t('settings.web')} hint={t('settings.web.hint')} right={<Mark kind="out" />} onPress={() => Linking.openURL(SITE)} />
           <Row label={t('settings.credits')} hint={t('settings.credits.hint')} right={<Mark kind="more" />} onPress={() => router.push('/credits')} />
           <Row label={t('settings.privacy.link')} hint={t('settings.privacy.hint')} right={<Mark kind="out" />} onPress={() => Linking.openURL('https://kurtkurtkurt-del.github.io/afterhours/datenschutz/')} />
@@ -477,10 +493,10 @@ export default function SettingsScreen() {
       <CodeSheet
         key={ask ?? 'shut'}
         open={ask !== null}
-        title={ask === 'email' ? t('settings.email.new') : t('settings.password.new')}
+        title={ask === 'email' ? t('settings.email.new') : ask === 'current' ? t('settings.password.current') : ask === 'verify' ? t('settings.delete.verify') : t('settings.password.new')}
         go={t('word.save')}
         error={askError}
-        secure={ask === 'password'}
+        secure={ask !== 'email'}
         keyboardType={ask === 'email' ? 'email-address' : 'default'}
         onSubmit={submitAsk}
         onClose={() => {

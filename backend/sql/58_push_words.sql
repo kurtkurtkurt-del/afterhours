@@ -106,7 +106,7 @@ begin
   ) as x(kind, lang, title, body)
   where x.kind = p_kind and x.lang = coalesce(nullif(p_lang, ''), 'en');
 
-  -- The words of a member never reach a lock screen (the decision of Ahmet, 11.10.2026): what the
+  -- The words of a member never reach a lock screen (the decision of owner, 11.10.2026): what the
   -- triggers still pass as text is dropped here, whatever the caller.
   for pair in select * from jsonb_each_text(coalesce(p_data, '{}') - 'text') loop
     title := replace(title, '{' || pair.key || '}', coalesce(pair.value, ''));
@@ -117,7 +117,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('58_push_words.sql', '72170a2f1792910b26a1499e6b3c4a62421fa14729ca27caf674c4c1b996a948');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('58_push_words.sql');
   end if;
 end $$;

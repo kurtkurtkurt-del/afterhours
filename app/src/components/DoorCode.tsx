@@ -15,7 +15,7 @@ export default function DoorCode({ open, title, error, onSubmit, onClose }: {
   onSubmit: (code: string) => void;
   onClose: () => void;
 }) {
-  const { up } = useLang();
+  const { t, up } = useLang();
   const insets = useSafeAreaInsets();
   const [code, setCode] = useState('');
   const input = useRef<TextInput>(null);
@@ -56,10 +56,10 @@ export default function DoorCode({ open, title, error, onSubmit, onClose }: {
             <Pressable onPress={() => setCode((c) => c.slice(0, -1))} style={({ pressed }) => [styles.key, pressed && styles.pressed]} accessibilityLabel="⌫">
               <Text style={styles.keyText}>⌫</Text>
             </Pressable>
-            <Pressable onPress={() => setCode((c) => c + ' ')} style={({ pressed }) => [styles.key, pressed && styles.pressed]} accessibilityLabel="space">
+            <Pressable onPress={() => setCode((c) => c + ' ')} style={({ pressed }) => [styles.key, pressed && styles.pressed]} accessibilityLabel={t('door.space')}>
               <Text style={styles.keyText}>␣</Text>
             </Pressable>
-            <Pressable onPress={() => onSubmit(code)} style={({ pressed }) => [styles.key, styles.enter, pressed && styles.pressed]} accessibilityLabel="enter">
+            <Pressable onPress={() => onSubmit(code)} style={({ pressed }) => [styles.key, styles.enter, pressed && styles.pressed]} accessibilityLabel={t('door.enter')}>
               <Text style={styles.keyText}>↵</Text>
             </Pressable>
           </View>

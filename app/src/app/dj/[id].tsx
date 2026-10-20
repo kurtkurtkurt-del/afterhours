@@ -90,6 +90,9 @@ export default function DjScreen() {
           </View>
         </View>
 
+        {/* What the DJ wrote about themselves (42_staff.sql dj_save_mine; shown since F25, 20.10.2026) */}
+        {dj.bio ? <Text style={styles.bio}>{dj.bio}</Text> : null}
+
         {/* Small photos */}
         <View style={styles.strip}>
           {photos.map((p, i) => (
@@ -145,6 +148,7 @@ const styles = StyleSheet.create({
   heroText: { position: 'absolute', left: brand.left, right: brand.left, bottom: 18, gap: 5 },
   name: { fontFamily: fonts.medium, fontSize: 40, lineHeight: 42, letterSpacing: -1.4, color: colors.paper },
   mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
+  bio: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 22, color: colors.mute, paddingHorizontal: brand.left, marginTop: 18, marginBottom: 10 },
   strip: { flexDirection: 'row', gap: 4, paddingHorizontal: brand.left, marginTop: 4 },
   small: { flex: 1, aspectRatio: 1, backgroundColor: colors.ink2, borderRadius: radius.md, overflow: 'hidden' },
   head: { flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: brand.left, marginTop: 28, marginBottom: 10 },

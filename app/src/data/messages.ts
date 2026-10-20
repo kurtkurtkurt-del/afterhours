@@ -1,7 +1,7 @@
 import Storage from 'expo-sqlite/kv-store';
 import { myCards, type CardRow } from '@/data/checkin';
 import { groupThread, myGroups, type GroupRow, type Line } from '@/data/groups';
-import { dmList, type DmThread } from '@/data/dms';
+import { dmList, dmSeen, type DmThread } from '@/data/dms';
 
 // Messages (11.10.2026): the rooms, the group chats and the direct messages in one list, with what is new.
 // What you have seen is kept on the phone (kv-store), not on the server: a room's line
@@ -24,7 +24,10 @@ const write = (key: string, n: number) => {
 };
 export const markRoomSeen = (slug: string, lines: number) => write(roomKey(slug), lines);
 export const markGroupSeen = (id: string, lastLine: number) => write(groupKey(id), lastLine);
-export const markDmSeen = (id: string, lastLine: number) => write(dmKey(id), lastLine);
+export const markDmSeen = (id: string, lastLine: number) => {
+  write(dmKey(id), lastLine);
+  dmSeen(id, lastLine);
+};
 
 export type GroupChat = { g: GroupRow; last: Line | null; unread: number };
 export type Dm = DmThread & { unread: number };
@@ -42,7 +45,8 @@ export async function inbox(): Promise<Inbox> {
     dmList().catch(() => [] as DmThread[]),
   ]);
   // a direct thread: one unread when its last line is not mine and newer than what I saw
-  const dms: Dm[] = threads.map((t) => ({ ...t, unread: t.last_id && !t.last_mine && t.last_id > read(dmKey(t.id)) ? 1 : 0 }));
+  // the server's count since 90_dm_seen.sql; the phone's own mark before that
+  const dms: Dm[] = threads.map((t) => ({ ...t, unread: typeof t.unread === 'number' ? t.unread : t.last_id && !t.last_mine && t.last_id > read(dmKey(t.id)) ? 1 : 0 }));
   const chats = await Promise.all(
     groups
       .filter((g) => !g.archived)

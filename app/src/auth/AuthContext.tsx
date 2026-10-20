@@ -4,6 +4,8 @@ import { supabase } from '@/lib/supabase';
 import { forgetCache, isNetworkError } from '@/lib/offline';
 import { LargeSecureStore } from '@/lib/secureStorage';
 import { unregisterPush } from '@/lib/push';
+import { mergeGuest, rememberGuest } from '@/data/safety';
+import { serverText } from '@/lib/serverText';
 import { t } from '@/i18n/core';
 import type { Key } from '@/i18n/dict';
 
@@ -24,7 +26,7 @@ type Auth = {
   // Browsing without an account: a device-bound anonymous user whose swipes are upgraded later.
   signInAsGuest: () => Promise<string | null>;
   resetPassword: (email: string) => Promise<string | null>;
-  signOut: () => Promise<void>;
+  signOut: (everywhere?: boolean) => Promise<void>;
 };
 
 const Ctx = createContext<Auth>({
@@ -78,8 +80,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const signIn = useCallback(async (email: string, password: string) => {
     const bad = checkEmail(email);
     if (bad) return bad;
-    const { error } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
-    return error ? plain(error.message) : null;
+    const { data, error } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
+    if (error) return plain(error.message);
+    // Swipes made as a guest before this sign-in come along (80_guest_merge.sql).
+    if (data.user) mergeGuest(data.user.id).catch(() => {});
+    return null;
   }, []);
 
   const signUp = useCallback(
@@ -93,6 +98,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const { data, error } = await supabase.auth.updateUser({ email: email.trim(), password }, { emailRedirectTo: CONFIRM_URL });
         if (error) {
           if (/already|registered|exists/i.test(error.message)) {
+            // Sign-in will replace this session; the guest id survives on the phone (80_guest_merge.sql).
+            rememberGuest(cur.session.user.id);
             return t('auth.exists');
           }
           return plain(error.message);
@@ -127,11 +134,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return error ? plain(error.message) : null;
   }, []);
 
-  const signOut = useCallback(async () => {
+  // everywhere: every phone and browser signed in to the account loses its session (F19).
+  const signOut = useCallback(async (everywhere = false) => {
     const { data } = await supabase.auth.getSession();
     // Stop this phone receiving the account's notifications while the session still works.
     await unregisterPush();
-    await supabase.auth.signOut();
+    await supabase.auth.signOut(everywhere ? { scope: 'global' } : undefined);
     // Drop this account's cached copies from the phone (someone else may use it).
     if (data.session) forgetCache(data.session.user.id);
   }, []);
@@ -170,6 +178,6 @@ const known: [RegExp, Key][] = [
 // lower-cased to match the interface.
 export function authMessage(m: string) {
   const hit = known.find(([re]) => re.test(m));
-  return hit ? t(hit[1]) : m.charAt(0).toLowerCase() + m.slice(1);
+  return hit ? t(hit[1]) : serverText(m);
 }
 const plain = authMessage;

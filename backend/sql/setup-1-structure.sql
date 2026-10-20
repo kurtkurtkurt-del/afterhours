@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-20 06:50   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-20 16:36   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -192,7 +192,7 @@ create table if not exists public.profiles (
   id            uuid primary key references auth.users on delete cascade,
   handle        text unique,
   display_name  text,
-  -- the right to write events comes from here. True for Ahmet only.
+  -- the right to write events comes from here. True for owner only.
   is_admin      boolean not null default false,
   created_at    timestamptz not null default now()
 );
@@ -338,7 +338,9 @@ create trigger on_auth_user_created
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('01_schema.sql', '6db5fb87381f3f6e526baafd27fe26de66e3c7cf07ab6f70b39c5c4df30c4aaf');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('01_schema.sql');
   end if;
 end $$;
@@ -595,7 +597,9 @@ grant insert, update, delete on public.cities, public.event_types,
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('02_rls.sql', '7a25fb9614f16ecda40d256ac2e47118f2eb534d11d689bcf286d1d32325c0ee');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('02_rls.sql');
   end if;
 end $$;
@@ -714,7 +718,9 @@ on conflict (city_id, slug) do nothing;
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('03_seed_catalog.sql', 'a102818627540fe0d67e2ffaaae01c1304b648becc6e3073ad1633ec0188e285');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('03_seed_catalog.sql');
   end if;
 end $$;
@@ -1154,7 +1160,9 @@ on conflict (slug) do nothing;
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('04_seed_events.sql', '08f1b14f3204cb224c04560f90c0a4be35c5b54c8a6eeeeaf5125f90f2fc4123');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('04_seed_events.sql');
   end if;
 end $$;
@@ -1457,7 +1465,9 @@ grant select on public.events_public, public.comments_public to anon, authentica
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('06_views.sql', '21b58172054af3d9589873a119e22cf1466e70c8a991826f8f4b23fb4a4141ec');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('06_views.sql');
   end if;
 end $$;
@@ -1573,7 +1583,9 @@ grant execute on function public.friend_remove(uuid)     to authenticated;
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('07_friends.sql', 'a27ad77fe80fb499aac823f74e4bfa2038b774990cae105e839c926571a277cc');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('07_friends.sql');
   end if;
 end $$;
@@ -1636,7 +1648,9 @@ $$;
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('08_storage.sql', 'dc9cf4d0234f2ff473ff628d13258e2a8c05d14d0d690b063523cf2c600b31c9');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('08_storage.sql');
   end if;
 end $$;
@@ -1738,7 +1752,9 @@ $$;
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('09_jobs.sql', 'ccef9d46b66b63da9bdae6308b5048818171e6ece9006ce66537522fbae90030');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('09_jobs.sql');
   end if;
 end $$;
@@ -2897,7 +2913,9 @@ on conflict (slug) do nothing;
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('11_world.sql', '48e0112af2221902c7fcb5d0723a3a0f506c2a2b748beab08715a86fc65b1051');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('11_world.sql');
   end if;
 end $$;
@@ -3435,7 +3453,9 @@ grant execute on function public.delete_account()                      to authen
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('12_profiles.sql', '52f6bf13db94ca027ad9b623bb532d4e4d5956db572c73382787ace80b4cf1b0');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('12_profiles.sql');
   end if;
 end $$;
@@ -3525,7 +3545,9 @@ grant execute on function public.feedback_list(int) to authenticated;
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('13_feedback.sql', 'dea8158134bc7c0ce4786a39a1f7a9f11a5873d90caae10dc3fa604cd49f7cd2');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('13_feedback.sql');
   end if;
 end $$;
@@ -3624,7 +3646,9 @@ grant execute on function public.export_me() to authenticated;
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('14_export.sql', '6c42d037a8d8af5cf230e0832ee2cb6adde149e91c42127f2aa8ade0a997479a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('14_export.sql');
   end if;
 end $$;
@@ -3797,7 +3821,9 @@ grant execute on function public.friends_kept(int)     to authenticated;
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('15_ticketmaster.sql', '19395a7080f04915970864ca82a17a419dbfaa3771393edbf35ffccff81125db');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('15_ticketmaster.sql');
   end if;
 end $$;
@@ -3940,7 +3966,9 @@ where c.continent_slug not in ('eu', 'as', 'na')
 -- Stamp the migration log, if it is there. Each numbered file still runs on
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('16_coverage.sql', 'e99e9d89a3c29bd7e2a68e3db1818e0dc8de82565f4b1fe10a7d1816d795c667');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('16_coverage.sql');
   end if;
 end $$;
@@ -4108,7 +4136,9 @@ grant execute on function public.profile_kept(text)  to anon, authenticated;
 
 -- Stamp the migration log, if it is there.
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('17_real_people.sql', '68427f8d1536603cd4b47b493a9366166812d97a8cbd3ae4808e6e07b3a6c1c7');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('17_real_people.sql');
   end if;
 end $$;
@@ -4224,7 +4254,9 @@ grant execute on function public.nights_near(double precision, double precision,
   to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('18_geo.sql', '845448c0da357dbe8834a5e72d1638b284b6c8fc39fbb4d71b64ee4fa94b06c5');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('18_geo.sql');
   end if;
 end $$;
@@ -4577,7 +4609,9 @@ grant select, update on public.checkins to authenticated;
 grant select, insert, delete on public.room_posts to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('19_checkins.sql', '20c26372a269344c166562e355958ef7a756774194c77e03adf674cf596b4b73');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('19_checkins.sql');
   end if;
 end $$;
@@ -4690,7 +4724,9 @@ where not exists (
 );
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('20_djs.sql', 'bd2925223d53fe72984c69828aa1921f90eea3cdb8959f07ff286642360a1571');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('20_djs.sql');
   end if;
 end $$;
@@ -4731,7 +4767,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('21_sound.sql', 'c58aeea48ea9d4e75ffee9a89e9009c82ec28c255a35f018b7ab1c8089f610b8');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('21_sound.sql');
   end if;
 end $$;
@@ -4980,7 +5018,9 @@ as $$
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('22_hardening.sql', '5eaab7682fd89f3291aef571b15fda540f691f9c6631d7fcc7f41011dfd51015');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('22_hardening.sql');
   end if;
 end $$;
@@ -5026,7 +5066,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('23_checkin_open.sql', 'd14b387bd619ea2e5ea761c4c191d6392275e8c1e16c2c130b10ad89cb765a59');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('23_checkin_open.sql');
   end if;
 end $$;
@@ -5180,7 +5222,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('24_photos.sql', '47f14362b094dfdfe7f59a054aedb705d0b2bc4fd310b131bcb7afa8986d0ce1');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('24_photos.sql');
   end if;
 end $$;
@@ -5345,7 +5389,9 @@ grant execute on function public.people_search(text, int)    to authenticated;
 grant execute on function public.people_suggested(int)       to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('25_people.sql', '4881b3365b5165d7527cd2210d01d09d26b2196cee59b2c3ea211bfb5817e9fb');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('25_people.sql');
   end if;
 end $$;
@@ -6122,7 +6168,9 @@ revoke execute on function public.push_prune()                           from pu
 revoke execute on function public.push_hourly(timestamptz)               from public, anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('26_push.sql', '3bb69fa2d92d5a3a13e8476335a8d2b63334576a944ebf6dfc9fbcac1f64336d');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('26_push.sql');
   end if;
 end $$;
@@ -6345,7 +6393,9 @@ grant execute on function public.spark_mine()                                   
 grant execute on function public.spark_cancel(uuid)                                   to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('27_sparks.sql', '27cfc3c6b692e2e458aad2c909c131e233de71539ebf53312fa972d00a981ffb');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('27_sparks.sql');
   end if;
 end $$;
@@ -6579,7 +6629,9 @@ grant execute on function public.spark_answer(uuid, text)                       
 grant execute on function public.spark_mine()                                       to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('28_spark_waves.sql', '06299f66604c846e9f1257e5f57b60e557112216921aa35615c8cf1bf0af0821');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('28_spark_waves.sql');
   end if;
 end $$;
@@ -6745,7 +6797,9 @@ grant execute on function public.profile_links_set(jsonb)  to authenticated;
 grant execute on function public.profile_extra(text)       to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('29_profile_more.sql', '26a155be94d9d4347110e4a0585f9fe7fc2425f58fb2b251d8e35e69b696e84a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('29_profile_more.sql');
   end if;
 end $$;
@@ -6922,7 +6976,9 @@ grant execute on function public.sparks_near(double precision, double precision,
 grant execute on function public.spark_get(uuid)                                                                       to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('30_spark_map.sql', 'bd78b55bbfa774153349f89e8f3918e726f53e1b223c17d24b9d93387f42e601');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('30_spark_map.sql');
   end if;
 end $$;
@@ -7020,7 +7076,9 @@ revoke execute on function public.past_feed(text, timestamptz, uuid, int) from p
 grant execute on function public.past_feed(text, timestamptz, uuid, int) to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('31_past_feed.sql', 'bb1fa6b0708e370eaa850822fd850d3b9fb04cb3b663cd8bba3bd1d62957d693');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('31_past_feed.sql');
   end if;
 end $$;
@@ -7103,7 +7161,9 @@ grant execute on function public.rsvp_set(uuid, text) to authenticated;
 grant execute on function public.rsvp_for(uuid[])     to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('32_rsvp.sql', 'fc4b2a54d1022c7c69ee67d70656026c078cf9cc2dfcc8b280a371ad5dd133e1');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('32_rsvp.sql');
   end if;
 end $$;
@@ -7212,7 +7272,9 @@ revoke execute on function public.waves_kept(int) from public, anon;
 grant execute on function public.waves_kept(int) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('33_waves.sql', '414c1cc87d464508f0d618ae209261c4a04a74defe6b76902f938e8bca6b0d4c');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('33_waves.sql');
   end if;
 end $$;
@@ -7351,7 +7413,9 @@ create trigger push_spark_invite
   for each row execute function public.push_on_spark_invite();
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('34_spark_push.sql', 'f56eac9a17c399e886530487d5bc7b7351bb107f7cce550591559202a2bbdc65');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('34_spark_push.sql');
   end if;
 end $$;
@@ -7399,7 +7463,9 @@ revoke execute on function public.spark_people(uuid) from public, anon;
 grant execute on function public.spark_people(uuid) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('35_spark_people.sql', '796468d9e9f4598be3cb72f4610369a1866c08b105699e1855a4ef9fc8fb37fb');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('35_spark_people.sql');
   end if;
 end $$;
@@ -7498,7 +7564,9 @@ revoke all on function public.person_cards(text) from public, anon;
 grant execute on function public.person_cards(text) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('36_person_cards.sql', '234ed583b13e73533ee052fbaff4146a65e8141ac4a2b772b80bb980c05329da');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('36_person_cards.sql');
   end if;
 end $$;
@@ -7605,7 +7673,9 @@ grant execute on function public.room_post(text, text, uuid) to authenticated;
 grant execute on function public.check_in(text, double precision, double precision, timestamptz) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('37_offline.sql', 'c7de2e6b7ae4b4ccef3496ddce998f61bb25a3d576eb909a9505d5227ab14144');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('37_offline.sql');
   end if;
 end $$;
@@ -7747,7 +7817,9 @@ grant execute on function public.person_kept(text) to authenticated;
 grant execute on function public.person_people(text) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('38_profile_lists.sql', '8bc6454831b9aa30bc2cceb0cf760eae823442d2301a43e99ffb967b15862b2b');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('38_profile_lists.sql');
   end if;
 end $$;
@@ -7772,7 +7844,9 @@ alter table public.sparks add constraint sparks_kind_check check (kind in (
 ));
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('39_spark_kinds.sql', 'b88ef1a1bd7de9f0c23bb2dfc0308ad085af09b40145bd109a347621933ecf92');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('39_spark_kinds.sql');
   end if;
 end $$;
@@ -7828,7 +7902,9 @@ $$;
 grant execute on function public.about_for(uuid[], text) to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('40_event_about.sql', '82ae672f8c140a23ae9f8e62042e3d06125789c1f39b675e3c4804564289ffe6');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('40_event_about.sql');
   end if;
 end $$;
@@ -7910,7 +7986,9 @@ revoke all on function public.set_account_type(text, text) from public, anon;
 grant execute on function public.set_account_type(text, text) to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('41_account_types.sql', '48a29b4f27e4bfbc0f234c9d3ac0438a6818eccdbfb0b31d64e62931a1532c36');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('41_account_types.sql');
   end if;
 end $$;
@@ -8522,7 +8600,9 @@ revoke all on function public.need_staff() from public, anon;
 revoke all on function public.need_admin() from public, anon;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('42_staff.sql', '7df8ea9bbca457f354c134e99f19b72a828a75a2f69a96ab56453be0f7f5c629');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('42_staff.sql');
   end if;
 end $$;
@@ -8806,7 +8886,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('43_event_submit.sql', '2fad57d8c4ba1bcaf884a71be4fddd6d07126aab1d732c8d4eb176b596de2ef6');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('43_event_submit.sql');
   end if;
 end $$;
@@ -9485,7 +9567,9 @@ revoke all on function public.need_member(uuid) from public, anon;
 revoke all on function public.in_group(uuid) from public, anon;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('44_groups.sql', 'b0fa59493217b5c5ba29a1ac218427227ba470501108b1ce906501775c6344fd');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('44_groups.sql');
   end if;
 end $$;
@@ -9709,7 +9793,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('45_posts.sql', '466a971652fc35d228348cb57c334e6e0f9cd2f9347c31e343d8b7f7bcb29ae5');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('45_posts.sql');
   end if;
 end $$;
@@ -10092,7 +10178,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('46_group_plans.sql', '8f2895631eb58bb03e788cb0d06b2fb85bd9dfa6af3d34081d246d7501084feb');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('46_group_plans.sql');
   end if;
 end $$;
@@ -10377,7 +10465,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('47_group_nights.sql', '7d742346236655ea89cbb76c5bcc08bc3a959115c306282529b347ac6c86b921');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('47_group_nights.sql');
   end if;
 end $$;
@@ -10824,7 +10914,9 @@ revoke execute on function public.push_wants(uuid, text) from public, anon, auth
 revoke execute on function public.push_enqueue(uuid, text, text, jsonb) from public, anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('48_group_push.sql', 'a004216cd5f5813dd3b963040bbb977722b44aa59a099d56da3014b53bfa7cab');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('48_group_push.sql');
   end if;
 end $$;
@@ -10942,7 +11034,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('49_design_reads.sql', '3d2a0a2e99252a337af815b80935c615c29d73beef1ed57297eeb9c93f791103');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('49_design_reads.sql');
   end if;
 end $$;
@@ -11148,7 +11242,9 @@ $$;
 revoke execute on function public.spark_waves(uuid) from public, anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('50_blocks.sql', '89faa1b9187bc4632d01445a2664e4058e074ad8389e82bb2496c5ff04988c61');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('50_blocks.sql');
   end if;
 end $$;
@@ -11490,7 +11586,9 @@ do $$ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('51_safety.sql', '3b7465d17ddd94f12c1f8c5c38634997f605813c88d9784ca30e976d01104883');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('51_safety.sql');
   end if;
 end $$;
@@ -11743,7 +11841,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('52_bans.sql', '41fce784b97a0db9d912cb83000e85fb052e5d4e7f0c8180de1c13c9d9dfde12');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('52_bans.sql');
   end if;
 end $$;
@@ -12126,7 +12226,9 @@ do $$ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('53_trust.sql', '7ca0c1158caa08eb1d7cedbee17494dd4ef718ff69080160e0af324f71bea7ae');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('53_trust.sql');
   end if;
 end $$;
@@ -12280,7 +12382,9 @@ create trigger staff_alert after insert on public.events
   for each row execute function public.staff_alert_night();
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('54_upkeep.sql', '35d51a2f27242654fd57902d539828ad9875c0449af11b552f8f498c59e5ff0f');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('54_upkeep.sql');
   end if;
 end $$;
@@ -12553,7 +12657,9 @@ do $$ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('55_post_social.sql', '56ec67e5452e57f8d7d44f8cc1424a5abf2d7bc1f46590c8de02439415414676');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('55_post_social.sql');
   end if;
 end $$;
@@ -12583,7 +12689,9 @@ alter table public.sparks add constraint sparks_kind_check check (kind in (
 ));
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('56_spark_kinds_2.sql', 'dd7519b93add7f83e1a2c2fb291940ec62e8fb8c85b2ad1417adeac7db5729d2');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('56_spark_kinds_2.sql');
   end if;
 end $$;
@@ -13001,7 +13109,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('57_doors.sql', '9f7b2b2356cfeb17a3dfcf7fc3dcb04c3c41c493384de2a0b426c1ea7dff8df0');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('57_doors.sql');
   end if;
 end $$;
@@ -13119,7 +13229,7 @@ begin
   ) as x(kind, lang, title, body)
   where x.kind = p_kind and x.lang = coalesce(nullif(p_lang, ''), 'en');
 
-  -- The words of a member never reach a lock screen (the decision of Ahmet, 11.10.2026): what the
+  -- The words of a member never reach a lock screen (the decision of owner, 11.10.2026): what the
   -- triggers still pass as text is dropped here, whatever the caller.
   for pair in select * from jsonb_each_text(coalesce(p_data, '{}') - 'text') loop
     title := replace(title, '{' || pair.key || '}', coalesce(pair.value, ''));
@@ -13130,7 +13240,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('58_push_words.sql', '72170a2f1792910b26a1499e6b3c4a62421fa14729ca27caf674c4c1b996a948');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('58_push_words.sql');
   end if;
 end $$;
@@ -13284,6 +13396,8 @@ $$;
 revoke execute on function public.dm_thread(uuid, bigint) from public, anon;
 grant execute on function public.dm_thread(uuid, bigint) to authenticated;
 
+-- 90 adds a column to what this returns; a re-run must not trip on the old shape
+drop function if exists public.dm_list();
 create or replace function public.dm_list()
 returns table (id uuid, other_id uuid, handle text, name text, last_body text, last_mine boolean, last_id bigint, last_at timestamptz)
 language plpgsql
@@ -13351,7 +13465,9 @@ $$;
 -- (14) does not list them yet — a line in promises.md says so.
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('59_dms.sql', 'ff42a3de133b25de321f261391abc791c6ff92c428165841787a6f7a24d1032e');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('59_dms.sql');
   end if;
 end $$;
@@ -13431,7 +13547,9 @@ revoke execute on function public.tickets_mine() from public, anon;
 grant execute on function public.tickets_mine() to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('60_tickets.sql', '54fd0d0743f10a2c958b19fb80e0f7751fcfa920dea9f7cf6b69397bb15b8d60');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('60_tickets.sql');
   end if;
 end $$;
@@ -13705,7 +13823,9 @@ begin
 end $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('61_travel.sql', '6d88a4f65688cc0895eac7faf24d741dbb2c4758297bc4889d2ba2b5574ba4fd');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('61_travel.sql');
   end if;
 end $$;
@@ -13720,7 +13840,7 @@ end $$;
 -- A group can wear one of the photos the app ships with as its cover (club, crowd,
 -- friends), not only a photo uploaded by a member: the path is then preset/<name>
 -- instead of <user>/<file>. The app maps the name to its bundled picture; nothing is
--- uploaded. Asked by Ahmet on 12.10.2026 so a group has a face from the first minute.
+-- uploaded. Asked by owner on 12.10.2026 so a group has a face from the first minute.
 
 create or replace function public.group_set_cover(p_id uuid, p_path text)
 returns text
@@ -13742,7 +13862,9 @@ end;
 $$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('62_group_covers.sql', 'eb702e11de3ec89a90bfceca923dd764c80e2bb192bca1b827d781936580ec9d');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('62_group_covers.sql');
   end if;
 end $$;
@@ -13794,7 +13916,9 @@ revoke all on function public.previews_for(uuid[]) from public;
 grant execute on function public.previews_for(uuid[]) to anon, authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('63_previews.sql', '68f08b2aca6230170b1b71d7d1449e89e8feb7b638587cf56c30babb6f0c5408');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('63_previews.sql');
   end if;
 end $$;
@@ -13910,7 +14034,9 @@ $$;
 grant execute on function public.export_me() to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('64_export_more.sql', '75d37ddd068f002d692f299f8840fb3b69b703a57eae0d056f84cec6144a4bd4');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('64_export_more.sql');
   end if;
 end $$;
@@ -13973,82 +14099,3099 @@ $$;
 grant execute on function public.delete_account() to authenticated;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('65_account_delete.sql', '4b82eceeb5cf323a09884a8024f5fe06ee48435a83bfcb089160c9f3b6a3aa8e');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('65_account_delete.sql');
   end if;
 end $$;
 
 
 -- ============================================================
---  PAST NIGHTS LEAVE THE DECK EVEN WITHOUT PG_CRON   (66_past_off.sql)
+--  A NIGHT THAT HAPPENED STAYS — RETIRED, NOT DELETED; PRUNED ONLY WHEN UNTOUCHED   (66_keep_past_nights.sql)
 -- ============================================================
 
--- afterhours — past nights leave the deck even without pg_cron (A7)
--- hide_past_events() (09) is run by pg_cron at 05:30 UTC. When the extension is
--- off, nothing runs it, and past nights stay published: on 11.10.2026 health
--- counted 680. The morning sync (sync-ticketmaster.mjs, 04:10 UTC, service key)
--- now calls it at the end of every run, so the cleanup no longer hangs on one
--- extension. The service role gets the call by name; anon and authenticated
--- still do not.
+-- afterhours — a night that happened stays (66)
+--
+-- The morning sync used to DELETE every Ticketmaster night whose date had passed.
+-- events is the parent of nearly everything a person does on a night: the check-in
+-- card in their collection, the room posts, the swipes, the comments, the answers to
+-- who is coming, the ticket answers, the group votes. All of it went with the row,
+-- every morning at 04:10. Found by the first autonomous night (A1 / F1, 20.10.2026).
+--
+-- From now on a past night is RETIRED, not deleted: is_published = false, which the
+-- deck, the map and the counters already honour (06, 15, 18), while the collection
+-- (19), the past feed (31) and the export (14) keep reading it. The sync does this
+-- with a PATCH; hide_past_events() (09) does the same on its own clock.
+--
+-- Rows that nobody ever touched are still pruned, after a year: a night no one
+-- swiped, kept, checked in to, answered or voted on carries no memory, and the
+-- feed only reaches back 365 days. events_prune_untouched() is the only place that
+-- deletes a synced night now, and it refuses any row something still points at.
+--
+--   events_prune_untouched(days)   service only; returns how many rows went
+
+drop function if exists public.events_prune_untouched(int);
+create or replace function public.events_prune_untouched(p_days int default 400)
+returns integer
+language sql
+security definer
+set search_path = public
+as $$
+  with gone as (
+    delete from public.events e
+    where e.source = 'ticketmaster'
+      and e.starts_at is not null
+      and e.starts_at < now() - make_interval(days => greatest(coalesce(p_days, 400), 365))
+      and not exists (select 1 from public.swipes              x where x.event_id = e.id)
+      and not exists (select 1 from public.comments            x where x.event_id = e.id)
+      and not exists (select 1 from public.checkins            x where x.event_id = e.id)
+      and not exists (select 1 from public.room_posts          x where x.event_id = e.id)
+      and not exists (select 1 from public.rsvps               x where x.event_id = e.id)
+      and not exists (select 1 from public.tickets             x where x.event_id = e.id)
+      and not exists (select 1 from public.event_about         x where x.event_id = e.id)
+      and not exists (select 1 from public.group_swipes        x where x.event_id = e.id)
+      and not exists (select 1 from public.group_live_skips    x where x.event_id = e.id)
+      and not exists (select 1 from public.group_photos        x where x.event_id = e.id)
+      and not exists (select 1 from public.group_round_options x where x.event_id = e.id)
+      and not exists (select 1 from public.group_ballots       x where x.event_id = e.id)
+      and not exists (select 1 from public.group_tickets       x where x.event_id = e.id)
+      and not exists (select 1 from public.posts               x where x.event_id = e.id)
+      and not exists (select 1 from public.groups              x where x.plan_event_id = e.id)
+    returning 1
+  )
+  select count(*)::int from gone;
+$$;
+
+-- The sync calls it with the service key; no browser role may.
+revoke execute on function public.events_prune_untouched(int) from public, anon, authenticated;
 
 do $$ begin
-  if exists (select 1 from pg_roles where rolname = 'service_role') then
-    grant execute on function public.hide_past_events() to service_role;
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('66_keep_past_nights.sql', 'c6bbe32a8697b1597cb2030db487d991b3ea853f0acc2413116ee63f59c143e6');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('66_keep_past_nights.sql');
   end if;
 end $$;
 
+
+-- ============================================================
+--  THE DECK DOES NOT DEPEND ON THE CLOCK JOB — PAST SYNCED NIGHTS LEAVE BY DATE   (67_deck_today.sql)
+-- ============================================================
+
+-- afterhours — the deck does not depend on the clock job (67)
+--
+-- A synced night whose date has passed left the deck only when hide_past_events (09,
+-- pg_cron) or the morning sync got to it. When neither ran, the deck and the counters
+-- served last week: on 11.10.2026 health counted 680 past nights still published
+-- (A7 / F11, 20.10.2026). The map already filtered by date (18); now the deck and the
+-- counters do too. Only synced nights, whose dates are real: a seed or an admin-written
+-- night with an estimated date is left to the jobs.
+--
+-- Same bodies as 15 and 06, plus one line: a synced night stays for eight hours after
+-- its start (the night is still going), then it is gone from the deck.
+
+create or replace function public.deck(
+  p_city text default 'munchen',
+  p_type text default null,
+  p_limit int  default 60
+)
+returns setof public.events_public
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select e.*
+  from public.events_public e
+  where e.is_published
+    and (p_city is null or e.city_slug = p_city)
+    and (p_type is null or e.type_slug = p_type)
+    and (e.source <> 'ticketmaster' or e.starts_at is null or e.starts_at > now() - interval '8 hours')
+    and not exists (
+      select 1 from public.swipes s
+      where s.event_id = e.id and s.user_id = auth.uid()
+    )
+  order by e.poster_no nulls last, e.starts_at nulls last, e.slug
+  limit p_limit;
+$$;
+
+create or replace function public.event_counts(p_city text default 'munchen')
+returns table (type_slug text, type_name text, sort_order int, n bigint)
+language sql
+stable
+as $$
+  select e.type_slug, e.type_name, e.type_sort_order, count(*)
+  from public.events_public e
+  where e.is_published and e.city_slug = p_city
+    and (e.source <> 'ticketmaster' or e.starts_at is null or e.starts_at > now() - interval '8 hours')
+  group by e.type_slug, e.type_name, e.type_sort_order
+  order by e.type_sort_order;
+$$;
+
+drop function if exists public.city_counts();
+create or replace function public.city_counts()
+returns table (
+  slug            text,
+  name            text,
+  status          text,
+  sort_order            int,
+  country         text,
+  country_slug    text,
+  continent       text,
+  continent_slug  text,
+  n               bigint
+)
+language sql
+stable
+as $$
+  select c.slug, c.name, c.status, c.sort_order, c.country, c.country_slug,
+         c.continent, c.continent_slug,
+         count(e.id) filter (where e.is_published
+                             and (e.source <> 'ticketmaster' or e.starts_at is null or e.starts_at > now() - interval '8 hours'))
+  from public.cities c
+  left join public.events e on e.city_id = c.id
+  group by c.slug, c.name, c.status, c.sort_order, c.country, c.country_slug,
+           c.continent, c.continent_slug
+  order by c.sort_order;
+$$;
+
+grant execute on function public.city_counts()         to anon, authenticated;
+grant execute on function public.deck(text, text, int)  to anon, authenticated;
+grant execute on function public.event_counts(text)     to anon, authenticated;
+
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
-    perform public.migration_done('66_past_off.sql');
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('67_deck_today.sql', '1f9c7019e1c0d8eca57c5a6ac4fb03e867cb2dfd721e72579df6348fb379045a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('67_deck_today.sql');
   end if;
 end $$;
 
 
 -- ============================================================
---  THE ONE WHO REPORTED HEARS BACK   (67_report_answer.sql)
+--  THE PERSON WHO REPORTED HEARS THE OUTCOME   (68_report_answered.sql)
 -- ============================================================
 
--- afterhours — the one who reported hears back (B1)
--- A report reached the panel and the staff acted on it (keep, remove, ban the
--- author), and the author was told (53), but the person who reported heard
--- nothing. Now, when a report is settled, its reporter gets a notice: the staff
--- looked at it. What was decided is not said: that part belongs to the author.
--- One trigger each on reports (51) and post_reports (45), so every way of
--- settling (staff_report_settle, staff_ban_author, staff_post_hide) is covered.
+-- afterhours — the person who reported hears the outcome (68)
+--
+-- A report went into the panel and the reporter never heard of it again (F16,
+-- 20.10.2026). The one reported already gets a notice when something of theirs is
+-- hidden or removed (53); now the reporter gets one too, the moment the staff settle
+-- the report: report_removed when the thing went, report_kept when it stayed. The
+-- notice says what kind of thing it was and nothing about who; the staff never
+-- answer in their own words (58).
+--
+-- staff_report_settle() is the same as in 51, with the notices added before the
+-- reports are marked handled.
 
 alter table public.notices drop constraint if exists notices_kind_check;
 alter table public.notices add constraint notices_kind_check
   check (kind in ('comment_hidden', 'post_hidden', 'removed', 'profile_cleared',
-                  'role', 'dj_verified', 'dj_hidden', 'report_settled'));
+                  'role', 'dj_verified', 'dj_hidden', 'report_removed', 'report_kept'));
 
-create or replace function public.notice_report_settled()
+create or replace function public.staff_report_settle(p_kind text, p_target text, p_remove boolean)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  who record;
+begin
+  perform public.need_staff();
+  if coalesce(p_remove, false) then
+    if p_kind = 'comment' then
+      update public.comments set is_hidden = true where id::text = p_target;
+    elsif p_kind = 'room_post' then
+      delete from public.room_posts where id::text = p_target;
+    elsif p_kind = 'group_message' then
+      delete from public.group_messages where id::text = p_target;
+    elsif p_kind = 'spark' then
+      delete from public.sparks where id::text = p_target;
+    elsif p_kind = 'group' then
+      delete from public.groups where id::text = p_target;
+    elsif p_kind = 'post_comment' then
+      execute 'update public.post_comments set is_hidden = true where id::text = $1' using p_target;
+    elsif p_kind = 'profile' then
+      update public.profiles set bio = null, about = null where id::text = p_target;
+      delete from public.profile_links where user_id::text = p_target;
+      delete from public.profile_photos where user_id::text = p_target;
+    else
+      raise exception 'which kind?';
+    end if;
+  end if;
+  for who in select distinct r.reporter_id from public.reports r
+             where r.kind = p_kind and r.target = p_target and not r.handled loop
+    perform public.notice(who.reporter_id,
+                          case when coalesce(p_remove, false) then 'report_removed' else 'report_kept' end,
+                          jsonb_build_object('what', p_kind));
+  end loop;
+  update public.reports set handled = true where kind = p_kind and target = p_target and not handled;
+  perform public.staff_note(case when coalesce(p_remove, false) then 'remove' else 'keep' end, 'report:' || p_kind, p_target, null);
+end;
+$$;
+
+revoke execute on function public.staff_report_settle(text, text, boolean) from public, anon;
+grant execute on function public.staff_report_settle(text, text, boolean)  to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('68_report_answered.sql', 'd31c57dbea50047478594749cc020ad351ba62ed92f4d92900ebac9714efe953');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('68_report_answered.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  I AM IN REACHES THE FRIENDS ON THAT NIGHT   (69_rsvp_push.sql)
+-- ============================================================
+
+-- afterhours — "I am in" reaches the friends on that night (69)
+--
+-- A friend answers who is coming with in (32) and nobody heard of it; a keep (a right
+-- swipe) already tells the friends who kept the same night "{name} is going too"
+-- (26, kind match). An answer is a louder keep: the same push, to the friends who
+-- kept the night or answered in themselves, once per answerer and night. It rides on
+-- the match switch (notify_matches) and the match words (58), so nothing new to set
+-- or translate; the key says rsvp so it never collides with the push of the keep itself.
+-- Nothing when the answerer keeps their keeps private (12: kept_visibility), as with
+-- the keep itself. maybe and out say nothing. (C1, 20.10.2026)
+
+create or replace function public.push_on_rsvp()
 returns trigger
 language plpgsql
 security definer
 set search_path = public
 as $$
 declare
-  about text := 'post';
+  night record;
+  them  record;
 begin
-  if new.handled and not old.handled and new.reporter_id is distinct from auth.uid() then
-    -- post_reports has no kind column: a post is all it holds
-    if TG_TABLE_NAME = 'reports' then about := to_jsonb(new) ->> 'kind'; end if;
-    perform public.notice(new.reporter_id, 'report_settled', jsonb_build_object('about', about));
+  if new.answer <> 'in' or (tg_op = 'UPDATE' and old.answer = 'in') then
+    return new;
+  end if;
+  if not public.kept_visible(new.user_id) then
+    return new;
+  end if;
+  select e.title, e.slug into night from public.events e where e.id = new.event_id;
+
+  for them in
+    select distinct f.friend as user_id
+    from public.push_edges f
+    where f.who = new.user_id
+      and (exists (select 1 from public.swipes w where w.user_id = f.friend and w.event_id = new.event_id and w.direction = 'right')
+        or exists (select 1 from public.rsvps r where r.user_id = f.friend and r.event_id = new.event_id and r.answer = 'in'))
+  loop
+    perform public.push_enqueue(them.user_id, 'match',
+      format('rsvp:%s:%s:%s', them.user_id, new.user_id, new.event_id),
+      jsonb_build_object('name', public.push_name(new.user_id), 'title', night.title, 'url', '/night/' || night.slug));
+  end loop;
+  return new;
+end;
+$$;
+revoke execute on function public.push_on_rsvp() from public, anon, authenticated;
+
+drop trigger if exists push_rsvp on public.rsvps;
+create trigger push_rsvp
+  after insert or update of answer on public.rsvps
+  for each row execute function public.push_on_rsvp();
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('69_rsvp_push.sql', '2979cba607450c3b34c5072b421b570596c8212155ba082c72a43ff3d8a5848d');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('69_rsvp_push.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A BLOCK REACHES EVERY READER; A DIRECT MESSAGE CAN BE REPORTED   (70_blocks_and_dm_reports.sql)
+-- ============================================================
+
+-- afterhours — a block reaches every reader, and a direct message can be reported (70)
+--
+-- A block (50) closed the card, the search, the waves, the groups and the messages, but
+-- not the two oldest readers: beforehours comments (comments_public, 06/12) and the
+-- room of a night (room_list, 19). The blocked person kept reading the other, and the
+-- other kept reading them (F14, 20.10.2026). hidden_by_block() is the one filter both
+-- readers use now; it answers false when nobody is signed in, so the site keeps reading
+-- comments signed out, and it may be called by anyone (is_blocked itself stays closed
+-- to anon).
+--
+-- And a direct message was the one kind of writing nobody could report (F8): dm_message
+-- joins the report kinds — the author is found only by someone in that thread, the
+-- staff see the words, and removing it deletes the line.
+
+-- ------------------------------------------------------------ the block filter
+
+create or replace function public.hidden_by_block(other uuid)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select auth.uid() is not null and other is not null and exists (
+    select 1 from public.blocks b
+    where (b.blocker_id = auth.uid() and b.blocked_id = other)
+       or (b.blocker_id = other and b.blocked_id = auth.uid()));
+$$;
+revoke execute on function public.hidden_by_block(uuid) from public;
+grant execute on function public.hidden_by_block(uuid) to anon, authenticated;
+
+create or replace view public.comments_public
+with (security_invoker = true) as
+select
+  c.id,
+  c.event_id,
+  c.parent_id,
+  c.body,
+  c.time_text,
+  c.created_at,
+  public.author_name(c.author_id, c.author_name) as author,
+  c.author_id is not null as is_real
+from public.comments c
+where not c.is_hidden
+  and not public.hidden_by_block(c.author_id);
+
+create or replace function public.room_list(p_slug text)
+returns table (
+  id          uuid,
+  body        text,
+  who         text,
+  mine        boolean,
+  created_at  timestamptz
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select r.id, r.body, lower(left(coalesce(p.display_name, p.handle, 's'), 1)), r.user_id = auth.uid(), r.created_at
+  from public.room_posts r
+  join public.events e on e.id = r.event_id
+  left join public.profiles p on p.id = r.user_id
+  where e.slug = p_slug and public.checked_in(e.id)
+    and not public.hidden_by_block(r.user_id)
+  order by r.created_at;
+$$;
+
+-- ------------------------------------------------------------ reporting a message
+
+alter table public.reports drop constraint if exists reports_kind_check;
+alter table public.reports add constraint reports_kind_check
+  check (kind in ('comment', 'room_post', 'group_message', 'profile', 'group', 'spark', 'post_comment', 'dm_message'));
+
+-- Who wrote it, as the reporter may know it: only someone in the thread.
+create or replace function public.report_author(p_kind text, p_target text)
+returns uuid
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  a uuid;
+begin
+  if p_kind = 'comment' then
+    select author_id into a from public.comments where id::text = p_target;
+  elsif p_kind = 'room_post' then
+    select user_id into a from public.room_posts where id::text = p_target;
+  elsif p_kind = 'group_message' then
+    select m.user_id into a from public.group_messages m
+     where m.id::text = p_target and m.kind = 'say' and public.in_group(m.group_id);
+  elsif p_kind = 'profile' then
+    select id into a from public.profiles where id::text = p_target or handle = lower(p_target);
+  elsif p_kind = 'group' then
+    select g.created_by into a from public.groups g where g.id::text = p_target;
+  elsif p_kind = 'spark' then
+    select host_id into a from public.sparks where id::text = p_target;
+  elsif p_kind = 'post_comment' and to_regclass('public.post_comments') is not null then
+    execute 'select c.author_id from public.post_comments c join public.posts p on p.id = c.post_id
+             where c.id::text = $1 and public.can_see_post(p.author_id)' into a using p_target;
+  elsif p_kind = 'dm_message' then
+    select m.user_id into a from public.dm_messages m
+      join public.dm_threads t on t.id = m.thread_id
+     where m.id::text = p_target and auth.uid() in (t.a, t.b) and m.user_id <> auth.uid();
+  end if;
+  return a;
+end;
+$$;
+
+create or replace function public.report_author_any(p_kind text, p_target text)
+returns uuid
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select case p_kind
+    when 'comment'       then (select author_id from public.comments where id::text = p_target)
+    when 'room_post'     then (select user_id from public.room_posts where id::text = p_target)
+    when 'group_message' then (select user_id from public.group_messages where id::text = p_target)
+    when 'profile'       then (select id from public.profiles where id::text = p_target)
+    when 'group'         then (select created_by from public.groups where id::text = p_target)
+    when 'spark'         then (select host_id from public.sparks where id::text = p_target)
+    when 'post_comment'  then public.post_comment_author(p_target)
+    when 'dm_message'    then (select user_id from public.dm_messages where id::text = p_target)
+  end;
+$$;
+revoke all on function public.report_author_any(text, text) from public, anon, authenticated;
+
+create or replace function public.staff_reports()
+returns table (kind text, target text, preview text, author text, reports int, reasons text[], first_at timestamptz)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_staff();
+  return query
+    with open as (
+      select r.kind, r.target, count(*)::int as n, array_remove(array_agg(r.reason order by r.created_at), null) as why, min(r.created_at) as first_at
+      from public.reports r where not r.handled
+      group by r.kind, r.target
+    )
+    select o.kind, o.target,
+           case o.kind
+             when 'comment'       then (select c.body from public.comments c where c.id::text = o.target)
+             when 'room_post'     then (select x.body from public.room_posts x where x.id::text = o.target)
+             when 'group_message' then (select x.body from public.group_messages x where x.id::text = o.target)
+             when 'profile'       then (select concat_ws(' · ', p.display_name, p.bio, p.about) from public.profiles p where p.id::text = o.target)
+             when 'group'         then (select g.name from public.groups g where g.id::text = o.target)
+             when 'spark'         then (select concat_ws(' · ', s.title, s.place) from public.sparks s where s.id::text = o.target)
+             when 'post_comment'  then public.post_comment_body(o.target)
+             when 'dm_message'    then (select x.body from public.dm_messages x where x.id::text = o.target)
+           end,
+           (select coalesce(p.handle, p.display_name) from public.profiles p where p.id = public.report_author_any(o.kind, o.target)),
+           o.n, o.why, o.first_at
+    from open o
+    order by o.n desc, o.first_at;
+end;
+$$;
+
+-- As in 68, plus the message.
+create or replace function public.staff_report_settle(p_kind text, p_target text, p_remove boolean)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  who record;
+begin
+  perform public.need_staff();
+  if coalesce(p_remove, false) then
+    if p_kind = 'comment' then
+      update public.comments set is_hidden = true where id::text = p_target;
+    elsif p_kind = 'room_post' then
+      delete from public.room_posts where id::text = p_target;
+    elsif p_kind = 'group_message' then
+      delete from public.group_messages where id::text = p_target;
+    elsif p_kind = 'dm_message' then
+      delete from public.dm_messages where id::text = p_target;
+    elsif p_kind = 'spark' then
+      delete from public.sparks where id::text = p_target;
+    elsif p_kind = 'group' then
+      delete from public.groups where id::text = p_target;
+    elsif p_kind = 'post_comment' then
+      execute 'update public.post_comments set is_hidden = true where id::text = $1' using p_target;
+    elsif p_kind = 'profile' then
+      update public.profiles set bio = null, about = null where id::text = p_target;
+      delete from public.profile_links where user_id::text = p_target;
+      delete from public.profile_photos where user_id::text = p_target;
+    else
+      raise exception 'which kind?';
+    end if;
+  end if;
+  for who in select distinct r.reporter_id from public.reports r
+             where r.kind = p_kind and r.target = p_target and not r.handled loop
+    perform public.notice(who.reporter_id,
+                          case when coalesce(p_remove, false) then 'report_removed' else 'report_kept' end,
+                          jsonb_build_object('what', p_kind));
+  end loop;
+  update public.reports set handled = true where kind = p_kind and target = p_target and not handled;
+  perform public.staff_note(case when coalesce(p_remove, false) then 'remove' else 'keep' end, 'report:' || p_kind, p_target, null);
+end;
+$$;
+
+revoke execute on function public.staff_reports()                          from public, anon;
+revoke execute on function public.staff_report_settle(text, text, boolean) from public, anon;
+grant execute on function public.staff_reports()                           to authenticated;
+grant execute on function public.staff_report_settle(text, text, boolean)  to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('70_blocks_and_dm_reports.sql', '674e630174dc3e2a9d58d21c9d1bfc612f9bfd8d999fc6bfeaf9a5cd98ed5bda');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('70_blocks_and_dm_reports.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  HEALTH SAYS WHEN THE SYNC LAST RAN AND WHETHER PUSHES ARE STUCK   (71_health_more.sql)
+-- ============================================================
+
+-- afterhours — the health check says when the sync last brought a night, and
+-- whether the push outbox is stuck (71)
+--
+-- health() (09) counted rows; it could not say whether the morning sync still ran or
+-- whether pushes were leaving. On 11.10.2026 nobody knew for a week that 680 past
+-- nights sat on the deck (F34, 20.10.2026). Two more numbers, and tools/health.mjs
+-- now goes red on them: a last synced night older than three days, more than fifty
+-- past nights still published, pushes older than six hours still unsent.
+-- The return type grows, so the function is dropped and made again with its grants.
+
+drop function if exists public.health();
+create or replace function public.health()
+returns table (
+  events            bigint,
+  published         bigint,
+  missing_venue     bigint,
+  unverified_date   bigint,
+  past_still_up     bigint,
+  comments          bigint,
+  hidden_comments   bigint,
+  people            bigint,
+  swipes            bigint,
+  friendships       bigint,
+  newest_synced     timestamptz,
+  outbox_stuck      bigint
+)
+language sql
+security definer
+set search_path = public
+as $$
+  select
+    (select count(*) from public.events),
+    (select count(*) from public.events where is_published),
+    (select count(*) from public.events where venue_id is null),
+    (select count(*) from public.events where starts_at_estimated),
+    (select count(*) from public.events
+      where is_published and starts_at is not null
+        and not starts_at_estimated and starts_at < now()),
+    (select count(*) from public.comments),
+    (select count(*) from public.comments where is_hidden),
+    (select count(*) from public.profiles),
+    (select count(*) from public.swipes),
+    (select count(*) from public.friendships where status = 'accepted'),
+    (select max(created_at) from public.events where source = 'ticketmaster'),
+    (select count(*) from public.push_outbox
+      where sent_at is null
+        and greatest(created_at, coalesce(send_after, created_at)) < now() - interval '6 hours');
+$$;
+grant execute on function public.health() to anon, authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('71_health_more.sql', '8454b42f5a542d7fa6e981f35678d9dd0f029d4e79f77cb64ad099e93da0e904');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('71_health_more.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A CHANGED OR CANCELLED NIGHT TELLS THE PEOPLE ON IT   (72_night_changed.sql)
+-- ============================================================
+
+-- afterhours — a changed or cancelled night tells the people on it (72)
+--
+-- Ticketmaster says when a night is cancelled, postponed or rescheduled
+-- (dates.status.code) and the sync never read it; a person with a ticket, a keep or
+-- an answer on it found out at the door (F22, 20.10.2026). Now events carries the
+-- status the sync writes; a cancelled night leaves the deck (is_published = false)
+-- but stays in collections and feeds; and the people on the night get one push:
+-- {title} · cancelled / postponed / moved to {when}. The words are three fixed
+-- phrases per language (58); the switch is notify_nights, like night_soon.
+--
+-- push_text() and push_wants() are those of 58 and 59 with the one kind added.
+
+alter table public.events add column if not exists status text not null default 'onsale';
+alter table public.events drop constraint if exists events_status_check;
+alter table public.events add constraint events_status_check
+  check (status in ('onsale', 'offsale', 'cancelled', 'postponed', 'rescheduled'));
+
+alter table public.push_outbox drop constraint if exists push_outbox_kind_check;
+alter table public.push_outbox add constraint push_outbox_kind_check check (kind in (
+  'friend_request', 'friend_accepted', 'match', 'friend_live',
+  'night_soon', 'room_open', 'room_closing', 'room_message', 'reply',
+  'digest', 'dj_live', 'wave', 'spark', 'spark_in',
+  'group_added', 'group_joined', 'group_match', 'group_round', 'group_won', 'group_plan',
+  'group_message', 'group_live', 'group_ticket', 'post',
+  'staff', 'post_like', 'post_comment',
+  'dm', 'night_changed'));
+
+create or replace function public.push_text(p_kind text, p_lang text, p_data jsonb)
+returns table (title text, body text)
+language plpgsql
+immutable
+as $$
+declare
+  pair record;
+begin
+  select x.title, x.body into title, body
+  from (values
+    ('friend_request',  'en', 'friend request',                '{name} wants to add you'),
+    ('friend_request',  'de', 'freundschaftsanfrage',          '{name} möchte dich hinzufügen'),
+    ('friend_request',  'tr', 'arkadaşlık isteği',             '{name} seni eklemek istiyor'),
+    ('friend_accepted', 'en', 'you are friends now',           '{name} accepted your request'),
+    ('friend_accepted', 'de', 'ihr seid jetzt freunde',        '{name} hat deine anfrage angenommen'),
+    ('friend_accepted', 'tr', 'artık arkadaşsınız',            '{name} isteğini kabul etti'),
+    ('match',           'en', '{name} is going too',           '{title}'),
+    ('match',           'de', '{name} geht auch hin',          '{title}'),
+    ('match',           'tr', '{name} de gidiyor',             '{title}'),
+    ('friend_live',     'en', '{name} is out now',             '{title}'),
+    ('friend_live',     'de', '{name} ist gerade unterwegs',   '{title}'),
+    ('friend_live',     'tr', '{name} şu an dışarıda',         '{title}'),
+    ('night_soon',      'en', 'tonight · {time}',              '{title}'),
+    ('night_soon',      'de', 'heute nacht · {time}',          '{title}'),
+    ('night_soon',      'tr', 'bu gece · {time}',              '{title}'),
+    ('room_open',       'en', 'your room is open',             '{title} · 48 hours to write'),
+    ('room_open',       'de', 'dein raum ist offen',           '{title} · 48 stunden zum schreiben'),
+    ('room_open',       'tr', 'odan açık',                     '{title} · 48 saat yazabilirsin'),
+    ('room_closing',    'en', 'your room closes soon',         '{title} · the last two hours'),
+    ('room_closing',    'de', 'dein raum schließt bald',       '{title} · die letzten zwei stunden'),
+    ('room_closing',    'tr', 'odan birazdan kapanıyor',       '{title} · son iki saat'),
+    ('room_message',    'en', '{name} in {title}',             'a new line in your room'),
+    ('room_message',    'de', '{name} in {title}',             'eine neue zeile in deinem raum'),
+    ('room_message',    'tr', '{title} · {name}',              'odanda yeni bir satır'),
+    ('reply',           'en', '{name} replied',                'a new reply'),
+    ('reply',           'de', '{name} hat geantwortet',        'eine neue antwort'),
+    ('reply',           'tr', '{name} cevap verdi',            'yeni bir cevap'),
+    ('digest',          'en', 'this weekend in {city}',        '{n} nights · {friends} kept by friends'),
+    ('digest',          'de', 'dieses wochenende in {city}',   '{n} nächte · {friends} von freunden behalten'),
+    ('digest',          'tr', 'bu hafta sonu {city}',          '{n} gece · {friends} tanesini arkadaşların sakladı'),
+    ('dj_live',         'en', '{name} plays soon',             '{where} · {time}'),
+    ('dj_live',         'de', '{name} legt bald auf',          '{where} · {time}'),
+    ('dj_live',         'tr', '{name} birazdan çalıyor',       '{where} · {time}'),
+    ('wave',            'en', '2nd wave',                      'a friend of {via} kept {title}'),
+    ('wave',            'de', '2. welle',                      'ein freund von {via} hat {title} behalten'),
+    ('wave',            'tr', '2. dalga',                      '{via} üzerinden biri {title} gecesini sakladı'),
+    ('spark',           'en', '{name} is starting something',  '{title} · {when}'),
+    ('spark',           'de', '{name} startet etwas',          '{title} · {when}'),
+    ('spark',           'tr', '{name} bir şey başlatıyor',     '{title} · {when}'),
+    ('spark_in',        'en', '{name} is in',                  '{title}'),
+    ('spark_in',        'de', '{name} ist dabei',              '{title}'),
+    ('spark_in',        'tr', '{name} geliyor',                '{title}'),
+    ('group_added',     'en', 'you are in {group}',            '{name} added you · swipe nights together'),
+    ('group_added',     'de', 'du bist in {group}',            '{name} hat dich hinzugefügt · wischt zusammen'),
+    ('group_added',     'tr', '{group} grubundasın',           '{name} seni ekledi · birlikte gece seçin'),
+    ('group_joined',    'en', '{group}',                       '{name} joined'),
+    ('group_joined',    'de', '{group}',                       '{name} ist dazugekommen'),
+    ('group_joined',    'tr', '{group}',                       '{name} gruba katıldı'),
+    ('group_match',     'en', '{group} · everyone is in',      '{title}'),
+    ('group_match',     'de', '{group} · alle sind dabei',     '{title}'),
+    ('group_match',     'tr', '{group} · herkes var',          '{title}'),
+    ('group_round',     'en', '{group} · vote',                '{name} put {title} to a vote'),
+    ('group_round',     'de', '{group} · abstimmung',          '{name} lässt abstimmen: {title}'),
+    ('group_round',     'tr', '{group} · oylama',              '{name} oylamaya sundu: {title}'),
+    ('group_won',       'en', '{group} · the vote is in',      '{title}'),
+    ('group_won',       'de', '{group} · abgestimmt',          '{title}'),
+    ('group_won',       'tr', '{group} · oylama bitti',        '{title}'),
+    ('group_plan',      'en', '{group} · the plan',            '{name}: {title}'),
+    ('group_plan',      'de', '{group} · der plan',            '{name}: {title}'),
+    ('group_plan',      'tr', '{group} · plan',                '{name}: {title}'),
+    ('group_message',   'en', '{group} · {name}',              'a new message'),
+    ('group_message',   'de', '{group} · {name}',              'eine neue nachricht'),
+    ('group_message',   'tr', '{group} · {name}',              'yeni bir mesaj'),
+    ('group_live',      'en', '{group} · live now',            '{name} wants to swipe together, now'),
+    ('group_live',      'de', '{group} · gerade live',         '{name} will jetzt zusammen wischen'),
+    ('group_live',      'tr', '{group} · şimdi canlı',         '{name} şimdi birlikte kaydırmak istiyor'),
+    ('group_ticket',    'en', '{group} · tomorrow',            'you are in for {title} but have no ticket yet'),
+    ('group_ticket',    'de', '{group} · morgen',              'du bist bei {title} dabei, hast aber noch kein ticket'),
+    ('group_ticket',    'tr', '{group} · yarın',               '{title} için geliyorsun ama henüz biletin yok'),
+    ('post',            'en', '{name} posted',                 'a new post'),
+    ('post',            'de', '{name} hat gepostet',           'ein neuer post'),
+    ('post',            'tr', '{name} paylaştı',               'yeni bir gönderi'),
+    ('post_like',       'en', '{name} likes your post',        'open yours to see it'),
+    ('post_like',       'de', '{name} gefällt dein post',      'in yours ansehen'),
+    ('post_like',       'tr', '{name} gönderini beğendi',      'yours sekmesinde'),
+    ('post_comment',    'en', '{name} commented',              'a new comment'),
+    ('post_comment',    'de', '{name} hat kommentiert',        'ein neuer kommentar'),
+    ('post_comment',    'tr', '{name} yorum yaptı',            'yeni bir yorum'),
+    -- 59_dms.sql: a direct message; the name, never the words
+    ('dm',              'en', '{name}',                        'a new message'),
+    ('dm',              'de', '{name}',                        'eine neue nachricht'),
+    ('dm',              'tr', '{name}',                        'yeni bir mesaj'),
+    ('staff',           'en', 'the panel',                     '{n} waiting: reports, nights sent in, dj pages'),
+    ('staff',           'de', 'das panel',                     '{n} warten: meldungen, eingesandte nächte, dj-seiten'),
+    ('staff',           'tr', 'panel',                         '{n} iş bekliyor: şikayetler, gönderilen geceler, dj sayfaları'),
+    -- 72_night_changed.sql: a night you kept, answered or hold a ticket for
+    ('night_changed',   'en', '{title}',                       '{what}'),
+    ('night_changed',   'de', '{title}',                       '{what}'),
+    ('night_changed',   'tr', '{title}',                       '{what}')
+  ) as x(kind, lang, title, body)
+  where x.kind = p_kind and x.lang = coalesce(nullif(p_lang, ''), 'en');
+
+  -- The words of a member never reach a lock screen (the decision of owner, 11.10.2026): what the
+  -- triggers still pass as text is dropped here, whatever the caller.
+  for pair in select * from jsonb_each_text(coalesce(p_data, '{}') - 'text') loop
+    title := replace(title, '{' || pair.key || '}', coalesce(pair.value, ''));
+    body  := replace(body,  '{' || pair.key || '}', coalesce(pair.value, ''));
+  end loop;
+  return next;
+end;
+$$;
+
+create or replace function public.push_wants(p_user uuid, p_kind text)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select coalesce((
+    select case
+             when p_kind = 'friend_request'  then s.notify_requests
+             when p_kind = 'friend_accepted' then s.notify_accepts
+             when p_kind = 'match'           then s.notify_matches
+             when p_kind = 'friend_live'     then s.notify_live
+             when p_kind in ('night_soon', 'night_changed') then s.notify_nights
+             when p_kind in ('room_open', 'room_closing', 'room_message') then s.notify_rooms
+             when p_kind = 'reply'           then s.notify_replies
+             when p_kind = 'digest'          then s.notify_digest
+             when p_kind = 'dj_live'         then s.notify_djs
+             when p_kind = 'wave'            then s.notify_waves
+             when p_kind in ('spark', 'spark_in') then s.notify_sparks
+             when p_kind like 'group\_%' then s.notify_groups
+             when p_kind in ('post', 'post_like', 'post_comment') then s.notify_posts
+             when p_kind = 'dm'              then s.notify_dms
+           end
+    from public.profile_settings s where s.user_id = p_user), true);
+$$;
+
+-- The three phrases, in the language of the one who receives the push.
+create or replace function public.night_change_words(p_what text, p_lang text, p_when text)
+returns text
+language sql
+immutable
+as $$
+  select case coalesce(nullif(p_lang, ''), 'en')
+    when 'de' then case p_what when 'cancelled' then 'abgesagt' when 'postponed' then 'verschoben, neues datum folgt' else 'verlegt auf ' || p_when end
+    when 'tr' then case p_what when 'cancelled' then 'iptal edildi' when 'postponed' then 'ertelendi, yeni tarih bekleniyor' else p_when || ' tarihine alındı' end
+    else case p_what when 'cancelled' then 'cancelled' when 'postponed' then 'postponed, new date to come' else 'moved to ' || p_when end
+  end;
+$$;
+
+-- Who is on a night: kept it, answered in, or got a ticket.
+create or replace function public.push_on_night_change()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  what text;
+  them record;
+begin
+  if new.status in ('cancelled', 'postponed') and old.status is distinct from new.status then
+    what := new.status;
+  elsif new.starts_at is distinct from old.starts_at and not new.starts_at_estimated
+        and old.starts_at is not null and new.starts_at is not null
+        and new.starts_at > now() then
+    what := 'moved';
+  else
+    return new;
+  end if;
+  for them in
+    select distinct u.user_id from (
+      select w.user_id from public.swipes w where w.event_id = new.id and w.direction = 'right'
+      union select r.user_id from public.rsvps r where r.event_id = new.id and r.answer = 'in'
+      union select t.user_id from public.tickets t where t.event_id = new.id and t.answer = 'got'
+    ) u
+  loop
+    perform public.push_enqueue(them.user_id, 'night_changed',
+      format('night_changed:%s:%s:%s:%s', them.user_id, new.id, what, to_char(new.starts_at, 'YYYY-MM-DD-HH24MI')),
+      jsonb_build_object(
+        'title', new.title,
+        'what',  public.night_change_words(what, (select coalesce(nullif(s.locale, ''), 'en') from public.profile_settings s where s.user_id = them.user_id), public.push_when(them.user_id, new.starts_at)),
+        'url',   '/night/' || new.slug));
+  end loop;
+  return new;
+end;
+$$;
+revoke execute on function public.push_on_night_change() from public, anon, authenticated;
+
+drop trigger if exists push_night_change on public.events;
+create trigger push_night_change
+  after update of status, starts_at on public.events
+  for each row execute function public.push_on_night_change();
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('72_night_changed.sql', '2f0213a3c58fb78ba0811d26a5a5d0b47ebce9fd9ccdac4b17613e9c5821bb7a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('72_night_changed.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  THE MESSAGES OF A DELETED ACCOUNT GO WITH IT   (73_messages_go.sql)
+-- ============================================================
+
+-- afterhours — the messages of a deleted account go with it (73)
+--
+-- A comment on a night stays as someone (12): it is part of the night. A line in a
+-- room or a group chat is not; it is the person talking, and the owner decided on
+-- 20.10.2026 (F32) that it goes when the account goes. room_posts kept the line with
+-- user_id null; group_messages cascaded already. delete_account() is that of 65 with
+-- the room lines removed first.
+
+create or replace function public.delete_account()
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  me uuid := auth.uid();
+  g  uuid;
+begin
+  if me is null then
+    raise exception 'sign in first';
+  end if;
+
+  if exists (select 1 from public.profiles where id = me and is_admin)
+     and not exists (select 1 from public.profiles where is_admin and id <> me) then
+    raise exception 'the last admin stays an admin';
+  end if;
+
+  for g in select group_id from public.group_members where user_id = me loop
+    delete from public.group_members where group_id = g and user_id = me;
+    if not exists (select 1 from public.group_members where group_id = g) then
+      delete from public.groups where id = g;
+    elsif not exists (select 1 from public.group_members where group_id = g and role = 'owner') then
+      update public.group_members set role = 'owner'
+       where group_id = g and user_id = (select user_id from public.group_members
+                                          where group_id = g order by joined_at, user_id limit 1);
+    end if;
+  end loop;
+
+  -- what the person said in rooms and groups leaves with them
+  delete from public.room_posts where user_id = me;
+  delete from public.group_messages where user_id = me;
+
+  update public.comments
+     set author_id = null, author_name = 'someone'
+   where author_id = me;
+
+  delete from auth.users where id = me;
+end;
+$$;
+grant execute on function public.delete_account() to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('73_messages_go.sql', '8403802a781af964daf6be7c4ae1896aafcd02abee3078a7288039d4b0df63ea');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('73_messages_go.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A BAN STAYS — THE ADDRESS COMES BACK BANNED, THE HANDLE STAYS TAKEN   (74_ban_stays.sql)
+-- ============================================================
+
+-- afterhours — a ban stays (74)
+--
+-- A banned person could delete the account, sign up again with the same address, take
+-- the same handle and be back in ten minutes; and the room lines of a banned account
+-- stayed on the wall (F13, 20.10.2026). Three things:
+--   banned_marks   a hash of the email (md5, lowercased) and the handle of a banned
+--                  account that deleted itself; closed table, written only by
+--                  delete_account(), read only by the two below
+--   ban_returns    a new profile whose email is marked is banned at birth
+--   handle_status  a handle in the marks is taken
+-- and room_list leaves out what a banned account wrote, as comments and posts
+-- already do (52). delete_account() is that of 73 with the mark written.
+
+create table if not exists public.banned_marks (
+  mark    text primary key,
+  handle  text,
+  at      timestamptz not null default now()
+);
+alter table public.banned_marks enable row level security;
+revoke all on public.banned_marks from public, anon, authenticated;
+
+create or replace function public.delete_account()
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  me uuid := auth.uid();
+  g  uuid;
+begin
+  if me is null then
+    raise exception 'sign in first';
+  end if;
+
+  if exists (select 1 from public.profiles where id = me and is_admin)
+     and not exists (select 1 from public.profiles where is_admin and id <> me) then
+    raise exception 'the last admin stays an admin';
+  end if;
+
+  for g in select group_id from public.group_members where user_id = me loop
+    delete from public.group_members where group_id = g and user_id = me;
+    if not exists (select 1 from public.group_members where group_id = g) then
+      delete from public.groups where id = g;
+    elsif not exists (select 1 from public.group_members where group_id = g and role = 'owner') then
+      update public.group_members set role = 'owner'
+       where group_id = g and user_id = (select user_id from public.group_members
+                                          where group_id = g order by joined_at, user_id limit 1);
+    end if;
+  end loop;
+
+  -- what the person said in rooms and groups leaves with them
+  delete from public.room_posts where user_id = me;
+  delete from public.group_messages where user_id = me;
+
+  update public.comments
+     set author_id = null, author_name = 'someone'
+   where author_id = me;
+
+  -- a banned person who deletes their account is remembered by a hash of the email
+  -- and keeps their handle: the same address comes back banned, the name stays taken
+  if exists (select 1 from public.profiles where id = me and banned_at is not null) then
+    insert into public.banned_marks (mark, handle)
+    select md5(lower(u.email)), p.handle from auth.users u join public.profiles p on p.id = u.id
+    where u.id = me and u.email is not null
+    on conflict (mark) do nothing;
+  end if;
+
+  delete from auth.users where id = me;
+end;
+$$;
+
+-- The profile is made by handle_new_user (12) on the auth row; this runs right after.
+create or replace function public.ban_returns()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  mail text;
+begin
+  select u.email into mail from auth.users u where u.id = new.id;
+  if mail is not null and exists (select 1 from public.banned_marks where mark = md5(lower(mail))) then
+    perform set_config('afterhours.ban', 'on', true);
+    update public.profiles
+       set banned_at = now(), banned_reason = 'banned before', banned_by = null
+     where id = new.id;
+    perform set_config('afterhours.ban', '', true);
   end if;
   return new;
 end;
 $$;
-revoke all on function public.notice_report_settled() from public, anon, authenticated;
+revoke execute on function public.ban_returns() from public, anon, authenticated;
+drop trigger if exists ban_returns on public.profiles;
+create trigger ban_returns
+  after insert on public.profiles
+  for each row execute function public.ban_returns();
 
-drop trigger if exists notice_report_settled on public.reports;
-create trigger notice_report_settled after update of handled on public.reports
-  for each row execute function public.notice_report_settled();
-drop trigger if exists notice_report_settled on public.post_reports;
-create trigger notice_report_settled after update of handled on public.post_reports
-  for each row execute function public.notice_report_settled();
+create or replace function public.handle_status(p_handle text)
+returns text
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select case
+    when coalesce(btrim(p_handle), '') = ''            then 'empty'
+    when lower(btrim(p_handle)) !~ '^[a-z0-9_]{3,20}$' then 'format'
+    when exists (select 1 from public.profiles
+                 where handle = lower(btrim(p_handle)) and id = auth.uid()) then 'yours'
+    when exists (select 1 from public.profiles
+                 where handle = lower(btrim(p_handle))) then 'taken'
+    when exists (select 1 from public.banned_marks
+                 where handle = lower(btrim(p_handle))) then 'taken'
+    else 'ok'
+  end;
+$$;
+
+create or replace function public.room_list(p_slug text)
+returns table (
+  id          uuid,
+  body        text,
+  who         text,
+  mine        boolean,
+  created_at  timestamptz
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select r.id, r.body, lower(left(coalesce(p.display_name, p.handle, 's'), 1)), r.user_id = auth.uid(), r.created_at
+  from public.room_posts r
+  join public.events e on e.id = r.event_id
+  left join public.profiles p on p.id = r.user_id
+  where e.slug = p_slug and public.checked_in(e.id)
+    and not public.hidden_by_block(r.user_id)
+    and not public.is_banned(r.user_id)
+  order by r.created_at;
+$$;
 
 do $$ begin
-  if to_regprocedure('public.migration_done(text)') is not null then
-    perform public.migration_done('67_report_answer.sql');
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('74_ban_stays.sql', '4a96d6ee01aed02a6fa04804d57c7446838fa3ca7cfc4d88f00caca26d26268a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('74_ban_stays.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A SPARK TAKEN BACK TELLS THE PEOPLE WHO SAID IN   (75_spark_off.sql)
+-- ============================================================
+
+-- afterhours — a spark taken back tells the people who said in (75)
+--
+-- spark_cancel (27) deleted the spark and the ones who had said in walked into
+-- nothing (F23, 20.10.2026). Now, before it goes, each of them gets one push:
+-- {name} took it back · {title}, on the sparks switch. The words come from 58 via
+-- 72, with the one kind added; push_wants likewise.
+
+alter table public.push_outbox drop constraint if exists push_outbox_kind_check;
+alter table public.push_outbox add constraint push_outbox_kind_check check (kind in (
+  'friend_request', 'friend_accepted', 'match', 'friend_live',
+  'night_soon', 'room_open', 'room_closing', 'room_message', 'reply',
+  'digest', 'dj_live', 'wave', 'spark', 'spark_in',
+  'group_added', 'group_joined', 'group_match', 'group_round', 'group_won', 'group_plan',
+  'group_message', 'group_live', 'group_ticket', 'post',
+  'staff', 'post_like', 'post_comment',
+  'dm', 'night_changed', 'spark_off'));
+
+create or replace function public.push_text(p_kind text, p_lang text, p_data jsonb)
+returns table (title text, body text)
+language plpgsql
+immutable
+as $$
+declare
+  pair record;
+begin
+  select x.title, x.body into title, body
+  from (values
+    ('friend_request',  'en', 'friend request',                '{name} wants to add you'),
+    ('friend_request',  'de', 'freundschaftsanfrage',          '{name} möchte dich hinzufügen'),
+    ('friend_request',  'tr', 'arkadaşlık isteği',             '{name} seni eklemek istiyor'),
+    ('friend_accepted', 'en', 'you are friends now',           '{name} accepted your request'),
+    ('friend_accepted', 'de', 'ihr seid jetzt freunde',        '{name} hat deine anfrage angenommen'),
+    ('friend_accepted', 'tr', 'artık arkadaşsınız',            '{name} isteğini kabul etti'),
+    ('match',           'en', '{name} is going too',           '{title}'),
+    ('match',           'de', '{name} geht auch hin',          '{title}'),
+    ('match',           'tr', '{name} de gidiyor',             '{title}'),
+    ('friend_live',     'en', '{name} is out now',             '{title}'),
+    ('friend_live',     'de', '{name} ist gerade unterwegs',   '{title}'),
+    ('friend_live',     'tr', '{name} şu an dışarıda',         '{title}'),
+    ('night_soon',      'en', 'tonight · {time}',              '{title}'),
+    ('night_soon',      'de', 'heute nacht · {time}',          '{title}'),
+    ('night_soon',      'tr', 'bu gece · {time}',              '{title}'),
+    ('room_open',       'en', 'your room is open',             '{title} · 48 hours to write'),
+    ('room_open',       'de', 'dein raum ist offen',           '{title} · 48 stunden zum schreiben'),
+    ('room_open',       'tr', 'odan açık',                     '{title} · 48 saat yazabilirsin'),
+    ('room_closing',    'en', 'your room closes soon',         '{title} · the last two hours'),
+    ('room_closing',    'de', 'dein raum schließt bald',       '{title} · die letzten zwei stunden'),
+    ('room_closing',    'tr', 'odan birazdan kapanıyor',       '{title} · son iki saat'),
+    ('room_message',    'en', '{name} in {title}',             'a new line in your room'),
+    ('room_message',    'de', '{name} in {title}',             'eine neue zeile in deinem raum'),
+    ('room_message',    'tr', '{title} · {name}',              'odanda yeni bir satır'),
+    ('reply',           'en', '{name} replied',                'a new reply'),
+    ('reply',           'de', '{name} hat geantwortet',        'eine neue antwort'),
+    ('reply',           'tr', '{name} cevap verdi',            'yeni bir cevap'),
+    ('digest',          'en', 'this weekend in {city}',        '{n} nights · {friends} kept by friends'),
+    ('digest',          'de', 'dieses wochenende in {city}',   '{n} nächte · {friends} von freunden behalten'),
+    ('digest',          'tr', 'bu hafta sonu {city}',          '{n} gece · {friends} tanesini arkadaşların sakladı'),
+    ('dj_live',         'en', '{name} plays soon',             '{where} · {time}'),
+    ('dj_live',         'de', '{name} legt bald auf',          '{where} · {time}'),
+    ('dj_live',         'tr', '{name} birazdan çalıyor',       '{where} · {time}'),
+    ('wave',            'en', '2nd wave',                      'a friend of {via} kept {title}'),
+    ('wave',            'de', '2. welle',                      'ein freund von {via} hat {title} behalten'),
+    ('wave',            'tr', '2. dalga',                      '{via} üzerinden biri {title} gecesini sakladı'),
+    ('spark',           'en', '{name} is starting something',  '{title} · {when}'),
+    ('spark',           'de', '{name} startet etwas',          '{title} · {when}'),
+    ('spark',           'tr', '{name} bir şey başlatıyor',     '{title} · {when}'),
+    ('spark_in',        'en', '{name} is in',                  '{title}'),
+    ('spark_in',        'de', '{name} ist dabei',              '{title}'),
+    ('spark_in',        'tr', '{name} geliyor',                '{title}'),
+    ('group_added',     'en', 'you are in {group}',            '{name} added you · swipe nights together'),
+    ('group_added',     'de', 'du bist in {group}',            '{name} hat dich hinzugefügt · wischt zusammen'),
+    ('group_added',     'tr', '{group} grubundasın',           '{name} seni ekledi · birlikte gece seçin'),
+    ('group_joined',    'en', '{group}',                       '{name} joined'),
+    ('group_joined',    'de', '{group}',                       '{name} ist dazugekommen'),
+    ('group_joined',    'tr', '{group}',                       '{name} gruba katıldı'),
+    ('group_match',     'en', '{group} · everyone is in',      '{title}'),
+    ('group_match',     'de', '{group} · alle sind dabei',     '{title}'),
+    ('group_match',     'tr', '{group} · herkes var',          '{title}'),
+    ('group_round',     'en', '{group} · vote',                '{name} put {title} to a vote'),
+    ('group_round',     'de', '{group} · abstimmung',          '{name} lässt abstimmen: {title}'),
+    ('group_round',     'tr', '{group} · oylama',              '{name} oylamaya sundu: {title}'),
+    ('group_won',       'en', '{group} · the vote is in',      '{title}'),
+    ('group_won',       'de', '{group} · abgestimmt',          '{title}'),
+    ('group_won',       'tr', '{group} · oylama bitti',        '{title}'),
+    ('group_plan',      'en', '{group} · the plan',            '{name}: {title}'),
+    ('group_plan',      'de', '{group} · der plan',            '{name}: {title}'),
+    ('group_plan',      'tr', '{group} · plan',                '{name}: {title}'),
+    ('group_message',   'en', '{group} · {name}',              'a new message'),
+    ('group_message',   'de', '{group} · {name}',              'eine neue nachricht'),
+    ('group_message',   'tr', '{group} · {name}',              'yeni bir mesaj'),
+    ('group_live',      'en', '{group} · live now',            '{name} wants to swipe together, now'),
+    ('group_live',      'de', '{group} · gerade live',         '{name} will jetzt zusammen wischen'),
+    ('group_live',      'tr', '{group} · şimdi canlı',         '{name} şimdi birlikte kaydırmak istiyor'),
+    ('group_ticket',    'en', '{group} · tomorrow',            'you are in for {title} but have no ticket yet'),
+    ('group_ticket',    'de', '{group} · morgen',              'du bist bei {title} dabei, hast aber noch kein ticket'),
+    ('group_ticket',    'tr', '{group} · yarın',               '{title} için geliyorsun ama henüz biletin yok'),
+    ('post',            'en', '{name} posted',                 'a new post'),
+    ('post',            'de', '{name} hat gepostet',           'ein neuer post'),
+    ('post',            'tr', '{name} paylaştı',               'yeni bir gönderi'),
+    ('post_like',       'en', '{name} likes your post',        'open yours to see it'),
+    ('post_like',       'de', '{name} gefällt dein post',      'in yours ansehen'),
+    ('post_like',       'tr', '{name} gönderini beğendi',      'yours sekmesinde'),
+    ('post_comment',    'en', '{name} commented',              'a new comment'),
+    ('post_comment',    'de', '{name} hat kommentiert',        'ein neuer kommentar'),
+    ('post_comment',    'tr', '{name} yorum yaptı',            'yeni bir yorum'),
+    -- 59_dms.sql: a direct message; the name, never the words
+    ('dm',              'en', '{name}',                        'a new message'),
+    ('dm',              'de', '{name}',                        'eine neue nachricht'),
+    ('dm',              'tr', '{name}',                        'yeni bir mesaj'),
+    ('staff',           'en', 'the panel',                     '{n} waiting: reports, nights sent in, dj pages'),
+    ('staff',           'de', 'das panel',                     '{n} warten: meldungen, eingesandte nächte, dj-seiten'),
+    ('staff',           'tr', 'panel',                         '{n} iş bekliyor: şikayetler, gönderilen geceler, dj sayfaları'),
+    -- 72_night_changed.sql: a night you kept, answered or hold a ticket for
+    ('night_changed',   'en', '{title}',                       '{what}'),
+    ('night_changed',   'de', '{title}',                       '{what}'),
+    ('night_changed',   'tr', '{title}',                       '{what}'),
+    -- 75_spark_off.sql: a spark you said in to was taken back by its host
+    ('spark_off',       'en', '{name} took it back',            '{title}'),
+    ('spark_off',       'de', '{name} hat es abgesagt',         '{title}'),
+    ('spark_off',       'tr', '{name} iptal etti',              '{title}')
+  ) as x(kind, lang, title, body)
+  where x.kind = p_kind and x.lang = coalesce(nullif(p_lang, ''), 'en');
+
+  -- The words of a member never reach a lock screen (the decision of owner, 11.10.2026): what the
+  -- triggers still pass as text is dropped here, whatever the caller.
+  for pair in select * from jsonb_each_text(coalesce(p_data, '{}') - 'text') loop
+    title := replace(title, '{' || pair.key || '}', coalesce(pair.value, ''));
+    body  := replace(body,  '{' || pair.key || '}', coalesce(pair.value, ''));
+  end loop;
+  return next;
+end;
+$$;
+
+create or replace function public.push_wants(p_user uuid, p_kind text)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select coalesce((
+    select case
+             when p_kind = 'friend_request'  then s.notify_requests
+             when p_kind = 'friend_accepted' then s.notify_accepts
+             when p_kind = 'match'           then s.notify_matches
+             when p_kind = 'friend_live'     then s.notify_live
+             when p_kind in ('night_soon', 'night_changed') then s.notify_nights
+             when p_kind in ('room_open', 'room_closing', 'room_message') then s.notify_rooms
+             when p_kind = 'reply'           then s.notify_replies
+             when p_kind = 'digest'          then s.notify_digest
+             when p_kind = 'dj_live'         then s.notify_djs
+             when p_kind = 'wave'            then s.notify_waves
+             when p_kind in ('spark', 'spark_in', 'spark_off') then s.notify_sparks
+             when p_kind like 'group\_%' then s.notify_groups
+             when p_kind in ('post', 'post_like', 'post_comment') then s.notify_posts
+             when p_kind = 'dm'              then s.notify_dms
+           end
+    from public.profile_settings s where s.user_id = p_user), true);
+$$;
+
+create or replace function public.spark_cancel(p_spark uuid)
+returns void
+language plpgsql
+volatile
+security definer
+set search_path = public
+as $$
+declare
+  s    public.sparks%rowtype;
+  them record;
+begin
+  select * into s from public.sparks where id = p_spark and host_id = auth.uid();
+  if s.id is null then
+    raise exception 'not yours' using errcode = '42501';
+  end if;
+  for them in select i.user_id from public.spark_invites i where i.spark_id = s.id and i.answer = 'in' loop
+    perform public.push_enqueue(them.user_id, 'spark_off',
+      format('spark_off:%s:%s', s.id, them.user_id),
+      jsonb_build_object('name', public.push_name(s.host_id), 'title', s.title, 'url', '/connect'));
+  end loop;
+  delete from public.sparks where id = s.id;
+end;
+$$;
+revoke execute on function public.spark_cancel(uuid) from public, anon;
+grant execute on function public.spark_cancel(uuid)  to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('75_spark_off.sql', 'fe74781c189f738a245bb740adb7e31b872f355d7b50cbec940c32acabf97960');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('75_spark_off.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A NIGHT SENT IN — THE SENDER HEARS, CAN TAKE IT BACK; STALE ONES LEAVE THE QUEUE   (76_sent_nights.sql)
+-- ============================================================
+
+-- afterhours — a night sent in: the sender hears, can take it back, and the stale
+-- ones leave the queue (76)
+--
+-- Someone sent a night in (43) and then nothing: no word when the staff let it through
+-- or turned it down, no way to take it back, and a night whose date had passed sat in
+-- the queue forever, counting against the five a person may have waiting (F24,
+-- 20.10.2026). Three things:
+--   staff_review     the same as 43, plus a notice to the sender: night_ok / night_no
+--                    (with the note the staff wrote, if any)
+--   event_withdraw   the sender takes a waiting night back
+--   submissions_expire  a waiting night whose date has passed is turned down with the
+--                    note "the date passed"; the staff queue runs it first, so it
+--                    never needs a clock job, and the five-limit counts only the live ones
+
+alter table public.notices drop constraint if exists notices_kind_check;
+alter table public.notices add constraint notices_kind_check
+  check (kind in ('comment_hidden', 'post_hidden', 'removed', 'profile_cleared',
+                  'role', 'dj_verified', 'dj_hidden', 'report_removed', 'report_kept',
+                  'night_ok', 'night_no'));
+
+create or replace function public.staff_review(p_id uuid, p_ok boolean, p_note text)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  e public.events%rowtype;
+begin
+  perform public.need_staff();
+  select * into e from public.events where id = p_id and review = 'pending';
+  if e.id is null then raise exception 'nothing waiting with that id'; end if;
+  if p_ok then
+    update public.events set review = null, review_note = null, is_published = true, updated_at = now() where id = p_id;
+  else
+    update public.events set review = 'rejected', review_note = left(nullif(btrim(p_note), ''), 300), is_published = false, updated_at = now() where id = p_id;
+  end if;
+  perform public.notice(e.created_by, case when p_ok then 'night_ok' else 'night_no' end,
+                        jsonb_build_object('title', e.title, 'slug', e.slug,
+                                           'note', coalesce(left(nullif(btrim(p_note), ''), 300), '')));
+  perform public.staff_note(case when p_ok then 'approve' else 'reject' end, 'night', e.slug, e.title);
+end;
+$$;
+
+-- The sender takes a waiting night back. Only theirs, only while it waits.
+create or replace function public.event_withdraw(p_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  delete from public.events
+   where id = p_id and created_by = auth.uid() and source = 'user' and review = 'pending';
+  if not found then
+    raise exception 'nothing of yours waiting with that id' using errcode = '42501';
+  end if;
+end;
+$$;
+revoke execute on function public.event_withdraw(uuid) from public, anon;
+grant execute on function public.event_withdraw(uuid) to authenticated;
+
+-- A waiting night whose date has passed: turned down, with a note, and the sender told.
+create or replace function public.submissions_expire()
+returns integer
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  e record;
+  n int := 0;
+begin
+  for e in select id, created_by, title, slug from public.events
+           where review = 'pending' and starts_at is not null and starts_at < now() loop
+    update public.events set review = 'rejected', review_note = 'the date passed', is_published = false, updated_at = now()
+     where id = e.id;
+    perform public.notice(e.created_by, 'night_no', jsonb_build_object('title', e.title, 'slug', e.slug, 'note', 'the date passed'));
+    n := n + 1;
+  end loop;
+  return n;
+end;
+$$;
+revoke execute on function public.submissions_expire() from public, anon, authenticated;
+
+-- The staff queue, with the stale ones cleared first. The return type is that of 43.
+create or replace function public.staff_pending()
+returns table (id uuid, slug text, title text, city_slug text, type_slug text, venue_name text,
+               starts_at timestamptz, body text, ticket_url text, image_url text, maker text, handle text, sent_at timestamptz)
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if public.is_staff() then
+    perform public.submissions_expire();
+  end if;
+  return query
+    select e.id, e.slug, e.title, c.slug, t.slug, v.name, e.starts_at, e.body, e.ticket_url, e.image_url,
+           p.display_name, p.handle, e.created_at
+    from public.events e
+    join public.cities c on c.id = e.city_id
+    join public.event_types t on t.id = e.type_id
+    left join public.venues v on v.id = e.venue_id
+    left join public.profiles p on p.id = e.created_by
+    where e.review = 'pending' and public.is_staff()
+    order by e.created_at;
+end;
+$$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('76_sent_nights.sql', '6083e440d0d3933f27cc25255c38e079b8d251c5e3994c4741ba85b8eeccb3e8');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('76_sent_nights.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  SOME NAMES BELONG TO NOBODY — ADMIN, AFTERHOURS, SUPPORT   (77_reserved_handles.sql)
+-- ============================================================
+
+-- afterhours — some names belong to nobody (77)
+--
+-- Anyone could take @admin, @afterhours or @support and write to people as the team
+-- (F15, 20.10.2026). A short list of reserved words, and anything that starts with
+-- afterhours, is now taken for everyone who is not staff: handle_status says so on
+-- every keystroke, handle_new_user drops the wish at sign-up, and profile_setup (12)
+-- goes through handle_status and so refuses it too. The staff keep the right to use
+-- them (the panel accounts). Both functions are those of 74 / 12 with the one check.
+
+create or replace function public.handle_reserved(p_handle text)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select not coalesce(public.is_staff(), false)
+     and (p_handle in ('admin', 'administrator', 'afterhours', 'support', 'help', 'staff', 'team',
+                       'moderator', 'mod', 'official', 'security', 'root', 'system', 'info', 'contact',
+                       'ticketmaster', 'supabase', 'apple', 'google', 'null', 'undefined', 'someone')
+          or p_handle like 'afterhours%'
+          or p_handle like 'admin\_%'
+          or p_handle like 'support\_%');
+$$;
+grant execute on function public.handle_reserved(text) to anon, authenticated;
+
+create or replace function public.handle_status(p_handle text)
+returns text
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select case
+    when coalesce(btrim(p_handle), '') = ''            then 'empty'
+    when lower(btrim(p_handle)) !~ '^[a-z0-9_]{3,20}$' then 'format'
+    when public.handle_reserved(lower(btrim(p_handle))) then 'taken'
+    when exists (select 1 from public.profiles
+                 where handle = lower(btrim(p_handle)) and id = auth.uid()) then 'yours'
+    when exists (select 1 from public.profiles
+                 where handle = lower(btrim(p_handle))) then 'taken'
+    when exists (select 1 from public.banned_marks
+                 where handle = lower(btrim(p_handle))) then 'taken'
+    else 'ok'
+  end;
+$$;
+
+create or replace function public.handle_new_user()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  wanted text := lower(btrim(coalesce(new.raw_user_meta_data ->> 'handle', '')));
+  city_slug_in   text := lower(btrim(coalesce(new.raw_user_meta_data ->> 'city', '')));
+  city_uuid uuid;
+begin
+  if wanted !~ '^[a-z0-9_]{3,20}$'
+     or public.handle_reserved(wanted)
+     or exists (select 1 from public.profiles where handle = wanted) then
+    wanted := null;
+  end if;
+
+  if city_slug_in <> '' then
+    select id into city_uuid from public.cities where slug = city_slug_in;
+  end if;
+
+  insert into public.profiles (id, display_name, handle, city_id, onboarded_at)
+  values (
+    new.id,
+    coalesce(new.raw_user_meta_data ->> 'name', split_part(new.email, '@', 1)),
+    wanted,
+    city_uuid,
+    case when wanted is null then null else now() end
+  )
+  on conflict (id) do nothing;
+
+  insert into public.profile_settings (user_id)
+  values (new.id)
+  on conflict (user_id) do nothing;
+
+  return new;
+end;
+$$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('77_reserved_handles.sql', 'fa5b62cfc06e366950440065eed78c7d055bf325bc82226489865c81cae07c2e');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('77_reserved_handles.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  THE OLDEST APP THAT STILL WORKS   (78_min_version.sql)
+-- ============================================================
+
+-- afterhours — the oldest app that still works (78)
+--
+-- The numbered files drop and remake functions; an app built before such a change
+-- keeps calling the old shape and fails in silence (F10, 20.10.2026). The server now
+-- carries the oldest version it still answers: min_app_version() is read at every
+-- launch, and an app below it shows a full-screen door to the download page
+-- (components/UpdateGate.tsx) instead of a broken deck. One row, set by an admin
+-- through set_min_app_version; nothing else writes it. version_lt compares two
+-- dotted numbers the way people mean them (1.2.0 is below 1.10.0).
+
+create table if not exists public.app_floor (
+  one         boolean primary key default true check (one),
+  min_version text not null default '0.1.0' check (min_version ~ '^[0-9]+\.[0-9]+\.[0-9]+$'),
+  note        text,
+  set_at      timestamptz not null default now()
+);
+insert into public.app_floor (one) values (true) on conflict do nothing;
+
+alter table public.app_floor enable row level security;
+revoke all on public.app_floor from public, anon, authenticated;
+
+create or replace function public.version_lt(a text, b text)
+returns boolean
+language sql
+immutable
+as $$
+  select string_to_array(a, '.')::int[] < string_to_array(b, '.')::int[];
+$$;
+grant execute on function public.version_lt(text, text) to anon, authenticated;
+
+create or replace function public.min_app_version()
+returns text
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select f.min_version from public.app_floor f where f.one;
+$$;
+grant execute on function public.min_app_version() to anon, authenticated;
+
+create or replace function public.set_min_app_version(p_version text, p_note text default null)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if not coalesce(public.is_admin(), false) then
+    raise exception 'admin only' using errcode = '42501';
+  end if;
+  if p_version !~ '^[0-9]+\.[0-9]+\.[0-9]+$' then
+    raise exception 'a version looks like 1.2.3' using errcode = '22023';
+  end if;
+  update public.app_floor set min_version = p_version, note = p_note, set_at = now() where one;
+  return p_version;
+end;
+$$;
+grant execute on function public.set_min_app_version(text, text) to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('78_min_version.sql', '1670ac287ac7ff389e9ca9c123caea56b59dd1a669dbb207ca7fc380a23ef97f');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('78_min_version.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  WORDS THE STAFF WANT TO SEE — WATCHED, NOT REFUSED   (79_word_watch.sql)
+-- ============================================================
+
+-- afterhours — words the staff want to see (79)
+--
+-- Nothing looked at what people wrote until someone reported it (F21, 20.10.2026;
+-- Apple 1.2 asks for a filtering method). Decided: watch, do not refuse. A short
+-- three-language list of words lives in watch_words; whenever a comment, a post, a
+-- room line, a group message, a DM, a group name, a spark or a profile is written or
+-- edited and holds one of them, it lands in the open reports as if its own author had
+-- reported it, reason "filter: <word>". It stays visible; the staff decide in the
+-- panel as with any report. The list grows and shrinks by admin calls.
+--
+--   watch_hit(text)                the first watched word in it, or null
+--   watch_add(word) / watch_drop   admin
+--   watch_list()                   staff
+
+create table if not exists public.watch_words (
+  word      text primary key check (word = lower(btrim(word)) and length(word) between 2 and 40),
+  added_at  timestamptz not null default now()
+);
+alter table public.watch_words enable row level security;
+revoke all on public.watch_words from public, anon, authenticated;
+
+insert into public.watch_words (word) values
+  ('nigger'), ('nigga'), ('faggot'), ('fag'), ('retard'), ('kike'), ('spic'), ('chink'), ('tranny'), ('whore'), ('slut'), ('cunt'), ('rape'), ('kill yourself'), ('kys'),
+  ('kanake'), ('kanacke'), ('neger'), ('schwuchtel'), ('fotze'), ('hure'), ('schlampe'), ('judensau'), ('bring dich um'),
+  ('orospu'), ('ibne'), ('pezevenk'), ('amcık'), ('amcik'), ('siktir'), ('sikerim'), ('göt'), ('piç'), ('pic kurusu'), ('geber'), ('kendini öldür')
+on conflict do nothing;
+
+create or replace function public.watch_hit(p_text text)
+returns text
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select w.word from public.watch_words w
+  where p_text is not null
+    and lower(p_text) ~ ('(^|[^[:alnum:]])' || regexp_replace(w.word, '([.*+?^${}()|\[\]\\])', '\\\1', 'g') || '($|[^[:alnum:]])')
+  order by length(w.word) desc
+  limit 1;
+$$;
+grant execute on function public.watch_hit(text) to authenticated;
+
+create or replace function public.watch_add(p_word text)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if not coalesce(public.is_admin(), false) then raise exception 'admin only' using errcode = '42501'; end if;
+  insert into public.watch_words (word) values (lower(btrim(p_word))) on conflict do nothing;
+end;
+$$;
+create or replace function public.watch_drop(p_word text)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if not coalesce(public.is_admin(), false) then raise exception 'admin only' using errcode = '42501'; end if;
+  delete from public.watch_words where word = lower(btrim(p_word));
+end;
+$$;
+create or replace function public.watch_list()
+returns setof text
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_staff();
+  return query select w.word from public.watch_words w order by w.word;
+end;
+$$;
+grant execute on function public.watch_add(text), public.watch_drop(text), public.watch_list() to authenticated;
+
+-- One trigger body for every table: args are the report kind, the author column,
+-- then the text columns. A post goes to post_reports, everything else to reports.
+create or replace function public.watch_ugc()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  j     jsonb := to_jsonb(new);
+  body  text := '';
+  i     int;
+  hit   text;
+  who   uuid;
+begin
+  for i in 2 .. tg_nargs - 1 loop
+    body := body || ' ' || coalesce(j ->> tg_argv[i], '');
+  end loop;
+  hit := public.watch_hit(body);
+  if hit is null then return new; end if;
+  who := (j ->> tg_argv[1])::uuid;
+  if tg_argv[0] = 'post' then
+    insert into public.post_reports (post_id, reporter_id, reason) values (new.id, who, 'filter: ' || hit)
+    on conflict do nothing;
+  else
+    insert into public.reports (reporter_id, kind, target, reason) values (who, tg_argv[0], new.id::text, 'filter: ' || hit)
+    on conflict do nothing;
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists watch_comments       on public.comments;
+drop trigger if exists watch_post_comments  on public.post_comments;
+drop trigger if exists watch_room_posts     on public.room_posts;
+drop trigger if exists watch_group_messages on public.group_messages;
+drop trigger if exists watch_dm_messages    on public.dm_messages;
+drop trigger if exists watch_groups         on public.groups;
+drop trigger if exists watch_sparks         on public.sparks;
+drop trigger if exists watch_posts          on public.posts;
+drop trigger if exists watch_profiles       on public.profiles;
+create trigger watch_comments       after insert or update of body  on public.comments       for each row execute function public.watch_ugc('comment', 'author_id', 'body');
+create trigger watch_post_comments  after insert or update of body  on public.post_comments  for each row execute function public.watch_ugc('post_comment', 'author_id', 'body');
+create trigger watch_room_posts     after insert or update of body  on public.room_posts     for each row execute function public.watch_ugc('room_post', 'user_id', 'body');
+create trigger watch_group_messages after insert or update of body  on public.group_messages for each row execute function public.watch_ugc('group_message', 'user_id', 'body');
+create trigger watch_dm_messages    after insert or update of body  on public.dm_messages    for each row execute function public.watch_ugc('dm_message', 'user_id', 'body');
+create trigger watch_groups         after insert or update of name  on public.groups         for each row execute function public.watch_ugc('group', 'created_by', 'name');
+create trigger watch_sparks         after insert or update of title, place on public.sparks  for each row execute function public.watch_ugc('spark', 'host_id', 'title', 'place');
+create trigger watch_posts          after insert or update of body  on public.posts          for each row execute function public.watch_ugc('post', 'author_id', 'body');
+create trigger watch_profiles       after insert or update of handle, display_name, bio, about on public.profiles for each row execute function public.watch_ugc('profile', 'id', 'handle', 'display_name', 'bio', 'about');
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('79_word_watch.sql', '3a484dd375b17d135f53c7eb72bbd97bb12469d790015c60347746d280e4fec7');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('79_word_watch.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  WHAT A GUEST KEPT COMES ALONG   (80_guest_merge.sql)
+-- ============================================================
+
+-- afterhours — what a guest kept comes along (80)
+--
+-- A guest who signs up with an email that already has an account is sent to sign in,
+-- and the anonymous session is replaced: the swipes made as a guest stayed behind on
+-- a user nobody could reach again (F31, 20.10.2026). The app now remembers the guest
+-- id across that sign-in and calls guest_merge once: the swipes move to the account
+-- (a night already swiped there keeps the answer of the account), and the guest user is
+-- deleted. Only an anonymous user with no email can be taken over, and only by a
+-- signed-in account; the id is the one thing the device knows about its guest.
+--
+--   guest_merge(guest_id)   returns how many swipes came along
+
+create or replace function public.guest_merge(p_guest uuid)
+returns integer
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  me uuid := auth.uid();
+  n  int;
+begin
+  if me is null or public.is_guest() then raise exception 'sign in first'; end if;
+  if p_guest is null or p_guest = me then return 0; end if;
+  if not exists (select 1 from auth.users u where u.id = p_guest and coalesce(u.is_anonymous, false) and u.email is null) then
+    raise exception 'not a guest';
+  end if;
+  insert into public.swipes (user_id, event_id, direction, created_at)
+  select me, s.event_id, s.direction, s.created_at from public.swipes s where s.user_id = p_guest
+  on conflict (user_id, event_id) do nothing;
+  get diagnostics n = row_count;
+  delete from auth.users where id = p_guest;
+  return n;
+end;
+$$;
+grant execute on function public.guest_merge(uuid) to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('80_guest_merge.sql', 'd053253ca69f493d9d74c7f94056bef8327b61d0a65d7ba9beaf129d90b5e3d0');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('80_guest_merge.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  POSTS ARE OFF   (81_posts_off.sql)
+-- ============================================================
+
+-- afterhours — posts are off (81)
+--
+-- The yours tab has been hidden since 12.10.2026; post/new and the past feed were
+-- reachable only from there, and a like or a comment still sent a push whose link
+-- opened nothing (F26, 20.10.2026). Decided: take posts down for the release rather
+-- than find them a new home. The tables, the triggers and the staff view stay; the
+-- app redirects its two screens (content/flags.ts POSTS_ON) and push_wants here says
+-- no to every post kind, whatever the person set, so nothing leaves the outbox.
+-- push_wants is that of 75 with the one line; flip the line back with the flag.
+
+create or replace function public.push_wants(p_user uuid, p_kind text)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select coalesce((
+    select case
+             when p_kind = 'friend_request'  then s.notify_requests
+             when p_kind = 'friend_accepted' then s.notify_accepts
+             when p_kind = 'match'           then s.notify_matches
+             when p_kind = 'friend_live'     then s.notify_live
+             when p_kind in ('night_soon', 'night_changed') then s.notify_nights
+             when p_kind in ('room_open', 'room_closing', 'room_message') then s.notify_rooms
+             when p_kind = 'reply'           then s.notify_replies
+             when p_kind = 'digest'          then s.notify_digest
+             when p_kind = 'dj_live'         then s.notify_djs
+             when p_kind = 'wave'            then s.notify_waves
+             when p_kind in ('spark', 'spark_in', 'spark_off') then s.notify_sparks
+             when p_kind like 'group\_%' then s.notify_groups
+             when p_kind in ('post', 'post_like', 'post_comment') then false
+             when p_kind = 'dm'              then s.notify_dms
+           end
+    from public.profile_settings s where s.user_id = p_user), true);
+$$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('81_posts_off.sql', '7c72d645cc6875566aa55521c252c5e172b32bd7d31347588831a2ed4da19bab');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('81_posts_off.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A FILE GOES WITH ITS ROW   (82_leftovers.sql)
+-- ============================================================
+
+-- afterhours — a file goes with its row (82)
+--
+-- The photos bucket is public in the storage sense: whoever holds the address sees
+-- the file. Removing a post, a group photo, a cover or a face only ever deleted the
+-- row (and the app tried to remove the file from the phone, when it was online and
+-- had not crashed); a photo the staff hid stayed served; a deleted account and a
+-- pruned guest left their folder behind (F39, 20.10.2026). Decided: the file goes
+-- with the row, and a hidden post loses its photo at once. The text stays as the
+-- record. Done in the database so that no client is trusted to clean up.
+--
+--   storage_drop(path)        one object of the photos bucket, service level
+--   storage_drop_folder(uid)  everything under a person
+-- The triggers below fire on delete, on a replaced path and on hiding. Outside
+-- Supabase (the tests) storage.objects may not exist; then there is nothing to drop.
+
+create or replace function public.storage_drop(p_path text)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if p_path is null or to_regclass('storage.objects') is null then return; end if;
+  execute 'delete from storage.objects where bucket_id = $1 and name = $2' using 'photos', p_path;
+end;
+$$;
+revoke execute on function public.storage_drop(text) from public, anon, authenticated;
+
+create or replace function public.storage_drop_folder(p_uid uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if p_uid is null or to_regclass('storage.objects') is null then return; end if;
+  execute 'delete from storage.objects where bucket_id = $1 and name like $2' using 'photos', p_uid::text || '/%';
+end;
+$$;
+revoke execute on function public.storage_drop_folder(uuid) from public, anon, authenticated;
+
+-- One trigger body: the argument names the path column.
+create or replace function public.photo_gone()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  col  text := tg_argv[0];
+  was  text := case when tg_op = 'INSERT' then null else to_jsonb(old) ->> col end;
+  now_ text := case when tg_op = 'DELETE' then null else to_jsonb(new) ->> col end;
+begin
+  if tg_op = 'DELETE' then
+    perform public.storage_drop(was);
+    return old;
+  end if;
+  if was is distinct from now_ then
+    perform public.storage_drop(was);
+  elsif (to_jsonb(new) ->> 'is_hidden')::boolean and not coalesce((to_jsonb(old) ->> 'is_hidden')::boolean, false) then
+    perform public.storage_drop(now_);
+  end if;
+  return new;
+end;
+$$;
+
+create or replace function public.folder_gone()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform public.storage_drop_folder(old.id);
+  return old;
+end;
+$$;
+
+drop trigger if exists photo_gone_posts          on public.posts;
+drop trigger if exists photo_gone_profile_photos on public.profile_photos;
+drop trigger if exists photo_gone_group_photos   on public.group_photos;
+drop trigger if exists photo_gone_groups         on public.groups;
+drop trigger if exists folder_gone_profiles      on public.profiles;
+create trigger photo_gone_posts          after delete or update of photo_path, is_hidden on public.posts          for each row execute function public.photo_gone('photo_path');
+create trigger photo_gone_profile_photos after delete or update of path                  on public.profile_photos for each row execute function public.photo_gone('path');
+create trigger photo_gone_group_photos   after delete or update of path                  on public.group_photos   for each row execute function public.photo_gone('path');
+create trigger photo_gone_groups         after delete or update of cover_path            on public.groups         for each row execute function public.photo_gone('cover_path');
+create trigger folder_gone_profiles      after delete                                    on public.profiles       for each row execute function public.folder_gone();
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('82_leftovers.sql', 'fd331d73d48eca15b020a2173b0828c697fd674a6e72ab30ea4759e2cc933dbf');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('82_leftovers.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A DJ PAGE AFTER THE DJ   (83_dj_after.sql)
+-- ============================================================
+
+-- afterhours — a DJ page after the DJ (83)
+--
+-- When a DJ deleted their account the page stayed up: owner_id fell to null and
+-- verified stayed true, so a page nobody could edit or answer for kept its place;
+-- and push_hourly told followers about sets of pages the staff had taken down
+-- (F25, 20.10.2026). Now: a page loses its check the moment its owner goes
+-- (before the profile row leaves, while owner_id still points at it) - a page the
+-- staff made themselves, with no owner, is not touched; and the dj_live push goes
+-- only for a checked page. push_hourly is that of 26 with the one condition. The bio
+-- the DJ writes is shown on the page from this day (app/src/app/dj/[id].tsx).
+
+create or replace function public.dj_owner_gone()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  update public.djs set verified = false, verified_at = null where owner_id = old.id and verified;
+  return old;
+end;
+$$;
+drop trigger if exists dj_owner_gone on public.profiles;
+create trigger dj_owner_gone before delete on public.profiles
+  for each row execute function public.dj_owner_gone();
+
+create or replace function public.push_hourly(p_now timestamptz default now())
+returns integer
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  n    integer := 0;
+  them record;
+begin
+  -- a kept night starts in two to three hours
+  for them in
+    select w.user_id, e.id, e.title, e.slug, e.starts_at
+    from public.swipes w join public.events e on e.id = w.event_id
+    where w.direction = 'right' and e.is_published and not e.starts_at_estimated
+      and e.starts_at > p_now + interval '2 hours' and e.starts_at <= p_now + interval '3 hours'
+  loop
+    perform public.push_enqueue(them.user_id, 'night_soon', format('soon:%s:%s', them.user_id, them.id),
+      jsonb_build_object('title', them.title, 'time', public.push_clock(them.user_id, them.starts_at),
+                         'url', '/night/' || them.slug));
+    n := n + 1;
+  end loop;
+
+  -- a room freezes within two hours
+  if to_regclass('public.checkins') is not null then
+    for them in execute $q$
+      select c.id, c.user_id, e.title, e.slug
+      from public.checkins c join public.events e on e.id = c.event_id
+      where public.room_freeze_at(c.event_id) > $1 + interval '1 hour'
+        and public.room_freeze_at(c.event_id) <= $1 + interval '2 hours'
+    $q$ using p_now
+    loop
+      perform public.push_enqueue(them.user_id, 'room_closing', format('closing:%s', them.id),
+        jsonb_build_object('title', them.title, 'url', '/room/' || them.slug));
+      n := n + 1;
+    end loop;
+  end if;
+
+  -- a followed DJ plays within the hour
+  if to_regclass('public.dj_sets') is not null then
+    for them in execute $q$
+      select f.user_id, s.id, s.venue, s.starts_at, d.name, d.slug
+      from public.dj_follows f
+      join public.dj_sets s on s.dj_id = f.dj_id
+      join public.djs d on d.id = f.dj_id
+      where s.starts_at > $1 and s.starts_at <= $1 + interval '1 hour'
+        and d.verified
+    $q$ using p_now
+    loop
+      perform public.push_enqueue(them.user_id, 'dj_live', format('dj:%s:%s', them.user_id, them.id),
+        jsonb_build_object('name', them.name, 'where', them.venue,
+                           'time', public.push_clock(them.user_id, them.starts_at), 'url', '/dj/' || them.slug));
+      n := n + 1;
+    end loop;
+  end if;
+
+  -- thursday 18:00 on the phone: the weekend in your city (friday 18:00 to monday 06:00)
+  for them in
+    with here as (
+      select distinct on (k.user_id) k.user_id, k.tz from public.push_tokens k order by k.user_id, k.updated_at desc
+    ),
+    due as (
+      select h.user_id, p.city_id, c.name as city,
+             ((p_now at time zone h.tz)::date + 1 + time '18:00') at time zone h.tz as from_at,
+             ((p_now at time zone h.tz)::date + 4 + time '06:00') at time zone h.tz as to_at
+      from here h
+      join public.profiles p on p.id = h.user_id
+      join public.cities c on c.id = p.city_id
+      where extract(isodow from p_now at time zone h.tz) = 4
+        and extract(hour from p_now at time zone h.tz) = 18
+    )
+    select d.user_id, d.city,
+           (select count(*)::int from public.events e
+             where e.city_id = d.city_id and e.is_published and e.starts_at >= d.from_at and e.starts_at < d.to_at) as nights,
+           (select count(distinct w.event_id)::int from public.swipes w
+              join public.events e on e.id = w.event_id
+              join public.push_edges f on f.who = d.user_id and f.friend = w.user_id
+             where w.direction = 'right' and public.kept_visible(w.user_id)
+               and e.city_id = d.city_id and e.starts_at >= d.from_at and e.starts_at < d.to_at) as kept
+    from due d
+  loop
+    if them.nights > 0 then
+      perform public.push_enqueue(them.user_id, 'digest', format('digest:%s:%s', them.user_id, to_char(p_now, 'IYYY-IW')),
+        jsonb_build_object('city', them.city, 'n', them.nights, 'friends', them.kept, 'url', '/flow'));
+      n := n + 1;
+    end if;
+  end loop;
+  return n;
+end;
+$$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('83_dj_after.sql', '18c17fad8d80b42de42afe6e275348f34a0ea1edf993e45dc07eff43b571b861');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('83_dj_after.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A REPORT KEEPS A COPY   (84_report_snapshot.sql)
+-- ============================================================
+
+-- afterhours — a report keeps a copy (84)
+--
+-- A report pointed at a row and nothing else. When the row went (the author took it
+-- back, the staff removed it, the account was deleted) the panel showed an empty
+-- line; and the report itself left with the reporter, since it hung off their
+-- profile (F12, 20.10.2026). Decided: the report takes a copy of what it is about
+-- at the moment it is made - the text, the id and handle of the author, the time - and
+-- outlives both the content and the reporter. Files are not copied. Removal and
+-- deletion flows stay as they are.
+--
+--   reports.snapshot          jsonb {text, author, author_id, at}, filled by trigger
+--   reports.reporter_id       may be null now (the reporter left); fk sets null
+-- staff_reports (70) falls back to the copy; staff_report_settle (68) skips a
+-- reporter who is gone. Both are their latest text with the one change each.
+
+alter table public.reports add column if not exists snapshot jsonb;
+alter table public.reports alter column reporter_id drop not null;
+alter table public.reports drop constraint if exists reports_reporter_id_fkey;
+alter table public.reports add constraint reports_reporter_id_fkey
+  foreign key (reporter_id) references public.profiles (id) on delete set null;
+
+create or replace function public.report_text(p_kind text, p_target text)
+returns text
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select case p_kind
+    when 'comment'       then (select c.body from public.comments c where c.id::text = p_target)
+    when 'room_post'     then (select x.body from public.room_posts x where x.id::text = p_target)
+    when 'group_message' then (select x.body from public.group_messages x where x.id::text = p_target)
+    when 'profile'       then (select concat_ws(' · ', p.handle, p.display_name, p.bio, p.about) from public.profiles p where p.id::text = p_target)
+    when 'group'         then (select g.name from public.groups g where g.id::text = p_target)
+    when 'spark'         then (select concat_ws(' · ', s.title, s.place) from public.sparks s where s.id::text = p_target)
+    when 'post_comment'  then public.post_comment_body(p_target)
+    when 'dm_message'    then (select x.body from public.dm_messages x where x.id::text = p_target)
+  end;
+$$;
+revoke execute on function public.report_text(text, text) from public, anon, authenticated;
+
+create or replace function public.report_snapshot()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  who uuid := public.report_author_any(new.kind, new.target);
+begin
+  if new.snapshot is null then
+    new.snapshot := jsonb_build_object(
+      'text', left(public.report_text(new.kind, new.target), 1000),
+      'author_id', who,
+      'author', (select coalesce(p.handle, p.display_name) from public.profiles p where p.id = who),
+      'at', now());
+  end if;
+  return new;
+end;
+$$;
+drop trigger if exists report_snapshot on public.reports;
+create trigger report_snapshot before insert on public.reports
+  for each row execute function public.report_snapshot();
+
+create or replace function public.staff_reports()
+returns table (kind text, target text, preview text, author text, reports int, reasons text[], first_at timestamptz)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_staff();
+  return query
+    with open as (
+      select r.kind, r.target, count(*)::int as n, array_remove(array_agg(r.reason order by r.created_at), null) as why, min(r.created_at) as first_at,
+             (array_agg(r.snapshot order by r.created_at))[1] as snap
+      from public.reports r where not r.handled
+      group by r.kind, r.target
+    )
+    select o.kind, o.target,
+           coalesce(case o.kind
+             when 'comment'       then (select c.body from public.comments c where c.id::text = o.target)
+             when 'room_post'     then (select x.body from public.room_posts x where x.id::text = o.target)
+             when 'group_message' then (select x.body from public.group_messages x where x.id::text = o.target)
+             when 'profile'       then (select concat_ws(' · ', p.display_name, p.bio, p.about) from public.profiles p where p.id::text = o.target)
+             when 'group'         then (select g.name from public.groups g where g.id::text = o.target)
+             when 'spark'         then (select concat_ws(' · ', s.title, s.place) from public.sparks s where s.id::text = o.target)
+             when 'post_comment'  then public.post_comment_body(o.target)
+             when 'dm_message'    then (select x.body from public.dm_messages x where x.id::text = o.target)
+           end, o.snap ->> 'text'),
+           coalesce((select coalesce(p.handle, p.display_name) from public.profiles p where p.id = public.report_author_any(o.kind, o.target)), o.snap ->> 'author'),
+           o.n, o.why, o.first_at
+    from open o
+    order by o.n desc, o.first_at;
+end;
+$$;
+
+create or replace function public.staff_report_settle(p_kind text, p_target text, p_remove boolean)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  who record;
+begin
+  perform public.need_staff();
+  if coalesce(p_remove, false) then
+    if p_kind = 'comment' then
+      update public.comments set is_hidden = true where id::text = p_target;
+    elsif p_kind = 'room_post' then
+      delete from public.room_posts where id::text = p_target;
+    elsif p_kind = 'group_message' then
+      delete from public.group_messages where id::text = p_target;
+    elsif p_kind = 'spark' then
+      delete from public.sparks where id::text = p_target;
+    elsif p_kind = 'group' then
+      delete from public.groups where id::text = p_target;
+    elsif p_kind = 'post_comment' then
+      execute 'update public.post_comments set is_hidden = true where id::text = $1' using p_target;
+    elsif p_kind = 'profile' then
+      update public.profiles set bio = null, about = null where id::text = p_target;
+      delete from public.profile_links where user_id::text = p_target;
+      delete from public.profile_photos where user_id::text = p_target;
+    else
+      raise exception 'which kind?';
+    end if;
+  end if;
+  for who in select distinct r.reporter_id from public.reports r
+             where r.kind = p_kind and r.target = p_target and not r.handled and r.reporter_id is not null loop
+    perform public.notice(who.reporter_id,
+                          case when coalesce(p_remove, false) then 'report_removed' else 'report_kept' end,
+                          jsonb_build_object('what', p_kind));
+  end loop;
+  update public.reports set handled = true where kind = p_kind and target = p_target and not handled;
+  perform public.staff_note(case when coalesce(p_remove, false) then 'remove' else 'keep' end, 'report:' || p_kind, p_target, null);
+end;
+$$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('84_report_snapshot.sql', 'c54686d5ef5522460c11364078715e0b5ee8dcd170bcaabd302b6cddd79c5064');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('84_report_snapshot.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A CLOSED ACCOUNT MAY OBJECT   (85_appeals.sql)
+-- ============================================================
+
+-- afterhours — a closed account may object (85)
+--
+-- A closed account could read why, download its data and leave; it could not say
+-- "that is wrong" anywhere the staff would see (F16, 20.10.2026; the DSA asks for
+-- an internal way to complain about a decision). Decided: a box on the closed
+-- screen. One open objection at a time, 20 to 600 characters; the staff see them
+-- in the panel beside the reports and answer with "open again" or "stays closed";
+-- the person hears through a notice (appeal_ok / appeal_no) the next time the app
+-- starts, and sees the state on the closed screen itself.
+--
+--   appeal(body)                       the closed account writes once
+--   my_appeal()                        what the closed screen shows
+--   staff_appeals()                    the open ones, oldest first
+--   staff_appeal_settle(id, unban)     open again, or not; both are logged
+
+create table if not exists public.appeals (
+  id          bigserial primary key,
+  user_id     uuid not null references public.profiles on delete cascade,
+  body        text not null check (length(btrim(body)) between 20 and 600),
+  created_at  timestamptz not null default now(),
+  settled_at  timestamptz,
+  outcome     text check (outcome is null or outcome in ('unban', 'keep')),
+  settled_by  uuid references public.profiles on delete set null
+);
+create index if not exists appeals_open on public.appeals (created_at) where settled_at is null;
+alter table public.appeals enable row level security;
+revoke all on public.appeals from public, anon, authenticated;
+
+alter table public.notices drop constraint if exists notices_kind_check;
+alter table public.notices add constraint notices_kind_check
+  check (kind in ('comment_hidden', 'post_hidden', 'removed', 'profile_cleared',
+                  'role', 'dj_verified', 'dj_hidden', 'report_removed', 'report_kept',
+                  'night_ok', 'night_no', 'appeal_ok', 'appeal_no'));
+
+create or replace function public.appeal(p_body text)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if auth.uid() is null then raise exception 'sign in first'; end if;
+  if not public.is_banned() then raise exception 'the account is open'; end if;
+  if exists (select 1 from public.appeals a where a.user_id = auth.uid() and a.settled_at is null) then
+    raise exception 'already sent';
+  end if;
+  insert into public.appeals (user_id, body) values (auth.uid(), btrim(p_body));
+end;
+$$;
+grant execute on function public.appeal(text) to authenticated;
+
+create or replace function public.my_appeal()
+returns table (sent_at timestamptz, outcome text, settled_at timestamptz)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select a.created_at, a.outcome, a.settled_at from public.appeals a
+  where a.user_id = auth.uid() order by a.created_at desc limit 1;
+$$;
+grant execute on function public.my_appeal() to authenticated;
+
+create or replace function public.staff_appeals()
+returns table (id bigint, user_id uuid, handle text, reason text, banned_at timestamptz, body text, created_at timestamptz)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  perform public.need_staff();
+  return query
+    select a.id, a.user_id, coalesce(p.handle, p.display_name), p.banned_reason, p.banned_at, a.body, a.created_at
+    from public.appeals a join public.profiles p on p.id = a.user_id
+    where a.settled_at is null
+    order by a.created_at;
+end;
+$$;
+grant execute on function public.staff_appeals() to authenticated;
+
+create or replace function public.staff_appeal_settle(p_id bigint, p_unban boolean)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  a public.appeals%rowtype;
+begin
+  perform public.need_staff();
+  select * into a from public.appeals where id = p_id and settled_at is null;
+  if a.id is null then raise exception 'no such appeal'; end if;
+  update public.appeals set settled_at = now(), outcome = case when coalesce(p_unban, false) then 'unban' else 'keep' end, settled_by = auth.uid()
+   where id = p_id;
+  if coalesce(p_unban, false) then
+    perform public.staff_unban(a.user_id);
+  end if;
+  perform public.notice(a.user_id, case when coalesce(p_unban, false) then 'appeal_ok' else 'appeal_no' end, '{}'::jsonb);
+  perform public.staff_note(case when coalesce(p_unban, false) then 'appeal-unban' else 'appeal-keep' end, 'person', a.user_id::text, null);
+end;
+$$;
+grant execute on function public.staff_appeal_settle(bigint, boolean) to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('85_appeals.sql', '1c7ec869e98f4f8cff38ddc21df11bcf30cf7e7909633f92a856377cd3d6ae17');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('85_appeals.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  THE FILE ON A PERSON; WHO MAY OPEN A CLOSED ACCOUNT   (86_person_file.sql)
+-- ============================================================
+
+-- afterhours — the file on a person, and who may open a closed account (86)
+--
+-- The staff saw a person as one row: a name, a role, a badge. What they had been
+-- reported for, how often, what was said, whether they had been closed before and
+-- what they wrote in objection lived in five tables nobody could read together
+-- (F18, 20.10.2026). And a community manager could open an account an admin had
+-- closed. Decided: one file per person, and a tier.
+--
+--   staff_person(user)   jsonb: who, reports about them (with the copies of 84),
+--                        reports they made, objections (85), the staff log on them
+--   staff_unban(user)    as 52, but a ban given by an admin is lifted by an admin only;
+--                        staff_appeal_settle (85) goes through it and inherits the rule
+
+create or replace function public.staff_unban(p_user uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  by_admin boolean;
+begin
+  perform public.need_staff();
+  select coalesce(b.is_admin or b.account_type = 'admin', false) into by_admin
+    from public.profiles p left join public.profiles b on b.id = p.banned_by
+   where p.id = p_user;
+  if coalesce(by_admin, false) and not coalesce(public.is_admin(), false) then
+    raise exception 'an admin closed this account; only an admin opens it' using errcode = '42501';
+  end if;
+  perform set_config('afterhours.ban', 'on', true);
+  update public.profiles set banned_at = null, banned_reason = null, banned_by = null where id = p_user;
+  perform set_config('afterhours.ban', '', true);
+  perform public.staff_note('unban', 'person', p_user::text, null);
+end;
+$$;
+
+create or replace function public.staff_person(p_user uuid)
+returns jsonb
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  out jsonb;
+begin
+  perform public.need_staff();
+  select jsonb_build_object(
+    'who', (select jsonb_build_object('id', p.id, 'handle', p.handle, 'name', p.display_name, 'role',
+                     case when p.is_admin then 'admin' else p.account_type end, 'created_at', p.created_at,
+                     'banned_at', p.banned_at, 'banned_reason', p.banned_reason,
+                     'banned_by', (select coalesce(b.handle, b.display_name) from public.profiles b where b.id = p.banned_by),
+                     'banned_by_admin', (select coalesce(b.is_admin or b.account_type = 'admin', false) from public.profiles b where b.id = p.banned_by))
+            from public.profiles p where p.id = p_user),
+    'reports_about', coalesce((select jsonb_agg(jsonb_build_object('kind', r.kind, 'target', r.target, 'text', r.snapshot ->> 'text',
+                                 'reason', r.reason, 'handled', r.handled, 'at', r.created_at) order by r.created_at desc)
+            from public.reports r where (r.snapshot ->> 'author_id') = p_user::text), '[]'::jsonb),
+    'reports_made', coalesce((select jsonb_agg(jsonb_build_object('kind', r.kind, 'reason', r.reason, 'handled', r.handled, 'at', r.created_at) order by r.created_at desc)
+            from public.reports r where r.reporter_id = p_user), '[]'::jsonb),
+    'appeals', coalesce((select jsonb_agg(jsonb_build_object('body', a.body, 'outcome', a.outcome, 'at', a.created_at, 'settled_at', a.settled_at) order by a.created_at desc)
+            from public.appeals a where a.user_id = p_user), '[]'::jsonb),
+    'log', coalesce((select jsonb_agg(jsonb_build_object('action', l.action, 'note', l.note, 'at', l.at,
+                                 'by', (select coalesce(x.handle, x.display_name) from public.profiles x where x.id = l.actor_id)) order by l.at desc)
+            from public.staff_log l where l.target = 'person' and l.target_id = p_user::text), '[]'::jsonb)
+  ) into out;
+  return out;
+end;
+$$;
+grant execute on function public.staff_person(uuid) to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('86_person_file.sql', 'c4ec3d2800b5dc808a1b3a53e9fa2a380fdea01912c699317cd69b9aa1ed7649');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('86_person_file.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  IS THE CLOCK RUNNING   (87_cron_health.sql)
+-- ============================================================
+
+-- afterhours — is the clock running (87)
+--
+-- Six jobs hang off pg_cron: push_flush, push_hourly, group_push_hourly,
+-- hide_past_events, guests_prune, the error prune. If the extension is off or a job
+-- is unscheduled, every one of them dies in silence and nothing says so (F11,
+-- 20.10.2026; the deck has filtered its own dates since 67). cron_health() reads
+-- the cron schema when it is there - how many afterhours jobs are scheduled, when
+-- one last ran well, when one last failed - and tools/health.mjs goes red when the
+-- last good run is more than two hours old. Outside Supabase (the tests) the schema
+-- is missing and the answer is zero and null.
+
+create or replace function public.cron_health()
+returns table (jobs int, last_ok timestamptz, last_failed timestamptz, failed_24h int)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+begin
+  if to_regclass('cron.job') is null or to_regclass('cron.job_run_details') is null then
+    return query select 0, null::timestamptz, null::timestamptz, 0;
+    return;
+  end if;
+  return query execute $q$
+    select (select count(*)::int from cron.job where active),
+           (select max(end_time) from cron.job_run_details where status = 'succeeded'),
+           (select max(end_time) from cron.job_run_details where status = 'failed'),
+           (select count(*)::int from cron.job_run_details where status = 'failed' and end_time > now() - interval '24 hours')
+  $q$;
+end;
+$$;
+grant execute on function public.cron_health() to anon, authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('87_cron_health.sql', '66855abff143fb2e064f228a9169eda723792c65e627a10e8998c1f8813e3715');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('87_cron_health.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A CHECK-IN THAT MEANS SOMETHING   (88_checkin_truth.sql)
+-- ============================================================
+
+-- afterhours — a check-in that means something (88)
+--
+-- 23 took the door tests away so that a card is never refused; since then any tap,
+-- any time, anywhere, told every friend "X is out now" - and the location the phone
+-- sent was thrown away (F9, 20.10.2026). Decided: the card is still never refused,
+-- but the word to friends is. A check-in is LIVE when it falls six hours before to
+-- eight hours after the night starts and, when the phone gave a position and the
+-- night has one, within two kilometres of it. Only a live check-in pushes friend_live
+-- and shows in friends_live(); the card, the room and the collection are the same
+-- either way. The position is kept on the row now (the export of 64 lists it).
+-- And a check-in can be taken back within an hour: the card goes, the pushes that
+-- have not left go with it.
+--
+--   check_in(slug, lat, lng, at)   as 37; sets lat, lng, live
+--   check_out(slug)                within an hour of the check-in; "toolate" after
+--   km_between(lat1, lng1, lat2, lng2)
+
+-- the table of 19 predates 23, which meant to add the position; the columns are made sure of here
+alter table public.checkins add column if not exists lat double precision;
+alter table public.checkins add column if not exists lng double precision;
+alter table public.checkins add column if not exists live boolean not null default true;
+
+create or replace function public.km_between(a_lat double precision, a_lng double precision, b_lat double precision, b_lng double precision)
+returns double precision
+language sql
+immutable
+as $$
+  select 2 * 6371 * asin(sqrt(
+    power(sin(radians(b_lat - a_lat) / 2), 2)
+    + cos(radians(a_lat)) * cos(radians(b_lat)) * power(sin(radians(b_lng - a_lng) / 2), 2)));
+$$;
+
+create or replace function public.check_in(
+  p_slug text,
+  p_lat  double precision default null,
+  p_lng  double precision default null,
+  p_at   timestamptz default null
+)
+returns bigint
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  e     public.events%rowtype;
+  n     bigint;
+  at    timestamptz := least(coalesce(p_at, now()), now());
+  there double precision;
+  x_lat double precision;
+  x_lng double precision;
+  live  boolean := true;
+begin
+  if auth.uid() is null or public.is_guest() then raise exception 'signedout'; end if;
+  select * into e from public.events where slug = p_slug and is_published;
+  if not found then raise exception 'nonight'; end if;
+
+  -- One card per person per night: a second try returns the first card.
+  select card_no into n from public.checkins where user_id = auth.uid() and event_id = e.id;
+  if found then return n; end if;
+
+  if at < now() - interval '12 hours' then at := now(); end if;
+
+  -- the window: six hours before to eight after; a night without a time is always in it
+  if e.starts_at is not null and (at < e.starts_at - interval '6 hours' or at > e.starts_at + interval '8 hours') then
+    live := false;
+  end if;
+  -- the place: the position of the night, else of its venue; no position on either side, no test
+  select coalesce(e.lat, v.lat), coalesce(e.lng, v.lng) into x_lat, x_lng
+    from (select 1) one left join public.venues v on v.id = e.venue_id;
+  if live and p_lat is not null and p_lng is not null and x_lat is not null and x_lng is not null then
+    there := public.km_between(p_lat, p_lng, x_lat, x_lng);
+    if there > 2 then live := false; end if;
+  end if;
+
+  insert into public.checkins (user_id, event_id, checked_at, lat, lng, live)
+  values (auth.uid(), e.id, at, p_lat, p_lng, live) returning card_no into n;
+  return n;
+end;
+$$;
+
+create or replace function public.check_out(p_slug text)
+returns boolean
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  c public.checkins%rowtype;
+begin
+  if auth.uid() is null then raise exception 'signedout'; end if;
+  select c0.* into c from public.checkins c0 join public.events e on e.id = c0.event_id
+   where c0.user_id = auth.uid() and e.slug = p_slug;
+  if c.id is null then return false; end if;
+  if c.checked_at < now() - interval '1 hour' then raise exception 'toolate'; end if;
+  delete from public.push_outbox
+   where sent_at is null and (key = 'room_open:' || c.id::text or key like 'live:%:' || c.id::text);
+  delete from public.checkins where id = c.id;
+  return true;
+end;
+$$;
+grant execute on function public.check_out(text) to authenticated;
+
+create or replace function public.push_on_checkin()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  night  record;
+  friend uuid;
+begin
+  select e.title, e.slug, v.name as venue
+    into night
+  from public.events e left join public.venues v on v.id = e.venue_id
+  where e.id = new.event_id;
+
+  perform public.push_enqueue(new.user_id, 'room_open', format('room_open:%s', new.id),
+    jsonb_build_object('title', night.title, 'url', '/room/' || night.slug));
+
+  if new.show_friends and new.live then
+    for friend in select f.friend from public.push_edges f where f.who = new.user_id loop
+      perform public.push_enqueue(friend, 'friend_live',
+        format('live:%s:%s', friend, new.id),
+        jsonb_build_object('name', public.push_name(new.user_id),
+                           'title', coalesce(night.venue || ' · ', '') || night.title,
+                           'url', '/night/' || night.slug));
+    end loop;
+  end if;
+  return new;
+end;
+$$;
+
+create or replace function public.friends_live()
+returns table (
+  friend_id     uuid,
+  handle        text,
+  display_name  text,
+  slug          text,
+  title         text,
+  venue_name    text,
+  checked_at    timestamptz
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select c.user_id, p.handle, p.display_name, e.slug, e.title, v.name, date_trunc('hour', c.checked_at)
+  from public.checkins c
+  join public.profiles p on p.id = c.user_id
+  join public.events e on e.id = c.event_id
+  left join public.venues v on v.id = e.venue_id
+  where c.show_friends and c.live
+    and c.checked_at > now() - interval '8 hours'
+    and public.is_friend(c.user_id)
+  order by c.checked_at desc;
+$$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('88_checkin_truth.sql', 'd29cb8a9f3e17270d5f4fb130240b544df21cdf44a76ee452afae94dc84f78d9');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('88_checkin_truth.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  THE EXPORT, WHOLE   (89_export_all.sql)
+-- ============================================================
+
+-- afterhours — the export, whole (89)
+--
+-- export_me() (14, 64) handed back profile, settings, swipes, comments, friends,
+-- feedback, messages and tickets and nothing else, while the privacy notice promises
+-- everything (F3, 20.10.2026). The function is that of 64 with every later table a
+-- person writes to: check-ins (with the position of 88), room lines, rsvps, posts and
+-- their likes and comments, groups (membership, own messages and photos), sparks and
+-- answers, profile links and photo, who they blocked, reports they made, objections,
+-- every notification switch, the DJ page they own, the nights they sent in.
+-- Lines of other people are never in it; only what this person wrote.
+
+create or replace function public.export_me()
+returns jsonb
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select jsonb_build_object(
+    'taken_at', now(),
+    'about', 'Everything afterhours holds about you. Your account email lives'
+             || ' with the sign-in provider, not in this database.',
+
+    'profile', (
+      select to_jsonb(x) from (
+        select p.handle, p.display_name, p.bio, c.slug as city,
+               p.created_at as joined, p.onboarded_at, p.last_seen_at
+        from public.profiles p
+        left join public.cities c on c.id = p.city_id
+        where p.id = auth.uid()
+      ) x),
+
+    'settings', (
+      select to_jsonb(x) from (
+        select s.kept_visibility, s.discoverable, s.notify_email, s.locale
+        from public.profile_settings s where s.user_id = auth.uid()
+      ) x),
+
+    'swipes', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'event', e.slug, 'title', e.title,
+               'direction', w.direction, 'at', w.created_at)
+             order by w.created_at)
+      from public.swipes w
+      join public.events e on e.id = w.event_id
+      where w.user_id = auth.uid()
+    ), '[]'::jsonb),
+
+    'comments', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'event', e.slug, 'body', c.body,
+               'reply_to', c.parent_id, 'at', c.created_at)
+             order by c.created_at)
+      from public.comments c
+      join public.events e on e.id = c.event_id
+      where c.author_id = auth.uid()
+    ), '[]'::jsonb),
+
+    'friendships', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'handle', p.handle, 'status', f.status,
+               'direction', case when f.requester_id = auth.uid()
+                                 then 'outgoing' else 'incoming' end,
+               'at', f.created_at)
+             order by f.created_at)
+      from public.friendships f
+      join public.profiles p
+        on p.id = case when f.requester_id = auth.uid()
+                       then f.addressee_id else f.requester_id end
+      where f.requester_id = auth.uid() or f.addressee_id = auth.uid()
+    ), '[]'::jsonb),
+
+    'feedback', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'kind', g.kind, 'body', g.body, 'at', g.created_at)
+             order by g.created_at)
+      from public.feedback g where g.author_id = auth.uid()
+    ), '[]'::jsonb),
+
+    -- The lines you wrote, named by the friend they went to.
+    'messages', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'to', p.handle, 'body', m.body, 'at', m.created_at)
+             order by m.id)
+      from public.dm_messages m
+      join public.dm_threads t on t.id = m.thread_id
+      left join public.profiles p
+        on p.id = case when t.a = auth.uid() then t.b else t.a end
+      where m.user_id = auth.uid()
+    ), '[]'::jsonb),
+
+    'checkins', coalesce((
+      select jsonb_agg(jsonb_build_object('event', e.slug, 'title', e.title, 'card_no', k.card_no,
+               'at', k.checked_at, 'lat', k.lat, 'lng', k.lng, 'shown_to_friends', k.show_friends) order by k.checked_at)
+      from public.checkins k join public.events e on e.id = k.event_id where k.user_id = auth.uid()), '[]'::jsonb),
+    'room_lines', coalesce((
+      select jsonb_agg(jsonb_build_object('event', e.slug, 'body', r.body, 'at', r.created_at) order by r.created_at)
+      from public.room_posts r join public.events e on e.id = r.event_id where r.user_id = auth.uid()), '[]'::jsonb),
+    'rsvps', coalesce((
+      select jsonb_agg(jsonb_build_object('event', e.slug, 'answer', v.answer, 'at', v.updated_at) order by v.updated_at)
+      from public.rsvps v join public.events e on e.id = v.event_id where v.user_id = auth.uid()), '[]'::jsonb),
+    'posts', coalesce((
+      select jsonb_agg(jsonb_build_object('body', p.body, 'photo', p.photo_path, 'event', e.slug, 'hidden', p.is_hidden, 'at', p.created_at) order by p.created_at)
+      from public.posts p left join public.events e on e.id = p.event_id where p.author_id = auth.uid()), '[]'::jsonb),
+    'post_likes', coalesce((
+      select jsonb_agg(jsonb_build_object('post', l.post_id, 'at', l.created_at) order by l.created_at)
+      from public.post_likes l where l.user_id = auth.uid()), '[]'::jsonb),
+    'post_comments', coalesce((
+      select jsonb_agg(jsonb_build_object('post', c.post_id, 'body', c.body, 'at', c.created_at) order by c.created_at)
+      from public.post_comments c where c.author_id = auth.uid()), '[]'::jsonb),
+    'groups', coalesce((
+      select jsonb_agg(jsonb_build_object('name', g.name, 'emoji', g.emoji, 'role', m.role, 'joined', m.joined_at,
+               'messages', (select coalesce(jsonb_agg(jsonb_build_object('body', x.body, 'kind', x.kind, 'at', x.created_at) order by x.created_at), '[]'::jsonb)
+                            from public.group_messages x where x.group_id = g.id and x.user_id = auth.uid()),
+               'photos', (select coalesce(jsonb_agg(x.path order by x.created_at), '[]'::jsonb)
+                          from public.group_photos x where x.group_id = g.id and x.user_id = auth.uid())) order by m.joined_at)
+      from public.group_members m join public.groups g on g.id = m.group_id where m.user_id = auth.uid()), '[]'::jsonb),
+    'sparks', coalesce((
+      select jsonb_agg(jsonb_build_object('kind', s.kind, 'title', s.title, 'place', s.place, 'starts_at', s.starts_at, 'at', s.created_at) order by s.created_at)
+      from public.sparks s where s.host_id = auth.uid()), '[]'::jsonb),
+    'spark_answers', coalesce((
+      select jsonb_agg(jsonb_build_object('spark', s.title, 'answer', i.answer, 'at', i.answered_at) order by i.answered_at)
+      from public.spark_invites i join public.sparks s on s.id = i.spark_id where i.user_id = auth.uid()), '[]'::jsonb),
+    'links', coalesce((
+      select jsonb_agg(jsonb_build_object('kind', l.kind, 'value', l.value) order by l.kind)
+      from public.profile_links l where l.user_id = auth.uid()), '[]'::jsonb),
+    'photo', (select f.path from public.profile_photos f where f.user_id = auth.uid()),
+    'blocked', coalesce((
+      select jsonb_agg(jsonb_build_object('handle', p.handle, 'at', b.created_at) order by b.created_at)
+      from public.blocks b join public.profiles p on p.id = b.blocked_id where b.blocker_id = auth.uid()), '[]'::jsonb),
+    'reports_made', coalesce((
+      select jsonb_agg(jsonb_build_object('kind', r.kind, 'reason', r.reason, 'handled', r.handled, 'at', r.created_at) order by r.created_at)
+      from public.reports r where r.reporter_id = auth.uid()), '[]'::jsonb),
+    'appeals', coalesce((
+      select jsonb_agg(jsonb_build_object('body', a.body, 'outcome', a.outcome, 'at', a.created_at) order by a.created_at)
+      from public.appeals a where a.user_id = auth.uid()), '[]'::jsonb),
+    'notifications', (
+      select to_jsonb(x) from (
+        select s.notify_requests, s.notify_accepts, s.notify_matches, s.notify_live, s.notify_nights, s.notify_rooms,
+               s.notify_replies, s.notify_digest, s.notify_djs, s.notify_waves, s.notify_sparks, s.notify_groups, s.notify_posts, s.notify_dms
+        from public.profile_settings s where s.user_id = auth.uid()) x),
+    'dj_page', (
+      select to_jsonb(x) from (select d.slug, d.name, d.genre, d.bio, d.verified from public.djs d where d.owner_id = auth.uid()) x),
+    'nights_sent', coalesce((
+      select jsonb_agg(jsonb_build_object('title', e.title, 'starts_at', e.starts_at, 'published', e.is_published, 'at', e.created_at) order by e.created_at)
+      from public.events e where e.created_by = auth.uid()), '[]'::jsonb),
+
+    'tickets', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'event', e.slug, 'title', e.title,
+               'answer', k.answer, 'at', k.answered_at)
+             order by k.answered_at)
+      from public.tickets k
+      join public.events e on e.id = k.event_id
+      where k.user_id = auth.uid()
+    ), '[]'::jsonb)
+  )
+  where auth.uid() is not null;
+$$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('89_export_all.sql', '7b31143e846e9a6f8410a1175e128cdacca2128dd437e2119333721d6c5127fb');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('89_export_all.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  WHO HAS READ WHAT, KEPT BY THE SERVER   (90_dm_seen.sql)
+-- ============================================================
+
+-- afterhours — who has read what, kept by the server (90)
+--
+-- What a person had seen of a conversation lived on the phone alone: a second
+-- phone, a reinstall or the web showed every line as new (F28, 20.10.2026). The
+-- thread now carries, for each side, the last line that side has seen; dm_seen
+-- moves it, dm_list counts the lines after it that are not mine. The phone keeps
+-- its own mark too and uses the one on the server when it is there. dm_list is that of 59
+-- with the one column, so it is dropped and made again with its grant.
+
+alter table public.dm_threads add column if not exists seen_a bigint not null default 0;
+alter table public.dm_threads add column if not exists seen_b bigint not null default 0;
+
+create or replace function public.dm_seen(p_thread uuid, p_id bigint)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  me uuid := auth.uid();
+begin
+  if me is null then raise exception 'sign in first'; end if;
+  update public.dm_threads
+     set seen_a = case when a = me then greatest(seen_a, p_id) else seen_a end,
+         seen_b = case when b = me then greatest(seen_b, p_id) else seen_b end
+   where id = p_thread and me in (a, b);
+end;
+$$;
+grant execute on function public.dm_seen(uuid, bigint) to authenticated;
+
+drop function if exists public.dm_list();
+create or replace function public.dm_list()
+returns table (id uuid, other_id uuid, handle text, name text, last_body text, last_mine boolean, last_id bigint, last_at timestamptz, unread int)
+language plpgsql
+stable
+security definer
+set search_path = public
+as $$
+declare
+  me uuid := public.assert_member();
+begin
+  return query
+  select t.id, o.id, o.handle, coalesce(o.display_name, o.handle),
+         l.body, l.user_id = me, l.id, t.last_at,
+         (select count(*)::int from public.dm_messages u
+           where u.thread_id = t.id and u.user_id <> me
+             and u.id > case when t.a = me then t.seen_a else t.seen_b end)
+  from public.dm_threads t
+  join public.profiles o on o.id = case when t.a = me then t.b else t.a end
+  left join lateral (select m.id, m.body, m.user_id from public.dm_messages m where m.thread_id = t.id order by m.id desc limit 1) l on true
+  where me in (t.a, t.b)
+    and public.reachable(me, o.id)
+  order by t.last_at desc;
+end;
+$$;
+grant execute on function public.dm_list() to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('90_dm_seen.sql', 'ffd942a2cb07ce815b8c3df126b045187574293773a33b312af376f731811fe5');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('90_dm_seen.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A FILE REMEMBERS ITS OWN TEXT   (91_checksums.sql)
+-- ============================================================
+
+-- afterhours — a file remembers its own text (91)
+--
+-- The migration log (00) knew a file by name alone: a file edited after it was
+-- pasted, or an old copy pasted again over newer shared functions, left no trace
+-- (F33, 20.10.2026). tools/stamp-sql.mjs now writes the sha256 of each file into
+-- its own stamp block; migration_done(name, hash) keeps it here, and
+-- tools/health.mjs compares what is applied with what the repository holds.
+-- A file pasted before this one still stamps by name (the block tries both).
+-- migrations_applied returns the hash too, so it is dropped and made again.
+
+alter table public.migrations add column if not exists hash text;
+
+create or replace function public.migration_done(p_name text, p_hash text)
+returns void
+language sql
+security definer
+set search_path = public
+as $$
+  insert into public.migrations (name, hash) values (p_name, p_hash)
+  on conflict (name) do update set applied_at = now(), hash = excluded.hash;
+$$;
+
+drop function if exists public.migrations_applied();
+create or replace function public.migrations_applied()
+returns table (name text, applied_at timestamptz, hash text)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select m.name, m.applied_at, m.hash from public.migrations m order by m.name;
+$$;
+grant execute on function public.migrations_applied() to anon, authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('91_checksums.sql', '3e2d52d795b47a138cfdb605bf8c6d50fc8ebe393292a64f26aafb56e41061f0');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('91_checksums.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  THE HOUR A NIGHT STARTS, IN ITS OWN CITY   (92_timezones.sql)
+-- ============================================================
+
+-- afterhours — the hour a night starts, in its own city (92)
+--
+-- The sync wrote the local date and time of a night with no zone, and Postgres
+-- read it as UTC: every synced night sat one or two hours late in the database,
+-- and the pushes, the past cut, the rooms and the quiet hours moved with it
+-- (F37, 20.10.2026). From now on the sync sends the zone Ticketmaster names
+-- (tools/sync-ticketmaster.mjs) and keeps it on the row; the cities carry theirs
+-- by country for everything else. A row already here is moved once, and only when it
+-- really sat as UTC (its UTC hour equals the hour in date_text); the live database
+-- turned out to read local times in Berlin already, and its rows stay as they are.
+-- The move runs only the first time this file does - the log of 00 says whether it has.
+
+alter table public.cities add column if not exists tz text not null default 'Europe/Berlin';
+update public.cities set tz = case country_slug
+    when 'de' then 'Europe/Berlin'
+    when 'at' then 'Europe/Vienna'
+    when 'ch' then 'Europe/Zurich'
+    when 'nl' then 'Europe/Amsterdam'
+    when 'be' then 'Europe/Brussels'
+    when 'fr' then 'Europe/Paris'
+    when 'es' then 'Europe/Madrid'
+    when 'it' then 'Europe/Rome'
+    when 'pl' then 'Europe/Warsaw'
+    when 'cz' then 'Europe/Prague'
+    when 'hu' then 'Europe/Budapest'
+    when 'dk' then 'Europe/Copenhagen'
+    when 'se' then 'Europe/Stockholm'
+    when 'no' then 'Europe/Oslo'
+    when 'fi' then 'Europe/Helsinki'
+    when 'gr' then 'Europe/Athens'
+    when 'tr' then 'Europe/Istanbul'
+    when 'gb' then 'Europe/London'
+    when 'ie' then 'Europe/Dublin'
+    when 'pt' then 'Europe/Lisbon'
+    when 'ae' then 'Asia/Dubai'
+    when 'hk' then 'Asia/Hong_Kong'
+    when 'sg' then 'Asia/Singapore'
+    when 'jp' then 'Asia/Tokyo'
+    when 'kr' then 'Asia/Seoul'
+    when 'tw' then 'Asia/Taipei'
+    when 'id' then 'Asia/Jakarta'
+    when 'au' then 'Australia/Sydney'
+    when 'nz' then 'Pacific/Auckland'
+    when 'fj' then 'Pacific/Fiji'
+    when 'ke' then 'Africa/Nairobi'
+    when 'ma' then 'Africa/Casablanca'
+    when 'ng' then 'Africa/Lagos'
+    else 'Europe/Berlin' end;
+
+alter table public.events add column if not exists tz text;
+
+do $$ begin
+  if not exists (select 1 from public.migrations where name = '92_timezones.sql') then
+    -- move only the rows that really sat as UTC: their UTC clock shows the local hour of
+    -- date_text. A database whose own zone is Berlin stored them right already, and those
+    -- rows read the local hour in their city instead, so they are left alone.
+    update public.events e
+       set starts_at = ((e.starts_at at time zone 'UTC') at time zone c.tz)
+      from public.cities c
+     where c.id = e.city_id and e.source = 'ticketmaster' and e.starts_at is not null and e.tz is null
+       and substring(e.date_text from '([0-9]{2}:[0-9]{2})') is not null
+       and to_char(e.starts_at at time zone 'UTC', 'HH24:MI') = substring(e.date_text from '([0-9]{2}:[0-9]{2})')
+       and to_char(e.starts_at at time zone c.tz, 'HH24:MI') <> substring(e.date_text from '([0-9]{2}:[0-9]{2})');
+    update public.events e set tz = c.tz
+      from public.cities c
+     where c.id = e.city_id and e.source = 'ticketmaster' and e.tz is null;
+  end if;
+end $$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('92_timezones.sql', 'bb1f5f9b344cce65c9f9b6c0f4a0680a7d768a0160d4116bc1aa66b611e3d676');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('92_timezones.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  WHAT THE STAFF HAVE LEFT WAITING   (93_staff_backlog.sql)
+-- ============================================================
+
+-- afterhours — what the staff have left waiting (93)
+--
+-- The staff hear of a report by push alone (staff_ping); with no phone registered
+-- nobody hears, and nothing watches the promise of a look within 24 hours
+-- (F38, 20.10.2026). staff_backlog() counts what has waited too long - reports
+-- open for 20 hours, objections for 3 days, nights sent in for 3 days - and
+-- tools/health.mjs goes red on it, which the morning health workflow turns into
+-- a failed run and a mail. No new service; the repository already sends those.
+
+create or replace function public.staff_backlog()
+returns table (reports_waiting int, oldest_report timestamptz, appeals_waiting int, nights_waiting int)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select
+    (select count(distinct (r.kind, r.target))::int from public.reports r
+      where not r.handled and r.created_at < now() - interval '20 hours'),
+    (select min(r.created_at) from public.reports r where not r.handled),
+    (select count(*)::int from public.appeals a where a.settled_at is null and a.created_at < now() - interval '3 days'),
+    (select count(*)::int from public.events e where not e.is_published and e.source = 'user' and e.created_at < now() - interval '3 days');
+$$;
+grant execute on function public.staff_backlog() to anon, authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('93_staff_backlog.sql', 'fbc4f21a9db0099d046ecc689a1c54cd1b1a3476683c1e0da9181a290cb9b6fc');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('93_staff_backlog.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  WHAT IS KEPT, AND FOR HOW LONG   (94_retention.sql)
+-- ============================================================
+
+-- afterhours — what is kept, and for how long (94)
+--
+-- The privacy notice promised periods the code did not keep: pushes stayed in the
+-- outbox for ever, settled reports and objections never left (F5, 20.10.2026).
+-- retention_prune() runs every night at 04:45 and holds the database to the notice:
+--   push_outbox     sent pushes after 30 days, unsent ones after 7
+--   reports         settled ones a year after they were made (repeat offences are
+--                   recognised within that year; the copy of 84 goes with them)
+--   appeals         settled ones after a year
+--   notices         read or not, after 90 days
+-- Guests (54, 30 days), client errors (51, 30 days) and the backups (90 and 30 days)
+-- keep their own clocks. Returns how many rows went, for the log.
+
+create or replace function public.retention_prune()
+returns integer
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  n int := 0;
+  k int;
+begin
+  delete from public.push_outbox where (sent_at is not null and sent_at < now() - interval '30 days')
+                                    or (sent_at is null and created_at < now() - interval '7 days');
+  get diagnostics k = row_count; n := n + k;
+  delete from public.reports where handled and created_at < now() - interval '1 year';
+  get diagnostics k = row_count; n := n + k;
+  delete from public.appeals where settled_at is not null and settled_at < now() - interval '1 year';
+  get diagnostics k = row_count; n := n + k;
+  delete from public.notices where created_at < now() - interval '90 days';
+  get diagnostics k = row_count; n := n + k;
+  return n;
+end;
+$$;
+revoke execute on function public.retention_prune() from public, anon, authenticated;
+
+do $$ begin
+  if exists (select 1 from pg_extension where extname = 'pg_cron') then
+    perform cron.unschedule(jobid) from cron.job where jobname = 'afterhours-retention';
+    perform cron.schedule('afterhours-retention', '45 4 * * *', $q$select public.retention_prune()$q$);
+  end if;
+end $$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('94_retention.sql', '97eaddca67f1c86737829fd9206277640cf2c524ef5964688cf53d8d100ef94a');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('94_retention.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A NIGHT THAT HAPPENED STILL HAS ITS PAGE   (95_past_night_page.sql)
+-- ============================================================
+
+-- afterhours — a night that happened still has its page (95)
+--
+-- Since 66 a synced night whose date has passed is retired (is_published = false)
+-- instead of deleted, and 72 does the same to a cancelled one. The night page reads
+-- events_public, whose rule shows published rows only, so a card in the collection,
+-- the past feed or a passport opened onto an empty page (F40, found by the second
+-- cloud night, 20.10.2026). night_page(slug) returns the one row when it is published,
+-- or a synced night that is over or was cancelled: those were public listings and
+-- stay public facts. A night someone sent in that the staff have not let through
+-- stays hidden. The app falls back to it when the plain read finds nothing.
+
+create or replace function public.night_page(p_slug text)
+returns setof public.events_public
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select v.* from public.events_public v
+  join public.events e on e.id = v.id
+  where v.slug = p_slug
+    and (e.is_published
+         or (e.source = 'ticketmaster' and (e.starts_at < now() or e.status = 'cancelled')))
+  limit 1;
+$$;
+grant execute on function public.night_page(text) to anon, authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('95_past_night_page.sql', '1da0cd5eefa1e83a8d6434dd53daf9266a338056feddb64865258a4367000593');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('95_past_night_page.sql');
   end if;
 end $$;

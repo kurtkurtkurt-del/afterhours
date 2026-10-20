@@ -12,7 +12,7 @@
 #   SUPABASE_DB_URL     Supabase → Settings → Database → connection string, session mode
 #   BACKUP_PASSPHRASE   any long sentence; the dump is useless without it
 # Without them the job says so and ends green. Restoring: download the artifact,
-# `gpg --decrypt afterhours-data-<run>.sql.gpg > data.sql`, then psql it into a
+# `gpg --decrypt afterhours-data-<run>.sql.gpg > data.sql` (auth.users first, then public), then psql it into a
 # fresh project whose structure is in (setup-1, setup-2) — never into the live one
 # without a look first.
 
@@ -75,7 +75,11 @@ jobs:
           SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
           BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
         run: |
-          /usr/lib/postgresql/17/bin/pg_dump "$SUPABASE_DB_URL" --data-only --schema=public --no-owner --no-privileges \
+          # public data, then auth.users: profiles point at auth.users, so a restore into a
+          # clean project needs the accounts first (F36, 20.10.2026). The second dump is
+          # column-inserts so it survives a differing auth schema; passwords are hashes.
+          ( /usr/lib/postgresql/17/bin/pg_dump "$SUPABASE_DB_URL" --data-only --table=auth.users --column-inserts --no-owner --no-privileges \
+            && /usr/lib/postgresql/17/bin/pg_dump "$SUPABASE_DB_URL" --data-only --schema=public --no-owner --no-privileges ) \
             | gpg --batch --yes --symmetric --cipher-algo AES256 --passphrase "$BACKUP_PASSPHRASE" \
             -o "afterhours-data-${{ github.run_id }}.sql.gpg"
           ls -la afterhours-data-*.sql.gpg
