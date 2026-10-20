@@ -144,17 +144,14 @@ alter table public.events add column if not exists tz text;
 do $$ begin
   if not exists (select 1 from public.migrations where name = '92_timezones.sql') then
     update public.events e
-       set starts_at = ((e.starts_at at time zone 'UTC') at time zone c.tz),
-           tz = c.tz
+       set starts_at = ((e.starts_at at time zone 'UTC') at time zone c.tz)
       from public.cities c
-     where c.id = e.city_id and e.source = 'ticketmaster' and e.starts_at is not null and e.tz is null;
-  end if;
-end $$;
-
-do $$ begin
-  if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('92_timezones.sql', '6a39dfdcfe1d157e9c02b639f4b03de15aa2fd906a1d017942edaf2bcb36b2c5');
-  elsif to_regprocedure('public.migration_done(text)') is not null then
-    perform public.migration_done('92_timezones.sql');
+     where c.id = e.city_id and e.source = 'ticketmaster' and e.starts_at is not null and e.tz is null
+       and substring(e.date_text from '([0-9]{2}:[0-9]{2})') is not null
+       and to_char(e.starts_at at time zone 'UTC', 'HH24:MI') = substring(e.date_text from '([0-9]{2}:[0-9]{2})')
+       and to_char(e.starts_at at time zone c.tz, 'HH24:MI') <> substring(e.date_text from '([0-9]{2}:[0-9]{2})');
+    update public.events e set tz = c.tz
+      from public.cities c
+     where c.id = e.city_id and e.source = 'ticketmaster' and e.tz is null;
   end if;
 end $$;

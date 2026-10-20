@@ -1,4 +1,12 @@
--- paste 21/24: 93 94
+-- paste 21/24: 92 93 94
+do $$ begin
+  if to_regprocedure('public.migration_done(text, text)') is not null then
+    perform public.migration_done('92_timezones.sql', 'bb1f5f9b344cce65c9f9b6c0f4a0680a7d768a0160d4116bc1aa66b611e3d676');
+  elsif to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('92_timezones.sql');
+  end if;
+end $$;
+
 create or replace function public.staff_backlog()
 returns table (reports_waiting int, oldest_report timestamptz, appeals_waiting int, nights_waiting int)
 language sql

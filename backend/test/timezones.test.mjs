@@ -25,10 +25,11 @@ const rows = async (sql) => (await db.query(sql)).rows;
 const city = (await rows(`select id from public.cities where slug = 'munchen'`))[0].id;
 const ist = (await rows(`select id from public.cities where slug = 'istanbul'`))[0].id;
 const type = (await rows(`select id from public.event_types limit 1`))[0].id;
-await db.exec(`insert into public.events (slug, city_id, type_id, title, meta, starts_at, source, external_id) values
-  ('old-way',  '${city}', '${type}', 'Old', 'x', '2026-10-31T20:00:00Z', 'ticketmaster', 'tm-1'),
-  ('old-ist',  '${ist}',  '${type}', 'Old', 'x', '2026-10-31T20:00:00Z', 'ticketmaster', 'tm-2'),
-  ('ours',     '${city}', '${type}', 'Ours','x', '2026-10-31T20:00:00Z', 'seed', null)`);
+await db.exec(`insert into public.events (slug, city_id, type_id, title, meta, starts_at, date_text, source, external_id) values
+  ('old-way',  '${city}', '${type}', 'Old', 'x', '2026-10-31T20:00:00Z', '31.10.26 · 20:00', 'ticketmaster', 'tm-1'),
+  ('old-ist',  '${ist}',  '${type}', 'Old', 'x', '2026-10-31T20:00:00Z', '31.10.26 · 20:00', 'ticketmaster', 'tm-2'),
+  ('right',    '${city}', '${type}', 'Right','x', '2026-10-31T19:00:00Z', '31.10.26 · 20:00', 'ticketmaster', 'tm-4'),
+  ('ours',     '${city}', '${type}', 'Ours','x', '2026-10-31T20:00:00Z', '31.10.26 · 20:00', 'seed', null)`);
 await db.exec(await read("../sql/92_timezones.sql"));
 const at = async (slug) => (await rows(`select starts_at from public.events where slug = '${slug}'`))[0].starts_at.toISOString();
 
@@ -36,6 +37,8 @@ check((await rows(`select tz from public.cities where slug = 'istanbul'`))[0].tz
 check(await at("old-way") === "2026-10-31T19:00:00.000Z", "20:00 in munich became 19:00 utc", await at("old-way"));
 check(await at("old-ist") === "2026-10-31T17:00:00.000Z", "20:00 in istanbul became 17:00 utc", await at("old-ist"));
 check(await at("ours") === "2026-10-31T20:00:00.000Z", "our own rows are not moved");
+check(await at("right") === "2026-10-31T19:00:00.000Z", "a row already right (as on the live database) stays where it is", await at("right"));
+check((await rows(`select tz from public.events where slug = 'right'`))[0].tz === "Europe/Berlin", "and still learns its zone");
 await db.exec(await read("../sql/92_timezones.sql"));
 check(await at("old-way") === "2026-10-31T19:00:00.000Z", "a second run moves nothing");
 await db.exec(`insert into public.events (slug, city_id, type_id, title, meta, starts_at, tz, source, external_id) values
