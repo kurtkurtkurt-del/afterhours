@@ -75,6 +75,7 @@ const structure = [
   ["65_account_delete.sql", "DELETING AN ACCOUNT — THE LAST ADMIN, THE GROUP OWNER"],
   ["66_keep_past_nights.sql", "A NIGHT THAT HAPPENED STAYS — RETIRED, NOT DELETED; PRUNED ONLY WHEN UNTOUCHED"],
   ["67_deck_today.sql", "THE DECK DOES NOT DEPEND ON THE CLOCK JOB — PAST SYNCED NIGHTS LEAVE BY DATE"],
+  ["68_report_answered.sql", "THE PERSON WHO REPORTED HEARS THE OUTCOME"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

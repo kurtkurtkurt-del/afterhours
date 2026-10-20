@@ -83,6 +83,7 @@
     "65_account_delete.sql",
     "66_keep_past_nights.sql",
     "67_deck_today.sql",
+    "68_report_answered.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */
