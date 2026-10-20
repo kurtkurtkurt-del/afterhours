@@ -8,6 +8,8 @@ Ajan kuralı: en üstteki `bekliyor` maddeyi al. Gecede 3–5 madde. Kuyrukta ol
 iş yapılmaz. Bir madde tasarım kararı isterse 5 prototip + `karar bekliyor`, sonraki
 maddeye geç. Ahmet bir satırı silerse o iş yoktur; sırayı değiştirirse sıra odur.
 
+Dal kuralı (20.10): PR #3 henüz birleşmediyse gece dalı `main`'den değil `origin/release/night-2026-10-19` üzerinden açılır, PR yine `main`'e; böylece 64/65 ile çakışma olmaz.
+
 Üç yüz birden: **site** (kök HTML), **web app** (PWA, `app/` web derlemesi), **app**
 (Expo). Bir madde üçünden birini bozmamalı; şüphede üçünde de denenir.
 
@@ -15,6 +17,7 @@ maddeye geç. Ahmet bir satırı silerse o iş yoktur; sırayı değiştirirse s
 
 | # | İş | Yüz | Durum | Kanıt / not |
 |---|---|---|---|---|
+| A0 | **F1 — sabah senkronu kullanıcı verisini siliyor.** `sync-ticketmaster.mjs` dünkü geceleri DELETE ediyor; cascade ile check-in kartları, oda yazıları, swipe'lar, yorumlar, rsvp ve bilet cevapları gidiyor. Silme yerine yayından kaldırma: `is_published=false` (+ gerekiyorsa `archived_at`), geçmiş geceler deste/harita/sayaçlardan düşsün, koleksiyon ve past feed görsün. Test: sync sonrası kullanıcının kartı duruyor. `--dry` ile doğrula; canlıya uygulama `sabah Ahmet`. Ahmet 20.10 sabah onayladı. | üçü | bekliyor | A1/F1; A7 ve F11 ile aynı kök |
 | A1 | Sistemsel boşluk denetimi: `.claude/prompts/systemic-gaps-audit.md` promptunu SADECE LİSTELE modunda koş; bulduklarını bu tabloya `bulundu` olarak, önem sırasıyla ekle (yayın engeli → güven → eksik akış → cila). Hiçbir şeyi düzeltme. | üçü | yapıldı (main, belge) | "A1 bulguları" bölümü: 39 madde (F1–F39) + site↔app ön tablosu; hiçbir şey düzeltilmedi. **En acil: F1** (sync her sabah dünkü geceleri silip check-in kartlarını cascade ile götürüyor) |
 | A2 | `export_me()` (14) direkt mesajları ve bilet cevaplarını (59, 60) dışarı vermiyor — `backend/promises.md`'de yazılı boşluk. Yeni numaralı SQL ile kapat, `export.test.mjs`'e kontrol, promises.md satırı. | app · site | yapıldı 4eca25c | `64_export_more.sql`: `export_me()` artık yazdığın DM satırlarını (kime gittiğiyle) ve bilet cevaplarını veriyor; karşı tarafın satırları dışarıda (söz 6). Kanıt: `export.test.mjs` "my message, with the friend it went to", "not their message", "my ticket answer, named by its night". promises.md boşluk satırı silindi. Eksik kalan tablolar: A1 F3. Canlıya: **sabah Ahmet** |
 | A3 | Hesap silme uçtan uca: `delete_account()` yeni tabloların (rsvps, sparks, spark_invites, profile_links, dms, groups üyelikleri, rooms) hepsini temizliyor mu? Test yaz; eksikse yeni SQL. | app · site | yapıldı 0f6b977 | Tüm listelenen tablolar cascade ile gidiyor (doğrulandı). Eksikler kapandı, `65_account_delete.sql`: son admin hesabını silemez; sahip olduğu grup en eski üyeye geçer, yalnızsa grup silinir. Kanıt: yeni `delete-account.test.mjs` (15 kontrol; silmeden sonra profiles'a giden HER FK yürünür: "no row of any table still points at the person"). promises.md söz 13 eklendi, setup testi 12→13. Grup sohbeti/oda satırları isimsiz kalıyor → A1 F32 (karar). Canlıya: **sabah Ahmet** |
