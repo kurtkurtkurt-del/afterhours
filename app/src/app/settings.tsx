@@ -409,6 +409,9 @@ export default function SettingsScreen() {
               Alert.alert(t('tips.reset'), t('tips.reset.done'));
             }}
           />
+          {/* The site's help and feedback pages had no way in from the app (C5, 20.10.2026). */}
+          <Row label={t('settings.help')} hint={t('settings.help.hint')} right={<Mark kind="out" />} onPress={() => Linking.openURL(SITE + 'help/')} />
+          <Row label={t('settings.feedback')} hint={t('settings.feedback.hint')} right={<Mark kind="out" />} onPress={() => Linking.openURL(SITE + 'feedback/')} />
           <Row label={t('settings.web')} hint={t('settings.web.hint')} right={<Mark kind="out" />} onPress={() => Linking.openURL(SITE)} />
           <Row label={t('settings.credits')} hint={t('settings.credits.hint')} right={<Mark kind="more" />} onPress={() => router.push('/credits')} />
           <Row label={t('settings.privacy.link')} hint={t('settings.privacy.hint')} right={<Mark kind="out" />} onPress={() => Linking.openURL('https://kurtkurtkurt-del.github.io/afterhours/datenschutz/')} />
