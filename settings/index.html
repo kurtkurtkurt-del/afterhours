@@ -20,9 +20,9 @@
   <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png" />
   <link rel="manifest" href="../manifest.webmanifest" />
-  <link rel="stylesheet" href="../fonts/fonts.css?v=198" />
-  <link rel="stylesheet" href="../style.css?v=198" />
-  <script src="../i18n.js?v=198"></script>
+  <link rel="stylesheet" href="../fonts/fonts.css?v=199" />
+  <link rel="stylesheet" href="../style.css?v=199" />
+  <script src="../i18n.js?v=199"></script>
 </head>
 <body>
 
@@ -124,6 +124,19 @@
         <p class="set-who" id="set-who"></p>
         <p class="account-about" id="set-numbers"></p>
         <button class="page-signout" id="set-signout" type="button" data-i18n="word.signout">sign out</button>
+        <button class="page-signout" id="set-signout-all" type="button" data-i18n="settings.signout.all">sign out everywhere</button>
+      </section>
+
+      <!-- ---------- the sign-in itself (B2, 20.10.2026): email, password ---------- -->
+      <section class="account set-section">
+        <p class="account-title" data-i18n="settings.email.title">email</p>
+        <p class="account-about" data-i18n="settings.email.about">a link goes to the new address; the change happens once you open it.</p>
+        <div class="account-row">
+          <input class="account-field" id="set-email" type="email" autocomplete="email" placeholder="you@example.com" data-i18n-attr="placeholder:login.email.placeholder" />
+          <button class="account-button" id="set-email-save" type="button" data-i18n="word.save">save</button>
+        </div>
+        <p class="account-status" id="set-email-status"></p>
+        <a class="page-forgot" href="../reset/index.html" data-i18n="settings.password.change">change the password</a>
       </section>
 
       <!-- ---------- take it with you ---------- -->
@@ -167,12 +180,12 @@
     </nav>
   </footer>
 
-  <script src="../config.js?v=198"></script>
-  <script src="../session.js?v=198"></script>
-  <script src="../menu.js?v=198"></script>
-  <script src="../data.js?v=198"></script>
-  <script src="settings.js?v=198"></script>
+  <script src="../config.js?v=199"></script>
+  <script src="../session.js?v=199"></script>
+  <script src="../menu.js?v=199"></script>
+  <script src="../data.js?v=199"></script>
+  <script src="settings.js?v=199"></script>
 
-  <script src="../webapp.js?v=198"></script>
+  <script src="../webapp.js?v=199"></script>
 </body>
 </html>

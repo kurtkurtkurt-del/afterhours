@@ -168,6 +168,33 @@
     location.href = "../login/index.html";
   };
 
+  /* Every phone and browser on this account loses its session (scope=global). */
+  el("set-signout-all").onclick = function () {
+    const token = AH.token;
+    AH.dropSession();
+    const out = token
+      ? AH.auth("/logout?scope=global", { method: "POST", headers: { Authorization: "Bearer " + token } }).catch(() => {})
+      : Promise.resolve();
+    out.then(() => { location.href = "../login/index.html"; });
+  };
+
+  /* A new email: Supabase mails the new address (and the old, when "secure email
+     change" is on); the change happens when the link is opened. The password lives
+     on reset/, which works signed in as a plain "change my password". */
+  el("set-email-save").onclick = function () {
+    const box = el("set-email-status");
+    const email = el("set-email").value.trim();
+    if (!email || email.indexOf("@") < 1) { say(box, AH.t("login.bad.email"), "error"); return; }
+    say(box, AH.t("reset.sending"));
+    AH.auth("/user?redirect_to=" + encodeURIComponent(location.origin + location.pathname.replace(/settings\/.*$/, "login/")), {
+      method: "PUT",
+      headers: { Authorization: "Bearer " + AH.token },
+      body: JSON.stringify({ email: email }),
+    })
+      .then(() => say(box, AH.t("settings.email.sent"), "ok"))
+      .catch((h) => say(box, AH.errorText(h, AH.t("settings.email.failed")), "error"));
+  };
+
   /* --- taking your data with you ---
      The GDPR right of access, and the one page a person would look for it
      on. One call, one file; the browser saves it without anything leaving
@@ -265,7 +292,10 @@
 
   el("set-confirm-button").onclick = function () {
     const written = el("set-confirm-field").value.trim().toLowerCase();
-    if (!profile || !profile.handle || written !== profile.handle) {
+    /* an account that never picked a handle (Apple or Google, sign-up unfinished)
+       confirms with the word instead; it could not delete at all before (F7) */
+    const want = profile && profile.handle ? profile.handle : AH.t("del.word").toLowerCase();
+    if (!profile || written !== want) {
       say(deleteStatus, AH.t("settings.delete.exact"), "error");
       return;
     }
