@@ -76,6 +76,7 @@ tools/backup.mjs         backs the content up to JSON
 tools/restore.mjs        turns a backup back into SQL
 tools/health.mjs         the status check
 tools/sync-ticketmaster.mjs  the daily Ticketmaster pull (GitHub Action; --dry to look without writing)
+tools/sync-retire.mjs        what the sync does with a night it no longer wants: unpublish, never delete
 tools/upload-sound.mjs   puts the 30 music excerpts into the sound bucket (service key, once)
 
 test/                    278 checks, all on a real Postgres (PGlite)

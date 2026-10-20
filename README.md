@@ -977,8 +977,14 @@ A third workflow, `sync-events.yml`, pulls the real events: every morning
 at 04:10 UTC it runs `backend/tools/sync-ticketmaster.mjs`, which asks
 Ticketmaster city by city (the coverage of `16_coverage.sql`), files each
 event under one of the six kinds, composes the meta line, picks a 16:9
-photograph, upserts on `external_id` and prunes the nights that have
-passed. Three house rules hold, on the way in and swept over what is
+photograph, upserts on `external_id` and takes the nights that have
+passed off the deck. Since 20.10.2026 it never deletes a night
+(`backend/tools/sync-retire.mjs`): until then it DELETEd yesterday's
+nights every morning and the cascade took the check-in cards, room lines,
+swipes, comments, rsvps and ticket answers on them. Now a past or refused
+night is only unpublished — gone from the deck, the map and the counters,
+still in the collection and the past feed (15 checks in
+`backend/test/sync-retire.test.mjs`). Three house rules hold, on the way in and swept over what is
 already there: nothing before 18:00 (festivals and raves exempt — real
 ones start in the afternoon), no add-on listings ("VIP Ticket",
 "Box-Seat", "Parking permit" — receipts, not nights), and a show that

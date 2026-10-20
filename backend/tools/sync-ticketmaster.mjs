@@ -9,9 +9,11 @@
 
    --dry fetches and reports but writes nothing (only the TM key needed).
 
-   Three things worth knowing:
+   Four things worth knowing:
    - The upsert conflicts on external_id, so a night keeps its uuid from
      run to run and the swipes people put on it survive.
+   - Nothing is ever deleted: a past or refused night is only taken off
+     the deck (sync-retire.mjs), so the cards and room lines on it stay.
    - Ticketmaster covers some of our cities and not others (nothing in
      Lagos or Suva). An uncovered city simply comes back empty; the
      filter already shows empty cities faded, so nothing needs hiding.
@@ -22,6 +24,7 @@
      always right. */
 
 import { createHash } from "node:crypto";
+import { retirePast, retireIds } from "./sync-retire.mjs";
 
 const TM_KEY = process.env.TICKETMASTER_KEY || "";
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE || "";
@@ -469,10 +472,17 @@ for (let i = 0; i < unique.length; i += 100) {
   }
 }
 
-/* Nights that have passed leave the deck for good. Only our own rows:
-   the seeds and the admin-written events are not this script's to touch. */
+/* Nights that have passed leave the deck, and stay in the database: the
+   cards, room lines and swipes people left on them hang off the row
+   (sync-retire.mjs). Only our own rows: the seeds and the admin-written
+   events are not this script's to touch. */
+const send = (req) => db(req.path, {
+  method: req.method,
+  headers: { Prefer: "return=minimal" },
+  body: JSON.stringify(req.body),
+});
 const today = new Date().toISOString().slice(0, 10);
-await db("/events?source=eq.ticketmaster&starts_at=lt." + today, { method: "DELETE" });
+await send(retirePast(today));
 
 /* The house rules, swept over what is ALREADY there — add-ons, early
    starts and repeated dates that arrived before the rules did. The
@@ -480,7 +490,7 @@ await db("/events?source=eq.ticketmaster&starts_at=lt." + today, { method: "DELE
 const held = [];
 for (let from = 0; ; from += 1000) {
   const page = await db("/events_public?select=id,title,type_slug,city_slug,starts_at" +
-    "&source=eq.ticketmaster&order=starts_at&limit=1000&offset=" + from);
+    "&source=eq.ticketmaster&is_published=is.true&order=starts_at&limit=1000&offset=" + from);
   held.push(...page);
   if (page.length < 1000) break;
 }
@@ -493,13 +503,10 @@ for (const r of held) {
   if (runsSeen.has(key)) kill.push(r.id);      /* date order: the soonest stays */
   else runsSeen.add(key);
 }
-for (let i = 0; i < kill.length; i += 60) {
-  await db("/events?source=eq.ticketmaster&id=in.(" + kill.slice(i, i + 60).join(",") + ")",
-    { method: "DELETE" });
-}
-if (kill.length) console.log("swept: " + kill.length + " rows against the house rules");
+for (let i = 0; i < kill.length; i += 60) await send(retireIds(kill.slice(i, i + 60)));
+if (kill.length) console.log("swept: " + kill.length + " rows against the house rules, taken off the deck");
 
 console.log("written: " + written + " upserted"
   + (turnedAway ? ", " + turnedAway + " refused (see above)" : "")
-  + ", past ticketmaster nights pruned before " + today);
+  + ", past ticketmaster nights taken off the deck before " + today);
 if (turnedAway && !written) process.exit(1);
