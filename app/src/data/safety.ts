@@ -3,7 +3,7 @@ import * as AppleAuthentication from 'expo-apple-authentication';
 import Constants from 'expo-constants';
 import Storage from 'expo-sqlite/kv-store';
 import { supabase } from '@/lib/supabase';
-import { must } from '@/lib/offline';
+import { isNetworkError, must } from '@/lib/offline';
 
 // 51_safety.sql: what the stores require — the terms (18+), reports, client errors —
 // and an account deletion that takes the files and the Apple link with it.
@@ -31,6 +31,24 @@ export function versionBelow(a: string, b: string): boolean {
     if (x !== y) return x < y;
   }
   return false;
+}
+
+// A guest who met an existing email is sent to sign in; the guest id is kept on the
+// phone until the account signs in and guest_merge (80) carries the swipes over.
+const GUEST_KEY = 'guest.pending';
+export function rememberGuest(uid: string) {
+  try { Storage.setItemSync(GUEST_KEY, uid); } catch {}
+}
+export async function mergeGuest(uid: string): Promise<number> {
+  let guest: string | null = null;
+  try { guest = Storage.getItemSync(GUEST_KEY); } catch {}
+  if (!guest || guest === uid) return 0;
+  const { data, error } = await supabase.rpc('guest_merge', { p_guest: guest });
+  // A guest that is already gone (or never was one) is forgotten; a network failure is retried next time.
+  if (error && !isNetworkError(error)) { try { Storage.removeItemSync(GUEST_KEY); } catch {} return 0; }
+  if (error) return 0;
+  try { Storage.removeItemSync(GUEST_KEY); } catch {}
+  return typeof data === 'number' ? data : 0;
 }
 
 // Remembered per account on the phone, so an offline start does not ask again.

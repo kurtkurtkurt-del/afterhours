@@ -4,6 +4,7 @@ import { supabase } from '@/lib/supabase';
 import { forgetCache, isNetworkError } from '@/lib/offline';
 import { LargeSecureStore } from '@/lib/secureStorage';
 import { unregisterPush } from '@/lib/push';
+import { mergeGuest, rememberGuest } from '@/data/safety';
 import { t } from '@/i18n/core';
 import type { Key } from '@/i18n/dict';
 
@@ -78,8 +79,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const signIn = useCallback(async (email: string, password: string) => {
     const bad = checkEmail(email);
     if (bad) return bad;
-    const { error } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
-    return error ? plain(error.message) : null;
+    const { data, error } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
+    if (error) return plain(error.message);
+    // Swipes made as a guest before this sign-in come along (80_guest_merge.sql).
+    if (data.user) mergeGuest(data.user.id).catch(() => {});
+    return null;
   }, []);
 
   const signUp = useCallback(
@@ -93,6 +97,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const { data, error } = await supabase.auth.updateUser({ email: email.trim(), password }, { emailRedirectTo: CONFIRM_URL });
         if (error) {
           if (/already|registered|exists/i.test(error.message)) {
+            // Sign-in will replace this session; the guest id survives on the phone (80_guest_merge.sql).
+            rememberGuest(cur.session.user.id);
             return t('auth.exists');
           }
           return plain(error.message);

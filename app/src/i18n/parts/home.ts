@@ -110,9 +110,9 @@ export const home = {
   'auth.password.short': { en: 'password: at least 8 characters', de: 'passwort: mindestens 8 zeichen', tr: 'şifre: en az 8 karakter' },
   'auth.password.mix': { en: 'password: letters and a number', de: 'passwort: buchstaben und eine zahl', tr: 'şifre: harfler ve bir rakam' },
   'auth.exists': {
-    en: 'that email already has an account. sign in from the link below; what you kept as a guest stays behind',
-    de: 'zu dieser e-mail gibt es schon ein konto. melde dich über den link unten an; was du als gast behalten hast, bleibt zurück',
-    tr: 'bu e-postanın zaten bir hesabı var. aşağıdaki bağlantıdan giriş yap; misafirken sakladıkların geride kalır',
+    en: 'that email already has an account. sign in from the link below; what you kept as a guest comes along',
+    de: 'zu dieser e-mail gibt es schon ein konto. melde dich über den link unten an; was du als gast behalten hast, kommt mit',
+    tr: 'bu e-postanın zaten bir hesabı var. aşağıdaki bağlantıdan giriş yap; misafirken sakladıkların seninle gelir',
   },
   'auth.confirm': { en: 'check your inbox to confirm your email', de: 'schau ins postfach und bestätige deine e-mail', tr: 'e-postanı onaylamak için gelen kutuna bak' },
   'auth.error.credentials': { en: 'wrong email or password', de: 'e-mail oder passwort stimmt nicht', tr: 'e-posta ya da şifre yanlış' },

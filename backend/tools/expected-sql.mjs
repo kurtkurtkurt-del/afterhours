@@ -87,4 +87,5 @@ export const EXPECTED_SQL = [
   "77_reserved_handles.sql",
   "78_min_version.sql",
   "79_word_watch.sql",
+  "80_guest_merge.sql",
 ];
