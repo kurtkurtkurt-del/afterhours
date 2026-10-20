@@ -31,7 +31,7 @@ const outbox = async (user) => { await asService(); return rows(`select key, dat
 
 await asService();
 await db.exec(`insert into auth.users (id, email) values ('${A}','a@x'),('${B}','b@x'),('${C}','c@x'),('${D}','d@x')`);
-await db.exec(`update public.profiles set handle = 'ahmet' where id = '${A}'`);
+await db.exec(`update public.profiles set handle = 'ada' where id = '${A}'`);
 await db.exec(`update public.profiles set handle = 'berk' where id = '${B}'`);
 await db.exec(`update public.profiles set handle = 'cansu' where id = '${C}'`);
 await db.exec(`update public.profiles set handle = 'deniz' where id = '${D}'`);
@@ -42,12 +42,12 @@ await db.exec(`insert into public.swipes (user_id, event_id, direction) values (
 await db.exec(`insert into public.rsvps (user_id, event_id, answer) values ('${C}', '${night.id}', 'in')`);
 await db.exec(`delete from public.push_outbox`);
 
-console.log("\n— ahmet says in —");
+console.log("\n— ada says in —");
 {
   await as(A);
   await db.exec(`select public.rsvp_set('${night.id}', 'in')`);
   const b = await outbox(B);
-  check(b.length === 1 && b[0].key.startsWith("rsvp:") && b[0].data.name === "ahmet" && b[0].data.title === night.title, "the friend who kept it hears: ahmet is going too", JSON.stringify(b));
+  check(b.length === 1 && b[0].key.startsWith("rsvp:") && b[0].data.name === "ada" && b[0].data.title === night.title, "the friend who kept it hears: ada is going too", JSON.stringify(b));
   check((await outbox(C)).length === 1, "the friend who answered in hears it too");
   check((await outbox(D)).length === 0, "a stranger on the same night hears nothing");
   check((await outbox(A)).length === 0, "not yourself");

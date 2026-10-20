@@ -30,7 +30,7 @@ const open = async () => { await as(CM); return rows(`select kind, target, previ
 
 await asService();
 await db.exec(`insert into auth.users (id, email) values ('${A}','a@x'),('${B}','b@x'),('${CM}','cm@x')`);
-await db.exec(`update public.profiles set handle = 'ahmet' where id = '${A}'`);
+await db.exec(`update public.profiles set handle = 'ada' where id = '${A}'`);
 await db.exec(`update public.profiles set handle = 'berk' where id = '${B}'`);
 await db.exec(`update public.profiles set account_type = 'community_manager' where id = '${CM}'`);
 const night = (await rows(`select id from public.events where is_published limit 1`))[0];

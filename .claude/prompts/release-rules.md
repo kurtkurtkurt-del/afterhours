@@ -1,6 +1,6 @@
 # Release rules — the constitution of the autonomous runs (20–23.10.2026)
 
-Read this first, every run, before touching anything. These are Ahmet's working
+Read this first, every run, before touching anything. These are the owner's working
 principles, written down from seven weeks of sessions. A run that breaks one of them
 has failed even if its tests are green.
 
@@ -14,17 +14,17 @@ has failed even if its tests are green.
 - Commit per queue item. Message style: as in `git log` — one line, what changed and
   why, plain words, no emoji.
 - Push **documents only** to `main`: `.claude/prompts/`, `prototypes/`, `*.md`. The
-  pre-push hook lets those through; they are served on GitHub Pages, so Ahmet can open a
+  pre-push hook lets those through; they are served on GitHub Pages, so owner can open a
   prototype on his phone at 08:00.
 - Push **code** to a branch `release/night-YYYY-MM-DD` and open ONE pull request per
-  night against `main`, titled `Night N — <three words>`. Ahmet merges. Never merge.
+  night against `main`, titled `Night N — <three words>`. owner merges. Never merge.
 
 ## What a run may never do
 
 - Push code to `main`, force-push anything, rewrite history, or merge a PR.
 - Start an EAS build, publish the PWA (`tools/publish-pwa.sh`), run `sync-events`,
   touch GitHub secrets, or write to the live Supabase project (no `migrate --write`, no
-  SQL editor). SQL is written and proved in PGlite; applying it is Ahmet's morning step.
+  SQL editor). SQL is written and proved in PGlite; applying it is the owner's morning step.
 - Create accounts, pay for anything, or send anything to a third party.
 - Add a dependency without writing why in the PR. Nothing with native code (Expo Go).
 - Invent work. Only queue items from `release-board.md`. Something new you notice goes
@@ -36,7 +36,7 @@ has failed even if its tests are green.
 
 ## How a run decides
 
-- **Design decisions are Ahmet's.** When an item needs one (a new screen, a changed
+- **Design decisions are the owner's.** When an item needs one (a new screen, a changed
   layout, a feel), write a prototype file with five designs, mark the item
   `karar bekliyor` with the file's URL, and move on. Do not pick and build one.
   Small, mechanical fixes (a margin, a truncated label, a missing state) are not design
@@ -68,12 +68,12 @@ broke and why.
 ## How a run ends
 
 1. `release-board.md` updated: every touched item has its state, commit hash, proof
-   (which test / which file), and `sabah Ahmet` steps if any.
+   (which test / which file), and `sabah karar` steps if any.
 2. `morning-YYYY-MM-DD.md` written next to this file: ten lines at most — what was done,
    what waits for a decision (with prototype URLs on
-   `https://kurtkurtkurt-del.github.io/afterhours/prototypes/<file>.html`), what Ahmet
+   `https://kurtkurtkurt-del.github.io/afterhours/prototypes/<file>.html`), what owner
    must do by hand, what broke.
 3. Documents pushed to `main`, code pushed to the night's branch, PR opened.
 4. Stop. Do not start the next item after the limit (3–5 items, or 3 hours).
 
-Talk to Ahmet in Turkish; keep code, comments and commits in the repo's English.
+Talk to owner in Turkish; keep code, comments and commits in the repo's English.

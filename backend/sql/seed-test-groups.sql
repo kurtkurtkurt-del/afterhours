@@ -28,7 +28,7 @@
 
 do $$
 declare
-  my_email text := 'ahmet.selcuk.kurt@gmail.com';
+  my_email text := 'you@example.com';
   me uuid;
   saved jsonb;
   people text[][] := array[

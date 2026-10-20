@@ -43,7 +43,7 @@ const liveOf = async (slug) => {
 
 await asService();
 await db.exec(`insert into auth.users (id, email) values ('${A}','a@x'),('${B}','b@x')`);
-await db.exec(`update public.profiles set handle = 'ahmet' where id = '${A}'`);
+await db.exec(`update public.profiles set handle = 'ada' where id = '${A}'`);
 await db.exec(`update public.profiles set handle = 'berk' where id = '${B}'`);
 await db.exec(`insert into public.friendships (requester_id, addressee_id, status) values ('${A}','${B}','accepted')`);
 const city = (await rows(`select id from public.cities order by sort_order limit 1`))[0].id;

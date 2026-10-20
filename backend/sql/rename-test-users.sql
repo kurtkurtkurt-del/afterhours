@@ -3,7 +3,7 @@
 --
 -- A one-shot for the live database (paste it into the Supabase SQL
 -- editor); not a numbered migration, and not part of setup. The handles
--- kept as they are: offdutykurt and kurt2. Everybody else changes handle
+-- kept as they are: owner1 and owner2. Everybody else changes handle
 -- and display name both; sign-in does not, that is email and password.
 -- The handle rule is the one profile_setup enforces: ^[a-z0-9_]{3,20}$,
 -- unique. Running it twice is harmless — the numbering is by created_at,
@@ -18,12 +18,12 @@ begin;
 
 update public.profiles
    set handle = 'tmp_' || left(replace(id::text, '-', ''), 16)
- where handle not in ('offdutykurt', 'kurt2');
+ where handle not in ('owner1', 'owner2');
 
 with numbered as (
   select id, row_number() over (order by created_at, id) as n
     from public.profiles
-   where handle not in ('offdutykurt', 'kurt2')
+   where handle not in ('owner1', 'owner2')
 )
 update public.profiles p
    set handle       = 'testuser' || numbered.n,

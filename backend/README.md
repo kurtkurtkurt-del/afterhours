@@ -142,7 +142,7 @@ copy is sitting in the editor.
 below), then in the SQL Editor:
 
 ```sql
-update public.profiles set is_admin = true, handle = 'ahmet'
+update public.profiles set is_admin = true, handle = 'ada'
 where id = (select id from auth.users where email = 'your@email');
 ```
 

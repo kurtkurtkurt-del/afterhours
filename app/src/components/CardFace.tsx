@@ -61,7 +61,7 @@ const stamp = (iso: string | null): { day: string; time: string } | null => {
 };
 
 // Date and time in one ink tag at the poster's top left corner, the kind in a small one
-// at its top right (Ahmet, 11.10.2026), so the caption holds only the title, the venue
+// at its top right (owner, 11.10.2026), so the caption holds only the title, the venue
 // and the people.
 function DateTag({ card, kind }: { card: DeckCard; kind: string }) {
   const { t, up } = useLang();
@@ -147,7 +147,7 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
             {card.title.toLowerCase()}
           </Text>
           {/* the venue only; a night without one shows none (the city stood here for a day
-              and read as a wrong place, Ahmet, 12.10.2026) — the block keeps its height */}
+              and read as a wrong place, owner, 12.10.2026) — the block keeps its height */}
           {card.venue ? <Text style={styles.venue} numberOfLines={1}>{card.venue.toLowerCase()}</Text> : null}
           {card.via ? <Chain via={card.via} /> : null}
           {card.note ? <Text style={styles.note} numberOfLines={2}>{card.note}</Text> : null}

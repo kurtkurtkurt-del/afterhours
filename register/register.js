@@ -90,7 +90,7 @@
 
   /* checkNo guards against answers landing out of order: with only the
      debounce, a slow reply to "ahm" could overwrite the verdict already
-     shown for "ahmet". Only the latest check may speak. */
+     shown for "ada". Only the latest check may speak. */
   let pending = null, checkNo = 0;
   el("reg-handle").addEventListener("input", function () {
     clearTimeout(pending);

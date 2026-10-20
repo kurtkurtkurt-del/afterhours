@@ -62,7 +62,7 @@
   }
 
   /* Name order: handle → first part of the display name → first part of
-     the email. "ahmet.selcuk.kurt" does not sit well in a menu; the first
+     the email. "first.middle.last" does not sit well in a menu; the first
      piece is enough. */
   function nameFor(profile) {
     if (profile && profile.handle) return profile.handle;

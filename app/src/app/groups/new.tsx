@@ -147,7 +147,7 @@ export default function GroupEdit() {
         ))}
       </View>
 
-      {/* A group is for good (Ahmet, 11.10.2026): no "just once", no last day. Groups made
+      {/* A group is for good (owner, 11.10.2026): no "just once", no last day. Groups made
           "once" before keep their dates in the table; the app no longer offers them. */}
       {f.kind === 'travel' ? (
         <>

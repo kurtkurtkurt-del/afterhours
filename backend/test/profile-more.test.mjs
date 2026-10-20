@@ -38,7 +38,7 @@ const one = async (sql) => (await rows(sql))[0];
 await asService();
 await db.exec(`
   insert into auth.users (id, email) values ('${A}', 'a@x.com'), ('${B}', 'b@x.com'), ('${C}', 'c@x.com'), ('${D}', 'd@x.com');
-  update public.profiles set handle = 'ahmet' where id = '${A}';
+  update public.profiles set handle = 'ada' where id = '${A}';
   update public.profiles set handle = 'berk'  where id = '${B}';
   update public.profiles set handle = 'cansu' where id = '${C}';
   update public.profiles set handle = 'deniz' where id = '${D}';
@@ -63,10 +63,10 @@ console.log("\n— bio and about —");
 console.log("\n— links —");
 {
   await asUser(A);
-  const ok = await one(`select public.profile_links_set('{"instagram":"@ahmet.k","spotify":"ahmetk","website":"https://ahmet.example"}') as r`);
+  const ok = await one(`select public.profile_links_set('{"instagram":"@ada.k","spotify":"adak","website":"https://ada.example"}') as r`);
   check(ok.r === "ok", "links are saved");
   const mine = (await one(`select links from public.profile_extra()`)).links;
-  check(mine.instagram === "ahmet.k" && mine.spotify === "ahmetk" && mine.website === "https://ahmet.example", "a leading @ is dropped", JSON.stringify(mine));
+  check(mine.instagram === "ada.k" && mine.spotify === "adak" && mine.website === "https://ada.example", "a leading @ is dropped", JSON.stringify(mine));
 
   const bad = await one(`select public.profile_links_set('{"tiktok":"two words","x":"fine"}') as r`);
   check(bad.r === "format:tiktok", "a name with a space is refused, by its kind");
@@ -76,17 +76,17 @@ console.log("\n— links —");
 
   await db.exec(`select public.profile_links_set('{"spotify":""}')`);
   const after = (await one(`select links from public.profile_extra()`)).links;
-  check(!after.spotify && after.instagram === "ahmet.k", "an empty value clears that one, the others stay");
+  check(!after.spotify && after.instagram === "ada.k", "an empty value clears that one, the others stay");
 }
 
 console.log("\n— who sees what —");
 {
   await asUser(B);
-  const b = await one(`select about, links from public.profile_extra('ahmet')`);
-  check(b.about === "nights out." && b.links.instagram === "ahmet.k", "a friend sees the text and the links");
+  const b = await one(`select about, links from public.profile_extra('ada')`);
+  check(b.about === "nights out." && b.links.instagram === "ada.k", "a friend sees the text and the links");
 
   await asUser(C);
-  const c = await one(`select about, links from public.profile_extra('@ahmet')`);
+  const c = await one(`select about, links from public.profile_extra('@ada')`);
   check(c.about === "nights out." && Object.keys(c.links).length === 0, "a stranger sees the text but no links");
   check((await rows(`select 1 from public.profile_extra('deniz')`)).length === 0, "a hidden person shows nothing");
 
@@ -94,7 +94,7 @@ console.log("\n— who sees what —");
   check(Boolean(await fails(`insert into public.profile_links (user_id, kind, value) values ('${A}', 'x', 'hacked')`)), "nor written directly");
 
   await asAnon();
-  check(Boolean(await fails(`select * from public.profile_extra('ahmet')`)), "signed out, closed");
+  check(Boolean(await fails(`select * from public.profile_extra('ada')`)), "signed out, closed");
 }
 
 console.log("\n— leaving —");

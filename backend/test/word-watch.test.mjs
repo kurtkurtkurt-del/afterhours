@@ -32,7 +32,7 @@ const open = async () => { await as(CM); return rows(`select kind, target, reaso
 
 await asService();
 await db.exec(`insert into auth.users (id, email) values ('${A}','a@x'),('${B}','b@x'),('${C}','c@x'),('${CM}','cm@x')`);
-await db.exec(`update public.profiles set handle = 'ahmet', is_admin = true where id = '${A}'`);
+await db.exec(`update public.profiles set handle = 'ada', is_admin = true where id = '${A}'`);
 await db.exec(`update public.profiles set handle = 'berk' where id = '${B}'`);
 await db.exec(`update public.profiles set handle = 'cansu' where id = '${C}'`);
 await db.exec(`update public.profiles set account_type = 'community_manager' where id = '${CM}'`);

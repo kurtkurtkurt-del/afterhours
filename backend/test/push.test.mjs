@@ -45,7 +45,7 @@ const outbox = async (user, kind) => {
 await asService();
 await db.exec(`
   insert into auth.users (id, email) values ('${A}', 'a@x.com'), ('${B}', 'b@x.com'), ('${C}', 'c@x.com');
-  update public.profiles set handle = 'ahmet' where id = '${A}';
+  update public.profiles set handle = 'ada' where id = '${A}';
   update public.profiles set handle = 'berk'  where id = '${B}';
   update public.profiles set handle = 'cansu' where id = '${C}';
 `);
@@ -82,7 +82,7 @@ console.log("\n— requests —");
   await asUser(A);
   await db.exec(`select public.friend_request('berk')`);
   const req = await outbox(B, "friend_request");
-  check(req.length === 1 && req[0].data.name === "ahmet", "a request notifies the other side, with your name");
+  check(req.length === 1 && req[0].data.name === "ada", "a request notifies the other side, with your name");
   check(req[0]?.data.url === `/friend/${A}`, "and opens your friend page");
 
   await asUser(B);
@@ -314,7 +314,7 @@ console.log("\n— delivery (a stand-in for pg_net) —");
   const [req] = await rows(`select s.url, s.body from net.sent s order by s.id desc limit 1`);
   const msg = req.body.find((m) => m.to === "ExponentPushToken[bbbb]");
   check(req.url === "https://exp.host/--/api/v2/push/send", "it goes to the Expo push service");
-  check(msg && msg.title === "ahmet şu an dışarıda" && msg.data.url.startsWith("/night/"), "in the phone's language, with where to open", JSON.stringify(msg));
+  check(msg && msg.title === "ada şu an dışarıda" && msg.data.url.startsWith("/night/"), "in the phone's language, with where to open", JSON.stringify(msg));
   const [row] = await rows(`select request_id, tokens, sent_at from public.push_outbox where user_id = '${B}' and kind = 'friend_live' order by id desc limit 1`);
   check(row.sent_at && row.request_id && row.tokens.includes("ExponentPushToken[bbbb]"), "the outbox remembers the request and the phones");
 

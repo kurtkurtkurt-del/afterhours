@@ -230,7 +230,7 @@ export default function AccountScreen() {
             <Text style={[styles.small, styles.onInkSmall]}>{up(`${tn('account.nKept', profile?.kept_count ?? 0)} · ${tn('account.nFriends', profile?.friend_count ?? 0)}`)}</Text>
           ) : null}
         </View>
-        {/* Edit profile under the collection (Ahmet, 12.10.2026): the first screen is you and your cards. */}
+        {/* Edit profile under the collection (owner, 12.10.2026): the first screen is you and your cards. */}
         <Pressable
           onPress={() => router.push(signedIn ? '/profile' : '/signup')}
           style={({ pressed }) => [styles.button, styles.buttonInk, pressed && styles.pressed]}

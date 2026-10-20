@@ -32,7 +32,7 @@ const rows = async (sql) => (await db.query(sql)).rows;
 
 await asService();
 await db.exec(`insert into auth.users (id, email) values ('${A}','a@x'),('${B}','b@x'),('${C}','c@x'),('${CM}','cm@x')`);
-await db.exec(`update public.profiles set handle = 'ahmet' where id = '${A}'`);
+await db.exec(`update public.profiles set handle = 'ada' where id = '${A}'`);
 await db.exec(`update public.profiles set handle = 'berk' where id = '${B}'`);
 await db.exec(`update public.profiles set handle = 'cansu' where id = '${C}'`);
 await db.exec(`update public.profiles set account_type = 'community_manager' where id = '${CM}'`);
@@ -45,22 +45,22 @@ await db.exec(`insert into public.room_posts (event_id, user_id, body) values ('
 console.log("\n— before the block —");
 {
   await as(A);
-  check((await rows(`select 1 from public.comments_public where event_id = '${night.id}'`)).length === 2, "ahmet reads both comments");
+  check((await rows(`select 1 from public.comments_public where event_id = '${night.id}'`)).length === 2, "ada reads both comments");
   check((await rows(`select 1 from public.room_list('${night.slug}')`)).length === 2, "and the whole room");
   await asAnon();
   check((await rows(`select 1 from public.comments_public where event_id = '${night.id}'`)).length === 2, "signed out, the comments still read");
 }
 
-console.log("\n— ahmet blocks berk —");
+console.log("\n— ada blocks berk —");
 {
   await as(A);
   await db.exec(`select public.block_user('${B}')`);
   const c = await rows(`select author from public.comments_public where event_id = '${night.id}'`);
-  check(c.length === 1 && c[0].author === "cansu", "the blocked person's comment is gone for ahmet", JSON.stringify(c));
+  check(c.length === 1 && c[0].author === "cansu", "the blocked person's comment is gone for ada", JSON.stringify(c));
   const r = await rows(`select body from public.room_list('${night.slug}')`);
   check(!r.some((x) => x.body === "room berk") && r.length === 1, "and their room line");
   await as(B);
-  check(!(await rows(`select body from public.room_list('${night.slug}')`)).some((x) => x.body === "room ahmet"), "berk reads nothing of ahmet either (ahmet wrote nothing, nothing to see)");
+  check(!(await rows(`select body from public.room_list('${night.slug}')`)).some((x) => x.body === "room ada"), "berk reads nothing of ada either (ada wrote nothing, nothing to see)");
   await as(C);
   check((await rows(`select 1 from public.comments_public where event_id = '${night.id}'`)).length === 2, "a third person still reads everyone");
   await asAnon();

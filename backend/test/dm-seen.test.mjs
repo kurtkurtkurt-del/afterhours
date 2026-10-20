@@ -30,7 +30,7 @@ const unread = async (who) => { await as(who); return (await rows(`select unread
 
 await asService();
 await db.exec(`insert into auth.users (id, email) values ('${A}','a@x'),('${B}','b@x')`);
-await db.exec(`update public.profiles set handle = 'ahmet' where id = '${A}'`);
+await db.exec(`update public.profiles set handle = 'ada' where id = '${A}'`);
 await db.exec(`update public.profiles set handle = 'berk' where id = '${B}'`);
 await db.exec(`insert into public.friendships (requester_id, addressee_id, status) values ('${A}', '${B}', 'accepted')`);
 await as(A);
@@ -48,7 +48,7 @@ await db.exec(`select public.dm_seen('${thread}', ${last - 2})`);
 check(await unread(B) === 1, "a mark never moves back");
 await as(B);
 await db.exec(`select public.dm_send('${thread}', 'back at you')`);
-check(await unread(A) === 1, "and the reply is new to ahmet");
+check(await unread(A) === 1, "and the reply is new to ada");
 
 console.log(`\n${passed} passed, ${failed} failed`);
 process.exit(failed ? 1 : 0);

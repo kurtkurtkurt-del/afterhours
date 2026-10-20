@@ -3,7 +3,7 @@
 -- A group can wear one of the photos the app ships with as its cover (club, crowd,
 -- friends), not only a photo uploaded by a member: the path is then preset/<name>
 -- instead of <user>/<file>. The app maps the name to its bundled picture; nothing is
--- uploaded. Asked by Ahmet on 12.10.2026 so a group has a face from the first minute.
+-- uploaded. Asked by owner on 12.10.2026 so a group has a face from the first minute.
 
 create or replace function public.group_set_cover(p_id uuid, p_path text)
 returns text

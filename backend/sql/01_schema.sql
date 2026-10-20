@@ -111,7 +111,7 @@ create table if not exists public.profiles (
   id            uuid primary key references auth.users on delete cascade,
   handle        text unique,
   display_name  text,
-  -- the right to write events comes from here. True for Ahmet only.
+  -- the right to write events comes from here. True for owner only.
   is_admin      boolean not null default false,
   created_at    timestamptz not null default now()
 );

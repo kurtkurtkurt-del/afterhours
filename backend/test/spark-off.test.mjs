@@ -31,7 +31,7 @@ const outbox = async (user) => { await asService(); return rows(`select key, dat
 
 await asService();
 await db.exec(`insert into auth.users (id, email) values ('${A}','a@x'),('${B}','b@x'),('${C}','c@x')`);
-await db.exec(`update public.profiles set handle = 'ahmet' where id = '${A}'`);
+await db.exec(`update public.profiles set handle = 'ada' where id = '${A}'`);
 await db.exec(`update public.profiles set handle = 'berk' where id = '${B}'`);
 await db.exec(`update public.profiles set handle = 'cansu' where id = '${C}'`);
 await db.exec(`insert into public.friendships (requester_id, addressee_id, status) values ('${A}','${B}','accepted'), ('${A}','${C}','accepted')`);
@@ -51,12 +51,12 @@ console.log("\n— the host takes it back —");
   await as(A);
   await db.exec(`select public.spark_cancel('${spark}')`);
   const b = await outbox(B);
-  check(b.length === 1 && b[0].data.name === "ahmet" && b[0].data.title === "grill at the river", "the one who said in hears: ahmet took it back", JSON.stringify(b));
+  check(b.length === 1 && b[0].data.name === "ada" && b[0].data.title === "grill at the river", "the one who said in hears: ada took it back", JSON.stringify(b));
   check((await outbox(C)).length === 0, "the one who said out hears nothing");
   check((await outbox(A)).length === 0, "nor the host");
   check((await rows(`select 1 from public.sparks where id = '${spark}'`)).length === 0, "and the spark is gone");
-  const words = await rows(`select * from public.push_text('spark_off', 'de', '{"name":"ahmet","title":"grill"}')`);
-  check(words[0].title === "ahmet hat es abgesagt" && words[0].body === "grill", "the words, in german");
+  const words = await rows(`select * from public.push_text('spark_off', 'de', '{"name":"ada","title":"grill"}')`);
+  check(words[0].title === "ada hat es abgesagt" && words[0].body === "grill", "the words, in german");
 }
 
 console.log(`\n${passed} passed, ${failed} failed`);

@@ -689,7 +689,7 @@ const styles = StyleSheet.create({
   groupsHead: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', marginTop: 4 },
   groupsTitle: { fontFamily: fonts.medium, fontSize: 17, letterSpacing: -0.3, color: colors.paper },
   groupsAll: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
-  // smaller than the page, air left and right (Ahmet, 12.10.2026)
+  // smaller than the page, air left and right (owner, 12.10.2026)
   covers: { flexDirection: 'row', gap: 10, marginTop: 10, marginHorizontal: 18 },
   cover: { flex: 1, height: 126, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink3 },
   coverNew: { alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent', borderWidth: 1, borderStyle: 'dashed', borderColor: colors.mute },

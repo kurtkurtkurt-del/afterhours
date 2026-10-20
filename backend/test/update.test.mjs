@@ -1,7 +1,7 @@
 /* afterhours — the update file.
    Buradaki asil mesele SU: one goc dosyasini GUNCEL semaya karsi test
    proves nothing. That is exactly what happened the first time: the
-   bende passed, Ahmet'in projesinde "column c.continent does not exist"
+   bende passed, sahibin projesinde "column c.continent does not exist"
    update stopped on a live project, because its schema had no such column.
 
    So here we roll the schema back to its OLD state first.  */

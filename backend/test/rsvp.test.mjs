@@ -36,7 +36,7 @@ const rows = async (sql) => (await db.query(sql)).rows;
 await asService();
 await db.exec(`
   insert into auth.users (id, email) values ('${A}', 'a@x.com'), ('${B}', 'b@x.com'), ('${C}', 'c@x.com');
-  update public.profiles set handle = 'ahmet' where id = '${A}';
+  update public.profiles set handle = 'ada' where id = '${A}';
   update public.profiles set handle = 'berk'  where id = '${B}';
   update public.profiles set handle = 'cansu' where id = '${C}';
   insert into public.friendships (requester_id, addressee_id, status) values ('${A}', '${B}', 'accepted');
@@ -54,7 +54,7 @@ console.log("\n— answering —");
   await asUser(A);
   const mine = await rows(`select name, answer, mine from public.rsvp_for(array['${e1}']::uuid[])`);
   check(mine.length === 2, "I see my answer and my friend's, not the stranger's", JSON.stringify(mine));
-  check(mine[0].name === "ahmet" && mine[0].answer === "in" && mine[0].mine, "in comes first, marked as mine");
+  check(mine[0].name === "ada" && mine[0].answer === "in" && mine[0].mine, "in comes first, marked as mine");
   check(mine[1].name === "berk" && mine[1].answer === "maybe", "then the friend's maybe");
 
   await db.exec(`select public.rsvp_set('${e1}', 'out')`);

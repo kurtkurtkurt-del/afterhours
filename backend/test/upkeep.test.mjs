@@ -72,7 +72,7 @@ console.log("\n— the staff are alerted —");
   check(rows.length === 2 && rows.every((r) => r.data.n === "1"), "every staff member: one push, one thing waiting", JSON.stringify(rows));
   check(!rows.some((r) => r.user_id === A || r.user_id === B), "nobody else");
   await as(B);
-  await db.exec(`select public.report('profile', 'ahmet', null)`).catch(() => {});
+  await db.exec(`select public.report('profile', 'ada', null)`).catch(() => {});
   await asService();
   check((await one(`select count(*)::int as n from public.push_outbox where kind = 'staff'`)).n === 2, "not again within the hour");
   const t = await one(`select * from public.push_text('staff', 'tr', '{"n": "3"}'::jsonb)`);

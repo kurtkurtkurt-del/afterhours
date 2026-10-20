@@ -29,7 +29,7 @@ const rows = async (sql) => (await db.query(sql)).rows;
 
 await asService();
 await db.exec(`insert into auth.users (id, email) values ('${A}','a@x'),('${B}','b@x')`);
-await db.exec(`update public.profiles set handle = 'ahmet' where id = '${A}'`);
+await db.exec(`update public.profiles set handle = 'ada' where id = '${A}'`);
 await db.exec(`update public.profiles set handle = 'berk' where id = '${B}'`);
 const night = (await rows(`select id, slug from public.events where is_published limit 1`))[0];
 await db.exec(`insert into public.checkins (user_id, event_id, lat, lng) values ('${A}', '${night.id}', 48.1, 11.5)`);
@@ -39,7 +39,7 @@ const g = (await rows(`insert into public.groups (name, created_by) values ('us'
 await db.exec(`insert into public.group_members (group_id, user_id, role) values ('${g}', '${A}', 'owner'), ('${g}', '${B}', 'member') on conflict do nothing`);
 await db.exec(`insert into public.group_messages (group_id, user_id, body) values ('${g}', '${A}', 'hi all'), ('${g}', '${B}', 'hi back')`);
 await db.exec(`insert into public.blocks (blocker_id, blocked_id) values ('${A}', '${B}')`);
-await db.exec(`insert into public.profile_links (user_id, kind, value) values ('${A}', 'instagram', 'ahmet.k')`);
+await db.exec(`insert into public.profile_links (user_id, kind, value) values ('${A}', 'instagram', 'ada.k')`);
 
 await as(A);
 const d = (await rows(`select public.export_me() as d`))[0].d;
@@ -48,7 +48,7 @@ check(d.room_lines.length === 1 && d.room_lines[0].body === "mine", "my room lin
 check(d.rsvps.length === 1 && d.rsvps[0].answer === "in", "rsvps");
 check(d.groups.length === 1 && d.groups[0].messages.length === 1 && d.groups[0].messages[0].body === "hi all", "groups with my own messages only");
 check(d.blocked.length === 1 && d.blocked[0].handle === "berk", "who i blocked");
-check(d.links.length === 1 && d.links[0].value === "ahmet.k", "profile links");
+check(d.links.length === 1 && d.links[0].value === "ada.k", "profile links");
 check(d.notifications && d.notifications.notify_dms === true, "every notification switch");
 check(Array.isArray(d.posts) && Array.isArray(d.sparks) && Array.isArray(d.appeals) && Array.isArray(d.nights_sent) && d.dj_page === null, "the empty shelves are there, empty");
 await as(B);

@@ -40,7 +40,7 @@ await asService();
 await db.exec(`
   insert into auth.users (id, email) values
     ('${A}', 'a@x.com'), ('${B}', 'b@x.com'), ('${C}', 'c@x.com'), ('${D}', 'd@x.com'), ('${F}', 'f@x.com');
-  update public.profiles set handle = 'ahmet', display_name = 'Ahmet' where id = '${A}';
+  update public.profiles set handle = 'ada', display_name = 'owner' where id = '${A}';
   update public.profiles set handle = 'berk',  display_name = 'Berk'  where id = '${B}';
   update public.profiles set handle = 'cansu', display_name = 'Cansu' where id = '${C}';
   update public.profiles set handle = 'deniz', display_name = 'Deniz' where id = '${D}';
@@ -99,7 +99,7 @@ console.log("\n— inbox and answers —");
 {
   await asUser(B);
   const box = await rows(`select id, kind, title, place, host_handle, going from public.spark_inbox()`);
-  check(box.length === 1 && box[0].id === id && box[0].host_handle === "ahmet" && box[0].kind === "derby",
+  check(box.length === 1 && box[0].id === id && box[0].host_handle === "ada" && box[0].kind === "derby",
         "the invite reaches the friend's inbox with the host's handle", JSON.stringify(box));
 
   await asUser(D);

@@ -192,7 +192,7 @@ create table if not exists public.profiles (
   id            uuid primary key references auth.users on delete cascade,
   handle        text unique,
   display_name  text,
-  -- the right to write events comes from here. True for Ahmet only.
+  -- the right to write events comes from here. True for owner only.
   is_admin      boolean not null default false,
   created_at    timestamptz not null default now()
 );
@@ -13229,7 +13229,7 @@ begin
   ) as x(kind, lang, title, body)
   where x.kind = p_kind and x.lang = coalesce(nullif(p_lang, ''), 'en');
 
-  -- The words of a member never reach a lock screen (the decision of Ahmet, 11.10.2026): what the
+  -- The words of a member never reach a lock screen (the decision of owner, 11.10.2026): what the
   -- triggers still pass as text is dropped here, whatever the caller.
   for pair in select * from jsonb_each_text(coalesce(p_data, '{}') - 'text') loop
     title := replace(title, '{' || pair.key || '}', coalesce(pair.value, ''));
@@ -13840,7 +13840,7 @@ end $$;
 -- A group can wear one of the photos the app ships with as its cover (club, crowd,
 -- friends), not only a photo uploaded by a member: the path is then preset/<name>
 -- instead of <user>/<file>. The app maps the name to its bundled picture; nothing is
--- uploaded. Asked by Ahmet on 12.10.2026 so a group has a face from the first minute.
+-- uploaded. Asked by owner on 12.10.2026 so a group has a face from the first minute.
 
 create or replace function public.group_set_cover(p_id uuid, p_path text)
 returns text
@@ -14829,7 +14829,7 @@ begin
   ) as x(kind, lang, title, body)
   where x.kind = p_kind and x.lang = coalesce(nullif(p_lang, ''), 'en');
 
-  -- The words of a member never reach a lock screen (the decision of Ahmet, 11.10.2026): what the
+  -- The words of a member never reach a lock screen (the decision of owner, 11.10.2026): what the
   -- triggers still pass as text is dropped here, whatever the caller.
   for pair in select * from jsonb_each_text(coalesce(p_data, '{}') - 'text') loop
     title := replace(title, '{' || pair.key || '}', coalesce(pair.value, ''));
@@ -14939,7 +14939,7 @@ end $$;
 -- afterhours — the messages of a deleted account go with it (73)
 --
 -- A comment on a night stays as someone (12): it is part of the night. A line in a
--- room or a group chat is not; it is the person talking, and Ahmet decided on
+-- room or a group chat is not; it is the person talking, and the owner decided on
 -- 20.10.2026 (F32) that it goes when the account goes. room_posts kept the line with
 -- user_id null; group_messages cascaded already. delete_account() is that of 65 with
 -- the room lines removed first.
@@ -15278,7 +15278,7 @@ begin
   ) as x(kind, lang, title, body)
   where x.kind = p_kind and x.lang = coalesce(nullif(p_lang, ''), 'en');
 
-  -- The words of a member never reach a lock screen (the decision of Ahmet, 11.10.2026): what the
+  -- The words of a member never reach a lock screen (the decision of owner, 11.10.2026): what the
   -- triggers still pass as text is dropped here, whatever the caller.
   for pair in select * from jsonb_each_text(coalesce(p_data, '{}') - 'text') loop
     title := replace(title, '{' || pair.key || '}', coalesce(pair.value, ''));

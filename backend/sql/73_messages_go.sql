@@ -1,7 +1,7 @@
 -- afterhours — the messages of a deleted account go with it (73)
 --
 -- A comment on a night stays as someone (12): it is part of the night. A line in a
--- room or a group chat is not; it is the person talking, and Ahmet decided on
+-- room or a group chat is not; it is the person talking, and the owner decided on
 -- 20.10.2026 (F32) that it goes when the account goes. room_posts kept the line with
 -- user_id null; group_messages cascaded already. delete_account() is that of 65 with
 -- the room lines removed first.

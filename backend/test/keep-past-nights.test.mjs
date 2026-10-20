@@ -34,7 +34,7 @@ const city = (await rows(`select id, slug from public.cities order by sort_order
 const type = (await rows(`select id from public.event_types limit 1`))[0].id;
 await db.exec(`
   insert into auth.users (id, email) values ('${A}', 'a@x.com');
-  update public.profiles set handle = 'ahmet' where id = '${A}';
+  update public.profiles set handle = 'ada' where id = '${A}';
   insert into public.events (slug, city_id, type_id, title, meta, starts_at, image_url, source, external_id) values
     ('kept-old',    '${city.id}', '${type}', 'Kept, long ago',   'x', now() - interval '500 days', 'https://img/k.jpg', 'ticketmaster', 'tm-1'),
     ('untouched',   '${city.id}', '${type}', 'Nobody, long ago', 'x', now() - interval '500 days', 'https://img/u.jpg', 'ticketmaster', 'tm-2'),

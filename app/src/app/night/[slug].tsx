@@ -298,7 +298,7 @@ export default function NightScreen() {
             {note ? <Text style={styles.mono}>{up(words(note))}</Text> : null}
             {room ? <Text style={styles.mono}>{up(tn('night.checkedin', room.who_count))}</Text> : null}
 
-            {/* Nudge a friend about this night (Ahmet, 12.10.2026): a direct message with the link. */}
+            {/* Nudge a friend about this night (owner, 12.10.2026): a direct message with the link. */}
             {session && !isAnonymous ? (
               <View style={styles.nudgeRow}>
                 <PillAction label={nudged ? t('night.nudged', { name: nudged }) : t('night.nudge')} onPress={() => setNudging(true)} />

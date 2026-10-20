@@ -32,7 +32,7 @@ const banned = async (id) => (await rows(`select public.is_banned('${id}') as b`
 
 await asService();
 await db.exec(`insert into auth.users (id, email) values ('${AD}','ad@x'),('${CM}','cm@x'),('${X}','x@x'),('${Y}','y@x'),('${Z}','z@x')`);
-await db.exec(`update public.profiles set handle = 'admin_ahmet', is_admin = true where id = '${AD}'`);
+await db.exec(`update public.profiles set handle = 'admin_ada', is_admin = true where id = '${AD}'`);
 await db.exec(`update public.profiles set handle = 'cm_lena', account_type = 'community_manager' where id = '${CM}'`);
 await db.exec(`update public.profiles set handle = 'xavi' where id = '${X}'`);
 await db.exec(`update public.profiles set handle = 'yara' where id = '${Y}'`);
@@ -75,7 +75,7 @@ console.log("\n— the file —");
   check(Boolean(await fails(`select public.staff_person('${X}')`)), "not for everyone");
   await as(CM);
   const f = (await rows(`select public.staff_person('${X}') as f`))[0].f;
-  check(f.who.handle === "xavi" && f.who.banned_reason === "threats again" && f.who.banned_by === "admin_ahmet" && f.who.banned_by_admin === true, "who, and who closed them", JSON.stringify(f.who));
+  check(f.who.handle === "xavi" && f.who.banned_reason === "threats again" && f.who.banned_by === "admin_ada" && f.who.banned_by_admin === true, "who, and who closed them", JSON.stringify(f.who));
   check(f.reports_about.length === 1 && f.reports_about[0].text === "go away" && f.reports_about[0].reason === "rude", "what they were reported for, with the copy", JSON.stringify(f.reports_about));
   check(f.appeals.length === 1 && f.appeals[0].outcome === "keep", "their objection and its answer");
   const actions = f.log.map((l) => l.action);

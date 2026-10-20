@@ -40,7 +40,7 @@ const rows = async (sql) => (await db.query(sql)).rows;
 await asService();
 await db.exec(`
   insert into auth.users (id, email) values ('${A}', 'a@x.com'), ('${B}', 'b@x.com'), ('${C}', 'c@x.com'), ('${D}', 'd@x.com'), ('${E}', 'e@x.com');
-  update public.profiles set handle = 'ahmet' where id = '${A}';
+  update public.profiles set handle = 'ada' where id = '${A}';
   insert into public.friendships (requester_id, addressee_id, status) values
     ('${A}', '${B}', 'accepted'), ('${B}', '${C}', 'accepted'), ('${C}', '${D}', 'accepted');
 `);

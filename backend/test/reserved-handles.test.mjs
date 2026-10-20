@@ -36,7 +36,7 @@ console.log("\n— asking —");
 {
   await as(A);
   check(await status("admin") === "taken" && await status("support") === "taken" && await status("afterhours_team") === "taken" && await status("admin_1") === "taken", "the reserved names and their family read as taken");
-  check(await status("ahmet") === "ok", "an ordinary name is free");
+  check(await status("ada") === "ok", "an ordinary name is free");
   check((await rows(`select public.profile_setup('support', 'x', null, null) as r`))[0].r === "taken", "and cannot be set up");
   await as(CM);
   check(await status("support") === "ok", "the staff may use them");

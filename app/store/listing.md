@@ -3,7 +3,7 @@
 ## identity
 - package: app.afterhours.android · version 0.1.0 (versionCode auto-increments via EAS)
 - category: Lifestyle (alt: Events) · content rating: fill the IARC questionnaire; nightlife + user comments → likely "Teen"/16+
-- contact email: ahmet.selcuk.kurt@gmail.com
+- contact email: you@example.com
 - privacy policy url: https://kurtkurtkurt-del.github.io/afterhours/datenschutz/
 - account deletion url (required): https://kurtkurtkurt-del.github.io/afterhours/settings/  (delete account lives there and in the app)
 
@@ -14,7 +14,7 @@ afterhours
 
 The full text of each language is below; Play takes one listing per language
 (Main store listing → Manage translations). Rewritten 20.10.2026 from what the
-app does today. Lines marked **sabah Ahmet** need a decision or a fact only Ahmet has.
+app does today. Lines marked **sabah karar** need a decision or a fact only the owner has.
 
 - en: `find your night, one card at a time. see which friends are going.`
 - de: `finde deine nacht, karte für karte. sieh, welche freunde hingehen.`
@@ -96,15 +96,15 @@ dışarıdaki geceleri sayarız, içerideki dakikaları değil.
 
 ### notes for the morning
 
-- **sabah Ahmet**: content rating. The app asks for 18+ at sign-up (TermsGate); the old line above says "Teen/16+". Answer the IARC questionnaire for an 18+ social app with user messages.
-- **sabah Ahmet**: "many nights carry a preview" is true for Munich only (38 of 50); keep, soften, or wait for Berlin (C3).
-- **sabah Ahmet**: the map and the room are in the text; DJs are left out on purpose (their pages still lean on sample content, A1 F25/F30).
-- **sabah Ahmet**: account deletion url points at `settings/`, where Google/Apple-only accounts cannot sign in (A1 F7).
+- **sabah karar**: content rating. The app asks for 18+ at sign-up (TermsGate); the old line above says "Teen/16+". Answer the IARC questionnaire for an 18+ social app with user messages.
+- **sabah karar**: "many nights carry a preview" is true for Munich only (38 of 50); keep, soften, or wait for Berlin (C3).
+- **sabah karar**: the map and the room are in the text; DJs are left out on purpose (their pages still lean on sample content, A1 F25/F30).
+- **sabah karar**: account deletion url points at `settings/`, where Google/Apple-only accounts cannot sign in (A1 F7).
 
 ## data safety (answers)
 - location: approximate + precise, collected, not shared, optional (map only), used for app functionality
 - email address: collected for account creation and sign-in; optional (guest mode exists)
-- user-generated content: profile (handle, name, bio, photo, links), comments, room posts, direct messages, group chats and album photos, posts with likes and comments, sparks — **sabah Ahmet**: the old line said "comments in rooms (later)"; Data safety must now declare messages, photos and other UGC
+- user-generated content: profile (handle, name, bio, photo, links), comments, room posts, direct messages, group chats and album photos, posts with likes and comments, sparks — **sabah karar**: the old line said "comments in rooms (later)"; Data safety must now declare messages, photos and other UGC
 - personal info: name, email, user ids; photos (profile, posts, group albums)
 - app activity: swipes (kept/let go) tied to the account; never shown per person, only totals
 - no advertising id, no analytics sdk, no third-party sharing
@@ -112,7 +112,7 @@ dışarıdaki geceleri sayarız, içerideki dakikaları değil.
 
 ## permissions declared
 ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION (while in use). nothing else.
-**sabah Ahmet**: since push, the photo picker and the camera came in, check the final list in the built AAB (Play Console → App bundle explorer → Permissions) and copy it here.
+**sabah karar**: since push, the photo picker and the camera came in, check the final list in the built AAB (Play Console → App bundle explorer → Permissions) and copy it here.
 
 ## screenshots to take (phone, 1080×1920+)
 1. flow deck with a card mid-swipe and the keep stamp
@@ -127,7 +127,7 @@ ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION (while in use). nothing else.
 ink ground, paper wordmark "afterhours", one line: "find your night."
 
 ## release notes (what's new, 500)
-**sabah Ahmet**: the version number of the next build.
+**sabah karar**: the version number of the next build.
 - en: `the deck, night pages and the map. who is coming, sparks, groups and direct messages. listen to the act before you go. download your data or delete your account in settings.`
 - de: `der stapel, nachtseiten und die karte. wer kommt, sparks, gruppen und direktnachrichten. hör den act, bevor du gehst. daten herunterladen oder konto löschen in den einstellungen.`
 - tr: `deste, gece sayfaları ve harita. kim geliyor, spark'lar, gruplar ve doğrudan mesajlar. gitmeden sanatçıyı dinle. ayarlardan verilerini indir ya da hesabını sil.`

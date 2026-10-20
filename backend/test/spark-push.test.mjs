@@ -42,7 +42,7 @@ await asService();
 await db.exec(`
   insert into auth.users (id, email) values
     ('${A}', 'a@x.com'), ('${B}', 'b@x.com'), ('${C}', 'c@x.com'), ('${D}', 'd@x.com'), ('${E}', 'e@x.com');
-  update public.profiles set handle = 'ahmet' where id = '${A}';
+  update public.profiles set handle = 'ada' where id = '${A}';
   update public.profiles set handle = 'berk'  where id = '${B}';
   update public.profiles set handle = 'cansu' where id = '${C}';
   insert into public.friendships (requester_id, addressee_id, status) values
@@ -61,7 +61,7 @@ console.log("\n— a spark reaches its wave —");
   check(!to.has(A), "the host does not hear their own spark");
   check(!to.has(E), "someone outside every wave hears nothing");
   const b = o.find((r) => r.user_id === B);
-  check(b.data.name === "ahmet" && b.data.title === "grill by the river", "it names the host and the spark");
+  check(b.data.name === "ada" && b.data.title === "grill by the river", "it names the host and the spark");
   check(b.data.url === `/spark/grill?invite=${s1}`, "it opens the spark page as an invite", b.data.url);
   check(/^[a-z]{3} \d\d:\d\d$/.test(b.data.when), "it says when, on the phone's clock", b.data.when);
 }
@@ -97,8 +97,8 @@ console.log("\n— someone is in —");
 
 console.log("\n— the words —");
 {
-  const t = await rows(`select * from public.push_text('spark', 'tr', '{"name":"ahmet","title":"mangal","when":"fri 20:00"}')`);
-  check(t[0].title === "ahmet bir şey başlatıyor" && t[0].body === "mangal · fri 20:00", "turkish words", JSON.stringify(t[0]));
+  const t = await rows(`select * from public.push_text('spark', 'tr', '{"name":"ada","title":"mangal","when":"fri 20:00"}')`);
+  check(t[0].title === "ada bir şey başlatıyor" && t[0].body === "mangal · fri 20:00", "turkish words", JSON.stringify(t[0]));
   const i = await rows(`select * from public.push_text('spark_in', 'de', '{"name":"berk","title":"x"}')`);
   check(i[0].title === "berk ist dabei", "german words");
 }

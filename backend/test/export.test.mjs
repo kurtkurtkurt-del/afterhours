@@ -39,7 +39,7 @@ await db.exec(`
   insert into auth.users (id, email) values
     ('${ME}', 'me@example.com'),
     ('${OTHER}', 'other@example.com');
-  update public.profiles set handle = 'ahmet', display_name = 'Ahmet',
+  update public.profiles set handle = 'ada', display_name = 'owner',
          bio = 'one line about me',
          city_id = (select id from public.cities where slug = 'munchen')
    where id = '${ME}';
@@ -76,7 +76,7 @@ console.log("\n— what comes back —");
 const mine = await exportFor(ME);
 {
   check(Boolean(mine), "an account gets an answer at all");
-  check(mine.profile && mine.profile.handle === "ahmet", "the profile is mine",
+  check(mine.profile && mine.profile.handle === "ada", "the profile is mine",
     JSON.stringify(mine.profile));
   check(mine.profile.city === "munchen", "the city is a slug, not an id");
   check(Boolean(mine.settings), "the settings came along");
@@ -148,7 +148,7 @@ console.log("\n— messages and tickets (64) —");
   await full.exec(`
     insert into auth.users (id, email) values
       ('${ME}', 'me@example.com'), ('${OTHER}', 'other@example.com');
-    update public.profiles set handle = 'ahmet', display_name = 'Ahmet' where id = '${ME}';
+    update public.profiles set handle = 'ada', display_name = 'owner' where id = '${ME}';
     update public.profiles set handle = 'lena', display_name = 'Lena' where id = '${OTHER}';
     insert into public.friendships (requester_id, addressee_id, status)
     values ('${ME}', '${OTHER}', 'accepted');`);
@@ -177,7 +177,7 @@ console.log("\n— messages and tickets (64) —");
 
   await as(OTHER);
   const t = (await full.query(`select public.export_me() as d`)).rows[0].d;
-  check(t.messages.length === 1 && t.messages[0].to === "ahmet"
+  check(t.messages.length === 1 && t.messages[0].to === "ada"
         && t.tickets.length === 1 && t.tickets[0].answer === "no",
     "they get their own message and answer");
 }

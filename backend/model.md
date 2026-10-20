@@ -8,7 +8,7 @@ out of it.
 - **You can look around without signing in.** Events and comments are
   public reading. Everything personal (swipes, kept cards, friends) needs
   an account.
-- **Only Ahmet enters events.** One admin. No organiser account, no data
+- **Only the owner enters events.** One admin. No organiser account, no data
   pulled in from outside — both could be added later, neither exists now.
 - **The front end changes as little as possible.** That is why a line like
   `meta`, which appears on screen word for word, is stored word for word
@@ -64,7 +64,7 @@ into a date would corrupt the data. `meta` is always right; when
 ### profile
 One row for everyone who signs in. Tied to Supabase's `auth.users` table;
 the email stays private over there, and this table is the public part
-(the handle). `is_admin` is true only for Ahmet — that is where the right
+(the handle). `is_admin` is true only for the owner — that is where the right
 to write events comes from.
 
 ### swipe
@@ -86,7 +86,7 @@ The "friends liked swipes" mode = what confirmed friends swiped right.
 
 ## Who can see what
 
-| | anonymous | signed in | Ahmet (admin) |
+| | anonymous | signed in | owner (admin) |
 |---|---|---|---|
 | event, venue, city, type | reads | reads | reads + writes |
 | comment | reads | reads + writes (own) | + hides/deletes |
@@ -107,7 +107,7 @@ split is not technical but a decision: the "everyone reads" rule on
 
 | field | what | note |
 |---|---|---|
-| `handle` | `ahmet` | friendship runs on it; `^[a-z0-9_]{3,20}$` |
+| `handle` | `ada` | friendship runs on it; `^[a-z0-9_]{3,20}$` |
 | `display_name` | the name shown | 1–40 characters |
 | `bio` | one line | 160 characters at most |
 | `city_id` | home city | the deck's default can come from here |
