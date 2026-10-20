@@ -102,6 +102,7 @@ const structure = [
   ["92_timezones.sql", "THE HOUR A NIGHT STARTS, IN ITS OWN CITY"],
   ["93_staff_backlog.sql", "WHAT THE STAFF HAVE LEFT WAITING"],
   ["94_retention.sql", "WHAT IS KEPT, AND FOR HOW LONG"],
+  ["95_past_night_page.sql", "A NIGHT THAT HAPPENED STILL HAS ITS PAGE"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

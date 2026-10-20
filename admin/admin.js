@@ -110,6 +110,7 @@
     "92_timezones.sql",
     "93_staff_backlog.sql",
     "94_retention.sql",
+    "95_past_night_page.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */
