@@ -93,4 +93,5 @@ export const EXPECTED_SQL = [
   "83_dj_after.sql",
   "84_report_snapshot.sql",
   "85_appeals.sql",
+  "86_person_file.sql",
 ];

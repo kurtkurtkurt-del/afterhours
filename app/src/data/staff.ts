@@ -235,3 +235,13 @@ export const unbanPerson = (user: string) => rpc<void>('staff_unban', { p_user: 
 export const banAuthor = (kind: string, target: string, reason: string | null) => rpc<void>('staff_ban_author', { p_kind: kind, p_target: target, p_reason: reason });
 export const peopleBy = (q: string, role: string) => rpc<PersonRow[]>('admin_people_by', { p_query: q, p_role: role });
 export const roleCounts = () => rpc<RoleCounts>('admin_role_counts');
+
+// 86_person_file.sql: everything the staff know about one person, in one read.
+export type PersonFile = {
+  who: { id: string; handle: string | null; name: string | null; role: string; created_at: string; banned_at: string | null; banned_reason: string | null; banned_by: string | null; banned_by_admin: boolean | null };
+  reports_about: { kind: string; target: string; text: string | null; reason: string | null; handled: boolean; at: string }[];
+  reports_made: { kind: string; reason: string | null; handled: boolean; at: string }[];
+  appeals: { body: string; outcome: 'unban' | 'keep' | null; at: string; settled_at: string | null }[];
+  log: { action: string; note: string | null; at: string; by: string | null }[];
+};
+export const personFile = (user: string) => rpc<PersonFile>('staff_person', { p_user: user });
