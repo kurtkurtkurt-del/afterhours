@@ -5,6 +5,7 @@ import { useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import { Said } from '@/components/StaffPage';
+import { useReport } from '@/components/ReportSheet';
 import { dmSend, dmThread, dmUnsay, why, type DmLine } from '@/data/dms';
 import { markDmSeen } from '@/data/messages';
 import { useLang } from '@/i18n';
@@ -57,6 +58,8 @@ export default function DmScreen() {
       { text: t('staff.delete.keep'), style: 'cancel' },
       { text: t('staff.delete'), style: 'destructive', onPress: () => dmUnsay(l.id).then(() => setLines((x) => x.filter((y) => y.id !== l.id)), () => {}) },
     ]);
+  // A long press on their line reports it (70); on yours it takes it back.
+  const reporting = useReport();
   const time = (iso: string) => iso.slice(11, 16);
 
   return (
@@ -77,16 +80,17 @@ export default function DmScreen() {
                 <Text style={styles.metaMine}>{time(l.created_at)}</Text>
               </Pressable>
             ) : (
-              <View key={l.id} style={styles.theirsWrap}>
+              <Pressable key={l.id} onLongPress={() => reporting.ask('dm_message', String(l.id))} style={styles.theirsWrap}>
                 <View style={styles.bubble}>
                   <Text style={styles.text}>{l.body}</Text>
                 </View>
                 <Text style={styles.metaSmall}>{time(l.created_at)}</Text>
-              </View>
+              </Pressable>
             ),
           )}
           <Said text={said} bad />
         </ScrollView>
+        {reporting.sheet}
         <View style={[styles.input, { paddingBottom: insets.bottom + 10 }]}>
           <View style={styles.pill}>
             <TextInput

@@ -77,6 +77,7 @@ const structure = [
   ["67_deck_today.sql", "THE DECK DOES NOT DEPEND ON THE CLOCK JOB — PAST SYNCED NIGHTS LEAVE BY DATE"],
   ["68_report_answered.sql", "THE PERSON WHO REPORTED HEARS THE OUTCOME"],
   ["69_rsvp_push.sql", "I AM IN REACHES THE FRIENDS ON THAT NIGHT"],
+  ["70_blocks_and_dm_reports.sql", "A BLOCK REACHES EVERY READER; A DIRECT MESSAGE CAN BE REPORTED"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
