@@ -5,7 +5,7 @@
 -- (26, kind match). An answer is a louder keep: the same push, to the friends who
 -- kept the night or answered in themselves, once per answerer and night. It rides on
 -- the match switch (notify_matches) and the match words (58), so nothing new to set
--- or translate; the key says rsvp so it never collides with the keep's own push.
+-- or translate; the key says rsvp so it never collides with the push of the keep itself.
 -- Nothing when the answerer keeps their keeps private (12: kept_visibility), as with
 -- the keep itself. maybe and out say nothing. (C1, 20.10.2026)
 

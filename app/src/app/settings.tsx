@@ -1,6 +1,6 @@
 import { SITE } from '@/data/deck';
 import { useEffect, useState } from 'react';
-import { Alert, Linking, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Alert, Linking, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import Constants, { ExecutionEnvironment } from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -20,8 +20,9 @@ import { myBlocks, unblockUser, type Blocked } from '@/data/friends';
 import DoorCode from '@/components/DoorCode';
 import { resetTips } from '@/components/Tips';
 import { changeEmail, changePassword, deleteEverything } from '@/data/safety';
+import { exportToFile } from '@/data/settings';
 import CodeSheet from '@/components/CodeSheet';
-import { ACCOUNT_TYPES, exportMe, fetchSettings, saveSettings, setAccountType, type AccountType, type Settings } from '@/data/settings';
+import { ACCOUNT_TYPES, fetchSettings, saveSettings, setAccountType, type AccountType, type Settings } from '@/data/settings';
 import { isStaff, refreshRole, useRole } from '@/data/staff';
 import { pushStatus, registerPush, type PushStatus } from '@/lib/push';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
@@ -192,8 +193,8 @@ export default function SettingsScreen() {
     ]);
 
   const doExport = () =>
-    exportMe()
-      .then((json) => Alert.alert(t('settings.export.title'), t('settings.export.body', { kb: (json.length / 1024).toFixed(1) })))
+    exportToFile()
+      .then((name) => Platform.OS === 'web' && Alert.alert(t('settings.export.title'), t('settings.export.body', { name })))
       .catch((e) => Alert.alert(t('settings.export.failed'), String(e.message ?? e).toLowerCase()));
 
   const soundName = genres.find((g) => g.id === ambient.genre)?.label ?? ambient.genre;

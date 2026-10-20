@@ -418,9 +418,9 @@ export const pages = {
   'settings.export.hint': { en: 'everything we hold about you, as json', de: 'alles, was wir über dich haben, als json', tr: 'hakkında tuttuğumuz her şey, json olarak' },
   'settings.export.title': { en: 'your data', de: 'deine daten', tr: 'verilerin' },
   'settings.export.body': {
-    en: '{kb} kb of json. a share sheet comes later; for now it is fetched and shown here.',
-    de: '{kb} kb json. teilen kommt später; vorerst wird es geladen und hier gezeigt.',
-    tr: '{kb} kb json. paylaşma sonra gelecek; şimdilik çekilip burada gösteriliyor.',
+    en: '{name} is downloading. everything we hold about you, as json.',
+    de: '{name} wird geladen. alles, was wir über dich haben, als json.',
+    tr: '{name} indiriliyor. hakkında tuttuğumuz her şey, json olarak.',
   },
   'settings.export.failed': { en: 'export failed', de: 'export fehlgeschlagen', tr: 'dışa aktarılamadı' },
   'settings.leave': { en: 'leave guest mode', de: 'gastmodus verlassen', tr: 'misafir modundan çık' },
