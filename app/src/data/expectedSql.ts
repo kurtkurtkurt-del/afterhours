@@ -85,4 +85,5 @@ export const EXPECTED_SQL = [
   '81_posts_off.sql',
   '82_leftovers.sql',
   '83_dj_after.sql',
+  '84_report_snapshot.sql',
 ];
