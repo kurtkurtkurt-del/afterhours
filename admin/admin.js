@@ -89,6 +89,8 @@
     "71_health_more.sql",
     "72_night_changed.sql",
     "73_messages_go.sql",
+    "74_ban_stays.sql",
+    "75_spark_off.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */

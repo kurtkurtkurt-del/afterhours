@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-20 07:05   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-20 07:07   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -14848,5 +14848,355 @@ grant execute on function public.delete_account() to authenticated;
 do $$ begin
   if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('73_messages_go.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A BAN STAYS — THE ADDRESS COMES BACK BANNED, THE HANDLE STAYS TAKEN   (74_ban_stays.sql)
+-- ============================================================
+
+-- afterhours — a ban stays (74)
+--
+-- A banned person could delete the account, sign up again with the same address, take
+-- the same handle and be back in ten minutes; and the room lines of a banned account
+-- stayed on the wall (F13, 20.10.2026). Three things:
+--   banned_marks   a hash of the email (md5, lowercased) and the handle of a banned
+--                  account that deleted itself; closed table, written only by
+--                  delete_account(), read only by the two below
+--   ban_returns    a new profile whose email is marked is banned at birth
+--   handle_status  a handle in the marks is taken
+-- and room_list leaves out what a banned account wrote, as comments and posts
+-- already do (52). delete_account() is that of 73 with the mark written.
+
+create table if not exists public.banned_marks (
+  mark    text primary key,
+  handle  text,
+  at      timestamptz not null default now()
+);
+alter table public.banned_marks enable row level security;
+revoke all on public.banned_marks from public, anon, authenticated;
+
+create or replace function public.delete_account()
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  me uuid := auth.uid();
+  g  uuid;
+begin
+  if me is null then
+    raise exception 'sign in first';
+  end if;
+
+  if exists (select 1 from public.profiles where id = me and is_admin)
+     and not exists (select 1 from public.profiles where is_admin and id <> me) then
+    raise exception 'the last admin stays an admin';
+  end if;
+
+  for g in select group_id from public.group_members where user_id = me loop
+    delete from public.group_members where group_id = g and user_id = me;
+    if not exists (select 1 from public.group_members where group_id = g) then
+      delete from public.groups where id = g;
+    elsif not exists (select 1 from public.group_members where group_id = g and role = 'owner') then
+      update public.group_members set role = 'owner'
+       where group_id = g and user_id = (select user_id from public.group_members
+                                          where group_id = g order by joined_at, user_id limit 1);
+    end if;
+  end loop;
+
+  -- what the person said in rooms and groups leaves with them
+  delete from public.room_posts where user_id = me;
+  delete from public.group_messages where user_id = me;
+
+  update public.comments
+     set author_id = null, author_name = 'someone'
+   where author_id = me;
+
+  -- a banned person who deletes their account is remembered by a hash of the email
+  -- and keeps their handle: the same address comes back banned, the name stays taken
+  if exists (select 1 from public.profiles where id = me and banned_at is not null) then
+    insert into public.banned_marks (mark, handle)
+    select md5(lower(u.email)), p.handle from auth.users u join public.profiles p on p.id = u.id
+    where u.id = me and u.email is not null
+    on conflict (mark) do nothing;
+  end if;
+
+  delete from auth.users where id = me;
+end;
+$$;
+
+-- The profile is made by handle_new_user (12) on the auth row; this runs right after.
+create or replace function public.ban_returns()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  mail text;
+begin
+  select u.email into mail from auth.users u where u.id = new.id;
+  if mail is not null and exists (select 1 from public.banned_marks where mark = md5(lower(mail))) then
+    perform set_config('afterhours.ban', 'on', true);
+    update public.profiles
+       set banned_at = now(), banned_reason = 'banned before', banned_by = null
+     where id = new.id;
+    perform set_config('afterhours.ban', '', true);
+  end if;
+  return new;
+end;
+$$;
+revoke execute on function public.ban_returns() from public, anon, authenticated;
+drop trigger if exists ban_returns on public.profiles;
+create trigger ban_returns
+  after insert on public.profiles
+  for each row execute function public.ban_returns();
+
+create or replace function public.handle_status(p_handle text)
+returns text
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select case
+    when coalesce(btrim(p_handle), '') = ''            then 'empty'
+    when lower(btrim(p_handle)) !~ '^[a-z0-9_]{3,20}$' then 'format'
+    when exists (select 1 from public.profiles
+                 where handle = lower(btrim(p_handle)) and id = auth.uid()) then 'yours'
+    when exists (select 1 from public.profiles
+                 where handle = lower(btrim(p_handle))) then 'taken'
+    when exists (select 1 from public.banned_marks
+                 where handle = lower(btrim(p_handle))) then 'taken'
+    else 'ok'
+  end;
+$$;
+
+create or replace function public.room_list(p_slug text)
+returns table (
+  id          uuid,
+  body        text,
+  who         text,
+  mine        boolean,
+  created_at  timestamptz
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select r.id, r.body, lower(left(coalesce(p.display_name, p.handle, 's'), 1)), r.user_id = auth.uid(), r.created_at
+  from public.room_posts r
+  join public.events e on e.id = r.event_id
+  left join public.profiles p on p.id = r.user_id
+  where e.slug = p_slug and public.checked_in(e.id)
+    and not public.hidden_by_block(r.user_id)
+    and not public.is_banned(r.user_id)
+  order by r.created_at;
+$$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('74_ban_stays.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  A SPARK TAKEN BACK TELLS THE PEOPLE WHO SAID IN   (75_spark_off.sql)
+-- ============================================================
+
+-- afterhours — a spark taken back tells the people who said in (75)
+--
+-- spark_cancel (27) deleted the spark and the ones who had said in walked into
+-- nothing (F23, 20.10.2026). Now, before it goes, each of them gets one push:
+-- {name} took it back · {title}, on the sparks switch. The words come from 58 via
+-- 72, with the one kind added; push_wants likewise.
+
+alter table public.push_outbox drop constraint if exists push_outbox_kind_check;
+alter table public.push_outbox add constraint push_outbox_kind_check check (kind in (
+  'friend_request', 'friend_accepted', 'match', 'friend_live',
+  'night_soon', 'room_open', 'room_closing', 'room_message', 'reply',
+  'digest', 'dj_live', 'wave', 'spark', 'spark_in',
+  'group_added', 'group_joined', 'group_match', 'group_round', 'group_won', 'group_plan',
+  'group_message', 'group_live', 'group_ticket', 'post',
+  'staff', 'post_like', 'post_comment',
+  'dm', 'night_changed', 'spark_off'));
+
+create or replace function public.push_text(p_kind text, p_lang text, p_data jsonb)
+returns table (title text, body text)
+language plpgsql
+immutable
+as $$
+declare
+  pair record;
+begin
+  select x.title, x.body into title, body
+  from (values
+    ('friend_request',  'en', 'friend request',                '{name} wants to add you'),
+    ('friend_request',  'de', 'freundschaftsanfrage',          '{name} möchte dich hinzufügen'),
+    ('friend_request',  'tr', 'arkadaşlık isteği',             '{name} seni eklemek istiyor'),
+    ('friend_accepted', 'en', 'you are friends now',           '{name} accepted your request'),
+    ('friend_accepted', 'de', 'ihr seid jetzt freunde',        '{name} hat deine anfrage angenommen'),
+    ('friend_accepted', 'tr', 'artık arkadaşsınız',            '{name} isteğini kabul etti'),
+    ('match',           'en', '{name} is going too',           '{title}'),
+    ('match',           'de', '{name} geht auch hin',          '{title}'),
+    ('match',           'tr', '{name} de gidiyor',             '{title}'),
+    ('friend_live',     'en', '{name} is out now',             '{title}'),
+    ('friend_live',     'de', '{name} ist gerade unterwegs',   '{title}'),
+    ('friend_live',     'tr', '{name} şu an dışarıda',         '{title}'),
+    ('night_soon',      'en', 'tonight · {time}',              '{title}'),
+    ('night_soon',      'de', 'heute nacht · {time}',          '{title}'),
+    ('night_soon',      'tr', 'bu gece · {time}',              '{title}'),
+    ('room_open',       'en', 'your room is open',             '{title} · 48 hours to write'),
+    ('room_open',       'de', 'dein raum ist offen',           '{title} · 48 stunden zum schreiben'),
+    ('room_open',       'tr', 'odan açık',                     '{title} · 48 saat yazabilirsin'),
+    ('room_closing',    'en', 'your room closes soon',         '{title} · the last two hours'),
+    ('room_closing',    'de', 'dein raum schließt bald',       '{title} · die letzten zwei stunden'),
+    ('room_closing',    'tr', 'odan birazdan kapanıyor',       '{title} · son iki saat'),
+    ('room_message',    'en', '{name} in {title}',             'a new line in your room'),
+    ('room_message',    'de', '{name} in {title}',             'eine neue zeile in deinem raum'),
+    ('room_message',    'tr', '{title} · {name}',              'odanda yeni bir satır'),
+    ('reply',           'en', '{name} replied',                'a new reply'),
+    ('reply',           'de', '{name} hat geantwortet',        'eine neue antwort'),
+    ('reply',           'tr', '{name} cevap verdi',            'yeni bir cevap'),
+    ('digest',          'en', 'this weekend in {city}',        '{n} nights · {friends} kept by friends'),
+    ('digest',          'de', 'dieses wochenende in {city}',   '{n} nächte · {friends} von freunden behalten'),
+    ('digest',          'tr', 'bu hafta sonu {city}',          '{n} gece · {friends} tanesini arkadaşların sakladı'),
+    ('dj_live',         'en', '{name} plays soon',             '{where} · {time}'),
+    ('dj_live',         'de', '{name} legt bald auf',          '{where} · {time}'),
+    ('dj_live',         'tr', '{name} birazdan çalıyor',       '{where} · {time}'),
+    ('wave',            'en', '2nd wave',                      'a friend of {via} kept {title}'),
+    ('wave',            'de', '2. welle',                      'ein freund von {via} hat {title} behalten'),
+    ('wave',            'tr', '2. dalga',                      '{via} üzerinden biri {title} gecesini sakladı'),
+    ('spark',           'en', '{name} is starting something',  '{title} · {when}'),
+    ('spark',           'de', '{name} startet etwas',          '{title} · {when}'),
+    ('spark',           'tr', '{name} bir şey başlatıyor',     '{title} · {when}'),
+    ('spark_in',        'en', '{name} is in',                  '{title}'),
+    ('spark_in',        'de', '{name} ist dabei',              '{title}'),
+    ('spark_in',        'tr', '{name} geliyor',                '{title}'),
+    ('group_added',     'en', 'you are in {group}',            '{name} added you · swipe nights together'),
+    ('group_added',     'de', 'du bist in {group}',            '{name} hat dich hinzugefügt · wischt zusammen'),
+    ('group_added',     'tr', '{group} grubundasın',           '{name} seni ekledi · birlikte gece seçin'),
+    ('group_joined',    'en', '{group}',                       '{name} joined'),
+    ('group_joined',    'de', '{group}',                       '{name} ist dazugekommen'),
+    ('group_joined',    'tr', '{group}',                       '{name} gruba katıldı'),
+    ('group_match',     'en', '{group} · everyone is in',      '{title}'),
+    ('group_match',     'de', '{group} · alle sind dabei',     '{title}'),
+    ('group_match',     'tr', '{group} · herkes var',          '{title}'),
+    ('group_round',     'en', '{group} · vote',                '{name} put {title} to a vote'),
+    ('group_round',     'de', '{group} · abstimmung',          '{name} lässt abstimmen: {title}'),
+    ('group_round',     'tr', '{group} · oylama',              '{name} oylamaya sundu: {title}'),
+    ('group_won',       'en', '{group} · the vote is in',      '{title}'),
+    ('group_won',       'de', '{group} · abgestimmt',          '{title}'),
+    ('group_won',       'tr', '{group} · oylama bitti',        '{title}'),
+    ('group_plan',      'en', '{group} · the plan',            '{name}: {title}'),
+    ('group_plan',      'de', '{group} · der plan',            '{name}: {title}'),
+    ('group_plan',      'tr', '{group} · plan',                '{name}: {title}'),
+    ('group_message',   'en', '{group} · {name}',              'a new message'),
+    ('group_message',   'de', '{group} · {name}',              'eine neue nachricht'),
+    ('group_message',   'tr', '{group} · {name}',              'yeni bir mesaj'),
+    ('group_live',      'en', '{group} · live now',            '{name} wants to swipe together, now'),
+    ('group_live',      'de', '{group} · gerade live',         '{name} will jetzt zusammen wischen'),
+    ('group_live',      'tr', '{group} · şimdi canlı',         '{name} şimdi birlikte kaydırmak istiyor'),
+    ('group_ticket',    'en', '{group} · tomorrow',            'you are in for {title} but have no ticket yet'),
+    ('group_ticket',    'de', '{group} · morgen',              'du bist bei {title} dabei, hast aber noch kein ticket'),
+    ('group_ticket',    'tr', '{group} · yarın',               '{title} için geliyorsun ama henüz biletin yok'),
+    ('post',            'en', '{name} posted',                 'a new post'),
+    ('post',            'de', '{name} hat gepostet',           'ein neuer post'),
+    ('post',            'tr', '{name} paylaştı',               'yeni bir gönderi'),
+    ('post_like',       'en', '{name} likes your post',        'open yours to see it'),
+    ('post_like',       'de', '{name} gefällt dein post',      'in yours ansehen'),
+    ('post_like',       'tr', '{name} gönderini beğendi',      'yours sekmesinde'),
+    ('post_comment',    'en', '{name} commented',              'a new comment'),
+    ('post_comment',    'de', '{name} hat kommentiert',        'ein neuer kommentar'),
+    ('post_comment',    'tr', '{name} yorum yaptı',            'yeni bir yorum'),
+    -- 59_dms.sql: a direct message; the name, never the words
+    ('dm',              'en', '{name}',                        'a new message'),
+    ('dm',              'de', '{name}',                        'eine neue nachricht'),
+    ('dm',              'tr', '{name}',                        'yeni bir mesaj'),
+    ('staff',           'en', 'the panel',                     '{n} waiting: reports, nights sent in, dj pages'),
+    ('staff',           'de', 'das panel',                     '{n} warten: meldungen, eingesandte nächte, dj-seiten'),
+    ('staff',           'tr', 'panel',                         '{n} iş bekliyor: şikayetler, gönderilen geceler, dj sayfaları'),
+    -- 72_night_changed.sql: a night you kept, answered or hold a ticket for
+    ('night_changed',   'en', '{title}',                       '{what}'),
+    ('night_changed',   'de', '{title}',                       '{what}'),
+    ('night_changed',   'tr', '{title}',                       '{what}'),
+    -- 75_spark_off.sql: a spark you said in to was taken back by its host
+    ('spark_off',       'en', '{name} took it back',            '{title}'),
+    ('spark_off',       'de', '{name} hat es abgesagt',         '{title}'),
+    ('spark_off',       'tr', '{name} iptal etti',              '{title}')
+  ) as x(kind, lang, title, body)
+  where x.kind = p_kind and x.lang = coalesce(nullif(p_lang, ''), 'en');
+
+  -- The words of a member never reach a lock screen (the decision of Ahmet, 11.10.2026): what the
+  -- triggers still pass as text is dropped here, whatever the caller.
+  for pair in select * from jsonb_each_text(coalesce(p_data, '{}') - 'text') loop
+    title := replace(title, '{' || pair.key || '}', coalesce(pair.value, ''));
+    body  := replace(body,  '{' || pair.key || '}', coalesce(pair.value, ''));
+  end loop;
+  return next;
+end;
+$$;
+
+create or replace function public.push_wants(p_user uuid, p_kind text)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select coalesce((
+    select case
+             when p_kind = 'friend_request'  then s.notify_requests
+             when p_kind = 'friend_accepted' then s.notify_accepts
+             when p_kind = 'match'           then s.notify_matches
+             when p_kind = 'friend_live'     then s.notify_live
+             when p_kind in ('night_soon', 'night_changed') then s.notify_nights
+             when p_kind in ('room_open', 'room_closing', 'room_message') then s.notify_rooms
+             when p_kind = 'reply'           then s.notify_replies
+             when p_kind = 'digest'          then s.notify_digest
+             when p_kind = 'dj_live'         then s.notify_djs
+             when p_kind = 'wave'            then s.notify_waves
+             when p_kind in ('spark', 'spark_in', 'spark_off') then s.notify_sparks
+             when p_kind like 'group\_%' then s.notify_groups
+             when p_kind in ('post', 'post_like', 'post_comment') then s.notify_posts
+             when p_kind = 'dm'              then s.notify_dms
+           end
+    from public.profile_settings s where s.user_id = p_user), true);
+$$;
+
+create or replace function public.spark_cancel(p_spark uuid)
+returns void
+language plpgsql
+volatile
+security definer
+set search_path = public
+as $$
+declare
+  s    public.sparks%rowtype;
+  them record;
+begin
+  select * into s from public.sparks where id = p_spark and host_id = auth.uid();
+  if s.id is null then
+    raise exception 'not yours' using errcode = '42501';
+  end if;
+  for them in select i.user_id from public.spark_invites i where i.spark_id = s.id and i.answer = 'in' loop
+    perform public.push_enqueue(them.user_id, 'spark_off',
+      format('spark_off:%s:%s', s.id, them.user_id),
+      jsonb_build_object('name', public.push_name(s.host_id), 'title', s.title, 'url', '/connect'));
+  end loop;
+  delete from public.sparks where id = s.id;
+end;
+$$;
+revoke execute on function public.spark_cancel(uuid) from public, anon;
+grant execute on function public.spark_cancel(uuid)  to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('75_spark_off.sql');
   end if;
 end $$;

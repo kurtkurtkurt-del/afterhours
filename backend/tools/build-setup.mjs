@@ -81,6 +81,8 @@ const structure = [
   ["71_health_more.sql", "HEALTH SAYS WHEN THE SYNC LAST RAN AND WHETHER PUSHES ARE STUCK"],
   ["72_night_changed.sql", "A CHANGED OR CANCELLED NIGHT TELLS THE PEOPLE ON IT"],
   ["73_messages_go.sql", "THE MESSAGES OF A DELETED ACCOUNT GO WITH IT"],
+  ["74_ban_stays.sql", "A BAN STAYS — THE ADDRESS COMES BACK BANNED, THE HANDLE STAYS TAKEN"],
+  ["75_spark_off.sql", "A SPARK TAKEN BACK TELLS THE PEOPLE WHO SAID IN"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
