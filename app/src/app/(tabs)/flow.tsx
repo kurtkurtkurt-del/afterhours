@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { serverText } from '@/lib/serverText';
 import Tips from '@/components/Tips';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
@@ -134,7 +135,7 @@ export default function FlowScreen() {
       })
       .catch((e) => {
         failed.current = true;
-        if (!cancelled) setResult({ key, rows: null, error: e instanceof OfflineError ? 'offline' : String(e.message ?? e).toLowerCase() });
+        if (!cancelled) setResult({ key, rows: null, error: e instanceof OfflineError ? 'offline' : serverText(e) });
       });
     return () => {
       cancelled = true;

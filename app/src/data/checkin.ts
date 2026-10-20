@@ -1,3 +1,4 @@
+import { serverText } from '@/lib/serverText';
 import { supabase } from '@/lib/supabase';
 import { OfflineError, invalidate, must, outbox, peek, pendingJobs, remember, send, type Job } from '@/lib/offline';
 import type { Night } from '@/data/deck';
@@ -20,7 +21,7 @@ export const reasons: Record<string, Key> = {
 // The error's code; unknown errors are returned as-is (lower-cased). Screens store this.
 export const reasonCode = (e: unknown) => {
   const m = String((e as Error)?.message ?? e);
-  return Object.keys(reasons).find((k) => m.includes(k)) ?? m.toLowerCase();
+  return Object.keys(reasons).find((k) => m.includes(k)) ?? serverText(e);
 };
 
 // Until 37_offline.sql is in the database the functions have their old parameters:

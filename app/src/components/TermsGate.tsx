@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { serverText } from '@/lib/serverText';
 import { Alert, Linking, Modal, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Button from '@/components/Button';
@@ -48,7 +49,7 @@ export default function TermsGate() {
     setErr(null);
     sendAppeal(plea.trim())
       .then(() => setAppeal({ sent_at: new Date().toISOString(), outcome: null, settled_at: null }))
-      .catch((e) => setErr(String(e?.message ?? e).toLowerCase()))
+      .catch((e) => setErr(serverText(e)))
       .finally(() => setBusy(false));
   };
 
@@ -76,7 +77,7 @@ export default function TermsGate() {
     setErr(null);
     acceptTerms(uid)
       .then(() => setAskFor(null))
-      .catch((e) => setErr(String(e?.message ?? e).toLowerCase()))
+      .catch((e) => setErr(serverText(e)))
       .finally(() => setBusy(false));
   };
 
@@ -115,7 +116,7 @@ export default function TermsGate() {
               reach (Apple 5.1.1(v), GDPR; F17, 20.10.2026). */}
           <PillRow>
             <PillAction icon="link" label={t('terms.read')} onPress={() => Linking.openURL(TERMS_URL)} />
-            <PillAction icon="out" label={t('settings.export')} onPress={() => exportToFile().catch((e) => Alert.alert(t('settings.export.failed'), String(e.message ?? e).toLowerCase()))} />
+            <PillAction icon="out" label={t('settings.export')} onPress={() => exportToFile().catch((e) => Alert.alert(t('settings.export.failed'), serverText(e)))} />
           </PillRow>
           <View style={{ height: 12 }} />
           <PillAction
@@ -131,7 +132,7 @@ export default function TermsGate() {
                   onPress: () =>
                     deleteEverything()
                       .then((done) => (done ? signOut() : undefined))
-                      .catch((e) => Alert.alert(t('settings.delete.failed'), String(e.message ?? e).toLowerCase())),
+                      .catch((e) => Alert.alert(t('settings.delete.failed'), serverText(e))),
                 },
               ])
             }

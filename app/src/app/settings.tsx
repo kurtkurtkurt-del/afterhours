@@ -1,4 +1,5 @@
 import { SITE } from '@/data/deck';
+import { serverText } from '@/lib/serverText';
 import { useEffect, useState } from 'react';
 import { Alert, Linking, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import Constants, { ExecutionEnvironment } from 'expo-constants';
@@ -104,7 +105,7 @@ export default function SettingsScreen() {
         setAsk(null);
         Alert.alert(t(kind === 'email' ? 'settings.email.sent' : 'settings.password.done'));
       },
-      (e) => setAskError(String(e?.message ?? e).toLowerCase()),
+      (e) => setAskError(serverText(e)),
     );
   };
   // admin and community manager are given (42_staff.sql); the code only switches user ↔ dj.
@@ -143,7 +144,7 @@ export default function SettingsScreen() {
         onPress: () =>
           unblockUser(b.id)
             .then(() => setBlocked((cur) => (cur ?? []).filter((x) => x.id !== b.id)))
-            .catch((e) => Alert.alert(t('block.failed'), String(e.message ?? e).toLowerCase())),
+            .catch((e) => Alert.alert(t('block.failed'), serverText(e))),
       },
     ]);
   };
@@ -174,7 +175,7 @@ export default function SettingsScreen() {
         refreshRole().catch(() => {});
         setWanted(null);
       })
-      .catch((e) => setCodeError(String(e.message ?? e).toLowerCase()));
+      .catch((e) => setCodeError(serverText(e)));
   };
 
   const confirmDelete = () =>
@@ -189,14 +190,14 @@ export default function SettingsScreen() {
           removePhoto()
             .then(() => deleteEverything())
             .then((done) => (done ? signOut().then(() => router.replace('/')) : undefined))
-            .catch((e) => Alert.alert(t('settings.delete.failed'), String(e.message ?? e).toLowerCase())),
+            .catch((e) => Alert.alert(t('settings.delete.failed'), serverText(e))),
       },
     ]);
 
   const doExport = () =>
     exportToFile()
       .then((name) => Platform.OS === 'web' && Alert.alert(t('settings.export.title'), t('settings.export.body', { name })))
-      .catch((e) => Alert.alert(t('settings.export.failed'), String(e.message ?? e).toLowerCase()));
+      .catch((e) => Alert.alert(t('settings.export.failed'), serverText(e)));
 
   const soundName = genres.find((g) => g.id === ambient.genre)?.label ?? ambient.genre;
   const hidden = settings?.kept_visibility === 'private';

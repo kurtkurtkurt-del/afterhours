@@ -5,6 +5,7 @@ import { forgetCache, isNetworkError } from '@/lib/offline';
 import { LargeSecureStore } from '@/lib/secureStorage';
 import { unregisterPush } from '@/lib/push';
 import { mergeGuest, rememberGuest } from '@/data/safety';
+import { serverText } from '@/lib/serverText';
 import { t } from '@/i18n/core';
 import type { Key } from '@/i18n/dict';
 
@@ -176,6 +177,6 @@ const known: [RegExp, Key][] = [
 // lower-cased to match the interface.
 export function authMessage(m: string) {
   const hit = known.find(([re]) => re.test(m));
-  return hit ? t(hit[1]) : m.charAt(0).toLowerCase() + m.slice(1);
+  return hit ? t(hit[1]) : serverText(m);
 }
 const plain = authMessage;

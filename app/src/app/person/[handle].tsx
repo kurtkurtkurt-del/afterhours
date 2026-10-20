@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { serverText } from '@/lib/serverText';
 import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -100,7 +101,7 @@ export default function PersonScreen() {
               setRemoved(true);
               refreshYours();
             })
-            .catch((e) => Alert.alert(String(e?.message ?? e).toLowerCase())),
+            .catch((e) => Alert.alert(serverText(e))),
       },
     ]);
 

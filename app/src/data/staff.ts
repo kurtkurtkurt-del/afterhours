@@ -1,3 +1,4 @@
+import { serverText } from '@/lib/serverText';
 import { useEffect, useState } from 'react';
 import Storage from 'expo-sqlite/kv-store';
 import { supabase } from '@/lib/supabase';
@@ -218,7 +219,7 @@ export async function markFeedback(id: string, handled: boolean) {
 }
 
 // The error a function raised, as a short line for the screen.
-export const why = (e: unknown) => String((e as { message?: string })?.message ?? e).toLowerCase();
+export const why = (e: unknown) => serverText(e);
 
 // 49_design_reads.sql: people by role, with nights kept and groups (design 17C)
 export type PersonRow = Person & { nights: number; groups: number; banned: boolean };

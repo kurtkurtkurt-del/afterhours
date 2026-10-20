@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { serverText } from '@/lib/serverText';
 import { ActivityIndicator, Alert, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { router } from 'expo-router';
 import Svg, { Circle, Line } from 'react-native-svg';
@@ -89,7 +90,7 @@ export function confirmBlock(p: { id: string; name: string }, t: (k: Key, v?: Re
             refreshYours();
             done();
           })
-          .catch((e) => Alert.alert(t('block.failed'), String(e?.message ?? e).toLowerCase())),
+          .catch((e) => Alert.alert(t('block.failed'), serverText(e))),
     },
   ]);
 }

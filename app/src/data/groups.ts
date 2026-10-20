@@ -1,3 +1,4 @@
+import { serverText } from '@/lib/serverText';
 import { launchImageLibraryAsync } from 'expo-image-picker';
 import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
 import { File } from 'expo-file-system';
@@ -150,7 +151,7 @@ export async function chooseCover(id: string, uid: string): Promise<string | nul
   return path;
 }
 
-export const why = (e: unknown) => String((e as { message?: string })?.message ?? e).toLowerCase();
+export const why = (e: unknown) => serverText(e);
 
 // ------------------------------------------------- deciding (46_group_plans.sql)
 
