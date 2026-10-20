@@ -15,6 +15,23 @@ export const TERMS_VERSION = 1;
 const SITE = 'https://kurtkurtkurt-del.github.io/afterhours';
 export const TERMS_URL = `${SITE}/agb/`;
 export const PRIVACY_URL = `${SITE}/datenschutz/`;
+// Where an app that is too old is sent (78_min_version.sql; the stores come later).
+export const UPDATE_URL = `${SITE}/phone/`;
+
+// The oldest app version the server still answers; null when it cannot be read (offline).
+export async function minAppVersion(): Promise<string | null> {
+  const { data, error } = await supabase.rpc('min_app_version');
+  return error || typeof data !== 'string' ? null : data;
+}
+// 1.2.0 is below 1.10.0: by number, part by part.
+export function versionBelow(a: string, b: string): boolean {
+  const pa = a.split('.').map(Number), pb = b.split('.').map(Number);
+  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+    const x = pa[i] ?? 0, y = pb[i] ?? 0;
+    if (x !== y) return x < y;
+  }
+  return false;
+}
 
 // Remembered per account on the phone, so an offline start does not ask again.
 const accepted = (uid: string) => `terms.${uid}`;

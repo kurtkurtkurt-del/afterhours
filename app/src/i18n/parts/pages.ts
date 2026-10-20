@@ -316,6 +316,13 @@ export const pages = {
     tr: 'ekip, şartlara aykırı olduğu için kapattı. buradan bir şey paylaşılamaz ya da gönderilemez, kimse görmez. bir hata olduğunu düşünüyorsan siteden bize yaz.',
   },
   'closed.leave': { en: 'sign out', de: 'abmelden', tr: 'çıkış yap' },
+  'update.title': { en: 'this version is too old', de: 'diese version ist zu alt', tr: 'bu sürüm çok eski' },
+  'update.body': {
+    en: 'the nights moved on and this build no longer understands them. get the newest afterhours and come back; everything you kept is still here.',
+    de: 'die nächte sind weitergezogen und dieser build versteht sie nicht mehr. hol dir das neueste afterhours und komm zurück; alles, was du behalten hast, ist noch da.',
+    tr: 'geceler ilerledi, bu sürüm artık onları anlamıyor. en yeni afterhours sürümünü al ve geri gel; sakladığın her şey burada.',
+  },
+  'update.go': { en: 'get the new one', de: 'die neue holen', tr: 'yenisini al' },
   'closed.delete.body': { en: 'the account and everything in it go for good. your data can be downloaded first.', de: 'das konto und alles darin gehen endgültig. deine daten lassen sich vorher laden.', tr: 'hesap ve içindeki her şey kalıcı olarak silinir. önce verilerini indirebilirsin.' },
   'report.group': { en: 'report this group', de: 'diese gruppe melden', tr: 'bu grubu şikayet et' },
   'report.spark': { en: 'report this spark', de: 'diesen spark melden', tr: 'bu spark\'ı şikayet et' },

@@ -85,4 +85,5 @@ export const EXPECTED_SQL = [
   "75_spark_off.sql",
   "76_sent_nights.sql",
   "77_reserved_handles.sql",
+  "78_min_version.sql",
 ];

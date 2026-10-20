@@ -20,6 +20,7 @@ import { usePushRegistration, usePushRouting } from '@/lib/push';
 import GenrePicker from '@/components/GenrePicker';
 import OfflineBar from '@/components/OfflineBar';
 import TermsGate from '@/components/TermsGate';
+import UpdateGate from '@/components/UpdateGate';
 import NoticeSheet from '@/components/NoticeSheet';
 import { catchErrors, logError } from '@/data/safety';
 import { startOffline } from '@/lib/offline';
@@ -85,6 +86,7 @@ export default function RootLayout() {
       <OfflineBar />
       <NoticeSheet />
       <TermsGate />
+      <UpdateGate />
     </AmbientProvider>
     </LanguageProvider>
     </AuthProvider>

@@ -1003,7 +1003,7 @@ down (with the note), can take a waiting one back (`event_withdraw()`, "take it 
 a waiting night whose date passed leaves the queue by itself when the staff open it.
 The deck and the counters stopped waiting for the jobs the same day (`67_deck_today.sql`):
 a synced night leaves `deck()`, `event_counts()` and `city_counts()` by its own date, eight
-hours after it starts, whether or not `hide_past_events` ever runs; the map had done so since 18. **Some names belong to nobody** (`77_reserved_handles.sql`): admin, afterhours…, support, staff, team and a few more read as taken for everyone but the staff — on every keystroke, at sign-up, in profile setup. Three house rules hold, on the way in and swept over what is
+hours after it starts, whether or not `hide_past_events` ever runs; the map had done so since 18. **Some names belong to nobody** (`77_reserved_handles.sql`): admin, afterhours…, support, staff, team and a few more read as taken for everyone but the staff — on every keystroke, at sign-up, in profile setup. **The oldest app that still works** (`78_min_version.sql`): an admin sets the floor with `set_min_app_version`; a build below it opens to a single door to the download page (`UpdateGate`) instead of failing call by call. Three house rules hold, on the way in and swept over what is
 already there: nothing before 18:00 (festivals and raves exempt — real
 ones start in the afternoon), no add-on listings ("VIP Ticket",
 "Box-Seat", "Parking permit" — receipts, not nights), and a show that
