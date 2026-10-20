@@ -658,7 +658,13 @@ First picks (built since 07.10.2026: 2, 3, 12, 13, 19, 23, 24 and the new place 
 `components/` (`Deck`, `NightCard`, `Onboarding`, `TabBar`, `MapWeb`),
 `auth/AuthContext.tsx` (Supabase auth, guest sessions, the reset mail →
 `reset/` on the site), `theme/tokens.ts` (ink, paper, blue, Inter Tight).
-`app/store/listing.md` is the Play Console text; `app/CREDITS.md` the
+`app/store/listing.md` is the Play Console text; `app/store/shots/` the
+store screenshots, 1080×2340 in en · de · tr, made by `npm run shots` in
+`app/` (`tools/store-shots.mjs`, 20.10.2026: exports the PWA, serves it and
+shoots it in the installed Chrome through `playwright-core`, a dev
+dependency with no browser download; `--offline` keeps every request on the
+machine and so has only the welcome screen, `--profile DIR` uses a Chrome
+profile signed in once for people, messages and account); `app/CREDITS.md` the
 music attribution; `app/tools/phone.sh` mirrors a USB phone with scrcpy.
 
 **Building and shipping** (`app/eas.json`): `npx eas-cli build
