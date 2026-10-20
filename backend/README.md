@@ -64,6 +64,7 @@ sql/53_trust.sql         trust: djs.verified (staff_djs_waiting, staff_dj_verify
 sql/54_upkeep.sql        upkeep: guests_prune (guests unseen 30 days, nightly cron), staff push (kind staff in 48) when a report, reported post, night sent in or dj page starts waiting, one an hour; staff_waiting()
 sql/55_post_social.sql   likes and comments on posts: post_likes, post_comments; post_like, post_likers, post_comment_add / _delete, post_comments_of; posts_feed with likes, liked, comments, first two; push post_like / post_comment; reports, bans, notices, limits cover comments
 sql/66_past_off.sql      the service role may run hide_past_events(): the morning sync calls it, so past nights leave the deck without pg_cron
+sql/67_report_answer.sql the reporter hears back: a notice when the staff settle a report (reports, post_reports)
 sql/fix-clipboard-text.sql  ONE-SHOT, plain ASCII: repairs text that pbcopy turned into Mac Roman garbage on its way to the SQL editor
 sql/about-munich.sql     ONE-SHOT: the texts for 18 Munich nights in en · de · tr, from Wikipedia summaries, by slug
 sql/cleanup-seed-events.sql  ONE-SHOT for the live project: drops the invented nights and the out-of-coverage cities

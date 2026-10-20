@@ -74,6 +74,7 @@ const structure = [
   ["64_export_more.sql", "THE EXPORT — YOUR MESSAGES AND TICKET ANSWERS TOO"],
   ["65_account_delete.sql", "DELETING AN ACCOUNT — THE LAST ADMIN, THE GROUP OWNER"],
   ["66_past_off.sql", "PAST NIGHTS LEAVE THE DECK EVEN WITHOUT PG_CRON"],
+  ["67_report_answer.sql", "THE ONE WHO REPORTED HEARS BACK"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
