@@ -107,7 +107,7 @@ Büyüklük: k küçük · o orta · b büyük. Durum hepsinde `bulundu`; Ahmet 
 | F18 | Kişi başına vaka görünümü yok (geçmiş şikayetler, banlar); CM, admin'in banını kaldırabiliyor. | Kişi dosyası, yetki kademesi | Moderasyon körlüğü | o | D | bulundu |
 | F19 | Kurtarma/hesap güvenliği: onay e-postasını yeniden gönderme yok (`auth.resend` hiç yok), şifre değişimi mevcut şifre istemiyor, silme yeniden giriş istemiyor ve geri alınamaz, "tüm cihazlardan çık" yok, e-posta değişimi sitede yok. (B2 ile kesişir.) | Yeniden doğrulama, 7–30 gün geri alma | Hesap kaybı | o | D | bulundu |
 | F20 | Sunucu hataları sadece İngilizce (`raise exception` metni de/tr kullanıcıya gösteriliyor); Supabase e-postaları muhtemelen tek dil. | Hata kodu → istemcide çeviri | Üç dil sözü | o | D+T | bulundu |
-| F21 | UGC'de içerik filtresi yok (ad, yorum, post, DM, grup adı). | Kelime listesi | Apple 1.2 "filtreleme yöntemi" | k–o | D (yokluk) | bulundu |
+| F21 | UGC'de içerik filtresi yok (ad, yorum, post, DM, grup adı). | Kelime listesi | Apple 1.2 "filtreleme yöntemi" | k–o | D (yokluk) | yapıldı (yerel dal) — karar: işaretle, reddetme. `79_word_watch.sql`: `watch_words` (en/de/tr ~35 kelime), `watch_hit()` kelime sınırlı eşleşme; tetikleyiciler yorum·post yorumu·oda·grup mesajı·DM·grup adı·spark·post·profil (handle/ad/bio/about) yazılınca ve düzenlenince → `reports` / `post_reports`’a "filter: <kelime>" ile düşer, içerik yayında kalır, personel panelde karar verir. `watch_add/drop` admin, `watch_list` personel. Test 10. |
 
 ### Eksik akış
 

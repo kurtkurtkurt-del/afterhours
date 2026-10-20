@@ -94,6 +94,7 @@
     "76_sent_nights.sql",
     "77_reserved_handles.sql",
     "78_min_version.sql",
+    "79_word_watch.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */
