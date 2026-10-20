@@ -989,7 +989,10 @@ passed off the deck. Since 20.10.2026 it never deletes a night
 nights every morning and the cascade took the check-in cards, room lines,
 swipes, comments, rsvps and ticket answers on them. Now a past or refused
 night is only unpublished — gone from the deck, the map and the counters,
-still in the collection and the past feed (15 checks in
+still in the collection and the past feed. At the end of every run it also
+calls `hide_past_events()` (`66_past_off.sql` lets the service role run it),
+so every past night with a confirmed date leaves the deck even where pg_cron
+is off — on 11.10.2026 health counted 680 past nights still up (21 checks in
 `backend/test/sync-retire.test.mjs`). Three house rules hold, on the way in and swept over what is
 already there: nothing before 18:00 (festivals and raves exempt — real
 ones start in the afternoon), no add-on listings ("VIP Ticket",

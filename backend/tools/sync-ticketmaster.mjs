@@ -24,7 +24,7 @@
      always right. */
 
 import { createHash } from "node:crypto";
-import { retirePast, retireIds } from "./sync-retire.mjs";
+import { retirePast, retireIds, hidePast } from "./sync-retire.mjs";
 
 const TM_KEY = process.env.TICKETMASTER_KEY || "";
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE || "";
@@ -505,6 +505,17 @@ for (const r of held) {
 }
 for (let i = 0; i < kill.length; i += 60) await send(retireIds(kill.slice(i, i + 60)));
 if (kill.length) console.log("swept: " + kill.length + " rows against the house rules, taken off the deck");
+
+/* Every other past night too (the seeds, the staff's), the job pg_cron should
+   run — without the extension nothing does (66). A project still before 66
+   refuses the call; that costs this line, not the run. */
+try {
+  const req = hidePast();
+  const hidden = await db(req.path, { method: req.method, body: JSON.stringify(req.body) });
+  console.log("hide_past_events: " + hidden + " past nights taken off the deck");
+} catch (e) {
+  console.warn("  hide_past_events was refused (is 66_past_off.sql in?): " + e.message);
+}
 
 console.log("written: " + written + " upserted"
   + (turnedAway ? ", " + turnedAway + " refused (see above)" : "")

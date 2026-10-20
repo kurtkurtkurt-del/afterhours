@@ -28,3 +28,10 @@ export function retireIds(ids) {
     body: { is_published: false },
   };
 }
+
+/* every past night with a confirmed date, whatever its source: the job pg_cron
+   runs at 05:30 (09), called by the sync too since the extension may be off (66).
+   It answers with how many nights it took off. */
+export function hidePast() {
+  return { path: "/rpc/hide_past_events", method: "POST", body: {} };
+}

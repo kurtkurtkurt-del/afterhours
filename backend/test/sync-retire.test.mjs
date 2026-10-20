@@ -7,7 +7,7 @@
 
 import { PGlite } from "@electric-sql/pglite";
 import { readFile } from "node:fs/promises";
-import { retirePast, retireIds } from "../tools/sync-retire.mjs";
+import { retirePast, retireIds, hidePast } from "../tools/sync-retire.mjs";
 
 const read = (y) => readFile(new URL(y, import.meta.url), "utf8");
 let passed = 0, failed = 0;
@@ -19,6 +19,7 @@ process.on("unhandledRejection", (e) => { console.log("\nERROR: " + ((e && e.mes
 
 const db = new PGlite();
 await db.exec(await read("../test/supabase-shim.sql"));
+await db.exec(`create role service_role nologin`);   /* Supabase has it; the sync signs in as it */
 await db.exec(await read("../sql/setup-1-structure.sql"));
 
 const A = "aaaaaaaa-1111-1111-1111-111111111111";
@@ -123,6 +124,31 @@ console.log("\n— the house-rule sweep —");
   check(n === 1, "a refused night is taken off the deck", `got ${n}`);
   const s = await one(`select count(*)::int as n from public.swipes where event_id = $1`, [ev["tm-refused"]]);
   check(s.n === 1, "the swipe on it stays");
+}
+
+console.log("\n— past nights without pg_cron (66) —");
+{
+  await db.exec(`insert into public.events (slug, city_id, type_id, title, meta, starts_at, source) values
+    ('seed-last-week', '${city.id}', '${type}', 'Last week', 'x', now() - interval '7 days', 'seed'),
+    ('seed-tonight',   '${city.id}', '${type}', 'Tonight',   'x', now() - interval '2 hours', 'seed')`);
+  const req = hidePast();
+  check(req.method === "POST" && req.path === "/rpc/hide_past_events", "the sync calls hide_past_events() by name");
+  await db.exec(`set role service_role`);
+  let n = null, err = null;
+  try { n = (await one(`select public.hide_past_events() as n`)).n; } catch (e) { err = e.message; }
+  await asService();
+  check(err === null && n >= 1, "the service role may run it", err || `got ${n}`);
+  const gone = await one(`select is_published from public.events where slug = 'seed-last-week'`);
+  check(gone.is_published === false, "a seed night from last week leaves the deck");
+  const still = await one(`select is_published from public.events where slug = 'seed-tonight'`);
+  check(still.is_published === true, "a night that started two hours ago stays up until it is over");
+  for (const role of ["anon", "authenticated"]) {
+    await db.exec(`set role ${role}`);
+    let refused = false;
+    try { await db.query(`select public.hide_past_events()`); } catch { refused = true; }
+    await asService();
+    check(refused, `${role} still may not run it`);
+  }
 }
 
 console.log(`\n${passed} passed, ${failed} failed`);

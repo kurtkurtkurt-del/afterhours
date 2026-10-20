@@ -81,6 +81,7 @@
     "63_previews.sql",
     "64_export_more.sql",
     "65_account_delete.sql",
+    "66_past_off.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */

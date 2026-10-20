@@ -73,4 +73,5 @@ export const EXPECTED_SQL = [
   "63_previews.sql",
   "64_export_more.sql",
   "65_account_delete.sql",
+  "66_past_off.sql",
 ];
