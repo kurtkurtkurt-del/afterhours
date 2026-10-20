@@ -92,6 +92,7 @@ const structure = [
   ["82_leftovers.sql", "A FILE GOES WITH ITS ROW"],
   ["83_dj_after.sql", "A DJ PAGE AFTER THE DJ"],
   ["84_report_snapshot.sql", "A REPORT KEEPS A COPY"],
+  ["85_appeals.sql", "A CLOSED ACCOUNT MAY OBJECT"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

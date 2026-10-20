@@ -84,7 +84,7 @@ export async function accountStatus(): Promise<{ banned: boolean; reason: string
 }
 
 // 53_trust.sql: what the staff did to your things, told once.
-export type Notice = { id: number; kind: 'comment_hidden' | 'post_hidden' | 'removed' | 'profile_cleared' | 'role' | 'dj_verified' | 'dj_hidden' | 'report_removed' | 'report_kept' | 'night_ok' | 'night_no'; data: Record<string, string>; created_at: string };
+export type Notice = { id: number; kind: 'comment_hidden' | 'post_hidden' | 'removed' | 'profile_cleared' | 'role' | 'dj_verified' | 'dj_hidden' | 'report_removed' | 'report_kept' | 'night_ok' | 'night_no' | 'appeal_ok' | 'appeal_no'; data: Record<string, string>; created_at: string };
 export async function myNotices(): Promise<Notice[]> {
   const { data, error } = await supabase.rpc('my_notices');
   if (error) return [];
@@ -232,4 +232,24 @@ export async function deleteEverything(): Promise<boolean> {
   await removeFiles(user.id);
   await must(supabase.rpc('delete_account'));
   return true;
+}
+
+// ------------------------------------------------------------------ appeals (85)
+
+// A closed account objects once; the closed screen shows where it stands.
+export type MyAppeal = { sent_at: string; outcome: 'unban' | 'keep' | null; settled_at: string | null };
+export async function myAppeal(): Promise<MyAppeal | null> {
+  const { data, error } = await supabase.rpc('my_appeal');
+  if (error) return null;
+  return ((data ?? []) as MyAppeal[])[0] ?? null;
+}
+export async function sendAppeal(body: string) {
+  await must(supabase.rpc('appeal', { p_body: body }));
+}
+export type OpenAppeal = { id: number; user_id: string; handle: string | null; reason: string | null; banned_at: string; body: string; created_at: string };
+export async function staffAppeals(): Promise<OpenAppeal[]> {
+  return ((await must(supabase.rpc('staff_appeals'))) ?? []) as OpenAppeal[];
+}
+export async function settleAppeal(id: number, unban: boolean) {
+  await must(supabase.rpc('staff_appeal_settle', { p_id: id, p_unban: unban }));
 }

@@ -100,6 +100,7 @@
     "82_leftovers.sql",
     "83_dj_after.sql",
     "84_report_snapshot.sql",
+    "85_appeals.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */

@@ -316,6 +316,13 @@ export const pages = {
     tr: 'ekip, şartlara aykırı olduğu için kapattı. buradan bir şey paylaşılamaz ya da gönderilemez, kimse görmez. bir hata olduğunu düşünüyorsan siteden bize yaz.',
   },
   'closed.leave': { en: 'sign out', de: 'abmelden', tr: 'çıkış yap' },
+  'closed.appeal': { en: 'what we got wrong', de: 'was wir falsch verstanden haben', tr: 'neyi yanlış anladık' },
+  'closed.appeal.hint': { en: 'if you think this is a mistake, tell us here. a person on the team reads it and answers within a few days.', de: 'wenn du denkst, das ist ein fehler, schreib es hier. jemand aus dem team liest es und antwortet innerhalb weniger tage.', tr: 'bir hata olduğunu düşünüyorsan buraya yaz. ekipten biri okur ve birkaç gün içinde yanıtlar.' },
+  'closed.appeal.send': { en: 'send the objection', de: 'einspruch senden', tr: 'itirazı gönder' },
+  'closed.appeal.sent': { en: 'your objection is with the team. the answer comes here, the next time the app opens.', de: 'dein einspruch liegt beim team. die antwort kommt hierher, beim nächsten öffnen der app.', tr: 'itirazın ekipte. yanıt, uygulama bir sonraki açılışında burada görünür.' },
+  'closed.appeal.no': { en: 'the team looked at your objection and the account stays closed.', de: 'das team hat deinen einspruch geprüft; das konto bleibt gesperrt.', tr: 'ekip itirazını inceledi; hesap kapalı kalıyor.' },
+  'notice.appeal_ok': { en: 'we looked again: your account is open. welcome back.', de: 'wir haben noch einmal hingesehen: dein konto ist offen. willkommen zurück.', tr: 'tekrar baktık: hesabın açık. tekrar hoş geldin.' },
+  'notice.appeal_no': { en: 'we looked at your objection; the account stays closed.', de: 'wir haben deinen einspruch geprüft; das konto bleibt gesperrt.', tr: 'itirazını inceledik; hesap kapalı kalıyor.' },
   'update.title': { en: 'this version is too old', de: 'diese version ist zu alt', tr: 'bu sürüm çok eski' },
   'update.body': {
     en: 'the nights moved on and this build no longer understands them. get the newest afterhours and come back; everything you kept is still here.',

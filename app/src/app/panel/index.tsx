@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { missingSql, staffReports } from '@/data/safety';
+import { missingSql, staffAppeals, staffReports } from '@/data/safety';
 import { djsWaiting } from '@/data/staff';
 import { StyleSheet, Text, View } from 'react-native';
 import { router, type Href } from 'expo-router';
@@ -26,10 +26,12 @@ export default function PanelScreen() {
   const [djs, setDjs] = useState(0);
   // The admin sees whether the live database is behind the app (null: unknown).
   const [missing, setMissing] = useState<string[] | null>(null);
+  const [appeals, setAppeals] = useState(0);
   useEffect(() => {
     if (!isStaff(role)) return;
     overview().then(setO, () => {});
     staffReports().then((l) => setReports(l.length), () => {});
+    staffAppeals().then((l) => setAppeals(l.length), () => {});
     djsWaiting().then((l) => setDjs(l.length), () => {});
     missingSql().then(setMissing, () => {});
   }, [role, tick]);
@@ -87,6 +89,7 @@ export default function PanelScreen() {
         <Row label={t('staff.nights')} hint={t('staff.nights.hint')} right={<Mark kind="more" />} onPress={go('/panel/nights')} />
         <Row label={t('staff.reported')} hint={t('staff.reported.hint')} right={o?.reported ? <Value text={String(o.reported)} more /> : <Mark kind="more" />} onPress={go('/panel/reported')} />
         <Row label={t('staff.reports')} hint={t('staff.reports.hint')} right={reports ? <Value text={String(reports)} more /> : <Mark kind="more" />} onPress={go('/panel/reports')} />
+        <Row label={t('staff.appeals')} hint={t('staff.appeals.hint')} right={appeals ? <Value text={String(appeals)} more /> : <Mark kind="more" />} onPress={go('/panel/appeals')} />
         <Row label={t('staff.djs.waiting')} hint={t('staff.djs.waiting.hint')} right={djs ? <Value text={String(djs)} more /> : <Mark kind="more" />} onPress={go('/panel/djs')} />
         <Row label={t('staff.comments')} hint={t('staff.comments.hint')} right={<Mark kind="more" />} onPress={go('/panel/comments')} />
       </Panel>
