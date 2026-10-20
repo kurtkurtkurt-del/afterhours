@@ -8,6 +8,8 @@ Ajan kuralı: en üstteki `bekliyor` maddeyi al. Gecede 3–5 madde. Kuyrukta ol
 iş yapılmaz. Bir madde tasarım kararı isterse 5 prototip + `karar bekliyor`, sonraki
 maddeye geç. Ahmet bir satırı silerse o iş yoktur; sırayı değiştirirse sıra odur.
 
+Dal kuralı (20.10): PR #3 henüz birleşmediyse gece dalı `main`'den değil `origin/release/night-2026-10-19` üzerinden açılır, PR yine `main`'e; böylece 64/65 ile çakışma olmaz.
+
 Üç yüz birden: **site** (kök HTML), **web app** (PWA, `app/` web derlemesi), **app**
 (Expo). Bir madde üçünden birini bozmamalı; şüphede üçünde de denenir.
 
@@ -15,11 +17,12 @@ maddeye geç. Ahmet bir satırı silerse o iş yoktur; sırayı değiştirirse s
 
 | # | İş | Yüz | Durum | Kanıt / not |
 |---|---|---|---|---|
-| A1 | Sistemsel boşluk denetimi: `.claude/prompts/systemic-gaps-audit.md` promptunu SADECE LİSTELE modunda koş; bulduklarını bu tabloya `bulundu` olarak, önem sırasıyla ekle (yayın engeli → güven → eksik akış → cila). Hiçbir şeyi düzeltme. | üçü | bekliyor | çıktı: bu dosyanın altına "A1 bulguları" bölümü |
-| A2 | `export_me()` (14) direkt mesajları ve bilet cevaplarını (59, 60) dışarı vermiyor — `backend/promises.md`'de yazılı boşluk. Yeni numaralı SQL ile kapat, `export.test.mjs`'e kontrol, promises.md satırı. | app · site | bekliyor | GDPR: kişinin verisinin tamamı |
-| A3 | Hesap silme uçtan uca: `delete_account()` yeni tabloların (rsvps, sparks, spark_invites, profile_links, dms, groups üyelikleri, rooms) hepsini temizliyor mu? Test yaz; eksikse yeni SQL. | app · site | bekliyor | mağaza kuralı: hesap silme eksiksiz |
-| A4 | İngilizce gizlilik özeti: `datenschutz/` yanına `privacy/` İngilizce tam metin var mı, listing'in istediği "English privacy summary linked from datenschutz" bağlantısı kuruldu mu; Expo/Firebase/Apple/Ticketmaster/Apple Music önizleme/konum hepsi geçiyor mu. | site | bekliyor | `app/store/listing.md` kutusu |
-| A5 | Play listing metni üç dilde (`app/store/listing.md`): kısa açıklama 80, uzun açıklama 4000, yenilikler; mevcut uygulamanın gerçek özelliklerinden (sparks, who is coming, gruplar, mesajlar, listen). Değiştirilecek şeyleri "sabah Ahmet" notuyla işaretle. | app | bekliyor | metin işi, karar gerekmez |
+| A0 | **F1 — sabah senkronu kullanıcı verisini siliyor.** `sync-ticketmaster.mjs` dünkü geceleri DELETE ediyor; cascade ile check-in kartları, oda yazıları, swipe'lar, yorumlar, rsvp ve bilet cevapları gidiyor. Silme yerine yayından kaldırma: `is_published=false` (+ gerekiyorsa `archived_at`), geçmiş geceler deste/harita/sayaçlardan düşsün, koleksiyon ve past feed görsün. Test: sync sonrası kullanıcının kartı duruyor. `--dry` ile doğrula; canlıya uygulama `sabah Ahmet`. Ahmet 20.10 sabah onayladı. | üçü | bekliyor | A1/F1; A7 ve F11 ile aynı kök |
+| A1 | Sistemsel boşluk denetimi: `.claude/prompts/systemic-gaps-audit.md` promptunu SADECE LİSTELE modunda koş; bulduklarını bu tabloya `bulundu` olarak, önem sırasıyla ekle (yayın engeli → güven → eksik akış → cila). Hiçbir şeyi düzeltme. | üçü | yapıldı (main, belge) | "A1 bulguları" bölümü: 39 madde (F1–F39) + site↔app ön tablosu; hiçbir şey düzeltilmedi. **En acil: F1** (sync her sabah dünkü geceleri silip check-in kartlarını cascade ile götürüyor) |
+| A2 | `export_me()` (14) direkt mesajları ve bilet cevaplarını (59, 60) dışarı vermiyor — `backend/promises.md`'de yazılı boşluk. Yeni numaralı SQL ile kapat, `export.test.mjs`'e kontrol, promises.md satırı. | app · site | yapıldı 4eca25c | `64_export_more.sql`: `export_me()` artık yazdığın DM satırlarını (kime gittiğiyle) ve bilet cevaplarını veriyor; karşı tarafın satırları dışarıda (söz 6). Kanıt: `export.test.mjs` "my message, with the friend it went to", "not their message", "my ticket answer, named by its night". promises.md boşluk satırı silindi. Eksik kalan tablolar: A1 F3. Canlıya: **sabah Ahmet** |
+| A3 | Hesap silme uçtan uca: `delete_account()` yeni tabloların (rsvps, sparks, spark_invites, profile_links, dms, groups üyelikleri, rooms) hepsini temizliyor mu? Test yaz; eksikse yeni SQL. | app · site | yapıldı 0f6b977 | Tüm listelenen tablolar cascade ile gidiyor (doğrulandı). Eksikler kapandı, `65_account_delete.sql`: son admin hesabını silemez; sahip olduğu grup en eski üyeye geçer, yalnızsa grup silinir. Kanıt: yeni `delete-account.test.mjs` (15 kontrol; silmeden sonra profiles'a giden HER FK yürünür: "no row of any table still points at the person"). promises.md söz 13 eklendi, setup testi 12→13. Grup sohbeti/oda satırları isimsiz kalıyor → A1 F32 (karar). Canlıya: **sabah Ahmet** |
+| A4 | İngilizce gizlilik özeti: `datenschutz/` yanına `privacy/` İngilizce tam metin var mı, listing'in istediği "English privacy summary linked from datenschutz" bağlantısı kuruldu mu; Expo/Firebase/Apple/Ticketmaster/Apple Music önizleme/konum hepsi geçiyor mu. | site | yapıldı 5af626a | `privacy/` vardı ve datenschutz'tan bağlıydı; eksikler üç dilde eklendi: Google/Apple girişi, DM/grup/spark/post, şikayet/engel, 30 gün hata kaydı, Apple Music/Deezer önizleme, silmenin gerçekte neyi aldığı; "tam olarak üç hizmet" cümlesi düzeltildi. Firebase/Expo/Ticketmaster/konum zaten vardı. **sabah Ahmet**: bağlayıcı Almanca `datenschutz/` hâlâ eski + yer tutucular (A1 F4/F5) |
+| A5 | Play listing metni üç dilde (`app/store/listing.md`): kısa açıklama 80, uzun açıklama 4000, yenilikler; mevcut uygulamanın gerçek özelliklerinden (sparks, who is coming, gruplar, mesajlar, listen). Değiştirilecek şeyleri "sabah Ahmet" notuyla işaretle. | app | yapıldı (main, belge) | `app/store/listing.md`: kısa açıklama (65/66/55 karakter), uzun açıklama (~1500/4000) ve yenilikler (≤180/500) en·de·tr; DJ'ler bilerek dışarıda. Data safety UGC satırı güncellendi. 5 adet **sabah Ahmet** notu dosyada (yaş derecelendirmesi 18+, önizleme sadece Münih, izin listesi, silme URL'si, sürüm no) |
 | A6 | Mağaza ekran görüntüleri: PWA derlemesinden (`npx expo export -p web`) headless tarayıcı ile 1080×2340 altı ekran (flow, night, people/connect, spark, map, account) ÜÇ dilde; `app/store/shots/` altına. Headless yoksa: neyin gerektiğini yaz, `sabah Ahmet`. | web app | bekliyor | Play 2 adet zorunlu, 8'e kadar |
 | A7 | Geçmiş geceler canlıda yayında sayılıyor (11.10: health 680 geçmiş gece). `hide_past_events` cron'u ve `09_jobs.sql` incele; pg_cron yoksa alternatif (sync sonunda temizlik ya da `events_public` görünümünde `starts_at` filtresi). SQL + test. Canlıya uygulama `sabah Ahmet`. | üçü | bekliyor | `npm run health` kırmızı sebebi |
 | A8 | Android App Links: `.well-known/assetlinks.json` GitHub Pages alt klasöründe bulunamıyor. Çözüm seçeneklerini yaz (kullanıcı sitesi kökü, özel alan adı, intent filtresini kaldırıp `afterhours://` ile yetinme) — `karar bekliyor`. Kod yazma. | site · app | bekliyor | README §6 "Still to do" |
@@ -55,8 +58,110 @@ maddeye geç. Ahmet bir satırı silerse o iş yoktur; sırayı değiştirirse s
 
 ## Sabah Ahmet (gece ajanının bıraktığı el işleri)
 
-_(gece doldurur)_
+Gece 1 (19→20.10.2026):
+
+1. **PR'ı incele ve birleştir** (`release/night-2026-10-19` → `main`). Sonra canlıya iki SQL, sırayla, Supabase SQL editöründe: `backend/sql/64_export_more.sql`, `backend/sql/65_account_delete.sql` (ya da `setup-1-structure.sql`'in tamamı). Kontrol: `cd backend && npm run health` listede 64 ve 65'i görmeli.
+2. **F1'e bak** (A1 bulguları): `backend/tools/sync-ticketmaster.mjs` ~475'teki DELETE her sabah dünkü Ticketmaster gecelerini ve onlara bağlı check-in kartlarını, oda yazılarını, swipe'ları siliyor. Kuyruğa alınırsa bir gecelik iş.
+3. `datenschutz/`, `impressum/`, `agb/` yer tutucularını doldur (ad, adres, hoster, tarih); Almanca datenschutz'u `privacy/` özetindeki yeni maddelerle eşitle.
+4. `app/store/listing.md`'deki **sabah Ahmet** notları: IARC'ta 18+, Data safety'de mesaj/foto/UGC, AAB'deki gerçek izin listesi, sürüm numarası.
+5. A1 bulgularından hangilerinin kuyruğa gireceğine karar ver (öneri listesi bölümün sonunda).
+
+## Çelişkiler ve gece notları
+
+- Gece 1: `night-run.md` PR'ı `gh pr create` ile açmayı söylüyor; bulutta `gh` için token yok, PR GitHub bağlantısı (MCP) ile açıldı (#3) — kural "gh token yoksa gövdeyi sabah notuna yaz" diyor, ikisi de yapıldı.
+- Gece 1: A1 tablodaki ilk madde ama A2/A3 kod işiyle paralel yürüdü (denetim arka planda okuma yaptı); commit sırası A2, A3, A4 kodda; A1 ve A5 belge olarak main'de.
+- Sabit sınırlarla (main'e kod yok, force-push yok, merge yok, build yok, canlı DB yok, sır yok) çelişen bir satır bulunmadı.
 
 ## A1 bulguları
 
-_(ilk gece doldurur)_
+Gece 1 (19→20.10.2026), SADECE LİSTELE modu: hiçbir şey düzeltilmedi (A2/A3'ün kendi
+kapsamı hariç). **D** = kodda/SQL'de görüldü, **T** = tahmin (canlı panel/ayar görülemez).
+Büyüklük: k küçük · o orta · b büyük. Durum hepsinde `bulundu`; Ahmet sıraya alırsa iş olur.
+
+### Yayın engeli (mağaza reddi, güvenlik, veri kaybı)
+
+| # | Eksik | Gerçek uygulamada | Etki | Boy | Doğr. | Durum |
+|---|---|---|---|---|---|---|
+| F1 | **Sabah sync'i dünkü geceleri SİLİYOR** (`sync-ticketmaster.mjs` ~475: `DELETE /events?source=eq.ticketmaster&starts_at=lt.<bugün>`). `events`'e bağlı her şey cascade ile gidiyor: check-in kartları (koleksiyon), oda yazıları, swipe geçmişi, yorumlar, rsvp, bilet cevapları, grup albümü satırları (dosyalar yetim kalıyor). Past feed Ticketmaster gecesini hiç gösteremez. | Silme yok; `archived_at` / yayından kaldırma | Kullanıcının koleksiyonu her sabah 04:10'da kayboluyor | o | D | bulundu |
+| F2 | Uygulamadaki "verimi indir" veriyi vermiyor: `app/src/app/settings.tsx` ~194 `exportMe()` sonucunu sadece KB olarak gösteriyor, dosya yok (site dosya kaydediyor). | Dosya + paylaşım sayfası | GDPR Art. 15/20 uygulamada yerine gelmiyor | k | D | bulundu |
+| F3 | `export_me()` hâlâ eksik (A2 yalnız DM + bilet ekledi): posts, beğeni/yorum, gruplar (üyelik, mesaj, foto, oy), sparks + davetler, rsvps, check-in (konumlu), oda yazıları, profil linkleri/foto, engeller, şikayetler, bildirim ayarları, DJ sayfası, gönderilen geceler yok. | Her yeni tablo exporter'a kaydolur + "kullanıcı FK'lı her tablo exportta mı" testi | Eksik erişim hakkı | o | D | bulundu |
+| F4 | Hukuk sayfaları şablon: `impressum/` 33, `datenschutz/` 24, `agb/` 12 köşeli parantezli yer tutucu (`[Vor- und Nachname]`, `[PLZ]`…). | Gerçek bilgiler | Impressum Almanya'da zorunlu; mağaza linkleri taslağa gidiyor | k (Ahmet'in bilgisi gerek) | D | bulundu |
+| F5 | Datenschutz uygulamanın işlediği verileri saymıyor: konum (check-in koordinatı), DM, gruplar/albüm, posts, sparks, rsvp/bilet, Google/Apple girişi, Apple Music önizleme, GitHub'daki 30 günlük şifreli yedekler, 30 günde silinen misafirler. "Şikayetler incelenene kadar saklanır" diyor ama kod silmiyor; `push_outbox` hiç budanmıyor. (A4 ile kesişir.) | Tablo başına saklama süresi + budama işleri | Mağaza gizlilik etiketleri ile çelişki | o | D | bulundu |
+| F6 | Site 18+/şartlar kapısını ve moderasyonu atlıyor: `register/` şart/yaş kutusu yok, `accept_terms`/`account_status`/`my_notices` sitede hiç çağrılmıyor, sitede yorum yazılabiliyor ama şikayet/engelle yok. Veritabanı yazarken `terms_version`/`adult` kontrol etmiyor. | Şart kabulü sunucuda (UGC tablolarında) zorunlu | Apple 1.2 / Play UGC | o | D | bulundu |
+| F7 | Sadece Google/Apple ile giren kullanıcı sitede hesabını silemez (site sadece e-posta+şifre); webde silme Apple token iptalini de atlıyor. | Webde e-postayla doğrulanan "silme talebi" formu | Play web silme şartı | k–o | D | bulundu |
+| F8 | Bazı içerikler şikayet edilemiyor: DM, gönderilen geceler, DJ sayfaları, grup albüm fotoları (`reports.kind` listesi, `dm/[id].tsx`'te şikayet yok). | Her UGC'ye şikayet yolu | Apple 1.2 | k–o | D | bulundu |
+| F9 | Check-in hiçbir şeyi kanıtlamıyor (23: pencere ve 500 m testi kaldırıldı), yine de arkadaşlara "X şu an dışarıda" push'u gidiyor; check-out/geri alma yok. | Zaman penceresi + yumuşak konum ya da QR | Yanlış bildirim, kötüye kullanım | o | D | bulundu |
+| F10 | Eski uygulama sürümleri SQL değişince sessizce bozuluyor: `expo-updates` yok, minimum sürüm kontrolü yok; dosyalar fonksiyonları drop/create ediyor. | Sunucuda `min_supported_version` + zorunlu güncelleme ekranı | Yayından sonra kırık uygulama | o | D | bulundu |
+| F11 | Geçmiş geceleri gizleme pg_cron'a bağlı; `deck()` kendi tarih filtresine sahip değil. pg_cron kapalıysa push_flush, push_hourly, grup işleri, guests_prune, hata budama da sessizce ölü. (A7 ile aynı kök.) | Okuyucuda tarih filtresi + cron'u health'te denetle | 680 geçmiş gece canlıda | k–o | D+T | bulundu |
+
+### Güven (moderasyon, kurtarma)
+
+| # | Eksik | Gerçek uygulamada | Etki | Boy | Doğr. | Durum |
+|---|---|---|---|---|---|---|
+| F12 | Kanıt kayboluyor: DM'ler iki taraftan biri silinince cascade, `dm_unsay` geri alıyor, şikayet şikayetçiyle siliniyor, "kaldır" oda/grup mesajını, spark'ı, grubu kalıcı siliyor (geri alınamaz). | Şikayete içerik anlık görüntüsü + N gün yumuşak silme | Taciz eden hesabını silince delil yok | o | D | bulundu |
+| F13 | Ban kaçışı: `delete_account()` `banned_at`'e bakmıyor, ad hemen serbest, aynı e-postayla geri kayıt; `staff_ban` oda ve grup mesajlarını görünür bırakıyor, `room_list`'te ban/engel filtresi yok; süreli askı yok. | Hash'lenmiş kimlik listesi, tek "yazar görünür" filtresi | Yasaklı kişi geri gelir | o | D | bulundu |
+| F14 | Engel beforehours yorumlarını ve odaları kapsamıyor (`comments_public`, `room_list`). | Her okuyucuda engel filtresi | Engellenen kişinin yazısı görünür | k–o | D | bulundu |
+| F15 | Moderatör kötü bir kullanıcı adını/görünen adı düzeltemiyor; ayrılmış adlar yok ("admin", "afterhours", "support") — ekip taklidi kolay. | Zorla yeniden adlandırma + yasak kelime listesi | Taklit | k | D | bulundu |
+| F16 | Şikayet eden sonucu hiç öğrenmiyor; ban, reddedilen gece için bildirim türü yok; itiraz yolu yok (DSA). Bildirimler push'suz, sadece uygulama açılınca. (B1 ile kesişir.) | "Şikayetin incelendi" + gerekçe + itiraz | Güven, DSA | o | D | bulundu |
+| F17 | Yasaklı kullanıcı silme ve dışa aktarmaya ulaşamıyor (TermsGate sadece neden + çıkış). | Banlıyken de silme (ban hash'i saklanarak) | Apple 5.1.1(v), GDPR | k | D | bulundu |
+| F18 | Kişi başına vaka görünümü yok (geçmiş şikayetler, banlar); CM, admin'in banını kaldırabiliyor. | Kişi dosyası, yetki kademesi | Moderasyon körlüğü | o | D | bulundu |
+| F19 | Kurtarma/hesap güvenliği: onay e-postasını yeniden gönderme yok (`auth.resend` hiç yok), şifre değişimi mevcut şifre istemiyor, silme yeniden giriş istemiyor ve geri alınamaz, "tüm cihazlardan çık" yok, e-posta değişimi sitede yok. (B2 ile kesişir.) | Yeniden doğrulama, 7–30 gün geri alma | Hesap kaybı | o | D | bulundu |
+| F20 | Sunucu hataları sadece İngilizce (`raise exception` metni de/tr kullanıcıya gösteriliyor); Supabase e-postaları muhtemelen tek dil. | Hata kodu → istemcide çeviri | Üç dil sözü | o | D+T | bulundu |
+| F21 | UGC'de içerik filtresi yok (ad, yorum, post, DM, grup adı). | Kelime listesi | Apple 1.2 "filtreleme yöntemi" | k–o | D (yokluk) | bulundu |
+
+### Eksik akış
+
+| # | Eksik | Gerçek uygulamada | Etki | Boy | Doğr. | Durum |
+|---|---|---|---|---|---|---|
+| F22 | Değişen/iptal edilen geceler duyurulmuyor: sync `dates.status` okumuyor, `staff_event_delete` kayıtları, biletleri, rsvp'leri cascade siliyor, "gece değişti/iptal" push türü yok. | Gelecek/bileti olana push | Kullanıcı iptali öğrenmez | o | D | bulundu |
+| F23 | Spark iptali kimseye söylenmiyor (`spark_cancel` siler); spark düzenleme yok, eski spark'lar temizlenmiyor. (C2'ye yakın.) | "İptal" push'u | Katılan boşa gider | k | D | bulundu |
+| F24 | Gönderilen gece yaşam döngüsü yarım: gönderen düzenleyemez/geri çekemez, onay/ret bildirimi yok, tarihi geçmiş bekleyenler kuyrukta kalıp 5 limitini dolduruyor. | Durum bildirimi + süresi geçeni düşürme | Gönderen bekler | k | D | bulundu |
+| F25 | DJ sayfası DJ'den sonra yaşıyor: sahip silinince `owner_id` null ama `verified` kalıyor; `push_hourly` dj_live döngüsü `verified`'a bakmıyor (gizli sayfa için push). Personelin yaptığı sayfa gerçek DJ'e bağlanamıyor (çift sayfa). DJ `bio`'su kaydediliyor, onaylanıyor ama `dj/[id].tsx`'te gösterilmiyor. | Sahiplik devri, görünürlük filtresi | Hayalet sayfa, boş bilgi | k–o | D | bulundu |
+| F26 | Posts ve past feed yetim: `yours` sekmesi gizli, `post/new` ve past feed sadece oradan; post_like/post_comment push'ları `/yours`'a gidiyor. | Yeni yer ya da kaldırma | Ölü push | k | D | bulundu |
+| F27 | "E-posta ile bildir" ayarı (`notify_email`) kaydediliyor/dışa aktarılıyor ama hiçbir şey e-posta göndermiyor. | Gizle ya da yap | Yanıltıcı ayar | k | D | bulundu |
+| F28 | DM'ler ince: çevrimdışı kuyrukta değil (mesaj kaybolur), 3 sn yoklama (Realtime değil), okundu bilgisi sadece telefonda, sohbet sessize alma/silme yok. | Outbox + Realtime + sunucu okundu | Kayıp mesaj | o | D | bulundu |
+| F29 | "Who is this?" ve önizlemeler elle yapıştırılan içerik, sadece Münih; yeni sync gecelerine hiç gelmiyor. (C3 ile kesişir.) | Zamanlanmış iş | Diğer şehirler boş | k–o | D | bulundu |
+| F30 | Örnek (uydurma) içerik gerçek verinin yanında: örnek hikâyeler, örnek DJ'ler, gerçek gecelerde "örnek arkadaşlar". | Yayında kapalı | Güven | k–o (politika kararı) | D | bulundu |
+| F31 | Misafir → kayıt sırasında e-posta zaten varsa `signIn`'e düşüyor, misafirin swipe'ları yetim kalıyor. | Birleştirme | Veri kaybı (küçük) | k | D | bulundu |
+| F32 | Grup sohbeti ve oda yazıları hesap silinince isimsiz kalıyor (yorumlar gibi); DSGVO açısından metin kişisel olabilir — politika kararı. | Ya sil ya da açıkça yaz | Silme sözü | k | D | bulundu |
+
+### Operasyon / cila
+
+| # | Eksik | Gerçek uygulamada | Etki | Boy | Doğr. | Durum |
+|---|---|---|---|---|---|---|
+| F33 | Göçler elle ve sadece dosya adıyla damgalı: checksum yok, uygulandıktan sonra değişen dosya fark edilmez; eski bir dosyayı yeniden yapıştırmak paylaşılan fonksiyonları geri alır (`push_enqueue` 26/48/59). Veri yapıştırmaları (paste-*, about-*, previews-*) hiçbir yere kaydedilmiyor; `cleanup-test-groups.sql` canlıda koştu mu bilinmiyor. (B4 ile kesişir.) | Checksum'lı göç + CI'da onaylı dağıtım | Sessiz geri dönüş | o | D+T | bulundu |
+| F34 | İzleme ince: `health.mjs` `past_still_up`'ı yazıyor ama kırmızı yapmıyor, sync tazeliği / push_outbox birikmesi / cron varlığı / hata patlaması denetlenmiyor; sync sadece her dilim reddedilince 1 ile çıkıyor; GitHub 60 gün hareketsizlikte zamanlanmış işleri kapatır. | Tazelik + birikme alarmı | Sessiz arıza | o | D | bulundu |
+| F35 | Çökme takibi: `log_error` saatte 100 ile sınırlı (kesintide çoğu düşer), native çökme/ANR yok, source map yok, alarm yok, sitede hiç yok. | Sentry/Crashlytics | Kör uçuş | k–o | D | bulundu |
+| F36 | Yedek tam geri yüklemeyi kapsamıyor: sırlar yoksa iş yeşil biter; `pg_dump --schema=public` `auth.users`'ı almıyor (profiles FK'sı → temiz projeye geri yükleme kırılır); storage (fotolar) yok; şifreli geri yükleme hiç denenmedi. (B3 ile kesişir.) | Tam döküm + storage + prova | Veri kaybı | o | D | bulundu |
+| F37 | Gece saatleri saat dilimsiz saklanıyor (yerel saat UTC gibi): night_soon push'ları, geçmiş kesimi, odalar, sessiz saatler Avrupa'da 1–2 saat kayık. | `timestamptz` gerçek dilimle | Yanlış zamanlı push | o | D | bulundu |
+| F38 | Personel uyarısı sadece push (`staff_ping`); telefonu kayıtlı personel yoksa kimse duymaz; 24 saat sözü için yaşlanma/eskalasyon yok. | E-posta yedeği | Şikayet bekler | k | T | bulundu |
+| F39 | Artıklar: gizlenen post/yorum fotoğrafı public bucket'ta URL ile erişilebilir; dosya temizliği sadece istemcide, `guests_prune` dosya bırakır. | Sunucu tarafı temizlik | Gizlilik | k | D | bulundu |
+
+### Site ↔ app (C5 için ön tablo)
+
+- Sadece sitede: geri bildirim formu (uygulamada kullanıcıya açık geri bildirim/yardım girişi yok), tarih filtreli poster duvarı.
+- Sadece uygulamada: sparks, gruplar (site `g/` sadece davet sayfası), DM, check-in/oda/kartlar, harita (`maps/` kapalı), DJ'ler (`djs/` kapalı), arkadaşlar (`friends/` kapalı), kim geliyor, bilet cevabı, listen, who is this?, bildirimler, şikayet, şart/18+ kapısı, push.
+- Elle kurulum (hiçbiri denetlenmiyor): ilk admin SQL editöründe, pg_cron + pg_net, Google/Apple sağlayıcıları, anonim giriş, redirect URL'leri, push kimlikleri, dört GitHub sırrı.
+
+### Önce yapılması önerilen (Ahmet'in onayını bekler)
+
+1. **F1** — en acil: her sabah kullanıcı koleksiyonunu siliyor. Sync'te DELETE yerine `is_published = false` (küçük kod + test).
+2. **F2, F4, F5** — mağaza/hukuk: uygulamada export dosyası, Impressum/Datenschutz bilgileri (Ahmet), veri envanteri.
+3. **F6, F8, F17** — UGC kuralları: sitede şart kapısı, DM/foto şikayeti, banlıyken silme.
+4. **F11 / A7** — okuyucuda tarih filtresi + health'te cron denetimi.
+5. **F12, F13** — delil ve ban kaçışı (politika kararı gerekir).
+
+
+## Bekçi raporu · 2026-10-20 05:40 UTC
+
+(`gh` girişi yok; GitHub bağlantısı üzerinden okundu. Sayfa 200 kontrolü yapılamadı.)
+
+1. PR #3 (`release/night-2026-10-19`) açık, birleştirilebilir (clean); CI yeşil: site, generated, app, backend, versions.
+2. `main` üzerinde son test.yml (561c058, 00:00 UTC) yeşil; pages build da yeşil.
+3. sync-events: son çalışma 19.10 09:50 UTC yeşil (bugünkü çalışma henüz başlamadı, saat erken).
+4. health: son çalışma 19.10 13:21 UTC yeşil.
+5. backup: son çalışma 19.10 08:44 UTC yeşil; "iki sır var mı" satırını günlükte göremedim (veritabanı adımları listede yok, sırlar eksik olabilir — A1 F36).
+6. Tahta: `yapılıyor` maddesi yok, değiştirilecek bir şey yok.
+7. Sabah notunda prototip bağlantısı yok (yalnız PR #3); denetlenecek sayfa yok.
+
+ok
