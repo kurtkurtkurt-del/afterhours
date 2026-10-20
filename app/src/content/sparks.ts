@@ -12,6 +12,9 @@ export type SparkKind =
 export type Spark = {
   kind: SparkKind;
   photo: ImageSourcePropType;
+  // 280×420 copy for grids and small tiles: 31 full photos decoded at once made the
+  // spark grid stutter (20.10.2026)
+  thumb: ImageSourcePropType;
   label: Key;     // the kind, where a ticket card says "konzert"
   title: Key;
   line: Key;
@@ -24,6 +27,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'derby',
     photo: require('../../assets/sparks/derby.jpg'),
+    thumb: require('../../assets/sparks/thumb/derby.jpg'),
     label: 'spark.kind.derby',
     title: 'spark.derby.title',
     line: 'spark.derby.line',
@@ -34,6 +38,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'grill',
     photo: require('../../assets/sparks/grill.jpg'),
+    thumb: require('../../assets/sparks/thumb/grill.jpg'),
     label: 'spark.kind.grill',
     title: 'spark.grill.title',
     line: 'spark.grill.line',
@@ -44,6 +49,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'hike',
     photo: require('../../assets/sparks/hike.jpg'),
+    thumb: require('../../assets/sparks/thumb/hike.jpg'),
     label: 'spark.kind.hike',
     title: 'spark.hike.title',
     line: 'spark.hike.line',
@@ -54,6 +60,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'sunrise',
     photo: require('../../assets/sparks/sunrise.jpg'),
+    thumb: require('../../assets/sparks/thumb/sunrise.jpg'),
     label: 'spark.kind.sunrise',
     title: 'spark.sunrise.title',
     line: 'spark.sunrise.line',
@@ -64,6 +71,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'breakfast',
     photo: require('../../assets/sparks/breakfast.jpg'),
+    thumb: require('../../assets/sparks/thumb/breakfast.jpg'),
     label: 'spark.kind.breakfast',
     title: 'spark.breakfast.title',
     line: 'spark.breakfast.line',
@@ -74,6 +82,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'rooftop',
     photo: require('../../assets/sparks/rooftop.jpg'),
+    thumb: require('../../assets/sparks/thumb/rooftop.jpg'),
     label: 'spark.kind.rooftop',
     title: 'spark.rooftop.title',
     line: 'spark.rooftop.line',
@@ -84,6 +93,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'swim',
     photo: require('../../assets/sparks/swim.jpg'),
+    thumb: require('../../assets/sparks/thumb/swim.jpg'),
     label: 'spark.kind.swim',
     title: 'spark.swim.title',
     line: 'spark.swim.line',
@@ -94,6 +104,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'quiz',
     photo: require('../../assets/sparks/quiz.jpg'),
+    thumb: require('../../assets/sparks/thumb/quiz.jpg'),
     label: 'spark.kind.quiz',
     title: 'spark.quiz.title',
     line: 'spark.quiz.line',
@@ -104,6 +115,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'newplace',
     photo: require('../../assets/sparks/newplace.jpg'),
+    thumb: require('../../assets/sparks/thumb/newplace.jpg'),
     label: 'spark.kind.newplace',
     title: 'spark.newplace.title',
     line: 'spark.newplace.line',
@@ -114,6 +126,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'camera',
     photo: require('../../assets/sparks/camera.jpg'),
+    thumb: require('../../assets/sparks/thumb/camera.jpg'),
     label: 'spark.kind.camera',
     title: 'spark.camera.title',
     line: 'spark.camera.line',
@@ -124,6 +137,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'festival',
     photo: require('../../assets/sparks/festival.jpg'),
+    thumb: require('../../assets/sparks/thumb/festival.jpg'),
     label: 'spark.kind.festival',
     title: 'spark.festival.title',
     line: 'spark.festival.line',
@@ -135,6 +149,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'karaoke',
     photo: require('../../assets/sparks/karaoke.jpg'),
+    thumb: require('../../assets/sparks/thumb/karaoke.jpg'),
     label: 'spark.kind.karaoke',
     title: 'spark.karaoke.title',
     line: 'spark.karaoke.line',
@@ -145,6 +160,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'vinyl',
     photo: require('../../assets/sparks/vinyl.jpg'),
+    thumb: require('../../assets/sparks/thumb/vinyl.jpg'),
     label: 'spark.kind.vinyl',
     title: 'spark.vinyl.title',
     line: 'spark.vinyl.line',
@@ -155,6 +171,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'openair',
     photo: require('../../assets/sparks/openair.jpg'),
+    thumb: require('../../assets/sparks/thumb/openair.jpg'),
     label: 'spark.kind.openair',
     title: 'spark.openair.title',
     line: 'spark.openair.line',
@@ -165,6 +182,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'bike',
     photo: require('../../assets/sparks/bike.jpg'),
+    thumb: require('../../assets/sparks/thumb/bike.jpg'),
     label: 'spark.kind.bike',
     title: 'spark.bike.title',
     line: 'spark.bike.line',
@@ -175,6 +193,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'cinema',
     photo: require('../../assets/sparks/cinema.jpg'),
+    thumb: require('../../assets/sparks/thumb/cinema.jpg'),
     label: 'spark.kind.cinema',
     title: 'spark.cinema.title',
     line: 'spark.cinema.line',
@@ -185,6 +204,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'boardgames',
     photo: require('../../assets/sparks/boardgames.jpg'),
+    thumb: require('../../assets/sparks/thumb/boardgames.jpg'),
     label: 'spark.kind.boardgames',
     title: 'spark.boardgames.title',
     line: 'spark.boardgames.line',
@@ -195,6 +215,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'flea',
     photo: require('../../assets/sparks/flea.jpg'),
+    thumb: require('../../assets/sparks/thumb/flea.jpg'),
     label: 'spark.kind.flea',
     title: 'spark.flea.title',
     line: 'spark.flea.line',
@@ -205,6 +226,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'skate',
     photo: require('../../assets/sparks/skate.jpg'),
+    thumb: require('../../assets/sparks/thumb/skate.jpg'),
     label: 'spark.kind.skate',
     title: 'spark.skate.title',
     line: 'spark.skate.line',
@@ -215,6 +237,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'cook',
     photo: require('../../assets/sparks/cook.jpg'),
+    thumb: require('../../assets/sparks/thumb/cook.jpg'),
     label: 'spark.kind.cook',
     title: 'spark.cook.title',
     line: 'spark.cook.line',
@@ -225,6 +248,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'sauna',
     photo: require('../../assets/sparks/sauna.jpg'),
+    thumb: require('../../assets/sparks/thumb/sauna.jpg'),
     label: 'spark.kind.sauna',
     title: 'spark.sauna.title',
     line: 'spark.sauna.line',
@@ -235,6 +259,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'openmic',
     photo: require('../../assets/sparks/openmic.jpg'),
+    thumb: require('../../assets/sparks/thumb/openmic.jpg'),
     label: 'spark.kind.openmic',
     title: 'spark.openmic.title',
     line: 'spark.openmic.line',
@@ -245,6 +270,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'pingpong',
     photo: require('../../assets/sparks/pingpong.jpg'),
+    thumb: require('../../assets/sparks/thumb/pingpong.jpg'),
     label: 'spark.kind.pingpong',
     title: 'spark.pingpong.title',
     line: 'spark.pingpong.line',
@@ -255,6 +281,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'bouldering',
     photo: require('../../assets/sparks/bouldering.jpg'),
+    thumb: require('../../assets/sparks/thumb/bouldering.jpg'),
     label: 'spark.kind.bouldering',
     title: 'spark.bouldering.title',
     line: 'spark.bouldering.line',
@@ -265,6 +292,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'picnic',
     photo: require('../../assets/sparks/picnic.jpg'),
+    thumb: require('../../assets/sparks/thumb/picnic.jpg'),
     label: 'spark.kind.picnic',
     title: 'spark.picnic.title',
     line: 'spark.picnic.line',
@@ -275,6 +303,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'crawl',
     photo: require('../../assets/sparks/crawl.jpg'),
+    thumb: require('../../assets/sparks/thumb/crawl.jpg'),
     label: 'spark.kind.crawl',
     title: 'spark.crawl.title',
     line: 'spark.crawl.line',
@@ -285,6 +314,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'stars',
     photo: require('../../assets/sparks/stars.jpg'),
+    thumb: require('../../assets/sparks/thumb/stars.jpg'),
     label: 'spark.kind.stars',
     title: 'spark.stars.title',
     line: 'spark.stars.line',
@@ -295,6 +325,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'football',
     photo: require('../../assets/sparks/football.jpg'),
+    thumb: require('../../assets/sparks/thumb/football.jpg'),
     label: 'spark.kind.football',
     title: 'spark.football.title',
     line: 'spark.football.line',
@@ -305,6 +336,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'tram',
     photo: require('../../assets/sparks/tram.jpg'),
+    thumb: require('../../assets/sparks/thumb/tram.jpg'),
     label: 'spark.kind.tram',
     title: 'spark.tram.title',
     line: 'spark.tram.line',
@@ -315,6 +347,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'jazz',
     photo: require('../../assets/sparks/jazz.jpg'),
+    thumb: require('../../assets/sparks/thumb/jazz.jpg'),
     label: 'spark.kind.jazz',
     title: 'spark.jazz.title',
     line: 'spark.jazz.line',
@@ -325,6 +358,7 @@ export const SPARKS: Spark[] = [
   {
     kind: 'walk',
     photo: require('../../assets/sparks/walk.jpg'),
+    thumb: require('../../assets/sparks/thumb/walk.jpg'),
     label: 'spark.kind.walk',
     title: 'spark.walk.title',
     line: 'spark.walk.line',

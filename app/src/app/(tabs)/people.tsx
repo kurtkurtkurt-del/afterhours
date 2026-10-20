@@ -321,17 +321,22 @@ export default function PeopleScreen() {
   const [slide, setSlide] = useState(0);
   const [touched, setTouched] = useState(0);
   const count = slides.length;
-  useEffect(() => {
-    if (count < 2 || query.trim() || deck) return;
-    const timer = setInterval(() => {
-      setSlide((i) => {
-        const next = (i + 1) % count;
-        gallery.current?.scrollToOffset({ offset: next * step, animated: true });
-        return next;
-      });
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [count, step, touched, query, deck]);
+  // Only while this tab is on screen: tabs stay mounted, and a timer here re-rendered the
+  // whole tab every 6 s while the person was on another one (the app stuttered, 20.10.2026).
+  useFocusEffect(
+    useCallback(() => {
+      if (count < 2 || query.trim() || deck) return;
+      const timer = setInterval(() => {
+        setSlide((i) => {
+          const next = (i + 1) % count;
+          gallery.current?.scrollToOffset({ offset: next * step, animated: true });
+          return next;
+        });
+      }, 6000);
+      return () => clearInterval(timer);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [count, step, touched, query, deck]),
+  );
 
   const decks: { id: 'mine' | 'friends' | 'wave2' | 'wave3'; label: string; cards: DeckCard[]; red?: boolean }[] = [
     { id: 'friends', label: t('deck.friends'), cards: friendsDeck, red: true },

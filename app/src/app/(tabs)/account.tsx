@@ -282,7 +282,7 @@ export default function AccountScreen() {
                   const total = Math.max(1, sp.invited);
                   return (
                     <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.spark, k === 0 && styles.sparkFirst, pressed && styles.pressed]} accessibilityRole="button">
-                      <Image source={sparkOf(sp.kind).photo} style={styles.sparkPhoto} contentFit="cover" />
+                      <Image source={sparkOf(sp.kind).thumb} style={styles.sparkPhoto} contentFit="cover" />
                       <View style={styles.sparkText}>
                         <Text style={styles.sparkTitle} numberOfLines={1}>{sp.title.toLowerCase()}</Text>
                         <Text style={styles.sparkMeta} numberOfLines={1}>{up(at(sp.starts_at))}{sp.place ? ` · ${upperData(sp.place)}` : ''}</Text>
