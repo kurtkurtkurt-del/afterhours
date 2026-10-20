@@ -101,6 +101,7 @@ const structure = [
   ["91_checksums.sql", "A FILE REMEMBERS ITS OWN TEXT"],
   ["92_timezones.sql", "THE HOUR A NIGHT STARTS, IN ITS OWN CITY"],
   ["93_staff_backlog.sql", "WHAT THE STAFF HAVE LEFT WAITING"],
+  ["94_retention.sql", "WHAT IS KEPT, AND FOR HOW LONG"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

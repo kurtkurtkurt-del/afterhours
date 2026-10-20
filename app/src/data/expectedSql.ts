@@ -95,4 +95,5 @@ export const EXPECTED_SQL = [
   '91_checksums.sql',
   '92_timezones.sql',
   '93_staff_backlog.sql',
+  '94_retention.sql',
 ];

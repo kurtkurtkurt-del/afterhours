@@ -109,6 +109,7 @@
     "91_checksums.sql",
     "92_timezones.sql",
     "93_staff_backlog.sql",
+    "94_retention.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */

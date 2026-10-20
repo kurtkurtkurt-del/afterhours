@@ -69,8 +69,8 @@
     <section class="account">
       <p class="account-title">Hosting und Server-Logfiles</p>
       <p class="help-text">
-        Die Website wird bei [Hoster, z. B. GitHub Pages, GitHub B.V.,
-        Vijzelstraat 68-72, 1017 HL Amsterdam, Niederlande] gehostet. Beim
+        Die Website wird bei GitHub Pages, GitHub B.V.,
+        Vijzelstraat 68-72, 1017 HL Amsterdam, Niederlande gehostet. Beim
         Aufruf werden automatisch Zugriffsdaten verarbeitet: IP-Adresse,
         Datum und Uhrzeit, aufgerufene Datei, übertragene Datenmenge,
         Referrer, Browsertyp und Betriebssystem. Rechtsgrundlage ist
@@ -85,7 +85,7 @@
         Für ein Konto brauchen wir eine E-Mail-Adresse und ein Passwort. Das
         Passwort wird ausschließlich als kryptografischer Hash gespeichert.
         Konto- und Inhaltsdaten liegen bei unserem Dienstleister
-        [Supabase, Region: EU] als Auftragsverarbeiter nach Art. 28 DSGVO.
+        Supabase (Supabase Inc., Rechenzentrum Frankfurt am Main, EU) als Auftragsverarbeiter nach Art. 28 DSGVO.
         Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO — die Nutzung des
         Kontos, die du angefragt hast.
       </p>
@@ -108,9 +108,23 @@
     </section>
 
     <section class="account">
+      <p class="account-title">Was die App zusätzlich speichert</p>
+      <ul class="legal-list">
+        <li>Check-ins: zu welcher Veranstaltung, wann, und – wenn du den Standort freigibst – die Position deines Telefons in dem Moment (damit Freunde nur dann „ist unterwegs“ sehen, wenn du wirklich dort bist)</li>
+        <li>Nachrichten: was du Freunden direkt schreibst, in Gruppen und in den Räumen einer Nacht, samt Zeitpunkt; und welche Nachricht du zuletzt gelesen hast</li>
+        <li>Gruppen: Mitgliedschaft, Abstimmungen, Pläne, Fotos im Gruppenalbum</li>
+        <li>Sparks: Treffen, die du vorschlägst (Titel, Ort, Zeit, Reichweite) und deine Antworten auf die anderer</li>
+        <li>Zusagen und Tickets: ob du zu einer Nacht kommst und ob du ein Ticket hast (wir sehen keinen Kauf, nur deine Antwort)</li>
+        <li>Profil: Foto, Bio, Links, gemeldete Nächte, eine DJ-Seite, falls du eine hast</li>
+        <li>Einstellungen: Benachrichtigungen, Sichtbarkeit, Sprache, Stadt</li>
+      </ul>
+      <p class="help-text">Alles davon steht in der Datei, die du in den Einstellungen herunterlädst, und geht mit deinem Konto.</p>
+    </section>
+
+    <section class="account">
       <p class="account-title">Sicherheit und Fehler</p>
       <p class="help-text">
-        Wann du die Nutzungsbedingungen akzeptiert und bestätigt hast, dass du mindestens 18 bist, speichern wir zu deinem Konto. Meldest du einen Inhalt, speichern wir die Meldung (was, von wem, optional der Grund), bis das Team sie geprüft hat; blockierst du jemanden, speichern wir die Blockierung, bis du sie aufhebst. Stürzt die App ab, speichern wir die Fehlermeldung, Plattform, App-Version und dein Konto (falls angemeldet) für 30 Tage, um den Fehler zu beheben (Art. 6 Abs. 1 lit. f DSGVO). Löschst du dein Konto, werden all das und deine Fotos mit gelöscht.
+        Wann du die Nutzungsbedingungen akzeptiert und bestätigt hast, dass du mindestens 18 bist, speichern wir zu deinem Konto. Meldest du einen Inhalt, speichern wir die Meldung (was, von wem, optional der Grund), bis das Team sie geprüft hat, danach noch ein Jahr, damit wiederholte Verstöße erkannt werden; dazu gehört eine Kopie des gemeldeten Inhalts; blockierst du jemanden, speichern wir die Blockierung, bis du sie aufhebst. Stürzt die App ab, speichern wir die Fehlermeldung, Plattform, App-Version und dein Konto (falls angemeldet) für 30 Tage, um den Fehler zu beheben (Art. 6 Abs. 1 lit. f DSGVO). Löschst du dein Konto, werden all das und deine Fotos mit gelöscht.
       </p>
     </section>
 
@@ -140,7 +154,7 @@
       <p class="account-title">Empfänger</p>
       <p class="help-text">
         Wir geben Daten nur an Dienstleister weiter, die für den Betrieb
-        nötig sind: [Hoster] und [Supabase]. Wenn du in der App
+        nötig sind: GitHub (Hosting der Website und verschlüsselte Sicherungskopien, siehe Speicherdauer) und Supabase (Datenbank und Anmeldung). Meldest du dich mit Apple oder Google an, erfahren wir von dort deine E-Mail-Adresse (bei Apple ggf. eine weitergeleitete Adresse) und, falls freigegeben, deinen Namen. Spielt die App eine 30-Sekunden-Hörprobe, lädt dein Gerät sie direkt von Apple; Apple sieht dabei deine IP-Adresse. Falls in der App die Absturzmeldung eingeschaltet ist, gehen Fehlermeldung, Gerätetyp und App-Version ohne Name oder E-Mail an Sentry (Functional Software Inc., USA). Wenn du in der App
         Benachrichtigungen erlaubst, gehen die Push-Adresse deines Telefons
         und ein fester Satz mit einem Namen (nie der Text einer Nachricht)
         an Expo (USA) und von dort an Google Firebase (Android) oder Apple
@@ -154,8 +168,7 @@
       <p class="help-text">
         Kontodaten speichern wir, solange dein Konto besteht. Nach dessen
         Löschung entfernen wir sie, soweit keine gesetzlichen
-        Aufbewahrungspflichten entgegenstehen. Server-Logfiles werden nach
-        [Anzahl] Tagen gelöscht.
+        Aufbewahrungspflichten entgegenstehen. Im Einzelnen: Gastkonten ohne E-Mail nach 30 Tagen ohne Nutzung; Absturzmeldungen nach 30 Tagen; versandte Benachrichtigungen nach 30 Tagen, nicht zustellbare nach 7; Hinweise im Konto nach 90 Tagen; geprüfte Meldungen und Einsprüche nach einem Jahr. Die nächtliche Sicherung der Inhalte bewahrt GitHub 90 Tage auf, die verschlüsselte Sicherung der Konten 30 Tage; danach ist auch dort nichts mehr von einem gelöschten Konto übrig. Die Server-Logfiles von GitHub Pages sehen wir nicht ein; ihre Speicherdauer bestimmt GitHub.
       </p>
     </section>
 
@@ -176,7 +189,7 @@
         <a href="../settings/index.html">Kontoeinstellungen</a> lädst du mit
         einem Klick alles herunter, was diese Seite über dich gespeichert
         hat &mdash; als JSON-Datei. Dort löschst du dein Konto auch selbst
-        (Art. 17 DSGVO). Für alles Übrige genügt eine formlose E-Mail an
+        (Art. 17 DSGVO) &mdash; ohne Passwort, etwa nach einer Anmeldung mit Apple oder Google, unter <a href="../delete/index.html">Konto löschen</a> nur mit deiner E-Mail. Für alles Übrige genügt eine formlose E-Mail an
         [name@beispiel.de].
       </p>
     </section>
@@ -198,7 +211,7 @@
       </p>
     </section>
 
-    <p class="legal-date">Stand: [Datum] · Entwurf</p>
+    <p class="legal-date">Stand: 20.10.2026 · Entwurf</p>
     </div>
     <div data-lang-block="en" lang="en" style="display: contents">
     <p class="legal-warning">Template — placeholders, not yet binding · <a href="../privacy/index.html">short summary</a></p>
@@ -228,8 +241,8 @@
     <section class="account">
       <p class="account-title">Hosting and server log files</p>
       <p class="help-text">
-        The website is hosted by [host, e.g. GitHub Pages, GitHub B.V.,
-        Vijzelstraat 68-72, 1017 HL Amsterdam, Netherlands]. When a page is
+        The website is hosted by GitHub Pages, GitHub B.V.,
+        Vijzelstraat 68-72, 1017 HL Amsterdam, Netherlands. When a page is
         requested, access data is processed automatically: IP address, date
         and time, requested file, amount of data transferred, referrer,
         browser type and operating system. The legal basis is
@@ -243,7 +256,7 @@
       <p class="help-text">
         For an account we need an email address and a password. The password
         is stored exclusively as a cryptographic hash. Account and content
-        data are held by our service provider [Supabase, region: EU] as a
+        data are held by our service provider Supabase (Supabase Inc., data centre in Frankfurt am Main, EU) as a
         processor under Art. 28 GDPR. The legal basis is
         Art. 6(1)(b) GDPR — the use of the account that you requested.
       </p>
@@ -266,9 +279,23 @@
     </section>
 
     <section class="account">
+      <p class="account-title">What the app also stores</p>
+      <ul class="legal-list">
+        <li>Check-ins: which event, when, and — if you share your location — where your phone was at that moment (so friends see “is out” only when you really are there)</li>
+        <li>Messages: what you write to friends directly, in groups and in the rooms of a night, with the time; and which message you read last</li>
+        <li>Groups: membership, votes, plans, photos in the group album</li>
+        <li>Sparks: meetups you propose (title, place, time, reach) and your answers to those of others</li>
+        <li>RSVPs and tickets: whether you are coming to a night and whether you have a ticket (we see no purchase, only your answer)</li>
+        <li>Profile: photo, bio, links, nights you sent in, a DJ page if you have one</li>
+        <li>Settings: notifications, visibility, language, city</li>
+      </ul>
+      <p class="help-text">All of it is in the file you download in settings, and it goes with your account.</p>
+    </section>
+
+    <section class="account">
       <p class="account-title">Safety and errors</p>
       <p class="help-text">
-        We store with your account when you accepted the terms and confirmed you are 18 or older. If you report something, we store the report (what, by whom, optionally the reason) until the team has looked at it; if you block someone, we store the block until you lift it. If the app crashes, we store the error message, platform, app version and your account (if signed in) for 30 days to fix it (Art. 6(1)(f) GDPR). If you delete your account, all of this and your photos are deleted with it.
+        We store with your account when you accepted the terms and confirmed you are 18 or older. If you report something, we store the report (what, by whom, optionally the reason) until the team has looked at it, and a year after that so that repeated abuse is recognised; this includes a copy of the reported content; if you block someone, we store the block until you lift it. If the app crashes, we store the error message, platform, app version and your account (if signed in) for 30 days to fix it (Art. 6(1)(f) GDPR). If you delete your account, all of this and your photos are deleted with it.
       </p>
     </section>
 
@@ -297,7 +324,7 @@
       <p class="account-title">Recipients</p>
       <p class="help-text">
         We pass data only to service providers that are necessary for
-        operation: [host] and [Supabase]. If you allow notifications in the
+        operation: GitHub (hosting the website and encrypted backups, see storage period) and Supabase (database and sign-in). If you sign in with Apple or Google, we learn your email address from them (with Apple possibly a relay address) and, if you share it, your name. When the app plays a 30-second preview, your device loads it straight from Apple, which sees your IP address. If crash reporting is switched on in the app, the error message, device type and app version go to Sentry (Functional Software Inc., USA) without a name or email. If you allow notifications in the
         app, your phone's push address and a fixed sentence with a name (never
         the text of a message) go to Expo (USA) and from there to Google
         Firebase (Android) or Apple (iPhone). Data is not passed on for advertising purposes.
@@ -309,8 +336,7 @@
       <p class="help-text">
         We store account data for as long as your account exists. After it
         is deleted we remove the data, unless statutory retention
-        obligations stand in the way. Server log files are deleted after
-        [number] days.
+        obligations stand in the way. In detail: guest accounts without an email after 30 days unused; crash reports after 30 days; sent notifications after 30 days, undeliverable ones after 7; notices in your account after 90 days; settled reports and objections after a year. GitHub keeps the nightly backup of the content for 90 days and the encrypted backup of the accounts for 30 days; after that nothing of a deleted account is left there either. We do not see the server log files of GitHub Pages; GitHub decides how long they are kept.
       </p>
     </section>
 
@@ -331,7 +357,7 @@
         <a href="../settings/index.html">account settings</a> you download
         with one click everything this site has stored about you
         &mdash; as a JSON file. There you also delete your account yourself
-        (Art. 17 GDPR). For everything else an informal email to
+        (Art. 17 GDPR) &mdash; without a password, for instance after signing in with Apple or Google, at <a href="../delete/index.html">delete your account</a> with only your email. For everything else an informal email to
         [name@example.com] is enough.
       </p>
     </section>
@@ -353,7 +379,7 @@
       </p>
     </section>
 
-    <p class="legal-date">Last updated: [date] · draft</p>
+    <p class="legal-date">Last updated: 20.10.2026 · draft</p>
     </div>
     <div data-lang-block="tr" lang="tr" style="display: contents">
     <p class="legal-warning">Taslak — yer tutucular, henüz bağlayıcı değil · <a href="../privacy/index.html">kısa özet</a></p>
@@ -383,8 +409,8 @@
     <section class="account">
       <p class="account-title">Barındırma ve sunucu günlük dosyaları</p>
       <p class="help-text">
-        Web sitesi [barındırma sağlayıcısı, örn. GitHub Pages, GitHub B.V.,
-        Vijzelstraat 68-72, 1017 HL Amsterdam, Hollanda] üzerinde
+        Web sitesi GitHub Pages, GitHub B.V.,
+        Vijzelstraat 68-72, 1017 HL Amsterdam, Hollanda üzerinde
         barındırılır. Site açıldığında erişim verileri otomatik olarak
         işlenir: IP adresi, tarih ve saat, istenen dosya, aktarılan veri
         miktarı, yönlendiren sayfa, tarayıcı türü ve işletim sistemi.
@@ -399,7 +425,7 @@
         Hesap için bir e-posta adresine ve bir parolaya ihtiyacımız var.
         Parola yalnızca kriptografik özet (hash) olarak saklanır. Hesap ve
         içerik verileri, GDPR (DSGVO) m. 28 uyarınca veri işleyen sıfatıyla
-        hizmet sağlayıcımız [Supabase, bölge: AB] nezdinde tutulur. Hukuki
+        hizmet sağlayıcımız Supabase (Supabase Inc., Frankfurt am Main veri merkezi, AB) nezdinde tutulur. Hukuki
         dayanak GDPR (DSGVO) m. 6(1)(b)'dir — senin talep ettiğin hesap
         kullanımı.
       </p>
@@ -422,9 +448,23 @@
     </section>
 
     <section class="account">
+      <p class="account-title">Uygulamanın ayrıca sakladıkları</p>
+      <ul class="legal-list">
+        <li>Check-in'ler: hangi etkinlik, ne zaman ve konumunu paylaşırsan o an telefonunun nerede olduğu (arkadaşların “dışarıda”yı yalnızca gerçekten oradaysan görsün diye)</li>
+        <li>Mesajlar: arkadaşlarına doğrudan, gruplarda ve bir gecenin odalarında yazdıkların, zamanıyla; ve en son hangi mesajı okuduğun</li>
+        <li>Gruplar: üyelik, oylamalar, planlar, grup albümündeki fotoğraflar</li>
+        <li>Spark'lar: önerdiğin buluşmalar (başlık, yer, saat, erişim) ve başkalarınınkine verdiğin yanıtlar</li>
+        <li>Katılım ve biletler: bir geceye gelip gelmediğin ve biletin olup olmadığı (satın almayı görmeyiz, yalnızca yanıtını)</li>
+        <li>Profil: fotoğraf, bio, bağlantılar, gönderdiğin geceler, varsa bir DJ sayfası</li>
+        <li>Ayarlar: bildirimler, görünürlük, dil, şehir</li>
+      </ul>
+      <p class="help-text">Hepsi ayarlardan indirdiğin dosyada yer alır ve hesabınla birlikte silinir.</p>
+    </section>
+
+    <section class="account">
       <p class="account-title">Güvenlik ve hatalar</p>
       <p class="help-text">
-        Şartları ne zaman kabul ettiğini ve 18 yaşında ya da büyük olduğunu onayladığını hesabınla birlikte saklarız. Bir içeriği şikayet edersen şikayeti (ne, kimden, isteğe bağlı sebep) ekip inceleyene kadar saklarız; birini engellersen engeli sen kaldırana kadar saklarız. Uygulama çökerse hata mesajını, platformu, uygulama sürümünü ve (giriş yaptıysan) hesabını hatayı gidermek için 30 gün saklarız (GVKT md. 6/1 f). Hesabını silersen bunların hepsi fotoğraflarınla birlikte silinir.
+        Şartları ne zaman kabul ettiğini ve 18 yaşında ya da büyük olduğunu onayladığını hesabınla birlikte saklarız. Bir içeriği şikayet edersen şikayeti (ne, kimden, isteğe bağlı sebep) ekip inceleyene kadar, ardından tekrar eden ihlaller fark edilsin diye bir yıl daha saklarız; buna şikayet edilen içeriğin bir kopyası da dahildir; birini engellersen engeli sen kaldırana kadar saklarız. Uygulama çökerse hata mesajını, platformu, uygulama sürümünü ve (giriş yaptıysan) hesabını hatayı gidermek için 30 gün saklarız (GVKT md. 6/1 f). Hesabını silersen bunların hepsi fotoğraflarınla birlikte silinir.
       </p>
     </section>
 
@@ -453,10 +493,10 @@
       <p class="account-title">Alıcılar</p>
       <p class="help-text">
         Verileri yalnızca işletim için gerekli olan hizmet sağlayıcılara
-        aktarırız: [barındırma sağlayıcısı] ve [Supabase]. Uygulamada
-        bildirimlere izin verirsen telefonunun bildirim adresi ve mesajın
-        metni Expo'ya (ABD), oradan da Google Firebase'e (Android) ya da
-        Apple'a (iPhone) gider. Reklam amacıyla veri aktarımı yapılmaz.
+        aktarırız: GitHub (web sitesinin barındırılması ve şifreli yedekler, bkz. saklama süresi) ve Supabase (veritabanı ve giriş). Apple ya da Google ile girersen e-posta adresini (Apple'da yönlendirilmiş bir adres olabilir) ve paylaşırsan adını oradan öğreniriz. Uygulama 30 saniyelik bir önizleme çaldığında cihazın onu doğrudan Apple'dan yükler; Apple bu sırada IP adresini görür. Uygulamada çökme bildirimi açıksa hata mesajı, cihaz türü ve uygulama sürümü ad ya da e-posta olmadan Sentry'ye (Functional Software Inc., ABD) gider. Uygulamada
+        bildirimlere izin verirsen telefonunun bildirim adresi ve bir adla
+        kurulmuş sabit bir cümle (asla bir mesajın metni değil) Expo'ya (ABD),
+        oradan da Google Firebase'e (Android) ya da Apple'a (iPhone) gider. Reklam amacıyla veri aktarımı yapılmaz.
       </p>
     </section>
 
@@ -465,8 +505,7 @@
       <p class="help-text">
         Hesap verilerini hesabın var olduğu sürece saklarız. Hesap
         silindikten sonra, yasal saklama yükümlülükleri engel olmadığı
-        ölçüde bu verileri kaldırırız. Sunucu günlük dosyaları [sayı] gün
-        sonra silinir.
+        ölçüde bu verileri kaldırırız. Ayrıntılı olarak: e-postasız misafir hesapları 30 gün kullanılmazsa; çökme bildirimleri 30 gün sonra; gönderilmiş bildirimler 30 gün, iletilemeyenler 7 gün sonra; hesaptaki uyarılar 90 gün sonra; incelenmiş şikayetler ve itirazlar bir yıl sonra silinir. İçeriğin gece yedeğini GitHub 90 gün, hesapların şifreli yedeğini 30 gün tutar; sonrasında silinmiş bir hesaptan orada da bir şey kalmaz. GitHub Pages sunucu günlüklerini biz görmeyiz; ne kadar tutulacağına GitHub karar verir.
       </p>
     </section>
 
@@ -487,7 +526,7 @@
         <a href="../settings/index.html">hesap ayarları</a> altında bu
         sitenin senin hakkında sakladığı her şeyi tek tıkla indirirsin
         &mdash; JSON dosyası olarak. Hesabını da orada kendin silersin
-        (GDPR (DSGVO) m. 17). Geri kalan her şey için [ad@ornek.com]
+        (GDPR (DSGVO) m. 17) &mdash; şifren yoksa, örneğin Apple ya da Google ile girdiysen, <a href="../delete/index.html">hesabını sil</a> sayfasında yalnızca e-postanla. Geri kalan her şey için [ad@ornek.com]
         adresine yazacağın serbest biçimli bir e-posta yeterlidir.
       </p>
     </section>
@@ -509,7 +548,7 @@
       </p>
     </section>
 
-    <p class="legal-date">Güncelleme: [tarih] · taslak</p>
+    <p class="legal-date">Güncelleme: 20.10.2026 · taslak</p>
     </div>
   </main>
 
