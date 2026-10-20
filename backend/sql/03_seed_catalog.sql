@@ -107,9 +107,7 @@ on conflict (city_id, slug) do nothing;
 
 -- Stamp the migration log, if it is there (00_migrations.sql).
 do $$ begin
-  if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('03_seed_catalog.sql', 'a102818627540fe0d67e2ffaaae01c1304b648becc6e3073ad1633ec0188e285');
-  elsif to_regprocedure('public.migration_done(text)') is not null then
+  if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('03_seed_catalog.sql');
   end if;
 end $$;
