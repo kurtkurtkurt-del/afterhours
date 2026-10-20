@@ -115,7 +115,7 @@ listing: §6.
 | `profile/?handle=…` | **Somebody's page** — how you reach them, what they kept, their cards | works |
 | `feedback/` | **Feedback** — subject, message, an optional way to reach you. No sign-in needed | works |
 | `help/` | How this works: the app's six steps (one card · it becomes a card · the room · who is going · near you · who is playing), then what the web shows. Two live numbers at the top from `health()` | works |
-| `privacy/` | The English summary of the datenschutz page, covering the app too | works |
+| `privacy/` | The English summary of the datenschutz page, covering the app too (20.10.2026: Google/Apple sign-in, messages, groups, sparks, posts, reports and blocks, Apple Music previews, what a deletion takes; in en · de · tr). The binding German page still lags behind it | works |
 | `impressum/` `datenschutz/` `agb/` | The German legal pages | **placeholder** (the square brackets are still to be filled in) |
 | `404.html` | "this one is gone for good." — four ways out | works |
 | `admin/` | The admin panel: events, venues, types, feedback, comments, profiles, poster uploads | works, admins only |
@@ -658,7 +658,13 @@ First picks (built since 07.10.2026: 2, 3, 12, 13, 19, 23, 24 and the new place 
 `components/` (`Deck`, `NightCard`, `Onboarding`, `TabBar`, `MapWeb`),
 `auth/AuthContext.tsx` (Supabase auth, guest sessions, the reset mail →
 `reset/` on the site), `theme/tokens.ts` (ink, paper, blue, Inter Tight).
-`app/store/listing.md` is the Play Console text; `app/CREDITS.md` the
+`app/store/listing.md` is the Play Console text; `app/store/shots/` the
+store screenshots, 1080×2340 in en · de · tr, made by `npm run shots` in
+`app/` (`tools/store-shots.mjs`, 20.10.2026: exports the PWA, serves it and
+shoots it in the installed Chrome through `playwright-core`, a dev
+dependency with no browser download; `--offline` keeps every request on the
+machine and so has only the welcome screen, `--profile DIR` uses a Chrome
+profile signed in once for people, messages and account); `app/CREDITS.md` the
 music attribution; `app/tools/phone.sh` mirrors a USB phone with scrcpy.
 
 **Building and shipping** (`app/eas.json`): `npx eas-cli build
@@ -815,7 +821,7 @@ msg who froze no at1 at2 q1 q2`. See `cards/card-data.js` for an example.
 
 **Closing an account** (08.10.2026, `52_bans.sql`, `app/panel/people.tsx`, `app/panel/reports.tsx`, `components/TermsGate.tsx`). The admin taps a person in *people and roles*: change the role, or **close the account** with a reason (they see it); a *closed* chip filters them, and the same tap opens it again. In the reports pile, **down** removes the thing and closes the account behind it. Staff cannot be closed. A closed account: a trigger on every table a person writes to refuses it, its card disappears (search, suggestions, profile), its comments and posts are hidden, its upcoming sparks called off, its pending requests and reports settled; the app shows only *this account is closed*, the reason, and sign out. Opening it again leaves hidden content hidden. 22 tests in `backend/test/bans.test.mjs`.
 
-**Trust** (08.10.2026, `53_trust.sql`, `components/NoticeSheet.tsx`, `app/panel/djs.tsx`). A dj page someone makes for themselves waits in the panel under **dj pages waiting** until the staff let it through (renaming it, or going back to normal user, takes it down again); the owner sees *your page waits for the team*. The admin gives **admin** from the same role list, and takes it away by tapping an admin; the last admin can never be taken away, from anywhere. People are told what the staff did to their things — a hidden comment or post, a removed message, spark or group, a cleared profile, a new role, a dj page let through or not — in a sheet *from the team* the next time the app opens. Settings → account changes the **email** (both inboxes confirm) and the **password**. Limits: 40 friend requests a day, 30 comments, 60 room and 120 group messages an hour, 10 groups, 10 sparks and 20 invite codes a day (the staff are exempt). Nobody joins or is added to a group across a block. 25 tests in `backend/test/trust.test.mjs`.
+**Trust** (08.10.2026, `53_trust.sql`, `components/NoticeSheet.tsx`, `app/panel/djs.tsx`). A dj page someone makes for themselves waits in the panel under **dj pages waiting** until the staff let it through (renaming it, or going back to normal user, takes it down again); the owner sees *your page waits for the team*. The admin gives **admin** from the same role list, and takes it away by tapping an admin; the last admin can never be taken away, from anywhere. People are told what the staff did to their things — a hidden comment or post, a removed message, spark or group, a cleared profile, a new role, a dj page let through or not — in a sheet *from the team* the next time the app opens. Since 20.10.2026 (`67_report_answer.sql`, B1) whoever reported something hears back in the same sheet once the staff settle it, by keeping, removing, hiding or banning: *the team looked at the comment you reported* — what was decided is not said (10 tests in `backend/test/report-answer.test.mjs`). Settings → account changes the **email** (both inboxes confirm) and the **password**. Limits: 40 friend requests a day, 30 comments, 60 room and 120 group messages an hour, 10 groups, 10 sparks and 20 invite codes a day (the staff are exempt). Nobody joins or is added to a group across a block. 25 tests in `backend/test/trust.test.mjs`.
 
 **Small actions as pills** (`components/PillAction.tsx`). Remove friend, cancel request, block, report, close, sign out, try again, clear: a rounded pill with a drawn glyph, quiet or red (danger), for dark pages and light cards, instead of underlined words.
 
@@ -898,7 +904,7 @@ the thread, push kind `dm` with its own switch. **Travel groups** (`61_travel.sq
 `group_get` carries the route. **A group cover from the shelf** (`62_group_covers.sql`):
 `group_set_cover` also takes `preset/<name>` (club, crowd, friends — three photos the app
 ships with, `PRESET_COVERS` in `data/groups.ts`), so a group has a face without an upload;
-the wizard and the edit page show the shelf (none · the three · your own photo). **Listen to the artist** (`63_previews.sql`): `event_previews` (track, artist, preview address, link; service writes) and `previews_for(ids)`. The twelve sentences the database
+the wizard and the edit page show the shelf (none · the three · your own photo). **Listen to the artist** (`63_previews.sql`): `event_previews` (track, artist, preview address, link; service writes) and `previews_for(ids)`. The thirteen sentences the database
 keeps, each with its SQL file and the test that proves it, are in
 [backend/promises.md](backend/promises.md); the setup test refuses a row whose test
 is gone.
@@ -924,7 +930,9 @@ front end calls: `handle_status()`, `profile_setup()`, `profile_me()`,
 **A person can take their data with you.** `export_me()` hands back one
 JSON object with everything tied to the caller — profile, settings, every
 swipe named by its event slug, what they wrote, who they are connected to
-and in which direction, and the feedback they left. The settings page saves
+and in which direction, and the feedback they left; since `64_export_more.sql`
+also the direct messages they wrote (each with the friend it went to — the
+other side's lines stay out) and their ticket answers. The settings page saves
 it as a file. It is the GDPR right of access and portability, and
 datenschutz now points at the button instead of asking for an email. The
 function takes no argument, so there is no way to aim it at somebody else;
@@ -937,6 +945,13 @@ one exception: the text stays and the name falls away (`someone`). Two
 reasons — deleting a topic would take other people's replies with it, and
 the constraint on the `comments` table refuses a row with no author. The
 settings page says so before it deletes.
+Since `65_account_delete.sql` the last admin cannot delete their account (the
+same rule as `guard_last_admin`), and a group the person owned goes to its
+longest member (as in `group_leave`) or, when they were alone in it, goes too.
+`delete-account.test.mjs` puts the person in every table that names one,
+deletes the account and walks every foreign key to `profiles`: no row is left
+pointing at them. Lines in group chats and rooms stay, without a name, like
+comments.
 
 **The gate** (12.10.2026, `backend/tools/gate.mjs`, `npm run gate`): every check in one
 command — the backend's on PGlite, the app's types, lint and unit tests, the site walk —
@@ -968,8 +983,17 @@ A third workflow, `sync-events.yml`, pulls the real events: every morning
 at 04:10 UTC it runs `backend/tools/sync-ticketmaster.mjs`, which asks
 Ticketmaster city by city (the coverage of `16_coverage.sql`), files each
 event under one of the six kinds, composes the meta line, picks a 16:9
-photograph, upserts on `external_id` and prunes the nights that have
-passed. Three house rules hold, on the way in and swept over what is
+photograph, upserts on `external_id` and takes the nights that have
+passed off the deck. Since 20.10.2026 it never deletes a night
+(`backend/tools/sync-retire.mjs`): until then it DELETEd yesterday's
+nights every morning and the cascade took the check-in cards, room lines,
+swipes, comments, rsvps and ticket answers on them. Now a past or refused
+night is only unpublished — gone from the deck, the map and the counters,
+still in the collection and the past feed. At the end of every run it also
+calls `hide_past_events()` (`66_past_off.sql` lets the service role run it),
+so every past night with a confirmed date leaves the deck even where pg_cron
+is off — on 11.10.2026 health counted 680 past nights still up (21 checks in
+`backend/test/sync-retire.test.mjs`). Three house rules hold, on the way in and swept over what is
 already there: nothing before 18:00 (festivals and raves exempt — real
 ones start in the afternoon), no add-on listings ("VIP Ticket",
 "Box-Seat", "Parking permit" — receipts, not nights), and a show that

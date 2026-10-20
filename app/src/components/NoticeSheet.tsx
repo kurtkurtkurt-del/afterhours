@@ -10,7 +10,7 @@ import { brand } from '@/theme/layout';
 
 // What the staff did to your things (53_trust.sql), told once: a hidden comment or
 // post, a removed message, a cleared profile, a new role, a dj page let through or
-// taken down. Read on start and on return; "got it" marks them seen.
+// taken down; and, to whoever reported something, that the staff looked (67). Read on start and on return; "got it" marks them seen.
 export default function NoticeSheet() {
   const { session, isAnonymous } = useAuth();
   const { t, tx } = useLang();
@@ -36,7 +36,12 @@ export default function NoticeSheet() {
     noticesSeen().catch(() => {});
   };
   const line = (n: Notice) => {
-    const v = { ...n.data, role: tx('notice.role.' + (n.data.role ?? ''), n.data.role ?? ''), what: tx('notice.what.' + (n.data.what ?? ''), n.data.what ?? '') };
+    const v = {
+      ...n.data,
+      role: tx('notice.role.' + (n.data.role ?? ''), n.data.role ?? ''),
+      what: tx('notice.what.' + (n.data.what ?? ''), n.data.what ?? ''),
+      about: tx('notice.about.' + (n.data.about ?? ''), n.data.about ?? ''),
+    };
     return tx('notice.' + n.kind, n.kind, v);
   };
   return (

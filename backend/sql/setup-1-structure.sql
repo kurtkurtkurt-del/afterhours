@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-12 12:59   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-20 06:50   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -13796,5 +13796,259 @@ grant execute on function public.previews_for(uuid[]) to anon, authenticated;
 do $$ begin
   if to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('63_previews.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  THE EXPORT — YOUR MESSAGES AND TICKET ANSWERS TOO   (64_export_more.sql)
+-- ============================================================
+
+-- afterhours — the export, with your messages and your ticket answers (64)
+--
+-- export_me() (14) was written before direct messages (59) and ticket answers (60),
+-- so it handed a person less than everything. The same function again, with two more
+-- lists:
+--   messages   the lines you wrote, each with the handle of the friend it went to
+--   tickets    your answer for each night: got or no, and when
+-- The lines the other person wrote are theirs, not yours, and stay out: the export
+-- holds everything of yours and nothing of anybody else (promise 6).
+
+create or replace function public.export_me()
+returns jsonb
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select jsonb_build_object(
+    'taken_at', now(),
+    'about', 'Everything afterhours holds about you. Your account email lives'
+             || ' with the sign-in provider, not in this database.',
+
+    'profile', (
+      select to_jsonb(x) from (
+        select p.handle, p.display_name, p.bio, c.slug as city,
+               p.created_at as joined, p.onboarded_at, p.last_seen_at
+        from public.profiles p
+        left join public.cities c on c.id = p.city_id
+        where p.id = auth.uid()
+      ) x),
+
+    'settings', (
+      select to_jsonb(x) from (
+        select s.kept_visibility, s.discoverable, s.notify_email, s.locale
+        from public.profile_settings s where s.user_id = auth.uid()
+      ) x),
+
+    'swipes', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'event', e.slug, 'title', e.title,
+               'direction', w.direction, 'at', w.created_at)
+             order by w.created_at)
+      from public.swipes w
+      join public.events e on e.id = w.event_id
+      where w.user_id = auth.uid()
+    ), '[]'::jsonb),
+
+    'comments', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'event', e.slug, 'body', c.body,
+               'reply_to', c.parent_id, 'at', c.created_at)
+             order by c.created_at)
+      from public.comments c
+      join public.events e on e.id = c.event_id
+      where c.author_id = auth.uid()
+    ), '[]'::jsonb),
+
+    'friendships', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'handle', p.handle, 'status', f.status,
+               'direction', case when f.requester_id = auth.uid()
+                                 then 'outgoing' else 'incoming' end,
+               'at', f.created_at)
+             order by f.created_at)
+      from public.friendships f
+      join public.profiles p
+        on p.id = case when f.requester_id = auth.uid()
+                       then f.addressee_id else f.requester_id end
+      where f.requester_id = auth.uid() or f.addressee_id = auth.uid()
+    ), '[]'::jsonb),
+
+    'feedback', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'kind', g.kind, 'body', g.body, 'at', g.created_at)
+             order by g.created_at)
+      from public.feedback g where g.author_id = auth.uid()
+    ), '[]'::jsonb),
+
+    -- The lines you wrote, named by the friend they went to.
+    'messages', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'to', p.handle, 'body', m.body, 'at', m.created_at)
+             order by m.id)
+      from public.dm_messages m
+      join public.dm_threads t on t.id = m.thread_id
+      left join public.profiles p
+        on p.id = case when t.a = auth.uid() then t.b else t.a end
+      where m.user_id = auth.uid()
+    ), '[]'::jsonb),
+
+    'tickets', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'event', e.slug, 'title', e.title,
+               'answer', k.answer, 'at', k.answered_at)
+             order by k.answered_at)
+      from public.tickets k
+      join public.events e on e.id = k.event_id
+      where k.user_id = auth.uid()
+    ), '[]'::jsonb)
+  )
+  where auth.uid() is not null;
+$$;
+
+grant execute on function public.export_me() to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('64_export_more.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  DELETING AN ACCOUNT — THE LAST ADMIN, THE GROUP OWNER   (65_account_delete.sql)
+-- ============================================================
+
+-- afterhours — deleting an account, the two loose ends (65)
+--
+-- delete_account() (12) removes the auth user and lets the cascades do the rest; the
+-- full sweep in delete-account.test.mjs shows no row of any table still points at the
+-- person afterwards. Two things the cascade cannot know:
+--   the last admin   guard_last_admin (53) keeps the last admin from being demoted,
+--                    but a deletion went round it and left nobody to run the panel
+--   a group owner    group_leave (44) hands a group to the longest member; a deletion
+--                    took the owner row away and left a group nobody could manage,
+--                    or, when the owner was alone, an empty group
+-- The same function again, with both closed. Comments are still kept as someone (12).
+
+create or replace function public.delete_account()
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  me uuid := auth.uid();
+  g  uuid;
+begin
+  if me is null then
+    raise exception 'sign in first';
+  end if;
+
+  if exists (select 1 from public.profiles where id = me and is_admin)
+     and not exists (select 1 from public.profiles where is_admin and id <> me) then
+    raise exception 'the last admin stays an admin';
+  end if;
+
+  for g in select group_id from public.group_members where user_id = me loop
+    delete from public.group_members where group_id = g and user_id = me;
+    if not exists (select 1 from public.group_members where group_id = g) then
+      delete from public.groups where id = g;
+    elsif not exists (select 1 from public.group_members where group_id = g and role = 'owner') then
+      update public.group_members set role = 'owner'
+       where group_id = g and user_id = (select user_id from public.group_members
+                                          where group_id = g order by joined_at, user_id limit 1);
+    end if;
+  end loop;
+
+  update public.comments
+     set author_id = null, author_name = 'someone'
+   where author_id = me;
+
+  delete from auth.users where id = me;
+end;
+$$;
+
+grant execute on function public.delete_account() to authenticated;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('65_account_delete.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  PAST NIGHTS LEAVE THE DECK EVEN WITHOUT PG_CRON   (66_past_off.sql)
+-- ============================================================
+
+-- afterhours — past nights leave the deck even without pg_cron (A7)
+-- hide_past_events() (09) is run by pg_cron at 05:30 UTC. When the extension is
+-- off, nothing runs it, and past nights stay published: on 11.10.2026 health
+-- counted 680. The morning sync (sync-ticketmaster.mjs, 04:10 UTC, service key)
+-- now calls it at the end of every run, so the cleanup no longer hangs on one
+-- extension. The service role gets the call by name; anon and authenticated
+-- still do not.
+
+do $$ begin
+  if exists (select 1 from pg_roles where rolname = 'service_role') then
+    grant execute on function public.hide_past_events() to service_role;
+  end if;
+end $$;
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('66_past_off.sql');
+  end if;
+end $$;
+
+
+-- ============================================================
+--  THE ONE WHO REPORTED HEARS BACK   (67_report_answer.sql)
+-- ============================================================
+
+-- afterhours — the one who reported hears back (B1)
+-- A report reached the panel and the staff acted on it (keep, remove, ban the
+-- author), and the author was told (53), but the person who reported heard
+-- nothing. Now, when a report is settled, its reporter gets a notice: the staff
+-- looked at it. What was decided is not said: that part belongs to the author.
+-- One trigger each on reports (51) and post_reports (45), so every way of
+-- settling (staff_report_settle, staff_ban_author, staff_post_hide) is covered.
+
+alter table public.notices drop constraint if exists notices_kind_check;
+alter table public.notices add constraint notices_kind_check
+  check (kind in ('comment_hidden', 'post_hidden', 'removed', 'profile_cleared',
+                  'role', 'dj_verified', 'dj_hidden', 'report_settled'));
+
+create or replace function public.notice_report_settled()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  about text := 'post';
+begin
+  if new.handled and not old.handled and new.reporter_id is distinct from auth.uid() then
+    -- post_reports has no kind column: a post is all it holds
+    if TG_TABLE_NAME = 'reports' then about := to_jsonb(new) ->> 'kind'; end if;
+    perform public.notice(new.reporter_id, 'report_settled', jsonb_build_object('about', about));
+  end if;
+  return new;
+end;
+$$;
+revoke all on function public.notice_report_settled() from public, anon, authenticated;
+
+drop trigger if exists notice_report_settled on public.reports;
+create trigger notice_report_settled after update of handled on public.reports
+  for each row execute function public.notice_report_settled();
+drop trigger if exists notice_report_settled on public.post_reports;
+create trigger notice_report_settled after update of handled on public.post_reports
+  for each row execute function public.notice_report_settled();
+
+do $$ begin
+  if to_regprocedure('public.migration_done(text)') is not null then
+    perform public.migration_done('67_report_answer.sql');
   end if;
 end $$;

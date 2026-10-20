@@ -79,6 +79,10 @@
     "61_travel.sql",
     "62_group_covers.sql",
     "63_previews.sql",
+    "64_export_more.sql",
+    "65_account_delete.sql",
+    "66_past_off.sql",
+    "67_report_answer.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */

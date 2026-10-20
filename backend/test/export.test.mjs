@@ -136,5 +136,51 @@ console.log("\n— a deleted account leaves nothing to export —");
   check(left.rows[0].n === 0, "the swipes went with the account");
 }
 
+/* 64: the export again, on the whole database — direct messages (59) and ticket
+   answers (60) came after 14 and now come along. My lines go out; theirs stay. */
+console.log("\n— messages and tickets (64) —");
+{
+  const full = new PGlite();
+  await full.exec(await read("../test/supabase-shim.sql"));
+  await full.exec(await read("../sql/setup-1-structure.sql"));
+  const as = (id) => full.exec(
+    `set role authenticated; set request.jwt.claims = '{"sub":"${id}"}';`);
+  await full.exec(`
+    insert into auth.users (id, email) values
+      ('${ME}', 'me@example.com'), ('${OTHER}', 'other@example.com');
+    update public.profiles set handle = 'ahmet', display_name = 'Ahmet' where id = '${ME}';
+    update public.profiles set handle = 'lena', display_name = 'Lena' where id = '${OTHER}';
+    insert into public.friendships (requester_id, addressee_id, status)
+    values ('${ME}', '${OTHER}', 'accepted');`);
+  const night = (await full.query(
+    `select slug from public.events where is_published order by starts_at nulls last limit 1`)).rows[0].slug;
+
+  await as(ME);
+  const thread = (await full.query(`select public.dm_start('lena') as t`)).rows[0].t;
+  await full.query(`select public.dm_send($1, 'see you at the door')`, [thread]);
+  await full.query(`select public.ticket_mark($1, 'got')`, [night]);
+  await as(OTHER);
+  await full.query(`select public.dm_send($1, 'their reply, not mine to take')`, [thread]);
+  await full.query(`select public.ticket_mark($1, 'no')`, [night]);
+
+  await as(ME);
+  const d = (await full.query(`select public.export_me() as d`)).rows[0].d;
+  check(Array.isArray(d.messages) && d.messages.length === 1
+        && d.messages[0].body === "see you at the door" && d.messages[0].to === "lena",
+    "my message, with the friend it went to", JSON.stringify(d.messages));
+  check(!JSON.stringify(d).includes("their reply"), "not their message");
+  check(Array.isArray(d.tickets) && d.tickets.length === 1
+        && d.tickets[0].event === night && d.tickets[0].answer === "got",
+    "my ticket answer, named by its night", JSON.stringify(d.tickets));
+  check(Array.isArray(d.swipes) && Array.isArray(d.friendships) && d.friendships.length === 1,
+    "the older lists are still there");
+
+  await as(OTHER);
+  const t = (await full.query(`select public.export_me() as d`)).rows[0].d;
+  check(t.messages.length === 1 && t.messages[0].to === "ahmet"
+        && t.tickets.length === 1 && t.tickets[0].answer === "no",
+    "they get their own message and answer");
+}
+
 console.log(`\n${passed} passed, ${failed} failed`);
 process.exit(failed ? 1 : 0);

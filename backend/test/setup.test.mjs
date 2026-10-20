@@ -144,7 +144,7 @@ console.log("\n— the promises —");
 {
   const text = await readFile(new URL("../promises.md", import.meta.url), "utf8");
   const rows = [...text.matchAll(/^\| (\d+) \| .*? \| .*? \| `([a-z0-9-]+\.test\.mjs)` · "([^"]+)" \|$/gm)];
-  check(rows.length === 12, "twelve promises, each with a test", String(rows.length));
+  check(rows.length === 13, "thirteen promises, each with a test", String(rows.length));
   for (const [, n, file, words] of rows) {
     let body = "";
     try { body = await readFile(new URL("./" + file, import.meta.url), "utf8"); } catch {}
