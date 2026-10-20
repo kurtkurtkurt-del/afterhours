@@ -223,7 +223,7 @@ create trigger push_night_change
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('72_night_changed.sql', '1a25f4a251f50ad39b896be0b62c05faaacbde343e2e34b65ddf085f3ed04d9a');
+    perform public.migration_done('72_night_changed.sql', '2f0213a3c58fb78ba0811d26a5a5d0b47ebce9fd9ccdac4b17613e9c5821bb7a');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('72_night_changed.sql');
   end if;

@@ -51,7 +51,7 @@ grant execute on function public.delete_account() to authenticated;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('73_messages_go.sql', 'e5a4ebd79eec7fa75b790ef314df91862bcb1d04664d1079e140db065b06d41d');
+    perform public.migration_done('73_messages_go.sql', '8403802a781af964daf6be7c4ae1896aafcd02abee3078a7288039d4b0df63ea');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('73_messages_go.sql');
   end if;

@@ -186,7 +186,7 @@ grant execute on function public.spark_cancel(uuid)  to authenticated;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('75_spark_off.sql', '6394bd2308ff8d033530520b18de931e193308296519ecb39042962c13f11930');
+    perform public.migration_done('75_spark_off.sql', 'fe74781c189f738a245bb740adb7e31b872f355d7b50cbec940c32acabf97960');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('75_spark_off.sql');
   end if;

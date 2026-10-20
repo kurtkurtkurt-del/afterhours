@@ -26,7 +26,7 @@ $$;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('62_group_covers.sql', '0fe8614187625a2762b52fb4813d73f1a9f045e33cfc579ae65299af3becc86d');
+    perform public.migration_done('62_group_covers.sql', 'eb702e11de3ec89a90bfceca923dd764c80e2bb192bca1b827d781936580ec9d');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('62_group_covers.sql');
   end if;

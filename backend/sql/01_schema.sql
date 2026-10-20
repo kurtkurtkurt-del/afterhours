@@ -258,7 +258,7 @@ create trigger on_auth_user_created
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('01_schema.sql', '4c9208d1d51a2d1f01aeac35265c148ebbf40666a14b7eb259f2c5c438cbde13');
+    perform public.migration_done('01_schema.sql', '6db5fb87381f3f6e526baafd27fe26de66e3c7cf07ab6f70b39c5c4df30c4aaf');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('01_schema.sql');
   end if;

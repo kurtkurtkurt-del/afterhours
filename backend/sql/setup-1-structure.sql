@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-20 11:04   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-20 11:14   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -339,7 +339,7 @@ create trigger on_auth_user_created
 -- its own (the tests load them one at a time), so this cannot insist.
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('01_schema.sql', '4c9208d1d51a2d1f01aeac35265c148ebbf40666a14b7eb259f2c5c438cbde13');
+    perform public.migration_done('01_schema.sql', '6db5fb87381f3f6e526baafd27fe26de66e3c7cf07ab6f70b39c5c4df30c4aaf');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('01_schema.sql');
   end if;
@@ -13241,7 +13241,7 @@ $$;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('58_push_words.sql', '774e1c235736e26cbc29e140a37e299065b11267af9067f09a4d8c48cdb6a845');
+    perform public.migration_done('58_push_words.sql', '72170a2f1792910b26a1499e6b3c4a62421fa14729ca27caf674c4c1b996a948');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('58_push_words.sql');
   end if;
@@ -13863,7 +13863,7 @@ $$;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('62_group_covers.sql', '0fe8614187625a2762b52fb4813d73f1a9f045e33cfc579ae65299af3becc86d');
+    perform public.migration_done('62_group_covers.sql', 'eb702e11de3ec89a90bfceca923dd764c80e2bb192bca1b827d781936580ec9d');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('62_group_covers.sql');
   end if;
@@ -14925,7 +14925,7 @@ create trigger push_night_change
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('72_night_changed.sql', '1a25f4a251f50ad39b896be0b62c05faaacbde343e2e34b65ddf085f3ed04d9a');
+    perform public.migration_done('72_night_changed.sql', '2f0213a3c58fb78ba0811d26a5a5d0b47ebce9fd9ccdac4b17613e9c5821bb7a');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('72_night_changed.sql');
   end if;
@@ -14989,7 +14989,7 @@ grant execute on function public.delete_account() to authenticated;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('73_messages_go.sql', 'e5a4ebd79eec7fa75b790ef314df91862bcb1d04664d1079e140db065b06d41d');
+    perform public.migration_done('73_messages_go.sql', '8403802a781af964daf6be7c4ae1896aafcd02abee3078a7288039d4b0df63ea');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('73_messages_go.sql');
   end if;
@@ -15343,7 +15343,7 @@ grant execute on function public.spark_cancel(uuid)  to authenticated;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('75_spark_off.sql', '6394bd2308ff8d033530520b18de931e193308296519ecb39042962c13f11930');
+    perform public.migration_done('75_spark_off.sql', 'fe74781c189f738a245bb740adb7e31b872f355d7b50cbec940c32acabf97960');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('75_spark_off.sql');
   end if;

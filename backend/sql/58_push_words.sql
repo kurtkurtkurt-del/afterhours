@@ -118,7 +118,7 @@ $$;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('58_push_words.sql', '774e1c235736e26cbc29e140a37e299065b11267af9067f09a4d8c48cdb6a845');
+    perform public.migration_done('58_push_words.sql', '72170a2f1792910b26a1499e6b3c4a62421fa14729ca27caf674c4c1b996a948');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('58_push_words.sql');
   end if;
