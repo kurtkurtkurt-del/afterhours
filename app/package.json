@@ -55,7 +55,8 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "test": "jest",
-    "film": "node tools/build-film.mjs"
+    "film": "node tools/build-film.mjs",
+    "shots": "node tools/store-shots.mjs"
   },
   "private": true,
   "devDependencies": {
