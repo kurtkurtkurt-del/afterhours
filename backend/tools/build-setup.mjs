@@ -97,6 +97,7 @@ const structure = [
   ["87_cron_health.sql", "IS THE CLOCK RUNNING"],
   ["88_checkin_truth.sql", "A CHECK-IN THAT MEANS SOMETHING"],
   ["89_export_all.sql", "THE EXPORT, WHOLE"],
+  ["90_dm_seen.sql", "WHO HAS READ WHAT, KEPT BY THE SERVER"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

@@ -1,10 +1,11 @@
 import { serverText } from '@/lib/serverText';
 import { supabase } from '@/lib/supabase';
+import { invalidate, outbox, pendingJobs, send } from '@/lib/offline';
 
 // Direct messages (59_dms.sql): friends only, one thread per pair. The tables are
 // closed; these calls are the only way in. Who has seen what is kept on the phone
 // (data/messages.ts), as for rooms and groups.
-export type DmThread = { id: string; other_id: string; handle: string | null; name: string | null; last_body: string | null; last_mine: boolean | null; last_id: number | null; last_at: string };
+export type DmThread = { id: string; other_id: string; handle: string | null; name: string | null; last_body: string | null; last_mine: boolean | null; last_id: number | null; last_at: string; unread?: number };
 export type DmLine = { id: number; user_id: string; name: string | null; body: string; created_at: string; mine: boolean };
 
 const rpc = async <T,>(name: string, args?: Record<string, unknown>): Promise<T> => {
@@ -15,7 +16,35 @@ const rpc = async <T,>(name: string, args?: Record<string, unknown>): Promise<T>
 
 export const dmList = () => rpc<DmThread[]>('dm_list');
 export const dmStart = (handle: string) => rpc<string>('dm_start', { p_handle: handle });
-export const dmSend = (thread: string, body: string) => rpc<number>('dm_send', { p_thread: thread, p_body: body });
+// A line goes through the outbox (lib/offline.ts): offline it waits on the phone and
+// leaves when the connection is back, in order (F28, 20.10.2026). The sender then pings
+// the thread's realtime channel so the other phone reads at once instead of on its clock.
+outbox('dmSend', async (j) => {
+  const id = await rpc<number>('dm_send', { p_thread: j.thread, p_body: j.body });
+  dmPing(j.thread as string);
+  return id;
+}, ['dms']);
+export async function dmSend(thread: string, body: string): Promise<number | null> {
+  const r = await send({ kind: 'dmSend', thread, body });
+  return r.queued ? null : Number(r.result);
+}
+// Lines written offline, still waiting, for the page to show as waiting.
+export const dmWaiting = (thread: string) => pendingJobs('dmSend').filter((j) => j.thread === thread).map((j) => ({ id: -j.at, body: String(j.body), at: new Date(j.at).toISOString() }));
+// 90_dm_seen.sql: the server keeps the last line each side has seen.
+export const dmSeen = (thread: string, id: number) => rpc<void>('dm_seen', { p_thread: thread, p_id: id }).then(() => invalidate('dms')).catch(() => {});
+
+// One broadcast channel per thread: no rows travel, only "look again".
+export function dmPing(thread: string) {
+  const ch = supabase.channel('dm:' + thread);
+  ch.subscribe((state) => {
+    if (state !== 'SUBSCRIBED') return;
+    ch.send({ type: 'broadcast', event: 'line', payload: {} }).finally(() => supabase.removeChannel(ch));
+  });
+}
+export function dmListen(thread: string, onLine: () => void) {
+  const ch = supabase.channel('dm:' + thread).on('broadcast', { event: 'line' }, onLine).subscribe();
+  return () => { supabase.removeChannel(ch); };
+}
 export const dmUnsay = (id: number) => rpc<void>('dm_unsay', { p_id: id });
 export const dmThread = (thread: string, after: number) => rpc<DmLine[]>('dm_thread', { p_thread: thread, p_after: after });
 export const why = (e: unknown) => serverText(e);

@@ -253,3 +253,25 @@ export async function staffAppeals(): Promise<OpenAppeal[]> {
 export async function settleAppeal(id: number, unban: boolean) {
   await must(supabase.rpc('staff_appeal_settle', { p_id: id, p_unban: unban }));
 }
+
+// ------------------------------------------------------------- account security (F19)
+
+// The confirmation mail again, for an address that never clicked the first one.
+export async function resendConfirmation(email: string) {
+  const { error } = await supabase.auth.resend({ type: 'signup', email: email.trim(), options: { emailRedirectTo: CONFIRM_URL } });
+  if (error) throw error;
+}
+// Proves the person at the phone knows the password before a change that matters
+// (a new password, deleting the account). True when the account has no password
+// identity (Apple, Google): there is nothing to ask for.
+export async function hasPassword(): Promise<boolean> {
+  const { data } = await supabase.auth.getUser();
+  return (data.user?.identities ?? []).some((i) => i.provider === 'email');
+}
+export async function reauth(password: string) {
+  const { data } = await supabase.auth.getUser();
+  const email = data.user?.email;
+  if (!email) throw new Error('sign in first');
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) throw new Error('wrong password');
+}

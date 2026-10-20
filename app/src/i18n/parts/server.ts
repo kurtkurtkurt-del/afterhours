@@ -44,5 +44,6 @@ export const server = {
   'err.blocked': { en: 'you cannot reach this person', de: 'diese person ist für dich nicht erreichbar', tr: 'bu kişiye ulaşamazsın' },
   'err.nothing.waiting': { en: 'nothing is waiting with that id', de: 'unter dieser id wartet nichts', tr: 'o kimlikle bekleyen bir şey yok' },
   'err.not.guest': { en: 'not a guest', de: 'kein gast', tr: 'misafir değil' },
+  'err.wrong.password': { en: 'that is not the password', de: 'das ist nicht das passwort', tr: 'şifre bu değil' },
   'err.too.many': { en: 'too many for today; try tomorrow', de: 'zu viele für heute; versuch es morgen', tr: 'bugünlük çok fazla; yarın dene' },
 } as const;

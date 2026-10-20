@@ -48,6 +48,7 @@ const known: [RegExp, Key][] = [
   [/nothing waiting with that id/i, 'err.nothing.waiting'],
   [/not a guest/i, 'err.not.guest'],
   [/too many|enough for today/i, 'err.too.many'],
+  [/wrong password|invalid login credentials/i, 'err.wrong.password'],
 ];
 
 export function serverText(e: unknown): string {

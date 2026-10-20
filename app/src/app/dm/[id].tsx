@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import { Said } from '@/components/StaffPage';
 import { useReport } from '@/components/ReportSheet';
-import { dmSend, dmThread, dmUnsay, why, type DmLine } from '@/data/dms';
+import { dmListen, dmSend, dmThread, dmUnsay, dmWaiting, why, type DmLine } from '@/data/dms';
 import { markDmSeen } from '@/data/messages';
 import { useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
@@ -38,20 +38,33 @@ export default function DmScreen() {
       }, (e) => setSaid(why(e))),
     [id],
   );
+  // The thread's channel says when a line lands (data/dms.ts dmPing); the clock is only a
+  // fallback for a channel that did not connect, and for lines sent from the outbox.
   useEffect(() => {
     more();
-    const timer = setInterval(more, 3000);
-    return () => clearInterval(timer);
-  }, [more]);
+    const stop = dmListen(id, more);
+    const timer = setInterval(more, 15000);
+    return () => {
+      stop();
+      clearInterval(timer);
+    };
+  }, [id, more]);
+  const [waiting, setWaiting] = useState(() => dmWaiting(id));
 
   const send = () => {
     const body = text.trim();
     if (!body) return;
     setText('');
-    dmSend(id, body).then(more, (e) => {
-      setText(body);
-      setSaid(why(e));
-    });
+    dmSend(id, body).then(
+      (sent) => {
+        if (sent === null) setWaiting(dmWaiting(id));
+        else more();
+      },
+      (e) => {
+        setText(body);
+        setSaid(why(e));
+      },
+    );
   };
   const drop = (l: DmLine) =>
     Alert.alert(t('staff.delete'), t('groups.chat.delete'), [
@@ -88,6 +101,14 @@ export default function DmScreen() {
               </Pressable>
             ),
           )}
+          {waiting.map((w) => (
+            <View key={w.id} style={styles.mineWrap}>
+              <View style={[styles.bubbleMine, { opacity: 0.5 }]}>
+                <Text style={styles.text}>{w.body}</Text>
+              </View>
+              <Text style={styles.metaMine}>{t('offline.waiting')}</Text>
+            </View>
+          ))}
           <Said text={said} bad />
         </ScrollView>
         {reporting.sheet}

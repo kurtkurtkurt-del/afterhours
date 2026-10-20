@@ -83,6 +83,8 @@ export const home = {
     de: 'passwort vergessen? e-mail eingeben und hier tippen',
     tr: 'şifreni mi unuttun? e-postanı yaz, buraya dokun',
   },
+  'signup.resend': { en: 'send the confirmation again', de: 'bestätigung noch einmal senden', tr: 'onay e-postasını yeniden gönder' },
+  'signup.resent': { en: 'sent again, check your inbox', de: 'noch einmal gesendet, schau ins postfach', tr: 'yeniden gönderildi, gelen kutuna bak' },
   'signup.sent': { en: 'reset link sent, check your inbox', de: 'link zum zurücksetzen gesendet, schau ins postfach', tr: 'sıfırlama bağlantısı gönderildi, gelen kutuna bak' },
   'signup.guest': { en: 'leave both empty to look around first', de: 'beide leer lassen, um dich erst umzusehen', tr: 'önce göz atmak için ikisini de boş bırak' },
 

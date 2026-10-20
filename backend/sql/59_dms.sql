@@ -142,6 +142,8 @@ $$;
 revoke execute on function public.dm_thread(uuid, bigint) from public, anon;
 grant execute on function public.dm_thread(uuid, bigint) to authenticated;
 
+-- 90 adds a column to what this returns; a re-run must not trip on the old shape
+drop function if exists public.dm_list();
 create or replace function public.dm_list()
 returns table (id uuid, other_id uuid, handle text, name text, last_body text, last_mine boolean, last_id bigint, last_at timestamptz)
 language plpgsql

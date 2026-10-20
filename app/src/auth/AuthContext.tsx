@@ -26,7 +26,7 @@ type Auth = {
   // Browsing without an account: a device-bound anonymous user whose swipes are upgraded later.
   signInAsGuest: () => Promise<string | null>;
   resetPassword: (email: string) => Promise<string | null>;
-  signOut: () => Promise<void>;
+  signOut: (everywhere?: boolean) => Promise<void>;
 };
 
 const Ctx = createContext<Auth>({
@@ -134,11 +134,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return error ? plain(error.message) : null;
   }, []);
 
-  const signOut = useCallback(async () => {
+  // everywhere: every phone and browser signed in to the account loses its session (F19).
+  const signOut = useCallback(async (everywhere = false) => {
     const { data } = await supabase.auth.getSession();
     // Stop this phone receiving the account's notifications while the session still works.
     await unregisterPush();
-    await supabase.auth.signOut();
+    await supabase.auth.signOut(everywhere ? { scope: 'global' } : undefined);
     // Drop this account's cached copies from the phone (someone else may use it).
     if (data.session) forgetCache(data.session.user.id);
   }, []);
