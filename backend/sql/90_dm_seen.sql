@@ -4,7 +4,7 @@
 -- phone, a reinstall or the web showed every line as new (F28, 20.10.2026). The
 -- thread now carries, for each side, the last line that side has seen; dm_seen
 -- moves it, dm_list counts the lines after it that are not mine. The phone keeps
--- its own mark too and uses the server's when it is there. dm_list is that of 59
+-- its own mark too and uses the one on the server when it is there. dm_list is that of 59
 -- with the one column, so it is dropped and made again with its grant.
 
 alter table public.dm_threads add column if not exists seen_a bigint not null default 0;
@@ -57,7 +57,7 @@ grant execute on function public.dm_list() to authenticated;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('90_dm_seen.sql', 'e93fc576ff72e6ef604d9d89d646857e29c995aaf0597babe77a2ea42ad9c41f');
+    perform public.migration_done('90_dm_seen.sql', 'ffd942a2cb07ce815b8c3df126b045187574293773a33b312af376f731811fe5');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('90_dm_seen.sql');
   end if;

@@ -64,7 +64,7 @@ begin
   if e.starts_at is not null and (at < e.starts_at - interval '6 hours' or at > e.starts_at + interval '8 hours') then
     live := false;
   end if;
-  -- the place: the night's own position, else its venue's; no position on either side, no test
+  -- the place: the position of the night, else of its venue; no position on either side, no test
   select coalesce(e.lat, v.lat), coalesce(e.lng, v.lng) into x_lat, x_lng
     from (select 1) one left join public.venues v on v.id = e.venue_id;
   if live and p_lat is not null and p_lng is not null and x_lat is not null and x_lng is not null then
@@ -159,7 +159,7 @@ $$;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('88_checkin_truth.sql', '605528add79ffccba24fed96f273fce1fcabb661d185cbd11c48f810e707f015');
+    perform public.migration_done('88_checkin_truth.sql', 'd29cb8a9f3e17270d5f4fb130240b544df21cdf44a76ee452afae94dc84f78d9');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('88_checkin_truth.sql');
   end if;

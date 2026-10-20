@@ -4,7 +4,7 @@
 -- and the anonymous session is replaced: the swipes made as a guest stayed behind on
 -- a user nobody could reach again (F31, 20.10.2026). The app now remembers the guest
 -- id across that sign-in and calls guest_merge once: the swipes move to the account
--- (a night already swiped there keeps the account's answer), and the guest user is
+-- (a night already swiped there keeps the answer of the account), and the guest user is
 -- deleted. Only an anonymous user with no email can be taken over, and only by a
 -- signed-in account; the id is the one thing the device knows about its guest.
 --
@@ -37,7 +37,7 @@ grant execute on function public.guest_merge(uuid) to authenticated;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('80_guest_merge.sql', '1bd08efa241f867a9b085d86ee7f7f590be64123597144c235b69ff424814f34');
+    perform public.migration_done('80_guest_merge.sql', 'd053253ca69f493d9d74c7f94056bef8327b61d0a65d7ba9beaf129d90b5e3d0');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('80_guest_merge.sql');
   end if;

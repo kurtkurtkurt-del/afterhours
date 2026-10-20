@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-20 09:03   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-20 10:55   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -15477,7 +15477,7 @@ end $$;
 --  SOME NAMES BELONG TO NOBODY — ADMIN, AFTERHOURS, SUPPORT   (77_reserved_handles.sql)
 -- ============================================================
 
--- afterhours — some names are nobody's (77)
+-- afterhours — some names belong to nobody (77)
 --
 -- Anyone could take @admin, @afterhours or @support and write to people as the team
 -- (F15, 20.10.2026). A short list of reserved words, and anything that starts with
@@ -15565,7 +15565,7 @@ $$;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('77_reserved_handles.sql', 'b36a9af57fdfac6e9fa50223bed9d3d7828d41f21e3a25f0f6fb12b8f1df4b2b');
+    perform public.migration_done('77_reserved_handles.sql', 'fa5b62cfc06e366950440065eed78c7d055bf325bc82226489865c81cae07c2e');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('77_reserved_handles.sql');
   end if;
@@ -15797,7 +15797,7 @@ end $$;
 -- and the anonymous session is replaced: the swipes made as a guest stayed behind on
 -- a user nobody could reach again (F31, 20.10.2026). The app now remembers the guest
 -- id across that sign-in and calls guest_merge once: the swipes move to the account
--- (a night already swiped there keeps the account's answer), and the guest user is
+-- (a night already swiped there keeps the answer of the account), and the guest user is
 -- deleted. Only an anonymous user with no email can be taken over, and only by a
 -- signed-in account; the id is the one thing the device knows about its guest.
 --
@@ -15830,7 +15830,7 @@ grant execute on function public.guest_merge(uuid) to authenticated;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('80_guest_merge.sql', '1bd08efa241f867a9b085d86ee7f7f590be64123597144c235b69ff424814f34');
+    perform public.migration_done('80_guest_merge.sql', 'd053253ca69f493d9d74c7f94056bef8327b61d0a65d7ba9beaf129d90b5e3d0');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('80_guest_merge.sql');
   end if;
@@ -16129,7 +16129,7 @@ end $$;
 -- back, the staff removed it, the account was deleted) the panel showed an empty
 -- line; and the report itself left with the reporter, since it hung off their
 -- profile (F12, 20.10.2026). Decided: the report takes a copy of what it is about
--- at the moment it is made - the text, the author's id and handle, the time - and
+-- at the moment it is made - the text, the id and handle of the author, the time - and
 -- outlives both the content and the reporter. Files are not copied. Removal and
 -- deletion flows stay as they are.
 --
@@ -16265,7 +16265,7 @@ $$;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('84_report_snapshot.sql', 'b9411046e60764cedd725c8bdf582a81f6e04e21b8341dae5d89ba736a52b3b8');
+    perform public.migration_done('84_report_snapshot.sql', 'c54686d5ef5522460c11364078715e0b5ee8dcd170bcaabd302b6cddd79c5064');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('84_report_snapshot.sql');
   end if;
@@ -16588,7 +16588,7 @@ begin
   if e.starts_at is not null and (at < e.starts_at - interval '6 hours' or at > e.starts_at + interval '8 hours') then
     live := false;
   end if;
-  -- the place: the night's own position, else its venue's; no position on either side, no test
+  -- the place: the position of the night, else of its venue; no position on either side, no test
   select coalesce(e.lat, v.lat), coalesce(e.lng, v.lng) into x_lat, x_lng
     from (select 1) one left join public.venues v on v.id = e.venue_id;
   if live and p_lat is not null and p_lng is not null and x_lat is not null and x_lng is not null then
@@ -16683,7 +16683,7 @@ $$;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('88_checkin_truth.sql', '605528add79ffccba24fed96f273fce1fcabb661d185cbd11c48f810e707f015');
+    perform public.migration_done('88_checkin_truth.sql', 'd29cb8a9f3e17270d5f4fb130240b544df21cdf44a76ee452afae94dc84f78d9');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('88_checkin_truth.sql');
   end if;
@@ -16703,7 +16703,7 @@ end $$;
 -- their likes and comments, groups (membership, own messages and photos), sparks and
 -- answers, profile links and photo, who they blocked, reports they made, objections,
 -- every notification switch, the DJ page they own, the nights they sent in.
--- Other people's lines are never in it; only what this person wrote.
+-- Lines of other people are never in it; only what this person wrote.
 
 create or replace function public.export_me()
 returns jsonb
@@ -16856,7 +16856,7 @@ $$;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('89_export_all.sql', '129851f1850d00fd38c30c8e8f47f1653b917869ee6ba12de031ec7d947132d3');
+    perform public.migration_done('89_export_all.sql', '7b31143e846e9a6f8410a1175e128cdacca2128dd437e2119333721d6c5127fb');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('89_export_all.sql');
   end if;
@@ -16873,7 +16873,7 @@ end $$;
 -- phone, a reinstall or the web showed every line as new (F28, 20.10.2026). The
 -- thread now carries, for each side, the last line that side has seen; dm_seen
 -- moves it, dm_list counts the lines after it that are not mine. The phone keeps
--- its own mark too and uses the server's when it is there. dm_list is that of 59
+-- its own mark too and uses the one on the server when it is there. dm_list is that of 59
 -- with the one column, so it is dropped and made again with its grant.
 
 alter table public.dm_threads add column if not exists seen_a bigint not null default 0;
@@ -16926,7 +16926,7 @@ grant execute on function public.dm_list() to authenticated;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('90_dm_seen.sql', 'e93fc576ff72e6ef604d9d89d646857e29c995aaf0597babe77a2ea42ad9c41f');
+    perform public.migration_done('90_dm_seen.sql', 'ffd942a2cb07ce815b8c3df126b045187574293773a33b312af376f731811fe5');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('90_dm_seen.sql');
   end if;

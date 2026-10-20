@@ -1,4 +1,4 @@
--- afterhours — some names are nobody's (77)
+-- afterhours — some names belong to nobody (77)
 --
 -- Anyone could take @admin, @afterhours or @support and write to people as the team
 -- (F15, 20.10.2026). A short list of reserved words, and anything that starts with
@@ -86,7 +86,7 @@ $$;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('77_reserved_handles.sql', 'b36a9af57fdfac6e9fa50223bed9d3d7828d41f21e3a25f0f6fb12b8f1df4b2b');
+    perform public.migration_done('77_reserved_handles.sql', 'fa5b62cfc06e366950440065eed78c7d055bf325bc82226489865c81cae07c2e');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('77_reserved_handles.sql');
   end if;

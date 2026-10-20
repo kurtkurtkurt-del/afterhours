@@ -7,7 +7,7 @@
 -- their likes and comments, groups (membership, own messages and photos), sparks and
 -- answers, profile links and photo, who they blocked, reports they made, objections,
 -- every notification switch, the DJ page they own, the nights they sent in.
--- Other people's lines are never in it; only what this person wrote.
+-- Lines of other people are never in it; only what this person wrote.
 
 create or replace function public.export_me()
 returns jsonb
@@ -160,7 +160,7 @@ $$;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('89_export_all.sql', '129851f1850d00fd38c30c8e8f47f1653b917869ee6ba12de031ec7d947132d3');
+    perform public.migration_done('89_export_all.sql', '7b31143e846e9a6f8410a1175e128cdacca2128dd437e2119333721d6c5127fb');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('89_export_all.sql');
   end if;

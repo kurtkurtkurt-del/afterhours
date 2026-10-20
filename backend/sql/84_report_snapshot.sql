@@ -4,7 +4,7 @@
 -- back, the staff removed it, the account was deleted) the panel showed an empty
 -- line; and the report itself left with the reporter, since it hung off their
 -- profile (F12, 20.10.2026). Decided: the report takes a copy of what it is about
--- at the moment it is made - the text, the author's id and handle, the time - and
+-- at the moment it is made - the text, the id and handle of the author, the time - and
 -- outlives both the content and the reporter. Files are not copied. Removal and
 -- deletion flows stay as they are.
 --
@@ -140,7 +140,7 @@ $$;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('84_report_snapshot.sql', 'b9411046e60764cedd725c8bdf582a81f6e04e21b8341dae5d89ba736a52b3b8');
+    perform public.migration_done('84_report_snapshot.sql', 'c54686d5ef5522460c11364078715e0b5ee8dcd170bcaabd302b6cddd79c5064');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('84_report_snapshot.sql');
   end if;
