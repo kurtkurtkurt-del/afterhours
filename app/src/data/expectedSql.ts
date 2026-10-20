@@ -90,4 +90,5 @@ export const EXPECTED_SQL = [
   '86_person_file.sql',
   '87_cron_health.sql',
   '88_checkin_truth.sql',
+  '89_export_all.sql',
 ];
