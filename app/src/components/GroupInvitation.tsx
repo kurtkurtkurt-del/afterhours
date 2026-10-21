@@ -20,7 +20,7 @@ export default function GroupInvitation({ emoji, name, color, line, names, child
   const tint = color === 'paper' ? colors.spot : GROUP_COLORS[color];
   return (
     <View style={styles.root}>
-      <LinearGradient colors={[tint, '#2a0705', colors.ink]} locations={[0, 0.55, 0.9]} style={StyleSheet.absoluteFill} />
+      <LinearGradient colors={[tint, '#2a0705', colors.poster]} locations={[0, 0.55, 0.9]} style={StyleSheet.absoluteFill} />
       <View style={styles.top}>
         <Text style={styles.emoji}>{emoji}</Text>
         <Text style={styles.name} numberOfLines={2}>{name.toLowerCase()}</Text>
@@ -45,13 +45,13 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   top: { alignItems: 'center', paddingTop: 90, paddingHorizontal: 24 },
   emoji: { fontSize: 64 },
-  name: { fontFamily: fonts.logo, fontSize: 42, lineHeight: 42, color: colors.paper, textAlign: 'center', marginTop: 6 },
+  name: { fontFamily: fonts.logo, fontSize: 42, lineHeight: 42, color: colors.onPhoto, textAlign: 'center', marginTop: 6 },
   line: { fontFamily: fonts.regular, fontSize: 14, color: '#f3d6d4', marginTop: 6, textAlign: 'center' },
   faces: { flexDirection: 'row', justifyContent: 'center', marginTop: 28 },
   face: { width: 54, height: 54, borderRadius: 27, backgroundColor: '#3a3632', borderWidth: 2.5, borderColor: '#2a0705', alignItems: 'center', justifyContent: 'center' },
   overlap: { marginLeft: -12 },
-  faceText: { fontFamily: fonts.semibold, fontSize: 20, color: colors.paper },
+  faceText: { fontFamily: fonts.semibold, fontSize: 20, color: colors.onPhoto },
   you: { backgroundColor: 'transparent', borderStyle: 'dashed', borderColor: colors.paper },
-  youText: { fontFamily: fonts.medium, fontSize: 12, color: colors.paper },
+  youText: { fontFamily: fonts.medium, fontSize: 12, color: colors.onPhoto },
   body: { flex: 1, paddingHorizontal: 24, paddingTop: 24 },
 });

@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import { useLang } from '@/i18n';
-import { colors } from '@/theme/tokens';
+import { colors, ground } from '@/theme/tokens';
 
 // A round share mark for the bottom right corner of a photo.
 export default function ShareButton({ onPress, style }: { onPress: () => void; style?: object }) {
@@ -16,6 +16,6 @@ export default function ShareButton({ onPress, style }: { onPress: () => void; s
 }
 
 const styles = StyleSheet.create({
-  btn: { position: 'absolute', right: 12, bottom: 12, width: 40, height: 40, borderRadius: 20, backgroundColor: 'rgba(14,13,12,0.72)', borderWidth: 1, borderColor: 'rgba(243,241,236,0.18)', alignItems: 'center', justifyContent: 'center' },
+  btn: { position: 'absolute', right: 12, bottom: 12, width: 40, height: 40, borderRadius: 20, backgroundColor: ground(0.72), borderWidth: 1, borderColor: 'rgba(243,241,236,0.18)', alignItems: 'center', justifyContent: 'center' },
   pressed: { opacity: 0.7 },
 });

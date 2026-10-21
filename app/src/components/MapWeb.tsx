@@ -2,17 +2,23 @@ import { useEffect, useMemo, useRef } from 'react';
 import { StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { leafletCss, leafletJs } from '@/vendor/leaflet';
-import { colors, tint } from '@/theme/tokens';
+import { colors, tint, themeId } from '@/theme/tokens';
 
 export type Pin = { id: string; lat: number; lng: number; friends: boolean; spark?: boolean };
 // pad: the area the circle must fit in, leaving room for the header above and the slider or card below
 // liveKm: circle radius while the slider is dragged (the map does not move); km arrives on release
 type Props = { lat: number; lng: number; km: number; liveKm?: number; me: [number, number] | null; pins: Pin[]; picked: string | null; onPick: (id: string | null) => void; pad: { top: number; bottom: number }; recenter?: number };
 
-// Map in a WebView: Leaflet (bundled) + Esri "Dark Gray Canvas" tiles, no key needed;
+// Map in a WebView: Leaflet (bundled) + Esri "Light Gray Canvas" tiles (try/light), no key needed;
 // Carto's free tiles watermark keyless requests, hence Esri.
 // The WebView cannot navigate away: in-page navigation and file access are off; only tile requests leave.
-// The ink look is CSS: darkened tiles, nights as map pins, a red radius circle.
+// The paper look is CSS: soft grey tiles, ink pins for nights, a red radius circle.
+// The two themes (theme/tokens.ts): Esri's dark or light grey canvas, pins in the
+// opposite tone so they always stand out.
+const M = themeId === 'light'
+  ? { tiles: 'Light', ground: '#ecebe6', filter: 'saturate(0) brightness(1.02) contrast(.94)', attrBg: 'rgba(251,250,247,.85)', pin: '#1f1d1a', hole: '#fbfaf7', ring: '#fbfaf7', gap: '#fbfaf7', shadow: '.28', radar: 'rgba(31,29,26,.45)' }
+  : { tiles: 'Dark', ground: '#1b1a19', filter: 'brightness(.55) contrast(1.15) saturate(0)', attrBg: 'rgba(14,13,12,.8)', pin: '#f3f1ec', hole: '#0e0d0c', ring: '#f3f1ec', gap: '#0e0d0c', shadow: '.55', radar: 'rgba(243,241,236,.6)' };
+
 const html = `<!doctype html><html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <style>${leafletCss}</style>
@@ -20,31 +26,31 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
 <style>
   /* The ground under the tiles is the tiles' own tone, so a tile still on its way
      shows as map, not as a black hole (it was "going dark" while moving). */
-  html,body,#m{margin:0;height:100%;background:#1b1a19}
-  .leaflet-container{background:#1b1a19}
-  .leaflet-tile{filter:brightness(.55) contrast(1.15) saturate(0)}
-  .leaflet-control-attribution{background:rgba(14,13,12,.8)!important;color:#8a877f!important;font:10px Inter,system-ui,sans-serif;padding:2px 6px}
-  .leaflet-control-attribution a{color:#8a877f!important}
+  html,body,#m{margin:0;height:100%;background:${M.ground}}
+  .leaflet-container{background:${M.ground}}
+  .leaflet-tile{filter:${M.filter}}
+  .leaflet-control-attribution{background:${M.attrBg}!important;color:#8a867d!important;font:10px Inter,system-ui,sans-serif;padding:2px 6px}
+  .leaflet-control-attribution a{color:#8a867d!important}
   /* Nights are map pins: a rounded drop pointing at the spot, an ink hole in it and a
      soft shadow on the ground. Paper; red when a friend kept it; the selected one grows
      and turns red with a paper ring, the rest at 45%. The pin stands on its tip. */
   .pin{position:relative;width:22px;height:24px}
-  .sq{position:absolute;left:3px;top:1px;width:16px;height:16px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);transform-origin:50% 50%;background:#f3f1ec;box-shadow:0 2px 6px rgba(0,0,0,.55);transition:opacity .3s ease-out,transform .2s ease-out}
-  .sq:after{content:'';position:absolute;left:5px;top:5px;width:6px;height:6px;border-radius:50%;background:#0e0d0c}
+  .sq{position:absolute;left:3px;top:1px;width:16px;height:16px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);transform-origin:50% 50%;background:${M.pin};box-shadow:0 2px 6px rgba(0,0,0,${M.shadow});transition:opacity .3s ease-out,transform .2s ease-out}
+  .sq:after{content:'';position:absolute;left:5px;top:5px;width:6px;height:6px;border-radius:50%;background:${M.hole}}
   .sq.fr{background:${colors.spot}}
-  .sq.on{background:${colors.spot};transform:rotate(-45deg) scale(1.3);box-shadow:0 0 0 2px #f3f1ec,0 3px 10px rgba(0,0,0,.6)}
-  .sq.on:after{background:#f3f1ec}
+  .sq.on{background:${colors.spot};transform:rotate(-45deg) scale(1.3);box-shadow:0 0 0 2px ${M.ring},0 3px 10px rgba(0,0,0,${M.shadow})}
+  .sq.on:after{background:${M.ring}}
   /* Sparks: gold, a rounded diamond instead of a drop, so they never read as a night. */
   .sq.sp{background:#e8b04b;border-radius:4px;transform:rotate(45deg) scale(.85);top:4px}
-  .sq.sp.on{transform:rotate(45deg) scale(1.1);box-shadow:0 0 0 2px #e8b04b,0 3px 10px rgba(0,0,0,.6)}
+  .sq.sp.on{transform:rotate(45deg) scale(1.1);box-shadow:0 0 0 2px #e8b04b,0 3px 10px rgba(0,0,0,.3)}
   .sq.sp.on:after{background:#0e0d0c}
   .dim .sq:not(.on){opacity:.45}
   /* The shadow on the ground under the tip. */
-  .pin:before{content:'';position:absolute;left:7px;bottom:0;width:8px;height:3px;border-radius:50%;background:rgba(0,0,0,.55)}
+  .pin:before{content:'';position:absolute;left:7px;bottom:0;width:8px;height:3px;border-radius:50%;background:rgba(0,0,0,.25)}
   /* Radar: each night sends out a ring from where it stands, widening and fading every
      3.2 s. Each starts at its own moment (from its id) and stays small, so neighbours
      ripple one after another instead of melting into one blur. */
-  .rp{position:absolute;left:5px;bottom:-3px;width:12px;height:12px;border-radius:50%;box-sizing:border-box;border:1.5px solid rgba(243,241,236,.6);animation:radar 3.2s ease-out infinite both;pointer-events:none}
+  .rp{position:absolute;left:5px;bottom:-3px;width:12px;height:12px;border-radius:50%;box-sizing:border-box;border:1.5px solid ${M.radar};animation:radar 3.2s ease-out infinite both;pointer-events:none}
   .pin.f1 .rp{border-color:${tint(0.8)}}
   .pin.fs .rp{border-color:rgba(232,176,75,.85)}
   .dim .rp{visibility:hidden}
@@ -53,7 +59,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
      with an ink gap and a red rim, a red core, and a slow red ping around it. */
   .me{position:relative;width:22px;height:22px}
   .me i{position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:${colors.spot};animation:ping 2.4s ease-out infinite}
-  .me b{position:absolute;left:4px;top:4px;width:14px;height:14px;border-radius:50%;background:#f3f1ec;box-shadow:0 0 0 2px #0e0d0c,0 0 0 3.5px ${colors.spot}}
+  .me b{position:absolute;left:4px;top:4px;width:14px;height:14px;border-radius:50%;background:#f3f1ec;box-shadow:0 0 0 2px ${M.gap},0 0 0 3.5px ${colors.spot}}
   .me b:after{content:'';position:absolute;left:4px;top:4px;width:6px;height:6px;border-radius:50%;background:${colors.spot}}
   @keyframes ping{0%{transform:scale(.6);opacity:.5}100%{transform:scale(2.6);opacity:0}}
 </style></head><body><div id="m"></div><script>
@@ -109,8 +115,8 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
      and keeps two rings of tiles around the screen: moving showed empty, dark squares.
      Now tiles load while moving, more of them are kept, and they appear without a fade. */
   var tiles={maxNativeZoom:16,maxZoom:18,updateWhenIdle:false,updateWhenZooming:true,updateInterval:100,keepBuffer:6};
-  L.tileLayer(esri+'World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',L.extend({attribution:'&copy; Esri, HERE, Garmin, OpenStreetMap contributors · v2'},tiles)).addTo(map);
-  L.tileLayer(esri+'World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',L.extend({opacity:.9},tiles)).addTo(map);
+  L.tileLayer(esri+'World_'+(${JSON.stringify(M.tiles)})+'_Gray_Base/MapServer/tile/{z}/{y}/{x}',L.extend({attribution:'&copy; Esri, HERE, Garmin, OpenStreetMap contributors · v2'},tiles)).addTo(map);
+  L.tileLayer(esri+'World_'+(${JSON.stringify(M.tiles)})+'_Gray_Reference/MapServer/tile/{z}/{y}/{x}',L.extend({opacity:.9},tiles)).addTo(map);
   var layer=L.layerGroup().addTo(map), meMarker=null, markers={}, ring=null;
   function post(m){window.ReactNativeWebView&&window.ReactNativeWebView.postMessage(JSON.stringify(m));}
   map.on('click',function(){post({pick:null});});
@@ -192,7 +198,7 @@ export default function MapWeb({ lat, lng, km, liveKm, me, pins, picked, onPick,
       cacheEnabled={false}
       cacheMode="LOAD_NO_CACHE"
       style={StyleSheet.absoluteFill}
-      containerStyle={{ backgroundColor: '#0e0d0c' }}
+      containerStyle={{ backgroundColor: M.ground }}
       javaScriptEnabled
       domStorageEnabled={false}
       allowFileAccess={false}

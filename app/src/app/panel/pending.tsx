@@ -1,3 +1,4 @@
+import { ground } from '@/theme/tokens';
 import { useEffect, useRef, useState } from 'react';
 import { Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 import { Image } from 'expo-image';
@@ -60,7 +61,7 @@ export default function Pending() {
               render={(n) => (
                 <View style={styles.card}>
                   <Image source={n.image_url ? { uri: n.image_url } : fallback} style={StyleSheet.absoluteFill} contentFit="cover" />
-                  <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.92)']} locations={[0.25, 0.75]} style={StyleSheet.absoluteFill} />
+                  <LinearGradient colors={[ground(0.0), ground(0.92)]} locations={[0.25, 0.75]} style={StyleSheet.absoluteFill} />
                   <View style={styles.cardText}>
                     <Text style={styles.title} numberOfLines={2}>{n.title.toLowerCase()}</Text>
                     <Text style={styles.meta}>{[up(dayLabel(n.starts_at)), n.starts_at.slice(11, 16), n.venue_name, n.city_slug, n.type_slug].filter(Boolean).join(' · ')}</Text>

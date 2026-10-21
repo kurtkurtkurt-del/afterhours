@@ -11,7 +11,7 @@ import StaffPage, { Field, Quiet, Said } from '@/components/StaffPage';
 import { useAuth } from '@/auth/AuthContext';
 import { groupJoin, groupPeek, why, type Peek } from '@/data/groups';
 import { useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, barStyle } from '@/theme/tokens';
 import PillAction, { PillRow } from '@/components/PillAction';
 
 // Joining by code: from a link (?code=…) or typed in. Once the code is known the
@@ -56,7 +56,7 @@ export default function Join() {
     const line = peek.owner ? t('groups.join.calls', { name: peek.owner.toLowerCase() }) : t('groups.members', { n: peek.members });
     return (
       <View style={styles.root}>
-        <StatusBar style="light" />
+        <StatusBar style={barStyle} />
         <GroupInvitation emoji={peek.emoji} name={peek.name} color={peek.color} line={line} names={peek.names ?? []}>
           <Text style={styles.about}>
             {peek.plan_title ? t('groups.join.plan', { title: peek.plan_title.toLowerCase() }) : t('groups.join.about')}

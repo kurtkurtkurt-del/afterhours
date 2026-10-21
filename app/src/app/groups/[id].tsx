@@ -46,7 +46,7 @@ import {
   type AlsoThere,
 } from '@/data/groups';
 import { useLang } from '@/i18n';
-import { colors, fonts, radius, tint } from '@/theme/tokens';
+import { colors, fonts, radius, tint, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 type Tab = 'trip' | 'swipe' | 'matches' | 'plan' | 'live';
@@ -106,7 +106,7 @@ export default function GroupScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <View style={[styles.head, { paddingTop: top - 8 }]} onLayout={(e) => setHeadH(e.nativeEvent.layout.height)}>
         <View style={styles.headRow}>
           <Pressable onPress={() => router.push({ pathname: '/groups/memories', params: { id } })} onLongPress={() => id && reporting.ask('group', id)} style={styles.headLink} accessibilityRole="button" accessibilityHint={t('groups.memories.hint')}>
@@ -162,7 +162,7 @@ export default function GroupScreen() {
                 <Text style={styles.scoreLineText}>{t('groups.swipe.no')}</Text>
               </Pressable>
               <Pressable onPress={() => stackRef.current?.swipe('right')} style={({ pressed }) => [styles.scoreYes, pressed && styles.pressed]} accessibilityRole="button">
-                <Text style={styles.scoreYesText}>{completes ? t('groups.swipe.complete') : t('groups.swipe.yes')}</Text>
+                <Text style={[styles.scoreYesText, styles.onSpot]}>{completes ? t('groups.swipe.complete') : t('groups.swipe.yes')}</Text>
               </Pressable>
             </View>
           ) : null}
@@ -190,7 +190,7 @@ function ScoreCard({ night, yes, members, group }: { night: Night; yes: number; 
   return (
     <View style={styles.fill}>
       <Image source={uri ? { uri } : fallback} style={StyleSheet.absoluteFill} contentFit="cover" />
-      <LinearGradient colors={['rgba(14,13,12,0.65)', 'rgba(14,13,12,0)', 'rgba(14,13,12,0.15)', 'rgba(14,13,12,0.92)']} locations={[0, 0.32, 0.55, 1]} style={StyleSheet.absoluteFill} />
+      <LinearGradient colors={[scrim(0.65), scrim(0.0), scrim(0.15), scrim(0.92)]} locations={[0, 0.32, 0.55, 1]} style={StyleSheet.absoluteFill} />
       <View style={styles.score}>
         <Text style={styles.scoreBig}>
           {yes}
@@ -215,7 +215,7 @@ function MatchBurst({ text, onEnd }: { text: string; onEnd: () => void }) {
   return (
     <Animated.View entering={FadeIn.duration(160)} exiting={FadeOut.duration(300)} style={styles.burst} pointerEvents="none">
       <Animated.View entering={ZoomIn.springify().damping(11)} style={styles.burstStamp}>
-        <Text style={styles.burstText}>{text}</Text>
+        <Text style={[styles.burstText, styles.onSpot]}>{text}</Text>
       </Animated.View>
     </Animated.View>
   );
@@ -270,7 +270,7 @@ function Matches({ id, matches, nameOf, top, onPlan }: { id: string; matches: Ma
                     <Pressable key={m.id} onPress={() => (picking ? toggle(m) : setAsking(m))} style={({ pressed }) => [pressed && styles.pressed]} accessibilityRole="button">
                       <View style={[styles.cover, size, tier === 'some' && styles.coverFaded, on && styles.coverPicked]}>
                         <Image source={uri ? { uri } : fallback} style={StyleSheet.absoluteFill} contentFit="cover" />
-                        <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.85)']} locations={[0.45, 1]} style={StyleSheet.absoluteFill} />
+                        <LinearGradient colors={[scrim(0.0), scrim(0.85)]} locations={[0.45, 1]} style={StyleSheet.absoluteFill} />
                         {on ? <Text style={styles.coverCheck}>✓</Text> : null}
                         <View style={styles.coverText}>
                           <Text style={[styles.coverTitle, tier === 'some' && styles.coverTitleSmall]} numberOfLines={2}>{m.title.toLowerCase()}</Text>
@@ -386,7 +386,7 @@ function PlanTab({ id, me, top, groupName }: { id: string; me: string; top: numb
         <View style={styles.flyer}>
           <Image source={plan.image_url ? { uri: plan.image_url } : fallback} style={StyleSheet.absoluteFill} contentFit="cover" />
           <View style={styles.flyerRed} />
-          <LinearGradient colors={['rgba(14,13,12,0.2)', 'rgba(14,13,12,0)', 'rgba(14,13,12,0.92)']} locations={[0, 0.35, 0.8]} style={StyleSheet.absoluteFill} />
+          <LinearGradient colors={[scrim(0.2), scrim(0.0), scrim(0.92)]} locations={[0, 0.35, 0.8]} style={StyleSheet.absoluteFill} />
           <Pressable onPress={() => router.push(`/night/${plan.slug}`)} style={styles.flyerHead} accessibilityRole="button">
             <Text style={styles.flyerMono}>{up(t('groups.plan.presents', { group: groupName.toLowerCase() }))}</Text>
             <Text style={styles.flyerTitle} numberOfLines={3}>{plan.title.toUpperCase()}</Text>
@@ -508,7 +508,7 @@ function Live({ id, me, top, nameOf, onChange }: { id: string; me: string; top: 
             <View style={styles.faces}>
               {(state?.people ?? []).map((p) => (
                 <View key={p.id} style={[styles.liveFace, p.answer === 'right' && styles.liveFaceYes, p.answer === 'left' && styles.liveFaceNo, p.id === me && styles.liveFaceMe]}>
-                  <Text style={styles.liveFaceText}>{(p.id === me ? t('posts.you') : (p.name ?? nameOf(p.id))).charAt(0).toUpperCase()}</Text>
+                  <Text style={[styles.liveFaceText, p.answer === 'right' && styles.onSpot]}>{(p.id === me ? t('posts.you') : (p.name ?? nameOf(p.id))).charAt(0).toUpperCase()}</Text>
                 </View>
               ))}
             </View>
@@ -535,6 +535,8 @@ function Live({ id, me, top, nameOf, onChange }: { id: string; me: string; top: 
 }
 
 const styles = StyleSheet.create({
+  // words on a red fill stay light whatever the ground does (try/light)
+  onSpot: { color: colors.onSpot },
   root: { flex: 1, backgroundColor: colors.ink },
   head: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 3, paddingHorizontal: brand.left, paddingBottom: 8, backgroundColor: colors.ink },
   headRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
@@ -554,11 +556,11 @@ const styles = StyleSheet.create({
   stage: { flex: 1, paddingHorizontal: 10 },
   fill: { flex: 1 },
   score: { position: 'absolute', top: 22, left: 0, right: 0, alignItems: 'center' },
-  scoreBig: { fontFamily: fonts.logo, fontSize: 96, lineHeight: 96, color: colors.paper },
-  scoreRed: { color: colors.spotText },
-  scoreLabel: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.6, color: colors.paper },
+  scoreBig: { fontFamily: fonts.logo, fontSize: 96, lineHeight: 96, color: colors.onPhoto },
+  scoreRed: { color: colors.onPhotoSpot },
+  scoreLabel: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.6, color: colors.onPhoto },
   scoreFoot: { position: 'absolute', left: 18, right: 18, bottom: 20, gap: 4 },
-  scoreTitle: { fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
+  scoreTitle: { fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.onPhoto },
   scoreMeta: { fontFamily: fonts.regular, fontSize: 13, color: '#ddd' },
   scoreButtons: { position: 'absolute', left: brand.left, right: brand.left, flexDirection: 'row', gap: 10 },
   scoreLine: { flex: 1, height: 50, borderRadius: radius.pill, borderWidth: 1, borderColor: colors.ink3, alignItems: 'center', justifyContent: 'center' },
@@ -589,10 +591,10 @@ const styles = StyleSheet.create({
   answers: { flexDirection: 'row', gap: 8, marginTop: 10 },
   answer: { flex: 1, height: 38, borderRadius: radius.pill, borderWidth: 1, borderColor: colors.ink3, alignItems: 'center', justifyContent: 'center' },
   answerOn: { backgroundColor: colors.paper, borderColor: colors.paper },
-  answerText: { fontFamily: fonts.medium, fontSize: 14, color: colors.paper },
+  answerText: { fontFamily: fonts.medium, fontSize: 14, color: colors.onPhoto },
   answerTextOn: { color: colors.ink },
   ticketRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: colors.ink3 },
-  ticketText: { fontFamily: fonts.regular, fontSize: 15, color: colors.paper },
+  ticketText: { fontFamily: fonts.regular, fontSize: 15, color: colors.onPhoto },
   personRow: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 6 },
   personName: { fontFamily: fonts.regular, fontSize: 14, color: colors.paper },
   personAnswer: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.mute },
@@ -600,15 +602,15 @@ const styles = StyleSheet.create({
   flyer: { marginTop: 16, minHeight: 560, borderRadius: radius.lg, overflow: 'hidden', backgroundColor: colors.ink3, justifyContent: 'space-between' },
   flyerRed: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: tint(0.42) },
   flyerHead: { padding: 20, gap: 8 },
-  flyerMono: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.6, color: colors.paper },
-  flyerTitle: { fontFamily: fonts.logo, fontSize: 52, lineHeight: 48, letterSpacing: -0.5, color: colors.paper },
+  flyerMono: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.6, color: colors.onPhoto },
+  flyerTitle: { fontFamily: fonts.logo, fontSize: 52, lineHeight: 48, letterSpacing: -0.5, color: colors.onPhoto },
   flyerFoot: { padding: 20, gap: 8 },
   flyerWho: { fontFamily: fonts.regular, fontSize: 13, color: '#eee' },
   flyerAnswer: { flex: 1, height: 42, borderRadius: radius.pill, borderWidth: 1, borderColor: 'rgba(243,241,236,0.45)', alignItems: 'center', justifyContent: 'center' },
   flyerNote: { fontFamily: fonts.regular, fontSize: 12, color: '#ddd' },
   flyerLinks: { flexDirection: 'row', justifyContent: 'center', gap: 22, marginTop: 4 },
-  flyerLink: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper, textDecorationLine: 'underline' },
-  also: { fontFamily: fonts.medium, fontSize: 13, color: colors.spotText, marginTop: 8 },
+  flyerLink: { fontFamily: fonts.regular, fontSize: 13, color: colors.onPhoto, textDecorationLine: 'underline' },
+  also: { fontFamily: fonts.medium, fontSize: 13, color: colors.onPhotoSpot, marginTop: 8 },
   planButtons: { gap: 8, marginTop: 10 },
   tier: { marginTop: 18 },
   tierRow: { gap: 10, paddingTop: 8, paddingRight: brand.left },
@@ -618,9 +620,9 @@ const styles = StyleSheet.create({
   coverSmall: { width: 82, height: 100 },
   coverFaded: { opacity: 0.75 },
   coverPicked: { borderWidth: 2.5, borderColor: colors.spot },
-  coverCheck: { position: 'absolute', top: 8, right: 8, width: 24, height: 24, borderRadius: 12, overflow: 'hidden', backgroundColor: colors.spot, color: colors.paper, textAlign: 'center', lineHeight: 24, fontFamily: fonts.medium },
+  coverCheck: { position: 'absolute', top: 8, right: 8, width: 24, height: 24, borderRadius: 12, overflow: 'hidden', backgroundColor: colors.spot, color: colors.onSpot, textAlign: 'center', lineHeight: 24, fontFamily: fonts.medium },
   coverText: { padding: 10, gap: 2 },
-  coverTitle: { fontFamily: fonts.medium, fontSize: 15, letterSpacing: -0.2, color: colors.paper },
+  coverTitle: { fontFamily: fonts.medium, fontSize: 15, letterSpacing: -0.2, color: colors.onPhoto },
   coverTitleSmall: { fontSize: 11.5 },
   coverMeta: { fontFamily: fonts.regular, fontSize: 11, color: '#ddd' },
   match: { borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md, padding: 14, marginTop: 10, gap: 4 },

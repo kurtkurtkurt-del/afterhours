@@ -4,7 +4,7 @@ import Animated, { Easing, FadeIn, FadeOut, SlideInDown, useAnimatedStyle, useSh
 import Storage from 'expo-sqlite/kv-store';
 import { Image } from 'expo-image';
 import { useLang, type Key } from '@/i18n';
-import { colors, fonts, radius, tint } from '@/theme/tokens';
+import { colors, fonts, radius, tint, ground } from '@/theme/tokens';
 
 // First visit to a page: one short tip over the page (since 12.10.2026 a single one;
 // two pages were too many), then never again on that page. Settings → about →
@@ -109,7 +109,7 @@ function Motion({ kind }: { kind: 'swipe' | 'tap' }) {
 }
 
 const styles = StyleSheet.create({
-  screen: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 50, backgroundColor: 'rgba(14,13,12,0.9)', justifyContent: 'center', paddingHorizontal: 28 },
+  screen: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 50, backgroundColor: ground(0.9), justifyContent: 'center', paddingHorizontal: 28 },
   middle: { alignItems: 'center' },
   big: { fontFamily: fonts.logo, fontSize: 46, lineHeight: 44, letterSpacing: -0.5, color: colors.paper, textAlign: 'center', marginTop: 28 },
   bigRed: { color: colors.spotText },

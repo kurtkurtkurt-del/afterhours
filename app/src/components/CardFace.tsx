@@ -4,7 +4,7 @@ import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { SvgUri } from 'react-native-svg';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, ground, fonts, radius, themeId } from '@/theme/tokens';
 import { posterUrl, type Night } from '@/data/deck';
 import { dayName } from '@/data/when';
 
@@ -198,9 +198,12 @@ function useRatio(uri: string | null, fallbackRatio: number) {
   return ratio;
 }
 
+// react-native-web has no resolveAssetSource: the web build (PWA) crashed on the first
+// spark card. There the poster frame is 2:3, the shape of every spark photo.
 const sizeOf = (source: ImageSourcePropType) => {
+  if (typeof RNImage.resolveAssetSource !== 'function') return 2 / 3;
   const s = RNImage.resolveAssetSource(source);
-  return s.width && s.height ? s.width / s.height : 2 / 3;
+  return s && s.width && s.height ? s.width / s.height : 2 / 3;
 };
 
 // Flow card: blurred backdrop + uncropped poster, fitted and centred between the chip and the caption.
@@ -221,12 +224,13 @@ function FitPoster({ card, top, bottom, ready, tag, overlay }: { card: DeckCard;
   const source = card.image ? { uri: card.image } : (card.local ?? fallback);
   return (
     <>
-      {svg ? (
+      {/* dark theme: the poster, blurred, fills the page under a veil; light: the plain ground */}
+      {themeId === 'light' ? null : svg ? (
         <View style={[styles.photo, { backgroundColor: colors.ink2 }]} />
       ) : (
         <Image source={source} style={styles.photo} contentFit="cover" blurRadius={28} />
       )}
-      <View style={styles.veil} />
+      {themeId === 'light' ? null : <View style={styles.veil} />}
       <View style={[styles.fitArea, { top, bottom }]} onLayout={(e) => setArea({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height })}>
         {area && ready ? (
           <View style={[styles.fitPoster, { width: w, height: h }]}>
@@ -274,7 +278,7 @@ export function Hint({ label }: { label: string }) {
 
 const styles = StyleSheet.create({
   photo: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
-  veil: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(14,13,12,0.42)' },
+  veil: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: ground(0.42) },
   fitArea: { position: 'absolute', left: 12, right: 12, alignItems: 'center', justifyContent: 'center' },
   fitPoster: { borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink },
   fill: { width: '100%', height: '100%' },

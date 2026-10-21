@@ -12,7 +12,7 @@ import type { Night } from '@/data/deck';
 import { dayLabel } from '@/data/when';
 import { useShelf } from '@/lib/offline';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // The lists under a profile, opened from its counts: the nights kept (events) or the
@@ -53,7 +53,7 @@ export default function ListScreen() {
   );
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <PullDownScroll header={band} contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 40 }]} showsVerticalScrollIndicator={false}>
         <Text style={styles.title}>{title}</Text>
         {handle ? <Text style={styles.meta}>@{upperData(handle)}</Text> : null}

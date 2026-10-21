@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import { credits } from '@/content/credits';
 import { useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // Credits: music (CC0 / CC BY 4.0), map tiles, typefaces. Required by the stores and the licences.
@@ -14,7 +14,7 @@ export default function CreditsScreen() {
   const genres = ['house', 'techno', 'rap', 'dj clips', 'now playing', 'dj sets'];
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <View style={styles.band}>
         <BackButton />
         <Text style={styles.title}>{t('credits.title')}</Text>

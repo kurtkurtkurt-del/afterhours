@@ -20,7 +20,7 @@ import Input from '@/components/Input';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useTabBarSpace } from '@/components/TabBar';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 type Tab = 'tonight' | 'people';
@@ -79,7 +79,7 @@ export default function MessagesScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <PullDownScroll
         header={
           <View style={styles.band}>
@@ -120,7 +120,7 @@ export default function MessagesScreen() {
         {session && tab === 'tonight' ? (
           <>
             <Pressable onPress={() => (setPicking(true), setWho(''))} accessibilityRole="button" style={({ pressed }) => [styles.newRow, pressed && styles.pressed]}>
-              <View style={styles.newMark}><Text style={styles.newPlus}>+</Text></View>
+              <View style={styles.newMark}><Text style={[styles.newPlus, styles.onSpot]}>+</Text></View>
               <Text style={styles.newText}>{t('messages.new')}</Text>
             </Pressable>
             {dms === null ? <Text style={styles.note}>{t('rooms.loading')}</Text> : null}
@@ -246,6 +246,8 @@ export default function MessagesScreen() {
 }
 
 const styles = StyleSheet.create({
+  // words on a red fill stay light whatever the ground does (try/light)
+  onSpot: { color: colors.onSpot },
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 44, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
@@ -267,12 +269,12 @@ const styles = StyleSheet.create({
   newMark: { width: 34, height: 34, borderRadius: 17, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center' },
   newPlus: { fontFamily: fonts.medium, fontSize: 20, lineHeight: 22, color: colors.paper },
   newText: { fontFamily: fonts.medium, fontSize: 15, color: colors.paper },
-  scrim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.6)' },
+  scrim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
   sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingHorizontal: brand.left, paddingTop: 18, gap: 12 },
   sheetTitle: { fontFamily: fonts.semibold, fontSize: 20, letterSpacing: -0.5, color: colors.paper },
   sheetList: { minHeight: 120 },
   bad: { color: colors.spotText },
-  count: { minWidth: 22, height: 22, paddingHorizontal: 6, borderRadius: 11, backgroundColor: colors.spot, color: colors.paper, fontFamily: fonts.semibold, fontSize: 11.5, lineHeight: 22, textAlign: 'center', overflow: 'hidden', marginRight: 8 },
+  count: { minWidth: 22, height: 22, paddingHorizontal: 6, borderRadius: 11, backgroundColor: colors.spot, color: colors.onSpot, fontFamily: fonts.semibold, fontSize: 11.5, lineHeight: 22, textAlign: 'center', overflow: 'hidden', marginRight: 8 },
   panel: { borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md, overflow: 'hidden', marginTop: 8 },
   panelIn: { marginBottom: -1 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 12, paddingHorizontal: 14, borderBottomWidth: 1, borderBottomColor: colors.ink3 },

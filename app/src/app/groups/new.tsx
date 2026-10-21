@@ -37,7 +37,7 @@ import {
 } from '@/data/groups';
 import { allCities, type Place } from '@/data/staff';
 import { useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // Making a group (/groups/new, ?with=<ids> from a suggestion) or changing one
@@ -239,7 +239,7 @@ function Wizard({ f, set, cities, friends, picked, toggle, said, busy, save }: {
   const next = () => (step < 2 ? setStep(step + 1) : save());
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <View style={[styles.wizTop, { paddingTop: Math.max(insets.top, 20) + 12 }]}>
         <View style={styles.bars}>
           {steps.map((_, i) => (

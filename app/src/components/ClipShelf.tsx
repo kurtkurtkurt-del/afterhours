@@ -9,7 +9,7 @@ import type { Clip } from '@/content/clips';
 import { clipTracks } from '@/content/soundtracks';
 import type { Dj } from '@/content/djs';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 type Props = {
@@ -54,7 +54,7 @@ export default function ClipShelf({ clips, djOf, tonight }: Props) {
     <View>
       <View style={styles.feat}>
         {dj ? <Image source={photoOf(dj)} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
-        <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.94)']} locations={[0.25, 1]} style={StyleSheet.absoluteFill} />
+        <LinearGradient colors={[scrim(0.0), scrim(0.94)]} locations={[0.25, 1]} style={StyleSheet.absoluteFill} />
         <Text style={styles.count}>{`${clips.indexOf(current) + 1} / ${clips.length}`}</Text>
         <Pressable onPress={() => setLiked((l) => ({ ...l, [current.id]: !l[current.id] }))} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('clips.like')} style={styles.heart}>
           <Text style={[styles.heartText, liked[current.id] && styles.heartOn]}>{liked[current.id] ? '♥' : '♡'}</Text>
@@ -150,28 +150,28 @@ const styles = StyleSheet.create({
   pressed: { opacity: 0.7 },
   idle: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta, paddingHorizontal: brand.left },
   feat: { height: 262, marginHorizontal: 16, borderRadius: radius.lg, overflow: 'hidden', backgroundColor: colors.ink2 },
-  count: { position: 'absolute', top: 14, left: 16, fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1, color: colors.paper, backgroundColor: colors.ink, paddingVertical: 3, paddingHorizontal: 9, borderRadius: radius.pill, overflow: 'hidden' },
+  count: { position: 'absolute', top: 14, left: 16, fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1, color: colors.onPhoto, backgroundColor: colors.ink, paddingVertical: 3, paddingHorizontal: 9, borderRadius: radius.pill, overflow: 'hidden' },
   heart: { position: 'absolute', top: 10, right: 16 },
-  heartText: { fontSize: 22, color: colors.paper },
+  heartText: { fontSize: 22, color: colors.onPhoto },
   heartOn: { color: colors.spot },
   featIn: { position: 'absolute', left: 16, right: 16, bottom: 14 },
-  mono: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 0.8, color: colors.mute },
+  mono: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 0.8, color: colors.onPhotoMute },
   featRow: { flexDirection: 'row', alignItems: 'flex-end', gap: 12, marginTop: 3 },
-  featName: { fontFamily: fonts.semibold, fontSize: 28, lineHeight: 30, letterSpacing: -0.8, color: colors.paper },
-  featTitle: { fontFamily: fonts.regular, fontSize: 13, color: colors.mute, marginTop: 2 },
+  featName: { fontFamily: fonts.semibold, fontSize: 28, lineHeight: 30, letterSpacing: -0.8, color: colors.onPhoto },
+  featTitle: { fontFamily: fonts.regular, fontSize: 13, color: colors.onPhotoMute, marginTop: 2 },
   playBtn: { width: 48, height: 48, borderRadius: 24, backgroundColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   playOn: { backgroundColor: colors.spot },
   playText: { fontSize: 15, color: colors.ink },
-  playTextOn: { color: colors.paper },
+  playTextOn: { color: colors.onPhoto },
   wave: { flexDirection: 'row', alignItems: 'center', gap: 2, height: 26, marginTop: 10 },
   bar: { flex: 1, borderRadius: 2, backgroundColor: colors.ink3 },
   barOn: { backgroundColor: colors.spot },
   foot: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: 8, marginTop: 10 },
-  tag: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 0.8, color: colors.spotText, borderWidth: 1, borderColor: colors.spot, borderRadius: radius.pill, paddingVertical: 3, paddingHorizontal: 9, overflow: 'hidden' },
+  tag: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 0.8, color: colors.onPhotoSpot, borderWidth: 1, borderColor: colors.spot, borderRadius: radius.pill, paddingVertical: 3, paddingHorizontal: 9, overflow: 'hidden' },
   sqs: { flexDirection: 'row', alignItems: 'center', gap: 3 },
   sq: { width: 18, height: 18, borderRadius: radius.xs, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
-  sqText: { fontFamily: fonts.medium, fontSize: 9, color: colors.paper },
-  sqNote: { fontFamily: fonts.regular, fontSize: 11, color: colors.meta, marginLeft: 4 },
+  sqText: { fontFamily: fonts.medium, fontSize: 9, color: colors.onPhoto },
+  sqNote: { fontFamily: fonts.regular, fontSize: 11, color: colors.onPhotoMeta, marginLeft: 4 },
   rack: { gap: 14, paddingHorizontal: brand.left, paddingTop: 60, paddingBottom: 8 },
   sleeve: { width: 118 },
   disc: { position: 'absolute', left: 7, top: 3 },

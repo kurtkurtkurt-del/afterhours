@@ -9,7 +9,7 @@ import { useReport } from '@/components/ReportSheet';
 import { dmListen, dmSend, dmThread, dmUnsay, dmWaiting, why, type DmLine } from '@/data/dms';
 import { markDmSeen } from '@/data/messages';
 import { useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // A direct conversation (59_dms.sql): you and one friend. New lines are read every
@@ -77,7 +77,7 @@ export default function DmScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <View style={styles.band}>
         <Text style={styles.title} numberOfLines={1}>{name || t('messages.title')}</Text>
       </View>
@@ -88,7 +88,7 @@ export default function DmScreen() {
             l.mine ? (
               <Pressable key={l.id} onLongPress={() => drop(l)} style={styles.mineWrap}>
                 <View style={styles.bubbleMine}>
-                  <Text style={styles.text}>{l.body}</Text>
+                  <Text style={[styles.text, styles.onSpot]}>{l.body}</Text>
                 </View>
                 <Text style={styles.metaMine}>{time(l.created_at)}</Text>
               </Pressable>
@@ -104,7 +104,7 @@ export default function DmScreen() {
           {waiting.map((w) => (
             <View key={w.id} style={styles.mineWrap}>
               <View style={[styles.bubbleMine, { opacity: 0.5 }]}>
-                <Text style={styles.text}>{w.body}</Text>
+                <Text style={[styles.text, styles.onSpot]}>{w.body}</Text>
               </View>
               <Text style={styles.metaMine}>{t('offline.waiting')}</Text>
             </View>
@@ -125,7 +125,7 @@ export default function DmScreen() {
               style={styles.pillInput}
             />
             <Pressable onPress={send} style={({ pressed }) => [styles.send, !text.trim() && styles.sendOff, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t('groups.chat.send')}>
-              <Text style={styles.sendText}>↑</Text>
+              <Text style={[styles.sendText, styles.onSpot]}>↑</Text>
             </Pressable>
           </View>
         </View>
@@ -136,6 +136,8 @@ export default function DmScreen() {
 }
 
 const styles = StyleSheet.create({
+  // words on a red fill stay light whatever the ground does (try/light)
+  onSpot: { color: colors.onSpot },
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 40, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top, left: brand.left + 40, right: brand.left + 40, textAlign: 'center', fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },

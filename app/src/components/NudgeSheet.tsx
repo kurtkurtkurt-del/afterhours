@@ -89,7 +89,7 @@ export default function NudgeSheet({ open, night, onClose, onSent }: { open: boo
 }
 
 const styles = StyleSheet.create({
-  scrim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.6)' },
+  scrim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
   sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingHorizontal: brand.left, paddingTop: 18, gap: 10 },
   title: { fontFamily: fonts.semibold, fontSize: 20, letterSpacing: -0.5, color: colors.paper },
   hint: { fontFamily: fonts.regular, fontSize: 13, lineHeight: 18, color: colors.mute, marginBottom: 2 },

@@ -15,7 +15,7 @@ import type { Night } from '@/data/deck';
 import { pickPostPhoto, postCreate } from '@/data/posts';
 import { why } from '@/data/staff';
 import { useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, ground, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // A post, camera first (design 2A): the photo fills the screen, the words go on top
@@ -64,9 +64,9 @@ function NewPost() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       {photo ? <Image source={{ uri: photo }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
-      <LinearGradient colors={['rgba(14,13,12,0.55)', 'rgba(14,13,12,0)', 'rgba(14,13,12,0.2)', 'rgba(14,13,12,0.9)']} locations={[0, 0.2, 0.5, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
+      <LinearGradient colors={[ground(0.55), ground(0.0), ground(0.2), ground(0.9)]} locations={[0, 0.2, 0.5, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
 
       <View style={[styles.top, { top: Math.max(insets.top, 20) + 8 }]}>
         <Pressable onPress={() => router.back()} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('word.back')}>
@@ -104,7 +104,7 @@ function NewPost() {
               <Text style={styles.lineText}>{photo ? t('posts.photo.change') : t('posts.photo')}</Text>
             </Pressable>
             <Pressable onPress={busy ? undefined : share} style={({ pressed }) => [styles.share, pressed && styles.pressed]} accessibilityRole="button">
-              <Text style={styles.shareText}>{busy ? '…' : t('posts.share')}</Text>
+              <Text style={[styles.shareText, styles.onSpot]}>{busy ? '…' : t('posts.share')}</Text>
             </Pressable>
           </View>
           <Text style={styles.who}>{t('posts.who')}</Text>
@@ -124,6 +124,8 @@ function NewPost() {
 }
 
 const styles = StyleSheet.create({
+  // words on a red fill stay light whatever the ground does (try/light)
+  onSpot: { color: colors.onSpot },
   root: { flex: 1, backgroundColor: colors.ink },
   gap: { marginTop: 24 },
   top: { position: 'absolute', left: brand.left, right: brand.left, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', zIndex: 2, gap: 16 },

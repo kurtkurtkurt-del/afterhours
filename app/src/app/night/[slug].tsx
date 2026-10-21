@@ -23,7 +23,7 @@ import { useReport } from '@/components/ReportSheet';
 import { commentCode, commentErrors, fetchComments, postComment, whenText, type Comment } from '@/data/comments';
 import { isSyncedBody, upperData, useLang } from '@/i18n';
 import NudgeSheet from '@/components/NudgeSheet';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, ground, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 import PillAction from '@/components/PillAction';
 
@@ -209,7 +209,7 @@ export default function NightScreen() {
   );
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       {night ? null : band}
       {night ? (
         <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
@@ -447,7 +447,7 @@ const styles = StyleSheet.create({
   stubAction: { padding: 12, paddingTop: 10, gap: 8 },
   stubNote: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.2, color: colors.mute, textAlign: 'center' },
   // the question on return from the ticket page
-  askDim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.6)' },
+  askDim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
   askSheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingHorizontal: brand.left, paddingTop: 20, gap: 14 },
   askTitle: { fontFamily: fonts.semibold, fontSize: 22, letterSpacing: -0.5, color: colors.paper },
   askNote: { fontFamily: fonts.regular, fontSize: 13, lineHeight: 18, color: colors.mute },
@@ -457,7 +457,7 @@ const styles = StyleSheet.create({
   actions: { flexDirection: 'row', gap: 10 },
   text: { fontFamily: fonts.regular, fontSize: 16, lineHeight: 24, color: colors.paper2, opacity: 0.9 },
   nudgeRow: { flexDirection: 'row' },
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.94)', alignItems: 'center', justifyContent: 'center', gap: 18 },
+  dim: { flex: 1, backgroundColor: ground(0.94), alignItems: 'center', justifyContent: 'center', gap: 18 },
   cardLabel: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.spot },
   talk: { marginTop: 28, paddingTop: 18, borderTopWidth: 1, borderTopColor: colors.ink3, gap: 10 },
   topic: { gap: 4, paddingTop: 8 },

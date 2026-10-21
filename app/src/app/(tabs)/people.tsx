@@ -32,7 +32,7 @@ import Avatar from '@/components/Avatar';
 import { useLocalCity } from '@/data/here';
 import { sparkOf } from '@/content/sparks';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const fallbackPhoto = require('../../../assets/intro/concert.jpg');
@@ -347,7 +347,7 @@ export default function PeopleScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <View style={styles.band}>
         <Text style={styles.title}>{t('connect.title')}</Text>
         <SoundCorner />
@@ -376,11 +376,11 @@ export default function PeopleScreen() {
                   return (
                     <Pressable key={g.id} onPress={() => router.push({ pathname: '/groups/[id]', params: { id: g.id } })} style={({ pressed }) => [styles.cover, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={g.name}>
                       {coverSource(g.cover_path) ? <Image source={coverSource(g.cover_path)!} style={StyleSheet.absoluteFill} contentFit="cover" /> : <View style={[StyleSheet.absoluteFill, { backgroundColor: GROUP_COLORS[g.color], opacity: 0.35 }]} />}
-                      <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.92)']} locations={[0.3, 1]} style={StyleSheet.absoluteFill} />
+                      <LinearGradient colors={[scrim(0.0), scrim(0.92)]} locations={[0.3, 1]} style={StyleSheet.absoluteFill} />
                       <View style={styles.coverBadge}><GroupBadge emoji={g.emoji} color={g.color} cover={null} size={28} /></View>
                       <View style={styles.coverText}>
                         <Text style={styles.coverName} numberOfLines={1}>{g.name.toLowerCase()}</Text>
-                        <Text style={[styles.coverLine, (g.live > 0 || !!st?.round) && styles.redText]} numberOfLines={1}>{g.live > 0 ? t('groups.liveNow', { n: g.live }) : line}</Text>
+                        <Text style={[styles.coverLine, (g.live > 0 || !!st?.round) && styles.redOnPhoto]} numberOfLines={1}>{g.live > 0 ? t('groups.liveNow', { n: g.live }) : line}</Text>
                       </View>
                     </Pressable>
                   );
@@ -417,7 +417,7 @@ export default function PeopleScreen() {
                       {item.kind === 'plan' ? (
                         <Pressable onPress={() => router.push({ pathname: '/groups/[id]', params: { id: item.g.id, tab: 'plan' } })} style={[styles.hero, { width: slideW, height: slideW * 1.08 }]}>
                           <Image source={item.p.image_url ? { uri: item.p.image_url } : fallbackPhoto} style={StyleSheet.absoluteFill} contentFit="cover" />
-                          <LinearGradient colors={['rgba(14,13,12,0.55)', 'rgba(14,13,12,0)', 'rgba(14,13,12,0.55)', colors.ink]} locations={[0, 0.25, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
+                          <LinearGradient colors={[scrim(0.55), scrim(0.0), scrim(0.55), colors.poster]} locations={[0, 0.25, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
                           <View style={styles.planHead}>
                             <GroupBadge emoji={item.g.emoji} color={item.g.color} cover={item.g.cover_path} size={40} />
                             <View style={styles.planHeadText}>
@@ -432,7 +432,7 @@ export default function PeopleScreen() {
                               const inNames = [...others.map((x) => x.name ?? ''), ...(mineIn ? [t('posts.you')] : [])];
                               return (
                                 <>
-                                  <Text style={[styles.heroMeta, styles.redText]} numberOfLines={1}>{up(t('groups.card.in', { n: inNames.length, m: item.p.people.length }))}</Text>
+                                  <Text style={[styles.heroMeta, styles.redOnPhoto]} numberOfLines={1}>{up(t('groups.card.in', { n: inNames.length, m: item.p.people.length }))}</Text>
                                   <Text style={styles.heroTitle} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>{item.p.title.toLowerCase()}</Text>
                                   <Text style={styles.heroMeta} numberOfLines={1}>{[item.p.venue_name, dayLabel(item.p.starts_at), item.p.starts_at?.slice(11, 16)].filter(Boolean).map((x) => upperData(String(x))).join(' · ')}</Text>
                                   <View style={styles.planRow}>
@@ -460,7 +460,7 @@ export default function PeopleScreen() {
                       ) : item.kind === 'round' ? (
                         <Pressable onPress={() => router.push({ pathname: '/groups/[id]', params: { id: item.g.id, tab: 'plan' } })} style={[styles.hero, { width: slideW, height: slideW * 1.08 }]}>
                           <Image source={item.r.options.find((o) => o.image_url)?.image_url ? { uri: item.r.options.find((o) => o.image_url)!.image_url! } : fallbackPhoto} style={StyleSheet.absoluteFill} contentFit="cover" />
-                          <LinearGradient colors={['rgba(14,13,12,0.55)', 'rgba(14,13,12,0)', 'rgba(14,13,12,0.55)', colors.ink]} locations={[0, 0.25, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
+                          <LinearGradient colors={[scrim(0.55), scrim(0.0), scrim(0.55), colors.poster]} locations={[0, 0.25, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
                           <View style={styles.planHead}>
                             <GroupBadge emoji={item.g.emoji} color={item.g.color} cover={item.g.cover_path} size={40} />
                             <View style={styles.planHeadText}>
@@ -469,7 +469,7 @@ export default function PeopleScreen() {
                             </View>
                           </View>
                           <View style={styles.heroText}>
-                            <Text style={[styles.heroMeta, styles.redText]} numberOfLines={1}>{up(t('groups.vote.voted', { n: item.r.voted, m: item.members }))} · {up(t('groups.card.closes', { at: dayLabel(item.r.closes_at) }))}</Text>
+                            <Text style={[styles.heroMeta, styles.redOnPhoto]} numberOfLines={1}>{up(t('groups.vote.voted', { n: item.r.voted, m: item.members }))} · {up(t('groups.card.closes', { at: dayLabel(item.r.closes_at) }))}</Text>
                             <Text style={styles.heroTitle} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>{t('groups.card.nights', { n: item.r.options.length })}</Text>
                             <Text style={styles.heroMeta} numberOfLines={1}>{item.r.options.map((o) => o.title.toLowerCase()).join(' · ')}</Text>
                             <View style={styles.planRow}>
@@ -483,7 +483,7 @@ export default function PeopleScreen() {
                       ) : item.kind === 'night' ? (
                         <Pressable onPress={() => item.n.slug && router.push(`/night/${item.n.slug}`)} style={[styles.hero, { width: slideW, height: slideW * 1.08 }]}>
                           <Image source={(item.n as YoursNight & { photo?: number }).photo ?? (item.n.image ? { uri: item.n.image } : fallbackPhoto)} style={StyleSheet.absoluteFill} contentFit="cover" />
-                          <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.55)', colors.ink]} locations={[0.3, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
+                          <LinearGradient colors={[scrim(0.0), scrim(0.55), colors.poster]} locations={[0.3, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
                           {matched.has(item.n.id) ? (
                             <View style={styles.badge}>
                               <Text style={styles.badgeText}>{up(t('yours.match'))}</Text>
@@ -537,7 +537,7 @@ export default function PeopleScreen() {
                       ) : (
                         <Pressable onPress={() => router.push(`/spark/${item.s.kind}?invite=${item.s.id}`)} style={[styles.hero, styles.heroGold, { width: slideW, height: slideW * 1.08 }]}>
                           <Image source={sparkOf(item.s.kind).photo} style={StyleSheet.absoluteFill} contentFit="cover" />
-                          <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.55)', colors.ink]} locations={[0.3, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
+                          <LinearGradient colors={[scrim(0.0), scrim(0.55), colors.poster]} locations={[0.3, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
                           <View style={[styles.badge, styles.badgeGold]}>
                             <Text style={styles.badgeText}>{upperData('spark')}</Text>
                           </View>
@@ -690,19 +690,19 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 44, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
-  groupsLine: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 12, paddingHorizontal: 12, marginTop: 12, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md },
-  groupsHead: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', marginTop: 4 },
+  groupsLine: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 12, paddingHorizontal: 12, marginTop: 12, marginHorizontal: brand.left, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md },
+  groupsHead: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', marginTop: 4, paddingHorizontal: brand.left },
   groupsTitle: { fontFamily: fonts.medium, fontSize: 17, letterSpacing: -0.3, color: colors.paper },
   groupsAll: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
   // smaller than the page, air left and right (owner, 12.10.2026)
-  covers: { flexDirection: 'row', gap: 10, marginTop: 10, marginHorizontal: 18 },
+  covers: { flexDirection: 'row', gap: 10, marginTop: 10, marginHorizontal: brand.left },
   cover: { flex: 1, height: 126, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink3 },
   coverNew: { alignItems: 'center', justifyContent: 'center', backgroundColor: 'transparent', borderWidth: 1, borderStyle: 'dashed', borderColor: colors.mute },
   coverPlus: { fontFamily: fonts.medium, fontSize: 28, color: colors.mute },
   coverBadge: { position: 'absolute', left: 8, top: 8 },
   coverText: { position: 'absolute', left: 10, right: 10, bottom: 9 },
-  coverName: { fontFamily: fonts.semibold, fontSize: 14, letterSpacing: -0.2, color: colors.paper },
-  coverLine: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, color: colors.mute, marginTop: 3, textTransform: 'uppercase' },
+  coverName: { fontFamily: fonts.semibold, fontSize: 14, letterSpacing: -0.2, color: colors.onPhoto },
+  coverLine: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, color: colors.onPhotoMute, marginTop: 3, textTransform: 'uppercase' },
   groupFaces: { flexDirection: 'row', minWidth: 28 },
   groupOverlap: { marginLeft: -10 },
   groupsText: { flex: 1, fontFamily: fonts.regular, fontSize: 13, color: colors.mute },
@@ -710,12 +710,13 @@ const styles = StyleSheet.create({
   // a group's plan or vote on the gallery: the badge and the name on top
   planHead: { position: 'absolute', top: 14, left: 14, right: 14, flexDirection: 'row', alignItems: 'center', gap: 10 },
   planHeadText: { flex: 1, gap: 1 },
-  planGroup: { fontFamily: fonts.semibold, fontSize: 16, letterSpacing: -0.3, color: colors.paper },
-  planMono: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.mute },
+  planGroup: { fontFamily: fonts.semibold, fontSize: 16, letterSpacing: -0.3, color: colors.onPhoto },
+  planMono: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.onPhotoMute },
   planRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginTop: 8 },
   body: { paddingTop: brand.top + 56 },
   pressed: { opacity: 0.6 },
   redText: { color: colors.spotText },
+  redOnPhoto: { color: colors.onPhotoSpot },
   goldText: { color: GOLD },
 
   head: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: brand.left, marginTop: 30, marginBottom: 12 },
@@ -752,8 +753,8 @@ const styles = StyleSheet.create({
   hero: { borderRadius: radius.lg, overflow: 'hidden', backgroundColor: colors.ink2 },
   heroWait: { alignSelf: 'center', backgroundColor: '#1a1917' },
   heroText: { position: 'absolute', left: 16, right: 16, bottom: 16, gap: 6 },
-  heroMeta: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1.2, color: colors.paper },
-  heroTitle: { fontFamily: fonts.logo, fontSize: 44, lineHeight: 40, letterSpacing: -1, color: colors.spotText, marginBottom: 4 },
+  heroMeta: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1.2, color: colors.onPhoto },
+  heroTitle: { fontFamily: fonts.logo, fontSize: 44, lineHeight: 40, letterSpacing: -1, color: colors.onPhotoSpot, marginBottom: 4 },
   kept: { flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 4, marginBottom: 2 },
   keptFaces: { flexDirection: 'row', alignItems: 'center' },
   keptFace: { width: KEPT + 4, height: KEPT + 4, borderRadius: radius.sm, overflow: 'hidden', borderWidth: 2, borderColor: colors.ink, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.ink2 },
@@ -762,15 +763,15 @@ const styles = StyleSheet.create({
   keptMore: { backgroundColor: colors.paper },
   keptMoreText: { fontFamily: fonts.semibold, fontSize: 13, color: colors.ink },
   keptText: { flex: 1, gap: 2 },
-  keptNames: { fontFamily: fonts.semibold, fontSize: 18, letterSpacing: -0.4, color: colors.paper },
-  keptWord: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.spotText },
-  avNote: { flexShrink: 1, fontFamily: fonts.regular, fontSize: 12, color: colors.paper, marginLeft: 6 },
+  keptNames: { fontFamily: fonts.semibold, fontSize: 18, letterSpacing: -0.4, color: colors.onPhoto },
+  keptWord: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.onPhotoSpot },
+  avNote: { flexShrink: 1, fontFamily: fonts.regular, fontSize: 12, color: colors.onPhoto, marginLeft: 6 },
   actions: { flexDirection: 'row', gap: 8, marginTop: 8 },
   btnRed: { paddingVertical: 10, paddingHorizontal: 16, backgroundColor: colors.spot, borderRadius: radius.pill },
-  btnLine: { paddingVertical: 9, paddingHorizontal: 15, borderWidth: 1, borderColor: colors.paper, backgroundColor: 'rgba(14,13,12,0.6)', borderRadius: radius.pill },
+  btnLine: { paddingVertical: 9, paddingHorizontal: 15, borderWidth: 1, borderColor: colors.onPhoto, backgroundColor: scrim(0.45), borderRadius: radius.pill },
   btnSmall: { paddingVertical: 7, paddingHorizontal: 12 },
-  btnTextRed: { fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.1, color: colors.ink },
-  btnTextLine: { fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.1, color: colors.paper },
+  btnTextRed: { fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.1, color: colors.onSpot },
+  btnTextLine: { fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.1, color: colors.onPhoto },
 
   page: { paddingHorizontal: brand.left },
   heroGold: { borderWidth: 1.5, borderColor: GOLD },

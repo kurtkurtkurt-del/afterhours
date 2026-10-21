@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   burst: { alignItems: 'center', justifyContent: 'center' },
   likes: postStyles.likes,
   wrap: { flex: 1, justifyContent: 'flex-end' },
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.55)' },
+  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
   sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingTop: 8 },
   grab: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: colors.ink3, marginBottom: 10 },
   title: { fontFamily: fonts.semibold, fontSize: 15, color: colors.paper, textAlign: 'center', marginBottom: 8 },

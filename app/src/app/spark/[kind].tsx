@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Tips from '@/components/Tips';
 import { KeyboardAvoidingView, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Image } from 'expo-image';
+import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -19,7 +20,7 @@ import { useHere } from '@/data/here';
 import * as Location from 'expo-location';
 import { sparkAnswer, sparkAudience, sparkCancel, sparkCreate, sparkGet, sparkPeople, SparksNotReady, type Audience, type Reach, type SeenSpark, type SparkPerson } from '@/data/sparks';
 import { upperData, useLang, type Key } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 import PillAction from '@/components/PillAction';
 
@@ -56,7 +57,7 @@ export default function SparkScreen() {
   );
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
         <PullDownScroll header={band} contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
           {inviteId ? (
@@ -76,11 +77,11 @@ function Hero({ spark, title, width }: { spark: Spark; title: string; width: num
   return (
     <View style={[styles.hero, { height: width * 1.1 }]}>
       <Image source={spark.photo} style={styles.heroPhoto} contentFit="cover" />
-      <View style={styles.heroShade} />
+      <LinearGradient colors={[scrim(0), scrim(0.82)]} style={styles.heroShade} pointerEvents="none" />
       <View style={styles.heroText}>
-        <Text style={styles.mono}>{up(t(spark.label))} · {upperData('spark')}</Text>
+        <Text style={styles.heroMono}>{up(t(spark.label))} · {upperData('spark')}</Text>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.mono}>{up(t('spark.kicker'))}</Text>
+        <Text style={styles.heroMono}>{up(t('spark.kicker'))}</Text>
       </View>
     </View>
   );
@@ -355,10 +356,11 @@ const styles = StyleSheet.create({
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, zIndex: 2 },
   hero: { backgroundColor: colors.ink2, overflow: 'hidden', borderBottomLeftRadius: radius.lg, borderBottomRightRadius: radius.lg },
   heroPhoto: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
-  heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 170, backgroundColor: colors.ink, opacity: 0.78 },
+  heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 230 },
   heroText: { position: 'absolute', left: brand.left, right: brand.left, bottom: 18, gap: 6 },
-  title: { fontFamily: fonts.medium, fontSize: 34, lineHeight: 36, letterSpacing: -1.1, color: colors.paper },
+  title: { fontFamily: fonts.medium, fontSize: 34, lineHeight: 36, letterSpacing: -1.1, color: colors.onPhoto },
   mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
+  heroMono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.onPhotoMute },
   ok: { color: colors.spotText },
   body: { paddingHorizontal: brand.left, paddingTop: 18, gap: 22 },
   actions: { flexDirection: 'row', gap: 10 },

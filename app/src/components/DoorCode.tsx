@@ -60,7 +60,7 @@ export default function DoorCode({ open, title, error, onSubmit, onClose }: {
               <Text style={styles.keyText}>␣</Text>
             </Pressable>
             <Pressable onPress={() => onSubmit(code)} style={({ pressed }) => [styles.key, styles.enter, pressed && styles.pressed]} accessibilityLabel={t('door.enter')}>
-              <Text style={styles.keyText}>↵</Text>
+              <Text style={[styles.keyText, styles.onSpot]}>↵</Text>
             </Pressable>
           </View>
         </Animated.View>
@@ -70,8 +70,10 @@ export default function DoorCode({ open, title, error, onSubmit, onClose }: {
 }
 
 const styles = StyleSheet.create({
+  // words on a red fill stay light whatever the ground does (try/light)
+  onSpot: { color: colors.onSpot },
   wrap: { flex: 1 },
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.7)' },
+  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
   panel: { backgroundColor: '#161412', borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderWidth: 1, borderBottomWidth: 0, borderColor: colors.ink3, paddingHorizontal: 22, paddingTop: 22, alignItems: 'center' },
   title: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 1.6, color: colors.mute },
   boxes: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 8, marginTop: 18, minHeight: 52 },

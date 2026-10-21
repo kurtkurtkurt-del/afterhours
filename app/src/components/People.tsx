@@ -232,7 +232,7 @@ export function SuggestedInRow() {
                   accessibilityLabel={t('people.add')}
                   style={[styles.badge, asked && styles.badgeDone]}
                 >
-                  <Text style={[styles.badgeText, asked && styles.badgeTextDone]}>{asked ? '✓' : '+'}</Text>
+                  <Text style={[styles.badgeText, !asked && styles.onSpot, asked && styles.badgeTextDone]}>{asked ? '✓' : '+'}</Text>
                 </Pressable>
                 <Text style={styles.miniName} numberOfLines={1}>{name}</Text>
               </View>
@@ -245,6 +245,8 @@ export function SuggestedInRow() {
 }
 
 const styles = StyleSheet.create({
+  // words on a red fill stay light whatever the ground does (try/light)
+  onSpot: { color: colors.onSpot },
   search: { marginHorizontal: brand.left, marginBottom: 18, height: 44, borderRadius: radius.pill, borderWidth: 1, borderColor: colors.ink3, backgroundColor: colors.ink, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 14, gap: 10 },
   searchInput: { flex: 1, height: 44, fontFamily: fonts.regular, fontSize: 15, letterSpacing: -0.1, color: colors.paper, paddingVertical: 0 },
   clear: { fontFamily: fonts.regular, fontSize: 22, lineHeight: 24, color: colors.mute },

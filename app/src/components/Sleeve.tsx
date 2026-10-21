@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import Svg, { Circle, Defs, LinearGradient as SvgGradient, Path, Stop } from 'react-native-svg';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, scrim } from '@/theme/tokens';
 
 type Props = {
   width: number; // the whole sleeve, cover and record
@@ -72,12 +72,13 @@ export default function Sleeve({ width, photo, name, meta, disc, city, empty, co
         ) : (
           (empty ?? <Text style={styles.initial}>{name.charAt(0)}</Text>)
         )}
-        <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.9)']} style={styles.shade} pointerEvents="none" />
+        {/* the dark scrim only over a real photo; an empty cover keeps the ground's own words */}
+        {photo ? <LinearGradient colors={[scrim(0.0), scrim(0.9)]} style={styles.shade} pointerEvents="none" /> : null}
         <View style={styles.who} pointerEvents="none">
-          <Text style={styles.name} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>
+          <Text style={[styles.name, !photo && styles.nameBare]} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>
             {name.replace(' ', '\n')}
           </Text>
-          <Text style={styles.meta} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.8}>
+          <Text style={[styles.meta, !photo && styles.metaBare]} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.8}>
             {meta}
           </Text>
         </View>
@@ -100,11 +101,11 @@ const LABELS: { match: RegExp; name: string; draw: (w: number) => ReactNode }[] 
     draw: (w) => (
       <Svg width={w} height={w * 0.42} viewBox="0 0 120 50">
         {/* the far range, pale */}
-        <Path d="M0 50 L0 30 L8 26 L14 28 L22 21 L28 24 L34 19 L42 23 L50 18 L58 22 L66 17 L74 21 L82 16 L90 22 L98 19 L106 23 L114 20 L120 22 L120 50 Z" fill={colors.paper} opacity={0.35} />
+        <Path d="M0 50 L0 30 L8 26 L14 28 L22 21 L28 24 L34 19 L42 23 L50 18 L58 22 L66 17 L74 21 L82 16 L90 22 L98 19 L106 23 L114 20 L120 22 L120 50 Z" fill={colors.onPhoto} opacity={0.35} />
         {/* the near range in rock, the highest summit a little right of the middle */}
-        <Path d="M0 50 L0 38 L6 35 L10 36 L16 30 L20 31 L26 24 L29 26 L33 20 L36 23 L39 21 L44 29 L48 27 L54 33 L60 30 L64 32 L70 22 L73 25 L77 14 L80 18 L83 16 L87 24 L92 22 L97 29 L103 27 L110 33 L116 31 L120 34 L120 50 Z" fill={colors.ink} />
+        <Path d="M0 50 L0 38 L6 35 L10 36 L16 30 L20 31 L26 24 L29 26 L33 20 L36 23 L39 21 L44 29 L48 27 L54 33 L60 30 L64 32 L70 22 L73 25 L77 14 L80 18 L83 16 L87 24 L92 22 L97 29 L103 27 L110 33 L116 31 L120 34 L120 50 Z" fill={colors.poster} />
         {/* snow on the summits */}
-        <Path d="M30.5 24.5 L33 20 L36 23 L34.6 22.4 L33.2 24 L32 22.6 Z M74.5 19.6 L77 14 L80 18 L83 16 L85.2 20.4 L83 19.4 L81 21 L79.5 19.2 L77.6 21.2 L76 19 Z M68.6 25.2 L70 22 L71.8 24.2 L70.4 23.6 Z M24.7 26.2 L26 24 L27.6 25.4 Z M90.6 23.8 L92 22 L93.6 24.2 L92.2 23.4 Z" fill={colors.paper} />
+        <Path d="M30.5 24.5 L33 20 L36 23 L34.6 22.4 L33.2 24 L32 22.6 Z M74.5 19.6 L77 14 L80 18 L83 16 L85.2 20.4 L83 19.4 L81 21 L79.5 19.2 L77.6 21.2 L76 19 Z M68.6 25.2 L70 22 L71.8 24.2 L70.4 23.6 Z M24.7 26.2 L26 24 L27.6 25.4 Z M90.6 23.8 L92 22 L93.6 24.2 L92.2 23.4 Z" fill={colors.onPhoto} />
       </Svg>
     ),
   },
@@ -115,13 +116,15 @@ const styles = StyleSheet.create({
   disc: { position: 'absolute', alignItems: 'center', justifyContent: 'center' },
   label: { backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' },
   landscape: { position: 'absolute', left: 0, right: 0, bottom: 0 },
-  labelText: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.paper },
-  cityText: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1.4, color: colors.paper },
-  cover: { borderRadius: radius.md, overflow: 'hidden', backgroundColor: '#1f1d1a', alignItems: 'center', justifyContent: 'center' },
+  labelText: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.onSpot },
+  cityText: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1.4, color: colors.onSpot },
+  cover: { borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.sleeve, alignItems: 'center', justifyContent: 'center' },
   initial: { fontFamily: fonts.logo, fontSize: 120, color: colors.ink2 },
   shade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: '60%' },
   who: { position: 'absolute', left: 16, right: 16, bottom: 14 },
-  name: { fontFamily: fonts.logo, fontSize: 46, lineHeight: 44, letterSpacing: -1, color: colors.paper },
-  meta: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.mute, marginTop: 10 },
+  name: { fontFamily: fonts.logo, fontSize: 46, lineHeight: 44, letterSpacing: -1, color: colors.onPhoto },
+  meta: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.onPhotoMute, marginTop: 10 },
+  nameBare: { color: colors.paper },
+  metaBare: { color: colors.mute },
   corner: { position: 'absolute', top: 12, right: 12 },
 });

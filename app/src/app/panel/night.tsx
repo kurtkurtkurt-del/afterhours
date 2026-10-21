@@ -6,7 +6,7 @@ import PickerSheet from '@/components/PickerSheet';
 import { useAuth } from '@/auth/AuthContext';
 import { pickPostPhoto } from '@/data/posts';
 import { supabase } from '@/lib/supabase';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, ground } from '@/theme/tokens';
 import { router, useLocalSearchParams } from 'expo-router';
 import Button from '@/components/Button';
 import StaffPage, { Choice, Field, Quiet, Said, staffStyles } from '@/components/StaffPage';
@@ -188,13 +188,13 @@ export default function NightForm() {
 
 const styles = StyleSheet.create({
   poster: { aspectRatio: 3 / 4, borderRadius: radius.sm, overflow: 'hidden', backgroundColor: colors.ink3, justifyContent: 'space-between', padding: 18, marginTop: 4 },
-  posterVeil: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(14,13,12,0.45)' },
+  posterVeil: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: ground(0.45) },
   posterPhoto: { alignSelf: 'flex-start', borderWidth: 1, borderStyle: 'dashed', borderColor: colors.mute, paddingHorizontal: 10, paddingVertical: 6 },
-  posterMono: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.paper },
+  posterMono: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.onPhoto },
   posterBottom: { gap: 8 },
   posterTitle: { fontFamily: fonts.logo, fontSize: 44, lineHeight: 44, color: colors.paper, borderBottomWidth: 1, borderStyle: 'dashed', borderBottomColor: colors.mute, paddingVertical: 0, textTransform: 'uppercase' },
   posterLine: { flexDirection: 'row', alignItems: 'center', gap: 8, borderBottomWidth: 1, borderStyle: 'dashed', borderBottomColor: colors.mute, paddingBottom: 4 },
-  posterMonoInput: { fontFamily: fonts.jet, fontSize: 13, letterSpacing: 1.4, color: colors.paper, paddingVertical: 0 },
+  posterMonoInput: { fontFamily: fonts.jet, fontSize: 13, letterSpacing: 1.4, color: colors.onPhoto, paddingVertical: 0 },
   posterDate: { minWidth: 110 },
   posterTime: { minWidth: 56 },
   posterEmpty: { color: 'rgba(243,241,236,0.4)' },

@@ -11,7 +11,7 @@ import SoundCorner from '@/components/SoundCorner';
 import { useCities } from '@/data/cities';
 import { chooseCity } from '@/data/here';
 import { useT } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // City picker. The chosen city is stored, the photo fades out, and the app opens.
@@ -36,7 +36,7 @@ export default function ExploreScreen() {
   if (intro) {
     return (
       <View style={styles.root}>
-        <StatusBar style="light" />
+        <StatusBar style={barStyle} />
         <BackButton />
         <Onboarding onDone={finishIntro} />
       </View>
@@ -45,7 +45,7 @@ export default function ExploreScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <BackButton />
       <SoundCorner />
       <ScrollView

@@ -18,7 +18,7 @@ import { saveAbout, saveLinks, useProfile, useProfileExtra, type LinkKind } from
 import { LINKS } from '@/content/links';
 import { handleStatus, saveProfile } from '@/data/settings';
 import { useLang, type Key } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const BIO = 300;
@@ -116,7 +116,7 @@ export default function ProfileScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <EdgeBack />
       <KeyboardAvoidingView behavior="padding" style={styles.fill}>
         <PullDownScroll

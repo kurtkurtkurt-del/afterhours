@@ -92,6 +92,6 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   web: { flex: 1, backgroundColor: colors.ink },
   skip: { position: 'absolute', right: brand.left, backgroundColor: 'rgba(14,13,12,0.6)', borderRadius: radius.pill, paddingVertical: 6, paddingHorizontal: 14 },
-  skipText: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper },
+  skipText: { fontFamily: fonts.regular, fontSize: 13, color: colors.onPhoto },
   pressed: { opacity: 0.6 },
 });

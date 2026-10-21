@@ -32,7 +32,7 @@ import { isStaff, useRole } from '@/data/staff';
 import { useTabReset } from '@/hooks/useTabReset';
 import type { NightCardData } from '@/content/cardsgen';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, ground, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // Card width as a share of the screen; each card leaves this much of the previous one visible.
@@ -145,7 +145,7 @@ export default function AccountScreen() {
 
   return (
     <View style={styles.root} onLayout={(e) => setRootH(e.nativeEvent.layout.height)}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <ScrollView ref={page} showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: tabBottom }} style={styles.page}>
         <View style={styles.top} onLayout={(e) => setAboveH(e.nativeEvent.layout.height)}>
           <Text style={styles.title} pointerEvents="none">
@@ -257,11 +257,11 @@ export default function AccountScreen() {
                   {upcoming.map((n) => (
                     <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.poster, pressed && styles.pressed]} accessibilityRole="button">
                       {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
-                      <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.95)']} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
+                      <LinearGradient colors={[scrim(0.0), scrim(0.95)]} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
                       <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
                       <View style={styles.posterText}>
                         <Text style={styles.posterTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
-                        <Text style={[styles.posterMono, ticketed.has(n.slug) && styles.underRed]} numberOfLines={1}>
+                        <Text style={[styles.posterMono, ticketed.has(n.slug) && styles.posterRed]} numberOfLines={1}>
                           {ticketed.has(n.slug) ? up(t('night.ticketGot')) : upperData(n.venue_name ?? n.city_name)}
                         </Text>
                       </View>
@@ -397,10 +397,11 @@ const styles = StyleSheet.create({
   promptTight: { marginTop: 0 },
   rail: { gap: 8, paddingRight: brand.left },
   poster: { width: 108, height: 140, borderRadius: radius.sm, overflow: 'hidden', backgroundColor: colors.ink3 },
-  posterDate: { position: 'absolute', left: 7, top: 7, backgroundColor: colors.ink, color: colors.paper, fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, paddingHorizontal: 6, paddingVertical: 4, borderRadius: 5, overflow: 'hidden' },
+  posterDate: { position: 'absolute', left: 7, top: 7, backgroundColor: colors.ink, color: colors.onPhoto, fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, paddingHorizontal: 6, paddingVertical: 4, borderRadius: 5, overflow: 'hidden' },
   posterText: { position: 'absolute', left: 8, right: 8, bottom: 7 },
-  posterTitle: { fontFamily: fonts.semibold, fontSize: 12.5, lineHeight: 14, letterSpacing: -0.2, color: colors.paper },
-  posterMono: { fontFamily: fonts.jet, fontSize: 7.5, letterSpacing: 1, color: colors.mute, marginTop: 3 },
+  posterTitle: { fontFamily: fonts.semibold, fontSize: 12.5, lineHeight: 14, letterSpacing: -0.2, color: colors.onPhoto },
+  posterMono: { fontFamily: fonts.jet, fontSize: 7.5, letterSpacing: 1, color: colors.onPhotoMute, marginTop: 3 },
+  posterRed: { color: colors.onPhotoSpot },
   spark: { flexDirection: 'row', alignItems: 'center', gap: 10, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.sm, padding: 9, marginTop: 6 },
   sparkFirst: { borderColor: GOLD, marginTop: 0 },
   sparkPhoto: { width: 36, height: 46, borderRadius: 5, backgroundColor: colors.ink3 },
@@ -441,7 +442,7 @@ const styles = StyleSheet.create({
   card: {},
   rule: { borderTopWidth: 1, borderTopColor: colors.rule, marginHorizontal: brand.left, marginTop: 14, marginBottom: 12 },
   pressed: { opacity: 0.7 },
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.92)', alignItems: 'center', justifyContent: 'center', gap: 18 },
+  dim: { flex: 1, backgroundColor: ground(0.92), alignItems: 'center', justifyContent: 'center', gap: 18 },
   roomLink: { alignItems: 'center', gap: 4, marginTop: 6, paddingHorizontal: 22, paddingVertical: 10, borderWidth: 1, borderColor: colors.spot, borderRadius: radius.md },
   roomLinkText: { fontFamily: fonts.logo, fontSize: 26, letterSpacing: -0.5, color: colors.spotText },
   roomLinkSub: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.meta },

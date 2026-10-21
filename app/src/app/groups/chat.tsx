@@ -9,7 +9,7 @@ import { Said } from '@/components/StaffPage';
 import { groupGet, groupSay, groupThread, groupUnsay, why, type Line } from '@/data/groups';
 import { markGroupSeen } from '@/data/messages';
 import { useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // The group's thread: what members wrote, and the group's own moments (a plan was
@@ -69,7 +69,7 @@ export default function GroupChat() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <View style={styles.band}>
         <Text style={styles.title} numberOfLines={1}>{`${name} · ${t('groups.chat')}`}</Text>
       </View>
@@ -90,7 +90,7 @@ export default function GroupChat() {
             return l.mine ? (
               <Pressable key={l.id} onLongPress={() => drop(l)} style={styles.mineWrap}>
                 <View style={styles.bubbleMine}>
-                  <Text style={styles.text}>{l.body}</Text>
+                  <Text style={[styles.text, styles.onSpot]}>{l.body}</Text>
                 </View>
                 <Text style={styles.metaMine}>{time(l.created_at)}</Text>
               </Pressable>
@@ -124,7 +124,7 @@ export default function GroupChat() {
               style={styles.pillInput}
             />
             <Pressable onPress={send} style={({ pressed }) => [styles.send, !text.trim() && styles.sendOff, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t('groups.chat.send')}>
-              <Text style={styles.sendText}>↑</Text>
+              <Text style={[styles.sendText, styles.onSpot]}>↑</Text>
             </Pressable>
           </View>
         </View>
@@ -136,6 +136,8 @@ export default function GroupChat() {
 }
 
 const styles = StyleSheet.create({
+  // words on a red fill stay light whatever the ground does (try/light)
+  onSpot: { color: colors.onSpot },
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 40, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top, left: brand.left + 40, right: brand.left + 40, textAlign: 'center', fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },

@@ -30,8 +30,9 @@ import { pushStatus, registerPush, type PushStatus } from '@/lib/push';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { genres, type Genre } from '@/content/music';
 import { langNames, langs, upperData, useLang, type Lang } from '@/i18n';
-import { ACCENTS, colors, fonts, radius, type AccentId } from '@/theme/tokens';
+import { ACCENTS, colors, fonts, radius, type AccentId, barStyle } from '@/theme/tokens';
 import { chooseAccent, currentAccent } from '@/data/accent';
+import { chooseTheme, currentTheme } from '@/data/theme';
 import { brand } from '@/theme/layout';
 
 // Settings home: the profile card (photo, name, "edit"), then one row per group —
@@ -93,7 +94,7 @@ export default function SettingsScreen() {
   const { photo, broken } = usePhoto();
   const { t, tx, up, lang, setLang } = useLang();
   const [settings, setSettings] = useState<Settings | null>(null);
-  const [sheet, setSheet] = useState<'sound' | 'locale' | 'kept' | 'type' | 'accent' | null>(null);
+  const [sheet, setSheet] = useState<'sound' | 'locale' | 'kept' | 'type' | 'accent' | 'theme' | null>(null);
   // Changing the sign-in (53): the field being asked for, and what came back.
   // current: the old password before a new one; verify: the password before deleting (F19).
   const [ask, setAsk] = useState<'email' | 'password' | 'current' | 'verify' | null>(null);
@@ -285,7 +286,7 @@ export default function SettingsScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <EdgeBack />
       <PullDownScroll
         header={
@@ -334,6 +335,7 @@ export default function SettingsScreen() {
           <Row label={t('settings.music')} right={<Switch on={ambient.on} />} onPress={ambient.toggle} />
           <Row label={t('settings.genre')} hint={t('settings.genre.hint')} right={<Value text={soundName} more />} onPress={() => setSheet('sound')} />
           <Row label={t('accent.label')} hint={t('accent.hint')} right={<View style={styles.swatchRow}><View style={[styles.swatch, { backgroundColor: colors.spot }]} /><Value text={tx('accent.' + currentAccent(), currentAccent())} more /></View>} onPress={() => setSheet('accent')} />
+          <Row label={t('theme.label')} hint={t('theme.hint')} right={<Value text={t(currentTheme() === 'light' ? 'theme.light' : 'theme.dark')} more />} onPress={() => setSheet('theme')} />
         </Panel>
 
           </>
@@ -477,6 +479,17 @@ export default function SettingsScreen() {
         options={langs.map((id) => ({ id, label: langNames[id] }))}
         selected={lang}
         onSelect={(id) => setLang(id as Lang)}
+        onClose={() => setSheet(null)}
+      />
+      <PickerSheet
+        open={sheet === 'theme'}
+        title={t('theme.label')}
+        options={[{ id: 'light', label: t('theme.light') }, { id: 'dark', label: t('theme.dark') }]}
+        selected={currentTheme()}
+        onSelect={(id) => {
+          setSheet(null);
+          chooseTheme(id as 'light' | 'dark', { title: t('theme.reload'), body: t('accent.reload.body'), go: t('accent.reload.go'), later: t('accent.reload.later') });
+        }}
         onClose={() => setSheet(null)}
       />
       <PickerSheet

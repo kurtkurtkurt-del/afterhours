@@ -23,7 +23,7 @@ import { collection as samples } from '@/content/collection';
 import { SAMPLES as SAMPLES_ON } from '@/content/samples';
 import type { NightCardData } from '@/content/cardsgen';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, ground, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 import PillAction, { PillRow } from '@/components/PillAction';
 
@@ -140,7 +140,7 @@ export default function PersonScreen() {
   );
   return (
     <View style={styles.root} onLayout={(e) => setRootH(e.nativeEvent.layout.height)}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <PullDownScroll header={band} contentContainerStyle={[styles.body, { paddingTop: top, paddingBottom: insets.bottom + 40 }]} showsVerticalScrollIndicator={false}>
         {!loaded ? (
           <Text style={[styles.note, styles.pad]}>{up(t('person.loading'))}</Text>
@@ -258,6 +258,6 @@ const styles = StyleSheet.create({
   hidden: { fontFamily: fonts.medium, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
   note: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta },
   pressed: { opacity: 0.7 },
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.92)', alignItems: 'center', justifyContent: 'center', gap: 18 },
+  dim: { flex: 1, backgroundColor: ground(0.92), alignItems: 'center', justifyContent: 'center', gap: 18 },
   flipHint: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
 });

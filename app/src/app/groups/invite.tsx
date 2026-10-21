@@ -10,7 +10,7 @@ import GroupInvitation from '@/components/GroupInvitation';
 import { Said } from '@/components/StaffPage';
 import { groupGet, groupInvite, inviteUrl, why, type Group } from '@/data/groups';
 import { useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle } from '@/theme/tokens';
 
 // Inviting: the same invitation people will see when they open it (10D), with the
 // QR and the code under it, and the link to send. The code works for 14 days and 20 people.
@@ -29,7 +29,7 @@ export default function Invite() {
     code && group && Share.share({ message: `${t('groups.invite.message', { name: group.name, code })}\n${inviteUrl(code)}` }).catch(() => {});
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <GroupInvitation
         emoji={group?.emoji ?? '✦'}
         name={group?.name ?? '…'}

@@ -12,7 +12,7 @@ import { albumAdd, groupGet, groupNights, groupPlan, groupStats, groupWall, phot
 import { dayLabel } from '@/data/when';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const two = (n: number) => String(n).padStart(2, '0');
@@ -82,7 +82,7 @@ export default function Memories() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <ScrollView contentContainerStyle={[styles.body, { paddingTop: Math.max(insets.top, 20) + 16, paddingBottom: insets.bottom + 110 }]}>
         <Text style={styles.title}>{name.toLowerCase()}</Text>
         <Text style={styles.vibe}>{up(`${t('groups.vibe')} · ${vibe}`)}</Text>
@@ -98,8 +98,8 @@ export default function Memories() {
                     onPress={() => router.push({ pathname: '/groups/album', params: { id, event: tile.night.id } })}
                     style={[styles.label, tile.night.all_of_us && styles.labelAll]}
                   >
-                    <Text style={styles.labelMono}>{up(dayLabel(tile.night.starts_at))}</Text>
-                    <Text style={styles.labelTitle} numberOfLines={2}>{tile.night.title.toLowerCase()}</Text>
+                    <Text style={[styles.labelMono, tile.night.all_of_us && styles.onSpot]}>{up(dayLabel(tile.night.starts_at))}</Text>
+                    <Text style={[styles.labelTitle, tile.night.all_of_us && styles.onSpot]} numberOfLines={2}>{tile.night.title.toLowerCase()}</Text>
                     <Text style={styles.labelMeta} numberOfLines={1}>
                       {tile.night.all_of_us ? t('groups.allOfUs') : tile.night.people.map((p) => (p.name ?? '').toLowerCase()).join(', ')}
                     </Text>
@@ -126,6 +126,8 @@ export default function Memories() {
 }
 
 const styles = StyleSheet.create({
+  // words on a red fill stay light whatever the ground does (try/light)
+  onSpot: { color: colors.onSpot },
   root: { flex: 1, backgroundColor: colors.ink },
   body: { paddingHorizontal: 8 },
   title: { fontFamily: fonts.logo, fontSize: 36, lineHeight: 38, color: colors.paper, paddingHorizontal: brand.left - 8 },

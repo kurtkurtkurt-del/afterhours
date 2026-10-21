@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, ground } from '@/theme/tokens';
 
 // A filter pill (the flow and the map): ink glass by default, paper when a filter is set.
 export default function Pill({ label, active, onPress, a11y, chevron = true }: { label: string; active: boolean; onPress: () => void; a11y: string; chevron?: boolean }) {
@@ -21,7 +21,7 @@ export function Chevron({ color }: { color: string }) {
 }
 
 const styles = StyleSheet.create({
-  pill: { flexShrink: 1, flexDirection: 'row', alignItems: 'center', gap: 7, height: 32, paddingHorizontal: 13, borderRadius: radius.pill, backgroundColor: 'rgba(14,13,12,0.82)', borderWidth: 1, borderColor: colors.ink3 },
+  pill: { flexShrink: 1, flexDirection: 'row', alignItems: 'center', gap: 7, height: 32, paddingHorizontal: 13, borderRadius: radius.pill, backgroundColor: ground(0.82), borderWidth: 1, borderColor: colors.ink3 },
   pillOn: { backgroundColor: colors.paper, borderColor: colors.paper },
   pillText: { flexShrink: 1, fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.1, color: colors.paper },
   pillTextOn: { color: colors.ink },

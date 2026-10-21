@@ -31,7 +31,7 @@ import { previewsFor, type Preview } from '@/data/previews';
 import { AboutSheet } from '@/components/About';
 import { filterWhen, isWhen, whenName, type When } from '@/data/when';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, ground, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 type Panel = 'tickets' | 'spark';
@@ -240,7 +240,7 @@ export default function FlowScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       {/* Where, big; under it tickets · spark; under that, on tickets, what and when. */}
       <View style={[styles.head, { top: Math.max(brand.top, insets.top + 24) - 8 }]} onLayout={(e) => setHeadBottom(e.nativeEvent.layout.y + e.nativeEvent.layout.height)}>
         <Pressable onPress={() => setSheet('city')} hitSlop={8} accessibilityRole="button" accessibilityLabel={t('filter.where')} style={({ pressed }) => [styles.city, pressed && styles.pressed]}>
@@ -338,7 +338,7 @@ const styles = StyleSheet.create({
   // Ink pill so the pickers stay legible over the photo.
   head: { position: 'absolute', left: brand.left, right: brand.left, zIndex: 1 },
   city: { flexDirection: 'row', alignItems: 'center', gap: 8, alignSelf: 'flex-start', maxWidth: '72%' },
-  cityText: { flexShrink: 1, fontFamily: fonts.semibold, fontSize: 26, lineHeight: 30, letterSpacing: -0.8, color: colors.paper, textShadowColor: 'rgba(14,13,12,0.6)', textShadowRadius: 8 },
+  cityText: { flexShrink: 1, fontFamily: fonts.semibold, fontSize: 26, lineHeight: 30, letterSpacing: -0.8, color: colors.paper, textShadowColor: ground(0.6), textShadowRadius: 8 },
   pills: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 10 },
   pressed: { opacity: 0.6 },
   // tickets · spark: a lighter track than the filter pills, so it reads on the dark top

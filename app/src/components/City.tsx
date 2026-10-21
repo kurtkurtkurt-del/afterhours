@@ -11,7 +11,7 @@ import SoundToggle from '@/components/SoundToggle';
 import Backdrop from '@/components/Backdrop';
 import LangRow from '@/components/LangRow';
 import { useT } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 type Props = { play: boolean; soundOn: boolean; onToggleSound: () => void; onPickSound: () => void };
@@ -65,7 +65,7 @@ export default function City({ play, soundOn, onToggleSound, onPickSound }: Prop
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <Backdrop />
       <View style={styles.centre} pointerEvents="none">
         <Animated.Text onLayout={onLayout} style={[styles.word, wordStyle]}>

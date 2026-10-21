@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { City } from '@/content/cities';
 import { cityPhotos, cityPhotosNow, type CityPhoto } from '@/data/cityPhotos';
 import { useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 type Props = {
@@ -114,7 +114,7 @@ function Cities({ country, selected, onBack, onPick }: { country: Country; selec
           return (
             <Pressable key={c.id} onPress={() => onPick(c.id)} accessibilityRole="button" accessibilityLabel={c.name} style={({ pressed }) => [styles.card, on && styles.cardOn, pressed && styles.pressed]}>
               {photo ? <Image source={{ uri: photo.uri }} style={StyleSheet.absoluteFill} contentFit="cover" cachePolicy="memory-disk" transition={120} /> : null}
-              <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.92)']} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
+              <LinearGradient colors={[scrim(0.0), scrim(0.92)]} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
               <View style={styles.cardText}>
                 <Text style={styles.cityName} numberOfLines={2}>{c.name}</Text>
                 <Text style={styles.cityNights}>{tn('filter.nights', c.nights)}</Text>
@@ -129,7 +129,7 @@ function Cities({ country, selected, onBack, onPick }: { country: Country; selec
 }
 
 const styles = StyleSheet.create({
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.6)' },
+  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
   sheet: { backgroundColor: colors.ink, borderWidth: 1, borderBottomWidth: 0, borderColor: colors.ink3, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, paddingHorizontal: brand.left, paddingTop: 10, maxHeight: '82%' },
   grip: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: colors.ink3, marginBottom: 14 },
   step: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.meta, marginBottom: 8 },
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   card: { width: 150, height: 210, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink2, borderWidth: 2, borderColor: 'transparent' },
   cardOn: { borderColor: colors.spot },
   cardText: { position: 'absolute', left: 10, right: 10, bottom: 10 },
-  cityName: { fontFamily: fonts.semibold, fontSize: 19, lineHeight: 21, letterSpacing: -0.5, color: colors.paper },
-  cityNights: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute, marginTop: 2 },
-  credit: { fontFamily: fonts.regular, fontSize: 8.5, color: colors.meta, marginTop: 6 },
+  cityName: { fontFamily: fonts.semibold, fontSize: 19, lineHeight: 21, letterSpacing: -0.5, color: colors.onPhoto },
+  cityNights: { fontFamily: fonts.regular, fontSize: 12, color: colors.onPhotoMute, marginTop: 2 },
+  credit: { fontFamily: fonts.regular, fontSize: 8.5, color: colors.onPhotoMeta, marginTop: 6 },
 });

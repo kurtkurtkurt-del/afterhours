@@ -7,7 +7,7 @@ import type { DeckCard } from '@/components/CardFace';
 import SoundCorner from '@/components/SoundCorner';
 import { useTabBarSpace } from '@/components/TabBar';
 import { useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, ground } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 import PillAction from '@/components/PillAction';
 
@@ -123,9 +123,9 @@ const styles = StyleSheet.create({
   layer: { zIndex: 10, elevation: 10 },
   root: { flex: 1, backgroundColor: colors.ink },
   top: { position: 'absolute', left: brand.left, right: 96, flexDirection: 'row', alignItems: 'center', gap: 10 },
-  chip: { flexShrink: 1, height: 32, justifyContent: 'center', backgroundColor: 'rgba(14,13,12,0.82)', borderWidth: 1, borderColor: colors.ink3, paddingHorizontal: 12, borderRadius: radius.pill },
+  chip: { flexShrink: 1, height: 32, justifyContent: 'center', backgroundColor: ground(0.82), borderWidth: 1, borderColor: colors.ink3, paddingHorizontal: 12, borderRadius: radius.pill },
   chipText: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 0.8, color: colors.paper },
-  undo: { flexDirection: 'row', alignItems: 'center', gap: 6, height: 32, paddingHorizontal: 12, borderRadius: radius.pill, backgroundColor: 'rgba(14,13,12,0.82)' },
+  undo: { flexDirection: 'row', alignItems: 'center', gap: 6, height: 32, paddingHorizontal: 12, borderRadius: radius.pill, backgroundColor: ground(0.82) },
   undoText: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper },
   pressed: { opacity: 0.6 },
   empty: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 40, gap: 10 },

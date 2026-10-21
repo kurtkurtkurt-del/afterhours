@@ -9,7 +9,7 @@ import BackButton from '@/components/BackButton';
 import { useAuth } from '@/auth/AuthContext';
 import { SPARKS } from '@/content/sparks';
 import { useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // The + on the flow (design 12B): two big photo cards, a ticketed night for
@@ -23,7 +23,7 @@ export default function Make() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <ScrollView contentContainerStyle={[styles.body, { paddingTop: Math.max(insets.top, 20) + 20, paddingBottom: insets.bottom + 100 }]}>
         <Text style={styles.title}>{sparks ? t('make.which') : t('make.question')}</Text>
         {!sparks ? (
@@ -36,7 +36,7 @@ export default function Make() {
             {SPARKS.map((sp) => (
               <Pressable key={sp.kind} onPress={() => router.replace(`/spark/${sp.kind}`)} style={({ pressed }) => [styles.tile, pressed && styles.pressed]} accessibilityRole="button">
                 <Image source={sp.thumb} style={StyleSheet.absoluteFill} contentFit="cover" transition={0} />
-                <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.85)']} locations={[0.4, 1]} style={StyleSheet.absoluteFill} />
+                <LinearGradient colors={[scrim(0.0), scrim(0.85)]} locations={[0.4, 1]} style={StyleSheet.absoluteFill} />
                 <Text style={styles.tileText}>{up(t(sp.label))}</Text>
               </Pressable>
             ))}
@@ -53,7 +53,7 @@ function Choice({ photo, mono, title, hint, red, onPress }: { photo: number; mon
   return (
     <Pressable onPress={onPress} style={({ pressed }) => [styles.card, pressed && styles.pressed]} accessibilityRole="button">
       <Image source={photo} style={StyleSheet.absoluteFill} contentFit="cover" />
-      <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.9)']} locations={[0.3, 1]} style={StyleSheet.absoluteFill} />
+      <LinearGradient colors={[scrim(0.0), scrim(0.9)]} locations={[0.3, 1]} style={StyleSheet.absoluteFill} />
       <View style={styles.cardText}>
         <Text style={[styles.mono, red && styles.monoRed]}>{up(mono)}</Text>
         <Text style={styles.cardTitle}>{title}</Text>
@@ -69,12 +69,12 @@ const styles = StyleSheet.create({
   title: { fontFamily: fonts.semibold, fontSize: 30, letterSpacing: -0.9, color: colors.paper, marginBottom: 6 },
   card: { height: 280, borderRadius: radius.lg, overflow: 'hidden', justifyContent: 'flex-end', backgroundColor: colors.ink3 },
   cardText: { padding: 18, gap: 4 },
-  mono: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.6, color: colors.paper },
-  monoRed: { color: colors.spotText },
-  cardTitle: { fontFamily: fonts.semibold, fontSize: 32, letterSpacing: -1, color: colors.paper },
+  mono: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.6, color: colors.onPhoto },
+  monoRed: { color: colors.onPhotoSpot },
+  cardTitle: { fontFamily: fonts.semibold, fontSize: 32, letterSpacing: -1, color: colors.onPhoto },
   cardHint: { fontFamily: fonts.regular, fontSize: 13, color: '#ddd' },
   pressed: { opacity: 0.75 },
   grid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', rowGap: 10 },
   tile: { width: '48.5%', height: 130, borderRadius: radius.md, overflow: 'hidden', justifyContent: 'flex-end', padding: 10, backgroundColor: colors.ink3 },
-  tileText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 1.4, color: colors.paper },
+  tileText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 1.4, color: colors.onPhoto },
 });

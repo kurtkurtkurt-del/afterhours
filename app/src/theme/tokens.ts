@@ -25,21 +25,53 @@ const accent = ACCENTS[accentId];
 // A see-through version of the accent: tint(0.12) → 'rgba(…,0.12)'.
 export const tint = (alpha: number) => `rgba(${accent.rgb},${alpha})`;
 
-// Ink on paper. No pure white, no pure black.
+// Ink on paper. No pure white, no pure black. Two grounds, picked in settings → app
+// (data/theme.ts) and read once at start like the accent: dark (the original night
+// look) and light. The names keep their roles in both — ink is the ground, paper the
+// words on it — only the values change.
+export type ThemeId = 'dark' | 'light';
+const readTheme = (): ThemeId => {
+  try {
+    const v = Storage.getItemSync('theme');
+    return v === 'dark' || v === 'light' ? v : 'light';
+  } catch {
+    return 'light';
+  }
+};
+export const themeId: ThemeId = readTheme();
+const light = themeId === 'light';
+
 export const colors = {
-  // try/light (21.10.2026): the names keep their roles — ink is the ground, paper the
-  // text on it — only the values flip to a light ground with softer tones.
-  paper: '#1F1D1A',
-  paper2: '#2A2724',
-  ink: '#FBFAF7',
-  ink2: '#8A867D',
-  rule: '#E6E2DA',
-  spot: accent.spot,
-  spotText: accent.spot,
-  ink3: '#E9E5DD',
-  mute: '#7A766E',
-  meta: '#9A958C',
+  paper: light ? '#1F1D1A' : '#F3F1EC',
+  paper2: light ? '#2A2724' : '#FAF9F6',
+  ink: light ? '#FBFAF7' : '#0E0D0C',
+  ink2: light ? '#8A867D' : '#6C6961',
+  rule: light ? '#E6E2DA' : '#D9D5CC',
+  spot: accent.spot,         // the accent: live · kept · on; fills, borders, the dot in the logo
+  spotText: light ? accent.spot : accent.spotText, // accent TEXT on the ground
+  ink3: light ? '#E9E5DD' : '#2A2724',     // hairline on the ground
+  mute: light ? '#7A766E' : '#A9A59C',     // muted text and icons on the ground
+  meta: light ? '#9A958C' : '#7F7B73',     // small uppercase meta lines
+  // The same in both themes. A photo is a dark poster object: its scrim stays ink-dark
+  // and the words on it stay light. Words on a red fill stay light too.
+  poster: '#0E0D0C',
+  onPhoto: '#F6F4EF',
+  onPhotoMute: '#CFCBC2',
+  onPhotoMeta: '#ABA79E',
+  onPhotoRule: 'rgba(246,244,239,0.28)',
+  onPhotoSpot: accent.spotText,
+  onSpot: '#FBFAF7',
+  sleeve: light ? '#E6E2DA' : '#1F1D1A', // an empty photo frame
 } as const;
+
+// The ground as a see-through veil: ground(0.8) → the ground colour at 80%.
+export const ground = (alpha: number) => (light ? `rgba(251,250,247,${alpha})` : `rgba(14,13,12,${alpha})`);
+// A dark scrim over a photo, the same in both themes.
+export const scrim = (alpha: number) => `rgba(14,13,12,${alpha})`;
+// Status bar words: dark on the light ground, light on the dark one.
+export const barStyle: 'dark' | 'light' = light ? 'dark' : 'light';
+// Backdrop photos (intro, city, the flow) sit under the ground at this strength.
+export const veil = light ? 0.74 : 0.35;
 
 // Corner radii: small squares (initials, marks) xs · inner buttons, chips sm ·
 // buttons, panels, cards md · bottom sheets, large cards lg · pill buttons pill.

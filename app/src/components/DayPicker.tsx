@@ -84,7 +84,7 @@ export default function DayPicker({ open, title, value, min, onSelect, onClose }
 }
 
 const styles = StyleSheet.create({
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.6)' },
+  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
   sheet: { backgroundColor: colors.ink, borderWidth: 1, borderBottomWidth: 0, borderColor: colors.ink3, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, paddingHorizontal: brand.left, paddingTop: 10 },
   grip: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: colors.ink3, marginBottom: 14 },
   title: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.meta },

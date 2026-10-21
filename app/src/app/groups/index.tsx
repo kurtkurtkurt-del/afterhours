@@ -8,7 +8,7 @@ import { useAuth } from '@/auth/AuthContext';
 import { coverSource, GROUP_COLORS, groupSuggest, myGroups, why, type GroupRow, type Suggestion } from '@/data/groups';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, ground } from '@/theme/tokens';
 
 // Your groups: the live ones first, the once groups that are over at the end.
 // On top, when there is one, a group to make: friends who kept the same nights.
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   record: { position: 'absolute', top: '4%', bottom: '4%', right: -10, width: '92%', borderRadius: 999, opacity: 0.35 },
   sleeve: { flex: 1, borderRadius: radius.sm, overflow: 'hidden', justifyContent: 'flex-end', padding: 10, shadowColor: '#000', shadowOpacity: 0.5, shadowRadius: 10, shadowOffset: { width: 3, height: 5 }, elevation: 6 },
   emoji: { fontSize: 44 },
-  live: { position: 'absolute', top: 10, right: 10, fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.2, color: colors.paper, backgroundColor: 'rgba(14,13,12,0.55)', paddingHorizontal: 6, paddingVertical: 3, borderRadius: radius.pill, overflow: 'hidden' },
+  live: { position: 'absolute', top: 10, right: 10, fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.2, color: colors.paper, backgroundColor: ground(0.55), paddingHorizontal: 6, paddingVertical: 3, borderRadius: radius.pill, overflow: 'hidden' },
   name: { fontFamily: fonts.medium, fontSize: 16, letterSpacing: -0.3, color: colors.paper },
   under: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute, marginTop: 2 },
   link: { textDecorationLine: 'underline' },
