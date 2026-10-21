@@ -27,16 +27,18 @@ export const tint = (alpha: number) => `rgba(${accent.rgb},${alpha})`;
 
 // Ink on paper. No pure white, no pure black.
 export const colors = {
-  paper: '#F3F1EC',
-  paper2: '#FAF9F6',
-  ink: '#0E0D0C',
-  ink2: '#6C6961',
-  rule: '#D9D5CC',
-  spot: accent.spot,         // the accent: live · kept · on; fills, borders, the dot in the logo
-  spotText: accent.spotText, // accent TEXT on ink (spot is unreadable at small sizes)
-  ink3: '#2A2724',     // hairline: divider on dark backgrounds
-  mute: '#A9A59C',     // muted text and icons on dark backgrounds
-  meta: '#7F7B73',     // small uppercase meta lines
+  // try/light (21.10.2026): the names keep their roles — ink is the ground, paper the
+  // text on it — only the values flip to a light ground with softer tones.
+  paper: '#1F1D1A',
+  paper2: '#2A2724',
+  ink: '#FBFAF7',
+  ink2: '#8A867D',
+  rule: '#E6E2DA',
+  spot: accent.spot,
+  spotText: accent.spot,
+  ink3: '#E9E5DD',
+  mute: '#7A766E',
+  meta: '#9A958C',
 } as const;
 
 // Corner radii: small squares (initials, marks) xs · inner buttons, chips sm ·
