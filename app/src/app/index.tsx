@@ -20,10 +20,12 @@ export default function Home() {
   const opened = introDone && ready && !session;
   // Returning users (account or guest) skip the intro.
   useEffect(() => {
-    if (!ready || !session) return;
-    router.replace('/flow');
-    // Back where you were after the app redrew itself (a new ground or accent, lib/restart.ts).
+    if (!ready) return;
+    // Back where you were after the app redrew itself (a new ground or accent, lib/restart.ts);
+    // taken either way, so it never fires on a later sign-in.
     const back = takeBack();
+    if (!session) return;
+    router.replace('/flow');
     if (back) setTimeout(() => router.push(back as Href), 60);
   }, [ready, session]);
   return (
