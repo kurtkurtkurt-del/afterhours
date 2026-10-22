@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import Animated, { Easing, FadeIn, FadeOut, SlideInDown, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withTiming } from 'react-native-reanimated';
 import Storage from 'expo-sqlite/kv-store';
 import { Image } from 'expo-image';
@@ -8,7 +8,8 @@ import { colors, fonts, radius, tint, ground, paperTint } from '@/theme/tokens';
 
 // First visit to a page: one short tip over the page (since 12.10.2026 a single one;
 // two pages were too many), then never again on that page. Settings → about →
-// "show the tips again" clears them all (resetTips).
+// "show the tips again" clears them all (resetTips). Not on the web (owner, 22.10.2026):
+// there the tips came up on every page, and the browser is for a look, not a lesson.
 // motion: swipe (a small card going right, then left), tap (a ring that pulses).
 
 export type Tip = { title: Key; body: Key; motion?: 'swipe' | 'tap' };
@@ -17,6 +18,7 @@ type Page = (typeof TIP_PAGES)[number];
 
 const key = (page: Page) => `tip.${page}`;
 const seen = (page: Page) => {
+  if (Platform.OS === 'web') return true;
   try {
     return Storage.getItemSync(key(page)) === '1';
   } catch {
