@@ -10,7 +10,7 @@ import Icon from '@/components/Icon';
 import LinkMarks from '@/components/LinkMarks';
 import PickerSheet from '@/components/PickerSheet';
 import ProfileCounts from '@/components/ProfileCounts';
-import Sleeve from '@/components/Sleeve';
+import Sleeve, { recordFor } from '@/components/Sleeve';
 import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE, useTabBarSpace } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
@@ -34,6 +34,7 @@ import type { NightCardData } from '@/content/cardsgen';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius, ground, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+const RECORD = require('../../../assets/record/record.webp');
 
 // Card width as a share of the screen; each card leaves this much of the previous one visible.
 const CARD = 0.39;
@@ -117,6 +118,7 @@ export default function AccountScreen() {
   const meta = [city ? upperData(city) : null, handle ? upperData(handle) : null, sinceText ? up(sinceText) : null].filter(Boolean).join(' · ') || up(t('account.notSignedIn'));
 
   const cardW = Math.round(width * CARD);
+  const tileH = Math.round((width - brand.left * 2 - 10) / 2 * 1.1);
   const cardH = cardW * 1.5;
 
   // Tapping the poster: straight to the picker without a photo, otherwise a two-option sheet.
@@ -255,8 +257,26 @@ export default function AccountScreen() {
                 {upcoming?.length && upcoming[0].starts_at ? <Text style={styles.underRed}>{up(tn('account.next.in', daysTo(upcoming[0].starts_at)))}</Text> : null}
               </View>
               {upcoming === null ? null : upcoming.length ? (
+                <>
+                {/* the next two, large, side by side (owner, 22.10.2026: more picture); the rest small */}
+                <View style={styles.pair}>
+                  {upcoming.slice(0, 2).map((n) => (
+                    <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.tile, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
+                      {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
+                      <LinearGradient colors={[scrim(0.0), scrim(0.92)]} locations={[0.4, 1]} style={StyleSheet.absoluteFill} />
+                      <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
+                      <View style={styles.tileText}>
+                        <Text style={styles.tileTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
+                        <Text style={[styles.posterMono, ticketed.has(n.slug) && styles.posterRed]} numberOfLines={1}>
+                          {ticketed.has(n.slug) ? up(t('night.ticketGot')) : upperData(n.venue_name ?? n.city_name)}
+                        </Text>
+                      </View>
+                    </Pressable>
+                  ))}
+                </View>
+                {upcoming.length > 2 ? (
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.rail}>
-                  {upcoming.map((n) => (
+                  {upcoming.slice(2).map((n) => (
                     <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.poster, pressed && styles.pressed]} accessibilityRole="button">
                       {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
                       <LinearGradient colors={[scrim(0.0), scrim(0.95)]} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
@@ -270,6 +290,8 @@ export default function AccountScreen() {
                     </Pressable>
                   ))}
                 </ScrollView>
+                ) : null}
+                </>
               ) : (
                 <Text style={[styles.prompt, styles.promptInk, styles.promptTight]}>{t('account.next.empty')}</Text>
               )}
@@ -279,11 +301,25 @@ export default function AccountScreen() {
                 {sparks?.length ? <Text style={styles.underGold}>{up(tn('account.sparks.open', sparks.length))}</Text> : null}
               </View>
               {sparks === null ? null : sparks.length ? (
-                sparks.map((sp, k) => {
+                <>
+                <View style={styles.pair}>
+                  {sparks.slice(0, 2).map((sp) => (
+                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.tile, styles.tileGold, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
+                      <Image source={sparkOf(sp.kind).thumb} style={StyleSheet.absoluteFill} contentFit="cover" />
+                      <LinearGradient colors={[scrim(0.0), scrim(0.92)]} locations={[0.4, 1]} style={StyleSheet.absoluteFill} />
+                      <Text style={[styles.posterDate, styles.posterGold]}>{up(at(sp.starts_at))}</Text>
+                      <View style={styles.tileText}>
+                        <Text style={styles.tileTitle} numberOfLines={2}>{sp.title.toLowerCase()}</Text>
+                        <Text style={[styles.posterMono, styles.goldText]} numberOfLines={1}>{`${sp.going} ${t('spark.in.short')}${sp.place ? ` · ${upperData(sp.place)}` : ''}`}</Text>
+                      </View>
+                    </Pressable>
+                  ))}
+                </View>
+                {sparks.slice(2).map((sp, k) => {
                   const quiet = Math.max(0, sp.invited - sp.going - sp.not_going);
                   const total = Math.max(1, sp.invited);
                   return (
-                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.spark, k === 0 && styles.sparkFirst, pressed && styles.pressed]} accessibilityRole="button">
+                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.spark, pressed && styles.pressed]} accessibilityRole="button">
                       <Image source={sparkOf(sp.kind).thumb} style={styles.sparkPhoto} contentFit="cover" />
                       <View style={styles.sparkText}>
                         <Text style={styles.sparkTitle} numberOfLines={1}>{sp.title.toLowerCase()}</Text>
@@ -297,7 +333,8 @@ export default function AccountScreen() {
                       <Text style={[styles.answers, k === 0 && styles.underGold]}>{`${sp.going} ${t('spark.in.short')}\n${sp.not_going} ${t('spark.out.short')}`}</Text>
                     </Pressable>
                   );
-                })
+                })}
+                </>
               ) : (
                 <Text style={[styles.prompt, styles.promptInk, styles.promptTight]}>{t('account.sparks.empty')}</Text>
               )}
@@ -308,13 +345,16 @@ export default function AccountScreen() {
                     <Text style={styles.underTitle}>{up(t('account.cities'))}</Text>
                     <Text style={styles.underMute}>{cities}</Text>
                   </View>
-                  <View style={styles.chips}>
-                    {cityCounts(cards.map((c) => (c.city_name ?? '').toLowerCase())).map(([c, n], k) => (
-                      <View key={c} style={[styles.chipInk, k === 0 && styles.chipInkOn]}>
-                        <Text style={[styles.chipInkText, k === 0 && styles.chipInkTextOn]}>{c} <Text style={k === 0 ? styles.chipInkTextOn : styles.underMute}>{n}</Text></Text>
+                  {/* a record for every city you have been to (owner, 22.10.2026), the nights counted under it */}
+                  <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.records}>
+                    {cityCounts(cards.map((c) => (c.city_name ?? '').toLowerCase())).map(([c, n]) => (
+                      <View key={c} style={styles.record}>
+                        <Image source={recordFor(c) ?? RECORD} style={styles.recordImage} contentFit="contain" />
+                        <Text style={styles.recordName} numberOfLines={1}>{c}</Text>
+                        <Text style={styles.recordCount}>{up(tn('account.nNights', n))}</Text>
                       </View>
                     ))}
-                  </View>
+                  </ScrollView>
                 </>
               ) : null}
             </>
@@ -398,6 +438,18 @@ const styles = StyleSheet.create({
   underMute: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.meta },
   promptTight: { marginTop: 0 },
   rail: { gap: 8, paddingRight: brand.left },
+  pair: { flexDirection: 'row', gap: 10, marginBottom: 10 },
+  tile: { flex: 1, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink3 },
+  tileGold: { borderWidth: 1, borderColor: GOLD },
+  tileText: { position: 'absolute', left: 10, right: 10, bottom: 10 },
+  tileTitle: { fontFamily: fonts.semibold, fontSize: 16, lineHeight: 18, letterSpacing: -0.3, color: colors.onPhoto },
+  posterGold: { color: GOLD },
+  goldText: { color: GOLD },
+  records: { gap: 14, paddingRight: brand.left },
+  record: { width: 96, alignItems: 'center', gap: 4 },
+  recordImage: { width: 96, height: 96 },
+  recordName: { fontFamily: fonts.medium, fontSize: 12.5, letterSpacing: -0.2, color: colors.paper, marginTop: 4 },
+  recordCount: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, color: colors.meta },
   poster: { width: 108, height: 140, borderRadius: radius.sm, overflow: 'hidden', backgroundColor: colors.ink3 },
   posterDate: { position: 'absolute', left: 7, top: 7, backgroundColor: colors.ink, color: colors.onPhoto, fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, paddingHorizontal: 6, paddingVertical: 4, borderRadius: 5, overflow: 'hidden' },
   posterText: { position: 'absolute', left: 8, right: 8, bottom: 7 },

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Input from '@/components/Input';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
@@ -19,6 +20,7 @@ export default function Make() {
   const insets = useSafeAreaInsets();
   const { session } = useAuth();
   const [sparks, setSparks] = useState(false);
+  const [q, setQ] = useState(''); // among friends: the kinds narrowed by what is typed (owner, 22.10.2026)
   const ticket = () => (!session || session.user.is_anonymous ? router.push('/signup') : router.replace('/panel/night'));
 
   return (
@@ -32,8 +34,12 @@ export default function Make() {
             <Choice photo={require('../../assets/sparks/grill.jpg')} mono={t('make.friends.mono')} title={t('make.friends')} hint={t('make.friends.hint')} red onPress={() => setSparks(true)} />
           </>
         ) : (
+          <>
+          <View style={styles.search}>
+            <Input value={q} onChangeText={setQ} placeholder={t('make.search')} autoCapitalize="none" autoCorrect={false} />
+          </View>
           <View style={styles.grid}>
-            {SPARKS.map((sp) => (
+            {SPARKS.filter((sp) => !q.trim() || t(sp.label).toLowerCase().includes(q.trim().toLowerCase()) || t(sp.title).toLowerCase().includes(q.trim().toLowerCase())).map((sp) => (
               <Pressable key={sp.kind} onPress={() => router.replace(`/spark/${sp.kind}`)} style={({ pressed }) => [styles.tile, pressed && styles.pressed]} accessibilityRole="button">
                 <Image source={sp.thumb} style={StyleSheet.absoluteFill} contentFit="cover" transition={0} />
                 <LinearGradient colors={[scrim(0.0), scrim(0.85)]} locations={[0.4, 1]} style={StyleSheet.absoluteFill} />
@@ -41,6 +47,7 @@ export default function Make() {
               </Pressable>
             ))}
           </View>
+          </>
         )}
       </ScrollView>
       <BackButton />
@@ -64,6 +71,7 @@ function Choice({ photo, mono, title, hint, red, onPress }: { photo: number; mon
 }
 
 const styles = StyleSheet.create({
+  search: { marginBottom: 12 },
   root: { flex: 1, backgroundColor: colors.ink },
   body: { paddingHorizontal: brand.left, gap: 12 },
   title: { fontFamily: fonts.semibold, fontSize: 30, letterSpacing: -0.9, color: colors.paper, marginBottom: 6 },

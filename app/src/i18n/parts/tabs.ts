@@ -103,6 +103,7 @@ export const tabs = {
   'spark.kind.tram': { en: 'night tram', de: 'nachttram', tr: 'gece tramvayı' },
   'spark.kind.jazz': { en: 'jazz', de: 'jazz', tr: 'caz' },
   'spark.kind.walk': { en: 'night walk', de: 'nachtspaziergang', tr: 'gece yürüyüşü' },
+  'make.search': { en: 'what are you up for?', de: 'worauf hast du lust?', tr: 'ne yapmak istersin?' },
   'spark.createIt': { en: 'create it', de: 'jetzt starten', tr: 'hemen yarat' },
   'spark.change': { en: 'change it if you like', de: 'ändere es, wenn du willst', tr: 'istersen değiştir' },
   'spark.answered.in': { en: "you're in.", de: 'du bist dabei.', tr: 'varsın.' },

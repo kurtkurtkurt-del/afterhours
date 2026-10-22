@@ -37,12 +37,26 @@ import { brand } from '@/theme/layout';
 type Panel = 'tickets' | 'spark';
 
 // Spark panel: only sparks, no ticketed nights. Friends' invites first, then the
-// sparks to start yourself (derby, grill, hike), dealt from a different one each time.
-// In a city with its own versions (Munich), the cards carry its places.
+// sparks to start yourself (derby, grill, hike), shuffled afresh every deal and every
+// visit (owner, 22.10.2026: a different order each time). In a city with its own
+// versions (Munich), the cards carry its places.
 function sparkDeck(invites: SparkInvite[], seed: number, city: string | null): DeckEntry[] {
   const out: DeckEntry[] = invites.map((inv): SparkEntry => ({ id: 'invite:' + inv.id, spark: sparkIn(sparkOf(inv.kind), city), invite: inv }));
-  SPARKS.forEach((_, i) => {
-    const spark = sparkIn(SPARKS[(i + seed) % SPARKS.length], city);
+  // mulberry32: the same seed deals the same order, so a re-render does not reshuffle
+  let a = (seed * 2654435761) >>> 0;
+  const rnd = () => {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+  const order = [...SPARKS];
+  for (let i = order.length - 1; i > 0; i--) {
+    const j = Math.floor(rnd() * (i + 1));
+    [order[i], order[j]] = [order[j], order[i]];
+  }
+  order.forEach((s) => {
+    const spark = sparkIn(s, city);
     out.push({ id: `spark:${spark.kind}`, spark });
   });
   return out;
@@ -75,7 +89,7 @@ export default function FlowScreen() {
   const [swiped, setSwiped] = useState(0);
   // Bottom edge of the picker chip; the poster starts below it (the chip wraps in Turkish).
   const [headBottom, setHeadBottom] = useState(0);
-  const [reloads, setReloads] = useState(0);
+  const [reloads, setReloads] = useState(() => Math.floor(Math.random() * 1_000_000)); // a fresh spark order every visit
   // Back online: retry if the deck is empty or never loaded (a dealt deck is left alone).
   const failed = useRef(false);
   useEffect(() => onBackOnline(() => failed.current && setReloads((n) => n + 1)), []);

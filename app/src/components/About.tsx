@@ -1,4 +1,5 @@
 import { Linking, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import Animated, { Easing, SlideInDown } from 'react-native-reanimated';
 import Scrim from '@/components/Scrim';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -32,11 +33,11 @@ export function AboutSheet({ about, onClose, onKeep }: { about: About | null; on
   const insets = useSafeAreaInsets();
   const host = about ? about.source_url.replace(/^https:\/\/(www\.)?/, '').split('/')[0] : '';
   return (
-    <Modal visible={!!about} transparent animationType="slide" onRequestClose={onClose}>
+    <Modal visible={!!about} transparent animationType="fade" onRequestClose={onClose}>
       <View style={styles.wrap}>
         <Scrim onPress={onClose} />
         {about ? (
-          <View style={[styles.sheet, { maxHeight: height * 0.74 }]}>
+          <Animated.View entering={SlideInDown.duration(300).easing(Easing.out(Easing.cubic))} style={[styles.sheet, { maxHeight: height * 0.74 }]}>
             <View style={styles.grab} />
             <ScrollView contentContainerStyle={styles.in} showsVerticalScrollIndicator={false}>
               <Text style={styles.kicker}>{up(about.kicker)}</Text>
@@ -69,7 +70,7 @@ export function AboutSheet({ about, onClose, onKeep }: { about: About | null; on
                 </Pressable>
               ) : null}
             </View>
-          </View>
+          </Animated.View>
         ) : null}
       </View>
     </Modal>
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
   facts: { marginTop: 18, gap: 12 },
   fact: { flexDirection: 'row', gap: 10 },
   factNo: { width: 22, fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.spotText, paddingTop: 3 },
-  factText: { flex: 1, fontFamily: fonts.regular, fontSize: 14.5, lineHeight: 21, color: '#d9d5cc' },
+  factText: { flex: 1, fontFamily: fonts.regular, fontSize: 14.5, lineHeight: 21, color: colors.paper2 },
   src: { flexDirection: 'row', justifyContent: 'space-between', gap: 12, marginTop: 20, paddingTop: 12, borderTopWidth: 1, borderTopColor: colors.ink3 },
   srcText: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.meta },
   srcLink: { color: colors.mute, textDecorationLine: 'underline' },

@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { serverText } from '@/lib/serverText';
 import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import Animated, { Easing, SlideInDown } from 'react-native-reanimated';
 import Scrim from '@/components/Scrim';
 import KeyboardSafe from '@/components/KeyboardSafe';
 import { Image } from 'expo-image';
@@ -189,10 +190,10 @@ function Comments({ open, post, who, onClose, onChange }: { open: boolean; post:
         ])
       : reporting.ask('post_comment', c.id);
   return (
-    <Modal visible={open} transparent animationType="slide" onRequestClose={onClose} onShow={load}>
+    <Modal visible={open} transparent animationType="fade" onRequestClose={onClose} onShow={load}>
       <KeyboardSafe style={styles.sheetWrap}>
         <Scrim onPress={onClose} />
-        <View style={[styles.sheet, { maxHeight: height * 0.75, paddingBottom: insets.bottom + 10 }]}>
+        <Animated.View entering={SlideInDown.duration(300).easing(Easing.out(Easing.cubic))} style={[styles.sheet, { maxHeight: height * 0.75, paddingBottom: insets.bottom + 10 }]}>
           <View style={styles.grab} />
           <Text style={styles.sheetTitle}>{t('post.comments')}</Text>
           <ScrollView style={styles.sheetList} contentContainerStyle={styles.sheetListIn} keyboardShouldPersistTaps="handled">
@@ -240,7 +241,7 @@ function Comments({ open, post, who, onClose, onChange }: { open: boolean; post:
               <Text style={[styles.send, (!draft.trim() || sending) && styles.off]}>{sending ? '…' : t('post.send')}</Text>
             </Pressable>
           </View>
-        </View>
+        </Animated.View>
       </KeyboardSafe>
       {reporting.sheet}
     </Modal>

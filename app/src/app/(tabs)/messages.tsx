@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Animated, { Easing, SlideInDown } from 'react-native-reanimated';
 import Scrim from '@/components/Scrim';
 import KeyboardSafe from '@/components/KeyboardSafe';
 import { Image } from 'expo-image';
@@ -230,10 +231,10 @@ export default function MessagesScreen() {
       </PullDownScroll>
 
       {/* Who to write to: a friend, by name. */}
-      <Modal visible={picking} animationType="slide" transparent onRequestClose={() => setPicking(false)}>
+      <Modal visible={picking} animationType="fade" transparent onRequestClose={() => setPicking(false)}>
         <KeyboardSafe style={styles.lift}>
           <Scrim onPress={() => setPicking(false)} />
-          <View style={[styles.sheet, { paddingBottom: insets.bottom + 16 }]}>
+          <Animated.View entering={SlideInDown.duration(300).easing(Easing.out(Easing.cubic))} style={[styles.sheet, { paddingBottom: insets.bottom + 16 }]}>
             <Text style={styles.sheetTitle}>{t('messages.new')}</Text>
             <Input value={who} onChangeText={setWho} placeholder={t('messages.new.who')} autoFocus autoCapitalize="none" autoCorrect={false} />
             <ScrollView style={styles.sheetList} keyboardShouldPersistTaps="handled">
@@ -249,7 +250,7 @@ export default function MessagesScreen() {
               {!shownFriends.length ? <Text style={styles.note}>{accepted.length ? t('messages.new.none') : t('messages.new.noFriends')}</Text> : null}
               {said ? <Text style={[styles.note, styles.bad]}>{said}</Text> : null}
             </ScrollView>
-          </View>
+          </Animated.View>
         </KeyboardSafe>
       </Modal>
     </View>

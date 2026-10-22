@@ -417,6 +417,8 @@ export const pages = {
   'settings.city.hint': { en: 'the deck opens here', de: 'hier öffnet der stapel', tr: 'deste burada açılır' },
   'settings.city.none': { en: 'not set', de: 'nicht gesetzt', tr: 'seçilmedi' },
   'settings.save': { en: 'save profile', de: 'profil speichern', tr: 'profili kaydet' },
+  'settings.saved': { en: 'saved ✓', de: 'gespeichert ✓', tr: 'kaydedildi ✓' },
+  'settings.autosave': { en: 'changes save by themselves.', de: 'änderungen speichern sich von selbst.', tr: 'değişiklikler kendiliğinden kaydedilir.' },
   'settings.privacy': { en: 'privacy', de: 'privatsphäre', tr: 'gizlilik' },
   'settings.kept': { en: 'who sees what you kept', de: 'wer sieht, was du behältst', tr: 'sakladıklarını kim görür' },
   'settings.kept.private': { en: 'nobody, not even friends', de: 'niemand, auch freunde nicht', tr: 'kimse, arkadaşlar bile' },

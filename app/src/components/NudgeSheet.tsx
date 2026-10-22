@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Animated, { Easing, SlideInDown } from 'react-native-reanimated';
 import Scrim from '@/components/Scrim';
 import { Image } from 'expo-image';
 import KeyboardSafe from '@/components/KeyboardSafe';
@@ -83,10 +84,10 @@ export default function NudgeSheet({ open, night, onClose, onSent }: { open: boo
   };
 
   return (
-    <Modal visible={open} animationType="slide" transparent onRequestClose={close}>
+    <Modal visible={open} animationType="fade" transparent onRequestClose={close}>
       <KeyboardSafe style={styles.lift}>
         <Scrim onPress={close} />
-        <View style={[styles.sheet, { paddingBottom: insets.bottom + 16 }]}>
+        <Animated.View entering={SlideInDown.duration(300).easing(Easing.out(Easing.cubic))} style={[styles.sheet, { paddingBottom: insets.bottom + 16 }]}>
           <View style={styles.grip} />
           <View style={styles.head}>
             <View style={styles.dot} />
@@ -138,7 +139,7 @@ export default function NudgeSheet({ open, night, onClose, onSent }: { open: boo
           <View style={styles.foot}>
             <PillAction icon="close" label={sent.size ? t('word.done') : t('word.close')} onPress={close} />
           </View>
-        </View>
+        </Animated.View>
       </KeyboardSafe>
     </Modal>
   );

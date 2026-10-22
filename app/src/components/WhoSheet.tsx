@@ -1,4 +1,5 @@
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Animated, { Easing, SlideInDown } from 'react-native-reanimated';
 import Scrim from '@/components/Scrim';
 import { Image } from 'expo-image';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -30,9 +31,9 @@ export default function WhoSheet({ open, title, people, answer, onAnswer, onPers
     { id: 'out', label: t('who.not') },
   ];
   return (
-    <Modal visible={open} transparent animationType="slide" onRequestClose={onClose}>
+    <Modal visible={open} transparent animationType="fade" onRequestClose={onClose}>
       <Scrim onPress={onClose} />
-      <View style={[styles.sheet, { paddingBottom: insets.bottom + 22 }]}>
+      <Animated.View entering={SlideInDown.duration(300).easing(Easing.out(Easing.cubic))} style={[styles.sheet, { paddingBottom: insets.bottom + 22 }]}>
         <View style={styles.grip} />
         <Text style={styles.kicker}>{up(t('who.coming'))}</Text>
         <Text style={styles.title} numberOfLines={2}>{title}</Text>
@@ -73,7 +74,7 @@ export default function WhoSheet({ open, title, people, answer, onAnswer, onPers
           })}
         </View>
         <Text style={styles.note}>{t('who.friendsSee')}</Text>
-      </View>
+      </Animated.View>
     </Modal>
   );
 }
