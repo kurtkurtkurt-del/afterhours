@@ -22,5 +22,6 @@ cd "$TMP"
 git init -q -b main
 git add -A
 git commit -qm "PWA build $(date -u +%Y-%m-%dT%H:%MZ)"
-git push -f "$REPO" main
+# ~30 MB in one pack: the default 1 MB HTTP buffer ends in "RPC failed; HTTP 400".
+git -c http.postBuffer=524288000 push -f "$REPO" main
 echo "Published: $BASE"
