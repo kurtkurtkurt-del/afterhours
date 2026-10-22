@@ -767,6 +767,9 @@ separate from Safari's).
 - not in the browser: push, vibration, Sign in with Apple (until Supabase has
   the web Apple setup), background sound before the first tap; iOS may clear
   the stored data of a PWA left unopened for weeks
+- no page tips in the browser (22.10.2026): `Tips.tsx` counts every page as
+  seen on the web — they came up on every page there and the browser is for a
+  look, not a lesson
 - publish: `cd app && tools/publish-pwa.sh` (export with the base URL,
   `404.html` for deep links, force-push to `afterhours-pwa` on `main`).
   Supabase → Authentication → URL Configuration → Redirect URLs needs
