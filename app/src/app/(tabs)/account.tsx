@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
 import Tips from '@/components/Tips';
-import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { FlatList, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -10,7 +10,7 @@ import Icon from '@/components/Icon';
 import LinkMarks from '@/components/LinkMarks';
 import PickerSheet from '@/components/PickerSheet';
 import ProfileCounts from '@/components/ProfileCounts';
-import Sleeve, { recordFor } from '@/components/Sleeve';
+import Sleeve, { recordFor, recordThumb } from '@/components/Sleeve';
 import { RECORDS } from '@/content/records';
 import { ALL_CITY_RECORDS } from '@/content/flags';
 import { useCities } from '@/data/cities';
@@ -360,15 +360,25 @@ export default function AccountScreen() {
                     <Text style={styles.underMute}>{cityRecords.length}</Text>
                   </View>
                   {/* a record for every city you have been to (owner, 22.10.2026), the nights counted under it; a tap shows it large */}
-                  <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.records}>
-                    {cityRecords.map(([c, n]) => (
-                      <Pressable key={c} onPress={() => setRecordOpen([c, n])} style={({ pressed }) => [styles.record, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={c}>
-                        <Image source={recordFor(c) ?? RECORD} style={styles.recordImage} contentFit="contain" />
+                  <FlatList
+                    horizontal
+                    data={cityRecords}
+                    keyExtractor={([c]) => c}
+                    showsHorizontalScrollIndicator={false}
+                    contentContainerStyle={styles.records}
+                    initialNumToRender={5}
+                    maxToRenderPerBatch={5}
+                    windowSize={3}
+                    removeClippedSubviews
+                    getItemLayout={(_, i) => ({ length: 96 + 14, offset: (96 + 14) * i, index: i })}
+                    renderItem={({ item: [c, n] }) => (
+                      <Pressable onPress={() => setRecordOpen([c, n])} style={({ pressed }) => [styles.record, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={c}>
+                        <Image source={recordThumb(c)} style={styles.recordImage} contentFit="contain" />
                         <Text style={[styles.recordName, !n && styles.recordQuiet]} numberOfLines={1}>{c}</Text>
                         <Text style={styles.recordCount}>{n ? up(tn('account.nNights', n)) : ' '}</Text>
                       </Pressable>
-                    ))}
-                  </ScrollView>
+                    )}
+                  />
                 </>
               ) : null}
             </>

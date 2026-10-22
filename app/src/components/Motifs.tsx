@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Svg, { Circle, Ellipse, G, Line, Path, Polygon, Rect } from 'react-native-svg';
 import type { Special, SpecialId } from '@/content/specials';
@@ -245,7 +246,8 @@ const LAYOUTS: Record<SpecialId, { cover: Spot[]; room: Spot[] }> = {
 // A pretzel's brown sits beside the theme's own colours (index 3 in oktoberfest).
 const extra: Record<SpecialId, string[]> = { halloween: ['#2A1238'], newyear: [], july4: [], oktoberfest: ['#A8622A'] };
 
-export default function MotifField({ special, width, height, kind }: { special: Special; width: number; height: number; kind: 'cover' | 'room' }) {
+// memo: a field is pure in its props; the connect page re-renders often and the four covers must not redraw with it
+function MotifFieldInner({ special, width, height, kind }: { special: Special; width: number; height: number; kind: 'cover' | 'room' }) {
   const palette = [...special.accents, ...extra[special.id]];
   const short = Math.min(width, height);
   return (
@@ -261,3 +263,6 @@ export default function MotifField({ special, width, height, kind }: { special: 
     </View>
   );
 }
+
+const MotifField = memo(MotifFieldInner);
+export default MotifField;

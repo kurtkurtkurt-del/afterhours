@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { colors, fonts, radius, scrim } from '@/theme/tokens';
-import { RECORDS } from '@/content/records';
+import { RECORDS, RECORD_THUMBS } from '@/content/records';
 
 type Props = {
   width: number; // the whole sleeve, cover and record
@@ -89,6 +89,13 @@ export function recordFor(city: string | null | undefined): number | null {
   if (!city) return null;
   const slug = slugOf(city);
   return RECORDS[slug] ?? RECORDS[ALIAS[slug] ?? ''] ?? null;
+}
+// The 192 px copy for rails and grids (the plain record when the city has none).
+const RECORD_THUMB = require('../../assets/record/thumb/record.webp');
+export function recordThumb(city: string | null | undefined): number {
+  if (!city) return RECORD_THUMB;
+  const slug = slugOf(city);
+  return RECORD_THUMBS[slug] ?? RECORD_THUMBS[ALIAS[slug] ?? ''] ?? RECORD_THUMB;
 }
 
 const styles = StyleSheet.create({

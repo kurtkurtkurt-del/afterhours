@@ -125,6 +125,11 @@ def write_ts(slugs: list[str]):
     for s in slugs:
         lines.append(f"  '{s}': require('../../assets/record/{s}.webp'),")
     lines.append("};")
+    lines.append("// The same at 192 px, for rails and grids.")
+    lines.append("export const RECORD_THUMBS: Record<string, number> = {")
+    for s in slugs:
+        lines.append(f"  '{s}': require('../../assets/record/thumb/{s}.webp'),")
+    lines.append("};")
     TS.write_text("\n".join(lines) + "\n")
 
 
@@ -139,6 +144,8 @@ def build(only: list[str], sheet: bool, do_sync: bool):
     OUT.mkdir(parents=True, exist_ok=True)
     if not only:
         blank.resize((SIZE, SIZE), Image.LANCZOS).save(OUT / "record.webp", quality=90, method=6)
+        (OUT / "thumb").mkdir(exist_ok=True)
+        blank.resize((192, 192), Image.LANCZOS).save(OUT / "thumb" / "record.webp", quality=82, method=6)
     lab_px = round(n * LABEL)
     cities = [c for c in spec["cities"] if not only or c["slug"] in only]
     tiles = []
@@ -146,6 +153,9 @@ def build(only: list[str], sheet: bool, do_sync: bool):
         label = label_image(c, spec["palettes"], lab_px)
         img = compose(blank, disc[..., 3], label, n)
         img.save(OUT / f"{c['slug']}.webp", quality=88, method=6)
+        # a 192 px copy for rails and grids (96 px on screen): decoding 93 full records at once froze the phone, 22.10.2026
+        (OUT / "thumb").mkdir(exist_ok=True)
+        img.resize((192, 192), Image.LANCZOS).save(OUT / "thumb" / f"{c['slug']}.webp", quality=82, method=6)
         print("·", c["slug"])
         if sheet:
             tiles.append((c["slug"], label.resize((220, 220), Image.LANCZOS)))

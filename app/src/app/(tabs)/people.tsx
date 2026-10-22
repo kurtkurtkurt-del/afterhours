@@ -446,6 +446,10 @@ export default function PeopleScreen() {
                 <FlatList
                   ref={gallery}
                   data={slides}
+                  initialNumToRender={2}
+                  maxToRenderPerBatch={2}
+                  windowSize={3}
+                  removeClippedSubviews
                   keyExtractor={(sl) => sl.key}
                   horizontal
                   showsHorizontalScrollIndicator={false}
