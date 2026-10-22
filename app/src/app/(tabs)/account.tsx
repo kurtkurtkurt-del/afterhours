@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import Tips from '@/components/Tips';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
@@ -11,6 +11,10 @@ import LinkMarks from '@/components/LinkMarks';
 import PickerSheet from '@/components/PickerSheet';
 import ProfileCounts from '@/components/ProfileCounts';
 import Sleeve, { recordFor } from '@/components/Sleeve';
+import { RECORDS } from '@/content/records';
+import { ALL_CITY_RECORDS } from '@/content/flags';
+import { useCities } from '@/data/cities';
+import Scrim from '@/components/Scrim';
 import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE, useTabBarSpace } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
@@ -119,6 +123,21 @@ export default function AccountScreen() {
 
   const cardW = Math.round(width * CARD);
   const tileH = Math.round((width - brand.left * 2 - 10) / 2 * 1.1);
+  // the cities: the ones you have been to with their counts; in development every city with a record
+  const { cities: cityList } = useCities();
+  const [recordOpen, setRecordOpen] = useState<[string, number] | null>(null);
+  const cityRecords = useMemo<[string, number][]>(() => {
+    const count = (names: string[]): [string, number][] => {
+      const m = new Map<string, number>();
+      names.filter(Boolean).forEach((c) => m.set(c, (m.get(c) ?? 0) + 1));
+      return [...m.entries()].sort((x, y) => y[1] - x[1]);
+    };
+    const been = real ? count(cards.map((c) => (c.city_name ?? '').toLowerCase())) : [];
+    if (!ALL_CITY_RECORDS) return been;
+    const seen = new Set(been.map(([c]) => c));
+    const nameOf = (slug: string) => cityList.find((c) => c.id === slug)?.name ?? slug.replace(/-/g, ' ');
+    return [...been, ...Object.keys(RECORDS).map(nameOf).filter((n) => !seen.has(n)).map((n): [string, number] => [n, 0])];
+  }, [real, cards, cityList]);
   const cardH = cardW * 1.5;
 
   // Tapping the poster: straight to the picker without a photo, otherwise a two-option sheet.
@@ -136,11 +155,6 @@ export default function AccountScreen() {
   const two = (n: number) => String(n).padStart(2, '0');
   // days from today to a night (0 = tonight)
   const daysTo = (iso: string) => Math.max(0, Math.round((new Date(iso).setHours(0, 0, 0, 0) - new Date().setHours(0, 0, 0, 0)) / 86_400_000));
-  const cityCounts = (names: string[]): [string, number][] => {
-    const m = new Map<string, number>();
-    names.filter(Boolean).forEach((c) => m.set(c, (m.get(c) ?? 0) + 1));
-    return [...m.entries()].sort((x, y) => y[1] - x[1]);
-  };
   const at = (iso: string | null) => {
     if (!iso) return dayLabel(iso);
     const d = new Date(iso);
@@ -339,20 +353,20 @@ export default function AccountScreen() {
                 <Text style={[styles.prompt, styles.promptInk, styles.promptTight]}>{t('account.sparks.empty')}</Text>
               )}
 
-              {real ? (
+              {real || ALL_CITY_RECORDS ? (
                 <>
                   <View style={styles.underHead}>
                     <Text style={styles.underTitle}>{up(t('account.cities'))}</Text>
-                    <Text style={styles.underMute}>{cities}</Text>
+                    <Text style={styles.underMute}>{cityRecords.length}</Text>
                   </View>
-                  {/* a record for every city you have been to (owner, 22.10.2026), the nights counted under it */}
+                  {/* a record for every city you have been to (owner, 22.10.2026), the nights counted under it; a tap shows it large */}
                   <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.records}>
-                    {cityCounts(cards.map((c) => (c.city_name ?? '').toLowerCase())).map(([c, n]) => (
-                      <View key={c} style={styles.record}>
+                    {cityRecords.map(([c, n]) => (
+                      <Pressable key={c} onPress={() => setRecordOpen([c, n])} style={({ pressed }) => [styles.record, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={c}>
                         <Image source={recordFor(c) ?? RECORD} style={styles.recordImage} contentFit="contain" />
-                        <Text style={styles.recordName} numberOfLines={1}>{c}</Text>
-                        <Text style={styles.recordCount}>{up(tn('account.nNights', n))}</Text>
-                      </View>
+                        <Text style={[styles.recordName, !n && styles.recordQuiet]} numberOfLines={1}>{c}</Text>
+                        <Text style={styles.recordCount}>{n ? up(tn('account.nNights', n)) : ' '}</Text>
+                      </Pressable>
                     ))}
                   </ScrollView>
                 </>
@@ -362,6 +376,17 @@ export default function AccountScreen() {
         </View>
       </ScrollView>
 
+      {/* a record, large: the city's label as it is drawn */}
+      <Modal visible={!!recordOpen} transparent animationType="fade" onRequestClose={() => setRecordOpen(null)}>
+        <Scrim onPress={() => setRecordOpen(null)} />
+        {recordOpen ? (
+          <Pressable style={styles.recordBig} onPress={() => setRecordOpen(null)} accessibilityRole="button" accessibilityLabel={t('word.close')}>
+            <Image source={recordFor(recordOpen[0]) ?? RECORD} style={{ width: width - brand.left * 2, height: width - brand.left * 2 }} contentFit="contain" />
+            <Text style={styles.recordBigName}>{recordOpen[0]}</Text>
+            <Text style={styles.recordBigCount}>{recordOpen[1] ? up(tn('account.nNights', recordOpen[1])) : up(t('account.cities.notYet'))}</Text>
+          </Pressable>
+        ) : null}
+      </Modal>
       <PickerSheet
         open={sheet}
         title={t('account.photo')}
@@ -450,6 +475,10 @@ const styles = StyleSheet.create({
   recordImage: { width: 96, height: 96 },
   recordName: { fontFamily: fonts.medium, fontSize: 12.5, letterSpacing: -0.2, color: colors.paper, marginTop: 4 },
   recordCount: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, color: colors.meta },
+  recordQuiet: { color: colors.mute },
+  recordBig: { position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', gap: 10 },
+  recordBigName: { fontFamily: fonts.logo, fontSize: 30, letterSpacing: -0.6, color: colors.onPhoto, marginTop: 6 },
+  recordBigCount: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.onPhotoMute },
   poster: { width: 108, height: 140, borderRadius: radius.sm, overflow: 'hidden', backgroundColor: colors.ink3 },
   posterDate: { position: 'absolute', left: 7, top: 7, backgroundColor: colors.ink, color: colors.onPhoto, fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, paddingHorizontal: 6, paddingVertical: 4, borderRadius: 5, overflow: 'hidden' },
   posterText: { position: 'absolute', left: 8, right: 8, bottom: 7 },

@@ -962,6 +962,7 @@ export const tabs = {
   'account.links.empty': { en: 'connect instagram, spotify, soundcloud…', de: 'verbinde instagram, spotify, soundcloud…', tr: 'instagram, spotify, soundcloud… bağla' },
   'account.next': { en: 'coming up', de: 'als nächstes', tr: 'sırada' },
   'account.next.empty': { en: 'nothing kept yet. keep a night in the flow.', de: 'noch nichts behalten. behalte eine nacht im flow.', tr: 'henüz bir şey saklamadın. akışta bir gece sakla.' },
+  'account.cities.notYet': { en: 'not been yet', de: 'noch nicht dort gewesen', tr: 'henüz gidilmedi' },
   'account.sparks': { en: 'your sparks', de: 'deine sparks', tr: "spark'ların" },
   'account.sparks.empty': { en: 'nothing started yet. swipe a spark right.', de: 'noch nichts gestartet. wisch einen spark nach rechts.', tr: "henüz bir şey başlatmadın. bir spark'ı sağa kaydır." },
   'account.sparks.answers': { en: '{in} in · {out} out', de: '{in} dabei · {out} nicht', tr: '{in} var · {out} yok' },

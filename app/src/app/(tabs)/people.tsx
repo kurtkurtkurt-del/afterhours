@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Tips from '@/components/Tips';
 import { FlatList, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { peek, useShelf } from '@/lib/offline';
 import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
 import { router, useFocusEffect } from 'expo-router';
@@ -54,7 +55,9 @@ export default function PeopleScreen() {
   const insets = useSafeAreaInsets();
   const tabSpace = useTabBarSpace();
   // Your groups (44_groups.sql), read on every visit.
-  const [groups, setGroups] = useState<GroupRow[]>([]);
+  useShelf('groups'); // redraws when a refresh lands on the shelf
+  const [freshGroups, setGroups] = useState<GroupRow[] | null>(null);
+  const groups = freshGroups ?? peek<GroupRow[]>('groups', '') ?? [];
   const { session } = useAuth();
   const real = useYours();
   const { t, tn, tx, up, lang } = useLang();

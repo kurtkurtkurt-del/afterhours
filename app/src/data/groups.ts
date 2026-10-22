@@ -4,6 +4,7 @@ import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
 import { File } from 'expo-file-system';
 import type { ImageSourcePropType } from 'react-native';
 import { supabase } from '@/lib/supabase';
+import { remember } from '@/lib/offline';
 import type { Night } from '@/data/deck';
 import { SITE } from '@/data/deck';
 
@@ -87,7 +88,8 @@ export function coverSource(path: string | null): ImageSourcePropType | null {
 }
 export const groupSetCover = (id: string, path: string | null) => rpc<string | null>('group_set_cover', { p_id: id, p_path: path });
 
-export const myGroups = () => rpc<GroupRow[]>('my_groups');
+// the phone's copy first, refreshed behind it: connect draws the groups at once (owner, 22.10.2026)
+export const myGroups = () => remember('groups', '', () => rpc<GroupRow[]>('my_groups'), 1, { ttl: 0 });
 export const groupGet = (id: string) => rpc<Group>('group_get', { p_id: id });
 export const groupSuggest = () => rpc<Suggestion[]>('group_suggest');
 

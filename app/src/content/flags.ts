@@ -4,3 +4,7 @@
 // redirect, the setting is not shown, and 81_posts_off.sql keeps the pushes from
 // leaving. Flip to true to bring it all back.
 export const POSTS_ON = false;
+
+// Every city's record under cities on the owner's account while the records are new
+// (22.10.2026): development builds only; what ships lists the cities you have been to.
+export const ALL_CITY_RECORDS = __DEV__;

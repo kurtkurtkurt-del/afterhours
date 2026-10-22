@@ -162,7 +162,6 @@ const styles = StyleSheet.create({
   nightBtnOnSpot: { backgroundColor: colors.onSpot },
   nightBtnText: { fontFamily: fonts.medium, fontSize: 13, color: colors.onSpot },
   nightBtnTextOnSpot: { color: colors.spot },
-  pressed: { opacity: 0.7 },
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 40, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top, left: brand.left + 40, right: brand.left + 40, textAlign: 'center', fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },
