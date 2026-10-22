@@ -50,7 +50,9 @@ export function AmbientProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // The user turned sound on themselves; do not let Android's vibrate mode silence it.
-    setAudioModeAsync({ playsInSilentMode: true, shouldPlayInBackground: false, interruptionMode: 'mixWithOthers' });
+    // doNotMix: while the app plays, the phone's other audio (Spotify, a video) pauses, and
+    // resumes once nothing plays here (focus is asked on play and given back on pause).
+    setAudioModeAsync({ playsInSilentMode: true, shouldPlayInBackground: false, interruptionMode: 'doNotMix' });
   }, []);
 
   const toggle = useCallback(() => {
