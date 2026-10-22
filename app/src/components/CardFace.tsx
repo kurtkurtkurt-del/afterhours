@@ -285,9 +285,10 @@ const styles = StyleSheet.create({
   fitPoster: { borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink },
   fill: { width: '100%', height: '100%' },
   posterBox: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.ink2 },
-  caption: { position: 'absolute', left: 8, right: 8, flexDirection: 'row', alignItems: 'stretch', borderRadius: radius.lg, overflow: 'hidden' },
+  // the caption is a card of its own on the ground (white on white read as nothing, 22.10.2026)
+  caption: { position: 'absolute', left: 8, right: 8, flexDirection: 'row', alignItems: 'stretch', borderRadius: radius.lg, overflow: 'hidden', borderWidth: 1, borderColor: colors.edge },
   // never shorter than the strips' rotated words need (12.10.2026: a title-only block shrank to a bar)
-  block: { flex: 1, minHeight: 124, backgroundColor: colors.ink, paddingHorizontal: 14, paddingTop: 14, paddingBottom: 13, gap: 2, justifyContent: 'center' },
+  block: { flex: 1, minHeight: 124, backgroundColor: colors.card, paddingHorizontal: 14, paddingTop: 14, paddingBottom: 13, gap: 2, justifyContent: 'center' },
   // the title grew a size when the mono lines left the block (11.10.2026)
   title: { fontFamily: fonts.logo, fontSize: 36, lineHeight: 34, letterSpacing: -0.8, color: colors.spotText, marginBottom: 5 },
   venue: { fontFamily: fonts.medium, fontSize: 14, letterSpacing: -0.2, color: colors.paper },

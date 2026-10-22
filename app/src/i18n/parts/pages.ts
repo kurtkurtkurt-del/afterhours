@@ -113,6 +113,7 @@ export const pages = {
   'messages.people': { en: 'people', de: 'leute', tr: 'insanlar' },
   'messages.outNow': { en: 'out now', de: 'unterwegs', tr: 'dışarıda' },
   'messages.requests': { en: 'requests', de: 'anfragen', tr: 'istekler' },
+  'messages.openNight': { en: 'open the night', de: 'nacht öffnen', tr: 'geceyi aç' },
   'messages.conversations': { en: 'conversations', de: 'unterhaltungen', tr: 'konuşmalar' },
   'messages.nOut': { en: '{n} out now', de: '{n} unterwegs', tr: '{n} dışarıda' },
   'messages.nRequests': { en: '{n} requests', de: '{n} anfragen', tr: '{n} istek' },

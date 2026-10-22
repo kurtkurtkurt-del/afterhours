@@ -1,0 +1,3 @@
+# the two keys enrich.mjs reads when run from a Mac (never committed)
+.env.local
+.enrich-state.json

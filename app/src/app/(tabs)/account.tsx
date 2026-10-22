@@ -263,7 +263,7 @@ export default function AccountScreen() {
                   {upcoming.slice(0, 2).map((n) => (
                     <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.tile, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
                       {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
-                      <LinearGradient colors={[scrim(0.0), scrim(0.92)]} locations={[0.4, 1]} style={StyleSheet.absoluteFill} />
+                      <LinearGradient colors={[scrim(0.0), scrim(0.6), scrim(0.96)]} locations={[0.2, 0.6, 1]} style={StyleSheet.absoluteFill} />
                       <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
                       <View style={styles.tileText}>
                         <Text style={styles.tileTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
@@ -306,7 +306,7 @@ export default function AccountScreen() {
                   {sparks.slice(0, 2).map((sp) => (
                     <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.tile, styles.tileGold, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
                       <Image source={sparkOf(sp.kind).thumb} style={StyleSheet.absoluteFill} contentFit="cover" />
-                      <LinearGradient colors={[scrim(0.0), scrim(0.92)]} locations={[0.4, 1]} style={StyleSheet.absoluteFill} />
+                      <LinearGradient colors={[scrim(0.0), scrim(0.6), scrim(0.96)]} locations={[0.2, 0.6, 1]} style={StyleSheet.absoluteFill} />
                       <Text style={[styles.posterDate, styles.posterGold]}>{up(at(sp.starts_at))}</Text>
                       <View style={styles.tileText}>
                         <Text style={styles.tileTitle} numberOfLines={2}>{sp.title.toLowerCase()}</Text>
@@ -442,7 +442,7 @@ const styles = StyleSheet.create({
   tile: { flex: 1, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink3 },
   tileGold: { borderWidth: 1, borderColor: GOLD },
   tileText: { position: 'absolute', left: 10, right: 10, bottom: 10 },
-  tileTitle: { fontFamily: fonts.semibold, fontSize: 16, lineHeight: 18, letterSpacing: -0.3, color: colors.onPhoto },
+  tileTitle: { fontFamily: fonts.semibold, fontSize: 17, lineHeight: 19, letterSpacing: -0.3, color: colors.onPhoto, textShadowColor: 'rgba(0,0,0,0.6)', textShadowRadius: 6, textShadowOffset: { width: 0, height: 1 } },
   posterGold: { color: GOLD },
   goldText: { color: GOLD },
   records: { gap: 14, paddingRight: brand.left },
@@ -453,8 +453,8 @@ const styles = StyleSheet.create({
   poster: { width: 108, height: 140, borderRadius: radius.sm, overflow: 'hidden', backgroundColor: colors.ink3 },
   posterDate: { position: 'absolute', left: 7, top: 7, backgroundColor: colors.ink, color: colors.onPhoto, fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, paddingHorizontal: 6, paddingVertical: 4, borderRadius: 5, overflow: 'hidden' },
   posterText: { position: 'absolute', left: 8, right: 8, bottom: 7 },
-  posterTitle: { fontFamily: fonts.semibold, fontSize: 12.5, lineHeight: 14, letterSpacing: -0.2, color: colors.onPhoto },
-  posterMono: { fontFamily: fonts.jet, fontSize: 7.5, letterSpacing: 1, color: colors.onPhotoMute, marginTop: 3 },
+  posterTitle: { fontFamily: fonts.semibold, fontSize: 12.5, lineHeight: 14, letterSpacing: -0.2, color: colors.onPhoto, textShadowColor: 'rgba(0,0,0,0.6)', textShadowRadius: 4, textShadowOffset: { width: 0, height: 1 } },
+  posterMono: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, color: colors.onPhoto, marginTop: 4, textShadowColor: 'rgba(0,0,0,0.6)', textShadowRadius: 4, textShadowOffset: { width: 0, height: 1 } },
   posterRed: { color: colors.onPhotoSpot },
   spark: { flexDirection: 'row', alignItems: 'center', gap: 10, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.sm, padding: 9, marginTop: 6 },
   sparkFirst: { borderColor: GOLD, marginTop: 0 },
