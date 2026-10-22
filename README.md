@@ -1157,6 +1157,12 @@ The order matters: each step closes the road the one before it opened.
 
 Every one of these cost us something:
 
+- **Nothing at the start may wait for ever.** The opening sometimes hung (22.10.2026):
+  `getSession()` refreshes an expired token over the network with no time limit and had
+  no `catch`, and a font that failed kept the splash up. Now auth is ready within 4 s
+  (the stored session stands in), the fonts get 6 s, the name stays on screen until it is
+  known who is opening the app (no sign-up screen flashing past a returning user), and a
+  film that cannot load or whose page dies moves on.
 - **The system's dialogs are not ours.** Since 22.10.2026 `lib/dialog.ts` points
   `Alert.alert` at the app's own sheet (`components/DialogHost.tsx`, a Modal so it sits
   over any sheet that asks): every confirmation looks like the app on Android, iOS and

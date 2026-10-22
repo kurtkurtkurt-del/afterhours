@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Stack } from 'expo-router';
 import { Platform, Text, View } from 'react-native';
 import { NavigationBar } from 'expo-navigation-bar';
@@ -56,10 +56,19 @@ const SENTRY_DSN = process.env.EXPO_PUBLIC_SENTRY_DSN ?? '';
 Sentry.init({ dsn: SENTRY_DSN, enabled: !!SENTRY_DSN && !__DEV__, tracesSampleRate: 0.1, sendDefaultPii: false });
 
 function RootLayout() {
-  const [loaded] = useFonts({ InterTight_400Regular, InterTight_500Medium, InterTight_600SemiBold, JetBrainsMono_400Regular, ArchivoLogo: require('../../assets/fonts/ArchivoLogo.ttf') });
+  const [fontsIn, fontError] = useFonts({ InterTight_400Regular, InterTight_500Medium, InterTight_600SemiBold, JetBrainsMono_400Regular, ArchivoLogo: require('../../assets/fonts/ArchivoLogo.ttf') });
 
+  // A font that fails to load, or takes too long, must not keep the splash up for good
+  // (owner, 22.10.2026: the opening sometimes hung): after 6 s the app goes on with the
+  // system face.
+  const [waited, setWaited] = useState(false);
   useEffect(() => {
-    if (loaded) SplashScreen.hideAsync();
+    const t = setTimeout(() => setWaited(true), 6000);
+    return () => clearTimeout(t);
+  }, []);
+  const loaded = fontsIn || !!fontError || waited;
+  useEffect(() => {
+    if (loaded) SplashScreen.hideAsync().catch(() => {});
   }, [loaded]);
 
   // Hide Android's system navigation bar; a swipe up reveals it temporarily.

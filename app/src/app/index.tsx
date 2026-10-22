@@ -14,6 +14,10 @@ export default function Home() {
   const done = useCallback(() => setIntroDone(true), []);
   const ambient = useAmbient();
   const { ready, session } = useAuth();
+  // The name stays up until it is known who is opening the app: a returning user goes
+  // straight on to the flow, and never sees the sign-up screen flash by first.
+  // (auth is always ready within about 4 s, auth/AuthContext.tsx)
+  const opened = introDone && ready && !session;
   // Returning users (account or guest) skip the intro.
   useEffect(() => {
     if (!ready || !session) return;
@@ -24,8 +28,8 @@ export default function Home() {
   }, [ready, session]);
   return (
     <View style={styles.root}>
-      <City play={introDone} soundOn={ambient.on} onToggleSound={ambient.toggle} onPickSound={ambient.openPicker} />
-      {!introDone && (
+      <City play={opened} soundOn={ambient.on} onToggleSound={ambient.toggle} onPickSound={ambient.openPicker} />
+      {!opened && (
         <View style={StyleSheet.absoluteFill}>
           <Intro onDone={done} />
         </View>
