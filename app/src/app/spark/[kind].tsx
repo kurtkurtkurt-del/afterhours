@@ -9,6 +9,7 @@ import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
+import DayPicker, { fromIso, isoDay } from '@/components/DayPicker';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
 import PullDownScroll from '@/components/PullDownScroll';
@@ -18,7 +19,7 @@ import { sparkIn, sparkOf, sparkTimes, type Spark } from '@/content/sparks';
 import { sparkHint, type SparkHint } from '@/data/sparkHints';
 import { useHere } from '@/data/here';
 import * as Location from 'expo-location';
-import { sparkAnswer, sparkAudience, sparkCancel, sparkCreate, sparkGet, sparkPeople, SparksNotReady, type Audience, type Reach, type SeenSpark, type SparkPerson } from '@/data/sparks';
+import { sparkAnswer, sparkAudience, sparkCancel, sparkCreate, sparkEdit, sparkGet, sparkPeople, SparksNotReady, type Audience, type Reach, type SeenSpark, type SparkPerson } from '@/data/sparks';
 import { upperData, useLang, type Key } from '@/i18n';
 import { colors, fonts, radius, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -239,7 +240,7 @@ async function spotNow(): Promise<[number, number] | null> {
 
 // Someone's spark (from your spark deck or the map), or your own: read as it is now.
 function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; width: number; whenText: (at: Date) => string }) {
-  const { t, up } = useLang();
+  const { t, tn, up } = useLang();
   const reporting = useReport();
   const [invite, setInvite] = useState<SeenSpark | null | undefined>(undefined);
   const [answer, setAnswer] = useState<'in' | 'out' | null>(null);
@@ -247,6 +248,11 @@ function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; 
   // Who answered: the host sees in and out, someone who is in sees the others in.
   const [people, setPeople] = useState<SparkPerson[]>([]);
   const [calling, setCalling] = useState(false);
+  // Your own spark: change the name, the day, the time or the place later (96).
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState<{ title: string; day: string; minutes: number; place: string }>({ title: '', day: '', minutes: 0, place: '' });
+  const [dayOpen, setDayOpen] = useState(false);
+  const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     let live = true;
@@ -293,6 +299,41 @@ function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; 
         setNote(serverText(e));
       });
   };
+  const startEdit = () => {
+    const at = new Date(invite.starts_at);
+    setDraft({ title: invite.title, day: isoDay(at), minutes: at.getHours() * 60 + at.getMinutes(), place: invite.place ?? '' });
+    setNote(null);
+    setCalling(false);
+    setEditing(true);
+  };
+  const draftAt = () => {
+    const at = fromIso(draft.day);
+    at.setHours(Math.floor(draft.minutes / 60), draft.minutes % 60, 0, 0);
+    return at;
+  };
+  // 15 minutes a step, kept inside the day.
+  const nudge = (step: number) => setDraft((d) => ({ ...d, minutes: (d.minutes + step + 24 * 60) % (24 * 60) }));
+  const save = () => {
+    if (saving) return;
+    const title = draft.title.trim();
+    const at = draftAt();
+    const place = draft.place.trim();
+    if (title === invite.title && at.getTime() === new Date(invite.starts_at).getTime() && place === (invite.place ?? '')) {
+      setEditing(false);
+      setNote(t('spark.edit.same'));
+      return;
+    }
+    setSaving(true);
+    setNote(null);
+    sparkEdit(id, title, at, place)
+      .then((told) => {
+        setInvite({ ...invite, title, starts_at: at.toISOString(), place: place || null });
+        setEditing(false);
+        setNote(told ? tn('spark.edit.told', told) : t('spark.edit.saved'));
+      })
+      .catch((e) => setNote(e instanceof SparksNotReady ? t('spark.notReady') : serverText(e)))
+      .finally(() => setSaving(false));
+  };
   const ins = people.filter((p) => p.answer === 'in');
   const outs = people.filter((p) => p.answer === 'out');
   const host = invite.mine ? t('deck.you') : (invite.host_name ?? invite.host_handle ?? '').toLowerCase();
@@ -312,6 +353,35 @@ function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; 
           </View>
         )}
         {note ? <Text style={styles.mono}>{upperData(note)}</Text> : null}
+        {editing ? (
+          <View style={styles.rows}>
+            <View style={styles.field}>
+              <Text style={styles.rowK}>{t('spark.name')}</Text>
+              <Input value={draft.title} onChangeText={(v) => setDraft((d) => ({ ...d, title: v }))} maxLength={80} />
+            </View>
+            <View style={styles.field}>
+              <Text style={styles.rowK}>{t('spark.when')}</Text>
+              <View style={styles.chips}>
+                <Chip label={`${t('spark.edit.day')} · ${whenText(draftAt()).split(' · ')[0]}`} on={false} onPress={() => setDayOpen(true)} />
+              </View>
+              <View style={styles.stepper}>
+                <Chip label="−" on={false} onPress={() => nudge(-15)} />
+                <Text style={styles.time} accessibilityLabel={t('spark.edit.time')}>{`${two(Math.floor(draft.minutes / 60))}:${two(draft.minutes % 60)}`}</Text>
+                <Chip label="+" on={false} onPress={() => nudge(15)} />
+              </View>
+            </View>
+            <View style={styles.field}>
+              <Text style={styles.rowK}>{t('spark.where')}</Text>
+              <Input value={draft.place} onChangeText={(v) => setDraft((d) => ({ ...d, place: v }))} maxLength={80} />
+              <View style={styles.chips}>
+                {spark.places.map((k) => (
+                  <Chip key={k} label={t(k)} on={draft.place === t(k)} onPress={() => setDraft((d) => ({ ...d, place: t(k) }))} />
+                ))}
+              </View>
+            </View>
+            {invite.going ? <Text style={[styles.small, styles.editNote]}>{t('spark.edit.note')}</Text> : null}
+          </View>
+        ) : (
         <View style={styles.rows}>
           <Row k={t('spark.host')} v={host} />
           {invite.wave ? <Row k={t('spark.wave')} v={t(invite.wave === 1 ? 'spark.wave1.short' : invite.wave === 2 ? 'deck.wave2' : 'deck.wave3')} /> : null}
@@ -321,7 +391,20 @@ function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; 
           {ins.length ? <Row k={t('spark.in.names')} v={ins.map((p) => (p.me ? t('deck.you') : p.name.toLowerCase())).join(', ')} /> : null}
           {invite.mine && outs.length ? <Row k={t('spark.out.names')} v={outs.map((p) => p.name.toLowerCase()).join(', ')} /> : null}
         </View>
-        {invite.mine ? <Button label={calling ? t('spark.callOff.sure') : t('spark.callOff')} kind="line" onPress={callOff} /> : null}
+        )}
+        {invite.mine && editing ? (
+          <View style={styles.actions}>
+            <View style={{ flex: 1 }}>
+              <Button label={saving ? '…' : t('word.save')} onPress={save} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Button label={t('word.cancel')} kind="line" onPress={() => setEditing(false)} />
+            </View>
+          </View>
+        ) : null}
+        {invite.mine && !editing ? <Button label={t('spark.edit')} onPress={startEdit} /> : null}
+        {invite.mine && !editing ? <Button label={calling ? t('spark.callOff.sure') : t('spark.callOff')} kind="line" onPress={callOff} /> : null}
+        {invite.mine ? <DayPicker open={dayOpen} title={t('spark.edit.day')} value={draft.day || null} onSelect={(d) => { setDraft((x) => ({ ...x, day: d })); setDayOpen(false); }} onClose={() => setDayOpen(false)} /> : null}
         {invite.mine ? null : (
           <View style={styles.report}>
             <PillAction icon="flag" label={t('report.spark')} onPress={() => reporting.ask('spark', id)} />
@@ -372,6 +455,9 @@ const styles = StyleSheet.create({
   rowK: { fontFamily: fonts.regular, fontSize: 13, color: colors.mute },
   rowV: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper2, flex: 1, textAlign: 'right' },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  stepper: { flexDirection: 'row', alignItems: 'center', gap: 14 },
+  time: { fontFamily: fonts.jet, fontSize: 22, letterSpacing: 0.5, color: colors.paper, minWidth: 74, textAlign: 'center' },
+  editNote: { paddingTop: 12 },
   chip: { height: 34, paddingHorizontal: 13, borderRadius: radius.pill, borderWidth: 1, borderColor: colors.ink3, justifyContent: 'center' },
   chipOn: { backgroundColor: colors.paper, borderColor: colors.paper },
   chipText: { fontFamily: fonts.medium, fontSize: 13, color: colors.mute },

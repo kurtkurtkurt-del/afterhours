@@ -103,6 +103,7 @@ const structure = [
   ["93_staff_backlog.sql", "WHAT THE STAFF HAVE LEFT WAITING"],
   ["94_retention.sql", "WHAT IS KEPT, AND FOR HOW LONG"],
   ["95_past_night_page.sql", "A NIGHT THAT HAPPENED STILL HAS ITS PAGE"],
+  ["96_spark_edit.sql", "A SPARK CAN BE CHANGED AFTER IT WENT OUT"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

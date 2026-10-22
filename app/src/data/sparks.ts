@@ -33,6 +33,15 @@ export async function sparkCreate(kind: SparkKind, title: string, startsAt: Date
   return String(data);
 }
 
+// 96_spark_edit.sql: the host changes the name, the time or the place; everyone who said
+// in gets a push. Returns how many were told (0 when nothing changed).
+export async function sparkEdit(id: string, title: string, startsAt: Date, place: string): Promise<number> {
+  const { data, error } = await supabase.rpc('spark_edit', { p_spark: id, p_title: title, p_starts_at: startsAt.toISOString(), p_place: place });
+  if (error) throw notReady(error) ? new SparksNotReady(error.message) : error;
+  invalidate('sparkMine', 'sparksNear', 'sparkGet', 'sparkInbox');
+  return Number(data ?? 0);
+}
+
 // How many people each wave holds, counted up. null when unknown (offline, not set up).
 export type Audience = { wave1: number; wave2: number; wave3: number };
 export async function sparkAudience(): Promise<Audience | null> {

@@ -97,4 +97,5 @@ export const EXPECTED_SQL = [
   '93_staff_backlog.sql',
   '94_retention.sql',
   '95_past_night_page.sql',
+  '96_spark_edit.sql',
 ];

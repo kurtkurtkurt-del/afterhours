@@ -673,6 +673,15 @@ export const tabs = {
   'spark.in': { en: "i'm in", de: 'bin dabei', tr: 'varım' },
   'spark.out': { en: 'not this time', de: 'diesmal nicht', tr: 'bu sefer yok' },
   'spark.going': { en: '{n} in so far', de: 'bisher {n} dabei', tr: 'şimdilik {n} kişi var' },
+  // 96_spark_edit.sql: the host changes it later; the ones who said in hear about it
+  'spark.edit': { en: 'edit', de: 'bearbeiten', tr: 'düzenle' },
+  'spark.edit.note': { en: 'everyone who said in hears about the change', de: 'alle, die dabei sind, erfahren von der änderung', tr: 'varım diyen herkese değişiklik bildirilir' },
+  'spark.edit.day': { en: 'day', de: 'tag', tr: 'gün' },
+  'spark.edit.time': { en: 'time', de: 'uhrzeit', tr: 'saat' },
+  'spark.edit.same': { en: 'nothing changed', de: 'nichts geändert', tr: 'değişiklik yok' },
+  'spark.edit.saved': { en: 'saved', de: 'gespeichert', tr: 'kaydedildi' },
+  'spark.edit.told.one': { en: 'saved · {n} person heard about it', de: 'gespeichert · {n} person weiß bescheid', tr: 'kaydedildi · {n} kişiye haber gitti' },
+  'spark.edit.told.other': { en: 'saved · {n} people heard about it', de: 'gespeichert · {n} personen wissen bescheid', tr: 'kaydedildi · {n} kişiye haber gitti' },
 
   // deck, card face, deck viewer
   'deck.yours': { en: 'your deck', de: 'dein stapel', tr: 'senin desten' },
