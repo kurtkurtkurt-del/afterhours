@@ -277,7 +277,6 @@ export default function AccountScreen() {
                   {upcoming.slice(0, 2).map((n) => (
                     <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.tile, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
                       {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
-                      <LinearGradient colors={[scrim(0.0), scrim(0.6), scrim(0.96)]} locations={[0.2, 0.6, 1]} style={StyleSheet.absoluteFill} />
                       <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
                       <View style={styles.tileText}>
                         <Text style={styles.tileTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
@@ -320,7 +319,6 @@ export default function AccountScreen() {
                   {sparks.slice(0, 2).map((sp) => (
                     <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.tile, styles.tileGold, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
                       <Image source={sparkOf(sp.kind).thumb} style={StyleSheet.absoluteFill} contentFit="cover" />
-                      <LinearGradient colors={[scrim(0.0), scrim(0.6), scrim(0.96)]} locations={[0.2, 0.6, 1]} style={StyleSheet.absoluteFill} />
                       <Text style={[styles.posterDate, styles.posterGold]}>{up(at(sp.starts_at))}</Text>
                       <View style={styles.tileText}>
                         <Text style={styles.tileTitle} numberOfLines={2}>{sp.title.toLowerCase()}</Text>
@@ -476,8 +474,9 @@ const styles = StyleSheet.create({
   pair: { flexDirection: 'row', gap: 10, marginBottom: 10 },
   tile: { flex: 1, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink3 },
   tileGold: { borderWidth: 1, borderColor: GOLD },
-  tileText: { position: 'absolute', left: 10, right: 10, bottom: 10 },
-  tileTitle: { fontFamily: fonts.semibold, fontSize: 17, lineHeight: 19, letterSpacing: -0.3, color: colors.onPhoto, textShadowColor: 'rgba(0,0,0,0.6)', textShadowRadius: 6, textShadowOffset: { width: 0, height: 1 } },
+  // an ink band under the photo (words on a bright photo did not read, 22.10.2026)
+  tileText: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingHorizontal: 10, paddingTop: 9, paddingBottom: 10, backgroundColor: colors.poster },
+  tileTitle: { fontFamily: fonts.semibold, fontSize: 16, lineHeight: 18, letterSpacing: -0.3, color: colors.onPhoto },
   posterGold: { color: GOLD },
   goldText: { color: GOLD },
   records: { gap: 14, paddingRight: brand.left },
