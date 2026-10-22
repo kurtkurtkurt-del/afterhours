@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Storage from 'expo-sqlite/kv-store';
 import { LayoutChangeEvent, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import Logo from '@/components/Logo';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
@@ -68,9 +69,9 @@ export default function City({ play, soundOn, onToggleSound, onPickSound }: Prop
       <StatusBar style={barStyle} />
       <Backdrop />
       <View style={styles.centre} pointerEvents="none">
-        <Animated.Text onLayout={onLayout} style={[styles.word, wordStyle]}>
-          afterhours<Text style={styles.dot}>.</Text>
-        </Animated.Text>
+        <Animated.View onLayout={onLayout} style={wordStyle}>
+          <Logo size={brand.logoBig} />
+        </Animated.View>
       </View>
       <Animated.View style={[styles.corner, actionsStyle]} pointerEvents={play ? 'auto' : 'none'}>
         <SoundToggle on={soundOn} onPress={onToggleSound} onLongPress={onPickSound} />
@@ -103,6 +104,4 @@ const styles = StyleSheet.create({
   lang: { position: 'absolute', left: brand.left, top: brand.top + 46 },
   hint: { fontFamily: fonts.regular, fontSize: 11, color: colors.mute },
   actions: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingHorizontal: brand.left, gap: 12 },
-  word: { fontFamily: fonts.logo, fontSize: brand.logoBig, letterSpacing: -0.5, color: colors.paper },
-  dot: { color: colors.spot },
 });

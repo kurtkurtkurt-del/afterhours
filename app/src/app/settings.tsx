@@ -2,6 +2,7 @@ import { SITE } from '@/data/deck';
 import { serverText } from '@/lib/serverText';
 import { useEffect, useState } from 'react';
 import { Alert, Linking, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import Logo from '@/components/Logo';
 import Constants, { ExecutionEnvironment } from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -424,9 +425,7 @@ export default function SettingsScreen() {
 
         {!section || section === 'about' ? (
         <View style={styles.foot}>
-          <Text style={styles.logo}>
-            afterhours<Text style={styles.logoDot}>.</Text>
-          </Text>
+          <Logo size={20} />
           <Text style={styles.version}>{`${up(t('settings.version'))} ${upperData(version)}`}</Text>
         </View>
         ) : null}
@@ -535,7 +534,5 @@ const styles = StyleSheet.create({
   cardUnder: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.2, color: colors.mute },
   note: { fontFamily: fonts.regular, fontSize: 12, lineHeight: 17, color: colors.mute, marginTop: 10 },
   foot: { alignItems: 'center', gap: 6, marginTop: 36, marginBottom: 28 },
-  logo: { fontFamily: fonts.logo, fontSize: 20, letterSpacing: -0.4, color: colors.paper },
-  logoDot: { color: colors.spot },
   version: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta },
 });
