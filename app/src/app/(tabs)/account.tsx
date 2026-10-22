@@ -125,7 +125,9 @@ export default function AccountScreen() {
   const picked = (id: string) => setTimeout(() => (id === 'remove' ? remove() : choose()), 320);
 
   const tabBottom = TAB_BAR_SPACE + insets.bottom;
-  const screenH = rootH || height;
+  // Never taller than the window: on the web the root grows with its content, and the gap
+  // below would feed it back (the page ran to 376 000 px).
+  const screenH = Math.min(rootH || height, height);
   // Push the collection down until half of its cards fill the bottom of the first screen.
   const gap = aboveH && headH ? Math.max(0, screenH - tabBottom - (aboveH + headH + cardH / 2)) : 0;
   const signedIn = !!session && !isAnonymous;

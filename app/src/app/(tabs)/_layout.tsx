@@ -17,7 +17,7 @@ export default function TabsLayout() {
   useFollowLocation(cities);
   return (
     <Tabs>
-      <TabSlot renderFn={renderTab} />
+      <TabSlot renderFn={renderTab} style={styles.slot} />
       <TabList asChild>
         <TabBarFrame>
           <TabTrigger name="flow" href="/flow" asChild>
@@ -72,6 +72,9 @@ function TabFade({ focused, children }: { focused: boolean; children: ReactNode 
 }
 
 const styles = StyleSheet.create({
+  // expo-router's container does not shrink (flex-basis auto, shrink 0): on the web a tab
+  // grew to its content, so its ScrollView never scrolled and tips sat below the tab bar.
+  slot: { flexBasis: 0, flexShrink: 1, minHeight: 0 },
   fill: { flex: 1 },
   screen: { flex: 1, position: 'relative', height: '100%' },
   focused: { zIndex: 1, display: 'flex', flexShrink: 0, flexGrow: 1 },

@@ -92,7 +92,8 @@ export default function MapScreen() {
 
   const current = useHere();
   const stored = current.city ?? 'munchen';
-  const cityName = here?.name ?? current.name ?? stored;
+  // With no city chosen yet only the slug is stored; the list knows its name ("münchen").
+  const cityName = current.name ?? cities.find((c) => c.id === stored)?.name ?? here?.name ?? stored;
   const fallbackCentre = CENTRES[stored] ?? CENTRES.munchen;
   const atCity = follow === 'city' || !me;
   const centre = !atCity && me ? me : (here?.centre ?? fallbackCentre);

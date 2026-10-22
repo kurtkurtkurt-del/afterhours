@@ -130,7 +130,8 @@ export default function PersonScreen() {
   const cardH = cardW * 1.5;
   const top = brand.top + 48;
   // Push the collection down until half of its cards fill the bottom of the first screen.
-  const gap = rootH && aboveH && headH ? Math.max(0, rootH - insets.bottom - (top + aboveH + headH + cardH / 2)) : 0;
+  // Capped at the window: on the web the root grows with the gap and would feed it back.
+  const gap = rootH && aboveH && headH ? Math.max(0, Math.min(rootH, height) - insets.bottom - (top + aboveH + headH + cardH / 2)) : 0;
 
   const band = (
     <View style={styles.band}>

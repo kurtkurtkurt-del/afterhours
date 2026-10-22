@@ -305,7 +305,10 @@ redraws it when the language changes (no restart, no remount).
 The language is chosen on the home screen and in onboarding
 (`components/LangRow.tsx`, before signing in) and in settings; it is kept
 in the kv-store and in `profile_settings.locale`, so the site and the
-app follow the same account. Nothing is uppercased by style any more:
+app follow the same account. A new account only carries the database
+default (`en`), so for its first ten minutes the device's language wins and
+is written to the account (until 22.10.2026 a Turkish phone that never
+tapped a language flipped to English on sign-up). Nothing is uppercased by style any more:
 React Native uppercases with the PHONE's locale, so `up()` (the app's
 language) and `upperData()` (data) do it by hand.
 
@@ -766,6 +769,16 @@ separate from Safari's).
   `404.html` for deep links, force-push to `afterhours-pwa` on `main`).
   Supabase → Authentication → URL Configuration → Redirect URLs needs
   `https://kurtkurtkurt-del.github.io/afterhours-pwa/**`
+- web traps (22.10.2026): expo-router's `TabSlot` container does not shrink, so
+  on the web a tab grew to its content — its ScrollView never scrolled, tips sat
+  under the tab bar, and the account page's `gap` (measured from the root) fed
+  itself to 376 000 px. `(tabs)/_layout.tsx` gives the slot `flexBasis 0 /
+  flexShrink 1 / minHeight 0`, and the account and person pages cap the measured
+  height at the window. Try a web build locally with `npx expo export -p web`
+  and any static server that answers unknown paths with `index.html`
+- `ArchivoLogo.ttf` (the logo and the tip headings) is cut from the full Google
+  Fonts Archivo (wdth 62, wght 900); the first one was the Latin subset only and
+  drew ğ, ş, İ in a fallback face
 
 ---
 
