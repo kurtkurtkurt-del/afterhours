@@ -1,4 +1,5 @@
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Scrim from '@/components/Scrim';
 import { Image } from 'expo-image';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Avatar from '@/components/Avatar';
@@ -30,7 +31,7 @@ export default function WhoSheet({ open, title, people, answer, onAnswer, onPers
   ];
   return (
     <Modal visible={open} transparent animationType="slide" onRequestClose={onClose}>
-      <Pressable style={styles.dim} onPress={onClose} />
+      <Scrim onPress={onClose} />
       <View style={[styles.sheet, { paddingBottom: insets.bottom + 22 }]}>
         <View style={styles.grip} />
         <Text style={styles.kicker}>{up(t('who.coming'))}</Text>
@@ -78,7 +79,6 @@ export default function WhoSheet({ open, title, people, answer, onAnswer, onPers
 }
 
 const styles = StyleSheet.create({
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
   sheet: { backgroundColor: colors.ink, borderWidth: 1, borderBottomWidth: 0, borderColor: colors.ink3, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, paddingHorizontal: brand.left, paddingTop: 10, maxHeight: '82%' },
   grip: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: colors.ink3, marginBottom: 14 },
   kicker: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.meta, marginTop: 6 },

@@ -20,7 +20,8 @@ const FLING = 900;   // or flung this fast
 // When scrolled, the gesture scrolls; back at the top it pulls again.
 // header: the page's top band, rendered inside the card so it moves with it and the
 // handle can sit above it.
-export default function PullDownScroll({ children, style, header, ...rest }: ScrollViewProps & { header?: ReactNode }) {
+// closes: false for a page that is a tab (messages): no pull gesture, no handle, nothing to go back to.
+export default function PullDownScroll({ children, style, header, closes = true, ...rest }: ScrollViewProps & { header?: ReactNode; closes?: boolean }) {
   const t = useT();
   const { height } = useWindowDimensions();
   const insets = useSafeAreaInsets();
@@ -37,6 +38,7 @@ export default function PullDownScroll({ children, style, header, ...rest }: Scr
 
   const native = Gesture.Native();
   const pan = Gesture.Pan()
+    .enabled(closes)
     .activeOffsetY(6)
     .failOffsetX([-14, 14])
     .simultaneousWithExternalGesture(native)
@@ -65,8 +67,9 @@ export default function PullDownScroll({ children, style, header, ...rest }: Scr
   // one small nudge after opening: down 18 px and back
   const nudge = useSharedValue(0);
   useEffect(() => {
+    if (!closes) return;
     nudge.set(withDelay(450, withSequence(withTiming(18, { duration: 260, easing: Easing.out(Easing.quad) }), withSpring(0, { damping: 9, stiffness: 160 }))));
-  }, [nudge]);
+  }, [nudge, closes]);
 
   const move = useAnimatedStyle(() => ({ transform: [{ translateY: drag.value + nudge.value }] }));
   const hint = useAnimatedStyle(() => ({
@@ -88,7 +91,7 @@ export default function PullDownScroll({ children, style, header, ...rest }: Scr
         </GestureDetector>
         {header}
         {/* Handle: "pull down here". Turns red once letting go will close the page. */}
-        <View style={[styles.handleWrap, { top: insets.top + 6 }]} pointerEvents="none">
+        {closes ? <View style={[styles.handleWrap, { top: insets.top + 6 }]} pointerEvents="none">
           <Animated.View style={[styles.handle, ready]} />
           <Svg width={18} height={10} viewBox="0 0 18 10" style={styles.chevron}>
             <Path d="M2 2l7 6 7-6" stroke={colors.paper} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" fill="none" />
@@ -96,7 +99,7 @@ export default function PullDownScroll({ children, style, header, ...rest }: Scr
           <Animated.View style={[styles.hint, hint]}>
             <Text style={styles.hintText}>{t('pull.close')}</Text>
           </Animated.View>
-        </View>
+        </View> : null}
       </Animated.View>
     </GestureDetector>
   );

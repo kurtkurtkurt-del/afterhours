@@ -1,4 +1,5 @@
 import { Linking, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import Scrim from '@/components/Scrim';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
@@ -33,7 +34,7 @@ export function AboutSheet({ about, onClose, onKeep }: { about: About | null; on
   return (
     <Modal visible={!!about} transparent animationType="slide" onRequestClose={onClose}>
       <View style={styles.wrap}>
-        <Pressable style={styles.dim} onPress={onClose} accessibilityRole="button" accessibilityLabel={t('word.close')} />
+        <Scrim onPress={onClose} />
         {about ? (
           <View style={[styles.sheet, { maxHeight: height * 0.74 }]}>
             <View style={styles.grab} />
@@ -81,7 +82,6 @@ const styles = StyleSheet.create({
   ask: { flexDirection: 'row', alignItems: 'center', gap: 7, height: 34, paddingHorizontal: 14, borderRadius: radius.pill, shadowColor: '#000', shadowOpacity: 0.35, shadowRadius: 10, shadowOffset: { width: 0, height: 4 }, elevation: 6 },
   askText: { fontFamily: fonts.semibold, fontSize: 13.5, letterSpacing: -0.1, color: colors.paper },
   wrap: { flex: 1, justifyContent: 'flex-end' },
-  dim: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(14,13,12,0.36)' },
   sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3 },
   grab: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: colors.ink3, marginTop: 9 },
   in: { paddingHorizontal: brand.left + 4, paddingTop: 16, paddingBottom: 18 },

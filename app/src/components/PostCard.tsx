@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { serverText } from '@/lib/serverText';
 import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import Scrim from '@/components/Scrim';
 import KeyboardSafe from '@/components/KeyboardSafe';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
@@ -190,7 +191,7 @@ function Comments({ open, post, who, onClose, onChange }: { open: boolean; post:
   return (
     <Modal visible={open} transparent animationType="slide" onRequestClose={onClose} onShow={load}>
       <KeyboardSafe style={styles.sheetWrap}>
-        <Pressable style={styles.sheetDim} onPress={onClose} accessibilityRole="button" accessibilityLabel={t('word.close')} />
+        <Scrim onPress={onClose} />
         <View style={[styles.sheet, { maxHeight: height * 0.75, paddingBottom: insets.bottom + 10 }]}>
           <View style={styles.grab} />
           <Text style={styles.sheetTitle}>{t('post.comments')}</Text>
@@ -264,7 +265,6 @@ const styles = StyleSheet.create({
   all: { fontFamily: fonts.regular, fontSize: 13.5, color: colors.mute },
   add: { fontFamily: fonts.regular, fontSize: 13.5, color: colors.meta, marginTop: 2 },
   sheetWrap: { flex: 1, justifyContent: 'flex-end' },
-  sheetDim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
   sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingTop: 8 },
   grab: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: colors.ink3, marginBottom: 10 },
   sheetTitle: { fontFamily: fonts.semibold, fontSize: 15, color: colors.paper, textAlign: 'center', marginBottom: 8 },

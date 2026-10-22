@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Scrim from '@/components/Scrim';
 import KeyboardSafe from '@/components/KeyboardSafe';
 import { Image } from 'expo-image';
 import PullDownScroll from '@/components/PullDownScroll';
@@ -12,7 +13,8 @@ import StoryStrip from '@/components/StoryStrip';
 import { PeopleResults, PeopleSearch, SuggestedInRow, openPerson } from '@/components/People';
 import { useAuth } from '@/auth/AuthContext';
 import { friendsLive, type LiveFriend } from '@/data/checkin';
-import { inbox, type Dm } from '@/data/messages';
+import { inbox, type Dm, type Inbox } from '@/data/messages';
+import { peek, remember, useShelf } from '@/lib/offline';
 import { dmStart, why } from '@/data/dms';
 import { friendAccept, friendsList, type FriendRow } from '@/data/friends';
 import { friendPhotos } from '@/data/photo';
@@ -39,7 +41,10 @@ export default function MessagesScreen() {
   const { t, up } = useLang();
   const tick = useRefreshOnFocus('cards');
   const [tab, setTab] = useState<Tab>('tonight');
-  const [dms, setDms] = useState<Dm[] | null>(null);
+  useShelf('dms'); // redraws when a refresh lands on the shelf
+  const shelved = peek<Inbox>('dms', 'inbox')?.dms ?? null;
+  const [fresh, setDms] = useState<Dm[] | null>(null);
+  const dms = fresh ?? shelved;
   const [live, setLive] = useState<LiveFriend[]>([]);
   const [friends, setFriends] = useState<FriendRow[]>([]);
   const [photos, setPhotos] = useState<Map<string, string>>(new Map());
@@ -50,9 +55,11 @@ export default function MessagesScreen() {
   const [said, setSaid] = useState<string | null>(null);
   const uid = session?.user.id;
 
+  // The inbox opens from the phone's copy at once and is refreshed behind it (no "loading" on
+  // every visit — owner, 22.10.2026); a refresh that lands on the shelf redraws the list.
   const load = useCallback(() => {
     if (!uid) return;
-    inbox().then((i) => setDms(i.dms), () => setDms([]));
+    remember('dms', 'inbox', inbox, 1, { ttl: 15_000 }).then((i) => setDms(i.dms), () => setDms((d) => d ?? []));
     friendsLive().then(setLive, () => {});
     friendsList().then(setFriends, () => {});
     friendPhotos().then(setPhotos, () => {});
@@ -82,6 +89,7 @@ export default function MessagesScreen() {
     <View style={styles.root}>
       <StatusBar style={barStyle} />
       <PullDownScroll
+        closes={false}
         header={
           <View style={styles.band}>
             <Text style={styles.title}>{t('messages.title')}</Text>
@@ -224,7 +232,7 @@ export default function MessagesScreen() {
       {/* Who to write to: a friend, by name. */}
       <Modal visible={picking} animationType="slide" transparent onRequestClose={() => setPicking(false)}>
         <KeyboardSafe style={styles.lift}>
-          <Pressable style={styles.scrim} onPress={() => setPicking(false)} />
+          <Scrim onPress={() => setPicking(false)} />
           <View style={[styles.sheet, { paddingBottom: insets.bottom + 16 }]}>
             <Text style={styles.sheetTitle}>{t('messages.new')}</Text>
             <Input value={who} onChangeText={setWho} placeholder={t('messages.new.who')} autoFocus autoCapitalize="none" autoCorrect={false} />
@@ -272,7 +280,6 @@ const styles = StyleSheet.create({
   newMark: { width: 34, height: 34, borderRadius: 17, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center' },
   newPlus: { fontFamily: fonts.medium, fontSize: 20, lineHeight: 22, color: colors.paper },
   newText: { fontFamily: fonts.medium, fontSize: 15, color: colors.paper },
-  scrim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
   lift: { flex: 1 },
   sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingHorizontal: brand.left, paddingTop: 18, flexShrink: 1, gap: 12 },
   sheetTitle: { fontFamily: fonts.semibold, fontSize: 20, letterSpacing: -0.5, color: colors.paper },

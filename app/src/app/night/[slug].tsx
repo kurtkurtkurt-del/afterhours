@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Tips from '@/components/Tips';
 import { AppState, KeyboardAvoidingView, Linking, Modal, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import Scrim from '@/components/Scrim';
 import { Image } from 'expo-image';
 import * as Location from 'expo-location';
 import AfterhoursCard from '@/components/AfterhoursCard';
@@ -407,7 +408,7 @@ export default function NightScreen() {
 
       {/* Back from the ticket page: one question, once. */}
       <Modal visible={askTicket} transparent animationType="fade" onRequestClose={() => setAskTicket(false)}>
-        <Pressable style={styles.askDim} onPress={() => setAskTicket(false)} />
+        <Scrim onPress={() => setAskTicket(false)} />
         <View style={[styles.askSheet, { paddingBottom: insets.bottom + 18 }]}>
           <Text style={styles.askTitle}>{t('night.ask.ticket')}</Text>
           <Text style={styles.askNote}>{t('night.ask.ticket.note')}</Text>
@@ -427,14 +428,14 @@ const styles = StyleSheet.create({
   centre: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   // the ticket (design B)
   ticketWrap: { paddingHorizontal: brand.left, paddingTop: brand.top + 44 },
-  ticket: { backgroundColor: '#171512', borderRadius: radius.lg, overflow: 'hidden' },
+  ticket: { backgroundColor: colors.card, borderRadius: radius.lg, overflow: 'hidden', borderWidth: 1, borderColor: colors.edge },
   ticketPhoto: { backgroundColor: colors.ink2, overflow: 'hidden' },
   heroPhoto: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
   ticketShare: { right: 12, top: 12, bottom: 'auto' },
   ticketHead: { paddingHorizontal: 16, paddingTop: 14, paddingBottom: 12, gap: 6 },
   perf: { height: 2, marginHorizontal: 12, justifyContent: 'center' },
-  perfLine: { borderTopWidth: 2, borderStyle: 'dashed', borderColor: colors.ink3 },
-  notch: { position: 'absolute', top: -9, width: 18, height: 18, borderRadius: 9, backgroundColor: colors.ink },
+  perfLine: { borderTopWidth: 2, borderStyle: 'dashed', borderColor: colors.edge },
+  notch: { position: 'absolute', top: -9, width: 18, height: 18, borderRadius: 9, backgroundColor: colors.ink, borderWidth: 1, borderColor: colors.edge },
   notchLeft: { left: -21 },
   notchRight: { right: -21 },
   stub: { flexDirection: 'row', gap: 12, paddingHorizontal: 16, paddingTop: 14, paddingBottom: 4 },
@@ -447,7 +448,6 @@ const styles = StyleSheet.create({
   stubAction: { padding: 12, paddingTop: 10, gap: 8 },
   stubNote: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.2, color: colors.mute, textAlign: 'center' },
   // the question on return from the ticket page
-  askDim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
   askSheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingHorizontal: brand.left, paddingTop: 20, gap: 14 },
   askTitle: { fontFamily: fonts.semibold, fontSize: 22, letterSpacing: -0.5, color: colors.paper },
   askNote: { fontFamily: fonts.regular, fontSize: 13, lineHeight: 18, color: colors.mute },

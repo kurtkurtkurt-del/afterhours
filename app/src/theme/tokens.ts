@@ -62,10 +62,14 @@ export const colors = {
   onPhotoSpot: accent.spotText,
   onSpot: '#FBFAF7',
   sleeve: light ? '#E6E2DA' : '#1F1D1A', // an empty photo frame
+  card: light ? '#FFFFFF' : '#171512',   // a card that stands off the ground (the ticket on the night page)
+  edge: light ? 'rgba(31,29,26,0.22)' : 'rgba(243,241,236,0.16)', // a visible outline or perforation on the ground
 } as const;
 
 // The ground as a see-through veil: ground(0.8) → the ground colour at 80%.
 export const ground = (alpha: number) => (light ? `rgba(251,250,247,${alpha})` : `rgba(14,13,12,${alpha})`);
+// The words' colour as a see-through tint on the ground: a quiet fill behind a pill, a chosen row.
+export const paperTint = (alpha: number) => (light ? `rgba(31,29,26,${alpha})` : `rgba(243,241,236,${alpha})`);
 // A dark scrim over a photo, the same in both themes.
 export const scrim = (alpha: number) => `rgba(14,13,12,${alpha})`;
 // Status bar words: dark on the light ground, light on the dark one.

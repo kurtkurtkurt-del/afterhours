@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Modal, type KeyboardTypeOptions, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Modal, type KeyboardTypeOptions, StyleSheet, Text, View } from 'react-native';
+import Scrim from '@/components/Scrim';
 import KeyboardSafe from '@/components/KeyboardSafe';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Button from '@/components/Button';
@@ -29,7 +30,7 @@ export default function CodeSheet({ open, title, go, error, onSubmit, onClose, s
   return (
     <Modal visible={open} transparent animationType="fade" onRequestClose={onClose}>
       <KeyboardSafe style={styles.wrap}>
-        <Pressable style={styles.dim} onPress={onClose} />
+        <Scrim onPress={onClose} />
         <View style={[styles.sheet, { paddingBottom: insets.bottom + 24 }]}>
           <Text style={styles.head}>{up(title)}</Text>
           <Input value={code} onChangeText={setCode} autoFocus returnKeyType="done" onSubmitEditing={() => onSubmit(code)} secureTextEntry={secure} keyboardType={keyboardType} textContentType={secure ? 'newPassword' : keyboardType === 'email-address' ? 'emailAddress' : undefined} />
@@ -45,7 +46,6 @@ export default function CodeSheet({ open, title, go, error, onSubmit, onClose, s
 
 const styles = StyleSheet.create({
   wrap: { flex: 1 },
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
   sheet: { backgroundColor: colors.ink, borderWidth: 1, borderBottomWidth: 0, borderColor: colors.ink3, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, paddingHorizontal: brand.left, paddingTop: 12 },
   head: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginBottom: 6 },
   error: { fontFamily: fonts.regular, fontSize: 12, color: colors.spot, marginTop: 10 },

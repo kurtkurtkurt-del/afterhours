@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
+import Scrim from '@/components/Scrim';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
@@ -50,7 +51,7 @@ export default function DayPicker({ open, title, value, min, onSelect, onClose }
 
   return (
     <Modal visible={open} transparent animationType="fade" onRequestClose={onClose}>
-      <Pressable style={styles.dim} onPress={onClose} />
+      <Scrim onPress={onClose} />
       <View style={[styles.sheet, { paddingBottom: insets.bottom + 20 }]}>
         <View style={styles.grip} />
         <Text style={styles.title}>{up(title)}</Text>
@@ -84,7 +85,6 @@ export default function DayPicker({ open, title, value, min, onSelect, onClose }
 }
 
 const styles = StyleSheet.create({
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
   sheet: { backgroundColor: colors.ink, borderWidth: 1, borderBottomWidth: 0, borderColor: colors.ink3, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, paddingHorizontal: brand.left, paddingTop: 10 },
   grip: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: colors.ink3, marginBottom: 14 },
   title: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.meta },

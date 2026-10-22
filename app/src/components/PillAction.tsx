@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Svg, { Circle, Line, Path } from 'react-native-svg';
-import { colors, fonts, radius, tint, ground } from '@/theme/tokens';
+import { colors, fonts, radius, tint, ground, paperTint } from '@/theme/tokens';
 
 // The small actions around a person or a thing — remove, block, report, close, sign
 // out — as pills with a glyph instead of underlined words. quiet for the everyday
@@ -53,7 +53,7 @@ export function PillRow({ children, center }: { children: ReactNode; center?: bo
 
 const LOOK = {
   ink: {
-    quiet: { border: colors.ink3, fill: 'rgba(243,241,236,0.05)', text: colors.paper },
+    quiet: { border: colors.ink3, fill: paperTint(0.05), text: colors.paper },
     danger: { border: tint(0.55), fill: tint(0.12), text: colors.spotText },
   },
   paper: {

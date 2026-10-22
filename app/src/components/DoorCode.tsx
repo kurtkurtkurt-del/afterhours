@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { Modal, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import Scrim from '@/components/Scrim';
 import KeyboardSafe from '@/components/KeyboardSafe';
 import Animated, { useAnimatedStyle, useSharedValue, withSequence, withTiming } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -31,7 +32,7 @@ export default function DoorCode({ open, title, error, onSubmit, onClose }: {
   return (
     <Modal visible={open} transparent animationType="fade" onRequestClose={onClose}>
       <KeyboardSafe style={styles.wrap}>
-        <Pressable style={styles.dim} onPress={onClose} />
+        <Scrim onPress={onClose} />
         <Animated.View style={[styles.panel, { paddingBottom: insets.bottom + 20 }, panel]}>
           <Text style={styles.title}>{up(title)}</Text>
           <Pressable onPress={() => input.current?.focus()} style={styles.boxes}>
@@ -74,7 +75,6 @@ const styles = StyleSheet.create({
   // words on a red fill stay light whatever the ground does (try/light)
   onSpot: { color: colors.onSpot },
   wrap: { flex: 1 },
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
   panel: { backgroundColor: '#161412', borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderWidth: 1, borderBottomWidth: 0, borderColor: colors.ink3, paddingHorizontal: 22, paddingTop: 22, alignItems: 'center' },
   title: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 1.6, color: colors.mute },
   boxes: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 8, marginTop: 18, minHeight: 52 },

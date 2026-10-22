@@ -21,7 +21,7 @@ import { useHere } from '@/data/here';
 import * as Location from 'expo-location';
 import { sparkAnswer, sparkAudience, sparkCancel, sparkCreate, sparkEdit, sparkGet, sparkPeople, SparksNotReady, type Audience, type Reach, type SeenSpark, type SparkPerson } from '@/data/sparks';
 import { upperData, useLang, type Key } from '@/i18n';
-import { colors, fonts, radius, barStyle, scrim } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle, scrim, paperTint } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 import PillAction from '@/components/PillAction';
 
@@ -463,7 +463,7 @@ const styles = StyleSheet.create({
   chipText: { fontFamily: fonts.medium, fontSize: 13, color: colors.mute },
   chipTextOn: { color: colors.ink },
   wave: { flexDirection: 'row', alignItems: 'center', gap: 10, height: 46, paddingHorizontal: 14, borderRadius: radius.md, borderWidth: 1, borderColor: colors.ink3 },
-  waveOn: { borderColor: colors.paper, backgroundColor: 'rgba(243,241,236,0.06)' },
+  waveOn: { borderColor: colors.paper, backgroundColor: paperTint(0.06) },
   waveDot: { width: 10, height: 10, borderRadius: 5, borderWidth: 1.5, borderColor: colors.mute },
   waveDotOn: { backgroundColor: colors.spot, borderColor: colors.spot },
   waveText: { flex: 1, fontFamily: fonts.medium, fontSize: 14, color: colors.mute },

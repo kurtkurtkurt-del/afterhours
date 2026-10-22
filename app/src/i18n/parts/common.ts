@@ -44,6 +44,7 @@ export const common = {
   'word.saved': { en: 'saved', de: 'gespeichert', tr: 'kaydedildi' },
   'word.ok': { en: 'ok', de: 'ok', tr: 'tamam' },
   'word.cancel': { en: 'cancel', de: 'abbrechen', tr: 'vazgeç' },
+  'word.done': { en: 'done', de: 'fertig', tr: 'tamam' },
   'word.close': { en: 'close', de: 'schließen', tr: 'kapat' },
   'word.back': { en: 'back', de: 'zurück', tr: 'geri' },
   'word.change': { en: 'change', de: 'ändern', tr: 'değiştir' },

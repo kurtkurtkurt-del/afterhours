@@ -15,7 +15,7 @@ import { useAuth } from '@/auth/AuthContext';
 import { useCities } from '@/data/cities';
 import { usePhoto } from '@/data/photo';
 import { saveAbout, saveLinks, useProfile, useProfileExtra, type LinkKind } from '@/data/profile';
-import { LINKS } from '@/content/links';
+import { cleanLink, LINKS } from '@/content/links';
 import { handleStatus, saveProfile } from '@/data/settings';
 import { useLang, type Key } from '@/i18n';
 import { colors, fonts, barStyle } from '@/theme/tokens';
@@ -190,7 +190,7 @@ export default function ProfileScreen() {
               {l.prefix ? <Text style={styles.at}>{l.prefix}</Text> : null}
               <Input
                 value={linkValue(l.kind)}
-                onChangeText={(v) => setLinkEdits((e) => ({ ...e, [l.kind]: l.kind === 'website' ? v.trim() : v.replace(/^@+/, '').trim() }))}
+                onChangeText={(v) => setLinkEdits((e) => ({ ...e, [l.kind]: cleanLink(l.kind, v) }))}
                 placeholder={l.kind === 'website' ? 'https://' : l.kind === 'spotify' ? t('settings.links.spotify') : l.kind === 'whatsapp' ? t('settings.links.whatsapp') : ''}
                 keyboardType={l.kind === 'website' ? 'url' : l.kind === 'whatsapp' ? 'phone-pad' : 'default'}
                 maxLength={l.kind === 'website' ? 200 : 40}
