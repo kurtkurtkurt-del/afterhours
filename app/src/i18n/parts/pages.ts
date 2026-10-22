@@ -12,6 +12,7 @@ export const pages = {
   'night.nudge.sent': { en: 'nudged ✓', de: 'angestupst ✓', tr: 'dürtüldü ✓' },
   'night.nudge.out': { en: 'out now', de: 'gerade unterwegs', tr: 'şu an dışarıda' },
   'night.nudge.preview': { en: 'what they get', de: 'was sie bekommen', tr: 'ne alacak' },
+  'night.nudge.again': { en: 'tap to nudge someone else too', de: 'tippen, um noch jemanden anzustupsen', tr: 'bir başkasını da dürtmek için dokun' },
   'night.nudged': { en: 'nudged {name} ✓', de: '{name} angestupst ✓', tr: '{name} dürtüldü ✓' },
   'share.coming': { en: 'coming?', de: 'kommst du mit?', tr: 'geliyor musun?' },
   'night.checkedin.one': { en: '{n} checked in', de: '{n} eingecheckt', tr: '{n} check-in' },
