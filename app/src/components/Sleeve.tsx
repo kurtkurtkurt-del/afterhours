@@ -3,6 +3,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { colors, fonts, radius, scrim } from '@/theme/tokens';
+import { RECORDS } from '@/content/records';
 
 type Props = {
   width: number; // the whole sleeve, cover and record
@@ -10,7 +11,7 @@ type Props = {
   name: string;
   meta: string;
   disc: string; // the words on the red label
-  city?: string | null; // a city with its own label (Munich) draws it instead of the words
+  city?: string | null; // slug or name; a city with a record of its own (content/records.ts) shows it
   empty?: ReactNode; // shown on the cover without a photo (default: the initial)
   corner?: ReactNode; // over the cover, bottom right (e.g. "change")
   onPress?: () => void;
@@ -26,15 +27,15 @@ export default function Sleeve({ width, photo, name, meta, disc, city, empty, co
   const cover = Math.round(width * 0.66);
   const d = Math.round(cover * 0.92);
   const label = d * 0.42;
-  const munich = isMunich(city);
+  const own = recordFor(city);
   return (
     <View style={{ height: cover }}>
       {/* The record reaches 10 px into the page margin on the right. */}
       <View style={[styles.disc, { width: d, height: d, left: width - d + 10, top: (cover - d) / 2 }]}>
         {/* A real-looking record, drawn ahead of time (tools/build-record.py): grooves,
             the light lying across them, the run-out, a hole the page shows through. */}
-        <Image source={munich ? MUNICH : RECORD} style={StyleSheet.absoluteFill} contentFit="contain" />
-        {munich ? null : (
+        <Image source={own ?? RECORD} style={StyleSheet.absoluteFill} contentFit="contain" />
+        {own ? null : (
           // The cover hides the left edge of the label: the words sit a little right.
           <View style={[styles.label, { width: label, height: label, borderRadius: label / 2, paddingLeft: label * 0.16 }]}>
             <Text style={styles.labelText} numberOfLines={1}>
@@ -69,11 +70,26 @@ export default function Sleeve({ width, photo, name, meta, disc, city, empty, co
   );
 }
 
-// Munich has its own record (design 1, "föhn", 22.10.2026): the Alps seen from the city
-// under "MÜNCHEN", printed on the label. Matched by slug or by name.
-const MUNICH = require('../../assets/record/munchen.webp');
+// Every city the app serves has a record of its own (tools/build-record.py → content/records.ts):
+// its skyline or landscape under its name on the label, in the frame of Munich's "föhn"
+// (22.10.2026). Looked up by slug, or by name made into a slug; a city without one gets the
+// red label with the words.
 const RECORD = require('../../assets/record/record.webp');
-const isMunich = (city: string | null | undefined) => !!city && /^(munchen|münchen|munich|münih|monaco di baviera)$/i.test(city.trim());
+const ALIAS: Record<string, string> = { munich: 'munchen', münih: 'munchen', vienna: 'wien', rome: 'roma', milan: 'milano', lisbon: 'lisboa', prague: 'praha', warsaw: 'warszawa', copenhagen: 'kobenhavn', athens: 'athina', brussels: 'brussel', bruxelles: 'brussel', antwerp: 'antwerpen', cologne: 'koln', geneve: 'geneva', genf: 'geneva', zurich: 'zurich', turin: 'torino', seville: 'sevilla', gothenburg: 'goteborg', 'mexico-city': 'ciudad-de-mexico' };
+const slugOf = (city: string) =>
+  city
+    .trim()
+    .toLowerCase()
+    .replace(/ı/g, 'i').replace(/ł/g, 'l').replace(/ø/g, 'o').replace(/æ/g, 'ae').replace(/ß/g, 'ss')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+export function recordFor(city: string | null | undefined): number | null {
+  if (!city) return null;
+  const slug = slugOf(city);
+  return RECORDS[slug] ?? RECORDS[ALIAS[slug] ?? ''] ?? null;
+}
 
 const styles = StyleSheet.create({
   disc: { position: 'absolute', alignItems: 'center', justifyContent: 'center' },
