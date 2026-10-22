@@ -1155,6 +1155,14 @@ The order matters: each step closes the road the one before it opened.
 
 Every one of these cost us something:
 
+- **On Android the keyboard covers the screen unless something lifts it.** The app
+  draws edge to edge, so the window does not shrink for the keyboard and
+  `KeyboardAvoidingView` with `behavior={undefined}` on Android (what Expo's
+  guide shows) does nothing: in messages, a group chat and sending in a night you
+  could not see what you typed (22.10.2026). Use `components/KeyboardSafe.tsx`
+  ('padding' on both platforms) around anything with a field; a bottom sheet with
+  a field wraps its scrim and sheet in it, and its list scrolls (`flexShrink: 1`)
+  so the field never rises off the top.
 - **A sticky grid item is clamped to the grid CONTAINER, not to its own
   row.** The card band began life as a fourth child of `.cs` spanning all
   three columns, and the sticky poster and the sticky right column slid

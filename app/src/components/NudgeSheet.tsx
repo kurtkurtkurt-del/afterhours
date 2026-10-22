@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import KeyboardSafe from '@/components/KeyboardSafe';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Avatar from '@/components/Avatar';
 import Input from '@/components/Input';
@@ -64,36 +65,39 @@ export default function NudgeSheet({ open, night, onClose, onSent }: { open: boo
 
   return (
     <Modal visible={open} animationType="slide" transparent onRequestClose={close}>
-      <Pressable style={styles.scrim} onPress={close} />
-      <View style={[styles.sheet, { paddingBottom: insets.bottom + 16 }]}>
-        <Text style={styles.title}>{t('night.nudge')}</Text>
-        <Text style={styles.hint}>{t('night.nudge.hint')}</Text>
-        <Input value={query} onChangeText={setQuery} placeholder={t('messages.new.who')} autoFocus autoCapitalize="none" autoCorrect={false} />
-        <View style={styles.list}>
-          {shown.slice(0, 8).map((f) => (
-            <Pressable key={f.other_id} onPress={() => pick(f)} accessibilityRole="button" style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
-              <Avatar name={f.handle ?? f.display_name ?? '?'} size={34} />
-              <View style={styles.text}>
-                <Text style={styles.name} numberOfLines={1}>{(f.display_name ?? f.handle ?? '').toLowerCase()}</Text>
-                <Text style={styles.meta} numberOfLines={1}>@{f.handle}</Text>
-              </View>
-              <Text style={styles.go}>{busy === f.other_id ? '…' : `${t('night.nudge.verb')} →`}</Text>
-            </Pressable>
-          ))}
-          {!shown.length ? <Text style={styles.note}>{friends.length ? t('messages.new.none') : t('messages.new.noFriends')}</Text> : null}
-          {said ? <Text style={[styles.note, styles.bad]}>{said}</Text> : null}
+      <KeyboardSafe style={styles.lift}>
+        <Pressable style={styles.scrim} onPress={close} />
+        <View style={[styles.sheet, { paddingBottom: insets.bottom + 16 }]}>
+          <Text style={styles.title}>{t('night.nudge')}</Text>
+          <Text style={styles.hint}>{t('night.nudge.hint')}</Text>
+          <Input value={query} onChangeText={setQuery} placeholder={t('messages.new.who')} autoFocus autoCapitalize="none" autoCorrect={false} />
+          <ScrollView style={styles.list} keyboardShouldPersistTaps="handled">
+            {shown.slice(0, 8).map((f) => (
+              <Pressable key={f.other_id} onPress={() => pick(f)} accessibilityRole="button" style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
+                <Avatar name={f.handle ?? f.display_name ?? '?'} size={34} />
+                <View style={styles.text}>
+                  <Text style={styles.name} numberOfLines={1}>{(f.display_name ?? f.handle ?? '').toLowerCase()}</Text>
+                  <Text style={styles.meta} numberOfLines={1}>@{f.handle}</Text>
+                </View>
+                <Text style={styles.go}>{busy === f.other_id ? '…' : `${t('night.nudge.verb')} →`}</Text>
+              </Pressable>
+            ))}
+            {!shown.length ? <Text style={styles.note}>{friends.length ? t('messages.new.none') : t('messages.new.noFriends')}</Text> : null}
+            {said ? <Text style={[styles.note, styles.bad]}>{said}</Text> : null}
+          </ScrollView>
         </View>
-      </View>
+      </KeyboardSafe>
     </Modal>
   );
 }
 
 const styles = StyleSheet.create({
   scrim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
-  sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingHorizontal: brand.left, paddingTop: 18, gap: 10 },
+  lift: { flex: 1 },
+  sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingHorizontal: brand.left, paddingTop: 18, flexShrink: 1, gap: 10 },
   title: { fontFamily: fonts.semibold, fontSize: 20, letterSpacing: -0.5, color: colors.paper },
   hint: { fontFamily: fonts.regular, fontSize: 13, lineHeight: 18, color: colors.mute, marginBottom: 2 },
-  list: { minHeight: 120 },
+  list: { minHeight: 120, flexShrink: 1 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: colors.ink3 },
   pressed: { opacity: 0.6 },
   text: { flex: 1, gap: 3 },

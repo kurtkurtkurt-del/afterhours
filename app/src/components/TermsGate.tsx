@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { serverText } from '@/lib/serverText';
 import { Alert, Linking, Modal, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import KeyboardSafe from '@/components/KeyboardSafe';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Button from '@/components/Button';
 import { useAuth } from '@/auth/AuthContext';
@@ -84,62 +85,64 @@ export default function TermsGate() {
   if (shut) {
     return (
       <Modal visible animationType="fade" onRequestClose={() => {}}>
-        <View style={[styles.root, { paddingTop: insets.top + 48, paddingBottom: insets.bottom + 24 }]}>
-          <Text style={styles.title}>{t('closed.title')}</Text>
-          <Text style={styles.body}>{t('closed.body')}</Text>
-          {closed?.reason ? <Text style={styles.checkText}>“{closed.reason}”</Text> : null}
-          {/* One objection, read by the staff in the panel (F16, 20.10.2026). */}
-          {appeal === undefined ? null : appeal && appeal.outcome === null ? (
-            <Text style={styles.body}>{t('closed.appeal.sent')}</Text>
-          ) : appeal && appeal.outcome === 'keep' ? (
-            <Text style={styles.body}>{t('closed.appeal.no')}</Text>
-          ) : (
-            <View style={styles.plea}>
-              <Text style={styles.body}>{t('closed.appeal.hint')}</Text>
-              <TextInput
-                value={plea}
-                onChangeText={setPlea}
-                placeholder={t('closed.appeal')}
-                placeholderTextColor={colors.mute}
-                multiline
-                maxLength={600}
-                style={styles.pleaBox}
-              />
-              {err ? <Text style={styles.err}>{err}</Text> : null}
-              <View style={plea.trim().length < 20 ? styles.off : undefined}>
-                <PillAction wide icon="out" label={busy ? '…' : t('closed.appeal.send')} onPress={object} />
+        <KeyboardSafe style={{ flex: 1 }}>
+          <View style={[styles.root, { paddingTop: insets.top + 48, paddingBottom: insets.bottom + 24 }]}>
+            <Text style={styles.title}>{t('closed.title')}</Text>
+            <Text style={styles.body}>{t('closed.body')}</Text>
+            {closed?.reason ? <Text style={styles.checkText}>“{closed.reason}”</Text> : null}
+            {/* One objection, read by the staff in the panel (F16, 20.10.2026). */}
+            {appeal === undefined ? null : appeal && appeal.outcome === null ? (
+              <Text style={styles.body}>{t('closed.appeal.sent')}</Text>
+            ) : appeal && appeal.outcome === 'keep' ? (
+              <Text style={styles.body}>{t('closed.appeal.no')}</Text>
+            ) : (
+              <View style={styles.plea}>
+                <Text style={styles.body}>{t('closed.appeal.hint')}</Text>
+                <TextInput
+                  value={plea}
+                  onChangeText={setPlea}
+                  placeholder={t('closed.appeal')}
+                  placeholderTextColor={colors.mute}
+                  multiline
+                  maxLength={600}
+                  style={styles.pleaBox}
+                />
+                {err ? <Text style={styles.err}>{err}</Text> : null}
+                <View style={plea.trim().length < 20 ? styles.off : undefined}>
+                  <PillAction wide icon="out" label={busy ? '…' : t('closed.appeal.send')} onPress={object} />
+                </View>
               </View>
-            </View>
-          )}
-          <View style={{ flex: 1 }} />
-          {/* A closed account still owns its data: the export and the deletion stay within
-              reach (Apple 5.1.1(v), GDPR; F17, 20.10.2026). */}
-          <PillRow>
-            <PillAction icon="link" label={t('terms.read')} onPress={() => Linking.openURL(TERMS_URL)} />
-            <PillAction icon="out" label={t('settings.export')} onPress={() => exportToFile().catch((e) => Alert.alert(t('settings.export.failed'), serverText(e)))} />
-          </PillRow>
-          <View style={{ height: 12 }} />
-          <PillAction
-            wide
-            icon="out"
-            label={t('settings.delete')}
-            onPress={() =>
-              Alert.alert(t('settings.delete'), t('closed.delete.body'), [
-                { text: t('word.cancel'), style: 'cancel' },
-                {
-                  text: t('settings.delete'),
-                  style: 'destructive',
-                  onPress: () =>
-                    deleteEverything()
-                      .then((done) => (done ? signOut() : undefined))
-                      .catch((e) => Alert.alert(t('settings.delete.failed'), serverText(e))),
-                },
-              ])
-            }
-          />
-          <View style={{ height: 24 }} />
-          <Button label={t('closed.leave')} onPress={() => signOut()} />
-        </View>
+            )}
+            <View style={{ flex: 1 }} />
+            {/* A closed account still owns its data: the export and the deletion stay within
+                reach (Apple 5.1.1(v), GDPR; F17, 20.10.2026). */}
+            <PillRow>
+              <PillAction icon="link" label={t('terms.read')} onPress={() => Linking.openURL(TERMS_URL)} />
+              <PillAction icon="out" label={t('settings.export')} onPress={() => exportToFile().catch((e) => Alert.alert(t('settings.export.failed'), serverText(e)))} />
+            </PillRow>
+            <View style={{ height: 12 }} />
+            <PillAction
+              wide
+              icon="out"
+              label={t('settings.delete')}
+              onPress={() =>
+                Alert.alert(t('settings.delete'), t('closed.delete.body'), [
+                  { text: t('word.cancel'), style: 'cancel' },
+                  {
+                    text: t('settings.delete'),
+                    style: 'destructive',
+                    onPress: () =>
+                      deleteEverything()
+                        .then((done) => (done ? signOut() : undefined))
+                        .catch((e) => Alert.alert(t('settings.delete.failed'), serverText(e))),
+                  },
+                ])
+              }
+            />
+            <View style={{ height: 24 }} />
+            <Button label={t('closed.leave')} onPress={() => signOut()} />
+          </View>
+        </KeyboardSafe>
       </Modal>
     );
   }

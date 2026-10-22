@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import KeyboardSafe from '@/components/KeyboardSafe';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
@@ -86,7 +87,7 @@ function NewPost() {
         </Pressable>
       ) : null}
 
-      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={styles.bottomWrap} pointerEvents="box-none">
+      <KeyboardSafe style={styles.bottomWrap} pointerEvents="box-none">
         <View style={[styles.bottom, { paddingBottom: insets.bottom + 16 }]}>
           <TextInput
             value={body}
@@ -109,7 +110,7 @@ function NewPost() {
           </View>
           <Text style={styles.who}>{t('posts.who')}</Text>
         </View>
-      </KeyboardAvoidingView>
+      </KeyboardSafe>
 
       <PickerSheet
         open={choosing}

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { KeyboardAvoidingView, Modal, type KeyboardTypeOptions, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Modal, type KeyboardTypeOptions, Pressable, StyleSheet, Text, View } from 'react-native';
+import KeyboardSafe from '@/components/KeyboardSafe';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
@@ -27,7 +28,7 @@ export default function CodeSheet({ open, title, go, error, onSubmit, onClose, s
   const [code, setCode] = useState('');
   return (
     <Modal visible={open} transparent animationType="fade" onRequestClose={onClose}>
-      <KeyboardAvoidingView style={styles.wrap} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardSafe style={styles.wrap}>
         <Pressable style={styles.dim} onPress={onClose} />
         <View style={[styles.sheet, { paddingBottom: insets.bottom + 24 }]}>
           <Text style={styles.head}>{up(title)}</Text>
@@ -37,7 +38,7 @@ export default function CodeSheet({ open, title, go, error, onSubmit, onClose, s
             <Button label={go} onPress={() => onSubmit(code)} />
           </View>
         </View>
-      </KeyboardAvoidingView>
+      </KeyboardSafe>
     </Modal>
   );
 }

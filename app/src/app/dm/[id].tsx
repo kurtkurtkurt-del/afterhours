@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Alert, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import KeyboardSafe from '@/components/KeyboardSafe';
 import { StatusBar } from 'expo-status-bar';
 import { useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -81,7 +82,7 @@ export default function DmScreen() {
       <View style={styles.band}>
         <Text style={styles.title} numberOfLines={1}>{name || t('messages.title')}</Text>
       </View>
-      <KeyboardAvoidingView style={styles.root} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardSafe style={styles.root}>
         <ScrollView ref={scroll} contentContainerStyle={styles.body} onContentSizeChange={() => scroll.current?.scrollToEnd({ animated: false })}>
           {!lines.length ? <Text style={styles.quiet}>{t('messages.dm.none')}</Text> : null}
           {lines.map((l) =>
@@ -129,7 +130,7 @@ export default function DmScreen() {
             </Pressable>
           </View>
         </View>
-      </KeyboardAvoidingView>
+      </KeyboardSafe>
       <BackButton lift={70} />
     </View>
   );

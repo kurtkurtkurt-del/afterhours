@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { serverText } from '@/lib/serverText';
-import { Alert, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import KeyboardSafe from '@/components/KeyboardSafe';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -188,7 +189,7 @@ function Comments({ open, post, who, onClose, onChange }: { open: boolean; post:
       : reporting.ask('post_comment', c.id);
   return (
     <Modal visible={open} transparent animationType="slide" onRequestClose={onClose} onShow={load}>
-      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.sheetWrap}>
+      <KeyboardSafe style={styles.sheetWrap}>
         <Pressable style={styles.sheetDim} onPress={onClose} accessibilityRole="button" accessibilityLabel={t('word.close')} />
         <View style={[styles.sheet, { maxHeight: height * 0.75, paddingBottom: insets.bottom + 10 }]}>
           <View style={styles.grab} />
@@ -239,7 +240,7 @@ function Comments({ open, post, who, onClose, onChange }: { open: boolean; post:
             </Pressable>
           </View>
         </View>
-      </KeyboardAvoidingView>
+      </KeyboardSafe>
       {reporting.sheet}
     </Modal>
   );

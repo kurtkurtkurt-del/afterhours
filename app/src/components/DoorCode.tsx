@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
-import { KeyboardAvoidingView, Modal, Platform, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Modal, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import KeyboardSafe from '@/components/KeyboardSafe';
 import Animated, { useAnimatedStyle, useSharedValue, withSequence, withTiming } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useLang } from '@/i18n';
@@ -29,7 +30,7 @@ export default function DoorCode({ open, title, error, onSubmit, onClose }: {
   const boxes = [...code.toUpperCase().split(''), ''];
   return (
     <Modal visible={open} transparent animationType="fade" onRequestClose={onClose}>
-      <KeyboardAvoidingView style={styles.wrap} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardSafe style={styles.wrap}>
         <Pressable style={styles.dim} onPress={onClose} />
         <Animated.View style={[styles.panel, { paddingBottom: insets.bottom + 20 }, panel]}>
           <Text style={styles.title}>{up(title)}</Text>
@@ -64,7 +65,7 @@ export default function DoorCode({ open, title, error, onSubmit, onClose }: {
             </Pressable>
           </View>
         </Animated.View>
-      </KeyboardAvoidingView>
+      </KeyboardSafe>
     </Modal>
   );
 }

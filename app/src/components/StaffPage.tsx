@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from 'react';
-import { KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, View, type TextInputProps } from 'react-native';
+import { Pressable, StyleSheet, Text, View, type TextInputProps } from 'react-native';
+import KeyboardSafe from '@/components/KeyboardSafe';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton, { EdgeBack } from '@/components/BackButton';
@@ -19,7 +20,7 @@ export default function StaffPage({ title, children, back = true }: { title: str
     <View style={styles.root}>
       <StatusBar style={barStyle} />
       {back ? <EdgeBack /> : null}
-      <KeyboardAvoidingView style={styles.root} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardSafe style={styles.root}>
         <PullDownScroll
           header={
             <View style={styles.band}>
@@ -33,7 +34,7 @@ export default function StaffPage({ title, children, back = true }: { title: str
           {children}
           {back ? <BackButton inline /> : null}
         </PullDownScroll>
-      </KeyboardAvoidingView>
+      </KeyboardSafe>
     </View>
   );
 }

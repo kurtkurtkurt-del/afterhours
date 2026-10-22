@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import KeyboardSafe from '@/components/KeyboardSafe';
 import { Image } from 'expo-image';
 import PullDownScroll from '@/components/PullDownScroll';
 import { StatusBar } from 'expo-status-bar';
@@ -222,24 +223,26 @@ export default function MessagesScreen() {
 
       {/* Who to write to: a friend, by name. */}
       <Modal visible={picking} animationType="slide" transparent onRequestClose={() => setPicking(false)}>
-        <Pressable style={styles.scrim} onPress={() => setPicking(false)} />
-        <View style={[styles.sheet, { paddingBottom: insets.bottom + 16 }]}>
-          <Text style={styles.sheetTitle}>{t('messages.new')}</Text>
-          <Input value={who} onChangeText={setWho} placeholder={t('messages.new.who')} autoFocus autoCapitalize="none" autoCorrect={false} />
-          <View style={styles.sheetList}>
-            {shownFriends.slice(0, 8).map((f) => (
-              <Pressable key={f.other_id} onPress={() => pick(f)} accessibilityRole="button" style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
-                <View style={styles.face}><Avatar name={f.handle ?? f.display_name ?? '?'} size={34} /></View>
-                <View style={styles.text}>
-                  <Text style={styles.name} numberOfLines={1}>{(f.display_name ?? f.handle ?? '').toLowerCase()}</Text>
-                  <Text style={styles.meta} numberOfLines={1}>@{f.handle}</Text>
-                </View>
-              </Pressable>
-            ))}
-            {!shownFriends.length ? <Text style={styles.note}>{accepted.length ? t('messages.new.none') : t('messages.new.noFriends')}</Text> : null}
-            {said ? <Text style={[styles.note, styles.bad]}>{said}</Text> : null}
+        <KeyboardSafe style={styles.lift}>
+          <Pressable style={styles.scrim} onPress={() => setPicking(false)} />
+          <View style={[styles.sheet, { paddingBottom: insets.bottom + 16 }]}>
+            <Text style={styles.sheetTitle}>{t('messages.new')}</Text>
+            <Input value={who} onChangeText={setWho} placeholder={t('messages.new.who')} autoFocus autoCapitalize="none" autoCorrect={false} />
+            <ScrollView style={styles.sheetList} keyboardShouldPersistTaps="handled">
+              {shownFriends.slice(0, 8).map((f) => (
+                <Pressable key={f.other_id} onPress={() => pick(f)} accessibilityRole="button" style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
+                  <View style={styles.face}><Avatar name={f.handle ?? f.display_name ?? '?'} size={34} /></View>
+                  <View style={styles.text}>
+                    <Text style={styles.name} numberOfLines={1}>{(f.display_name ?? f.handle ?? '').toLowerCase()}</Text>
+                    <Text style={styles.meta} numberOfLines={1}>@{f.handle}</Text>
+                  </View>
+                </Pressable>
+              ))}
+              {!shownFriends.length ? <Text style={styles.note}>{accepted.length ? t('messages.new.none') : t('messages.new.noFriends')}</Text> : null}
+              {said ? <Text style={[styles.note, styles.bad]}>{said}</Text> : null}
+            </ScrollView>
           </View>
-        </View>
+        </KeyboardSafe>
       </Modal>
     </View>
   );
@@ -270,9 +273,10 @@ const styles = StyleSheet.create({
   newPlus: { fontFamily: fonts.medium, fontSize: 20, lineHeight: 22, color: colors.paper },
   newText: { fontFamily: fonts.medium, fontSize: 15, color: colors.paper },
   scrim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)' },
-  sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingHorizontal: brand.left, paddingTop: 18, gap: 12 },
+  lift: { flex: 1 },
+  sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingHorizontal: brand.left, paddingTop: 18, flexShrink: 1, gap: 12 },
   sheetTitle: { fontFamily: fonts.semibold, fontSize: 20, letterSpacing: -0.5, color: colors.paper },
-  sheetList: { minHeight: 120 },
+  sheetList: { minHeight: 120, flexShrink: 1 },
   bad: { color: colors.spotText },
   count: { minWidth: 22, height: 22, paddingHorizontal: 6, borderRadius: 11, backgroundColor: colors.spot, color: colors.onSpot, fontFamily: fonts.semibold, fontSize: 11.5, lineHeight: 22, textAlign: 'center', overflow: 'hidden', marginRight: 8 },
   panel: { borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md, overflow: 'hidden', marginTop: 8 },
