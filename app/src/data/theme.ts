@@ -1,4 +1,5 @@
-import { Alert, DevSettings, Platform } from 'react-native';
+import { Alert } from 'react-native';
+import { restart } from '@/lib/restart';
 import Storage from 'expo-sqlite/kv-store';
 import { themeId, type ThemeId } from '@/theme/tokens';
 
@@ -14,6 +15,6 @@ export function chooseTheme(id: ThemeId, words: { title: string; body: string; g
   }
   Alert.alert(words.title, words.body, [
     { text: words.later, style: 'cancel' },
-    { text: words.go, onPress: () => (Platform.OS === 'web' ? window.location.reload() : DevSettings.reload('theme')) },
+    { text: words.go, onPress: () => restart('/settings?section=app') },
   ]);
 }

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { router } from 'expo-router';
+import { router, type Href } from 'expo-router';
+import { takeBack } from '@/lib/restart';
 import { StyleSheet, View } from 'react-native';
 import City from '@/components/City';
 import Intro from '@/components/Intro';
@@ -15,7 +16,11 @@ export default function Home() {
   const { ready, session } = useAuth();
   // Returning users (account or guest) skip the intro.
   useEffect(() => {
-    if (ready && session) router.replace('/flow');
+    if (!ready || !session) return;
+    router.replace('/flow');
+    // Back where you were after the app redrew itself (a new ground or accent, lib/restart.ts).
+    const back = takeBack();
+    if (back) setTimeout(() => router.push(back as Href), 60);
   }, [ready, session]);
   return (
     <View style={styles.root}>

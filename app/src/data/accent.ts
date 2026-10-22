@@ -1,10 +1,11 @@
-import { Alert, DevSettings, Platform } from 'react-native';
+import { Alert } from 'react-native';
+import { restart } from '@/lib/restart';
 import Storage from 'expo-sqlite/kv-store';
 import { accentId, type AccentId } from '@/theme/tokens';
 
 // The accent colour (theme/tokens.ts ACCENTS). Every StyleSheet is built from it when
 // the app starts, so a new pick is stored and the app reloads to draw itself again.
-// DevSettings.reload works in Expo Go and in release builds alike; the web build reloads the page.
+// lib/restart.ts reloads it (release builds too) and comes back to settings.
 export const currentAccent = (): AccentId => accentId;
 export function chooseAccent(id: AccentId, words: { title: string; body: string; go: string; later: string }) {
   if (id === accentId) return;
@@ -15,6 +16,6 @@ export function chooseAccent(id: AccentId, words: { title: string; body: string;
   }
   Alert.alert(words.title, words.body, [
     { text: words.later, style: 'cancel' },
-    { text: words.go, onPress: () => (Platform.OS === 'web' ? window.location.reload() : DevSettings.reload('accent')) },
+    { text: words.go, onPress: () => restart('/settings?section=app') },
   ]);
 }

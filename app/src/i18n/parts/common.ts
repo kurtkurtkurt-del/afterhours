@@ -42,6 +42,7 @@ export const common = {
   'word.signout': { en: 'sign out', de: 'abmelden', tr: 'çıkış yap' },
   'word.save': { en: 'save', de: 'speichern', tr: 'kaydet' },
   'word.saved': { en: 'saved', de: 'gespeichert', tr: 'kaydedildi' },
+  'word.ok': { en: 'ok', de: 'ok', tr: 'tamam' },
   'word.cancel': { en: 'cancel', de: 'abbrechen', tr: 'vazgeç' },
   'word.close': { en: 'close', de: 'schließen', tr: 'kapat' },
   'word.back': { en: 'back', de: 'zurück', tr: 'geri' },

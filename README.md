@@ -763,7 +763,7 @@ separate from Safari's).
   read back from the URL, Google sign-in as a full-page redirect, accent
   reload) or `app/public/` (the page, manifest and icons)
 - `react-native-webview` becomes an iframe with the same bridge, so the map
-  and the film work; `Alert.alert` becomes `confirm` / `alert`
+  and the film work; `Alert.alert` opens the app's own sheet there too (below)
 - not in the browser: push, vibration, Sign in with Apple (until Supabase has
   the web Apple setup), background sound before the first tap; iOS may clear
   the stored data of a PWA left unopened for weeks
@@ -1157,6 +1157,15 @@ The order matters: each step closes the road the one before it opened.
 
 Every one of these cost us something:
 
+- **The system's dialogs are not ours.** Since 22.10.2026 `lib/dialog.ts` points
+  `Alert.alert` at the app's own sheet (`components/DialogHost.tsx`, a Modal so it sits
+  over any sheet that asks): every confirmation looks like the app on Android, iOS and
+  the web, and a new `Alert.alert` needs nothing extra. The button's work starts after
+  the sheet has gone (opening a picker while a Modal closes locks Android).
+- **`DevSettings.reload` is for development.** A new ground or accent is read once at
+  launch, so the app must reload; in the release APK "now" did nothing. `lib/restart.ts`
+  uses `reloadAppAsync` from `expo` (release and development) and remembers the page to
+  land on again (`app/index.tsx` takes it).
 - **On Android the keyboard covers the screen unless something lifts it.** The app
   draws edge to edge, so the window does not shrink for the keyboard and
   `KeyboardAvoidingView` with `behavior={undefined}` on Android (what Expo's

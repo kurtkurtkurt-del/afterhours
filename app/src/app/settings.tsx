@@ -488,7 +488,7 @@ export default function SettingsScreen() {
         selected={currentTheme()}
         onSelect={(id) => {
           setSheet(null);
-          chooseTheme(id as 'light' | 'dark', { title: t('theme.reload'), body: t('accent.reload.body'), go: t('accent.reload.go'), later: t('accent.reload.later') });
+          chooseTheme(id as 'light' | 'dark', { title: t('theme.reload'), body: t('theme.reload.body'), go: t('accent.reload.go'), later: t('accent.reload.later') });
         }}
         onClose={() => setSheet(null)}
       />

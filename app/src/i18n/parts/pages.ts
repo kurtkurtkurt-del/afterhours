@@ -276,6 +276,7 @@ export const pages = {
   'accent.yellow': { en: 'yellow', de: 'gelb', tr: 'sarı' },
   'accent.blue': { en: 'blue', de: 'blau', tr: 'mavi' },
   'accent.pink': { en: 'pink', de: 'pink', tr: 'pembe' },
+  'theme.reload.body': { en: 'the app opens again on it. now, or the next time you open it?', de: 'die app öffnet sich darauf neu. jetzt oder beim nächsten öffnen?', tr: 'uygulama bu zeminle yeniden açılacak. şimdi mi, bir dahaki açılışta mı?' },
   'accent.reload': { en: 'new colour', de: 'neue farbe', tr: 'yeni renk' },
   'accent.reload.body': { en: 'the app restarts to paint itself in it. now, or the next time you open it?', de: 'die app startet neu, um sich so zu malen. jetzt oder beim nächsten öffnen?', tr: 'uygulama bu renkle yeniden açılacak. şimdi mi, bir dahaki açılışta mı?' },
   'accent.reload.go': { en: 'now', de: 'jetzt', tr: 'şimdi' },
