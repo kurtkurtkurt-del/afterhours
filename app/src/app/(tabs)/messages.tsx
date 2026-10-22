@@ -24,10 +24,10 @@ import Input from '@/components/Input';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useTabBarSpace } from '@/components/TabBar';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius, barStyle } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle, paperTint } from '@/theme/tokens';
+import { Chevron } from '@/components/Pill';
 import { brand } from '@/theme/layout';
 
-type Tab = 'tonight' | 'people';
 
 // Messages, a tab of its own since 12.10.2026 (design B in prototypes/messages-page.html;
 // it was /rooms, which now redirects here). Stories on top. Then two tabs: tonight — your direct conversations,
@@ -41,7 +41,8 @@ export default function MessagesScreen() {
   const tabSpace = useTabBarSpace();
   const { t, up } = useLang();
   const tick = useRefreshOnFocus('cards');
-  const [tab, setTab] = useState<Tab>('tonight');
+  // your people fold open under one row (design 3 of five, owner 22.10.2026); open by themselves when a request waits
+  const [opened, setOpen] = useState<boolean | null>(null); // null: not touched yet — open by itself while a request waits
   useShelf('dms'); // redraws when a refresh lands on the shelf
   const shelved = peek<Inbox>('dms', 'inbox')?.dms ?? null;
   const [fresh, setDms] = useState<Dm[] | null>(null);
@@ -66,6 +67,7 @@ export default function MessagesScreen() {
     friendPhotos().then(setPhotos, () => {});
   }, [uid]);
   useEffect(load, [load, tick]);
+  const open = opened ?? friends.some((f) => f.status === 'pending' && f.direction === 'incoming');
 
   const pick = (f: FriendRow) => {
     if (!f.handle) return;
@@ -105,65 +107,31 @@ export default function MessagesScreen() {
           <StoryStrip />
         </View>
 
-        <View style={styles.tabs} accessibilityRole="tablist">
-          {(['tonight', 'people'] as const).map((k) => (
-            <Pressable key={k} onPress={() => setTab(k)} accessibilityRole="tab" accessibilityState={{ selected: tab === k }} style={[styles.tab, tab === k && styles.tabOn]}>
-              <Text style={[styles.tabText, tab === k && styles.tabTextOn]}>
-                {t(k === 'tonight' ? 'messages.tonight' : 'messages.people')}
-                {k === 'people' && requests.length ? ` · ${requests.length}` : ''}
-                {k === 'tonight' && live.length ? ` · ${live.length}` : ''}
-              </Text>
-            </Pressable>
-          ))}
-        </View>
-
-        {!session ? (
-          <View style={styles.empty}>
-            <Text style={styles.emptyTitle}>{t('messages.title')}</Text>
-            <Text style={styles.note}>{t('messages.new.noFriends')}</Text>
-            <View style={styles.cta}>
-              <Button label={t('word.signup')} onPress={() => router.push('/signup')} />
-            </View>
-          </View>
-        ) : null}
-
-        {session && tab === 'tonight' ? (
+        {session ? (
           <>
-            <Pressable onPress={() => (setPicking(true), setWho(''))} accessibilityRole="button" style={({ pressed }) => [styles.newRow, pressed && styles.pressed]}>
-              <View style={styles.newMark}><Text style={[styles.newPlus, styles.onSpot]}>+</Text></View>
-              <Text style={styles.newText}>{t('messages.new')}</Text>
-            </Pressable>
-            {dms === null ? <Text style={styles.note}>{t('rooms.loading')}</Text> : null}
-            {dms && !dms.length ? <Text style={styles.note}>{t('messages.none')}</Text> : null}
-            {threads.length ? (
-              <View style={styles.panel}>
-                <View style={styles.panelIn}>
-                  {threads.map((d) => {
-                    const out = liveOf(d.other_id);
-                    const photo = photos.get(d.other_id);
-                    return (
-                      <Pressable key={d.id} onPress={() => router.push({ pathname: '/dm/[id]', params: { id: d.id, name: (d.name ?? d.handle ?? '').toLowerCase() } })} accessibilityRole="button" style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
-                        <View style={[styles.face, out && styles.faceLive]}>
-                          {photo ? <Image source={{ uri: photo }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Avatar name={d.handle ?? d.name ?? '?'} size={34} />}
-                        </View>
-                        <View style={styles.text}>
-                          <Text style={styles.name} numberOfLines={1}>{(d.name ?? d.handle ?? '').toLowerCase()}</Text>
-                          <Text style={[styles.meta, out && styles.metaLive]} numberOfLines={1}>
-                            {out ? `${up(t('messages.outNow'))} · ${upperData(out.venue_name ?? out.title)}` : d.last_body ? `${d.last_mine ? t('posts.you') + ': ' : ''}${d.last_body}` : t('messages.quiet')}
-                          </Text>
-                        </View>
-                        {d.unread ? <Text style={styles.count}>{d.unread}</Text> : null}
-                      </Pressable>
-                    );
-                  })}
-                </View>
+            <Pressable onPress={() => setOpen(!open)} accessibilityRole="button" accessibilityState={{ expanded: open }} style={({ pressed }) => [styles.peopleRow, pressed && styles.pressed]}>
+              <View style={styles.stack}>
+                {accepted.slice(0, 4).map((f, i) => {
+                  const photo = photos.get(f.other_id);
+                  return (
+                    <View key={f.other_id} style={[styles.stackFace, i > 0 && styles.stackOverlap, liveOf(f.other_id) && styles.stackLive]}>
+                      {photo ? <Image source={{ uri: photo }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Avatar name={f.handle ?? f.display_name ?? '?'} size={28} />}
+                    </View>
+                  );
+                })}
               </View>
-            ) : null}
-          </>
-        ) : null}
-
-        {session && tab === 'people' ? (
-          <>
+              <View style={styles.text}>
+                <Text style={styles.name} numberOfLines={1}>{`${t('messages.yourPeople')} · ${accepted.length}`}</Text>
+                <Text style={[styles.meta, (live.length > 0 || requests.length > 0) && styles.metaLive]} numberOfLines={1}>
+                  {[live.length ? t('messages.nOut', { n: live.length }) : null, requests.length ? t('messages.nRequests', { n: requests.length }) : null].filter(Boolean).join(' · ') || t('messages.people.hint')}
+                </Text>
+              </View>
+              <View style={[styles.chev, open && styles.chevOpen]}>
+                <Chevron color={colors.mute} />
+              </View>
+            </Pressable>
+            {open ? (
+              <View style={styles.peoplePanel}>
             <View style={styles.search}>
               <PeopleSearch value={query} onChange={setQuery} />
             </View>
@@ -224,8 +192,57 @@ export default function MessagesScreen() {
                 </ScrollView>
               </>
             )}
+              </View>
+            ) : null}
           </>
         ) : null}
+
+        {!session ? (
+          <View style={styles.empty}>
+            <Text style={styles.emptyTitle}>{t('messages.title')}</Text>
+            <Text style={styles.note}>{t('messages.new.noFriends')}</Text>
+            <View style={styles.cta}>
+              <Button label={t('word.signup')} onPress={() => router.push('/signup')} />
+            </View>
+          </View>
+        ) : null}
+
+        {session ? (
+          <>
+            <Text style={styles.section}>{up(t('messages.conversations'))}</Text>
+            <Pressable onPress={() => (setPicking(true), setWho(''))} accessibilityRole="button" style={({ pressed }) => [styles.newRow, pressed && styles.pressed]}>
+              <View style={styles.newMark}><Text style={[styles.newPlus, styles.onSpot]}>+</Text></View>
+              <Text style={styles.newText}>{t('messages.new')}</Text>
+            </Pressable>
+            {dms === null ? <Text style={styles.note}>{t('rooms.loading')}</Text> : null}
+            {dms && !dms.length ? <Text style={styles.note}>{t('messages.none')}</Text> : null}
+            {threads.length ? (
+              <View style={styles.panel}>
+                <View style={styles.panelIn}>
+                  {threads.map((d) => {
+                    const out = liveOf(d.other_id);
+                    const photo = photos.get(d.other_id);
+                    return (
+                      <Pressable key={d.id} onPress={() => router.push({ pathname: '/dm/[id]', params: { id: d.id, name: (d.name ?? d.handle ?? '').toLowerCase() } })} accessibilityRole="button" style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
+                        <View style={[styles.face, out && styles.faceLive]}>
+                          {photo ? <Image source={{ uri: photo }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Avatar name={d.handle ?? d.name ?? '?'} size={34} />}
+                        </View>
+                        <View style={styles.text}>
+                          <Text style={styles.name} numberOfLines={1}>{(d.name ?? d.handle ?? '').toLowerCase()}</Text>
+                          <Text style={[styles.meta, out && styles.metaLive]} numberOfLines={1}>
+                            {out ? `${up(t('messages.outNow'))} · ${upperData(out.venue_name ?? out.title)}` : d.last_body ? `${d.last_mine ? t('posts.you') + ': ' : ''}${d.last_body}` : t('messages.quiet')}
+                          </Text>
+                        </View>
+                        {d.unread ? <Text style={styles.count}>{d.unread}</Text> : null}
+                      </Pressable>
+                    );
+                  })}
+                </View>
+              </View>
+            ) : null}
+          </>
+        ) : null}
+
 
         {said ? <Text style={[styles.note, styles.bad]}>{said}</Text> : null}
       </PullDownScroll>
@@ -265,7 +282,14 @@ const styles = StyleSheet.create({
   title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
   body: { paddingTop: brand.top + 48, paddingHorizontal: brand.left },
   stories: { marginHorizontal: -brand.left, marginBottom: 6 },
-  tabs: { flexDirection: 'row', alignSelf: 'flex-start', padding: 3, borderRadius: radius.pill, backgroundColor: colors.ink3, marginTop: 10 },
+  peopleRow: { flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 12, paddingVertical: 10, paddingHorizontal: 12, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.md, backgroundColor: colors.card },
+  stack: { flexDirection: 'row' },
+  stackFace: { width: 30, height: 30, borderRadius: 15, overflow: 'hidden', borderWidth: 2, borderColor: colors.card, backgroundColor: colors.ink3, alignItems: 'center', justifyContent: 'center' },
+  stackOverlap: { marginLeft: -9 },
+  stackLive: { borderColor: colors.spot },
+  chev: { width: 24, alignItems: 'center', transform: [{ rotate: '0deg' }] },
+  chevOpen: { transform: [{ rotate: '180deg' }] },
+  peoplePanel: { marginTop: 8, padding: 12, paddingTop: 4, borderRadius: radius.md, backgroundColor: paperTint(0.04) },
   tab: { paddingHorizontal: 14, height: 32, borderRadius: radius.pill, justifyContent: 'center' },
   tabOn: { backgroundColor: colors.paper },
   tabText: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper },
@@ -301,8 +325,8 @@ const styles = StyleSheet.create({
   accept: { height: 30, paddingHorizontal: 12, borderRadius: radius.pill, backgroundColor: colors.paper, justifyContent: 'center' },
   acceptText: { fontFamily: fonts.medium, fontSize: 12, color: colors.ink },
   grid: { flexDirection: 'row', flexWrap: 'wrap', rowGap: 14, marginTop: 10 },
-  cell: { width: '25%', alignItems: 'center', gap: 5 },
-  bigFace: { width: 60, height: 60, borderRadius: 30, overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.ink3 },
+  cell: { width: '20%', alignItems: 'center', gap: 5 },
+  bigFace: { width: 54, height: 54, borderRadius: 27, overflow: 'hidden', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.ink3 },
   faceAdd: { backgroundColor: 'transparent', borderWidth: 1.5, borderStyle: 'dashed', borderColor: colors.mute },
   facePlus: { fontFamily: fonts.medium, fontSize: 24, color: colors.mute },
   cellName: { fontFamily: fonts.regular, fontSize: 11.5, color: colors.paper, maxWidth: 80 },
