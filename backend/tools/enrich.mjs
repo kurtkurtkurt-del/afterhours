@@ -216,7 +216,7 @@ async function about(n) {
   }
   if (!PLAIN && !a.en.facts.every((f) => shares(f, p.extract))) return skip("about", n, "fact not in source");
   await write("event_about", "event_id,lang", ["en", "de", "tr"].map((lang) => ({
-    event_id: n.id, lang, name: p.title, kicker: a[lang].kicker.slice(0, 80), who: a[lang].who, facts: a[lang].facts || [], source_url: p.url,
+    event_id: n.id, lang, name: p.title.replace(/\s*\(.*\)$/, ''), kicker: a[lang].kicker.slice(0, 80), who: a[lang].who, facts: a[lang].facts || [], source_url: p.url,
   })));
   report.about++;
 }
