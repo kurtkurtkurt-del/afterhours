@@ -9,8 +9,8 @@ BASE="${BASE:-/afterhours-pwa}"
 
 rm -rf dist
 PWA_BASE="$BASE" npx expo export -p web
-# public/index.html links the manifest and icon from the root; move them under the base.
-sed -i.bak "s#href=\"/manifest.json\"#href=\"$BASE/manifest.json\"#; s#href=\"/apple-touch-icon.png\"#href=\"$BASE/apple-touch-icon.png\"#" dist/index.html
+# public/index.html links the manifest, icon and start-up images from the root; move them under the base.
+sed -i.bak "s#href=\"/manifest.json\"#href=\"$BASE/manifest.json\"#; s#href=\"/apple-touch-icon.png\"#href=\"$BASE/apple-touch-icon.png\"#; s#href=\"/splash/#href=\"$BASE/splash/#g" dist/index.html
 rm dist/index.html.bak
 # GitHub Pages serves 404.html for unknown paths: deep links open the app.
 cp dist/index.html dist/404.html

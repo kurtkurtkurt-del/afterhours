@@ -24,6 +24,7 @@ import GenrePicker from '@/components/GenrePicker';
 import OfflineBar from '@/components/OfflineBar';
 import TermsGate from '@/components/TermsGate';
 import DialogHost from '@/components/DialogHost';
+import InstallHint from '@/components/InstallHint';
 import { installDialogs } from '@/lib/dialog';
 import UpdateGate from '@/components/UpdateGate';
 import NoticeSheet from '@/components/NoticeSheet';
@@ -107,6 +108,7 @@ function RootLayout() {
       <TermsGate />
       <UpdateGate />
       <DialogHost />
+      <InstallHint />
     </AmbientProvider>
     </LanguageProvider>
     </AuthProvider>

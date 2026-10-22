@@ -767,6 +767,14 @@ separate from Safari's).
 - not in the browser: push, vibration, Sign in with Apple (until Supabase has
   the web Apple setup), background sound before the first tap; iOS may clear
   the stored data of a PWA left unopened for weeks
+- made for the iPhone (22.10.2026): twelve start-up images, one per screen size
+  (`public/splash/`, drawn by `tools/build-icons.py`, linked in `public/index.html`;
+  without them iOS shows a white screen while a home-screen app loads); the page
+  pinned to the screen (no rubber band, no grey tap flash, no copy bubble, no
+  zoom when the phone turns); `KeyboardSafe` pads for the keyboard from
+  `visualViewport`, since Safari never shrinks the page for it; opened in Safari
+  rather than from the home screen, `InstallHint` says once how to add it
+  (share → add to home screen); maskable icons in the manifest
 - no page tips in the browser (22.10.2026): `Tips.tsx` counts every page as
   seen on the web — they came up on every page there and the browser is for a
   look, not a lesson
