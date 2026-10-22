@@ -77,6 +77,8 @@ type Props = {
   onAbout?: (entry: DeckEntry) => void;
   // listen to the artist (63): nights with a preview show the button (components/Listen.tsx).
   previewOf?: (entry: DeckEntry) => Preview | undefined;
+  // a specialty deck: the cards have no ground of their own, its room of motifs shows
+  room?: boolean;
 };
 // swipe: the same as throwing the top card that way (the buttons under the deck).
 export type DeckHandle = { undo: () => void; swipe: (direction: Direction) => void };
@@ -100,8 +102,9 @@ const SwipeCard = forwardRef<CardHandle, {
   top: number;
   onDone: (direction: Direction) => void;
   onAbout?: () => void;
+  room?: boolean;
   listen?: { preview: Preview; playing: boolean; elapsed: number; duration: number; toggle: () => void; stop: () => void };
-}>(function SwipeCard({ night, friends, active, drag, bottom, top, onDone, onAbout, listen }, ref) {
+}>(function SwipeCard({ night, friends, active, drag, bottom, top, onDone, onAbout, listen, room }, ref) {
   const { width } = useWindowDimensions();
   const x = useSharedValue(0);
   const y = useSharedValue(0);
@@ -168,8 +171,9 @@ const SwipeCard = forwardRef<CardHandle, {
 
   return (
     <GestureDetector gesture={pan}>
-      <Animated.View style={[styles.slot, style]}>
+      <Animated.View style={[styles.slot, room && styles.slotClear, style]}>
         <CardFace
+          room={room}
           card={card}
           bottom={bottom}
           fit={{ top }}
@@ -204,7 +208,7 @@ const SwipeCard = forwardRef<CardHandle, {
   );
 });
 
-const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bottom, top: posterTop, onSwipe, onUndo, onReset, hasAbout, onAbout, previewOf }, ref) {
+const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bottom, top: posterTop, onSwipe, onUndo, onReset, hasAbout, onAbout, previewOf, room }, ref) {
   const { t, up } = useLang();
   // one preview at a time; a swipe stops it (the ambient music is hushed meanwhile)
   const track = useTrack();
@@ -276,13 +280,14 @@ const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bo
   // behind is not recreated when it moves to the front.
   return (
     <View style={styles.stage}>
-      {next && <SwipeCard ref={nextRef} key={next.id} night={next} friends={isSpark(next) || isCard(next) ? [] : (friendsOf?.(next) ?? [])} active={false} drag={drag} bottom={bottom} top={posterTop} onDone={done} />}
+      {next && <SwipeCard ref={nextRef} key={next.id} night={next} friends={isSpark(next) || isCard(next) ? [] : (friendsOf?.(next) ?? [])} active={false} drag={drag} bottom={bottom} top={posterTop} onDone={done} room={room} />}
       <SwipeCard
         ref={topRef}
         key={top.id}
         night={top}
         friends={isSpark(top) || isCard(top) ? [] : (friendsOf?.(top) ?? [])}
         active
+        room={room}
         drag={drag}
         bottom={bottom}
         top={posterTop}
@@ -319,6 +324,7 @@ const styles = StyleSheet.create({
   burstMark: { width: 84, height: 84, borderRadius: 42, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center', shadowColor: '#000', shadowOpacity: 0.35, shadowRadius: 18, shadowOffset: { width: 0, height: 8 }, elevation: 8 },
   burstText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.paper, backgroundColor: colors.ink, paddingHorizontal: 10, paddingVertical: 4, borderRadius: radius.pill, overflow: 'hidden' },
   slot: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colors.ink, overflow: 'hidden', borderRadius: radius.lg },
+  slotClear: { backgroundColor: 'transparent' },
   edgeRight: { position: 'absolute', top: 0, right: 0, bottom: 0, width: 56, backgroundColor: colors.spot },
   edgeLeft: { position: 'absolute', top: 0, left: 0, bottom: 0, width: 56, borderRightWidth: 1.5, borderRightColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   letGo: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.paper, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },

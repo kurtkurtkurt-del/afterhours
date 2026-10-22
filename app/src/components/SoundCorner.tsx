@@ -4,7 +4,7 @@ import { useAmbient } from '@/audio/AmbientContext';
 import { brand } from '@/theme/layout';
 
 // Top right corner, aligned with the back button, on every inner page. Long press opens the genre list.
-type Props = { tone?: 'paper' | 'ink' };
+type Props = { tone?: 'paper' | 'ink' | 'photo' };
 
 export default function SoundCorner({ tone = 'paper' }: Props) {
   const { on, toggle, openPicker } = useAmbient();

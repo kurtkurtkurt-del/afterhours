@@ -14,6 +14,9 @@ import { ticketsMine } from '@/data/tickets';
 import GroupBadge from '@/components/GroupBadge';
 import SoundCorner from '@/components/SoundCorner';
 import DeckViewer from '@/components/DeckViewer';
+import MotifField from '@/components/Motifs';
+import { bySoonest, nextDate, specialOf, specials, type SpecialId } from '@/content/specials';
+import { fetchSpecial } from '@/data/specials';
 import { toDeckCard, type DeckCard } from '@/components/CardFace';
 import { TAB_BAR_SPACE, useTabBarSpace } from '@/components/TabBar';
 import { fetchDeck, posterUrl, swipe, unswipe, type Night } from '@/data/deck';
@@ -54,7 +57,7 @@ export default function PeopleScreen() {
   const [groups, setGroups] = useState<GroupRow[]>([]);
   const { session } = useAuth();
   const real = useYours();
-  const { t, tn, tx, up } = useLang();
+  const { t, tn, tx, up, lang } = useLang();
   const uid = session?.user.id;
   // The nights you said you have a ticket for: a mark on their cards in your deck.
   const [ticketed, setTicketed] = useState<Set<string>>(new Set());
@@ -114,6 +117,20 @@ export default function PeopleScreen() {
   const local = useLocalCity();
   const feedCity = local.slug ?? 'munchen';
   const [upcoming, setUpcoming] = useState<Night[]>([]);
+  // Specialties: one deck per occasion, soonest first (content/specials.ts).
+  const occasions = useMemo(() => bySoonest(specials), []);
+  const [special, setSpecial] = useState<Partial<Record<SpecialId, Night[]>>>({});
+  useEffect(() => {
+    let live = true;
+    occasions.forEach((o) => fetchSpecial(o, feedCity).then((rows) => live && setSpecial((m) => ({ ...m, [o.id]: rows }))));
+    return () => {
+      live = false;
+    };
+  }, [occasions, feedCity]);
+  const specialDecks = useMemo(() => Object.fromEntries(Object.entries(special).map(([id, rows]) => [id, (rows ?? []).map((n) => toDeckCard(n, []))])) as Partial<Record<SpecialId, DeckCard[]>>, [special]);
+  const specialCards = (id: SpecialId) => specialDecks[id] ?? [];
+  const isSpecial = (d: typeof deck): d is SpecialId => !!d && specials.some((o) => o.id === d);
+  const monthName = (d: Date) => d.toLocaleDateString(lang === 'tr' ? 'tr-TR' : lang === 'de' ? 'de-DE' : 'en-GB', { month: 'long' }).toLowerCase();
   useEffect(() => {
     let live = true;
     fetchDeck(feedCity, null, 12)
@@ -150,7 +167,7 @@ export default function PeopleScreen() {
 
   // Friend search: while typing, results replace the page.
   const [query, setQuery] = useState('');
-  const [deck, setDeck] = useState<'mine' | 'friends' | 'wave2' | 'wave3' | null>(null);
+  const [deck, setDeck] = useState<'mine' | 'friends' | 'wave2' | 'wave3' | SpecialId | null>(null);
   const scroll = useRef<ScrollView>(null);
   const people = useRef<ScrollView>(null);
   const { width } = useWindowDimensions();
@@ -314,6 +331,7 @@ export default function PeopleScreen() {
   // Each page is the full screen width with the photo inset inside it, so paging always
   // lands on a whole photo (a snap interval plus side padding stopped halfway).
   const slideW = width - brand.left * 2;
+  const squareW = Math.floor((slideW - 10) / 2);
   const step = width;
 
   // Slides on by itself every 6 s; a finger on it restarts the count.
@@ -397,6 +415,27 @@ export default function PeopleScreen() {
                 <Text style={styles.groupArrow}>+</Text>
               </Pressable>
             )}
+            {/* Specialties: two squares to a screen, the rest sideways; a tap opens the deck. */}
+            <Head label={t('special.title')} />
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} snapToInterval={squareW + 10} decelerationRate="fast" contentContainerStyle={styles.squares}>
+              {occasions.map((o) => {
+                const rows = special[o.id];
+                const n = rows?.length ?? 0;
+                const line = rows === undefined ? ' ' : n ? `${tn('special.nights', n)} · ${dayLabel(nextDate(o).toISOString())}` : t('special.back', { month: monthName(nextDate(o)) });
+                return (
+                  <Pressable key={o.id} onPress={() => setDeck(o.id)} style={({ pressed }) => [styles.square, { width: squareW, height: squareW }, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t(o.label)}>
+                    <LinearGradient colors={[o.ground, o.deep]} start={{ x: 0, y: 0 }} end={{ x: 0.4, y: 1 }} style={StyleSheet.absoluteFill} />
+                    <MotifField special={o} width={squareW} height={squareW} kind="cover" />
+                    <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.55)']} style={styles.squareShade} pointerEvents="none" />
+                    <View style={styles.squareText}>
+                      <Text style={[styles.squareName, { color: o.ink }]} numberOfLines={2}>{t(o.label)}<Text style={{ color: o.accents[0] }}>.</Text></Text>
+                      <Text style={[styles.squareLine, { color: o.ink }]} numberOfLines={1}>{up(line)}</Text>
+                    </View>
+                  </Pressable>
+                );
+              })}
+            </ScrollView>
+
             {/* With your people: the gallery. */}
             {count ? (
               <>
@@ -623,15 +662,18 @@ export default function PeopleScreen() {
       {/* Card viewer: sits under the tab bar, which keeps floating on top. */}
       {deck ? (
         <DeckViewer
-          mode={deck}
-          cards={deck === 'mine' ? mineCards : deck === 'wave2' ? wave2 : deck === 'wave3' ? wave3 : friendsDeck}
-          sample={waveSample || (deck === 'friends' && friendsSample)}
+          mode={isSpecial(deck) ? 'special' : deck}
+          special={isSpecial(deck) ? specialOf(deck) : undefined}
+          cards={isSpecial(deck) ? specialCards(deck) : deck === 'mine' ? mineCards : deck === 'wave2' ? wave2 : deck === 'wave3' ? wave3 : friendsDeck}
+          sample={!isSpecial(deck) && (waveSample || (deck === 'friends' && friendsSample))}
           onKeep={keepCard}
           onLetGo={letGoCard}
           onUndo={undoCard}
           onClose={closeDeck}
           empty={
-            deck === 'mine'
+            isSpecial(deck)
+              ? t('special.empty')
+              : deck === 'mine'
               ? session ? t('yours.emptyMine') : t('yours.emptyMineGuest')
               : deck === 'wave2' || deck === 'wave3'
                 ? t('deck.waveEmpty')
@@ -726,6 +768,12 @@ const styles = StyleSheet.create({
   headDotRed: { backgroundColor: colors.spot },
   headNote: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1, color: colors.meta },
   rail: { paddingHorizontal: brand.left, gap: 12 },
+  squares: { paddingHorizontal: brand.left, gap: 10, marginTop: 10 },
+  square: { borderRadius: radius.md, overflow: 'hidden' },
+  squareShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: '55%' },
+  squareText: { position: 'absolute', left: 12, right: 12, bottom: 11 },
+  squareName: { fontFamily: fonts.logo, fontSize: 25, lineHeight: 26, letterSpacing: -0.3 },
+  squareLine: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, opacity: 0.85, marginTop: 4 },
 
   liveRow: { flexDirection: 'row', alignItems: 'center', gap: 5, maxWidth: FACE + 6 },
   pulse: { width: 7, height: 7, borderRadius: 4, backgroundColor: colors.spot },

@@ -93,6 +93,8 @@ export const openDetails = (card: DeckCard) => card.slug && router.push(`/night/
 export const openTicket = (card: DeckCard) => (card.ticketUrl ? Linking.openURL(card.ticketUrl).catch(() => {}) : openDetails(card));
 
 type Props = {
+  // in a room of its own (a specialty deck): no backdrop of its own, the room shows around it
+  room?: boolean;
   card: DeckCard;
   bottom: number;         // bottom edge of the caption (above the tab bar)
   rightLabel: string;     // the red strip on the right
@@ -110,7 +112,7 @@ type Props = {
 // red main action on the right. Since 11.10.2026 the caption no longer lists kind,
 // source and date in mono: the date and kind are on the poster, and "ticket" is said
 // once, by the hint that appears when the card is pulled up.
-export default function CardFace({ card, bottom, rightLabel, rightDone, onRight, fit, onDetails, overlay }: Props) {
+export default function CardFace({ card, bottom, rightLabel, rightDone, onRight, fit, onDetails, overlay, room }: Props) {
   const [captionH, setCaptionH] = useState(0);
   const shown = card.friends.slice(0, 2);
   const more = card.friends.length - shown.length;
@@ -123,7 +125,7 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
   return (
     <>
       {fit ? (
-        <FitPoster card={card} top={fit.top} bottom={bottom + captionH + 12} ready={captionH > 0} tag={<DateTag card={card} kind={kind} />} overlay={overlay} />
+        <FitPoster card={card} top={fit.top} bottom={bottom + captionH + 12} ready={captionH > 0} tag={<DateTag card={card} kind={kind} />} overlay={overlay} room={room} />
       ) : card.image || card.local ? (
         <Image source={card.image ? { uri: card.image } : card.local!} style={styles.photo} contentFit="cover" />
       ) : card.poster ? (
@@ -207,7 +209,7 @@ const sizeOf = (source: ImageSourcePropType) => {
 };
 
 // Flow card: blurred backdrop + uncropped poster, fitted and centred between the chip and the caption.
-function FitPoster({ card, top, bottom, ready, tag, overlay }: { card: DeckCard; top: number; bottom: number; ready: boolean; tag: ReactNode; overlay?: ReactNode }) {
+function FitPoster({ card, top, bottom, ready, tag, overlay, room }: { card: DeckCard; top: number; bottom: number; ready: boolean; tag: ReactNode; overlay?: ReactNode; room?: boolean }) {
   const [area, setArea] = useState<{ w: number; h: number } | null>(null);
   const svg = !card.image && !!card.poster;
   const ratio = useRatio(card.image, svg ? 2 / 3 : sizeOf(card.local ?? fallback));
@@ -225,12 +227,12 @@ function FitPoster({ card, top, bottom, ready, tag, overlay }: { card: DeckCard;
   return (
     <>
       {/* dark theme: the poster, blurred, fills the page under a veil; light: the plain ground */}
-      {themeId === 'light' ? null : svg ? (
+      {themeId === 'light' || room ? null : svg ? (
         <View style={[styles.photo, { backgroundColor: colors.ink2 }]} />
       ) : (
         <Image source={source} style={styles.photo} contentFit="cover" blurRadius={28} />
       )}
-      {themeId === 'light' ? null : <View style={styles.veil} />}
+      {themeId === 'light' || room ? null : <View style={styles.veil} />}
       <View style={[styles.fitArea, { top, bottom }]} onLayout={(e) => setArea({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height })}>
         {area && ready ? (
           <View style={[styles.fitPoster, { width: w, height: h }]}>

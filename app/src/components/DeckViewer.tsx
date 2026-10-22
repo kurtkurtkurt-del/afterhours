@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { BackHandler, Pressable, StyleSheet, Text, View } from 'react-native';
+import { BackHandler, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
 import Deck, { isCard, type CardEntry, type DeckEntry, type DeckHandle } from '@/components/Deck';
@@ -10,12 +10,16 @@ import { useLang } from '@/i18n';
 import { colors, fonts, radius, ground } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 import PillAction from '@/components/PillAction';
+import MotifField from '@/components/Motifs';
+import type { Special } from '@/content/specials';
 
 type Props = {
   cards: DeckCard[];
   // friends: nights friends kept · mine: nights you kept
   // wave2 / wave3: friends of friends; behave like friends
-  mode: 'friends' | 'mine' | 'wave2' | 'wave3';
+  // special: one occasion (halloween…), behaves like friends, in its own room of motifs
+  mode: 'friends' | 'mine' | 'wave2' | 'wave3' | 'special';
+  special?: Special;
   sample?: boolean; // sample cards: noted in the top label
   onKeep: (card: DeckCard) => void;   // swiped right (not in your own deck)
   onLetGo: (card: DeckCard) => void;  // swiped left (not in your own deck)
@@ -30,7 +34,8 @@ const two = (n: number) => String(n).padStart(2, '0');
 // (keep) or the left (let go), up opens the ticket, down the night page, and undo
 // brings the last one back. Your own deck only browses: swiping there changes nothing.
 // With no cards, tapping the centre text closes it.
-export default function DeckViewer({ cards, mode, onKeep, onLetGo, onUndo, onClose, empty, sample }: Props) {
+export default function DeckViewer({ cards, mode, special, onKeep, onLetGo, onUndo, onClose, empty, sample }: Props) {
+  const { width, height } = useWindowDimensions();
   const insets = useSafeAreaInsets();
   const tabSpace = useTabBarSpace();
   const { t, up } = useLang();
@@ -68,10 +73,11 @@ export default function DeckViewer({ cards, mode, onKeep, onLetGo, onUndo, onClo
 
   return (
     <View style={[StyleSheet.absoluteFill, styles.layer]}>
-      <View style={styles.root}>
+      <View style={[styles.root, special && { backgroundColor: special.deep }]}>
+        {special ? <MotifField special={special} width={width} height={height} kind="room" /> : null}
         {total === 0 ? (
           <Pressable onPress={onClose} style={[styles.empty, { paddingBottom: tabSpace }]} accessibilityRole="button" accessibilityLabel={t('word.close')}>
-            <Text style={styles.emptyText}>{empty}</Text>
+            <Text style={[styles.emptyText, special && { color: special.ink }]}>{empty}</Text>
             <Text style={styles.emptyHint}>{t('deck.tapBack')}</Text>
           </Pressable>
         ) : (
@@ -79,6 +85,7 @@ export default function DeckViewer({ cards, mode, onKeep, onLetGo, onUndo, onClo
             ref={deck}
             key={`${mode}/${deal}`}
             nights={entries}
+            room={!!special}
             bottom={tabSpace + 4}
             top={(headBottom || top + 30) + 14}
             onSwipe={swipe}
@@ -95,7 +102,7 @@ export default function DeckViewer({ cards, mode, onKeep, onLetGo, onUndo, onClo
           <View style={styles.chip}>
             <Text style={styles.chipText} numberOfLines={1}>
               {[
-                mode === 'wave2' ? up(t('deck.wave2')) : mode === 'wave3' ? up(t('deck.wave3')) : mode === 'mine' ? t('deck.yours') : t('deck.friends'),
+                special ? t(special.label) : mode === 'wave2' ? up(t('deck.wave2')) : mode === 'wave3' ? up(t('deck.wave3')) : mode === 'mine' ? t('deck.yours') : t('deck.friends'),
                 total ? `${city} · ${two(Math.min(swiped + 1, total))}/${two(total)}` : null,
                 sample ? up(t('deck.sample')) : null,
               ]
@@ -111,9 +118,11 @@ export default function DeckViewer({ cards, mode, onKeep, onLetGo, onUndo, onClo
               <Text style={styles.undoText}>{t('flow.undo')}</Text>
             </Pressable>
           ) : null}
-          <PillAction small icon="close" label={t('word.close')} onPress={onClose} />
+          <View style={special && styles.onRoom}>
+            <PillAction small icon="close" label={t('word.close')} onPress={onClose} />
+          </View>
         </View>
-        <SoundCorner />
+        <SoundCorner tone={special ? 'photo' : undefined} />
       </View>
     </View>
   );
@@ -128,6 +137,7 @@ const styles = StyleSheet.create({
   undo: { flexDirection: 'row', alignItems: 'center', gap: 6, height: 32, paddingHorizontal: 12, borderRadius: radius.pill, backgroundColor: ground(0.82) },
   undoText: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper },
   pressed: { opacity: 0.6 },
+  onRoom: { backgroundColor: ground(0.82), borderRadius: radius.pill },
   empty: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 40, gap: 10 },
   emptyText: { fontFamily: fonts.medium, fontSize: 18, letterSpacing: -0.4, color: colors.paper, textAlign: 'center' },
   emptyHint: { fontFamily: fonts.regular, fontSize: 12, color: colors.meta, textDecorationLine: 'underline' },
