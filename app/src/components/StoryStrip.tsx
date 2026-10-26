@@ -102,7 +102,10 @@ export default function StoryStrip() {
   const base = follows.length ? follows.map(djOf).filter((d): d is Dj => !!d) : djs;
   const withStory = stories.map((st) => djOf(st.dj)).filter((d): d is Dj => !!d);
   const djStrip = [...withStory, ...base.filter((d) => !storyOf(d.id))].sort((a, b) => Number(fresh(b.id)) - Number(fresh(a.id)) || Number(isLocal(b)) - Number(isLocal(a)));
-  const strip: Entry[] = [...people, ...djStrip.map((d): Entry => ({ id: d.id, name: d.name, photo: photoOf(d), story: storyOf(d.id) ?? null, dj: d }))];
+  // only people's own stories for now (owner, 26.10.2026): the DJs are off the strip until
+  // they post their own; the row may stand empty apart from yours
+  const SHOW_DJS = false;
+  const strip: Entry[] = [...people, ...(SHOW_DJS ? djStrip.map((d): Entry => ({ id: d.id, name: d.name, photo: photoOf(d), story: storyOf(d.id) ?? null, dj: d })) : [])];
   const unseen = strip.filter((e) => e.story && !seen.includes(e.id)).length;
 
   const open = (e: Entry) => {
