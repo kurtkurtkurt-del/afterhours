@@ -43,6 +43,8 @@ export const common = {
   'word.save': { en: 'save', de: 'speichern', tr: 'kaydet' },
   'word.saved': { en: 'saved', de: 'gespeichert', tr: 'kaydedildi' },
   'word.ok': { en: 'ok', de: 'ok', tr: 'tamam' },
+  'word.show': { en: 'show', de: 'zeigen', tr: 'göster' },
+  'word.hide': { en: 'hide', de: 'verstecken', tr: 'gizle' },
   'word.cancel': { en: 'cancel', de: 'abbrechen', tr: 'vazgeç' },
   'word.done': { en: 'done', de: 'fertig', tr: 'tamam' },
   'word.close': { en: 'close', de: 'schließen', tr: 'kapat' },

@@ -104,6 +104,8 @@ const structure = [
   ["94_retention.sql", "WHAT IS KEPT, AND FOR HOW LONG"],
   ["95_past_night_page.sql", "A NIGHT THAT HAPPENED STILL HAS ITS PAGE"],
   ["96_spark_edit.sql", "A SPARK CAN BE CHANGED AFTER IT WENT OUT"],
+  ["97_venue_desk.sql", "THE VENUE DESK: COMMUNITY MANAGERS RUN THEIR ROOMS"],
+  ["98_spark_days.sql", "THE SPARKS OF THE DAY, WRITTEN BY THE NIGHT AGENT"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

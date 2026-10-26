@@ -6,8 +6,8 @@ import { StatusBar } from 'expo-status-bar';
 import Svg, { Circle, Path } from 'react-native-svg';
 import Storage from 'expo-sqlite/kv-store';
 import Deck, { isCard, isSpark, openSpark, type DeckEntry, type DeckHandle, type SparkEntry } from '@/components/Deck';
-import { SPARKS, sparkIn, sparkOf } from '@/content/sparks';
-import { sparkAnswer, sparkInbox, type SparkInvite } from '@/data/sparks';
+import { SPARKS, sparkIn, sparkOf, type SparkDayMap } from '@/content/sparks';
+import { sparkAnswer, sparkDay, sparkInbox, type SparkInvite } from '@/data/sparks';
 import BigPicker from '@/components/BigPicker';
 import WhenPicker from '@/components/WhenPicker';
 import PlacePicker from '@/components/PlacePicker';
@@ -40,7 +40,7 @@ type Panel = 'tickets' | 'spark';
 // sparks to start yourself (derby, grill, hike), shuffled afresh every deal and every
 // visit (owner, 22.10.2026: a different order each time). In a city with its own
 // versions (Munich), the cards carry its places.
-function sparkDeck(invites: SparkInvite[], seed: number, city: string | null): DeckEntry[] {
+function sparkDeck(invites: SparkInvite[], seed: number, city: string | null, day: SparkDayMap): DeckEntry[] {
   const out: DeckEntry[] = invites.map((inv): SparkEntry => ({ id: 'invite:' + inv.id, spark: sparkIn(sparkOf(inv.kind), city), invite: inv }));
   // mulberry32: the same seed deals the same order, so a re-render does not reshuffle
   let a = (seed * 2654435761) >>> 0;
@@ -56,7 +56,7 @@ function sparkDeck(invites: SparkInvite[], seed: number, city: string | null): D
     [order[i], order[j]] = [order[j], order[i]];
   }
   order.forEach((s) => {
-    const spark = sparkIn(s, city);
+    const spark = sparkIn(s, city, day);
     out.push({ id: `spark:${spark.kind}`, spark });
   });
   return out;
@@ -106,6 +106,15 @@ export default function FlowScreen() {
   const [result, setResult] = useState<{ key: string; rows: Night[] | null; error: string | null }>({ key: '', rows: null, error: null });
   const error = result.key === key ? result.error : null;
 
+  // The night agent's words for the day (98_spark_days.sql), per city.
+  const [day, setDay] = useState<{ city: string | null; map: SparkDayMap }>({ city: '', map: {} });
+  useEffect(() => {
+    let live = true;
+    sparkDay(city).then((map) => live && setDay({ city, map }));
+    return () => {
+      live = false;
+    };
+  }, [city, reloads]);
   // Invites from friends (spark panel only, signed in only).
   const [invites, setInvites] = useState<{ key: string; list: SparkInvite[] }>({ key: '', list: [] });
   // "who is this?": the texts for the nights in this deck, and the one open in the sheet.
@@ -134,10 +143,11 @@ export default function FlowScreen() {
   const nights = useMemo<DeckEntry[] | null>(() => {
     if (panel === 'spark') {
       if (signedIn && invites.key !== key) return null; // wait for the inbox so invites land on top
-      return sparkDeck(invites.key === key ? invites.list : [], reloads, city);
+      if (day.city !== city) return null; // wait for the day's words, so the cards do not change under the thumb
+      return sparkDeck(invites.key === key ? invites.list : [], reloads, city, day.map);
     }
     return result.key === key && result.rows ? filterWhen(result.rows, when) : null;
-  }, [result, key, when, panel, signedIn, invites, reloads, city]);
+  }, [result, key, when, panel, signedIn, invites, reloads, city, day]);
 
   useEffect(() => {
     let cancelled = false;
@@ -293,7 +303,7 @@ export default function FlowScreen() {
         {error && panel === 'tickets' ? (
           <Text style={styles.note}>{error === 'offline' ? up(t('offline.empty')) : upperData(error)}</Text>
         ) : nights ? (
-          <Deck ref={deck} key={`${panel}/${city}/${type}/${when}/${reloads}`} nights={nights} friendsOf={friendsOf} bottom={tabSpace + ACTIONS} top={(headBottom || Math.max(brand.top, insets.top + 24) + 30) + 14} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} hasAbout={(e) => abouts.has(e.id)} onAbout={(e) => setReading(abouts.get(e.id) ?? null)} previewOf={(e) => previews.get(e.id)} />
+          <Deck ref={deck} key={`${panel}/${city}/${type}/${when}/${reloads}`} nights={nights} friendsOf={friendsOf} bottom={tabSpace + ACTIONS} top={(headBottom || Math.max(brand.top, insets.top + 24) + 30) + 14} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} listed={panel === 'tickets' && counts ? Object.values(counts).reduce((a, n) => a + n, 0) : 0} hasAbout={(e) => abouts.has(e.id)} onAbout={(e) => setReading(abouts.get(e.id) ?? null)} previewOf={(e) => previews.get(e.id)} />
         ) : (
           <Text style={styles.note}>{up(t('flow.loading'))}</Text>
         )}

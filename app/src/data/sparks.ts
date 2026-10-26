@@ -1,6 +1,6 @@
 import { supabase } from '@/lib/supabase';
 import { invalidate, must, outbox, pendingJobs, remember, send } from '@/lib/offline';
-import type { SparkKind } from '@/content/sparks';
+import type { SparkDayMap, SparkKind, SparkSay } from '@/content/sparks';
 
 // 27_sparks.sql + 28_spark_waves.sql + 30_spark_map.sql. The tables are closed; these calls are the only way in.
 
@@ -124,4 +124,22 @@ export async function sparkGet(id: string): Promise<SeenSpark | null> {
   const a = waiting().get(id);
   if (!s || !a) return s;
   return a === 'cancel' ? null : { ...s, my_answer: a as SeenSpark['my_answer'] };
+}
+
+// 98_spark_days.sql: the night agent's sparks for the day the city is about to live.
+// Kept on the phone for an hour; before 98 is in the database, or for a city without
+// an agent, an empty map (the generic sparks show).
+type DayRow = { day: string; kind: SparkKind; title: SparkSay['title']; line: SparkSay['line']; place: SparkSay['place']; hour: number | null; minute: number | null; why: string | null };
+export async function sparkDay(city: string | null): Promise<SparkDayMap> {
+  if (!city) return {};
+  try {
+    const rows = (await remember('sparkDay', city, async () => (await must(supabase.rpc('spark_day', { p_city: city }))) ?? [], 60)) as DayRow[];
+    const out: SparkDayMap = {};
+    rows.forEach((r) => {
+      out[r.kind] = { day: r.day, title: r.title, line: r.line, place: r.place, hour: r.hour, minute: r.minute, why: r.why };
+    });
+    return out;
+  } catch {
+    return {};
+  }
 }

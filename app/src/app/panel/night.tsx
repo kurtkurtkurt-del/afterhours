@@ -21,7 +21,8 @@ const today = () => new Date().toISOString().slice(0, 10);
 // anyone else sends it in and the staff let it through (43_event_submit.sql).
 // The + on the flow opens this page for both.
 export default function NightForm() {
-  const { id } = useLocalSearchParams<{ id?: string }>();
+  // ?venue=&city=&date= come from the desk (97): the room, its city and a day picked on the calendar
+  const { id, venue: venueParam, city: cityParam, date: dateParam } = useLocalSearchParams<{ id?: string; venue?: string; city?: string; date?: string }>();
   const { t } = useLang();
   const role = useRole();
   const staff = isStaff(role);
@@ -29,7 +30,7 @@ export default function NightForm() {
   const types = useEventTypes();
   const [cities, setCities] = useState<Place[]>([]);
   const [venues, setVenues] = useState<Venue[]>([]);
-  const [f, setF] = useState({ title: '', city: '', type: 'club-night', venue: '', date: today(), time: '23:00', body: '', ticket: '', image: '', published: true });
+  const [f, setF] = useState({ title: '', city: cityParam ?? '', type: 'club-night', venue: venueParam ?? '', date: dateParam && /^\d{4}-\d{2}-\d{2}$/.test(dateParam) ? dateParam : today(), time: '23:00', body: '', ticket: '', image: '', published: true });
   const [said, setSaid] = useState<{ text: string; bad?: boolean } | null>(null);
   const [busy, setBusy] = useState(false);
   const [venueOpen, setVenueOpen] = useState(false);

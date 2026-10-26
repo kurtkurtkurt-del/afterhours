@@ -18,10 +18,19 @@ import { readFile } from "node:fs/promises";
 import pg from "pg";
 import { EXPECTED_SQL } from "./expected-sql.mjs";
 
+// The address may also sit in backend/.env.local (one line, SUPABASE_DB_URL=…), a file
+// git ignores, so the owner never pastes it into a terminal or a chat (26.10.2026).
+if (!process.env.SUPABASE_DB_URL) {
+  try {
+    const env = await readFile(new URL("../.env.local", import.meta.url), "utf8");
+    const m = /^\s*SUPABASE_DB_URL\s*=\s*"?([^"\n]+)"?\s*$/m.exec(env);
+    if (m) process.env.SUPABASE_DB_URL = m[1].trim();
+  } catch {}
+}
 const url = process.env.SUPABASE_DB_URL;
 const write = process.argv.includes("--write");
 if (!url) {
-  console.error("SUPABASE_DB_URL is not set (Supabase → Settings → Database → Connection string, session mode).");
+  console.error("SUPABASE_DB_URL is not set: put it in backend/.env.local (Supabase → Settings → Database → Connection string, session mode).");
   process.exit(2);
 }
 

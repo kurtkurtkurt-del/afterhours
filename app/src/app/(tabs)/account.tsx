@@ -33,6 +33,7 @@ import { SAMPLES } from '@/content/samples';
 import { myCards, toCardData, type CardRow } from '@/data/checkin';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { isStaff, useRole } from '@/data/staff';
+import { useRunsVenues } from '@/data/venues';
 import { useTabReset } from '@/hooks/useTabReset';
 import type { NightCardData } from '@/content/cardsgen';
 import { upperData, useLang } from '@/i18n';
@@ -57,6 +58,7 @@ export default function AccountScreen() {
   const tabSpace = useTabBarSpace();
   const { session, isAnonymous } = useAuth();
   const staff = isStaff(useRole());
+  const runs = useRunsVenues(null, !session || isAnonymous);
   const { t, tn, up } = useLang();
   const insets = useSafeAreaInsets();
   const { width, height } = useWindowDimensions();
@@ -201,6 +203,7 @@ export default function AccountScreen() {
           />
 
           {/* Under the photo: the bio and the longer text, or a nudge to write them. */}
+          {runs.length ? <Text style={styles.runs}>{up(t('desk.runs', { rooms: runs.map((r) => `${r.name} · ${r.city_name}`.toLowerCase()).join(', ') }))}</Text> : null}
           {profile?.bio ? <Text style={styles.bio}>{profile.bio}</Text> : null}
           {extra?.about ? <Text style={styles.about}>{extra.about}</Text> : null}
           {signedIn && !profile?.bio && !extra?.about ? (
@@ -510,6 +513,7 @@ const styles = StyleSheet.create({
   section: { marginTop: 22, paddingTop: 18, borderTopWidth: 1, borderTopColor: colors.rule, marginHorizontal: 0 },
   sectionFirst: { marginTop: 0, paddingTop: 0, borderTopWidth: 0 },
   sectionBody: { paddingHorizontal: brand.left, marginTop: 12, gap: 2 },
+  runs: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.spotText, marginTop: 14 },
   bio: { fontFamily: fonts.medium, fontSize: 19, lineHeight: 25, letterSpacing: -0.4, color: colors.paper, marginTop: 22 },
   about: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 23, color: colors.mute, marginTop: 8 },
   prompt: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 22, color: colors.ink2, textDecorationLine: 'underline' },

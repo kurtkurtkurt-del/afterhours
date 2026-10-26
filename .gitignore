@@ -4,3 +4,7 @@ backend/backup/
 
 # the gate's proof (backend/tools/gate.mjs), per machine
 .qa/
+
+# the database address for tools/migrate.mjs, never committed
+backend/.env.local
+backend/.env

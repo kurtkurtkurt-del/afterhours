@@ -986,4 +986,6 @@ export const tabs = {
   'account.flip': { en: 'tap the card to turn it', de: 'tipp die karte, um sie zu drehen', tr: 'çevirmek için karta dokun' },
   'account.roomFrozen': { en: 'the room, frozen', de: 'der raum, eingefroren', tr: 'oda, donmuş' },
   'account.roomOpen': { en: 'the room is open', de: 'der raum ist offen', tr: 'oda açık' },
+  // 98_spark_days.sql: the night agent's line on why the day's spark reads as it does
+  'spark.day.why': { en: 'tonight, because', de: 'heute, weil', tr: 'bu gece, çünkü' },
 } as const;

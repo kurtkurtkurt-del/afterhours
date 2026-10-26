@@ -24,4 +24,6 @@ export const posts = {
   'staff.reported.keep': { en: 'it is fine', de: 'ist in ordnung', tr: 'sorun yok' },
   'staff.n.reported': { en: 'reported posts', de: 'gemeldete posts', tr: 'şikayetli gönderi' },
   'groups.entry': { en: 'groups', de: 'gruppen', tr: 'gruplar' },
+  'stories.add': { en: 'add a story', de: 'story hinzufügen', tr: 'story ekle' },
+  'stories.you': { en: 'you', de: 'du', tr: 'sen' },
 } as const;

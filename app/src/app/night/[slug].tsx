@@ -441,7 +441,7 @@ export default function NightScreen() {
       <Tips page="night" tip={{ title: 'tips.night.1.t', body: 'tips.night.1.b', motion: 'tap' }} bottom={insets.bottom + 84} />
       {reporting.sheet}
 
-      {night ? <NudgeSheet open={nudging} night={night} onClose={() => setNudging(false)} onSent={setNudged} /> : null}
+      {night ? <NudgeSheet open={nudging} night={night} onClose={() => setNudging(false)} onSent={setNudged} seed={{ friends: nudgeFriends, live: nudgeLive, photos: nudgePhotos }} /> : null}
 
       {/* Back from the ticket page: one question, once. */}
       <Modal visible={askTicket} transparent animationType="fade" onRequestClose={() => setAskTicket(false)}>

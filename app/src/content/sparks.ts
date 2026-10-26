@@ -21,7 +21,13 @@ export type Spark = {
   hour: number;   // suggested start, local time
   minute: number;
   places: Key[];  // first one is the suggestion on the card
+  // 98_spark_days.sql: the night agent's version for the coming day, plain words in the
+  // three languages; when set, the card and the page say these instead of the keys
+  say?: SparkSay;
 };
+export type Words = { en: string; de: string; tr: string };
+export type SparkSay = { day: string; title: Words; line: Words; place: Words; hour: number | null; minute: number | null; why: string | null };
+export type SparkDayMap = Partial<Record<SparkKind, SparkSay>>;
 
 export const SPARKS: Spark[] = [
   {
@@ -431,7 +437,17 @@ const LOCAL: Record<string, Partial<Record<SparkKind, Local>>> = {
     walk: { title: 'spark.berlin.walk.title', line: 'spark.berlin.walk.line', places: ['spark.berlin.place.oberbaumbruecke', 'spark.berlin.place.ostkreuz'] },
   },
 };
-export const sparkIn = (spark: Spark, city: string | null | undefined): Spark => ({ ...spark, ...LOCAL[city ?? '']?.[spark.kind] });
+export const sparkIn = (spark: Spark, city: string | null | undefined, day?: SparkDayMap | null): Spark => {
+  const say = day?.[spark.kind];
+  const base = { ...spark, ...LOCAL[city ?? '']?.[spark.kind] };
+  return say ? { ...base, say, hour: say.hour ?? base.hour, minute: say.minute ?? base.minute } : base;
+};
+// The words of a spark in a language: the day's version when there is one, else the key.
+export const sparkWords = (spark: Spark, lang: 'en' | 'de' | 'tr', t: (key: Key) => string) => ({
+  title: spark.say ? spark.say.title[lang] : t(spark.title),
+  line: spark.say ? spark.say.line[lang] : t(spark.line),
+  place: spark.say ? spark.say.place[lang] : t(spark.places[0]),
+});
 
 // Start times to choose from: the spark's hour on the next four days (today only
 // while it is still an hour away). The first one is the suggestion on the card.

@@ -857,6 +857,52 @@ msg who froze no at1 at2 q1 q2`. See `cards/card-data.js` for an example.
 
 **The clipboard** (08.10.2026). `pbcopy` without a UTF-8 locale turns every non-ASCII letter into Mac Roman garbage on its way to the SQL editor; that is what broke the test groups' chat. `backend/sql/fix-clipboard-text.sql` (plain ASCII) repairs it in place; copy with `LANG=en_US.UTF-8 pbcopy`.
 
+### The metal card — planned, not built (26.10.2026)
+
+The afterhours card made of metal. Nothing of this exists in the code
+yet; this is the idea and the numbers, so it is not lost.
+
+**What it is.** The physical twin of a night's card: a blank metal card
+(bought cheap from China, a few hundred at a time), the night's front
+printed at home on vinyl sticker, stuck on and sealed under a clear
+overlay. One card per night per person who was there, numbered —
+*one of 14 from this night* — with the night, the date, the room and the
+count on it. A card that is only a logo and a QR code is a promo card
+and goes in the bin; the card has to be the proof of one night.
+
+**How it reaches people.** Not by post. Whoever asks for one in the app
+gives an address, and on Sunday the owner rides one loop through Munich
+by bike and leaves every card of that week in the letterbox (a paper
+sleeve is enough; no envelope, no doorbell). Under 20 addresses a loop
+is a pleasure, over 50 it is work. Munich only, by hand, for as long as
+it stays that way.
+
+**Why.** Build in public: the Sunday ride, the route, the doors, the
+wrong addresses are the story, not the feature. The card is the only
+night memory one can hold, so it gets photographed and shared by the
+people who got it — cheaper than any ad.
+
+**The numbers** (estimates, 2026). Plain aluminium card €0.70–1.50 at
+300–500 pieces, plus €0.30–0.50 each for the freight and the 19 % import
+VAT, €0.15–0.30 for sticker, ink and overlay, €0.05–0.10 for the sleeve:
+about **€1.20–2.40 a card**, €1.50 is the target. NFC chips double it
+(€2.70–5.30) without changing the story, so not in the first version.
+Half the cost is freight and VAT: never order under 500. A home
+printer's sticker looks home-made; dye-sublimation aluminium blanks
+(€0.40–0.60, printer €250–350 once) or a supplier-printed back with
+only the front stickered per night look better.
+
+**The smallest test.** One night, 15–20 cards, one Sunday loop, the
+process photographed and posted. Count how many people post the card on
+their own; more than five means it works, and only then the 500-piece
+order.
+
+**What the app needs when it is built.** A *send me the card* ask on a
+night one was at (consent, name on the letterbox as its own field,
+address kept only until the Sunday it is delivered and deleted after),
+a counter *the cards of this night* on the night page, and a Sunday list
+for the owner with the addresses in route order.
+
 ## 8. The backend
 
 > **Live database (07.10.2026, evening):** `setup-1-structure.sql` and

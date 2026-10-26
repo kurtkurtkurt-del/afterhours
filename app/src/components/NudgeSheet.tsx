@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import Animated, { Easing, SlideInDown } from 'react-native-reanimated';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import Scrim from '@/components/Scrim';
 import { Image } from 'expo-image';
 import KeyboardSafe from '@/components/KeyboardSafe';
@@ -28,12 +28,32 @@ type NightLike = { slug: string; title: string; starts_at: string | null; venue_
 // message brings). The face gets a tick and the sheet stays open, so a second and a third
 // friend are one tap each. Under the faces, the exact words they get. A search field only
 // once there are more faces than fit two rows. Nothing new in the database: it is a DM.
-export default function NudgeSheet({ open, night, onClose, onSent }: { open: boolean; night: NightLike; onClose: () => void; onSent: (name: string) => void }) {
+//
+// The page that opens the sheet may hand over the faces it already has (`seed`), so the
+// sheet is full-size from its first frame. Before that (26.10.2026) the faces arrived
+// after the sheet had started sliding in; the slide aimed at the short, empty sheet, the
+// sheet then grew, and its lower part stayed off-screen on the first open. The slide is
+// also driven by hand now (from the Modal's onShow), not by a layout animation that
+// measures once.
+type Seed = { friends?: FriendRow[]; live?: LiveFriend[]; photos?: Map<string, string> };
+export default function NudgeSheet({ open, night, onClose, onSent, seed }: { open: boolean; night: NightLike; onClose: () => void; onSent: (name: string) => void; seed?: Seed }) {
   const insets = useSafeAreaInsets();
+  const { height } = useWindowDimensions();
   const { t, up } = useLang();
-  const [friends, setFriends] = useState<FriendRow[]>([]);
-  const [live, setLive] = useState<LiveFriend[]>([]);
-  const [photos, setPhotos] = useState<Map<string, string>>(new Map());
+  // read here when the sheet opens; until then, what the page handed over
+  const [got, setFriends] = useState<FriendRow[] | null>(null);
+  const [gotLive, setLive] = useState<LiveFriend[] | null>(null);
+  const [gotPhotos, setPhotos] = useState<Map<string, string> | null>(null);
+  const friends = got ?? seed?.friends ?? [];
+  const live = gotLive ?? seed?.live ?? [];
+  const photos = gotPhotos ?? seed?.photos ?? new Map<string, string>();
+  // the slide: off the bottom while closed, up to its place once the Modal is on screen
+  const slide = useSharedValue(height);
+  const slideStyle = useAnimatedStyle(() => ({ transform: [{ translateY: slide.get() }] }));
+  useEffect(() => {
+    if (!open) slide.set(height);
+  }, [open, slide, height]);
+  const onShow = () => slide.set(withTiming(0, { duration: 300, easing: Easing.out(Easing.cubic) }));
   const [query, setQuery] = useState('');
   const [busy, setBusy] = useState<string | null>(null);
   const [sent, setSent] = useState<Set<string>>(new Set());
@@ -84,10 +104,10 @@ export default function NudgeSheet({ open, night, onClose, onSent }: { open: boo
   };
 
   return (
-    <Modal visible={open} animationType="fade" transparent onRequestClose={close}>
+    <Modal visible={open} animationType="fade" transparent onRequestClose={close} onShow={onShow}>
       <KeyboardSafe style={styles.lift}>
         <Scrim onPress={close} />
-        <Animated.View entering={SlideInDown.duration(300).easing(Easing.out(Easing.cubic))} style={[styles.sheet, { paddingBottom: insets.bottom + 16 }]}>
+        <Animated.View style={[styles.sheet, { paddingBottom: insets.bottom + 16 }, slideStyle]}>
           <View style={styles.grip} />
           <View style={styles.head}>
             <View style={styles.dot} />

@@ -15,11 +15,11 @@ import Input from '@/components/Input';
 import PullDownScroll from '@/components/PullDownScroll';
 import SoundCorner from '@/components/SoundCorner';
 import { useAuth } from '@/auth/AuthContext';
-import { sparkIn, sparkOf, sparkTimes, type Spark } from '@/content/sparks';
+import { sparkIn, sparkOf, sparkTimes, sparkWords, type Spark, type SparkDayMap } from '@/content/sparks';
 import { sparkHint, type SparkHint } from '@/data/sparkHints';
 import { useHere } from '@/data/here';
 import * as Location from 'expo-location';
-import { sparkAnswer, sparkAudience, sparkCancel, sparkCreate, sparkEdit, sparkGet, sparkPeople, SparksNotReady, type Audience, type Reach, type SeenSpark, type SparkPerson } from '@/data/sparks';
+import { sparkDay, sparkAnswer, sparkAudience, sparkCancel, sparkCreate, sparkEdit, sparkGet, sparkPeople, SparksNotReady, type Audience, type Reach, type SeenSpark, type SparkPerson } from '@/data/sparks';
 import { upperData, useLang, type Key } from '@/i18n';
 import { colors, fonts, radius, barStyle, scrim, paperTint } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -34,10 +34,26 @@ const two = (n: number) => String(n).padStart(2, '0');
 // be changed. Who gets it is a wave, not a list: 1st your friends, 2nd their friends
 // too, 3rd one step further; everyone inside finds it in their spark panel.
 // Opened with ?invite=<id>, it is someone else's spark: in / out instead.
+// The day's words (98_spark_days.sql) are read before the form is drawn, so its fields
+// start with them; a city without a night agent gets its generic version at once.
 export default function SparkScreen() {
+  const city = useHere().city;
+  const [day, setDay] = useState<{ city: string | null; map: SparkDayMap } | null>(null);
+  useEffect(() => {
+    let live = true;
+    sparkDay(city).then((map) => live && setDay({ city, map }));
+    return () => {
+      live = false;
+    };
+  }, [city]);
+  if (!day || day.city !== city) return <View style={styles.root} />;
+  return <SparkForm key={city ?? ''} city={city} day={day.map} />;
+}
+
+function SparkForm({ city, day }: { city: string | null; day: SparkDayMap }) {
   const { kind, invite: inviteId } = useLocalSearchParams<{ kind: string; invite?: string }>();
-  // The city's own version when it has one (Munich: real places).
-  const spark = sparkIn(sparkOf(kind), useHere().city);
+  // The city's own version when it has one (Munich: real places), and the day's words.
+  const spark = sparkIn(sparkOf(kind), city, day);
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const { t } = useLang();
@@ -90,12 +106,13 @@ function Hero({ spark, title, width }: { spark: Spark; title: string; width: num
 
 function CreateBody({ spark, width, whenText }: { spark: Spark; width: number; whenText: (at: Date) => string }) {
   const { session } = useAuth();
-  const { t, tn, up } = useLang();
+  const { t, tn, up, lang } = useLang();
+  const words = sparkWords(spark, lang, t);
   const here = useHere();
   // The real next match, or the days the forecast likes; the plain hours until then.
   const [hint, setHint] = useState<SparkHint | null>(null);
   const titled = useRef(false);
-  const [title, setTitle] = useState(() => t(spark.title).replace(/\.$/, ''));
+  const [title, setTitle] = useState(() => words.title.replace(/\.$/, ''));
   const [when, setWhen] = useState(0);
   useEffect(() => {
     let live = true;
@@ -118,7 +135,7 @@ function CreateBody({ spark, width, whenText }: { spark: Spark; width: number; w
     if ('match' in n) return n.match;
     return `${n.tmax}° · ${n.rain <= 20 ? t('spark.dry') : t('spark.rain', { n: n.rain })}`;
   };
-  const [place, setPlace] = useState(() => t(spark.places[0]));
+  const [place, setPlace] = useState(() => words.place);
   const [reach, setReach] = useState<Reach>(1);
   const [audience, setAudience] = useState<Audience | null>(null);
   const [state, setState] = useState<'idle' | 'sending' | 'sent'>('idle');
@@ -143,7 +160,7 @@ function CreateBody({ spark, width, whenText }: { spark: Spark; width: number; w
     setState('sending');
     setNote(null);
     spotNow()
-      .then((spot) => sparkCreate(spark.kind, title.trim() || t(spark.title), times[when], place, reach, spot))
+      .then((spot) => sparkCreate(spark.kind, title.trim() || words.title, times[when], place, reach, spot))
       .then(() => {
         setState('sent');
         setNote(t('spark.sent'));
@@ -165,13 +182,14 @@ function CreateBody({ spark, width, whenText }: { spark: Spark; width: number; w
 
   return (
     <>
-      <Hero spark={spark} title={title.toLowerCase() || t(spark.title)} width={width} />
+      <Hero spark={spark} title={title.toLowerCase() || words.title} width={width} />
       <View style={styles.body}>
         <Button label={label} onPress={create} />
         {note ? <Text style={[styles.mono, state === 'sent' && styles.ok]}>{up(note)}</Text> : null}
         {!session || session.user.is_anonymous ? <Text style={styles.mono}>{up(t('spark.signIn'))}</Text> : null}
 
-        <Text style={styles.text}>{t(spark.line)}</Text>
+        <Text style={styles.text}>{words.line}</Text>
+        {spark.say?.why ? <Text style={styles.why}>{up(t('spark.day.why'))} · {spark.say.why}</Text> : null}
 
         <Text style={styles.mono}>{up(t('spark.change'))}</Text>
         <View style={styles.rows}>
@@ -448,6 +466,7 @@ const styles = StyleSheet.create({
   body: { paddingHorizontal: brand.left, paddingTop: 18, gap: 22 },
   actions: { flexDirection: 'row', gap: 10 },
   text: { fontFamily: fonts.regular, fontSize: 16, lineHeight: 24, color: colors.paper2, opacity: 0.9 },
+  why: { fontFamily: fonts.jet, fontSize: 9.5, lineHeight: 14, letterSpacing: 1, color: colors.meta, marginTop: 8 },
   small: { fontFamily: fonts.regular, fontSize: 13, lineHeight: 19, color: colors.mute },
   rows: { borderTopWidth: 1, borderTopColor: colors.ink3 },
   row: { flexDirection: 'row', justifyContent: 'space-between', gap: 16, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: colors.ink3 },

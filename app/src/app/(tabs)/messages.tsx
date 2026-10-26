@@ -11,6 +11,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Button from '@/components/Button';
 import SoundCorner from '@/components/SoundCorner';
 import StoryStrip from '@/components/StoryStrip';
+import Tips from '@/components/Tips';
+import Svg, { Path } from 'react-native-svg';
 import { PeopleResults, PeopleSearch, SuggestedInRow, openPerson } from '@/components/People';
 import { useAuth } from '@/auth/AuthContext';
 import { friendsLive, type LiveFriend } from '@/data/checkin';
@@ -96,6 +98,14 @@ export default function MessagesScreen() {
         header={
           <View style={styles.band}>
             <Text style={styles.title}>{t('messages.title')}</Text>
+            {/* + adds a story: a post with a photo, shown as a ring on top for a day (owner, 26.10.2026) */}
+            {session && !session.user.is_anonymous ? (
+              <Pressable onPress={() => router.push('/post/new')} hitSlop={8} accessibilityRole="button" accessibilityLabel={t('stories.add')} style={({ pressed }) => [styles.plus, pressed && styles.pressed]}>
+                <Svg width={16} height={16} viewBox="0 0 16 16">
+                  <Path d="M8 2.5v11M2.5 8h11" stroke={colors.ink} strokeWidth={2} strokeLinecap="round" />
+                </Svg>
+              </Pressable>
+            ) : null}
             <SoundCorner />
           </View>
         }
@@ -270,6 +280,7 @@ export default function MessagesScreen() {
           </Animated.View>
         </KeyboardSafe>
       </Modal>
+      <Tips page="messages" tip={{ title: 'tips.messages.1.t', body: 'tips.messages.1.b', motion: 'chat' }} bottom={tabSpace + 12} />
     </View>
   );
 }
@@ -278,6 +289,7 @@ const styles = StyleSheet.create({
   // words on a red fill stay light whatever the ground does (try/light)
   onSpot: { color: colors.onSpot },
   root: { flex: 1, backgroundColor: colors.ink },
+  plus: { position: 'absolute', top: brand.top - 4, right: brand.left + 44, width: 34, height: 34, borderRadius: 17, backgroundColor: colors.paper, alignItems: 'center', justifyContent: 'center', zIndex: 3 },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 44, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
   body: { paddingTop: brand.top + 48, paddingHorizontal: brand.left },
