@@ -37,6 +37,8 @@ import { sparkOf } from '@/content/sparks';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import Storage from 'expo-sqlite/kv-store';
+import ConnectDial from '@/components/ConnectDial';
 
 const fallbackPhoto = require('../../../assets/intro/concert.jpg');
 
@@ -53,7 +55,26 @@ const fallbackPhoto = require('../../../assets/intro/concert.jpg');
 // first names for the people further out on a sample wave (never shown as real)
 const WAVE_NAMES = ['tarık', 'noa', 'ece', 'felix', 'mele', 'hana', 'yusuf', 'ruby', 'lev', 'ana', 'kai', 'bo'];
 
+// Which connect: the dial (prototypes/sunrise.html) or the classic page; one tap in the band
+// switches, and the phone remembers it (owner, 27.10.2026: to try the dial and go back).
+const VIEW_KEY = 'connect.view';
+const readView = (): 'dial' | 'classic' => {
+  try {
+    return Storage.getItemSync(VIEW_KEY) === 'classic' ? 'classic' : 'dial';
+  } catch {
+    return 'dial';
+  }
+};
+
 export default function PeopleScreen() {
+  const [view, setView] = useState(readView);
+  const flipView = () => {
+    const next = view === 'dial' ? 'classic' : 'dial';
+    setView(next);
+    try {
+      Storage.setItemSync(VIEW_KEY, next);
+    } catch {}
+  };
   const insets = useSafeAreaInsets();
   const tabSpace = useTabBarSpace();
   // Your groups (44_groups.sql), read on every visit.
@@ -380,6 +401,152 @@ export default function PeopleScreen() {
     }, [count, step, touched, query, deck]),
   );
 
+  // One slide of the gallery at any size: the classic page and the dial both draw it.
+  const renderSlide = (item: Slide, w: number, h: number) => (
+    <>
+                      {item.kind === 'plan' ? (
+                        <Pressable onPress={() => router.push({ pathname: '/groups/[id]', params: { id: item.g.id, tab: 'plan' } })} style={[styles.hero, { width: w, height: h }]}>
+                          <Image source={item.p.image_url ? { uri: item.p.image_url } : fallbackPhoto} style={StyleSheet.absoluteFill} contentFit="cover" />
+                          <LinearGradient colors={[scrim(0.55), scrim(0.0), scrim(0.55), colors.poster]} locations={[0, 0.25, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
+                          <View style={styles.planHead}>
+                            <GroupBadge emoji={item.g.emoji} color={item.g.color} cover={item.g.cover_path} size={40} />
+                            <View style={styles.planHeadText}>
+                              <Text style={styles.planGroup} numberOfLines={1}>{item.g.name.toLowerCase()}</Text>
+                              <Text style={styles.planMono}>{up(t('groups.card.plan'))}</Text>
+                            </View>
+                          </View>
+                          <View style={styles.heroText}>
+                            {(() => {
+                              const mineIn = answers[item.p.id] ? answers[item.p.id] === 'in' : item.p.people.find((x) => x.id === uid)?.answer === 'in';
+                              const others = item.p.people.filter((x) => x.id !== uid && x.answer === 'in');
+                              const inNames = [...others.map((x) => x.name ?? ''), ...(mineIn ? [t('posts.you')] : [])];
+                              return (
+                                <>
+                                  <Text style={[styles.heroMeta, styles.redOnPhoto]} numberOfLines={1}>{up(t('groups.card.in', { n: inNames.length, m: item.p.people.length }))}</Text>
+                                  <Text style={styles.heroTitle} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>{item.p.title.toLowerCase()}</Text>
+                                  <Text style={styles.heroMeta} numberOfLines={1}>{[item.p.venue_name, dayLabel(item.p.starts_at), item.p.starts_at?.slice(11, 16)].filter(Boolean).map((x) => upperData(String(x))).join(' · ')}</Text>
+                                  <View style={styles.planRow}>
+                                    <View style={styles.keptFaces}>
+                                      {others.slice(0, 4).map((x, i) => (
+                                        <View key={x.id} style={[styles.keptFace, i > 0 && styles.keptOverlap]}>
+                                          <Avatar name={x.name ?? '?'} size={KEPT} />
+                                        </View>
+                                      ))}
+                                      {others.length > 4 ? (
+                                        <View style={[styles.keptFace, styles.keptOverlap, styles.keptMore]}>
+                                          <Text style={styles.keptMoreText}>+{others.length - 4}</Text>
+                                        </View>
+                                      ) : null}
+                                    </View>
+                                    <Pressable onPress={() => answer(item.p.id, 'in')} style={({ pressed }) => [mineIn ? styles.btnLine : styles.btnRed, pressed && styles.pressed]} accessibilityRole="button">
+                                      <Text style={mineIn ? styles.btnTextLine : styles.btnTextRed}>{mineIn ? t('groups.card.youreIn') : t('groups.card.imIn')}</Text>
+                                    </Pressable>
+                                  </View>
+                                </>
+                              );
+                            })()}
+                          </View>
+                        </Pressable>
+                      ) : item.kind === 'round' ? (
+                        <Pressable onPress={() => router.push({ pathname: '/groups/[id]', params: { id: item.g.id, tab: 'plan' } })} style={[styles.hero, { width: w, height: h }]}>
+                          <Image source={item.r.options.find((o) => o.image_url)?.image_url ? { uri: item.r.options.find((o) => o.image_url)!.image_url! } : fallbackPhoto} style={StyleSheet.absoluteFill} contentFit="cover" />
+                          <LinearGradient colors={[scrim(0.55), scrim(0.0), scrim(0.55), colors.poster]} locations={[0, 0.25, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
+                          <View style={styles.planHead}>
+                            <GroupBadge emoji={item.g.emoji} color={item.g.color} cover={item.g.cover_path} size={40} />
+                            <View style={styles.planHeadText}>
+                              <Text style={styles.planGroup} numberOfLines={1}>{item.g.name.toLowerCase()}</Text>
+                              <Text style={styles.planMono}>{up(t('groups.card.vote'))}</Text>
+                            </View>
+                          </View>
+                          <View style={styles.heroText}>
+                            <Text style={[styles.heroMeta, styles.redOnPhoto]} numberOfLines={1}>{up(t('groups.vote.voted', { n: item.r.voted, m: item.members }))} · {up(t('groups.card.closes', { at: dayLabel(item.r.closes_at) }))}</Text>
+                            <Text style={styles.heroTitle} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>{t('groups.card.nights', { n: item.r.options.length })}</Text>
+                            <Text style={styles.heroMeta} numberOfLines={1}>{item.r.options.map((o) => o.title.toLowerCase()).join(' · ')}</Text>
+                            <View style={styles.planRow}>
+                              <Text style={styles.avNote} numberOfLines={1}>{item.r.my_vote ? t('groups.vote.mine') + ': ' + (item.r.options.find((o) => o.id === item.r.my_vote)?.title.toLowerCase() ?? '') : ''}</Text>
+                              <Pressable onPress={() => router.push({ pathname: '/groups/[id]', params: { id: item.g.id, tab: 'plan' } })} style={({ pressed }) => [item.r.my_vote ? styles.btnLine : styles.btnRed, pressed && styles.pressed]} accessibilityRole="button">
+                                <Text style={item.r.my_vote ? styles.btnTextLine : styles.btnTextRed}>{t('groups.card.voteGo')}</Text>
+                              </Pressable>
+                            </View>
+                          </View>
+                        </Pressable>
+                      ) : item.kind === 'night' ? (
+                        <Pressable onPress={() => item.n.slug && router.push(`/night/${item.n.slug}`)} style={[styles.hero, { width: w, height: h }]}>
+                          <Image source={(item.n as YoursNight & { photo?: number }).photo ?? (item.n.image ? { uri: item.n.image } : fallbackPhoto)} style={StyleSheet.absoluteFill} contentFit="cover" />
+                          <LinearGradient colors={[scrim(0.0), scrim(0.55), colors.poster]} locations={[0.3, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
+                          {matched.has(item.n.id) ? (
+                            <View style={styles.badge}>
+                              <Text style={styles.badgeText}>{up(t('yours.match'))}</Text>
+                            </View>
+                          ) : null}
+                          <View style={styles.heroText}>
+                            <Text style={styles.heroMeta} numberOfLines={1}>{item.n.startsAt !== undefined ? up(dayLabel(item.n.startsAt)) : upperData(item.n.when)} · {upperData(item.n.venue)}</Text>
+                            <Text style={styles.heroTitle} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>{item.n.title}</Text>
+                            {/* Who kept it: the point of the card. Their faces, their names; a tap shows who's coming. */}
+                            <Pressable onPress={() => setAsking(item.n.id)} style={({ pressed }) => [styles.kept, pressed && styles.pressed]}>
+                              <View style={styles.keptFaces}>
+                                {item.n.friends.slice(0, 4).map((name, i) => {
+                                  const f = friends.find((x) => x.name === name);
+                                  return (
+                                    <View key={name} style={[styles.keptFace, i > 0 && styles.keptOverlap, live.has(name) && styles.keptLive]}>
+                                      {f?.photo ? <Image source={{ uri: f.photo }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Avatar name={f?.handle ?? name} size={KEPT} />}
+                                    </View>
+                                  );
+                                })}
+                                {item.n.friends.length > 4 ? (
+                                  <View style={[styles.keptFace, styles.keptOverlap, styles.keptMore]}>
+                                    <Text style={styles.keptMoreText}>+{item.n.friends.length - 4}</Text>
+                                  </View>
+                                ) : null}
+                              </View>
+                              <View style={styles.keptText}>
+                                <Text style={styles.keptNames} numberOfLines={1}>{item.n.friends.length ? names(item.n.friends) : t('yours.inCity', { city: (local.name ?? '').toLowerCase() })}</Text>
+                                <Text style={styles.keptWord} numberOfLines={1}>
+                                  {item.n.friends.length ? up(tn('yours.friendsKept', item.n.friends.length)) : up(t('yours.beFirst'))}
+                                  {comingTo(item.n.id) ? ` · ${up(tn('yours.coming', comingTo(item.n.id)))}` : ''}
+                                  {item.n.friends.some((n) => live.has(n)) ? ` · ${up(t('yours.live'))}` : ''}
+                                </Text>
+                              </View>
+                            </Pressable>
+                            <View style={styles.actions}>
+                              <Pressable
+                                onPress={() => {
+                                  setMeToo((st) => ({ ...st, [item.n.id]: !st[item.n.id] }));
+                                  if (!sample && session && item.n.slug && !meToo[item.n.id]) swipe(item.n.slug, 'right').catch(() => {});
+                                }}
+                                style={({ pressed }) => [meToo[item.n.id] ? styles.btnLine : styles.btnRed, pressed && styles.pressed]}
+                              >
+                                <Text style={meToo[item.n.id] ? styles.btnTextLine : styles.btnTextRed}>{meToo[item.n.id] ? t('deck.kept') : t('yours.meToo')}</Text>
+                              </Pressable>
+                              <Pressable onPress={() => setAsking(item.n.id)} style={({ pressed }) => [styles.btnLine, pressed && styles.pressed]}>
+                                <Text style={styles.btnTextLine}>{answers[item.n.id] ? t('yours.you', { answer: tx('yours.answer.' + answers[item.n.id], answers[item.n.id]) }) : t('who.coming')}</Text>
+                              </Pressable>
+                            </View>
+                          </View>
+                        </Pressable>
+                      ) : (
+                        <Pressable onPress={() => router.push(`/spark/${item.s.kind}?invite=${item.s.id}`)} style={[styles.hero, styles.heroGold, { width: w, height: h }]}>
+                          <Image source={sparkOf(item.s.kind).photo} style={StyleSheet.absoluteFill} contentFit="cover" />
+                          <LinearGradient colors={[scrim(0.0), scrim(0.55), colors.poster]} locations={[0.3, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
+                          <View style={[styles.badge, styles.badgeGold]}>
+                            <Text style={styles.badgeText}>{upperData('spark')}</Text>
+                          </View>
+                          <View style={styles.heroText}>
+                            <Text style={[styles.heroMeta, styles.goldText]} numberOfLines={1}>{up(t('yours.sparkFrom', { name: (item.s.host_name ?? item.s.host_handle ?? '').toLowerCase() }))}</Text>
+                            <Text style={[styles.heroTitle, styles.goldText]} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>{item.s.title.toLowerCase()}</Text>
+                            <Text style={styles.avNote} numberOfLines={1}>{up(dayLabel(item.s.starts_at))}{item.s.place ? ` · ${item.s.place}` : ''} · {t('spark.going', { n: item.s.going })}</Text>
+                          </View>
+                        </Pressable>
+                      )}
+    </>
+  );
+  const slidePhoto = (sl?: Slide) =>
+    !sl ? fallbackPhoto
+    : sl.kind === 'plan' ? (sl.p.image_url ? { uri: sl.p.image_url } : fallbackPhoto)
+    : sl.kind === 'round' ? (sl.r.options.find((o) => o.image_url)?.image_url ? { uri: sl.r.options.find((o) => o.image_url)!.image_url! } : fallbackPhoto)
+    : sl.kind === 'night' ? ((sl.n as YoursNight & { photo?: number }).photo ?? (sl.n.image ? { uri: sl.n.image } : fallbackPhoto))
+    : sparkOf(sl.s.kind).photo;
+
   const decks: { id: 'mine' | 'friends' | 'wave2' | 'wave3'; label: string; cards: DeckCard[]; red?: boolean }[] = [
     { id: 'friends', label: t('deck.friends'), cards: friendsDeck, red: true },
     { id: 'mine', label: t('deck.yours'), cards: mineCards },
@@ -392,8 +559,29 @@ export default function PeopleScreen() {
       <StatusBar style={barStyle} />
       <View style={styles.band}>
         <Text style={styles.title}>{t('connect.title')}</Text>
+        <Pressable onPress={flipView} hitSlop={10} style={({ pressed }) => [styles.viewPill, pressed && styles.pressed]} accessibilityRole="button">
+          <View style={[styles.viewDot, view === 'dial' && styles.viewDotOn]} />
+          <Text style={styles.viewText}>{t(view === 'dial' ? 'connect.view.classic' : 'connect.view.dial')}</Text>
+        </Pressable>
         <SoundCorner />
       </View>
+      {view === 'dial' ? (
+        <ConnectDial
+          top={brand.top + 52}
+          bottom={TAB_BAR_SPACE + insets.bottom + 6}
+          groups={groups}
+          plans={plans}
+          slideCount={slides.length}
+          slidePhoto={slidePhoto(slides[0])}
+          renderSlide={(i, w, h) => (slides[i] ? renderSlide(slides[i], w, h) : null)}
+          occasions={occasions}
+          specialCount={(id) => special[id]?.length}
+          decks={decks}
+          onDeck={(id) => setDeck(id)}
+          out={friends.filter((f) => f.live).map((f) => ({ name: f.name, photo: f.photo }))}
+          fallback={fallbackPhoto}
+        />
+      ) : (
       <ScrollView
         ref={scroll}
         keyboardShouldPersistTaps="handled"
@@ -479,144 +667,7 @@ export default function PeopleScreen() {
                   onScrollBeginDrag={() => setTouched((n) => n + 1)}
                   onMomentumScrollEnd={(e) => setSlide(Math.max(0, Math.min(count - 1, Math.round(e.nativeEvent.contentOffset.x / step))))}
                   getItemLayout={(_, i) => ({ length: step, offset: step * i, index: i })}
-                  renderItem={({ item }) => (
-                    <View style={[styles.page, { width }]}>
-                      {item.kind === 'plan' ? (
-                        <Pressable onPress={() => router.push({ pathname: '/groups/[id]', params: { id: item.g.id, tab: 'plan' } })} style={[styles.hero, { width: slideW, height: slideW * 1.08 }]}>
-                          <Image source={item.p.image_url ? { uri: item.p.image_url } : fallbackPhoto} style={StyleSheet.absoluteFill} contentFit="cover" />
-                          <LinearGradient colors={[scrim(0.55), scrim(0.0), scrim(0.55), colors.poster]} locations={[0, 0.25, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
-                          <View style={styles.planHead}>
-                            <GroupBadge emoji={item.g.emoji} color={item.g.color} cover={item.g.cover_path} size={40} />
-                            <View style={styles.planHeadText}>
-                              <Text style={styles.planGroup} numberOfLines={1}>{item.g.name.toLowerCase()}</Text>
-                              <Text style={styles.planMono}>{up(t('groups.card.plan'))}</Text>
-                            </View>
-                          </View>
-                          <View style={styles.heroText}>
-                            {(() => {
-                              const mineIn = answers[item.p.id] ? answers[item.p.id] === 'in' : item.p.people.find((x) => x.id === uid)?.answer === 'in';
-                              const others = item.p.people.filter((x) => x.id !== uid && x.answer === 'in');
-                              const inNames = [...others.map((x) => x.name ?? ''), ...(mineIn ? [t('posts.you')] : [])];
-                              return (
-                                <>
-                                  <Text style={[styles.heroMeta, styles.redOnPhoto]} numberOfLines={1}>{up(t('groups.card.in', { n: inNames.length, m: item.p.people.length }))}</Text>
-                                  <Text style={styles.heroTitle} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>{item.p.title.toLowerCase()}</Text>
-                                  <Text style={styles.heroMeta} numberOfLines={1}>{[item.p.venue_name, dayLabel(item.p.starts_at), item.p.starts_at?.slice(11, 16)].filter(Boolean).map((x) => upperData(String(x))).join(' · ')}</Text>
-                                  <View style={styles.planRow}>
-                                    <View style={styles.keptFaces}>
-                                      {others.slice(0, 4).map((x, i) => (
-                                        <View key={x.id} style={[styles.keptFace, i > 0 && styles.keptOverlap]}>
-                                          <Avatar name={x.name ?? '?'} size={KEPT} />
-                                        </View>
-                                      ))}
-                                      {others.length > 4 ? (
-                                        <View style={[styles.keptFace, styles.keptOverlap, styles.keptMore]}>
-                                          <Text style={styles.keptMoreText}>+{others.length - 4}</Text>
-                                        </View>
-                                      ) : null}
-                                    </View>
-                                    <Pressable onPress={() => answer(item.p.id, 'in')} style={({ pressed }) => [mineIn ? styles.btnLine : styles.btnRed, pressed && styles.pressed]} accessibilityRole="button">
-                                      <Text style={mineIn ? styles.btnTextLine : styles.btnTextRed}>{mineIn ? t('groups.card.youreIn') : t('groups.card.imIn')}</Text>
-                                    </Pressable>
-                                  </View>
-                                </>
-                              );
-                            })()}
-                          </View>
-                        </Pressable>
-                      ) : item.kind === 'round' ? (
-                        <Pressable onPress={() => router.push({ pathname: '/groups/[id]', params: { id: item.g.id, tab: 'plan' } })} style={[styles.hero, { width: slideW, height: slideW * 1.08 }]}>
-                          <Image source={item.r.options.find((o) => o.image_url)?.image_url ? { uri: item.r.options.find((o) => o.image_url)!.image_url! } : fallbackPhoto} style={StyleSheet.absoluteFill} contentFit="cover" />
-                          <LinearGradient colors={[scrim(0.55), scrim(0.0), scrim(0.55), colors.poster]} locations={[0, 0.25, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
-                          <View style={styles.planHead}>
-                            <GroupBadge emoji={item.g.emoji} color={item.g.color} cover={item.g.cover_path} size={40} />
-                            <View style={styles.planHeadText}>
-                              <Text style={styles.planGroup} numberOfLines={1}>{item.g.name.toLowerCase()}</Text>
-                              <Text style={styles.planMono}>{up(t('groups.card.vote'))}</Text>
-                            </View>
-                          </View>
-                          <View style={styles.heroText}>
-                            <Text style={[styles.heroMeta, styles.redOnPhoto]} numberOfLines={1}>{up(t('groups.vote.voted', { n: item.r.voted, m: item.members }))} · {up(t('groups.card.closes', { at: dayLabel(item.r.closes_at) }))}</Text>
-                            <Text style={styles.heroTitle} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>{t('groups.card.nights', { n: item.r.options.length })}</Text>
-                            <Text style={styles.heroMeta} numberOfLines={1}>{item.r.options.map((o) => o.title.toLowerCase()).join(' · ')}</Text>
-                            <View style={styles.planRow}>
-                              <Text style={styles.avNote} numberOfLines={1}>{item.r.my_vote ? t('groups.vote.mine') + ': ' + (item.r.options.find((o) => o.id === item.r.my_vote)?.title.toLowerCase() ?? '') : ''}</Text>
-                              <Pressable onPress={() => router.push({ pathname: '/groups/[id]', params: { id: item.g.id, tab: 'plan' } })} style={({ pressed }) => [item.r.my_vote ? styles.btnLine : styles.btnRed, pressed && styles.pressed]} accessibilityRole="button">
-                                <Text style={item.r.my_vote ? styles.btnTextLine : styles.btnTextRed}>{t('groups.card.voteGo')}</Text>
-                              </Pressable>
-                            </View>
-                          </View>
-                        </Pressable>
-                      ) : item.kind === 'night' ? (
-                        <Pressable onPress={() => item.n.slug && router.push(`/night/${item.n.slug}`)} style={[styles.hero, { width: slideW, height: slideW * 1.08 }]}>
-                          <Image source={(item.n as YoursNight & { photo?: number }).photo ?? (item.n.image ? { uri: item.n.image } : fallbackPhoto)} style={StyleSheet.absoluteFill} contentFit="cover" />
-                          <LinearGradient colors={[scrim(0.0), scrim(0.55), colors.poster]} locations={[0.3, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
-                          {matched.has(item.n.id) ? (
-                            <View style={styles.badge}>
-                              <Text style={styles.badgeText}>{up(t('yours.match'))}</Text>
-                            </View>
-                          ) : null}
-                          <View style={styles.heroText}>
-                            <Text style={styles.heroMeta} numberOfLines={1}>{item.n.startsAt !== undefined ? up(dayLabel(item.n.startsAt)) : upperData(item.n.when)} · {upperData(item.n.venue)}</Text>
-                            <Text style={styles.heroTitle} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>{item.n.title}</Text>
-                            {/* Who kept it: the point of the card. Their faces, their names; a tap shows who's coming. */}
-                            <Pressable onPress={() => setAsking(item.n.id)} style={({ pressed }) => [styles.kept, pressed && styles.pressed]}>
-                              <View style={styles.keptFaces}>
-                                {item.n.friends.slice(0, 4).map((name, i) => {
-                                  const f = friends.find((x) => x.name === name);
-                                  return (
-                                    <View key={name} style={[styles.keptFace, i > 0 && styles.keptOverlap, live.has(name) && styles.keptLive]}>
-                                      {f?.photo ? <Image source={{ uri: f.photo }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Avatar name={f?.handle ?? name} size={KEPT} />}
-                                    </View>
-                                  );
-                                })}
-                                {item.n.friends.length > 4 ? (
-                                  <View style={[styles.keptFace, styles.keptOverlap, styles.keptMore]}>
-                                    <Text style={styles.keptMoreText}>+{item.n.friends.length - 4}</Text>
-                                  </View>
-                                ) : null}
-                              </View>
-                              <View style={styles.keptText}>
-                                <Text style={styles.keptNames} numberOfLines={1}>{item.n.friends.length ? names(item.n.friends) : t('yours.inCity', { city: (local.name ?? '').toLowerCase() })}</Text>
-                                <Text style={styles.keptWord} numberOfLines={1}>
-                                  {item.n.friends.length ? up(tn('yours.friendsKept', item.n.friends.length)) : up(t('yours.beFirst'))}
-                                  {comingTo(item.n.id) ? ` · ${up(tn('yours.coming', comingTo(item.n.id)))}` : ''}
-                                  {item.n.friends.some((n) => live.has(n)) ? ` · ${up(t('yours.live'))}` : ''}
-                                </Text>
-                              </View>
-                            </Pressable>
-                            <View style={styles.actions}>
-                              <Pressable
-                                onPress={() => {
-                                  setMeToo((st) => ({ ...st, [item.n.id]: !st[item.n.id] }));
-                                  if (!sample && session && item.n.slug && !meToo[item.n.id]) swipe(item.n.slug, 'right').catch(() => {});
-                                }}
-                                style={({ pressed }) => [meToo[item.n.id] ? styles.btnLine : styles.btnRed, pressed && styles.pressed]}
-                              >
-                                <Text style={meToo[item.n.id] ? styles.btnTextLine : styles.btnTextRed}>{meToo[item.n.id] ? t('deck.kept') : t('yours.meToo')}</Text>
-                              </Pressable>
-                              <Pressable onPress={() => setAsking(item.n.id)} style={({ pressed }) => [styles.btnLine, pressed && styles.pressed]}>
-                                <Text style={styles.btnTextLine}>{answers[item.n.id] ? t('yours.you', { answer: tx('yours.answer.' + answers[item.n.id], answers[item.n.id]) }) : t('who.coming')}</Text>
-                              </Pressable>
-                            </View>
-                          </View>
-                        </Pressable>
-                      ) : (
-                        <Pressable onPress={() => router.push(`/spark/${item.s.kind}?invite=${item.s.id}`)} style={[styles.hero, styles.heroGold, { width: slideW, height: slideW * 1.08 }]}>
-                          <Image source={sparkOf(item.s.kind).photo} style={StyleSheet.absoluteFill} contentFit="cover" />
-                          <LinearGradient colors={[scrim(0.0), scrim(0.55), colors.poster]} locations={[0.3, 0.6, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
-                          <View style={[styles.badge, styles.badgeGold]}>
-                            <Text style={styles.badgeText}>{upperData('spark')}</Text>
-                          </View>
-                          <View style={styles.heroText}>
-                            <Text style={[styles.heroMeta, styles.goldText]} numberOfLines={1}>{up(t('yours.sparkFrom', { name: (item.s.host_name ?? item.s.host_handle ?? '').toLowerCase() }))}</Text>
-                            <Text style={[styles.heroTitle, styles.goldText]} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>{item.s.title.toLowerCase()}</Text>
-                            <Text style={styles.avNote} numberOfLines={1}>{up(dayLabel(item.s.starts_at))}{item.s.place ? ` · ${item.s.place}` : ''} · {t('spark.going', { n: item.s.going })}</Text>
-                          </View>
-                        </Pressable>
-                      )}
-                    </View>
-                  )}
+                  renderItem={({ item }) => <View style={[styles.page, { width }]}>{renderSlide(item, slideW, slideW * 1.08)}</View>}
                 />
                 {count > 1 ? (
                   <View style={styles.dots}>
@@ -659,6 +710,7 @@ export default function PeopleScreen() {
           </>
         }
       </ScrollView>
+      )}
 
       <WhoSheet
         open={asking !== null}
@@ -787,6 +839,10 @@ const styles = StyleSheet.create({
   planMono: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.onPhotoMute },
   planRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginTop: 8 },
   body: { paddingTop: brand.top + 56 },
+  viewPill: { position: 'absolute', top: brand.top - 1, left: brand.left + 124, flexDirection: 'row', alignItems: 'center', gap: 6, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 5 },
+  viewDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: colors.mute },
+  viewDotOn: { backgroundColor: colors.spot },
+  viewText: { fontFamily: fonts.medium, fontSize: 11.5, color: colors.mute },
   pressed: { opacity: 0.6 },
   redText: { color: colors.spotText },
   redOnPhoto: { color: colors.onPhotoSpot },
