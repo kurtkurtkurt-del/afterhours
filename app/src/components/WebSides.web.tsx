@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Image } from 'expo-image';
 import { Asset } from 'expo-asset';
+import { usePathname } from 'expo-router';
 import { useTrack } from '@/audio/useTrack';
 import { recordFor, recordThumb } from '@/components/Sleeve';
 import { useHere } from '@/data/here';
@@ -18,6 +19,7 @@ import { colors, fonts, ground } from '@/theme/tokens';
 // belong to the page in the light theme and the dark, and the accent is the app's.
 // Only on a wide window (lib/webFrame.ts); the phone and narrow windows draw nothing.
 const PLAY = 'https://play.google.com/store/apps/details?id=app.afterhours.android';
+const SITE = 'https://kurtkurtkurt-del.github.io/afterhours/';
 // before a card is on top (the start page, sign-in): the app's own opening photo gives the colour
 const OPENING = Asset.fromModule(require('../../assets/intro/concert.jpg')).uri;
 
@@ -57,8 +59,17 @@ const KEYS: [string, 'letgo' | 'keep' | 'ticket' | 'details' | 'listen' | 'undo'
   ['z', 'undo'],
 ];
 
+// The tab whose words fill the right when no night is shown (the flow and a night page show
+// the night on top; every other tab says what it is for, in the same layout).
+const TABS = ['flow', 'messages', 'people', 'map', 'account'] as const;
+type Tab = (typeof TABS)[number];
+const tabOf = (path: string): Tab | null => (TABS as readonly string[]).find((x) => path === `/${x}` || path.startsWith(`/${x}/`)) as Tab | null ?? null;
+
 function Sides() {
   const { t, up } = useLang();
+  const path = usePathname();
+  const tab = tabOf(path);
+  const nightPage = path === '/flow' || path.startsWith('/night/');
   const front = useFront();
   const here = useHere();
   const track = useTrack();
@@ -83,7 +94,9 @@ function Sides() {
   // a new card stops the last one's preview
   useEffect(() => () => track.stop(), [front?.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const about = front?.about ?? null;
+  // on the flow and a night page: the night on top; elsewhere: what the tab is for
+  const about = nightPage ? (front?.about ?? null) : null;
+  const shownFront = nightPage ? front : null;
   const record = recordFor(front?.city ?? here.city) ?? recordThumb(null);
   const photo = front?.photo ?? OPENING;
   const side = `calc(50% - ${FRAME / 2}px)`;
@@ -97,6 +110,10 @@ function Sides() {
       <div className="ah-veil" />
 
       <section className="ah-side ah-left" style={{ width: side }}>
+        <a className="ah-back" href={SITE}>
+          <span>←</span>
+          {t('sides.back')}
+        </a>
         <div className="ah-in">
           <div className="ah-logo">
             afterhours<span className="ah-red">.</span>
@@ -145,16 +162,33 @@ function Sides() {
                 </div>
               ) : null}
             </>
-          ) : front ? (
+          ) : shownFront ? (
             <>
               <div className="ah-mono">{up(t('sides.now'))}</div>
-              <div className="ah-who">{front.title.toLowerCase()}</div>
-              {front.venue ? <p className="ah-text">{front.venue.toLowerCase()}</p> : null}
+              <div className="ah-who">{shownFront.title.toLowerCase()}</div>
+              {shownFront.venue ? <p className="ah-text">{shownFront.venue.toLowerCase()}</p> : null}
+            </>
+          ) : tab ? (
+            <>
+              <div className="ah-mono">{up(t(`sides.tab.${tab}.kicker`))}</div>
+              <div className="ah-who">
+                {t(`sides.tab.${tab}.title`)}
+                <span className="ah-red">.</span>
+              </div>
+              <p className="ah-text">{t(`sides.tab.${tab}.text`)}</p>
+              <div className="ah-facts">
+                {(['f1', 'f2'] as const).map((f, i) => (
+                  <div key={f}>
+                    <span>{String(i + 1).padStart(2, '0')}</span>
+                    {t(`sides.tab.${tab}.${f}`)}
+                  </div>
+                ))}
+              </div>
             </>
           ) : (
             <p className="ah-text">{t('sides.empty')}</p>
           )}
-          {preview ? (
+          {preview && nightPage ? (
             <div className="ah-np">
               <button className="ah-play" onClick={toggle} type="button">
                 <i>{playing ? '❚❚' : '▶'}</i>
@@ -187,6 +221,9 @@ const CSS = `
 .ah-veil::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 0%, ${ground(0.55)} calc(50% - ${FRAME / 2 + 40}px), ${ground(0.55)} calc(50% + ${FRAME / 2 + 40}px), transparent 100%); }
 .ah-side { position: absolute; top: 0; bottom: 0; display: flex; align-items: center; justify-content: center; padding: 0 clamp(24px, 4vw, 64px); overflow: hidden; }
 .ah-left { left: 0; }
+.ah-back { position: absolute; top: 24px; left: clamp(24px, 4vw, 64px); z-index: 2; display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 14px 0 10px; border-radius: 99px; border: 1px solid ${colors.ink3}; background: ${ground(0.45)}; color: inherit; text-decoration: none; font-family: ${fonts.medium}; font-size: 13px; }
+.ah-back span { font-size: 15px; }
+.ah-back:hover { border-color: ${colors.paper}; }
 .ah-right { right: 0; }
 .ah-in { position: relative; z-index: 1; width: 100%; max-width: 360px; display: flex; flex-direction: column; gap: 16px; }
 .ah-red { color: ${colors.spotText}; }
