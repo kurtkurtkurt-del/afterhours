@@ -53,6 +53,13 @@ has failed even if its tests are green.
 - README is the single reference: every change lands in the matching row or section of
   the root `README.md`, same commit.
 
+## Before every job
+
+A job starts with the five-line card of `hat.md` §1 (what · surface · promise · risk · done ·
+rounds). A job that touches a **heart** file (`hat.md` §2) is heavy: a separate, fresh session
+reads the diff to break it before the PR, and the owner approves. Every finished job is one
+line in `is-gunlugu.md`. Since 26.10.2026.
+
 ## Before every commit
 
 ```
