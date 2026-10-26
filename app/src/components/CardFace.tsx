@@ -7,10 +7,12 @@ import { upperData, useLang } from '@/i18n';
 import { colors, ground, fonts, radius, themeId } from '@/theme/tokens';
 import { posterUrl, type Night } from '@/data/deck';
 import { dayName } from '@/data/when';
+import Avatar from '@/components/Avatar';
 
 const fallback = require('../../assets/intro/concert.jpg');
 
-export type DeckFriend = { name: string; live: boolean };
+// name: the handle (the key); shown: the name to write; photo: their profile photo, when set
+export type DeckFriend = { name: string; live: boolean; shown?: string; photo?: string | null };
 export type DeckCard = {
   key: string;
   slug: string;
@@ -114,8 +116,7 @@ type Props = {
 // once, by the hint that appears when the card is pulled up.
 export default function CardFace({ card, bottom, rightLabel, rightDone, onRight, fit, onDetails, overlay, room }: Props) {
   const [captionH, setCaptionH] = useState(0);
-  const shown = card.friends.slice(0, 2);
-  const more = card.friends.length - shown.length;
+  const shown = card.friends.slice(0, 3);
   const details = onDetails ?? (() => openDetails(card));
   const { t, tx, up } = useLang();
   // The type name comes from the database ("club night"); the key is built from its slug.
@@ -153,16 +154,7 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
           {card.venue ? <Text style={styles.venue} numberOfLines={1}>{card.venue.toLowerCase()}</Text> : null}
           {card.via ? <Chain via={card.via} /> : null}
           {card.note ? <Text style={styles.note} numberOfLines={2}>{card.note}</Text> : null}
-          {card.friends.length > 0 ? (
-            <View style={styles.friends}>
-              {shown.map((f) => (
-                <View key={f.name} style={[styles.sq, f.live && styles.sqLive]}>
-                  <Text style={[styles.sqText, f.live && styles.sqTextLive]}>{f.name.charAt(0)}</Text>
-                </View>
-              ))}
-              <Text style={[styles.keptNote, styles.friendsNote]}>{more > 0 ? t('deck.moreKeptIt', { n: more }) : t('deck.keptIt')}</Text>
-            </View>
-          ) : null}
+          {card.friends.length > 0 ? <KeptBy friends={card.friends} shown={shown} /> : null}
         </Pressable>
         <Pressable
           style={({ pressed }) => [styles.strip, rightDone && styles.stripDone, pressed && styles.pressed]}
@@ -247,6 +239,42 @@ function FitPoster({ card, top, bottom, ready, tag, overlay, room }: { card: Dec
   );
 }
 
+// Friends who kept the night (owner, 26.10.2026): their faces as round photos, overlapping,
+// a red ring on whoever is out right now; "mia kept it" / "mia & can kept it" / "+2"; and
+// under it the tie drawn small — you, a line, them — with "your friend" (or "out now").
+function KeptBy({ friends, shown }: { friends: DeckFriend[]; shown: DeckFriend[] }) {
+  const { t } = useLang();
+  const names = shown.slice(0, 2).map((f) => f.shown ?? f.name);
+  const rest = friends.length - names.length;
+  const who = names.join(' & ') + (rest > 0 ? ` +${rest}` : '');
+  const live = friends.some((f) => f.live);
+  return (
+    <View style={styles.kept}>
+      <View style={styles.faces}>
+        {shown.map((f, i) => (
+          <View key={f.name} style={[styles.face, i > 0 && styles.faceOver, f.live && styles.faceLive]}>
+            {f.photo ? <Image source={{ uri: f.photo }} style={styles.facePhoto} contentFit="cover" /> : <Avatar name={f.name} size={FACE} />}
+          </View>
+        ))}
+      </View>
+      <View style={styles.keptText}>
+        <Text style={styles.keptWho} numberOfLines={1}>
+          {who} <Text style={styles.keptVerb}>{t('deck.keptIt')}</Text>
+        </Text>
+        <View style={styles.tie}>
+          <View style={styles.tieYou} />
+          <View style={[styles.tieLine, live && styles.tieLineLive]} />
+          <View style={[styles.tieThem, live && styles.tieThemLive]} />
+          <Text style={[styles.tieWord, live && styles.tieWordLive]} numberOfLines={1}>
+            {t(live ? 'deck.tie.out' : friends.length > 1 ? 'deck.tie.friends' : 'deck.tie.friend')}
+          </Text>
+        </View>
+      </View>
+    </View>
+  );
+}
+const FACE = 30;
+
 // Where it came from (11.10.2026, design E in prototypes/via-chain.html): the wave as
 // a sign — three rings, you in the middle, the card's wave in red — then "friends of
 // friends" or "one step further", and one line: who kept it, via whom. The squares and
@@ -302,12 +330,23 @@ const styles = StyleSheet.create({
   tagKind: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.2, color: colors.paper },
   ticketTag: { position: 'absolute', bottom: 10, left: 10, backgroundColor: colors.paper, borderRadius: radius.sm, paddingVertical: 5, paddingHorizontal: 8 },
   ticketTagText: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.2, color: colors.ink },
-  friends: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 8 },
-  friendsNote: { marginLeft: 6 },
-  sq: { width: 24, height: 24, borderRadius: radius.xs, borderWidth: 1.5, borderColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
-  sqLive: { backgroundColor: colors.spot, borderColor: colors.spot },
-  sqText: { fontFamily: fonts.medium, fontSize: 12, color: colors.paper },
-  sqTextLive: { color: colors.ink },
+  kept: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 10 },
+  faces: { flexDirection: 'row' },
+  face: { width: FACE + 4, height: FACE + 4, borderRadius: (FACE + 4) / 2, borderWidth: 2, borderColor: colors.ink, backgroundColor: colors.ink3, overflow: 'hidden', alignItems: 'center', justifyContent: 'center' },
+  faceOver: { marginLeft: -10 },
+  faceLive: { borderColor: colors.spot },
+  facePhoto: { width: FACE + 4, height: FACE + 4 },
+  keptText: { flex: 1, gap: 4 },
+  keptWho: { fontFamily: fonts.semibold, fontSize: 13.5, letterSpacing: -0.2, color: colors.paper },
+  keptVerb: { fontFamily: fonts.regular, color: colors.mute },
+  tie: { flexDirection: 'row', alignItems: 'center' },
+  tieYou: { width: 6, height: 6, borderRadius: 3, backgroundColor: colors.paper },
+  tieLine: { width: 18, height: 1.5, backgroundColor: colors.mute, marginHorizontal: 2 },
+  tieLineLive: { backgroundColor: colors.spot },
+  tieThem: { width: 6, height: 6, borderRadius: 3, borderWidth: 1.5, borderColor: colors.paper },
+  tieThemLive: { borderColor: colors.spot, backgroundColor: colors.spot },
+  tieWord: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.1, color: colors.meta, marginLeft: 7, textTransform: 'uppercase' },
+  tieWordLive: { color: colors.spotText },
   note: { fontFamily: fonts.regular, fontSize: 12.5, lineHeight: 17, color: colors.mute, marginTop: 8 },
   keptNote: { fontFamily: fonts.regular, fontSize: 12, color: colors.mute },
   chain: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 10 },

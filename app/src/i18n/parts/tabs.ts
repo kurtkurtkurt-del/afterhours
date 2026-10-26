@@ -705,6 +705,10 @@ export const tabs = {
   'deck.kept': { en: 'kept', de: 'behalten', tr: 'saklandı' },
   'deck.open': { en: 'open', de: 'öffnen', tr: 'aç' },
   'deck.keptIt': { en: 'kept it', de: 'behalten', tr: 'sakladı' },
+  // the tie under the faces of friends who kept a night (26.10.2026)
+  'deck.tie.friend': { en: 'your friend', de: 'dein freund', tr: 'arkadaşın' },
+  'deck.tie.friends': { en: 'your friends', de: 'deine freunde', tr: 'arkadaşların' },
+  'deck.tie.out': { en: 'out right now', de: 'gerade unterwegs', tr: 'şu an dışarıda' },
   'deck.moreKeptIt': { en: '+{n} kept it', de: '+{n} behalten', tr: '+{n} sakladı' },
   'deck.dateTba': { en: 'date tba', de: 'datum folgt', tr: 'tarih açıklanacak' },
   'deck.tba': { en: 'tba', de: 'tba', tr: 'açıklanacak' },

@@ -19,6 +19,8 @@ export function cleanLink(kind: LinkKind, v: string): string {
   const raw = v.trim();
   if (kind === 'website') return raw;
   if (kind === 'whatsapp') return raw.replace(/[^\d]/g, '');
-  const m = /^(?:https?:\/\/)?(?:www\.|open\.|m\.)?[\w.-]+\.[a-z]{2,}\/(?:user\/|@)?([^/?#\s]+)/i.exec(raw);
-  return (m ? m[1] : raw).replace(/^@+/, '').replace(/[?#].*$/, '').trim();
+  // a language step in the path (open.spotify.com/intl-tr/user/<id>) is skipped
+  const m = /^(?:https?:\/\/)?(?:www\.|open\.|m\.)?[\w.-]+\.[a-z]{2,}\/(?:intl-[a-z-]+\/)?(?:user\/|@)?([^/?#\s]+)/i.exec(raw);
+  // the bare name is at most 40 (the database check); the pasted link itself may be longer
+  return (m ? m[1] : raw).replace(/^@+/, '').replace(/[?#].*$/, '').trim().slice(0, 40);
 }

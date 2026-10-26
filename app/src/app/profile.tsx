@@ -200,7 +200,9 @@ export default function ProfileScreen() {
                 onChangeText={(v) => setLinkEdits((e) => ({ ...e, [l.kind]: cleanLink(l.kind, v) }))}
                 placeholder={l.kind === 'website' ? 'https://' : l.kind === 'spotify' ? t('settings.links.spotify') : l.kind === 'whatsapp' ? t('settings.links.whatsapp') : ''}
                 keyboardType={l.kind === 'website' ? 'url' : l.kind === 'whatsapp' ? 'phone-pad' : 'default'}
-                maxLength={l.kind === 'website' ? 200 : 40}
+                // a pasted share link is longer than the name in it; cleanLink keeps the name (26.10.2026:
+                // a 40 cut on the raw paste left half a spotify id)
+                maxLength={200}
                 style={styles.linkInput}
               />
             </View>

@@ -16,7 +16,8 @@ import Pill, { Chevron } from '@/components/Pill';
 import { useTabBarSpace } from '@/components/TabBar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { DeckFriend } from '@/components/CardFace';
-import { friendsKept, type FriendKept } from '@/data/friends';
+import { friendsKept, friendsList, type FriendKept, type FriendRow } from '@/data/friends';
+import { friendPhotos } from '@/data/photo';
 import { friendsLive, type LiveFriend } from '@/data/checkin';
 import { useAuth } from '@/auth/AuthContext';
 import { router } from 'expo-router';
@@ -186,6 +187,16 @@ export default function FlowScreen() {
   // Nights your friends kept: squares in the caption, live friends in red.
   const [fk, setFk] = useState<FriendKept[]>([]);
   const [liveIds, setLiveIds] = useState<Set<string>>(new Set());
+  // who is who: a handle to the friend's name and photo (the round faces on the card)
+  const [people, setPeople] = useState<{ rows: FriendRow[]; photos: Map<string, string> }>({ rows: [], photos: new Map() });
+  useEffect(() => {
+    if (!session) return;
+    let live = true;
+    Promise.all([friendsList().catch(() => [] as FriendRow[]), friendPhotos().catch(() => new Map<string, string>())]).then(([rows, photos]) => live && setPeople({ rows, photos }));
+    return () => {
+      live = false;
+    };
+  }, [session, reloads]);
   useEffect(() => {
     if (!session) return;
     let cancelled = false;
@@ -199,15 +210,22 @@ export default function FlowScreen() {
     };
   }, [session, reloads]);
   const friendsOf = useMemo(() => {
+    const byName = new Map<string, FriendRow>();
+    people.rows.forEach((r) => {
+      if (r.handle) byName.set(r.handle.toLowerCase(), r);
+      if (r.display_name) byName.set(r.display_name.toLowerCase(), r);
+    });
     const by = new Map<string, DeckFriend[]>();
     fk.forEach((k) => {
       const name = k.friend.toLowerCase();
       const list = by.get(k.id) ?? [];
-      if (!list.some((f) => f.name === name)) list.push({ name, live: liveIds.has(name) });
+      const row = byName.get(name);
+      if (!list.some((f) => f.name === name))
+        list.push({ name, live: liveIds.has(name), shown: (row?.display_name ?? row?.handle ?? name).toLowerCase(), photo: row ? (people.photos.get(row.other_id) ?? null) : null });
       by.set(k.id, list);
     });
     return (n: Night) => by.get(n.id) ?? [];
-  }, [fk, liveIds]);
+  }, [fk, liveIds, people]);
 
   const onSwipe = useCallback(
     (entry: DeckEntry, direction: 'left' | 'right') => {

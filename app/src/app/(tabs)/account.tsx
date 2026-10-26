@@ -93,6 +93,7 @@ export default function AccountScreen() {
   const extra = useProfileExtra(null, tick);
   const [upcoming, setUpcoming] = useState<Night[] | null>(null);
   const [sparks, setSparks] = useState<MySpark[] | null>(null);
+  const sparksFirst = !!sparks?.length && upcoming !== null && !upcoming.length;
   const [ticketed, setTicketed] = useState<Set<string>>(new Set());
   useEffect(() => {
     if (!uid) return;
@@ -212,9 +213,195 @@ export default function AccountScreen() {
             </Pressable>
           ) : null}
 
-          <LinkMarks links={extra?.links ?? {}} onMissing={signedIn ? () => router.push('/profile') : undefined} />
-          {signedIn ? <ProfileCounts handle={profile?.handle ?? null} events={profile?.kept_count ?? null} people={profile?.friend_count ?? null} mine /> : null}
+          {/* the links and the two counts share one row (owner, 26.10.2026: a fuller first screen) */}
+          <View style={styles.linksRow}>
+            <LinkMarks compact links={extra?.links ?? {}} onMissing={signedIn ? () => router.push('/profile') : undefined} />
+            {signedIn ? <ProfileCounts compact handle={profile?.handle ?? null} events={profile?.kept_count ?? null} people={profile?.friend_count ?? null} mine /> : null}
+          </View>
 
+          {/* coming up and your sparks on the first screen, under you (owner, 26.10.2026) */}
+          {signedIn ? (
+            <View style={styles.firstUnder}>
+              {/* coming up and your sparks: the one with something in it comes first */}
+              {sparksFirst ? (
+                <>
+              <View style={styles.underHead}>
+                <Text style={styles.underTitle}>{up(t('account.sparks'))}</Text>
+                {sparks?.length ? <Text style={styles.underGold}>{up(tn('account.sparks.open', sparks.length))}</Text> : null}
+              </View>
+              {sparks === null ? null : sparks.length ? (
+                <>
+                <View style={styles.pair}>
+                  {sparks.slice(0, 2).map((sp) => (
+                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.tile, styles.tileGold, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
+                      <Image source={sparkOf(sp.kind).thumb} style={StyleSheet.absoluteFill} contentFit="cover" />
+                      <Text style={[styles.posterDate, styles.posterGold]}>{up(at(sp.starts_at))}</Text>
+                      <View style={styles.tileText}>
+                        <Text style={styles.tileTitle} numberOfLines={2}>{sp.title.toLowerCase()}</Text>
+                        <Text style={[styles.posterMono, styles.goldText]} numberOfLines={1}>{`${sp.going} ${t('spark.in.short')}${sp.place ? ` · ${upperData(sp.place)}` : ''}`}</Text>
+                      </View>
+                    </Pressable>
+                  ))}
+                </View>
+                {sparks.slice(2).map((sp, k) => {
+                  const quiet = Math.max(0, sp.invited - sp.going - sp.not_going);
+                  const total = Math.max(1, sp.invited);
+                  return (
+                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.spark, pressed && styles.pressed]} accessibilityRole="button">
+                      <Image source={sparkOf(sp.kind).thumb} style={styles.sparkPhoto} contentFit="cover" />
+                      <View style={styles.sparkText}>
+                        <Text style={styles.sparkTitle} numberOfLines={1}>{sp.title.toLowerCase()}</Text>
+                        <Text style={styles.sparkMeta} numberOfLines={1}>{up(at(sp.starts_at))}{sp.place ? ` · ${upperData(sp.place)}` : ''}</Text>
+                        <View style={styles.bar}>
+                          <View style={[styles.barIn, { flex: sp.going / total }]} />
+                          <View style={[styles.barOut, { flex: sp.not_going / total }]} />
+                          <View style={{ flex: quiet / total }} />
+                        </View>
+                      </View>
+                      <Text style={[styles.answers, k === 0 && styles.underGold]}>{`${sp.going} ${t('spark.in.short')}\n${sp.not_going} ${t('spark.out.short')}`}</Text>
+                    </Pressable>
+                  );
+                })}
+                </>
+              ) : (
+                <Text style={[styles.prompt, styles.promptInk, styles.promptTight, styles.plain]}>{t('account.sparks.empty')}</Text>
+              )}
+
+              <View style={styles.underHead}>
+                <Text style={styles.underTitle}>{up(t('account.next'))}</Text>
+                {upcoming?.length && upcoming[0].starts_at ? <Text style={styles.underRed}>{up(tn('account.next.in', daysTo(upcoming[0].starts_at)))}</Text> : null}
+              </View>
+              {upcoming === null ? null : upcoming.length ? (
+                <>
+                {/* the next two, large, side by side (owner, 22.10.2026: more picture); the rest small */}
+                <View style={styles.pair}>
+                  {upcoming.slice(0, 2).map((n) => (
+                    <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.tile, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
+                      {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
+                      <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
+                      <View style={styles.tileText}>
+                        <Text style={styles.tileTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
+                        <Text style={[styles.posterMono, ticketed.has(n.slug) && styles.posterRed]} numberOfLines={1}>
+                          {ticketed.has(n.slug) ? up(t('night.ticketGot')) : upperData(n.venue_name ?? n.city_name)}
+                        </Text>
+                      </View>
+                    </Pressable>
+                  ))}
+                </View>
+                {upcoming.length > 2 ? (
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.rail}>
+                  {upcoming.slice(2).map((n) => (
+                    <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.poster, pressed && styles.pressed]} accessibilityRole="button">
+                      {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
+                      <LinearGradient colors={[scrim(0.0), scrim(0.95)]} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
+                      <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
+                      <View style={styles.posterText}>
+                        <Text style={styles.posterTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
+                        <Text style={[styles.posterMono, ticketed.has(n.slug) && styles.posterRed]} numberOfLines={1}>
+                          {ticketed.has(n.slug) ? up(t('night.ticketGot')) : upperData(n.venue_name ?? n.city_name)}
+                        </Text>
+                      </View>
+                    </Pressable>
+                  ))}
+                </ScrollView>
+                ) : null}
+                </>
+              ) : (
+                <Text style={[styles.prompt, styles.promptInk, styles.promptTight, styles.plain]}>{t('account.next.empty')}</Text>
+              )}
+
+                </>
+              ) : (
+                <>
+              <View style={styles.underHead}>
+                <Text style={styles.underTitle}>{up(t('account.next'))}</Text>
+                {upcoming?.length && upcoming[0].starts_at ? <Text style={styles.underRed}>{up(tn('account.next.in', daysTo(upcoming[0].starts_at)))}</Text> : null}
+              </View>
+              {upcoming === null ? null : upcoming.length ? (
+                <>
+                {/* the next two, large, side by side (owner, 22.10.2026: more picture); the rest small */}
+                <View style={styles.pair}>
+                  {upcoming.slice(0, 2).map((n) => (
+                    <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.tile, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
+                      {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
+                      <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
+                      <View style={styles.tileText}>
+                        <Text style={styles.tileTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
+                        <Text style={[styles.posterMono, ticketed.has(n.slug) && styles.posterRed]} numberOfLines={1}>
+                          {ticketed.has(n.slug) ? up(t('night.ticketGot')) : upperData(n.venue_name ?? n.city_name)}
+                        </Text>
+                      </View>
+                    </Pressable>
+                  ))}
+                </View>
+                {upcoming.length > 2 ? (
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.rail}>
+                  {upcoming.slice(2).map((n) => (
+                    <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.poster, pressed && styles.pressed]} accessibilityRole="button">
+                      {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
+                      <LinearGradient colors={[scrim(0.0), scrim(0.95)]} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
+                      <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
+                      <View style={styles.posterText}>
+                        <Text style={styles.posterTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
+                        <Text style={[styles.posterMono, ticketed.has(n.slug) && styles.posterRed]} numberOfLines={1}>
+                          {ticketed.has(n.slug) ? up(t('night.ticketGot')) : upperData(n.venue_name ?? n.city_name)}
+                        </Text>
+                      </View>
+                    </Pressable>
+                  ))}
+                </ScrollView>
+                ) : null}
+                </>
+              ) : (
+                <Text style={[styles.prompt, styles.promptInk, styles.promptTight, styles.plain]}>{t('account.next.empty')}</Text>
+              )}
+
+              <View style={styles.underHead}>
+                <Text style={styles.underTitle}>{up(t('account.sparks'))}</Text>
+                {sparks?.length ? <Text style={styles.underGold}>{up(tn('account.sparks.open', sparks.length))}</Text> : null}
+              </View>
+              {sparks === null ? null : sparks.length ? (
+                <>
+                <View style={styles.pair}>
+                  {sparks.slice(0, 2).map((sp) => (
+                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.tile, styles.tileGold, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
+                      <Image source={sparkOf(sp.kind).thumb} style={StyleSheet.absoluteFill} contentFit="cover" />
+                      <Text style={[styles.posterDate, styles.posterGold]}>{up(at(sp.starts_at))}</Text>
+                      <View style={styles.tileText}>
+                        <Text style={styles.tileTitle} numberOfLines={2}>{sp.title.toLowerCase()}</Text>
+                        <Text style={[styles.posterMono, styles.goldText]} numberOfLines={1}>{`${sp.going} ${t('spark.in.short')}${sp.place ? ` · ${upperData(sp.place)}` : ''}`}</Text>
+                      </View>
+                    </Pressable>
+                  ))}
+                </View>
+                {sparks.slice(2).map((sp, k) => {
+                  const quiet = Math.max(0, sp.invited - sp.going - sp.not_going);
+                  const total = Math.max(1, sp.invited);
+                  return (
+                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.spark, pressed && styles.pressed]} accessibilityRole="button">
+                      <Image source={sparkOf(sp.kind).thumb} style={styles.sparkPhoto} contentFit="cover" />
+                      <View style={styles.sparkText}>
+                        <Text style={styles.sparkTitle} numberOfLines={1}>{sp.title.toLowerCase()}</Text>
+                        <Text style={styles.sparkMeta} numberOfLines={1}>{up(at(sp.starts_at))}{sp.place ? ` · ${upperData(sp.place)}` : ''}</Text>
+                        <View style={styles.bar}>
+                          <View style={[styles.barIn, { flex: sp.going / total }]} />
+                          <View style={[styles.barOut, { flex: sp.not_going / total }]} />
+                          <View style={{ flex: quiet / total }} />
+                        </View>
+                      </View>
+                      <Text style={[styles.answers, k === 0 && styles.underGold]}>{`${sp.going} ${t('spark.in.short')}\n${sp.not_going} ${t('spark.out.short')}`}</Text>
+                    </Pressable>
+                  );
+                })}
+                </>
+              ) : (
+                <Text style={[styles.prompt, styles.promptInk, styles.promptTight, styles.plain]}>{t('account.sparks.empty')}</Text>
+              )}
+
+                </>
+              )}
+            </View>
+          ) : null}
         </View>
 
         {/* The collection starts halfway into the bottom of the first screen. */}
@@ -269,91 +456,6 @@ export default function AccountScreen() {
             </Pressable>
           ) : (
             <>
-              <View style={styles.underHead}>
-                <Text style={styles.underTitle}>{up(t('account.next'))}</Text>
-                {upcoming?.length && upcoming[0].starts_at ? <Text style={styles.underRed}>{up(tn('account.next.in', daysTo(upcoming[0].starts_at)))}</Text> : null}
-              </View>
-              {upcoming === null ? null : upcoming.length ? (
-                <>
-                {/* the next two, large, side by side (owner, 22.10.2026: more picture); the rest small */}
-                <View style={styles.pair}>
-                  {upcoming.slice(0, 2).map((n) => (
-                    <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.tile, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
-                      {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
-                      <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
-                      <View style={styles.tileText}>
-                        <Text style={styles.tileTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
-                        <Text style={[styles.posterMono, ticketed.has(n.slug) && styles.posterRed]} numberOfLines={1}>
-                          {ticketed.has(n.slug) ? up(t('night.ticketGot')) : upperData(n.venue_name ?? n.city_name)}
-                        </Text>
-                      </View>
-                    </Pressable>
-                  ))}
-                </View>
-                {upcoming.length > 2 ? (
-                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.rail}>
-                  {upcoming.slice(2).map((n) => (
-                    <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.poster, pressed && styles.pressed]} accessibilityRole="button">
-                      {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
-                      <LinearGradient colors={[scrim(0.0), scrim(0.95)]} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
-                      <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
-                      <View style={styles.posterText}>
-                        <Text style={styles.posterTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
-                        <Text style={[styles.posterMono, ticketed.has(n.slug) && styles.posterRed]} numberOfLines={1}>
-                          {ticketed.has(n.slug) ? up(t('night.ticketGot')) : upperData(n.venue_name ?? n.city_name)}
-                        </Text>
-                      </View>
-                    </Pressable>
-                  ))}
-                </ScrollView>
-                ) : null}
-                </>
-              ) : (
-                <Text style={[styles.prompt, styles.promptInk, styles.promptTight]}>{t('account.next.empty')}</Text>
-              )}
-
-              <View style={styles.underHead}>
-                <Text style={styles.underTitle}>{up(t('account.sparks'))}</Text>
-                {sparks?.length ? <Text style={styles.underGold}>{up(tn('account.sparks.open', sparks.length))}</Text> : null}
-              </View>
-              {sparks === null ? null : sparks.length ? (
-                <>
-                <View style={styles.pair}>
-                  {sparks.slice(0, 2).map((sp) => (
-                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.tile, styles.tileGold, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
-                      <Image source={sparkOf(sp.kind).thumb} style={StyleSheet.absoluteFill} contentFit="cover" />
-                      <Text style={[styles.posterDate, styles.posterGold]}>{up(at(sp.starts_at))}</Text>
-                      <View style={styles.tileText}>
-                        <Text style={styles.tileTitle} numberOfLines={2}>{sp.title.toLowerCase()}</Text>
-                        <Text style={[styles.posterMono, styles.goldText]} numberOfLines={1}>{`${sp.going} ${t('spark.in.short')}${sp.place ? ` · ${upperData(sp.place)}` : ''}`}</Text>
-                      </View>
-                    </Pressable>
-                  ))}
-                </View>
-                {sparks.slice(2).map((sp, k) => {
-                  const quiet = Math.max(0, sp.invited - sp.going - sp.not_going);
-                  const total = Math.max(1, sp.invited);
-                  return (
-                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.spark, pressed && styles.pressed]} accessibilityRole="button">
-                      <Image source={sparkOf(sp.kind).thumb} style={styles.sparkPhoto} contentFit="cover" />
-                      <View style={styles.sparkText}>
-                        <Text style={styles.sparkTitle} numberOfLines={1}>{sp.title.toLowerCase()}</Text>
-                        <Text style={styles.sparkMeta} numberOfLines={1}>{up(at(sp.starts_at))}{sp.place ? ` · ${upperData(sp.place)}` : ''}</Text>
-                        <View style={styles.bar}>
-                          <View style={[styles.barIn, { flex: sp.going / total }]} />
-                          <View style={[styles.barOut, { flex: sp.not_going / total }]} />
-                          <View style={{ flex: quiet / total }} />
-                        </View>
-                      </View>
-                      <Text style={[styles.answers, k === 0 && styles.underGold]}>{`${sp.going} ${t('spark.in.short')}\n${sp.not_going} ${t('spark.out.short')}`}</Text>
-                    </Pressable>
-                  );
-                })}
-                </>
-              ) : (
-                <Text style={[styles.prompt, styles.promptInk, styles.promptTight]}>{t('account.sparks.empty')}</Text>
-              )}
-
               {real || ALL_CITY_RECORDS ? (
                 <>
                   <View style={styles.underHead}>
@@ -450,6 +552,7 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   page: { flex: 1 },
   top: { paddingTop: brand.top + 48, paddingHorizontal: brand.left },
+  firstUnder: { marginTop: 4 },
   empty: { alignItems: 'center', justifyContent: 'center', gap: 6, marginBottom: 60 },
   emptyTitle: { fontFamily: fonts.medium, fontSize: 15, color: colors.mute, marginTop: 6 },
   emptyHint: { fontFamily: fonts.regular, fontSize: 13, color: colors.meta, textDecorationLine: 'underline' },
@@ -473,6 +576,8 @@ const styles = StyleSheet.create({
   underGold: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: GOLD },
   underMute: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.meta },
   promptTight: { marginTop: 0 },
+  plain: { textDecorationLine: 'none' },
+  linksRow: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', rowGap: 12, columnGap: 12, marginTop: 22 },
   rail: { gap: 8, paddingRight: brand.left },
   pair: { flexDirection: 'row', gap: 10, marginBottom: 10 },
   tile: { flex: 1, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink3 },
