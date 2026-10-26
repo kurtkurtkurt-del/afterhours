@@ -453,6 +453,13 @@ export const sparkWords = (spark: Spark, lang: 'en' | 'de' | 'tr', t: (key: Key)
 // while it is still an hour away). The first one is the suggestion on the card.
 export function sparkTimes(spark: Spark, now = new Date()): Date[] {
   const out: Date[] = [];
+  // the week agent wrote this spark for a day (99): that day first, the days after it next
+  const m = spark.say ? /^(\d{4})-(\d{2})-(\d{2})/.exec(spark.say.day) : null;
+  if (m) {
+    const from = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+    const skip = Math.round((from.getTime() - new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime()) / 86400000);
+    if (skip > 0) now = new Date(from.getFullYear(), from.getMonth(), from.getDate(), 0, 0);
+  }
   for (let d = 0; out.length < 4 && d < 6; d++) {
     const at = new Date(now.getFullYear(), now.getMonth(), now.getDate() + d, spark.hour, spark.minute);
     if (at.getTime() - now.getTime() > 60 * 60 * 1000) out.push(at);

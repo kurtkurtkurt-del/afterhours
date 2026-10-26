@@ -24,7 +24,6 @@ import { fetchDeck, posterUrl, swipe, unswipe, type Night } from '@/data/deck';
 import { supabase } from '@/lib/supabase';
 import { friendById as sampleFriendById, friends as sampleFriends, matches as sampleMatches, nights as sampleNights, sampleText } from '@/content/friends';
 import { useYours, type YoursFriend, type YoursMatch, type YoursNight } from '@/data/yours';
-import { wave2 as sampleWave2, wave3 as sampleWave3 } from '@/content/waves';
 import { SAMPLES } from '@/content/samples';
 import { waveCards, wavesKept, type WaveKept } from '@/data/waves';
 import { useAuth } from '@/auth/AuthContext';
@@ -51,6 +50,9 @@ const fallbackPhoto = require('../../../assets/intro/concert.jpg');
 // every 6 s; the decks as card stacks (a tap opens the viewer); your people (faces, a red
 // ring for whoever is out right now, what each is up to). Stories, posts and past nights
 // are in yours. A group without a plan or a vote is only in the line, not the gallery.
+// first names for the people further out on a sample wave (never shown as real)
+const WAVE_NAMES = ['tarık', 'noa', 'ece', 'felix', 'mele', 'hana', 'yusuf', 'ruby', 'lev', 'ana', 'kai', 'bo'];
+
 export default function PeopleScreen() {
   const insets = useSafeAreaInsets();
   const tabSpace = useTabBarSpace();
@@ -120,6 +122,8 @@ export default function PeopleScreen() {
   const local = useLocalCity();
   const feedCity = local.slug ?? 'munchen';
   const [upcoming, setUpcoming] = useState<Night[]>([]);
+  // more real nights of the city, for the sample waves (not the ones on the sample friends' deck)
+  const [wavePool, setWavePool] = useState<Night[]>([]);
   // Specialties: one deck per occasion, soonest first (content/specials.ts).
   const occasions = useMemo(() => bySoonest(specials), []);
   const [special, setSpecial] = useState<Partial<Record<SpecialId, Night[]>>>({});
@@ -136,8 +140,13 @@ export default function PeopleScreen() {
   const monthName = (d: Date) => d.toLocaleDateString(lang === 'tr' ? 'tr-TR' : lang === 'de' ? 'de-DE' : 'en-GB', { month: 'long' }).toLowerCase();
   useEffect(() => {
     let live = true;
-    fetchDeck(feedCity, null, 12)
-      .then((rows) => live && setUpcoming(rows.filter((n) => n.image_url).slice(0, 8)))
+    fetchDeck(feedCity, null, 40)
+      .then((rows) => {
+        if (!live) return;
+        const withPhoto = rows.filter((n) => n.image_url);
+        setUpcoming(withPhoto.slice(0, 8));
+        setWavePool(withPhoto.slice(8, 22));
+      })
       .catch(() => {});
     return () => {
       live = false;
@@ -228,8 +237,20 @@ export default function PeopleScreen() {
   }, [uid, real.ready]);
   const realWave2 = useMemo(() => waveCards(waveRows, 2), [waveRows]);
   const realWave3 = useMemo(() => waveCards(waveRows, 3), [waveRows]);
-  const wave2 = realWave2.length ? realWave2 : sampleWave2;
-  const wave3 = realWave3.length ? realWave3 : sampleWave3;
+  // Until anyone out there keeps something: the city's real nights coming up, with sample
+  // chains on them — your (sample) friend, then the keeper you do not know (owner, 26.10.2026:
+  // the invented nights that stood here are gone; the deck says sample).
+  const sampleWave = (wave: 2 | 3) =>
+    wavePool
+      .filter((_, i) => (wave === 2 ? i % 2 === 0 : i % 2 === 1))
+      .map((n, i): DeckCard => {
+        const friend = sampleFriends[i % sampleFriends.length].name;
+        const between = WAVE_NAMES[(i * 3 + 1) % WAVE_NAMES.length];
+        const keeper = WAVE_NAMES[(i * 3 + (wave === 2 ? 1 : 2)) % WAVE_NAMES.length];
+        return { ...toDeckCard(n, []), key: `w${wave}-${n.id}`, via: { wave, path: wave === 2 ? [friend, keeper] : [friend, between, keeper] } };
+      });
+  const wave2 = realWave2.length ? realWave2 : sampleWave(2);
+  const wave3 = realWave3.length ? realWave3 : sampleWave(3);
   const waveSample = (deck === 'wave2' && !realWave2.length) || (deck === 'wave3' && !realWave3.length);
 
   // Friends' deck: nights friends kept, one card per night, keepers as squares.

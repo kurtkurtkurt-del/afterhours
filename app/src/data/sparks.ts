@@ -133,7 +133,13 @@ type DayRow = { day: string; kind: SparkKind; title: SparkSay['title']; line: Sp
 export async function sparkDay(city: string | null): Promise<SparkDayMap> {
   if (!city) return {};
   try {
-    const rows = (await remember('sparkDay', city, async () => (await must(supabase.rpc('spark_day', { p_city: city }))) ?? [], 60)) as DayRow[];
+    // 99_spark_week.sql: per kind the nearest day of the coming week; before 99 is in the
+    // database the call fails and the one day of 98 is read instead.
+    const rows = (await remember('sparkDay', city, async () => {
+      const week = await supabase.rpc('spark_week', { p_city: city });
+      if (!week.error) return week.data ?? [];
+      return (await must(supabase.rpc('spark_day', { p_city: city }))) ?? [];
+    }, 60)) as DayRow[];
     const out: SparkDayMap = {};
     rows.forEach((r) => {
       out[r.kind] = { day: r.day, title: r.title, line: r.line, place: r.place, hour: r.hour, minute: r.minute, why: r.why };

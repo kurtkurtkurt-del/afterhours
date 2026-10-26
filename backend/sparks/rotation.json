@@ -1,0 +1,572 @@
+{
+ "about": "The week agent (.claude/prompts/spark-week.md) walks these cities in this order, a few each night, and moves next forward. Edit the list to change who comes first.",
+ "next": 0,
+ "per_night": 8,
+ "cities": [
+  {
+   "slug": "munchen",
+   "name": "münchen",
+   "country": "Deutschland",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "berlin",
+   "name": "berlin",
+   "country": "Deutschland",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "koln",
+   "name": "köln",
+   "country": "Deutschland",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "hamburg",
+   "name": "hamburg",
+   "country": "Deutschland",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "frankfurt",
+   "name": "frankfurt",
+   "country": "Deutschland",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "stuttgart",
+   "name": "stuttgart",
+   "country": "Deutschland",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "dusseldorf",
+   "name": "düsseldorf",
+   "country": "Deutschland",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "leipzig",
+   "name": "leipzig",
+   "country": "Deutschland",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "istanbul",
+   "name": "istanbul",
+   "country": "Türkiye",
+   "tz": "Europe/Istanbul"
+  },
+  {
+   "slug": "ankara",
+   "name": "ankara",
+   "country": "Türkiye",
+   "tz": "Europe/Istanbul"
+  },
+  {
+   "slug": "izmir",
+   "name": "izmir",
+   "country": "Türkiye",
+   "tz": "Europe/Istanbul"
+  },
+  {
+   "slug": "wien",
+   "name": "wien",
+   "country": "Österreich",
+   "tz": "Europe/Vienna"
+  },
+  {
+   "slug": "graz",
+   "name": "graz",
+   "country": "Österreich",
+   "tz": "Europe/Vienna"
+  },
+  {
+   "slug": "salzburg",
+   "name": "salzburg",
+   "country": "Österreich",
+   "tz": "Europe/Vienna"
+  },
+  {
+   "slug": "zurich",
+   "name": "zürich",
+   "country": "Schweiz",
+   "tz": "Europe/Zurich"
+  },
+  {
+   "slug": "geneva",
+   "name": "genève",
+   "country": "Schweiz",
+   "tz": "Europe/Zurich"
+  },
+  {
+   "slug": "basel",
+   "name": "basel",
+   "country": "Schweiz",
+   "tz": "Europe/Zurich"
+  },
+  {
+   "slug": "london",
+   "name": "london",
+   "country": "United Kingdom",
+   "tz": "Europe/London"
+  },
+  {
+   "slug": "manchester",
+   "name": "manchester",
+   "country": "United Kingdom",
+   "tz": "Europe/London"
+  },
+  {
+   "slug": "birmingham",
+   "name": "birmingham",
+   "country": "United Kingdom",
+   "tz": "Europe/London"
+  },
+  {
+   "slug": "glasgow",
+   "name": "glasgow",
+   "country": "United Kingdom",
+   "tz": "Europe/London"
+  },
+  {
+   "slug": "dublin",
+   "name": "dublin",
+   "country": "Ireland",
+   "tz": "Europe/Dublin"
+  },
+  {
+   "slug": "cork",
+   "name": "cork",
+   "country": "Ireland",
+   "tz": "Europe/Dublin"
+  },
+  {
+   "slug": "paris",
+   "name": "paris",
+   "country": "France",
+   "tz": "Europe/Paris"
+  },
+  {
+   "slug": "lyon",
+   "name": "lyon",
+   "country": "France",
+   "tz": "Europe/Paris"
+  },
+  {
+   "slug": "marseille",
+   "name": "marseille",
+   "country": "France",
+   "tz": "Europe/Paris"
+  },
+  {
+   "slug": "amsterdam",
+   "name": "amsterdam",
+   "country": "Nederland",
+   "tz": "Europe/Amsterdam"
+  },
+  {
+   "slug": "rotterdam",
+   "name": "rotterdam",
+   "country": "Nederland",
+   "tz": "Europe/Amsterdam"
+  },
+  {
+   "slug": "utrecht",
+   "name": "utrecht",
+   "country": "Nederland",
+   "tz": "Europe/Amsterdam"
+  },
+  {
+   "slug": "brussel",
+   "name": "brussel",
+   "country": "België",
+   "tz": "Europe/Brussels"
+  },
+  {
+   "slug": "antwerpen",
+   "name": "antwerpen",
+   "country": "België",
+   "tz": "Europe/Brussels"
+  },
+  {
+   "slug": "gent",
+   "name": "gent",
+   "country": "België",
+   "tz": "Europe/Brussels"
+  },
+  {
+   "slug": "madrid",
+   "name": "madrid",
+   "country": "España",
+   "tz": "Europe/Madrid"
+  },
+  {
+   "slug": "barcelona",
+   "name": "barcelona",
+   "country": "España",
+   "tz": "Europe/Madrid"
+  },
+  {
+   "slug": "valencia",
+   "name": "valencia",
+   "country": "España",
+   "tz": "Europe/Madrid"
+  },
+  {
+   "slug": "sevilla",
+   "name": "sevilla",
+   "country": "España",
+   "tz": "Europe/Madrid"
+  },
+  {
+   "slug": "milano",
+   "name": "milano",
+   "country": "Italia",
+   "tz": "Europe/Rome"
+  },
+  {
+   "slug": "roma",
+   "name": "roma",
+   "country": "Italia",
+   "tz": "Europe/Rome"
+  },
+  {
+   "slug": "torino",
+   "name": "torino",
+   "country": "Italia",
+   "tz": "Europe/Rome"
+  },
+  {
+   "slug": "bologna",
+   "name": "bologna",
+   "country": "Italia",
+   "tz": "Europe/Rome"
+  },
+  {
+   "slug": "lisboa",
+   "name": "lisboa",
+   "country": "Portugal",
+   "tz": "Europe/Lisbon"
+  },
+  {
+   "slug": "porto",
+   "name": "porto",
+   "country": "Portugal",
+   "tz": "Europe/Lisbon"
+  },
+  {
+   "slug": "warszawa",
+   "name": "warszawa",
+   "country": "Polska",
+   "tz": "Europe/Warsaw"
+  },
+  {
+   "slug": "krakow",
+   "name": "kraków",
+   "country": "Polska",
+   "tz": "Europe/Warsaw"
+  },
+  {
+   "slug": "wroclaw",
+   "name": "wrocław",
+   "country": "Polska",
+   "tz": "Europe/Warsaw"
+  },
+  {
+   "slug": "praha",
+   "name": "praha",
+   "country": "Česko",
+   "tz": "Europe/Prague"
+  },
+  {
+   "slug": "brno",
+   "name": "brno",
+   "country": "Česko",
+   "tz": "Europe/Prague"
+  },
+  {
+   "slug": "kobenhavn",
+   "name": "københavn",
+   "country": "Danmark",
+   "tz": "Europe/Copenhagen"
+  },
+  {
+   "slug": "aarhus",
+   "name": "aarhus",
+   "country": "Danmark",
+   "tz": "Europe/Copenhagen"
+  },
+  {
+   "slug": "stockholm",
+   "name": "stockholm",
+   "country": "Sverige",
+   "tz": "Europe/Stockholm"
+  },
+  {
+   "slug": "goteborg",
+   "name": "göteborg",
+   "country": "Sverige",
+   "tz": "Europe/Stockholm"
+  },
+  {
+   "slug": "malmo",
+   "name": "malmö",
+   "country": "Sverige",
+   "tz": "Europe/Stockholm"
+  },
+  {
+   "slug": "oslo",
+   "name": "oslo",
+   "country": "Norge",
+   "tz": "Europe/Oslo"
+  },
+  {
+   "slug": "bergen",
+   "name": "bergen",
+   "country": "Norge",
+   "tz": "Europe/Oslo"
+  },
+  {
+   "slug": "helsinki",
+   "name": "helsinki",
+   "country": "Suomi",
+   "tz": "Europe/Helsinki"
+  },
+  {
+   "slug": "tampere",
+   "name": "tampere",
+   "country": "Suomi",
+   "tz": "Europe/Helsinki"
+  },
+  {
+   "slug": "athina",
+   "name": "athína",
+   "country": "Ελλάδα",
+   "tz": "Europe/Athens"
+  },
+  {
+   "slug": "thessaloniki",
+   "name": "thessaloníki",
+   "country": "Ελλάδα",
+   "tz": "Europe/Athens"
+  },
+  {
+   "slug": "budapest",
+   "name": "budapest",
+   "country": "Magyarország",
+   "tz": "Europe/Budapest"
+  },
+  {
+   "slug": "tokyo",
+   "name": "tokyo",
+   "country": "日本",
+   "tz": "Asia/Tokyo"
+  },
+  {
+   "slug": "osaka",
+   "name": "osaka",
+   "country": "日本",
+   "tz": "Asia/Tokyo"
+  },
+  {
+   "slug": "seoul",
+   "name": "seoul",
+   "country": "한국",
+   "tz": "Asia/Seoul"
+  },
+  {
+   "slug": "busan",
+   "name": "busan",
+   "country": "한국",
+   "tz": "Asia/Seoul"
+  },
+  {
+   "slug": "singapore",
+   "name": "singapore",
+   "country": "Singapore",
+   "tz": "Asia/Singapore"
+  },
+  {
+   "slug": "dubai",
+   "name": "dubai",
+   "country": "United Arab Emirates",
+   "tz": "Asia/Dubai"
+  },
+  {
+   "slug": "abu-dhabi",
+   "name": "abu dhabi",
+   "country": "United Arab Emirates",
+   "tz": "Asia/Dubai"
+  },
+  {
+   "slug": "hong-kong",
+   "name": "hong kong",
+   "country": "香港",
+   "tz": "Asia/Hong_Kong"
+  },
+  {
+   "slug": "taipei",
+   "name": "taipei",
+   "country": "台灣",
+   "tz": "Asia/Taipei"
+  },
+  {
+   "slug": "new-york",
+   "name": "new york",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "los-angeles",
+   "name": "los angeles",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "chicago",
+   "name": "chicago",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "detroit",
+   "name": "detroit",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "miami",
+   "name": "miami",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "san-francisco",
+   "name": "san francisco",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "las-vegas",
+   "name": "las vegas",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "seattle",
+   "name": "seattle",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "austin",
+   "name": "austin",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "boston",
+   "name": "boston",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "atlanta",
+   "name": "atlanta",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "philadelphia",
+   "name": "philadelphia",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "washington",
+   "name": "washington",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "denver",
+   "name": "denver",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "nashville",
+   "name": "nashville",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "new-orleans",
+   "name": "new orleans",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "houston",
+   "name": "houston",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "dallas",
+   "name": "dallas",
+   "country": "United States",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "toronto",
+   "name": "toronto",
+   "country": "Canada",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "montreal",
+   "name": "montréal",
+   "country": "Canada",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "vancouver",
+   "name": "vancouver",
+   "country": "Canada",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "calgary",
+   "name": "calgary",
+   "country": "Canada",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "ottawa",
+   "name": "ottawa",
+   "country": "Canada",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "ciudad-de-mexico",
+   "name": "ciudad de méxico",
+   "country": "México",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "guadalajara",
+   "name": "guadalajara",
+   "country": "México",
+   "tz": "Europe/Berlin"
+  },
+  {
+   "slug": "monterrey",
+   "name": "monterrey",
+   "country": "México",
+   "tz": "Europe/Berlin"
+  }
+ ],
+ "done": {}
+}

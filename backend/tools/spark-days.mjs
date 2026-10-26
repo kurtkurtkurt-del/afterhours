@@ -1,4 +1,5 @@
-/* afterhours — the sparks of the day, from the agent's files into the database (98).
+/* afterhours — the sparks of the day, from the agent's files into the database (98, 99).
+   A file may hold only some kinds: the week agent writes what it found (99).
 
    The night agent (a cloud routine, .claude/prompts/spark-night.md) commits one file per
    city and day: backend/sparks/<city>/<YYYY-MM-DD>.json. This puts every file from today
@@ -19,6 +20,9 @@ import { readdir, readFile } from "node:fs/promises";
 
 const DRY = process.argv.includes("--dry");
 const ALL = process.argv.includes("--all");
+// --city munchen: only that folder (the week agent checks each city as it finishes it)
+const ONLY = (() => { const i = process.argv.indexOf("--city"); return i > 0 ? process.argv[i + 1] : null; })();
+const ahead = new Date(Date.now() + 8 * 86400_000).toISOString().slice(0, 10);
 const root = new URL("../", import.meta.url);
 
 const text = await readFile(new URL("../../config.js", import.meta.url), "utf8");
@@ -54,12 +58,13 @@ const words = (v, what) => {
 };
 
 const rows = [];
-const cities = (await readdir(new URL("sparks/", root), { withFileTypes: true })).filter((d) => d.isDirectory()).map((d) => d.name);
+const cities = (await readdir(new URL("sparks/", root), { withFileTypes: true })).filter((d) => d.isDirectory() && (!ONLY || d.name === ONLY)).map((d) => d.name);
 for (const city of cities) {
   const files = (await readdir(new URL(`sparks/${city}/`, root))).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort();
   for (const f of files) {
     const day = f.slice(0, 10);
     if (!ALL && day < today) continue;
+    if (day > ahead) console.warn(`${city}/${f}: more than a week ahead; the app reads seven days (99)`);
     let doc;
     try {
       doc = JSON.parse(await readFile(new URL(`sparks/${city}/${f}`, root), "utf8"));
