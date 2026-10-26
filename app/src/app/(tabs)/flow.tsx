@@ -134,7 +134,8 @@ export default function FlowScreen() {
   useEffect(() => {
     if (panel !== 'spark' || !session) return;
     let live = true;
-    sparkInbox().then((list) => live && setInvites({ key, list }));
+    // a failed read (offline, a stale session) must not leave the panel blank: no invites, then
+    sparkInbox().then((list) => live && setInvites({ key, list }), () => live && setInvites({ key, list: [] }));
     return () => {
       live = false;
     };
