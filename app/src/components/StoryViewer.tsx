@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Alert, Modal, Pressable, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
+import { Modal, Pressable, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
@@ -110,26 +110,29 @@ function Frames({ item, onEnd, onBackPast, onClose, onDelete }: { item: StoryIte
       run(fill.get());
     }
   };
-  // your own frame: stop, ask, delete; the next frame (or the next story) follows
-  const [gone, setGone] = useState<string[]>([]);
+  // your own frame: stop and ask here, inside the viewer (the app's own dialog sheet sits
+  // under this Modal and was never seen, 26.10.2026); deleted, the viewer closes, back on messages
+  const [asking, setAsking] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+  const [failed, setFailed] = useState(false);
   const remove = () => {
-    const id = frame?.postId;
-    if (!id || !onDelete) return;
+    if (!frame?.postId || !onDelete) return;
     cancelAnimation(fill);
-    Alert.alert(t('stories.delete'), t('stories.delete.sure'), [
-      { text: t('word.cancel'), style: 'cancel', onPress: () => run(fill.get()) },
-      {
-        text: t('stories.delete'),
-        style: 'destructive',
-        onPress: () =>
-          onDelete(id)
-            .then(() => {
-              setGone((g) => [...g, id]);
-              step(1);
-            })
-            .catch(() => run(fill.get())),
-      },
-    ]);
+    setFailed(false);
+    setAsking(true);
+  };
+  const keep = () => {
+    setAsking(false);
+    run(fill.get());
+  };
+  const confirm = () => {
+    const id = frame?.postId;
+    if (!id || !onDelete || deleting) return;
+    setDeleting(true);
+    onDelete(id)
+      .then(() => onClose())
+      .catch(() => setFailed(true))
+      .finally(() => setDeleting(false));
   };
   const tap = (by: number) => {
     if (wasHeld.current) return; // the end of a hold, not a tap
@@ -169,7 +172,7 @@ function Frames({ item, onEnd, onBackPast, onClose, onDelete }: { item: StoryIte
             <Text style={styles.name}>{name}</Text>
             <Text style={styles.ago}>{up(t('story.hours', { n: story.hoursAgo }))}</Text>
           </Pressable>
-          {item.mine && frame?.postId && onDelete && !gone.includes(frame.postId) ? (
+          {item.mine && frame?.postId && onDelete ? (
             <Pressable onPress={remove} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('stories.delete')} style={styles.bin}>
               <Svg width={18} height={18} viewBox="0 0 24 24">
                 <Path d="M4 7h16M9 7V4.5h6V7M6.5 7l1 13h9l1-13M10 11v6M14 11v6" stroke="#F6F4EF" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" fill="none" />
@@ -182,9 +185,24 @@ function Frames({ item, onEnd, onBackPast, onClose, onDelete }: { item: StoryIte
         </View>
       </View>
 
-      <View style={[styles.bottom, { paddingBottom: insets.bottom + 32 }, held && styles.hush]} pointerEvents="none">
+      <View style={[styles.bottom, { paddingBottom: insets.bottom + 32 }, (held || asking) && styles.hush]} pointerEvents="none">
         <Text style={styles.caption}>{frame.caption}</Text>
       </View>
+
+      {asking ? (
+        <View style={styles.ask}>
+          <Pressable style={StyleSheet.absoluteFill} onPress={keep} accessibilityRole="button" accessibilityLabel={t('word.cancel')} />
+          <View style={[styles.askSheet, { paddingBottom: insets.bottom + 18 }]}>
+            <Text style={styles.askText}>{failed ? t('stories.delete.failed') : t('stories.delete.sure')}</Text>
+            <Pressable onPress={confirm} style={({ pressed }) => [styles.askDelete, pressed && styles.pressed]} accessibilityRole="button">
+              <Text style={styles.askDeleteText}>{deleting ? '…' : t('stories.delete')}</Text>
+            </Pressable>
+            <Pressable onPress={keep} style={({ pressed }) => [styles.askKeep, pressed && styles.pressed]} accessibilityRole="button">
+              <Text style={styles.askKeepText}>{t('word.cancel')}</Text>
+            </Pressable>
+          </View>
+        </View>
+      ) : null}
     </View>
   );
 }
@@ -193,6 +211,13 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.poster },
   zones: { flex: 1, flexDirection: 'row' },
   hush: { opacity: 0 },
+  ask: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'flex-end', backgroundColor: 'rgba(14,13,12,0.45)' },
+  askSheet: { backgroundColor: '#1A1816', borderTopLeftRadius: 22, borderTopRightRadius: 22, paddingTop: 22, paddingHorizontal: 20, gap: 10 },
+  askText: { fontFamily: fonts.medium, fontSize: 16, lineHeight: 22, color: colors.onPhoto, marginBottom: 6 },
+  askDelete: { height: 50, borderRadius: 25, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center' },
+  askDeleteText: { fontFamily: fonts.semibold, fontSize: 16, color: colors.onSpot },
+  askKeep: { height: 50, borderRadius: 25, borderWidth: 1, borderColor: 'rgba(246,244,239,0.35)', alignItems: 'center', justifyContent: 'center' },
+  askKeepText: { fontFamily: fonts.medium, fontSize: 16, color: colors.onPhoto },
   bin: { width: 36, height: 36, borderRadius: 18, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(14,13,12,0.35)', marginRight: 8 },
   zoneBack: { flex: 1 },
   zoneNext: { flex: 2 },
