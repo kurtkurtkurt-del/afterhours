@@ -51,8 +51,9 @@ export default function Icon({ name, size = 22, color, strokeWidth = 1.5, filled
       )}
       {name === 'chat' && (
         <>
-          <Path d="M4 5h16v11H11l-4.5 3.5V16H4z" {...p} />
-          <Path d="M8 9.5h8M8 12.5h5" {...p} />
+          <Path d="M4 5h16v11H11l-4.5 3.5V16H4z" {...f} />
+          {/* open: a solid bubble with its two lines cut out, like the other tabs */}
+          <Path d="M8 9.5h8M8 12.5h5" {...(filled ? cut : p)} />
         </>
       )}
       {name === 'photo' && (
