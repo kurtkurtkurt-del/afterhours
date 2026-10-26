@@ -1,3 +1,5 @@
+// first: on a wide web window the app stands in a phone-wide column (lib/webFrame.ts)
+import '@/lib/webFrame';
 import { useEffect, useState } from 'react';
 import { Stack } from 'expo-router';
 import { Platform, Text, View } from 'react-native';
