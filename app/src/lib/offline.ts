@@ -1,5 +1,5 @@
 import { useEffect, useState, useSyncExternalStore } from 'react';
-import { AppState } from 'react-native';
+import { AppState, Platform } from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
 import Storage from 'expo-sqlite/kv-store';
 import { supabase } from '@/lib/supabase';
@@ -59,6 +59,9 @@ let started = false;
 export function startOffline() {
   if (started) return;
   started = true;
+  // On the web the default check is a HEAD of '/', the domain's root: a 404 on GitHub Pages
+  // (the app lives under /afterhours-pwa), which read as offline for good. Ask the app's own file.
+  if (Platform.OS === 'web') NetInfo.configure({ reachabilityUrl: `${process.env.EXPO_BASE_URL ?? ''}/manifest.json` });
   NetInfo.addEventListener((s) => {
     // isInternetReachable null = unknown yet; treat as connected.
     tell({ online: !!s.isConnected && s.isInternetReachable !== false });

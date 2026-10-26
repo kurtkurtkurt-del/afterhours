@@ -6,8 +6,8 @@ import { StatusBar } from 'expo-status-bar';
 import Svg, { Circle, Path } from 'react-native-svg';
 import Storage from 'expo-sqlite/kv-store';
 import Deck, { isCard, isSpark, openSpark, type DeckEntry, type DeckHandle, type SparkEntry } from '@/components/Deck';
-import { SPARKS, sparkIn, sparkOf } from '@/content/sparks';
-import { sparkAnswer, sparkInbox, type SparkInvite } from '@/data/sparks';
+import { SPARKS, sparkIn, sparkOf, type SparkDayMap } from '@/content/sparks';
+import { sparkAnswer, sparkDay, sparkInbox, type SparkInvite } from '@/data/sparks';
 import BigPicker from '@/components/BigPicker';
 import WhenPicker from '@/components/WhenPicker';
 import PlacePicker from '@/components/PlacePicker';
@@ -31,18 +31,32 @@ import { previewsFor, type Preview } from '@/data/previews';
 import { AboutSheet } from '@/components/About';
 import { filterWhen, isWhen, whenName, type When } from '@/data/when';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, ground, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 type Panel = 'tickets' | 'spark';
 
 // Spark panel: only sparks, no ticketed nights. Friends' invites first, then the
-// sparks to start yourself (derby, grill, hike), dealt from a different one each time.
-// In a city with its own versions (Munich), the cards carry its places.
-function sparkDeck(invites: SparkInvite[], seed: number, city: string | null): DeckEntry[] {
+// sparks to start yourself (derby, grill, hike), shuffled afresh every deal and every
+// visit (owner, 22.10.2026: a different order each time). In a city with its own
+// versions (Munich), the cards carry its places.
+function sparkDeck(invites: SparkInvite[], seed: number, city: string | null, day: SparkDayMap): DeckEntry[] {
   const out: DeckEntry[] = invites.map((inv): SparkEntry => ({ id: 'invite:' + inv.id, spark: sparkIn(sparkOf(inv.kind), city), invite: inv }));
-  SPARKS.forEach((_, i) => {
-    const spark = sparkIn(SPARKS[(i + seed) % SPARKS.length], city);
+  // mulberry32: the same seed deals the same order, so a re-render does not reshuffle
+  let a = (seed * 2654435761) >>> 0;
+  const rnd = () => {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+  const order = [...SPARKS];
+  for (let i = order.length - 1; i > 0; i--) {
+    const j = Math.floor(rnd() * (i + 1));
+    [order[i], order[j]] = [order[j], order[i]];
+  }
+  order.forEach((s) => {
+    const spark = sparkIn(s, city, day);
     out.push({ id: `spark:${spark.kind}`, spark });
   });
   return out;
@@ -75,7 +89,7 @@ export default function FlowScreen() {
   const [swiped, setSwiped] = useState(0);
   // Bottom edge of the picker chip; the poster starts below it (the chip wraps in Turkish).
   const [headBottom, setHeadBottom] = useState(0);
-  const [reloads, setReloads] = useState(0);
+  const [reloads, setReloads] = useState(() => Math.floor(Math.random() * 1_000_000)); // a fresh spark order every visit
   // Back online: retry if the deck is empty or never loaded (a dealt deck is left alone).
   const failed = useRef(false);
   useEffect(() => onBackOnline(() => failed.current && setReloads((n) => n + 1)), []);
@@ -92,6 +106,15 @@ export default function FlowScreen() {
   const [result, setResult] = useState<{ key: string; rows: Night[] | null; error: string | null }>({ key: '', rows: null, error: null });
   const error = result.key === key ? result.error : null;
 
+  // The night agent's words for the day (98_spark_days.sql), per city.
+  const [day, setDay] = useState<{ city: string | null; map: SparkDayMap }>({ city: '', map: {} });
+  useEffect(() => {
+    let live = true;
+    sparkDay(city).then((map) => live && setDay({ city, map }));
+    return () => {
+      live = false;
+    };
+  }, [city, reloads]);
   // Invites from friends (spark panel only, signed in only).
   const [invites, setInvites] = useState<{ key: string; list: SparkInvite[] }>({ key: '', list: [] });
   // "who is this?": the texts for the nights in this deck, and the one open in the sheet.
@@ -120,10 +143,11 @@ export default function FlowScreen() {
   const nights = useMemo<DeckEntry[] | null>(() => {
     if (panel === 'spark') {
       if (signedIn && invites.key !== key) return null; // wait for the inbox so invites land on top
-      return sparkDeck(invites.key === key ? invites.list : [], reloads, city);
+      if (day.city !== city) return null; // wait for the day's words, so the cards do not change under the thumb
+      return sparkDeck(invites.key === key ? invites.list : [], reloads, city, day.map);
     }
     return result.key === key && result.rows ? filterWhen(result.rows, when) : null;
-  }, [result, key, when, panel, signedIn, invites, reloads, city]);
+  }, [result, key, when, panel, signedIn, invites, reloads, city, day]);
 
   useEffect(() => {
     let cancelled = false;
@@ -240,7 +264,7 @@ export default function FlowScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       {/* Where, big; under it tickets · spark; under that, on tickets, what and when. */}
       <View style={[styles.head, { top: Math.max(brand.top, insets.top + 24) - 8 }]} onLayout={(e) => setHeadBottom(e.nativeEvent.layout.y + e.nativeEvent.layout.height)}>
         <Pressable onPress={() => setSheet('city')} hitSlop={8} accessibilityRole="button" accessibilityLabel={t('filter.where')} style={({ pressed }) => [styles.city, pressed && styles.pressed]}>
@@ -279,7 +303,7 @@ export default function FlowScreen() {
         {error && panel === 'tickets' ? (
           <Text style={styles.note}>{error === 'offline' ? up(t('offline.empty')) : upperData(error)}</Text>
         ) : nights ? (
-          <Deck ref={deck} key={`${panel}/${city}/${type}/${when}/${reloads}`} nights={nights} friendsOf={friendsOf} bottom={tabSpace + ACTIONS} top={(headBottom || Math.max(brand.top, insets.top + 24) + 30) + 14} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} hasAbout={(e) => abouts.has(e.id)} onAbout={(e) => setReading(abouts.get(e.id) ?? null)} previewOf={(e) => previews.get(e.id)} />
+          <Deck ref={deck} key={`${panel}/${city}/${type}/${when}/${reloads}`} nights={nights} friendsOf={friendsOf} bottom={tabSpace + ACTIONS} top={(headBottom || Math.max(brand.top, insets.top + 24) + 30) + 14} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} listed={panel === 'tickets' && counts ? Object.values(counts).reduce((a, n) => a + n, 0) : 0} hasAbout={(e) => abouts.has(e.id)} onAbout={(e) => setReading(abouts.get(e.id) ?? null)} previewOf={(e) => previews.get(e.id)} />
         ) : (
           <Text style={styles.note}>{up(t('flow.loading'))}</Text>
         )}
@@ -338,7 +362,7 @@ const styles = StyleSheet.create({
   // Ink pill so the pickers stay legible over the photo.
   head: { position: 'absolute', left: brand.left, right: brand.left, zIndex: 1 },
   city: { flexDirection: 'row', alignItems: 'center', gap: 8, alignSelf: 'flex-start', maxWidth: '72%' },
-  cityText: { flexShrink: 1, fontFamily: fonts.semibold, fontSize: 26, lineHeight: 30, letterSpacing: -0.8, color: colors.paper, textShadowColor: 'rgba(14,13,12,0.6)', textShadowRadius: 8 },
+  cityText: { flexShrink: 1, fontFamily: fonts.semibold, fontSize: 26, lineHeight: 30, letterSpacing: -0.8, color: colors.paper, textShadowColor: ground(0.6), textShadowRadius: 8 },
   pills: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 10 },
   pressed: { opacity: 0.6 },
   // tickets · spark: a lighter track than the filter pills, so it reads on the dark top

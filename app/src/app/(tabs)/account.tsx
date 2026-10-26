@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import Tips from '@/components/Tips';
-import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { FlatList, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -10,7 +10,11 @@ import Icon from '@/components/Icon';
 import LinkMarks from '@/components/LinkMarks';
 import PickerSheet from '@/components/PickerSheet';
 import ProfileCounts from '@/components/ProfileCounts';
-import Sleeve from '@/components/Sleeve';
+import Sleeve, { recordFor, recordThumb } from '@/components/Sleeve';
+import { RECORDS } from '@/content/records';
+import { ALL_CITY_RECORDS } from '@/content/flags';
+import { useCities } from '@/data/cities';
+import Scrim from '@/components/Scrim';
 import SoundCorner from '@/components/SoundCorner';
 import { TAB_BAR_SPACE, useTabBarSpace } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
@@ -29,11 +33,13 @@ import { SAMPLES } from '@/content/samples';
 import { myCards, toCardData, type CardRow } from '@/data/checkin';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { isStaff, useRole } from '@/data/staff';
+import { useRunsVenues } from '@/data/venues';
 import { useTabReset } from '@/hooks/useTabReset';
 import type { NightCardData } from '@/content/cardsgen';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, ground, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+const RECORD = require('../../../assets/record/record.webp');
 
 // Card width as a share of the screen; each card leaves this much of the previous one visible.
 const CARD = 0.39;
@@ -52,6 +58,7 @@ export default function AccountScreen() {
   const tabSpace = useTabBarSpace();
   const { session, isAnonymous } = useAuth();
   const staff = isStaff(useRole());
+  const runs = useRunsVenues(null, !session || isAnonymous);
   const { t, tn, up } = useLang();
   const insets = useSafeAreaInsets();
   const { width, height } = useWindowDimensions();
@@ -117,6 +124,22 @@ export default function AccountScreen() {
   const meta = [city ? upperData(city) : null, handle ? upperData(handle) : null, sinceText ? up(sinceText) : null].filter(Boolean).join(' · ') || up(t('account.notSignedIn'));
 
   const cardW = Math.round(width * CARD);
+  const tileH = Math.round((width - brand.left * 2 - 10) / 2 * 1.1);
+  // the cities: the ones you have been to with their counts; in development every city with a record
+  const { cities: cityList } = useCities();
+  const [recordOpen, setRecordOpen] = useState<[string, number] | null>(null);
+  const cityRecords = useMemo<[string, number][]>(() => {
+    const count = (names: string[]): [string, number][] => {
+      const m = new Map<string, number>();
+      names.filter(Boolean).forEach((c) => m.set(c, (m.get(c) ?? 0) + 1));
+      return [...m.entries()].sort((x, y) => y[1] - x[1]);
+    };
+    const been = real ? count(cards.map((c) => (c.city_name ?? '').toLowerCase())) : [];
+    if (!ALL_CITY_RECORDS) return been;
+    const seen = new Set(been.map(([c]) => c));
+    const nameOf = (slug: string) => cityList.find((c) => c.id === slug)?.name ?? slug.replace(/-/g, ' ');
+    return [...been, ...Object.keys(RECORDS).map(nameOf).filter((n) => !seen.has(n)).map((n): [string, number] => [n, 0])];
+  }, [real, cards, cityList]);
   const cardH = cardW * 1.5;
 
   // Tapping the poster: straight to the picker without a photo, otherwise a two-option sheet.
@@ -125,18 +148,15 @@ export default function AccountScreen() {
   const picked = (id: string) => setTimeout(() => (id === 'remove' ? remove() : choose()), 320);
 
   const tabBottom = TAB_BAR_SPACE + insets.bottom;
-  const screenH = rootH || height;
+  // Never taller than the window: on the web the root grows with its content, and the gap
+  // below would feed it back (the page ran to 376 000 px).
+  const screenH = Math.min(rootH || height, height);
   // Push the collection down until half of its cards fill the bottom of the first screen.
   const gap = aboveH && headH ? Math.max(0, screenH - tabBottom - (aboveH + headH + cardH / 2)) : 0;
   const signedIn = !!session && !isAnonymous;
   const two = (n: number) => String(n).padStart(2, '0');
   // days from today to a night (0 = tonight)
   const daysTo = (iso: string) => Math.max(0, Math.round((new Date(iso).setHours(0, 0, 0, 0) - new Date().setHours(0, 0, 0, 0)) / 86_400_000));
-  const cityCounts = (names: string[]): [string, number][] => {
-    const m = new Map<string, number>();
-    names.filter(Boolean).forEach((c) => m.set(c, (m.get(c) ?? 0) + 1));
-    return [...m.entries()].sort((x, y) => y[1] - x[1]);
-  };
   const at = (iso: string | null) => {
     if (!iso) return dayLabel(iso);
     const d = new Date(iso);
@@ -145,7 +165,7 @@ export default function AccountScreen() {
 
   return (
     <View style={styles.root} onLayout={(e) => setRootH(e.nativeEvent.layout.height)}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <ScrollView ref={page} showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: tabBottom }} style={styles.page}>
         <View style={styles.top} onLayout={(e) => setAboveH(e.nativeEvent.layout.height)}>
           <Text style={styles.title} pointerEvents="none">
@@ -183,6 +203,7 @@ export default function AccountScreen() {
           />
 
           {/* Under the photo: the bio and the longer text, or a nudge to write them. */}
+          {runs.length ? <Text style={styles.runs}>{up(t('desk.runs', { rooms: runs.map((r) => `${r.name} · ${r.city_name}`.toLowerCase()).join(', ') }))}</Text> : null}
           {profile?.bio ? <Text style={styles.bio}>{profile.bio}</Text> : null}
           {extra?.about ? <Text style={styles.about}>{extra.about}</Text> : null}
           {signedIn && !profile?.bio && !extra?.about ? (
@@ -253,21 +274,40 @@ export default function AccountScreen() {
                 {upcoming?.length && upcoming[0].starts_at ? <Text style={styles.underRed}>{up(tn('account.next.in', daysTo(upcoming[0].starts_at)))}</Text> : null}
               </View>
               {upcoming === null ? null : upcoming.length ? (
+                <>
+                {/* the next two, large, side by side (owner, 22.10.2026: more picture); the rest small */}
+                <View style={styles.pair}>
+                  {upcoming.slice(0, 2).map((n) => (
+                    <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.tile, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
+                      {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
+                      <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
+                      <View style={styles.tileText}>
+                        <Text style={styles.tileTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
+                        <Text style={[styles.posterMono, ticketed.has(n.slug) && styles.posterRed]} numberOfLines={1}>
+                          {ticketed.has(n.slug) ? up(t('night.ticketGot')) : upperData(n.venue_name ?? n.city_name)}
+                        </Text>
+                      </View>
+                    </Pressable>
+                  ))}
+                </View>
+                {upcoming.length > 2 ? (
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.rail}>
-                  {upcoming.map((n) => (
+                  {upcoming.slice(2).map((n) => (
                     <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.poster, pressed && styles.pressed]} accessibilityRole="button">
                       {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
-                      <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.95)']} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
+                      <LinearGradient colors={[scrim(0.0), scrim(0.95)]} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
                       <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
                       <View style={styles.posterText}>
                         <Text style={styles.posterTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
-                        <Text style={[styles.posterMono, ticketed.has(n.slug) && styles.underRed]} numberOfLines={1}>
+                        <Text style={[styles.posterMono, ticketed.has(n.slug) && styles.posterRed]} numberOfLines={1}>
                           {ticketed.has(n.slug) ? up(t('night.ticketGot')) : upperData(n.venue_name ?? n.city_name)}
                         </Text>
                       </View>
                     </Pressable>
                   ))}
                 </ScrollView>
+                ) : null}
+                </>
               ) : (
                 <Text style={[styles.prompt, styles.promptInk, styles.promptTight]}>{t('account.next.empty')}</Text>
               )}
@@ -277,11 +317,24 @@ export default function AccountScreen() {
                 {sparks?.length ? <Text style={styles.underGold}>{up(tn('account.sparks.open', sparks.length))}</Text> : null}
               </View>
               {sparks === null ? null : sparks.length ? (
-                sparks.map((sp, k) => {
+                <>
+                <View style={styles.pair}>
+                  {sparks.slice(0, 2).map((sp) => (
+                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.tile, styles.tileGold, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
+                      <Image source={sparkOf(sp.kind).thumb} style={StyleSheet.absoluteFill} contentFit="cover" />
+                      <Text style={[styles.posterDate, styles.posterGold]}>{up(at(sp.starts_at))}</Text>
+                      <View style={styles.tileText}>
+                        <Text style={styles.tileTitle} numberOfLines={2}>{sp.title.toLowerCase()}</Text>
+                        <Text style={[styles.posterMono, styles.goldText]} numberOfLines={1}>{`${sp.going} ${t('spark.in.short')}${sp.place ? ` · ${upperData(sp.place)}` : ''}`}</Text>
+                      </View>
+                    </Pressable>
+                  ))}
+                </View>
+                {sparks.slice(2).map((sp, k) => {
                   const quiet = Math.max(0, sp.invited - sp.going - sp.not_going);
                   const total = Math.max(1, sp.invited);
                   return (
-                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.spark, k === 0 && styles.sparkFirst, pressed && styles.pressed]} accessibilityRole="button">
+                    <Pressable key={sp.id} onPress={() => router.push(`/spark/${sparkOf(sp.kind).kind}?invite=${sp.id}`)} style={({ pressed }) => [styles.spark, pressed && styles.pressed]} accessibilityRole="button">
                       <Image source={sparkOf(sp.kind).thumb} style={styles.sparkPhoto} contentFit="cover" />
                       <View style={styles.sparkText}>
                         <Text style={styles.sparkTitle} numberOfLines={1}>{sp.title.toLowerCase()}</Text>
@@ -295,24 +348,38 @@ export default function AccountScreen() {
                       <Text style={[styles.answers, k === 0 && styles.underGold]}>{`${sp.going} ${t('spark.in.short')}\n${sp.not_going} ${t('spark.out.short')}`}</Text>
                     </Pressable>
                   );
-                })
+                })}
+                </>
               ) : (
                 <Text style={[styles.prompt, styles.promptInk, styles.promptTight]}>{t('account.sparks.empty')}</Text>
               )}
 
-              {real ? (
+              {real || ALL_CITY_RECORDS ? (
                 <>
                   <View style={styles.underHead}>
                     <Text style={styles.underTitle}>{up(t('account.cities'))}</Text>
-                    <Text style={styles.underMute}>{cities}</Text>
+                    <Text style={styles.underMute}>{cityRecords.length}</Text>
                   </View>
-                  <View style={styles.chips}>
-                    {cityCounts(cards.map((c) => (c.city_name ?? '').toLowerCase())).map(([c, n], k) => (
-                      <View key={c} style={[styles.chipInk, k === 0 && styles.chipInkOn]}>
-                        <Text style={[styles.chipInkText, k === 0 && styles.chipInkTextOn]}>{c} <Text style={k === 0 ? styles.chipInkTextOn : styles.underMute}>{n}</Text></Text>
-                      </View>
-                    ))}
-                  </View>
+                  {/* a record for every city you have been to (owner, 22.10.2026), the nights counted under it; a tap shows it large */}
+                  <FlatList
+                    horizontal
+                    data={cityRecords}
+                    keyExtractor={([c]) => c}
+                    showsHorizontalScrollIndicator={false}
+                    contentContainerStyle={styles.records}
+                    initialNumToRender={5}
+                    maxToRenderPerBatch={5}
+                    windowSize={3}
+                    removeClippedSubviews
+                    getItemLayout={(_, i) => ({ length: 96 + 14, offset: (96 + 14) * i, index: i })}
+                    renderItem={({ item: [c, n] }) => (
+                      <Pressable onPress={() => setRecordOpen([c, n])} style={({ pressed }) => [styles.record, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={c}>
+                        <Image source={recordThumb(c)} style={styles.recordImage} contentFit="contain" />
+                        <Text style={[styles.recordName, !n && styles.recordQuiet]} numberOfLines={1}>{c}</Text>
+                        <Text style={styles.recordCount}>{n ? up(tn('account.nNights', n)) : ' '}</Text>
+                      </Pressable>
+                    )}
+                  />
                 </>
               ) : null}
             </>
@@ -320,6 +387,17 @@ export default function AccountScreen() {
         </View>
       </ScrollView>
 
+      {/* a record, large: the city's label as it is drawn */}
+      <Modal visible={!!recordOpen} transparent animationType="fade" onRequestClose={() => setRecordOpen(null)}>
+        <Scrim onPress={() => setRecordOpen(null)} />
+        {recordOpen ? (
+          <Pressable style={styles.recordBig} onPress={() => setRecordOpen(null)} accessibilityRole="button" accessibilityLabel={t('word.close')}>
+            <Image source={recordFor(recordOpen[0]) ?? RECORD} style={{ width: width - brand.left * 2, height: width - brand.left * 2 }} contentFit="contain" />
+            <Text style={styles.recordBigName}>{recordOpen[0]}</Text>
+            <Text style={styles.recordBigCount}>{recordOpen[1] ? up(tn('account.nNights', recordOpen[1])) : up(t('account.cities.notYet'))}</Text>
+          </Pressable>
+        ) : null}
+      </Modal>
       <PickerSheet
         open={sheet}
         title={t('account.photo')}
@@ -396,11 +474,29 @@ const styles = StyleSheet.create({
   underMute: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.meta },
   promptTight: { marginTop: 0 },
   rail: { gap: 8, paddingRight: brand.left },
+  pair: { flexDirection: 'row', gap: 10, marginBottom: 10 },
+  tile: { flex: 1, borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink3 },
+  tileGold: { borderWidth: 1, borderColor: GOLD },
+  // an ink band under the photo (words on a bright photo did not read, 22.10.2026)
+  tileText: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingHorizontal: 10, paddingTop: 9, paddingBottom: 10, backgroundColor: colors.poster },
+  tileTitle: { fontFamily: fonts.semibold, fontSize: 16, lineHeight: 18, letterSpacing: -0.3, color: colors.onPhoto },
+  posterGold: { color: GOLD },
+  goldText: { color: GOLD },
+  records: { gap: 14, paddingRight: brand.left },
+  record: { width: 96, alignItems: 'center', gap: 4 },
+  recordImage: { width: 96, height: 96 },
+  recordName: { fontFamily: fonts.medium, fontSize: 12.5, letterSpacing: -0.2, color: colors.paper, marginTop: 4 },
+  recordCount: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, color: colors.meta },
+  recordQuiet: { color: colors.mute },
+  recordBig: { position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', gap: 10 },
+  recordBigName: { fontFamily: fonts.logo, fontSize: 30, letterSpacing: -0.6, color: colors.onPhoto, marginTop: 6 },
+  recordBigCount: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.onPhotoMute },
   poster: { width: 108, height: 140, borderRadius: radius.sm, overflow: 'hidden', backgroundColor: colors.ink3 },
-  posterDate: { position: 'absolute', left: 7, top: 7, backgroundColor: colors.ink, color: colors.paper, fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, paddingHorizontal: 6, paddingVertical: 4, borderRadius: 5, overflow: 'hidden' },
+  posterDate: { position: 'absolute', left: 7, top: 7, backgroundColor: colors.ink, color: colors.onPhoto, fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, paddingHorizontal: 6, paddingVertical: 4, borderRadius: 5, overflow: 'hidden' },
   posterText: { position: 'absolute', left: 8, right: 8, bottom: 7 },
-  posterTitle: { fontFamily: fonts.semibold, fontSize: 12.5, lineHeight: 14, letterSpacing: -0.2, color: colors.paper },
-  posterMono: { fontFamily: fonts.jet, fontSize: 7.5, letterSpacing: 1, color: colors.mute, marginTop: 3 },
+  posterTitle: { fontFamily: fonts.semibold, fontSize: 12.5, lineHeight: 14, letterSpacing: -0.2, color: colors.onPhoto, textShadowColor: 'rgba(0,0,0,0.6)', textShadowRadius: 4, textShadowOffset: { width: 0, height: 1 } },
+  posterMono: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, color: colors.onPhoto, marginTop: 4, textShadowColor: 'rgba(0,0,0,0.6)', textShadowRadius: 4, textShadowOffset: { width: 0, height: 1 } },
+  posterRed: { color: colors.onPhotoSpot },
   spark: { flexDirection: 'row', alignItems: 'center', gap: 10, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.sm, padding: 9, marginTop: 6 },
   sparkFirst: { borderColor: GOLD, marginTop: 0 },
   sparkPhoto: { width: 36, height: 46, borderRadius: 5, backgroundColor: colors.ink3 },
@@ -417,6 +513,7 @@ const styles = StyleSheet.create({
   section: { marginTop: 22, paddingTop: 18, borderTopWidth: 1, borderTopColor: colors.rule, marginHorizontal: 0 },
   sectionFirst: { marginTop: 0, paddingTop: 0, borderTopWidth: 0 },
   sectionBody: { paddingHorizontal: brand.left, marginTop: 12, gap: 2 },
+  runs: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.spotText, marginTop: 14 },
   bio: { fontFamily: fonts.medium, fontSize: 19, lineHeight: 25, letterSpacing: -0.4, color: colors.paper, marginTop: 22 },
   about: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 23, color: colors.mute, marginTop: 8 },
   prompt: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 22, color: colors.ink2, textDecorationLine: 'underline' },
@@ -441,7 +538,7 @@ const styles = StyleSheet.create({
   card: {},
   rule: { borderTopWidth: 1, borderTopColor: colors.rule, marginHorizontal: brand.left, marginTop: 14, marginBottom: 12 },
   pressed: { opacity: 0.7 },
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.92)', alignItems: 'center', justifyContent: 'center', gap: 18 },
+  dim: { flex: 1, backgroundColor: ground(0.92), alignItems: 'center', justifyContent: 'center', gap: 18 },
   roomLink: { alignItems: 'center', gap: 4, marginTop: 6, paddingHorizontal: 22, paddingVertical: 10, borderWidth: 1, borderColor: colors.spot, borderRadius: radius.md },
   roomLinkText: { fontFamily: fonts.logo, fontSize: 26, letterSpacing: -0.5, color: colors.spotText },
   roomLinkSub: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.meta },

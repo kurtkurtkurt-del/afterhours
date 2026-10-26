@@ -1,5 +1,7 @@
 import { useRef, useState } from 'react';
-import { KeyboardAvoidingView, Modal, Platform, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Modal, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import Scrim from '@/components/Scrim';
+import KeyboardSafe from '@/components/KeyboardSafe';
 import Animated, { useAnimatedStyle, useSharedValue, withSequence, withTiming } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useLang } from '@/i18n';
@@ -29,8 +31,8 @@ export default function DoorCode({ open, title, error, onSubmit, onClose }: {
   const boxes = [...code.toUpperCase().split(''), ''];
   return (
     <Modal visible={open} transparent animationType="fade" onRequestClose={onClose}>
-      <KeyboardAvoidingView style={styles.wrap} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-        <Pressable style={styles.dim} onPress={onClose} />
+      <KeyboardSafe style={styles.wrap}>
+        <Scrim onPress={onClose} />
         <Animated.View style={[styles.panel, { paddingBottom: insets.bottom + 20 }, panel]}>
           <Text style={styles.title}>{up(title)}</Text>
           <Pressable onPress={() => input.current?.focus()} style={styles.boxes}>
@@ -60,18 +62,19 @@ export default function DoorCode({ open, title, error, onSubmit, onClose }: {
               <Text style={styles.keyText}>␣</Text>
             </Pressable>
             <Pressable onPress={() => onSubmit(code)} style={({ pressed }) => [styles.key, styles.enter, pressed && styles.pressed]} accessibilityLabel={t('door.enter')}>
-              <Text style={styles.keyText}>↵</Text>
+              <Text style={[styles.keyText, styles.onSpot]}>↵</Text>
             </Pressable>
           </View>
         </Animated.View>
-      </KeyboardAvoidingView>
+      </KeyboardSafe>
     </Modal>
   );
 }
 
 const styles = StyleSheet.create({
+  // words on a red fill stay light whatever the ground does (try/light)
+  onSpot: { color: colors.onSpot },
   wrap: { flex: 1 },
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.7)' },
   panel: { backgroundColor: '#161412', borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderWidth: 1, borderBottomWidth: 0, borderColor: colors.ink3, paddingHorizontal: 22, paddingTop: 22, alignItems: 'center' },
   title: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 1.6, color: colors.mute },
   boxes: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 8, marginTop: 18, minHeight: 52 },

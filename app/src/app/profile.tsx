@@ -2,10 +2,9 @@ import { useEffect, useState } from 'react';
 import { KeyboardAvoidingView, Pressable, StyleSheet, Text, View } from 'react-native';
 import PullDownScroll from '@/components/PullDownScroll';
 import { StatusBar } from 'expo-status-bar';
-import { Redirect, router } from 'expo-router';
+import { Redirect } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton, { EdgeBack } from '@/components/BackButton';
-import Button from '@/components/Button';
 import Input from '@/components/Input';
 import PhotoBox from '@/components/PhotoBox';
 import PickerSheet from '@/components/PickerSheet';
@@ -15,10 +14,10 @@ import { useAuth } from '@/auth/AuthContext';
 import { useCities } from '@/data/cities';
 import { usePhoto } from '@/data/photo';
 import { saveAbout, saveLinks, useProfile, useProfileExtra, type LinkKind } from '@/data/profile';
-import { LINKS } from '@/content/links';
+import { cleanLink, LINKS } from '@/content/links';
 import { handleStatus, saveProfile } from '@/data/settings';
 import { useLang, type Key } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const BIO = 300;
@@ -81,42 +80,50 @@ export default function ProfileScreen() {
     };
   }, [handle]);
 
+  // Every change is saved by itself, a moment after the last keystroke (owner, 22.10.2026:
+  // no save button). A handle that is taken or malformed is not sent; the line under the
+  // field says so already. The last outcome shows as a small line at the foot.
+  const touched = nameEdit !== null || handleEdit !== null || bioEdit !== null || cityEdit !== undefined || aboutEdit !== null || Object.keys(linkEdits).length > 0;
+  const handleOk = !handle || status === 'ok' || status === 'yours';
+  const edits = JSON.stringify({ name, handle, city, bio, aboutEdit, linkEdits });
+  useEffect(() => {
+    if (!touched || !handleOk) return;
+    let live = true;
+    const timer = setTimeout(async () => {
+      setSaving(true);
+      try {
+        const r = await saveProfile({ handle, name, city, bio });
+        if (!live) return;
+        if (r !== 'ok') return setSaved(r);
+        if (aboutEdit !== null) await saveAbout(aboutEdit);
+        if (Object.keys(linkEdits).length) {
+          const l = await saveLinks(linkEdits);
+          if (!live) return;
+          if (l !== 'ok') return setSaved(t('settings.links.format', { kind: l.replace(/^format:?/, '') }));
+        }
+        if (live) setSaved('ok');
+      } catch (e) {
+        if (live) setSaved(String((e as Error).message).toLowerCase());
+      } finally {
+        if (live) setSaving(false);
+      }
+    }, 900);
+    return () => {
+      live = false;
+      clearTimeout(timer);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- edits holds every field; the rest is read inside
+  }, [edits, touched, handleOk]);
+
   if (ready && !session) return <Redirect href="/signup" />;
 
-  const save = async () => {
-    if (saving) return;
-    setSaving(true);
-    setSaved(null);
-    try {
-      const r = await saveProfile({ handle, name, city, bio });
-      if (r !== 'ok') {
-        setSaved(r);
-        setSaving(false);
-        return;
-      }
-      if (aboutEdit !== null) await saveAbout(aboutEdit);
-      if (Object.keys(linkEdits).length) {
-        const l = await saveLinks(linkEdits);
-        if (l !== 'ok') {
-          setSaved(t('settings.links.format', { kind: l.replace(/^format:?/, '') }));
-          setSaving(false);
-          return;
-        }
-      }
-      router.back();
-      return;
-    } catch (e) {
-      setSaved(String((e as Error).message).toLowerCase());
-    }
-    setSaving(false);
-  };
 
   const cityName = city ? (cities.find((c) => c.id === city)?.name ?? city) : t('settings.city.none');
   const said = handle && status ? word(status) : '';
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <EdgeBack />
       <KeyboardAvoidingView behavior="padding" style={styles.fill}>
         <PullDownScroll
@@ -190,7 +197,7 @@ export default function ProfileScreen() {
               {l.prefix ? <Text style={styles.at}>{l.prefix}</Text> : null}
               <Input
                 value={linkValue(l.kind)}
-                onChangeText={(v) => setLinkEdits((e) => ({ ...e, [l.kind]: l.kind === 'website' ? v.trim() : v.replace(/^@+/, '').trim() }))}
+                onChangeText={(v) => setLinkEdits((e) => ({ ...e, [l.kind]: cleanLink(l.kind, v) }))}
                 placeholder={l.kind === 'website' ? 'https://' : l.kind === 'spotify' ? t('settings.links.spotify') : l.kind === 'whatsapp' ? t('settings.links.whatsapp') : ''}
                 keyboardType={l.kind === 'website' ? 'url' : l.kind === 'whatsapp' ? 'phone-pad' : 'default'}
                 maxLength={l.kind === 'website' ? 200 : 40}
@@ -201,8 +208,7 @@ export default function ProfileScreen() {
           <Text style={styles.hint}>{t('settings.links.hint')}</Text>
 
           <View style={styles.save}>
-            <Button label={saving ? t('word.moment') : t('settings.save')} onPress={save} />
-            {saved ? <Text style={[styles.hint, styles.bad]}>{word(saved)}</Text> : null}
+            <Text style={[styles.hint, saved && saved !== 'ok' && styles.bad]}>{saving ? t('word.moment') : saved === 'ok' ? t('settings.saved') : saved ? word(saved) : t('settings.autosave')}</Text>
           </View>
 
           <BackButton inline />

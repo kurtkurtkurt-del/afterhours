@@ -28,4 +28,14 @@ export const tips = {
 
   'tips.spark.1.t': { en: 'one tap', de: 'ein tipp', tr: 'tek dokunuş' },
   'tips.spark.1.b': { en: 'name, time and place are suggested; change any of them below. a wave says who gets it: your friends, theirs, or one step further.', de: 'name, zeit und ort sind vorgeschlagen; unten änderst du sie. eine welle sagt, wer ihn bekommt: deine freunde, ihre, oder einen schritt weiter.', tr: 'isim, saat ve yer önerili; aşağıdan istediğini değiştir. dalga kime gideceğini söyler: arkadaşların, onlarınkiler ya da bir adım ötesi.' },
+
+  'tips.messages.1.t': { en: 'say it here', de: 'sag es hier', tr: 'burada söyle' },
+  'tips.messages.1.b': { en: 'your people and their stories on top; + adds yours. a tap on a face starts a conversation, a night can be sent with one line.', de: 'oben deine leute und ihre stories; + fügt deine hinzu. ein tipp auf ein gesicht beginnt ein gespräch, eine nacht geht mit einer zeile raus.', tr: 'üstte insanların ve story’leri; + seninkini ekler. bir yüze dokunmak sohbet başlatır, bir gece tek satırla gönderilir.' },
+  // the small words inside the demo scenes
+  'tips.card.title': { en: 'closing set · blitz', de: 'closing set · blitz', tr: 'closing set · blitz' },
+  'tips.chat.them': { en: 'blitz tonight?', de: 'heute blitz?', tr: 'bu gece blitz?' },
+  'tips.chat.me': { en: 'in. 23:00 at the door', de: 'dabei. 23:00 am eingang', tr: 'varım. 23:00 kapıda' },
+  'tips.page.night': { en: 'a night', de: 'eine nacht', tr: 'bir gece' },
+  'tips.page.spark': { en: 'a spark', de: 'ein spark', tr: 'bir spark' },
+  'tips.page.group': { en: 'a group', de: 'eine gruppe', tr: 'bir grup' },
 } as const;

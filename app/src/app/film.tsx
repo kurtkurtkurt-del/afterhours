@@ -79,6 +79,10 @@ export default function FilmScreen() {
           overScrollMode="never"
           setSupportMultipleWindows={false}
           onMessage={(e) => e.nativeEvent.data === 'end' && next()}
+          // a film that cannot load or whose page dies does not leave a blank screen
+          onError={next}
+          onRenderProcessGone={next}
+          onContentProcessDidTerminate={next}
         />
       ) : null}
       <Pressable onPress={next} hitSlop={14} accessibilityRole="button" style={({ pressed }) => [styles.skip, { top: insets.top + 16 }, pressed && styles.pressed]}>
@@ -92,6 +96,6 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   web: { flex: 1, backgroundColor: colors.ink },
   skip: { position: 'absolute', right: brand.left, backgroundColor: 'rgba(14,13,12,0.6)', borderRadius: radius.pill, paddingVertical: 6, paddingHorizontal: 14 },
-  skipText: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper },
+  skipText: { fontFamily: fonts.regular, fontSize: 13, color: colors.onPhoto },
   pressed: { opacity: 0.6 },
 });

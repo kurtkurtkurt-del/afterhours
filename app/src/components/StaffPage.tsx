@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from 'react';
-import { KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, View, type TextInputProps } from 'react-native';
+import { Pressable, StyleSheet, Text, View, type TextInputProps } from 'react-native';
+import KeyboardSafe from '@/components/KeyboardSafe';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton, { EdgeBack } from '@/components/BackButton';
@@ -8,7 +9,7 @@ import PickerSheet from '@/components/PickerSheet';
 import PullDownScroll from '@/components/PullDownScroll';
 import { Mark } from '@/components/Row';
 import { useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // The frame of every panel page: the title in the band, a scroll that closes by
@@ -17,9 +18,9 @@ export default function StaffPage({ title, children, back = true }: { title: str
   const insets = useSafeAreaInsets();
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       {back ? <EdgeBack /> : null}
-      <KeyboardAvoidingView style={styles.root} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardSafe style={styles.root}>
         <PullDownScroll
           header={
             <View style={styles.band}>
@@ -33,7 +34,7 @@ export default function StaffPage({ title, children, back = true }: { title: str
           {children}
           {back ? <BackButton inline /> : null}
         </PullDownScroll>
-      </KeyboardAvoidingView>
+      </KeyboardSafe>
     </View>
   );
 }

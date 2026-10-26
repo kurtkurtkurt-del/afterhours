@@ -1,4 +1,6 @@
 import { Linking, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import Animated, { Easing, SlideInDown } from 'react-native-reanimated';
+import Scrim from '@/components/Scrim';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
@@ -31,11 +33,11 @@ export function AboutSheet({ about, onClose, onKeep }: { about: About | null; on
   const insets = useSafeAreaInsets();
   const host = about ? about.source_url.replace(/^https:\/\/(www\.)?/, '').split('/')[0] : '';
   return (
-    <Modal visible={!!about} transparent animationType="slide" onRequestClose={onClose}>
+    <Modal visible={!!about} transparent animationType="fade" onRequestClose={onClose}>
       <View style={styles.wrap}>
-        <Pressable style={styles.dim} onPress={onClose} accessibilityRole="button" accessibilityLabel={t('word.close')} />
+        <Scrim onPress={onClose} />
         {about ? (
-          <View style={[styles.sheet, { maxHeight: height * 0.74 }]}>
+          <Animated.View entering={SlideInDown.duration(300).easing(Easing.out(Easing.cubic))} style={[styles.sheet, { maxHeight: height * 0.74 }]}>
             <View style={styles.grab} />
             <ScrollView contentContainerStyle={styles.in} showsVerticalScrollIndicator={false}>
               <Text style={styles.kicker}>{up(about.kicker)}</Text>
@@ -64,11 +66,11 @@ export function AboutSheet({ about, onClose, onKeep }: { about: About | null; on
               </Pressable>
               {onKeep ? (
                 <Pressable onPress={onKeep} accessibilityRole="button" style={({ pressed }) => [styles.btn, styles.btnRed, pressed && styles.pressed]}>
-                  <Text style={styles.btnText}>{t('word.keep')}</Text>
+                  <Text style={[styles.btnText, styles.onSpot]}>{t('word.keep')}</Text>
                 </Pressable>
               ) : null}
             </View>
-          </View>
+          </Animated.View>
         ) : null}
       </View>
     </Modal>
@@ -76,10 +78,11 @@ export function AboutSheet({ about, onClose, onKeep }: { about: About | null; on
 }
 
 const styles = StyleSheet.create({
+  // words on a red fill stay light whatever the ground does (try/light)
+  onSpot: { color: colors.onSpot },
   ask: { flexDirection: 'row', alignItems: 'center', gap: 7, height: 34, paddingHorizontal: 14, borderRadius: radius.pill, shadowColor: '#000', shadowOpacity: 0.35, shadowRadius: 10, shadowOffset: { width: 0, height: 4 }, elevation: 6 },
   askText: { fontFamily: fonts.semibold, fontSize: 13.5, letterSpacing: -0.1, color: colors.paper },
   wrap: { flex: 1, justifyContent: 'flex-end' },
-  dim: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(14,13,12,0.55)' },
   sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3 },
   grab: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: colors.ink3, marginTop: 9 },
   in: { paddingHorizontal: brand.left + 4, paddingTop: 16, paddingBottom: 18 },
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
   facts: { marginTop: 18, gap: 12 },
   fact: { flexDirection: 'row', gap: 10 },
   factNo: { width: 22, fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.spotText, paddingTop: 3 },
-  factText: { flex: 1, fontFamily: fonts.regular, fontSize: 14.5, lineHeight: 21, color: '#d9d5cc' },
+  factText: { flex: 1, fontFamily: fonts.regular, fontSize: 14.5, lineHeight: 21, color: colors.paper2 },
   src: { flexDirection: 'row', justifyContent: 'space-between', gap: 12, marginTop: 20, paddingTop: 12, borderTopWidth: 1, borderTopColor: colors.ink3 },
   srcText: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.meta },
   srcLink: { color: colors.mute, textDecorationLine: 'underline' },

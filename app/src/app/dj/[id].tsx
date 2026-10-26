@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Image } from 'expo-image';
+import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
 import { useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -13,7 +14,7 @@ import { djs as localDjs, sets as localSets, tracksFor, type Dj, type DjSet } fr
 import { isFollowing, loadDjs, setFollow } from '@/data/djs';
 import { useAuth } from '@/auth/AuthContext';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const GAP = 12;
@@ -43,7 +44,7 @@ export default function DjScreen() {
   if (!dj) {
     return (
       <View style={styles.root}>
-        <StatusBar style="light" />
+        <StatusBar style={barStyle} />
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Text style={styles.mono}>{up(t('dj.none'))}</Text>
         </View>
@@ -71,7 +72,7 @@ export default function DjScreen() {
   );
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <View style={styles.band}>
         <BackButton />
         <Pressable onPress={toggleFollow} hitSlop={12} style={styles.follow}>
@@ -82,11 +83,11 @@ export default function DjScreen() {
         {/* Cover */}
         <View style={[styles.hero, { height: width * 1.05 }]}>
           <Image source={dj.photoUrl ? { uri: dj.photoUrl } : dj.photo} style={styles.heroPhoto} />
-          <View style={styles.heroShade} />
+          <LinearGradient colors={[scrim(0), scrim(0.82)]} style={styles.heroShade} pointerEvents="none" />
           <View style={styles.heroText}>
-            <Text style={styles.mono}>{upperData(dj.genre)}{next ? ` · ${up(t('dj.resident', { venue: upperData(next.venue) }))}` : ''}</Text>
+            <Text style={styles.heroMono}>{upperData(dj.genre)}{next ? ` · ${up(t('dj.resident', { venue: upperData(next.venue) }))}` : ''}</Text>
             <Text style={styles.name}>{dj.name}</Text>
-            <Text style={styles.mono}>{upperData(dj.city)} · {up(t('dj.since', { year: dj.since }))} · {up(t('dj.followers', { n: upperData(dj.followers) }))}</Text>
+            <Text style={styles.heroMono}>{upperData(dj.city)} · {up(t('dj.since', { year: dj.since }))} · {up(t('dj.followers', { n: upperData(dj.followers) }))}</Text>
           </View>
         </View>
 
@@ -144,10 +145,11 @@ const styles = StyleSheet.create({
   followOn: { color: colors.spot },
   hero: { backgroundColor: colors.ink2, overflow: 'hidden', borderBottomLeftRadius: radius.lg, borderBottomRightRadius: radius.lg },
   heroPhoto: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
-  heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 150, backgroundColor: colors.ink, opacity: 0.75 },
+  heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 210 },
   heroText: { position: 'absolute', left: brand.left, right: brand.left, bottom: 18, gap: 5 },
-  name: { fontFamily: fonts.medium, fontSize: 40, lineHeight: 42, letterSpacing: -1.4, color: colors.paper },
+  name: { fontFamily: fonts.medium, fontSize: 40, lineHeight: 42, letterSpacing: -1.4, color: colors.onPhoto },
   mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
+  heroMono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.onPhotoMute },
   bio: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 22, color: colors.mute, paddingHorizontal: brand.left, marginTop: 18, marginBottom: 10 },
   strip: { flexDirection: 'row', gap: 4, paddingHorizontal: brand.left, marginTop: 4 },
   small: { flex: 1, aspectRatio: 1, backgroundColor: colors.ink2, borderRadius: radius.md, overflow: 'hidden' },

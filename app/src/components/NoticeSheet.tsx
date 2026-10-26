@@ -60,7 +60,7 @@ export default function NoticeSheet() {
 }
 
 const styles = StyleSheet.create({
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.6)', justifyContent: 'flex-end' },
+  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.36)', justifyContent: 'flex-end' },
   sheet: { backgroundColor: colors.ink, borderWidth: 1, borderBottomWidth: 0, borderColor: colors.ink3, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, paddingHorizontal: brand.left, paddingTop: 18 },
   head: { fontFamily: fonts.medium, fontSize: 20, letterSpacing: -0.4, color: colors.paper, marginBottom: 8 },
   item: { paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: colors.ink3, gap: 4 },

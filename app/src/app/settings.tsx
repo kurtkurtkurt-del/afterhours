@@ -2,6 +2,7 @@ import { SITE } from '@/data/deck';
 import { serverText } from '@/lib/serverText';
 import { useEffect, useState } from 'react';
 import { Alert, Linking, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import Logo from '@/components/Logo';
 import Constants, { ExecutionEnvironment } from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -30,8 +31,9 @@ import { pushStatus, registerPush, type PushStatus } from '@/lib/push';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { genres, type Genre } from '@/content/music';
 import { langNames, langs, upperData, useLang, type Lang } from '@/i18n';
-import { ACCENTS, colors, fonts, radius, type AccentId } from '@/theme/tokens';
+import { ACCENTS, colors, fonts, radius, type AccentId, barStyle } from '@/theme/tokens';
 import { chooseAccent, currentAccent } from '@/data/accent';
+import { chooseTheme, currentTheme } from '@/data/theme';
 import { brand } from '@/theme/layout';
 
 // Settings home: the profile card (photo, name, "edit"), then one row per group —
@@ -93,7 +95,7 @@ export default function SettingsScreen() {
   const { photo, broken } = usePhoto();
   const { t, tx, up, lang, setLang } = useLang();
   const [settings, setSettings] = useState<Settings | null>(null);
-  const [sheet, setSheet] = useState<'sound' | 'locale' | 'kept' | 'type' | 'accent' | null>(null);
+  const [sheet, setSheet] = useState<'sound' | 'locale' | 'kept' | 'type' | 'accent' | 'theme' | null>(null);
   // Changing the sign-in (53): the field being asked for, and what came back.
   // current: the old password before a new one; verify: the password before deleting (F19).
   const [ask, setAsk] = useState<'email' | 'password' | 'current' | 'verify' | null>(null);
@@ -285,7 +287,7 @@ export default function SettingsScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <EdgeBack />
       <PullDownScroll
         header={
@@ -334,6 +336,7 @@ export default function SettingsScreen() {
           <Row label={t('settings.music')} right={<Switch on={ambient.on} />} onPress={ambient.toggle} />
           <Row label={t('settings.genre')} hint={t('settings.genre.hint')} right={<Value text={soundName} more />} onPress={() => setSheet('sound')} />
           <Row label={t('accent.label')} hint={t('accent.hint')} right={<View style={styles.swatchRow}><View style={[styles.swatch, { backgroundColor: colors.spot }]} /><Value text={tx('accent.' + currentAccent(), currentAccent())} more /></View>} onPress={() => setSheet('accent')} />
+          <Row label={t('theme.label')} hint={t('theme.hint')} right={<Value text={t(currentTheme() === 'light' ? 'theme.light' : 'theme.dark')} more />} onPress={() => setSheet('theme')} />
         </Panel>
 
           </>
@@ -422,9 +425,7 @@ export default function SettingsScreen() {
 
         {!section || section === 'about' ? (
         <View style={styles.foot}>
-          <Text style={styles.logo}>
-            afterhours<Text style={styles.logoDot}>.</Text>
-          </Text>
+          <Logo size={20} />
           <Text style={styles.version}>{`${up(t('settings.version'))} ${upperData(version)}`}</Text>
         </View>
         ) : null}
@@ -480,6 +481,17 @@ export default function SettingsScreen() {
         onClose={() => setSheet(null)}
       />
       <PickerSheet
+        open={sheet === 'theme'}
+        title={t('theme.label')}
+        options={[{ id: 'light', label: t('theme.light') }, { id: 'dark', label: t('theme.dark') }]}
+        selected={currentTheme()}
+        onSelect={(id) => {
+          setSheet(null);
+          chooseTheme(id as 'light' | 'dark', { title: t('theme.reload'), body: t('theme.reload.body'), go: t('accent.reload.go'), later: t('accent.reload.later') });
+        }}
+        onClose={() => setSheet(null)}
+      />
+      <PickerSheet
         open={sheet === 'accent'}
         title={t('accent.label')}
         options={(Object.keys(ACCENTS) as AccentId[]).map((id) => ({ id, label: `● ${tx('accent.' + id, id)}` }))}
@@ -522,7 +534,5 @@ const styles = StyleSheet.create({
   cardUnder: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.2, color: colors.mute },
   note: { fontFamily: fonts.regular, fontSize: 12, lineHeight: 17, color: colors.mute, marginTop: 10 },
   foot: { alignItems: 'center', gap: 6, marginTop: 36, marginBottom: 28 },
-  logo: { fontFamily: fonts.logo, fontSize: 20, letterSpacing: -0.4, color: colors.paper },
-  logoDot: { color: colors.spot },
   version: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta },
 });

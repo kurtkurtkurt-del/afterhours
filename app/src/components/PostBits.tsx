@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { ActivityIndicator, Animated, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import Reanimated, { Easing, SlideInDown } from 'react-native-reanimated';
+import Scrim from '@/components/Scrim';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
 import Avatar from '@/components/Avatar';
@@ -100,10 +102,10 @@ export function LikersSheet({ open, onClose, load, onPerson, more = 0 }: { open:
     };
   }, [open, load]);
   return (
-    <Modal visible={open} transparent animationType="slide" onRequestClose={onClose}>
+    <Modal visible={open} transparent animationType="fade" onRequestClose={onClose}>
       <View style={styles.wrap}>
-        <Pressable style={styles.dim} onPress={onClose} accessibilityRole="button" accessibilityLabel={t('word.close')} />
-        <View style={[styles.sheet, { maxHeight: height * 0.6, paddingBottom: insets.bottom + 12 }]}>
+        <Scrim onPress={onClose} />
+        <Reanimated.View entering={SlideInDown.duration(300).easing(Easing.out(Easing.cubic))} style={[styles.sheet, { maxHeight: height * 0.6, paddingBottom: insets.bottom + 12 }]}>
           <View style={styles.grab} />
           <Text style={styles.title}>{t('post.likers')}</Text>
           {list === null && !failed ? <ActivityIndicator color={colors.mute} style={{ marginVertical: 24 }} /> : null}
@@ -118,7 +120,7 @@ export function LikersSheet({ open, onClose, load, onPerson, more = 0 }: { open:
             ))}
             {more > 0 ? <Text style={styles.quiet}>{t('post.likers.more', { n: more })}</Text> : null}
           </ScrollView>
-        </View>
+        </Reanimated.View>
       </View>
     </Modal>
   );
@@ -132,7 +134,6 @@ const styles = StyleSheet.create({
   burst: { alignItems: 'center', justifyContent: 'center' },
   likes: postStyles.likes,
   wrap: { flex: 1, justifyContent: 'flex-end' },
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.55)' },
   sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingTop: 8 },
   grab: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: colors.ink3, marginBottom: 10 },
   title: { fontFamily: fonts.semibold, fontSize: 15, color: colors.paper, textAlign: 'center', marginBottom: 8 },

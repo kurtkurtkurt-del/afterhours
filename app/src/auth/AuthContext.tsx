@@ -58,15 +58,30 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    supabase.auth.getSession().then(async ({ data, error }) => {
-      let s = data.session;
-      // Expired token and no network: Supabase cannot refresh and returns an empty
-      // session, which looked like a sign-out. The session is still in storage,
-      // so use it; Supabase refreshes once the connection is back.
-      if (!s && error && isNetworkError(error)) s = await storedSession();
+    // The start screen waits for this, so it always ends (owner, 22.10.2026: the opening
+    // sometimes hung): getSession refreshes an expired token over the network, with no
+    // time limit and, on a bad line, no answer. After 4 s, or on any failure, the
+    // session in storage stands in; Supabase refreshes once the connection is back.
+    let settled = false;
+    const settle = (s: Session | null) => {
+      if (settled) return;
+      settled = true;
       setSession(s);
       setReady(true);
-    });
+    };
+    const late = setTimeout(() => storedSession().then(settle, () => settle(null)), 4000);
+    supabase.auth
+      .getSession()
+      .then(async ({ data, error }) => {
+        let s = data.session;
+        // Expired token and no network: Supabase cannot refresh and returns an empty
+        // session, which looked like a sign-out. The session is still in storage,
+        // so use it; Supabase refreshes once the connection is back.
+        if (!s && error && isNetworkError(error)) s = await storedSession();
+        settle(s);
+      })
+      .catch(() => storedSession().then(settle, () => settle(null)))
+      .finally(() => clearTimeout(late));
     // Accept an empty session only on a real sign-out; an offline refresh
     // failure also reports "no session".
     const { data: sub } = supabase.auth.onAuthStateChange((event, s) => {

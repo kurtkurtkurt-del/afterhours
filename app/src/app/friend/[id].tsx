@@ -20,7 +20,7 @@ import { SAMPLES } from '@/content/samples';
 import { friendAccept, friendRemove, friendRequest } from '@/data/friends';
 import { useYours } from '@/data/yours';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 import PillAction from '@/components/PillAction';
 
@@ -47,7 +47,7 @@ export default function FriendScreen() {
   if (id === 'add') {
     return (
       <View style={styles.root}>
-        <StatusBar style="light" />
+        <StatusBar style={barStyle} />
         {/* Pulling down from the top closes it, like the other cards. */}
         <PullDownScroll
           header={
@@ -82,7 +82,7 @@ export default function FriendScreen() {
   if (!f) {
     return (
       <View style={styles.root}>
-        <StatusBar style="light" />
+        <StatusBar style={barStyle} />
         <View style={styles.band}>
           <BackButton />
           <SoundCorner />
@@ -109,7 +109,7 @@ export default function FriendScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: insets.bottom + 40 }} style={{ flex: 1 }}>
         {/* Poster: their photo (or their drawn face) full-bleed, the name set large. */}
         <View style={[styles.poster, { height: Math.round(height * 0.62) }]}>
@@ -118,8 +118,8 @@ export default function FriendScreen() {
               <Avatar name={f.handle || f.name} size={Math.max(width, height * 0.62)} />
             </View>
           )}
-          <LinearGradient colors={['rgba(14,13,12,0.55)', 'rgba(14,13,12,0)']} style={styles.shadeTop} pointerEvents="none" />
-          <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.92)']} style={styles.shadeBottom} pointerEvents="none" />
+          <LinearGradient colors={[scrim(0.55), scrim(0.0)]} style={styles.shadeTop} pointerEvents="none" />
+          <LinearGradient colors={[scrim(0.0), scrim(0.92)]} style={styles.shadeBottom} pointerEvents="none" />
           <View style={styles.who} pointerEvents="none">
             {f.live ? (
               <View style={styles.liveRow}>
@@ -149,7 +149,7 @@ export default function FriendScreen() {
               {theirs.map((n) => (
                 <Pressable key={n.id} onPress={() => n.slug && router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.card, { width: cardW, height: cardW * 1.45 }, pressed && styles.pressed]}>
                   <Image source={n.photo ?? (n.image ? { uri: n.image } : fallback)} style={StyleSheet.absoluteFill} contentFit="cover" />
-                  <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.9)']} locations={[0.35, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
+                  <LinearGradient colors={[scrim(0.0), scrim(0.9)]} locations={[0.35, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
                   <View style={styles.cardText}>
                     <Text style={styles.cardTitle} numberOfLines={3}>{n.title}</Text>
                     <Text style={styles.cardMeta} numberOfLines={1}>{up(n.when)}</Text>
@@ -245,11 +245,11 @@ const styles = StyleSheet.create({
   shadeTop: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 60 },
   shadeBottom: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 210 },
   who: { position: 'absolute', left: brand.left, right: brand.left, bottom: 22 + radius.lg },
-  name: { fontFamily: fonts.semibold, fontSize: 54, lineHeight: 56, letterSpacing: -2, color: colors.paper },
-  meta: { fontFamily: fonts.regular, fontSize: 12, letterSpacing: 1.4, color: colors.paper, marginTop: 8 },
+  name: { fontFamily: fonts.semibold, fontSize: 54, lineHeight: 56, letterSpacing: -2, color: colors.onPhoto },
+  meta: { fontFamily: fonts.regular, fontSize: 12, letterSpacing: 1.4, color: colors.onPhoto, marginTop: 8 },
   liveRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 6 },
   liveDot: { width: 8, height: 8, borderRadius: 4, backgroundColor: colors.spot },
-  liveWord: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1.4, color: colors.spotText },
+  liveWord: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1.4, color: colors.onPhotoSpot },
   paper: { backgroundColor: colors.paper, paddingTop: 22, paddingBottom: 24, marginTop: -radius.lg, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, minHeight: 320 },
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: brand.left },
   rowLeft: { flexDirection: 'row', alignItems: 'center', gap: 8 },
@@ -258,8 +258,8 @@ const styles = StyleSheet.create({
   strip: { paddingHorizontal: brand.left, gap: 10, paddingTop: 12 },
   card: { borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink2 },
   cardText: { position: 'absolute', left: 10, right: 10, bottom: 10, gap: 3 },
-  cardTitle: { fontFamily: fonts.logo, fontSize: 18, lineHeight: 18, color: colors.spotText },
-  cardMeta: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1, color: colors.paper },
+  cardTitle: { fontFamily: fonts.logo, fontSize: 18, lineHeight: 18, color: colors.onPhotoSpot },
+  cardMeta: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1, color: colors.onPhoto },
   pad: { paddingHorizontal: brand.left, marginTop: 10 },
   prompt: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 22, color: colors.ink2 },
   section: { marginTop: 22, paddingTop: 18, borderTopWidth: 1, borderTopColor: colors.rule },

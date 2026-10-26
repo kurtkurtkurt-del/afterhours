@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import Tips from '@/components/Tips';
 import { AppState, KeyboardAvoidingView, Linking, Modal, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import Scrim from '@/components/Scrim';
 import { Image } from 'expo-image';
 import * as Location from 'expo-location';
 import AfterhoursCard from '@/components/AfterhoursCard';
-import { checkIn, checkOut, myCards, reasonCode, reasons, roomInfo, toCardData, type CardRow, type RoomInfo } from '@/data/checkin';
+import { checkIn, checkOut, myCards, reasonCode, reasons, roomInfo, toCardData, type CardRow, type RoomInfo, friendsLive, type LiveFriend } from '@/data/checkin';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -23,7 +24,10 @@ import { useReport } from '@/components/ReportSheet';
 import { commentCode, commentErrors, fetchComments, postComment, whenText, type Comment } from '@/data/comments';
 import { isSyncedBody, upperData, useLang } from '@/i18n';
 import NudgeSheet from '@/components/NudgeSheet';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, ground, barStyle, tint } from '@/theme/tokens';
+import Avatar from '@/components/Avatar';
+import { friendsList, type FriendRow } from '@/data/friends';
+import { friendPhotos } from '@/data/photo';
 import { brand } from '@/theme/layout';
 import PillAction from '@/components/PillAction';
 
@@ -150,6 +154,23 @@ export default function NightScreen() {
   const [askTicket, setAskTicket] = useState(false);
   const [nudging, setNudging] = useState(false);
   const [nudged, setNudged] = useState<string | null>(null);
+  // the faces on the nudge card: your people, whoever is out right now first
+  const [nudgeFriends, setNudgeFriends] = useState<FriendRow[]>([]);
+  const [nudgeLive, setNudgeLive] = useState<LiveFriend[]>([]);
+  const [nudgePhotos, setNudgePhotos] = useState<Map<string, string>>(new Map());
+  useEffect(() => {
+    if (!session || isAnonymous) return;
+    let alive = true;
+    friendsList().then((l) => alive && setNudgeFriends(l.filter((f) => f.status === 'accepted')), () => {});
+    friendsLive().then((l) => alive && setNudgeLive(l), () => {});
+    friendPhotos().then((m) => alive && setNudgePhotos(m), () => {});
+    return () => {
+      alive = false;
+    };
+  }, [session, isAnonymous]);
+  const isOut = (id: string) => nudgeLive.some((l) => l.friend_id === id);
+  const friendPhotoOf = (id: string) => nudgePhotos.get(id);
+  const nudgeFaces = [...nudgeFriends].sort((a, b) => Number(isOut(b.other_id)) - Number(isOut(a.other_id))).slice(0, 3);
   const awaiting = useRef(false);
   useEffect(() => {
     if (!session || !slug) return;
@@ -209,7 +230,7 @@ export default function NightScreen() {
   );
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       {night ? null : band}
       {night ? (
         <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
@@ -298,11 +319,28 @@ export default function NightScreen() {
             {note ? <Text style={styles.mono}>{up(words(note))}</Text> : null}
             {room ? <Text style={styles.mono}>{up(tn('night.checkedin', room.who_count))}</Text> : null}
 
-            {/* Nudge a friend about this night (owner, 12.10.2026): a direct message with the link. */}
+            {/* Nudge a friend about this night (owner, 12.10.2026): a direct message with the link.
+                A card of its own since 22.10.2026 — the faces of your people on it, whoever is out
+                first — so it reads as the thing to do, not a side button. */}
             {session && !isAnonymous ? (
-              <View style={styles.nudgeRow}>
-                <PillAction label={nudged ? t('night.nudged', { name: nudged }) : t('night.nudge')} onPress={() => setNudging(true)} />
-              </View>
+              <Pressable onPress={() => setNudging(true)} accessibilityRole="button" accessibilityLabel={t('night.nudge')} style={({ pressed }) => [styles.nudgeCard, pressed && styles.pressed]}>
+                <View style={styles.nudgeFaces}>
+                  {nudgeFaces.map((f, i) => {
+                    const photo = friendPhotoOf(f.other_id);
+                    return (
+                      <View key={f.other_id} style={[styles.nudgeFace, i > 0 && styles.nudgeOverlap, isOut(f.other_id) && styles.nudgeLive]}>
+                        {photo ? <Image source={{ uri: photo }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Avatar name={f.handle ?? f.display_name ?? '?'} size={34} />}
+                      </View>
+                    );
+                  })}
+                  {!nudgeFaces.length ? <View style={[styles.nudgeFace, styles.nudgeEmpty]}><Text style={styles.nudgePlus}>+</Text></View> : null}
+                </View>
+                <View style={styles.nudgeText}>
+                  <Text style={styles.nudgeTitle} numberOfLines={1}>{nudged ? t('night.nudged', { name: nudged }) : t('night.nudge')}</Text>
+                  <Text style={styles.nudgeHint} numberOfLines={2}>{nudged ? t('night.nudge.again') : t('night.nudge.hint')}</Text>
+                </View>
+                <Text style={styles.nudgeArrow}>→</Text>
+              </Pressable>
             ) : null}
 
             {/* The synced sentence (one fixed line for every listed night) is not shown since 12.10.2026;
@@ -403,11 +441,11 @@ export default function NightScreen() {
       <Tips page="night" tip={{ title: 'tips.night.1.t', body: 'tips.night.1.b', motion: 'tap' }} bottom={insets.bottom + 84} />
       {reporting.sheet}
 
-      {night ? <NudgeSheet open={nudging} night={night} onClose={() => setNudging(false)} onSent={setNudged} /> : null}
+      {night ? <NudgeSheet open={nudging} night={night} onClose={() => setNudging(false)} onSent={setNudged} seed={{ friends: nudgeFriends, live: nudgeLive, photos: nudgePhotos }} /> : null}
 
       {/* Back from the ticket page: one question, once. */}
       <Modal visible={askTicket} transparent animationType="fade" onRequestClose={() => setAskTicket(false)}>
-        <Pressable style={styles.askDim} onPress={() => setAskTicket(false)} />
+        <Scrim onPress={() => setAskTicket(false)} />
         <View style={[styles.askSheet, { paddingBottom: insets.bottom + 18 }]}>
           <Text style={styles.askTitle}>{t('night.ask.ticket')}</Text>
           <Text style={styles.askNote}>{t('night.ask.ticket.note')}</Text>
@@ -427,14 +465,14 @@ const styles = StyleSheet.create({
   centre: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   // the ticket (design B)
   ticketWrap: { paddingHorizontal: brand.left, paddingTop: brand.top + 44 },
-  ticket: { backgroundColor: '#171512', borderRadius: radius.lg, overflow: 'hidden' },
+  ticket: { backgroundColor: colors.card, borderRadius: radius.lg, overflow: 'hidden', borderWidth: 1, borderColor: colors.edge },
   ticketPhoto: { backgroundColor: colors.ink2, overflow: 'hidden' },
   heroPhoto: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
   ticketShare: { right: 12, top: 12, bottom: 'auto' },
   ticketHead: { paddingHorizontal: 16, paddingTop: 14, paddingBottom: 12, gap: 6 },
   perf: { height: 2, marginHorizontal: 12, justifyContent: 'center' },
-  perfLine: { borderTopWidth: 2, borderStyle: 'dashed', borderColor: colors.ink3 },
-  notch: { position: 'absolute', top: -9, width: 18, height: 18, borderRadius: 9, backgroundColor: colors.ink },
+  perfLine: { borderTopWidth: 2, borderStyle: 'dashed', borderColor: colors.edge },
+  notch: { position: 'absolute', top: -9, width: 18, height: 18, borderRadius: 9, backgroundColor: colors.ink, borderWidth: 1, borderColor: colors.edge },
   notchLeft: { left: -21 },
   notchRight: { right: -21 },
   stub: { flexDirection: 'row', gap: 12, paddingHorizontal: 16, paddingTop: 14, paddingBottom: 4 },
@@ -447,7 +485,6 @@ const styles = StyleSheet.create({
   stubAction: { padding: 12, paddingTop: 10, gap: 8 },
   stubNote: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.2, color: colors.mute, textAlign: 'center' },
   // the question on return from the ticket page
-  askDim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.6)' },
   askSheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingHorizontal: brand.left, paddingTop: 20, gap: 14 },
   askTitle: { fontFamily: fonts.semibold, fontSize: 22, letterSpacing: -0.5, color: colors.paper },
   askNote: { fontFamily: fonts.regular, fontSize: 13, lineHeight: 18, color: colors.mute },
@@ -456,8 +493,19 @@ const styles = StyleSheet.create({
   body: { paddingHorizontal: brand.left, paddingTop: 18, gap: 22 },
   actions: { flexDirection: 'row', gap: 10 },
   text: { fontFamily: fonts.regular, fontSize: 16, lineHeight: 24, color: colors.paper2, opacity: 0.9 },
-  nudgeRow: { flexDirection: 'row' },
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.94)', alignItems: 'center', justifyContent: 'center', gap: 18 },
+  nudgeCard: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 12, borderRadius: radius.md, backgroundColor: tint(0.08), borderWidth: 1, borderColor: tint(0.45) },
+  nudgeFaces: { flexDirection: 'row' },
+  nudgeFace: { width: 38, height: 38, borderRadius: 19, overflow: 'hidden', borderWidth: 2, borderColor: colors.ink, backgroundColor: colors.ink3, alignItems: 'center', justifyContent: 'center' },
+  nudgeOverlap: { marginLeft: -12 },
+  nudgeLive: { borderColor: colors.spot },
+  nudgeEmpty: { backgroundColor: 'transparent', borderStyle: 'dashed', borderColor: colors.spotText },
+  nudgePlus: { fontFamily: fonts.medium, fontSize: 18, color: colors.spotText },
+  nudgeText: { flex: 1, minWidth: 0, gap: 2 },
+  nudgeTitle: { fontFamily: fonts.semibold, fontSize: 16, letterSpacing: -0.3, color: colors.spotText },
+  nudgeHint: { fontFamily: fonts.regular, fontSize: 12.5, lineHeight: 17, color: colors.mute },
+  nudgeArrow: { fontFamily: fonts.medium, fontSize: 20, color: colors.spotText },
+  pressed: { opacity: 0.7 },
+  dim: { flex: 1, backgroundColor: ground(0.94), alignItems: 'center', justifyContent: 'center', gap: 18 },
   cardLabel: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.spot },
   talk: { marginTop: 28, paddingTop: 18, borderTopWidth: 1, borderTopColor: colors.ink3, gap: 10 },
   topic: { gap: 4, paddingTop: 8 },

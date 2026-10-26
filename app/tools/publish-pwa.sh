@@ -9,8 +9,8 @@ BASE="${BASE:-/afterhours-pwa}"
 
 rm -rf dist
 PWA_BASE="$BASE" npx expo export -p web
-# public/index.html links the manifest and icon from the root; move them under the base.
-sed -i.bak "s#href=\"/manifest.json\"#href=\"$BASE/manifest.json\"#; s#href=\"/apple-touch-icon.png\"#href=\"$BASE/apple-touch-icon.png\"#" dist/index.html
+# public/index.html links the manifest, icon and start-up images from the root; move them under the base.
+sed -i.bak "s#href=\"/manifest.json\"#href=\"$BASE/manifest.json\"#; s#href=\"/apple-touch-icon.png\"#href=\"$BASE/apple-touch-icon.png\"#; s#href=\"/splash/#href=\"$BASE/splash/#g" dist/index.html
 rm dist/index.html.bak
 # GitHub Pages serves 404.html for unknown paths: deep links open the app.
 cp dist/index.html dist/404.html
@@ -22,5 +22,6 @@ cd "$TMP"
 git init -q -b main
 git add -A
 git commit -qm "PWA build $(date -u +%Y-%m-%dT%H:%MZ)"
-git push -f "$REPO" main
+# ~30 MB in one pack: the default 1 MB HTTP buffer ends in "RPC failed; HTTP 400".
+git -c http.postBuffer=524288000 push -f "$REPO" main
 echo "Published: $BASE"

@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Alert, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import KeyboardSafe from '@/components/KeyboardSafe';
 import { StatusBar } from 'expo-status-bar';
-import { useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import { Said } from '@/components/StaffPage';
@@ -9,12 +10,21 @@ import { useReport } from '@/components/ReportSheet';
 import { dmListen, dmSend, dmThread, dmUnsay, dmWaiting, why, type DmLine } from '@/data/dms';
 import { markDmSeen } from '@/data/messages';
 import { useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // A direct conversation (59_dms.sql): you and one friend. New lines are read every
 // 3 s while the page is open; a long press on your own line takes it back. The
 // other person's name comes with their first line (?name= until then).
+// A night in a message (nudge a friend sends the site link): the link becomes a button that
+// opens the night in the app, and the words stay (owner, 22.10.2026: no link to read).
+const NIGHT_LINK = /https?:\/\/\S*?(?:explore\/event\/index\.html\?slug=|\/night\/)([A-Za-z0-9-]+)\S*/;
+function nightOf(body: string): { text: string; slug: string | null } {
+  const m = NIGHT_LINK.exec(body);
+  if (!m) return { text: body, slug: null };
+  return { text: body.replace(m[0], '').replace(/\s+$/, ''), slug: decodeURIComponent(m[1]) };
+}
+
 export default function DmScreen() {
   const { id, name: given } = useLocalSearchParams<{ id: string; name?: string }>();
   const { t } = useLang();
@@ -77,25 +87,35 @@ export default function DmScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <View style={styles.band}>
         <Text style={styles.title} numberOfLines={1}>{name || t('messages.title')}</Text>
       </View>
-      <KeyboardAvoidingView style={styles.root} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardSafe style={styles.root}>
         <ScrollView ref={scroll} contentContainerStyle={styles.body} onContentSizeChange={() => scroll.current?.scrollToEnd({ animated: false })}>
           {!lines.length ? <Text style={styles.quiet}>{t('messages.dm.none')}</Text> : null}
           {lines.map((l) =>
             l.mine ? (
               <Pressable key={l.id} onLongPress={() => drop(l)} style={styles.mineWrap}>
                 <View style={styles.bubbleMine}>
-                  <Text style={styles.text}>{l.body}</Text>
+                  <Text style={[styles.text, styles.onSpot]}>{nightOf(l.body).text}</Text>
+                  {nightOf(l.body).slug ? (
+                    <Pressable onPress={() => router.push(`/night/${nightOf(l.body).slug}`)} accessibilityRole="button" style={({ pressed }) => [styles.nightBtn, styles.nightBtnOnSpot, pressed && styles.pressed]}>
+                      <Text style={[styles.nightBtnText, styles.nightBtnTextOnSpot]}>{t('messages.openNight')} →</Text>
+                    </Pressable>
+                  ) : null}
                 </View>
                 <Text style={styles.metaMine}>{time(l.created_at)}</Text>
               </Pressable>
             ) : (
               <Pressable key={l.id} onLongPress={() => reporting.ask('dm_message', String(l.id))} style={styles.theirsWrap}>
                 <View style={styles.bubble}>
-                  <Text style={styles.text}>{l.body}</Text>
+                  <Text style={styles.text}>{nightOf(l.body).text}</Text>
+                  {nightOf(l.body).slug ? (
+                    <Pressable onPress={() => router.push(`/night/${nightOf(l.body).slug}`)} accessibilityRole="button" style={({ pressed }) => [styles.nightBtn, pressed && styles.pressed]}>
+                      <Text style={styles.nightBtnText}>{t('messages.openNight')} →</Text>
+                    </Pressable>
+                  ) : null}
                 </View>
                 <Text style={styles.metaSmall}>{time(l.created_at)}</Text>
               </Pressable>
@@ -104,7 +124,7 @@ export default function DmScreen() {
           {waiting.map((w) => (
             <View key={w.id} style={styles.mineWrap}>
               <View style={[styles.bubbleMine, { opacity: 0.5 }]}>
-                <Text style={styles.text}>{w.body}</Text>
+                <Text style={[styles.text, styles.onSpot]}>{nightOf(w.body).text}</Text>
               </View>
               <Text style={styles.metaMine}>{t('offline.waiting')}</Text>
             </View>
@@ -125,17 +145,23 @@ export default function DmScreen() {
               style={styles.pillInput}
             />
             <Pressable onPress={send} style={({ pressed }) => [styles.send, !text.trim() && styles.sendOff, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t('groups.chat.send')}>
-              <Text style={styles.sendText}>↑</Text>
+              <Text style={[styles.sendText, styles.onSpot]}>↑</Text>
             </Pressable>
           </View>
         </View>
-      </KeyboardAvoidingView>
+      </KeyboardSafe>
       <BackButton lift={70} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  // words on a red fill stay light whatever the ground does (try/light)
+  onSpot: { color: colors.onSpot },
+  nightBtn: { alignSelf: 'flex-start', marginTop: 8, paddingVertical: 7, paddingHorizontal: 12, borderRadius: 999, backgroundColor: colors.spot },
+  nightBtnOnSpot: { backgroundColor: colors.onSpot },
+  nightBtnText: { fontFamily: fonts.medium, fontSize: 13, color: colors.onSpot },
+  nightBtnTextOnSpot: { color: colors.spot },
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 40, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top, left: brand.left + 40, right: brand.left + 40, textAlign: 'center', fontFamily: fonts.medium, fontSize: brand.smallSize, letterSpacing: -0.3, color: colors.paper },

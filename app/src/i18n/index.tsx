@@ -26,21 +26,32 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     [uid],
   );
 
-  // Use the account's language if nothing was chosen on this device.
+  // Use the account's language if nothing was chosen on this device. A brand-new account
+  // only carries the database default ('en'), so there the device's language wins instead,
+  // and either way the account is brought in line (pushes and the website read it).
+  const created = session?.user.created_at;
   useEffect(() => {
-    if (!uid || remembered()) return;
+    if (!uid) return;
     let live = true;
     (async () => {
       const settings = await fetchSettings(uid).catch(() => null);
-      const theirs = known(settings?.locale);
-      if (!live || !theirs || remembered()) return;
+      if (!live || !settings) return;
+      const theirs = known(settings.locale);
+      const fresh = !!created && Date.now() - Date.parse(created) < 10 * 60_000;
+      const mine = remembered() ?? (fresh ? getLang() : null);
+      if (mine) {
+        if (fresh) setCurrentLang(mine);
+        if (mine !== theirs) saveSettings(uid, { locale: mine }).catch(() => {});
+        return;
+      }
+      if (!theirs) return;
       setCurrentLang(theirs);
       setState(theirs);
     })();
     return () => {
       live = false;
     };
-  }, [uid]);
+  }, [uid, created]);
 
   const value = useMemo(() => ({ ...translator(lang), lang, setLang, up: (text: string) => upper(text, lang) }), [lang, setLang]);
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

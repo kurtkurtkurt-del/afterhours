@@ -1,3 +1,4 @@
+import { ground } from '@/theme/tokens';
 import { useEffect, useRef, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Image } from 'expo-image';
@@ -47,7 +48,7 @@ export default function DjsWaiting() {
               render={(d) => (
                 <View style={styles.card}>
                   {d.photo_url ? <Image source={{ uri: d.photo_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
-                  <LinearGradient colors={['rgba(14,13,12,0)', 'rgba(14,13,12,0.92)']} locations={[0.2, 0.7]} style={StyleSheet.absoluteFill} />
+                  <LinearGradient colors={[ground(0.0), ground(0.92)]} locations={[0.2, 0.7]} style={StyleSheet.absoluteFill} />
                   <View style={styles.cardText}>
                     <Text style={styles.meta}>{`@${d.owner ?? '—'} · ${d.created_at.slice(0, 10)}`}</Text>
                     <Text style={styles.title}>{d.name}</Text>

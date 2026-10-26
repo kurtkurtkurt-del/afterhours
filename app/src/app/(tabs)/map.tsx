@@ -29,7 +29,7 @@ import { friendsKept } from '@/data/friends';
 import { sparksNear, type NearSpark } from '@/data/sparks';
 import { sparkOf } from '@/content/sparks';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, ground, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // Without a location: the selected city's centre, else Munich.
@@ -92,7 +92,8 @@ export default function MapScreen() {
 
   const current = useHere();
   const stored = current.city ?? 'munchen';
-  const cityName = here?.name ?? current.name ?? stored;
+  // With no city chosen yet only the slug is stored; the list knows its name ("münchen").
+  const cityName = current.name ?? cities.find((c) => c.id === stored)?.name ?? here?.name ?? stored;
   const fallbackCentre = CENTRES[stored] ?? CENTRES.munchen;
   const atCity = follow === 'city' || !me;
   const centre = !atCity && me ? me : (here?.centre ?? fallbackCentre);
@@ -270,7 +271,7 @@ export default function MapScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <MapWeb
         key={fresh}
         recenter={recenter}
@@ -443,7 +444,7 @@ export default function MapScreen() {
         }}
         onClose={() => setSheet(null)}
       />
-      <Tips page="map" tip={{ title: 'tips.map.1.t', body: 'tips.map.1.b', motion: 'tap' }} bottom={tabSpace + 12} />
+      <Tips page="map" tip={{ title: 'tips.map.1.t', body: 'tips.map.1.b', motion: 'pins' }} bottom={tabSpace + 12} />
     </View>
   );
 }
@@ -454,7 +455,7 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   head: { position: 'absolute', left: brand.left, right: brand.left, zIndex: 1 },
   city: { flexDirection: 'row', alignItems: 'center', gap: 8, alignSelf: 'flex-start', maxWidth: '72%' },
-  cityText: { flexShrink: 1, fontFamily: fonts.semibold, fontSize: 26, lineHeight: 30, letterSpacing: -0.8, color: colors.paper, textShadowColor: 'rgba(14,13,12,0.6)', textShadowRadius: 8 },
+  cityText: { flexShrink: 1, fontFamily: fonts.semibold, fontSize: 26, lineHeight: 30, letterSpacing: -0.8, color: colors.paper, textShadowColor: ground(0.6), textShadowRadius: 8 },
   pills: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 10 },
   title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
   subRow: { position: 'absolute', top: brand.top + 32, left: brand.left, flexDirection: 'row', alignItems: 'baseline', gap: 10 },

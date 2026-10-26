@@ -24,7 +24,7 @@ import type { Preview } from '@/data/previews';
 import ShareButton from '@/components/ShareButton';
 import { shareNight } from '@/lib/share';
 import CardFace, { Hint, openDetails, openTicket, toDeckCard, type DeckCard, type DeckFriend } from '@/components/CardFace';
-import { sparkTimes, type Spark } from '@/content/sparks';
+import { sparkTimes, sparkWords, type Spark } from '@/content/sparks';
 import type { SparkInvite } from '@/data/sparks';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
@@ -42,14 +42,15 @@ export const isCard = (e: DeckEntry): e is CardEntry => 'card' in e;
 export const openSpark = (e: SparkEntry) => router.push(e.invite ? `/spark/${e.spark.kind}?invite=${e.invite.id}` : `/spark/${e.spark.kind}`);
 
 // A spark drawn as a ticket card: its photo, its name, the suggested time and place.
-function sparkCard(e: SparkEntry, t: ReturnType<typeof useLang>['t']): DeckCard {
+function sparkCard(e: SparkEntry, t: ReturnType<typeof useLang>['t'], lang: ReturnType<typeof useLang>['lang']): DeckCard {
   const inv = e.invite;
   const host = inv ? (inv.host_name ?? inv.host_handle ?? '').toLowerCase() : '';
+  const words = sparkWords(e.spark, lang, t);
   return {
     key: e.id,
     slug: '',
-    title: inv ? inv.title : t(e.spark.title).replace(/\.$/, ''),
-    venue: inv ? inv.place : t(e.spark.places[0]),
+    title: inv ? inv.title : words.title.replace(/\.$/, ''),
+    venue: inv ? inv.place : words.place,
     city: '',
     kind: t(e.spark.label),
     source: 'spark',
@@ -61,7 +62,7 @@ function sparkCard(e: SparkEntry, t: ReturnType<typeof useLang>['t']): DeckCard 
     friends: [],
     note: inv
       ? [t('spark.hosting', { name: host }), inv.wave && inv.wave > 1 ? t(inv.wave === 2 ? 'deck.wave2' : 'deck.wave3') : null, t('spark.going', { n: inv.going })].filter(Boolean).join(' · ')
-      : t('spark.swipe'),
+      : e.spark.say ? words.line : t('spark.swipe'),
   };
 }
 type Props = {
@@ -77,6 +78,13 @@ type Props = {
   onAbout?: (entry: DeckEntry) => void;
   // listen to the artist (63): nights with a preview show the button (components/Listen.tsx).
   previewOf?: (entry: DeckEntry) => Preview | undefined;
+  // a specialty deck: the cards have no ground of their own, its room of motifs shows
+  room?: boolean;
+  // How many nights the city lists, swiped or not. The server leaves out what you
+  // swiped, so a deck that arrives empty in a city with nights means you have seen
+  // them all: the empty state then says so and offers to start over (26.10.2026 —
+  // before, it said "nothing listed yet" with no way back).
+  listed?: number;
 };
 // swipe: the same as throwing the top card that way (the buttons under the deck).
 export type DeckHandle = { undo: () => void; swipe: (direction: Direction) => void };
@@ -100,16 +108,17 @@ const SwipeCard = forwardRef<CardHandle, {
   top: number;
   onDone: (direction: Direction) => void;
   onAbout?: () => void;
+  room?: boolean;
   listen?: { preview: Preview; playing: boolean; elapsed: number; duration: number; toggle: () => void; stop: () => void };
-}>(function SwipeCard({ night, friends, active, drag, bottom, top, onDone, onAbout, listen }, ref) {
+}>(function SwipeCard({ night, friends, active, drag, bottom, top, onDone, onAbout, listen, room }, ref) {
   const { width } = useWindowDimensions();
   const x = useSharedValue(0);
   const y = useSharedValue(0);
   // The card behind is hidden and fades in once promoted.
   const shown = useSharedValue(active ? 1 : 0);
   const spark = isSpark(night) ? night : null;
-  const { t, up } = useLang();
-  const card = spark ? sparkCard(spark, t) : isCard(night) ? night.card : toDeckCard(night as Night, friends);
+  const { t, up, lang } = useLang();
+  const card = spark ? sparkCard(spark, t, lang) : isCard(night) ? night.card : toDeckCard(night as Night, friends);
 
   const flyOff = useCallback(
     (dir: Direction) => {
@@ -168,8 +177,9 @@ const SwipeCard = forwardRef<CardHandle, {
 
   return (
     <GestureDetector gesture={pan}>
-      <Animated.View style={[styles.slot, style]}>
+      <Animated.View style={[styles.slot, room && styles.slotClear, style]}>
         <CardFace
+          room={room}
           card={card}
           bottom={bottom}
           fit={{ top }}
@@ -204,7 +214,7 @@ const SwipeCard = forwardRef<CardHandle, {
   );
 });
 
-const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bottom, top: posterTop, onSwipe, onUndo, onReset, hasAbout, onAbout, previewOf }, ref) {
+const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bottom, top: posterTop, onSwipe, onUndo, onReset, hasAbout, onAbout, previewOf, room, listed }, ref) {
   const { t, up } = useLang();
   // one preview at a time; a swipe stops it (the ambient music is hushed meanwhile)
   const track = useTrack();
@@ -259,11 +269,12 @@ const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bo
   );
 
   if (!top) {
+    const seenAll = nights.length > 0 || (listed ?? 0) > 0;
     return (
       <View style={[styles.empty, { paddingBottom: bottom }]}>
         <Text style={styles.emptyText}>{t('deck.empty')}</Text>
-        <Text style={styles.emptyMono}>{up(nights.length ? t('deck.seenAll') : t('deck.nothing'))}</Text>
-        {onReset && nights.length > 0 ? (
+        <Text style={styles.emptyMono}>{up(seenAll ? t('deck.seenAll') : t('deck.nothing'))}</Text>
+        {onReset && seenAll ? (
           <View style={styles.resetBtn}>
             <Button label={t('deck.startOver')} kind="line" onPress={onReset} />
           </View>
@@ -276,13 +287,14 @@ const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bo
   // behind is not recreated when it moves to the front.
   return (
     <View style={styles.stage}>
-      {next && <SwipeCard ref={nextRef} key={next.id} night={next} friends={isSpark(next) || isCard(next) ? [] : (friendsOf?.(next) ?? [])} active={false} drag={drag} bottom={bottom} top={posterTop} onDone={done} />}
+      {next && <SwipeCard ref={nextRef} key={next.id} night={next} friends={isSpark(next) || isCard(next) ? [] : (friendsOf?.(next) ?? [])} active={false} drag={drag} bottom={bottom} top={posterTop} onDone={done} room={room} />}
       <SwipeCard
         ref={topRef}
         key={top.id}
         night={top}
         friends={isSpark(top) || isCard(top) ? [] : (friendsOf?.(top) ?? [])}
         active
+        room={room}
         drag={drag}
         bottom={bottom}
         top={posterTop}
@@ -319,6 +331,7 @@ const styles = StyleSheet.create({
   burstMark: { width: 84, height: 84, borderRadius: 42, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center', shadowColor: '#000', shadowOpacity: 0.35, shadowRadius: 18, shadowOffset: { width: 0, height: 8 }, elevation: 8 },
   burstText: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.paper, backgroundColor: colors.ink, paddingHorizontal: 10, paddingVertical: 4, borderRadius: radius.pill, overflow: 'hidden' },
   slot: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: colors.ink, overflow: 'hidden', borderRadius: radius.lg },
+  slotClear: { backgroundColor: 'transparent' },
   edgeRight: { position: 'absolute', top: 0, right: 0, bottom: 0, width: 56, backgroundColor: colors.spot },
   edgeLeft: { position: 'absolute', top: 0, left: 0, bottom: 0, width: 56, borderRightWidth: 1.5, borderRightColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
   letGo: { fontFamily: fonts.jet, fontSize: 11, letterSpacing: 2, color: colors.paper, transform: [{ rotate: '-90deg' }], width: 120, textAlign: 'center' },

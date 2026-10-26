@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { KeyboardAvoidingView, Modal, type KeyboardTypeOptions, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Modal, type KeyboardTypeOptions, StyleSheet, Text, View } from 'react-native';
+import Scrim from '@/components/Scrim';
+import KeyboardSafe from '@/components/KeyboardSafe';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
@@ -27,8 +29,8 @@ export default function CodeSheet({ open, title, go, error, onSubmit, onClose, s
   const [code, setCode] = useState('');
   return (
     <Modal visible={open} transparent animationType="fade" onRequestClose={onClose}>
-      <KeyboardAvoidingView style={styles.wrap} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-        <Pressable style={styles.dim} onPress={onClose} />
+      <KeyboardSafe style={styles.wrap}>
+        <Scrim onPress={onClose} />
         <View style={[styles.sheet, { paddingBottom: insets.bottom + 24 }]}>
           <Text style={styles.head}>{up(title)}</Text>
           <Input value={code} onChangeText={setCode} autoFocus returnKeyType="done" onSubmitEditing={() => onSubmit(code)} secureTextEntry={secure} keyboardType={keyboardType} textContentType={secure ? 'newPassword' : keyboardType === 'email-address' ? 'emailAddress' : undefined} />
@@ -37,14 +39,13 @@ export default function CodeSheet({ open, title, go, error, onSubmit, onClose, s
             <Button label={go} onPress={() => onSubmit(code)} />
           </View>
         </View>
-      </KeyboardAvoidingView>
+      </KeyboardSafe>
     </Modal>
   );
 }
 
 const styles = StyleSheet.create({
   wrap: { flex: 1 },
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.6)' },
   sheet: { backgroundColor: colors.ink, borderWidth: 1, borderBottomWidth: 0, borderColor: colors.ink3, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, paddingHorizontal: brand.left, paddingTop: 12 },
   head: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute, marginBottom: 6 },
   error: { fontFamily: fonts.regular, fontSize: 12, color: colors.spot, marginTop: 10 },

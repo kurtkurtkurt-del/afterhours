@@ -17,7 +17,7 @@ import * as AppleAuthentication from 'expo-apple-authentication';
 import GoogleMark from '@/components/GoogleMark';
 import { useT } from '@/i18n';
 import { supabase } from '@/lib/supabase';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // Sign up / sign in.
@@ -95,7 +95,7 @@ export default function SignUpScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <EdgeBack />
       <SoundCorner />
       <KeyboardAvoidingView behavior="padding" style={styles.body}>

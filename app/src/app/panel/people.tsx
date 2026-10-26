@@ -122,12 +122,12 @@ export default function People() {
                 <Text style={styles.name} numberOfLines={1}>{name}</Text>
                 {p.banned ? (
                   <View style={[styles.badge, styles.badgeRed]}>
-                    <Text style={styles.badgeText}>{t('staff.ban.badge')}</Text>
+                    <Text style={[styles.badgeText, styles.onSpot]}>{t('staff.ban.badge')}</Text>
                   </View>
                 ) : null}
                 {short[p.role] ? (
                   <View style={[styles.badge, p.role !== 'dj' && styles.badgeRed]}>
-                    <Text style={styles.badgeText}>{short[p.role]}</Text>
+                    <Text style={[styles.badgeText, p.role !== 'dj' && styles.onSpot]}>{short[p.role]}</Text>
                   </View>
                 ) : null}
               </View>
@@ -164,6 +164,8 @@ export default function People() {
 }
 
 const styles = StyleSheet.create({
+  // words on a red fill stay light whatever the ground does (try/light)
+  onSpot: { color: colors.onSpot },
   search: { flexDirection: 'row', alignItems: 'center', gap: 10, height: 48, borderRadius: radius.pill, backgroundColor: colors.ink3, paddingHorizontal: 16 },
   searchMark: { fontFamily: fonts.medium, fontSize: 18, color: colors.mute },
   searchInput: { flex: 1, fontFamily: fonts.regular, fontSize: 16, color: colors.paper, paddingVertical: 0 },

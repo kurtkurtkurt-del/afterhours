@@ -2,7 +2,7 @@ import { forwardRef, useImperativeHandle, useState, type ReactNode } from 'react
 import { StyleSheet, Text, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, { interpolate, runOnJS, useAnimatedStyle, useSharedValue, withTiming, Extrapolation } from 'react-native-reanimated';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, ground } from '@/theme/tokens';
 
 export type Way = 'left' | 'right' | 'down';
 export type StackHandle = { swipe: (way: Way) => void };
@@ -99,7 +99,7 @@ export default SwipeStack;
 const styles = StyleSheet.create({
   fill: { flex: 1 },
   card: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: radius.lg, overflow: 'hidden', backgroundColor: colors.ink },
-  stamp: { position: 'absolute', top: 28, paddingHorizontal: 12, paddingVertical: 6, borderWidth: 2.5, borderRadius: radius.sm, backgroundColor: 'rgba(14,13,12,0.35)' },
+  stamp: { position: 'absolute', top: 28, paddingHorizontal: 12, paddingVertical: 6, borderWidth: 2.5, borderRadius: radius.sm, backgroundColor: ground(0.35) },
   stampRight: { left: 20, borderColor: colors.spot, transform: [{ rotate: '-12deg' }] },
   stampLeft: { right: 20, borderColor: colors.paper, transform: [{ rotate: '12deg' }] },
   stampDown: { alignSelf: 'center', left: '30%', top: 60, borderColor: colors.paper },

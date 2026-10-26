@@ -128,22 +128,22 @@ function Frames({ item, onEnd, onBackPast, onClose }: { item: StoryItem; onEnd: 
 }
 
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: colors.ink },
+  root: { flex: 1, backgroundColor: colors.poster },
   zones: { flex: 1, flexDirection: 'row' },
   zoneBack: { flex: 1 },
   zoneNext: { flex: 2 },
   top: { position: 'absolute', top: 0, left: 0, right: 0, paddingHorizontal: 12 },
   bars: { flexDirection: 'row', gap: 4 },
   track: { flex: 1, height: 3, borderRadius: 2, backgroundColor: 'rgba(243,241,236,0.3)', overflow: 'hidden' },
-  fill: { height: '100%', backgroundColor: colors.paper },
+  fill: { height: '100%', backgroundColor: colors.onPhoto },
   head: { flexDirection: 'row', alignItems: 'center', marginTop: 12, paddingHorizontal: 4 },
   who: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 10 },
   pressed: { opacity: 0.7 },
   avatar: { width: 32, height: 32, borderRadius: 16, borderWidth: 1.5, borderColor: colors.paper },
-  name: { fontFamily: fonts.semibold, fontSize: 15, color: colors.paper },
-  ago: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 0.8, color: colors.mute },
+  name: { fontFamily: fonts.semibold, fontSize: 15, color: colors.onPhoto },
+  ago: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 0.8, color: colors.onPhotoMute },
   close: { paddingHorizontal: 6 },
-  closeText: { fontSize: 30, lineHeight: 32, color: colors.paper },
+  closeText: { fontSize: 30, lineHeight: 32, color: colors.onPhoto },
   bottom: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingHorizontal: 20 },
-  caption: { fontFamily: fonts.semibold, fontSize: 24, lineHeight: 28, letterSpacing: -0.6, color: colors.paper },
+  caption: { fontFamily: fonts.semibold, fontSize: 24, lineHeight: 28, letterSpacing: -0.6, color: colors.onPhoto },
 });

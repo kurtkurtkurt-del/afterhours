@@ -14,6 +14,11 @@ export const home = {
   'tagline.4': { en: 'the night is a map. start walking.', de: 'die nacht ist eine karte. lauf los.', tr: 'gece bir harita. yürümeye başla.' },
   'tagline.5': { en: "explore what's still going at 4am.", de: 'entdecke, was um 4 uhr noch läuft.', tr: "sabah 4'te hâlâ süren ne varsa keşfet." },
 
+  // The web app opened in Safari on an iPhone (components/InstallHint.tsx).
+  'install.title': { en: 'put it on your home screen', de: 'auf den home-bildschirm', tr: 'ana ekranına ekle' },
+  'install.body': { en: 'share ↑ → add to home screen. it then opens full screen, like an app.', de: 'teilen ↑ → zum home-bildschirm. dann öffnet es sich im vollbild, wie eine app.', tr: 'paylaş ↑ → ana ekrana ekle. sonra uygulama gibi tam ekran açılır.' },
+  'install.ok': { en: 'ok', de: 'ok', tr: 'tamam' },
+
   'sound.off': { en: 'sound', de: 'sound', tr: 'ses' },
   'sound.on': { en: 'sound on', de: 'sound an', tr: 'ses açık' },
   'sound.hint': { en: 'tap for sound · hold to pick a genre', de: 'tippen für sound · halten für genre', tr: 'ses için dokun · tür için basılı tut' },

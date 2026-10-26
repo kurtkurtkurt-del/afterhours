@@ -17,13 +17,14 @@ import { friendRemove, person, personPeople, type Found, type PersonCard } from 
 import { friendPhotos } from '@/data/photo';
 import { personCards, toCardData } from '@/data/checkin';
 import { useProfileExtra } from '@/data/profile';
+import { useRunsVenues } from '@/data/venues';
 import { useShelf } from '@/lib/offline';
 import { refreshYours } from '@/data/yours';
 import { collection as samples } from '@/content/collection';
 import { SAMPLES as SAMPLES_ON } from '@/content/samples';
 import type { NightCardData } from '@/content/cardsgen';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, ground, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 import PillAction, { PillRow } from '@/components/PillAction';
 
@@ -123,6 +124,7 @@ export default function PersonScreen() {
     ? [`@${upperData(card.handle)}`, card.city_name ? upperData(card.city_name) : null, sinceText, example ? up(t('person.sample')) : null].filter(Boolean).join(' · ')
     : '';
 
+  const runs = useRunsVenues(handle ?? null, !!example);
   const collection = example ? samples : (cards ?? []);
 
   const inner = width - brand.left * 2;
@@ -130,7 +132,8 @@ export default function PersonScreen() {
   const cardH = cardW * 1.5;
   const top = brand.top + 48;
   // Push the collection down until half of its cards fill the bottom of the first screen.
-  const gap = rootH && aboveH && headH ? Math.max(0, rootH - insets.bottom - (top + aboveH + headH + cardH / 2)) : 0;
+  // Capped at the window: on the web the root grows with the gap and would feed it back.
+  const gap = rootH && aboveH && headH ? Math.max(0, Math.min(rootH, height) - insets.bottom - (top + aboveH + headH + cardH / 2)) : 0;
 
   const band = (
     <View style={styles.band}>
@@ -140,7 +143,7 @@ export default function PersonScreen() {
   );
   return (
     <View style={styles.root} onLayout={(e) => setRootH(e.nativeEvent.layout.height)}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <PullDownScroll header={band} contentContainerStyle={[styles.body, { paddingTop: top, paddingBottom: insets.bottom + 40 }]} showsVerticalScrollIndicator={false}>
         {!loaded ? (
           <Text style={[styles.note, styles.pad]}>{up(t('person.loading'))}</Text>
@@ -151,6 +154,7 @@ export default function PersonScreen() {
             <View style={styles.pad} onLayout={(e) => setAboveH(e.nativeEvent.layout.height)}>
               <Sleeve width={inner} photo={photo} name={name} meta={meta} disc={up(tn('account.nNights', collection.length))} city={card.city_name} onPhotoError={() => setPhoto(null)} />
 
+              {runs.length ? <Text style={styles.runs}>{up(t('desk.runs', { rooms: runs.map((r) => `${r.name} · ${r.city_name}`.toLowerCase()).join(', ') }))}</Text> : null}
               {card.bio ? <Text style={styles.bio}>{card.bio}</Text> : null}
               {!example && extra?.about ? <Text style={styles.about}>{extra.about}</Text> : null}
 
@@ -245,6 +249,7 @@ const styles = StyleSheet.create({
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, backgroundColor: colors.ink, zIndex: 2 },
   body: {},
   pad: { paddingHorizontal: brand.left },
+  runs: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.spotText, marginTop: 14 },
   bio: { fontFamily: fonts.medium, fontSize: 19, lineHeight: 25, letterSpacing: -0.4, color: colors.paper, marginTop: 22 },
   about: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 23, color: colors.mute, marginTop: 8 },
   action: { marginTop: 20 },
@@ -258,6 +263,6 @@ const styles = StyleSheet.create({
   hidden: { fontFamily: fonts.medium, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
   note: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta },
   pressed: { opacity: 0.7 },
-  dim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.92)', alignItems: 'center', justifyContent: 'center', gap: 18 },
+  dim: { flex: 1, backgroundColor: ground(0.92), alignItems: 'center', justifyContent: 'center', gap: 18 },
   flipHint: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
 });

@@ -11,7 +11,7 @@ import { markRoomSeen } from '@/data/messages';
 import { upperData, useLang } from '@/i18n';
 import { fetchNight } from '@/data/deck';
 import { useShelf } from '@/lib/offline';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 const two = (n: number) => String(n).padStart(2, '0');
@@ -109,7 +109,7 @@ export default function RoomScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <View style={styles.band} pointerEvents="box-none">
         <BackButton lift={open ? 96 : 0} />
       </View>

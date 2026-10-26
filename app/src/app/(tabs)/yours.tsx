@@ -20,7 +20,7 @@ import ShareButton from '@/components/ShareButton';
 import { shareNight } from '@/lib/share';
 import { useLocalCity } from '@/data/here';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // Yours, the feed. Top to bottom: stories (ringed faces, as on Instagram), then one
@@ -81,7 +81,7 @@ function YoursScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <View style={styles.band}>
         <Text style={styles.title}>{t('yours.title')}</Text>
         {/* + : a new post */}

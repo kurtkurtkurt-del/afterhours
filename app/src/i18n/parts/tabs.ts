@@ -103,6 +103,7 @@ export const tabs = {
   'spark.kind.tram': { en: 'night tram', de: 'nachttram', tr: 'gece tramvayı' },
   'spark.kind.jazz': { en: 'jazz', de: 'jazz', tr: 'caz' },
   'spark.kind.walk': { en: 'night walk', de: 'nachtspaziergang', tr: 'gece yürüyüşü' },
+  'make.search': { en: 'what are you up for?', de: 'worauf hast du lust?', tr: 'ne yapmak istersin?' },
   'spark.createIt': { en: 'create it', de: 'jetzt starten', tr: 'hemen yarat' },
   'spark.change': { en: 'change it if you like', de: 'ändere es, wenn du willst', tr: 'istersen değiştir' },
   'spark.answered.in': { en: "you're in.", de: 'du bist dabei.', tr: 'varsın.' },
@@ -673,6 +674,15 @@ export const tabs = {
   'spark.in': { en: "i'm in", de: 'bin dabei', tr: 'varım' },
   'spark.out': { en: 'not this time', de: 'diesmal nicht', tr: 'bu sefer yok' },
   'spark.going': { en: '{n} in so far', de: 'bisher {n} dabei', tr: 'şimdilik {n} kişi var' },
+  // 96_spark_edit.sql: the host changes it later; the ones who said in hear about it
+  'spark.edit': { en: 'edit', de: 'bearbeiten', tr: 'düzenle' },
+  'spark.edit.note': { en: 'everyone who said in hears about the change', de: 'alle, die dabei sind, erfahren von der änderung', tr: 'varım diyen herkese değişiklik bildirilir' },
+  'spark.edit.day': { en: 'day', de: 'tag', tr: 'gün' },
+  'spark.edit.time': { en: 'time', de: 'uhrzeit', tr: 'saat' },
+  'spark.edit.same': { en: 'nothing changed', de: 'nichts geändert', tr: 'değişiklik yok' },
+  'spark.edit.saved': { en: 'saved', de: 'gespeichert', tr: 'kaydedildi' },
+  'spark.edit.told.one': { en: 'saved · {n} person heard about it', de: 'gespeichert · {n} person weiß bescheid', tr: 'kaydedildi · {n} kişiye haber gitti' },
+  'spark.edit.told.other': { en: 'saved · {n} people heard about it', de: 'gespeichert · {n} personen wissen bescheid', tr: 'kaydedildi · {n} kişiye haber gitti' },
 
   // deck, card face, deck viewer
   'deck.yours': { en: 'your deck', de: 'dein stapel', tr: 'senin desten' },
@@ -743,7 +753,17 @@ export const tabs = {
   'yours.pastEnd': { en: 'that is a year of nights.', de: 'das ist ein jahr voller nächte.', tr: 'bu kadar: bir yıllık gece.' },
   'people.title': { en: 'people.', de: 'leute.', tr: 'insanlar.' },
   'connect.title': { en: 'connect.', de: 'connect.', tr: 'connect.' },
-  'connect.groups.none': { en: 'make a group: friends who find a night together, or a trip', de: 'mach eine gruppe: freunde, die zusammen eine nacht finden, oder eine reise', tr: 'bir grup kur: birlikte gece bulan arkadaşlar ya da bir seyahat' },
+  // specialties (content/specials.ts): decks of one occasion, under the groups
+  'special.title': { en: 'specialties', de: 'besondere nächte', tr: 'özel geceler' },
+  'special.halloween': { en: 'halloween', de: 'halloween', tr: 'cadılar bayramı' },
+  'special.newyear': { en: 'new year', de: 'silvester', tr: 'yılbaşı' },
+  'special.july4': { en: 'fourth of july', de: '4. juli', tr: '4 temmuz' },
+  'special.oktoberfest': { en: 'oktoberfest', de: 'oktoberfest', tr: 'oktoberfest' },
+  'special.nights.one': { en: '{n} night', de: '{n} nacht', tr: '{n} gece' },
+  'special.nights.other': { en: '{n} nights', de: '{n} nächte', tr: '{n} gece' },
+  'special.back': { en: 'back in {month}', de: 'wieder im {month}', tr: '{month} ayında döner' },
+  'special.empty': { en: 'nothing listed for this one yet. the nights arrive as the day gets closer.', de: 'dafür ist noch nichts gelistet. die nächte kommen, je näher der tag rückt.', tr: 'bunun için henüz bir şey yok. gün yaklaştıkça geceler gelir.' },
+  'connect.groups.none':{ en: 'make a group: friends who find a night together, or a trip', de: 'mach eine gruppe: freunde, die zusammen eine nacht finden, oder eine reise', tr: 'bir grup kur: birlikte gece bulan arkadaşlar ya da bir seyahat' },
   'connect.groups.all': { en: 'all groups', de: 'alle gruppen', tr: 'tüm gruplar' },
   'connect.group.travel': { en: 'travel · {n} travelling', de: 'reise · {n} reisen', tr: 'seyahat · {n} yolcu' },
   'connect.group.people': { en: '{n} people', de: '{n} leute', tr: '{n} kişi' },
@@ -942,6 +962,7 @@ export const tabs = {
   'account.links.empty': { en: 'connect instagram, spotify, soundcloud…', de: 'verbinde instagram, spotify, soundcloud…', tr: 'instagram, spotify, soundcloud… bağla' },
   'account.next': { en: 'coming up', de: 'als nächstes', tr: 'sırada' },
   'account.next.empty': { en: 'nothing kept yet. keep a night in the flow.', de: 'noch nichts behalten. behalte eine nacht im flow.', tr: 'henüz bir şey saklamadın. akışta bir gece sakla.' },
+  'account.cities.notYet': { en: 'not been yet', de: 'noch nicht dort gewesen', tr: 'henüz gidilmedi' },
   'account.sparks': { en: 'your sparks', de: 'deine sparks', tr: "spark'ların" },
   'account.sparks.empty': { en: 'nothing started yet. swipe a spark right.', de: 'noch nichts gestartet. wisch einen spark nach rechts.', tr: "henüz bir şey başlatmadın. bir spark'ı sağa kaydır." },
   'account.sparks.answers': { en: '{in} in · {out} out', de: '{in} dabei · {out} nicht', tr: '{in} var · {out} yok' },
@@ -965,4 +986,6 @@ export const tabs = {
   'account.flip': { en: 'tap the card to turn it', de: 'tipp die karte, um sie zu drehen', tr: 'çevirmek için karta dokun' },
   'account.roomFrozen': { en: 'the room, frozen', de: 'der raum, eingefroren', tr: 'oda, donmuş' },
   'account.roomOpen': { en: 'the room is open', de: 'der raum ist offen', tr: 'oda açık' },
+  // 98_spark_days.sql: the night agent's line on why the day's spark reads as it does
+  'spark.day.why': { en: 'tonight, because', de: 'heute, weil', tr: 'bu gece, çünkü' },
 } as const;

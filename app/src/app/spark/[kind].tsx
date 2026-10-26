@@ -4,22 +4,24 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Tips from '@/components/Tips';
 import { KeyboardAvoidingView, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Image } from 'expo-image';
+import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
+import DayPicker, { fromIso, isoDay } from '@/components/DayPicker';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
 import PullDownScroll from '@/components/PullDownScroll';
 import SoundCorner from '@/components/SoundCorner';
 import { useAuth } from '@/auth/AuthContext';
-import { sparkIn, sparkOf, sparkTimes, type Spark } from '@/content/sparks';
+import { sparkIn, sparkOf, sparkTimes, sparkWords, type Spark, type SparkDayMap } from '@/content/sparks';
 import { sparkHint, type SparkHint } from '@/data/sparkHints';
 import { useHere } from '@/data/here';
 import * as Location from 'expo-location';
-import { sparkAnswer, sparkAudience, sparkCancel, sparkCreate, sparkGet, sparkPeople, SparksNotReady, type Audience, type Reach, type SeenSpark, type SparkPerson } from '@/data/sparks';
+import { sparkDay, sparkAnswer, sparkAudience, sparkCancel, sparkCreate, sparkEdit, sparkGet, sparkPeople, SparksNotReady, type Audience, type Reach, type SeenSpark, type SparkPerson } from '@/data/sparks';
 import { upperData, useLang, type Key } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, barStyle, scrim, paperTint } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 import PillAction from '@/components/PillAction';
 
@@ -32,10 +34,26 @@ const two = (n: number) => String(n).padStart(2, '0');
 // be changed. Who gets it is a wave, not a list: 1st your friends, 2nd their friends
 // too, 3rd one step further; everyone inside finds it in their spark panel.
 // Opened with ?invite=<id>, it is someone else's spark: in / out instead.
+// The day's words (98_spark_days.sql) are read before the form is drawn, so its fields
+// start with them; a city without a night agent gets its generic version at once.
 export default function SparkScreen() {
+  const city = useHere().city;
+  const [day, setDay] = useState<{ city: string | null; map: SparkDayMap } | null>(null);
+  useEffect(() => {
+    let live = true;
+    sparkDay(city).then((map) => live && setDay({ city, map }));
+    return () => {
+      live = false;
+    };
+  }, [city]);
+  if (!day || day.city !== city) return <View style={styles.root} />;
+  return <SparkForm key={city ?? ''} city={city} day={day.map} />;
+}
+
+function SparkForm({ city, day }: { city: string | null; day: SparkDayMap }) {
   const { kind, invite: inviteId } = useLocalSearchParams<{ kind: string; invite?: string }>();
-  // The city's own version when it has one (Munich: real places).
-  const spark = sparkIn(sparkOf(kind), useHere().city);
+  // The city's own version when it has one (Munich: real places), and the day's words.
+  const spark = sparkIn(sparkOf(kind), city, day);
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const { t } = useLang();
@@ -56,7 +74,7 @@ export default function SparkScreen() {
   );
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
         <PullDownScroll header={band} contentContainerStyle={{ paddingBottom: insets.bottom + 32 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
           {inviteId ? (
@@ -76,11 +94,11 @@ function Hero({ spark, title, width }: { spark: Spark; title: string; width: num
   return (
     <View style={[styles.hero, { height: width * 1.1 }]}>
       <Image source={spark.photo} style={styles.heroPhoto} contentFit="cover" />
-      <View style={styles.heroShade} />
+      <LinearGradient colors={[scrim(0), scrim(0.82)]} style={styles.heroShade} pointerEvents="none" />
       <View style={styles.heroText}>
-        <Text style={styles.mono}>{up(t(spark.label))} · {upperData('spark')}</Text>
+        <Text style={styles.heroMono}>{up(t(spark.label))} · {upperData('spark')}</Text>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.mono}>{up(t('spark.kicker'))}</Text>
+        <Text style={styles.heroMono}>{up(t('spark.kicker'))}</Text>
       </View>
     </View>
   );
@@ -88,12 +106,13 @@ function Hero({ spark, title, width }: { spark: Spark; title: string; width: num
 
 function CreateBody({ spark, width, whenText }: { spark: Spark; width: number; whenText: (at: Date) => string }) {
   const { session } = useAuth();
-  const { t, tn, up } = useLang();
+  const { t, tn, up, lang } = useLang();
+  const words = sparkWords(spark, lang, t);
   const here = useHere();
   // The real next match, or the days the forecast likes; the plain hours until then.
   const [hint, setHint] = useState<SparkHint | null>(null);
   const titled = useRef(false);
-  const [title, setTitle] = useState(() => t(spark.title).replace(/\.$/, ''));
+  const [title, setTitle] = useState(() => words.title.replace(/\.$/, ''));
   const [when, setWhen] = useState(0);
   useEffect(() => {
     let live = true;
@@ -116,7 +135,7 @@ function CreateBody({ spark, width, whenText }: { spark: Spark; width: number; w
     if ('match' in n) return n.match;
     return `${n.tmax}° · ${n.rain <= 20 ? t('spark.dry') : t('spark.rain', { n: n.rain })}`;
   };
-  const [place, setPlace] = useState(() => t(spark.places[0]));
+  const [place, setPlace] = useState(() => words.place);
   const [reach, setReach] = useState<Reach>(1);
   const [audience, setAudience] = useState<Audience | null>(null);
   const [state, setState] = useState<'idle' | 'sending' | 'sent'>('idle');
@@ -141,7 +160,7 @@ function CreateBody({ spark, width, whenText }: { spark: Spark; width: number; w
     setState('sending');
     setNote(null);
     spotNow()
-      .then((spot) => sparkCreate(spark.kind, title.trim() || t(spark.title), times[when], place, reach, spot))
+      .then((spot) => sparkCreate(spark.kind, title.trim() || words.title, times[when], place, reach, spot))
       .then(() => {
         setState('sent');
         setNote(t('spark.sent'));
@@ -163,13 +182,14 @@ function CreateBody({ spark, width, whenText }: { spark: Spark; width: number; w
 
   return (
     <>
-      <Hero spark={spark} title={title.toLowerCase() || t(spark.title)} width={width} />
+      <Hero spark={spark} title={title.toLowerCase() || words.title} width={width} />
       <View style={styles.body}>
         <Button label={label} onPress={create} />
         {note ? <Text style={[styles.mono, state === 'sent' && styles.ok]}>{up(note)}</Text> : null}
         {!session || session.user.is_anonymous ? <Text style={styles.mono}>{up(t('spark.signIn'))}</Text> : null}
 
-        <Text style={styles.text}>{t(spark.line)}</Text>
+        <Text style={styles.text}>{words.line}</Text>
+        {spark.say?.why ? <Text style={styles.why}>{up(t('spark.day.why'))} · {spark.say.why}</Text> : null}
 
         <Text style={styles.mono}>{up(t('spark.change'))}</Text>
         <View style={styles.rows}>
@@ -238,7 +258,7 @@ async function spotNow(): Promise<[number, number] | null> {
 
 // Someone's spark (from your spark deck or the map), or your own: read as it is now.
 function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; width: number; whenText: (at: Date) => string }) {
-  const { t, up } = useLang();
+  const { t, tn, up } = useLang();
   const reporting = useReport();
   const [invite, setInvite] = useState<SeenSpark | null | undefined>(undefined);
   const [answer, setAnswer] = useState<'in' | 'out' | null>(null);
@@ -246,6 +266,11 @@ function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; 
   // Who answered: the host sees in and out, someone who is in sees the others in.
   const [people, setPeople] = useState<SparkPerson[]>([]);
   const [calling, setCalling] = useState(false);
+  // Your own spark: change the name, the day, the time or the place later (96).
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState<{ title: string; day: string; minutes: number; place: string }>({ title: '', day: '', minutes: 0, place: '' });
+  const [dayOpen, setDayOpen] = useState(false);
+  const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     let live = true;
@@ -292,6 +317,41 @@ function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; 
         setNote(serverText(e));
       });
   };
+  const startEdit = () => {
+    const at = new Date(invite.starts_at);
+    setDraft({ title: invite.title, day: isoDay(at), minutes: at.getHours() * 60 + at.getMinutes(), place: invite.place ?? '' });
+    setNote(null);
+    setCalling(false);
+    setEditing(true);
+  };
+  const draftAt = () => {
+    const at = fromIso(draft.day);
+    at.setHours(Math.floor(draft.minutes / 60), draft.minutes % 60, 0, 0);
+    return at;
+  };
+  // 15 minutes a step, kept inside the day.
+  const nudge = (step: number) => setDraft((d) => ({ ...d, minutes: (d.minutes + step + 24 * 60) % (24 * 60) }));
+  const save = () => {
+    if (saving) return;
+    const title = draft.title.trim();
+    const at = draftAt();
+    const place = draft.place.trim();
+    if (title === invite.title && at.getTime() === new Date(invite.starts_at).getTime() && place === (invite.place ?? '')) {
+      setEditing(false);
+      setNote(t('spark.edit.same'));
+      return;
+    }
+    setSaving(true);
+    setNote(null);
+    sparkEdit(id, title, at, place)
+      .then((told) => {
+        setInvite({ ...invite, title, starts_at: at.toISOString(), place: place || null });
+        setEditing(false);
+        setNote(told ? tn('spark.edit.told', told) : t('spark.edit.saved'));
+      })
+      .catch((e) => setNote(e instanceof SparksNotReady ? t('spark.notReady') : serverText(e)))
+      .finally(() => setSaving(false));
+  };
   const ins = people.filter((p) => p.answer === 'in');
   const outs = people.filter((p) => p.answer === 'out');
   const host = invite.mine ? t('deck.you') : (invite.host_name ?? invite.host_handle ?? '').toLowerCase();
@@ -311,6 +371,35 @@ function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; 
           </View>
         )}
         {note ? <Text style={styles.mono}>{upperData(note)}</Text> : null}
+        {editing ? (
+          <View style={styles.rows}>
+            <View style={styles.field}>
+              <Text style={styles.rowK}>{t('spark.name')}</Text>
+              <Input value={draft.title} onChangeText={(v) => setDraft((d) => ({ ...d, title: v }))} maxLength={80} />
+            </View>
+            <View style={styles.field}>
+              <Text style={styles.rowK}>{t('spark.when')}</Text>
+              <View style={styles.chips}>
+                <Chip label={`${t('spark.edit.day')} · ${whenText(draftAt()).split(' · ')[0]}`} on={false} onPress={() => setDayOpen(true)} />
+              </View>
+              <View style={styles.stepper}>
+                <Chip label="−" on={false} onPress={() => nudge(-15)} />
+                <Text style={styles.time} accessibilityLabel={t('spark.edit.time')}>{`${two(Math.floor(draft.minutes / 60))}:${two(draft.minutes % 60)}`}</Text>
+                <Chip label="+" on={false} onPress={() => nudge(15)} />
+              </View>
+            </View>
+            <View style={styles.field}>
+              <Text style={styles.rowK}>{t('spark.where')}</Text>
+              <Input value={draft.place} onChangeText={(v) => setDraft((d) => ({ ...d, place: v }))} maxLength={80} />
+              <View style={styles.chips}>
+                {spark.places.map((k) => (
+                  <Chip key={k} label={t(k)} on={draft.place === t(k)} onPress={() => setDraft((d) => ({ ...d, place: t(k) }))} />
+                ))}
+              </View>
+            </View>
+            {invite.going ? <Text style={[styles.small, styles.editNote]}>{t('spark.edit.note')}</Text> : null}
+          </View>
+        ) : (
         <View style={styles.rows}>
           <Row k={t('spark.host')} v={host} />
           {invite.wave ? <Row k={t('spark.wave')} v={t(invite.wave === 1 ? 'spark.wave1.short' : invite.wave === 2 ? 'deck.wave2' : 'deck.wave3')} /> : null}
@@ -320,7 +409,20 @@ function InviteBody({ spark, id, width, whenText }: { spark: Spark; id: string; 
           {ins.length ? <Row k={t('spark.in.names')} v={ins.map((p) => (p.me ? t('deck.you') : p.name.toLowerCase())).join(', ')} /> : null}
           {invite.mine && outs.length ? <Row k={t('spark.out.names')} v={outs.map((p) => p.name.toLowerCase()).join(', ')} /> : null}
         </View>
-        {invite.mine ? <Button label={calling ? t('spark.callOff.sure') : t('spark.callOff')} kind="line" onPress={callOff} /> : null}
+        )}
+        {invite.mine && editing ? (
+          <View style={styles.actions}>
+            <View style={{ flex: 1 }}>
+              <Button label={saving ? '…' : t('word.save')} onPress={save} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Button label={t('word.cancel')} kind="line" onPress={() => setEditing(false)} />
+            </View>
+          </View>
+        ) : null}
+        {invite.mine && !editing ? <Button label={t('spark.edit')} onPress={startEdit} /> : null}
+        {invite.mine && !editing ? <Button label={calling ? t('spark.callOff.sure') : t('spark.callOff')} kind="line" onPress={callOff} /> : null}
+        {invite.mine ? <DayPicker open={dayOpen} title={t('spark.edit.day')} value={draft.day || null} onSelect={(d) => { setDraft((x) => ({ ...x, day: d })); setDayOpen(false); }} onClose={() => setDayOpen(false)} /> : null}
         {invite.mine ? null : (
           <View style={styles.report}>
             <PillAction icon="flag" label={t('report.spark')} onPress={() => reporting.ask('spark', id)} />
@@ -355,14 +457,16 @@ const styles = StyleSheet.create({
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, zIndex: 2 },
   hero: { backgroundColor: colors.ink2, overflow: 'hidden', borderBottomLeftRadius: radius.lg, borderBottomRightRadius: radius.lg },
   heroPhoto: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
-  heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 170, backgroundColor: colors.ink, opacity: 0.78 },
+  heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 230 },
   heroText: { position: 'absolute', left: brand.left, right: brand.left, bottom: 18, gap: 6 },
-  title: { fontFamily: fonts.medium, fontSize: 34, lineHeight: 36, letterSpacing: -1.1, color: colors.paper },
+  title: { fontFamily: fonts.medium, fontSize: 34, lineHeight: 36, letterSpacing: -1.1, color: colors.onPhoto },
   mono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
+  heroMono: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.onPhotoMute },
   ok: { color: colors.spotText },
   body: { paddingHorizontal: brand.left, paddingTop: 18, gap: 22 },
   actions: { flexDirection: 'row', gap: 10 },
   text: { fontFamily: fonts.regular, fontSize: 16, lineHeight: 24, color: colors.paper2, opacity: 0.9 },
+  why: { fontFamily: fonts.jet, fontSize: 9.5, lineHeight: 14, letterSpacing: 1, color: colors.meta, marginTop: 8 },
   small: { fontFamily: fonts.regular, fontSize: 13, lineHeight: 19, color: colors.mute },
   rows: { borderTopWidth: 1, borderTopColor: colors.ink3 },
   row: { flexDirection: 'row', justifyContent: 'space-between', gap: 16, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: colors.ink3 },
@@ -370,12 +474,15 @@ const styles = StyleSheet.create({
   rowK: { fontFamily: fonts.regular, fontSize: 13, color: colors.mute },
   rowV: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper2, flex: 1, textAlign: 'right' },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  stepper: { flexDirection: 'row', alignItems: 'center', gap: 14 },
+  time: { fontFamily: fonts.jet, fontSize: 22, letterSpacing: 0.5, color: colors.paper, minWidth: 74, textAlign: 'center' },
+  editNote: { paddingTop: 12 },
   chip: { height: 34, paddingHorizontal: 13, borderRadius: radius.pill, borderWidth: 1, borderColor: colors.ink3, justifyContent: 'center' },
   chipOn: { backgroundColor: colors.paper, borderColor: colors.paper },
   chipText: { fontFamily: fonts.medium, fontSize: 13, color: colors.mute },
   chipTextOn: { color: colors.ink },
   wave: { flexDirection: 'row', alignItems: 'center', gap: 10, height: 46, paddingHorizontal: 14, borderRadius: radius.md, borderWidth: 1, borderColor: colors.ink3 },
-  waveOn: { borderColor: colors.paper, backgroundColor: 'rgba(243,241,236,0.06)' },
+  waveOn: { borderColor: colors.paper, backgroundColor: paperTint(0.06) },
   waveDot: { width: 10, height: 10, borderRadius: 5, borderWidth: 1.5, borderColor: colors.mute },
   waveDotOn: { backgroundColor: colors.spot, borderColor: colors.spot },
   waveText: { flex: 1, fontFamily: fonts.medium, fontSize: 14, color: colors.mute },

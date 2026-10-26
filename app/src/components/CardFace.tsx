@@ -4,7 +4,7 @@ import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { SvgUri } from 'react-native-svg';
 import { upperData, useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, ground, fonts, radius, themeId } from '@/theme/tokens';
 import { posterUrl, type Night } from '@/data/deck';
 import { dayName } from '@/data/when';
 
@@ -93,6 +93,8 @@ export const openDetails = (card: DeckCard) => card.slug && router.push(`/night/
 export const openTicket = (card: DeckCard) => (card.ticketUrl ? Linking.openURL(card.ticketUrl).catch(() => {}) : openDetails(card));
 
 type Props = {
+  // in a room of its own (a specialty deck): no backdrop of its own, the room shows around it
+  room?: boolean;
   card: DeckCard;
   bottom: number;         // bottom edge of the caption (above the tab bar)
   rightLabel: string;     // the red strip on the right
@@ -110,7 +112,7 @@ type Props = {
 // red main action on the right. Since 11.10.2026 the caption no longer lists kind,
 // source and date in mono: the date and kind are on the poster, and "ticket" is said
 // once, by the hint that appears when the card is pulled up.
-export default function CardFace({ card, bottom, rightLabel, rightDone, onRight, fit, onDetails, overlay }: Props) {
+export default function CardFace({ card, bottom, rightLabel, rightDone, onRight, fit, onDetails, overlay, room }: Props) {
   const [captionH, setCaptionH] = useState(0);
   const shown = card.friends.slice(0, 2);
   const more = card.friends.length - shown.length;
@@ -123,7 +125,7 @@ export default function CardFace({ card, bottom, rightLabel, rightDone, onRight,
   return (
     <>
       {fit ? (
-        <FitPoster card={card} top={fit.top} bottom={bottom + captionH + 12} ready={captionH > 0} tag={<DateTag card={card} kind={kind} />} overlay={overlay} />
+        <FitPoster card={card} top={fit.top} bottom={bottom + captionH + 12} ready={captionH > 0} tag={<DateTag card={card} kind={kind} />} overlay={overlay} room={room} />
       ) : card.image || card.local ? (
         <Image source={card.image ? { uri: card.image } : card.local!} style={styles.photo} contentFit="cover" />
       ) : card.poster ? (
@@ -198,13 +200,16 @@ function useRatio(uri: string | null, fallbackRatio: number) {
   return ratio;
 }
 
+// react-native-web has no resolveAssetSource: the web build (PWA) crashed on the first
+// spark card. There the poster frame is 2:3, the shape of every spark photo.
 const sizeOf = (source: ImageSourcePropType) => {
+  if (typeof RNImage.resolveAssetSource !== 'function') return 2 / 3;
   const s = RNImage.resolveAssetSource(source);
-  return s.width && s.height ? s.width / s.height : 2 / 3;
+  return s && s.width && s.height ? s.width / s.height : 2 / 3;
 };
 
 // Flow card: blurred backdrop + uncropped poster, fitted and centred between the chip and the caption.
-function FitPoster({ card, top, bottom, ready, tag, overlay }: { card: DeckCard; top: number; bottom: number; ready: boolean; tag: ReactNode; overlay?: ReactNode }) {
+function FitPoster({ card, top, bottom, ready, tag, overlay, room }: { card: DeckCard; top: number; bottom: number; ready: boolean; tag: ReactNode; overlay?: ReactNode; room?: boolean }) {
   const [area, setArea] = useState<{ w: number; h: number } | null>(null);
   const svg = !card.image && !!card.poster;
   const ratio = useRatio(card.image, svg ? 2 / 3 : sizeOf(card.local ?? fallback));
@@ -221,12 +226,13 @@ function FitPoster({ card, top, bottom, ready, tag, overlay }: { card: DeckCard;
   const source = card.image ? { uri: card.image } : (card.local ?? fallback);
   return (
     <>
-      {svg ? (
+      {/* dark theme: the poster, blurred, fills the page under a veil; light: the plain ground */}
+      {themeId === 'light' || room ? null : svg ? (
         <View style={[styles.photo, { backgroundColor: colors.ink2 }]} />
       ) : (
         <Image source={source} style={styles.photo} contentFit="cover" blurRadius={28} />
       )}
-      <View style={styles.veil} />
+      {themeId === 'light' || room ? null : <View style={styles.veil} />}
       <View style={[styles.fitArea, { top, bottom }]} onLayout={(e) => setArea({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height })}>
         {area && ready ? (
           <View style={[styles.fitPoster, { width: w, height: h }]}>
@@ -274,14 +280,15 @@ export function Hint({ label }: { label: string }) {
 
 const styles = StyleSheet.create({
   photo: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
-  veil: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(14,13,12,0.42)' },
+  veil: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: ground(0.42) },
   fitArea: { position: 'absolute', left: 12, right: 12, alignItems: 'center', justifyContent: 'center' },
   fitPoster: { borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.ink },
   fill: { width: '100%', height: '100%' },
   posterBox: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.ink2 },
-  caption: { position: 'absolute', left: 8, right: 8, flexDirection: 'row', alignItems: 'stretch', borderRadius: radius.lg, overflow: 'hidden' },
+  // the caption is a card of its own on the ground (white on white read as nothing, 22.10.2026)
+  caption: { position: 'absolute', left: 8, right: 8, flexDirection: 'row', alignItems: 'stretch', borderRadius: radius.lg, overflow: 'hidden', borderWidth: 1, borderColor: colors.edge },
   // never shorter than the strips' rotated words need (12.10.2026: a title-only block shrank to a bar)
-  block: { flex: 1, minHeight: 124, backgroundColor: colors.ink, paddingHorizontal: 14, paddingTop: 14, paddingBottom: 13, gap: 2, justifyContent: 'center' },
+  block: { flex: 1, minHeight: 124, backgroundColor: colors.card, paddingHorizontal: 14, paddingTop: 14, paddingBottom: 13, gap: 2, justifyContent: 'center' },
   // the title grew a size when the mono lines left the block (11.10.2026)
   title: { fontFamily: fonts.logo, fontSize: 36, lineHeight: 34, letterSpacing: -0.8, color: colors.spotText, marginBottom: 5 },
   venue: { fontFamily: fonts.medium, fontSize: 14, letterSpacing: -0.2, color: colors.paper },

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { missingSql, staffAppeals, staffReports } from '@/data/safety';
 import { djsWaiting } from '@/data/staff';
 import { StyleSheet, Text, View } from 'react-native';
-import { router, type Href } from 'expo-router';
+import { Redirect, router, type Href } from 'expo-router';
 import StaffPage, { Quiet } from '@/components/StaffPage';
 import Tips from '@/components/Tips';
 import { useTabBarSpace } from '@/components/TabBar';
@@ -43,6 +43,8 @@ export default function PanelScreen() {
       </StaffPage>
     );
   }
+  // A community manager has the desk instead (97): their rooms, not the whole panel.
+  if (role === 'community_manager') return <Redirect href="/desk" />;
   const admin = role === 'admin';
   const go = (href: Href) => () => router.push(href);
   const numbers: [Key, number | null | undefined][] = [
@@ -98,6 +100,7 @@ export default function PanelScreen() {
         <>
           <Section title={t('staff.admin')} />
           <Panel>
+            <Row label={t('desk.open')} hint={t('desk.open.hint')} right={<Mark kind="more" />} onPress={go('/desk')} />
             <Row label={t('staff.people')} hint={t('staff.people.hint')} right={<Mark kind="more" />} onPress={go('/panel/people')} />
             <Row label={t('staff.feedback')} hint={t('staff.feedback.hint')} right={<Mark kind="more" />} onPress={go('/panel/feedback')} />
             <Row label={t('staff.log')} hint={t('staff.log.hint')} right={<Mark kind="more" />} onPress={go('/panel/log')} />

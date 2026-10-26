@@ -12,7 +12,7 @@ import { useCities } from '@/data/cities';
 import { handleStatus, saveProfile } from '@/data/settings';
 import { useLang } from '@/i18n';
 import type { Key } from '@/i18n/dict';
-import { colors, fonts } from '@/theme/tokens';
+import { colors, fonts, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // Server code → string key, resolved at render time.
@@ -65,7 +65,7 @@ export default function WelcomeScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar style="light" />
+      <StatusBar style={barStyle} />
       <KeyboardAvoidingView behavior="padding" style={styles.body}>
         <View style={{ paddingBottom: insets.bottom + 24 }}>
           <Text style={styles.line}>{t('signup.welcome.line1')}</Text>

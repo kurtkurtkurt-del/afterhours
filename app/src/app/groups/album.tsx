@@ -7,7 +7,7 @@ import StaffPage, { Quiet, Said } from '@/components/StaffPage';
 import { useAuth } from '@/auth/AuthContext';
 import { albumAdd, albumRemove, groupAlbum, photoUrl, why, type AlbumPhoto } from '@/data/groups';
 import { useLang } from '@/i18n';
-import { colors, fonts, radius } from '@/theme/tokens';
+import { colors, fonts, radius, ground } from '@/theme/tokens';
 
 // One night's album for a group: what members added, oldest first. A long press
 // takes a photo out (yours, or any if you own the group; the database decides).
@@ -61,5 +61,5 @@ export default function Album() {
 const styles = StyleSheet.create({
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 16 },
   cell: { width: '32%', aspectRatio: 1, borderRadius: radius.sm, overflow: 'hidden', backgroundColor: colors.ink3, justifyContent: 'flex-end' },
-  by: { margin: 5, alignSelf: 'flex-start', paddingHorizontal: 6, paddingVertical: 2, borderRadius: radius.pill, overflow: 'hidden', backgroundColor: 'rgba(14,13,12,0.6)', fontFamily: fonts.regular, fontSize: 10, color: colors.paper },
+  by: { margin: 5, alignSelf: 'flex-start', paddingHorizontal: 6, paddingVertical: 2, borderRadius: radius.pill, overflow: 'hidden', backgroundColor: ground(0.6), fontFamily: fonts.regular, fontSize: 10, color: colors.paper },
 });

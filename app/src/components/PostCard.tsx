@@ -1,6 +1,9 @@
 import { useCallback, useState } from 'react';
 import { serverText } from '@/lib/serverText';
-import { Alert, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import Animated, { Easing, SlideInDown } from 'react-native-reanimated';
+import Scrim from '@/components/Scrim';
+import KeyboardSafe from '@/components/KeyboardSafe';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -187,10 +190,10 @@ function Comments({ open, post, who, onClose, onChange }: { open: boolean; post:
         ])
       : reporting.ask('post_comment', c.id);
   return (
-    <Modal visible={open} transparent animationType="slide" onRequestClose={onClose} onShow={load}>
-      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.sheetWrap}>
-        <Pressable style={styles.sheetDim} onPress={onClose} accessibilityRole="button" accessibilityLabel={t('word.close')} />
-        <View style={[styles.sheet, { maxHeight: height * 0.75, paddingBottom: insets.bottom + 10 }]}>
+    <Modal visible={open} transparent animationType="fade" onRequestClose={onClose} onShow={load}>
+      <KeyboardSafe style={styles.sheetWrap}>
+        <Scrim onPress={onClose} />
+        <Animated.View entering={SlideInDown.duration(300).easing(Easing.out(Easing.cubic))} style={[styles.sheet, { maxHeight: height * 0.75, paddingBottom: insets.bottom + 10 }]}>
           <View style={styles.grab} />
           <Text style={styles.sheetTitle}>{t('post.comments')}</Text>
           <ScrollView style={styles.sheetList} contentContainerStyle={styles.sheetListIn} keyboardShouldPersistTaps="handled">
@@ -238,8 +241,8 @@ function Comments({ open, post, who, onClose, onChange }: { open: boolean; post:
               <Text style={[styles.send, (!draft.trim() || sending) && styles.off]}>{sending ? '…' : t('post.send')}</Text>
             </Pressable>
           </View>
-        </View>
-      </KeyboardAvoidingView>
+        </Animated.View>
+      </KeyboardSafe>
       {reporting.sheet}
     </Modal>
   );
@@ -263,7 +266,6 @@ const styles = StyleSheet.create({
   all: { fontFamily: fonts.regular, fontSize: 13.5, color: colors.mute },
   add: { fontFamily: fonts.regular, fontSize: 13.5, color: colors.meta, marginTop: 2 },
   sheetWrap: { flex: 1, justifyContent: 'flex-end' },
-  sheetDim: { flex: 1, backgroundColor: 'rgba(14,13,12,0.55)' },
   sheet: { backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, borderTopWidth: 1, borderColor: colors.ink3, paddingTop: 8 },
   grab: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: colors.ink3, marginBottom: 10 },
   sheetTitle: { fontFamily: fonts.semibold, fontSize: 15, color: colors.paper, textAlign: 'center', marginBottom: 8 },
