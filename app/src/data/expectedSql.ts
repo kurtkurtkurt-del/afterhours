@@ -100,4 +100,5 @@ export const EXPECTED_SQL = [
   '96_spark_edit.sql',
   '97_venue_desk.sql',
   '98_spark_days.sql',
+  '100_storage_queue.sql',
 ];

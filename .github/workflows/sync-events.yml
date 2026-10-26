@@ -27,6 +27,12 @@ jobs:
         run: node backend/tools/sync-ticketmaster.mjs
       # The 30 second preview for every new night, in every city (tools/previews.mjs --all).
       # Apple allows about twenty searches a minute; a big day takes a while, so it may not finish.
+      # Files the database could not delete (100_storage_queue.sql) go through the Storage API.
+      - name: sweep the storage leftovers
+        continue-on-error: true
+        env:
+          SUPABASE_SERVICE_ROLE: ${{ secrets.SUPABASE_SERVICE_ROLE }}
+        run: node backend/tools/storage-sweep.mjs
       - name: match the new nights to a preview on Apple
         timeout-minutes: 50
         continue-on-error: true

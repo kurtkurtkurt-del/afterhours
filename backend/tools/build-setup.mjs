@@ -106,6 +106,7 @@ const structure = [
   ["96_spark_edit.sql", "A SPARK CAN BE CHANGED AFTER IT WENT OUT"],
   ["97_venue_desk.sql", "THE VENUE DESK: COMMUNITY MANAGERS RUN THEIR ROOMS"],
   ["98_spark_days.sql", "THE SPARKS OF THE DAY, WRITTEN BY THE NIGHT AGENT"],
+  ["100_storage_queue.sql", "A FILE THAT CANNOT GO AT ONCE WAITS IN A QUEUE"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

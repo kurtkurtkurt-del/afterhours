@@ -134,9 +134,9 @@ console.log("\n— the migration log —");
 }
 
 {
-  const appCopy = [...(await readFile(new URL("../../app/src/data/expectedSql.ts", import.meta.url), "utf8")).matchAll(/'(\d\d_[a-z0-9_]+\.sql)'/g)].map((m) => m[1]);
+  const appCopy = [...(await readFile(new URL("../../app/src/data/expectedSql.ts", import.meta.url), "utf8")).matchAll(/'(\d{2,3}_[a-z0-9_]+\.sql)'/g)].map((m) => m[1]);
   check(appCopy.join() === EXPECTED_SQL.join(), "the app's copy of the file list matches", appCopy.length + " vs " + EXPECTED_SQL.length);
-  const siteCopy = [...(await readFile(new URL("../../admin/admin.js", import.meta.url), "utf8")).matchAll(/"(\d\d_[a-z0-9_]+\.sql)"/g)].map((m) => m[1]);
+  const siteCopy = [...(await readFile(new URL("../../admin/admin.js", import.meta.url), "utf8")).matchAll(/"(\d{2,3}_[a-z0-9_]+\.sql)"/g)].map((m) => m[1]);
   check(siteCopy.join() === EXPECTED_SQL.join(), "the site panel's copy of the file list matches", siteCopy.length + " vs " + EXPECTED_SQL.length);
 }
 
