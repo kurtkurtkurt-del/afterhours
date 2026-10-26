@@ -151,6 +151,9 @@
        when the page loads it); the chip plays the Apple Music preview. */
     const handPicked = (window.FEATURED || []).find((f) => f.slug === e.slug);
     if (handPicked && handPicked.song && handPicked.artist) previewChip(frame, handPicked);
+    /* "who is this?" and listen, top right of the photo, the same two the app shows on
+       every card and night page (26.10.2026): read from the database for this one night */
+    if (e.id && window.AH && AH.mode === "live" && AH.request) extras(frame, e, !!handPicked);
 
     /* where · when · kind — the same three rows the app's night page has */
     const facts = el("dl", "cs-facts");
@@ -406,6 +409,69 @@
 
     frame.appendChild(chip);
     frame.appendChild(line);
+  }
+
+  function extras(frame, e, hasChip) {
+    const box = el("div", "cs-extras");
+    frame.appendChild(box);
+    const post = (fn, body) => AH.request("/rpc/" + fn, { method: "POST", body: JSON.stringify(body) });
+    post("about_for", { p_events: [e.id], p_lang: AH.lang || "en" }).then((rows) => {
+      const a = rows && rows[0];
+      if (!a) return;
+      const ask = el("button", "cs-ask", AH.t("night.about.ask"));
+      ask.type = "button";
+      ask.addEventListener("click", () => aboutPanel(a));
+      box.insertBefore(ask, box.firstChild);
+    }).catch(() => {});
+    if (hasChip) return; /* a hand-picked night already plays its song at the foot of the poster */
+    post("previews_for", { p_events: [e.id] }).then((rows) => {
+      const p = rows && rows[0];
+      if (!p || !p.preview_url) return;
+      const audio = new Audio(p.preview_url);
+      const btn = el("button", "cs-listen");
+      btn.type = "button";
+      const label = el("span", null, AH.t("night.listen"));
+      btn.appendChild(el("span", "cs-listen-note", "♪"));
+      btn.appendChild(label);
+      btn.addEventListener("click", () => { if (audio.paused) audio.play(); else audio.pause(); });
+      audio.addEventListener("play", () => { btn.classList.add("playing"); label.textContent = (p.track || AH.t("night.listen")).toLowerCase(); });
+      audio.addEventListener("pause", () => { btn.classList.remove("playing"); label.textContent = AH.t("night.listen"); });
+      audio.addEventListener("ended", () => { btn.classList.remove("playing"); label.textContent = AH.t("night.listen"); });
+      box.appendChild(btn);
+    }).catch(() => {});
+  }
+
+  /* the panel: what they are, who they are, two facts, where it comes from */
+  function aboutPanel(a) {
+    const shade = el("div", "cs-about-shade");
+    const panel = el("div", "cs-about");
+    panel.setAttribute("role", "dialog");
+    panel.setAttribute("aria-label", a.name || "");
+    if (a.kicker) panel.appendChild(el("p", "cs-about-kicker", a.kicker));
+    panel.appendChild(el("h2", "cs-about-name", (a.name || "").toLowerCase()));
+    if (a.who) panel.appendChild(el("p", "cs-about-who", a.who));
+    (a.facts || []).slice(0, 2).forEach((f, i) => {
+      const row = el("p", "cs-about-fact");
+      row.appendChild(el("span", null, String(i + 1).padStart(2, "0")));
+      row.appendChild(document.createTextNode(f));
+      panel.appendChild(row);
+    });
+    if (a.source_url) {
+      const src = el("a", "cs-about-source", AH.t("night.about.source") + " ↗");
+      src.href = a.source_url; src.target = "_blank"; src.rel = "noopener";
+      panel.appendChild(src);
+    }
+    const close = el("button", "cs-about-close", AH.t("night.about.close"));
+    close.type = "button";
+    panel.appendChild(close);
+    const shut = () => { shade.remove(); document.removeEventListener("keydown", esc); };
+    const esc = (ev) => { if (ev.key === "Escape") shut(); };
+    close.addEventListener("click", shut);
+    shade.addEventListener("click", (ev) => { if (ev.target === shade) shut(); });
+    document.addEventListener("keydown", esc);
+    shade.appendChild(panel);
+    document.body.appendChild(shade);
+    close.focus();
   }
 
   const PRICE = {

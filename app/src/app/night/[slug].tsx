@@ -20,6 +20,11 @@ import { ticketMark, ticketState, type TicketAnswer } from '@/data/tickets';
 import { OfflineError, useShelf } from '@/lib/offline';
 import { shareNight } from '@/lib/share';
 import ShareButton from '@/components/ShareButton';
+import { AboutSheet, AskButton } from '@/components/About';
+import { ListenButton, ListenOverlay } from '@/components/Listen';
+import { aboutFor, type About } from '@/data/about';
+import { previewsFor, type Preview } from '@/data/previews';
+import { useTrack } from '@/audio/useTrack';
 import { useReport } from '@/components/ReportSheet';
 import { commentCode, commentErrors, fetchComments, postComment, whenText, type Comment } from '@/data/comments';
 import { isSyncedBody, upperData, useLang } from '@/i18n';
@@ -46,7 +51,7 @@ export default function NightScreen() {
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const { session, isAnonymous } = useAuth();
-  const { t, tn, tx, up } = useLang();
+  const { t, tn, tx, up, lang } = useLang();
   // note and talkNote hold codes; strings are resolved here in the current language.
   const words = (code: string) => {
     if (code === 'nosaved') return t('offline.empty'); // offline and this night was never saved
@@ -60,6 +65,22 @@ export default function NightScreen() {
     return `${tx('day.' + DAYS[d.getDay()])} ${two(d.getDate())}.${two(d.getMonth() + 1)} · ${two(d.getHours())}:${two(d.getMinutes())}`;
   };
   const [night, setNight] = useState<Night | null>(null);
+  // "who is this?" and listen on the night's own page too (owner, 26.10.2026), top right of
+  // the photo under share, the same buttons as on the cards; a preview plays over the photo
+  const [about, setAbout] = useState<About | null>(null);
+  const [preview, setPreview] = useState<Preview | null>(null);
+  const [reading, setReading] = useState(false);
+  const track = useTrack();
+  useEffect(() => {
+    if (!night?.id) return;
+    let live = true;
+    aboutFor([night.id], lang).then((m) => live && setAbout(m.get(night.id) ?? null), () => {});
+    previewsFor([night.id]).then((m) => live && setPreview(m.get(night.id) ?? null), () => {});
+    return () => {
+      live = false;
+    };
+  }, [night?.id, lang]);
+  const playing = !!night && track.playing === night.id;
   const [missing, setMissing] = useState(false);
   const [kept, setKept] = useState(false);
   const [room, setRoom] = useState<RoomInfo | null>(null);
@@ -239,7 +260,14 @@ export default function NightScreen() {
             <View style={styles.ticket}>
               <View style={[styles.ticketPhoto, { height: (width - brand.left * 2) * 0.78 }]}>
                 <Image source={night.image_url ? { uri: night.image_url } : fallback} style={styles.heroPhoto} contentFit="cover" />
+                {playing && preview ? <ListenOverlay preview={preview} elapsed={track.elapsed} duration={track.duration} onStop={track.stop} /> : null}
                 <ShareButton onPress={() => shareNight(night)} style={styles.ticketShare} />
+                {about || preview ? (
+                  <View style={styles.extras}>
+                    {about ? <AskButton onPress={() => setReading(true)} /> : null}
+                    {preview ? <ListenButton onPress={() => track.play(night.id, { uri: preview.preview_url })} playing={playing} /> : null}
+                  </View>
+                ) : null}
               </View>
               <View style={styles.ticketHead}>
                 <Text style={styles.title}>{night.title.toLowerCase()}</Text>
@@ -397,6 +425,7 @@ export default function NightScreen() {
         </PullDownScroll>
         </KeyboardAvoidingView>
       ) : null}
+      <AboutSheet about={reading ? about : null} onClose={() => setReading(false)} />
 
       {/* Card earned: first reveal, then the room. */}
       <Modal visible={!!card} transparent animationType="fade" onRequestClose={() => setCard(null)}>
@@ -469,6 +498,7 @@ const styles = StyleSheet.create({
   ticketPhoto: { backgroundColor: colors.ink2, overflow: 'hidden' },
   heroPhoto: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' },
   ticketShare: { right: 12, top: 12, bottom: 'auto' },
+  extras: { position: 'absolute', top: 60, right: 12, alignItems: 'flex-end', gap: 8 },
   ticketHead: { paddingHorizontal: 16, paddingTop: 14, paddingBottom: 12, gap: 6 },
   perf: { height: 2, marginHorizontal: 12, justifyContent: 'center' },
   perfLine: { borderTopWidth: 2, borderStyle: 'dashed', borderColor: colors.edge },

@@ -2320,6 +2320,25 @@ img.cs-poster {
   background: #ececea;
 }
 
+/* --- "who is this?" and listen, top right of the poster (26.10.2026) --- */
+.cs-extras { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; z-index: 2; }
+.cs-ask, .cs-listen { display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 999px; border: none; cursor: pointer; font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 500; }
+.cs-ask { background: linear-gradient(135deg, #D7261E, #E8B04B); color: #F3F1EC; }
+.cs-ask::before { content: "✦"; font-size: 10px; }
+.cs-listen { background: #F3F1EC; color: #0E0D0C; }
+.cs-listen.playing { background: #0E0D0C; color: #F3F1EC; }
+.cs-listen-note { font-size: 11px; }
+.cs-about-shade { position: fixed; inset: 0; z-index: 50; background: rgba(14, 13, 12, 0.55); display: flex; align-items: flex-end; justify-content: center; }
+.cs-about { width: min(560px, 100%); max-height: 78vh; overflow: auto; background: #F3F1EC; color: #0E0D0C; border-radius: 22px 22px 0 0; padding: 26px 24px 22px; font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+@media (min-width: 720px) { .cs-about-shade { align-items: center; } .cs-about { border-radius: 22px; } }
+.cs-about-kicker { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #7A766E; margin: 0 0 6px; }
+.cs-about-name { font-family: "ArchivoLogo", "Archivo", sans-serif; font-weight: 900; font-size: 34px; line-height: 1; letter-spacing: -0.5px; margin: 0 0 12px; }
+.cs-about-who { font-size: 15px; line-height: 1.55; margin: 0 0 12px; }
+.cs-about-fact { display: grid; grid-template-columns: 26px 1fr; font-size: 14px; line-height: 1.45; margin: 0; padding: 8px 0; border-top: 1px solid #E3DFD6; }
+.cs-about-fact span { font-family: "JetBrains Mono", monospace; font-size: 10px; color: #D7261E; padding-top: 3px; }
+.cs-about-source { display: inline-block; margin-top: 10px; font-size: 12px; color: #7A766E; }
+.cs-about-close { display: block; width: 100%; margin-top: 18px; height: 46px; border-radius: 999px; border: 1px solid #0E0D0C; background: none; font: 500 15px "Inter Tight", sans-serif; cursor: pointer; color: #0E0D0C; }
+
 /* --- the preview chip ON the poster (hand-picked nights only) ---
    Absolute inside the frame, so the page gains no height for it. */
 .cs-poster-frame {

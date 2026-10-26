@@ -102,6 +102,11 @@
     "tr": "Bundan sonra hiçbir yer açılmıyor. Gece bittiği yerde biter."
   },
 
+  "night.about.ask": { "en": "who is this?", "de": "wer ist das?", "tr": "bu kim?" },
+  "night.about.source": { "en": "source", "de": "quelle", "tr": "kaynak" },
+  "night.about.close": { "en": "close", "de": "schließen", "tr": "kapat" },
+  "night.listen": { "en": "listen", "de": "anhören", "tr": "dinle" },
+  "night.listen.stop": { "en": "stop", "de": "stopp", "tr": "durdur" },
   "night.preview.label": { "en": "preview artist", "de": "reinhören", "tr": "sanatçıyı dinle" },
   "night.preview.finding": { "en": "finding it…", "de": "suche…", "tr": "arıyorum…" },
   "night.preview.store": { "en": "on apple music", "de": "bei apple music", "tr": "apple music'te" },
