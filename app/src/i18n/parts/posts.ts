@@ -24,6 +24,8 @@ export const posts = {
   'staff.reported.keep': { en: 'it is fine', de: 'ist in ordnung', tr: 'sorun yok' },
   'staff.n.reported': { en: 'reported posts', de: 'gemeldete posts', tr: 'şikayetli gönderi' },
   'groups.entry': { en: 'groups', de: 'gruppen', tr: 'gruplar' },
+  'stories.who': { en: 'your friends see it on top of messages for a day.', de: 'deine freunde sehen sie einen tag lang oben in den nachrichten.', tr: 'arkadaşların bir gün boyunca mesajların üstünde görür.' },
+  'stories.photoFirst': { en: 'a story needs a photo', de: 'eine story braucht ein foto', tr: 'story için bir fotoğraf gerekir' },
   'stories.add': { en: 'add a story', de: 'story hinzufügen', tr: 'story ekle' },
   'stories.you': { en: 'you', de: 'du', tr: 'sen' },
 } as const;

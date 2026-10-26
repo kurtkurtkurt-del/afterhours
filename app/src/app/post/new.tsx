@@ -4,7 +4,7 @@ import KeyboardSafe from '@/components/KeyboardSafe';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
-import { Redirect, router } from 'expo-router';
+import { Redirect, router, useLocalSearchParams } from 'expo-router';
 import { POSTS_ON } from '@/content/flags';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Button from '@/components/Button';
@@ -22,12 +22,15 @@ import { brand } from '@/theme/layout';
 // A post, camera first (design 2A): the photo fills the screen, the words go on top
 // of it at the bottom, the night is a chip at the top. Without a photo the screen
 // is ink and the words stand alone. Friends see it in their yours tab.
-// Posts are off (content/flags.ts): the route redirects before any of the screen runs.
+// Posts are off (content/flags.ts): the route redirects before any of the screen runs —
+// except a story (?story=1, the + on messages, 26.10.2026): a post with a photo, seen as a
+// ring on top of messages for a day. The yours tab and the past feed stay off.
 export default function NewPostGate() {
-  return POSTS_ON ? <NewPost /> : <Redirect href="/flow" />;
+  const { story } = useLocalSearchParams<{ story?: string }>();
+  return POSTS_ON || story ? <NewPost story={!!story} /> : <Redirect href="/flow" />;
 }
 
-function NewPost() {
+function NewPost({ story }: { story: boolean }) {
   const { t } = useLang();
   const insets = useSafeAreaInsets();
   const { session, isAnonymous } = useAuth();
@@ -42,10 +45,17 @@ function NewPost() {
   useEffect(() => {
     kept().then(setNights, () => {});
   }, []);
+  // a story starts at the gallery: the picture first, the words after
+  const [asked, setAsked] = useState(false);
+  useEffect(() => {
+    if (!story || asked || !uid || isAnonymous) return;
+    setAsked(true); // eslint-disable-line react-hooks/set-state-in-effect -- once, on arrival
+    pickPostPhoto().then((u) => u && setPhoto(u), (e) => setSaid(why(e)));
+  }, [story, asked, uid, isAnonymous]);
 
   if (!uid || isAnonymous) {
     return (
-      <StaffPage title={t('posts.new')}>
+      <StaffPage title={story ? t('stories.add') : t('posts.new')}>
         <Quiet text={t('posts.account')} />
         <View style={styles.gap}>
           <Button label={t('word.signup')} onPress={() => router.push('/signup')} />
@@ -55,6 +65,7 @@ function NewPost() {
   }
   const pick = () => pickPostPhoto().then((u) => u && setPhoto(u), (e) => setSaid(why(e)));
   const share = () => {
+    if (story && !photo) return setSaid(t('stories.photoFirst'));
     setBusy(true);
     setSaid(null);
     postCreate(uid, body, photo, night?.id ?? null)
@@ -108,7 +119,7 @@ function NewPost() {
               <Text style={[styles.shareText, styles.onSpot]}>{busy ? '…' : t('posts.share')}</Text>
             </Pressable>
           </View>
-          <Text style={styles.who}>{t('posts.who')}</Text>
+          <Text style={styles.who}>{story ? t('stories.who') : t('posts.who')}</Text>
         </View>
       </KeyboardSafe>
 

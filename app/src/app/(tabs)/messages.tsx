@@ -100,7 +100,7 @@ export default function MessagesScreen() {
             <Text style={styles.title}>{t('messages.title')}</Text>
             {/* + adds a story: a post with a photo, shown as a ring on top for a day (owner, 26.10.2026) */}
             {session && !session.user.is_anonymous ? (
-              <Pressable onPress={() => router.push('/post/new')} hitSlop={8} accessibilityRole="button" accessibilityLabel={t('stories.add')} style={({ pressed }) => [styles.plus, pressed && styles.pressed]}>
+              <Pressable onPress={() => router.push('/post/new?story=1')} hitSlop={8} accessibilityRole="button" accessibilityLabel={t('stories.add')} style={({ pressed }) => [styles.plus, pressed && styles.pressed]}>
                 <Svg width={16} height={16} viewBox="0 0 16 16">
                   <Path d="M8 2.5v11M2.5 8h11" stroke={colors.ink} strokeWidth={2} strokeLinecap="round" />
                 </Svg>
