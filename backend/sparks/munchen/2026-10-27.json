@@ -1,0 +1,657 @@
+{
+  "city": "munchen",
+  "day": "2026-10-27",
+  "sparks": [
+    {
+      "kind": "derby",
+      "title": {
+        "en": "a quiet tuesday for football.",
+        "de": "ein ruhiger dienstag im fussball.",
+        "tr": "futbol için sakin bir salı."
+      },
+      "line": {
+        "en": "no bayern or 1860 match today that we could confirm; the pokal round is 27/28 october. pick any pub with a screen and see what is on.",
+        "de": "heute kein bestätigtes spiel von bayern oder 1860; die pokalrunde läuft am 27./28. oktober. such dir eine kneipe mit bildschirm und schau, was läuft.",
+        "tr": "bayern ya da 1860 için doğrulanmış maç yok; kupa turu 27/28 ekim. ekranı olan bir bar bul, ne varsa izle."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No confirmed Bayern/1860 fixture on 27.10 (DFB-Pokal round 2 is 27/28.10, Bayern date not confirmed)."
+    },
+    {
+      "kind": "grill",
+      "title": {
+        "en": "grill at the isar before dark.",
+        "de": "grillen an der isar vor der dunkelheit.",
+        "tr": "karanlıktan önce isar kıyısında mangal."
+      },
+      "line": {
+        "en": "sunset is around 16:55, so come at half past five with lamps and coal. if it rains, a roof at the flaucher kiosk is the plan b.",
+        "de": "sonnenuntergang gegen 16:55, also komm um halb sechs mit lampen und kohle. bei regen ist ein dach am flaucher plan b.",
+        "tr": "gün batımı 16:55 civarı; beşi yarımda lamba ve kömürle gel. yağmur olursa flaucher kioskunun çatısı plan b."
+      },
+      "place": {
+        "en": "flaucher",
+        "de": "flaucher",
+        "tr": "flaucher"
+      },
+      "hour": 17,
+      "minute": 30,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks. Sunset ~16:55 (calculated)."
+    },
+    {
+      "kind": "hike",
+      "title": {
+        "en": "an autumn walk up to the olympiaberg.",
+        "de": "herbstspaziergang auf den olympiaberg.",
+        "tr": "olympiaberg'e sonbahar yürüyüşü."
+      },
+      "line": {
+        "en": "a short climb with the whole city below you. bring a flask; the larch and beech colours are at their best this week.",
+        "de": "ein kurzer aufstieg, die ganze stadt liegt unten. thermoskanne mitbringen; die herbstfarben sind diese woche am schönsten.",
+        "tr": "kısa bir tırmanış, altında bütün şehir. termos al; sonbahar renkleri bu hafta en güzel halinde."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "sunrise",
+      "title": {
+        "en": "sunrise over the city from the monopteros.",
+        "de": "sonnenaufgang am monopteros.",
+        "tr": "monopteros'ta gün doğumu."
+      },
+      "line": {
+        "en": "the sun comes up around 06:57. come at 06:35 with something hot to drink; the clocks went back on sunday, so it is light earlier now.",
+        "de": "die sonne geht gegen 06:57 auf. sei um 06:35 da, mit etwas heissem zum trinken; die uhr wurde am sonntag zurückgestellt, es wird früher hell.",
+        "tr": "güneş 06:57 civarı doğuyor. 06:35'te sıcak bir içecekle gel; saatler pazar günü geri alındı, artık daha erken aydınlanıyor."
+      },
+      "place": {
+        "en": "monopteros",
+        "de": "monopteros",
+        "tr": "monopteros"
+      },
+      "hour": 6,
+      "minute": 37,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks. Sunrise ~06:57 CET (calculated, clocks back 25.10)."
+    },
+    {
+      "kind": "breakfast",
+      "title": {
+        "en": "a long breakfast on a weekday.",
+        "de": "langes frühstück unter der woche.",
+        "tr": "hafta içi uzun bir kahvaltı."
+      },
+      "line": {
+        "en": "tuesday morning is the quiet one: no queue at the cafés around the gärtnerplatz. order the big plate and stay until eleven.",
+        "de": "dienstagmorgen ist ruhig: keine schlange in den cafés am gärtnerplatz. grosse platte bestellen und bis elf bleiben.",
+        "tr": "salı sabahı sakin: gärtnerplatz çevresindeki kafelerde kuyruk yok. büyük tabağı söyle, on bire kadar otur."
+      },
+      "place": {
+        "en": "gärtnerplatz",
+        "de": "gärtnerplatz",
+        "tr": "gärtnerplatz"
+      },
+      "hour": 9,
+      "minute": 30,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "rooftop",
+      "title": {
+        "en": "golden hour from a rooftop.",
+        "de": "goldene stunde auf einem dach.",
+        "tr": "bir çatıda altın saat."
+      },
+      "line": {
+        "en": "sun goes down at 16:55, so be up there by five. the skyline view from the olympiaturm area works dry or cloudy; wear a jacket.",
+        "de": "die sonne geht um 16:55 unter, sei um fünf oben. der blick vom olympiapark-gelände geht trocken wie bewölkt; jacke an.",
+        "tr": "güneş 16:55'te batıyor, beşte yukarıda ol. olympiapark çevresinden manzara kuru ya da bulutlu fark etmez; ceket giy."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "swim",
+      "title": {
+        "en": "an evening swim in a real pool.",
+        "de": "abendschwimmen im echten hallenbad.",
+        "tr": "gerçek bir havuzda akşam yüzmesi."
+      },
+      "line": {
+        "en": "too cold for the lakes now. the müller'sches volksbad is the pretty one; check the evening hours before you go.",
+        "de": "für die seen ist es jetzt zu kalt. das müller'sche volksbad ist das schöne; prüf vorher die abendzeiten.",
+        "tr": "göller için artık çok soğuk. müller'sches volksbad en güzeli; gitmeden akşam saatlerine bak."
+      },
+      "place": {
+        "en": "müller'sches volksbad",
+        "de": "müller'sches volksbad",
+        "tr": "müller'sches volksbad"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Late October: lakes too cold, so indoor pool; opening hours not verified."
+    },
+    {
+      "kind": "quiz",
+      "title": {
+        "en": "pub quiz night.",
+        "de": "pub-quiz-abend.",
+        "tr": "pub quiz gecesi."
+      },
+      "line": {
+        "en": "tuesday is a good quiz night. find a table, bring four people and a pen; the team with the worst name buys the first round.",
+        "de": "dienstag ist ein guter quiz-abend. such einen tisch, bring vier leute und einen stift; das team mit dem schlechtesten namen zahlt die erste runde.",
+        "tr": "salı iyi bir quiz akşamı. masa bul, dört kişi ve bir kalem getir; en kötü isimli takım ilk turu ısmarlar."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "newplace",
+      "title": {
+        "en": "one place you have never been.",
+        "de": "ein ort, an dem du noch nie warst.",
+        "tr": "hiç gitmediğin bir yer."
+      },
+      "line": {
+        "en": "pick a street in the glockenbach or haidhausen and walk into the first spot you have not tried. no reviews, no map.",
+        "de": "such dir eine strasse im glockenbach oder in haidhausen und geh ins erste lokal, das du nicht kennst. keine bewertungen, keine karte.",
+        "tr": "glockenbach ya da haidhausen'da bir sokak seç, denemediğin ilk mekâna gir. yorum yok, harita yok."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "camera",
+      "title": {
+        "en": "photo walk in the last light.",
+        "de": "fotospaziergang im letzten licht.",
+        "tr": "son ışıkta fotoğraf yürüyüşü."
+      },
+      "line": {
+        "en": "the low sun of late october is the best light of the year. walk the englischer garten from the chinese tower to the eisbach with a camera.",
+        "de": "die tiefe sonne im spätoktober ist das beste licht des jahres. geh mit kamera vom chinesischen turm zum eisbach durch den englischen garten.",
+        "tr": "ekim sonunun alçak güneşi yılın en güzel ışığı. kamerayla englischer garten'da chinesischer turm'dan eisbach'a yürü."
+      },
+      "place": {
+        "en": "englischer garten",
+        "de": "englischer garten",
+        "tr": "englischer garten"
+      },
+      "hour": 15,
+      "minute": 30,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "festival",
+      "title": {
+        "en": "no festival today, so make one.",
+        "de": "kein festival heute, also mach eins.",
+        "tr": "bugün festival yok, kendin yap."
+      },
+      "line": {
+        "en": "oktoberfest is over and tollwood is weeks away. we found no big event for tuesday, so bring music and food to a friend's flat.",
+        "de": "die wiesn ist vorbei und tollwood noch wochen entfernt. wir haben nichts grosses für dienstag gefunden, also bring musik und essen zu freunden.",
+        "tr": "oktoberfest bitti, tollwood haftalar sonra. salı için büyük bir etkinlik bulamadık; müzik ve yemekle bir arkadaşın evine git."
+      },
+      "place": {
+        "en": "bei freunden",
+        "de": "bei freunden",
+        "tr": "bei freunden"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "No major Munich festival found for 27.10 (Oktoberfest ended 04.10)."
+    },
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "karaoke on a school night.",
+        "de": "karaoke unter der woche.",
+        "tr": "hafta içi karaoke."
+      },
+      "line": {
+        "en": "a tuesday crowd sings braver than a saturday one. sign up for one song you know by heart and one you do not.",
+        "de": "am dienstag singt es sich mutiger als am samstag. trag dich für ein lied ein, das du kannst, und eins, das du nicht kannst.",
+        "tr": "salı kalabalığı cumartesiden daha cesur söyler. ezbere bildiğin bir şarkıya ve bilmediğin bir şarkıya yazıl."
+      },
+      "place": {
+        "en": "karaokebar im glockenbach",
+        "de": "karaokebar im glockenbach",
+        "tr": "karaokebar im glockenbach"
+      },
+      "hour": 21,
+      "minute": 0,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "vinyl",
+      "title": {
+        "en": "crate digging after work.",
+        "de": "plattenstöbern nach der arbeit.",
+        "tr": "iş çıkışı plak karıştırma."
+      },
+      "line": {
+        "en": "spend an hour in a record shop in the isarvorstadt, then play the best find on someone's turntable.",
+        "de": "eine stunde im plattenladen in der isarvorstadt, dann den besten fund bei jemandem auf den plattenspieler legen.",
+        "tr": "isarvorstadt'ta bir plakçıda bir saat geçir, sonra en iyi buluntuyu birinin pikabında çal."
+      },
+      "place": {
+        "en": "isarvorstadt",
+        "de": "isarvorstadt",
+        "tr": "isarvorstadt"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "openair",
+      "title": {
+        "en": "a cold, bright afternoon outside.",
+        "de": "ein kalter, heller nachmittag draussen.",
+        "tr": "soğuk ve parlak bir öğleden sonra dışarıda."
+      },
+      "line": {
+        "en": "open-air season is over, so make your own: speaker, blanket, thermos on the wiese by the olympiasee. wear two jumpers.",
+        "de": "die open-air-saison ist vorbei, also mach dein eigenes: box, decke, thermoskanne auf der wiese am olympiasee. zwei pullover an.",
+        "tr": "açık hava sezonu bitti, kendininkini yap: hoparlör, battaniye, termos, olympiasee kıyısındaki çimenlik. iki kazak giy."
+      },
+      "place": {
+        "en": "olympiasee",
+        "de": "olympiasee",
+        "tr": "olympiasee"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "bike",
+      "title": {
+        "en": "a ride along the isar.",
+        "de": "radtour entlang der isar.",
+        "tr": "isar boyunca bisiklet."
+      },
+      "line": {
+        "en": "from the flaucher north to the englischer garten on the flat river path, about 40 minutes. lights on, it is dark by five.",
+        "de": "vom flaucher auf dem flachen flussweg nach norden zum englischen garten, etwa 40 minuten. licht an, ab fünf ist es dunkel.",
+        "tr": "flaucher'dan düz nehir yolunda kuzeye englischer garten'a, yaklaşık 40 dakika. ışıkları aç, beşte hava kararıyor."
+      },
+      "place": {
+        "en": "isarradweg",
+        "de": "isarradweg",
+        "tr": "isarradweg"
+      },
+      "hour": 15,
+      "minute": 30,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "cinema",
+      "title": {
+        "en": "a film in a proper cinema.",
+        "de": "ein film im richtigen kino.",
+        "tr": "gerçek bir sinemada film."
+      },
+      "line": {
+        "en": "a tuesday evening show is half empty and the best seats are free. pick one at the museum lichtspiele or the neues rottmann.",
+        "de": "die dienstagabend-vorstellung ist halb leer, die besten plätze sind frei. such dir eine im museum lichtspiele oder im neuen rottmann aus.",
+        "tr": "salı akşamı seansı yarı boş, en iyi koltuklar serbest. museum lichtspiele ya da neues rottmann'dan birini seç."
+      },
+      "place": {
+        "en": "museum lichtspiele",
+        "de": "museum lichtspiele",
+        "tr": "museum lichtspiele"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Programme not verified; pick from the current listing."
+    },
+    {
+      "kind": "boardgames",
+      "title": {
+        "en": "board games and a long table.",
+        "de": "brettspiele und ein langer tisch.",
+        "tr": "kutu oyunları ve uzun bir masa."
+      },
+      "line": {
+        "en": "bring one game you love and one nobody knows. a café with a shelf of games and cheap tea is enough.",
+        "de": "bring ein spiel mit, das du liebst, und eins, das keiner kennt. ein café mit spieleregal und günstigem tee reicht.",
+        "tr": "sevdiğin bir oyunu ve kimsenin bilmediği bir oyunu getir. oyun rafı ve ucuz çayı olan bir kafe yeter."
+      },
+      "place": {
+        "en": "spielecafé in der maxvorstadt",
+        "de": "spielecafé in der maxvorstadt",
+        "tr": "spielecafé in der maxvorstadt"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "a flea market on a weekday.",
+        "de": "flohmarkt unter der woche.",
+        "tr": "hafta içi bit pazarı."
+      },
+      "line": {
+        "en": "real flea markets are on weekends, so go to the antique shops around the westermühlstrasse and the stalls at the viktualienmarkt instead.",
+        "de": "die echten flohmärkte sind am wochenende, also geh stattdessen in die antiquitätenläden um die westermühlstrasse und zu den ständen am viktualienmarkt.",
+        "tr": "gerçek bit pazarları hafta sonu; onun yerine westermühlstrasse çevresindeki antikacılara ve viktualienmarkt tezgâhlarına git."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 10,
+      "minute": 30,
+      "why": "Flea markets are weekend events, so the suggestion is shops and the Viktualienmarkt (open Tue)."
+    },
+    {
+      "kind": "skate",
+      "title": {
+        "en": "skate before the light goes.",
+        "de": "skaten, bevor das licht geht.",
+        "tr": "ışık gitmeden kaykay."
+      },
+      "line": {
+        "en": "sun sets at 16:55. roll the paths around the olympiapark if it is dry; if wet, stay home, wet wheels are no fun.",
+        "de": "die sonne geht um 16:55 unter. fahr die wege im olympiapark, wenn es trocken ist; bei nässe lieber zu hause bleiben.",
+        "tr": "güneş 16:55'te batıyor. kuruysa olympiapark yollarında kay; ıslaksa evde kal, ıslak tekerlek keyifsiz."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "cook",
+      "title": {
+        "en": "cook together tonight.",
+        "de": "heute abend zusammen kochen.",
+        "tr": "bu akşam birlikte yemek yap."
+      },
+      "line": {
+        "en": "shop at the viktualienmarkt in the afternoon, then one big pot for six. autumn: pumpkin, chestnuts, something with sage.",
+        "de": "nachmittags auf dem viktualienmarkt einkaufen, dann ein grosser topf für sechs. herbst: kürbis, maronen, etwas mit salbei.",
+        "tr": "öğleden sonra viktualienmarkt'tan alışveriş yap, sonra altı kişilik büyük bir tencere. sonbahar: balkabağı, kestane, adaçayılı bir şey."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "sauna",
+      "title": {
+        "en": "sauna on a cold evening.",
+        "de": "sauna an einem kalten abend.",
+        "tr": "soğuk bir akşamda sauna."
+      },
+      "line": {
+        "en": "therme erding is the big one, about 40 minutes by s-bahn. plan three rounds and a long rest; check closing time before you go.",
+        "de": "die therme erding ist die grosse, etwa 40 minuten mit der s-bahn. plant drei gänge und eine lange pause; prüf vorher die schliesszeit.",
+        "tr": "therme erding büyük olanı, s-bahn ile yaklaşık 40 dakika. üç tur ve uzun bir dinlenme planla; gitmeden kapanış saatine bak."
+      },
+      "place": {
+        "en": "therme erding",
+        "de": "therme erding",
+        "tr": "therme erding"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Hours not verified."
+    },
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "open mic, three minutes each.",
+        "de": "open mic, drei minuten pro person.",
+        "tr": "open mic, kişi başı üç dakika."
+      },
+      "line": {
+        "en": "tuesday is for trying new things. bring a poem, a joke or a song and a friend who claps loudly.",
+        "de": "dienstag ist zum ausprobieren da. bring ein gedicht, einen witz oder ein lied mit und einen freund, der laut klatscht.",
+        "tr": "salı yeni şeyler denemek için. bir şiir, fıkra ya da şarkı ve yüksek sesle alkışlayan bir arkadaş getir."
+      },
+      "place": {
+        "en": "kleine bühne in der maxvorstadt",
+        "de": "kleine bühne in der maxvorstadt",
+        "tr": "kleine bühne in der maxvorstadt"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No specific open mic verified for 27.10."
+    },
+    {
+      "kind": "pingpong",
+      "title": {
+        "en": "table tennis, loser buys.",
+        "de": "tischtennis, verlierer zahlt.",
+        "tr": "masa tenisi, kaybeden ısmarlar."
+      },
+      "line": {
+        "en": "first to eleven, best of five. an indoor table in a bar or a club room is the safe bet when it is cold.",
+        "de": "bis elf, best of five. ein tisch in einer bar oder im vereinsraum ist bei kälte die sichere wahl.",
+        "tr": "on bire kadar, beş setin en iyisi. soğukta bir barda ya da kulüp odasında iç mekân masası güvenli seçim."
+      },
+      "place": {
+        "en": "tischtennis im glockenbach",
+        "de": "tischtennis im glockenbach",
+        "tr": "tischtennis im glockenbach"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "bouldering",
+      "title": {
+        "en": "bouldering after work.",
+        "de": "bouldern nach der arbeit.",
+        "tr": "iş çıkışı bouldering."
+      },
+      "line": {
+        "en": "the boulderwelt is warm, dry and open in the evening. pick one problem and everybody tries it until someone tops it.",
+        "de": "die boulderwelt ist warm, trocken und abends offen. such ein problem aus und alle probieren es, bis jemand oben ist.",
+        "tr": "boulderwelt sıcak, kuru ve akşamları açık. bir problem seç, biri tepeye çıkana kadar herkes denesin."
+      },
+      "place": {
+        "en": "boulderwelt münchen",
+        "de": "boulderwelt münchen",
+        "tr": "boulderwelt münchen"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Hours not verified."
+    },
+    {
+      "kind": "picnic",
+      "title": {
+        "en": "a picnic in the leaves.",
+        "de": "picknick im laub.",
+        "tr": "yapraklar arasında piknik."
+      },
+      "line": {
+        "en": "if the sun is out, bring a blanket and something warm to the hofgarten or the englischer garten. if it rains, move it to a flat.",
+        "de": "wenn die sonne scheint, nimm decke und etwas warmes mit in den hofgarten oder englischen garten. bei regen zieht es in eine wohnung um.",
+        "tr": "güneş varsa battaniye ve sıcak bir şey alıp hofgarten ya da englischer garten'a git. yağmur varsa bir eve taşın."
+      },
+      "place": {
+        "en": "hofgarten",
+        "de": "hofgarten",
+        "tr": "hofgarten"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks."
+    },
+    {
+      "kind": "crawl",
+      "title": {
+        "en": "a three-bar crawl in the glockenbach.",
+        "de": "kneipentour zu dritt im glockenbach.",
+        "tr": "glockenbach'ta üç duraklı bar turu."
+      },
+      "line": {
+        "en": "one drink per bar, no more than forty minutes each. start at the gärtnerplatz and let the last bar be a surprise.",
+        "de": "ein getränk pro bar, jeweils höchstens vierzig minuten. start am gärtnerplatz, die letzte bar bleibt eine überraschung.",
+        "tr": "her barda bir içki, en fazla kırk dakika. gärtnerplatz'ta başla, son bar sürpriz olsun."
+      },
+      "place": {
+        "en": "gärtnerplatz",
+        "de": "gärtnerplatz",
+        "tr": "gärtnerplatz"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No match day to shape it; plain Tuesday crawl."
+    },
+    {
+      "kind": "stars",
+      "title": {
+        "en": "stars from the olympiaberg.",
+        "de": "sterne vom olympiaberg.",
+        "tr": "olympiaberg'den yıldızlar."
+      },
+      "line": {
+        "en": "if the sky is clear it is dark by 18:00. take a blanket and a red torch up the hill; clouds mean you go home.",
+        "de": "bei klarem himmel ist es um 18:00 dunkel. decke und rotlicht-taschenlampe mit auf den hügel; bei wolken geht es heim.",
+        "tr": "gökyüzü açıksa 18:00'de hava kararır. tepeye battaniye ve kırmızı fener götür; bulut varsa eve dön."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Clear sky not confirmed; depends on cloud."
+    },
+    {
+      "kind": "football",
+      "title": {
+        "en": "five-a-side under the lights.",
+        "de": "fünf gegen fünf unter flutlicht.",
+        "tr": "ışıklar altında beşe beş."
+      },
+      "line": {
+        "en": "no pro match to watch, so play: find a bolzplatz with floodlights, two teams, shirts against skins is too cold, use bibs.",
+        "de": "kein profispiel zum zuschauen, also spielen: ein bolzplatz mit flutlicht, zwei teams, hemd gegen nackt ist zu kalt, nehmt leibchen.",
+        "tr": "izlenecek profesyonel maç yok, o yüzden oyna: ışıklı bir bolzplatz, iki takım; yarı çıplak çok soğuk, yelek kullanın."
+      },
+      "place": {
+        "en": "bolzplatz im westpark",
+        "de": "bolzplatz im westpark",
+        "tr": "bolzplatz im westpark"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "No confirmed pro match; amateur game suggested."
+    },
+    {
+      "kind": "tram",
+      "title": {
+        "en": "ride the tram end to end.",
+        "de": "die tram von ende zu ende.",
+        "tr": "tramvayı baştan sona bin."
+      },
+      "line": {
+        "en": "tram 19 across the city after dark, window seat. the line is 150 years old this year; get off where something smells good.",
+        "de": "tram 19 nach einbruch der dunkelheit quer durch die stadt, fensterplatz. die tram wird dieses jahr 150; steig aus, wo es gut riecht.",
+        "tr": "karanlıktan sonra 19 numaralı tramvayla şehri geç, cam kenarı. tramvay bu yıl 150 yaşında; güzel koku olan yerde in."
+      },
+      "place": {
+        "en": "tram 19",
+        "de": "tram 19",
+        "tr": "tram 19"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "150 years of Munich trams celebrated 16-18 Oct 2026 (muenchen.de)."
+    },
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "jazz in a small room.",
+        "de": "jazz in einem kleinen raum.",
+        "tr": "küçük bir odada caz."
+      },
+      "line": {
+        "en": "tuesday has a session somewhere in town. a basement club, one drink, and stay for the second set.",
+        "de": "dienstags gibt es irgendwo in der stadt eine session. ein kellerclub, ein getränk und für das zweite set bleiben.",
+        "tr": "salı günü şehrin bir yerinde bir session var. bodrum kulübü, bir içki ve ikinci sete kal."
+      },
+      "place": {
+        "en": "unterfahrt",
+        "de": "unterfahrt",
+        "tr": "unterfahrt"
+      },
+      "hour": 20,
+      "minute": 30,
+      "why": "Programme not verified for 27.10; check the club calendar."
+    },
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a walk to the last light.",
+        "de": "ein spaziergang bis zum letzten licht.",
+        "tr": "son ışığa kadar yürüyüş."
+      },
+      "line": {
+        "en": "sunset at 16:55: walk from the isar bridges to the friedensengel as the sky turns. bring a hat; it gets cold fast.",
+        "de": "sonnenuntergang um 16:55: von den isarbrücken zum friedensengel laufen, wenn der himmel sich färbt. mütze mitnehmen; es wird schnell kalt.",
+        "tr": "gün batımı 16:55: gökyüzü renk değiştirirken isar köprülerinden friedensengel'e yürü. bere al; çabuk soğuyor."
+      },
+      "place": {
+        "en": "friedensengel",
+        "de": "friedensengel",
+        "tr": "friedensengel"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Tuesday 27.10, no holiday, shops open. Forecast not confirmable; written for a typical late-October day with indoor fallbacks. Sunset ~16:55."
+    }
+  ]
+}
