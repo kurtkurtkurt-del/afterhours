@@ -962,6 +962,15 @@ For the setup, the tests (over 950 checks) and the local imitation of Supabase
 
 ## 9. What runs on its own
 
+**How a job passes** (26.10.2026): `.claude/prompts/hat.md` — a five-line card
+before every job, three risk bands, the **heart** files (whatever protects a
+member) that always get a separate reading session and the owner's approval,
+a three-minute live check from the phone after every release, and the
+thresholds at which the next pieces of the line are added. Every finished job
+is one line of numbers in `.claude/prompts/is-gunlugu.md`, read every three
+months to drop the gates that never caught anything. The rules in it only
+shrink.
+
 **GitHub Actions** (`.github/workflows/test.yml`), on every push and pull
 request. Three jobs, none of which needs a secret:
 
