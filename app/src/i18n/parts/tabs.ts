@@ -686,6 +686,11 @@ export const tabs = {
 
   // deck, card face, deck viewer
   'deck.yours': { en: 'your deck', de: 'dein stapel', tr: 'senin desten' },
+  // short names for the tabs on top of an open deck (DeckViewer, 26.10.2026)
+  'deck.tab.friends': { en: 'friends', de: 'freunde', tr: 'arkadaşlar' },
+  'deck.tab.mine': { en: 'yours', de: 'deins', tr: 'senin' },
+  'deck.tab.wave2': { en: '2nd wave', de: '2. welle', tr: '2. dalga' },
+  'deck.tab.wave3': { en: '3rd wave', de: '3. welle', tr: '3. dalga' },
   'deck.friends': { en: "friends' deck", de: 'stapel der freunde', tr: 'arkadaşların destesi' },
   'deck.wave2': { en: '2nd wave', de: '2. welle', tr: '2. dalga' },
   'deck.wave3': { en: '3rd wave', de: '3. welle', tr: '3. dalga' },

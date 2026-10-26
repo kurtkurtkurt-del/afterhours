@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { BackHandler, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { BackHandler, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, { Extrapolation, interpolate, runOnJS, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
-import Pill from '@/components/Pill';
 import BigPicker from '@/components/BigPicker';
 import WhenPicker from '@/components/WhenPicker';
 import { useEventTypes } from '@/data/types';
-import { filterWhen, whenName, type When } from '@/data/when';
+import { dayLabel, filterWhen, type When } from '@/data/when';
+import { useCities } from '@/data/cities';
 import type { Night } from '@/data/deck';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
@@ -33,6 +33,10 @@ type Props = {
   onUndo: (card: DeckCard) => void;   // a swipe taken back
   onClose: () => void;
   empty: string;
+  // the decks of connect as tabs on top (design 4 of prototypes/deck-head.html, 26.10.2026);
+  // a tap opens that deck in place. A special deck shows its own name instead.
+  tabs?: { id: 'friends' | 'mine' | 'wave2' | 'wave3'; label: string; count: number }[];
+  onTab?: (id: 'friends' | 'mine' | 'wave2' | 'wave3') => void;
 };
 
 const two = (n: number) => String(n).padStart(2, '0');
@@ -44,7 +48,8 @@ const two = (n: number) => String(n).padStart(2, '0');
 // flow's: what · when pills narrow the deck, and the page closes by pulling its head
 // down (a handle on top says so) — no close button.
 const CLOSE = 110;
-export default function DeckViewer({ cards, mode, special, onKeep, onLetGo, onUndo, onClose, empty, sample }: Props) {
+export default function DeckViewer({ cards, mode, special, onKeep, onLetGo, onUndo, onClose, empty, sample, tabs, onTab }: Props) {
+  const { cities } = useCities();
   const { width, height } = useWindowDimensions();
   const insets = useSafeAreaInsets();
   const tabSpace = useTabBarSpace();
@@ -70,8 +75,6 @@ export default function DeckViewer({ cards, mode, special, onKeep, onLetGo, onUn
     });
     return m;
   }, [cards, types]);
-  const typeLabel = type ? tx('type.' + type, types.find((ty) => ty.id === type)?.label ?? type) : t('type.all');
-  const whenLabel = when ? whenName(when, (k, f) => tx(k, f)) : t('when.any');
   // pulling the head down closes the page, like every pushed page
   const drag = useSharedValue(0);
   const pull = Gesture.Pan()
@@ -106,7 +109,11 @@ export default function DeckViewer({ cards, mode, special, onKeep, onLetGo, onUn
 
   const total = shown.length;
   const at = Math.min(swiped, total - 1);
-  const city = (shown[at]?.city ?? '').slice(0, 3);
+  // the line under the tabs: the city in full, the day of the card on top, where you are
+  const front = shown[Math.max(0, at)];
+  const city = front ? (cities.find((c) => c.id === front.city)?.name ?? front.city).toLowerCase() : '';
+  const day = front?.startsAt ? dayLabel(front.startsAt) : null;
+  const ink = special ? special.ink : colors.paper;
   const top = Math.max(brand.top, insets.top + 24);
 
   const swipe = (entry: DeckEntry, direction: 'left' | 'right') => {
@@ -155,30 +162,69 @@ export default function DeckViewer({ cards, mode, special, onKeep, onLetGo, onUn
               <Path d="M2 2l7 6 7-6" stroke={special ? special.ink : colors.paper} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" fill="none" />
             </Svg>
           </View>
-          <View style={styles.row}>
-          <View style={styles.chip}>
-            <Text style={styles.chipText} numberOfLines={1}>
-              {[
-                special ? t(special.label) : mode === 'wave2' ? up(t('deck.wave2')) : mode === 'wave3' ? up(t('deck.wave3')) : mode === 'mine' ? t('deck.yours') : t('deck.friends'),
-                total ? `${city} · ${two(Math.min(swiped + 1, total))}/${two(total)}` : null,
-                sample ? up(t('deck.sample')) : null,
-              ]
-                .filter(Boolean)
-                .join(' · ')}
-            </Text>
-          </View>
-          {swiped > 0 ? (
-            <Pressable onPress={() => deck.current?.undo()} hitSlop={8} accessibilityRole="button" style={({ pressed }) => [styles.undo, pressed && styles.pressed]}>
-              <Svg width={14} height={14} viewBox="0 0 14 14">
-                <Path d="M5 3 2 6l3 3M2 6h6.5a3.5 3.5 0 0 1 0 7H6" stroke={colors.paper} strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" fill="none" />
-              </Svg>
-              <Text style={styles.undoText}>{t('flow.undo')}</Text>
-            </Pressable>
-          ) : null}
-          </View>
-          <View style={styles.pills}>
-            <Pill label={typeLabel} active={!!type} onPress={() => setSheet('type')} a11y={t('filter.what')} />
-            <Pill label={whenLabel} active={!!when} onPress={() => setSheet('when')} a11y={t('filter.when')} />
+          {/* the decks as tabs; a special deck: its own name */}
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={[styles.tabsWrap, special && { borderBottomColor: special.ink + '33' }]} contentContainerStyle={styles.tabs}>
+            {special || !tabs ? (
+              <View style={[styles.tab, styles.tabOn, special && { borderBottomColor: special.ink }]}>
+                <Text style={[styles.tabText, styles.tabTextOn, { color: ink }]} numberOfLines={1}>
+                  {special ? t(special.label) : mode === 'wave2' ? t('deck.wave2') : mode === 'wave3' ? t('deck.wave3') : mode === 'mine' ? t('deck.yours') : t('deck.friends')}
+                </Text>
+                <Text style={[styles.tabCount, { color: ink }]}>{total}</Text>
+              </View>
+            ) : (
+              tabs.map((tb) => {
+                const on = tb.id === mode;
+                return (
+                  <Pressable key={tb.id} onPress={() => !on && onTab?.(tb.id)} hitSlop={6} accessibilityRole="tab" accessibilityState={{ selected: on }} style={({ pressed }) => [styles.tab, on && styles.tabOn, pressed && styles.pressed]}>
+                    <Text style={[styles.tabText, on && styles.tabTextOn]} numberOfLines={1}>{tb.label}</Text>
+                    <Text style={[styles.tabCount, on && styles.tabCountOn]}>{tb.count}</Text>
+                  </Pressable>
+                );
+              })
+            )}
+          </ScrollView>
+          {/* where and when: the city, the day of the card on top, which card of how many; the filters as two round marks */}
+          <View style={styles.line}>
+            <View style={styles.where}>
+              {city ? (
+                <>
+                  <Svg width={10} height={13} viewBox="0 0 14 18">
+                    <Path d="M7 17s6-5.6 6-10A6 6 0 0 0 1 7c0 4.4 6 10 6 10Z" fill={colors.spot} />
+                  </Svg>
+                  <Text style={[styles.city, { color: ink }]} numberOfLines={1}>{city}</Text>
+                </>
+              ) : null}
+              {day ? <Text style={styles.day} numberOfLines={1}>{day}</Text> : null}
+              {total ? (
+                <Text style={[styles.pos, { color: ink }]}>
+                  {two(Math.min(swiped + 1, total))}
+                  <Text style={styles.posAll}> / {two(total)}</Text>
+                </Text>
+              ) : null}
+              {sample ? <Text style={styles.sample}>{up(t('deck.sample'))}</Text> : null}
+            </View>
+            <View style={styles.marks}>
+              {swiped > 0 ? (
+                <Pressable onPress={() => deck.current?.undo()} hitSlop={8} accessibilityRole="button" accessibilityLabel={t('flow.undo')} style={({ pressed }) => [styles.mark, pressed && styles.pressed]}>
+                  <Svg width={14} height={14} viewBox="0 0 14 14">
+                    <Path d="M5 3 2 6l3 3M2 6h6.5a3.5 3.5 0 0 1 0 7H6" stroke={colors.paper} strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                  </Svg>
+                </Pressable>
+              ) : null}
+              <Pressable onPress={() => setSheet('type')} hitSlop={6} accessibilityRole="button" accessibilityLabel={t('filter.what')} style={({ pressed }) => [styles.mark, pressed && styles.pressed]}>
+                <Svg width={14} height={14} viewBox="0 0 14 14">
+                  <Path d="M2 3h10l-4 5v3l-2 1V8z" stroke={colors.paper} strokeWidth={1.5} strokeLinejoin="round" fill="none" />
+                </Svg>
+                {type ? <View style={styles.markOn} /> : null}
+              </Pressable>
+              <Pressable onPress={() => setSheet('when')} hitSlop={6} accessibilityRole="button" accessibilityLabel={t('filter.when')} style={({ pressed }) => [styles.mark, pressed && styles.pressed]}>
+                <Svg width={14} height={14} viewBox="0 0 14 14">
+                  <Path d="M2.5 3.5h9v8h-9z" stroke={colors.paper} strokeWidth={1.4} strokeLinejoin="round" fill="none" />
+                  <Path d="M2.5 6h9M5 2v2.5M9 2v2.5" stroke={colors.paper} strokeWidth={1.4} strokeLinecap="round" />
+                </Svg>
+                {when ? <View style={styles.markOn} /> : null}
+              </Pressable>
+            </View>
           </View>
         </View>
         </GestureDetector>
@@ -216,15 +262,28 @@ const styles = StyleSheet.create({
   layer: { zIndex: 10, elevation: 10 },
   root: { flex: 1, backgroundColor: colors.ink },
   top: { position: 'absolute', left: brand.left, right: brand.left, gap: 10 },
-  row: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingRight: 84 },
-  pills: { flexDirection: 'row', gap: 8 },
+  // design 4: the decks as tabs, a hairline under them; the active one ink with an accent rule
+  tabsWrap: { flexGrow: 0, borderBottomWidth: 1, borderBottomColor: colors.ink3, marginRight: 64 },
+  tabs: { flexDirection: 'row', gap: 18 },
+  tab: { flexDirection: 'row', alignItems: 'flex-start', gap: 3, paddingBottom: 9, borderBottomWidth: 2, borderBottomColor: 'transparent', marginBottom: -1 },
+  tabOn: { borderBottomColor: colors.spot },
+  tabText: { fontFamily: fonts.medium, fontSize: 14.5, letterSpacing: -0.2, color: colors.mute },
+  tabTextOn: { color: colors.paper },
+  tabCount: { fontFamily: fonts.jet, fontSize: 9, color: colors.meta, marginTop: 1 },
+  tabCountOn: { color: colors.spotText },
+  line: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10 },
+  where: { flexDirection: 'row', alignItems: 'center', gap: 7, flexShrink: 1 },
+  city: { fontFamily: fonts.semibold, fontSize: 15, letterSpacing: -0.3, flexShrink: 1 },
+  day: { fontFamily: fonts.logo, fontSize: 14, color: colors.spotText, letterSpacing: -0.2 },
+  pos: { fontFamily: fonts.medium, fontSize: 13, fontVariant: ['tabular-nums'] },
+  posAll: { color: colors.meta, fontFamily: fonts.regular },
+  sample: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1.2, color: colors.meta, borderWidth: 1, borderColor: colors.ink3, borderRadius: radius.pill, paddingHorizontal: 6, paddingVertical: 2, overflow: 'hidden' },
+  marks: { flexDirection: 'row', gap: 8 },
+  mark: { width: 32, height: 32, borderRadius: 16, backgroundColor: ground(0.82), borderWidth: 1, borderColor: colors.ink3, alignItems: 'center', justifyContent: 'center' },
+  markOn: { position: 'absolute', top: 1, right: 1, width: 8, height: 8, borderRadius: 4, backgroundColor: colors.spot, borderWidth: 1.5, borderColor: colors.ink },
   handleWrap: { alignItems: 'center', gap: 2 },
   handle: { height: 5, borderRadius: 3, backgroundColor: colors.paper },
   chevron: { marginTop: 1 },
-  chip: { flexShrink: 1, height: 32, justifyContent: 'center', backgroundColor: ground(0.82), borderWidth: 1, borderColor: colors.ink3, paddingHorizontal: 12, borderRadius: radius.pill },
-  chipText: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 0.8, color: colors.paper },
-  undo: { flexDirection: 'row', alignItems: 'center', gap: 6, height: 32, paddingHorizontal: 12, borderRadius: radius.pill, backgroundColor: ground(0.82) },
-  undoText: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper },
   pressed: { opacity: 0.6 },
   empty: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 40, gap: 10 },
   emptyText: { fontFamily: fonts.medium, fontSize: 18, letterSpacing: -0.4, color: colors.paper, textAlign: 'center' },

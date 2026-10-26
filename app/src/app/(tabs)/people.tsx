@@ -690,6 +690,9 @@ export default function PeopleScreen() {
       {/* Card viewer: sits under the tab bar, which keeps floating on top. */}
       {deck ? (
         <DeckViewer
+          key={deck}
+          tabs={isSpecial(deck) ? undefined : decks.map((d) => ({ id: d.id, label: t(d.id === 'mine' ? 'deck.tab.mine' : d.id === 'friends' ? 'deck.tab.friends' : d.id === 'wave2' ? 'deck.tab.wave2' : 'deck.tab.wave3'), count: d.cards.length }))}
+          onTab={(id) => setDeck(id)}
           mode={isSpecial(deck) ? 'special' : deck}
           special={isSpecial(deck) ? specialOf(deck) : undefined}
           cards={isSpecial(deck) ? specialCards(deck) : deck === 'mine' ? mineCards : deck === 'wave2' ? wave2 : deck === 'wave3' ? wave3 : friendsDeck}
