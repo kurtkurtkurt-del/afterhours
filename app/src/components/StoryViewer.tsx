@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Modal, Pressable, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
+import { Alert, Modal, Pressable, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
@@ -10,19 +11,21 @@ import { FRAME_MS, type Story } from '@/content/stories';
 import { useLang } from '@/i18n';
 import { colors, fonts } from '@/theme/tokens';
 
-export type StoryItem = { story: Story; name: string; avatar?: ImageSourcePropType };
+export type StoryItem = { story: Story; name: string; avatar?: ImageSourcePropType; mine?: boolean };
 type Props = {
   items: StoryItem[]; // every story in the row, in its order
   start: number | null; // which one was tapped; null = closed
   onSeen: (dj: string) => void;
   onClose: () => void;
+  // your own story: the bin in the head deletes the frame on screen (its post)
+  onDelete?: (postId: string) => Promise<void>;
 };
 
 // DJ stories, full screen, one after another like the row: five seconds a frame with
 // progress bars on top. Tap the right side for the next frame, the left for the
 // previous; past a story's last frame the next DJ's story begins, past the last story
 // the viewer closes. Tap the name or photo to open that DJ's page.
-export default function StoryViewer({ items, start, onSeen, onClose }: Props) {
+export default function StoryViewer({ items, start, onSeen, onClose, onDelete }: Props) {
   const [at, setAt] = useState(start ?? 0);
   const [opened, setOpened] = useState(start);
   if (start !== opened) {
@@ -48,12 +51,12 @@ export default function StoryViewer({ items, start, onSeen, onClose }: Props) {
 
   return (
     <Modal visible={!!item} animationType="fade" onRequestClose={onClose} statusBarTranslucent>
-      {item ? <Frames key={item.story.dj} item={item} onEnd={() => move(1)} onBackPast={() => move(-1)} onClose={onClose} /> : null}
+      {item ? <Frames key={item.story.dj} item={item} onEnd={() => move(1)} onBackPast={() => move(-1)} onClose={onClose} onDelete={onDelete} /> : null}
     </Modal>
   );
 }
 
-function Frames({ item, onEnd, onBackPast, onClose }: { item: StoryItem; onEnd: () => void; onBackPast: () => void; onClose: () => void }) {
+function Frames({ item, onEnd, onBackPast, onClose, onDelete }: { item: StoryItem; onEnd: () => void; onBackPast: () => void; onClose: () => void; onDelete?: (postId: string) => Promise<void> }) {
   const insets = useSafeAreaInsets();
   const { t, up } = useLang();
   const { story, name, avatar } = item;
@@ -107,6 +110,27 @@ function Frames({ item, onEnd, onBackPast, onClose }: { item: StoryItem; onEnd: 
       run(fill.get());
     }
   };
+  // your own frame: stop, ask, delete; the next frame (or the next story) follows
+  const [gone, setGone] = useState<string[]>([]);
+  const remove = () => {
+    const id = frame?.postId;
+    if (!id || !onDelete) return;
+    cancelAnimation(fill);
+    Alert.alert(t('stories.delete'), t('stories.delete.sure'), [
+      { text: t('word.cancel'), style: 'cancel', onPress: () => run(fill.get()) },
+      {
+        text: t('stories.delete'),
+        style: 'destructive',
+        onPress: () =>
+          onDelete(id)
+            .then(() => {
+              setGone((g) => [...g, id]);
+              step(1);
+            })
+            .catch(() => run(fill.get())),
+      },
+    ]);
+  };
   const tap = (by: number) => {
     if (wasHeld.current) return; // the end of a hold, not a tap
     step(by);
@@ -145,6 +169,13 @@ function Frames({ item, onEnd, onBackPast, onClose }: { item: StoryItem; onEnd: 
             <Text style={styles.name}>{name}</Text>
             <Text style={styles.ago}>{up(t('story.hours', { n: story.hoursAgo }))}</Text>
           </Pressable>
+          {item.mine && frame?.postId && onDelete && !gone.includes(frame.postId) ? (
+            <Pressable onPress={remove} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('stories.delete')} style={styles.bin}>
+              <Svg width={18} height={18} viewBox="0 0 24 24">
+                <Path d="M4 7h16M9 7V4.5h6V7M6.5 7l1 13h9l1-13M10 11v6M14 11v6" stroke="#F6F4EF" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              </Svg>
+            </Pressable>
+          ) : null}
           <Pressable onPress={onClose} hitSlop={14} accessibilityRole="button" accessibilityLabel={t('story.close')} style={styles.close}>
             <Text style={styles.closeText}>×</Text>
           </Pressable>
@@ -162,6 +193,7 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.poster },
   zones: { flex: 1, flexDirection: 'row' },
   hush: { opacity: 0 },
+  bin: { width: 36, height: 36, borderRadius: 18, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(14,13,12,0.35)', marginRight: 8 },
   zoneBack: { flex: 1 },
   zoneNext: { flex: 2 },
   top: { position: 'absolute', top: 0, left: 0, right: 0, paddingHorizontal: 12 },

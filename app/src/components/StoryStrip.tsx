@@ -7,7 +7,7 @@ import StoryViewer, { type StoryItem } from '@/components/StoryViewer';
 import Avatar from '@/components/Avatar';
 import { useAuth } from '@/auth/AuthContext';
 import { stories as sampleStories, type Story } from '@/content/stories';
-import { postPhotoUrl, postsFeed, type Post } from '@/data/posts';
+import { postDelete, postPhotoUrl, postsFeed, type Post } from '@/data/posts';
 import { friendPhotos } from '@/data/photo';
 import { SAMPLES } from '@/content/samples';
 import { djs as localDjs, type Dj } from '@/content/djs';
@@ -61,7 +61,7 @@ export default function StoryStrip() {
     .sort((a, b) => Date.parse(a.created_at) - Date.parse(b.created_at))
     .forEach((p) => {
       const id = 'post:' + p.author_id;
-      const frame = { image: { uri: postPhotoUrl(p.photo_path)! }, caption: p.body };
+      const frame = { image: { uri: postPhotoUrl(p.photo_path)! }, caption: p.body, postId: p.mine ? p.id : undefined };
       const have = people.find((e) => e.id === id);
       if (have) {
         have.story!.frames.push(frame);
@@ -107,7 +107,7 @@ export default function StoryStrip() {
 
   const open = (e: Entry) => {
     if (!e.story) return e.dj ? router.push(`/dj/${e.dj.id}`) : undefined;
-    const items = strip.filter((x) => x.story).map((x) => ({ story: x.story!, name: x.name, avatar: x.photo ?? undefined }));
+    const items = strip.filter((x) => x.story).map((x) => ({ story: x.story!, name: x.name, avatar: x.photo ?? undefined, mine: !!x.mine }));
     setQueue({ items, start: Math.max(0, items.findIndex((x) => x.story.dj === e.id)) });
   };
   const markSeen = useCallback((dj: string) => {
@@ -138,7 +138,13 @@ export default function StoryStrip() {
           );
         })}
       </ScrollView>
-      <StoryViewer items={queue?.items ?? []} start={queue ? queue.start : null} onSeen={markSeen} onClose={() => setQueue(null)} />
+      <StoryViewer
+        items={queue?.items ?? []}
+        start={queue ? queue.start : null}
+        onSeen={markSeen}
+        onClose={() => setQueue(null)}
+        onDelete={(postId) => postDelete(postId).then(() => setPosts((l) => l.filter((p) => p.id !== postId)))}
+      />
     </>
   );
 }

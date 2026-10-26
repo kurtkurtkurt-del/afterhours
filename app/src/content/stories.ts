@@ -2,7 +2,8 @@ import type { ImageSourcePropType } from 'react-native';
 
 // Sample DJ stories until DJs can post their own: a few frames each, shown for
 // FRAME_MS apiece. Captions are the DJ's own words, so they stay untranslated.
-export type StoryFrame = { image: ImageSourcePropType; caption: string };
+// postId: a story you or a friend posted (a post with a photo); yours can be deleted from the viewer
+export type StoryFrame = { image: ImageSourcePropType; caption: string; postId?: string };
 export type Story = { dj: string; hoursAgo: number; frames: StoryFrame[] };
 
 export const FRAME_MS = 5000;

@@ -30,6 +30,8 @@ export const posts = {
   'stories.fill': { en: 'fill', de: 'füllen', tr: 'doldur' },
   'stories.fit': { en: 'fit', de: 'einpassen', tr: 'sığdır' },
   'stories.size': { en: 'size', de: 'größe', tr: 'boyut' },
+  'stories.delete': { en: 'delete', de: 'löschen', tr: 'sil' },
+  'stories.delete.sure': { en: 'delete this story? it goes for everyone.', de: 'diese story löschen? sie verschwindet für alle.', tr: 'bu story silinsin mi? herkes için kalkar.' },
   'stories.photoFirst': { en: 'a story needs a photo', de: 'eine story braucht ein foto', tr: 'story için bir fotoğraf gerekir' },
   'stories.add': { en: 'add a story', de: 'story hinzufügen', tr: 'story ekle' },
   'stories.you': { en: 'you', de: 'du', tr: 'sen' },
