@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Modal, Pressable, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
@@ -70,16 +70,47 @@ function Frames({ item, onEnd, onBackPast, onClose }: { item: StoryItem; onEnd: 
   }, [i, last, onEnd, onBackPast]);
 
   // each frame runs for FRAME_MS, then moves on by itself
+  const run = useCallback(
+    (from: number) => {
+      fill.set(from);
+      fill.set(
+        withTiming(1, { duration: Math.max(0, (1 - from) * FRAME_MS), easing: Easing.linear }, (done) => {
+          if (done) runOnJS(step)(1);
+        }),
+      );
+    },
+    [fill, step],
+  );
   useEffect(() => {
-    fill.set(0);
-    fill.set(
-      withTiming(1, { duration: FRAME_MS, easing: Easing.linear }, (done) => {
-        if (done) runOnJS(step)(1);
-      }),
-    );
+    run(0);
     return () => cancelAnimation(fill);
-  }, [i, fill, step]);
+  }, [i, fill, run]);
   const running = useAnimatedStyle(() => ({ width: `${fill.value * 100}%` }));
+
+  // Hold anywhere to stop (owner, 26.10.2026): the bar freezes, the words and the head
+  // fade so the picture is seen; letting go goes on from there. A hold is not a tap.
+  const [held, setHeld] = useState(false);
+  const holdTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const wasHeld = useRef(false);
+  const pressIn = () => {
+    wasHeld.current = false;
+    holdTimer.current = setTimeout(() => {
+      wasHeld.current = true;
+      cancelAnimation(fill);
+      setHeld(true);
+    }, 180);
+  };
+  const pressOut = () => {
+    if (holdTimer.current) clearTimeout(holdTimer.current);
+    if (wasHeld.current) {
+      setHeld(false);
+      run(fill.get());
+    }
+  };
+  const tap = (by: number) => {
+    if (wasHeld.current) return; // the end of a hold, not a tap
+    step(by);
+  };
 
   const openDj = () => {
     onClose();
@@ -95,12 +126,12 @@ function Frames({ item, onEnd, onBackPast, onClose }: { item: StoryItem; onEnd: 
       {/* tap zones: left third back, the rest forward */}
       <View style={StyleSheet.absoluteFill}>
         <View style={styles.zones}>
-          <Pressable style={styles.zoneBack} onPress={() => step(-1)} accessibilityLabel="‹" />
-          <Pressable style={styles.zoneNext} onPress={() => step(1)} accessibilityLabel="›" />
+          <Pressable style={styles.zoneBack} onPressIn={pressIn} onPressOut={pressOut} onPress={() => tap(-1)} accessibilityLabel="‹" />
+          <Pressable style={styles.zoneNext} onPressIn={pressIn} onPressOut={pressOut} onPress={() => tap(1)} accessibilityLabel="›" />
         </View>
       </View>
 
-      <View style={[styles.top, { paddingTop: insets.top + 10 }]} pointerEvents="box-none">
+      <View style={[styles.top, { paddingTop: insets.top + 10 }, held && styles.hush]} pointerEvents="box-none">
         <View style={styles.bars}>
           {story.frames.map((_, k) => (
             <View key={k} style={styles.track}>
@@ -120,7 +151,7 @@ function Frames({ item, onEnd, onBackPast, onClose }: { item: StoryItem; onEnd: 
         </View>
       </View>
 
-      <View style={[styles.bottom, { paddingBottom: insets.bottom + 32 }]} pointerEvents="none">
+      <View style={[styles.bottom, { paddingBottom: insets.bottom + 32 }, held && styles.hush]} pointerEvents="none">
         <Text style={styles.caption}>{frame.caption}</Text>
       </View>
     </View>
@@ -130,6 +161,7 @@ function Frames({ item, onEnd, onBackPast, onClose }: { item: StoryItem; onEnd: 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.poster },
   zones: { flex: 1, flexDirection: 'row' },
+  hush: { opacity: 0 },
   zoneBack: { flex: 1 },
   zoneNext: { flex: 2 },
   top: { position: 'absolute', top: 0, left: 0, right: 0, paddingHorizontal: 12 },
