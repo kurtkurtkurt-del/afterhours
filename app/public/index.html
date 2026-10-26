@@ -71,16 +71,18 @@
          dark ground; src/lib/webFrame.ts tells the screens the window is 440 px wide.
          Sheets and dialogs (react-native-web mounts them beside #root) sit in the same
          column: the transform makes their fixed layers fixed to it. */
-      html.framed body { background: #0e0d0c radial-gradient(ellipse at 50% 20%, #26221e 0%, #0e0d0c 70%); }
+      /* the ground is drawn by #sides (components/WebSides.web.tsx) in the page's own colour */
+      html.framed body { background: #0e0d0c; }
       html.framed #root {
         width: 440px;
         max-width: 440px;
         margin: 0 auto;
         position: relative;
+        z-index: 1;
         overflow: hidden;
         box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 30px 80px rgba(0, 0, 0, 0.55);
       }
-      html.framed body > div:not(#root) {
+      html.framed body > div:not(#root):not(#sides) {
         position: fixed;
         top: 0;
         bottom: 0;
@@ -89,7 +91,8 @@
         transform: translateX(-50%);
         pointer-events: none;
       }
-      html.framed body > div:not(#root) > * { pointer-events: auto; }
+      html.framed body > div:not(#root):not(#sides) > * { pointer-events: auto; }
+      html.framed body > div:not(#root):not(#sides) { z-index: 2; }
     </style>
   </head>
 

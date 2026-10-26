@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { serverText } from '@/lib/serverText';
 import Tips from '@/components/Tips';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Linking, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Svg, { Circle, Path } from 'react-native-svg';
 import Storage from 'expo-sqlite/kv-store';
@@ -20,7 +20,7 @@ import { friendsKept, friendsList, type FriendKept, type FriendRow } from '@/dat
 import { friendPhotos } from '@/data/photo';
 import { friendsLive, type LiveFriend } from '@/data/checkin';
 import { useAuth } from '@/auth/AuthContext';
-import { router } from 'expo-router';
+import { router, useFocusEffect } from 'expo-router';
 import { useCities } from '@/data/cities';
 import { chooseCity, useHere } from '@/data/here';
 import { useTabReset } from '@/hooks/useTabReset';
@@ -33,6 +33,7 @@ import { AboutSheet } from '@/components/About';
 import { filterWhen, isWhen, whenName, type When } from '@/data/when';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius, ground, barStyle } from '@/theme/tokens';
+import { pressListen, setFront } from '@/lib/front';
 import { brand } from '@/theme/layout';
 
 type Panel = 'tickets' | 'spark';
@@ -241,6 +242,46 @@ export default function FlowScreen() {
     },
     [session],
   );
+  // The card on top, for the computer's sides (lib/front.ts); a spark or a drawn card has no
+  // photo of its own there, so the sides keep the last night.
+  const topRef = useRef<Night | null>(null);
+  const onTop = useCallback(
+    (entry: DeckEntry | undefined) => {
+      if (!entry || isSpark(entry) || isCard(entry)) return;
+      topRef.current = entry;
+      setFront({ id: entry.id, slug: entry.slug, title: entry.title, venue: entry.venue_name, photo: entry.image_url, ticketUrl: entry.ticket_url, city: entry.city_slug, about: abouts.get(entry.id) ?? null, preview: previews.get(entry.id) ?? null });
+    },
+    [abouts, previews],
+  );
+  useEffect(() => {
+    if (topRef.current) onTop(topRef.current);
+  }, [abouts, previews, onTop]);
+  // On a computer: ← let go, → keep, ↑ ticket, ↓ details, space listen, z undo (the sides
+  // show the keys). Only while the flow is the open page and nothing is being typed.
+  useFocusEffect(
+    useCallback(() => {
+      if (Platform.OS !== 'web' || typeof window === 'undefined') return;
+      const down = (e: KeyboardEvent) => {
+        const el = e.target as HTMLElement | null;
+        if (el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable)) return;
+        if (e.metaKey || e.ctrlKey || e.altKey) return;
+        const n = topRef.current;
+        if (e.key === 'ArrowLeft') deck.current?.swipe('left');
+        else if (e.key === 'ArrowRight') deck.current?.swipe('right');
+        else if (e.key === 'z' || e.key === 'Z') deck.current?.undo();
+        else if (e.key === 'ArrowDown' && n?.slug) router.push(`/night/${n.slug}`);
+        else if (e.key === 'ArrowUp' && n) {
+          if (n.ticket_url) Linking.openURL(n.ticket_url).catch(() => {});
+          else router.push(`/night/${n.slug}`);
+        }
+        else if (e.key === ' ') pressListen();
+        else return;
+        e.preventDefault();
+      };
+      window.addEventListener('keydown', down);
+      return () => window.removeEventListener('keydown', down);
+    }, []),
+  );
   const onUndo = useCallback(
     (entry: DeckEntry) => {
       setSwiped((n) => Math.max(0, n - 1));
@@ -330,7 +371,7 @@ export default function FlowScreen() {
         {error && panel === 'tickets' ? (
           <Text style={styles.note}>{error === 'offline' ? up(t('offline.empty')) : upperData(error)}</Text>
         ) : shown ? (
-          <Deck ref={deck} key={`${panel}/${city}/${type}/${when}/${reloads}`} nights={shown} friendsOf={friendsOf} bottom={tabSpace + ACTIONS} top={(headBottom || Math.max(brand.top, insets.top + 24) + 30) + 14} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} listed={panel === 'tickets' && counts ? Object.values(counts).reduce((a, n) => a + n, 0) : 0} hasAbout={(e) => abouts.has(e.id)} onAbout={(e) => setReading(abouts.get(e.id) ?? null)} previewOf={(e) => previews.get(e.id)} />
+          <Deck ref={deck} key={`${panel}/${city}/${type}/${when}/${reloads}`} nights={shown} friendsOf={friendsOf} bottom={tabSpace + ACTIONS} top={(headBottom || Math.max(brand.top, insets.top + 24) + 30) + 14} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} onTop={onTop} listed={panel === 'tickets' && counts ? Object.values(counts).reduce((a, n) => a + n, 0) : 0} hasAbout={(e) => abouts.has(e.id)} onAbout={(e) => setReading(abouts.get(e.id) ?? null)} previewOf={(e) => previews.get(e.id)} />
         ) : (
           <Text style={styles.note}>{up(t('flow.loading'))}</Text>
         )}

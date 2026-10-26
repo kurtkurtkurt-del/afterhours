@@ -80,6 +80,8 @@ type Props = {
   previewOf?: (entry: DeckEntry) => Preview | undefined;
   // a specialty deck: the cards have no ground of their own, its room of motifs shows
   room?: boolean;
+  // the card on top changed (undefined: the deck ran out) — the computer's sides follow it
+  onTop?: (entry: DeckEntry | undefined) => void;
   // How many nights the city lists, swiped or not. The server leaves out what you
   // swiped, so a deck that arrives empty in a city with nights means you have seen
   // them all: the empty state then says so and offers to start over (26.10.2026 —
@@ -214,7 +216,7 @@ const SwipeCard = forwardRef<CardHandle, {
   );
 });
 
-const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bottom, top: posterTop, onSwipe, onUndo, onReset, hasAbout, onAbout, previewOf, room, listed }, ref) {
+const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bottom, top: posterTop, onSwipe, onUndo, onReset, hasAbout, onAbout, previewOf, room, listed, onTop }, ref) {
   const { t, up } = useLang();
   // one preview at a time; a swipe stops it (the ambient music is hushed meanwhile)
   const track = useTrack();
@@ -224,6 +226,13 @@ const Deck = forwardRef<DeckHandle, Props>(function Deck({ nights, friendsOf, bo
   const topRef = useRef<CardHandle>(null);
   const top = nights[i];
   const next = nights[i + 1];
+  const latestOnTop = useRef(onTop);
+  useEffect(() => {
+    latestOnTop.current = onTop;
+  });
+  useEffect(() => {
+    latestOnTop.current?.(top);
+  }, [top]);
 
   // Kept: a red mark pops up over the deck for a moment (0 → 1 in, 1 → 2 out).
   const burst = useSharedValue(0);

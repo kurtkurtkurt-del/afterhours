@@ -30,6 +30,7 @@ import InstallHint from '@/components/InstallHint';
 import { installDialogs } from '@/lib/dialog';
 import UpdateGate from '@/components/UpdateGate';
 import NoticeSheet from '@/components/NoticeSheet';
+import WebSides from '@/components/WebSides';
 import { catchErrors, logError } from '@/data/safety';
 import { startOffline } from '@/lib/offline';
 import '@/data/jobs';
@@ -110,6 +111,7 @@ function RootLayout() {
       <TermsGate />
       <UpdateGate />
       <DialogHost />
+      <WebSides />
       <InstallHint />
     </AmbientProvider>
     </LanguageProvider>
