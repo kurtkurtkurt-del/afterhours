@@ -492,7 +492,7 @@ const styles = StyleSheet.create({
   recordBigName: { fontFamily: fonts.logo, fontSize: 30, letterSpacing: -0.6, color: colors.onPhoto, marginTop: 6 },
   recordBigCount: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.onPhotoMute },
   poster: { width: 108, height: 140, borderRadius: radius.sm, overflow: 'hidden', backgroundColor: colors.ink3 },
-  posterDate: { position: 'absolute', left: 7, top: 7, backgroundColor: colors.ink, color: colors.onPhoto, fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, paddingHorizontal: 6, paddingVertical: 4, borderRadius: 5, overflow: 'hidden' },
+  posterDate: { position: 'absolute', left: 7, top: 7, backgroundColor: colors.poster, color: colors.onPhoto, fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, paddingHorizontal: 6, paddingVertical: 4, borderRadius: 5, overflow: 'hidden' },
   posterText: { position: 'absolute', left: 8, right: 8, bottom: 7 },
   posterTitle: { fontFamily: fonts.semibold, fontSize: 12.5, lineHeight: 14, letterSpacing: -0.2, color: colors.onPhoto, textShadowColor: 'rgba(0,0,0,0.6)', textShadowRadius: 4, textShadowOffset: { width: 0, height: 1 } },
   posterMono: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, color: colors.onPhoto, marginTop: 4, textShadowColor: 'rgba(0,0,0,0.6)', textShadowRadius: 4, textShadowOffset: { width: 0, height: 1 } },

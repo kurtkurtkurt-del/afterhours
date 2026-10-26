@@ -150,6 +150,14 @@ export default function FlowScreen() {
     return result.key === key && result.rows ? filterWhen(result.rows, when) : null;
   }, [result, key, when, panel, signedIn, invites, reloads, city, day]);
 
+  // While a fresh deal is on its way (a new key: the city re-detected, the session arriving,
+  // the tab pressed again), the last dealt deck of this panel stays on screen instead of a
+  // blank page (owner, 26.10.2026: "the first tap on flow shows an empty page").
+  const [last, setLast] = useState<{ panel: Panel; city: string | null; list: DeckEntry[] } | null>(null);
+  useEffect(() => {
+    if (nights) setLast({ panel, city, list: nights }); // eslint-disable-line react-hooks/set-state-in-effect -- remembers the last deal
+  }, [nights, panel, city]);
+  const shown = nights ?? (last && last.panel === panel && last.city === city ? last.list : null);
   useEffect(() => {
     let cancelled = false;
     // Time filtering is client-side: fetch wider, filter here.
@@ -303,14 +311,14 @@ export default function FlowScreen() {
       <View style={styles.stage}>
         {error && panel === 'tickets' ? (
           <Text style={styles.note}>{error === 'offline' ? up(t('offline.empty')) : upperData(error)}</Text>
-        ) : nights ? (
-          <Deck ref={deck} key={`${panel}/${city}/${type}/${when}/${reloads}`} nights={nights} friendsOf={friendsOf} bottom={tabSpace + ACTIONS} top={(headBottom || Math.max(brand.top, insets.top + 24) + 30) + 14} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} listed={panel === 'tickets' && counts ? Object.values(counts).reduce((a, n) => a + n, 0) : 0} hasAbout={(e) => abouts.has(e.id)} onAbout={(e) => setReading(abouts.get(e.id) ?? null)} previewOf={(e) => previews.get(e.id)} />
+        ) : shown ? (
+          <Deck ref={deck} key={`${panel}/${city}/${type}/${when}/${reloads}`} nights={shown} friendsOf={friendsOf} bottom={tabSpace + ACTIONS} top={(headBottom || Math.max(brand.top, insets.top + 24) + 30) + 14} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} listed={panel === 'tickets' && counts ? Object.values(counts).reduce((a, n) => a + n, 0) : 0} hasAbout={(e) => abouts.has(e.id)} onAbout={(e) => setReading(abouts.get(e.id) ?? null)} previewOf={(e) => previews.get(e.id)} />
         ) : (
           <Text style={styles.note}>{up(t('flow.loading'))}</Text>
         )}
 
         {/* Under the card, with room around them: let go, undo, keep. The same as a swipe. */}
-        {nights && nights.length > swiped ? (
+        {shown && shown.length > swiped ? (
           <View style={[styles.actions, { bottom: tabSpace + 14 }]}>
             <Pressable onPress={() => deck.current?.swipe('left')} accessibilityRole="button" accessibilityLabel={t('word.letgo')} style={({ pressed }) => [styles.act, pressed && styles.pressed]}>
               <Svg width={22} height={22} viewBox="0 0 22 22">

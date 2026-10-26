@@ -52,3 +52,23 @@ git push -u origin release/light-2026-10-26
 ```
 
 `gh` bu makinede yok; PR tarayıcıdan açılır. Sonra `is-gunlugu.md`'ye satır.
+
+
+## 26.10.2026 22:xx — durum
+
+Dal açıldı ve push'landı: `release/light-2026-10-26` (try/light + origin/main merge + mekân masası / spark gecesi commit'i d143277).
+PR API ile açılamadı: keychain'deki PAT'ta "Pull requests: write" izni yok (403). Tarayıcıdan aç:
+https://github.com/kurtkurtkurt-del/afterhours/compare/main...release/light-2026-10-26
+Başlık: "Light — the ground, the records, the line, the venue desk". Gövde: aşağıdaki blok.
+
+```
+Two weeks of work from try/light, the open ground that became the app, plus today's: the venue desk, the spark night agent, the redrawn tips, the deck's way back.
+- light ground · a record for every city · new logo · messages on one page, stories · keyboard, one sound, start never hangs
+- 96_spark_edit.sql · enrich.mjs (+ enrich-2026-10-22.sql to paste) · PWA for iPhone
+- deck "seen all" + start over · nudge sheet full height · tips redrawn (scene per page) · messages tip and + for a story
+- 97_venue_desk.sql — the venue desk (rooms, on top, numbers, calendar, one line a day, comments, other rooms, the badge) · src/app/desk
+- 98_spark_days.sql — the spark night (cloud routine → backend/sparks/munchen/<date>.json → sparks.yml → spark_days → deck + spark page)
+- migrate.mjs reads SUPABASE_DB_URL from backend/.env.local
+Proof: tsc 0, lint 0, jest 33; backend 82 suites green (97: 37 checks, 98: 7).
+Morning: paste 96/97/98 (or node tools/migrate.mjs --write); enrich SQL?; README theme line?
+```

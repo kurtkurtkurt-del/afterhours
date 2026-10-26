@@ -87,7 +87,7 @@ export default function Tips({ page, tip, bottom = 0 }: { page: Page; tip: Tip; 
         <BigTitle text={t(tip.title)} />
         <Text style={styles.body}>{t(tip.body)}</Text>
       </Animated.View>
-      <View style={[styles.foot, { bottom: Math.max(56, bottom + insets.bottom + 20) }]}>
+      <View style={[styles.foot, { marginBottom: Math.max(36, bottom + insets.bottom + 16) }]}>
         <Pressable onPress={close} accessibilityRole="button" style={({ pressed }) => [styles.next, pressed && styles.pressed]}>
           <Text style={styles.nextText}>{t('tips.done')}</Text>
           <Text style={styles.nextMark}>→</Text>
@@ -222,20 +222,20 @@ function Scene({ kind }: { kind: Motion }) {
   return <TapScene />;
 }
 
-const CARD_W = 150;
-const CARD_H = 210;
+const CARD_W = 140;
+const CARD_H = 196;
 
 const styles = StyleSheet.create({
   screen: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 50, backgroundColor: ground(0.94), paddingHorizontal: 28 },
   head: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   dot: { width: 7, height: 7, borderRadius: 4, backgroundColor: colors.spot },
   kicker: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.8, color: colors.mute },
-  stage: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  words: { paddingBottom: 150 },
+  stage: { flex: 1, minHeight: 120, alignItems: 'center', justifyContent: 'center' },
+  words: { paddingBottom: 22 },
   big: { fontFamily: fonts.logo, fontSize: 48, lineHeight: 46, letterSpacing: -0.5, color: colors.paper },
   bigRed: { color: colors.spotText },
   body: { fontFamily: fonts.regular, fontSize: 15.5, lineHeight: 22, color: colors.mute, marginTop: 14, maxWidth: 320 },
-  foot: { position: 'absolute', left: 28, right: 28, alignItems: 'center' },
+  foot: { alignItems: 'center' },
   next: { alignSelf: 'stretch', height: 52, borderRadius: radius.pill, backgroundColor: colors.paper, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10 },
   nextText: { fontFamily: fonts.medium, fontSize: 16, color: colors.ink },
   nextMark: { fontFamily: fonts.regular, fontSize: 16, color: colors.ink },

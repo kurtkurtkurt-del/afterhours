@@ -289,7 +289,7 @@ const styles = StyleSheet.create({
   // words on a red fill stay light whatever the ground does (try/light)
   onSpot: { color: colors.onSpot },
   root: { flex: 1, backgroundColor: colors.ink },
-  plus: { position: 'absolute', top: brand.top - 4, right: brand.left + 44, width: 34, height: 34, borderRadius: 17, backgroundColor: colors.paper, alignItems: 'center', justifyContent: 'center', zIndex: 3 },
+  plus: { position: 'absolute', top: brand.top - 4, right: brand.left + 96, width: 34, height: 34, borderRadius: 17, backgroundColor: colors.paper, alignItems: 'center', justifyContent: 'center', zIndex: 3 },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 44, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
   body: { paddingTop: brand.top + 48, paddingHorizontal: brand.left },
