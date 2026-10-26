@@ -45,13 +45,6 @@ function NewPost({ story }: { story: boolean }) {
   useEffect(() => {
     kept().then(setNights, () => {});
   }, []);
-  // a story starts at the gallery: the picture first, the words after
-  const [asked, setAsked] = useState(false);
-  useEffect(() => {
-    if (!story || asked || !uid || isAnonymous) return;
-    setAsked(true); // eslint-disable-line react-hooks/set-state-in-effect -- once, on arrival
-    pickPostPhoto().then((u) => u && setPhoto(u), (e) => setSaid(why(e)));
-  }, [story, asked, uid, isAnonymous]);
 
   if (!uid || isAnonymous) {
     return (
@@ -63,13 +56,15 @@ function NewPost({ story }: { story: boolean }) {
       </StaffPage>
     );
   }
+  // a story always ends on messages (owner, 26.10.2026: back() left a blank page after the gallery)
+  const leave = () => (story ? router.dismissTo('/messages') : router.back());
   const pick = () => pickPostPhoto().then((u) => u && setPhoto(u), (e) => setSaid(why(e)));
   const share = () => {
     if (story && !photo) return setSaid(t('stories.photoFirst'));
     setBusy(true);
     setSaid(null);
     postCreate(uid, body, photo, night?.id ?? null)
-      .then(() => router.back())
+      .then(leave)
       .catch((e) => setSaid(why(e)))
       .finally(() => setBusy(false));
   };
@@ -81,7 +76,7 @@ function NewPost({ story }: { story: boolean }) {
       <LinearGradient colors={[ground(0.55), ground(0.0), ground(0.2), ground(0.9)]} locations={[0, 0.2, 0.5, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
 
       <View style={[styles.top, { top: Math.max(insets.top, 20) + 8 }]}>
-        <Pressable onPress={() => router.back()} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('word.back')}>
+        <Pressable onPress={leave} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('word.back')}>
           <Text style={styles.close}>✕</Text>
         </Pressable>
         <Pressable onPress={() => setChoosing(true)} style={({ pressed }) => [styles.chip, night && styles.chipOn, pressed && styles.pressed]} accessibilityRole="button">
@@ -91,7 +86,16 @@ function NewPost({ story }: { story: boolean }) {
         </Pressable>
       </View>
 
-      {!photo ? (
+      {!photo && story ? (
+        // a story: one clear first step (owner, 26.10.2026: the gallery opening by itself left people lost)
+        <View style={styles.empty}>
+          <Pressable onPress={pick} style={({ pressed }) => [styles.choose, pressed && styles.pressed]} accessibilityRole="button">
+            <Text style={styles.chooseIcon}>+</Text>
+            <Text style={[styles.chooseText, styles.onSpot]}>{t('stories.choose')}</Text>
+          </Pressable>
+          <Text style={styles.emptyText}>{t('stories.chooseHint')}</Text>
+        </View>
+      ) : !photo ? (
         <Pressable onPress={pick} style={styles.empty} accessibilityRole="button">
           <Text style={styles.plus}>+</Text>
           <Text style={styles.emptyText}>{t('posts.photo')}</Text>
@@ -112,9 +116,11 @@ function NewPost({ story }: { story: boolean }) {
           />
           {said ? <Text style={styles.bad}>{said}</Text> : null}
           <View style={styles.buttons}>
-            <Pressable onPress={pick} style={({ pressed }) => [styles.line, pressed && styles.pressed]} accessibilityRole="button">
-              <Text style={styles.lineText}>{photo ? t('posts.photo.change') : t('posts.photo')}</Text>
-            </Pressable>
+            {!story || photo ? (
+              <Pressable onPress={pick} style={({ pressed }) => [styles.line, pressed && styles.pressed]} accessibilityRole="button">
+                <Text style={styles.lineText}>{photo ? t('posts.photo.change') : t('posts.photo')}</Text>
+              </Pressable>
+            ) : null}
             <Pressable onPress={busy ? undefined : share} style={({ pressed }) => [styles.share, pressed && styles.pressed]} accessibilityRole="button">
               <Text style={[styles.shareText, styles.onSpot]}>{busy ? '…' : t('posts.share')}</Text>
             </Pressable>
@@ -149,7 +155,10 @@ const styles = StyleSheet.create({
   pressed: { opacity: 0.6 },
   empty: { position: 'absolute', top: '22%', left: 0, right: 0, alignItems: 'center', gap: 6 },
   plus: { fontFamily: fonts.medium, fontSize: 56, color: colors.paper },
-  emptyText: { fontFamily: fonts.regular, fontSize: 14, color: colors.mute },
+  emptyText: { fontFamily: fonts.regular, fontSize: 14, color: colors.mute, textAlign: 'center', paddingHorizontal: 40 },
+  choose: { flexDirection: 'row', alignItems: 'center', gap: 10, height: 54, paddingHorizontal: 26, borderRadius: radius.pill, backgroundColor: colors.spot, marginBottom: 8 },
+  chooseIcon: { fontFamily: fonts.medium, fontSize: 24, lineHeight: 26, color: colors.onSpot },
+  chooseText: { fontFamily: fonts.semibold, fontSize: 17, letterSpacing: -0.2 },
   bottomWrap: { position: 'absolute', left: 0, right: 0, bottom: 0 },
   bottom: { paddingHorizontal: brand.left, gap: 12 },
   words: { fontFamily: fonts.medium, fontSize: 24, lineHeight: 30, letterSpacing: -0.4, color: colors.paper, maxHeight: 180, paddingVertical: 0 },
