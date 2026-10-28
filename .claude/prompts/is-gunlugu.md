@@ -20,3 +20,6 @@ süre (dk, yaklaşık) · ayrı göz (evet/hayır · bulgu sayısı) · sonuç (
 | 28.10.2026 | güvenlik 9/10 · 112 misafir sırrı, yedek, foto adı (M-16, M-13, M-14, L-13) | backend · app | ağır | 1 | — | evet · 4 | indi | — |
 | 28.10.2026 | güvenlik 10/10 · PKCE, ?backend bayrağı, meta CSP (M-12, L-7, L-14) | site · app | ağır | 2 | — | evet · 10 | indi | — |
 | 28.10.2026 | güvenlik birleştirme · on dal → security-merge → main, tam gate | backend · app · site | ağır | 1 | 60 | hayır | indi | 104–112 canlıda değil; migrate owner'da |
+| 28.10.2026 | about night: who is this her şehir, her sabah (Action plan 05:00 UTC → Haiku rutini 05:30 → Action apply); 113 atlananlar; spark week her sabah 06:30, haftaya yayılmış, ayrı göz | backend · cloud | orta | 0 | 120 | hayır | indi | 113 canlıda değil; rutinin kum havuzu Supabase/Wikipedia görmüyor, plan bu yüzden Action'da |
+| 28.10.2026 | connect galeri (wave örnek kartları, decks kalktı), live'da who is this + listen, invite geri tuşu + raftan açılış, messages "add a story", bilet sorusu yalnız butonla | app | orta | 0 | 60 | hayır | indi | telefonda bakılmadı |
+| 28.10.2026 | 114 grup daveti: kur/ekle davet bırakır, rafta "invited", evet/hayır, push group_ask | backend · app | orta | 1 | 45 | hayır | indi | 114 canlıda değil; preview APK alındı |
