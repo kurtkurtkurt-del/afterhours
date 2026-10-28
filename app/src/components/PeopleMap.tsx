@@ -127,7 +127,7 @@ const PeopleMap = forwardRef<PeopleMapHandle, Props>(function PeopleMap({ layout
         })}
         {/* the crowd: a blurred disc each, a white edge */}
         {layout.nodes.filter((n) => n.w >= 2).map((n) => (
-          <Circle key={n.id} cx={X(n)} cy={Y(n)} r={n.r} fill={`url(#b${n.island % ISLAND.length})`} stroke={colors.card} strokeWidth={2} />
+          <Circle key={n.id} cx={X(n)} cy={Y(n)} r={n.r} fill={`url(#b${n.island % ISLAND.length})`} stroke={colors.card} strokeWidth={2} opacity={n.dim ? 0.35 : 1} />
         ))}
       </Svg>
       {/* you and your friends: faces */}
@@ -136,7 +136,7 @@ const PeopleMap = forwardRef<PeopleMapHandle, Props>(function PeopleMap({ layout
         const photo = n.w === 0 ? myPhoto : photos.get(n.id);
         const name = n.w === 0 ? null : (n.n ?? n.h ?? '').toLowerCase();
         return (
-          <View key={n.id} style={[s.face, { left: X(n) - n.r - 3, top: Y(n) - n.r - 3, width: n.r * 2 + 6 }]}>
+          <View key={n.id} style={[s.face, { left: X(n) - n.r - 3, top: Y(n) - n.r - 3, width: n.r * 2 + 6 }, n.dim && { opacity: 0.4 }]}>
             <View style={[s.ring, { width: n.r * 2 + 6, height: n.r * 2 + 6, borderRadius: n.r + 3 }, (n.w === 0 || out) && s.ringRed]}>
               <View style={[s.clip, { width: n.r * 2, height: n.r * 2, borderRadius: n.r }]}>
                 {photo ? <Image source={{ uri: photo }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Avatar name={name || 'you'} size={n.r * 2} />}

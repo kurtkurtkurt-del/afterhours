@@ -109,6 +109,7 @@ const structure = [
   ["100_storage_queue.sql", "A FILE THAT CANNOT GO AT ONCE WAITS IN A QUEUE"],
   ["101_people_map.sql", "YOUR PEOPLE AS A MAP"],
   ["102_people_places.sql", "WHERE YOUR PEOPLE ARE"],
+  ["103_people_map_cities.sql", "YOUR PEOPLE MAP KNOWS THE CITY"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

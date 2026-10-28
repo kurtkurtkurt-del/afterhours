@@ -39,6 +39,7 @@ import type { NightCardData } from '@/content/cardsgen';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius, ground, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import NightThumb from '@/components/NightThumb';
 const RECORD = require('../../../assets/record/record.webp');
 
 // Card width as a share of the screen; each card leaves this much of the previous one visible.
@@ -277,7 +278,7 @@ export default function AccountScreen() {
                 <View style={styles.pair}>
                   {upcoming.slice(0, 2).map((n) => (
                     <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.tile, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
-                      {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
+                      <NightThumb night={n} />
                       <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
                       <View style={styles.tileText}>
                         <Text style={styles.tileTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
@@ -292,7 +293,7 @@ export default function AccountScreen() {
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.rail}>
                   {upcoming.slice(2).map((n) => (
                     <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.poster, pressed && styles.pressed]} accessibilityRole="button">
-                      {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
+                      <NightThumb night={n} />
                       <LinearGradient colors={[scrim(0.0), scrim(0.95)]} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
                       <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
                       <View style={styles.posterText}>
@@ -323,7 +324,7 @@ export default function AccountScreen() {
                 <View style={styles.pair}>
                   {upcoming.slice(0, 2).map((n) => (
                     <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.tile, { height: tileH }, pressed && styles.pressed]} accessibilityRole="button">
-                      {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
+                      <NightThumb night={n} />
                       <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
                       <View style={styles.tileText}>
                         <Text style={styles.tileTitle} numberOfLines={2}>{n.title.toLowerCase()}</Text>
@@ -338,7 +339,7 @@ export default function AccountScreen() {
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.rail}>
                   {upcoming.slice(2).map((n) => (
                     <Pressable key={n.id} onPress={() => router.push(`/night/${n.slug}`)} style={({ pressed }) => [styles.poster, pressed && styles.pressed]} accessibilityRole="button">
-                      {n.image_url ? <Image source={{ uri: n.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
+                      <NightThumb night={n} />
                       <LinearGradient colors={[scrim(0.0), scrim(0.95)]} locations={[0.35, 1]} style={StyleSheet.absoluteFill} />
                       <Text style={styles.posterDate}>{up(at(n.starts_at))}</Text>
                       <View style={styles.posterText}>

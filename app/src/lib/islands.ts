@@ -10,7 +10,16 @@ import type { MapData, MapNode } from '@/data/peopleMap';
 // The positions come from a small force layout (repelling people, springs on the drawn lines,
 // a pull to the island's middle and to the wave's ring), run once per map.
 
-export type Placed = MapNode & { x: number; y: number; island: number; r: number; parent: string | null };
+export type Placed = MapNode & { x: number; y: number; island: number; r: number; parent: string | null; dim: boolean };
+// How the map is shaped, one per filter (owner, 28.10.2026: "each filter its own algorithm"):
+//   islands  everyone: circles of friends as islands, a force layout (below)
+//   ring     friends only: you in the middle, your friends on one ring, the ones who know
+//            each other side by side
+//   petals   up to the second wave: each friend's people open outward from them like a
+//            petal, rows of a fan; someone two friends share sits between their petals
+//   orbits   up to the third wave: one orbit per wave, each person in line with whoever
+//            brought them, spaced evenly
+export type Shape = 'islands' | 'ring' | 'petals' | 'orbits';
 export type MapLine = { a: string; b: string; kind: 'you' | 'group' | 'bridge' };
 export type Layout = { nodes: Placed[]; lines: MapLine[]; byId: Map<string, Placed>; islands: number; neighbours: Map<string, Set<string>> };
 
@@ -37,7 +46,31 @@ const hash = (s: string) => {
   return h >>> 0;
 };
 
-export function layout(data: MapData): Layout {
+// The map narrowed by the filters on top: how far out (0 everyone, 1 friends, 2 up to the second
+// wave, 3 up to the third) and which city. With a city, the people in it stay, and so does the
+// way to each of them (the friend in between, dimmed) so nobody floats unconnected.
+export function narrow(data: MapData, wave: 0 | 1 | 2 | 3, city: string | null): { data: MapData; dim: Set<string> } {
+  const max = wave === 0 ? 3 : wave;
+  let keep = new Set(data.nodes.filter((n) => n.w <= max).map((n) => n.id));
+  const dim = new Set<string>();
+  if (city) {
+    const nb = new Map<string, string[]>();
+    for (const [a, b] of data.edges) if (keep.has(a) && keep.has(b)) { nb.set(a, [...(nb.get(a) ?? []), b]); nb.set(b, [...(nb.get(b) ?? []), a]); }
+    const from = new Map<string, string>([['me', '']]);
+    const queue = ['me'];
+    while (queue.length) { const x = queue.shift()!; for (const y of nb.get(x) ?? []) if (!from.has(y)) { from.set(y, x); queue.push(y); } }
+    const there = data.nodes.filter((n) => keep.has(n.id) && n.c === city).map((n) => n.id);
+    const next = new Set<string>(['me', ...there]);
+    for (const id of there) {
+      let cur = from.get(id);
+      while (cur && cur !== 'me') { if (!next.has(cur)) { next.add(cur); dim.add(cur); } cur = from.get(cur); }
+    }
+    keep = next;
+  }
+  return { data: { nodes: data.nodes.filter((n) => keep.has(n.id)), edges: data.edges.filter(([a, b]) => keep.has(a) && keep.has(b)) }, dim };
+}
+
+export function layout(data: MapData, shape: Shape = 'islands', dim: Set<string> = new Set()): Layout {
   const nodes = data.nodes;
   const ids = nodes.map((n) => n.id);
   const nb = new Map<string, Set<string>>(ids.map((id) => [id, new Set<string>()]));
@@ -88,10 +121,20 @@ export function layout(data: MapData): Layout {
   };
   const parent = new Map<string, string | null>([['me', null]]);
   const placed = new Set<string>(['me']);
-  const queue = [...ids].filter((id) => id !== 'me').sort((a, b) => w.get(a)! - w.get(b)! || nb.get(b)!.size - nb.get(a)!.size || a.localeCompare(b));
-  for (const id of queue) {
+  // wave by wave; inside a wave, whoever has the fewest ways in goes first, so the only door of
+  // someone with one friend on the map is not already full when their turn comes
+  const ways = (id: string) => [...nb.get(id)!].filter((o) => w.get(o)! <= w.get(id)!).length;
+  const queue = [...ids].filter((id) => id !== 'me').sort((a, b) => w.get(a)! - w.get(b)! || ways(a) - ways(b) || a.localeCompare(b));
+  // someone whose every door is full waits for a later round: by then a neighbour with room may
+  // be on the map. In the last round they take the best door there is (when one person is the
+  // only way to several others, that person carries their lines).
+  let pending = queue;
+  for (let round = 0; round < 3 && pending.length; round++) {
+   const later: string[] = [];
+   for (const id of pending) {
     const cands = [...nb.get(id)!].filter((o) => placed.has(o));
-    if (!cands.length) continue;
+    if (!cands.length) { later.push(id); continue; }
+    if (round < 2 && cands.every((o) => deg.get(o)! >= cap(o))) { later.push(id); continue; }
     const same = (o: string) => (islandOf.get(o) === islandOf.get(id) ? 0 : 1);
     const room = (o: string) => (deg.get(o)! < cap(o) ? 0 : 1);
     // a friend hangs on you; everyone else on the best placed neighbour
@@ -101,6 +144,8 @@ export function layout(data: MapData): Layout {
     draw(id, pick, pick === 'me' ? 'you' : islandOf.get(pick) === islandOf.get(id) ? 'group' : 'bridge');
     parent.set(id, pick);
     placed.add(id);
+   }
+   pending = later;
   }
   // inside the islands
   const rest = data.edges.filter(([a, b]) => nb.has(a) && nb.has(b) && a !== b && !drawn.has(key(a, b)));
@@ -136,13 +181,14 @@ export function layout(data: MapData): Layout {
   });
   const index = new Map(P.map((p, i) => [p.id, i]));
   // a line is long enough to be seen between the two discs it joins
+  if (shape !== 'islands') shaped();
   const springs = lines.map((l) => {
     const a = w.get(l.a)!, b = w.get(l.b)!;
     const len = l.kind === 'you' ? r1 : Math.max(room(a, b) + 8, RADIUS[a] + RADIUS[b] + (l.kind === 'group' ? 34 : 80));
     return { i: index.get(l.a)!, j: index.get(l.b)!, len };
   });
   const N = P.length;
-  const steps = N > 160 ? 160 : 240;
+  const steps = shape !== 'islands' ? 0 : N > 160 ? 160 : 240;
   for (let s = 0; s < steps; s++) {
     const t = 1 - s / steps;
     const fx = new Float64Array(N), fy = new Float64Array(N);
@@ -181,6 +227,66 @@ export function layout(data: MapData): Layout {
     }
   }
 
+  // The shaped layouts: angles and radii by rule instead of forces.
+  function shaped() {
+    const TAU = Math.PI * 2;
+    const at = (id: string, R: number, a: number) => { const p = P[index.get(id)!]; p.x = Math.cos(a) * R; p.y = Math.sin(a) * R; };
+    const angle = new Map<string, number>();
+    const friendsIds = nodes.filter((n) => n.w === 1).map((n) => n.id).sort((a, b) => islandOf.get(a)! - islandOf.get(b)! || a.localeCompare(b));
+    friendsIds.forEach((id, i) => { const a = (i / Math.max(1, friendsIds.length)) * TAU - Math.PI / 2; angle.set(id, a); at(id, r1, a); });
+    // where someone points: the average direction of the people one wave closer who know them
+    const toward = (id: string, wave: number) => {
+      let sx = 0, sy = 0;
+      for (const o of nb.get(id)!) if (w.get(o) === wave - 1 && angle.has(o)) { sx += Math.cos(angle.get(o)!); sy += Math.sin(angle.get(o)!); }
+      return sx || sy ? Math.atan2(sy, sx) : rand() * TAU;
+    };
+    if (shape === 'petals') {
+      const sector = (TAU / Math.max(1, friendsIds.length)) * 0.86;
+      const shared: string[] = [];
+      const petal = new Map<string, string[]>(friendsIds.map((f) => [f, []]));
+      for (const n of nodes) {
+        if (n.w !== 2) continue;
+        const fs = [...nb.get(n.id)!].filter((o) => w.get(o) === 1);
+        if (fs.length >= 2) shared.push(n.id);
+        else if (fs.length === 1) petal.get(fs[0])!.push(n.id);
+      }
+      for (const [f, kids] of petal) {
+        const a0 = angle.get(f)!;
+        let row = 0, done = 0;
+        while (done < kids.length) {
+          const R = r1 + 92 + row * 58;
+          const room2 = room(2, 2) + 4;
+          const cap = Math.max(1, Math.floor((sector * R) / room2));
+          const inRow = kids.slice(done, done + cap);
+          const span = Math.min(sector, ((inRow.length - 1) * room2) / R);
+          inRow.forEach((id, i) => { const a = a0 - span / 2 + (inRow.length > 1 ? (i / (inRow.length - 1)) * span : 0); angle.set(id, a); at(id, R, a); });
+          done += inRow.length;
+          row++;
+        }
+      }
+      // shared people: between the friends they share, a little inside the petals
+      shared.forEach((id, i) => { const a = toward(id, 2); angle.set(id, a); at(id, r1 + 62 + (i % 2) * 26, a); });
+      return;
+    }
+    if (shape === 'orbits') {
+      let R = r1;
+      for (const wave of [2, 3]) {
+        const list = nodes.filter((n) => n.w === wave).map((n) => ({ id: n.id, t: toward(n.id, wave) }));
+        if (!list.length) continue;
+        const gapPx = room(wave, wave) + 6;
+        R = Math.max(R + 112, (list.length * gapPx) / TAU);
+        const gap = gapPx / R;
+        list.sort((a, b) => a.t - b.t);
+        // in order around the orbit, each at least a gap after the one before, then turned back
+        // so on average everyone sits where they point
+        const got = list.map((x) => x.t);
+        for (let i = 1; i < got.length; i++) got[i] = Math.max(got[i], got[i - 1] + gap);
+        const shift = got.reduce((s, g, i) => s + (g - list[i].t), 0) / got.length;
+        list.forEach((x, i) => { const a = got[i] - shift; angle.set(x.id, a); at(x.id, R, a); });
+      }
+    }
+  }
+
   // last, a few rounds that only pull apart whoever is still too close (you stay put)
   for (let round = 0; round < 60; round++) {
     let moved = false;
@@ -203,7 +309,7 @@ export function layout(data: MapData): Layout {
 
   const placedNodes: Placed[] = nodes.map((n) => {
     const p = P[index.get(n.id)!];
-    return { ...n, x: p.x, y: p.y, island: islandOf.get(n.id)!, r: RADIUS[n.w], parent: parent.get(n.id) ?? null };
+    return { ...n, x: p.x, y: p.y, island: islandOf.get(n.id)!, r: RADIUS[n.w], parent: parent.get(n.id) ?? null, dim: dim.has(n.id) };
   });
   return { nodes: placedNodes, lines, byId: new Map(placedNodes.map((n) => [n.id, n])), islands: labels.length, neighbours: nb };
 }

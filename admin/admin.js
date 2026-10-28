@@ -117,6 +117,7 @@
     "100_storage_queue.sql",
     "101_people_map.sql",
     "102_people_places.sql",
+    "103_people_map_cities.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */

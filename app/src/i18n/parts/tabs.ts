@@ -788,6 +788,7 @@ export const tabs = {
   'pmap.empty': { en: 'add a friend and their people show up here, around you.', de: 'füg einen freund hinzu, und seine leute erscheinen hier, um dich herum.', tr: 'bir arkadaş ekle, onun insanları burada, senin etrafında belirsin.' },
   'pmap.add': { en: 'add a friend', de: 'freund hinzufügen', tr: 'arkadaş ekle' },
   'pmap.you': { en: 'you', de: 'du', tr: 'sen' },
+  'pmap.allCities': { en: 'all cities', de: 'alle städte', tr: 'tüm şehirler' },
   'pmap.back': { en: 'back', de: 'zurück', tr: 'geri' },
   'pmap.zoomIn': { en: 'zoom in', de: 'näher', tr: 'yakınlaştır' },
   'pmap.zoomOut': { en: 'zoom out', de: 'weiter weg', tr: 'uzaklaştır' },

@@ -15,6 +15,8 @@ const db = new PGlite();
 for (const d of ["../test/supabase-shim.sql", "../sql/setup-1-structure.sql"]) await db.exec(await read(d));
 await db.exec(await read("../sql/101_people_map.sql"));
 await db.exec(await read("../sql/101_people_map.sql"));
+await db.exec(await read("../sql/103_people_map_cities.sql"));
+await db.exec(await read("../sql/103_people_map_cities.sql"));
 
 /* A — B — C — D — E, B — X — C, A — F pending, G blocks A and knows B, H hidden and knows B */
 const id = (c) => `${c.repeat(8)}-1111-1111-1111-111111111111`;
@@ -54,6 +56,19 @@ check(m.edges.some(([a, b]) => two.includes(a) && two.includes(b)), "cem and xia
 check(!JSON.stringify(m).includes(C) && !JSON.stringify(m).includes(D), "no id of the crowd leaves the database");
 const again = await map();
 check(JSON.stringify(again.nodes.map((n) => n.id).sort()) === JSON.stringify(m.nodes.map((n) => n.id).sort()), "the same person keeps the same code");
+
+console.log("\n— the city each one set (103) —");
+{
+  await asService();
+  const city = (await db.query(`select id, slug from public.cities order by slug limit 1`)).rows[0];
+  await db.exec(`update public.profiles set city_id = '${city.id}' where id in ('${B}', '${C}')`);
+  await as(A);
+  const mm = await map();
+  const bob = mm.nodes.find((n) => n.h === "bob"), crowd = mm.nodes.filter((n) => n.w === 2);
+  check(bob && bob.c === city.slug && !!bob.cn, "a friend carries the city he set");
+  check(crowd.filter((n) => n.c === city.slug).length === 1 && crowd.every((n) => !n.h && !n.n), "in the crowd: a code and a city, still no name");
+  check(mm.nodes.find((n) => n.w === 3).c === null, "no city set: none given");
+}
 
 console.log("\n— someone else, and nobody —");
 await as(C);

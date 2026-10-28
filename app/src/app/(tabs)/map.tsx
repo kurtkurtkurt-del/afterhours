@@ -352,18 +352,23 @@ export default function MapScreen() {
           <Chevron color={colors.paper} />
         </Pressable>
         <View style={styles.pills}>
-          <Pill label={typeLabel} active={!!type} onPress={() => setSheet('type')} a11y={t('filter.what')} />
-          <Pill label={whenLabel} active={!!when} onPress={() => setSheet('when')} a11y={t('filter.when')} />
-          {me ? <Pill label={t('map.nearMe')} active={!atCity} chevron={false} onPress={() => { setFollow(atCity ? 'me' : 'city'); setPicked(null); setPickedSpark(null); }} a11y={t('map.nearMe')} /> : null}
+          {/* the nights' filters; in the friends view only the switch back */}
+          {!friendsView ? (
+            <>
+              <Pill label={typeLabel} active={!!type} onPress={() => setSheet('type')} a11y={t('filter.what')} />
+              <Pill label={whenLabel} active={!!when} onPress={() => setSheet('when')} a11y={t('filter.when')} />
+              {me ? <Pill label={t('map.nearMe')} active={!atCity} chevron={false} onPress={() => { setFollow(atCity ? 'me' : 'city'); setPicked(null); setPickedSpark(null); }} a11y={t('map.nearMe')} /> : null}
+            </>
+          ) : null}
+          {session ? (
+            <Pressable onPress={toggleFriends} hitSlop={8} accessibilityRole="switch" accessibilityState={{ checked: friendsView }} style={({ pressed }) => [styles.fview, friendsView && styles.fviewOn, pressed && { opacity: 0.7 }]}>
+              <View style={[styles.fviewDot, friendsView && styles.fviewDotOn]} />
+              <Text style={[styles.fviewText, friendsView && styles.fviewTextOn]}>{t('fmap.toggle')}</Text>
+            </Pressable>
+          ) : null}
         </View>
       </View>
       <SoundCorner />
-      {session ? (
-        <Pressable onPress={toggleFriends} hitSlop={8} accessibilityRole="switch" accessibilityState={{ checked: friendsView }} style={({ pressed }) => [styles.fview, { top: brand.top + 34 }, friendsView && styles.fviewOn, pressed && { opacity: 0.7 }]}>
-          <View style={[styles.fviewDot, friendsView && styles.fviewDotOn]} />
-          <Text style={[styles.fviewText, friendsView && styles.fviewTextOn]}>{t('fmap.toggle')}</Text>
-        </Pressable>
-      ) : null}
 
       {friendsView ? (
         <View style={[styles.fcard, { bottom: tabSpace + 8 }]}>
@@ -530,7 +535,7 @@ export default function MapScreen() {
 const GOLD = '#E8B04B'; // sparks on the map (the same gold as their diamonds)
 
 const styles = StyleSheet.create({
-  fview: { position: 'absolute', right: brand.left, flexDirection: 'row', alignItems: 'center', gap: 7, backgroundColor: colors.card, borderRadius: radius.pill, paddingHorizontal: 12, paddingVertical: 8, shadowColor: '#000', shadowOpacity: 0.12, shadowRadius: 8, elevation: 3 },
+  fview: { flexDirection: 'row', alignItems: 'center', gap: 7, backgroundColor: colors.card, borderRadius: radius.pill, paddingHorizontal: 12, paddingVertical: 8, shadowColor: '#000', shadowOpacity: 0.12, shadowRadius: 8, elevation: 3 },
   fviewOn: { backgroundColor: colors.spot },
   fviewDot: { width: 7, height: 7, borderRadius: 4, backgroundColor: colors.mute },
   fviewDotOn: { backgroundColor: colors.onSpot },
@@ -548,7 +553,7 @@ const styles = StyleSheet.create({
   head: { position: 'absolute', left: brand.left, right: brand.left, zIndex: 1 },
   city: { flexDirection: 'row', alignItems: 'center', gap: 8, alignSelf: 'flex-start', maxWidth: '72%' },
   cityText: { flexShrink: 1, fontFamily: fonts.semibold, fontSize: 26, lineHeight: 30, letterSpacing: -0.8, color: colors.paper, textShadowColor: ground(0.6), textShadowRadius: 8 },
-  pills: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 10 },
+  pills: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 8, marginTop: 10 },
   title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
   subRow: { position: 'absolute', top: brand.top + 32, left: brand.left, flexDirection: 'row', alignItems: 'baseline', gap: 10 },
   sub: { fontFamily: fonts.regular, fontSize: 13, color: colors.paper },

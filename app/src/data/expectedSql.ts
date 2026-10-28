@@ -103,4 +103,5 @@ export const EXPECTED_SQL = [
   '100_storage_queue.sql',
   '101_people_map.sql',
   '102_people_places.sql',
+  '103_people_map_cities.sql',
 ];

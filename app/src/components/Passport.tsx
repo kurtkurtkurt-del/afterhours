@@ -11,6 +11,7 @@ import { groupLegNights, groupLegs, why, type Group, type Leg, type LegNight } f
 import { useLang } from '@/i18n';
 import { colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import NightThumb from '@/components/NightThumb';
 
 // The passport of a travel group (design A, prototypes/travel.html, 12.10.2026): one
 // paper page per leg of the route, swiped sideways. On a page: PAGE n / N and the
@@ -149,7 +150,7 @@ function Page({ leg, n, of, group, photo, faces, width, bottom, onSwipe }: { leg
         ) : null}
         {nights?.map((x) => (
           <Pressable key={x.id} onPress={() => router.push({ pathname: '/night/[slug]', params: { slug: x.slug } })} style={({ pressed }) => [styles.night, pressed && styles.pressed]} accessibilityRole="button">
-            <View style={styles.poster}>{x.image_url ? <Image source={{ uri: x.image_url }} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}</View>
+            <View style={styles.poster}><NightThumb night={x} /></View>
             <View style={styles.nightText}>
               <Text style={styles.nightTitle} numberOfLines={1}>{x.title.toLowerCase()}</Text>
               <Text style={styles.nightMeta} numberOfLines={1}>{[x.starts_at ? shortDay(x.starts_at.slice(0, 10)) : null, x.venue_name?.toLowerCase()].filter(Boolean).join(' · ')}</Text>

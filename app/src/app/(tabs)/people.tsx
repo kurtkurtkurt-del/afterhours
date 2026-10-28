@@ -634,26 +634,32 @@ export default function PeopleScreen() {
               </>
             ) : null}
 
-            {/* Decks as stacks of cards. */}
+            {/* The decks: one wide card, the friends deck; yours and the waves are its tabs on top once
+                it is open (owner, 28.10.2026: one is enough, the others are chosen up there). */}
             <Head label={t('yours.decks')} />
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.rail}>
-              {decks.map((d) => (
-                <Pressable key={d.id} onPress={() => setDeck(d.id)} style={({ pressed }) => [styles.stack, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={d.label}>
-                  <View style={styles.stackCards}>
+            {(() => {
+              const d = decks[0];
+              const others = decks.slice(1).reduce((a, x) => a + x.cards.length, 0);
+              return (
+                <Pressable onPress={() => setDeck(d.id)} style={({ pressed }) => [styles.deckOne, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={d.label}>
+                  <View style={styles.deckFan}>
                     {[2, 1, 0].map((k) => {
                       const c = d.cards[k];
                       return (
-                        <View key={k} style={[styles.stackCard, { transform: [{ rotate: `${(k - 1) * -6}deg` }, { translateX: (1 - k) * 6 }] }, k === 0 && d.red && styles.stackRed]}>
+                        <View key={k} style={[styles.stackCard, styles.deckFanCard, { transform: [{ rotate: `${(k - 1) * -7}deg` }, { translateX: (1 - k) * 14 }] }, k === 0 && styles.stackRed]}>
                           <StackThumb card={c} />
                         </View>
                       );
                     })}
                   </View>
-                  <Text style={[styles.stackLabel, d.red && styles.redText]} numberOfLines={1}>{d.label}</Text>
-                  <Text style={styles.stackCount}>{d.cards.length}</Text>
+                  <View style={styles.deckText}>
+                    <Text style={[styles.deckName, styles.redText]} numberOfLines={1}>{d.label}</Text>
+                    <Text style={styles.deckCount}>{up(tn('special.nights', d.cards.length))}{others ? ` · +${others}` : ''}</Text>
+                  </View>
+                  <View style={styles.deckGo}><Text style={styles.deckGoText}>›</Text></View>
                 </Pressable>
-              ))}
-            </ScrollView>
+              );
+            })()}
 
 
           </>
@@ -822,6 +828,14 @@ const styles = StyleSheet.create({
   stackCards: { width: 104, height: 138, marginBottom: 8 },
   stackCard: { position: 'absolute', left: 10, top: 4, width: 84, height: 126, borderRadius: radius.sm, overflow: 'hidden', backgroundColor: colors.ink2, borderWidth: 1, borderColor: colors.ink3, padding: 8, justifyContent: 'flex-end' },
   stackRed: { borderColor: colors.spot, borderWidth: 1.5 },
+  deckOne: { flexDirection: 'row', alignItems: 'center', gap: 16, marginHorizontal: brand.left, paddingVertical: 14, paddingLeft: 10, paddingRight: 14, borderRadius: radius.md, backgroundColor: colors.card, borderWidth: 1, borderColor: colors.ink3 },
+  deckFan: { width: 128, height: 112 },
+  deckFanCard: { left: 26, top: 4, width: 70, height: 104 },
+  deckText: { flex: 1, gap: 4 },
+  deckName: { fontFamily: fonts.semibold, fontSize: 18, letterSpacing: -0.4 },
+  deckCount: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1, color: colors.meta },
+  deckGo: { width: 34, height: 34, borderRadius: 17, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center' },
+  deckGoText: { fontFamily: fonts.semibold, fontSize: 19, lineHeight: 21, color: colors.onSpot },
   stackPoster: { backgroundColor: colors.ink2 },
   stackDim: { opacity: 0.45 },
   stackTitle: { fontFamily: fonts.logo, fontSize: 15, lineHeight: 15, color: colors.spotText },

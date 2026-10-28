@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import Animated, { FadeIn, FadeOut, SlideInDown, SlideOutDown } from 'react-native-reanimated';
@@ -13,7 +13,7 @@ import { dmStart } from '@/data/dms';
 import { friendAccept, friendsList, type FriendRow } from '@/data/friends';
 import Avatar from '@/components/Avatar';
 import Svg, { Path } from 'react-native-svg';
-import { chain, layout, type Placed } from '@/lib/islands';
+import { chain, layout, narrow, type Placed, type Shape } from '@/lib/islands';
 import { useLang } from '@/i18n';
 import { barStyle, colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
@@ -44,9 +44,19 @@ export default function PeopleMapScreen() {
     loadRequests();
   }, []);
   const accept = (f: FriendRow) => friendAccept(f.other_id).then(() => { loadRequests(); peopleMap().then(setData, () => {}); }, () => {});
-  const lay = useMemo(() => (data && data.nodes.length > 1 ? layout(data) : null), [data]);
-  const friends = data?.nodes.filter((n) => n.w === 1).length ?? 0;
-  const crowd = data?.nodes.filter((n) => n.w >= 2).length ?? 0;
+  // the filters on top: how far out, and which city; each reshapes the map its own way
+  const [wave, setWave] = useState<0 | 1 | 2 | 3>(0);
+  const [city, setCity] = useState<string | null>(null);
+  const cities = useMemo(() => {
+    const count = new Map<string, { name: string; n: number }>();
+    for (const n of data?.nodes ?? []) if (n.w >= 1 && n.c) count.set(n.c, { name: n.cn ?? n.c, n: (count.get(n.c)?.n ?? 0) + 1 });
+    return [...count].sort((a, b) => b[1].n - a[1].n).map(([slug, v]) => ({ slug, ...v }));
+  }, [data]);
+  const shape: Shape = wave === 1 ? 'ring' : wave === 2 ? 'petals' : wave === 3 ? 'orbits' : 'islands';
+  const view = useMemo(() => (data ? narrow(data, wave, city) : null), [data, wave, city]);
+  const lay = useMemo(() => (view && view.data.nodes.length > 1 ? layout(view.data, shape, view.dim) : null), [view, shape]);
+  const friends = view?.data.nodes.filter((n) => n.w === 1 && !view.dim.has(n.id)).length ?? 0;
+  const crowd = view?.data.nodes.filter((n) => n.w >= 2 && !view.dim.has(n.id)).length ?? 0;
 
   const tapped = (n: Placed) => {
     if (n.w === 0) return;
@@ -72,7 +82,7 @@ export default function PeopleMapScreen() {
     <View style={styles.root}>
       <StatusBar style={barStyle} />
       {lay ? (
-        <PeopleMap ref={map} layout={lay} width={width} height={height} photos={photos} live={live} myPhoto={photo} onTap={tapped} />
+        <PeopleMap key={`${wave}/${city ?? ''}`} ref={map} layout={lay} width={width} height={height} photos={photos} live={live} myPhoto={photo} onTap={tapped} />
       ) : (
         <View style={styles.empty}>
           <Text style={styles.emptyText}>{failed ? t('offline.empty') : data ? t('pmap.empty') : up(t('person.loading'))}</Text>
@@ -97,8 +107,32 @@ export default function PeopleMapScreen() {
         </Pressable>
       </View>
 
+      {data && data.nodes.length > 1 ? (
+        <View style={[styles.filters, { top: insets.top + 62 }]} pointerEvents="box-none">
+          <View style={styles.chips}>
+            {([0, 1, 2, 3] as const).map((x) => (
+              <Pressable key={x} onPress={() => setWave(x)} style={[styles.chip, wave === x && styles.chipOn]} accessibilityRole="tab" accessibilityState={{ selected: wave === x }}>
+                <Text style={[styles.chipText, wave === x && styles.chipTextOn]} numberOfLines={1}>{t(x === 0 ? 'fmap.all' : x === 1 ? 'fmap.friends' : x === 2 ? 'fmap.w2' : 'fmap.w3')}</Text>
+              </Pressable>
+            ))}
+          </View>
+          {cities.length ? (
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.cityRow}>
+              <Pressable onPress={() => setCity(null)} style={[styles.cityChip, !city && styles.chipOn]} accessibilityRole="button">
+                <Text style={[styles.chipText, !city && styles.chipTextOn]}>{t('pmap.allCities')}</Text>
+              </Pressable>
+              {cities.map((c) => (
+                <Pressable key={c.slug} onPress={() => setCity(city === c.slug ? null : c.slug)} style={[styles.cityChip, city === c.slug && styles.chipOn]} accessibilityRole="button">
+                  <Text style={[styles.chipText, city === c.slug && styles.chipTextOn]}>{c.name.toLowerCase()}<Text style={styles.chipCount}> {c.n}</Text></Text>
+                </Pressable>
+              ))}
+            </ScrollView>
+          ) : null}
+        </View>
+      ) : null}
+
       {requests.length ? (
-        <View style={[styles.requests, { top: insets.top + 66 }]}>
+        <View style={[styles.requests, { top: insets.top + (cities.length ? 150 : 110) }]}>
           {requests.slice(0, 3).map((f) => (
             <View key={f.other_id} style={styles.request}>
               <Pressable onPress={() => f.handle && openPerson(f.handle)} style={styles.requestWho} accessibilityRole="button">
@@ -177,6 +211,15 @@ const styles = StyleSheet.create({
   round: { width: 42, height: 42, borderRadius: 21, backgroundColor: colors.card, alignItems: 'center', justifyContent: 'center', shadowColor: '#000', shadowOpacity: 0.12, shadowRadius: 8, shadowOffset: { width: 0, height: 2 }, elevation: 3 },
   roundRed: { backgroundColor: colors.spot },
   requests: { position: 'absolute', left: brand.left, right: brand.left, gap: 8 },
+  filters: { position: 'absolute', left: 0, right: 0, gap: 8 },
+  chips: { flexDirection: 'row', gap: 6, paddingHorizontal: brand.left },
+  chip: { flex: 1, alignItems: 'center', borderRadius: radius.pill, paddingVertical: 8, backgroundColor: colors.card, shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 6, elevation: 2 },
+  chipOn: { backgroundColor: colors.paper },
+  chipText: { fontFamily: fonts.semibold, fontSize: 11.5, color: colors.mute },
+  chipTextOn: { color: colors.ink },
+  chipCount: { fontFamily: fonts.jet, fontSize: 10 },
+  cityRow: { gap: 6, paddingHorizontal: brand.left },
+  cityChip: { borderRadius: radius.pill, paddingVertical: 7, paddingHorizontal: 12, backgroundColor: colors.card, shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 6, elevation: 2 },
   request: { flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: colors.card, borderRadius: 18, paddingVertical: 8, paddingLeft: 10, paddingRight: 8, shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 10, elevation: 3 },
   requestWho: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 10 },
   requestFace: { width: 30, height: 30, borderRadius: 15, overflow: 'hidden' },
