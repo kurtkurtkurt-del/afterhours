@@ -110,6 +110,7 @@ const structure = [
   ["101_people_map.sql", "YOUR PEOPLE AS A MAP"],
   ["102_people_places.sql", "WHERE YOUR PEOPLE ARE"],
   ["103_people_map_cities.sql", "YOUR PEOPLE MAP KNOWS THE CITY"],
+  ["110_venue_scope.sql", "A ROOM REACHES ONLY ITS OWN NIGHTS AND PEOPLE"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

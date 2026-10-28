@@ -14,8 +14,8 @@ file first, in the same commit. (The idea is KULA's `docs/promises.md`, 11.10.20
 | 4 | Your settings are yours alone; nobody else reads or changes them. | `12_profiles.sql` | `profiles.test.mjs` · "someone else's settings cannot be changed" |
 | 5 | The member list cannot be browsed; a stranger sees their own row and named cards. | `12_profiles.sql`, `25_people.sql` | `profiles.test.mjs` · "a stranger sees only their own row" |
 | 6 | Your export holds everything of yours and nothing of anybody else's. | `14_export.sql`, `64_export_more.sql` | `export.test.mjs` · "not their message" |
-| 7 | A block closes both ways: no card, no search, no request, no wave, no message. | `50_blocks.sql`, `57_doors.sql`, `59_dms.sql` | `blocks.test.mjs` · "the wave stops at the block" |
-| 8 | A banned account writes nothing and, since 57, reads no feed, finds nobody. | `52_bans.sql`, `57_doors.sql` | `doors.test.mjs` · "a banned account: refused" |
+| 7 | A block closes both ways: no card, no search, no request, no wave, no message. | `50_blocks.sql`, `57_doors.sql`, `59_dms.sql`, `110_venue_scope.sql` | `blocks.test.mjs` · "the wave stops at the block" |
+| 8 | A banned account writes nothing and, since 57, reads no feed, finds nobody. | `52_bans.sql`, `57_doors.sql`, `110_venue_scope.sql` | `doors.test.mjs` · "a banned account: refused" |
 | 9 | Nobody becomes a member of a group they were not added to; every group call asks first. | `44_groups.sql`, `57_doors.sql` | `groups.test.mjs` · "the table itself is closed" |
 | 10 | A push never carries a member's words: a fixed sentence and a name. | `58_push_words.sql` | `doors.test.mjs` · "the title still names who and where" |
 | 11 | A direct message goes only between confirmed friends who can reach each other. | `59_dms.sql` | `dms.test.mjs` · "a pending request is not a friend yet" |
@@ -26,3 +26,7 @@ Known gaps, written down so they are not forgotten:
 
 - Guests (anonymous sessions) pass `assert_member()`; what they may not do is refused
   write by write (`is_guest()` in the writers), not at one door.
+- Promise 10 has one exception: a room word (`venue_push`, 97) carries the line its
+  community manager wrote, to the people of the room. Since 110 it holds no link and no
+  watched word, goes once a day, and skips blocks, closed accounts and the nights switch.
+  A community manager edits, deletes and reviews only the nights of a room they run (110).
