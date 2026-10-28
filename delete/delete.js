@@ -5,7 +5,9 @@
    (session.js reads the token from the hash), and the page asks for the word
    "delete" before it calls delete_account (65). The files in the photo bucket go
    with the profile row on the server (82). Apple's token is not revoked from the
-   web; the done screen says where to unlink it by hand. */
+   web; the done screen says where to unlink it by hand.
+   Since 111 the server deletes only for a sign-in from the last ten minutes, so a
+   session that is older (or a stolen one) is sent the link first, the same way. */
 
 (function () {
   const AH = (window.AH = window.AH || {});
@@ -28,6 +30,15 @@
     return;
   }
 
+  /* signed in, but long ago: the link again, with the address filled in */
+  function askForLink() {
+    request.hidden = false;
+    confirm.hidden = true;
+    const email = AH.session && AH.session.user && AH.session.user.email;
+    if (email && !el("dl-email").value) el("dl-email").value = email;
+    say(el("dl-note"), AH.t("del.fresh"), "waiting");
+  }
+
   function render() {
     if (!done.hidden) return;
     const signedIn = Boolean(AH.signedIn && AH.signedIn());
@@ -35,6 +46,11 @@
     confirm.hidden = !signedIn;
     const email = AH.session && AH.session.user && AH.session.user.email;
     el("dl-who").textContent = email ? AH.t("login.in.as", { email: email }) : "";
+    if (signedIn) {
+      AH.request("/rpc/signed_in_recently", { method: "POST", body: "{}" })
+        .then((fresh) => { if (fresh !== true) askForLink(); })
+        .catch(() => {});
+    }
   }
 
   el("dl-form").addEventListener("submit", (e) => {
@@ -74,6 +90,7 @@
       })
       .catch((h) => {
         el("dl-go").disabled = false;
+        if (/sign in again first/i.test(String(h && h.message))) return askForLink();
         say(el("dl-confirm-note"), AH.errorText(h, AH.t("settings.delete.failed")), "error");
       });
   });

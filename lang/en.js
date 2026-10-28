@@ -106,6 +106,7 @@ window.AH_LANG.en = {
 "del.done.back":"back to the start",
 "del.done.heading":"it is gone.",
 "del.done.note":"The account and everything in it were deleted. If you signed in with Apple, you can also remove afterhours under Apple ID → Sign in with Apple.",
+"del.fresh":"To be sure it is you, a link comes to your email first. Open it on this device and delete within ten minutes.",
 "del.go":"delete the account",
 "del.heading":"delete your<br />account.",
 "del.lead":"Everything goes: profile, cards, messages, groups, photos. Download it first from settings if you want to keep a copy. Enter the email of the account; a link comes to it.",

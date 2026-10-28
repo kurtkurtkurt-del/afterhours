@@ -47,6 +47,8 @@ await db.exec(`insert into public.profile_links (user_id, kind, value) values ('
 
 console.log("\n— the terms —");
 {
+  /* the shim lets every test person say yes at birth; here A has not, yet */
+  await db.exec(`update public.profiles set terms_version = null, terms_at = null, adult = false where id = '${A}'`);
   await as(A);
   check((await one(`select * from public.terms_status()`)).version === null, "nobody has accepted yet");
   check(/eighteen/.test(await fails(`select public.accept_terms(1, false)`) ?? ""), "under eighteen is refused");

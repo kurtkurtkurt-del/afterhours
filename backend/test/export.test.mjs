@@ -9,6 +9,9 @@
 import { PGlite } from "@electric-sql/pglite";
 import { readFile } from "node:fs/promises";
 
+/* deleting wants a sign-in from the last ten minutes (111): the token says so */
+const fresh = `select set_config('request.jwt.claims', jsonb_set(current_setting('request.jwt.claims')::jsonb, '{amr}', jsonb_build_array(jsonb_build_object('method', 'password', 'timestamp', extract(epoch from now())::bigint)))::text, false);`;
+
 const read = (path) => readFile(new URL(path, import.meta.url), "utf8");
 
 let passed = 0, failed = 0;
@@ -129,7 +132,7 @@ console.log("\n— signed out —");
 console.log("\n— a deleted account leaves nothing to export —");
 {
   await asUser(ME);
-  await db.exec(`select public.delete_account()`);
+  await db.exec(`${fresh} select public.delete_account()`);
   await asService();
   const left = await db.query(
     `select count(*)::int as n from public.swipes where user_id = '${ME}'`);

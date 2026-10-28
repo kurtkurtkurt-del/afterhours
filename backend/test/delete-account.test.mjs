@@ -22,6 +22,8 @@ await db.exec(await read("../sql/setup-1-structure.sql"));
 
 const [A, B, C] = ["aaaaaaaa-1111-1111-1111-111111111111", "bbbbbbbb-2222-2222-2222-222222222222", "cccccccc-3333-3333-3333-333333333333"];
 const as = (id) => db.exec(`set role authenticated; set request.jwt.claims = '{"sub":"${id}"}';`);
+/* deleting wants a sign-in from the last ten minutes (111): the token says so */
+const fresh = `select set_config('request.jwt.claims', jsonb_set(current_setting('request.jwt.claims')::jsonb, '{amr}', jsonb_build_array(jsonb_build_object('method', 'password', 'timestamp', extract(epoch from now())::bigint)))::text, false);`;
 const asService = () => db.exec(`reset role; set request.jwt.claims = '';`);
 const fails = async (sql) => { try { await db.exec(sql); return null; } catch (e) { return e.message; } };
 const one = async (sql) => (await db.query(sql)).rows[0];
@@ -109,7 +111,7 @@ console.log("\n— before —");
 console.log("\n— the last admin —");
 {
   await as(A);
-  check(Boolean(await fails(`select public.delete_account()`)), "the only admin cannot delete the account");
+  check(Boolean(await fails(`${fresh} select public.delete_account()`)), "the only admin cannot delete the account");
   await asService();
   check((await one(`select count(*)::int as n from public.profiles where id = '${A}'`)).n === 1, "and it is still there");
   await db.exec(`update public.profiles set is_admin = true where id = '${C}'`);
@@ -118,7 +120,7 @@ console.log("\n— the last admin —");
 console.log("\n— the deletion —");
 {
   await as(A);
-  await db.exec(`select public.delete_account()`);
+  await db.exec(`${fresh} select public.delete_account()`);
   await asService();
   check((await one(`select count(*)::int as n from auth.users where id = '${A}'`)).n === 0, "the account is gone");
   const left = await pointing(A);

@@ -125,6 +125,7 @@
     "108_show_friends_cards.sql",
     "109_blocks_everywhere.sql",
     "110_venue_scope.sql",
+    "111_terms_and_delete_reauth.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */

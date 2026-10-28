@@ -3,6 +3,9 @@
 import { PGlite } from "@electric-sql/pglite";
 import { readFile } from "node:fs/promises";
 
+/* deleting wants a sign-in from the last ten minutes (111): the token says so */
+const fresh = `select set_config('request.jwt.claims', jsonb_set(current_setting('request.jwt.claims')::jsonb, '{amr}', jsonb_build_array(jsonb_build_object('method', 'password', 'timestamp', extract(epoch from now())::bigint)))::text, false);`;
+
 const read = (y) => readFile(new URL(y, import.meta.url), "utf8");
 let passed = 0, failed = 0;
 const check = (k, name, extra = "") => {
@@ -298,7 +301,7 @@ console.log("\n— deleting the account —");
     select id, '${D}', 'ben de geliyorum' from public.events where slug = 'blitz';
   `);
 
-  await db.exec(`select public.delete_account()`);
+  await db.exec(`${fresh} select public.delete_account()`);
 
   await asService();
   const h = await db.query(`select count(*)::int as n from auth.users where id = '${D}'`);
