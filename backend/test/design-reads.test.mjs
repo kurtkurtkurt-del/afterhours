@@ -35,6 +35,8 @@ let g, code;
 {
   await as(A);
   g = (await one(`select public.group_create('Cuma', '🪩', 'red', 'lasting', null, null, null, array['${B}']::uuid[]) as g`)).g;
+  // since 114 B is invited, not in: B says yes first
+  await as(B); await db.exec(`select public.group_accept('${g}')`); await as(A);
   await db.exec(`select public.plan_set('${g}', '${ev}')`);
   code = (await one(`select public.group_invite('${g}') as c`)).c;
   await as(C);

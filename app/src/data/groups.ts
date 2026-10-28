@@ -91,6 +91,11 @@ export const groupSetCover = (id: string, path: string | null) => rpc<string | n
 
 // the phone's copy first, refreshed behind it: connect draws the groups at once (owner, 22.10.2026)
 export const myGroups = () => remember('groups', '', () => rpc<GroupRow[]>('my_groups'), 1, { ttl: 0 });
+// The groups waiting for your answer (114_group_asks.sql): on the shelf as "invited".
+export type GroupAsk = Pick<GroupRow, 'id' | 'name' | 'emoji' | 'color' | 'cover_path' | 'kind' | 'city_slug' | 'date_from' | 'date_to' | 'members' | 'faces'> & { asked_by: string | null; asked_at: string };
+export const myGroupAsks = () => rpc<GroupAsk[]>('my_group_asks');
+export const groupAccept = (id: string) => rpc<void>('group_accept', { p_id: id });
+export const groupDecline = (id: string) => rpc<void>('group_decline', { p_id: id });
 export const groupGet = (id: string) => rpc<Group>('group_get', { p_id: id });
 export const groupSuggest = () => rpc<Suggestion[]>('group_suggest');
 

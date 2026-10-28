@@ -120,6 +120,7 @@ const structure = [
   ["111_terms_and_delete_reauth.sql", "THE TERMS ON THE SERVER, A FRESH SIGN-IN TO DELETE"],
   ["112_guest_merge_secret.sql", "A GUEST IS TAKEN OVER ONLY WITH ITS OWN SECRET"],
   ["113_about_skips.sql", "WHO IS THIS, LOOKED FOR AND NOT FOUND"],
+  ["114_group_asks.sql", "A GROUP INVITES, IT DOES NOT GRAB"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

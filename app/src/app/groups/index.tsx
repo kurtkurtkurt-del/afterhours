@@ -5,7 +5,7 @@ import { router } from 'expo-router';
 import Button from '@/components/Button';
 import StaffPage, { Quiet, Said } from '@/components/StaffPage';
 import { useAuth } from '@/auth/AuthContext';
-import { coverSource, GROUP_COLORS, groupSuggest, myGroups, why, type GroupRow, type Suggestion } from '@/data/groups';
+import { coverSource, GROUP_COLORS, groupAccept, groupDecline, groupSuggest, myGroupAsks, myGroups, why, type GroupAsk, type GroupRow, type Suggestion } from '@/data/groups';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius, ground } from '@/theme/tokens';
@@ -19,6 +19,17 @@ export default function Groups() {
   const [list, setList] = useState<GroupRow[] | null>(null);
   const [suggest, setSuggest] = useState<Suggestion[]>([]);
   const [said, setSaid] = useState<string | null>(null);
+  // Invitations (114): a friend made a group with you in mind; yes puts you in, no lets it go.
+  const [asks, setAsks] = useState<GroupAsk[]>([]);
+  const [answering, setAnswering] = useState<string | null>(null);
+  const readAsks = () => myGroupAsks().then((a) => setAsks(a ?? []), () => {});
+  const answerAsk = (id: string, yes: boolean) => {
+    setAnswering(id);
+    (yes ? groupAccept(id) : groupDecline(id))
+      .then(() => { setAsks((a) => a.filter((x) => x.id !== id)); if (yes) myGroups().then(setList, () => {}); })
+      .catch((e) => setSaid(why(e)))
+      .finally(() => setAnswering(null));
+  };
   const signedIn = !!session && !isAnonymous;
 
   useEffect(() => {
@@ -28,6 +39,7 @@ export default function Groups() {
       setSaid(why(e));
     });
     groupSuggest().then(setSuggest, () => {});
+    readAsks();
   }, [tick, signedIn]);
 
   if (!signedIn) {
@@ -54,6 +66,36 @@ export default function Groups() {
 
       <Said text={said} bad />
       {list && !list.length ? <Quiet text={t('groups.none')} /> : null}
+
+      {/* Invited (114, owner 28.10.2026): the groups waiting for your answer, first on the shelf,
+          the sleeve dimmed until yes. Nothing of the group is open before that. */}
+      {asks.length ? (
+        <View style={styles.asks}>
+          {asks.map((g) => (
+            <View key={g.id} style={styles.ask}>
+              <View style={styles.askSleeveWrap}>
+                <View style={[styles.askSleeve, { backgroundColor: GROUP_COLORS[g.color] }]}>
+                  {coverSource(g.cover_path) ? <Image source={coverSource(g.cover_path)!} style={StyleSheet.absoluteFill} contentFit="cover" /> : null}
+                  {!g.cover_path ? <Text style={styles.askEmoji}>{g.emoji}</Text> : null}
+                </View>
+              </View>
+              <View style={styles.askText}>
+                <Text style={styles.askMark}>{up(t('groups.invited'))}</Text>
+                <Text style={styles.name} numberOfLines={1}>{g.name}</Text>
+                <Text style={styles.under} numberOfLines={1}>{g.asked_by ? t('groups.invited.by', { name: g.asked_by.toLowerCase(), n: g.members }) : t('groups.members', { n: g.members })}</Text>
+                <View style={styles.askButtons}>
+                  <Pressable onPress={() => answerAsk(g.id, true)} disabled={answering === g.id} style={({ pressed }) => [styles.askYes, pressed && styles.pressed]} accessibilityRole="button">
+                    <Text style={styles.askYesText}>{t('groups.invited.yes')}</Text>
+                  </Pressable>
+                  <Pressable onPress={() => answerAsk(g.id, false)} disabled={answering === g.id} style={({ pressed }) => [styles.askNo, pressed && styles.pressed]} accessibilityRole="button">
+                    <Text style={styles.askNoText}>{t('groups.invited.no')}</Text>
+                  </Pressable>
+                </View>
+              </View>
+            </View>
+          ))}
+        </View>
+      ) : null}
 
       {/* The shelf (design 3B): every group a record sleeve, the last tile makes a new one. */}
       <View style={styles.shelf}>
@@ -90,6 +132,18 @@ const styles = StyleSheet.create({
   suggest: { borderWidth: 1, borderColor: colors.spot, borderRadius: radius.md, padding: 14, gap: 8, marginBottom: 18 },
   suggestTitle: { fontFamily: fonts.medium, fontSize: 17, color: colors.paper },
   suggestText: { fontFamily: fonts.regular, fontSize: 13, lineHeight: 18, color: colors.mute, marginBottom: 4 },
+  asks: { gap: 12, marginTop: 6, marginBottom: 10 },
+  ask: { flexDirection: 'row', gap: 14, padding: 12, borderRadius: radius.md, borderWidth: 1, borderColor: colors.spot, backgroundColor: colors.card },
+  askSleeveWrap: { width: 72, height: 72 },
+  askSleeve: { flex: 1, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center', overflow: 'hidden', opacity: 0.7 },
+  askEmoji: { fontSize: 30 },
+  askText: { flex: 1, gap: 2 },
+  askMark: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.2, color: colors.spotText },
+  askButtons: { flexDirection: 'row', gap: 8, marginTop: 8 },
+  askYes: { height: 34, paddingHorizontal: 16, borderRadius: radius.pill, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center' },
+  askYesText: { fontFamily: fonts.medium, fontSize: 13.5, color: colors.onSpot },
+  askNo: { height: 34, paddingHorizontal: 14, borderRadius: radius.pill, borderWidth: 1, borderColor: colors.ink3, alignItems: 'center', justifyContent: 'center' },
+  askNoText: { fontFamily: fonts.medium, fontSize: 13.5, color: colors.paper },
   shelf: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', rowGap: 22, marginTop: 6 },
   tile: { width: '47%' },
   over: { opacity: 0.45 },

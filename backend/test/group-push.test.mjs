@@ -14,7 +14,8 @@ process.on("unhandledRejection", (e) => { console.log("\nERROR: " + ((e && e.mes
 const db = new PGlite();
 await db.exec(await read("../test/supabase-shim.sql"));
 await db.exec(await read("../sql/setup-1-structure.sql"));
-for (const d of ["../sql/48_group_push.sql", "../sql/48_group_push.sql"]) await db.exec(await read(d));
+// 114 after 48: 48 re-sets the kind check without group_ask, as the live order does
+for (const d of ["../sql/48_group_push.sql", "../sql/48_group_push.sql", "../sql/114_group_asks.sql"]) await db.exec(await read(d));
 
 const [A, B, C, D] = ["aaaaaaaa-1111-1111-1111-111111111111", "bbbbbbbb-2222-2222-2222-222222222222",
   "cccccccc-3333-3333-3333-333333333333", "dddddddd-4444-4444-4444-444444444444"];
@@ -38,15 +39,19 @@ let g;
 {
   await as(A);
   g = (await one(`select public.group_create('Cuma', '🪩', 'red', 'lasting', null, null, null, array['${B}','${C}']::uuid[]) as g`)).g;
-  const added = await box("group_added");
-  check(who(added) === [B, C].sort().join(","), "the two A put in hear it; A does not", who(added));
-  check(added[0].data.group === "🪩 Cuma" && added[0].data.name === "a" && added[0].data.url === `/groups/${g}`, "with the group, who added them, and where it opens");
+  // since 114 the two are invited, not put in: they hear the invitation, and say yes here
+  const asked = await box("group_ask");
+  check(who(asked) === [B, C].sort().join(","), "the two A invited hear it; A does not", who(asked));
+  check(asked[0].data.group === "🪩 Cuma" && asked[0].data.name === "a" && asked[0].data.url === "/groups", "with the group, who asked, and where it opens");
+  for (const x of [B, C]) { await as(x); await db.exec(`select public.group_accept('${g}')`); }
+  check(who(await box("group_joined")) === [A, A, B].sort().join(","), "each yes: the ones already in hear it");
+  await asService(); await db.exec(`delete from public.push_outbox where kind = 'group_joined'`);
   await as(B);
   const code = (await one(`select public.group_invite('${g}') as c`)).c;
   await as(D);
   await db.exec(`select public.group_join('${code}')`);
   check(who(await box("group_joined")) === [A, B, C].sort().join(","), "D came with the code: the others hear it");
-  check((await box("group_added")).length === 2, "and D gets no 'added'");
+  check((await box("group_added")).length === 0, "and nobody gets an 'added' (invitations since 114)");
 }
 
 console.log("\n— a match —");
