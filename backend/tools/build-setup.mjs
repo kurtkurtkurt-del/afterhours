@@ -116,6 +116,7 @@ const structure = [
   ["107_handles_and_read_limits.sql", "A HANDLE OBEYS THE RULES, READS HAVE A CEILING"],
   ["108_show_friends_cards.sql", "A HIDDEN CHECK-IN STAYS HIDDEN ON EVERY CARD"],
   ["109_blocks_everywhere.sql", "A BLOCK CLOSES EVERYWHERE"],
+  ["110_venue_scope.sql", "A ROOM REACHES ONLY ITS OWN NIGHTS AND PEOPLE"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
