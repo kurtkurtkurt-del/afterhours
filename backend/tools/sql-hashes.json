@@ -95,5 +95,6 @@
   "100_storage_queue.sql": "552a3e7283802908967d1fdf0e8e10cde8c95f9e14763a36302f3843a26fcdc5",
   "101_people_map.sql": "83946b4f5258a331715626b424f85581d37352ccd75b7a64cfd165b72b35d45b",
   "102_people_places.sql": "46cadc12f1eae4a8bd41b7188f0bf3704634891ead99a563ab3b42052b79589e",
-  "103_people_map_cities.sql": "1252401c2124b3e12beedea450b6b3e256fdca3d9d611a0a8d4a5c5cdbc68d68"
+  "103_people_map_cities.sql": "1252401c2124b3e12beedea450b6b3e256fdca3d9d611a0a8d4a5c5cdbc68d68",
+  "109_blocks_everywhere.sql": "76df1bdd5935c4dfa9024f3918bc2596f435940d50e70c4461a49c658dfce84d"
 }
