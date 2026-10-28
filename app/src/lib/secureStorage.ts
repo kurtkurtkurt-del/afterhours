@@ -38,6 +38,9 @@ export class LargeSecureStore {
     const cipher = new aesjs.ModeOfOperation.ctr(aesjs.utils.hex.toBytes(hex), new aesjs.Counter(iv));
     const text = aesjs.utils.utf8.fromBytes(cipher.decrypt(aesjs.utils.hex.toBytes(value.slice(32))));
     // A simple consistency check instead of integrity: the session is JSON, otherwise ignore it.
+    // The PKCE verifier (…-code-verifier, flowType 'pkce') is plain text and goes through as is;
+    // swallowing it broke every Google sign-in with "pkce code verifier not found" (28.10.2026).
+    if (key.endsWith('-code-verifier')) return text;
     return text.startsWith('{') ? text : null;
   }
   async getItem(key: string) {
