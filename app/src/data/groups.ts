@@ -4,6 +4,7 @@ import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
 import { File } from 'expo-file-system';
 import type { ImageSourcePropType } from 'react-native';
 import { supabase } from '@/lib/supabase';
+import { PHOTO_CACHE, photoName } from '@/lib/photoName';
 import { remember } from '@/lib/offline';
 import type { Night } from '@/data/deck';
 import { SITE } from '@/data/deck';
@@ -144,9 +145,9 @@ export async function chooseCover(id: string, uid: string): Promise<string | nul
   const ctx = ImageManipulator.manipulate(asset.uri);
   if ((asset.width ?? 0) > 1080) ctx.resize({ width: 1080 });
   const img = await (await ctx.renderAsync()).saveAsync({ format: SaveFormat.JPEG, compress: 0.82 });
-  const path = `${uid}/group-${id}-${Date.now()}.jpg`;
+  const path = `${uid}/group-${id}-${photoName()}.jpg`;
   const bytes = await new File(img.uri).arrayBuffer();
-  const sent = await supabase.storage.from('photos').upload(path, bytes, { contentType: 'image/jpeg', cacheControl: '31536000' });
+  const sent = await supabase.storage.from('photos').upload(path, bytes, { contentType: 'image/jpeg', cacheControl: PHOTO_CACHE });
   if (sent.error) throw sent.error;
   const was = await rpc<string | null>('group_set_cover', { p_id: id, p_path: path });
   if (was && was.startsWith(uid + '/')) await supabase.storage.from('photos').remove([was]).catch(() => {});
@@ -218,8 +219,8 @@ export async function albumAdd(id: string, event: string, uid: string): Promise<
   const ctx = ImageManipulator.manipulate(asset.uri);
   if ((asset.width ?? 0) > 1440) ctx.resize({ width: 1440 });
   const img = await (await ctx.renderAsync()).saveAsync({ format: SaveFormat.JPEG, compress: 0.82 });
-  const path = `${uid}/album-${id}-${Date.now()}.jpg`;
-  const sent = await supabase.storage.from('photos').upload(path, await new File(img.uri).arrayBuffer(), { contentType: 'image/jpeg', cacheControl: '31536000' });
+  const path = `${uid}/album-${id}-${photoName()}.jpg`;
+  const sent = await supabase.storage.from('photos').upload(path, await new File(img.uri).arrayBuffer(), { contentType: 'image/jpeg', cacheControl: PHOTO_CACHE });
   if (sent.error) throw sent.error;
   try {
     await rpc<string>('group_photo_add', { p_group: id, p_event: event, p_path: path });

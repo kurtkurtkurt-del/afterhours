@@ -2,6 +2,7 @@ import { launchImageLibraryAsync } from 'expo-image-picker';
 import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
 import { File } from 'expo-file-system';
 import { supabase } from '@/lib/supabase';
+import { PHOTO_CACHE, photoName } from '@/lib/photoName';
 
 // 45_posts.sql: a photo and a few words for your friends.
 
@@ -62,8 +63,8 @@ export async function pickPostPhoto(): Promise<string | null> {
 export async function postCreate(uid: string, body: string, localPhoto: string | null, eventId: string | null): Promise<string> {
   let path: string | null = null;
   if (localPhoto) {
-    path = `${uid}/post-${Date.now()}.jpg`;
-    const sent = await supabase.storage.from('photos').upload(path, await new File(localPhoto).arrayBuffer(), { contentType: 'image/jpeg', cacheControl: '31536000' });
+    path = `${uid}/post-${photoName()}.jpg`;
+    const sent = await supabase.storage.from('photos').upload(path, await new File(localPhoto).arrayBuffer(), { contentType: 'image/jpeg', cacheControl: PHOTO_CACHE });
     if (sent.error) throw sent.error;
   }
   try {

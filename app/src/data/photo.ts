@@ -4,13 +4,14 @@ import { launchImageLibraryAsync } from 'expo-image-picker';
 import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
 import { File, Paths } from 'expo-file-system';
 import Storage from 'expo-sqlite/kv-store';
+import { PHOTO_CACHE, photoName } from '@/lib/photoName';
 import { supabase } from '@/lib/supabase';
 import { must, remember } from '@/lib/offline';
 import { useAuth } from '@/auth/AuthContext';
 import { t } from '@/i18n/core';
 
 // Profile photo (24_photos.sql), tied to the account: the file lives in the "photos" bucket
-// as <user>/<number>.jpg and its path in profile_photos. Only the owner and CONFIRMED
+// as <user>/<random>.jpg and its path in profile_photos. Only the owner and CONFIRMED
 // friends can read it.
 //
 // A copy is also kept on the phone so screens open without waiting for the network and
@@ -76,9 +77,9 @@ async function account() {
 
 // Uploads the local file, writes the path to the database, removes the old file.
 async function upload(uid: string, uri: string) {
-  const path = `${uid}/${Date.now()}.jpg`;
+  const path = `${uid}/${photoName()}.jpg`;
   const bytes = await new File(uri).arrayBuffer();
-  const sent = await supabase.storage.from(BUCKET).upload(path, bytes, { contentType: 'image/jpeg', cacheControl: '31536000' });
+  const sent = await supabase.storage.from(BUCKET).upload(path, bytes, { contentType: 'image/jpeg', cacheControl: PHOTO_CACHE });
   if (sent.error) throw sent.error;
   const { data: was, error } = await supabase.rpc('photo_set', { p_path: path });
   if (error) {

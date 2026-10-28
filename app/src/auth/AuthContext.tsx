@@ -97,7 +97,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (bad) return bad;
     const { data, error } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
     if (error) return plain(error.message);
-    // Swipes made as a guest before this sign-in come along (80_guest_merge.sql).
+    // Swipes made as a guest before this sign-in come along (112_guest_merge_secret.sql).
     if (data.user) mergeGuest(data.user.id).catch(() => {});
     return null;
   }, []);
@@ -113,8 +113,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const { data, error } = await supabase.auth.updateUser({ email: email.trim(), password }, { emailRedirectTo: CONFIRM_URL });
         if (error) {
           if (/already|registered|exists/i.test(error.message)) {
-            // Sign-in will replace this session; the guest id survives on the phone (80_guest_merge.sql).
-            rememberGuest(cur.session.user.id);
+            // Sign-in will replace this session; the guest id and its secret survive on the phone (112_guest_merge_secret.sql).
+            await rememberGuest(cur.session.user.id).catch(() => {});
             return t('auth.exists');
           }
           return plain(error.message);

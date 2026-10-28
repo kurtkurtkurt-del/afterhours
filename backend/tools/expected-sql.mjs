@@ -110,4 +110,5 @@ export const EXPECTED_SQL = [
   "101_people_map.sql",
   "102_people_places.sql",
   "103_people_map_cities.sql",
+  "112_guest_merge_secret.sql",
 ];
