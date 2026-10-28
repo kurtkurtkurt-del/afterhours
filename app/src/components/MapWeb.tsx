@@ -5,9 +5,12 @@ import { leafletCss, leafletJs } from '@/vendor/leaflet';
 import { colors, tint, themeId } from '@/theme/tokens';
 
 export type Pin = { id: string; lat: number; lng: number; friends: boolean; spark?: boolean };
+// The friends view (owner, 28.10.2026): a face for a friend, a soft disc with a count for a wave.
+// dx/dy: a nudge in pixels, so several people in one city sit around it instead of on top of each other.
+export type PeoplePin = { id: string; w: 1 | 2 | 3; lat: number; lng: number; label: string; photo?: string; n?: number; live?: boolean; dx: number; dy: number };
 // pad: the area the circle must fit in, leaving room for the header above and the slider or card below
 // liveKm: circle radius while the slider is dragged (the map does not move); km arrives on release
-type Props = { lat: number; lng: number; km: number; liveKm?: number; me: [number, number] | null; pins: Pin[]; picked: string | null; onPick: (id: string | null) => void; pad: { top: number; bottom: number }; recenter?: number };
+type Props = { lat: number; lng: number; km: number; liveKm?: number; me: [number, number] | null; pins: Pin[]; picked: string | null; onPick: (id: string | null) => void; pad: { top: number; bottom: number }; recenter?: number; people?: PeoplePin[]; peopleOn?: boolean; onPerson?: (id: string) => void };
 
 // Map in a WebView: Leaflet (bundled) + Esri "Light Gray Canvas" tiles (try/light), no key needed;
 // Carto's free tiles watermark keyless requests, hence Esri.
@@ -62,6 +65,17 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   .me b{position:absolute;left:4px;top:4px;width:14px;height:14px;border-radius:50%;background:#f3f1ec;box-shadow:0 0 0 2px ${M.gap},0 0 0 3.5px ${colors.spot}}
   .me b:after{content:'';position:absolute;left:4px;top:4px;width:6px;height:6px;border-radius:50%;background:${colors.spot}}
   @keyframes ping{0%{transform:scale(.6);opacity:.5}100%{transform:scale(2.6);opacity:0}}
+  /* The friends view: a face in a white ring (red when out now) with the name under it; a wave
+     as a soft disc with how many live there, red for the second wave, grey for the third. */
+  .pp{position:relative;width:44px;height:44px;border-radius:50%;background:#f3f1ec;box-shadow:0 0 0 3px #fbfaf7,0 4px 12px rgba(0,0,0,.28)}
+  .pp.live{box-shadow:0 0 0 3px ${colors.spot},0 4px 12px rgba(0,0,0,.28)}
+  .pp img,.pp i{position:absolute;inset:0;width:44px;height:44px;border-radius:50%;object-fit:cover}
+  .pp i{display:flex;align-items:center;justify-content:center;font:600 17px Inter,system-ui,sans-serif;font-style:normal;color:#1f1d1a;background:#e9e5dd}
+  .pn{position:absolute;top:50px;left:50%;transform:translateX(-50%);font:600 11px Inter,system-ui,sans-serif;color:${M.pin};white-space:nowrap;text-shadow:0 0 3px ${M.ground},0 0 3px ${M.ground}}
+  .pc{position:relative;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 13px Inter,system-ui,sans-serif;color:#fff;box-shadow:0 0 0 2px rgba(251,250,247,.85),0 0 16px 4px rgba(215,38,30,.25)}
+  .pc.w2{background:radial-gradient(circle at 40% 35%,rgba(240,68,58,.95),rgba(215,38,30,.55))}
+  .pc.w3{background:radial-gradient(circle at 40% 35%,rgba(122,118,110,.9),rgba(122,118,110,.5));box-shadow:0 0 0 2px rgba(251,250,247,.85),0 0 16px 4px rgba(122,118,110,.25)}
+  .pc b{position:absolute;top:42px;left:50%;transform:translateX(-50%);font:500 9px 'JetBrains Mono',monospace;letter-spacing:.6px;text-transform:uppercase;color:${M.pin};white-space:nowrap;text-shadow:0 0 3px ${M.ground}}
 </style></head><body><div id="m"></div><script>
   var map=L.map('m',{zoomControl:false,attributionControl:true,zoomSnap:1,doubleClickZoom:false,fadeAnimation:false}).setView([48.137,11.575],13);
   map.attributionControl.setPrefix(false);
@@ -118,6 +132,16 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   L.tileLayer(esri+'World_'+(${JSON.stringify(M.tiles)})+'_Gray_Base/MapServer/tile/{z}/{y}/{x}',L.extend({attribution:'&copy; Esri, HERE, Garmin, OpenStreetMap contributors · v2'},tiles)).addTo(map);
   L.tileLayer(esri+'World_'+(${JSON.stringify(M.tiles)})+'_Gray_Reference/MapServer/tile/{z}/{y}/{x}',L.extend({opacity:.9},tiles)).addTo(map);
   var layer=L.layerGroup().addTo(map), meMarker=null, markers={}, ring=null;
+  var people=L.layerGroup(), peopleOn=false, peopleLL=[];
+  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return '&#'+c.charCodeAt(0)+';';});}
+  /* Fit everyone in the friends view; a lone city opens at a city-ish zoom. */
+  function fitPeople(){
+    map.invalidateSize({pan:false});var z=map.getSize();if(!z.x||!z.y)return;
+    var ll=peopleLL.slice();if(meMarker)ll.push(meMarker.getLatLng());
+    if(!ll.length){map.setView(map.getCenter(),3,{animate:true});return;}
+    if(ll.length===1){map.setView(ll[0],6,{animate:true});return;}
+    map.fitBounds(L.latLngBounds(ll),{paddingTopLeft:[48,pad.top+30],paddingBottomRight:[48,pad.bottom+30],maxZoom:7,animate:true});
+  }
   function post(m){window.ReactNativeWebView&&window.ReactNativeWebView.postMessage(JSON.stringify(m));}
   map.on('click',function(){post({pick:null});});
   /* The circle fills the free area. While the slider is dragged the zoom is not
@@ -138,12 +162,23 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
     map.options.zoomSnap=1;
   }
   window.update=function(s){
-    if(s.ring!==undefined&&ring){ring.setRadius(s.ring*1000);fit(false);}
+    if(s.people){people.clearLayers();peopleLL=[];s.people.forEach(function(p){
+      var html=p.w===1
+        ? '<div class="pp'+(p.live?' live':'')+'">'+(p.photo?'<img src="'+esc(p.photo)+'">':'<i>'+esc(p.label.charAt(0))+'</i>')+'<div class="pn">'+esc(p.label)+'</div></div>'
+        : '<div class="pc w'+p.w+'">'+p.n+'<b>'+esc(p.label)+'</b></div>';
+      var sz=p.w===1?44:38, ic=L.divIcon({className:'',html:html,iconSize:[sz,sz],iconAnchor:[sz/2-p.dx,sz/2-p.dy]});
+      var mk=L.marker([p.lat,p.lng],{icon:ic,zIndexOffset:p.w===1?500:0}).addTo(people);
+      mk.on('click',function(e){L.DomEvent.stopPropagation(e);post({person:p.id});});peopleLL.push(L.latLng(p.lat,p.lng));});
+      if(peopleOn)fitPeople();}
+    if(s.peopleOn!==undefined&&s.peopleOn!==peopleOn){peopleOn=s.peopleOn;
+      if(peopleOn){map.removeLayer(layer);if(ring)map.removeLayer(ring);people.addTo(map);fitPeople();}
+      else{map.removeLayer(people);layer.addTo(map);if(ring){ring.addTo(map);fit(true);}}}
+    if(s.ring!==undefined&&ring){ring.setRadius(s.ring*1000);if(!peopleOn)fit(false);}
     if(s.view){
       var c=[s.view.lat,s.view.lng], r=s.view.km*1000;
       pad={top:s.view.top,bottom:s.view.bottom};
-      if(!ring){ring=L.circle(c,{radius:r,color:'${colors.spot}',weight:1,fill:false,interactive:false}).addTo(map);}else{ring.setLatLng(c);ring.setRadius(r);}
-      fit(true);
+      if(!ring){ring=L.circle(c,{radius:r,color:'${colors.spot}',weight:1,fill:false,interactive:false});if(!peopleOn)ring.addTo(map);}else{ring.setLatLng(c);ring.setRadius(r);}
+      if(!peopleOn)fit(true);else fitPeople();
     }
     if(s.me){if(!meMarker){meMarker=L.marker([s.me[0],s.me[1]],{icon:L.divIcon({className:'',html:'<div class="me"><i></i><b></b></div>',iconSize:[22,22],iconAnchor:[11,11]}),interactive:false,zIndexOffset:1000}).addTo(map);}else{meMarker.setLatLng([s.me[0],s.me[1]]);}}
     if(s.pins){layer.clearLayers();markers={};s.pins.forEach(function(p){
@@ -157,7 +192,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   };
   /* When the page gets its real size (or it changes), fit the circle again. */
   var lastSize='';
-  function resized(){map.invalidateSize({pan:false});var z=map.getSize(),k=z.x+'x'+z.y;if(k===lastSize||!z.x||!z.y)return;lastSize=k;if(ring)fit(false);}
+  function resized(){map.invalidateSize({pan:false});var z=map.getSize(),k=z.x+'x'+z.y;if(k===lastSize||!z.x||!z.y)return;lastSize=k;if(peopleOn)fitPeople();else if(ring)fit(false);}
   window.addEventListener('resize',resized);
   if(window.ResizeObserver)new ResizeObserver(resized).observe(document.getElementById('m'));
   post({ready:true});
@@ -165,7 +200,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
 
 
 // recenter: bump it to fit the view on lat/lng/km again after the map was panned.
-export default function MapWeb({ lat, lng, km, liveKm, me, pins, picked, onPick, pad, recenter = 0 }: Props) {
+export default function MapWeb({ lat, lng, km, liveKm, me, pins, picked, onPick, pad, recenter = 0, people, peopleOn = false, onPerson }: Props) {
   const ref = useRef<WebView>(null);
   const ready = useRef(false);
   const send = (s: object) => ref.current?.injectJavaScript(`window.update(${JSON.stringify(s)});true;`);
@@ -188,6 +223,14 @@ export default function MapWeb({ lat, lng, km, liveKm, me, pins, picked, onPick,
   useEffect(() => {
     if (ready.current && me) send({ me });
   }, [me]);
+  const peopleKey = useMemo(() => JSON.stringify(people ?? []), [people]);
+  useEffect(() => {
+    if (ready.current) send({ people: people ?? [] });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [peopleKey]);
+  useEffect(() => {
+    if (ready.current) send({ peopleOn });
+  }, [peopleOn]);
 
   return (
     <WebView
@@ -212,8 +255,9 @@ export default function MapWeb({ lat, lng, km, liveKm, me, pins, picked, onPick,
           const m = JSON.parse(e.nativeEvent.data);
           if (m.ready) {
             ready.current = true;
-            send({ view: { lat, lng, km, top: pad.top, bottom: pad.bottom }, pins, picked, me: me ?? undefined });
-          } else if ('pick' in m) onPick(m.pick);
+            send({ view: { lat, lng, km, top: pad.top, bottom: pad.bottom }, pins, picked, me: me ?? undefined, people: people ?? [], peopleOn });
+          } else if ('person' in m) onPerson?.(m.person);
+          else if ('pick' in m) onPick(m.pick);
         } catch {
           /* ignore */
         }

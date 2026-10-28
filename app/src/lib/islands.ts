@@ -17,7 +17,10 @@ export type Layout = { nodes: Placed[]; lines: MapLine[]; byId: Map<string, Plac
 const CAP = 5; // lines per person
 const CAP_ME = 8;
 const RADIUS = [30, 22, 13, 10];
-const RING = [0, 105, 215, 320];
+// the room a person needs from another, centre to centre: two friends keep space for their
+// names side by side; anyone else keeps their discs and a short line apart
+const ROOM_FRIENDS = 96;
+const room = (a: number, b: number) => (a === 1 && b === 1 ? ROOM_FRIENDS : RADIUS[a] + RADIUS[b] + 24);
 
 function rng(seed: number) {
   let a = seed | 0;
@@ -118,7 +121,11 @@ export function layout(data: MapData): Layout {
     }
   }
 
-  // positions
+  // positions. The friends' ring grows with how many there are, so each has room for a name;
+  // the crowd's rings sit beyond it.
+  const friendsN = nodes.filter((n) => n.w === 1).length;
+  const r1 = Math.max(110, (friendsN * (ROOM_FRIENDS + 6)) / (2 * Math.PI));
+  const RING = [0, r1, r1 + 115, r1 + 220];
   const rand = rng(hash(ids.join(',')));
   const islandAngle = labels.map((_, i) => i * 2.399963); // the golden angle: islands spread around you
   const P = nodes.map((n) => {
@@ -128,7 +135,12 @@ export function layout(data: MapData): Layout {
     return { id: n.id, x: n.id === 'me' ? 0 : Math.cos(a) * d, y: n.id === 'me' ? 0 : Math.sin(a) * d, isl, w: n.w };
   });
   const index = new Map(P.map((p, i) => [p.id, i]));
-  const springs = lines.map((l) => ({ i: index.get(l.a)!, j: index.get(l.b)!, len: l.kind === 'you' ? 105 : l.kind === 'group' ? 50 : 115 }));
+  // a line is long enough to be seen between the two discs it joins
+  const springs = lines.map((l) => {
+    const a = w.get(l.a)!, b = w.get(l.b)!;
+    const len = l.kind === 'you' ? r1 : Math.max(room(a, b) + 8, RADIUS[a] + RADIUS[b] + (l.kind === 'group' ? 34 : 80));
+    return { i: index.get(l.a)!, j: index.get(l.b)!, len };
+  });
   const N = P.length;
   const steps = N > 160 ? 160 : 240;
   for (let s = 0; s < steps; s++) {
@@ -141,8 +153,8 @@ export function layout(data: MapData): Layout {
       if (d2 > 90000) continue;
       const d = Math.sqrt(d2);
       // a push that fades with distance, harder between islands, hardest when two discs touch
-      const touch = RADIUS[P[i].w] + RADIUS[P[j].w] + 10;
-      const k = (P[i].isl !== P[j].isl ? 2600 : 1100) / d2 + (d < touch ? (touch - d) * 0.5 : 0);
+      const touch = room(P[i].w, P[j].w);
+      const k = (P[i].isl !== P[j].isl ? 2600 : 1100) / d2 + (d < touch ? (touch - d) * 0.6 : 0);
       fx[i] += (dx / d) * k; fy[i] += (dy / d) * k; fx[j] -= (dx / d) * k; fy[j] -= (dy / d) * k;
     }
     for (const sp of springs) {
@@ -167,6 +179,26 @@ export function layout(data: MapData): Layout {
       const k = m > max ? max / m : 1;
       p.x += fx[i] * k; p.y += fy[i] * k;
     }
+  }
+
+  // last, a few rounds that only pull apart whoever is still too close (you stay put)
+  for (let round = 0; round < 60; round++) {
+    let moved = false;
+    for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
+      const a = P[i], b = P[j];
+      let dx = b.x - a.x, dy = b.y - a.y;
+      let d = Math.sqrt(dx * dx + dy * dy);
+      const need = room(a.w, b.w);
+      if (d >= need) continue;
+      if (d < 0.01) { dx = rand() - 0.5; dy = rand() - 0.5; d = Math.sqrt(dx * dx + dy * dy); }
+      const push = (need - d) / 2 + 0.5;
+      const ux = dx / d, uy = dy / d;
+      if (a.id === 'me') { b.x += ux * push * 2; b.y += uy * push * 2; }
+      else if (b.id === 'me') { a.x -= ux * push * 2; a.y -= uy * push * 2; }
+      else { a.x -= ux * push; a.y -= uy * push; b.x += ux * push; b.y += uy * push; }
+      moved = true;
+    }
+    if (!moved) break;
   }
 
   const placedNodes: Placed[] = nodes.map((n) => {

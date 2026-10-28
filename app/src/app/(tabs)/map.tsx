@@ -19,7 +19,11 @@ import { router, useFocusEffect } from 'expo-router';
 import * as Location from 'expo-location';
 import Animated, { Easing, interpolate, runOnJS, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import MapWeb, { type Pin } from '@/components/MapWeb';
+import MapWeb, { type PeoplePin, type Pin } from '@/components/MapWeb';
+import { peoplePlaces, type Places } from '@/data/peoplePlaces';
+import { friendPhotos } from '@/data/photo';
+import { friendsLive } from '@/data/checkin';
+import { openPerson } from '@/components/People';
 import SoundCorner from '@/components/SoundCorner';
 import { useTabBarSpace } from '@/components/TabBar';
 import { useAuth } from '@/auth/AuthContext';
@@ -78,6 +82,14 @@ export default function MapScreen() {
   // Tapping the tab again resets the view and re-fits the circle, even after manual panning.
   const [fresh, setFresh] = useState(0);
   const [recenter, setRecenter] = useState(0);
+  // The friends view (owner, 28.10.2026): the button top right swaps the nights for your people,
+  // the whole world in view; the same button swaps back. Under it: which wave to show.
+  const [friendsView, setFriendsView] = useState(false);
+  const [places, setPlaces] = useState<Places | null>(null);
+  const [wave, setWave] = useState<0 | 1 | 2 | 3>(0);
+  const [faces, setFaces] = useState<Map<string, string>>(new Map());
+  const [outNow, setOutNow] = useState<Set<string>>(new Set());
+  const [crowdNote, setCrowdNote] = useState<string | null>(null);
   useTabReset('map', () => {
     setPicked(null);
     setPickedSpark(null);
@@ -269,6 +281,43 @@ export default function MapScreen() {
     return isNaN(d.getTime()) ? t('deck.tba') : `${two(d.getHours())}:${two(d.getMinutes())}`;
   };
 
+  const toggleFriends = () => {
+    const on = !friendsView;
+    setFriendsView(on);
+    setCrowdNote(null);
+    setPicked(null);
+    setPickedSpark(null);
+    if (on && session) {
+      peoplePlaces().then(setPlaces, () => setPlaces({ friends: [], crowd: [] }));
+      friendPhotos().then(setFaces, () => {});
+      friendsLive().then((l) => setOutNow(new Set(l.map((x) => x.friend_id))), () => {});
+    }
+  };
+  const peoplePins = useMemo<PeoplePin[]>(() => {
+    if (!places) return [];
+    const out: PeoplePin[] = [];
+    // friends in one city stand around it on a small ring; the waves sit below them
+    const byCity = new Map<string, typeof places.friends>();
+    if (wave === 0 || wave === 1) for (const f of places.friends) byCity.set(f.city, [...(byCity.get(f.city) ?? []), f]);
+    for (const list of byCity.values()) list.forEach((f, i) => {
+      const n = list.length, r = n === 1 ? 0 : 30 + n * 3, a = (i / n) * Math.PI * 2 - Math.PI / 2;
+      out.push({ id: `f:${f.h ?? f.id}`, w: 1, lat: f.lat, lng: f.lng, label: (f.n ?? f.h ?? '').toLowerCase(), photo: faces.get(f.id), live: outNow.has(f.id), dx: Math.cos(a) * r, dy: Math.sin(a) * r });
+    });
+    for (const c of places.crowd) {
+      if (wave !== 0 && wave !== c.w) continue;
+      const here = byCity.get(c.city)?.length ?? 0;
+      const below = here ? (here === 1 ? 46 : 64) : 0;
+      out.push({ id: `c:${c.w}:${c.city}`, w: c.w, lat: c.lat, lng: c.lng, label: t(c.w === 2 ? 'fmap.w2' : 'fmap.w3'), n: c.n, dx: wave === 0 ? (c.w === 2 ? -24 : 24) : 0, dy: below + (wave === 0 && !here ? 0 : 0) });
+    }
+    return out;
+  }, [places, wave, faces, outNow, t]);
+  const onPerson = (id: string) => {
+    if (id.startsWith('f:')) return openPerson(id.slice(2));
+    const [, w, city] = id.split(':');
+    const c = places?.crowd.find((x) => String(x.w) === w && x.city === city);
+    if (c) setCrowdNote(tn(c.w === 2 ? 'fmap.inW2' : 'fmap.inW3', c.n, { city: c.name.toLowerCase() }));
+  };
+
   return (
     <View style={styles.root}>
       <StatusBar style={barStyle} />
@@ -287,6 +336,9 @@ export default function MapScreen() {
           setPickedSpark(id ? (sparks.find((sp) => sp.id === id) ?? null) : null);
         }}
         pad={{ top: brand.top + 90, bottom: tabSpace + 150 }}
+        people={peoplePins}
+        peopleOn={friendsView}
+        onPerson={onPerson}
       />
 
       {/* As in the flow: where, big; what · when · near me as pills under it. */}
@@ -306,8 +358,33 @@ export default function MapScreen() {
         </View>
       </View>
       <SoundCorner />
+      {session ? (
+        <Pressable onPress={toggleFriends} hitSlop={8} accessibilityRole="switch" accessibilityState={{ checked: friendsView }} style={({ pressed }) => [styles.fview, { top: brand.top + 34 }, friendsView && styles.fviewOn, pressed && { opacity: 0.7 }]}>
+          <View style={[styles.fviewDot, friendsView && styles.fviewDotOn]} />
+          <Text style={[styles.fviewText, friendsView && styles.fviewTextOn]}>{t('fmap.toggle')}</Text>
+        </Pressable>
+      ) : null}
+
+      {friendsView ? (
+        <View style={[styles.fcard, { bottom: tabSpace + 8 }]}>
+          <View style={styles.fchips}>
+            {([0, 1, 2, 3] as const).map((w) => (
+              <Pressable key={w} onPress={() => { setWave(w); setCrowdNote(null); }} style={[styles.fchip, wave === w && styles.fchipOn]} accessibilityRole="tab" accessibilityState={{ selected: wave === w }}>
+                <Text style={[styles.fchipText, wave === w && styles.fchipTextOn]} numberOfLines={1}>
+                  {t(w === 0 ? 'fmap.all' : w === 1 ? 'fmap.friends' : w === 2 ? 'fmap.w2' : 'fmap.w3')}
+                  <Text style={styles.fchipCount}> {!places ? '·' : w === 0 ? places.friends.length + places.crowd.reduce((a, c) => a + c.n, 0) : w === 1 ? places.friends.length : places.crowd.filter((c) => c.w === w).reduce((a, c) => a + c.n, 0)}</Text>
+                </Text>
+              </Pressable>
+            ))}
+          </View>
+          <Text style={styles.fnote} numberOfLines={2}>
+            {crowdNote ?? (!places ? up(t('person.loading')) : !places.friends.length && !places.crowd.length ? t('fmap.none') : t('fmap.hint'))}
+          </Text>
+        </View>
+      ) : null}
 
       {/* Idle: large radius, counts, red slider. */}
+      {!friendsView ? (
       <Animated.View style={[styles.rest, { bottom: tabSpace + 8 }, restStyle]} pointerEvents={anyPicked ? 'none' : 'auto'}>
         <View style={styles.restRow}>
           <Text style={styles.big}>
@@ -336,6 +413,7 @@ export default function MapScreen() {
           }}
         />
       </Animated.View>
+      ) : null}
 
       {/* Selected night: caption with the red GO strip on the right. */}
       {picked ? (
@@ -452,6 +530,20 @@ export default function MapScreen() {
 const GOLD = '#E8B04B'; // sparks on the map (the same gold as their diamonds)
 
 const styles = StyleSheet.create({
+  fview: { position: 'absolute', right: brand.left, flexDirection: 'row', alignItems: 'center', gap: 7, backgroundColor: colors.card, borderRadius: radius.pill, paddingHorizontal: 12, paddingVertical: 8, shadowColor: '#000', shadowOpacity: 0.12, shadowRadius: 8, elevation: 3 },
+  fviewOn: { backgroundColor: colors.spot },
+  fviewDot: { width: 7, height: 7, borderRadius: 4, backgroundColor: colors.mute },
+  fviewDotOn: { backgroundColor: colors.onSpot },
+  fviewText: { fontFamily: fonts.semibold, fontSize: 12, color: colors.paper },
+  fviewTextOn: { color: colors.onSpot },
+  fcard: { position: 'absolute', left: brand.left, right: brand.left, backgroundColor: colors.card, borderRadius: 22, padding: 12, gap: 10, shadowColor: '#000', shadowOpacity: 0.12, shadowRadius: 12, elevation: 4 },
+  fchips: { flexDirection: 'row', gap: 6 },
+  fchip: { flex: 1, alignItems: 'center', borderRadius: radius.pill, paddingVertical: 8, backgroundColor: colors.ink3 },
+  fchipOn: { backgroundColor: colors.paper },
+  fchipText: { fontFamily: fonts.semibold, fontSize: 11.5, color: colors.mute },
+  fchipTextOn: { color: colors.ink },
+  fchipCount: { fontFamily: fonts.jet, fontSize: 10 },
+  fnote: { fontFamily: fonts.regular, fontSize: 12.5, lineHeight: 17, color: colors.mute, textAlign: 'center', paddingHorizontal: 6 },
   root: { flex: 1, backgroundColor: colors.ink },
   head: { position: 'absolute', left: brand.left, right: brand.left, zIndex: 1 },
   city: { flexDirection: 'row', alignItems: 'center', gap: 8, alignSelf: 'flex-start', maxWidth: '72%' },

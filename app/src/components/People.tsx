@@ -100,7 +100,7 @@ export function ActionButton({ relation, busy, onPress, compact, wide }: { relat
   const red = relation === 'none' || relation === 'incoming';
   // wide (a profile page): the whole words, "add friend" / "accept request".
   const label = wide
-    ? t(relation === 'none' ? 'people.add.long' : relation === 'incoming' ? 'people.accept.long' : relation === 'outgoing' ? 'people.asked.long' : 'people.friend')
+    ? t(relation === 'none' ? 'people.add.long' : relation === 'incoming' ? 'people.accept.long' : relation === 'outgoing' ? 'people.asked.long' : 'people.yourFriend')
     : relation === 'none' ? t('people.add') : relation === 'incoming' ? t('people.accept') : relation === 'outgoing' ? t('people.asked') : t('people.friend');
   return (
     <Pressable onPress={onPress} disabled={busy || relation === 'outgoing'} hitSlop={6} style={({ pressed }) => [red ? styles.btnRed : styles.btnLine, compact && styles.btnCompact, wide && styles.btnWide, pressed && styles.pressed]}>

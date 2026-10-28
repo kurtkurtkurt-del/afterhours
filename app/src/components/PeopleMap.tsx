@@ -122,7 +122,7 @@ const PeopleMap = forwardRef<PeopleMapHandle, Props>(function PeopleMap({ layout
           return l.kind === 'you' ? (
             <Line key={`${l.a}|${l.b}`} x1={X(a)} y1={Y(a)} x2={X(b)} y2={Y(b)} stroke={colors.spot} strokeOpacity={0.75} strokeWidth={2} />
           ) : (
-            <Line key={`${l.a}|${l.b}`} x1={X(a)} y1={Y(a)} x2={X(b)} y2={Y(b)} stroke={colors.paper} strokeOpacity={l.kind === 'bridge' ? 0.3 : 0.17} strokeWidth={l.kind === 'bridge' ? 1.4 : 1.2} strokeDasharray={l.kind === 'bridge' ? '6 5' : '2 4'} />
+            <Line key={`${l.a}|${l.b}`} x1={X(a)} y1={Y(a)} x2={X(b)} y2={Y(b)} stroke={colors.paper} strokeOpacity={l.kind === 'bridge' ? 0.42 : 0.3} strokeWidth={l.kind === 'bridge' ? 1.6 : 1.5} strokeDasharray={l.kind === 'bridge' ? '6 5' : '3 4'} />
           );
         })}
         {/* the crowd: a blurred disc each, a white edge */}

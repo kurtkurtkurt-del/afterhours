@@ -14,6 +14,7 @@ import SoundCorner from '@/components/SoundCorner';
 import { ActionButton, SAMPLES, confirmBlock, useConnect } from '@/components/People';
 import { useReport } from '@/components/ReportSheet';
 import { friendRemove, person, personPeople, type Found, type PersonCard } from '@/data/friends';
+import { dmStart } from '@/data/dms';
 import { friendPhotos } from '@/data/photo';
 import { personCards, toCardData } from '@/data/checkin';
 import { useProfileExtra } from '@/data/profile';
@@ -176,6 +177,20 @@ export default function PersonScreen() {
                   onPress={() => (example ? setSampleAsked(true) : found ? act(found, relation) : undefined)}
                 />
               </View>
+              {/* a friend: write to them from their page (owner, 28.10.2026) */}
+              {relation === 'friend' && !example && card.handle ? (
+                <Pressable
+                  onPress={() =>
+                    dmStart(card.handle)
+                      .then((id) => router.push({ pathname: '/dm/[id]', params: { id, name: (card.display_name ?? card.handle).toLowerCase() } }))
+                      .catch(() => {})
+                  }
+                  style={({ pressed }) => [styles.message, pressed && { opacity: 0.6 }]}
+                  accessibilityRole="button"
+                >
+                  <Text style={styles.messageText}>{t('person.message')}</Text>
+                </Pressable>
+              ) : null}
               {found && member && !example ? (
                 <View style={styles.links}>
                   <PillRow>
@@ -253,6 +268,8 @@ export default function PersonScreen() {
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
+  message: { marginTop: 10, alignItems: 'center', borderRadius: 999, paddingVertical: 14, backgroundColor: colors.spot },
+  messageText: { fontFamily: fonts.semibold, fontSize: 15, color: colors.onSpot },
   tapped: { flexDirection: 'row', alignItems: 'center', gap: 8, alignSelf: 'flex-start', marginBottom: 12, paddingHorizontal: 12, paddingVertical: 7, borderRadius: 999, borderWidth: 1, borderColor: colors.spot },
   tappedDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: colors.spot },
   tappedText: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.1, color: colors.spotText },

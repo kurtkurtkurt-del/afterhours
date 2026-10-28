@@ -108,4 +108,5 @@ export const EXPECTED_SQL = [
   "98_spark_days.sql",
   "100_storage_queue.sql",
   "101_people_map.sql",
+  "102_people_places.sql",
 ];
