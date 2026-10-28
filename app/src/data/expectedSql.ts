@@ -113,4 +113,5 @@ export const EXPECTED_SQL = [
   '110_venue_scope.sql',
   '111_terms_and_delete_reauth.sql',
   '112_guest_merge_secret.sql',
+  '113_about_skips.sql',
 ];
