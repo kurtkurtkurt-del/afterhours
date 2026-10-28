@@ -27,7 +27,14 @@ type Props = {
   scale?: number;
   onTap?: (n: Placed) => void;
 };
-export type PeopleMapHandle = { home: () => void };
+export type PeopleMapHandle = { home: () => void; zoom: (by: number) => void };
+
+// The scale at which you and your friends (and the first of the crowd) fit a small card.
+export function fitScale(l: Layout, width: number, height: number) {
+  let far = 1;
+  for (const n of l.nodes) if (n.w <= 2) far = Math.max(far, Math.hypot(n.x, n.y) + n.r + 18);
+  return Math.max(0.22, Math.min(0.55, (Math.min(width, height * 1.6) / 2 - 10) / far));
+}
 
 const PeopleMap = forwardRef<PeopleMapHandle, Props>(function PeopleMap({ layout, width, height, photos, live, myPhoto, interactive = true, scale = 1, onTap }, ref) {
   const box = useMemo(() => {
@@ -35,13 +42,29 @@ const PeopleMap = forwardRef<PeopleMapHandle, Props>(function PeopleMap({ layout
     for (const n of layout.nodes) { x0 = Math.min(x0, n.x); y0 = Math.min(y0, n.y); x1 = Math.max(x1, n.x); y1 = Math.max(y1, n.y); }
     return { x0: x0 - PAD, y0: y0 - PAD, w: x1 - x0 + PAD * 2, h: y1 - y0 + PAD * 2 };
   }, [layout]);
-  // where you sit on screen: the middle, a little above it
+  // where you sit on screen: the middle, a little above it. tx/ty: where the drawing's top left
+  // corner is on screen; sc: its scale (two fingers, or the + and − buttons, 0.35 to 2.4)
   const homeX = width / 2 + box.x0 * scale, homeY = height * 0.46 + box.y0 * scale;
-  const tx = useSharedValue(homeX), ty = useSharedValue(homeY);
-  useImperativeHandle(ref, () => ({ home: () => { tx.set(withTiming(homeX, { duration: 420 })); ty.set(withTiming(homeY, { duration: 420 })); } }), [homeX, homeY, tx, ty]);
+  const tx = useSharedValue(homeX), ty = useSharedValue(homeY), sc = useSharedValue(scale);
+  const MIN = 0.35, MAX = 2.4;
+  useImperativeHandle(ref, () => ({
+    home: () => {
+      tx.set(withTiming(homeX, { duration: 420 }));
+      ty.set(withTiming(homeY, { duration: 420 }));
+      sc.set(withTiming(scale, { duration: 420 }));
+    },
+    // zoom about the middle of the screen
+    zoom: (by: number) => {
+      const s0 = sc.get(), s1 = Math.max(MIN, Math.min(MAX, s0 * by)), fx = width / 2, fy = height / 2;
+      tx.set(withTiming(fx - (fx - tx.get()) * (s1 / s0), { duration: 260 }));
+      ty.set(withTiming(fy - (fy - ty.get()) * (s1 / s0), { duration: 260 }));
+      sc.set(withTiming(s1, { duration: 260 }));
+    },
+  }), [homeX, homeY, scale, width, height, tx, ty, sc]);
 
   const tapAt = (x: number, y: number) => {
-    const wx = (x - tx.get()) / scale + box.x0, wy = (y - ty.get()) / scale + box.y0;
+    const k = sc.get();
+    const wx = (x - tx.get()) / k + box.x0, wy = (y - ty.get()) / k + box.y0;
     let best: Placed | null = null, bd = 1e9;
     for (const n of layout.nodes) { const d = Math.hypot(n.x - wx, n.y - wy); if (d < bd) { bd = d; best = n; } }
     if (best && bd < best.r + 14) onTap?.(best);
@@ -56,8 +79,15 @@ const PeopleMap = forwardRef<PeopleMapHandle, Props>(function PeopleMap({ layout
       tx.set(withDecay({ velocity: e.velocityX }));
       ty.set(withDecay({ velocity: e.velocityY }));
     });
+  const pinch = Gesture.Pinch().onChange((e) => {
+    const s0 = sc.get(), s1 = Math.max(MIN, Math.min(MAX, s0 * e.scaleChange));
+    // the point under the fingers stays under them
+    tx.set(e.focalX - (e.focalX - tx.get()) * (s1 / s0));
+    ty.set(e.focalY - (e.focalY - ty.get()) * (s1 / s0));
+    sc.set(s1);
+  });
   const tap = Gesture.Tap().maxDistance(10).onEnd((e) => runOnJS(tapAt)(e.x, e.y));
-  const moved = useAnimatedStyle(() => ({ transform: [{ translateX: tx.get() }, { translateY: ty.get() }, { scale }] }));
+  const moved = useAnimatedStyle(() => ({ transform: [{ translateX: tx.get() }, { translateY: ty.get() }, { scale: sc.get() }] }));
 
   const X = (n: Placed) => n.x - box.x0, Y = (n: Placed) => n.y - box.y0;
   const content = (
@@ -121,7 +151,7 @@ const PeopleMap = forwardRef<PeopleMapHandle, Props>(function PeopleMap({ layout
   );
   if (!interactive) return <View style={{ width, height, overflow: 'hidden' }} pointerEvents="none">{content}</View>;
   return (
-    <GestureDetector gesture={Gesture.Race(pan, tap)}>
+    <GestureDetector gesture={Gesture.Race(Gesture.Simultaneous(pan, pinch), tap)}>
       <View style={{ width, height, overflow: 'hidden' }} collapsable={false}>{content}</View>
     </GestureDetector>
   );

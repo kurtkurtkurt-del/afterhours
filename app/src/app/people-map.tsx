@@ -4,13 +4,15 @@ import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import Animated, { FadeIn, FadeOut, SlideInDown, SlideOutDown } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import BackButton from '@/components/BackButton';
 import PeopleMap, { ISLAND, type PeopleMapHandle } from '@/components/PeopleMap';
 import { openPerson } from '@/components/People';
 import { peopleMap, type MapData } from '@/data/peopleMap';
 import { friendPhotos, usePhoto } from '@/data/photo';
 import { friendsLive } from '@/data/checkin';
 import { dmStart } from '@/data/dms';
+import { friendAccept, friendsList, type FriendRow } from '@/data/friends';
+import Avatar from '@/components/Avatar';
+import Svg, { Path } from 'react-native-svg';
 import { chain, layout, type Placed } from '@/lib/islands';
 import { useLang } from '@/i18n';
 import { barStyle, colors, fonts, radius } from '@/theme/tokens';
@@ -31,12 +33,17 @@ export default function PeopleMapScreen() {
   const [live, setLive] = useState<Set<string>>(new Set());
   const [who, setWho] = useState<Placed | null>(null);
   const [asking, setAsking] = useState(false);
+  // friend requests waiting for you (they lived in the row on messages before the map took its place)
+  const [requests, setRequests] = useState<FriendRow[]>([]);
+  const loadRequests = () => friendsList().then((l) => setRequests(l.filter((f) => f.status === 'pending' && f.direction === 'incoming')), () => {});
   const map = useRef<PeopleMapHandle>(null);
   useEffect(() => {
     peopleMap().then(setData, () => setFailed(true));
     friendPhotos().then(setPhotos, () => {});
     friendsLive().then((l) => setLive(new Set(l.map((x) => x.friend_id))), () => {});
+    loadRequests();
   }, []);
+  const accept = (f: FriendRow) => friendAccept(f.other_id).then(() => { loadRequests(); peopleMap().then(setData, () => {}); }, () => {});
   const lay = useMemo(() => (data && data.nodes.length > 1 ? layout(data) : null), [data]);
   const friends = data?.nodes.filter((n) => n.w === 1).length ?? 0;
   const crowd = data?.nodes.filter((n) => n.w >= 2).length ?? 0;
@@ -77,22 +84,56 @@ export default function PeopleMapScreen() {
         </View>
       )}
 
-      <View style={[styles.head, { top: brand.top - 8 }]} pointerEvents="box-none">
-        <BackButton />
+      <View style={[styles.head, { top: insets.top + 10 }]} pointerEvents="box-none">
+        <Pressable onPress={() => (router.canGoBack() ? router.back() : router.replace('/messages'))} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('pmap.back')} style={({ pressed }) => [styles.round, pressed && styles.pressed]}>
+          <Svg width={18} height={18} viewBox="0 0 18 18"><Path d="M11.5 3.5 6 9l5.5 5.5" stroke={colors.paper} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" fill="none" /></Svg>
+        </Pressable>
         <View style={styles.headText} pointerEvents="none">
           <Text style={styles.title}>{t('pmap.title')}</Text>
           {data ? <Text style={styles.sub}>{up(t('pmap.line', { n: friends, m: crowd }))}</Text> : null}
         </View>
+        <Pressable onPress={() => router.push('/friend/add')} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('pmap.add')} style={({ pressed }) => [styles.round, styles.roundRed, pressed && styles.pressed]}>
+          <Svg width={16} height={16} viewBox="0 0 16 16"><Path d="M8 2.5v11M2.5 8h11" stroke={colors.onSpot} strokeWidth={2} strokeLinecap="round" /></Svg>
+        </Pressable>
       </View>
+
+      {requests.length ? (
+        <View style={[styles.requests, { top: insets.top + 66 }]}>
+          {requests.slice(0, 3).map((f) => (
+            <View key={f.other_id} style={styles.request}>
+              <Pressable onPress={() => f.handle && openPerson(f.handle)} style={styles.requestWho} accessibilityRole="button">
+                <View style={styles.requestFace}><Avatar name={f.handle ?? f.display_name ?? '?'} size={30} /></View>
+                <View style={styles.requestText}>
+                  <Text style={styles.requestName} numberOfLines={1}>{(f.display_name ?? f.handle ?? '').toLowerCase()}</Text>
+                  <Text style={styles.requestLine} numberOfLines={1}>{up(t('pmap.wants'))}</Text>
+                </View>
+              </Pressable>
+              <Pressable onPress={() => accept(f)} style={({ pressed }) => [styles.acceptBtn, pressed && styles.pressed]} accessibilityRole="button">
+                <Text style={styles.acceptText}>{t('people.accept')}</Text>
+              </Pressable>
+            </View>
+          ))}
+        </View>
+      ) : null}
 
       {lay ? (
         <>
           <View style={[styles.hint, { bottom: insets.bottom + 22 }]} pointerEvents="none">
             <Text style={styles.hintText}>{up(t('pmap.hint'))}</Text>
           </View>
-          <Pressable onPress={() => map.current?.home()} style={[styles.home, { bottom: insets.bottom + 70 }]} accessibilityRole="button" accessibilityLabel={t('pmap.home')}>
-            <View style={styles.homeDot} />
-          </Pressable>
+          <View style={[styles.zoom, { bottom: insets.bottom + 70 }]}>
+            <Pressable onPress={() => map.current?.zoom(1.4)} hitSlop={6} style={({ pressed }) => [styles.zoomBtn, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t('pmap.zoomIn')}>
+              <Svg width={16} height={16} viewBox="0 0 16 16"><Path d="M8 2.5v11M2.5 8h11" stroke={colors.paper} strokeWidth={2} strokeLinecap="round" /></Svg>
+            </Pressable>
+            <View style={styles.zoomRule} />
+            <Pressable onPress={() => map.current?.zoom(1 / 1.4)} hitSlop={6} style={({ pressed }) => [styles.zoomBtn, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t('pmap.zoomOut')}>
+              <Svg width={16} height={16} viewBox="0 0 16 16"><Path d="M2.5 8h11" stroke={colors.paper} strokeWidth={2} strokeLinecap="round" /></Svg>
+            </Pressable>
+            <View style={styles.zoomRule} />
+            <Pressable onPress={() => map.current?.home()} hitSlop={6} style={({ pressed }) => [styles.zoomBtn, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t('pmap.home')}>
+              <View style={styles.homeDot} />
+            </Pressable>
+          </View>
         </>
       ) : null}
 
@@ -131,8 +172,22 @@ export default function PeopleMapScreen() {
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
-  head: { position: 'absolute', left: brand.left, right: brand.left, flexDirection: 'row', alignItems: 'flex-start', gap: 10 },
-  headText: { marginLeft: 44, paddingTop: 2 },
+  head: { position: 'absolute', left: brand.left, right: brand.left, flexDirection: 'row', alignItems: 'flex-start', gap: 12 },
+  headText: { flex: 1, paddingTop: 1 },
+  round: { width: 42, height: 42, borderRadius: 21, backgroundColor: colors.card, alignItems: 'center', justifyContent: 'center', shadowColor: '#000', shadowOpacity: 0.12, shadowRadius: 8, shadowOffset: { width: 0, height: 2 }, elevation: 3 },
+  roundRed: { backgroundColor: colors.spot },
+  requests: { position: 'absolute', left: brand.left, right: brand.left, gap: 8 },
+  request: { flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: colors.card, borderRadius: 18, paddingVertical: 8, paddingLeft: 10, paddingRight: 8, shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 10, elevation: 3 },
+  requestWho: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 10 },
+  requestFace: { width: 30, height: 30, borderRadius: 15, overflow: 'hidden' },
+  requestText: { flex: 1 },
+  requestName: { fontFamily: fonts.semibold, fontSize: 13.5, color: colors.paper },
+  requestLine: { fontFamily: fonts.jet, fontSize: 8.5, letterSpacing: 1, color: colors.spotText, marginTop: 1 },
+  acceptBtn: { backgroundColor: colors.spot, borderRadius: radius.pill, paddingHorizontal: 14, paddingVertical: 8 },
+  acceptText: { fontFamily: fonts.semibold, fontSize: 12, color: colors.onSpot },
+  zoom: { position: 'absolute', right: brand.left, backgroundColor: colors.card, borderRadius: 22, alignItems: 'center', shadowColor: '#000', shadowOpacity: 0.12, shadowRadius: 10, elevation: 4 },
+  zoomBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
+  zoomRule: { width: 22, height: 1, backgroundColor: colors.ink3 },
   title: { fontFamily: fonts.semibold, fontSize: 26, letterSpacing: -0.9, color: colors.paper },
   sub: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.1, color: colors.meta, marginTop: 2 },
   empty: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 36, gap: 18 },
@@ -143,8 +198,7 @@ const styles = StyleSheet.create({
   pressed: { opacity: 0.6 },
   hint: { position: 'absolute', alignSelf: 'center', backgroundColor: colors.card, borderRadius: radius.pill, paddingHorizontal: 13, paddingVertical: 8, shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 8, elevation: 2 },
   hintText: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.1, color: colors.mute },
-  home: { position: 'absolute', right: brand.left, width: 44, height: 44, borderRadius: 22, backgroundColor: colors.paper, alignItems: 'center', justifyContent: 'center', elevation: 4 },
-  homeDot: { width: 14, height: 14, borderRadius: 7, borderWidth: 2, borderColor: colors.ink },
+  homeDot: { width: 14, height: 14, borderRadius: 7, borderWidth: 2, borderColor: colors.paper },
   scrim: { ...StyleSheet.absoluteFill, backgroundColor: 'rgba(14,13,12,0.38)' },
   sheet: { position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: colors.ink, borderTopLeftRadius: 26, borderTopRightRadius: 26, paddingHorizontal: 22, paddingTop: 10 },
   grab: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: colors.ink3, marginBottom: 16 },

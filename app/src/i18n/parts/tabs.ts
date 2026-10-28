@@ -776,6 +776,10 @@ export const tabs = {
   'pmap.empty': { en: 'add a friend and their people show up here, around you.', de: 'füg einen freund hinzu, und seine leute erscheinen hier, um dich herum.', tr: 'bir arkadaş ekle, onun insanları burada, senin etrafında belirsin.' },
   'pmap.add': { en: 'add a friend', de: 'freund hinzufügen', tr: 'arkadaş ekle' },
   'pmap.you': { en: 'you', de: 'du', tr: 'sen' },
+  'pmap.back': { en: 'back', de: 'zurück', tr: 'geri' },
+  'pmap.zoomIn': { en: 'zoom in', de: 'näher', tr: 'yakınlaştır' },
+  'pmap.zoomOut': { en: 'zoom out', de: 'weiter weg', tr: 'uzaklaştır' },
+  'pmap.wants': { en: 'wants to be friends', de: 'möchte befreundet sein', tr: 'arkadaş olmak istiyor' },
   // tap phones to connect (lib/tap.ts)
   'tap.setting': { en: 'tap phones to connect', de: 'handys aneinander halten', tr: 'telefonları dokundurarak bağlan' },
   'tap.setting.hint': { en: 'while afterhours is open, holding two phones back to back opens each other\'s profile. a phone without the app opens your page on the website.', de: 'solange afterhours offen ist, öffnen zwei handys rücken an rücken gegenseitig ihr profil. ein handy ohne die app öffnet deine seite im web.', tr: 'afterhours açıkken iki telefonu sırt sırta tutunca birbirinizin profili açılır. uygulaması olmayan bir telefon web sitesindeki sayfanı açar.' },

@@ -50,10 +50,12 @@ type Descriptor = Parameters<NonNullable<Parameters<typeof TabSlot>[0]['renderFn
 // A tab you leave is hidden, not detached (owner, 28.10.2026: back on the flow from another tab
 // the page was sometimes empty). Detached, Android let go of the flow's card photos and the fade
 // could start while the view was still away; hidden, the page is there the moment it shows.
-function renderTab(descriptor: Descriptor, { isFocused, loaded }: TabsSlotRenderOptions) {
+// (activityState 1 keeps a tab attached behind the open one; 0 detached it. The screen itself must
+// stay a native screen: the container refuses a plain view and the app closed on start.)
+function renderTab(descriptor: Descriptor, { isFocused, loaded, detachInactiveScreens }: TabsSlotRenderOptions) {
   if (!loaded && !isFocused) return null;
   return (
-    <Screen key={descriptor.route.key} enabled={false} activityState={2} style={[styles.screen, isFocused ? styles.focused : styles.unfocused]}>
+    <Screen key={descriptor.route.key} enabled={detachInactiveScreens} activityState={isFocused ? 2 : 1} style={[styles.screen, isFocused ? styles.focused : styles.unfocused]}>
       <TabFade focused={isFocused}>{descriptor.render()}</TabFade>
     </Screen>
   );

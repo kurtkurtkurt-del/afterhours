@@ -17,7 +17,7 @@ export type Layout = { nodes: Placed[]; lines: MapLine[]; byId: Map<string, Plac
 const CAP = 5; // lines per person
 const CAP_ME = 8;
 const RADIUS = [30, 22, 13, 10];
-const RING = [0, 125, 270, 410];
+const RING = [0, 105, 215, 320];
 
 function rng(seed: number) {
   let a = seed | 0;
@@ -128,7 +128,7 @@ export function layout(data: MapData): Layout {
     return { id: n.id, x: n.id === 'me' ? 0 : Math.cos(a) * d, y: n.id === 'me' ? 0 : Math.sin(a) * d, isl, w: n.w };
   });
   const index = new Map(P.map((p, i) => [p.id, i]));
-  const springs = lines.map((l) => ({ i: index.get(l.a)!, j: index.get(l.b)!, len: l.kind === 'you' ? 120 : l.kind === 'group' ? 64 : 150 }));
+  const springs = lines.map((l) => ({ i: index.get(l.a)!, j: index.get(l.b)!, len: l.kind === 'you' ? 105 : l.kind === 'group' ? 50 : 115 }));
   const N = P.length;
   const steps = N > 160 ? 160 : 240;
   for (let s = 0; s < steps; s++) {
@@ -138,9 +138,12 @@ export function layout(data: MapData): Layout {
       let dx = P[i].x - P[j].x, dy = P[i].y - P[j].y;
       let d2 = dx * dx + dy * dy;
       if (d2 < 1) { dx = rand() - 0.5; dy = rand() - 0.5; d2 = 1; }
-      const k = (P[i].isl !== P[j].isl ? 4200 : 1800) / d2;
-      if (d2 > 160000) continue;
-      fx[i] += dx * k; fy[i] += dy * k; fx[j] -= dx * k; fy[j] -= dy * k;
+      if (d2 > 90000) continue;
+      const d = Math.sqrt(d2);
+      // a push that fades with distance, harder between islands, hardest when two discs touch
+      const touch = RADIUS[P[i].w] + RADIUS[P[j].w] + 10;
+      const k = (P[i].isl !== P[j].isl ? 2600 : 1100) / d2 + (d < touch ? (touch - d) * 0.5 : 0);
+      fx[i] += (dx / d) * k; fy[i] += (dy / d) * k; fx[j] -= (dx / d) * k; fy[j] -= (dy / d) * k;
     }
     for (const sp of springs) {
       const a = P[sp.i], b = P[sp.j];
@@ -156,7 +159,9 @@ export function layout(data: MapData): Layout {
       const c = cx.get(p.isl)!;
       fx[i] += (c.x / c.n - p.x) * 0.025; fy[i] += (c.y / c.n - p.y) * 0.025;
       const d = Math.sqrt(p.x * p.x + p.y * p.y) || 1, want = RING[p.w];
-      fx[i] += (p.x / d) * (want - d) * 0.012; fy[i] += (p.y / d) * (want - d) * 0.012;
+      // friends hold to their ring around you; the crowd only leans to theirs
+      const ring = p.w === 1 ? 0.06 : 0.012;
+      fx[i] += (p.x / d) * (want - d) * ring; fy[i] += (p.y / d) * (want - d) * ring;
       const max = 4 + 22 * t;
       const m = Math.sqrt(fx[i] * fx[i] + fy[i] * fy[i]);
       const k = m > max ? max / m : 1;

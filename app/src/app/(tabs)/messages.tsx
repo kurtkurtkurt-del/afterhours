@@ -13,13 +13,12 @@ import SoundCorner from '@/components/SoundCorner';
 import StoryStrip from '@/components/StoryStrip';
 import Tips from '@/components/Tips';
 import Svg, { Path } from 'react-native-svg';
-import { PeopleResults, PeopleSearch, SuggestedInRow, openPerson } from '@/components/People';
 import { useAuth } from '@/auth/AuthContext';
 import { friendsLive, type LiveFriend } from '@/data/checkin';
 import { inbox, type Dm, type Inbox } from '@/data/messages';
 import { peek, remember, useShelf } from '@/lib/offline';
 import { dmStart, why } from '@/data/dms';
-import { friendAccept, friendsList, type FriendRow } from '@/data/friends';
+import { friendsList, type FriendRow } from '@/data/friends';
 import { friendPhotos, usePhoto } from '@/data/photo';
 import Avatar from '@/components/Avatar';
 import Input from '@/components/Input';
@@ -27,9 +26,8 @@ import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useTabBarSpace } from '@/components/TabBar';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius, barStyle, paperTint } from '@/theme/tokens';
-import { Chevron } from '@/components/Pill';
 import { brand } from '@/theme/layout';
-import PeopleMap from '@/components/PeopleMap';
+import PeopleMap, { fitScale } from '@/components/PeopleMap';
 import { peopleMap, type MapData } from '@/data/peopleMap';
 import { layout as mapLayout } from '@/lib/islands';
 
@@ -46,8 +44,6 @@ export default function MessagesScreen() {
   const tabSpace = useTabBarSpace();
   const { t, up } = useLang();
   const tick = useRefreshOnFocus('cards');
-  // your people fold open under one row (design 3 of five, owner 22.10.2026); open by themselves when a request waits
-  const [opened, setOpen] = useState<boolean | null>(null); // null: not touched yet — open by itself while a request waits
   useShelf('dms'); // redraws when a refresh lands on the shelf
   const shelved = peek<Inbox>('dms', 'inbox')?.dms ?? null;
   const [fresh, setDms] = useState<Dm[] | null>(null);
@@ -55,7 +51,6 @@ export default function MessagesScreen() {
   const [live, setLive] = useState<LiveFriend[]>([]);
   const [friends, setFriends] = useState<FriendRow[]>([]);
   const [photos, setPhotos] = useState<Map<string, string>>(new Map());
-  const [query, setQuery] = useState('');
   // The new-conversation sheet: your confirmed friends, narrowed by what you type.
   const [picking, setPicking] = useState(false);
   const [who, setWho] = useState('');
@@ -79,7 +74,6 @@ export default function MessagesScreen() {
     peopleMap().then(setMapData, () => {});
   }, [uid]);
   useEffect(load, [load, tick]);
-  const open = opened ?? friends.some((f) => f.status === 'pending' && f.direction === 'incoming');
 
   const pick = (f: FriendRow) => {
     if (!f.handle) return;
@@ -129,104 +123,21 @@ export default function MessagesScreen() {
 
         {session ? (
           <>
-            {/* your people as a map (owner, 28.10.2026: design A of prototypes/people-map.html) */}
+            {/* your people as a map (owner, 28.10.2026: design A of prototypes/people-map.html). It took the
+                place of the row that folded open faces, search, requests and suggestions: adding someone and
+                answering a request live on the map page now. */}
             <Pressable onPress={() => router.push('/people-map')} accessibilityRole="button" accessibilityLabel={t('pmap.card')} style={({ pressed }) => [styles.mapCard, pressed && styles.pressed]}>
-              {mapLay ? <PeopleMap layout={mapLay} width={width - brand.left * 2} height={150} photos={photos} live={liveIds} myPhoto={myPhoto} interactive={false} scale={0.5} /> : null}
+              {mapLay ? <PeopleMap layout={mapLay} width={width - brand.left * 2} height={150} photos={photos} live={liveIds} myPhoto={myPhoto} interactive={false} scale={fitScale(mapLay, width - brand.left * 2, 150)} /> : null}
               <View style={styles.mapText} pointerEvents="none">
                 <View style={styles.text}>
                   <Text style={styles.mapName}>{t('pmap.card')}</Text>
                   <Text style={styles.mapLine} numberOfLines={1}>
-                    {up(mapData && mapData.nodes.length > 1 ? t('pmap.line', { n: mapData.nodes.filter((n) => n.w === 1).length, m: mapData.nodes.filter((n) => n.w >= 2).length }) : t('pmap.add'))}
+                    {up([mapData && mapData.nodes.length > 1 ? t('pmap.line', { n: mapData.nodes.filter((n) => n.w === 1).length, m: mapData.nodes.filter((n) => n.w >= 2).length }) : t('pmap.add'), requests.length ? t('messages.nRequests', { n: requests.length }) : null].filter(Boolean).join(' · '))}
                   </Text>
                 </View>
                 <View style={styles.mapGo}><Text style={styles.mapGoText}>›</Text></View>
               </View>
             </Pressable>
-            <Pressable onPress={() => setOpen(!open)} accessibilityRole="button" accessibilityState={{ expanded: open }} style={({ pressed }) => [styles.peopleRow, pressed && styles.pressed]}>
-              <View style={styles.stack}>
-                {accepted.slice(0, 4).map((f, i) => {
-                  const photo = photos.get(f.other_id);
-                  return (
-                    <View key={f.other_id} style={[styles.stackFace, i > 0 && styles.stackOverlap, liveOf(f.other_id) && styles.stackLive]}>
-                      {photo ? <Image source={{ uri: photo }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Avatar name={f.handle ?? f.display_name ?? '?'} size={28} />}
-                    </View>
-                  );
-                })}
-              </View>
-              <View style={styles.text}>
-                <Text style={styles.name} numberOfLines={1}>{`${t('messages.yourPeople')} · ${accepted.length}`}</Text>
-                <Text style={[styles.meta, (live.length > 0 || requests.length > 0) && styles.metaLive]} numberOfLines={1}>
-                  {[live.length ? t('messages.nOut', { n: live.length }) : null, requests.length ? t('messages.nRequests', { n: requests.length }) : null].filter(Boolean).join(' · ') || t('messages.people.hint')}
-                </Text>
-              </View>
-              <View style={[styles.chev, open && styles.chevOpen]}>
-                <Chevron color={colors.mute} />
-              </View>
-            </Pressable>
-            {open ? (
-              <View style={styles.peoplePanel}>
-            <View style={styles.search}>
-              <PeopleSearch value={query} onChange={setQuery} />
-            </View>
-            {query.trim() ? (
-              <PeopleResults query={query} />
-            ) : (
-              <>
-                {requests.length ? (
-                  <>
-                    <Text style={[styles.section, styles.sectionLive]}>{up(`${t('messages.requests')} · ${requests.length}`)}</Text>
-                    <View style={styles.panel}>
-                      <View style={styles.panelIn}>
-                        {requests.map((f) => (
-                          <View key={f.other_id} style={styles.row}>
-                            <Pressable onPress={() => f.handle && openPerson(f.handle)} style={styles.rowLeft} accessibilityRole="button">
-                              <View style={styles.face}><Avatar name={f.handle ?? f.display_name ?? '?'} size={34} /></View>
-                              <View style={styles.text}>
-                                <Text style={styles.name} numberOfLines={1}>{(f.display_name ?? f.handle ?? '').toLowerCase()}</Text>
-                                <Text style={styles.meta} numberOfLines={1}>@{f.handle}</Text>
-                              </View>
-                            </Pressable>
-                            <Pressable onPress={() => friendAccept(f.other_id).then(load, (e) => setSaid(why(e)))} style={({ pressed }) => [styles.accept, pressed && styles.pressed]} accessibilityRole="button">
-                              <Text style={styles.acceptText}>{t('people.accept')}</Text>
-                            </Pressable>
-                          </View>
-                        ))}
-                      </View>
-                    </View>
-                  </>
-                ) : null}
-
-                <Text style={styles.section}>{up(`${t('messages.yourPeople')} · ${accepted.length}`)}</Text>
-                <View style={styles.grid}>
-                  {accepted.map((f) => {
-                    const out = liveOf(f.other_id);
-                    const photo = photos.get(f.other_id);
-                    return (
-                      <Pressable key={f.other_id} onPress={() => (f.handle ? openPerson(f.handle) : router.push(`/friend/${f.other_id}`))} style={({ pressed }) => [styles.cell, pressed && styles.pressed]} accessibilityRole="button">
-                        <View style={[styles.bigFace, out && styles.faceLive]}>
-                          {photo ? <Image source={{ uri: photo }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Avatar name={f.handle ?? f.display_name ?? '?'} size={56} />}
-                        </View>
-                        <Text style={styles.cellName} numberOfLines={1}>{(f.display_name ?? f.handle ?? '').toLowerCase()}</Text>
-                        <Text style={[styles.cellState, out && styles.metaLive]} numberOfLines={1}>{out ? t('messages.outNow') : ' '}</Text>
-                      </Pressable>
-                    );
-                  })}
-                  <Pressable onPress={() => router.push('/friend/add')} style={({ pressed }) => [styles.cell, pressed && styles.pressed]} accessibilityRole="button">
-                    <View style={[styles.bigFace, styles.faceAdd]}><Text style={styles.facePlus}>+</Text></View>
-                    <Text style={styles.cellName}>{t('yours.add')}</Text>
-                    <Text style={styles.cellState}> </Text>
-                  </Pressable>
-                </View>
-                {!accepted.length ? <Text style={styles.note}>{t('messages.new.noFriends')}</Text> : null}
-
-                {/* suggested people: the same rail as before (the component brings its own word and columns) */}
-                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.suggested}>
-                  <SuggestedInRow />
-                </ScrollView>
-              </>
-            )}
-              </View>
-            ) : null}
           </>
         ) : null}
 
