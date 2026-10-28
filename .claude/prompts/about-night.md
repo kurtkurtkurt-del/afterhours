@@ -13,13 +13,17 @@ new city means all its nights, an old city means its new nights — the same run
 
 ```
 TZ=Europe/Berlin date +%F                 # today's date in Berlin = the run's folder
-node backend/tools/about-days.mjs --plan  # no key needed
+ls backend/about/<date>/plan/             # the plan, committed by the GitHub action at 05:00 UTC
 ```
 
-It writes `backend/about/<date>/plan/<city>.json` (the nights to write, each with the act's
-Wikipedia page: `name`, `description`, `source_url`, `extract`) and
-`backend/about/<date>/skips.json` (the nights with no usable page, with the reason). Read the
-counts it prints. If it printed zero nights to write, go to step 5.
+The action `who is this` (`.github/workflows/about.yml`) ran `about-days.mjs --plan` before
+you and committed `backend/about/<date>/plan/<city>.json` (the nights to write, each with the
+act's Wikipedia page: `name`, `description`, `source_url`, `extract`) and
+`backend/about/<date>/skips.json` (the nights with no usable page, with the reason). Your
+sandbox reaches GitHub but not Supabase or Wikipedia, so you never run `--plan` yourself: if
+the folder is missing, `git pull origin main` once more; if it is still missing, say so in
+your final message and stop. If the plan folder is empty (no city file), go to step 5 with
+nothing to commit and say so.
 
 ## 2 · Write, city by city
 
@@ -71,7 +75,7 @@ before step 5. Run `--check` once more.
 
 ## 5 · Commit
 
-Commit only `backend/about/<date>/` (never `plan/`: it is ignored) to `main` with the message
+Commit only `backend/about/<date>/` to `main` with the message
 `about: <date> · <n> nights, <m> skipped` and push. The GitHub action `who is this` then
 writes the files into the database. Touch no other file, open no pull request.
 

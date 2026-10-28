@@ -1,6 +1,3 @@
 # the two keys enrich.mjs reads when run from a Mac (never committed)
 .env.local
 .enrich-state.json
-
-# the about night: the plan folders hold Wikipedia extracts, rebuilt every run
-about/*/plan/

@@ -1,9 +1,12 @@
-# afterhours — "who is this?" from the night's files into the database.
-# The about night agent (a cloud routine, .claude/prompts/about-night.md) commits
-# backend/about/<day>/<city>.json and skips.json every morning after the Ticketmaster sync;
-# this runs on that push and puts them into public.event_about and public.event_about_skips
-# (backend/tools/about-days.mjs --apply). The schedule at 07:40 UTC is a second chance when
-# the push did not fire it. One secret: SUPABASE_SERVICE_ROLE.
+# afterhours — "who is this?": the plan in, the texts out.
+# 05:00 UTC (after the Ticketmaster sync at 04:10): `about-days.mjs --plan` lists the nights
+# without a text, looks up each act's Wikipedia page and commits backend/about/<day>/plan/
+# and skips.json. The about night agent (a cloud routine at 05:30 UTC,
+# .claude/prompts/about-night.md) reads those plan files — its sandbox reaches GitHub, not
+# Supabase or Wikipedia — writes <city>.json and pushes. That push runs the second job:
+# `--apply` puts the texts into public.event_about and the skips into
+# public.event_about_skips. The 07:40 UTC schedule is a second chance for the apply.
+# One secret: SUPABASE_SERVICE_ROLE.
 
 name: who is this
 
@@ -12,11 +15,41 @@ on:
     branches: [main]
     paths: ["backend/about/**"]
   schedule:
+    - cron: "0 5 * * *"
     - cron: "40 7 * * *"
   workflow_dispatch:
+    inputs:
+      step:
+        description: plan or apply
+        default: plan
 
 jobs:
+  plan:
+    if: ${{ github.event.schedule == '0 5 * * *' || (github.event_name == 'workflow_dispatch' && inputs.step == 'plan') }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: today's day in Berlin
+        id: day
+        run: echo "day=$(TZ=Europe/Berlin date +%F)" >> "$GITHUB_OUTPUT"
+      - name: the plan
+        run: node backend/tools/about-days.mjs --plan --day "${{ steps.day.outputs.day }}"
+      - name: commit the plan
+        run: |
+          git config user.name "afterhours-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add backend/about/${{ steps.day.outputs.day }}
+          git diff --cached --quiet || git commit -m "about: plan ${{ steps.day.outputs.day }}"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
   write:
+    if: ${{ github.event_name == 'push' || github.event.schedule == '40 7 * * *' || (github.event_name == 'workflow_dispatch' && inputs.step == 'apply') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,7 +60,7 @@ jobs:
         id: day
         run: echo "day=$(TZ=Europe/Berlin date +%F)" >> "$GITHUB_OUTPUT"
       - name: put the day's texts into Supabase
-        if: ${{ hashFiles(format('backend/about/{0}/**', steps.day.outputs.day)) != '' }}
+        if: ${{ hashFiles(format('backend/about/{0}/*.json', steps.day.outputs.day)) != '' }}
         env:
           SUPABASE_SERVICE_ROLE: ${{ secrets.SUPABASE_SERVICE_ROLE }}
         run: node backend/tools/about-days.mjs --apply --day "${{ steps.day.outputs.day }}"
