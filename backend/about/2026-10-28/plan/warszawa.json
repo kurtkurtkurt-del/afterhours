@@ -1,0 +1,126 @@
+{
+ "city": "warszawa",
+ "day": "2026-10-28",
+ "nights": [
+  {
+   "id": "5279cfd4-4854-4f3e-bf76-e3ccc3aaf98f",
+   "slug": "kate-ryan-generation-desenchantee-25th-anniversa-0499e74b",
+   "title": "Kate Ryan - Géneration Désenchantée | 25th Anniversary Tour",
+   "act": "Kate Ryan",
+   "name": "Kate Ryan",
+   "description": "Belgian singer (born 1980)",
+   "source_url": "https://en.wikipedia.org/wiki/Kate_Ryan",
+   "extract": "Katrien Verbeeck, known professionally as Kate Ryan, is a Belgian singer and songwriter. She rose to prominence in the early 2000s with dance-pop recordings, several of which were covers of French-language hits, and is best known for her 2002 version of Mylène Farmer's \"Désenchantée\", which charted across Europe. Ryan represented Belgium at the Eurovision Song Contest 2006 with the song \"Je t'adore\". She is the recipient of a World Music Award for best-selling Benelux artist, and according to her record label has sold around 3.5 million records over her career."
+  },
+  {
+   "id": "a34fa8c9-2a60-4c1c-bea1-30b6dc0ba788",
+   "slug": "sleaford-mods-the-demise-of-planet-x-660651f9",
+   "title": "Sleaford Mods - „The Demise Of Planet X”",
+   "act": "Sleaford Mods",
+   "name": "Sleaford Mods",
+   "description": "English electronic hip hop music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Sleaford_Mods",
+   "extract": "Sleaford Mods are an English post-punk music duo, formed in 2007 in Nottingham. The band features vocalist Jason Williamson and, since 2012, instrumentalist Andrew Fearn. They are known for their abrasive, minimalist musical style and embittered explorations of austerity-era Britain, culture, and working class life, delivered in Williamson's East Midlands accent. The duo have released several albums to critical praise."
+  },
+  {
+   "id": "729f0bfc-ec9c-4c66-a919-c348a83fb7a2",
+   "slug": "eleine-support-rexoria-serapis-project-1ea5963d",
+   "title": "Eleine | Support: Rexoria, SerapiS Project",
+   "act": "Eleine",
+   "name": "Eleine",
+   "description": "Swedish symphonic metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Eleine",
+   "extract": "Eleine is a Swedish heavy metal band formed in 2012, known for their \"dark symphonic metal\" sound, with influences from black metal, death metal and thrash metal."
+  },
+  {
+   "id": "ac8e7d46-3aa4-42d1-94f1-2b62125a9ccd",
+   "slug": "airbag-360a0524",
+   "title": "Airbag",
+   "act": "Airbag",
+   "name": "Airbag",
+   "description": "Argentine rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Airbag_(band)",
+   "extract": "Airbag is an Argentine hard rock band formed in Buenos Aires in 1999, consisting of three brothers: Patricio Sardelli, Gastón Sardelli, and Guido Sardelli. They have released eight studio albums and two live albums, and tour mostly around Latin America."
+  },
+  {
+   "id": "86f2d8e0-cc84-48e1-98f7-f268b446bb35",
+   "slug": "machine-girl-265c1589",
+   "title": "Machine Girl",
+   "act": "Machine Girl",
+   "name": "Machine Girl",
+   "description": "American electronic music group",
+   "source_url": "https://en.wikipedia.org/wiki/Machine_Girl",
+   "extract": "Machine Girl is an American electronic music project created in 2012 by Matt Stephenson on Long Island, New York. In 2015, the project became a duo, with Stephenson recruiting percussionist Sean Kelly to play live drums. Lucy Caputi joined in 2024 as a live guitarist and official member of the band."
+  },
+  {
+   "id": "9ea8e46b-05f8-4e88-a51b-3225f3c17d3e",
+   "slug": "kamelot-ca903e7b",
+   "title": "Kamelot",
+   "act": "Kamelot",
+   "name": "Kamelot",
+   "description": "American power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Kamelot",
+   "extract": "Kamelot is an American power metal band from Tampa, Florida, formed by Thomas Youngblood in 1987. The Norwegian vocalist Roy Khan joined for the album Siége Perilous, and shared songwriting credit with Youngblood until his departure in April 2011. On June 22, 2012, Youngblood announced on their website that their new vocalist would be the Swedish singer Tommy Karevik, who was first featured on Kamelot's album Silverthorn as the main vocalist, co-songwriter, and lyricist."
+  },
+  {
+   "id": "fc7bb445-c6e7-4e1c-a83f-72152ce49e77",
+   "slug": "erdling-b4178b2b",
+   "title": "ERDLING",
+   "act": "ERDLING",
+   "name": "Erdling",
+   "description": "German rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Erdling",
+   "extract": "Erdling is a German Neue Deutsche Härte band formed in 2014 by Neill Freiwald and Niklas Kahl."
+  },
+  {
+   "id": "2adc7c3d-5ef0-440b-94e9-e3368b018006",
+   "slug": "klangkarussell-807f5ce3",
+   "title": "Klangkarussell",
+   "act": "Klangkarussell",
+   "name": "Klangkarussell",
+   "description": "Austrian electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Klangkarussell",
+   "extract": "Klangkarussell is an Austrian electronic music duo formed in 2011. The two members of the group are Tobias Rieser and Adrian Held. Their biggest hit to date is \"Sonnentanz\", which reached the top 10 in six countries."
+  },
+  {
+   "id": "2d6834b2-9083-4af6-881e-c955ab6ff8a4",
+   "slug": "nazareth-right-left-and-centre-tour-2026-1e4ff662",
+   "title": "Nazareth - Right, Left & Centre Tour 2026",
+   "act": "Nazareth",
+   "name": "Nazareth",
+   "description": "Scottish hard rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Nazareth_(band)",
+   "extract": "Nazareth are a Scottish hard rock band formed in Dunfermline in 1968 that had many hit singles and albums in Canada, the United Kingdom, and a number of other European countries beginning in the early 1970s. The breadth of their popularity expanded internationally, including in the United States, with their 1975 album Hair of the Dog, which featured their hits \"Hair of the Dog\" and a cover of the ballad \"Love Hurts\". They have continued to record and tour internationally for more than 50 years."
+  },
+  {
+   "id": "a99a36c8-b460-40d7-bd96-dbb9d478363d",
+   "slug": "swae-lee-same-difference-tour-europe-c1fd1fd2",
+   "title": "Swae Lee | Same Difference Tour Europe",
+   "act": "Swae Lee",
+   "name": "Swae Lee",
+   "description": "American rapper and singer (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Swae_Lee",
+   "extract": "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California. Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi."
+  },
+  {
+   "id": "73f925c1-1bed-4ca4-a11e-0e20ca53b9fb",
+   "slug": "arlo-parks-desire-tour-d20901f6",
+   "title": "ARLO PARKS - DESIRE TOUR",
+   "act": "ARLO PARKS",
+   "name": "Arlo Parks",
+   "description": "British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Arlo_Parks",
+   "extract": "Anaïs Oluwatoyin Estelle Marinho, known professionally as Arlo Parks, is an English singer and songwriter. Her debut studio album, Collapsed in Sunbeams, was released in 2021 to critical acclaim and peaked at number three on the UK Albums Chart. It won the 2021 Mercury Prize for Best Album and earned her nominations for Album of the Year, Best New Artist and Best British Female Solo Artist at the 2021 Brit Awards."
+  },
+  {
+   "id": "ac47433a-164f-43e7-b068-08e396775c66",
+   "slug": "eagle-eye-cherry-7f2a9028",
+   "title": "Eagle-Eye Cherry",
+   "act": "Eagle-Eye Cherry",
+   "name": "Eagle-Eye Cherry",
+   "description": "Swedish musician",
+   "source_url": "https://en.wikipedia.org/wiki/Eagle-Eye_Cherry",
+   "extract": "Eagle-Eye Lanoo Cherry is a Swedish singer and stage performer. His 1997 single \"Save Tonight\" achieved commercial success in Ireland, the United States, and the United Kingdom. Cherry is the son of American jazz artist Don Cherry and Swedish artist and designer Moki Cherry."
+  }
+ ]
+}

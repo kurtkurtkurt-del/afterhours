@@ -1,0 +1,36 @@
+{
+ "city": "helsinki",
+ "day": "2026-10-28",
+ "nights": [
+  {
+   "id": "af4823ba-cb4a-4436-8b9c-34c5104a5141",
+   "slug": "james-marriott-world-tour-2027-b95844d6",
+   "title": "James Marriott – World Tour 2027",
+   "act": "James Marriott",
+   "name": "James Marriott",
+   "description": "British musician and YouTuber (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/James_Marriott",
+   "extract": "James William Marriott is a Swiss-born English musician and YouTuber. He is best known for his 2025 No. 1 UK-charting album Don't Tell the Dog and 2026 top-40 single \"California Rain\". Prior to this, he charted at No. 17 on the UK Albums Chart in 2023 with Are We There Yet? and No. 67 on the UK singles chart with \"I Don't Want to Live Like This\"."
+  },
+  {
+   "id": "b2e716a8-8d24-4467-b283-a2bdeb79f3bb",
+   "slug": "rod-stewart-the-final-encore-375c0b6c",
+   "title": "Rod Stewart - The Final Encore",
+   "act": "Rod Stewart",
+   "name": "Rod Stewart",
+   "description": "British singer-songwriter (born 1945)",
+   "source_url": "https://en.wikipedia.org/wiki/Rod_Stewart",
+   "extract": "Sir Roderick David Stewart is a British singer and songwriter. Known for his distinctive raspy singing voice, Stewart is among the best-selling music artists of all time, having sold more than 120 million records worldwide. His music career began in 1962 when he took up busking with a harmonica. He was a member of various bands before joining the Jeff Beck Group in 1967. Joining Faces in 1969, he also launched a solo career, releasing his debut album, An Old Raincoat Won't Ever Let You Down, that year. Stewart's early albums were a fusion of rock, folk music, soul music, and R&B. His third album, 1971's Every Picture Tells a Story, was his breakthrough, topping the charts in the UK, US, Canada and Australia, as did its single \"Maggie May\". His 1972 follow-up album, Never a Dull Moment, also reached number one in the UK and Australia, while going top three in the US and Canada. Its single, \"You Wear It Well\", topped the UK chart and was a moderate hit elsewhere."
+  },
+  {
+   "id": "9b4c59bd-2f7a-4638-8813-aa2b110f238d",
+   "slug": "westlife-westlife-25-the-anniversary-world-tour-4f0cd3ff",
+   "title": "WESTLIFE - Westlife 25: The Anniversary World Tour",
+   "act": "WESTLIFE",
+   "name": "Westlife",
+   "description": "Irish boy band",
+   "source_url": "https://en.wikipedia.org/wiki/Westlife",
+   "extract": "Westlife are an Irish pop group formed in Sligo in 1998. The group was originally known under the names '6as1' and 'I.O.YOU' with several other members. Westlife consists of members Nicky Byrne, Shane Filan, Kian Egan and Mark Feehily. Brian McFadden was a member of the band before leaving to pursue a solo career in March 2004. Mark Feehily is a member, but is temporarily away from the group due to health issues. The group disbanded in 2012 and later reunited in 2018."
+  }
+ ]
+}

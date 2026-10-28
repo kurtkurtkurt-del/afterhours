@@ -1,0 +1,186 @@
+{
+ "city": "san-francisco",
+ "day": "2026-10-28",
+ "nights": [
+  {
+   "id": "e4513ca7-3b0d-4f61-924f-7e31a6ec73ef",
+   "slug": "phoebe-bridgers-the-lost-tour-ad2d708b",
+   "title": "Phoebe Bridgers: The Lost Tour",
+   "act": "Phoebe Bridgers",
+   "name": "Phoebe Bridgers",
+   "description": "American singer and songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Phoebe_Bridgers",
+   "extract": "Phoebe Lucille Bridgers is an American singer-songwriter, record producer, and actress. Her indie folk music typically centers on acoustic guitar and electronic production, with melancholic lyrical themes. She has won four Grammy Awards from eleven nominations."
+  },
+  {
+   "id": "b84c3c33-afb6-43fd-9a8e-70e2e12d61d1",
+   "slug": "slow-pulp-b65ffe23",
+   "title": "Slow Pulp",
+   "act": "Slow Pulp",
+   "name": "Slow Pulp",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Slow_Pulp",
+   "extract": "Slow Pulp is an American indie rock band from Madison, Wisconsin, currently based in Chicago, Illinois."
+  },
+  {
+   "id": "b4b4e035-af0f-4195-9a8f-7780ea1babcb",
+   "slug": "great-lake-swimmers-e78f915a",
+   "title": "Great Lake Swimmers",
+   "act": "Great Lake Swimmers",
+   "name": "Great Lake Swimmers",
+   "description": "Canadian folk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Great_Lake_Swimmers",
+   "extract": "Great Lake Swimmers is a Canadian folk rock band from Wainfleet, Ontario, and currently based in Toronto."
+  },
+  {
+   "id": "6a25835b-688c-4467-90ea-a480fe13662e",
+   "slug": "ax-and-the-hatchetmen-the-late-checkout-tour-202-7b8d7dcd",
+   "title": "Ax and the Hatchetmen: The Late Checkout Tour 2026",
+   "act": "Ax and the Hatchetmen",
+   "name": "Ax and the Hatchetmen",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/Ax_and_the_Hatchetmen",
+   "extract": "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018. Members of the group include Axel Ellis, Salvatore Defilippis (vocals/guitar), Hunter Olshefke (vocals/bass), Phil Pistone (trumpet), Quinn Dolan (saxophone), and Chaandmon Croft (drums). They are signed with Arista Records and their first album, So Much to Tell You, was released October 24, 2025 with a tour of the same name."
+  },
+  {
+   "id": "3da80266-ba60-4226-909a-9025f6aac90d",
+   "slug": "freak-slug-28f7667c",
+   "title": "Freak Slug",
+   "act": "Freak Slug",
+   "name": "Freak Slug",
+   "description": "British indie rock musician",
+   "source_url": "https://en.wikipedia.org/wiki/Freak_Slug",
+   "extract": "Xenya Genovese, known by her stage name Freak Slug, is a British indie rock musician from Manchester."
+  },
+  {
+   "id": "05b326ad-3a0f-47b5-a1cb-d5a2a5a1fd22",
+   "slug": "katie-pruitt-d01c963b",
+   "title": "Katie Pruitt",
+   "act": "Katie Pruitt",
+   "name": "Katie Pruitt",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Katie_Pruitt",
+   "extract": "Katherine Nicole Pruitt is an American singer-songwriter based in Nashville, Tennessee. Her debut album, Expectations, was released in 2020 by Rounder Records. Her second album, Mantras, was released in 2024."
+  },
+  {
+   "id": "dfd60bb4-6cbe-4a41-8eed-248761a61a8c",
+   "slug": "bleood-6f2de225",
+   "title": "bleood",
+   "act": "bleood",
+   "name": "Bleood",
+   "description": "American rapper and record producer (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Bleood",
+   "extract": "Jamari Isaiah Spencer-Brown, known professionally as Bleood, is an American rapper and record producer. He initially emerged as a member of New York City rapper Xaviersobased's collective 1c34."
+  },
+  {
+   "id": "415d9379-a86e-4b62-9f1f-7a83ab4864e3",
+   "slug": "the-chicks-taking-the-long-way-18849b4f",
+   "title": "THE CHICKS - TAKING THE LONG WAY",
+   "act": "THE CHICKS",
+   "name": "The Chicks",
+   "description": "American country band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Chicks",
+   "extract": "The Chicks, formerly the Dixie Chicks, are an American country music band from Dallas, Texas. The band consists of Natalie Maines and sisters Martie Maguire and Emily Strayer."
+  },
+  {
+   "id": "6991ad21-bda3-4294-a782-033eb6e138b0",
+   "slug": "patrick-wolf-10312624",
+   "title": "Patrick Wolf",
+   "act": "Patrick Wolf",
+   "name": "Patrick Wolf",
+   "description": "English singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Patrick_Wolf",
+   "extract": "Patrick Wolf is an English singer-songwriter from South London. Wolf uses a wide variety of instruments in his music, most commonly the ukulele, piano, and viola. He is known for combining electronic sampling with classical instruments. Wolf's styles range from electronic pop to Baroque chamber music. He has been making music since around 2002."
+  },
+  {
+   "id": "981516bf-6597-4e9c-b512-1c6bdfcb83c1",
+   "slug": "da-i-freyr-too-much-not-enough-fb72e3b2",
+   "title": "Daði Freyr - Too Much, Not Enough",
+   "act": "Daði Freyr",
+   "name": "Daði Freyr",
+   "description": "Icelandic musician (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Da%C3%B0i_Freyr",
+   "extract": "Daði Freyr Pétursson, known professionally as Daði Freyr or simply Daði, is an Icelandic musician. As the frontman of Daði & Gagnamagnið, he was due to represent Iceland in the Eurovision Song Contest 2020 with the song \"Think About Things\", before the event was cancelled in response to the COVID-19 pandemic. Instead, he represented Iceland in the Eurovision Song Contest 2021 with the song \"10 Years\", finishing in fourth place."
+  },
+  {
+   "id": "1e6caeba-176f-423f-8186-89c5eca92aae",
+   "slug": "galactic-33298541",
+   "title": "Galactic",
+   "act": "Galactic",
+   "name": "Galactic",
+   "description": "American jam band",
+   "source_url": "https://en.wikipedia.org/wiki/Galactic",
+   "extract": "Galactic is an American funk band from New Orleans, Louisiana."
+  },
+  {
+   "id": "39ac79f1-486a-44c1-a6c0-6327f9f17f31",
+   "slug": "montell-fish-the-nest-tour-749e3124",
+   "title": "Montell Fish - The Nest Tour",
+   "act": "Montell Fish",
+   "name": "Montell Fish",
+   "description": "American singer-songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Montell_Fish",
+   "extract": "Montell James Frazier, also known as Montell Fish, is an American singer-songwriter. Formerly making music under the CCM genre, he switched to alternative R&B and neo soul. He has since signed to Virgin Music Group for distribution and released two albums under the deal: Jamie in 2022 and Charlotte in 2024."
+  },
+  {
+   "id": "001baf1b-7dca-452a-b07c-2f4cf0aa63fb",
+   "slug": "parra-for-cuva-30ef5b0c",
+   "title": "Parra for Cuva",
+   "act": "Parra for Cuva",
+   "name": "Parra for Cuva",
+   "description": "German musician (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Parra_for_Cuva",
+   "extract": "Nicolas Demuth, known by stage name Parra for Cuva, is a German musician and DJ.\nHe is best known for his house production."
+  },
+  {
+   "id": "d85b4ad8-f976-4802-9dec-a14816ce0621",
+   "slug": "the-musical-box-522b885a",
+   "title": "The Musical Box",
+   "act": "The Musical Box",
+   "name": "The Musical Box",
+   "description": "Canadian Genesis tribute band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Musical_Box_(band)",
+   "extract": "The Musical Box are a Canadian tribute band formed in Montreal, Quebec in 1993 who recreate performances by the English rock band Genesis during the 1970s. The current line-up is formed of singer and performer Denis Gagné, guitarist François Gagnon, bassist Sébastien Lamothe, keyboardist Ian Benhamou, and drummer Marc Laflamme."
+  },
+  {
+   "id": "d1831ebf-7621-43a7-bf5c-cca110fbdcc4",
+   "slug": "frankie-and-the-witch-fingers-23913901",
+   "title": "Frankie and the Witch Fingers",
+   "act": "Frankie and the Witch Fingers",
+   "name": "Frankie and the Witch Fingers",
+   "description": "American rock band (2013–)",
+   "source_url": "https://en.wikipedia.org/wiki/Frankie_and_the_Witch_Fingers",
+   "extract": "Frankie and the Witch Fingers is an American rock band formed in Bloomington, Indiana, in 2013 and based in Los Angeles. The band is composed of founders Dylan Sizemore and Josh Menashe, Nikki Pickle (bass) as of 2020, Nick Aguilar (drums) as of 2022 and Jon Modaff (synths) as of 2025. They are signed to Greenway Records of Brooklyn."
+  },
+  {
+   "id": "86457365-33f1-46fd-89fc-3062e9553549",
+   "slug": "six60-28e31732",
+   "title": "SIX60",
+   "act": "SIX60",
+   "name": "Six60",
+   "description": "New Zealand rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Six60",
+   "extract": "Six60 is a New Zealand pop rock band formed in Dunedin, Otago in 2008. The band consists of Matiu Walters, Ji Fraser, Chris Mac, and Marlon Gerbes."
+  },
+  {
+   "id": "b0bd986a-d06f-4089-9e6f-8e45a42586fd",
+   "slug": "tom-jones-come-gather-round-tour-f4ef4374",
+   "title": "Tom Jones: Come Gather Round Tour",
+   "act": "Tom Jones",
+   "name": "Tom Jones",
+   "description": "Welsh singer (born 1940)",
+   "source_url": "https://en.wikipedia.org/wiki/Tom_Jones_(singer)",
+   "extract": "Sir Thomas Jones Woodward is a Welsh singer. His career began with a string of top 10 hits in the 1960s and he has since toured regularly, with appearances in Las Vegas from 1967 to 2011. His voice has been described by AllMusic as a \"full-throated, robust baritone\"."
+  },
+  {
+   "id": "98d6eeee-2042-4545-941e-4a3a69f6b349",
+   "slug": "jose-madero-usa-tour-2026-89acce4a",
+   "title": "Jose Madero - USA Tour 2026",
+   "act": "Jose Madero",
+   "name": "José Madero",
+   "description": "Mexican musician",
+   "source_url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Madero",
+   "extract": "José Madero Vizcaíno, better known as Pepe Madero, is a Mexican singer and writer. Madero began his musical career as a vocalist in the renowned Mexican rock band PXNDX. However, since 2016 he has mainly dedicated himself to his solo career."
+  }
+ ]
+}

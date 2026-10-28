@@ -1,0 +1,186 @@
+{
+ "city": "montreal",
+ "day": "2026-10-28",
+ "nights": [
+  {
+   "id": "86f213af-c798-401e-8a26-a28e09e3929c",
+   "slug": "rainao-d5bb47bc",
+   "title": "RAINAO",
+   "act": "RAINAO",
+   "name": "RaiNao",
+   "description": "Puerto Rican singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/RaiNao",
+   "extract": "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter. Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop, shaped by her background in music theory and live performance. She got signed to Rimas Entertainment in 2024."
+  },
+  {
+   "id": "ace0830b-cbfa-47a2-9c8f-720855b62879",
+   "slug": "sting-e7b29135",
+   "title": "Sting",
+   "act": "Sting",
+   "name": "Sting",
+   "description": "English musician and songwriter (born 1951)",
+   "source_url": "https://en.wikipedia.org/wiki/Sting_(musician)",
+   "extract": "Gordon Matthew Thomas Sumner, known as Sting, is an English musician, songwriter, actor and activist. He was the lead vocalist, principal songwriter and bassist for the rock band the Police. He began a solo career in 1985, after leaving the Police, and has included elements of rock, jazz, reggae, classical, new-age, and worldbeat in his music."
+  },
+  {
+   "id": "7c90a16a-0eb0-4b55-aa16-fa8057dd6da0",
+   "slug": "tyler-braden-days-of-gold-tour-630c9362",
+   "title": "Tyler Braden - Days Of Gold Tour",
+   "act": "Tyler Braden",
+   "name": "Tyler Braden",
+   "description": "American singer-songwriter (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Tyler_Braden",
+   "extract": "Tyler Braden is an American country music singer-songwriter and musician from Slapout, Alabama. His debut studio album, Devil and a Prayer, was released in 2025. He is best known for reaching the final of the American Song Contest with the song \"Seventeen\", qualifying to the final round and placing last out of 10 songs. His songs \"Try Losing One\", which has gained over thirty million streams, \"Devil You Know\", which achieved platinum certification from the RIAA, and \"God & Guns N' Roses\", which became his first single to chart on the Billboard Hot Country Songs chart. Braden has toured internationally with Luke Bryan, Brooks & Dunn, Dierks Bentley, Brothers Osborne, Mitchell Tenpenny, Warren Zeiders, and Darius Rucker."
+  },
+  {
+   "id": "88b69a42-74d2-4549-96dc-a13987e9f0f1",
+   "slug": "sleeping-with-sirens-an-ending-in-itself-tour-64bc2839",
+   "title": "Sleeping With Sirens: An Ending In Itself Tour",
+   "act": "Sleeping With Sirens",
+   "name": "Sleeping with Sirens",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Sleeping_with_Sirens",
+   "extract": "Sleeping with Sirens is an American rock band originally formed in Orlando, Florida. The band currently consists of Kellin Quinn, Justin Hills, Nick Martin, Matty Best, and Tony Pizzuti. The band was formed in 2009 by Nick Trombino of Broadway and Brandon McMaster. The group is currently signed to Rise Records and have released eight full-length studio albums, one live album, and one acoustic EP."
+  },
+  {
+   "id": "0045d5da-d775-498f-badc-8a6cd2db9a98",
+   "slug": "chris-klafford-aeab9468",
+   "title": "Chris Kläfford",
+   "act": "Chris Kläfford",
+   "name": "Chris Kläfford",
+   "description": "Swedish singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Chris_Kl%C3%A4fford",
+   "extract": "Mikael Christoffer Kläfford Sjögren is a Swedish singer and songwriter, born in Ramsberg, Sweden."
+  },
+  {
+   "id": "d0ab48b6-393e-43bb-a9a2-be6def182909",
+   "slug": "katseye-the-wildworld-tour-2e9223ae",
+   "title": "KATSEYE: THE WILDWORLD TOUR",
+   "act": "KATSEYE",
+   "name": "Katseye",
+   "description": "Los Angeles–based girl group",
+   "source_url": "https://en.wikipedia.org/wiki/Katseye",
+   "extract": "Katseye is a girl group formed in 2024, based in Los Angeles. The group consists of six members: Daniela Avanzini, Lara Raj, Manon Bannerman, Megan Skiendiel, Sophia Laforteza, and Yoonchae Jeung. With members from the Philippines, South Korea, Switzerland, and the United States, Katseye is often called a \"global girl group\"."
+  },
+  {
+   "id": "766df1e2-f0bd-4914-b416-6641eaa756ee",
+   "slug": "baauer-40d4bf6b",
+   "title": "Baauer",
+   "act": "Baauer",
+   "name": "Baauer",
+   "description": "American record producer",
+   "source_url": "https://en.wikipedia.org/wiki/Baauer",
+   "extract": "Harry Bauer Rodrigues, known professionally as Baauer, is an American record producer and DJ, best known for his double platinum song \"Harlem Shake\"."
+  },
+  {
+   "id": "4580c4ad-3078-4989-a963-bd311629e18e",
+   "slug": "the-dresden-dolls-cebb3b13",
+   "title": "The Dresden Dolls",
+   "act": "The Dresden Dolls",
+   "name": "The Dresden Dolls",
+   "description": "American musical duo (formed 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/The_Dresden_Dolls",
+   "extract": "The Dresden Dolls is an American musical duo from Boston, Massachusetts. Formed in 2000, the group consists of Amanda Palmer and Brian Viglione. The two describe their style as \"Brechtian punk cabaret\", a phrase invented by Palmer because she was \"terrified\" that the press would invent a name that \"would involve the word gothic\". The Dresden Dolls aesthetic exemplifies dark cabaret."
+  },
+  {
+   "id": "18ec7248-b29b-4f7b-8854-d507e8d2aeaa",
+   "slug": "jacques-greene-d33ffabc",
+   "title": "Jacques Greene",
+   "act": "Jacques Greene",
+   "name": "Jacques Greene",
+   "description": "Canadian musician (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Jacques_Greene",
+   "extract": "Philippe Aubin-Dionne, better known by the stage name Jacques Greene, is a Canadian electronic musician based in Toronto. He has released music on the LuckyMe and Night Slugs labels and co-owns Vase Records."
+  },
+  {
+   "id": "66864569-2978-4873-902b-a23d946fe668",
+   "slug": "new-constellations-f7b41ac7",
+   "title": "New Constellations",
+   "act": "New Constellations",
+   "name": "New Constellations",
+   "description": "American dream pop band",
+   "source_url": "https://en.wikipedia.org/wiki/New_Constellations",
+   "extract": "New Constellations is an American dream pop and synthwave duo based out of Portland, Oregon."
+  },
+  {
+   "id": "744a9f67-b9d2-49ab-b890-8efda03e702a",
+   "slug": "sweeping-promises-9e198a5e",
+   "title": "SWEEPING PROMISES",
+   "act": "SWEEPING PROMISES",
+   "name": "Sweeping Promises",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Sweeping_Promises",
+   "extract": "Sweeping Promises is an American post-punk duo from Boston, Massachusetts, now based in Lawrence, Kansas, consisting of Lira Mondal and Caufield Schnug. Multi-instrumentalist Spenser Gralla has toured as their live drummer since 2019."
+  },
+  {
+   "id": "04d5c314-2c85-4618-92f6-677c6b0485ca",
+   "slug": "owen-riegling-5a163af3",
+   "title": "Owen Riegling",
+   "act": "Owen Riegling",
+   "name": "Owen Riegling",
+   "description": "Canadian country singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Owen_Riegling",
+   "extract": "Owen Michael Riegling is a Canadian country music singer and songwriter. He is currently signed to Universal Music Canada and Big Loud Records. He has charted multiple singles including \"Old Dirt Roads\", \"Moonshines\", \"Taillight This Town\", and \"Love Hate Love\". He released his debut album Bruce County  in 2024. His second album In the Feeling was released in April 2026."
+  },
+  {
+   "id": "38537ed3-170b-4b65-8bf1-786d3842a22b",
+   "slug": "mico-e18b0428",
+   "title": "MICO",
+   "act": "MICO",
+   "name": "Mico",
+   "description": "Filipino-Canadian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Mico_(singer)",
+   "extract": "Jose Miguel Veloso, known professionally as Mico, is a Canadian singer-songwriter and musician from Toronto. He initially grew a fanbase online through Discord and Twitch, breaking out commercially with his 2022 single \"cut my hair\", which became a top-30 radio hit in Canada. In 2025, he signed with Columbia Records following a string of independent extended plays."
+  },
+  {
+   "id": "0883cf21-a7ac-4142-8401-fb638ed3bdac",
+   "slug": "the-darcys-a9750509",
+   "title": "The Darcys",
+   "act": "The Darcys",
+   "name": "The Darcys",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Darcys",
+   "extract": "The Darcys are a Canadian two-piece art rock band from Toronto, Ontario."
+  },
+  {
+   "id": "ebc212a5-31bb-4de1-876e-3bc301d4532f",
+   "slug": "clara-la-san-chosen-silences-tour-2026-43fe5df6",
+   "title": "Clara La San - Chosen Silences Tour 2026",
+   "act": "Clara La San",
+   "name": "Clara La San",
+   "description": "British singer, songwriter, and record producer",
+   "source_url": "https://en.wikipedia.org/wiki/Clara_La_San",
+   "extract": "Rosemary Clare Louise Francis, known professionally as Clara La San, is a British singer, songwriter, and record producer. In 2013, her debut song \"Let You Go\" became popular on SoundCloud. Her follow-up song \"In This Darkness\" later went viral on TikTok upon being rereleased in 2022. Her debut studio album, Made Mistakes, was released in 2024."
+  },
+  {
+   "id": "c4da6083-d03b-49ff-a1c9-d0ef5930e85b",
+   "slug": "olafur-arnalds-sieges-platines-officiels-3911897a",
+   "title": "Olafur Arnalds - Sièges Platines Officiels",
+   "act": "Olafur Arnalds",
+   "name": "Ólafur Arnalds",
+   "description": "Icelandic musician and composer (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/%C3%93lafur_Arnalds",
+   "extract": "Ólafur Arnalds is an Icelandic multi-instrumentalist and producer from Mosfellsbær, Iceland. He mixes strings and piano with loops and beats, a sound ranging from ambient/electronic to atmospheric pop. He is also the former drummer for hardcore punk and metal bands Fighting Shit, Celestine, and others."
+  },
+  {
+   "id": "2b819380-28f0-4fc9-8170-68475d48a999",
+   "slug": "olafur-arnalds-6a5a713f",
+   "title": "Olafur Arnalds",
+   "act": "Olafur Arnalds",
+   "name": "Ólafur Arnalds",
+   "description": "Icelandic musician and composer (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/%C3%93lafur_Arnalds",
+   "extract": "Ólafur Arnalds is an Icelandic multi-instrumentalist and producer from Mosfellsbær, Iceland. He mixes strings and piano with loops and beats, a sound ranging from ambient/electronic to atmospheric pop. He is also the former drummer for hardcore punk and metal bands Fighting Shit, Celestine, and others."
+  },
+  {
+   "id": "77d3aa6e-60c8-424b-8e1c-56548c4baf9a",
+   "slug": "sullivan-king-62f9e683",
+   "title": "Sullivan King",
+   "act": "Sullivan King",
+   "name": "Sullivan King",
+   "description": "American musician and DJ",
+   "source_url": "https://en.wikipedia.org/wiki/Sullivan_King",
+   "extract": "Keaton Prescott, known artistically as Sullivan King, is an American DJ of dubstep music and heavy metal musician. He has drawn attention from the music press for his unusual blending of EDM and electric guitar-centered heavy metal performance, \"making his live shows one of the few places where kandi-coated ravers and metalheads mingle\". King has made multiple US tours since his concert debut in 2014, most recently announcing a nationwide tour during the latter half of 2021, and has released singles collaborating with musicians including Papa Roach and drummer Matt McGuire of The Chainsmokers."
+  }
+ ]
+}

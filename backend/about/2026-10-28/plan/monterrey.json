@@ -1,0 +1,226 @@
+{
+ "city": "monterrey",
+ "day": "2026-10-28",
+ "nights": [
+  {
+   "id": "0955b8e4-e143-4717-b529-cead80a76519",
+   "slug": "panteon-rococo-d7aa3564",
+   "title": "Panteon Rococo",
+   "act": "Panteon Rococo",
+   "name": "Panteón Rococó",
+   "description": "Mexican ska band",
+   "source_url": "https://en.wikipedia.org/wiki/Pante%C3%B3n_Rococ%C3%B3",
+   "extract": "Panteón Rococó is a ska band from Mexico City founded in 1995. Despite flourishing black markets, they have sold thousands of records. Their name is taken from the play El cocodrilo solitario del panteón rococó by the Mexican playwright Hugo Argüelles. Since early in their musical career they have regularly toured Europe, especially Germany, where they were represented by the now-defunct independent label Übersee Records."
+  },
+  {
+   "id": "dc84e6ea-f55f-4ba1-8d5d-1094c6d5415b",
+   "slug": "omar-courtz-d69b4040",
+   "title": "Omar Courtz",
+   "act": "Omar Courtz",
+   "name": "Omar Courtz",
+   "description": "Puerto Rican singer and songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Omar_Courtz",
+   "extract": "Joshua Omar Medina Cortés, known professionally as Omar Courtz, or Ousi is a Puerto Rican singer and songwriter."
+  },
+  {
+   "id": "b9013c60-2250-4d9e-8a9d-d2bd8ebab802",
+   "slug": "intocable-79402bed",
+   "title": "Intocable",
+   "act": "Intocable",
+   "name": "Intocable",
+   "description": "American Tejano and Norteño band from Zapata, Texas",
+   "source_url": "https://en.wikipedia.org/wiki/Intocable",
+   "extract": "Intocable is an American band from Zapata, Texas, that plays regional Mexican music; specializing in norteño and tejano music. It was started by friends Ricardo Javier Muñoz and René Orlando Martínez in the early 1990s. In a few years, Intocable fused the genres Tejano and Norteño with a musical signature that fused Tejano's robust conjunto and Norteño folk rhythms with a pop balladry. Intocable is perhaps the most influential group in Tejano and their Tejano/Norteño fusion has become the blueprint for several Tejano bands. The group's style combines romantic, hooky melodies, tight instrumentation and vocal harmony."
+  },
+  {
+   "id": "8566bd3b-0978-4481-bdaf-08658ca20bb1",
+   "slug": "andres-calamaro-ad6592e4",
+   "title": "Andrés Calamaro",
+   "act": "Andrés Calamaro",
+   "name": "Andrés Calamaro",
+   "description": "Argentine musician and composer",
+   "source_url": "https://en.wikipedia.org/wiki/Andr%C3%A9s_Calamaro",
+   "extract": "Andrés Calamaro is an Argentine musician, composer and Latin Grammy winner. He is considered one of the greatest and most influential rock artists in Spanish. He is also one of the most complete artists for his wide range of musical styles, including funk, reggae, ballads, boleros, tangos and jazz. His former band Los Rodríguez was a major success in Spain and throughout Latin America mainly during the 1990s. He is multi-instrumentalist and became one of the main icons of Argentine rock, selling over 1.3 million records to date."
+  },
+  {
+   "id": "aa158dc4-b369-4c6e-a6de-9bd61fe46a65",
+   "slug": "leire-martinez-00e758ce",
+   "title": "Leire Martínez",
+   "act": "Leire Martínez",
+   "name": "Leire Martínez",
+   "description": "Spanish singer and songwriter (born 1979)",
+   "source_url": "https://en.wikipedia.org/wiki/Leire_Mart%C3%ADnez",
+   "extract": "Leire Martínez Ochoa, is a Spanish singer, songwriter and was the lead vocalist of the band La Oreja de Van Gogh from 2008 to 2024."
+  },
+  {
+   "id": "bc56fdf7-658e-4fe6-9d7c-a561a9af3735",
+   "slug": "zz-top-ab854e04",
+   "title": "ZZ Top",
+   "act": "ZZ Top",
+   "name": "ZZ Top",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/ZZ_Top",
+   "extract": "ZZ Top is an American rock band formed in Houston, Texas, in 1969. For five decades, the band had consisted of vocalist-guitarist Billy Gibbons, drummer Frank Beard and bassist-vocalist Dusty Hill, until Hill's death in 2021 and Beard's death in 2026. ZZ Top developed a signature sound based on Gibbons' blues style and Hill and Beard's rhythm section. They are known for their live performances, sly and humorous lyrics, and the matching appearances of Gibbons and Hill, who wore sunglasses, hats, and long beards."
+  },
+  {
+   "id": "f75b5421-e2fe-47a7-997b-e2c1ee7a86aa",
+   "slug": "dimash-qudaibergen-48caf762",
+   "title": "Dimash Qudaibergen",
+   "act": "Dimash Qudaibergen",
+   "name": "Dimash Qudaibergen",
+   "description": "Kazakh musician (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Dimash_Qudaibergen",
+   "extract": "Dinmukhammed Qanatuly Qudaibergen, known professionally as Dimash Qudaibergen and mononymously as Dimash, is a Kazakh singer, songwriter, and multi-instrumentalist. He is university-trained in classical as well as contemporary music, and is known for his exceptionally wide vocal range. He has performed songs in 16 languages."
+  },
+  {
+   "id": "d864537e-f35c-4edf-a551-1ee1d04dbe69",
+   "slug": "mon-laferte-29eb4d2d",
+   "title": "Mon Laferte",
+   "act": "Mon Laferte",
+   "name": "Mon Laferte",
+   "description": "Chilean-Mexican singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Mon_Laferte",
+   "extract": "Norma Monserrat Bustamante Laferte, known professionally as Mon Laferte, is a Chilean and Mexican singer-songwriter. Recognized for her versatility, her musical style spans a wide array of genres, including pop, alternative, bolero, cumbia, and salsa. She rose to international prominence in the 2010s, particularly for her melodramatic vocals and theatrical stage presence. In 2025, Billboard named her one of the greatest female Latin pop artists of all time."
+  },
+  {
+   "id": "1ae01a01-bdb2-4edd-b7e9-5486dbdac1f7",
+   "slug": "caloncho-89ae745d",
+   "title": "Caloncho",
+   "act": "Caloncho",
+   "name": "Caloncho",
+   "description": "Mexican musician and singer",
+   "source_url": "https://en.wikipedia.org/wiki/Caloncho",
+   "extract": "Óscar Alfonso Castro, better known as Caloncho, is a Mexican musician and singer."
+  },
+  {
+   "id": "f8f6aec7-368b-4c5d-8e2f-3a09c577d44b",
+   "slug": "lp-1e4e2ac2",
+   "title": "LP",
+   "act": "LP",
+   "name": "LP",
+   "description": "American musician (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/LP_(singer)",
+   "extract": "Laura Pergolizzi, known professionally as LP, is an American singer, musician and songwriter from Brooklyn, New York. LP has released seven albums and three EPs. LP has written songs for other artists including Rihanna, Christina Aguilera, the Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd and Céline Dion."
+  },
+  {
+   "id": "36734def-3427-466e-a319-f0220e74a4df",
+   "slug": "david-bisbal-tour-eternos-2026-4f5936cc",
+   "title": "David Bisbal Tour Eternos 2026",
+   "act": "David Bisbal",
+   "name": "David Bisbal",
+   "description": "Spanish singer (born 1979)",
+   "source_url": "https://en.wikipedia.org/wiki/David_Bisbal",
+   "extract": "David Bisbal Ferre is a Spanish singer and actor. He gained his initial fame as the runner-up on the first edition of the reality television talent show Operación Triunfo."
+  },
+  {
+   "id": "a98f1a41-df93-40b6-a743-071156f9c4b2",
+   "slug": "trueno-37987217",
+   "title": "Trueno",
+   "act": "Trueno",
+   "name": "Trueno",
+   "description": "Argentine rapper",
+   "source_url": "https://en.wikipedia.org/wiki/Trueno_(rapper)",
+   "extract": "Mateo Palacios Corazzina, better known by the stage name Trueno, is an Argentine rapper, singer and songwriter. An established figure in the urban music scene of Argentina, his music combines Latin hip-hop and trap with elements of reggaeton, R&B, pop, rock, and the stylings of classic hip-hop."
+  },
+  {
+   "id": "663a2d2d-ceb6-4d30-a32a-c60ed2b0a6cb",
+   "slug": "la-gusana-ciega-claroscuro-07996f44",
+   "title": "La Gusana Ciega - Claroscuro",
+   "act": "La Gusana Ciega",
+   "name": "La Gusana Ciega",
+   "description": "Mexican rock band",
+   "source_url": "https://en.wikipedia.org/wiki/La_Gusana_Ciega",
+   "extract": "La Gusana Ciega is a Mexican alternative rock and pop-rock band composed of Daniel Gutiérrez, Germán Arroyo (drums), and Luis Ernesto Martínez \"Lu\" (bass)."
+  },
+  {
+   "id": "437214c9-81b3-4337-970e-a8aeea8a7408",
+   "slug": "caifanes-0f2e8886",
+   "title": "Caifanes",
+   "act": "Caifanes",
+   "name": "Caifanes",
+   "description": "Mexican rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Caifanes",
+   "extract": "Caifanes is a Mexican rock band formed in Mexico City in 1986. The group achieved commercial success during the late 1980s and early 1990s. The original lineup of members consisted of Saúl Hernández, Sabo Romo (bass), Alfonso André (drums) and Diego Herrera. Alejandro Marcovich later joined as lead guitarist. Caifanes' style can be described as a hybrid of British new wave, progressive rock and Latin percussion underscored by deep, somber and Latin, Mexican Spanish-influenced lyrics and the vocal style of Saúl Hernández. Members of Caifanes have cited The Cure, The Beatles and King Crimson as major influences. Adrian Belew produced their third studio album, El Silencio, and made a guest appearance on the track Piedra."
+  },
+  {
+   "id": "89ae2a57-46b4-4d87-a558-9e5dd5ee77a7",
+   "slug": "enjambre-5a1280b3",
+   "title": "Enjambre",
+   "act": "Enjambre",
+   "name": "Enjambre",
+   "description": "Mexican indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Enjambre",
+   "extract": "Enjambre is a Mexican indie rock band. It is composed of brothers Luis Humberto, Rafael (bass), and Julián Navejas, their cousin Isaac Navejas (guitar), and Ángel Sánchez (drums). Enjambre started in Fresnillo, Zacatecas, consolidated as a group in Santa Ana, California, and later continued developing in Fresnillo, Zacatecas, starting professional recordings in 2005."
+  },
+  {
+   "id": "488ac398-f61d-4787-8d9a-409042214245",
+   "slug": "apocalyptica-ee337ca9",
+   "title": "Apocalyptica",
+   "act": "Apocalyptica",
+   "name": "Apocalyptica",
+   "description": "Finnish symphonic metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Apocalyptica",
+   "extract": "Apocalyptica is a Finnish symphonic metal band from Helsinki, formed in 1993. The band is currently composed of three classically trained cellists Eicca Toppinen, Paavo Lötjönen, and Perttu Kivilaakso. Originally a classical-style Metallica tribute band, the band eventually adopted a neoclassical metal style without the use of conventional guitars and bass. They have sold over four million albums to date."
+  },
+  {
+   "id": "70786493-9fb4-4e7e-8a69-ed5e1a0c9d37",
+   "slug": "carlos-sadness-20eb72c8",
+   "title": "Carlos Sadness",
+   "act": "Carlos Sadness",
+   "name": "Carlos Sadness",
+   "description": "Spanish singer and composer",
+   "source_url": "https://en.wikipedia.org/wiki/Carlos_Sadness",
+   "extract": "Carlos Sadness is a Spanish singer, songwriter and illustrator."
+  },
+  {
+   "id": "676038ba-6bcb-40eb-b5df-f270207808b0",
+   "slug": "espinoza-paz-7a59af8c",
+   "title": "Espinoza Paz",
+   "act": "Espinoza Paz",
+   "name": "Espinoza Paz",
+   "description": "Mexican musician and composer",
+   "source_url": "https://en.wikipedia.org/wiki/Espinoza_Paz",
+   "extract": "Isidro Chávez Espinoza, better known as Espinoza Paz, is a Latin Grammy nominated Mexican musician and songwriter of regional Mexican music."
+  },
+  {
+   "id": "809b9ab8-94a0-4c03-8491-95f98ef3aa22",
+   "slug": "jorge-drexler-c5c2c5e9",
+   "title": "Jorge Drexler",
+   "act": "Jorge Drexler",
+   "name": "Jorge Drexler",
+   "description": "Uruguayan musician",
+   "source_url": "https://en.wikipedia.org/wiki/Jorge_Drexler",
+   "extract": "Jorge Abner Drexler Prada is a Uruguayan musician, actor and medical doctor. Drexler is known for winning the 2005 Academy Award for Best Original Song for \"Al Otro Lado del Río\" from The Motorcycle Diaries, becoming the first Uruguayan to win an Oscar and marking the first time a Spanish-language song received the award."
+  },
+  {
+   "id": "af246d9a-ebad-48e3-abe2-a91abe46d71b",
+   "slug": "foreigner-d60434e3",
+   "title": "Foreigner",
+   "act": "Foreigner",
+   "name": "Foreigner",
+   "description": "British-American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Foreigner_(band)",
+   "extract": "Foreigner is a British-American rock band formed in New York City in 1976. The band's original lineup consisted of vocalist Lou Gramm, guitarist Mick Jones, drummer Dennis Elliott, keyboardist Al Greenwood, multi-instrumentalist Ian McDonald and bassist Ed Gagliardi. Gagliardi was replaced by Rick Wills in 1979. Foreigner is one of the best-selling bands of all time, with worldwide sales exceeding 80 million records, including 38 million in the US."
+  },
+  {
+   "id": "eb1fd3d5-952a-4d7f-b3ba-2ec76e44919b",
+   "slug": "placebo-30th-anniversary-tour-840320e0",
+   "title": "Placebo - 30th Anniversary Tour",
+   "act": "Placebo",
+   "name": "Placebo",
+   "description": "British alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Placebo_(band)",
+   "extract": "Placebo are a British alternative rock band, formed in London in 1994 by vocalist-guitarist Brian Molko and bassist-guitarist Stefan Olsdal, who have remained the two constant members, with three full-time drummers throughout the band's existence."
+  },
+  {
+   "id": "a52f24fd-3cc8-4b79-aa23-b686c5c848d2",
+   "slug": "jungle-world-tour-2027-729fa965",
+   "title": "JUNGLE - World Tour 2027",
+   "act": "JUNGLE",
+   "name": "Jungle",
+   "description": "English modern soul band",
+   "source_url": "https://en.wikipedia.org/wiki/Jungle_(band)",
+   "extract": "Jungle are a British band formed in early 2013 by London-based producers Josh Lloyd-Watson and Tom McFarland. Jungle have released five studio albums: Jungle (2014), which was shortlisted for the Mercury Prize; For Ever (2018); Loving in Stereo (2021); Volcano (2023); and Sunshine (2026). The first two albums were released through XL Recordings while the latter three via their independent label Caiola Records."
+  }
+ ]
+}

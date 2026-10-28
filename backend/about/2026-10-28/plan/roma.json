@@ -1,0 +1,86 @@
+{
+ "city": "roma",
+ "day": "2026-10-28",
+ "nights": [
+  {
+   "id": "1b0e2dfa-530b-44eb-8515-30719d80e863",
+   "slug": "tedua-palasport-2027-5e2f6373",
+   "title": "Tedua - Palasport 2027",
+   "act": "Tedua",
+   "name": "Tedua",
+   "description": "Italian singer-songwriter, rapper and actor (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Tedua",
+   "extract": "Mario Molinari better known professionally as Tedua, is an Italian rapper, singer, and songwriter."
+  },
+  {
+   "id": "aa15fcfb-5c59-4baa-9409-e6226086ef1e",
+   "slug": "gabry-ponte-circotron-the-dance-show-86649744",
+   "title": "Gabry Ponte - CIRCOTRON - The dance show",
+   "act": "Gabry Ponte",
+   "name": "Gabry Ponte",
+   "description": "Italian musician, DJ and producer (born 1973)",
+   "source_url": "https://en.wikipedia.org/wiki/Gabry_Ponte",
+   "extract": "Gabriele \"Gabry\" Ponte is an Italian musician, DJ and producer, best known as a member of Eiffel 65."
+  },
+  {
+   "id": "e699927e-f593-49b3-bd54-d7bc26fa557d",
+   "slug": "gianna-nannini-giannagold-91b6217d",
+   "title": "Gianna Nannini | GIANNAGOLD",
+   "act": "Gianna Nannini",
+   "name": "Gianna Nannini",
+   "description": "Italian singer and songwriter (born 1954)",
+   "source_url": "https://en.wikipedia.org/wiki/Gianna_Nannini",
+   "extract": "Gianna Nannini is an Italian singer and songwriter. Her most notable songs include \"America\" (1979), \"Fotoromanza\" (1984), \"I maschi\" (1987), \"Meravigliosa creatura\" (1995), \"Sei nell'anima\" (2006) and \"Bello e impossibile\" (1986). The latter became a hit across Europe, especially in Austria, Germany, Italy and Switzerland."
+  },
+  {
+   "id": "c0c41d8f-5aad-473e-ac22-e18ebbef8b43",
+   "slug": "damien-rice-995abda6",
+   "title": "DAMIEN RICE",
+   "act": "DAMIEN RICE",
+   "name": "Damien Rice",
+   "description": "Irish singer-songwriter (born 1973)",
+   "source_url": "https://en.wikipedia.org/wiki/Damien_Rice",
+   "extract": "Damien George Rice is an Irish singer-songwriter. He began his career as a member of the 1990s rock group Juniper, who were signed to Polygram Records in 1997. The band enjoyed moderate success in Ireland with two released singles, \"The World is Dead\" and \"Weatherman.\" After leaving the band in 1998, Rice worked as a farmer in Tuscany and busked throughout Europe before returning to Ireland in 2001 and beginning a solo career. The rest of Juniper went on to perform under the name Bell X1."
+  },
+  {
+   "id": "7e650a30-9130-46e4-a446-fc5d08619b6f",
+   "slug": "gue-live-2027-0d98334f",
+   "title": "GUÈ - LIVE 2027",
+   "act": "GUÈ",
+   "name": "Guè",
+   "description": "Italian rapper (born 1980)",
+   "source_url": "https://en.wikipedia.org/wiki/Gu%C3%A8",
+   "extract": "Cosimo Fini, known professionally as Guè, previously as Gué Pequeno, is an Italian rapper. He is also a member of the famous hip hop group Club Dogo with rapper Jake La Furia and producer Don Joe. Between 1999 and 2001, he was also in \"Sacre Scuole\", a group made up by Gué Pequeno, Dargen D'Amico and Jake La Furia. In his career he collaborated with international artists such as Benny the Butcher, Kool G Rap, Akon, Rick Ross and Jadakiss."
+  },
+  {
+   "id": "4f5fea8a-1b4f-465a-b4e1-576039c0920f",
+   "slug": "fontaines-d-c-edf37dd9",
+   "title": "Fontaines D.C.",
+   "act": "Fontaines D.C.",
+   "name": "Fontaines D.C.",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Fontaines_D.C.",
+   "extract": "Fontaines D.C. are an Irish rock band formed in Dublin in 2014. The band consists of Grian Chatten (vocals), Conor Curley (guitar), Conor \"Deego\" Deegan III (bass), Tom Coll (drums), and Carlos O'Connell (guitar)."
+  },
+  {
+   "id": "2f6e4266-7e45-4611-bea9-e850286a6c79",
+   "slug": "laura-pausini-io-canto-world-tour-31c28cd9",
+   "title": "Laura Pausini - Io Canto World Tour",
+   "act": "Laura Pausini",
+   "name": "Laura Pausini",
+   "description": "Italian singer (born 1974)",
+   "source_url": "https://en.wikipedia.org/wiki/Laura_Pausini",
+   "extract": "Laura Pausini is an Italian pop singer. She rose to fame in 1993, winning the newcomer artists' section of the 43rd Sanremo Music Festival with the song \"La solitudine\", which became an Italian standard and an international hit. Her self-titled debut album was released in Italy on 23 April 1993 and later became an international success, selling two million copies worldwide. Its follow-up, Laura, was released in 1994 and confirmed her international success, selling three million copies worldwide."
+  },
+  {
+   "id": "9199df49-74c1-4fd1-9aa7-87ab0a63891c",
+   "slug": "beth-hart-roma-summer-fest-ce214cea",
+   "title": "Beth Hart | Roma Summer Fest",
+   "act": "Beth Hart",
+   "name": "Beth Hart",
+   "description": "American blues rock musician (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Beth_Hart",
+   "extract": "Beth Hart is an American musician from Los Angeles, California. She rose to fame with the release of her 1999 single \"L.A. Song \" from her second album Screamin' for My Supper. The single was a number one hit in New Zealand, as well as reaching the top five of the US Adult Contemporary and Top 10 on the Billboard Adult Top 40 charts."
+  }
+ ]
+}

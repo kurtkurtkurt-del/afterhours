@@ -1,0 +1,56 @@
+{
+ "city": "las-vegas",
+ "day": "2026-10-28",
+ "nights": [
+  {
+   "id": "e4e689f9-afc9-4825-8efc-b667a37beffa",
+   "slug": "jose-madero-usa-tour-2026-e58959a7",
+   "title": "Jose Madero - USA Tour 2026",
+   "act": "Jose Madero",
+   "name": "José Madero",
+   "description": "Mexican musician",
+   "source_url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Madero",
+   "extract": "José Madero Vizcaíno, better known as Pepe Madero, is a Mexican singer and writer. Madero began his musical career as a vocalist in the renowned Mexican rock band PXNDX. However, since 2016 he has mainly dedicated himself to his solo career."
+  },
+  {
+   "id": "fb4bde30-14d6-46b7-8714-e2c04de99a0b",
+   "slug": "chief-keef-d2d02d09",
+   "title": "Chief Keef",
+   "act": "Chief Keef",
+   "name": "Chief Keef",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Chief_Keef",
+   "extract": "Keith Farrelle Cozart, known professionally as Chief Keef, is an American rapper and record producer. Beginning his career as a teenager, he gained regional recognition for his mixtapes in the early 2010s. Cozart has since been credited with popularizing the hip hop subgenre drill among mainstream audiences and is considered a progenitor of the genre."
+  },
+  {
+   "id": "0ceef35b-b2b4-4bf2-90dd-8bbb379aabfc",
+   "slug": "bryan-adams-bare-bones-acoustic-solo-show-fec092fc",
+   "title": "Bryan Adams - Bare Bones Acoustic Solo Show",
+   "act": "Bryan Adams",
+   "name": "Bryan Adams",
+   "description": "Canadian singer-songwriter and musician (born 1959)",
+   "source_url": "https://en.wikipedia.org/wiki/Bryan_Adams",
+   "extract": "Bryan Guy Adams is a Canadian singer-songwriter, musician, record producer, and photographer. He is estimated to have sold between 75 million and more than 100 million records and singles worldwide, placing him among the best-selling music artists. Adams was the most played artist on Canadian radio in the 2010s and has had 25 top 15 singles in Canada and over a dozen in the U.S., UK, and Australia."
+  },
+  {
+   "id": "33a334cd-9c3d-442f-b73d-090cc9b57fd4",
+   "slug": "mary-j-blige-my-life-my-story-the-las-vegas-resi-ec18b5d6",
+   "title": "Mary J. Blige: My Life, My Story - The Las Vegas Residency",
+   "act": "Mary J. Blige",
+   "name": "Mary J. Blige",
+   "description": "American singer and actress (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Mary_J._Blige",
+   "extract": "Mary Jane Blige is an American singer, songwriter, actress, and entrepreneur. Often referred to by the honorifics \"Queen of Hip-Hop Soul\" and \"Queen of R&B\", her accolades include nine Grammy Awards, a Primetime Emmy Award, four American Music Awards, twelve NAACP Image Awards, and twelve Billboard Music Awards, including the Billboard Icon Award."
+  },
+  {
+   "id": "b217ab69-3cc2-490c-9605-3c50007bfeeb",
+   "slug": "earth-wind-and-fire-18f46a6f",
+   "title": "Earth, Wind & Fire",
+   "act": "Earth, Wind & Fire",
+   "name": "Earth, Wind & Fire",
+   "description": "American musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Earth%2C_Wind_%26_Fire",
+   "extract": "Earth, Wind & Fire is an American band formed in Chicago, Illinois, in 1969. Their music spans multiple genres, including jazz, R&B, soul, funk, disco, pop, Latin and Afro-pop. They are among the best-selling bands ever, with sales of over 90 million records worldwide."
+  }
+ ]
+}

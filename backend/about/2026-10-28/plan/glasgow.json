@@ -1,0 +1,246 @@
+{
+ "city": "glasgow",
+ "day": "2026-10-28",
+ "nights": [
+  {
+   "id": "8248c733-68ba-4560-94e0-811a65ff6172",
+   "slug": "static-dress-b6066256",
+   "title": "Static Dress",
+   "act": "Static Dress",
+   "name": "Static Dress",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+   "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+  },
+  {
+   "id": "96978b3a-45d2-4371-a923-f765de6f2c6f",
+   "slug": "basht-bc640d37",
+   "title": "Basht.",
+   "act": "Basht.",
+   "name": "Basht.",
+   "description": "Irish post-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Basht._(band)",
+   "extract": "Basht. [sic] are an Irish post-punk and alternative rock band formed in Dublin in 2021. The band consists of Jack Leavey, Lughaidh Armstrong-Mayock, Louis Christle (bass) and Ryan McClelland (drums)."
+  },
+  {
+   "id": "61bb52f3-4af1-446c-9dfb-74427947eccc",
+   "slug": "mt-jones-775aee18",
+   "title": "Mt Jones",
+   "act": "Mt Jones",
+   "name": "MT Jones",
+   "description": "English singer",
+   "source_url": "https://en.wikipedia.org/wiki/MT_Jones",
+   "extract": "\nMT Jones is an English singer from Liverpool. He appeared on Jo Whiley's \"Sofa Session\" in November 2025."
+  },
+  {
+   "id": "a801f835-f0fd-4312-bd7a-890bc1cb3cab",
+   "slug": "cancer-bats-66c2d8d0",
+   "title": "Cancer Bats",
+   "act": "Cancer Bats",
+   "name": "Cancer Bats",
+   "description": "Canadian hardcore punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Cancer_Bats",
+   "extract": "Cancer Bats is a Canadian hardcore punk band from Toronto, Ontario. To date, they have released eight studio albums and six extended plays; with their most recent LP, Give Me Dirt, having been released on August 7, 2026. The band is currently composed of lead vocalist Liam Cormier, bassist and backing vocalist Jaye R. Schwarzer and guitarist Jackson Landry. The members of Cancer Bats have also toured and recorded as a Black Sabbath tribute band under the name Bat Sabbath. Cormier is the only original member as of 2021."
+  },
+  {
+   "id": "9a322680-c9a7-4f61-ab08-dc0624fd8384",
+   "slug": "noahfinnce-830f2fbc",
+   "title": "NOAHFINNCE",
+   "act": "NOAHFINNCE",
+   "name": "Noahfinnce",
+   "description": "British singer-songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Noahfinnce",
+   "extract": "Noah Finn Adams, known professionally as Noahfinnce, is a British singer-songwriter and YouTuber."
+  },
+  {
+   "id": "b65191f5-e204-4dfa-a60e-e11ffb89d14d",
+   "slug": "deaf-havana-fools-and-worthless-liars-15th-anniv-e72534e5",
+   "title": "Deaf Havana - Fools and Worthless Liars 15th Anniversary Tour",
+   "act": "Deaf Havana",
+   "name": "Deaf Havana",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Deaf_Havana",
+   "extract": "Deaf Havana are an English alternative rock band from Hunstanton and King's Lynn, Norfolk, England. The band was formed in 2005 at the King's Lynn campus of The College of West Anglia."
+  },
+  {
+   "id": "8c71c836-9439-48c3-be56-5bd08d761bcc",
+   "slug": "paul-heaton-479530e5",
+   "title": "Paul Heaton",
+   "act": "Paul Heaton",
+   "name": "Paul Heaton",
+   "description": "British musician (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Paul_Heaton",
+   "extract": "Paul David Heaton is an English singer-songwriter. He was the lead singer and main lyricist of the Housemartins, who had commercial success in the UK and other European countries from 1985 to 1988, releasing several singles, including \"Happy Hour\" and the UK number one \"Caravan of Love\" in 1986, before the group disbanded. Heaton then formed the Beautiful South with the Housemartins' drummer, Dave Hemingway. The band's debut single, \"Song for Whoever\", and debut album, Welcome to the Beautiful South, were released in 1989 to commercial success. They had a series of hits throughout the 1990s, including the number-one single \"A Little Time\", and disbanded in 2007."
+  },
+  {
+   "id": "71758462-d7aa-4885-92d9-8f24d0b8b645",
+   "slug": "hue-and-cry-029cc14d",
+   "title": "Hue and Cry",
+   "act": "Hue and Cry",
+   "name": "Hue and Cry",
+   "description": "Scottish pop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Hue_and_Cry_(band)",
+   "extract": "Hue and Cry is a Scottish pop duo formed in 1983 in Coatbridge by the brothers Pat Kane and Greg Kane. The duo is best known for their 1987 single \"Labour of Love\"."
+  },
+  {
+   "id": "4c1b1ac8-2704-4bf0-acfe-7fe64ef74742",
+   "slug": "hayseed-dixie-2-show-ticket-b09d84ba",
+   "title": "Hayseed Dixie - 2 Show Ticket",
+   "act": "Hayseed Dixie",
+   "name": "Hayseed Dixie",
+   "description": "American bluegrass band",
+   "source_url": "https://en.wikipedia.org/wiki/Hayseed_Dixie",
+   "extract": "Hayseed Dixie is an American band formed in Nashville, Tennessee, in 2000. Their first album was A Hillbilly Tribute to AC/DC. The band performs bluegrass cover versions of hard rock songs and also original songs of a mostly satirical or absurdist nature in a self-created musical genre which the band calls \"rockgrass.\" The band's name is a linguistic play on the name of the band AC/DC."
+  },
+  {
+   "id": "b63191ce-ca35-4c61-9adf-46e23f5a9a5d",
+   "slug": "jack-savoretti-039401b5",
+   "title": "Jack Savoretti",
+   "act": "Jack Savoretti",
+   "name": "Jack Savoretti",
+   "description": "British-Italian singer and musician",
+   "source_url": "https://en.wikipedia.org/wiki/Jack_Savoretti",
+   "extract": "Giovanni Edgar Charles Galletto-Savoretti, known professionally as Jack Savoretti, is a British acoustic singer, songwriter, and musician. He has released eight studio albums to date: Between the Minds (2007), Harder Than Easy (2009), Before the Storm (2012), Written in Scars (2015), Sleep No More (2016), Singing to Strangers (2019), Europiana (2021) and Miss Italia (2024). Singing to Strangers became his first number-one album on the UK Albums Chart."
+  },
+  {
+   "id": "06f493a8-cb49-4113-aa5e-640773022fce",
+   "slug": "hayseed-dixie-killing-and-hell-8639ec75",
+   "title": "Hayseed Dixie - Killing & Hell",
+   "act": "Hayseed Dixie",
+   "name": "Hayseed Dixie",
+   "description": "American bluegrass band",
+   "source_url": "https://en.wikipedia.org/wiki/Hayseed_Dixie",
+   "extract": "Hayseed Dixie is an American band formed in Nashville, Tennessee, in 2000. Their first album was A Hillbilly Tribute to AC/DC. The band performs bluegrass cover versions of hard rock songs and also original songs of a mostly satirical or absurdist nature in a self-created musical genre which the band calls \"rockgrass.\" The band's name is a linguistic play on the name of the band AC/DC."
+  },
+  {
+   "id": "0979b2ad-5611-437a-ac42-46b10d59c158",
+   "slug": "hayseed-dixie-d552b83f",
+   "title": "Hayseed Dixie",
+   "act": "Hayseed Dixie",
+   "name": "Hayseed Dixie",
+   "description": "American bluegrass band",
+   "source_url": "https://en.wikipedia.org/wiki/Hayseed_Dixie",
+   "extract": "Hayseed Dixie is an American band formed in Nashville, Tennessee, in 2000. Their first album was A Hillbilly Tribute to AC/DC. The band performs bluegrass cover versions of hard rock songs and also original songs of a mostly satirical or absurdist nature in a self-created musical genre which the band calls \"rockgrass.\" The band's name is a linguistic play on the name of the band AC/DC."
+  },
+  {
+   "id": "c1ce9a6a-c78a-4842-b4a8-e886d82ad8e6",
+   "slug": "papa-roach-4a76f575",
+   "title": "Papa Roach",
+   "act": "Papa Roach",
+   "name": "Papa Roach",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Papa_Roach",
+   "extract": "Papa Roach is an American rock band from Vacaville, California, formed in 1993. After a few early shifts, the band initially stabilized in 1996 with the lineup of lead vocalist Jacoby Shaddix, drummer Dave Buckner, guitarist Jerry Horton, and bassist Tobin Esperance. This lineup remained consistent for slightly over a decade."
+  },
+  {
+   "id": "52f40b9b-4f25-48b3-bbfb-60174120e1a0",
+   "slug": "yaelokre-d07b8c2a",
+   "title": "Yaelokre",
+   "act": "Yaelokre",
+   "name": "Yaelokre",
+   "description": "Filipino-Icelandic singer-songwriter and multimedia artist",
+   "source_url": "https://en.wikipedia.org/wiki/Yaelokre",
+   "extract": "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist known for their folk music storytelling project under the stage name Yaelokre. Ósk began releasing music under the project name in early 2024, going viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart the same year."
+  },
+  {
+   "id": "80dcad6c-6761-446d-aaab-97805174ef21",
+   "slug": "overmono-pure-devotion-world-tour-02dade96",
+   "title": "Overmono - Pure Devotion- World Tour",
+   "act": "Overmono",
+   "name": "Overmono",
+   "description": "Welsh electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Overmono",
+   "extract": "Overmono is a Welsh electronic music duo consisting of the brothers Tom and Ed Russell."
+  },
+  {
+   "id": "9ba532ce-5d23-48f6-9467-4d6786fc062a",
+   "slug": "cody-johnson-794e9c66",
+   "title": "Cody Johnson",
+   "act": "Cody Johnson",
+   "name": "Cody Johnson",
+   "description": "American country singer (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Cody_Johnson",
+   "extract": "Cody Daniel Johnson is an American country music singer. He has self-released six albums, including Gotta Be Me, which debuted at number two on Billboard's Country Albums chart, before releasing his first major-label album, Ain't Nothin' to It, in January 2019. He released his second major-label album, Human: The Double Album, in October 2021. His style is classified as contemporary country and neotraditional country, drawing influences from artists like George Strait and Willie Nelson. His song \"'Til You Can't\" won two awards at the Country Music Association Awards in 2022. His album Leather won the CMA Album of the Year on November 20, 2024. He toured Australia in 2023 and 2025, with many shows selling out."
+  },
+  {
+   "id": "617e84ff-e60d-44a2-b783-ef120e053f5a",
+   "slug": "jalen-ngonda-4fcfe5b1",
+   "title": "Jalen Ngonda",
+   "act": "Jalen Ngonda",
+   "name": "Jalen Ngonda",
+   "description": "American soul musician",
+   "source_url": "https://en.wikipedia.org/wiki/Jalen_Ngonda",
+   "extract": "Jalen N'Gonda is an American musician based in England. He came to prominence with the release of his debut studio album Come Around and Love Me (2023), and is known for his Motown-inspired soul music. N'Gonda is primarily a singer, but also plays various instruments during live performances."
+  },
+  {
+   "id": "b44cdd37-b849-4feb-89e8-1ec35f502248",
+   "slug": "dizzee-rascal-we-want-bass-037b3b29",
+   "title": "Dizzee Rascal - We Want Bass",
+   "act": "Dizzee Rascal",
+   "name": "Dizzee Rascal",
+   "description": "British rapper (born 1984)",
+   "source_url": "https://en.wikipedia.org/wiki/Dizzee_Rascal",
+   "extract": "Dylan Kwabena Mills, known professionally as Dizzee Rascal, is a British rapper and MC. He is often credited as a pioneer of British hip hop and grime music and was ranked by Complex as one of the greatest British rappers of all time. His work has also incorporated elements of UK garage, bassline and R&B. Dizzee Rascal's music is also often credited with bringing UK rap into the mainstream and became the country's first rapper to achieve international recognition."
+  },
+  {
+   "id": "09ffe5db-cd15-4099-b827-077fc5bfebf6",
+   "slug": "swervedriver-4a92b01e",
+   "title": "Swervedriver",
+   "act": "Swervedriver",
+   "name": "Swervedriver",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Swervedriver",
+   "extract": "Swervedriver are an English alternative rock band formed in Oxford in 1989 around core members Adam Franklin and Jimmy Hartridge. Between 1989 and 1998, the band released four studio albums and numerous EPs and singles despite a considerable flux of members, managers, and record labels. By 1993 the band's lineup had settled with Franklin on vocals/guitar, Hartridge on guitar, Jez Hindmarsh on drums, and Steve George on bass. They had emerged with a heavier rock sound than their shoegaze contemporaries, and over the next five years it evolved to include elements of psychedelia, classic pop, and indie rock."
+  },
+  {
+   "id": "d74078e6-c3d6-4807-b790-a30d9c6439ac",
+   "slug": "swervedriver-35th-anniversary-of-raise-1f58ae40",
+   "title": "Swervedriver - 35th Anniversary of Raise",
+   "act": "Swervedriver",
+   "name": "Swervedriver",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Swervedriver",
+   "extract": "Swervedriver are an English alternative rock band formed in Oxford in 1989 around core members Adam Franklin and Jimmy Hartridge. Between 1989 and 1998, the band released four studio albums and numerous EPs and singles despite a considerable flux of members, managers, and record labels. By 1993 the band's lineup had settled with Franklin on vocals/guitar, Hartridge on guitar, Jez Hindmarsh on drums, and Steve George on bass. They had emerged with a heavier rock sound than their shoegaze contemporaries, and over the next five years it evolved to include elements of psychedelia, classic pop, and indie rock."
+  },
+  {
+   "id": "2aaa9e66-7020-4e89-b865-eef0ffbb45c0",
+   "slug": "nick-hakim-1243fb26",
+   "title": "Nick Hakim",
+   "act": "Nick Hakim",
+   "name": "Nick Hakim",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Nick_Hakim",
+   "extract": "Nicolas Hakim is an American musician based in Queens, New York, United States. His first EP, Where Will We Go Part 1 & 2, was self-released in 2014. He released three albums with ATO: Green Twins (2017), Will This Make Me Good (2020), and Cometa (2022)."
+  },
+  {
+   "id": "6ac7bead-d0fa-4645-b073-73611d0db108",
+   "slug": "the-shires-ec874b40",
+   "title": "The Shires",
+   "act": "The Shires",
+   "name": "The Shires",
+   "description": "British country music duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_Shires_(duo)",
+   "extract": "The Shires are a British country music duo composed of singer-songwriters Ben Earle and Crissie Rhodes. Earle sings harmony vocals, plays piano and guitar, and Rhodes is lead singer. The duo formed in 2013 and released their debut album Brave in 2015, becoming the first British country act to chart in the Top 10 of the UK Albums Chart. The group's second album, My Universe, became the fastest-selling British country album in history when it was released in October 2016."
+  },
+  {
+   "id": "be32ad26-1017-47e9-840d-68dc40f25391",
+   "slug": "the-home-team-b5d4ad5b",
+   "title": "The Home Team",
+   "act": "The Home Team",
+   "name": "The Home Team",
+   "description": "American Rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Home_Team",
+   "extract": "The Home Team is an American four-piece rock band from Seattle, Washington, formed in 2013 by Daniel Matson and John Baran. The band currently consists of vocalist Brian Butcher, bassist Ryne Olson, guitarist John Baran, and drummer Daniel Matson."
+  },
+  {
+   "id": "cb83e01d-b467-4dc9-88e3-d05fc52c568f",
+   "slug": "holy-fawn-3cbac921",
+   "title": "Holy Fawn",
+   "act": "Holy Fawn",
+   "name": "Holy Fawn",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Holy_Fawn",
+   "extract": "Holy Fawn is an American rock band from Phoenix, Arizona. The band currently consists of guitarist and vocalist Ryan Osterman, guitarist Evan Phelps, and bassist Alexander Rieth, who was part of the lineup until 2023 before returning in 2025. Drummer Austin Reinholz was a member until 2025. They have released two full-length studio albums and two extended plays."
+  }
+ ]
+}

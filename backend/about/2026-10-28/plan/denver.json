@@ -1,0 +1,196 @@
+{
+ "city": "denver",
+ "day": "2026-10-28",
+ "nights": [
+  {
+   "id": "e9be7dee-096b-49f8-8fbf-c3454ceee362",
+   "slug": "the-paradox-81f898e4",
+   "title": "The Paradox",
+   "act": "The Paradox",
+   "name": "The Paradox",
+   "description": "American pop punk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Paradox_(band)",
+   "extract": "The Paradox is an American pop-punk band from Atlanta, Georgia, formed in 2024. Its members are Eric Dangerfield, Donald Bryant (bass), Christopher \"Xelan\" Bernard, and Percy \"PC3\" Crews (drums). They are the first all-black punk band to be number 1 on Billboard's Alternative Airplay chart."
+  },
+  {
+   "id": "229ca544-76a8-4b86-99d8-b3c8d412d5e4",
+   "slug": "the-smashing-pumpkins-the-rats-in-a-cage-tour-8587ebe4",
+   "title": "The Smashing Pumpkins: The Rats In A Cage Tour",
+   "act": "The Smashing Pumpkins",
+   "name": "The Smashing Pumpkins",
+   "description": "American alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Smashing_Pumpkins",
+   "extract": "The Smashing Pumpkins is an American alternative rock band formed in Chicago in 1988 by lead vocalist and guitarist Billy Corgan, guitarist James Iha, bassist D'arcy Wretzky, and drummer Jimmy Chamberlin. The band has undergone several line-up changes since their reunion in 2006, with Corgan being the primary songwriter and sole constant member since its inception. The current lineup consists of Corgan, Iha, and Chamberlin. The band is known for its diverse, densely layered sound, which evolved throughout their career and has integrated elements of gothic rock, heavy metal, grunge, psychedelic rock, progressive rock, shoegaze, dream pop, and electronica."
+  },
+  {
+   "id": "b32559f8-2411-4258-b836-cdb0079605fe",
+   "slug": "six60-2d833d15",
+   "title": "SIX60",
+   "act": "SIX60",
+   "name": "Six60",
+   "description": "New Zealand rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Six60",
+   "extract": "Six60 is a New Zealand pop rock band formed in Dunedin, Otago in 2008. The band consists of Matiu Walters, Ji Fraser, Chris Mac, and Marlon Gerbes."
+  },
+  {
+   "id": "cc65ed89-964e-4b72-ba0d-3fab0b7503bc",
+   "slug": "new-constellations-in-comes-waves-tour-6936a07f",
+   "title": "New Constellations: In Comes Waves Tour",
+   "act": "New Constellations",
+   "name": "New Constellations",
+   "description": "American dream pop band",
+   "source_url": "https://en.wikipedia.org/wiki/New_Constellations",
+   "extract": "New Constellations is an American dream pop and synthwave duo based out of Portland, Oregon."
+  },
+  {
+   "id": "09cb9797-4eca-47fd-a5c6-df115878e387",
+   "slug": "dan-shay-the-young-tour-185e2332",
+   "title": "Dan + Shay: The Young Tour",
+   "act": "Dan + Shay",
+   "name": "Dan + Shay",
+   "description": "American country duo",
+   "source_url": "https://en.wikipedia.org/wiki/Dan_%2B_Shay",
+   "extract": "Dan + Shay is an American country music duo composed of vocalists and songwriters Dan Smyers and Shay Mooney. They are signed to Warner Records Nashville and have released six albums, Where It All Began, Obsessed, Dan + Shay, Good Things, Bigger Houses and It's Officially Christmas: The Double Album. Of their nine singles, five have topped the Country Airplay chart and three have topped the Hot Country Songs chart. The duo have collaborated with Justin Bieber, Charlie Puth, Rascal Flatts, Lindsey Stirling, RaeLynn, and Kelly Clarkson. From 2019 to 2021, the duo won three consecutive Grammy Awards for Best Country Duo/Group Performance for the songs \"Tequila\", \"Speechless\", and \"10,000 Hours\"."
+  },
+  {
+   "id": "0287354b-7743-4733-bcf2-fd0dbdca1ad3",
+   "slug": "waterparks-the-almost-no-barricade-tour-f28b118d",
+   "title": "Waterparks: The (Almost) No Barricade Tour",
+   "act": "Waterparks",
+   "name": "Waterparks",
+   "description": "American pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Waterparks_(band)",
+   "extract": "Waterparks is an American pop rock band formed in Houston, Texas in 2011. The group currently consists of lead vocalist and rhythm guitarist Awsten Knight, backing vocalist and lead guitarist Geoff Wigington, and backing vocalist and drummer Otto Wood."
+  },
+  {
+   "id": "8d81e9cb-5530-4ff0-8a5e-826193eacade",
+   "slug": "icon-for-hire-ee6cc041",
+   "title": "Icon for Hire",
+   "act": "Icon for Hire",
+   "name": "Icon for Hire",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Icon_for_Hire",
+   "extract": "Icon for Hire is an American rock band from Decatur, Illinois. Formed in 2007, the band's current lineup consists of singer Ariel Bloomer and lead guitarist Shawn Jump. They released two EPs independently before signing to Tooth & Nail Records, through which they released their first two albums: Scripted in 2011 and Icon for Hire on October 15, 2013. Their third album, You Can't Kill Us, was independently released on November 25, 2016. Their fourth album, Amorphous, was released on February 19, 2021, also independently. Their fifth independent studio album, The Reckoning, was released on September 30, 2022."
+  },
+  {
+   "id": "7dcc75da-8a57-44a3-a8fd-7bb5a9d6b484",
+   "slug": "greg-freeman-061631f0",
+   "title": "Greg Freeman",
+   "act": "Greg Freeman",
+   "name": "Greg Freeman",
+   "description": "American country musician",
+   "source_url": "https://en.wikipedia.org/wiki/Greg_Freeman_(musician)",
+   "extract": "Greg Freeman is an American alternative country musician based in Burlington, Vermont. Freeman was raised in Bethesda, Maryland. Freeman released his debut studio album in 2022 titled I Looked Out, through the record label Bud Tapes. After the album slowly gained attention, it was reissued in 2024 through Transgressive Records imprint Canvasback Music. Freeman announced his second full-length album in April 2025 titled Burnover. The album was released on August 22, 2025. Freeman's third full length album, All Set The Bone, was released on October 2, 2026"
+  },
+  {
+   "id": "ef02600a-3e15-4dbd-963a-fda9d2115101",
+   "slug": "george-clanton-9ffaa8ef",
+   "title": "George Clanton",
+   "act": "George Clanton",
+   "name": "George Clanton",
+   "description": "American musician (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/George_Clanton",
+   "extract": "George Wayland Clanton Jr., also known by the monikers Mirror Kisses, ESPRIT 空想, CHINA, and Kid's Garden, is an American electronic musician and singer-songwriter that emerged from the vaporwave music scene in the early 2010s. He established his independent record label 100% Electronica in 2015, and in 2019 launched the first vaporwave music festival, 100% ElectroniCON."
+  },
+  {
+   "id": "5691bb55-802a-4cab-ad59-c88bd10416b6",
+   "slug": "aaron-watson-45cf46e1",
+   "title": "Aaron Watson",
+   "act": "Aaron Watson",
+   "name": "Aaron Watson",
+   "description": "American singer (born 1977)",
+   "source_url": "https://en.wikipedia.org/wiki/Aaron_Watson",
+   "extract": "James Aaron Watson is an American country music singer and songwriter. Active since 1999, Watson has recorded several independent albums in his career. His 2015 album The Underdog reached No. 1 on Top Country Albums that year, and in 2017, Watson had his first major radio airplay hit with \"Outta Style\", which reached top 10 on Country Airplay."
+  },
+  {
+   "id": "b19910ee-b3ad-4751-a785-6459c5488c16",
+   "slug": "andrew-rayel-3159cea2",
+   "title": "Andrew Rayel",
+   "act": "Andrew Rayel",
+   "name": "Andrew Rayel",
+   "description": "Moldovan DJ",
+   "source_url": "https://en.wikipedia.org/wiki/Andrew_Rayel",
+   "extract": "Andrei Rață, better known by his stage name Andrew Rayel, is a Moldovan producer and DJ. Initially releasing his music on Armada Music, Rayel founded the label \"inHarmony Music\" on 22 September 2017, where his role is label chief and head of A&R."
+  },
+  {
+   "id": "82e3e9e9-5162-49dd-bb2f-988edd099a44",
+   "slug": "she-s-green-443786e3",
+   "title": "she's green",
+   "act": "she's green",
+   "name": "She's Green",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/She's_Green",
+   "extract": "She's Green is an American indie rock band originating from Minneapolis, Minnesota. The band, which began performing in 2022, consists of vocalist Zofia Smith, guitarists Liam Armstrong and Raines Lucas, bassist Teddy Nordvold, and drummer Kevin Seebeck."
+  },
+  {
+   "id": "a5848278-e4ef-4226-be8d-0591693db676",
+   "slug": "mall-grab-923d332a",
+   "title": "Mall Grab",
+   "act": "Mall Grab",
+   "name": "Mall Grab",
+   "description": "Australian DJ and producer (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Mall_Grab",
+   "extract": "Jordon Alexander, known professionally as Mall Grab, is an Australian DJ and producer of house and techno music."
+  },
+  {
+   "id": "6998464f-5cf4-4fdf-bafb-501f276e556f",
+   "slug": "teddy-swims-the-ugly-tour-bb6c3992",
+   "title": "Teddy Swims: The UGLY Tour",
+   "act": "Teddy Swims",
+   "name": "Teddy Swims",
+   "description": "American singer and songwriter (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Teddy_Swims",
+   "extract": "Jaten Collin Dimsdale, known professionally as Teddy Swims, is an American singer and songwriter. Known for creating genre-blending music that includes elements of R&B, soul, hip-hop, and contemporary pop, Swims originally began to attract fans by posting song covers on YouTube during 2019 and 2020. Swims' third extended play, Tough Love (2022), became his first entry on the Billboard 200."
+  },
+  {
+   "id": "9704d0b5-72cc-477c-9486-4c42f420be4f",
+   "slug": "mon-laferte-femme-fatale-tour-dbe3f3df",
+   "title": "Mon Laferte - Femme Fatale Tour",
+   "act": "Mon Laferte",
+   "name": "Mon Laferte",
+   "description": "Chilean-Mexican singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Mon_Laferte",
+   "extract": "Norma Monserrat Bustamante Laferte, known professionally as Mon Laferte, is a Chilean and Mexican singer-songwriter. Recognized for her versatility, her musical style spans a wide array of genres, including pop, alternative, bolero, cumbia, and salsa. She rose to international prominence in the 2010s, particularly for her melodramatic vocals and theatrical stage presence. In 2025, Billboard named her one of the greatest female Latin pop artists of all time."
+  },
+  {
+   "id": "80876d7a-6d5a-4985-8f96-688627070789",
+   "slug": "brand-new-7a1bb589",
+   "title": "Brand New",
+   "act": "Brand New",
+   "name": "Brand New",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Brand_New_(band)",
+   "extract": "Brand New is an American rock band formed in 2000 from Long Island, New York. Consisting of lead vocalist and rhythm guitarist Jesse Lacey, lead guitarist Vincent Accardi, bassist Garrett Tierney and drummer Brian Lane, the band earned critical recognition as one of the most influential emo bands, and was acclaimed for their musical development and artistic innovation compared to other groups in the scene from which they originated."
+  },
+  {
+   "id": "4e72ffeb-03ea-4931-9e12-5b21c18b0bb6",
+   "slug": "quadeca-2ef7a9ec",
+   "title": "Quadeca",
+   "act": "Quadeca",
+   "name": "Quadeca",
+   "description": "American musician, producer, and YouTuber (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Quadeca",
+   "extract": "Benjamin Fernando Barajas Lasky, better known by his stage name Quadeca, is an American singer-songwriter, record producer and rapper. Lasky began uploading songs and videos to his YouTube channel in the 2010s and began pursuing his musical career in the 2020s, which has since been met with critical acclaim."
+  },
+  {
+   "id": "ec063b3e-e958-4eb4-9616-f0e3420b12d3",
+   "slug": "ax-and-the-hatchetmen-the-late-checkout-tour-202-2d0baa36",
+   "title": "Ax and the Hatchetmen: The Late Checkout Tour 2026",
+   "act": "Ax and the Hatchetmen",
+   "name": "Ax and the Hatchetmen",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/Ax_and_the_Hatchetmen",
+   "extract": "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018. Members of the group include Axel Ellis, Salvatore Defilippis (vocals/guitar), Hunter Olshefke (vocals/bass), Phil Pistone (trumpet), Quinn Dolan (saxophone), and Chaandmon Croft (drums). They are signed with Arista Records and their first album, So Much to Tell You, was released October 24, 2025 with a tour of the same name."
+  },
+  {
+   "id": "a1cbf058-a644-4a48-8054-62b50e80f582",
+   "slug": "pj-morton-saturday-night-sunday-morning-tour-871461df",
+   "title": "PJ Morton - Saturday Night Sunday Morning Tour",
+   "act": "PJ Morton",
+   "name": "PJ Morton",
+   "description": "American musician (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/PJ_Morton",
+   "extract": "Paul Sylvester \"P.J.\" Morton Jr. is an American musician, singer, songwriter and record producer. In 2010, he joined pop rock band Maroon 5, as a touring member and became an official member after Jesse Carmichael went on a brief hiatus in 2012. During this period, Morton signed with Young Money to release his debut major-label studio album, New Orleans (2013), and later self-released Gumbo, which earned him two Grammy Award nominations for Best R&B Album and Best R&B Song at the 60th Annual Grammy Awards. Since then he has received six Grammy Awards."
+  }
+ ]
+}

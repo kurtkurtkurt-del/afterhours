@@ -1,0 +1,126 @@
+{
+ "city": "toronto",
+ "day": "2026-10-28",
+ "nights": [
+  {
+   "id": "93b18167-c604-4de1-96b5-c82e01f69c2a",
+   "slug": "the-story-so-far-ceb4cab9",
+   "title": "The Story So Far",
+   "act": "The Story So Far",
+   "name": "The Story So Far",
+   "description": "American pop-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Story_So_Far_(band)",
+   "extract": "The Story So Far is an American pop-punk band from Walnut Creek, California, formed in 2007. They are signed to Pure Noise Records and have released five studio albums."
+  },
+  {
+   "id": "27f4cf16-f18b-4437-a48b-9ea4dbd98622",
+   "slug": "waylon-wyatt-dustpiles-world-tour-8ce4f055",
+   "title": "Waylon Wyatt - Dustpiles World Tour",
+   "act": "Waylon Wyatt",
+   "name": "Waylon Wyatt",
+   "description": "American country music singer",
+   "source_url": "https://en.wikipedia.org/wiki/Waylon_Wyatt",
+   "extract": "Waylon Wyatt Potter is an American country music singer-songwriter, musician, and producer from Hackett, Arkansas. He garnered popularity when his first song \"Everything Under the Sun\" became viral on TikTok. He is signed to Darkroom Records and has released two extended plays with the label. His debut album, Dustpiles, was released in July 2026."
+  },
+  {
+   "id": "e19ef3e9-b517-44b4-916d-01673b4a900d",
+   "slug": "she-wants-revenge-c7ed8037",
+   "title": "She Wants Revenge",
+   "act": "She Wants Revenge",
+   "name": "She Wants Revenge",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/She_Wants_Revenge",
+   "extract": "She Wants Revenge is an American rock band, based in San Fernando Valley, California. Formed in 2004, the band is a duo of singer and guitarist Justin Warfield and multi-instrumentalist Adam Bravin. Their music has been influenced by post-punk, darkwave and gothic rock. The band has sold more than 300,000 records in the US."
+  },
+  {
+   "id": "c452063b-ef16-43c7-a471-28553e7177be",
+   "slug": "kwn-wn-night-only-94826395",
+   "title": "kwn: wn night only",
+   "act": "kwn",
+   "name": "Kwn",
+   "description": "British rapper and singer-songwriter (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Kwn",
+   "extract": "Khyra Wilson or K. Wilson, known professionally as kwn and formerly k1, is a British singer, songwriter, rapper, and producer. She is best known for her 2024 single \"Worst Behaviour\", which entered the UK singles chart, while its remix entered the US Hot R&B/Hip-Hop Songs chart."
+  },
+  {
+   "id": "d964a117-4913-47f4-a0b4-4d83017348b6",
+   "slug": "l7-the-last-hurrah-tour-2026-5e0b2eee",
+   "title": "L7: The Last Hurrah Tour 2026",
+   "act": "L7",
+   "name": "L7",
+   "description": "American punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/L7_(band)",
+   "extract": "L7 is an American punk rock band founded in Los Angeles, California, first active from 1985 to 2001 and re-formed in 2014. The group currently consists of Suzi Gardner, Donita Sparks, Dee Plakas and Janis Tanaka. L7 has released seven studio albums and has toured widely in the United States, Europe, Japan, Australia, and South America. \"Pretend We're Dead\" was heavily played on United States alternative radio and entered the top 10 on the Billboard Modern Rock chart in 1992."
+  },
+  {
+   "id": "04752208-e6eb-4427-8cd6-a5aea67b70d1",
+   "slug": "lennon-stella-8509ce19",
+   "title": "Lennon Stella",
+   "act": "Lennon Stella",
+   "name": "Lennon Stella",
+   "description": "Canadian singer and actress (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Lennon_Stella",
+   "extract": "Lennon Ray Louise Stella is a Canadian singer and actress. She portrayed Maddie Conrad on the musical-drama series Nashville (2012–2018). Before going solo in 2018, Stella performed with her sister as the duo Lennon & Maisy. Stella released her debut EP, Love, Me, in 2018. She released her debut studio album in 2020."
+  },
+  {
+   "id": "ab4de482-58e5-46cb-88f8-a3b969979905",
+   "slug": "rainao-d36efdbb",
+   "title": "RaiNao",
+   "act": "RaiNao",
+   "name": "RaiNao",
+   "description": "Puerto Rican singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/RaiNao",
+   "extract": "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter. Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop, shaped by her background in music theory and live performance. She got signed to Rimas Entertainment in 2024."
+  },
+  {
+   "id": "09c71a9b-ae86-43ff-abdd-e64f20c3f124",
+   "slug": "faraj-suleiman-c191ef6d",
+   "title": "Faraj Suleiman",
+   "act": "Faraj Suleiman",
+   "name": "Faraj Suleiman",
+   "description": "Palestinian musician (born 1984)",
+   "source_url": "https://en.wikipedia.org/wiki/Faraj_Suleiman",
+   "extract": "Faraj Suleiman is a Palestinian musician. Born in Rameh and based in Haifa, he is known for his fusion of jazz with traditional Palestinian and Arabic sounds."
+  },
+  {
+   "id": "79fafa23-beec-4322-ad85-60fdbeeaa03e",
+   "slug": "the-wrecks-finally-outside-tour-2b40cb64",
+   "title": "The Wrecks - Finally : OUTSIDE Tour",
+   "act": "The Wrecks",
+   "name": "The Wrecks",
+   "description": "American pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Wrecks",
+   "extract": "The Wrecks are an American pop rock band based in Los Angeles, California. The band is currently made up of Nick Anderson, Nick \"Schmizz\" Schmidt, and Aaron Kelley. The group's first single \"Favorite Liar,\" released in 2016, was an instant success. However, their following increased exponentially after their debut album Infinitely Ordinary, featuring single \"Fvck Somebody,\" released in 2020."
+  },
+  {
+   "id": "b7f1839a-cbff-4510-8287-3218e7b03ee1",
+   "slug": "kettama-fa5ec64f",
+   "title": "KETTAMA",
+   "act": "KETTAMA",
+   "name": "Kettama",
+   "description": "Irish musician and producer",
+   "source_url": "https://en.wikipedia.org/wiki/Kettama",
+   "extract": "Evan Campbell, known professionally as Kettama, is an Irish electronic music producer and DJ."
+  },
+  {
+   "id": "f9dbfc21-4406-4e33-bedc-e0ec3a5bcb49",
+   "slug": "cosmic-gate-e71139f7",
+   "title": "COSMIC GATE",
+   "act": "COSMIC GATE",
+   "name": "Cosmic Gate",
+   "description": "German DJ duo",
+   "source_url": "https://en.wikipedia.org/wiki/Cosmic_Gate",
+   "extract": "Cosmic Gate is a German DJ artist consisting of trance music producer Claus Terhoeven and formerly Stefan Bossems. Both hail from Krefeld, Germany."
+  },
+  {
+   "id": "446e2aaf-3c8d-4731-a0a9-92ee5fdc9a3c",
+   "slug": "blue-october-foiled-20th-anniversary-world-tour-33d125bd",
+   "title": "Blue October: Foiled 20th Anniversary World Tour",
+   "act": "Blue October",
+   "name": "Blue October",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Blue_October",
+   "extract": "Blue October is an American rock band originally from Houston, Texas, formed in 1995. It currently consists of singer/guitarist Justin Furstenfeld, drummer Jeremy Furstenfeld, multi-instrumentalist Ryan Delahoussaye, bassist Matt Noveskey, and lead guitarist Will Knaak."
+  }
+ ]
+}

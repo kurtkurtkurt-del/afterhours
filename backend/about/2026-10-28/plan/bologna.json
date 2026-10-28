@@ -1,0 +1,16 @@
+{
+ "city": "bologna",
+ "day": "2026-10-28",
+ "nights": [
+  {
+   "id": "f06a56f6-efa0-42c5-a9eb-ddb064fc69d0",
+   "slug": "willie-peyote-club-tour-2026-3b3c6bd2",
+   "title": "Willie Peyote - Club Tour 2026",
+   "act": "Willie Peyote",
+   "name": "Willie Peyote",
+   "description": "Italian rapper and singer-songwriter (born 1985)",
+   "source_url": "https://en.wikipedia.org/wiki/Willie_Peyote",
+   "extract": "Guglielmo Bruno, known professionally as Willie Peyote, is an Italian rapper and singer-songwriter. His stage name is a pun on the cartoon character Wile E. Coyote and the entheogenic cactus peyote, along with the English version of his name Guglielmo."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "city": "london",
+ "day": "2026-10-28",
+ "nights": [
+  {
+   "id": "72d221ac-d9e8-4f96-8805-817112e059e6",
+   "slug": "steven-wilson-c425537f",
+   "title": "Steven Wilson",
+   "act": "Steven Wilson",
+   "name": "Steven Wilson",
+   "description": "English musician (born 1967)",
+   "source_url": "https://en.wikipedia.org/wiki/Steven_Wilson",
+   "extract": "Steven John Wilson is an English musician, composer and multi-instrumentalist. He is the founder, guitarist, lead vocalist, and songwriter of the progressive rock band Porcupine Tree, as well as being a member of several other bands, including Blackfield, Storm Corrosion and No-Man. He has also released eight albums as a solo artist since 2008. In a career spanning more than 30 years, Wilson has made music prolifically and earned critical acclaim. His honours include six nominations for Grammy Awards: twice with Porcupine Tree, once with his collaborative band Storm Corrosion and three times as a solo artist. In 2017, The Daily Telegraph described him as \"a resolutely independent artist\" and \"probably the most successful British artist you've never heard of\"."
+  },
+  {
+   "id": "89063cf0-599c-4c34-88c7-a903bb277626",
+   "slug": "nimino-5f5026b5",
+   "title": "nimino",
+   "act": "nimino",
+   "name": "Nimino",
+   "description": "British musician and DJ",
+   "source_url": "https://en.wikipedia.org/wiki/Nimino",
+   "extract": "Nimino, born Milo Evans, is a British producer and DJ. Nimino's music sits in the intersection of house, hip hop, and garage music."
+  },
+  {
+   "id": "ef35a07f-810c-4164-989b-bd4b429d4b0c",
+   "slug": "jalen-ngonda-f05bd76f",
+   "title": "Jalen Ngonda",
+   "act": "Jalen Ngonda",
+   "name": "Jalen Ngonda",
+   "description": "American soul musician",
+   "source_url": "https://en.wikipedia.org/wiki/Jalen_Ngonda",
+   "extract": "Jalen N'Gonda is an American musician based in England. He came to prominence with the release of his debut studio album Come Around and Love Me (2023), and is known for his Motown-inspired soul music. N'Gonda is primarily a singer, but also plays various instruments during live performances."
+  },
+  {
+   "id": "e8990132-b6f2-4657-aafa-7b4515cf20d4",
+   "slug": "the-proclaimers-7a743d8e",
+   "title": "The Proclaimers",
+   "act": "The Proclaimers",
+   "name": "The Proclaimers",
+   "description": "Scottish musical group",
+   "source_url": "https://en.wikipedia.org/wiki/The_Proclaimers",
+   "extract": "The Proclaimers are a Scottish rock duo formed in 1983 by the twin brothers Craig and Charlie Reid. They came to attention with their 1987 single \"Letter from America\", which reached No. 3 in the United Kingdom, and the 1988 single \"I'm Gonna Be \", which topped the charts in Australia, Iceland and New Zealand. The duo's biggest album, Sunshine on Leith (1988) has been certified multi-Platinum in Australia and Canada, selling over two million copies worldwide, including around 700,000 in the United States. The Proclaimers have sold over five million albums worldwide."
+  }
+ ]
+}

@@ -1,0 +1,126 @@
+{
+ "city": "miami",
+ "day": "2026-10-28",
+ "nights": [
+  {
+   "id": "e0bafff1-eb79-4ed9-891a-b5a9e04438f2",
+   "slug": "young-miko-late-checkout-tour-035c8342",
+   "title": "Young Miko - Late Checkout Tour",
+   "act": "Young Miko",
+   "name": "Young Miko",
+   "description": "Puerto Rican rapper (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Young_Miko",
+   "extract": "María Victoria Ramírez de Arellano Cardona, known professionally as Young Miko, is a Puerto Rican rapper, singer, songwriter and former footballer. In 2022, she released her debut extended play, Trap Kitty, featuring Latin trap tracks. In April 2024, she released her debut studio album, Att., featuring collaborations with Feid, Jowell & Randy, Villano Antillano, Elena Rose, and Dei V. In November 2025, she released her second studio album, Do Not Disturb, which featured a collaboration with Eladio Carrión."
+  },
+  {
+   "id": "7a5b7548-dd40-4e79-b584-34b2c89d2e28",
+   "slug": "amtrac-2a43847c",
+   "title": "Amtrac",
+   "act": "Amtrac",
+   "name": "Amtrac",
+   "description": "American DJ and electronic music producer (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Amtrac_(musician)",
+   "extract": "Caleb Cornett, known professionally as Amtrac, is an American DJ, electronic music producer, singer, multi-instrumentalist, and songwriter."
+  },
+  {
+   "id": "17c2abf8-7d23-4277-95c7-d2f539f49284",
+   "slug": "doja-cat-tour-ma-vie-world-tour-f2e5c319",
+   "title": "Doja Cat - Tour Ma Vie World Tour",
+   "act": "Doja Cat",
+   "name": "Doja Cat",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Doja_Cat",
+   "extract": "Amala Ratna Zandile Dlamini, known professionally as Doja Cat, is an American rapper and singer-songwriter. Regarded as the \"Queen of Pop-Rap\", she is known for her musical versatility, live performance skills and humorous internet presence. Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\", and Time listed her as one of the world's most influential people in 2023."
+  },
+  {
+   "id": "a42c4b8c-2140-456b-b0ef-1f0986411a2d",
+   "slug": "the-neighbourhood-the-wourld-tour-6c575178",
+   "title": "The Neighbourhood: THE WOURLD TOUR",
+   "act": "The Neighbourhood",
+   "name": "The Neighbourhood",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Neighbourhood",
+   "extract": "The Neighbourhood is an American alternative rock band formed in Newbury Park, California, in 2011. The band consists of vocalist Jesse Rutherford, guitarists Jeremy Fredman and Zach Abels, bassist Mikey Margott and drummer Brandon Fried. After releasing two EPs, I'm Sorry... and Thank You, The Neighbourhood signed with Columbia Records to release their debut studio album, I Love You. in 2013. \"Sweater Weather\", the album's third single, became the only song from the project on the Billboard Hot 100, peaking at number 14, and resurged in popularity nearly a decade later on radio airplay and Spotify. Other notable hits from the band include \"Afraid\", \"Daddy Issues\", \"Baby Come Home 2/Valentines\", \"Softcore\", \"You Get Me So High\", \"Reflections\" and \"The Beach\"."
+  },
+  {
+   "id": "e322d591-cfbe-4394-ac77-7bf5ff58a0ee",
+   "slug": "christian-loffler-7195f504",
+   "title": "Christian Loffler",
+   "act": "Christian Loffler",
+   "name": "Christian Löffler",
+   "description": "German electronic musician",
+   "source_url": "https://en.wikipedia.org/wiki/Christian_L%C3%B6ffler",
+   "extract": "Christian Löffler is a German musician who plays a mix of techno, deep house, ambient, and electronic. As of 2026, he has released six studio albums."
+  },
+  {
+   "id": "55459039-a5c9-4d86-9671-f136c568a8f6",
+   "slug": "odesza-ages-18-cbd0a835",
+   "title": "Odesza - Ages 18+",
+   "act": "Odesza",
+   "name": "Odesza",
+   "description": "American electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Odesza",
+   "extract": "Odesza is an American electronic music duo originating from Bellingham, Washington. It consists of Harrison Mills and Clayton Knight, known individually as Catacombkid and BeachesBeaches. They formed in 2012, shortly before Mills and Knight graduated from Western Washington University."
+  },
+  {
+   "id": "f22a694b-f9ff-4212-9cb4-f23e19af2a0e",
+   "slug": "pain-of-truth-d1d92729",
+   "title": "PAIN OF TRUTH",
+   "act": "PAIN OF TRUTH",
+   "name": "Pain of Truth",
+   "description": "American hardcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Pain_of_Truth",
+   "extract": "Pain of Truth are an American hardcore punk band formed on Long Island, New York in 2020. As of 2024, they have released one demo, two split EPs, and two studio albums."
+  },
+  {
+   "id": "28410eae-b51e-4b03-b798-7936beceb6da",
+   "slug": "john-summit-ctrl-escape-arena-tour-440e0516",
+   "title": "JOHN SUMMIT - CTRL ESCAPE ARENA TOUR",
+   "act": "JOHN SUMMIT",
+   "name": "John Summit",
+   "description": "American DJ and record producer (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/John_Summit",
+   "extract": "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label. His music includes original tracks and remixes, primarily focused in the genre of tech house."
+  },
+  {
+   "id": "6e76183a-b772-498f-99d8-bc1dea6b0ad4",
+   "slug": "donny-benet-9cf027fb",
+   "title": "Donny Benet",
+   "act": "Donny Benet",
+   "name": "Donny Benét",
+   "description": "Australian musician",
+   "source_url": "https://en.wikipedia.org/wiki/Donny_Ben%C3%A9t",
+   "extract": "Donny Benét is an Australian recording artist, based in Sydney. In 2011, he released his debut studio album Don't Hold Back through indie label Rice is Nice. His fifth studio album, Mr Experience, reached #26 on the ARIA Charts in May 2020."
+  },
+  {
+   "id": "945fbcf8-a917-4e1f-871c-8d855239caca",
+   "slug": "la-mafia-epic-tour-46-f8b696d0",
+   "title": "LA MAFIA - EPIC TOUR 46",
+   "act": "LA MAFIA",
+   "name": "La Mafia",
+   "description": "American musical group",
+   "source_url": "https://en.wikipedia.org/wiki/La_Mafia",
+   "extract": "La Mafia is an American five-time Grammy Award-winning musical group. It has its roots in the Northside neighborhood of Houston, Texas, and has charted a course as a Latin music band."
+  },
+  {
+   "id": "f00ba33f-6362-4062-b1a6-31163ca63855",
+   "slug": "rawayana-donde-es-el-after-world-tour-99382156",
+   "title": "RAWAYANA - ¿Dónde es el after? World Tour",
+   "act": "RAWAYANA",
+   "name": "Rawayana",
+   "description": "Venezuelan musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Rawayana",
+   "extract": "Rawayana is a Venezuelan band formed in Caracas in 2007. The group's music combines a variety of musical genres including reggae, psychedelic, electronic, funk and salsa, and the members describe their style as \"trippy pop\". The band consists of Alberto \"Beto\" Montenegro, Antonio \"Tony\" Casas, Andrés \"Fofo\" Story and Alejandro \"Abeja\" Abeijón."
+  },
+  {
+   "id": "809079fe-8e6e-4b41-9c31-8b3ac099d243",
+   "slug": "gente-de-zona-isla-viva-tour-e543626b",
+   "title": "Gente De Zona - Isla Viva Tour",
+   "act": "Gente De Zona",
+   "name": "Gente de Zona",
+   "description": "Cuban reggaeton band",
+   "source_url": "https://en.wikipedia.org/wiki/Gente_de_Zona",
+   "extract": "Gente de Zona is a Cuban reggaeton duo made up of musicians Alexander Delgado and Randy Malcom Martínez. In 2014, the duo gained success with the song \"Bailando\" with Enrique Iglesias. This hit gave the duo numerous prestigious awards including the Latin Grammy and Latin Billboard Award. The duo was known for its Cubatón hits before succeeding on the international stage with major hits and collaborations that infused \"tropical\" rhythms to mainstream pop and urban music. \"Bailando\" became the first Spanish language song to get 1 billion views on YouTube and their song \"La Gozadera\" has been described by many as \"Latin America's official hymn.\""
+  }
+ ]
+}
