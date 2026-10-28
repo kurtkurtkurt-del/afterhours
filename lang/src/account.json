@@ -217,6 +217,8 @@
   "profile.path.note": { "en": "{name} can introduce you. Nothing on this page is a message; that still has to happen in a room.", "de": "{name} kann euch bekannt machen. nichts auf dieser seite ist eine nachricht; das muss immer noch in einem raum passieren.", "tr": "{name} sizi tanıştırabilir. bu sayfadaki hiçbir şey mesaj değil; o hâlâ bir odada olmak zorunda." },
   "profile.kept": { "en": "kept · {n}", "de": "behalten · {n}", "tr": "sakladıkları · {n}" },
   "profile.kept.none": { "en": "nothing kept yet. it starts with the first night kept.", "de": "noch nichts behalten. es beginnt mit der ersten behaltenen nacht.", "tr": "henüz saklanan yok. saklanan ilk geceyle başlar." },
+  "profile.kept.friends": { "en": "what {name} kept is shown to their friends only.", "de": "was {name} behalten hat, sehen nur freund:innen.", "tr": "{name} neler sakladı, yalnız arkadaşları görür." },
+  "profile.kept.private": { "en": "{name} keeps what they kept to themselves.", "de": "{name} behält für sich, was behalten wurde.", "tr": "{name} sakladıklarını kendine saklıyor." },
   "profile.frame.empty": { "en": "not shot yet", "de": "noch nicht belichtet", "tr": "henüz çekilmedi" },
   "profile.frame.next": { "en": "the next one", "de": "die nächste", "tr": "sıradaki" },
   "profile.frame.door": { "en": "fills at the door", "de": "füllt sich an der tür", "tr": "kapıda dolar" },

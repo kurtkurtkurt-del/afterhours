@@ -487,8 +487,8 @@ with the backend off):
 
 | call | what it answers |
 |---|---|
-| `event_people(slug)` | everybody who kept the night, each with the path back to the caller: degree 1 a friend, 2 a friend of a friend (`via`), 3 one further (`via`, `via2`), 0 no path — signed out, everybody is 0 |
-| `profile_kept(handle)` | the nights one person kept, newest first |
+| `event_people(slug)` | since 105: only the caller's confirmed friends who kept the night (not private, no block, no ban), so degree is always 1 and `via` null; signed out it cannot be called |
+| `profile_kept(handle)` | the nights one person kept, newest first — since 105 only to the person and their confirmed friends (kept not private, no block, no ban on either side); signed out it cannot be called |
 | `friends_of(uid)` | the helper under both; not callable from the browser |
 
 Both readers are definer — swipes are closed to strangers by the rule in

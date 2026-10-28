@@ -8,7 +8,7 @@ file first, in the same commit. (The idea is KULA's `docs/promises.md`, 11.10.20
 
 | # | Promise | Enforced in | Proved by |
 | --- | --- | --- | --- |
-| 1 | Nobody can read anyone else's swipes; a friend sees only what you swiped right. | `02_rls.sql` | `views.test.mjs` · "but the swipes themselves are entirely closed to anonymous" |
+| 1 | Nobody can read anyone else's swipes; a friend sees only what you swiped right — on your page and on a night's page too. | `02_rls.sql`, `105_kept_friends_only.sql` | `views.test.mjs` · "but the swipes themselves are entirely closed to anonymous" |
 | 2 | Nobody can make themselves an admin from a browser. | `02_rls.sql` | `schema.test.mjs` · "there is exactly one admin" |
 | 3 | A friendship is born pending and only the side that received it may accept. | `07_friends.sql` | `friends.test.mjs` · "a friendship cannot be INSERTed as already accepted" |
 | 4 | Your settings are yours alone; nobody else reads or changes them. | `12_profiles.sql` | `profiles.test.mjs` · "someone else's settings cannot be changed" |
