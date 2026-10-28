@@ -806,7 +806,6 @@ export const tabs = {
   'pmap.title': { en: 'your people.', de: 'deine leute.', tr: 'insanların.' },
   'pmap.card': { en: 'your people', de: 'deine leute', tr: 'insanların' },
   'pmap.line': { en: '{n} friends · {m} around them', de: '{n} freunde · {m} um sie herum', tr: '{n} arkadaş · çevrelerinde {m} kişi' },
-  'pmap.hint': { en: 'drag to wander · tap a blur', de: 'ziehen zum stöbern · tipp auf einen schemen', tr: 'gezmek için sürükle · bir bulanığa dokun' },
   'pmap.home': { en: 'back to you', de: 'zurück zu dir', tr: 'sana dön' },
   'pmap.who': { en: 'who is this?', de: 'wer ist das?', tr: 'bu kim?' },
   'pmap.via': { en: 'friends with {names}', de: 'befreundet mit {names}', tr: '{names} ile arkadaş' },

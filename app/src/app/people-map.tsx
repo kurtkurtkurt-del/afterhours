@@ -105,7 +105,7 @@ export default function PeopleMapScreen() {
       </View>
 
       {data && data.nodes.length > 1 ? (
-        <View style={[styles.filters, { top: insets.top + 62 }]} pointerEvents="box-none">
+        <View style={[styles.filters, { top: insets.top + 78 }]} pointerEvents="box-none">
           <View style={styles.chips}>
             {([0, 1, 2, 3] as const).map((x) => (
               <Pressable key={x} onPress={() => setWave(x)} style={[styles.chip, wave === x && styles.chipOn]} accessibilityRole="tab" accessibilityState={{ selected: wave === x }}>
@@ -129,7 +129,7 @@ export default function PeopleMapScreen() {
       ) : null}
 
       {requests.length ? (
-        <View style={[styles.requests, { top: insets.top + (cities.length ? 150 : 110) }]}>
+        <View style={[styles.requests, { top: insets.top + (cities.length ? 166 : 126) }]}>
           {requests.slice(0, 3).map((f) => (
             <View key={f.other_id} style={styles.request}>
               <Pressable onPress={() => f.handle && openPerson(f.handle)} style={styles.requestWho} accessibilityRole="button">
@@ -149,9 +149,6 @@ export default function PeopleMapScreen() {
 
       {lay ? (
         <>
-          <View style={[styles.hint, { bottom: insets.bottom + 22 }]} pointerEvents="none">
-            <Text style={styles.hintText}>{up(t('pmap.hint'))}</Text>
-          </View>
           {/* back, bottom left (owner, 28.10.2026), across from the zoom */}
           <Pressable onPress={() => (router.canGoBack() ? router.back() : router.replace('/messages'))} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('pmap.back')} style={({ pressed }) => [styles.round, styles.back, { bottom: insets.bottom + 70 }, pressed && styles.pressed]}>
             <Svg width={18} height={18} viewBox="0 0 18 18"><Path d="M11.5 3.5 6 9l5.5 5.5" stroke={colors.paper} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" fill="none" /></Svg>
@@ -234,15 +231,13 @@ const styles = StyleSheet.create({
   zoomBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
   zoomRule: { width: 22, height: 1, backgroundColor: colors.ink3 },
   title: { fontFamily: fonts.semibold, fontSize: 26, letterSpacing: -0.9, color: colors.paper },
-  sub: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.1, color: colors.meta, marginTop: 2 },
+  sub: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.1, color: colors.meta, marginTop: 4 },
   empty: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 36, gap: 18 },
   emptyText: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 22, color: colors.mute, textAlign: 'center' },
   pill: { backgroundColor: colors.spot, borderRadius: radius.pill, paddingHorizontal: 18, paddingVertical: 11, alignItems: 'center' },
   pillWide: { marginTop: 16 },
   pillText: { fontFamily: fonts.semibold, fontSize: 13.5, color: colors.onSpot },
   pressed: { opacity: 0.6 },
-  hint: { position: 'absolute', alignSelf: 'center', backgroundColor: colors.card, borderRadius: radius.pill, paddingHorizontal: 13, paddingVertical: 8, shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 8, elevation: 2 },
-  hintText: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.1, color: colors.mute },
   homeDot: { width: 14, height: 14, borderRadius: 7, borderWidth: 2, borderColor: colors.paper },
   scrim: { ...StyleSheet.absoluteFill, backgroundColor: 'rgba(14,13,12,0.38)' },
   sheet: { position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: colors.ink, borderTopLeftRadius: 26, borderTopRightRadius: 26, paddingHorizontal: 22, paddingTop: 10 },
