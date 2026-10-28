@@ -10,25 +10,28 @@ import Avatar from '@/components/Avatar';
 import { setFlowView, type FlowView } from '@/components/FlowViews';
 import { friendRequest, peopleSuggested, type Suggested } from '@/data/friends';
 import { sparkOf } from '@/content/sparks';
+import { useEventTypes } from '@/data/types';
 import { useLang } from '@/i18n';
 import { barStyle, colors, fonts, radius } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
 // Right after sign up (owner, 28.10.2026; design C of prototypes/onboard-feed.html): afterhours
-// writes to you, two questions as a chat. Add a friend (adding someone puts you on their map
+// writes to you as a chat. First the kinds of nights you go out for, up to three: only kept on the
+// phone (onboard.types), nothing uses them yet (owner, 28.10.2026). Then add a friend (adding someone puts you on their map
 // and them on yours), then how you want to look through nights: swipe, poster or classic,
 // each shown small before you take it. The answers stay on the phone: the friend requests
 // go out, the look becomes the flow's (flow.view). Skippable at every step. Design E of the
 // same page (bubbles and stickers) is kept as a note for later: design/onboarding-e.md.
 
 type Msg = { id: number; me?: boolean; text: string; look?: FlowView };
-type Step = 'friends' | 'look' | 'confirm';
+type Step = 'types' | 'friends' | 'look' | 'confirm';
 // the chat sits between two lines typed big across the screen: welcome in, and you are ready
 type Phase = 'hello' | 'chat' | 'ready';
 const LOOKS: FlowView[] = ['swipe', 'poster', 'classic'];
 const PICS = [require('../../assets/intro/concert.jpg'), sparkOf('rooftop').thumb, sparkOf('grill').thumb];
 
 export const ONBOARD_DONE = 'onboard.done';
+export const ONBOARD_TYPES = 'onboard.types';
 export const onboarded = () => {
   try {
     return Storage.getItemSync(ONBOARD_DONE) === '1';
@@ -39,7 +42,9 @@ export const onboarded = () => {
 
 export default function OnboardScreen() {
   const insets = useSafeAreaInsets();
-  const { t } = useLang();
+  const { t, tx } = useLang();
+  const types = useEventTypes();
+  const [kinds, setKinds] = useState<string[]>([]);
   const [msgs, setMsgs] = useState<Msg[]>([]);
   const [typing, setTyping] = useState(false);
   const [step, setStep] = useState<Step | null>(null);
@@ -71,6 +76,17 @@ export default function OnboardScreen() {
     setPhase('chat');
     await wait(350);
     await say(t('onboard.hi'));
+    await say(t('onboard.typesQ'));
+    setStep('types');
+  };
+  const typeName = (id: string) => tx('type.' + id, types.find((x) => x.id === id)?.label ?? id);
+  // kept only, for later: nothing in the flow reads it yet
+  const typesDone = async () => {
+    setStep(null);
+    try {
+      Storage.setItemSync(ONBOARD_TYPES, JSON.stringify(kinds));
+    } catch {}
+    add({ me: true, text: kinds.length ? kinds.map(typeName).join(' · ') : t('onboard.later') });
     await say(t('onboard.friendQ'));
     setStep('friends');
   };
@@ -152,7 +168,21 @@ export default function OnboardScreen() {
       </ScrollView>
 
       <View style={[styles.quick, { paddingBottom: insets.bottom + 14 }]}>
-        {step === 'friends' ? (
+        {step === 'types' ? (
+          <>
+            {types.map((ty) => {
+              const on = kinds.includes(ty.id);
+              return (
+                <Pressable key={ty.id} onPress={() => setKinds((l) => (on ? l.filter((x) => x !== ty.id) : l.length < 3 ? [...l, ty.id] : l))} style={[styles.chip, on && styles.chipOn]} accessibilityRole="button" accessibilityState={{ selected: on }}>
+                  <Text style={[styles.chipText, on && styles.chipTextOn]}>{typeName(ty.id)}</Text>
+                </Pressable>
+              );
+            })}
+            <Pressable onPress={typesDone} style={[styles.chip, styles.chipDark]} accessibilityRole="button">
+              <Text style={styles.chipDarkText}>{kinds.length ? t('onboard.typesDone', { n: kinds.length }) : t('onboard.later')}</Text>
+            </Pressable>
+          </>
+        ) : step === 'friends' ? (
           <>
             {people.map((p) => {
               const on = picked.includes(p.handle);
