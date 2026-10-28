@@ -43,19 +43,18 @@ export default function TabsLayout() {
   );
 }
 
-// Switching tabs fades the content in and lifts it 8 px instead of snapping.
+// Switching tabs lifts the content 8 px into place instead of snapping (no fade: see below).
 // Otherwise identical to expo-router's default renderer; only the focused tab animates.
 type Descriptor = Parameters<NonNullable<Parameters<typeof TabSlot>[0]['renderFn']>>[0];
 
-// A tab you leave is hidden, not detached (owner, 28.10.2026: back on the flow from another tab
-// the page was sometimes empty). Detached, Android let go of the flow's card photos and the fade
-// could start while the view was still away; hidden, the page is there the moment it shows.
-// (activityState 1 keeps a tab attached behind the open one; 0 detached it. The screen itself must
-// stay a native screen: the container refuses a plain view and the app closed on start.)
+// A tab you leave is detached again (owner, 28.10.2026): kept attached behind the open one, the
+// hidden tabs caught the touches at the top of the page and the flow's and the map's buttons
+// did nothing. The empty flow it was meant to fix came from the fade: the page started at
+// opacity 0 and could stay there. Now it only rises into place and is never see-through.
 function renderTab(descriptor: Descriptor, { isFocused, loaded, detachInactiveScreens }: TabsSlotRenderOptions) {
   if (!loaded && !isFocused) return null;
   return (
-    <Screen key={descriptor.route.key} enabled={detachInactiveScreens} activityState={isFocused ? 2 : 1} style={[styles.screen, isFocused ? styles.focused : styles.unfocused]}>
+    <Screen key={descriptor.route.key} enabled={detachInactiveScreens} activityState={isFocused ? 2 : 0} pointerEvents={isFocused ? 'auto' : 'none'} style={[styles.screen, isFocused ? styles.focused : styles.unfocused]}>
       <TabFade focused={isFocused}>{descriptor.render()}</TabFade>
     </Screen>
   );
@@ -72,7 +71,6 @@ function TabFade({ focused, children }: { focused: boolean; children: ReactNode 
     }
   }, [focused, shown]);
   const style = useAnimatedStyle(() => ({
-    opacity: shown.get(),
     transform: [{ translateY: (1 - shown.get()) * 8 }],
   }));
   return <Animated.View style={[styles.fill, style]}>{children}</Animated.View>;

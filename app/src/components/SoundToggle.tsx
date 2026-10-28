@@ -10,7 +10,7 @@ export default function SoundToggle({ on, onPress, onLongPress, tone = 'paper' }
   const ink = tone === 'ink';
   const photo = tone === 'photo'; // over a picture or a coloured room: light in both themes
   return (
-    <Pressable onPress={onPress} onLongPress={onLongPress} delayLongPress={350} hitSlop={16} accessibilityRole="switch" accessibilityLabel={t('sound.a11y')} accessibilityHint={t('sound.a11y.hint')} accessibilityState={{ checked: on }} style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
+    <Pressable onPress={onPress} onLongPress={onLongPress} delayLongPress={350} hitSlop={8} accessibilityRole="switch" accessibilityLabel={t('sound.a11y')} accessibilityHint={t('sound.a11y.hint')} accessibilityState={{ checked: on }} style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
       <Text style={[styles.label, ink && styles.labelInk, photo && styles.labelPhoto]}>{on ? t('sound.on') : t('sound.off')}</Text>
       <View style={[styles.dot, ink && styles.dotInk, photo && styles.dotPhoto, on && styles.dotOn]} />
     </Pressable>

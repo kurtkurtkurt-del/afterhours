@@ -334,7 +334,7 @@ export default function FlowScreen() {
     <View style={styles.root}>
       <StatusBar style={barStyle} />
       {/* Where, big; under it tickets · spark; under that, on tickets, what and when. */}
-      <View style={[styles.head, { top: Math.max(brand.top, insets.top + 24) - 8 }]} onLayout={(e) => setHeadBottom(e.nativeEvent.layout.y + e.nativeEvent.layout.height)}>
+      <View pointerEvents="box-none" style={[styles.head, { top: Math.max(brand.top, insets.top + 24) - 8 }]} onLayout={(e) => setHeadBottom(e.nativeEvent.layout.y + e.nativeEvent.layout.height)}>
         <Pressable onPress={() => setSheet('city')} hitSlop={8} accessibilityRole="button" accessibilityLabel={t('filter.where')} style={({ pressed }) => [styles.city, pressed && styles.pressed]}>
           <Svg width={14} height={18} viewBox="0 0 14 18">
             <Path d="M7 17s6-5.6 6-10A6 6 0 0 0 1 7c0 4.4 6 10 6 10Z" fill={colors.spot} />

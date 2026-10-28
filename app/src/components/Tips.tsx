@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Platform, Pressable, StyleSheet, Text, View } from 'react-native';
-import Animated, { Easing, FadeIn, FadeInDown, FadeOut, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withTiming, type SharedValue } from 'react-native-reanimated';
+import Animated, { Easing, FadeIn, FadeInDown, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withTiming, type SharedValue } from 'react-native-reanimated';
 import Storage from 'expo-sqlite/kv-store';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Image } from 'expo-image';
@@ -74,8 +74,10 @@ export default function Tips({ page, tip, bottom = 0 }: { page: Page; tip: Tip; 
   };
   const no = String(TIP_PAGES.indexOf(page) + 1).padStart(2, '0');
   const pageKey: Key = page === 'messages' ? 'tab.chat' : page === 'night' || page === 'spark' || page === 'group' ? `tips.page.${page}` : `tab.${page}`;
+  // no exit fade: a fading tip stayed full screen for a moment, and on Android an exiting view
+  // can be left behind see-through, catching the page's taps (owner, 28.10.2026)
   return (
-    <Animated.View entering={FadeIn.duration(260)} exiting={FadeOut.duration(220)} style={[styles.screen, { paddingTop: insets.top + 24 }]}>
+    <Animated.View entering={FadeIn.duration(260)} style={[styles.screen, { paddingTop: insets.top + 24 }]}>
       <View style={styles.head}>
         <View style={styles.dot} />
         <Text style={styles.kicker}>{up(`${no} · ${t(pageKey)}`)}</Text>
