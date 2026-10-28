@@ -111,6 +111,7 @@ const structure = [
   ["102_people_places.sql", "WHERE YOUR PEOPLE ARE"],
   ["103_people_map_cities.sql", "YOUR PEOPLE MAP KNOWS THE CITY"],
   ["104_pending_request_privacy.sql", "A PENDING REQUEST OPENS NO PROFILE ROW"],
+  ["108_show_friends_cards.sql", "A HIDDEN CHECK-IN STAYS HIDDEN ON EVERY CARD"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
