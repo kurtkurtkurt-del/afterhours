@@ -105,4 +105,5 @@ export const EXPECTED_SQL = [
   '102_people_places.sql',
   '103_people_map_cities.sql',
   '104_pending_request_privacy.sql',
+  '108_show_friends_cards.sql',
 ];
