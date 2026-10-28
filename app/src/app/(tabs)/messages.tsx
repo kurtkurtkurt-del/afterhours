@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from 'react';
-import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import Animated, { Easing, SlideInDown } from 'react-native-reanimated';
 import Scrim from '@/components/Scrim';
 import KeyboardSafe from '@/components/KeyboardSafe';
@@ -20,7 +20,7 @@ import { inbox, type Dm, type Inbox } from '@/data/messages';
 import { peek, remember, useShelf } from '@/lib/offline';
 import { dmStart, why } from '@/data/dms';
 import { friendAccept, friendsList, type FriendRow } from '@/data/friends';
-import { friendPhotos } from '@/data/photo';
+import { friendPhotos, usePhoto } from '@/data/photo';
 import Avatar from '@/components/Avatar';
 import Input from '@/components/Input';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
@@ -29,6 +29,9 @@ import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius, barStyle, paperTint } from '@/theme/tokens';
 import { Chevron } from '@/components/Pill';
 import { brand } from '@/theme/layout';
+import PeopleMap from '@/components/PeopleMap';
+import { peopleMap, type MapData } from '@/data/peopleMap';
+import { layout as mapLayout } from '@/lib/islands';
 
 
 // Messages, a tab of its own since 12.10.2026 (design B in prototypes/messages-page.html;
@@ -58,6 +61,12 @@ export default function MessagesScreen() {
   const [who, setWho] = useState('');
   const [said, setSaid] = useState<string | null>(null);
   const uid = session?.user.id;
+  // your people as a map: the card under the stories opens it (app/people-map.tsx)
+  const { width } = useWindowDimensions();
+  const { photo: myPhoto } = usePhoto();
+  const [mapData, setMapData] = useState<MapData | null>(null);
+  const mapLay = useMemo(() => (mapData && mapData.nodes.length > 1 ? mapLayout(mapData) : null), [mapData]);
+  const liveIds = useMemo(() => new Set(live.map((l) => l.friend_id)), [live]);
 
   // The inbox opens from the phone's copy at once and is refreshed behind it (no "loading" on
   // every visit — owner, 22.10.2026); a refresh that lands on the shelf redraws the list.
@@ -67,6 +76,7 @@ export default function MessagesScreen() {
     friendsLive().then(setLive, () => {});
     friendsList().then(setFriends, () => {});
     friendPhotos().then(setPhotos, () => {});
+    peopleMap().then(setMapData, () => {});
   }, [uid]);
   useEffect(load, [load, tick]);
   const open = opened ?? friends.some((f) => f.status === 'pending' && f.direction === 'incoming');
@@ -119,6 +129,19 @@ export default function MessagesScreen() {
 
         {session ? (
           <>
+            {/* your people as a map (owner, 28.10.2026: design A of prototypes/people-map.html) */}
+            <Pressable onPress={() => router.push('/people-map')} accessibilityRole="button" accessibilityLabel={t('pmap.card')} style={({ pressed }) => [styles.mapCard, pressed && styles.pressed]}>
+              {mapLay ? <PeopleMap layout={mapLay} width={width - brand.left * 2} height={150} photos={photos} live={liveIds} myPhoto={myPhoto} interactive={false} scale={0.5} /> : null}
+              <View style={styles.mapText} pointerEvents="none">
+                <View style={styles.text}>
+                  <Text style={styles.mapName}>{t('pmap.card')}</Text>
+                  <Text style={styles.mapLine} numberOfLines={1}>
+                    {up(mapData && mapData.nodes.length > 1 ? t('pmap.line', { n: mapData.nodes.filter((n) => n.w === 1).length, m: mapData.nodes.filter((n) => n.w >= 2).length }) : t('pmap.add'))}
+                  </Text>
+                </View>
+                <View style={styles.mapGo}><Text style={styles.mapGoText}>›</Text></View>
+              </View>
+            </Pressable>
             <Pressable onPress={() => setOpen(!open)} accessibilityRole="button" accessibilityState={{ expanded: open }} style={({ pressed }) => [styles.peopleRow, pressed && styles.pressed]}>
               <View style={styles.stack}>
                 {accepted.slice(0, 4).map((f, i) => {
@@ -286,6 +309,12 @@ export default function MessagesScreen() {
 }
 
 const styles = StyleSheet.create({
+  mapCard: { marginHorizontal: brand.left, marginTop: 14, marginBottom: 6, height: 150, borderRadius: 22, overflow: 'hidden', backgroundColor: colors.card, borderWidth: 1, borderColor: colors.ink3 },
+  mapText: { position: 'absolute', left: 14, right: 14, bottom: 12, flexDirection: 'row', alignItems: 'flex-end', gap: 10 },
+  mapName: { fontFamily: fonts.semibold, fontSize: 16, letterSpacing: -0.4, color: colors.paper },
+  mapLine: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.1, color: colors.spotText, marginTop: 3 },
+  mapGo: { width: 32, height: 32, borderRadius: 16, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center' },
+  mapGoText: { fontFamily: fonts.semibold, fontSize: 18, lineHeight: 20, color: colors.onSpot },
   // words on a red fill stay light whatever the ground does (try/light)
   onSpot: { color: colors.onSpot },
   root: { flex: 1, backgroundColor: colors.ink },

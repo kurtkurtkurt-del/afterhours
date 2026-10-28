@@ -107,6 +107,7 @@ const structure = [
   ["97_venue_desk.sql", "THE VENUE DESK: COMMUNITY MANAGERS RUN THEIR ROOMS"],
   ["98_spark_days.sql", "THE SPARKS OF THE DAY, WRITTEN BY THE NIGHT AGENT"],
   ["100_storage_queue.sql", "A FILE THAT CANNOT GO AT ONCE WAITS IN A QUEUE"],
+  ["101_people_map.sql", "YOUR PEOPLE AS A MAP"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

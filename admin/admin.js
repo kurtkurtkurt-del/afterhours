@@ -115,6 +115,7 @@
     "97_venue_desk.sql",
     "98_spark_days.sql",
     "100_storage_queue.sql",
+    "101_people_map.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */
