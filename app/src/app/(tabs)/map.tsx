@@ -296,18 +296,18 @@ export default function MapScreen() {
   const peoplePins = useMemo<PeoplePin[]>(() => {
     if (!places) return [];
     const out: PeoplePin[] = [];
-    // friends in one city stand around it on a small ring; the waves sit below them
-    const byCity = new Map<string, typeof places.friends>();
-    if (wave === 0 || wave === 1) for (const f of places.friends) byCity.set(f.city, [...(byCity.get(f.city) ?? []), f]);
-    for (const list of byCity.values()) list.forEach((f, i) => {
-      const n = list.length, r = n === 1 ? 0 : 30 + n * 3, a = (i / n) * Math.PI * 2 - Math.PI / 2;
-      out.push({ id: `f:${f.h ?? f.id}`, w: 1, lat: f.lat, lng: f.lng, label: (f.n ?? f.h ?? '').toLowerCase(), photo: faces.get(f.id), live: outNow.has(f.id), dx: Math.cos(a) * r, dy: Math.sin(a) * r });
-    });
-    for (const c of places.crowd) {
-      if (wave !== 0 && wave !== c.w) continue;
-      const here = byCity.get(c.city)?.length ?? 0;
-      const below = here ? (here === 1 ? 46 : 64) : 0;
-      out.push({ id: `c:${c.w}:${c.city}`, w: c.w, lat: c.lat, lng: c.lng, label: t(c.w === 2 ? 'fmap.w2' : 'fmap.w3'), n: c.n, dx: wave === 0 ? (c.w === 2 ? -24 : 24) : 0, dy: below + (wave === 0 && !here ? 0 : 0) });
+    // everyone in one city stands in a small grid around its middle: friends first, then the
+    // waves, four to a row, the same room for each (owner, 28.10.2026: one standard)
+    const perCity = new Map<string, Omit<PeoplePin, 'dx' | 'dy'>[]>();
+    const put = (city: string, p: Omit<PeoplePin, 'dx' | 'dy'>) => perCity.set(city, [...(perCity.get(city) ?? []), p]);
+    if (wave === 0 || wave === 1) for (const f of places.friends) put(f.city, { id: `f:${f.h ?? f.id}`, w: 1, lat: f.lat, lng: f.lng, label: (f.n ?? f.h ?? '').toLowerCase(), photo: faces.get(f.id), live: outNow.has(f.id) });
+    for (const c of places.crowd) if (wave === 0 || wave === c.w) put(c.city, { id: `c:${c.w}:${c.city}`, w: c.w, lat: c.lat, lng: c.lng, label: t(c.w === 2 ? 'fmap.w2' : 'fmap.w3'), n: c.n });
+    for (const list of perCity.values()) {
+      const cols = Math.min(4, list.length), rows = Math.ceil(list.length / cols);
+      list.forEach((p, i) => {
+        const col = i % cols, row = Math.floor(i / cols);
+        out.push({ ...p, dx: (col - (cols - 1) / 2) * 62, dy: (row - (rows - 1) / 2) * 62 });
+      });
     }
     return out;
   }, [places, wave, faces, outNow, t]);

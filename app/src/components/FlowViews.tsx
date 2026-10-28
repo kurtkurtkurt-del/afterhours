@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { FlatList, Pressable, SectionList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Pressable, SectionList, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import Svg, { Path } from 'react-native-svg';
@@ -19,15 +19,23 @@ import { brand } from '@/theme/layout';
 // The same nights as the swipe deck, the same filters. A tap opens the night; the heart keeps it
 // (as a swipe right) and a second tap takes that back.
 
-type Props = {
-  nights: Night[];
-  friendsOf: (n: Night) => DeckFriend[];
-  kept: Set<string>;
-  onKeep: (n: Night) => void;
-  onOpen: (n: Night) => void;
-  top: number;
-  bottom: number;
+// One row of either list: a night, or a spark (gold; its picture is the spark's own photo).
+export type ViewRow = {
+  id: string;
+  title: string;
+  place: string | null;
+  startsAt: string | null;
+  night?: Night;
+  local?: ImageSourcePropType;
+  meta: string;
+  friends: DeckFriend[];
+  gold?: boolean;
+  kept: boolean;
+  open: () => void;
+  keep: () => void;
 };
+type Props = { rows: ViewRow[]; top: number; bottom: number };
+const GOLD = '#E8B04B'; // sparks, as on the map and the deck
 
 const time = (iso: string | null) => {
   if (!iso) return '';
@@ -40,10 +48,10 @@ const dayKey = (iso: string | null) => {
   return isNaN(d.getTime()) ? 'tba' : `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
 };
 
-function Heart({ on, onPress, small, onPhoto }: { on: boolean; onPress: () => void; small?: boolean; onPhoto?: boolean }) {
+function Heart({ on, onPress, small, onPhoto, gold }: { on: boolean; onPress: () => void; small?: boolean; onPhoto?: boolean; gold?: boolean }) {
   const size = small ? 26 : 34;
   return (
-    <Pressable onPress={onPress} hitSlop={8} accessibilityRole="button" accessibilityState={{ selected: on }} style={[styles.heart, { width: size, height: size, borderRadius: size / 2 }, onPhoto && styles.heartPhoto, on && styles.heartOn]}>
+    <Pressable onPress={onPress} hitSlop={8} accessibilityRole="button" accessibilityState={{ selected: on }} style={[styles.heart, { width: size, height: size, borderRadius: size / 2 }, onPhoto && styles.heartPhoto, on && (gold ? styles.heartGold : styles.heartOn)]}>
       <Svg width={small ? 12 : 15} height={small ? 12 : 15} viewBox="0 0 24 24">
         <Path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2Z" fill={on || onPhoto ? colors.onSpot : colors.meta} />
       </Svg>
@@ -63,18 +71,20 @@ function Faces({ list }: { list: DeckFriend[] }) {
   );
 }
 
-export function FlowClassic({ nights, friendsOf, kept, onKeep, onOpen, top, bottom }: Props) {
+const Pic = ({ r }: { r: ViewRow }) => (r.night ? <NightThumb night={r.night} /> : r.local ? <Image source={r.local} style={StyleSheet.absoluteFill} contentFit="cover" /> : null);
+
+export function FlowClassic({ rows, top, bottom }: Props) {
   const { t, tn, up } = useLang();
   const sections = useMemo(() => {
-    const out: { key: string; title: string; data: Night[] }[] = [];
-    for (const n of nights) {
-      const k = dayKey(n.starts_at);
+    const out: { key: string; title: string; data: ViewRow[] }[] = [];
+    for (const n of rows) {
+      const k = dayKey(n.startsAt);
       let s = out.find((x) => x.key === k);
-      if (!s) out.push((s = { key: k, title: dayLabel(n.starts_at), data: [] }));
+      if (!s) out.push((s = { key: k, title: dayLabel(n.startsAt), data: [] }));
       s.data.push(n);
     }
     return out;
-  }, [nights]);
+  }, [rows]);
   return (
     <SectionList
       sections={sections}
@@ -90,21 +100,21 @@ export function FlowClassic({ nights, friendsOf, kept, onKeep, onOpen, top, bott
         </View>
       )}
       renderItem={({ item: n }) => {
-        const fr = friendsOf(n);
+        const fr = n.friends;
         return (
-          <Pressable onPress={() => onOpen(n)} style={({ pressed }) => [styles.row, pressed && styles.pressed]} accessibilityRole="button">
-            <View style={styles.thumb}><NightThumb night={n} /></View>
+          <Pressable onPress={n.open} style={({ pressed }) => [styles.row, pressed && styles.pressed]} accessibilityRole="button">
+            <View style={[styles.thumb, n.gold && styles.thumbGold]}><Pic r={n} /></View>
             <View style={styles.text}>
-              <Text style={styles.name} numberOfLines={1}>{n.title.toLowerCase()}</Text>
-              <Text style={styles.line} numberOfLines={1}>{[n.venue_name?.toLowerCase(), time(n.starts_at)].filter(Boolean).join(' · ')}</Text>
+              <Text style={[styles.name, n.gold && styles.goldText]} numberOfLines={1}>{n.title.toLowerCase()}</Text>
+              <Text style={styles.line} numberOfLines={1}>{[n.place?.toLowerCase(), time(n.startsAt)].filter(Boolean).join(' · ')}</Text>
               <View style={styles.meta}>
                 {fr.length ? <Faces list={fr} /> : null}
-                <Text style={[styles.mono, fr.length > 0 && styles.red]} numberOfLines={1}>
-                  {fr.length ? up(tn('yours.friendsKept', fr.length)) : upperData(n.type_name)}
+                <Text style={[styles.mono, fr.length > 0 && styles.red, n.gold && styles.goldText]} numberOfLines={1}>
+                  {fr.length ? up(tn('yours.friendsKept', fr.length)) : upperData(n.meta)}
                 </Text>
               </View>
             </View>
-            <Heart on={kept.has(n.id)} onPress={() => onKeep(n)} />
+            <Heart on={n.kept} onPress={n.keep} gold={n.gold} />
           </Pressable>
         );
       }}
@@ -113,25 +123,25 @@ export function FlowClassic({ nights, friendsOf, kept, onKeep, onOpen, top, bott
   );
 }
 
-export function FlowPosters({ nights, friendsOf, kept, onKeep, onOpen, top, bottom }: Props) {
+export function FlowPosters({ rows, top, bottom }: Props) {
   const { up } = useLang();
   // two columns, tall and short in turn, so the wall does not read as a grid
   const cols = useMemo(() => {
-    const l: { n: Night; h: number }[] = [], r: { n: Night; h: number }[] = [];
-    nights.forEach((n, i) => (i % 2 ? r : l).push({ n, h: i % 3 === 0 ? 230 : 180 }));
+    const l: { n: ViewRow; h: number }[] = [], r: { n: ViewRow; h: number }[] = [];
+    rows.forEach((n, i) => (i % 2 ? r : l).push({ n, h: i % 3 === 0 ? 230 : 180 }));
     return [l, r];
-  }, [nights]);
-  const card = ({ n, h }: { n: Night; h: number }) => {
-    const fr = friendsOf(n);
+  }, [rows]);
+  const card = ({ n, h }: { n: ViewRow; h: number }) => {
+    const fr = n.friends;
     return (
-      <Pressable key={n.id} onPress={() => onOpen(n)} style={({ pressed }) => [styles.post, { height: h }, pressed && styles.pressed]} accessibilityRole="button">
-        <NightThumb night={n} />
+      <Pressable key={n.id} onPress={n.open} style={({ pressed }) => [styles.post, { height: h }, n.gold && styles.postGold, pressed && styles.pressed]} accessibilityRole="button">
+        <Pic r={n} />
         <LinearGradient colors={[scrim(0.3), scrim(0), scrim(0.85)]} locations={[0, 0.35, 1]} style={StyleSheet.absoluteFill} pointerEvents="none" />
-        <View style={styles.postDate}><Text style={styles.postDateText}>{dayLabel(n.starts_at)}</Text></View>
-        <View style={styles.postHeart}><Heart small onPhoto on={kept.has(n.id)} onPress={() => onKeep(n)} /></View>
+        <View style={[styles.postDate, n.gold && styles.postDateGold]}><Text style={styles.postDateText}>{dayLabel(n.startsAt)}</Text></View>
+        <View style={styles.postHeart}><Heart small onPhoto on={n.kept} onPress={n.keep} gold={n.gold} /></View>
         <View style={styles.postText}>
-          <Text style={styles.postName} numberOfLines={3}>{n.title.toLowerCase()}</Text>
-          <Text style={styles.postLine} numberOfLines={1}>{up([n.venue_name ?? '', time(n.starts_at), fr.length ? `${fr.length} ♥` : ''].filter(Boolean).join(' · '))}</Text>
+          <Text style={[styles.postName, n.gold && styles.goldText]} numberOfLines={3}>{n.title.toLowerCase()}</Text>
+          <Text style={styles.postLine} numberOfLines={1}>{up([n.place ?? '', time(n.startsAt), fr.length ? `${fr.length} ♥` : ''].filter(Boolean).join(' · '))}</Text>
         </View>
       </Pressable>
     );
@@ -193,6 +203,11 @@ const styles = StyleSheet.create({
   heart: { alignItems: 'center', justifyContent: 'center', borderWidth: 1.5, borderColor: colors.ink3 },
   heartPhoto: { borderWidth: 0, backgroundColor: 'rgba(0,0,0,0.38)' },
   heartOn: { backgroundColor: colors.spot, borderColor: colors.spot },
+  heartGold: { backgroundColor: GOLD, borderColor: GOLD },
+  goldText: { color: GOLD },
+  thumbGold: { borderWidth: 1.5, borderColor: GOLD },
+  postGold: { borderWidth: 1.5, borderColor: GOLD },
+  postDateGold: { backgroundColor: GOLD },
   wall: { flexDirection: 'row', gap: 10, paddingHorizontal: brand.left - 4 },
   col: { flex: 1, gap: 10 },
   post: { borderRadius: radius.md, overflow: 'hidden', backgroundColor: colors.poster },

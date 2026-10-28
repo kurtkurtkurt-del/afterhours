@@ -67,15 +67,19 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   @keyframes ping{0%{transform:scale(.6);opacity:.5}100%{transform:scale(2.6);opacity:0}}
   /* The friends view: a face in a white ring (red when out now) with the name under it; a wave
      as a soft disc with how many live there, red for the second wave, grey for the third. */
-  .pp{position:relative;width:44px;height:44px;border-radius:50%;background:#f3f1ec;box-shadow:0 0 0 3px #fbfaf7,0 4px 12px rgba(0,0,0,.28)}
-  .pp.live{box-shadow:0 0 0 3px ${colors.spot},0 4px 12px rgba(0,0,0,.28)}
-  .pp img,.pp i{position:absolute;inset:0;width:44px;height:44px;border-radius:50%;object-fit:cover}
-  .pp i{display:flex;align-items:center;justify-content:center;font:600 17px Inter,system-ui,sans-serif;font-style:normal;color:#1f1d1a;background:#e9e5dd}
-  .pn{position:absolute;top:50px;left:50%;transform:translateX(-50%);font:600 11px Inter,system-ui,sans-serif;color:${M.pin};white-space:nowrap;text-shadow:0 0 3px ${M.ground},0 0 3px ${M.ground}}
-  .pc{position:relative;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 13px Inter,system-ui,sans-serif;color:#fff;box-shadow:0 0 0 2px rgba(251,250,247,.85),0 0 16px 4px rgba(215,38,30,.25)}
-  .pc.w2{background:radial-gradient(circle at 40% 35%,rgba(240,68,58,.95),rgba(215,38,30,.55))}
-  .pc.w3{background:radial-gradient(circle at 40% 35%,rgba(122,118,110,.9),rgba(122,118,110,.5));box-shadow:0 0 0 2px rgba(251,250,247,.85),0 0 16px 4px rgba(122,118,110,.25)}
-  .pc b{position:absolute;top:42px;left:50%;transform:translateX(-50%);font:500 9px 'JetBrains Mono',monospace;letter-spacing:.6px;text-transform:uppercase;color:${M.pin};white-space:nowrap;text-shadow:0 0 3px ${M.ground}}
+  /* One size for everyone (owner, 28.10.2026): a 36 px disc in a white ring. The photo is a
+     background, not an <img>: Leaflet's own CSS gives every image in the marker pane its natural
+     size (width:auto), and a friend's photo came out huge, cut in half by the round frame. */
+  .pp,.pc{position:relative;width:36px;height:36px;border-radius:50%;box-shadow:0 0 0 2.5px #fbfaf7,0 2px 6px rgba(0,0,0,.25)}
+  .pp{background:#e9e5dd center/cover no-repeat}
+  .pp.live{box-shadow:0 0 0 2.5px ${colors.spot},0 2px 6px rgba(0,0,0,.25)}
+  .pp i{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:600 14px Inter,system-ui,sans-serif;font-style:normal;color:#1f1d1a}
+  .pc{display:flex;align-items:center;justify-content:center;font:700 12px Inter,system-ui,sans-serif;color:#fff}
+  .pc.w2{background:${colors.spot}}
+  .pc.w3{background:#7a766e}
+  .pn,.pc b{position:absolute;top:40px;left:50%;transform:translateX(-50%);white-space:nowrap;text-shadow:0 0 3px ${M.ground},0 0 3px ${M.ground},0 0 3px ${M.ground}}
+  .pn{font:600 10.5px Inter,system-ui,sans-serif;color:${M.pin}}
+  .pc b{font:500 8px 'JetBrains Mono',monospace;letter-spacing:.6px;text-transform:uppercase;color:${M.pin}}
 </style></head><body><div id="m"></div><script>
   var map=L.map('m',{zoomControl:false,attributionControl:true,zoomSnap:1,doubleClickZoom:false,fadeAnimation:false}).setView([48.137,11.575],13);
   map.attributionControl.setPrefix(false);
@@ -164,9 +168,9 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   window.update=function(s){
     if(s.people){people.clearLayers();peopleLL=[];s.people.forEach(function(p){
       var html=p.w===1
-        ? '<div class="pp'+(p.live?' live':'')+'">'+(p.photo?'<img src="'+esc(p.photo)+'">':'<i>'+esc(p.label.charAt(0))+'</i>')+'<div class="pn">'+esc(p.label)+'</div></div>'
+        ? '<div class="pp'+(p.live?' live':'')+'"'+(p.photo?' style="background-image:url(&quot;'+esc(p.photo)+'&quot;)"':'')+'>'+(p.photo?'':'<i>'+esc(p.label.charAt(0))+'</i>')+'<div class="pn">'+esc(p.label)+'</div></div>'
         : '<div class="pc w'+p.w+'">'+p.n+'<b>'+esc(p.label)+'</b></div>';
-      var sz=p.w===1?44:38, ic=L.divIcon({className:'',html:html,iconSize:[sz,sz],iconAnchor:[sz/2-p.dx,sz/2-p.dy]});
+      var sz=36, ic=L.divIcon({className:'',html:html,iconSize:[sz,sz],iconAnchor:[sz/2-p.dx,sz/2-p.dy]});
       var mk=L.marker([p.lat,p.lng],{icon:ic,zIndexOffset:p.w===1?500:0}).addTo(people);
       mk.on('click',function(e){L.DomEvent.stopPropagation(e);post({person:p.id});});peopleLL.push(L.latLng(p.lat,p.lng));});
       if(peopleOn)fitPeople();}

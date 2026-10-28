@@ -42,7 +42,7 @@ export const isCard = (e: DeckEntry): e is CardEntry => 'card' in e;
 export const openSpark = (e: SparkEntry) => router.push(e.invite ? `/spark/${e.spark.kind}?invite=${e.invite.id}` : `/spark/${e.spark.kind}`);
 
 // A spark drawn as a ticket card: its photo, its name, the suggested time and place.
-function sparkCard(e: SparkEntry, t: ReturnType<typeof useLang>['t'], lang: ReturnType<typeof useLang>['lang']): DeckCard {
+export function sparkCard(e: SparkEntry, t: ReturnType<typeof useLang>['t'], lang: ReturnType<typeof useLang>['lang']): DeckCard {
   const inv = e.invite;
   const host = inv ? (inv.host_name ?? inv.host_handle ?? '').toLowerCase() : '';
   const words = sparkWords(e.spark, lang, t);

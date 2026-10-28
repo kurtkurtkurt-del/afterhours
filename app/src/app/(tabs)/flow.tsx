@@ -5,8 +5,8 @@ import { Linking, Platform, Pressable, StyleSheet, Text, View } from 'react-nati
 import { StatusBar } from 'expo-status-bar';
 import Svg, { Circle, Path } from 'react-native-svg';
 import Storage from 'expo-sqlite/kv-store';
-import Deck, { isCard, isSpark, openSpark, type DeckEntry, type DeckHandle, type SparkEntry } from '@/components/Deck';
-import { FlowClassic, FlowPosters, ViewSwitch, type FlowView } from '@/components/FlowViews';
+import Deck, { isCard, isSpark, openSpark, sparkCard, type DeckEntry, type DeckHandle, type SparkEntry } from '@/components/Deck';
+import { FlowClassic, FlowPosters, ViewSwitch, type FlowView, type ViewRow } from '@/components/FlowViews';
 import { SPARKS, sparkIn, sparkOf, type SparkDayMap } from '@/content/sparks';
 import { sparkAnswer, sparkDay, sparkInbox, type SparkInvite } from '@/data/sparks';
 import BigPicker from '@/components/BigPicker';
@@ -91,7 +91,7 @@ export default function FlowScreen() {
   const insets = useSafeAreaInsets();
   const [swiped, setSwiped] = useState(0);
   // swipe · classic · poster (owner, 28.10.2026): the same nights as a deck, a list by day or a
-  // wall of posters; the phone remembers the last one. The spark panel stays a deck.
+  // wall of posters; the phone remembers the last one, for the tickets and the spark panel alike.
   const [view, setView] = useState<FlowView>(() => {
     try {
       const v = Storage.getItemSync('flow.view');
@@ -377,6 +377,11 @@ export default function FlowScreen() {
             ))}
           </View>
         </View>
+        {panel === 'spark' ? (
+          <View style={styles.pills}>
+            <ViewSwitch value={view} onChange={pickView} />
+          </View>
+        ) : null}
         {panel === 'tickets' ? (
           <View style={styles.pills}>
             <Pill label={typeLabel} active={!!type} onPress={() => setSheet('type')} a11y={t('filter.what')} />
@@ -390,22 +395,23 @@ export default function FlowScreen() {
       <View style={styles.stage}>
         {error && panel === 'tickets' ? (
           <Text style={styles.note}>{error === 'offline' ? up(t('offline.empty')) : upperData(error)}</Text>
-        ) : shown && panel === 'tickets' && view !== 'swipe' ? (
+        ) : shown && view !== 'swipe' ? (
           (() => {
-            const list = shown.filter((e): e is Night => !isSpark(e) && !isCard(e));
-            const props = {
-              nights: list,
-              friendsOf,
-              kept: listKept,
-              onOpen: (n: Night) => router.push(`/night/${n.slug}`),
-              onKeep: (n: Night) => {
-                const on = listKept.has(n.id);
-                setListKept((k) => { const next = new Set(k); if (on) next.delete(n.id); else next.add(n.id); return next; });
-                if (session) (on ? unswipe(n.id, n.slug) : swipe(n.slug, 'right')).catch(() => {});
-              },
-              top: (headBottom || Math.max(brand.top, insets.top + 24) + 30) + 6,
-              bottom: tabSpace + 24,
-            };
+            const toggle = (id: string, on: boolean) => setListKept((k) => { const next = new Set(k); if (on) next.delete(id); else next.add(id); return next; });
+            const rows: ViewRow[] = shown.flatMap((e): ViewRow[] => {
+              if (isCard(e)) return [];
+              if (isSpark(e)) {
+                // a spark: the heart says "in" to a friend's invite (again: taken back); a suggestion opens its page
+                const c = sparkCard(e, t, lang);
+                const on = listKept.has(e.id);
+                return [{ id: e.id, title: c.title, place: c.venue, startsAt: c.startsAt, local: e.spark.thumb, meta: c.note ?? c.kind, friends: [], gold: true, kept: on, open: () => openSpark(e),
+                  keep: () => { if (!e.invite) return openSpark(e); toggle(e.id, on); if (session) sparkAnswer(e.invite.id, on ? 'waiting' : 'in').catch(() => {}); } }];
+              }
+              const n = e as Night, on = listKept.has(n.id);
+              return [{ id: n.id, title: n.title, place: n.venue_name, startsAt: n.starts_at, night: n, meta: n.type_name, friends: friendsOf(n), kept: on, open: () => router.push(`/night/${n.slug}`),
+                keep: () => { toggle(n.id, on); if (session) (on ? unswipe(n.id, n.slug) : swipe(n.slug, 'right')).catch(() => {}); } }];
+            });
+            const props = { rows, top: (headBottom || Math.max(brand.top, insets.top + 24) + 30) + 6, bottom: tabSpace + 24 };
             return view === 'classic' ? <FlowClassic {...props} /> : <FlowPosters {...props} />;
           })()
         ) : shown ? (
@@ -415,7 +421,7 @@ export default function FlowScreen() {
         )}
 
         {/* Under the card, with room around them: let go, undo, keep. The same as a swipe. */}
-        {shown && shown.length > swiped && (panel !== 'tickets' || view === 'swipe') ? (
+        {shown && shown.length > swiped && view === 'swipe' ? (
           <View style={[styles.actions, { bottom: tabSpace + 14 }]}>
             <Pressable onPress={() => deck.current?.swipe('left')} accessibilityRole="button" accessibilityLabel={t('word.letgo')} style={({ pressed }) => [styles.act, pressed && styles.pressed]}>
               <Svg width={22} height={22} viewBox="0 0 22 22">
