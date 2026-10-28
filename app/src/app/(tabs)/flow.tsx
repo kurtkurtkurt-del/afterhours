@@ -6,6 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import Svg, { Circle, Path } from 'react-native-svg';
 import Storage from 'expo-sqlite/kv-store';
 import Deck, { isCard, isSpark, openSpark, sparkCard, type DeckEntry, type DeckHandle, type SparkEntry } from '@/components/Deck';
+import { setNightSeq } from '@/lib/nightSeq';
 import { FlowClassic, FlowPosters, ViewSwitch, readFlowView, setFlowView, type FlowView, type ViewRow } from '@/components/FlowViews';
 import { SPARKS, sparkIn, sparkOf, type SparkDayMap } from '@/content/sparks';
 import { sparkAnswer, sparkDay, sparkInbox, type SparkInvite } from '@/data/sparks';
@@ -404,6 +405,9 @@ export default function FlowScreen() {
               return [{ id: n.id, title: n.title, place: n.venue_name, startsAt: n.starts_at, night: n, meta: n.type_name, friends: friendsOf(n), kept: on, open: () => router.push(`/night/${n.slug}`),
                 keep: () => { toggle(n.id, on); if (session) (on ? unswipe(n.id, n.slug) : swipe(n.slug, 'right')).catch(() => {}); } }];
             });
+            // opening a night remembers the list's order, so its page can swipe to the next one
+            const slugs = rows.flatMap((r) => (r.night ? [r.night.slug] : []));
+            rows.forEach((r) => { if (r.night) { const go = r.open; r.open = () => { setNightSeq(slugs); go(); }; } });
             const props = { rows, top: (headBottom || Math.max(brand.top, insets.top + 24) + 30) + 6, bottom: tabSpace + 24 };
             return view === 'classic' ? <FlowClassic {...props} /> : <FlowPosters {...props} />;
           })()

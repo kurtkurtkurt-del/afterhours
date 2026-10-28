@@ -8,6 +8,9 @@ import AfterhoursCard from '@/components/AfterhoursCard';
 import { checkIn, checkOut, myCards, reasonCode, reasons, roomInfo, toCardData, type CardRow, type RoomInfo, friendsLive, type LiveFriend } from '@/data/checkin';
 import { StatusBar } from 'expo-status-bar';
 import { router, useLocalSearchParams } from 'expo-router';
+import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import Animated, { runOnJS, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
+import { nightAround } from '@/lib/nightSeq';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BackButton from '@/components/BackButton';
 import Button from '@/components/Button';
@@ -249,9 +252,39 @@ export default function NightScreen() {
       <SoundCorner />
     </View>
   );
+  // Opened from the flow's list or wall: swipe sideways for the night before or after it.
+  // The page follows the finger; far enough, the next night replaces this one.
+  const around = slug ? nightAround(slug) : null;
+  const drag = useSharedValue(0);
+  const goTo = (s: string | null) => {
+    if (s) router.replace(`/night/${s}`);
+  };
+  const swipeNights = Gesture.Pan()
+    .enabled(!!around)
+    .activeOffsetX([-28, 28])
+    .failOffsetY([-14, 14])
+    .onChange((e) => {
+      const edge = (e.translationX > 0 && !around?.prev) || (e.translationX < 0 && !around?.next);
+      drag.set(e.translationX * (edge ? 0.25 : 0.9));
+    })
+    .onEnd((e) => {
+      const far = Math.abs(e.translationX) > 90 || Math.abs(e.velocityX) > 700;
+      const to = e.translationX < 0 ? around?.next ?? null : around?.prev ?? null;
+      if (far && to) {
+        drag.set(withTiming(e.translationX < 0 ? -width : width, { duration: 180 }, () => runOnJS(goTo)(to)));
+      } else drag.set(withSpring(0, { damping: 18 }));
+    });
+  const follow = useAnimatedStyle(() => ({ transform: [{ translateX: drag.get() }] }));
+
   return (
-    <View style={styles.root}>
+    <GestureDetector gesture={swipeNights}>
+    <Animated.View style={[styles.root, follow]}>
       <StatusBar style={barStyle} />
+      {around ? (
+        <View style={[styles.seq, { top: insets.top + 8 }]} pointerEvents="none">
+          <Text style={styles.seqText}>{`${around.prev ? '‹ ' : ''}${around.i + 1} / ${around.n}${around.next ? ' ›' : ''}`}</Text>
+        </View>
+      ) : null}
       {night ? null : band}
       {night ? (
         <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
@@ -484,11 +517,14 @@ export default function NightScreen() {
           </View>
         </View>
       </Modal>
-    </View>
+    </Animated.View>
+    </GestureDetector>
   );
 }
 
 const styles = StyleSheet.create({
+  seq: { position: 'absolute', alignSelf: 'center', zIndex: 30, backgroundColor: 'rgba(14,13,12,0.55)', borderRadius: 999, paddingHorizontal: 11, paddingVertical: 5 },
+  seqText: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.onPhoto },
   root: { flex: 1, backgroundColor: colors.ink },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, zIndex: 2 },
   centre: { flex: 1, alignItems: 'center', justifyContent: 'center' },

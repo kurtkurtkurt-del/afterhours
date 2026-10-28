@@ -95,9 +95,6 @@ export default function PeopleMapScreen() {
       )}
 
       <View style={[styles.head, { top: insets.top + 10 }]} pointerEvents="box-none">
-        <Pressable onPress={() => (router.canGoBack() ? router.back() : router.replace('/messages'))} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('pmap.back')} style={({ pressed }) => [styles.round, pressed && styles.pressed]}>
-          <Svg width={18} height={18} viewBox="0 0 18 18"><Path d="M11.5 3.5 6 9l5.5 5.5" stroke={colors.paper} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" fill="none" /></Svg>
-        </Pressable>
         <View style={styles.headText} pointerEvents="none">
           <Text style={styles.title}>{t('pmap.title')}</Text>
           {data ? <Text style={styles.sub}>{up(t('pmap.line', { n: friends, m: crowd }))}</Text> : null}
@@ -155,6 +152,10 @@ export default function PeopleMapScreen() {
           <View style={[styles.hint, { bottom: insets.bottom + 22 }]} pointerEvents="none">
             <Text style={styles.hintText}>{up(t('pmap.hint'))}</Text>
           </View>
+          {/* back, bottom left (owner, 28.10.2026), across from the zoom */}
+          <Pressable onPress={() => (router.canGoBack() ? router.back() : router.replace('/messages'))} hitSlop={12} accessibilityRole="button" accessibilityLabel={t('pmap.back')} style={({ pressed }) => [styles.round, styles.back, { bottom: insets.bottom + 70 }, pressed && styles.pressed]}>
+            <Svg width={18} height={18} viewBox="0 0 18 18"><Path d="M11.5 3.5 6 9l5.5 5.5" stroke={colors.paper} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" fill="none" /></Svg>
+          </Pressable>
           <View style={[styles.zoom, { bottom: insets.bottom + 70 }]}>
             <Pressable onPress={() => map.current?.zoom(1.4)} hitSlop={6} style={({ pressed }) => [styles.zoomBtn, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t('pmap.zoomIn')}>
               <Svg width={16} height={16} viewBox="0 0 16 16"><Path d="M8 2.5v11M2.5 8h11" stroke={colors.paper} strokeWidth={2} strokeLinecap="round" /></Svg>
@@ -210,6 +211,7 @@ const styles = StyleSheet.create({
   headText: { flex: 1, paddingTop: 1 },
   round: { width: 42, height: 42, borderRadius: 21, backgroundColor: colors.card, alignItems: 'center', justifyContent: 'center', shadowColor: '#000', shadowOpacity: 0.12, shadowRadius: 8, shadowOffset: { width: 0, height: 2 }, elevation: 3 },
   roundRed: { backgroundColor: colors.spot },
+  back: { position: 'absolute', left: brand.left, width: 46, height: 46, borderRadius: 23 },
   requests: { position: 'absolute', left: brand.left, right: brand.left, gap: 8 },
   filters: { position: 'absolute', left: 0, right: 0, gap: 8 },
   chips: { flexDirection: 'row', gap: 6, paddingHorizontal: brand.left },
