@@ -762,6 +762,10 @@ export const tabs = {
   'yours.pastEnd': { en: 'that is a year of nights.', de: 'das ist ein jahr voller nächte.', tr: 'bu kadar: bir yıllık gece.' },
   'people.title': { en: 'people.', de: 'leute.', tr: 'insanlar.' },
   'connect.title': { en: 'connect.', de: 'connect.', tr: 'connect.' },
+  // tap phones to connect (lib/tap.ts)
+  'tap.setting': { en: 'tap phones to connect', de: 'handys aneinander halten', tr: 'telefonları dokundurarak bağlan' },
+  'tap.setting.hint': { en: 'while afterhours is open, holding two phones back to back opens each other\'s profile. a phone without the app opens your page on the website.', de: 'solange afterhours offen ist, öffnen zwei handys rücken an rücken gegenseitig ihr profil. ein handy ohne die app öffnet deine seite im web.', tr: 'afterhours açıkken iki telefonu sırt sırta tutunca birbirinizin profili açılır. uygulaması olmayan bir telefon web sitesindeki sayfanı açar.' },
+  'tap.banner': { en: 'you tapped phones · add each other', de: 'handys getippt · fügt euch hinzu', tr: 'telefonlarınız dokundu · birbirinizi ekleyin' },
   // specialties (content/specials.ts): decks of one occasion, under the groups
   'special.title': { en: 'specialties', de: 'besondere nächte', tr: 'özel geceler' },
   'special.halloween': { en: 'halloween', de: 'halloween', tr: 'cadılar bayramı' },

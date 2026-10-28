@@ -1,0 +1,48 @@
+{
+    "logs": [
+        {
+            "outputFile": "expo.modules.afterhourstap.afterhours-tap-mergeReleaseResources-1:/values/values.xml",
+            "map": [
+                {
+                    "source": "/Users/ahmetselcukkurt/Desktop/claudecode/afterhours/app/modules/afterhours-tap/android/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "2",
+                        "startOffsets": "53",
+                        "endColumns": "87",
+                        "endOffsets": "138"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "89",
+                        "endOffsets": "140"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "expo.modules.afterhourstap.afterhours-tap-release-3:/values/values.xml",
+            "map": [
+                {
+                    "source": "/Users/ahmetselcukkurt/Desktop/claudecode/afterhours/app/modules/afterhours-tap/android/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "2",
+                        "startOffsets": "53",
+                        "endColumns": "87",
+                        "endOffsets": "138"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "89",
+                        "endOffsets": "140"
+                    }
+                }
+            ]
+        }
+    ]
+}

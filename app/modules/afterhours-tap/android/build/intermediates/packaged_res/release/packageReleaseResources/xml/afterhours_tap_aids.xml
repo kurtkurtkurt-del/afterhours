@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- D2760000850101: the standard NFC Forum tag (any phone reads the link in it).
+     F0414654455248: afterhours' own channel (F0 + "AFTERH"), only the app speaks it. -->
+<host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
+  android:description="@string/afterhours_tap_description"
+  android:requireDeviceUnlock="false">
+  <aid-group android:category="other" android:description="@string/afterhours_tap_description">
+    <aid-filter android:name="D2760000850101" />
+    <aid-filter android:name="F0414654455248" />
+  </aid-group>
+</host-apdu-service>

@@ -1,0 +1,3 @@
+expo.modules.afterhourstap
+string afterhours_tap_description
+xml afterhours_tap_aids

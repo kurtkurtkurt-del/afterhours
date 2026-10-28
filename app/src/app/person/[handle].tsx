@@ -39,7 +39,7 @@ const STEP = 0.42;
 // links as small marks (friends only), the add / accept button, then their collection —
 // placed so the first screen ends halfway down the cards and the page reads as going on.
 export default function PersonScreen() {
-  const { handle, sample } = useLocalSearchParams<{ handle: string; sample?: string }>();
+  const { handle, sample, tapped } = useLocalSearchParams<{ handle: string; sample?: string; tapped?: string }>();
   const extra = useProfileExtra(handle ?? null, 0, !!sample);
   const insets = useSafeAreaInsets();
   const { width, height } = useWindowDimensions();
@@ -152,6 +152,13 @@ export default function PersonScreen() {
         ) : (
           <>
             <View style={styles.pad} onLayout={(e) => setAboveH(e.nativeEvent.layout.height)}>
+              {/* came here by holding two phones together (lib/tap.ts) */}
+              {tapped && relation !== 'friend' ? (
+                <View style={styles.tapped}>
+                  <View style={styles.tappedDot} />
+                  <Text style={styles.tappedText}>{up(t('tap.banner'))}</Text>
+                </View>
+              ) : null}
               <Sleeve width={inner} photo={photo} name={name} meta={meta} disc={up(tn('account.nNights', collection.length))} city={card.city_name} onPhotoError={() => setPhoto(null)} />
 
               {runs.length ? <Text style={styles.runs}>{up(t('desk.runs', { rooms: runs.map((r) => `${r.name} · ${r.city_name}`.toLowerCase()).join(', ') }))}</Text> : null}
@@ -246,6 +253,9 @@ export default function PersonScreen() {
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
+  tapped: { flexDirection: 'row', alignItems: 'center', gap: 8, alignSelf: 'flex-start', marginBottom: 12, paddingHorizontal: 12, paddingVertical: 7, borderRadius: 999, borderWidth: 1, borderColor: colors.spot },
+  tappedDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: colors.spot },
+  tappedText: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.1, color: colors.spotText },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 36, backgroundColor: colors.ink, zIndex: 2 },
   body: {},
   pad: { paddingHorizontal: brand.left },

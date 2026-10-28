@@ -36,6 +36,7 @@ import { startOffline } from '@/lib/offline';
 import '@/data/jobs';
 import { startWarm } from '@/data/warm';
 import PillAction from '@/components/PillAction';
+import { TapBridge } from '@/lib/tap';
 
 // Every Alert.alert opens the app's own sheet (lib/dialog.ts, components/DialogHost.tsx), on the web too.
 installDialogs();
@@ -105,6 +106,7 @@ function RootLayout() {
         ))}
       </Stack>
       <PushBridge />
+      <TapBridge />
       <GenrePicker />
       <OfflineBar />
       <NoticeSheet />

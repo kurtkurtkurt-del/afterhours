@@ -14,6 +14,7 @@ import PickerSheet from '@/components/PickerSheet';
 import PullDownScroll from '@/components/PullDownScroll';
 import SoundCorner from '@/components/SoundCorner';
 import { Mark, Panel, Row, Section, Switch, Value } from '@/components/Row';
+import { setTapOn, tapSupported, useTapOn } from '@/lib/tap';
 import { useAuth } from '@/auth/AuthContext';
 import { useAmbient } from '@/audio/AmbientContext';
 import { forgetPhoto, removePhoto, usePhoto } from '@/data/photo';
@@ -90,6 +91,7 @@ export default function SettingsScreen() {
   const tick = useRefreshOnFocus('settings');
   // Refresh the card after returning from the profile page.
   const profile = useProfile(tick);
+  const tapOn = useTapOn();
   const ambient = useAmbient();
   const insets = useSafeAreaInsets();
   const { photo, broken } = usePhoto();
@@ -233,6 +235,7 @@ export default function SettingsScreen() {
                 right={<Switch on={settings?.discoverable ?? true} />}
                 onPress={() => patch({ discoverable: !(settings?.discoverable ?? true) })}
               />
+              {tapSupported() ? <Row label={t('tap.setting')} hint={t('tap.setting.hint')} right={<Switch on={tapOn} />} onPress={() => setTapOn(!tapOn)} /> : null}
             </Panel>
             <Section title={t('block.list')} />
             <Panel>

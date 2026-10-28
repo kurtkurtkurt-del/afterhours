@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>afterhours · someone you met</title>
+  <meta name="robots" content="noindex" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="afterhours" />
+  <meta property="og:title" content="someone you met — afterhours" />
+  <meta property="og:description" content="You tapped phones with someone on afterhours. Find nights together." />
+  <meta property="og:url" content="https://kurtkurtkurt-del.github.io/afterhours/p/" />
+  <meta property="og:image" content="https://kurtkurtkurt-del.github.io/afterhours/og/afterhours.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+  <style>
+    :root { --ink: #0E0D0C; --paper: #F3F1EC; --spot: #E5322D; --mute: #8C877F; --rule: rgba(243,241,236,.14); }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: var(--ink); color: var(--paper); font: 16px/1.45 system-ui, -apple-system, sans-serif;
+           display: flex; align-items: center; justify-content: center; padding: 24px 16px; }
+    main { max-width: 360px; width: 100%; text-align: center; }
+    .logo { font-weight: 800; font-size: 28px; letter-spacing: -0.5px; }
+    .logo b { color: var(--spot); }
+    .tag { display: inline-flex; align-items: center; gap: 8px; margin-top: 34px; padding: 6px 12px; border: 1px solid var(--spot); border-radius: 999px;
+           font: 11px/1 ui-monospace, Menlo, monospace; letter-spacing: 1.2px; text-transform: uppercase; color: #F0443A; }
+    .tag i { width: 6px; height: 6px; border-radius: 50%; background: var(--spot); }
+    .face { width: 104px; height: 104px; margin: 26px auto 0; border-radius: 50%; display: grid; place-items: center;
+            background: radial-gradient(circle at 50% 40%, #2a2724, #171512); box-shadow: 0 0 0 5px var(--ink), 0 0 0 6.5px var(--spot), 0 18px 50px rgba(229,50,45,.25);
+            font-weight: 700; font-size: 40px; text-transform: lowercase; }
+    .handle { font-weight: 600; font-size: 26px; letter-spacing: -0.6px; margin-top: 18px; word-break: break-all; }
+    p { color: var(--mute); margin: 8px 0 0; }
+    a.btn { display: block; margin-top: 12px; padding: 14px; border-radius: 999px; text-decoration: none; font-weight: 600; }
+    a.main { margin-top: 30px; background: var(--paper); color: var(--ink); }
+    a.line { border: 1px solid var(--rule); color: var(--paper); }
+    small { display: block; margin-top: 22px; color: var(--mute); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="logo">afterhours<b>.</b></div>
+    <div class="tag"><i></i><span id="tag">you tapped phones</span></div>
+    <div class="face" id="face">·</div>
+    <div class="handle" id="handle">someone</div>
+    <p id="line">is on afterhours. find nights together, see what friends keep.</p>
+    <a class="btn main" id="web" href="https://kurtkurtkurt-del.github.io/afterhours-pwa/">try afterhours</a>
+    <a class="btn line" id="open" href="#">open in the app</a>
+    <small id="note">in the app: search their name to add them</small>
+  </main>
+  <script>
+    // Who: the handle from ?h= (the link the NFC card carries, app/src/lib/tap.ts). Only
+    // letters, digits, dot and underscore pass, so nothing else reaches the page.
+    var h = (new URLSearchParams(location.search).get("h") || "").toLowerCase().replace(/[^a-z0-9._]/g, "").slice(0, 30);
+    var L = (navigator.language || "en").slice(0, 2);
+    var T = {
+      en: ["you tapped phones", "is on afterhours. find nights together, see what friends keep.", "try afterhours", "open in the app", "in the app: search their name to add them", "someone"],
+      de: ["handys getippt", "ist auf afterhours. findet zusammen nächte, seht, was freunde behalten.", "afterhours ausprobieren", "in der app öffnen", "in der app: such den namen, um die person hinzuzufügen", "jemand"],
+      tr: ["telefonlarınız dokundu", "afterhours'ta. birlikte gece bulun, arkadaşların neleri tuttuğunu görün.", "afterhours'u dene", "uygulamada aç", "uygulamada: eklemek için adını ara", "biri"]
+    }[L] || null;
+    var t = T || ["you tapped phones", "is on afterhours. find nights together, see what friends keep.", "try afterhours", "open in the app", "in the app: search their name to add them", "someone"];
+    document.documentElement.lang = T ? L : "en";
+    ["tag", "line", "web", "open", "note"].forEach(function (id, i) { document.getElementById(id).textContent = t[i]; });
+    if (h) {
+      document.getElementById("handle").textContent = "@" + h;
+      document.getElementById("face").textContent = h.charAt(0);
+      document.getElementById("open").href = "afterhours://person/" + h;
+      document.title = "afterhours · @" + h;
+    } else {
+      document.getElementById("handle").textContent = t[5];
+      document.getElementById("open").style.display = "none";
+    }
+  </script>
+  <script src="../webapp.js?v=201"></script>
+</body>
+</html>
