@@ -9,7 +9,7 @@ file first, in the same commit. (The idea is KULA's `docs/promises.md`, 11.10.20
 | # | Promise | Enforced in | Proved by |
 | --- | --- | --- | --- |
 | 1 | Nobody can read anyone else's swipes; a friend sees only what you swiped right. | `02_rls.sql` | `views.test.mjs` · "but the swipes themselves are entirely closed to anonymous" |
-| 2 | Nobody can make themselves an admin from a browser. | `02_rls.sql` | `schema.test.mjs` · "there is exactly one admin" |
+| 2 | Nobody can make themselves an admin from a browser, nor take a reserved name or a banned handle as their own. | `02_rls.sql`, `107_handles_and_read_limits.sql` | `schema.test.mjs` · "there is exactly one admin" |
 | 3 | A friendship is born pending and only the side that received it may accept. | `07_friends.sql` | `friends.test.mjs` · "a friendship cannot be INSERTed as already accepted" |
 | 4 | Your settings are yours alone; nobody else reads or changes them. | `12_profiles.sql` | `profiles.test.mjs` · "someone else's settings cannot be changed" |
 | 5 | The member list cannot be browsed; a stranger sees their own row and named cards. | `12_profiles.sql`, `25_people.sql` | `profiles.test.mjs` · "a stranger sees only their own row" |
@@ -19,7 +19,7 @@ file first, in the same commit. (The idea is KULA's `docs/promises.md`, 11.10.20
 | 9 | Nobody becomes a member of a group they were not added to; every group call asks first. | `44_groups.sql`, `57_doors.sql` | `groups.test.mjs` · "the table itself is closed" |
 | 10 | A push never carries a member's words: a fixed sentence and a name. | `58_push_words.sql` | `doors.test.mjs` · "the title still names who and where" |
 | 11 | A direct message goes only between confirmed friends who can reach each other. | `59_dms.sql` | `dms.test.mjs` · "a pending request is not a friend yet" |
-| 12 | A burst is bounded: twenty lines a minute in a chat, forty requests a day. | `53_trust.sql`, `59_dms.sql` | `trust.test.mjs` · "the table itself is closed" |
+| 12 | A burst is bounded: twenty lines a minute in a chat, forty requests a day; two hundred searches and three hundred cards an hour, ten notes of feedback. | `53_trust.sql`, `59_dms.sql`, `107_handles_and_read_limits.sql` | `trust.test.mjs` · "the table itself is closed" |
 | 13 | A deleted account leaves no row that names the person; the last admin cannot delete theirs. | `12_profiles.sql`, `65_account_delete.sql` | `delete-account.test.mjs` · "no row of any table still points at the person" |
 
 Known gaps, written down so they are not forgotten:
