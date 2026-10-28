@@ -8,7 +8,8 @@ import BackButton from '@/components/BackButton';
 import Button from '@/components/Button';
 import GroupInvitation from '@/components/GroupInvitation';
 import { Said } from '@/components/StaffPage';
-import { groupGet, groupInvite, inviteUrl, why, type Group } from '@/data/groups';
+import { groupGet, groupInvite, inviteUrl, why, type Group, type GroupRow } from '@/data/groups';
+import { peek } from '@/lib/offline';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius, barStyle } from '@/theme/tokens';
 
@@ -25,15 +26,22 @@ export default function Invite() {
     groupInvite(id).then(setCode, (e) => setSaid(why(e)));
     groupGet(id).then(setGroup, () => {});
   }, [id]);
+  // The screen used to open empty until group_get came back (owner, 28.10.2026): the row the
+  // groups list already holds on the shelf gives the name, the emoji and the colour at once;
+  // the members' names follow with the full group.
+  const row = peek<GroupRow[]>('groups', '')?.find((g) => g.id === id) ?? null;
+  const emoji = group?.emoji ?? row?.emoji ?? '✦';
+  const name = group?.name ?? row?.name ?? '…';
+  const color = group?.color ?? row?.color ?? 'red';
   const send = () =>
     code && group && Share.share({ message: `${t('groups.invite.message', { name: group.name, code })}\n${inviteUrl(code)}` }).catch(() => {});
   return (
     <View style={styles.root}>
       <StatusBar style={barStyle} />
       <GroupInvitation
-        emoji={group?.emoji ?? '✦'}
-        name={group?.name ?? '…'}
-        color={group?.color ?? 'red'}
+        emoji={emoji}
+        name={name}
+        color={color}
         line={t('groups.invite.hint')}
         names={(group?.members ?? []).map((m) => m.name ?? m.handle ?? '?')}
       >
@@ -53,7 +61,8 @@ export default function Invite() {
           <Button label={t('groups.invite.share')} onPress={send} />
         </View>
       </GroupInvitation>
-      <BackButton />
+      {/* raised above the send bar (52 high, 20 under it): it used to sit on the button (owner, 28.10.2026) */}
+      <BackButton lift={52 + 20 + 12} />
     </View>
   );
 }

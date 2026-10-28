@@ -20,6 +20,11 @@ import PickerSheet from '@/components/PickerSheet';
 import { Switch } from '@/components/Row';
 import { rsvpSet, type Answer } from '@/data/rsvp';
 import { Quiet, Said } from '@/components/StaffPage';
+import { AboutSheet, AskButton } from '@/components/About';
+import { ListenButton, ListenOverlay } from '@/components/Listen';
+import { useTrack } from '@/audio/useTrack';
+import { aboutFor, type About } from '@/data/about';
+import { previewsFor, type Preview } from '@/data/previews';
 import Tips from '@/components/Tips';
 import type { Night } from '@/data/deck';
 import {
@@ -454,6 +459,33 @@ function Live({ id, me, top, nameOf, onChange }: { id: string; me: string; top: 
 
   const card = state?.card ?? null;
   const mine = state?.people?.find((p) => p.id === me)?.answer ?? null;
+
+  // "who is this?" and "listen" on the live card too (owner, 28.10.2026): read once per
+  // night as it comes up, kept for the session; the buttons sit under the kind tag as in the flow.
+  const { lang } = useLang();
+  const [abouts, setAbouts] = useState<Map<string, About | null>>(new Map());
+  const [previews, setPreviews] = useState<Map<string, Preview | null>>(new Map());
+  const [readingOn, setReadingOn] = useState<{ id: string; about: About } | null>(null);
+  const setReading = (a: About | null) => setReadingOn(a && liveCardId ? { id: liveCardId, about: a } : null);
+  const track = useTrack();
+  const liveCardId = card?.id ?? null;
+  const asked = useRef(new Set<string>());
+  useEffect(() => {
+    if (!liveCardId || asked.current.has(liveCardId)) return;
+    asked.current.add(liveCardId);
+    aboutFor([liveCardId], lang).then((m) => setAbouts((prev) => new Map(prev).set(liveCardId, m.get(liveCardId) ?? null)), () => {});
+    previewsFor([liveCardId]).then((m) => setPreviews((prev) => new Map(prev).set(liveCardId, m.get(liveCardId) ?? null)), () => {});
+  }, [liveCardId, lang]);
+  const stopTrack = track.stop;
+  useEffect(() => {
+    // a new card: the last one's sound stops
+    stopTrack();
+  }, [liveCardId, stopTrack]);
+  // the sheet belongs to the card it was opened on
+  const reading = readingOn?.id === liveCardId ? readingOn.about : null;
+  const about = liveCardId ? abouts.get(liveCardId) ?? null : null;
+  const preview = liveCardId ? previews.get(liveCardId) ?? null : null;
+  const playing = !!preview && track.playing === liveCardId;
   const answer = useCallback(
     (direction: 'left' | 'right') => {
       if (!card) return;
@@ -501,7 +533,10 @@ function Live({ id, me, top, nameOf, onChange }: { id: string; me: string; top: 
       {card ? (
         <>
           <View style={styles.liveCard}>
-            <CardFace card={toDeckCard(card, [])} bottom={8} fit={{ top: 8 }} rightLabel={t('word.details')} onRight={() => openDetails(toDeckCard(card, []))} onDetails={() => openDetails(toDeckCard(card, []))} />
+            <CardFace card={toDeckCard(card, [])} bottom={8} fit={{ top: 8 }} rightLabel={t('word.details')} onRight={() => openDetails(toDeckCard(card, []))} onDetails={() => openDetails(toDeckCard(card, []))}
+              overlay={playing && preview ? <ListenOverlay preview={preview} elapsed={track.elapsed} duration={track.duration} onStop={track.stop} /> : undefined} />
+            {about ? <AskButton onPress={() => setReading(about)} style={[styles.liveAsk, { top: 8 + 46 }]} /> : null}
+            {preview ? <ListenButton onPress={() => track.play(card.id, { uri: preview.preview_url })} playing={playing} style={[styles.liveAsk, { top: 8 + 46 + (about ? 44 : 0) }]} /> : null}
           </View>
           <View style={styles.liveRow}>
             <Text style={styles.liveName} numberOfLines={1}>{answered ? t('groups.live.waiting') : t('groups.live.hint.short')}</Text>
@@ -530,6 +565,7 @@ function Live({ id, me, top, nameOf, onChange }: { id: string; me: string; top: 
       ) : (
         <Quiet text="…" />
       )}
+      <AboutSheet about={reading} onClose={() => setReading(null)} onKeep={answered ? undefined : () => { setReading(null); setTimeout(() => answer('right'), 280); }} />
     </View>
   );
 }
@@ -654,6 +690,7 @@ const styles = StyleSheet.create({
   personText: { fontFamily: fonts.medium, fontSize: 12.5, color: colors.paper },
   personTextYes: { color: colors.paper },
   liveCard: { flex: 1, marginTop: 12, borderRadius: radius.lg, overflow: 'hidden' },
+  liveAsk: { position: 'absolute', right: 16 },
   leftCount: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.4, color: colors.mute, textAlign: 'center', marginTop: 8 },
   liveButtons: { flexDirection: 'row', gap: 10, marginTop: 10 },
   flex: { flex: 1 },

@@ -7,7 +7,7 @@ import { StatusBar } from 'expo-status-bar';
 import { router, useFocusEffect } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
-import Svg, { Rect, SvgUri } from 'react-native-svg';
+import Svg, { Rect } from 'react-native-svg';
 import WhoSheet from '@/components/WhoSheet';
 import { openPerson } from '@/components/People';
 import { coverSource, GROUP_COLORS, groupPlan, myGroups, type GroupRow, type Plan, type Round } from '@/data/groups';
@@ -41,13 +41,13 @@ import { brand } from '@/theme/layout';
 const fallbackPhoto = require('../../../assets/intro/concert.jpg');
 
 // Connect (12.10.2026, design A in prototypes/connect.html; the tab was people): the first
-// two groups as covers, then the gallery and the decks (messages is the tab beside it).
+// the gallery first, then two groups as covers, then the specialties (28.10.2026; messages is the tab beside it).
 // Search and the faces of your people moved to the messages page. Before: top to
 // bottom: search (typing replaced the page with people results); one thin line to the
 // groups (their badges, how many are live); "with your people", a gallery that mixes
 // the groups' plans and open votes (first), the nights your friends kept (most keepers
 // first) and the sparks waiting for your answer, one full photo each, sliding by itself
-// every 6 s; the decks as card stacks (a tap opens the viewer); your people (faces, a red
+// every 6 s, with one sample card from each deck between them, its pill opening that deck); your people (faces, a red
 // ring for whoever is out right now, what each is up to). Stories, posts and past nights
 // are in yours. A group without a plan or a vote is only in the line, not the gallery.
 // first names for the people further out on a sample wave (never shown as real)
@@ -168,7 +168,7 @@ export default function PeopleScreen() {
     : real.nights;
   const matches: YoursMatch[] = sample ? sampleMatches.map((m) => ({ friend: sampleFriendById(m.friend).name, night: m.night })) : real.matches;
   // Called at render, after the gallery (ranked) is built: it holds the city's nights too.
-  const nightById = (id: string) => ranked.find((n) => n.id === id);
+  const nightById = (id: string) => ranked.find((n) => n.id === id) ?? waveNights.find((n) => n.id === id);
   // Live names for the feed's squares: sample friends go with the sample feed.
   const live = useMemo(
     () => new Set((sample ? sampleFriends : friends).filter((f) => f.live).map((f) => f.name)),
@@ -309,16 +309,40 @@ export default function PeopleScreen() {
   const elsewhere = sample ? [] : nights.filter((n) => n.city !== feedCity).sort(byKeepers);
   const ranked = [...here, ...filler, ...elsewhere];
   const matched = new Set(matches.map((mt) => mt.night));
+  type Wave = { id: 'friends' | 'wave2' | 'wave3'; label: string };
   type Slide =
-    | { kind: 'night'; key: string; n: YoursNight }
+    | { kind: 'night'; key: string; n: YoursNight; wave?: Wave }
     | { kind: 'spark'; key: string; s: SparkInvite }
     | { kind: 'plan'; key: string; g: GroupRow; p: Plan }
     | { kind: 'round'; key: string; g: GroupRow; r: Round; members: number };
+  // One sample from each deck, as a gallery card (owner, 28.10.2026): the first card of the
+  // friends' deck, of the 2nd and of the 3rd wave that is not already in the gallery. The
+  // card looks like the others; its pill says which deck it came from and opens it.
+  const seen = new Set(ranked.map((n) => n.id));
+  const waveSlides: Slide[] = (
+    [
+      { id: 'friends', label: t('spark.wave1.short'), cards: friendsDeck },
+      { id: 'wave2', label: t('deck.wave2'), cards: wave2 },
+      { id: 'wave3', label: t('deck.wave3'), cards: wave3 },
+    ] as { id: Wave['id']; label: string; cards: DeckCard[] }[]
+  ).flatMap(({ id, label, cards }): Slide[] => {
+    const c = cards.find((x) => !seen.has(x.key));
+    if (!c) return [];
+    seen.add(c.key);
+    const n: YoursNight = { id: c.key, slug: c.slug, title: c.title.toLowerCase(), venue: c.venue ?? c.city, when: c.startsAt ? dayLabel(c.startsAt) : '', startsAt: c.startsAt ?? undefined, image: c.image, friends: c.via ? c.via.path : c.friends.map((f) => f.name), city: c.city };
+    return [{ kind: 'night', key: `wave-${id}`, n, wave: { id, label } }];
+  });
+  const waveNights = waveSlides.flatMap((sl) => (sl.kind === 'night' ? [sl.n] : []));
   // The groups' plans and votes come first: they are the nights already decided, or being decided.
+  // Then the friends' nights with a deck sample after every second one.
+  const nightSlides = ranked.slice(0, 8).map((n): Slide => ({ kind: 'night', key: n.id, n }));
+  const mixed: Slide[] = [];
+  nightSlides.forEach((sl, i) => { mixed.push(sl); if (i % 2 === 1 && waveSlides.length) mixed.push(waveSlides.shift()!); });
+  mixed.push(...waveSlides);
   const slides: Slide[] = [
     ...plans.flatMap(({ g, plan, round, members }): Slide[] =>
       plan ? [{ kind: 'plan', key: `p${g.id}`, g, p: plan }] : round ? [{ kind: 'round', key: `r${g.id}`, g, r: round, members }] : []),
-    ...ranked.slice(0, 8).map((n): Slide => ({ kind: 'night', key: n.id, n })),
+    ...mixed,
     ...sparkAsks.map((sp): Slide => ({ kind: 'spark', key: `s${sp.id}`, s: sp })),
   ];
   const galleryIds = slides
@@ -402,65 +426,9 @@ export default function PeopleScreen() {
       >
         {
           <>
-            {/* Groups (connect, design A, 12.10.2026): the first two as covers, side by side;
-                the plans themselves are in the gallery. A tap opens the group; the heading opens all. */}
-            <View style={styles.groupsHead}>
-              <Text style={styles.groupsTitle}>{t('groups.entry')}{groups.some((g) => g.live) ? <Text style={styles.redText}> · {t('groups.liveNow', { n: groups.reduce((a, g) => a + g.live, 0) })}</Text> : null}</Text>
-              <Pressable onPress={() => router.push('/groups')} hitSlop={8} accessibilityRole="button">
-                <Text style={styles.groupsAll}>{groups.filter((g) => !g.archived).length > 2 ? `${t('connect.groups.all')} · ${groups.filter((g) => !g.archived).length} ›` : '+'}</Text>
-              </Pressable>
-            </View>
-            {groups.filter((g) => !g.archived).length ? (
-              <View style={styles.covers}>
-                {groups.filter((g) => !g.archived).slice(0, 2).map((g) => {
-                  const st = plans.find((x) => x.g.id === g.id);
-                  const line = g.kind === 'travel' ? t('connect.group.travel', { n: g.members }) : st?.round ? t('groups.card.closes', { at: dayLabel(st.round.closes_at) }) : st?.plan ? st.plan.title.toLowerCase() : t('connect.group.people', { n: g.members });
-                  return (
-                    <Pressable key={g.id} onPress={() => router.push({ pathname: '/groups/[id]', params: { id: g.id } })} style={({ pressed }) => [styles.cover, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={g.name}>
-                      {coverSource(g.cover_path) ? <Image source={coverSource(g.cover_path)!} style={StyleSheet.absoluteFill} contentFit="cover" /> : <View style={[StyleSheet.absoluteFill, { backgroundColor: GROUP_COLORS[g.color], opacity: 0.35 }]} />}
-                      <LinearGradient colors={[scrim(0.0), scrim(0.92)]} locations={[0.3, 1]} style={StyleSheet.absoluteFill} />
-                      <View style={styles.coverBadge}><GroupBadge emoji={g.emoji} color={g.color} cover={null} size={28} /></View>
-                      <View style={styles.coverText}>
-                        <Text style={styles.coverName} numberOfLines={1}>{g.name.toLowerCase()}</Text>
-                        <Text style={[styles.coverLine, (g.live > 0 || !!st?.round) && styles.redOnPhoto]} numberOfLines={1}>{g.live > 0 ? t('groups.liveNow', { n: g.live }) : line}</Text>
-                      </View>
-                    </Pressable>
-                  );
-                })}
-                {groups.filter((g) => !g.archived).length === 1 ? (
-                  <Pressable onPress={() => router.push('/groups/new')} style={({ pressed }) => [styles.cover, styles.coverNew, pressed && styles.pressed]} accessibilityRole="button">
-                    <Text style={styles.coverPlus}>+</Text>
-                  </Pressable>
-                ) : null}
-              </View>
-            ) : (
-              <Pressable onPress={() => router.push('/groups/new')} style={({ pressed }) => [styles.groupsLine, pressed && styles.pressed]} accessibilityRole="button">
-                <Text style={styles.groupsText}>{t('connect.groups.none')}</Text>
-                <Text style={styles.groupArrow}>+</Text>
-              </Pressable>
-            )}
-            {/* Specialties: two squares to a screen, the rest sideways; a tap opens the deck. */}
-            <Head label={t('special.title')} />
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} snapToInterval={squareW + 10} decelerationRate="fast" contentContainerStyle={styles.squares}>
-              {occasions.map((o) => {
-                const rows = special[o.id];
-                const n = rows?.length ?? 0;
-                const line = rows === undefined ? ' ' : n ? `${tn('special.nights', n)} · ${dayLabel(nextDate(o).toISOString())}` : t('special.back', { month: monthName(nextDate(o)) });
-                return (
-                  <Pressable key={o.id} onPress={() => setDeck(o.id)} style={({ pressed }) => [styles.square, { width: squareW, height: squareW }, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t(o.label)}>
-                    <LinearGradient colors={[o.ground, o.deep]} start={{ x: 0, y: 0 }} end={{ x: 0.4, y: 1 }} style={StyleSheet.absoluteFill} />
-                    <MotifField special={o} width={squareW} height={squareW} kind="cover" />
-                    <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.55)']} style={styles.squareShade} pointerEvents="none" />
-                    <View style={styles.squareText}>
-                      <Text style={[styles.squareName, { color: o.ink }]} numberOfLines={2}>{t(o.label)}<Text style={{ color: o.accents[0] }}>.</Text></Text>
-                      <Text style={[styles.squareLine, { color: o.ink }]} numberOfLines={1}>{up(line)}</Text>
-                    </View>
-                  </Pressable>
-                );
-              })}
-            </ScrollView>
-
-            {/* With your people: the gallery. */}
+            {/* With your people: the gallery, first (owner, 28.10.2026): it is the way to the decks.
+                Between the friends' nights, one sample card from each deck — the friends' deck,
+                the 2nd and the 3rd wave — marked as such; the pill at the top opens that deck. */}
             {count ? (
               <>
                 <Head label={t('yours.withPeople')} note={sample ? up(t('yours.sample')) : `${two(slide + 1)}/${two(count)}`} />
@@ -556,6 +524,15 @@ export default function PeopleScreen() {
                               <Text style={styles.badgeText}>{up(t('yours.match'))}</Text>
                             </View>
                           ) : null}
+                          {item.wave ? (
+                            <Pressable onPress={() => setDeck(item.wave!.id)} hitSlop={8} style={({ pressed }) => [styles.wavePill, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={item.wave.label}>
+                              <Svg width={12} height={12} viewBox="0 0 16 16">
+                                <Rect x={5.5} y={1.5} width={8} height={11} rx={1.6} stroke={colors.ink} strokeWidth={1.6} fill="none" transform="rotate(8 9.5 7)" />
+                                <Rect x={2.5} y={3.5} width={8} height={11} rx={1.6} stroke={colors.ink} strokeWidth={1.6} fill={colors.paper} />
+                              </Svg>
+                              <Text style={styles.wavePillText}>{up(item.wave.label)} · {up(t('connect.wave.open'))} ›</Text>
+                            </Pressable>
+                          ) : null}
                           <View style={styles.heroText}>
                             <Text style={styles.heroMeta} numberOfLines={1}>{item.n.startsAt !== undefined ? up(dayLabel(item.n.startsAt)) : upperData(item.n.when)} · {upperData(item.n.venue)}</Text>
                             <Text style={styles.heroTitle} numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6}>{item.n.title}</Text>
@@ -599,7 +576,7 @@ export default function PeopleScreen() {
                                 <Text style={styles.btnTextLine}>{answers[item.n.id] ? t('yours.you', { answer: tx('yours.answer.' + answers[item.n.id], answers[item.n.id]) }) : t('who.coming')}</Text>
                               </Pressable>
                               {/* into the friends' deck from here (owner, 28.10.2026): the gallery stays, the deck is one tap away */}
-                              <Pressable onPress={() => setDeck('friends')} hitSlop={6} style={({ pressed }) => [styles.btnLine, styles.btnDeck, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t('deck.friends')}>
+                              <Pressable onPress={() => setDeck(item.wave?.id ?? 'friends')} hitSlop={6} style={({ pressed }) => [styles.btnLine, styles.btnDeck, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={item.wave?.label ?? t('deck.friends')}>
                                 <Svg width={16} height={16} viewBox="0 0 16 16">
                                   <Rect x={5.5} y={1.5} width={8} height={11} rx={1.6} stroke={colors.onPhoto} strokeWidth={1.5} fill="none" transform="rotate(8 9.5 7)" />
                                   <Rect x={2.5} y={3.5} width={8} height={11} rx={1.6} stroke={colors.onPhoto} strokeWidth={1.5} fill={scrim(0.45)} />
@@ -641,33 +618,63 @@ export default function PeopleScreen() {
               </>
             ) : null}
 
-            {/* The decks: one wide card, the friends deck; yours and the waves are its tabs on top once
-                it is open (owner, 28.10.2026: one is enough, the others are chosen up there). */}
-            <Head label={t('yours.decks')} />
-            {(() => {
-              const d = decks[0];
-              const others = decks.slice(1).reduce((a, x) => a + x.cards.length, 0);
-              return (
-                <Pressable onPress={() => setDeck(d.id)} style={({ pressed }) => [styles.deckOne, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={d.label}>
-                  <View style={styles.deckFan}>
-                    {[2, 1, 0].map((k) => {
-                      const c = d.cards[k];
-                      return (
-                        <View key={k} style={[styles.stackCard, styles.deckFanCard, { transform: [{ rotate: `${(k - 1) * -7}deg` }, { translateX: (1 - k) * 14 }] }, k === 0 && styles.stackRed]}>
-                          <StackThumb card={c} />
-                        </View>
-                      );
-                    })}
-                  </View>
-                  <View style={styles.deckText}>
-                    <Text style={[styles.deckName, styles.redText]} numberOfLines={1}>{d.label}</Text>
-                    <Text style={styles.deckCount}>{up(tn('special.nights', d.cards.length))}{others ? ` · +${others}` : ''}</Text>
-                  </View>
-                  <View style={styles.deckGo}><Text style={styles.deckGoText}>›</Text></View>
-                </Pressable>
-              );
-            })()}
-
+            {/* Groups (connect, design A, 12.10.2026): the first two as covers, side by side;
+                the plans themselves are in the gallery. A tap opens the group; the heading opens all. */}
+            <View style={styles.groupsHead}>
+              <Text style={styles.groupsTitle}>{t('groups.entry')}{groups.some((g) => g.live) ? <Text style={styles.redText}> · {t('groups.liveNow', { n: groups.reduce((a, g) => a + g.live, 0) })}</Text> : null}</Text>
+              <Pressable onPress={() => router.push('/groups')} hitSlop={8} accessibilityRole="button">
+                <Text style={styles.groupsAll}>{groups.filter((g) => !g.archived).length > 2 ? `${t('connect.groups.all')} · ${groups.filter((g) => !g.archived).length} ›` : '+'}</Text>
+              </Pressable>
+            </View>
+            {groups.filter((g) => !g.archived).length ? (
+              <View style={styles.covers}>
+                {groups.filter((g) => !g.archived).slice(0, 2).map((g) => {
+                  const st = plans.find((x) => x.g.id === g.id);
+                  const line = g.kind === 'travel' ? t('connect.group.travel', { n: g.members }) : st?.round ? t('groups.card.closes', { at: dayLabel(st.round.closes_at) }) : st?.plan ? st.plan.title.toLowerCase() : t('connect.group.people', { n: g.members });
+                  return (
+                    <Pressable key={g.id} onPress={() => router.push({ pathname: '/groups/[id]', params: { id: g.id } })} style={({ pressed }) => [styles.cover, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={g.name}>
+                      {coverSource(g.cover_path) ? <Image source={coverSource(g.cover_path)!} style={StyleSheet.absoluteFill} contentFit="cover" /> : <View style={[StyleSheet.absoluteFill, { backgroundColor: GROUP_COLORS[g.color], opacity: 0.35 }]} />}
+                      <LinearGradient colors={[scrim(0.0), scrim(0.92)]} locations={[0.3, 1]} style={StyleSheet.absoluteFill} />
+                      <View style={styles.coverBadge}><GroupBadge emoji={g.emoji} color={g.color} cover={null} size={28} /></View>
+                      <View style={styles.coverText}>
+                        <Text style={styles.coverName} numberOfLines={1}>{g.name.toLowerCase()}</Text>
+                        <Text style={[styles.coverLine, (g.live > 0 || !!st?.round) && styles.redOnPhoto]} numberOfLines={1}>{g.live > 0 ? t('groups.liveNow', { n: g.live }) : line}</Text>
+                      </View>
+                    </Pressable>
+                  );
+                })}
+                {groups.filter((g) => !g.archived).length === 1 ? (
+                  <Pressable onPress={() => router.push('/groups/new')} style={({ pressed }) => [styles.cover, styles.coverNew, pressed && styles.pressed]} accessibilityRole="button">
+                    <Text style={styles.coverPlus}>+</Text>
+                  </Pressable>
+                ) : null}
+              </View>
+            ) : (
+              <Pressable onPress={() => router.push('/groups/new')} style={({ pressed }) => [styles.groupsLine, pressed && styles.pressed]} accessibilityRole="button">
+                <Text style={styles.groupsText}>{t('connect.groups.none')}</Text>
+                <Text style={styles.groupArrow}>+</Text>
+              </Pressable>
+            )}
+            {/* Specialties: two squares to a screen, the rest sideways; a tap opens the deck. */}
+            <Head label={t('special.title')} />
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} snapToInterval={squareW + 10} decelerationRate="fast" contentContainerStyle={styles.squares}>
+              {occasions.map((o) => {
+                const rows = special[o.id];
+                const n = rows?.length ?? 0;
+                const line = rows === undefined ? ' ' : n ? `${tn('special.nights', n)} · ${dayLabel(nextDate(o).toISOString())}` : t('special.back', { month: monthName(nextDate(o)) });
+                return (
+                  <Pressable key={o.id} onPress={() => setDeck(o.id)} style={({ pressed }) => [styles.square, { width: squareW, height: squareW }, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t(o.label)}>
+                    <LinearGradient colors={[o.ground, o.deep]} start={{ x: 0, y: 0 }} end={{ x: 0.4, y: 1 }} style={StyleSheet.absoluteFill} />
+                    <MotifField special={o} width={squareW} height={squareW} kind="cover" />
+                    <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.55)']} style={styles.squareShade} pointerEvents="none" />
+                    <View style={styles.squareText}>
+                      <Text style={[styles.squareName, { color: o.ink }]} numberOfLines={2}>{t(o.label)}<Text style={{ color: o.accents[0] }}>.</Text></Text>
+                      <Text style={[styles.squareLine, { color: o.ink }]} numberOfLines={1}>{up(line)}</Text>
+                    </View>
+                  </Pressable>
+                );
+              })}
+            </ScrollView>
 
           </>
         }
@@ -734,23 +741,6 @@ const two = (n: number) => String(n).padStart(2, '0');
 
 // One card of a deck stack: its photo, else its drawn poster, else the stock photo
 // (an empty or broken picture left blank cards before).
-function StackThumb({ card }: { card: DeckCard | undefined }) {
-  const [broken, setBroken] = useState(false);
-  if (card?.image && !broken) return <Image source={{ uri: card.image }} style={StyleSheet.absoluteFill} contentFit="cover" onError={() => setBroken(true)} />;
-  if (card?.poster && !broken) {
-    return (
-      <View style={[StyleSheet.absoluteFill, styles.stackPoster]}>
-        <SvgUri uri={card.poster} width="100%" height="100%" onError={() => setBroken(true)} />
-      </View>
-    );
-  }
-  return (
-    <>
-      <Image source={fallbackPhoto} style={[StyleSheet.absoluteFill, styles.stackDim]} contentFit="cover" />
-      {card ? <Text style={styles.stackTitle} numberOfLines={3}>{card.title.toLowerCase()}</Text> : null}
-    </>
-  );
-}
 
 // Who kept it, short: two names and +n.
 const names = (list: string[]) => (list.length > 2 ? `${list.slice(0, 2).join(', ')} +${list.length - 2}` : list.join(', '));
@@ -832,20 +822,6 @@ const styles = StyleSheet.create({
   personState: { fontFamily: fonts.regular, fontSize: 10, color: colors.meta },
 
   stack: { width: 104, gap: 3 },
-  stackCards: { width: 104, height: 138, marginBottom: 8 },
-  stackCard: { position: 'absolute', left: 10, top: 4, width: 84, height: 126, borderRadius: radius.sm, overflow: 'hidden', backgroundColor: colors.ink2, borderWidth: 1, borderColor: colors.ink3, padding: 8, justifyContent: 'flex-end' },
-  stackRed: { borderColor: colors.spot, borderWidth: 1.5 },
-  deckOne: { flexDirection: 'row', alignItems: 'center', gap: 16, marginHorizontal: brand.left, paddingVertical: 14, paddingLeft: 10, paddingRight: 14, borderRadius: radius.md, backgroundColor: colors.card, borderWidth: 1, borderColor: colors.ink3 },
-  deckFan: { width: 128, height: 112 },
-  deckFanCard: { left: 26, top: 4, width: 70, height: 104 },
-  deckText: { flex: 1, gap: 4 },
-  deckName: { fontFamily: fonts.semibold, fontSize: 18, letterSpacing: -0.4 },
-  deckCount: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1, color: colors.meta },
-  deckGo: { width: 34, height: 34, borderRadius: 17, backgroundColor: colors.spot, alignItems: 'center', justifyContent: 'center' },
-  deckGoText: { fontFamily: fonts.semibold, fontSize: 19, lineHeight: 21, color: colors.onSpot },
-  stackPoster: { backgroundColor: colors.ink2 },
-  stackDim: { opacity: 0.45 },
-  stackTitle: { fontFamily: fonts.logo, fontSize: 15, lineHeight: 15, color: colors.spotText },
   stackLabel: { fontFamily: fonts.medium, fontSize: 13, letterSpacing: -0.2, color: colors.paper },
   stackCount: { fontFamily: fonts.jet, fontSize: 10.5, letterSpacing: 1, color: colors.meta },
 
@@ -877,6 +853,9 @@ const styles = StyleSheet.create({
   page: { paddingHorizontal: brand.left },
   heroGold: { borderWidth: 1.5, borderColor: GOLD },
   badge: { position: 'absolute', top: 14, left: 14, backgroundColor: colors.spot, paddingVertical: 4, paddingHorizontal: 9, borderRadius: radius.pill },
+  // a deck sample in the gallery: the pill at the top centre names the deck and opens it
+  wavePill: { position: 'absolute', top: 12, alignSelf: 'center', flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: colors.paper, paddingVertical: 6, paddingHorizontal: 12, borderRadius: radius.pill },
+  wavePillText: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.ink },
   badgeGold: { backgroundColor: GOLD },
   badgeText: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.2, color: colors.ink },
   dots: { flexDirection: 'row', justifyContent: 'center', gap: 6, marginTop: 12 },

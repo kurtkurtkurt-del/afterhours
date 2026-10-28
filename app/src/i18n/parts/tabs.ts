@@ -836,6 +836,8 @@ export const tabs = {
   'special.empty': { en: 'nothing listed for this one yet. the nights arrive as the day gets closer.', de: 'dafür ist noch nichts gelistet. die nächte kommen, je näher der tag rückt.', tr: 'bunun için henüz bir şey yok. gün yaklaştıkça geceler gelir.' },
   'connect.groups.none':{ en: 'make a group: friends who find a night together, or a trip', de: 'mach eine gruppe: freunde, die zusammen eine nacht finden, oder eine reise', tr: 'bir grup kur: birlikte gece bulan arkadaşlar ya da bir seyahat' },
   'connect.groups.all': { en: 'all groups', de: 'alle gruppen', tr: 'tüm gruplar' },
+  // a deck sample in the connect gallery: the pill at the top names the deck and opens it (28.10.2026)
+  'connect.wave.open': { en: 'open the deck', de: 'stapel öffnen', tr: 'desteyi aç' },
   'connect.group.travel': { en: 'travel · {n} travelling', de: 'reise · {n} reisen', tr: 'seyahat · {n} yolcu' },
   'connect.group.people': { en: '{n} people', de: '{n} leute', tr: '{n} kişi' },
   'people.search': { en: 'find friends · name or @handle', de: 'freunde finden · name oder @handle', tr: 'arkadaş bul · isim ya da @kullanıcıadı' },

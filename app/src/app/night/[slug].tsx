@@ -505,9 +505,10 @@ export default function NightScreen() {
 
       {night ? <NudgeSheet open={nudging} night={night} onClose={() => setNudging(false)} onSent={setNudged} seed={{ friends: nudgeFriends, live: nudgeLive, photos: nudgePhotos }} /> : null}
 
-      {/* Back from the ticket page: one question, once. */}
-      <Modal visible={askTicket} transparent animationType="fade" onRequestClose={() => setAskTicket(false)}>
-        <Scrim onPress={() => setAskTicket(false)} />
+      {/* Back from the ticket page: one question, once. Only its two buttons close it: a tap
+          beside the sheet (or the back gesture) used to dismiss it by accident (owner, 28.10.2026). */}
+      <Modal visible={askTicket} transparent animationType="fade" onRequestClose={() => {}}>
+        <Scrim onPress={() => {}} />
         <View style={[styles.askSheet, { paddingBottom: insets.bottom + 18 }]}>
           <Text style={styles.askTitle}>{t('night.ask.ticket')}</Text>
           <Text style={styles.askNote}>{t('night.ask.ticket.note')}</Text>
