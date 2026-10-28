@@ -113,6 +113,7 @@ const structure = [
   ["104_pending_request_privacy.sql", "A PENDING REQUEST OPENS NO PROFILE ROW"],
   ["105_kept_friends_only.sql", "WHAT YOU KEPT IS FOR YOUR FRIENDS ONLY"],
   ["106_ban_and_guest_doors.sql", "A CLOSED ACCOUNT SWIPES NOTHING, A GUEST BEFRIENDS NOBODY"],
+  ["107_handles_and_read_limits.sql", "A HANDLE OBEYS THE RULES, READS HAVE A CEILING"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
