@@ -249,6 +249,7 @@
   "del.done.heading": { "en": "it is gone.", "de": "es ist weg.", "tr": "silindi." },
   "del.done.note": { "en": "The account and everything in it were deleted. If you signed in with Apple, you can also remove afterhours under Apple ID → Sign in with Apple.", "de": "Das konto und alles darin wurden gelöscht. Wenn du dich mit Apple angemeldet hast, kannst du afterhours auch unter Apple-ID → Mit Apple anmelden entfernen.", "tr": "Hesap ve içindeki her şey silindi. Apple ile girdiysen afterhours'u Apple Kimliği → Apple ile Giriş altından da kaldırabilirsin." },
   "del.done.back": { "en": "back to the start", "de": "zurück zum anfang", "tr": "başa dön" },
+  "del.fresh": { "en": "To be sure it is you, a link comes to your email first. Open it on this device and delete within ten minutes.", "de": "Damit sicher ist, dass du es bist, kommt zuerst ein link an deine e-mail. Öffne ihn auf diesem gerät und lösche innerhalb von zehn minuten.", "tr": "Sen olduğundan emin olmak için önce e-postana bir bağlantı gelir. Bu cihazda aç ve on dakika içinde sil." },
   "del.link": { "en": "no password? delete it with your email", "de": "kein passwort? mit deiner e-mail löschen", "tr": "şifren yok mu? e-postanla sil" },
   "settings.signout.all": { "en": "sign out everywhere", "de": "überall abmelden", "tr": "her yerden çıkış yap" },
   "settings.email.title": { "en": "email", "de": "e-mail", "tr": "e-posta" },

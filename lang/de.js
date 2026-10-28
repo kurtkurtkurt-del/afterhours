@@ -106,6 +106,7 @@ window.AH_LANG.de = {
 "del.done.back":"zurück zum anfang",
 "del.done.heading":"es ist weg.",
 "del.done.note":"Das konto und alles darin wurden gelöscht. Wenn du dich mit Apple angemeldet hast, kannst du afterhours auch unter Apple-ID → Mit Apple anmelden entfernen.",
+"del.fresh":"Damit sicher ist, dass du es bist, kommt zuerst ein link an deine e-mail. Öffne ihn auf diesem gerät und lösche innerhalb von zehn minuten.",
 "del.go":"konto löschen",
 "del.heading":"konto<br />löschen.",
 "del.lead":"Alles geht: profil, karten, nachrichten, gruppen, fotos. Lade es vorher in den einstellungen herunter, wenn du eine kopie willst. Gib die e-mail des kontos ein; dorthin kommt ein link.",

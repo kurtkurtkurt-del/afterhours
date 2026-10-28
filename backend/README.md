@@ -265,7 +265,7 @@ a row in auth.users  →  handle_new_user()  →  profiles + profile_settings
 | `is_linked(id)` | friend or pending request — the profile read rule uses this |
 | `handle_to_id(handle)` | identity by handle; a friend request goes through it |
 | `author_name(id, fallback)` | the name under a comment, without touching the profile table |
-| `delete_account()` | deletes the account; comment texts stay, the name becomes `someone` |
+| `delete_account()` | deletes the account; comment texts stay, the name becomes `someone`; only for a sign-in from the last ten minutes (111, `signed_in_recently()`) |
 | `export_me()` | everything held about the caller, as one JSON object (14_export.sql; messages and ticket answers since 64_export_more.sql) |
 
 **A changed rule:** the "a confirmed friend sees what you swiped RIGHT"

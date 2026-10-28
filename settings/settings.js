@@ -300,13 +300,19 @@
       return;
     }
     say(deleteStatus, AH.t("settings.delete.working"));
-    removeFiles()
+    /* the server deletes only for a sign-in from the last ten minutes (111); an older
+       session goes to delete/, which sends the email link first, before any file goes */
+    call("signed_in_recently")
+      .then((fresh) => {
+        if (fresh !== true) { location.href = "../delete/index.html"; throw null; }
+      })
+      .then(() => removeFiles())
       .then(() => call("delete_account"))
       .then(() => {
         AH.dropSession();
         location.href = "../index.html";
       })
-      .catch((h) => say(deleteStatus, AH.errorText(h, AH.t("settings.delete.failed")), "error"));
+      .catch((h) => { if (h) say(deleteStatus, AH.errorText(h, AH.t("settings.delete.failed")), "error"); });
   };
 
   /* --- start --- */

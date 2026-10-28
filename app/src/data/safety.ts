@@ -222,11 +222,19 @@ async function revokeApple(): Promise<boolean> {
   }
 }
 
+// Deleting wants a sign-in from the last ten minutes (111); asked before anything goes.
+export async function signedInRecently(): Promise<boolean> {
+  const { data, error } = await supabase.rpc('signed_in_recently');
+  if (error) throw error;
+  return data === true;
+}
+
 // true: deleted · false: cancelled at Apple's sheet
 export async function deleteEverything(): Promise<boolean> {
   const { data } = await supabase.auth.getUser();
   const user = data.user;
   if (!user) throw new Error('sign in first');
+  if (!(await signedInRecently())) throw new Error('sign in again first');
   const apple = Platform.OS === 'ios' && (user.identities ?? []).some((i) => i.provider === 'apple');
   if (apple && !(await revokeApple())) return false;
   await removeFiles(user.id);

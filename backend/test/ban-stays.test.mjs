@@ -25,6 +25,8 @@ await db.exec(await read("../sql/74_ban_stays.sql"));
 const [A, B, CM, B2] = ["aaaaaaaa-1111-1111-1111-111111111111", "bbbbbbbb-2222-2222-2222-222222222222",
                         "cccccccc-3333-3333-3333-333333333333", "bbbbbbbb-9999-9999-9999-999999999999"];
 const as = (id) => db.exec(`set role authenticated; set request.jwt.claims = '{"sub":"${id}"}';`);
+/* deleting wants a sign-in from the last ten minutes (111): the token says so */
+const fresh = `select set_config('request.jwt.claims', jsonb_set(current_setting('request.jwt.claims')::jsonb, '{amr}', jsonb_build_array(jsonb_build_object('method', 'password', 'timestamp', extract(epoch from now())::bigint)))::text, false);`;
 const asService = () => db.exec(`reset role; set request.jwt.claims = '';`);
 const fails = async (sql) => { try { await db.exec(sql); return null; } catch (e) { return e.message; } };
 const rows = async (sql) => (await db.query(sql)).rows;
@@ -49,7 +51,7 @@ console.log("\n— the ban, then the room —");
 console.log("\n— the banned person deletes the account and comes back —");
 {
   await as(B);
-  await db.exec(`select public.delete_account()`);
+  await db.exec(`${fresh} select public.delete_account()`);
   await asService();
   check((await rows(`select 1 from public.banned_marks where handle = 'berk'`)).length === 1, "a mark of the email and the handle stays behind");
   check((await rows(`select 1 from public.profiles where id = '${B}'`)).length === 0, "the account itself is gone");
@@ -66,7 +68,7 @@ console.log("\n— the banned person deletes the account and comes back —");
 console.log("\n— an ordinary deletion leaves no mark —");
 {
   await as(A);
-  await db.exec(`select public.delete_account()`);
+  await db.exec(`${fresh} select public.delete_account()`);
   await asService();
   check((await rows(`select 1 from public.banned_marks where handle = 'ada'`)).length === 0, "someone who was not banned is not remembered");
 }

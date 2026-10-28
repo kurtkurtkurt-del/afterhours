@@ -22,7 +22,8 @@ import { useProfile } from '@/data/profile';
 import { myBlocks, unblockUser, type Blocked } from '@/data/friends';
 import DoorCode from '@/components/DoorCode';
 import { resetTips } from '@/components/Tips';
-import { changeEmail, changePassword, deleteEverything, hasPassword, reauth } from '@/data/safety';
+import { changeEmail, changePassword, deleteEverything, hasPassword, reauth, signedInRecently } from '@/data/safety';
+import { signInAgain } from '@/auth/reauth';
 import { exportToFile } from '@/data/settings';
 import { POSTS_ON } from '@/content/flags';
 import CodeSheet from '@/components/CodeSheet';
@@ -198,14 +199,28 @@ export default function SettingsScreen() {
         text: t('settings.delete.go'),
         style: 'destructive',
         onPress: () =>
-          // Every file in your folder goes first (afterwards nobody can reach them), an
-          // Apple account is unlinked from Apple, then the account itself (data/safety.ts).
-          removePhoto()
+          // A sign-in from the last ten minutes first (111), so nothing goes if the server
+          // would refuse; then every file in your folder (afterwards nobody can reach them),
+          // an Apple account is unlinked from Apple, then the account itself (data/safety.ts).
+          signedInRecently()
+            .then((fresh) => {
+              if (!fresh) throw new Error('sign in again first');
+            })
+            .then(() => removePhoto())
             .then(() => deleteEverything())
             .then((done) => (done ? signOut().then(() => router.replace('/')) : undefined))
             .catch((e) => Alert.alert(t('settings.delete.failed'), serverText(e))),
       },
     ]);
+
+  // Proving it is you (111): a sign-in from the last ten minutes goes straight to the
+  // question; otherwise the password, or Google or Apple again (auth/reauth.ts).
+  const startDelete = () =>
+    signedInRecently()
+      .then((fresh) =>
+        fresh ? confirmDelete() : hasPassword().then((has) => (has ? setAsk('verify') : signInAgain().then((ok) => (ok ? confirmDelete() : undefined)))),
+      )
+      .catch((e) => Alert.alert(t('settings.delete.failed'), serverText(e)));
 
   const doExport = () =>
     exportToFile()
@@ -390,7 +405,7 @@ export default function SettingsScreen() {
         {/* Deletion sits in its own box in red, so it is never tapped by accident. */}
         {session ? (
           <Panel>
-            <Row danger label={t('settings.delete')} hint={t('settings.delete.hint')} onPress={() => hasPassword().then((has) => (has ? setAsk('verify') : confirmDelete()))} />
+            <Row danger label={t('settings.delete')} hint={t('settings.delete.hint')} onPress={startDelete} />
           </Panel>
         ) : null}
 

@@ -106,6 +106,7 @@ window.AH_LANG.tr = {
 "del.done.back":"başa dön",
 "del.done.heading":"silindi.",
 "del.done.note":"Hesap ve içindeki her şey silindi. Apple ile girdiysen afterhours'u Apple Kimliği → Apple ile Giriş altından da kaldırabilirsin.",
+"del.fresh":"Sen olduğundan emin olmak için önce e-postana bir bağlantı gelir. Bu cihazda aç ve on dakika içinde sil.",
 "del.go":"hesabı sil",
 "del.heading":"hesabını<br />sil.",
 "del.lead":"Her şey gider: profil, kartlar, mesajlar, gruplar, fotoğraflar. Bir kopyasını istersen önce ayarlardan indir. Hesabın e-postasını yaz; bağlantı oraya gelir.",
