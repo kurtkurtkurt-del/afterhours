@@ -112,6 +112,7 @@ const structure = [
   ["103_people_map_cities.sql", "YOUR PEOPLE MAP KNOWS THE CITY"],
   ["104_pending_request_privacy.sql", "A PENDING REQUEST OPENS NO PROFILE ROW"],
   ["105_kept_friends_only.sql", "WHAT YOU KEPT IS FOR YOUR FRIENDS ONLY"],
+  ["106_ban_and_guest_doors.sql", "A CLOSED ACCOUNT SWIPES NOTHING, A GUEST BEFRIENDS NOBODY"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

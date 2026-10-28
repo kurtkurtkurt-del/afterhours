@@ -15,7 +15,7 @@ file first, in the same commit. (The idea is KULA's `docs/promises.md`, 11.10.20
 | 5 | The member list cannot be browsed; a stranger sees their own row and named cards — and a request you sent opens nothing until it is accepted. | `12_profiles.sql`, `25_people.sql`, `104_pending_request_privacy.sql` | `profiles.test.mjs` · "a stranger sees only their own row" |
 | 6 | Your export holds everything of yours and nothing of anybody else's. | `14_export.sql`, `64_export_more.sql` | `export.test.mjs` · "not their message" |
 | 7 | A block closes both ways: no card, no search, no request, no wave, no message. | `50_blocks.sql`, `57_doors.sql`, `59_dms.sql` | `blocks.test.mjs` · "the wave stops at the block" |
-| 8 | A banned account writes nothing and, since 57, reads no feed, finds nobody. | `52_bans.sql`, `57_doors.sql` | `doors.test.mjs` · "a banned account: refused" |
+| 8 | A banned account writes nothing and, since 57, reads no feed, finds nobody; since 106 it swipes, checks in and reads no friend's kept nights either. | `52_bans.sql`, `57_doors.sql`, `106_ban_and_guest_doors.sql` | `doors.test.mjs` · "a banned account: refused" |
 | 9 | Nobody becomes a member of a group they were not added to; every group call asks first. | `44_groups.sql`, `57_doors.sql` | `groups.test.mjs` · "the table itself is closed" |
 | 10 | A push never carries a member's words: a fixed sentence and a name. | `58_push_words.sql` | `doors.test.mjs` · "the title still names who and where" |
 | 11 | A direct message goes only between confirmed friends who can reach each other. | `59_dms.sql` | `dms.test.mjs` · "a pending request is not a friend yet" |
@@ -25,4 +25,6 @@ file first, in the same commit. (The idea is KULA's `docs/promises.md`, 11.10.20
 Known gaps, written down so they are not forgotten:
 
 - Guests (anonymous sessions) pass `assert_member()`; what they may not do is refused
-  write by write (`is_guest()` in the writers), not at one door.
+  write by write (`is_guest()` in the writers), not at one door. Since 106 a trigger
+  (`guard_guest`) keeps them out of `friendships` and `sparks`; `profile_setup` stays open
+  to them, because onboarding gives a guest a name it keeps when it becomes an account.

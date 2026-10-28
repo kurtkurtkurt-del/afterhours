@@ -120,6 +120,7 @@
     "103_people_map_cities.sql",
     "104_pending_request_privacy.sql",
     "105_kept_friends_only.sql",
+    "106_ban_and_guest_doors.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */
