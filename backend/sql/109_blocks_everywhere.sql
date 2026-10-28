@@ -162,7 +162,7 @@ begin
 end;
 $$;
 
--- The three photo readers keep 108's rule too (group_photo_seen): a photo from a
+-- The three photo readers keep the rule of 108 too (group_photo_seen): a photo from a
 -- night the caller did not check in to stays out, block or no block.
 create or replace function public.group_wall(p_group uuid)
 returns table (id uuid, path text, event_id uuid, event_title text, starts_at timestamptz, name text, mine boolean, created_at timestamptz)
@@ -680,7 +680,7 @@ $$;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('109_blocks_everywhere.sql', 'c3d4b9506b985c4ff7e056a1d346ea228feb4183a55be51286208315d9c4a1e2');
+    perform public.migration_done('109_blocks_everywhere.sql', '430126041524499b9baf974963a91d08d0df4e1bbe23828885a5b5313454a616');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('109_blocks_everywhere.sql');
   end if;

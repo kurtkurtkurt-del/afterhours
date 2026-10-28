@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-10-28 15:53   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-10-28 15:54   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -20033,7 +20033,7 @@ begin
 end;
 $$;
 
--- The three photo readers keep 108's rule too (group_photo_seen): a photo from a
+-- The three photo readers keep the rule of 108 too (group_photo_seen): a photo from a
 -- night the caller did not check in to stays out, block or no block.
 create or replace function public.group_wall(p_group uuid)
 returns table (id uuid, path text, event_id uuid, event_title text, starts_at timestamptz, name text, mine boolean, created_at timestamptz)
