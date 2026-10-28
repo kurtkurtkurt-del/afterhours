@@ -338,6 +338,7 @@ export default function SettingsScreen() {
           <Row label={t('lang.label')} hint={t('lang.hint')} right={<Value text={langNames[lang]} more />} onPress={() => setSheet('locale')} />
           <Row label={t('settings.music')} right={<Switch on={ambient.on} />} onPress={ambient.toggle} />
           <Row label={t('settings.genre')} hint={t('settings.genre.hint')} right={<Value text={soundName} more />} onPress={() => setSheet('sound')} />
+          <Row label={t('onboard.replay')} hint={t('onboard.replay.hint')} right={<Mark kind="more" />} onPress={() => router.push('/onboard')} />
           <Row label={t('accent.label')} hint={t('accent.hint')} right={<View style={styles.swatchRow}><View style={[styles.swatch, { backgroundColor: colors.spot }]} /><Value text={tx('accent.' + currentAccent(), currentAccent())} more /></View>} onPress={() => setSheet('accent')} />
           <Row label={t('theme.label')} hint={t('theme.hint')} right={<Value text={t(currentTheme() === 'light' ? 'theme.light' : 'theme.dark')} more />} onPress={() => setSheet('theme')} />
         </Panel>

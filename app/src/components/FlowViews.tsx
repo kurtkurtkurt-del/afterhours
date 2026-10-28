@@ -11,6 +11,7 @@ import { dayLabel } from '@/data/when';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import Storage from 'expo-sqlite/kv-store';
 
 // The flow's other two ways to look (owner, 28.10.2026; prototypes/flow-classic.html):
 //   classic  A, the nights by day: a day heading that stays on top while its nights pass under
@@ -164,6 +165,21 @@ export function FlowPosters({ rows, top, bottom }: Props) {
 
 // the switch: three marks, swipe · classic · poster
 export type FlowView = 'swipe' | 'classic' | 'poster';
+// The chosen look lives on the phone (flow.view); the onboarding sets it too (app/onboard.tsx).
+export const FLOW_VIEW = 'flow.view';
+export function readFlowView(): FlowView {
+  try {
+    const v = Storage.getItemSync(FLOW_VIEW);
+    return v === 'classic' || v === 'poster' ? v : 'swipe';
+  } catch {
+    return 'swipe';
+  }
+}
+export function setFlowView(v: FlowView) {
+  try {
+    Storage.setItemSync(FLOW_VIEW, v);
+  } catch {}
+}
 export function ViewSwitch({ value, onChange }: { value: FlowView; onChange: (v: FlowView) => void }) {
   const { t } = useLang();
   const mark = (v: FlowView, on: boolean) => {

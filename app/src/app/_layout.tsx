@@ -101,7 +101,7 @@ function RootLayout() {
         }}
       >
         {/* Flow changes (entry, sign-up, film, arriving at the tabs) cross-fade instead of sliding. */}
-        {['index', '(tabs)', 'signup', 'welcome', 'film', 'explore', 'auth-callback'].map((name) => (
+        {['index', '(tabs)', 'signup', 'welcome', 'onboard', 'film', 'explore', 'auth-callback'].map((name) => (
           <Stack.Screen key={name} name={name} options={{ animation: 'fade', animationDuration: 400 }} />
         ))}
       </Stack>

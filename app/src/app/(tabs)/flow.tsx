@@ -6,7 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import Svg, { Circle, Path } from 'react-native-svg';
 import Storage from 'expo-sqlite/kv-store';
 import Deck, { isCard, isSpark, openSpark, sparkCard, type DeckEntry, type DeckHandle, type SparkEntry } from '@/components/Deck';
-import { FlowClassic, FlowPosters, ViewSwitch, type FlowView, type ViewRow } from '@/components/FlowViews';
+import { FlowClassic, FlowPosters, ViewSwitch, readFlowView, setFlowView, type FlowView, type ViewRow } from '@/components/FlowViews';
 import { SPARKS, sparkIn, sparkOf, type SparkDayMap } from '@/content/sparks';
 import { sparkAnswer, sparkDay, sparkInbox, type SparkInvite } from '@/data/sparks';
 import BigPicker from '@/components/BigPicker';
@@ -92,20 +92,13 @@ export default function FlowScreen() {
   const [swiped, setSwiped] = useState(0);
   // swipe · classic · poster (owner, 28.10.2026): the same nights as a deck, a list by day or a
   // wall of posters; the phone remembers the last one, for the tickets and the spark panel alike.
-  const [view, setView] = useState<FlowView>(() => {
-    try {
-      const v = Storage.getItemSync('flow.view');
-      return v === 'classic' || v === 'poster' ? v : 'swipe';
-    } catch {
-      return 'swipe';
-    }
-  });
+  const [view, setView] = useState<FlowView>(readFlowView);
   const pickView = (v: FlowView) => {
     setView(v);
-    try {
-      Storage.setItemSync('flow.view', v);
-    } catch {}
+    setFlowView(v);
   };
+  // the onboarding may have chosen while this tab was already mounted
+  useFocusEffect(useCallback(() => setView(readFlowView()), []));
   // kept from the list or the wall (a heart is a swipe right; a second tap takes it back)
   const [listKept, setListKept] = useState<Set<string>>(new Set());
   // Bottom edge of the picker chip; the poster starts below it (the chip wraps in Turkish).
