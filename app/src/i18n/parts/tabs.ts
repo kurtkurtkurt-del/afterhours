@@ -762,6 +762,11 @@ export const tabs = {
   'yours.pastEnd': { en: 'that is a year of nights.', de: 'das ist ein jahr voller nächte.', tr: 'bu kadar: bir yıllık gece.' },
   'people.title': { en: 'people.', de: 'leute.', tr: 'insanlar.' },
   'connect.title': { en: 'connect.', de: 'connect.', tr: 'connect.' },
+  // the flow's three looks (components/FlowViews.tsx)
+  'flow.view.swipe': { en: 'swipe', de: 'wischen', tr: 'kaydır' },
+  'flow.view.classic': { en: 'classic', de: 'liste', tr: 'klasik' },
+  'flow.view.poster': { en: 'poster', de: 'plakate', tr: 'afiş' },
+  'flow.view.empty': { en: 'no nights for this choice', de: 'keine nächte für diese auswahl', tr: 'bu seçim için gece yok' },
   // the friends view on the map tab (102_people_places.sql)
   'fmap.toggle': { en: 'friends view', de: 'freunde', tr: 'arkadaş görünümü' },
   'fmap.all': { en: 'everyone', de: 'alle', tr: 'herkes' },

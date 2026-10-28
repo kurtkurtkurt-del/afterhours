@@ -6,6 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import Svg, { Circle, Path } from 'react-native-svg';
 import Storage from 'expo-sqlite/kv-store';
 import Deck, { isCard, isSpark, openSpark, type DeckEntry, type DeckHandle, type SparkEntry } from '@/components/Deck';
+import { FlowClassic, FlowPosters, ViewSwitch, type FlowView } from '@/components/FlowViews';
 import { SPARKS, sparkIn, sparkOf, type SparkDayMap } from '@/content/sparks';
 import { sparkAnswer, sparkDay, sparkInbox, type SparkInvite } from '@/data/sparks';
 import BigPicker from '@/components/BigPicker';
@@ -89,6 +90,24 @@ export default function FlowScreen() {
   const tabSpace = useTabBarSpace();
   const insets = useSafeAreaInsets();
   const [swiped, setSwiped] = useState(0);
+  // swipe · classic · poster (owner, 28.10.2026): the same nights as a deck, a list by day or a
+  // wall of posters; the phone remembers the last one. The spark panel stays a deck.
+  const [view, setView] = useState<FlowView>(() => {
+    try {
+      const v = Storage.getItemSync('flow.view');
+      return v === 'classic' || v === 'poster' ? v : 'swipe';
+    } catch {
+      return 'swipe';
+    }
+  });
+  const pickView = (v: FlowView) => {
+    setView(v);
+    try {
+      Storage.setItemSync('flow.view', v);
+    } catch {}
+  };
+  // kept from the list or the wall (a heart is a swipe right; a second tap takes it back)
+  const [listKept, setListKept] = useState<Set<string>>(new Set());
   // Bottom edge of the picker chip; the poster starts below it (the chip wraps in Turkish).
   const [headBottom, setHeadBottom] = useState(0);
   const [reloads, setReloads] = useState(() => Math.floor(Math.random() * 1_000_000)); // a fresh spark order every visit
@@ -362,6 +381,7 @@ export default function FlowScreen() {
           <View style={styles.pills}>
             <Pill label={typeLabel} active={!!type} onPress={() => setSheet('type')} a11y={t('filter.what')} />
             <Pill label={whenLabel} active={!!when} onPress={() => setSheet('when')} a11y={t('filter.when')} />
+            <ViewSwitch value={view} onChange={pickView} />
           </View>
         ) : null}
       </View>
@@ -370,6 +390,24 @@ export default function FlowScreen() {
       <View style={styles.stage}>
         {error && panel === 'tickets' ? (
           <Text style={styles.note}>{error === 'offline' ? up(t('offline.empty')) : upperData(error)}</Text>
+        ) : shown && panel === 'tickets' && view !== 'swipe' ? (
+          (() => {
+            const list = shown.filter((e): e is Night => !isSpark(e) && !isCard(e));
+            const props = {
+              nights: list,
+              friendsOf,
+              kept: listKept,
+              onOpen: (n: Night) => router.push(`/night/${n.slug}`),
+              onKeep: (n: Night) => {
+                const on = listKept.has(n.id);
+                setListKept((k) => { const next = new Set(k); if (on) next.delete(n.id); else next.add(n.id); return next; });
+                if (session) (on ? unswipe(n.id, n.slug) : swipe(n.slug, 'right')).catch(() => {});
+              },
+              top: (headBottom || Math.max(brand.top, insets.top + 24) + 30) + 6,
+              bottom: tabSpace + 24,
+            };
+            return view === 'classic' ? <FlowClassic {...props} /> : <FlowPosters {...props} />;
+          })()
         ) : shown ? (
           <Deck ref={deck} key={`${panel}/${city}/${type}/${when}/${reloads}`} nights={shown} friendsOf={friendsOf} bottom={tabSpace + ACTIONS} top={(headBottom || Math.max(brand.top, insets.top + 24) + 30) + 14} onSwipe={onSwipe} onUndo={onUndo} onReset={onReset} onTop={onTop} listed={panel === 'tickets' && counts ? Object.values(counts).reduce((a, n) => a + n, 0) : 0} hasAbout={(e) => abouts.has(e.id)} onAbout={(e) => setReading(abouts.get(e.id) ?? null)} previewOf={(e) => previews.get(e.id)} />
         ) : (
@@ -377,7 +415,7 @@ export default function FlowScreen() {
         )}
 
         {/* Under the card, with room around them: let go, undo, keep. The same as a swipe. */}
-        {shown && shown.length > swiped ? (
+        {shown && shown.length > swiped && (panel !== 'tickets' || view === 'swipe') ? (
           <View style={[styles.actions, { bottom: tabSpace + 14 }]}>
             <Pressable onPress={() => deck.current?.swipe('left')} accessibilityRole="button" accessibilityLabel={t('word.letgo')} style={({ pressed }) => [styles.act, pressed && styles.pressed]}>
               <Svg width={22} height={22} viewBox="0 0 22 22">
