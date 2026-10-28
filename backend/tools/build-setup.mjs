@@ -115,6 +115,7 @@ const structure = [
   ["106_ban_and_guest_doors.sql", "A CLOSED ACCOUNT SWIPES NOTHING, A GUEST BEFRIENDS NOBODY"],
   ["107_handles_and_read_limits.sql", "A HANDLE OBEYS THE RULES, READS HAVE A CEILING"],
   ["108_show_friends_cards.sql", "A HIDDEN CHECK-IN STAYS HIDDEN ON EVERY CARD"],
+  ["109_blocks_everywhere.sql", "A BLOCK CLOSES EVERYWHERE"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

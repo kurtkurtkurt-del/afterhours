@@ -115,4 +115,5 @@ export const EXPECTED_SQL = [
   "106_ban_and_guest_doors.sql",
   "107_handles_and_read_limits.sql",
   "108_show_friends_cards.sql",
+  "109_blocks_everywhere.sql",
 ];
