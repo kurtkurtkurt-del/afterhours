@@ -150,7 +150,10 @@
   const me = () => (AH.myProfile ? AH.myProfile().catch(() => null) : Promise.resolve(null));
 
   /* A real person's roll is what they kept — from the database, newest
-     first. Nothing else may stand on their page as theirs. */
+     first. Nothing else may stand on their page as theirs. Since 105 the
+     database hands it only to the person and their friends: signed out the
+     call is refused (401), a stranger gets an empty list. Both land here as
+     null or [], never as an error on the page. */
   function keptBy() {
     if (!(AH.mode === "live" && AH.request)) return Promise.resolve(null);
     return AH.request("/rpc/profile_kept", { method: "POST", body: JSON.stringify({ p_handle: handle }) })
@@ -177,7 +180,16 @@
       }
       const isMe = Boolean(mine && mine.handle && mine.handle === handle);
       if (real) {
-        person.kept = kept ? kept.length : person.kept;
+        /* Not you and nothing came back. A stranger (or nobody signed in):
+           the roll is closed, and the page says so instead of "nothing kept
+           yet". A friend whose card carries no count has set it private. A
+           friend with a count of 0 simply kept nothing yet. */
+        if (!isMe && !(kept && kept.length) && !(real.isFriend && real.kept != null)) {
+          person.keptClosed = real.isFriend ? "private" : "friends";
+          person.kept = null;
+        } else {
+          person.kept = kept ? kept.length : person.kept;
+        }
         build(person, (kept || []).slice(0, 9), isMe);
       } else {
         build(person, shuffle(rnd, nights).slice(0, 9), isMe);
@@ -264,11 +276,17 @@
      leads to its page. */
   function buildRoll(p, nights) {
     const box = el("section", "pf-roll");
-    box.appendChild(el("p", "cs-label", p.kept != null
+    box.appendChild(el("p", "cs-label", p.keptClosed
+      ? AH.t("profile.kept", { n: "—" })
+      : p.kept != null
       ? AH.t("profile.kept", { n: p.kept })
       : AH.t("profile.kept", { n: nights.length })));
     const grid = el("ol", "pf-frames");
-    if (p.real && !nights.length) {
+    if (p.keptClosed === "private") {
+      box.appendChild(el("p", "cs-note", AH.t("profile.kept.private", { name: p.name.toLowerCase() })));
+    } else if (p.keptClosed) {
+      box.appendChild(el("p", "cs-note", AH.t("profile.kept.friends", { name: p.name.toLowerCase() })));
+    } else if (p.real && !nights.length) {
       box.appendChild(el("p", "cs-note", AH.t("profile.kept.none")));
     }
 

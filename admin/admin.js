@@ -119,6 +119,7 @@
     "102_people_places.sql",
     "103_people_map_cities.sql",
     "104_pending_request_privacy.sql",
+    "105_kept_friends_only.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */
