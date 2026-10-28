@@ -1,0 +1,33 @@
+# afterhours — "who is this?" from the night's files into the database.
+# The about night agent (a cloud routine, .claude/prompts/about-night.md) commits
+# backend/about/<day>/<city>.json and skips.json every morning after the Ticketmaster sync;
+# this runs on that push and puts them into public.event_about and public.event_about_skips
+# (backend/tools/about-days.mjs --apply). The schedule at 07:40 UTC is a second chance when
+# the push did not fire it. One secret: SUPABASE_SERVICE_ROLE.
+
+name: who is this
+
+on:
+  push:
+    branches: [main]
+    paths: ["backend/about/**"]
+  schedule:
+    - cron: "40 7 * * *"
+  workflow_dispatch:
+
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: today's day in Berlin
+        id: day
+        run: echo "day=$(TZ=Europe/Berlin date +%F)" >> "$GITHUB_OUTPUT"
+      - name: put the day's texts into Supabase
+        if: ${{ hashFiles(format('backend/about/{0}/**', steps.day.outputs.day)) != '' }}
+        env:
+          SUPABASE_SERVICE_ROLE: ${{ secrets.SUPABASE_SERVICE_ROLE }}
+        run: node backend/tools/about-days.mjs --apply --day "${{ steps.day.outputs.day }}"

@@ -48,6 +48,7 @@ sql/37_offline.sql       writes made offline: client_id on comments and room_pos
 sql/38_profile_lists.sql whatsapp among the links (digits, country code first); person_kept(handle) and person_people(handle), the nights and friends lists under a profile: yours, and those of confirmed friends (kept nights only when they show them)
 sql/39_spark_kinds.sql   eight more spark kinds: sunrise, breakfast, rooftop, swim, quiz, newplace, camera, festival
 sql/40_event_about.sql   "who is this?": event_about (a night, a language: name, kicker, who, facts, source), about_for(ids, lang) for anyone; written only by the service
+sql/113_about_skips.sql  "who is this?" looked for and not found: event_about_skips (why, tried_at, tries), about_skips_for(ids) for the planner; the about night (backend/about/, tools/about-days.mjs, .claude/prompts/about-night.md) leaves a night alone for seven days after a try
 sql/41_account_types.sql profiles.account_type (user · dj · community_manager · admin), set_account_type(type, code)
 sql/42_staff.sql         the staff: is_staff(), my_role(), staff_* (nights, rooms, djs, comments), dj_save_mine and sets, admin_* (people, types, numbers, log), staff_log
 sql/43_event_submit.sql  nights sent in by people: event_submit, event_submissions (yours), staff_pending, staff_review; night_write is the one writer

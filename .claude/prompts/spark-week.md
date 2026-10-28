@@ -37,6 +37,15 @@ Look, with web search, at the seven days from tomorrow (the city's local date):
 Then decide, for each finding, which kind it belongs to and which day. One row per kind
 per day at most; a kind may appear on several days if each is worth it.
 
+**Spread the week** (owner, 28.10.2026): the cards look best when the suggestions fall on
+different days, not all stacked on saturday. Aim for something on four or five of the seven
+days, two to four kinds a day; when two findings compete for the same day and one fits
+another day as well (a walk, a picnic, a sauna, a vinyl evening), move it. The person
+chooses the day anyway. If the coming seven days are thin, look one week further (days
+eight to fourteen) for one or two things worth writing — a big match, a festival, a market —
+and write those files too; the app shows them when their week comes. When nothing is found,
+keep it simple: a few weather-and-weekday sparks on sensible days, or no file at all.
+
 ## What to write
 
 One file per city and day that has anything: `backend/sparks/<slug>/<YYYY-MM-DD>.json`.
@@ -74,9 +83,20 @@ Rules for the words:
 
 - After each city: `node backend/tools/spark-days.mjs --dry --city <slug>` must list your
   rows with no errors (kinds, three languages). Fix anything it flags.
+- **The second eye** (owner, 28.10.2026): before committing a city, a fresh look that is not
+  yours. When the tool `Task`/`Agent` is available, start one subagent per city with the
+  city's new files and this brief; its only job is to break them: is each event, match and
+  place real and on that date (it searches again)? is the place open then? do en, de and tr
+  say the same thing? is the hour sensible? It returns the rows that fail and why; remove
+  those rows (never rewrite them into something softer). Without subagents, do this pass
+  yourself from scratch before committing. Then `--dry --city <slug>` once more.
+- Big runs: hand each city to a subagent when `Task`/`Agent` is available (the research,
+  the files, the `--dry`), so your own context stays small; you keep rotation.json and the
+  commits.
 - Commit per city: `sparks: <slug> week of <first date>`, together with the updated
   `rotation.json`. Push to `main`. Touch no other file. No pull request.
-- If a push is refused, push to the branch `sparks/week-<date>` and say so.
+- If a push is refused (another agent pushed meanwhile), `git pull --rebase origin main` and
+  push again; if it is still refused, push to the branch `sparks/week-<date>` and say so.
 
 Final message: the cities done tonight, for each one line on what shaped its week (or
 "nothing found"), and where `next` stands now.
