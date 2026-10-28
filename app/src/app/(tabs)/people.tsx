@@ -7,7 +7,7 @@ import { StatusBar } from 'expo-status-bar';
 import { router, useFocusEffect } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
-import { SvgUri } from 'react-native-svg';
+import Svg, { Rect, SvgUri } from 'react-native-svg';
 import WhoSheet from '@/components/WhoSheet';
 import { openPerson } from '@/components/People';
 import { coverSource, GROUP_COLORS, groupPlan, myGroups, type GroupRow, type Plan, type Round } from '@/data/groups';
@@ -598,6 +598,13 @@ export default function PeopleScreen() {
                               <Pressable onPress={() => setAsking(item.n.id)} style={({ pressed }) => [styles.btnLine, pressed && styles.pressed]}>
                                 <Text style={styles.btnTextLine}>{answers[item.n.id] ? t('yours.you', { answer: tx('yours.answer.' + answers[item.n.id], answers[item.n.id]) }) : t('who.coming')}</Text>
                               </Pressable>
+                              {/* into the friends' deck from here (owner, 28.10.2026): the gallery stays, the deck is one tap away */}
+                              <Pressable onPress={() => setDeck('friends')} hitSlop={6} style={({ pressed }) => [styles.btnLine, styles.btnDeck, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t('deck.friends')}>
+                                <Svg width={16} height={16} viewBox="0 0 16 16">
+                                  <Rect x={5.5} y={1.5} width={8} height={11} rx={1.6} stroke={colors.onPhoto} strokeWidth={1.5} fill="none" transform="rotate(8 9.5 7)" />
+                                  <Rect x={2.5} y={3.5} width={8} height={11} rx={1.6} stroke={colors.onPhoto} strokeWidth={1.5} fill={scrim(0.45)} />
+                                </Svg>
+                              </Pressable>
                             </View>
                           </View>
                         </Pressable>
@@ -859,7 +866,8 @@ const styles = StyleSheet.create({
   keptNames: { fontFamily: fonts.semibold, fontSize: 18, letterSpacing: -0.4, color: colors.onPhoto },
   keptWord: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.2, color: colors.onPhotoSpot },
   avNote: { flexShrink: 1, fontFamily: fonts.regular, fontSize: 12, color: colors.onPhoto, marginLeft: 6 },
-  actions: { flexDirection: 'row', gap: 8, marginTop: 8 },
+  actions: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 8 },
+  btnDeck: { paddingHorizontal: 10, paddingVertical: 8, marginLeft: 'auto' },
   btnRed: { paddingVertical: 10, paddingHorizontal: 16, backgroundColor: colors.spot, borderRadius: radius.pill },
   btnLine: { paddingVertical: 9, paddingHorizontal: 15, borderWidth: 1, borderColor: colors.onPhoto, backgroundColor: scrim(0.45), borderRadius: radius.pill },
   btnSmall: { paddingVertical: 7, paddingHorizontal: 12 },
