@@ -39,7 +39,11 @@
     }
   }
 
-  AH.sessionReady.then(render);
+  /* A ?code= or mail link that could not become a session (session.js) */
+  AH.sessionReady.then(() => {
+    render();
+    if (AH.urlProblem && !AH.signedIn()) report(AH.authText(AH.urlProblem), "error");
+  });
   AH.onSessionChange(render);
 
   /* Signing in with a password. The password-less link route is still

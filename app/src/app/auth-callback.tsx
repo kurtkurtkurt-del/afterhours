@@ -9,7 +9,9 @@ import { colors, fonts } from '@/theme/tokens';
 
 // Google OAuth return. Usually the in-app browser captures the redirect itself
 // (auth/google.ts); Android sometimes opens the app with this URL instead, in which
-// case this screen sets the session and continues. Without a handle, that step comes first.
+// case this screen trades its one-time ?code= for the session and continues — only if
+// this phone started that sign-in; a #access_token=… address is never taken (M-12).
+// Without a handle, that step comes first.
 export default function AuthCallback() {
   const t = useT();
   const url = Linking.useLinkingURL();

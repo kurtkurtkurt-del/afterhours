@@ -14,12 +14,17 @@
   const CONFIG = window.AH_CONFIG || {};
 
   /* A convenience for development: point the site at the local mock
-     server. ONLY on localhost — the published site's data must not be
-     switchable from the address bar. */
+     server (backend/README.md). ONLY on localhost and ONLY from
+     localStorage — never from the address bar, where a link could send
+     the page's requests, sign-ins included, somewhere else (audit L-7):
+       localStorage.setItem("afterhours.backend", "http://localhost:4350")  */
   const onLocalhost = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
   if (onLocalhost) {
-    const override = new URLSearchParams(location.search).get("backend");
-    if (override) { CONFIG.url = override; CONFIG.anonKey = CONFIG.anonKey || "local"; }
+    let override = null;
+    try { override = localStorage.getItem("afterhours.backend"); } catch (_) {}
+    if (override && /^http:\/\/(localhost|127\.0\.0\.1):\d+\/?$/.test(override)) {
+      CONFIG.url = override; CONFIG.anonKey = CONFIG.anonKey || "local";
+    }
   }
 
   const enabled = Boolean(CONFIG.url && CONFIG.anonKey);

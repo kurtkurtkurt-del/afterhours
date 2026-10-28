@@ -95,6 +95,9 @@
       });
   });
 
-  AH.sessionReady.then(render);
+  AH.sessionReady.then(() => {
+    render();
+    if (AH.urlProblem && !AH.signedIn()) say(el("dl-note"), AH.authText(AH.urlProblem), "error");
+  });
   AH.onSessionChange(render);
 })();

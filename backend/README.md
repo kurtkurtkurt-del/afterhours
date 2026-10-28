@@ -100,10 +100,13 @@ TICKETMASTER_KEY=... SUPABASE_SERVICE_ROLE=... node tools/sync-ticketmaster.mjs
 TICKETMASTER_KEY=... node tools/sync-ticketmaster.mjs --dry   # look, do not write
 ```
 
-To try the site against the local server: start the server, then open a
-page with `?backend=http://localhost:4350`. That shortcut only works on
-localhost. The sign-in link is written to the server's console instead of
-being emailed.
+To try the site against the local server: start the server, open the site
+on localhost and run `localStorage.setItem("afterhours.backend", "http://localhost:4350")`
+in the browser console once (`removeItem` to go back), and run
+`python3 tools-csp.py --local` so the pages' CSP lets them reach it (plain
+`python3 tools-csp.py` before committing; the site check refuses the local one).
+Only localhost, only a localhost address; the address bar can no longer switch it. The sign-in link
+is written to the server's console instead of being emailed.
 
 ## WHAT YOU HAVE TO DO YOURSELF
 
@@ -355,6 +358,16 @@ in natively (id tokens); on the site they go through Supabase's web flow
    Sign in with Apple (the same one as for `apple-revoke` will do).
    In Supabase → Providers → Apple: the Services ID first in *Client IDs*,
    then `app.afterhours.ios`, and the secret made from the key.
+
+4. **Email templates → Reset Password:** the link must be
+   `{{ .RedirectTo }}?token_hash={{ .TokenHash }}&type=recovery` instead of
+   `{{ .ConfirmationURL }}`. Sign-ins are PKCE only (audit M-12): a mail link
+   otherwise comes back with a `?code=` that only the browser or phone that
+   asked for it can use, and the app's reset mail (asked for on the phone)
+   lands on the site's `reset/`. With the token hash `session.js` verifies it
+   on `reset/` or `delete/` in any browser, and never over a live session.
+   The other templates stay as they are: a confirm link confirms the address
+   at Supabase before it comes back, wherever it is opened.
 
 Someone who signed up in the app with Apple or Google can also set a
 password in the app (settings → account → password) and use email and
