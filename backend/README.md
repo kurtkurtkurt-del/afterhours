@@ -262,7 +262,7 @@ a row in auth.users  →  handle_new_user()  →  profiles + profile_settings
 | `seen()` | the last-seen stamp |
 | `kept_visible(id)` | "are their kept cards visible", per the setting — RLS uses this |
 | `card_visible(id)` | "is their card open to a stranger", per the setting |
-| `is_linked(id)` | friend or pending request — the profile read rule uses this |
+| `is_linked(id)` | a confirmed friend — the profile read rule uses this (since 104 a pending request opens no row) |
 | `handle_to_id(handle)` | identity by handle; a friend request goes through it |
 | `author_name(id, fallback)` | the name under a comment, without touching the profile table |
 | `delete_account()` | deletes the account; comment texts stay, the name becomes `someone` |
