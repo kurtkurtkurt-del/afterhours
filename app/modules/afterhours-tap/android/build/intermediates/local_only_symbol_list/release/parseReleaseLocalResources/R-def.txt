@@ -1,4 +1,0 @@
-R_DEF: Internal format may change without notice
-local
-string afterhours_tap_description
-xml afterhours_tap_aids

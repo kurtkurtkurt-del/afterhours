@@ -1,2 +1,0 @@
-int string afterhours_tap_description 0x0
-int xml afterhours_tap_aids 0x0

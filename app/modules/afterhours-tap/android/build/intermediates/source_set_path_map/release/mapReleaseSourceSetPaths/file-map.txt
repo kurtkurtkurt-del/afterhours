@@ -1,7 +1,0 @@
-expo.modules.afterhourstap.afterhours-tap-pngs-0 /Users/ahmetselcukkurt/Desktop/claudecode/afterhours/app/modules/afterhours-tap/android/build/generated/res/pngs/release
-expo.modules.afterhourstap.afterhours-tap-resValues-1 /Users/ahmetselcukkurt/Desktop/claudecode/afterhours/app/modules/afterhours-tap/android/build/generated/res/resValues/release
-expo.modules.afterhourstap.afterhours-tap-mergeReleaseResources-2 /Users/ahmetselcukkurt/Desktop/claudecode/afterhours/app/modules/afterhours-tap/android/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
-expo.modules.afterhourstap.afterhours-tap-mergeReleaseResources-3 /Users/ahmetselcukkurt/Desktop/claudecode/afterhours/app/modules/afterhours-tap/android/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
-expo.modules.afterhourstap.afterhours-tap-release-4 /Users/ahmetselcukkurt/Desktop/claudecode/afterhours/app/modules/afterhours-tap/android/build/intermediates/merged_res/release/mergeReleaseResources
-expo.modules.afterhourstap.afterhours-tap-main-5 /Users/ahmetselcukkurt/Desktop/claudecode/afterhours/app/modules/afterhours-tap/android/src/main/res
-expo.modules.afterhourstap.afterhours-tap-release-6 /Users/ahmetselcukkurt/Desktop/claudecode/afterhours/app/modules/afterhours-tap/android/src/release/res
