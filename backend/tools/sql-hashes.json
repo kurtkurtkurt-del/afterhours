@@ -99,5 +99,6 @@
   "104_pending_request_privacy.sql": "a6b8a30cd68988333a9ac3ea4baa2d70d057865ab5768884d557a1a2176105f6",
   "105_kept_friends_only.sql": "4d198b40967e39b7595633790a0e9c655f74c4eb3e66727df463ce3ecc3acb7f",
   "106_ban_and_guest_doors.sql": "c116496592040f6b90c9ceb1237c5f3a3178e4bf9f2ad74b0d15095847e65c4a",
-  "107_handles_and_read_limits.sql": "d2b488dd3a8b6496679b3fb9d224628136182c9207bdec9787df0b7dfa51d859"
+  "107_handles_and_read_limits.sql": "d2b488dd3a8b6496679b3fb9d224628136182c9207bdec9787df0b7dfa51d859",
+  "108_show_friends_cards.sql": "03eb001ee2eafcf4c9746decb36a5dde7bfb7dca98a3237e8bf9eac9db81a3a4"
 }

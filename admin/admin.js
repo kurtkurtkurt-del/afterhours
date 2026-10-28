@@ -122,6 +122,7 @@
     "105_kept_friends_only.sql",
     "106_ban_and_guest_doors.sql",
     "107_handles_and_read_limits.sql",
+    "108_show_friends_cards.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */
