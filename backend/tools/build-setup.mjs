@@ -118,6 +118,7 @@ const structure = [
   ["109_blocks_everywhere.sql", "A BLOCK CLOSES EVERYWHERE"],
   ["110_venue_scope.sql", "A ROOM REACHES ONLY ITS OWN NIGHTS AND PEOPLE"],
   ["111_terms_and_delete_reauth.sql", "THE TERMS ON THE SERVER, A FRESH SIGN-IN TO DELETE"],
+  ["112_guest_merge_secret.sql", "A GUEST IS TAKEN OVER ONLY WITH ITS OWN SECRET"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

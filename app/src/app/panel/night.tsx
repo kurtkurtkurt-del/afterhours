@@ -6,6 +6,7 @@ import PickerSheet from '@/components/PickerSheet';
 import { useAuth } from '@/auth/AuthContext';
 import { pickPostPhoto } from '@/data/posts';
 import { supabase } from '@/lib/supabase';
+import { PHOTO_CACHE, photoName } from '@/lib/photoName';
 import { colors, fonts, radius, ground } from '@/theme/tokens';
 import { router, useLocalSearchParams } from 'expo-router';
 import Button from '@/components/Button';
@@ -46,8 +47,8 @@ export default function NightForm() {
     pickPostPhoto()
       .then(async (local) => {
         if (!local) return;
-        const path = `${uid}/night-${Date.now()}.jpg`;
-        const sent = await supabase.storage.from('photos').upload(path, await new File(local).arrayBuffer(), { contentType: 'image/jpeg', cacheControl: '31536000' });
+        const path = `${uid}/night-${photoName()}.jpg`;
+        const sent = await supabase.storage.from('photos').upload(path, await new File(local).arrayBuffer(), { contentType: 'image/jpeg', cacheControl: PHOTO_CACHE });
         if (sent.error) throw sent.error;
         set({ image: supabase.storage.from('photos').getPublicUrl(path).data.publicUrl });
       })

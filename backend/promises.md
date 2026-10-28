@@ -1,6 +1,6 @@
 # The promises afterhours' database keeps
 
-Thirteen sentences. Each says what a person can or cannot do, which SQL file enforces it
+Fourteen sentences. Each says what a person can or cannot do, which SQL file enforces it
 and which test proves it (file and the check's own words). `node test/setup.test.mjs`
 reads this table and refuses a row whose test file or check is not there, so a test
 that goes takes its promise with it, visibly. A change to who may do what edits this
@@ -25,6 +25,7 @@ file first, in the same commit. (The idea is KULA's `docs/promises.md`, 11.10.20
 | 13 | A deleted account leaves no row that names the person; the last admin cannot delete theirs. | `12_profiles.sql`, `65_account_delete.sql` | `delete-account.test.mjs` · "no row of any table still points at the person" |
 | 12 | A burst is bounded: twenty lines a minute in a chat, forty requests a day. | `53_trust.sql`, `59_dms.sql` | `trust.test.mjs` · "the table itself is closed" |
 | 13 | A deleted account leaves no row that names the person; the last admin cannot delete theirs, and since 111 only a sign-in from the last ten minutes can delete (`terms-delete-reauth.test.mjs` · "an old sign-in cannot delete"). | `12_profiles.sql`, `65_account_delete.sql`, `111_terms_and_delete_reauth.sql` | `delete-account.test.mjs` · "no row of any table still points at the person" |
+| 14 | A guest is taken over only by the phone that holds its one-time secret; knowing the guest id is not enough. | `112_guest_merge_secret.sql` | `guest-merge-secret.test.mjs` · "the same secret a second time → refused" |
 
 Known gaps, written down so they are not forgotten:
 

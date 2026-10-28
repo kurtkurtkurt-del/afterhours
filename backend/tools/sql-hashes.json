@@ -103,5 +103,6 @@
   "108_show_friends_cards.sql": "03eb001ee2eafcf4c9746decb36a5dde7bfb7dca98a3237e8bf9eac9db81a3a4",
   "109_blocks_everywhere.sql": "c3d4b9506b985c4ff7e056a1d346ea228feb4183a55be51286208315d9c4a1e2",
   "110_venue_scope.sql": "28aa02aed2756853d2905d6adcc62ddfe22d6da4b883fadbe5cf33512d839257",
-  "111_terms_and_delete_reauth.sql": "f1bd29a4539df00610ddd700ec5d7109fe2eac4448a4d72e591a1d3e8407eab9"
+  "111_terms_and_delete_reauth.sql": "f1bd29a4539df00610ddd700ec5d7109fe2eac4448a4d72e591a1d3e8407eab9",
+  "112_guest_merge_secret.sql": "643a46f38c232343fbc200470c9f2c47c3ea2f66690e6503e3036738ddda60f9"
 }

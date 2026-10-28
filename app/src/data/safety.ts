@@ -2,6 +2,8 @@ import { Platform } from 'react-native';
 import * as AppleAuthentication from 'expo-apple-authentication';
 import Constants from 'expo-constants';
 import Storage from 'expo-sqlite/kv-store';
+import * as Crypto from 'expo-crypto';
+import * as SecureStore from 'expo-secure-store';
 import { supabase } from '@/lib/supabase';
 import { isNetworkError, must } from '@/lib/offline';
 
@@ -33,21 +35,33 @@ export function versionBelow(a: string, b: string): boolean {
   return false;
 }
 
-// A guest who met an existing email is sent to sign in; the guest id is kept on the
-// phone until the account signs in and guest_merge (80) carries the swipes over.
+// A guest who met an existing email is sent to sign in; until the account signs in and
+// guest_merge carries the swipes over, the guest id stays on the phone with a secret
+// (112_guest_merge_secret.sql): the server keeps only its hash, so knowing a guest id is
+// not enough to take that guest. The secret is made while the guest session still exists.
 const GUEST_KEY = 'guest.pending';
-export function rememberGuest(uid: string) {
-  try { Storage.setItemSync(GUEST_KEY, uid); } catch {}
+export async function rememberGuest(uid: string): Promise<void> {
+  const secret = Array.from(Crypto.getRandomValues(new Uint8Array(32)), (b) => b.toString(16).padStart(2, '0')).join('');
+  const { error } = await supabase.rpc('guest_secret_set', { p_secret: secret });
+  if (error) return; // without the hash on the server there is nothing to merge later
+  try { await SecureStore.setItemAsync(GUEST_KEY, JSON.stringify({ id: uid, secret })); } catch {}
+}
+async function forgetGuest() {
+  try { await SecureStore.deleteItemAsync(GUEST_KEY); } catch {}
+  try { Storage.removeItemSync(GUEST_KEY); } catch {} // an id kept before 112, which can no longer merge
 }
 export async function mergeGuest(uid: string): Promise<number> {
-  let guest: string | null = null;
-  try { guest = Storage.getItemSync(GUEST_KEY); } catch {}
-  if (!guest || guest === uid) return 0;
-  const { data, error } = await supabase.rpc('guest_merge', { p_guest: guest });
+  let guest: { id?: unknown; secret?: unknown } | null = null;
+  try { guest = JSON.parse((await SecureStore.getItemAsync(GUEST_KEY)) ?? 'null'); } catch {}
+  if (!guest || typeof guest.id !== 'string' || typeof guest.secret !== 'string' || guest.id === uid) {
+    await forgetGuest();
+    return 0;
+  }
+  const { data, error } = await supabase.rpc('guest_merge', { p_guest: guest.id, p_secret: guest.secret });
   // A guest that is already gone (or never was one) is forgotten; a network failure is retried next time.
-  if (error && !isNetworkError(error)) { try { Storage.removeItemSync(GUEST_KEY); } catch {} return 0; }
+  if (error && isNetworkError(error)) return 0;
+  await forgetGuest();
   if (error) return 0;
-  try { Storage.removeItemSync(GUEST_KEY); } catch {}
   return typeof data === 'number' ? data : 0;
 }
 

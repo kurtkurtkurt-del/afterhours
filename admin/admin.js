@@ -126,6 +126,7 @@
     "109_blocks_everywhere.sql",
     "110_venue_scope.sql",
     "111_terms_and_delete_reauth.sql",
+    "112_guest_merge_secret.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */
