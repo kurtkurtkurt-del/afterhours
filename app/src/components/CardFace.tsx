@@ -322,7 +322,8 @@ const styles = StyleSheet.create({
   venue: { fontFamily: fonts.medium, fontSize: 14, letterSpacing: -0.2, color: colors.paper },
   // the date tag on the poster
   tag: { position: 'absolute', top: 10, left: 10, backgroundColor: colors.ink, borderRadius: radius.sm, paddingVertical: 6, paddingHorizontal: 9 },
-  kindTag: { position: 'absolute', top: 10, right: 10, backgroundColor: colors.ink, borderRadius: radius.sm, paddingVertical: 6, paddingHorizontal: 9 },
+  // under the date on the left: the right side is for who is this, listen and share (owner, 28.10.2026)
+  kindTag: { position: 'absolute', top: 46, left: 10, backgroundColor: colors.ink, borderRadius: radius.sm, paddingVertical: 6, paddingHorizontal: 9 },
   tagFull: { position: 'absolute', top: 64, left: 2 },
   tagRow: { flexDirection: 'row', alignItems: 'baseline', gap: 7 },
   tagDay: { fontFamily: fonts.logo, fontSize: 17, lineHeight: 18, letterSpacing: -0.3, color: colors.paper },
