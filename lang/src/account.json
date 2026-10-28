@@ -37,6 +37,7 @@
   "session.auth.expired": { "en": "your session ran out. sign in again.", "de": "deine sitzung ist abgelaufen. melde dich neu an.", "tr": "oturumun sona erdi. yeniden giriş yap." },
   "session.auth.signin": { "en": "sign in first.", "de": "melde dich erst an.", "tr": "önce giriş yap." },
   "session.auth.notoken": { "en": "the sign-in came back empty. try once more.", "de": "die anmeldung kam leer zurück. versuch es noch einmal.", "tr": "giriş boş döndü. bir kez daha dene." },
+  "session.auth.link": { "en": "this link could not sign you in here: it has run out, or it was opened in another browser than the one that asked for it. if it confirmed your address, that part is done — sign in with your password. otherwise ask for a new link.", "de": "dieser link konnte dich hier nicht anmelden: er ist abgelaufen oder wurde in einem anderen browser geöffnet als dem, der ihn angefordert hat. wenn er deine adresse bestätigen sollte, ist das erledigt — melde dich mit deinem passwort an. sonst fordere einen neuen link an.", "tr": "bu bağlantı seni burada giriş yaptıramadı: süresi doldu ya da onu isteyen tarayıcıdan başka bir tarayıcıda açıldı. adresini onaylamak içinse o kısım tamam — şifrenle giriş yap. değilse yeni bir bağlantı iste." },
   "session.auth.offline": { "en": "no connection to the backend right now.", "de": "gerade keine verbindung zum backend.", "tr": "şu an backend'e bağlantı yok." },
 
   "session.error.off": { "en": "this part isn't switched on yet. it should be soon.", "de": "dieser teil ist noch nicht eingeschaltet. bald sollte er es sein.", "tr": "bu kısım henüz açılmadı. yakında açılır." },
@@ -57,7 +58,7 @@
   "reset.set.placeholder": { "en": "eight characters or more", "de": "acht zeichen oder mehr", "tr": "sekiz karakter ya da daha fazla" },
   "reset.set.button": { "en": "set the password", "de": "passwort setzen", "tr": "şifreyi belirle" },
   "reset.done.heading": { "en": "that's it.", "de": "das war's.", "tr": "bu kadar." },
-  "reset.done.note": { "en": "Your password is set and you are signed in.", "de": "dein passwort ist gesetzt und du bist angemeldet.", "tr": "şifren belirlendi ve giriş yaptın." },
+  "reset.done.note": { "en": "Your password is set. Use it the next time you sign in.", "de": "dein passwort ist gesetzt. nutz es, wenn du dich das nächste mal anmeldest.", "tr": "şifren belirlendi. bir dahaki girişinde onu kullan." },
   "reset.done.back": { "en": "back to explore", "de": "zurück zu entdecken", "tr": "keşfet'e dön" },
   "reset.closed": { "en": "this opens when the backend does.", "de": "das öffnet, sobald das backend steht.", "tr": "burası backend açılınca açılır." },
   "reset.sending": { "en": "sending…", "de": "wird geschickt…", "tr": "gönderiliyor…" },

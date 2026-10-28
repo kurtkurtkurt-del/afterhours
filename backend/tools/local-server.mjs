@@ -12,6 +12,7 @@
 import { PGlite } from "@electric-sql/pglite";
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
+import crypto from "node:crypto";
 
 const PORT = Number(process.env.PORT || 4350);
 const read = (y) => readFile(new URL(y, import.meta.url), "utf8");
@@ -33,6 +34,7 @@ console.log("database ready (in memory)");
 /* An imitation store: the files live in memory and go when the server
    stops. It stands in for Supabase Storage only to exercise the flow. */
 const store = new Map();
+const pkceCodes = new Map();      /* one-time ?code= from the sign-in link → who + challenge */
 
 /* --- who made the request ------------------------------------------- */
 
@@ -171,10 +173,13 @@ const server = createServer(async (req, reply) => {
         console.log("  ★ " + email + " made an admin (locally only)");
       }
 
-      const back = (body.options && body.options.email_redirect_to) || "http://localhost:4340/";
+      /* The site only takes a one-time ?code= now (PKCE, session.js); the
+         challenge is kept so grant_type=pkce below can check the verifier. */
+      const back = url.searchParams.get("redirect_to") || "http://localhost:4340/";
+      const code = "local-code-" + crypto.randomUUID();
+      pkceCodes.set(code, { id, challenge: body.code_challenge, method: body.code_challenge_method });
       console.log("\n  ✉  sign-in link (" + email + "):");
-      console.log("     " + back + "#access_token=local-" + id +
-                  "&refresh_token=local-" + id + "&expires_in=3600\n");
+      console.log("     " + back + (back.includes("?") ? "&" : "?") + "code=" + code + "\n");
       return send(200, {});
     }
 
@@ -226,6 +231,20 @@ const server = createServer(async (req, reply) => {
         return send(200, {
           access_token: "local-" + id, refresh_token: "local-" + id, expires_in: 3600,
           user: { id, email: email },
+        });
+      }
+
+      if (kind === "pkce") {
+        const flow = pkceCodes.get(body && body.auth_code);
+        pkceCodes.delete(body && body.auth_code);
+        const verifier = (body && body.code_verifier) || "";
+        const hashed = flow && flow.method === "s256"
+          ? crypto.createHash("sha256").update(verifier).digest("base64url") : verifier;
+        if (!flow || !flow.challenge || hashed !== flow.challenge) {
+          return send(400, { error_description: "invalid flow state, no valid flow state found" });
+        }
+        return send(200, {
+          access_token: "local-" + flow.id, refresh_token: "local-" + flow.id, expires_in: 3600,
         });
       }
 

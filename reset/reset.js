@@ -28,6 +28,7 @@
   }
 
   function render() {
+    if (!done.hidden) return;
     const signedIn = Boolean(AH.signedIn && AH.signedIn());
     request.hidden = signedIn;
     set.hidden = !signedIn;
@@ -70,6 +71,7 @@
     AH.updatePassword(password)
       .then(() => {
         set.hidden = true;
+        request.hidden = true;
         done.hidden = false;
       })
       .catch((h) => {
@@ -79,6 +81,9 @@
       });
   });
 
-  AH.sessionReady.then(render);
+  AH.sessionReady.then(() => {
+    render();
+    if (AH.urlProblem && !AH.signedIn()) say(el("rs-note"), AH.authText(AH.urlProblem), "error");
+  });
   AH.onSessionChange(render);
 })();

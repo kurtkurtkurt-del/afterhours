@@ -12,6 +12,7 @@ in silence until a person walks into it. This walks instead:
      backend/tools/world-record.json — has its page shell, its poster
      and its og preview;
   3. every page carries the same ?v= number.
+  4. every page carries its current CSP meta (tools-csp.py --check).
 
 Exit 0 clean, exit 1 with a list. CI runs it as the "site" job.
 """
@@ -85,6 +86,14 @@ if t404.exists():
 
 if len(versions) > 1:
     problems.append("more than one ?v= across the pages: " + ", ".join(sorted(versions)))
+
+# ------------------------------------------------- 4 · the CSP (tools-csp.py)
+
+import subprocess
+csp = subprocess.run([sys.executable, str(ROOT / "tools-csp.py"), "--check"],
+                     capture_output=True, text=True)
+if csp.returncode:
+    problems.extend(line.strip(" ✗") for line in csp.stdout.splitlines() if line.strip())
 
 # --------------------------------------------------------------- report
 

@@ -1,6 +1,8 @@
 import { Platform } from 'react-native';
 import * as Linking from 'expo-linking';
 import * as WebBrowser from 'expo-web-browser';
+import Storage from 'expo-sqlite/kv-store';
+import { readAuthReturn } from '@/auth/authReturn';
 import { supabase } from '@/lib/supabase';
 
 // Sign in with Google through Supabase's Google provider, in an in-app browser
@@ -17,24 +19,22 @@ const REDIRECT = Linking.createURL('auth-callback');
 
 WebBrowser.maybeCompleteAuthSession();
 
-// Session from the redirect URL: #access_token=… (implicit) or ?code=… (PKCE).
+// The PKCE verifier lives in supabase-js's storage (lib/supabase.ts, flowType 'pkce');
+// next to it we keep when this phone started a Google sign-in. A return address is
+// only traded for a session if one was started here in the last ten minutes, and
+// only once: that mark is our `state`. A code nobody here asked for is dropped.
+const PENDING = 'auth.google.started';
+const PENDING_MS = 10 * 60 * 1000;
+
+// Session from the redirect URL: ?code=… (PKCE) only — see auth/authReturn.ts.
 export async function sessionFromUrl(url: string) {
-  const [, query = ''] = url.split('?');
-  const [, hash = ''] = url.split('#');
-  const q = new URLSearchParams(query.split('#')[0]);
-  const h = new URLSearchParams(hash);
-  const failed = h.get('error_description') ?? q.get('error_description') ?? h.get('error') ?? q.get('error');
-  if (failed) throw new Error(failed.replace(/\+/g, ' '));
-  const code = q.get('code');
-  if (code) {
-    const { error } = await supabase.auth.exchangeCodeForSession(code);
-    if (error) throw error;
-    return true;
-  }
-  const access_token = h.get('access_token');
-  const refresh_token = h.get('refresh_token');
-  if (!access_token || !refresh_token) return false;
-  const { error } = await supabase.auth.setSession({ access_token, refresh_token });
+  const back = readAuthReturn(url);
+  if (back.kind === 'error') throw new Error(back.message);
+  if (back.kind !== 'code') return false;
+  const started = Number(await Storage.getItem(PENDING));
+  await Storage.removeItem(PENDING);
+  if (!started || Date.now() - started > PENDING_MS) return false;
+  const { error } = await supabase.auth.exchangeCodeForSession(back.code);
   if (error) throw error;
   return true;
 }
@@ -55,9 +55,17 @@ export async function signInWithGoogle(): Promise<boolean> {
     url = data.url;
   }
   if (!url) throw new Error('no url');
+  await Storage.setItem(PENDING, String(Date.now()));
   const result = await WebBrowser.openAuthSessionAsync(url, REDIRECT);
   if (result.type !== 'success') return false;
-  return sessionFromUrl(result.url);
+  // Android may hand the same address to auth-callback too, which may trade the code
+  // first (this one then fails or finds nothing); then the session is already here.
+  const traded = await sessionFromUrl(result.url).catch((e: unknown) => e);
+  if (traded === true) return true;
+  const { data: after } = await supabase.auth.getSession();
+  if (after.session && !after.session.user.is_anonymous) return true;
+  if (traded instanceof Error) throw traded;
+  return false;
 }
 
 // Web (the PWA): the whole page goes to Google and comes back to where it was;

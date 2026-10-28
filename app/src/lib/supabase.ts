@@ -14,6 +14,10 @@ export const supabase = createClient(url, key, {
     storage: Platform.OS === 'web' ? undefined : new LargeSecureStore(),
     autoRefreshToken: true,
     persistSession: true,
+    // PKCE only (audit M-12): an OAuth or mail return carries a one-time ?code= that
+    // is worth nothing without the verifier this client kept. A #access_token=…
+    // return is refused (auth/authReturn.ts on the phone; supabase-js on the web).
+    flowType: 'pkce',
     detectSessionInUrl: Platform.OS === 'web',
   },
 });
