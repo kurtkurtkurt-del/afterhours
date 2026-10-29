@@ -1,0 +1,36 @@
+{
+ "city": "guadalajara",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "75571138-55ab-4db7-ac9c-2ff6c3c5509a",
+   "slug": "los-van-van-ebb5eed6",
+   "title": "Los Van Van",
+   "act": "Los Van Van",
+   "name": "Los Van Van",
+   "description": "Cuban musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Los_Van_Van",
+   "extract": "Los Van Van is one of the leading musical groups of post-revolutionary Cuba. It was founded in 1969 by bassist Juan Formell, who directed the band until his death in 2014. Formell and former band members Changuito and Pupy are some of the most important figures in contemporary Cuban music, having contributed to the development of songo and timba, two popular dance music genres."
+  },
+  {
+   "id": "34e8c797-485b-469b-ada8-aba9fd2033b1",
+   "slug": "carlos-sadness-e81082e6",
+   "title": "Carlos Sadness",
+   "act": "Carlos Sadness",
+   "name": "Carlos Sadness",
+   "description": "Spanish singer and composer",
+   "source_url": "https://en.wikipedia.org/wiki/Carlos_Sadness",
+   "extract": "Carlos Sadness is a Spanish singer, songwriter and illustrator."
+  },
+  {
+   "id": "4c242045-675b-4e09-9ffd-006c1b947e57",
+   "slug": "benny-ibarra-f4ed8a02",
+   "title": "Benny Ibarra",
+   "act": "Benny Ibarra",
+   "name": "Benny Ibarra",
+   "description": "Mexican singer",
+   "source_url": "https://en.wikipedia.org/wiki/Benny_Ibarra",
+   "extract": "Benny Ibarra de Llano is a Mexican singer, musician, producer and actor. He was born into a family of artists. His mother, Julissa, was a singer and actress in the 1960s; and his father, Benny, an actor and 1960s rock singer in the Mexican band Los Yaki. His brother, Alejandro Ibarra, is a singer and actor."
+  }
+ ]
+}

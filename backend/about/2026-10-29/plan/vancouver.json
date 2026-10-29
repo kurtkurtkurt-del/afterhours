@@ -1,0 +1,206 @@
+{
+ "city": "vancouver",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "546215ea-9d96-4448-9cb2-064b2ec43dad",
+   "slug": "beabadoobee-the-powerlines-tour-fcf5fa29",
+   "title": "beabadoobee: The Powerlines Tour",
+   "act": "beabadoobee",
+   "name": "Beabadoobee",
+   "description": "Filipino and British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Beabadoobee",
+   "extract": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021, she released five extended plays (EPs) under the independent label Dirty Hit: Lice (2018), Patched Up (2018), Loveworm (2019), Space Cadet (2019) and Our Extended Play (2021). Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim. Her second studio album, Beatopia, was released on July 2022, and spawned the hit \"The Perfect Pair\". Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart. In September 2026, her fourth studio album, Pylon, topped the British and Australian charts."
+  },
+  {
+   "id": "fffa7f6e-7d90-4529-a107-e2d3ada7513d",
+   "slug": "joy-oladokun-the-heavy-things-tour-39f92ff6",
+   "title": "Joy Oladokun: The Heavy Things Tour",
+   "act": "Joy Oladokun",
+   "name": "Joy Oladokun",
+   "description": "American singer-songwriter (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Joy_Oladokun",
+   "extract": "Olubukola Joy Oladokun is an American singer-songwriter. Oladokun's music spans the genres of folk, R&B, rock, and pop and is influenced by her identity as a queer person of color. She has released six studio albums: Carry (2016), In Defense of My Own Happiness  (2020), In Defense of My Own Happiness (2021), Proof of Life (2023), Observations from a Crowded Room (2024), and Hope is a Heavy Thing (2026)."
+  },
+  {
+   "id": "f178c209-7833-4803-a781-ad83c5f1f8fd",
+   "slug": "rebecca-black-46eed77a",
+   "title": "Rebecca Black",
+   "act": "Rebecca Black",
+   "name": "Rebecca Black",
+   "description": "American YouTuber, singer, songwriter, and DJ (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Rebecca_Black",
+   "extract": "Rebecca Renee Black is an American singer, songwriter and YouTuber. She gained extensive media coverage when the music video for her 2011 debut single \"Friday\" went viral on YouTube and various social media sites. The song peaked at number 58 on the Billboard Hot 100. It received an overwhelmingly negative response from audiences and music critics, many of whom considered it among the worst songs of all time. In 2013, Black released a follow-up single \"Saturday\" to similar commercial success and marginally improved reception."
+  },
+  {
+   "id": "f8bc0178-ae8c-485b-b3a0-1dda76b0f04a",
+   "slug": "parra-for-cuva-5ead5023",
+   "title": "Parra for Cuva",
+   "act": "Parra for Cuva",
+   "name": "Parra for Cuva",
+   "description": "German musician (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Parra_for_Cuva",
+   "extract": "Nicolas Demuth, known by stage name Parra for Cuva, is a German musician and DJ.\nHe is best known for his house production."
+  },
+  {
+   "id": "12e289f9-864b-47d1-94fe-1d6ea36a5fae",
+   "slug": "sunn-o-429839ba",
+   "title": "Sunn O )))",
+   "act": "Sunn O )))",
+   "name": "Sunn O)))",
+   "description": "American drone metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Sunn_O)))",
+   "extract": "Sunn O))) is an American drone metal band formed in 1998 in Seattle, Washington. The band is known for its distinctive visual style and slow, heavy sound, which blends diverse genres including doom metal, drone, black metal, and dark ambient, as well as for their extremely loud live performances."
+  },
+  {
+   "id": "cc2d9346-0a72-4966-9079-52467db97669",
+   "slug": "plini-an-unnameable-desire-north-american-tour-148ed0fd",
+   "title": "Plini - An Unnameable Desire North American Tour",
+   "act": "Plini",
+   "name": "Plini",
+   "description": "Australian guitarist (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Plini",
+   "extract": "Plini Roessler-Holgate, known mononymously as Plini, is an Australian guitarist and songwriter. He began his career by releasing music under the name Halcyon, before switching to the use of his first name. Steve Vai described him as \"the future of exceptional guitar playing\", and the website MusicRadar named Plini the best prog guitarist of 2017."
+  },
+  {
+   "id": "5a8b9e6c-6931-4336-97e0-3294f854ecdb",
+   "slug": "sienna-spiro-faf27588",
+   "title": "Sienna Spiro",
+   "act": "Sienna Spiro",
+   "name": "Sienna Spiro",
+   "description": "English singer-songwriter (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Sienna_Spiro",
+   "extract": "Sienna Ann Spiro is an English singer-songwriter and record producer. Known for her distinct, powerful voice, she began sharing viral singing videos on TikTok in 2021. She started releasing music in 2024, including \"Maybe\", which became her debut on the UK Singles Chart. She released Sink Now, Swim Later, her debut extended play, in February 2025. Her breakthrough success came with the release of \"Die on This Hill\", which charted in numerous countries. She released her debut studio album, Visitor, on 3 July 2026, and achieved her first UK number one single with its track \"Great Expectation\"."
+  },
+  {
+   "id": "77baf8ee-884d-465b-8afb-419f9f125842",
+   "slug": "sienna-spiro-my-house-tour-002d2a65",
+   "title": "Sienna Spiro: My House Tour",
+   "act": "Sienna Spiro",
+   "name": "Sienna Spiro",
+   "description": "English singer-songwriter (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Sienna_Spiro",
+   "extract": "Sienna Ann Spiro is an English singer-songwriter and record producer. Known for her distinct, powerful voice, she began sharing viral singing videos on TikTok in 2021. She started releasing music in 2024, including \"Maybe\", which became her debut on the UK Singles Chart. She released Sink Now, Swim Later, her debut extended play, in February 2025. Her breakthrough success came with the release of \"Die on This Hill\", which charted in numerous countries. She released her debut studio album, Visitor, on 3 July 2026, and achieved her first UK number one single with its track \"Great Expectation\"."
+  },
+  {
+   "id": "1aabce2b-6f37-49dd-9146-57181487fdcd",
+   "slug": "syml-e809d9db",
+   "title": "SYML",
+   "act": "SYML",
+   "name": "Syml",
+   "description": "American musician (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Syml",
+   "extract": "SYML is the solo venture of Brian Leseney Fennell, an American musician from Issaquah, Washington. He was previously part of the indie band Barcelona. SYML released his eponymous debut album on May 3, 2019, through Nettwerk Records."
+  },
+  {
+   "id": "bcca6fb1-68bd-448d-a8d7-01e96b72155b",
+   "slug": "quadeca-2748c9d9",
+   "title": "Quadeca",
+   "act": "Quadeca",
+   "name": "Quadeca",
+   "description": "American musician, producer, and YouTuber (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Quadeca",
+   "extract": "Benjamin Fernando Barajas Lasky, better known by his stage name Quadeca, is an American singer-songwriter, record producer and rapper. Lasky began uploading songs and videos to his YouTube channel in the 2010s and began pursuing his musical career in the 2020s, which has since been met with critical acclaim."
+  },
+  {
+   "id": "44ca9eb5-d60f-4681-8516-ce4a8acb3c45",
+   "slug": "the-smashing-pumpkins-the-rats-in-a-cage-tour-cba9439f",
+   "title": "The Smashing Pumpkins: The Rats In A Cage Tour",
+   "act": "The Smashing Pumpkins",
+   "name": "The Smashing Pumpkins",
+   "description": "American alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Smashing_Pumpkins",
+   "extract": "The Smashing Pumpkins is an American alternative rock band formed in Chicago in 1988 by lead vocalist and guitarist Billy Corgan, guitarist James Iha, bassist D'arcy Wretzky, and drummer Jimmy Chamberlin. The band has undergone several line-up changes since their reunion in 2006, with Corgan being the primary songwriter and sole constant member since its inception. The current lineup consists of Corgan, Iha, and Chamberlin. The band is known for its diverse, densely layered sound, which evolved throughout their career and has integrated elements of gothic rock, heavy metal, grunge, psychedelic rock, progressive rock, shoegaze, dream pop, and electronica."
+  },
+  {
+   "id": "17c5cc53-7d25-4fe7-9493-75af16f885b1",
+   "slug": "sammy-virji-e15747ab",
+   "title": "Sammy Virji",
+   "act": "Sammy Virji",
+   "name": "Sammy Virji",
+   "description": "English DJ and record producer (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Sammy_Virji",
+   "extract": "Samuel Bashir Virji is a British DJ and record producer. Born in London, he grew up in Witney, and attended Newcastle University before dropping out to pursue his music career. His 2020 album, Spice Up My Life, charted at No. 7 on the UK Dance Albums Chart. After releasing a remix of Piri & Tommy's \"On & On\", he released \"If U Need It\", which charted at No. 85 on the UK singles chart. His earlier works belonged to the bassline genre, while his later works were UK garage."
+  },
+  {
+   "id": "90e5a1fe-a0bf-4c6d-bb2e-65ae6630a719",
+   "slug": "sammy-virji-north-america-tour-2026-part-2-9777b2c9",
+   "title": "Sammy Virji: North America Tour 2026 Part 2",
+   "act": "Sammy Virji",
+   "name": "Sammy Virji",
+   "description": "English DJ and record producer (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Sammy_Virji",
+   "extract": "Samuel Bashir Virji is a British DJ and record producer. Born in London, he grew up in Witney, and attended Newcastle University before dropping out to pursue his music career. His 2020 album, Spice Up My Life, charted at No. 7 on the UK Dance Albums Chart. After releasing a remix of Piri & Tommy's \"On & On\", he released \"If U Need It\", which charted at No. 85 on the UK singles chart. His earlier works belonged to the bassline genre, while his later works were UK garage."
+  },
+  {
+   "id": "63828626-fc2b-44fa-a860-27b47b5edeca",
+   "slug": "the-tallest-man-on-earth-80fa8c19",
+   "title": "The Tallest Man On Earth",
+   "act": "The Tallest Man On Earth",
+   "name": "The Tallest Man on Earth",
+   "description": "Swedish singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/The_Tallest_Man_on_Earth",
+   "extract": "Kristian Matsson is a Swedish singer-songwriter who performs under the stage name The Tallest Man on Earth. Matsson grew up in Leksand, and began his solo career in 2006, having previously been the lead singer of the indie band Montezumas. His music has often drawn comparisons to the music of Bob Dylan."
+  },
+  {
+   "id": "d62c8f75-c7de-4d14-9fbe-6817236a97ec",
+   "slug": "teddy-swims-the-ugly-tour-8531a1b0",
+   "title": "Teddy Swims: The UGLY Tour",
+   "act": "Teddy Swims",
+   "name": "Teddy Swims",
+   "description": "American singer and songwriter (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Teddy_Swims",
+   "extract": "Jaten Collin Dimsdale, known professionally as Teddy Swims, is an American singer and songwriter. Known for creating genre-blending music that includes elements of R&B, soul, hip-hop, and contemporary pop, Swims originally began to attract fans by posting song covers on YouTube during 2019 and 2020. Swims' third extended play, Tough Love (2022), became his first entry on the Billboard 200."
+  },
+  {
+   "id": "c3505fe1-35b7-486f-9999-5e0d942ef193",
+   "slug": "skydiggers-4d9225dc",
+   "title": "Skydiggers",
+   "act": "Skydiggers",
+   "name": "Skydiggers",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Skydiggers",
+   "extract": "Skydiggers is a Canadian roots rock band from Toronto formed by Andy Maize and Josh Finlayson. Since 1990, they have released 19 albums/EPs and have had a number of singles that have appeared on the Canadian charts. Their most successful album is Restless, released in 1992. With a presence spanning decades, the band has appeared under a variety of different record labels and with many changes in members that form the group."
+  },
+  {
+   "id": "3add0511-dfe9-491e-98b9-4953df722e4a",
+   "slug": "gorgon-city-3b82ad95",
+   "title": "Gorgon City",
+   "act": "Gorgon City",
+   "name": "Gorgon City",
+   "description": "English electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Gorgon_City",
+   "extract": "Gorgon City are an English electronic music production duo consisting of two North London producers Kye \"Foamo\" Gibbon and Matt \"RackNRuin\" Robson-Scott. Their 2014 singles \"Ready for Your Love\" and \"Here for You\" reached the top 10 in the UK. They are currently signed to the UK-based record label Positiva Records which is a division of Universal Music Group."
+  },
+  {
+   "id": "25567129-450a-4b8f-971c-24ad3cb64bbd",
+   "slug": "delhi-2-dublin-20th-anniversary-tour-finale-823cb87d",
+   "title": "Delhi 2 Dublin - 20th Anniversary Tour Finale",
+   "act": "Delhi 2 Dublin",
+   "name": "Delhi 2 Dublin",
+   "description": "Canadian world music group",
+   "source_url": "https://en.wikipedia.org/wiki/Delhi_2_Dublin",
+   "extract": "Delhi 2 Dublin is a Canadian world music group formed in 2006 in Vancouver who play a fusion of Bhangra, electronic, funk, dub, reggae, hip-hop, Celtic music, and a mashup of other genres."
+  },
+  {
+   "id": "92f98e7a-8d23-414b-9390-eab9f730e092",
+   "slug": "isaiah-rashad-lil-sunny-s-awful-road-trip-25adf471",
+   "title": "ISAIAH RASHAD: Lil Sunny's Awful Road Trip",
+   "act": "ISAIAH RASHAD",
+   "name": "Isaiah Rashad",
+   "description": "American rapper (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Isaiah_Rashad",
+   "extract": "Isaiah Rashad Joel McClain is an American rapper and singer. He first gained recognition following his performances on the 2012 Smoker's Club Tour alongside rappers Juicy J, Joey Badass and Smoke DZA. He is a founding member of the Chattanooga, Tennessee-based hip-hop collective TheHouse, which he formed with rappers YGTUT, Michael Da Vinci (MikeyD), Chris P, and Brian Brown."
+  },
+  {
+   "id": "67dc3f32-989b-42cc-b175-2b371d7b9698",
+   "slug": "boy-golden-good-goddamn-another-tour-40053d00",
+   "title": "Boy Golden - Good Goddamn Another Tour",
+   "act": "Boy Golden",
+   "name": "Boy Golden",
+   "description": "Canadian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Boy_Golden_(musician)",
+   "extract": "Boy Golden is the stage name of Liam Duncan, a Canadian alternative country singer-songwriter based in Winnipeg, Manitoba."
+  }
+ ]
+}

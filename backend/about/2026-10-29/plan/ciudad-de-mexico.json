@@ -1,0 +1,56 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "2411fa9f-acff-4d94-bac7-bac2b610fdae",
+   "slug": "omar-courtz-25966688",
+   "title": "Omar Courtz",
+   "act": "Omar Courtz",
+   "name": "Omar Courtz",
+   "description": "Puerto Rican singer and songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Omar_Courtz",
+   "extract": "Joshua Omar Medina Cortés, known professionally as Omar Courtz, or Ousi is a Puerto Rican singer and songwriter."
+  },
+  {
+   "id": "ec918be7-4925-4ab1-bd88-87bd4e8f45a9",
+   "slug": "lila-downs-3a155ce8",
+   "title": "Lila Downs",
+   "act": "Lila Downs",
+   "name": "Lila Downs",
+   "description": "Mexican singer-songwriter (born 1968)",
+   "source_url": "https://en.wikipedia.org/wiki/Lila_Downs",
+   "extract": "Ana Lila Downs Sánchez is a Mexican singer-songwriter, actress, and anthropologist. She performs her own compositions and the works of others in multiple genres, as well as tapping into Mexican traditional and popular music. She also incorporates indigenous Mexican influences and has recorded songs in many indigenous languages such as Mixtec, Zapotec, Mayan, Nahuatl and Purépecha. Born and raised in Oaxaca, she primarily studied at the Institute of Arts by Oaxaca and briefly attended the University of Minnesota, before withdrawing to focus on her musical career. She soon began performing in the traditional music scene of Oaxaca City."
+  },
+  {
+   "id": "56b7a9f3-3854-4bd1-96bc-5938f2e8cf6f",
+   "slug": "liana-flores-e3fa9aee",
+   "title": "Liana Flores",
+   "act": "Liana Flores",
+   "name": "Liana Flores",
+   "description": "British singer-songwriter and guitarist",
+   "source_url": "https://en.wikipedia.org/wiki/Liana_Flores",
+   "extract": "Liana Flores is a British-Brazilian singer-songwriter and guitarist. After independently releasing two extended plays The Water's Fine! (2018) and Recently (2019), her debut studio album Flower of the Soul was released under Verve and Fiction in June 2024."
+  },
+  {
+   "id": "f89d6757-0ac4-4d34-b135-594f5a7fe853",
+   "slug": "aitana-24f4f249",
+   "title": "Aitana",
+   "act": "Aitana",
+   "name": "Aitana",
+   "description": "Spanish singer (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Aitana_(singer)",
+   "extract": "Aitana Ocaña Morales, known mononymously as Aitana, is a Spanish singer and songwriter. She first gained national recognition in 2017, placing as the runner-up in the revival series of the Spanish reality television talent show Operación Triunfo. While competing on the show, Aitana recorded the single \"Lo Malo\" with fellow contestant Ana Guerra. The song became an instant hit in Spain, debuting at number-one and holding the spot for several weeks. Following the competition, Aitana signed a 360º record deal with Universal Music Spain and released her debut solo single \"Teléfono\" to commercial success and streaming-breaking records."
+  },
+  {
+   "id": "79dbb600-6fee-4948-8dd3-92cdbc3fcea9",
+   "slug": "morat-3b00bfd3",
+   "title": "Morat",
+   "act": "Morat",
+   "name": "Morat",
+   "description": "Colombian folk-pop Band",
+   "source_url": "https://en.wikipedia.org/wiki/Morat_(band)",
+   "extract": "Morat is a Colombian Latin pop rock band formed in the country's capital city, Bogotá. The band is made up of Juan Pablo Isaza, Juan Pablo Villamil, and the brothers Simón Vargas and Martín Vargas. Drummer Alejandro Posada was also a founding member of the band, but left in 2016 and was replaced by Martín Vargas."
+  }
+ ]
+}

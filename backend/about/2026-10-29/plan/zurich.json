@@ -1,0 +1,326 @@
+{
+ "city": "zurich",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "0a88d070-1368-4705-a445-0634000cd69f",
+   "slug": "elgrandetoto-3b6f7d24",
+   "title": "ElGrandeToto",
+   "act": "ElGrandeToto",
+   "name": "ElGrandeToto",
+   "description": "Moroccan rapper (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/ElGrandeToto",
+   "extract": "Taha Fahssi, better known by his stage name ElGrandeToto, EGT or just Toto, is a Moroccan rapper from Casablanca. He has been the most streamed artist in Morocco for five consecutive years (2021-2025) and was the most listened-to artist in the MENA region on Spotify in 2021 and 2023. He is also the most viewed Moroccan rapper on YouTube. Fahssi is widely regarded as one of Morocco's best rappers of all time."
+  },
+  {
+   "id": "d3b32aef-bec7-47bf-bc47-95c345e6671a",
+   "slug": "pitbull-i-m-back-d99dad7f",
+   "title": "Pitbull - I'm Back!",
+   "act": "Pitbull",
+   "name": "Pitbull",
+   "description": "American rapper (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/Pitbull_(rapper)",
+   "extract": "Armando Christian Pérez, known professionally as Pitbull, is an American rapper, singer, songwriter, and actor. He began his career in the early 2000s as a reggaeton, Latin hip-hop, and crunk performer, and signed with TVT Records to release his debut album, M.I.A.M.I. (2004). Executive produced by Lil Jon, the album entered the Billboard 200 along with his second and third albums, El Mariel (2006) and The Boatlift (2007). His fourth album, Pitbull Starring in Rebelution (2009), yielded his mainstream breakthrough, spawning the singles \"I Know You Want Me \" and \"Hotel Room Service\"—which peaked at numbers two and eight on the U.S. Billboard Hot 100, respectively."
+  },
+  {
+   "id": "5fbb0cb8-bb03-4105-a662-63caebfef2ec",
+   "slug": "lp-6afc6c47",
+   "title": "LP",
+   "act": "LP",
+   "name": "LP",
+   "description": "American musician (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/LP_(singer)",
+   "extract": "Laura Pergolizzi, known professionally as LP, is an American singer, musician and songwriter from Brooklyn, New York. LP has released seven albums and three EPs. LP has written songs for other artists including Rihanna, Christina Aguilera, the Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd and Céline Dion."
+  },
+  {
+   "id": "be79637b-80cd-4bb3-927a-a9ecdc4152f3",
+   "slug": "swae-lee-51b12578",
+   "title": "Swae Lee",
+   "act": "Swae Lee",
+   "name": "Swae Lee",
+   "description": "American rapper and singer (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Swae_Lee",
+   "extract": "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California. Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi."
+  },
+  {
+   "id": "dc5e65ca-1998-4ec5-a3d5-108953370e12",
+   "slug": "the-kid-laroi-a-perfect-world-tour-bb8cb785",
+   "title": "The Kid LAROI - A Perfect World Tour",
+   "act": "The Kid LAROI",
+   "name": "The Kid Laroi",
+   "description": "Australian singer (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/The_Kid_Laroi",
+   "extract": "Charlton Kenneth Jeffrey Howard, known professionally as the Kid Laroi, is an Australian singer, rapper, and songwriter. He was signed with American rapper Lil Bibby's Grade A Productions, in a joint venture with Columbia Records, in 2019. He is best known for his 2021 single \"Stay\", which peaked atop the charts in numerous countries including his native Australia, as well as the Canadian Hot 100 and Billboard Hot 100."
+  },
+  {
+   "id": "71b0cc80-7b07-4d3f-b93b-ed32442d914d",
+   "slug": "ikkimel-842679f4",
+   "title": "Ikkimel",
+   "act": "Ikkimel",
+   "name": "Ikkimel",
+   "description": "German rapper (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Ikkimel",
+   "extract": "Melina Gaby Strauß, known professionally as Ikkimel, is a German rapper from Berlin-Tempelhof."
+  },
+  {
+   "id": "455ed067-e126-4470-9238-e6f23df77ac3",
+   "slug": "son-mieux-e27aba8a",
+   "title": "Son Mieux",
+   "act": "Son Mieux",
+   "name": "Son Mieux",
+   "description": "Dutch indie pop group",
+   "source_url": "https://en.wikipedia.org/wiki/Son_Mieux",
+   "extract": "Son Mieux is a Dutch indie pop group from The Hague headed by Camiel Meiresonne."
+  },
+  {
+   "id": "6d130996-722a-4fed-bc4b-69fa48f13a8e",
+   "slug": "polyphia-be-not-afraid-world-tour-7613b0be",
+   "title": "Polyphia: BE NOT AFRAID World Tour",
+   "act": "Polyphia",
+   "name": "Polyphia",
+   "description": "American progressive rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Polyphia",
+   "extract": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music. Polyphia has released five studio albums, one live record, two EPs, and numerous singles."
+  },
+  {
+   "id": "91224112-5f20-4310-a49f-9ad6efb02d8d",
+   "slug": "against-the-current-dc875a6b",
+   "title": "Against The Current",
+   "act": "Against The Current",
+   "name": "Against the Current",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Against_the_Current_(band)",
+   "extract": "Against the Current is an American rock band from Poughkeepsie, New York, formed in 2011. As of 2025, the band consists of lead vocalist Chrissy Costanza, guitarist Dan Gow, and drummer Will Ferri. The band quickly gained a sizeable online following after posting covers of various popular songs on YouTube. They played Warped Tour in 2016."
+  },
+  {
+   "id": "03c51dea-5c7c-4fc7-bf06-7f0c24e84955",
+   "slug": "filow-3d6410c9",
+   "title": "Filow",
+   "act": "Filow",
+   "name": "Filow",
+   "description": "German musician",
+   "source_url": "https://en.wikipedia.org/wiki/Filow",
+   "extract": "Felix Nier, known professionally as Filow, is a German influencer and musician."
+  },
+  {
+   "id": "b27002d0-bec0-4e43-8607-697b1f26dc6d",
+   "slug": "dizzy-dros-54f69119",
+   "title": "Dizzy Dros",
+   "act": "Dizzy Dros",
+   "name": "Dizzy DROS",
+   "description": "Moroccan rapper (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Dizzy_DROS",
+   "extract": "Omar Souhaili, better known by his stage name Dizzy DROS, or just Dizzy, is a Moroccan rapper, songwriter and record producer. Souhaili first gained recognition with the release of his debut music video, \"Casafonia\" in 2011. The track received significant airplay on major Moroccan radio stations, including Hit Radio, Radio Mars, and Cap Radio, quickly establishing him as a rising star in the Moroccan rap scene and earning him a fanbase."
+  },
+  {
+   "id": "b8478182-38d3-47cd-bd99-962f0b933717",
+   "slug": "esdeekid-council-house-rat-tour-80b1b304",
+   "title": "EsDeeKid - Council House Rat Tour",
+   "act": "EsDeeKid",
+   "name": "EsDeeKid",
+   "description": "British rapper",
+   "source_url": "https://en.wikipedia.org/wiki/EsDeeKid",
+   "extract": "EsDeeKid is a British rapper from Liverpool, England. He released his debut mixtape, Rebel, in June 2025. He has been noted as a prominent figure in the UK underground rap scene. His music is characterised by his thick Scouse accent and draws inspiration from cloud rap. He covers his face with a balaclava, and keeps his name, appearance, and age private. He still lives in his council house.\nAs of May 2026, EsDeeKid's single \"Phantom\" has accumulated more than 300 million streams. His mixtape Rebel has charted in multiple European countries, as well as peaked at number 23 on the US Billboard 200, despite being released nearly five months before its debut on the chart."
+  },
+  {
+   "id": "8f8beab7-aca6-4318-8c91-30eb67861cef",
+   "slug": "saint-levant-afandi-world-tour-b714b040",
+   "title": "Saint Levant - AFANDI WORLD TOUR",
+   "act": "Saint Levant",
+   "name": "Saint Levant",
+   "description": "Palestinian rapper and musician (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Saint_Levant",
+   "extract": "Marwan Abdelhamid, known professionally as Saint Levant, is a Palestinian singer-songwriter and rapper. A multilingual artist, he became known for his 2022 song \"Very Few Friends\". As of August 2026, he has released two EPs and two studio albums, and has toured in the Middle East, Europe, the US, and Australia."
+  },
+  {
+   "id": "664fb48e-efea-498b-94ce-3ee1999b0dc1",
+   "slug": "tiffany-day-2f8ec52a",
+   "title": "Tiffany Day",
+   "act": "Tiffany Day",
+   "name": "Tiffany Day",
+   "description": "American singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Tiffany_Day_(musician)",
+   "extract": "Tiffany Day Ruan, is a Canadian-American singer, songwriter, and record producer. Raised in Wichita, Kansas, she began independently releasing music after a 2017 video of her singing into a well in Italy went viral on Twitter. She released her debut studio album, Lover Tofu Fruit, in 2024. She signed to Broke Records the following year, through which she released her second studio album, Halo, in 2026."
+  },
+  {
+   "id": "49813429-b675-49c7-b0e6-35c0a100b772",
+   "slug": "arlo-parks-desire-tour-e5ca62be",
+   "title": "ARLO PARKS - DESIRE TOUR",
+   "act": "ARLO PARKS",
+   "name": "Arlo Parks",
+   "description": "British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Arlo_Parks",
+   "extract": "Anaïs Oluwatoyin Estelle Marinho, known professionally as Arlo Parks, is an English singer and songwriter. Her debut studio album, Collapsed in Sunbeams, was released in 2021 to critical acclaim and peaked at number three on the UK Albums Chart. It won the 2021 Mercury Prize for Best Album and earned her nominations for Album of the Year, Best New Artist and Best British Female Solo Artist at the 2021 Brit Awards."
+  },
+  {
+   "id": "16d8d826-b8d7-481f-baaa-ca82d87ffef3",
+   "slug": "the-scratch-856a6663",
+   "title": "The Scratch",
+   "act": "The Scratch",
+   "name": "The Scratch",
+   "description": "Irish trad/metal band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Scratch_(band)",
+   "extract": "The Scratch are an Irish band based in Dublin, whose music blends Irish traditional music and heavy metal."
+  },
+  {
+   "id": "662fc12b-2a80-4945-b9aa-257b656b246c",
+   "slug": "trixie-whitley-0c9efa92",
+   "title": "Trixie Whitley",
+   "act": "Trixie Whitley",
+   "name": "Trixie Whitley",
+   "description": "Belgian musician (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Trixie_Whitley",
+   "extract": "Trixie Whitley is a Belgian American multi-instrumentalist. As the daughter of singer-songwriter Chris Whitley, she began her musical career playing with her father, and recording on several of his albums. Whitley has released three solo EPs, is a member of Black Dub, and was the vocalist on their self-titled debut album."
+  },
+  {
+   "id": "62644b60-6dba-40b9-a238-b3532e8a3417",
+   "slug": "delinquent-habits-384d33e2",
+   "title": "Delinquent Habits",
+   "act": "Delinquent Habits",
+   "name": "Delinquent Habits",
+   "description": "American hip hop group",
+   "source_url": "https://en.wikipedia.org/wiki/Delinquent_Habits",
+   "extract": "Delinquent Habits is an American hip hop group, formed in Norwalk, California in 1991. They are known for their Latin-tinged rap, which is both melodic and hardcore. Their first album was executive produced by Cypress Hill member Sen Dog and featured guest appearances by Sen himself as well as Puerto Rican New York City rapper Hurricane G. Their second album, Here Come the Horns, again featured Sen Dog as well as Sen's brother, pioneering Latin rapper Mellow Man Ace. The melodic Merry-Go-Round featured the female singer Michelle Belle. The group chose to focus more on hardcore rap on their fourth offering, Freedom Band."
+  },
+  {
+   "id": "1de4edea-b047-422a-900e-9cfea29a24a0",
+   "slug": "kodaline-farewell-tour-6d88aad5",
+   "title": "Kodaline - Farewell Tour",
+   "act": "Kodaline",
+   "name": "Kodaline",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kodaline",
+   "extract": "Kodaline are an Irish rock band. Originally known as 21 Demands, the band adopted their current name in 2012 to coincide with the changing of their music. The group comprises Steve Garrigan, Vincent May, Mark Prendergast, and Jason Boland."
+  },
+  {
+   "id": "bbdd58e4-a185-4c2e-b09a-80178027e293",
+   "slug": "kid-kapichi-b230fe3f",
+   "title": "Kid Kapichi",
+   "act": "Kid Kapichi",
+   "name": "Kid Kapichi",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kid_Kapichi",
+   "extract": "Kid Kapichi are an English punk rock band formed in Hastings in 2013. The band consists of vocalist and guitarist Jack Wilson and bassist Eddie Lewis."
+  },
+  {
+   "id": "3ef5b7c1-aad3-4ad8-b840-e45256eeac34",
+   "slug": "muse-the-wow-signal-europa-tour-7f7c7751",
+   "title": "Muse - The Wow! Signal Europa Tour",
+   "act": "Muse",
+   "name": "Muse",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Muse_(band)",
+   "extract": "Muse are an English rock band from Teignmouth, Devon, formed in 1994. The band consists of Matt Bellamy, Chris Wolstenholme, and Dominic Howard."
+  },
+  {
+   "id": "c259c4ab-98d2-4afc-bac9-c8a9a0bc8819",
+   "slug": "sens-unik-a266b5cc",
+   "title": "Sens Unik",
+   "act": "Sens Unik",
+   "name": "Sens Unik",
+   "description": "Swiss hip hop group",
+   "source_url": "https://en.wikipedia.org/wiki/Sens_Unik",
+   "extract": "Sens Unik is a Swiss Hip hop group from Lausanne, which was founded in 1987 and disbanded in 2010. They reunited in 2024 and are touring since."
+  },
+  {
+   "id": "80bddd0c-b4bf-4d0c-9ace-c65ca5af902d",
+   "slug": "isaiah-rashad-d3ebf44c",
+   "title": "Isaiah Rashad",
+   "act": "Isaiah Rashad",
+   "name": "Isaiah Rashad",
+   "description": "American rapper (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Isaiah_Rashad",
+   "extract": "Isaiah Rashad Joel McClain is an American rapper and singer. He first gained recognition following his performances on the 2012 Smoker's Club Tour alongside rappers Juicy J, Joey Badass and Smoke DZA. He is a founding member of the Chattanooga, Tennessee-based hip-hop collective TheHouse, which he formed with rappers YGTUT, Michael Da Vinci (MikeyD), Chris P, and Brian Brown."
+  },
+  {
+   "id": "f8694123-2f38-40a6-a346-f0e3ae24cda2",
+   "slug": "hollywood-undead-59ad3ef8",
+   "title": "Hollywood Undead",
+   "act": "Hollywood Undead",
+   "name": "Hollywood Undead",
+   "description": "American rap rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Hollywood_Undead",
+   "extract": "Hollywood Undead is an American rap rock band from Los Angeles, California, formed in 2005. All of the band members use pseudonyms and previously wore their own unique mask, most of which were based on the common hockey goaltender design. The band currently consists of five members: J-Dog, Funny Man, Johnny 3 Tears, Charlie Scene, and Danny. They released their debut album, Swan Songs, on September 2, 2008, and their live CD/DVD Desperate Measures, on November 10, 2009. Their second studio album, American Tragedy, was released April 5, 2011. Their third studio album, titled Notes from the Underground, was released on January 8, 2013."
+  },
+  {
+   "id": "d5ca4a0c-6aff-40ce-a629-8c6c31778d92",
+   "slug": "ayra-starr-starrgirl-world-tour-642e6389",
+   "title": "Ayra Starr: Starrgirl World Tour",
+   "act": "Ayra Starr",
+   "name": "Ayra Starr",
+   "description": "Beninese-born Nigerian singer (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Ayra_Starr",
+   "extract": "Oyinkansola Sarah Aderibigbe, known professionally as Ayra Starr, is a Beninese-born Nigerian singer-songwriter and producer."
+  },
+  {
+   "id": "fbe9f7ff-b1c9-4a2f-86f6-2734b38c89bc",
+   "slug": "editors-9bfccdec",
+   "title": "Editors",
+   "act": "Editors",
+   "name": "Editors",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Editors_(band)",
+   "extract": "Editors are an English rock band, formed in 2002 in Birmingham. Previously known as Pilot, The Pride and Snowfield, the band consists of Tom Smith, Russell Leetch, Ed Lay, Justin Lockey, and Elliott Williams. During live performances, the band are joined by longtime touring member Nicholas Willes."
+  },
+  {
+   "id": "b9906ec0-9443-46ce-8bfd-7e0a3596d7a0",
+   "slug": "spanish-love-songs-f6380983",
+   "title": "Spanish Love Songs",
+   "act": "Spanish Love Songs",
+   "name": "Spanish Love Songs",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Spanish_Love_Songs",
+   "extract": "Spanish Love Songs is an American rock band from Los Angeles, California, that was founded in 2013. The band consists of lead vocalist and guitarist Dylan Slocum, guitarist Kyle McAulay, drummer Ruben Duarte, bass guitarist Mike Trujillo, and keyboardist/acoustic guitar player Meredith Van Woert. Slocum and Van Woert are married. Since their formation, Spanish Love Songs has released four studio albums: Giant Sings the Blues (2015), Schmaltz (2018), Brave Faces Everyone (2020) and No Joy (2023)."
+  },
+  {
+   "id": "54746f4e-8b96-4a2d-af52-690e432b3987",
+   "slug": "jaill-b6d2d51d",
+   "title": "JAILL",
+   "act": "JAILL",
+   "name": "Jaill",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Jaill",
+   "extract": "Jaill is an indie rock band formed in Milwaukee, Wisconsin, in 2002. The band consists of Vincent Kircher, Austin Dutmer, and Andrew Harris. Their music is described as psych-pop, with up-beat guitar and punk music matched with dark lyrics. Their 2010 album, That's How We Burn, earned them the most attention, receiving multiple reviews."
+  },
+  {
+   "id": "ad856270-bde0-45a6-b6a5-3773facb9364",
+   "slug": "masego-fix-your-face-tour-6b33dd32",
+   "title": "Masego – Fix Your Face Tour",
+   "act": "Masego",
+   "name": "Masego",
+   "description": "Jamaican musician (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Masego_(musician)",
+   "extract": "Micah Davis, known professionally as Masego, is a Jamaican and American musician and singer, known for incorporating the saxophone into his music. Masego released two EPs in 2016, The Pink Polo EP with Medasin, and Loose Thoughts. He gained widespread attention with his collaborative record with FKJ called \"Tadow\" released in 2017. In 2018, he released his debut album Lady Lady. His album Studying Abroad: Extended Stay was nominated for the 2022 Grammy Awards in the \"Best Progressive R&B Album\" category."
+  },
+  {
+   "id": "9f3705d4-e467-459a-a068-50fb2d70d070",
+   "slug": "oskar-med-k-0b1ab85a",
+   "title": "Oskar Med K",
+   "act": "Oskar Med K",
+   "name": "Oskar med k",
+   "description": "Norwegian record producer",
+   "source_url": "https://en.wikipedia.org/wiki/Oskar_med_k",
+   "extract": "Oskar Sjåvåg, known professionally as oskar med k, is a Norwegian electronic dance music producer most known for his breakthrough single \"Make Me Feel\". He later released the official remix with singer Khalid. It also appeared on Khalid's fourth album, After the Sun Goes Down, on October 10, 2025. Both tracks reached inside the UK, Swiss, and German charts."
+  },
+  {
+   "id": "67557ee6-223d-4423-9f2f-e4fa4f20b26f",
+   "slug": "cameron-whitcomb-the-kingdom-of-fear-eu-uk-tour-404e85b2",
+   "title": "Cameron Whitcomb - The Kingdom Of Fear EU/UK Tour 2027",
+   "act": "Cameron Whitcomb",
+   "name": "Cameron Whitcomb",
+   "description": "Canadian singer-songwriter (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Cameron_Whitcomb",
+   "extract": "Cameron Donald Whitcomb is a Canadian singer and songwriter from Nanaimo, British Columbia. He competed on season 20 of reality television show American Idol. He is currently signed to Atlantic Records. Whitcomb has charted multiple songs internationally, including \"Quitter\", \"Medusa\", \"Options\", and \"Kingdom of Fear\". His debut album The Hard Way was released on September 26, 2025."
+  },
+  {
+   "id": "7a85378c-cac6-4464-90e3-b892769328c1",
+   "slug": "almost-monday-46eb0864",
+   "title": "almost monday",
+   "act": "almost monday",
+   "name": "Almost Monday",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Almost_Monday",
+   "extract": "Almost Monday is an American indie pop band based in San Diego, California."
+  }
+ ]
+}

@@ -1,0 +1,166 @@
+{
+ "city": "philadelphia",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "2939e07a-6a01-4d24-8360-51583eb20bd0",
+   "slug": "the-army-the-navy-a6b85e16",
+   "title": "The Army, The Navy",
+   "act": "The Army, The Navy",
+   "name": "The Army, The Navy",
+   "description": "American musical duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_Army%2C_The_Navy",
+   "extract": "The Army, The Navy is an American folk-pop band consisting of Maia Ciambriello and Sasha Goldberg."
+  },
+  {
+   "id": "0eb4904f-2586-4f0f-9b35-c63b02eb3237",
+   "slug": "hurricane-wisdom-cef26cdb",
+   "title": "Hurricane Wisdom",
+   "act": "Hurricane Wisdom",
+   "name": "Hurricane Wisdom",
+   "description": "American rapper (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Hurricane_Wisdom",
+   "extract": "Wisdom Mikeal Oluola, known professionally as Hurricane Wisdom, is an American rapper, singer-songwriter, and social media personality. Born in Tallahassee, Florida, and growing up in Havana, Florida, Oluola started his music career in 2018 or 2019, although he started taking the career seriously in 2020, with his debut single being \"Granny's Baby\"."
+  },
+  {
+   "id": "1acc2591-64de-4f47-aad2-fdd7d7afe252",
+   "slug": "vince-staples-ec35e892",
+   "title": "Vince Staples",
+   "act": "Vince Staples",
+   "name": "Vince Staples",
+   "description": "American rapper and actor (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Vince_Staples",
+   "extract": "Vincent Jamal Staples is an American rapper, singer, songwriter, and actor. He first became known for his appearances on the projects from Odd Future members and affiliates, including Earl Sweatshirt's Earl (2010) and Doris (2013), Mike G.’s Ali (2010) and The Jet Age of Tomorrow's Journey to the 5th Echelon (2010). He signed with Talib Kweli's Blacksmith Records prior to the release of his collaborative mixtape with Mac Miller, Stolen Youth (2013). The following year, he signed with No I.D.'s ARTium Recordings, an imprint of Def Jam Recordings, to release his debut extended play, Hell Can Wait (2014), which received critical acclaim and marked his first entry on the Billboard 200."
+  },
+  {
+   "id": "10b59f00-668e-47c1-b3f8-da61dc20cb33",
+   "slug": "yebba-jean-tour-1ab05cef",
+   "title": "Yebba: Jean Tour",
+   "act": "Yebba",
+   "name": "Yebba",
+   "description": "American singer (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Yebba",
+   "extract": "Abigail Elizabeth Smith, known professionally as Yebba, is an American singer and songwriter from West Memphis, Arkansas. She first became known for her YouTube channel and then for her backing vocal performance on Chance the Rapper's SNL performance of the song \"Same Drugs\" in 2016 and releasing her debut single \"Evergreen\" in 2017. She has collaborated with a number of artists, including PJ Morton, Sam Smith, Mark Ronson, Stormzy, Ed Sheeran, A$AP Rocky, Tyler, the Creator and Drake. She won a Grammy Award in the category Best Traditional R&B Performance for her feature on PJ Morton's cover of \"How Deep Is Your Love\" in 2019."
+  },
+  {
+   "id": "73a00ba0-c668-4d45-8245-6ad19448f13f",
+   "slug": "blake-whiten-cdffba72",
+   "title": "Blake Whiten",
+   "act": "Blake Whiten",
+   "name": "Blake Whiten",
+   "description": "American country singer (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Blake_Whiten",
+   "extract": "Blake Whiten is an American country singer and songwriter. His debut album, Something to Say, was released in 2026, which included his first Billboard Hot 100 hit \"Bet on That\"."
+  },
+  {
+   "id": "4ab2e795-8260-41e7-8b84-e7e700b38d54",
+   "slug": "motionless-in-white-the-sweat-and-blood-tour-d6badf75",
+   "title": "Motionless In White: The Sweat and Blood Tour",
+   "act": "Motionless In White",
+   "name": "Motionless in White",
+   "description": "American metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Motionless_in_White",
+   "extract": "Motionless in White is an American metalcore band from Scranton, Pennsylvania. Formed in 2004, the band consists of lead vocalist Chris \"Motionless\" Cerulli, guitarists Ryan Sitkowski and Ricky \"Horror\" Olson, drummer Vinny Mauro and bassist Justin Morrow. Cerulli is the only member of the original line-up that remains in the band. The group has stated that their band name derived from the Eighteen Visions song \"Motionless and White\"."
+  },
+  {
+   "id": "874eb6f1-b254-44f5-98c6-d98fdd1163b1",
+   "slug": "josie-edwards-6d521daf",
+   "title": "Josie Edwards",
+   "act": "Josie Edwards",
+   "name": "Josie Edwards",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Josie_Edwards",
+   "extract": "Josie Edwards is an American musician and songwriter. She is best known for her 2026 single “Chemical Light\", as well as her 2025 hit “good girls”. She has released two EPs and performed at All Points East as a supporting act for Twenty One Pilots alongside Gang of Youths, Bbno$, and Jessie Murph."
+  },
+  {
+   "id": "e8a252e5-6089-4844-85b9-fa8df1d3c043",
+   "slug": "she-wants-revenge-e9f6e0f0",
+   "title": "She Wants Revenge",
+   "act": "She Wants Revenge",
+   "name": "She Wants Revenge",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/She_Wants_Revenge",
+   "extract": "She Wants Revenge is an American rock band, based in San Fernando Valley, California. Formed in 2004, the band is a duo of singer and guitarist Justin Warfield and multi-instrumentalist Adam Bravin. Their music has been influenced by post-punk, darkwave and gothic rock. The band has sold more than 300,000 records in the US."
+  },
+  {
+   "id": "ba5a74b6-d783-447b-a201-dd6da7ab32de",
+   "slug": "third-eye-blind-halloween-2026-1da47559",
+   "title": "Third Eye Blind - Halloween 2026",
+   "act": "Third Eye Blind",
+   "name": "Third Eye Blind",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Third_Eye_Blind",
+   "extract": "Third Eye Blind (3EB) is an American rock band formed in San Francisco, California, in 1993. After years of lineup changes in the early and mid-1990s, the songwriting duo of Stephan Jenkins and Kevin Cadogan signed the band's first major-label recording contract with Elektra Records in 1996. The band released their self-titled debut album in 1997, with the band largely consisting of Jenkins, Cadogan, Arion Salazar, and Brad Hargreaves (drums). Shortly after the release of the band's second album in 1999, Blue, with the same lineup, Cadogan was released from the band under controversial circumstances."
+  },
+  {
+   "id": "b4bcbaf6-ced4-40a9-8ae6-0dae0d64a6f5",
+   "slug": "rawayana-donde-es-el-after-world-tour-4d3ab99c",
+   "title": "RAWAYANA - ¿Dónde es el after? World Tour",
+   "act": "RAWAYANA",
+   "name": "Rawayana",
+   "description": "Venezuelan musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Rawayana",
+   "extract": "Rawayana is a Venezuelan band formed in Caracas in 2007. The group's music combines a variety of musical genres including reggae, psychedelic, electronic, funk and salsa, and the members describe their style as \"trippy pop\". The band consists of Alberto \"Beto\" Montenegro, Antonio \"Tony\" Casas, Andrés \"Fofo\" Story and Alejandro \"Abeja\" Abeijón."
+  },
+  {
+   "id": "23a8161a-4465-4836-bf6f-83899b6ff636",
+   "slug": "chief-keef-305fb0b2",
+   "title": "CHIEF KEEF",
+   "act": "CHIEF KEEF",
+   "name": "Chief Keef",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Chief_Keef",
+   "extract": "Keith Farrelle Cozart, known professionally as Chief Keef, is an American rapper and record producer. Beginning his career as a teenager, he gained regional recognition for his mixtapes in the early 2010s. Cozart has since been credited with popularizing the hip hop subgenre drill among mainstream audiences and is considered a progenitor of the genre."
+  },
+  {
+   "id": "233ea83d-e0a0-4913-a136-67e31d7a76ea",
+   "slug": "pretty-sick-f3a985d4",
+   "title": "Pretty Sick",
+   "act": "Pretty Sick",
+   "name": "Pretty Sick",
+   "description": "American rock band from New York City",
+   "source_url": "https://en.wikipedia.org/wiki/Pretty_Sick",
+   "extract": "Pretty Sick is an American indie rock band from New York City, New York. It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz."
+  },
+  {
+   "id": "f284580c-339a-4554-80e5-b0816f377bce",
+   "slug": "kate-nash-b5ec803c",
+   "title": "Kate Nash",
+   "act": "Kate Nash",
+   "name": "Kate Nash",
+   "description": "British musician (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Kate_Nash",
+   "extract": "Kate Marie Nash is an English singer, songwriter, musician, and actress. Her singles \"Foundations\" (2007) and \"Do-Wah-Doo\" (2010) charted at numbers 2 and 15 on the UK singles chart and her albums Made of Bricks (2007) and My Best Friend Is You (2010) charted at numbers 1 and 8 on the UK Albums Chart."
+  },
+  {
+   "id": "5fded25c-f1bf-4d6a-a0b5-e718d2e5fa9f",
+   "slug": "young-miko-late-checkout-tour-b7e809c8",
+   "title": "Young Miko - Late Checkout Tour",
+   "act": "Young Miko",
+   "name": "Young Miko",
+   "description": "Puerto Rican rapper (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Young_Miko",
+   "extract": "María Victoria Ramírez de Arellano Cardona, known professionally as Young Miko, is a Puerto Rican rapper, singer, songwriter and former footballer. In 2022, she released her debut extended play, Trap Kitty, featuring Latin trap tracks. In April 2024, she released her debut studio album, Att., featuring collaborations with Feid, Jowell & Randy, Villano Antillano, Elena Rose, and Dei V. In November 2025, she released her second studio album, Do Not Disturb, which featured a collaboration with Eladio Carrión."
+  },
+  {
+   "id": "1f8b31e6-8429-4e6b-8145-3b9a04b9315c",
+   "slug": "fruit-bats-01612961",
+   "title": "Fruit Bats",
+   "act": "Fruit Bats",
+   "name": "Fruit Bats",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Fruit_Bats_(band)",
+   "extract": "Fruit Bats is an American indie rock band formed in 1997 in Chicago, Illinois, as the project of singer and songwriter Eric D. Johnson. Johnson is the band's sole permanent member, with various musicians joining the band in live and studio settings."
+  },
+  {
+   "id": "ce298dc7-4579-45c0-8da2-6d06aba69e3c",
+   "slug": "rainao-b1d54440",
+   "title": "RaiNao",
+   "act": "RaiNao",
+   "name": "RaiNao",
+   "description": "Puerto Rican singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/RaiNao",
+   "extract": "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter. Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop, shaped by her background in music theory and live performance. She got signed to Rimas Entertainment in 2024."
+  }
+ ]
+}

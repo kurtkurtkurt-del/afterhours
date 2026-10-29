@@ -1,0 +1,106 @@
+{
+ "city": "london",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "0b3e7fc9-efe3-4e4d-8133-94031d06693e",
+   "slug": "steven-wilson-d94bc255",
+   "title": "Steven Wilson",
+   "act": "Steven Wilson",
+   "name": "Steven Wilson",
+   "description": "English musician (born 1967)",
+   "source_url": "https://en.wikipedia.org/wiki/Steven_Wilson",
+   "extract": "Steven John Wilson is an English musician, composer and multi-instrumentalist. He is the founder, guitarist, lead vocalist, and songwriter of the progressive rock band Porcupine Tree, as well as being a member of several other bands, including Blackfield, Storm Corrosion and No-Man. He has also released eight albums as a solo artist since 2008. In a career spanning more than 30 years, Wilson has made music prolifically and earned critical acclaim. His honours include six nominations for Grammy Awards: twice with Porcupine Tree, once with his collaborative band Storm Corrosion and three times as a solo artist. In 2017, The Daily Telegraph described him as \"a resolutely independent artist\" and \"probably the most successful British artist you've never heard of\"."
+  },
+  {
+   "id": "4a020349-b321-459e-be92-91a16484e031",
+   "slug": "nimino-d4f64cfd",
+   "title": "nimino",
+   "act": "nimino",
+   "name": "Nimino",
+   "description": "British musician and DJ",
+   "source_url": "https://en.wikipedia.org/wiki/Nimino",
+   "extract": "Nimino, born Milo Evans, is a British producer and DJ. Nimino's music sits in the intersection of house, hip hop, and garage music."
+  },
+  {
+   "id": "1b0db4e4-99e8-4572-be1a-f5ac492aa170",
+   "slug": "tsatsamis-9645acfa",
+   "title": "Tsatsamis",
+   "act": "Tsatsamis",
+   "name": "Tsatsamis",
+   "description": "British singer-songwriter and record producer",
+   "source_url": "https://en.wikipedia.org/wiki/Tsatsamis",
+   "extract": "Peter Tsatsamis-Cooper, known mononymously as Tsatsamis, is a British singer-songwriter and record producer, based in London. He's known for his distinctive blend of confessional and vulnerable lyricism exploring queer culture and sexual identity with electro-pop, dance-pop and synth-pop sounds."
+  },
+  {
+   "id": "3340eac6-86bb-4bc4-b410-29c33a8f0584",
+   "slug": "son-lux-4ee77017",
+   "title": "Son Lux",
+   "act": "Son Lux",
+   "name": "Son Lux",
+   "description": "American experimental music project",
+   "source_url": "https://en.wikipedia.org/wiki/Son_Lux",
+   "extract": "Son Lux is an American post-rock band. Originally the solo project and moniker of founding member Ryan Lott, the band's first three albums, At War with Walls & Mazes, We Are Rising and Lanterns, shaped the band's unique sound through post-rock and electronica influences."
+  },
+  {
+   "id": "9b864d12-7446-4f5d-8db1-181d6896da3a",
+   "slug": "the-blackout-29-october-cf10245f",
+   "title": "THE BLACKOUT - 29 OCTOBER",
+   "act": "THE BLACKOUT",
+   "name": "The Blackout",
+   "description": "Welsh rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Blackout_(band)",
+   "extract": "The Blackout are a Welsh rock band from Merthyr Tydfil, formed in 2003. In 2007, the band released their debut album, We Are the Dynamite. Their second record, The Best in Town, was released in 2009. The band's third album, Hope, was released in 2011 and charted at number 27 in the UK album chart. Their fourth studio album, Start the Party, was released in 2013. The Blackout's final release was a five-track EP entitled Wolves, with their farewell tour held in early 2015, finishing in their hometown of Merthyr Tydfil in March 2015."
+  },
+  {
+   "id": "6b8bc558-df06-4f0f-8427-f7039d114476",
+   "slug": "allie-x-55c460ec",
+   "title": "Allie X",
+   "act": "Allie X",
+   "name": "Allie X",
+   "description": "Canadian musician (born 1985)",
+   "source_url": "https://en.wikipedia.org/wiki/Allie_X",
+   "extract": "Alexandra Ashley Hughes, known professionally as Allie X, is a Canadian singer, songwriter, and visual artist. She began her career as an indie pop artist in Toronto in the mid-2000s, playing with local bands and recording several albums."
+  },
+  {
+   "id": "cb3a825c-c5ca-4af1-9e7f-50194695eb0a",
+   "slug": "ferocious-dog-a04be0c1",
+   "title": "Ferocious Dog",
+   "act": "Ferocious Dog",
+   "name": "Ferocious Dog",
+   "description": "English musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Ferocious_Dog",
+   "extract": "Ferocious Dog are an English folk punk band from Warsop, Nottinghamshire, England. The band has headlined tours of the UK and Europe, performed in Dubai, festivals such as Bearded Theory, Alchemy, Deerstock, Farmer Phil's Festival, Splendour and Beautiful Days, and toured in support of New Model Army, The Levellers and The Wonder Stuff. In 2015 the band played in the Field of Avalon at Glastonbury Festival."
+  },
+  {
+   "id": "1304e023-0996-4387-9534-dc5238412ad6",
+   "slug": "yaelokre-7f73529f",
+   "title": "Yaelokre",
+   "act": "Yaelokre",
+   "name": "Yaelokre",
+   "description": "Filipino-Icelandic singer-songwriter and multimedia artist",
+   "source_url": "https://en.wikipedia.org/wiki/Yaelokre",
+   "extract": "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist known for their folk music storytelling project under the stage name Yaelokre. Ósk began releasing music under the project name in early 2024, going viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart the same year."
+  },
+  {
+   "id": "2e5530d0-9deb-43f1-9830-004eaf453af7",
+   "slug": "laura-mvula-1edb4732",
+   "title": "Laura Mvula",
+   "act": "Laura Mvula",
+   "name": "Laura Mvula",
+   "description": "English singer (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/Laura_Mvula",
+   "extract": "Laura Mvula is a British singer. A native of Birmingham, England, Mvula gained experience as a member or leader of a cappella, jazz/neo-soul and gospel groups and choirs. She was classically trained. In 2012, she signed with RCA Records and released an extended play, She, to critical acclaim."
+  },
+  {
+   "id": "b2d2b929-5159-4d18-a07d-925b8e36e714",
+   "slug": "blood-red-shoes-b90ba4d0",
+   "title": "Blood Red Shoes",
+   "act": "Blood Red Shoes",
+   "name": "Blood Red Shoes",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Blood_Red_Shoes",
+   "extract": "Blood Red Shoes are an English alternative rock duo from Brighton consisting of Laura-Mary Carter and Steven Ansell. They have released six full-length albums, Box of Secrets (2008), Fire Like This (2010), In Time to Voices (2012), Blood Red Shoes (2014), Get Tragic (2019), Ghosts on Tape (2022) and Stay Lonely (2026) as well as several EPs and a number of singles. In 2014, they founded their own label, Jazz Life."
+  }
+ ]
+}

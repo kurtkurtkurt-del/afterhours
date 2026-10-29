@@ -1,0 +1,26 @@
+{
+ "city": "athina",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "82ebc67d-9944-4d58-9446-41d03f1afb01",
+   "slug": "alexandra-capitanescu-2b5a04d3",
+   "title": "ALEXANDRA CĂPITĂNESCU",
+   "act": "ALEXANDRA CĂPITĂNESCU",
+   "name": "Alexandra Căpitănescu",
+   "description": "Romanian singer-songwriter (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Alexandra_C%C4%83pit%C4%83nescu",
+   "extract": "Alexandra Căpitănescu is a Romanian singer and songwriter who rose to prominence by winning season 11 of Vocea României. She represented Romania in the Eurovision Song Contest 2026 with the song \"Choke Me\" and finished in third place, her country's best result."
+  },
+  {
+   "id": "2c2d1e74-c6ec-437d-8c5e-761019957223",
+   "slug": "dr-feelgood-bbaf8012",
+   "title": "DR FEELGOOD",
+   "act": "DR FEELGOOD",
+   "name": "Dr. Feelgood",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Dr._Feelgood_(band)",
+   "extract": "Dr. Feelgood are an English pub rock band formed in 1971. Hailing from Canvey Island, Essex, they are best known for early singles such as \"She Does It Right\", \"Roxette\", \"Back in the Night\" and \"Milk and Alcohol\". Their original and distinctively British R&B sound was centred on Wilko Johnson's choppy guitar style. Along with Johnson, the initial band line-up included singer Lee Brilleaux and the rhythm section of John B. Sparks, known as \"Sparko\", on bass guitar and John Martin, known as \"The Big Figure\", on drums. Although their most commercially productive years were the mid to late-1970s, and in spite of Brilleaux's death in 1994, a version of the band continues to tour and record."
+  }
+ ]
+}

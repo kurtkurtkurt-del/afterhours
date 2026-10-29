@@ -1,0 +1,26 @@
+{
+ "city": "torino",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "a624c260-49f9-476d-83e3-f3820438ec56",
+   "slug": "gabry-ponte-circotron-the-dance-show-49eea527",
+   "title": "Gabry Ponte - CIRCOTRON - The dance show",
+   "act": "Gabry Ponte",
+   "name": "Gabry Ponte",
+   "description": "Italian musician, DJ and producer (born 1973)",
+   "source_url": "https://en.wikipedia.org/wiki/Gabry_Ponte",
+   "extract": "Gabriele \"Gabry\" Ponte is an Italian musician, DJ and producer, best known as a member of Eiffel 65."
+  },
+  {
+   "id": "85d0c367-223a-4286-bd94-075721cebe25",
+   "slug": "gianna-nannini-giannagold-a3b38127",
+   "title": "GIANNA NANNINI | GIANNAGOLD",
+   "act": "GIANNA NANNINI",
+   "name": "Gianna Nannini",
+   "description": "Italian singer and songwriter (born 1954)",
+   "source_url": "https://en.wikipedia.org/wiki/Gianna_Nannini",
+   "extract": "Gianna Nannini is an Italian singer and songwriter. Her most notable songs include \"America\" (1979), \"Fotoromanza\" (1984), \"I maschi\" (1987), \"Meravigliosa creatura\" (1995), \"Sei nell'anima\" (2006) and \"Bello e impossibile\" (1986). The latter became a hit across Europe, especially in Austria, Germany, Italy and Switzerland."
+  }
+ ]
+}

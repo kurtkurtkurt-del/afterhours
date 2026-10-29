@@ -1,0 +1,76 @@
+{
+ "city": "wroclaw",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "0891e588-a053-4403-82dc-89ad1d75dc27",
+   "slug": "dakhabrakha-0b94a520",
+   "title": "Dakhabrakha",
+   "act": "Dakhabrakha",
+   "name": "DakhaBrakha",
+   "description": "Ukrainian folk music group",
+   "source_url": "https://en.wikipedia.org/wiki/DakhaBrakha",
+   "extract": "DakhaBrakha are a world music quartet formed in Kyiv, Ukraine. The four musicians combine a variety of musical styles from across the globe, creating energetic and artistic performances that are uniquely their own. DakhaBrakha's eclectic sound seamlessly mesh ancient Ukrainian folk tunes with modern genres, such as pop, punk, electronica, hip hop, and soul, a musical fusion that they define as \"ethno-chaos\"."
+  },
+  {
+   "id": "d49e87e0-267c-43c2-b9bd-6c21505ca9f3",
+   "slug": "macy-gray-the-trouble-with-the-truth-tour-055185e5",
+   "title": "Macy Gray - The Trouble With The Truth Tour",
+   "act": "Macy Gray",
+   "name": "Macy Gray",
+   "description": "American singer (born 1967)",
+   "source_url": "https://en.wikipedia.org/wiki/Macy_Gray",
+   "extract": "Natalie Renée McIntyre, known professionally as Macy Gray, is an American R&B and soul singer. She is known for her distinctive raspy voice and a singing style heavily influenced by Billie Holiday. Her 1999 single, \"I Try\", was her commercial breakthrough; the song peaked at number five on the Billboard Hot 100, won Best Female Pop Vocal Performance at the 43rd Annual Grammy Awards, and preceded her debut studio album, On How Life Is (1999). Since then, she has released ten studio albums."
+  },
+  {
+   "id": "258b3c70-7172-481a-8e69-6e3b82c22de4",
+   "slug": "vavamuffin-bebc7bd7",
+   "title": "Vavamuffin",
+   "act": "Vavamuffin",
+   "name": "Vavamuffin",
+   "description": "Polish band",
+   "source_url": "https://en.wikipedia.org/wiki/Vavamuffin",
+   "extract": "Vavamuffin is a Polish raggamuffin, roots reggae and dancehall band from Warsaw. They were formed in 2003 and have released five albums under the label Karrot Kommando. The band members are Pablopavo, Reggaenerator, Gorg, Emili Jones, Jahcob Junior, Raffi Kazan, Mothashipp, Dubbist and Barton. They have participated in Przystanek Woodstock."
+  },
+  {
+   "id": "7866f85f-bd76-4ed2-b39f-36ed59016c5e",
+   "slug": "napalm-death-1f65d32d",
+   "title": "NAPALM DEATH",
+   "act": "NAPALM DEATH",
+   "name": "Napalm Death",
+   "description": "English grindcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Napalm_Death",
+   "extract": "Napalm Death are an English grindcore band formed in Meriden, West Midlands, in 1981. The band currently consists of Barney Greenway on vocals, Shane Embury on bass guitar, John Cooke on guitar and Danny Herrera on drums. None of the founding band members remain in the band. From 1989 to 2004, Napalm Death were a five-piece band after they added Jesse Pintado and Mitch Harris as replacements for guitarist Bill Steer. Following Pintado's departure, the band reverted to a four-piece. Mitch Harris left the band in 2014 to focus on his personal life. Since Mitch's indefinite hiatus, guitarist John Cooke can be seen on guitar during live shows."
+  },
+  {
+   "id": "9ee40db1-7e69-4a4c-9809-055c11c15863",
+   "slug": "the-rasmus-weirdo-tour-9a46633b",
+   "title": "The Rasmus - Weirdo Tour",
+   "act": "The Rasmus",
+   "name": "The Rasmus",
+   "description": "Finnish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Rasmus",
+   "extract": "The Rasmus is a Finnish rock band that formed in 1994 in Helsinki while the band members were in upper comprehensive school. The original band members were Lauri Ylönen, Eero Heinonen (bass), Pauli Rantasalmi (guitar) and Jarno Lahti (drums). Jarno Lahti left the year after and was replaced by Janne Heiskanen in 1995. Heiskanen quit the band in 1999 and was soon replaced by Aki Hakala. Pauli Rantasalmi left the band and was replaced by guitarist Emilia \"Emppu\" Suhonen in 2022. Best known for their 2003 hit single \"In the Shadows\", the band has sold over 6 million albums worldwide and 350,000 albums in Finland alone, and has won numerous awards, both domestic and international. The band represented Finland in the Eurovision Song Contest 2022 with the song \"Jezebel\"."
+  },
+  {
+   "id": "6323baf4-1f49-4029-b565-95009063884e",
+   "slug": "too-many-zooz-audio-lipstick-tour-cfce1750",
+   "title": "Too Many Zooz: Audio Lipstick Tour",
+   "act": "Too Many Zooz",
+   "name": "Too Many Zooz",
+   "description": "American music group",
+   "source_url": "https://en.wikipedia.org/wiki/Too_Many_Zooz",
+   "extract": "Too Many Zooz is an American music group based in New York City, consisting of Leo Pellegrino, Matt \"Doe\" Muirhead (trumpet), and David \"King of Sludge\" Parks (drums)."
+  },
+  {
+   "id": "328af092-647d-4a9c-8271-d644d3430938",
+   "slug": "rodrigo-y-gabriela-52edad3c",
+   "title": "Rodrigo y Gabriela",
+   "act": "Rodrigo y Gabriela",
+   "name": "Rodrigo y Gabriela",
+   "description": "Mexican guitar duo",
+   "source_url": "https://en.wikipedia.org/wiki/Rodrigo_y_Gabriela",
+   "extract": "Rodrigo y Gabriela are a Mexican acoustic guitar duo featuring musicians Rodrigo Sánchez and Gabriela Quintero. Residing in Mexico City, they began their career in Dublin, Ireland, where they played for the first eight years of their career as a duo. Their music consists largely of instrumental duets on the flamenco guitar, with a musical style influenced by a number of genres including nuevo flamenco, rock, and heavy metal."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "goteborg",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "1c20c650-bca8-4753-b085-6f955fdf1450",
+   "slug": "thundermother-mothers-of-thunder-tour-2027-3561248e",
+   "title": "Thundermother - Mothers Of Thunder Tour 2027",
+   "act": "Thundermother",
+   "name": "Thundermother",
+   "description": "Swedish hard rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Thundermother",
+   "extract": "Thundermother is an all-female Swedish hard rock band founded by Filippa Nässil and Moa Munoz in Växjö 2009. The band has toured with Scorpions across Europe and North America, played with Kiss, Danish rock band D-A-D and Swedish rock band Backyard Babies. Thundermother has produced seven albums, the first album Rock'N'Roll Disaster came out in 2014 and the latest album Dirty and Divine was released February 2025."
+  },
+  {
+   "id": "01e79084-a6c3-4af8-913d-7398ac3573dc",
+   "slug": "nickelback-everything-under-the-sun-tour-94a29e21",
+   "title": "Nickelback: Everything Under The Sun Tour",
+   "act": "Nickelback",
+   "name": "Nickelback",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Nickelback",
+   "extract": "Nickelback is a Canadian rock band formed in 1995 in Hanna, Alberta, comprising lead guitarist and lead vocalist Chad Kroeger, rhythm guitarist, keyboardist and backing vocalist Ryan Peake, and bassist Mike Kroeger. It went through several drummer changes between 1995 and 2005 before Daniel Adair joined."
+  },
+  {
+   "id": "2dc6ccbd-4284-42ae-8ebd-b5d6b85fcf76",
+   "slug": "ronan-keating-just-getting-started-tour-0e0437d4",
+   "title": "RONAN KEATING | JUST GETTING STARTED TOUR",
+   "act": "RONAN KEATING",
+   "name": "Ronan Keating",
+   "description": "Irish singer (born 1977)",
+   "source_url": "https://en.wikipedia.org/wiki/Ronan_Keating",
+   "extract": "Ronan Patrick John Keating is an Irish singer, songwriter and media personality. He debuted in 1993 alongside Keith Duffy, Michael Graham, Shane Lynch, and Stephen Gately, as the co-lead singer of pop group Boyzone. His solo career started in 1999 and he has recorded eleven albums. He gained worldwide attention when his single \"When You Say Nothing At All\" was featured in the film Notting Hill and reached number one in several countries."
+  }
+ ]
+}

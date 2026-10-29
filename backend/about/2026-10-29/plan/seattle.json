@@ -1,0 +1,186 @@
+{
+ "city": "seattle",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "795c8694-bf7b-442b-8d6e-5c12b60ff0ba",
+   "slug": "julia-jacklin-north-america-tour-2026-9cb57320",
+   "title": "Julia Jacklin: North America Tour 2026",
+   "act": "Julia Jacklin",
+   "name": "Julia Jacklin",
+   "description": "Australian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Jacklin",
+   "extract": "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales. Jacklin's musical style has been described as indie pop, indie folk, and alternative country. She has released four studio albums, Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) and The Gem (2026). Jacklin has also performed with the band Phantastic Ferniture, with whom she released the debut single \"Fuckin 'n' Rollin\" and a self-titled album in 2018, followed by subsequent singles."
+  },
+  {
+   "id": "34600ad5-ce40-4e3f-aeaa-82f9a9808d67",
+   "slug": "mon-laferte-femme-fatale-tour-ade8224d",
+   "title": "Mon Laferte - Femme Fatale Tour",
+   "act": "Mon Laferte",
+   "name": "Mon Laferte",
+   "description": "Chilean-Mexican singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Mon_Laferte",
+   "extract": "Norma Monserrat Bustamante Laferte, known professionally as Mon Laferte, is a Chilean and Mexican singer-songwriter. Recognized for her versatility, her musical style spans a wide array of genres, including pop, alternative, bolero, cumbia, and salsa. She rose to international prominence in the 2010s, particularly for her melodramatic vocals and theatrical stage presence. In 2025, Billboard named her one of the greatest female Latin pop artists of all time."
+  },
+  {
+   "id": "eb60df31-3fef-45ae-85a2-ed0d30eae811",
+   "slug": "beabadoobee-the-powerlines-tour-e1a65e0a",
+   "title": "beabadoobee: The Powerlines Tour",
+   "act": "beabadoobee",
+   "name": "Beabadoobee",
+   "description": "Filipino and British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Beabadoobee",
+   "extract": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021, she released five extended plays (EPs) under the independent label Dirty Hit: Lice (2018), Patched Up (2018), Loveworm (2019), Space Cadet (2019) and Our Extended Play (2021). Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim. Her second studio album, Beatopia, was released on July 2022, and spawned the hit \"The Perfect Pair\". Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart. In September 2026, her fourth studio album, Pylon, topped the British and Australian charts."
+  },
+  {
+   "id": "24f81be1-c2b9-4ac3-bd18-a0e4ba9fe2ec",
+   "slug": "kurt-travis-06bcdf4c",
+   "title": "Kurt Travis",
+   "act": "Kurt Travis",
+   "name": "Kurt Travis",
+   "description": "American musician (born 1984)",
+   "source_url": "https://en.wikipedia.org/wiki/Kurt_Travis",
+   "extract": "Kurt Travis is an American singer, musician, and songwriter from Sacramento, California. He is currently part of the post-hardcore bands Royal Coda, A Lot Like Birds, and Push Over and the math rock duo Gold Necklace, and was formerly a vocalist in the post-hardcore band Dance Gavin Dance."
+  },
+  {
+   "id": "b36db344-16d9-4eab-b1d0-e6f5875a38ce",
+   "slug": "rebecca-black-6b6dc7c1",
+   "title": "Rebecca Black",
+   "act": "Rebecca Black",
+   "name": "Rebecca Black",
+   "description": "American YouTuber, singer, songwriter, and DJ (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Rebecca_Black",
+   "extract": "Rebecca Renee Black is an American singer, songwriter and YouTuber. She gained extensive media coverage when the music video for her 2011 debut single \"Friday\" went viral on YouTube and various social media sites. The song peaked at number 58 on the Billboard Hot 100. It received an overwhelmingly negative response from audiences and music critics, many of whom considered it among the worst songs of all time. In 2013, Black released a follow-up single \"Saturday\" to similar commercial success and marginally improved reception."
+  },
+  {
+   "id": "d8c81300-c1fd-4d96-8dbd-a938e78fb56b",
+   "slug": "the-brothers-comatose-4743184a",
+   "title": "The Brothers Comatose",
+   "act": "The Brothers Comatose",
+   "name": "The Brothers Comatose",
+   "description": "American bluegrass band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Brothers_Comatose",
+   "extract": "The Brothers Comatose is a five-piece bluegrass band based out of San Francisco, California. The band consists of brothers Ben and Alex Morrison, who play guitar and banjo, respectively, along with Steve Height on the bass, Philip Brezina with the violin, and Addie Levy on the mandolin."
+  },
+  {
+   "id": "53a0c93c-9991-4055-85a9-7a484e474e3f",
+   "slug": "joy-oladokun-the-heavy-things-tour-f2048bb8",
+   "title": "Joy Oladokun: The Heavy Things Tour",
+   "act": "Joy Oladokun",
+   "name": "Joy Oladokun",
+   "description": "American singer-songwriter (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Joy_Oladokun",
+   "extract": "Olubukola Joy Oladokun is an American singer-songwriter. Oladokun's music spans the genres of folk, R&B, rock, and pop and is influenced by her identity as a queer person of color. She has released six studio albums: Carry (2016), In Defense of My Own Happiness  (2020), In Defense of My Own Happiness (2021), Proof of Life (2023), Observations from a Crowded Room (2024), and Hope is a Heavy Thing (2026)."
+  },
+  {
+   "id": "ee055c4e-08a5-4264-9ab0-581972b0e8a4",
+   "slug": "ax-and-the-hatchetmen-ad2764aa",
+   "title": "Ax and the Hatchetmen",
+   "act": "Ax and the Hatchetmen",
+   "name": "Ax and the Hatchetmen",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/Ax_and_the_Hatchetmen",
+   "extract": "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018. Members of the group include Axel Ellis, Salvatore Defilippis (vocals/guitar), Hunter Olshefke (vocals/bass), Phil Pistone (trumpet), Quinn Dolan (saxophone), and Chaandmon Croft (drums). They are signed with Arista Records and their first album, So Much to Tell You, was released October 24, 2025 with a tour of the same name."
+  },
+  {
+   "id": "9e839273-602b-4bb8-9aa7-a8ca7bbe3849",
+   "slug": "ax-and-the-hatchetmen-the-late-checkout-tour-202-b808c677",
+   "title": "Ax and the Hatchetmen: The Late Checkout Tour 2026 w/ The Rare Occasions",
+   "act": "Ax and the Hatchetmen",
+   "name": "Ax and the Hatchetmen",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/Ax_and_the_Hatchetmen",
+   "extract": "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018. Members of the group include Axel Ellis, Salvatore Defilippis (vocals/guitar), Hunter Olshefke (vocals/bass), Phil Pistone (trumpet), Quinn Dolan (saxophone), and Chaandmon Croft (drums). They are signed with Arista Records and their first album, So Much to Tell You, was released October 24, 2025 with a tour of the same name."
+  },
+  {
+   "id": "7d0b4151-cca9-4a0a-bebe-07889e6903d6",
+   "slug": "gorillaz-the-mountain-tour-02d5c46f",
+   "title": "Gorillaz - The Mountain Tour",
+   "act": "Gorillaz",
+   "name": "Gorillaz",
+   "description": "British virtual band",
+   "source_url": "https://en.wikipedia.org/wiki/Gorillaz",
+   "extract": "Gorillaz are an English virtual alternative rock band formed in 1998 by the musician Damon Albarn and the artist Jamie Hewlett. The band primarily consists of four fictional members: 2-D, Murdoc Niccals, Noodle and Russel Hobbs (drums). Their universe is presented in media such as music videos, interviews, comic strips and short cartoons. Gorillaz's music has featured collaborations with a wide range of musicians and featured artists, with Albarn as the only permanent musical contributor."
+  },
+  {
+   "id": "cc61fe3a-6f2f-46ec-a53c-f7bc61f27a69",
+   "slug": "sienna-spiro-90f4a3b7",
+   "title": "Sienna Spiro",
+   "act": "Sienna Spiro",
+   "name": "Sienna Spiro",
+   "description": "English singer-songwriter (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Sienna_Spiro",
+   "extract": "Sienna Ann Spiro is an English singer-songwriter and record producer. Known for her distinct, powerful voice, she began sharing viral singing videos on TikTok in 2021. She started releasing music in 2024, including \"Maybe\", which became her debut on the UK Singles Chart. She released Sink Now, Swim Later, her debut extended play, in February 2025. Her breakthrough success came with the release of \"Die on This Hill\", which charted in numerous countries. She released her debut studio album, Visitor, on 3 July 2026, and achieved her first UK number one single with its track \"Great Expectation\"."
+  },
+  {
+   "id": "5bc6b829-7975-4c4c-94f4-1a42ee16bcd5",
+   "slug": "icon-for-hire-0838c1b3",
+   "title": "Icon for Hire",
+   "act": "Icon for Hire",
+   "name": "Icon for Hire",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Icon_for_Hire",
+   "extract": "Icon for Hire is an American rock band from Decatur, Illinois. Formed in 2007, the band's current lineup consists of singer Ariel Bloomer and lead guitarist Shawn Jump. They released two EPs independently before signing to Tooth & Nail Records, through which they released their first two albums: Scripted in 2011 and Icon for Hire on October 15, 2013. Their third album, You Can't Kill Us, was independently released on November 25, 2016. Their fourth album, Amorphous, was released on February 19, 2021, also independently. Their fifth independent studio album, The Reckoning, was released on September 30, 2022."
+  },
+  {
+   "id": "4be64804-32f1-4cf7-88d5-ce5c5ec1e3a2",
+   "slug": "pinhead-gunpowder-c6889080",
+   "title": "Pinhead Gunpowder",
+   "act": "Pinhead Gunpowder",
+   "name": "Pinhead Gunpowder",
+   "description": "American punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Pinhead_Gunpowder",
+   "extract": "Pinhead Gunpowder is an American punk rock band that formed in the East Bay area of California, in 1991. The band currently consists of Aaron Cometbus, Bill Schneider (bass), Billie Joe Armstrong and Jason White. The band's name comes from a brand of \"high-octane\" green tea served at the Arcata co-op that was discovered by Aaron Cometbus during one of his many dumpster diving adventures."
+  },
+  {
+   "id": "6a7a2a1e-5c19-461c-95b6-8e09dd77e7df",
+   "slug": "jessie-reyez-a-little-vengeance-tour-d1843e00",
+   "title": "Jessie Reyez: A Little Vengeance Tour",
+   "act": "Jessie Reyez",
+   "name": "Jessie Reyez",
+   "description": "Canadian singer-songwriter (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Jessie_Reyez",
+   "extract": "Jessica Reyez is a Canadian singer-songwriter. Her 2016 single, \"Figures\", peaked at number 58 on the Canadian Hot 100 and received triple platinum certification by Music Canada (MC) and platinum by the Recording Industry Association of America (RIAA). Her debut extended play (EP), Kiddo (2017), led her to win Breakthrough Artist from four nominations at the 2018 Juno Awards. Her second EP, Being Human in Public (2018), was released the following year, won R&B/Soul Recording of the Year at the 2019 Juno Awards, and was nominated for Best Urban Contemporary Album at the 2020 Grammy Awards."
+  },
+  {
+   "id": "0b96f72a-02d1-4d8a-b24c-addca39a9690",
+   "slug": "plini-an-unnameable-desire-north-american-tour-w-2253a469",
+   "title": "Plini - An Unnameable Desire North American Tour w/ Night Verses & Portraits",
+   "act": "Plini",
+   "name": "Plini",
+   "description": "Australian guitarist (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Plini",
+   "extract": "Plini Roessler-Holgate, known mononymously as Plini, is an Australian guitarist and songwriter. He began his career by releasing music under the name Halcyon, before switching to the use of his first name. Steve Vai described him as \"the future of exceptional guitar playing\", and the website MusicRadar named Plini the best prog guitarist of 2017."
+  },
+  {
+   "id": "0b638817-b6c9-45b8-9fff-16de6e1039b2",
+   "slug": "seattle-symphony-6e2e2794",
+   "title": "Seattle Symphony",
+   "act": "Seattle Symphony",
+   "name": "Seattle Symphony",
+   "description": "American orchestra",
+   "source_url": "https://en.wikipedia.org/wiki/Seattle_Symphony",
+   "extract": "The Seattle Symphony is an American orchestra based in Seattle, Washington. Since 1998, the orchestra is resident at Benaroya Hall. The orchestra also serves as the accompanying orchestra for the Seattle Opera."
+  },
+  {
+   "id": "bb91a656-6c9c-4027-bd7c-a8433977b280",
+   "slug": "the-tallest-man-on-earth-a295755e",
+   "title": "The Tallest Man on Earth",
+   "act": "The Tallest Man on Earth",
+   "name": "The Tallest Man on Earth",
+   "description": "Swedish singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/The_Tallest_Man_on_Earth",
+   "extract": "Kristian Matsson is a Swedish singer-songwriter who performs under the stage name The Tallest Man on Earth. Matsson grew up in Leksand, and began his solo career in 2006, having previously been the lead singer of the indie band Montezumas. His music has often drawn comparisons to the music of Bob Dylan."
+  },
+  {
+   "id": "e3cb3580-1a19-4ae7-bef7-028b6a5e6d50",
+   "slug": "teddy-swims-the-ugly-tour-4316a751",
+   "title": "Teddy Swims: The UGLY Tour",
+   "act": "Teddy Swims",
+   "name": "Teddy Swims",
+   "description": "American singer and songwriter (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Teddy_Swims",
+   "extract": "Jaten Collin Dimsdale, known professionally as Teddy Swims, is an American singer and songwriter. Known for creating genre-blending music that includes elements of R&B, soul, hip-hop, and contemporary pop, Swims originally began to attract fans by posting song covers on YouTube during 2019 and 2020. Swims' third extended play, Tough Love (2022), became his first entry on the Billboard 200."
+  }
+ ]
+}

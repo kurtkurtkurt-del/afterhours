@@ -1,0 +1,76 @@
+{
+ "city": "chicago",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "8af70971-7475-4ceb-9fb8-b34fbd682fa2",
+   "slug": "vic-mensa-437d4ee2",
+   "title": "Vic Mensa",
+   "act": "Vic Mensa",
+   "name": "Vic Mensa",
+   "description": "American rapper (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Vic_Mensa",
+   "extract": "Victor Kwesi Mensah, known professionally as Vic Mensa, is an American rapper and activist. Born and raised in Chicago, he was a member of the regional hip-hop groups Kids These Days and Savemoney prior to releasing his debut solo mixtape, Innanetape (2013). As a solo artist, Mensa has been signed to Virgin EMI Records, Def Jam Recordings, Capitol Records, and Roc Nation."
+  },
+  {
+   "id": "8548d5f1-5e9e-4fe2-98cf-31826d4ff81a",
+   "slug": "phillip-phillips-let-s-go-far-tour-with-katie-ly-1687ecc6",
+   "title": "Phillip Phillips - Let’s Go Far Tour with Katie Lynne Sharbaugh",
+   "act": "Phillip Phillips",
+   "name": "Phillip Phillips",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Phillip_Phillips",
+   "extract": "Phillip LaDon Phillips Jr. is an American singer-songwriter who rose to fame after winning the eleventh season of American Idol in 2012. His coronation song, \"Home\", became the best-selling coronation song in American Idol history."
+  },
+  {
+   "id": "f4c9c788-16aa-4443-8eb0-fe452daebe91",
+   "slug": "the-airborne-toxic-event-52222697",
+   "title": "The Airborne Toxic Event",
+   "act": "The Airborne Toxic Event",
+   "name": "The Airborne Toxic Event",
+   "description": "American indie band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Airborne_Toxic_Event",
+   "extract": "The Airborne Toxic Event is an American rock band from Los Angeles, California, formed in 2006. It consists of Mikel Jollett, Steven Chen, Adrian Rodriguez, Daren Taylor (drums), and Miriam \"Mimi\" Peschet. Anna Bulbrook and Noah Harmon were formerly members of the band."
+  },
+  {
+   "id": "71a74f37-9dd3-4aae-b7de-e786f61687f4",
+   "slug": "the-tallest-man-on-earth-a129914f",
+   "title": "The Tallest Man on Earth",
+   "act": "The Tallest Man on Earth",
+   "name": "The Tallest Man on Earth",
+   "description": "Swedish singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/The_Tallest_Man_on_Earth",
+   "extract": "Kristian Matsson is a Swedish singer-songwriter who performs under the stage name The Tallest Man on Earth. Matsson grew up in Leksand, and began his solo career in 2006, having previously been the lead singer of the indie band Montezumas. His music has often drawn comparisons to the music of Bob Dylan."
+  },
+  {
+   "id": "e78293cb-d651-4a5f-84a8-421f139e8e70",
+   "slug": "periphery-a-pale-white-dot-us-tour-41f0b105",
+   "title": "Periphery - A Pale White Dot US Tour",
+   "act": "Periphery",
+   "name": "Periphery",
+   "description": "American progressive metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Periphery_(band)",
+   "extract": "Periphery is an American progressive metal band that was formed in Washington, D.C., in 2005. Their musical style has been described as progressive metal, djent, and progressive metalcore. They are considered one of the pioneers of the djent movement within progressive metal. They have also received a Grammy nomination. The band consists of vocalist Spencer Sotelo, guitarists Misha Mansoor, Mark Holcomb, Jake Bowen, and drummer Matt Halpern."
+  },
+  {
+   "id": "df2c7bd5-9b96-4711-959c-4b1b19b885f5",
+   "slug": "8turn-1bdf63a2",
+   "title": "8TURN",
+   "act": "8TURN",
+   "name": "8Turn",
+   "description": "South Korean boy band",
+   "source_url": "https://en.wikipedia.org/wiki/8Turn",
+   "extract": "8Turn is a South Korean boy band formed by MNH Entertainment. The group consists of eight members: Myungho, Jaeyun, Minho, Yoonsung, Haemin, Kyungmin, Yungyu, and Seungheon. They debuted on January 30, 2023, with the extended play (EP) 8Turnrise."
+  },
+  {
+   "id": "9dccaa1f-4031-4a3e-bfbb-4636f0a3ff9d",
+   "slug": "the-living-tombstone-the-multiplayer-tour-572faf5d",
+   "title": "The Living Tombstone - The Multiplayer Tour",
+   "act": "The Living Tombstone",
+   "name": "The Living Tombstone",
+   "description": "American rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_Living_Tombstone",
+   "extract": "The Living Tombstone (TLT) is an Israeli-American electronic rock group and YouTube channel, founded as a solo project by Israeli-American producer Yoav Landau in 2011, and becoming a musical duo with American singer Sam Haft in 2016. The group is notable for their songs based on video games and pop culture media, such as the My Little Pony, Five Nights at Freddy's, and Overwatch series as well as original music. Signed to Warner Music, they have released two studio albums, Zero One (2020) and Rust (2025)."
+  }
+ ]
+}

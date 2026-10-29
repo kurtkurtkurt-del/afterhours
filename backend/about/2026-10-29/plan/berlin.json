@@ -1,0 +1,206 @@
+{
+ "city": "berlin",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "c7006526-aa90-4290-868c-d35885c43cb2",
+   "slug": "kelela-new-avatar-live-80ca24e7",
+   "title": "Kelela - new avatar live",
+   "act": "Kelela",
+   "name": "Kelela",
+   "description": "American singer (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Kelela",
+   "extract": "Kelela Mizanekristos is an American singer. She made her debut in the music industry with the release of her 2013 mixtape Cut 4 Me. In 2015, she released Hallucinogen, an EP which deals with the beginning, middle, and end of a relationship in reverse chronological order. Her debut studio album, Take Me Apart, was released in 2017 to critical acclaim. After a 5-year hiatus, Kelela released her second album, Raven, in February 2023."
+  },
+  {
+   "id": "02701343-2083-4f17-b8a5-31c6caa7c25c",
+   "slug": "ryan-beatty-arms-over-armor-tour-1e01f519",
+   "title": "Ryan Beatty - Arms Over Armor Tour",
+   "act": "Ryan Beatty",
+   "name": "Ryan Beatty",
+   "description": "American singer (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Ryan_Beatty",
+   "extract": "Ryan Kevin Beatty is an American singer-songwriter. He was born in Clovis, California, and now resides in Los Angeles."
+  },
+  {
+   "id": "ca83e0fe-2a6c-4f99-a2a5-172037b4c703",
+   "slug": "puscifer-the-normal-isn-t-tour-c19fd03b",
+   "title": "Puscifer - The Normal Isn't Tour",
+   "act": "Puscifer",
+   "name": "Puscifer",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Puscifer",
+   "extract": "Puscifer is an American rock group formed in Los Angeles by Maynard James Keenan, lead singer of Tool and A Perfect Circle. Keenan was the only constant member of the band and he considered the project to be his \"creative subconscious\". Later, frequent collaborators Mat Mitchell and Carina Round became permanent members."
+  },
+  {
+   "id": "6d508991-af21-41cf-bb7d-98be2239ea70",
+   "slug": "puscifer-the-normal-isn-t-tour-gallery-seat-67f621f8",
+   "title": "Puscifer - The Normal Isn't Tour | Gallery Seat",
+   "act": "Puscifer",
+   "name": "Puscifer",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Puscifer",
+   "extract": "Puscifer is an American rock group formed in Los Angeles by Maynard James Keenan, lead singer of Tool and A Perfect Circle. Keenan was the only constant member of the band and he considered the project to be his \"creative subconscious\". Later, frequent collaborators Mat Mitchell and Carina Round became permanent members."
+  },
+  {
+   "id": "2daa74f1-29da-4a3b-9405-b042bc799063",
+   "slug": "melanie-c-melanie-c-world-tour-bc1d23a4",
+   "title": "Melanie C - Melanie C World Tour",
+   "act": "Melanie C",
+   "name": "Melanie C",
+   "description": "British pop singer (born 1974)",
+   "source_url": "https://en.wikipedia.org/wiki/Melanie_C",
+   "extract": "Melanie Jayne Chisholm, commonly known as Melanie C or Mel C, is an English singer and songwriter. She rose to fame in the mid-1990s as a member of the pop group the Spice Girls, in which she was nicknamed Sporty Spice. With over 100 million records sold worldwide, the Spice Girls are the best-selling female group of all time. The group went on an indefinite hiatus in 2000, before reuniting for a greatest hits album (2007) and two concert tours: the Return of the Spice Girls (2007–2008) and Spice World (2019). She is known for her unique and distinctive tone and her vocal ability."
+  },
+  {
+   "id": "ec35f9e0-659f-41d5-99a4-66d38c3a6600",
+   "slug": "arlo-parks-desire-tour-gallery-seat-aba7669e",
+   "title": "ARLO PARKS - DESIRE TOUR | Gallery Seat",
+   "act": "ARLO PARKS",
+   "name": "Arlo Parks",
+   "description": "British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Arlo_Parks",
+   "extract": "Anaïs Oluwatoyin Estelle Marinho, known professionally as Arlo Parks, is an English singer and songwriter. Her debut studio album, Collapsed in Sunbeams, was released in 2021 to critical acclaim and peaked at number three on the UK Albums Chart. It won the 2021 Mercury Prize for Best Album and earned her nominations for Album of the Year, Best New Artist and Best British Female Solo Artist at the 2021 Brit Awards."
+  },
+  {
+   "id": "2322917b-1f3f-47e8-8325-bec8359a71bb",
+   "slug": "arlo-parks-desire-tour-dd5f71f6",
+   "title": "ARLO PARKS - DESIRE TOUR",
+   "act": "ARLO PARKS",
+   "name": "Arlo Parks",
+   "description": "British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Arlo_Parks",
+   "extract": "Anaïs Oluwatoyin Estelle Marinho, known professionally as Arlo Parks, is an English singer and songwriter. Her debut studio album, Collapsed in Sunbeams, was released in 2021 to critical acclaim and peaked at number three on the UK Albums Chart. It won the 2021 Mercury Prize for Best Album and earned her nominations for Album of the Year, Best New Artist and Best British Female Solo Artist at the 2021 Brit Awards."
+  },
+  {
+   "id": "3557bb2c-1eb9-40bc-b158-213ebfcd7580",
+   "slug": "undeath-a856ba61",
+   "title": "Undeath",
+   "act": "Undeath",
+   "name": "Undeath",
+   "description": "American metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Undeath_(band)",
+   "extract": "Undeath is an American death metal band from Rochester, New York founded in 2018."
+  },
+  {
+   "id": "f70f5afe-bdb1-46c1-b7a6-bc71815bbbdb",
+   "slug": "don-toliver-nitrous-octane-world-tour-leg-2-242ba9f2",
+   "title": "DON TOLIVER: NITROUS - OCTANE WORLD TOUR LEG 2",
+   "act": "DON TOLIVER",
+   "name": "Don Toliver",
+   "description": "American rapper and singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Don_Toliver",
+   "extract": "Caleb Zackery \"Don\" Toliver is an American rapper, singer and songwriter. His debut mixtape, Donny Womack (2018), was released one day prior to fellow Houston rapper Travis Scott's album Astroworld, on which Toliver made a guest appearance. In the following week, he signed with Scott's record label, Cactus Jack Records, in a joint venture with Atlantic Records."
+  },
+  {
+   "id": "56fd18de-a583-4938-87d0-10fa12fd2e18",
+   "slug": "lane-8-europe-tour-46984733",
+   "title": "Lane 8 - Europe Tour",
+   "act": "Lane 8",
+   "name": "Lane 8",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Lane_8",
+   "extract": "Daniel Goldstein, better known by his stage name Lane 8, is an American musician, DJ, and electronic music producer. Currently residing in Denver, Colorado, he is signed to English deep house label Anjunadeep. Pete Tong named Lane 8 a \"Future Star\" and Dancing Astronaut included him in their '25 Artists to Watch in 2015'. His debut studio album Rise, was released on July 17, 2015. More recently, he has been releasing music through his own label This Never Happened."
+  },
+  {
+   "id": "e1079fd8-99d6-4d1a-ace9-d9361ff5d9dc",
+   "slug": "westside-cowboy-da1c1aa0",
+   "title": "Westside Cowboy",
+   "act": "Westside Cowboy",
+   "name": "Westside Cowboy",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Westside_Cowboy",
+   "extract": "Westside Cowboy are an English rock band formed in Manchester in 2023. The band members are Jimmy Bradbury, Reuben Haycocks, Aoife Anson O'Connell and Paddy Murphy."
+  },
+  {
+   "id": "a36d2983-7291-47e4-8f16-a96662b1f324",
+   "slug": "uche-yara-bodyscanner-tour-2026-673bc1a8",
+   "title": "UCHE YARA - BODYSCANNER Tour 2026",
+   "act": "UCHE YARA",
+   "name": "Uche Yara",
+   "description": "Austrian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Uche_Yara",
+   "extract": "Uchenna Yara Katzmayr, known professionally as Uche Yara, is an Austrian singer, songwriter, multi-instrumentalist, and record producer living in Berlin."
+  },
+  {
+   "id": "7fee6f85-b788-4150-b35f-d688ea84e798",
+   "slug": "montell-fish-the-nest-tour-540af623",
+   "title": "Montell Fish - The Nest Tour",
+   "act": "Montell Fish",
+   "name": "Montell Fish",
+   "description": "American singer-songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Montell_Fish",
+   "extract": "Montell James Frazier, also known as Montell Fish, is an American singer-songwriter. Formerly making music under the CCM genre, he switched to alternative R&B and neo soul. He has since signed to Virgin Music Group for distribution and released two albums under the deal: Jamie in 2022 and Charlotte in 2024."
+  },
+  {
+   "id": "cdd1ac62-170c-47e0-bda1-d73fc81d136b",
+   "slug": "isaiah-falls-lvrs-paradise-side-b-tour-41320034",
+   "title": "Isaiah Falls - LVRS PARADISE SIDE B TOUR",
+   "act": "Isaiah Falls",
+   "name": "Isaiah Falls",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Isaiah_Falls",
+   "extract": "Isaiah Falls is an American singer from Orlando, Florida. He is best known for his 2024 single \"Florida Baby\". In September 2024, He was named Billboard's R&B/Hip-Hop Rookie of the Month."
+  },
+  {
+   "id": "263ee02b-fadf-43dd-a5ed-3477ef4495c1",
+   "slug": "son-mieux-24-hours-eu-album-tour-835a240e",
+   "title": "SON MIEUX - 24 Hours - EU Album Tour",
+   "act": "SON MIEUX",
+   "name": "Son Mieux",
+   "description": "Dutch indie pop group",
+   "source_url": "https://en.wikipedia.org/wiki/Son_Mieux",
+   "extract": "Son Mieux is a Dutch indie pop group from The Hague headed by Camiel Meiresonne."
+  },
+  {
+   "id": "ed95a9ed-f205-4804-8341-188d1e854d0b",
+   "slug": "nick-hakim-i-can-see-live-in-concert-3f4a4275",
+   "title": "Nick Hakim - I Can See Live: In Concert",
+   "act": "Nick Hakim",
+   "name": "Nick Hakim",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Nick_Hakim",
+   "extract": "Nicolas Hakim is an American musician based in Queens, New York, United States. His first EP, Where Will We Go Part 1 & 2, was self-released in 2014. He released three albums with ATO: Green Twins (2017), Will This Make Me Good (2020), and Cometa (2022)."
+  },
+  {
+   "id": "394c67d6-ed99-4585-8b2a-9eff54ecbe97",
+   "slug": "overmono-pure-devotion-world-tour-gallery-seat-577de8d2",
+   "title": "Overmono - Pure Devotion - World Tour | Gallery Seat",
+   "act": "Overmono",
+   "name": "Overmono",
+   "description": "Welsh electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Overmono",
+   "extract": "Overmono is a Welsh electronic music duo consisting of the brothers Tom and Ed Russell."
+  },
+  {
+   "id": "4e54bd82-ff8a-4f90-b2fb-c6db5316b23a",
+   "slug": "overmono-pure-devotion-world-tour-03d78621",
+   "title": "Overmono - Pure Devotion - World Tour",
+   "act": "Overmono",
+   "name": "Overmono",
+   "description": "Welsh electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Overmono",
+   "extract": "Overmono is a Welsh electronic music duo consisting of the brothers Tom and Ed Russell."
+  },
+  {
+   "id": "eaccbc2a-bf99-4989-a56a-0c1ceb7a0d3a",
+   "slug": "kelsey-lu-so-help-me-god-tour-7e0100f0",
+   "title": "Kelsey Lu - So Help Me God Tour",
+   "act": "Kelsey Lu",
+   "name": "Kelsey Lu",
+   "description": "American singer and cellist (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Kelsey_Lu",
+   "extract": "Kelsey Elizabeth McJunkins, known professionally as Kelsey Lu, is an American singer and cellist based in Los Angeles, California."
+  },
+  {
+   "id": "48a308fb-b491-44bc-b975-56a3a818ce72",
+   "slug": "digitalism-optimism-tour-2026-8b2246a2",
+   "title": "Digitalism - OPTIMISM TOUR 2026",
+   "act": "Digitalism",
+   "name": "Digitalism",
+   "description": "German electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Digitalism_(band)",
+   "extract": "Digitalism are a German electronic music duo formed in Hamburg by Jens Moelle and İsmail Tüfekçi in 2004. The duo are signed to French label Kitsuné, as well as Virgin Records and Astralwerks in other parts of the world."
+  }
+ ]
+}

@@ -1,0 +1,226 @@
+{
+ "city": "oslo",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "b5ffcb1d-912a-4312-948a-2b3956acb89b",
+   "slug": "warren-zeiders-b58e5f3d",
+   "title": "Warren Zeiders",
+   "act": "Warren Zeiders",
+   "name": "Warren Zeiders",
+   "description": "American country musician",
+   "source_url": "https://en.wikipedia.org/wiki/Warren_Zeiders",
+   "extract": "Warren Donald Zeiders is an American country music singer and songwriter. He has released five studio albums under Warner Records: Acoustic Covers (2021), 717 Tapes the Album (2022), Pretty Little Poison (2023), Relapse (2024) and No Brakes (2026). He had his first number one hit on country radio with his single \"Pretty Little Poison\" (2023)."
+  },
+  {
+   "id": "665c87e7-e869-4aa5-9315-cb106511fcd8",
+   "slug": "fontaines-d-c-d5de640a",
+   "title": "Fontaines D.C.",
+   "act": "Fontaines D.C.",
+   "name": "Fontaines D.C.",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Fontaines_D.C.",
+   "extract": "Fontaines D.C. are an Irish rock band formed in Dublin in 2014. The band consists of Grian Chatten (vocals), Conor Curley (guitar), Conor \"Deego\" Deegan III (bass), Tom Coll (drums), and Carlos O'Connell (guitar)."
+  },
+  {
+   "id": "3384f4e9-693f-43ac-96fc-5e2ae9d33ff2",
+   "slug": "beth-hart-flyttet-fra-20-10-25-til-09-11-26-bfe20e2c",
+   "title": "Beth Hart - flyttet fra 20.10.25 til 09.11.26",
+   "act": "Beth Hart",
+   "name": "Beth Hart",
+   "description": "American blues rock musician (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Beth_Hart",
+   "extract": "Beth Hart is an American musician from Los Angeles, California. She rose to fame with the release of her 1999 single \"L.A. Song \" from her second album Screamin' for My Supper. The single was a number one hit in New Zealand, as well as reaching the top five of the US Adult Contemporary and Top 10 on the Billboard Adult Top 40 charts."
+  },
+  {
+   "id": "9557b6af-67ee-4229-a02f-ef01ca98e2f6",
+   "slug": "claudio-constantini-5866536b",
+   "title": "Claudio Constantini",
+   "act": "Claudio Constantini",
+   "name": "Claudio Constantini",
+   "description": "Peruvian pianist",
+   "source_url": "https://en.wikipedia.org/wiki/Claudio_Constantini",
+   "extract": "Claudio Constantini is a multiinstrumentalist and composer born in Peru and currently living in Spain. Known for his eclectic nature, he feels at home in a variety of musical genres. He has garnered one of the widest followings on social media for a classical instrumentalist."
+  },
+  {
+   "id": "3e55dcb9-c0e8-4616-ba9b-c66244c04d73",
+   "slug": "tayc-f3caabd7",
+   "title": "Tayc",
+   "act": "Tayc",
+   "name": "Tayc",
+   "description": "French singer",
+   "source_url": "https://en.wikipedia.org/wiki/Tayc",
+   "extract": "Julien Franck Bouadjie Monono Kamgang, better known as Tayc, is a French singer."
+  },
+  {
+   "id": "0f23df73-4248-4728-ae4e-051f7b541834",
+   "slug": "sophie-zelmani-c501a403",
+   "title": "Sophie Zelmani",
+   "act": "Sophie Zelmani",
+   "name": "Sophie Zelmani",
+   "description": "Swedish singer-songwriter (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Sophie_Zelmani",
+   "extract": "Sophie Zelmani, later raised with the surname Edkvist, is a Swedish singer-songwriter who released her first single in 1995, called \"Always You\"."
+  },
+  {
+   "id": "036e4435-5617-4e25-af3e-23ef68d56f42",
+   "slug": "the-good-the-bad-and-the-zugly-18f4ac6d",
+   "title": "The Good the Bad and the Zugly",
+   "act": "The Good the Bad and the Zugly",
+   "name": "The Good The Bad and The Zugly",
+   "description": "Norwegian punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Good_The_Bad_and_The_Zugly",
+   "extract": "The Good The Bad and The Zugly is a Norwegian punk rock band from Hadeland formed in 2011. It consists of members Eirik Melstrøm (guitar), Kim Skaug (guitar), Magne Vannebo (drums), Lars Gulbrandsen (bass) and Ivar Nikolaisen (vocals), who is also the lead vocalist for Kvelertak."
+  },
+  {
+   "id": "4d5b4d33-c3cc-4520-baa8-d2923b5422e9",
+   "slug": "delillos-51984ad7",
+   "title": "Delillos",
+   "act": "Delillos",
+   "name": "DeLillos",
+   "description": "Norwegian pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/DeLillos",
+   "extract": "deLillos  is a Norwegian pop rock band formed in Oslo in 1984. They are generally regarded as one of the \"Four Greats\" in modern Norwegian pop music, i.e. one of the four 1980s groups that founded a new tradition for rock music with lyrics in Norwegian. The remaining three \"Greats\" are DumDum Boys, Raga Rockers and Jokke & Valentinerne."
+  },
+  {
+   "id": "a1880d89-cf03-41eb-bf19-9aa327c3c55d",
+   "slug": "tove-lo-estrus-fead8a3b",
+   "title": "Tove Lo – ESTRUS",
+   "act": "Tove Lo",
+   "name": "Tove Lo",
+   "description": "Swedish singer and songwriter (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Tove_Lo",
+   "extract": "Ebba Tove Elsa Nilsson, known professionally as Tove Lo, is a Swedish singer-songwriter. She is known for her raw, grunge-influenced take on pop music. Referring to her autobiographical lyrics, Out called Lo \"the saddest girl in Sweden\", while Rolling Stone called her \"Sweden's darkest pop export\"."
+  },
+  {
+   "id": "5b910c8c-29f1-412a-a12e-621acc812bdb",
+   "slug": "saint-levant-afandi-world-tour-ed0c299a",
+   "title": "Saint Levant - AFANDI WORLD TOUR",
+   "act": "Saint Levant",
+   "name": "Saint Levant",
+   "description": "Palestinian rapper and musician (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Saint_Levant",
+   "extract": "Marwan Abdelhamid, known professionally as Saint Levant, is a Palestinian singer-songwriter and rapper. A multilingual artist, he became known for his 2022 song \"Very Few Friends\". As of August 2026, he has released two EPs and two studio albums, and has toured in the Middle East, Europe, the US, and Australia."
+  },
+  {
+   "id": "7e8055d0-3d7b-499c-aa3c-7310d8661ffe",
+   "slug": "cc-cowboys-c57526a9",
+   "title": "CC Cowboys",
+   "act": "CC Cowboys",
+   "name": "CC Cowboys",
+   "description": "Norwegian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/CC_Cowboys",
+   "extract": "CC Cowboys is a Norwegian rock band from Fredrikstad. Their members are the vocalist and guitarist Magnus Grønneberg, their guitarist Jørn Christensen their bassist Per Vestaby and their drummer Agne Sæther. The name of the band originates from the song \"C.C. Cowboys\" by Swedish rock group Imperiet."
+  },
+  {
+   "id": "27e8428f-f953-445d-a2f1-dfaafcd7dad7",
+   "slug": "the-sheepdogs-6c4e2f2f",
+   "title": "The Sheepdogs",
+   "act": "The Sheepdogs",
+   "name": "The Sheepdogs",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Sheepdogs",
+   "extract": "The Sheepdogs are a Canadian rock band formed in Saskatoon, Saskatchewan, in 2004. The Sheepdogs were the first unsigned band to make the cover of Rolling Stone and have gone on to a career featuring multi-platinum album sales and four Juno Awards."
+  },
+  {
+   "id": "75d748f9-3947-4590-b046-2e56eebe66aa",
+   "slug": "beabadoobee-the-powerlines-tour-e51a902b",
+   "title": "beabadoobee: The Powerlines Tour",
+   "act": "beabadoobee",
+   "name": "Beabadoobee",
+   "description": "Filipino and British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Beabadoobee",
+   "extract": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021, she released five extended plays (EPs) under the independent label Dirty Hit: Lice (2018), Patched Up (2018), Loveworm (2019), Space Cadet (2019) and Our Extended Play (2021). Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim. Her second studio album, Beatopia, was released on July 2022, and spawned the hit \"The Perfect Pair\". Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart. In September 2026, her fourth studio album, Pylon, topped the British and Australian charts."
+  },
+  {
+   "id": "1e4db758-2f26-43e5-957d-65072282495b",
+   "slug": "stein-torleif-bjella-innegubbens-dr-ymejul-10db9651",
+   "title": "Stein Torleif Bjella - Innegubbens Drøymejul",
+   "act": "Stein Torleif Bjella",
+   "name": "Stein Torleif Bjella",
+   "description": "Norwegian songwriter, singer and guitarist",
+   "source_url": "https://en.wikipedia.org/wiki/Stein_Torleif_Bjella",
+   "extract": "Stein Torleif Bjella is a Norwegian songwriter, singer and guitarist."
+  },
+  {
+   "id": "af5edbc6-6fee-4bb7-a379-4cf62281505a",
+   "slug": "chelsea-wolfe-the-dark-world-tour-bd37f26b",
+   "title": "Chelsea Wolfe: THE DARK World Tour",
+   "act": "Chelsea Wolfe",
+   "name": "Chelsea Wolfe",
+   "description": "American singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Chelsea_Wolfe",
+   "extract": "Chelsea Joy Wolfe is an American singer-songwriter and musician. Her work blends elements of gothic rock, doom metal, and folk."
+  },
+  {
+   "id": "8caebb77-991d-4f67-85e7-a8978604def4",
+   "slug": "hellbillies-a08187a1",
+   "title": "Hellbillies",
+   "act": "Hellbillies",
+   "name": "Hellbillies",
+   "description": "Norwegian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Hellbillies",
+   "extract": "Hellbillies is a Norwegian rock band, formed in 1990 in Ål, a town located in Hallingdal."
+  },
+  {
+   "id": "ef420a6e-7766-4e63-adea-1694169c30c4",
+   "slug": "knut-anders-s-rum-jul-ee61ffa6",
+   "title": "Knut Anders Sørum - Jul",
+   "act": "Knut Anders Sørum",
+   "name": "Knut Anders Sørum",
+   "description": "Norwegian singer from Østre Toten (born 1976)",
+   "source_url": "https://en.wikipedia.org/wiki/Knut_Anders_S%C3%B8rum",
+   "extract": "Knut Anders Sørum is a Norwegian singer from Østre Toten Municipality. He represented Norway at Eurovision Song Contest 2004 in Istanbul with the pop-ballad \"High\". He was also a vocalist and keyboard player for the Norway-based Christian extreme metal band Vardøger for many years."
+  },
+  {
+   "id": "113fb3fc-4b86-4659-8d96-99735844dd26",
+   "slug": "di-derre-bfe425d5",
+   "title": "Di Derre",
+   "act": "Di Derre",
+   "name": "Di Derre",
+   "description": "Norwegian pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Di_Derre",
+   "extract": "Di Derre is a Norwegian Pop rock band, founded in 1992. They were awarded the Gammleng-prisen in 1996."
+  },
+  {
+   "id": "53f2e31d-ea89-4675-b3a7-c4f459cb5ca8",
+   "slug": "ila-auto-12e9c338",
+   "title": "Ila Auto",
+   "act": "Ila Auto",
+   "name": "Ila Auto",
+   "description": "Norwegian bluegrass band",
+   "source_url": "https://en.wikipedia.org/wiki/Ila_Auto",
+   "extract": "Ila Auto is a Spellemannprisen winning bluegrass band from Oslo, Norway. The band was established in 2005."
+  },
+  {
+   "id": "ecc5fb8f-0b2d-4b7c-b2fd-9f153ea2b2c7",
+   "slug": "death-by-unga-bunga-1450561a",
+   "title": "Death By Unga Bunga",
+   "act": "Death By Unga Bunga",
+   "name": "Death by Unga Bunga",
+   "description": "Norwegian garage rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Death_by_Unga_Bunga",
+   "extract": "Death by Unga Bunga is a Norwegian garage rock band from Moss, Norway."
+  },
+  {
+   "id": "6231eb17-4422-42cc-b72b-7c93cfeb24f3",
+   "slug": "seigmen-15443620",
+   "title": "Seigmen",
+   "act": "Seigmen",
+   "name": "Seigmen",
+   "description": "Norwegian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Seigmen",
+   "extract": "Seigmen is a Norwegian rock band formed in 1989 in Tønsberg. Originally named Klisne Seigmenn, the band came into prominence in the early 1990s. The band's name is derived from Norwegian sweets brand Laban Seigmenn. The band went from a hard-edged grunge-like style to a more dynamic sound with more ambient parts and use of synthesizers and various audio-effects."
+  },
+  {
+   "id": "f3e8f62a-5f25-4f86-bbb2-52f7090fc816",
+   "slug": "oslo-ess-45f82ac8",
+   "title": "Oslo Ess",
+   "act": "Oslo Ess",
+   "name": "Oslo Ess",
+   "description": "Norwegian musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Oslo_Ess",
+   "extract": "Oslo Ess is a Norwegian rock/punk band with Åsmund Lande as vocalist/guitarist, Peter Larsson on guitar and Knut-Oscar Nymo on bass. Lande and Larsson used to play in another formation and launched the band. Although Oslo Ess doesn't have a permanent drummer, a number of drummers have played with the band including Håvard Takle Ohr, Steffen Skau Linnert, Tommy Akerholdt, Kim Akerholdt and Mads Golden."
+  }
+ ]
+}

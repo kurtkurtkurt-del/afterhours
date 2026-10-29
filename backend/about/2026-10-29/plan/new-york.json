@@ -1,0 +1,36 @@
+{
+ "city": "new-york",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "236b4225-60bc-43aa-b638-3bd43b431a9c",
+   "slug": "harry-styles-together-together-7ac8500f",
+   "title": "Harry Styles: Together, Together",
+   "act": "Harry Styles",
+   "name": "Harry Styles",
+   "description": "English singer, songwriter, and actor (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Harry_Styles",
+   "extract": "Harry Edward Styles is an English singer, songwriter, and actor. An influential figure in popular culture, he is known for his showmanship, artistry, and flamboyant fashion. Styles's musical career began in 2010 as part of One Direction, a boy band formed on the British music competition series The X Factor after each member of the band had been eliminated from the solo contest. They became one of the best-selling boy bands of all time before going on an indefinite hiatus in 2016. Styles released his eponymous debut solo album through Erskine and Columbia Records in 2017, which was led by the UK number-one single \"Sign of the Times\"."
+  },
+  {
+   "id": "01d30b73-b0c4-4163-afbb-f4b18deeb184",
+   "slug": "new-york-philharmonic-get-out-in-concert-bdeb47aa",
+   "title": "New York Philharmonic: Get Out in Concert",
+   "act": "New York Philharmonic",
+   "name": "New York Philharmonic",
+   "description": "American symphony orchestra",
+   "source_url": "https://en.wikipedia.org/wiki/New_York_Philharmonic",
+   "extract": "The New York Philharmonic is an American symphony orchestra based in New York City. Known officially as the Philharmonic-Symphony Society of New York, Inc., and globally known as the New York Philharmonic Orchestra (NYPO) or the New York Philharmonic-Symphony Orchestra, it is one of the leading American orchestras popularly called the \"Big Five\". The philharmonic's home is David Geffen Hall, at New York's Lincoln Center for the Performing Arts."
+  },
+  {
+   "id": "9c8e535a-127a-4727-ab65-4fffa9297b19",
+   "slug": "buena-vista-social-club-b3282601",
+   "title": "Buena Vista Social Club",
+   "act": "Buena Vista Social Club",
+   "name": "Buena Vista Social Club",
+   "description": "Cuban musical ensemble",
+   "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+   "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years."
+  }
+ ]
+}

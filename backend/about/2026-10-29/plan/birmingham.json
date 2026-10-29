@@ -1,0 +1,266 @@
+{
+ "city": "birmingham",
+ "day": "2026-10-29",
+ "nights": [
+  {
+   "id": "92776e38-eb53-4e3d-a11a-70716fab686e",
+   "slug": "transvision-vamp-d5af91b5",
+   "title": "Transvision Vamp",
+   "act": "Transvision Vamp",
+   "name": "Transvision Vamp",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Transvision_Vamp",
+   "extract": "Transvision Vamp are an English pop rock band, formed on Ladbroke Grove in London in 1986 by guitarist and principle songwriter Nick Christian Sayer and lead vocalist Wendy James. Popular during the late 1980s, the band had 10 hits on the UK singles charts and also enjoyed considerable success in Australia. Their biggest hits were \"I Want Your Love\" from their debut studio album Pop Art (1988) and \"Baby I Don't Care\" from their second studio album Velveteen (1989), which was their most successful album, reaching No. 1 in the UK and No. 2 in Australia. During this time, James attracted media attention with her sexually charged and rebellious image. The band broke up in 1992, and re-formed in 2025."
+  },
+  {
+   "id": "722c6486-13da-4923-9a07-19bcc0146afc",
+   "slug": "skindred-you-got-this-tour-25830f36",
+   "title": "Skindred - You Got This Tour",
+   "act": "Skindred",
+   "name": "Skindred",
+   "description": "Welsh metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Skindred",
+   "extract": "Skindred is a Welsh rock band that fuses heavy metal with other genres, most notably reggae. Formed in Newport in 1998, they are well known for their energetic and involving live performances and have won several awards including \"Best Live Band\" at the 2011 UK Metal Hammer Golden Gods Awards and the \"Devotion Award\" at the 2011 Kerrang! Awards. In 2026, the band's ninth album You Got This became their first album to top the UK Albums Chart."
+  },
+  {
+   "id": "2caba712-ad35-4751-90ab-adb3b03ea837",
+   "slug": "rusty-shackle-512c6d4c",
+   "title": "Rusty Shackle",
+   "act": "Rusty Shackle",
+   "name": "Rusty Shackle",
+   "description": "Welsh folk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Rusty_Shackle",
+   "extract": "Rusty Shackle are a Welsh, Monmouthshire based folk rock band, formed in Caldicot in early 2010. They are a six-piece group made up of band members Liam Collins, Mathew Barwick, George Barrell, Ryan Williams, Scott McKeon, and Alex McConnachie. Combining guitars, fiddle, banjo, bass, mandola, trumpet and percussion, Rusty Shackle are influenced by bluegrass, folk, rock, Celtic and old time blues."
+  },
+  {
+   "id": "82893ff0-ba25-4c2b-b71b-f5d1fdc888f6",
+   "slug": "the-exploited-f70863c2",
+   "title": "The Exploited",
+   "act": "The Exploited",
+   "name": "The Exploited",
+   "description": "Scottish punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Exploited",
+   "extract": "The Exploited are a Scottish punk rock band formed in Edinburgh in 1978 by Stevie Ross and Terry Buchan, with Buchan soon replaced with his brother, Wattie Buchan. They signed to Secret Records in March 1981, and their debut EP, Army Life, and debut album, Punks Not Dead, were released that year. The band maintained a cult following in the 1980s among hardcore working class punks and skinheads. Originally a street punk band, the Exploited evolved into crossover thrash with their album Death Before Dishonour in 1987."
+  },
+  {
+   "id": "f1d9e8a9-3c6f-497c-975a-b7e50a15e3f9",
+   "slug": "cody-johnson-3186146b",
+   "title": "Cody Johnson",
+   "act": "Cody Johnson",
+   "name": "Cody Johnson",
+   "description": "American country singer (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Cody_Johnson",
+   "extract": "Cody Daniel Johnson is an American country music singer. He has self-released six albums, including Gotta Be Me, which debuted at number two on Billboard's Country Albums chart, before releasing his first major-label album, Ain't Nothin' to It, in January 2019. He released his second major-label album, Human: The Double Album, in October 2021. His style is classified as contemporary country and neotraditional country, drawing influences from artists like George Strait and Willie Nelson. His song \"'Til You Can't\" won two awards at the Country Music Association Awards in 2022. His album Leather won the CMA Album of the Year on November 20, 2024. He toured Australia in 2023 and 2025, with many shows selling out."
+  },
+  {
+   "id": "5aa125dc-5028-421d-8878-a72b9a62db51",
+   "slug": "static-dress-0709e463",
+   "title": "Static Dress",
+   "act": "Static Dress",
+   "name": "Static Dress",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+   "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+  },
+  {
+   "id": "f7b99142-fdb2-4e6b-a99f-fea14975a6be",
+   "slug": "against-the-current-7fa8c695",
+   "title": "Against the Current",
+   "act": "Against the Current",
+   "name": "Against the Current",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Against_the_Current_(band)",
+   "extract": "Against the Current is an American rock band from Poughkeepsie, New York, formed in 2011. As of 2025, the band consists of lead vocalist Chrissy Costanza, guitarist Dan Gow, and drummer Will Ferri. The band quickly gained a sizeable online following after posting covers of various popular songs on YouTube. They played Warped Tour in 2016."
+  },
+  {
+   "id": "436f4d75-207a-42e9-8dce-8e2fb0cf6a9e",
+   "slug": "a-guy-called-gerald-live-in-session-in-birmingha-73675cf8",
+   "title": "A Guy Called Gerald - Live In Session - In Birmingham",
+   "act": "A Guy Called Gerald",
+   "name": "A Guy Called Gerald",
+   "description": "British musician",
+   "source_url": "https://en.wikipedia.org/wiki/A_Guy_Called_Gerald",
+   "extract": "Gerald Rydel Simpson, better known as A Guy Called Gerald, is a British record producer and musician. He was an early member of the electronic group 808 State, contributing to their debut LP Newbuild (1988) and hit single \"Pacific State\" (1989). He also achieved solo success with his 1988 hit single \"Voodoo Ray\", considered the first British-made acid house track, which became a touchstone of Manchester's acid house scene and reached No. 12 in the UK charts."
+  },
+  {
+   "id": "b0136a79-3428-4588-bdc2-e88d34285269",
+   "slug": "papa-roach-rise-of-the-roach-070993d8",
+   "title": "Papa Roach - Rise of the Roach",
+   "act": "Papa Roach",
+   "name": "Papa Roach",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Papa_Roach",
+   "extract": "Papa Roach is an American rock band from Vacaville, California, formed in 1993. After a few early shifts, the band initially stabilized in 1996 with the lineup of lead vocalist Jacoby Shaddix, drummer Dave Buckner, guitarist Jerry Horton, and bassist Tobin Esperance. This lineup remained consistent for slightly over a decade."
+  },
+  {
+   "id": "f6a53615-515f-46fd-99fb-54ecfe3fa04c",
+   "slug": "the-script-08ea9212",
+   "title": "The Script",
+   "act": "The Script",
+   "name": "The Script",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Script",
+   "extract": "The Script are an Irish pop rock band formed in 2001 in Dublin by lead vocalist and keyboardist Danny O'Donoghue, lead guitarist Mark Sheehan and drummer Glen Power. The band currently consists of O'Donoghue, Power, Benjamin Sargeant and Ben Weaver (guitar). Sheehan was a member of the band up until his death in 2023. The band moved to London after signing to Sony Label Group imprint Phonogenic and released their first album The Script in August 2008, preceded by the debut single \"We Cry\" as well as other singles such as \"The Man Who Can't Be Moved\", \"Breakeven\" and \"Before the Worst\". The album peaked at number one in both Ireland and the UK."
+  },
+  {
+   "id": "a7c1dfc0-17b0-4d20-a2bc-fb566d6f2e47",
+   "slug": "ole-60-off-the-grid-tour-290a898d",
+   "title": "Ole 60 - Off the Grid Tour",
+   "act": "Ole 60",
+   "name": "Ole 60",
+   "description": "American country music band",
+   "source_url": "https://en.wikipedia.org/wiki/Ole_60",
+   "extract": "Ole 60 is an American country/alt-country band from Hawesville, Kentucky, formed in 2023, known for blending Appalachian storytelling with elements of grunge, southern rock, folk music, and traditional country. The band consists of Jacob Ty Young, Tristan Roby, Ryan Laslie, Colby Clark, Aden Wood (drums), Dwight McGlynn, and Dustin \"Catfish\" Fuqua. The band gained widespread attention in 2024 through breakout singles like \"smoke & a light\" and \"Thoughts of You\", and acclaimed debut album Smokestack Town in 2025."
+  },
+  {
+   "id": "0ba1e5d9-f47c-4407-b2fc-26ceeffa7dd9",
+   "slug": "the-home-team-85fc4b36",
+   "title": "The Home Team",
+   "act": "The Home Team",
+   "name": "The Home Team",
+   "description": "American Rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Home_Team",
+   "extract": "The Home Team is an American four-piece rock band from Seattle, Washington, formed in 2013 by Daniel Matson and John Baran. The band currently consists of vocalist Brian Butcher, bassist Ryne Olson, guitarist John Baran, and drummer Daniel Matson."
+  },
+  {
+   "id": "8bf0dde7-944b-4f43-bab5-d2263d5550c1",
+   "slug": "the-proclaimers-2a7b8c57",
+   "title": "The Proclaimers",
+   "act": "The Proclaimers",
+   "name": "The Proclaimers",
+   "description": "Scottish musical group",
+   "source_url": "https://en.wikipedia.org/wiki/The_Proclaimers",
+   "extract": "The Proclaimers are a Scottish rock duo formed in 1983 by the twin brothers Craig and Charlie Reid. They came to attention with their 1987 single \"Letter from America\", which reached No. 3 in the United Kingdom, and the 1988 single \"I'm Gonna Be \", which topped the charts in Australia, Iceland and New Zealand. The duo's biggest album, Sunshine on Leith (1988) has been certified multi-Platinum in Australia and Canada, selling over two million copies worldwide, including around 700,000 in the United States. The Proclaimers have sold over five million albums worldwide."
+  },
+  {
+   "id": "f28eda3c-e344-4c97-b4f9-207bdd6eac42",
+   "slug": "wasia-project-1d750a88",
+   "title": "Wasia Project",
+   "act": "Wasia Project",
+   "name": "Wasia Project",
+   "description": "English pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Wasia_Project",
+   "extract": "Wasia Project is an English indie pop band consisting of siblings Olivia Hardy and William Gao. The group released their debut single, \"Why Don't U Love Me,\" in 2019. This was followed by their debut extended play (EP) How Can I Pretend? in 2022. In August 2024, they released their second extended play (EP), Isotope. On stage, they are often joined by drummer Nate Wicks, bassist Tom Pacitti, saxophonist Safi Jazz, and trombonist Patrick Minton."
+  },
+  {
+   "id": "79c728a6-9e70-4ce0-b4a3-fa8b6013becc",
+   "slug": "hothouse-flowers-673e2432",
+   "title": "Hothouse Flowers",
+   "act": "Hothouse Flowers",
+   "name": "Hothouse Flowers",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Hothouse_Flowers",
+   "extract": "Hothouse Flowers is an Irish rock band that combine traditional Irish music with influences from soul, gospel, and rock. Formed in 1985 in Dublin, they began as street performers. Their first album, People (1988), was the most successful debut album in Irish history, reaching No. 1 in Ireland and No. 2 in the UK. After two more albums and extensive touring, the group separated in 1994. Since reforming in 1998, the band members have sporadically toured and issued new songs, but also have pursued solo careers."
+  },
+  {
+   "id": "4f90a565-6661-4e86-8d93-10e0bd090dc1",
+   "slug": "the-shires-60655149",
+   "title": "The Shires",
+   "act": "The Shires",
+   "name": "The Shires",
+   "description": "British country music duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_Shires_(duo)",
+   "extract": "The Shires are a British country music duo composed of singer-songwriters Ben Earle and Crissie Rhodes. Earle sings harmony vocals, plays piano and guitar, and Rhodes is lead singer. The duo formed in 2013 and released their debut album Brave in 2015, becoming the first British country act to chart in the Top 10 of the UK Albums Chart. The group's second album, My Universe, became the fastest-selling British country album in history when it was released in October 2016."
+  },
+  {
+   "id": "5c2bf036-af6f-4cf3-8e89-af5799a52769",
+   "slug": "igorrr-376bdeda",
+   "title": "Igorrr",
+   "act": "Igorrr",
+   "name": "Igorrr",
+   "description": "French musician",
+   "source_url": "https://en.wikipedia.org/wiki/Igorrr",
+   "extract": "Gautier Serre, better known by his stage name Igorrr, is a French musician, composer and producer. Under the Igorrr alias, he combines a variety of disparate genres, including black metal, baroque music, breakcore, and trip hop, into a singular sound. Serre is also part of the now disbanded side-projects Whourkr and Corpo-Mente. The Igorrr project has evolved into a full-fledged group with vocalists Laure Le Prunenec and Laurent Lunoir, drummer Sylvain Bouvier, guitarist Martyn Clément and bassist Erlend Caspersen. In 2021, both vocalists left the band and were replaced by JB Le Bail and Aphrodite Patoulidou; the latter was later replaced by Marthe Alexandre. In 2024, Rémi Serafino became drummer. Gerda Iguchi succeeded Alexandre as vocalist in 2026."
+  },
+  {
+   "id": "7e0e74aa-5d9c-4830-a17f-752c81e3ebc8",
+   "slug": "breed-77-e1336b8a",
+   "title": "Breed 77",
+   "act": "Breed 77",
+   "name": "Breed 77",
+   "description": "Gibraltarian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Breed_77",
+   "extract": "Breed 77 are a Gibraltarian rock band formed in 1996. Their music blended elements of alternative metal, flamenco, and other Latin influences, creating a distinctive sound. The band gained recognition in the early 2000s, releasing several albums and touring extensively. Known for their energetic live performances and their fusion of diverse musical styles, Breed 77 contributed to the nu metal and alternative rock scenes of the era. The band officially disbanded in 2015 but reformed in 2024."
+  },
+  {
+   "id": "7deb1129-9417-440a-9592-b14c77fddc1c",
+   "slug": "undeath-d2ee39b8",
+   "title": "Undeath",
+   "act": "Undeath",
+   "name": "Undeath",
+   "description": "American metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Undeath_(band)",
+   "extract": "Undeath is an American death metal band from Rochester, New York founded in 2018."
+  },
+  {
+   "id": "5887f65f-8f69-4146-b847-23c6ec51ebd1",
+   "slug": "paris-paloma-400dbb4d",
+   "title": "Paris Paloma",
+   "act": "Paris Paloma",
+   "name": "Paris Paloma",
+   "description": "British singer-songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Paris_Paloma",
+   "extract": "Paris Paloma is a British singer-songwriter and guitarist. She gained prominence through the single \"Labour\" (2023). Her debut album, Cacophony, was released in 2024. Her second album, The Fatal Flaw, followed in 2026."
+  },
+  {
+   "id": "89b69ac2-6451-4f03-9ca3-908268d8a07d",
+   "slug": "bill-bailey-vaudevillean-ca8dbcc4",
+   "title": "Bill Bailey: Vaudevillean",
+   "act": "Bill Bailey",
+   "name": "Bill Bailey",
+   "description": "British musician and comedian (born 1965)",
+   "source_url": "https://en.wikipedia.org/wiki/Bill_Bailey",
+   "extract": "Mark Robert \"Bill\" Bailey is an English musician, comedian, actor and television presenter. He is known for his role as Manny in the sitcom Black Books (2000–2004), and for his regular appearances on the panel shows Never Mind the Buzzcocks, Have I Got News for You, and QI, as well as for his stand-up comedy work. He plays a variety of musical instruments and incorporates music into his performances."
+  },
+  {
+   "id": "c1aeda7f-3018-4eda-a5a6-b81f3c0bc388",
+   "slug": "myles-smith-my-mess-my-heart-my-life-tour-321ea206",
+   "title": "Myles Smith: My Mess, My Heart, My Life. Tour",
+   "act": "Myles Smith",
+   "name": "Myles Smith",
+   "description": "British singer (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Myles_Smith",
+   "extract": "Myles Michael Smith-Thompson is a British singer. He is best known for his 2024 singles \"Stargazing\" and \"Nice to Meet You\". His debut studio album, My Mess, My Heart, My Life. was released on 19 June 2026."
+  },
+  {
+   "id": "bbc38be5-c43a-497f-a931-056268913886",
+   "slug": "chloe-slater-bb8d9f46",
+   "title": "Chloe Slater",
+   "act": "Chloe Slater",
+   "name": "Chloe Slater",
+   "description": "English singer-songwriter (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Chloe_Slater",
+   "extract": "Chloe Leanne Slater is an English singer-songwriter based in Manchester. Writing about social and political issues, she has been releasing music since 2023 and has issued two extended plays: You Can't Put a Price on Fun, and Love Me Please."
+  },
+  {
+   "id": "9077f338-67d5-42fb-b5f6-022fc55b62d1",
+   "slug": "picture-this-a83d6663",
+   "title": "Picture This",
+   "act": "Picture This",
+   "name": "Picture This",
+   "description": "Irish pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Picture_This_(band)",
+   "extract": "Picture This are an Irish pop rock musical band based in Athy, County Kildare, comprising Ryan Hennessy, Jimmy Rainsford, Owen Cardiff and Cliff Deane. In 2017, they released their eponymous debut album, which entered atop the Irish Albums Chart. In early 2019, they released their follow up album Mdrn Lv. Their third studio album Life in Colour was released in June 2021. On 26 April 2024 they released their fourth, Parked Car Conversations."
+  },
+  {
+   "id": "4704490e-df76-4119-a7d1-28ec5a5a5e80",
+   "slug": "chasing-abbey-f027ff87",
+   "title": "Chasing Abbey",
+   "act": "Chasing Abbey",
+   "name": "Chasing Abbey",
+   "description": "Irish pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Chasing_Abbey",
+   "extract": "Chasing Abbey are an Irish music group combining electronic production with influences from traditional Irish music. They formed in Tullamore, Ireland, in 2016 and the group consists of members Ronan Bell, Jonathan Byrne and Ted Conway. The trio first gained attention with their debut single \"That Good Thing\" in 2017, securing the band a record deal with 3 Beat UK and Universal Music Group. Their next EP, The Oddessy Project, debuted at number one on the Irish Music Charts in 2019. Following the release of their song \"Oh My Johnny\" in 2023, Chasing Abbey signed a record deal with Warner and dance label Spinnin' Records. Their debut album, Cyber Celt, was released on 18th September 2026."
+  },
+  {
+   "id": "623f9165-68b0-4480-81d3-cd462813f44f",
+   "slug": "paul-heaton-28425755",
+   "title": "Paul Heaton",
+   "act": "Paul Heaton",
+   "name": "Paul Heaton",
+   "description": "British musician (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Paul_Heaton",
+   "extract": "Paul David Heaton is an English singer-songwriter. He was the lead singer and main lyricist of the Housemartins, who had commercial success in the UK and other European countries from 1985 to 1988, releasing several singles, including \"Happy Hour\" and the UK number one \"Caravan of Love\" in 1986, before the group disbanded. Heaton then formed the Beautiful South with the Housemartins' drummer, Dave Hemingway. The band's debut single, \"Song for Whoever\", and debut album, Welcome to the Beautiful South, were released in 1989 to commercial success. They had a series of hits throughout the 1990s, including the number-one single \"A Little Time\", and disbanded in 2007."
+  }
+ ]
+}
