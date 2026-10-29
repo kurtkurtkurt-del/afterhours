@@ -1,0 +1,657 @@
+{
+  "city": "munchen",
+  "day": "2026-10-29",
+  "sparks": [
+    {
+      "kind": "derby",
+      "title": {
+        "en": "no match tonight, pick a rival anyway.",
+        "de": "heute kein spiel, such dir trotzdem einen rivalen.",
+        "tr": "bu akşam maç yok, yine de bir rakip seç."
+      },
+      "line": {
+        "en": "thursday, nothing big on the pitch. bayern play friday to sunday, so warm up with a table-football duel at the irish pub by the frauenkirche.",
+        "de": "donnerstag, kein großes spiel. bayern spielt erst freitag bis sonntag, also wärm dich im irish pub an der frauenkirche mit einem kickerduell auf.",
+        "tr": "perşembe, büyük maç yok. bayern cuma-pazar arası oynuyor; frauenkirche yanındaki irish pub'ta langırt düellosuyla ısın."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "No match or event for Thu 29.10 confirmed (Bayern's next Bundesliga game is Fri–Sun 30.10–01.11; a EuroLeague game in Belgrade was reported for a Thursday but not date-confirmed). Indoors for the weather."
+    },
+    {
+      "kind": "grill",
+      "title": {
+        "en": "grill under a roof tonight.",
+        "de": "heute grillen unter dach.",
+        "tr": "bu akşam mangal çatı altında."
+      },
+      "line": {
+        "en": "cold and damp, the isar is dark by half five. bring the food to a covered courtyard or terrace of a friend.",
+        "de": "kalt und feucht, die isar ist um halb sechs dunkel. bring das essen in einen überdachten hof oder auf eine terrasse bei freunden.",
+        "tr": "soğuk ve nemli, isar beş buçukta karanlık. yemeği bir arkadaşın çatılı avlusuna ya da terasına götür."
+      },
+      "place": {
+        "en": "überdachter hof bei freunden",
+        "de": "überdachter hof bei freunden",
+        "tr": "überdachter hof bei freunden"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Outdoor grill moved under a roof."
+    },
+    {
+      "kind": "hike",
+      "title": {
+        "en": "a short wet-wood walk.",
+        "de": "ein kurzer gang durch den nassen wald.",
+        "tr": "ıslak ormanda kısa bir yürüyüş."
+      },
+      "line": {
+        "en": "perlacher forst is flat and close, the leaves are down. take a rain jacket and be back for lunch.",
+        "de": "der perlacher forst ist flach und nah, das laub liegt. regenjacke mit und zum mittag zurück.",
+        "tr": "perlacher forst düz ve yakın, yapraklar dökülmüş. yağmurluğu al, öğlene dön."
+      },
+      "place": {
+        "en": "perlacher forst",
+        "de": "perlacher forst",
+        "tr": "perlacher forst"
+      },
+      "hour": 10,
+      "minute": 30,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Short flat forest walk, easy to cut off."
+    },
+    {
+      "kind": "sunrise",
+      "title": {
+        "en": "sunrise from the olympiaberg.",
+        "de": "sonnenaufgang vom olympiaberg.",
+        "tr": "olympiaberg'den gün doğumu."
+      },
+      "line": {
+        "en": "sun is up around 06:55. climb in the dark, bring a flask; if it is cloud, you still get the city waking up.",
+        "de": "die sonne geht gegen 06:55 auf. im dunkeln hoch, thermoskanne mit; auch bei wolken wacht die stadt unter dir auf.",
+        "tr": "güneş 06:55 civarı doğuyor. karanlıkta çık, termos al; bulutlu olsa da şehrin uyanışını görürsün."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 6,
+      "minute": 35,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Sunrise about 06:55 (wetter.com Munich 06:58 on 28.10, shifting a few minutes); start is sunrise minus 20."
+    },
+    {
+      "kind": "breakfast",
+      "title": {
+        "en": "a slow breakfast in the gärtnerplatz.",
+        "de": "ein langes frühstück am gärtnerplatz.",
+        "tr": "gärtnerplatz'ta uzun bir kahvaltı."
+      },
+      "line": {
+        "en": "thursday morning, no rush. coffee, eggs and a window table around the gärtnerplatz.",
+        "de": "donnerstagmorgen, keine eile. kaffee, eier und ein fensterplatz rund um den gärtnerplatz.",
+        "tr": "perşembe sabahı, acele yok. gärtnerplatz çevresinde kahve, yumurta ve cam kenarı bir masa."
+      },
+      "place": {
+        "en": "gärtnerplatz",
+        "de": "gärtnerplatz",
+        "tr": "gärtnerplatz"
+      },
+      "hour": 9,
+      "minute": 30,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Indoor breakfast, nothing special on."
+    },
+    {
+      "kind": "rooftop",
+      "title": {
+        "en": "the city from the olympiaturm.",
+        "de": "die stadt vom olympiaturm.",
+        "tr": "olympiaturm'dan şehir."
+      },
+      "line": {
+        "en": "sunset is about 16:55. go up before it, the alps show only on a clear day, otherwise it is lights coming on.",
+        "de": "sonnenuntergang gegen 16:55. fahr davor hoch, die alpen zeigen sich nur bei klarer sicht, sonst gehen die lichter an.",
+        "tr": "gün batımı 16:55 civarı. öncesinde çık; alpler sadece açık havada görünür, yoksa ışıkların yanışını izlersin."
+      },
+      "place": {
+        "en": "olympiaturm",
+        "de": "olympiaturm",
+        "tr": "olympiaturm"
+      },
+      "hour": 16,
+      "minute": 30,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Covered viewpoint rather than an open rooftop bar."
+    },
+    {
+      "kind": "swim",
+      "title": {
+        "en": "indoor laps in the volksbad.",
+        "de": "bahnen im volksbad.",
+        "tr": "volksbad'da kapalı havuzda kulaç."
+      },
+      "line": {
+        "en": "too cold for the isar or the lidos. the müller'sches volksbad is indoors and warm, evening swim before it closes.",
+        "de": "zu kalt für isar und freibäder. das müller'sche volksbad ist drinnen und warm, abendschwimmen vor dem schluss.",
+        "tr": "isar ve açık havuzlar için fazla soğuk. müller'sches volksbad kapalı ve sıcak; kapanmadan akşam yüzmesi."
+      },
+      "place": {
+        "en": "müller'sches volksbad",
+        "de": "müller'sches volksbad",
+        "tr": "müller'sches volksbad"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Max about 12°C: indoor pool only; opening hours not checked for the day."
+    },
+    {
+      "kind": "quiz",
+      "title": {
+        "en": "pub quiz, no match to compete with.",
+        "de": "kneipenquiz, ohne spiel als konkurrenz.",
+        "tr": "pub quiz, rekabet eden maç yok."
+      },
+      "line": {
+        "en": "thursday is quiz night in many pubs. gather a team of four and find a table at the irish pub by the frauenkirche.",
+        "de": "donnerstag ist in vielen kneipen quizabend. vier leute zusammen und einen tisch im irish pub an der frauenkirche suchen.",
+        "tr": "perşembe birçok pubda quiz gecesi. dört kişilik takım kur, frauenkirche yanındaki irish pub'ta masa bul."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No match or event for Thu 29.10 confirmed (Bayern's next Bundesliga game is Fri–Sun 30.10–01.11; a EuroLeague game in Belgrade was reported for a Thursday but not date-confirmed). Quiz night at this pub on this date not confirmed; check before going."
+    },
+    {
+      "kind": "newplace",
+      "title": {
+        "en": "one new place in the glockenbach.",
+        "de": "ein neuer laden im glockenbach.",
+        "tr": "glockenbach'ta yeni bir mekan."
+      },
+      "line": {
+        "en": "pick a bar or restaurant you have never been to around the glockenbachviertel and go in without a plan.",
+        "de": "such dir eine bar oder ein restaurant im glockenbachviertel, in dem du noch nie warst, und geh ohne plan hinein.",
+        "tr": "glockenbach çevresinde hiç gitmediğin bir bar ya da restoran seç ve plansız gir."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Generic indoor new-place spark."
+    },
+    {
+      "kind": "camera",
+      "title": {
+        "en": "wet streets, good reflections.",
+        "de": "nasse straßen, gute spiegelungen.",
+        "tr": "ıslak sokaklar, güzel yansımalar."
+      },
+      "line": {
+        "en": "overcast light is soft and the cobbles shine. walk the altstadt from marienplatz to the viktualienmarkt with a camera.",
+        "de": "bedecktes licht ist weich und das pflaster glänzt. mit der kamera durch die altstadt vom marienplatz zum viktualienmarkt.",
+        "tr": "kapalı hava ışığı yumuşak, kaldırım taşları parlıyor. kameranla marienplatz'dan viktualienmarkt'a altstadt'ı yürü."
+      },
+      "place": {
+        "en": "altstadt",
+        "de": "altstadt",
+        "tr": "altstadt"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Wet light suits street photography."
+    },
+    {
+      "kind": "festival",
+      "title": {
+        "en": "no festival, make your own evening.",
+        "de": "kein festival, mach dir deinen eigenen abend.",
+        "tr": "festival yok, kendi akşamını yap."
+      },
+      "line": {
+        "en": "nothing big found for today and tollwood's summer edition is long over. gather friends and make the festival at home with music and snacks.",
+        "de": "heute nichts großes gefunden und tollwoods sommer ist lange vorbei. freunde einladen und das festival zu hause machen, mit musik und snacks.",
+        "tr": "bugün büyük bir şey bulunamadı, tollwood yazı çoktan bitti. arkadaşlarını topla, evde müzik ve atıştırmalıkla kendi festivalini yap."
+      },
+      "place": {
+        "en": "bei freunden",
+        "de": "bei freunden",
+        "tr": "bei freunden"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "No match or event for Thu 29.10 confirmed (Bayern's next Bundesliga game is Fri–Sun 30.10–01.11; a EuroLeague game in Belgrade was reported for a Thursday but not date-confirmed). Tollwood summer ended in July; no festival confirmed."
+    },
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "karaoke on a thursday.",
+        "de": "karaoke am donnerstag.",
+        "tr": "perşembe akşamı karaoke."
+      },
+      "line": {
+        "en": "a karaoke bar in the glockenbach, one song each, no talent needed. come at nine for a good slot.",
+        "de": "eine karaokebar im glockenbach, ein lied pro kopf, kein talent nötig. um neun kommen für einen guten platz.",
+        "tr": "glockenbach'ta bir karaoke barı, kişi başı bir şarkı, yetenek şart değil. iyi sıra için dokuzda gel."
+      },
+      "place": {
+        "en": "karaokebar im glockenbach",
+        "de": "karaokebar im glockenbach",
+        "tr": "karaokebar im glockenbach"
+      },
+      "hour": 21,
+      "minute": 0,
+      "why": "No match or event for Thu 29.10 confirmed (Bayern's next Bundesliga game is Fri–Sun 30.10–01.11; a EuroLeague game in Belgrade was reported for a Thursday but not date-confirmed). Midweek, indoors."
+    },
+    {
+      "kind": "vinyl",
+      "title": {
+        "en": "dig through the crates, out of the wet.",
+        "de": "kistenwühlen, raus aus dem nassen.",
+        "tr": "kasaları karıştır, ıslaktan uzak."
+      },
+      "line": {
+        "en": "record shops in the isarvorstadt are warm and dry. an hour of browsing, then a bar to play what you found.",
+        "de": "plattenläden in der isarvorstadt sind warm und trocken. eine stunde stöbern, dann in eine bar und das gefundene hören.",
+        "tr": "isarvorstadt'taki plak dükkanları sıcak ve kuru. bir saat karıştır, sonra bulduğunu dinlemek için bir bara geç."
+      },
+      "place": {
+        "en": "isarvorstadt",
+        "de": "isarvorstadt",
+        "tr": "isarvorstadt"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Indoor, shop hours not checked."
+    },
+    {
+      "kind": "openair",
+      "title": {
+        "en": "a short loop through the olympiapark.",
+        "de": "eine kurze runde durch den olympiapark.",
+        "tr": "olympiapark'ta kısa bir tur."
+      },
+      "line": {
+        "en": "no open-air events in late october. if the rain pauses, a loop around the olympiasee and the hill is free and quiet.",
+        "de": "ende oktober gibt es kein open air. wenn der regen pausiert, ist eine runde um den olympiasee und den berg gratis und ruhig.",
+        "tr": "ekim sonunda açık hava etkinliği yok. yağmur dinerse olympiasee ve tepe çevresinde bir tur ücretsiz ve sakin."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 14,
+      "minute": 30,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. No open-air event found; just a dry-spell walk."
+    },
+    {
+      "kind": "bike",
+      "title": {
+        "en": "a dry-spell ride along the isar.",
+        "de": "eine fahrt an der isar, wenn es trocken ist.",
+        "tr": "kuru anda isar boyunca bisiklet."
+      },
+      "line": {
+        "en": "the isarradweg is flat and car-free. wear a rain layer and lights, it is dark by five.",
+        "de": "der isarradweg ist flach und autofrei. regenschicht und licht mit, um fünf ist es dunkel.",
+        "tr": "isarradweg düz ve arabasız. yağmurluk ve ışık al, beşte hava kararıyor."
+      },
+      "place": {
+        "en": "isarradweg",
+        "de": "isarradweg",
+        "tr": "isarradweg"
+      },
+      "hour": 14,
+      "minute": 30,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Ride only in a dry spell; sunset about 16:55."
+    },
+    {
+      "kind": "cinema",
+      "title": {
+        "en": "a film at the museum lichtspiele.",
+        "de": "ein film in den museum lichtspielen.",
+        "tr": "museum lichtspiele'de bir film."
+      },
+      "line": {
+        "en": "the old cinema by the isar. pick whatever is on at eight; it is the obvious plan on a grey thursday.",
+        "de": "das alte kino an der isar. nimm, was um acht läuft; an einem grauen donnerstag der naheliegende plan.",
+        "tr": "isar kenarındaki eski sinema. sekizde ne oynuyorsa onu seç; gri bir perşembe için en doğal plan."
+      },
+      "place": {
+        "en": "museum lichtspiele",
+        "de": "museum lichtspiele",
+        "tr": "museum lichtspiele"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Programme for the evening not checked; cinema is the wet-weather plan."
+    },
+    {
+      "kind": "boardgames",
+      "title": {
+        "en": "board games in the maxvorstadt.",
+        "de": "brettspiele in der maxvorstadt.",
+        "tr": "maxvorstadt'ta masa oyunları."
+      },
+      "line": {
+        "en": "a game café with a shelf of hundreds. four players, one long game, one pot of tea.",
+        "de": "ein spielecafé mit hunderten spielen im regal. vier leute, ein langes spiel, eine kanne tee.",
+        "tr": "yüzlerce oyunlu raflı bir oyun kafe. dört kişi, uzun bir oyun, bir demlik çay."
+      },
+      "place": {
+        "en": "spielecafé in der maxvorstadt",
+        "de": "spielecafé in der maxvorstadt",
+        "tr": "spielecafé in der maxvorstadt"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Indoor evening plan."
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "browse the viktualienmarkt.",
+        "de": "bummel über den viktualienmarkt.",
+        "tr": "viktualienmarkt'ta gezinti."
+      },
+      "line": {
+        "en": "no flea market found today, but the viktualienmarkt stalls are open on a thursday morning. cheese, honey, a pretzel, a look around.",
+        "de": "heute kein flohmarkt gefunden, aber die stände am viktualienmarkt haben donnerstagvormittag auf. käse, honig, eine breze, umschauen.",
+        "tr": "bugün bit pazarı bulunamadı ama viktualienmarkt tezgahları perşembe sabahı açık. peynir, bal, bir simit, biraz gezinti."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 10,
+      "minute": 30,
+      "why": "No match or event for Thu 29.10 confirmed (Bayern's next Bundesliga game is Fri–Sun 30.10–01.11; a EuroLeague game in Belgrade was reported for a Thursday but not date-confirmed). No flea market confirmed; market is open Mon–Sat."
+    },
+    {
+      "kind": "skate",
+      "title": {
+        "en": "skate only if it is dry.",
+        "de": "skaten nur, wenn es trocken ist.",
+        "tr": "sadece kuruysa kay."
+      },
+      "line": {
+        "en": "wet concrete is slippery. if the rain stops for an hour, go to a spot you know; otherwise find a covered one.",
+        "de": "nasser beton ist rutschig. wenn der regen eine stunde pausiert, geh zu einem spot, den du kennst; sonst such dir einen überdachten.",
+        "tr": "ıslak beton kaygan. yağmur bir saat dinerse bildiğin bir noktaya git; yoksa çatılı bir yer bul."
+      },
+      "place": {
+        "en": "überdachter spot, selbst gesucht",
+        "de": "überdachter spot, selbst gesucht",
+        "tr": "überdachter spot, selbst gesucht"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Outdoor skating unsafe on wet ground."
+    },
+    {
+      "kind": "cook",
+      "title": {
+        "en": "shop the market, cook together.",
+        "de": "auf dem markt einkaufen, zusammen kochen.",
+        "tr": "pazardan al, birlikte pişir."
+      },
+      "line": {
+        "en": "buy the vegetables at the viktualienmarkt before it closes, then a long pot at home. cold evening, warm kitchen.",
+        "de": "das gemüse am viktualienmarkt kaufen, bevor er schließt, dann ein langer topf zu hause. kalter abend, warme küche.",
+        "tr": "sebzeyi viktualienmarkt kapanmadan al, sonra evde uzun pişen bir tencere. soğuk akşam, sıcak mutfak."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Market stalls close in the afternoon, so shop early."
+    },
+    {
+      "kind": "sauna",
+      "title": {
+        "en": "sauna in erding.",
+        "de": "sauna in erding.",
+        "tr": "erding'de sauna."
+      },
+      "line": {
+        "en": "cold and wet is sauna weather. therme erding is a short s-bahn ride out; go after work and stay till late.",
+        "de": "kalt und nass ist saunawetter. die therme erding ist eine kurze s-bahn-fahrt entfernt; nach der arbeit hin und lange bleiben.",
+        "tr": "soğuk ve ıslak sauna havası. therme erding s-bahn ile kısa bir yol; işten sonra git, geç saate kal."
+      },
+      "place": {
+        "en": "therme erding",
+        "de": "therme erding",
+        "tr": "therme erding"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Opening hours not checked."
+    },
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "a small stage in the maxvorstadt.",
+        "de": "eine kleine bühne in der maxvorstadt.",
+        "tr": "maxvorstadt'ta küçük bir sahne."
+      },
+      "line": {
+        "en": "an open mic is the cheapest night out. bring a song, a poem or only your ears.",
+        "de": "eine open mic ist der günstigste abend. bring ein lied, ein gedicht oder nur deine ohren.",
+        "tr": "open mic en ucuz gece planı. bir şarkı, bir şiir ya da sadece kulaklarını getir."
+      },
+      "place": {
+        "en": "kleine bühne in der maxvorstadt",
+        "de": "kleine bühne in der maxvorstadt",
+        "tr": "kleine bühne in der maxvorstadt"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No match or event for Thu 29.10 confirmed (Bayern's next Bundesliga game is Fri–Sun 30.10–01.11; a EuroLeague game in Belgrade was reported for a Thursday but not date-confirmed). Specific open mic for the date not confirmed."
+    },
+    {
+      "kind": "pingpong",
+      "title": {
+        "en": "table tennis in the glockenbach.",
+        "de": "tischtennis im glockenbach.",
+        "tr": "glockenbach'ta masa tenisi."
+      },
+      "line": {
+        "en": "a bar with a table in the back. winner stays, loser buys the next round.",
+        "de": "eine bar mit platte im hinterzimmer. der sieger bleibt, der verlierer gibt die nächste runde aus.",
+        "tr": "arkada masası olan bir bar. kazanan kalır, kaybeden bir sonraki turu ısmarlar."
+      },
+      "place": {
+        "en": "tischtennis im glockenbach",
+        "de": "tischtennis im glockenbach",
+        "tr": "tischtennis im glockenbach"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Indoor sport."
+    },
+    {
+      "kind": "bouldering",
+      "title": {
+        "en": "boulder indoors tonight.",
+        "de": "heute abend drinnen bouldern.",
+        "tr": "bu akşam kapalı alanda bouldering."
+      },
+      "line": {
+        "en": "wet rock is off, the boulderwelt is dry and warm. an hour of problems, then a drink.",
+        "de": "nasser fels geht nicht, die boulderwelt ist trocken und warm. eine stunde boulder, dann ein getränk.",
+        "tr": "ıslak kaya olmaz, boulderwelt kuru ve sıcak. bir saat problem, sonra bir içki."
+      },
+      "place": {
+        "en": "boulderwelt münchen",
+        "de": "boulderwelt münchen",
+        "tr": "boulderwelt münchen"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Indoor climbing."
+    },
+    {
+      "kind": "picnic",
+      "title": {
+        "en": "a picnic, but indoors.",
+        "de": "ein picknick, aber drinnen.",
+        "tr": "piknik ama içeride."
+      },
+      "line": {
+        "en": "a blanket on the living room floor, bread, cheese, fruit. the park can wait for a dry day.",
+        "de": "eine decke auf dem wohnzimmerboden, brot, käse, obst. der park kann auf einen trockenen tag warten.",
+        "tr": "oturma odası zeminine battaniye, ekmek, peynir, meyve. park kuru bir güne kalsın."
+      },
+      "place": {
+        "en": "bei freunden",
+        "de": "bei freunden",
+        "tr": "bei freunden"
+      },
+      "hour": 13,
+      "minute": 0,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Outdoor picnic moved indoors."
+    },
+    {
+      "kind": "crawl",
+      "title": {
+        "en": "a short bar crawl from the gärtnerplatz.",
+        "de": "eine kurze kneipentour ab gärtnerplatz.",
+        "tr": "gärtnerplatz'tan kısa bir bar turu."
+      },
+      "line": {
+        "en": "three bars within ten minutes of each other. one drink each, stay where it is good. no match to plan around.",
+        "de": "drei bars im zehnminutenradius. je ein getränk, bleib, wo es gut ist. kein spiel, um das man planen muss.",
+        "tr": "birbirine on dakika mesafede üç bar. her birinde bir içki, iyi olanda kal. etrafında plan yapılacak maç yok."
+      },
+      "place": {
+        "en": "gärtnerplatz",
+        "de": "gärtnerplatz",
+        "tr": "gärtnerplatz"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "No match or event for Thu 29.10 confirmed (Bayern's next Bundesliga game is Fri–Sun 30.10–01.11; a EuroLeague game in Belgrade was reported for a Thursday but not date-confirmed). Short indoor-to-indoor crawl."
+    },
+    {
+      "kind": "stars",
+      "title": {
+        "en": "the planetarium instead of the sky.",
+        "de": "planetarium statt himmel.",
+        "tr": "gökyüzü yerine planetaryum."
+      },
+      "line": {
+        "en": "clouds likely, so the sky stays closed. the deutsches museum planetarium brings the stars indoors.",
+        "de": "wahrscheinlich wolken, der himmel bleibt zu. das planetarium im deutschen museum holt die sterne nach drinnen.",
+        "tr": "muhtemelen bulutlu, gökyüzü kapalı. deutsches museum planetaryumu yıldızları içeri getiriyor."
+      },
+      "place": {
+        "en": "deutsches museum planetarium",
+        "de": "deutsches museum planetarium",
+        "tr": "deutsches museum planetarium"
+      },
+      "hour": 21,
+      "minute": 30,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Show times at the planetarium not checked."
+    },
+    {
+      "kind": "football",
+      "title": {
+        "en": "kickabout in a hall.",
+        "de": "kicken in der halle.",
+        "tr": "salonda top peşinde."
+      },
+      "line": {
+        "en": "wet pitches are heavy and dark by five. book a small hall, five a side, one hour.",
+        "de": "nasse plätze sind schwer und um fünf ist es dunkel. eine kleine halle buchen, fünf gegen fünf, eine stunde.",
+        "tr": "ıslak sahalar ağır ve beşte hava karanlık. küçük bir salon tut, beşe beş, bir saat."
+      },
+      "place": {
+        "en": "kleine halle, selbst gebucht",
+        "de": "kleine halle, selbst gebucht",
+        "tr": "kleine halle, selbst gebucht"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. No match or event for Thu 29.10 confirmed (Bayern's next Bundesliga game is Fri–Sun 30.10–01.11; a EuroLeague game in Belgrade was reported for a Thursday but not date-confirmed). "
+    },
+    {
+      "kind": "tram",
+      "title": {
+        "en": "ride the 19 end to end.",
+        "de": "mit der 19 von ende zu ende.",
+        "tr": "19 numaralı tramvayla uçtan uca."
+      },
+      "line": {
+        "en": "a warm seat, the lit-up maximilianstrasse and the isar bridges. no destination needed.",
+        "de": "ein warmer sitzplatz, die beleuchtete maximilianstraße und die isarbrücken. kein ziel nötig.",
+        "tr": "sıcak bir koltuk, ışıklı maximilianstrasse ve isar köprüleri. varış noktası gerekmez."
+      },
+      "place": {
+        "en": "tram 19",
+        "de": "tram 19",
+        "tr": "tram 19"
+      },
+      "hour": 17,
+      "minute": 30,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Warm weather-proof ride."
+    },
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "a late set at the unterfahrt.",
+        "de": "ein später set in der unterfahrt.",
+        "tr": "unterfahrt'ta geç bir set."
+      },
+      "line": {
+        "en": "munich's jazz club in haidhausen. check tonight's band on the door, the late set starts after half past eight.",
+        "de": "münchens jazzclub in haidhausen. die band von heute abend an der tür nachsehen, der späte set beginnt nach halb neun.",
+        "tr": "münih'in haidhausen'daki caz kulübü. bu akşamki grubu kapıda öğren, geç set sekiz buçuktan sonra başlar."
+      },
+      "place": {
+        "en": "unterfahrt",
+        "de": "unterfahrt",
+        "tr": "unterfahrt"
+      },
+      "hour": 20,
+      "minute": 30,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Tonight's programme not checked."
+    },
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a walk to the friedensengel.",
+        "de": "ein spaziergang zum friedensengel.",
+        "tr": "friedensengel'e yürüyüş."
+      },
+      "line": {
+        "en": "sunset is about 16:55. walk the isar to the golden angel at the prinzregentenstrasse as the lamps come on.",
+        "de": "sonnenuntergang gegen 16:55. an der isar zum goldenen engel an der prinzregentenstraße, wenn die lampen angehen.",
+        "tr": "gün batımı 16:55 civarı. lambalar yanarken isar boyunca prinzregentenstrasse'deki altın meleğe yürü."
+      },
+      "place": {
+        "en": "friedensengel",
+        "de": "friedensengel",
+        "tr": "friedensengel"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "No confirmed forecast found for Thu 29.10 (wetter.com showed rain and 9–12°C for Wed 28.10, sunset about 16:56); kept cool and wet-weather safe. Short walk, ends at dusk."
+    }
+  ]
+}
