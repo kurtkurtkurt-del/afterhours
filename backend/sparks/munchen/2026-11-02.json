@@ -1,0 +1,27 @@
+{
+  "city": "munchen",
+  "day": "2026-11-02",
+  "sparks": [
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "açık mikrofon, an open mic in turkish.",
+        "de": "açık mikrofon, ein open mic auf türkisch.",
+        "tr": "açık mikrofon, türkçe açık mikrofon."
+      },
+      "line": {
+        "en": "a monday open mic in turkish at senatore, 19:30. a low-key start to the week, for listeners and first-timers alike.",
+        "de": "ein open mic am montag auf türkisch im senatore, 19:30. ein ruhiger wochenstart, für zuhörer und erstmalige teilnehmer.",
+        "tr": "pazartesi günü senatore'da türkçe açık mikrofon, 19:30. sakin bir hafta başlangıcı, dinleyiciler ve ilk kez çıkacaklar için."
+      },
+      "place": {
+        "en": "senatore",
+        "de": "senatore",
+        "tr": "senatore"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Açık Mikrofon (Kurulu Düzen Open Mic) at Senatore, Mon 02.11.2026 19:30, per a Porsuk Event listing on in-muenchen.de (found in search). The venue was not checked separately."
+    }
+  ]
+}

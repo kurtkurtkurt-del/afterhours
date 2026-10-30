@@ -1,0 +1,27 @@
+{
+  "city": "munchen",
+  "day": "2026-11-01",
+  "sparks": [
+    {
+      "kind": "derby",
+      "title": {
+        "en": "red bull münchen – nürnberg, the derby.",
+        "de": "red bull münchen – nürnberg, das derby.",
+        "tr": "red bull münchen – nürnberg, derbi."
+      },
+      "line": {
+        "en": "the nürnberg ice tigers come to sap garden for a sunday afternoon derby, puck drop 16:30. come by 16:00.",
+        "de": "die nürnberg ice tigers kommen am sonntagnachmittag ins sap garden, anpfiff 16:30. um 16:00 da sein.",
+        "tr": "nürnberg ice tigers pazar öğleden sonra sap garden'a geliyor, buz hokeyi başlangıcı 16:30. 16:00'da orada ol."
+      },
+      "place": {
+        "en": "sap garden",
+        "de": "sap garden",
+        "tr": "sap garden"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "EHC Red Bull München vs Nürnberg Ice Tigers, Sun 1.11 at SAP Garden, 16:30 per the in-muenchen.de event listing; the club's 2026/27 schedule gives 4:30 pm (redbullmuenchen.de, found in search; the page could not be opened). Sunday is All Saints' Day (Allerheiligen), a Bavarian public holiday."
+    }
+  ]
+}

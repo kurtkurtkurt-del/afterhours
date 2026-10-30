@@ -1,0 +1,27 @@
+{
+  "city": "munchen",
+  "day": "2026-11-06",
+  "sparks": [
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "comedy open mic, lucky punch.",
+        "de": "comedy open mic, lucky punch.",
+        "tr": "comedy açık mikrofon, lucky punch."
+      },
+      "line": {
+        "en": "a friday open mic for stand-up at the hoftheater in sendling, 18:00. one hour without a break; tickets online only, no box office on the night.",
+        "de": "ein freitägliches stand-up-open-mic im hoftheater in sendling, 18:00. eine stunde ohne pause; tickets nur online, keine abendkasse.",
+        "tr": "cuma günü sendling'deki hoftheater'da stand-up açık mikrofonu, 18:00. ara vermeden bir saat; biletler yalnızca online, o gün gişe yok."
+      },
+      "place": {
+        "en": "hoftheater",
+        "de": "hoftheater",
+        "tr": "hoftheater"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "LUCKY PUNCH Comedy Open Mic at the Hoftheater (Sendling), Fri 6.11.2026 18:00, per mvp.de and regioactive.de listings (tickets from 9.90 euros)."
+    }
+  ]
+}
