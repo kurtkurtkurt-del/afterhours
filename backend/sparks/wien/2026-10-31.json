@@ -1,0 +1,22 @@
+{
+  "city": "wien",
+  "day": "2026-10-31",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "halloween horror night at the klyo.", "de": "halloween horror night im klyo.", "tr": "klyo'da halloween horror night." },
+      "line": { "en": "halloween horror night at klyo, uraniastraße 1, from 17:30: a haunted house on the roof, a spooky dinner, a horror film at the urania, then the party. costumes asked for.", "de": "halloween horror night im klyo, uraniastraße 1, ab 17:30: geisterhaus auf dem dach, ein gruseliges dinner, ein horrorfilm im urania, danach die party. kostüm erwünscht.", "tr": "klyo'da halloween horror night, uraniastraße 1, 17:30'dan itibaren: çatıda hayalet evi, ürkütücü bir akşam yemeği, urania'da korku filmi, ardından parti. kostüm istenir." },
+      "place": { "en": "klyo wien", "de": "klyo wien", "tr": "klyo wien" },
+      "hour": 17, "minute": 30,
+      "why": "Halloween Horror Night 2026 at KLYO Wien, sat 31.10 from 17:30, per the City of Vienna event listing (https://www.wien.gv.at/veranstaltungen/halloween-horror-night-2026)."
+    },
+    {
+      "kind": "flea",
+      "title": { "en": "flea market at the naschmarkt.", "de": "flohmarkt am naschmarkt.", "tr": "naschmarkt'ta flohmarkt." },
+      "line": { "en": "the saturday flea market on linke wienzeile by kettenbrückengasse, 06:30 to 15:00. come early for the good things.", "de": "der samstagsflohmarkt an der linken wienzeile bei der kettenbrückengasse, 06:30 bis 15:00. früh kommen lohnt sich.", "tr": "linke wienzeile'da, kettenbrückengasse yakınında cumartesi pazarı, 06:30 ile 15:00 arası. iyi parçalar için erken gel." },
+      "place": { "en": "naschmarkt", "de": "naschmarkt", "tr": "naschmarkt" },
+      "hour": 6, "minute": 30,
+      "why": "Naschmarkt flea market, every Saturday 06:30 to 15:00 on Linke Wienzeile, per ganz-wien.at (https://www.ganz-wien.at/wien/maerkte/flohmarkt-am-naschmarkt.html) and the City of Vienna market listing (https://www.wien.gv.at/freizeit/einkaufen/maerkte/flohmarkt/)."
+    }
+  ]
+}

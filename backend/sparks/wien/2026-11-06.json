@@ -1,0 +1,27 @@
+{
+  "city": "wien",
+  "day": "2026-11-06",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": {
+        "en": "rapid – wolfsberg at the allianz stadion.",
+        "de": "rapid – wolfsberg im allianz stadion.",
+        "tr": "allianz stadion'da rapid – wolfsberg."
+      },
+      "line": {
+        "en": "rapid at home to wolfsberger ac, friday 19:30. the listings disagree on whether tickets are sold out, so check the club site. a bar with a screen is the easy option.",
+        "de": "rapid empfängt am freitag um 19:30 den wolfsberger ac. die angaben zu tickets widersprechen sich, daher auf der vereinsseite prüfen. eine bar mit leinwand ist die einfache wahl.",
+        "tr": "rapid cuma günü 19:30'da evinde wolfsberger ac'yi ağırlıyor. biletlerin tükenip tükenmediği konusunda kaynaklar çelişiyor, kulübün sitesine bak. ekranlı bir bar kolay seçenek."
+      },
+      "place": {
+        "en": "allianz stadion",
+        "de": "allianz stadion",
+        "tr": "allianz stadion"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Rapid vs Wolfsberger AC, home bundesliga match fri 06.11 at 19:30 local, per FootballTicketNet (https://www.footballticketnet.com/austrian-football-bundesliga/rapid-vienna-vs-wolfsberger-ac-allianz-stadion-football-tickets/event/130014) and Starting11 (https://starting11.com/fixtures/rapid-vienna-vs-wolfsberger-ac)."
+    }
+  ]
+}

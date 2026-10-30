@@ -1,0 +1,14 @@
+{
+  "city": "wien",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "flea market at the naschmarkt.", "de": "flohmarkt am naschmarkt.", "tr": "naschmarkt'ta flohmarkt." },
+      "line": { "en": "the saturday flea market on linke wienzeile by kettenbrückengasse, 06:30 to 15:00. come early for the good things.", "de": "der samstagsflohmarkt an der linken wienzeile bei der kettenbrückengasse, 06:30 bis 15:00. früh kommen lohnt sich.", "tr": "linke wienzeile'da, kettenbrückengasse yakınında cumartesi pazarı, 06:30 ile 15:00 arası. iyi parçalar için erken gel." },
+      "place": { "en": "naschmarkt", "de": "naschmarkt", "tr": "naschmarkt" },
+      "hour": 6, "minute": 30,
+      "why": "Naschmarkt flea market, every Saturday 06:30 to 15:00 on Linke Wienzeile, per ganz-wien.at (https://www.ganz-wien.at/wien/maerkte/flohmarkt-am-naschmarkt.html) and the City of Vienna market listing (https://www.wien.gv.at/freizeit/einkaufen/maerkte/flohmarkt/)."
+    }
+  ]
+}
