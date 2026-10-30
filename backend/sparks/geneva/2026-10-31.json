@@ -1,0 +1,14 @@
+{
+  "city": "geneva",
+  "day": "2026-10-31",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "megalloween at palexpo.", "de": "megalloween im palexpo.", "tr": "palexpo'da megalloween." },
+      "line": { "en": "megalloween runs from 20:00 to 06:00 at palexpo, 18 and over. the organisers ask for costumes; the first price band is chf 36.", "de": "die megalloween läuft im palexpo von 20:00 bis 06:00, ab 18 jahren. die veranstalter wünschen kostüme; die erste preisstufe liegt bei chf 36.", "tr": "megalloween palexpo'da 20:00'den 06:00'ya kadar, 18 yaş ve üstü. organizatörler kostüm istiyor; ilk fiyat kademesi 36 chf." },
+      "place": { "en": "palexpo", "de": "palexpo", "tr": "palexpo" },
+      "hour": 20, "minute": 0,
+      "why": "Megalloween by Festival du Soir at Palexpo, Sat 31.10, 20:00 to 06:00, 18+, per the City of Geneva agenda (https://www.geneve.ch/agenda/megalloween-festival-soir)."
+    }
+  ]
+}

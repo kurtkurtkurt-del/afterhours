@@ -1,0 +1,14 @@
+{
+  "city": "geneva",
+  "day": "2026-11-02",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "louis matute large ensemble at the alhambra.", "de": "louis matute large ensemble im alhambra.", "tr": "alhambra'da louis matute large ensemble." },
+      "line": { "en": "louis matute's large ensemble with joyce moreno and frederico heliodoro, a monday concert at the alhambra listed from 20:00. the ensemble's set is listed at 21:20. check prices with the venue.", "de": "louis matutes large ensemble mit joyce moreno und frederico heliodoro, ein montagskonzert im alhambra, angegeben ab 20:00. das set des ensembles ist um 21:20 angesetzt. preise beim veranstalter prüfen.", "tr": "louis matute'un large ensemble'ı joyce moreno ve frederico heliodoro ile; alhambra'da pazartesi konseri, 20:00'den itibaren ilan edilmiş. ensemble'ın seti 21:20'de. fiyatları mekândan kontrol et." },
+      "place": { "en": "alhambra", "de": "alhambra", "tr": "alhambra" },
+      "hour": 20, "minute": 0,
+      "why": "Louis Matute Large Ensemble feat. Joyce Moreno + Frederico Heliodoro at the Alhambra, Mon 2.11.2026 from 20:00 (https://unidivers.fr/event/louis-matute-large-ensemble-feat-joyce-moreno-frederico-heliodoro-alhambra-geneve-2026-11-02t2000000100/); 21:20 set time from guidle.com."
+    }
+  ]
+}

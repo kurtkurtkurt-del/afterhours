@@ -1,0 +1,14 @@
+{
+  "city": "geneva",
+  "day": "2026-11-01",
+  "sparks": [
+    {
+      "kind": "sunrise",
+      "title": { "en": "sunrise at 07:16, sunday.", "de": "sonnenaufgang um 07:16, sonntag.", "tr": "güneş 07:16'da doğuyor, pazar." },
+      "line": { "en": "the sun is up over geneva at 07:16 and goes down at 17:21. meet at the lake before it rises and bring something warm to drink.", "de": "die sonne geht in genf um 07:16 auf und um 17:21 unter. treffen am see vor dem aufgang, und etwas warmes zum trinken mitnehmen.", "tr": "cenevre'de güneş 07:16'da doğuyor, 17:21'de batıyor. güneş doğmadan gölde buluş ve sıcak bir şey iç." },
+      "place": { "en": "lac léman", "de": "lac léman", "tr": "lac léman" },
+      "hour": 7, "minute": 16,
+      "why": "Sunrise 07:16 and sunset 17:21 for Geneva on Sun 1.11, per astrobro.com (https://astrobro.com/lever-coucher/geneve)."
+    }
+  ]
+}
