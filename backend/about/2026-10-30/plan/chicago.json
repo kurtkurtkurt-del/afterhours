@@ -1,0 +1,86 @@
+{
+ "city": "chicago",
+ "day": "2026-10-30",
+ "nights": [
+  {
+   "id": "e78293cb-d651-4a5f-84a8-421f139e8e70",
+   "slug": "periphery-a-pale-white-dot-us-tour-41f0b105",
+   "title": "Periphery - A Pale White Dot US Tour",
+   "act": "Periphery",
+   "name": "Periphery",
+   "description": "American progressive metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Periphery_(band)",
+   "extract": "Periphery is an American progressive metal band that was formed in Washington, D.C., in 2005. Their musical style has been described as progressive metal, djent, and progressive metalcore. They are considered one of the pioneers of the djent movement within progressive metal. They have also received a Grammy nomination. The band consists of vocalist Spencer Sotelo, guitarists Misha Mansoor, Mark Holcomb, Jake Bowen, and drummer Matt Halpern."
+  },
+  {
+   "id": "df2c7bd5-9b96-4711-959c-4b1b19b885f5",
+   "slug": "8turn-1bdf63a2",
+   "title": "8TURN",
+   "act": "8TURN",
+   "name": "8Turn",
+   "description": "South Korean boy band",
+   "source_url": "https://en.wikipedia.org/wiki/8Turn",
+   "extract": "8Turn is a South Korean boy band formed by MNH Entertainment. The group consists of eight members: Myungho, Jaeyun, Minho, Yoonsung, Haemin, Kyungmin, Yungyu, and Seungheon. They debuted on January 30, 2023, with the extended play (EP) 8Turnrise."
+  },
+  {
+   "id": "9dccaa1f-4031-4a3e-bfbb-4636f0a3ff9d",
+   "slug": "the-living-tombstone-the-multiplayer-tour-572faf5d",
+   "title": "The Living Tombstone - The Multiplayer Tour",
+   "act": "The Living Tombstone",
+   "name": "The Living Tombstone",
+   "description": "American rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_Living_Tombstone",
+   "extract": "The Living Tombstone (TLT) is an Israeli-American electronic rock group and YouTube channel, founded as a solo project by Israeli-American producer Yoav Landau in 2011, and becoming a musical duo with American singer Sam Haft in 2016. The group is notable for their songs based on video games and pop culture media, such as the My Little Pony, Five Nights at Freddy's, and Overwatch series as well as original music. Signed to Warner Music, they have released two studio albums, Zero One (2020) and Rust (2025)."
+  },
+  {
+   "id": "29172af3-54b3-4877-bb87-4757d134208d",
+   "slug": "lilyisthatyou-6532643b",
+   "title": "lilyisthatyou",
+   "act": "lilyisthatyou",
+   "name": "Lilyisthatyou",
+   "description": "Canadian pop musician",
+   "source_url": "https://en.wikipedia.org/wiki/Lilyisthatyou",
+   "extract": "Lillian Davies, known professionally as Lilyisthatyou is a singer songwriter from Toronto, Canada. She best known for her breakthrough debut single \"FMRN\" in 2022, which went viral on TikTok. She released her debut EP, The Character in 2022 and has since went on to release 5 more EPs with From The Garden I Grew being her most recent release as of August 2026."
+  },
+  {
+   "id": "e6b19db5-281b-4709-a806-244ae2e90e77",
+   "slug": "dumpstaphunk-2934f924",
+   "title": "Dumpstaphunk",
+   "act": "Dumpstaphunk",
+   "name": "Dumpstaphunk",
+   "description": "American funk and jam band",
+   "source_url": "https://en.wikipedia.org/wiki/Dumpstaphunk",
+   "extract": "Dumpstaphunk is a funk and jam band from New Orleans, Louisiana, United States."
+  },
+  {
+   "id": "c009ab16-792b-49c9-9385-705f0cbabdc5",
+   "slug": "geese-getting-killed-again-tour-ce2be6a0",
+   "title": "Geese - Getting Killed Again Tour",
+   "act": "Geese",
+   "name": "Geese",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Geese_(band)",
+   "extract": "Geese is an American rock band from New York City that formed in 2016. It comprises lead vocalist and guitarist-keyboardist Cameron Winter, guitarist Emily Green, bassist Dominic DiGesu and drummer Max Bassin as of 2024. Guitarist Foster Hudson was a member of the group from 2019 until 2023. During live performances, the band is joined by keyboardist Sam Revaz."
+  },
+  {
+   "id": "f28088a2-7455-4208-a7ab-ad7832d19c41",
+   "slug": "rod-wave-don-t-look-down-tour-90456479",
+   "title": "Rod Wave: Don't Look Down Tour",
+   "act": "Rod Wave",
+   "name": "Rod Wave",
+   "description": "American rapper and singer (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Rod_Wave",
+   "extract": "Rodarius Marcell Green, known professionally as Rod Wave, is an American rapper, singer, and songwriter. Signed to Alamo Records, Green is known for his strong voice and incorporation of hip hop and R&B, having been recognized as a pioneer of \"trap-soul.\" Green rose to prominence with his 2019 single \"Heart on Ice,\" which first went viral on TikTok before peaking at number 25 on the Billboard Hot 100. The song preceded his debut studio album, Ghetto Gospel (2019), which peaked at number ten on the US Billboard 200. His second album, Pray 4 Love (2020), peaked at number two on the chart and included the song \"Rags2Riches\", which peaked at number 12 on the Billboard Hot 100."
+  },
+  {
+   "id": "9a7abfc0-10bc-4db6-afff-6395ec9e33d6",
+   "slug": "lilyisthatyou-the-flowers-have-feelings-tour-1255b74b",
+   "title": "Lilyisthatyou - The Flowers Have Feelings Tour",
+   "act": "Lilyisthatyou",
+   "name": "Lilyisthatyou",
+   "description": "Canadian pop musician",
+   "source_url": "https://en.wikipedia.org/wiki/Lilyisthatyou",
+   "extract": "Lillian Davies, known professionally as Lilyisthatyou is a singer songwriter from Toronto, Canada. She best known for her breakthrough debut single \"FMRN\" in 2022, which went viral on TikTok. She released her debut EP, The Character in 2022 and has since went on to release 5 more EPs with From The Garden I Grew being her most recent release as of August 2026."
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "city": "dusseldorf",
+ "day": "2026-10-30",
+ "nights": [
+  {
+   "id": "5a8eb9a8-9201-418f-afa7-25446aaec44c",
+   "slug": "beabadoobee-the-powerlines-tour-d556a553",
+   "title": "beabadoobee: The Powerlines Tour",
+   "act": "beabadoobee",
+   "name": "Beabadoobee",
+   "description": "Filipino and British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Beabadoobee",
+   "extract": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021, she released five extended plays (EPs) under the independent label Dirty Hit: Lice (2018), Patched Up (2018), Loveworm (2019), Space Cadet (2019) and Our Extended Play (2021). Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim. Her second studio album, Beatopia, was released on July 2022, and spawned the hit \"The Perfect Pair\". Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart. In September 2026, her fourth studio album, Pylon, topped the British and Australian charts."
+  },
+  {
+   "id": "3de9a594-3657-4ad1-bcf6-542223b1d9c5",
+   "slug": "loreena-mckennitt-the-mask-and-mirror-30th-anniv-0b3e5976",
+   "title": "Loreena McKennitt: The Mask and Mirror - 30th Anniversary Tour",
+   "act": "Loreena McKennitt",
+   "name": "Loreena McKennitt",
+   "description": "Canadian musician (born 1957)",
+   "source_url": "https://en.wikipedia.org/wiki/Loreena_McKennitt",
+   "extract": "Loreena McKennitt is a Canadian singer-songwriter, multi-instrumentalist, and composer who writes, records, and performs world music with Celtic and Middle Eastern influences. McKennitt is known for her refined and clear soprano vocals. She has sold more than 16 million records worldwide."
+  },
+  {
+   "id": "fbaaadbd-95d3-4b5a-bd37-b21597192008",
+   "slug": "megadeth-breakout-hibernation-of-the-nations-eur-1128e2a9",
+   "title": "Megadeth - Breakout: Hibernation Of The Nations Europe Tour 2027",
+   "act": "Megadeth",
+   "name": "Megadeth",
+   "description": "American heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Megadeth",
+   "extract": "Megadeth is an American heavy metal band formed in Los Angeles in 1983 by vocalist and guitarist Dave Mustaine. Known for their technically complex guitar work and musicianship, Megadeth is one of the \"big four\" of American thrash metal—along with Slayer, Anthrax, and Metallica—and is credited with helping to develop and popularize the genre. Their music features intricate arrangements, fast rhythm sections, dual lead guitars, and lyrical themes such as war, conflicts, politics, religion, death, and personal relationships."
+  },
+  {
+   "id": "bac3b4a4-15e1-4db5-8e78-9ee844adcfaf",
+   "slug": "jorja-smith-10-years-of-jorja-smith-dd35fee8",
+   "title": "Jorja Smith - 10 Years of Jorja Smith",
+   "act": "Jorja Smith",
+   "name": "Jorja Smith",
+   "description": "British singer and songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Jorja_Smith",
+   "extract": "Jorja Alice Smith is an English singer and songwriter. Born and raised in Walsall, West Midlands, she has been writing songs since the age of 11. In 2012, Smith's friend uploaded her cover of Labrinth's \"Earthquake\" to YouTube, which led to her discovery by record producer Guy Moot. After her first two singles received broader recognition, she signed with Sony/ATV in early 2016, releasing two EPs throughout later that year and into 2017."
+  },
+  {
+   "id": "75c8eced-9ede-4efe-be9a-7e739129f28b",
+   "slug": "rod-stewart-the-final-encore-024c31c5",
+   "title": "Rod Stewart - \"The Final Encore\"",
+   "act": "Rod Stewart",
+   "name": "Rod Stewart",
+   "description": "British singer-songwriter (born 1945)",
+   "source_url": "https://en.wikipedia.org/wiki/Rod_Stewart",
+   "extract": "Sir Roderick David Stewart is a British singer and songwriter. Known for his distinctive raspy singing voice, Stewart is among the best-selling music artists of all time, having sold more than 120 million records worldwide. His music career began in 1962 when he took up busking with a harmonica. He was a member of various bands before joining the Jeff Beck Group in 1967. Joining Faces in 1969, he also launched a solo career, releasing his debut album, An Old Raincoat Won't Ever Let You Down, that year. Stewart's early albums were a fusion of rock, folk music, soul music, and R&B. His third album, 1971's Every Picture Tells a Story, was his breakthrough, topping the charts in the UK, US, Canada and Australia, as did its single \"Maggie May\". His 1972 follow-up album, Never a Dull Moment, also reached number one in the UK and Australia, while going top three in the US and Canada. Its single, \"You Wear It Well\", topped the UK chart and was a moderate hit elsewhere."
+  },
+  {
+   "id": "b2542b49-881a-445e-a1cd-8111ec865602",
+   "slug": "karol-g-viajando-por-el-mundo-tropitour-7d1dcd41",
+   "title": "KAROL G - VIAJANDO POR EL MUNDO TROPITOUR",
+   "act": "KAROL G",
+   "name": "Karol G",
+   "description": "Colombian singer-songwriter (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Karol_G",
+   "extract": "Carolina Giraldo Navarro, known professionally as Karol G, is a Colombian singer-songwriter. She is considered one of the most influential reggaeton and urban pop artists. Her accolades include a Grammy Award, eight Latin Grammy Awards and five Billboard Music Awards. She was recognised as Woman of the Year and received the Rulebreaker Award at the Billboard Women in Music Awards 2024 ceremony, and has also achieved eleven Guinness World Records."
+  }
+ ]
+}

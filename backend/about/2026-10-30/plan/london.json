@@ -1,0 +1,76 @@
+{
+ "city": "london",
+ "day": "2026-10-30",
+ "nights": [
+  {
+   "id": "53fc685f-8475-442d-9a49-5456c31f7f43",
+   "slug": "basht-0eb60460",
+   "title": "Basht.",
+   "act": "Basht.",
+   "name": "Basht.",
+   "description": "Irish post-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Basht.",
+   "extract": "Basht. [sic] are an Irish post-punk and alternative rock band formed in Dublin in 2021. The band consists of Jack Leavey, Lughaidh Armstrong-Mayock, Louis Christle (bass) and Ryan McClelland (drums)."
+  },
+  {
+   "id": "54f6168e-fc15-4c97-b78c-d752aba7cc3c",
+   "slug": "chloe-qisha-5302bbdf",
+   "title": "Chloe Qisha",
+   "act": "Chloe Qisha",
+   "name": "Chloe Qisha",
+   "description": "Malaysian-born musician",
+   "source_url": "https://en.wikipedia.org/wiki/Chloe_Qisha",
+   "extract": "Chloe Qi Sha Lim, known professionally as Chloe Qisha, is a Malaysian-born singer based in London. She was included in the BBC's Sound of 2026 shortlist."
+  },
+  {
+   "id": "a7e1d103-188f-4341-ac8c-39c612354687",
+   "slug": "javiera-mena-cf47f4b4",
+   "title": "Javiera Mena",
+   "act": "Javiera Mena",
+   "name": "Javiera Mena",
+   "description": "Chilean musician (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Javiera_Mena",
+   "extract": "Javiera Alejandra Mena Carrasco is a Chilean singer, songwriter, musician, and record producer based in Madrid, Spain. She started her musical career in the Chilean indie music scene in 2001 and achieved wider success after the release of her debut studio album Esquemas Juveniles (2006). Her musical style tends to be synthesizer-based, although in her career beginnings she made acoustic-oriented songs, accompanied solely by guitar."
+  },
+  {
+   "id": "8f5f2a91-e674-4ee2-89d4-839529542622",
+   "slug": "marina-sena-620ffb8c",
+   "title": "Marina Sena",
+   "act": "Marina Sena",
+   "name": "Marina Sena",
+   "description": "Brazilian singer-songwriter (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Marina_Sena",
+   "extract": "Marina de Oliveira Sena, known professionally as Marina Sena, is a Brazilian singer, songwriter, and record producer."
+  },
+  {
+   "id": "5918e6fc-1f00-437e-bbf7-a703d67ed9b7",
+   "slug": "laura-mvula-8983ca24",
+   "title": "Laura Mvula",
+   "act": "Laura Mvula",
+   "name": "Laura Mvula",
+   "description": "English singer (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/Laura_Mvula",
+   "extract": "Laura Mvula is a British singer. A native of Birmingham, England, Mvula gained experience as a member or leader of a cappella, jazz/neo-soul and gospel groups and choirs. She was classically trained. In 2012, she signed with RCA Records and released an extended play, She, to critical acclaim."
+  },
+  {
+   "id": "397dd051-f68e-4ee1-ad06-26b8f1ed19b7",
+   "slug": "the-wedding-present-70844fc3",
+   "title": "The Wedding Present",
+   "act": "The Wedding Present",
+   "name": "The Wedding Present",
+   "description": "British indie band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Wedding_Present",
+   "extract": "The Wedding Present are an English indie rock group formed in 1985 in Leeds, England, by members of the Lost Pandas. The band has been led by vocalist and guitarist David Gedge, the band's only constant member."
+  },
+  {
+   "id": "9b8ab3e9-6f24-4913-ab2a-7852caf4b00d",
+   "slug": "mavo-e2ddf19d",
+   "title": "Mavo",
+   "act": "Mavo",
+   "name": "Mavo",
+   "description": "Nigerian singer (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Mavo_(musician)",
+   "extract": "Oseremen Marvin Ukanigbe, known professionally as Mavo, is a Nigerian singer-songwriter. He rose to popularity in 2025 with the release of the single \"Escaladizzy\", followed by \"Shakabulizzy\", \"Money Constant\" with fellow singer Wizkid, and \"Body (Danz)\" with CKay, the latter of which became his first number-one song in Nigeria."
+  }
+ ]
+}

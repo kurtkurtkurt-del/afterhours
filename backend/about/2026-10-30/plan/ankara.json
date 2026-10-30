@@ -1,0 +1,126 @@
+{
+ "city": "ankara",
+ "day": "2026-10-30",
+ "nights": [
+  {
+   "id": "7574353d-70a6-411a-aa93-57a60b610f4e",
+   "slug": "midlake-8402d514",
+   "title": "Midlake",
+   "act": "Midlake",
+   "name": "Midlake",
+   "description": "American folk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Midlake",
+   "extract": "Midlake is an American folk rock band from Denton, Texas, formed in 1999. The band consists of Eric Pulido, McKenzie Smith (drums), Eric Nichelson, Jesse Chandler, Joey McClellan and Scott Lee (bass)."
+  },
+  {
+   "id": "c52ba956-71e4-433b-9068-c4e58cc1a4f2",
+   "slug": "batu-akdeniz-f7b7d00f",
+   "title": "Batu Akdeniz",
+   "act": "Batu Akdeniz",
+   "name": "Batu Akdeniz",
+   "description": "Turkish rock musician",
+   "source_url": "https://en.wikipedia.org/wiki/Batu_Akdeniz",
+   "extract": "Batu Akdeniz is a Turkish rock musician. He is known for both his solo works and his collaborations with the Heavy Sky band."
+  },
+  {
+   "id": "7a51fdac-9b88-4aeb-98df-ab1bbb36ece8",
+   "slug": "manus-baba-c7b0b9d3",
+   "title": "Manuş Baba",
+   "act": "Manuş Baba",
+   "name": "Manuş Baba",
+   "description": "Turkish singer (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/Manu%C5%9F_Baba",
+   "extract": "Mustafa Özkan, better known by his stage name Manuş Baba, is a Turkish pop and arabesque singer. He studied at the Tarsus Turgut İçgören primary school in Tarsus. His family later moved from Diyarbakir to Antalya, due to his father's job as a seasonal worker in Antalya. He studied at Antalya Gazi High School and Akdeniz University. He started his music career with his band Güneşe Yolculuk in 2010. He also has had a number of hit albums in Turkey, including Bu Havada Gidilmez, Dönersen Islık Çal and İki Gözümün Çiçeği."
+  },
+  {
+   "id": "f76cf331-a967-43df-9ebd-026dd74dc929",
+   "slug": "emre-ayd-n-f8d5b60c",
+   "title": "Emre Aydın",
+   "act": "Emre Aydın",
+   "name": "Emre Aydın",
+   "description": "Turkish rock singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Emre_Ayd%C4%B1n",
+   "extract": "Emre Aydın is a Turkish rock singer-songwriter. The singer won the MTV Europe Music Awards 2008 in the \"Europe's Favourite Act\" category. He is also the former lead singer for the Turkish rock band 6. Cadde."
+  },
+  {
+   "id": "aad47f7f-fe76-46b6-bf8c-a13f6e1cc98e",
+   "slug": "murat-boz-7aa14f8e",
+   "title": "Murat Boz",
+   "act": "Murat Boz",
+   "name": "Murat Boz",
+   "description": "Turkish singer-songwriter and actor (born 1980)",
+   "source_url": "https://en.wikipedia.org/wiki/Murat_Boz",
+   "extract": "Murat Boz is a Turkish singer, songwriter and actor."
+  },
+  {
+   "id": "29226d15-be58-40b0-a406-bdbcd850d712",
+   "slug": "can-bonomo-69dfa096",
+   "title": "Can Bonomo",
+   "act": "Can Bonomo",
+   "name": "Can Bonomo",
+   "description": "Turkish singer (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Can_Bonomo",
+   "extract": "Can Bonomo is a Turkish singer who represented Turkey in the Eurovision Song Contest 2012 in Baku, Azerbaijan."
+  },
+  {
+   "id": "719e9d4d-6153-4994-9bf4-0543e087d194",
+   "slug": "simge-2d6028c3",
+   "title": "Simge",
+   "act": "Simge",
+   "name": "Simge",
+   "description": "Turkish singer, songwriter and composer (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/Simge_(singer)",
+   "extract": "Simge Sağın, known mononymously as Simge, is a Turkish singer. From early 2010s, she started to make Turkish pop songs, and with the release of her single \"Miş Miş\" in 2015 she became one of the most famous artists in Turkey."
+  },
+  {
+   "id": "ef9386a3-5425-416e-b786-6e179fafce64",
+   "slug": "candan-ercetin-dogu-bat-senfonisi-rengahenk-kons-c1a4d222",
+   "title": "Candan Erçetin - Doğu Batı Senfonisi - Rengahenk Konser",
+   "act": "Candan Erçetin",
+   "name": "Candan Erçetin",
+   "description": "Turkish singer-songwriter (born 1963)",
+   "source_url": "https://en.wikipedia.org/wiki/Candan_Er%C3%A7etin",
+   "extract": "Candan Erçetin is a Turkish singer-songwriter. Over the twenty five years of her singing career, she has been recognized for preparing and singing songs about human life. Despite the fact that she made her albums without much publicity, her work influenced other artists. Erçetin has released many music videos with different themes. Because her family originate from the Balkans, she has often used elements of Balkan music in her songs and works. In addition to Turkish, she has written songs in French and Greek."
+  },
+  {
+   "id": "7de51106-d925-4138-aa4a-9f4a48792f27",
+   "slug": "yeni-turku-74142a18",
+   "title": "Yeni Türkü",
+   "act": "Yeni Türkü",
+   "name": "Yeni Türkü",
+   "description": "Turkish band",
+   "source_url": "https://en.wikipedia.org/wiki/Yeni_T%C3%BCrk%C3%BC",
+   "extract": "Yeni Türkü is a Turkish band. The group has held concerts and has recorded a number of albums since forming in 1978. Their musical style is characterized by a combination of traditional Turkish and modern musical instruments, including the oud, baglama, kemenche, qanun and guitar. Their music reflects influences of music from around the world. All group members have changed several times throughout the years, with the exception of the lead singer Derya Köroğlu. After the coup of September 12, 1980, the album Buğdayın Türküsü, composed of poems by names such as Nazım Hikmet, was banned. For this reason, Yeni Türkü's career was interrupted for a short time."
+  },
+  {
+   "id": "6e71f348-d382-4d89-9c61-161c2be6d9ea",
+   "slug": "leman-sam-32c19cde",
+   "title": "Leman Sam",
+   "act": "Leman Sam",
+   "name": "Leman Sam",
+   "description": "Turkish singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Leman_Sam",
+   "extract": "Leman Sam is a Turkish singer and songwriter. Her daughter Şevval Sam and her grandson Taro Emir Tekin are both actors."
+  },
+  {
+   "id": "7c79f00d-4839-4760-b5cf-2b8405a2d2f8",
+   "slug": "ersay-uner-fd9e755b",
+   "title": "Ersay Üner",
+   "act": "Ersay Üner",
+   "name": "Ersay Üner",
+   "description": "Turkish pop music singer-songwriter (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/Ersay_%C3%9Cner",
+   "extract": "Ersay Üner, is a Turkish pop music singer-songwriter. He became known in Turkey in 2000s by writing and composing songs for Demet Akalın."
+  },
+  {
+   "id": "0cb51077-f6ac-48d9-8674-88fcaf57cfa2",
+   "slug": "paradise-lost-ea61adef",
+   "title": "Paradise Lost",
+   "act": "Paradise Lost",
+   "name": "Paradise Lost",
+   "description": "British gothic metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Paradise_Lost_(band)",
+   "extract": "Paradise Lost are a British gothic metal band. Formed in Halifax, West Yorkshire, in 1988, they are considered pioneers of death-doom and the main influence on gothic metal. As of 2005, Paradise Lost have sold over two million albums worldwide."
+  }
+ ]
+}

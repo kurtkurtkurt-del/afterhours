@@ -1,0 +1,126 @@
+{
+ "city": "izmir",
+ "day": "2026-10-30",
+ "nights": [
+  {
+   "id": "c062aafa-2288-4b6d-9b83-85a49594aa5f",
+   "slug": "kenan-dogulu-c67de48f",
+   "title": "Kenan Doğulu",
+   "act": "Kenan Doğulu",
+   "name": "Kenan Doğulu",
+   "description": "Turkish pop musician",
+   "source_url": "https://en.wikipedia.org/wiki/Kenan_Do%C4%9Fulu",
+   "extract": "Kenan Doğulu is a Turkish pop musician. He represented Turkey at the Eurovision Song Contest 2007 in Helsinki, where he was placed fourth, with 163 points. In the summer of 2006, Doğulu released the album Festival, containing the hit single \"Çakkıdı\", in collaboration with Sezen Aksu."
+  },
+  {
+   "id": "12dff7e8-9700-404a-9448-9dbf5728e5f3",
+   "slug": "aysegul-aldinc-41e57df8",
+   "title": "Ayşegül Aldinç",
+   "act": "Ayşegül Aldinç",
+   "name": "Ayşegül Aldinç",
+   "description": "Turkish singer and actress (born 1957)",
+   "source_url": "https://en.wikipedia.org/wiki/Ay%C5%9Feg%C3%BCl_Aldin%C3%A7",
+   "extract": "Ayşegül Aldinç is a Turkish singer and actress."
+  },
+  {
+   "id": "40700de6-59c8-473a-b4f4-3af4ae0c24e4",
+   "slug": "yuksek-sadakat-9afc4ae2",
+   "title": "Yüksek Sadakat",
+   "act": "Yüksek Sadakat",
+   "name": "Yüksek Sadakat",
+   "description": "Turkish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Y%C3%BCksek_Sadakat",
+   "extract": "Yüksek Sadakat is a Turkish rock band that was formed in 1997 by Kutlu Özmakinacı, but became popular in early 2006 with their first album with the same name. The founder and bass player Kutlu Özmakinacı, used to be the editor of a music magazine called Blue Jean. Their music is a mix of pop rock with powerful beats utilizing Turkish instruments, keyboard and guitar solos. The name of the band is a literal translation of the term High Fidelity (Hi-Fi) into Turkish."
+  },
+  {
+   "id": "b6592ee0-b469-45b2-8cda-46ccfdcf1f1c",
+   "slug": "mabel-matiz-1594430b",
+   "title": "Mabel Matiz",
+   "act": "Mabel Matiz",
+   "name": "Mabel Matiz",
+   "description": "Turkish singer-songwriter (born 1985)",
+   "source_url": "https://en.wikipedia.org/wiki/Mabel_Matiz",
+   "extract": "Fatih Karaca, better known by his stage name Mabel Matiz, is a Turkish pop music singer-songwriter."
+  },
+  {
+   "id": "b76301f6-baef-4e2f-b0e2-7848c438d123",
+   "slug": "ogun-sanl-soy-671c431d",
+   "title": "Ogün Sanlısoy",
+   "act": "Ogün Sanlısoy",
+   "name": "Ogün Sanlısoy",
+   "description": "Turkish musician (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Og%C3%BCn_Sanl%C4%B1soy",
+   "extract": "Ogün Sanlısoy is a Turkish musician, vocalist and guitarist for thrash metal band Mezarkabul."
+  },
+  {
+   "id": "a92680bc-6563-4dd2-923b-14b18153ed3f",
+   "slug": "karsu-5c11d26c",
+   "title": "Karsu",
+   "act": "Karsu",
+   "name": "Karsu",
+   "description": "Dutch singer (born 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Karsu",
+   "extract": "Karsu Dönmez, known mononymously as Karsu, is a Turkish-Dutch singer, pianist and composer. While her music style is a blend of various genres, jazz pop is probably the best description for it. She has songs in Dutch, English, and Turkish."
+  },
+  {
+   "id": "99d22d04-5214-4be2-9494-9bb287cc62ee",
+   "slug": "batu-akdeniz-6d7ab86a",
+   "title": "Batu Akdeniz",
+   "act": "Batu Akdeniz",
+   "name": "Batu Akdeniz",
+   "description": "Turkish rock musician",
+   "source_url": "https://en.wikipedia.org/wiki/Batu_Akdeniz",
+   "extract": "Batu Akdeniz is a Turkish rock musician. He is known for both his solo works and his collaborations with the Heavy Sky band."
+  },
+  {
+   "id": "3e27617b-e6b6-4fbb-b482-885bbfcc3ad1",
+   "slug": "gokhan-turkmen-2e15d7ae",
+   "title": "Gökhan Türkmen",
+   "act": "Gökhan Türkmen",
+   "name": "Gökhan Türkmen",
+   "description": "Turkish singer (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/G%C3%B6khan_T%C3%BCrkmen",
+   "extract": "Gökhan Türkmen is a Turkish singer."
+  },
+  {
+   "id": "c519671e-b547-48d5-bc55-6b38dc51c7e3",
+   "slug": "blackbriar-3e0dcde9",
+   "title": "Blackbriar",
+   "act": "Blackbriar",
+   "name": "Blackbriar",
+   "description": "Dutch alternative metal/gothic rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Blackbriar_(band)",
+   "extract": "Blackbriar is a Dutch alternative metal band from Assen. They have released three albums, four EPs, six singles, twelve official music videos, one official lyric video and four acoustic live videos."
+  },
+  {
+   "id": "8287455b-0905-4220-8328-118dcb621d02",
+   "slug": "emre-ayd-n-0bf4dafd",
+   "title": "Emre Aydın",
+   "act": "Emre Aydın",
+   "name": "Emre Aydın",
+   "description": "Turkish rock singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Emre_Ayd%C4%B1n",
+   "extract": "Emre Aydın is a Turkish rock singer-songwriter. The singer won the MTV Europe Music Awards 2008 in the \"Europe's Favourite Act\" category. He is also the former lead singer for the Turkish rock band 6. Cadde."
+  },
+  {
+   "id": "1cb27b49-2b33-4989-a14f-800f14cadc50",
+   "slug": "soner-sar-kabaday-623646f6",
+   "title": "Soner Sarıkabadayı",
+   "act": "Soner Sarıkabadayı",
+   "name": "Soner Sarıkabadayı",
+   "description": "Turkish singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Soner_Sar%C4%B1kabaday%C4%B1",
+   "extract": "Soner Sarıkabadayı is a Turkish pop music singer and songwriter."
+  },
+  {
+   "id": "39d3a567-e730-419d-b7d9-8c7a1b238d4c",
+   "slug": "ilkay-akkaya-9442ef7a",
+   "title": "İlkay Akkaya",
+   "act": "İlkay Akkaya",
+   "name": "İlkay Akkaya",
+   "description": "Turkish singer (born 1964)",
+   "source_url": "https://en.wikipedia.org/wiki/%C4%B0lkay_Akkaya",
+   "extract": "İlkay Akkaya is a Turkish singer and member of the Turkish music group Grup Kızılırmak."
+  }
+ ]
+}

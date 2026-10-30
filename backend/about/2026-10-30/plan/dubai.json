@@ -1,0 +1,46 @@
+{
+ "city": "dubai",
+ "day": "2026-10-30",
+ "nights": [
+  {
+   "id": "373ea923-6366-4967-8acf-9c8750a1d30b",
+   "slug": "when-chai-met-toast-fd9b66c9",
+   "title": "When Chai Met Toast",
+   "act": "When Chai Met Toast",
+   "name": "When Chai Met Toast",
+   "description": "Indian indie band from Kochi",
+   "source_url": "https://en.wikipedia.org/wiki/When_Chai_Met_Toast",
+   "extract": "When Chai Met Toast is a multilingual indie-folk alternative band formed in Kochi, Kerala in 2016. The band's lineup comprises vocalist Ashwin Gopakumar, guitarist Achyuth Jaigopal, keyboardist Palee Francis, and drummer Pai Sailesh. The band is known for their happy and lighthearted music which they create in English and Hindi, sometimes featuring Tamil and Malayalam lyrics."
+  },
+  {
+   "id": "7e99ca69-be3a-44c5-b040-24aada5b6252",
+   "slug": "richy-ahmed-house-rules-8f237409",
+   "title": "RICHY AHMED | House Rules",
+   "act": "RICHY AHMED",
+   "name": "Richy Ahmed",
+   "description": "British DJ and producer",
+   "source_url": "https://en.wikipedia.org/wiki/Richy_Ahmed",
+   "extract": "Richy Ahmed is a British DJ and producer from South Shields, England."
+  },
+  {
+   "id": "025f6642-880d-4ab1-bf52-4a39f5006479",
+   "slug": "anuv-jain-55e2e82b",
+   "title": "Anuv Jain",
+   "act": "Anuv Jain",
+   "name": "Anuv Jain",
+   "description": "Indian singer, songwriter and composer",
+   "source_url": "https://en.wikipedia.org/wiki/Anuv_Jain",
+   "extract": "Anuv Jain is an Indian singer songwriter and composer. He is known for his simple chorded songs with lyrics that deal primarily with love and heartbreak. His music primarily contains an acoustic guitar or ukulele, unaccompanied by percussion or other instruments."
+  },
+  {
+   "id": "dbac0590-4067-4e1c-9a81-d220fce6c6e2",
+   "slug": "secondhand-serenade-c1e63fa3",
+   "title": "Secondhand Serenade",
+   "act": "Secondhand Serenade",
+   "name": "Secondhand Serenade",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Secondhand_Serenade",
+   "extract": "Secondhand Serenade is the solo project of American rock musician John Vesely. Vesely has released four studio albums to date under the name Secondhand Serenade. His debut album used multitrack recording to create the sound of a band using technology, while his second album took a different path, using a proper band and synthesizers."
+  }
+ ]
+}

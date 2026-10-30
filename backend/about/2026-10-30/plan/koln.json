@@ -1,0 +1,316 @@
+{
+ "city": "koln",
+ "day": "2026-10-30",
+ "nights": [
+  {
+   "id": "6aaebdfb-2fc0-490b-9fa7-f51b687f1e6d",
+   "slug": "westside-cowboy-212238ac",
+   "title": "Westside Cowboy",
+   "act": "Westside Cowboy",
+   "name": "Westside Cowboy",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Westside_Cowboy",
+   "extract": "Westside Cowboy are an English rock band formed in Manchester in 2023. The band members are Jimmy Bradbury, Reuben Haycocks, Aoife Anson O'Connell and Paddy Murphy."
+  },
+  {
+   "id": "dd411bea-fcde-4a08-b152-e2df9ced9c99",
+   "slug": "stephen-wilson-jr-gary-the-torch-tour-93c7ee9e",
+   "title": "Stephen Wilson Jr. - Gary The Torch Tour",
+   "act": "Stephen Wilson Jr.",
+   "name": "Stephen Wilson Jr.",
+   "description": "American musician (born 1979)",
+   "source_url": "https://en.wikipedia.org/wiki/Stephen_Wilson_Jr.",
+   "extract": "Stephen Wilson Jr. is an American country and rock singer, guitarist, and songwriter."
+  },
+  {
+   "id": "42ae1441-f750-4316-a646-ee7b49eb067d",
+   "slug": "arlo-parks-desire-tour-24e6aab8",
+   "title": "ARLO PARKS - DESIRE TOUR",
+   "act": "ARLO PARKS",
+   "name": "Arlo Parks",
+   "description": "British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Arlo_Parks",
+   "extract": "Anaïs Oluwatoyin Estelle Marinho, known professionally as Arlo Parks, is an English singer and songwriter. Her debut studio album, Collapsed in Sunbeams, was released in 2021 to critical acclaim and peaked at number three on the UK Albums Chart. It won the 2021 Mercury Prize for Best Album and earned her nominations for Album of the Year, Best New Artist and Best British Female Solo Artist at the 2021 Brit Awards."
+  },
+  {
+   "id": "d2ce208b-6fb7-4d5b-b811-0a348795a361",
+   "slug": "the-home-team-the-crucible-of-life-european-tour-64d797d4",
+   "title": "The Home Team - The Crucible of Life European Tour 2026",
+   "act": "The Home Team",
+   "name": "The Home Team",
+   "description": "American Rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Home_Team",
+   "extract": "The Home Team is an American four-piece rock band from Seattle, Washington, formed in 2013 by Daniel Matson and John Baran. The band currently consists of vocalist Brian Butcher, bassist Ryne Olson, guitarist John Baran, and drummer Daniel Matson."
+  },
+  {
+   "id": "1ab5730e-c60f-441f-9d9b-8e19ee76108a",
+   "slug": "ryan-beatty-arms-over-armor-tour-160a17c0",
+   "title": "Ryan Beatty - Arms Over Armor Tour",
+   "act": "Ryan Beatty",
+   "name": "Ryan Beatty",
+   "description": "American singer (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Ryan_Beatty",
+   "extract": "Ryan Kevin Beatty is an American singer-songwriter. He was born in Clovis, California, and now resides in Los Angeles."
+  },
+  {
+   "id": "f6f00103-3593-46fa-ac9f-9f5b5a634a66",
+   "slug": "undeath-ec8ee679",
+   "title": "Undeath",
+   "act": "Undeath",
+   "name": "Undeath",
+   "description": "American metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Undeath_(band)",
+   "extract": "Undeath is an American death metal band from Rochester, New York founded in 2018."
+  },
+  {
+   "id": "2582a32c-e890-4607-9c3d-b2c439492cb6",
+   "slug": "the-fray-autumn-light-tour-89b8e213",
+   "title": "The Fray - Autumn Light Tour",
+   "act": "The Fray",
+   "name": "The Fray",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Fray",
+   "extract": "The Fray is an American rock band from Denver, Colorado, formed in 2002 by schoolmates Isaac Slade and Joe King. Their debut studio album, How to Save a Life (2005) was released by Epic Records and received quadruple platinum certification by the Recording Industry Association of America (RIAA), as well as platinum certification in Australia, Canada, New Zealand and the United Kingdom. Its release was supported by their first hit single, \"Over My Head \", which peaked at number eight on the Billboard Hot 100. The band saw their furthest success with the song's follow-up, \"How to Save a Life\", which peaked at number three on the chart and was also a hit in Australia, Canada, Ireland, Italy, Spain, Sweden and the United Kingdom. Both songs received Grammy Award nominations: Best Pop Performance by a Duo or Group with Vocals, and Best Rock Performance by a Duo or Group, respectively."
+  },
+  {
+   "id": "18647016-33c0-41ac-abcd-345231c25d3a",
+   "slug": "placebo-30th-anniversary-tour-6e139718",
+   "title": "Placebo - 30th Anniversary Tour",
+   "act": "Placebo",
+   "name": "Placebo",
+   "description": "British alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Placebo_(band)",
+   "extract": "Placebo are a British alternative rock band, formed in London in 1994 by vocalist-guitarist Brian Molko and bassist-guitarist Stefan Olsdal, who have remained the two constant members, with three full-time drummers throughout the band's existence."
+  },
+  {
+   "id": "d90a08f3-d737-42db-83d4-733f13c8f793",
+   "slug": "flawed-mangoes-the-killswitch-memories-tour-fead85e7",
+   "title": "Flawed Mangoes - The Killswitch Memories Tour",
+   "act": "Flawed Mangoes",
+   "name": "Flawed Mangoes",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Flawed_Mangoes",
+   "extract": "Evan Lo, better known as Flawed Mangoes, is an American singer-songwriter and musician from Boston."
+  },
+  {
+   "id": "a6e30103-ac7a-4ba6-8374-997c22d7a4c3",
+   "slug": "mark-ambor-european-and-united-kingdom-solo-acou-79cdd170",
+   "title": "Mark Ambor - European & United Kingdom Solo Acoustic Tour",
+   "act": "Mark Ambor",
+   "name": "Mark Ambor",
+   "description": "American singer-songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Mark_Ambor",
+   "extract": "Mark Gregory Damboragian, known professionally as Mark Ambor, is an American singer-songwriter. He is best known for his 2024 single \"Belong Together\"."
+  },
+  {
+   "id": "298506a2-4cc0-48a7-9c2a-d0beffd847fe",
+   "slug": "saint-levant-afandi-world-tour-89c3d9e2",
+   "title": "Saint Levant - AFANDI WORLD TOUR",
+   "act": "Saint Levant",
+   "name": "Saint Levant",
+   "description": "Palestinian rapper and musician (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Saint_Levant",
+   "extract": "Marwan Abdelhamid, known professionally as Saint Levant, is a Palestinian singer-songwriter and rapper. A multilingual artist, he became known for his 2022 song \"Very Few Friends\". As of August 2026, he has released two EPs and two studio albums, and has toured in the Middle East, Europe, the US, and Australia."
+  },
+  {
+   "id": "5567fe1a-eaa2-48f9-b87a-c8f72ebb5f69",
+   "slug": "nemzzz-locked-in-866b8229",
+   "title": "Nemzzz - LOCKED IN",
+   "act": "Nemzzz",
+   "name": "Nemzzz",
+   "description": "British rapper (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Nemzzz",
+   "extract": "Nemiah Emmanuel Simms, known professionally as Nemzzz, is a British rapper who gained recognition in 2021 with the tracks \"Elevate\" and \"2MS\". He released his first mixtape Do Not Disturb in 2024, which debuted at number 17 on the UK Albums Chart."
+  },
+  {
+   "id": "38604479-c187-401f-af20-e81282936615",
+   "slug": "artemas-lovercore-getting-up-to-no-good-tour-1f893c17",
+   "title": "Artemas - LOVERCORE / GETTING UP TO NO GOOD Tour",
+   "act": "Artemas",
+   "name": "Artemas",
+   "description": "English-Cypriot singer-songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Artemas_(musician)",
+   "extract": "Artemas Diamandis, known mononymously as Artemas, is an English singer, songwriter and record producer. He is best known for his singles \"If U Think I'm Pretty\" and the viral \"I Like the Way You Kiss Me\". He is signed to the record label 10K Projects."
+  },
+  {
+   "id": "3b8af7eb-be0f-41ff-9f9d-6aede526025e",
+   "slug": "glaive-god-save-the-three-tour-80a9a236",
+   "title": "glaive - God Save The Three Tour",
+   "act": "glaive",
+   "name": "Glaive",
+   "description": "American musician (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Glaive_(musician)",
+   "extract": "Ash Blue Gutierrez, known professionally as Glaive, is an American singer-songwriter. After posting a string of hyperpop songs to SoundCloud during the beginning of the COVID-19 pandemic that earned him a following, he signed a record deal with Interscope Records and released his debut extended play, Cypress Grove, in 2020. His debut album, I Care So Much That I Don't Care at All, was released in 2023. His second album, May It Never Falter, was released in 2024. His third, Y'all, was released in September 2025. His fourth, a collaborative album with Kurtains called God Save the Three, was released in May 2026."
+  },
+  {
+   "id": "ab9279f6-e1b2-4916-8ec1-378fa4c88315",
+   "slug": "violent-vira-05d77beb",
+   "title": "Violent Vira",
+   "act": "Violent Vira",
+   "name": "Violent Vira",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Violent_Vira",
+   "extract": "Amy Gonzalez, known professionally as Violent Vira, is an American alternative rock and heavy metal singer-songwriter. Her debut full-length album Lover of a Ghost was released in November 2025."
+  },
+  {
+   "id": "5ffc73e8-ba6b-4bb4-8c2a-b710f59aa80b",
+   "slug": "nieve-ella-how-long-will-it-take-the-debut-album-9b66a5d9",
+   "title": "Nieve Ella - How Long Will It Take? | The Debut Album Tour",
+   "act": "Nieve Ella",
+   "name": "Nieve Ella",
+   "description": "English singer (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Nieve_Ella",
+   "extract": "Nieve Ella Pickering is an English singer. Her 2023 release, Young & Naive/Lifetime of Wanting, charted at No. 38 on the UK Independent Album Chart. She has also supported Dylan, Inhaler, Courteeners, and Girl in Red."
+  },
+  {
+   "id": "1545b947-c345-45ce-b26f-f3104dfbde03",
+   "slug": "elder-island-2026-c77d54b9",
+   "title": "Elder Island - 2026",
+   "act": "Elder Island",
+   "name": "Elder Island",
+   "description": "English musical trio",
+   "source_url": "https://en.wikipedia.org/wiki/Elder_Island_(band)",
+   "extract": "Elder Island is an English musical trio from Bristol, formed in 2014. As of 2026, they have released three studio albums, three EPs, two remix albums, and numerous singles."
+  },
+  {
+   "id": "1fd22220-6919-436d-90d3-1ca4a909d23b",
+   "slug": "son-mieux-24-hours-eu-album-tour-aa921f1a",
+   "title": "SON MIEUX - 24 Hours - EU Album Tour",
+   "act": "SON MIEUX",
+   "name": "Son Mieux",
+   "description": "Dutch indie pop group",
+   "source_url": "https://en.wikipedia.org/wiki/Son_Mieux",
+   "extract": "Son Mieux is a Dutch indie pop group from The Hague headed by Camiel Meiresonne."
+  },
+  {
+   "id": "ce654697-280a-4098-8dee-3264bcf0909b",
+   "slug": "tinie-tempah-the-night-s-not-dead-tour-ffbce3bd",
+   "title": "Tinie Tempah - THE NIGHT´S NOT DEAD TOUR",
+   "act": "Tinie Tempah",
+   "name": "Tinie Tempah",
+   "description": "British rapper and singer (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Tinie_Tempah",
+   "extract": "Patrick Chukwuemeka Okogwu, better known by his stage name Tinie Tempah, is an English rapper, songwriter and television presenter. Born and raised in London, he created his own entertainment company Disturbing London in 2006, alongside Dumi Oburota. After signing with Parlophone in 2009 and releasing several mixtapes, he rose to fame with the UK number-one singles \"Pass Out\" and \"Written in the Stars\" in 2010."
+  },
+  {
+   "id": "1780a94b-4ec2-4b7c-a63a-0d2a72379aa7",
+   "slug": "freya-skye-stars-align-tour-83cf9040",
+   "title": "Freya Skye - Stars Align Tour",
+   "act": "Freya Skye",
+   "name": "Freya Skye",
+   "description": "English singer and actress (born 2009)",
+   "source_url": "https://en.wikipedia.org/wiki/Freya_Skye",
+   "extract": "Freya Skye is an English singer and actress. She represented the United Kingdom in the Junior Eurovision Song Contest 2022, after which she was signed to Hollywood Records. Skye also has a talent holding deal for projects with Disney Branded Television. As an actress, she has appeared in The Next Step and made her film debut starring as Nova Bright in Zombies 4: Dawn of the Vampires. As a musician, Skye has released a number of singles since 2020 and released her debut extended play Stardust in 2026 and embarked on her first headlining tour, the Stars Align Tour."
+  },
+  {
+   "id": "ad5a4a46-623c-4a34-8a7a-fab3459a541a",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-2323901b",
+   "title": "Strangelove - The DEPECHE MODE Experience Black Celebration 2026",
+   "act": "Strangelove",
+   "name": "Strangelove",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Strangelove_(band)",
+   "extract": "Strangelove were an English alternative rock band, formed in Bristol in 1991 comprising singer Patrick Duff, guitarists Alex Lee & Julian Poole, bassist Joe Allen and John Langley on drums. They released two EPs and three albums before disbanding in 1998."
+  },
+  {
+   "id": "4ddf758e-7041-4b29-b814-85ea2e491541",
+   "slug": "muna-gets-so-hot-tour-c7af11cd",
+   "title": "Muna - Gets So Hot Tour",
+   "act": "Muna",
+   "name": "Muna",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Muna_(band)",
+   "extract": "Muna is an American indie pop band consisting of Katie Gavin, Josette Maskin, and Naomi McPherson. They released two studio albums with RCA Records, About U (2017) and Saves the World (2019), before signing with independent label Saddest Factory Records, which released their third studio album, Muna, in June 2022, and Dancing on the Wall in May 2026."
+  },
+  {
+   "id": "3b221c10-8fd6-4a72-ae76-1d701747ab8d",
+   "slug": "noah-kahan-the-great-divide-tour-dbaa18a0",
+   "title": "Noah Kahan - The Great Divide Tour",
+   "act": "Noah Kahan",
+   "name": "Noah Kahan",
+   "description": "American singer-songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Noah_Kahan",
+   "extract": "Noah Berkenkamp Kahan is an American singer-songwriter. His breakthrough single, \"Hurt Somebody\", achieved gold status in the United States and charted in multiple international markets. The single and EP of the same name preceded the release of his debut album, Busyhead (2019). Within five years, two more albums came out: I Was / I Am (2021) and Stick Season (2022), the latter became his mainstream commercial breakthrough. It led to his nomination in 2023 for the Grammy Award for Best New Artist. In 2026, his fourth album The Great Divide was released and achieved record-breaking streaming and vinyl sales for a No. 1 rock album debut on the Billboard 200. That preceded The Great Divide Tour, his first stadium tour."
+  },
+  {
+   "id": "bd015b63-10e6-4c6b-9f56-a4af3c82cc6a",
+   "slug": "chloe-slater-riot-youth-tour-6df4d8b1",
+   "title": "CHLOE SLATER - riot youth tour",
+   "act": "CHLOE SLATER",
+   "name": "Chloe Slater",
+   "description": "English singer-songwriter (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Chloe_Slater",
+   "extract": "Chloe Leanne Slater is an English singer-songwriter based in Manchester. Writing about social and political issues, she has been releasing music since 2023 and has issued two extended plays: You Can't Put a Price on Fun, and Love Me Please."
+  },
+  {
+   "id": "0ad9fd53-6b97-4f5a-906b-d8cdb3d52ae2",
+   "slug": "julia-wolf-deep-end-world-tour-2026-baf630ba",
+   "title": "JULIA WOLF - Deep End World Tour 2026",
+   "act": "JULIA WOLF",
+   "name": "Julia Wolf",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Wolf_(musician)",
+   "extract": "Julia Jade Capello, known professionally as Julia Wolf, is an American singer. Known for her ethereal vocals and self-produced alt-pop sound, she blends elements of indie pop, alternative rock, and R&B. Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory (2021) and her studio albums Good Thing We Stayed (2023) and Pressure (2025)."
+  },
+  {
+   "id": "110667ec-8f20-4a43-b3bf-4f379c56316c",
+   "slug": "esdeekid-council-house-rat-tour-46740229",
+   "title": "EsDeeKid - Council House Rat Tour",
+   "act": "EsDeeKid",
+   "name": "EsDeeKid",
+   "description": "British rapper",
+   "source_url": "https://en.wikipedia.org/wiki/EsDeeKid",
+   "extract": "EsDeeKid is a British rapper from Liverpool, England. He released his debut mixtape, Rebel, in June 2025. He has been noted as a prominent figure in the UK underground rap scene. His music is characterised by his thick Scouse accent and draws inspiration from cloud rap. He covers his face with a balaclava, and keeps his name, appearance, and age private. He still lives in his council house.\nAs of May 2026, EsDeeKid's single \"Phantom\" has accumulated more than 300 million streams. His mixtape Rebel has charted in multiple European countries, as well as peaked at number 23 on the US Billboard 200, despite being released nearly five months before its debut on the chart."
+  },
+  {
+   "id": "e549c96d-b3bd-4e90-93a7-8429a42cace7",
+   "slug": "tiffany-day-halo-tour-europe-a05cd068",
+   "title": "Tiffany Day - HALO TOUR EUROPE",
+   "act": "Tiffany Day",
+   "name": "Tiffany Day",
+   "description": "American singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Tiffany_Day_(musician)",
+   "extract": "Tiffany Day Ruan, is a Canadian-American singer, songwriter, and record producer. Raised in Wichita, Kansas, she began independently releasing music after a 2017 video of her singing into a well in Italy went viral on Twitter. She released her debut studio album, Lover Tofu Fruit, in 2024. She signed to Broke Records the following year, through which she released her second studio album, Halo, in 2026."
+  },
+  {
+   "id": "a31d0f09-cf57-4b53-bf47-62a8802c81b0",
+   "slug": "sace6-af270742",
+   "title": "Sace6",
+   "act": "Sace6",
+   "name": "Sace6",
+   "description": "American alternative metal duo",
+   "source_url": "https://en.wikipedia.org/wiki/Sace6",
+   "extract": "Sace6 is an American alternative metal duo consisting of lead vocalist Sace and guitarist-vocalist Noah Thomas. Originally the solo project of Sace, the project developed into a duo in 2024. Sonically, their music offers contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation."
+  },
+  {
+   "id": "a090c5e7-bd06-4005-90ac-7e044b2bb005",
+   "slug": "pa-sheehy-the-magic-we-found-tour-9e5ff76c",
+   "title": "Pa Sheehy - The Magic We Found Tour",
+   "act": "Pa Sheehy",
+   "name": "Pa Sheehy",
+   "description": "Irish singer-songwriter (born 1986/87)",
+   "source_url": "https://en.wikipedia.org/wiki/Pa_Sheehy",
+   "extract": "Patrick \"Pa\" Sheehy is an Irish singer-songwriter from Dingle, County Kerry."
+  },
+  {
+   "id": "a8b5a04d-5ea1-41be-9028-74fa80576f03",
+   "slug": "kodaline-farewell-tour-33a07b1a",
+   "title": "Kodaline - Farewell Tour",
+   "act": "Kodaline",
+   "name": "Kodaline",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kodaline",
+   "extract": "Kodaline are an Irish rock band. Originally known as 21 Demands, the band adopted their current name in 2012 to coincide with the changing of their music. The group comprises Steve Garrigan, Vincent May, Mark Prendergast, and Jason Boland."
+  },
+  {
+   "id": "d8b12bed-a79e-4f6a-89a0-f9e409f54edb",
+   "slug": "ibeyi-5740bc5d",
+   "title": "Ibeyi",
+   "act": "Ibeyi",
+   "name": "Ibeyi",
+   "description": "French musical duo",
+   "source_url": "https://en.wikipedia.org/wiki/Ibeyi",
+   "extract": "Ibeyi is a French musical duo consisting of twin sisters Lisa-Kaindé Diaz and Naomi Diaz. The duo sings in English, French, Spanish and Yoruba, In Yoruba, Ibeyi (Ìbejì) means \"twins\"."
+  }
+ ]
+}

@@ -1,0 +1,196 @@
+{
+ "city": "san-francisco",
+ "day": "2026-10-30",
+ "nights": [
+  {
+   "id": "981516bf-6597-4e9c-b512-1c6bdfcb83c1",
+   "slug": "da-i-freyr-too-much-not-enough-fb72e3b2",
+   "title": "Daði Freyr - Too Much, Not Enough",
+   "act": "Daði Freyr",
+   "name": "Daði Freyr",
+   "description": "Icelandic musician (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Da%C3%B0i_Freyr",
+   "extract": "Daði Freyr Pétursson, known professionally as Daði Freyr or simply Daði, is an Icelandic musician. As the frontman of Daði & Gagnamagnið, he was due to represent Iceland in the Eurovision Song Contest 2020 with the song \"Think About Things\", before the event was cancelled in response to the COVID-19 pandemic. Instead, he represented Iceland in the Eurovision Song Contest 2021 with the song \"10 Years\", finishing in fourth place."
+  },
+  {
+   "id": "415d9379-a86e-4b62-9f1f-7a83ab4864e3",
+   "slug": "the-chicks-taking-the-long-way-18849b4f",
+   "title": "THE CHICKS - TAKING THE LONG WAY",
+   "act": "THE CHICKS",
+   "name": "The Chicks",
+   "description": "American country band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Chicks",
+   "extract": "The Chicks, formerly the Dixie Chicks, are an American country music band from Dallas, Texas. The band consists of Natalie Maines and sisters Martie Maguire and Emily Strayer."
+  },
+  {
+   "id": "6991ad21-bda3-4294-a782-033eb6e138b0",
+   "slug": "patrick-wolf-10312624",
+   "title": "Patrick Wolf",
+   "act": "Patrick Wolf",
+   "name": "Patrick Wolf",
+   "description": "English singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Patrick_Wolf",
+   "extract": "Patrick Wolf is an English singer-songwriter from South London. Wolf uses a wide variety of instruments in his music, most commonly the ukulele, piano, and viola. He is known for combining electronic sampling with classical instruments. Wolf's styles range from electronic pop to Baroque chamber music. He has been making music since around 2002."
+  },
+  {
+   "id": "39ac79f1-486a-44c1-a6c0-6327f9f17f31",
+   "slug": "montell-fish-the-nest-tour-749e3124",
+   "title": "Montell Fish - The Nest Tour",
+   "act": "Montell Fish",
+   "name": "Montell Fish",
+   "description": "American singer-songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Montell_Fish",
+   "extract": "Montell James Frazier, also known as Montell Fish, is an American singer-songwriter. Formerly making music under the CCM genre, he switched to alternative R&B and neo soul. He has since signed to Virgin Music Group for distribution and released two albums under the deal: Jamie in 2022 and Charlotte in 2024."
+  },
+  {
+   "id": "1e6caeba-176f-423f-8186-89c5eca92aae",
+   "slug": "galactic-33298541",
+   "title": "Galactic",
+   "act": "Galactic",
+   "name": "Galactic",
+   "description": "American jam band",
+   "source_url": "https://en.wikipedia.org/wiki/Galactic",
+   "extract": "Galactic is an American funk band from New Orleans, Louisiana."
+  },
+  {
+   "id": "001baf1b-7dca-452a-b07c-2f4cf0aa63fb",
+   "slug": "parra-for-cuva-30ef5b0c",
+   "title": "Parra for Cuva",
+   "act": "Parra for Cuva",
+   "name": "Parra for Cuva",
+   "description": "German musician (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Parra_for_Cuva",
+   "extract": "Nicolas Demuth, known by stage name Parra for Cuva, is a German musician and DJ.\nHe is best known for his house production."
+  },
+  {
+   "id": "d85b4ad8-f976-4802-9dec-a14816ce0621",
+   "slug": "the-musical-box-522b885a",
+   "title": "The Musical Box",
+   "act": "The Musical Box",
+   "name": "The Musical Box",
+   "description": "Canadian Genesis tribute band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Musical_Box_(band)",
+   "extract": "The Musical Box are a Canadian tribute band formed in Montreal, Quebec in 1993 who recreate performances by the English rock band Genesis during the 1970s. The current line-up is formed of singer and performer Denis Gagné, guitarist François Gagnon, bassist Sébastien Lamothe, keyboardist Ian Benhamou, and drummer Marc Laflamme."
+  },
+  {
+   "id": "d1831ebf-7621-43a7-bf5c-cca110fbdcc4",
+   "slug": "frankie-and-the-witch-fingers-23913901",
+   "title": "Frankie and the Witch Fingers",
+   "act": "Frankie and the Witch Fingers",
+   "name": "Frankie and the Witch Fingers",
+   "description": "American rock band (2013–)",
+   "source_url": "https://en.wikipedia.org/wiki/Frankie_and_the_Witch_Fingers",
+   "extract": "Frankie and the Witch Fingers is an American rock band formed in Bloomington, Indiana, in 2013 and based in Los Angeles. The band is composed of founders Dylan Sizemore and Josh Menashe, Nikki Pickle (bass) as of 2020, Nick Aguilar (drums) as of 2022 and Jon Modaff (synths) as of 2025. They are signed to Greenway Records of Brooklyn."
+  },
+  {
+   "id": "86457365-33f1-46fd-89fc-3062e9553549",
+   "slug": "six60-28e31732",
+   "title": "SIX60",
+   "act": "SIX60",
+   "name": "Six60",
+   "description": "New Zealand rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Six60",
+   "extract": "Six60 is a New Zealand pop rock band formed in Dunedin, Otago in 2008. The band consists of Matiu Walters, Ji Fraser, Chris Mac, and Marlon Gerbes."
+  },
+  {
+   "id": "98d6eeee-2042-4545-941e-4a3a69f6b349",
+   "slug": "jose-madero-usa-tour-2026-89acce4a",
+   "title": "Jose Madero - USA Tour 2026",
+   "act": "Jose Madero",
+   "name": "José Madero",
+   "description": "Mexican musician",
+   "source_url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Madero",
+   "extract": "José Madero Vizcaíno, better known as Pepe Madero, is a Mexican singer and writer. Madero began his musical career as a vocalist in the renowned Mexican rock band PXNDX. However, since 2016 he has mainly dedicated himself to his solo career."
+  },
+  {
+   "id": "b0bd986a-d06f-4089-9e6f-8e45a42586fd",
+   "slug": "tom-jones-come-gather-round-tour-f4ef4374",
+   "title": "Tom Jones: Come Gather Round Tour",
+   "act": "Tom Jones",
+   "name": "Tom Jones",
+   "description": "Welsh singer (born 1940)",
+   "source_url": "https://en.wikipedia.org/wiki/Tom_Jones_(singer)",
+   "extract": "Sir Thomas Jones Woodward is a Welsh singer. His career began with a string of top 10 hits in the 1960s and he has since toured regularly, with appearances in Las Vegas from 1967 to 2011. His voice has been described by AllMusic as a \"full-throated, robust baritone\"."
+  },
+  {
+   "id": "b899524f-f22f-4319-b260-20ca7e882a2d",
+   "slug": "lexi-jayde-43ff48ab",
+   "title": "Lexi Jayde",
+   "act": "Lexi Jayde",
+   "name": "Lexi Jayde",
+   "description": "American actress and singer (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Lexi_Jayde",
+   "extract": "Alexis Jayde Burnett, better known as Lexi Jayde is an American singer-songwriter and actress. She is best known for her 2022 single \"Drunk Text Me\", which went viral on TikTok. Jayde released her debut album Lover Girl in August 2026. She has gained over 1.2 million followers on Instagram, where she likes to connect with her audience."
+  },
+  {
+   "id": "22b57d46-69e4-4bfb-98aa-a89b920593d8",
+   "slug": "gilla-band-46eb13cd",
+   "title": "Gilla Band",
+   "act": "Gilla Band",
+   "name": "Gilla Band",
+   "description": "Irish post-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Gilla_Band",
+   "extract": "Gilla Band are an Irish post-punk and noise rock band from Dublin. It was founded in 2011 and comprises vocalist Dara Kiely, guitarist Alan Duggan, bassist Daniel Fox, and drummer Adam Faulkner."
+  },
+  {
+   "id": "8b8d8faa-f6d0-4c3f-8d94-d39d0c3b4932",
+   "slug": "olivia-o-brien-32954460",
+   "title": "Olivia O'Brien",
+   "act": "Olivia O'Brien",
+   "name": "Olivia O'Brien",
+   "description": "American singer-songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Olivia_O'Brien",
+   "extract": "Olivia Gail O'Brien is an American singer-songwriter. She is best known for her guest appearance on Gnash's 2016 single \"I Hate U, I Love U\", which peaked at number 10 on the Billboard Hot 100. Its success led her to sign with Island Records; the label released two extended plays, three mixtapes, and her debut studio album Was It Even Real? (2019). In 2024, she formed the independent label Girlhood Records and released the EPs Love & Limerence and Everywhere I Go, There I Am. O'Brien signed with Gamma for the release of her second studio album Pixie (2026)."
+  },
+  {
+   "id": "ce7711ba-7c74-4a4e-abcd-9f8713f5beb2",
+   "slug": "the-liminanas-500af98d",
+   "title": "The Liminanas",
+   "act": "The Liminanas",
+   "name": "The Limiñanas",
+   "description": "French rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Limi%C3%B1anas",
+   "extract": "The Limiñanas are a French rock band from Cabestany, Pyrénées-Orientales, active since 2009."
+  },
+  {
+   "id": "dfe7f6ce-3ae5-4b61-a3ee-343bc8efcf39",
+   "slug": "josh-garrels-0ce90c52",
+   "title": "Josh Garrels",
+   "act": "Josh Garrels",
+   "name": "Josh Garrels",
+   "description": "American singer-songwriter (born 1980)",
+   "source_url": "https://en.wikipedia.org/wiki/Josh_Garrels",
+   "extract": "Joshua Michael Garrels is an American singer-songwriter, producer, and composer from South Bend, Indiana. His music combines traditional folk music with other musical elements and the nontraditional exploration of Christian themes."
+  },
+  {
+   "id": "989c3c40-e2a7-4675-9432-7034434e415f",
+   "slug": "squirrel-flower-4e0bb686",
+   "title": "Squirrel Flower",
+   "act": "Squirrel Flower",
+   "name": "Squirrel Flower",
+   "description": "American musician (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Squirrel_Flower",
+   "extract": "Squirrel Flower is the stage name of American musician Ella O'Connor Williams."
+  },
+  {
+   "id": "32652b74-782c-4055-9dcd-1850339f2028",
+   "slug": "danny-l-harle-c5f36689",
+   "title": "Danny L Harle",
+   "act": "Danny L Harle",
+   "name": "Danny L Harle",
+   "description": "British music producer and composer",
+   "source_url": "https://en.wikipedia.org/wiki/Danny_L_Harle",
+   "extract": "Daniel Jack Eisner Harle, better known under the stage name Danny L Harle, is a British music producer and composer. He was formerly signed to the London-based PC Music label and is a member of Dux Content with A. G. Cook. He has produced, composed, and remixed music for a number of artists; most prominently, he executive produced Caroline Polachek's albums Pang (2019) and Desire, I Want to Turn Into You (2023) and co-produced the albums Radical Optimism by Dua Lipa and Polari by Olly Alexander. Harle released his debut album Harlecore in 2021, followed by Cerulean in 2026, which featured collaborations with Polachek, Lipa, PinkPantheress, Clairo, and Julia Michaels."
+  },
+  {
+   "id": "d9b49bbe-7219-4b17-a342-309a4e0a7336",
+   "slug": "az-chike-f45639f7",
+   "title": "AZ Chike",
+   "act": "AZ Chike",
+   "name": "AZ Chike",
+   "description": "American rapper",
+   "source_url": "https://en.wikipedia.org/wiki/AZ_Chike",
+   "extract": "Damaria Kayshawn Walker, better known by his stage name AZ Chike, is an American rapper from Los Angeles, California. After a brief tenure with Atlantic Records, he self-released five albums before signing with Warner Records to release his seventh album, No Rest for the Wicked (2026)."
+  }
+ ]
+}

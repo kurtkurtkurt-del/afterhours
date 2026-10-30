@@ -1,0 +1,216 @@
+{
+ "city": "milano",
+ "day": "2026-10-30",
+ "nights": [
+  {
+   "id": "3b415739-364f-4b36-a933-15a5d76b570e",
+   "slug": "nate-smith-jazzmi-2026-10c8d79e",
+   "title": "Nate Smith | JAZZMI 2026",
+   "act": "Nate Smith",
+   "name": "Nate Smith",
+   "description": "American country music singer (born 1985)",
+   "source_url": "https://en.wikipedia.org/wiki/Nate_Smith_(singer)",
+   "extract": "Nathaniel Dean Smith is an American country music singer signed to Sony Music Nashville. After his song \"Wildfire\" went viral on TikTok in 2020, he signed a publishing deal with Sony/ATV. He gained prominence on social media before landing his major label record deal. He was previously signed to Word Records."
+  },
+  {
+   "id": "a71a64ce-73ea-4e3b-8ae1-eb7907698889",
+   "slug": "gregory-porter-jazzmi-2026-7e3c3701",
+   "title": "Gregory Porter | JAZZMI 2026",
+   "act": "Gregory Porter",
+   "name": "Gregory Porter",
+   "description": "American singer and songwriter (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Gregory_Porter",
+   "extract": "Gregory Porter is an American singer, songwriter, and musician. He has twice won the Grammy Award for Best Jazz Vocal Album: first in 2014 for Liquid Spirit and then again in 2017 for Take Me to the Alley."
+  },
+  {
+   "id": "2f9b8555-4213-4f4b-83c3-5d865e77161e",
+   "slug": "china-moses-jazzmi-2026-4728836e",
+   "title": "China Moses | JAZZMI 2026",
+   "act": "China Moses",
+   "name": "China Moses",
+   "description": "American singer and broadcaster (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/China_Moses",
+   "extract": "China Moses is an American singer and television host."
+  },
+  {
+   "id": "378240ba-abcd-494d-9e38-41585250e079",
+   "slug": "marco-mengoni-residency-allo-sbagliato-24c9c510",
+   "title": "Marco Mengoni - Residency Allo Sbagliato",
+   "act": "Marco Mengoni",
+   "name": "Marco Mengoni",
+   "description": "Italian singer (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Marco_Mengoni",
+   "extract": "Marco Mengoni is an Italian singer-songwriter who rose to fame in 2009 after winning the third season of the Italian talent show X Factor. Since then he has sold over 2.8 million records in Italy, peaking the Italian albums chart seven consecutive times and entering the Top 10 Italian Singles Chart fifteen times. He won the Sanremo Music Festival in 2013 and again in 2023, therefore representing Italy in the Eurovision Song Contest in both years."
+  },
+  {
+   "id": "8cab0460-fc60-4220-baa0-d89f8497190a",
+   "slug": "svaneborg-kardyb-jazzmi-2026-5c42a04d",
+   "title": "Svaneborg Kardyb | JAZZMI 2026",
+   "act": "Svaneborg Kardyb",
+   "name": "Svaneborg Kardyb",
+   "description": "Danish musical duo",
+   "source_url": "https://en.wikipedia.org/wiki/Svaneborg_Kardyb",
+   "extract": "Svaneborg Kardyb are a Danish electronic jazz duo, composed of Nikolaj Svaneborg, and Jonas Kardyb. Their music draws on Danish folk music and Scandinavian jazz influences. In 2019, they were awarded with two Danish Music Awards Jazz — for Talent of the Year and Danish Jazz Composer of the Year following the release of their debut album."
+  },
+  {
+   "id": "be5d2566-61b3-4b04-a3ff-d4bbd5e13a3d",
+   "slug": "mt-jones-jazzmi-2026-687283ad",
+   "title": "MT Jones | JAZZMI 2026",
+   "act": "MT Jones",
+   "name": "MT Jones",
+   "description": "English singer",
+   "source_url": "https://en.wikipedia.org/wiki/MT_Jones",
+   "extract": "\nMT Jones is an English singer from Liverpool. He appeared on Jo Whiley's \"Sofa Session\" in November 2025."
+  },
+  {
+   "id": "532889b5-130c-4ef0-89fb-1b0b9740f169",
+   "slug": "isaiah-collier-jazzmi-2026-5af4271b",
+   "title": "Isaiah Collier | JAZZMI 2026",
+   "act": "Isaiah Collier",
+   "name": "Isaiah Collier",
+   "description": "American jazz musician (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Isaiah_Collier_(musician)",
+   "extract": "Isaiah Collier is an American jazz composer and saxophonist based in Chicago and Brooklyn. He started playing saxophone at age 11. Until 2024, he performed with his band The Chosen Few. He was selected as one of the top 25 rising jazz stars by Downbeat Magazine in July 2024. He has recorded six albums as of 2024. In 2025, he performed a tribute concert in honour of the 60th anniversary of John Coltrane's A Love Supreme."
+  },
+  {
+   "id": "aa6be7c5-91eb-4f4a-b364-d79b1b1e3cd1",
+   "slug": "sergio-cammariere-jazzmi-2026-c445eb28",
+   "title": "Sergio Cammariere | JAZZMI 2026",
+   "act": "Sergio Cammariere",
+   "name": "Sergio Cammariere",
+   "description": "Italian jazz singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Sergio_Cammariere",
+   "extract": "Sergio Cammariere is an Italian jazz singer-songwriter. He has released 12 studio albums and 1 live album."
+  },
+  {
+   "id": "c5795c40-5c6a-415b-98fd-54916cf86039",
+   "slug": "the-kid-laroi-a-perfect-world-tour-d76e575b",
+   "title": "The Kid LAROI - A Perfect World Tour",
+   "act": "The Kid LAROI",
+   "name": "The Kid Laroi",
+   "description": "Australian singer (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/The_Kid_Laroi",
+   "extract": "Charlton Kenneth Jeffrey Howard, known professionally as the Kid Laroi, is an Australian singer, rapper, and songwriter. He was signed with American rapper Lil Bibby's Grade A Productions, in a joint venture with Columbia Records, in 2019. He is best known for his 2021 single \"Stay\", which peaked atop the charts in numerous countries including his native Australia, as well as the Canadian Hot 100 and Billboard Hot 100."
+  },
+  {
+   "id": "9938f342-6759-4a5b-afbd-83d878794e91",
+   "slug": "the-pretty-reckless-dear-god-tour-f779a040",
+   "title": "The Pretty Reckless - Dear God Tour",
+   "act": "The Pretty Reckless",
+   "name": "The Pretty Reckless",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pretty_Reckless",
+   "extract": "The Pretty Reckless is an American rock band from New York City, formed in 2009. The band consists of Taylor Momsen, Ben Phillips, Mark Damon (bass), and Jamie Perkins (drums). In August 2010, the band released their debut studio album, Light Me Up. The album spawned three moderately successful singles, most notably \"Make Me Wanna Die\". The band released the Hit Me Like a Man EP in early 2012. In March 2014, the band released their second studio album, Going to Hell, which included the singles \"Heaven Knows\" and \"Messed Up World \", both of which topped the US and UK rock charts."
+  },
+  {
+   "id": "b1ec4850-0448-4970-8087-88bd4a82b450",
+   "slug": "benjamin-clementine-allo-sbagliato-2f1a7874",
+   "title": "Benjamin Clementine - Allo Sbagliato",
+   "act": "Benjamin Clementine",
+   "name": "Benjamin Clementine",
+   "description": "British musician (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Benjamin_Clementine",
+   "extract": "Benjamin Sainte-Clémentine, known as Benjamin Clementine, is a British actor, composer, and musician."
+  },
+  {
+   "id": "e565e5bc-db47-4136-b745-df9231232c82",
+   "slug": "the-molotovs-b4c9605a",
+   "title": "The Molotovs",
+   "act": "The Molotovs",
+   "name": "The Molotovs",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Molotovs",
+   "extract": "The Molotovs are an English rock band from London. It consists of teenage siblings Matt and Issey Cartlidge. In 2026 they released their debut album Wasted on Youth."
+  },
+  {
+   "id": "f27baa74-9988-4c4b-b32f-b959cfd2e17e",
+   "slug": "jose-gonzalez-fd187824",
+   "title": "Jose Gonzaléz",
+   "act": "Jose Gonzaléz",
+   "name": "José González",
+   "description": "Swedish musician (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Gonz%C3%A1lez_(singer)",
+   "extract": "José Gabriel González is a Swedish indie folk singer-songwriter and guitarist from Gothenburg. He is also a member of the band Junip, along with Tobias Winterkorn. As of 2026, he has released five solo studio albums."
+  },
+  {
+   "id": "e4bd1234-be03-448a-a0fa-dcef62786a9c",
+   "slug": "artemas-lovercore-getting-up-to-no-good-tour-120165f1",
+   "title": "Artemas - LOVERCORE / GETTING UP TO NO GOOD Tour",
+   "act": "Artemas",
+   "name": "Artemas",
+   "description": "English-Cypriot singer-songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Artemas_(musician)",
+   "extract": "Artemas Diamandis, known mononymously as Artemas, is an English singer, songwriter and record producer. He is best known for his singles \"If U Think I'm Pretty\" and the viral \"I Like the Way You Kiss Me\". He is signed to the record label 10K Projects."
+  },
+  {
+   "id": "b232415a-c088-4475-927d-b3d139abb2f4",
+   "slug": "muse-the-wow-signal-europa-tour-d7620afb",
+   "title": "Muse - The Wow! Signal Europa Tour",
+   "act": "Muse",
+   "name": "Muse",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Muse_(band)",
+   "extract": "Muse are an English rock band from Teignmouth, Devon, formed in 1994. The band consists of Matt Bellamy, Chris Wolstenholme, and Dominic Howard."
+  },
+  {
+   "id": "4aac4a4e-6e65-41dc-80d3-7e75db69eace",
+   "slug": "kingfishr-982d595b",
+   "title": "Kingfishr",
+   "act": "Kingfishr",
+   "name": "Kingfishr",
+   "description": "Musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Kingfishr",
+   "extract": "Kingfishr are an Irish indie folk group formed in Limerick in 2022 comprising members Eddie Keogh, Eoghan \"McGoo\" McGrath, and Eoin \"Fitz\" Fitzgibbon. The band's breakout success was their song \"Killeagh\", which reached number one on the Irish Singles Chart on 2 May 2025. Their debut studio album Halcyon was released in August 2025."
+  },
+  {
+   "id": "b7ec420f-8a6b-4244-afe4-b83bae7ab2fd",
+   "slug": "polyphia-be-not-afraid-world-tour-c11a2a36",
+   "title": "Polyphia: BE NOT AFRAID World Tour",
+   "act": "Polyphia",
+   "name": "Polyphia",
+   "description": "American progressive rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Polyphia",
+   "extract": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music. Polyphia has released five studio albums, one live record, two EPs, and numerous singles."
+  },
+  {
+   "id": "1721b7a9-173a-4219-8a03-cc31f80582f4",
+   "slug": "freya-skye-stars-align-tour-682448a4",
+   "title": "Freya Skye - Stars Align Tour",
+   "act": "Freya Skye",
+   "name": "Freya Skye",
+   "description": "English singer and actress (born 2009)",
+   "source_url": "https://en.wikipedia.org/wiki/Freya_Skye",
+   "extract": "Freya Skye is an English singer and actress. She represented the United Kingdom in the Junior Eurovision Song Contest 2022, after which she was signed to Hollywood Records. Skye also has a talent holding deal for projects with Disney Branded Television. As an actress, she has appeared in The Next Step and made her film debut starring as Nova Bright in Zombies 4: Dawn of the Vampires. As a musician, Skye has released a number of singles since 2020 and released her debut extended play Stardust in 2026 and embarked on her first headlining tour, the Stars Align Tour."
+  },
+  {
+   "id": "5f949b75-d741-45a3-88ac-6975931820c3",
+   "slug": "ludovico-einaudi-6e0a86d5",
+   "title": "Ludovico Einaudi",
+   "act": "Ludovico Einaudi",
+   "name": "Ludovico Einaudi",
+   "description": "Italian pianist and composer (born 1955)",
+   "source_url": "https://en.wikipedia.org/wiki/Ludovico_Einaudi",
+   "extract": "Ludovico Maria Enrico Einaudi OMRI is an Italian pianist and composer. Trained at the Conservatorio Verdi in Milan, Einaudi began his career as a classical composer, later incorporating other styles and genres such as pop, rock, folk, and world music."
+  },
+  {
+   "id": "f8371270-c6a9-4a71-8a7e-8dbff6c05f52",
+   "slug": "saint-levant-afandi-world-tour-8eaa8e85",
+   "title": "Saint Levant - AFANDI WORLD TOUR",
+   "act": "Saint Levant",
+   "name": "Saint Levant",
+   "description": "Palestinian rapper and musician (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Saint_Levant",
+   "extract": "Marwan Abdelhamid, known professionally as Saint Levant, is a Palestinian singer-songwriter and rapper. A multilingual artist, he became known for his 2022 song \"Very Few Friends\". As of August 2026, he has released two EPs and two studio albums, and has toured in the Middle East, Europe, the US, and Australia."
+  },
+  {
+   "id": "824883a8-9a78-4d01-8e16-8cdf8ecb9ef9",
+   "slug": "kodaline-farewell-tour-98b2a574",
+   "title": "Kodaline - Farewell Tour",
+   "act": "Kodaline",
+   "name": "Kodaline",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kodaline",
+   "extract": "Kodaline are an Irish rock band. Originally known as 21 Demands, the band adopted their current name in 2012 to coincide with the changing of their music. The group comprises Steve Garrigan, Vincent May, Mark Prendergast, and Jason Boland."
+  }
+ ]
+}

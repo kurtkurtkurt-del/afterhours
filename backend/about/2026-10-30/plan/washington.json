@@ -1,0 +1,236 @@
+{
+ "city": "washington",
+ "day": "2026-10-30",
+ "nights": [
+  {
+   "id": "2d272ccf-0973-4201-a1d1-feed5dc7e172",
+   "slug": "eiv-r-4b1d056e",
+   "title": "Eivør",
+   "act": "Eivør",
+   "name": "Eivør",
+   "description": "Faroese singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Eiv%C3%B8r_(singer)",
+   "extract": "Eivør Pálsdóttir, known mononymously as Eivør, is a Faroese singer-songwriter. Born and raised in Syðrugøta, she had her first televised performance at the age of 13. Over the course of her decades-long career, her musical output has spanned a wide range of genres such as folk, art pop, jazz, folk rock, classical and electronica."
+  },
+  {
+   "id": "e2693ede-0dc9-468f-98e7-27d14c7c546f",
+   "slug": "jukebox-the-ghost-halloqueen-da269d47",
+   "title": "Jukebox the Ghost: HalloQueen",
+   "act": "Jukebox the Ghost",
+   "name": "Jukebox the Ghost",
+   "description": "American three-piece power pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Jukebox_the_Ghost",
+   "extract": "Jukebox the Ghost is an American three-piece power pop band formed in the Washington, D.C. metro area. The band consists of Ben Thornewill, Tommy Siegel and Jesse Kristin (drums). The band has been active since 2003."
+  },
+  {
+   "id": "ad0eedc4-076e-4b9a-9f3e-2f23a560234f",
+   "slug": "boy-harsher-ead83a88",
+   "title": "Boy Harsher",
+   "act": "Boy Harsher",
+   "name": "Boy Harsher",
+   "description": "American electronic music band",
+   "source_url": "https://en.wikipedia.org/wiki/Boy_Harsher",
+   "extract": "Boy Harsher is an American electronic music group formed in 2013 in Savannah, Georgia. Currently based in Northampton, Massachusetts, the band consists of vocalist Jae Matthews and producer Augustus Muller. The band has amassed a cult following since their formation, and their song \"Pain\" has become an underground hit. Matthews and Muller own and run the label Nude Club, which is exclusively devoted to Boy Harsher and related artists."
+  },
+  {
+   "id": "f9e63837-04d8-4d05-bb78-157fa0de6231",
+   "slug": "hudson-westbrook-hits-me-tour-aa72054a",
+   "title": "Hudson Westbrook: Hits Me Tour",
+   "act": "Hudson Westbrook",
+   "name": "Hudson Westbrook",
+   "description": "American country singer (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Hudson_Westbrook",
+   "extract": "Hudson Brown Westbrook is an American country singer-songwriter based in Lubbock, Texas. He is known for his country music accomplishments at such a young age, having gone viral on social media."
+  },
+  {
+   "id": "29300e21-cbf7-4d23-b3bc-d88a92b3c1f8",
+   "slug": "bassvictim-037d904d",
+   "title": "Bassvictim",
+   "act": "Bassvictim",
+   "name": "Bassvictim",
+   "description": "Electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Bassvictim",
+   "extract": "Bassvictim is an electronic music duo formed in London in 2022 by Polish-English singer songwriter Maria Manow and American musician and producer Ike Clateman. In 2025, they released their debut album Forever."
+  },
+  {
+   "id": "00c8856b-59d4-485e-a965-79f9616ac801",
+   "slug": "the-army-the-navy-the-fake-brave-tour-2026-e9b187a4",
+   "title": "THE ARMY, THE NAVY: THE FAKE BRAVE TOUR 2026",
+   "act": "THE ARMY, THE NAVY",
+   "name": "The Army, The Navy",
+   "description": "American musical duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_Army%2C_The_Navy",
+   "extract": "The Army, The Navy is an American folk-pop band consisting of Maia Ciambriello and Sasha Goldberg."
+  },
+  {
+   "id": "d06acbce-2d0f-4541-aaad-afb1cbb65625",
+   "slug": "john-summit-ctrl-escape-arena-tour-e352cef2",
+   "title": "JOHN SUMMIT - CTRL ESCAPE ARENA TOUR",
+   "act": "JOHN SUMMIT",
+   "name": "John Summit",
+   "description": "American DJ and record producer (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/John_Summit",
+   "extract": "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label. His music includes original tracks and remixes, primarily focused in the genre of tech house."
+  },
+  {
+   "id": "e6ff601d-fc64-486c-b90d-ea8d011dd162",
+   "slug": "blake-whiten-73e5bd96",
+   "title": "Blake Whiten",
+   "act": "Blake Whiten",
+   "name": "Blake Whiten",
+   "description": "American country singer (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Blake_Whiten",
+   "extract": "Blake Whiten is an American country singer and songwriter. His debut album, Something to Say, was released in 2026, which included his first Billboard Hot 100 hit \"Bet on That\"."
+  },
+  {
+   "id": "5b362b1f-9e4b-4102-865e-cb55adbc9a49",
+   "slug": "yebba-001568ae",
+   "title": "Yebba",
+   "act": "Yebba",
+   "name": "Yebba",
+   "description": "American singer (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Yebba",
+   "extract": "Abigail Elizabeth Smith, known professionally as Yebba, is an American singer and songwriter from West Memphis, Arkansas. She first became known for her YouTube channel and then for her backing vocal performance on Chance the Rapper's SNL performance of the song \"Same Drugs\" in 2016 and releasing her debut single \"Evergreen\" in 2017. She has collaborated with a number of artists, including PJ Morton, Sam Smith, Mark Ronson, Stormzy, Ed Sheeran, A$AP Rocky, Tyler, the Creator and Drake. She won a Grammy Award in the category Best Traditional R&B Performance for her feature on PJ Morton's cover of \"How Deep Is Your Love\" in 2019."
+  },
+  {
+   "id": "62c48b37-6ba9-4d92-b131-37faa15be8ae",
+   "slug": "rainao-marcria-tour-dea3401c",
+   "title": "RaiNao: Marcria tour",
+   "act": "RaiNao",
+   "name": "RaiNao",
+   "description": "Puerto Rican singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/RaiNao",
+   "extract": "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter. Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop, shaped by her background in music theory and live performance. She got signed to Rimas Entertainment in 2024."
+  },
+  {
+   "id": "31a8e295-4f9e-419c-84a7-439fc6d3f4e6",
+   "slug": "pretty-sick-b2bec720",
+   "title": "Pretty Sick",
+   "act": "Pretty Sick",
+   "name": "Pretty Sick",
+   "description": "American rock band from New York City",
+   "source_url": "https://en.wikipedia.org/wiki/Pretty_Sick",
+   "extract": "Pretty Sick is an American indie rock band from New York City, New York. It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz."
+  },
+  {
+   "id": "d42a0e6b-4e2e-4aeb-bdaf-efdbd8a75bc5",
+   "slug": "she-wants-revenge-c9791756",
+   "title": "She Wants Revenge",
+   "act": "She Wants Revenge",
+   "name": "She Wants Revenge",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/She_Wants_Revenge",
+   "extract": "She Wants Revenge is an American rock band, based in San Fernando Valley, California. Formed in 2004, the band is a duo of singer and guitarist Justin Warfield and multi-instrumentalist Adam Bravin. Their music has been influenced by post-punk, darkwave and gothic rock. The band has sold more than 300,000 records in the US."
+  },
+  {
+   "id": "1f38889c-8ec2-4131-971b-444eb0ece17f",
+   "slug": "rainao-marcria-tour-f683a00c",
+   "title": "RaiNao: Marcriá tour",
+   "act": "RaiNao",
+   "name": "RaiNao",
+   "description": "Puerto Rican singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/RaiNao",
+   "extract": "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter. Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop, shaped by her background in music theory and live performance. She got signed to Rimas Entertainment in 2024."
+  },
+  {
+   "id": "3eb447a3-bf58-4147-878c-0288e646d54c",
+   "slug": "brass-against-halloween-tour-4476f2f8",
+   "title": "Brass Against - Halloween Tour",
+   "act": "Brass Against",
+   "name": "Brass Against",
+   "description": "Musical collective",
+   "source_url": "https://en.wikipedia.org/wiki/Brass_Against",
+   "extract": "Brass Against is an American cover band that creates brass-inflected cover versions of rock songs. The collective chooses politically charged songs and other socially conscious music in order to raise awareness of various issues and to encourage activism and social change."
+  },
+  {
+   "id": "c6aba8c4-8d84-44d9-b3e1-0a0700003fd5",
+   "slug": "hovvdy-9bc49e8c",
+   "title": "Hovvdy",
+   "act": "Hovvdy",
+   "name": "Hovvdy",
+   "description": "American indie pop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Hovvdy",
+   "extract": "Hovvdy is an American indie pop duo formed in Austin, Texas by Charlie Martin and Will Taylor."
+  },
+  {
+   "id": "e1067904-5155-417d-ab77-b99aa7bdce03",
+   "slug": "hot-club-of-san-francisco-79187def",
+   "title": "Hot Club of San Francisco",
+   "act": "Hot Club of San Francisco",
+   "name": "Hot Club of San Francisco",
+   "description": "American gypsy jazz band",
+   "source_url": "https://en.wikipedia.org/wiki/Hot_Club_of_San_Francisco",
+   "extract": "The Hot Club of San Francisco is an American gypsy jazz band. Led by guitarist, songwriter, and arranger Paul 'Pazzo' Mehling, the group uses the instrumentation of violin, bass, and guitars from Django Reinhardt and Stephane Grappelli’s Quintette du Hot Club de France and performs arrangements of gypsy jazz standards, pop songs, and original compositions by Mehling. The Hot Club of San Francisco includes violinist Evan Price, the vocals of various members, and a swing rhythm section. In the book, Django Reinhardt and the Illustrated History of Gypsy Jazz, Michael Dregni refers to the Hot Club of San Francisco as \"one of the first American gypsy jazz bands.\""
+  },
+  {
+   "id": "5103a618-187a-4978-9556-528894887dd0",
+   "slug": "blu-detiger-the-want-you-baby-tonight-tour-6bbc7459",
+   "title": "Blu DeTiger - The Want You Baby Tonight Tour",
+   "act": "Blu DeTiger",
+   "name": "Blu DeTiger",
+   "description": "American musician (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Blu_DeTiger",
+   "extract": "Blu DeTiger is an American singer and bass guitarist from New York City. She has released one EP, How Did We Get Here? (2021) and one studio album, All I Ever Want Is Everything (2024)."
+  },
+  {
+   "id": "5ff4654e-4a16-4268-9264-590e0f7bdd6f",
+   "slug": "the-longest-johns-ac7be0a7",
+   "title": "The Longest Johns",
+   "act": "The Longest Johns",
+   "name": "The Longest Johns",
+   "description": "British folk music group",
+   "source_url": "https://en.wikipedia.org/wiki/The_Longest_Johns",
+   "extract": "The Longest Johns are an English folk musical group from Bristol, England, consisting of Andy Yates, Jonathan \"JD\" Darley, and Robbie Sattin. They are known for performing folk music and sea shanties in the English tradition, and they also compose and record their own music. They gained popularity from their rendition of the folk song \"Wellerman\", which went viral on TikTok in early 2021."
+  },
+  {
+   "id": "d15c08fb-ed2d-4d17-9b38-3a0c5b617f01",
+   "slug": "geese-getting-killed-again-tour-2275e2fa",
+   "title": "Geese - Getting Killed Again Tour",
+   "act": "Geese",
+   "name": "Geese",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Geese_(band)",
+   "extract": "Geese is an American rock band from New York City that formed in 2016. It comprises lead vocalist and guitarist-keyboardist Cameron Winter, guitarist Emily Green, bassist Dominic DiGesu and drummer Max Bassin as of 2024. Guitarist Foster Hudson was a member of the group from 2019 until 2023. During live performances, the band is joined by keyboardist Sam Revaz."
+  },
+  {
+   "id": "6b5ac8a4-6837-4881-b5e6-21310c46af3e",
+   "slug": "punch-brothers-669eced6",
+   "title": "Punch Brothers",
+   "act": "Punch Brothers",
+   "name": "Punch Brothers",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/Punch_Brothers",
+   "extract": "Punch Brothers is an American band consisting of Chris Thile (mandolin), Brittany Haas (fiddle/violin), Noam Pikelny (banjo), Chris Eldridge (guitar), and Paul Kowert (bass). Their style has been described as \"bluegrass instrumentation and spontaneity in the strictures of modern classical\" as well as \"American country-classical chamber music\"."
+  },
+  {
+   "id": "8d146b09-9fe3-443c-ae79-d2f6cd5669a4",
+   "slug": "george-clanton-d99b84ff",
+   "title": "George Clanton",
+   "act": "George Clanton",
+   "name": "George Clanton",
+   "description": "American musician (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/George_Clanton",
+   "extract": "George Wayland Clanton Jr., also known by the monikers Mirror Kisses, ESPRIT 空想, CHINA, and Kid's Garden, is an American electronic musician and singer-songwriter that emerged from the vaporwave music scene in the early 2010s. He established his independent record label 100% Electronica in 2015, and in 2019 launched the first vaporwave music festival, 100% ElectroniCON."
+  },
+  {
+   "id": "bf8589ef-50d0-41bd-bc32-b990a211a94c",
+   "slug": "hiss-golden-messenger-i-m-people-tour-52f0c34b",
+   "title": "Hiss Golden Messenger - I'm People Tour",
+   "act": "Hiss Golden Messenger",
+   "name": "Hiss Golden Messenger",
+   "description": "American folk band",
+   "source_url": "https://en.wikipedia.org/wiki/Hiss_Golden_Messenger",
+   "extract": "Hiss Golden Messenger is an American folk band originating from Durham, North Carolina, formed in 2007 and led by singer and songwriter M.C. Taylor."
+  },
+  {
+   "id": "019a5afa-8045-4f7f-8f66-9877524e7505",
+   "slug": "michigander-179ebdd1",
+   "title": "Michigander",
+   "act": "Michigander",
+   "name": "Michigander",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Michigander_(band)",
+   "extract": "Michigander is an American rock band created in 2014 from Kalamazoo, Michigan. It is the solo project centered around its vocalist, songwriter and multi-instrumentalist frontman, Jason Singer."
+  }
+ ]
+}

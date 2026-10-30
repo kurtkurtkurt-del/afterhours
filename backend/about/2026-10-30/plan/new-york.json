@@ -1,0 +1,56 @@
+{
+ "city": "new-york",
+ "day": "2026-10-30",
+ "nights": [
+  {
+   "id": "92e7e645-5cf8-4395-8c31-4c9b018dde04",
+   "slug": "new-york-philharmonic-get-out-in-concert-24fbeb67",
+   "title": "New York Philharmonic: Get Out in Concert",
+   "act": "New York Philharmonic",
+   "name": "New York Philharmonic",
+   "description": "American symphony orchestra",
+   "source_url": "https://en.wikipedia.org/wiki/New_York_Philharmonic",
+   "extract": "The New York Philharmonic is an American symphony orchestra based in New York City. Known officially as the Philharmonic-Symphony Society of New York, Inc., and globally known as the New York Philharmonic Orchestra (NYPO) or the New York Philharmonic-Symphony Orchestra, it is one of the leading American orchestras popularly called the \"Big Five\". The philharmonic's home is David Geffen Hall, at New York's Lincoln Center for the Performing Arts."
+  },
+  {
+   "id": "0b4320ac-f0e4-4f55-885c-826346146024",
+   "slug": "mico-ee625b47",
+   "title": "Mico",
+   "act": "Mico",
+   "name": "Mico",
+   "description": "Canadian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Mico_(singer)",
+   "extract": "Jose Miguel Veloso, known professionally as Mico, is a Canadian singer-songwriter and musician from Toronto. He initially grew a fanbase online through Discord and Twitch, breaking out commercially with his 2022 single \"cut my hair\", which became a top-30 radio hit in Canada. In 2025, he signed with Columbia Records following a string of independent extended plays."
+  },
+  {
+   "id": "003338ac-2e5b-483b-a9b1-fec3b3c17260",
+   "slug": "josie-edwards-426ff21b",
+   "title": "Josie Edwards",
+   "act": "Josie Edwards",
+   "name": "Josie Edwards",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Josie_Edwards",
+   "extract": "Josie Edwards is an American musician and songwriter. She is best known for her 2026 single “Chemical Light\", as well as her 2025 hit “good girls”. She has released two EPs and performed at All Points East as a supporting act for Twenty One Pilots alongside Gang of Youths, Bbno$, and Jessie Murph."
+  },
+  {
+   "id": "67efb170-cb23-4fe8-bc69-f3a32e2894cc",
+   "slug": "buena-vista-social-club-bf295c3c",
+   "title": "Buena Vista Social Club",
+   "act": "Buena Vista Social Club",
+   "name": "Buena Vista Social Club",
+   "description": "Cuban musical ensemble",
+   "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+   "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years."
+  },
+  {
+   "id": "7380d429-7eac-449f-94aa-571efe4d9765",
+   "slug": "harry-styles-together-together-harryween-2b6a46cc",
+   "title": "Harry Styles: Together, Together. Harryween.",
+   "act": "Harry Styles",
+   "name": "Harry Styles",
+   "description": "English singer, songwriter, and actor (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Harry_Styles",
+   "extract": "Harry Edward Styles is an English singer, songwriter, and actor. An influential figure in popular culture, he is known for his showmanship, artistry, and flamboyant fashion. Styles's musical career began in 2010 as part of One Direction, a boy band formed on the British music competition series The X Factor after each member of the band had been eliminated from the solo contest. They became one of the best-selling boy bands of all time before going on an indefinite hiatus in 2016. Styles released his eponymous debut solo album through Erskine and Columbia Records in 2017, which was led by the UK number-one single \"Sign of the Times\"."
+  }
+ ]
+}

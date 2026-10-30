@@ -1,0 +1,66 @@
+{
+ "city": "stuttgart",
+ "day": "2026-10-30",
+ "nights": [
+  {
+   "id": "d291c757-842b-4e8d-98f0-6533f4d9e7bb",
+   "slug": "dagny-europe-2027-7a4b9506",
+   "title": "DAGNY - Europe 2027",
+   "act": "DAGNY",
+   "name": "Dagny",
+   "description": "Norwegian singer and songwriter (b. 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Dagny_(singer)",
+   "extract": "Dagny Norvoll Sandvik, known mononymously as Dagny, is a Norwegian singer and songwriter. Her music is pop-based, incorporating elements of indie, dance, synth-pop, electropop and disco. She has released two studio albums, Strangers / Lovers (2020) and Elle (2024), and one EP, Ultraviolet (2016). Her single \"Somebody\" won Song of the Year at the 2020 P3 Gull, and her 2017 track \"Love You Like That\" was the basis for Katy Perry's \"Never Really Over\" (2019). She frequently performs at festivals in Norway and the United Kingdom including Øyafestivalen, Stavernfestivalen, and Bergenfest."
+  },
+  {
+   "id": "ee94c47f-53c5-4b19-9b6f-318bb25758ee",
+   "slug": "rondo-veneziano-2c965611",
+   "title": "Rondò Veneziano",
+   "act": "Rondò Veneziano",
+   "name": "Rondò Veneziano",
+   "description": "Italian chamber orchestra",
+   "source_url": "https://en.wikipedia.org/wiki/Rond%C3%B2_Veneziano",
+   "extract": "Rondò Veneziano is an Italian chamber orchestra, specializing in Baroque music, playing original instruments, but incorporating a rock-style rhythm section of synthesizer, bass guitar and drums, originally led by Maestro Gian Piero Reverberi, who is also the principal composer of all of the original Rondò Veneziano pieces. The unusual addition of modern instruments, more suitable for jazz, combined with Reverberi's arrangements and original compositions, have resulted in lavish novel versions of classical works over the years. As a rule in their concert tours, the musicians, mostly women, add to the overall Baroque effect wearing Baroque-era attire and coiffures. The orchestra's album sales exceeded 30 million in 2017. Since 2025, the new pianist and conductor is Stefano Marchioro, who previously served as keyboard programmer for Gian Piero Reverberi from 1996 to 2010."
+  },
+  {
+   "id": "b72e1dd3-662a-44cc-baee-965fa41e709e",
+   "slug": "loreena-mckennitt-the-mask-and-mirror-30th-anniv-ad5f9f4e",
+   "title": "Loreena McKennitt: The Mask and Mirror - 30th Anniversary Tour",
+   "act": "Loreena McKennitt",
+   "name": "Loreena McKennitt",
+   "description": "Canadian musician (born 1957)",
+   "source_url": "https://en.wikipedia.org/wiki/Loreena_McKennitt",
+   "extract": "Loreena McKennitt is a Canadian singer-songwriter, multi-instrumentalist, and composer who writes, records, and performs world music with Celtic and Middle Eastern influences. McKennitt is known for her refined and clear soprano vocals. She has sold more than 16 million records worldwide."
+  },
+  {
+   "id": "97dd84e6-fea7-4ecd-b847-682a677708c3",
+   "slug": "nickelback-everything-under-the-sun-tour-8739265e",
+   "title": "Nickelback: Everything Under The Sun Tour",
+   "act": "Nickelback",
+   "name": "Nickelback",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Nickelback",
+   "extract": "Nickelback is a Canadian rock band formed in 1995 in Hanna, Alberta, comprising lead guitarist and lead vocalist Chad Kroeger, rhythm guitarist, keyboardist and backing vocalist Ryan Peake, and bassist Mike Kroeger. It went through several drummer changes between 1995 and 2005 before Daniel Adair joined."
+  },
+  {
+   "id": "17ee822b-df41-46b0-85f2-4ad0125d5475",
+   "slug": "andreas-gabalier-arena-tour-2027-1abf0d22",
+   "title": "Andreas Gabalier - Arena Tour 2027",
+   "act": "Andreas Gabalier",
+   "name": "Andreas Gabalier",
+   "description": "Austrian folk singer",
+   "source_url": "https://en.wikipedia.org/wiki/Andreas_Gabalier",
+   "extract": "Andreas Gabalier is an Austrian folk and Rock and roll singer."
+  },
+  {
+   "id": "967b8849-4996-4932-897d-e8272f3fe903",
+   "slug": "vanessa-mai-tour-2028-4418bc1c",
+   "title": "Vanessa Mai Tour 2028",
+   "act": "Vanessa Mai",
+   "name": "Vanessa Mai",
+   "description": "German singer",
+   "source_url": "https://en.wikipedia.org/wiki/Vanessa_Mai",
+   "extract": "Vanessa Marija Else Ferber, known professionally as Vanessa Mai, is a German singer. She was first-known as a member of Schlager band Wolkenfrei and later began working as a solo artist following the band's split. She chose her stage name as a reference to her birth month, which is spelled Mai in German."
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "city": "barcelona",
+ "day": "2026-10-30",
+ "nights": [
+  {
+   "id": "c01c4242-8358-4b14-be7a-0bfe67a4ceca",
+   "slug": "elgrandetoto-7c4df85d",
+   "title": "ElGrandeToto",
+   "act": "ElGrandeToto",
+   "name": "ElGrandeToto",
+   "description": "Moroccan rapper (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/ElGrandeToto",
+   "extract": "Taha Fahssi, better known by his stage name ElGrandeToto, EGT or just Toto, is a Moroccan rapper from Casablanca. He has been the most streamed artist in Morocco for five consecutive years (2021-2025) and was the most listened-to artist in the MENA region on Spotify in 2021 and 2023. He is also the most viewed Moroccan rapper on YouTube. Fahssi is widely regarded as one of Morocco's best rappers of all time."
+  },
+  {
+   "id": "e89a5802-8020-46b2-8d9d-fd3b65c33136",
+   "slug": "pitbull-i-m-back-5343bc31",
+   "title": "Pitbull - I'm Back!",
+   "act": "Pitbull",
+   "name": "Pitbull",
+   "description": "American rapper (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/Pitbull_(rapper)",
+   "extract": "Armando Christian Pérez, known professionally as Pitbull, is an American rapper, singer, songwriter, and actor. He began his career in the early 2000s as a reggaeton, Latin hip-hop, and crunk performer, and signed with TVT Records to release his debut album, M.I.A.M.I. (2004). Executive produced by Lil Jon, the album entered the Billboard 200 along with his second and third albums, El Mariel (2006) and The Boatlift (2007). His fourth album, Pitbull Starring in Rebelution (2009), yielded his mainstream breakthrough, spawning the singles \"I Know You Want Me \" and \"Hotel Room Service\"—which peaked at numbers two and eight on the U.S. Billboard Hot 100, respectively."
+  },
+  {
+   "id": "d3b5c44f-9285-4b8b-8135-935dbdbc4851",
+   "slug": "joe-bonamassa-2026-europe-tour-7ec5ee42",
+   "title": "Joe Bonamassa - 2026 EUROPE TOUR",
+   "act": "Joe Bonamassa",
+   "name": "Joe Bonamassa",
+   "description": "American musician (born 1977)",
+   "source_url": "https://en.wikipedia.org/wiki/Joe_Bonamassa",
+   "extract": "Joseph Leonard Bonamassa is an American blues rock guitarist, singer and songwriter. He started his career at age twelve, when he opened for B. B. King."
+  },
+  {
+   "id": "04510892-202b-425e-af10-064578a248ac",
+   "slug": "arlo-parks-desire-tour-fc048629",
+   "title": "ARLO PARKS - DESIRE TOUR",
+   "act": "ARLO PARKS",
+   "name": "Arlo Parks",
+   "description": "British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Arlo_Parks",
+   "extract": "Anaïs Oluwatoyin Estelle Marinho, known professionally as Arlo Parks, is an English singer and songwriter. Her debut studio album, Collapsed in Sunbeams, was released in 2021 to critical acclaim and peaked at number three on the UK Albums Chart. It won the 2021 Mercury Prize for Best Album and earned her nominations for Album of the Year, Best New Artist and Best British Female Solo Artist at the 2021 Brit Awards."
+  },
+  {
+   "id": "8688df73-6f77-46e2-814c-368efe2a3ca3",
+   "slug": "jack-and-jack-syn-anti-europe-2026-d06ebc85",
+   "title": "Jack & Jack: SYN/ANTI EUROPE 2026",
+   "act": "Jack & Jack",
+   "name": "Jack & Jack",
+   "description": "American pop-rap duo",
+   "source_url": "https://en.wikipedia.org/wiki/Jack_%26_Jack",
+   "extract": "Jack & Jack are an American pop-rap duo from Omaha, Nebraska, consisting of Jack Johnson and Jack Gilinsky, based in Los Angeles, California. After success via the social media app Vine, the duo turned to careers as musicians. Their 2014 single \"Wild Life\" peaked at number 87 on the US Billboard Hot 100. They also featured on Jonas Blue's 2018 hit single \"Rise\", which peaked at number three in the UK Singles Chart in addition to charting within the top 20 of various other European countries and Australia."
+  }
+ ]
+}

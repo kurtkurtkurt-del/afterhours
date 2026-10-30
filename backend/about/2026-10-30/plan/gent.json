@@ -1,0 +1,36 @@
+{
+ "city": "gent",
+ "day": "2026-10-30",
+ "nights": [
+  {
+   "id": "06160bc0-1466-45ae-a966-698196ce3f7a",
+   "slug": "bee-gees-60-years-of-hits-cca04f7e",
+   "title": "Bee Gees - 60 Years of Hits",
+   "act": "Bee Gees",
+   "name": "Bee Gees",
+   "description": "Musical group, 1958–2012",
+   "source_url": "https://en.wikipedia.org/wiki/Bee_Gees",
+   "extract": "The Bee Gees \nwere a musical group formed in 1958 by brothers Barry, Robin, and Maurice Gibb. They were especially successful in popular music in the late 1960s and the 1970s. The group sang recognisable three-part tight harmonies: Robin's clear vibrato lead vocals were a hallmark of their earlier hits, while Barry's R&B falsetto became their signature sound during the mid-to-late 1970s and 1980s. The group wrote all their own original material, as well as writing and producing several major hits for other artists, and are regarded as one of the most important and influential acts in pop-music history. They have been referred to in the media as The Disco Kings, Britain's First Family of Harmony, and The Kings of Dance Music. The group was officially a trio of the brothers for most of their history, with Vince Melouney and Colin Petersen also being official members during the late 1960s, and Geoff Bridgford being an official member during the early 1970s. Although never a member of the Bee Gees, the youngest Gibb brother, Andy, achieved several hits as a solo artist during the 1970s."
+  },
+  {
+   "id": "8f4e0063-98b3-46d4-b20b-e4fe1e9a4685",
+   "slug": "kommil-foo-babel-b45ddafa",
+   "title": "Kommil Foo - Babel",
+   "act": "Kommil Foo",
+   "name": "Kommil Foo",
+   "description": "Belgian cabaret duo",
+   "source_url": "https://en.wikipedia.org/wiki/Kommil_Foo",
+   "extract": "Kommil Foo is a Flemish cabaret duo, existing of two brothers Raf and Mich Walschaerts."
+  },
+  {
+   "id": "7bc47b2a-b1d9-44f6-b7cd-fb6f588172ab",
+   "slug": "hooverphonic-a0e0c62f",
+   "title": "Hooverphonic",
+   "act": "Hooverphonic",
+   "name": "Hooverphonic",
+   "description": "Belgian band",
+   "source_url": "https://en.wikipedia.org/wiki/Hooverphonic",
+   "extract": "Hooverphonic is a Belgian electronic band that was formed in October 1995. Though originally categorized as a trip hop group, they quickly expanded their sound to the point where it could no longer be described as a belonging to a single genre, but rather as encompassing alternative, electronica, electropop, rock, and a mixture of others. The band was originally named Hoover, but was later renamed Hooverphonic to avoid confusion with bands already using the Hoover name."
+  }
+ ]
+}
