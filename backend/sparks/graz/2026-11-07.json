@@ -1,0 +1,27 @@
+{
+  "city": "graz",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "klanglicht, last night at schloss eggenberg.",
+        "de": "klanglicht, letzte nacht im schloss eggenberg.",
+        "tr": "schloss eggenberg'de klanglicht'in son gecesi."
+      },
+      "line": {
+        "en": "the last night of klanglicht at schloss eggenberg, daily 18:00 to 22:00, timed entry only on a booked ticket. tickets only on klanglicht.buehnen-graz.com.",
+        "de": "letzte nacht des klanglicht im schloss eggenberg, täglich 18:00 bis 22:00 uhr, einlass nur mit gebuchtem zeitfenster. tickets nur über klanglicht.buehnen-graz.com.",
+        "tr": "schloss eggenberg'de klanglicht'in son gecesi, her gün 18:00 ile 22:00 arası; yalnızca rezerve edilmiş zaman dilimi olan biletle giriş. biletler yalnızca klanglicht.buehnen-graz.com üzerinden."
+      },
+      "place": {
+        "en": "schloss eggenberg",
+        "de": "schloss eggenberg",
+        "tr": "schloss eggenberg"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Klanglicht at Schloss Eggenberg runs to 7 Nov, daily 18:00 to 22:00, per the official FAQ (klanglicht.buehnen-graz.com/en/faq/)."
+    }
+  ]
+}

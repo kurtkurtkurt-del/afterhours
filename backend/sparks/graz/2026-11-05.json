@@ -1,0 +1,27 @@
+{
+  "city": "graz",
+  "day": "2026-11-05",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": {
+        "en": "sturm graz – celje in the europa league.",
+        "de": "sturm graz – celje in der europa league.",
+        "tr": "sturm graz – celje, avrupa ligi maçı."
+      },
+      "line": {
+        "en": "sturm graz host nk celje in the europa league on thursday at 21:00 at stadion graz-liebenau.",
+        "de": "sturm graz empfängt nk celje in der europa league am donnerstag um 21:00 uhr im stadion graz-liebenau.",
+        "tr": "sturm graz, avrupa ligi'nde nk celje'yi perşembe günü 21:00'de graz-liebenau stadyumu'nda ağırlıyor."
+      },
+      "place": {
+        "en": "stadion graz-liebenau",
+        "de": "stadion graz-liebenau",
+        "tr": "stadion graz-liebenau"
+      },
+      "hour": 21,
+      "minute": 0,
+      "why": "Sturm Graz vs NK Celje, Europa League home match, Thu 5 Nov 21:00 at Stadion Graz-Liebenau (t-online live ticker, sdc_fm-62488; the starting11.com fixtures list shows 20:00 UK, which is 21:00 in Graz)."
+    }
+  ]
+}

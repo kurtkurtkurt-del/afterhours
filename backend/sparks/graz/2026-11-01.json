@@ -1,0 +1,27 @@
+{
+  "city": "graz",
+  "day": "2026-11-01",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": {
+        "en": "old town walk with graz tourism.",
+        "de": "altstadt-rundgang mit graz tourismus.",
+        "tr": "graz tourism ile eski şehir yürüyüşü."
+      },
+      "line": {
+        "en": "the graz tourism old town walk starts at 10:30 every day in november, in german and english. in november you must book until 13:30 on the day itself. it runs in any weather.",
+        "de": "der altstadt-rundgang von graz tourismus beginnt im november täglich um 10:30 uhr, auf deutsch und englisch. im november bis 13:30 uhr am selben tag anmelden. er findet bei jedem wetter statt.",
+        "tr": "graz tourism altstadt yürüyüşü kasımda her gün 10:30'da başlar, almanca ve ingilizce. kasımda aynı gün 13:30'a kadar kayıt gerekir. her havada yapılır."
+      },
+      "place": {
+        "en": "graz altstadt",
+        "de": "graz altstadt",
+        "tr": "graz altstadt"
+      },
+      "hour": 10,
+      "minute": 30,
+      "why": "Graz Tourismus Altstadt-Rundgang, daily 10:30 in November, booking until 13:30 on the day, runs in any weather (steiermark.com event listing, ed_41617106)."
+    }
+  ]
+}
