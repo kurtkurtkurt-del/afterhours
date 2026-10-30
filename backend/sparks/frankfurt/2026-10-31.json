@@ -1,0 +1,14 @@
+{
+  "city": "frankfurt",
+  "day": "2026-10-31",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "halloween night at the zoom.", "de": "halloween-nacht im zoom.", "tr": "zoom'da halloween gecesi." },
+      "line": { "en": "the zoom halloween party on saturday night, from 23:00, entry from 15 euro. check the ticket page for the current price.", "de": "die zoom-halloween-party am samstagabend, ab 23:00, eintritt ab 15 euro. den aktuellen preis auf der ticketseite prüfen.", "tr": "cumartesi gecesi zoom halloween partisi, 23:00'ten itibaren, girişi 15 euro'dan başlıyor. güncel fiyatı bilet sayfasından kontrol et." },
+      "place": { "en": "zoom frankfurt", "de": "zoom frankfurt", "tr": "zoom frankfurt" },
+      "hour": 23, "minute": 0,
+      "why": "ZOOM Halloween party on sat 31.10.2026 from 23:00, entry from 15 euro (mvp.de Frankfurt listing, https://www.mvp.de/frankfurt-am-main/veranstaltungen/halloween-party-zoom-frankfurt-am-main/). The 23:00 start came from a search summary of that page, not a direct read."
+    }
+  ]
+}
