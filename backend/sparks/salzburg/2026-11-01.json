@@ -1,0 +1,25 @@
+{
+  "city": "salzburg",
+  "day": "2026-11-01",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a walk up the mönchsberg on the holiday.",
+        "de": "ein spaziergang auf den mönchsberg am feiertag.",
+        "tr": "tatilde mönchsberg'e yürüyüş."
+      },
+      "line": {
+        "en": "all saints' day is a public holiday in austria, on a sunday this year. walk up the mönchsberg from the old town and back down.",
+        "de": "allerheiligen ist in österreich ein gesetzlicher feiertag, dieses jahr auf einem sonntag. vom altstadtrand auf den mönchsberg und zurück.",
+        "tr": "tüm azizler günü avusturya'da resmi tatil, bu yıl pazar gününe denk geliyor. eski şehirden mönchsberg'e çıkıp geri inin."
+      },
+      "place": {
+        "en": "mönchsberg",
+        "de": "mönchsberg",
+        "tr": "mönchsberg"
+      },
+      "why": "1 Nov 2026 is All Saints' Day, a public holiday in Austria and a Sunday, per absentify (https://absentify.com/de/feiertage/oesterreich/salzburg). No time or weather forecast was found, so no hour is set."
+    }
+  ]
+}
