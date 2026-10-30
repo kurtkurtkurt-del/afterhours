@@ -568,5 +568,7 @@
    "tz": "Europe/Berlin"
   }
  ],
- "done": {}
+ "done": {
+  "berlin": "2026-10-30"
+ }
 }

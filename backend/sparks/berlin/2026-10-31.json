@@ -1,0 +1,14 @@
+{
+  "city": "berlin",
+  "day": "2026-10-31",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "halloween night at the kadewe.", "de": "halloween-nacht im kadewe.", "tr": "kadewe'de halloween gecesi." },
+      "line": { "en": "the kadewe halloween party runs 20:30 to 02:00 on saturday, 18 and over. tickets only through berlin.de and eventim; check the price there.", "de": "die kadewe-halloween-party läuft samstag von 20:30 bis 02:00, ab 18 jahren. tickets nur über berlin.de und eventim; den preis dort prüfen.", "tr": "kadewe halloween partisi cumartesi 20:30 ile 02:00 arası, 18 yaş ve üstü. biletler yalnızca berlin.de ve eventim üzerinden; fiyatı oradan kontrol et." },
+      "place": { "en": "kadewe", "de": "kadewe", "tr": "kadewe" },
+      "hour": 20, "minute": 30,
+      "why": "KaDeWe Halloween 2026 on sat 31.10, 20:30 to 02:00, 18+, per berlin.de event listing (https://www.berlin.de/en/tickets/party/halloween-2026-im-kadewe/2026-10-31-halloween-2026-dd42984b-01e5-455e-be3c-70f6734aa8ba/)."
+    }
+  ]
+}
