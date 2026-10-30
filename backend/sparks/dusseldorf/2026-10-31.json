@@ -1,0 +1,14 @@
+{
+  "city": "dusseldorf",
+  "day": "2026-10-31",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "halloween party at the alter bahnhof.", "de": "halloween-party im alter bahnhof.", "tr": "alter bahnhof'ta halloween partisi." },
+      "line": { "en": "a halloween party at the alter bahnhof in oberkassel from 20:00 on saturday. tickets from about 12 euros on the listing; check the price there.", "de": "eine halloween-party im alter bahnhof in oberkassel ab 20:00 am samstag. tickets ab etwa 12 euro laut angebot; den preis dort prüfen.", "tr": "cumartesi günü 20:00'den itibaren oberkassel'deki alter bahnhof'ta bir halloween partisi. biletler ilanda yaklaşık 12 euro'dan başlıyor; fiyatı oradan kontrol et." },
+      "place": { "en": "alter bahnhof", "de": "alter bahnhof", "tr": "alter bahnhof" },
+      "hour": 20, "minute": 0,
+      "why": "Halloween Party at Alter Bahnhof Oberkassel (Belsenplatz 2), sat 31.10.2026 from 20:00, tickets from EUR 12.34, per regioactive.de (https://www.regioactive.de/party/halloween-party-duesseldorf-alter-bahnhof-oberkassel-2026-10-31-tickets-80RjzWF3DC) and mvp.de (https://www.mvp.de/duesseldorf/veranstaltungen/halloween-party-alter-bahnhof-oberkassel-duesseldorf/)."
+    }
+  ]
+}

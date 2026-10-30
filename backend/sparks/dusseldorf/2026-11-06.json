@@ -1,0 +1,14 @@
+{
+  "city": "dusseldorf",
+  "day": "2026-11-06",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "live jazz, funk and soul at schlossallee 1.", "de": "live jazz, funk und soul im schlossallee 1.", "tr": "schlossallee 1'de canlı caz, funk ve soul." },
+      "line": { "en": "a six-piece band plays jazz, funk and soul at schlossallee 1 in kaiserswerth on friday from 19:00. the u79 tram stops at kalkumer schlossallee; party food on site.", "de": "eine sechsköpfige band spielt am freitag ab 19:00 jazz, funk und soul im schlossallee 1 in kaiserswerth. die straßenbahn u79 hält am kalkumer schlossallee; partyessen vor ort.", "tr": "cuma günü 19:00'dan itibaren kaiserswerth'te schlossallee 1'de altı kişilik bir grup caz, funk ve soul çalıyor. u79 tramvayı kalkumer schlossallee'de durur; yerinde parti yemeği var." },
+      "place": { "en": "schlossallee 1", "de": "schlossallee 1", "tr": "schlossallee 1" },
+      "hour": 19, "minute": 0,
+      "why": "Sunny Side Up live at Schlossallee1, Kalkumer Schlossallee 1, fri 6.11.2026 19:00, jazz/funk/soul, per mvp.de (https://www.mvp.de/duesseldorf/veranstaltungen/sunny-side-up-schlossallee1-duesseldorf/) and regioactive.de (https://www.regioactive.de/konzert/sunny-side-up-duesseldorf-schlossallee1-2026-11-06-tickets-3yLV1SVFcT)."
+    }
+  ]
+}
