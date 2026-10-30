@@ -1,0 +1,14 @@
+{
+  "city": "leipzig",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "the leipzig night flea market, in its 28th year.", "de": "der leipziger nachtflohmarkt, im 28. jahr.", "tr": "leipzig gece pazarı, 28. yılında." },
+      "line": { "en": "a saturday flea market at the agra fair grounds, from 15:00 on 7 november 2026.", "de": "ein samstäglicher flohmarkt auf dem agra-messegelände, ab 15:00 uhr am 7. november 2026.", "tr": "agra fuar alanında bir cumartesi pazarı; 7 kasım 2026'da saat 15:00'ten itibaren." },
+      "place": { "en": "agra messegelände", "de": "agra messegelände", "tr": "agra messegelände" },
+      "hour": 15, "minute": 0,
+      "why": "Nachtflohmarkt Leipzig, Sat 7 Nov 2026, 15:00 to 22:00 at the AGRA grounds, Bornaische Str. 210 (prinz.de event page; Meinestadt listing shows the same start)."
+    }
+  ]
+}
