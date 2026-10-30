@@ -1,0 +1,27 @@
+{
+  "city": "koln",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "kölner museumsnacht, citywide until one.",
+        "de": "kölner museumsnacht, stadtweit bis ein uhr.",
+        "tr": "köln müze gecesi, gece bire kadar."
+      },
+      "line": {
+        "en": "museums across the city from 18:00 to 01:00, the schokoladenmuseum among them. tickets 20 euro; children and accompanying adults get in free.",
+        "de": "museen in der ganzen stadt von 18:00 bis 01:00, darunter das schokoladenmuseum. tickets 20 euro; kinder und begleitpersonen frei.",
+        "tr": "saat 18:00'den 01:00'e kadar şehir genelinde müzeler, arasında schokoladenmuseum da var. bilet 20 avro; çocuklar ve eşlik edenler ücretsiz."
+      },
+      "place": {
+        "en": "schokoladenmuseum",
+        "de": "schokoladenmuseum",
+        "tr": "schokoladenmuseum"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Kölner Museumsnacht, Sat 7.11 18:00 to 01:00, 20 euro tickets (stadt-koeln.de and koeln.de 2026 listings)."
+    }
+  ]
+}

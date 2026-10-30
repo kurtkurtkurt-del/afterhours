@@ -1,0 +1,27 @@
+{
+  "city": "koln",
+  "day": "2026-11-06",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "immanuel wilkins quartet at the philharmonie.",
+        "de": "immanuel wilkins quartet in der philharmonie.",
+        "tr": "philharmonie'de immanuel wilkins quartet."
+      },
+      "line": {
+        "en": "a jazz concert at the kölner philharmonie, doors 19:00, show 20:00, about 90 minutes with no interval. go early for a drink before the hall.",
+        "de": "jazzkonzert in der kölner philharmonie, einlass 19:00, beginn 20:00, etwa 90 minuten ohne pause. früh da sein für einen drink vor dem saal.",
+        "tr": "köln philharmonie'de caz konseri; kapılar 19:00'da, konser 20:00'de başlıyor, ara yok, yaklaşık 90 dakika. salona girmeden önce bir içki için erken gel."
+      },
+      "place": {
+        "en": "kölner philharmonie",
+        "de": "kölner philharmonie",
+        "tr": "kölner philharmonie"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Immanuel Wilkins Quartet, Kölner Philharmonie, Fri 6.11 20:00, doors 19:00 (koelner-philharmonie.de event listing)."
+    }
+  ]
+}

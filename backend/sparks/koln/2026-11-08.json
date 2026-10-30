@@ -1,0 +1,27 @@
+{
+  "city": "koln",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "sunday flea market at ikea butzweilerhof.",
+        "de": "sonntags-flohmarkt bei ikea am butzweilerhof.",
+        "tr": "ikea butzweilerhof'ta pazar bit pazarı."
+      },
+      "line": {
+        "en": "a flea market on the ikea grounds from 11:00. a slow sunday morning of looking through other people's things.",
+        "de": "flohmarkt auf dem ikea-gelände ab 11:00. ein langsamer sonntagvormittag zwischen fremden sachen.",
+        "tr": "ikea arazisinde saat 11:00'den itibaren bit pazarı. yavaş bir pazar sabahı, başkalarının eşyalarına bakarak."
+      },
+      "place": {
+        "en": "ikea am butzweilerhof",
+        "de": "ikea am butzweilerhof",
+        "tr": "ikea am butzweilerhof"
+      },
+      "hour": 11,
+      "minute": 0,
+      "why": "Flohmarkt at IKEA am Butzweilerhof, Sun 8.11 11:00 (koeln.de flea market listing)."
+    }
+  ]
+}
