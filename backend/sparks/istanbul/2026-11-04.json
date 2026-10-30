@@ -1,0 +1,14 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-04",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "fenerbahçe – liverpool, champions league night.", "de": "fenerbahçe – liverpool, champions-league-abend.", "tr": "fenerbahçe – liverpool, şampiyonlar ligi gecesi." },
+      "line": { "en": "champions league, fenerbahçe at home to liverpool, kick-off 20:45 istanbul time at chobani stadium. check the broadcaster before you go.", "de": "champions league, fenerbahçe empfängt liverpool, anpfiff 20:45 ortszeit istanbul im chobani stadium. vorher die übertragung prüfen.", "tr": "şampiyonlar ligi, fenerbahçe liverpool'u ağırlıyor, başlama saati 20.45 (istanbul saati), chobani stadium'da. gitmeden önce yayın kanalını kontrol et." },
+      "place": { "en": "chobani stadium", "de": "chobani stadium", "tr": "chobani stadium" },
+      "hour": 20, "minute": 45,
+      "why": "Fenerbahçe vs Liverpool, UEFA Champions League league phase matchday 4, Wed 4 Nov 2026, 20:45 Turkish time at Chobani Stadium (yeniasir.com.tr and internethaber.com both give 20:45)."
+    }
+  ]
+}

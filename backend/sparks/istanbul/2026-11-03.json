@@ -1,0 +1,14 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-03",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "galatasaray – stuttgart, champions league night.", "de": "galatasaray – stuttgart, champions-league-abend.", "tr": "galatasaray – stuttgart, şampiyonlar ligi gecesi." },
+      "line": { "en": "champions league, galatasaray at home to stuttgart, kick-off 20:45 istanbul time at rams park. check the broadcaster before you go.", "de": "champions league, galatasaray empfängt stuttgart, anpfiff 20:45 ortszeit istanbul im rams park. vorher die übertragung prüfen.", "tr": "şampiyonlar ligi, galatasaray stuttgart'ı ağırlıyor, başlama saati 20.45 (istanbul saati), rams park'ta. gitmeden önce yayın kanalını kontrol et." },
+      "place": { "en": "rams park", "de": "rams park", "tr": "rams park" },
+      "hour": 20, "minute": 45,
+      "why": "Galatasaray vs VfB Stuttgart, UEFA Champions League league phase matchday 4, Tue 3 Nov 2026, 20:45 Turkish time at Rams Park (istiklal.com.tr and turkgun.com both give 20.45)."
+    }
+  ]
+}
