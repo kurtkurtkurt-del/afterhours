@@ -1,0 +1,46 @@
+{
+  "city": "zurich",
+  "day": "2026-10-31",
+  "sparks": [
+    {
+      "kind": "skate",
+      "title": {
+        "en": "halloween ice disco at the dolder.",
+        "de": "halloween-eisdisco am dolder.",
+        "tr": "dolder'de halloween buz diskosu."
+      },
+      "line": {
+        "en": "a halloween ice disco on the dolder rink on saturday. check the times with the rink before you go.",
+        "de": "eine halloween-eisdisco auf der eisbahn am dolder am samstag. zeiten vorher bei der eisbahn prüfen.",
+        "tr": "cumartesi dolder buz pistinde halloween buz diskosu. saatleri gitmeden önce pistten kontrol et."
+      },
+      "place": {
+        "en": "dolder eisbahn",
+        "de": "eisbahn dolder",
+        "tr": "dolder buz pisti"
+      },
+      "why": "Halloween ice disco at the Dolder rink, Sat 31 Oct 2026, 16:00 to 22:00; the rink reopened 17 Oct (nume.ch Halloween 2026 listing)."
+    },
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "karaoke at the raffles bar.",
+        "de": "karaoke in der raffles bar.",
+        "tr": "raffles bar'da karaoke."
+      },
+      "line": {
+        "en": "karaoke at the raffles bar in restaurant singapore on badenerstrasse, saturday from 22:00 to 02:00.",
+        "de": "karaoke in der raffles bar im restaurant singapore an der badenerstrasse, samstag von 22:00 bis 02:00.",
+        "tr": "badenerstrasse'deki restaurant singapore'un raffles bar'ında cumartesi 22:00 ile 02:00 arası karaoke."
+      },
+      "place": {
+        "en": "raffles bar",
+        "de": "raffles bar",
+        "tr": "raffles bar"
+      },
+      "hour": 22,
+      "minute": 0,
+      "why": "The Raffles Bar in Restaurant Singapore, Badenerstrasse 530: karaoke every weekend, Fri to Sun 22:00 to 02:00, per the restaurant's listing on search.ch (https://search.ch/tel/zuerich/badenerstrasse-530/restaurant-singapore-2.en.html). Not checked against the venue's own site."
+    }
+  ]
+}

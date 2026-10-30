@@ -1,0 +1,14 @@
+{
+  "city": "zurich",
+  "day": "2026-11-05",
+  "sparks": [
+    {
+      "kind": "openmic",
+      "title": { "en": "english stand-up open mic at robin's.", "de": "englisches stand-up open mic bei robin's.", "tr": "robin's'te ingilizce stand-up açık mikrofon." },
+      "line": { "en": "comedy brew, the english stand-up open mic, on thursday at robin's near central. a good night to meet other english speakers in the city.", "de": "comedy brew, das englische stand-up open mic, donnerstags bei robin's nahe central. ein guter abend, um andere englischsprachige in der stadt zu treffen.", "tr": "comedy brew, ingilizce stand-up açık mikrofon gecesi, perşembe günleri central'a yakın robin's'te. şehirdeki başka ingilizce konuşanlarla tanışmak için iyi bir gece." },
+      "place": { "en": "robin's", "de": "robin's", "tr": "robin's" },
+      "hour": 19, "minute": 30,
+      "why": "Comedy Brew, English stand-up open mic at ROBIN's near Zürich Central, Thursdays from 19:30; Thursday 5 Nov listed (myswitzerland.com: https://www.myswitzerland.com/de/erlebnisse/veranstaltungen/comedy-brew-english-stand-up-comedy-in-zurich/). Time taken from a search summary, not the page itself."
+    }
+  ]
+}
