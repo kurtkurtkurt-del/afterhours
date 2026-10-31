@@ -1,0 +1,18 @@
+{
+  "city": "dublin",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "dublin by night, free on capel street.", "de": "dublin by night, gratis in der capel street.", "tr": "dublin by night, capel street'te ücretsiz." },
+      "line": {
+        "en": "the free after-dark festival, 18:00 to 22:00 on capel street, with dame street and college green around it. the opener of winter in dublin.",
+        "de": "das kostenlose fest nach dem dunkelwerden, 18 bis 22 uhr in der capel street, dame street und college green dazu. der auftakt von winter in dublin.",
+        "tr": "karanlıktan sonra ücretsiz festival, capel street'te 18:00 ile 22:00 arası; dame street ve college green de dahil. winter in dublin'in açılışı."
+      },
+      "place": { "en": "capel street", "de": "capel street", "tr": "capel street" },
+      "hour": 18, "minute": 0,
+      "why": "Dublin by Night Fest, Sat 7 Nov 2026 18:00 to 22:00, free (VisitDublin 2026 listing; Travel Extra report on the street footprint)."
+    }
+  ]
+}
