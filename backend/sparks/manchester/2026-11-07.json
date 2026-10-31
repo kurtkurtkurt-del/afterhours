@@ -1,0 +1,14 @@
+{
+  "city": "manchester",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "council fireworks at heaton park.", "de": "stadtfeuerwerk im heaton park.", "tr": "heaton park'ta belediyenin havai fişekleri." },
+      "line": { "en": "free council fireworks at heaton park, wythenshawe park and platt fields. reduced-noise display at 17:00, lantern parade and main show at 20:00. no tickets needed; go early for a spot.", "de": "kostenlose stadtfeuerwerke im heaton park, wythenshawe park und platt fields. leiser display um 17:00, laternenumzug und hauptshow um 20:00. keine tickets nötig.", "tr": "heaton park, wythenshawe park ve platt fields'ta ücretsiz belediye havai fişekleri. 17:00'de daha az gürültülü gösteri, 20:00'de fener yürüyüşü ve ana gösteri. bilet gerekmiyor." },
+      "place": { "en": "heaton park", "de": "heaton park", "tr": "heaton park" },
+      "hour": 17, "minute": 0,
+      "why": "Manchester City Council fireworks at Heaton Park, Wythenshawe Park and Platt Fields on Sat 7 Nov, 17:00 and 20:00, free, per the Visit Manchester 2026 listing and JustPark as shown in search results; the council announcement found only confirms the return, so re-check manchester.gov.uk."
+    }
+  ]
+}

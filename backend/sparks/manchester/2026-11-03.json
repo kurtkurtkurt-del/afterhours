@@ -1,0 +1,14 @@
+{
+  "city": "manchester",
+  "day": "2026-11-03",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "man utd – roma at old trafford.", "de": "man utd – roma in old trafford.", "tr": "old trafford'da man utd – roma." },
+      "line": { "en": "champions league, matchday 4, kick-off 20:00 uk time. the stadium is a long way out, so take the tram early; check ticket availability on the club's site.", "de": "champions league, spieltag 4, anpfiff 20:00 britische zeit. das stadion liegt außerhalb, also früh mit der tram anreisen; tickets und verfügbarkeit auf der seite des clubs prüfen.", "tr": "şampiyonlar ligi, 4. hafta, başlama saati ingiltere saatiyle 20:00. stadyum merkezden uzak, tramvayla erken gidin; biletleri ve durumu kulübün sitesinden kontrol edin." },
+      "place": { "en": "old trafford", "de": "old trafford", "tr": "old trafford" },
+      "hour": 20, "minute": 0,
+      "why": "Man Utd v AS Roma, Champions League matchday 4, Old Trafford, Tue 3 Nov; the 20:00 UK time is converted from a Paramount+ preview (3 PM ET), and the date also appears on sportbusy and Bundesliga listings. No official kick-off page could be opened."
+    }
+  ]
+}
