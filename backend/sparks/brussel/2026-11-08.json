@@ -1,0 +1,14 @@
+{
+  "city": "brussel",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "union – genk at the joseph marien.", "de": "union – genk im joseph marien.", "tr": "joseph marien'de union – genk." },
+      "line": { "en": "pro league matchday 11 at stade joseph marien in forest, kickoff 18:30. tickets through the club; check the price there.", "de": "pro-league-spieltag 11 im stade joseph marien in forest, anpfiff 18:30. tickets über den verein; den preis dort prüfen.", "tr": "pro league 11. hafta, forest'taki stade joseph marien'de saat 18:30'da başlıyor. biletler kulüp üzerinden; fiyatı oradan kontrol et." },
+      "place": { "en": "stade joseph marien", "de": "stade joseph marien", "tr": "stade joseph marien" },
+      "hour": 18, "minute": 30,
+      "why": "Royale Union SG vs KRC Genk, Pro League matchday 11, Sun 8 Nov 18:30 Brussels time (entribunes.com; Sky Sports and Oddspedia agree on 17:30 UTC); LiveSoccerTV lists 7 Nov, treated as an outlier."
+    }
+  ]
+}
