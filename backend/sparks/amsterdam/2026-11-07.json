@@ -1,0 +1,27 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "museumnacht, fifty museums on one ticket.",
+        "de": "museumnacht, fünfzig museen mit einem ticket.",
+        "tr": "museumnacht, tek biletle elli müze."
+      },
+      "line": {
+        "en": "museumnacht amsterdam, 19:00 to 02:00: more than fifty museums open on one ticket. the night often sells out, so buy early.",
+        "de": "museumnacht amsterdam, 19:00 bis 02:00: über fünfzig museen offen mit einem ticket. die nacht ist oft schnell ausverkauft, also früh kaufen.",
+        "tr": "museumnacht amsterdam, 19:00 ile 02:00 arası: tek biletle elliden fazla müze açık. gece genelde çabuk tükenir, erken al."
+      },
+      "place": {
+        "en": "museums across amsterdam",
+        "de": "museen in ganz amsterdam",
+        "tr": "amsterdam'un müzeleri"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Museumnacht Amsterdam, Sat 7 nov 19:00 to 02:00, more than fifty museums on one ticket, per iamsterdam.com and deleurope.com as seen in search results; the price and individual venues were not confirmed."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-03",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "cellofest trio at the bimhuis.",
+        "de": "cellofest-trio im bimhuis.",
+        "tr": "bimhuis'ta cellofest üçlüsü."
+      },
+      "line": {
+        "en": "cello biennale at the bimhuis: harald austbø, ernst glerum and han bennink, from the instant composers pool, at 20:00.",
+        "de": "die cello-biennale im bimhuis: harald austbø, ernst glerum und han bennink, aus dem instant composers pool, um 20:00.",
+        "tr": "bimhuis'ta cello biennale: instant composers pool'dan harald austbø, ernst glerum ve han bennink, 20:00'de."
+      },
+      "place": {
+        "en": "bimhuis",
+        "de": "bimhuis",
+        "tr": "bimhuis"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Cellofest (Cello Biënnale Amsterdam) at the Bimhuis, Tue 3 nov 20:00, from the Bimhuis calendar as shown in search results; that page was an older snapshot, so check the time on bimhuis.nl."
+    }
+  ]
+}
