@@ -1,0 +1,14 @@
+{
+  "city": "glasgow",
+  "day": "2026-11-05",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "celtic – beşiktaş at celtic park.", "de": "celtic – beşiktaş im celtic park.", "tr": "celtic – beşiktaş, celtic park'ta." },
+      "line": { "en": "europa league, league phase, kick-off 20:00 at celtic park. thursday is bonfire night, so the streets will be busy; leave time to get in.", "de": "europa league, ligaphase, anpfiff 20:00 im celtic park. donnerstag ist bonfire night, die straßen sind voll; plane den weg früh ein.", "tr": "avrupa ligi, lig aşaması, başlama 20:00, celtic park. perşembe bonfire night, sokaklar kalabalık olur; yola erken çık." },
+      "place": { "en": "celtic park", "de": "celtic park", "tr": "celtic park" },
+      "hour": 20, "minute": 0,
+      "why": "Celtic v Besiktas, UEFA Europa League league phase, Thu 5 Nov at 20:00 UK time at Celtic Park, per the foresportia and rateyourseats listings, which agree on 8pm; the SPFL and What's On Glasgow pages could not be read."
+    }
+  ]
+}

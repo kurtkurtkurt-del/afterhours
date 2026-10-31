@@ -1,0 +1,14 @@
+{
+  "city": "glasgow",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "the barras, saturday market.", "de": "der barras, samstagsmarkt.", "tr": "barras, cumartesi pazarı." },
+      "line": { "en": "glasgow's weekend market on gallowgate, open 10:00 to 16:00 on saturdays. vintage, records, old things; go before lunch for the best stalls.", "de": "glasgows wochenendmarkt an der gallowgate, samstags 10 bis 16 uhr. vintage, schallplatten, trödel; geh vor dem mittag für die besten stände.", "tr": "glasgow'un hafta sonu pazarı, gallowgate'te; cumartesileri 10:00 ile 16:00 arası açık. vintage, plak, eski eşya; en iyi stantlar için öğleden önce git." },
+      "place": { "en": "the barras, gallowgate", "de": "the barras, gallowgate", "tr": "the barras, gallowgate" },
+      "hour": 10, "minute": 0,
+      "why": "The Barras market on Sat 7 Nov, listed as an additional date by eventslist.co.uk; regular Saturday hours 10:00 to 16:00 and the address 244 Gallowgate per the Barrowland market's own site."
+    }
+  ]
+}
