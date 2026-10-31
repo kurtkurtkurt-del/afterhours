@@ -1,0 +1,27 @@
+{
+  "city": "gent",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "amadou, ribot & smith at ha concerts.",
+        "de": "amadou, ribot & smith im ha concerts.",
+        "tr": "ha concerts'te amadou, ribot & smith."
+      },
+      "line": {
+        "en": "guitar, bass and drums trio at ha concerts on the kouter, 20:15. check the ticket status before you go.",
+        "de": "gitarre, bass und schlagzeug als trio im ha concerts am kouter, 20:15. vor dem losgehen den ticketstatus prüfen.",
+        "tr": "ha concerts'te, kouter'de gitar, bas ve davul üçlüsü, 20:15. yola çıkmadan bilet durumuna bak."
+      },
+      "place": {
+        "en": "ha concerts",
+        "de": "ha concerts",
+        "tr": "ha concerts"
+      },
+      "hour": 20,
+      "minute": 15,
+      "why": "Amadou, Ribot & Smith at Ha Concerts, Kouter 29, Sat 7 Nov, doors 19:15, concert 20:15 (haconcerts.be listing as shown in search; Marc Ribot's tour page also lists Ghent, HA Concerts, 7 Nov)."
+    }
+  ]
+}

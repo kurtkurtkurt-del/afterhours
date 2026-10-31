@@ -1,6 +1,6 @@
 {
  "about": "The week agent (.claude/prompts/spark-week.md) walks these cities in this order, per_night each morning, and moves next forward: 16 a night means every city is written again within six days, always a week ahead. Edit the list to change who comes first.",
- "next": 31,
+ "next": 32,
  "per_night": 16,
  "cities": [
   {
@@ -599,6 +599,7 @@
   "rotterdam": "2026-10-31",
   "utrecht": "2026-10-31",
   "brussel": "2026-10-31",
-  "antwerpen": "2026-10-31"
+  "antwerpen": "2026-10-31",
+  "gent": "2026-10-31"
  }
 }

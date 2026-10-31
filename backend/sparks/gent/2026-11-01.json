@@ -1,0 +1,14 @@
+{
+  "city": "gent",
+  "day": "2026-11-01",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "a dry toussaint walk through the citadelpark.", "de": "ein trockener allerheiligen-spaziergang im citadelpark.", "tr": "kuru bir azizler günü yürüyüşü citadelpark'ta." },
+      "line": { "en": "sunday is a public holiday and most shops are shut; the forecast shows little rain at 5 to 12 degrees. a slow loop of the park, then coffee in the city.", "de": "sonntag ist feiertag, die meisten geschäfte sind zu; laut vorhersage bleibt es weitgehend trocken bei 5 bis 12 grad. eine ruhige runde durch den park, danach kaffee in der stadt.", "tr": "pazar resmi tatil, çoğu dükkân kapalı; tahmine göre yağış az, hava 5 ile 12 derece. parkta yavaş bir tur, sonra şehirde kahve." },
+      "place": { "en": "citadelpark", "de": "citadelpark", "tr": "citadelpark" },
+      "hour": 14, "minute": 0,
+      "why": "1 Nov is Allerheiligen, a Belgian public holiday (visit.gent.be, calendia.be); the Meteovista Ghent forecast shows little rain and 5 to 12 °C for Sunday."
+    }
+  ]
+}
