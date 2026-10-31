@@ -1,0 +1,14 @@
+{
+  "city": "paris",
+  "day": "2026-11-02",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "pitchfork music festival, ten venues.", "de": "pitchfork music festival, zehn spielorte.", "tr": "pitchfork music festival, on mekân." },
+      "line": { "en": "the pitchfork music festival paris runs 2 to 8 november in about ten venues across the city. pick the night and the venue from the lineup and check the stage times there.", "de": "das pitchfork music festival paris läuft vom 2. bis 8. november in etwa zehn spielorten der stadt. abend und ort aus dem programm wählen und die zeiten dort prüfen.", "tr": "pitchfork music festival paris 2 ile 8 kasım arasında şehrin yaklaşık on mekânında sürüyor. gece ve mekânı programdan seç, sahne saatlerini oradan kontrol et." },
+      "place": { "en": "pitchfork music festival", "de": "pitchfork music festival", "tr": "pitchfork music festival" },
+      "hour": 19, "minute": 30,
+      "why": "Pitchfork Music Festival Paris, 2 to 8 nov 2026 in ten venues across the capital (sortiraparis.com weekly guide, search summary); venue times not checked on the page."
+    }
+  ]
+}

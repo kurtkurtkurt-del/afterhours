@@ -1,0 +1,14 @@
+{
+  "city": "paris",
+  "day": "2026-11-05",
+  "sparks": [
+    {
+      "kind": "openmic",
+      "title": { "en": "thursday open stage at la manufacture chanson.", "de": "donnerstags offene bühne in der manufacture chanson.", "tr": "la manufacture chanson'da perşembe açık sahne." },
+      "line": { "en": "the jeudi chanson open stage at la manufacture chanson in paris 11 is listed for 20:30. new singers and the school's trainees take the stage; it repeats every thursday.", "de": "die offene bühne jeudi chanson in der la manufacture chanson in paris 11 ist für 20:30 angesetzt. neue sänger und die schüler der schule stehen auf der bühne; sie wiederholt sich jeden donnerstag.", "tr": "paris 11'deki la manufacture chanson'ın jeudi chanson açık sahnesi 20:30 olarak listede. yeni şarkıcılar ve okulun stajyerleri sahneye çıkıyor; her perşembe tekrarlanıyor." },
+      "place": { "en": "la manufacture chanson", "de": "la manufacture chanson", "tr": "la manufacture chanson" },
+      "hour": 20, "minute": 30,
+      "why": "Jeudi Chanson open stage at La Manufacture Chanson (Paris 11), listed at 20:30 in a search summary of the venue's weekly programme; the venue page was not opened, so confirm the date there."
+    }
+  ]
+}

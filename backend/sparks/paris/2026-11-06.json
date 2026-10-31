@@ -1,0 +1,14 @@
+{
+  "city": "paris",
+  "day": "2026-11-06",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "jean-michel pilc at sunset.", "de": "jean-michel pilc im sunset.", "tr": "sunset'da jean-michel pilc." },
+      "line": { "en": "jean-michel pilc with louis moutin and shimon gambourg, friday at 20:30, from about 20 euros. book on the club's site before you go.", "de": "jean-michel pilc mit louis moutin und shimon gambourg, freitag um 20:30, ab etwa 20 euro. vorher auf der seite des clubs reservieren.", "tr": "jean-michel pilc, louis moutin ve shimon gambourg ile, cuma 20:30, 20 euro civarından. gitmeden kulübün sitesinden yer ayırt." },
+      "place": { "en": "sunset", "de": "sunset", "tr": "sunset" },
+      "hour": 20, "minute": 30,
+      "why": "Jean-Michel Pilc, Louis Moutin and Shimon Gambourg at Sunset, fri 6 nov 20:30, from 20 eur (search summary of the club's programme on infoconcert.com and a day agenda); the page was not opened."
+    }
+  ]
+}
