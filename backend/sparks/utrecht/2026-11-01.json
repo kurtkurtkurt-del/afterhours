@@ -1,0 +1,27 @@
+{
+  "city": "utrecht",
+  "day": "2026-11-01",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a storytrail theatre walk through the city, 14:00.",
+        "de": "ein storytrail-theaterspaziergang durch die stadt, 14:00.",
+        "tr": "şehirde storytrail tiyatro yürüyüşü, 14:00."
+      },
+      "line": {
+        "en": "a walking theatre tour of the city centre, starting at 14:00 on sunday. check the start point and tickets on the storytrail site before you go.",
+        "de": "eine theaterführung zu fuß durch die innenstadt, sonntag ab 14:00. startpunkt und tickets vorher auf der storytrail-seite prüfen.",
+        "tr": "pazar günü 14:00'te başlayan, şehir merkezinde yürüyerek yapılan bir tiyatro turu. başlangıç noktası ve biletler için storytrail sitesine bak."
+      },
+      "place": {
+        "en": "utrecht centrum",
+        "de": "utrecht innenstadt",
+        "tr": "utrecht merkezi"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "StoryTrail Theaterwandeling Utrecht, sun 01.11 14:00, listed in the dagjeweg.nl Utrecht agenda for 1 November 2026. The start point was not confirmed on a venue page."
+    }
+  ]
+}
