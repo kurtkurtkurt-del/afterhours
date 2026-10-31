@@ -1,0 +1,226 @@
+{
+ "city": "boston",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "96b352fc-745e-4752-a185-859793596bf0",
+   "slug": "moe-fa26d6ac",
+   "title": "moe.",
+   "act": "moe.",
+   "name": "Moe",
+   "description": "American psychedelic rock jam band",
+   "source_url": "https://en.wikipedia.org/wiki/Moe_(band)",
+   "extract": "Moe is an American rock jam band, formed at the University at Buffalo in 1989. The band members are Rob Derhak, Al Schnier, Chuck Garvey, Vinnie Amico (drums), Jim Loughlin (percussion) and Nate Wilson (keyboard)."
+  },
+  {
+   "id": "56c0ac31-4541-4448-8fde-84592e457eaf",
+   "slug": "rawayana-donde-es-el-after-world-tour-34cd2d3d",
+   "title": "RAWAYANA - ¿Dónde es el after? World Tour",
+   "act": "RAWAYANA",
+   "name": "Rawayana",
+   "description": "Venezuelan musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Rawayana",
+   "extract": "Rawayana is a Venezuelan band formed in Caracas in 2007. The group's music combines a variety of musical genres including reggae, psychedelic, electronic, funk and salsa, and the members describe their style as \"trippy pop\". The band consists of Alberto \"Beto\" Montenegro, Antonio \"Tony\" Casas, Andrés \"Fofo\" Story and Alejandro \"Abeja\" Abeijón."
+  },
+  {
+   "id": "d5e5e2d4-9b82-4999-984c-87f410a5b819",
+   "slug": "50-cent-4b4c6870",
+   "title": "50 Cent",
+   "act": "50 Cent",
+   "name": "50 Cent",
+   "description": "American rapper and actor (born 1975)",
+   "source_url": "https://en.wikipedia.org/wiki/50_Cent",
+   "extract": "Curtis James Jackson III, known professionally as 50 Cent, is an American rapper, actor, television producer, record executive, and businessman. Born in Queens, a borough of New York City, Jackson began pursuing a musical career in 1996. In 1999–2000, he recorded his debut album, Power of the Dollar, for Columbia Records. During a shooting in May 2000, he was struck by nine bullets, causing its release to be canceled and Jackson to be dropped from the label. His 2002 mixtape Guess Who's Back? was discovered by Detroit rapper Eminem, who signed Jackson to his label Shady Records that year."
+  },
+  {
+   "id": "294ffabc-7fcb-415f-bb2d-9ae031a30423",
+   "slug": "sueco-7ea9e198",
+   "title": "Sueco",
+   "act": "Sueco",
+   "name": "Sueco",
+   "description": "American musician (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Sueco",
+   "extract": "William Henry Victor Schultz, better known by the stage names Sueco or SuecoTheChild, is an American rapper and singer-songwriter from Los Angeles. He first became known for his 2019 single \"Fast\", which received platinum certification by the Recording Industry Association of America (RIAA) in July 2022 after going viral on TikTok. His 2021 song \"Paralyzed\" marked his first entry on both the Billboard Hot 100 and Global 200, also receiving gold certification by the RIAA."
+  },
+  {
+   "id": "6bb78fab-5644-4ce7-9822-aa9377e3a33f",
+   "slug": "vince-staples-669ba430",
+   "title": "Vince Staples",
+   "act": "Vince Staples",
+   "name": "Vince Staples",
+   "description": "American rapper and actor (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Vince_Staples",
+   "extract": "Vincent Jamal Staples is an American rapper, singer, songwriter, and actor. He first became known for his appearances on the projects from Odd Future members and affiliates, including Earl Sweatshirt's Earl (2010) and Doris (2013), Mike G.’s Ali (2010) and The Jet Age of Tomorrow's Journey to the 5th Echelon (2010). He signed with Talib Kweli's Blacksmith Records prior to the release of his collaborative mixtape with Mac Miller, Stolen Youth (2013). The following year, he signed with No I.D.'s ARTium Recordings, an imprint of Def Jam Recordings, to release his debut extended play, Hell Can Wait (2014), which received critical acclaim and marked his first entry on the Billboard 200."
+  },
+  {
+   "id": "0b5c06b8-1721-4b9f-8ad6-2b69a6b56518",
+   "slug": "mico-running-from-a-feeling-tour-eaa03ab9",
+   "title": "MICO: Running From A Feeling Tour",
+   "act": "MICO",
+   "name": "Mico",
+   "description": "Canadian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Mico_(singer)",
+   "extract": "Jose Miguel Veloso, known professionally as Mico, is a Canadian singer-songwriter and musician from Toronto. He initially grew a fanbase online through Discord and Twitch, breaking out commercially with his 2022 single \"cut my hair\", which became a top-30 radio hit in Canada. In 2025, he signed with Columbia Records following a string of independent extended plays."
+  },
+  {
+   "id": "a124b692-5a8e-4757-89f0-8d2a946d655b",
+   "slug": "aj-mclean-e3f46cbd",
+   "title": "AJ McLean",
+   "act": "AJ McLean",
+   "name": "AJ McLean",
+   "description": "American singer, member of Backstreet Boys (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/AJ_McLean",
+   "extract": "Alexander James McLean is an American singer. He is a founding member of the pop vocal group Backstreet Boys."
+  },
+  {
+   "id": "d6d5ffcf-3dc9-4d17-9b9b-30374d677863",
+   "slug": "kofi-b-9151655a",
+   "title": "Kofi B",
+   "act": "Kofi B",
+   "name": "Kofi B",
+   "description": "Ghanaian highlife musician (died 2020)",
+   "source_url": "https://en.wikipedia.org/wiki/Kofi_B",
+   "extract": "Kofi Boakye Yiadom, known by his stage name Kofi B, was a Ghanaian highlife musician. He was known for songs such as \"Mmobrowa\", \"Bantama Kofi Boakye\" and \"Koforidua Flowers\", among others. He was inspired by the likes of Amakye Dede, Kojo Antwi and Ofori Amponsah."
+  },
+  {
+   "id": "5e7ab793-e128-4e12-8acd-4096c2556e7b",
+   "slug": "sleeping-with-sirens-an-ending-in-itself-tour-837583fb",
+   "title": "Sleeping With Sirens: An Ending In Itself Tour",
+   "act": "Sleeping With Sirens",
+   "name": "Sleeping with Sirens",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Sleeping_with_Sirens",
+   "extract": "Sleeping with Sirens is an American rock band originally formed in Orlando, Florida. The band currently consists of Kellin Quinn, Justin Hills, Nick Martin, Matty Best, and Tony Pizzuti. The band was formed in 2009 by Nick Trombino of Broadway and Brandon McMaster. The group is currently signed to Rise Records and have released eight full-length studio albums, one live album, and one acoustic EP."
+  },
+  {
+   "id": "a1f6a036-b5e8-4263-ae2e-5215ad92933e",
+   "slug": "rainao-c1848be1",
+   "title": "RaiNao",
+   "act": "RaiNao",
+   "name": "RaiNao",
+   "description": "Puerto Rican singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/RaiNao",
+   "extract": "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter. Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop, shaped by her background in music theory and live performance. She got signed to Rimas Entertainment in 2024."
+  },
+  {
+   "id": "b2f22a6d-4d46-4701-8f7a-9b78dd15385d",
+   "slug": "aj-mclean-the-better-man-tour-5a5782d1",
+   "title": "Aj McLean - the Better Man Tour",
+   "act": "Aj McLean",
+   "name": "AJ McLean",
+   "description": "American singer, member of Backstreet Boys (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/AJ_McLean",
+   "extract": "Alexander James McLean is an American singer. He is a founding member of the pop vocal group Backstreet Boys."
+  },
+  {
+   "id": "53c2aaf0-6bb6-4e4a-ae3e-5430524d60d3",
+   "slug": "black-violin-the-be-free-tour-04a88cc1",
+   "title": "Black Violin: The Be Free Tour",
+   "act": "Black Violin",
+   "name": "Black Violin",
+   "description": "American hip hop group",
+   "source_url": "https://en.wikipedia.org/wiki/Black_Violin",
+   "extract": "Black Violin is an American hip hop duo from Fort Lauderdale, Florida comprising two classically trained string instrumentalists, Kevin Sylvester and Wilner Baptiste, who go by the stage names Kev Marcus and Wil B. Kev Marcus plays the violin, and Wil B. plays the viola."
+  },
+  {
+   "id": "d789e243-181f-499b-9ee4-5a5b4adf4d2d",
+   "slug": "michelle-branch-dfabc52e",
+   "title": "Michelle Branch",
+   "act": "Michelle Branch",
+   "name": "Michelle Branch",
+   "description": "American musician (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Michelle_Branch",
+   "extract": "Michelle Jacquet Branch is an American singer, songwriter, and guitarist. She won a Grammy Award for Best Pop Collaboration with Vocals with Santana for their 2002 single, \"The Game of Love\"."
+  },
+  {
+   "id": "69201ced-7c51-4094-9159-76bb5195c335",
+   "slug": "the-amity-affliction-house-of-cards-2026-4902025d",
+   "title": "The Amity Affliction: HOUSE OF CARDS 2026",
+   "act": "The Amity Affliction",
+   "name": "The Amity Affliction",
+   "description": "Australian post-hardcore band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Amity_Affliction",
+   "extract": "The Amity Affliction is an Australian metalcore band originally from Gympie, Queensland, formed in 2003. The band currently consists of Joel Birch, Dan Brown (guitar) and Jonathan Reeves. The band has released nine studio albums – the most recent of which, House of Cards, was released in 2026. They are known for their highly personal songs, often dealing with depression, anxiety, death, substance abuse, and suicide, many lyrics stemming from vocalist Joel Birch's past struggles."
+  },
+  {
+   "id": "ed03ad51-15f1-458f-a7fc-1c75031878e5",
+   "slug": "pretty-sick-d8b55f36",
+   "title": "Pretty Sick",
+   "act": "Pretty Sick",
+   "name": "Pretty Sick",
+   "description": "American rock band from New York City",
+   "source_url": "https://en.wikipedia.org/wiki/Pretty_Sick",
+   "extract": "Pretty Sick is an American indie rock band from New York City, New York. It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz."
+  },
+  {
+   "id": "6e81a15e-d47d-4727-9b96-af4254c009eb",
+   "slug": "clara-la-san-8c2009dd",
+   "title": "Clara La San",
+   "act": "Clara La San",
+   "name": "Clara La San",
+   "description": "British singer, songwriter, and record producer",
+   "source_url": "https://en.wikipedia.org/wiki/Clara_La_San",
+   "extract": "Rosemary Clare Louise Francis, known professionally as Clara La San, is a British singer, songwriter, and record producer. In 2013, her debut song \"Let You Go\" became popular on SoundCloud. Her follow-up song \"In This Darkness\" later went viral on TikTok upon being rereleased in 2022. Her debut studio album, Made Mistakes, was released in 2024."
+  },
+  {
+   "id": "bb26d4f3-db88-4aea-aa6a-e9178eca6eab",
+   "slug": "kylie-morgan-healed-cowgirl-tour-fa8bdc3e",
+   "title": "Kylie Morgan: Healed Cowgirl Tour",
+   "act": "Kylie Morgan",
+   "name": "Kylie Morgan",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Kylie_Morgan",
+   "extract": "Kylie Morgan is an American country music singer-songwriter from Oklahoma signed to EMI Nashville."
+  },
+  {
+   "id": "fb51bd9c-2754-4087-be27-053d08470d0a",
+   "slug": "the-knocks-2c465de3",
+   "title": "The Knocks",
+   "act": "The Knocks",
+   "name": "The Knocks",
+   "description": "American electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_Knocks",
+   "extract": "The Knocks is an American electronic music duo consisting of Ben \"B-Roc\" Ruttner and James \"JPatt\" Patterson. They have released 4 full-length albums and 5 EPs on record labels Big Beat Records, Neon Gold, Atlantic Records, and their labels Black Clay HeavyRoc Music. They are known for their singles \"Classic\" ft. Powers, \"Ride or Die\" ft. Foster the People, and \"Bodies\" ft. MUNA; along with their collaborations with Sofi Tukker, Purple Disco Machine (\"Fireworks\"), and ODESZA ; and their remixes. They have been nominated for 2 GRAMMYS for Best Dance/Electronic Album Of The Year for their writing/production feature on the song \"Love Letter\" and for Best Remixed Recording, Non-Classical."
+  },
+  {
+   "id": "dbcd4e00-42a3-4794-8f8e-77f006c97e64",
+   "slug": "chief-keef-5d944249",
+   "title": "CHIEF KEEF",
+   "act": "CHIEF KEEF",
+   "name": "Chief Keef",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Chief_Keef",
+   "extract": "Keith Farrelle Cozart, known professionally as Chief Keef, is an American rapper and record producer. Beginning his career as a teenager, he gained regional recognition for his mixtapes in the early 2010s. Cozart has since been credited with popularizing the hip hop subgenre drill among mainstream audiences and is considered a progenitor of the genre."
+  },
+  {
+   "id": "2c3b441f-c904-4b31-976c-80cdc78ca6de",
+   "slug": "almost-monday-thank-god-it-s-almost-monday-1a01a120",
+   "title": "almost monday - THANK GOD IT'S ALMOST MONDAY",
+   "act": "almost monday",
+   "name": "Almost Monday",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Almost_Monday",
+   "extract": "Almost Monday is an American indie pop band based in San Diego, California."
+  },
+  {
+   "id": "3bdc186c-0d75-4577-bf93-51037779eada",
+   "slug": "a-boogie-wit-da-hoodie-10-years-of-artist-deee0ccb",
+   "title": "A BOOGIE WIT DA HOODIE: 10 YEARS OF ARTIST",
+   "act": "A BOOGIE WIT DA HOODIE",
+   "name": "A Boogie wit da Hoodie",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/A_Boogie_wit_da_Hoodie",
+   "extract": "Artist Julius Dubose, known professionally as A Boogie wit da Hoodie or simply A Boogie, is an American rapper. He signed with Atlantic Records to release his debut studio album, The Bigger Artist (2017). Led by the Billboard Hot 100-top 20 single \"Drowning\", the album was met with critical praise and peaked at number four on the Billboard 200."
+  },
+  {
+   "id": "2b319a45-0596-45fe-8e4d-d22c1b63f619",
+   "slug": "camelphat-577073e1",
+   "title": "CamelPhat",
+   "act": "CamelPhat",
+   "name": "CamelPhat",
+   "description": "British DJ and production duo",
+   "source_url": "https://en.wikipedia.org/wiki/CamelPhat",
+   "extract": "CamelPhat are an English DJ and production duo, consisting of Dave Whelan and Mike Di Scala, formed in Liverpool in 2006."
+  }
+ ]
+}

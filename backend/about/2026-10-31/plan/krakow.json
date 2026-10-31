@@ -1,0 +1,86 @@
+{
+ "city": "krakow",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "cd198ba7-feb8-4129-8f0b-22b0e18c06d1",
+   "slug": "niall-horan-dinner-party-live-on-tour-0d1002ec",
+   "title": "Niall Horan: Dinner Party Live On Tour",
+   "act": "Niall Horan",
+   "name": "Niall Horan",
+   "description": "Irish singer, songwriter and musician (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Niall_Horan",
+   "extract": "Niall James Horan is an Irish singer, songwriter, musician, and multi-instrumentalist. He rose to prominence as a member of the boy band One Direction, formed in 2010 on the singing competition The X Factor. The group released five albums and went on to become one of the best-selling boy bands of all time."
+  },
+  {
+   "id": "eef2a913-9b63-4285-a3d0-c2d6034892ef",
+   "slug": "wolves-in-the-throne-room-de9aaeb9",
+   "title": "Wolves in the Throne Room",
+   "act": "Wolves in the Throne Room",
+   "name": "Wolves in the Throne Room",
+   "description": "American black metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Wolves_in_the_Throne_Room",
+   "extract": "Wolves in the Throne Room is an American black metal band formed in 2002 in Olympia, Washington, by brothers Aaron and Nathan Weaver. They have released seven full-length albums, two live albums, and two EPs to date. They have stated one of the founding concepts of the band to be channeling the \"energies of the Pacific Northwest's landscape\" into musical form."
+  },
+  {
+   "id": "38348e8b-3096-4990-ad9a-b3e05f14ff10",
+   "slug": "eleine-support-rexoria-serapis-project-efcb092b",
+   "title": "Eleine | Support: Rexoria, SerapiS Project",
+   "act": "Eleine",
+   "name": "Eleine",
+   "description": "Swedish symphonic metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Eleine",
+   "extract": "Eleine is a Swedish heavy metal band formed in 2012, known for their \"dark symphonic metal\" sound, with influences from black metal, death metal and thrash metal."
+  },
+  {
+   "id": "346af866-84dd-4181-a505-22c685070866",
+   "slug": "monsters-of-rock-tribute-fest-polish-priest-4-sz-54b97896",
+   "title": "MONSTERS OF ROCK - Tribute Fest - Polish Priest, 4 Szmery i inni",
+   "act": "MONSTERS OF ROCK",
+   "name": "Monsters of Rock",
+   "description": "American heavy metal tribute band",
+   "source_url": "https://en.wikipedia.org/wiki/Monsters_of_Rock_(band)",
+   "extract": "Monsters of Rock was an American tribute band formed in San Diego, California, United States, in March 2005. They were billed as \"San Diego's Ultimate Metal Tribute Band.\""
+  },
+  {
+   "id": "889dc1fb-839e-410d-a79d-8cbdec2089f9",
+   "slug": "airbag-d95e9769",
+   "title": "Airbag",
+   "act": "Airbag",
+   "name": "Airbag",
+   "description": "Argentine rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Airbag_(band)",
+   "extract": "Airbag is an Argentine hard rock band formed in Buenos Aires in 1999, consisting of three brothers: Patricio Sardelli, Gastón Sardelli, and Guido Sardelli. They have released eight studio albums and two live albums, and tour mostly around Latin America."
+  },
+  {
+   "id": "4bdff10b-4368-450b-b3e4-8aa6e2d281af",
+   "slug": "kamelot-540c1b28",
+   "title": "Kamelot",
+   "act": "Kamelot",
+   "name": "Kamelot",
+   "description": "American power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Kamelot",
+   "extract": "Kamelot is an American power metal band from Tampa, Florida, formed by Thomas Youngblood in 1987. The Norwegian vocalist Roy Khan joined for the album Siége Perilous, and shared songwriting credit with Youngblood until his departure in April 2011. On June 22, 2012, Youngblood announced on their website that their new vocalist would be the Swedish singer Tommy Karevik, who was first featured on Kamelot's album Silverthorn as the main vocalist, co-songwriter, and lyricist."
+  },
+  {
+   "id": "1436cc46-fd9a-4600-948b-11550a460af7",
+   "slug": "korn-9977e6f6",
+   "title": "KoRn",
+   "act": "KoRn",
+   "name": "Korn",
+   "description": "American nu metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Korn",
+   "extract": "Korn is an American nu metal band from Bakersfield, California, originally formed in 1993 by James \"Munky\" Shaffer, Reginald \"Fieldy\" Arvizu, and David Silveria, who were members of the band L.A.P.D. Their current lineup features Shaffer (guitar), Brian \"Head\" Welch (guitar), Jonathan Davis (vocals), and Ray Luzier (drums), the last of whom replaced Silveria in 2007. The band is notable for pioneering and popularizing the nu metal genre."
+  },
+  {
+   "id": "06683f03-5c8f-4673-bedd-08ee3d915872",
+   "slug": "napalm-death-support-master-brat-goatburner-864c49f3",
+   "title": "Napalm Death | Support: Master, Brat, Goatburner",
+   "act": "Napalm Death",
+   "name": "Napalm Death",
+   "description": "English grindcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Napalm_Death",
+   "extract": "Napalm Death are an English grindcore band formed in Meriden, West Midlands, in 1981. The band currently consists of Barney Greenway on vocals, Shane Embury on bass guitar, John Cooke on guitar and Danny Herrera on drums. None of the founding band members remain in the band. From 1989 to 2004, Napalm Death were a five-piece band after they added Jesse Pintado and Mitch Harris as replacements for guitarist Bill Steer. Following Pintado's departure, the band reverted to a four-piece. Mitch Harris left the band in 2014 to focus on his personal life. Since Mitch's indefinite hiatus, guitarist John Cooke can be seen on guitar during live shows."
+  }
+ ]
+}

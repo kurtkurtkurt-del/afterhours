@@ -1,0 +1,266 @@
+{
+ "city": "detroit",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "230ff991-ab93-412d-96e5-86a75e7f43ab",
+   "slug": "l7-the-last-hurrah-tour-2026-e6f13ec0",
+   "title": "L7: The Last Hurrah Tour 2026",
+   "act": "L7",
+   "name": "L7",
+   "description": "American punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/L7_(band)",
+   "extract": "L7 is an American punk rock band founded in Los Angeles, California, first active from 1985 to 2001 and re-formed in 2014. The group currently consists of Suzi Gardner, Donita Sparks, Dee Plakas and Janis Tanaka. L7 has released seven studio albums and has toured widely in the United States, Europe, Japan, Australia, and South America. \"Pretend We're Dead\" was heavily played on United States alternative radio and entered the top 10 on the Billboard Modern Rock chart in 1992."
+  },
+  {
+   "id": "89f67839-11e6-44ef-9d43-ce521af1f4ae",
+   "slug": "mana-vivir-sin-aire-tour-6e2a19ca",
+   "title": "MANÁ: VIVIR SIN AIRE TOUR",
+   "act": "MANÁ",
+   "name": "Maná",
+   "description": "Mexican rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Man%C3%A1",
+   "extract": "Maná is a Mexican pop rock band formed in 1981. Originally called Sombrero Verde, the current lineup of members is vocalist-guitarist Fher Olvera, drummer Alex González, guitarist Sergio Vallín and bassist Juan Calleros. The band is one of the best-selling Latin Mexican music artists and the most successful Latin American band of all time with over 45 million records sold worldwide. Maná has earned four Grammy Awards, eight Latin Grammy Awards, five MTV Video Music Awards Latin America, six Premios Juventud awards, 19 Billboard Latin Music Awards and 15 Premios Lo Nuestro awards."
+  },
+  {
+   "id": "f7b2361c-848d-438a-a9da-0957d2644114",
+   "slug": "hunxho-4d60a600",
+   "title": "Hunxho",
+   "act": "Hunxho",
+   "name": "Hunxho",
+   "description": "American rapper (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Hunxho",
+   "extract": "Ibrahim Muhammad Dodo, known professionally as Hunxho is an American rapper, singer and songwriter. He is signed to 300 Entertainment. Hunxho initially rose to fame with the song \"Let's Get It\" in 2021, which spawned a remix with rapper 21 Savage. Later that year, he released the mixtape Street Poet 2."
+  },
+  {
+   "id": "2d85a63f-47d3-408e-a250-b0c784076f87",
+   "slug": "journey-final-frontier-tour-an-evening-with-5f9bc996",
+   "title": "JOURNEY - Final Frontier Tour (An Evening With)",
+   "act": "JOURNEY",
+   "name": "Journey",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Journey_(band)",
+   "extract": "Journey is an American rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch. The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals."
+  },
+  {
+   "id": "2a44e7c6-c3cc-4672-9b2e-d71faab32fd8",
+   "slug": "the-paradox-0ffae84c",
+   "title": "The Paradox",
+   "act": "The Paradox",
+   "name": "The Paradox",
+   "description": "American pop punk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Paradox_(band)",
+   "extract": "The Paradox is an American pop-punk band from Atlanta, Georgia, formed in 2024. Its members are Eric Dangerfield, Donald Bryant (bass), Christopher \"Xelan\" Bernard, and Percy \"PC3\" Crews (drums). They are the first all-black punk band to be number 1 on Billboard's Alternative Airplay chart."
+  },
+  {
+   "id": "77d89c39-8adf-49a9-acfc-22fe39beef70",
+   "slug": "katseye-the-wildworld-tour-364276c5",
+   "title": "KATSEYE: THE WILDWORLD TOUR",
+   "act": "KATSEYE",
+   "name": "Katseye",
+   "description": "Los Angeles–based girl group",
+   "source_url": "https://en.wikipedia.org/wiki/Katseye",
+   "extract": "Katseye is a girl group formed in 2024, based in Los Angeles. The group consists of six members: Daniela Avanzini, Lara Raj, Manon Bannerman, Megan Skiendiel, Sophia Laforteza, and Yoonchae Jeung. With members from the Philippines, South Korea, Switzerland, and the United States, Katseye is often called a \"global girl group\"."
+  },
+  {
+   "id": "0e24984d-93c8-4188-888a-1d4ca023a13d",
+   "slug": "the-blasting-company-ba58195e",
+   "title": "The Blasting Company",
+   "act": "The Blasting Company",
+   "name": "The Blasting Company",
+   "description": "American nouveau-Folk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Blasting_Company",
+   "extract": "The Blasting Company, formerly known as the Petrojvic Blasting Company, is an American nouveau-folk band based in Los Angeles, California. The band was founded in 2008 by half-brothers Justin Rubenstein and J.R. Kaufman, with the group expanding to anywhere from five to ten members later."
+  },
+  {
+   "id": "0fb84a67-e576-456b-85a7-4e21375432ed",
+   "slug": "static-dress-injury-episode-usa-tour-357ef8cb",
+   "title": "Static Dress - Injury Episode USA Tour",
+   "act": "Static Dress",
+   "name": "Static Dress",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+   "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+  },
+  {
+   "id": "4763126e-6fce-45f6-8f04-52d487b65546",
+   "slug": "the-string-cheese-incident-just-keep-spinning-to-43852596",
+   "title": "The String Cheese Incident: Just Keep Spinning Tour",
+   "act": "The String Cheese Incident",
+   "name": "The String Cheese Incident",
+   "description": "American jam band",
+   "source_url": "https://en.wikipedia.org/wiki/The_String_Cheese_Incident",
+   "extract": "The String Cheese Incident (SCI) is an American jam band from Crested Butte and Telluride, Colorado, formed in 1993. The band is composed of Michael Kang, Michael Travis, Bill Nershi, Kyle Hollingsworth, and Keith Moseley, and, since 2004, Jason Hann."
+  },
+  {
+   "id": "4373250c-d435-4250-920c-8d9811bc49bd",
+   "slug": "zac-brown-band-love-and-fear-tour-27bd42ed",
+   "title": "Zac Brown Band: Love & Fear Tour",
+   "act": "Zac Brown Band",
+   "name": "Zac Brown Band",
+   "description": "American country music band",
+   "source_url": "https://en.wikipedia.org/wiki/Zac_Brown_Band",
+   "extract": "The Zac Brown Band is an American country music band based in Atlanta, Georgia. The lineup consists of Zac Brown, Jimmy De Martini, John Driskell Hopkins, Coy Bowles, Chris Fryar (drums), Clay Cook, Matt Mangano, Daniel de los Reyes (percussion), and Caroline Jones."
+  },
+  {
+   "id": "9fc98b30-66f8-450e-87dd-ddbc3c6d6800",
+   "slug": "jodeci-35th-anniversary-tour-of-forever-my-lady-9977fdb8",
+   "title": "Jodeci - 35th Anniversary Tour of Forever My Lady",
+   "act": "Jodeci",
+   "name": "Jodeci",
+   "description": "American R&B quartet",
+   "source_url": "https://en.wikipedia.org/wiki/Jodeci",
+   "extract": "Jodeci is an American R&B quartet consisting of members K-Ci, JoJo, DeVanté Swing, and Mr. Dalvin. Formed in 1988 in Charlotte, North Carolina, Jodeci began as a duo of DeVanté Swing and JoJo but later both added their brothers. After signing with Uptown Records in 1990, the group finished work on their debut album, Forever My Lady (1991), which brought them mainstream success with three straight Billboard R&B No. 1 hit singles: the album's titular track, \"Stay\" and \"Come and Talk to Me\"."
+  },
+  {
+   "id": "ccc6cbe9-4965-40d9-9c33-de32c38a42d3",
+   "slug": "vince-staples-5f2c2da4",
+   "title": "Vince Staples",
+   "act": "Vince Staples",
+   "name": "Vince Staples",
+   "description": "American rapper and actor (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Vince_Staples",
+   "extract": "Vincent Jamal Staples is an American rapper, singer, songwriter, and actor. He first became known for his appearances on the projects from Odd Future members and affiliates, including Earl Sweatshirt's Earl (2010) and Doris (2013), Mike G.’s Ali (2010) and The Jet Age of Tomorrow's Journey to the 5th Echelon (2010). He signed with Talib Kweli's Blacksmith Records prior to the release of his collaborative mixtape with Mac Miller, Stolen Youth (2013). The following year, he signed with No I.D.'s ARTium Recordings, an imprint of Def Jam Recordings, to release his debut extended play, Hell Can Wait (2014), which received critical acclaim and marked his first entry on the Billboard 200."
+  },
+  {
+   "id": "33968a9c-2bd8-4069-84ee-7f24007cb075",
+   "slug": "sombr-you-are-the-reason-tour-411e3a9c",
+   "title": "SOMBR - You Are The Reason Tour",
+   "act": "SOMBR",
+   "name": "Sombr",
+   "description": "American singer and songwriter (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Sombr",
+   "extract": "Shane Michael Boose, known professionally as Sombr, is an American singer-songwriter and musician."
+  },
+  {
+   "id": "742b14a1-ba00-44ee-a055-685c7620fc49",
+   "slug": "hurricane-wisdom-weathering-the-world-e6f84cdc",
+   "title": "Hurricane Wisdom: Weathering The World",
+   "act": "Hurricane Wisdom",
+   "name": "Hurricane Wisdom",
+   "description": "American rapper (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Hurricane_Wisdom",
+   "extract": "Wisdom Mikeal Oluola, known professionally as Hurricane Wisdom, is an American rapper, singer-songwriter, and social media personality. Born in Tallahassee, Florida, and growing up in Havana, Florida, Oluola started his music career in 2018 or 2019, although he started taking the career seriously in 2020, with his debut single being \"Granny's Baby\"."
+  },
+  {
+   "id": "2a203e53-fbe0-453d-93ea-d2baffc398a7",
+   "slug": "pouya-the-forever-glades-tour-97fd4c2c",
+   "title": "Pouya - The Forever Glades Tour",
+   "act": "Pouya",
+   "name": "Pouya",
+   "description": "American rapper (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Pouya",
+   "extract": "Kevin Pouya, known mononymously as Pouya, is an American rapper. Considered as a pioneer of the underground rap scene that began on SoundCloud in 2012, along with discovering the well known hip-hop duo Suicideboys in their early career, Pouya has developed a long-lasting core fanbase as an independent artist."
+  },
+  {
+   "id": "7de8267b-965c-43d7-893c-d0be5c62ed5f",
+   "slug": "trippie-redd-the-non-disclosure-agreement-tour-38c8e4df",
+   "title": "Trippie Redd - The Non-disclosure Agreement Tour",
+   "act": "Trippie Redd",
+   "name": "Trippie Redd",
+   "description": "American rapper (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Trippie_Redd",
+   "extract": "Michael Lamar White II, known professionally as Trippie Redd, is an American rapper, singer, and songwriter. Born and raised in Canton, Ohio, he has contributed to the progression of emo rap and rage, a subgenre of trap music."
+  },
+  {
+   "id": "8b91a0c4-3644-40d0-a336-19b1e35f2a3c",
+   "slug": "em-beihold-tales-of-a-failed-shapeshifter-tour-fa745bf8",
+   "title": "Em Beihold: Tales Of A Failed Shapeshifter Tour",
+   "act": "Em Beihold",
+   "name": "Em Beihold",
+   "description": "American singer-songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Em_Beihold",
+   "extract": "Emily Mahin Beihold is an American singer-songwriter. She released her debut EP Infrared in 2017. After signing to Republic Records in 2021, she released her major-label debut single \"Numb Little Bug\" in 2022, which brought her widespread recognition. The same year, she released her second EP, Egg in the Backseat. Her debut album, Tales of a Failed Shapeshifter, was released on February 27, 2026."
+  },
+  {
+   "id": "8ff391ff-86de-4b72-b075-53e091f7c5b5",
+   "slug": "black-violin-b7210ae6",
+   "title": "Black Violin",
+   "act": "Black Violin",
+   "name": "Black Violin",
+   "description": "American hip hop group",
+   "source_url": "https://en.wikipedia.org/wiki/Black_Violin",
+   "extract": "Black Violin is an American hip hop duo from Fort Lauderdale, Florida comprising two classically trained string instrumentalists, Kevin Sylvester and Wilner Baptiste, who go by the stage names Kev Marcus and Wil B. Kev Marcus plays the violin, and Wil B. plays the viola."
+  },
+  {
+   "id": "335ff843-64b8-45b5-a8a1-050779609ecd",
+   "slug": "the-war-and-treaty-157f0784",
+   "title": "The War And Treaty",
+   "act": "The War And Treaty",
+   "name": "The War and Treaty",
+   "description": "American country music duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_War_and_Treaty",
+   "extract": "The War and Treaty is an American husband-and-wife duo consisting of singer-songwriters Michael Trotter Jr. and Tanya Trotter. Their debut studio album, Healing Tide (2018), received generally favorable reviews upon its release. Their second album, Hearts Town (2020), featured a collaboration with Emmylou Harris and had a Triple A top 40 hit single \"Five More Minutes.\" In 2022, they signed to Universal Music Group Nashville, and released their major label debut, Lover's Game (2023). Their collaboration with Zach Bryan on the song \"Hey Driver\" made the top 20 on the Billboard Hot 100."
+  },
+  {
+   "id": "32d67f0c-50ba-4d89-b514-4b5b3e2f8688",
+   "slug": "gavin-adcock-a7fb1b07",
+   "title": "Gavin Adcock",
+   "act": "Gavin Adcock",
+   "name": "Gavin Adcock",
+   "description": "American singer-songwriter (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Gavin_Adcock",
+   "extract": "Gavin David Adcock is an American country music singer-songwriter."
+  },
+  {
+   "id": "5dd9eeec-7c59-4ace-b7f5-5aa95af4ba7f",
+   "slug": "michigander-11114aa9",
+   "title": "Michigander",
+   "act": "Michigander",
+   "name": "Michigander",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Michigander_(band)",
+   "extract": "Michigander is an American rock band created in 2014 from Kalamazoo, Michigan. It is the solo project centered around its vocalist, songwriter and multi-instrumentalist frontman, Jason Singer."
+  },
+  {
+   "id": "8f94023e-99d8-4875-baac-229a3d3d3b36",
+   "slug": "manchester-orchestra-i-m-like-a-virgin-losing-a-ea07808a",
+   "title": "Manchester Orchestra - I???m Like a Virgin Losing a Child 20th Anniversary Tour",
+   "act": "Manchester Orchestra",
+   "name": "Manchester Orchestra",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Manchester_Orchestra",
+   "extract": "Manchester Orchestra is an American indie rock band from Atlanta, Georgia, which formed in 2004. The group's current line-up is composed of lead singer, songwriter and rhythm guitarist Andy Hull, lead guitarist Robert McDowell, and bassist Andy Prince. Hull is the band's only original member, having overseen every iteration of the band to date. Former drummer Jeremiah Edmond parted ways with the band in January 2010 to focus on his family and on running the band's record label, Favorite Gentlemen. The band's original bassist, Jonathan Corley, parted ways with the band in 2013. Keyboardist-percussionist Chris Freeman announced his departure from the band in September 2016. The group's most recent drummer, Tim Very, died in February 2026."
+  },
+  {
+   "id": "bd1cc79b-22db-4b07-9031-ca7eaacca23f",
+   "slug": "hovvdy-1207bf2f",
+   "title": "Hovvdy",
+   "act": "Hovvdy",
+   "name": "Hovvdy",
+   "description": "American indie pop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Hovvdy",
+   "extract": "Hovvdy is an American indie pop duo formed in Austin, Texas by Charlie Martin and Will Taylor."
+  },
+  {
+   "id": "66dee574-e058-4638-973b-3ad531b0ef40",
+   "slug": "victoria-monet-frequency-of-love-tour-40754b0c",
+   "title": "Victoria Monét: Frequency Of Love Tour",
+   "act": "Victoria Monét",
+   "name": "Victoria Monét",
+   "description": "American singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Victoria_Mon%C3%A9t",
+   "extract": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim. Her debut studio album, Jaguar II (2023) became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year. The nomination was among seven she received at the 66th Annual Grammy Awards, from which she won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical."
+  },
+  {
+   "id": "3d89ffcc-eba9-4cd3-bb46-7d79df76ac9e",
+   "slug": "patti-labelle-the-80-65-tour-7d1c7834",
+   "title": "PATTI LABELLE - The 80/65 Tour",
+   "act": "PATTI LABELLE",
+   "name": "Patti LaBelle",
+   "description": "American singer and actress (born 1944)",
+   "source_url": "https://en.wikipedia.org/wiki/Patti_LaBelle",
+   "extract": "Patricia Louise Holte, known professionally as Patti LaBelle, is an American R&B singer and actress. She is also known as the \"Godmother of Soul\". LaBelle began her career in the early 1960s as lead singer and frontwoman of the vocal group Patti LaBelle and the Bluebelles. After the group's name changed to Labelle in the 1970s, they released the US number-one hit \"Lady Marmalade\". After the group disbanded in 1977, LaBelle began a solo career, achieving mainstream success in the 1980s with singles including \"If Only You Knew\", \"New Attitude\" and \"Stir It Up\". In 1986, she achieved both a US number-one album, Winner in You, and a US number-one single with \"On My Own\", a duet with Michael McDonald. LaBelle won a 1992 Grammy for Best Female R&B Vocal Performance for her album Burnin', and a second Grammy in 1999 for the live album Live! One Night Only. She reunited with her Labelle bandmates in 2008 for the album Back to Now."
+  },
+  {
+   "id": "e8adf9c3-f544-4f85-baf5-0bf4598880d2",
+   "slug": "zillakami-89dea68e",
+   "title": "ZillaKami",
+   "act": "ZillaKami",
+   "name": "ZillaKami",
+   "description": "American rapper",
+   "source_url": "https://en.wikipedia.org/wiki/ZillaKami",
+   "extract": "Junius Donald Rogers, professionally known as ZillaKami, is an American singer, rapper, songwriter, and notable contributor to the trap metal sub-genre. He is a member of the hip-hop duo City Morgue, consisting of rapper SosMula, and was also a former songwriter for rapper 6ix9ine."
+  }
+ ]
+}

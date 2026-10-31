@@ -1,0 +1,226 @@
+{
+ "city": "toronto",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "b7f1839a-cbff-4510-8287-3218e7b03ee1",
+   "slug": "kettama-fa5ec64f",
+   "title": "KETTAMA",
+   "act": "KETTAMA",
+   "name": "Kettama",
+   "description": "Irish musician and producer",
+   "source_url": "https://en.wikipedia.org/wiki/Kettama",
+   "extract": "Evan Campbell, known professionally as Kettama, is an Irish electronic music producer and DJ."
+  },
+  {
+   "id": "f9dbfc21-4406-4e33-bedc-e0ec3a5bcb49",
+   "slug": "cosmic-gate-e71139f7",
+   "title": "COSMIC GATE",
+   "act": "COSMIC GATE",
+   "name": "Cosmic Gate",
+   "description": "German DJ duo",
+   "source_url": "https://en.wikipedia.org/wiki/Cosmic_Gate",
+   "extract": "Cosmic Gate is a German DJ artist consisting of trance music producer Claus Terhoeven and formerly Stefan Bossems. Both hail from Krefeld, Germany."
+  },
+  {
+   "id": "b3291825-5bc1-48f5-bfb9-138f6d46d21e",
+   "slug": "loreena-mckennitt-0e94bfc7",
+   "title": "Loreena McKennitt",
+   "act": "Loreena McKennitt",
+   "name": "Loreena McKennitt",
+   "description": "Canadian musician (born 1957)",
+   "source_url": "https://en.wikipedia.org/wiki/Loreena_McKennitt",
+   "extract": "Loreena McKennitt is a Canadian singer-songwriter, multi-instrumentalist, and composer who writes, records, and performs world music with Celtic and Middle Eastern influences. McKennitt is known for her refined and clear soprano vocals. She has sold more than 16 million records worldwide."
+  },
+  {
+   "id": "446e2aaf-3c8d-4731-a0a9-92ee5fdc9a3c",
+   "slug": "blue-october-foiled-20th-anniversary-world-tour-33d125bd",
+   "title": "Blue October: Foiled 20th Anniversary World Tour",
+   "act": "Blue October",
+   "name": "Blue October",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Blue_October",
+   "extract": "Blue October is an American rock band originally from Houston, Texas, formed in 1995. It currently consists of singer/guitarist Justin Furstenfeld, drummer Jeremy Furstenfeld, multi-instrumentalist Ryan Delahoussaye, bassist Matt Noveskey, and lead guitarist Will Knaak."
+  },
+  {
+   "id": "b7f86483-f698-4300-9b10-facf1858a1c0",
+   "slug": "kaskade-974ab871",
+   "title": "KASKADE",
+   "act": "KASKADE",
+   "name": "Kaskade",
+   "description": "American DJ and music producer (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Kaskade",
+   "extract": "Ryan Gary Raddon, better known by his stage name Kaskade, is an American DJ, songwriter, music producer and remixer. DJ Times voted Kaskade as \"America's Best DJ\" in 2011 and 2013. DJ Mag named Kaskade fifty-first on its 2009 list of Top 100 DJs."
+  },
+  {
+   "id": "d60b00d5-1e2b-4e74-970f-9ebc6ee2cdff",
+   "slug": "sleeping-with-sirens-an-ending-in-itself-tour-5a3317ae",
+   "title": "Sleeping With Sirens: An Ending In Itself Tour",
+   "act": "Sleeping With Sirens",
+   "name": "Sleeping with Sirens",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Sleeping_with_Sirens",
+   "extract": "Sleeping with Sirens is an American rock band originally formed in Orlando, Florida. The band currently consists of Kellin Quinn, Justin Hills, Nick Martin, Matty Best, and Tony Pizzuti. The band was formed in 2009 by Nick Trombino of Broadway and Brandon McMaster. The group is currently signed to Rise Records and have released eight full-length studio albums, one live album, and one acoustic EP."
+  },
+  {
+   "id": "fa0a95c5-068a-4be1-b0e2-1da26a6f0064",
+   "slug": "sueco-571e7c86",
+   "title": "Sueco",
+   "act": "Sueco",
+   "name": "Sueco",
+   "description": "American musician (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Sueco",
+   "extract": "William Henry Victor Schultz, better known by the stage names Sueco or SuecoTheChild, is an American rapper and singer-songwriter from Los Angeles. He first became known for his 2019 single \"Fast\", which received platinum certification by the Recording Industry Association of America (RIAA) in July 2022 after going viral on TikTok. His 2021 song \"Paralyzed\" marked his first entry on both the Billboard Hot 100 and Global 200, also receiving gold certification by the RIAA."
+  },
+  {
+   "id": "9c024483-fa03-4d2c-8609-cf8cad3c89f6",
+   "slug": "geese-getting-killed-again-tour-4829242d",
+   "title": "Geese - Getting Killed Again Tour",
+   "act": "Geese",
+   "name": "Geese",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Geese_(band)",
+   "extract": "Geese is an American rock band from New York City that formed in 2016. It comprises lead vocalist and guitarist-keyboardist Cameron Winter, guitarist Emily Green, bassist Dominic DiGesu and drummer Max Bassin as of 2024. Guitarist Foster Hudson was a member of the group from 2019 until 2023. During live performances, the band is joined by keyboardist Sam Revaz."
+  },
+  {
+   "id": "2b7490af-0665-4e28-8446-80e6bca69ea3",
+   "slug": "dev-lemons-eat-the-pavement-tour-moved-to-the-gr-ad322eea",
+   "title": "DEV LEMONS - EAT THE PAVEMENT TOUR MOVED TO THE GREAT HALL",
+   "act": "DEV LEMONS",
+   "name": "Dev Lemons",
+   "description": "American singer-songwriter and record producer (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Dev_Lemons",
+   "extract": "Devon Vonder Schmalz, also known as Dev Lemons, is an American singer-songwriter, record producer, and YouTuber. She initially gained popularity by making music theory videos as SongPsych on TikTok and YouTube and through her personal YouTube channel, Dev Limes. She has released two studio albums, Surface Tension in 2025, and Hunting What We Already Killed in 2026."
+  },
+  {
+   "id": "cfd0243d-95e5-4329-abf1-1459493d65b7",
+   "slug": "new-constellations-it-comes-in-waves-tour-26cc628d",
+   "title": "New Constellations: It Comes In Waves Tour",
+   "act": "New Constellations",
+   "name": "New Constellations",
+   "description": "American dream pop band",
+   "source_url": "https://en.wikipedia.org/wiki/New_Constellations",
+   "extract": "New Constellations is an American dream pop and synthwave duo based out of Portland, Oregon."
+  },
+  {
+   "id": "3b1798d7-87a9-4ce1-bc24-6b3de424c28c",
+   "slug": "sweeping-promises-28e1ebf0",
+   "title": "Sweeping Promises",
+   "act": "Sweeping Promises",
+   "name": "Sweeping Promises",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Sweeping_Promises",
+   "extract": "Sweeping Promises is an American post-punk duo from Boston, Massachusetts, now based in Lawrence, Kansas, consisting of Lira Mondal and Caufield Schnug. Multi-instrumentalist Spenser Gralla has toured as their live drummer since 2019."
+  },
+  {
+   "id": "9dd46cc0-2c01-4662-81ac-8ea4f1a960f1",
+   "slug": "vince-staples-8691fb82",
+   "title": "Vince Staples",
+   "act": "Vince Staples",
+   "name": "Vince Staples",
+   "description": "American rapper and actor (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Vince_Staples",
+   "extract": "Vincent Jamal Staples is an American rapper, singer, songwriter, and actor. He first became known for his appearances on the projects from Odd Future members and affiliates, including Earl Sweatshirt's Earl (2010) and Doris (2013), Mike G.’s Ali (2010) and The Jet Age of Tomorrow's Journey to the 5th Echelon (2010). He signed with Talib Kweli's Blacksmith Records prior to the release of his collaborative mixtape with Mac Miller, Stolen Youth (2013). The following year, he signed with No I.D.'s ARTium Recordings, an imprint of Def Jam Recordings, to release his debut extended play, Hell Can Wait (2014), which received critical acclaim and marked his first entry on the Billboard 200."
+  },
+  {
+   "id": "d2f5815c-8fdd-40cc-8e6a-e939919a13f8",
+   "slug": "the-east-pointers-4d74e94d",
+   "title": "The East Pointers",
+   "act": "The East Pointers",
+   "name": "The East Pointers",
+   "description": "Canadian contemporary folk music group",
+   "source_url": "https://en.wikipedia.org/wiki/The_East_Pointers",
+   "extract": "The East Pointers are a Canadian contemporary folk music group from Prince Edward Island, who won the Juno Award for Traditional Roots Album of the Year for their album Secret Victory at the Juno Awards of 2017. The group initially consisted of guitarist Jake Charron, banjoist Koady Chaisson, and fiddler Tim Chaisson. They perform Celtic-influenced original songs and instrumentals with contemporary influences."
+  },
+  {
+   "id": "bd96ec2e-d07b-4e63-bfdc-5d7426794240",
+   "slug": "shyne-2622-lgnd-tour-7fa2a89a",
+   "title": "SHYNE: 2622 LGND Tour",
+   "act": "SHYNE",
+   "name": "Shyne",
+   "description": "Belizean rapper and politician (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/Shyne",
+   "extract": "Moses Michael Levi Barrow, best known by his stage name Shyne, is a Belizean politician and former rapper. He served as Leader of the Opposition in the House of Representatives, and the leader of the Belize United Democratic Party."
+  },
+  {
+   "id": "4478c68c-e171-483e-ac9a-6a1eb3b2631b",
+   "slug": "journey-final-frontier-tour-an-evening-with-0b564aa2",
+   "title": "JOURNEY - Final Frontier Tour (An Evening With)",
+   "act": "JOURNEY",
+   "name": "Journey",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Journey_(band)",
+   "extract": "Journey is an American rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch. The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals."
+  },
+  {
+   "id": "a89e50c4-7bdf-45cf-9f71-40d83ba9168f",
+   "slug": "blake-whiten-something-to-say-tour-bc586a6a",
+   "title": "Blake Whiten - Something to Say Tour",
+   "act": "Blake Whiten",
+   "name": "Blake Whiten",
+   "description": "American country singer (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Blake_Whiten",
+   "extract": "Blake Whiten is an American country singer and songwriter. His debut album, Something to Say, was released in 2026, which included his first Billboard Hot 100 hit \"Bet on That\"."
+  },
+  {
+   "id": "cc8341c2-fa71-4035-a489-eb138e5169d5",
+   "slug": "angine-de-poitrine-8e644e11",
+   "title": "Angine de Poitrine",
+   "act": "Angine de Poitrine",
+   "name": "Angine de Poitrine",
+   "description": "Canadian experimental rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/Angine_de_Poitrine",
+   "extract": "Angine de Poitrine is a Canadian rock duo formed in Saguenay, Quebec, in 2019. The anonymous pair perform under the pseudonyms Khn de Poitrine and Klek de Poitrine (drums). They are known for complex microtonal compositions in the style of math rock and experimental rock, and an absurdist image involving oversized papier-mâché masks and black-and-white polka-dotted costumes."
+  },
+  {
+   "id": "1ad4c910-5620-4c53-ac21-f9badb75d0fd",
+   "slug": "econoline-crush-c8ace69a",
+   "title": "Econoline Crush",
+   "act": "Econoline Crush",
+   "name": "Econoline Crush",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Econoline_Crush",
+   "extract": "Econoline Crush is a Canadian rock band from Vancouver, British Columbia, formed in 1992. They have released six studio albums and three studio EPs, and are best known for their charting singles such as \"You Don't Know What It's Like\", \"Home\", \"Surefire \", \"All That You Are (X3)\", \"Make It Right\", and \"Dirty\". They achieved platinum status with the 1997 album The Devil You Know and also received two Juno nominations, in 1995 for Purge and in 1998 for The Devil You Know."
+  },
+  {
+   "id": "f6d5ecca-b9d3-44a2-a630-16dc4b86cc76",
+   "slug": "boston-manor-cdd04b98",
+   "title": "Boston Manor",
+   "act": "Boston Manor",
+   "name": "Boston Manor",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Boston_Manor_(band)",
+   "extract": "Boston Manor are a British rock band formed in Blackpool, Lancashire, England, in March 2013. They released a first EP, Here/Now, through Never Mend Records on Bandcamp, and in 2014 they signed with Failure By Design Records for their second EP, Driftwood. In 2015 the band signed with Pure Noise Records: with them, they released another EP, Saudade, as well as their full-length albums Be Nothing (2016), Welcome to the Neighbourhood (2018) and Glue (2020). The band's sound blends emo with heavier influences, reminiscent of '90s grunge and early 2000s post-hardcore. The band have been nominated for Best British Breakthrough at Kerrang! Awards in 2018 and Welcome to the Neighbourhood received a nomination for Best Album Artwork at Heavy Music Awards in 2019."
+  },
+  {
+   "id": "036b54eb-7f99-480c-9a76-17186bd70e58",
+   "slug": "mad-tsai-the-bite-back-tour-54bd9914",
+   "title": "Mad Tsai - The Bite Back Tour",
+   "act": "Mad Tsai",
+   "name": "Mad Tsai",
+   "description": "American musician and Influencer",
+   "source_url": "https://en.wikipedia.org/wiki/Mad_Tsai",
+   "extract": "Mad Tsai is an American singer-songwriter and social media personality. Of Taiwanese and Peruvian descent, Tsai gained recognition through the short-video platform TikTok under the handle @madsteaparty. His music explores themes of queerness, adolescence, and self-identity, often blending elements of pop, bedroom pop, and alternative music."
+  },
+  {
+   "id": "61c4b2b4-ceaf-4ae1-ae99-7a0ae29cbf70",
+   "slug": "mico-running-from-a-feeling-tour-cbb04e3a",
+   "title": "MICO: Running From A Feeling Tour",
+   "act": "MICO",
+   "name": "Mico",
+   "description": "Canadian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Mico_(singer)",
+   "extract": "Jose Miguel Veloso, known professionally as Mico, is a Canadian singer-songwriter and musician from Toronto. He initially grew a fanbase online through Discord and Twitch, breaking out commercially with his 2022 single \"cut my hair\", which became a top-30 radio hit in Canada. In 2025, he signed with Columbia Records following a string of independent extended plays."
+  },
+  {
+   "id": "1352e8c7-ecac-4ab1-8ebb-da9481db62d8",
+   "slug": "justin-nozuka-fc5ff070",
+   "title": "Justin Nozuka",
+   "act": "Justin Nozuka",
+   "name": "Justin Nozuka",
+   "description": "American musician (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Justin_Nozuka",
+   "extract": "Justin Tokimitsu Nozuka  is an American singer, songwriter, and actor of Japanese and Canadian descent. His debut album, Holly, was released in 2007. He has since published five more studio albums: You I Wind Land and Sea (2010), Ulysees (2014), Run to Waters (2018), Daydreams & Endless Nights (2023), and Chlorine (2024)."
+  }
+ ]
+}

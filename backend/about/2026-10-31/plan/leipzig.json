@@ -1,0 +1,66 @@
+{
+ "city": "leipzig",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "3f513ae8-ef90-454e-93c2-3138f07467db",
+   "slug": "dartagnan-44f84b83",
+   "title": "dArtagnan",
+   "act": "dArtagnan",
+   "name": "DArtagnan",
+   "description": "German folk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/DArtagnan_(band)",
+   "extract": "dArtagnan is a German folk rock band from Nuremberg. The band's name makes reference to 17th century French soldier Charles de Batz de Castelmore d'Artagnan, made famous by the author Alexandre Dumas in his d'Artagnan Romances, notably in the novel The Three Musketeers."
+  },
+  {
+   "id": "3c0caea3-cc32-45ca-8d96-4da8d9fbc643",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-f88079c4",
+   "title": "Strangelove - The DEPECHE MODE Experience Black Celebration 2026",
+   "act": "Strangelove",
+   "name": "Strangelove",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Strangelove_(band)",
+   "extract": "Strangelove were an English alternative rock band, formed in Bristol in 1991 comprising singer Patrick Duff, guitarists Alex Lee & Julian Poole, bassist Joe Allen and John Langley on drums. They released two EPs and three albums before disbanding in 1998."
+  },
+  {
+   "id": "ae769d43-98b1-4836-b61e-d9007d0b6588",
+   "slug": "polyphia-be-not-afraid-world-tour-54f51ff5",
+   "title": "Polyphia - BE NOT AFRAID World Tour",
+   "act": "Polyphia",
+   "name": "Polyphia",
+   "description": "American progressive rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Polyphia",
+   "extract": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music. Polyphia has released five studio albums, one live record, two EPs, and numerous singles."
+  },
+  {
+   "id": "a8a142c6-04c4-41ed-90ae-6a9dac3a051a",
+   "slug": "keimzeit-die-tour-zum-neuen-album-f2538c9e",
+   "title": "Keimzeit. - Die Tour zum neuen Album",
+   "act": "Keimzeit.",
+   "name": "Keimzeit",
+   "description": "German rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Keimzeit",
+   "extract": "Keimzeit is a German musical band formed in 1979 in Lütte (Belzig) near Potsdam, GDR. Originally called Jogger, they changed their name to Keimzeit in 1982."
+  },
+  {
+   "id": "abb56979-600e-49c7-8c45-f560854b09d8",
+   "slug": "amorphis-borderlands-tour-2027-be522fc1",
+   "title": "Amorphis - Borderlands Tour 2027",
+   "act": "Amorphis",
+   "name": "Amorphis",
+   "description": "Finnish progressive metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Amorphis",
+   "extract": "Amorphis is a Finnish progressive metal band founded by Jan Rechberger, Tomi Koivusaari, and Esa Holopainen in 1990. Initially, the band was a death metal act, but on later albums they evolved into playing other genres, including progressive metal, folk metal, and melodic death metal. They frequently use the Kalevala, the epic poem of Finland, as a source for their lyrics."
+  },
+  {
+   "id": "9638363a-ed6f-43cb-a590-d50028f20ab1",
+   "slug": "schandmaul-sternensegler-tour-2027-b1e05410",
+   "title": "Schandmaul - Sternensegler Tour 2027",
+   "act": "Schandmaul",
+   "name": "Schandmaul",
+   "description": "German medieval folk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Schandmaul",
+   "extract": "Schandmaul is a German medieval folk rock band from the Munich area."
+  }
+ ]
+}

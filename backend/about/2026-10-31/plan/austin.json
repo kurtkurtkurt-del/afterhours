@@ -1,0 +1,226 @@
+{
+ "city": "austin",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "ffa0cea5-adc3-45b4-b8dc-8d353892ef14",
+   "slug": "ramon-ayala-historia-de-un-final-3a6170eb",
+   "title": "Ramon Ayala: Historia De Un Final",
+   "act": "Ramon Ayala",
+   "name": "Ramón Ayala",
+   "description": "Mexican accordion player-songwriter and accordion player",
+   "source_url": "https://en.wikipedia.org/wiki/Ram%C3%B3n_Ayala",
+   "extract": "Ramón Covarrubias Garza, known by his stage name Ramón Ayala, is a Mexican accordion player, composer and songwriter of Norteño music. He is also known as the \"King of the Accordion\"."
+  },
+  {
+   "id": "50313aa5-7ed6-456e-a5be-3e5ce968bac0",
+   "slug": "madeon-a33f348d",
+   "title": "Madeon",
+   "act": "Madeon",
+   "name": "Madeon",
+   "description": "French musician and DJ (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Madeon",
+   "extract": "Hugo Pierre Leclercq, better known by his stage name Madeon, is a French musician, DJ, record producer, singer and songwriter from Nantes, based in Los Angeles. He initially came to widespread public attention at age 17 through a YouTube video, \"Pop Culture\", where he performed a mash-up of 39 different popular songs in real-time using a Novation Launchpad. It received millions of hits in its first few days of release. Madeon has cited the Beatles and Daft Punk as his greatest musical influences."
+  },
+  {
+   "id": "9fab4080-5d42-461a-b75b-298139265556",
+   "slug": "doja-cat-tour-ma-vie-world-tour-2066c87c",
+   "title": "Doja Cat - Tour Ma Vie World Tour",
+   "act": "Doja Cat",
+   "name": "Doja Cat",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Doja_Cat",
+   "extract": "Amala Ratna Zandile Dlamini, known professionally as Doja Cat, is an American rapper and singer-songwriter. Regarded as the \"Queen of Pop-Rap\", she is known for her musical versatility, live performance skills and humorous internet presence. Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\", and Time listed her as one of the world's most influential people in 2023."
+  },
+  {
+   "id": "452ff862-10b8-40d4-8874-6cef52b2e24d",
+   "slug": "adelitas-way-2505eae8",
+   "title": "Adelitas Way",
+   "act": "Adelitas Way",
+   "name": "Adelitas Way",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Adelitas_Way",
+   "extract": "Adelitas Way is an American rock band formed in Las Vegas in 2006. The band's debut single \"Invincible\" broke them into the mainstream scene after the song made numerous television appearances in commercials and live sporting events. The band has toured with notable acts such as Guns N' Roses, Creed, Papa Roach, Godsmack, Theory of a Deadman, Seether, Three Days Grace, Breaking Benjamin, Deftones, Puddle of Mudd, Sick Puppies, Shinedown, Staind, Alter Bridge, Skillet, Halestorm, Thousand Foot Krutch, Red and others."
+  },
+  {
+   "id": "0b6c1ae9-fed5-4f29-839d-53eb3dfe8b28",
+   "slug": "stephen-day-52002bd0",
+   "title": "Stephen Day",
+   "act": "Stephen Day",
+   "name": "Stephen Day",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Stephen_Day_(singer)",
+   "extract": "Stephen Day is an American singer-songwriter based in Nashville, Tennessee. Day released his debut extended play Undergrad Romance and The Moses In Me in April 2016 during his sophomore year of college. Day has released four full-length studio albums, Guess I'm Grown Now — and its acoustic version, The Shapes I'm In, Gold Mine, and Stephen Day. \nDay has been signed to Riser House Records, based in Nashville, since October 2024."
+  },
+  {
+   "id": "98a49d9a-82a2-460e-9a86-2401267a8454",
+   "slug": "slow-pulp-a1aa8afd",
+   "title": "Slow Pulp",
+   "act": "Slow Pulp",
+   "name": "Slow Pulp",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Slow_Pulp",
+   "extract": "Slow Pulp is an American indie rock band from Madison, Wisconsin, currently based in Chicago, Illinois. Formed in 2015, the band has held the same line-up since 2017: Emily Massey on lead vocals and rhythm guitar, Alex Leeds on bass and backing vocals, Teddy Matthews on drums and percussion, and Henry Stoehr on lead guitar. The band have released three studio albums to date: Moveys (2020), Yard (2023), and Melodie (2026)."
+  },
+  {
+   "id": "1801ed56-cd4d-46e4-9e2a-3b4b649737e2",
+   "slug": "bonobo-distance-in-static-live-north-american-to-7697b2a5",
+   "title": "Bonobo: Distance in Static Live North American Tour",
+   "act": "Bonobo",
+   "name": "Bonobo",
+   "description": "English musician, producer, and DJ (born 1976)",
+   "source_url": "https://en.wikipedia.org/wiki/Bonobo_(musician)",
+   "extract": "Simon Charles Green, known by his stage name Bonobo, is an English musician, producer, and DJ based in Los Angeles. He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences. His electronic sound incorporates the use of organic instrumentation and is recreated by a full band in live performances."
+  },
+  {
+   "id": "e90fd0a6-10d6-48ce-a7df-b071ff8633ea",
+   "slug": "dinosaur-jr-fall-tour-2026-with-special-guest-st-6ba912d2",
+   "title": "Dinosaur Jr. - Fall Tour 2026 with special guest Stef Chura",
+   "act": "Dinosaur Jr.",
+   "name": "Dinosaur Jr.",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Dinosaur_Jr.",
+   "extract": "Dinosaur Jr. is an American rock band formed in Amherst, Massachusetts, in 1984. The band was founded by J Mascis, Lou Barlow, and Murph (drums). After three albums on independent labels, the band earned a reputation as one of the formative influences on American alternative rock. Creative tension led to Mascis firing Barlow, who later formed Sebadoh and Folk Implosion. His replacement, Mike Johnson, came aboard for three major-label albums. Murph eventually quit, with Mascis taking over drums on the band's albums before the group disbanded in 1997. The original lineup reformed in 2005, releasing six albums thereafter."
+  },
+  {
+   "id": "75f84a6f-7fa2-42b4-a31f-63196cba62ef",
+   "slug": "john-summit-ctrl-escape-arena-tour-ebf99345",
+   "title": "JOHN SUMMIT - CTRL ESCAPE ARENA TOUR",
+   "act": "JOHN SUMMIT",
+   "name": "John Summit",
+   "description": "American DJ and record producer (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/John_Summit",
+   "extract": "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label. His music includes original tracks and remixes, primarily focused in the genre of tech house."
+  },
+  {
+   "id": "1fe1fec5-6500-4fd7-80da-4f83ca075039",
+   "slug": "turnover-down-on-earth-tour-6994eedb",
+   "title": "Turnover - Down On Earth Tour",
+   "act": "Turnover",
+   "name": "Turnover",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Turnover_(band)",
+   "extract": "Turnover is an American rock band from Virginia Beach, Virginia. The band were formed in 2009 by brothers Austin and Casey (drums) Getz alongside longtime friend Danny Dempsey (bass); the three have gone on to oversee every iteration of the band to date. The three are currently joined in the band by lead guitarist Nick Rayfield, who began touring with the band in 2017 and was later officially inducted as a full-time member in 2022. Turnover have released six studio albums and four EPs across their career. Their most recent album, Down on Earth, was released on May 29th 2026."
+  },
+  {
+   "id": "12cd9c8c-e324-40b7-849b-9dd69b11eea0",
+   "slug": "steve-lacy-oh-yeah-tour-335aff84",
+   "title": "Steve Lacy: Oh yeah? Tour",
+   "act": "Steve Lacy",
+   "name": "Steve Lacy",
+   "description": "American musician (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Steve_Lacy",
+   "extract": "Steve Thomas Lacy-Moya is an American singer-songwriter, guitarist and record producer. He gained recognition as the guitarist of the alternative R&B band the Internet, which he joined in 2015. His self-produced debut EP, Steve Lacy's Demo (2017), was met with critical praise and became a sleeper hit. Lacy then guest performed alongside Frank Ocean on Tyler, the Creator's 2017 single \"911 / Mr. Lonely\", which received double platinum certification by the Recording Industry Association of America (RIAA). That year, he also co-wrote songs for artists including Solange Knowles, and Kendrick Lamar on his song \"Pride\"."
+  },
+  {
+   "id": "6fd262cb-3774-4a2b-a014-79c4e4e3602e",
+   "slug": "mana-vivir-sin-aire-tour-17f51992",
+   "title": "MANÁ: VIVIR SIN AIRE TOUR",
+   "act": "MANÁ",
+   "name": "Maná",
+   "description": "Mexican rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Man%C3%A1",
+   "extract": "Maná is a Mexican pop rock band formed in 1981. Originally called Sombrero Verde, the current lineup of members is vocalist-guitarist Fher Olvera, drummer Alex González, guitarist Sergio Vallín and bassist Juan Calleros. The band is one of the best-selling Latin Mexican music artists and the most successful Latin American band of all time with over 45 million records sold worldwide. Maná has earned four Grammy Awards, eight Latin Grammy Awards, five MTV Video Music Awards Latin America, six Premios Juventud awards, 19 Billboard Latin Music Awards and 15 Premios Lo Nuestro awards."
+  },
+  {
+   "id": "31500f85-28f6-47eb-8449-3760b1b69cd1",
+   "slug": "art-garfunkel-efc38912",
+   "title": "Art Garfunkel",
+   "act": "Art Garfunkel",
+   "name": "Art Garfunkel",
+   "description": "American singer (born 1941)",
+   "source_url": "https://en.wikipedia.org/wiki/Art_Garfunkel",
+   "extract": "Arthur Ira Garfunkel is an American singer, actor and poet who is best known for his partnership with Paul Simon in the folk rock duo Simon & Garfunkel."
+  },
+  {
+   "id": "5e1a2899-1426-45d8-acaf-2a0904c9abb4",
+   "slug": "rival-sons-domestic-bliss-tour-e9c18b24",
+   "title": "Rival Sons - Domestic Bliss Tour",
+   "act": "Rival Sons",
+   "name": "Rival Sons",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Rival_Sons",
+   "extract": "Rival Sons are an American rock band formed in Long Beach, California in 2009 and also affiliated with Nashville, Tennessee. The band consists of Jay Buchanan, Scott Holiday (guitar), Dave Beste and Michael Miley (drums). In their most recent tour they were joined by keyboard player Jesse Nason, and Todd Ögren accompanied them on previous tours. They are signed to Atlantic Records via Dave Cobb's label Low Country Sound, an imprint of Elektra."
+  },
+  {
+   "id": "486e5d67-9ed6-46a5-949d-6d46d81f03dc",
+   "slug": "liana-flores-77670fd5",
+   "title": "Liana Flores",
+   "act": "Liana Flores",
+   "name": "Liana Flores",
+   "description": "British singer-songwriter and guitarist",
+   "source_url": "https://en.wikipedia.org/wiki/Liana_Flores",
+   "extract": "Liana Flores is a British-Brazilian singer-songwriter and guitarist. After independently releasing two extended plays The Water's Fine! (2018) and Recently (2019), her debut studio album Flower of the Soul was released under Verve and Fiction in June 2024."
+  },
+  {
+   "id": "268ed33f-4c1d-40c5-821c-d737adafd1c5",
+   "slug": "katseye-the-wildworld-tour-cd8c9877",
+   "title": "KATSEYE: THE WILDWORLD TOUR",
+   "act": "KATSEYE",
+   "name": "Katseye",
+   "description": "Los Angeles–based girl group",
+   "source_url": "https://en.wikipedia.org/wiki/Katseye",
+   "extract": "Katseye is a girl group formed in 2024, based in Los Angeles. The group consists of six members: Daniela Avanzini, Lara Raj, Manon Bannerman, Megan Skiendiel, Sophia Laforteza, and Yoonchae Jeung. With members from the Philippines, South Korea, Switzerland, and the United States, Katseye is often called a \"global girl group\"."
+  },
+  {
+   "id": "da615325-0348-461a-9b08-f0a661f52463",
+   "slug": "greg-freeman-ea2d0776",
+   "title": "Greg Freeman",
+   "act": "Greg Freeman",
+   "name": "Greg Freeman",
+   "description": "American country musician",
+   "source_url": "https://en.wikipedia.org/wiki/Greg_Freeman_(musician)",
+   "extract": "Greg Freeman is an American alternative country musician based in Burlington, Vermont. Freeman was raised in Bethesda, Maryland. Freeman released his debut studio album in 2022 titled I Looked Out, through the record label Bud Tapes. After the album slowly gained attention, it was reissued in 2024 through Transgressive Records imprint Canvasback Music. Freeman announced his second full-length album in April 2025 titled Burnover. The album was released on August 22, 2025. Freeman's third full length album, All Set The Bone, was released on October 2, 2026"
+  },
+  {
+   "id": "87934a1a-b2a6-4b69-8ebc-b7bdad3c501b",
+   "slug": "chrissy-chlapecka-3acc6369",
+   "title": "Chrissy Chlapecka",
+   "act": "Chrissy Chlapecka",
+   "name": "Chrissy Chlapecka",
+   "description": "American singer and TikTok personality (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Chrissy_Chlapecka",
+   "extract": "\nChristine Nicole Chlapecka is an American singer, TikTok personality, and left-wing activist. She is best known as a key figure in \"#BimboTok\", a TikTok subculture centered on reclaiming the bimbo stereotype and aesthetic in a queer, feminist, and leftist context."
+  },
+  {
+   "id": "ca660c3c-6b9a-4067-b8f8-7e67fb234c67",
+   "slug": "jose-madero-usa-tour-2026-e1f949b9",
+   "title": "Jose Madero - USA Tour 2026",
+   "act": "Jose Madero",
+   "name": "José Madero",
+   "description": "Mexican musician",
+   "source_url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Madero",
+   "extract": "José Madero Vizcaíno, better known as Pepe Madero, is a Mexican singer and writer. Madero began his musical career as a vocalist in the renowned Mexican rock band PXNDX. However, since 2016 he has mainly dedicated himself to his solo career."
+  },
+  {
+   "id": "17f487c2-d22f-4498-913e-134b92e6eb08",
+   "slug": "treaty-oak-revival-west-texas-degenerate-tour-a32b12a2",
+   "title": "Treaty Oak Revival - West Texas Degenerate Tour",
+   "act": "Treaty Oak Revival",
+   "name": "Treaty Oak Revival",
+   "description": "US country/southern rock band from Odessa, Texas",
+   "source_url": "https://en.wikipedia.org/wiki/Treaty_Oak_Revival",
+   "extract": "Treaty Oak Revival is an American country rock band based in Odessa, Texas. They have self-released three studio albums and five singles since 2018."
+  },
+  {
+   "id": "425b3aa0-3eea-42c8-9909-e9925753dec3",
+   "slug": "tiny-habits-28e6b35f",
+   "title": "Tiny Habits",
+   "act": "Tiny Habits",
+   "name": "Tiny Habits",
+   "description": "American folk-pop trio",
+   "source_url": "https://en.wikipedia.org/wiki/Tiny_Habits",
+   "extract": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa. Their first EP, Tiny Things, was released in April 2023. Their debut studio album All For Something was released in May 2024. Their second album Keepers came out in August 2026."
+  },
+  {
+   "id": "3907ac15-5e67-41fa-ba31-5057b0782c54",
+   "slug": "el-tri-5f6938e1",
+   "title": "El Tri",
+   "act": "El Tri",
+   "name": "El Tri",
+   "description": "Mexican rock band",
+   "source_url": "https://en.wikipedia.org/wiki/El_Tri_(band)",
+   "extract": "El Tri is a Mexican rock band from Mexico City fronted by Alex Lora. It is a spinoff of Three Souls in My Mind, formed in 1968. The group is regarded as influential in the development of Mexican rock music."
+  }
+ ]
+}

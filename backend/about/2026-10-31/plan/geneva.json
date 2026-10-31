@@ -1,0 +1,16 @@
+{
+ "city": "geneva",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "7ba2cdec-77a2-4a4f-942e-c90618d7c429",
+   "slug": "indochine-9187cb32",
+   "title": "Indochine",
+   "act": "Indochine",
+   "name": "Indochine",
+   "description": "French rock and new wave band",
+   "source_url": "https://en.wikipedia.org/wiki/Indochine_(band)",
+   "extract": "Indochine is a French rock and new wave band formed in Paris in 1981. It achieved significant success in the 1980s across the Francophone world, Europe, and Latin America with hit songs L'Aventurier and Canary Bay. After releasing several critically praised but commercially disappointing albums in the 1990s, the band experienced a resurgence with the 2002 album Paradize. To date, Indochine has sold over 10 million albums and singles worldwide."
+  }
+ ]
+}

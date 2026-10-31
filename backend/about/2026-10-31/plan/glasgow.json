@@ -1,0 +1,256 @@
+{
+ "city": "glasgow",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "b63191ce-ca35-4c61-9adf-46e23f5a9a5d",
+   "slug": "jack-savoretti-039401b5",
+   "title": "Jack Savoretti",
+   "act": "Jack Savoretti",
+   "name": "Jack Savoretti",
+   "description": "British-Italian singer and musician",
+   "source_url": "https://en.wikipedia.org/wiki/Jack_Savoretti",
+   "extract": "Giovanni Edgar Charles Galletto-Savoretti, known professionally as Jack Savoretti, is a British acoustic singer, songwriter, and musician. He has released eight studio albums to date: Between the Minds (2007), Harder Than Easy (2009), Before the Storm (2012), Written in Scars (2015), Sleep No More (2016), Singing to Strangers (2019), Europiana (2021) and Miss Italia (2024). Singing to Strangers became his first number-one album on the UK Albums Chart."
+  },
+  {
+   "id": "06f493a8-cb49-4113-aa5e-640773022fce",
+   "slug": "hayseed-dixie-killing-and-hell-8639ec75",
+   "title": "Hayseed Dixie - Killing & Hell",
+   "act": "Hayseed Dixie",
+   "name": "Hayseed Dixie",
+   "description": "American bluegrass band",
+   "source_url": "https://en.wikipedia.org/wiki/Hayseed_Dixie",
+   "extract": "Hayseed Dixie is an American band formed in Nashville, Tennessee, in 2000. Their first album was A Hillbilly Tribute to AC/DC. The band performs bluegrass cover versions of hard rock songs and also original songs of a mostly satirical or absurdist nature in a self-created musical genre which the band calls \"rockgrass.\" The band's name is a linguistic play on the name of the band AC/DC."
+  },
+  {
+   "id": "0979b2ad-5611-437a-ac42-46b10d59c158",
+   "slug": "hayseed-dixie-d552b83f",
+   "title": "Hayseed Dixie",
+   "act": "Hayseed Dixie",
+   "name": "Hayseed Dixie",
+   "description": "American bluegrass band",
+   "source_url": "https://en.wikipedia.org/wiki/Hayseed_Dixie",
+   "extract": "Hayseed Dixie is an American band formed in Nashville, Tennessee, in 2000. Their first album was A Hillbilly Tribute to AC/DC. The band performs bluegrass cover versions of hard rock songs and also original songs of a mostly satirical or absurdist nature in a self-created musical genre which the band calls \"rockgrass.\" The band's name is a linguistic play on the name of the band AC/DC."
+  },
+  {
+   "id": "c1ce9a6a-c78a-4842-b4a8-e886d82ad8e6",
+   "slug": "papa-roach-4a76f575",
+   "title": "Papa Roach",
+   "act": "Papa Roach",
+   "name": "Papa Roach",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Papa_Roach",
+   "extract": "Papa Roach is an American rock band from Vacaville, California, formed in 1993. After a few early shifts, the band initially stabilized in 1996 with the lineup of lead vocalist Jacoby Shaddix, drummer Dave Buckner, guitarist Jerry Horton, and bassist Tobin Esperance. This lineup remained consistent for slightly over a decade."
+  },
+  {
+   "id": "52f40b9b-4f25-48b3-bbfb-60174120e1a0",
+   "slug": "yaelokre-d07b8c2a",
+   "title": "Yaelokre",
+   "act": "Yaelokre",
+   "name": "Yaelokre",
+   "description": "Filipino-Icelandic singer-songwriter and multimedia artist",
+   "source_url": "https://en.wikipedia.org/wiki/Yaelokre",
+   "extract": "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist known for their folk music storytelling project under the stage name Yaelokre. Ósk began releasing music under the project name in early 2024, going viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart the same year."
+  },
+  {
+   "id": "80dcad6c-6761-446d-aaab-97805174ef21",
+   "slug": "overmono-pure-devotion-world-tour-02dade96",
+   "title": "Overmono - Pure Devotion- World Tour",
+   "act": "Overmono",
+   "name": "Overmono",
+   "description": "Welsh electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Overmono",
+   "extract": "Overmono is a Welsh electronic music duo consisting of the brothers Tom and Ed Russell."
+  },
+  {
+   "id": "9ba532ce-5d23-48f6-9467-4d6786fc062a",
+   "slug": "cody-johnson-794e9c66",
+   "title": "Cody Johnson",
+   "act": "Cody Johnson",
+   "name": "Cody Johnson",
+   "description": "American country singer (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Cody_Johnson",
+   "extract": "Cody Daniel Johnson is an American country music singer. He has self-released six albums, including Gotta Be Me, which debuted at number two on Billboard's Country Albums chart, before releasing his first major-label album, Ain't Nothin' to It, in January 2019. He released his second major-label album, Human: The Double Album, in October 2021. His style is classified as contemporary country and neotraditional country, drawing influences from artists like George Strait and Willie Nelson. His song \"'Til You Can't\" won two awards at the Country Music Association Awards in 2022. His album Leather won the CMA Album of the Year on November 20, 2024. He toured Australia in 2023 and 2025, with many shows selling out."
+  },
+  {
+   "id": "d74078e6-c3d6-4807-b790-a30d9c6439ac",
+   "slug": "swervedriver-35th-anniversary-of-raise-1f58ae40",
+   "title": "Swervedriver - 35th Anniversary of Raise",
+   "act": "Swervedriver",
+   "name": "Swervedriver",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Swervedriver",
+   "extract": "Swervedriver are an English alternative rock band formed in Oxford in 1989 around core members Adam Franklin and Jimmy Hartridge. Between 1989 and 1998, the band released four studio albums and numerous EPs and singles despite a considerable flux of members, managers, and record labels. By 1993 the band's lineup had settled with Franklin on vocals/guitar, Hartridge on guitar, Jez Hindmarsh on drums, and Steve George on bass. They had emerged with a heavier rock sound than their shoegaze contemporaries, and over the next five years it evolved to include elements of psychedelia, classic pop, and indie rock."
+  },
+  {
+   "id": "09ffe5db-cd15-4099-b827-077fc5bfebf6",
+   "slug": "swervedriver-4a92b01e",
+   "title": "Swervedriver",
+   "act": "Swervedriver",
+   "name": "Swervedriver",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Swervedriver",
+   "extract": "Swervedriver are an English alternative rock band formed in Oxford in 1989 around core members Adam Franklin and Jimmy Hartridge. Between 1989 and 1998, the band released four studio albums and numerous EPs and singles despite a considerable flux of members, managers, and record labels. By 1993 the band's lineup had settled with Franklin on vocals/guitar, Hartridge on guitar, Jez Hindmarsh on drums, and Steve George on bass. They had emerged with a heavier rock sound than their shoegaze contemporaries, and over the next five years it evolved to include elements of psychedelia, classic pop, and indie rock."
+  },
+  {
+   "id": "b44cdd37-b849-4feb-89e8-1ec35f502248",
+   "slug": "dizzee-rascal-we-want-bass-037b3b29",
+   "title": "Dizzee Rascal - We Want Bass",
+   "act": "Dizzee Rascal",
+   "name": "Dizzee Rascal",
+   "description": "British rapper (born 1984)",
+   "source_url": "https://en.wikipedia.org/wiki/Dizzee_Rascal",
+   "extract": "Dylan Kwabena Mills, known professionally as Dizzee Rascal, is a British rapper and MC. He is often credited as a pioneer of British hip hop and grime music and was ranked by Complex as one of the greatest British rappers of all time. His work has also incorporated elements of UK garage, bassline and R&B. Dizzee Rascal's music is also often credited with bringing UK rap into the mainstream and became the country's first rapper to achieve international recognition."
+  },
+  {
+   "id": "617e84ff-e60d-44a2-b783-ef120e053f5a",
+   "slug": "jalen-ngonda-4fcfe5b1",
+   "title": "Jalen Ngonda",
+   "act": "Jalen Ngonda",
+   "name": "Jalen Ngonda",
+   "description": "American soul musician",
+   "source_url": "https://en.wikipedia.org/wiki/Jalen_Ngonda",
+   "extract": "Jalen N'Gonda is an American musician based in England. He came to prominence with the release of his debut studio album Come Around and Love Me (2023), and is known for his Motown-inspired soul music. N'Gonda is primarily a singer, but also plays various instruments during live performances."
+  },
+  {
+   "id": "2aaa9e66-7020-4e89-b865-eef0ffbb45c0",
+   "slug": "nick-hakim-1243fb26",
+   "title": "Nick Hakim",
+   "act": "Nick Hakim",
+   "name": "Nick Hakim",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Nick_Hakim",
+   "extract": "Nicolas Hakim is an American musician based in Queens, New York, United States. His first EP, Where Will We Go Part 1 & 2, was self-released in 2014. He released three albums with ATO: Green Twins (2017), Will This Make Me Good (2020), and Cometa (2022)."
+  },
+  {
+   "id": "6ac7bead-d0fa-4645-b073-73611d0db108",
+   "slug": "the-shires-ec874b40",
+   "title": "The Shires",
+   "act": "The Shires",
+   "name": "The Shires",
+   "description": "British country music duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_Shires_(duo)",
+   "extract": "The Shires are a British country music duo composed of singer-songwriters Ben Earle and Crissie Rhodes. Earle sings harmony vocals, plays piano and guitar, and Rhodes is lead singer. The duo formed in 2013 and released their debut album Brave in 2015, becoming the first British country act to chart in the Top 10 of the UK Albums Chart. The group's second album, My Universe, became the fastest-selling British country album in history when it was released in October 2016."
+  },
+  {
+   "id": "be32ad26-1017-47e9-840d-68dc40f25391",
+   "slug": "the-home-team-b5d4ad5b",
+   "title": "The Home Team",
+   "act": "The Home Team",
+   "name": "The Home Team",
+   "description": "American Rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Home_Team",
+   "extract": "The Home Team is an American four-piece rock band from Seattle, Washington, formed in 2013 by Daniel Matson and John Baran. The band currently consists of vocalist Brian Butcher, bassist Ryne Olson, guitarist John Baran, and drummer Daniel Matson."
+  },
+  {
+   "id": "cb83e01d-b467-4dc9-88e3-d05fc52c568f",
+   "slug": "holy-fawn-3cbac921",
+   "title": "Holy Fawn",
+   "act": "Holy Fawn",
+   "name": "Holy Fawn",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Holy_Fawn",
+   "extract": "Holy Fawn is an American rock band from Phoenix, Arizona. The band currently consists of guitarist and vocalist Ryan Osterman, guitarist Evan Phelps, and bassist Alexander Rieth, who was part of the lineup until 2023 before returning in 2025. Drummer Austin Reinholz was a member until 2025. They have released two full-length studio albums and two extended plays."
+  },
+  {
+   "id": "30c128c0-3f84-4046-b9b6-aff43ac107b3",
+   "slug": "noah-kahan-the-great-divide-tour-79cd386b",
+   "title": "Noah Kahan: the Great Divide Tour",
+   "act": "Noah Kahan",
+   "name": "Noah Kahan",
+   "description": "American singer-songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Noah_Kahan",
+   "extract": "Noah Berkenkamp Kahan is an American singer-songwriter. His breakthrough single, \"Hurt Somebody\", achieved gold status in the United States and charted in multiple international markets. The single and EP of the same name preceded the release of his debut album, Busyhead (2019). Within five years, two more albums came out: I Was / I Am (2021) and Stick Season (2022), the latter became his mainstream commercial breakthrough. It led to his nomination in 2023 for the Grammy Award for Best New Artist. In 2026, his fourth album The Great Divide was released and achieved record-breaking streaming and vinyl sales for a No. 1 rock album debut on the Billboard 200. That preceded The Great Divide Tour, his first stadium tour."
+  },
+  {
+   "id": "706a077e-553b-4654-9897-4827322fc5b5",
+   "slug": "freya-skye-684b8ebd",
+   "title": "Freya Skye",
+   "act": "Freya Skye",
+   "name": "Freya Skye",
+   "description": "English singer and actress (born 2009)",
+   "source_url": "https://en.wikipedia.org/wiki/Freya_Skye",
+   "extract": "Freya Skye is an English singer and actress. She represented the United Kingdom in the Junior Eurovision Song Contest 2022, after which she was signed to Hollywood Records. Skye also has a talent holding deal for projects with Disney Branded Television. As an actress, she has appeared in The Next Step and made her film debut starring as Nova Bright in Zombies 4: Dawn of the Vampires. As a musician, Skye has released a number of singles since 2020 and released her debut extended play Stardust in 2026 and embarked on her first headlining tour, the Stars Align Tour."
+  },
+  {
+   "id": "ea7ba41f-f6ee-4687-b230-f3f0e5a5eb19",
+   "slug": "ryan-beatty-1ffbdff7",
+   "title": "Ryan Beatty",
+   "act": "Ryan Beatty",
+   "name": "Ryan Beatty",
+   "description": "American singer (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Ryan_Beatty",
+   "extract": "Ryan Kevin Beatty is an American singer-songwriter. He was born in Clovis, California, and now resides in Los Angeles."
+  },
+  {
+   "id": "29ad19e2-f2d0-4879-9775-ed02e81c231a",
+   "slug": "girli-46b0ec13",
+   "title": "girli",
+   "act": "girli",
+   "name": "Girli",
+   "description": "English singer-songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Girli",
+   "extract": "Amelia Kate Woodward Toomey, known professionally as Girli, is an English singer, rapper and songwriter. Based in London, she has released a number of singles, five EPs and three studio albums. The Guardian has described her sound as veering \"between PC Music, bubblegum pop, pop punk and rap, each one treading a line between catchy and deliberately discomforting.\" Much of her music is about feminism, sexuality, queer culture, and mental health."
+  },
+  {
+   "id": "931a83cb-9da8-4e96-88ef-ff9a03221e2f",
+   "slug": "greg-mendez-0c2432b2",
+   "title": "Greg Mendez",
+   "act": "Greg Mendez",
+   "name": "Greg Mendez",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Greg_Mendez",
+   "extract": "Greg Mendez is an American indie rock musician from Philadelphia, Pennsylvania."
+  },
+  {
+   "id": "a5b80729-8af3-47f7-a751-f369a10478ac",
+   "slug": "cat-power-the-greatest-tour-2fe08c90",
+   "title": "Cat Power - The Greatest Tour",
+   "act": "Cat Power",
+   "name": "Cat Power",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Cat_Power",
+   "extract": "Charlyn Marie  \"Chan\" Marshall, better known by her stage name Cat Power, is an American singer-songwriter. Cat Power was originally the name of her first band, but has become her stage name as a solo artist."
+  },
+  {
+   "id": "6c84bc98-886e-4fba-bf4d-e69e254e04c9",
+   "slug": "future-palace-651f30f0",
+   "title": "Future Palace",
+   "act": "Future Palace",
+   "name": "Future Palace",
+   "description": "German rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Future_Palace",
+   "extract": "Future Palace is a German rock band from Berlin. It consists of vocalist Maria Lessing, guitarist Manuel Kohlert, and drummer Johannes Früchtenicht. The band has been signed to the German label Century Media Records since 2025 and to date has released four studio albums, Escape (2020), Run (2022), Distortion (2024), and Resurgence (2026)."
+  },
+  {
+   "id": "d9da194a-3bf1-4a66-afba-92767af823e9",
+   "slug": "alabama-3-cc5baed4",
+   "title": "Alabama 3",
+   "act": "Alabama 3",
+   "name": "Alabama 3",
+   "description": "British band",
+   "source_url": "https://en.wikipedia.org/wiki/Alabama_3",
+   "extract": "Alabama 3 is a British musical group founded in Brixton, London, in 1995. Their track \"Woke Up This Morning\" was used for the opening credits of the TV series The Sopranos. In the United States, the band is known as A3, to avoid legal conflict with the country music band Alabama."
+  },
+  {
+   "id": "a1dd913a-3002-4a1b-87d6-bf0a427c1ef6",
+   "slug": "the-rifles-6d645407",
+   "title": "The Rifles",
+   "act": "The Rifles",
+   "name": "The Rifles",
+   "description": "English indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Rifles_(band)",
+   "extract": "The Rifles are an English indie rock band from Chingford, London."
+  },
+  {
+   "id": "1e264e9d-8e43-4e84-b885-17bbf91162a4",
+   "slug": "hail-the-sun-99a1eb95",
+   "title": "Hail the Sun",
+   "act": "Hail the Sun",
+   "name": "Hail the Sun",
+   "description": "American post-hardcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Hail_the_Sun",
+   "extract": "Hail the Sun is an American post-hardcore band from Chico, California. Formed in 2009, the band currently consists of lead vocalist and drummer Donovan Melero, guitarist Shane Gann, guitarist Aric Garcia, bass guitarist John Stirrat, and touring and studio drummer Allen Casillas. They are known for their eclectic progressive rock and math rock style, along with traditional elements of screamo and post-hardcore. They released their debut studio album, POW! Right In the Kisser! (2010), and EP, Elephantitis (2012), independently before signing to Blue Swan Records the following year. The group released their sophomore studio album, Wake, in 2014. In 2016, the band departed the label, signing to Equal Vision Records and releasing their third studio album, Culture Scars, on June 17, 2016, which charted at number 38 on the Billboard Top Rock Albums chart."
+  }
+ ]
+}

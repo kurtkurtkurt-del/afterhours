@@ -1,0 +1,76 @@
+{
+ "city": "rotterdam",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "52c86307-5b99-4160-857f-5ae45b0e9137",
+   "slug": "blok3-live-arena-tour-2026-27-5082897a",
+   "title": "Blok3 – Live Arena Tour 2026/27",
+   "act": "Blok3",
+   "name": "Blok3",
+   "description": "Turkish rapper and singer",
+   "source_url": "https://en.wikipedia.org/wiki/Blok3",
+   "extract": "Hakan Aydın, better known by his stage name Blok3, is a Turkish rapper and singer whose music blends indie pop and reggae."
+  },
+  {
+   "id": "3d646afd-fa84-44c2-87ee-549430d392db",
+   "slug": "ckay-rotterdam-84702ca1",
+   "title": "CKay - Rotterdam",
+   "act": "CKay",
+   "name": "CKay",
+   "description": "Nigerian singer and record producer (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/CKay",
+   "extract": "Chukwuka Chukwuma Ekweani, better known by his stage name Ckay, is a Nigerian singer, songwriter and record producer, who is the co-founder and CEO of Boyfriend Music. He was formerly signed to Chocolate City, a member of Warner Music Group independent label services ADA before joining Warner Music Africa and Atlantic Records. His international hit single \"Love Nwantiti\", also known as \"Love Nwantiti \", was released in 2019 by Chocolate City."
+  },
+  {
+   "id": "e155f22b-6f30-4b71-824a-f80c04d69940",
+   "slug": "papa-roach-rise-of-the-roach-ff02bade",
+   "title": "Papa Roach – Rise Of The Roach",
+   "act": "Papa Roach",
+   "name": "Papa Roach",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Papa_Roach",
+   "extract": "Papa Roach is an American rock band from Vacaville, California, formed in 1993. After a few early shifts, the band initially stabilized in 1996 with the lineup of lead vocalist Jacoby Shaddix, drummer Dave Buckner, guitarist Jerry Horton, and bassist Tobin Esperance. This lineup remained consistent for slightly over a decade."
+  },
+  {
+   "id": "0821f4a7-23a5-43a6-b765-cd8b124528ad",
+   "slug": "luka-bloom-d05912ca",
+   "title": "Luka Bloom",
+   "act": "Luka Bloom",
+   "name": "Luka Bloom",
+   "description": "Irish folk singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Luka_Bloom",
+   "extract": "Kevin Barry Moore, known professionally as Luka Bloom, is an Irish folk singer-songwriter. He is the younger brother of folk singer Christy Moore."
+  },
+  {
+   "id": "431c8aec-9045-466e-b784-c904cfeaa1fa",
+   "slug": "salvador-sobral-a260ee01",
+   "title": "Salvador Sobral",
+   "act": "Salvador Sobral",
+   "name": "Salvador Sobral",
+   "description": "Portuguese singer (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Salvador_Sobral",
+   "extract": "Salvador Vilar Braamcamp Sobral is a Portuguese singer, who won the Eurovision Song Contest 2017 for Portugal with the song \"Amar pelos dois\", written and composed by his sister, Luísa Sobral. In doing so, he gave Portugal its first ever win in the contest since its debut in 1964, ending the longest winless run by a country in Eurovision history. Sobral and his entry hold the Eurovision record for the highest-scoring winner, having earned a total of 758 points under the current voting system, after winning both the jury vote and televote."
+  },
+  {
+   "id": "6597b439-7689-4522-8b95-7c410eb51faf",
+   "slug": "inna-echoes-tour-2026-rotterdam-8b8f9dd2",
+   "title": "INNA - Echoes Tour 2026 - Rotterdam",
+   "act": "INNA",
+   "name": "Inna",
+   "description": "Romanian singer and songwriter (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/Inna",
+   "extract": "Elena Alexandra Apostoleanu, known professionally as Inna, is a Romanian singer and songwriter. Born in Mangalia and raised in Neptun, she studied political science at Ovidius University before meeting the Romanian trio Play & Win and pursuing a music career. She adopted the stage name \"Alessandra\" and a pop-rock style in 2008; later that year, she changed her stage name to \"Inna\" and began releasing EDM, house and popcorn music. \"Hot\" (2008), her debut single, was a commercial success worldwide and topped the Romanian and Billboard's Hot Dance Airplay chart, among others. Her debut studio album of the same name followed in August 2009 and was certified Gold and Platinum. It featured several other successful singles in Europe, including \"Amazing\" (2009), the singer's second number-one single in Romania."
+  },
+  {
+   "id": "f2142d24-d107-4f29-9874-2b0a7ea5942d",
+   "slug": "the-bootleg-beatles-53b2c73b",
+   "title": "The Bootleg Beatles",
+   "act": "The Bootleg Beatles",
+   "name": "The Bootleg Beatles",
+   "description": "Beatles tribute band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Bootleg_Beatles",
+   "extract": "The Bootleg Beatles are a Beatles tribute band. They have performed over 4,000 times since their establishment in March 1980."
+  }
+ ]
+}

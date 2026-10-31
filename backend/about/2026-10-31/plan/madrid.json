@@ -1,0 +1,56 @@
+{
+ "city": "madrid",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "d1638512-8202-409c-a180-c36b3cb09907",
+   "slug": "no-te-va-gustar-d655f640",
+   "title": "No Te Va Gustar",
+   "act": "No Te Va Gustar",
+   "name": "No Te Va Gustar",
+   "description": "Uruguayan rock band",
+   "source_url": "https://en.wikipedia.org/wiki/No_Te_Va_Gustar",
+   "extract": "No Te Va Gustar, also known by their initials NTVG, is an Uruguayan rock band formed in 1994 in Malvín, Montevideo. The group consists of lead vocalist and guitarist Emiliano Brancciari, bassist Guzmán Silveira, drummer Diego Bartaburu, trumpeter Martín Gil, trombonist Denis Ramos, tenor saxophonist Mauricio Ortiz, guitarist Pablo Coniberti, and keyboardist Francisco Nasser. The group was founded by Brancciari, Mateo Moreno, and Pablo Abdala as a group of friends that played at a small festival. It is considered as the most popular and international Uruguayan rock band and one of the most recognized Latin American groups."
+  },
+  {
+   "id": "659e43b2-2b45-42d3-af0f-c3debe8fbfac",
+   "slug": "elgrandetoto-49cce471",
+   "title": "ElGrandeToto",
+   "act": "ElGrandeToto",
+   "name": "ElGrandeToto",
+   "description": "Moroccan rapper (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/ElGrandeToto",
+   "extract": "Taha Fahssi, better known by his stage name ElGrandeToto, EGT or just Toto, is a Moroccan rapper from Casablanca. He has been the most streamed artist in Morocco for five consecutive years (2021-2025) and was the most listened-to artist in the MENA region on Spotify in 2021 and 2023. He is also the most viewed Moroccan rapper on YouTube. Fahssi is widely regarded as one of Morocco's best rappers of all time."
+  },
+  {
+   "id": "12941168-a0c5-46f4-902b-9d586185cba5",
+   "slug": "alex-ubago-ad9614b3",
+   "title": "Alex Ubago",
+   "act": "Alex Ubago",
+   "name": "Álex Ubago",
+   "description": "Spanish musician (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/%C3%81lex_Ubago",
+   "extract": "Álex Ubago is a Spanish musician. He is especially known for his heartfelt voice and his ballads. He was able to record his debut album ¿Qué pides tú? when manager Iñigo Argomaniz that used to go to Alex's cousin's bar heard a demo that Alex made for his girlfriend. His first album contains songs from that first demo recording; the songs are \"Sabes\" and \"Hay Que Ver\". Alex started to tour national radios with his guitar to sing his songs live and get further exposure. Eventually, this strategy worked, and his album finally hit the charts. But he reached absolute fame with the publication of the song \"Sin Miedo A Nada\", featuring Amaia Montero, which is his biggest hit to date."
+  },
+  {
+   "id": "2655872d-6cd6-44ae-95ff-1eb7c48393a6",
+   "slug": "pitbull-i-m-back-51d05b29",
+   "title": "Pitbull - I'm Back!",
+   "act": "Pitbull",
+   "name": "Pitbull",
+   "description": "American rapper (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/Pitbull_(rapper)",
+   "extract": "Armando Christian Pérez, known professionally as Pitbull, is an American rapper, singer, songwriter, and actor. He began his career in the early 2000s as a reggaeton, Latin hip-hop, and crunk performer, and signed with TVT Records to release his debut album, M.I.A.M.I. (2004). Executive produced by Lil Jon, the album entered the Billboard 200 along with his second and third albums, El Mariel (2006) and The Boatlift (2007). His fourth album, Pitbull Starring in Rebelution (2009), yielded his mainstream breakthrough, spawning the singles \"I Know You Want Me \" and \"Hotel Room Service\"—which peaked at numbers two and eight on the U.S. Billboard Hot 100, respectively."
+  },
+  {
+   "id": "2a9f8403-cd8a-41a7-84cb-f65c7613fd80",
+   "slug": "joe-bonamassa-2026-europe-tour-4855cba2",
+   "title": "Joe Bonamassa - 2026 EUROPE TOUR",
+   "act": "Joe Bonamassa",
+   "name": "Joe Bonamassa",
+   "description": "American musician (born 1977)",
+   "source_url": "https://en.wikipedia.org/wiki/Joe_Bonamassa",
+   "extract": "Joseph Leonard Bonamassa is an American blues rock guitarist, singer and songwriter. He started his career at age twelve, when he opened for B. B. King."
+  }
+ ]
+}

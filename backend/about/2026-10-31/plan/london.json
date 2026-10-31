@@ -1,0 +1,76 @@
+{
+ "city": "london",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "695de2a7-ed1c-4fcf-9794-e2e29cd12c66",
+   "slug": "tamer-hosny-2c9cd968",
+   "title": "Tamer Hosny",
+   "act": "Tamer Hosny",
+   "name": "Tamer Hosny",
+   "description": "Egyptian singer and actor (born 1977)",
+   "source_url": "https://en.wikipedia.org/wiki/Tamer_Hosny",
+   "extract": "Tamer Hosny Sherif Abbas Farghaly, known by his stage name Tamer Hosny, is an Egyptian singer and actor who first came to attention as a singer when he appeared on mixed tapes with other Egyptian artists. Hosny launched his solo career with his 2004 album Hob, becoming a successful singer of romantic music and was given the nickname \"Star of the Generation\" by his fans."
+  },
+  {
+   "id": "16a9e764-49a1-4aa1-a0a4-d4824ccf4e45",
+   "slug": "cancer-bats-a0211889",
+   "title": "Cancer Bats",
+   "act": "Cancer Bats",
+   "name": "Cancer Bats",
+   "description": "Canadian hardcore punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Cancer_Bats",
+   "extract": "Cancer Bats is a Canadian hardcore punk band from Toronto, Ontario. To date, they have released eight studio albums and six extended plays; with their most recent LP, Give Me Dirt, having been released on August 7, 2026. The band is currently composed of lead vocalist Liam Cormier, bassist and backing vocalist Jaye R. Schwarzer and guitarist Jackson Landry. The members of Cancer Bats have also toured and recorded as a Black Sabbath tribute band under the name Bat Sabbath. Cormier is the only original member as of 2021."
+  },
+  {
+   "id": "9e2c4fe8-5bf7-4e7a-b79a-7f982e6d0ae0",
+   "slug": "the-crazy-world-of-arthur-brown-1c01c0f0",
+   "title": "The Crazy World of Arthur Brown",
+   "act": "The Crazy World of Arthur Brown",
+   "name": "The Crazy World of Arthur Brown",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Crazy_World_of_Arthur_Brown",
+   "extract": "The Crazy World of Arthur Brown are an English rock band formed by singer Arthur Brown in 1967. The original band included Vincent Crane, Drachen Theaker (drums), and Nick Greenwood (bass). This early incarnation were noted for Crane's organ and brass arrangements and Brown's powerful, wide-ranging operatic voice. Brown is notable for his unique stage persona, featuring extreme facepaint, movement, dance, costume changes and a burning helmet."
+  },
+  {
+   "id": "25f31ff6-3d3a-4681-af0e-f7701c17d080",
+   "slug": "skindred-you-got-this-tour-8f1455d8",
+   "title": "Skindred - You Got This Tour",
+   "act": "Skindred",
+   "name": "Skindred",
+   "description": "Welsh metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Skindred",
+   "extract": "Skindred is a Welsh rock band that fuses heavy metal with other genres, most notably reggae. Formed in Newport in 1998, they are well known for their energetic and involving live performances and have won several awards including \"Best Live Band\" at the 2011 UK Metal Hammer Golden Gods Awards and the \"Devotion Award\" at the 2011 Kerrang! Awards. In 2026, the band's ninth album You Got This became their first album to top the UK Albums Chart."
+  },
+  {
+   "id": "31a24042-f4a0-43b2-a1b9-fc9619ff4fd8",
+   "slug": "duran-duran-0480b5c4",
+   "title": "Duran Duran",
+   "act": "Duran Duran",
+   "name": "Duran Duran",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Duran_Duran",
+   "extract": "Duran Duran are an English pop rock band. Formed in Birmingham in 1978 by keyboardist Nick Rhodes, guitarist John Taylor and singer/bassist Stephen Duffy. The band went through several early changes before the band's line-up settled in May 1980 as Rhodes, Taylor, singer Simon Le Bon, guitarist Andy Taylor and drummer Roger Taylor."
+  },
+  {
+   "id": "1dfd6989-d185-4cdb-bc88-69fb37e6257f",
+   "slug": "pieces-of-a-dream-354c0f68",
+   "title": "Pieces of a Dream",
+   "act": "Pieces of a Dream",
+   "name": "Pieces of a Dream",
+   "description": "American musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Pieces_of_a_Dream_(band)",
+   "extract": "Pieces of a Dream is an American R&B and jazz fusion group."
+  },
+  {
+   "id": "09aaa0ed-23c1-4ce3-9ea3-43c479ea5d13",
+   "slug": "jeff-tain-watts-4-tex-two-shows-after-party-2e514833",
+   "title": "Jeff \"Tain\" Watts - 4-Tex (Two Shows) + After-party",
+   "act": "Jeff \"Tain\" Watts",
+   "name": "Jeff \"Tain\" Watts",
+   "description": "American jazz drummer (born 1960)",
+   "source_url": "https://en.wikipedia.org/wiki/Jeff_%22Tain%22_Watts",
+   "extract": "Jeff \"Tain\" Watts is an American jazz drummer and composer who has worked across genres including Grammy wins with The Metropolitan Opera, Wynton Marsalis, Branford Marsalis Quartet and Mingus Big Band. Performing with Michael Brecker, Alice Coltrane, Kenny Garrett, McCoy Tyner, Ravi Coltrane, and others."
+  }
+ ]
+}

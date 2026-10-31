@@ -1,0 +1,116 @@
+{
+ "city": "calgary",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "6cc62162-7249-400e-b0ad-b3dfd45ee84d",
+   "slug": "the-smashing-pumpkins-the-rats-in-a-cage-tour-9bc3ec86",
+   "title": "The Smashing Pumpkins: The Rats In A Cage Tour",
+   "act": "The Smashing Pumpkins",
+   "name": "The Smashing Pumpkins",
+   "description": "American alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Smashing_Pumpkins",
+   "extract": "The Smashing Pumpkins is an American alternative rock band formed in Chicago in 1988 by lead vocalist and guitarist Billy Corgan, guitarist James Iha, bassist D'arcy Wretzky, and drummer Jimmy Chamberlin. The band has undergone several line-up changes since their reunion in 2006, with Corgan being the primary songwriter and sole constant member since its inception. The current lineup consists of Corgan, Iha, and Chamberlin. The band is known for its diverse, densely layered sound, which evolved throughout their career and has integrated elements of gothic rock, heavy metal, grunge, psychedelic rock, progressive rock, shoegaze, dream pop, and electronica."
+  },
+  {
+   "id": "aa6b2ed4-eb53-4d2f-93b0-82d01eea5a96",
+   "slug": "allison-russell-in-the-hour-of-chaos-tour-f72733e9",
+   "title": "Allison Russell: In The Hour of Chaos Tour",
+   "act": "Allison Russell",
+   "name": "Allison Russell",
+   "description": "Canadian singer-songwriter, musician and activist",
+   "source_url": "https://en.wikipedia.org/wiki/Allison_Russell",
+   "extract": "Allison Russell is a Canadian singer, songwriter, musician, actress and activist."
+  },
+  {
+   "id": "cd1bcca1-8490-464f-abde-0fb81ac2996d",
+   "slug": "gorgon-city-f066bfb4",
+   "title": "Gorgon City",
+   "act": "Gorgon City",
+   "name": "Gorgon City",
+   "description": "English electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Gorgon_City",
+   "extract": "Gorgon City are an English electronic music production duo consisting of two North London producers Kye \"Foamo\" Gibbon and Matt \"RackNRuin\" Robson-Scott. Their 2014 singles \"Ready for Your Love\" and \"Here for You\" reached the top 10 in the UK. They are currently signed to the UK-based record label Positiva Records which is a division of Universal Music Group."
+  },
+  {
+   "id": "7e64a3c3-383d-40cf-ade3-342ff73ab60b",
+   "slug": "sonreal-here-goes-nothing-tour-88d4879e",
+   "title": "SonReal - Here Goes Nothing Tour",
+   "act": "SonReal",
+   "name": "SonReal",
+   "description": "Canadian singer (born 1985)",
+   "source_url": "https://en.wikipedia.org/wiki/SonReal",
+   "extract": "Aaron Hoffman, better known by his stage name SonReal, is an independent Canadian singer, rapper and songwriter."
+  },
+  {
+   "id": "600ef8cc-86f2-40cc-9534-8674b07ede4f",
+   "slug": "tyler-braden-days-of-gold-tour-537dea1c",
+   "title": "Tyler Braden - Days Of Gold Tour",
+   "act": "Tyler Braden",
+   "name": "Tyler Braden",
+   "description": "American singer-songwriter (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Tyler_Braden",
+   "extract": "Tyler Braden is an American country music singer-songwriter and musician from Slapout, Alabama. His debut studio album, Devil and a Prayer, was released in 2025. He is best known for reaching the final of the American Song Contest with the song \"Seventeen\", qualifying to the final round and placing last out of 10 songs. His songs \"Try Losing One\", which has gained over thirty million streams, \"Devil You Know\", which achieved platinum certification from the RIAA, and \"God & Guns N' Roses\", which became his first single to chart on the Billboard Hot Country Songs chart. Braden has toured internationally with Luke Bryan, Brooks & Dunn, Dierks Bentley, Brothers Osborne, Mitchell Tenpenny, Warren Zeiders, and Darius Rucker."
+  },
+  {
+   "id": "740c4269-5010-4c9e-b00c-757d7ef92b64",
+   "slug": "wolf-parade-0c4d80ec",
+   "title": "Wolf Parade",
+   "act": "Wolf Parade",
+   "name": "Wolf Parade",
+   "description": "Canadian indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Wolf_Parade",
+   "extract": "Wolf Parade is a Canadian indie rock band formed in Montreal, in 2003. The band consists of Spencer Krug, Dan Boeckner and Arlen Thompson (drums). During live performances, the band are currently joined by Arcade Fire's Tim Kingsbury on various instruments. Multi-instrumentalist Dante DeCaro and synth-player Hadji Bakara are both recurring former members of the band."
+  },
+  {
+   "id": "77368228-a384-443d-97bf-6cd3988b012d",
+   "slug": "the-darcys-the-good-time-tour-7fa127a7",
+   "title": "The Darcys - the Good Time Tour",
+   "act": "The Darcys",
+   "name": "The Darcys",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Darcys",
+   "extract": "The Darcys are a Canadian two-piece art rock band from Toronto, Ontario."
+  },
+  {
+   "id": "ef955b8f-6703-42f5-9019-d0eb613ebe78",
+   "slug": "lilyisthatyou-the-flowers-have-feelings-tour-91bfab48",
+   "title": "Lilyisthatyou - The Flowers Have Feelings Tour",
+   "act": "Lilyisthatyou",
+   "name": "Lilyisthatyou",
+   "description": "Canadian pop musician",
+   "source_url": "https://en.wikipedia.org/wiki/Lilyisthatyou",
+   "extract": "Lillian Davies, known professionally as Lilyisthatyou is a singer songwriter from Toronto, Canada. She best known for her breakthrough debut single \"FMRN\" in 2022, which went viral on TikTok. She released her debut EP, The Character in 2022 and has since went on to release 5 more EPs with From The Garden I Grew being her most recent release as of August 2026."
+  },
+  {
+   "id": "3574c959-3708-433c-b683-b6215f7c2b6c",
+   "slug": "turnover-down-on-earth-tour-6133aba0",
+   "title": "Turnover - Down On Earth Tour",
+   "act": "Turnover",
+   "name": "Turnover",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Turnover_(band)",
+   "extract": "Turnover is an American rock band from Virginia Beach, Virginia. The band were formed in 2009 by brothers Austin and Casey (drums) Getz alongside longtime friend Danny Dempsey (bass); the three have gone on to oversee every iteration of the band to date. The three are currently joined in the band by lead guitarist Nick Rayfield, who began touring with the band in 2017 and was later officially inducted as a full-time member in 2022. Turnover have released six studio albums and four EPs across their career. Their most recent album, Down on Earth, was released on May 29th 2026."
+  },
+  {
+   "id": "eccea2c4-e5f9-4562-a352-2b9b91755abd",
+   "slug": "amanda-marshall-the-dirty-30-tour-1590a192",
+   "title": "Amanda Marshall - The Dirty 30 Tour",
+   "act": "Amanda Marshall",
+   "name": "Amanda Marshall",
+   "description": "Canadian singer (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Amanda_Marshall",
+   "extract": "Amanda Meta Marshall is a Canadian Juno award winning pop-rock singer and songwriter. She has released four studio albums; the first was certified diamond in Canada, with the second and third certified 3× platinum and platinum respectively. She is best known for her 1996 single, \"Birmingham\", which reached number 3 in Canada and was her only song to reach the US charts."
+  },
+  {
+   "id": "221c4f5a-f4b0-4798-b5c5-889f2af8d0fd",
+   "slug": "gwar-9cf45826",
+   "title": "GWAR",
+   "act": "GWAR",
+   "name": "Gwar",
+   "description": "American heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Gwar",
+   "extract": "Gwar is an American heavy metal band formed in Richmond, Virginia, in 1984, composed of and operated by a frequently rotating line-up of musicians, artists, and filmmakers collectively known as Slave Pit Inc. Since the death of frontman Dave Brockie in 2014, the collective has continued recording and performing without any of its founding artists or musicians."
+  }
+ ]
+}

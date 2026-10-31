@@ -1,0 +1,66 @@
+{
+ "city": "new-york",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "7380d429-7eac-449f-94aa-571efe4d9765",
+   "slug": "harry-styles-together-together-harryween-2b6a46cc",
+   "title": "Harry Styles: Together, Together. Harryween.",
+   "act": "Harry Styles",
+   "name": "Harry Styles",
+   "description": "English singer, songwriter, and actor (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Harry_Styles",
+   "extract": "Harry Edward Styles is an English singer, songwriter, and actor. An influential figure in popular culture, he is known for his showmanship, artistry, and flamboyant fashion. Styles's musical career began in 2010 as part of One Direction, a boy band formed on the British music competition series The X Factor after each member of the band had been eliminated from the solo contest. They became one of the best-selling boy bands of all time before going on an indefinite hiatus in 2016. Styles released his eponymous debut solo album through Erskine and Columbia Records in 2017, which was led by the UK number-one single \"Sign of the Times\"."
+  },
+  {
+   "id": "91cb2074-cd39-41ce-8bda-a9a8c72e7da0",
+   "slug": "christine-ebersole-5f73d7d1",
+   "title": "Christine Ebersole",
+   "act": "Christine Ebersole",
+   "name": "Christine Ebersole",
+   "description": "American actress and singer (born 1953)",
+   "source_url": "https://en.wikipedia.org/wiki/Christine_Ebersole",
+   "extract": "Christine Ebersole is an American actress, singer, and comedian. She has appeared in film, television, and on stage. She has received two Tony Awards, and a Drama Desk Award as well as a nomination for a Daytime Emmy Award."
+  },
+  {
+   "id": "9fe86e61-ab86-4ea5-86de-10776ee1fd29",
+   "slug": "new-york-philharmonic-get-out-in-concert-32893de0",
+   "title": "New York Philharmonic: Get Out in Concert",
+   "act": "New York Philharmonic",
+   "name": "New York Philharmonic",
+   "description": "American symphony orchestra",
+   "source_url": "https://en.wikipedia.org/wiki/New_York_Philharmonic",
+   "extract": "The New York Philharmonic is an American symphony orchestra based in New York City. Known officially as the Philharmonic-Symphony Society of New York, Inc., and globally known as the New York Philharmonic Orchestra (NYPO) or the New York Philharmonic-Symphony Orchestra, it is one of the leading American orchestras popularly called the \"Big Five\". The philharmonic's home is David Geffen Hall, at New York's Lincoln Center for the Performing Arts."
+  },
+  {
+   "id": "dc7c5381-cc48-41f4-81b4-d1225269bcf8",
+   "slug": "robert-glasper-6171e8c0",
+   "title": "Robert Glasper",
+   "act": "Robert Glasper",
+   "name": "Robert Glasper",
+   "description": "American jazz pianist, record producer, and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Glasper",
+   "extract": "Robert Andre Glasper is an American pianist, record producer, songwriter, and musical arranger. His music embodies numerous musical genres, primarily centered on jazz. Glasper has won five Grammy Awards from 11 nominations."
+  },
+  {
+   "id": "350370fc-6611-44fa-ba09-25dc925783cc",
+   "slug": "heavens-to-betsy-4c606f77",
+   "title": "heavens to betsy",
+   "act": "heavens to betsy",
+   "name": "Heavens to Betsy",
+   "description": "American punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Heavens_to_Betsy",
+   "extract": "Heavens to Betsy is an American punk band formed in Olympia, Washington in 1991 with vocalist and guitarist Corin Tucker and drummer Tracy Sawyer. The duo were part of the DIY riot grrrl, punk rock underground, and were Tucker's first band before she co-formed Sleater-Kinney."
+  },
+  {
+   "id": "aab68ff4-1ab8-44c8-9d9a-90e9270fb7c5",
+   "slug": "nabihah-iqbal-ba7b2b40",
+   "title": "Nabihah Iqbal",
+   "act": "Nabihah Iqbal",
+   "name": "Nabihah Iqbal",
+   "description": "English musician, writer, and broadcaster",
+   "source_url": "https://en.wikipedia.org/wiki/Nabihah_Iqbal",
+   "extract": "Nabihah Iqbal is a British musician, writer and broadcaster from London, England. A former legal professional, she has studied at both SOAS and the University of Cambridge. She first released music under the alias Throwing Shade in 2013 whilst contributing vocals to Sophie's early releases such as \"Lemonade\". She switched to her birth name for her debut album Weighing of the Heart."
+  }
+ ]
+}

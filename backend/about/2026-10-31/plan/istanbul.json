@@ -1,0 +1,66 @@
+{
+ "city": "istanbul",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "5b92c75f-43c8-46d9-ab5c-45c3f8f322c5",
+   "slug": "emrah-4212ab72",
+   "title": "Emrah",
+   "act": "Emrah",
+   "name": "Emrah",
+   "description": "Turkish singer and actor (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Emrah_(singer)",
+   "extract": "Emrah Erdoğan İpek is a Turkish-Kurdish singer, actor and child star during 1980's from Turkey.."
+  },
+  {
+   "id": "76bd5393-4f26-456a-959d-5d4230dfbe85",
+   "slug": "y-ld-z-tilbe-6d32a08d",
+   "title": "Yıldız Tilbe",
+   "act": "Yıldız Tilbe",
+   "name": "Yıldız Tilbe",
+   "description": "Turkish singer (born 1966)",
+   "source_url": "https://en.wikipedia.org/wiki/Y%C4%B1ld%C4%B1z_Tilbe",
+   "extract": "Yıldız Tilbe is a Turkish singer and one of the best-selling musical artists in Turkey, known especially for her eastern-infused ballads."
+  },
+  {
+   "id": "76f1839b-ae26-44c0-9ee2-a6887f244852",
+   "slug": "soner-sar-kabaday-8597abe9",
+   "title": "Soner Sarıkabadayı",
+   "act": "Soner Sarıkabadayı",
+   "name": "Soner Sarıkabadayı",
+   "description": "Turkish singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Soner_Sar%C4%B1kabaday%C4%B1",
+   "extract": "Soner Sarıkabadayı is a Turkish pop music singer and songwriter."
+  },
+  {
+   "id": "68f43e4e-5fef-4aeb-bf7a-f533353a7383",
+   "slug": "bengu-b055b695",
+   "title": "Bengü",
+   "act": "Bengü",
+   "name": "Bengü",
+   "description": "Turkish singer (born 1979)",
+   "source_url": "https://en.wikipedia.org/wiki/Beng%C3%BC",
+   "extract": "Bengü Erden is a Turkish singer. She became first familiar with music during her time at the İzmir State Symphony Orchestra. In İzmir, she was cast in a leading role in the musical \"Oliver Twist\". She later took singing lessons with İzmir State Conservatory's general manager, Müfit Bayraş. In 1998, by performing a song by Müfit Bayşara, she ranked second at the competition Pop Show '98, organized by Mü-Yap and Show TV. She then studied music at Istanbul Academy. She worked as a backing vocalist for Kenan Doğulu for three years. In 2007, Bengü became the winner of Show TV's singing competition Bak Kim Dans Ediyor. Her first album, Hoş Geldin, was produced by Kenan Doğulu and Ozan Doğulu and released in July 2000. Her second studio album, Bağlasan Durmam, was released in 2005.\nAfter two years, she released her third studio album, Taktik. With the song \"Korkma Kalbim\" from this album, she received a digital certification from Mü-Yap and the album became one of the best-selling albums of the year."
+  },
+  {
+   "id": "272fcb3f-267d-4977-8a93-53ea80b53a10",
+   "slug": "simge-16402c5d",
+   "title": "Simge",
+   "act": "Simge",
+   "name": "Simge",
+   "description": "Turkish singer, songwriter and composer (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/Simge_(singer)",
+   "extract": "Simge Sağın, known mononymously as Simge, is a Turkish singer. From early 2010s, she started to make Turkish pop songs, and with the release of her single \"Miş Miş\" in 2015 she became one of the most famous artists in Turkey."
+  },
+  {
+   "id": "391ca938-5e0e-491b-b5c3-89ddab8708bc",
+   "slug": "emir-can-igrek-ffc15eb5",
+   "title": "Emir Can İğrek",
+   "act": "Emir Can İğrek",
+   "name": "Emir Can İğrek",
+   "description": "Turkish singer and songwriter (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Emir_Can_%C4%B0%C4%9Frek",
+   "extract": "Emir Can İğrek is a Turkish singer and songwriter. He started making music by setting up small stage groups in the city where he was born. In 2019, he had his breakthrough with the song \"Nalan\". At the 2020 PowerTürk Music Awards, he was awarded as the \"Most Powerful Newcomer of the Year\". He has also composed songs for artists such as Funda Arar and Ferhat Göçer."
+  }
+ ]
+}

@@ -1,0 +1,286 @@
+{
+ "city": "atlanta",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "c4df038f-a616-41d6-8d58-c38831d46836",
+   "slug": "jackson-dean-1b928789",
+   "title": "Jackson Dean",
+   "act": "Jackson Dean",
+   "name": "Jackson Dean",
+   "description": "American singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Jackson_Dean",
+   "extract": "Jackson Dean Nicholson is an American country music singer and songwriter. He signed to Big Machine Records in 2021 and had the singles \"Don't Come Lookin'\", \"Fearless \", and \"Heavens to Betsy\" chart."
+  },
+  {
+   "id": "5b3d71ce-94ca-44a9-bd51-7f9d216121e3",
+   "slug": "steve-lacy-oh-yeah-tour-e21d1ae9",
+   "title": "Steve Lacy: Oh yeah? Tour",
+   "act": "Steve Lacy",
+   "name": "Steve Lacy",
+   "description": "American musician (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Steve_Lacy",
+   "extract": "Steve Thomas Lacy-Moya is an American singer-songwriter, guitarist and record producer. He gained recognition as the guitarist of the alternative R&B band the Internet, which he joined in 2015. His self-produced debut EP, Steve Lacy's Demo (2017), was met with critical praise and became a sleeper hit. Lacy then guest performed alongside Frank Ocean on Tyler, the Creator's 2017 single \"911 / Mr. Lonely\", which received double platinum certification by the Recording Industry Association of America (RIAA). That year, he also co-wrote songs for artists including Solange Knowles, and Kendrick Lamar on his song \"Pride\"."
+  },
+  {
+   "id": "3edca82f-9c37-486c-9c9f-9ed3ee58c10b",
+   "slug": "buena-vista-social-club-5ffe3c3a",
+   "title": "Buena Vista Social Club",
+   "act": "Buena Vista Social Club",
+   "name": "Buena Vista Social Club",
+   "description": "Cuban musical ensemble",
+   "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+   "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years."
+  },
+  {
+   "id": "c66eee44-fa39-4f73-b980-2bdcdd7822d0",
+   "slug": "yung-gravy-the-joyrider-tour-4766cb4a",
+   "title": "Yung Gravy: The Joyrider Tour",
+   "act": "Yung Gravy",
+   "name": "Yung Gravy",
+   "description": "American rapper (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Yung_Gravy",
+   "extract": "Matthew Raymond Hauri, better known by his stage name Yung Gravy, is an American rapper."
+  },
+  {
+   "id": "61dacdac-5d55-4fc6-a0c8-c2bc49621e17",
+   "slug": "young-miko-late-checkout-tour-f3f3d3ac",
+   "title": "Young Miko - Late Checkout Tour",
+   "act": "Young Miko",
+   "name": "Young Miko",
+   "description": "Puerto Rican rapper (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Young_Miko",
+   "extract": "María Victoria Ramírez de Arellano Cardona, known professionally as Young Miko, is a Puerto Rican rapper, singer, songwriter and former footballer. In 2022, she released her debut extended play, Trap Kitty, featuring Latin trap tracks. In April 2024, she released her debut studio album, Att., featuring collaborations with Feid, Jowell & Randy, Villano Antillano, Elena Rose, and Dei V. In November 2025, she released her second studio album, Do Not Disturb, which featured a collaboration with Eladio Carrión."
+  },
+  {
+   "id": "cd0d6aa4-557c-43f9-9598-eb2ce32b0c60",
+   "slug": "almost-monday-5eaed0f6",
+   "title": "almost monday",
+   "act": "almost monday",
+   "name": "Almost Monday",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Almost_Monday",
+   "extract": "Almost Monday is an American indie pop band based in San Diego, California."
+  },
+  {
+   "id": "a2cea1cf-a7a6-43e4-8c5b-1104b655471e",
+   "slug": "shyne-bc63a135",
+   "title": "Shyne",
+   "act": "Shyne",
+   "name": "Shyne",
+   "description": "Belizean rapper and politician (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/Shyne",
+   "extract": "Moses Michael Levi Barrow, best known by his stage name Shyne, is a Belizean politician and former rapper. He served as Leader of the Opposition in the House of Representatives, and the leader of the Belize United Democratic Party."
+  },
+  {
+   "id": "2a103c03-45e3-4a98-af2b-e91759df608c",
+   "slug": "the-menzingers-everything-i-ever-saw-north-ameri-7e6a25b9",
+   "title": "The Menzingers: Everything I Ever Saw North American Tour",
+   "act": "The Menzingers",
+   "name": "The Menzingers",
+   "description": "American punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Menzingers",
+   "extract": "The Menzingers are an American punk rock band from Scranton, Pennsylvania, formed in 2006. The band consists of Greg Barnett, Tom May, Eric Keen (bass) and Joe Godino (drums). To date, the band has released eight studio albums, with their most recent, Everything I Ever Saw, released on July 17, 2026."
+  },
+  {
+   "id": "78b90b80-936f-483f-b171-b25d18f7c0a0",
+   "slug": "khantrast-81c7e530",
+   "title": "Khantrast",
+   "act": "Khantrast",
+   "name": "Khantrast",
+   "description": "Chinese-American rapper and singer from New York (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Khantrast",
+   "extract": "Anthony Zhang, known professionally as Khantrast is a Chinese-American rapper from Brooklyn, New York City, USA. With his first releases being posted on Soundcloud in 2017, Khantrast has since grown to be a prominent figure in the Asian-American rap scene."
+  },
+  {
+   "id": "993fa96e-7039-4ea0-91f0-2eeeb9efcc0c",
+   "slug": "zade-dirani-8de09ccd",
+   "title": "Zade Dirani",
+   "act": "Zade Dirani",
+   "name": "Zade Dirani",
+   "description": "Jordanian American pianist and composer",
+   "source_url": "https://en.wikipedia.org/wiki/Zade_Dirani",
+   "extract": "Zade Dirani, is a Jordanian American pianist and UNICEF Goodwill Ambassador for the Middle East and North Africa, of Damascene descent, whose genre blending songs are inspired by middle eastern music, Lebanese, pop, and classical music. He has performed before thousands around the world including Queen Elizabeth and Nelson Mandela."
+  },
+  {
+   "id": "c7849562-da2b-42e2-b246-5c86449b07db",
+   "slug": "victoria-monet-frequency-of-love-tour-a204679d",
+   "title": "Victoria Monet - Frequency Of Love Tour",
+   "act": "Victoria Monet",
+   "name": "Victoria Monét",
+   "description": "American singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Victoria_Mon%C3%A9t",
+   "extract": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim. Her debut studio album, Jaguar II (2023) became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year. The nomination was among seven she received at the 66th Annual Grammy Awards, from which she won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical."
+  },
+  {
+   "id": "8549434d-9c61-4a42-aa02-110f241cecea",
+   "slug": "bruce-cockburn-675929d0",
+   "title": "Bruce Cockburn",
+   "act": "Bruce Cockburn",
+   "name": "Bruce Cockburn",
+   "description": "Canadian singer-songwriter and guitarist (born 1945)",
+   "source_url": "https://en.wikipedia.org/wiki/Bruce_Cockburn",
+   "extract": "Bruce Douglas Cockburn is a Canadian singer-songwriter and guitarist. His song styles range from folk to folk- and jazz-influenced rock to soundscapes accompanying spoken stories. His lyrics reflect interests in spirituality, human rights, environmental issues, and relationships, and describe his experiences in Central America and Africa."
+  },
+  {
+   "id": "5fa2759d-907d-4be8-a327-99afc5736ae1",
+   "slug": "victoria-monet-frequency-of-love-tour-f3f6f2a6",
+   "title": "Victoria Monét - Frequency Of Love Tour",
+   "act": "Victoria Monét",
+   "name": "Victoria Monét",
+   "description": "American singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Victoria_Mon%C3%A9t",
+   "extract": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim. Her debut studio album, Jaguar II (2023) became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year. The nomination was among seven she received at the 66th Annual Grammy Awards, from which she won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical."
+  },
+  {
+   "id": "6c970070-db29-4ba5-8153-1c1aa66ae8b9",
+   "slug": "the-army-the-navy-8ff0d8ae",
+   "title": "The Army, The Navy",
+   "act": "The Army, The Navy",
+   "name": "The Army, The Navy",
+   "description": "American musical duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_Army%2C_The_Navy",
+   "extract": "The Army, The Navy is an American folk-pop band consisting of Maia Ciambriello and Sasha Goldberg."
+  },
+  {
+   "id": "585d3e76-820f-458b-9942-9a7dcc0687a8",
+   "slug": "madeon-cd77ca73",
+   "title": "Madeon",
+   "act": "Madeon",
+   "name": "Madeon",
+   "description": "French musician and DJ (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Madeon",
+   "extract": "Hugo Pierre Leclercq, better known by his stage name Madeon, is a French musician, DJ, record producer, singer and songwriter from Nantes, based in Los Angeles. He initially came to widespread public attention at age 17 through a YouTube video, \"Pop Culture\", where he performed a mash-up of 39 different popular songs in real-time using a Novation Launchpad. It received millions of hits in its first few days of release. Madeon has cited the Beatles and Daft Punk as his greatest musical influences."
+  },
+  {
+   "id": "9ef04530-c1ef-4450-9514-8002cf9d512a",
+   "slug": "joe-jordan-649c774f",
+   "title": "Joe Jordan",
+   "act": "Joe Jordan",
+   "name": "Joe Jordan",
+   "description": "American ragtime composer and songwriter (1882–1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Joe_Jordan_(musician)",
+   "extract": "Joseph Taylor Jordan was an American pianist, composer, real estate investor, and music publisher. He wrote over 2000 songs and arranged for notable people such as Florenz Ziegfeld, Orson Welles, Louis Armstrong, Eddie Duchin, Benny Goodman, and others."
+  },
+  {
+   "id": "b3df96d8-4e86-4de3-ab82-2d5bb05b3ecd",
+   "slug": "the-afghan-whigs-dc19f3e9",
+   "title": "The Afghan Whigs",
+   "act": "The Afghan Whigs",
+   "name": "The Afghan Whigs",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Afghan_Whigs",
+   "extract": "The Afghan Whigs are an American rock band from Cincinnati, Ohio. They were active from 1986 to 2001, reformed briefly in 2006 and again from 2011 to present."
+  },
+  {
+   "id": "d169c760-729c-487d-a4ea-aa1ecad5f7d7",
+   "slug": "qendresa-date-night-tour-6d410014",
+   "title": "Qendresa: Date Night Tour",
+   "act": "Qendresa",
+   "name": "Qendresa",
+   "description": "British-Kosovan singer and producer",
+   "source_url": "https://en.wikipedia.org/wiki/Qendresa",
+   "extract": "Qendresa is a British-Kosovar singer, songwriter, and producer from North West London. She is known for her self-produced electronic soul and personal songwriting. She has released two studio albums: Midnight Request Line (2020) and Londra (2024). She gained mainstream recognition in 2026 through her collaborations with Canadian rapper Drake across his albums Habibti and Maid of Honour."
+  },
+  {
+   "id": "ec6b51ce-f102-4332-8495-67f5ddbb28d7",
+   "slug": "the-arcadian-wild-94c0f1f9",
+   "title": "The Arcadian Wild",
+   "act": "The Arcadian Wild",
+   "name": "The Arcadian Wild",
+   "description": "American folk newgrass band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Arcadian_Wild",
+   "extract": "The Arcadian Wild is an American acoustic string band based in Nashville, Tennessee. It began as a collaboration between friends at college in 2013 and has included several different members over the years. It has played and recorded with its current lineup since early 2020."
+  },
+  {
+   "id": "c91bb113-385c-47fb-b199-598b89fef5e9",
+   "slug": "julia-jacklin-ba6e4b2f",
+   "title": "Julia Jacklin",
+   "act": "Julia Jacklin",
+   "name": "Julia Jacklin",
+   "description": "Australian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Jacklin",
+   "extract": "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales. Jacklin's musical style has been described as indie pop, indie folk, and alternative country. She has released four studio albums, Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) and The Gem (2026). Jacklin has also performed with the band Phantastic Ferniture, with whom she released the debut single \"Fuckin 'n' Rollin\" and a self-titled album in 2018, followed by subsequent singles."
+  },
+  {
+   "id": "3a3914dc-dd0a-426c-a01d-a42eef194354",
+   "slug": "the-record-company-683e6e26",
+   "title": "The Record Company",
+   "act": "The Record Company",
+   "name": "The Record Company",
+   "description": "American blues rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Record_Company",
+   "extract": "The Record Company is a Grammy-nominated blues rock band from Los Angeles. The members are Chris Vos, Alex Stiff, and Marc Cazorla. Their music is influenced by blues musicians such as John Lee Hooker."
+  },
+  {
+   "id": "d5d326a2-f86a-48ad-85c5-6323f04f1995",
+   "slug": "hawthorne-heights-20th-anniversary-of-if-only-yo-5bfe6d0c",
+   "title": "Hawthorne Heights - 20th anniversary of If Only You Were Lonely",
+   "act": "Hawthorne Heights",
+   "name": "Hawthorne Heights",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Hawthorne_Heights",
+   "extract": "Hawthorne Heights is an American rock band formed in Dayton, Ohio, in 2001. Originally called A Day in the Life, their lineup consists of JT Woodruff, Matt Ridenour and Mark McMillon."
+  },
+  {
+   "id": "8d907d6f-01cb-4a10-83d9-2441065163e9",
+   "slug": "the-obgms-heart-problems-d7876feb",
+   "title": "The OBGMs - Heart Problems",
+   "act": "The OBGMs",
+   "name": "The OBGMs",
+   "description": "Canadian punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_OBGMs",
+   "extract": "The OBGMs (The oOohh Baby Gimme Mores) are a Canadian punk rock band from Toronto, Ontario. They are most noted for their 2020 album The Ends, which was a shortlisted finalist for the 2021 Polaris Music Prize."
+  },
+  {
+   "id": "9d5aac02-77e7-40ee-8178-78e0fdd5c8f0",
+   "slug": "drew-baldridge-70dcf040",
+   "title": "Drew Baldridge",
+   "act": "Drew Baldridge",
+   "name": "Drew Baldridge",
+   "description": "American country singer (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Drew_Baldridge",
+   "extract": "Andrew Ray Baldridge is an American country singer. He has issued several independent singles via Cold River Records, and has charted several times on Country Airplay."
+  },
+  {
+   "id": "0e96a5fb-ac05-4de0-b7d1-a204f29809e8",
+   "slug": "fetty-wap-nostalgia-tour-23703733",
+   "title": "Fetty Wap: Nostalgia Tour",
+   "act": "Fetty Wap",
+   "name": "Fetty Wap",
+   "description": "American rapper (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Fetty_Wap",
+   "extract": "Willie Junior Maxwell II, better known by his stage name Fetty Wap, is an American rapper, singer, and songwriter. He quickly rose to mainstream prominence after his 2014 song \"Trap Queen\" peaked at number two on the Billboard Hot 100 and led him to sign with 300 Entertainment, an imprint of Atlantic Records. Two of his 2015 singles, \"679\" and \"My Way\", peaked within the top ten of the chart; all three—as well as the top 40 single \"Again\"—preceded his eponymous debut studio album (2015), which peaked atop the Billboard 200. During this time, he became distinctive for his melodic blending of singing and rapping, lighthearted lyrics, \"bouncy\" production, and exclamation of various catchphrases such as \"1738!\""
+  },
+  {
+   "id": "593dcba8-e068-47da-9aba-3e876b6159e6",
+   "slug": "inna-d4826e20",
+   "title": "INNA",
+   "act": "INNA",
+   "name": "Inna",
+   "description": "Romanian singer and songwriter (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/Inna",
+   "extract": "Elena Alexandra Apostoleanu, known professionally as Inna, is a Romanian singer and songwriter. Born in Mangalia and raised in Neptun, she studied political science at Ovidius University before meeting the Romanian trio Play & Win and pursuing a music career. She adopted the stage name \"Alessandra\" and a pop-rock style in 2008; later that year, she changed her stage name to \"Inna\" and began releasing EDM, house and popcorn music. \"Hot\" (2008), her debut single, was a commercial success worldwide and topped the Romanian and Billboard's Hot Dance Airplay chart, among others. Her debut studio album of the same name followed in August 2009 and was certified Gold and Platinum. It featured several other successful singles in Europe, including \"Amazing\" (2009), the singer's second number-one single in Romania."
+  },
+  {
+   "id": "e62b32f5-5f83-4452-a5a0-58e6f82ce70e",
+   "slug": "ajj-ba7886ee",
+   "title": "AJJ",
+   "act": "AJJ",
+   "name": "AJJ",
+   "description": "American folk-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/AJJ_(band)",
+   "extract": "AJJ is an American folk punk band from Phoenix, Arizona, originally formed in 2004 as Andrew Jackson Jihad. Their lyrics handle themes of shyness, poverty, humanity, religion, addiction, existentialism, and politics. Singer/guitarist Sean Bonnette and bassist Ben Gallaty co-founded the band, and have remained its only constant members throughout. The band has released nine studio albums to date, with their most recent, Dirty Old Power, having been released on September 25, 2026."
+  },
+  {
+   "id": "eac40a23-8f94-4a8c-a74c-46eea0ff4a2a",
+   "slug": "movements-happier-now-usa-tour-e9639882",
+   "title": "MOVEMENTS - HAPPIER NOW USA TOUR",
+   "act": "MOVEMENTS",
+   "name": "Movements",
+   "description": "American post-hardcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Movements_(band)",
+   "extract": "Movements are a post-hardcore band from Rancho Santa Margarita, California, formed in 2015."
+  }
+ ]
+}

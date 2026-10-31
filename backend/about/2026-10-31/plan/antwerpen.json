@@ -1,0 +1,46 @@
+{
+ "city": "antwerpen",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "21a19fe5-d09c-46fa-ae9e-080bd265ac6e",
+   "slug": "dan-and-phil-hard-launch-world-tour-974aac12",
+   "title": "Dan and Phil – Hard Launch World Tour",
+   "act": "Dan and Phil",
+   "name": "Dan and Phil",
+   "description": "English entertainment and business duo",
+   "source_url": "https://en.wikipedia.org/wiki/Dan_and_Phil",
+   "extract": "Dan and Phil are an English entertainment and business duo, consisting of partners Daniel Howell and Phil Lester. They are best known for their collaborative work on YouTube since meeting in 2009. Additionally, they have collaborated on television and radio presenting, books, tours, and original films."
+  },
+  {
+   "id": "c024a4e7-caa4-4cfe-b67e-fd42d34f2d85",
+   "slug": "turnover-dabc8241",
+   "title": "Turnover",
+   "act": "Turnover",
+   "name": "Turnover",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Turnover_(band)",
+   "extract": "Turnover is an American rock band from Virginia Beach, Virginia. The band were formed in 2009 by brothers Austin and Casey (drums) Getz alongside longtime friend Danny Dempsey (bass); the three have gone on to oversee every iteration of the band to date. The three are currently joined in the band by lead guitarist Nick Rayfield, who began touring with the band in 2017 and was later officially inducted as a full-time member in 2022. Turnover have released six studio albums and four EPs across their career. Their most recent album, Down on Earth, was released on May 29th 2026."
+  },
+  {
+   "id": "1753978e-b245-497f-95b1-bd817d044d93",
+   "slug": "bill-bailey-vaudevillean-1356c155",
+   "title": "Bill Bailey - Vaudevillean",
+   "act": "Bill Bailey",
+   "name": "Bill Bailey",
+   "description": "British musician and comedian (born 1965)",
+   "source_url": "https://en.wikipedia.org/wiki/Bill_Bailey",
+   "extract": "Mark Robert \"Bill\" Bailey is an English musician, comedian, actor and television presenter. He is known for his role as Manny in the sitcom Black Books (2000–2004), and for his regular appearances on the panel shows Never Mind the Buzzcocks, Have I Got News for You, and QI, as well as for his stand-up comedy work. He plays a variety of musical instruments and incorporates music into his performances."
+  },
+  {
+   "id": "a53069d2-ad5d-4c5a-8554-9a61df0092f0",
+   "slug": "haevn-anima-tour-2027-c207e0e7",
+   "title": "HAEVN: ANIMA Tour 2027",
+   "act": "HAEVN",
+   "name": "Haevn",
+   "description": "Dutch pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Haevn",
+   "extract": "Haevn is a Dutch indie pop band from Amsterdam, founded in 2015 by singer-songwriter Marijn van der Meer and film soundtrack composer Jorrit Kleijnen, who began writing music together in their studio in Amsterdam. The band also includes guitarist Bram Doreleijers, bass player Mart Jeninga, and drummer David Broeders."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "city": "abu-dhabi",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "514c1d27-cfef-4de9-9122-c04e43e34930",
+   "slug": "tarkan-d5b28834",
+   "title": "TARKAN",
+   "act": "TARKAN",
+   "name": "Tarkan",
+   "description": "Turkish singer-songwriter (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Tarkan_(singer)",
+   "extract": "Tarkan Tevetoğlu is a German-born Turkish singer-songwriter."
+  },
+  {
+   "id": "99a8f000-0825-4ef7-977b-e2d5c83a398b",
+   "slug": "ghostly-kisses-c1fd6071",
+   "title": "Ghostly Kisses",
+   "act": "Ghostly Kisses",
+   "name": "Ghostly Kisses",
+   "description": "Singer",
+   "source_url": "https://en.wikipedia.org/wiki/Ghostly_Kisses",
+   "extract": "Ghostly Kisses is the musical project of French-Canadian singers Margaux Sauvé and Louis-Étienne Santais. They are based in Quebec. Sauvé is signed to the British record label Akira Records. The name 'Ghostly Kisses' was inspired by the William Faulkner poem Une ballade des dames perdues, which includes the verse \"And brush my lips with little ghostly kisses.\" Clash describes her music as having \"a weightless quality, something that transcends the ephemeral to grapple with key facets of our lives.\""
+  },
+  {
+   "id": "20264e91-9a2b-4b90-8b73-38c6f1bed6c7",
+   "slug": "imagine-dragons-saturday-82f977ae",
+   "title": "Imagine Dragons - Saturday",
+   "act": "Imagine Dragons",
+   "name": "Imagine Dragons",
+   "description": "American pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Imagine_Dragons",
+   "extract": "Imagine Dragons are an American pop rock band formed in 2008, based in Las Vegas, Nevada. The band currently consists of lead singer Dan Reynolds, guitarist Wayne Sermon, and bassist Ben McKee. Their debut single, \"It's Time\", was released in February 2012, reaching the Top 20 of various charts around the world. Their debut album, Night Visions, which resulted in the chart-topping singles \"Radioactive\" and \"Demons\", reached No. 2 in America on release in September 2012, and achieved Platinum sales by June 2013. Rolling Stone named \"Radioactive\", which held the record for most weeks charted on the Billboard Hot 100, the \"biggest rock hit of the year\". MTV called them \"the year's biggest breakout band\", and Billboard named them their \"Breakthrough Band of 2013\" and \"Biggest Band of 2017\", and placed them at the top of their \"Year in Rock\" rankings for 2013, 2017, and 2018. Imagine Dragons topped the Billboard Year-End \"Top Artists – Duo/Group\" category in 2018."
+  },
+  {
+   "id": "4d1e2799-78a9-416e-8d4f-b51eda889647",
+   "slug": "diljit-dosanjh-83a06fb1",
+   "title": "Diljit Dosanjh",
+   "act": "Diljit Dosanjh",
+   "name": "Diljit Dosanjh",
+   "description": "Indian-American singer and actor (born 1984)",
+   "source_url": "https://en.wikipedia.org/wiki/Diljit_Dosanjh",
+   "extract": "Diljit Dosanjh is an Indian-born American singer, actor, and film producer who works in Punjabi music as well as Punjabi and Hindi cinema. Dosanjh entered the Social 50 chart by Billboard in 2020. He has been featured in various music charts, including the Canadian Albums Chart, the UK Asian chart by Official Charts Company and the New Zealand Hot Singles. His films, including Jatt & Juliet 2 (2013), Sajjan Singh Rangroot (2018), Honsla Rakh (2021), and Jatt & Juliet 3 (2024) are among the highest grossing Punjabi films in history."
+  }
+ ]
+}

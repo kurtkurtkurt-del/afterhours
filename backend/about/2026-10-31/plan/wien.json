@@ -1,0 +1,186 @@
+{
+ "city": "wien",
+ "day": "2026-10-31",
+ "nights": [
+  {
+   "id": "ca750c6a-1ff4-4a01-9729-0b1974e16401",
+   "slug": "erdling-131a50d6",
+   "title": "Erdling",
+   "act": "Erdling",
+   "name": "Erdling",
+   "description": "German rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Erdling",
+   "extract": "Erdling is a German Neue Deutsche Härte band formed in 2014 by Neill Freiwald and Niklas Kahl."
+  },
+  {
+   "id": "0f1b66f9-9c5b-439f-8bb0-a91247b6dc47",
+   "slug": "son-mieux-67a20938",
+   "title": "Son Mieux",
+   "act": "Son Mieux",
+   "name": "Son Mieux",
+   "description": "Dutch indie pop group",
+   "source_url": "https://en.wikipedia.org/wiki/Son_Mieux",
+   "extract": "Son Mieux is a Dutch indie pop group from The Hague headed by Camiel Meiresonne."
+  },
+  {
+   "id": "e65ca54b-07c6-4995-ba6d-83375f2fc242",
+   "slug": "psychedelic-porn-crumpets-c94c35c7",
+   "title": "Psychedelic Porn Crumpets",
+   "act": "Psychedelic Porn Crumpets",
+   "name": "Psychedelic Porn Crumpets",
+   "description": "Australian psychedelic rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Psychedelic_Porn_Crumpets",
+   "extract": "Psychedelic Porn Crumpets is an Australian psychedelic rock band formed in 2014 in Perth. The band were founded by English guitarist and singer Jack McEwan, guitarist Luke Parish, bassist Luke Reynolds, and drummer Danny Caddy, who began playing together in \"an old horse barn in Leederville\". Guitarist and keyboardist Chris Young joined in 2019, and bassist Luke Reynolds left in 2020, replaced by Wayan Biliondana, who was later replaced by Jamie Reynolds in mid-2024."
+  },
+  {
+   "id": "67657b9c-d7fd-40e6-b90c-bf7e6b98a55c",
+   "slug": "alela-diane-2bf00b75",
+   "title": "Alela Diane",
+   "act": "Alela Diane",
+   "name": "Alela Diane",
+   "description": "American singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Alela_Diane",
+   "extract": "Alela Diane Menig, known as Alela Diane, is an American singer-songwriter from Nevada City, California."
+  },
+  {
+   "id": "a0ea6ca1-9561-49f2-99b1-d51d37a21fac",
+   "slug": "omah-lay-clarity-of-mind-a960842d",
+   "title": "Omah Lay - Clarity of Mind",
+   "act": "Omah Lay",
+   "name": "Omah Lay",
+   "description": "Nigerian singer-songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Omah_Lay",
+   "extract": "Omah Stanley Didia, professionally known as Omah Lay, is a Nigerian singer, songwriter and record producer. Omah Lay came into limelight and gained international recognition with his singles \"Bad Influence\", \"Do Not Disturb\", \"Godly\", \"Understand\", \"Attention\", and \"Soso\". He has won numerous awards including The Headies in 2020 and 2023. Omah Lay released his debut studio album Boy Alone in 2022, followed by a deluxe edition in 2023. The album received critical acclaim. He is the CEO of his new music company called Boy Alone; it was revealed by his manager in an interview with OkayAfrica."
+  },
+  {
+   "id": "090890cd-9997-4a0e-baad-5c5b9df4660a",
+   "slug": "pitbull-i-m-back-b099d810",
+   "title": "Pitbull - I'm Back!",
+   "act": "Pitbull",
+   "name": "Pitbull",
+   "description": "American rapper (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/Pitbull_(rapper)",
+   "extract": "Armando Christian Pérez, known professionally as Pitbull, is an American rapper, singer, songwriter, and actor. He began his career in the early 2000s as a reggaeton, Latin hip-hop, and crunk performer, and signed with TVT Records to release his debut album, M.I.A.M.I. (2004). Executive produced by Lil Jon, the album entered the Billboard 200 along with his second and third albums, El Mariel (2006) and The Boatlift (2007). His fourth album, Pitbull Starring in Rebelution (2009), yielded his mainstream breakthrough, spawning the singles \"I Know You Want Me \" and \"Hotel Room Service\"—which peaked at numbers two and eight on the U.S. Billboard Hot 100, respectively."
+  },
+  {
+   "id": "4e2604f3-ae19-4457-a905-cc71662731c2",
+   "slug": "arlo-parks-desire-tour-efd94684",
+   "title": "ARLO PARKS - DESIRE TOUR",
+   "act": "ARLO PARKS",
+   "name": "Arlo Parks",
+   "description": "British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Arlo_Parks",
+   "extract": "Anaïs Oluwatoyin Estelle Marinho, known professionally as Arlo Parks, is an English singer and songwriter. Her debut studio album, Collapsed in Sunbeams, was released in 2021 to critical acclaim and peaked at number three on the UK Albums Chart. It won the 2021 Mercury Prize for Best Album and earned her nominations for Album of the Year, Best New Artist and Best British Female Solo Artist at the 2021 Brit Awards."
+  },
+  {
+   "id": "d30ffaa5-ddcb-44a8-98fa-d96fa18eb4e5",
+   "slug": "the-veils-fragile-world-d8bd4a67",
+   "title": "The Veils - Fragile World",
+   "act": "The Veils",
+   "name": "The Veils",
+   "description": "English/New Zealand rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Veils",
+   "extract": "The Veils are an English/New Zealand indie/rock band fronted by singer and songwriter Finn Andrews."
+  },
+  {
+   "id": "e8369d6e-a5ac-4d5e-9d80-df23158e82c6",
+   "slug": "glaive-god-save-the-three-tour-5d0f4874",
+   "title": "glaive - God Save The Three Tour",
+   "act": "glaive",
+   "name": "Glaive",
+   "description": "American musician (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Glaive_(musician)",
+   "extract": "Ash Blue Gutierrez, known professionally as Glaive, is an American singer-songwriter. After posting a string of hyperpop songs to SoundCloud during the beginning of the COVID-19 pandemic that earned him a following, he signed a record deal with Interscope Records and released his debut extended play, Cypress Grove, in 2020. His debut album, I Care So Much That I Don't Care at All, was released in 2023. His second album, May It Never Falter, was released in 2024. His third, Y'all, was released in September 2025. His fourth, a collaborative album with Kurtains called God Save the Three, was released in May 2026."
+  },
+  {
+   "id": "7a026a5e-2c09-4bde-97e3-b2a7c37e1fc1",
+   "slug": "mighty-oaks-go-for-broke-tour-2026-64a6d4e8",
+   "title": "Mighty Oaks - GO FOR BROKE TOUR 2026",
+   "act": "Mighty Oaks",
+   "name": "Mighty Oaks",
+   "description": "Berlin-based indie-folkpop band",
+   "source_url": "https://en.wikipedia.org/wiki/Mighty_Oaks_(band)",
+   "extract": "Mighty Oaks are an indie/folk rock trio made up of Ian Hooper (US), Claudio Donzelli (Italy) and Craig Saunders (UK). They formed in 2010 and are based in Berlin. According to Allmusic, the group releases \"tight, three-part harmonies and effusive, largely acoustic-driven folk anthems.\" In early 2014 they released their first LP, Howl, on Universal Records. The album peaked at No. 10 on the Official German charts with several singles charting as well. They have since released a second LP, Dreamers (2017), and an EP, Storm (2017). On the 7th of February 2020, they released their third full-length album, All Things Go."
+  },
+  {
+   "id": "8ad12196-10e7-4aef-9f1c-c5adcac4f603",
+   "slug": "kodaline-farewell-tour-512ae3ad",
+   "title": "Kodaline - Farewell Tour",
+   "act": "Kodaline",
+   "name": "Kodaline",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kodaline",
+   "extract": "Kodaline are an Irish rock band. Originally known as 21 Demands, the band adopted their current name in 2012 to coincide with the changing of their music. The group comprises Steve Garrigan, Vincent May, Mark Prendergast, and Jason Boland."
+  },
+  {
+   "id": "307e9500-8873-4fd4-8e81-4972ed45113a",
+   "slug": "tank-and-the-bangas-the-last-balloon-tour-2026-bddc15e7",
+   "title": "Tank and the Bangas - The Last Balloon Tour 2026",
+   "act": "Tank and the Bangas",
+   "name": "Tank and the Bangas",
+   "description": "American musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Tank_and_the_Bangas",
+   "extract": "Tank and the Bangas is an American musical group based in New Orleans, Louisiana. The band won the 2017 NPR Tiny Desk Contest and in November 2019, they were nominated in the Best New Artist category for the 2020 Grammy Awards. They have released three studio albums, Thinktank (2013), Green Balloon (2019), and Red Balloon (2022). In 2025, they won their first Grammy for the 2024 album, The Heart, The Mind, The Soul for Best Spoken Word Poetry Album."
+  },
+  {
+   "id": "d8be3f67-506a-4a85-a00d-456d1d31546b",
+   "slug": "maustetytot-a870f478",
+   "title": "Maustetytöt",
+   "act": "Maustetytöt",
+   "name": "Maustetytöt",
+   "description": "Finnish girl group",
+   "source_url": "https://en.wikipedia.org/wiki/Maustetyt%C3%B6t",
+   "extract": "Maustetytöt is a Finnish girl group consisting of sisters Anna Karjalainen and Kaisa Karjalainen. The band's trademarks include a laconic and serious-looking performance style."
+  },
+  {
+   "id": "dc33039c-5f78-4762-bac5-9f8c8c1f4bfc",
+   "slug": "j-bernardt-2026-2027-399c2855",
+   "title": "J.Bernardt - 2026/2027",
+   "act": "J.Bernardt",
+   "name": "J. Bernardt",
+   "description": "Belgian musician (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/J._Bernardt",
+   "extract": "J. Bernardt is a side project of Belgian musician Jinte Deprez, which he launched in 2016 when his band Balthazar took a break. His debut album Running Days was released in 2017, and includes contributions from Adriaan Van De Velde on synths and drummer Klaas De Somer. The album is a blend of different styles, including R&B, soul, hip hop, and electronica."
+  },
+  {
+   "id": "1515ca4c-01c9-4e51-8f2d-4ac1f2929807",
+   "slug": "anette-olzon-ad08bb63",
+   "title": "Anette Olzon",
+   "act": "Anette Olzon",
+   "name": "Anette Olzon",
+   "description": "Swedish singer (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Anette_Olzon",
+   "extract": "Anette Ingegerd Olsson, known by the stage name Anette Olzon, is a Swedish singer, best known as the former lead vocalist of Finnish symphonic metal band Nightwish from 2007 to 2012. She is also the vocalist of Swedish classic rock band Alyson Avenue, and of the Finnish heavy metal band The Dark Element."
+  },
+  {
+   "id": "79f660e0-4fe2-4f29-abce-ca659b0a2b15",
+   "slug": "gilla-band-2027-uk-eu-tour-6a14abaf",
+   "title": "Gilla Band - 2027 UK / EU tour",
+   "act": "Gilla Band",
+   "name": "Gilla Band",
+   "description": "Irish post-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Gilla_Band",
+   "extract": "Gilla Band are an Irish post-punk and noise rock band from Dublin. It was founded in 2011 and comprises vocalist Dara Kiely, guitarist Alan Duggan, bassist Daniel Fox, and drummer Adam Faulkner."
+  },
+  {
+   "id": "0634fbc1-b6b0-48c7-8210-a444caaffae2",
+   "slug": "lambchop-an-evening-with-lambchop-f9e26782",
+   "title": "Lambchop - An Evening with LAMBCHOP",
+   "act": "Lambchop",
+   "name": "Lambchop",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/Lambchop_(band)",
+   "extract": "Lambchop, originally Posterchild, is an American band from Nashville, Tennessee, formed in 1986. Frontman and primary songwriter Kurt Wagner has remained the project's sole constant member across multiple line-up changes. The band's current line-up also includes Andrew Broder (keyboards), Ryan Olson, C.J. Camerieri and Tim Purnell (drums). Lambchop is loosely associated with the alternative country genre. Initially indebted to traditional country, the music has subsequently moved through a range of influences including post-rock, soul and lounge music."
+  },
+  {
+   "id": "da99047d-fae8-4e3e-b0cf-d84cb6a86b7b",
+   "slug": "fischer-z-50th-anniversary-tour-593f212f",
+   "title": "FISCHER-Z - 50th Anniversary Tour",
+   "act": "FISCHER-Z",
+   "name": "Fischer-Z",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Fischer-Z",
+   "extract": "Fischer-Z are a British rock group and main creative project of singer, guitarist and poet John Watts. In 1982, Watts temporarily dissolved Fischer-Z and started a solo career under his own name. John Watts has gone on to release both solo and Fischer-Z projects. The original line-up consisted of Watts, Steve Skolnik (keyboards), David Graham (bass) and Steve Liddle (drums)."
+  }
+ ]
+}
