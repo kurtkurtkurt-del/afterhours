@@ -1,0 +1,14 @@
+{
+  "city": "birmingham",
+  "day": "2026-11-05",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "guy fawkes night at suki10c.", "de": "guy-fawkes-nacht im suki10c.", "tr": "suki10c'de guy fawkes gecesi." },
+      "line": { "en": "lumina's guy fawkes night, a club night and mini rave with dj sets, 19:00 to 00:00 on thursday. check the ticket page for the age limit.", "de": "lumina's guy-fawkes-nacht: club-nacht und mini-rave mit dj-sets, donnerstag 19:00 bis 00:00. altersgrenze auf der ticketseite prüfen.", "tr": "lumina'nın guy fawkes gecesi: dj setli bir kulüp gecesi ve mini rave, perşembe 19:00 ile 00:00 arası. yaş sınırını bilet sayfasında kontrol et." },
+      "place": { "en": "suki10c", "de": "suki10c", "tr": "suki10c" },
+      "hour": 19, "minute": 0,
+      "why": "LUMINA Guy Fawkes Night at SUKi10C, 21 Bordesley Street B5 5PJ, Thu 5 Nov 19:00 to 00:00, per the Skiddle event page (https://www.skiddle.com/whats-on/Birmingham/SUKi10C/LUMINA-Guy-Fawkes-Night/42259273/); age limit differs between sources."
+    }
+  ]
+}
