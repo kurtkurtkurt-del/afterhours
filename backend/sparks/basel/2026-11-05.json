@@ -1,0 +1,27 @@
+{
+  "city": "basel",
+  "day": "2026-11-05",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "the herbstmesse on a thursday.",
+        "de": "die herbstmesse an einem donnerstag.",
+        "tr": "perşembe günü herbstmesse."
+      },
+      "line": {
+        "en": "the fair runs until 8 november, so a quiet weeknight walk round the rides on barfüsserplatz. hours sunday to thursday are 12:00 to 22:00.",
+        "de": "die messe läuft bis 8. november, also ein ruhiger wochentagsrundgang durch die fahrgeschäfte auf dem barfüsserplatz. öffnungszeiten sonntag bis donnerstag 12 bis 22 uhr.",
+        "tr": "panayır 8 kasım'a kadar sürüyor; barfüsserplatz'ta sakin bir hafta içi dolaşması. pazar'dan perşembe'ye saatler 12:00 ile 22:00 arası."
+      },
+      "place": {
+        "en": "barfüsserplatz",
+        "de": "barfüsserplatz",
+        "tr": "barfüsserplatz"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Basler Herbstmesse runs 24 Oct to 8 Nov 2026; Barfüsserplatz hours Sun-Thu 12:00-22:00 per the canton of Basel-Stadt (bs.ch search summary)."
+    }
+  ]
+}

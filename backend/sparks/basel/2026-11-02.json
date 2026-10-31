@@ -1,0 +1,27 @@
+{
+  "city": "basel",
+  "day": "2026-11-02",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "the hääfelimäärt on petersplatz.",
+        "de": "der hääfelimäärt auf dem petersplatz.",
+        "tr": "petersplatz'ta hääfelimäärt."
+      },
+      "line": {
+        "en": "the traditional stall market on petersplatz, open until 10 november. go at midday, before the crowds of the afternoon.",
+        "de": "der traditionelle standmarkt auf dem petersplatz, bis 10. november geöffnet. am mittag hingehen, vor dem nachmittagsandrang.",
+        "tr": "petersplatz'ta geleneksel tezgâh pazarı, 10 kasım'a kadar açık. öğlen gidin, öğleden sonraki kalabalıktan önce."
+      },
+      "place": {
+        "en": "petersplatz",
+        "de": "petersplatz",
+        "tr": "petersplatz"
+      },
+      "hour": 12,
+      "minute": 0,
+      "why": "Hääfelimäärt on Petersplatz, open until 10 Nov 2026, listed with the Basler Herbstmesse (bs.ch and nume.ch search summaries). Monday 2 Nov is not a holiday in Basel-Stadt."
+    }
+  ]
+}

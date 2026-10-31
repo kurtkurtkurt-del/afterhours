@@ -1,0 +1,27 @@
+{
+  "city": "basel",
+  "day": "2026-10-31",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "basler herbstmesse, its 555th year.",
+        "de": "basler herbstmesse, das 555. jahr.",
+        "tr": "basler herbstmesse, 555. yılında."
+      },
+      "line": {
+        "en": "the old autumn fair on halloween saturday, open until 23:00. go after dinner and walk the rides and the squares.",
+        "de": "die alte herbstmesse am halloween-samstag, bis 23 uhr geöffnet. nach dem essen hingehen und durch die fahrgeschäfte und plätze schlendern.",
+        "tr": "halloween cumartesisi 23:00'e kadar açık eski sonbahar panayırı. yemekten sonra gidip atraksiyonlarda ve meydanlarda dolaşın."
+      },
+      "place": {
+        "en": "basler herbstmesse",
+        "de": "basler herbstmesse",
+        "tr": "basler herbstmesse"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Basler Herbstmesse, 24 Oct to 8 Nov 2026, 555th edition, open until 23:00 on Sat 31 Oct (nume.ch Halloween 2026 guide; bs.ch press release on the 555 years)."
+    }
+  ]
+}
