@@ -1,0 +1,14 @@
+{
+  "city": "marseille",
+  "day": "2026-11-02",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "a walk round the vieux-port, dry and clear.", "de": "ein spaziergang am vieux-port, trocken und klar.", "tr": "vieux-port'ta yürüyüş, kuru ve açık hava." },
+      "line": { "en": "clear day, around 15 degrees, sunset about 17:30. walk the old port and up towards the corniche before dusk.", "de": "klarer tag, um 15 grad, sonnenuntergang gegen 17:30. über den alten hafen und hoch zur corniche vor der dämmerung.", "tr": "açık bir gün, yaklaşık 15 derece, gün batımı yaklaşık 17:30. gün batmadan eski liman ve corniche'a doğru yürüyün." },
+      "place": { "en": "vieux-port", "de": "vieux-port", "tr": "vieux-port" },
+      "hour": 15, "minute": 30,
+      "why": "Franceinfo forecasts a clear day, 6 to 16 C, and Tameteo sunny at 15 C for mon 2 nov; sunset about 17:30 on 1 nov (calendriergratuit.fr, calendar.center)."
+    }
+  ]
+}

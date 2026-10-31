@@ -1,0 +1,22 @@
+{
+  "city": "marseille",
+  "day": "2026-11-01",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "om – toulouse at the vélodrome.", "de": "om – toulouse im vélodrome.", "tr": "vélodrome'da om – toulouse." },
+      "line": { "en": "ligue 1, matchday 9, kickoff 20:45. tickets from about 19 euro on the stadium site; be there by 19:30.", "de": "ligue 1, 9. spieltag, anpfiff 20:45. tickets ab etwa 19 euro laut stadionseite; um 19:30 da sein.", "tr": "ligue 1, 9. hafta, başlama 20:45. stadyum sitesine göre biletler yaklaşık 19 euro'dan; 19:30'da orada olun." },
+      "place": { "en": "stade vélodrome", "de": "stade vélodrome", "tr": "stade vélodrome" },
+      "hour": 19, "minute": 30,
+      "why": "OM vs Toulouse, Ligue 1 matchday 9, sun 1 nov 20:45 at the Vélodrome (om.fr calendar, cepacvelodrome.com, lephoceen.fr)."
+    },
+    {
+      "kind": "flea",
+      "title": { "en": "les puces, the sunday flea market.", "de": "les puces, der sonntagsflohmarkt.", "tr": "les puces, pazar günü pire pazarı." },
+      "line": { "en": "the big flea market in la madrague-ville, open sunday morning. go early; the stalls close around 14:00.", "de": "der große flohmarkt in la madrague-ville, sonntagvormittags geöffnet. früh kommen; die stände schließen gegen 14:00.", "tr": "la madrague-ville'de büyük pire pazarı, pazar sabahları açık. erken gidin; tezgâhlar 14:00 civarı kapanır." },
+      "place": { "en": "les puces, la madrague-ville", "de": "les puces, la madrague-ville", "tr": "les puces, la madrague-ville" },
+      "hour": 8, "minute": 30,
+      "why": "Les Puces, 130 chemin de la Madrague-Ville, Sunday 8:30-14:00 per the centre's own site; other listings say 6:00 or 7:30, so check on the day, as 1 nov is a Toussaint Sunday."
+    }
+  ]
+}

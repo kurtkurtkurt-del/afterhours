@@ -1,0 +1,27 @@
+{
+  "city": "marseille",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "hero festival, pop culture at parc chanot.",
+        "de": "hero festival, popkultur im parc chanot.",
+        "tr": "hero festival, parc chanot'ta pop kültür."
+      },
+      "line": {
+        "en": "manga, comics and gaming, 12th edition, saturday and sunday with set hours. check the official box office for times and prices.",
+        "de": "manga, comics und gaming, 12. ausgabe, samstag und sonntag zu festen zeiten. zeiten und preise bitte an der offiziellen kasse prüfen.",
+        "tr": "manga, çizgi roman ve oyun, 12. baskı, cumartesi ve pazar belirli saatlerde. saatler ve fiyatlar için resmi bilet sitesine bak."
+      },
+      "place": {
+        "en": "parc chanot",
+        "de": "parc chanot",
+        "tr": "parc chanot"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "HeroFestival Marseille, 7 and 8 nov 2026 at Parc Chanot (evous.fr, jds.fr, frequence-sud.fr); opening hours differ between sources and prices are not confirmed for 2026."
+    }
+  ]
+}
