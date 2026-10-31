@@ -1,0 +1,14 @@
+{
+  "city": "london",
+  "day": "2026-11-05",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "wimbledon park fireworks, two shows and a funfair.", "de": "feuerwerk im wimbledon park, zwei shows und ein jahrmarkt.", "tr": "wimbledon park havai fişek, iki gösteri ve lunapark." },
+      "line": { "en": "bonfire night at wimbledon park: a children's display at 18:45, the main show at 20:30. gates open at 17:15; tickets are likely to sell out, so book early.", "de": "bonfire night im wimbledon park: kinder-show um 18:45, hauptshow um 20:30. einlass ab 17:15; die tickets sind wohl schnell weg, also früh buchen.", "tr": "wimbledon park'ta bonfire night: 18:45'te çocuk gösterisi, 20:30'da ana gösteri. kapılar 17:15'te açılıyor; biletler çabuk tükenebilir, erken al." },
+      "place": { "en": "wimbledon park", "de": "wimbledon park", "tr": "wimbledon park" },
+      "hour": 17, "minute": 15,
+      "why": "Wimbledon Park fireworks on Thu 5 Nov 2026, gates 5.15pm, children's show 6.45pm, main show 8.30pm (IanVisits and Ents24 listings); adult tickets quoted at £15.90. Merton Council page not reached."
+    }
+  ]
+}

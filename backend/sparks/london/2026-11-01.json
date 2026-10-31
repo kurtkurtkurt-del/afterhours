@@ -1,0 +1,22 @@
+{
+  "city": "london",
+  "day": "2026-11-01",
+  "sparks": [
+    {
+      "kind": "sunrise",
+      "title": { "en": "the veteran cars leave hyde park at dawn.", "de": "die oldtimer fahren im morgengrauen aus dem hyde park.", "tr": "veteran arabalar şafakta hyde park'tan çıkıyor." },
+      "line": { "en": "the london to brighton veteran car run starts in hyde park on sunday. in past years the cars left between seven and half eight; go early and watch them line up.", "de": "der london-brighton veteranenlauf startet am sonntag im hyde park. in den vorjahren fuhren die wagen zwischen sieben und halb neun los; komm früh und schau beim aufstellen zu.", "tr": "london-brighton veteran araba yarışı pazar günü hyde park'ta başlıyor. önceki yıllarda arabalar yedi ile sekiz buçuk arasında çıktı; erken git ve dizilişi izle." },
+      "place": { "en": "hyde park", "de": "hyde park", "tr": "hyde park" },
+      "hour": 7, "minute": 0,
+      "why": "London to Brighton Veteran Car Run starts in Hyde Park on Sun 1 Nov 2026 (Octane Magazine and RM Sotheby's VCC listings); the 2026 start time is not confirmed, the 7 to 8.30 am window is from past years. Sunrise 06:54 per one timetable."
+    },
+    {
+      "kind": "flea",
+      "title": { "en": "sunday upmarket in the truman brewery.", "de": "sunday upmarket in der truman brewery.", "tr": "truman brewery'de sunday upmarket." },
+      "line": { "en": "vintage, fashion and food stalls under the brewery arches, open from ten on sundays. a slow wander for the late morning, a short walk from brick lane.", "de": "vintage, mode und essensstände unter den bögen der brauerei, sonntags ab zehn. ein ruhiger spaziergang für den späten vormittag, nah an der brick lane.", "tr": "brewery kemerlerinin altında vintage, moda ve yemek standları, pazar günleri on'dan itibaren açık. öğlene doğru sakin bir gezinti, brick lane'e yakın." },
+      "place": { "en": "truman brewery", "de": "truman brewery", "tr": "truman brewery" },
+      "hour": 11, "minute": 0,
+      "why": "Sunday UpMarket in the Truman Brewery, Brick Lane, runs Sundays per London & Partners and Wikipedia's Brick Lane Market listings (10am to 5pm or 6pm, sources differ); not checked on the venue site."
+    }
+  ]
+}
