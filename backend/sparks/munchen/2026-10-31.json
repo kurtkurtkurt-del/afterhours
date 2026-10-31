@@ -1,0 +1,657 @@
+{
+  "city": "munchen",
+  "day": "2026-10-31",
+  "sparks": [
+    {
+      "kind": "derby",
+      "title": {
+        "en": "bayern – dortmund, der klassiker.",
+        "de": "bayern – dortmund, der klassiker.",
+        "tr": "bayern – dortmund, der klassiker."
+      },
+      "line": {
+        "en": "bundesliga matchday 8 at the allianz arena. kick-off time not confirmed, so check it first; the sports bar by marienplatz fills early, come an hour ahead.",
+        "de": "bundesliga, 8. spieltag in der allianz arena. die anstoßzeit steht nicht fest, also vorher prüfen; die sportsbar am marienplatz füllt sich früh, komm eine stunde vorher.",
+        "tr": "bundesliga 8. hafta, allianz arena. başlama saati kesin değil, önce bak; marienplatz'daki spor barı erken doluyor, bir saat önce gel."
+      },
+      "place": {
+        "en": "sportsbar am marienplatz",
+        "de": "sportsbar am marienplatz",
+        "tr": "sportsbar am marienplatz"
+      },
+      "hour": 17,
+      "minute": 30,
+      "why": "FC Bayern vs Borussia Dortmund, Sat 31.10.2026 at the Allianz Arena (fcbayern.com); kick-off time not confirmed, so meet-up time is a guess."
+    },
+    {
+      "kind": "grill",
+      "title": {
+        "en": "grill under a roof tonight.",
+        "de": "heute grillen unter dach.",
+        "tr": "bu akşam mangal çatı altında."
+      },
+      "line": {
+        "en": "dark by five, cold by the river. a covered courtyard or terrace, a few friends, something on the coals.",
+        "de": "um fünf ist es dunkel, an der isar kalt. überdachter hof oder terrasse, ein paar freunde, was auf der glut.",
+        "tr": "beşte hava kararıyor, nehir kıyısı soğuk. çatılı bir avlu ya da teras, birkaç arkadaş, közde bir şeyler."
+      },
+      "place": {
+        "en": "überdachter hof bei freunden",
+        "de": "überdachter hof bei freunden",
+        "tr": "überdachter hof bei freunden"
+      },
+      "hour": 17,
+      "minute": 30,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "hike",
+      "title": {
+        "en": "a short walk in the autumn wood.",
+        "de": "ein kurzer gang durch den herbstwald.",
+        "tr": "sonbahar ormanında kısa yürüyüş."
+      },
+      "line": {
+        "en": "flat, close, full of fallen leaves. take the u-bahn to neuperlach süd and walk in; be out before the light goes.",
+        "de": "flach, nah, voller laub. u-bahn bis neuperlach süd und rein; sei raus, bevor das licht geht.",
+        "tr": "düz, yakın, yaprak dolu. neuperlach süd'e metroyla git, yürüyerek gir; ışık gitmeden çık."
+      },
+      "place": {
+        "en": "perlacher forst",
+        "de": "perlacher forst",
+        "tr": "perlacher forst"
+      },
+      "hour": 10,
+      "minute": 30,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "sunrise",
+      "title": {
+        "en": "sunrise at the monopteros.",
+        "de": "sonnenaufgang am monopteros.",
+        "tr": "monopteros'ta gün doğumu."
+      },
+      "line": {
+        "en": "sun is up around 06:55; be on the hill by 06:35 with a thermos. wrap up, it is cold up there.",
+        "de": "die sonne kommt gegen 06:55; um 06:35 mit thermoskanne auf dem hügel sein. warm anziehen, oben ist es kalt.",
+        "tr": "güneş 06:55 civarı doğuyor; 06:35'te termosla tepede ol. kalın giyin, orası soğuk."
+      },
+      "place": {
+        "en": "monopteros im englischen garten",
+        "de": "monopteros im englischen garten",
+        "tr": "monopteros im englischen garten"
+      },
+      "hour": 6,
+      "minute": 35,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "breakfast",
+      "title": {
+        "en": "a long saturday breakfast.",
+        "de": "ein langes samstagsfrühstück.",
+        "tr": "uzun bir cumartesi kahvaltısı."
+      },
+      "line": {
+        "en": "no hurry on the last saturday of october. coffee, eggs, a second coffee, and a plan for the weekend.",
+        "de": "kein stress am letzten samstag im oktober. kaffee, eier, noch ein kaffee und ein plan fürs wochenende.",
+        "tr": "ekimin son cumartesisında acele yok. kahve, yumurta, bir kahve daha ve hafta sonu planı."
+      },
+      "place": {
+        "en": "man vs. machine",
+        "de": "man vs. machine",
+        "tr": "man vs. machine"
+      },
+      "hour": 9,
+      "minute": 30,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "rooftop",
+      "title": {
+        "en": "last light from a roof.",
+        "de": "letztes licht vom dach.",
+        "tr": "çatıdan son ışık."
+      },
+      "line": {
+        "en": "sunset is about ten to five. go up while it is still bright, take a blanket, come down for something warm.",
+        "de": "sonnenuntergang kurz vor fünf. geh hoch, solange es hell ist, nimm eine decke mit und komm für etwas warmes runter.",
+        "tr": "gün batımı beşe on kala. aydınlıkken çık, battaniye al, sıcak bir şey için in."
+      },
+      "place": {
+        "en": "hotel flushing meadows",
+        "de": "hotel flushing meadows",
+        "tr": "hotel flushing meadows"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "swim",
+      "title": {
+        "en": "an evening swim in the volksbad.",
+        "de": "abendschwimmen im volksbad.",
+        "tr": "volksbad'da akşam yüzmesi."
+      },
+      "line": {
+        "en": "too cold for the lakes. the jugendstil hall at the isar is warm, and the sauna is next door.",
+        "de": "für die seen ist es zu kalt. die jugendstilhalle an der isar ist warm, die sauna gleich nebenan.",
+        "tr": "göller için çok soğuk. isar kıyısındaki art nouveau salon sıcak, sauna hemen yanında."
+      },
+      "place": {
+        "en": "müller'sches volksbad",
+        "de": "müller'sches volksbad",
+        "tr": "müller'sches volksbad"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "quiz",
+      "title": {
+        "en": "pub quiz night.",
+        "de": "kneipenquiz am samstagabend.",
+        "tr": "cumartesi akşamı pub quiz."
+      },
+      "line": {
+        "en": "teams of four, one beer round per wrong answer. bring someone who knows football and someone who knows nothing.",
+        "de": "vierer-teams, eine runde bier für jede falsche antwort. bring jemanden mit, der fußball kennt, und jemanden, der nichts weiß.",
+        "tr": "dörtlü takımlar, her yanlış cevaba bir tur bira. futbol bilen biriyle hiçbir şey bilmeyen birini getir."
+      },
+      "place": {
+        "en": "hofbräukeller",
+        "de": "hofbräukeller",
+        "tr": "hofbräukeller"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "newplace",
+      "title": {
+        "en": "try somewhere new in the werksviertel.",
+        "de": "probier etwas neues im werksviertel.",
+        "tr": "werksviertel'de yeni bir yer dene."
+      },
+      "line": {
+        "en": "the old industrial quarter behind the ostbahnhof is full of bars and halls. pick a door you have never opened.",
+        "de": "das alte industrieviertel hinter dem ostbahnhof steckt voller bars und hallen. such dir eine tür, die du noch nie geöffnet hast.",
+        "tr": "ostbahnhof'un arkasındaki eski sanayi mahallesi bar ve salon dolu. hiç açmadığın bir kapıyı seç."
+      },
+      "place": {
+        "en": "werksviertel",
+        "de": "werksviertel",
+        "tr": "werksviertel"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "camera",
+      "title": {
+        "en": "chase the last autumn colours.",
+        "de": "jag den letzten herbstfarben nach.",
+        "tr": "son sonbahar renklerinin peşinden git."
+      },
+      "line": {
+        "en": "low sun, wet leaves, few people. shoot until the light drops around half four.",
+        "de": "tiefe sonne, nasses laub, wenig leute. fotografier, bis das licht gegen halb fünf fällt.",
+        "tr": "alçak güneş, ıslak yaprak, az insan. ışık dörde buçuk gibi düşene kadar çek."
+      },
+      "place": {
+        "en": "alter botanischer garten",
+        "de": "alter botanischer garten",
+        "tr": "alter botanischer garten"
+      },
+      "hour": 15,
+      "minute": 30,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "festival",
+      "title": {
+        "en": "halloween at the container collective.",
+        "de": "halloween im container collective.",
+        "tr": "container collective'de halloween."
+      },
+      "line": {
+        "en": "halloween open air and indoor festival in the werksviertel, 18:00 to 02:00, several levels. dress warm for the outdoor part.",
+        "de": "halloween open air und indoor festival im werksviertel, 18:00 bis 02:00, mehrere ebenen. zieh dich für draußen warm an.",
+        "tr": "werksviertel'de halloween açık hava ve kapalı mekan festivali, 18:00-02:00, birkaç kat. dışarısı için sıcak giyin."
+      },
+      "place": {
+        "en": "container collective",
+        "de": "container collective",
+        "tr": "container collective"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Halloween Open Air & Indoor Festival, Container Collective (Werksviertel), 31.10 18:00-02:00 (in-muenchen.de listing)."
+    },
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "karaoke before halloween.",
+        "de": "karaoke vor halloween.",
+        "tr": "halloween öncesi karaoke."
+      },
+      "line": {
+        "en": "saturday night, a room full of strangers and a songbook. one ballad, one disaster, one that everyone knows.",
+        "de": "samstagabend, ein raum voller fremder und ein songbuch. eine ballade, eine katastrophe, einer, den alle kennen.",
+        "tr": "cumartesi gecesi, yabancılarla dolu bir oda ve bir şarkı kitabı. bir balad, bir felaket, herkesin bildiği bir şarkı."
+      },
+      "place": {
+        "en": "hirsch karaoke bar",
+        "de": "hirsch karaoke bar",
+        "tr": "hirsch karaoke bar"
+      },
+      "hour": 21,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "vinyl",
+      "title": {
+        "en": "dig through the crates.",
+        "de": "stöbern in den plattenkisten.",
+        "tr": "plak kutularını karıştır."
+      },
+      "line": {
+        "en": "a cold evening is for record shops. pick one record each by the cover and play them at home.",
+        "de": "ein kalter abend ist plattenladen-wetter. such dir jeder eine platte nach dem cover aus und hör sie zuhause.",
+        "tr": "soğuk akşam plakçı akşamıdır. herkes kapağına bakıp bir plak seçsin, evde dinleyin."
+      },
+      "place": {
+        "en": "optimal records",
+        "de": "optimal records",
+        "tr": "optimal records"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "openair",
+      "title": {
+        "en": "an afternoon outside, dressed warm.",
+        "de": "ein nachmittag draußen, warm eingepackt.",
+        "tr": "sıcak giyinip dışarıda bir öğleden sonra."
+      },
+      "line": {
+        "en": "no open-air concerts this late in the year. the olympiapark is still free to walk, and the sun sets before five.",
+        "de": "open-air-konzerte gibt es um diese zeit nicht mehr. der olympiapark ist trotzdem frei begehbar, die sonne geht vor fünf unter.",
+        "tr": "yılın bu zamanı açık hava konseri yok. olympiapark yine de serbestçe gezilebilir, güneş beşten önce batıyor."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "bike",
+      "title": {
+        "en": "ride the isar until dusk.",
+        "de": "fahr an der isar entlang bis zur dämmerung.",
+        "tr": "alacakaranlığa kadar isar boyunca pedal çevir."
+      },
+      "line": {
+        "en": "from the deutsches museum south to the flaucher and back. lights on, gloves on, be home by half five.",
+        "de": "vom deutschen museum nach süden zum flaucher und zurück. licht an, handschuhe an, um halb sechs zuhause sein.",
+        "tr": "deutsches museum'dan güneye flaucher'e gidip dön. ışıklar açık, eldivenler takılı, beş buçukta evde ol."
+      },
+      "place": {
+        "en": "isarradweg",
+        "de": "isarradweg",
+        "tr": "isarradweg"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "cinema",
+      "title": {
+        "en": "a saturday film in the dark.",
+        "de": "ein samstagsfilm im dunkeln.",
+        "tr": "karanlıkta cumartesi filmi."
+      },
+      "line": {
+        "en": "halloween eve, so go for something creepy in original language. buy tickets for the late show.",
+        "de": "halloween-vorabend, also nimm etwas gruseliges im original. kauf karten für die spätvorstellung.",
+        "tr": "cadılar bayramı arifesi, orijinal dilde ürpertici bir şey seç. gece seansına bilet al."
+      },
+      "place": {
+        "en": "cinema münchen",
+        "de": "cinema münchen",
+        "tr": "cinema münchen"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "boardgames",
+      "title": {
+        "en": "board games on a cold night.",
+        "de": "brettspiele an einem kalten abend.",
+        "tr": "soğuk gecede kutu oyunları."
+      },
+      "line": {
+        "en": "pick one long game and one short. the table, tea and no phones.",
+        "de": "such ein langes spiel und ein kurzes aus. tisch, tee und keine handys.",
+        "tr": "bir uzun, bir kısa oyun seç. masa, çay ve telefon yok."
+      },
+      "place": {
+        "en": "spielwiese",
+        "de": "spielwiese",
+        "tr": "spielwiese"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "rummage for old things.",
+        "de": "stöbere nach altem kram.",
+        "tr": "eski eşyalar için karıştır."
+      },
+      "line": {
+        "en": "saturday is the day for flea markets, but opening hours in late october vary, so check first. otherwise any antiques shop in the glockenbach will do.",
+        "de": "samstag ist flohmarkttag, aber die öffnungszeiten im spätoktober schwanken, prüf sie also vorher. sonst geht jeder antiquitätenladen im glockenbach.",
+        "tr": "cumartesi bit pazarı günü, ama ekim sonunda saatler değişiyor, önce bak. olmazsa glockenbach'taki herhangi bir antikacı yeter."
+      },
+      "place": {
+        "en": "flohmarkt im olympiapark",
+        "de": "flohmarkt im olympiapark",
+        "tr": "flohmarkt im olympiapark"
+      },
+      "hour": 10,
+      "minute": 30,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "skate",
+      "title": {
+        "en": "skate the dry spots.",
+        "de": "skate die trockenen ecken.",
+        "tr": "kuru yerlerde kay."
+      },
+      "line": {
+        "en": "wet concrete bites. look for covered corners or go indoor and use the last daylight.",
+        "de": "nasser beton beißt. such überdachte ecken oder geh in die halle und nutz das letzte tageslicht.",
+        "tr": "ıslak beton acımasız. çatılı köşe ara ya da içeri gir, son gün ışığını kullan."
+      },
+      "place": {
+        "en": "tonhalle",
+        "de": "tonhalle",
+        "tr": "tonhalle"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "cook",
+      "title": {
+        "en": "cook something slow together.",
+        "de": "kocht zusammen etwas langsames.",
+        "tr": "birlikte yavaş bir şey pişirin."
+      },
+      "line": {
+        "en": "autumn market squashes, one big pot, everyone chops. dinner by eight, dishes whenever.",
+        "de": "herbstkürbisse vom markt, ein großer topf, alle schnippeln. essen um acht, abwasch irgendwann.",
+        "tr": "pazardan sonbahar kabakları, büyük bir tencere, herkes doğrasın. yemek sekizde, bulaşık sonra."
+      },
+      "place": {
+        "en": "bei freunden zuhause",
+        "de": "bei freunden zuhause",
+        "tr": "bei freunden zuhause"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "sauna",
+      "title": {
+        "en": "sauna in the dark months.",
+        "de": "sauna in den dunklen monaten.",
+        "tr": "karanlık aylarda sauna."
+      },
+      "line": {
+        "en": "the cosimawellenbad has the sauna landscape. go after work, stay until you stop feeling the cold.",
+        "de": "das cosimawellenbad hat eine saunalandschaft. nach der arbeit hin und bleiben, bis du die kälte vergessen hast.",
+        "tr": "cosimawellenbad'da sauna bölümü var. işten sonra git, soğuğu unutana kadar kal."
+      },
+      "place": {
+        "en": "cosimawellenbad",
+        "de": "cosimawellenbad",
+        "tr": "cosimawellenbad"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "open mic night.",
+        "de": "open-mic-abend.",
+        "tr": "açık mikrofon gecesi."
+      },
+      "line": {
+        "en": "three minutes on stage, a song, a poem, a joke. bring something unfinished.",
+        "de": "drei minuten bühne, ein lied, ein gedicht, ein witz. bring etwas unfertiges mit.",
+        "tr": "sahnede üç dakika, bir şarkı, bir şiir, bir fıkra. yarım kalmış bir şey getir."
+      },
+      "place": {
+        "en": "substanz",
+        "de": "substanz",
+        "tr": "substanz"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "pingpong",
+      "title": {
+        "en": "table tennis, loser buys.",
+        "de": "tischtennis, verlierer zahlt.",
+        "tr": "masa tenisi, kaybeden ısmarlar."
+      },
+      "line": {
+        "en": "first to eleven, best of five. a quiet club with tables and a bar nearby.",
+        "de": "bis elf, best of five. ein ruhiger club mit tischen und einer bar in der nähe.",
+        "tr": "onbire kadar, beşte üç. masaları olan sessiz bir kulüp, yakınında bar."
+      },
+      "place": {
+        "en": "kickoff arena",
+        "de": "kickoff arena",
+        "tr": "kickoff arena"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "bouldering",
+      "title": {
+        "en": "bouldering on a cold evening.",
+        "de": "bouldern an einem kalten abend.",
+        "tr": "soğuk akşam bouldering."
+      },
+      "line": {
+        "en": "warm hall, chalk, a few problems to argue about. saturday evening is busy, so come early.",
+        "de": "warme halle, magnesia, ein paar boulder zum diskutieren. samstagabend ist viel los, komm früh.",
+        "tr": "sıcak salon, magnezyum, tartışılacak birkaç problem. cumartesi akşamı kalabalık, erken gel."
+      },
+      "place": {
+        "en": "boulderwelt ost",
+        "de": "boulderwelt ost",
+        "tr": "boulderwelt ost"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "picnic",
+      "title": {
+        "en": "a picnic in the glasshouses.",
+        "de": "ein picknick bei den gewächshäusern.",
+        "tr": "sera yanında piknik."
+      },
+      "line": {
+        "en": "too cold for the grass. take a thermos and a bench, or eat inside the warm palm house.",
+        "de": "fürs gras ist es zu kalt. nimm thermoskanne und bank, oder iss im warmen palmenhaus.",
+        "tr": "çimen için fazla soğuk. termos ve bank al ya da sıcak palmiye evinde ye."
+      },
+      "place": {
+        "en": "botanischer garten",
+        "de": "botanischer garten",
+        "tr": "botanischer garten"
+      },
+      "hour": 13,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "crawl",
+      "title": {
+        "en": "halloween bar crawl.",
+        "de": "halloween-kneipentour.",
+        "tr": "cadılar bayramı bar turu."
+      },
+      "line": {
+        "en": "halloween saturday in the glockenbachviertel. costumes welcome, tomorrow is a holiday in bavaria so nobody has to be up early.",
+        "de": "halloween-samstag im glockenbachviertel. verkleidet willkommen, morgen ist in bayern feiertag, also muss keiner früh raus.",
+        "tr": "glockenbachviertel'de cadılar bayramı cumartesisi. kostüm serbest, yarın bavyera'da tatil, kimse erken kalkmayacak."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 20,
+      "minute": 30,
+      "why": "Halloween Saturday 31.10; Sunday 1.11 is All Saints Day, a public holiday in Bavaria. Halloween parties listed on in-muenchen.de."
+    },
+    {
+      "kind": "stars",
+      "title": {
+        "en": "look up from the olympiaberg.",
+        "de": "schau vom olympiaberg nach oben.",
+        "tr": "olympiaberg'den yukarı bak."
+      },
+      "line": {
+        "en": "only worth it if the sky is clear; check the cloud map first. wrap up, bring a flask, leave the phone dark.",
+        "de": "nur bei klarem himmel; prüf vorher die wolkenkarte. warm einpacken, thermoskanne mit, handy dunkel lassen.",
+        "tr": "yalnızca gök açıksa; önce bulut haritasına bak. kalın giyin, termos al, telefonu karanlık tut."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 21,
+      "minute": 30,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "football",
+      "title": {
+        "en": "kick a ball under floodlights.",
+        "de": "kick unter flutlicht.",
+        "tr": "projektör ışığında top tep."
+      },
+      "line": {
+        "en": "bayern play dortmund today, so everyone wants to be a striker tonight. five a side on a lit court.",
+        "de": "bayern spielt heute gegen dortmund, also will jeder stürmer sein. fünf gegen fünf auf einem beleuchteten platz.",
+        "tr": "bayern bugün dortmund ile oynuyor, herkes forvet olmak isteyecek. aydınlatmalı sahada beşe beş."
+      },
+      "place": {
+        "en": "bolzplatz am luitpoldpark",
+        "de": "bolzplatz am luitpoldpark",
+        "tr": "bolzplatz am luitpoldpark"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Bayern vs Dortmund is on Sat 31.10 (fcbayern.com). Pitch availability not verified; forecast not confirmed."
+    },
+    {
+      "kind": "tram",
+      "title": {
+        "en": "ride the 19 through the city.",
+        "de": "fahr mit der 19 quer durch die stadt.",
+        "tr": "19 numaralı tramvayla şehri geç."
+      },
+      "line": {
+        "en": "one ticket, the lit streets, a window seat. get off where something looks warm.",
+        "de": "ein ticket, beleuchtete straßen, ein fensterplatz. steig aus, wo es warm aussieht.",
+        "tr": "tek bilet, ışıklı caddeler, cam kenarı. sıcak görünen yerde in."
+      },
+      "place": {
+        "en": "tram linie 19",
+        "de": "tram linie 19",
+        "tr": "tram linie 19"
+      },
+      "hour": 17,
+      "minute": 30,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "jazz in a cellar.",
+        "de": "jazz im keller.",
+        "tr": "bodrumda caz."
+      },
+      "line": {
+        "en": "the unterfahrt in haidhausen is munich's jazz room. a small table, one drink, the second set.",
+        "de": "die unterfahrt in haidhausen ist münchens jazzraum. ein kleiner tisch, ein getränk, das zweite set.",
+        "tr": "haidhausen'daki unterfahrt münih'in caz odası. küçük bir masa, bir içki, ikinci set."
+      },
+      "place": {
+        "en": "unterfahrt",
+        "de": "unterfahrt",
+        "tr": "unterfahrt"
+      },
+      "hour": 20,
+      "minute": 30,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    },
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a walk before the dark.",
+        "de": "ein spaziergang vor der dunkelheit.",
+        "tr": "karanlıktan önce yürüyüş."
+      },
+      "line": {
+        "en": "chinesischer turm to the kleinhesseloher see and back, leaves underfoot. you have until about 16:50.",
+        "de": "vom chinesischen turm zum kleinhesseloher see und zurück, laub unter den füßen. du hast bis etwa 16:50 zeit.",
+        "tr": "çin kulesi'nden kleinhesseloher göl'e gidip dön, ayak altında yapraklar. yaklaşık 16:50'ye kadar vaktin var."
+      },
+      "place": {
+        "en": "englischer garten",
+        "de": "englischer garten",
+        "tr": "englischer garten"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Sat 31.10, Halloween; tomorrow 1.11 is All Saints Day, a Bavarian public holiday, so Saturday night is free. No confirmed forecast found (weather sites unreachable), kept cool/damp-safe; sunset about 16:55 CET (estimate)."
+    }
+  ]
+}
