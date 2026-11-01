@@ -21,7 +21,637 @@
       },
       "hour": 16,
       "minute": 0,
-      "why": "EHC Red Bull München vs Nürnberg Ice Tigers, Sun 1.11 at SAP Garden, 16:30 per the in-muenchen.de event listing; the club's 2026/27 schedule gives 4:30 pm (redbullmuenchen.de, found in search; the page could not be opened). Sunday is All Saints' Day (Allerheiligen), a Bavarian public holiday."
+      "why": "EHC Red Bull München vs Nürnberg Ice Tigers, Sun 1.11 at SAP Garden, 16:30 per the in-muenchen.de listing and the club schedule (from the week file). Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. Bayern–Dortmund was Saturday 31.10 (fcbayern.com), so no Bayern match today."
+    },
+    {
+      "kind": "grill",
+      "title": {
+        "en": "a grill on the isar, if it stays dry.",
+        "de": "grillen an der isar, wenn es trocken bleibt.",
+        "tr": "kuru kalırsa isar kıyısında mangal."
+      },
+      "line": {
+        "en": "grill spots by the isar are free in november, but it is cold: bring wood, coal and a thick jacket. have a bar as plan b.",
+        "de": "die grillplätze an der isar sind im november leer, aber kalt: holz, kohle und dicke jacke mitbringen. eine bar als plan b.",
+        "tr": "kasımda isar kıyısı bomboş ama soğuk: odun, kömür ve kalın mont getir. yedek plan olarak bir bar."
+      },
+      "place": {
+        "en": "flaucher",
+        "de": "flaucher",
+        "tr": "flaucher"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "No forecast for 1.11 could be confirmed in search (DWD/wetterdienst pages gave other dates); late-autumn Munich assumed cool and grey, so plans have a roof option. Grilling is allowed at the Flaucher; wrapped up for the season."
+    },
+    {
+      "kind": "hike",
+      "title": {
+        "en": "a short hike to the isar valley.",
+        "de": "kurze wanderung durchs isartal.",
+        "tr": "isar vadisinde kısa bir yürüyüş."
+      },
+      "line": {
+        "en": "take the s7 south to wolfratshausen and walk the isar trail through autumn woods. back before dark, around 17:00.",
+        "de": "mit der s7 nach süden, dann den isarweg durch den herbstwald. vor der dunkelheit, so gegen 17:00, zurück.",
+        "tr": "s7 ile güneye çık, sonbahar ormanında isar yolunu yürü. hava kararmadan, 17:00 civarı dön."
+      },
+      "place": {
+        "en": "isarweg ab wolfratshausen",
+        "de": "isarweg ab wolfratshausen",
+        "tr": "isarweg ab wolfratshausen"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "No forecast for 1.11 could be confirmed in search (DWD/wetterdienst pages gave other dates); late-autumn Munich assumed cool and grey, so plans have a roof option. Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. Sunset is about 16:55 in Munich, so the hike starts in the morning."
+    },
+    {
+      "kind": "sunrise",
+      "title": {
+        "en": "sunrise from the olympiaberg.",
+        "de": "sonnenaufgang vom olympiaberg.",
+        "tr": "olympiaberg'den gün doğumu."
+      },
+      "line": {
+        "en": "sunrise is around 06:55 today. climb the olympiaberg in the dark, bring a flask and wait for the light over the city.",
+        "de": "sonnenaufgang ist heute gegen 06:55. im dunkeln auf den olympiaberg, thermoskanne mit und aufs licht über der stadt warten.",
+        "tr": "gün doğumu bugün 06:55 civarı. karanlıkta olympiaberg'e çık, termos getir ve şehrin üstündeki ışığı bekle."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 6,
+      "minute": 35,
+      "why": "No forecast for 1.11 could be confirmed in search (DWD/wetterdienst pages gave other dates); late-autumn Munich assumed cool and grey, so plans have a roof option. Sunrise estimated at about 06:55 CET for Munich on 1.11 (computed, not from a source), so the start is 20 minutes earlier."
+    },
+    {
+      "kind": "breakfast",
+      "title": {
+        "en": "a long sunday breakfast.",
+        "de": "langes sonntagsfrühstück.",
+        "tr": "uzun bir pazar kahvaltısı."
+      },
+      "line": {
+        "en": "a holiday sunday, so nothing else is open: find a café that serves breakfast late and stay until noon.",
+        "de": "feiertag und sonntag, alles andere hat zu: ein café mit spätem frühstück suchen und bis mittag bleiben.",
+        "tr": "tatil ve pazar, her yer kapalı: geç kahvaltı veren bir kafe bul ve öğlene kadar kal."
+      },
+      "place": {
+        "en": "cafe in glockenbach",
+        "de": "cafe in glockenbach",
+        "tr": "cafe in glockenbach"
+      },
+      "hour": 10,
+      "minute": 30,
+      "why": "Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. Cafés and restaurants stay open; a Glockenbach café brunch is the generic holiday plan."
+    },
+    {
+      "kind": "rooftop",
+      "title": {
+        "en": "a rooftop in the cold.",
+        "de": "dachterrasse bei kälte.",
+        "tr": "soğukta bir çatı terası."
+      },
+      "line": {
+        "en": "too cold to stay long: take blankets, go up for the view of the alps if the sky is clear, then down to a warm bar.",
+        "de": "zu kalt für lange: decken mit, bei klarem himmel für den alpenblick hoch, danach in eine warme bar.",
+        "tr": "uzun kalınmayacak kadar soğuk: battaniye al, gökyüzü açıksa alp manzarası için çık, sonra sıcak bir bara in."
+      },
+      "place": {
+        "en": "alter peter",
+        "de": "alter peter",
+        "tr": "alter peter"
+      },
+      "hour": 15,
+      "minute": 30,
+      "why": "No forecast for 1.11 could be confirmed in search (DWD/wetterdienst pages gave other dates); late-autumn Munich assumed cool and grey, so plans have a roof option. The Alter Peter tower is a seasonal option; on a grey day the view is limited, so the tip is conditional."
+    },
+    {
+      "kind": "swim",
+      "title": {
+        "en": "indoors: a swim in a warm pool.",
+        "de": "drinnen schwimmen im warmen becken.",
+        "tr": "içeride: ılık havuzda yüzme."
+      },
+      "line": {
+        "en": "the lakes are too cold. the müller'sches volksbad is the beautiful old pool: go late in the afternoon.",
+        "de": "die seen sind zu kalt. das müller'sches volksbad ist das schöne alte bad: am späten nachmittag hingehen.",
+        "tr": "göller çok soğuk. müller'sches volksbad güzel eski havuz: öğleden sonra geç git."
+      },
+      "place": {
+        "en": "müller'sches volksbad",
+        "de": "müller'sches volksbad",
+        "tr": "müller'sches volksbad"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "M-Bäder pools open on regular Sunday hours on Allerheiligen (muenchen.de). Open-water swimming ruled out in November; hours of the individual pool should be checked."
+    },
+    {
+      "kind": "quiz",
+      "title": {
+        "en": "pub quiz night, if one is on.",
+        "de": "pub-quiz am abend, wenn eins läuft.",
+        "tr": "akşam pub quiz, varsa."
+      },
+      "line": {
+        "en": "sunday evenings are usual for english quizzes in munich pubs; pick a table of four and ask the bar.",
+        "de": "sonntagabende sind in münchner pubs oft englische quizabende; einen vierertisch nehmen und an der bar fragen.",
+        "tr": "münih pub'larında pazar akşamları sık sık ingilizce quiz olur; dört kişilik masa seç, bara sor."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "No specific quiz was confirmed for 1.11, so this is the generic Sunday-evening version. Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. "
+    },
+    {
+      "kind": "newplace",
+      "title": {
+        "en": "a new place on a quiet holiday.",
+        "de": "ein neuer ort an einem stillen feiertag.",
+        "tr": "sakin bir tatilde yeni bir yer."
+      },
+      "line": {
+        "en": "the city is calm today. walk into a street you do not know, glockenbach or haidhausen, and take the first warm place.",
+        "de": "die stadt ist ruhig. in eine unbekannte straße gehen, glockenbach oder haidhausen, und den ersten warmen ort nehmen.",
+        "tr": "şehir bugün sakin. bilmediğin bir sokağa gir, glockenbach ya da haidhausen, ilk sıcak yere otur."
+      },
+      "place": {
+        "en": "haidhausen",
+        "de": "haidhausen",
+        "tr": "haidhausen"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. "
+    },
+    {
+      "kind": "camera",
+      "title": {
+        "en": "a photo walk in the mist.",
+        "de": "fotospaziergang im nebel.",
+        "tr": "sisli bir fotoğraf yürüyüşü."
+      },
+      "line": {
+        "en": "november fog on the english garden makes good pictures. start at the monopteros, end at the chinese tower.",
+        "de": "novembernebel im englischen garten gibt gute bilder. am monopteros anfangen, am chinesischen turm enden.",
+        "tr": "kasım sisi ingiliz bahçesinde güzel fotoğraf verir. monopteros'ta başla, çin kulesi'nde bitir."
+      },
+      "place": {
+        "en": "monopteros",
+        "de": "monopteros",
+        "tr": "monopteros"
+      },
+      "hour": 13,
+      "minute": 30,
+      "why": "No forecast for 1.11 could be confirmed in search (DWD/wetterdienst pages gave other dates); late-autumn Munich assumed cool and grey, so plans have a roof option. Fog is typical, not forecast."
+    },
+    {
+      "kind": "festival",
+      "title": {
+        "en": "nothing big, so a small one.",
+        "de": "nichts großes, also ein kleines.",
+        "tr": "büyük bir şey yok, o yüzden küçüğü."
+      },
+      "line": {
+        "en": "no festival was found for today. look for a church concert or a small gallery opening and go with whoever is free.",
+        "de": "heute wurde kein festival gefunden. ein kirchenkonzert oder eine kleine galerieeröffnung suchen und mit wem auch immer hingehen.",
+        "tr": "bugün için festival bulunamadı. bir kilise konseri ya da küçük bir galeri açılışı ara, kim boşsa onunla git."
+      },
+      "place": {
+        "en": "altstadt",
+        "de": "altstadt",
+        "tr": "altstadt"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "No festival or market confirmed for 1.11 on muenchen.de; the next listings found start from 10.11 (Münchner Bücherschau 12.–29.11). Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. "
+    },
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "karaoke, if a bar allows it.",
+        "de": "karaoke, wenn eine bar es erlaubt.",
+        "tr": "karaoke, bir bar izin verirse."
+      },
+      "line": {
+        "en": "the quiet-day rules make loud nights harder, so ask first. sing in a small bar or at home with a speaker.",
+        "de": "die stillen-tage-regeln machen laute abende schwerer, also vorher fragen. in einer kleinen bar oder zuhause mit box singen.",
+        "tr": "sessiz gün kuralları gürültülü geceyi zorlaştırır, önce sor. küçük bir barda ya da evde hoparlörle söyle."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. Karaoke in a bar needs a check against the dance ban; the home option is the safe version."
+    },
+    {
+      "kind": "vinyl",
+      "title": {
+        "en": "a vinyl evening, quiet style.",
+        "de": "vinylabend, leise.",
+        "tr": "sakin bir plak akşamı."
+      },
+      "line": {
+        "en": "shops are shut today. bring your own records to a friend's flat and play side a of something old.",
+        "de": "die läden sind zu. eigene platten zu einem freund mitbringen und die a-seite von etwas altem hören.",
+        "tr": "dükkanlar kapalı. kendi plaklarını bir arkadaşın evine getir ve eski bir şeyin a yüzünü dinle."
+      },
+      "place": {
+        "en": "zuhause",
+        "de": "zuhause",
+        "tr": "zuhause"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. "
+    },
+    {
+      "kind": "openair",
+      "title": {
+        "en": "open air is out, so a roof.",
+        "de": "open air fällt aus, also ein dach.",
+        "tr": "açık hava yok, o yüzden çatı."
+      },
+      "line": {
+        "en": "outdoor screens and stages are closed for the season. a cinema or an exhibition is the open-air of november.",
+        "de": "freiluftbühnen und -kinos sind in der saison zu. kino oder ausstellung ist das open air im november.",
+        "tr": "açık hava sahneleri ve sinemaları sezonu kapattı. kasımda açık hava yerine sinema ya da sergi."
+      },
+      "place": {
+        "en": "werksviertel",
+        "de": "werksviertel",
+        "tr": "werksviertel"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Open-air venues in Munich are closed in November. No outdoor event was found for 1.11."
+    },
+    {
+      "kind": "bike",
+      "title": {
+        "en": "a bike ride along the isar.",
+        "de": "radtour an der isar entlang.",
+        "tr": "isar boyunca bisiklet turu."
+      },
+      "line": {
+        "en": "ride from the deutsches museum south to the flaucher and on to thalkirchen. dress in layers, it will be cold.",
+        "de": "vom deutschen museum nach süden zum flaucher und weiter nach thalkirchen fahren. zwiebellook, es wird kalt.",
+        "tr": "deutsches museum'dan güneye flaucher'e, oradan thalkirchen'e sür. katmanlı giyin, hava soğuk olacak."
+      },
+      "place": {
+        "en": "isar bis thalkirchen",
+        "de": "isar bis thalkirchen",
+        "tr": "isar bis thalkirchen"
+      },
+      "hour": 11,
+      "minute": 0,
+      "why": "No forecast for 1.11 could be confirmed in search (DWD/wetterdienst pages gave other dates); late-autumn Munich assumed cool and grey, so plans have a roof option. The Isar cycle path is open all year."
+    },
+    {
+      "kind": "cinema",
+      "title": {
+        "en": "a cinema on a holiday afternoon.",
+        "de": "kino am feiertagsnachmittag.",
+        "tr": "tatil öğleden sonrası sinema."
+      },
+      "line": {
+        "en": "the weather is no reason to stay out. pick the 17:00 show at the city's old cinema and eat after.",
+        "de": "das wetter ist kein grund draußen zu bleiben. die 17:00-vorstellung im alten kino der stadt nehmen und danach essen.",
+        "tr": "hava dışarıda kalmak için sebep değil. şehrin eski sinemasında 17:00 seansını seç, sonra yemek ye."
+      },
+      "place": {
+        "en": "theatiner film",
+        "de": "theatiner film",
+        "tr": "theatiner film"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Cinemas run on Sundays and public holidays (generic). No specific film was checked for today."
+    },
+    {
+      "kind": "boardgames",
+      "title": {
+        "en": "board games for the whole afternoon.",
+        "de": "brettspiele für den ganzen nachmittag.",
+        "tr": "bütün öğleden sonra kutu oyunları."
+      },
+      "line": {
+        "en": "a grey holiday is the best day for it. bring a game, tea and snacks, and start at 15:00.",
+        "de": "ein grauer feiertag ist der beste tag dafür. spiel, tee und snacks mitbringen und um 15:00 anfangen.",
+        "tr": "gri bir tatil bunun için en iyi gün. oyun, çay ve atıştırmalık getir, 15:00'te başla."
+      },
+      "place": {
+        "en": "zuhause oder ein spielecafé",
+        "de": "zuhause oder ein spielecafé",
+        "tr": "zuhause oder ein spielecafé"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. "
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "no flea market today.",
+        "de": "heute kein flohmarkt.",
+        "tr": "bugün bit pazarı yok."
+      },
+      "line": {
+        "en": "flea markets rest on this holiday. window-shop in the glockenbach instead and plan the next market for saturday.",
+        "de": "an diesem feiertag ruhen die flohmärkte. stattdessen im glockenbach schaufenster ansehen und den nächsten markt für samstag planen.",
+        "tr": "bu tatilde bit pazarları dinlenir. onun yerine glockenbach'ta vitrinlere bak ve bir sonraki pazarı cumartesiye planla."
+      },
+      "place": {
+        "en": "glockenbach",
+        "de": "glockenbach",
+        "tr": "glockenbach"
+      },
+      "hour": 13,
+      "minute": 0,
+      "why": "Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. No flea market confirmed for today, and the usual markets avoid public holidays."
+    },
+    {
+      "kind": "skate",
+      "title": {
+        "en": "skating, if the ground is dry.",
+        "de": "skaten, wenn der boden trocken ist.",
+        "tr": "zemin kuruysa kaykay."
+      },
+      "line": {
+        "en": "the olympic park slopes and the isar paths are fine only when dry. check the ground first, then go in the afternoon.",
+        "de": "olympiapark und isarwege gehen nur trocken. erst den boden prüfen, dann nachmittags hin.",
+        "tr": "olimpiyat parkı ve isar yolları ancak kuruysa iyi. önce zemine bak, sonra öğleden sonra git."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "No forecast for 1.11 could be confirmed in search (DWD/wetterdienst pages gave other dates); late-autumn Munich assumed cool and grey, so plans have a roof option. "
+    },
+    {
+      "kind": "cook",
+      "title": {
+        "en": "cook together at home.",
+        "de": "gemeinsam zuhause kochen.",
+        "tr": "evde birlikte yemek."
+      },
+      "line": {
+        "en": "shops are shut, so use what you have. each person brings two ingredients, and you make one pot of something warm.",
+        "de": "die läden sind zu, also das nehmen was da ist. jeder bringt zwei zutaten mit, und es gibt einen topf mit etwas warmem.",
+        "tr": "dükkanlar kapalı, elindekini kullan. herkes iki malzeme getirsin, sıcak bir tencere yapın."
+      },
+      "place": {
+        "en": "zuhause",
+        "de": "zuhause",
+        "tr": "zuhause"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. Supermarkets are closed, so the plan relies on what people bring."
+    },
+    {
+      "kind": "sauna",
+      "title": {
+        "en": "a sauna on a cold afternoon.",
+        "de": "sauna am kalten nachmittag.",
+        "tr": "soğuk bir öğleden sonra sauna."
+      },
+      "line": {
+        "en": "a grey november sunday is made for it. the dantebad has a sauna, go around 15:00 and stay for two rounds.",
+        "de": "ein grauer novembersonntag ist dafür gemacht. das dantebad hat eine sauna, gegen 15:00 hin und zwei runden bleiben.",
+        "tr": "gri bir kasım pazarı bunun için. dantebad'ın saunası var, 15:00 civarı git ve iki tur kal."
+      },
+      "place": {
+        "en": "dantebad",
+        "de": "dantebad",
+        "tr": "dantebad"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "M-Bäder facilities keep Sunday hours on Allerheiligen (muenchen.de); sauna times at the Dantebad should be checked."
+    },
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "open mic, if one is on tonight.",
+        "de": "open mic, wenn heute eins läuft.",
+        "tr": "bu akşam varsa open mic."
+      },
+      "line": {
+        "en": "no list was confirmed for today. ask a small bar in the glockenbach, or take a guitar to a friend's flat.",
+        "de": "für heute wurde keine liste bestätigt. in einer kleinen bar im glockenbach nachfragen oder die gitarre zu einem freund mitnehmen.",
+        "tr": "bugün için liste doğrulanmadı. glockenbach'ta küçük bir bara sor ya da gitarı bir arkadaşa götür."
+      },
+      "place": {
+        "en": "glockenbach",
+        "de": "glockenbach",
+        "tr": "glockenbach"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No open mic confirmed for 1.11. Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. "
+    },
+    {
+      "kind": "pingpong",
+      "title": {
+        "en": "ping pong in the park or the hall.",
+        "de": "tischtennis im park oder in der halle.",
+        "tr": "parkta ya da salonda masa tenisi."
+      },
+      "line": {
+        "en": "the concrete tables in the park are free but cold. a hall with a table is the dry backup.",
+        "de": "die betonplatten im park sind frei, aber kalt. eine halle mit tisch ist das trockene backup.",
+        "tr": "parktaki beton masalar ücretsiz ama soğuk. masası olan bir salon kuru yedek."
+      },
+      "place": {
+        "en": "englischer garten",
+        "de": "englischer garten",
+        "tr": "englischer garten"
+      },
+      "hour": 14,
+      "minute": 30,
+      "why": "No forecast for 1.11 could be confirmed in search (DWD/wetterdienst pages gave other dates); late-autumn Munich assumed cool and grey, so plans have a roof option. "
+    },
+    {
+      "kind": "bouldering",
+      "title": {
+        "en": "bouldering, indoors.",
+        "de": "bouldern, drinnen.",
+        "tr": "salonda bouldering."
+      },
+      "line": {
+        "en": "the climbing halls are a good bet on a grey holiday. check whether the hall is open and book a slot.",
+        "de": "die kletterhallen sind an einem grauen feiertag eine gute wahl. prüfen, ob die halle offen ist, und einen slot buchen.",
+        "tr": "gri bir tatilde tırmanış salonları iyi seçim. salonun açık olup olmadığına bak ve slot ayır."
+      },
+      "place": {
+        "en": "boulderhalle",
+        "de": "boulderhalle",
+        "tr": "boulderhalle"
+      },
+      "hour": 15,
+      "minute": 30,
+      "why": "Opening hours on 1.11 not confirmed; Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. "
+    },
+    {
+      "kind": "picnic",
+      "title": {
+        "en": "a picnic with a thermos.",
+        "de": "picknick mit thermoskanne.",
+        "tr": "termoslu piknik."
+      },
+      "line": {
+        "en": "blankets, soup and hot tea on a bench in the hofgarten. short and warm, then a café.",
+        "de": "decken, suppe und heißer tee auf einer bank im hofgarten. kurz und warm, danach ins café.",
+        "tr": "battaniye, çorba ve sıcak çay, hofgarten'de bir bankta. kısa ve sıcak, sonra bir kafe."
+      },
+      "place": {
+        "en": "hofgarten",
+        "de": "hofgarten",
+        "tr": "hofgarten"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "No forecast for 1.11 could be confirmed in search (DWD/wetterdienst pages gave other dates); late-autumn Munich assumed cool and grey, so plans have a roof option. "
+    },
+    {
+      "kind": "crawl",
+      "title": {
+        "en": "a short crawl through the old town.",
+        "de": "kurze kneipentour durch die altstadt.",
+        "tr": "eski şehirde kısa bir bar turu."
+      },
+      "line": {
+        "en": "three bars, one drink each: start at the viktualienmarkt, then the frauenkirche side, and end in the glockenbach.",
+        "de": "drei bars, je ein getränk: am viktualienmarkt anfangen, dann zur frauenkirche, am ende ins glockenbach.",
+        "tr": "üç bar, birer içki: viktualienmarkt'ta başla, sonra frauenkirche tarafı, glockenbach'ta bitir."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. Bars are open but dancing is restricted; the Viktualienmarkt stalls are shut today."
+    },
+    {
+      "kind": "stars",
+      "title": {
+        "en": "stars, if the sky opens.",
+        "de": "sterne, wenn der himmel aufreißt.",
+        "tr": "gökyüzü açılırsa yıldızlar."
+      },
+      "line": {
+        "en": "sunset is around 16:55. drive out of the city to the fields near the feringasee and look up; if clouds, go home.",
+        "de": "sonnenuntergang ist gegen 16:55. aus der stadt zu den feldern am feringasee fahren und hochschauen; bei wolken heim.",
+        "tr": "gün batımı 16:55 civarı. şehirden çıkıp feringasee yakınındaki tarlalara git ve yukarı bak; bulutluysa eve dön."
+      },
+      "place": {
+        "en": "feringasee",
+        "de": "feringasee",
+        "tr": "feringasee"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "No forecast for 1.11 could be confirmed in search (DWD/wetterdienst pages gave other dates); late-autumn Munich assumed cool and grey, so plans have a roof option. Sunset estimated at about 16:55 (computed)."
+    },
+    {
+      "kind": "football",
+      "title": {
+        "en": "a kickabout, if the pitch is dry.",
+        "de": "kicken, wenn der platz trocken ist.",
+        "tr": "saha kuruysa halı saha."
+      },
+      "line": {
+        "en": "bayern played saturday, so the town is tired. gather five-a-side in the olympic park and play till it gets dark.",
+        "de": "bayern hat samstag gespielt, die stadt ist müde. fünf gegen fünf im olympiapark zusammenbringen und bis zur dunkelheit spielen.",
+        "tr": "bayern cumartesi oynadı, şehir yorgun. olimpiyat parkında beşe beş topla ve hava kararana kadar oyna."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Bayern vs Dortmund was Sat 31.10 18:30 (fcbayern.com), so no Bayern match today. No forecast for 1.11 could be confirmed in search (DWD/wetterdienst pages gave other dates); late-autumn Munich assumed cool and grey, so plans have a roof option. "
+    },
+    {
+      "kind": "tram",
+      "title": {
+        "en": "a tram ride across the city.",
+        "de": "straßenbahnfahrt quer durch die stadt.",
+        "tr": "şehri boydan boya tramvay."
+      },
+      "line": {
+        "en": "take the 19 from the maxmonument to pasing and see the city from a window. a day ticket, a thermos and no plan.",
+        "de": "mit der 19 vom maxmonument nach pasing und die stadt vom fenster sehen. tageskarte, thermoskanne, kein plan.",
+        "tr": "maxmonument'ten pasing'e 19 numaralı tramvayla git ve şehri pencereden izle. günlük bilet, termos, plan yok."
+      },
+      "place": {
+        "en": "maxmonument",
+        "de": "maxmonument",
+        "tr": "maxmonument"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "MVG trams run on public holidays on a Sunday timetable; line 19 is a standard Munich tram line."
+    },
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "jazz in a small room.",
+        "de": "jazz in einem kleinen raum.",
+        "tr": "küçük bir odada caz."
+      },
+      "line": {
+        "en": "a sunday evening in a quiet bar with a trio is a good fit for the holiday. ask at the unterfahrt in haidhausen.",
+        "de": "ein sonntagabend in einer ruhigen bar mit einem trio passt zum feiertag. im unterfahrt in haidhausen nachfragen.",
+        "tr": "tatil için sakin bir barda trio ile pazar akşamı iyi gider. haidhausen'daki unterfahrt'a sor."
+      },
+      "place": {
+        "en": "unterfahrt",
+        "de": "unterfahrt",
+        "tr": "unterfahrt"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Unterfahrt is the jazz club in Haidhausen; today's programme was not confirmed. Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. "
+    },
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a long walk in the english garden.",
+        "de": "langer spaziergang im englischen garten.",
+        "tr": "ingiliz bahçesinde uzun yürüyüş."
+      },
+      "line": {
+        "en": "empty paths and autumn leaves. walk from the chinese tower to the eisbach and end with a hot drink at the seehaus.",
+        "de": "leere wege und herbstlaub. vom chinesischen turm zum eisbach gehen und mit einem heißen getränk am seehaus enden.",
+        "tr": "boş yollar ve sonbahar yaprakları. çin kulesi'nden eisbach'a yürü ve seehaus'ta sıcak bir içecekle bitir."
+      },
+      "place": {
+        "en": "englischer garten",
+        "de": "englischer garten",
+        "tr": "englischer garten"
+      },
+      "hour": 13,
+      "minute": 0,
+      "why": "No forecast for 1.11 could be confirmed in search (DWD/wetterdienst pages gave other dates); late-autumn Munich assumed cool and grey, so plans have a roof option. Sunday 1.11 is Allerheiligen, a Bavarian public holiday (muenchen.de): shops shut, quiet-day dance ban. "
     }
   ]
 }
