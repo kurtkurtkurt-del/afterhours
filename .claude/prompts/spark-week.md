@@ -17,7 +17,8 @@ nothing for is simply left out; the app keeps its generic card for it.
 
 1. Read `backend/sparks/rotation.json`: `cities` (slug, name, country, tz), `next` (the
    index to start at), `per_night` (how many cities tonight).
-2. Take `per_night` cities from `next` on, wrapping round at the end of the list.
+2. Web search is capped at 200 calls per run, shared by every subagent. Writers get at most 12 searches per city, the second eye at most 8; a second eye that cannot search keeps the rows the writer sourced and removes only what fails a text check.
+3. Take `per_night` cities from `next` on, wrapping round at the end of the list.
 3. After each city is written and checked, set `done.<slug>` to today's date (Berlin) and
    move `next` one forward, and commit — so a run that stops halfway keeps what it did and
    the next night goes on from there.

@@ -1,5 +1,5 @@
 # afterhours — "who is this?": the plan in, the texts out.
-# 05:00 UTC (after the Ticketmaster sync at 04:10): `about-days.mjs --plan` lists the nights
+# 20:00 UTC the evening before (GitHub delays schedules by hours): `about-days.mjs --plan` lists the nights
 # without a text, looks up each act's Wikipedia page and commits backend/about/<day>/plan/
 # and skips.json. The about night agent (a cloud routine at 05:30 UTC,
 # .claude/prompts/about-night.md) reads those plan files — its sandbox reaches GitHub, not
@@ -15,7 +15,7 @@ on:
     branches: [main]
     paths: ["backend/about/**"]
   schedule:
-    - cron: "0 5 * * *"
+    - cron: "0 20 * * *"
     - cron: "40 7 * * *"
   workflow_dispatch:
     inputs:
@@ -25,7 +25,7 @@ on:
 
 jobs:
   plan:
-    if: ${{ github.event.schedule == '0 5 * * *' || (github.event_name == 'workflow_dispatch' && inputs.step == 'plan') }}
+    if: ${{ github.event.schedule == '0 20 * * *' || (github.event_name == 'workflow_dispatch' && inputs.step == 'plan') }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -34,9 +34,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: today's day in Berlin
+      - name: the coming day in Berlin
         id: day
-        run: echo "day=$(TZ=Europe/Berlin date +%F)" >> "$GITHUB_OUTPUT"
+        # GitHub runs schedules hours late; from 20:00 Berlin the plan is for tomorrow,
+        # so it is on main long before the 05:30 UTC about routine.
+        run: |
+          if [ "$(TZ=Europe/Berlin date +%H)" -ge 20 ]; then d=$(TZ=Europe/Berlin date -d tomorrow +%F); else d=$(TZ=Europe/Berlin date +%F); fi
+          echo "day=$d" >> "$GITHUB_OUTPUT"
       - name: the plan
         run: node backend/tools/about-days.mjs --plan --day "${{ steps.day.outputs.day }}"
       - name: commit the plan
