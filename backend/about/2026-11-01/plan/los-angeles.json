@@ -1,0 +1,296 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-01",
+ "nights": [
+  {
+   "id": "7d31492d-2915-460c-9f2f-57f6e57be246",
+   "slug": "marilyn-manson-live-in-los-angeles-a71b8a7f",
+   "title": "Marilyn Manson: Live in Los Angeles",
+   "act": "Marilyn Manson",
+   "name": "Marilyn Manson",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Marilyn_Manson_(band)",
+   "extract": "Marilyn Manson is an American rock band formed by namesake lead singer Marilyn Manson and lead guitarist Daisy Berkowitz in Fort Lauderdale, Florida, in 1989. Originally named Marilyn Manson & the Spooky Kids, they gained a local cult following in South Florida in the early 1990s with their theatrical live performances. In 1993, they were the first act signed to Trent Reznor's Nothing Records label. Until 1996, the name of each member was created by combining the first name of a female sex symbol and the last name of a male serial killer, as for the band and lead singer name that combine Marilyn Monroe with Charles Manson. Their lineup has changed between many of their album releases; the eponymous lead singer is the only remaining original member."
+  },
+  {
+   "id": "8645a67e-214b-466c-af8a-3652bfcec87d",
+   "slug": "katalyst-halloween-vibes-00164c95",
+   "title": "KATALYST: HALLOWEEN VIBES!",
+   "act": "KATALYST",
+   "name": "Katalyst",
+   "description": "Australian DJ and producer",
+   "source_url": "https://en.wikipedia.org/wiki/Katalyst_(DJ)",
+   "extract": "Katalyst is an Australian DJ and producer. He won awards at the 2002 Australian Dance Music Awards for Best Album and Best Producer."
+  },
+  {
+   "id": "151ef493-f137-45ff-a4c5-7121d8085577",
+   "slug": "weird-al-yankovic-uhf-live-to-screen-with-orches-08500a32",
+   "title": "\"Weird Al\" Yankovic: UHF Live-to-Screen with Orchestra and Live Q&A",
+   "act": "\"Weird Al\" Yankovic",
+   "name": "\"Weird Al\" Yankovic",
+   "description": "American comedy musician (born 1959)",
+   "source_url": "https://en.wikipedia.org/wiki/%22Weird_Al%22_Yankovic",
+   "extract": "Alfred Matthew \"Weird Al\" Yankovic is an American musician. Yankovic is known for writing and performing comedy songs that often parody songs by other musicians. He also performs original songs that are style pastiches of the work of other acts, as well as polka medleys of popular songs, most of which feature his trademark accordion. Since having one of his comedy songs aired on The Dr. Demento Radio Show in 1976 at age 16, Yankovic has sold more than 12 million albums, recorded more than 150 parodies and original songs, and performed more than 2,000 live shows."
+  },
+  {
+   "id": "e6ad9f04-624c-4acc-a5d1-4d9e6436498e",
+   "slug": "parra-for-cuva-e58fec81",
+   "title": "Parra for Cuva",
+   "act": "Parra for Cuva",
+   "name": "Parra for Cuva",
+   "description": "German musician (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Parra_for_Cuva",
+   "extract": "Nicolas Demuth, known by stage name Parra for Cuva, is a German musician and DJ.\nHe is best known for his house production."
+  },
+  {
+   "id": "6df82952-53f8-44f6-9e7c-1d0f64506e79",
+   "slug": "dillon-francis-dc38fe4c",
+   "title": "Dillon Francis",
+   "act": "Dillon Francis",
+   "name": "Dillon Francis",
+   "description": "American electronic music producer and DJ (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Dillon_Francis",
+   "extract": "Dillon Hart Francis is an American electronic music producer and DJ. He played a key role in popularizing moombahton and later developed its heavier variants, moombahcore and EDM trap."
+  },
+  {
+   "id": "6655707d-812e-4a2d-998f-f78dc6ac2bf2",
+   "slug": "krs-one-c1694ac8",
+   "title": "KRS-One",
+   "act": "KRS-One",
+   "name": "KRS-One",
+   "description": "American rapper (born 1965)",
+   "source_url": "https://en.wikipedia.org/wiki/KRS-One",
+   "extract": "Lawrence Kris Parker, known professionally as KRS-One, is an American rapper from New York City."
+  },
+  {
+   "id": "d469cc0f-874c-45e1-9ded-3d7039c40032",
+   "slug": "mya-0c1de219",
+   "title": "Mýa",
+   "act": "Mýa",
+   "name": "Mya",
+   "description": "American singer and actress (born 1979)",
+   "source_url": "https://en.wikipedia.org/wiki/Mya_(singer)",
+   "extract": "Mya Marie Harrison, known professionally as Mýa, is an American singer, songwriter, dancer, and actress. She was born in Washington, D.C. and studied ballet, jazz, and tap dance as a child. Her career began in television as a dance posse member on BET's Teen Summit. She signed with University Records, an imprint of Interscope Records to release her first album Mya (1998). The album was led by her first single, \"It's All About Me\", which peaked within the top ten of the Billboard Hot 100. Her subsequent collaborative singles, \"Ghetto Supastar \" and \"Take Me There\", were also met with commercial success."
+  },
+  {
+   "id": "d9b3b9c0-c68d-43cd-b9f1-fcfce1ea10a8",
+   "slug": "the-toxhards-e39c2fd4",
+   "title": "The Toxhards",
+   "act": "The Toxhards",
+   "name": "The Toxhards",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Toxhards",
+   "extract": "The Toxhards are an alternative rock band based in Los Angeles, California. The band consists of lead vocalist and bassist Alan Powers, guitarist Emerson Harris, and drummer Casey Donovan. While Powers is denoted as the group's lead vocalist, both Donovan and Harris are featured vocalists throughout the band's discography. The band is known for their engaging and theatrical live performances and genre-bending tracks. The group signed with Hopeless Records in 2023."
+  },
+  {
+   "id": "45ff5d84-f785-4078-b281-e7cb65487300",
+   "slug": "stella-lefty-5236b6c9",
+   "title": "Stella Lefty",
+   "act": "Stella Lefty",
+   "name": "Stella Lefty",
+   "description": "American singer-songwriter (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Stella_Lefty",
+   "extract": "Stella Lefkofsky, better known by her stage name Stella Lefty, is an American singer-songwriter. Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100."
+  },
+  {
+   "id": "2e82dafa-1c93-4985-ae71-5302248e4eb0",
+   "slug": "todd-rundgren-d1d78b20",
+   "title": "Todd Rundgren",
+   "act": "Todd Rundgren",
+   "name": "Todd Rundgren",
+   "description": "American musician (born 1948)",
+   "source_url": "https://en.wikipedia.org/wiki/Todd_Rundgren",
+   "extract": "Todd Harry Rundgren is an American musician, singer, songwriter, and record producer who has performed a diverse range of styles as a solo artist and as a member of the bands Nazz and Utopia. He is known for his sophisticated and often unorthodox music, his occasionally lavish stage shows, and his later experiments with interactive art. He also produced music videos and was an early adopter and promoter of various computer technologies, such as using the Internet as a means of music distribution in the late 1990s."
+  },
+  {
+   "id": "3f5dd500-6fdd-4445-b9e2-05daa1b7316e",
+   "slug": "dixson-68901eb6",
+   "title": "Dixson",
+   "act": "Dixson",
+   "name": "Dixson",
+   "description": "American singer, songwriter, producer, multi-instrumentalist",
+   "source_url": "https://en.wikipedia.org/wiki/Dixson_(singer)",
+   "extract": "Darius Scott Dixson, also known as DIXSON, is an American singer, songwriter, producer, and multi-instrumentalist, best known for a Season 9 live playoffs appearance on The Voice, and his co-written and co-produced Academy Award-nominated original song \"Be Alive\" alongside Beyoncé from the 2021 film King Richard. Scott has also co-written for Mariah Carey, Chance the Rapper, Kehlani, and Vic Mensa, among others, and is a graduate of the College of Wooster."
+  },
+  {
+   "id": "7f86cfc0-8fe3-41a3-8564-ee9c73a0037d",
+   "slug": "jorjiana-c52761ce",
+   "title": "Jorjiana",
+   "act": "Jorjiana",
+   "name": "Jorjiana",
+   "description": "American rapper",
+   "source_url": "https://en.wikipedia.org/wiki/Jorjiana",
+   "extract": "Jorja Faith-Wilson, known professionally as Jorjiana, is an American rapper from Michigan City, Indiana. She is best known for her 2024 single \"ILBB2\"."
+  },
+  {
+   "id": "85c2a0ec-3570-4bab-87d0-19c716102731",
+   "slug": "dan-and-phil-hard-launch-world-tour-7a8aebc4",
+   "title": "Dan and Phil: Hard Launch World Tour",
+   "act": "Dan and Phil",
+   "name": "Dan and Phil",
+   "description": "English entertainment and business duo",
+   "source_url": "https://en.wikipedia.org/wiki/Dan_and_Phil",
+   "extract": "Dan and Phil are an English entertainment and business duo, consisting of partners Daniel Howell and Phil Lester. They are best known for their collaborative work on YouTube since meeting in 2009. Additionally, they have collaborated on television and radio presenting, books, tours, and original films."
+  },
+  {
+   "id": "3fa0a9b9-2898-436c-ab87-4cef07874aeb",
+   "slug": "lexi-jayde-the-lover-girl-tour-e2e30136",
+   "title": "Lexi Jayde - The Lover Girl Tour",
+   "act": "Lexi Jayde",
+   "name": "Lexi Jayde",
+   "description": "American actress and singer (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Lexi_Jayde",
+   "extract": "Alexis Jayde Burnett, better known as Lexi Jayde is an American singer-songwriter and actress. She is best known for her 2022 single \"Drunk Text Me\", which went viral on TikTok. Jayde released her debut album Lover Girl in August 2026. She has gained over 1.2 million followers on Instagram, where she likes to connect with her audience."
+  },
+  {
+   "id": "493a5092-fd8e-4afe-8cfe-75c71d9f0ddd",
+   "slug": "jose-madero-usa-tour-2026-1228c9c1",
+   "title": "Jose Madero - USA Tour 2026",
+   "act": "Jose Madero",
+   "name": "José Madero",
+   "description": "Mexican musician",
+   "source_url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Madero",
+   "extract": "José Madero Vizcaíno, better known as Pepe Madero, is a Mexican singer and writer. Madero began his musical career as a vocalist in the renowned Mexican rock band PXNDX. However, since 2016 he has mainly dedicated himself to his solo career."
+  },
+  {
+   "id": "07117172-5e0a-49d8-9acd-7bc7aefa4f00",
+   "slug": "six60-8c3e6543",
+   "title": "SIX60",
+   "act": "SIX60",
+   "name": "Six60",
+   "description": "New Zealand rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Six60",
+   "extract": "Six60 is a New Zealand pop rock band formed in Dunedin, Otago in 2008. The band consists of Matiu Walters, Ji Fraser, Chris Mac, and Marlon Gerbes."
+  },
+  {
+   "id": "155fdfc7-559a-4ce7-97ea-cca27281c4bb",
+   "slug": "josh-levi-one-year-of-hydraulic-37e67b5b",
+   "title": "Josh Levi: One Year of Hydraulic",
+   "act": "Josh Levi",
+   "name": "Josh Levi",
+   "description": "American singer and actor (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Josh_Levi_(singer)",
+   "extract": "Joshua Levi Bolden is an American singer-songwriter and actor from Houston, Texas. He first gained attention for his role in the NBC television series Friday Night Lights. He then attained further prominence after been the seventh contestant eliminated on the third season of The X Factor USA. After performing as part of a short-lived boy group, Levi released his debut extended play DISC ONE in July 2020."
+  },
+  {
+   "id": "ed473d68-ed35-4478-a131-5ccd62f564da",
+   "slug": "lennon-stella-e7651f8b",
+   "title": "Lennon Stella",
+   "act": "Lennon Stella",
+   "name": "Lennon Stella",
+   "description": "Canadian singer and actress (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Lennon_Stella",
+   "extract": "Lennon Ray Louise Stella is a Canadian singer and actress. She portrayed Maddie Conrad on the musical-drama series Nashville (2012–2018). Before going solo in 2018, Stella performed with her sister as the duo Lennon & Maisy. Stella released her debut EP, Love, Me, in 2018. She released her debut studio album in 2020."
+  },
+  {
+   "id": "cccf4d49-958a-4e3e-80f9-210105492563",
+   "slug": "henry-lau-0d873e46",
+   "title": "Henry Lau",
+   "act": "Henry Lau",
+   "name": "Henry Lau",
+   "description": "Canadian singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Henry_Lau",
+   "extract": "Henry Lau, known mononymously as Henry, is a Canadian singer-songwriter, multi-instrumentalist, and record producer based in South Korea and China. He debuted in 2008 as a member of Super Junior-M and launched his solo career in 2013 with Trap. His song \"It's You\", released in 2017, became the most streamed Korean original soundtrack song on Spotify for two consecutive years in 2018 and 2019. In 2018, Henry left SM Entertainment following the expiration of his contract, and subsequently joined Monster Entertainment Group."
+  },
+  {
+   "id": "c9d0bff1-3cf3-495a-ab09-402b8f88e60c",
+   "slug": "tom-jones-come-gather-round-tour-c38913fa",
+   "title": "Tom Jones : Come Gather Round Tour",
+   "act": "Tom Jones",
+   "name": "Tom Jones",
+   "description": "Welsh singer (born 1940)",
+   "source_url": "https://en.wikipedia.org/wiki/Tom_Jones_(singer)",
+   "extract": "Sir Thomas Jones Woodward is a Welsh singer. His career began with a string of top 10 hits in the 1960s and he has since toured regularly, with appearances in Las Vegas from 1967 to 2011. His voice has been described by AllMusic as a \"full-throated, robust baritone\"."
+  },
+  {
+   "id": "23314a26-c70d-43b6-964e-a27be3a7ff73",
+   "slug": "kwn-5e79d7b8",
+   "title": "kwn",
+   "act": "kwn",
+   "name": "Kwn",
+   "description": "British rapper and singer-songwriter (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Kwn",
+   "extract": "Khyra Wilson or K. Wilson, known professionally as kwn and formerly k1, is a British singer, songwriter, rapper, and producer. She is best known for her 2024 single \"Worst Behaviour\", which entered the UK singles chart, while its remix entered the US Hot R&B/Hip-Hop Songs chart."
+  },
+  {
+   "id": "422449d8-53ca-4465-b1ff-1a46bc9fa0bd",
+   "slug": "rebecca-black-efdad0fb",
+   "title": "Rebecca Black",
+   "act": "Rebecca Black",
+   "name": "Rebecca Black",
+   "description": "American YouTuber, singer, songwriter, and DJ (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Rebecca_Black",
+   "extract": "Rebecca Renee Black is an American singer, songwriter and YouTuber. She gained extensive media coverage when the music video for her 2011 debut single \"Friday\" went viral on YouTube and various social media sites. The song peaked at number 58 on the Billboard Hot 100. It received an overwhelmingly negative response from audiences and music critics, many of whom considered it among the worst songs of all time. In 2013, Black released a follow-up single \"Saturday\" to similar commercial success and marginally improved reception."
+  },
+  {
+   "id": "c586e367-7ed0-4667-88a8-7f1f81c770b4",
+   "slug": "alvaro-diaz-omakase-tour-3bf3c3d0",
+   "title": "ALVARO DIAZ - OMAKASE TOUR",
+   "act": "ALVARO DIAZ",
+   "name": "Álvaro Díaz",
+   "description": "Puerto Rican rapper (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/%C3%81lvaro_D%C3%ADaz_(rapper)",
+   "extract": "Jorge Álvaro Díaz Rodríguez is a Puerto Rican rapper and singer."
+  },
+  {
+   "id": "82062a37-1bf6-46a2-85d1-b111107b1d9f",
+   "slug": "454-f0fffe41",
+   "title": "454",
+   "act": "454",
+   "name": "454",
+   "description": "American rapper (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/454_(rapper)",
+   "extract": "Willie Wilson, also known as 454, is an American rapper and record producer. Born in Florida, he is known for his distinctive psychedelic rap and plugg sound. He has released three mixtapes and also provided production on songs by Denzel Curry, Freddie Gibbs, Zelooperz, Playboi Carti, and Tony Shhnow."
+  },
+  {
+   "id": "58d1b865-cad2-42f3-b523-7d320ce938ca",
+   "slug": "pedro-sampaio-the-brazilian-chaos-tour-a107f08a",
+   "title": "Pedro Sampaio - The Brazilian Chaos Tour",
+   "act": "Pedro Sampaio",
+   "name": "Pedro Sampaio",
+   "description": "Brazilian singer and music producer",
+   "source_url": "https://en.wikipedia.org/wiki/Pedro_Sampaio",
+   "extract": "Pedro do Espirito Santo Sampaio is a Brazilian singer, music producer and DJ, known for the songs \"Sentadão\", \"Escada do Prédio\", with Marina Sena, and \"Chama Ela\", in partnership with the singer Lexa. He is signed to Warner Music Brasil."
+  },
+  {
+   "id": "d54caeae-bd98-426a-aeaa-12b628f7b796",
+   "slug": "foy-vance-2eb6d2f5",
+   "title": "Foy Vance",
+   "act": "Foy Vance",
+   "name": "Foy Vance",
+   "description": "Northern Irish singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Foy_Vance",
+   "extract": "Foy Best Vance is a Northern Irish musician and singer-songwriter, signed to Ed Sheeran's Gingerbread Man record label. Vance has toured as a support act to Sheeran and his music has been featured on numerous TV shows."
+  },
+  {
+   "id": "f69e7b66-b718-47a9-871b-87648bd6a654",
+   "slug": "born-without-bones-4f2508e6",
+   "title": "Born Without Bones",
+   "act": "Born Without Bones",
+   "name": "Born Without Bones",
+   "description": "American indie punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Born_Without_Bones",
+   "extract": "Born Without Bones is an American indie punk band based in Milford, Massachusetts, currently signed with Pure Noise Records. The band was originally set up by lead vocalist Scott Ayotte as a solo project in 2009, but later grew into a band with the addition of guitarist Jonathan Brucato and bassist Jim Creighton. The group performed at the Boston Calling Music Festival in 2022. Their style and sound has been described as 'grungy alt-rock' and 'indie punk', \"experimenting with punk, alt-rock, indie and everything in between.\""
+  },
+  {
+   "id": "64c48a1b-85a7-4eb1-a519-4ae7346d0ada",
+   "slug": "los-rabanes-fe63a272",
+   "title": "Los Rabanes",
+   "act": "Los Rabanes",
+   "name": "Los Rabanes",
+   "description": "Musical ensemble from Panama",
+   "source_url": "https://en.wikipedia.org/wiki/Los_Rabanes",
+   "extract": "Los Rabanes is a Latin Grammy winning ska rock fusion band from Chitré, Herrera, Panama. With a career spanning two decades and eight albums, they are considered pioneers in the region, and are the first band from Central America to win a Latin Grammy in the Best Rock Album Category."
+  },
+  {
+   "id": "71e2fe09-f92c-411c-b282-b4c013c4a39e",
+   "slug": "bad-gyal-mas-cara-world-tour-2026-6db1d444",
+   "title": "Bad Gyal - Más Cara World Tour 2026",
+   "act": "Bad Gyal",
+   "name": "Bad Gyal",
+   "description": "Spanish singer and songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Bad_Gyal",
+   "extract": "Alba Farelo i Solé, known professionally as Bad Gyal, is a Spanish singer and songwriter. Bad Gyal has developed a strong cult following ever since her musical career began in 2016, with an interpretation of Rihanna's \"Work\" in the Catalan language. She continued to make music as an independent artist, releasing records like \"Jacaranda\" and \"Fiebre\". Bad Gyal later released two mixtapes: Slow Wine (2016) and Worldwide Angel (2018), which established her as an emerging artist within the Spanish urban scene."
+  }
+ ]
+}

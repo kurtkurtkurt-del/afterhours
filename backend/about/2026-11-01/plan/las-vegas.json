@@ -1,0 +1,86 @@
+{
+ "city": "las-vegas",
+ "day": "2026-11-01",
+ "nights": [
+  {
+   "id": "1ad3b390-b198-4279-b35f-d6e76523d843",
+   "slug": "three-dog-night-3d9ef493",
+   "title": "Three Dog Night",
+   "act": "Three Dog Night",
+   "name": "Three Dog Night",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Three_Dog_Night",
+   "extract": "Three Dog Night is an American rock band formed in Los Angeles in 1967, founded by vocalists Chuck Negron, Cory Wells, and Danny Hutton. This lineup was soon augmented by Jimmy Greenspoon (keyboards), Joe Schermie, Michael Allsup (guitar), and Floyd Sneed (drums). The band had 21 Billboard Hot 100 top 40 hits between 1969 and 1975, with three hitting number one. Three Dog Night recorded many songs written by outside songwriters, and they helped to introduce mainstream audiences to writers such as Harry Nilsson (\"One\"), Randy Newman, Paul Williams, Laura Nyro and Hoyt Axton."
+  },
+  {
+   "id": "d4cfd82d-f157-4e2f-8190-155219dfe812",
+   "slug": "doja-cat-tour-ma-vie-world-tour-1925eaed",
+   "title": "Doja Cat - Tour Ma Vie World Tour",
+   "act": "Doja Cat",
+   "name": "Doja Cat",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Doja_Cat",
+   "extract": "Amala Ratna Zandile Dlamini, known professionally as Doja Cat, is an American rapper and singer-songwriter. Regarded as the \"Queen of Pop-Rap\", she is known for her musical versatility, live performance skills and humorous internet presence. Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\", and Time listed her as one of the world's most influential people in 2023."
+  },
+  {
+   "id": "1eb0757d-f93c-4331-b1d3-f73c39ea787c",
+   "slug": "jodeci-3ed654d4",
+   "title": "Jodeci",
+   "act": "Jodeci",
+   "name": "Jodeci",
+   "description": "American R&B quartet",
+   "source_url": "https://en.wikipedia.org/wiki/Jodeci",
+   "extract": "Jodeci is an American R&B quartet consisting of members K-Ci, JoJo, DeVanté Swing, and Mr. Dalvin. Formed in 1988 in Charlotte, North Carolina, Jodeci began as a duo of DeVanté Swing and JoJo but later both added their brothers. After signing with Uptown Records in 1990, the group finished work on their debut album, Forever My Lady (1991), which brought them mainstream success with three straight Billboard R&B No. 1 hit singles: the album's titular track, \"Stay\" and \"Come and Talk to Me\"."
+  },
+  {
+   "id": "532b511b-743f-4068-a450-bab50bb96087",
+   "slug": "metallica-life-burns-faster-cf8937e9",
+   "title": "Metallica: Life Burns Faster",
+   "act": "Metallica",
+   "name": "Metallica",
+   "description": "American heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Metallica",
+   "extract": "Metallica is an American heavy metal band. It was formed in Los Angeles in 1981 by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. The band's fast tempos, instrumentals and aggressive musicianship made them one of the founding \"big four\" bands of thrash metal, alongside Megadeth, Anthrax and Slayer. Metallica's current lineup comprises founding members and primary songwriters Hetfield and Ulrich, longtime lead guitarist Kirk Hammett and bassist Robert Trujillo. Former members of the band are bassists Ron McGovney, Cliff Burton and Jason Newsted, as well as guitarist Dave Mustaine, who formed Megadeth after being fired from Metallica in 1983."
+  },
+  {
+   "id": "ece75aae-aae3-413d-9446-0d0dd1106795",
+   "slug": "metallica-suite-reservation-71308ad7",
+   "title": "Metallica - Suite Reservation",
+   "act": "Metallica",
+   "name": "Metallica",
+   "description": "American heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Metallica",
+   "extract": "Metallica is an American heavy metal band. It was formed in Los Angeles in 1981 by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. The band's fast tempos, instrumentals and aggressive musicianship made them one of the founding \"big four\" bands of thrash metal, alongside Megadeth, Anthrax and Slayer. Metallica's current lineup comprises founding members and primary songwriters Hetfield and Ulrich, longtime lead guitarist Kirk Hammett and bassist Robert Trujillo. Former members of the band are bassists Ron McGovney, Cliff Burton and Jason Newsted, as well as guitarist Dave Mustaine, who formed Megadeth after being fired from Metallica in 1983."
+  },
+  {
+   "id": "6b00ce39-3ef6-4ba1-83fe-d326e7e81da7",
+   "slug": "the-lettermen-9c0d34fd",
+   "title": "THE LETTERMEN",
+   "act": "THE LETTERMEN",
+   "name": "The Lettermen",
+   "description": "American male pop vocal trio",
+   "source_url": "https://en.wikipedia.org/wiki/The_Lettermen",
+   "extract": "The Lettermen are an American male pop vocal trio whose trademark is close-harmony pop songs with light arrangements. The group started in 1959. They have had two Top 10 singles, 16 Top 10 singles on the Adult Contemporary chart, 32 consecutive Billboard chart albums, 11 gold records, and four Grammy nominations."
+  },
+  {
+   "id": "48938ece-269a-4efe-8b9f-18cc38da0721",
+   "slug": "ub40-f9e8f8ac",
+   "title": "UB40",
+   "act": "UB40",
+   "name": "UB40",
+   "description": "English reggae/pop band",
+   "source_url": "https://en.wikipedia.org/wiki/UB40",
+   "extract": "UB40 are an English reggae band, formed in December 1978 in Birmingham, England. The band has had more than 50 singles in the UK singles chart and has also achieved considerable international success. They have been nominated for the Grammy Award for Best Reggae Album four times and were nominated for the Brit Award for Best British Group in 1984. UB40 have sold more than 100 million records worldwide. The ethnic make-up of the band's original line-up was diverse, with musicians of English, Welsh, Irish, Jamaican, Scottish and Yemeni parentage."
+  },
+  {
+   "id": "be7773da-bc95-43b1-ab52-3cf1433658cf",
+   "slug": "bryan-adams-bare-bones-acoustic-solo-show-6c34a9c5",
+   "title": "Bryan Adams - Bare Bones Acoustic Solo Show",
+   "act": "Bryan Adams",
+   "name": "Bryan Adams",
+   "description": "Canadian singer-songwriter and musician (born 1959)",
+   "source_url": "https://en.wikipedia.org/wiki/Bryan_Adams",
+   "extract": "Bryan Guy Adams is a Canadian singer-songwriter, musician, record producer, and photographer. He is estimated to have sold between 75 million and more than 100 million records and singles worldwide, placing him among the best-selling music artists. Adams was the most played artist on Canadian radio in the 2010s and has had 25 top 15 singles in Canada and over a dozen in the U.S., UK, and Australia."
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-01",
+ "nights": [
+  {
+   "id": "391ca938-5e0e-491b-b5c3-89ddab8708bc",
+   "slug": "emir-can-igrek-ffc15eb5",
+   "title": "Emir Can İğrek",
+   "act": "Emir Can İğrek",
+   "name": "Emir Can İğrek",
+   "description": "Turkish singer and songwriter (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Emir_Can_%C4%B0%C4%9Frek",
+   "extract": "Emir Can İğrek is a Turkish singer and songwriter. He started making music by setting up small stage groups in the city where he was born. In 2019, he had his breakthrough with the song \"Nalan\". At the 2020 PowerTürk Music Awards, he was awarded as the \"Most Powerful Newcomer of the Year\". He has also composed songs for artists such as Funda Arar and Ferhat Göçer."
+  },
+  {
+   "id": "b1106499-6100-4a64-9341-062ffe045b33",
+   "slug": "gokhan-turkmen-27577622",
+   "title": "Gökhan Türkmen",
+   "act": "Gökhan Türkmen",
+   "name": "Gökhan Türkmen",
+   "description": "Turkish singer (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/G%C3%B6khan_T%C3%BCrkmen",
+   "extract": "Gökhan Türkmen is a Turkish singer."
+  },
+  {
+   "id": "41e050c6-d6d1-44e0-bfdd-f26aaf6a21df",
+   "slug": "levent-yuksel-143bead3",
+   "title": "Levent Yüksel",
+   "act": "Levent Yüksel",
+   "name": "Levent Yüksel",
+   "description": "Turkish musician (born 1964)",
+   "source_url": "https://en.wikipedia.org/wiki/Levent_Y%C3%BCksel",
+   "extract": "Levent Uğur Yüksel is a Turkish pop singer and multi instrumentalist. He has been active in live music industry since 1993."
+  },
+  {
+   "id": "f72c401a-e66f-45f0-a384-197e6a361399",
+   "slug": "ersay-uner-b000c66c",
+   "title": "Ersay Üner",
+   "act": "Ersay Üner",
+   "name": "Ersay Üner",
+   "description": "Turkish pop music singer-songwriter (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/Ersay_%C3%9Cner",
+   "extract": "Ersay Üner, is a Turkish pop music singer-songwriter. He became known in Turkey in 2000s by writing and composing songs for Demet Akalın."
+  },
+  {
+   "id": "ea645f1e-d00d-402f-b13c-e923a1107e08",
+   "slug": "yal-n-bir-buyulu-gece-5e505475",
+   "title": "Yalın - Bir Büyülü Gece",
+   "act": "Yalın",
+   "name": "Yalın",
+   "description": "Turkish pop singer and songwriter (born 1980)",
+   "source_url": "https://en.wikipedia.org/wiki/Yal%C4%B1n",
+   "extract": "Hüseyin Yalın, better known by his surname Yalın, is a Turkish pop singer and songwriter. He achieved success with the song \"Zalim\" in 2004."
+  },
+  {
+   "id": "01f0fd6d-6e74-43e7-93f8-6d703dfe370b",
+   "slug": "soner-sar-kabaday-b6208c74",
+   "title": "Soner Sarıkabadayı",
+   "act": "Soner Sarıkabadayı",
+   "name": "Soner Sarıkabadayı",
+   "description": "Turkish singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Soner_Sar%C4%B1kabaday%C4%B1",
+   "extract": "Soner Sarıkabadayı is a Turkish pop music singer and songwriter."
+  },
+  {
+   "id": "c255d230-86d6-448f-ab0e-eb275119edbd",
+   "slug": "ebru-yasar-8d70a583",
+   "title": "Ebru Yaşar",
+   "act": "Ebru Yaşar",
+   "name": "Ebru Yaşar",
+   "description": "Turkish pop music singer (born 1977)",
+   "source_url": "https://en.wikipedia.org/wiki/Ebru_Ya%C5%9Far",
+   "extract": "Ebru Yaşar is a Turkish pop music singer."
+  }
+ ]
+}
