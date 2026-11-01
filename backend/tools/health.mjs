@@ -66,8 +66,22 @@ if (clock) console.log(`cron                ${count(clock.jobs)} jobs · last go
 const warnings = [];
 const failures = [];
 if (count(reply.events) === 0) failures.push("no events at all — the data may be gone");
-if (count(reply.past_still_up) > 50) failures.push(`${count(reply.past_still_up)} past events are still published — the sync or hide_past_events is not running`);
-else if (count(reply.past_still_up)) warnings.push(`${count(reply.past_still_up)} past events are still published`);
+/* hide_past_events runs once a day at 05:30 UTC and leaves a night up for 12 hours after it
+   starts, so a night can rightly be up to ~36 hours past. GitHub runs this check hours late,
+   so health()'s "started before now" count is red every afternoon. Only nights past 36 h
+   mean the job has stopped. */
+let stale = null;
+try {
+  const before = new Date(Date.now() - 36 * 3600e3).toISOString();
+  const r = await fetch(`${address}/rest/v1/events?select=id&is_published=eq.true&starts_at_estimated=eq.false&starts_at=lt.${before}`, {
+    headers: { ...headers, Prefer: "count=exact", Range: "0-0" },
+  });
+  stale = Number((r.headers.get("content-range") || "").split("/")[1]);
+  if (!Number.isFinite(stale)) stale = null;
+} catch { stale = null; }
+if (stale === null) warnings.push(`could not count nights past 36 h; ${count(reply.past_still_up)} past events are published`);
+else if (stale > 50) failures.push(`${stale} nights more than 36 hours past are still published — the sync or hide_past_events is not running`);
+else if (stale) warnings.push(`${stale} nights more than 36 hours past are still published`);
 if (syncedDays !== null && syncedDays > 3) failures.push(`the newest synced night is ${syncedDays.toFixed(1)} days old — sync-events.yml is not running or writes nothing`);
 if (clock && count(clock.jobs) === 0) failures.push("pg_cron has no active afterhours job — the schedules in 09/26/48/51/54 did not run or the extension is off");
 else if (clock && (okHours === null || okHours > 2)) failures.push(`pg_cron's last good run was ${okHours === null ? "never" : okHours.toFixed(1) + " hours ago"} — pushes, hiding, pruning are all stopped`);
