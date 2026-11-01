@@ -1,0 +1,126 @@
+{
+ "city": "london",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "2a7b3ab4-3583-4f8d-b256-aca0ab930e86",
+   "slug": "kamelot-dark-asylum-world-tour-7fcd8f02",
+   "title": "KAMELOT - DARK ASYLUM WORLD TOUR",
+   "act": "KAMELOT",
+   "name": "Kamelot",
+   "description": "American power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Kamelot",
+   "extract": "Kamelot is an American power metal band from Tampa, Florida, formed by Thomas Youngblood in 1987. The Norwegian vocalist Roy Khan joined for the album Siége Perilous, and shared songwriting credit with Youngblood until his departure in April 2011. On June 22, 2012, Youngblood announced on their website that their new vocalist would be the Swedish singer Tommy Karevik, who was first featured on Kamelot's album Silverthorn as the main vocalist, co-songwriter, and lyricist."
+  },
+  {
+   "id": "ee088326-08fe-4604-bd93-0c25e6eb2ac5",
+   "slug": "kamelot-6327759d",
+   "title": "KAMELOT",
+   "act": "KAMELOT",
+   "name": "Kamelot",
+   "description": "American power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Kamelot",
+   "extract": "Kamelot is an American power metal band from Tampa, Florida, formed by Thomas Youngblood in 1987. The Norwegian vocalist Roy Khan joined for the album Siége Perilous, and shared songwriting credit with Youngblood until his departure in April 2011. On June 22, 2012, Youngblood announced on their website that their new vocalist would be the Swedish singer Tommy Karevik, who was first featured on Kamelot's album Silverthorn as the main vocalist, co-songwriter, and lyricist."
+  },
+  {
+   "id": "1aa87fef-3360-4421-b624-3b799d4d8bbb",
+   "slug": "pieces-of-a-dream-30f727af",
+   "title": "Pieces of a Dream",
+   "act": "Pieces of a Dream",
+   "name": "Pieces of a Dream",
+   "description": "American musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Pieces_of_a_Dream_(band)",
+   "extract": "Pieces of a Dream is an American R&B and jazz fusion group."
+  },
+  {
+   "id": "01440184-e35c-45c8-9cd6-cba4592a93f2",
+   "slug": "the-kid-laroi-a-perfect-world-tour-f18040a0",
+   "title": "The Kid LAROI - A Perfect World Tour",
+   "act": "The Kid LAROI",
+   "name": "The Kid Laroi",
+   "description": "Australian singer (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/The_Kid_Laroi",
+   "extract": "Charlton Kenneth Jeffrey Howard, known professionally as the Kid Laroi, is an Australian singer, rapper, and songwriter. He was signed with American rapper Lil Bibby's Grade A Productions, in a joint venture with Columbia Records, in 2019. He is best known for his 2021 single \"Stay\", which peaked atop the charts in numerous countries including his native Australia, as well as the Canadian Hot 100 and Billboard Hot 100."
+  },
+  {
+   "id": "ee26d7c5-04f8-4896-bd43-e0425c9f0c91",
+   "slug": "tom-rush-143a8f7b",
+   "title": "TOM RUSH",
+   "act": "TOM RUSH",
+   "name": "Tom Rush",
+   "description": "American singer-songwriter (born 1941)",
+   "source_url": "https://en.wikipedia.org/wiki/Tom_Rush",
+   "extract": "Tom Rush is an American folk and blues singer, guitarist, and songwriter whose success helped launch the careers of other singer-songwriters in the 1960s and who has continued his own singing career for 60 years."
+  },
+  {
+   "id": "8f0ccd6b-794d-49aa-a160-10ba76b0cd97",
+   "slug": "isaiah-falls-41cb6f7b",
+   "title": "Isaiah Falls",
+   "act": "Isaiah Falls",
+   "name": "Isaiah Falls",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Isaiah_Falls",
+   "extract": "Isaiah Falls is an American singer from Orlando, Florida. He is best known for his 2024 single \"Florida Baby\". In September 2024, He was named Billboard's R&B/Hip-Hop Rookie of the Month."
+  },
+  {
+   "id": "1ae10cf4-ad28-4da6-b6cf-353e80be8116",
+   "slug": "aesthetic-perfection-24417879",
+   "title": "Aesthetic Perfection",
+   "act": "Aesthetic Perfection",
+   "name": "Aesthetic Perfection",
+   "description": "American electronic musical project",
+   "source_url": "https://en.wikipedia.org/wiki/Aesthetic_Perfection",
+   "extract": "Aesthetic Perfection is an American-Austrian electronic musical project created by Daniel Graves in 2000. It was formed in Los Angeles, California before moving to Linz, Austria."
+  },
+  {
+   "id": "4223bdea-c8fd-4369-a46d-998f492e62d5",
+   "slug": "sheer-terror-aba0eca9",
+   "title": "Sheer Terror",
+   "act": "Sheer Terror",
+   "name": "Sheer Terror",
+   "description": "American hardcore punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Sheer_Terror",
+   "extract": "Sheer Terror are an American hardcore punk band from New York City. The band was one of the first to combine elements of heavy metal with a hardcore punk base, pioneering a heavier style of hardcore that would create many bands in the following decades. Formed in late 1984, the band stayed together until 1998, through numerous lineup changes and shifts in musical style. In October 2004, the band reunited for two shows at New York City's CBGB Club."
+  },
+  {
+   "id": "e3ce9697-38f1-42f7-90df-7f623268f293",
+   "slug": "j-cole-the-fall-off-tour-48d25a45",
+   "title": "J. Cole: The Fall-Off Tour",
+   "act": "J. Cole",
+   "name": "J. Cole",
+   "description": "American rapper and record producer (born 1985)",
+   "source_url": "https://en.wikipedia.org/wiki/J._Cole",
+   "extract": "Jermaine Lamarr Cole is an American rapper and record producer. Born on a military base in Germany and raised in Fayetteville, North Carolina, Cole initially gained attention as a rapper following the release of his debut mixtape, The Come Up, in early 2007. He attended college in New York City with intent in furthering his musical career, and signed with Jay-Z's Roc Nation in 2009; the label released his next two mixtapes: The Warm Up (2009) and Friday Night Lights (2010), both of which earned him wider recognition."
+  },
+  {
+   "id": "43b88a9f-d15c-4155-afbe-c94c79613561",
+   "slug": "willow-avalon-bdf82d78",
+   "title": "Willow Avalon",
+   "act": "Willow Avalon",
+   "name": "Willow Avalon",
+   "description": "American country singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Willow_Avalon",
+   "extract": "Willow Martin, known professionally as Willow Avalon, is an American country singer-songwriter. She is signed to Atlantic Records. She released her debut EP, Stranger in 2024, followed by her first album, Southern Belle Raisin' Hell, in 2025."
+  },
+  {
+   "id": "f977e6da-c055-4e14-9d71-29ace0c88e21",
+   "slug": "dizzy-dros-31a28bc8",
+   "title": "Dizzy DROS",
+   "act": "Dizzy DROS",
+   "name": "Dizzy DROS",
+   "description": "Moroccan rapper (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Dizzy_DROS",
+   "extract": "Omar Souhaili, better known by his stage name Dizzy DROS, or just Dizzy, is a Moroccan rapper, songwriter and record producer. Souhaili first gained recognition with the release of his debut music video, \"Casafonia\" in 2011. The track received significant airplay on major Moroccan radio stations, including Hit Radio, Radio Mars, and Cap Radio, quickly establishing him as a rising star in the Moroccan rap scene and earning him a fanbase."
+  },
+  {
+   "id": "d3d7e034-0ad9-448d-86ee-3035cbaea889",
+   "slug": "myles-smith-94a6d50b",
+   "title": "Myles Smith",
+   "act": "Myles Smith",
+   "name": "Myles Smith",
+   "description": "British singer (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Myles_Smith",
+   "extract": "Myles Michael Smith-Thompson is a British singer. He is best known for his 2024 singles \"Stargazing\" and \"Nice to Meet You\". His debut studio album, My Mess, My Heart, My Life. was released on 19 June 2026."
+  }
+ ]
+}

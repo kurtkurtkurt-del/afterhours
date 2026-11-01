@@ -1,0 +1,346 @@
+{
+ "city": "manchester",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "269f1866-a86b-45ac-b656-5ca0979e41af",
+   "slug": "deaf-havana-fools-and-worthless-liars-more-6170c566",
+   "title": "Deaf Havana - Fools & Worthless Liars + More",
+   "act": "Deaf Havana",
+   "name": "Deaf Havana",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Deaf_Havana",
+   "extract": "Deaf Havana are an English alternative rock band from Hunstanton and King's Lynn, Norfolk, England. The band was formed in 2005 at the King's Lynn campus of The College of West Anglia."
+  },
+  {
+   "id": "37a4ba98-b3eb-4a67-9e75-cd8262f21ec8",
+   "slug": "against-the-current-03fa747a",
+   "title": "Against the Current",
+   "act": "Against the Current",
+   "name": "Against the Current",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Against_the_Current_(band)",
+   "extract": "Against the Current is an American rock band from Poughkeepsie, New York, formed in 2011. As of 2025, the band consists of lead vocalist Chrissy Costanza, guitarist Dan Gow, and drummer Will Ferri. The band quickly gained a sizeable online following after posting covers of various popular songs on YouTube. They played Warped Tour in 2016."
+  },
+  {
+   "id": "0085c613-2d04-4129-8887-7f087737f747",
+   "slug": "asher-white-88b651ea",
+   "title": "Asher White",
+   "act": "Asher White",
+   "name": "Asher White",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Asher_White",
+   "extract": "Asher White is an American multi-instrumentalist, producer, visual artist, and writer."
+  },
+  {
+   "id": "a3d9257a-d0e9-41a1-a984-2acee1271f58",
+   "slug": "lp-73e3bc2b",
+   "title": "LP",
+   "act": "LP",
+   "name": "LP",
+   "description": "American musician (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/LP_(singer)",
+   "extract": "Laura Pergolizzi, known professionally as LP, is an American singer, musician and songwriter from Brooklyn, New York. LP has released seven albums and three EPs. LP has written songs for other artists including Rihanna, Christina Aguilera, the Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd and Céline Dion."
+  },
+  {
+   "id": "ea492734-5338-49f3-b3df-ba680f0c09bc",
+   "slug": "yaelokre-ce9e4332",
+   "title": "Yaelokre",
+   "act": "Yaelokre",
+   "name": "Yaelokre",
+   "description": "Filipino-Icelandic singer-songwriter and multimedia artist",
+   "source_url": "https://en.wikipedia.org/wiki/Yaelokre",
+   "extract": "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist known for their folk music storytelling project under the stage name Yaelokre. Ósk began releasing music under the project name in early 2024, going viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart the same year."
+  },
+  {
+   "id": "9bae18b8-c06f-41da-9f48-9dadbe47ada5",
+   "slug": "kamelot-dark-asylum-world-tour-e905f6f1",
+   "title": "KAMELOT - DARK ASYLUM WORLD TOUR",
+   "act": "KAMELOT",
+   "name": "Kamelot",
+   "description": "American power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Kamelot",
+   "extract": "Kamelot is an American power metal band from Tampa, Florida, formed by Thomas Youngblood in 1987. The Norwegian vocalist Roy Khan joined for the album Siége Perilous, and shared songwriting credit with Youngblood until his departure in April 2011. On June 22, 2012, Youngblood announced on their website that their new vocalist would be the Swedish singer Tommy Karevik, who was first featured on Kamelot's album Silverthorn as the main vocalist, co-songwriter, and lyricist."
+  },
+  {
+   "id": "a2530749-07c0-4e50-bb2b-91a0cb95d07c",
+   "slug": "kamelot-abd0d444",
+   "title": "Kamelot",
+   "act": "Kamelot",
+   "name": "Kamelot",
+   "description": "American power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Kamelot",
+   "extract": "Kamelot is an American power metal band from Tampa, Florida, formed by Thomas Youngblood in 1987. The Norwegian vocalist Roy Khan joined for the album Siége Perilous, and shared songwriting credit with Youngblood until his departure in April 2011. On June 22, 2012, Youngblood announced on their website that their new vocalist would be the Swedish singer Tommy Karevik, who was first featured on Kamelot's album Silverthorn as the main vocalist, co-songwriter, and lyricist."
+  },
+  {
+   "id": "f0a77921-638c-451c-a98d-0f538cb62fd3",
+   "slug": "jalen-ngonda-990075ee",
+   "title": "Jalen Ngonda",
+   "act": "Jalen Ngonda",
+   "name": "Jalen Ngonda",
+   "description": "American soul musician",
+   "source_url": "https://en.wikipedia.org/wiki/Jalen_Ngonda",
+   "extract": "Jalen N'Gonda is an American musician based in England. He came to prominence with the release of his debut studio album Come Around and Love Me (2023), and is known for his Motown-inspired soul music. N'Gonda is primarily a singer, but also plays various instruments during live performances."
+  },
+  {
+   "id": "cc849d70-2afb-4fa4-9d8d-0cd656e9ce48",
+   "slug": "isaiah-falls-3ea288a3",
+   "title": "Isaiah Falls",
+   "act": "Isaiah Falls",
+   "name": "Isaiah Falls",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Isaiah_Falls",
+   "extract": "Isaiah Falls is an American singer from Orlando, Florida. He is best known for his 2024 single \"Florida Baby\". In September 2024, He was named Billboard's R&B/Hip-Hop Rookie of the Month."
+  },
+  {
+   "id": "b03f2507-a900-4256-9e61-29ac5970e819",
+   "slug": "spike-fuck-d5665f5d",
+   "title": "Spike Fuck",
+   "act": "Spike Fuck",
+   "name": "Spike Fuck",
+   "description": "Australian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Spike_Fuck",
+   "extract": "Spike Fuck is an Australian musician from Melbourne."
+  },
+  {
+   "id": "d9a20a11-89c1-4bb0-b98a-6f960602ba9e",
+   "slug": "the-home-team-e32ff3a0",
+   "title": "The Home Team",
+   "act": "The Home Team",
+   "name": "The Home Team",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Home_Team",
+   "extract": "The Home Team is an American rock band from Seattle, Washington, formed in 2013 by Daniel Matson and John Baran. The band currently consists of vocalist Brian Butcher, bassist Ryne Olson, guitarist John Baran, and drummer Daniel Matson."
+  },
+  {
+   "id": "27b0c86e-219a-4777-9647-eedd89467de5",
+   "slug": "horse-jumper-of-love-0c9d7a5d",
+   "title": "Horse Jumper of Love",
+   "act": "Horse Jumper of Love",
+   "name": "Horse Jumper of Love",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Horse_Jumper_of_Love",
+   "extract": "Horse Jumper of Love is an American indie rock band from Boston, Massachusetts, that was formed in 2013. It has comprised vocalist-guitarist Dimitri Giannopoulos, bassist John Margaris, and drummer Jamie Vadala-Doran since inception."
+  },
+  {
+   "id": "7a2a65cc-1bcf-4689-8d6c-3987da5a2f13",
+   "slug": "cat-power-a1d0029a",
+   "title": "Cat Power",
+   "act": "Cat Power",
+   "name": "Cat Power",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Cat_Power",
+   "extract": "Charlyn Marie  \"Chan\" Marshall, better known by her stage name Cat Power, is an American singer-songwriter. Cat Power was originally the name of her first band, but has become her stage name as a solo artist."
+  },
+  {
+   "id": "29f7ee3e-5354-4dd1-8b3a-6c6c4cbcf603",
+   "slug": "dizzee-rascal-d78b8924",
+   "title": "Dizzee Rascal",
+   "act": "Dizzee Rascal",
+   "name": "Dizzee Rascal",
+   "description": "British rapper (born 1984)",
+   "source_url": "https://en.wikipedia.org/wiki/Dizzee_Rascal",
+   "extract": "Dylan Kwabena Mills, known professionally as Dizzee Rascal, is a British rapper and MC. He is often credited as a pioneer of British hip hop and grime music and was ranked by Complex as one of the greatest British rappers of all time. His work has also incorporated elements of UK garage, bassline and R&B. Dizzee Rascal's music is also often credited with bringing UK rap into the mainstream and became the country's first rapper to achieve international recognition."
+  },
+  {
+   "id": "c845432a-5914-40b4-8993-f21bb618c712",
+   "slug": "ole-60-off-the-grid-tour-934b98e1",
+   "title": "Ole 60 - Off the Grid Tour",
+   "act": "Ole 60",
+   "name": "Ole 60",
+   "description": "American country music band",
+   "source_url": "https://en.wikipedia.org/wiki/Ole_60",
+   "extract": "Ole 60 is an American country/alt-country band from Hawesville, Kentucky, formed in 2023, known for blending Appalachian storytelling with elements of grunge, southern rock, folk music, and traditional country. The band consists of Jacob Ty Young, Tristan Roby, Ryan Laslie, Colby Clark, Aden Wood (drums), Dwight McGlynn, and Dustin \"Catfish\" Fuqua. The band gained widespread attention in 2024 through breakout singles like \"smoke & a light\" and \"Thoughts of You\", and acclaimed debut album Smokestack Town in 2025."
+  },
+  {
+   "id": "4086db75-aef6-41ff-8f62-1fe8f480fcfc",
+   "slug": "tove-lo-estrus-b4bfdf1c",
+   "title": "Tove Lo - ESTRUS",
+   "act": "Tove Lo",
+   "name": "Tove Lo",
+   "description": "Swedish singer and songwriter (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Tove_Lo",
+   "extract": "Ebba Tove Elsa Nilsson, known professionally as Tove Lo, is a Swedish singer-songwriter. She is known for her raw, grunge-influenced take on pop music. Referring to her autobiographical lyrics, Out called Lo \"the saddest girl in Sweden\", while Rolling Stone called her \"Sweden's darkest pop export\"."
+  },
+  {
+   "id": "b303c3a2-b4c4-4f9a-b047-2c3453610d21",
+   "slug": "chanel-beads-73c5eb49",
+   "title": "Chanel Beads",
+   "act": "Chanel Beads",
+   "name": "Chanel Beads",
+   "description": "American music group",
+   "source_url": "https://en.wikipedia.org/wiki/Chanel_Beads",
+   "extract": "Chanel Beads is an American New York City-based group fronted by musicians Shane Lavers, Maya McGrory, and Zachary Paul. They are currently signed to Jagjaguwar. Lavers works closely with Maya McGrory, also known as Colle."
+  },
+  {
+   "id": "0470997b-2a61-4977-abc4-549fdc652d0d",
+   "slug": "future-palace-179491f0",
+   "title": "Future Palace",
+   "act": "Future Palace",
+   "name": "Future Palace",
+   "description": "German rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Future_Palace",
+   "extract": "Future Palace is a German rock band from Berlin. It consists of vocalist Maria Lessing, guitarist Manuel Kohlert, and drummer Johannes Früchtenicht. The band has been signed to the German label Century Media Records since 2025 and to date has released four studio albums, Escape (2020), Run (2022), Distortion (2024), and Resurgence (2026)."
+  },
+  {
+   "id": "723e557c-8a3d-47fa-97dd-49e0b9352a8a",
+   "slug": "papa-roach-rise-of-the-roach-887621c1",
+   "title": "Papa Roach - Rise of the Roach",
+   "act": "Papa Roach",
+   "name": "Papa Roach",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Papa_Roach",
+   "extract": "Papa Roach is an American rock band from Vacaville, California, formed in 1993. After a few early shifts, the band initially stabilized in 1996 with the lineup of lead vocalist Jacoby Shaddix, drummer Dave Buckner, guitarist Jerry Horton, and bassist Tobin Esperance. This lineup remained consistent for slightly over a decade."
+  },
+  {
+   "id": "4d6039f1-1094-410f-bd4f-487310724374",
+   "slug": "wasia-project-d86ca1cc",
+   "title": "Wasia Project",
+   "act": "Wasia Project",
+   "name": "Wasia Project",
+   "description": "English pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Wasia_Project",
+   "extract": "Wasia Project is an English indie pop band consisting of siblings Olivia Hardy and William Gao. The group released their debut single, \"Why Don't U Love Me,\" in 2019. This was followed by their debut extended play (EP) How Can I Pretend? in 2022. In August 2024, they released their second extended play (EP), Isotope. On stage, they are often joined by drummer Nate Wicks, bassist Tom Pacitti, saxophonist Safi Jazz, and trombonist Patrick Minton."
+  },
+  {
+   "id": "f0ab6b74-d98a-4e15-8f3f-2d4bb0f711c6",
+   "slug": "skye-newman-91db1666",
+   "title": "Skye Newman",
+   "act": "Skye Newman",
+   "name": "Skye Newman",
+   "description": "English singer-songwriter (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Skye_Newman",
+   "extract": "Skye Newman is an English singer-songwriter from south-east London."
+  },
+  {
+   "id": "251a9ac3-c574-4a87-a691-5adb5b220735",
+   "slug": "ryan-beatty-83a9105e",
+   "title": "Ryan Beatty",
+   "act": "Ryan Beatty",
+   "name": "Ryan Beatty",
+   "description": "American singer (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Ryan_Beatty",
+   "extract": "Ryan Kevin Beatty is an American singer-songwriter. He was born in Clovis, California, and now resides in Los Angeles."
+  },
+  {
+   "id": "ad174617-bb3c-4170-85a7-5d747bc69e16",
+   "slug": "teenage-fanclub-84420feb",
+   "title": "Teenage Fanclub",
+   "act": "Teenage Fanclub",
+   "name": "Teenage Fanclub",
+   "description": "Scottish alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Teenage_Fanclub",
+   "extract": "Teenage Fanclub are a Scottish alternative rock band formed in Glasgow in 1989. The group was founded by Norman Blake, Raymond McGinley and Gerard Love, all of whom shared lead vocals and songwriting duties until Love's departure in 2018. As of 2023, the band's lineup consists of Blake, McGinley, longtime drummer Francis MacDonald, Dave McGowan and Euros Childs."
+  },
+  {
+   "id": "a4c8814a-efb7-4e81-8c96-6da5864471d4",
+   "slug": "the-script-the-man-in-the-arena-tour-b47c121d",
+   "title": "The Script - The Man In The Arena Tour",
+   "act": "The Script",
+   "name": "The Script",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Script",
+   "extract": "The Script are an Irish pop rock band formed in 2001 in Dublin by lead vocalist and keyboardist Danny O'Donoghue, lead guitarist Mark Sheehan and drummer Glen Power. The band currently consists of O'Donoghue, Power, Benjamin Sargeant and Ben Weaver (guitar). Sheehan was a member of the band up until his death in 2023. The band moved to London after signing to Sony Label Group imprint Phonogenic and released their first album The Script in August 2008, preceded by the debut single \"We Cry\" as well as other singles such as \"The Man Who Can't Be Moved\", \"Breakeven\" and \"Before the Worst\". The album peaked at number one in both Ireland and the UK."
+  },
+  {
+   "id": "7098f237-817b-4b56-af0a-2e4c0526f073",
+   "slug": "greg-mendez-b0e9f10f",
+   "title": "Greg Mendez",
+   "act": "Greg Mendez",
+   "name": "Greg Mendez",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Greg_Mendez",
+   "extract": "Greg Mendez is an American indie rock musician from Philadelphia, Pennsylvania."
+  },
+  {
+   "id": "15e1217f-52b7-4754-b8d2-31f8f57be85e",
+   "slug": "puscifer-5712bc84",
+   "title": "Puscifer",
+   "act": "Puscifer",
+   "name": "Puscifer",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Puscifer",
+   "extract": "Puscifer is an American rock group formed in Los Angeles by Maynard James Keenan, lead singer of Tool and A Perfect Circle. Keenan was the only constant member of the band and he considered the project to be his \"creative subconscious\". Later, frequent collaborators Mat Mitchell and Carina Round became permanent members."
+  },
+  {
+   "id": "98d2d679-4c0c-4f04-92a5-de0b9eb99f68",
+   "slug": "mavo-d23fc02c",
+   "title": "Mavo",
+   "act": "Mavo",
+   "name": "Mavo",
+   "description": "Nigerian singer (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Mavo_(musician)",
+   "extract": "Oseremen Marvin Ukanigbe, known professionally as Mavo, is a Nigerian singer-songwriter. He rose to popularity in 2025 with the release of the single \"Escaladizzy\", followed by \"Shakabulizzy\", \"Money Constant\" with fellow singer Wizkid, and \"Body (Danz)\" with CKay, the latter of which became his first number-one song in Nigeria."
+  },
+  {
+   "id": "b89c5d48-8db3-4c0c-a68e-81eda55241c8",
+   "slug": "flawed-mangoes-03a76007",
+   "title": "Flawed Mangoes",
+   "act": "Flawed Mangoes",
+   "name": "Flawed Mangoes",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Flawed_Mangoes",
+   "extract": "Evan Lo, better known as Flawed Mangoes, is an American singer-songwriter and musician from Boston."
+  },
+  {
+   "id": "e86f8b84-718b-46d2-994a-fc2157685390",
+   "slug": "stevie-wonder-songs-in-the-key-of-life-performan-d58a539a",
+   "title": "Stevie Wonder: Songs In The Key of Life Performances",
+   "act": "Stevie Wonder",
+   "name": "Stevie Wonder",
+   "description": "American musician (born 1950)",
+   "source_url": "https://en.wikipedia.org/wiki/Stevie_Wonder",
+   "extract": "Stevland Hardaway Morris, known professionally as Stevie Wonder, is an American singer-songwriter, musician, and record producer. He is widely regarded as one of the most influential musicians of the 20th century, and is credited as a pioneer and influence by musicians across a range of genres that include R&B, pop, soul, gospel, funk, and jazz. Wonder's use of synthesizers and other electronic musical instruments in the 1970s reshaped the conventions of contemporary R&B. He also helped drive such genres into the album era, crafting his LPs as cohesive and consistent, in addition to socially conscious statements with complex compositions."
+  },
+  {
+   "id": "7b6e6eac-2433-4e3b-a2f9-05cd1ceb79f4",
+   "slug": "the-shires-1e30f49d",
+   "title": "The Shires",
+   "act": "The Shires",
+   "name": "The Shires",
+   "description": "British country music duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_Shires_(duo)",
+   "extract": "The Shires are a British country music duo composed of singer-songwriters Ben Earle and Crissie Rhodes. Earle sings harmony vocals, plays piano and guitar, and Rhodes is lead singer. The duo formed in 2013 and released their debut album Brave in 2015, becoming the first British country act to chart in the Top 10 of the UK Albums Chart. The group's second album, My Universe, became the fastest-selling British country album in history when it was released in October 2016."
+  },
+  {
+   "id": "abc4a96c-cb62-410b-881c-339bdf7e9e3d",
+   "slug": "noah-kahan-the-great-divide-tour-f4cec34f",
+   "title": "Noah Kahan - The Great Divide Tour",
+   "act": "Noah Kahan",
+   "name": "Noah Kahan",
+   "description": "American singer-songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Noah_Kahan",
+   "extract": "Noah Berkenkamp Kahan is an American singer-songwriter. His breakthrough single, \"Hurt Somebody\", achieved gold status in the United States and charted in multiple international markets. The single and EP of the same name preceded the release of his debut album, Busyhead (2019). Within five years, two more albums came out: I Was / I Am (2021) and Stick Season (2022), the latter became his mainstream commercial breakthrough. It led to his nomination in 2023 for the Grammy Award for Best New Artist. In 2026, his fourth album The Great Divide was released and achieved record-breaking streaming and vinyl sales for a No. 1 rock album debut on the Billboard 200. That preceded The Great Divide Tour, his first stadium tour."
+  },
+  {
+   "id": "7bae1f12-abdc-4382-9966-bb214c9ddac1",
+   "slug": "kelsey-lu-119094ad",
+   "title": "Kelsey Lu",
+   "act": "Kelsey Lu",
+   "name": "Kelsey Lu",
+   "description": "American singer and cellist (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Kelsey_Lu",
+   "extract": "Kelsey Elizabeth McJunkins, known professionally as Kelsey Lu, is an American singer and cellist based in Los Angeles, California."
+  },
+  {
+   "id": "de80cdd9-8706-4c84-9a29-26cf4716e947",
+   "slug": "hothouse-flowers-90a66252",
+   "title": "Hothouse Flowers",
+   "act": "Hothouse Flowers",
+   "name": "Hothouse Flowers",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Hothouse_Flowers",
+   "extract": "Hothouse Flowers is an Irish rock band that combine traditional Irish music with influences from soul, gospel, and rock. Formed in 1985 in Dublin, they began as street performers. Their first album, People (1988), was the most successful debut album in Irish history, reaching No. 1 in Ireland and No. 2 in the UK. After two more albums and extensive touring, the group separated in 1994. Since reforming in 1998, the band members have sporadically toured and issued new songs, but also have pursued solo careers."
+  },
+  {
+   "id": "a53d9ef9-b554-4ab6-92cf-1d2f13772006",
+   "slug": "chasing-abbey-50bdb261",
+   "title": "Chasing Abbey",
+   "act": "Chasing Abbey",
+   "name": "Chasing Abbey",
+   "description": "Irish pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Chasing_Abbey",
+   "extract": "Chasing Abbey are an Irish music group combining electronic production with influences from traditional Irish music. They formed in Tullamore, Ireland, in 2016 and the group consists of members Ronan Bell, Jonathan Byrne and Ted Conway. The trio first gained attention with their debut single \"That Good Thing\" in 2017, securing the band a record deal with 3 Beat UK and Universal Music Group. Their next EP, The Oddessy Project, debuted at number one on the Irish Music Charts in 2019. Following the release of their song \"Oh My Johnny\" in 2023, Chasing Abbey signed a record deal with Warner and dance label Spinnin' Records. Their debut album, Cyber Celt, was released on 18th September 2026."
+  }
+ ]
+}

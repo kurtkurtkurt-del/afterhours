@@ -1,0 +1,36 @@
+{
+ "city": "new-york",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "6801b87a-8711-4836-80b9-cd6265a7d260",
+   "slug": "chief-keef-4d9aef4a",
+   "title": "Chief Keef",
+   "act": "Chief Keef",
+   "name": "Chief Keef",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Chief_Keef",
+   "extract": "Keith Farrelle Cozart, known professionally as Chief Keef, is an American rapper and record producer. Beginning his career as a teenager, he gained regional recognition for his mixtapes in the early 2010s. Cozart has since been credited with popularizing the hip hop subgenre drill among mainstream audiences and is considered a progenitor of the genre."
+  },
+  {
+   "id": "4a904746-81bd-468d-8717-537f3fcabd91",
+   "slug": "robert-glasper-7013fa12",
+   "title": "Robert Glasper",
+   "act": "Robert Glasper",
+   "name": "Robert Glasper",
+   "description": "American jazz pianist, record producer, and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Glasper",
+   "extract": "Robert Andre Glasper is an American pianist, record producer, songwriter, and musical arranger. His music embodies numerous musical genres, primarily centered on jazz. Glasper has won five Grammy Awards from 11 nominations."
+  },
+  {
+   "id": "0576f2a7-29a4-430c-a5a8-24042cd8b54e",
+   "slug": "mike-dawes-df4e5e3f",
+   "title": "Mike Dawes",
+   "act": "Mike Dawes",
+   "name": "Mike Dawes",
+   "description": "English guitarist (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Mike_Dawes",
+   "extract": "Michael Kenneth James Dawes is an English fingerstyle guitar player known for composing, arranging, and performing multiple parts simultaneously on the guitar. As of 2025, he has released four studio albums, one live record, one EP, and numerous singles."
+  }
+ ]
+}

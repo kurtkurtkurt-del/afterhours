@@ -1,0 +1,196 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "ba5a74b6-d783-447b-a201-dd6da7ab32de",
+   "slug": "third-eye-blind-halloween-2026-1da47559",
+   "title": "Third Eye Blind - Halloween 2026",
+   "act": "Third Eye Blind",
+   "name": "Third Eye Blind",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Third_Eye_Blind",
+   "extract": "Third Eye Blind (3EB) is an American rock band formed in San Francisco, California, in 1993. After years of lineup changes in the early and mid-1990s, the songwriting duo of Stephan Jenkins and Kevin Cadogan signed the band's first major-label recording contract with Elektra Records in 1996. The band released their self-titled debut album in 1997, with the band largely consisting of Jenkins, Cadogan, Arion Salazar, and Brad Hargreaves (drums). Shortly after the release of the band's second album in 1999, Blue, with the same lineup, Cadogan was released from the band under controversial circumstances."
+  },
+  {
+   "id": "e8a252e5-6089-4844-85b9-fa8df1d3c043",
+   "slug": "she-wants-revenge-e9f6e0f0",
+   "title": "She Wants Revenge",
+   "act": "She Wants Revenge",
+   "name": "She Wants Revenge",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/She_Wants_Revenge",
+   "extract": "She Wants Revenge is an American rock band, based in San Fernando Valley, California. Formed in 2004, the band is a duo of singer and guitarist Justin Warfield and multi-instrumentalist Adam Bravin. Their music has been influenced by post-punk, darkwave and gothic rock. The band has sold more than 300,000 records in the US."
+  },
+  {
+   "id": "b4bcbaf6-ced4-40a9-8ae6-0dae0d64a6f5",
+   "slug": "rawayana-donde-es-el-after-world-tour-4d3ab99c",
+   "title": "RAWAYANA - ¿Dónde es el after? World Tour",
+   "act": "RAWAYANA",
+   "name": "Rawayana",
+   "description": "Venezuelan musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Rawayana",
+   "extract": "Rawayana is a Venezuelan band formed in Caracas in 2007. The group's music combines a variety of musical genres including reggae, psychedelic, electronic, funk and salsa, and the members describe their style as \"trippy pop\". The band consists of Alberto \"Beto\" Montenegro, Antonio \"Tony\" Casas, Andrés \"Fofo\" Story and Alejandro \"Abeja\" Abeijón."
+  },
+  {
+   "id": "233ea83d-e0a0-4913-a136-67e31d7a76ea",
+   "slug": "pretty-sick-f3a985d4",
+   "title": "Pretty Sick",
+   "act": "Pretty Sick",
+   "name": "Pretty Sick",
+   "description": "American rock band from New York City",
+   "source_url": "https://en.wikipedia.org/wiki/Pretty_Sick",
+   "extract": "Pretty Sick is an American indie rock band from New York City, New York. It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz."
+  },
+  {
+   "id": "23a8161a-4465-4836-bf6f-83899b6ff636",
+   "slug": "chief-keef-305fb0b2",
+   "title": "CHIEF KEEF",
+   "act": "CHIEF KEEF",
+   "name": "Chief Keef",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Chief_Keef",
+   "extract": "Keith Farrelle Cozart, known professionally as Chief Keef, is an American rapper and record producer. Beginning his career as a teenager, he gained regional recognition for his mixtapes in the early 2010s. Cozart has since been credited with popularizing the hip hop subgenre drill among mainstream audiences and is considered a progenitor of the genre."
+  },
+  {
+   "id": "f284580c-339a-4554-80e5-b0816f377bce",
+   "slug": "kate-nash-b5ec803c",
+   "title": "Kate Nash",
+   "act": "Kate Nash",
+   "name": "Kate Nash",
+   "description": "British musician (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Kate_Nash",
+   "extract": "Kate Marie Nash is an English singer, songwriter, musician, and actress. Her singles \"Foundations\" (2007) and \"Do-Wah-Doo\" (2010) charted at numbers 2 and 15 on the UK singles chart and her albums Made of Bricks (2007) and My Best Friend Is You (2010) charted at numbers 1 and 8 on the UK Albums Chart."
+  },
+  {
+   "id": "5fded25c-f1bf-4d6a-a0b5-e718d2e5fa9f",
+   "slug": "young-miko-late-checkout-tour-b7e809c8",
+   "title": "Young Miko - Late Checkout Tour",
+   "act": "Young Miko",
+   "name": "Young Miko",
+   "description": "Puerto Rican rapper (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Young_Miko",
+   "extract": "María Victoria Ramírez de Arellano Cardona, known professionally as Young Miko, is a Puerto Rican rapper, singer, songwriter and former footballer. In 2022, she released her debut extended play, Trap Kitty, featuring Latin trap tracks. In April 2024, she released her debut studio album, Att., featuring collaborations with Feid, Jowell & Randy, Villano Antillano, Elena Rose, and Dei V. In November 2025, she released her second studio album, Do Not Disturb, which featured a collaboration with Eladio Carrión."
+  },
+  {
+   "id": "1f8b31e6-8429-4e6b-8145-3b9a04b9315c",
+   "slug": "fruit-bats-01612961",
+   "title": "Fruit Bats",
+   "act": "Fruit Bats",
+   "name": "Fruit Bats",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Fruit_Bats_(band)",
+   "extract": "Fruit Bats is an American indie rock band formed in 1997 in Chicago, Illinois, as the project of singer and songwriter Eric D. Johnson. Johnson is the band's sole permanent member, with various musicians joining the band in live and studio settings."
+  },
+  {
+   "id": "ce298dc7-4579-45c0-8da2-6d06aba69e3c",
+   "slug": "rainao-b1d54440",
+   "title": "RaiNao",
+   "act": "RaiNao",
+   "name": "RaiNao",
+   "description": "Puerto Rican singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/RaiNao",
+   "extract": "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter. Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop, shaped by her background in music theory and live performance. She got signed to Rimas Entertainment in 2024."
+  },
+  {
+   "id": "9e2ba618-fb64-4326-973b-0d56cf5c51b4",
+   "slug": "valentino-khan-ages-21-e9df0108",
+   "title": "Valentino Khan - Ages 21+",
+   "act": "Valentino Khan",
+   "name": "Valentino Khan",
+   "description": "American DJ and music producer",
+   "source_url": "https://en.wikipedia.org/wiki/Valentino_Khan",
+   "extract": "Valentino Khan is an American DJ and producer born and raised in Los Angeles. He is best known for releasing material through Diplo, Skrillex and Steve Aoki. His singles \"Deep Down Low\" and \"Make Some Noise\" peaked at number one and fifty respectively on the \"Billboard Twitter Emerging Artists\" chart."
+  },
+  {
+   "id": "24b3ecc7-a7ba-4256-b7d4-ff48876fd49c",
+   "slug": "sleeping-with-sirens-an-ending-in-itself-tour-2bc7b79d",
+   "title": "Sleeping With Sirens: An Ending In Itself Tour",
+   "act": "Sleeping With Sirens",
+   "name": "Sleeping with Sirens",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Sleeping_with_Sirens",
+   "extract": "Sleeping with Sirens is an American rock band originally formed in Orlando, Florida. The band currently consists of Kellin Quinn, Justin Hills, Nick Martin, Matty Best, and Tony Pizzuti. The band was formed in 2009 by Nick Trombino of Broadway and Brandon McMaster. The group is currently signed to Rise Records and have released eight full-length studio albums, one live album, and one acoustic EP."
+  },
+  {
+   "id": "226513da-2d1a-4b69-a146-b02ba3c8241b",
+   "slug": "the-wrecks-finally-outside-tour-10c58aa5",
+   "title": "The Wrecks - Finally : OUTSIDE Tour",
+   "act": "The Wrecks",
+   "name": "The Wrecks",
+   "description": "American pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Wrecks",
+   "extract": "The Wrecks are an American pop rock band based in Los Angeles, California. The band is currently made up of Nick Anderson, Nick \"Schmizz\" Schmidt, and Aaron Kelley. The group's first single \"Favorite Liar,\" released in 2016, was an instant success. However, their following increased exponentially after their debut album Infinitely Ordinary, featuring single \"Fvck Somebody,\" released in 2020."
+  },
+  {
+   "id": "b914b5ee-55d2-4f55-b4c0-fc9264172b50",
+   "slug": "olivia-rodrigo-the-unraveled-tour-818645a6",
+   "title": "Olivia Rodrigo: The Unraveled Tour",
+   "act": "Olivia Rodrigo",
+   "name": "Olivia Rodrigo",
+   "description": "American singer-songwriter and actress (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Olivia_Rodrigo",
+   "extract": "Olivia Isabel Rodrigo is an American singer-songwriter and actress. Rodrigo began her career as a child actress, appearing in commercials and the direct-to-video film An American Girl: Grace Stirs Up Success (2015). She rose to prominence with her leading roles in the Disney Channel series Bizaardvark (2016–2019) and the Disney+ series High School Musical: The Musical: The Series (2019–2022)."
+  },
+  {
+   "id": "9e268eff-395b-4778-8ef5-60064bdb3f0a",
+   "slug": "almost-monday-thank-god-it-s-almost-monday-21eb4ade",
+   "title": "almost monday - THANK GOD IT'S ALMOST MONDAY",
+   "act": "almost monday",
+   "name": "Almost Monday",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Almost_Monday",
+   "extract": "Almost Monday is an American indie pop band based in San Diego, California."
+  },
+  {
+   "id": "3738af3f-ad9d-4e22-b60c-6a60efbb6d72",
+   "slug": "deerhoof-ages-21-882dce50",
+   "title": "Deerhoof - Ages 21+",
+   "act": "Deerhoof",
+   "name": "Deerhoof",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/Deerhoof",
+   "extract": "Deerhoof is an American musical group formed in San Francisco in 1994. It consists of founding drummer Greg Saunier, bassist and singer Satomi Matsuzaki, and guitarists John Dieterich and Ed Rodriguez. Beginning as an improvised noise punk band, Deerhoof became widely renowned and influential in the 2000s through its self-produced albums."
+  },
+  {
+   "id": "842f3462-ec4f-4113-8632-3594ddcda902",
+   "slug": "michigander-0c050a69",
+   "title": "Michigander",
+   "act": "Michigander",
+   "name": "Michigander",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Michigander_(band)",
+   "extract": "Michigander is an American rock band created in 2014 from Kalamazoo, Michigan. It is the solo project centered around its vocalist, songwriter and multi-instrumentalist frontman, Jason Singer."
+  },
+  {
+   "id": "50e0ce39-cd96-4100-a45f-2569b4777898",
+   "slug": "new-constellations-it-comes-in-waves-tour-e851190a",
+   "title": "New Constellations: It Comes In Waves Tour",
+   "act": "New Constellations",
+   "name": "New Constellations",
+   "description": "American dream pop band",
+   "source_url": "https://en.wikipedia.org/wiki/New_Constellations",
+   "extract": "New Constellations is an American dream pop and synthwave duo based out of Portland, Oregon."
+  },
+  {
+   "id": "11c14ddd-f7c4-459b-b389-3be6868069a8",
+   "slug": "saosin-20-years-of-self-titled-07569986",
+   "title": "Saosin: 20 Years of Self-Titled",
+   "act": "Saosin",
+   "name": "Saosin",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Saosin",
+   "extract": "Saosin is an American rock band formed in 2003 in Orange County, California. The group originally consisted of Beau Burchell, Justin Shekoski, Zach Kennedy and Anthony Green. They released their debut EP, Translating the Name, in 2003. The following year, Green departed from the band and Cove Reber joined as vocalist. The band released their self-titled debut album in 2006 under Capitol Records."
+  },
+  {
+   "id": "880587fd-d3fe-46a1-9900-4f8a80f992f8",
+   "slug": "boston-manor-59313705",
+   "title": "Boston Manor",
+   "act": "Boston Manor",
+   "name": "Boston Manor",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Boston_Manor_(band)",
+   "extract": "Boston Manor are a British rock band formed in Blackpool, Lancashire, England, in March 2013. They released a first EP, Here/Now, through Never Mend Records on Bandcamp, and in 2014 they signed with Failure By Design Records for their second EP, Driftwood. In 2015 the band signed with Pure Noise Records: with them, they released another EP, Saudade, as well as their full-length albums Be Nothing (2016), Welcome to the Neighbourhood (2018) and Glue (2020). The band's sound blends emo with heavier influences, reminiscent of '90s grunge and early 2000s post-hardcore. The band have been nominated for Best British Breakthrough at Kerrang! Awards in 2018 and Welcome to the Neighbourhood received a nomination for Best Album Artwork at Heavy Music Awards in 2019."
+  }
+ ]
+}
