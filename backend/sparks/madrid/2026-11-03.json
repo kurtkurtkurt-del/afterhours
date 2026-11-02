@@ -1,0 +1,14 @@
+{
+  "city": "madrid",
+  "day": "2026-11-03",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "atlético – bayern at the metropolitano.", "de": "atlético – bayern im metropolitano.", "tr": "atlético – bayern, metropolitano'da." },
+      "line": { "en": "champions league matchday 4, atlético against bayern at 21:00. check the club for tickets; if they are gone, find a bar with the match on and go early.", "de": "champions league, spieltag 4: atlético gegen bayern um 21:00. tickets beim verein prüfen; wenn sie weg sind, eine bar mit dem spiel suchen und früh hingehen.", "tr": "şampiyonlar ligi 4. hafta, atlético – bayern saat 21:00'de. biletleri kulüpten kontrol et; yoksa maçın yayınlandığı bir bar bul ve erken git." },
+      "place": { "en": "metropolitano", "de": "metropolitano", "tr": "metropolitano" },
+      "hour": 21, "minute": 0,
+      "why": "Atlético vs Bayern, Champions League matchday 4, Tue 3 Nov 21:00 Madrid time, per a sport-flash fixture page and a ticket-resale listing (both agree on the time)."
+    }
+  ]
+}

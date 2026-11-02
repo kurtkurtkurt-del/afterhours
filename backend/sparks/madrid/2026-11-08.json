@@ -1,0 +1,14 @@
+{
+  "city": "madrid",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "el rastro, the sunday market.", "de": "el rastro, der sonntagsmarkt.", "tr": "el rastro, pazar günü." },
+      "line": { "en": "the old flea market from cascorro down ribera de curtidores, 09:00 to 15:00. go before ten, when it gets crowded; metro la latina.", "de": "der alte flohmarkt von der plaza cascorro die ribera de curtidores hinunter, 9 bis 15 uhr. vor zehn hin, dann wird es voll; u-bahn la latina.", "tr": "cascorro'dan ribera de curtidores boyunca inen eski bit pazarı, 09:00 – 15:00. on olmadan git, sonra kalabalıklaşır; metro la latina." },
+      "place": { "en": "el rastro", "de": "el rastro", "tr": "el rastro" },
+      "hour": 9, "minute": 30,
+      "why": "El Rastro runs every Sunday and holiday 09:00 to 15:00 from Plaza de Cascorro down Ribera de Curtidores, per mercadillos.org and visitmadrid.es; no closure found for Sun 8 Nov."
+    }
+  ]
+}
