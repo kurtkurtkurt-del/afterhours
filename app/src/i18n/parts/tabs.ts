@@ -1018,7 +1018,7 @@ export const tabs = {
   'account.photo.sending': { en: 'sending…', de: 'wird gesendet…', tr: 'gönderiliyor…' },
   'account.photo.change': { en: 'choose another', de: 'anderes wählen', tr: 'başkasını seç' },
   'account.photo.remove': { en: 'remove', de: 'entfernen', tr: 'kaldır' },
-  'account.photo.note': { en: 'you and your friends see it', de: 'du und deine freunde sehen es', tr: 'sen ve arkadaşların görür' },
+  'account.photo.note': { en: 'your friends see it, and members who open your card while your profile is discoverable', de: 'deine freunde sehen es, und mitglieder, die deine karte öffnen, solange dein profil auffindbar ist', tr: 'arkadaşların görür; profilin bulunabilir açıkken kartını açan üyeler de görür' },
   'account.photo.note.guest': { en: 'stays on this phone until you have an account', de: 'bleibt auf diesem handy, bis du ein konto hast', tr: 'hesap açana kadar bu telefonda kalır' },
   'account.photo.offline': {
     en: 'kept on this phone. it could not be sent; it goes up the next time you open your account',

@@ -129,6 +129,7 @@
     "112_guest_merge_secret.sql",
   "113_about_skips.sql",
   "114_group_asks.sql",
+  "115_photo_requests.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */

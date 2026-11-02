@@ -1,6 +1,6 @@
 # The promises afterhours' database keeps
 
-Fourteen sentences. Each says what a person can or cannot do, which SQL file enforces it
+Fifteen sentences. Each says what a person can or cannot do, which SQL file enforces it
 and which test proves it (file and the check's own words). `node test/setup.test.mjs`
 reads this table and refuses a row whose test file or check is not there, so a test
 that goes takes its promise with it, visibly. A change to who may do what edits this
@@ -22,6 +22,7 @@ file first, in the same commit. (The idea is KULA's `docs/promises.md`, 11.10.20
 | 12 | A burst is bounded: twenty lines a minute in a chat, forty requests a day; two hundred searches and three hundred cards an hour, ten notes of feedback. | `53_trust.sql`, `59_dms.sql`, `107_handles_and_read_limits.sql` | `trust.test.mjs` · "the table itself is closed" |
 | 13 | A deleted account leaves no row that names the person; the last admin cannot delete theirs, and since 111 only a sign-in from the last ten minutes can delete (`terms-delete-reauth.test.mjs` · "an old sign-in cannot delete"). | `12_profiles.sql`, `65_account_delete.sql`, `111_terms_and_delete_reauth.sql` | `delete-account.test.mjs` · "no row of any table still points at the person" |
 | 14 | A guest is taken over only by the phone that holds its one-time secret; knowing the guest id is not enough. | `112_guest_merge_secret.sql` | `guest-merge-secret.test.mjs` · "the same secret a second time → refused" |
+| 15 | Your photograph is seen by you, your friends, someone you are answering a request from, and, while your profile is discoverable, a member who opens your card by its handle; never by the one you asked, a guest, a closed account or across a block, and never as a list. | `24_photos.sql`, `115_photo_requests.sql` | `photo-requests.test.mjs` · "the one who asks does not see the face of the one asked" |
 
 Known gaps, written down so they are not forgotten:
 

@@ -121,6 +121,7 @@ const structure = [
   ["112_guest_merge_secret.sql", "A GUEST IS TAKEN OVER ONLY WITH ITS OWN SECRET"],
   ["113_about_skips.sql", "WHO IS THIS, LOOKED FOR AND NOT FOUND"],
   ["114_group_asks.sql", "A GROUP INVITES, IT DOES NOT GRAB"],
+  ["115_photo_requests.sql", "THE FACE ON A REQUEST, AND ON AN OPEN CARD"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the
