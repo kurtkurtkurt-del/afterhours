@@ -1,0 +1,14 @@
+{
+  "city": "valencia",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "rastro de valencia, the sunday flea market.", "de": "rastro de valencia, der sonntags-flohmarkt.", "tr": "rastro de valencia, pazar günü bit pazarı." },
+      "line": { "en": "the rastro runs sunday mornings on avinguda de tarongers, near the cabanyal. go before lunch; the stalls start packing up around 14:00.", "de": "der rastro läuft sonntagvormittags an der avinguda de tarongers, nahe dem cabanyal. am besten vor dem mittag hin; gegen 14 uhr packen die stände zusammen.", "tr": "rastro pazar sabahları avinguda de tarongers'ta, cabanyal yakınında kurulur. öğlenden önce git; tezgâhlar saat 14 civarında toplanmaya başlar." },
+      "place": { "en": "rastro de valencia", "de": "rastro de valencia", "tr": "rastro de valencia" },
+      "hour": 10, "minute": 0,
+      "why": "Rastro de Valencia, sundays 09:00 to 14:00 on avinguda de tarongers (valencia.es notice on the October move for the half marathon; El Español, 31.07.2026); no holiday on sun 8.11."
+    }
+  ]
+}
