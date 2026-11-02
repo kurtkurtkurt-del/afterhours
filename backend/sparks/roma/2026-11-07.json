@@ -1,0 +1,14 @@
+{
+  "city": "roma",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "roma – sassuolo at the olimpico.", "de": "roma – sassuolo im olimpico.", "tr": "roma – sassuolo, olimpico'da." },
+      "line": { "en": "serie a matchday 11, kick-off 20:45 at the stadio olimpico. check tickets on the as roma site before you go.", "de": "serie a, 11. spieltag, anpfiff 20:45 im stadio olimpico. tickets vorher auf der seite der as roma prüfen.", "tr": "serie a 11. hafta, saat 20:45'te stadio olimpico'da. gitmeden önce biletleri as roma'nın sitesinden kontrol et." },
+      "place": { "en": "stadio olimpico", "de": "stadio olimpico", "tr": "stadio olimpico" },
+      "hour": 20, "minute": 45,
+      "why": "Roma v Sassuolo, Serie A matchday 11, Sat 7 Nov 20:45 (Sky Sport and DAZN fixture listings, three sources agree on the time); Roma are the home side."
+    }
+  ]
+}

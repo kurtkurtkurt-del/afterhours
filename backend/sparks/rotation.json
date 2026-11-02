@@ -1,6 +1,6 @@
 {
  "about": "The week agent (.claude/prompts/spark-week.md) walks these cities in this order, per_night each morning, and moves next forward: 8 a night keeps the shared web-search budget (200 calls a run) enough for the second eye, always a week ahead. Edit the list to change who comes first.",
- "next": 37,
+ "next": 38,
  "per_night": 8,
  "cities": [
   {
@@ -605,6 +605,7 @@
   "barcelona": "2026-11-02",
   "valencia": "2026-11-02",
   "sevilla": "2026-11-02",
-  "milano": "2026-11-02"
+  "milano": "2026-11-02",
+  "roma": "2026-11-02"
  }
 }

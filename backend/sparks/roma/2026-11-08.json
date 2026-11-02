@@ -1,0 +1,27 @@
+{
+  "city": "roma",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "domenico rizzuto trio at the casa del jazz.",
+        "de": "domenico rizzuto trio im casa del jazz.",
+        "tr": "domenico rizzuto trio, casa del jazz'da."
+      },
+      "line": {
+        "en": "part of the 50th roma jazz festival, dedicated to miles davis. the trio plays disastri quotidiani at 18:00.",
+        "de": "teil des 50. roma jazz festival, das miles davis gewidmet ist. das trio spielt um 18:00 disastri quotidiani.",
+        "tr": "miles davis'e adanan 50. roma jazz festivali'nin parçası. trio saat 18:00'de disastri quotidiani çalıyor."
+      },
+      "place": {
+        "en": "casa del jazz",
+        "de": "casa del jazz",
+        "tr": "casa del jazz"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Domenico Rizzuto Trio, Disastri Quotidiani, Casa del Jazz, Sun 8 Nov 18:00, Roma Jazz Festival 2026 (RomaToday and MusiCulturA listings)."
+    }
+  ]
+}
