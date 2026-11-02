@@ -1,4 +1,1553 @@
 {
  "day": "2026-11-02",
- "skips": []
+ "skips": [
+  {
+   "id": "514c1d27-cfef-4de9-9122-c04e43e34930",
+   "slug": "tarkan-d5b28834",
+   "city": "abu-dhabi",
+   "why": "extract is a single sentence (name and nationality only); not enough for two facts"
+  },
+  {
+   "id": "3b7b1140-ad99-4a7d-8a52-a9c9bb7f4a7f",
+   "slug": "christopher-hall-pizazz-59924174",
+   "city": "amsterdam",
+   "why": "page is for an English television producer, not the performer named on this night"
+  },
+  {
+   "id": "4f817dc3-75e7-47e0-a1da-7eb9f6ef70db",
+   "slug": "alceu-valenca-9489655d",
+   "city": "amsterdam",
+   "why": "extract is a single sentence (name and roles only); not enough for two facts"
+  },
+  {
+   "id": "c8865552-e51f-481d-af3d-0891a4e99b39",
+   "slug": "overmono-pure-devotion-world-tour-d712e15e",
+   "city": "amsterdam",
+   "why": "extract is a single sentence; not enough for two facts"
+  },
+  {
+   "id": "ef2245cc-e4e8-4daa-a977-9d26e305d0fd",
+   "slug": "chris-klafford-712ac70c",
+   "city": "amsterdam",
+   "why": "extract is a single sentence (name and birthplace only); not enough for two facts"
+  },
+  {
+   "id": "aad47f7f-fe76-46b6-bf8c-a13f6e1cc98e",
+   "slug": "murat-boz-7aa14f8e",
+   "city": "ankara",
+   "why": "extract is a single sentence (name and roles only); not enough for two facts"
+  },
+  {
+   "id": "29226d15-be58-40b0-a406-bdbcd850d712",
+   "slug": "can-bonomo-69dfa096",
+   "city": "ankara",
+   "why": "extract is a single sentence; not enough for two facts"
+  },
+  {
+   "id": "f6f00103-3593-46fa-ac9f-9f5b5a634a66",
+   "slug": "undeath-ec8ee679",
+   "city": "koln",
+   "why": "extract is a single sentence; too thin to write a who-is-this text"
+  },
+  {
+   "id": "d90a08f3-d737-42db-83d4-733f13c8f793",
+   "slug": "flawed-mangoes-the-killswitch-memories-tour-fead85e7",
+   "city": "koln",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "1fd22220-6919-436d-90d3-1ca4a909d23b",
+   "slug": "son-mieux-24-hours-eu-album-tour-aa921f1a",
+   "city": "koln",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "ad5a4a46-623c-4a34-8a7a-fab3459a541a",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-2323901b",
+   "city": "koln",
+   "why": "night is a Depeche Mode tribute show (\"The DEPECHE MODE Experience\"); the extract describes the original band Strangelove, which disbanded in 1998"
+  },
+  {
+   "id": "a090c5e7-bd06-4005-90ac-7e044b2bb005",
+   "slug": "pa-sheehy-the-magic-we-found-tour-9e5ff76c",
+   "city": "koln",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "71c1a260-e90d-4e2b-9e01-7984e3ee587e",
+   "slug": "ayra-starr-starrgirl-world-tour-1122a2ef",
+   "city": "koln",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "38348e8b-3096-4990-ad9a-b3e05f14ff10",
+   "slug": "eleine-support-rexoria-serapis-project-efcb092b",
+   "city": "krakow",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "346af866-84dd-4181-a505-22c685070866",
+   "slug": "monsters-of-rock-tribute-fest-polish-priest-4-sz-54b97896",
+   "city": "krakow",
+   "why": "night is a tribute fest; the extract describes a tribute band, not the act itself"
+  },
+  {
+   "id": "3c0caea3-cc32-45ca-8d96-4da8d9fbc643",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-f88079c4",
+   "city": "leipzig",
+   "why": "night is a Depeche Mode tribute show (\"The DEPECHE MODE Experience\"); the extract describes the original band Strangelove, which disbanded in 1998"
+  },
+  {
+   "id": "9638363a-ed6f-43cb-a590-d50028f20ab1",
+   "slug": "schandmaul-sternensegler-tour-2027-b1e05410",
+   "city": "leipzig",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "1aa87fef-3360-4421-b624-3b799d4d8bbb",
+   "slug": "pieces-of-a-dream-30f727af",
+   "city": "london",
+   "why": "extract is a single sentence that only says what kind of group it is"
+  },
+  {
+   "id": "ee26d7c5-04f8-4896-bd43-e0425c9f0c91",
+   "slug": "tom-rush-143a8f7b",
+   "city": "london",
+   "why": "extract is a single sentence with no detail beyond the bio line"
+  },
+  {
+   "id": "8645a67e-214b-466c-af8a-3652bfcec87d",
+   "slug": "katalyst-halloween-vibes-00164c95",
+   "city": "los-angeles",
+   "why": "extract is identity plus one award line, too thin"
+  },
+  {
+   "id": "e6ad9f04-624c-4acc-a5d1-4d9e6436498e",
+   "slug": "parra-for-cuva-e58fec81",
+   "city": "los-angeles",
+   "why": "extract is identity plus one line on house production, too thin"
+  },
+  {
+   "id": "6655707d-812e-4a2d-998f-f78dc6ac2bf2",
+   "slug": "krs-one-c1694ac8",
+   "city": "los-angeles",
+   "why": "extract is a single sentence, identity and home city only"
+  },
+  {
+   "id": "45ff5d84-f785-4078-b281-e7cb65487300",
+   "slug": "stella-lefty-5236b6c9",
+   "city": "los-angeles",
+   "why": "extract is identity plus one chart line, too thin"
+  },
+  {
+   "id": "c586e367-7ed0-4667-88a8-7f1f81c770b4",
+   "slug": "alvaro-diaz-omakase-tour-3bf3c3d0",
+   "city": "los-angeles",
+   "why": "extract is a single sentence, identity only"
+  },
+  {
+   "id": "2a9f8403-cd8a-41a7-84cb-f65c7613fd80",
+   "slug": "joe-bonamassa-2026-europe-tour-4855cba2",
+   "city": "madrid",
+   "why": "extract is two sentences: identity plus one early-career line, not enough for two facts"
+  },
+  {
+   "id": "0085c613-2d04-4129-8887-7f087737f747",
+   "slug": "asher-white-88b651ea",
+   "city": "manchester",
+   "why": "extract is a single sentence; not enough for two facts"
+  },
+  {
+   "id": "b03f2507-a900-4256-9e61-29ac5970e819",
+   "slug": "spike-fuck-d5665f5d",
+   "city": "manchester",
+   "why": "extract is a single sentence; not enough for two facts"
+  },
+  {
+   "id": "f0ab6b74-d98a-4e15-8f3f-2d4bb0f711c6",
+   "slug": "skye-newman-91db1666",
+   "city": "manchester",
+   "why": "extract is a single sentence; not enough for two facts"
+  },
+  {
+   "id": "251a9ac3-c574-4a87-a691-5adb5b220735",
+   "slug": "ryan-beatty-83a9105e",
+   "city": "manchester",
+   "why": "extract is two short sentences giving only a birthplace and residence; not enough for two distinct facts"
+  },
+  {
+   "id": "7098f237-817b-4b56-af0a-2e4c0526f073",
+   "slug": "greg-mendez-b0e9f10f",
+   "city": "manchester",
+   "why": "extract is a single sentence; not enough for two facts"
+  },
+  {
+   "id": "b89c5d48-8db3-4c0c-a68e-81eda55241c8",
+   "slug": "flawed-mangoes-03a76007",
+   "city": "manchester",
+   "why": "extract is a single sentence; not enough for two facts"
+  },
+  {
+   "id": "7bae1f12-abdc-4382-9966-bb214c9ddac1",
+   "slug": "kelsey-lu-119094ad",
+   "city": "manchester",
+   "why": "extract is a single sentence; not enough for two facts"
+  },
+  {
+   "id": "7a5b7548-dd40-4e79-b584-34b2c89d2e28",
+   "slug": "amtrac-2a43847c",
+   "city": "miami",
+   "why": "extract is a single sentence; not enough for two facts"
+  },
+  {
+   "id": "2f9b8555-4213-4f4b-83c3-5d865e77161e",
+   "slug": "china-moses-jazzmi-2026-4728836e",
+   "city": "milano",
+   "why": "extract is one identity sentence only (American singer and television host), too thin to write"
+  },
+  {
+   "id": "be5d2566-61b3-4b04-a3ff-d4bbd5e13a3d",
+   "slug": "mt-jones-jazzmi-2026-687283ad",
+   "city": "milano",
+   "why": "extract is two short sentences with a single fact (Sofa Session appearance), too thin"
+  },
+  {
+   "id": "aa6be7c5-91eb-4f4a-b364-d79b1b1e3cd1",
+   "slug": "sergio-cammariere-jazzmi-2026-c445eb28",
+   "city": "milano",
+   "why": "extract is two short sentences with one fact (12 studio albums), too thin"
+  },
+  {
+   "id": "b1ec4850-0448-4970-8087-88bd4a82b450",
+   "slug": "benjamin-clementine-allo-sbagliato-2f1a7874",
+   "city": "milano",
+   "why": "extract is one identity sentence only (British actor, composer, and musician), too thin"
+  },
+  {
+   "id": "b232415a-c088-4475-927d-b3d139abb2f4",
+   "slug": "muse-the-wow-signal-europa-tour-d7620afb",
+   "city": "milano",
+   "why": "extract is short (formation and member names only), too thin"
+  },
+  {
+   "id": "dc84e6ea-f55f-4ba1-8d5d-1094c6d5415b",
+   "slug": "omar-courtz-d69b4040",
+   "city": "monterrey",
+   "why": "extract is one identity sentence only (Puerto Rican singer and songwriter), too thin"
+  },
+  {
+   "id": "aa158dc4-b369-4c6e-a6de-9bd61fe46a65",
+   "slug": "leire-martinez-00e758ce",
+   "city": "monterrey",
+   "why": "extract is one sentence with one fact (lead vocalist of La Oreja de Van Gogh), too thin"
+  },
+  {
+   "id": "1ae01a01-bdb2-4edd-b7e9-5486dbdac1f7",
+   "slug": "caloncho-89ae745d",
+   "city": "monterrey",
+   "why": "extract is one identity sentence only (Mexican musician and singer), too thin"
+  },
+  {
+   "id": "36734def-3427-466e-a319-f0220e74a4df",
+   "slug": "david-bisbal-tour-eternos-2026-4f5936cc",
+   "city": "monterrey",
+   "why": "extract has one substantive fact (runner-up on Operación Triunfo), too thin"
+  },
+  {
+   "id": "663a2d2d-ceb6-4d30-a32a-c60ed2b0a6cb",
+   "slug": "la-gusana-ciega-claroscuro-07996f44",
+   "city": "monterrey",
+   "why": "extract is one identity sentence with member names, too thin"
+  },
+  {
+   "id": "70786493-9fb4-4e7e-8a69-ed5e1a0c9d37",
+   "slug": "carlos-sadness-20eb72c8",
+   "city": "monterrey",
+   "why": "extract is one identity sentence only (Spanish singer, songwriter and illustrator), too thin"
+  },
+  {
+   "id": "676038ba-6bcb-40eb-b5df-f270207808b0",
+   "slug": "espinoza-paz-7a59af8c",
+   "city": "monterrey",
+   "why": "extract is one sentence with identity and one award, too thin"
+  },
+  {
+   "id": "4e9a9e84-3dc3-45bb-8bd1-0afefbaa3ec6",
+   "slug": "silvio-rodriguez-13c5bac8",
+   "city": "monterrey",
+   "why": "extract is one identity sentence only (Cuban musician, leader of Nueva Trova), too thin"
+  },
+  {
+   "id": "66864569-2978-4873-902b-a23d946fe668",
+   "slug": "new-constellations-f7b41ac7",
+   "city": "montreal",
+   "why": "extract is a single sentence; not enough for two facts"
+  },
+  {
+   "id": "0883cf21-a7ac-4142-8401-fb638ed3bdac",
+   "slug": "the-darcys-a9750509",
+   "city": "montreal",
+   "why": "extract is a single sentence; not enough for two facts"
+  },
+  {
+   "id": "4a2b0bd9-37bd-4729-be0d-c678829689c4",
+   "slug": "tul8te-world-tour-3c4b8b51",
+   "city": "montreal",
+   "why": "extract is two sentences, and the second only lists releases; too thin"
+  },
+  {
+   "id": "3198e37a-4332-4d0e-a52e-7ed33050e80b",
+   "slug": "yung-gravy-the-joyrider-tour-6d912b68",
+   "city": "nashville",
+   "why": "extract is a single sentence; not enough for two facts"
+  },
+  {
+   "id": "6a2a71e5-4042-484e-ad7a-d1f8496f3aa2",
+   "slug": "joe-jordan-7ced0e3e",
+   "city": "nashville",
+   "why": "extract describes a historical pianist and publisher in the past tense; reads as a namesake, not the act on this night"
+  },
+  {
+   "id": "3f1a8692-b468-4c0f-9773-3a7f6376f5c0",
+   "slug": "alash-ensemble-a4aef475",
+   "city": "new-orleans",
+   "why": "extract is a single sentence; not enough for two facts"
+  },
+  {
+   "id": "3e55dcb9-c0e8-4616-ba9b-c66244c04d73",
+   "slug": "tayc-f3caabd7",
+   "city": "oslo",
+   "why": "extract is a single sentence giving only one fact (French singer); too thin for two facts"
+  },
+  {
+   "id": "1e4db758-2f26-43e5-957d-65072282495b",
+   "slug": "stein-torleif-bjella-innegubbens-dr-ymejul-10db9651",
+   "city": "oslo",
+   "why": "extract is a single sentence giving only one fact (Norwegian songwriter, singer and guitarist); too thin"
+  },
+  {
+   "id": "ecc5fb8f-0b2d-4b7c-b2fd-9f153ea2b2c7",
+   "slug": "death-by-unga-bunga-1450561a",
+   "city": "oslo",
+   "why": "extract is a single sentence giving only genre and origin; too thin for two facts"
+  },
+  {
+   "id": "e80ef71a-385e-4eb3-87eb-d7317c3ef84f",
+   "slug": "the-darcys-e740361d",
+   "city": "ottawa",
+   "why": "extract is a single sentence giving only genre, members and origin; too thin for two facts"
+  },
+  {
+   "id": "0c25b28d-e96c-41d3-a5db-340d9b1e45f9",
+   "slug": "shakey-graves-fondness-etc-tour-1e571ceb",
+   "city": "ottawa",
+   "why": "extract is a single sentence giving only that he is a musician and actor from Austin; too thin"
+  },
+  {
+   "id": "9e268eff-395b-4778-8ef5-60064bdb3f0a",
+   "slug": "almost-monday-thank-god-it-s-almost-monday-21eb4ade",
+   "city": "philadelphia",
+   "why": "extract is a single sentence giving only genre and base city; too thin for two facts"
+  },
+  {
+   "id": "50e0ce39-cd96-4100-a45f-2569b4777898",
+   "slug": "new-constellations-it-comes-in-waves-tour-e851190a",
+   "city": "philadelphia",
+   "why": "extract is a single sentence giving only genre and base city; too thin for two facts"
+  },
+  {
+   "id": "1b0e2dfa-530b-44eb-8515-30719d80e863",
+   "slug": "tedua-palasport-2027-5e2f6373",
+   "city": "roma",
+   "why": "extract is a single sentence giving only the name and profession; not enough for two facts"
+  },
+  {
+   "id": "aa15fcfb-5c59-4baa-9409-e6226086ef1e",
+   "slug": "gabry-ponte-circotron-the-dance-show-86649744",
+   "city": "roma",
+   "why": "extract is a single sentence; the only fact beyond the profession is membership of Eiffel 65, too thin for two facts"
+  },
+  {
+   "id": "52c86307-5b99-4160-857f-5ae45b0e9137",
+   "slug": "blok3-live-arena-tour-2026-27-5082897a",
+   "city": "rotterdam",
+   "why": "extract is a single sentence; too thin for two facts"
+  },
+  {
+   "id": "0821f4a7-23a5-43a6-b765-cd8b124528ad",
+   "slug": "luka-bloom-d05912ca",
+   "city": "rotterdam",
+   "why": "extract is thin: the identity line and that he is the younger brother of Christy Moore only"
+  },
+  {
+   "id": "f2142d24-d107-4f29-9874-2b0a7ea5942d",
+   "slug": "the-bootleg-beatles-53b2c73b",
+   "city": "rotterdam",
+   "why": "page is a Beatles tribute band, not the act itself"
+  },
+  {
+   "id": "d85b4ad8-f976-4802-9dec-a14816ce0621",
+   "slug": "the-musical-box-522b885a",
+   "city": "san-francisco",
+   "why": "page is a Genesis tribute band, not the act itself"
+  },
+  {
+   "id": "ce7711ba-7c74-4a4e-abcd-9f8713f5beb2",
+   "slug": "the-liminanas-500af98d",
+   "city": "san-francisco",
+   "why": "extract is a single sentence; too thin for two facts"
+  },
+  {
+   "id": "989c3c40-e2a7-4675-9432-7034434e415f",
+   "slug": "squirrel-flower-4e0bb686",
+   "city": "san-francisco",
+   "why": "extract is a single sentence giving only the stage name and nationality"
+  },
+  {
+   "id": "fc31d929-7983-4801-9e4b-0bbc940ded11",
+   "slug": "avery-cochrane-e15f0be9",
+   "city": "seattle",
+   "why": "extract is a single sentence; too thin for two facts"
+  },
+  {
+   "id": "e22edffc-4fcd-4b98-add0-2ae76d4ca4b5",
+   "slug": "wave-to-earth-the-pieces-tour-1822cb18",
+   "city": "singapore",
+   "why": "extract is two sentences, too thin for a who text and two distinct facts"
+  },
+  {
+   "id": "356835e6-3acd-41f3-84bd-8941101abf6d",
+   "slug": "six60-right-here-right-now-asia-2026-tour-in-sin-77ec3fde",
+   "city": "singapore",
+   "why": "extract is two sentences, too thin for a who text and two distinct facts"
+  },
+  {
+   "id": "b782199b-6331-43f0-a2c4-392940b335e6",
+   "slug": "c-o-f-f-i-n-78e11237",
+   "city": "stockholm",
+   "why": "extract is one sentence, identity only"
+  },
+  {
+   "id": "849e35e2-fe72-44fb-b1f0-94c51bc00b7f",
+   "slug": "bi-2-df0c1960",
+   "city": "stockholm",
+   "why": "extract is two sentences, too thin for a who text and two distinct facts"
+  },
+  {
+   "id": "2d686c9e-4888-438a-b4e3-3e185500d4d0",
+   "slug": "noah-gundersen-a336be8c",
+   "city": "stockholm",
+   "why": "extract is one sentence, identity only"
+  },
+  {
+   "id": "9d2b43d5-9233-4a60-ba17-5d29d6f4740f",
+   "slug": "dirty-honey-b08e2396",
+   "city": "stockholm",
+   "why": "extract is two sentences, too thin for a who text and two distinct facts"
+  },
+  {
+   "id": "fcd44d7a-2c20-43c4-bd92-c7e57cd7fc7a",
+   "slug": "dea-matrona-d0b65e4f",
+   "city": "stockholm",
+   "why": "extract is one sentence, identity only"
+  },
+  {
+   "id": "0603109c-f515-411b-9306-51c884c53358",
+   "slug": "dead-poet-society-1fe0921d",
+   "city": "stockholm",
+   "why": "extract is one sentence, identity only"
+  },
+  {
+   "id": "579266f6-a7cd-47ad-84e0-2523b35b7d18",
+   "slug": "marika-hackman-3501f9c2",
+   "city": "stockholm",
+   "why": "extract is one sentence, identity only"
+  },
+  {
+   "id": "97dd84e6-fea7-4ecd-b847-682a677708c3",
+   "slug": "nickelback-everything-under-the-sun-tour-8739265e",
+   "city": "stuttgart",
+   "why": "extract is two sentences, too thin for a who text and two distinct facts"
+  },
+  {
+   "id": "17ee822b-df41-46b0-85f2-4ad0125d5475",
+   "slug": "andreas-gabalier-arena-tour-2027-1abf0d22",
+   "city": "stuttgart",
+   "why": "extract is one sentence, identity only"
+  },
+  {
+   "id": "a624c260-49f9-476d-83e3-f3820438ec56",
+   "slug": "gabry-ponte-circotron-the-dance-show-49eea527",
+   "city": "torino",
+   "why": "extract is one sentence, identity only"
+  },
+  {
+   "id": "85d0c367-223a-4286-bd94-075721cebe25",
+   "slug": "gianna-nannini-giannagold-a3b38127",
+   "city": "torino",
+   "why": "extract is two sentences, too thin for a who text and two distinct facts"
+  },
+  {
+   "id": "cfd0243d-95e5-4329-abf1-1459493d65b7",
+   "slug": "new-constellations-it-comes-in-waves-tour-26cc628d",
+   "city": "toronto",
+   "why": "extract is one sentence, identity only"
+  },
+  {
+   "id": "3b1798d7-87a9-4ce1-bc24-6b3de424c28c",
+   "slug": "sweeping-promises-28e1ebf0",
+   "city": "toronto",
+   "why": "extract is two sentences, too thin for a who text and two distinct facts"
+  },
+  {
+   "id": "bd96ec2e-d07b-4e63-bfdc-5d7426794240",
+   "slug": "shyne-2622-lgnd-tour-7fa2a89a",
+   "city": "toronto",
+   "why": "extract describes Shyne as a Belizean politician and former rapper, not the rap act this tour is for"
+  },
+  {
+   "id": "4478c68c-e171-483e-ac9a-6a1eb3b2631b",
+   "slug": "journey-final-frontier-tour-an-evening-with-0b564aa2",
+   "city": "toronto",
+   "why": "extract is two sentences, too thin for a who text and two distinct facts"
+  },
+  {
+   "id": "a89e50c4-7bdf-45cf-9f71-40d83ba9168f",
+   "slug": "blake-whiten-something-to-say-tour-bc586a6a",
+   "city": "toronto",
+   "why": "extract is two sentences, too thin for a who text and two distinct facts"
+  },
+  {
+   "id": "2c54c104-584b-4d99-830f-77fcf833f178",
+   "slug": "jody-wisternoff-89192cd6",
+   "city": "toronto",
+   "why": "extract is one sentence, identity only"
+  },
+  {
+   "id": "fd23b22f-feef-481c-911e-e8b2b9577a8d",
+   "slug": "artbat-de6c76bd",
+   "city": "toronto",
+   "why": "extract is two sentences, too thin for a who text and two distinct facts"
+  },
+  {
+   "id": "f8bc0178-ae8c-485b-b3a0-1dda76b0f04a",
+   "slug": "parra-for-cuva-5ead5023",
+   "city": "vancouver",
+   "why": "extract too thin: two short sentences, no dates, places or works beyond the house production line"
+  },
+  {
+   "id": "25567129-450a-4b8f-971c-24ad3cb64bbd",
+   "slug": "delhi-2-dublin-20th-anniversary-tour-finale-823cb87d",
+   "city": "vancouver",
+   "why": "extract is a single sentence; the 20th anniversary finale is not in the extract, so no second distinct fact"
+  },
+  {
+   "id": "67dc3f32-989b-42cc-b175-2b371d7b9698",
+   "slug": "boy-golden-good-goddamn-another-tour-40053d00",
+   "city": "vancouver",
+   "why": "extract is a single sentence; no second distinct fact"
+  },
+  {
+   "id": "b04315d0-9c10-49e9-9319-862d05d28792",
+   "slug": "allison-russell-fa589a66",
+   "city": "vancouver",
+   "why": "extract is one short sentence (81 chars)"
+  },
+  {
+   "id": "3cf3a485-6da9-491c-a26b-486b88b5f3aa",
+   "slug": "houndmouth-the-lordy-tour-d0685f3b",
+   "city": "vancouver",
+   "why": "extract is a single sentence; no second distinct fact"
+  },
+  {
+   "id": "da304b98-bd19-444d-91f4-a8cae32e8a9e",
+   "slug": "sassy-009-6824f54b",
+   "city": "vancouver",
+   "why": "extract is a single short sentence (101 chars)"
+  },
+  {
+   "id": "729f0bfc-ec9c-4c66-a919-c348a83fb7a2",
+   "slug": "eleine-support-rexoria-serapis-project-1ea5963d",
+   "city": "warszawa",
+   "why": "extract is a single sentence; no second distinct fact"
+  },
+  {
+   "id": "fc7bb445-c6e7-4e1c-a83f-72152ce49e77",
+   "slug": "erdling-b4178b2b",
+   "city": "warszawa",
+   "why": "extract is a single short sentence (94 chars)"
+  },
+  {
+   "id": "68d334ff-f58a-4813-b8fa-2fa951cdc6d9",
+   "slug": "the-last-internationale-ee41cf83",
+   "city": "warszawa",
+   "why": "extract is a single short sentence (125 chars)"
+  },
+  {
+   "id": "31a8e295-4f9e-419c-84a7-439fc6d3f4e6",
+   "slug": "pretty-sick-b2bec720",
+   "city": "washington",
+   "why": "extract is two short sentences (origin and line-up); too thin for who plus two facts"
+  },
+  {
+   "id": "c6aba8c4-8d84-44d9-b3e1-0a0700003fd5",
+   "slug": "hovvdy-9bc49e8c",
+   "city": "washington",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "bf8589ef-50d0-41bd-bc32-b990a211a94c",
+   "slug": "hiss-golden-messenger-i-m-people-tour-52f0c34b",
+   "city": "washington",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "019a5afa-8045-4f7f-8f66-9877524e7505",
+   "slug": "michigander-179ebdd1",
+   "city": "washington",
+   "why": "extract is two short sentences and the second only restates the first; too thin"
+  },
+  {
+   "id": "5e2a5081-f35d-44dc-8bac-09dcb4281216",
+   "slug": "sadurn-ae9705d4",
+   "city": "washington",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "dde2c438-b731-4142-842b-1f2161713f12",
+   "slug": "sombr-you-are-the-reason-tour-eba94a9d",
+   "city": "washington",
+   "why": "extract is a single sentence with no further facts"
+  },
+  {
+   "id": "7c9a0b9d-1697-4bab-ba1c-a27d83f1275c",
+   "slug": "new-constellations-it-comes-in-waves-tour-1ed64edf",
+   "city": "washington",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "205d9a43-bbe1-480b-ae65-e717240d787b",
+   "slug": "freak-slug-7efb24cb",
+   "city": "washington",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "ca750c6a-1ff4-4a01-9729-0b1974e16401",
+   "slug": "erdling-131a50d6",
+   "city": "wien",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "0f1b66f9-9c5b-439f-8bb0-a91247b6dc47",
+   "slug": "son-mieux-67a20938",
+   "city": "wien",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "67657b9c-d7fd-40e6-b90c-bf7e6b98a55c",
+   "slug": "alela-diane-2bf00b75",
+   "city": "wien",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "d30ffaa5-ddcb-44a8-98fa-d96fa18eb4e5",
+   "slug": "the-veils-fragile-world-d8bd4a67",
+   "city": "wien",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "6323baf4-1f49-4029-b565-95009063884e",
+   "slug": "too-many-zooz-audio-lipstick-tour-cfce1750",
+   "city": "wroclaw",
+   "why": "extract is a single sentence; too thin"
+  },
+  {
+   "id": "c66eee44-fa39-4f73-b980-2bdcdd7822d0",
+   "slug": "yung-gravy-the-joyrider-tour-4766cb4a",
+   "city": "atlanta",
+   "why": "extract is a single sentence, too thin for two facts"
+  },
+  {
+   "id": "cd0d6aa4-557c-43f9-9598-eb2ce32b0c60",
+   "slug": "almost-monday-5eaed0f6",
+   "city": "atlanta",
+   "why": "extract is a single sentence, too thin for two facts"
+  },
+  {
+   "id": "a2cea1cf-a7a6-43e4-8c5b-1104b655471e",
+   "slug": "shyne-bc63a135",
+   "city": "atlanta",
+   "why": "extract describes a Belizean politician who is a former rapper; not clearly the act on this night"
+  },
+  {
+   "id": "9ef04530-c1ef-4450-9514-8002cf9d512a",
+   "slug": "joe-jordan-649c774f",
+   "city": "atlanta",
+   "why": "extract describes a pianist, composer and music publisher; not clearly a performing act on this night (possible namesake)"
+  },
+  {
+   "id": "6c970070-db29-4ba5-8153-1c1aa66ae8b9",
+   "slug": "the-army-the-navy-8ff0d8ae",
+   "city": "atlanta",
+   "why": "extract is a single sentence, too thin for two facts"
+  },
+  {
+   "id": "eac40a23-8f94-4a8c-a74c-46eea0ff4a2a",
+   "slug": "movements-happier-now-usa-tour-e9639882",
+   "city": "atlanta",
+   "why": "extract is a single sentence, too thin for two facts"
+  },
+  {
+   "id": "e351af01-9a77-46af-ab06-781310fcc493",
+   "slug": "catch-your-breath-not-broken-enough-tour-8ff4b406",
+   "city": "atlanta",
+   "why": "extract is a single sentence, too thin for two facts"
+  },
+  {
+   "id": "3e0a4f79-b864-46c6-b963-1e2a3056d955",
+   "slug": "honestav-the-sweet-american-boy-tour-ae788d60",
+   "city": "atlanta",
+   "why": "extract is a single sentence, too thin for two facts"
+  },
+  {
+   "id": "f1b3a3e3-ca52-4f7d-aa97-75e9b97f63f7",
+   "slug": "deer-tick-98bb9987",
+   "city": "atlanta",
+   "why": "extract is a single sentence, too thin for two facts"
+  },
+  {
+   "id": "31500f85-28f6-47eb-8449-3760b1b69cd1",
+   "slug": "art-garfunkel-efc38912",
+   "city": "austin",
+   "why": "extract is a single sentence, too thin for two facts"
+  },
+  {
+   "id": "71b0cc80-7b07-4d3f-b93b-ed32442d914d",
+   "slug": "ikkimel-842679f4",
+   "city": "zurich",
+   "why": "extract is a single sentence (name, nationality, home district); too thin for two facts"
+  },
+  {
+   "id": "455ed067-e126-4470-9238-e6f23df77ac3",
+   "slug": "son-mieux-e27aba8a",
+   "city": "zurich",
+   "why": "extract is a single sentence (origin and leader); too thin for two facts"
+  },
+  {
+   "id": "03c51dea-5c7c-4fc7-bf06-7f0c24e84955",
+   "slug": "filow-3d6410c9",
+   "city": "zurich",
+   "why": "extract is a single sentence (influencer and musician); too thin for two facts"
+  },
+  {
+   "id": "16d8d826-b8d7-481f-baaa-ca82d87ffef3",
+   "slug": "the-scratch-856a6663",
+   "city": "zurich",
+   "why": "extract is a single sentence (origin and genre); too thin for two facts"
+  },
+  {
+   "id": "d5ca4a0c-6aff-40ce-a629-8c6c31778d92",
+   "slug": "ayra-starr-starrgirl-world-tour-642e6389",
+   "city": "zurich",
+   "why": "extract is a single sentence (birth name and profession); too thin for two facts"
+  },
+  {
+   "id": "7a85378c-cac6-4464-90e3-b892769328c1",
+   "slug": "almost-monday-46eb0864",
+   "city": "zurich",
+   "why": "extract is a single sentence (genre and base); too thin for two facts"
+  },
+  {
+   "id": "3557bb2c-1eb9-40bc-b158-213ebfcd7580",
+   "slug": "undeath-a856ba61",
+   "city": "berlin",
+   "why": "extract is a single sentence with no further claims to write from"
+  },
+  {
+   "id": "a36d2983-7291-47e4-8f16-a96662b1f324",
+   "slug": "uche-yara-bodyscanner-tour-2026-673bc1a8",
+   "city": "berlin",
+   "why": "extract is a single sentence with no further claims to write from"
+  },
+  {
+   "id": "263ee02b-fadf-43dd-a5ed-3477ef4495c1",
+   "slug": "son-mieux-24-hours-eu-album-tour-835a240e",
+   "city": "berlin",
+   "why": "extract is a single sentence with no further claims to write from"
+  },
+  {
+   "id": "4e54bd82-ff8a-4f90-b2fb-c6db5316b23a",
+   "slug": "overmono-pure-devotion-world-tour-03d78621",
+   "city": "berlin",
+   "why": "extract is a single sentence with no further claims to write from"
+  },
+  {
+   "id": "394c67d6-ed99-4585-8b2a-9eff54ecbe97",
+   "slug": "overmono-pure-devotion-world-tour-gallery-seat-577de8d2",
+   "city": "berlin",
+   "why": "extract is a single sentence with no further claims to write from (same act as 4e54bd82)"
+  },
+  {
+   "id": "eaccbc2a-bf99-4989-a56a-0c1ceb7a0d3a",
+   "slug": "kelsey-lu-so-help-me-god-tour-7e0100f0",
+   "city": "berlin",
+   "why": "extract is a single sentence with no further claims to write from"
+  },
+  {
+   "id": "7deb1129-9417-440a-9592-b14c77fddc1c",
+   "slug": "undeath-d2ee39b8",
+   "city": "birmingham",
+   "why": "extract is a single sentence with no further claims to write from"
+  },
+  {
+   "id": "a124b692-5a8e-4757-89f0-8d2a946d655b",
+   "slug": "aj-mclean-e3f46cbd",
+   "city": "boston",
+   "why": "extract is two short sentences under 150 characters, too thin to support two facts"
+  },
+  {
+   "id": "b2f22a6d-4d46-4701-8f7a-9b78dd15385d",
+   "slug": "aj-mclean-the-better-man-tour-5a5782d1",
+   "city": "boston",
+   "why": "extract is two short sentences under 150 characters, too thin to support two facts"
+  },
+  {
+   "id": "bb26d4f3-db88-4aea-aa6a-e9178eca6eab",
+   "slug": "kylie-morgan-healed-cowgirl-tour-fa8bdc3e",
+   "city": "boston",
+   "why": "extract is a single sentence, too thin to support two facts"
+  },
+  {
+   "id": "2c3b441f-c904-4b31-976c-80cdc78ca6de",
+   "slug": "almost-monday-thank-god-it-s-almost-monday-1a01a120",
+   "city": "boston",
+   "why": "extract is a single sentence, too thin to support two facts"
+  },
+  {
+   "id": "2b319a45-0596-45fe-8e4d-d22c1b63f619",
+   "slug": "camelphat-577073e1",
+   "city": "boston",
+   "why": "extract is a single sentence, too thin to support two facts"
+  },
+  {
+   "id": "bd1a733f-d7ec-49d7-86ff-6be428f12d9c",
+   "slug": "overmono-pure-devotion-world-tour-3ece987f",
+   "city": "brussel",
+   "why": "extract is a single sentence, too thin to support two facts"
+  },
+  {
+   "id": "613672be-c376-4566-875f-327e5ea8abad",
+   "slug": "i-muvrini-5f01f74e",
+   "city": "brussel",
+   "why": "extract is a single sentence, too thin to support two facts"
+  },
+  {
+   "id": "b67fe5e3-3466-408d-b8a7-de5589514380",
+   "slug": "the-last-internationale-dde5e1cd",
+   "city": "brussel",
+   "why": "extract is a single sentence, too thin to support two facts"
+  },
+  {
+   "id": "aa6b2ed4-eb53-4d2f-93b0-82d01eea5a96",
+   "slug": "allison-russell-in-the-hour-of-chaos-tour-f72733e9",
+   "city": "calgary",
+   "why": "extract is a single sentence, too thin to support two facts"
+  },
+  {
+   "id": "7e64a3c3-383d-40cf-ade3-342ff73ab60b",
+   "slug": "sonreal-here-goes-nothing-tour-88d4879e",
+   "city": "calgary",
+   "why": "extract is a single sentence, too thin to support two facts"
+  },
+  {
+   "id": "77368228-a384-443d-97bf-6cd3988b012d",
+   "slug": "the-darcys-the-good-time-tour-7fa127a7",
+   "city": "calgary",
+   "why": "extract is a single sentence, too thin to support two facts"
+  },
+  {
+   "id": "e6b19db5-281b-4709-a806-244ae2e90e77",
+   "slug": "dumpstaphunk-2934f924",
+   "city": "chicago",
+   "why": "extract is a single sentence, too thin to support two facts"
+  },
+  {
+   "id": "7718f0df-1d01-4b07-8a80-28733faa28ec",
+   "slug": "new-constellations-it-comes-in-waves-tour-with-v-a71c4b45",
+   "city": "chicago",
+   "why": "extract is a single sentence, too thin to support two facts"
+  },
+  {
+   "id": "6ec00e7a-01ea-46ee-888d-7abc41190e97",
+   "slug": "sombr-you-are-the-reason-tour-cc0882a0",
+   "city": "chicago",
+   "why": "extract is a single sentence, too thin to support two facts"
+  },
+  {
+   "id": "9f1d50a8-3292-4b5e-a279-482ade17c196",
+   "slug": "omar-courtz-70ce6cd4",
+   "city": "ciudad-de-mexico",
+   "why": "extract is a single sentence; too thin for two facts"
+  },
+  {
+   "id": "56b7a9f3-3854-4bd1-96bc-5938f2e8cf6f",
+   "slug": "liana-flores-e3fa9aee",
+   "city": "ciudad-de-mexico",
+   "why": "extract is two sentences and the release sentence uses a title with an exclamation mark (The Water's Fine!), so no clean verbatim fact can be given"
+  },
+  {
+   "id": "01bcfe4c-ff85-4333-a407-dc59957178f6",
+   "slug": "dj-jean-76a9bb01",
+   "city": "cork",
+   "why": "extract is a single sentence; too thin for two facts"
+  },
+  {
+   "id": "16467e84-c4d6-4b0f-838b-9404c73635f0",
+   "slug": "alexandra-kay-cbbb7b4c",
+   "city": "cork",
+   "why": "extract is a single sentence; too thin for two facts"
+  },
+  {
+   "id": "d410756e-21b6-4592-b97e-0c5a46da99a6",
+   "slug": "mario-rosenstock-cff53dbe",
+   "city": "cork",
+   "why": "extract is a single sentence; too thin for two facts"
+  },
+  {
+   "id": "9adf9f50-c871-4ad0-bc1b-c61c40a84175",
+   "slug": "the-bootleg-beatles-65ffe54a",
+   "city": "cork",
+   "why": "Beatles tribute band, not the act itself"
+  },
+  {
+   "id": "3b8480d0-4f0e-4943-8789-68a1ae400925",
+   "slug": "skilla-baby-the-price-of-fame-tour-18-f4117ac2",
+   "city": "dallas",
+   "why": "extract is a single sentence; too thin for two facts"
+  },
+  {
+   "id": "60879f7f-28fd-4751-bb59-96d81594b294",
+   "slug": "bombargo-14923d76",
+   "city": "dallas",
+   "why": "extract is a single sentence; too thin for two facts"
+  },
+  {
+   "id": "56e37a84-d572-42d5-b835-41c9e73e6b39",
+   "slug": "the-army-the-navy-4b08ff63",
+   "city": "dallas",
+   "why": "extract is a single sentence; too thin for two facts"
+  },
+  {
+   "id": "e61cf383-4404-4494-9b7c-bd47dd74ec0a",
+   "slug": "inayah-therapy-wasn-t-enough-north-america-tour-a79d8413",
+   "city": "dallas",
+   "why": "extract is a single sentence; too thin for two facts"
+  },
+  {
+   "id": "a5848278-e4ef-4226-be8d-0591693db676",
+   "slug": "mall-grab-923d332a",
+   "city": "denver",
+   "why": "extract is one sentence giving only identity and genre"
+  },
+  {
+   "id": "63836d89-0600-411d-9f4a-771741d6a972",
+   "slug": "great-lake-swimmers-caught-light-tour-2026-7d245908",
+   "city": "denver",
+   "why": "extract is one sentence giving only origin, not enough for two facts"
+  },
+  {
+   "id": "33968a9c-2bd8-4069-84ee-7f24007cb075",
+   "slug": "sombr-you-are-the-reason-tour-411e3a9c",
+   "city": "detroit",
+   "why": "extract is one identity sentence only"
+  },
+  {
+   "id": "32d67f0c-50ba-4d89-b514-4b5b3e2f8688",
+   "slug": "gavin-adcock-a7fb1b07",
+   "city": "detroit",
+   "why": "extract is one identity sentence only"
+  },
+  {
+   "id": "bd1cc79b-22db-4b07-9031-ca7eaacca23f",
+   "slug": "hovvdy-1207bf2f",
+   "city": "detroit",
+   "why": "extract is one sentence with no second claim"
+  },
+  {
+   "id": "7e99ca69-be3a-44c5-b040-24aada5b6252",
+   "slug": "richy-ahmed-house-rules-8f237409",
+   "city": "dubai",
+   "why": "extract is one identity sentence only"
+  },
+  {
+   "id": "9563ef52-ed59-46d0-9d0e-530514efbc98",
+   "slug": "sorcha-richardson-7888ce33",
+   "city": "dublin",
+   "why": "extract is one sentence, and it places her in Dublin while the plan description says County Galway"
+  },
+  {
+   "id": "f4d21747-401c-4855-aa92-699620f9131a",
+   "slug": "power-of-dreams-40d81341",
+   "city": "dublin",
+   "why": "extract is one sentence, leaving no second fact to write"
+  },
+  {
+   "id": "55f47acb-139b-4195-a23a-27cdc5b6a137",
+   "slug": "critical-defiance-46f3a0c3",
+   "city": "frankfurt",
+   "why": "extract gives only an identity line and one release claim, too thin for two facts"
+  },
+  {
+   "id": "fac1c16e-ba67-4758-aff5-91acfb490f4c",
+   "slug": "pa-sheehy-the-magic-we-found-tour-901c712f",
+   "city": "frankfurt",
+   "why": "extract is one sentence"
+  },
+  {
+   "id": "fa478d17-240e-4fea-a5a8-3f26e7843c0a",
+   "slug": "todd-kessler-026c2f0d",
+   "city": "frankfurt",
+   "why": "page is for a film and television writer, producer and director, not a musical act; likely a namesake"
+  },
+  {
+   "id": "e8553885-4e4a-470c-a26c-358defe88509",
+   "slug": "the-silos-cb79c4ad",
+   "city": "frankfurt",
+   "why": "extract is one sentence"
+  },
+  {
+   "id": "f1af9377-6168-409e-bce8-1ca7a645d141",
+   "slug": "bombargo-love-in-spite-of-everything-tour-69993976",
+   "city": "frankfurt",
+   "why": "extract is one sentence"
+  },
+  {
+   "id": "06160bc0-1466-45ae-a966-698196ce3f7a",
+   "slug": "bee-gees-60-years-of-hits-cca04f7e",
+   "city": "gent",
+   "why": "extract describes the group in the past tense and the title reads like a tribute or anniversary show, so this may not be the act itself"
+  },
+  {
+   "id": "8f4e0063-98b3-46d4-b20b-e4fe1e9a4685",
+   "slug": "kommil-foo-babel-b45ddafa",
+   "city": "gent",
+   "why": "extract is one sentence"
+  },
+  {
+   "id": "80dcad6c-6761-446d-aaab-97805174ef21",
+   "slug": "overmono-pure-devotion-world-tour-02dade96",
+   "city": "glasgow",
+   "why": "extract is one sentence (\"Overmono is a Welsh electronic music duo consisting of the brothers Tom and Ed Russell.\"), too thin for two facts"
+  },
+  {
+   "id": "931a83cb-9da8-4e96-88ef-ff9a03221e2f",
+   "slug": "greg-mendez-0c2432b2",
+   "city": "glasgow",
+   "why": "extract is one sentence, too thin for two facts"
+  },
+  {
+   "id": "a1dd913a-3002-4a1b-87d6-bf0a427c1ef6",
+   "slug": "the-rifles-6d645407",
+   "city": "glasgow",
+   "why": "extract is one sentence, too thin for two facts"
+  },
+  {
+   "id": "34e8c797-485b-469b-ada8-aba9fd2033b1",
+   "slug": "carlos-sadness-e81082e6",
+   "city": "guadalajara",
+   "why": "extract is one sentence, too thin for two facts"
+  },
+  {
+   "id": "d439f617-24ca-4f23-8c6f-c4d3e6a5ce96",
+   "slug": "uche-yara-bodyscanner-tour-2026-fc7efb25",
+   "city": "hamburg",
+   "why": "extract is one sentence, too thin for two facts"
+  },
+  {
+   "id": "161ff15f-23cf-4d57-90da-4968ae45a09e",
+   "slug": "andreas-gabalier-10-jahre-volks-rock-n-roller-un-4aedd892",
+   "city": "hamburg",
+   "why": "extract is one sentence, too thin for two facts"
+  },
+  {
+   "id": "137eb3f7-cf82-4813-afde-c03b6582acbf",
+   "slug": "son-mieux-24-hours-eu-album-tour-d8aa42b6",
+   "city": "hamburg",
+   "why": "extract is one sentence, too thin for two facts"
+  },
+  {
+   "id": "37609bfe-03d6-4893-bd9d-c5a75596e0de",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-78ed7735",
+   "city": "hamburg",
+   "why": "title is a Depeche Mode tribute show (\"The DEPECHE MODE Experience\"); the extract is about the unrelated 1990s Bristol band Strangelove"
+  },
+  {
+   "id": "b01476b9-383d-4cb6-9add-8286d2b25ddf",
+   "slug": "green-lung-0f7cf7d3",
+   "city": "hamburg",
+   "why": "extract is one sentence, too thin for two facts"
+  },
+  {
+   "id": "57977575-73ef-4874-8092-94855b4ec775",
+   "slug": "skilla-baby-the-price-of-fame-tour-ages-18-4bc73fae",
+   "city": "houston",
+   "why": "extract is one sentence (identity only), too thin for two facts"
+  },
+  {
+   "id": "78392551-fed6-4841-83e2-dd8c4c70a2ef",
+   "slug": "bombargo-6449c1b5",
+   "city": "houston",
+   "why": "extract is one sentence (identity only), too thin for two facts"
+  },
+  {
+   "id": "b1106499-6100-4a64-9341-062ffe045b33",
+   "slug": "gokhan-turkmen-27577622",
+   "city": "istanbul",
+   "why": "extract is one sentence (identity only), too thin for two facts"
+  },
+  {
+   "id": "01f0fd6d-6e74-43e7-93f8-6d703dfe370b",
+   "slug": "soner-sar-kabaday-b6208c74",
+   "city": "istanbul",
+   "why": "extract is one sentence (identity only), too thin for two facts"
+  },
+  {
+   "id": "c255d230-86d6-448f-ab0e-eb275119edbd",
+   "slug": "ebru-yasar-8d70a583",
+   "city": "istanbul",
+   "why": "extract is one sentence (identity only), too thin for two facts"
+  },
+  {
+   "id": "b6592ee0-b469-45b2-8cda-46ccfdcf1f1c",
+   "slug": "mabel-matiz-1594430b",
+   "city": "izmir",
+   "why": "extract is one sentence (identity only), too thin for two facts"
+  },
+  {
+   "id": "b76301f6-baef-4e2f-b0e2-7848c438d123",
+   "slug": "ogun-sanl-soy-671c431d",
+   "city": "izmir",
+   "why": "extract is one sentence (identity only), too thin for two facts"
+  },
+  {
+   "id": "3e27617b-e6b6-4fbb-b482-885bbfcc3ad1",
+   "slug": "gokhan-turkmen-2e15d7ae",
+   "city": "izmir",
+   "why": "extract is one sentence (identity only), too thin for two facts"
+  },
+  {
+   "id": "1cb27b49-2b33-4989-a14f-800f14cadc50",
+   "slug": "soner-sar-kabaday-623646f6",
+   "city": "izmir",
+   "why": "extract is one sentence (identity only), too thin for two facts"
+  },
+  {
+   "id": "39d3a567-e730-419d-b7d9-8c7a1b238d4c",
+   "slug": "ilkay-akkaya-9442ef7a",
+   "city": "izmir",
+   "why": "extract is one sentence (identity only), too thin for two facts"
+  },
+  {
+   "id": "1ab5730e-c60f-441f-9d9b-8e19ee76108a",
+   "slug": "ryan-beatty-arms-over-armor-tour-160a17c0",
+   "city": "koln",
+   "why": "check: an english fact is not found in the extract; extract is two short sentences with only birthplace and residence"
+  },
+  {
+   "id": "ea645f1e-d00d-402f-b13c-e923a1107e08",
+   "slug": "yal-n-bir-buyulu-gece-5e505475",
+   "city": "istanbul",
+   "why": "check: de adds a breakthrough claim and en a stage name, neither in the extract"
+  },
+  {
+   "id": "7cb53c67-4d21-417c-97f3-ea4cea5dbf81",
+   "slug": "book-of-love-40th-anniversary-tour-840eab76",
+   "city": "houston",
+   "why": "check: tr fact 1 adds reached wide audiences, not in the extract"
+  },
+  {
+   "id": "3b415739-364f-4b36-a933-15a5d76b570e",
+   "slug": "nate-smith-jazzmi-2026-10c8d79e",
+   "city": "milano",
+   "why": "check: second eye could not confirm the jazz festival act is this country singer"
+  },
+  {
+   "id": "75d748f9-3947-4590-b046-2e56eebe66aa",
+   "slug": "beabadoobee-the-powerlines-tour-e51a902b",
+   "city": "oslo",
+   "why": "check: en/de/tr add a Pylon album and chart claim not in the extract, which is cut off"
+  },
+  {
+   "id": "af5edbc6-6fee-4bb7-a379-4cf62281505a",
+   "slug": "chelsea-wolfe-the-dark-world-tour-bd37f26b",
+   "city": "oslo",
+   "why": "check: de and tr kickers drop doom metal that en states"
+  },
+  {
+   "id": "880587fd-d3fe-46a1-9900-4f8a80f992f8",
+   "slug": "boston-manor-59313705",
+   "city": "philadelphia",
+   "why": "check: en/de/tr add an award nomination not in the extract, which is cut off"
+  },
+  {
+   "id": "80bddd0c-b4bf-4d0c-9ace-c65ca5af902d",
+   "slug": "isaiah-rashad-d3ebf44c",
+   "city": "zurich",
+   "why": "check: kicker places him in Chattanooga, not in the extract"
+  },
+  {
+   "id": "54746f4e-8b96-4a2d-af52-690e432b3987",
+   "slug": "jaill-b6d2d51d",
+   "city": "zurich",
+   "why": "check: kicker calls them American, not in the extract"
+  },
+  {
+   "id": "724c53d3-742a-45ce-9995-2f667c8b11e3",
+   "slug": "nick-shoulders-96a69176",
+   "city": "new-orleans",
+   "why": "check: who adds began as a punk rock musician, not in the extract"
+  },
+  {
+   "id": "f561e9c7-911c-42f6-8730-1e03516d8ea5",
+   "slug": "glorilla-29e4d69b",
+   "city": "nashville",
+   "why": "check: en and de who say best known for F.N.F., extract says first became known for it"
+  },
+  {
+   "id": "ee94c47f-53c5-4b19-9b6f-318bb25758ee",
+   "slug": "rondo-veneziano-2c965611",
+   "city": "stuttgart",
+   "why": "check: kicker year 2025 is not in the extract"
+  },
+  {
+   "id": "9c024483-fa03-4d2c-8609-cf8cad3c89f6",
+   "slug": "geese-getting-killed-again-tour-4829242d",
+   "city": "toronto",
+   "why": "check: de says since 2024, en says as of 2024, a different claim"
+  },
+  {
+   "id": "1ad4c910-5620-4c53-ac21-f9badb75d0fd",
+   "slug": "econoline-crush-c8ace69a",
+   "city": "toronto",
+   "why": "check: tr fact 2 drops the album/EP fact and differs from en"
+  },
+  {
+   "id": "7c79f00d-4839-4760-b5cf-2b8405a2d2f8",
+   "slug": "ersay-uner-fd9e755b",
+   "city": "ankara",
+   "why": "check: en who says for other artists, not in the extract"
+  },
+  {
+   "id": "0cb51077-f6ac-48d9-8674-88fcaf57cfa2",
+   "slug": "paradise-lost-ea61adef",
+   "city": "ankara",
+   "why": "check: tr who says one of the most influential, extract says the main influence"
+  },
+  {
+   "id": "df9309d7-7c9b-4a47-9470-c495da363a98",
+   "slug": "frank-boeijen-6190be18",
+   "city": "amsterdam",
+   "why": "check: en fact calls Kronenburg Park his best-known song; extract names three"
+  },
+  {
+   "id": "a03f5ab2-2cdd-4d9c-b610-b811e63eacff",
+   "slug": "tove-lo-estrus-4c8dc9cf",
+   "city": "amsterdam",
+   "why": "check: de adds Magazin, not in the extract"
+  },
+  {
+   "id": "768b4b84-6f8c-4830-a71d-58f21704d5f9",
+   "slug": "tove-lo-premium-seats-b1faf1da",
+   "city": "amsterdam",
+   "why": "check: de adds Magazin, not in the extract"
+  },
+  {
+   "id": "5fa2759d-907d-4be8-a327-99afc5736ae1",
+   "slug": "victoria-monet-frequency-of-love-tour-f3f6f2a6",
+   "city": "atlanta",
+   "why": "check: duplicate of c7849562 night, identical text"
+  },
+  {
+   "id": "c67a92aa-dfa8-4589-81b3-824a193d316d",
+   "slug": "jonas-brothers-the-burning-up-tour-all-over-agai-e8fa21f7",
+   "city": "austin",
+   "why": "check: fact 2 album list goes beyond the truncated extract"
+  },
+  {
+   "id": "def6292c-8035-46d7-a781-da0a538b2736",
+   "slug": "the-dunwells-it-s-time-to-come-back-e2c917ab",
+   "city": "glasgow",
+   "why": "check: who says the brothers are at its core, not in the extract"
+  },
+  {
+   "id": "1e264e9d-8e43-4e84-b885-17bbf91162a4",
+   "slug": "hail-the-sun-99a1eb95",
+   "city": "glasgow",
+   "why": "check: who names Equal Vision Records, extract cuts off before the label"
+  },
+  {
+   "id": "73ffcb9c-0e49-46a8-90ce-b66bba302fdc",
+   "slug": "elder-island-2026-adff90fe",
+   "city": "hamburg",
+   "why": "check: who says active since 2014, not in the extract"
+  },
+  {
+   "id": "cc849d70-2afb-4fa4-9d8d-0cd656e9ce48",
+   "slug": "isaiah-falls-3ea288a3",
+   "city": "manchester",
+   "why": "check: who adds a notable release and an award implication, not in the extract"
+  },
+  {
+   "id": "4086db75-aef6-41ff-8f62-1fe8f480fcfc",
+   "slug": "tove-lo-estrus-b4bfdf1c",
+   "city": "manchester",
+   "why": "check: who says recurring point critics describe, extract cites only two critics"
+  },
+  {
+   "id": "a2530749-07c0-4e50-bb2b-91a0cb95d07c",
+   "slug": "kamelot-abd0d444",
+   "city": "manchester",
+   "why": "check: duplicate of 9bae18b8 night on the same day"
+  },
+  {
+   "id": "f22a694b-f9ff-4212-9cb4-f23e19af2a0e",
+   "slug": "pain-of-truth-d1d92729",
+   "city": "miami",
+   "why": "check: en and de who say based on Heimat Long Island, extract only says formed there"
+  },
+  {
+   "id": "375b945e-44fe-4630-ae54-94e258538fd6",
+   "slug": "david-bisbal-tour-eternos-2026-447812ee",
+   "city": "miami",
+   "why": "check: tr fact says he gained fame by winning, extract says runner-up"
+  },
+  {
+   "id": "7ba2cdec-77a2-4a4f-942e-c90618d7c429",
+   "slug": "indochine-9187cb32",
+   "city": "geneva",
+   "why": "check: kicker pairs geneva 1981 as formation place, extract says Paris"
+  },
+  {
+   "id": "7bc47b2a-b1d9-44f6-b7cd-fb6f588172ab",
+   "slug": "hooverphonic-a0e0c62f",
+   "city": "gent",
+   "why": "check: kicker ghent 1995 adds a place the extract never states"
+  },
+  {
+   "id": "24716bf7-26de-44b9-9333-d7f260af3212",
+   "slug": "sim-hooman-after-all-world-tour-2dd5e4f0",
+   "city": "frankfurt",
+   "why": "check: kicker frankfurt 2004 implies formed there, extract says Kanagawa"
+  },
+  {
+   "id": "fbaaadbd-95d3-4b5a-bd37-b21597192008",
+   "slug": "megadeth-breakout-hibernation-of-the-nations-eur-1128e2a9",
+   "city": "dusseldorf",
+   "why": "check: kicker dusseldorf 1983 implies formed there, extract says Los Angeles"
+  },
+  {
+   "id": "d5ab9a9d-f071-4397-8d07-194a2912f6b4",
+   "slug": "papa-roach-f8e3be83",
+   "city": "dublin",
+   "why": "check: kicker dublin 1993 implies formed there, extract says Vacaville"
+  },
+  {
+   "id": "76e1ec09-57de-47cd-ae5d-63c2bb7109d4",
+   "slug": "hail-the-sun-59c32324",
+   "city": "dublin",
+   "why": "check: kicker dublin 2009 implies formed there, extract says Chico"
+  },
+  {
+   "id": "92d25220-7eb4-419e-a212-137cb7e82a44",
+   "slug": "swervedriver-abb3d46e",
+   "city": "dublin",
+   "why": "check: kicker dublin 1989 implies formed there, extract says Oxford"
+  },
+  {
+   "id": "237fb7d5-dc39-4ec6-bc89-7ec30b17a94b",
+   "slug": "skindred-you-got-this-tour-e8f7f282",
+   "city": "dublin",
+   "why": "check: kicker dublin 1998 implies formed there, extract says Newport"
+  },
+  {
+   "id": "b6bbeb10-ce6e-4e86-95a9-ea81db9fea2c",
+   "slug": "the-undertones-50th-anniversary-tour-a53b1025",
+   "city": "dublin",
+   "why": "check: kicker dublin 1974 implies formed there, extract says Derry"
+  },
+  {
+   "id": "29f3532c-6408-4057-9e9a-116f2682aa42",
+   "slug": "yaelokre-3de42659",
+   "city": "dublin",
+   "why": "check: de uses er and sein, extract says their, gender not stated"
+  },
+  {
+   "id": "60e1b2ba-be82-43a4-bf03-921e6b8f1d83",
+   "slug": "christy-moore-196d8d1a",
+   "city": "dublin",
+   "why": "check: tr fact 1 garbled text"
+  },
+  {
+   "id": "44ca9eb5-d60f-4681-8516-ce4a8acb3c45",
+   "slug": "the-smashing-pumpkins-the-rats-in-a-cage-tour-cba9439f",
+   "city": "vancouver",
+   "why": "check: tr facts add gothic rock, heavy metal and electronica, not in the English or the extract"
+  },
+  {
+   "id": "c75cdb90-d9d5-46dc-95a0-345d9b34bbe3",
+   "slug": "boynextdoor-tour-knock-on-vol-2-in-north-america-c2f14e88",
+   "city": "vancouver",
+   "why": "check: tr kicker has a broken word, güneli"
+  },
+  {
+   "id": "0ad9fd53-6b97-4f5a-906b-d8cdb3d52ae2",
+   "slug": "julia-wolf-deep-end-world-tour-2026-baf630ba",
+   "city": "koln",
+   "why": "check: de kicker uses English debut-ep"
+  },
+  {
+   "id": "4e72ffeb-03ea-4931-9e12-5b21c18b0bb6",
+   "slug": "quadeca-2ef7a9ec",
+   "city": "denver",
+   "why": "check: de who adds seit Jahren, not in en or extract"
+  },
+  {
+   "id": "b46a8aec-9e47-4fe8-a20e-acdcc9853767",
+   "slug": "the-war-and-treaty-e66ca018",
+   "city": "denver",
+   "why": "check: kicker says country music, extract never says country"
+  },
+  {
+   "id": "00436016-f856-46fc-9d52-4c20425e789e",
+   "slug": "sam-divine-eabc38da",
+   "city": "denver",
+   "why": "check: de and tr who add Ibiza club residencies, absent from en"
+  },
+  {
+   "id": "89f67839-11e6-44ef-9d43-ce521af1f4ae",
+   "slug": "mana-vivir-sin-aire-tour-6e2a19ca",
+   "city": "detroit",
+   "why": "check: de and tr render Latin Mexican as Latin American and add a former name"
+  },
+  {
+   "id": "77d89c39-8adf-49a9-acfc-22fe39beef70",
+   "slug": "katseye-the-wildworld-tour-364276c5",
+   "city": "detroit",
+   "why": "check: tr fact 2 adds a causal because, not in en"
+  },
+  {
+   "id": "335ff843-64b8-45b5-a8a1-050779609ecd",
+   "slug": "the-war-and-treaty-157f0784",
+   "city": "detroit",
+   "why": "check: kicker says country music duo, extract never says country"
+  },
+  {
+   "id": "8f94023e-99d8-4875-baac-229a3d3d3b36",
+   "slug": "manchester-orchestra-i-m-like-a-virgin-losing-a-ea07808a",
+   "city": "detroit",
+   "why": "check: title contains a corrupted apostrophe"
+  },
+  {
+   "id": "59e36ce9-2d35-4e4c-99a8-063769c65ed7",
+   "slug": "zz-top-7cdb2b65",
+   "city": "ciudad-de-mexico",
+   "why": "check: de and tr add death years not in en or extract"
+  },
+  {
+   "id": "983ad385-297a-4359-b659-32ebf0c44732",
+   "slug": "florence-road-1899f705",
+   "city": "cork",
+   "why": "check: signing date not in extract, en/de and tr disagree"
+  },
+  {
+   "id": "95d4d19b-e0cd-48d1-849a-15631ddd5032",
+   "slug": "picture-this-1cd45bc6",
+   "city": "cork",
+   "why": "check: tr fact 1 leaves County Kildare untranslated"
+  },
+  {
+   "id": "9e2a6bb7-ef61-4895-b3fc-e3b840890753",
+   "slug": "paul-heaton-cc7c6375",
+   "city": "cork",
+   "why": "check: de fact 1 gives a disbanding year the extract does not state"
+  },
+  {
+   "id": "d7a3f1bd-6a3e-4d5d-a13f-3397b2153a54",
+   "slug": "glasvegas-cc09054c",
+   "city": "cork",
+   "why": "check: kicker year reads as formation year, extract gives only the debut album"
+  },
+  {
+   "id": "799c99e8-f33f-417c-b1c8-91f074f9e868",
+   "slug": "ub40-the-unstoppable-tour-1ecb4982",
+   "city": "dallas",
+   "why": "check: de and tr add a 100 million records claim not in en or extract"
+  },
+  {
+   "id": "65565a87-ac63-4b76-bcfd-dd3dffe6814a",
+   "slug": "inna-ce66887f",
+   "city": "dallas",
+   "why": "check: de and tr add a 2008 EDM start not in en or extract"
+  },
+  {
+   "id": "f7b99142-fdb2-4e6b-a99f-fea14975a6be",
+   "slug": "against-the-current-7fa8c695",
+   "city": "birmingham",
+   "why": "check: tr fact 2 adds festivali, not in en or extract"
+  },
+  {
+   "id": "7d31492d-2915-460c-9f2f-57f6e57be246",
+   "slug": "marilyn-manson-live-in-los-angeles-a71b8a7f",
+   "city": "los-angeles",
+   "why": "check: en de tr claim only remaining original member, not in the extract"
+  },
+  {
+   "id": "d9b3b9c0-c68d-43cd-b9f1-fcfce1ea10a8",
+   "slug": "the-toxhards-e39c2fd4",
+   "city": "los-angeles",
+   "why": "check: kicker says American, extract never states nationality"
+  },
+  {
+   "id": "155fdfc7-559a-4ce7-97ea-cca27281c4bb",
+   "slug": "josh-levi-one-year-of-hydraulic-37e67b5b",
+   "city": "los-angeles",
+   "why": "check: de and tr fact 2 differs from en, X Factor vs Friday Night Lights"
+  },
+  {
+   "id": "2f6e4266-7e45-4611-bea9-e850286a6c79",
+   "slug": "laura-pausini-io-canto-world-tour-31c28cd9",
+   "city": "roma",
+   "why": "check: kicker place sanremo is the festival, not her origin"
+  },
+  {
+   "id": "b0bd986a-d06f-4089-9e6f-8e45a42586fd",
+   "slug": "tom-jones-come-gather-round-tour-f4ef4374",
+   "city": "san-francisco",
+   "why": "check: kicker place las vegas is a residency, not origin"
+  },
+  {
+   "id": "a1f6a036-b5e8-4263-ae2e-5215ad92933e",
+   "slug": "rainao-c1848be1",
+   "city": "boston",
+   "why": "check: en who says shaped by her background, extract says her music is"
+  },
+  {
+   "id": "fb51bd9c-2754-4087-be27-053d08470d0a",
+   "slug": "the-knocks-2c465de3",
+   "city": "boston",
+   "why": "check: de and tr kickers left in English electronic music"
+  },
+  {
+   "id": "cd1bcca1-8490-464f-abde-0fb81ac2996d",
+   "slug": "gorgon-city-f066bfb4",
+   "city": "calgary",
+   "why": "check: de and tr kickers left in English electronic music"
+  },
+  {
+   "id": "82917368-d7bc-40dc-98a1-d2fc5c9c96ba",
+   "slug": "boynextdoor-tour-knock-on-vol-2-in-north-america-6c99eb62",
+   "city": "chicago",
+   "why": "check: de fact 2 leichte Unterhaltung is not the extract easy listening"
+  }
+ ]
 }

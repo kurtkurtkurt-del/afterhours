@@ -1,0 +1,646 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "c1ce9a6a-c78a-4842-b4a8-e886d82ad8e6",
+   "slug": "papa-roach-4a76f575",
+   "title": "Papa Roach",
+   "name": "Papa Roach",
+   "source_url": "https://en.wikipedia.org/wiki/Papa_Roach",
+   "extract": "Papa Roach is an American rock band from Vacaville, California, formed in 1993. After a few early shifts, the band initially stabilized in 1996 with the lineup of lead vocalist Jacoby Shaddix, drummer Dave Buckner, guitarist Jerry Horton, and bassist Tobin Esperance. This lineup remained consistent for slightly over a decade.",
+   "en": {
+    "kicker": "american rock band · vacaville, california, 1993",
+    "who": "Papa Roach is an American rock band from Vacaville, California, formed in 1993. Lead vocalist Jacoby Shaddix led the lineup that stabilized in 1996.",
+    "facts": [
+     "After a few early shifts, the band initially stabilized in 1996 with the lineup of lead vocalist Jacoby Shaddix, drummer Dave Buckner, guitarist Jerry Horton, and bassist Tobin Esperance.",
+     "This lineup remained consistent for slightly over a decade."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · vacaville, kalifornien, 1993",
+    "who": "Papa Roach ist eine amerikanische Rockband aus Vacaville in Kalifornien, die 1993 gegründet wurde. Ihre Besetzung stabilisierte sich 1996 mit Sänger Jacoby Shaddix an der Spitze.",
+    "facts": [
+     "Nach ein paar frühen Wechseln stabilisierte sich die Band 1996 zunächst mit der Besetzung um Sänger Jacoby Shaddix, Schlagzeuger Dave Buckner, Gitarrist Jerry Horton und Bassist Tobin Esperance.",
+     "Diese Besetzung blieb etwas mehr als ein Jahrzehnt lang konstant."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · vacaville, kaliforniya, 1993",
+    "who": "Papa Roach, 1993 yılında kurulan, Kaliforniya'nın Vacaville kentinden bir Amerikan rock grubudur. Grup, vokalist Jacoby Shaddix'in başını çektiği kadroyla 1996'da istikrar kazandı.",
+    "facts": [
+     "Birkaç erken değişimin ardından grup 1996'da, vokalist Jacoby Shaddix, davulcu Dave Buckner, gitarist Jerry Horton ve basçı Tobin Esperance'ın yer aldığı kadroyla ilk kez istikrara kavuştu.",
+     "Bu kadro bir on yıldan biraz fazla bir süre değişmeden kaldı."
+    ]
+   }
+  },
+  {
+   "id": "52f40b9b-4f25-48b3-bbfb-60174120e1a0",
+   "slug": "yaelokre-d07b8c2a",
+   "title": "Yaelokre",
+   "name": "Yaelokre",
+   "source_url": "https://en.wikipedia.org/wiki/Yaelokre",
+   "extract": "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist known for their folk music storytelling project under the stage name Yaelokre. Ósk began releasing music under the project name in early 2024, going viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart the same year.",
+   "en": {
+    "kicker": "filipino-icelandic singer-songwriter · 2024",
+    "who": "Yaelokre is the stage name of Keath Ósk, a Filipino-Icelandic singer-songwriter and multimedia artist. The folk music storytelling project is released under that name.",
+    "facts": [
+     "Ósk began releasing music under the project name in early 2024, going viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart the same year.",
+     "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist known for their folk music storytelling project under the stage name Yaelokre."
+    ]
+   },
+   "de": {
+    "kicker": "filipinisch-isländischer singer-songwriter · 2024",
+    "who": "Yaelokre ist der Künstlername von Keath Ósk, einem filipinisch-isländischen Singer-Songwriter und Multimediakünstler. Unter diesem Namen erscheint das folkbasierte Erzählprojekt.",
+    "facts": [
+     "Ósk begann 2024 unter diesem Projektnamen Musik zu veröffentlichen und wurde im Juli desselben Jahres auf TikTok mit dem Lied „Harpy Hare“ viral, stieg in die TikTok-Billboard-Top-50 ein und stand in Spotifys globalen Viral-Songs-Charts an der Spitze.",
+     "Christopher Kristjansson, bekannt als Keath Ósk, ist ein filipinisch-isländischer Singer-Songwriter und Multimediakünstler, der unter dem Künstlernamen Yaelokre folkbasiertes Geschichtenerzählen betreibt."
+    ]
+   },
+   "tr": {
+    "kicker": "filipin-izlandalı şarkıcı ve söz yazarı · 2024",
+    "who": "Yaelokre, Filipinli-İzlandalı şarkıcı, söz yazarı ve çok disiplinli sanatçı Keath Ósk'ün sahne adıdır. Halk müziği tarzındaki hikâye anlatımı bu adla yayımlanır.",
+    "facts": [
+     "Ósk, bu proje adıyla 2024 başında müzik yayımlamaya başladı; aynı yılın temmuz ayında “Harpy Hare” şarkısıyla TikTok'ta viral oldu, TikTok Billboard Top 50 listesine girdi ve aynı yıl içinde Spotify'ın Küresel Viral Şarkılar listesinin zirvesine yerleşti.",
+     "Christopher Kristjansson, Keath Ósk adıyla tanınan, Filipinli-İzlandalı bir şarkıcı, söz yazarı ve çok disiplinli sanatçıdır; halk tarzı hikâye anlatımını Yaelokre adıyla sürdürür."
+    ]
+   }
+  },
+  {
+   "id": "9ba532ce-5d23-48f6-9467-4d6786fc062a",
+   "slug": "cody-johnson-794e9c66",
+   "title": "Cody Johnson",
+   "name": "Cody Johnson",
+   "source_url": "https://en.wikipedia.org/wiki/Cody_Johnson",
+   "extract": "Cody Daniel Johnson is an American country music singer. He has self-released six albums, including Gotta Be Me, which debuted at number two on Billboard's Country Albums chart, before releasing his first major-label album, Ain't Nothin' to It, in January 2019. He released his second major-label album, Human: The Double Album, in October 2021. His style is classified as contemporary country and neotraditional country, drawing influences from artists like George Strait and Willie Nelson. His song \"'Til You Can't\" won two awards at the Country Music Association Awards in 2022. His album Leather won the CMA Album of the Year on November 20, 2024. He toured Australia in 2023 and 2025, with many ",
+   "en": {
+    "kicker": "american country singer · neotraditional country",
+    "who": "His style is classified as contemporary country and neotraditional country, drawing influences from artists like George Strait and Willie Nelson. He has self-released six albums, including Gotta Be Me.",
+    "facts": [
+     "Cody Daniel Johnson is an American country music singer.",
+     "His album Leather won the CMA Album of the Year on November 20, 2024."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer country-sänger · neotraditional country",
+    "who": "Sein Stil wird als zeitgenössischer Country und Neotraditional Country eingeordnet und ist von Künstlern wie George Strait und Willie Nelson beeinflusst. Er hat sechs Alben im Eigenverlag veröffentlicht, darunter Gotta Be Me.",
+    "facts": [
+     "Cody Daniel Johnson ist ein amerikanischer Country-Musiker.",
+     "Sein Album Leather gewann am 20. November 2024 den CMA Album of the Year."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı country şarkıcısı · neotradisyonel country",
+    "who": "Tarzı çağdaş country ve neotradisyonel country olarak sınıflandırılıyor; George Strait ve Willie Nelson gibi sanatçılardan etkileniyor. Gotta Be Me dahil altı albümünü bağımsız olarak yayımladı.",
+    "facts": [
+     "Cody Daniel Johnson, Amerikalı bir country müzik şarkıcısıdır.",
+     "Leather albümü 20 Kasım 2024'te CMA Yılın Albümü ödülünü kazandı."
+    ]
+   }
+  },
+  {
+   "id": "09ffe5db-cd15-4099-b827-077fc5bfebf6",
+   "slug": "swervedriver-4a92b01e",
+   "title": "Swervedriver",
+   "name": "Swervedriver",
+   "source_url": "https://en.wikipedia.org/wiki/Swervedriver",
+   "extract": "Swervedriver are an English alternative rock band formed in Oxford in 1989 around core members Adam Franklin and Jimmy Hartridge. Between 1989 and 1998, the band released four studio albums and numerous EPs and singles despite a considerable flux of members, managers, and record labels. By 1993 the band's lineup had settled with Franklin on vocals/guitar, Hartridge on guitar, Jez Hindmarsh on drums, and Steve George on bass. They had emerged with a heavier rock sound than their shoegaze contemporaries, and over the next five years it evolved to include elements of psychedelia, classic pop, and indie rock.",
+   "en": {
+    "kicker": "english alternative rock band · oxford, 1989",
+    "who": "Swervedriver are an English alternative rock band formed in Oxford in 1989 around core members Adam Franklin and Jimmy Hartridge. By 1993 the lineup had settled with Franklin on vocals and guitar, Hartridge on guitar, Jez Hindmarsh on drums, and Steve George on bass.",
+    "facts": [
+     "Between 1989 and 1998, the band released four studio albums and numerous EPs and singles despite a considerable flux of members, managers, and record labels.",
+     "They had emerged with a heavier rock sound than their shoegaze contemporaries, and over the next five years it evolved to include elements of psychedelia, classic pop, and indie rock."
+    ]
+   },
+   "de": {
+    "kicker": "englische alternative-rock-band · oxford, 1989",
+    "who": "Swervedriver sind eine englische Alternative-Rock-Band, die 1989 in Oxford rund um Adam Franklin und Jimmy Hartridge gegründet wurde. Bis 1993 hatte sich die Besetzung mit Franklin an Gesang und Gitarre, Hartridge an der Gitarre, Jez Hindmarsh am Schlagzeug und Steve George am Bass gefestigt.",
+    "facts": [
+     "Zwischen 1989 und 1998 veröffentlichte die Band vier Studioalben sowie zahlreiche EPs und Singles, trotz eines erheblichen Wechsels von Mitgliedern, Managern und Plattenlabels.",
+     "Sie kamen mit einem härteren Rocksound als ihre Shoegaze-Zeitgenossen heraus, und in den folgenden fünf Jahren entwickelte sich dieser Sound weiter um Elemente von Psychedelia, klassischem Pop und Indie-Rock."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz alternatif rock grubu · oxford, 1989",
+    "who": "Swervedriver, 1989'da Oxford'da Adam Franklin ve Jimmy Hartridge çevresinde kurulmuş bir İngiliz alternatif rock grubudur. 1993'e gelindiğinde kadro; Franklin'in vokal ve gitarda, Hartridge'in gitarda, Jez Hindmarsh'ın davulda ve Steve George'un bassta yer aldığı biçimde oturmuştu.",
+    "facts": [
+     "1989 ile 1998 arasında grup, üye, menajer ve plak şirketi değişikliklerine rağmen dört stüdyo albümü ile çok sayıda EP ve single yayımladı.",
+     "Şoegeyz çağdaşlarından daha ağır bir rock sesiyle ortaya çıktılar ve izleyen beş yılda bu ses psikedelik, klasik pop ve indie rock öğeleri de içerecek biçimde gelişti."
+    ]
+   }
+  },
+  {
+   "id": "d74078e6-c3d6-4807-b790-a30d9c6439ac",
+   "slug": "swervedriver-35th-anniversary-of-raise-1f58ae40",
+   "title": "Swervedriver - 35th Anniversary of Raise",
+   "name": "Swervedriver",
+   "source_url": "https://en.wikipedia.org/wiki/Swervedriver",
+   "extract": "Swervedriver are an English alternative rock band formed in Oxford in 1989 around core members Adam Franklin and Jimmy Hartridge. Between 1989 and 1998, the band released four studio albums and numerous EPs and singles despite a considerable flux of members, managers, and record labels. By 1993 the band's lineup had settled with Franklin on vocals/guitar, Hartridge on guitar, Jez Hindmarsh on drums, and Steve George on bass. They had emerged with a heavier rock sound than their shoegaze contemporaries, and over the next five years it evolved to include elements of psychedelia, classic pop, and indie rock.",
+   "en": {
+    "kicker": "english alternative rock band · oxford, 1989",
+    "who": "Swervedriver are an English alternative rock band formed in Oxford in 1989 around core members Adam Franklin and Jimmy Hartridge. By 1993 the lineup had settled with Franklin on vocals and guitar, Hartridge on guitar, Jez Hindmarsh on drums, and Steve George on bass.",
+    "facts": [
+     "Between 1989 and 1998, the band released four studio albums and numerous EPs and singles despite a considerable flux of members, managers, and record labels.",
+     "They had emerged with a heavier rock sound than their shoegaze contemporaries, and over the next five years it evolved to include elements of psychedelia, classic pop, and indie rock."
+    ]
+   },
+   "de": {
+    "kicker": "englische alternative-rock-band · oxford, 1989",
+    "who": "Swervedriver sind eine englische Alternative-Rock-Band, die 1989 in Oxford rund um Adam Franklin und Jimmy Hartridge gegründet wurde. Bis 1993 hatte sich die Besetzung mit Franklin an Gesang und Gitarre, Hartridge an der Gitarre, Jez Hindmarsh am Schlagzeug und Steve George am Bass gefestigt.",
+    "facts": [
+     "Zwischen 1989 und 1998 veröffentlichte die Band vier Studioalben sowie zahlreiche EPs und Singles, trotz eines erheblichen Wechsels von Mitgliedern, Managern und Plattenlabels.",
+     "Sie kamen mit einem härteren Rocksound als ihre Shoegaze-Zeitgenossen heraus, und in den folgenden fünf Jahren entwickelte sich dieser Sound weiter um Elemente von Psychedelia, klassischem Pop und Indie-Rock."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz alternatif rock grubu · oxford, 1989",
+    "who": "Swervedriver, 1989'da Oxford'da Adam Franklin ve Jimmy Hartridge çevresinde kurulmuş bir İngiliz alternatif rock grubudur. 1993'e gelindiğinde kadro; Franklin'in vokal ve gitarda, Hartridge'in gitarda, Jez Hindmarsh'ın davulda ve Steve George'un bassta yer aldığı biçimde oturmuştu.",
+    "facts": [
+     "1989 ile 1998 arasında grup, üye, menajer ve plak şirketi değişikliklerine rağmen dört stüdyo albümü ile çok sayıda EP ve single yayımladı.",
+     "Şoegeyz çağdaşlarından daha ağır bir rock sesiyle ortaya çıktılar ve izleyen beş yılda bu ses psikedelik, klasik pop ve indie rock öğeleri de içerecek biçimde gelişti."
+    ]
+   }
+  },
+  {
+   "id": "617e84ff-e60d-44a2-b783-ef120e053f5a",
+   "slug": "jalen-ngonda-4fcfe5b1",
+   "title": "Jalen Ngonda",
+   "name": "Jalen Ngonda",
+   "source_url": "https://en.wikipedia.org/wiki/Jalen_Ngonda",
+   "extract": "Jalen N'Gonda is an American musician based in England. He came to prominence with the release of his debut studio album Come Around and Love Me (2023), and is known for his Motown-inspired soul music. N'Gonda is primarily a singer, but also plays various instruments during live performances.",
+   "en": {
+    "kicker": "american soul musician · england",
+    "who": "An American musician based in England, Jalen N'Gonda makes Motown-inspired soul music. He is mainly a singer, though he plays several instruments on stage.",
+    "facts": [
+     "He came to prominence with the release of his debut studio album Come Around and Love Me (2023), and is known for his Motown-inspired soul music.",
+     "N'Gonda is primarily a singer, but also plays various instruments during live performances."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer soul-musiker · england",
+    "who": "Jalen N'Gonda ist ein amerikanischer Musiker mit Wohnsitz in England und macht von Motown inspirierten Soul. Er ist vor allem Sänger, spielt bei Live-Auftritten aber auch verschiedene Instrumente.",
+    "facts": [
+     "Mit seinem Debütalbum Come Around and Love Me (2023) kam er zu Bekanntheit, und er ist für seinen von Motown inspirierten Soul bekannt.",
+     "N'Gonda ist vor allem Sänger, spielt bei Live-Auftritten aber auch verschiedene Instrumente."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı soul müzisyeni · ingiltere",
+    "who": "İngiltere'de yaşayan Amerikalı bir müzisyen olan Jalen N'Gonda, Motown esintili soul müzik yapar. Ağırlıklı olarak şarkıcıdır, ancak sahnede çeşitli enstrümanlar da çalar.",
+    "facts": [
+     "Debut stüdyo albümü Come Around and Love Me (2023) ile öne çıktı ve Motown'dan esinlenen soul müziğiyle tanınır.",
+     "N'Gonda ağırlıklı olarak bir şarkıcıdır, ancak canlı performanslarında çeşitli enstrümanlar da çalar."
+    ]
+   }
+  },
+  {
+   "id": "b44cdd37-b849-4feb-89e8-1ec35f502248",
+   "slug": "dizzee-rascal-we-want-bass-037b3b29",
+   "title": "Dizzee Rascal - We Want Bass",
+   "name": "Dizzee Rascal",
+   "source_url": "https://en.wikipedia.org/wiki/Dizzee_Rascal",
+   "extract": "Dylan Kwabena Mills, known professionally as Dizzee Rascal, is a British rapper and MC. He is often credited as a pioneer of British hip hop and grime music and was ranked by Complex as one of the greatest British rappers of all time. His work has also incorporated elements of UK garage, bassline and R&B. Dizzee Rascal's music is also often credited with bringing UK rap into the mainstream and became the country's first rapper to achieve international recognition.",
+   "en": {
+    "kicker": "british rapper and mc · grime pioneer",
+    "who": "Dylan Kwabena Mills, known professionally as Dizzee Rascal, is a British rapper and MC. His work has also incorporated elements of UK garage, bassline and R&B.",
+    "facts": [
+     "He is often credited as a pioneer of British hip hop and grime music and was ranked by Complex as one of the greatest British rappers of all time.",
+     "Dizzee Rascal's music is also often credited with bringing UK rap into the mainstream and became the country's first rapper to achieve international recognition."
+    ]
+   },
+   "de": {
+    "kicker": "britischer rapper und mc · grime-pionier",
+    "who": "Dylan Kwabena Mills, bekannt als Dizzee Rascal, ist ein britischer Rapper und MC. Seine Musik hat auch Elemente von UK Garage, Bassline und R&B aufgenommen.",
+    "facts": [
+     "Er gilt häufig als Pionier des britischen Hip-Hop und der Grime-Musik und wurde von Complex zu den größten britischen Rappern aller Zeiten gezählt.",
+     "Seiner Musik wird ebenfalls oft zugeschrieben, britischen Rap in den Mainstream gebracht zu haben, und er wurde als erster Rapper des Landes international anerkannt."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rapçi ve mc · grime öncüsü",
+    "who": "Dylan Kwabena Mills, Dizzee Rascal adıyla tanınan, İngiliz bir rapçi ve MC'dir. Müziğinde UK garage, bassline ve R&B öğeleri de yer alır.",
+    "facts": [
+     "Britanya hip hop'unun ve grime müziğinin öncülerinden biri olarak anılır; Complex tarafından tüm zamanların en büyük İngiliz rapçileri arasında gösterilmiştir.",
+     "Müziğinin İngiliz rapini ana akıma taşıdığı sıkça kabul edilir; ülkenin uluslararası tanınırlık kazanan ilk rapçisi oldu."
+    ]
+   }
+  },
+  {
+   "id": "2aaa9e66-7020-4e89-b865-eef0ffbb45c0",
+   "slug": "nick-hakim-1243fb26",
+   "title": "Nick Hakim",
+   "name": "Nick Hakim",
+   "source_url": "https://en.wikipedia.org/wiki/Nick_Hakim",
+   "extract": "Nicolas Hakim is an American musician based in Queens, New York, United States. His first EP, Where Will We Go Part 1 & 2, was self-released in 2014. He released three albums with ATO: Green Twins (2017), Will This Make Me Good (2020), and Cometa (2022).",
+   "en": {
+    "kicker": "american musician · queens, new york",
+    "who": "Nicolas Hakim is an American musician based in Queens, New York, United States. He has released albums with the label ATO.",
+    "facts": [
+     "His first EP, Where Will We Go Part 1 & 2, was self-released in 2014.",
+     "He released three albums with ATO: Green Twins (2017), Will This Make Me Good (2020), and Cometa (2022)."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer musiker · queens, new york",
+    "who": "Nicolas Hakim ist ein amerikanischer Musiker mit Wohnsitz in Queens, New York, USA. Er hat Alben beim Label ATO veröffentlicht.",
+    "facts": [
+     "Seine erste EP, Where Will We Go Part 1 & 2, erschien 2014 im Eigenverlag.",
+     "Er veröffentlichte drei Alben bei ATO: Green Twins (2017), Will This Make Me Good (2020) und Cometa (2022)."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı müzisyen · queens, new york",
+    "who": "Nicolas Hakim, New York'un Queens semtinde yaşayan Amerikalı bir müzisyendir. ATO plak şirketi ile albümler yayımladı.",
+    "facts": [
+     "İlk EP'si Where Will We Go Part 1 & 2, 2014 yılında kendi imkânlarıyla yayımlandı.",
+     "ATO ile üç albüm yayımladı: Green Twins (2017), Will This Make Me Good (2020) ve Cometa (2022)."
+    ]
+   }
+  },
+  {
+   "id": "6ac7bead-d0fa-4645-b073-73611d0db108",
+   "slug": "the-shires-ec874b40",
+   "title": "The Shires",
+   "name": "The Shires",
+   "source_url": "https://en.wikipedia.org/wiki/The_Shires_(duo)",
+   "extract": "The Shires are a British country music duo composed of singer-songwriters Ben Earle and Crissie Rhodes. Earle sings harmony vocals, plays piano and guitar, and Rhodes is lead singer. The duo formed in 2013 and released their debut album Brave in 2015, becoming the first British country act to chart in the Top 10 of the UK Albums Chart. The group's second album, My Universe, became the fastest-selling British country album in history when it was released in October 2016.",
+   "en": {
+    "kicker": "british country music duo · formed 2013",
+    "who": "The Shires are a British country music duo composed of singer-songwriters Ben Earle and Crissie Rhodes. Rhodes is the lead singer, and Earle sings harmony vocals and plays piano and guitar.",
+    "facts": [
+     "The duo formed in 2013 and released their debut album Brave in 2015, becoming the first British country act to chart in the Top 10 of the UK Albums Chart.",
+     "The group's second album, My Universe, became the fastest-selling British country album in history when it was released in October 2016."
+    ]
+   },
+   "de": {
+    "kicker": "britisches country-duo · gegründet 2013",
+    "who": "The Shires sind ein britisches Country-Duo aus den Singer-Songwritern Ben Earle und Crissie Rhodes. Rhodes ist die Leadsängerin, Earle singt Harmoniegesang und spielt Klavier und Gitarre.",
+    "facts": [
+     "Das Duo gründete sich 2013 und veröffentlichte 2015 sein Debütalbum Brave, womit es als erster britischer Country-Act in den Top 10 der UK Albums Chart einstieg.",
+     "Das zweite Album der Gruppe, My Universe, erschien im Oktober 2016 und wurde damit das schnellstverkaufte britische Country-Album der Geschichte."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz country müzik ikilisi · 2013",
+    "who": "The Shires, şarkı yazarları Ben Earle ve Crissie Rhodes'tan oluşan bir İngiliz country müzik ikilisidir. Rhodes baş vokaldir; Earle armoni vokalleri söyler ve piyano ile gitar çalar.",
+    "facts": [
+     "İkili 2013'te kuruldu ve 2015'te ilk albümleri Brave'i yayımlayarak İngiltere Albüm Listesi'nin ilk on'una giren ilk İngiliz country grubu oldu.",
+     "Grubun ikinci albümü My Universe, Ekim 2016'da yayımlandığında tarihin en hızlı satan İngiliz country albümü oldu."
+    ]
+   }
+  },
+  {
+   "id": "cb83e01d-b467-4dc9-88e3-d05fc52c568f",
+   "slug": "holy-fawn-3cbac921",
+   "title": "Holy Fawn",
+   "name": "Holy Fawn",
+   "source_url": "https://en.wikipedia.org/wiki/Holy_Fawn",
+   "extract": "Holy Fawn is an American rock band from Phoenix, Arizona. The band currently consists of guitarist and vocalist Ryan Osterman, guitarist Evan Phelps, and bassist Alexander Rieth, who was part of the lineup until 2023 before returning in 2025. Drummer Austin Reinholz was a member until 2025. They have released two full-length studio albums and two extended plays.",
+   "en": {
+    "kicker": "american rock band · phoenix, arizona",
+    "who": "Holy Fawn is an American rock band from Phoenix, Arizona. The band currently consists of guitarist and vocalist Ryan Osterman, guitarist Evan Phelps, and bassist Alexander Rieth.",
+    "facts": [
+     "They have released two full-length studio albums and two extended plays.",
+     "Drummer Austin Reinholz was a member until 2025."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · phoenix, arizona",
+    "who": "Holy Fawn ist eine amerikanische Rockband aus Phoenix, Arizona. Derzeit besteht die Band aus Gitarrist und Sänger Ryan Osterman, Gitarrist Evan Phelps und Bassist Alexander Rieth.",
+    "facts": [
+     "Sie haben zwei Studioalben in voller Länge und zwei Extended Plays veröffentlicht.",
+     "Schlagzeuger Austin Reinholz war bis 2025 Mitglied der Band."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · phoenix, arizona",
+    "who": "Holy Fawn, Arizona'nın Phoenix kentinden bir Amerikan rock grubudur. Grubun şu anki kadrosunda gitarist ve vokalist Ryan Osterman, gitarist Evan Phelps ve basçı Alexander Rieth yer alıyor.",
+    "facts": [
+     "İki tam uzunlukta stüdyo albümü ve iki EP yayımladılar.",
+     "Davulcu Austin Reinholz 2025 yılına kadar grubun üyesiydi."
+    ]
+   }
+  },
+  {
+   "id": "be32ad26-1017-47e9-840d-68dc40f25391",
+   "slug": "the-home-team-b5d4ad5b",
+   "title": "The Home Team",
+   "name": "The Home Team",
+   "source_url": "https://en.wikipedia.org/wiki/The_Home_Team",
+   "extract": "The Home Team is an American rock band from Seattle, Washington, formed in 2013 by Daniel Matson and John Baran. The band currently consists of vocalist Brian Butcher, bassist Ryne Olson, guitarist John Baran, and drummer Daniel Matson.",
+   "en": {
+    "kicker": "american rock band · seattle, 2013",
+    "who": "Daniel Matson and John Baran formed the band in 2013. Both are still in the current lineup, alongside vocalist Brian Butcher and bassist Ryne Olson.",
+    "facts": [
+     "The Home Team is an American rock band from Seattle, Washington, formed in 2013 by Daniel Matson and John Baran.",
+     "The band currently consists of vocalist Brian Butcher, bassist Ryne Olson, guitarist John Baran, and drummer Daniel Matson."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · seattle, 2013",
+    "who": "Daniel Matson und John Baran gründeten die Band 2013. Beide gehören weiterhin zur aktuellen Besetzung, neben Sänger Brian Butcher und Bassist Ryne Olson.",
+    "facts": [
+     "The Home Team ist eine amerikanische Rockband aus Seattle, Washington, die 2013 von Daniel Matson und John Baran gegründet wurde.",
+     "Zur Band gehören derzeit Sänger Brian Butcher, Bassist Ryne Olson, Gitarrist John Baran und Schlagzeuger Daniel Matson."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · seattle, 2013",
+    "who": "Daniel Matson ve John Baran grubu 2013'te kurdu. İkisi de şu anki kadroda yer alıyor; yanlarında vokalist Brian Butcher ve basçı Ryne Olson bulunuyor.",
+    "facts": [
+     "Grup, Washington eyaletinin Seattle kentinden bir Amerikan rock grubudur ve 2013 yılında Daniel Matson ve John Baran tarafından kurulmuştur.",
+     "Grubun şu anki kadrosunda vokalist Brian Butcher, basçı Ryne Olson, gitarist John Baran ve davulcu Daniel Matson bulunuyor."
+    ]
+   }
+  },
+  {
+   "id": "706a077e-553b-4654-9897-4827322fc5b5",
+   "slug": "freya-skye-684b8ebd",
+   "title": "Freya Skye",
+   "name": "Freya Skye",
+   "source_url": "https://en.wikipedia.org/wiki/Freya_Skye",
+   "extract": "Freya Skye is an English singer and actress. She represented the United Kingdom in the Junior Eurovision Song Contest 2022, after which she was signed to Hollywood Records. Skye also has a talent holding deal for projects with Disney Branded Television. As an actress, she has appeared in The Next Step and made her film debut starring as Nova Bright in Zombies 4: Dawn of the Vampires. As a musician, Skye has released a number of singles since 2020 and released her debut extended play Stardust in 2026 and embarked on her first headlining tour, the Stars Align Tour.",
+   "en": {
+    "kicker": "english singer and actress · 2026",
+    "who": "Freya Skye is an English singer and actress who represented the United Kingdom at the Junior Eurovision Song Contest 2022. She was then signed to Hollywood Records.",
+    "facts": [
+     "As an actress, she has appeared in The Next Step and made her film debut starring as Nova Bright in Zombies 4: Dawn of the Vampires.",
+     "As a musician, Skye has released a number of singles since 2020 and released her debut extended play Stardust in 2026 and embarked on her first headlining tour, the Stars Align Tour."
+    ]
+   },
+   "de": {
+    "kicker": "englische sängerin und schauspielerin · 2026",
+    "who": "Freya Skye ist eine englische Sängerin und Schauspielerin. 2022 vertrat sie das Vereinigte Königreich beim Junior Eurovision Song Contest, danach wurde sie von Hollywood Records unter Vertrag genommen.",
+    "facts": [
+     "Als Schauspielerin war sie in The Next Step zu sehen und gab ihr Filmdebüt in der Rolle der Nova Bright in Zombies 4: Dawn of the Vampires.",
+     "Als Musikerin hat Skye seit 2020 eine Reihe von Singles veröffentlicht, 2026 ihre Debüt-EP Stardust herausgebracht und ihre erste Headliner-Tour, die Stars Align Tour, gestartet."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı ve oyuncu · 2026",
+    "who": "Freya Skye, İngiliz bir şarkıcı ve oyuncudur. 2022'de Junior Eurovision Şarkı Yarışması'nda Birleşik Krallık'ı temsil etti ve ardından Hollywood Records ile sözleşme imzaladı.",
+    "facts": [
+     "Oyuncu olarak The Next Step dizisinde yer aldı ve Zombies 4: Dawn of the Vampires filminde Nova Bright rolüyle film debütünü yaptı.",
+     "Müzisyen olarak 2020'den beri çok sayıda single yayımladı, 2026'da ilk EP'si Stardust'ı çıkardı ve ilk headliner turnesi Stars Align Tour'a çıktı."
+    ]
+   }
+  },
+  {
+   "id": "30c128c0-3f84-4046-b9b6-aff43ac107b3",
+   "slug": "noah-kahan-the-great-divide-tour-79cd386b",
+   "title": "Noah Kahan: the Great Divide Tour",
+   "name": "Noah Kahan",
+   "source_url": "https://en.wikipedia.org/wiki/Noah_Kahan",
+   "extract": "Noah Berkenkamp Kahan is an American singer-songwriter. His breakthrough single, \"Hurt Somebody\", achieved gold status in the United States and charted in multiple international markets. The single and EP of the same name preceded the release of his debut album, Busyhead (2019). Within five years, two more albums came out: I Was / I Am (2021) and Stick Season (2022), the latter became his mainstream commercial breakthrough. It led to his nomination in 2023 for the Grammy Award for Best New Artist. In 2026, his fourth album The Great Divide was released and achieved record-breaking streaming and vinyl sales for a No. 1 rock album debut on the Billboard 200. That preceded The Great Divide Tour",
+   "en": {
+    "kicker": "american singer-songwriter · 2026",
+    "who": "Noah Berkenkamp Kahan is an American singer-songwriter. Stick Season (2022) was his mainstream commercial breakthrough, and it led to a nomination in 2023 for the Grammy Award for Best New Artist.",
+    "facts": [
+     "His breakthrough single, \"Hurt Somebody\", achieved gold status in the United States and charted in multiple international markets.",
+     "In 2026, his fourth album The Great Divide was released and achieved record-breaking streaming and vinyl sales for a No. 1 rock album debut on the Billboard 200."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · 2026",
+    "who": "Noah Berkenkamp Kahan ist ein amerikanischer Singer-Songwriter. Stick Season (2022) wurde sein kommerzieller Durchbruch im Mainstream, und das führte 2023 zu einer Nominierung für den Grammy in der Kategorie Best New Artist.",
+    "facts": [
+     "Seine Durchbruchssingle „Hurt Somebody“ erhielt in den Vereinigten Staaten Gold-Status und stieg in mehreren internationalen Märkten in die Charts ein.",
+     "2026 erschien sein viertes Album The Great Divide, das bei Streaming und Vinylverkäufen Rekordwerte erzielte und als Debüt auf Platz eins der Billboard 200 für ein Rockalbum sorgte."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı singer-songwriter · 2026",
+    "who": "Noah Berkenkamp Kahan, Amerikalı bir singer-songwriter'dır. 2022 tarihli Stick Season, ana akım ticari atılımı oldu ve 2023'te En İyi Yeni Sanatçı dalında Grammy Ödülü'ne aday gösterilmesine yol açtı.",
+    "facts": [
+     "“Hurt Somebody” adlı atılım single'ı Amerika Birleşik Devletleri'nde altın statü kazandı ve birçok uluslararası pazarda listelere girdi.",
+     "2026'da dördüncü albümü The Great Divide yayımlandı; rekor düzeyde dinlenme ve plak satışı yaparak Billboard 200'de rock albümü olarak 1 numaradan giriş yaptı."
+    ]
+   }
+  },
+  {
+   "id": "29ad19e2-f2d0-4879-9775-ed02e81c231a",
+   "slug": "girli-46b0ec13",
+   "title": "girli",
+   "name": "Girli",
+   "source_url": "https://en.wikipedia.org/wiki/Girli",
+   "extract": "Amelia Kate Woodward Toomey, known professionally as Girli, is an English singer, rapper and songwriter. Based in London, she has released a number of singles, five EPs and three studio albums. The Guardian has described her sound as veering \"between PC Music, bubblegum pop, pop punk and rap, each one treading a line between catchy and deliberately discomforting.\" Much of her music is about feminism, sexuality, queer culture, and mental health.",
+   "en": {
+    "kicker": "english singer, rapper and songwriter · london",
+    "who": "Amelia Kate Woodward Toomey, known professionally as Girli, is an English singer, rapper and songwriter. The Guardian has described her sound as veering between PC Music, bubblegum pop, pop punk and rap.",
+    "facts": [
+     "Based in London, she has released a number of singles, five EPs and three studio albums.",
+     "Much of her music is about feminism, sexuality, queer culture, and mental health."
+    ]
+   },
+   "de": {
+    "kicker": "englische sängerin, rapperin und songwriterin · london",
+    "who": "Amelia Kate Woodward Toomey, bekannt als Girli, ist eine englische Sängerin, Rapperin und Songwriterin. Der Guardian beschreibt ihren Sound als Pendeln zwischen PC Music, Bubblegum-Pop, Pop-Punk und Rap.",
+    "facts": [
+     "Mit Sitz in London hat sie eine Reihe von Singles, fünf EPs und drei Studioalben veröffentlicht.",
+     "Ein großer Teil ihrer Musik handelt von Feminismus, Sexualität, Queer-Kultur und mentaler Gesundheit."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı, rapçi ve söz yazarı · londra",
+    "who": "Amelia Kate Woodward Toomey, Girli adıyla tanınan, İngiliz bir şarkıcı, rapçi ve söz yazarıdır. Guardian gazetesi sesini PC Music, bubblegum pop, pop punk ve rap arasında gidip gelen bir yapı olarak tanımlamıştır.",
+    "facts": [
+     "Londra merkezli sanatçı, bir dizi single, beş EP ve üç stüdyo albümü yayımladı.",
+     "Müziğinin büyük bölümü feminizm, cinsellik, queer kültür ve ruh sağlığı üzerine."
+    ]
+   }
+  },
+  {
+   "id": "a5b80729-8af3-47f7-a751-f369a10478ac",
+   "slug": "cat-power-the-greatest-tour-2fe08c90",
+   "title": "Cat Power - The Greatest Tour",
+   "name": "Cat Power",
+   "source_url": "https://en.wikipedia.org/wiki/Cat_Power",
+   "extract": "Charlyn Marie  \"Chan\" Marshall, better known by her stage name Cat Power, is an American singer-songwriter. Cat Power was originally the name of her first band, but has become her stage name as a solo artist.",
+   "en": {
+    "kicker": "american singer-songwriter · stage name",
+    "who": "Cat Power is the stage name of Charlyn Marie \"Chan\" Marshall, an American singer-songwriter. The name began as the name of her first band.",
+    "facts": [
+     "Charlyn Marie  \"Chan\" Marshall, better known by her stage name Cat Power, is an American singer-songwriter.",
+     "Cat Power was originally the name of her first band, but has become her stage name as a solo artist."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin · künstlername",
+    "who": "Cat Power ist der Künstlername von Charlyn Marie „Chan“ Marshall, einer amerikanischen Singer-Songwriterin. Der Name war ursprünglich der ihrer ersten Band.",
+    "facts": [
+     "Charlyn Marie „Chan“ Marshall, besser bekannt unter ihrem Künstlernamen Cat Power, ist eine amerikanische Singer-Songwriterin.",
+     "Cat Power war ursprünglich der Name ihrer ersten Band, ist als Solokünstlerin aber zu ihrem Künstlernamen geworden."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı · sahne adı",
+    "who": "Cat Power, Charlyn Marie “Chan” Marshall'ın sahne adıdır; Marshall Amerikalı bir şarkıcı ve söz yazarıdır. Ad, başlangıçta ilk grubunun adıydı.",
+    "facts": [
+     "Charlyn Marie “Chan” Marshall, sahne adı Cat Power ile daha çok tanınan Amerikalı bir şarkıcı ve söz yazarıdır.",
+     "Cat Power başlangıçta ilk grubunun adıydı; solo sanatçı olarak sahne adı hâline geldi."
+    ]
+   }
+  },
+  {
+   "id": "ea7ba41f-f6ee-4687-b230-f3f0e5a5eb19",
+   "slug": "ryan-beatty-1ffbdff7",
+   "title": "Ryan Beatty",
+   "name": "Ryan Beatty",
+   "source_url": "https://en.wikipedia.org/wiki/Ryan_Beatty",
+   "extract": "Ryan Kevin Beatty is an American singer-songwriter. He was born in Clovis, California, and now resides in Los Angeles.",
+   "en": {
+    "kicker": "american singer-songwriter · clovis, california",
+    "who": "Ryan Beatty makes music as an American singer-songwriter. He was born in Clovis, California, and now lives in Los Angeles.",
+    "facts": [
+     "Ryan Kevin Beatty is an American singer-songwriter.",
+     "He was born in Clovis, California, and now resides in Los Angeles."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · clovis, kalifornien",
+    "who": "Ryan Beatty ist ein amerikanischer Singer-Songwriter. Er wurde in Clovis in Kalifornien geboren und lebt heute in Los Angeles.",
+    "facts": [
+     "Ryan Kevin Beatty ist ein amerikanischer Singer-Songwriter.",
+     "Er wurde in Clovis in Kalifornien geboren und lebt heute in Los Angeles."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı singer-songwriter · clovis, kaliforniya",
+    "who": "Ryan Beatty, Amerikalı bir singer-songwriter'dır. Kaliforniya'nın Clovis kentinde doğdu ve bugün Los Angeles'ta yaşıyor.",
+    "facts": [
+     "Ryan Kevin Beatty, Amerikalı bir singer-songwriter'dır.",
+     "Kaliforniya'nın Clovis kentinde doğdu ve şu anda Los Angeles'ta yaşıyor."
+    ]
+   }
+  },
+  {
+   "id": "6c84bc98-886e-4fba-bf4d-e69e254e04c9",
+   "slug": "future-palace-651f30f0",
+   "title": "Future Palace",
+   "name": "Future Palace",
+   "source_url": "https://en.wikipedia.org/wiki/Future_Palace",
+   "extract": "Future Palace is a German rock band from Berlin. It consists of vocalist Maria Lessing, guitarist Manuel Kohlert, and drummer Johannes Früchtenicht. The band has been signed to the German label Century Media Records since 2025 and to date has released four studio albums, Escape (2020), Run (2022), Distortion (2024), and Resurgence (2026).",
+   "en": {
+    "kicker": "german rock band · berlin",
+    "who": "Future Palace is a German rock band from Berlin. Maria Lessing sings, Manuel Kohlert plays guitar and Johannes Früchtenicht plays drums.",
+    "facts": [
+     "The band has been signed to the German label Century Media Records since 2025 and to date has released four studio albums, Escape (2020), Run (2022), Distortion (2024), and Resurgence (2026).",
+     "It consists of vocalist Maria Lessing, guitarist Manuel Kohlert, and drummer Johannes Früchtenicht."
+    ]
+   },
+   "de": {
+    "kicker": "deutsche rockband · berlin",
+    "who": "Future Palace ist eine deutsche Rockband aus Berlin. Maria Lessing singt, Manuel Kohlert spielt Gitarre und Johannes Früchtenicht sitzt am Schlagzeug.",
+    "facts": [
+     "Die Band steht seit 2025 beim deutschen Label Century Media Records unter Vertrag und hat bislang vier Studioalben veröffentlicht: Escape (2020), Run (2022), Distortion (2024) und Resurgence (2026).",
+     "Zur Band gehören Maria Lessing am Gesang, Manuel Kohlert an der Gitarre und Johannes Früchtenicht am Schlagzeug."
+    ]
+   },
+   "tr": {
+    "kicker": "alman rock grubu · berlin",
+    "who": "Future Palace, Berlin'den bir Alman rock grubudur. Maria Lessing vokal, Manuel Kohlert gitar ve Johannes Früchtenicht davul görevini üstleniyor.",
+    "facts": [
+     "Grup 2025'ten beri Alman Century Media Records plak şirketi ile sözleşmeli ve bugüne kadar Escape (2020), Run (2022), Distortion (2024) ve Resurgence (2026) adlı dört stüdyo albümü yayımladı.",
+     "Grup; vokalist Maria Lessing, gitarist Manuel Kohlert ve davulcu Johannes Früchtenicht'ten oluşuyor."
+    ]
+   }
+  },
+  {
+   "id": "d9da194a-3bf1-4a66-afba-92767af823e9",
+   "slug": "alabama-3-cc5baed4",
+   "title": "Alabama 3",
+   "name": "Alabama 3",
+   "source_url": "https://en.wikipedia.org/wiki/Alabama_3",
+   "extract": "Alabama 3 is a British musical group founded in Brixton, London, in 1995. Their track \"Woke Up This Morning\" was used for the opening credits of the TV series The Sopranos. In the United States, the band is known as A3, to avoid legal conflict with the country music band Alabama.",
+   "en": {
+    "kicker": "british musical group · brixton, london, 1995",
+    "who": "The band was founded in Brixton, London, in 1995. In the United States it is known as A3, to avoid legal conflict with the country music band Alabama.",
+    "facts": [
+     "Alabama 3 is a British musical group founded in Brixton, London, in 1995.",
+     "Their track \"Woke Up This Morning\" was used for the opening credits of the TV series The Sopranos."
+    ]
+   },
+   "de": {
+    "kicker": "britische musikgruppe · brixton, london, 1995",
+    "who": "Die Gruppe wurde 1995 in Brixton in London gegründet. In den Vereinigten Staaten ist sie als A3 bekannt, um einen rechtlichen Konflikt mit der Country-Band Alabama zu vermeiden.",
+    "facts": [
+     "Alabama 3 ist eine britische Musikgruppe, die 1995 in Brixton, London, gegründet wurde.",
+     "Ihr Titel „Woke Up This Morning“ wurde für den Vorspann der Fernsehserie The Sopranos verwendet."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz müzik grubu · brixton, londra, 1995",
+    "who": "Grup 1995'te Londra'nın Brixton semtinde kuruldu. Amerika Birleşik Devletleri'nde, country müzik grubu Alabama ile hukuki bir anlaşmazlıktan kaçınmak için A3 adıyla bilinir.",
+    "facts": [
+     "Alabama 3, 1995 yılında Londra'nın Brixton semtinde kurulmuş bir İngiliz müzik grubudur.",
+     "Grubun “Woke Up This Morning” adlı parçası, The Sopranos dizisinin açılış jeneriğinde kullanıldı."
+    ]
+   }
+  },
+  {
+   "id": "97c2a1c0-c935-45cb-96cd-54df585f74a5",
+   "slug": "skerryvore-eaf07e8e",
+   "title": "Skerryvore",
+   "name": "Skerryvore",
+   "source_url": "https://en.wikipedia.org/wiki/Skerryvore_(band)",
+   "extract": "Skerryvore are a Scottish Celtic rock band originally formed by Daniel Gillespie and Fraser West in Tiree, Argyll and Bute in 2000, after the two began playing ceilidh music together at various functions. Named after the Skerryvore lighthouse which lies 12 miles (19 km) off the coast of Tiree, the band have released six studio albums, a compilation album, and a live album. Currently based in Glasgow, Scotland, Skerryvore have toured Europe, the United States, the Middle East, and China. Their earlier work was inspired by the music of their native Scotland. Later influences include rock, pop, jazz, Cajun, and country.",
+   "en": {
+    "kicker": "scottish celtic rock band · tiree, 2000",
+    "who": "Skerryvore are a Scottish Celtic rock band, named after the Skerryvore lighthouse which lies 12 miles off the coast of Tiree. The band have released six studio albums, a compilation album, and a live album.",
+    "facts": [
+     "Skerryvore are a Scottish Celtic rock band originally formed by Daniel Gillespie and Fraser West in Tiree, Argyll and Bute in 2000, after the two began playing ceilidh music together at various functions.",
+     "Currently based in Glasgow, Scotland, Skerryvore have toured Europe, the United States, the Middle East, and China."
+    ]
+   },
+   "de": {
+    "kicker": "schottische celtic-rock-band · tiree, 2000",
+    "who": "Skerryvore sind eine schottische Celtic-Rock-Band, benannt nach dem Leuchtturm Skerryvore, der 19 km vor der Küste von Tiree liegt. Die Band hat sechs Studioalben, ein Kompilationsalbum und ein Livealbum veröffentlicht.",
+    "facts": [
+     "Skerryvore wurden ursprünglich 2000 in Tiree in Argyll and Bute von Daniel Gillespie und Fraser West gegründet, nachdem die beiden begonnen hatten, bei verschiedenen Anlässen gemeinsam Ceilidh-Musik zu spielen.",
+     "Heute in Glasgow ansässig, haben Skerryvore in Europa, den Vereinigten Staaten, dem Nahen Osten und China getourt."
+    ]
+   },
+   "tr": {
+    "kicker": "İskoç celtic rock grubu · tiree, 2000",
+    "who": "Skerryvore, Tiree açıklarında 19 km uzaklıktaki Skerryvore deniz fenerinin adını taşıyan bir İskoç Celtic rock grubudur. Grup altı stüdyo albümü, bir derleme ve bir canlı albüm yayımladı.",
+    "facts": [
+     "Skerryvore, 2000 yılında Argyll and Bute'un Tiree kentinde Daniel Gillespie ve Fraser West tarafından kuruldu; ikisi çeşitli etkinliklerde birlikte ceilidh müziği çalmaya başladıktan sonra.",
+     "Şu anda İskoçya'nın Glasgow kentinde yerleşik olan grup; Avrupa, Amerika Birleşik Devletleri, Orta Doğu ve Çin'de turneler düzenledi."
+    ]
+   }
+  },
+  {
+   "id": "c8494e65-9a2f-4327-8659-317130ae3074",
+   "slug": "kaarija-eurodisko-tour-2026-110c443a",
+   "title": "Käärijä - Eurodisko Tour 2026",
+   "name": "Käärijä",
+   "source_url": "https://en.wikipedia.org/wiki/K%C3%A4%C3%A4rij%C3%A4",
+   "extract": "Jere Mikael Pöyhönen, known professionally as Käärijä, is a Finnish rapper, singer and songwriter. He represented Finland in the Eurovision Song Contest 2023 with the song \"Cha Cha Cha\", placing second with 526 points and finishing first in the public vote with 376. His entry topped the charts in Finland, Sweden, Latvia and Lithuania and reached the top ten in thirteen other countries, becoming the first song in Finnish to reach the top ten of the UK Singles Chart.",
+   "en": {
+    "kicker": "finnish rapper and singer · 2023",
+    "who": "Jere Mikael Pöyhönen, known professionally as Käärijä, is a Finnish rapper, singer and songwriter. His Eurovision entry charted in several countries.",
+    "facts": [
+     "His entry topped the charts in Finland, Sweden, Latvia and Lithuania and reached the top ten in thirteen other countries, becoming the first song in Finnish to reach the top ten of the UK Singles Chart.",
+     "He represented Finland in the Eurovision Song Contest 2023 with the song \"Cha Cha Cha\", placing second with 526 points and finishing first in the public vote with 376."
+    ]
+   },
+   "de": {
+    "kicker": "finnischer rapper und sänger · 2023",
+    "who": "Jere Mikael Pöyhönen, bekannt als Käärijä, ist ein finnischer Rapper, Sänger und Songwriter. Mit seinem Eurovision-Beitrag stieg er in mehreren Ländern in die Charts ein.",
+    "facts": [
+     "Sein Beitrag stand in Finnland, Schweden, Lettland und Litauen an der Chartspitze und erreichte in dreizehn weiteren Ländern die Top 10; damit war es der erste finnischsprachige Song, der die Top 10 der britischen Singles-Charts erreichte.",
+     "Er vertrat Finnland 2023 beim Eurovision Song Contest mit dem Lied „Cha Cha Cha“, belegte mit 526 Punkten den zweiten Platz und gewann das Publikumsvoting mit 376 Punkten."
+    ]
+   },
+   "tr": {
+    "kicker": "fin rapçi ve şarkıcı · 2023",
+    "who": "Jere Mikael Pöyhönen, Käärijä adıyla tanınan, Fin bir rapçi, şarkıcı ve söz yazarıdır. Eurovision katılımıyla birçok ülkede listelere girdi.",
+    "facts": [
+     "Parçası Finlandiya, İsveç, Letonya ve Litvanya'da listelerin zirvesine çıktı; diğer on üç ülkede ilk on'a girdi ve Fince yapılmış ilk şarkı olarak İngiltere Single Listesi'nin ilk on'una girdi.",
+     "2023 Eurovision Şarkı Yarışması'nda Finlandiya'yı “Cha Cha Cha” şarkısıyla temsil etti; 526 puanla ikinci oldu ve halk oylamasında 376 puanla birinci oldu."
+    ]
+   }
+  }
+ ]
+}

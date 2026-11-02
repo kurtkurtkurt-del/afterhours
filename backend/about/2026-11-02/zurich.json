@@ -1,0 +1,774 @@
+{
+ "city": "zurich",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "0a88d070-1368-4705-a445-0634000cd69f",
+   "slug": "elgrandetoto-3b6f7d24",
+   "title": "ElGrandeToto",
+   "name": "ElGrandeToto",
+   "source_url": "https://en.wikipedia.org/wiki/ElGrandeToto",
+   "extract": "Taha Fahssi, better known by his stage name ElGrandeToto, EGT or just Toto, is a Moroccan rapper from Casablanca. He has been the most streamed artist in Morocco for five consecutive years (2021-2025) and was the most listened-to artist in the MENA region on Spotify in 2021 and 2023. He is also the most viewed Moroccan rapper on YouTube. Fahssi is widely regarded as one of Morocco's best rappers of all time.",
+   "en": {
+    "kicker": "moroccan rapper · Casablanca",
+    "who": "Taha Fahssi, better known by his stage name ElGrandeToto, EGT or just Toto, is a Moroccan rapper from Casablanca. Fahssi is widely regarded as one of Morocco's best rappers of all time.",
+    "facts": [
+     "He has been the most streamed artist in Morocco for five consecutive years (2021-2025).",
+     "He is also the most viewed Moroccan rapper on YouTube."
+    ]
+   },
+   "de": {
+    "kicker": "marokkanischer rapper · Casablanca",
+    "who": "Taha Fahssi, besser bekannt unter seinem Künstlernamen ElGrandeToto, EGT oder einfach Toto, ist ein Rapper aus Casablanca in Marokko. Fahssi gilt weithin als einer der besten Rapper Marokkos aller Zeiten.",
+    "facts": [
+     "Er ist seit fünf aufeinanderfolgenden Jahren (2021–2025) der meistgestreamte Künstler Marokkos.",
+     "Außerdem ist er der meistgesehene marokkanische Rapper auf YouTube."
+    ]
+   },
+   "tr": {
+    "kicker": "faslı rapçi · Kazablanka",
+    "who": "Taha Fahssi, ElGrandeToto, EGT ya da kısaca Toto sahne adıyla daha iyi bilinen, Kazablanka'dan bir Faslı rapçidir. Fahssi, tüm zamanların Fas'ın en iyi rapçilerinden biri olarak geniş çapta kabul görmektedir.",
+    "facts": [
+     "Beş ardışık yıl (2021-2025) boyunca Fas'ta en çok dinlenen sanatçı olmuştur.",
+     "Ayrıca YouTube'da en çok izlenen Faslı rapçidir."
+    ]
+   }
+  },
+  {
+   "id": "d3b32aef-bec7-47bf-bc47-95c345e6671a",
+   "slug": "pitbull-i-m-back-d99dad7f",
+   "title": "Pitbull - I'm Back!",
+   "name": "Pitbull",
+   "source_url": "https://en.wikipedia.org/wiki/Pitbull_(rapper)",
+   "extract": "Armando Christian Pérez, known professionally as Pitbull, is an American rapper, singer, songwriter, and actor. He began his career in the early 2000s as a reggaeton, Latin hip-hop, and crunk performer, and signed with TVT Records to release his debut album, M.I.A.M.I. (2004). Executive produced by Lil Jon, the album entered the Billboard 200 along with his second and third albums, El Mariel (2006) and The Boatlift (2007). His fourth album, Pitbull Starring in Rebelution (2009), yielded his mainstream breakthrough, spawning the singles \"I Know You Want Me \" and \"Hotel Room Service\"—which peaked at numbers two and eight on the U.S. Billboard Hot 100, respectively.",
+   "en": {
+    "kicker": "american rapper · early 2000s",
+    "who": "Armando Christian Pérez, known professionally as Pitbull, is an American rapper, singer, songwriter, and actor. He began his career in the early 2000s as a reggaeton, Latin hip-hop, and crunk performer, and signed with TVT Records to release his debut album, M.I.A.M.I. (2004).",
+    "facts": [
+     "He began his career in the early 2000s as a reggaeton, Latin hip-hop, and crunk performer, and signed with TVT Records to release his debut album, M.I.A.M.I. (2004).",
+     "His fourth album, Pitbull Starring in Rebelution (2009), yielded his mainstream breakthrough."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper · anfang der 2000er",
+    "who": "Armando Christian Pérez, unter dem Künstlernamen Pitbull bekannt, ist ein amerikanischer Rapper, Sänger, Songwriter und Schauspieler. Er begann seine Karriere Anfang der 2000er Jahre als Interpret von Reggaeton, Latin-Hip-Hop und Crunk und unterschrieb bei TVT Records, um sein Debütalbum M.I.A.M.I. (2004) zu veröffentlichen.",
+    "facts": [
+     "Er begann seine Karriere Anfang der 2000er Jahre als Interpret von Reggaeton, Latin-Hip-Hop und Crunk.",
+     "Mit seinem vierten Album, Pitbull Starring in Rebelution (2009), gelang ihm der Durchbruch in den Mainstream."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi · 2000'lerin başı",
+    "who": "Armando Christian Pérez, sahne adıyla Pitbull, Amerikalı bir rapçi, şarkıcı, söz yazarı ve oyuncudur. Kariyerine 2000'lerin başında reggaeton, Latin hip-hop ve crunk icracısı olarak başladı ve debut albümü M.I.A.M.I. (2004) için TVT Records ile anlaşma imzaladı.",
+    "facts": [
+     "Kariyerine 2000'lerin başında reggaeton, Latin hip-hop ve crunk icracısı olarak başlamıştır.",
+     "Dördüncü albümü Pitbull Starring in Rebelution (2009), onun ana akıma geçişini sağlamıştır."
+    ]
+   }
+  },
+  {
+   "id": "5fbb0cb8-bb03-4105-a662-63caebfef2ec",
+   "slug": "lp-6afc6c47",
+   "title": "LP",
+   "name": "LP",
+   "source_url": "https://en.wikipedia.org/wiki/LP_(singer)",
+   "extract": "Laura Pergolizzi, known professionally as LP, is an American singer, musician and songwriter from Brooklyn, New York. LP has released seven albums and three EPs. LP has written songs for other artists including Rihanna, Christina Aguilera, the Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd and Céline Dion.",
+   "en": {
+    "kicker": "american singer · Brooklyn, New York",
+    "who": "Laura Pergolizzi, known professionally as LP, is an American singer, musician and songwriter from Brooklyn, New York. LP has released seven albums and three EPs.",
+    "facts": [
+     "LP has released seven albums and three EPs.",
+     "LP has written songs for other artists including Rihanna, Christina Aguilera, the Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd and Céline Dion."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · Brooklyn, New York",
+    "who": "Laura Pergolizzi, unter dem Künstlernamen LP bekannt, ist eine amerikanische Sängerin, Musikerin und Songwriterin aus Brooklyn in New York. LP hat sieben Alben und drei EPs veröffentlicht.",
+    "facts": [
+     "LP hat sieben Alben und drei EPs veröffentlicht.",
+     "LP hat Songs für andere Künstler geschrieben, darunter Rihanna, Christina Aguilera, die Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd und Céline Dion."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · Brooklyn, New York",
+    "who": "Laura Pergolizzi, LP sahne adıyla bilinen, New York'un Brooklyn semtinden Amerikalı bir şarkıcı, müzisyen ve söz yazarıdır. LP yedi albüm ve üç EP yayımlamıştır.",
+    "facts": [
+     "LP yedi albüm ve üç EP yayımlamıştır.",
+     "LP, Rihanna, Christina Aguilera, Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd ve Céline Dion dahil olmak üzere diğer sanatçılar için şarkılar yazmıştır."
+    ]
+   }
+  },
+  {
+   "id": "be79637b-80cd-4bb3-927a-a9ecdc4152f3",
+   "slug": "swae-lee-51b12578",
+   "title": "Swae Lee",
+   "name": "Swae Lee",
+   "source_url": "https://en.wikipedia.org/wiki/Swae_Lee",
+   "extract": "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California. Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi.",
+   "en": {
+    "kicker": "american rapper and singer · Inglewood, California",
+    "who": "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California. Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi.",
+    "facts": [
+     "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California.",
+     "Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper und sänger · Inglewood, Kalifornien",
+    "who": "Khalif Malik Ibn Shaman Brown, unter dem Künstlernamen Swae Lee bekannt, ist ein amerikanischer Rapper und Sänger aus Inglewood in Kalifornien. Bekannt für seine weitreichenden, hallreichen Vocals und seine genreübergreifende Musik, ist Lee die Hälfte des in Mississippi ansässigen Hip-Hop-Duos Rae Sremmurd, das er 2010 zusammen mit seinem älteren Bruder Slim Jxmmi gründete.",
+    "facts": [
+     "Khalif Malik Ibn Shaman Brown, unter dem Künstlernamen Swae Lee bekannt, stammt aus Inglewood in Kalifornien.",
+     "Lee ist die Hälfte des in Mississippi ansässigen Hip-Hop-Duos Rae Sremmurd, das er 2010 mit seinem älteren Bruder Slim Jxmmi gründete."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi ve şarkıcı · Inglewood, Kaliforniya",
+    "who": "Khalif Malik Ibn Shaman Brown, Swae Lee sahne adıyla bilinen, Kaliforniya'nın Inglewood kentinden Amerikalı bir rapçi ve şarkıcıdır. Geniş vokal aralığı ve yankılı vokalleri ile tür karıştırmasıyla tanınan Lee, Mississippi merkezli hip-hop ikilisi Rae Sremmurd'ın yarısıdır; bu ikiliyi 2010 yılında ağabeyi Slim Jxmmi ile birlikte kurmuştur.",
+    "facts": [
+     "Khalif Malik Ibn Shaman Brown, Swae Lee sahne adıyla tanınır ve Inglewood, Kaliforniya'dan gelir.",
+     "Lee, 2010 yılında ağabeyi Slim Jxmmi ile kurduğu Mississippi merkezli Rae Sremmurd ikilisinin yarısıdır."
+    ]
+   }
+  },
+  {
+   "id": "dc5e65ca-1998-4ec5-a3d5-108953370e12",
+   "slug": "the-kid-laroi-a-perfect-world-tour-bb8cb785",
+   "title": "The Kid LAROI - A Perfect World Tour",
+   "name": "The Kid Laroi",
+   "source_url": "https://en.wikipedia.org/wiki/The_Kid_Laroi",
+   "extract": "Charlton Kenneth Jeffrey Howard, known professionally as the Kid Laroi, is an Australian singer, rapper, and songwriter. He was signed with American rapper Lil Bibby's Grade A Productions, in a joint venture with Columbia Records, in 2019. He is best known for his 2021 single \"Stay\", which peaked atop the charts in numerous countries including his native Australia, as well as the Canadian Hot 100 and Billboard Hot 100.",
+   "en": {
+    "kicker": "australian singer and rapper · 2019",
+    "who": "Charlton Kenneth Jeffrey Howard, known professionally as the Kid Laroi, is an Australian singer, rapper, and songwriter. He was signed with American rapper Lil Bibby's Grade A Productions, in a joint venture with Columbia Records, in 2019.",
+    "facts": [
+     "He was signed with American rapper Lil Bibby's Grade A Productions, in a joint venture with Columbia Records, in 2019.",
+     "He is best known for his 2021 single \"Stay\", which peaked atop the charts in numerous countries including his native Australia, as well as the Canadian Hot 100 and Billboard Hot 100."
+    ]
+   },
+   "de": {
+    "kicker": "australischer sänger und rapper · 2019",
+    "who": "Charlton Kenneth Jeffrey Howard, unter dem Namen The Kid Laroi bekannt, ist ein australischer Sänger, Rapper und Songwriter. 2019 wurde er vom amerikanischen Rapper Lil Bibby über dessen Label Grade A Productions unter Vertrag genommen, in einem Joint Venture mit Columbia Records.",
+    "facts": [
+     "2019 wurde er von Grade A Productions des amerikanischen Rappers Lil Bibby unter Vertrag genommen, in einem Joint Venture mit Columbia Records.",
+     "Er ist vor allem für seine Single „Stay“ aus dem Jahr 2021 bekannt, die in zahlreichen Ländern, darunter seinem Heimatland Australien, sowie in den Canadian Hot 100 und den Billboard Hot 100 an die Spitze der Charts kletterte."
+    ]
+   },
+   "tr": {
+    "kicker": "avustralyalı şarkıcı ve rapçi · 2019",
+    "who": "Charlton Kenneth Jeffrey Howard, The Kid Laroi adıyla bilinen, Avustralyalı bir şarkıcı, rapçi ve söz yazarıdır. 2019 yılında Amerikalı rapçi Lil Bibby'nin Grade A Productions şirketi ile Columbia Records'un ortak girişimi kapsamında sözleşme imzalamıştır.",
+    "facts": [
+     "2019 yılında Amerikalı rapçi Lil Bibby'nin Grade A Productions şirketi ile Columbia Records'un ortak girişimi kapsamında sözleşme imzalamıştır.",
+     "2021 yılındaki \"Stay\" adlı single'ı ile en çok tanınır; bu şarkı, Avustralya dahil birçok ülkenin listelerinin zirvesine yükselmiştir."
+    ]
+   }
+  },
+  {
+   "id": "6d130996-722a-4fed-bc4b-69fa48f13a8e",
+   "slug": "polyphia-be-not-afraid-world-tour-7613b0be",
+   "title": "Polyphia: BE NOT AFRAID World Tour",
+   "name": "Polyphia",
+   "source_url": "https://en.wikipedia.org/wiki/Polyphia",
+   "extract": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music. Polyphia has released five studio albums, one live record, two EPs, and numerous singles.",
+   "en": {
+    "kicker": "american rock band · Plano, Texas, 2010",
+    "who": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman.",
+    "facts": [
+     "Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music.",
+     "Polyphia has released five studio albums, one live record, two EPs, and numerous singles."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · Plano, Texas, 2010",
+    "who": "Polyphia ist eine amerikanische Rockband aus Plano in Texas, gegründet 2010. Die Gruppe besteht aus den Gitarristen Tim Henson und Scott LePage, dem Bassisten Clay Gober und dem Schlagzeuger Clay Aeschliman.",
+    "facts": [
+     "Ihre frühen Veröffentlichungen waren im Heavy-Metal-Sound verwurzelt, während sich ihre Musik in späteren Produktionen zu einem progressiveren Rock-Stil entwickelte, der elektronische und Hip-Hop-Elemente kombiniert.",
+     "Polyphia hat fünf Studioalben, ein Live-Album, zwei EPs und zahlreiche Singles veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · Plano, Teksas, 2010",
+    "who": "Polyphia, 2010 yılında kurulmuş, Teksas'ın Plano kentinde merkezli Amerikalı bir rock grubudur. Grup, gitaristler Tim Henson ve Scott LePage, basçı Clay Gober ve davulcu Clay Aeschliman'dan oluşmaktadır.",
+    "facts": [
+     "İlk yapımlarında heavy metal sesine dayanan müzikleri, sonraki yapımlarında elektronik ve hip-hop unsurlarını birleştiren daha progresif bir rock tarzına evrilmiştir.",
+     "Grup beş stüdyo albümü, bir canlı kayıt, iki EP ve çok sayıda single yayımlamıştır."
+    ]
+   }
+  },
+  {
+   "id": "91224112-5f20-4310-a49f-9ad6efb02d8d",
+   "slug": "against-the-current-dc875a6b",
+   "title": "Against The Current",
+   "name": "Against the Current",
+   "source_url": "https://en.wikipedia.org/wiki/Against_the_Current_(band)",
+   "extract": "Against the Current is an American rock band from Poughkeepsie, New York, formed in 2011. As of 2025, the band consists of lead vocalist Chrissy Costanza, guitarist Dan Gow, and drummer Will Ferri. The band quickly gained a sizeable online following after posting covers of various popular songs on YouTube. They played Warped Tour in 2016.",
+   "en": {
+    "kicker": "american rock band · Poughkeepsie, New York, 2011",
+    "who": "Against the Current is an American rock band from Poughkeepsie, New York, formed in 2011. As of 2025, the band consists of lead vocalist Chrissy Costanza, guitarist Dan Gow, and drummer Will Ferri.",
+    "facts": [
+     "The band quickly gained a sizeable online following after posting covers of various popular songs on YouTube.",
+     "They played Warped Tour in 2016."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · Poughkeepsie, New York, 2011",
+    "who": "Against the Current ist eine amerikanische Rockband aus Poughkeepsie in New York, die 2011 gegründet wurde. Stand 2025 besteht die Band aus Chrissy Costanza (Lead-Vocals), Dan Gow (Gitarre) und Will Ferri (Schlagzeug).",
+    "facts": [
+     "Die Band gewann schnell eine beträchtliche Online-Fangemeinde, nachdem sie auf YouTube Coverversionen verschiedener populärer Songs veröffentlicht hatte.",
+     "Sie spielten 2016 auf der Warped Tour."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · Poughkeepsie, New York, 2011",
+    "who": "Against the Current, 2011 yılında kurulan, New York'un Poughkeepsie kentinden Amerikalı bir rock grubudur. 2025 itibarıyla grup; vokalde Chrissy Costanza, gitarda Dan Gow ve davulda Will Ferri'den oluşmaktadır.",
+    "facts": [
+     "YouTube'da çeşitli popüler şarkıların coverlarını paylaşmaya başladıktan sonra kısa sürede geniş bir çevrimiçi takipçi kitlesi kazanmıştır.",
+     "2016 yılında Warped Tour'da çalmıştır."
+    ]
+   }
+  },
+  {
+   "id": "b27002d0-bec0-4e43-8607-697b1f26dc6d",
+   "slug": "dizzy-dros-54f69119",
+   "title": "Dizzy Dros",
+   "name": "Dizzy DROS",
+   "source_url": "https://en.wikipedia.org/wiki/Dizzy_DROS",
+   "extract": "Omar Souhaili, better known by his stage name Dizzy DROS, or just Dizzy, is a Moroccan rapper, songwriter and record producer. Souhaili first gained recognition with the release of his debut music video, \"Casafonia\" in 2011. The track received significant airplay on major Moroccan radio stations, including Hit Radio, Radio Mars, and Cap Radio, quickly establishing him as a rising star in the Moroccan rap scene and earning him a fanbase.",
+   "en": {
+    "kicker": "moroccan rapper and producer · 2011",
+    "who": "Omar Souhaili, better known by his stage name Dizzy DROS, or just Dizzy, is a Moroccan rapper, songwriter and record producer. Souhaili first gained recognition with the release of his debut music video, \"Casafonia\" in 2011.",
+    "facts": [
+     "The track received significant airplay on major Moroccan radio stations, including Hit Radio, Radio Mars, and Cap Radio, quickly establishing him as a rising star in the Moroccan rap scene and earning him a fanbase.",
+     "Souhaili first gained recognition with the release of his debut music video, \"Casafonia\" in 2011."
+    ]
+   },
+   "de": {
+    "kicker": "marokkanischer rapper und produzent · 2011",
+    "who": "Omar Souhaili, besser bekannt unter dem Künstlernamen Dizzy DROS oder einfach Dizzy, ist ein marokkanischer Rapper, Songwriter und Musikproduzent. Souhaili wurde 2011 mit der Veröffentlichung seines Debüt-Musikvideos „Casafonia“ erstmals bekannt.",
+    "facts": [
+     "Der Track erhielt erhebliche Airplays auf großen marokkanischen Radiosendern, darunter Hit Radio, Radio Mars und Cap Radio, und etablierte ihn schnell als aufsteigenden Stern der marokkanischen Rapszene, was ihm eine Fangemeinde einbrachte.",
+     "Mit seinem Debüt-Musikvideo „Casafonia“ wurde Souhaili 2011 erstmals bekannt."
+    ]
+   },
+   "tr": {
+    "kicker": "faslı rapçi, söz yazarı ve yapımcı · 2011",
+    "who": "Omar Souhaili, Dizzy DROS ya da kısaca Dizzy sahne adıyla daha iyi bilinen, Faslı bir rapçi, söz yazarı ve müzik yapımcısıdır. Souhaili, ilk kez 2011 yılında yayımladığı ilk müzik videosu \"Casafonia\" ile tanınmaya başlamıştır.",
+    "facts": [
+     "\"Casafonia\" şarkısı Hit Radio, Radio Mars ve Cap Radio gibi büyük Fas radyolarında önemli ölçüde çalınmış; bu durum onu Fas rap sahnesinde yükselen bir yıldız olarak hızla konumlandırmış ve bir hayran kitlesi kazandırmıştır.",
+     "Souhaili ilk kez 2011 yılında yayımladığı ilk müzik videosu \"Casafonia\" ile tanınmıştır."
+    ]
+   }
+  },
+  {
+   "id": "b8478182-38d3-47cd-bd99-962f0b933717",
+   "slug": "esdeekid-council-house-rat-tour-80b1b304",
+   "title": "EsDeeKid - Council House Rat Tour",
+   "name": "EsDeeKid",
+   "source_url": "https://en.wikipedia.org/wiki/EsDeeKid",
+   "extract": "EsDeeKid is a British rapper from Liverpool, England. He released his debut mixtape, Rebel, in June 2025. He has been noted as a prominent figure in the UK underground rap scene. His music is characterised by his thick Scouse accent and draws inspiration from cloud rap. He covers his face with a balaclava, and keeps his name, appearance, and age private. He still lives in his council house.\nAs of May 2026, EsDeeKid's single \"Phantom\" has accumulated more than 300 million streams. His mixtape Rebel has charted in multiple European countries, as well as peaked at number 23 on the US Billboard 200, despite being released nearly five months before its debut on the chart.",
+   "en": {
+    "kicker": "british rapper · Liverpool, England, 2025",
+    "who": "EsDeeKid is a British rapper from Liverpool, England. He released his debut mixtape, Rebel, in June 2025. He has been noted as a prominent figure in the UK underground rap scene.",
+    "facts": [
+     "He covers his face with a balaclava, and keeps his name, appearance, and age private.",
+     "His mixtape Rebel has charted in multiple European countries, as well as peaked at number 23 on the US Billboard 200, despite being released nearly five months before its debut on the chart."
+    ]
+   },
+   "de": {
+    "kicker": "britischer rapper · Liverpool, England, 2025",
+    "who": "EsDeeKid ist ein britischer Rapper aus Liverpool in England. Im Juni 2025 veröffentlichte er sein Debüt-Mixtape Rebel. Er gilt als prominente Figur der britischen Underground-Rapszene.",
+    "facts": [
+     "Er verdeckt sein Gesicht mit einer Sturmhaube und hält seinen Namen, sein Aussehen und sein Alter privat.",
+     "Sein Mixtape Rebel stieg in mehreren europäischen Ländern in die Charts ein und erreichte auf der US-Billboard-200 Platz 23, obwohl es fast fünf Monate vor seinem Chart-Debüt erschienen war."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz rapçi · Liverpool, İngiltere, 2025",
+    "who": "EsDeeKid, İngiltere'nin Liverpool kentinden İngiliz bir rapçidir. Haziran 2025'te ilk mixtape'i Rebel'i yayımlamıştır. İngiltere'nin underground rap sahnesinde öne çıkan bir isim olarak kabul edilmektedir.",
+    "facts": [
+     "Yüzünü bir maskeyle kapatır ve adını, görünüşünü ve yaşını gizli tutar.",
+     "Rebel mixtape'i birçok Avrupa ülkesinin listelerine girmiş ve ABD Billboard 200 listesinde 23. sıraya yükselmiştir; bu, listeye girişinden neredeyse beş ay önce yayımlanmış olmasına rağmen gerçekleşmiştir."
+    ]
+   }
+  },
+  {
+   "id": "8f8beab7-aca6-4318-8c91-30eb67861cef",
+   "slug": "saint-levant-afandi-world-tour-b714b040",
+   "title": "Saint Levant - AFANDI WORLD TOUR",
+   "name": "Saint Levant",
+   "source_url": "https://en.wikipedia.org/wiki/Saint_Levant",
+   "extract": "Marwan Abdelhamid, known professionally as Saint Levant, is a Palestinian singer-songwriter and rapper. A multilingual artist, he became known for his 2022 song \"Very Few Friends\". As of August 2026, he has released two EPs and two studio albums, and has toured in the Middle East, Europe, the US, and Australia.",
+   "en": {
+    "kicker": "palestinian singer-songwriter and rapper · 2022",
+    "who": "Marwan Abdelhamid, known professionally as Saint Levant, is a Palestinian singer-songwriter and rapper. A multilingual artist, he became known for his 2022 song \"Very Few Friends\".",
+    "facts": [
+     "A multilingual artist, he became known for his 2022 song \"Very Few Friends\".",
+     "As of August 2026, he has released two EPs and two studio albums, and has toured in the Middle East, Europe, the US, and Australia."
+    ]
+   },
+   "de": {
+    "kicker": "palästinensischer singer-songwriter und rapper · 2022",
+    "who": "Marwan Abdelhamid, unter dem Künstlernamen Saint Levant bekannt, ist ein palästinensischer Singer-Songwriter und Rapper. Als mehrsprachiger Künstler wurde er durch seinen Song „Very Few Friends“ aus dem Jahr 2022 bekannt.",
+    "facts": [
+     "Bis August 2026 hat er zwei EPs und zwei Studioalben veröffentlicht.",
+     "Er war auf Tournee im Nahen Osten, in Europa, in den USA und in Australien."
+    ]
+   },
+   "tr": {
+    "kicker": "filistinli şarkıcı-söz yazarı ve rapçi · 2022",
+    "who": "Marwan Abdelhamid, Saint Levant sahne adıyla bilinen, Filistinli bir şarkıcı-söz yazarı ve rapçidir. Birden fazla dilde üretim yapan bir sanatçı olarak 2022 yılındaki \"Very Few Friends\" şarkısıyla tanınmaya başlamıştır.",
+    "facts": [
+     "Ağustos 2026 itibarıyla iki EP ve iki stüdyo albümü yayımlamıştır.",
+     "Orta Doğu, Avrupa, ABD ve Avustralya'da turneye çıkmıştır."
+    ]
+   }
+  },
+  {
+   "id": "664fb48e-efea-498b-94ce-3ee1999b0dc1",
+   "slug": "tiffany-day-2f8ec52a",
+   "title": "Tiffany Day",
+   "name": "Tiffany Day",
+   "source_url": "https://en.wikipedia.org/wiki/Tiffany_Day_(musician)",
+   "extract": "Tiffany Day Ruan, is a Canadian-American singer, songwriter, and record producer. Raised in Wichita, Kansas, she began independently releasing music after a 2017 video of her singing into a well in Italy went viral on Twitter. She released her debut studio album, Lover Tofu Fruit, in 2024. She signed to Broke Records the following year, through which she released her second studio album, Halo, in 2026.",
+   "en": {
+    "kicker": "canadian-american singer and songwriter · Wichita, Kansas",
+    "who": "Tiffany Day Ruan is a Canadian-American singer, songwriter, and record producer. Raised in Wichita, Kansas, she began independently releasing music after a 2017 video of her singing into a well in Italy went viral on Twitter.",
+    "facts": [
+     "She released her debut studio album, Lover Tofu Fruit, in 2024.",
+     "She signed to Broke Records the following year, through which she released her second studio album, Halo, in 2026."
+    ]
+   },
+   "de": {
+    "kicker": "kanadisch-amerikanische sängerin · Wichita, Kansas",
+    "who": "Tiffany Day Ruan ist eine kanadisch-amerikanische Sängerin, Songwriterin und Musikproduzentin. In Wichita, Kansas, aufgewachsen, begann sie unabhängig Musik zu veröffentlichen, nachdem ein Video von 2017, in dem sie in einen Brunnen in Italien singt, auf Twitter viral ging.",
+    "facts": [
+     "Sie veröffentlichte 2024 ihr Debütalbum Lover Tofu Fruit.",
+     "Im folgenden Jahr unterschrieb sie bei Broke Records, wo sie 2026 ihr zweites Studioalbum Halo veröffentlichte."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı-amerikalı şarkıcı ve söz yazarı · Wichita, Kansas",
+    "who": "Tiffany Day Ruan, Kanadalı-Amerikalı bir şarkıcı, söz yazarı ve plak yapımcısıdır. Kansas eyaletinin Wichita kentinde büyüyen sanatçı, İtalya'da bir kuyuya doğru şarkı söylediği 2017 tarihli bir videonun Twitter'da viral olmasının ardından bağımsız olarak müzik yayımlamaya başlamıştır.",
+    "facts": [
+     "2024 yılında ilk stüdyo albümü Lover Tofu Fruit'i yayımlamıştır.",
+     "Ertesi yıl Broke Records ile anlaşmış ve bu plak şirketi aracılığıyla 2026 yılında ikinci stüdyo albümü Halo'yu yayımlamıştır."
+    ]
+   }
+  },
+  {
+   "id": "49813429-b675-49c7-b0e6-35c0a100b772",
+   "slug": "arlo-parks-desire-tour-e5ca62be",
+   "title": "ARLO PARKS - DESIRE TOUR",
+   "name": "Arlo Parks",
+   "source_url": "https://en.wikipedia.org/wiki/Arlo_Parks",
+   "extract": "Anaïs Oluwatoyin Estelle Marinho, known professionally as Arlo Parks, is an English singer and songwriter. Her debut studio album, Collapsed in Sunbeams, was released in 2021 to critical acclaim and peaked at number three on the UK Albums Chart. It won the 2021 Mercury Prize for Best Album and earned her nominations for Album of the Year, Best New Artist and Best British Female Solo Artist at the 2021 Brit Awards.",
+   "en": {
+    "kicker": "english singer and songwriter · 2021",
+    "who": "Anaïs Oluwatoyin Estelle Marinho, known professionally as Arlo Parks, is an English singer and songwriter. Her debut studio album, Collapsed in Sunbeams, was released in 2021 to critical acclaim and peaked at number three on the UK Albums Chart.",
+    "facts": [
+     "It won the 2021 Mercury Prize for Best Album and earned her nominations for Album of the Year, Best New Artist and Best British Female Solo Artist at the 2021 Brit Awards.",
+     "Her debut studio album, Collapsed in Sunbeams, was released in 2021 to critical acclaim and peaked at number three on the UK Albums Chart."
+    ]
+   },
+   "de": {
+    "kicker": "englische sängerin und songwriterin · 2021",
+    "who": "Anaïs Oluwatoyin Estelle Marinho, unter dem Künstlernamen Arlo Parks bekannt, ist eine englische Sängerin und Songwriterin. Ihr Debütalbum Collapsed in Sunbeams erschien 2021 mit großer Anerkennung der Kritik und erreichte Platz drei der britischen Albumcharts.",
+    "facts": [
+     "Collapsed in Sunbeams gewann 2021 den Mercury Prize als bestes Album.",
+     "Außerdem wurde sie 2021 bei den Brit Awards in den Kategorien Album of the Year, Best New Artist und Best British Female Solo Artist nominiert."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz şarkıcı ve söz yazarı · 2021",
+    "who": "Anaïs Oluwatoyin Estelle Marinho, Arlo Parks sahne adıyla bilinen, İngiliz bir şarkıcı ve söz yazarıdır. Debut stüdyo albümü Collapsed in Sunbeams, 2021 yılında büyük eleştirel beğeni alarak yayımlanmış ve İngiltere Albüm Listesi'nde üçüncü sıraya kadar yükselmiştir.",
+    "facts": [
+     "Collapsed in Sunbeams, 2021 Mercury Ödülü'nde En İyi Albüm dalında ödül kazanmıştır.",
+     "Ayrıca 2021 Brit Ödülleri'nde Album of the Year, Best New Artist ve Best British Female Solo Artist kategorilerinde aday gösterilmiştir."
+    ]
+   }
+  },
+  {
+   "id": "662fc12b-2a80-4945-b9aa-257b656b246c",
+   "slug": "trixie-whitley-0c9efa92",
+   "title": "Trixie Whitley",
+   "name": "Trixie Whitley",
+   "source_url": "https://en.wikipedia.org/wiki/Trixie_Whitley",
+   "extract": "Trixie Whitley is a Belgian American multi-instrumentalist. As the daughter of singer-songwriter Chris Whitley, she began her musical career playing with her father, and recording on several of his albums. Whitley has released three solo EPs, is a member of Black Dub, and was the vocalist on their self-titled debut album.",
+   "en": {
+    "kicker": "belgian american multi-instrumentalist",
+    "who": "Trixie Whitley is a Belgian American multi-instrumentalist. As the daughter of singer-songwriter Chris Whitley, she began her musical career playing with her father, and recording on several of his albums.",
+    "facts": [
+     "Whitley has released three solo EPs, is a member of Black Dub, and was the vocalist on their self-titled debut album.",
+     "As the daughter of singer-songwriter Chris Whitley, she began her musical career playing with her father, and recording on several of his albums."
+    ]
+   },
+   "de": {
+    "kicker": "belgisch-amerikanische multiinstrumentalistin",
+    "who": "Trixie Whitley ist eine belgisch-amerikanische Multiinstrumentalistin. Als Tochter des Singer-Songwriters Chris Whitley begann sie ihre musikalische Karriere, indem sie mit ihrem Vater spielte und auf mehreren seiner Alben mitwirkte.",
+    "facts": [
+     "Whitley hat drei Solo-EPs veröffentlicht, ist Mitglied von Black Dub und war die Sängerin auf deren gleichnamigem Debütalbum.",
+     "Als Tochter des Singer-Songwriters Chris Whitley begann sie ihre musikalische Karriere, indem sie mit ihrem Vater spielte und auf mehreren seiner Alben mitwirkte."
+    ]
+   },
+   "tr": {
+    "kicker": "belçikalı-amerikalı çok enstrümanlı müzisyen",
+    "who": "Trixie Whitley, Belçikalı-Amerikalı bir çok enstrümanlı müzisyendir. Şarkıcı-söz yazarı Chris Whitley'in kızı olarak müzik kariyerine babasıyla birlikte çalarak başladı ve babasının birkaç albümünde kayıt yaptı.",
+    "facts": [
+     "Whitley üç solo EP yayımlamış; Black Dub grubunun üyesi olup grubun adını taşıyan ilk albümünde vokal yapmıştır.",
+     "Chris Whitley'in kızı olarak müzik kariyerine babasıyla birlikte çalarak başlamış ve babasının birkaç albümünde kayıt yapmıştır."
+    ]
+   }
+  },
+  {
+   "id": "62644b60-6dba-40b9-a238-b3532e8a3417",
+   "slug": "delinquent-habits-384d33e2",
+   "title": "Delinquent Habits",
+   "name": "Delinquent Habits",
+   "source_url": "https://en.wikipedia.org/wiki/Delinquent_Habits",
+   "extract": "Delinquent Habits is an American hip hop group, formed in Norwalk, California in 1991. They are known for their Latin-tinged rap, which is both melodic and hardcore. Their first album was executive produced by Cypress Hill member Sen Dog and featured guest appearances by Sen himself as well as Puerto Rican New York City rapper Hurricane G. Their second album, Here Come the Horns, again featured Sen Dog as well as Sen's brother, pioneering Latin rapper Mellow Man Ace. The melodic Merry-Go-Round featured the female singer Michelle Belle. The group chose to focus more on hardcore rap on their fourth offering, Freedom Band.",
+   "en": {
+    "kicker": "american hip hop group · Norwalk, California, 1991",
+    "who": "Delinquent Habits is an American hip hop group, formed in Norwalk, California in 1991. They are known for their Latin-tinged rap, which is both melodic and hardcore.",
+    "facts": [
+     "Their first album was executive produced by Cypress Hill member Sen Dog and featured guest appearances by Sen himself as well as Puerto Rican New York City rapper Hurricane G.",
+     "The group chose to focus more on hardcore rap on their fourth offering, Freedom Band."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische hip-hop-gruppe · Norwalk, Kalifornien, 1991",
+    "who": "Delinquent Habits ist eine amerikanische Hip-Hop-Gruppe, die 1991 in Norwalk in Kalifornien gegründet wurde. Sie sind für ihren lateinamerikanisch angehauchten Rap bekannt, der zugleich melodisch und hardcore ist.",
+    "facts": [
+     "Ihr erstes Album wurde von Cypress-Hill-Mitglied Sen Dog als Executive Producer betreut und enthielt Gastauftritte von Sen selbst sowie des puertoricanisch-new-yorkischen Rappers Hurricane G.",
+     "Mit ihrem vierten Album, Freedom Band, konzentrierte sich die Gruppe stärker auf Hardcore-Rap."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı hip hop grubu · Norwalk, Kaliforniya, 1991",
+    "who": "Delinquent Habits, 1991 yılında Kaliforniya'nın Norwalk kentinde kurulmuş Amerikalı bir hip hop grubudur. Latin esintili rap tarzıyla tanınırlar; bu tarz hem melodik hem de hardcore'dur.",
+    "facts": [
+     "İlk albümünün yapımcılığını Cypress Hill üyesi Sen Dog üstlenmiş; albümde Sen'in yanı sıra Porto Rikolu New York rapçisi Hurricane G konuk olarak yer almıştır.",
+     "Dördüncü albümleri Freedom Band ile grup, sert hardcore rap'e daha fazla odaklanmıştır."
+    ]
+   }
+  },
+  {
+   "id": "1de4edea-b047-422a-900e-9cfea29a24a0",
+   "slug": "kodaline-farewell-tour-6d88aad5",
+   "title": "Kodaline - Farewell Tour",
+   "name": "Kodaline",
+   "source_url": "https://en.wikipedia.org/wiki/Kodaline",
+   "extract": "Kodaline are an Irish rock band. Originally known as 21 Demands, the band adopted their current name in 2012 to coincide with the changing of their music. The group comprises Steve Garrigan, Vincent May, Mark Prendergast, and Jason Boland.",
+   "en": {
+    "kicker": "irish rock band · 2012",
+    "who": "Kodaline are an Irish rock band. Originally known as 21 Demands, the band adopted their current name in 2012 to coincide with the changing of their music.",
+    "facts": [
+     "The group comprises Steve Garrigan, Vincent May, Mark Prendergast, and Jason Boland.",
+     "The band adopted their current name in 2012 to coincide with the changing of their music."
+    ]
+   },
+   "de": {
+    "kicker": "irische rockband · 2012",
+    "who": "Kodaline sind eine irische Rockband. Ursprünglich unter dem Namen 21 Demands bekannt, nahm die Band 2012 ihren heutigen Namen an, um sich dem Wandel ihrer Musik anzupassen.",
+    "facts": [
+     "Die Gruppe besteht aus Steve Garrigan, Vincent May, Mark Prendergast und Jason Boland.",
+     "Die Band nahm 2012 ihren heutigen Namen an, um sich dem Wandel ihrer Musik anzupassen."
+    ]
+   },
+   "tr": {
+    "kicker": "İrlandalı rock grubu · 2012",
+    "who": "Kodaline, İrlandalı bir rock grubudur. Başlangıçta 21 Demands adıyla bilinen grup, müziğinin değişimine denk gelmesi için 2012 yılında bugünkü adını almıştır.",
+    "facts": [
+     "Grup Steve Garrigan, Vincent May, Mark Prendergast ve Jason Boland'dan oluşmaktadır.",
+     "Grup, müziğinin değişimiyle örtüşmesi amacıyla 2012 yılında bugünkü adını benimsemiştir."
+    ]
+   }
+  },
+  {
+   "id": "bbdd58e4-a185-4c2e-b09a-80178027e293",
+   "slug": "kid-kapichi-b230fe3f",
+   "title": "Kid Kapichi",
+   "name": "Kid Kapichi",
+   "source_url": "https://en.wikipedia.org/wiki/Kid_Kapichi",
+   "extract": "Kid Kapichi are an English punk rock band formed in Hastings in 2013. The band consists of vocalist and guitarist Jack Wilson and bassist Eddie Lewis.",
+   "en": {
+    "kicker": "english punk rock band · Hastings, 2013",
+    "who": "Kid Kapichi are an English punk rock band formed in Hastings in 2013. The band consists of vocalist and guitarist Jack Wilson and bassist Eddie Lewis.",
+    "facts": [
+     "The band consists of vocalist and guitarist Jack Wilson and bassist Eddie Lewis.",
+     "Kid Kapichi are an English punk rock band formed in Hastings in 2013."
+    ]
+   },
+   "de": {
+    "kicker": "englische punkrockband · Hastings, 2013",
+    "who": "Kid Kapichi sind eine englische Punkrockband, die 2013 in Hastings gegründet wurde. Die Band besteht aus Sänger und Gitarrist Jack Wilson und Bassist Eddie Lewis.",
+    "facts": [
+     "Die Band wurde 2013 in Hastings gegründet.",
+     "Zur Besetzung gehören Sänger und Gitarrist Jack Wilson sowie Bassist Eddie Lewis."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz punk rock grubu · Hastings, 2013",
+    "who": "Kid Kapichi, 2013 yılında Hastings'te kurulmuş İngiliz bir punk rock grubudur. Grup, vokal ve gitarda Jack Wilson ile bas gitarda Eddie Lewis'ten oluşmaktadır.",
+    "facts": [
+     "Grup 2013 yılında Hastings'te kurulmuştur.",
+     "Grubun kadrosunda vokal ve gitarda Jack Wilson ile basçı Eddie Lewis yer almaktadır."
+    ]
+   }
+  },
+  {
+   "id": "3ef5b7c1-aad3-4ad8-b840-e45256eeac34",
+   "slug": "muse-the-wow-signal-europa-tour-7f7c7751",
+   "title": "Muse - The Wow! Signal Europa Tour",
+   "name": "Muse",
+   "source_url": "https://en.wikipedia.org/wiki/Muse_(band)",
+   "extract": "Muse are an English rock band from Teignmouth, Devon, formed in 1994. The band consists of Matt Bellamy, Chris Wolstenholme, and Dominic Howard.",
+   "en": {
+    "kicker": "english rock band · Teignmouth, Devon, 1994",
+    "who": "Muse are an English rock band from Teignmouth, Devon, formed in 1994. The band consists of Matt Bellamy, Chris Wolstenholme, and Dominic Howard.",
+    "facts": [
+     "Muse are an English rock band from Teignmouth, Devon, formed in 1994.",
+     "The band consists of Matt Bellamy, Chris Wolstenholme, and Dominic Howard."
+    ]
+   },
+   "de": {
+    "kicker": "englische rockband · Teignmouth, Devon, 1994",
+    "who": "Muse sind eine englische Rockband aus Teignmouth in Devon, gegründet 1994. Die Band besteht aus Matt Bellamy, Chris Wolstenholme und Dominic Howard.",
+    "facts": [
+     "Die Band wurde 1994 gegründet.",
+     "Zur Besetzung gehören Matt Bellamy, Chris Wolstenholme und Dominic Howard."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz rock grubu · Teignmouth, Devon, 1994",
+    "who": "Muse, 1994 yılında kurulmuş, Devon'un Teignmouth kentinden İngiliz bir rock grubudur. Grup Matt Bellamy, Chris Wolstenholme ve Dominic Howard'dan oluşmaktadır.",
+    "facts": [
+     "Grup 1994 yılında kurulmuştur.",
+     "Grubun üyeleri Matt Bellamy, Chris Wolstenholme ve Dominic Howard'dır."
+    ]
+   }
+  },
+  {
+   "id": "c259c4ab-98d2-4afc-bac9-c8a9a0bc8819",
+   "slug": "sens-unik-a266b5cc",
+   "title": "Sens Unik",
+   "name": "Sens Unik",
+   "source_url": "https://en.wikipedia.org/wiki/Sens_Unik",
+   "extract": "Sens Unik is a Swiss Hip hop group from Lausanne, which was founded in 1987 and disbanded in 2010. They reunited in 2024 and are touring since.",
+   "en": {
+    "kicker": "swiss hip hop group · Lausanne, 1987",
+    "who": "Sens Unik is a Swiss Hip hop group from Lausanne, which was founded in 1987 and disbanded in 2010. They reunited in 2024 and are touring since.",
+    "facts": [
+     "They reunited in 2024 and are touring since.",
+     "Sens Unik is a Swiss Hip hop group from Lausanne, which was founded in 1987 and disbanded in 2010."
+    ]
+   },
+   "de": {
+    "kicker": "schweizer hip-hop-gruppe · Lausanne, 1987",
+    "who": "Sens Unik ist eine Schweizer Hip-Hop-Gruppe aus Lausanne, die 1987 gegründet und 2010 aufgelöst wurde. Sie fanden 2024 wieder zusammen und sind seitdem auf Tournee.",
+    "facts": [
+     "Sie fanden 2024 wieder zusammen und sind seitdem auf Tournee.",
+     "Die Gruppe aus Lausanne wurde 1987 gegründet und 2010 aufgelöst."
+    ]
+   },
+   "tr": {
+    "kicker": "İsviçreli hip hop grubu · Lozan, 1987",
+    "who": "Sens Unik, Lozan'dan bir İsviçreli hip hop grubudur. 1987 yılında kurulan grup 2010 yılında dağılmıştır; 2024 yılında yeniden bir araya gelmiş ve o tarihten beri turneye çıkmaktadır.",
+    "facts": [
+     "2024 yılında yeniden bir araya gelmiş ve o tarihten beri turneye çıkmaktadır.",
+     "Lozan'dan bir İsviçreli hip hop grubu olan Sens Unik, 1987 yılında kurulmuş ve 2010 yılında dağılmıştır."
+    ]
+   }
+  },
+  {
+   "id": "f8694123-2f38-40a6-a346-f0e3ae24cda2",
+   "slug": "hollywood-undead-59ad3ef8",
+   "title": "Hollywood Undead",
+   "name": "Hollywood Undead",
+   "source_url": "https://en.wikipedia.org/wiki/Hollywood_Undead",
+   "extract": "Hollywood Undead is an American rap rock band from Los Angeles, California, formed in 2005. All of the band members use pseudonyms and previously wore their own unique mask, most of which were based on the common hockey goaltender design. The band currently consists of five members: J-Dog, Funny Man, Johnny 3 Tears, Charlie Scene, and Danny. They released their debut album, Swan Songs, on September 2, 2008, and their live CD/DVD Desperate Measures, on November 10, 2009. Their second studio album, American Tragedy, was released April 5, 2011. Their third studio album, titled Notes from the Underground, was released on January 8, 2013.",
+   "en": {
+    "kicker": "american rap rock band · Los Angeles, 2005",
+    "who": "Hollywood Undead is an American rap rock band from Los Angeles, California, formed in 2005. The band currently consists of five members: J-Dog, Funny Man, Johnny 3 Tears, Charlie Scene, and Danny.",
+    "facts": [
+     "They released their debut album, Swan Songs, on September 2, 2008, and their live CD/DVD Desperate Measures, on November 10, 2009.",
+     "Their third studio album, titled Notes from the Underground, was released on January 8, 2013."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rap-rock-band · Los Angeles, 2005",
+    "who": "Hollywood Undead ist eine amerikanische Rap-Rock-Band aus Los Angeles in Kalifornien, die 2005 gegründet wurde. Die Band besteht derzeit aus fünf Mitgliedern: J-Dog, Funny Man, Johnny 3 Tears, Charlie Scene und Danny.",
+    "facts": [
+     "Sie veröffentlichten ihr Debütalbum Swan Songs am 2. September 2008 sowie ihre Live-CD/DVD Desperate Measures am 10. November 2009.",
+     "Ihr drittes Studioalbum mit dem Titel Notes from the Underground erschien am 8. Januar 2013."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rap rock grubu · Los Angeles, 2005",
+    "who": "Hollywood Undead, 2005 yılında kurulmuş, Los Angeles, Kaliforniya'dan Amerikalı bir rap rock grubudur. Grup şu anda J-Dog, Funny Man, Johnny 3 Tears, Charlie Scene ve Danny olmak üzere beş üyeden oluşmaktadır.",
+    "facts": [
+     "Debut albümleri Swan Songs'u 2 Eylül 2008'de, canlı CD/DVD'leri Desperate Measures'ı ise 10 Kasım 2009'da yayımlamışlardır.",
+     "Üçüncü stüdyo albümleri Notes from the Underground, 8 Ocak 2013'te yayımlanmıştır."
+    ]
+   }
+  },
+  {
+   "id": "fbe9f7ff-b1c9-4a2f-86f6-2734b38c89bc",
+   "slug": "editors-9bfccdec",
+   "title": "Editors",
+   "name": "Editors",
+   "source_url": "https://en.wikipedia.org/wiki/Editors_(band)",
+   "extract": "Editors are an English rock band, formed in 2002 in Birmingham. Previously known as Pilot, The Pride and Snowfield, the band consists of Tom Smith, Russell Leetch, Ed Lay, Justin Lockey, and Elliott Williams. During live performances, the band are joined by longtime touring member Nicholas Willes.",
+   "en": {
+    "kicker": "english rock band · Birmingham, 2002",
+    "who": "Editors are an English rock band, formed in 2002 in Birmingham. Previously known as Pilot, The Pride and Snowfield, the band consists of Tom Smith, Russell Leetch, Ed Lay, Justin Lockey, and Elliott Williams.",
+    "facts": [
+     "During live performances, the band are joined by longtime touring member Nicholas Willes.",
+     "Editors are an English rock band, formed in 2002 in Birmingham."
+    ]
+   },
+   "de": {
+    "kicker": "englische rockband · Birmingham, 2002",
+    "who": "Editors sind eine englische Rockband, die 2002 in Birmingham gegründet wurde. Zuvor waren sie unter den Namen Pilot, The Pride und Snowfield bekannt; die Band besteht aus Tom Smith, Russell Leetch, Ed Lay, Justin Lockey und Elliott Williams.",
+    "facts": [
+     "Bei Live-Auftritten wird die Band von dem langjährigen Tourmitglied Nicholas Willes begleitet.",
+     "Die Band wurde 2002 in Birmingham gegründet."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz rock grubu · Birmingham, 2002",
+    "who": "Editors, 2002 yılında Birmingham'da kurulmuş İngiliz bir rock grubudur. Daha önce Pilot, The Pride ve Snowfield adlarıyla bilinen grup; Tom Smith, Russell Leetch, Ed Lay, Justin Lockey ve Elliott Williams'dan oluşmaktadır.",
+    "facts": [
+     "Canlı performanslarda gruba uzun süredir turne üyesi olan Nicholas Willes eşlik etmektedir.",
+     "Grup, 2002 yılında Birmingham'da kurulmuştur."
+    ]
+   }
+  },
+  {
+   "id": "b9906ec0-9443-46ce-8bfd-7e0a3596d7a0",
+   "slug": "spanish-love-songs-f6380983",
+   "title": "Spanish Love Songs",
+   "name": "Spanish Love Songs",
+   "source_url": "https://en.wikipedia.org/wiki/Spanish_Love_Songs",
+   "extract": "Spanish Love Songs is an American rock band from Los Angeles, California, that was founded in 2013. The band consists of lead vocalist and guitarist Dylan Slocum, guitarist Kyle McAulay, drummer Ruben Duarte, bass guitarist Mike Trujillo, and keyboardist/acoustic guitar player Meredith Van Woert. Slocum and Van Woert are married. Since their formation, Spanish Love Songs has released four studio albums: Giant Sings the Blues (2015), Schmaltz (2018), Brave Faces Everyone (2020) and No Joy (2023).",
+   "en": {
+    "kicker": "american rock band · Los Angeles, 2013",
+    "who": "Spanish Love Songs is an American rock band from Los Angeles, California, that was founded in 2013. The band consists of lead vocalist and guitarist Dylan Slocum, guitarist Kyle McAulay, drummer Ruben Duarte, bass guitarist Mike Trujillo, and keyboardist/acoustic guitar player Meredith Van Woert.",
+    "facts": [
+     "Slocum and Van Woert are married.",
+     "Since their formation, Spanish Love Songs has released four studio albums: Giant Sings the Blues (2015), Schmaltz (2018), Brave Faces Everyone (2020) and No Joy (2023)."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · Los Angeles, 2013",
+    "who": "Spanish Love Songs ist eine amerikanische Rockband aus Los Angeles in Kalifornien, die 2013 gegründet wurde. Zur Band gehören Dylan Slocum (Lead-Vocals und Gitarre), Kyle McAulay (Gitarre), Ruben Duarte (Schlagzeug), Mike Trujillo (Bass) und Meredith Van Woert (Keyboards und Akustikgitarre).",
+    "facts": [
+     "Slocum und Van Woert sind verheiratet.",
+     "Seit ihrer Gründung hat Spanish Love Songs vier Studioalben veröffentlicht: Giant Sings the Blues (2015), Schmaltz (2018), Brave Faces Everyone (2020) und No Joy (2023)."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · Los Angeles, 2013",
+    "who": "Spanish Love Songs, 2013 yılında kurulmuş, Los Angeles, Kaliforniya'dan Amerikalı bir rock grubudur. Grup; Dylan Slocum (vokal ve gitar), Kyle McAulay (gitar), Ruben Duarte (davul), Mike Trujillo (bas gitar) ve Meredith Van Woert (klavye ve akustik gitar)'den oluşmaktadır.",
+    "facts": [
+     "Slocum ve Van Woert evlidir.",
+     "Kuruluşundan bu yana Spanish Love Songs; Giant Sings the Blues (2015), Schmaltz (2018), Brave Faces Everyone (2020) ve No Joy (2023) adlı dört stüdyo albümü yayımlamıştır."
+    ]
+   }
+  },
+  {
+   "id": "ad856270-bde0-45a6-b6a5-3773facb9364",
+   "slug": "masego-fix-your-face-tour-6b33dd32",
+   "title": "Masego – Fix Your Face Tour",
+   "name": "Masego",
+   "source_url": "https://en.wikipedia.org/wiki/Masego_(musician)",
+   "extract": "Micah Davis, known professionally as Masego, is a Jamaican and American musician and singer, known for incorporating the saxophone into his music. Masego released two EPs in 2016, The Pink Polo EP with Medasin, and Loose Thoughts. He gained widespread attention with his collaborative record with FKJ called \"Tadow\" released in 2017. In 2018, he released his debut album Lady Lady. His album Studying Abroad: Extended Stay was nominated for the 2022 Grammy Awards in the \"Best Progressive R&B Album\" category.",
+   "en": {
+    "kicker": "jamaican and american musician · 2016",
+    "who": "Micah Davis, known professionally as Masego, is a Jamaican and American musician and singer, known for incorporating the saxophone into his music.",
+    "facts": [
+     "In 2018, he released his debut album Lady Lady.",
+     "His album Studying Abroad: Extended Stay was nominated for the 2022 Grammy Awards in the \"Best Progressive R&B Album\" category."
+    ]
+   },
+   "de": {
+    "kicker": "jamaikanisch-amerikanischer musiker · 2016",
+    "who": "Micah Davis, unter dem Künstlernamen Masego bekannt, ist ein jamaikanisch-amerikanischer Musiker und Sänger, der das Saxophon in seine Musik einbaut.",
+    "facts": [
+     "2018 veröffentlichte er sein Debütalbum Lady Lady.",
+     "Sein Album Studying Abroad: Extended Stay wurde bei den Grammy Awards 2022 in der Kategorie „Best Progressive R&B Album“ nominiert."
+    ]
+   },
+   "tr": {
+    "kicker": "jamaikalı-amerikalı müzisyen · 2016",
+    "who": "Micah Davis, Masego sahne adıyla bilinen, Jamaikalı ve Amerikalı bir müzisyen ve şarkıcıdır. Müziğine saksofon eklemesiyle tanınır.",
+    "facts": [
+     "2018 yılında ilk albümü Lady Lady'yi yayımlamıştır.",
+     "Studying Abroad: Extended Stay albümü, 2022 Grammy Ödülleri'nde \"Best Progressive R&B Album\" kategorisinde aday gösterilmiştir."
+    ]
+   }
+  },
+  {
+   "id": "9f3705d4-e467-459a-a068-50fb2d70d070",
+   "slug": "oskar-med-k-0b1ab85a",
+   "title": "Oskar Med K",
+   "name": "Oskar med k",
+   "source_url": "https://en.wikipedia.org/wiki/Oskar_med_k",
+   "extract": "Oskar Sjåvåg, known professionally as oskar med k, is a Norwegian electronic dance music producer most known for his breakthrough single \"Make Me Feel\". He later released the official remix with singer Khalid. It also appeared on Khalid's fourth album, After the Sun Goes Down, on October 10, 2025. Both tracks reached inside the UK, Swiss, and German charts.",
+   "en": {
+    "kicker": "norwegian electronic dance music producer · 2025",
+    "who": "Oskar Sjåvåg, known professionally as oskar med k, is a Norwegian electronic dance music producer most known for his breakthrough single \"Make Me Feel\". He later released the official remix with singer Khalid.",
+    "facts": [
+     "It also appeared on Khalid's fourth album, After the Sun Goes Down, on October 10, 2025.",
+     "Both tracks reached inside the UK, Swiss, and German charts."
+    ]
+   },
+   "de": {
+    "kicker": "norwegischer produzent elektronischer tanzmusik · 2025",
+    "who": "Oskar Sjåvåg, unter dem Künstlernamen oskar med k bekannt, ist ein norwegischer Produzent elektronischer Tanzmusik, der vor allem für seine Single „Make Me Feel“ bekannt ist. Später veröffentlichte er den offiziellen Remix mit Sänger Khalid.",
+    "facts": [
+     "Der Titel erschien auch auf Khalids viertem Album After the Sun Goes Down am 10. Oktober 2025.",
+     "Beide Titel erreichten die Charts in Großbritannien, der Schweiz und Deutschland."
+    ]
+   },
+   "tr": {
+    "kicker": "norveçli elektronik dans müziği yapımcısı · 2025",
+    "who": "Oskar Sjåvåg, oskar med k sahne adıyla bilinen, Norveçli bir elektronik dans müziği yapımcısıdır ve en çok \"Make Me Feel\" adlı single'ıyla tanınır. Daha sonra şarkıcı Khalid ile birlikte resmi remix'i yayımlamıştır.",
+    "facts": [
+     "Parça, Khalid'in 10 Ekim 2025'te yayımlanan dördüncü albümü After the Sun Goes Down'da da yer almıştır.",
+     "Her iki parça da İngiltere, İsviçre ve Almanya listelerine girmiştir."
+    ]
+   }
+  },
+  {
+   "id": "67557ee6-223d-4423-9f2f-e4fa4f20b26f",
+   "slug": "cameron-whitcomb-the-kingdom-of-fear-eu-uk-tour-404e85b2",
+   "title": "Cameron Whitcomb - The Kingdom Of Fear EU/UK Tour 2027",
+   "name": "Cameron Whitcomb",
+   "source_url": "https://en.wikipedia.org/wiki/Cameron_Whitcomb",
+   "extract": "Cameron Donald Whitcomb is a Canadian singer and songwriter from Nanaimo, British Columbia. He competed on season 20 of reality television show American Idol. He is currently signed to Atlantic Records. Whitcomb has charted multiple songs internationally, including \"Quitter\", \"Medusa\", \"Options\", and \"Kingdom of Fear\". His debut album The Hard Way was released on September 26, 2025.",
+   "en": {
+    "kicker": "canadian singer and songwriter · Nanaimo, British Columbia",
+    "who": "Cameron Donald Whitcomb is a Canadian singer and songwriter from Nanaimo, British Columbia. He competed on season 20 of reality television show American Idol. He is currently signed to Atlantic Records.",
+    "facts": [
+     "Whitcomb has charted multiple songs internationally, including \"Quitter\", \"Medusa\", \"Options\", and \"Kingdom of Fear\".",
+     "His debut album The Hard Way was released on September 26, 2025."
+    ]
+   },
+   "de": {
+    "kicker": "kanadischer singer-songwriter · Nanaimo, British Columbia",
+    "who": "Cameron Donald Whitcomb ist ein kanadischer Singer-Songwriter aus Nanaimo in British Columbia. Er trat in der 20. Staffel der Reality-Show American Idol an und steht derzeit bei Atlantic Records unter Vertrag.",
+    "facts": [
+     "Whitcomb hat mehrere Songs international in die Charts gebracht, darunter „Quitter“, „Medusa“, „Options“ und „Kingdom of Fear“.",
+     "Sein Debütalbum The Hard Way erschien am 26. September 2025."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı şarkıcı ve söz yazarı · Nanaimo, British Columbia",
+    "who": "Cameron Donald Whitcomb, British Columbia'nın Nanaimo kentinden Kanadalı bir şarkıcı ve söz yazarıdır. Gerçeklik dizisi American Idol'ün 20. sezonunda yarıştı ve şu anda Atlantic Records ile sözleşmelidir.",
+    "facts": [
+     "Uluslararası düzeyde \"Quitter\", \"Medusa\", \"Options\" ve \"Kingdom of Fear\" dahil olmak üzere birden fazla şarkı listelere girmiştir.",
+     "İlk albümü The Hard Way, 26 Eylül 2025'te yayımlanmıştır."
+    ]
+   }
+  }
+ ]
+}

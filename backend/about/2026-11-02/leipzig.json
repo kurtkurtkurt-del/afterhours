@@ -1,0 +1,134 @@
+{
+  "city": "leipzig",
+  "day": "2026-11-02",
+  "nights": [
+    {
+      "id": "3f513ae8-ef90-454e-93c2-3138f07467db",
+      "slug": "dartagnan-44f84b83",
+      "title": "dArtagnan",
+      "name": "DArtagnan",
+      "source_url": "https://en.wikipedia.org/wiki/DArtagnan_(band)",
+      "extract": "dArtagnan is a German folk rock band from Nuremberg. The band's name makes reference to 17th century French soldier Charles de Batz de Castelmore d'Artagnan, made famous by the author Alexandre Dumas in his d'Artagnan Romances, notably in the novel The Three Musketeers.",
+      "en": {
+        "kicker": "german folk rock band · nuremberg",
+        "who": "dArtagnan is a German folk rock band from Nuremberg. The band's name makes reference to 17th century French soldier Charles de Batz de Castelmore d'Artagnan, made famous by the author Alexandre Dumas in his d'Artagnan Romances, notably in the novel The Three Musketeers.",
+        "facts": [
+          "The band's name makes reference to 17th century French soldier Charles de Batz de Castelmore d'Artagnan.",
+          "d'Artagnan was made famous by the author Alexandre Dumas in his d'Artagnan Romances, notably in the novel The Three Musketeers."
+        ]
+      },
+      "de": {
+        "kicker": "deutsche folk-rock-band · nürnberg",
+        "who": "dArtagnan ist eine deutsche Folk-Rock-Band aus Nürnberg. Der Name bezieht sich auf den französischen Soldaten des 17. Jahrhunderts Charles de Batz de Castelmore d'Artagnan, der durch den Autor Alexandre Dumas in seinen d'Artagnan-Romanen berühmt wurde, vor allem im Roman Die drei Musketiere.",
+        "facts": [
+          "Der Name der Band bezieht sich auf den französischen Soldaten Charles de Batz de Castelmore d'Artagnan aus dem 17. Jahrhundert.",
+          "d'Artagnan wurde durch Alexandre Dumas berühmt, vor allem durch den Roman Die drei Musketiere."
+        ]
+      },
+      "tr": {
+        "kicker": "alman folk rock grubu · nürnberg",
+        "who": "dArtagnan, Nürnberg'den bir Alman folk rock grubudur. Grubun adı, 17. yüzyıl Fransız askeri Charles de Batz de Castelmore d'Artagnan'a gönderme yapar; bu isim, yazar Alexandre Dumas'nın d'Artagnan Romanları ve özellikle Üç Silahşörler romanı ile ünlendi.",
+        "facts": [
+          "Grubun adı, 17. yüzyılda yaşamış Fransız asker Charles de Batz de Castelmore d'Artagnan'a gönderme yapar.",
+          "d'Artagnan, Alexandre Dumas'nın Üç Silahşörler romanıyla ünlendi."
+        ]
+      }
+    },
+    {
+      "id": "ae769d43-98b1-4836-b61e-d9007d0b6588",
+      "slug": "polyphia-be-not-afraid-world-tour-54f51ff5",
+      "title": "Polyphia - BE NOT AFRAID World Tour",
+      "name": "Polyphia",
+      "source_url": "https://en.wikipedia.org/wiki/Polyphia",
+      "extract": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music. Polyphia has released five studio albums, one live record, two EPs, and numerous singles.",
+      "en": {
+        "kicker": "american progressive rock band · plano, 2010",
+        "who": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman.",
+        "facts": [
+          "Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions.",
+          "Polyphia has released five studio albums, one live record, two EPs, and numerous singles."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische progressive-rock-band · plano, 2010",
+        "who": "Polyphia ist eine amerikanische Rockband mit Sitz in Plano, Texas, die 2010 gegründet wurde. Zur Gruppe gehören die Gitarristen Tim Henson und Scott LePage, Bassist Clay Gober und Schlagzeuger Clay Aeschliman.",
+        "facts": [
+          "Die Band kam aus einem Heavy-Metal-Sound, entwickelte sich in späteren Veröffentlichungen aber zu einem progressiveren Rockstil.",
+          "Polyphia hat fünf Studioalben, ein Livealbum, zwei EPs und zahlreiche Singles veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı progresif rock grubu · plano, 2010",
+        "who": "Polyphia, Texas'ın Plano kentinde merkezli, 2010 yılında kurulmuş bir Amerikalı rock grubudur. Grup; gitaristler Tim Henson ve Scott LePage, basçı Clay Gober ve davulcu Clay Aeschliman'dan oluşuyor.",
+        "facts": [
+          "İlk yayınlarında heavy metal sesine dayanan müzik, sonraki yapımlarında daha progresif bir rock tarzına evrildi.",
+          "Polyphia beş stüdyo albümü, bir canlı kayıt, iki EP ve çok sayıda single yayımladı."
+        ]
+      }
+    },
+    {
+      "id": "a8a142c6-04c4-41ed-90ae-6a9dac3a051a",
+      "slug": "keimzeit-die-tour-zum-neuen-album-f2538c9e",
+      "title": "Keimzeit. - Die Tour zum neuen Album",
+      "name": "Keimzeit",
+      "source_url": "https://en.wikipedia.org/wiki/Keimzeit",
+      "extract": "Keimzeit is a German musical band formed in 1979 in Lütte (Belzig) near Potsdam, GDR. Originally called Jogger, they changed their name to Keimzeit in 1982.",
+      "en": {
+        "kicker": "german musical band · lütte, 1979",
+        "who": "Keimzeit is a German musical band formed in 1979 in Lütte (Belzig) near Potsdam, GDR. Originally called Jogger, they changed their name to Keimzeit in 1982.",
+        "facts": [
+          "They were originally called Jogger.",
+          "The band was formed in 1979 in Lütte (Belzig) near Potsdam, GDR."
+        ]
+      },
+      "de": {
+        "kicker": "deutsche musikband · lütte, 1979",
+        "who": "Keimzeit ist eine deutsche Musikband, die 1979 in Lütte (Belzig) bei Potsdam in der DDR gegründet wurde. Ursprünglich hieß sie Jogger, 1982 änderte sie ihren Namen in Keimzeit.",
+        "facts": [
+          "Ursprünglich nannte sich die Band Jogger.",
+          "Die Band entstand 1979 in Lütte (Belzig) bei Potsdam in der DDR."
+        ]
+      },
+      "tr": {
+        "kicker": "alman müzik grubu · lütte, 1979",
+        "who": "Keimzeit, 1979 yılında Potsdam yakınlarında, Lütte (Belzig)'de, GDR'de kurulmuş bir Alman müzik grubudur. Başlangıçta Jogger adını taşıyan grup, 1982'de adını Keimzeit olarak değiştirdi.",
+        "facts": [
+          "Grup ilk olarak Jogger olarak biliniyordu.",
+          "Grup, 1979 yılında Potsdam yakınlarında, GDR'de, Lütte (Belzig)'de kuruldu."
+        ]
+      }
+    },
+    {
+      "id": "abb56979-600e-49c7-8c45-f560854b09d8",
+      "slug": "amorphis-borderlands-tour-2027-be522fc1",
+      "title": "Amorphis - Borderlands Tour 2027",
+      "name": "Amorphis",
+      "source_url": "https://en.wikipedia.org/wiki/Amorphis",
+      "extract": "Amorphis is a Finnish progressive metal band founded by Jan Rechberger, Tomi Koivusaari, and Esa Holopainen in 1990. Initially, the band was a death metal act, but on later albums they evolved into playing other genres, including progressive metal, folk metal, and melodic death metal. They frequently use the Kalevala, the epic poem of Finland, as a source for their lyrics.",
+      "en": {
+        "kicker": "finnish progressive metal band · 1990",
+        "who": "Amorphis is a Finnish progressive metal band founded by Jan Rechberger, Tomi Koivusaari, and Esa Holopainen in 1990. They frequently use the Kalevala, the epic poem of Finland, as a source for their lyrics.",
+        "facts": [
+          "Initially, the band was a death metal act.",
+          "On later albums they evolved into playing other genres, including progressive metal, folk metal, and melodic death metal."
+        ]
+      },
+      "de": {
+        "kicker": "finnische progressive-metal-band · 1990",
+        "who": "Amorphis ist eine finnische Progressive-Metal-Band, die 1990 von Jan Rechberger, Tomi Koivusaari und Esa Holopainen gegründet wurde. Für ihre Texte greifen sie häufig auf das Kalevala zurück, das epische Gedicht Finnlands.",
+        "facts": [
+          "Anfangs war die Band eine Death-Metal-Gruppe.",
+          "Auf späteren Alben spielten sie andere Genres, darunter Progressive Metal, Folk Metal und Melodic Death Metal."
+        ]
+      },
+      "tr": {
+        "kicker": "finlandiyalı progressive metal grubu · 1990",
+        "who": "Amorphis, 1990 yılında Jan Rechberger, Tomi Koivusaari ve Esa Holopainen tarafından kurulan bir Fin progressive metal grubudur. Sözleri için Finlandiya'nın epik şiiri Kalevala'yı sık sık kaynak olarak kullanır.",
+        "facts": [
+          "Grubun başlangıçtaki müziği bir death metal tarzıydı.",
+          "Sonraki albümlerinde progressive metal, folk metal ve melodic death metal dahil başka türlere yöneldiler."
+        ]
+      }
+    }
+  ]
+}

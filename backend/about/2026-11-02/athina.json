@@ -1,0 +1,70 @@
+{
+  "city": "athina",
+  "day": "2026-11-02",
+  "nights": [
+    {
+      "id": "82ebc67d-9944-4d58-9446-41d03f1afb01",
+      "slug": "alexandra-capitanescu-2b5a04d3",
+      "title": "ALEXANDRA CĂPITĂNESCU",
+      "name": "Alexandra Căpitănescu",
+      "source_url": "https://en.wikipedia.org/wiki/Alexandra_C%C4%83pit%C4%83nescu",
+      "extract": "Alexandra Căpitănescu is a Romanian singer and songwriter who rose to prominence by winning season 11 of Vocea României. She represented Romania in the Eurovision Song Contest 2026 with the song \"Choke Me\" and finished in third place, her country's best result.",
+      "en": {
+        "kicker": "romanian singer and songwriter · 2026",
+        "who": "Alexandra Căpitănescu is a Romanian singer and songwriter who rose to prominence by winning season 11 of Vocea României. She represented Romania in the Eurovision Song Contest 2026 and finished third.",
+        "facts": [
+          "Alexandra Căpitănescu is a Romanian singer and songwriter who rose to prominence by winning season 11 of Vocea României.",
+          "She represented Romania in the Eurovision Song Contest 2026 with the song \"Choke Me\" and finished in third place, her country's best result."
+        ]
+      },
+      "de": {
+        "kicker": "romanische sängerin und songwriterin · 2026",
+        "who": "Alexandra Căpitănescu ist eine rumänische Sängerin und Songwriterin, die durch den Sieg in der elften Staffel von Vocea României bekannt wurde. Sie vertrat Rumänien beim Eurovision Song Contest 2026 und belegte den dritten Platz.",
+        "facts": [
+          "Sie wurde durch den Sieg in der elften Staffel von Vocea României bekannt.",
+          "Sie vertrat Rumänien beim Eurovision Song Contest 2026 mit dem Lied „Choke Me“ und belegte den dritten Platz, das beste Ergebnis ihres Landes."
+        ]
+      },
+      "tr": {
+        "kicker": "romanyalı şarkıcı ve söz yazarı · 2026",
+        "who": "Alexandra Căpitănescu, Vocea României'nin 11. sezonunu kazanarak ün kazanan Romanyalı bir şarkıcı ve söz yazarıdır. 2026 Eurovision Şarkı Yarışması'nda Romanya'yı temsil etti ve üçüncü oldu.",
+        "facts": [
+          "Vocea României'nin 11. sezonunu kazanarak ün kazandı.",
+          "2026 Eurovision Şarkı Yarışması'nda ülkesini \"Choke Me\" şarkısıyla temsil etti ve üçüncü olarak bitirdi; bu, ülkesinin en iyi sonucudur."
+        ]
+      }
+    },
+    {
+      "id": "2c2d1e74-c6ec-437d-8c5e-761019957223",
+      "slug": "dr-feelgood-bbaf8012",
+      "title": "DR FEELGOOD",
+      "name": "Dr. Feelgood",
+      "source_url": "https://en.wikipedia.org/wiki/Dr._Feelgood_(band)",
+      "extract": "Dr. Feelgood are an English pub rock band formed in 1971. Hailing from Canvey Island, Essex, they are best known for early singles such as \"She Does It Right\", \"Roxette\", \"Back in the Night\" and \"Milk and Alcohol\". Their original and distinctively British R&B sound was centred on Wilko Johnson's choppy guitar style. Along with Johnson, the initial band line-up included singer Lee Brilleaux and the rhythm section of John B. Sparks, known as \"Sparko\", on bass guitar and John Martin, known as \"The Big Figure\", on drums. Although their most commercially productive years were the mid to late-1970s, and in spite of Brilleaux's death in 1994, a version of the band continues to tour and record.",
+      "en": {
+        "kicker": "english pub rock band · canvey island, 1971",
+        "who": "Dr. Feelgood are an English pub rock band formed in 1971. Hailing from Canvey Island, Essex, they are best known for early singles such as \"She Does It Right\" and \"Roxette\".",
+        "facts": [
+          "Their original and distinctively British R&B sound was centred on Wilko Johnson's choppy guitar style.",
+          "Although their most commercially productive years were the mid to late-1970s, and in spite of Brilleaux's death in 1994, a version of the band continues to tour and record."
+        ]
+      },
+      "de": {
+        "kicker": "englische pub-rock-band · canvey island, 1971",
+        "who": "Dr. Feelgood sind eine englische Pub-Rock-Band, die 1971 gegründet wurde. Die Band stammt von Canvey Island in Essex und ist vor allem für frühe Singles wie „She Does It Right“ und „Roxette“ bekannt.",
+        "facts": [
+          "Ihr eigener, unverkennbar britischer R&B-Sound drehte sich um Wilko Johnsons abgehackten Gitarrenstil.",
+          "Ihre kommerziell erfolgreichsten Jahre lagen Mitte bis Ende der 1970er, und trotz Brilleaux' Tod 1994 tourt und nimmt eine Version der Band weiterhin auf."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz pub rock grubu · canvey island, 1971",
+        "who": "Dr. Feelgood, 1971'de kurulmuş bir İngiliz pub rock grubudur. Essex'in Canvey Island kentinden gelen grup, \"She Does It Right\" ve \"Roxette\" gibi erken dönem single'larıyla tanınır.",
+        "facts": [
+          "Özgün ve belirgin biçimde İngiliz olan R&B sesleri, Wilko Johnson'ın kesik kesik gitar tarzına dayanıyordu.",
+          "En ticari açıdan verimli yılları 1970'lerin ortası ile sonu olsa da, Brilleaux'nun 1994'teki ölümüne rağmen grubun bir versiyonu turne yapmaya ve kayıt yapmaya devam ediyor."
+        ]
+      }
+    }
+  ]
+}

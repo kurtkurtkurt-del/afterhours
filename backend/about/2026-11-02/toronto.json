@@ -1,0 +1,422 @@
+{
+ "city": "toronto",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "b7f86483-f698-4300-9b10-facf1858a1c0",
+   "slug": "kaskade-974ab871",
+   "title": "KASKADE",
+   "name": "Kaskade",
+   "source_url": "https://en.wikipedia.org/wiki/Kaskade",
+   "extract": "Ryan Gary Raddon, better known by his stage name Kaskade, is an American DJ, songwriter, music producer and remixer. DJ Times voted Kaskade as \"America's Best DJ\" in 2011 and 2013. DJ Mag named Kaskade fifty-first on its 2009 list of Top 100 DJs.",
+   "en": {
+    "kicker": "american dj and music producer · 2011",
+    "who": "Ryan Gary Raddon, better known by his stage name Kaskade, is an American DJ, songwriter, music producer and remixer. DJ Times voted Kaskade as \"America's Best DJ\" in 2011 and 2013.",
+    "facts": [
+     "DJ Mag named Kaskade fifty-first on its 2009 list of Top 100 DJs.",
+     "DJ Times voted Kaskade as \"America's Best DJ\" in 2011 and 2013."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer dj und musikproduzent · 2011",
+    "who": "Ryan Gary Raddon, besser bekannt unter seinem Künstlernamen Kaskade, ist ein amerikanischer DJ, Songwriter, Musikproduzent und Remixer. DJ Times wählte Kaskade 2011 und 2013 zum \"America's Best DJ\".",
+    "facts": [
+     "DJ Mag platzierte Kaskade 2009 auf Platz 51 seiner Liste der Top 100 DJs.",
+     "DJ Times wählte Kaskade 2011 und 2013 zum \"America's Best DJ\"."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı dj ve müzik yapımcısı · 2011",
+    "who": "Sahne adı Kaskade olan Ryan Gary Raddon, Amerikalı bir DJ, söz yazarı, müzik yapımcısı ve remixer'dır. DJ Times, 2011 ve 2013 yıllarında Kaskade'i \"America's Best DJ\" seçti.",
+    "facts": [
+     "DJ Mag, Kaskade'i 2009 yılındaki Top 100 DJ listesinde ellibirinci sıraya yerleştirdi.",
+     "DJ Times, 2011 ve 2013 yıllarında Kaskade'i \"America's Best DJ\" seçti."
+    ]
+   }
+  },
+  {
+   "id": "d60b00d5-1e2b-4e74-970f-9ebc6ee2cdff",
+   "slug": "sleeping-with-sirens-an-ending-in-itself-tour-5a3317ae",
+   "title": "Sleeping With Sirens: An Ending In Itself Tour",
+   "name": "Sleeping with Sirens",
+   "source_url": "https://en.wikipedia.org/wiki/Sleeping_with_Sirens",
+   "extract": "Sleeping with Sirens is an American rock band originally formed in Orlando, Florida. The band currently consists of Kellin Quinn, Justin Hills, Nick Martin, Matty Best, and Tony Pizzuti. The band was formed in 2009 by Nick Trombino of Broadway and Brandon McMaster. The group is currently signed to Rise Records and have released eight full-length studio albums, one live album, and one acoustic EP.",
+   "en": {
+    "kicker": "american rock band · orlando, florida, 2009",
+    "who": "Sleeping with Sirens is an American rock band originally formed in Orlando, Florida. The band currently consists of Kellin Quinn, Justin Hills, Nick Martin, Matty Best, and Tony Pizzuti.",
+    "facts": [
+     "The band was formed in 2009 by Nick Trombino of Broadway and Brandon McMaster.",
+     "The group is currently signed to Rise Records and have released eight full-length studio albums, one live album, and one acoustic EP."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · orlando, florida, 2009",
+    "who": "Sleeping with Sirens ist eine amerikanische Rockband, die ursprünglich in Orlando, Florida, gegründet wurde. Die Band besteht derzeit aus Kellin Quinn, Justin Hills, Nick Martin, Matty Best und Tony Pizzuti.",
+    "facts": [
+     "Die Band wurde 2009 von Nick Trombino von Broadway und Brandon McMaster gegründet.",
+     "Die Gruppe ist derzeit bei Rise Records unter Vertrag und hat acht Studioalben in voller Länge, ein Live-Album und eine akustische EP veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · orlando, florida, 2009",
+    "who": "Sleeping with Sirens, başlangıçta Florida eyaletinin Orlando kentinde kurulan Amerikalı bir rock grubudur. Grubun şu anki üyeleri Kellin Quinn, Justin Hills, Nick Martin, Matty Best ve Tony Pizzuti'dir.",
+    "facts": [
+     "Grup, 2009 yılında Broadway'den Nick Trombino ve Brandon McMaster tarafından kuruldu.",
+     "Grup şu anda Rise Records ile sözleşmeli olup sekiz tam uzunluklu stüdyo albümü, bir canlı albüm ve bir akustik EP yayınladı."
+    ]
+   }
+  },
+  {
+   "id": "fa0a95c5-068a-4be1-b0e2-1da26a6f0064",
+   "slug": "sueco-571e7c86",
+   "title": "Sueco",
+   "name": "Sueco",
+   "source_url": "https://en.wikipedia.org/wiki/Sueco",
+   "extract": "William Henry Victor Schultz, better known by the stage names Sueco or SuecoTheChild, is an American rapper and singer-songwriter from Los Angeles. He first became known for his 2019 single \"Fast\", which received platinum certification by the Recording Industry Association of America (RIAA) in July 2022 after going viral on TikTok. His 2021 song \"Paralyzed\" marked his first entry on both the Billboard Hot 100 and Global 200, also receiving gold certification by the RIAA.",
+   "en": {
+    "kicker": "american rapper · los angeles, 2019",
+    "who": "William Henry Victor Schultz, better known by the stage names Sueco or SuecoTheChild, is an American rapper and singer-songwriter from Los Angeles. He first became known for his 2019 single \"Fast\", which received platinum certification by the Recording Industry Association of America (RIAA) in July 2022 after going viral on TikTok.",
+    "facts": [
+     "His 2021 song \"Paralyzed\" marked his first entry on both the Billboard Hot 100 and Global 200, also receiving gold certification by the RIAA.",
+     "He first became known for his 2019 single \"Fast\", which received platinum certification by the Recording Industry Association of America (RIAA) in July 2022."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper · los angeles, 2019",
+    "who": "William Henry Victor Schultz, besser bekannt unter den Künstlernamen Sueco oder SuecoTheChild, ist ein amerikanischer Rapper und Singer-Songwriter aus Los Angeles. Bekannt wurde er zunächst mit seiner Single \"Fast\" aus dem Jahr 2019, die im Juli 2022 nach viralem Erfolg auf TikTok von der Recording Industry Association of America (RIAA) mit Platin ausgezeichnet wurde.",
+    "facts": [
+     "Sein Song \"Paralyzed\" aus dem Jahr 2021 markierte seinen ersten Eintrag sowohl in die Billboard Hot 100 als auch in die Global 200 und erhielt zudem Gold-Status der RIAA.",
+     "Im Juli 2022 wurde \"Fast\" von der RIAA mit Platin ausgezeichnet, nachdem der Song auf TikTok viral gegangen war."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi · los angeles, 2019",
+    "who": "William Henry Victor Schultz; Sueco ya da SuecoTheChild sahne adlarıyla tanınan, Los Angeles'tan Amerikalı bir rapçi ve şarkıcı-söz yazarıdır. 2019 yılındaki \"Fast\" single'ı ile ilk kez tanındı; şarkı TikTok'ta viral olduktan sonra Temmuz 2022'de Amerika Kayıt Endüstrisi Derneği (RIAA) tarafından platin sertifika aldı.",
+    "facts": [
+     "2021 tarihli \"Paralyzed\" şarkısı, onun hem Billboard Hot 100 hem de Global 200 listelerindeki ilk girişi oldu; şarkı ayrıca RIAA'dan altın sertifika aldı.",
+     "\"Fast\" single'ı 2019'da yayınlandı ve Temmuz 2022'de RIAA tarafından platin sertifika aldı."
+    ]
+   }
+  },
+  {
+   "id": "2b7490af-0665-4e28-8446-80e6bca69ea3",
+   "slug": "dev-lemons-eat-the-pavement-tour-moved-to-the-gr-ad322eea",
+   "title": "DEV LEMONS - EAT THE PAVEMENT TOUR MOVED TO THE GREAT HALL",
+   "name": "Dev Lemons",
+   "source_url": "https://en.wikipedia.org/wiki/Dev_Lemons",
+   "extract": "Devon Vonder Schmalz, also known as Dev Lemons, is an American singer-songwriter, record producer, and YouTuber. She initially gained popularity by making music theory videos as SongPsych on TikTok and YouTube and through her personal YouTube channel, Dev Limes. She has released two studio albums, Surface Tension in 2025, and Hunting What We Already Killed in 2026.",
+   "en": {
+    "kicker": "american singer-songwriter and producer · 2025",
+    "who": "Devon Vonder Schmalz, also known as Dev Lemons, is an American singer-songwriter, record producer, and YouTuber. She initially gained popularity by making music theory videos as SongPsych on TikTok and YouTube and through her personal YouTube channel, Dev Limes.",
+    "facts": [
+     "She has released two studio albums, Surface Tension in 2025, and Hunting What We Already Killed in 2026.",
+     "She initially gained popularity by making music theory videos as SongPsych on TikTok and YouTube and through her personal YouTube channel, Dev Limes."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin und produzentin · 2025",
+    "who": "Devon Vonder Schmalz, auch bekannt als Dev Lemons, ist eine amerikanische Singer-Songwriterin, Musikproduzentin und YouTuberin. Bekannt wurde sie durch Musiktheorie-Videos, die sie als SongPsych auf TikTok und YouTube veröffentlichte, sowie durch ihren persönlichen YouTube-Kanal Dev Limes.",
+    "facts": [
+     "Sie hat zwei Studioalben veröffentlicht: Surface Tension im Jahr 2025 und Hunting What We Already Killed im Jahr 2026.",
+     "Bekannt wurde sie durch Musiktheorie-Videos, die sie als SongPsych auf TikTok und YouTube veröffentlichte, sowie durch ihren persönlichen YouTube-Kanal Dev Limes."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı, söz yazarı ve yapımcı · 2025",
+    "who": "Devon Vonder Schmalz, Dev Lemons adıyla da bilinen, Amerikalı bir şarkıcı, söz yazarı, plak yapımcısı ve YouTuber'dır. TikTok ve YouTube'da SongPsych adıyla müzik teorisi videoları yaparak ve kişisel YouTube kanalı Dev Limes üzerinden popülerlik kazandı.",
+    "facts": [
+     "İki stüdyo albümü yayınladı: 2025'te Surface Tension ve 2026'da Hunting What We Already Killed.",
+     "TikTok ve YouTube'da SongPsych adıyla müzik teorisi videoları yaparak popülerlik kazandı; ayrıca kişisel YouTube kanalı Dev Limes'ı işletti."
+    ]
+   }
+  },
+  {
+   "id": "9dd46cc0-2c01-4662-81ac-8ea4f1a960f1",
+   "slug": "vince-staples-8691fb82",
+   "title": "Vince Staples",
+   "name": "Vince Staples",
+   "source_url": "https://en.wikipedia.org/wiki/Vince_Staples",
+   "extract": "Vincent Jamal Staples is an American rapper, singer, songwriter, and actor. He first became known for his appearances on the projects from Odd Future members and affiliates, including Earl Sweatshirt's Earl (2010) and Doris (2013), Mike G.’s Ali (2010) and The Jet Age of Tomorrow's Journey to the 5th Echelon (2010). He signed with Talib Kweli's Blacksmith Records prior to the release of his collaborative mixtape with Mac Miller, Stolen Youth (2013). The following year, he signed with No I.D.'s ARTium Recordings, an imprint of Def Jam Recordings, to release his debut extended play, Hell Can Wait (2014), which received critical acclaim and marked his first entry on the Billboard 200.",
+   "en": {
+    "kicker": "american rapper and actor · 2014",
+    "who": "Vincent Jamal Staples is an American rapper, singer, songwriter, and actor. He first became known for his appearances on the projects from Odd Future members and affiliates, including Earl Sweatshirt's Earl (2010) and Doris (2013).",
+    "facts": [
+     "The following year, he signed with No I.D.'s ARTium Recordings, an imprint of Def Jam Recordings, to release his debut extended play, Hell Can Wait (2014), which received critical acclaim and marked his first entry on the Billboard 200.",
+     "He signed with Talib Kweli's Blacksmith Records prior to the release of his collaborative mixtape with Mac Miller, Stolen Youth (2013)."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper und schauspieler · 2014",
+    "who": "Vincent Jamal Staples ist ein amerikanischer Rapper, Sänger, Songwriter und Schauspieler. Bekannt wurde er zunächst durch seine Auftritte auf Projekten von Odd-Future-Mitgliedern und deren Umfeld, darunter Earl Sweatshirts Earl (2010) und Doris (2013).",
+    "facts": [
+     "Im folgenden Jahr unterschrieb er bei ARTium Recordings von No I.D., einem Imprint von Def Jam Recordings, um sein Debüt-EP Hell Can Wait (2014) zu veröffentlichen; sie erhielt viel Lob von der Kritik und markierte seinen ersten Eintrag in die Billboard 200.",
+     "Zuvor hatte er bei Talib Kwelis Blacksmith Records unterschrieben, bevor das gemeinsame Mixtape mit Mac Miller, Stolen Youth (2013), erschien."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi ve oyuncu · 2014",
+    "who": "Vincent Jamal Staples; Amerikalı bir rapçi, şarkıcı, söz yazarı ve oyuncudur. İlk olarak Odd Future üyeleri ve yakın çevrelerinin projelerindeki konuk performanslarıyla tanındı; bunlar arasında Earl Sweatshirt'in Earl (2010) ve Doris (2013) albümleri yer alıyordu.",
+    "facts": [
+     "Ertesi yıl, Def Jam Recordings'in bir kolu olan No I.D.'nin ARTium Recordings şirketi ile sözleşme imzalayarak debut EP'si Hell Can Wait'i (2014) yayınladı; EP büyük beğeni topladı ve Billboard 200'de ilk girişini sağladı.",
+     "Mac Miller ile yaptığı ortak mixtape Stolen Youth (2013) yayınlanmadan önce Talib Kweli'nin Blacksmith Records şirketi ile anlaşmıştı."
+    ]
+   }
+  },
+  {
+   "id": "d2f5815c-8fdd-40cc-8e6a-e939919a13f8",
+   "slug": "the-east-pointers-4d74e94d",
+   "title": "The East Pointers",
+   "name": "The East Pointers",
+   "source_url": "https://en.wikipedia.org/wiki/The_East_Pointers",
+   "extract": "The East Pointers are a Canadian contemporary folk music group from Prince Edward Island, who won the Juno Award for Traditional Roots Album of the Year for their album Secret Victory at the Juno Awards of 2017. The group initially consisted of guitarist Jake Charron, banjoist Koady Chaisson, and fiddler Tim Chaisson. They perform Celtic-influenced original songs and instrumentals with contemporary influences.",
+   "en": {
+    "kicker": "canadian folk music group · prince edward island, 2017",
+    "who": "The East Pointers are a Canadian contemporary folk music group from Prince Edward Island, who won the Juno Award for Traditional Roots Album of the Year for their album Secret Victory at the Juno Awards of 2017. They perform Celtic-influenced original songs and instrumentals with contemporary influences.",
+    "facts": [
+     "The group initially consisted of guitarist Jake Charron, banjoist Koady Chaisson, and fiddler Tim Chaisson.",
+     "They perform Celtic-influenced original songs and instrumentals with contemporary influences."
+    ]
+   },
+   "de": {
+    "kicker": "kanadische folkmusik-gruppe · prince edward island, 2017",
+    "who": "The East Pointers sind eine kanadische zeitgenössische Folkmusikgruppe von Prince Edward Island, die 2017 bei den Juno Awards den Preis als Traditional Roots Album of the Year für ihr Album Secret Victory gewann. Sie spielen keltisch geprägte eigene Lieder und Instrumentalstücke mit zeitgenössischen Einflüssen.",
+    "facts": [
+     "Die Gruppe bestand anfangs aus Gitarrist Jake Charron, Banjospieler Koady Chaisson und Geiger Tim Chaisson.",
+     "Sie spielen keltisch geprägte eigene Lieder und Instrumentalstücke mit zeitgenössischen Einflüssen."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı folk müzik grubu · prince edward island, 2017",
+    "who": "The East Pointers, Prince Edward Island'dan çıkan Kanadalı çağdaş bir folk müzik grubudur; grup 2017 Juno Ödülleri'nde Secret Victory albümüyle Traditional Roots Album of the Year ödülünü kazandı. Kelt etkili özgün şarkılar ve enstrümantal parçalar çalıyor; bunlara çağdaş etkiler de karışıyor.",
+    "facts": [
+     "Grup başlangıçta gitarist Jake Charron, banjocu Koady Chaisson ve kemancı Tim Chaisson'dan oluşuyordu.",
+     "Kelt etkili özgün şarkılar ve enstrümantal parçalar çalıyor; bunlara çağdaş etkiler de karışıyor."
+    ]
+   }
+  },
+  {
+   "id": "cc8341c2-fa71-4035-a489-eb138e5169d5",
+   "slug": "angine-de-poitrine-8e644e11",
+   "title": "Angine de Poitrine",
+   "name": "Angine de Poitrine",
+   "source_url": "https://en.wikipedia.org/wiki/Angine_de_Poitrine",
+   "extract": "Angine de Poitrine is a Canadian rock duo formed in Saguenay, Quebec, in 2019. The anonymous pair perform under the pseudonyms Khn de Poitrine and Klek de Poitrine (drums). They are known for complex microtonal compositions in the style of math rock and experimental rock, and an absurdist image involving oversized papier-mâché masks and black-and-white polka-dotted costumes.",
+   "en": {
+    "kicker": "canadian rock duo · saguenay, quebec, 2019",
+    "who": "Angine de Poitrine is a Canadian rock duo formed in Saguenay, Quebec, in 2019. The anonymous pair perform under the pseudonyms Khn de Poitrine and Klek de Poitrine (drums).",
+    "facts": [
+     "They are known for complex microtonal compositions in the style of math rock and experimental rock, and an absurdist image involving oversized papier-mâché masks and black-and-white polka-dotted costumes.",
+     "The anonymous pair perform under the pseudonyms Khn de Poitrine and Klek de Poitrine (drums)."
+    ]
+   },
+   "de": {
+    "kicker": "kanadisches rockduo · saguenay, quebec, 2019",
+    "who": "Angine de Poitrine ist ein kanadisches Rockduo, das 2019 in Saguenay, Quebec, gegründet wurde. Das anonyme Duo tritt unter den Pseudonymen Khn de Poitrine und Klek de Poitrine (Schlagzeug) auf.",
+    "facts": [
+     "Sie sind bekannt für komplexe mikrotonale Kompositionen im Stil von Math Rock und experimentellem Rock sowie für ein absurdes Image mit übergroßen Masken aus Papier-mâché und schwarz-weiß gepunkteten Kostümen.",
+     "Das anonyme Duo tritt unter den Pseudonymen Khn de Poitrine und Klek de Poitrine (Schlagzeug) auf."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı rock ikilisi · saguenay, quebec, 2019",
+    "who": "Angine de Poitrine, 2019 yılında Quebec'in Saguenay kentinde kurulan Kanadalı bir rock ikilisidir. Anonim ikili, Khn de Poitrine ve Klek de Poitrine (davul) takma adlarıyla performans sergiler.",
+    "facts": [
+     "Karmaşık mikrotonal bestelerin yanı sıra math rock ve deneysel rock tarzında, büyük papye-mâché maskeler ve siyah-beyaz puantiyeli kostümlerden oluşan absürt bir imajla tanınırlar.",
+     "Anonim ikili, Khn de Poitrine ve Klek de Poitrine (davul) takma adlarıyla performans sergiler."
+    ]
+   }
+  },
+  {
+   "id": "f6d5ecca-b9d3-44a2-a630-16dc4b86cc76",
+   "slug": "boston-manor-cdd04b98",
+   "title": "Boston Manor",
+   "name": "Boston Manor",
+   "source_url": "https://en.wikipedia.org/wiki/Boston_Manor_(band)",
+   "extract": "Boston Manor are a British rock band formed in Blackpool, Lancashire, England, in March 2013. They released a first EP, Here/Now, through Never Mend Records on Bandcamp, and in 2014 they signed with Failure By Design Records for their second EP, Driftwood. In 2015 the band signed with Pure Noise Records: with them, they released another EP, Saudade, as well as their full-length albums Be Nothing (2016), Welcome to the Neighbourhood (2018) and Glue (2020). The band's sound blends emo with heavier influences, reminiscent of '90s grunge and early 2000s post-hardcore. The band have been nominated for Best British Breakthrough at Kerrang! Awards in 2018 and Welcome to the Neighbourhood received a",
+   "en": {
+    "kicker": "british rock band · blackpool, 2013",
+    "who": "Boston Manor are a British rock band formed in Blackpool, Lancashire, England, in March 2013. They released a first EP, Here/Now, through Never Mend Records on Bandcamp, and in 2014 they signed with Failure By Design Records for their second EP, Driftwood.",
+    "facts": [
+     "In 2015 the band signed with Pure Noise Records: with them, they released another EP, Saudade, as well as their full-length albums Be Nothing (2016), Welcome to the Neighbourhood (2018) and Glue (2020).",
+     "The band's sound blends emo with heavier influences, reminiscent of '90s grunge and early 2000s post-hardcore."
+    ]
+   },
+   "de": {
+    "kicker": "britische rockband · blackpool, 2013",
+    "who": "Boston Manor sind eine britische Rockband, die im März 2013 in Blackpool, Lancashire, England, gegründet wurde. Ihre erste EP Here/Now erschien über Never Mend Records auf Bandcamp; 2014 unterschrieb die Band bei Failure By Design Records für ihre zweite EP Driftwood.",
+    "facts": [
+     "2015 unterschrieb die Band bei Pure Noise Records; dort veröffentlichte sie die EP Saudade sowie die Alben Be Nothing (2016), Welcome to the Neighbourhood (2018) und Glue (2020).",
+     "Der Sound der Band verbindet Emo mit härteren Einflüssen, die an Grunge der 90er und Post-Hardcore der frühen 2000er erinnern."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rock grubu · blackpool, 2013",
+    "who": "Boston Manor, İngiltere'de Lancashire'daki Blackpool kentinde 2013 yılının Mart ayında kurulan bir İngiliz rock grubudur. İlk EP'leri Here/Now, Bandcamp üzerinden Never Mend Records aracılığıyla yayınlandı; 2014 yılında ise ikinci EP'leri Driftwood için Failure By Design Records ile anlaştılar.",
+    "facts": [
+     "2015 yılında Pure Noise Records ile anlaştılar; bu şirketle EP Saudade'yi ve Be Nothing (2016), Welcome to the Neighbourhood (2018) ve Glue (2020) tam uzunluklu albümlerini yayınladılar.",
+     "Grubun sesi emo ile daha ağır etkileri harmanlar; bu etkiler 90'ların grunge'ını ve 2000'lerin başındaki post-hardcore'u andırır."
+    ]
+   }
+  },
+  {
+   "id": "036b54eb-7f99-480c-9a76-17186bd70e58",
+   "slug": "mad-tsai-the-bite-back-tour-54bd9914",
+   "title": "Mad Tsai - The Bite Back Tour",
+   "name": "Mad Tsai",
+   "source_url": "https://en.wikipedia.org/wiki/Mad_Tsai",
+   "extract": "Mad Tsai is an American singer-songwriter and social media personality. Of Taiwanese and Peruvian descent, Tsai gained recognition through the short-video platform TikTok under the handle @madsteaparty. His music explores themes of queerness, adolescence, and self-identity, often blending elements of pop, bedroom pop, and alternative music.",
+   "en": {
+    "kicker": "american singer-songwriter · tiktok",
+    "who": "Mad Tsai is an American singer-songwriter and social media personality. Of Taiwanese and Peruvian descent, Tsai gained recognition through the short-video platform TikTok under the handle @madsteaparty.",
+    "facts": [
+     "His music explores themes of queerness, adolescence, and self-identity, often blending elements of pop, bedroom pop, and alternative music.",
+     "Of Taiwanese and Peruvian descent, Tsai gained recognition through the short-video platform TikTok under the handle @madsteaparty."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · tiktok",
+    "who": "Mad Tsai ist ein amerikanischer Singer-Songwriter und Social-Media-Persönlichkeit. Tsai wurde vor allem über die Kurzvideo-Plattform TikTok unter dem Handle @madsteaparty bekannt.",
+    "facts": [
+     "Seine Musik erkundet Themen wie Queerness, Adoleszenz und Selbstidentität und verbindet oft Elemente aus Pop, Bedroom Pop und alternativer Musik.",
+     "Tsai, taiwanischer und peruanischer Abstammung, wurde über die Kurzvideo-Plattform TikTok unter dem Handle @madsteaparty bekannt."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · tiktok",
+    "who": "Mad Tsai, Amerikalı bir şarkıcı-söz yazarı ve sosyal medya fenomenidir. Tayvan ve Peru kökenli olan Tsai, kısa video platformu TikTok'taki @madsteaparty kullanıcı adıyla ün kazandı.",
+    "facts": [
+     "Müziği queerlik, ergenlik ve kimlik gibi temaları işler; pop, bedroom pop ve alternatif müziğin unsurlarını sıklıkla harmanlar.",
+     "Tayvan ve Peru kökenli olan Tsai, kısa video platformu TikTok'ta @madsteaparty kullanıcı adıyla ün kazandı."
+    ]
+   }
+  },
+  {
+   "id": "61c4b2b4-ceaf-4ae1-ae99-7a0ae29cbf70",
+   "slug": "mico-running-from-a-feeling-tour-cbb04e3a",
+   "title": "MICO: Running From A Feeling Tour",
+   "name": "Mico",
+   "source_url": "https://en.wikipedia.org/wiki/Mico_(singer)",
+   "extract": "Jose Miguel Veloso, known professionally as Mico, is a Canadian singer-songwriter and musician from Toronto. He initially grew a fanbase online through Discord and Twitch, breaking out commercially with his 2022 single \"cut my hair\", which became a top-30 radio hit in Canada. In 2025, he signed with Columbia Records following a string of independent extended plays.",
+   "en": {
+    "kicker": "canadian singer-songwriter · toronto, 2025",
+    "who": "Jose Miguel Veloso, known professionally as Mico, is a Canadian singer-songwriter and musician from Toronto. In 2025, he signed with Columbia Records following a string of independent extended plays.",
+    "facts": [
+     "He initially grew a fanbase online through Discord and Twitch, breaking out commercially with his 2022 single \"cut my hair\", which became a top-30 radio hit in Canada.",
+     "In 2025, he signed with Columbia Records following a string of independent extended plays."
+    ]
+   },
+   "de": {
+    "kicker": "kanadischer singer-songwriter · toronto, 2025",
+    "who": "Jose Miguel Veloso, unter dem Künstlernamen Mico bekannt, ist ein kanadischer Singer-Songwriter und Musiker aus Toronto. 2025 unterschrieb er bei Columbia Records, nachdem er zuvor eine Reihe unabhängiger EPs veröffentlicht hatte.",
+    "facts": [
+     "Zunächst baute er online über Discord und Twitch eine Fangemeinde auf; kommerziell durchgestartet ist er mit seiner Single \"cut my hair\" aus dem Jahr 2022, die in Kanada zu einem Radiohit in den Top 30 wurde.",
+     "2025 unterschrieb er bei Columbia Records, nachdem er zuvor eine Reihe unabhängiger EPs veröffentlicht hatte."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı singer-songwriter · toronto, 2025",
+    "who": "Jose Miguel Veloso, Mico adıyla tanınan, Toronto'dan Kanadalı bir şarkıcı, söz yazarı ve müzisyendir. 2025 yılında, bağımsız EP serisinin ardından Columbia Records ile sözleşme imzaladı.",
+    "facts": [
+     "İlk olarak Discord ve Twitch üzerinden çevrimiçi bir hayran kitlesi kazandı; 2022 single'ı \"cut my hair\" ile ticari olarak öne çıktı ve bu şarkı Kanada'da ilk 30'da yer alan bir radyo hiti oldu.",
+     "2025 yılında, bağımsız EP serisinin ardından Columbia Records ile sözleşme imzaladı."
+    ]
+   }
+  },
+  {
+   "id": "1352e8c7-ecac-4ab1-8ebb-da9481db62d8",
+   "slug": "justin-nozuka-fc5ff070",
+   "title": "Justin Nozuka",
+   "name": "Justin Nozuka",
+   "source_url": "https://en.wikipedia.org/wiki/Justin_Nozuka",
+   "extract": "Justin Tokimitsu Nozuka  is an American singer, songwriter, and actor of Japanese and Canadian descent. His debut album, Holly, was released in 2007. He has since published five more studio albums: You I Wind Land and Sea (2010), Ulysees (2014), Run to Waters (2018), Daydreams & Endless Nights (2023), and Chlorine (2024).",
+   "en": {
+    "kicker": "american singer-songwriter and actor · 2007",
+    "who": "Justin Tokimitsu Nozuka is an American singer, songwriter, and actor of Japanese and Canadian descent. His debut album, Holly, was released in 2007.",
+    "facts": [
+     "He has since published five more studio albums: You I Wind Land and Sea (2010), Ulysees (2014), Run to Waters (2018), Daydreams & Endless Nights (2023), and Chlorine (2024).",
+     "His debut album, Holly, was released in 2007."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter und schauspieler · 2007",
+    "who": "Justin Tokimitsu Nozuka ist ein amerikanischer Sänger, Songwriter und Schauspieler mit japanischen und kanadischen Wurzeln. Sein Debütalbum Holly erschien 2007.",
+    "facts": [
+     "Danach veröffentlichte er fünf weitere Studioalben: You I Wind Land and Sea (2010), Ulysees (2014), Run to Waters (2018), Daydreams & Endless Nights (2023) und Chlorine (2024).",
+     "Sein Debütalbum Holly erschien 2007."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı, söz yazarı ve oyuncu · 2007",
+    "who": "Justin Tokimitsu Nozuka, Japon ve Kanada kökenli Amerikalı bir şarkıcı, söz yazarı ve oyuncudur. Debut albümü Holly 2007 yılında yayınlandı.",
+    "facts": [
+     "Bundan sonra beş stüdyo albümü daha yayınladı: You I Wind Land and Sea (2010), Ulysees (2014), Run to Waters (2018), Daydreams & Endless Nights (2023) ve Chlorine (2024).",
+     "Debut albümü Holly 2007 yılında yayınlandı."
+    ]
+   }
+  },
+  {
+   "id": "37a96f9d-9a7b-4966-b39e-e7168f7a402d",
+   "slug": "half-alive-billions-tour-e024b013",
+   "title": "half alive: Billions Tour",
+   "name": "Half Alive",
+   "source_url": "https://en.wikipedia.org/wiki/Half_Alive_(band)",
+   "extract": "Half Alive is an American rock duo formed in Long Beach, California, in 2016. It consists of vocalist Josh Taylor and bassist J. Tyler Johnson, formerly accompanied by drummer Brett Kramer. The band began recording music in 2017, and have since released three studio albums, a compilation vinyl record, three extended plays of new material, three extended plays of live recordings, and many singles.",
+   "en": {
+    "kicker": "american rock duo · long beach, california, 2016",
+    "who": "Half Alive is an American rock duo formed in Long Beach, California, in 2016. It consists of vocalist Josh Taylor and bassist J. Tyler Johnson, formerly accompanied by drummer Brett Kramer.",
+    "facts": [
+     "The band began recording music in 2017, and have since released three studio albums, a compilation vinyl record, three extended plays of new material, three extended plays of live recordings, and many singles.",
+     "It consists of vocalist Josh Taylor and bassist J. Tyler Johnson, formerly accompanied by drummer Brett Kramer."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanisches rockduo · long beach, california, 2016",
+    "who": "Half Alive ist ein amerikanisches Rockduo, das 2016 in Long Beach, Kalifornien, gegründet wurde. Es besteht aus Sänger Josh Taylor und Bassist J. Tyler Johnson, früher begleitet von Schlagzeuger Brett Kramer.",
+    "facts": [
+     "Die Band begann 2017 mit Aufnahmen und hat seither drei Studioalben, eine Compilation-Schallplatte, drei EPs mit neuem Material, drei EPs mit Live-Aufnahmen sowie zahlreiche Singles veröffentlicht.",
+     "Sie besteht aus Sänger Josh Taylor und Bassist J. Tyler Johnson, früher begleitet von Schlagzeuger Brett Kramer."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock ikilisi · long beach, california, 2016",
+    "who": "Half Alive, 2016 yılında Kaliforniya'nın Long Beach kentinde kurulan Amerikalı bir rock ikilisidir. Grup; vokalist Josh Taylor ve basçı J. Tyler Johnson'dan oluşur; daha önce davulcu Brett Kramer da gruba eşlik ediyordu.",
+    "facts": [
+     "Grup 2017'de kayıt yapmaya başladı; o tarihten bu yana üç stüdyo albümü, bir derleme vinil plak, yeni materyalden oluşan üç EP, canlı kayıtlardan oluşan üç EP ve birçok single yayınladı.",
+     "Grup; vokalist Josh Taylor ve basçı J. Tyler Johnson'dan oluşur; daha önce davulcu Brett Kramer da gruba eşlik ediyordu."
+    ]
+   }
+  },
+  {
+   "id": "e05192f2-0939-487f-a80d-bd7fddd18b5a",
+   "slug": "protomartyr-8ecf6518",
+   "title": "Protomartyr",
+   "name": "Protomartyr",
+   "source_url": "https://en.wikipedia.org/wiki/Protomartyr_(band)",
+   "extract": "Protomartyr is an American post-punk band formed in Detroit, Michigan, in 2010. The band consists of Joe Casey (vocals), Greg Ahee (guitar), Alex Leonard (drums), and Scott Davidson (bass). During live performances, the band is currently joined by multi-instrumentalist Fred Thomas. Between 2020 and 2024, Kelley Deal joined the band in a touring capacity, providing additional keyboards, guitar and backing vocals.",
+   "en": {
+    "kicker": "american post-punk band · detroit, michigan, 2010",
+    "who": "Protomartyr is an American post-punk band formed in Detroit, Michigan, in 2010. The band consists of Joe Casey (vocals), Greg Ahee (guitar), Alex Leonard (drums), and Scott Davidson (bass).",
+    "facts": [
+     "During live performances, the band is currently joined by multi-instrumentalist Fred Thomas.",
+     "Between 2020 and 2024, Kelley Deal joined the band in a touring capacity, providing additional keyboards, guitar and backing vocals."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische post-punk-band · detroit, michigan, 2010",
+    "who": "Protomartyr ist eine amerikanische Post-Punk-Band, die 2010 in Detroit, Michigan, gegründet wurde. Die Band besteht aus Joe Casey (Gesang), Greg Ahee (Gitarre), Alex Leonard (Schlagzeug) und Scott Davidson (Bass).",
+    "facts": [
+     "Bei Live-Auftritten wird die Band derzeit vom Multiinstrumentalisten Fred Thomas unterstützt.",
+     "Zwischen 2020 und 2024 war Kelley Deal als Tourmusikerin Teil der Band und steuerte zusätzliche Keyboards, Gitarre und Hintergrundgesang bei."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı post-punk grubu · detroit, michigan, 2010",
+    "who": "Protomartyr, 2010 yılında Michigan'ın Detroit kentinde kurulan Amerikalı bir post-punk grubudur. Grup; Joe Casey (vokal), Greg Ahee (gitar), Alex Leonard (davul) ve Scott Davidson (bas) ile oluşmaktadır.",
+    "facts": [
+     "Canlı performanslarında grup şu an çok enstrümantalist Fred Thomas ile birlikte çalmaktadır.",
+     "2020 ile 2024 arasında Kelley Deal, turne üyesi olarak gruba katılarak ek klavye, gitar ve arka vokal sağladı."
+    ]
+   }
+  }
+ ]
+}

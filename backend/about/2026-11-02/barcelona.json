@@ -1,0 +1,198 @@
+{
+  "city": "barcelona",
+  "day": "2026-11-02",
+  "nights": [
+    {
+      "id": "c01c4242-8358-4b14-be7a-0bfe67a4ceca",
+      "slug": "elgrandetoto-7c4df85d",
+      "title": "ElGrandeToto",
+      "name": "ElGrandeToto",
+      "source_url": "https://en.wikipedia.org/wiki/ElGrandeToto",
+      "extract": "Taha Fahssi, better known by his stage name ElGrandeToto, EGT or just Toto, is a Moroccan rapper from Casablanca. He has been the most streamed artist in Morocco for five consecutive years (2021-2025) and was the most listened-to artist in the MENA region on Spotify in 2021 and 2023. He is also the most viewed Moroccan rapper on YouTube. Fahssi is widely regarded as one of Morocco's best rappers of all time.",
+      "en": {
+        "kicker": "moroccan rapper · casablanca",
+        "who": "Taha Fahssi, known as ElGrandeToto, is a Moroccan rapper from Casablanca. He is widely regarded as one of Morocco's best rappers of all time.",
+        "facts": [
+          "He has been the most streamed artist in Morocco for five consecutive years (2021-2025)",
+          "He is also the most viewed Moroccan rapper on YouTube"
+        ]
+      },
+      "de": {
+        "kicker": "marokkanischer rapper · casablanca",
+        "who": "Taha Fahssi, besser bekannt als ElGrandeToto, ist ein Rapper aus Casablanca in Marokko. Er gilt als einer der besten Rapper Marokkos aller Zeiten.",
+        "facts": [
+          "Fünf aufeinanderfolgende Jahre lang war er der meistgestreamte Künstler in Marokko (2021–2025).",
+          "Er ist außerdem der meistgesehene marokkanische Rapper auf YouTube."
+        ]
+      },
+      "tr": {
+        "kicker": "fas rapçisi · kazablanka",
+        "who": "Taha Fahssi, sahne adıyla ElGrandeToto, Kazablanka'dan bir Faslı rapçidir. Fas'ın tüm zamanların en iyi rapçilerinden biri olarak kabul ediliyor.",
+        "facts": [
+          "Beş ardışık yıl (2021-2025) boyunca Fas'ta en çok akış alan sanatçı oldu.",
+          "Ayrıca YouTube'da en çok izlenen Faslı rapçidir."
+        ]
+      }
+    },
+    {
+      "id": "e89a5802-8020-46b2-8d9d-fd3b65c33136",
+      "slug": "pitbull-i-m-back-5343bc31",
+      "title": "Pitbull - I'm Back!",
+      "name": "Pitbull",
+      "source_url": "https://en.wikipedia.org/wiki/Pitbull_(rapper)",
+      "extract": "Armando Christian Pérez, known professionally as Pitbull, is an American rapper, singer, songwriter, and actor. He began his career in the early 2000s as a reggaeton, Latin hip-hop, and crunk performer, and signed with TVT Records to release his debut album, M.I.A.M.I. (2004). Executive produced by Lil Jon, the album entered the Billboard 200 along with his second and third albums, El Mariel (2006) and The Boatlift (2007). His fourth album, Pitbull Starring in Rebelution (2009), yielded his mainstream breakthrough, spawning the singles \"I Know You Want Me \" and \"Hotel Room Service\"—which peaked at numbers two and eight on the U.S. Billboard Hot 100, respectively.",
+      "en": {
+        "kicker": "american rapper · since the early 2000s",
+        "who": "Armando Christian Pérez, known professionally as Pitbull, is an American rapper, singer, songwriter and actor. He started out in the early 2000s as a reggaeton, Latin hip-hop and crunk performer.",
+        "facts": [
+          "He began his career in the early 2000s as a reggaeton, Latin hip-hop, and crunk performer",
+          "His fourth album, Pitbull Starring in Rebelution (2009), yielded his mainstream breakthrough"
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper · seit den frühen 2000ern",
+        "who": "Armando Christian Pérez, unter dem Künstlernamen Pitbull bekannt, ist ein amerikanischer Rapper, Sänger, Songwriter und Schauspieler. Anfang der 2000er begann er als Performer von Reggaeton, Latin-Hip-Hop und Crunk.",
+        "facts": [
+          "Er begann seine Karriere Anfang der 2000er als Performer von Reggaeton, Latin-Hip-Hop und Crunk.",
+          "Sein viertes Album, Pitbull Starring in Rebelution (2009), brachte ihm den Durchbruch im Mainstream."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi · 2000'lerin başından beri",
+        "who": "Armando Christian Pérez, sahne adıyla Pitbull, Amerikalı bir rapçi, şarkıcı, söz yazarı ve oyuncudur. 2000'lerin başında reggaeton, Latin hip-hop ve crunk icracısı olarak kariyerine başladı.",
+        "facts": [
+          "Kariyerine 2000'lerin başında reggaeton, Latin hip-hop ve crunk icracısı olarak başladı.",
+          "Dördüncü albümü Pitbull Starring in Rebelution (2009) ana akım başarısının kapısını araladı."
+        ]
+      }
+    },
+    {
+      "id": "d3b5c44f-9285-4b8b-8135-935dbdbc4851",
+      "slug": "joe-bonamassa-2026-europe-tour-7ec5ee42",
+      "title": "Joe Bonamassa - 2026 EUROPE TOUR",
+      "name": "Joe Bonamassa",
+      "source_url": "https://en.wikipedia.org/wiki/Joe_Bonamassa",
+      "extract": "Joseph Leonard Bonamassa is an American blues rock guitarist, singer and songwriter. He started his career at age twelve, when he opened for B. B. King.",
+      "en": {
+        "kicker": "american blues rock guitarist",
+        "who": "Joseph Leonard Bonamassa is a blues rock guitarist, singer and songwriter from the United States. He started his career at a very young age.",
+        "facts": [
+          "He started his career at age twelve, when he opened for B. B. King",
+          "Joseph Leonard Bonamassa is an American blues rock guitarist, singer and songwriter"
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer blues-rock-gitarrist",
+        "who": "Joseph Leonard Bonamassa ist ein Blues-Rock-Gitarrist, Sänger und Songwriter aus den Vereinigten Staaten. Seine Karriere begann er im Alter von zwölf Jahren.",
+        "facts": [
+          "Er begann seine Karriere im Alter von zwölf Jahren, als er B. B. King eröffnete.",
+          "Joseph Leonard Bonamassa ist ein amerikanischer Blues-Rock-Gitarrist, Sänger und Songwriter."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı blues rock gitaristi",
+        "who": "Joseph Leonard Bonamassa, Amerikalı bir blues rock gitaristi, şarkıcı ve söz yazarıdır. Kariyerine çok genç yaşta başladı.",
+        "facts": [
+          "Kariyerine on iki yaşındayken B. B. King için açılış yaparak başladı.",
+          "Joseph Leonard Bonamassa, Amerikalı bir blues rock gitaristi, şarkıcı ve söz yazarıdır."
+        ]
+      }
+    },
+    {
+      "id": "04510892-202b-425e-af10-064578a248ac",
+      "slug": "arlo-parks-desire-tour-fc048629",
+      "title": "ARLO PARKS - DESIRE TOUR",
+      "name": "Arlo Parks",
+      "source_url": "https://en.wikipedia.org/wiki/Arlo_Parks",
+      "extract": "Anaïs Oluwatoyin Estelle Marinho, known professionally as Arlo Parks, is an English singer and songwriter. Her debut studio album, Collapsed in Sunbeams, was released in 2021 to critical acclaim and peaked at number three on the UK Albums Chart. It won the 2021 Mercury Prize for Best Album and earned her nominations for Album of the Year, Best New Artist and Best British Female Solo Artist at the 2021 Brit Awards.",
+      "en": {
+        "kicker": "english singer and songwriter · 2021",
+        "who": "Anaïs Oluwatoyin Estelle Marinho, known as Arlo Parks, is an English singer and songwriter. Her debut studio album, Collapsed in Sunbeams, won the 2021 Mercury Prize for Best Album.",
+        "facts": [
+          "Her debut studio album, Collapsed in Sunbeams, was released in 2021 to critical acclaim and peaked at number three on the UK Albums Chart",
+          "It won the 2021 Mercury Prize for Best Album"
+        ]
+      },
+      "de": {
+        "kicker": "englische sängerin und songwriterin · 2021",
+        "who": "Anaïs Oluwatoyin Estelle Marinho, bekannt als Arlo Parks, ist eine englische Sängerin und Songwriterin. Ihr Debütalbum Collapsed in Sunbeams gewann 2021 den Mercury Prize als bestes Album.",
+        "facts": [
+          "Ihr Debütalbum Collapsed in Sunbeams erschien 2021 mit großer Anerkennung der Kritik und erreichte Platz drei der britischen Albumcharts.",
+          "Es gewann 2021 den Mercury Prize als bestes Album."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı ve söz yazarı · 2021",
+        "who": "Anaïs Oluwatoyin Estelle Marinho, sahne adıyla Arlo Parks, İngiliz bir şarkıcı ve söz yazarıdır. Debut stüdyo albümü Collapsed in Sunbeams 2021'de Mercury Ödülü'nün En İyi Albüm dalını kazandı.",
+        "facts": [
+          "Debut stüdyo albümü Collapsed in Sunbeams 2021'de büyük eleştirel beğeniyle yayımlandı ve İngiltere Albüm Listesi'nde üçüncü sıraya yükseldi.",
+          "2021 Mercury Ödülü'nün En İyi Albüm dalını kazandı."
+        ]
+      }
+    },
+    {
+      "id": "8688df73-6f77-46e2-814c-368efe2a3ca3",
+      "slug": "jack-and-jack-syn-anti-europe-2026-d06ebc85",
+      "title": "Jack & Jack: SYN/ANTI EUROPE 2026",
+      "name": "Jack & Jack",
+      "source_url": "https://en.wikipedia.org/wiki/Jack_%26_Jack",
+      "extract": "Jack & Jack are an American pop-rap duo from Omaha, Nebraska, consisting of Jack Johnson and Jack Gilinsky, based in Los Angeles, California. After success via the social media app Vine, the duo turned to careers as musicians. Their 2014 single \"Wild Life\" peaked at number 87 on the US Billboard Hot 100. They also featured on Jonas Blue's 2018 hit single \"Rise\", which peaked at number three in the UK Singles Chart in addition to charting within the top 20 of various other European countries and Australia.",
+      "en": {
+        "kicker": "american pop-rap duo · omaha, nebraska",
+        "who": "Jack & Jack are an American pop-rap duo from Omaha, Nebraska, made up of Jack Johnson and Jack Gilinsky. They are based in Los Angeles, California, and began with success on the social media app Vine.",
+        "facts": [
+          "After success via the social media app Vine, the duo turned to careers as musicians",
+          "Their 2014 single \"Wild Life\" peaked at number 87 on the US Billboard Hot 100"
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches pop-rap-duo · omaha, nebraska",
+        "who": "Jack & Jack sind ein amerikanisches Pop-Rap-Duo aus Omaha, Nebraska, bestehend aus Jack Johnson und Jack Gilinsky. Sie sind in Los Angeles, Kalifornien, ansässig und begannen mit Erfolg über die Social-Media-App Vine.",
+        "facts": [
+          "Nach ihrem Erfolg über die Social-Media-App Vine wandte sich das Duo einer Karriere als Musiker zu.",
+          "Ihre Single \"Wild Life\" aus dem Jahr 2014 erreichte Platz 87 der US Billboard Hot 100."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı pop-rap ikilisi · omaha, nebraska",
+        "who": "Jack & Jack, Nebraska'nın Omaha kentinden Jack Johnson ve Jack Gilinsky'den oluşan bir Amerikalı pop-rap ikilisidir. Merkezleri Kaliforniya'nın Los Angeles kentinde; Vine uygulamasındaki başarılarının ardından müziğe yöneldiler.",
+        "facts": [
+          "Sosyal medya uygulaması Vine üzerinden kazandıkları başarının ardından ikili müzisyenlik kariyerine yöneldi.",
+          "2014 tarihli \"Wild Life\" single'ı ABD Billboard Hot 100 listesinde 87. sıraya yükseldi."
+        ]
+      }
+    },
+    {
+      "id": "bb104e63-e58d-491c-b020-0a4718ceda08",
+      "slug": "artemas-lovercore-getting-up-to-no-good-tour-3f0bc158",
+      "title": "Artemas - LOVERCORE / GETTING UP TO NO GOOD Tour",
+      "name": "Artemas",
+      "source_url": "https://en.wikipedia.org/wiki/Artemas_(musician)",
+      "extract": "Artemas Diamandis, known mononymously as Artemas, is an English singer, songwriter and record producer. He is best known for his singles \"If U Think I'm Pretty\" and the viral \"I Like the Way You Kiss Me\". He is signed to the record label 10K Projects.",
+      "en": {
+        "kicker": "english singer, songwriter and record producer",
+        "who": "Artemas Diamandis, known as Artemas, is an English singer, songwriter and record producer. He is signed to the record label 10K Projects.",
+        "facts": [
+          "He is best known for his singles \"If U Think I'm Pretty\" and the viral \"I Like the Way You Kiss Me\"",
+          "He is signed to the record label 10K Projects"
+        ]
+      },
+      "de": {
+        "kicker": "englischer sänger, songwriter und produzent",
+        "who": "Artemas Diamandis, bekannt als Artemas, ist ein englischer Sänger, Songwriter und Musikproduzent. Er steht beim Label 10K Projects unter Vertrag.",
+        "facts": [
+          "Er ist vor allem für seine Singles \"If U Think I'm Pretty\" und das virale \"I Like the Way You Kiss Me\" bekannt.",
+          "Er steht beim Plattenlabel 10K Projects unter Vertrag."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı, söz yazarı ve yapımcı",
+        "who": "Artemas Diamandis, sahne adıyla Artemas, İngiliz bir şarkıcı, söz yazarı ve müzik yapımcısıdır. 10K Projects plak şirketiyle sözleşmelidir.",
+        "facts": [
+          "En çok \"If U Think I'm Pretty\" ve viral olan \"I Like the Way You Kiss Me\" şarkılarıyla tanınır.",
+          "10K Projects plak şirketiyle sözleşmesi bulunmaktadır."
+        ]
+      }
+    }
+  ]
+}

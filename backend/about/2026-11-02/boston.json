@@ -1,0 +1,454 @@
+{
+ "city": "boston",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "6bb78fab-5644-4ce7-9822-aa9377e3a33f",
+   "slug": "vince-staples-669ba430",
+   "title": "Vince Staples",
+   "name": "Vince Staples",
+   "source_url": "https://en.wikipedia.org/wiki/Vince_Staples",
+   "extract": "Vincent Jamal Staples is an American rapper, singer, songwriter, and actor. He first became known for his appearances on the projects from Odd Future members and affiliates, including Earl Sweatshirt's Earl (2010) and Doris (2013), Mike G.’s Ali (2010) and The Jet Age of Tomorrow's Journey to the 5th Echelon (2010). He signed with Talib Kweli's Blacksmith Records prior to the release of his collaborative mixtape with Mac Miller, Stolen Youth (2013). The following year, he signed with No I.D.'s ARTium Recordings, an imprint of Def Jam Recordings, to release his debut extended play, Hell Can Wait (2014), which received critical acclaim and marked his first entry on the Billboard 200.",
+   "en": {
+    "kicker": "american rapper and actor · 2013",
+    "who": "Vincent Jamal Staples is an American rapper, singer, songwriter, and actor. He first became known for his appearances on the projects from Odd Future members and affiliates.",
+    "facts": [
+     "He signed with Talib Kweli's Blacksmith Records prior to the release of his collaborative mixtape with Mac Miller, Stolen Youth (2013).",
+     "The following year, he signed with No I.D.'s ARTium Recordings, an imprint of Def Jam Recordings, to release his debut extended play, Hell Can Wait (2014)."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper und schauspieler · 2013",
+    "who": "Vincent Jamal Staples ist ein amerikanischer Rapper, Sänger, Songwriter und Schauspieler. Bekannt wurde er zunächst durch seine Auftritte auf Projekten von Odd-Future-Mitgliedern und deren Umfeld.",
+    "facts": [
+     "Er unterschrieb bei Talib Kwelis Label Blacksmith Records, kurz bevor das gemeinsame Mixtape Stolen Youth (2013) mit Mac Miller erschien.",
+     "Im folgenden Jahr unterschrieb er bei ARTium Recordings von No I.D., einem Imprint von Def Jam Recordings, um sein Debüt-EP Hell Can Wait (2014) zu veröffentlichen."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi ve oyuncu · 2013",
+    "who": "Vincent Jamal Staples Amerikalı bir rapçi, şarkıcı, söz yazarı ve oyuncudur. Odd Future üyelerinin ve yakın çevresinin projelerindeki konuk performanslarıyla tanınmaya başladı.",
+    "facts": [
+     "Mac Miller ile ortak miksteypi Stolen Youth (2013) yayımlanmadan önce Talib Kweli'nin Blacksmith Records plağıyla anlaşma imzaladı.",
+     "Ertesi yıl No I.D.'nin, Def Jam Recordings'in bir alt etiketi olan ARTium Recordings ile anlaşma imzalayarak ilk genişletilmiş oyunu Hell Can Wait'i (2014) çıkardı."
+    ]
+   }
+  },
+  {
+   "id": "0b5c06b8-1721-4b9f-8ad6-2b69a6b56518",
+   "slug": "mico-running-from-a-feeling-tour-eaa03ab9",
+   "title": "MICO: Running From A Feeling Tour",
+   "name": "Mico",
+   "source_url": "https://en.wikipedia.org/wiki/Mico_(singer)",
+   "extract": "Jose Miguel Veloso, known professionally as Mico, is a Canadian singer-songwriter and musician from Toronto. He initially grew a fanbase online through Discord and Twitch, breaking out commercially with his 2022 single \"cut my hair\", which became a top-30 radio hit in Canada. In 2025, he signed with Columbia Records following a string of independent extended plays.",
+   "en": {
+    "kicker": "canadian singer-songwriter · toronto",
+    "who": "Jose Miguel Veloso, known professionally as Mico, is a Canadian singer-songwriter and musician from Toronto. His 2022 single \"cut my hair\" became a top-30 radio hit in Canada.",
+    "facts": [
+     "He initially grew a fanbase online through Discord and Twitch.",
+     "In 2025, he signed with Columbia Records following a string of independent extended plays."
+    ]
+   },
+   "de": {
+    "kicker": "kanadischer singer-songwriter · toronto",
+    "who": "Jose Miguel Veloso, unter dem Künstlernamen Mico bekannt, ist ein kanadischer Singer-Songwriter und Musiker aus Toronto. Seine Single \"cut my hair\" von 2022 wurde in Kanada ein Radiohit unter den Top 30.",
+    "facts": [
+     "Er baute zunächst online über Discord und Twitch eine Fanbasis auf.",
+     "2025 unterschrieb er bei Columbia Records, nachdem er eine Reihe unabhängiger Extended Plays veröffentlicht hatte."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı şarkıcı-söz yazarı · toronto",
+    "who": "Jose Miguel Veloso, sanat adıyla Mico, Toronto'lu bir Kanadalı şarkıcı, söz yazarı ve müzisyendir. 2022 çıkışlı \"cut my hair\" single'ı Kanada'da ilk 30'a giren bir radyo hiti oldu.",
+    "facts": [
+     "Önce Discord ve Twitch üzerinden çevrim içi bir hayran kitlesi oluşturdu.",
+     "2025'te, bir dizi bağımsız extended play'in ardından Columbia Records ile anlaşma imzaladı."
+    ]
+   }
+  },
+  {
+   "id": "d6d5ffcf-3dc9-4d17-9b9b-30374d677863",
+   "slug": "kofi-b-9151655a",
+   "title": "Kofi B",
+   "name": "Kofi B",
+   "source_url": "https://en.wikipedia.org/wiki/Kofi_B",
+   "extract": "Kofi Boakye Yiadom, known by his stage name Kofi B, was a Ghanaian highlife musician. He was known for songs such as \"Mmobrowa\", \"Bantama Kofi Boakye\" and \"Koforidua Flowers\", among others. He was inspired by the likes of Amakye Dede, Kojo Antwi and Ofori Amponsah.",
+   "en": {
+    "kicker": "ghanaian highlife musician",
+    "who": "Kofi Boakye Yiadom, known by his stage name Kofi B, was a Ghanaian highlife musician. He was known for songs such as \"Mmobrowa\", \"Bantama Kofi Boakye\" and \"Koforidua Flowers\", among others.",
+    "facts": [
+     "He was known for songs such as \"Mmobrowa\", \"Bantama Kofi Boakye\" and \"Koforidua Flowers\", among others.",
+     "Kofi Boakye Yiadom, known by his stage name Kofi B, was a Ghanaian highlife musician."
+    ]
+   },
+   "de": {
+    "kicker": "ghanaischer highlife-musiker",
+    "who": "Kofi Boakye Yiadom, unter seinem Künstlernamen Kofi B bekannt, war ein ghanaischer Highlife-Musiker. Er war bekannt für Lieder wie \"Mmobrowa\", \"Bantama Kofi Boakye\" und \"Koforidua Flowers\", unter anderem.",
+    "facts": [
+     "Er war bekannt für Lieder wie \"Mmobrowa\", \"Bantama Kofi Boakye\" und \"Koforidua Flowers\", unter anderem.",
+     "Kofi Boakye Yiadom, unter seinem Künstlernamen Kofi B bekannt, war ein ghanaischer Highlife-Musiker."
+    ]
+   },
+   "tr": {
+    "kicker": "ganalı highlife müzisyeni",
+    "who": "Kofi Boakye Yiadom, sahne adıyla Kofi B, Ganalı bir highlife müzisyeniydi. \"Mmobrowa\", \"Bantama Kofi Boakye\" ve \"Koforidua Flowers\" gibi şarkılarıyla tanınıyordu.",
+    "facts": [
+     "\"Mmobrowa\", \"Bantama Kofi Boakye\" ve \"Koforidua Flowers\" gibi şarkılarıyla tanınıyordu, diğerleri arasında.",
+     "Kofi Boakye Yiadom, sahne adıyla Kofi B, Ganalı bir highlife müzisyeniydi."
+    ]
+   }
+  },
+  {
+   "id": "5e7ab793-e128-4e12-8acd-4096c2556e7b",
+   "slug": "sleeping-with-sirens-an-ending-in-itself-tour-837583fb",
+   "title": "Sleeping With Sirens: An Ending In Itself Tour",
+   "name": "Sleeping with Sirens",
+   "source_url": "https://en.wikipedia.org/wiki/Sleeping_with_Sirens",
+   "extract": "Sleeping with Sirens is an American rock band originally formed in Orlando, Florida. The band currently consists of Kellin Quinn, Justin Hills, Nick Martin, Matty Best, and Tony Pizzuti. The band was formed in 2009 by Nick Trombino of Broadway and Brandon McMaster. The group is currently signed to Rise Records and have released eight full-length studio albums, one live album, and one acoustic EP.",
+   "en": {
+    "kicker": "american rock band · orlando, florida",
+    "who": "Sleeping with Sirens is an American rock band originally formed in Orlando, Florida. The band currently consists of Kellin Quinn, Justin Hills, Nick Martin, Matty Best, and Tony Pizzuti.",
+    "facts": [
+     "The band was formed in 2009 by Nick Trombino of Broadway and Brandon McMaster.",
+     "The group is currently signed to Rise Records and have released eight full-length studio albums, one live album, and one acoustic EP."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · orlando, florida",
+    "who": "Sleeping with Sirens ist eine amerikanische Rockband, ursprünglich in Orlando, Florida gegründet. Die Band besteht derzeit aus Kellin Quinn, Justin Hills, Nick Martin, Matty Best und Tony Pizzuti.",
+    "facts": [
+     "Die Band wurde 2009 von Nick Trombino von Broadway und Brandon McMaster gegründet.",
+     "Die Gruppe steht derzeit bei Rise Records unter Vertrag und hat acht Studioalben in voller Länge, ein Livealbum und eine akustische EP veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan rock grubu · orlando, florida",
+    "who": "Sleeping with Sirens, başlangıçta Orlando, Florida'da kurulmuş Amerikalı bir rock grubudur. Grubun şu anki üyeleri Kellin Quinn, Justin Hills, Nick Martin, Matty Best ve Tony Pizzuti'dir.",
+    "facts": [
+     "Grup 2009'da Broadway'den Nick Trombino ve Brandon McMaster tarafından kuruldu.",
+     "Grup şu anda Rise Records ile çalışıyor ve sekiz tam uzunluklu stüdyo albümü, bir canlı albüm ve bir akustik EP yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "53c2aaf0-6bb6-4e4a-ae3e-5430524d60d3",
+   "slug": "black-violin-the-be-free-tour-04a88cc1",
+   "title": "Black Violin: The Be Free Tour",
+   "name": "Black Violin",
+   "source_url": "https://en.wikipedia.org/wiki/Black_Violin",
+   "extract": "Black Violin is an American hip hop duo from Fort Lauderdale, Florida comprising two classically trained string instrumentalists, Kevin Sylvester and Wilner Baptiste, who go by the stage names Kev Marcus and Wil B. Kev Marcus plays the violin, and Wil B. plays the viola.",
+   "en": {
+    "kicker": "american hip hop duo · fort lauderdale, florida",
+    "who": "Black Violin is an American hip hop duo from Fort Lauderdale, Florida. Its members are Kevin Sylvester and Wilner Baptiste, who go by the stage names Kev Marcus and Wil B.",
+    "facts": [
+     "Black Violin is an American hip hop duo from Fort Lauderdale, Florida comprising two classically trained string instrumentalists.",
+     "Kev Marcus plays the violin, and Wil B. plays the viola."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanisches hip-hop-duo · fort lauderdale, florida",
+    "who": "Black Violin ist ein amerikanisches Hip-Hop-Duo aus Fort Lauderdale, Florida. Die beiden, Kevin Sylvester und Wilner Baptiste, treten unter den Künstlernamen Kev Marcus und Wil B. auf.",
+    "facts": [
+     "Black Violin ist ein amerikanisches Hip-Hop-Duo aus Fort Lauderdale, Florida, bestehend aus zwei klassisch ausgebildeten Streichinstrumentalisten.",
+     "Kev Marcus spielt Violine, und Wil B. spielt Bratsche."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan hip hop ikilisi · fort lauderdale, florida",
+    "who": "Black Violin, Florida'nın Fort Lauderdale kentinden bir Amerikan hip hop ikilisidir. Üyeleri Kevin Sylvester ve Wilner Baptiste'tir; sahne adları Kev Marcus ve Wil B.'dir.",
+    "facts": [
+     "Black Violin, Florida'nın Fort Lauderdale kentinden, klasik eğitimli iki yaylı çalgı sanatçısından oluşan Amerikan bir hip hop ikilisidir.",
+     "Kev Marcus kemanda, Wil B. ise viyolada çalar."
+    ]
+   }
+  },
+  {
+   "id": "d789e243-181f-499b-9ee4-5a5b4adf4d2d",
+   "slug": "michelle-branch-dfabc52e",
+   "title": "Michelle Branch",
+   "name": "Michelle Branch",
+   "source_url": "https://en.wikipedia.org/wiki/Michelle_Branch",
+   "extract": "Michelle Jacquet Branch is an American singer, songwriter, and guitarist. She won a Grammy Award for Best Pop Collaboration with Vocals with Santana for their 2002 single, \"The Game of Love\".",
+   "en": {
+    "kicker": "american singer, songwriter and guitarist · 2002",
+    "who": "Michelle Jacquet Branch is an American singer, songwriter, and guitarist. She won a Grammy Award for Best Pop Collaboration with Vocals with Santana for their 2002 single, \"The Game of Love\".",
+    "facts": [
+     "She won a Grammy Award for Best Pop Collaboration with Vocals with Santana for their 2002 single, \"The Game of Love\".",
+     "Michelle Jacquet Branch is an American singer, songwriter, and guitarist."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische sängerin, songwriterin und gitarristin · 2002",
+    "who": "Michelle Jacquet Branch ist eine amerikanische Sängerin, Songwriterin und Gitarristin. Sie gewann einen Grammy in der Kategorie Best Pop Collaboration with Vocals für die Single von 2002, \"The Game of Love\", mit Santana.",
+    "facts": [
+     "Sie gewann einen Grammy für ihre gemeinsame Single mit Santana, \"The Game of Love\", aus dem Jahr 2002.",
+     "Michelle Jacquet Branch ist eine amerikanische Sängerin, Songwriterin und Gitarristin."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı, söz yazarı ve gitarist · 2002",
+    "who": "Michelle Jacquet Branch, Amerikalı bir şarkıcı, söz yazarı ve gitaristtir. 2002 tarihli \"The Game of Love\" single'ı ile Santana ile birlikte Best Pop Collaboration with Vocals dalında Grammy kazandı.",
+    "facts": [
+     "Santana ile 2002 single'ı \"The Game of Love\" için Best Pop Collaboration with Vocals dalında Grammy Ödülü kazandı.",
+     "Michelle Jacquet Branch, Amerikalı bir şarkıcı, söz yazarı ve gitaristtir."
+    ]
+   }
+  },
+  {
+   "id": "69201ced-7c51-4094-9159-76bb5195c335",
+   "slug": "the-amity-affliction-house-of-cards-2026-4902025d",
+   "title": "The Amity Affliction: HOUSE OF CARDS 2026",
+   "name": "The Amity Affliction",
+   "source_url": "https://en.wikipedia.org/wiki/The_Amity_Affliction",
+   "extract": "The Amity Affliction is an Australian metalcore band originally from Gympie, Queensland, formed in 2003. The band currently consists of Joel Birch, Dan Brown (guitar) and Jonathan Reeves. The band has released nine studio albums – the most recent of which, House of Cards, was released in 2026. They are known for their highly personal songs, often dealing with depression, anxiety, death, substance abuse, and suicide, many lyrics stemming from vocalist Joel Birch's past struggles.",
+   "en": {
+    "kicker": "australian metalcore band · gympie, queensland, 2003",
+    "who": "The Amity Affliction is an Australian metalcore band originally from Gympie, Queensland, formed in 2003. The band currently consists of Joel Birch, Dan Brown (guitar) and Jonathan Reeves.",
+    "facts": [
+     "The band has released nine studio albums – the most recent of which, House of Cards, was released in 2026.",
+     "They are known for their highly personal songs, often dealing with depression, anxiety, death, substance abuse, and suicide."
+    ]
+   },
+   "de": {
+    "kicker": "australische metalcore-band · gympie, queensland, 2003",
+    "who": "The Amity Affliction ist eine australische Metalcore-Band, ursprünglich aus Gympie, Queensland, gegründet 2003. Die Band besteht derzeit aus Joel Birch, Dan Brown (Gitarre) und Jonathan Reeves.",
+    "facts": [
+     "Die Band hat neun Studioalben veröffentlicht, das jüngste davon, House of Cards, im Jahr 2026.",
+     "Sie ist bekannt für sehr persönliche Songs, die oft von Depression, Angst, Tod, Substanzmissbrauch und Suizid handeln."
+    ]
+   },
+   "tr": {
+    "kicker": "avustralyalı metalcore grubu · gympie, queensland, 2003",
+    "who": "The Amity Affliction, başlangıçta Queensland'in Gympie kentinden olan, 2003'te kurulmuş bir Avustralyalı metalcore grubudur. Grubun şu anki üyeleri Joel Birch, Dan Brown (gitar) ve Jonathan Reeves'tir.",
+    "facts": [
+     "Grup dokuz stüdyo albümü yayımladı; en son albümleri House of Cards 2026'da çıktı.",
+     "Çok kişisel şarkılarıyla tanınırlar; bu şarkılar sıklıkla depresyon, kaygı, ölüm, madde bağımlılığı ve intihar temalarını işler."
+    ]
+   }
+  },
+  {
+   "id": "ed03ad51-15f1-458f-a7fc-1c75031878e5",
+   "slug": "pretty-sick-d8b55f36",
+   "title": "Pretty Sick",
+   "name": "Pretty Sick",
+   "source_url": "https://en.wikipedia.org/wiki/Pretty_Sick",
+   "extract": "Pretty Sick is an American indie rock band from New York City, New York. It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz.",
+   "en": {
+    "kicker": "american indie rock band · new york city",
+    "who": "Pretty Sick is an American indie rock band from New York City, New York. The current members are Sabrina Fuentes, Eva Kaufman, and Benjamin Arauz.",
+    "facts": [
+     "Pretty Sick is an American indie rock band from New York City, New York.",
+     "It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-rockband · new york city",
+    "who": "Pretty Sick ist eine amerikanische Indie-Rockband aus New York City, New York. Aktuelle Mitglieder sind Sabrina Fuentes, Eva Kaufman und Benjamin Arauz.",
+    "facts": [
+     "Pretty Sick ist eine amerikanische Indie-Rockband aus New York City, New York.",
+     "Derzeit besteht die Band aus Sängerin und Bassistin Sabrina Fuentes, Schlagzeugerin Eva Kaufman und Gitarrist Benjamin Arauz."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan indie rock grubu · new york city",
+    "who": "Pretty Sick, New York City, New York'tan Amerikalı bir indie rock grubudur. Grubun şu anki üyeleri Sabrina Fuentes, Eva Kaufman ve Benjamin Arauz'dur.",
+    "facts": [
+     "Pretty Sick, New York City, New York'tan Amerikalı bir indie rock grubudur.",
+     "Grup şu anda vokalist ve basçı Sabrina Fuentes, davulcu Eva Kaufman ve gitarist Benjamin Arauz'dan oluşuyor."
+    ]
+   }
+  },
+  {
+   "id": "6e81a15e-d47d-4727-9b96-af4254c009eb",
+   "slug": "clara-la-san-8c2009dd",
+   "title": "Clara La San",
+   "name": "Clara La San",
+   "source_url": "https://en.wikipedia.org/wiki/Clara_La_San",
+   "extract": "Rosemary Clare Louise Francis, known professionally as Clara La San, is a British singer, songwriter, and record producer. In 2013, her debut song \"Let You Go\" became popular on SoundCloud. Her follow-up song \"In This Darkness\" later went viral on TikTok upon being rereleased in 2022. Her debut studio album, Made Mistakes, was released in 2024.",
+   "en": {
+    "kicker": "british singer, songwriter and producer · 2013",
+    "who": "Rosemary Clare Louise Francis, known professionally as Clara La San, is a British singer, songwriter, and record producer. Her debut studio album, Made Mistakes, was released in 2024.",
+    "facts": [
+     "In 2013, her debut song \"Let You Go\" became popular on SoundCloud.",
+     "Her follow-up song \"In This Darkness\" later went viral on TikTok upon being rereleased in 2022."
+    ]
+   },
+   "de": {
+    "kicker": "britische sängerin, songwriterin und produzentin · 2013",
+    "who": "Rosemary Clare Louise Francis, unter dem Künstlernamen Clara La San bekannt, ist eine britische Sängerin, Songwriterin und Musikproduzentin. Ihr Debütalbum Made Mistakes erschien 2024.",
+    "facts": [
+     "2013 wurde ihr Debütsong \"Let You Go\" auf SoundCloud populär.",
+     "Ihr Folgesong \"In This Darkness\" wurde nach seiner Neuveröffentlichung 2022 auf TikTok viral."
+    ]
+   },
+   "tr": {
+    "kicker": "britanyalı şarkıcı, söz yazarı ve yapımcı · 2013",
+    "who": "Rosemary Clare Louise Francis, sahne adıyla Clara La San, İngiliz bir şarkıcı, söz yazarı ve plak yapımcısıdır. İlk stüdyo albümü Made Mistakes 2024'te yayımlandı.",
+    "facts": [
+     "2013'te ilk şarkısı \"Let You Go\", SoundCloud'da popüler oldu.",
+     "Takip eden şarkısı \"In This Darkness\", 2022'de yeniden yayımlanmasının ardından TikTok'ta viral oldu."
+    ]
+   }
+  },
+  {
+   "id": "dbcd4e00-42a3-4794-8f8e-77f006c97e64",
+   "slug": "chief-keef-5d944249",
+   "title": "CHIEF KEEF",
+   "name": "Chief Keef",
+   "source_url": "https://en.wikipedia.org/wiki/Chief_Keef",
+   "extract": "Keith Farrelle Cozart, known professionally as Chief Keef, is an American rapper and record producer. Beginning his career as a teenager, he gained regional recognition for his mixtapes in the early 2010s. Cozart has since been credited with popularizing the hip hop subgenre drill among mainstream audiences and is considered a progenitor of the genre.",
+   "en": {
+    "kicker": "american rapper and record producer · early 2010s",
+    "who": "Keith Farrelle Cozart, known professionally as Chief Keef, is an American rapper and record producer. He is considered a progenitor of the drill subgenre of hip hop.",
+    "facts": [
+     "Beginning his career as a teenager, he gained regional recognition for his mixtapes in the early 2010s.",
+     "Cozart has since been credited with popularizing the hip hop subgenre drill among mainstream audiences and is considered a progenitor of the genre."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper und musikproduzent · anfang der 2010er",
+    "who": "Keith Farrelle Cozart, bekannt als Chief Keef, ist ein amerikanischer Rapper und Musikproduzent. Er gilt als Wegbereiter des Hip-Hop-Subgenres Drill.",
+    "facts": [
+     "Schon als Teenager begann seine Karriere, und er erlangte Anfang der 2010er mit seinen Mixtapes regionale Anerkennung.",
+     "Cozart wird inzwischen zugeschrieben, das Subgenre Drill einem breiten Publikum bekannt gemacht zu haben, und er gilt als Wegbereiter des Genres."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi ve yapımcı · 2010'ların başı",
+    "who": "Keith Farrelle Cozart, sahne adıyla Chief Keef, Amerikalı bir rapçi ve plak yapımcısıdır. Hip hop alt türü drill'in öncülerinden biri olarak kabul edilir.",
+    "facts": [
+     "Genç yaşta kariyerine başlayan Cozart, 2010'ların başında mixtapeleriyle bölgesel ün kazandı.",
+     "Cozart, drill alt türünü ana akım kitlelere tanıttığı için itibar görmüştür ve bu türün öncülerinden biri sayılır."
+    ]
+   }
+  },
+  {
+   "id": "3bdc186c-0d75-4577-bf93-51037779eada",
+   "slug": "a-boogie-wit-da-hoodie-10-years-of-artist-deee0ccb",
+   "title": "A BOOGIE WIT DA HOODIE: 10 YEARS OF ARTIST",
+   "name": "A Boogie wit da Hoodie",
+   "source_url": "https://en.wikipedia.org/wiki/A_Boogie_wit_da_Hoodie",
+   "extract": "Artist Julius Dubose, known professionally as A Boogie wit da Hoodie or simply A Boogie, is an American rapper. He signed with Atlantic Records to release his debut studio album, The Bigger Artist (2017). Led by the Billboard Hot 100-top 20 single \"Drowning\", the album was met with critical praise and peaked at number four on the Billboard 200.",
+   "en": {
+    "kicker": "american rapper · 2017",
+    "who": "Julius Dubose, known professionally as A Boogie wit da Hoodie or simply A Boogie, is an American rapper. His album The Bigger Artist peaked at number four on the Billboard 200.",
+    "facts": [
+     "He signed with Atlantic Records to release his debut studio album, The Bigger Artist (2017).",
+     "Led by the Billboard Hot 100-top 20 single \"Drowning\", the album was met with critical praise and peaked at number four on the Billboard 200."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper · 2017",
+    "who": "Julius Dubose, bekannt als A Boogie wit da Hoodie oder einfach A Boogie, ist ein amerikanischer Rapper. Sein Album The Bigger Artist erreichte Platz vier der Billboard 200.",
+    "facts": [
+     "Er unterschrieb bei Atlantic Records, um sein Debütalbum The Bigger Artist (2017) zu veröffentlichen.",
+     "Angeführt von der Billboard-Hot-100-Top-20-Single \"Drowning\" erhielt das Album kritisches Lob und erreichte Platz vier der Billboard 200."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi · 2017",
+    "who": "Julius Dubose, sahne adıyla A Boogie wit da Hoodie ya da kısaca A Boogie, Amerikalı bir rapçidir. The Bigger Artist albümü Billboard 200'de dördüncü sıraya yükseldi.",
+    "facts": [
+     "Debut stüdyo albümü The Bigger Artist'i (2017) yayımlamak için Atlantic Records ile anlaşma imzaladı.",
+     "Billboard Hot 100'de ilk yirmiye giren \"Drowning\" single'ı ile öne çıkan albüm eleştirmenlerden övgü aldı ve Billboard 200'de dördüncü sıraya ulaştı."
+    ]
+   }
+  },
+  {
+   "id": "e7f20307-b0c4-41c8-81ea-c34af69d4682",
+   "slug": "hudson-westbrook-0d21d8d0",
+   "title": "Hudson Westbrook",
+   "name": "Hudson Westbrook",
+   "source_url": "https://en.wikipedia.org/wiki/Hudson_Westbrook",
+   "extract": "Hudson Brown Westbrook is an American country singer-songwriter based in Lubbock, Texas. He is known for his country music accomplishments at such a young age, having gone viral on social media.",
+   "en": {
+    "kicker": "american country singer-songwriter · lubbock, texas",
+    "who": "Hudson Brown Westbrook is an American country singer-songwriter based in Lubbock, Texas. He has gone viral on social media.",
+    "facts": [
+     "Hudson Brown Westbrook is an American country singer-songwriter based in Lubbock, Texas.",
+     "He is known for his country music accomplishments at such a young age, having gone viral on social media."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer country-singer-songwriter · lubbock, texas",
+    "who": "Hudson Brown Westbrook ist ein amerikanischer Country-Singer-Songwriter aus Lubbock, Texas. In den sozialen Medien ging er viral.",
+    "facts": [
+     "Hudson Brown Westbrook ist ein amerikanischer Country-Singer-Songwriter mit Sitz in Lubbock, Texas.",
+     "Er ist bekannt für seine Erfolge in der Countrymusik in so jungen Jahren, nachdem er in den sozialen Medien viral gegangen war."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı country şarkıcı-söz yazarı · lubbock, texas",
+    "who": "Hudson Brown Westbrook, Teksas'ın Lubbock kentinde yaşayan Amerikalı bir country şarkıcı ve söz yazarıdır. Sosyal medyada viral olarak ün kazandı.",
+    "facts": [
+     "Hudson Brown Westbrook, Teksas'ın Lubbock kentinde yaşayan Amerikalı bir country şarkıcı ve söz yazarıdır.",
+     "Çok genç yaşta country müzikteki başarılarıyla bilinir ve sosyal medyada viral oldu."
+    ]
+   }
+  },
+  {
+   "id": "23398936-ad38-491d-bd65-3e84e406e3fa",
+   "slug": "louie-bello-199cf99d",
+   "title": "Louie Bello",
+   "name": "Louie Bello",
+   "source_url": "https://en.wikipedia.org/wiki/Louie_Bello",
+   "extract": "Louie Bello is an American singer and songwriter based in Boston. He is also a former Sony ATV writer and Boston Music Awards winner who can be seen at venues around the country from Boston to Texas.",
+   "en": {
+    "kicker": "american singer and songwriter · boston",
+    "who": "Louie Bello is an American singer and songwriter based in Boston. He is also a former Sony ATV writer and Boston Music Awards winner.",
+    "facts": [
+     "Louie Bello is an American singer and songwriter based in Boston.",
+     "He is also a former Sony ATV writer and Boston Music Awards winner who can be seen at venues around the country from Boston to Texas."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer sänger und songwriter · boston",
+    "who": "Louie Bello ist ein amerikanischer Sänger und Songwriter mit Sitz in Boston. Er ist außerdem ehemaliger Songwriter bei Sony ATV und Gewinner der Boston Music Awards.",
+    "facts": [
+     "Louie Bello ist ein amerikanischer Sänger und Songwriter mit Sitz in Boston.",
+     "Er ist außerdem ein ehemaliger Sony-ATV-Songwriter und Gewinner der Boston Music Awards, der an Veranstaltungsorten im ganzen Land zu sehen ist, von Boston bis Texas."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı · boston",
+    "who": "Louie Bello, Boston merkezli Amerikalı bir şarkıcı ve söz yazarıdır. Eski bir Sony ATV söz yazarı ve Boston Music Awards ödül sahibidir.",
+    "facts": [
+     "Louie Bello, Boston merkezli Amerikalı bir şarkıcı ve söz yazarıdır.",
+     "Eski bir Sony ATV söz yazarı ve Boston Music Awards ödül sahibidir; ülke genelindeki mekanlarda, Boston'dan Teksas'a kadar, sahne alır."
+    ]
+   }
+  },
+  {
+   "id": "3fcf1345-b673-4ca4-a7d6-1b039a208615",
+   "slug": "sammy-rae-and-the-friends-the-get-down-b899ef55",
+   "title": "Sammy Rae & The Friends - the GET DOWN!",
+   "name": "Sammy Rae & The Friends",
+   "source_url": "https://en.wikipedia.org/wiki/Sammy_Rae_%26_The_Friends",
+   "extract": "Sammy Rae & The Friends is an American jazz-pop band from Brooklyn, New York City, led by singer-songwriter Samantha \"Sammy Rae\" Bowers. Formed in 2016, the group is known for high-energy live shows; in February 2024 they played two sold-out nights at Washington, D.C.’s 9:30 Club. Their debut studio album, Something for Everybody, was released on September 20, 2024, via Nettwerk, following the EPs The Good Life (2018) and Let's Throw a Party (2021).",
+   "en": {
+    "kicker": "american jazz-pop band · brooklyn, 2016",
+    "who": "Sammy Rae & The Friends is an American jazz-pop band from Brooklyn, New York City, led by singer-songwriter Samantha \"Sammy Rae\" Bowers. Formed in 2016, the group is known for high-energy live shows.",
+    "facts": [
+     "Their debut studio album, Something for Everybody, was released on September 20, 2024, via Nettwerk, following the EPs The Good Life (2018) and Let's Throw a Party (2021).",
+     "In February 2024 they played two sold-out nights at Washington, D.C.’s 9:30 Club."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische jazz-pop-band · brooklyn, 2016",
+    "who": "Sammy Rae & The Friends ist eine amerikanische Jazz-Pop-Band aus Brooklyn, New York City, angeführt von der Singer-Songwriterin Samantha \"Sammy Rae\" Bowers. Die 2016 gegründete Gruppe ist für ihre energiegeladenen Live-Shows bekannt.",
+    "facts": [
+     "Ihr Debütalbum Something for Everybody erschien am 20. September 2024 bei Nettwerk, nach den EPs The Good Life (2018) und Let's Throw a Party (2021).",
+     "Im Februar 2024 spielte die Band zwei ausverkaufte Abende im 9:30 Club in Washington, D.C."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı jazz-pop grubu · brooklyn, 2016",
+    "who": "Sammy Rae & The Friends, Brooklyn, New York City'den Amerikalı bir jazz-pop grubudur; grubun lideri şarkıcı-söz yazarı Samantha \"Sammy Rae\" Bowers'tır. 2016'da kurulan grup, enerjik canlı performanslarıyla tanınır.",
+    "facts": [
+     "Debut stüdyo albümleri Something for Everybody, 20 Eylül 2024'te Nettwerk aracılığıyla yayımlandı; önceki EP'ler The Good Life (2018) ve Let's Throw a Party (2021) idi.",
+     "Şubat 2024'te Washington, D.C.'deki 9:30 Club'da iki tükenmiş biletli gece sahne aldılar."
+    ]
+   }
+  }
+ ]
+}

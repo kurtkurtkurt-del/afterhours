@@ -1,0 +1,454 @@
+{
+ "city": "dublin",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "23b3cfd1-4338-4830-be5a-114ee9539a3a",
+   "slug": "stevie-wonder-songs-in-the-key-of-life-performan-d63460d9",
+   "title": "Stevie Wonder: Songs In The Key of Life Performances",
+   "name": "Stevie Wonder",
+   "source_url": "https://en.wikipedia.org/wiki/Stevie_Wonder",
+   "extract": "Stevland Hardaway Morris, known professionally as Stevie Wonder, is an American singer-songwriter, musician, and record producer. He is widely regarded as one of the most influential musicians of the 20th century, and is credited as a pioneer and influence by musicians across a range of genres that include R&B, pop, soul, gospel, funk, and jazz. Wonder's use of synthesizers and other electronic musical instruments in the 1970s reshaped the conventions of contemporary R&B. He also helped drive such genres into the album era, crafting his LPs as cohesive and consistent, in addition to socially conscious statements with complex compositions.",
+   "en": {
+    "kicker": "american singer-songwriter · dublin",
+    "who": "Stevland Hardaway Morris, known professionally as Stevie Wonder, is an American singer-songwriter, musician, and record producer. He is widely regarded as one of the most influential musicians of the 20th century.",
+    "facts": [
+     "Wonder's use of synthesizers and other electronic musical instruments in the 1970s reshaped the conventions of contemporary R&B.",
+     "He also helped drive such genres into the album era, crafting his LPs as cohesive and consistent, in addition to socially conscious statements with complex compositions."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · dublin",
+    "who": "Stevland Hardaway Morris, unter dem Künstlernamen Stevie Wonder bekannt, ist ein amerikanischer Singer-Songwriter, Musiker und Musikproduzent. Er gilt als einer der einflussreichsten Musiker des 20. Jahrhunderts.",
+    "facts": [
+     "Wonders Einsatz von Synthesizern und anderen elektronischen Musikinstrumenten in den 1970er-Jahren hat die Konventionen des zeitgenössischen R&B verändert.",
+     "Außerdem half er diesen Genres, in die Ära des Albums zu finden, indem er seine LPs geschlossen und stimmig anlegte, dazu kamen sozial engagierte Aussagen in komplexen Kompositionen."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · dublin",
+    "who": "Stevland Hardaway Morris, sahne adıyla Stevie Wonder, Amerikalı bir şarkıcı, söz yazarı, müzisyen ve plak yapımcısıdır. Yirminci yüzyılın en etkili müzisyenlerinden biri olarak kabul edilir.",
+    "facts": [
+     "Wonder'ın 1970'lerde sentezleyicileri ve diğer elektronik müzik aletlerini kullanması çağdaş R&B'nin geleneklerini yeniden şekillendirdi.",
+     "Ayrıca bu türlerin albüm çağına geçmesine yardımcı oldu; LP'lerini tutarlı ve bütünlüklü kurguladı, karmaşık besteler içinde toplumsal duyarlılığı olan açıklamalara da yer verdi."
+    ]
+   }
+  },
+  {
+   "id": "e6e2cc78-2f70-46c2-ba4b-de0917cb8ae7",
+   "slug": "nirosta-steel-766bc875",
+   "title": "Nirosta Steel",
+   "name": "Nirosta Steel",
+   "source_url": "https://en.wikipedia.org/wiki/Nirosta_Steel",
+   "extract": "Steven Hall, known professionally as Nirosta Steel, is a Scottish musician. A key member of the 1980s downtown arts scene in New York City, Hall garnered broader recognition with the release of the 2026 compilation album My Skyscraper.",
+   "en": {
+    "kicker": "scottish musician · dublin",
+    "who": "Steven Hall, known professionally as Nirosta Steel, is a Scottish musician. He was a key member of the 1980s downtown arts scene in New York City.",
+    "facts": [
+     "Hall garnered broader recognition with the release of the 2026 compilation album My Skyscraper.",
+     "Steven Hall is known professionally as Nirosta Steel."
+    ]
+   },
+   "de": {
+    "kicker": "schottischer musiker · dublin",
+    "who": "Steven Hall, unter dem Künstlernamen Nirosta Steel bekannt, ist ein schottischer Musiker. Er war in den 1980er-Jahren ein wichtiges Mitglied der Downtown-Kunstszene in New York City.",
+    "facts": [
+     "Mit der Veröffentlichung des Compilation-Albums My Skyscraper im Jahr 2026 erlangte Hall breitere Anerkennung.",
+     "Steven Hall ist unter dem Künstlernamen Nirosta Steel bekannt."
+    ]
+   },
+   "tr": {
+    "kicker": "İskoç müzisyen · dublin",
+    "who": "Steven Hall, sahne adı Nirosta Steel ile bilinen İskoç bir müzisyendir. 1980'lerde New York City'nin downtown sanat sahnesinin önemli isimlerinden biriydi.",
+    "facts": [
+     "2026 derleme albümü My Skyscraper'ın yayımlanmasıyla Hall daha geniş bir tanınırlık kazandı.",
+     "Steven Hall, sahne adıyla Nirosta Steel olarak bilinir."
+    ]
+   }
+  },
+  {
+   "id": "b7ef1f4a-2199-4110-bb84-f0f20196d195",
+   "slug": "alison-moyet-40304d77",
+   "title": "Alison Moyet",
+   "name": "Alison Moyet",
+   "source_url": "https://en.wikipedia.org/wiki/Alison_Moyet",
+   "extract": "Geneviève Alison Jane Moyet, formerly known as Alf, is an English singer-songwriter. Noted for her powerful bluesy contralto voice, she came to prominence as a member of the synth-pop duo Yazoo, but has since mainly worked as a solo artist.",
+   "en": {
+    "kicker": "english singer · dublin",
+    "who": "Geneviève Alison Jane Moyet, formerly known as Alf, is an English singer-songwriter. She came to prominence as a member of the synth-pop duo Yazoo.",
+    "facts": [
+     "Noted for her powerful bluesy contralto voice, she came to prominence as a member of the synth-pop duo Yazoo, but has since mainly worked as a solo artist.",
+     "Geneviève Alison Jane Moyet, formerly known as Alf, is an English singer-songwriter."
+    ]
+   },
+   "de": {
+    "kicker": "englische sängerin · dublin",
+    "who": "Geneviève Alison Jane Moyet, früher als Alf bekannt, ist eine englische Sängerin und Songwriterin. Bekannt wurde sie als Mitglied des Synthie-Pop-Duos Yazoo.",
+    "facts": [
+     "Für ihre kraftvolle, bluesige Altstimme bekannt, wurde sie als Mitglied des Synthie-Pop-Duos Yazoo bekannt und arbeitet seither vor allem als Solokünstlerin.",
+     "Sie war früher unter dem Namen Alf bekannt."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı · dublin",
+    "who": "Geneviève Alison Jane Moyet, eski adı Alf olan İngiliz bir şarkıcı ve söz yazarıdır. Synth-pop ikilisi Yazoo'nun üyesi olarak ön plana çıktı.",
+    "facts": [
+     "Güçlü, bluesvari kontralto sesiyle tanınan Moyet, Yazoo üyeliğiyle ön plana çıktı; sonrasında ağırlıklı olarak solo sanatçı olarak çalıştı.",
+     "Daha önce Alf adıyla tanınıyordu ve İngiliz bir şarkıcı ve söz yazarıdır."
+    ]
+   }
+  },
+  {
+   "id": "24cfbd5b-6dc1-4b9b-a96e-0a1ff78ca0e1",
+   "slug": "jack-savoretti-we-will-always-be-the-way-we-were-c31c3833",
+   "title": "Jack Savoretti - We Will Always Be the Way We Were",
+   "name": "Jack Savoretti",
+   "source_url": "https://en.wikipedia.org/wiki/Jack_Savoretti",
+   "extract": "Giovanni Edgar Charles Galletto-Savoretti, known professionally as Jack Savoretti, is a British acoustic singer, songwriter, and musician. He has released eight studio albums to date: Between the Minds (2007), Harder Than Easy (2009), Before the Storm (2012), Written in Scars (2015), Sleep No More (2016), Singing to Strangers (2019), Europiana (2021) and Miss Italia (2024). Singing to Strangers became his first number-one album on the UK Albums Chart.",
+   "en": {
+    "kicker": "british acoustic singer · dublin",
+    "who": "Giovanni Edgar Charles Galletto-Savoretti, known professionally as Jack Savoretti, is a British acoustic singer, songwriter, and musician. His albums include Between the Minds (2007) and Miss Italia (2024).",
+    "facts": [
+     "He has released eight studio albums to date: Between the Minds (2007), Harder Than Easy (2009), Before the Storm (2012), Written in Scars (2015), Sleep No More (2016), Singing to Strangers (2019), Europiana (2021) and Miss Italia (2024).",
+     "Singing to Strangers became his first number-one album on the UK Albums Chart."
+    ]
+   },
+   "de": {
+    "kicker": "britischer akustik-sänger · dublin",
+    "who": "Giovanni Edgar Charles Galletto-Savoretti, unter dem Namen Jack Savoretti bekannt, ist ein britischer Sänger, Songwriter und Musiker mit akustischem Stil. Zu seinen Alben gehören Between the Minds (2007) und Miss Italia (2024).",
+    "facts": [
+     "Bislang hat er acht Studioalben veröffentlicht: Between the Minds (2007), Harder Than Easy (2009), Before the Storm (2012), Written in Scars (2015), Sleep No More (2016), Singing to Strangers (2019), Europiana (2021) und Miss Italia (2024).",
+     "Singing to Strangers wurde sein erstes Album, das auf Platz eins der britischen Albumcharts stand."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz akustik şarkıcı · dublin",
+    "who": "Giovanni Edgar Charles Galletto-Savoretti, Jack Savoretti sahne adıyla bilinen, İngiliz akustik şarkıcı, söz yazarı ve müzisyendir. Albümleri arasında Between the Minds (2007) ve Miss Italia (2024) bulunur.",
+    "facts": [
+     "Bugüne kadar sekiz stüdyo albümü yayımladı: Between the Minds (2007), Harder Than Easy (2009), Before the Storm (2012), Written in Scars (2015), Sleep No More (2016), Singing to Strangers (2019), Europiana (2021) ve Miss Italia (2024).",
+     "Singing to Strangers, İngiltere Albüm Listesi'nde birinci olan ilk albümü oldu."
+    ]
+   }
+  },
+  {
+   "id": "ceba9671-0d02-4af1-ae8d-6649801b95fe",
+   "slug": "chanel-beads-63acd39f",
+   "title": "Chanel Beads",
+   "name": "Chanel Beads",
+   "source_url": "https://en.wikipedia.org/wiki/Chanel_Beads",
+   "extract": "Chanel Beads is an American New York City-based group fronted by musicians Shane Lavers, Maya McGrory, and Zachary Paul. They are currently signed to Jagjaguwar. Lavers works closely with Maya McGrory, also known as Colle.",
+   "en": {
+    "kicker": "american music group · dublin",
+    "who": "Chanel Beads is an American New York City-based group. The group is fronted by Shane Lavers, Maya McGrory, and Zachary Paul.",
+    "facts": [
+     "Lavers works closely with Maya McGrory, also known as Colle.",
+     "They are currently signed to Jagjaguwar."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische musikgruppe · dublin",
+    "who": "Chanel Beads ist eine amerikanische Gruppe aus New York City. Sie wird von Shane Lavers, Maya McGrory und Zachary Paul angeführt.",
+    "facts": [
+     "Lavers arbeitet eng mit Maya McGrory zusammen, die auch unter dem Namen Colle bekannt ist.",
+     "Die Gruppe ist derzeit bei Jagjaguwar unter Vertrag."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı müzik grubu · dublin",
+    "who": "Chanel Beads, New York City merkezli Amerikalı bir gruptur. Grubun ön planında Shane Lavers, Maya McGrory ve Zachary Paul yer alır.",
+    "facts": [
+     "Lavers, Colle olarak da bilinen Maya McGrory ile yakın çalışıyor.",
+     "Grup şu anda Jagjaguwar ile sözleşmeli."
+    ]
+   }
+  },
+  {
+   "id": "2c15106c-9b06-4a0a-9c18-888a16732d3f",
+   "slug": "pye-corner-audio-7305b28b",
+   "title": "Pye Corner Audio",
+   "name": "Pye Corner Audio",
+   "source_url": "https://en.wikipedia.org/wiki/Pye_Corner_Audio",
+   "extract": "Pye Corner Audio is a British electronic music project by Martin Jenkins. Vols 1–2 and Vols 3–4 of the project's Black Mill Tapes, originally self-released, were later released by Type Records. In 2012, its Sleep Games album was released through the Ghost Box label.",
+   "en": {
+    "kicker": "british electronic music project · dublin",
+    "who": "Pye Corner Audio is a British electronic music project by Martin Jenkins. Its releases include the Black Mill Tapes and the album Sleep Games.",
+    "facts": [
+     "Vols 1–2 and Vols 3–4 of the project's Black Mill Tapes, originally self-released, were later released by Type Records.",
+     "In 2012, its Sleep Games album was released through the Ghost Box label."
+    ]
+   },
+   "de": {
+    "kicker": "britisches elektronik-musikprojekt · dublin",
+    "who": "Pye Corner Audio ist ein britisches Elektronikmusik-Projekt von Martin Jenkins. Zu seinen Veröffentlichungen gehören die Black Mill Tapes und das Album Sleep Games.",
+    "facts": [
+     "Die Bände 1–2 und 3–4 der Black Mill Tapes des Projekts wurden zunächst selbst veröffentlicht und später bei Type Records herausgebracht.",
+     "Im Jahr 2012 erschien das Album Sleep Games über das Label Ghost Box."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz elektronik müzik projesi · dublin",
+    "who": "Pye Corner Audio, Martin Jenkins'in İngiliz bir elektronik müzik projesidir. Yayımları arasında Black Mill Tapes ve Sleep Games albümü yer alır.",
+    "facts": [
+     "Projenin Black Mill Tapes serisinin 1–2 ve 3–4 ciltleri başlangıçta kendi yayımlarıyla çıktı; sonradan Type Records tarafından yayımlandı.",
+     "2012'de Sleep Games albümü Ghost Box plak etiketi üzerinden yayımlandı."
+    ]
+   }
+  },
+  {
+   "id": "5e5a83be-ec71-4a53-b926-3b341c1b9585",
+   "slug": "cody-johnson-3879ddf6",
+   "title": "Cody Johnson",
+   "name": "Cody Johnson",
+   "source_url": "https://en.wikipedia.org/wiki/Cody_Johnson",
+   "extract": "Cody Daniel Johnson is an American country music singer. He has self-released six albums, including Gotta Be Me, which debuted at number two on Billboard's Country Albums chart, before releasing his first major-label album, Ain't Nothin' to It, in January 2019. He released his second major-label album, Human: The Double Album, in October 2021. His style is classified as contemporary country and neotraditional country, drawing influences from artists like George Strait and Willie Nelson. His song \"'Til You Can't\" won two awards at the Country Music Association Awards in 2022. His album Leather won the CMA Album of the Year on November 20, 2024. He toured Australia in 2023 and 2025, with many ",
+   "en": {
+    "kicker": "american country singer · dublin",
+    "who": "Cody Daniel Johnson is an American country music singer. His style is classified as contemporary country and neotraditional country, drawing influences from artists like George Strait and Willie Nelson.",
+    "facts": [
+     "He released his first major-label album, Ain't Nothin' to It, in January 2019.",
+     "His song \"'Til You Can't\" won two awards at the Country Music Association Awards in 2022."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer country-sänger · dublin",
+    "who": "Cody Daniel Johnson ist ein amerikanischer Country-Musiker. Sein Stil wird als zeitgenössischer und neotraditioneller Country eingeordnet, beeinflusst von Künstlern wie George Strait und Willie Nelson.",
+    "facts": [
+     "Sein erstes Album bei einem Major-Label, Ain't Nothin' to It, erschien im Januar 2019.",
+     "Sein Song \"'Til You Can't\" gewann 2022 zwei Preise bei den Country Music Association Awards."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı country şarkıcısı · dublin",
+    "who": "Cody Daniel Johnson, Amerikalı bir country müzik şarkıcısıdır. Tarzı çağdaş country ve neo-geleneksel country olarak sınıflandırılır; George Strait ve Willie Nelson gibi sanatçılardan etkilenmiştir.",
+    "facts": [
+     "Büyük plak şirketiyle ilk albümü olan Ain't Nothin' to It'i Ocak 2019'da yayımladı.",
+     "\"'Til You Can't\" adlı şarkısı 2022'de Country Music Association Ödülleri'nde iki ödül kazandı."
+    ]
+   }
+  },
+  {
+   "id": "a5e5ac14-e726-44fb-892a-5a8a6a1a62f4",
+   "slug": "all-tvvins-iivv-10-year-anniversary-show-a2ee7b6a",
+   "title": "All Tvvins - IIVV 10 Year Anniversary Show",
+   "name": "All Tvvins",
+   "source_url": "https://en.wikipedia.org/wiki/All_Tvvins",
+   "extract": "All Tvvins are an Irish pop band from Dublin. In 2016, the band released their debut album, llVV, which debuted at number 2 on the Irish charts. In 2019 they released \"Just to Exist\" under Faction Records label.",
+   "en": {
+    "kicker": "irish pop band · dublin",
+    "who": "All Tvvins are an Irish pop band from Dublin. Their debut album was llVV.",
+    "facts": [
+     "In 2016, the band released their debut album, llVV, which debuted at number 2 on the Irish charts.",
+     "In 2019 they released \"Just to Exist\" under Faction Records label."
+    ]
+   },
+   "de": {
+    "kicker": "irische popband · dublin",
+    "who": "All Tvvins sind eine irische Popband aus Dublin. Ihr Debütalbum heißt llVV.",
+    "facts": [
+     "Im Jahr 2016 veröffentlichte die Band ihr Debütalbum llVV, das auf Platz zwei der irischen Charts einstieg.",
+     "2019 erschien \"Just to Exist\" beim Label Faction Records."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı pop grubu · dublin",
+    "who": "All Tvvins, Dublin'den bir İrlanda pop grubudur. Debüt albümleri llVV'dir.",
+    "facts": [
+     "Grup 2016'da debüt albümü llVV'yi yayımladı; albüm İrlanda listelerinde ikinci sıraya girdi.",
+     "2019'da \"Just to Exist\" şarkısını Faction Records etiketiyle yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "42014e3a-5e43-4d96-8851-c966703d6b08",
+   "slug": "nerina-pallot-2a19c3b1",
+   "title": "Nerina Pallot",
+   "name": "Nerina Pallot",
+   "source_url": "https://en.wikipedia.org/wiki/Nerina_Pallot",
+   "extract": "Nerina Natasha Georgina Pallot is a British singer-songwriter. She has released eight albums and over a dozen EPs. She was nominated for British Female Solo Artist at the 2007 BRIT Awards and nominated for an Ivor Novello Award for \"Sophia\" in the category of 'Best Song ' in the same year. Besides her own material, Pallot has written songs for Kylie Minogue and Diana Vickers. She mostly tours around the UK and is married to producer Andy Chatterley.",
+   "en": {
+    "kicker": "british singer-songwriter · dublin",
+    "who": "Nerina Natasha Georgina Pallot is a British singer-songwriter. She has released eight albums and over a dozen EPs.",
+    "facts": [
+     "She was nominated for British Female Solo Artist at the 2007 BRIT Awards.",
+     "Besides her own material, Pallot has written songs for Kylie Minogue and Diana Vickers."
+    ]
+   },
+   "de": {
+    "kicker": "britische singer-songwriterin · dublin",
+    "who": "Nerina Natasha Georgina Pallot ist eine britische Singer-Songwriterin. Sie hat acht Alben und über ein Dutzend EPs veröffentlicht.",
+    "facts": [
+     "Sie wurde bei den BRIT Awards 2007 als British Female Solo Artist nominiert.",
+     "Neben eigenem Material hat Pallot Songs für Kylie Minogue und Diana Vickers geschrieben."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı-söz yazarı · dublin",
+    "who": "Nerina Natasha Georgina Pallot, İngiliz bir şarkıcı ve söz yazarıdır. Sekiz albüm ve on ikiden fazla EP yayımladı.",
+    "facts": [
+     "2007 BRIT Ödülleri'nde British Female Solo Artist kategorisinde aday gösterildi.",
+     "Kendi materyalinin yanı sıra Kylie Minogue ve Diana Vickers için de şarkılar yazdı."
+    ]
+   }
+  },
+  {
+   "id": "4bdb744a-105e-425b-9f80-976c0a8363a2",
+   "slug": "basht-b6f8db22",
+   "title": "Basht.",
+   "name": "Basht.",
+   "source_url": "https://en.wikipedia.org/wiki/Basht.",
+   "extract": "Basht. [sic] are an Irish post-punk and alternative rock band formed in Dublin in 2021. The band consists of Jack Leavey, Lughaidh Armstrong-Mayock, Louis Christle (bass) and Ryan McClelland (drums).",
+   "en": {
+    "kicker": "irish post-punk band · dublin, 2021",
+    "who": "Basht. are an Irish post-punk and alternative rock band. They were formed in Dublin in 2021.",
+    "facts": [
+     "The band consists of Jack Leavey, Lughaidh Armstrong-Mayock, Louis Christle (bass) and Ryan McClelland (drums).",
+     "The band was formed in Dublin in 2021."
+    ]
+   },
+   "de": {
+    "kicker": "irische post-punk-band · dublin, 2021",
+    "who": "Basht. sind eine irische Post-Punk- und Alternative-Rock-Band. Sie wurden 2021 in Dublin gegründet.",
+    "facts": [
+     "Die Band besteht aus Jack Leavey, Lughaidh Armstrong-Mayock, Louis Christle (Bass) und Ryan McClelland (Schlagzeug).",
+     "Die Band wurde 2021 in Dublin gegründet."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı post-punk grubu · dublin, 2021",
+    "who": "Basht., İrlandalı bir post-punk ve alternatif rock grubudur. Grup 2021'de Dublin'de kuruldu.",
+    "facts": [
+     "Grubun üyeleri Jack Leavey, Lughaidh Armstrong-Mayock, Louis Christle (bas) ve Ryan McClelland (davul)'dır.",
+     "Grup 2021'de Dublin'de kuruldu."
+    ]
+   }
+  },
+  {
+   "id": "eb29bbaf-918b-42fb-b291-6318e6dff9dd",
+   "slug": "cat-power-the-greatest-tour-a6f32721",
+   "title": "Cat Power - the Greatest Tour",
+   "name": "Cat Power",
+   "source_url": "https://en.wikipedia.org/wiki/Cat_Power",
+   "extract": "Charlyn Marie  \"Chan\" Marshall, better known by her stage name Cat Power, is an American singer-songwriter. Cat Power was originally the name of her first band, but has become her stage name as a solo artist.",
+   "en": {
+    "kicker": "american singer-songwriter · dublin",
+    "who": "Charlyn Marie \"Chan\" Marshall is an American singer-songwriter. Her stage name is Cat Power.",
+    "facts": [
+     "Cat Power was originally the name of her first band, but has become her stage name as a solo artist.",
+     "Charlyn Marie \"Chan\" Marshall is better known by her stage name Cat Power."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin · dublin",
+    "who": "Charlyn Marie \"Chan\" Marshall ist eine amerikanische Singer-Songwriterin. Ihr Künstlername ist Cat Power.",
+    "facts": [
+     "Cat Power war ursprünglich der Name ihrer ersten Band, wurde dann aber zu ihrem Künstlernamen als Solokünstlerin.",
+     "Charlyn Marie \"Chan\" Marshall ist besser unter ihrem Künstlernamen Cat Power bekannt."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · dublin",
+    "who": "Charlyn Marie \"Chan\" Marshall, Amerikalı bir şarkıcı ve söz yazarıdır. Sahne adı Cat Power'dır.",
+    "facts": [
+     "Cat Power, başlangıçta ilk grubunun adıydı; solo sanatçı olarak ise sahne adına dönüştü.",
+     "Charlyn Marie \"Chan\" Marshall, sahne adı Cat Power ile daha çok tanınır."
+    ]
+   }
+  },
+  {
+   "id": "1f078172-58fc-40d1-b829-bd8a1e6b6075",
+   "slug": "walk-off-the-earth-073d0170",
+   "title": "Walk off the Earth",
+   "name": "Walk off the Earth",
+   "source_url": "https://en.wikipedia.org/wiki/Walk_off_the_Earth",
+   "extract": "Walk off the Earth is a Canadian indie pop band from Burlington, Ontario. The group is known for its music videos of covers and originals. The band is well known for covering pop-genre music on YouTube, making use of instruments such as the ukulele and the theremin, as well as looping samples. The band's recorded music and videos are produced by member and multi-instrumentalist Gianni \"Luminati\" Nicassio.",
+   "en": {
+    "kicker": "canadian indie pop band · dublin",
+    "who": "Walk off the Earth is a Canadian indie pop band from Burlington, Ontario. The band's recorded music and videos are produced by member and multi-instrumentalist Gianni \"Luminati\" Nicassio.",
+    "facts": [
+     "The group is known for its music videos of covers and originals.",
+     "The band is well known for covering pop-genre music on YouTube, making use of instruments such as the ukulele and the theremin, as well as looping samples."
+    ]
+   },
+   "de": {
+    "kicker": "kanadische indie-pop-band · dublin",
+    "who": "Walk off the Earth ist eine kanadische Indie-Pop-Band aus Burlington in Ontario. Die Aufnahmen und Videos der Band werden von Mitglied und Multiinstrumentalist Gianni \"Luminati\" Nicassio produziert.",
+    "facts": [
+     "Die Gruppe ist für ihre Musikvideos mit Covern und eigenen Songs bekannt.",
+     "Die Band ist vor allem dafür bekannt, Popmusik auf YouTube zu covern, und setzt dabei Instrumente wie Ukulele und Theremin sowie Loop-Samples ein."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı indie pop grubu · dublin",
+    "who": "Walk off the Earth, Ontario'nun Burlington kentinden bir Kanadalı indie pop grubudur. Grubun kayıtlı müziği ve videoları üye ve çok enstrümanlı müzisyen Gianni \"Luminati\" Nicassio tarafından üretiliyor.",
+    "facts": [
+     "Grup, cover ve özgün parçalardan oluşan müzik videolarıyla tanınır.",
+     "Grup, YouTube'da pop türündeki parçaları cover'lamasıyla ünlüdür; ukulele ve theremin gibi enstrümanları ve loop örneklerini kullanır."
+    ]
+   }
+  },
+  {
+   "id": "4028fe49-6359-4b40-b035-bea431afbfac",
+   "slug": "robert-lester-folsom-fe038ef2",
+   "title": "Robert Lester Folsom",
+   "name": "Robert Lester Folsom",
+   "source_url": "https://en.wikipedia.org/wiki/Robert_Lester_Folsom",
+   "extract": "Robert Lester Folsom is an American singer-songwriter and guitarist from Georgia. He is best known for the independently released album Music and Dreams, later reissued by Mexican Summer in 2010, which brought renewed attention to his 1970s recordings. Archival collections of his early home recordings have since been released by Anthology Recordings, including Ode to a Rainy Day: Archives 1972–1975 (2014) and Sunshine Only Sometimes (2022).",
+   "en": {
+    "kicker": "american singer-songwriter · dublin",
+    "who": "Robert Lester Folsom is an American singer-songwriter and guitarist from Georgia. He is best known for the independently released album Music and Dreams.",
+    "facts": [
+     "Music and Dreams was later reissued by Mexican Summer in 2010, which brought renewed attention to his 1970s recordings.",
+     "Archival collections of his early home recordings have since been released by Anthology Recordings, including Ode to a Rainy Day: Archives 1972–1975 (2014) and Sunshine Only Sometimes (2022)."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · dublin",
+    "who": "Robert Lester Folsom ist ein amerikanischer Singer-Songwriter und Gitarrist aus Georgia. Am bekanntesten ist er für das unabhängig veröffentlichte Album Music and Dreams.",
+    "facts": [
+     "Music and Dreams wurde 2010 von Mexican Summer neu aufgelegt, was seinen Aufnahmen aus den 1970er-Jahren neue Aufmerksamkeit verschaffte.",
+     "Archivsammlungen seiner frühen Heimaufnahmen erschienen seither bei Anthology Recordings, darunter Ode to a Rainy Day: Archives 1972–1975 (2014) und Sunshine Only Sometimes (2022)."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · dublin",
+    "who": "Robert Lester Folsom, Georgia eyaletinden Amerikalı bir şarkıcı, söz yazarı ve gitaristtir. En çok bağımsız olarak yayımlanan Music and Dreams albümüyle bilinir.",
+    "facts": [
+     "Music and Dreams, 2010'da Mexican Summer tarafından yeniden yayımlandı; bu, 1970'lerdeki kayıtlarına yeniden ilgi getirdi.",
+     "Erken dönem ev kayıtlarının arşiv koleksiyonları sonradan Anthology Recordings tarafından yayımlandı; bunlar arasında Ode to a Rainy Day: Archives 1972–1975 (2014) ve Sunshine Only Sometimes (2022) yer alıyor."
+    ]
+   }
+  },
+  {
+   "id": "f52c825c-0864-43e2-ae6c-9ea32b218516",
+   "slug": "niall-horan-dinner-party-live-on-tour-2a45ea29",
+   "title": "Niall Horan: Dinner Party Live On Tour",
+   "name": "Niall Horan",
+   "source_url": "https://en.wikipedia.org/wiki/Niall_Horan",
+   "extract": "Niall James Horan is an Irish singer, songwriter, musician, and multi-instrumentalist. He rose to prominence as a member of the boy band One Direction, formed in 2010 on the singing competition The X Factor. The group released five albums and went on to become one of the best-selling boy bands of all time.",
+   "en": {
+    "kicker": "irish singer, songwriter and musician · dublin",
+    "who": "Niall James Horan is an Irish singer, songwriter, musician, and multi-instrumentalist. He rose to prominence as a member of the boy band One Direction.",
+    "facts": [
+     "One Direction was formed in 2010 on the singing competition The X Factor.",
+     "The group released five albums and went on to become one of the best-selling boy bands of all time."
+    ]
+   },
+   "de": {
+    "kicker": "irischer sänger, songwriter und musiker · dublin",
+    "who": "Niall James Horan ist ein irischer Sänger, Songwriter, Musiker und Multiinstrumentalist. Bekannt wurde er als Mitglied der Boyband One Direction.",
+    "facts": [
+     "One Direction wurde 2010 im Gesangswettbewerb The X Factor gegründet.",
+     "Die Gruppe veröffentlichte fünf Alben und zählt zu den meistverkauften Boybands aller Zeiten."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı şarkıcı, söz yazarı ve müzisyen · dublin",
+    "who": "Niall James Horan, İrlandalı bir şarkıcı, söz yazarı, müzisyen ve çok enstrümanlı sanatçıdır. Boy band One Direction'ın üyesi olarak ön plana çıktı.",
+    "facts": [
+     "One Direction, 2010'da The X Factor şarkı yarışmasında kuruldu.",
+     "Grup beş albüm yayımladı ve tüm zamanların en çok satan boy band'lerinden biri oldu."
+    ]
+   }
+  }
+ ]
+}

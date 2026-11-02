@@ -1,0 +1,486 @@
+{
+ "city": "milano",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "a71a64ce-73ea-4e3b-8ae1-eb7907698889",
+   "slug": "gregory-porter-jazzmi-2026-7e3c3701",
+   "title": "Gregory Porter | JAZZMI 2026",
+   "name": "Gregory Porter",
+   "source_url": "https://en.wikipedia.org/wiki/Gregory_Porter",
+   "extract": "Gregory Porter is an American singer, songwriter, and musician. He has twice won the Grammy Award for Best Jazz Vocal Album: first in 2014 for Liquid Spirit and then again in 2017 for Take Me to the Alley.",
+   "en": {
+    "kicker": "american singer · grammys, 2014 and 2017",
+    "who": "Gregory Porter is an American singer, songwriter, and musician. He has won Grammy awards for jazz vocal albums.",
+    "facts": [
+     "He has twice won the Grammy Award for Best Jazz Vocal Album.",
+     "He won first in 2014 for Liquid Spirit and then again in 2017 for Take Me to the Alley."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer sänger · grammys, 2014 und 2017",
+    "who": "Gregory Porter ist ein amerikanischer Sänger, Songwriter und Musiker. Er wurde mehrfach für seine Jazz-Gesangsalben mit dem Grammy ausgezeichnet.",
+    "facts": [
+     "Er hat den Grammy für das beste Jazz-Gesangsalbum zweimal gewonnen.",
+     "Der erste Sieg kam 2014 für Liquid Spirit, der zweite 2017 für Take Me to the Alley."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı · grammy, 2014 ve 2017",
+    "who": "Gregory Porter, Amerikalı bir şarkıcı, söz yazarı ve müzisyendir. Caz vokal albümleriyle Grammy ödülleri kazanmıştır.",
+    "facts": [
+     "En iyi caz vokal albümü dalında Grammy Ödülü'nü iki kez kazanmıştır.",
+     "İlk ödülü 2014'te Liquid Spirit ile, ikincisini 2017'de Take Me to the Alley ile aldı."
+    ]
+   }
+  },
+  {
+   "id": "378240ba-abcd-494d-9e38-41585250e079",
+   "slug": "marco-mengoni-residency-allo-sbagliato-24c9c510",
+   "title": "Marco Mengoni - Residency Allo Sbagliato",
+   "name": "Marco Mengoni",
+   "source_url": "https://en.wikipedia.org/wiki/Marco_Mengoni",
+   "extract": "Marco Mengoni is an Italian singer-songwriter who rose to fame in 2009 after winning the third season of the Italian talent show X Factor. Since then he has sold over 2.8 million records in Italy, peaking the Italian albums chart seven consecutive times and entering the Top 10 Italian Singles Chart fifteen times. He won the Sanremo Music Festival in 2013 and again in 2023, therefore representing Italy in the Eurovision Song Contest in both years.",
+   "en": {
+    "kicker": "italian singer-songwriter · sanremo, 2013",
+    "who": "Marco Mengoni is an Italian singer-songwriter who rose to fame in 2009 after winning the third season of the Italian talent show X Factor. He has represented Italy at the Eurovision Song Contest.",
+    "facts": [
+     "He won the Sanremo Music Festival in 2013 and again in 2023, therefore representing Italy in the Eurovision Song Contest in both years.",
+     "Since then he has sold over 2.8 million records in Italy, peaking the Italian albums chart seven consecutive times."
+    ]
+   },
+   "de": {
+    "kicker": "italienischer singer-songwriter · sanremo, 2013",
+    "who": "Marco Mengoni ist ein italienischer Singer-Songwriter, der 2009 durch den Gewinn der dritten Staffel der Castingshow X Factor bekannt wurde. Er vertrat Italien beim Eurovision Song Contest.",
+    "facts": [
+     "Er gewann das Sanremo Music Festival 2013 und erneut 2023 und vertrat Italien deshalb in beiden Jahren beim Eurovision Song Contest.",
+     "Seitdem hat er in Italien über 2,8 Millionen Tonträger verkauft und die italienische Albumcharts siebenmal in Folge angeführt."
+    ]
+   },
+   "tr": {
+    "kicker": "italyan şarkıcı ve söz yazarı · sanremo, 2013",
+    "who": "Marco Mengoni, 2009'da X Factor yarışmasının üçüncü sezonunu kazanarak ün kazanmış İtalyan bir şarkıcı ve söz yazarıdır. İtalya'yı Eurovision Şarkı Yarışması'nda temsil etmiştir.",
+    "facts": [
+     "2013 ve 2023'te Sanremo Müzik Festivali'ni kazandı ve bu iki yılda da İtalya'yı Eurovision Şarkı Yarışması'nda temsil etti.",
+     "O zamandan beri İtalya'da 2,8 milyondan fazla kayıt sattı ve İtalyan albüm listesinin zirvesine art arda yedi kez çıktı."
+    ]
+   }
+  },
+  {
+   "id": "8cab0460-fc60-4220-baa0-d89f8497190a",
+   "slug": "svaneborg-kardyb-jazzmi-2026-5c42a04d",
+   "title": "Svaneborg Kardyb | JAZZMI 2026",
+   "name": "Svaneborg Kardyb",
+   "source_url": "https://en.wikipedia.org/wiki/Svaneborg_Kardyb",
+   "extract": "Svaneborg Kardyb are a Danish electronic jazz duo, composed of Nikolaj Svaneborg, and Jonas Kardyb. Their music draws on Danish folk music and Scandinavian jazz influences. In 2019, they were awarded with two Danish Music Awards Jazz — for Talent of the Year and Danish Jazz Composer of the Year following the release of their debut album.",
+   "en": {
+    "kicker": "danish electronic jazz duo · danish music awards, 2019",
+    "who": "Svaneborg Kardyb are a Danish electronic jazz duo, composed of Nikolaj Svaneborg and Jonas Kardyb. Their music draws on Danish folk music and Scandinavian jazz influences.",
+    "facts": [
+     "In 2019, they were awarded with two Danish Music Awards Jazz — for Talent of the Year and Danish Jazz Composer of the Year following the release of their debut album.",
+     "Their music draws on Danish folk music and Scandinavian jazz influences."
+    ]
+   },
+   "de": {
+    "kicker": "dänisches electronic-jazz-duo · danish music awards, 2019",
+    "who": "Svaneborg Kardyb sind ein dänisches Electronic-Jazz-Duo aus Nikolaj Svaneborg und Jonas Kardyb. Ihre Musik greift dänische Volksmusik und skandinavische Jazz-Einflüsse auf.",
+    "facts": [
+     "Im Jahr 2019 erhielten sie nach der Veröffentlichung ihres Debütalbums zwei Danish Music Awards Jazz, für Talent of the Year und Danish Jazz Composer of the Year.",
+     "Ihre Musik greift dänische Volksmusik und skandinavische Jazz-Einflüsse auf."
+    ]
+   },
+   "tr": {
+    "kicker": "danimarkalı caz duosu · danish music awards, 2019",
+    "who": "Svaneborg Kardyb, Nikolaj Svaneborg ve Jonas Kardyb'den oluşan Danimarkalı bir elektronik caz duosudur. Müziği Danimarka halk müziğinden ve İskandinav caz etkilerinden beslenir.",
+    "facts": [
+     "2019'da, debut albümlerinin ardından Yılın Yeteneği ve Yılın Danimarkalı Caz Bestecisi ödülleriyle iki Danish Music Awards Jazz ödülü aldılar.",
+     "Müzikleri Danimarka halk müziğinden ve İskandinav caz etkilerinden beslenir."
+    ]
+   }
+  },
+  {
+   "id": "532889b5-130c-4ef0-89fb-1b0b9740f169",
+   "slug": "isaiah-collier-jazzmi-2026-5af4271b",
+   "title": "Isaiah Collier | JAZZMI 2026",
+   "name": "Isaiah Collier",
+   "source_url": "https://en.wikipedia.org/wiki/Isaiah_Collier_(musician)",
+   "extract": "Isaiah Collier is an American jazz composer and saxophonist based in Chicago and Brooklyn. He started playing saxophone at age 11. Until 2024, he performed with his band The Chosen Few. He was selected as one of the top 25 rising jazz stars by Downbeat Magazine in July 2024. He has recorded six albums as of 2024. In 2025, he performed a tribute concert in honour of the 60th anniversary of John Coltrane's A Love Supreme.",
+   "en": {
+    "kicker": "american jazz composer and saxophonist · chicago, 2024",
+    "who": "Isaiah Collier is an American jazz composer and saxophonist based in Chicago and Brooklyn. He started playing saxophone at age 11.",
+    "facts": [
+     "He was selected as one of the top 25 rising jazz stars by Downbeat Magazine in July 2024.",
+     "In 2025, he performed a tribute concert in honour of the 60th anniversary of John Coltrane's A Love Supreme."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer jazzsaxophonist · chicago, 2024",
+    "who": "Isaiah Collier ist ein amerikanischer Jazzkomponist und Saxophonist mit Sitz in Chicago und Brooklyn. Er begann im Alter von 11 Jahren Saxophon zu spielen.",
+    "facts": [
+     "Im Juli 2024 wurde er vom Magazin Downbeat als einer der 25 vielversprechendsten Jazz-Newcomer ausgewählt.",
+     "Im Jahr 2025 spielte er ein Tribute-Konzert zum 60. Jahrestag von John Coltranes A Love Supreme."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı caz bestecisi ve saksafoncu · chicago, 2024",
+    "who": "Isaiah Collier, Chicago ve Brooklyn'de yaşayan Amerikalı bir caz bestecisi ve saksafoncudur. 11 yaşında saksafon çalmaya başladı.",
+    "facts": [
+     "Temmuz 2024'te Downbeat Magazine tarafından yükselen en iyi 25 caz yıldızından biri olarak seçildi.",
+     "2025'te John Coltrane'in A Love Supreme albümünün 60. yılı anısına bir tribute konseri verdi."
+    ]
+   }
+  },
+  {
+   "id": "c5795c40-5c6a-415b-98fd-54916cf86039",
+   "slug": "the-kid-laroi-a-perfect-world-tour-d76e575b",
+   "title": "The Kid LAROI - A Perfect World Tour",
+   "name": "The Kid Laroi",
+   "source_url": "https://en.wikipedia.org/wiki/The_Kid_Laroi",
+   "extract": "Charlton Kenneth Jeffrey Howard, known professionally as the Kid Laroi, is an Australian singer, rapper, and songwriter. He was signed with American rapper Lil Bibby's Grade A Productions, in a joint venture with Columbia Records, in 2019. He is best known for his 2021 single \"Stay\", which peaked atop the charts in numerous countries including his native Australia, as well as the Canadian Hot 100 and Billboard Hot 100.",
+   "en": {
+    "kicker": "australian singer and rapper · 2019",
+    "who": "Known professionally as the Kid Laroi, he is an Australian singer, rapper, and songwriter. He was signed with American rapper Lil Bibby's Grade A Productions in 2019.",
+    "facts": [
+     "He is best known for his 2021 single \"Stay\", which peaked atop the charts in numerous countries including his native Australia, as well as the Canadian Hot 100 and Billboard Hot 100.",
+     "He was signed with American rapper Lil Bibby's Grade A Productions, in a joint venture with Columbia Records, in 2019."
+    ]
+   },
+   "de": {
+    "kicker": "australischer sänger und rapper · 2019",
+    "who": "The Kid Laroi, mit bürgerlichem Namen Charlton Kenneth Jeffrey Howard, ist ein australischer Sänger, Rapper und Songwriter. Er wurde 2019 unter Vertrag genommen.",
+    "facts": [
+     "Bekannt ist er vor allem für seine Single „Stay“ aus dem Jahr 2021, die in zahlreichen Ländern auf Platz eins stand, darunter in seiner Heimat Australien sowie in den Hot 100 von Kanada und Billboard.",
+     "2019 unterschrieb er bei Grade A Productions des amerikanischen Rappers Lil Bibby, in einem Joint Venture mit Columbia Records."
+    ]
+   },
+   "tr": {
+    "kicker": "avustralyalı şarkıcı ve rapçi · 2019",
+    "who": "Charlton Kenneth Jeffrey Howard, sahne adıyla The Kid Laroi, Avustralyalı bir şarkıcı, rapçi ve söz yazarıdır. 2019'da sözleşme imzaladı.",
+    "facts": [
+     "2021 yılına ait \"Stay\" adlı single'ı ile tanınır; şarkı anavatanı Avustralya dahil birçok ülkede listelerin zirvesine çıktı.",
+     "2019'da, Columbia Records ile ortak girişim olan, Amerikalı rapçi Lil Bibby'nin Grade A Productions şirketiyle sözleşme imzaladı."
+    ]
+   }
+  },
+  {
+   "id": "9938f342-6759-4a5b-afbd-83d878794e91",
+   "slug": "the-pretty-reckless-dear-god-tour-f779a040",
+   "title": "The Pretty Reckless - Dear God Tour",
+   "name": "The Pretty Reckless",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pretty_Reckless",
+   "extract": "The Pretty Reckless is an American rock band from New York City, formed in 2009. The band consists of Taylor Momsen, Ben Phillips, Mark Damon (bass), and Jamie Perkins (drums). In August 2010, the band released their debut studio album, Light Me Up. The album spawned three moderately successful singles, most notably \"Make Me Wanna Die\". The band released the Hit Me Like a Man EP in early 2012. In March 2014, the band released their second studio album, Going to Hell, which included the singles \"Heaven Knows\" and \"Messed Up World \", both of which topped the US and UK rock charts.",
+   "en": {
+    "kicker": "american rock band · new york city, 2009",
+    "who": "The Pretty Reckless is an American rock band from New York City, formed in 2009. The band consists of Taylor Momsen, Ben Phillips, Mark Damon (bass), and Jamie Perkins (drums).",
+    "facts": [
+     "In August 2010, the band released their debut studio album, Light Me Up.",
+     "In March 2014, the band released their second studio album, Going to Hell, which included the singles \"Heaven Knows\" and \"Messed Up World\", both of which topped the US and UK rock charts."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · new york city, 2009",
+    "who": "The Pretty Reckless ist eine amerikanische Rockband aus New York City, die 2009 gegründet wurde. Zur Band gehören Taylor Momsen, Ben Phillips, Mark Damon am Bass und Jamie Perkins am Schlagzeug.",
+    "facts": [
+     "Im August 2010 veröffentlichte die Band ihr Debütalbum Light Me Up.",
+     "Im März 2014 erschien ihr zweites Studioalbum Going to Hell, mit den Singles „Heaven Knows“ und „Messed Up World“, die beide die Rock-Charts der USA und Großbritanniens anführten."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · new york city, 2009",
+    "who": "The Pretty Reckless, 2009'da kurulmuş, New York City'den Amerikalı bir rock grubudur. Grupta Taylor Momsen, Ben Phillips, bassta Mark Damon ve davulda Jamie Perkins yer alır.",
+    "facts": [
+     "Grup, Ağustos 2010'da ilk stüdyo albümü Light Me Up'ı yayımladı.",
+     "Mart 2014'te ikinci stüdyo albümü Going to Hell'i yayımladı; albümde ABD ve İngiltere rock listelerinin zirvesine çıkan \"Heaven Knows\" ve \"Messed Up World\" singleları yer aldı."
+    ]
+   }
+  },
+  {
+   "id": "e565e5bc-db47-4136-b745-df9231232c82",
+   "slug": "the-molotovs-b4c9605a",
+   "title": "The Molotovs",
+   "name": "The Molotovs",
+   "source_url": "https://en.wikipedia.org/wiki/The_Molotovs",
+   "extract": "The Molotovs are an English rock band from London. It consists of teenage siblings Matt and Issey Cartlidge. In 2026 they released their debut album Wasted on Youth.",
+   "en": {
+    "kicker": "english rock band · london, 2026",
+    "who": "The Molotovs are an English rock band from London. The band consists of teenage siblings Matt and Issey Cartlidge.",
+    "facts": [
+     "In 2026 they released their debut album Wasted on Youth.",
+     "The band consists of teenage siblings Matt and Issey Cartlidge."
+    ]
+   },
+   "de": {
+    "kicker": "englische rockband · london, 2026",
+    "who": "The Molotovs sind eine englische Rockband aus London. Die Band besteht aus den jugendlichen Geschwistern Matt und Issey Cartlidge.",
+    "facts": [
+     "2026 veröffentlichten sie ihr Debütalbum Wasted on Youth.",
+     "Zur Band gehören die jugendlichen Geschwister Matt und Issey Cartlidge."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rock grubu · londra, 2026",
+    "who": "The Molotovs, Londra'dan bir İngiliz rock grubudur. Grup, genç kardeşler Matt ve Issey Cartlidge'den oluşur.",
+    "facts": [
+     "2026'da ilk albümleri Wasted on Youth'u yayımladılar.",
+     "Grup, genç kardeşler Matt ve Issey Cartlidge'den oluşmaktadır."
+    ]
+   }
+  },
+  {
+   "id": "f27baa74-9988-4c4b-b32f-b959cfd2e17e",
+   "slug": "jose-gonzalez-fd187824",
+   "title": "Jose Gonzaléz",
+   "name": "José González",
+   "source_url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Gonz%C3%A1lez_(singer)",
+   "extract": "José Gabriel González is a Swedish indie folk singer-songwriter and guitarist from Gothenburg. He is also a member of the band Junip, along with Tobias Winterkorn. As of 2026, he has released five solo studio albums.",
+   "en": {
+    "kicker": "swedish indie folk singer · gothenburg, 2026",
+    "who": "José Gabriel González is a Swedish indie folk singer-songwriter and guitarist from Gothenburg. He is also a member of the band Junip, along with Tobias Winterkorn.",
+    "facts": [
+     "As of 2026, he has released five solo studio albums.",
+     "He is also a member of the band Junip, along with Tobias Winterkorn."
+    ]
+   },
+   "de": {
+    "kicker": "schwedischer indie-folk-sänger · göteborg, 2026",
+    "who": "José Gabriel González ist ein schwedischer Indie-Folk-Singer-Songwriter und Gitarrist aus Göteborg. Er ist außerdem Mitglied der Band Junip, zusammen mit Tobias Winterkorn.",
+    "facts": [
+     "Stand 2026 hat er fünf Soloalben veröffentlicht.",
+     "Er ist außerdem Mitglied der Band Junip."
+    ]
+   },
+   "tr": {
+    "kicker": "isveçli indie folk şarkıcısı · göteborg, 2026",
+    "who": "José Gabriel González, Göteborg'dan bir İsveçli indie folk şarkıcı, söz yazarı ve gitaristtir. Ayrıca Tobias Winterkorn ile birlikte Junip grubunun üyesidir.",
+    "facts": [
+     "2026 itibarıyla beş stüdyo albümünü solo olarak yayımlamıştır.",
+     "Ayrıca Junip grubunun da üyesidir."
+    ]
+   }
+  },
+  {
+   "id": "e4bd1234-be03-448a-a0fa-dcef62786a9c",
+   "slug": "artemas-lovercore-getting-up-to-no-good-tour-120165f1",
+   "title": "Artemas - LOVERCORE / GETTING UP TO NO GOOD Tour",
+   "name": "Artemas",
+   "source_url": "https://en.wikipedia.org/wiki/Artemas_(musician)",
+   "extract": "Artemas Diamandis, known mononymously as Artemas, is an English singer, songwriter and record producer. He is best known for his singles \"If U Think I'm Pretty\" and the viral \"I Like the Way You Kiss Me\". He is signed to the record label 10K Projects.",
+   "en": {
+    "kicker": "english singer and record producer · 10k projects",
+    "who": "Artemas Diamandis, known mononymously as Artemas, is an English singer, songwriter and record producer. He is signed to the record label 10K Projects.",
+    "facts": [
+     "He is best known for his singles \"If U Think I'm Pretty\" and the viral \"I Like the Way You Kiss Me\".",
+     "He is signed to the record label 10K Projects."
+    ]
+   },
+   "de": {
+    "kicker": "englischer sänger und produzent · 10k projects",
+    "who": "Artemas Diamandis, mononymisch als Artemas bekannt, ist ein englischer Sänger, Songwriter und Musikproduzent. Er steht beim Label 10K Projects unter Vertrag.",
+    "facts": [
+     "Bekannt ist er vor allem durch die Singles „If U Think I'm Pretty“ und den viralen Hit „I Like the Way You Kiss Me“.",
+     "Er steht beim Label 10K Projects unter Vertrag."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı ve yapımcı · 10k projects",
+    "who": "Artemas Diamandis, tek adla Artemas olarak bilinen İngiliz bir şarkıcı, söz yazarı ve plak yapımcısıdır. Plak şirketi 10K Projects ile çalışmaktadır.",
+    "facts": [
+     "En çok \"If U Think I'm Pretty\" ve viral hale gelen \"I Like the Way You Kiss Me\" singleları ile tanınır.",
+     "10K Projects plak şirketi ile sözleşmelidir."
+    ]
+   }
+  },
+  {
+   "id": "4aac4a4e-6e65-41dc-80d3-7e75db69eace",
+   "slug": "kingfishr-982d595b",
+   "title": "Kingfishr",
+   "name": "Kingfishr",
+   "source_url": "https://en.wikipedia.org/wiki/Kingfishr",
+   "extract": "Kingfishr are an Irish indie folk group formed in Letterkenny Co Donegal in 2022 comprising members Eddie Keogh, Eoghan \"McGoo\" McGrath, and Eoin \"Fitz\" Fitzgibbon. The band's breakout success was their song \"Killeagh\", which reached number one on the Irish Singles Chart on 2 May 2025. Their debut studio album Halcyon was released in August 2025.",
+   "en": {
+    "kicker": "irish indie folk group · letterkenny, 2022",
+    "who": "Kingfishr are an Irish indie folk group formed in Letterkenny Co Donegal in 2022 comprising members Eddie Keogh, Eoghan \"McGoo\" McGrath, and Eoin \"Fitz\" Fitzgibbon.",
+    "facts": [
+     "The band's breakout success was their song \"Killeagh\", which reached number one on the Irish Singles Chart on 2 May 2025.",
+     "Their debut studio album Halcyon was released in August 2025."
+    ]
+   },
+   "de": {
+    "kicker": "irische indie-folk-band · letterkenny, 2022",
+    "who": "Kingfishr sind eine irische Indie-Folk-Band, die 2022 in Letterkenny, County Donegal, gegründet wurde. Zu den Mitgliedern gehören Eddie Keogh, Eoghan „McGoo“ McGrath und Eoin „Fitz“ Fitzgibbon.",
+    "facts": [
+     "Ihr Durchbruch gelang mit dem Song „Killeagh“, der am 2. Mai 2025 Platz eins der irischen Singlecharts erreichte.",
+     "Ihr Debütalbum Halcyon erschien im August 2025."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı indie folk grubu · letterkenny, 2022",
+    "who": "Kingfishr, 2022'de Letterkenny, Co Donegal'de kurulmuş İrlandalı bir indie folk grubudur. Grubun üyeleri Eddie Keogh, Eoghan \"McGoo\" McGrath ve Eoin \"Fitz\" Fitzgibbon'dır.",
+    "facts": [
+     "Grubun çıkışını sağlayan \"Killeagh\" şarkısı, 2 Mayıs 2025'te İrlanda Single Listesi'nde birinci sıraya yükseldi.",
+     "Debut stüdyo albümleri Halcyon, Ağustos 2025'te yayımlandı."
+    ]
+   }
+  },
+  {
+   "id": "b7ec420f-8a6b-4244-afe4-b83bae7ab2fd",
+   "slug": "polyphia-be-not-afraid-world-tour-c11a2a36",
+   "title": "Polyphia: BE NOT AFRAID World Tour",
+   "name": "Polyphia",
+   "source_url": "https://en.wikipedia.org/wiki/Polyphia",
+   "extract": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music. Polyphia has released five studio albums, one live record, two EPs, and numerous singles.",
+   "en": {
+    "kicker": "american rock band · plano, texas, 2010",
+    "who": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman.",
+    "facts": [
+     "Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music.",
+     "Polyphia has released five studio albums, one live record, two EPs, and numerous singles."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · plano, texas, 2010",
+    "who": "Polyphia ist eine amerikanische Rockband aus Plano, Texas, die 2010 gegründet wurde. Zur Band gehören die Gitarristen Tim Henson und Scott LePage, Bassist Clay Gober und Schlagzeuger Clay Aeschliman.",
+    "facts": [
+     "In ihren frühen Veröffentlichungen klang die Band noch nach Heavy Metal, später entwickelte sich ihre Musik zu einem progressiveren Rockstil mit elektronischen und Hip-Hop-Elementen.",
+     "Polyphia hat fünf Studioalben, ein Livealbum, zwei EPs und zahlreiche Singles veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · plano, texas, 2010",
+    "who": "Polyphia, 2010 yılında kurulmuş, Texas'ın Plano kentinde yaşayan Amerikalı bir rock grubudur. Grupta gitaristler Tim Henson ve Scott LePage, basçı Clay Gober ve davulcu Clay Aeschliman yer alır.",
+    "facts": [
+     "İlk yapımlarında heavy metal sesine yaslanan grubun müziği, sonraki yapımlarında elektronik ve hip-hop öğeleriyle birleşen daha progresif bir rock tarzına evrildi.",
+     "Polyphia beş stüdyo albümü, bir canlı kayıt, iki EP ve çok sayıda single yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "1721b7a9-173a-4219-8a03-cc31f80582f4",
+   "slug": "freya-skye-stars-align-tour-682448a4",
+   "title": "Freya Skye - Stars Align Tour",
+   "name": "Freya Skye",
+   "source_url": "https://en.wikipedia.org/wiki/Freya_Skye",
+   "extract": "Freya Skye is an English singer and actress. She represented the United Kingdom in the Junior Eurovision Song Contest 2022, after which she was signed to Hollywood Records. Skye also has a talent holding deal for projects with Disney Branded Television. As an actress, she has appeared in The Next Step and made her film debut starring as Nova Bright in Zombies 4: Dawn of the Vampires. As a musician, Skye has released a number of singles since 2020 and released her debut extended play Stardust in 2026 and embarked on her first headlining tour, the Stars Align Tour.",
+   "en": {
+    "kicker": "english singer and actress · junior eurovision, 2022",
+    "who": "Freya Skye is an English singer and actress. She represented the United Kingdom in the Junior Eurovision Song Contest 2022, after which she was signed to Hollywood Records.",
+    "facts": [
+     "As an actress, she has appeared in The Next Step and made her film debut starring as Nova Bright in Zombies 4: Dawn of the Vampires.",
+     "As a musician, Skye has released her debut extended play Stardust in 2026 and embarked on her first headlining tour, the Stars Align Tour."
+    ]
+   },
+   "de": {
+    "kicker": "englische sängerin und schauspielerin · 2022",
+    "who": "Freya Skye ist eine englische Sängerin und Schauspielerin. Sie vertrat das Vereinigte Königreich beim Junior Eurovision Song Contest 2022, danach unterschrieb sie bei Hollywood Records.",
+    "facts": [
+     "Als Schauspielerin war sie in The Next Step zu sehen und hatte ihr Filmdebüt als Nova Bright in Zombies 4: Dawn of the Vampires.",
+     "Als Musikerin veröffentlichte sie 2026 ihre Debüt-EP Stardust und ging auf ihre erste Headliner-Tour, die Stars Align Tour."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı ve oyuncu · junior eurovision, 2022",
+    "who": "Freya Skye, İngiliz bir şarkıcı ve oyuncudur. 2022 Junior Eurovision Şarkı Yarışması'nda Birleşik Krallık'ı temsil etti ve ardından Hollywood Records ile sözleşme imzaladı.",
+    "facts": [
+     "Oyuncu olarak The Next Step dizisinde rol aldı ve Zombies 4: Dawn of the Vampires filminde Nova Bright karakteriyle film debutunu yaptı.",
+     "Müzisyen olarak 2026'da ilk EP'si Stardust'ı yayımladı ve ilk headliner turnesi Stars Align Tour'a çıktı."
+    ]
+   }
+  },
+  {
+   "id": "5f949b75-d741-45a3-88ac-6975931820c3",
+   "slug": "ludovico-einaudi-6e0a86d5",
+   "title": "Ludovico Einaudi",
+   "name": "Ludovico Einaudi",
+   "source_url": "https://en.wikipedia.org/wiki/Ludovico_Einaudi",
+   "extract": "Ludovico Maria Enrico Einaudi OMRI is an Italian pianist and composer. Trained at the Conservatorio Verdi in Milan, Einaudi began his career as a classical composer, later incorporating other styles and genres such as pop, rock, folk, and world music.",
+   "en": {
+    "kicker": "italian pianist and composer · milan",
+    "who": "Ludovico Maria Enrico Einaudi is an Italian pianist and composer. Trained at the Conservatorio Verdi in Milan, Einaudi began his career as a classical composer, later incorporating other styles and genres such as pop, rock, folk, and world music.",
+    "facts": [
+     "Trained at the Conservatorio Verdi in Milan, Einaudi began his career as a classical composer.",
+     "He later incorporated other styles and genres, such as pop, rock, folk, and world music."
+    ]
+   },
+   "de": {
+    "kicker": "italienischer pianist und komponist · mailand",
+    "who": "Ludovico Maria Enrico Einaudi ist ein italienischer Pianist und Komponist. Er wurde am Konservatorium Verdi in Mailand ausgebildet und begann seine Laufbahn als klassischer Komponist, bevor er weitere Stile und Genres wie Pop, Rock, Folk und Weltmusik einbezog.",
+    "facts": [
+     "Am Konservatorium Verdi in Mailand ausgebildet, begann Einaudi seine Karriere als klassischer Komponist.",
+     "Später bezog er weitere Stile und Genres wie Pop, Rock, Folk und Weltmusik ein."
+    ]
+   },
+   "tr": {
+    "kicker": "italyan piyanist ve besteci · milano",
+    "who": "Ludovico Maria Enrico Einaudi, İtalyan bir piyanist ve bestecidir. Milano'daki Verdi Konservatuvarı'nda eğitim gördü, klasik besteci olarak kariyerine başladı ve daha sonra pop, rock, folk ve dünya müziği gibi farklı tarz ve türleri müziğine kattı.",
+    "facts": [
+     "Milano'daki Verdi Konservatuvarı'nda eğitim gören Einaudi, kariyerine klasik besteci olarak başladı.",
+     "Daha sonra pop, rock, folk ve dünya müziği gibi başka tarz ve türleri de çalışmalarına dahil etti."
+    ]
+   }
+  },
+  {
+   "id": "f8371270-c6a9-4a71-8a7e-8dbff6c05f52",
+   "slug": "saint-levant-afandi-world-tour-8eaa8e85",
+   "title": "Saint Levant - AFANDI WORLD TOUR",
+   "name": "Saint Levant",
+   "source_url": "https://en.wikipedia.org/wiki/Saint_Levant",
+   "extract": "Marwan Abdelhamid, known professionally as Saint Levant, is a Palestinian singer-songwriter and rapper. A multilingual artist, he became known for his 2022 song \"Very Few Friends\". As of August 2026, he has released two EPs and two studio albums, and has toured in the Middle East, Europe, the US, and Australia.",
+   "en": {
+    "kicker": "palestinian singer-songwriter and rapper · 2022",
+    "who": "Marwan Abdelhamid, known professionally as Saint Levant, is a Palestinian singer-songwriter and rapper. A multilingual artist, he became known for his 2022 song \"Very Few Friends\".",
+    "facts": [
+     "As of August 2026, he has released two EPs and two studio albums, and has toured in the Middle East, Europe, the US, and Australia.",
+     "A multilingual artist, he became known for his 2022 song \"Very Few Friends\"."
+    ]
+   },
+   "de": {
+    "kicker": "palästinensischer singer-songwriter und rapper · 2022",
+    "who": "Marwan Abdelhamid, bekannt als Saint Levant, ist ein palästinensischer Singer-Songwriter und Rapper. Als mehrsprachiger Künstler wurde er vor allem durch seinen Song „Very Few Friends“ aus dem Jahr 2022 bekannt.",
+    "facts": [
+     "Stand August 2026 hat er zwei EPs und zwei Studioalben veröffentlicht und war auf Tournee in Nahost, Europa, den USA und Australien.",
+     "Er wurde durch seinen Song „Very Few Friends“ bekannt."
+    ]
+   },
+   "tr": {
+    "kicker": "filistinli singer-songwriter ve rapçi · 2022",
+    "who": "Marwan Abdelhamid, Saint Levant adıyla bilinen bir Filistinli şarkıcı, söz yazarı ve rapçidir. Çok dilli bir sanatçı olan Levant, 2022 tarihli \"Very Few Friends\" şarkısıyla tanındı.",
+    "facts": [
+     "Ağustos 2026 itibarıyla iki EP ve iki stüdyo albümü yayımladı ve Orta Doğu, Avrupa, ABD ve Avustralya'da turneye çıktı.",
+     "Çok dilli bir sanatçı olarak tanınır."
+    ]
+   }
+  },
+  {
+   "id": "824883a8-9a78-4d01-8e16-8cdf8ecb9ef9",
+   "slug": "kodaline-farewell-tour-98b2a574",
+   "title": "Kodaline - Farewell Tour",
+   "name": "Kodaline",
+   "source_url": "https://en.wikipedia.org/wiki/Kodaline",
+   "extract": "Kodaline are an Irish rock band. Originally known as 21 Demands, the band adopted their current name in 2012 to coincide with the changing of their music. The group comprises Steve Garrigan, Vincent May, Mark Prendergast, and Jason Boland.",
+   "en": {
+    "kicker": "irish rock band · 2012",
+    "who": "Kodaline are an Irish rock band. The group comprises Steve Garrigan, Vincent May, Mark Prendergast, and Jason Boland.",
+    "facts": [
+     "Originally known as 21 Demands, the band adopted their current name in 2012 to coincide with the changing of their music.",
+     "The group comprises Steve Garrigan, Vincent May, Mark Prendergast, and Jason Boland."
+    ]
+   },
+   "de": {
+    "kicker": "irische rockband · 2012",
+    "who": "Kodaline sind eine irische Rockband. Zur Band gehören Steve Garrigan, Vincent May, Mark Prendergast und Jason Boland.",
+    "facts": [
+     "Ursprünglich trat die Band unter dem Namen 21 Demands auf, ihren heutigen Namen übernahm sie 2012, als sich ihre Musik veränderte.",
+     "Zur Gruppe gehören Steve Garrigan, Vincent May, Mark Prendergast und Jason Boland."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı rock grubu · 2012",
+    "who": "Kodaline, İrlandalı bir rock grubudur. Grubu Steve Garrigan, Vincent May, Mark Prendergast ve Jason Boland oluşturmaktadır.",
+    "facts": [
+     "Grup başlangıçta 21 Demands adıyla biliniyordu; bugünkü adını müziklerinin değiştiği döneme denk gelen 2012'de aldı.",
+     "Grup, Steve Garrigan, Vincent May, Mark Prendergast ve Jason Boland'dan oluşmaktadır."
+    ]
+   }
+  }
+ ]
+}

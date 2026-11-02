@@ -1,0 +1,102 @@
+{
+  "city": "dubai",
+  "day": "2026-11-02",
+  "nights": [
+    {
+      "id": "373ea923-6366-4967-8acf-9c8750a1d30b",
+      "slug": "when-chai-met-toast-fd9b66c9",
+      "title": "When Chai Met Toast",
+      "name": "When Chai Met Toast",
+      "source_url": "https://en.wikipedia.org/wiki/When_Chai_Met_Toast",
+      "extract": "When Chai Met Toast is a multilingual indie-folk alternative band formed in Kochi, Kerala in 2016. The band's lineup comprises vocalist Ashwin Gopakumar, guitarist Achyuth Jaigopal, keyboardist Palee Francis, and drummer Pai Sailesh. The band is known for their happy and lighthearted music which they create in English and Hindi, sometimes featuring Tamil and Malayalam lyrics.",
+      "en": {
+        "kicker": "indie-folk alternative band · dubai, 2016",
+        "who": "When Chai Met Toast is a multilingual indie-folk alternative band formed in Kochi, Kerala in 2016. The lineup comprises vocalist Ashwin Gopakumar, guitarist Achyuth Jaigopal, keyboardist Palee Francis and drummer Pai Sailesh.",
+        "facts": [
+          "When Chai Met Toast is a multilingual indie-folk alternative band formed in Kochi, Kerala in 2016.",
+          "The band is known for their happy and lighthearted music which they create in English and Hindi, sometimes featuring Tamil and Malayalam lyrics."
+        ]
+      },
+      "de": {
+        "kicker": "indie-folk-alternative-band · dubai, 2016",
+        "who": "When Chai Met Toast ist eine mehrsprachige Indie-Folk-Alternative-Band, die 2016 in Kochi, Kerala, gegründet wurde. Zur Besetzung gehören Sänger Ashwin Gopakumar, Gitarrist Achyuth Jaigopal, Keyboarder Palee Francis und Schlagzeuger Pai Sailesh.",
+        "facts": [
+          "When Chai Met Toast ist eine mehrsprachige Indie-Folk-Alternative-Band, die 2016 in Kochi, Kerala, gegründet wurde.",
+          "Die Band ist für ihre fröhliche und unbeschwerte Musik bekannt, die sie auf Englisch und Hindi schreibt, manchmal mit Texten auf Tamil und Malayalam."
+        ]
+      },
+      "tr": {
+        "kicker": "çok dilli indie-folk alternatif grup · dubai, 2016",
+        "who": "When Chai Met Toast, 2016 yılında Kerala'nın Kochi kentinde kurulmuş çok dilli bir indie-folk alternatif gruptur. Kadroda vokalist Ashwin Gopakumar, gitarist Achyuth Jaigopal, klavyeci Palee Francis ve davulcu Pai Sailesh yer alır.",
+        "facts": [
+          "When Chai Met Toast, 2016 yılında Kerala'nın Kochi kentinde kurulmuş çok dilli bir indie-folk alternatif gruptur.",
+          "Grup, İngilizce ve Hintçe yaptığı neşeli ve hafif müzikleriyle tanınır; zaman zaman Tamilce ve Malayalamca sözler de içerir."
+        ]
+      }
+    },
+    {
+      "id": "025f6642-880d-4ab1-bf52-4a39f5006479",
+      "slug": "anuv-jain-55e2e82b",
+      "title": "Anuv Jain",
+      "name": "Anuv Jain",
+      "source_url": "https://en.wikipedia.org/wiki/Anuv_Jain",
+      "extract": "Anuv Jain is an Indian singer songwriter and composer. He is known for his simple chorded songs with lyrics that deal primarily with love and heartbreak. His music primarily contains an acoustic guitar or ukulele, unaccompanied by percussion or other instruments.",
+      "en": {
+        "kicker": "indian singer, songwriter and composer · dubai",
+        "who": "Anuv Jain is an Indian singer songwriter and composer. He is known for his simple chorded songs with lyrics that deal primarily with love and heartbreak.",
+        "facts": [
+          "He is known for his simple chorded songs with lyrics that deal primarily with love and heartbreak.",
+          "His music primarily contains an acoustic guitar or ukulele, unaccompanied by percussion or other instruments."
+        ]
+      },
+      "de": {
+        "kicker": "indischer sänger, songwriter und komponist · dubai",
+        "who": "Anuv Jain ist ein indischer Sänger, Songwriter und Komponist. Bekannt ist er für seine schlichten Songs mit Akkorden, deren Texte vor allem von Liebe und Liebeskummer handeln.",
+        "facts": [
+          "Bekannt ist er für seine schlichten Songs mit Akkorden, deren Texte vor allem von Liebe und Liebeskummer handeln.",
+          "Seine Musik besteht meist aus einer Akustikgitarre oder Ukulele, ohne Percussion oder andere Instrumente."
+        ]
+      },
+      "tr": {
+        "kicker": "hintli şarkıcı, söz yazarı ve besteci · dubai",
+        "who": "Anuv Jain, Hintli bir şarkıcı, söz yazarı ve bestecidir. Sade akorlu şarkılarıyla tanınır; sözleri çoğunlukla aşk ve aşk acısı üzerinedir.",
+        "facts": [
+          "Sade akorlu şarkılarıyla tanınır; sözleri çoğunlukla aşk ve aşk acısını konu alır.",
+          "Müziği çoğunlukla akustik gitar ya da ukulele içerir; vurmalı çalgı ya da başka enstrüman eşlik etmez."
+        ]
+      }
+    },
+    {
+      "id": "dbac0590-4067-4e1c-9a81-d220fce6c6e2",
+      "slug": "secondhand-serenade-c1e63fa3",
+      "title": "Secondhand Serenade",
+      "name": "Secondhand Serenade",
+      "source_url": "https://en.wikipedia.org/wiki/Secondhand_Serenade",
+      "extract": "Secondhand Serenade is the solo project of American rock musician John Vesely. Vesely has released four studio albums to date under the name Secondhand Serenade. His debut album used multitrack recording to create the sound of a band using technology, while his second album took a different path, using a proper band and synthesizers.",
+      "en": {
+        "kicker": "american rock musician · dubai",
+        "who": "Secondhand Serenade is the solo project of American rock musician John Vesely. Vesely has released four studio albums to date under the name Secondhand Serenade.",
+        "facts": [
+          "Secondhand Serenade is the solo project of American rock musician John Vesely.",
+          "Vesely has released four studio albums to date under the name Secondhand Serenade."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rockmusiker · dubai",
+        "who": "Secondhand Serenade ist das Soloprojekt des amerikanischen Rockmusikers John Vesely. Unter diesem Namen hat Vesely bisher vier Studioalben veröffentlicht.",
+        "facts": [
+          "Secondhand Serenade ist das Soloprojekt des amerikanischen Rockmusikers John Vesely.",
+          "Unter dem Namen Secondhand Serenade hat Vesely bisher vier Studioalben veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock müzisyeni · dubai",
+        "who": "Secondhand Serenade, Amerikalı rock müzisyeni John Vesely'nin solo projesidir. Vesely bu isim altında bugüne kadar dört stüdyo albümü yayımladı.",
+        "facts": [
+          "Secondhand Serenade, Amerikalı rock müzisyeni John Vesely'nin solo projesidir.",
+          "Vesely, bu isim altında bugüne kadar dört stüdyo albümü yayımladı."
+        ]
+      }
+    }
+  ]
+}

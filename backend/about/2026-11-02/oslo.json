@@ -1,0 +1,550 @@
+{
+ "city": "oslo",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "b5ffcb1d-912a-4312-948a-2b3956acb89b",
+   "slug": "warren-zeiders-b58e5f3d",
+   "title": "Warren Zeiders",
+   "name": "Warren Zeiders",
+   "source_url": "https://en.wikipedia.org/wiki/Warren_Zeiders",
+   "extract": "Warren Donald Zeiders is an American country music singer and songwriter. He has released five studio albums under Warner Records: Acoustic Covers (2021), 717 Tapes the Album (2022), Pretty Little Poison (2023), Relapse (2024) and No Brakes (2026). He had his first number one hit on country radio with his single \"Pretty Little Poison\" (2023).",
+   "en": {
+    "kicker": "american country singer · warner records, 2021",
+    "who": "Warren Donald Zeiders is an American country music singer and songwriter. He has released five studio albums under Warner Records.",
+    "facts": [
+     "He has released five studio albums under Warner Records: Acoustic Covers (2021), 717 Tapes the Album (2022), Pretty Little Poison (2023), Relapse (2024) and No Brakes (2026).",
+     "He had his first number one hit on country radio with his single \"Pretty Little Poison\" (2023)."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer country-sänger · warner records, 2021",
+    "who": "Warren Donald Zeiders ist ein amerikanischer Country-Musiker und Songwriter. Er hat fünf Studioalben bei Warner Records veröffentlicht.",
+    "facts": [
+     "Er hat fünf Studioalben bei Warner Records veröffentlicht: Acoustic Covers (2021), 717 Tapes the Album (2022), Pretty Little Poison (2023), Relapse (2024) und No Brakes (2026).",
+     "Seinen ersten Nummer-eins-Hit im Country-Radio hatte er mit der Single \"Pretty Little Poison\" (2023)."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı country şarkıcı · warner records, 2021",
+    "who": "Warren Donald Zeiders, amerikalı bir country müzik şarkıcısı ve söz yazarıdır. Warner Records etiketiyle beş stüdyo albümü yayımladı.",
+    "facts": [
+     "Warner Records etiketiyle beş stüdyo albümü yayımladı: Acoustic Covers (2021), 717 Tapes the Album (2022), Pretty Little Poison (2023), Relapse (2024) ve No Brakes (2026).",
+     "Country radyosunda ilk birinci sıra hitini, \"Pretty Little Poison\" (2023) single'ıyla aldı."
+    ]
+   }
+  },
+  {
+   "id": "665c87e7-e869-4aa5-9315-cb106511fcd8",
+   "slug": "fontaines-d-c-d5de640a",
+   "title": "Fontaines D.C.",
+   "name": "Fontaines D.C.",
+   "source_url": "https://en.wikipedia.org/wiki/Fontaines_D.C.",
+   "extract": "Fontaines D.C. are an Irish rock band formed in Dublin in 2014. The band consists of Grian Chatten (vocals), Conor Curley (guitar), Conor \"Deego\" Deegan III (bass), Tom Coll (drums), and Carlos O'Connell (guitar).",
+   "en": {
+    "kicker": "irish rock band · dublin, 2014",
+    "who": "Fontaines D.C. are an Irish rock band formed in Dublin in 2014. The band consists of Grian Chatten (vocals), Conor Curley (guitar), Conor Deegan III (bass), Tom Coll (drums), and Carlos O'Connell (guitar).",
+    "facts": [
+     "Fontaines D.C. are an Irish rock band formed in Dublin in 2014.",
+     "The band consists of Grian Chatten (vocals), Conor Curley (guitar), Conor Deegan III (bass), Tom Coll (drums), and Carlos O'Connell (guitar)."
+    ]
+   },
+   "de": {
+    "kicker": "irische rockband · dublin, 2014",
+    "who": "Fontaines D.C. sind eine irische Rockband, die 2014 in Dublin gegründet wurde. Zur Band gehören Grian Chatten (Gesang), Conor Curley (Gitarre), Conor Deegan III (Bass), Tom Coll (Schlagzeug) und Carlos O'Connell (Gitarre).",
+    "facts": [
+     "Fontaines D.C. sind eine irische Rockband, die 2014 in Dublin gegründet wurde.",
+     "Zur Besetzung gehören Grian Chatten (Gesang), Conor Curley (Gitarre), Conor Deegan III (Bass), Tom Coll (Schlagzeug) und Carlos O'Connell (Gitarre)."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı rock grubu · dublin, 2014",
+    "who": "Fontaines D.C., 2014 yılında Dublin'de kurulmuş İrlandalı bir rock grubudur. Grupta Grian Chatten (vokal), Conor Curley (gitar), Conor Deegan III (bas), Tom Coll (davul) ve Carlos O'Connell (gitar) yer alır.",
+    "facts": [
+     "Fontaines D.C., 2014 yılında Dublin'de kurulmuş İrlandalı bir rock grubudur.",
+     "Grupta Grian Chatten (vokal), Conor Curley (gitar), Conor Deegan III (bas), Tom Coll (davul) ve Carlos O'Connell (gitar) yer alır."
+    ]
+   }
+  },
+  {
+   "id": "3384f4e9-693f-43ac-96fc-5e2ae9d33ff2",
+   "slug": "beth-hart-flyttet-fra-20-10-25-til-09-11-26-bfe20e2c",
+   "title": "Beth Hart - flyttet fra 20.10.25 til 09.11.26",
+   "name": "Beth Hart",
+   "source_url": "https://en.wikipedia.org/wiki/Beth_Hart",
+   "extract": "Beth Hart is an American musician from Los Angeles, California. She rose to fame with the release of her 1999 single \"L.A. Song \" from her second album Screamin' for My Supper. The single was a number one hit in New Zealand, as well as reaching the top five of the US Adult Contemporary and Top 10 on the Billboard Adult Top 40 charts.",
+   "en": {
+    "kicker": "american musician · los angeles, california",
+    "who": "Beth Hart is an American musician from Los Angeles, California. She rose to fame with the release of her 1999 single \"L.A. Song\" from her second album Screamin' for My Supper.",
+    "facts": [
+     "She rose to fame with the release of her 1999 single \"L.A. Song\" from her second album Screamin' for My Supper.",
+     "The single was a number one hit in New Zealand, as well as reaching the top five of the US Adult Contemporary and Top 10 on the Billboard Adult Top 40 charts."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische musikerin · los angeles, kalifornien",
+    "who": "Beth Hart ist eine amerikanische Musikerin aus Los Angeles, Kalifornien. Bekannt wurde sie mit der Veröffentlichung ihrer Single \"L.A. Song\" von 1999 aus dem zweiten Album Screamin' for My Supper.",
+    "facts": [
+     "Bekannt wurde sie mit der Veröffentlichung ihrer Single \"L.A. Song\" von 1999 aus dem zweiten Album Screamin' for My Supper.",
+     "Die Single war ein Nummer-eins-Hit in Neuseeland und erreichte außerdem die Top 5 der US Adult Contemporary sowie die Top 10 der Billboard Adult Top 40 Charts."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı müzisyen · los angeles, california",
+    "who": "Beth Hart, Los Angeles, California'dan amerikalı bir müzisyendir. 1999 tarihli \"L.A. Song\" single'ı ve ikinci albümü Screamin' for My Supper ile ün kazandı.",
+    "facts": [
+     "Ünlenmesi, ikinci albümü Screamin' for My Supper'daki 1999 tarihli \"L.A. Song\" single'ının yayımlanmasıyla gerçekleşti.",
+     "Single Yeni Zelanda'da birinci sıra hit oldu; ayrıca ABD Adult Contemporary listesinde ilk beşe ve Billboard Adult Top 40 listelerinde ilk on'a girdi."
+    ]
+   }
+  },
+  {
+   "id": "9557b6af-67ee-4229-a02f-ef01ca98e2f6",
+   "slug": "claudio-constantini-5866536b",
+   "title": "Claudio Constantini",
+   "name": "Claudio Constantini",
+   "source_url": "https://en.wikipedia.org/wiki/Claudio_Constantini",
+   "extract": "Claudio Constantini is a multiinstrumentalist and composer born in Peru and currently living in Spain. Known for his eclectic nature, he feels at home in a variety of musical genres. He has garnered one of the widest followings on social media for a classical instrumentalist.",
+   "en": {
+    "kicker": "peruvian multiinstrumentalist and composer · spain",
+    "who": "Claudio Constantini is a multiinstrumentalist and composer born in Peru and currently living in Spain. Known for his eclectic nature, he feels at home in a variety of musical genres.",
+    "facts": [
+     "Claudio Constantini is a multiinstrumentalist and composer born in Peru and currently living in Spain.",
+     "He has garnered one of the widest followings on social media for a classical instrumentalist."
+    ]
+   },
+   "de": {
+    "kicker": "peruanischer multiinstrumentalist und komponist · spanien",
+    "who": "Claudio Constantini ist ein Multiinstrumentalist und Komponist, der in Peru geboren wurde und heute in Spanien lebt. Bekannt für seine vielseitige Art, fühlt er sich in verschiedenen Musikgenres zu Hause.",
+    "facts": [
+     "Claudio Constantini ist ein Multiinstrumentalist und Komponist, der in Peru geboren wurde und derzeit in Spanien lebt.",
+     "Er hat eine der größten Fangemeinden in den sozialen Medien für einen klassischen Instrumentalisten gewonnen."
+    ]
+   },
+   "tr": {
+    "kicker": "perulu çok enstrümanlı müzisyen ve besteci · ispanya",
+    "who": "Claudio Constantini, Peru'da doğup şu anda İspanya'da yaşayan bir çok enstrümanlı müzisyen ve bestecidir. Eklektik yapısıyla tanınır ve çeşitli müzik türlerinde kendini rahat hisseder.",
+    "facts": [
+     "Claudio Constantini, Peru'da doğan ve şu anda İspanya'da yaşayan bir çok enstrümanlı müzisyen ve bestecidir.",
+     "Sosyal medyada klasik bir enstrümantalist için en geniş takipçi kitlelerinden birini kazandı."
+    ]
+   }
+  },
+  {
+   "id": "0f23df73-4248-4728-ae4e-051f7b541834",
+   "slug": "sophie-zelmani-c501a403",
+   "title": "Sophie Zelmani",
+   "name": "Sophie Zelmani",
+   "source_url": "https://en.wikipedia.org/wiki/Sophie_Zelmani",
+   "extract": "Sophie Zelmani, later raised with the surname Edkvist, is a Swedish singer-songwriter who released her first single in 1995, called \"Always You\".",
+   "en": {
+    "kicker": "swedish singer-songwriter · 1995",
+    "who": "Sophie Zelmani, later raised with the surname Edkvist, is a Swedish singer-songwriter. She released her first single in 1995, called \"Always You\".",
+    "facts": [
+     "Sophie Zelmani, later raised with the surname Edkvist, is a Swedish singer-songwriter who released her first single in 1995.",
+     "Her first single was called \"Always You\"."
+    ]
+   },
+   "de": {
+    "kicker": "schwedische singer-songwriterin · 1995",
+    "who": "Sophie Zelmani, die später den Nachnamen Edkvist trug, ist eine schwedische Singer-Songwriterin. Ihre erste Single erschien 1995 unter dem Titel \"Always You\".",
+    "facts": [
+     "Sophie Zelmani, die später den Nachnamen Edkvist trug, ist eine schwedische Singer-Songwriterin, die 1995 ihre erste Single veröffentlichte.",
+     "Die erste Single trug den Titel \"Always You\"."
+    ]
+   },
+   "tr": {
+    "kicker": "isveçli şarkıcı ve söz yazarı · 1995",
+    "who": "Sophie Zelmani, sonradan Edkvist soyadıyla yetiştirilmiş İsveçli bir şarkıcı ve söz yazarıdır. 1995'te \"Always You\" adlı ilk single'ını yayımladı.",
+    "facts": [
+     "Sophie Zelmani, sonradan Edkvist soyadıyla yetiştirilmiş İsveçli bir şarkıcı ve söz yazarıdır ve 1995'te ilk single'ını yayımladı.",
+     "İlk single'ının adı \"Always You\" idi."
+    ]
+   }
+  },
+  {
+   "id": "036e4435-5617-4e25-af3e-23ef68d56f42",
+   "slug": "the-good-the-bad-and-the-zugly-18f4ac6d",
+   "title": "The Good the Bad and the Zugly",
+   "name": "The Good The Bad and The Zugly",
+   "source_url": "https://en.wikipedia.org/wiki/The_Good_The_Bad_and_The_Zugly",
+   "extract": "The Good The Bad and The Zugly is a Norwegian punk rock band from Hadeland formed in 2011. It consists of members Eirik Melstrøm (guitar), Kim Skaug (guitar), Magne Vannebo (drums), Lars Gulbrandsen (bass) and Ivar Nikolaisen (vocals), who is also the lead vocalist for Kvelertak.",
+   "en": {
+    "kicker": "norwegian punk rock band · hadeland, 2011",
+    "who": "The Good The Bad and The Zugly is a Norwegian punk rock band from Hadeland formed in 2011. Ivar Nikolaisen (vocals) is also the lead vocalist for Kvelertak.",
+    "facts": [
+     "The Good The Bad and The Zugly is a Norwegian punk rock band from Hadeland formed in 2011.",
+     "Ivar Nikolaisen (vocals) is also the lead vocalist for Kvelertak."
+    ]
+   },
+   "de": {
+    "kicker": "norwegische punkrockband · hadeland, 2011",
+    "who": "The Good The Bad and The Zugly ist eine norwegische Punkrockband aus Hadeland, die 2011 gegründet wurde. Ivar Nikolaisen (Gesang) ist außerdem der Leadsänger von Kvelertak.",
+    "facts": [
+     "The Good The Bad and The Zugly ist eine norwegische Punkrockband aus Hadeland, die 2011 gegründet wurde.",
+     "Ivar Nikolaisen (Gesang) ist außerdem der Leadsänger von Kvelertak."
+    ]
+   },
+   "tr": {
+    "kicker": "norveçli punk rock grubu · hadeland, 2011",
+    "who": "The Good The Bad and The Zugly, 2011 yılında kurulmuş, Hadeland'dan bir Norveç punk rock grubudur. Vokalde yer alan Ivar Nikolaisen aynı zamanda Kvelertak'ın baş vokalistidir.",
+    "facts": [
+     "The Good The Bad and The Zugly, 2011 yılında kurulmuş, Hadeland'dan bir Norveç punk rock grubudur.",
+     "Ivar Nikolaisen (vokal) aynı zamanda Kvelertak'ın baş vokalistidir."
+    ]
+   }
+  },
+  {
+   "id": "4d5b4d33-c3cc-4520-baa8-d2923b5422e9",
+   "slug": "delillos-51984ad7",
+   "title": "Delillos",
+   "name": "DeLillos",
+   "source_url": "https://en.wikipedia.org/wiki/DeLillos",
+   "extract": "deLillos  is a Norwegian pop rock band formed in Oslo in 1984. They are generally regarded as one of the \"Four Greats\" in modern Norwegian pop music, i.e. one of the four 1980s groups that founded a new tradition for rock music with lyrics in Norwegian. The remaining three \"Greats\" are DumDum Boys, Raga Rockers and Jokke & Valentinerne.",
+   "en": {
+    "kicker": "norwegian pop rock band · oslo, 1984",
+    "who": "deLillos is a Norwegian pop rock band formed in Oslo in 1984. They are generally regarded as one of the \"Four Greats\" in modern Norwegian pop music.",
+    "facts": [
+     "deLillos is a Norwegian pop rock band formed in Oslo in 1984.",
+     "They are generally regarded as one of the \"Four Greats\" in modern Norwegian pop music."
+    ]
+   },
+   "de": {
+    "kicker": "norwegische pop-rock-band · oslo, 1984",
+    "who": "deLillos ist eine norwegische Pop-Rock-Band, die 1984 in Oslo gegründet wurde. Sie gilt allgemein als eine der \"Four Greats\" der modernen norwegischen Popmusik.",
+    "facts": [
+     "deLillos ist eine norwegische Pop-Rock-Band, die 1984 in Oslo gegründet wurde.",
+     "Sie gilt allgemein als eine der \"Four Greats\" der modernen norwegischen Popmusik."
+    ]
+   },
+   "tr": {
+    "kicker": "norveçli pop rock grubu · oslo, 1984",
+    "who": "deLillos, 1984 yılında Oslo'da kurulmuş norveçli bir pop rock grubudur. Modern Norveç pop müziğinin \"Four Greats\" olarak anılan gruplarından biri sayılır.",
+    "facts": [
+     "deLillos, 1984 yılında Oslo'da kurulmuş norveçli bir pop rock grubudur.",
+     "Genel olarak modern Norveç pop müziğinin \"Four Greats\" gruplarından biri sayılırlar."
+    ]
+   }
+  },
+  {
+   "id": "a1880d89-cf03-41eb-bf19-9aa327c3c55d",
+   "slug": "tove-lo-estrus-fead8a3b",
+   "title": "Tove Lo – ESTRUS",
+   "name": "Tove Lo",
+   "source_url": "https://en.wikipedia.org/wiki/Tove_Lo",
+   "extract": "Ebba Tove Elsa Nilsson, known professionally as Tove Lo, is a Swedish singer-songwriter. She is known for her raw, grunge-influenced take on pop music. Referring to her autobiographical lyrics, Out called Lo \"the saddest girl in Sweden\", while Rolling Stone called her \"Sweden's darkest pop export\".",
+   "en": {
+    "kicker": "swedish singer-songwriter · raw, grunge-influenced pop",
+    "who": "Ebba Tove Elsa Nilsson, known professionally as Tove Lo, is a Swedish singer-songwriter. She is known for her raw, grunge-influenced take on pop music.",
+    "facts": [
+     "She is known for her raw, grunge-influenced take on pop music.",
+     "Rolling Stone called her \"Sweden's darkest pop export\"."
+    ]
+   },
+   "de": {
+    "kicker": "schwedische singer-songwriterin · grunge-geprägter pop",
+    "who": "Ebba Tove Elsa Nilsson, professionell bekannt als Tove Lo, ist eine schwedische Singer-Songwriterin. Sie ist für ihre rohe, grunge-beeinflusste Interpretation von Popmusik bekannt.",
+    "facts": [
+     "Sie ist für ihre rohe, grunge-beeinflusste Interpretation von Popmusik bekannt.",
+     "Rolling Stone nannte sie \"Sweden's darkest pop export\"."
+    ]
+   },
+   "tr": {
+    "kicker": "isveçli şarkıcı ve söz yazarı · ham, grunge etkili pop",
+    "who": "Ebba Tove Elsa Nilsson, sahne adıyla Tove Lo, İsveçli bir şarkıcı ve söz yazarıdır. Pop müziğe ham, grunge etkili yorumuyla tanınır.",
+    "facts": [
+     "Pop müziğe ham, grunge etkili bir yaklaşımıyla tanınır.",
+     "Rolling Stone onu \"Sweden's darkest pop export\" olarak nitelendirdi."
+    ]
+   }
+  },
+  {
+   "id": "5b910c8c-29f1-412a-a12e-621acc812bdb",
+   "slug": "saint-levant-afandi-world-tour-ed0c299a",
+   "title": "Saint Levant - AFANDI WORLD TOUR",
+   "name": "Saint Levant",
+   "source_url": "https://en.wikipedia.org/wiki/Saint_Levant",
+   "extract": "Marwan Abdelhamid, known professionally as Saint Levant, is a Palestinian singer-songwriter and rapper. A multilingual artist, he became known for his 2022 song \"Very Few Friends\". As of August 2026, he has released two EPs and two studio albums, and has toured in the Middle East, Europe, the US, and Australia.",
+   "en": {
+    "kicker": "palestinian singer-songwriter and rapper",
+    "who": "Marwan Abdelhamid, known professionally as Saint Levant, is a Palestinian singer-songwriter and rapper. A multilingual artist, he became known for his 2022 song \"Very Few Friends\".",
+    "facts": [
+     "He became known for his 2022 song \"Very Few Friends\".",
+     "As of August 2026, he has released two EPs and two studio albums, and has toured in the Middle East, Europe, the US, and Australia."
+    ]
+   },
+   "de": {
+    "kicker": "palästinensischer singer-songwriter und rapper",
+    "who": "Marwan Abdelhamid, professionell bekannt als Saint Levant, ist ein palästinensischer Singer-Songwriter und Rapper. Als mehrsprachiger Künstler wurde er durch seinen Song \"Very Few Friends\" von 2022 bekannt.",
+    "facts": [
+     "Bekannt wurde er durch seinen Song \"Very Few Friends\" von 2022.",
+     "Stand August 2026 hat er zwei EPs und zwei Studioalben veröffentlicht und war im Nahen Osten, in Europa, den USA und Australien auf Tournee."
+    ]
+   },
+   "tr": {
+    "kicker": "filistinli şarkıcı, söz yazarı ve rapçi",
+    "who": "Marwan Abdelhamid, sahne adıyla Saint Levant, Filistinli bir şarkıcı, söz yazarı ve rapçidir. Çok dilli bir sanatçı olarak 2022 tarihli \"Very Few Friends\" şarkısıyla tanındı.",
+    "facts": [
+     "2022 tarihli \"Very Few Friends\" şarkısıyla tanındı.",
+     "Ağustos 2026 itibarıyla iki EP ve iki stüdyo albümü yayımladı; Orta Doğu, Avrupa, ABD ve Avustralya'da turneye çıktı."
+    ]
+   }
+  },
+  {
+   "id": "7e8055d0-3d7b-499c-aa3c-7310d8661ffe",
+   "slug": "cc-cowboys-c57526a9",
+   "title": "CC Cowboys",
+   "name": "CC Cowboys",
+   "source_url": "https://en.wikipedia.org/wiki/CC_Cowboys",
+   "extract": "CC Cowboys is a Norwegian rock band from Fredrikstad. Their members are the vocalist and guitarist Magnus Grønneberg, their guitarist Jørn Christensen their bassist Per Vestaby and their drummer Agne Sæther. The name of the band originates from the song \"C.C. Cowboys\" by Swedish rock group Imperiet.",
+   "en": {
+    "kicker": "norwegian rock band · fredrikstad",
+    "who": "CC Cowboys is a Norwegian rock band from Fredrikstad. The name of the band originates from the song \"C.C. Cowboys\" by Swedish rock group Imperiet.",
+    "facts": [
+     "CC Cowboys is a Norwegian rock band from Fredrikstad.",
+     "The name of the band originates from the song \"C.C. Cowboys\" by Swedish rock group Imperiet."
+    ]
+   },
+   "de": {
+    "kicker": "norwegische rockband · fredrikstad",
+    "who": "CC Cowboys ist eine norwegische Rockband aus Fredrikstad. Der Name stammt von dem Lied \"C.C. Cowboys\" der schwedischen Rockgruppe Imperiet.",
+    "facts": [
+     "CC Cowboys ist eine norwegische Rockband aus Fredrikstad.",
+     "Der Name der Band stammt von dem Lied \"C.C. Cowboys\" der schwedischen Rockgruppe Imperiet."
+    ]
+   },
+   "tr": {
+    "kicker": "norveçli rock grubu · fredrikstad",
+    "who": "CC Cowboys, Fredrikstad'dan bir Norveç rock grubudur. Grubun adı, İsveçli rock grubu Imperiet'in \"C.C. Cowboys\" şarkısından gelir.",
+    "facts": [
+     "CC Cowboys, Fredrikstad'dan bir Norveç rock grubudur.",
+     "Grubun adı, İsveçli rock grubu Imperiet'in \"C.C. Cowboys\" adlı şarkısından gelir."
+    ]
+   }
+  },
+  {
+   "id": "27e8428f-f953-445d-a2f1-dfaafcd7dad7",
+   "slug": "the-sheepdogs-6c4e2f2f",
+   "title": "The Sheepdogs",
+   "name": "The Sheepdogs",
+   "source_url": "https://en.wikipedia.org/wiki/The_Sheepdogs",
+   "extract": "The Sheepdogs are a Canadian rock band formed in Saskatoon, Saskatchewan, in 2004. The Sheepdogs were the first unsigned band to make the cover of Rolling Stone and have gone on to a career featuring multi-platinum album sales and four Juno Awards.",
+   "en": {
+    "kicker": "canadian rock band · saskatoon, 2004",
+    "who": "The Sheepdogs are a Canadian rock band formed in Saskatoon, Saskatchewan, in 2004. They were the first unsigned band to make the cover of Rolling Stone.",
+    "facts": [
+     "The Sheepdogs are a Canadian rock band formed in Saskatoon, Saskatchewan, in 2004.",
+     "They have gone on to a career featuring multi-platinum album sales and four Juno Awards."
+    ]
+   },
+   "de": {
+    "kicker": "kanadische rockband · saskatoon, 2004",
+    "who": "The Sheepdogs sind eine kanadische Rockband, die 2004 in Saskatoon, Saskatchewan, gegründet wurde. Sie waren die erste unsignierte Band auf dem Cover des Rolling Stone.",
+    "facts": [
+     "The Sheepdogs sind eine kanadische Rockband, die 2004 in Saskatoon, Saskatchewan, gegründet wurde.",
+     "Zu ihrer Karriere gehören Alben mit mehrfachem Platinabsatz und vier Juno Awards."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı rock grubu · saskatoon, 2004",
+    "who": "The Sheepdogs, 2004 yılında Saskatoon, Saskatchewan'da kurulmuş kanadalı bir rock grubudur. Rolling Stone dergisinin kapağına çıkan ilk imzasız grup oldular.",
+    "facts": [
+     "The Sheepdogs, 2004 yılında Saskatoon, Saskatchewan'da kurulmuş kanadalı bir rock grubudur.",
+     "Kariyerlerinde çoklu platin albüm satışları ve dört Juno Ödülü yer alıyor."
+    ]
+   }
+  },
+  {
+   "id": "8caebb77-991d-4f67-85e7-a8978604def4",
+   "slug": "hellbillies-a08187a1",
+   "title": "Hellbillies",
+   "name": "Hellbillies",
+   "source_url": "https://en.wikipedia.org/wiki/Hellbillies",
+   "extract": "Hellbillies is a Norwegian rock band, formed in 1990 in Ål, a town located in Hallingdal.",
+   "en": {
+    "kicker": "norwegian rock band · ål, 1990",
+    "who": "Hellbillies is a Norwegian rock band. The band was formed in 1990 in Ål, a town located in Hallingdal.",
+    "facts": [
+     "Hellbillies is a Norwegian rock band.",
+     "The band was formed in 1990 in Ål, a town located in Hallingdal."
+    ]
+   },
+   "de": {
+    "kicker": "norwegische rockband · ål, 1990",
+    "who": "Hellbillies ist eine norwegische Rockband. Die Band wurde 1990 in Ål gegründet, einer Stadt in Hallingdal.",
+    "facts": [
+     "Hellbillies ist eine norwegische Rockband.",
+     "Die Band wurde 1990 in Ål gegründet, einer Stadt in Hallingdal."
+    ]
+   },
+   "tr": {
+    "kicker": "norveçli rock grubu · ål, 1990",
+    "who": "Hellbillies, Norveçli bir rock grubudur. Grup 1990 yılında Hallingdal'da bulunan Ål kasabasında kuruldu.",
+    "facts": [
+     "Hellbillies, Norveçli bir rock grubudur.",
+     "Grup 1990 yılında Hallingdal'da bulunan Ål kasabasında kuruldu."
+    ]
+   }
+  },
+  {
+   "id": "ef420a6e-7766-4e63-adea-1694169c30c4",
+   "slug": "knut-anders-s-rum-jul-ee61ffa6",
+   "title": "Knut Anders Sørum - Jul",
+   "name": "Knut Anders Sørum",
+   "source_url": "https://en.wikipedia.org/wiki/Knut_Anders_S%C3%B8rum",
+   "extract": "Knut Anders Sørum is a Norwegian singer from Østre Toten Municipality. He represented Norway at Eurovision Song Contest 2004 in Istanbul with the pop-ballad \"High\". He was also a vocalist and keyboard player for the Norway-based Christian extreme metal band Vardøger for many years.",
+   "en": {
+    "kicker": "norwegian singer · østre toten",
+    "who": "Knut Anders Sørum is a Norwegian singer from Østre Toten Municipality. He represented Norway at Eurovision Song Contest 2004 in Istanbul with the pop-ballad \"High\".",
+    "facts": [
+     "Knut Anders Sørum is a Norwegian singer from Østre Toten Municipality.",
+     "He represented Norway at Eurovision Song Contest 2004 in Istanbul with the pop-ballad \"High\"."
+    ]
+   },
+   "de": {
+    "kicker": "norwegischer sänger · østre toten",
+    "who": "Knut Anders Sørum ist ein norwegischer Sänger aus der Gemeinde Østre Toten. Er vertrat Norwegen beim Eurovision Song Contest 2004 in Istanbul mit der Popballade \"High\".",
+    "facts": [
+     "Knut Anders Sørum ist ein norwegischer Sänger aus der Gemeinde Østre Toten.",
+     "Er vertrat Norwegen beim Eurovision Song Contest 2004 in Istanbul mit der Popballade \"High\"."
+    ]
+   },
+   "tr": {
+    "kicker": "norveçli şarkıcı · østre toten",
+    "who": "Knut Anders Sørum, Østre Toten Belediyesi'nden bir Norveçli şarkıcıdır. 2004 Eurovision Şarkı Yarışması'nda İstanbul'da \"High\" adlı pop balad ile Norveç'i temsil etti.",
+    "facts": [
+     "Knut Anders Sørum, Østre Toten Belediyesi'nden bir Norveçli şarkıcıdır.",
+     "2004'te İstanbul'da düzenlenen Eurovision Şarkı Yarışması'nda Norveç'i \"High\" adlı pop balad ile temsil etti."
+    ]
+   }
+  },
+  {
+   "id": "113fb3fc-4b86-4659-8d96-99735844dd26",
+   "slug": "di-derre-bfe425d5",
+   "title": "Di Derre",
+   "name": "Di Derre",
+   "source_url": "https://en.wikipedia.org/wiki/Di_Derre",
+   "extract": "Di Derre is a Norwegian Pop rock band, founded in 1992. They were awarded the Gammleng-prisen in 1996.",
+   "en": {
+    "kicker": "norwegian pop rock band · 1992",
+    "who": "Di Derre is a Norwegian Pop rock band, founded in 1992. They were awarded the Gammleng-prisen in 1996.",
+    "facts": [
+     "Di Derre is a Norwegian Pop rock band, founded in 1992.",
+     "They were awarded the Gammleng-prisen in 1996."
+    ]
+   },
+   "de": {
+    "kicker": "norwegische pop-rock-band · 1992",
+    "who": "Di Derre ist eine norwegische Pop-Rock-Band, die 1992 gegründet wurde. 1996 erhielt die Band den Gammleng-prisen.",
+    "facts": [
+     "Di Derre ist eine norwegische Pop-Rock-Band, die 1992 gegründet wurde.",
+     "Die Band erhielt 1996 den Gammleng-prisen."
+    ]
+   },
+   "tr": {
+    "kicker": "norveçli pop rock grubu · 1992",
+    "who": "Di Derre, 1992 yılında kurulmuş norveçli bir pop rock grubudur. 1996'da Gammleng-prisen ödülüne layık görüldü.",
+    "facts": [
+     "Di Derre, 1992 yılında kurulmuş norveçli bir pop rock grubudur.",
+     "Grup 1996 yılında Gammleng-prisen ödülünü aldı."
+    ]
+   }
+  },
+  {
+   "id": "53f2e31d-ea89-4675-b3a7-c4f459cb5ca8",
+   "slug": "ila-auto-12e9c338",
+   "title": "Ila Auto",
+   "name": "Ila Auto",
+   "source_url": "https://en.wikipedia.org/wiki/Ila_Auto",
+   "extract": "Ila Auto is a Spellemannprisen winning bluegrass band from Oslo, Norway. The band was established in 2005.",
+   "en": {
+    "kicker": "norwegian bluegrass band · oslo, 2005",
+    "who": "Ila Auto is a Spellemannprisen winning bluegrass band from Oslo, Norway. The band was established in 2005.",
+    "facts": [
+     "Ila Auto is a Spellemannprisen winning bluegrass band from Oslo, Norway.",
+     "The band was established in 2005."
+    ]
+   },
+   "de": {
+    "kicker": "norwegische bluegrass-band · oslo, 2005",
+    "who": "Ila Auto ist eine Bluegrass-Band aus Oslo, Norwegen, die den Spellemannprisen gewonnen hat. Die Band wurde 2005 gegründet.",
+    "facts": [
+     "Ila Auto ist eine Bluegrass-Band aus Oslo, Norwegen, die den Spellemannprisen gewonnen hat.",
+     "Die Band wurde 2005 gegründet."
+    ]
+   },
+   "tr": {
+    "kicker": "norveçli bluegrass grubu · oslo, 2005",
+    "who": "Ila Auto, Oslo, Norveç'ten Spellemannprisen ödüllü bir bluegrass grubudur. Grup 2005 yılında kuruldu.",
+    "facts": [
+     "Ila Auto, Oslo, Norveç'ten Spellemannprisen ödüllü bir bluegrass grubudur.",
+     "Grup 2005 yılında kuruldu."
+    ]
+   }
+  },
+  {
+   "id": "6231eb17-4422-42cc-b72b-7c93cfeb24f3",
+   "slug": "seigmen-15443620",
+   "title": "Seigmen",
+   "name": "Seigmen",
+   "source_url": "https://en.wikipedia.org/wiki/Seigmen",
+   "extract": "Seigmen is a Norwegian rock band formed in 1989 in Tønsberg. Originally named Klisne Seigmenn, the band came into prominence in the early 1990s. The band's name is derived from Norwegian sweets brand Laban Seigmenn. The band went from a hard-edged grunge-like style to a more dynamic sound with more ambient parts and use of synthesizers and various audio-effects.",
+   "en": {
+    "kicker": "norwegian rock band · tønsberg, 1989",
+    "who": "Seigmen is a Norwegian rock band formed in 1989 in Tønsberg. Originally named Klisne Seigmenn, the band came into prominence in the early 1990s.",
+    "facts": [
+     "Seigmen is a Norwegian rock band formed in 1989 in Tønsberg.",
+     "The band went from a hard-edged grunge-like style to a more dynamic sound with more ambient parts and use of synthesizers and various audio-effects."
+    ]
+   },
+   "de": {
+    "kicker": "norwegische rockband · tønsberg, 1989",
+    "who": "Seigmen ist eine norwegische Rockband, die 1989 in Tønsberg gegründet wurde. Ursprünglich hieß sie Klisne Seigmenn, und Anfang der 1990er Jahre wurde die Band bekannt.",
+    "facts": [
+     "Seigmen ist eine norwegische Rockband, die 1989 in Tønsberg gegründet wurde.",
+     "Die Band wechselte von einem hart kantigen, grungeartigen Stil zu einem dynamischeren Klang mit mehr ambienten Passagen, Synthesizern und verschiedenen Audioeffekten."
+    ]
+   },
+   "tr": {
+    "kicker": "norveçli rock grubu · tønsberg, 1989",
+    "who": "Seigmen, 1989 yılında Tønsberg'de kurulmuş norveçli bir rock grubudur. Başlangıçta Klisne Seigmenn adını taşıyan grup 1990'ların başında öne çıktı.",
+    "facts": [
+     "Seigmen, 1989 yılında Tønsberg'de kurulmuş norveçli bir rock grubudur.",
+     "Grup sert hatlı, grunge benzeri bir tarzdan ambiyans bölümleri, synthesizer ve çeşitli ses efektleri kullanan daha dinamik bir sese geçti."
+    ]
+   }
+  },
+  {
+   "id": "f3e8f62a-5f25-4f86-bbb2-52f7090fc816",
+   "slug": "oslo-ess-45f82ac8",
+   "title": "Oslo Ess",
+   "name": "Oslo Ess",
+   "source_url": "https://en.wikipedia.org/wiki/Oslo_Ess",
+   "extract": "Oslo Ess is a Norwegian rock/punk band with Åsmund Lande as vocalist/guitarist, Peter Larsson on guitar and Knut-Oscar Nymo on bass. Lande and Larsson used to play in another formation and launched the band. Although Oslo Ess doesn't have a permanent drummer, a number of drummers have played with the band including Håvard Takle Ohr, Steffen Skau Linnert, Tommy Akerholdt, Kim Akerholdt and Mads Golden.",
+   "en": {
+    "kicker": "norwegian rock/punk band",
+    "who": "Oslo Ess is a Norwegian rock/punk band with Åsmund Lande as vocalist/guitarist, Peter Larsson on guitar and Knut-Oscar Nymo on bass. Lande and Larsson used to play in another formation and launched the band.",
+    "facts": [
+     "Oslo Ess is a Norwegian rock/punk band with Åsmund Lande as vocalist/guitarist, Peter Larsson on guitar and Knut-Oscar Nymo on bass.",
+     "Although Oslo Ess doesn't have a permanent drummer, a number of drummers have played with the band."
+    ]
+   },
+   "de": {
+    "kicker": "norwegische rock-/punkband",
+    "who": "Oslo Ess ist eine norwegische Rock-/Punkband mit Åsmund Lande als Sänger und Gitarristen, Peter Larsson an der Gitarre und Knut-Oscar Nymo am Bass. Lande und Larsson spielten zuvor in einer anderen Formation und gründeten die Band.",
+    "facts": [
+     "Oslo Ess ist eine norwegische Rock-/Punkband mit Åsmund Lande als Sänger und Gitarristen, Peter Larsson an der Gitarre und Knut-Oscar Nymo am Bass.",
+     "Obwohl Oslo Ess keinen festen Schlagzeuger hat, haben schon mehrere Schlagzeuger in der Band gespielt."
+    ]
+   },
+   "tr": {
+    "kicker": "norveçli rock/punk grubu",
+    "who": "Oslo Ess, Åsmund Lande'nin vokal ve gitarda, Peter Larsson'un gitarda ve Knut-Oscar Nymo'nun basta yer aldığı norveçli bir rock/punk grubudur. Lande ve Larsson, grubu daha önce başka bir oluşumda çalmış olarak kurdu.",
+    "facts": [
+     "Oslo Ess, Åsmund Lande'nin vokal ve gitarda, Peter Larsson'un gitarda ve Knut-Oscar Nymo'nun basta yer aldığı norveçli bir rock/punk grubudur.",
+     "Grubun sabit bir davulcusu olmamasına rağmen birçok davulcu grupta çaldı."
+    ]
+   }
+  }
+ ]
+}

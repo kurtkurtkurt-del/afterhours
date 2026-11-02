@@ -1,0 +1,134 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "ec918be7-4925-4ab1-bd88-87bd4e8f45a9",
+   "slug": "lila-downs-3a155ce8",
+   "title": "Lila Downs",
+   "name": "Lila Downs",
+   "source_url": "https://en.wikipedia.org/wiki/Lila_Downs",
+   "extract": "Ana Lila Downs Sánchez is a Mexican singer-songwriter, actress, and anthropologist. She performs her own compositions and the works of others in multiple genres, as well as tapping into Mexican traditional and popular music. She also incorporates indigenous Mexican influences and has recorded songs in many indigenous languages such as Mixtec, Zapotec, Mayan, Nahuatl and Purépecha. Born and raised in Oaxaca, she primarily studied at the Institute of Arts by Oaxaca and briefly attended the University of Minnesota, before withdrawing to focus on her musical career. She soon began performing in the traditional music scene of Oaxaca City.",
+   "en": {
+    "kicker": "mexican singer-songwriter · oaxaca",
+    "who": "Lila Downs is a Mexican singer-songwriter, actress, and anthropologist. She performs her own compositions and the works of others in several genres, drawing on Mexican traditional and popular music.",
+    "facts": [
+     "She also incorporates indigenous Mexican influences and has recorded songs in many indigenous languages such as Mixtec, Zapotec, Mayan, Nahuatl and Purépecha.",
+     "Born and raised in Oaxaca, she primarily studied at the Institute of Arts by Oaxaca and briefly attended the University of Minnesota, before withdrawing to focus on her musical career."
+    ]
+   },
+   "de": {
+    "kicker": "mexikanische singer-songwriterin · oaxaca",
+    "who": "Lila Downs ist eine mexikanische Singer-Songwriterin, Schauspielerin und Anthropologin. Sie interpretiert eigene Kompositionen und Werke anderer in mehreren Genres und greift dabei auf traditionelle und populäre mexikanische Musik zurück.",
+    "facts": [
+     "Sie bezieht außerdem indigene mexikanische Einflüsse ein und hat Lieder in vielen indigenen Sprachen aufgenommen, darunter Mixtekisch, Zapotekisch, Maya, Nahuatl und Purépecha.",
+     "In Oaxaca geboren und aufgewachsen, studierte sie vor allem am Instituto de Artes in Oaxaca und besuchte kurz die University of Minnesota, bevor sie sich ganz ihrer Musikkarriere widmete."
+    ]
+   },
+   "tr": {
+    "kicker": "meksikalı şarkıcı ve söz yazarı · oaxaca",
+    "who": "Lila Downs, Meksikalı bir şarkıcı, söz yazarı, oyuncu ve antropologdur. Kendi bestelerinin yanında başkalarının eserlerini de birçok türde seslendirir ve Meksika'nın geleneksel ve popüler müziğinden beslenir.",
+    "facts": [
+     "Ayrıca yerli Meksika etkilerini müziğine katar ve Mixtec, Zapotec, Maya, Nahuatl ve Purépecha gibi birçok yerli dilde şarkılar kaydetmiştir.",
+     "Oaxaca'da doğup büyüyen Lila, Oaxaca Sanat Enstitüsü'nde okudu, kısa süre Minnesota Üniversitesi'ne devam etti ve sonra müzik kariyerine yoğunlaşmak için ayrıldı."
+    ]
+   }
+  },
+  {
+   "id": "f89d6757-0ac4-4d34-b135-594f5a7fe853",
+   "slug": "aitana-24f4f249",
+   "title": "Aitana",
+   "name": "Aitana",
+   "source_url": "https://en.wikipedia.org/wiki/Aitana_(singer)",
+   "extract": "Aitana Ocaña Morales, known mononymously as Aitana, is a Spanish singer and songwriter. She first gained national recognition in 2017, placing as the runner-up in the revival series of the Spanish reality television talent show Operación Triunfo. While competing on the show, Aitana recorded the single \"Lo Malo\" with fellow contestant Ana Guerra. The song became an instant hit in Spain, debuting at number-one and holding the spot for several weeks. Following the competition, Aitana signed a 360º record deal with Universal Music Spain and released her debut solo single \"Teléfono\" to commercial success and streaming-breaking records.",
+   "en": {
+    "kicker": "spanish singer and songwriter · 2017",
+    "who": "Aitana Ocaña Morales, known as Aitana, is a Spanish singer and songwriter. She first gained national recognition in 2017 as runner-up in the revival of Operación Triunfo.",
+    "facts": [
+     "She first gained national recognition in 2017, placing as the runner-up in the revival series of the Spanish reality television talent show Operación Triunfo.",
+     "The song became an instant hit in Spain, debuting at number-one and holding the spot for several weeks."
+    ]
+   },
+   "de": {
+    "kicker": "spanische sängerin und songwriterin · 2017",
+    "who": "Aitana Ocaña Morales, bekannt als Aitana, ist eine spanische Sängerin und Songwriterin. Landesweite Bekanntheit erlangte sie 2017 als Zweitplatzierte der Neuauflage der Reality-Talentshow Operación Triunfo.",
+    "facts": [
+     "Sie erlangte 2017 landesweite Bekanntheit, als sie in der Neuauflage der spanischen Reality-Talentshow Operación Triunfo Zweite wurde.",
+     "Der Song wurde in Spanien schnell zum Hit, debütierte auf Platz eins und hielt sich mehrere Wochen an der Spitze."
+    ]
+   },
+   "tr": {
+    "kicker": "ispanyol şarkıcı ve söz yazarı · 2017",
+    "who": "Aitana Ocaña Morales, Aitana adıyla tanınan bir İspanyol şarkıcı ve söz yazarıdır. 2017'de Operación Triunfo yarışmasının yeniden başlatılan sezonunda ikinci olarak ülke çapında tanındı.",
+    "facts": [
+     "2017'de İspanyol gerçeklik televizyonu yetenek yarışması Operación Triunfo'nun yeniden başlatılan sezonunda ikinci olarak bitirerek ülke çapında tanındı.",
+     "Şarkı İspanya'da anında hit oldu, birinci sıradan açıldı ve birkaç hafta boyunca bu konumunu korudu."
+    ]
+   }
+  },
+  {
+   "id": "79dbb600-6fee-4948-8dd3-92cdbc3fcea9",
+   "slug": "morat-3b00bfd3",
+   "title": "Morat",
+   "name": "Morat",
+   "source_url": "https://en.wikipedia.org/wiki/Morat_(band)",
+   "extract": "Morat is a Colombian Latin pop rock band formed in the country's capital city, Bogotá. The band is made up of Juan Pablo Isaza, Juan Pablo Villamil, and the brothers Simón Vargas and Martín Vargas. Drummer Alejandro Posada was also a founding member of the band, but left in 2016 and was replaced by Martín Vargas.",
+   "en": {
+    "kicker": "colombian latin pop rock band · bogotá",
+    "who": "Morat is a Colombian Latin pop rock band from Bogotá. The band is made up of Juan Pablo Isaza, Juan Pablo Villamil, and the brothers Simón Vargas and Martín Vargas.",
+    "facts": [
+     "Morat is a Colombian Latin pop rock band formed in the country's capital city, Bogotá.",
+     "Drummer Alejandro Posada was also a founding member of the band, but left in 2016 and was replaced by Martín Vargas."
+    ]
+   },
+   "de": {
+    "kicker": "kolumbianische latin-pop-rockband · bogotá",
+    "who": "Morat ist eine kolumbianische Latin-Pop-Rockband aus der Hauptstadt Bogotá. Zur Band gehören Juan Pablo Isaza, Juan Pablo Villamil sowie die Brüder Simón Vargas und Martín Vargas.",
+    "facts": [
+     "Morat ist eine kolumbianische Latin-Pop-Rockband, die in der Hauptstadt Bogotá gegründet wurde.",
+     "Schlagzeuger Alejandro Posada war ebenfalls Gründungsmitglied, verließ die Band 2016 und wurde durch Martín Vargas ersetzt."
+    ]
+   },
+   "tr": {
+    "kicker": "kolombiyalı latin pop rock grubu · bogotá",
+    "who": "Morat, Kolombiya'nın başkenti Bogotá'da kurulmuş bir Latin pop rock grubudur. Grubu Juan Pablo Isaza, Juan Pablo Villamil ile Simón ve Martín Vargas kardeşler oluşturur.",
+    "facts": [
+     "Morat, ülkenin başkenti Bogotá'da kurulmuş bir Kolombiya Latin pop rock grubudur.",
+     "Davulcu Alejandro Posada da grubun kurucu üyelerindendi, ancak 2016'da ayrıldı ve yerine Martín Vargas geçti."
+    ]
+   }
+  },
+  {
+   "id": "6c4b8649-d01a-4cf7-92fa-fbb367e3d642",
+   "slug": "majo-aguilar-51b4ba74",
+   "title": "Majo Aguilar",
+   "name": "Majo Aguilar",
+   "source_url": "https://en.wikipedia.org/wiki/Majo_Aguilar",
+   "extract": "María José \"Majo\" Aguilar Carrillo is a Mexican singer and songwriter. She is currently signed to Universal Music Group.",
+   "en": {
+    "kicker": "mexican singer and songwriter · universal music",
+    "who": "Majo Aguilar is a Mexican singer and songwriter. She is currently signed to Universal Music Group.",
+    "facts": [
+     "María José \"Majo\" Aguilar Carrillo is a Mexican singer and songwriter.",
+     "She is currently signed to Universal Music Group."
+    ]
+   },
+   "de": {
+    "kicker": "mexikanische sängerin und songwriterin · universal music",
+    "who": "Majo Aguilar ist eine mexikanische Sängerin und Songwriterin. Derzeit steht sie bei Universal Music Group unter Vertrag.",
+    "facts": [
+     "María José „Majo“ Aguilar Carrillo ist eine mexikanische Sängerin und Songwriterin.",
+     "Sie steht derzeit bei Universal Music Group unter Vertrag."
+    ]
+   },
+   "tr": {
+    "kicker": "meksikalı şarkıcı ve söz yazarı · universal music",
+    "who": "Majo Aguilar, Meksikalı bir şarkıcı ve söz yazarıdır. Şu anda Universal Music Group ile sözleşmelidir.",
+    "facts": [
+     "María José \"Majo\" Aguilar Carrillo, Meksikalı bir şarkıcı ve söz yazarıdır.",
+     "Şu anda Universal Music Group ile sözleşmelidir."
+    ]
+   }
+  }
+ ]
+}

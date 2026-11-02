@@ -1,0 +1,198 @@
+{
+  "city": "krakow",
+  "day": "2026-11-02",
+  "nights": [
+    {
+      "id": "cd198ba7-feb8-4129-8f0b-22b0e18c06d1",
+      "slug": "niall-horan-dinner-party-live-on-tour-0d1002ec",
+      "title": "Niall Horan: Dinner Party Live On Tour",
+      "name": "Niall Horan",
+      "source_url": "https://en.wikipedia.org/wiki/Niall_Horan",
+      "extract": "Niall James Horan is an Irish singer, songwriter, musician, and multi-instrumentalist. He rose to prominence as a member of the boy band One Direction, formed in 2010 on the singing competition The X Factor. The group released five albums and went on to become one of the best-selling boy bands of all time.",
+      "en": {
+        "kicker": "irish singer, songwriter and musician",
+        "who": "Niall James Horan is an Irish singer, songwriter, musician, and multi-instrumentalist. He rose to prominence as a member of the boy band One Direction.",
+        "facts": [
+          "One Direction was formed in 2010 on the singing competition The X Factor.",
+          "The group released five albums and went on to become one of the best-selling boy bands of all time."
+        ]
+      },
+      "de": {
+        "kicker": "irischer sänger, songwriter und musiker",
+        "who": "Niall James Horan ist ein irischer Sänger, Songwriter, Musiker und Multiinstrumentalist. Bekannt wurde er als Mitglied der Boyband One Direction.",
+        "facts": [
+          "One Direction wurde 2010 in der Gesangsshow The X Factor gegründet.",
+          "Die Gruppe veröffentlichte fünf Alben und zählt zu den meistverkauften Boybands aller Zeiten."
+        ]
+      },
+      "tr": {
+        "kicker": "irlandalı şarkıcı, söz yazarı ve müzisyen",
+        "who": "Niall James Horan, bir İrlandalı şarkıcı, söz yazarı, müzisyen ve çok enstrümanlı sanatçıdır. Boy grubu One Direction'ın üyesi olarak ün kazandı.",
+        "facts": [
+          "One Direction, 2010 yılında The X Factor adlı yetenek yarışmasında kuruldu.",
+          "Grup beş albüm yayımladı ve tüm zamanların en çok satan boy gruplarından biri oldu."
+        ]
+      }
+    },
+    {
+      "id": "eef2a913-9b63-4285-a3d0-c2d6034892ef",
+      "slug": "wolves-in-the-throne-room-de9aaeb9",
+      "title": "Wolves in the Throne Room",
+      "name": "Wolves in the Throne Room",
+      "source_url": "https://en.wikipedia.org/wiki/Wolves_in_the_Throne_Room",
+      "extract": "Wolves in the Throne Room is an American black metal band formed in 2002 in Olympia, Washington, by brothers Aaron and Nathan Weaver. They have released seven full-length albums, two live albums, and two EPs to date. They have stated one of the founding concepts of the band to be channeling the \"energies of the Pacific Northwest's landscape\" into musical form.",
+      "en": {
+        "kicker": "american black metal band · olympia, 2002",
+        "who": "Wolves in the Throne Room is an American black metal band formed in 2002 in Olympia, Washington, by brothers Aaron and Nathan Weaver. They have released seven full-length albums, two live albums, and two EPs to date.",
+        "facts": [
+          "They have stated one of the founding concepts of the band to be channeling the \"energies of the Pacific Northwest's landscape\" into musical form.",
+          "They have released two live albums and two EPs to date."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische black-metal-band · olympia, 2002",
+        "who": "Wolves in the Throne Room ist eine amerikanische Black-Metal-Band, die 2002 in Olympia, Washington, von den Brüdern Aaron und Nathan Weaver gegründet wurde. Bis heute veröffentlichten sie sieben Alben in voller Länge, zwei Livealben und zwei EPs.",
+        "facts": [
+          "Ein Gründungskonzept der Band war es laut eigener Aussage, die „Energien der Landschaft des Pazifischen Nordwestens“ in Musik zu übersetzen.",
+          "Zu ihren Veröffentlichungen gehören zwei Livealben und zwei EPs."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı black metal grubu · olympia, 2002",
+        "who": "Wolves in the Throne Room, 2002 yılında Olympia, Washington'da kardeşler Aaron ve Nathan Weaver tarafından kurulmuş bir Amerikalı black metal grubudur. Bugüne kadar yedi tam uzunluklu albüm, iki canlı albüm ve iki EP yayımladılar.",
+        "facts": [
+          "Grubun kurucu kavramlarından biri, \"Pasifik Kuzeybatısı'nın manzarasının enerjilerini\" müziğe aktarmaktı.",
+          "Yayın listelerinde iki canlı albüm ve iki EP yer alıyor."
+        ]
+      }
+    },
+    {
+      "id": "889dc1fb-839e-410d-a79d-8cbdec2089f9",
+      "slug": "airbag-d95e9769",
+      "title": "Airbag",
+      "name": "Airbag",
+      "source_url": "https://en.wikipedia.org/wiki/Airbag_(band)",
+      "extract": "Airbag is an Argentine hard rock band formed in Buenos Aires in 1999, consisting of three brothers: Patricio Sardelli, Gastón Sardelli, and Guido Sardelli. They have released eight studio albums and two live albums, and tour mostly around Latin America.",
+      "en": {
+        "kicker": "argentine hard rock band · buenos aires, 1999",
+        "who": "Airbag is an Argentine hard rock band formed in Buenos Aires in 1999, consisting of three brothers: Patricio Sardelli, Gastón Sardelli, and Guido Sardelli. They tour mostly around Latin America.",
+        "facts": [
+          "They have released eight studio albums and two live albums.",
+          "The band consists of three brothers: Patricio Sardelli, Gastón Sardelli, and Guido Sardelli."
+        ]
+      },
+      "de": {
+        "kicker": "argentinische hardrockband · buenos aires, 1999",
+        "who": "Airbag ist eine argentinische Hardrockband, die 1999 in Buenos Aires gegründet wurde. Sie besteht aus den drei Brüdern Patricio, Gastón und Guido Sardelli und ist vor allem in Lateinamerika auf Tour.",
+        "facts": [
+          "Sie haben acht Studioalben und zwei Livealben veröffentlicht.",
+          "Die Band besteht aus den drei Brüdern Patricio Sardelli, Gastón Sardelli und Guido Sardelli."
+        ]
+      },
+      "tr": {
+        "kicker": "arjantinli hard rock grubu · buenos aires, 1999",
+        "who": "Airbag, 1999 yılında Buenos Aires'te kurulmuş bir Arjantinli hard rock grubudur. Üç kardeşten oluşan grup, çoğunlukla Latin Amerika'da turneye çıkıyor.",
+        "facts": [
+          "Grup sekiz stüdyo albümü ve iki canlı albüm yayımladı.",
+          "Grubun üyeleri Patricio Sardelli, Gastón Sardelli ve Guido Sardelli adlı üç kardeş."
+        ]
+      }
+    },
+    {
+      "id": "4bdff10b-4368-450b-b3e4-8aa6e2d281af",
+      "slug": "kamelot-540c1b28",
+      "title": "Kamelot",
+      "name": "Kamelot",
+      "source_url": "https://en.wikipedia.org/wiki/Kamelot",
+      "extract": "Kamelot is an American power metal band from Tampa, Florida, formed by Thomas Youngblood in 1987. The Norwegian vocalist Roy Khan joined for the album Siége Perilous, and shared songwriting credit with Youngblood until his departure in April 2011. On June 22, 2012, Youngblood announced on their website that their new vocalist would be the Swedish singer Tommy Karevik, who was first featured on Kamelot's album Silverthorn as the main vocalist, co-songwriter, and lyricist.",
+      "en": {
+        "kicker": "american power metal band · tampa, 1987",
+        "who": "Kamelot is an American power metal band from Tampa, Florida, formed by Thomas Youngblood in 1987. The Norwegian vocalist Roy Khan joined for the album Siége Perilous, and shared songwriting credit with Youngblood until his departure in April 2011.",
+        "facts": [
+          "On June 22, 2012, Youngblood announced on their website that their new vocalist would be the Swedish singer Tommy Karevik.",
+          "Tommy Karevik was first featured on Kamelot's album Silverthorn as the main vocalist, co-songwriter, and lyricist."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische power-metal-band · tampa, 1987",
+        "who": "Kamelot ist eine amerikanische Power-Metal-Band aus Tampa, Florida, die 1987 von Thomas Youngblood gegründet wurde. Der norwegische Sänger Roy Khan stieß für das Album Siége Perilous hinzu und teilte sich das Songwriting mit Youngblood bis zu seinem Weggang im April 2011.",
+        "facts": [
+          "Am 22. Juni 2012 gab Youngblood auf der Website der Band bekannt, dass der schwedische Sänger Tommy Karevik ihr neuer Sänger wird.",
+          "Karevik war zuvor auf dem Album Silverthorn als Hauptsänger, Co-Songwriter und Texter zu hören."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı power metal grubu · tampa, 1987",
+        "who": "Kamelot, 1987 yılında Thomas Youngblood tarafından kurulan, Florida'nın Tampa kentinden bir Amerikalı power metal grubudur. Norveçli vokalist Roy Khan, Siége Perilous albümü için gruba katıldı ve Nisan 2011'deki ayrılışına kadar Youngblood ile şarkı yazarlığı payını paylaştı.",
+        "facts": [
+          "22 Haziran 2012'de Youngblood, grubun web sitesinde yeni vokalistinin İsveçli şarkıcı Tommy Karevik olacağını duyurdu.",
+          "Karevik, daha önce Silverthorn albümünde ana vokalist, ortak söz yazarı ve sözcü olarak yer almıştı."
+        ]
+      }
+    },
+    {
+      "id": "1436cc46-fd9a-4600-948b-11550a460af7",
+      "slug": "korn-9977e6f6",
+      "title": "KoRn",
+      "name": "Korn",
+      "source_url": "https://en.wikipedia.org/wiki/Korn",
+      "extract": "Korn is an American nu metal band from Bakersfield, California, originally formed in 1993 by James \"Munky\" Shaffer, Reginald \"Fieldy\" Arvizu, and David Silveria, who were members of the band L.A.P.D. Their current lineup features Shaffer (guitar), Brian \"Head\" Welch (guitar), Jonathan Davis (vocals), and Ray Luzier (drums), the last of whom replaced Silveria in 2007. The band is notable for pioneering and popularizing the nu metal genre.",
+      "en": {
+        "kicker": "american nu metal band · bakersfield, 1993",
+        "who": "Korn is an American nu metal band from Bakersfield, California, originally formed in 1993 by James \"Munky\" Shaffer, Reginald \"Fieldy\" Arvizu, and David Silveria. The band is notable for pioneering and popularizing the nu metal genre.",
+        "facts": [
+          "Their current lineup features Shaffer (guitar), Brian \"Head\" Welch (guitar), Jonathan Davis (vocals), and Ray Luzier (drums).",
+          "Ray Luzier replaced Silveria in 2007."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische nu-metal-band · bakersfield, 1993",
+        "who": "Korn ist eine amerikanische Nu-Metal-Band aus Bakersfield, Kalifornien, die ursprünglich 1993 von James „Munky“ Shaffer, Reginald „Fieldy“ Arvizu und David Silveria gegründet wurde. Die Band gilt als Pionier und Wegbereiter des Nu Metal.",
+        "facts": [
+          "Die aktuelle Besetzung umfasst Shaffer (Gitarre), Brian „Head“ Welch (Gitarre), Jonathan Davis (Gesang) und Ray Luzier (Schlagzeug).",
+          "Ray Luzier ersetzte 2007 David Silveria."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı nu metal grubu · bakersfield, 1993",
+        "who": "Korn, Kaliforniya'nın Bakersfield kentinden bir Amerikalı nu metal grubudur. Grup, 1993 yılında James \"Munky\" Shaffer, Reginald \"Fieldy\" Arvizu ve David Silveria tarafından kuruldu ve nu metal türünün öncüsü olarak biliniyor.",
+        "facts": [
+          "Grubun güncel kadrosu Shaffer (gitar), Brian \"Head\" Welch (gitar), Jonathan Davis (vokal) ve Ray Luzier'den (davul) oluşuyor.",
+          "Ray Luzier, 2007 yılında Silveria'nın yerine geçti."
+        ]
+      }
+    },
+    {
+      "id": "06683f03-5c8f-4673-bedd-08ee3d915872",
+      "slug": "napalm-death-support-master-brat-goatburner-864c49f3",
+      "title": "Napalm Death | Support: Master, Brat, Goatburner",
+      "name": "Napalm Death",
+      "source_url": "https://en.wikipedia.org/wiki/Napalm_Death",
+      "extract": "Napalm Death are an English grindcore band formed in Meriden, West Midlands, in 1981. The band currently consists of Barney Greenway on vocals, Shane Embury on bass guitar, John Cooke on guitar and Danny Herrera on drums. None of the founding band members remain in the band. From 1989 to 2004, Napalm Death were a five-piece band after they added Jesse Pintado and Mitch Harris as replacements for guitarist Bill Steer. Following Pintado's departure, the band reverted to a four-piece. Mitch Harris left the band in 2014 to focus on his personal life. Since Mitch's indefinite hiatus, guitarist John Cooke can be seen on guitar during live shows.",
+      "en": {
+        "kicker": "english grindcore band · meriden, 1981",
+        "who": "Napalm Death are an English grindcore band formed in Meriden, West Midlands, in 1981. The band currently consists of Barney Greenway on vocals, Shane Embury on bass guitar, John Cooke on guitar and Danny Herrera on drums.",
+        "facts": [
+          "None of the founding band members remain in the band.",
+          "Mitch Harris left the band in 2014 to focus on his personal life."
+        ]
+      },
+      "de": {
+        "kicker": "englische grindcore-band · meriden, 1981",
+        "who": "Napalm Death sind eine englische Grindcore-Band, die 1981 in Meriden, West Midlands, gegründet wurde. Derzeit besteht die Band aus Barney Greenway (Gesang), Shane Embury (Bass), John Cooke (Gitarre) und Danny Herrera (Schlagzeug).",
+        "facts": [
+          "Keines der ursprünglichen Gründungsmitglieder ist noch in der Band.",
+          "Mitch Harris verließ die Band 2014, um sich auf sein Privatleben zu konzentrieren."
+        ]
+      },
+      "tr": {
+        "kicker": "grindcore grubu · meriden, 1981",
+        "who": "Napalm Death, 1981 yılında Meriden, West Midlands'te kurulmuş bir İngiliz grindcore grubudur. Grup şu anda Barney Greenway (vokal), Shane Embury (bas gitar), John Cooke (gitar) ve Danny Herrera'dan (davul) oluşuyor.",
+        "facts": [
+          "Kurucu üyelerinin hiçbiri artık grupta değil.",
+          "Mitch Harris, kişisel hayatına odaklanmak için 2014 yılında gruptan ayrıldı."
+        ]
+      }
+    }
+  ]
+}

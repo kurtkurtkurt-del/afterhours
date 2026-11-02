@@ -1,0 +1,198 @@
+{
+  "city": "wroclaw",
+  "day": "2026-11-02",
+  "nights": [
+    {
+      "id": "0891e588-a053-4403-82dc-89ad1d75dc27",
+      "slug": "dakhabrakha-0b94a520",
+      "title": "Dakhabrakha",
+      "name": "DakhaBrakha",
+      "source_url": "https://en.wikipedia.org/wiki/DakhaBrakha",
+      "extract": "DakhaBrakha are a world music quartet formed in Kyiv, Ukraine. The four musicians combine a variety of musical styles from across the globe, creating energetic and artistic performances that are uniquely their own. DakhaBrakha's eclectic sound seamlessly mesh ancient Ukrainian folk tunes with modern genres, such as pop, punk, electronica, hip hop, and soul, a musical fusion that they define as \"ethno-chaos\".",
+      "en": {
+        "kicker": "world music quartet · kyiv, ukraine",
+        "who": "DakhaBrakha are a world music quartet formed in Kyiv, Ukraine. Their performances are energetic and artistic, and uniquely their own.",
+        "facts": [
+          "DakhaBrakha's eclectic sound seamlessly mesh ancient Ukrainian folk tunes with modern genres, such as pop, punk, electronica, hip hop, and soul, a musical fusion that they define as \"ethno-chaos\".",
+          "The four musicians combine a variety of musical styles from across the globe."
+        ]
+      },
+      "de": {
+        "kicker": "weltmusik-quartett · kiew, ukraine",
+        "who": "DakhaBrakha ist ein Weltmusik-Quartett aus Kiew, Ukraine. Die vier Musiker verbinden verschiedenste Musikstile aus aller Welt zu energiegeladenen und künstlerischen Auftritten, die ganz ihre eigenen sind.",
+        "facts": [
+          "Der eklektische Sound von DakhaBrakha verbindet alte ukrainische Volksweisen nahtlos mit modernen Genres wie Pop, Punk, Electronica, Hip-Hop und Soul, eine Fusion, die sie als „ethno-chaos“ bezeichnen.",
+          "Die vier Musiker kombinieren eine Vielzahl musikalischer Stile aus aller Welt."
+        ]
+      },
+      "tr": {
+        "kicker": "dünya müziği dörtlüsü · kiev, ukrayna",
+        "who": "DakhaBrakha, Kiev, Ukrayna'da kurulmuş bir dünya müziği dörtlüsüdür. Dört müzisyen dünyanın dört bir yanından çeşitli müzik tarzlarını bir araya getirerek kendilerine özgü enerjik ve sanatsal performanslar üretir.",
+        "facts": [
+          "DakhaBrakha'nın eklektik sesi, eski Ukrayna halk ezgilerini pop, punk, electronica, hip hop ve soul gibi modern türlerle kusursuz biçimde buluşturur; bu füzyonu \"ethno-chaos\" olarak tanımlarlar.",
+          "Dört müzisyen dünyanın her yerinden çeşitli müzik tarzlarını bir araya getirir."
+        ]
+      }
+    },
+    {
+      "id": "d49e87e0-267c-43c2-b9bd-6c21505ca9f3",
+      "slug": "macy-gray-the-trouble-with-the-truth-tour-055185e5",
+      "title": "Macy Gray - The Trouble With The Truth Tour",
+      "name": "Macy Gray",
+      "source_url": "https://en.wikipedia.org/wiki/Macy_Gray",
+      "extract": "Natalie Renée McIntyre, known professionally as Macy Gray, is an American R&B and soul singer. She is known for her distinctive raspy voice and a singing style heavily influenced by Billie Holiday. Her 1999 single, \"I Try\", was her commercial breakthrough; the song peaked at number five on the Billboard Hot 100, won Best Female Pop Vocal Performance at the 43rd Annual Grammy Awards, and preceded her debut studio album, On How Life Is (1999). Since then, she has released ten studio albums.",
+      "en": {
+        "kicker": "american r&b and soul singer · breakthrough 1999",
+        "who": "Natalie Renée McIntyre, known professionally as Macy Gray, is an American R&B and soul singer. She is known for her distinctive raspy voice and a singing style heavily influenced by Billie Holiday.",
+        "facts": [
+          "Her 1999 single, \"I Try\", was her commercial breakthrough; the song peaked at number five on the Billboard Hot 100, won Best Female Pop Vocal Performance at the 43rd Annual Grammy Awards, and preceded her debut studio album, On How Life Is (1999).",
+          "Since then, she has released ten studio albums."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische r&b- und soul-sängerin · durchbruch 1999",
+        "who": "Natalie Renée McIntyre, bekannt als Macy Gray, ist eine amerikanische R&B- und Soulsängerin. Sie ist für ihre markante, raue Stimme bekannt und für einen Gesangsstil, der stark von Billie Holiday beeinflusst ist.",
+        "facts": [
+          "Ihre Single „I Try“ aus dem Jahr 1999 war ihr kommerzieller Durchbruch: Der Song erreichte Platz fünf der Billboard Hot 100, gewann den Grammy für Best Female Pop Vocal Performance bei den 43. Grammy Awards und ging ihrem Debütalbum On How Life Is (1999) voraus.",
+          "Seitdem hat sie zehn Studioalben veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı r&b ve soul şarkıcısı · çıkış 1999",
+        "who": "Natalie Renée McIntyre, sahne adıyla Macy Gray, Amerikalı bir R&B ve soul şarkıcısıdır. Ayırt edici çatlak sesi ve Billie Holiday'den güçlü biçimde etkilenmiş şarkı söyleme tarzıyla tanınır.",
+        "facts": [
+          "1999 tarihli \"I Try\" single'ı ticari çıkışı oldu; şarkı Billboard Hot 100'de beşinci sıraya çıktı, 43. Yıllık Grammy Ödülleri'nde En İyi Kadın Pop Vokal Performansı ödülünü kazandı ve ilk stüdyo albümü On How Life Is'ten (1999) önce yayımlandı.",
+          "O zamandan beri on stüdyo albümü yayımladı."
+        ]
+      }
+    },
+    {
+      "id": "258b3c70-7172-481a-8e69-6e3b82c22de4",
+      "slug": "vavamuffin-bebc7bd7",
+      "title": "Vavamuffin",
+      "name": "Vavamuffin",
+      "source_url": "https://en.wikipedia.org/wiki/Vavamuffin",
+      "extract": "Vavamuffin is a Polish raggamuffin, roots reggae and dancehall band from Warsaw. They were formed in 2003 and have released five albums under the label Karrot Kommando. The band members are Pablopavo, Reggaenerator, Gorg, Emili Jones, Jahcob Junior, Raffi Kazan, Mothashipp, Dubbist and Barton. They have participated in Przystanek Woodstock.",
+      "en": {
+        "kicker": "polish reggae band · warsaw, 2003",
+        "who": "Vavamuffin is a Polish raggamuffin, roots reggae and dancehall band from Warsaw. They were formed in 2003 and have released five albums under the label Karrot Kommando.",
+        "facts": [
+          "The band members are Pablopavo, Reggaenerator, Gorg, Emili Jones, Jahcob Junior, Raffi Kazan, Mothashipp, Dubbist and Barton.",
+          "They have participated in Przystanek Woodstock."
+        ]
+      },
+      "de": {
+        "kicker": "polnische reggae-band · warschau, 2003",
+        "who": "Vavamuffin ist eine polnische Raggamuffin-, Roots-Reggae- und Dancehall-Band aus Warschau. Sie wurde 2003 gegründet und hat fünf Alben beim Label Karrot Kommando veröffentlicht.",
+        "facts": [
+          "Die Bandmitglieder sind Pablopavo, Reggaenerator, Gorg, Emili Jones, Jahcob Junior, Raffi Kazan, Mothashipp, Dubbist und Barton.",
+          "Die Band ist beim Przystanek Woodstock aufgetreten."
+        ]
+      },
+      "tr": {
+        "kicker": "polonyalı reggae grubu · varşova, 2003",
+        "who": "Vavamuffin, Varşova'dan çıkmış Polonyalı bir raggamuffin, roots reggae ve dancehall grubudur. 2003'te kurulan grup, Karrot Kommando etiketiyle beş albüm yayımladı.",
+        "facts": [
+          "Grubun üyeleri Pablopavo, Reggaenerator, Gorg, Emili Jones, Jahcob Junior, Raffi Kazan, Mothashipp, Dubbist ve Barton'dur.",
+          "Grup Przystanek Woodstock festivaline katıldı."
+        ]
+      }
+    },
+    {
+      "id": "7866f85f-bd76-4ed2-b39f-36ed59016c5e",
+      "slug": "napalm-death-1f65d32d",
+      "title": "NAPALM DEATH",
+      "name": "Napalm Death",
+      "source_url": "https://en.wikipedia.org/wiki/Napalm_Death",
+      "extract": "Napalm Death are an English grindcore band formed in Meriden, West Midlands, in 1981. The band currently consists of Barney Greenway on vocals, Shane Embury on bass guitar, John Cooke on guitar and Danny Herrera on drums. None of the founding band members remain in the band. From 1989 to 2004, Napalm Death were a five-piece band after they added Jesse Pintado and Mitch Harris as replacements for guitarist Bill Steer. Following Pintado's departure, the band reverted to a four-piece. Mitch Harris left the band in 2014 to focus on his personal life. Since Mitch's indefinite hiatus, guitarist John Cooke can be seen on guitar during live shows.",
+      "en": {
+        "kicker": "english grindcore band · meriden, west midlands, 1981",
+        "who": "Napalm Death are an English grindcore band formed in Meriden, West Midlands, in 1981. The band currently consists of Barney Greenway on vocals, Shane Embury on bass guitar, John Cooke on guitar and Danny Herrera on drums.",
+        "facts": [
+          "None of the founding band members remain in the band.",
+          "Mitch Harris left the band in 2014 to focus on his personal life."
+        ]
+      },
+      "de": {
+        "kicker": "englische grindcore-band · meriden, west midlands, 1981",
+        "who": "Napalm Death sind eine englische Grindcore-Band, die 1981 in Meriden, West Midlands, gegründet wurde. Die Band besteht derzeit aus Barney Greenway (Gesang), Shane Embury (Bass), John Cooke (Gitarre) und Danny Herrera (Schlagzeug).",
+        "facts": [
+          "Keines der ursprünglichen Gründungsmitglieder ist noch in der Band.",
+          "Mitch Harris verließ die Band 2014, um sich auf sein Privatleben zu konzentrieren."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz grindcore grubu · meriden, west midlands, 1981",
+        "who": "Napalm Death, 1981'de Meriden, West Midlands'ta kurulmuş İngiliz bir grindcore grubudur. Grup şu anda Barney Greenway (vokal), Shane Embury (bas gitar), John Cooke (gitar) ve Danny Herrera'dan (davul) oluşur.",
+        "facts": [
+          "Kurucu üyelerin hiçbiri artık grupta değil.",
+          "Mitch Harris, kişisel hayatına odaklanmak için 2014'te gruptan ayrıldı."
+        ]
+      }
+    },
+    {
+      "id": "9ee40db1-7e69-4a4c-9809-055c11c15863",
+      "slug": "the-rasmus-weirdo-tour-9a46633b",
+      "title": "The Rasmus - Weirdo Tour",
+      "name": "The Rasmus",
+      "source_url": "https://en.wikipedia.org/wiki/The_Rasmus",
+      "extract": "The Rasmus is a Finnish rock band that formed in 1994 in Helsinki while the band members were in upper comprehensive school. The original band members were Lauri Ylönen, Eero Heinonen (bass), Pauli Rantasalmi (guitar) and Jarno Lahti (drums). Jarno Lahti left the year after and was replaced by Janne Heiskanen in 1995. Heiskanen quit the band in 1999 and was soon replaced by Aki Hakala. Pauli Rantasalmi left the band and was replaced by guitarist Emilia \"Emppu\" Suhonen in 2022. Best known for their 2003 hit single \"In the Shadows\", the band has sold over 6 million albums worldwide and 350,000 albums in Finland alone, and has won numerous awards, both domestic and international. The band repre",
+      "en": {
+        "kicker": "finnish rock band · helsinki, 1994",
+        "who": "The Rasmus is a Finnish rock band that formed in 1994 in Helsinki while the band members were in upper comprehensive school. The original band members were Lauri Ylönen, Eero Heinonen (bass), Pauli Rantasalmi (guitar) and Jarno Lahti (drums).",
+        "facts": [
+          "Pauli Rantasalmi left the band and was replaced by guitarist Emilia \"Emppu\" Suhonen in 2022.",
+          "Jarno Lahti left the year after and was replaced by Janne Heiskanen in 1995."
+        ]
+      },
+      "de": {
+        "kicker": "finnische rockband · helsinki, 1994",
+        "who": "The Rasmus ist eine finnische Rockband, die 1994 in Helsinki gegründet wurde, während ihre Mitglieder noch die Oberstufe besuchten. Zu den ursprünglichen Mitgliedern gehörten Lauri Ylönen, Eero Heinonen (Bass), Pauli Rantasalmi (Gitarre) und Jarno Lahti (Schlagzeug).",
+        "facts": [
+          "Pauli Rantasalmi verließ die Band und wurde 2022 durch den Gitarristen Emilia „Emppu“ Suhonen ersetzt.",
+          "Jarno Lahti verließ die Band ein Jahr später und wurde 1995 durch Janne Heiskanen ersetzt."
+        ]
+      },
+      "tr": {
+        "kicker": "fin rock grubu · helsinki, 1994",
+        "who": "The Rasmus, Helsinki'de 1994 yılında, üyeleri hâlâ lisede okurken kurulmuş Fin bir rock grubudur. Grubun ilk üyeleri Lauri Ylönen, Eero Heinonen (bas), Pauli Rantasalmi (gitar) ve Jarno Lahti (davul) idi.",
+        "facts": [
+          "Pauli Rantasalmi gruptan ayrıldı ve 2022'de yerine gitarist Emilia \"Emppu\" Suhonen geçti.",
+          "Jarno Lahti bir yıl sonra gruptan ayrıldı ve yerine 1995'te Janne Heiskanen geçti."
+        ]
+      }
+    },
+    {
+      "id": "328af092-647d-4a9c-8271-d644d3430938",
+      "slug": "rodrigo-y-gabriela-52edad3c",
+      "title": "Rodrigo y Gabriela",
+      "name": "Rodrigo y Gabriela",
+      "source_url": "https://en.wikipedia.org/wiki/Rodrigo_y_Gabriela",
+      "extract": "Rodrigo y Gabriela are a Mexican acoustic guitar duo featuring musicians Rodrigo Sánchez and Gabriela Quintero. Residing in Mexico City, they began their career in Dublin, Ireland, where they played for the first eight years of their career as a duo. Their music consists largely of instrumental duets on the flamenco guitar, with a musical style influenced by a number of genres including nuevo flamenco, rock, and heavy metal.",
+      "en": {
+        "kicker": "mexican guitar duo · mexico city",
+        "who": "Rodrigo y Gabriela are a Mexican acoustic guitar duo featuring musicians Rodrigo Sánchez and Gabriela Quintero. Residing in Mexico City, they began their career in Dublin, Ireland.",
+        "facts": [
+          "Their music consists largely of instrumental duets on the flamenco guitar, with a musical style influenced by a number of genres including nuevo flamenco, rock, and heavy metal.",
+          "They began their career in Dublin, Ireland, where they played for the first eight years of their career as a duo."
+        ]
+      },
+      "de": {
+        "kicker": "mexikanisches gitarrenduo · mexiko-stadt",
+        "who": "Rodrigo y Gabriela sind ein mexikanisches Akustikgitarren-Duo mit den Musikern Rodrigo Sánchez und Gabriela Quintero. Sie leben in Mexiko-Stadt, begannen ihre Karriere jedoch in Dublin, Irland.",
+        "facts": [
+          "Ihre Musik besteht größtenteils aus instrumentalen Duetten auf der Flamencogitarre, mit einem Stil, der von Genres wie Nuevo Flamenco, Rock und Heavy Metal beeinflusst ist.",
+          "Sie spielten die ersten acht Jahre ihrer Karriere als Duo in Dublin."
+        ]
+      },
+      "tr": {
+        "kicker": "meksikalı gitar ikilisi · mexico city",
+        "who": "Rodrigo y Gabriela, müzisyenler Rodrigo Sánchez ve Gabriela Quintero'dan oluşan Meksikalı bir akustik gitar ikilisidir. Mexico City'de yaşayan ikili kariyerine Dublin, İrlanda'da başladı.",
+        "facts": [
+          "Müzikleri büyük ölçüde flamenko gitarında enstrümantal düetlerden oluşur; nuevo flamenco, rock ve heavy metal dahil birçok türden etkilenen bir tarza sahiptir.",
+          "İlk sekiz yıl boyunca ikili olarak Dublin'de çaldılar."
+        ]
+      }
+    }
+  ]
+}

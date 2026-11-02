@@ -1,0 +1,678 @@
+{
+ "city": "koln",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "2582a32c-e890-4607-9c3d-b2c439492cb6",
+   "slug": "the-fray-autumn-light-tour-89b8e213",
+   "title": "The Fray - Autumn Light Tour",
+   "name": "The Fray",
+   "source_url": "https://en.wikipedia.org/wiki/The_Fray",
+   "extract": "The Fray is an American rock band from Denver, Colorado, formed in 2002 by schoolmates Isaac Slade and Joe King. Their debut studio album, How to Save a Life (2005) was released by Epic Records and received quadruple platinum certification by the Recording Industry Association of America (RIAA), as well as platinum certification in Australia, Canada, New Zealand and the United Kingdom. Its release was supported by their first hit single, \"Over My Head \", which peaked at number eight on the Billboard Hot 100. The band saw their furthest success with the song's follow-up, \"How to Save a Life\", which peaked at number three on the chart and was also a hit in Australia, Canada, Ireland, Italy, Sp",
+   "en": {
+    "kicker": "american rock band · denver, 2002",
+    "who": "The Fray is an American rock band from Denver, Colorado, formed in 2002 by schoolmates Isaac Slade and Joe King. Their debut studio album, How to Save a Life (2005) was released by Epic Records.",
+    "facts": [
+     "Their debut studio album, How to Save a Life (2005) was released by Epic Records and received quadruple platinum certification by the Recording Industry Association of America (RIAA).",
+     "The band saw their furthest success with the song's follow-up, \"How to Save a Life\", which peaked at number three on the chart."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · denver, 2002",
+    "who": "The Fray ist eine amerikanische Rockband aus Denver, Colorado, die 2002 von den Schulkameraden Isaac Slade und Joe King gegründet wurde. Ihr Debütalbum How to Save a Life (2005) erschien bei Epic Records.",
+    "facts": [
+     "Ihr Debütalbum erhielt eine vierfache Platin-Zertifizierung der Recording Industry Association of America (RIAA).",
+     "Ihren größten Erfolg hatte die Band mit der Nachfolgesingle „How to Save a Life“, die auf Platz drei der Charts kletterte."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · denver, 2002",
+    "who": "The Fray, 2002 yılında okul arkadaşları Isaac Slade ve Joe King tarafından kurulan, Denver, Colorado kökenli bir Amerikalı rock grubudur. Debut stüdyo albümleri How to Save a Life (2005), Epic Records tarafından yayımlandı.",
+    "facts": [
+     "Debut stüdyo albümü, RIAA tarafından dört kat platin sertifikası aldı.",
+     "Grubun en büyük başarısı, takipçi single'ı \"How to Save a Life\" ile geldi; bu şarkı listede üçüncü sıraya ulaştı."
+    ]
+   }
+  },
+  {
+   "id": "18647016-33c0-41ac-abcd-345231c25d3a",
+   "slug": "placebo-30th-anniversary-tour-6e139718",
+   "title": "Placebo - 30th Anniversary Tour",
+   "name": "Placebo",
+   "source_url": "https://en.wikipedia.org/wiki/Placebo_(band)",
+   "extract": "Placebo are a British alternative rock band, formed in London in 1994 by vocalist-guitarist Brian Molko and bassist-guitarist Stefan Olsdal, who have remained the two constant members, with three full-time drummers throughout the band's existence.",
+   "en": {
+    "kicker": "british alternative rock band · london, 1994",
+    "who": "Placebo are a British alternative rock band, formed in London in 1994. Brian Molko and Stefan Olsdal have remained the two constant members.",
+    "facts": [
+     "Brian Molko is the vocalist-guitarist, and Stefan Olsdal is the bassist-guitarist.",
+     "The band has had three full-time drummers throughout the band's existence."
+    ]
+   },
+   "de": {
+    "kicker": "britische alternative-rockband · london, 1994",
+    "who": "Placebo sind eine britische Alternative-Rock-Band, die 1994 in London gegründet wurde. Brian Molko und Stefan Olsdal sind die beiden konstanten Mitglieder.",
+    "facts": [
+     "Brian Molko ist Sänger und Gitarrist, Stefan Olsdal Bassist und Gitarrist.",
+     "Während des gesamten Bestehens der Band waren drei feste Schlagzeuger tätig."
+    ]
+   },
+   "tr": {
+    "kicker": "britanyalı alternatif rock grubu · londra, 1994",
+    "who": "Placebo, 1994 yılında Londra'da kurulmuş bir Britanyalı alternatif rock grubudur. Brian Molko ve Stefan Olsdal grubun iki sabit üyesi olarak kaldı.",
+    "facts": [
+     "Brian Molko vokal ve gitarda, Stefan Olsdal ise bas ve gitarda yer alıyor.",
+     "Grubun varlığı boyunca üç tam zamanlı davulcu görev yaptı."
+    ]
+   }
+  },
+  {
+   "id": "a6e30103-ac7a-4ba6-8374-997c22d7a4c3",
+   "slug": "mark-ambor-european-and-united-kingdom-solo-acou-79cdd170",
+   "title": "Mark Ambor - European & United Kingdom Solo Acoustic Tour",
+   "name": "Mark Ambor",
+   "source_url": "https://en.wikipedia.org/wiki/Mark_Ambor",
+   "extract": "Mark Gregory Damboragian, known professionally as Mark Ambor, is an American singer-songwriter. He is best known for his 2024 single \"Belong Together\".",
+   "en": {
+    "kicker": "american singer-songwriter · belong together, 2024",
+    "who": "Mark Gregory Damboragian, known professionally as Mark Ambor, is an American singer-songwriter. He is best known for his 2024 single \"Belong Together\".",
+    "facts": [
+     "Mark Ambor is the professional name of Mark Gregory Damboragian.",
+     "He is best known for his 2024 single \"Belong Together\"."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · belong together, 2024",
+    "who": "Mark Gregory Damboragian, unter dem Künstlernamen Mark Ambor bekannt, ist ein amerikanischer Singer-Songwriter. Am bekanntesten ist er für seine Single „Belong Together“ aus dem Jahr 2024.",
+    "facts": [
+     "Mark Ambor ist der Künstlername von Mark Gregory Damboragian.",
+     "Am bekanntesten ist er für seine Single „Belong Together“ aus dem Jahr 2024."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · belong together, 2024",
+    "who": "Mark Gregory Damboragian, sahne adıyla Mark Ambor, bir Amerikalı şarkıcı ve söz yazarıdır. En çok 2024 yılındaki \"Belong Together\" single'ı ile tanınır.",
+    "facts": [
+     "Mark Ambor, Mark Gregory Damboragian'ın sahne adıdır.",
+     "En çok 2024 yılındaki \"Belong Together\" single'ı ile tanınır."
+    ]
+   }
+  },
+  {
+   "id": "298506a2-4cc0-48a7-9c2a-d0beffd847fe",
+   "slug": "saint-levant-afandi-world-tour-89c3d9e2",
+   "title": "Saint Levant - AFANDI WORLD TOUR",
+   "name": "Saint Levant",
+   "source_url": "https://en.wikipedia.org/wiki/Saint_Levant",
+   "extract": "Marwan Abdelhamid, known professionally as Saint Levant, is a Palestinian singer-songwriter and rapper. A multilingual artist, he became known for his 2022 song \"Very Few Friends\". As of August 2026, he has released two EPs and two studio albums, and has toured in the Middle East, Europe, the US, and Australia.",
+   "en": {
+    "kicker": "palestinian singer-songwriter and rapper · 2022",
+    "who": "Marwan Abdelhamid, known professionally as Saint Levant, is a Palestinian singer-songwriter and rapper. A multilingual artist, he became known for his 2022 song \"Very Few Friends\".",
+    "facts": [
+     "As of August 2026, he has released two EPs and two studio albums.",
+     "He has toured in the Middle East, Europe, the US, and Australia."
+    ]
+   },
+   "de": {
+    "kicker": "palästinensischer singer-songwriter und rapper · 2022",
+    "who": "Marwan Abdelhamid, unter dem Künstlernamen Saint Levant bekannt, ist ein palästinensischer Singer-Songwriter und Rapper. Als mehrsprachiger Künstler wurde er vor allem durch seinen Song „Very Few Friends“ aus dem Jahr 2022 bekannt.",
+    "facts": [
+     "Bis August 2026 hat er zwei EPs und zwei Studioalben veröffentlicht.",
+     "Er war auf Tour im Nahen Osten, in Europa, den USA und Australien."
+    ]
+   },
+   "tr": {
+    "kicker": "filistinli şarkıcı-söz yazarı ve rapçi · 2022",
+    "who": "Marwan Abdelhamid, sahne adıyla Saint Levant, bir Filistinli şarkıcı, söz yazarı ve rapçidir. Çok dilli bir sanatçı olan Saint Levant, 2022 yılındaki \"Very Few Friends\" şarkısıyla tanındı.",
+    "facts": [
+     "Ağustos 2026 itibarıyla iki EP ve iki stüdyo albümü yayımladı.",
+     "Orta Doğu, Avrupa, ABD ve Avustralya'da turneye çıktı."
+    ]
+   }
+  },
+  {
+   "id": "5567fe1a-eaa2-48f9-b87a-c8f72ebb5f69",
+   "slug": "nemzzz-locked-in-866b8229",
+   "title": "Nemzzz - LOCKED IN",
+   "name": "Nemzzz",
+   "source_url": "https://en.wikipedia.org/wiki/Nemzzz",
+   "extract": "Nemiah Emmanuel Simms, known professionally as Nemzzz, is a British rapper who gained recognition in 2021 with the tracks \"Elevate\" and \"2MS\". He released his first mixtape Do Not Disturb in 2024, which debuted at number 17 on the UK Albums Chart.",
+   "en": {
+    "kicker": "british rapper · 2021",
+    "who": "Nemiah Emmanuel Simms, known professionally as Nemzzz, is a British rapper who gained recognition in 2021 with the tracks \"Elevate\" and \"2MS\".",
+    "facts": [
+     "He released his first mixtape Do Not Disturb in 2024.",
+     "The mixtape debuted at number 17 on the UK Albums Chart."
+    ]
+   },
+   "de": {
+    "kicker": "britischer rapper · 2021",
+    "who": "Nemiah Emmanuel Simms, unter dem Namen Nemzzz bekannt, ist ein britischer Rapper. 2021 wurde er mit den Titeln „Elevate“ und „2MS“ bekannt.",
+    "facts": [
+     "Im Jahr 2024 veröffentlichte er sein erstes Mixtape Do Not Disturb.",
+     "Das Mixtape debütierte auf Platz 17 der UK-Albumcharts."
+    ]
+   },
+   "tr": {
+    "kicker": "britanyalı rapçi · 2021",
+    "who": "Nemiah Emmanuel Simms, sahne adıyla Nemzzz, bir Britanyalı rapçidir. 2021 yılında \"Elevate\" ve \"2MS\" parçalarıyla tanınmaya başladı.",
+    "facts": [
+     "2024 yılında ilk mixtape'i Do Not Disturb'ü yayımladı.",
+     "Bu mixtape, Birleşik Krallık Albüm Listesi'nde 17. sıraya girerek debut yaptı."
+    ]
+   }
+  },
+  {
+   "id": "38604479-c187-401f-af20-e81282936615",
+   "slug": "artemas-lovercore-getting-up-to-no-good-tour-1f893c17",
+   "title": "Artemas - LOVERCORE / GETTING UP TO NO GOOD Tour",
+   "name": "Artemas",
+   "source_url": "https://en.wikipedia.org/wiki/Artemas_(musician)",
+   "extract": "Artemas Diamandis, known mononymously as Artemas, is an English singer, songwriter and record producer. He is best known for his singles \"If U Think I'm Pretty\" and the viral \"I Like the Way You Kiss Me\". He is signed to the record label 10K Projects.",
+   "en": {
+    "kicker": "english singer, songwriter and record producer",
+    "who": "Artemas Diamandis, known mononymously as Artemas, is an English singer, songwriter and record producer. He is best known for his singles \"If U Think I'm Pretty\" and the viral \"I Like the Way You Kiss Me\".",
+    "facts": [
+     "He is signed to the record label 10K Projects.",
+     "The viral \"I Like the Way You Kiss Me\" is one of his best known singles."
+    ]
+   },
+   "de": {
+    "kicker": "englischer sänger und musikproduzent",
+    "who": "Artemas Diamandis, unter dem Namen Artemas bekannt, ist ein englischer Sänger, Songwriter und Musikproduzent. Am bekanntesten ist er für seine Singles „If U Think I'm Pretty“ und das virale „I Like the Way You Kiss Me“.",
+    "facts": [
+     "Er steht beim Label 10K Projects unter Vertrag.",
+     "Das virale „I Like the Way You Kiss Me“ gehört zu seinen bekanntesten Singles."
+    ]
+   },
+   "tr": {
+    "kicker": "şarkıcı, söz yazarı ve müzik yapımcısı",
+    "who": "Artemas Diamandis, Artemas adıyla bilinen bir İngiliz şarkıcı, söz yazarı ve müzik yapımcısıdır. En çok \"If U Think I'm Pretty\" ve viral \"I Like the Way You Kiss Me\" şarkılarıyla tanınır.",
+    "facts": [
+     "10K Projects plak şirketi ile sözleşmelidir.",
+     "Viral \"I Like the Way You Kiss Me\" şarkısı en çok bilinen eserleri arasında yer alıyor."
+    ]
+   }
+  },
+  {
+   "id": "3b8af7eb-be0f-41ff-9f9d-6aede526025e",
+   "slug": "glaive-god-save-the-three-tour-80a9a236",
+   "title": "glaive - God Save The Three Tour",
+   "name": "Glaive",
+   "source_url": "https://en.wikipedia.org/wiki/Glaive_(musician)",
+   "extract": "Ash Blue Gutierrez, known professionally as Glaive, is an American singer-songwriter. After posting a string of hyperpop songs to SoundCloud during the beginning of the COVID-19 pandemic that earned him a following, he signed a record deal with Interscope Records and released his debut extended play, Cypress Grove, in 2020. His debut album, I Care So Much That I Don't Care at All, was released in 2023. His second album, May It Never Falter, was released in 2024. His third, Y'all, was released in September 2025. His fourth, a collaborative album with Kurtains called God Save the Three, was released in May 2026.",
+   "en": {
+    "kicker": "american singer-songwriter · 2023",
+    "who": "Ash Blue Gutierrez, known professionally as Glaive, is an American singer-songwriter. After posting a string of hyperpop songs to SoundCloud during the beginning of the COVID-19 pandemic that earned him a following, he signed a record deal with Interscope Records.",
+    "facts": [
+     "His debut album, I Care So Much That I Don't Care at All, was released in 2023.",
+     "His fourth, a collaborative album with Kurtains called God Save the Three, was released in May 2026."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · 2023",
+    "who": "Ash Blue Gutierrez, unter dem Namen Glaive bekannt, ist ein amerikanischer Singer-Songwriter. Nach einer Reihe von Hyperpop-Songs auf SoundCloud zu Beginn der COVID-19-Pandemie unterschrieb er einen Plattenvertrag bei Interscope Records.",
+    "facts": [
+     "Sein Debütalbum I Care So Much That I Don't Care at All erschien 2023.",
+     "Sein viertes Album, eine Zusammenarbeit mit Kurtains namens God Save the Three, erschien im Mai 2026."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · 2023",
+    "who": "Ash Blue Gutierrez, sahne adıyla Glaive, bir Amerikalı şarkıcı ve söz yazarıdır. COVID-19 pandemisinin başlangıcında SoundCloud'a bir dizi hyperpop şarkısı yükleyerek takipçi kazandı ve Interscope Records ile plak anlaşması imzaladı.",
+    "facts": [
+     "Debut albümü I Care So Much That I Don't Care at All, 2023'te yayımlandı.",
+     "Kurtains ile birlikte hazırladığı dördüncü albüm God Save the Three, Mayıs 2026'da yayımlandı."
+    ]
+   }
+  },
+  {
+   "id": "ab9279f6-e1b2-4916-8ec1-378fa4c88315",
+   "slug": "violent-vira-05d77beb",
+   "title": "Violent Vira",
+   "name": "Violent Vira",
+   "source_url": "https://en.wikipedia.org/wiki/Violent_Vira",
+   "extract": "Amy Gonzalez, known professionally as Violent Vira, is an American alternative rock and heavy metal singer-songwriter. Her debut full-length album Lover of a Ghost was released in November 2025.",
+   "en": {
+    "kicker": "american singer-songwriter · 2025",
+    "who": "Amy Gonzalez, known professionally as Violent Vira, is an American alternative rock and heavy metal singer-songwriter. Her debut full-length album Lover of a Ghost was released in November 2025.",
+    "facts": [
+     "Amy Gonzalez is the name behind Violent Vira.",
+     "Her debut full-length album Lover of a Ghost was released in November 2025."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin · 2025",
+    "who": "Amy Gonzalez, unter dem Künstlernamen Violent Vira bekannt, ist eine amerikanische Alternative-Rock- und Heavy-Metal-Singer-Songwriterin. Ihr erstes Album in voller Länge, Lover of a Ghost, erschien im November 2025.",
+    "facts": [
+     "Amy Gonzalez ist der bürgerliche Name hinter Violent Vira.",
+     "Ihr Debütalbum Lover of a Ghost erschien im November 2025."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · 2025",
+    "who": "Amy Gonzalez, Violent Vira adıyla tanınan Amerikalı bir alternatif rock ve heavy metal şarkıcı-söz yazarıdır. Tam uzunluktaki debut albümü Lover of a Ghost, Kasım 2025'te yayımlandı.",
+    "facts": [
+     "Amy Gonzalez, Violent Vira'nın sahne adının arkasındaki isimdir.",
+     "Debut albümü Lover of a Ghost, Kasım 2025'te yayımlandı."
+    ]
+   }
+  },
+  {
+   "id": "5ffc73e8-ba6b-4bb4-8c2a-b710f59aa80b",
+   "slug": "nieve-ella-how-long-will-it-take-the-debut-album-9b66a5d9",
+   "title": "Nieve Ella - How Long Will It Take? | The Debut Album Tour",
+   "name": "Nieve Ella",
+   "source_url": "https://en.wikipedia.org/wiki/Nieve_Ella",
+   "extract": "Nieve Ella Pickering is an English singer. Her 2023 release, Young & Naive/Lifetime of Wanting, charted at No. 38 on the UK Independent Album Chart. She has also supported Dylan, Inhaler, Courteeners, and Girl in Red.",
+   "en": {
+    "kicker": "english singer · 2023",
+    "who": "Nieve Ella Pickering is an English singer. She has also supported Dylan, Inhaler, Courteeners, and Girl in Red.",
+    "facts": [
+     "Her 2023 release, Young & Naive/Lifetime of Wanting, charted at No. 38 on the UK Independent Album Chart.",
+     "Young & Naive/Lifetime of Wanting was released in 2023."
+    ]
+   },
+   "de": {
+    "kicker": "englische sängerin · 2023",
+    "who": "Nieve Ella Pickering ist eine englische Sängerin. Sie war bereits Vorband für Dylan, Inhaler, Courteeners und Girl in Red.",
+    "facts": [
+     "Ihre Veröffentlichung von 2023, Young & Naive/Lifetime of Wanting, erreichte Platz 38 der UK Independent Album Chart.",
+     "Young & Naive/Lifetime of Wanting erschien 2023."
+    ]
+   },
+   "tr": {
+    "kicker": "şarkıcı · 2023",
+    "who": "Nieve Ella Pickering bir İngiliz şarkıcıdır. Dylan, Inhaler, Courteeners ve Girl in Red için açılış performansları yaptı.",
+    "facts": [
+     "2023 yılındaki yayını Young & Naive/Lifetime of Wanting, Birleşik Krallık Independent Albüm Listesi'nde 38. sıraya yerleşti.",
+     "Young & Naive/Lifetime of Wanting, 2023 yılında yayımlandı."
+    ]
+   }
+  },
+  {
+   "id": "1545b947-c345-45ce-b26f-f3104dfbde03",
+   "slug": "elder-island-2026-c77d54b9",
+   "title": "Elder Island - 2026",
+   "name": "Elder Island",
+   "source_url": "https://en.wikipedia.org/wiki/Elder_Island_(band)",
+   "extract": "Elder Island is an English musical trio from Bristol, formed in 2014. As of 2026, they have released three studio albums, three EPs, two remix albums, and numerous singles.",
+   "en": {
+    "kicker": "english musical trio · bristol, 2014",
+    "who": "Elder Island is an English musical trio from Bristol, formed in 2014. As of 2026, they have released three studio albums, three EPs, two remix albums, and numerous singles.",
+    "facts": [
+     "Elder Island is an English musical trio from Bristol.",
+     "As of 2026, they have released two remix albums."
+    ]
+   },
+   "de": {
+    "kicker": "englisches musiktrio · bristol, 2014",
+    "who": "Elder Island ist ein englisches Musiktrio aus Bristol, das 2014 gegründet wurde. Bis 2026 haben sie drei Studioalben, drei EPs, zwei Remix-Alben und zahlreiche Singles veröffentlicht.",
+    "facts": [
+     "Das Trio stammt aus Bristol.",
+     "Bis 2026 veröffentlichten sie zwei Remix-Alben."
+    ]
+   },
+   "tr": {
+    "kicker": "müzik üçlüsü · bristol, 2014",
+    "who": "Elder Island, Bristol'dan bir İngiliz müzik üçlüsüdür ve 2014 yılında kuruldu. 2026 itibarıyla üç stüdyo albümü, üç EP, iki remix albümü ve çok sayıda single yayımladı.",
+    "facts": [
+     "Grup, Bristol'dan bir İngiliz müzik üçlüsüdür.",
+     "2026 itibarıyla iki remix albümü yayımladılar."
+    ]
+   }
+  },
+  {
+   "id": "ce654697-280a-4098-8dee-3264bcf0909b",
+   "slug": "tinie-tempah-the-night-s-not-dead-tour-ffbce3bd",
+   "title": "Tinie Tempah - THE NIGHT´S NOT DEAD TOUR",
+   "name": "Tinie Tempah",
+   "source_url": "https://en.wikipedia.org/wiki/Tinie_Tempah",
+   "extract": "Patrick Chukwuemeka Okogwu, better known by his stage name Tinie Tempah, is an English rapper, singer and television presenter. Born and raised in London, he created his own entertainment company Disturbing London in 2006, alongside Dumi Oburota. After signing with Parlophone in 2009 and releasing several mixtapes, he rose to fame with the UK number-one singles \"Pass Out\" and \"Written in the Stars\" in 2010.",
+   "en": {
+    "kicker": "english rapper and singer · london",
+    "who": "Patrick Chukwuemeka Okogwu, better known by his stage name Tinie Tempah, is an English rapper, singer and television presenter. Born and raised in London, he created his own entertainment company Disturbing London in 2006, alongside Dumi Oburota.",
+    "facts": [
+     "After signing with Parlophone in 2009, he released several mixtapes.",
+     "He rose to fame with the UK number-one singles \"Pass Out\" and \"Written in the Stars\" in 2010."
+    ]
+   },
+   "de": {
+    "kicker": "englischer rapper und sänger · london",
+    "who": "Patrick Chukwuemeka Okogwu, besser bekannt unter dem Künstlernamen Tinie Tempah, ist ein englischer Rapper, Sänger und Fernsehmoderator. In London geboren und aufgewachsen, gründete er 2006 gemeinsam mit Dumi Oburota die Entertainmentfirma Disturbing London.",
+    "facts": [
+     "Nach der Unterzeichnung bei Parlophone im Jahr 2009 veröffentlichte er mehrere Mixtapes.",
+     "2010 wurde er mit den britischen Nummer-eins-Singles „Pass Out“ und „Written in the Stars“ bekannt."
+    ]
+   },
+   "tr": {
+    "kicker": "rapçi ve şarkıcı · londra",
+    "who": "Patrick Chukwuemeka Okogwu, sahne adıyla Tinie Tempah, bir İngiliz rapçi, şarkıcı ve televizyon sunucusudur. Londra'da doğup büyüyen Tinie Tempah, 2006 yılında Dumi Oburota ile birlikte Disturbing London adlı eğlence şirketini kurdu.",
+    "facts": [
+     "2009 yılında Parlophone ile anlaşmasının ardından birkaç mixtape yayımladı.",
+     "2010 yılında Birleşik Krallık'ta bir numaralı olan \"Pass Out\" ve \"Written in the Stars\" single'larıyla ün kazandı."
+    ]
+   }
+  },
+  {
+   "id": "1780a94b-4ec2-4b7c-a63a-0d2a72379aa7",
+   "slug": "freya-skye-stars-align-tour-83cf9040",
+   "title": "Freya Skye - Stars Align Tour",
+   "name": "Freya Skye",
+   "source_url": "https://en.wikipedia.org/wiki/Freya_Skye",
+   "extract": "Freya Skye is an English singer and actress. She represented the United Kingdom in the Junior Eurovision Song Contest 2022, after which she was signed to Hollywood Records. Skye also has a talent holding deal for projects with Disney Branded Television. As an actress, she has appeared in The Next Step and made her film debut starring as Nova Bright in Zombies 4: Dawn of the Vampires. As a musician, Skye has released a number of singles since 2020 and released her debut extended play Stardust in 2026 and embarked on her first headlining tour, the Stars Align Tour.",
+   "en": {
+    "kicker": "english singer and actress · 2022",
+    "who": "Freya Skye is an English singer and actress. She represented the United Kingdom in the Junior Eurovision Song Contest 2022, after which she was signed to Hollywood Records.",
+    "facts": [
+     "She made her film debut starring as Nova Bright in Zombies 4: Dawn of the Vampires.",
+     "In 2026 she released her debut extended play Stardust and embarked on her first headlining tour, the Stars Align Tour."
+    ]
+   },
+   "de": {
+    "kicker": "englische sängerin und schauspielerin · 2022",
+    "who": "Freya Skye ist eine englische Sängerin und Schauspielerin. Sie vertrat das Vereinigte Königreich beim Junior Eurovision Song Contest 2022, danach wurde sie bei Hollywood Records unter Vertrag genommen.",
+    "facts": [
+     "Ihr Filmdebüt gab sie als Nova Bright in Zombies 4: Dawn of the Vampires.",
+     "2026 veröffentlichte sie ihre Debüt-EP Stardust und ging auf ihre erste Headliner-Tour, die Stars Align Tour."
+    ]
+   },
+   "tr": {
+    "kicker": "şarkıcı ve oyuncu · 2022",
+    "who": "Freya Skye bir İngiliz şarkıcı ve oyuncudur. 2022 Junior Eurovision Şarkı Yarışması'nda Birleşik Krallık'ı temsil etti ve ardından Hollywood Records ile sözleşme imzaladı.",
+    "facts": [
+     "Film çıkışını Zombies 4: Dawn of the Vampires filminde Nova Bright rolüyle yaptı.",
+     "2026'da debut EP'si Stardust'u yayımladı ve ilk headliner turnesi Stars Align Tour'a çıktı."
+    ]
+   }
+  },
+  {
+   "id": "4ddf758e-7041-4b29-b814-85ea2e491541",
+   "slug": "muna-gets-so-hot-tour-c7af11cd",
+   "title": "Muna - Gets So Hot Tour",
+   "name": "Muna",
+   "source_url": "https://en.wikipedia.org/wiki/Muna_(band)",
+   "extract": "Muna is an American indie pop band consisting of Katie Gavin, Josette Maskin, and Naomi McPherson. They released two studio albums with RCA Records, About U (2017) and Saves the World (2019), before signing with independent label Saddest Factory Records, which released their third studio album, Muna, in June 2022, and Dancing on the Wall in May 2026.",
+   "en": {
+    "kicker": "american indie pop band · 2026",
+    "who": "Muna is an American indie pop band consisting of Katie Gavin, Josette Maskin, and Naomi McPherson. They released two studio albums with RCA Records, About U (2017) and Saves the World (2019), before signing with independent label Saddest Factory Records.",
+    "facts": [
+     "Saddest Factory Records released their third studio album, Muna, in June 2022.",
+     "Saddest Factory Records also released Dancing on the Wall in May 2026."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-pop-band · 2026",
+    "who": "Muna ist eine amerikanische Indie-Pop-Band aus Katie Gavin, Josette Maskin und Naomi McPherson. Zunächst veröffentlichten sie zwei Studioalben bei RCA Records, About U (2017) und Saves the World (2019), bevor sie zum unabhängigen Label Saddest Factory Records wechselten.",
+    "facts": [
+     "Saddest Factory Records veröffentlichte im Juni 2022 ihr drittes Studioalbum Muna.",
+     "Im Mai 2026 folgte Dancing on the Wall."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie pop grubu · 2026",
+    "who": "Muna, Katie Gavin, Josette Maskin ve Naomi McPherson'dan oluşan bir Amerikalı indie pop grubudur. Grup, RCA Records ile About U (2017) ve Saves the World (2019) adlı iki stüdyo albümü yayımladı, ardından bağımsız plak şirketi Saddest Factory Records'a geçti.",
+    "facts": [
+     "Saddest Factory Records, üçüncü stüdyo albümleri Muna'yı Haziran 2022'de yayımladı.",
+     "Dancing on the Wall ise Mayıs 2026'da yayımlandı."
+    ]
+   }
+  },
+  {
+   "id": "3b221c10-8fd6-4a72-ae76-1d701747ab8d",
+   "slug": "noah-kahan-the-great-divide-tour-dbaa18a0",
+   "title": "Noah Kahan - The Great Divide Tour",
+   "name": "Noah Kahan",
+   "source_url": "https://en.wikipedia.org/wiki/Noah_Kahan",
+   "extract": "Noah Berkenkamp Kahan is an American singer-songwriter. His breakthrough single, \"Hurt Somebody\", achieved gold status in the United States and charted in multiple international markets. The single and EP of the same name preceded the release of his debut album, Busyhead (2019). Within five years, two more albums came out: I Was / I Am (2021) and Stick Season (2022), the latter became his mainstream commercial breakthrough. It led to his nomination in 2023 for the Grammy Award for Best New Artist. In 2026, his fourth album The Great Divide was released and achieved record-breaking streaming and vinyl sales for a No. 1 rock album debut on the Billboard 200. That preceded The Great Divide Tour",
+   "en": {
+    "kicker": "american singer-songwriter · the great divide, 2026",
+    "who": "Noah Berkenkamp Kahan is an American singer-songwriter. His breakthrough single, \"Hurt Somebody\", achieved gold status in the United States and charted in multiple international markets.",
+    "facts": [
+     "In 2026, his fourth album The Great Divide was released and achieved record-breaking streaming and vinyl sales.",
+     "Stick Season (2022) became his mainstream commercial breakthrough."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · the great divide, 2026",
+    "who": "Noah Berkenkamp Kahan ist ein amerikanischer Singer-Songwriter. Seine Durchbruchsingle „Hurt Somebody“ erhielt in den Vereinigten Staaten Goldstatus und platzierte sich in mehreren internationalen Märkten in den Charts.",
+    "facts": [
+     "Im Jahr 2026 erschien sein viertes Album The Great Divide, das Rekordverkäufe beim Streaming und bei Vinyl erzielte.",
+     "Stick Season (2022) wurde sein kommerzieller Durchbruch im Mainstream."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · the great divide, 2026",
+    "who": "Noah Berkenkamp Kahan bir Amerikalı şarkıcı ve söz yazarıdır. Çıkış single'ı \"Hurt Somebody\", Amerika Birleşik Devletleri'nde altın statüsü kazandı ve birçok uluslararası pazarda listelere girdi.",
+    "facts": [
+     "2026'da dördüncü albümü The Great Divide yayımlandı ve rekor streaming ve plak satışlarına ulaştı.",
+     "Stick Season (2022), ana akım ticari atılımı oldu."
+    ]
+   }
+  },
+  {
+   "id": "bd015b63-10e6-4c6b-9f56-a4af3c82cc6a",
+   "slug": "chloe-slater-riot-youth-tour-6df4d8b1",
+   "title": "CHLOE SLATER - riot youth tour",
+   "name": "Chloe Slater",
+   "source_url": "https://en.wikipedia.org/wiki/Chloe_Slater",
+   "extract": "Chloe Leanne Slater is an English singer-songwriter based in Manchester. Writing about social and political issues, she has been releasing music since 2023 and has issued two extended plays: You Can't Put a Price on Fun, and Love Me Please.",
+   "en": {
+    "kicker": "english singer-songwriter · manchester, 2023",
+    "who": "Chloe Leanne Slater is an English singer-songwriter based in Manchester. Writing about social and political issues, she has been releasing music since 2023.",
+    "facts": [
+     "Writing about social and political issues, she has been releasing music since 2023.",
+     "She has issued two extended plays: You Can't Put a Price on Fun, and Love Me Please."
+    ]
+   },
+   "de": {
+    "kicker": "englische singer-songwriterin · manchester, 2023",
+    "who": "Chloe Leanne Slater ist eine englische Singer-Songwriterin mit Sitz in Manchester. Sie schreibt über soziale und politische Themen und veröffentlicht seit 2023 Musik.",
+    "facts": [
+     "Sie veröffentlicht seit 2023 Musik über soziale und politische Themen.",
+     "Bisher erschienen zwei EPs: You Can't Put a Price on Fun und Love Me Please."
+    ]
+   },
+   "tr": {
+    "kicker": "şarkıcı-söz yazarı · manchester, 2023",
+    "who": "Chloe Leanne Slater, Manchester merkezli bir İngiliz şarkıcı ve söz yazarıdır. Toplumsal ve siyasi konuları ele alan şarkılar yazan Slater, 2023'ten beri müzik yayımlıyor.",
+    "facts": [
+     "2023'ten beri müzik yayımlıyor ve toplumsal ve siyasi konulara değiniyor.",
+     "İki uzun oynatma süreli EP yayımladı: You Can't Put a Price on Fun ve Love Me Please."
+    ]
+   }
+  },
+  {
+   "id": "110667ec-8f20-4a43-b3bf-4f379c56316c",
+   "slug": "esdeekid-council-house-rat-tour-46740229",
+   "title": "EsDeeKid - Council House Rat Tour",
+   "name": "EsDeeKid",
+   "source_url": "https://en.wikipedia.org/wiki/EsDeeKid",
+   "extract": "EsDeeKid is a British rapper from Liverpool, England. He released his debut mixtape, Rebel, in June 2025. He has been noted as a prominent figure in the UK underground rap scene. His music is characterised by his thick Scouse accent and draws inspiration from cloud rap. He covers his face with a balaclava, and keeps his name, appearance, and age private. He still lives in his council house.\nAs of May 2026, EsDeeKid's single \"Phantom\" has accumulated more than 300 million streams. His mixtape Rebel has charted in multiple European countries, as well as peaked at number 23 on the US Billboard 200, despite being released nearly five months before its debut on the chart.",
+   "en": {
+    "kicker": "british rapper · liverpool, 2025",
+    "who": "EsDeeKid is a British rapper from Liverpool, England. He released his debut mixtape, Rebel, in June 2025. He has been noted as a prominent figure in the UK underground rap scene.",
+    "facts": [
+     "He covers his face with a balaclava, and keeps his name, appearance, and age private.",
+     "As of May 2026, EsDeeKid's single \"Phantom\" has accumulated more than 300 million streams."
+    ]
+   },
+   "de": {
+    "kicker": "britischer rapper · liverpool, 2025",
+    "who": "EsDeeKid ist ein britischer Rapper aus Liverpool, England. Im Juni 2025 veröffentlichte er sein Debüt-Mixtape Rebel. Er gilt als prominente Figur der britischen Underground-Rap-Szene.",
+    "facts": [
+     "Er verdeckt sein Gesicht mit einer Sturmhaube und hält seinen Namen, sein Aussehen und sein Alter privat.",
+     "Seine Single „Phantom“ hat im Mai 2026 mehr als 300 Millionen Streams gesammelt."
+    ]
+   },
+   "tr": {
+    "kicker": "britanyalı rapçi · liverpool, 2025",
+    "who": "EsDeeKid, İngiltere'nin Liverpool kentinden bir Britanyalı rapçidir. Haziran 2025'te ilk mixtape'i Rebel'i yayımladı ve Birleşik Krallık underground rap sahnesinin öne çıkan isimlerinden biri olarak anılıyor.",
+    "facts": [
+     "Yüzünü bir balaklavayla örtüyor ve adını, görünümünü ve yaşını gizli tutuyor.",
+     "Single'ı \"Phantom\", Mayıs 2026 itibarıyla 300 milyonun üzerinde streaming aldı."
+    ]
+   }
+  },
+  {
+   "id": "e549c96d-b3bd-4e90-93a7-8429a42cace7",
+   "slug": "tiffany-day-halo-tour-europe-a05cd068",
+   "title": "Tiffany Day - HALO TOUR EUROPE",
+   "name": "Tiffany Day",
+   "source_url": "https://en.wikipedia.org/wiki/Tiffany_Day_(musician)",
+   "extract": "Tiffany Day Ruan, is a Canadian-American singer, songwriter, and record producer. Raised in Wichita, Kansas, she began independently releasing music after a 2017 video of her singing into a well in Italy went viral on Twitter. She released her debut studio album, Lover Tofu Fruit, in 2024. She signed to Broke Records the following year, through which she released her second studio album, Halo, in 2026.",
+   "en": {
+    "kicker": "canadian-american singer-songwriter · wichita, kansas",
+    "who": "Tiffany Day Ruan is a Canadian-American singer, songwriter, and record producer. Raised in Wichita, Kansas, she began independently releasing music after a 2017 video of her singing into a well in Italy went viral on Twitter.",
+    "facts": [
+     "She released her debut studio album, Lover Tofu Fruit, in 2024.",
+     "Through Broke Records she released her second studio album, Halo, in 2026."
+    ]
+   },
+   "de": {
+    "kicker": "kanadisch-amerikanische sängerin · wichita, kansas",
+    "who": "Tiffany Day Ruan ist eine kanadisch-amerikanische Sängerin, Songwriterin und Musikproduzentin. In Wichita, Kansas, aufgewachsen, begann sie unabhängig Musik zu veröffentlichen, nachdem ein Video von 2017 mit ihr, wie sie in einen Brunnen in Italien singt, auf Twitter viral ging.",
+    "facts": [
+     "Ihr Debütalbum Lover Tofu Fruit erschien 2024.",
+     "Über Broke Records veröffentlichte sie 2026 ihr zweites Studioalbum Halo."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı-amerikalı şarkıcı-söz yazarı · wichita, kansas",
+    "who": "Tiffany Day Ruan, Kanadalı-Amerikalı bir şarkıcı, söz yazarı ve müzik yapımcısıdır. Kansas'ın Wichita kentinde büyüdü; 2017'de İtalya'da bir kuyuya şarkı söylediği bir videosu Twitter'da viral olduktan sonra bağımsız olarak müzik yayımlamaya başladı.",
+    "facts": [
+     "Debut stüdyo albümü Lover Tofu Fruit'u 2024 yılında yayımladı.",
+     "2026'da Broke Records üzerinden ikinci stüdyo albümü Halo'yu yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "a31d0f09-cf57-4b53-bf47-62a8802c81b0",
+   "slug": "sace6-af270742",
+   "title": "Sace6",
+   "name": "Sace6",
+   "source_url": "https://en.wikipedia.org/wiki/Sace6",
+   "extract": "Sace6 is an American alternative metal duo consisting of lead vocalist Sace and guitarist-vocalist Noah Thomas. Originally the solo project of Sace, the project developed into a duo in 2024. Sonically, their music offers contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation.",
+   "en": {
+    "kicker": "american alternative metal duo · 2024",
+    "who": "Sace6 is an American alternative metal duo consisting of lead vocalist Sace and guitarist-vocalist Noah Thomas. Originally the solo project of Sace, the project developed into a duo in 2024.",
+    "facts": [
+     "Sonically, their music offers contrasting melodic vocals and pop-oriented hooks with heavy guitar-driven instrumentation.",
+     "The project developed into a duo in 2024."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanisches alternative-metal-duo · 2024",
+    "who": "Sace6 ist ein amerikanisches Alternative-Metal-Duo aus dem Leadsänger Sace und dem Gitarristen und Sänger Noah Thomas. Ursprünglich war es das Soloprojekt von Sace, das sich 2024 zu einem Duo entwickelte.",
+    "facts": [
+     "Klanglich verbinden sie kontrastreiche melodische Vocals und poporientierte Hooks mit schwerem, gitarrengetriebenem Sound.",
+     "Das Projekt entwickelte sich 2024 zu einem Duo."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı alternatif metal ikilisi · 2024",
+    "who": "Sace6, baş vokalist Sace ve gitarist-vokalist Noah Thomas'tan oluşan bir Amerikalı alternatif metal ikilisidir. Başlangıçta Sace'in solo projesiydi ve 2024 yılında ikiliye dönüştü.",
+    "facts": [
+     "Müzikleri, ağır gitar odaklı enstrümantasyonla kontrast oluşturan melodik vokaller ve pop odaklı hook'lar sunar.",
+     "Proje 2024 yılında ikiliye dönüştü."
+    ]
+   }
+  },
+  {
+   "id": "a8b5a04d-5ea1-41be-9028-74fa80576f03",
+   "slug": "kodaline-farewell-tour-33a07b1a",
+   "title": "Kodaline - Farewell Tour",
+   "name": "Kodaline",
+   "source_url": "https://en.wikipedia.org/wiki/Kodaline",
+   "extract": "Kodaline are an Irish rock band. Originally known as 21 Demands, the band adopted their current name in 2012 to coincide with the changing of their music. The group comprises Steve Garrigan, Vincent May, Mark Prendergast, and Jason Boland.",
+   "en": {
+    "kicker": "irish rock band · 2012",
+    "who": "Kodaline are an Irish rock band. Originally known as 21 Demands, the band adopted their current name in 2012 to coincide with the changing of their music. The group comprises Steve Garrigan, Vincent May, Mark Prendergast, and Jason Boland.",
+    "facts": [
+     "Originally known as 21 Demands, the band adopted their current name in 2012.",
+     "The group comprises Steve Garrigan, Vincent May, Mark Prendergast, and Jason Boland."
+    ]
+   },
+   "de": {
+    "kicker": "irische rockband · 2012",
+    "who": "Kodaline sind eine irische Rockband, die zuvor als 21 Demands bekannt war. Die Band nahm 2012 ihren heutigen Namen an, um mit dem Wandel ihrer Musik zusammenzufallen. Zur Gruppe gehören Steve Garrigan, Vincent May, Mark Prendergast und Jason Boland.",
+    "facts": [
+     "Ursprünglich nannte sich die Band 21 Demands.",
+     "Die Gruppe besteht aus Steve Garrigan, Vincent May, Mark Prendergast und Jason Boland."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı rock grubu · 2012",
+    "who": "Kodaline, İrlandalı bir rock grubudur. Önceden 21 Demands olarak bilinen grup, 2012 yılında müziğindeki değişimle aynı zamana denk gelecek şekilde bugünkü adını aldı. Grubun üyeleri Steve Garrigan, Vincent May, Mark Prendergast ve Jason Boland'dır.",
+    "facts": [
+     "Grup, 2012 yılında bugünkü adını aldı.",
+     "Grup, başlangıçta 21 Demands adıyla biliniyordu."
+    ]
+   }
+  },
+  {
+   "id": "d8b12bed-a79e-4f6a-89a0-f9e409f54edb",
+   "slug": "ibeyi-5740bc5d",
+   "title": "Ibeyi",
+   "name": "Ibeyi",
+   "source_url": "https://en.wikipedia.org/wiki/Ibeyi",
+   "extract": "Ibeyi is a French musical duo consisting of twin sisters Lisa-Kaindé Diaz and Naomi Diaz. The duo sings in English, French, Spanish and Yoruba, In Yoruba, Ibeyi (Ìbejì) means \"twins\".",
+   "en": {
+    "kicker": "french musical duo · twin sisters",
+    "who": "Ibeyi is a French musical duo consisting of twin sisters Lisa-Kaindé Diaz and Naomi Diaz. The duo sings in English, French, Spanish and Yoruba.",
+    "facts": [
+     "Lisa-Kaindé Diaz and Naomi Diaz are twin sisters.",
+     "In Yoruba, Ibeyi (Ìbejì) means \"twins\"."
+    ]
+   },
+   "de": {
+    "kicker": "französisches musikduo · zwillingsschwestern",
+    "who": "Ibeyi ist ein französisches Musikduo aus den Zwillingsschwestern Lisa-Kaindé Diaz und Naomi Diaz. Das Duo singt auf Englisch, Französisch, Spanisch und Yoruba.",
+    "facts": [
+     "Lisa-Kaindé Diaz und Naomi Diaz sind Zwillingsschwestern.",
+     "Auf Yoruba bedeutet Ibeyi (Ìbejì) „Zwillinge“."
+    ]
+   },
+   "tr": {
+    "kicker": "fransız müzik ikilisi · ikiz kardeşler",
+    "who": "Ibeyi, ikiz kardeşler Lisa-Kaindé Diaz ve Naomi Diaz'dan oluşan bir Fransız müzik ikilisidir. İkili İngilizce, Fransızca, İspanyolca ve Yoruba dillerinde şarkı söyler.",
+    "facts": [
+     "Lisa-Kaindé Diaz ve Naomi Diaz ikiz kız kardeştir.",
+     "Yoruba dilinde Ibeyi (Ìbejì) \"ikizler\" anlamına gelir."
+    ]
+   }
+  },
+  {
+   "id": "e74fe3f0-021c-4e99-907e-9526436c8ee0",
+   "slug": "mico-in-between-tour-59572136",
+   "title": "MICO - IN:BETWEEN TOUR",
+   "name": "Mico",
+   "source_url": "https://en.wikipedia.org/wiki/Mico_(singer)",
+   "extract": "Jose Miguel Veloso, known professionally as Mico, is a Canadian singer-songwriter and musician from Toronto. He initially grew a fanbase online through Discord and Twitch, breaking out commercially with his 2022 single \"cut my hair\", which became a top-30 radio hit in Canada. In 2025, he signed with Columbia Records following a string of independent extended plays.",
+   "en": {
+    "kicker": "canadian singer-songwriter · toronto",
+    "who": "Jose Miguel Veloso, known professionally as Mico, is a Canadian singer-songwriter and musician from Toronto. He initially grew a fanbase online through Discord and Twitch.",
+    "facts": [
+     "He broke out commercially with his 2022 single \"cut my hair\", which became a top-30 radio hit in Canada.",
+     "In 2025, he signed with Columbia Records following a string of independent extended plays."
+    ]
+   },
+   "de": {
+    "kicker": "kanadischer singer-songwriter · toronto",
+    "who": "Jose Miguel Veloso, unter dem Künstlernamen Mico bekannt, ist ein kanadischer Singer-Songwriter und Musiker aus Toronto. Zunächst baute er über Discord und Twitch eine Fanbase im Netz auf.",
+    "facts": [
+     "Mit seiner Single „cut my hair“ aus dem Jahr 2022 brach er kommerziell durch; sie wurde in Kanada ein Top-30-Radiohit.",
+     "Im Jahr 2025 unterschrieb er bei Columbia Records, nachdem er eine Reihe unabhängiger EPs veröffentlicht hatte."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı şarkıcı-söz yazarı · toronto",
+    "who": "Jose Miguel Veloso, sahne adıyla Mico, Toronto'dan bir Kanadalı şarkıcı-söz yazarı ve müzisyendir. Önce Discord ve Twitch üzerinden çevrimiçi bir hayran kitlesi oluşturdu.",
+    "facts": [
+     "2022 yılındaki \"cut my hair\" single'ı ile ticari anlamda çıkış yaptı; bu şarkı Kanada'da ilk 30 radyo hiti oldu.",
+     "2025 yılında, bir dizi bağımsız EP'nin ardından Columbia Records ile anlaşma imzaladı."
+    ]
+   }
+  }
+ ]
+}

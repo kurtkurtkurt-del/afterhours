@@ -1,0 +1,582 @@
+{
+ "city": "monterrey",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "0955b8e4-e143-4717-b529-cead80a76519",
+   "slug": "panteon-rococo-d7aa3564",
+   "title": "Panteon Rococo",
+   "name": "Panteón Rococó",
+   "source_url": "https://en.wikipedia.org/wiki/Pante%C3%B3n_Rococ%C3%B3",
+   "extract": "Panteón Rococó is a ska band from Mexico City founded in 1995. Despite flourishing black markets, they have sold thousands of records. Their name is taken from the play El cocodrilo solitario del panteón rococó by the Mexican playwright Hugo Argüelles. Since early in their musical career they have regularly toured Europe, especially Germany, where they were represented by the now-defunct independent label Übersee Records.",
+   "en": {
+    "kicker": "mexican ska band · mexico city, 1995",
+    "who": "Panteón Rococó is a ska band from Mexico City founded in 1995. Their name is taken from the play El cocodrilo solitario del panteón rococó by the Mexican playwright Hugo Argüelles.",
+    "facts": [
+     "Despite flourishing black markets, they have sold thousands of records.",
+     "Since early in their musical career they have regularly toured Europe, especially Germany, where they were represented by the now-defunct independent label Übersee Records."
+    ]
+   },
+   "de": {
+    "kicker": "mexikanische ska-band · mexiko-stadt, 1995",
+    "who": "Panteón Rococó ist eine Ska-Band aus Mexiko-Stadt, die 1995 gegründet wurde. Ihr Name stammt von dem Stück El cocodrilo solitario del panteón rococó des mexikanischen Dramatikers Hugo Argüelles.",
+    "facts": [
+     "Trotz florierender Schwarzmärkte haben sie tausende Platten verkauft.",
+     "Seit den Anfängen ihrer Karriere touren sie regelmäßig durch Europa, besonders in Deutschland, wo sie vom inzwischen aufgelösten Indie-Label Übersee Records vertreten wurden."
+    ]
+   },
+   "tr": {
+    "kicker": "meksikalı ska grubu · meksiko şehri, 1995",
+    "who": "Panteón Rococó, 1995'te kurulmuş, Meksiko Şehri'nden bir ska grubudur. Adı, Meksikalı oyun yazarı Hugo Argüelles'in El cocodrilo solitario del panteón rococó oyunundan alınmıştır.",
+    "facts": [
+     "Gelişen karaborsaya rağmen binlerce plak sattılar.",
+     "Müzik kariyerlerinin başından beri düzenli olarak Avrupa'yı, özellikle de Almanya'yı turneye çıktılar; Almanya'da bugün faaliyeti sona ermiş bağımsız Übersee Records etiketi tarafından temsil ediliyorlardı."
+    ]
+   }
+  },
+  {
+   "id": "b9013c60-2250-4d9e-8a9d-d2bd8ebab802",
+   "slug": "intocable-79402bed",
+   "title": "Intocable",
+   "name": "Intocable",
+   "source_url": "https://en.wikipedia.org/wiki/Intocable",
+   "extract": "Intocable is an American band from Zapata, Texas, that plays regional Mexican music; specializing in norteño and tejano music. It was started by friends Ricardo Javier Muñoz and René Orlando Martínez in the early 1990s. In a few years, Intocable fused the genres Tejano and Norteño with a musical signature that fused Tejano's robust conjunto and Norteño folk rhythms with a pop balladry. Intocable is perhaps the most influential group in Tejano and their Tejano/Norteño fusion has become the blueprint for several Tejano bands. The group's style combines romantic, hooky melodies, tight instrumentation and vocal harmony.",
+   "en": {
+    "kicker": "american tejano and norteño band · zapata, texas",
+    "who": "Intocable is an American band from Zapata, Texas, that plays regional Mexican music, specializing in norteño and tejano music. It was started by friends Ricardo Javier Muñoz and René Orlando Martínez in the early 1990s.",
+    "facts": [
+     "Intocable is perhaps the most influential group in Tejano and their Tejano/Norteño fusion has become the blueprint for several Tejano bands.",
+     "The group's style combines romantic, hooky melodies, tight instrumentation and vocal harmony."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische tejano- und norteño-band · zapata, texas",
+    "who": "Intocable ist eine amerikanische Band aus Zapata, Texas, die regionale mexikanische Musik spielt, vor allem Norteño und Tejano. Gegründet wurde sie Anfang der 1990er Jahre von den Freunden Ricardo Javier Muñoz und René Orlando Martínez.",
+    "facts": [
+     "Intocable gilt vielleicht als die einflussreichste Gruppe im Tejano, und ihre Verbindung von Tejano und Norteño ist zur Blaupause für zahlreiche Tejano-Bands geworden.",
+     "Der Stil der Gruppe verbindet romantische, eingängige Melodien mit präziser Instrumentierung und mehrstimmigem Gesang."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı tejano ve norteño grubu · zapata, texas",
+    "who": "Intocable, Zapata, Texas'tan bir Amerikan grubudur ve bölgesel Meksika müziği çalar; özellikle norteño ve tejano müziğinde uzmanlaşmıştır. 1990'ların başında arkadaşlar Ricardo Javier Muñoz ve René Orlando Martínez tarafından kuruldu.",
+    "facts": [
+     "Intocable, Tejano alanındaki belki de en etkili gruptur ve Tejano/Norteño füzyonu birçok Tejano grubu için model oluşturmuştur.",
+     "Grubun tarzı romantik, akılda kalıcı melodileri sıkı enstrümantasyon ve vokal uyumla birleştirir."
+    ]
+   }
+  },
+  {
+   "id": "8566bd3b-0978-4481-bdaf-08658ca20bb1",
+   "slug": "andres-calamaro-ad6592e4",
+   "title": "Andrés Calamaro",
+   "name": "Andrés Calamaro",
+   "source_url": "https://en.wikipedia.org/wiki/Andr%C3%A9s_Calamaro",
+   "extract": "Andrés Calamaro is an Argentine musician, composer and Latin Grammy winner. He is considered one of the greatest and most influential rock artists in Spanish. He is also one of the most complete artists for his wide range of musical styles, including funk, reggae, ballads, boleros, tangos and jazz. His former band Los Rodríguez was a major success in Spain and throughout Latin America mainly during the 1990s. He is multi-instrumentalist and became one of the main icons of Argentine rock, selling over 1.3 million records to date.",
+   "en": {
+    "kicker": "argentine musician and composer · latin grammy winner",
+    "who": "Andrés Calamaro is an Argentine musician, composer and Latin Grammy winner. He is considered one of the greatest and most influential rock artists in Spanish.",
+    "facts": [
+     "His former band Los Rodríguez was a major success in Spain and throughout Latin America mainly during the 1990s.",
+     "He is multi-instrumentalist and became one of the main icons of Argentine rock, selling over 1.3 million records to date."
+    ]
+   },
+   "de": {
+    "kicker": "argentinischer musiker und komponist · latin grammy",
+    "who": "Andrés Calamaro ist ein argentinischer Musiker, Komponist und Gewinner eines Latin Grammys. Er gilt als einer der größten und einflussreichsten Rockkünstler in spanischer Sprache.",
+    "facts": [
+     "Seine frühere Band Los Rodríguez war vor allem in den 1990er Jahren ein großer Erfolg in Spanien und in ganz Lateinamerika.",
+     "Er spielt mehrere Instrumente und wurde zu einer der wichtigsten Ikonen des argentinischen Rock, mit bislang über 1,3 Millionen verkauften Tonträgern."
+    ]
+   },
+   "tr": {
+    "kicker": "arjantinli müzisyen ve besteci · latin grammy ödüllü",
+    "who": "Andrés Calamaro, Arjantinli bir müzisyen, besteci ve Latin Grammy ödüllü bir sanatçıdır. İspanyolca rock'ın en büyük ve en etkili isimlerinden biri olarak kabul edilir.",
+    "facts": [
+     "Eski grubu Los Rodríguez, özellikle 1990'larda İspanya'da ve tüm Latin Amerika'da büyük bir başarı elde etti.",
+     "Çok enstrümanlı bir müzisyen olan Calamaro, Arjantin rock'ının başlıca ikonlarından biri oldu ve bugüne dek 1,3 milyondan fazla plak sattı."
+    ]
+   }
+  },
+  {
+   "id": "bc56fdf7-658e-4fe6-9d7c-a561a9af3735",
+   "slug": "zz-top-ab854e04",
+   "title": "ZZ Top",
+   "name": "ZZ Top",
+   "source_url": "https://en.wikipedia.org/wiki/ZZ_Top",
+   "extract": "ZZ Top is an American rock band formed in Houston, Texas, in 1969. For five decades, the band had consisted of vocalist-guitarist Billy Gibbons, drummer Frank Beard and bassist-vocalist Dusty Hill, until Hill's death in 2021 and Beard's death in 2026. ZZ Top developed a signature sound based on Gibbons' blues style and Hill and Beard's rhythm section. They are known for their live performances, sly and humorous lyrics, and the matching appearances of Gibbons and Hill, who wore sunglasses, hats, and long beards.",
+   "en": {
+    "kicker": "american rock band · houston, texas, 1969",
+    "who": "ZZ Top is an American rock band formed in Houston, Texas, in 1969. The band developed a signature sound based on Gibbons' blues style and Hill and Beard's rhythm section.",
+    "facts": [
+     "For five decades, the band had consisted of vocalist-guitarist Billy Gibbons, drummer Frank Beard and bassist-vocalist Dusty Hill, until Hill's death in 2021 and Beard's death in 2026.",
+     "They are known for their live performances, sly and humorous lyrics, and the matching appearances of Gibbons and Hill, who wore sunglasses, hats, and long beards."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · houston, texas, 1969",
+    "who": "ZZ Top ist eine amerikanische Rockband, die 1969 in Houston, Texas, gegründet wurde. Ihr Klang basiert auf dem Bluesstil von Billy Gibbons und dem Rhythmusteam von Dusty Hill und Frank Beard.",
+    "facts": [
+     "Fünf Jahrzehnte lang bestand die Band aus Sänger und Gitarrist Billy Gibbons, Schlagzeuger Frank Beard und Bassist und Sänger Dusty Hill, bis Hill 2021 und Beard 2026 starb.",
+     "Bekannt ist die Band für ihre Live-Auftritte, ihre verschmitzten, humorvollen Texte und den passenden Look von Gibbons und Hill, die Sonnenbrillen, Hüte und lange Bärte trugen."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · houston, texas, 1969",
+    "who": "ZZ Top, 1969'da Houston, Texas'ta kurulmuş Amerikalı bir rock grubudur. Grup, Gibbons'ın blues tarzına ve Hill ile Beard'ın ritim bölümüne dayanan kendine özgü bir sound geliştirdi.",
+    "facts": [
+     "Beş on yıl boyunca grup; vokal ve gitarda Billy Gibbons, davulda Frank Beard ve bas ile vokalde Dusty Hill'den oluştu; Hill 2021'de, Beard ise 2026'da hayatını kaybetti.",
+     "Grup canlı performanslarıyla, kurnaz ve mizahi sözleriyle ve Gibbons ile Hill'in güneş gözlüğü, şapka ve uzun sakallarla uyumlu görünümleriyle tanınır."
+    ]
+   }
+  },
+  {
+   "id": "f75b5421-e2fe-47a7-997b-e2c1ee7a86aa",
+   "slug": "dimash-qudaibergen-48caf762",
+   "title": "Dimash Qudaibergen",
+   "name": "Dimash Qudaibergen",
+   "source_url": "https://en.wikipedia.org/wiki/Dimash_Qudaibergen",
+   "extract": "Dinmukhammed Qanatuly Qudaibergen, known professionally as Dimash Qudaibergen and mononymously as Dimash, is a Kazakh singer, songwriter, and multi-instrumentalist. He is university-trained in classical as well as contemporary music, and is known for his exceptionally wide vocal range. He has performed songs in 16 languages.",
+   "en": {
+    "kicker": "kazakh singer and songwriter · 16 languages",
+    "who": "Dinmukhammed Qanatuly Qudaibergen, known professionally as Dimash Qudaibergen, is a Kazakh singer, songwriter, and multi-instrumentalist. He is university-trained in classical as well as contemporary music.",
+    "facts": [
+     "He is known for his exceptionally wide vocal range.",
+     "He has performed songs in 16 languages."
+    ]
+   },
+   "de": {
+    "kicker": "kasachischer sänger und songwriter · 16 sprachen",
+    "who": "Dinmukhammed Qanatuly Qudaibergen, bekannt als Dimash Qudaibergen, ist ein kasachischer Sänger, Songwriter und Multiinstrumentalist. Er hat eine Universitätsausbildung in klassischer wie in zeitgenössischer Musik.",
+    "facts": [
+     "Er ist für seinen außergewöhnlich großen Stimmumfang bekannt.",
+     "Er hat Lieder in 16 Sprachen gesungen."
+    ]
+   },
+   "tr": {
+    "kicker": "kazaklı şarkıcı ve söz yazarı · 16 dil",
+    "who": "Dinmukhammed Qanatuly Qudaibergen, sahne adıyla Dimash Qudaibergen, Kazaklı bir şarkıcı, söz yazarı ve çok enstrümanlı bir müzisyendir. Hem klasik hem çağdaş müzik alanında üniversite eğitimi almıştır.",
+    "facts": [
+     "Olağanüstü geniş vokal aralığıyla tanınır.",
+     "16 farklı dilde şarkılar seslendirmiştir."
+    ]
+   }
+  },
+  {
+   "id": "d864537e-f35c-4edf-a551-1ee1d04dbe69",
+   "slug": "mon-laferte-29eb4d2d",
+   "title": "Mon Laferte",
+   "name": "Mon Laferte",
+   "source_url": "https://en.wikipedia.org/wiki/Mon_Laferte",
+   "extract": "Norma Montserrat Bustamante Laferte, known professionally as Mon Laferte, is a Chilean and Mexican singer-songwriter. Recognized for her versatility, her musical style spans a wide array of genres, including pop, alternative, bolero, cumbia, and salsa. She rose to international prominence in the 2010s, particularly for her melodramatic vocals and theatrical stage presence. In 2025, Billboard named her one of the greatest female Latin pop artists of all time.",
+   "en": {
+    "kicker": "chilean-mexican singer-songwriter · 2010s",
+    "who": "Norma Montserrat Bustamante Laferte, known professionally as Mon Laferte, is a Chilean and Mexican singer-songwriter. Her musical style spans a wide array of genres, including pop, alternative, bolero, cumbia, and salsa.",
+    "facts": [
+     "She rose to international prominence in the 2010s, particularly for her melodramatic vocals and theatrical stage presence.",
+     "In 2025, Billboard named her one of the greatest female Latin pop artists of all time."
+    ]
+   },
+   "de": {
+    "kicker": "chilenisch-mexikanische singer-songwriterin · 2010er",
+    "who": "Norma Montserrat Bustamante Laferte, bekannt als Mon Laferte, ist eine chilenisch-mexikanische Singer-Songwriterin. Ihr Stil umfasst viele Genres, darunter Pop, Alternative, Bolero, Cumbia und Salsa.",
+    "facts": [
+     "In den 2010er Jahren wurde sie international bekannt, vor allem für ihren melodramatischen Gesang und ihre theatralische Bühnenpräsenz.",
+     "Im Jahr 2025 zählte Billboard sie zu den größten weiblichen Latin-Pop-Künstlerinnen aller Zeiten."
+    ]
+   },
+   "tr": {
+    "kicker": "şilili-meksikalı şarkıcı ve söz yazarı · 2010'lar",
+    "who": "Norma Montserrat Bustamante Laferte, sahne adıyla Mon Laferte, Şilili-Meksikalı bir şarkıcı ve söz yazarıdır. Pop, alternatif, bolero, cumbia ve salsa dahil geniş bir tür yelpazesinde müzik yapar.",
+    "facts": [
+     "2010'lu yıllarda, özellikle melodramatik vokali ve tiyatral sahne performansıyla uluslararası üne kavuştu.",
+     "2025'te Billboard, onu tüm zamanların en büyük Latin pop kadın sanatçılarından biri olarak gösterdi."
+    ]
+   }
+  },
+  {
+   "id": "f8f6aec7-368b-4c5d-8e2f-3a09c577d44b",
+   "slug": "lp-1e4e2ac2",
+   "title": "LP",
+   "name": "LP",
+   "source_url": "https://en.wikipedia.org/wiki/LP_(singer)",
+   "extract": "Laura Pergolizzi, known professionally as LP, is an American singer, musician and songwriter from Brooklyn, New York. LP has released seven albums and three EPs. LP has written songs for other artists including Rihanna, Christina Aguilera, the Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd and Céline Dion.",
+   "en": {
+    "kicker": "american singer-songwriter · brooklyn, new york",
+    "who": "Laura Pergolizzi, known professionally as LP, is an American singer, musician and songwriter from Brooklyn, New York. LP has released seven albums and three EPs.",
+    "facts": [
+     "LP has written songs for other artists including Rihanna, Christina Aguilera, the Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd and Céline Dion.",
+     "LP has released seven albums and three EPs."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · brooklyn",
+    "who": "Laura Pergolizzi, bekannt als LP, ist ein amerikanischer Singer-Songwriter aus Brooklyn, New York. Bislang sind sieben Alben und drei EPs erschienen.",
+    "facts": [
+     "LP hat Songs für andere Künstler geschrieben, darunter Rihanna, Christina Aguilera, die Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd und Céline Dion.",
+     "Die Veröffentlichungen umfassen sieben Alben und drei EPs."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı singer-songwriter · brooklyn, new york",
+    "who": "Laura Pergolizzi, sahne adıyla LP, New York'un Brooklyn semtinden Amerikalı bir şarkıcı, müzisyen ve söz yazarıdır. LP yedi albüm ve üç EP yayımlamıştır.",
+    "facts": [
+     "LP, Rihanna, Christina Aguilera, Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd ve Céline Dion gibi sanatçılar için şarkılar yazmıştır.",
+     "Yedi albüm ve üç EP yayımlamıştır."
+    ]
+   }
+  },
+  {
+   "id": "a98f1a41-df93-40b6-a743-071156f9c4b2",
+   "slug": "trueno-37987217",
+   "title": "Trueno",
+   "name": "Trueno",
+   "source_url": "https://en.wikipedia.org/wiki/Trueno_(rapper)",
+   "extract": "Mateo Palacios Corazzina, better known by the stage name Trueno, is an Argentine rapper, singer and songwriter. An established figure in the urban music scene of Argentina, his music combines Latin hip-hop and trap with elements of reggaeton, R&B, pop, rock, and the stylings of classic hip-hop.",
+   "en": {
+    "kicker": "argentine rapper and singer · urban music scene",
+    "who": "Mateo Palacios Corazzina, better known by the stage name Trueno, is an Argentine rapper, singer and songwriter. He is an established figure in the urban music scene of Argentina.",
+    "facts": [
+     "An established figure in the urban music scene of Argentina.",
+     "His music combines Latin hip-hop and trap with elements of reggaeton, R&B, pop, rock, and the stylings of classic hip-hop."
+    ]
+   },
+   "de": {
+    "kicker": "argentinischer rapper und sänger · urbane musikszene",
+    "who": "Mateo Palacios Corazzina, bekannt unter dem Künstlernamen Trueno, ist ein argentinischer Rapper, Sänger und Songwriter. Er ist eine etablierte Größe der urbanen Musikszene Argentiniens.",
+    "facts": [
+     "Seine Musik verbindet Latin Hip-Hop und Trap mit Elementen aus Reggaeton, R&B, Pop, Rock und dem Stil des klassischen Hip-Hop.",
+     "Er ist eine etablierte Größe der urbanen Musikszene Argentiniens."
+    ]
+   },
+   "tr": {
+    "kicker": "arjantinli rapçi ve şarkıcı · urban müzik sahnesi",
+    "who": "Mateo Palacios Corazzina, Trueno sahne adıyla bilinen, Arjantinli bir rapçi, şarkıcı ve söz yazarıdır. Arjantin'in urban müzik sahnesinin köklü isimlerinden biridir.",
+    "facts": [
+     "Müziği Latin hip-hop ve trap'i reggaeton, R&B, pop, rock ve klasik hip-hop tarzı öğelerle harmanlar.",
+     "Arjantin'in urban müzik sahnesinde yerleşmiş bir isimdir."
+    ]
+   }
+  },
+  {
+   "id": "437214c9-81b3-4337-970e-a8aeea8a7408",
+   "slug": "caifanes-0f2e8886",
+   "title": "Caifanes",
+   "name": "Caifanes",
+   "source_url": "https://en.wikipedia.org/wiki/Caifanes",
+   "extract": "Caifanes is a Mexican rock band formed in Mexico City in 1986. The group achieved commercial success during the late 1980s and early 1990s. The original lineup of members consisted of Saúl Hernández, Sabo Romo (bass), Alfonso André (drums) and Diego Herrera. Alejandro Marcovich later joined as lead guitarist. Caifanes' style can be described as a hybrid of British new wave, progressive rock and Latin percussion underscored by deep, somber and Latin, Mexican Spanish-influenced lyrics and the vocal style of Saúl Hernández. Members of Caifanes have cited The Cure, The Beatles and King Crimson as major influences. Adrian Belew produced their third studio album, El Silencio, and made a guest",
+   "en": {
+    "kicker": "mexican rock band · mexico city, 1986",
+    "who": "Caifanes is a Mexican rock band formed in Mexico City in 1986. Their style can be described as a hybrid of British new wave, progressive rock and Latin percussion.",
+    "facts": [
+     "Members of Caifanes have cited The Cure, The Beatles and King Crimson as major influences.",
+     "The group achieved commercial success during the late 1980s and early 1990s."
+    ]
+   },
+   "de": {
+    "kicker": "mexikanische rockband · mexiko-stadt, 1986",
+    "who": "Caifanes ist eine mexikanische Rockband, die 1986 in Mexiko-Stadt gegründet wurde. Ihr Stil lässt sich als Mischung aus britischem New Wave, Progressive Rock und lateinamerikanischer Percussion beschreiben.",
+    "facts": [
+     "Mitglieder von Caifanes nennen The Cure, The Beatles und King Crimson als wichtige Einflüsse.",
+     "Den kommerziellen Erfolg hatte die Gruppe in den späten 1980er und frühen 1990er Jahren."
+    ]
+   },
+   "tr": {
+    "kicker": "meksikalı rock grubu · meksiko şehri, 1986",
+    "who": "Caifanes, 1986'da Meksiko Şehri'nde kurulmuş Meksikalı bir rock grubudur. Tarzı, İngiliz new wave'i, progresif rock ve Latin perküsyonunun bir karışımı olarak tanımlanabilir.",
+    "facts": [
+     "Caifanes üyeleri The Cure, The Beatles ve King Crimson'u başlıca etkileri olarak gösterdi.",
+     "Grup, 1980'lerin sonu ve 1990'ların başında ticari başarı elde etti."
+    ]
+   }
+  },
+  {
+   "id": "89ae2a57-46b4-4d87-a558-9e5dd5ee77a7",
+   "slug": "enjambre-5a1280b3",
+   "title": "Enjambre",
+   "name": "Enjambre",
+   "source_url": "https://en.wikipedia.org/wiki/Enjambre",
+   "extract": "Enjambre is a Mexican indie rock band. It is composed of brothers Luis Humberto, Rafael (bass), and Julián Navejas, their cousin Isaac Navejas (guitar), and Ángel Sánchez (drums). Enjambre started in Fresnillo, Zacatecas, consolidated as a group in Santa Ana, California, and later continued developing in Fresnillo, Zacatecas, starting professional recordings in 2005.",
+   "en": {
+    "kicker": "mexican indie rock band · fresnillo, zacatecas",
+    "who": "Enjambre is a Mexican indie rock band that started in Fresnillo, Zacatecas. Its members are brothers Luis Humberto, Rafael (bass), and Julián Navejas, their cousin Isaac Navejas (guitar), and Ángel Sánchez (drums).",
+    "facts": [
+     "Enjambre started in Fresnillo, Zacatecas, consolidated as a group in Santa Ana, California, and later continued developing in Fresnillo, Zacatecas, starting professional recordings in 2005.",
+     "It is composed of brothers Luis Humberto, Rafael (bass), and Julián Navejas, their cousin Isaac Navejas (guitar), and Ángel Sánchez (drums)."
+    ]
+   },
+   "de": {
+    "kicker": "mexikanische indie-rockband · fresnillo, zacatecas",
+    "who": "Enjambre ist eine mexikanische Indie-Rockband. Zu ihr gehören die Brüder Luis Humberto, Rafael am Bass und Julián Navejas, ihr Cousin Isaac Navejas an der Gitarre sowie Ángel Sánchez am Schlagzeug.",
+    "facts": [
+     "Enjambre begann in Fresnillo in Zacatecas, festigte sich als Gruppe in Santa Ana in Kalifornien und entwickelte sich später in Fresnillo weiter.",
+     "Professionelle Aufnahmen begannen 2005."
+    ]
+   },
+   "tr": {
+    "kicker": "meksikalı indie rock grubu · fresnillo, zacatecas",
+    "who": "Enjambre, Meksikalı bir indie rock grubudur. Grubun üyeleri kardeşler Luis Humberto, Rafael (bas) ve Julián Navejas, kuzenleri Isaac Navejas (gitar) ve Ángel Sánchez'dir (davul).",
+    "facts": [
+     "Enjambre, Fresnillo, Zacatecas'ta başladı, Santa Ana, California'da grup olarak pekişti ve daha sonra yeniden Fresnillo'da gelişti.",
+     "Profesyonel kayıtlara 2005'te başladılar."
+    ]
+   }
+  },
+  {
+   "id": "488ac398-f61d-4787-8d9a-409042214245",
+   "slug": "apocalyptica-ee337ca9",
+   "title": "Apocalyptica",
+   "name": "Apocalyptica",
+   "source_url": "https://en.wikipedia.org/wiki/Apocalyptica",
+   "extract": "Apocalyptica is a Finnish symphonic metal band from Helsinki, formed in 1993. The band is currently composed of three classically trained cellists Eicca Toppinen, Paavo Lötjönen, and Perttu Kivilaakso. Originally a classical-style Metallica tribute band, the band eventually adopted a neoclassical metal style without the use of conventional guitars and bass. They have sold over four million albums to date.",
+   "en": {
+    "kicker": "finnish symphonic metal band · helsinki, 1993",
+    "who": "Apocalyptica is a Finnish symphonic metal band from Helsinki, formed in 1993. The band is currently composed of three classically trained cellists, Eicca Toppinen, Paavo Lötjönen, and Perttu Kivilaakso.",
+    "facts": [
+     "Originally a classical-style Metallica tribute band, the band eventually adopted a neoclassical metal style without the use of conventional guitars and bass.",
+     "They have sold over four million albums to date."
+    ]
+   },
+   "de": {
+    "kicker": "finnische symphonic-metal-band · helsinki, 1993",
+    "who": "Apocalyptica ist eine finnische Symphonic-Metal-Band aus Helsinki, die 1993 gegründet wurde. Derzeit besteht sie aus drei klassisch ausgebildeten Cellisten: Eicca Toppinen, Paavo Lötjönen und Perttu Kivilaakso.",
+    "facts": [
+     "Ursprünglich eine Metallica-Tribute-Band im klassischen Stil, entwickelte sich die Band später zu einem neoklassischen Metal ohne herkömmliche Gitarren und Bass.",
+     "Bis heute hat die Band über vier Millionen Alben verkauft."
+    ]
+   },
+   "tr": {
+    "kicker": "fin senfonik metal grubu · helsinki, 1993",
+    "who": "Apocalyptica, 1993'te kurulmuş, Helsinki'den bir Fin senfonik metal grubudur. Grup bugün klasik eğitimli üç viyolonselciden oluşur: Eicca Toppinen, Paavo Lötjönen ve Perttu Kivilaakso.",
+    "facts": [
+     "Başlangıçta klasik tarzda bir Metallica tribute grubuyken, zamanla geleneksel gitar ve bas kullanmadan neoklasik metal tarzını benimsedi.",
+     "Bugüne kadar dört milyondan fazla albüm sattılar."
+    ]
+   }
+  },
+  {
+   "id": "4f84231c-1c06-4d0c-9246-98cf21a95c58",
+   "slug": "pitbull-i-m-back-519f7f02",
+   "title": "Pitbull: I'm Back",
+   "name": "Pitbull",
+   "source_url": "https://en.wikipedia.org/wiki/Pitbull_(rapper)",
+   "extract": "Armando Christian Pérez, known professionally as Pitbull, is an American rapper, singer, songwriter, and actor. He began his career in the early 2000s as a reggaeton, Latin hip-hop, and crunk performer, and signed with TVT Records to release his debut album, M.I.A.M.I. (2004). Executive produced by Lil Jon, the album entered the Billboard 200 along with his second and third albums, El Mariel (2006) and The Boatlift (2007). His fourth album, Pitbull Starring in Rebelution (2009), yielded his mainstream breakthrough, spawning the singles \"I Know You Want Me \" and \"Hotel Room Service\"—which peaked at numbers two and eight on the U.S. Billboard Hot 100, respectively.",
+   "en": {
+    "kicker": "american rapper and actor · 2004",
+    "who": "Armando Christian Pérez, known professionally as Pitbull, is an American rapper, singer, songwriter, and actor. He began his career in the early 2000s as a reggaeton, Latin hip-hop, and crunk performer.",
+    "facts": [
+     "He signed with TVT Records to release his debut album, M.I.A.M.I. (2004).",
+     "His fourth album, Pitbull Starring in Rebelution (2009), yielded his mainstream breakthrough."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper und schauspieler · 2004",
+    "who": "Armando Christian Pérez, bekannt als Pitbull, ist ein amerikanischer Rapper, Sänger, Songwriter und Schauspieler. Anfang der 2000er Jahre begann er seine Karriere als Künstler für Reggaeton, Latin Hip-Hop und Crunk.",
+    "facts": [
+     "Er unterschrieb bei TVT Records, um sein Debütalbum M.I.A.M.I. (2004) zu veröffentlichen.",
+     "Sein viertes Album, Pitbull Starring in Rebelution (2009), brachte ihm den Durchbruch im Mainstream."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi ve oyuncu · 2004",
+    "who": "Armando Christian Pérez, sahne adıyla Pitbull, Amerikalı bir rapçi, şarkıcı, söz yazarı ve oyuncudur. 2000'lerin başında reggaeton, Latin hip-hop ve crunk alanında sanatçı olarak kariyerine başladı.",
+    "facts": [
+     "Debut albümü M.I.A.M.I. (2004) için TVT Records ile anlaşma imzaladı.",
+     "Dördüncü albümü Pitbull Starring in Rebelution (2009), onun ana akım çıkışını sağladı."
+    ]
+   }
+  },
+  {
+   "id": "809b9ab8-94a0-4c03-8491-95f98ef3aa22",
+   "slug": "jorge-drexler-c5c2c5e9",
+   "title": "Jorge Drexler",
+   "name": "Jorge Drexler",
+   "source_url": "https://en.wikipedia.org/wiki/Jorge_Drexler",
+   "extract": "Jorge Abner Drexler Prada is a Uruguayan musician, actor and medical doctor. Drexler won the 2005 Academy Award for Best Original Song for \"Al Otro Lado del Río\" from The Motorcycle Diaries, becoming the first Uruguayan to win an Oscar and marking the first time a Spanish-language song received the award.",
+   "en": {
+    "kicker": "uruguayan musician · academy award, 2005",
+    "who": "Jorge Abner Drexler Prada is a Uruguayan musician, actor and medical doctor. He is known for a song that won an Academy Award.",
+    "facts": [
+     "Drexler won the 2005 Academy Award for Best Original Song for \"Al Otro Lado del Río\" from The Motorcycle Diaries, becoming the first Uruguayan to win an Oscar and marking the first time a Spanish-language song received the award.",
+     "He is a Uruguayan musician, actor and medical doctor."
+    ]
+   },
+   "de": {
+    "kicker": "uruguayischer musiker · oscar, 2005",
+    "who": "Jorge Abner Drexler Prada ist ein uruguayischer Musiker, Schauspieler und Arzt. Er ist für einen Song bekannt, der mit einem Oscar ausgezeichnet wurde.",
+    "facts": [
+     "Drexler gewann 2005 den Oscar für den besten Original-Song mit „Al Otro Lado del Río“ aus The Motorcycle Diaries und wurde damit der erste Uruguayer, der einen Oscar gewann.",
+     "Es war das erste Mal, dass ein spanischsprachiger Song diese Auszeichnung erhielt."
+    ]
+   },
+   "tr": {
+    "kicker": "uruguaylı müzisyen · oscar, 2005",
+    "who": "Jorge Abner Drexler Prada, Uruguaylı bir müzisyen, oyuncu ve hekimdir. Akademi Ödülü kazanan bir şarkıyla tanınır.",
+    "facts": [
+     "Drexler, The Motorcycle Diaries filminden \"Al Otro Lado del Río\" şarkısıyla 2005 Akademi Ödülü'nü, En İyi Orijinal Şarkı dalında kazandı ve ilk Uruguaylı Oscar sahibi oldu.",
+     "Bu ödül, İspanyolca bir şarkının ilk kez bu ödülü kazanmasıyla da bir ilkti."
+    ]
+   }
+  },
+  {
+   "id": "af246d9a-ebad-48e3-abe2-a91abe46d71b",
+   "slug": "foreigner-d60434e3",
+   "title": "Foreigner",
+   "name": "Foreigner",
+   "source_url": "https://en.wikipedia.org/wiki/Foreigner_(band)",
+   "extract": "Foreigner is a British-American rock band formed in New York City in 1976. The band's original lineup consisted of vocalist Lou Gramm, guitarist Mick Jones, drummer Dennis Elliott, keyboardist Al Greenwood, multi-instrumentalist Ian McDonald and bassist Ed Gagliardi. Gagliardi was replaced by Rick Wills in 1979. Foreigner is one of the best-selling bands of all time, with worldwide sales exceeding 80 million records, including 38 million in the US.",
+   "en": {
+    "kicker": "british-american rock band · new york city, 1976",
+    "who": "Foreigner is a British-American rock band formed in New York City in 1976. The band's original lineup consisted of vocalist Lou Gramm, guitarist Mick Jones, drummer Dennis Elliott, keyboardist Al Greenwood, multi-instrumentalist Ian McDonald and bassist Ed Gagliardi.",
+    "facts": [
+     "Foreigner is one of the best-selling bands of all time, with worldwide sales exceeding 80 million records, including 38 million in the US.",
+     "Gagliardi was replaced by Rick Wills in 1979."
+    ]
+   },
+   "de": {
+    "kicker": "britisch-amerikanische rockband · new york city, 1976",
+    "who": "Foreigner ist eine britisch-amerikanische Rockband, die 1976 in New York City gegründet wurde. Zur ursprünglichen Besetzung gehörten Sänger Lou Gramm, Gitarrist Mick Jones, Schlagzeuger Dennis Elliott, Keyboarder Al Greenwood, Multiinstrumentalist Ian McDonald und Bassist Ed Gagliardi.",
+    "facts": [
+     "Foreigner gehört zu den meistverkauften Bands aller Zeiten, mit weltweiten Verkäufen von über 80 Millionen Tonträgern, davon 38 Millionen in den USA.",
+     "Gagliardi wurde 1979 durch Rick Wills ersetzt."
+    ]
+   },
+   "tr": {
+    "kicker": "britanya-amerikan rock grubu · new york city, 1976",
+    "who": "Foreigner, 1976'da New York City'de kurulmuş, İngiliz-Amerikalı bir rock grubudur. Grubun ilk kadrosunda vokalde Lou Gramm, gitarda Mick Jones, davulda Dennis Elliott, klavyede Al Greenwood, çok enstrümanlı Ian McDonald ve basta Ed Gagliardi yer aldı.",
+    "facts": [
+     "Foreigner, tüm zamanların en çok satan gruplarından biridir; dünya çapında 80 milyonun üzerinde satışı, bunun 38 milyonu ABD'de gerçekleşti.",
+     "Gagliardi'nin yerine 1979'da Rick Wills geçti."
+    ]
+   }
+  },
+  {
+   "id": "eb1fd3d5-952a-4d7f-b3ba-2ec76e44919b",
+   "slug": "placebo-30th-anniversary-tour-840320e0",
+   "title": "Placebo - 30th Anniversary Tour",
+   "name": "Placebo",
+   "source_url": "https://en.wikipedia.org/wiki/Placebo_(band)",
+   "extract": "Placebo are a British alternative rock band, formed in London in 1994 by vocalist-guitarist Brian Molko and bassist-guitarist Stefan Olsdal, who have remained the two constant members, with three full-time drummers throughout the band's existence.",
+   "en": {
+    "kicker": "british alternative rock band · london, 1994",
+    "who": "Placebo are a British alternative rock band, formed in London in 1994 by vocalist-guitarist Brian Molko and bassist-guitarist Stefan Olsdal. Those two have remained the band's constant members.",
+    "facts": [
+     "Vocalist-guitarist Brian Molko and bassist-guitarist Stefan Olsdal, who have remained the two constant members.",
+     "There were three full-time drummers throughout the band's existence."
+    ]
+   },
+   "de": {
+    "kicker": "britische alternative-rockband · london, 1994",
+    "who": "Placebo sind eine britische Alternative-Rockband, die 1994 in London von Sänger und Gitarrist Brian Molko und Bassist und Gitarrist Stefan Olsdal gegründet wurde. Molko und Olsdal sind die beiden durchgehenden Mitglieder der Band.",
+    "facts": [
+     "Brian Molko und Stefan Olsdal sind die beiden konstanten Mitglieder der Band geblieben.",
+     "Im Laufe der Bandgeschichte gab es durchgehend drei feste Schlagzeuger."
+    ]
+   },
+   "tr": {
+    "kicker": "britanyalı alternatif rock grubu · londra, 1994",
+    "who": "Placebo, 1994'te Londra'da vokalist-gitarist Brian Molko ve basçı-gitarist Stefan Olsdal tarafından kurulmuş, İngiliz bir alternatif rock grubudur. Molko ve Olsdal, grubun iki sabit üyesi olarak kalmıştır.",
+    "facts": [
+     "Brian Molko ve Stefan Olsdal, grubun iki sabit üyesi olarak kalmıştır.",
+     "Grubun varlığı boyunca aynı anda üç tam zamanlı davulcusu olmuştur."
+    ]
+   }
+  },
+  {
+   "id": "a52f24fd-3cc8-4b79-aa23-b686c5c848d2",
+   "slug": "jungle-world-tour-2027-729fa965",
+   "title": "JUNGLE - World Tour 2027",
+   "name": "Jungle",
+   "source_url": "https://en.wikipedia.org/wiki/Jungle_(band)",
+   "extract": "Jungle are a British band formed in early 2013 by London-based producers Josh Lloyd-Watson and Tom McFarland. Jungle have released five studio albums: Jungle (2014), which was shortlisted for the Mercury Prize; For Ever (2018); Loving in Stereo (2021); Volcano (2023); and Sunshine (2026). The first two albums were released through XL Recordings while the latter three via their independent label Caiola Records.",
+   "en": {
+    "kicker": "british band · london, 2013",
+    "who": "Jungle are a British band formed in early 2013 by London-based producers Josh Lloyd-Watson and Tom McFarland. Jungle have released five studio albums.",
+    "facts": [
+     "Jungle have released five studio albums: Jungle (2014), which was shortlisted for the Mercury Prize; For Ever (2018); Loving in Stereo (2021); Volcano (2023); and Sunshine (2026).",
+     "The first two albums were released through XL Recordings while the latter three via their independent label Caiola Records."
+    ]
+   },
+   "de": {
+    "kicker": "britische band · london, 2013",
+    "who": "Jungle sind eine britische Band, die Anfang 2013 von den in London ansässigen Produzenten Josh Lloyd-Watson und Tom McFarland gegründet wurde. Die Band hat bislang fünf Studioalben veröffentlicht.",
+    "facts": [
+     "Das Album Jungle (2014) stand auf der Shortlist für den Mercury Prize.",
+     "Die ersten beiden Alben erschienen bei XL Recordings, die letzten drei beim eigenen Label Caiola Records."
+    ]
+   },
+   "tr": {
+    "kicker": "britanyalı grup · londra, 2013",
+    "who": "Jungle, 2013 başında Londra merkezli yapımcılar Josh Lloyd-Watson ve Tom McFarland tarafından kurulmuş İngiliz bir gruptur. Grup beş stüdyo albümü yayımlamıştır.",
+    "facts": [
+     "Jungle (2014) albümü Mercury Ödülü'nün kısa listesine girdi.",
+     "İlk iki albüm XL Recordings aracılığıyla, sonraki üçü ise bağımsız etiketleri Caiola Records üzerinden yayımlandı."
+    ]
+   }
+  },
+  {
+   "id": "12ae5842-f7e2-4d13-96cf-79d096a59df2",
+   "slug": "anuel-aa-2b4a3f8b",
+   "title": "Anuel AA",
+   "name": "Anuel AA",
+   "source_url": "https://en.wikipedia.org/wiki/Anuel_AA",
+   "extract": "Emmanuel Gazmey Santiago, known professionally as Anuel AA, is a Puerto Rican rapper and singer. Often dubbed as \"The God of Latin trap\" by himself and major Latin artists, his music often contains samples and interpolations of songs that were popular during his youth. He is seen as a controversial figure in the Latin music scene for his legal troubles and feuds with fellow Puerto Rican rappers Cosculluela, Ivy Queen, and Arcángel as well as American rapper 6ix9ine. Raised in Carolina, Puerto Rico, he started recording music at age fourteen and began posting it online four years later in 2014, before eventually signing to the Latin division of fellow American rapper Rick Ross's Maybach Music",
+   "en": {
+    "kicker": "puerto rican rapper and singer · carolina, puerto rico",
+    "who": "Emmanuel Gazmey Santiago, known professionally as Anuel AA, is a Puerto Rican rapper and singer. Raised in Carolina, Puerto Rico, he started recording music at age fourteen.",
+    "facts": [
+     "Often dubbed as \"The God of Latin trap\" by himself and major Latin artists.",
+     "Raised in Carolina, Puerto Rico, he started recording music at age fourteen and began posting it online four years later in 2014."
+    ]
+   },
+   "de": {
+    "kicker": "puertoricanischer rapper und sänger · carolina, puerto rico",
+    "who": "Emmanuel Gazmey Santiago, bekannt als Anuel AA, ist ein puertoricanischer Rapper und Sänger. Er wuchs in Carolina in Puerto Rico auf und begann mit 14 Jahren, Musik aufzunehmen.",
+    "facts": [
+     "Er wird von sich selbst und großen lateinamerikanischen Künstlern als „The God of Latin trap“ bezeichnet.",
+     "In Carolina aufgewachsen, begann er mit vierzehn Jahren Musik aufzunehmen und stellte sie vier Jahre später, 2014, online."
+    ]
+   },
+   "tr": {
+    "kicker": "porto rikolu rapçi ve şarkıcı · carolina, porto riko",
+    "who": "Emmanuel Gazmey Santiago, sahne adıyla Anuel AA, Porto Rikolu bir rapçi ve şarkıcıdır. Porto Riko'nun Carolina kentinde büyüdü ve on dört yaşında müzik kaydetmeye başladı.",
+    "facts": [
+     "Hem kendisi hem de önde gelen Latin sanatçılar tarafından \"The God of Latin trap\" olarak anılır.",
+     "Carolina'da büyüdü; on dört yaşında kaydettiği müziği dört yıl sonra, 2014'te internete yüklemeye başladı."
+    ]
+   }
+  },
+  {
+   "id": "922faab5-bb1b-4eeb-af2c-860a3f0c8f0f",
+   "slug": "scorpions-2838e4da",
+   "title": "Scorpions",
+   "name": "Scorpions",
+   "source_url": "https://en.wikipedia.org/wiki/Scorpions_(band)",
+   "extract": "The Scorpions are a German hard rock/heavy metal band formed in Hanover in 1965 by guitarist Rudolf Schenker. The longest-running and most successful line-up of the band included Schenker, Klaus Meine (vocals), Matthias Jabs, Francis Buchholz (bass), and Herman Rarebell (drums), and lasted from 1978 to 1992. The Scorpions' only remaining original member has been Schenker, although Meine has been with the band continuously since 1969, while Jabs has been a consistent member since 1978 and bassist Paweł Mąciwoda and drummer Mikkey Dee have been members since 2003 and 2016, respectively.",
+   "en": {
+    "kicker": "german rock band · hanover, 1965",
+    "who": "The Scorpions are a German hard rock and heavy metal band formed in Hanover in 1965 by guitarist Rudolf Schenker. The band's only remaining original member has been Schenker.",
+    "facts": [
+     "The longest-running and most successful line-up of the band included Schenker, Klaus Meine (vocals), Matthias Jabs, Francis Buchholz (bass), and Herman Rarebell (drums), and lasted from 1978 to 1992.",
+     "Meine has been with the band continuously since 1969."
+    ]
+   },
+   "de": {
+    "kicker": "deutsche rockband · hannover, 1965",
+    "who": "Die Scorpions sind eine deutsche Hard-Rock- und Heavy-Metal-Band, die 1965 in Hannover von Gitarrist Rudolf Schenker gegründet wurde. Schenker ist das einzige verbliebene ursprüngliche Mitglied der Band.",
+    "facts": [
+     "Die langlebigste und erfolgreichste Besetzung der Band bestand aus Schenker, Klaus Meine (Gesang), Matthias Jabs, Francis Buchholz (Bass) und Herman Rarebell (Schlagzeug) und hielt von 1978 bis 1992.",
+     "Klaus Meine ist seit 1969 durchgehend Mitglied der Band."
+    ]
+   },
+   "tr": {
+    "kicker": "alman rock grubu · hannover, 1965",
+    "who": "The Scorpions, 1965 yılında Hannover'de gitarist Rudolf Schenker tarafından kurulmuş Alman bir hard rock ve heavy metal grubudur. Grubun kalan tek orijinal üyesi Schenker olmuştur.",
+    "facts": [
+     "Grubun en uzun süren ve en başarılı kadrosunda Schenker, Klaus Meine (vokal), Matthias Jabs, Francis Buchholz (bas) ve Herman Rarebell (davul) yer aldı ve bu kadro 1978'den 1992'ye kadar sürdü.",
+     "Klaus Meine, 1969'dan beri grupta kesintisiz olarak yer almaktadır."
+    ]
+   }
+  }
+ ]
+}

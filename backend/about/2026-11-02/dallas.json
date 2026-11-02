@@ -1,0 +1,646 @@
+{
+ "city": "dallas",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "85a801e0-24b3-4cf6-8d5d-b0a51db9fbef",
+   "slug": "pj-morton-saturday-night-sunday-morning-tour-14ff14a3",
+   "title": "PJ Morton - Saturday Night Sunday Morning Tour",
+   "name": "PJ Morton",
+   "source_url": "https://en.wikipedia.org/wiki/PJ_Morton",
+   "extract": "Paul Sylvester \"P.J.\" Morton Jr. is an American musician, singer, songwriter and record producer. In 2010, he joined pop rock band Maroon 5, as a touring member and became an official member after Jesse Carmichael went on a brief hiatus in 2012. During this period, Morton signed with Young Money to release his debut major-label studio album, New Orleans (2013), and later self-released Gumbo, which earned him two Grammy Award nominations for Best R&B Album and Best R&B Song at the 60th Annual Grammy Awards. Since then he has received six Grammy Awards.",
+   "en": {
+    "kicker": "american musician and record producer · 2010",
+    "who": "P.J. Morton is an American musician, singer, songwriter and record producer. He joined pop rock band Maroon 5 as a touring member before becoming an official member, and he has since received six Grammy Awards.",
+    "facts": [
+     "In 2010, he joined pop rock band Maroon 5, as a touring member and became an official member after Jesse Carmichael went on a brief hiatus in 2012.",
+     "Since then he has received six Grammy Awards."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer musiker und produzent · 2010",
+    "who": "P.J. Morton ist ein amerikanischer Musiker, Sänger, Songwriter und Produzent. Er stieg 2010 als Tourmusiker bei der Pop-Rock-Band Maroon 5 ein und wurde später offizielles Mitglied; seitdem hat er sechs Grammys erhalten.",
+    "facts": [
+     "2010 stieß er als Tourmusiker zur Pop-Rock-Band Maroon 5 und wurde offizielles Mitglied, nachdem Jesse Carmichael 2012 eine kurze Auszeit genommen hatte.",
+     "Seitdem hat er sechs Grammys erhalten."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı müzisyen ve plak yapımcısı · 2010",
+    "who": "P.J. Morton, Amerikalı bir müzisyen, şarkıcı, söz yazarı ve plak yapımcısıdır. 2010'da pop rock grubu Maroon 5'e konser kadrosunun bir parçası olarak katıldı ve sonra resmi üye oldu.",
+    "facts": [
+     "2010'da konser kadrosunda yer alarak pop rock grubu Maroon 5'e katıldı; Jesse Carmichael 2012'de kısa bir ara verince resmi üye oldu.",
+     "O zamandan beri altı Grammy ödülü kazandı."
+    ]
+   }
+  },
+  {
+   "id": "40582d64-068d-4b0b-8672-22dab5492bce",
+   "slug": "victoria-monet-frequency-of-love-tour-12ced677",
+   "title": "Victoria Monét: Frequency Of Love Tour",
+   "name": "Victoria Monét",
+   "source_url": "https://en.wikipedia.org/wiki/Victoria_Mon%C3%A9t",
+   "extract": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim. Her debut studio album, Jaguar II (2023) became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year. The nomination was among seven she received at the 66th Annual Grammy Awards, from which she won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical.",
+   "en": {
+    "kicker": "american singer-songwriter · 2023",
+    "who": "Victoria Monét McCants is an American singer-songwriter who first gained recognition for her songwriting. Her debut studio album, Jaguar II, became her commercial breakthrough.",
+    "facts": [
+     "First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim.",
+     "Her debut studio album, Jaguar II (2023) became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin · 2023",
+    "who": "Victoria Monét McCants ist eine amerikanische Singer-Songwriterin, die zunächst als Songwriterin bekannt wurde. Ihr Debütstudioalbum Jaguar II wurde 2023 ihr kommerzieller Durchbruch.",
+    "facts": [
+     "Zunächst wurde sie als Songwriterin bekannt, dann verfolgte Monét eine Karriere als Interpretin mit einer Reihe von EPs; ihre fünfte, Jaguar (2020), wurde von der Kritik gefeiert.",
+     "Ihr Debütstudioalbum Jaguar II (2023) wurde ihr kommerzieller Durchbruch und wurde vom Hit „On My Mama“ begleitet, der es in die Top 40 der Billboard Hot 100 schaffte und eine Grammy-Nominierung als Record of the Year einbrachte."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı · 2023",
+    "who": "Victoria Monét McCants, Amerikalı bir şarkıcı ve söz yazarıdır. Önce söz yazarlığıyla tanındı; ilk stüdyo albümü Jaguar II (2023) ise ticari başarısının dönüm noktası oldu.",
+    "facts": [
+     "Önce söz yazarlığı çalışmalarıyla tanındı, ardından bir dizi EP ile kayıt kariyerine başladı; beşinci EP'si Jaguar (2020) büyük beğeni topladı.",
+     "Jaguar II (2023) adlı ilk stüdyo albümü ticari başarısını getirdi; albümü \"On My Mama\" single'ı destekledi ve bu single Billboard Hot 100'ün ilk 40'ında yer alarak Yılın Kaydı dalında Grammy adaylığı getirdi."
+    ]
+   }
+  },
+  {
+   "id": "e808d40a-391e-4852-9296-98ab444d29e7",
+   "slug": "lucinda-williams-c057dec0",
+   "title": "Lucinda Williams",
+   "name": "Lucinda Williams",
+   "source_url": "https://en.wikipedia.org/wiki/Lucinda_Williams",
+   "extract": "Lucinda Gayl Williams is an American singer-songwriter and a solo guitarist. She recorded her first two albums, Ramblin' on My Mind (1979) and Happy Woman Blues (1980), in a traditional country and blues style that received critical praise but little public or radio attention. In 1988, she released her third album, Lucinda Williams, to widespread critical acclaim. Regarded as \"an Americana classic\", the album also featured \"Passionate Kisses\", a song later recorded by Mary Chapin Carpenter for her 1992 album Come On Come On, which garnered Williams her first Grammy Award for Best Country Song in 1994. Williams released her fourth album, Sweet Old World, four years later in 1992. Sweet Old Wo",
+   "en": {
+    "kicker": "american singer-songwriter and guitarist · 1988",
+    "who": "Lucinda Gayl Williams is an American singer-songwriter and solo guitarist. Her third album, Lucinda Williams, received widespread critical acclaim in 1988.",
+    "facts": [
+     "She recorded her first two albums, Ramblin' on My Mind (1979) and Happy Woman Blues (1980), in a traditional country and blues style that received critical praise but little public or radio attention.",
+     "In 1988, she released her third album, Lucinda Williams, to widespread critical acclaim."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin und gitarristin · 1988",
+    "who": "Lucinda Williams ist eine amerikanische Singer-Songwriterin und Sologitarristin. Ihr dritter Longplay, Lucinda Williams, erntete 1988 breite Anerkennung der Kritik.",
+    "facts": [
+     "Ihre ersten beiden Alben, Ramblin' on My Mind (1979) und Happy Woman Blues (1980), entstanden im traditionellen Country- und Blues-Stil und fanden Lob der Kritik, aber wenig Aufmerksamkeit in der Öffentlichkeit und im Radio.",
+     "1988 veröffentlichte sie ihr drittes Album, Lucinda Williams, das breite Anerkennung der Kritik erhielt."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı, söz yazarı ve gitarist · 1988",
+    "who": "Lucinda Williams, Amerikalı bir şarkıcı, söz yazarı ve solo gitaristtir. 1988'de yayımlanan üçüncü albümü Lucinda Williams, kritikler tarafından geniş ölçüde beğenildi.",
+    "facts": [
+     "İlk iki albümü Ramblin' on My Mind (1979) ve Happy Woman Blues (1980), geleneksel country ve blues tarzında kaydedildi; eleştirmenlerce övüldü ama halktan ve radyodan pek ilgi görmedi.",
+     "1988'de üçüncü albümü Lucinda Williams'ı yayımladı ve bu albüm kritikler tarafından geniş ölçüde beğenildi."
+    ]
+   }
+  },
+  {
+   "id": "537103b3-0b78-4a54-abd8-444e63732eaf",
+   "slug": "slow-pulp-76158c18",
+   "title": "Slow Pulp",
+   "name": "Slow Pulp",
+   "source_url": "https://en.wikipedia.org/wiki/Slow_Pulp",
+   "extract": "Slow Pulp is an American indie rock band from Madison, Wisconsin, currently based in Chicago, Illinois. Formed in 2015, the band has held the same line-up since 2017: Emily Massey on lead vocals and rhythm guitar, Alex Leeds on bass and backing vocals, Teddy Matthews on drums and percussion, and Henry Stoehr on lead guitar. The band have released three studio albums to date: Moveys (2020), Yard (2023), and Melodie (2026).",
+   "en": {
+    "kicker": "american indie rock band · madison, wisconsin, 2015",
+    "who": "Slow Pulp is an American indie rock band from Madison, Wisconsin, currently based in Chicago, Illinois. The band has released three studio albums to date.",
+    "facts": [
+     "Formed in 2015, the band has held the same line-up since 2017: Emily Massey on lead vocals and rhythm guitar, Alex Leeds on bass and backing vocals, Teddy Matthews on drums and percussion, and Henry Stoehr on lead guitar.",
+     "The band have released three studio albums to date: Moveys (2020), Yard (2023), and Melodie (2026)."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-rockband · madison, wisconsin, 2015",
+    "who": "Slow Pulp ist eine amerikanische Indie-Rockband aus Madison, Wisconsin, heute in Chicago, Illinois, ansässig. Die Band hat bisher drei Studioalben veröffentlicht.",
+    "facts": [
+     "Die Band wurde 2015 gegründet und besteht seit 2017 in gleicher Besetzung: Emily Massey (Leadgesang und Rhythmusgitarre), Alex Leeds (Bass und Backing-Vocals), Teddy Matthews (Schlagzeug und Percussion) und Henry Stoehr (Leadgitarre).",
+     "Die Band hat bisher drei Studioalben veröffentlicht: Moveys (2020), Yard (2023) und Melodie (2026)."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie rock grubu · madison, wisconsin, 2015",
+    "who": "Slow Pulp, Wisconsin'in Madison kentinden çıkan, şimdi Chicago'da yaşayan bir Amerikan indie rock grubudur. Grup bugüne kadar üç stüdyo albümü yayımladı.",
+    "facts": [
+     "Grup 2015'te kuruldu; 2017'den beri kadrosu şöyle: Emily Massey baş vokal ve ritim gitarda, Alex Leeds bas ve arka vokallerde, Teddy Matthews davul ve perküsyonda, Henry Stoehr solo gitarda.",
+     "Grup bugüne kadar üç stüdyo albümü yayımladı: Moveys (2020), Yard (2023) ve Melodie (2026)."
+    ]
+   }
+  },
+  {
+   "id": "79ebe67b-f785-413e-ad54-5eddbb0e3418",
+   "slug": "doja-cat-tour-ma-vie-world-tour-2dcebcc3",
+   "title": "Doja Cat - Tour Ma Vie World Tour",
+   "name": "Doja Cat",
+   "source_url": "https://en.wikipedia.org/wiki/Doja_Cat",
+   "extract": "Amala Ratna Zandile Dlamini, known professionally as Doja Cat, is an American rapper and singer-songwriter. Regarded as the \"Queen of Pop-Rap\", she is known for her musical versatility, live performance skills and humorous internet presence. Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\", and Time listed her as one of the world's most influential people in 2023.",
+   "en": {
+    "kicker": "american rapper and singer-songwriter · pop-rap",
+    "who": "Doja Cat is an American rapper and singer-songwriter. She is known for her musical versatility, live performance skills and humorous internet presence.",
+    "facts": [
+     "Regarded as the \"Queen of Pop-Rap\", she is known for her musical versatility, live performance skills and humorous internet presence.",
+     "Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\", and Time listed her as one of the world's most influential people in 2023."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rapperin und singer-songwriterin · pop-rap",
+    "who": "Doja Cat ist eine amerikanische Rapperin und Singer-Songwriterin. Sie gilt als „Queen of Pop-Rap“ und ist für ihre musikalische Vielseitigkeit, ihre Live-Auftritte und ihre humorvolle Präsenz im Internet bekannt.",
+    "facts": [
+     "Sie gilt als „Queen of Pop-Rap“ und ist für ihre musikalische Vielseitigkeit, ihre Fähigkeiten auf der Bühne und ihre humorvolle Präsenz im Internet bekannt.",
+     "Billboard nannte sie „einen der größten Popstars der Welt“ und „einen der prägenden Popstars dieser Ära“, und Time zählte sie 2023 zu den einflussreichsten Menschen der Welt."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi ve söz yazarı · pop-rap",
+    "who": "Doja Cat, Amerikalı bir rapçi ve şarkıcı-söz yazarıdır. \"Pop-Rap'in Kraliçesi\" olarak anılır; müzikal çok yönlülüğü, canlı performans becerisi ve mizahi internet varlığıyla bilinir.",
+    "facts": [
+     "\"Pop-Rap'in Kraliçesi\" olarak anılır; müzikal çok yönlülüğü, canlı performans becerisi ve mizahi internet varlığıyla bilinir.",
+     "Billboard onu \"dünyanın en büyük pop yıldızlarından biri\" ve \"bu dönemin belirleyici pop yıldızlarından biri\" olarak nitelendirdi; Time ise 2023'te onu dünyanın en etkili insanları arasında gösterdi."
+    ]
+   }
+  },
+  {
+   "id": "7a50cd24-1e8d-4a34-91b8-16ba063d0e6f",
+   "slug": "the-damned-final-damnation-50-f8bd76d5",
+   "title": "The Damned - Final Damnation 50",
+   "name": "The Damned",
+   "source_url": "https://en.wikipedia.org/wiki/The_Damned_(band)",
+   "extract": "The Damned are an English rock band formed in London in 1976 by lead vocalist Dave Vanian, guitarist Brian James, bassist Captain Sensible and drummer Rat Scabies. They were the first punk band from the United Kingdom to release a single, \"New Rose\" (1976), release a studio album, Damned Damned Damned (1977) and tour the United States. The band briefly dissolved after their second album, Music for Pleasure (1977), was critically dismissed. They re-formed without Brian James and released Machine Gun Etiquette (1979).",
+   "en": {
+    "kicker": "english rock band · london, 1976",
+    "who": "The Damned are an English rock band formed in London in 1976 by Dave Vanian, Brian James, Captain Sensible and Rat Scabies. The band briefly dissolved after its second album, Music for Pleasure (1977), was critically dismissed.",
+    "facts": [
+     "They were the first punk band from the United Kingdom to release a single, \"New Rose\" (1976), release a studio album, Damned Damned Damned (1977) and tour the United States.",
+     "The band briefly dissolved after their second album, Music for Pleasure (1977), was critically dismissed."
+    ]
+   },
+   "de": {
+    "kicker": "englische rockband · london, 1976",
+    "who": "The Damned sind eine englische Rockband, die 1976 in London von Dave Vanian, Brian James, Captain Sensible und Rat Scabies gegründet wurde. Nach dem zweiten Album Music for Pleasure (1977) löste sich die Band kurzzeitig auf.",
+    "facts": [
+     "Sie waren die erste Punkband aus dem Vereinigten Königreich, die eine Single, „New Rose“ (1976), und ein Studioalbum, Damned Damned Damned (1977), veröffentlichte und durch die Vereinigten Staaten tourte.",
+     "Die Band löste sich nach ihrem zweiten Album Music for Pleasure (1977) kurzzeitig auf, nachdem es von der Kritik verrissen worden war."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rock grubu · londra, 1976",
+    "who": "The Damned, 1976'da Londra'da Dave Vanian, Brian James, Captain Sensible ve Rat Scabies tarafından kurulmuş İngiliz bir rock grubudur. Grup, ikinci albümü Music for Pleasure (1977) eleştirmenlerce olumsuz karşılanınca kısa süreliğine dağıldı.",
+    "facts": [
+     "Birleşik Krallık'tan gelen ilk punk grubu olarak \"New Rose\" (1976) single'ını ve Damned Damned Damned (1977) stüdyo albümünü yayımladı ve Amerika Birleşik Devletleri'nde turneye çıktı.",
+     "Grup, ikinci albümü Music for Pleasure (1977) eleştirmenlerce yerden yere vurulduktan sonra kısa süreliğine dağıldı."
+    ]
+   }
+  },
+  {
+   "id": "727f7872-3eb8-4067-948d-092e516233ea",
+   "slug": "skillet-comatose-20-years-still-screaming-tour-31dcb27e",
+   "title": "Skillet: Comatose 20 Years, Still Screaming Tour",
+   "name": "Skillet",
+   "source_url": "https://en.wikipedia.org/wiki/Skillet_(band)",
+   "extract": "Skillet is an American Christian rock band formed in Memphis, Tennessee, in 1995. The band currently consists of husband and wife John Cooper and Korey Cooper along with Jen Ledger and Seth Morrison. The band has released twelve studio albums, two of which, Collide and Comatose, received Grammy nominations. Three of their albums, Comatose, Unleashed, and Awake, are certified Platinum and double platinum respectively by the RIAA, while Rise is certified Gold as of September 17, 2026. Four of their songs, \"Monster\", \"Hero\", \"Awake and Alive\", and \"Feel Invincible\", are certified Multi-Platinum, while another four, \"Whispers in the Dark\", \"Comatose\", \"Not Gonna Die\", and \"The Resistance\" are ce",
+   "en": {
+    "kicker": "american christian rock band · memphis, 1995",
+    "who": "Skillet is an American Christian rock band formed in Memphis, Tennessee, in 1995. The band currently consists of John Cooper, Korey Cooper, Jen Ledger and Seth Morrison.",
+    "facts": [
+     "The band currently consists of husband and wife John Cooper and Korey Cooper along with Jen Ledger and Seth Morrison.",
+     "The band has released twelve studio albums, two of which, Collide and Comatose, received Grammy nominations."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische christliche rockband · memphis, 1995",
+    "who": "Skillet ist eine amerikanische christliche Rockband, die 1995 in Memphis, Tennessee, gegründet wurde. Heute besteht sie aus dem Ehepaar John und Korey Cooper sowie Jen Ledger und Seth Morrison.",
+    "facts": [
+     "Die Band besteht derzeit aus dem Ehepaar John Cooper und Korey Cooper sowie Jen Ledger und Seth Morrison.",
+     "Die Band hat zwölf Studioalben veröffentlicht, von denen Collide und Comatose Grammy-Nominierungen erhielten."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı hristiyan rock grubu · memphis, 1995",
+    "who": "Skillet, 1995'te Tennessee'nin Memphis kentinde kurulmuş Amerikan bir Hristiyan rock grubudur. Grubun bugünkü kadrosunda evli çift John Cooper ve Korey Cooper ile Jen Ledger ve Seth Morrison yer alır.",
+    "facts": [
+     "Grubun bugünkü kadrosu, evli çift John Cooper ve Korey Cooper ile Jen Ledger ve Seth Morrison'dan oluşuyor.",
+     "Grup on iki stüdyo albümü yayımladı; bunlardan Collide ve Comatose Grammy adaylığı aldı."
+    ]
+   }
+  },
+  {
+   "id": "a37c8e73-eadd-4af8-ae51-9dba24d9e7ec",
+   "slug": "moonshine-bandits-15e9163a",
+   "title": "Moonshine Bandits",
+   "name": "Moonshine Bandits",
+   "source_url": "https://en.wikipedia.org/wiki/Moonshine_Bandits",
+   "extract": "Moonshine Bandits is an American country rap duo composed of Dusty \"Tex\" Dahlgren and Brett \"Bird\" Brooks. The duo formed in Los Banos, California in 2003 and has released a number of albums, the most recent being The Whiskey Never Dries released in August 2019.",
+   "en": {
+    "kicker": "american country rap duo · los banos, 2003",
+    "who": "Moonshine Bandits is an American country rap duo made up of Dusty \"Tex\" Dahlgren and Brett \"Bird\" Brooks. The duo formed in Los Banos, California, in 2003.",
+    "facts": [
+     "The duo formed in Los Banos, California in 2003 and has released a number of albums, the most recent being The Whiskey Never Dries released in August 2019.",
+     "Moonshine Bandits is an American country rap duo composed of Dusty \"Tex\" Dahlgren and Brett \"Bird\" Brooks."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanisches country-rap-duo · los banos, 2003",
+    "who": "Moonshine Bandits ist ein amerikanisches Country-Rap-Duo aus Dusty „Tex“ Dahlgren und Brett „Bird“ Brooks. Das Duo wurde 2003 in Los Banos, Kalifornien, gegründet.",
+    "facts": [
+     "Das Duo wurde 2003 in Los Banos, Kalifornien, gegründet und hat eine Reihe von Alben veröffentlicht, das jüngste ist The Whiskey Never Dries aus dem August 2019.",
+     "Moonshine Bandits ist ein amerikanisches Country-Rap-Duo aus Dusty „Tex“ Dahlgren und Brett „Bird“ Brooks."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı country rap ikilisi · los banos, 2003",
+    "who": "Moonshine Bandits, Dusty \"Tex\" Dahlgren ve Brett \"Bird\" Brooks'tan oluşan Amerikan bir country rap ikilisidir. İkili 2003'te Kaliforniya'nın Los Banos kentinde kuruldu.",
+    "facts": [
+     "İkili 2003'te Kaliforniya'nın Los Banos kentinde kuruldu ve çok sayıda albüm çıkardı; en son albümleri The Whiskey Never Dries Ağustos 2019'da yayımlandı.",
+     "Moonshine Bandits, Dusty \"Tex\" Dahlgren ve Brett \"Bird\" Brooks'tan oluşan Amerikan bir country rap ikilisidir."
+    ]
+   }
+  },
+  {
+   "id": "e9a898ba-1ffc-4593-8a15-5bae5eb6ffea",
+   "slug": "francis-of-delirium-563700e0",
+   "title": "Francis of Delirium",
+   "name": "Francis of Delirium",
+   "source_url": "https://en.wikipedia.org/wiki/Francis_of_Delirium",
+   "extract": "Jana Bahrich, known professionally as Francis of Delirium, is a Luxembourgish indie rock musician. After playing French horn and banjo as a child, she went on to become a prominent musician in and beyond Luxembourg. She has toured with various bands and headlined her own tour in April 2024 for her debut album, Lighthouse, which was released in March 2024.",
+   "en": {
+    "kicker": "luxembourgish indie rock musician · 2024",
+    "who": "Jana Bahrich, known professionally as Francis of Delirium, is a Luxembourgish indie rock musician. She has toured with various bands and headlined her own tour in April 2024 for her debut album, Lighthouse.",
+    "facts": [
+     "After playing French horn and banjo as a child, she went on to become a prominent musician in and beyond Luxembourg.",
+     "She has toured with various bands and headlined her own tour in April 2024 for her debut album, Lighthouse, which was released in March 2024."
+    ]
+   },
+   "de": {
+    "kicker": "luxemburgische indie-rock-musikerin · 2024",
+    "who": "Jana Bahrich, die unter dem Namen Francis of Delirium auftritt, ist eine luxemburgische Indie-Rock-Musikerin. Im April 2024 ging sie für ihr Debütalbum Lighthouse auf eigene Tour.",
+    "facts": [
+     "Nachdem sie als Kind Waldhorn und Banjo gespielt hatte, wurde sie eine prominente Musikerin in Luxemburg und darüber hinaus.",
+     "Sie war mit verschiedenen Bands auf Tour und trat im April 2024 mit einer eigenen Tour für ihr Debütalbum Lighthouse auf, das im März 2024 erschien."
+    ]
+   },
+   "tr": {
+    "kicker": "lüksemburglu indie rock müzisyeni · 2024",
+    "who": "Francis of Delirium, Lüksemburglu bir indie rock müzisyeni Jana Bahrich'in sahne adıdır. Çeşitli gruplarla turneye çıktı ve Nisan 2024'te ilk albümü Lighthouse için kendi turnesini verdi.",
+    "facts": [
+     "Çocukken fransız kornosu ve banjo çalan Jana Bahrich, sonrasında Lüksemburg'da ve ötesinde öne çıkan bir müzisyen oldu.",
+     "Çeşitli gruplarla turneye çıktı; Mart 2024'te yayımlanan ilk albümü Lighthouse için Nisan 2024'te kendi turnesini verdi."
+    ]
+   }
+  },
+  {
+   "id": "6454d2de-baf8-428b-af9f-19f006025826",
+   "slug": "eric-prydz-ages-18-577edba9",
+   "title": "ERIC PRYDZ - Ages 18+",
+   "name": "Eric Prydz",
+   "source_url": "https://en.wikipedia.org/wiki/Eric_Prydz",
+   "extract": "Eric Sheridan Prydz, also known by his many aliases including Pryda and Cirez D, is a Swedish DJ and record producer. He rose to prominence with his 2004 hit single \"Call on Me\", and saw continued chart success with \"Proper Education\" in 2007, \"Pjanoo\" in 2008, and \"Opus\" in 2015. In 2016, he released his debut studio album, Opus.",
+   "en": {
+    "kicker": "swedish dj and record producer · 2004",
+    "who": "Eric Sheridan Prydz, also known as Pryda and Cirez D, is a Swedish DJ and record producer. He rose to prominence with his 2004 hit single \"Call on Me\".",
+    "facts": [
+     "He rose to prominence with his 2004 hit single \"Call on Me\", and saw continued chart success with \"Proper Education\" in 2007, \"Pjanoo\" in 2008, and \"Opus\" in 2015.",
+     "In 2016, he released his debut studio album, Opus."
+    ]
+   },
+   "de": {
+    "kicker": "schwedischer dj und musikproduzent · 2004",
+    "who": "Eric Prydz, der auch unter den Namen Pryda und Cirez D auftritt, ist ein schwedischer DJ und Musikproduzent. Den Durchbruch erzielte er mit seinem Hit „Call on Me“ aus dem Jahr 2004.",
+    "facts": [
+     "Den Durchbruch erzielte er mit seinem Hit „Call on Me“ von 2004; danach folgten Chart-Erfolge mit „Proper Education“ (2007), „Pjanoo“ (2008) und „Opus“ (2015).",
+     "2016 veröffentlichte er sein erstes Studioalbum Opus."
+    ]
+   },
+   "tr": {
+    "kicker": "isveçli dj ve plak yapımcısı · 2004",
+    "who": "Eric Prydz, Pryda ve Cirez D takma adlarıyla da bilinen İsveçli bir DJ ve plak yapımcısıdır. 2004 tarihli hit single'ı \"Call on Me\" ile öne çıktı.",
+    "facts": [
+     "2004 hit single'ı \"Call on Me\" ile öne çıktı; ardından \"Proper Education\" (2007), \"Pjanoo\" (2008) ve \"Opus\" (2015) ile listelerde başarılı oldu.",
+     "2016'da ilk stüdyo albümü Opus'u yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "4302465c-6e0f-4a51-b0c6-72f74d3e7f77",
+   "slug": "stella-lefty-lefty-live-72fcc0fa",
+   "title": "Stella Lefty: Lefty Live",
+   "name": "Stella Lefty",
+   "source_url": "https://en.wikipedia.org/wiki/Stella_Lefty",
+   "extract": "Stella Lefkofsky, better known by her stage name Stella Lefty, is an American singer-songwriter. Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100.",
+   "en": {
+    "kicker": "american singer-songwriter · 2026",
+    "who": "Stella Lefkofsky, known by her stage name Stella Lefty, is an American singer-songwriter. Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100.",
+    "facts": [
+     "Stella Lefkofsky, better known by her stage name Stella Lefty, is an American singer-songwriter.",
+     "Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin · 2026",
+    "who": "Stella Lefty ist der Künstlername von Stella Lefkofsky, einer amerikanischen Singer-Songwriterin. Ihre Country-Pop-Single „Boston“ aus dem Jahr 2026 erreichte Platz zwei der US-Billboard-Hot-100.",
+    "facts": [
+     "Stella Lefkofsky, besser bekannt unter ihrem Künstlernamen Stella Lefty, ist eine amerikanische Singer-Songwriterin.",
+     "Ihre Country-Pop-Single „Boston“ aus dem Jahr 2026 erreichte in den USA Platz zwei der Billboard Hot 100."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı · 2026",
+    "who": "Stella Lefty, Stella Lefkofsky'nin sahne adıdır; Amerikalı bir şarkıcı ve söz yazarıdır. 2026 tarihli country-pop single'ı \"Boston\", ABD Billboard Hot 100 listesinde ikinci sıraya ulaştı.",
+    "facts": [
+     "Stella Lefkofsky, sahne adı Stella Lefty ile tanınan Amerikalı bir şarkıcı ve söz yazarıdır.",
+     "2026 tarihli country-pop single'ı \"Boston\", ABD Billboard Hot 100 listesinde ikinci sıraya yükseldi."
+    ]
+   }
+  },
+  {
+   "id": "13dc63fd-fc35-4a31-be03-93dc3f25549f",
+   "slug": "sabaton-legends-on-tour-be67fdc7",
+   "title": "Sabaton: Legends on Tour",
+   "name": "Sabaton",
+   "source_url": "https://en.wikipedia.org/wiki/Sabaton_(band)",
+   "extract": "Sabaton is a Swedish power metal band from Falun, formed in 1999 by lead singer Joakim Brodén, bassist Pär Sundström, guitarists Oskar Montelius and Rikard Sundén, and drummer Richard Larsson. The band has gone through multiple lineup changes with Brodén and Sundström remaining the only consistent members. The vast majority of their songs are about historical events, mainly wars and significant battles. As of 2026, the band has released eleven studio albums, four live albums, five live DVDs and thirty music videos.",
+   "en": {
+    "kicker": "swedish power metal band · falun, 1999",
+    "who": "Sabaton is a Swedish power metal band from Falun, formed in 1999. Brodén and Sundström are the only consistent members, and most of their songs are about historical events.",
+    "facts": [
+     "The vast majority of their songs are about historical events, mainly wars and significant battles.",
+     "As of 2026, the band has released eleven studio albums, four live albums, five live DVDs and thirty music videos."
+    ]
+   },
+   "de": {
+    "kicker": "schwedische power-metal-band · falun, 1999",
+    "who": "Sabaton ist eine schwedische Power-Metal-Band aus Falun, die 1999 gegründet wurde. Brodén und Sundström sind die einzigen durchgehenden Mitglieder.",
+    "facts": [
+     "Die große Mehrheit ihrer Songs handelt von historischen Ereignissen, vor allem von Kriegen und bedeutenden Schlachten.",
+     "Mit Stand 2026 hat die Band elf Studioalben, vier Live-Alben, fünf Live-DVDs und dreißig Musikvideos veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "isveçli power metal grubu · falun, 1999",
+    "who": "Sabaton, 1999'da Falun'da kurulmuş bir İsveç power metal grubudur. Brodén ve Sundström grubun tek tutarlı üyeleridir.",
+    "facts": [
+     "Şarkılarının büyük çoğunluğu tarihi olaylar hakkındadır; esas olarak savaşlar ve önemli muharebeler.",
+     "2026 itibarıyla grup on bir stüdyo albümü, dört canlı albüm, beş canlı DVD ve otuz müzik videosu yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "dcaf69ca-0ae1-4737-b6c7-22133e66bc86",
+   "slug": "low-cut-connie-4bf2b427",
+   "title": "Low Cut Connie",
+   "name": "Low Cut Connie",
+   "source_url": "https://en.wikipedia.org/wiki/Low_Cut_Connie",
+   "extract": "Low Cut Connie is an American rock and roll band based in Philadelphia, Pennsylvania. Frontman, pianist, and songwriter Adam Weiner has been the band's only constant member since its formation. Beginning as an impromptu recording session in 2010, Low Cut Connie gradually evolved into a vehicle for Weiner's songwriting and onstage persona. The band has earned praise for its high-energy live performances, which Los Angeles Weekly described as \"unmatched in all of rock right now.\" NPR Music described Weiner as \"masterfully fluent in the foundational languages of Western pop.\" Low Cut Connie has also gained prominence for attracting high-profile endorsements such as a surprise inclusion on Barac",
+   "en": {
+    "kicker": "american rock and roll band · philadelphia, pennsylvania",
+    "who": "Low Cut Connie is an American rock and roll band based in Philadelphia, Pennsylvania. Adam Weiner is its frontman, pianist and songwriter, and the band's only constant member since its formation.",
+    "facts": [
+     "Frontman, pianist, and songwriter Adam Weiner has been the band's only constant member since its formation.",
+     "Beginning as an impromptu recording session in 2010, Low Cut Connie gradually evolved into a vehicle for Weiner's songwriting and onstage persona."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rock-n-roll-band · philadelphia",
+    "who": "Low Cut Connie ist eine amerikanische Rock-'n'-Roll-Band aus Philadelphia, Pennsylvania. Frontmann Adam Weiner ist seit der Gründung der einzige konstante Musiker der Band.",
+    "facts": [
+     "Frontmann, Pianist und Songwriter Adam Weiner ist seit der Gründung der einzige konstante Musiker der Band.",
+     "Als spontane Aufnahmesession im Jahr 2010 begonnen, entwickelte sich Low Cut Connie nach und nach zu einem Vehikel für Weiners Songwriting und seine Bühnenpersona."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock and roll grubu · philadelphia",
+    "who": "Low Cut Connie, Pennsylvania'nın Philadelphia kentinde merkezli bir Amerikan rock and roll grubudur. Ön adam, piyanist ve söz yazarı Adam Weiner, kuruluşundan beri grubun tek sabit üyesidir.",
+    "facts": [
+     "Ön adam, piyanist ve söz yazarı Adam Weiner, kuruluşundan beri grubun tek sabit üyesi olmuştur.",
+     "2010'da beklenmedik bir kayıt seansı olarak başlayan Low Cut Connie, zamanla Weiner'in söz yazarlığı ve sahne kişiliği için bir araç hâline geldi."
+    ]
+   }
+  },
+  {
+   "id": "f0572523-ac56-4a1f-9ae2-933c50640bc8",
+   "slug": "bonobo-distance-in-static-live-north-american-to-72cfd9e6",
+   "title": "Bonobo - Distance In Static Live North American Tour",
+   "name": "Bonobo",
+   "source_url": "https://en.wikipedia.org/wiki/Bonobo_(musician)",
+   "extract": "Simon Charles Green, known by his stage name Bonobo, is an English musician, producer, and DJ based in Los Angeles. He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences. His electronic sound incorporates the use of organic instrumentation and is recreated by a full band in live performances.",
+   "en": {
+    "kicker": "english musician, producer and dj · los angeles",
+    "who": "Simon Charles Green, known by his stage name Bonobo, is an English musician, producer, and DJ based in Los Angeles. His electronic sound is recreated by a full band in live performances.",
+    "facts": [
+     "He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences.",
+     "His electronic sound incorporates the use of organic instrumentation and is recreated by a full band in live performances."
+    ]
+   },
+   "de": {
+    "kicker": "englischer musiker, produzent und dj · los angeles",
+    "who": "Bonobo ist das Pseudonym von Simon Charles Green, einem englischen Musiker, Produzenten und DJ mit Sitz in Los Angeles. Sein elektronischer Sound entsteht mit organischen Instrumenten und wird bei Live-Auftritten von einer ganzen Band nachgespielt.",
+    "facts": [
+     "Er debütierte mit einer Trip-Hop-Ästhetik und hat seither schwungvollere Ansätze sowie Einflüsse aus Jazz und Weltmusik erkundet.",
+     "Sein elektronischer Sound nutzt organische Instrumentierung und wird bei Live-Auftritten von einer ganzen Band nachgebildet."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz müzisyen, yapımcı ve dj · los angeles",
+    "who": "Bonobo, Los Angeles merkezli İngiliz bir müzisyen, yapımcı ve DJ'dir; asıl adı Simon Charles Green'dir. Elektronik sesi canlı performanslarda tam bir grup tarafından yeniden üretilir.",
+    "facts": [
+     "Trip hop estetiğiyle başladı; sonrasında daha neşeli yaklaşımlar ve caz ile dünya müziği etkilerini de keşfetti.",
+     "Elektronik sesi organik enstrümantasyon içerir ve canlı performanslarda tam bir grup tarafından yeniden üretilir."
+    ]
+   }
+  },
+  {
+   "id": "5ce6e541-5f98-403e-8a47-326c73b594bb",
+   "slug": "bad-gyal-mas-cara-world-tour-2026-534af646",
+   "title": "Bad Gyal - Más Cara World Tour 2026",
+   "name": "Bad Gyal",
+   "source_url": "https://en.wikipedia.org/wiki/Bad_Gyal",
+   "extract": "Alba Farelo i Solé, known professionally as Bad Gyal, is a Spanish singer and songwriter. Bad Gyal has developed a strong cult following ever since her musical career began in 2016, with an interpretation of Rihanna's \"Work\" in the Catalan language. She continued to make music as an independent artist, releasing records like \"Jacaranda\" and \"Fiebre\". Bad Gyal later released two mixtapes: Slow Wine (2016) and Worldwide Angel (2018), which established her as an emerging artist within the Spanish urban scene.",
+   "en": {
+    "kicker": "spanish singer and songwriter · 2016",
+    "who": "Alba Farelo i Solé, known professionally as Bad Gyal, is a Spanish singer and songwriter. Her cult following grew after an interpretation of Rihanna's \"Work\" in Catalan.",
+    "facts": [
+     "Bad Gyal has developed a strong cult following ever since her musical career began in 2016, with an interpretation of Rihanna's \"Work\" in the Catalan language.",
+     "Bad Gyal later released two mixtapes: Slow Wine (2016) and Worldwide Angel (2018), which established her as an emerging artist within the Spanish urban scene."
+    ]
+   },
+   "de": {
+    "kicker": "spanische sängerin und songwriterin · 2016",
+    "who": "Bad Gyal ist das Künstlerpseudonym von Alba Farelo i Solé, einer spanischen Sängerin und Songwriterin. Ihre Kultgemeinde wuchs mit einer katalanischen Interpretation von Rihannas „Work“.",
+    "facts": [
+     "Bad Gyal hat eine starke Kultgemeinde aufgebaut, seit ihre Karriere 2016 mit einer Interpretation von Rihannas „Work“ auf Katalanisch begann.",
+     "Sie veröffentlichte später zwei Mixtapes, Slow Wine (2016) und Worldwide Angel (2018), mit denen sie sich als aufstrebende Künstlerin in der spanischen Urban-Szene etablierte."
+    ]
+   },
+   "tr": {
+    "kicker": "ispanyol şarkıcı ve söz yazarı · 2016",
+    "who": "Bad Gyal, Alba Farelo i Solé'nin sahne adıdır; İspanyol bir şarkıcı ve söz yazarıdır. Katalanca yorumladığı Rihanna'nın \"Work\" şarkısıyla güçlü bir kült takipçi kitlesi kazandı.",
+    "facts": [
+     "2016'da Rihanna'nın \"Work\" şarkısını Katalanca yorumlamasıyla başlayan kariyeri, ona güçlü bir kült takipçi kitlesi kazandırdı.",
+     "Sonrasında Slow Wine (2016) ve Worldwide Angel (2018) adlı iki mixtape yayımladı; bunlar onu İspanyol urban sahnesinde yükselen bir sanatçı olarak öne çıkardı."
+    ]
+   }
+  },
+  {
+   "id": "cf5c14db-bc97-4b48-8714-d78910cf117e",
+   "slug": "gwar-82ac71a3",
+   "title": "Gwar",
+   "name": "Gwar",
+   "source_url": "https://en.wikipedia.org/wiki/Gwar",
+   "extract": "Gwar is an American heavy metal band formed in Richmond, Virginia, in 1984, composed of and operated by a frequently rotating line-up of musicians, artists, and filmmakers collectively known as Slave Pit Inc. Since the death of frontman Dave Brockie in 2014, the collective has continued recording and performing without any of its founding artists or musicians.",
+   "en": {
+    "kicker": "american heavy metal band · richmond, virginia, 1984",
+    "who": "Gwar is an American heavy metal band formed in Richmond, Virginia, in 1984. Since the death of frontman Dave Brockie in 2014, the collective has continued recording and performing.",
+    "facts": [
+     "Gwar is an American heavy metal band formed in Richmond, Virginia, in 1984, composed of and operated by a frequently rotating line-up of musicians, artists, and filmmakers collectively known as Slave Pit Inc.",
+     "Since the death of frontman Dave Brockie in 2014, the collective has continued recording and performing without any of its founding artists or musicians."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische heavy-metal-band · richmond, virginia, 1984",
+    "who": "GWAR ist eine amerikanische Heavy-Metal-Band, die 1984 in Richmond, Virginia, gegründet wurde. Seit dem Tod von Frontmann Dave Brockie 2014 nimmt das Kollektiv weiterhin Musik auf und tritt auf.",
+    "facts": [
+     "GWAR ist eine amerikanische Heavy-Metal-Band, die 1984 in Richmond, Virginia, gegründet wurde und von einem wechselnden Kollektiv aus Musikern, Künstlern und Filmemachern namens Slave Pit Inc. betrieben wird.",
+     "Seit dem Tod von Frontmann Dave Brockie 2014 nimmt das Kollektiv weiterhin Musik auf und tritt auf, ohne dass einer seiner Gründungskünstler dabei ist."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı heavy metal grubu · richmond, virginia, 1984",
+    "who": "GWAR, 1984'te Virginia'nın Richmond kentinde kurulmuş Amerikan bir heavy metal grubudur. Ön adam Dave Brockie'nin 2014'te ölümünden sonra kolektif, kurucu sanatçılarından hiçbiri olmadan kayıt yapıp konser vermeye devam etti.",
+    "facts": [
+     "GWAR, 1984'te Richmond, Virginia'da kurulmuş Amerikan bir heavy metal grubudur; sık sık değişen müzisyen, sanatçı ve film yapımcılarından oluşan ve Slave Pit Inc. adıyla bilinen bir kolektif tarafından yönetilir.",
+     "Ön adam Dave Brockie'nin 2014'teki ölümünden beri kolektif, kurucu sanatçılarından hiçbiri olmadan kayıt yapıp sahneye çıkmayı sürdürüyor."
+    ]
+   }
+  },
+  {
+   "id": "d377ae0a-6c8c-482b-a268-0743d96d752b",
+   "slug": "icon-for-hire-c9b1b39b",
+   "title": "Icon for Hire",
+   "name": "Icon for Hire",
+   "source_url": "https://en.wikipedia.org/wiki/Icon_for_Hire",
+   "extract": "Icon for Hire is an American rock band from Decatur, Illinois. Formed in 2007, the band's current lineup consists of singer Ariel Bloomer and lead guitarist Shawn Jump. They released two EPs independently before signing to Tooth & Nail Records, through which they released their first two albums: Scripted in 2011 and Icon for Hire on October 15, 2013. Their third album, You Can't Kill Us, was independently released on November 25, 2016. Their fourth album, Amorphous, was released on February 19, 2021, also independently. Their fifth independent studio album, The Reckoning, was released on September 30, 2022.",
+   "en": {
+    "kicker": "american rock band · decatur, illinois, 2007",
+    "who": "Icon for Hire is an American rock band from Decatur, Illinois. Its current lineup consists of singer Ariel Bloomer and lead guitarist Shawn Jump.",
+    "facts": [
+     "Formed in 2007, the band's current lineup consists of singer Ariel Bloomer and lead guitarist Shawn Jump.",
+     "They released two EPs independently before signing to Tooth & Nail Records, through which they released their first two albums: Scripted in 2011 and Icon for Hire on October 15, 2013."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · decatur, illinois, 2007",
+    "who": "Icon for Hire ist eine amerikanische Rockband aus Decatur, Illinois. Ihre aktuelle Besetzung besteht aus Sängerin Ariel Bloomer und Leadgitarrist Shawn Jump.",
+    "facts": [
+     "2007 gegründet, besteht die aktuelle Besetzung der Band aus Sängerin Ariel Bloomer und Leadgitarrist Shawn Jump.",
+     "Vor ihrem Vertrag mit Tooth & Nail Records veröffentlichten sie zwei EPs in Eigenregie; über dieses Label erschienen ihre ersten beiden Alben, Scripted (2011) und Icon for Hire (2013)."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · decatur, illinois, 2007",
+    "who": "Icon for Hire, Illinois'nin Decatur kentinden bir Amerikan rock grubudur. Grubun bugünkü kadrosunda şarkıcı Ariel Bloomer ve solo gitarist Shawn Jump yer alır.",
+    "facts": [
+     "2007'de kurulan grubun bugünkü kadrosu şarkıcı Ariel Bloomer ve solo gitarist Shawn Jump'tan oluşur.",
+     "Tooth & Nail Records ile sözleşme imzalamadan önce iki EP'yi bağımsız olarak yayımladılar; ilk iki albümleri bu plak şirketi üzerinden çıktı: Scripted (2011) ve Icon for Hire (2013)."
+    ]
+   }
+  },
+  {
+   "id": "663bb26a-73ea-4afd-bec7-160eb9856b7e",
+   "slug": "state-champs-10-years-of-around-the-world-and-ba-409a1025",
+   "title": "STATE CHAMPS - 10 YEARS OF 'AROUND THE WORLD AND BACK'",
+   "name": "State Champs",
+   "source_url": "https://en.wikipedia.org/wiki/State_Champs",
+   "extract": "State Champs is an American pop-punk band from Albany, New York, formed in 2010. They are currently signed to Pure Noise Records and have released three EPs and five full-length albums. Their 2013 debut album The Finer Things debuted at number 2 on the Billboard Heatseekers Albums chart. They released an acoustic EP titled The Acoustic Things in October 2014 and their second studio album Around the World and Back one year later, in October 2015. In May 2017, they released a deluxe version of the album. Their third album, Living Proof, was released in 2018. In May 2022, the band released their fourth studio album, Kings of the New Age. In November 2024, their self-titled fifth album was relea",
+   "en": {
+    "kicker": "american pop-punk band · albany, new york, 2010",
+    "who": "State Champs is an American pop-punk band from Albany, New York, formed in 2010. The band is currently signed to Pure Noise Records.",
+    "facts": [
+     "They are currently signed to Pure Noise Records and have released three EPs and five full-length albums.",
+     "Their 2013 debut album The Finer Things debuted at number 2 on the Billboard Heatseekers Albums chart."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische pop-punk-band · albany, new york, 2010",
+    "who": "State Champs ist eine amerikanische Pop-Punk-Band aus Albany, New York, gegründet 2010. Die Band steht bei Pure Noise Records unter Vertrag.",
+    "facts": [
+     "Die Band steht derzeit bei Pure Noise Records unter Vertrag und hat drei EPs sowie fünf Langspielalben veröffentlicht.",
+     "Ihr Debütalbum The Finer Things von 2013 stieg auf Platz zwei der Billboard-Heatseekers-Albumcharts ein."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı pop-punk grubu · albany, new york, 2010",
+    "who": "State Champs, New York'un Albany kentinden çıkan, 2010'da kurulmuş bir Amerikan pop-punk grubudur. Grup Pure Noise Records ile sözleşmelidir.",
+    "facts": [
+     "Grup şu anda Pure Noise Records ile sözleşmeli ve üç EP ile beş tam uzunluklu albüm yayımladı.",
+     "2013 tarihli ilk albümü The Finer Things, Billboard Heatseekers Albums listesinde 2. sıraya girdi."
+    ]
+   }
+  },
+  {
+   "id": "97cbcdbe-c0ae-4986-9be6-5e7624c68c9c",
+   "slug": "jonas-brothers-the-burning-up-tour-all-over-agai-ab7839e8",
+   "title": "Jonas Brothers: The Burning Up Tour All Over Again",
+   "name": "Jonas Brothers",
+   "source_url": "https://en.wikipedia.org/wiki/Jonas_Brothers",
+   "extract": "The Jonas Brothers are an American pop rock band formed in 2005 comprising brothers Kevin Jonas, Joe Jonas, and Nick Jonas. Raised in Wyckoff, New Jersey, the Jonas Brothers moved to Little Falls, New Jersey, in 2005, where they wrote their first record that made its release on Hollywood Records, a Disney-owned record label, after which they gained popularity from their appearances on Disney Channel. They starred in the 2008 Disney Channel Original Movie Camp Rock and its 2010 sequel, Camp Rock 2: The Final Jam. They also starred in their own Disney Channel series Jonas, which was rebranded as Jonas L.A. for its second season. The band has released seven albums: It's About Time (2006), Jonas",
+   "en": {
+    "kicker": "american pop rock band · little falls, new jersey, 2005",
+    "who": "The Jonas Brothers are an American pop rock band formed in 2005 by brothers Kevin, Joe and Nick Jonas. The band gained popularity through its appearances on Disney Channel.",
+    "facts": [
+     "Raised in Wyckoff, New Jersey, the Jonas Brothers moved to Little Falls, New Jersey, in 2005, where they wrote their first record that made its release on Hollywood Records, a Disney-owned record label, after which they gained popularity from their appearances on Disney Channel.",
+     "They starred in the 2008 Disney Channel Original Movie Camp Rock and its 2010 sequel, Camp Rock 2: The Final Jam."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische pop-rock-band · little falls, 2005",
+    "who": "Die Jonas Brothers sind eine amerikanische Pop-Rock-Band, die 2005 von den Brüdern Kevin, Joe und Nick Jonas gegründet wurde. Durch ihre Auftritte beim Disney Channel gewannen sie an Popularität.",
+    "facts": [
+     "Die Brüder wuchsen in Wyckoff, New Jersey, auf und zogen 2005 nach Little Falls, New Jersey, wo sie ihr erstes Album schrieben, das bei Hollywood Records erschien, einem Label von Disney; danach gewannen sie durch ihre Auftritte beim Disney Channel an Popularität.",
+     "Sie spielten 2008 im Disney-Channel-Originalfilm Camp Rock und in dessen Fortsetzung Camp Rock 2: The Final Jam von 2010 mit."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı pop rock grubu · little falls, 2005",
+    "who": "Jonas Brothers, 2005'te Kevin, Joe ve Nick Jonas kardeşlerden oluşarak kurulmuş Amerikan bir pop rock grubudur. Disney Channel'daki görünümleriyle popülerlik kazandılar.",
+    "facts": [
+     "Kardeşler New Jersey'nin Wyckoff kentinde büyüdüler; 2005'te New Jersey'nin Little Falls kentine taşınarak ilk kayıtlarını yaptılar ve bu kayıt Disney'e ait Hollywood Records etiketinde yayımlandı.",
+     "2008'deki Disney Channel Orijinal Filmi Camp Rock ve 2010 tarihli devamı Camp Rock 2: The Final Jam'de rol aldılar."
+    ]
+   }
+  },
+  {
+   "id": "e282db46-b9a9-46b8-90b6-73f61fd2f666",
+   "slug": "eelke-kleijn-18-event-4972e8cf",
+   "title": "Eelke Kleijn - 18+ Event",
+   "name": "Eelke Kleijn",
+   "source_url": "https://en.wikipedia.org/wiki/Eelke_Kleijn",
+   "extract": "Eelke van Kleijn is a Dutch producer and DJ from Rotterdam, Netherlands. He is known mostly for his electronic dance music and also produces music for other media, such as television series, commercials, movie trailers and animation.",
+   "en": {
+    "kicker": "dutch producer and dj · rotterdam, netherlands",
+    "who": "Eelke van Kleijn is a Dutch producer and DJ from Rotterdam, Netherlands. He is known mostly for his electronic dance music.",
+    "facts": [
+     "He is known mostly for his electronic dance music and also produces music for other media, such as television series, commercials, movie trailers and animation.",
+     "Eelke van Kleijn is a Dutch producer and DJ from Rotterdam, Netherlands."
+    ]
+   },
+   "de": {
+    "kicker": "niederländischer produzent und dj · rotterdam",
+    "who": "Eelke van Kleijn ist ein niederländischer Produzent und DJ aus Rotterdam. Er ist vor allem für elektronische Tanzmusik bekannt.",
+    "facts": [
+     "Er ist vor allem für elektronische Tanzmusik bekannt und produziert auch Musik für andere Medien wie Fernsehserien, Werbespots, Filmtrailer und Animationen.",
+     "Eelke van Kleijn ist ein niederländischer Produzent und DJ aus Rotterdam."
+    ]
+   },
+   "tr": {
+    "kicker": "hollandalı yapımcı ve dj · rotterdam, hollanda",
+    "who": "Eelke van Kleijn, Rotterdam'dan bir Hollandalı yapımcı ve DJ'dir. Ağırlıklı olarak elektronik dans müziğiyle tanınır.",
+    "facts": [
+     "Ağırlıklı olarak elektronik dans müziğiyle tanınır; ayrıca dizi, reklam, film fragmanı ve animasyonlar gibi diğer medya için de müzik üretir.",
+     "Eelke van Kleijn, Rotterdam'dan bir Hollandalı yapımcı ve DJ'dir."
+    ]
+   }
+  }
+ ]
+}

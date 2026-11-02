@@ -1,0 +1,294 @@
+{
+ "city": "miami",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "17c2abf8-7d23-4277-95c7-d2f539f49284",
+   "slug": "doja-cat-tour-ma-vie-world-tour-f2e5c319",
+   "title": "Doja Cat - Tour Ma Vie World Tour",
+   "name": "Doja Cat",
+   "source_url": "https://en.wikipedia.org/wiki/Doja_Cat",
+   "extract": "Amala Ratna Zandile Dlamini, known professionally as Doja Cat, is an American rapper and singer-songwriter. Regarded as the \"Queen of Pop-Rap\", she is known for her musical versatility, live performance skills and humorous internet presence. Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\", and Time listed her as one of the world's most influential people in 2023.",
+   "en": {
+    "kicker": "american rapper and singer-songwriter",
+    "who": "Doja Cat is an American rapper and singer-songwriter. She is regarded as the \"Queen of Pop-Rap\".",
+    "facts": [
+     "Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\", and Time listed her as one of the world's most influential people in 2023.",
+     "She is known for her musical versatility, live performance skills and humorous internet presence."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Rapperin und Singer-Songwriterin",
+    "who": "Doja Cat ist eine amerikanische Rapperin und Singer-Songwriterin. Sie wird als \"Queen of Pop-Rap\" bezeichnet.",
+    "facts": [
+     "Sie ist für ihre musikalische Vielseitigkeit, ihre Live-Auftritte und ihre humorvolle Präsenz im Internet bekannt.",
+     "Billboard nannte sie einen der größten Popstars der Welt und einen der prägenden Popstars dieser Ära, und Time zählte sie 2023 zu den einflussreichsten Menschen der Welt."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi ve şarkıcı-söz yazarı",
+    "who": "Doja Cat, Amerikalı bir rapçi ve şarkıcı-söz yazarıdır. \"Pop-Rap Kraliçesi\" olarak anılır.",
+    "facts": [
+     "Müzikal çok yönlülüğü, canlı performans becerisi ve eğlenceli internet varlığıyla tanınır.",
+     "Billboard onu dünyanın en büyük pop yıldızlarından biri ve bu dönemin tanımlayıcı pop yıldızlarından biri olarak niteledi; Time ise 2023'te onu dünyanın en etkili insanları arasında gösterdi."
+    ]
+   }
+  },
+  {
+   "id": "a42c4b8c-2140-456b-b0ef-1f0986411a2d",
+   "slug": "the-neighbourhood-the-wourld-tour-6c575178",
+   "title": "The Neighbourhood: THE WOURLD TOUR",
+   "name": "The Neighbourhood",
+   "source_url": "https://en.wikipedia.org/wiki/The_Neighbourhood",
+   "extract": "The Neighbourhood is an American alternative rock band formed in Newbury Park, California, in 2011. The band consists of vocalist Jesse Rutherford, guitarists Jeremy Fredman and Zach Abels, bassist Mikey Margott and drummer Brandon Fried. After releasing two EPs, I'm Sorry... and Thank You, The Neighbourhood signed with Columbia Records to release their debut studio album, I Love You. in 2013. \"Sweater Weather\", the album's third single, became the only song from the project on the Billboard Hot 100, peaking at number 14, and resurged in popularity nearly a decade later on radio airplay and Spotify. Other notable hits from the band include \"Afraid\", \"Daddy Issues\", \"Baby Come Home 2/Valentin",
+   "en": {
+    "kicker": "american rock band · newbury park, california, 2011",
+    "who": "The Neighbourhood is an American alternative rock band formed in Newbury Park, California, in 2011. The band consists of vocalist Jesse Rutherford, guitarists Jeremy Fredman and Zach Abels, bassist Mikey Margott and drummer Brandon Fried.",
+    "facts": [
+     "After releasing two EPs, I'm Sorry... and Thank You, The Neighbourhood signed with Columbia Records to release their debut studio album, I Love You. in 2013.",
+     "\"Sweater Weather\", the album's third single, became the only song from the project on the Billboard Hot 100, peaking at number 14."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Rockband · Newbury Park, Kalifornien, 2011",
+    "who": "The Neighbourhood ist eine amerikanische Alternative-Rockband, die 2011 in Newbury Park, Kalifornien, gegründet wurde. Zur Band gehören Sänger Jesse Rutherford, die Gitarristen Jeremy Fredman und Zach Abels, Bassist Mikey Margott und Schlagzeuger Brandon Fried.",
+    "facts": [
+     "Nach zwei EPs unterschrieb The Neighbourhood bei Columbia Records, um 2013 das Debütalbum I Love You. zu veröffentlichen.",
+     "Die Single \"Sweater Weather\", die dritte Auskopplung des Albums, wurde der einzige Song des Projekts in den Billboard Hot 100 und erreichte Platz 14."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan rock grubu · newbury park, california, 2011",
+    "who": "The Neighbourhood, 2011 yılında Newbury Park, California'da kurulan Amerikan bir alternatif rock grubudur. Grupta vokalist Jesse Rutherford, gitaristler Jeremy Fredman ve Zach Abels, basçı Mikey Margott ve davulcu Brandon Fried yer alır.",
+    "facts": [
+     "İki EP'nin ardından grup, Columbia Records ile anlaşarak 2013'te ilk stüdyo albümü I Love You.'yu yayımladı.",
+     "\"Sweater Weather\", albümün üçüncü single'ı olarak Billboard Hot 100'e giren tek şarkıları oldu ve 14. sıraya yükseldi."
+    ]
+   }
+  },
+  {
+   "id": "e322d591-cfbe-4394-ac77-7bf5ff58a0ee",
+   "slug": "christian-loffler-7195f504",
+   "title": "Christian Loffler",
+   "name": "Christian Löffler",
+   "source_url": "https://en.wikipedia.org/wiki/Christian_L%C3%B6ffler",
+   "extract": "Christian Löffler is a German musician who plays a mix of techno, deep house, ambient, and electronic. As of 2026, he has released six studio albums.",
+   "en": {
+    "kicker": "german electronic musician",
+    "who": "Christian Löffler is a German electronic musician. His style mixes techno, deep house, ambient and electronic sounds.",
+    "facts": [
+     "As of 2026, he has released six studio albums.",
+     "Christian Löffler is a German musician who plays a mix of techno, deep house, ambient, and electronic."
+    ]
+   },
+   "de": {
+    "kicker": "deutscher elektronischer Musiker",
+    "who": "Christian Löffler ist ein deutscher elektronischer Musiker. Sein Stil mischt Techno, Deep House, Ambient und elektronische Klänge.",
+    "facts": [
+     "Stand 2026 hat er sechs Studioalben veröffentlicht.",
+     "Christian Löffler ist ein deutscher Musiker, der eine Mischung aus Techno, Deep House, Ambient und Elektronik spielt."
+    ]
+   },
+   "tr": {
+    "kicker": "Alman elektronik müzisyen",
+    "who": "Christian Löffler, Alman bir elektronik müzisyendir. Tarzı techno, deep house, ambient ve elektronik sesleri harmanlar.",
+    "facts": [
+     "2026 itibarıyla altı stüdyo albümü yayımladı.",
+     "Christian Löffler, techno, deep house, ambient ve elektronik müziğin bir karışımını çalan Alman bir müzisyendir."
+    ]
+   }
+  },
+  {
+   "id": "55459039-a5c9-4d86-9671-f136c568a8f6",
+   "slug": "odesza-ages-18-cbd0a835",
+   "title": "Odesza - Ages 18+",
+   "name": "Odesza",
+   "source_url": "https://en.wikipedia.org/wiki/Odesza",
+   "extract": "Odesza is an American electronic music duo originating from Bellingham, Washington. It consists of Harrison Mills and Clayton Knight, known individually as Catacombkid and BeachesBeaches. They formed in 2012, shortly before Mills and Knight graduated from Western Washington University.",
+   "en": {
+    "kicker": "american electronic duo · bellingham, washington, 2012",
+    "who": "Odesza is an American electronic music duo originating from Bellingham, Washington. The duo formed in 2012.",
+    "facts": [
+     "It consists of Harrison Mills and Clayton Knight, known individually as Catacombkid and BeachesBeaches.",
+     "They formed in 2012, shortly before Mills and Knight graduated from Western Washington University."
+    ]
+   },
+   "de": {
+    "kicker": "elektronisches Duo · Bellingham, Washington, 2012",
+    "who": "Odesza ist ein amerikanisches Electronic-Music-Duo aus Bellingham, Washington. Das Duo wurde 2012 gegründet.",
+    "facts": [
+     "Es besteht aus Harrison Mills und Clayton Knight, die einzeln als Catacombkid und BeachesBeaches bekannt sind.",
+     "Das Duo gründete sich 2012, kurz bevor Mills und Knight ihren Abschluss an der Western Washington University machten."
+    ]
+   },
+   "tr": {
+    "kicker": "elektronik müzik duo · bellingham, washington, 2012",
+    "who": "Odesza, Bellingham, Washington'dan çıkmış Amerikalı bir elektronik müzik ikilisidir. İkili 2012'de kuruldu.",
+    "facts": [
+     "İkili Harrison Mills ve Clayton Knight'tan oluşur; bireysel olarak Catacombkid ve BeachesBeaches adlarıyla bilinirler.",
+     "2012'de, Mills ve Knight'ın Western Washington University'den mezun olmasından kısa süre önce kuruldu."
+    ]
+   }
+  },
+  {
+   "id": "28410eae-b51e-4b03-b798-7936beceb6da",
+   "slug": "john-summit-ctrl-escape-arena-tour-440e0516",
+   "title": "JOHN SUMMIT - CTRL ESCAPE ARENA TOUR",
+   "name": "John Summit",
+   "source_url": "https://en.wikipedia.org/wiki/John_Summit",
+   "extract": "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label. His music includes original tracks and remixes, primarily focused in the genre of tech house.",
+   "en": {
+    "kicker": "american dj and record producer",
+    "who": "John Summit is the stage name of John Walter Schuster, an American DJ and record producer. His output includes original tracks and remixes.",
+    "facts": [
+     "His music includes original tracks and remixes, primarily focused in the genre of tech house.",
+     "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer DJ und Musikproduzent",
+    "who": "John Summit ist das Pseudonym von John Walter Schuster, einem amerikanischen DJ und Musikproduzenten. Seine Musik umfasst Originaltracks und Remixe.",
+    "facts": [
+     "Seine Musik umfasst Originaltracks und Remixe, vor allem im Genre Tech House.",
+     "Er ist ein ehemaliger Buchhalter und heute Inhaber des Labels Experts Only."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı DJ ve plak yapımcısı",
+    "who": "John Summit, John Walter Schuster'ın sahne adıdır; Amerikalı bir DJ ve plak yapımcısıdır. Müziği orijinal parçaları ve remixleri kapsar.",
+    "facts": [
+     "Ağırlıklı olarak tech house türüne odaklanır.",
+     "Eski bir muhasebeci olup bugün Experts Only label'ının sahibidir."
+    ]
+   }
+  },
+  {
+   "id": "6e76183a-b772-498f-99d8-bc1dea6b0ad4",
+   "slug": "donny-benet-9cf027fb",
+   "title": "Donny Benet",
+   "name": "Donny Benét",
+   "source_url": "https://en.wikipedia.org/wiki/Donny_Ben%C3%A9t",
+   "extract": "Donny Benét is an Australian recording artist, based in Sydney. In 2011, he released his debut studio album Don't Hold Back through indie label Rice is Nice. His fifth studio album, Mr Experience, reached #26 on the ARIA Charts in May 2020.",
+   "en": {
+    "kicker": "australian recording artist · sydney",
+    "who": "Donny Benét is an Australian recording artist, based in Sydney. He has released several studio albums, including his fifth, Mr Experience.",
+    "facts": [
+     "In 2011, he released his debut studio album Don't Hold Back through indie label Rice is Nice.",
+     "His fifth studio album, Mr Experience, reached #26 on the ARIA Charts in May 2020."
+    ]
+   },
+   "de": {
+    "kicker": "australischer Musiker · Sydney",
+    "who": "Donny Benét ist ein australischer Musiker mit Sitz in Sydney. Er hat mehrere Studioalben veröffentlicht, darunter sein fünftes, Mr Experience.",
+    "facts": [
+     "2011 veröffentlichte er sein Debütalbum Don't Hold Back beim Indie-Label Rice is Nice.",
+     "Sein fünftes Studioalbum Mr Experience erreichte im Mai 2020 Platz 26 der ARIA Charts."
+    ]
+   },
+   "tr": {
+    "kicker": "avustralyalı müzisyen · sydney",
+    "who": "Donny Benét, Sydney merkezli Avustralyalı bir kayıt sanatçısıdır. Birkaç stüdyo albümü yayımlamıştır.",
+    "facts": [
+     "2011'de bağımsız Rice is Nice label'ı ile ilk stüdyo albümü Don't Hold Back'i yayımladı.",
+     "Beşinci stüdyo albümü Mr Experience, Mayıs 2020'de ARIA Charts'ta 26 numaraya yükseldi."
+    ]
+   }
+  },
+  {
+   "id": "945fbcf8-a917-4e1f-871c-8d855239caca",
+   "slug": "la-mafia-epic-tour-46-f8b696d0",
+   "title": "LA MAFIA - EPIC TOUR 46",
+   "name": "La Mafia",
+   "source_url": "https://en.wikipedia.org/wiki/La_Mafia",
+   "extract": "La Mafia is an American five-time Grammy Award-winning musical group. It has its roots in the Northside neighborhood of Houston, Texas, and has charted a course as a Latin music band.",
+   "en": {
+    "kicker": "american musical group · houston, texas",
+    "who": "La Mafia is a Latin music band from Houston, Texas. The group has won five Grammy Awards.",
+    "facts": [
+     "La Mafia is an American five-time Grammy Award-winning musical group.",
+     "It has its roots in the Northside neighborhood of Houston, Texas, and has charted a course as a Latin music band."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Musikgruppe · Houston, Texas",
+    "who": "La Mafia ist eine amerikanische Musikgruppe, die fünfmal mit dem Grammy Award ausgezeichnet wurde. Sie wurzelt in Houston, Texas.",
+    "facts": [
+     "Ihre Wurzeln liegen im Viertel Northside in Houston, Texas.",
+     "Die Gruppe hat sich als Latin-Music-Band einen eigenen Weg gebahnt."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan müzik grubu · houston, texas",
+    "who": "La Mafia, beş kez Grammy Ödülü kazanmış Amerikalı bir müzik grubudur. Kökleri Houston, Texas'a uzanır.",
+    "facts": [
+     "Kökleri Houston, Texas'ın Northside mahallesine uzanır.",
+     "Grup, bir Latin müzik grubu olarak kendine özgü bir yol çizmiştir."
+    ]
+   }
+  },
+  {
+   "id": "f00ba33f-6362-4062-b1a6-31163ca63855",
+   "slug": "rawayana-donde-es-el-after-world-tour-99382156",
+   "title": "RAWAYANA - ¿Dónde es el after? World Tour",
+   "name": "Rawayana",
+   "source_url": "https://en.wikipedia.org/wiki/Rawayana",
+   "extract": "Rawayana is a Venezuelan band formed in Caracas in 2007. The group's music combines a variety of musical genres including reggae, psychedelic, electronic, funk and salsa, and the members describe their style as \"trippy pop\". The band consists of Alberto \"Beto\" Montenegro, Antonio \"Tony\" Casas, Andrés \"Fofo\" Story and Alejandro \"Abeja\" Abeijón.",
+   "en": {
+    "kicker": "venezuelan band · caracas, 2007",
+    "who": "Rawayana is a Venezuelan band formed in Caracas in 2007. The members describe their style as \"trippy pop\".",
+    "facts": [
+     "The group's music combines a variety of musical genres including reggae, psychedelic, electronic, funk and salsa, and the members describe their style as \"trippy pop\".",
+     "The band consists of Alberto \"Beto\" Montenegro, Antonio \"Tony\" Casas, Andrés \"Fofo\" Story and Alejandro \"Abeja\" Abeijón."
+    ]
+   },
+   "de": {
+    "kicker": "venezolanische Band · Caracas, 2007",
+    "who": "Rawayana ist eine venezolanische Band, die 2007 in Caracas gegründet wurde. Die Mitglieder beschreiben ihren Stil als \"trippy pop\".",
+    "facts": [
+     "Die Musik der Gruppe verbindet Genres wie Reggae, Psychedelic, Electronic, Funk und Salsa.",
+     "Zur Band gehören Alberto \"Beto\" Montenegro, Antonio \"Tony\" Casas, Andrés \"Fofo\" Story und Alejandro \"Abeja\" Abeijón."
+    ]
+   },
+   "tr": {
+    "kicker": "venezuelalı müzik grubu · caracas, 2007",
+    "who": "Rawayana, 2007 yılında Caracas'ta kurulan Venezuelalı bir gruptur. Üyeler tarzlarını \"trippy pop\" olarak tanımlar.",
+    "facts": [
+     "Grubun müziği reggae, psychedelic, electronic, funk ve salsa gibi çeşitli türleri birleştirir.",
+     "Grubun üyeleri Alberto \"Beto\" Montenegro, Antonio \"Tony\" Casas, Andrés \"Fofo\" Story ve Alejandro \"Abeja\" Abeijón'dur."
+    ]
+   }
+  },
+  {
+   "id": "809079fe-8e6e-4b41-9c31-8b3ac099d243",
+   "slug": "gente-de-zona-isla-viva-tour-e543626b",
+   "title": "Gente De Zona - Isla Viva Tour",
+   "name": "Gente de Zona",
+   "source_url": "https://en.wikipedia.org/wiki/Gente_de_Zona",
+   "extract": "Gente de Zona is a Cuban reggaeton duo made up of musicians Alexander Delgado and Randy Malcom Martínez. In 2014, the duo gained success with the song \"Bailando\" with Enrique Iglesias. This hit gave the duo numerous prestigious awards including the Latin Grammy and Latin Billboard Award. The duo was known for its Cubatón hits before succeeding on the international stage with major hits and collaborations that infused \"tropical\" rhythms to mainstream pop and urban music. \"Bailando\" became the first Spanish language song to get 1 billion views on YouTube and their song \"La Gozadera\" has been described by many as \"Latin America's official hymn.\"",
+   "en": {
+    "kicker": "cuban reggaeton duo",
+    "who": "Gente de Zona is a Cuban reggaeton duo made up of musicians Alexander Delgado and Randy Malcom Martínez. This hit gave the duo numerous prestigious awards including the Latin Grammy.",
+    "facts": [
+     "In 2014, the duo gained success with the song \"Bailando\" with Enrique Iglesias.",
+     "The duo was known for its Cubatón hits before succeeding on the international stage with major hits and collaborations that infused \"tropical\" rhythms to mainstream pop and urban music."
+    ]
+   },
+   "de": {
+    "kicker": "kubanisches Reggaeton-Duo",
+    "who": "Gente de Zona ist ein kubanisches Reggaeton-Duo aus den Musikern Alexander Delgado und Randy Malcom Martínez. Der Hit \"Bailando\" brachte dem Duo zahlreiche Auszeichnungen ein, darunter einen Latin Grammy.",
+    "facts": [
+     "2014 gelang dem Duo mit dem Song \"Bailando\" zusammen mit Enrique Iglesias der Durchbruch.",
+     "Das Duo war zunächst für seine Cubatón-Hits bekannt, bevor es auf der internationalen Bühne mit großen Hits erfolgreich wurde."
+    ]
+   },
+   "tr": {
+    "kicker": "Küba'lı reggaeton ikilisi",
+    "who": "Gente de Zona, Alexander Delgado ve Randy Malcom Martínez'den oluşan Küba'lı bir reggaeton ikilisidir. \"Bailando\" hiti ikiliye Latin Grammy dahil birçok prestijli ödül kazandırdı.",
+    "facts": [
+     "2014'te Enrique Iglesias ile yaptıkları \"Bailando\" şarkısıyla başarı kazandılar.",
+     "İkili, uluslararası sahneye açılmadan önce Cubatón hitleriyle tanınıyordu."
+    ]
+   }
+  }
+ ]
+}

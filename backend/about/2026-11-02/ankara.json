@@ -1,0 +1,294 @@
+{
+ "city": "ankara",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "7574353d-70a6-411a-aa93-57a60b610f4e",
+   "slug": "midlake-8402d514",
+   "title": "Midlake",
+   "name": "Midlake",
+   "source_url": "https://en.wikipedia.org/wiki/Midlake",
+   "extract": "Midlake is an American folk rock band from Denton, Texas, formed in 1999. The band consists of Eric Pulido, McKenzie Smith (drums), Eric Nichelson, Jesse Chandler, Joey McClellan and Scott Lee (bass).",
+   "en": {
+    "kicker": "american folk rock band · denton, texas, 1999",
+    "who": "Midlake is an American folk rock band from Denton, Texas, formed in 1999. Its members include Eric Pulido, McKenzie Smith on drums, and Scott Lee on bass.",
+    "facts": [
+     "Midlake is an American folk rock band from Denton, Texas, formed in 1999.",
+     "The band consists of Eric Pulido, McKenzie Smith (drums), Eric Nichelson, Jesse Chandler, Joey McClellan and Scott Lee (bass)."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische folk-rock-band · denton, texas, 1999",
+    "who": "Midlake ist eine amerikanische Folk-Rock-Band aus Denton, Texas, die 1999 gegründet wurde. Zu ihren Mitgliedern gehören Eric Pulido, McKenzie Smith am Schlagzeug und Scott Lee am Bass.",
+    "facts": [
+     "Midlake ist eine amerikanische Folk-Rock-Band aus Denton, Texas, die 1999 gegründet wurde.",
+     "Die Band besteht aus Eric Pulido, McKenzie Smith (Schlagzeug), Eric Nichelson, Jesse Chandler, Joey McClellan und Scott Lee (Bass)."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı folk rock grubu · denton, texas, 1999",
+    "who": "Midlake, 1999'da kurulmuş, Teksas'ın Denton kentinden bir Amerikan folk rock grubudur. Üyeleri arasında Eric Pulido, davulda McKenzie Smith ve basta Scott Lee vardır.",
+    "facts": [
+     "Midlake, 1999 yılında kurulmuş, Teksas'ın Denton kentinden bir Amerikan folk rock grubudur.",
+     "Grup; Eric Pulido, McKenzie Smith (davul), Eric Nichelson, Jesse Chandler, Joey McClellan ve Scott Lee (bas) üyelerinden oluşur."
+    ]
+   }
+  },
+  {
+   "id": "c52ba956-71e4-433b-9068-c4e58cc1a4f2",
+   "slug": "batu-akdeniz-f7b7d00f",
+   "title": "Batu Akdeniz",
+   "name": "Batu Akdeniz",
+   "source_url": "https://en.wikipedia.org/wiki/Batu_Akdeniz",
+   "extract": "Batu Akdeniz is a Turkish rock musician. He is known for both his solo works and his collaborations with the Heavy Sky band.",
+   "en": {
+    "kicker": "turkish rock musician",
+    "who": "Batu Akdeniz is a Turkish rock musician. His work includes solo records and collaborations with the Heavy Sky band.",
+    "facts": [
+     "Batu Akdeniz is a Turkish rock musician.",
+     "He is known for both his solo works and his collaborations with the Heavy Sky band."
+    ]
+   },
+   "de": {
+    "kicker": "türkischer rockmusiker",
+    "who": "Batu Akdeniz ist ein türkischer Rockmusiker, der mit der Band Heavy Sky zusammengearbeitet hat. Daneben hat er solo gearbeitet.",
+    "facts": [
+     "Batu Akdeniz ist ein türkischer Rockmusiker.",
+     "Er ist sowohl für seine Soloarbeiten als auch für seine Zusammenarbeit mit der Band Heavy Sky bekannt."
+    ]
+   },
+   "tr": {
+    "kicker": "türk rock müzisyeni",
+    "who": "Batu Akdeniz, Heavy Sky grubuyla yaptığı işbirlikleriyle de tanınan bir Türk rock müzisyenidir. Solo çalışmaları da vardır.",
+    "facts": [
+     "Batu Akdeniz bir Türk rock müzisyenidir.",
+     "Hem solo çalışmalarıyla hem de Heavy Sky grubuyla yaptığı işbirlikleriyle tanınır."
+    ]
+   }
+  },
+  {
+   "id": "7a51fdac-9b88-4aeb-98df-ab1bbb36ece8",
+   "slug": "manus-baba-c7b0b9d3",
+   "title": "Manuş Baba",
+   "name": "Manuş Baba",
+   "source_url": "https://en.wikipedia.org/wiki/Manu%C5%9F_Baba",
+   "extract": "Mustafa Özkan, better known by his stage name Manuş Baba, is a Turkish pop and arabesque singer. He studied at the Tarsus Turgut İçgören primary school in Tarsus. His family later moved from Diyarbakir to Antalya, due to his father's job as a seasonal worker in Antalya. He studied at Antalya Gazi High School and Akdeniz University. He started his music career with his band Güneşe Yolculuk in 2010. He also has had a number of hit albums in Turkey, including Bu Havada Gidilmez, Dönersen Islık Çal and İki Gözümün Çiçeği.",
+   "en": {
+    "kicker": "turkish pop and arabesque singer · 2010",
+    "who": "Mustafa Özkan, better known by his stage name Manuş Baba, is a Turkish pop and arabesque singer. He started his music career with his band Güneşe Yolculuk in 2010.",
+    "facts": [
+     "His family later moved from Diyarbakir to Antalya, due to his father's job as a seasonal worker in Antalya.",
+     "He also has had a number of hit albums in Turkey, including Bu Havada Gidilmez, Dönersen Islık Çal and İki Gözümün Çiçeği."
+    ]
+   },
+   "de": {
+    "kicker": "türkischer pop- und arabesk-sänger · 2010",
+    "who": "Mustafa Özkan, besser bekannt unter dem Künstlernamen Manuş Baba, ist ein türkischer Pop- und Arabesk-Sänger. Seine Musikkarriere begann 2010 mit seiner Band Güneşe Yolculuk.",
+    "facts": [
+     "Seine Familie zog später von Diyarbakir nach Antalya, weil sein Vater dort als Saisonarbeiter tätig war.",
+     "Er hatte in der Türkei mehrere erfolgreiche Alben, darunter Bu Havada Gidilmez, Dönersen Islık Çal und İki Gözümün Çiçeği."
+    ]
+   },
+   "tr": {
+    "kicker": "türk pop ve arabesk şarkıcısı · 2010",
+    "who": "Mustafa Özkan, sahne adıyla Manuş Baba, bir Türk pop ve arabesk şarkıcısıdır. Müzik kariyerine 2010'da Güneşe Yolculuk grubuyla başladı.",
+    "facts": [
+     "Ailesi, babasının Antalya'da mevsimlik işçi olarak çalışması nedeniyle sonradan Diyarbakır'dan Antalya'ya taşındı.",
+     "Türkiye'de Bu Havada Gidilmez, Dönersen Islık Çal ve İki Gözümün Çiçeği gibi birçok hit albümü de oldu."
+    ]
+   }
+  },
+  {
+   "id": "f76cf331-a967-43df-9ebd-026dd74dc929",
+   "slug": "emre-ayd-n-f8d5b60c",
+   "title": "Emre Aydın",
+   "name": "Emre Aydın",
+   "source_url": "https://en.wikipedia.org/wiki/Emre_Ayd%C4%B1n",
+   "extract": "Emre Aydın is a Turkish rock singer-songwriter. The singer won the MTV Europe Music Awards 2008 in the \"Europe's Favourite Act\" category. He is also the former lead singer for the Turkish rock band 6. Cadde.",
+   "en": {
+    "kicker": "turkish rock singer-songwriter · 2008",
+    "who": "Emre Aydın is a Turkish rock singer-songwriter. He is also the former lead singer for the Turkish rock band 6. Cadde.",
+    "facts": [
+     "The singer won the MTV Europe Music Awards 2008 in the \"Europe's Favourite Act\" category.",
+     "He is also the former lead singer for the Turkish rock band 6. Cadde."
+    ]
+   },
+   "de": {
+    "kicker": "türkischer rock-singer-songwriter · 2008",
+    "who": "Emre Aydın ist ein türkischer Rock-Singer-Songwriter. Außerdem war er Leadsänger der türkischen Rockband 6. Cadde.",
+    "facts": [
+     "Der Sänger gewann 2008 bei den MTV Europe Music Awards in der Kategorie „Europe's Favourite Act“.",
+     "Er war früher Leadsänger der türkischen Rockband 6. Cadde."
+    ]
+   },
+   "tr": {
+    "kicker": "türk rock şarkıcı ve söz yazarı · 2008",
+    "who": "Emre Aydın bir Türk rock şarkıcısı ve söz yazarıdır. Ayrıca Türk rock grubu 6. Cadde'nin eski baş vokalistidir.",
+    "facts": [
+     "Şarkıcı, 2008 MTV Europe Music Awards'ta \"Europe's Favourite Act\" kategorisinde ödül kazandı.",
+     "Türk rock grubu 6. Cadde'nin eski baş vokalistidir."
+    ]
+   }
+  },
+  {
+   "id": "719e9d4d-6153-4994-9bf4-0543e087d194",
+   "slug": "simge-2d6028c3",
+   "title": "Simge",
+   "name": "Simge",
+   "source_url": "https://en.wikipedia.org/wiki/Simge_(singer)",
+   "extract": "Simge Sağın, known mononymously as Simge, is a Turkish singer. From early 2010s, she started to make Turkish pop songs, and with the release of her single \"Miş Miş\" in 2015 she became one of the most famous artists in Turkey.",
+   "en": {
+    "kicker": "turkish pop singer",
+    "who": "Simge Sağın, known mononymously as Simge, is a Turkish singer. She became one of the most famous artists in Turkey after the release of her single \"Miş Miş\" in 2015.",
+    "facts": [
+     "From early 2010s, she started to make Turkish pop songs.",
+     "With the release of her single \"Miş Miş\" in 2015 she became one of the most famous artists in Turkey."
+    ]
+   },
+   "de": {
+    "kicker": "türkische popsängerin",
+    "who": "Simge Sağın, die unter dem Mononym Simge bekannt ist, ist eine türkische Sängerin. Mit ihrer Single „Miş Miş“ aus dem Jahr 2015 wurde sie zu einer der bekanntesten Künstlerinnen der Türkei.",
+    "facts": [
+     "Ab Anfang der 2010er-Jahre begann sie, türkische Popsongs zu machen.",
+     "Mit ihrer Single „Miş Miş“ im Jahr 2015 wurde sie zu einer der bekanntesten Künstlerinnen der Türkei."
+    ]
+   },
+   "tr": {
+    "kicker": "türk pop şarkıcısı",
+    "who": "Simge Sağın, Simge adıyla tanınan bir Türk şarkıcıdır. 2015'te çıkardığı \"Miş Miş\" single'ıyla Türkiye'nin en ünlü sanatçıları arasına girdi.",
+    "facts": [
+     "2010'ların başından itibaren Türkçe pop şarkılar yapmaya başladı.",
+     "2015'te çıkardığı \"Miş Miş\" single'ıyla Türkiye'nin en ünlü sanatçılarından biri oldu."
+    ]
+   }
+  },
+  {
+   "id": "ef9386a3-5425-416e-b786-6e179fafce64",
+   "slug": "candan-ercetin-dogu-bat-senfonisi-rengahenk-kons-c1a4d222",
+   "title": "Candan Erçetin - Doğu Batı Senfonisi - Rengahenk Konser",
+   "name": "Candan Erçetin",
+   "source_url": "https://en.wikipedia.org/wiki/Candan_Er%C3%A7etin",
+   "extract": "Candan Erçetin is a Turkish singer-songwriter. Over the twenty five years of her singing career, she has been recognized for preparing and singing songs about human life. Despite the fact that she made her albums without much publicity, her work influenced other artists. Erçetin has released many music videos with different themes. Because her family originate from the Balkans, she has often used elements of Balkan music in her songs and works. In addition to Turkish, she has written songs in French and Greek.",
+   "en": {
+    "kicker": "turkish singer-songwriter",
+    "who": "Candan Erçetin is a Turkish singer-songwriter. Over the twenty five years of her singing career, she has been recognized for preparing and singing songs about human life.",
+    "facts": [
+     "Because her family originate from the Balkans, she has often used elements of Balkan music in her songs and works.",
+     "In addition to Turkish, she has written songs in French and Greek."
+    ]
+   },
+   "de": {
+    "kicker": "türkische singer-songwriterin",
+    "who": "Candan Erçetin ist eine türkische Singer-Songwriterin. In ihren fünfundzwanzig Jahren als Sängerin wurde sie für ihre Lieder über das menschliche Leben geschätzt.",
+    "facts": [
+     "Da ihre Familie vom Balkan stammt, verwendet sie in ihren Liedern und Werken häufig Elemente der Balkanmusik.",
+     "Neben Türkisch hat sie Lieder auf Französisch und Griechisch geschrieben."
+    ]
+   },
+   "tr": {
+    "kicker": "türk şarkıcı ve söz yazarı",
+    "who": "Candan Erçetin bir Türk şarkıcı ve söz yazarıdır. Yirmi beş yıllık şarkıcılık kariyeri boyunca insan hayatı üzerine şarkılar hazırlayıp seslendirmesiyle tanındı.",
+    "facts": [
+     "Ailesi Balkanlardan geldiği için şarkılarında ve eserlerinde sıkça Balkan müziğinin unsurlarını kullandı.",
+     "Türkçenin yanı sıra Fransızca ve Yunanca şarkılar da yazdı."
+    ]
+   }
+  },
+  {
+   "id": "7de51106-d925-4138-aa4a-9f4a48792f27",
+   "slug": "yeni-turku-74142a18",
+   "title": "Yeni Türkü",
+   "name": "Yeni Türkü",
+   "source_url": "https://en.wikipedia.org/wiki/Yeni_T%C3%BCrk%C3%BC",
+   "extract": "Yeni Türkü is a Turkish band. The group has held concerts and has recorded a number of albums since forming in 1978. Their musical style is characterized by a combination of traditional Turkish and modern musical instruments, including the oud, baglama, kemenche, qanun and guitar. Their music reflects influences of music from around the world. All group members have changed several times throughout the years, with the exception of the lead singer Derya Köroğlu. After the coup of September 12, 1980, the album Buğdayın Türküsü, composed of poems by names such as Nazım Hikmet, was banned. For this reason, Yeni Türkü's career was interrupted for a short time.",
+   "en": {
+    "kicker": "turkish band · formed 1978",
+    "who": "Yeni Türkü is a Turkish band that has held concerts and recorded a number of albums since forming in 1978. Its style combines traditional and modern instruments from Turkey and beyond.",
+    "facts": [
+     "Their musical style is characterized by a combination of traditional Turkish and modern musical instruments, including the oud, baglama, kemenche, qanun and guitar.",
+     "After the coup of September 12, 1980, the album Buğdayın Türküsü, composed of poems by names such as Nazım Hikmet, was banned."
+    ]
+   },
+   "de": {
+    "kicker": "türkische band · gegründet 1978",
+    "who": "Yeni Türkü ist eine türkische Band, die seit ihrer Gründung 1978 Konzerte gegeben und mehrere Alben aufgenommen hat. Ihr Stil verbindet traditionelle und moderne Instrumente.",
+    "facts": [
+     "Ihr Musikstil ist von einer Mischung traditioneller türkischer und moderner Instrumente geprägt, darunter Oud, Baglama, Kemençe, Kanun und Gitarre.",
+     "Nach dem Militärputsch vom 12. September 1980 wurde das Album Buğdayın Türküsü verboten, das Gedichte von Autoren wie Nazım Hikmet enthielt."
+    ]
+   },
+   "tr": {
+    "kicker": "türk grubu · 1978'de kuruldu",
+    "who": "Yeni Türkü, 1978'de kurulmuş bir Türk grubudur. Kuruluşundan bu yana konserler vermiş ve çok sayıda albüm kaydetmiştir.",
+    "facts": [
+     "Müzik tarzı; ud, bağlama, kemençe, kanun ve gitar dahil geleneksel Türk ve modern müzik aletlerinin bir birleşiminden oluşur.",
+     "12 Eylül 1980 darbesinin ardından, Nazım Hikmet gibi isimlerin şiirlerinden oluşan Buğdayın Türküsü albümü yasaklandı."
+    ]
+   }
+  },
+  {
+   "id": "6e71f348-d382-4d89-9c61-161c2be6d9ea",
+   "slug": "leman-sam-32c19cde",
+   "title": "Leman Sam",
+   "name": "Leman Sam",
+   "source_url": "https://en.wikipedia.org/wiki/Leman_Sam",
+   "extract": "Leman Sam is a Turkish singer and songwriter. Her daughter Şevval Sam and her grandson Taro Emir Tekin are both actors.",
+   "en": {
+    "kicker": "turkish singer and songwriter",
+    "who": "Leman Sam is a singer and songwriter from Turkey. Her family includes acting: her daughter Şevval Sam and her grandson Taro Emir Tekin are both actors.",
+    "facts": [
+     "Leman Sam is a Turkish singer and songwriter.",
+     "Her daughter Şevval Sam and her grandson Taro Emir Tekin are both actors."
+    ]
+   },
+   "de": {
+    "kicker": "türkische sängerin und songwriterin",
+    "who": "Leman Sam ist eine türkische Sängerin und Songwriterin. Auch ihre Familie ist im Schauspiel tätig: Ihre Tochter Şevval Sam und ihr Enkel Taro Emir Tekin sind beide Schauspieler.",
+    "facts": [
+     "Leman Sam ist eine türkische Sängerin und Songwriterin.",
+     "Ihre Tochter Şevval Sam und ihr Enkel Taro Emir Tekin sind beide als Schauspieler tätig."
+    ]
+   },
+   "tr": {
+    "kicker": "türk şarkıcı ve söz yazarı",
+    "who": "Leman Sam, Türk bir şarkıcı ve söz yazarıdır. Ailesinde oyunculuk da var: kızı Şevval Sam ile torunu Taro Emir Tekin ikisi de oyuncudur.",
+    "facts": [
+     "Leman Sam bir Türk şarkıcı ve söz yazarıdır.",
+     "Kızı Şevval Sam ve torunu Taro Emir Tekin ikisi de oyuncudur."
+    ]
+   }
+  },
+  {
+   "id": "760b44d5-6e0b-4170-ac75-8b7f28a26c2b",
+   "slug": "jakuzi-29a2120c",
+   "title": "Jakuzi",
+   "name": "Jakuzi",
+   "source_url": "https://en.wikipedia.org/wiki/Jakuzi",
+   "extract": "Jakuzi is a Turkish synthpop band, formed in Istanbul in 2015. The band consists of Kutay Soyocak, Can Kalyoncu, Meriç Erseçgen and Ahmetcan Gökçeer. Kutay Soyocak and Taner Yücel formed the project to move away from their previous punk-oriented music projects. The duo rose to prominence in Istanbul's underground music scene after the release of their debut album Fantezi Müzik. Originally released in 2016 through Domuz Records, it was reissued by City Slang on 24 March 2017.",
+   "en": {
+    "kicker": "turkish synthpop band · istanbul, 2015",
+    "who": "Jakuzi is a Turkish synthpop band, formed in Istanbul in 2015. The band consists of Kutay Soyocak, Can Kalyoncu, Meriç Erseçgen and Ahmetcan Gökçeer.",
+    "facts": [
+     "The duo rose to prominence in Istanbul's underground music scene after the release of their debut album Fantezi Müzik.",
+     "The album Fantezi Müzik was originally released in 2016 through Domuz Records, and reissued by City Slang on 24 March 2017."
+    ]
+   },
+   "de": {
+    "kicker": "türkische synthpop-band · istanbul, 2015",
+    "who": "Jakuzi ist eine türkische Synthpop-Band, die 2015 in Istanbul gegründet wurde. Zur Band gehören Kutay Soyocak, Can Kalyoncu, Meriç Erseçgen und Ahmetcan Gökçeer.",
+    "facts": [
+     "Das Duo wurde in der Untergrundszene Istanbuls bekannt, nachdem das Debütalbum Fantezi Müzik erschienen war.",
+     "Das Album Fantezi Müzik erschien 2016 zunächst bei Domuz Records und wurde am 24. März 2017 von City Slang neu veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "türk synthpop grubu · istanbul, 2015",
+    "who": "Jakuzi, 2015 yılında İstanbul'da kurulmuş bir Türk synthpop grubudur. Grubun üyeleri Kutay Soyocak, Can Kalyoncu, Meriç Erseçgen ve Ahmetcan Gökçeer'dir.",
+    "facts": [
+     "İkili, ilk albümleri Fantezi Müzik'in yayımlanmasının ardından İstanbul'un yeraltı müzik sahnesinde öne çıktı.",
+     "Fantezi Müzik albümü ilk olarak 2016'da Domuz Records aracılığıyla çıktı ve 24 Mart 2017'de City Slang tarafından yeniden yayımlandı."
+    ]
+   }
+  }
+ ]
+}

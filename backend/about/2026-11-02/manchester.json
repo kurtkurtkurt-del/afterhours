@@ -1,0 +1,774 @@
+{
+ "city": "manchester",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "269f1866-a86b-45ac-b656-5ca0979e41af",
+   "slug": "deaf-havana-fools-and-worthless-liars-more-6170c566",
+   "title": "Deaf Havana - Fools & Worthless Liars + More",
+   "name": "Deaf Havana",
+   "source_url": "https://en.wikipedia.org/wiki/Deaf_Havana",
+   "extract": "Deaf Havana are an English alternative rock band from Hunstanton and King's Lynn, Norfolk, England. The band was formed in 2005 at the King's Lynn campus of The College of West Anglia.",
+   "en": {
+    "kicker": "english alternative rock band · norfolk, england, 2005",
+    "who": "Deaf Havana are an English alternative rock band from Hunstanton and King's Lynn, Norfolk, England. The band was formed in 2005 at the King's Lynn campus of The College of West Anglia.",
+    "facts": [
+     "The band was formed in 2005 at the King's Lynn campus of The College of West Anglia.",
+     "Deaf Havana are an English alternative rock band from Hunstanton and King's Lynn, Norfolk, England."
+    ]
+   },
+   "de": {
+    "kicker": "englische Alternative-Rockband · Norfolk, England, 2005",
+    "who": "Deaf Havana ist eine englische Alternative-Rockband aus Hunstanton und King's Lynn in Norfolk. Die Band wurde 2005 gegründet.",
+    "facts": [
+     "Die Band wurde 2005 am King's-Lynn-Campus des College of West Anglia gegründet.",
+     "Deaf Havana stammen aus Hunstanton und King's Lynn, Norfolk, England."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz alternatif rock grubu · norfolk, england, 2005",
+    "who": "Deaf Havana, Norfolk'taki Hunstanton ve King's Lynn'den gelen İngiliz bir alternatif rock grubudur. Grup 2005 yılında kuruldu.",
+    "facts": [
+     "Grup 2005 yılında The College of West Anglia'nın King's Lynn kampüsünde kuruldu.",
+     "Deaf Havana, İngiltere'nin Norfolk bölgesindeki Hunstanton ve King's Lynn'den geliyor."
+    ]
+   }
+  },
+  {
+   "id": "37a4ba98-b3eb-4a67-9e75-cd8262f21ec8",
+   "slug": "against-the-current-03fa747a",
+   "title": "Against the Current",
+   "name": "Against the Current",
+   "source_url": "https://en.wikipedia.org/wiki/Against_the_Current_(band)",
+   "extract": "Against the Current is an American rock band from Poughkeepsie, New York, formed in 2011. As of 2025, the band consists of lead vocalist Chrissy Costanza, guitarist Dan Gow, and drummer Will Ferri. The band quickly gained a sizeable online following after posting covers of various popular songs on YouTube. They played Warped Tour in 2016.",
+   "en": {
+    "kicker": "american rock band · poughkeepsie, new york, 2011",
+    "who": "Against the Current is an American rock band from Poughkeepsie, New York, formed in 2011. The band quickly gained a sizeable online following after posting covers of various popular songs on YouTube.",
+    "facts": [
+     "As of 2025, the band consists of lead vocalist Chrissy Costanza, guitarist Dan Gow, and drummer Will Ferri.",
+     "They played Warped Tour in 2016."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Rockband · Poughkeepsie, New York, 2011",
+    "who": "Against the Current ist eine amerikanische Rockband aus Poughkeepsie, New York, die 2011 gegründet wurde. Die Band gewann schnell eine große Online-Fangemeinde, nachdem sie Coverversionen beliebter Songs auf YouTube hochgeladen hatte.",
+    "facts": [
+     "Stand 2025 besteht die Band aus Leadsängerin Chrissy Costanza, Gitarrist Dan Gow und Schlagzeuger Will Ferri.",
+     "Die Band spielte 2016 auf der Warped Tour."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan rock grubu · poughkeepsie, new york, 2011",
+    "who": "Against the Current, 2011 yılında kurulmuş, New York'un Poughkeepsie kentinden bir Amerikan rock grubudur. Grup, YouTube'da çeşitli popüler şarkıların cover versiyonlarını paylaştıktan sonra hızla geniş bir çevrimiçi takipçi kitlesi kazandı.",
+    "facts": [
+     "2025 itibarıyla grupta baş vokalist Chrissy Costanza, gitarist Dan Gow ve davulcu Will Ferri yer alıyor.",
+     "Grup 2016'da Warped Tour'da sahne aldı."
+    ]
+   }
+  },
+  {
+   "id": "a3d9257a-d0e9-41a1-a984-2acee1271f58",
+   "slug": "lp-73e3bc2b",
+   "title": "LP",
+   "name": "LP",
+   "source_url": "https://en.wikipedia.org/wiki/LP_(singer)",
+   "extract": "Laura Pergolizzi, known professionally as LP, is an American singer, musician and songwriter from Brooklyn, New York. LP has released seven albums and three EPs. LP has written songs for other artists including Rihanna, Christina Aguilera, the Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd and Céline Dion.",
+   "en": {
+    "kicker": "american singer and songwriter · brooklyn, new york",
+    "who": "Laura Pergolizzi, known professionally as LP, is an American singer, musician and songwriter from Brooklyn, New York. LP has written songs for other artists including Rihanna, Christina Aguilera and Céline Dion.",
+    "facts": [
+     "LP has released seven albums and three EPs.",
+     "LP has written songs for other artists including Rihanna, Christina Aguilera, the Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd and Céline Dion."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer Singer-Songwriter · Brooklyn, New York",
+    "who": "Laura Pergolizzi, bekannt als LP, ist ein amerikanischer Singer-Songwriter aus Brooklyn, New York. LP hat unter anderem Songs für Rihanna, Christina Aguilera und Céline Dion geschrieben.",
+    "facts": [
+     "LP hat sieben Alben und drei EPs veröffentlicht.",
+     "LP hat Songs für andere Künstler geschrieben, darunter Rihanna, Christina Aguilera, die Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd und Céline Dion."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı · brooklyn, new york",
+    "who": "Laura Pergolizzi, LP adıyla tanınan, Brooklyn, New York'tan bir Amerikalı şarkıcı, müzisyen ve söz yazarıdır. LP, Rihanna, Christina Aguilera ve Céline Dion gibi sanatçılar için şarkılar yazdı.",
+    "facts": [
+     "LP yedi albüm ve üç EP yayımladı.",
+     "LP, Rihanna, Christina Aguilera, Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd ve Céline Dion gibi diğer sanatçılar için şarkılar yazdı."
+    ]
+   }
+  },
+  {
+   "id": "ea492734-5338-49f3-b3df-ba680f0c09bc",
+   "slug": "yaelokre-ce9e4332",
+   "title": "Yaelokre",
+   "name": "Yaelokre",
+   "source_url": "https://en.wikipedia.org/wiki/Yaelokre",
+   "extract": "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist known for their folk music storytelling project under the stage name Yaelokre. Ósk began releasing music under the project name in early 2024, going viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart the same year.",
+   "en": {
+    "kicker": "filipino-icelandic singer-songwriter · 2024",
+    "who": "Yaelokre is the folk music storytelling project of Christopher Kristjansson, known professionally as Keath Ósk. Ósk is a Filipino-Icelandic singer-songwriter and multimedia artist.",
+    "facts": [
+     "Ósk began releasing music under the project name in early 2024, going viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart the same year.",
+     "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist."
+    ]
+   },
+   "de": {
+    "kicker": "filipino-isländischer Singer-Songwriter · 2024",
+    "who": "Yaelokre ist ein Folk-Erzählprojekt von Christopher Kristjansson, der professionell als Keath Ósk auftritt. Ósk ist ein filipino-isländischer Singer-Songwriter und multimedialer Künstler.",
+    "facts": [
+     "Ósk begann Anfang 2024 unter dem Projektnamen Musik zu veröffentlichen und wurde im Juli desselben Jahres mit dem Song \"Harpy Hare\" auf TikTok viral.",
+     "Im selben Jahr stieg der Song in die TikTok Billboard Top 50 ein und erreichte Platz eins in Spotifys Global Viral Songs Chart."
+    ]
+   },
+   "tr": {
+    "kicker": "filipinli-izlandalı şarkıcı-söz yazarı · 2024",
+    "who": "Yaelokre, Christopher Kristjansson'un folk müzik hikâye anlatımı projesidir; kendisi Keath Ósk adıyla tanınır. Ósk, Filipinli-İzlandalı bir şarkıcı-söz yazarı ve çok disiplinli bir sanatçıdır.",
+    "facts": [
+     "Ósk, 2024'ün başında bu proje adıyla müzik yayımlamaya başladı ve aynı yılın Temmuz ayında \"Harpy Hare\" şarkısıyla TikTok'ta viral oldu.",
+     "Christopher Kristjansson, Keath Ósk adıyla tanınan, Filipinli-İzlandalı bir şarkıcı-söz yazarı ve çok disiplinli sanatçıdır."
+    ]
+   }
+  },
+  {
+   "id": "9bae18b8-c06f-41da-9f48-9dadbe47ada5",
+   "slug": "kamelot-dark-asylum-world-tour-e905f6f1",
+   "title": "KAMELOT - DARK ASYLUM WORLD TOUR",
+   "name": "Kamelot",
+   "source_url": "https://en.wikipedia.org/wiki/Kamelot",
+   "extract": "Kamelot is an American power metal band from Tampa, Florida, formed by Thomas Youngblood in 1987. The Norwegian vocalist Roy Khan joined for the album Siége Perilous, and shared songwriting credit with Youngblood until his departure in April 2011. On June 22, 2012, Youngblood announced on their website that their new vocalist would be the Swedish singer Tommy Karevik, who was first featured on Kamelot's album Silverthorn as the main vocalist, co-songwriter, and lyricist.",
+   "en": {
+    "kicker": "american power metal band · tampa, florida, 1987",
+    "who": "Kamelot is an American power metal band from Tampa, Florida, formed by Thomas Youngblood in 1987. Its vocalists have changed over the years, including Roy Khan and Tommy Karevik.",
+    "facts": [
+     "The Norwegian vocalist Roy Khan joined for the album Siége Perilous, and shared songwriting credit with Youngblood until his departure in April 2011.",
+     "On June 22, 2012, Youngblood announced on their website that their new vocalist would be the Swedish singer Tommy Karevik, who was first featured on Kamelot's album Silverthorn as the main vocalist, co-songwriter, and lyricist."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Power-Metal-Band · Tampa, Florida, 1987",
+    "who": "Kamelot ist eine amerikanische Power-Metal-Band aus Tampa, Florida, die 1987 von Thomas Youngblood gegründet wurde. Im Lauf der Zeit wechselte der Gesang, unter anderem mit Roy Khan und Tommy Karevik.",
+    "facts": [
+     "Der norwegische Sänger Roy Khan kam für das Album Siége Perilous hinzu und teilte sich das Songwriting mit Youngblood, bis er im April 2011 ging.",
+     "Am 22. Juni 2012 gab Youngblood auf der Website bekannt, dass der schwedische Sänger Tommy Karevik neuer Sänger werde, der zuvor als Hauptsänger, Co-Songwriter und Texter auf dem Album Silverthorn zu hören war."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı power metal grubu · tampa, florida, 1987",
+    "who": "Kamelot, 1987 yılında Thomas Youngblood tarafından kurulan, Tampa, Florida'dan Amerikalı bir power metal grubudur. Grubun vokalleri zaman içinde değişti; Roy Khan ve Tommy Karevik bu geçmişin parçasıdır.",
+    "facts": [
+     "Norveçli vokalist Roy Khan, Siége Perilous albümü için gruba katıldı ve Nisan 2011'deki ayrılışına kadar Youngblood ile söz yazarlığı kredisini paylaştı.",
+     "22 Haziran 2012'de Youngblood, web sitesinde yeni vokalistin İsveçli şarkıcı Tommy Karevik olacağını duyurdu; Karevik daha önce Silverthorn albümünde baş vokalist, ortak besteci ve söz yazarı olarak yer almıştı."
+    ]
+   }
+  },
+  {
+   "id": "f0a77921-638c-451c-a98d-0f538cb62fd3",
+   "slug": "jalen-ngonda-990075ee",
+   "title": "Jalen Ngonda",
+   "name": "Jalen Ngonda",
+   "source_url": "https://en.wikipedia.org/wiki/Jalen_Ngonda",
+   "extract": "Jalen N'Gonda is an American musician based in England. He came to prominence with the release of his debut studio album Come Around and Love Me (2023), and is known for his Motown-inspired soul music. N'Gonda is primarily a singer, but also plays various instruments during live performances.",
+   "en": {
+    "kicker": "american musician · england",
+    "who": "Jalen N'Gonda is an American musician based in England. He is primarily a singer, but also plays various instruments during live performances.",
+    "facts": [
+     "He came to prominence with the release of his debut studio album Come Around and Love Me (2023).",
+     "N'Gonda is primarily a singer, but also plays various instruments during live performances."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer Musiker · England",
+    "who": "Jalen N'Gonda ist ein amerikanischer Musiker, der in England lebt. Er ist vor allem Sänger und tritt mit verschiedenen Instrumenten auf.",
+    "facts": [
+     "Bekannt wurde er mit seinem Debütalbum Come Around and Love Me (2023).",
+     "N'Gonda ist vor allem Sänger, spielt bei Live-Auftritten aber auch verschiedene Instrumente."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı müzisyen · İngiltere",
+    "who": "Jalen N'Gonda, İngiltere'de yaşayan Amerikalı bir müzisyendir. Esas olarak şarkıcıdır, ama canlı performanslarında çeşitli enstrümanlar da çalar.",
+    "facts": [
+     "İlk stüdyo albümü Come Around and Love Me (2023) ile öne çıktı.",
+     "Canlı performanslarında esas olarak şarkı söyler, ama çeşitli enstrümanlar da çalar."
+    ]
+   }
+  },
+  {
+   "id": "d9a20a11-89c1-4bb0-b98a-6f960602ba9e",
+   "slug": "the-home-team-e32ff3a0",
+   "title": "The Home Team",
+   "name": "The Home Team",
+   "source_url": "https://en.wikipedia.org/wiki/The_Home_Team",
+   "extract": "The Home Team is an American rock band from Seattle, Washington, formed in 2013 by Daniel Matson and John Baran. The band currently consists of vocalist Brian Butcher, bassist Ryne Olson, guitarist John Baran, and drummer Daniel Matson.",
+   "en": {
+    "kicker": "american rock band · seattle, washington, 2013",
+    "who": "The Home Team is an American rock band from Seattle, Washington. The band currently has four members.",
+    "facts": [
+     "The Home Team is an American rock band from Seattle, Washington, formed in 2013 by Daniel Matson and John Baran.",
+     "The band currently consists of vocalist Brian Butcher, bassist Ryne Olson, guitarist John Baran, and drummer Daniel Matson."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Rockband · Seattle, Washington, 2013",
+    "who": "The Home Team ist eine amerikanische Rockband aus Seattle, Washington. Die Band hat derzeit vier Mitglieder.",
+    "facts": [
+     "Die Band wurde 2013 von Daniel Matson und John Baran gegründet.",
+     "Aktuell besteht sie aus Sänger Brian Butcher, Bassist Ryne Olson, Gitarrist John Baran und Schlagzeuger Daniel Matson."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan rock grubu · seattle, washington, 2013",
+    "who": "The Home Team, Seattle, Washington'dan bir Amerikan rock grubudur. Grupta şu anda dört üye bulunuyor.",
+    "facts": [
+     "Grup 2013 yılında Daniel Matson ve John Baran tarafından kuruldu.",
+     "Grubun kadrosunda vokalist Brian Butcher, basçı Ryne Olson, gitarist John Baran ve davulcu Daniel Matson yer alıyor."
+    ]
+   }
+  },
+  {
+   "id": "27b0c86e-219a-4777-9647-eedd89467de5",
+   "slug": "horse-jumper-of-love-0c9d7a5d",
+   "title": "Horse Jumper of Love",
+   "name": "Horse Jumper of Love",
+   "source_url": "https://en.wikipedia.org/wiki/Horse_Jumper_of_Love",
+   "extract": "Horse Jumper of Love is an American indie rock band from Boston, Massachusetts, that was formed in 2013. It has comprised vocalist-guitarist Dimitri Giannopoulos, bassist John Margaris, and drummer Jamie Vadala-Doran since inception.",
+   "en": {
+    "kicker": "american indie rock band · boston, massachusetts, 2013",
+    "who": "Horse Jumper of Love is an American indie rock band from Boston, Massachusetts. The band has had the same three members since it was formed.",
+    "facts": [
+     "Horse Jumper of Love is an American indie rock band from Boston, Massachusetts, that was formed in 2013.",
+     "It has comprised vocalist-guitarist Dimitri Giannopoulos, bassist John Margaris, and drummer Jamie Vadala-Doran since inception."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Indie-Rockband · Boston, Massachusetts, 2013",
+    "who": "Horse Jumper of Love ist eine amerikanische Indie-Rockband aus Boston, Massachusetts. Seit der Gründung besteht die Band aus denselben drei Musikern.",
+    "facts": [
+     "Die Band wurde 2013 gegründet und stammt aus Boston, Massachusetts.",
+     "Seit der Gründung besteht sie aus Sänger und Gitarrist Dimitri Giannopoulos, Bassist John Margaris und Schlagzeuger Jamie Vadala-Doran."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan indie rock grubu · boston, massachusetts, 2013",
+    "who": "Horse Jumper of Love, Boston, Massachusetts'ten bir Amerikan indie rock grubudur. Grup kuruluşundan bu yana aynı üç üyeden oluşuyor.",
+    "facts": [
+     "Grup 2013 yılında kuruldu.",
+     "Kuruluşundan bu yana grupta vokalist-gitarist Dimitri Giannopoulos, basçı John Margaris ve davulcu Jamie Vadala-Doran yer alıyor."
+    ]
+   }
+  },
+  {
+   "id": "7a2a65cc-1bcf-4689-8d6c-3987da5a2f13",
+   "slug": "cat-power-a1d0029a",
+   "title": "Cat Power",
+   "name": "Cat Power",
+   "source_url": "https://en.wikipedia.org/wiki/Cat_Power",
+   "extract": "Charlyn Marie  \"Chan\" Marshall, better known by her stage name Cat Power, is an American singer-songwriter. Cat Power was originally the name of her first band, but has become her stage name as a solo artist.",
+   "en": {
+    "kicker": "american singer-songwriter",
+    "who": "Cat Power is the stage name of Charlyn Marie \"Chan\" Marshall, an American singer-songwriter. The name began as the name of her first band before she used it as a solo artist.",
+    "facts": [
+     "Cat Power was originally the name of her first band, but has become her stage name as a solo artist.",
+     "Charlyn Marie \"Chan\" Marshall, better known by her stage name Cat Power, is an American singer-songwriter."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer Singer-Songwriter",
+    "who": "Cat Power ist der Künstlername von Charlyn Marie \"Chan\" Marshall, einem amerikanischen Singer-Songwriter. Der Name war ursprünglich der ihrer ersten Band.",
+    "facts": [
+     "Cat Power war ursprünglich der Name ihrer ersten Band, ist aber als Solokünstlerin zu ihrem Künstlernamen geworden.",
+     "Charlyn Marie \"Chan\" Marshall, besser bekannt unter dem Künstlernamen Cat Power, ist ein amerikanischer Singer-Songwriter."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı",
+    "who": "Cat Power, Charlyn Marie \"Chan\" Marshall'ın sahne adıdır; Amerikalı bir şarkıcı-söz yazarıdır. Bu ad başlangıçta ilk grubunun adıydı.",
+    "facts": [
+     "Cat Power, Charlyn Marie \"Chan\" Marshall'ın ilk grubunun adıydı; daha sonra solo sanatçı olarak sahne adı haline geldi.",
+     "Charlyn Marie \"Chan\" Marshall, Cat Power sahne adıyla daha iyi bilinen Amerikalı bir şarkıcı-söz yazarıdır."
+    ]
+   }
+  },
+  {
+   "id": "29f7ee3e-5354-4dd1-8b3a-6c6c4cbcf603",
+   "slug": "dizzee-rascal-d78b8924",
+   "title": "Dizzee Rascal",
+   "name": "Dizzee Rascal",
+   "source_url": "https://en.wikipedia.org/wiki/Dizzee_Rascal",
+   "extract": "Dylan Kwabena Mills, known professionally as Dizzee Rascal, is a British rapper and MC. He is often credited as a pioneer of British hip hop and grime music and was ranked by Complex as one of the greatest British rappers of all time. His work has also incorporated elements of UK garage, bassline and R&B. Dizzee Rascal's music is also often credited with bringing UK rap into the mainstream and became the country's first rapper to achieve international recognition.",
+   "en": {
+    "kicker": "british rapper and mc",
+    "who": "Dylan Kwabena Mills, known professionally as Dizzee Rascal, is a British rapper and MC. His work has also incorporated elements of UK garage, bassline and R&B.",
+    "facts": [
+     "He is often credited as a pioneer of British hip hop and grime music and was ranked by Complex as one of the greatest British rappers of all time.",
+     "Dizzee Rascal's music is also often credited with bringing UK rap into the mainstream and became the country's first rapper to achieve international recognition."
+    ]
+   },
+   "de": {
+    "kicker": "britischer Rapper und MC",
+    "who": "Dylan Kwabena Mills, bekannt als Dizzee Rascal, ist ein britischer Rapper und MC. Er gilt oft als Pionier des britischen Hip-Hop und des Grime.",
+    "facts": [
+     "Complex zählte ihn zu den größten britischen Rappern aller Zeiten.",
+     "Seine Musik gilt oft als Wegbereiter dafür, britischen Rap in den Mainstream zu bringen, und er war der erste Rapper des Landes mit internationaler Anerkennung."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz rapçi ve MC",
+    "who": "Dylan Kwabena Mills, Dizzee Rascal adıyla tanınan İngiliz bir rapçi ve MC'dir. Britanya hip hop ve grime müziğinin öncülerinden biri olarak anılır.",
+    "facts": [
+     "Complex onu tüm zamanların en büyük İngiliz rapçileri arasında sıraladı.",
+     "Müziği UK rap'ini ana akıma taşımada etkili oldu ve ülkenin uluslararası tanınırlık kazanan ilk rapçisi oldu."
+    ]
+   }
+  },
+  {
+   "id": "c845432a-5914-40b4-8993-f21bb618c712",
+   "slug": "ole-60-off-the-grid-tour-934b98e1",
+   "title": "Ole 60 - Off the Grid Tour",
+   "name": "Ole 60",
+   "source_url": "https://en.wikipedia.org/wiki/Ole_60",
+   "extract": "Ole 60 is an American country/alt-country band from Hawesville, Kentucky, formed in 2023, known for blending Appalachian storytelling with elements of grunge, southern rock, folk music, and traditional country. The band consists of Jacob Ty Young, Tristan Roby, Ryan Laslie, Colby Clark, Aden Wood (drums), Dwight McGlynn, and Dustin \"Catfish\" Fuqua. The band gained widespread attention in 2024 through breakout singles like \"smoke & a light\" and \"Thoughts of You\", and acclaimed debut album Smokestack Town in 2025.",
+   "en": {
+    "kicker": "american country band · hawesville, kentucky, 2023",
+    "who": "Ole 60 is an American country/alt-country band from Hawesville, Kentucky, formed in 2023. The band blends Appalachian storytelling with elements of grunge, southern rock, folk music, and traditional country.",
+    "facts": [
+     "The band gained widespread attention in 2024 through breakout singles like \"smoke & a light\" and \"Thoughts of You\", and acclaimed debut album Smokestack Town in 2025.",
+     "The band consists of Jacob Ty Young, Tristan Roby, Ryan Laslie, Colby Clark, Aden Wood (drums), Dwight McGlynn, and Dustin \"Catfish\" Fuqua."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Country-Band · Hawesville, Kentucky, 2023",
+    "who": "Ole 60 ist eine amerikanische Country- und Alt-Country-Band aus Hawesville, Kentucky, die 2023 gegründet wurde. Die Band verbindet Appalachen-Erzähltradition mit Elementen von Grunge, Southern Rock, Folk und traditionellem Country.",
+    "facts": [
+     "Die Band erregte 2024 mit Singles wie \"smoke & a light\" und \"Thoughts of You\" große Aufmerksamkeit und veröffentlichte 2025 das gefeierte Debütalbum Smokestack Town.",
+     "Zur Band gehören Jacob Ty Young, Tristan Roby, Ryan Laslie, Colby Clark, Aden Wood (Schlagzeug), Dwight McGlynn und Dustin \"Catfish\" Fuqua."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan country grubu · hawesville, kentucky, 2023",
+    "who": "Ole 60, Kentucky'nin Hawesville kentinden bir Amerikan country ve alt-country grubudur ve 2023 yılında kuruldu. Grup, Appalachian hikâye anlatımını grunge, southern rock, folk ve geleneksel country unsurlarıyla harmanlıyor.",
+    "facts": [
+     "Grup 2024'te \"smoke & a light\" ve \"Thoughts of You\" gibi single'larla geniş ilgi çekti ve 2025'te beğenilen ilk albümü Smokestack Town'ı yayımladı.",
+     "Grubun üyeleri Jacob Ty Young, Tristan Roby, Ryan Laslie, Colby Clark, Aden Wood (davul), Dwight McGlynn ve Dustin \"Catfish\" Fuqua'dır."
+    ]
+   }
+  },
+  {
+   "id": "b303c3a2-b4c4-4f9a-b047-2c3453610d21",
+   "slug": "chanel-beads-73c5eb49",
+   "title": "Chanel Beads",
+   "name": "Chanel Beads",
+   "source_url": "https://en.wikipedia.org/wiki/Chanel_Beads",
+   "extract": "Chanel Beads is an American New York City-based group fronted by musicians Shane Lavers, Maya McGrory, and Zachary Paul. They are currently signed to Jagjaguwar. Lavers works closely with Maya McGrory, also known as Colle.",
+   "en": {
+    "kicker": "american group · new york city",
+    "who": "Chanel Beads is an American New York City-based group. Its members include Shane Lavers, Maya McGrory, and Zachary Paul.",
+    "facts": [
+     "They are currently signed to Jagjaguwar.",
+     "Lavers works closely with Maya McGrory, also known as Colle."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Gruppe · New York City",
+    "who": "Chanel Beads ist eine amerikanische Gruppe aus New York City. Zu den Musikern gehören Shane Lavers, Maya McGrory und Zachary Paul.",
+    "facts": [
+     "Die Gruppe ist derzeit bei Jagjaguwar unter Vertrag.",
+     "Lavers arbeitet eng mit Maya McGrory zusammen, die auch als Colle bekannt ist."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan grup · new york city",
+    "who": "Chanel Beads, New York City merkezli bir Amerikan gruptur. Grubun ön planındaki müzisyenler Shane Lavers, Maya McGrory ve Zachary Paul'dur.",
+    "facts": [
+     "Grup şu anda Jagjaguwar ile sözleşmeli.",
+     "Lavers, Colle olarak da bilinen Maya McGrory ile yakın çalışıyor."
+    ]
+   }
+  },
+  {
+   "id": "0470997b-2a61-4977-abc4-549fdc652d0d",
+   "slug": "future-palace-179491f0",
+   "title": "Future Palace",
+   "name": "Future Palace",
+   "source_url": "https://en.wikipedia.org/wiki/Future_Palace",
+   "extract": "Future Palace is a German rock band from Berlin. It consists of vocalist Maria Lessing, guitarist Manuel Kohlert, and drummer Johannes Früchtenicht. The band has been signed to the German label Century Media Records since 2025 and to date has released four studio albums, Escape (2020), Run (2022), Distortion (2024), and Resurgence (2026).",
+   "en": {
+    "kicker": "german rock band · berlin",
+    "who": "Future Palace is a German rock band from Berlin. The band has released four studio albums.",
+    "facts": [
+     "The band has been signed to the German label Century Media Records since 2025 and to date has released four studio albums, Escape (2020), Run (2022), Distortion (2024), and Resurgence (2026).",
+     "It consists of vocalist Maria Lessing, guitarist Manuel Kohlert, and drummer Johannes Früchtenicht."
+    ]
+   },
+   "de": {
+    "kicker": "deutsche Rockband · Berlin",
+    "who": "Future Palace ist eine deutsche Rockband aus Berlin. Die Band hat bisher vier Studioalben veröffentlicht.",
+    "facts": [
+     "Seit 2025 steht die Band beim deutschen Label Century Media Records unter Vertrag; bisher erschienen die Studioalben Escape (2020), Run (2022), Distortion (2024) und Resurgence (2026).",
+     "Zur Band gehören Vokalistin Maria Lessing, Gitarrist Manuel Kohlert und Schlagzeuger Johannes Früchtenicht."
+    ]
+   },
+   "tr": {
+    "kicker": "alman rock grubu · berlin",
+    "who": "Future Palace, Berlin'den bir Alman rock grubudur. Grup bugüne kadar dört stüdyo albümü yayımladı.",
+    "facts": [
+     "Grup 2025'ten beri Century Media Records ile sözleşmeli ve Escape (2020), Run (2022), Distortion (2024) ve Resurgence (2026) albümlerini yayımladı.",
+     "Grubun vokalisti Maria Lessing, gitaristi Manuel Kohlert ve davulcusu Johannes Früchtenicht'tir."
+    ]
+   }
+  },
+  {
+   "id": "723e557c-8a3d-47fa-97dd-49e0b9352a8a",
+   "slug": "papa-roach-rise-of-the-roach-887621c1",
+   "title": "Papa Roach - Rise of the Roach",
+   "name": "Papa Roach",
+   "source_url": "https://en.wikipedia.org/wiki/Papa_Roach",
+   "extract": "Papa Roach is an American rock band from Vacaville, California, formed in 1993. After a few early shifts, the band initially stabilized in 1996 with the lineup of lead vocalist Jacoby Shaddix, drummer Dave Buckner, guitarist Jerry Horton, and bassist Tobin Esperance. This lineup remained consistent for slightly over a decade.",
+   "en": {
+    "kicker": "american rock band · vacaville, california, 1993",
+    "who": "Papa Roach is an American rock band from Vacaville, California, formed in 1993. Its early years included a few lineup shifts before it stabilized.",
+    "facts": [
+     "After a few early shifts, the band initially stabilized in 1996 with the lineup of lead vocalist Jacoby Shaddix, drummer Dave Buckner, guitarist Jerry Horton, and bassist Tobin Esperance.",
+     "This lineup remained consistent for slightly over a decade."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Rockband · Vacaville, Kalifornien, 1993",
+    "who": "Papa Roach ist eine amerikanische Rockband aus Vacaville, Kalifornien, die 1993 gegründet wurde. In den ersten Jahren gab es einige Besetzungswechsel, bevor sich die Band stabilisierte.",
+    "facts": [
+     "Nach einigen frühen Wechseln stabilisierte sich die Band 1996 mit der Besetzung aus Leadsänger Jacoby Shaddix, Schlagzeuger Dave Buckner, Gitarrist Jerry Horton und Bassist Tobin Esperance.",
+     "Diese Besetzung blieb etwas länger als ein Jahrzehnt unverändert."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan rock grubu · vacaville, california, 1993",
+    "who": "Papa Roach, California'nın Vacaville kentinden bir Amerikan rock grubudur ve 1993 yılında kuruldu. Grup, istikrar kazanmadan önce birkaç erken kadro değişikliği yaşadı.",
+    "facts": [
+     "Birkaç erken değişimin ardından grup 1996'da baş vokalist Jacoby Shaddix, davulcu Dave Buckner, gitarist Jerry Horton ve basçı Tobin Esperance'ın kadrosuyla istikrar kazandı.",
+     "Bu kadro biraz uzun bir on yıl boyunca değişmeden kaldı."
+    ]
+   }
+  },
+  {
+   "id": "4d6039f1-1094-410f-bd4f-487310724374",
+   "slug": "wasia-project-d86ca1cc",
+   "title": "Wasia Project",
+   "name": "Wasia Project",
+   "source_url": "https://en.wikipedia.org/wiki/Wasia_Project",
+   "extract": "Wasia Project is an English indie pop band consisting of siblings Olivia Hardy and William Gao. The group released their debut single, \"Why Don't U Love Me,\" in 2019. This was followed by their debut extended play (EP) How Can I Pretend? in 2022. In August 2024, they released their second extended play (EP), Isotope. On stage, they are often joined by drummer Nate Wicks, bassist Tom Pacitti, saxophonist Safi Jazz, and trombonist Patrick Minton.",
+   "en": {
+    "kicker": "english indie pop band",
+    "who": "Wasia Project is an English indie pop band consisting of siblings Olivia Hardy and William Gao. On stage, they are often joined by other musicians.",
+    "facts": [
+     "The group released their debut single, \"Why Don't U Love Me,\" in 2019.",
+     "In August 2024, they released their second extended play (EP), Isotope."
+    ]
+   },
+   "de": {
+    "kicker": "englische Indie-Popband",
+    "who": "Wasia Project ist eine englische Indie-Popband aus den Geschwistern Olivia Hardy und William Gao. Auf der Bühne werden sie oft von weiteren Musikern begleitet.",
+    "facts": [
+     "Die Gruppe veröffentlichte 2019 ihre Debütsingle \"Why Don't U Love Me\".",
+     "Im August 2024 erschien ihre zweite EP Isotope."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz indie pop grubu",
+    "who": "Wasia Project, kardeşler Olivia Hardy ve William Gao'dan oluşan İngiliz bir indie pop grubudur. Sahnede sık sık ek müzisyenlerle birlikte çalarlar.",
+    "facts": [
+     "Grup 2019'da ilk single'ı \"Why Don't U Love Me\"yi yayımladı.",
+     "Ağustos 2024'te ikinci EP'leri Isotope'u yayımladılar."
+    ]
+   }
+  },
+  {
+   "id": "ad174617-bb3c-4170-85a7-5d747bc69e16",
+   "slug": "teenage-fanclub-84420feb",
+   "title": "Teenage Fanclub",
+   "name": "Teenage Fanclub",
+   "source_url": "https://en.wikipedia.org/wiki/Teenage_Fanclub",
+   "extract": "Teenage Fanclub are a Scottish alternative rock band formed in Glasgow in 1989. The group was founded by Norman Blake, Raymond McGinley and Gerard Love, all of whom shared lead vocals and songwriting duties until Love's departure in 2018. As of 2023, the band's lineup consists of Blake, McGinley, longtime drummer Francis MacDonald, Dave McGowan and Euros Childs.",
+   "en": {
+    "kicker": "scottish alternative rock band · glasgow, 1989",
+    "who": "Teenage Fanclub are a Scottish alternative rock band formed in Glasgow in 1989. It is a band with a long history of shared lead vocals.",
+    "facts": [
+     "The group was founded by Norman Blake, Raymond McGinley and Gerard Love, all of whom shared lead vocals and songwriting duties until Love's departure in 2018.",
+     "As of 2023, the band's lineup consists of Blake, McGinley, longtime drummer Francis MacDonald, Dave McGowan and Euros Childs."
+    ]
+   },
+   "de": {
+    "kicker": "schottische Alternative-Rockband · Glasgow, 1989",
+    "who": "Teenage Fanclub ist eine schottische Alternative-Rockband, die 1989 in Glasgow gegründet wurde. Lange Zeit teilten sich die Gründungsmitglieder den Leadgesang.",
+    "facts": [
+     "Die Gruppe wurde von Norman Blake, Raymond McGinley und Gerard Love gegründet, die sich bis zu Loves Weggang 2018 Leadgesang und Songwriting teilten.",
+     "Stand 2023 besteht die Besetzung aus Blake, McGinley, dem langjährigen Schlagzeuger Francis MacDonald, Dave McGowan und Euros Childs."
+    ]
+   },
+   "tr": {
+    "kicker": "İskoç alternatif rock grubu · glasgow, 1989",
+    "who": "Teenage Fanclub, 1989 yılında Glasgow'da kurulmuş bir İskoç alternatif rock grubudur. Kurucu üyeler uzun süre baş vokal ve söz yazarlığını paylaştı.",
+    "facts": [
+     "Grup Norman Blake, Raymond McGinley ve Gerard Love tarafından kuruldu; Love 2018'de ayrılana kadar üçü de baş vokal ve söz yazarlığını paylaştı.",
+     "2023 itibarıyla kadroda Blake, McGinley, uzun süredir davulcu olan Francis MacDonald, Dave McGowan ve Euros Childs yer alıyor."
+    ]
+   }
+  },
+  {
+   "id": "a4c8814a-efb7-4e81-8c96-6da5864471d4",
+   "slug": "the-script-the-man-in-the-arena-tour-b47c121d",
+   "title": "The Script - The Man In The Arena Tour",
+   "name": "The Script",
+   "source_url": "https://en.wikipedia.org/wiki/The_Script",
+   "extract": "The Script are an Irish pop rock band formed in 2001 in Dublin by lead vocalist and keyboardist Danny O'Donoghue, lead guitarist Mark Sheehan and drummer Glen Power. The band currently consists of O'Donoghue, Power, Benjamin Sargeant and Ben Weaver (guitar). Sheehan was a member of the band up until his death in 2023. The band moved to London after signing to Sony Label Group imprint Phonogenic and released their first album The Script in August 2008, preceded by the debut single \"We Cry\" as well as other singles such as \"The Man Who Can't Be Moved\", \"Breakeven\" and \"Before the Worst\". The album peaked at number one in both Ireland and the UK.",
+   "en": {
+    "kicker": "irish pop rock band · dublin, 2001",
+    "who": "The Script are an Irish pop rock band formed in 2001 in Dublin. The band moved to London after signing to Sony Label Group imprint Phonogenic.",
+    "facts": [
+     "The band currently consists of O'Donoghue, Power, Benjamin Sargeant and Ben Weaver (guitar).",
+     "The album peaked at number one in both Ireland and the UK."
+    ]
+   },
+   "de": {
+    "kicker": "irische Poprockband · Dublin, 2001",
+    "who": "The Script sind eine irische Poprockband, die 2001 in Dublin gegründet wurde. Nach der Unterzeichnung beim Sony-Label-Group-Imprint Phonogenic zog die Band nach London.",
+    "facts": [
+     "Die Band besteht aktuell aus O'Donoghue, Power, Benjamin Sargeant und Ben Weaver an der Gitarre.",
+     "Das Album erreichte in Irland und Großbritannien jeweils Platz eins."
+    ]
+   },
+   "tr": {
+    "kicker": "İrlandalı pop rock grubu · dublin, 2001",
+    "who": "The Script, 2001 yılında Dublin'de kurulmuş İrlandalı bir pop rock grubudur. Sony Label Group'un Phonogenic imprint'iyle anlaşmasının ardından grup Londra'ya taşındı.",
+    "facts": [
+     "Grup şu anda O'Donoghue, Power, Benjamin Sargeant ve gitarda Ben Weaver'dan oluşuyor.",
+     "Albüm hem İrlanda'da hem Birleşik Krallık'ta birinci sıraya yükseldi."
+    ]
+   }
+  },
+  {
+   "id": "15e1217f-52b7-4754-b8d2-31f8f57be85e",
+   "slug": "puscifer-5712bc84",
+   "title": "Puscifer",
+   "name": "Puscifer",
+   "source_url": "https://en.wikipedia.org/wiki/Puscifer",
+   "extract": "Puscifer is an American rock group formed in Los Angeles by Maynard James Keenan, lead singer of Tool and A Perfect Circle. Keenan was the only constant member of the band and he considered the project to be his \"creative subconscious\". Later, frequent collaborators Mat Mitchell and Carina Round became permanent members.",
+   "en": {
+    "kicker": "american rock band · los angeles",
+    "who": "Puscifer is an American rock group formed in Los Angeles by Maynard James Keenan, lead singer of Tool and A Perfect Circle. Keenan was the core of the project from the start.",
+    "facts": [
+     "Keenan was the only constant member of the band and he considered the project to be his \"creative subconscious\".",
+     "Later, frequent collaborators Mat Mitchell and Carina Round became permanent members."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische Rockgruppe · Los Angeles",
+    "who": "Puscifer ist eine amerikanische Rockgruppe, die in Los Angeles von Maynard James Keenan gegründet wurde, dem Sänger von Tool und A Perfect Circle. Keenan bildete von Anfang an den Kern des Projekts.",
+    "facts": [
+     "Keenan war das einzige ständige Mitglied der Band und betrachtete das Projekt als sein kreatives Unterbewusstsein.",
+     "Später wurden die häufigen Mitarbeiter Mat Mitchell und Carina Round feste Mitglieder."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan rock grubu · los angeles",
+    "who": "Puscifer, Los Angeles'ta Tool ve A Perfect Circle'ın baş vokalisti Maynard James Keenan tarafından kurulan Amerikan bir rock grubudur. Keenan, proje boyunca grubun çekirdeğini oluşturdu.",
+    "facts": [
+     "Keenan, grubun tek sabit üyesiydi ve projeyi kendi \"creative subconscious\" (yaratıcı bilinçaltı) olarak görüyordu.",
+     "Daha sonra sık işbirlikçileri Mat Mitchell ve Carina Round kalıcı üye oldu."
+    ]
+   }
+  },
+  {
+   "id": "98d2d679-4c0c-4f04-92a5-de0b9eb99f68",
+   "slug": "mavo-d23fc02c",
+   "title": "Mavo",
+   "name": "Mavo",
+   "source_url": "https://en.wikipedia.org/wiki/Mavo_(musician)",
+   "extract": "Oseremen Marvin Ukanigbe, known professionally as Mavo, is a Nigerian singer-songwriter. He rose to popularity in 2025 with the release of the single \"Escaladizzy\", followed by \"Shakabulizzy\", \"Money Constant\" with fellow singer Wizkid, and \"Body (Danz)\" with CKay, the latter of which became his first number-one song in Nigeria.",
+   "en": {
+    "kicker": "nigerian singer-songwriter",
+    "who": "Oseremen Marvin Ukanigbe, known professionally as Mavo, is a Nigerian singer-songwriter. He rose to popularity in 2025 with the release of the single \"Escaladizzy\".",
+    "facts": [
+     "He rose to popularity in 2025 with the release of the single \"Escaladizzy\", followed by \"Shakabulizzy\", \"Money Constant\" with fellow singer Wizkid, and \"Body (Danz)\" with CKay, the latter of which became his first number-one song in Nigeria.",
+     "\"Body (Danz)\" with CKay, the latter of which became his first number-one song in Nigeria."
+    ]
+   },
+   "de": {
+    "kicker": "nigerianischer Singer-Songwriter",
+    "who": "Oseremen Marvin Ukanigbe, bekannt als Mavo, ist ein nigerianischer Singer-Songwriter. 2025 wurde er mit der Single \"Escaladizzy\" bekannt.",
+    "facts": [
+     "Auf \"Escaladizzy\" folgten \"Shakabulizzy\", \"Money Constant\" mit Wizkid und \"Body (Danz)\" mit CKay.",
+     "\"Body (Danz)\" mit CKay wurde sein erster Nummer-eins-Hit in Nigeria."
+    ]
+   },
+   "tr": {
+    "kicker": "nijeryalı şarkıcı-söz yazarı",
+    "who": "Oseremen Marvin Ukanigbe, Mavo adıyla tanınan Nijeryalı bir şarkıcı-söz yazarıdır. 2025'te \"Escaladizzy\" single'ıyla popülerlik kazandı.",
+    "facts": [
+     "Ardından \"Shakabulizzy\", Wizkid ile \"Money Constant\" ve CKay ile \"Body (Danz)\" geldi.",
+     "CKay ile yaptığı \"Body (Danz)\", Nijerya'da ilk birinci sıraya yükselen şarkısı oldu."
+    ]
+   }
+  },
+  {
+   "id": "e86f8b84-718b-46d2-994a-fc2157685390",
+   "slug": "stevie-wonder-songs-in-the-key-of-life-performan-d58a539a",
+   "title": "Stevie Wonder: Songs In The Key of Life Performances",
+   "name": "Stevie Wonder",
+   "source_url": "https://en.wikipedia.org/wiki/Stevie_Wonder",
+   "extract": "Stevland Hardaway Morris, known professionally as Stevie Wonder, is an American singer-songwriter, musician, and record producer. He is widely regarded as one of the most influential musicians of the 20th century, and is credited as a pioneer and influence by musicians across a range of genres that include R&B, pop, soul, gospel, funk, and jazz. Wonder's use of synthesizers and other electronic musical instruments in the 1970s reshaped the conventions of contemporary R&B. He also helped drive such genres into the album era, crafting his LPs as cohesive and consistent, in addition to socially conscious statements with complex compositions.",
+   "en": {
+    "kicker": "american singer-songwriter and record producer",
+    "who": "Stevland Hardaway Morris, known professionally as Stevie Wonder, is an American singer-songwriter, musician, and record producer. He also helped drive such genres into the album era.",
+    "facts": [
+     "Wonder's use of synthesizers and other electronic musical instruments in the 1970s reshaped the conventions of contemporary R&B.",
+     "He is widely regarded as one of the most influential musicians of the 20th century, and is credited as a pioneer and influence by musicians across a range of genres that include R&B, pop, soul, gospel, funk, and jazz."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer Singer-Songwriter und Produzent",
+    "who": "Stevland Hardaway Morris, bekannt als Stevie Wonder, ist ein amerikanischer Singer-Songwriter, Musiker und Produzent. Er gilt weithin als einer der einflussreichsten Musiker des 20. Jahrhunderts.",
+    "facts": [
+     "Wonders Einsatz von Synthesizern und anderen elektronischen Instrumenten in den 1970er Jahren hat den zeitgenössischen R&B neu geprägt.",
+     "Er gilt als Pionier und Einfluss für Musiker zahlreicher Genres wie R&B, Pop, Soul, Gospel, Funk und Jazz."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı ve yapımcı",
+    "who": "Stevland Hardaway Morris, Stevie Wonder adıyla bilinen Amerikalı bir şarkıcı-söz yazarı, müzisyen ve plak yapımcısıdır. 20. yüzyılın en etkili müzisyenlerinden biri olarak kabul edilir.",
+    "facts": [
+     "Wonder'ın 1970'lerde sentezleyicileri ve diğer elektronik enstrümanları kullanması, çağdaş R&B'nin geleneklerini yeniden şekillendirdi.",
+     "R&B, pop, soul, gospel, funk ve caz gibi birçok türde müzisyenler için öncü ve ilham kaynağı olarak anılır."
+    ]
+   }
+  },
+  {
+   "id": "7b6e6eac-2433-4e3b-a2f9-05cd1ceb79f4",
+   "slug": "the-shires-1e30f49d",
+   "title": "The Shires",
+   "name": "The Shires",
+   "source_url": "https://en.wikipedia.org/wiki/The_Shires_(duo)",
+   "extract": "The Shires are a British country music duo composed of singer-songwriters Ben Earle and Crissie Rhodes. Earle sings harmony vocals, plays piano and guitar, and Rhodes is lead singer. The duo formed in 2013 and released their debut album Brave in 2015, becoming the first British country act to chart in the Top 10 of the UK Albums Chart. The group's second album, My Universe, became the fastest-selling British country album in history when it was released in October 2016.",
+   "en": {
+    "kicker": "british country music duo",
+    "who": "The Shires are a British country music duo composed of singer-songwriters Ben Earle and Crissie Rhodes. Earle sings harmony vocals, plays piano and guitar, and Rhodes is lead singer.",
+    "facts": [
+     "The duo formed in 2013 and released their debut album Brave in 2015, becoming the first British country act to chart in the Top 10 of the UK Albums Chart.",
+     "The group's second album, My Universe, became the fastest-selling British country album in history when it was released in October 2016."
+    ]
+   },
+   "de": {
+    "kicker": "britisches Country-Musik-Duo",
+    "who": "The Shires sind ein britisches Country-Musik-Duo aus den Singer-Songwritern Ben Earle und Crissie Rhodes. Earle singt Harmoniegesang und spielt Klavier und Gitarre, Rhodes ist die Leadsängerin.",
+    "facts": [
+     "Das Duo gründete sich 2013 und veröffentlichte 2015 sein Debütalbum Brave, womit es als erste britische Country-Band in die Top 10 der UK Albums Chart einstieg.",
+     "Das zweite Album My Universe wurde im Oktober 2016 veröffentlicht und wurde das schnellstverkaufte britische Country-Album der Geschichte."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz country müzik ikilisi",
+    "who": "The Shires, şarkıcı-söz yazarları Ben Earle ve Crissie Rhodes'tan oluşan İngiliz bir country müzik ikilisidir. Earle armoni vokalleri söyler ve piyano ile gitar çalar; Rhodes ise baş vokalisttir.",
+    "facts": [
+     "İkili 2013'te kuruldu ve 2015'te ilk albümü Brave'i yayımlayarak UK Albums Chart'ın ilk 10'una giren ilk İngiliz country sanatçısı oldu.",
+     "İkinci albümleri My Universe, Ekim 2016'da yayımlandığında tarihin en hızlı satan İngiliz country albümü oldu."
+    ]
+   }
+  },
+  {
+   "id": "abc4a96c-cb62-410b-881c-339bdf7e9e3d",
+   "slug": "noah-kahan-the-great-divide-tour-f4cec34f",
+   "title": "Noah Kahan - The Great Divide Tour",
+   "name": "Noah Kahan",
+   "source_url": "https://en.wikipedia.org/wiki/Noah_Kahan",
+   "extract": "Noah Berkenkamp Kahan is an American singer-songwriter. His breakthrough single, \"Hurt Somebody\", achieved gold status in the United States and charted in multiple international markets. The single and EP of the same name preceded the release of his debut album, Busyhead (2019). Within five years, two more albums came out: I Was / I Am (2021) and Stick Season (2022), the latter became his mainstream commercial breakthrough. It led to his nomination in 2023 for the Grammy Award for Best New Artist. In 2026, his fourth album The Great Divide was released and achieved record-breaking streaming and vinyl sales for a No. 1 rock album debut on the Billboard 200. That preceded The Great Divide Tour",
+   "en": {
+    "kicker": "american singer-songwriter",
+    "who": "Noah Berkenkamp Kahan is an American singer-songwriter. His breakthrough single, \"Hurt Somebody\", achieved gold status in the United States and charted in multiple international markets.",
+    "facts": [
+     "In 2026, his fourth album The Great Divide was released and achieved record-breaking streaming and vinyl sales for a No. 1 rock album debut on the Billboard 200.",
+     "It led to his nomination in 2023 for the Grammy Award for Best New Artist."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer Singer-Songwriter",
+    "who": "Noah Berkenkamp Kahan ist ein amerikanischer Singer-Songwriter. Sein Durchbruchssong \"Hurt Somebody\" erreichte in den USA Goldstatus und stieg in mehreren internationalen Märkten in die Charts ein.",
+    "facts": [
+     "2026 erschien sein viertes Album The Great Divide, das Rekordwerte beim Streaming und Vinylverkauf erzielte und als No.-1-Rock-Album in die Billboard 200 einstieg.",
+     "Im Jahr 2023 folgte seine Nominierung für den Grammy Award als Best New Artist."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı",
+    "who": "Noah Berkenkamp Kahan, Amerikalı bir şarkıcı-söz yazarıdır. Çıkış single'ı \"Hurt Somebody\", Amerika Birleşik Devletleri'nde altın statü kazandı ve birçok uluslararası pazarda listelere girdi.",
+    "facts": [
+     "2026'da dördüncü albümü The Great Divide yayımlandı; rekor düzeyde streaming ve vinil satışı yaparak Billboard 200'de 1 numaralı rock albümü olarak debut yaptı.",
+     "2023'te Grammy Ödülü'nde En İyi Yeni Sanatçı (Best New Artist) dalında aday gösterildi."
+    ]
+   }
+  },
+  {
+   "id": "de80cdd9-8706-4c84-9a29-26cf4716e947",
+   "slug": "hothouse-flowers-90a66252",
+   "title": "Hothouse Flowers",
+   "name": "Hothouse Flowers",
+   "source_url": "https://en.wikipedia.org/wiki/Hothouse_Flowers",
+   "extract": "Hothouse Flowers is an Irish rock band that combine traditional Irish music with influences from soul, gospel, and rock. Formed in 1985 in Dublin, they began as street performers. Their first album, People (1988), was the most successful debut album in Irish history, reaching No. 1 in Ireland and No. 2 in the UK. After two more albums and extensive touring, the group separated in 1994. Since reforming in 1998, the band members have sporadically toured and issued new songs, but also have pursued solo careers.",
+   "en": {
+    "kicker": "irish rock band · dublin, 1985",
+    "who": "Hothouse Flowers is an Irish rock band that combine traditional Irish music with influences from soul, gospel, and rock. The group separated in 1994 and has reformed since 1998.",
+    "facts": [
+     "Formed in 1985 in Dublin, they began as street performers.",
+     "Their first album, People (1988), was the most successful debut album in Irish history, reaching No. 1 in Ireland and No. 2 in the UK."
+    ]
+   },
+   "de": {
+    "kicker": "irische Rockband · Dublin, 1985",
+    "who": "Hothouse Flowers ist eine irische Rockband, die traditionelle irische Musik mit Einflüssen aus Soul, Gospel und Rock verbindet. Die Gruppe trennte sich 1994 und fand 1998 wieder zusammen.",
+    "facts": [
+     "Die Band wurde 1985 in Dublin gegründet und begann als Straßenmusiker.",
+     "Ihr erstes Album People (1988) war das erfolgreichste Debütalbum der irischen Geschichte und erreichte Platz eins in Irland und Platz zwei im Vereinigten Königreich."
+    ]
+   },
+   "tr": {
+    "kicker": "İrlanda rock grubu · dublin, 1985",
+    "who": "Hothouse Flowers, geleneksel İrlanda müziğini soul, gospel ve rock etkileriyle harmanlayan bir İrlanda rock grubudur. Grup 1994'te dağıldı ve 1998'de yeniden bir araya geldi.",
+    "facts": [
+     "Grup 1985'te Dublin'de kuruldu ve sokak sanatçısı olarak başladı.",
+     "İlk albümleri People (1988), İrlanda tarihinin en başarılı debut albümü oldu; İrlanda'da 1, İngiltere'de 2 numaraya yükseldi."
+    ]
+   }
+  },
+  {
+   "id": "a53d9ef9-b554-4ab6-92cf-1d2f13772006",
+   "slug": "chasing-abbey-50bdb261",
+   "title": "Chasing Abbey",
+   "name": "Chasing Abbey",
+   "source_url": "https://en.wikipedia.org/wiki/Chasing_Abbey",
+   "extract": "Chasing Abbey are an Irish music group combining electronic production with influences from traditional Irish music. They formed in Tullamore, Ireland, in 2016 and the group consists of members Ronan Bell, Jonathan Byrne and Ted Conway. The trio first gained attention with their debut single \"That Good Thing\" in 2017, securing the band a record deal with 3 Beat UK and Universal Music Group. Their next EP, The Oddessy Project, debuted at number one on the Irish Music Charts in 2019. Following the release of their song \"Oh My Johnny\" in 2023, Chasing Abbey signed a record deal with Warner and dance label Spinnin' Records. Their debut album, Cyber Celt, was released on 18th September 2026.",
+   "en": {
+    "kicker": "irish music group · tullamore, ireland, 2016",
+    "who": "Chasing Abbey are an Irish music group combining electronic production with influences from traditional Irish music. The trio first gained attention with their debut single \"That Good Thing\" in 2017.",
+    "facts": [
+     "They formed in Tullamore, Ireland, in 2016 and the group consists of members Ronan Bell, Jonathan Byrne and Ted Conway.",
+     "Their debut album, Cyber Celt, was released on 18th September 2026."
+    ]
+   },
+   "de": {
+    "kicker": "irische Musikgruppe · Tullamore, Irland, 2016",
+    "who": "Chasing Abbey ist eine irische Musikgruppe, die elektronische Produktion mit Einflüssen traditioneller irischer Musik verbindet. Das Trio machte 2017 mit seiner Debütsingle \"That Good Thing\" erstmals auf sich aufmerksam.",
+    "facts": [
+     "Die Gruppe gründete sich 2016 in Tullamore, Irland, und besteht aus Ronan Bell, Jonathan Byrne und Ted Conway.",
+     "Ihr Debütalbum Cyber Celt erschien am 18. September 2026."
+    ]
+   },
+   "tr": {
+    "kicker": "İrlandalı müzik grubu · tullamore, irlanda, 2016",
+    "who": "Chasing Abbey, elektronik prodüksiyonu geleneksel İrlanda müziğinin etkileriyle birleştiren bir İrlanda müzik grubudur. Üçlü, 2017'de \"That Good Thing\" debut single'ıyla ilk dikkatleri çekti.",
+    "facts": [
+     "Grup 2016'da İrlanda'nın Tullamore kentinde kuruldu; üyeleri Ronan Bell, Jonathan Byrne ve Ted Conway'dir.",
+     "Debut albümleri Cyber Celt, 18 Eylül 2026'da yayımlandı."
+    ]
+   }
+  }
+ ]
+}

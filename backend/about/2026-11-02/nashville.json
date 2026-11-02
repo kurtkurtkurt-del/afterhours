@@ -1,0 +1,390 @@
+{
+ "city": "nashville",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "90a54739-61e1-4378-9b34-58ffd5923b14",
+   "slug": "three-days-grace-alienation-tour-ca2a7f71",
+   "title": "Three Days Grace - Alienation Tour",
+   "name": "Three Days Grace",
+   "source_url": "https://en.wikipedia.org/wiki/Three_Days_Grace",
+   "extract": "Three Days Grace is a Canadian rock band formed in Norwood, Ontario, in 1992 originally as Groundswell. Groundswell played in various local Norwood backyard parties and area establishments before disbanding in 1995 and regrouping in 1997 under its current name.",
+   "en": {
+    "kicker": "canadian rock band · norwood, ontario, 1992",
+    "who": "Three Days Grace is a Canadian rock band formed in Norwood, Ontario. It was formed in 1992 originally as Groundswell.",
+    "facts": [
+     "Groundswell played in various local Norwood backyard parties and area establishments before disbanding in 1995 and regrouping in 1997 under its current name.",
+     "The band was formed in Norwood, Ontario, in 1992 originally as Groundswell."
+    ]
+   },
+   "de": {
+    "kicker": "kanadische rockband · norwood, ontario, 1992",
+    "who": "Three Days Grace ist eine kanadische Rockband, die 1992 in Norwood, Ontario, ursprünglich unter dem Namen Groundswell gegründet wurde. Groundswell spielte auf lokalen Partys und in Lokalen der Umgebung.",
+    "facts": [
+     "Groundswell spielte auf verschiedenen Partys in Norwood und in Lokalen der Umgebung, bevor die Band sich 1995 auflöste und 1997 unter ihrem heutigen Namen neu formierte.",
+     "Die Band wurde 1992 in Norwood, Ontario, als Groundswell gegründet."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı rock grubu · norwood, ontario, 1992",
+    "who": "Three Days Grace, 1992 yılında Ontario'nun Norwood kentinde Groundswell adıyla kurulmuş Kanadalı bir rock grubudur. Groundswell, 1995'te dağılmadan önce Norwood'daki yerel bahçe partilerinde ve bölgedeki mekanlarda çaldı.",
+    "facts": [
+     "Groundswell, 1995'te dağılmadan önce Norwood'daki çeşitli bahçe partilerinde ve yerel mekanlarda çaldı; 1997'de bugünkü adıyla yeniden toplandı.",
+     "Grup, 1992 yılında Norwood, Ontario'da Groundswell olarak kuruldu."
+    ]
+   }
+  },
+  {
+   "id": "987f96ad-24c8-422f-96b9-6fcae3357f2f",
+   "slug": "the-longest-johns-5ac013fb",
+   "title": "The Longest Johns",
+   "name": "The Longest Johns",
+   "source_url": "https://en.wikipedia.org/wiki/The_Longest_Johns",
+   "extract": "The Longest Johns are an English folk musical group from Bristol, England, consisting of Andy Yates, Jonathan \"JD\" Darley, and Robbie Sattin. They are known for performing folk music and sea shanties in the English tradition, and they also compose and record their own music. They gained popularity from their rendition of the folk song \"Wellerman\", which went viral on TikTok in early 2021.",
+   "en": {
+    "kicker": "english folk musical group · bristol, england",
+    "who": "The Longest Johns are an English folk musical group from Bristol, England, consisting of Andy Yates, Jonathan \"JD\" Darley, and Robbie Sattin. The group is known for sea shanties.",
+    "facts": [
+     "They gained popularity from their rendition of the folk song \"Wellerman\", which went viral on TikTok in early 2021.",
+     "They are known for performing folk music and sea shanties in the English tradition, and they also compose and record their own music."
+    ]
+   },
+   "de": {
+    "kicker": "englische folk-musikgruppe · bristol, england",
+    "who": "The Longest Johns sind eine englische Folk-Musikgruppe aus Bristol, England, bestehend aus Andy Yates, Jonathan \"JD\" Darley und Robbie Sattin. Die Gruppe ist für Seemannslieder bekannt.",
+    "facts": [
+     "Bekannt wurden sie durch ihre Version des Folksongs \"Wellerman\", der Anfang 2021 auf TikTok viral ging.",
+     "Sie spielen Folk und Seemannslieder in der englischen Tradition und schreiben und produzieren außerdem eigene Musik."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz folk müzik grubu · bristol, england",
+    "who": "The Longest Johns, İngiltere'nin Bristol kentinden Andy Yates, Jonathan \"JD\" Darley ve Robbie Sattin'den oluşan İngiliz bir folk müzik grubudur. Grup, denizci şarkıları (sea shanty) ile tanınır.",
+    "facts": [
+     "\"Wellerman\" adlı folk şarkısının yorumuyla ün kazandılar; bu yorum 2021 başında TikTok'ta viral oldu.",
+     "İngiliz geleneğinde folk müzik ve denizci şarkıları icra ediyorlar; ayrıca kendi müziklerini besteliyor ve kaydediyorlar."
+    ]
+   }
+  },
+  {
+   "id": "5511e9e6-22f9-492c-9751-96a433fc3c4b",
+   "slug": "the-living-tombstone-the-multiplayer-tour-58e721a4",
+   "title": "The Living Tombstone - The Multiplayer Tour",
+   "name": "The Living Tombstone",
+   "source_url": "https://en.wikipedia.org/wiki/The_Living_Tombstone",
+   "extract": "The Living Tombstone (TLT) is an Israeli-American electronic rock group and YouTube channel, founded as a solo project by Israeli-American producer Yoav Landau in 2011, and becoming a musical duo with American singer Sam Haft in 2016. The group is notable for their songs based on video games and pop culture media, such as the My Little Pony, Five Nights at Freddy's, and Overwatch series as well as original music. Signed to Warner Music, they have released two studio albums, Zero One (2020) and Rust (2025).",
+   "en": {
+    "kicker": "israeli-american electronic rock group · 2011",
+    "who": "The Living Tombstone is an Israeli-American electronic rock group and YouTube channel. It was founded as a solo project by Yoav Landau in 2011 and became a duo with American singer Sam Haft in 2016.",
+    "facts": [
+     "The group is notable for their songs based on video games and pop culture media, such as the My Little Pony, Five Nights at Freddy's, and Overwatch series as well as original music.",
+     "Signed to Warner Music, they have released two studio albums, Zero One (2020) and Rust (2025)."
+    ]
+   },
+   "de": {
+    "kicker": "israelisch-amerikanische electronic-rock-gruppe · 2011",
+    "who": "The Living Tombstone ist eine israelisch-amerikanische Electronic-Rock-Gruppe und ein YouTube-Kanal. 2011 als Soloprojekt des Produzenten Yoav Landau gegründet, wurde daraus 2016 ein Duo mit dem amerikanischen Sänger Sam Haft.",
+    "facts": [
+     "Die Gruppe ist bekannt für Songs zu Videospielen und Popkultur, etwa zu den Serien My Little Pony, Five Nights at Freddy's und Overwatch, sowie für eigene Musik.",
+     "Bei Warner Music unter Vertrag, hat sie die Studioalben Zero One (2020) und Rust (2025) veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "israilli-amerikalı elektronik rock grubu · 2011",
+    "who": "The Living Tombstone, İsrailli-Amerikalı bir elektronik rock grubu ve YouTube kanalıdır. 2011'de yapımcı Yoav Landau'nun solo projesi olarak kuruldu; 2016'da Amerikalı şarkıcı Sam Haft ile bir ikiliye dönüştü.",
+    "facts": [
+     "Grup, My Little Pony, Five Nights at Freddy's ve Overwatch serileri gibi video oyunlarına ve pop kültür öğelerine dayanan şarkılarıyla tanınır; özgün müzik de yapar.",
+     "Warner Music ile sözleşmeli olan grup, Zero One (2020) ve Rust (2025) adlı iki stüdyo albümü yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "80aecf1c-d0ba-4412-8410-93198edb2174",
+   "slug": "the-time-jumpers-f9e32bac",
+   "title": "THE TIME JUMPERS",
+   "name": "The Time Jumpers",
+   "source_url": "https://en.wikipedia.org/wiki/The_Time_Jumpers",
+   "extract": "The Time Jumpers is a Western swing band formed in 1998 by a group of Nashville studio musicians who enjoyed jamming together. Country star Vince Gill was a member of the group between 2010 and 2020. The 11–member group started playing occasional local gigs until they agreed to take a regular slot playing at the Station Inn, a venerable Nashville bluegrass venue. They later moved to a larger venue, Nashville's \"3rd & Lindsley\", and were called by Tennessean writer Juli Thanki, \"One of the hottest shows in town\". Some of their guest artists on the weekly live show have included Joe Walsh, Robert Plant, Norah Jones, Bonnie Raitt, Reba McEntire, Jimmy Buffett, Kings of Leon, and Toby Keith. Amy",
+   "en": {
+    "kicker": "western swing band · nashville, 1998",
+    "who": "The Time Jumpers is a Western swing band formed in 1998 by a group of Nashville studio musicians who enjoyed jamming together. Country star Vince Gill was a member of the group between 2010 and 2020.",
+    "facts": [
+     "Some of their guest artists on the weekly live show have included Joe Walsh, Robert Plant, Norah Jones, Bonnie Raitt, Reba McEntire, Jimmy Buffett, Kings of Leon, and Toby Keith.",
+     "They later moved to a larger venue, Nashville's \"3rd & Lindsley\", and were called by Tennessean writer Juli Thanki, \"One of the hottest shows in town\"."
+    ]
+   },
+   "de": {
+    "kicker": "western-swing-band · nashville, 1998",
+    "who": "The Time Jumpers ist eine Western-Swing-Band, die 1998 von einer Gruppe Nashviller Studiomusiker gegründet wurde, die gern zusammen jammten. Der Country-Star Vince Gill war zwischen 2010 und 2020 Mitglied der Gruppe.",
+    "facts": [
+     "Zu den Gastkünstlern der wöchentlichen Live-Show gehörten Joe Walsh, Robert Plant, Norah Jones, Bonnie Raitt, Reba McEntire, Jimmy Buffett, Kings of Leon und Toby Keith.",
+     "Später zog die Gruppe in einen größeren Veranstaltungsort, Nashvilles \"3rd & Lindsley\", und die Tennessean-Autorin Juli Thanki nannte sie „eine der heißesten Shows der Stadt“."
+    ]
+   },
+   "tr": {
+    "kicker": "western swing grubu · nashville, 1998",
+    "who": "The Time Jumpers, 1998 yılında birlikte doğaçlama yapmaktan keyif alan Nashville'li stüdyo müzisyenleri tarafından kurulmuş bir western swing grubudur. Country yıldızı Vince Gill grubun 2010 ile 2020 arasında üyesiydi.",
+    "facts": [
+     "Haftalık canlı gösterinin konuk sanatçıları arasında Joe Walsh, Robert Plant, Norah Jones, Bonnie Raitt, Reba McEntire, Jimmy Buffett, Kings of Leon ve Toby Keith vardı.",
+     "Daha sonra daha büyük bir mekân olan Nashville'in \"3rd & Lindsley\" mekânına taşındılar; Tennessean gazetesinin yazarı Juli Thanki onları \"One of the hottest shows in town\" olarak nitelendirdi."
+    ]
+   }
+  },
+  {
+   "id": "edbd2a0e-3eba-4815-8e9f-1898423ff2e8",
+   "slug": "steve-lacy-oh-yeah-tour-c5aa7d78",
+   "title": "Steve Lacy: Oh yeah? Tour",
+   "name": "Steve Lacy",
+   "source_url": "https://en.wikipedia.org/wiki/Steve_Lacy",
+   "extract": "Steve Thomas Lacy-Moya is an American singer-songwriter, guitarist and record producer. He gained recognition as the guitarist of the alternative R&B band the Internet, which he joined in 2015. His self-produced debut EP, Steve Lacy's Demo (2017), was met with critical praise and became a sleeper hit. Lacy then guest performed alongside Frank Ocean on Tyler, the Creator's 2017 single \"911 / Mr. Lonely\", which received double platinum certification by the Recording Industry Association of America (RIAA). That year, he also co-wrote songs for artists including Solange Knowles, and Kendrick Lamar on his song \"Pride\".",
+   "en": {
+    "kicker": "american singer-songwriter and record producer",
+    "who": "Steve Thomas Lacy-Moya is an American singer-songwriter, guitarist and record producer. He gained recognition as the guitarist of the alternative R&B band the Internet, which he joined in 2015.",
+    "facts": [
+     "His self-produced debut EP, Steve Lacy's Demo (2017), was met with critical praise and became a sleeper hit.",
+     "Lacy then guest performed alongside Frank Ocean on Tyler, the Creator's 2017 single \"911 / Mr. Lonely\", which received double platinum certification by the Recording Industry Association of America (RIAA)."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter und produzent",
+    "who": "Steve Thomas Lacy-Moya ist ein amerikanischer Singer-Songwriter, Gitarrist und Musikproduzent. Bekannt wurde er als Gitarrist der alternativen R&B-Band The Internet, der er 2015 beitrat.",
+    "facts": [
+     "Seine selbst produzierte Debüt-EP Steve Lacy's Demo (2017) erhielt viel Lob von der Kritik und wurde ein unerwarteter Erfolg.",
+     "Danach trat Lacy als Gast zusammen mit Frank Ocean auf Tyler, the Creators Single \"911 / Mr. Lonely\" von 2017 auf, die in den USA doppelt-platinstatus erreichte."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı ve yapımcı",
+    "who": "Steve Thomas Lacy-Moya, Amerikalı bir şarkıcı, söz yazarı, gitarist ve plak yapımcısıdır. 2015'te katıldığı alternatif R&B grubu The Internet'in gitaristi olarak tanındı.",
+    "facts": [
+     "Kendi yapımı ilk EP'si Steve Lacy's Demo (2017), kritikçilerden övgü aldı ve beklenmedik bir başarı haline geldi.",
+     "Lacy, Frank Ocean ile birlikte Tyler, the Creator'ın 2017 tarihli \"911 / Mr. Lonely\" single'ında konuk performans sergiledi; şarkı Amerika'da çift platin sertifikası aldı."
+    ]
+   }
+  },
+  {
+   "id": "ca550dfd-0881-4e22-b100-c7abdb92e82b",
+   "slug": "saosin-20-years-of-self-titled-d8437227",
+   "title": "Saosin: 20 Years of Self-Titled",
+   "name": "Saosin",
+   "source_url": "https://en.wikipedia.org/wiki/Saosin",
+   "extract": "Saosin is an American rock band formed in 2003 in Orange County, California. The group originally consisted of Beau Burchell, Justin Shekoski, Zach Kennedy and Anthony Green. They released their debut EP, Translating the Name, in 2003. The following year, Green departed from the band and Cove Reber joined as vocalist. The band released their self-titled debut album in 2006 under Capitol Records.",
+   "en": {
+    "kicker": "american rock band · orange county, california, 2003",
+    "who": "Saosin is an American rock band formed in 2003 in Orange County, California. The group originally consisted of Beau Burchell, Justin Shekoski, Zach Kennedy and Anthony Green.",
+    "facts": [
+     "The band released their self-titled debut album in 2006 under Capitol Records.",
+     "The following year, Green departed from the band and Cove Reber joined as vocalist."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · orange county, kalifornien, 2003",
+    "who": "Saosin ist eine amerikanische Rockband, die 2003 in Orange County, Kalifornien, gegründet wurde. Die Gruppe bestand ursprünglich aus Beau Burchell, Justin Shekoski, Zach Kennedy und Anthony Green.",
+    "facts": [
+     "Die Band veröffentlichte ihr selbstbetiteltes Debütalbum 2006 bei Capitol Records.",
+     "Im folgenden Jahr verließ Green die Band, und Cove Reber stieg als Sänger ein."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · orange county, california, 2003",
+    "who": "Saosin, 2003 yılında Kaliforniya'nın Orange County bölgesinde kurulmuş Amerikalı bir rock grubudur. Grup başlangıçta Beau Burchell, Justin Shekoski, Zach Kennedy ve Anthony Green'den oluşuyordu.",
+    "facts": [
+     "Grup, kendi adını taşıyan ilk albümünü 2006'da Capitol Records etiketiyle yayımladı.",
+     "Ertesi yıl Green gruptan ayrıldı ve yerine vokal olarak Cove Reber katıldı."
+    ]
+   }
+  },
+  {
+   "id": "0782dece-4804-4450-8c3d-14c000a4b0bc",
+   "slug": "dwight-yoakam-9a5b3031",
+   "title": "Dwight Yoakam",
+   "name": "Dwight Yoakam",
+   "source_url": "https://en.wikipedia.org/wiki/Dwight_Yoakam",
+   "extract": "Dwight David Yoakam is an American singer-songwriter, actor, and filmmaker. He first achieved mainstream attention in 1986 with the release of his debut album Guitars, Cadillacs, Etc., Etc.. Yoakam had considerable success throughout the late 1980s onward, with a total of ten studio albums for Reprise Records. Later projects have been released on Audium, New West, Warner, Sugar Hill Records, and Thirty Tigers.",
+   "en": {
+    "kicker": "american singer-songwriter, actor and filmmaker",
+    "who": "Dwight David Yoakam is an American singer-songwriter, actor, and filmmaker. He had a total of ten studio albums for Reprise Records.",
+    "facts": [
+     "He first achieved mainstream attention in 1986 with the release of his debut album Guitars, Cadillacs, Etc., Etc..",
+     "Yoakam had considerable success throughout the late 1980s onward, with a total of ten studio albums for Reprise Records."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer songwriter, schauspieler, filmemacher",
+    "who": "Dwight David Yoakam ist ein amerikanischer Singer-Songwriter, Schauspieler und Filmemacher. Später erschienen seine Projekte unter anderem bei Audium, New West, Warner, Sugar Hill Records und Thirty Tigers.",
+    "facts": [
+     "Den ersten Durchbruch in der breiten Öffentlichkeit schaffte er 1986 mit seinem Debütalbum Guitars, Cadillacs, Etc., Etc.",
+     "Ab Ende der 1980er-Jahre hatte er beachtlichen Erfolg, mit insgesamt zehn Studioalben für Reprise Records."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı, oyuncu ve yönetmen",
+    "who": "Dwight David Yoakam, Amerikalı bir şarkıcı, söz yazarı, oyuncu ve film yapımcısıdır. Sonraki projeleri Audium, New West, Warner, Sugar Hill Records ve Thirty Tigers gibi etiketlerle yayımlandı.",
+    "facts": [
+     "1986'da ilk albümü Guitars, Cadillacs, Etc., Etc. ile geniş kitlelerin ilgisini çekti.",
+     "1980'lerin sonundan itibaren önemli bir başarı yakaladı; Reprise Records için toplam on stüdyo albümü çıkardı."
+    ]
+   }
+  },
+  {
+   "id": "a9e65226-bc84-4685-b94d-8c13ab935254",
+   "slug": "zach-john-king-075e1c86",
+   "title": "Zach John King",
+   "name": "Zach John King",
+   "source_url": "https://en.wikipedia.org/wiki/Zach_John_King",
+   "extract": "Zach John King is an American country music singer. Active since 2023, King has released two extended plays on Sony Music Nashville and made the Billboard country music charts with his single \"Get to Drinkin'\".",
+   "en": {
+    "kicker": "american country music singer · active since 2023",
+    "who": "Zach John King is an American country music singer who has been active since 2023.",
+    "facts": [
+     "Active since 2023, King has released two extended plays on Sony Music Nashville.",
+     "He made the Billboard country music charts with his single \"Get to Drinkin'\"."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer country-sänger · aktiv seit 2023",
+    "who": "Zach John King ist ein amerikanischer Country-Sänger, der seit 2023 aktiv ist.",
+    "facts": [
+     "Seit 2023 hat King zwei Extended Plays bei Sony Music Nashville veröffentlicht.",
+     "Mit seiner Single \"Get to Drinkin'\" schaffte er den Sprung in die Billboard-Country-Charts."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı country müzik şarkıcısı · 2023'ten beri aktif",
+    "who": "Zach John King, Amerikalı bir country müzik şarkıcısıdır ve 2023'ten beri aktiftir.",
+    "facts": [
+     "2023'ten beri King, Sony Music Nashville ile iki EP yayımladı.",
+     "\"Get to Drinkin'\" adlı single'ıyla Billboard country müzik listelerine girdi."
+    ]
+   }
+  },
+  {
+   "id": "9fae277a-cb2b-4550-9847-21d69be4f51b",
+   "slug": "jonas-brothers-the-burning-up-tour-all-over-agai-11704007",
+   "title": "Jonas Brothers: The Burning Up Tour All Over Again",
+   "name": "Jonas Brothers",
+   "source_url": "https://en.wikipedia.org/wiki/Jonas_Brothers",
+   "extract": "The Jonas Brothers are an American pop rock band formed in 2005 comprising brothers Kevin Jonas, Joe Jonas, and Nick Jonas. Raised in Wyckoff, New Jersey, the Jonas Brothers moved to Little Falls, New Jersey, in 2005, where they wrote their first record that made its release on Hollywood Records, a Disney-owned record label, after which they gained popularity from their appearances on Disney Channel. They starred in the 2008 Disney Channel Original Movie Camp Rock and its 2010 sequel, Camp Rock 2: The Final Jam. They also starred in their own Disney Channel series Jonas, which was rebranded as Jonas L.A. for its second season. The band has released seven albums: It's About Time (2006), Jonas",
+   "en": {
+    "kicker": "american pop rock band · new jersey, 2005",
+    "who": "The Jonas Brothers are an American pop rock band formed in 2005 comprising brothers Kevin Jonas, Joe Jonas, and Nick Jonas. Raised in Wyckoff, New Jersey, they gained popularity from their appearances on Disney Channel.",
+    "facts": [
+     "They starred in the 2008 Disney Channel Original Movie Camp Rock and its 2010 sequel, Camp Rock 2: The Final Jam.",
+     "They also starred in their own Disney Channel series Jonas, which was rebranded as Jonas L.A. for its second season."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische pop-rock-band · new jersey, 2005",
+    "who": "Die Jonas Brothers sind eine amerikanische Pop-Rock-Band, die 2005 gegründet wurde und aus den Brüdern Kevin Jonas, Joe Jonas und Nick Jonas besteht. Bekannt wurden sie durch Auftritte bei Disney Channel; sie wuchsen in Wyckoff, New Jersey, auf.",
+    "facts": [
+     "Sie spielten im Disney-Channel-Film Camp Rock aus dem Jahr 2008 und dessen Fortsetzung Camp Rock 2: The Final Jam von 2010 mit.",
+     "Sie hatten außerdem eine eigene Disney-Channel-Serie, Jonas, die in der zweiten Staffel in Jonas L.A. umbenannt wurde."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı pop rock grubu · new jersey, 2005",
+    "who": "Jonas Brothers, 2005 yılında kurulmuş Amerikalı bir pop rock grubudur; Kevin Jonas, Joe Jonas ve Nick Jonas kardeşlerden oluşur. New Jersey'deki Wyckoff'ta büyüyen grup, Disney Channel'daki görünümleriyle ün kazandı.",
+    "facts": [
+     "2008 yapımı Disney Channel Original Movie Camp Rock ile 2010 yapımı devamı Camp Rock 2: The Final Jam'de rol aldılar.",
+     "Ayrıca kendi Disney Channel dizileri Jonas'ta rol aldılar; dizi ikinci sezonda Jonas L.A. olarak yeniden adlandırıldı."
+    ]
+   }
+  },
+  {
+   "id": "1c3a855f-f482-4d7a-b276-5e1552ae1ff8",
+   "slug": "dave-matthews-band-4576ef7f",
+   "title": "Dave Matthews Band",
+   "name": "Dave Matthews Band",
+   "source_url": "https://en.wikipedia.org/wiki/Dave_Matthews_Band",
+   "extract": "Dave Matthews Band is an American rock band formed in Charlottesville, Virginia, in 1991. The band's founding members are singer-songwriter and guitarist Dave Matthews, bassist Stefan Lessard, drummer and backing vocalist Carter Beauford, violinist and backing vocalist Boyd Tinsley, and saxophonist LeRoi Moore. As of 2026, Matthews, Lessard, and Beauford are the only remaining founding members.",
+   "en": {
+    "kicker": "american rock band · charlottesville, virginia, 1991",
+    "who": "Dave Matthews Band is an American rock band formed in Charlottesville, Virginia, in 1991. Its founding member Dave Matthews is a singer-songwriter and guitarist.",
+    "facts": [
+     "The band's founding members are singer-songwriter and guitarist Dave Matthews, bassist Stefan Lessard, drummer and backing vocalist Carter Beauford, violinist and backing vocalist Boyd Tinsley, and saxophonist LeRoi Moore.",
+     "As of 2026, Matthews, Lessard, and Beauford are the only remaining founding members."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · charlottesville, virginia, 1991",
+    "who": "Dave Matthews Band ist eine amerikanische Rockband, die 1991 in Charlottesville, Virginia, gegründet wurde. Zu den Gründungsmitgliedern gehört der Singer-Songwriter und Gitarrist Dave Matthews.",
+    "facts": [
+     "Zu den Gründungsmitgliedern gehören Dave Matthews (Gesang, Gitarre), Stefan Lessard (Bass), Carter Beauford (Schlagzeug und Hintergrundgesang), Boyd Tinsley (Violine und Hintergrundgesang) und LeRoi Moore (Saxophon).",
+     "Stand 2026 sind Matthews, Lessard und Beauford die einzigen verbliebenen Gründungsmitglieder."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · charlottesville, virginia, 1991",
+    "who": "Dave Matthews Band, 1991 yılında Virginia'nın Charlottesville kentinde kurulmuş Amerikalı bir rock grubudur. Kurucu üyelerinden şarkıcı-söz yazarı ve gitarist Dave Matthews'tir.",
+    "facts": [
+     "Kurucu üyeler; şarkıcı-söz yazarı ve gitarist Dave Matthews, bassist Stefan Lessard, davulcu ve arka vokalist Carter Beauford, keman ve arka vokalde Boyd Tinsley ve saksofonist LeRoi Moore'dur.",
+     "2026 itibarıyla Matthews, Lessard ve Beauford, kurucu üyelerden hayatta kalan tek üyelerdir."
+    ]
+   }
+  },
+  {
+   "id": "801193ed-1156-4a8a-804a-29e9640e12bf",
+   "slug": "jo-dee-messina-4f2481ae",
+   "title": "Jo Dee Messina",
+   "name": "Jo Dee Messina",
+   "source_url": "https://en.wikipedia.org/wiki/Jo_Dee_Messina",
+   "extract": "Jo Dee Marie Messina is an American country music artist. She has charted six number-one singles on the Billboard country music charts. She has been honored by the Country Music Association and the Academy of Country Music, and has been nominated for two Grammy Awards. She was the first female country artist to score three multiple-week number-one songs from the same album. To date, she has two platinum and three gold-certified albums by the RIAA.",
+   "en": {
+    "kicker": "american country music artist",
+    "who": "Jo Dee Marie Messina is an American country music artist. She has been honored by the Country Music Association and the Academy of Country Music.",
+    "facts": [
+     "She has charted six number-one singles on the Billboard country music charts.",
+     "She was the first female country artist to score three multiple-week number-one songs from the same album."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische country-musikerin",
+    "who": "Jo Dee Marie Messina ist eine amerikanische Country-Musikerin. Sie wurde von der Country Music Association und der Academy of Country Music ausgezeichnet.",
+    "facts": [
+     "Sie hat sechs Nummer-eins-Singles in den Billboard-Country-Charts erreicht.",
+     "Sie war die erste weibliche Country-Künstlerin, die mit drei mehrwöchigen Nummer-eins-Hits aus demselben Album erfolgreich war."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı country müzik sanatçısı",
+    "who": "Jo Dee Marie Messina, Amerikalı bir country müzik sanatçısıdır. Country Music Association ve Academy of Country Music tarafından ödüllendirildi.",
+    "facts": [
+     "Billboard country müzik listelerinde altı birinci sıra single'ı çıkardı.",
+     "Aynı albümden üç çok haftalı birinci sıra şarkı çıkaran ilk kadın country sanatçısı oldu."
+    ]
+   }
+  },
+  {
+   "id": "f87da502-b5ac-4dd9-834d-5703b6340b73",
+   "slug": "motionless-in-white-the-sweat-and-blood-tour-f4ba856f",
+   "title": "Motionless In White: The Sweat and Blood Tour",
+   "name": "Motionless in White",
+   "source_url": "https://en.wikipedia.org/wiki/Motionless_in_White",
+   "extract": "Motionless in White is an American metalcore band from Scranton, Pennsylvania. Formed in 2004, the band consists of lead vocalist Chris \"Motionless\" Cerulli, guitarists Ryan Sitkowski and Ricky \"Horror\" Olson, drummer Vinny Mauro and bassist Justin Morrow. Cerulli is the only member of the original line-up that remains in the band. The group has stated that their band name derived from the Eighteen Visions song \"Motionless and White\".",
+   "en": {
+    "kicker": "american metalcore band · scranton, pennsylvania, 2004",
+    "who": "Motionless in White is an American metalcore band from Scranton, Pennsylvania. It was formed in 2004 and is led by lead vocalist Chris \"Motionless\" Cerulli.",
+    "facts": [
+     "Cerulli is the only member of the original line-up that remains in the band.",
+     "The group has stated that their band name derived from the Eighteen Visions song \"Motionless and White\"."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische metalcore-band · scranton, pennsylvania, 2004",
+    "who": "Motionless in White ist eine amerikanische Metalcore-Band aus Scranton, Pennsylvania. Sie wurde 2004 gegründet und wird von Sänger Chris \"Motionless\" Cerulli angeführt.",
+    "facts": [
+     "Cerulli ist das einzige Mitglied der ursprünglichen Besetzung, das noch in der Band ist.",
+     "Der Bandname stammt laut der Gruppe von dem Eighteen-Visions-Song \"Motionless and White\"."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı metalcore grubu · scranton, pennsylvania, 2004",
+    "who": "Motionless in White, Pennsylvania'nın Scranton kentinden Amerikalı bir metalcore grubudur. 2004'te kuruldu ve vokalist Chris \"Motionless\" Cerulli'nin öncülüğünde ilerliyor.",
+    "facts": [
+     "Cerulli, kadronun ilk halinden grupta kalan tek üyedir.",
+     "Grup, grup adının Eighteen Visions'ın \"Motionless and White\" şarkısından geldiğini belirtti."
+    ]
+   }
+  }
+ ]
+}

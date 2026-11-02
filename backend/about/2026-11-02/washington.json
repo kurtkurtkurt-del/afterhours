@@ -1,0 +1,486 @@
+{
+  "city": "washington",
+  "day": "2026-11-02",
+  "nights": [
+    {
+      "id": "5b362b1f-9e4b-4102-865e-cb55adbc9a49",
+      "slug": "yebba-001568ae",
+      "title": "Yebba",
+      "name": "Yebba",
+      "source_url": "https://en.wikipedia.org/wiki/Yebba",
+      "extract": "Abigail Elizabeth Smith, known professionally as Yebba, is an American singer and songwriter from West Memphis, Arkansas. She first became known for her YouTube channel and then for her backing vocal performance on Chance the Rapper's SNL performance of the song \"Same Drugs\" in 2016 and releasing her debut single \"Evergreen\" in 2017. She has collaborated with a number of artists, including PJ Morton, Sam Smith, Mark Ronson, Stormzy, Ed Sheeran, A$AP Rocky, Tyler, the Creator and Drake. She won a Grammy Award in the category Best Traditional R&B Performance for her feature on PJ Morton's cover of \"How Deep Is Your Love\" in 2019.",
+      "en": {
+        "kicker": "american singer · west memphis, arkansas",
+        "who": "Abigail Elizabeth Smith, known professionally as Yebba, is an American singer and songwriter from West Memphis, Arkansas. She first became known for her YouTube channel, and later for her backing vocals on Chance the Rapper's SNL performance of \"Same Drugs\".",
+        "facts": [
+          "She won a Grammy Award in the category Best Traditional R&B Performance for her feature on PJ Morton's cover of \"How Deep Is Your Love\" in 2019.",
+          "She has collaborated with a number of artists, including PJ Morton, Sam Smith, Mark Ronson, Stormzy, Ed Sheeran, A$AP Rocky, Tyler, the Creator and Drake."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische sängerin · west memphis, arkansas",
+        "who": "Abigail Elizabeth Smith, unter dem Künstlernamen Yebba bekannt, ist eine amerikanische Sängerin und Songwriterin aus West Memphis, Arkansas. Bekannt wurde sie zunächst durch ihren YouTube-Kanal, später durch ihren Backgroundgesang bei Chance the Rappers SNL-Auftritt mit „Same Drugs“.",
+        "facts": [
+          "Bei den Grammys 2019 gewann sie in der Kategorie Best Traditional R&B Performance für ihren Part auf PJ Mortons Cover von „How Deep Is Your Love“.",
+          "Sie hat mit zahlreichen Künstlern zusammengearbeitet, darunter PJ Morton, Sam Smith, Mark Ronson, Stormzy, Ed Sheeran, A$AP Rocky, Tyler, the Creator und Drake."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı · west memphis, arkansas",
+        "who": "Abigail Elizabeth Smith, sahne adıyla Yebba, Arkansas eyaletinin West Memphis kentinden Amerikalı bir şarkıcı ve söz yazarıdır. Önce YouTube kanalıyla tanındı, ardından Chance the Rapper'ın SNL performansında \"Same Drugs\" şarkısındaki arka vokalleriyle öne çıktı.",
+        "facts": [
+          "2019'da PJ Morton'ın \"How Deep Is Your Love\" cover'ındaki katkısıyla En İyi Geleneksel R&B Performansı dalında bir Grammy Ödülü kazandı.",
+          "PJ Morton, Sam Smith, Mark Ronson, Stormzy, Ed Sheeran, A$AP Rocky, Tyler, the Creator ve Drake gibi birçok sanatçıyla iş birliği yaptı."
+        ]
+      }
+    },
+    {
+      "id": "62c48b37-6ba9-4d92-b131-37faa15be8ae",
+      "slug": "rainao-marcria-tour-dea3401c",
+      "title": "RaiNao: Marcria tour",
+      "name": "RaiNao",
+      "source_url": "https://en.wikipedia.org/wiki/RaiNao",
+      "extract": "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter. Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop, shaped by her background in music theory and live performance. She got signed to Rimas Entertainment in 2024.",
+      "en": {
+        "kicker": "puerto rican singer-songwriter · santurce, puerto rico",
+        "who": "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter. Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop.",
+        "facts": [
+          "Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop, shaped by her background in music theory and live performance.",
+          "She got signed to Rimas Entertainment in 2024."
+        ]
+      },
+      "de": {
+        "kicker": "puertoricanische singer-songwriterin · santurce, puerto rico",
+        "who": "Naomi Ramírez Rivera, unter dem Künstlernamen RaiNao bekannt, ist eine puertoricanische Singer-Songwriterin. Ihre Musik, die in Santurce, San Juan, Puerto Rico, entsteht, verbindet Elemente von Reggaeton, Jazz, R&B und Alternative Pop.",
+        "facts": [
+          "Ihre Musik ist durch ihren Hintergrund in Musiktheorie und Live-Auftritten geprägt.",
+          "Im Jahr 2024 wurde sie von Rimas Entertainment unter Vertrag genommen."
+        ]
+      },
+      "tr": {
+        "kicker": "portorikolu şarkıcı ve söz yazarı · santurce, porto riko",
+        "who": "Naomi Ramírez Rivera, sahne adıyla RaiNao, Portorikolu bir şarkıcı ve söz yazarıdır. Santurce, San Juan, Porto Riko merkezli müziği reggaeton, caz, R&B ve alternatif pop öğelerini bir araya getirir.",
+        "facts": [
+          "Müzik teorisi geçmişi ve canlı performans deneyimi müziğini şekillendirmiştir.",
+          "2024 yılında Rimas Entertainment ile sözleşme imzaladı."
+        ]
+      }
+    },
+    {
+      "id": "d42a0e6b-4e2e-4aeb-bdaf-efdbd8a75bc5",
+      "slug": "she-wants-revenge-c9791756",
+      "title": "She Wants Revenge",
+      "name": "She Wants Revenge",
+      "source_url": "https://en.wikipedia.org/wiki/She_Wants_Revenge",
+      "extract": "She Wants Revenge is an American rock band, based in San Fernando Valley, California. Formed in 2004, the band is a duo of singer and guitarist Justin Warfield and multi-instrumentalist Adam Bravin. Their music has been influenced by post-punk, darkwave and gothic rock. The band has sold more than 300,000 records in the US.",
+      "en": {
+        "kicker": "american rock duo · san fernando valley, california",
+        "who": "She Wants Revenge is an American rock band, based in San Fernando Valley, California. Formed in 2004, the band is a duo of singer and guitarist Justin Warfield and multi-instrumentalist Adam Bravin.",
+        "facts": [
+          "Their music has been influenced by post-punk, darkwave and gothic rock.",
+          "The band has sold more than 300,000 records in the US."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · san fernando valley, kalifornien",
+        "who": "She Wants Revenge ist eine amerikanische Rockband mit Sitz im San Fernando Valley in Kalifornien. Gegründet wurde sie 2004 als Duo aus Sänger und Gitarrist Justin Warfield und Multiinstrumentalist Adam Bravin.",
+        "facts": [
+          "Ihre Musik wurde von Post-Punk, Darkwave und Gothic Rock beeinflusst.",
+          "Die Band hat in den USA mehr als 300.000 Tonträger verkauft."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock ikilisi · san fernando valley, kaliforniya",
+        "who": "She Wants Revenge, Kaliforniya'nın San Fernando Valley bölgesinde merkezli Amerikalı bir rock grubudur. 2004'te, vokalde ve gitarda Justin Warfield ile çok enstrümanlı Adam Bravin'in oluşturduğu bir ikili olarak kuruldu.",
+        "facts": [
+          "Müzikleri post-punk, darkwave ve gotik rock'tan etkilenmiştir.",
+          "Grup ABD'de 300.000'den fazla kayıt sattı."
+        ]
+      }
+    },
+    {
+      "id": "1f38889c-8ec2-4131-971b-444eb0ece17f",
+      "slug": "rainao-marcria-tour-f683a00c",
+      "title": "RaiNao: Marcriá tour",
+      "name": "RaiNao",
+      "source_url": "https://en.wikipedia.org/wiki/RaiNao",
+      "extract": "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter. Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop, shaped by her background in music theory and live performance. She got signed to Rimas Entertainment in 2024.",
+      "en": {
+        "kicker": "puerto rican singer-songwriter · santurce, puerto rico",
+        "who": "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter. Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop.",
+        "facts": [
+          "Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop, shaped by her background in music theory and live performance.",
+          "She got signed to Rimas Entertainment in 2024."
+        ]
+      },
+      "de": {
+        "kicker": "puertoricanische singer-songwriterin · santurce, puerto rico",
+        "who": "Naomi Ramírez Rivera, unter dem Künstlernamen RaiNao bekannt, ist eine puertoricanische Singer-Songwriterin. Ihre Musik, die in Santurce, San Juan, Puerto Rico, entsteht, verbindet Elemente von Reggaeton, Jazz, R&B und Alternative Pop.",
+        "facts": [
+          "Ihre Musik ist durch ihren Hintergrund in Musiktheorie und Live-Auftritten geprägt.",
+          "Im Jahr 2024 wurde sie von Rimas Entertainment unter Vertrag genommen."
+        ]
+      },
+      "tr": {
+        "kicker": "portorikolu şarkıcı ve söz yazarı · santurce, porto riko",
+        "who": "Naomi Ramírez Rivera, sahne adıyla RaiNao, Portorikolu bir şarkıcı ve söz yazarıdır. Santurce, San Juan, Porto Riko merkezli müziği reggaeton, caz, R&B ve alternatif pop öğelerini bir araya getirir.",
+        "facts": [
+          "Müzik teorisi geçmişi ve canlı performans deneyimi müziğini şekillendirmiştir.",
+          "2024 yılında Rimas Entertainment ile sözleşme imzaladı."
+        ]
+      }
+    },
+    {
+      "id": "3eb447a3-bf58-4147-878c-0288e646d54c",
+      "slug": "brass-against-halloween-tour-4476f2f8",
+      "title": "Brass Against - Halloween Tour",
+      "name": "Brass Against",
+      "source_url": "https://en.wikipedia.org/wiki/Brass_Against",
+      "extract": "Brass Against is an American cover band that creates brass-inflected cover versions of rock songs. The collective chooses politically charged songs and other socially conscious music in order to raise awareness of various issues and to encourage activism and social change.",
+      "en": {
+        "kicker": "american cover band · brass versions of rock songs",
+        "who": "Brass Against is an American cover band. It creates brass-inflected cover versions of rock songs.",
+        "facts": [
+          "The collective chooses politically charged songs and other socially conscious music in order to raise awareness of various issues and to encourage activism and social change.",
+          "Brass Against is an American cover band that creates brass-inflected cover versions of rock songs."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische cover-band · bläserversionen von rocksongs",
+        "who": "Brass Against ist eine amerikanische Cover-Band. Sie erstellt Coverversionen von Rocksongs mit Bläsersound.",
+        "facts": [
+          "Das Kollektiv wählt politisch aufgeladene Songs und andere sozial engagierte Musik, um auf verschiedene Probleme aufmerksam zu machen und Aktivismus und sozialen Wandel anzuregen.",
+          "Die Band erstellt Coverversionen von Rocksongs mit Bläserarrangements."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı cover grubu · üflemeli rock versiyonları",
+        "who": "Brass Against, Amerikalı bir cover grubudur. Rock şarkılarının üflemeli çalgılarla yapılmış cover versiyonlarını üretir.",
+        "facts": [
+          "Kolektif, çeşitli sorunlara dikkat çekmek ve aktivizmi ile toplumsal değişimi teşvik etmek amacıyla siyasi açıdan yüklü şarkıları ve sosyal bilinci yüksek diğer müzikleri seçer.",
+          "Grup, rock şarkılarının üflemeli çalgılarla yorumlanmış cover versiyonlarını çalar."
+        ]
+      }
+    },
+    {
+      "id": "e1067904-5155-417d-ab77-b99aa7bdce03",
+      "slug": "hot-club-of-san-francisco-79187def",
+      "title": "Hot Club of San Francisco",
+      "name": "Hot Club of San Francisco",
+      "source_url": "https://en.wikipedia.org/wiki/Hot_Club_of_San_Francisco",
+      "extract": "The Hot Club of San Francisco is an American gypsy jazz band. Led by guitarist, songwriter, and arranger Paul 'Pazzo' Mehling, the group uses the instrumentation of violin, bass, and guitars from Django Reinhardt and Stephane Grappelli’s Quintette du Hot Club de France and performs arrangements of gypsy jazz standards, pop songs, and original compositions by Mehling. The Hot Club of San Francisco includes violinist Evan Price, the vocals of various members, and a swing rhythm section. In the book, Django Reinhardt and the Illustrated History of Gypsy Jazz, Michael Dregni refers to the Hot Club of San Francisco as \"one of the first American gypsy jazz bands.\"",
+      "en": {
+        "kicker": "american gypsy jazz band · led by paul 'pazzo' mehling",
+        "who": "The Hot Club of San Francisco is an American gypsy jazz band. Led by guitarist, songwriter, and arranger Paul 'Pazzo' Mehling, the group performs arrangements of gypsy jazz standards, pop songs, and original compositions by Mehling.",
+        "facts": [
+          "Led by guitarist, songwriter, and arranger Paul 'Pazzo' Mehling, the group uses the instrumentation of violin, bass, and guitars from Django Reinhardt and Stephane Grappelli’s Quintette du Hot Club de France.",
+          "The Hot Club of San Francisco includes violinist Evan Price, the vocals of various members, and a swing rhythm section."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische gypsy-jazz-band · geleitet von paul mehling",
+        "who": "The Hot Club of San Francisco ist eine amerikanische Gypsy-Jazz-Band. Geleitet wird sie vom Gitarristen, Songwriter und Arrangeur Paul „Pazzo“ Mehling. Die Gruppe spielt Arrangements von Gypsy-Jazz-Standards, Popsongs und eigenen Kompositionen von Mehling.",
+        "facts": [
+          "Die Besetzung aus Violine, Bass und Gitarren orientiert sich am Quintette du Hot Club de France von Django Reinhardt und Stephane Grappelli.",
+          "Zur Band gehören der Geiger Evan Price, Gesang verschiedener Mitglieder und eine Swing-Rhythmusgruppe."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı gypsy jazz grubu · paul mehling yönetiminde",
+        "who": "The Hot Club of San Francisco, Amerikalı bir gypsy jazz grubudur. Gitarist, söz yazarı ve düzenleyici Paul 'Pazzo' Mehling tarafından yönetilir ve gypsy jazz standartlarının, pop şarkıların ve Mehling'in özgün bestelerinin düzenlemelerini çalar.",
+        "facts": [
+          "Grup, Django Reinhardt ve Stephane Grappelli'nin Quintette du Hot Club de France topluluğunun keman, bas ve gitardan oluşan kadrosunu kullanır.",
+          "Topluluğa keman çalan Evan Price, çeşitli üyelerin vokalleri ve bir swing ritim bölümü dahildir."
+        ]
+      }
+    },
+    {
+      "id": "5103a618-187a-4978-9556-528894887dd0",
+      "slug": "blu-detiger-the-want-you-baby-tonight-tour-6bbc7459",
+      "title": "Blu DeTiger - The Want You Baby Tonight Tour",
+      "name": "Blu DeTiger",
+      "source_url": "https://en.wikipedia.org/wiki/Blu_DeTiger",
+      "extract": "Blu DeTiger is an American singer and bass guitarist from New York City. She has released one EP, How Did We Get Here? (2021) and one studio album, All I Ever Want Is Everything (2024).",
+      "en": {
+        "kicker": "american singer and bass guitarist · new york city",
+        "who": "Blu DeTiger is an American singer and bass guitarist from New York City. She has released one EP and one studio album so far.",
+        "facts": [
+          "She has released one EP, How Did We Get Here? (2021) and one studio album, All I Ever Want Is Everything (2024).",
+          "Blu DeTiger is an American singer and bass guitarist from New York City."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische sängerin und bassistin · new york city",
+        "who": "Blu DeTiger ist eine amerikanische Sängerin und Bassgitarristin aus New York City. Bisher hat sie eine EP und ein Studioalbum veröffentlicht.",
+        "facts": [
+          "Bisher erschien die EP How Did We Get Here? (2021), ihr einziges Studioalbum ist All I Ever Want Is Everything (2024).",
+          "Blu DeTiger ist eine amerikanische Sängerin und Bassgitarristin aus New York City."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı ve bas gitarist · new york city",
+        "who": "Blu DeTiger, New York City'den Amerikalı bir şarkıcı ve bas gitaristtir. Şimdiye kadar bir EP ve bir stüdyo albümü yayımlamıştır.",
+        "facts": [
+          "How Did We Get Here? (2021) adlı bir EP ve All I Ever Want Is Everything (2024) adlı bir stüdyo albümü yayımladı.",
+          "Blu DeTiger, New York City'den Amerikalı bir şarkıcı ve bas gitaristtir."
+        ]
+      }
+    },
+    {
+      "id": "6b5ac8a4-6837-4881-b5e6-21310c46af3e",
+      "slug": "punch-brothers-669eced6",
+      "title": "Punch Brothers",
+      "name": "Punch Brothers",
+      "source_url": "https://en.wikipedia.org/wiki/Punch_Brothers",
+      "extract": "Punch Brothers is an American band consisting of Chris Thile (mandolin), Brittany Haas (fiddle/violin), Noam Pikelny (banjo), Chris Eldridge (guitar), and Paul Kowert (bass). Their style has been described as \"bluegrass instrumentation and spontaneity in the strictures of modern classical\" as well as \"American country-classical chamber music\".",
+      "en": {
+        "kicker": "american band · bluegrass and modern classical",
+        "who": "Punch Brothers is an American band of five musicians. Chris Thile plays mandolin, Brittany Haas fiddle, Noam Pikelny banjo, Chris Eldridge guitar and Paul Kowert bass.",
+        "facts": [
+          "Their style has been described as \"bluegrass instrumentation and spontaneity in the strictures of modern classical\" as well as \"American country-classical chamber music\".",
+          "Punch Brothers is an American band consisting of Chris Thile (mandolin), Brittany Haas (fiddle/violin), Noam Pikelny (banjo), Chris Eldridge (guitar), and Paul Kowert (bass)."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische band · bluegrass und moderne klassik",
+        "who": "Punch Brothers ist eine amerikanische Band mit fünf Musikern. Chris Thile spielt Mandoline, Brittany Haas Geige, Noam Pikelny Banjo, Chris Eldridge Gitarre und Paul Kowert Bass.",
+        "facts": [
+          "Ihr Stil wurde als Bluegrass-Instrumentierung und Spontaneität im Rahmen der modernen Klassik beschrieben, ebenso als amerikanische Country-Klassik-Kammermusik.",
+          "Zur Band gehören Chris Thile (Mandoline), Brittany Haas (Geige), Noam Pikelny (Banjo), Chris Eldridge (Gitarre) und Paul Kowert (Bass)."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı grup · bluegrass ve modern klasik",
+        "who": "Punch Brothers, beş müzisyenden oluşan Amerikalı bir gruptur. Chris Thile mandolin, Brittany Haas keman, Noam Pikelny banjo, Chris Eldridge gitar ve Paul Kowert bas çalar.",
+        "facts": [
+          "Tarzları, modern klasiğin katı kuralları içinde bluegrass çalgılarının ve doğaçlamanın birleşimi olarak, ayrıca \"Amerikan country-klasik oda müziği\" olarak tanımlandı.",
+          "Grubu Chris Thile (mandolin), Brittany Haas (keman), Noam Pikelny (banjo), Chris Eldridge (gitar) ve Paul Kowert (bas) oluşturur."
+        ]
+      }
+    },
+    {
+      "id": "d15c08fb-ed2d-4d17-9b38-3a0c5b617f01",
+      "slug": "geese-getting-killed-again-tour-2275e2fa",
+      "title": "Geese - Getting Killed Again Tour",
+      "name": "Geese",
+      "source_url": "https://en.wikipedia.org/wiki/Geese_(band)",
+      "extract": "Geese is an American rock band from New York City that formed in 2016. It comprises lead vocalist and guitarist-keyboardist Cameron Winter, guitarist Emily Green, bassist Dominic DiGesu and drummer Max Bassin as of 2024. Guitarist Foster Hudson was a member of the group from 2019 until 2023. During live performances, the band is joined by keyboardist Sam Revaz.",
+      "en": {
+        "kicker": "american rock band · new york city, 2016",
+        "who": "Geese is an American rock band from New York City that formed in 2016. It comprises lead vocalist and guitarist-keyboardist Cameron Winter, guitarist Emily Green, bassist Dominic DiGesu and drummer Max Bassin as of 2024.",
+        "facts": [
+          "During live performances, the band is joined by keyboardist Sam Revaz.",
+          "Guitarist Foster Hudson was a member of the group from 2019 until 2023."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · new york city, 2016",
+        "who": "Geese ist eine amerikanische Rockband aus New York City, die sich 2016 gründete. Zur Besetzung gehören Leadsänger und Gitarrist-Keyboarder Cameron Winter, Gitarristin Emily Green, Bassist Dominic DiGesu und Schlagzeuger Max Bassin, Stand 2024.",
+        "facts": [
+          "Bei Live-Auftritten wird die Band vom Keyboarder Sam Revaz verstärkt.",
+          "Gitarrist Foster Hudson gehörte der Gruppe von 2019 bis 2023 an."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · new york city, 2016",
+        "who": "Geese, 2016 yılında New York City'de kurulmuş Amerikalı bir rock grubudur. 2024 itibarıyla kadroda vokal ve gitar-klavyede Cameron Winter, gitarda Emily Green, bassta Dominic DiGesu ve davulda Max Bassin yer alır.",
+        "facts": [
+          "Canlı performanslarda gruba klavyeci Sam Revaz eşlik eder.",
+          "Gitarist Foster Hudson, 2019'dan 2023'e kadar grubun bir üyesiydi."
+        ]
+      }
+    },
+    {
+      "id": "5ff4654e-4a16-4268-9264-590e0f7bdd6f",
+      "slug": "the-longest-johns-ac7be0a7",
+      "title": "The Longest Johns",
+      "name": "The Longest Johns",
+      "source_url": "https://en.wikipedia.org/wiki/The_Longest_Johns",
+      "extract": "The Longest Johns are an English folk musical group from Bristol, England, consisting of Andy Yates, Jonathan \"JD\" Darley, and Robbie Sattin. They are known for performing folk music and sea shanties in the English tradition, and they also compose and record their own music. They gained popularity from their rendition of the folk song \"Wellerman\", which went viral on TikTok in early 2021.",
+      "en": {
+        "kicker": "english folk group · bristol, england",
+        "who": "The Longest Johns are an English folk musical group from Bristol, England, consisting of Andy Yates, Jonathan \"JD\" Darley, and Robbie Sattin. They are known for performing folk music and sea shanties in the English tradition.",
+        "facts": [
+          "They gained popularity from their rendition of the folk song \"Wellerman\", which went viral on TikTok in early 2021.",
+          "They also compose and record their own music."
+        ]
+      },
+      "de": {
+        "kicker": "englische folkgruppe · bristol, england",
+        "who": "The Longest Johns sind eine englische Folkgruppe aus Bristol, England, bestehend aus Andy Yates, Jonathan „JD“ Darley und Robbie Sattin. Sie sind für Folk und Seemannslieder in englischer Tradition bekannt.",
+        "facts": [
+          "Bekannt wurden sie durch ihre Version des Folksongs „Wellerman“, die Anfang 2021 auf TikTok viral ging.",
+          "Sie komponieren und nehmen auch eigene Musik auf."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz folk grubu · bristol, ingiltere",
+        "who": "The Longest Johns, Bristol, İngiltere'den İngiliz bir folk müzik grubudur. Andy Yates, Jonathan \"JD\" Darley ve Robbie Sattin'den oluşur. İngiliz geleneğinde folk müzik ve denizci şarkıları icra etmeleriyle bilinirler.",
+        "facts": [
+          "Folk şarkısı \"Wellerman\" yorumlarıyla popülerlik kazandılar; bu yorum 2021 başında TikTok'ta viral oldu.",
+          "Kendi müziklerini de besteleyip kaydediyorlar."
+        ]
+      }
+    },
+    {
+      "id": "8d146b09-9fe3-443c-ae79-d2f6cd5669a4",
+      "slug": "george-clanton-d99b84ff",
+      "title": "George Clanton",
+      "name": "George Clanton",
+      "source_url": "https://en.wikipedia.org/wiki/George_Clanton",
+      "extract": "George Wayland Clanton Jr., also known by the monikers Mirror Kisses, ESPRIT 空想, CHINA, and Kid's Garden, is an American electronic musician and singer-songwriter that emerged from the vaporwave music scene in the early 2010s. He established his independent record label 100% Electronica in 2015, and in 2019 launched the first vaporwave music festival, 100% ElectroniCON.",
+      "en": {
+        "kicker": "american electronic musician · vaporwave scene",
+        "who": "George Wayland Clanton Jr., also known by the monikers Mirror Kisses, ESPRIT 空想, CHINA, and Kid's Garden, is an American electronic musician and singer-songwriter. In 2019 he launched the first vaporwave music festival, 100% ElectroniCON.",
+        "facts": [
+          "He established his independent record label 100% Electronica in 2015.",
+          "George Wayland Clanton Jr., also known by the monikers Mirror Kisses, ESPRIT 空想, CHINA, and Kid's Garden, is an American electronic musician and singer-songwriter that emerged from the vaporwave music scene in the early 2010s."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer elektronikmusiker · vaporwave-szene",
+        "who": "George Wayland Clanton Jr., auch unter den Pseudonymen Mirror Kisses, ESPRIT 空想, CHINA und Kid's Garden bekannt, ist ein amerikanischer Elektronikmusiker und Singer-Songwriter. 2019 startete er das erste Vaporwave-Musikfestival, 100% ElectroniCON.",
+        "facts": [
+          "2015 gründete er sein unabhängiges Label 100% Electronica.",
+          "Er kam Anfang der 2010er Jahre aus der Vaporwave-Musikszene."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı elektronik müzisyen · vaporwave sahnesi",
+        "who": "George Wayland Clanton Jr., Mirror Kisses, ESPRIT 空想, CHINA ve Kid's Garden takma adlarıyla da bilinen Amerikalı bir elektronik müzisyen ve şarkı yazarıdır. 2019'da ilk vaporwave müzik festivali olan 100% ElectroniCON'u başlattı.",
+        "facts": [
+          "2015 yılında 100% Electronica adlı bağımsız plak şirketini kurdu.",
+          "2010'ların başında vaporwave müzik sahnesinden çıktı."
+        ]
+      }
+    },
+    {
+      "id": "5f05b7cb-0f59-47b7-8714-599e74740b71",
+      "slug": "teen-jesus-and-the-jean-teasers-474460e0",
+      "title": "Teen Jesus And The Jean Teasers",
+      "name": "Teen Jesus and the Jean Teasers",
+      "source_url": "https://en.wikipedia.org/wiki/Teen_Jesus_and_the_Jean_Teasers",
+      "extract": "Teen Jesus and the Jean Teasers are an Australian rock band formed in Canberra in 2015. The group consists of vocalist Anna Ryan, guitarist Scarlett McKahey, drummer Neve van Boxsel, and bassist Jaida Stephenson. Their debut extended play, Pretty Good for a Girl Band, was released in 2022 through Domestic La La and won Best Independent Punk Album or EP at the 2023 AIR Awards. Their debut full-length album, I Love You, was released in 2023 and peaked at number 6 on the ARIA Albums Chart. Their most recent album, Glory, was released in November 2025.",
+      "en": {
+        "kicker": "australian rock band · canberra, 2015",
+        "who": "Teen Jesus and the Jean Teasers are an Australian rock band formed in Canberra in 2015. The group consists of vocalist Anna Ryan, guitarist Scarlett McKahey, drummer Neve van Boxsel, and bassist Jaida Stephenson.",
+        "facts": [
+          "Their debut extended play, Pretty Good for a Girl Band, was released in 2022 through Domestic La La and won Best Independent Punk Album or EP at the 2023 AIR Awards.",
+          "Their debut full-length album, I Love You, was released in 2023 and peaked at number 6 on the ARIA Albums Chart."
+        ]
+      },
+      "de": {
+        "kicker": "australische rockband · canberra, 2015",
+        "who": "Teen Jesus and the Jean Teasers sind eine australische Rockband, die 2015 in Canberra gegründet wurde. Zur Gruppe gehören Sängerin Anna Ryan, Gitarristin Scarlett McKahey, Schlagzeugerin Neve van Boxsel und Bassistin Jaida Stephenson.",
+        "facts": [
+          "Ihre Debüt-EP Pretty Good for a Girl Band erschien 2022 bei Domestic La La und gewann bei den AIR Awards 2023 den Preis für das beste unabhängige Punk-Album oder die beste EP.",
+          "Ihr Debütalbum I Love You erschien 2023 und erreichte Platz 6 der ARIA-Albumcharts."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı rock grubu · canberra, 2015",
+        "who": "Teen Jesus and the Jean Teasers, 2015 yılında Canberra'da kurulmuş Avustralyalı bir rock grubudur. Kadroda vokalist Anna Ryan, gitarist Scarlett McKahey, davulcu Neve van Boxsel ve basçı Jaida Stephenson yer alır.",
+        "facts": [
+          "Pretty Good for a Girl Band adlı ilk EP'leri 2022'de Domestic La La etiketiyle yayımlandı ve 2023 AIR Ödülleri'nde En İyi Bağımsız Punk Albümü veya EP dalında ödül kazandı.",
+          "İlk tam uzunluktaki albümleri I Love You, 2023'te yayımlandı ve ARIA Albums Chart'ta 6. sıraya yükseldi."
+        ]
+      }
+    },
+    {
+      "id": "9a8ed30e-3c8d-4397-9cd5-cf3640005406",
+      "slug": "slow-pulp-441ccd7b",
+      "title": "Slow Pulp",
+      "name": "Slow Pulp",
+      "source_url": "https://en.wikipedia.org/wiki/Slow_Pulp",
+      "extract": "Slow Pulp is an American indie rock band from Madison, Wisconsin, currently based in Chicago, Illinois. Formed in 2015, the band has held the same line-up since 2017: Emily Massey on lead vocals and rhythm guitar, Alex Leeds on bass and backing vocals, Teddy Matthews on drums and percussion, and Henry Stoehr on lead guitar. The band have released three studio albums to date: Moveys (2020), Yard (2023), and Melodie (2026).",
+      "en": {
+        "kicker": "american indie rock band · madison, wisconsin",
+        "who": "Slow Pulp is an American indie rock band from Madison, Wisconsin, currently based in Chicago, Illinois. Emily Massey sings lead and plays rhythm guitar, and the line-up has been the same since 2017.",
+        "facts": [
+          "The band have released three studio albums to date: Moveys (2020), Yard (2023), and Melodie (2026).",
+          "Formed in 2015, the band has held the same line-up since 2017."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische indie-rockband · madison, wisconsin",
+        "who": "Slow Pulp ist eine amerikanische Indie-Rockband aus Madison, Wisconsin, die derzeit in Chicago, Illinois, ansässig ist. Emily Massey singt und spielt Rhythmusgitarre; die Besetzung ist seit 2017 gleich.",
+        "facts": [
+          "Die Band hat bisher drei Studioalben veröffentlicht: Moveys (2020), Yard (2023) und Melodie (2026).",
+          "Die Band wurde 2015 gegründet und hat seit 2017 dieselbe Besetzung."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı indie rock grubu · madison, wisconsin",
+        "who": "Slow Pulp, Madison, Wisconsin'den çıkmış ve şu an Chicago, Illinois'de yaşayan Amerikalı bir indie rock grubudur. Emily Massey vokal ve ritim gitarını üstlenir; kadro 2017'den beri aynıdır.",
+        "facts": [
+          "Grup bugüne kadar üç stüdyo albümü yayımladı: Moveys (2020), Yard (2023) ve Melodie (2026).",
+          "2015'te kurulan grubun 2017'den beri aynı kadrosu var."
+        ]
+      }
+    },
+    {
+      "id": "299307bd-ee01-4e23-afbc-bd13137e4461",
+      "slug": "deerhoof-41966ff2",
+      "title": "Deerhoof",
+      "name": "Deerhoof",
+      "source_url": "https://en.wikipedia.org/wiki/Deerhoof",
+      "extract": "Deerhoof is an American musical group formed in San Francisco in 1994. It consists of founding drummer Greg Saunier, bassist and singer Satomi Matsuzaki, and guitarists John Dieterich and Ed Rodriguez. Beginning as an improvised noise punk band, Deerhoof became widely renowned and influential in the 2000s through its self-produced albums.",
+      "en": {
+        "kicker": "american musical group · san francisco, 1994",
+        "who": "Deerhoof is an American musical group formed in San Francisco in 1994. The band started out as an improvised noise punk band, and became known in the 2000s through its self-produced albums.",
+        "facts": [
+          "Beginning as an improvised noise punk band, Deerhoof became widely renowned and influential in the 2000s through its self-produced albums.",
+          "It consists of founding drummer Greg Saunier, bassist and singer Satomi Matsuzaki, and guitarists John Dieterich and Ed Rodriguez."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische musikgruppe · san francisco, 1994",
+        "who": "Deerhoof ist eine amerikanische Musikgruppe, die 1994 in San Francisco gegründet wurde. Die Band begann als improvisierte Noise-Punk-Band und wurde in den 2000er Jahren durch ihre selbst produzierten Alben bekannt.",
+        "facts": [
+          "Als improvisierte Noise-Punk-Band begonnen, wurde Deerhoof in den 2000er Jahren durch seine selbst produzierten Alben weithin bekannt und einflussreich.",
+          "Zur Gruppe gehören der Gründungsschlagzeuger Greg Saunier, die Bassistin und Sängerin Satomi Matsuzaki sowie die Gitarristen John Dieterich und Ed Rodriguez."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı müzik grubu · san francisco, 1994",
+        "who": "Deerhoof, 1994 yılında San Francisco'da kurulmuş Amerikalı bir müzik grubudur. Grup doğaçlama bir noise punk grubu olarak başladı ve 2000'lerde kendi prodüksiyonu albümleriyle tanındı.",
+        "facts": [
+          "Doğaçlama bir noise punk grubu olarak başlayan Deerhoof, 2000'lerde kendi prodüksiyonu albümleriyle geniş çapta ünlendi ve etkili oldu.",
+          "Grubun kurucu davulcusu Greg Saunier, basçı ve vokalist Satomi Matsuzaki ile gitarist John Dieterich ve Ed Rodriguez'den oluşur."
+        ]
+      }
+    },
+    {
+      "id": "4c958617-e728-4600-bd74-fea44b7fb076",
+      "slug": "julia-jacklin-north-america-tour-2026-fe47faa6",
+      "title": "Julia Jacklin -  North America Tour 2026",
+      "name": "Julia Jacklin",
+      "source_url": "https://en.wikipedia.org/wiki/Julia_Jacklin",
+      "extract": "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales. Jacklin's musical style has been described as indie pop, indie folk, and alternative country. She has released four studio albums, Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) and The Gem (2026). Jacklin has also performed with the band Phantastic Ferniture, with whom she released the debut single \"Fuckin 'n' Rollin\" and a self-titled album in 2018, followed by subsequent singles.",
+      "en": {
+        "kicker": "australian singer-songwriter · new south wales",
+        "who": "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales. She has also performed with the band Phantastic Ferniture.",
+        "facts": [
+          "She has released four studio albums, Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) and The Gem (2026).",
+          "Jacklin's musical style has been described as indie pop, indie folk, and alternative country."
+        ]
+      },
+      "de": {
+        "kicker": "australische singer-songwriterin · new south wales",
+        "who": "Julia Jacklin ist eine australische Singer-Songwriterin aus der Region Blue Mountains in New South Wales. Sie ist außerdem mit der Band Phantastic Ferniture aufgetreten.",
+        "facts": [
+          "Sie hat vier Studioalben veröffentlicht: Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) und The Gem (2026).",
+          "Ihr Musikstil wird als Indie-Pop, Indie-Folk und Alternative Country beschrieben."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı şarkıcı-söz yazarı · new south wales",
+        "who": "Julia Jacklin, New South Wales'in Blue Mountains bölgesinden Avustralyalı bir şarkıcı ve söz yazarıdır. Phantastic Ferniture grubuyla da çalışmıştır.",
+        "facts": [
+          "Dört stüdyo albümü yayımladı: Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) ve The Gem (2026).",
+          "Müzik tarzı indie pop, indie folk ve alternatif country olarak tanımlanır."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,422 @@
+{
+ "city": "denver",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "82e3e9e9-5162-49dd-bb2f-988edd099a44",
+   "slug": "she-s-green-443786e3",
+   "title": "she's green",
+   "name": "She's Green",
+   "source_url": "https://en.wikipedia.org/wiki/She's_Green",
+   "extract": "She's Green is an American indie rock band originating from Minneapolis, Minnesota. The band, which began performing in 2022, consists of vocalist Zofia Smith, guitarists Liam Armstrong and Raines Lucas, bassist Teddy Nordvold, and drummer Kevin Seebeck.",
+   "en": {
+    "kicker": "american indie rock band · denver, 2022",
+    "who": "She's Green is a five-piece band from Minneapolis, Minnesota. The lineup includes vocalist Zofia Smith and drummer Kevin Seebeck.",
+    "facts": [
+     "She's Green is an American indie rock band originating from Minneapolis, Minnesota.",
+     "The band, which began performing in 2022, consists of vocalist Zofia Smith, guitarists Liam Armstrong and Raines Lucas, bassist Teddy Nordvold, and drummer Kevin Seebeck."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-rockband · denver, 2022",
+    "who": "She's Green ist eine Band aus Minneapolis, Minnesota, zu der fünf Musiker gehören. Dazu zählen die Sängerin Zofia Smith und der Schlagzeuger Kevin Seebeck.",
+    "facts": [
+     "She's Green ist eine amerikanische Indie-Rockband aus Minneapolis, Minnesota.",
+     "Die Band, die 2022 mit Auftritten begann, besteht aus der Sängerin Zofia Smith, den Gitarristen Liam Armstrong und Raines Lucas, dem Bassisten Teddy Nordvold und dem Schlagzeuger Kevin Seebeck."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan indie rock grubu · denver, 2022",
+    "who": "She's Green, Minnesota eyaletinin Minneapolis kentinden beş kişilik bir gruptur. Kadroda vokalist Zofia Smith ve davulcu Kevin Seebeck yer alır.",
+    "facts": [
+     "She's Green, Minnesota eyaletinin Minneapolis kentinden çıkan Amerikan bir indie rock grubudur.",
+     "2022 yılında sahne almaya başlayan grup; vokalist Zofia Smith, gitaristler Liam Armstrong ve Raines Lucas, basçı Teddy Nordvold ve davulcu Kevin Seebeck'ten oluşur."
+    ]
+   }
+  },
+  {
+   "id": "6998464f-5cf4-4fdf-bafb-501f276e556f",
+   "slug": "teddy-swims-the-ugly-tour-bb6c3992",
+   "title": "Teddy Swims: The UGLY Tour",
+   "name": "Teddy Swims",
+   "source_url": "https://en.wikipedia.org/wiki/Teddy_Swims",
+   "extract": "Jaten Collin Dimsdale, known professionally as Teddy Swims, is an American singer and songwriter. Known for creating genre-blending music that includes elements of R&B, soul, hip-hop, and contemporary pop, Swims originally began to attract fans by posting song covers on YouTube during 2019 and 2020. Swims' third extended play, Tough Love (2022), became his first entry on the Billboard 200.",
+   "en": {
+    "kicker": "american singer and songwriter · denver, 2019",
+    "who": "Teddy Swims is the professional name of Jaten Collin Dimsdale, an American singer and songwriter. His music blends elements of R&B, soul, hip-hop, and contemporary pop.",
+    "facts": [
+     "Swims originally began to attract fans by posting song covers on YouTube during 2019 and 2020.",
+     "Swims' third extended play, Tough Love (2022), became his first entry on the Billboard 200."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer sänger und songwriter · denver, 2019",
+    "who": "Teddy Swims ist das Künstlerpseudonym von Jaten Collin Dimsdale, einem amerikanischen Sänger und Songwriter. Seine Musik verbindet Elemente aus R&B, Soul, Hip-Hop und zeitgenössischem Pop.",
+    "facts": [
+     "Swims begann ursprünglich, Fans zu gewinnen, indem er 2019 und 2020 Song-Coverversionen auf YouTube veröffentlichte.",
+     "Sein drittes Extended Play, Tough Love (2022), war sein erster Eintrag in den Billboard 200."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı · denver, 2019",
+    "who": "Teddy Swims, asıl adı Jaten Collin Dimsdale olan Amerikalı bir şarkıcı ve söz yazarıdır. R&B, soul, hip-hop ve çağdaş pop öğelerini harmanlayan bir müzik yapar.",
+    "facts": [
+     "Swims, 2019 ve 2020 yıllarında YouTube'da şarkı coverları paylaşarak ilk kez hayran kazanmaya başladı.",
+     "Üçüncü uzun çalışması Tough Love (2022), onun Billboard 200 listesindeki ilk girişi oldu."
+    ]
+   }
+  },
+  {
+   "id": "9704d0b5-72cc-477c-9486-4c42f420be4f",
+   "slug": "mon-laferte-femme-fatale-tour-dbe3f3df",
+   "title": "Mon Laferte - Femme Fatale Tour",
+   "name": "Mon Laferte",
+   "source_url": "https://en.wikipedia.org/wiki/Mon_Laferte",
+   "extract": "Norma Montserrat Bustamante Laferte, known professionally as Mon Laferte, is a Chilean and Mexican singer-songwriter. Recognized for her versatility, her musical style spans a wide array of genres, including pop, alternative, bolero, cumbia, and salsa. She rose to international prominence in the 2010s, particularly for her melodramatic vocals and theatrical stage presence. In 2025, Billboard named her one of the greatest female Latin pop artists of all time.",
+   "en": {
+    "kicker": "chilean and mexican singer-songwriter · denver",
+    "who": "Norma Montserrat Bustamante Laferte, known professionally as Mon Laferte, is a Chilean and Mexican singer-songwriter. Her style spans pop, alternative, bolero, cumbia, and salsa.",
+    "facts": [
+     "She rose to international prominence in the 2010s, particularly for her melodramatic vocals and theatrical stage presence.",
+     "In 2025, Billboard named her one of the greatest female Latin pop artists of all time."
+    ]
+   },
+   "de": {
+    "kicker": "chilenisch-mexikanische singer-songwriterin · denver",
+    "who": "Norma Montserrat Bustamante Laferte, unter dem Künstlernamen Mon Laferte bekannt, ist eine chilenisch-mexikanische Singer-Songwriterin. Ihr Stil reicht von Pop, Alternative und Bolero bis zu Cumbia und Salsa.",
+    "facts": [
+     "Sie erlangte in den 2010er-Jahren internationale Bekanntheit, vor allem durch ihren melodramatischen Gesang und ihre theatralische Bühnenpräsenz.",
+     "Im Jahr 2025 zählte Billboard sie zu den größten Latin-Pop-Künstlerinnen aller Zeiten."
+    ]
+   },
+   "tr": {
+    "kicker": "şilili-meksikalı şarkıcı ve söz yazarı · denver",
+    "who": "Norma Montserrat Bustamante Laferte, sahne adıyla Mon Laferte, Şilili ve Meksikalı bir şarkıcı ve söz yazarıdır. Müziği pop, alternatif, bolero, cumbia ve salsa gibi geniş bir yelpazeyi kapsar.",
+    "facts": [
+     "2010'larda uluslararası şöhrete kavuştu; özellikle melodramatik vokali ve tiyatral sahne performansıyla öne çıktı.",
+     "2025 yılında Billboard, onu tüm zamanların en büyük Latin pop sanatçılarından biri olarak seçti."
+    ]
+   }
+  },
+  {
+   "id": "80876d7a-6d5a-4985-8f96-688627070789",
+   "slug": "brand-new-7a1bb589",
+   "title": "Brand New",
+   "name": "Brand New",
+   "source_url": "https://en.wikipedia.org/wiki/Brand_New_(band)",
+   "extract": "Brand New is an American rock band formed in 2000 from Long Island, New York. Consisting of lead vocalist and rhythm guitarist Jesse Lacey, lead guitarist Vincent Accardi, bassist Garrett Tierney and drummer Brian Lane, the band earned critical recognition as one of the most influential emo bands, and was acclaimed for their musical development and artistic innovation compared to other groups in the scene from which they originated.",
+   "en": {
+    "kicker": "american rock band · denver, 2000",
+    "who": "Brand New is an American rock band formed in 2000 from Long Island, New York. The lineup consists of lead vocalist and rhythm guitarist Jesse Lacey, lead guitarist Vincent Accardi, bassist Garrett Tierney and drummer Brian Lane.",
+    "facts": [
+     "Brand New is an American rock band formed in 2000 from Long Island, New York.",
+     "The band earned critical recognition as one of the most influential emo bands."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · denver, 2000",
+    "who": "Brand New ist eine amerikanische Rockband, die im Jahr 2000 auf Long Island, New York, gegründet wurde. Die Besetzung besteht aus Sänger und Rhythmusgitarrist Jesse Lacey, Leadgitarrist Vincent Accardi, Bassist Garrett Tierney und Schlagzeuger Brian Lane.",
+    "facts": [
+     "Brand New ist eine amerikanische Rockband, die 2000 auf Long Island, New York, gegründet wurde.",
+     "Die Band erhielt kritische Anerkennung als eine der einflussreichsten Emo-Bands."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan rock grubu · denver, 2000",
+    "who": "Brand New, 2000 yılında New York'un Long Island bölgesinde kurulmuş Amerikan bir rock grubudur. Kadro, baş vokalist ve ritim gitaristi Jesse Lacey, solo gitarist Vincent Accardi, basçı Garrett Tierney ve davulcu Brian Lane'den oluşur.",
+    "facts": [
+     "Brand New, 2000 yılında New York'un Long Island bölgesinde kurulmuş Amerikan bir rock grubudur.",
+     "Grup, en etkili emo gruplarından biri olarak kritik beğeni topladı."
+    ]
+   }
+  },
+  {
+   "id": "87d3790f-38b4-4cb4-afef-d2a3a68d3a27",
+   "slug": "bleood-48f8df20",
+   "title": "bleood",
+   "name": "Bleood",
+   "source_url": "https://en.wikipedia.org/wiki/Bleood",
+   "extract": "Jamari Isaiah Spencer-Brown, known professionally as Bleood, is an American rapper and record producer. He initially emerged as a member of New York City rapper Xaviersobased's collective 1c34.",
+   "en": {
+    "kicker": "american rapper and record producer · denver",
+    "who": "Jamari Isaiah Spencer-Brown, known professionally as Bleood, is an American rapper and record producer. He first came up as a member of a collective connected to a New York City rapper.",
+    "facts": [
+     "Jamari Isaiah Spencer-Brown, known professionally as Bleood, is an American rapper and record producer.",
+     "He initially emerged as a member of New York City rapper Xaviersobased's collective 1c34."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper und produzent · denver",
+    "who": "Jamari Isaiah Spencer-Brown, unter dem Namen Bleood bekannt, ist ein amerikanischer Rapper und Produzent. Zunächst trat er als Mitglied des Kollektivs 1c34 des New Yorker Rappers Xaviersobased in Erscheinung.",
+    "facts": [
+     "Jamari Isaiah Spencer-Brown, unter dem Namen Bleood bekannt, ist ein amerikanischer Rapper und Musikproduzent.",
+     "Zunächst tauchte er als Mitglied des Kollektivs 1c34 des New Yorker Rappers Xaviersobased auf."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi ve yapımcı · denver",
+    "who": "Jamari Isaiah Spencer-Brown, sahne adı Bleood olan Amerikalı bir rapçi ve plak yapımcısıdır. İlk olarak New York'lu rapçi Xaviersobased'in 1c34 kolektifinin bir üyesi olarak öne çıktı.",
+    "facts": [
+     "Jamari Isaiah Spencer-Brown, sahne adı Bleood olan Amerikalı bir rapçi ve plak yapımcısıdır.",
+     "İlk olarak New York'lu rapçi Xaviersobased'in 1c34 kolektifinin bir üyesi olarak ortaya çıktı."
+    ]
+   }
+  },
+  {
+   "id": "ec063b3e-e958-4eb4-9616-f0e3420b12d3",
+   "slug": "ax-and-the-hatchetmen-the-late-checkout-tour-202-2d0baa36",
+   "title": "Ax and the Hatchetmen: The Late Checkout Tour 2026",
+   "name": "Ax and the Hatchetmen",
+   "source_url": "https://en.wikipedia.org/wiki/Ax_and_the_Hatchetmen",
+   "extract": "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018. Members of the group include Axel Ellis, Salvatore Defilippis (vocals/guitar), Hunter Olshefke (vocals/bass), Phil Pistone (trumpet), Quinn Dolan (saxophone), and Chaandmon Croft (drums). They are signed with Arista Records and their first album, So Much to Tell You, was released October 24, 2025 with a tour of the same name.",
+   "en": {
+    "kicker": "american alternative/indie rock band · denver, 2018",
+    "who": "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018. They are signed with Arista Records, and their first album, So Much to Tell You, came out on October 24, 2025.",
+    "facts": [
+     "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018.",
+     "They are signed with Arista Records and their first album, So Much to Tell You, was released October 24, 2025 with a tour of the same name."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische alternative- und indie-rockband · denver, 2018",
+    "who": "Ax and the Hatchetmen sind eine amerikanische Alternative- und Indie-Rockband, die 2018 in Chicago gegründet wurde. Sie stehen bei Arista Records unter Vertrag, ihr erstes Album So Much to Tell You erschien am 24. Oktober 2025.",
+    "facts": [
+     "Ax and the Hatchetmen sind eine amerikanische Alternative- und Indie-Rockband, die 2018 in Chicago gegründet wurde.",
+     "Sie stehen bei Arista Records unter Vertrag, und ihr erstes Album So Much to Tell You erschien am 24. Oktober 2025 zusammen mit einer gleichnamigen Tournee."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan alternatif/indie rock grubu · denver, 2018",
+    "who": "Ax and the Hatchetmen, 2018 yılında Chicago'da kurulmuş Amerikan bir alternatif/indie rock grubudur. Grup Arista Records ile sözleşmelidir; ilk albümleri So Much to Tell You, 24 Ekim 2025'te yayımlandı.",
+    "facts": [
+     "Ax and the Hatchetmen, 2018 yılında Chicago'da kurulmuş Amerikan bir alternatif/indie rock grubudur.",
+     "Grup Arista Records ile sözleşmeli; ilk albümleri So Much to Tell You, 24 Ekim 2025'te aynı adlı turneyle birlikte yayımlandı."
+    ]
+   }
+  },
+  {
+   "id": "a1cbf058-a644-4a48-8054-62b50e80f582",
+   "slug": "pj-morton-saturday-night-sunday-morning-tour-871461df",
+   "title": "PJ Morton - Saturday Night Sunday Morning Tour",
+   "name": "PJ Morton",
+   "source_url": "https://en.wikipedia.org/wiki/PJ_Morton",
+   "extract": "Paul Sylvester \"P.J.\" Morton Jr. is an American musician, singer, songwriter and record producer. In 2010, he joined pop rock band Maroon 5, as a touring member and became an official member after Jesse Carmichael went on a brief hiatus in 2012. During this period, Morton signed with Young Money to release his debut major-label studio album, New Orleans (2013), and later self-released Gumbo, which earned him two Grammy Award nominations for Best R&B Album and Best R&B Song at the 60th Annual Grammy Awards. Since then he has received six Grammy Awards.",
+   "en": {
+    "kicker": "american musician and record producer · denver",
+    "who": "Paul Sylvester \"P.J.\" Morton Jr. is an American musician, singer, songwriter and record producer. He joined pop rock band Maroon 5 as a touring member.",
+    "facts": [
+     "In 2010, he joined pop rock band Maroon 5, as a touring member and became an official member after Jesse Carmichael went on a brief hiatus in 2012.",
+     "Since then he has received six Grammy Awards."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer musiker und produzent · denver",
+    "who": "Paul Sylvester „P.J.“ Morton Jr. ist ein amerikanischer Musiker, Sänger, Songwriter und Musikproduzent. Er stieg zunächst als Tourmusiker bei der Poprockband Maroon 5 ein.",
+    "facts": [
+     "Im Jahr 2010 stieg er als Tourmusiker bei der Poprockband Maroon 5 ein und wurde offizielles Mitglied, nachdem sich Jesse Carmichael 2012 für eine kurze Pause zurückgezogen hatte.",
+     "Seitdem hat er sechs Grammy Awards erhalten."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı müzisyen ve plak yapımcısı · denver",
+    "who": "Paul Sylvester \"P.J.\" Morton Jr., Amerikalı bir müzisyen, şarkıcı, söz yazarı ve plak yapımcısıdır. 2010 yılında pop rock grubu Maroon 5'a turne üyesi olarak katıldı.",
+    "facts": [
+     "2010 yılında pop rock grubu Maroon 5'a turne üyesi olarak katıldı ve Jesse Carmichael'ın 2012'de kısa bir ara vermesinin ardından resmi üye oldu.",
+     "O tarihten bu yana altı Grammy Ödülü kazandı."
+    ]
+   }
+  },
+  {
+   "id": "19ac2491-de1e-4e9c-920a-f7550ffc3fc0",
+   "slug": "alyssa-grace-59cc9753",
+   "title": "Alyssa Grace",
+   "name": "Alyssa Grace",
+   "source_url": "https://en.wikipedia.org/wiki/Alyssa_Grace",
+   "extract": "Alyssa Grace Proffitt is an American singer-songwriter based in California. She made her recording debut in 2026 with \"Dog with a Bone\" and gained wider recognition through the singles \"Picking Petals\" and \"Bloodstream\".",
+   "en": {
+    "kicker": "american singer-songwriter · denver, 2026",
+    "who": "Alyssa Grace Proffitt is an American singer-songwriter based in California. She made her recording debut in 2026 with \"Dog with a Bone\" and gained wider recognition through the singles \"Picking Petals\" and \"Bloodstream\".",
+    "facts": [
+     "Alyssa Grace Proffitt is an American singer-songwriter based in California.",
+     "She made her recording debut in 2026 with \"Dog with a Bone\" and gained wider recognition through the singles \"Picking Petals\" and \"Bloodstream\"."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin · denver, 2026",
+    "who": "Alyssa Grace Proffitt ist eine amerikanische Singer-Songwriterin mit Sitz in Kalifornien. Ihr Aufnahmedebüt gab sie 2026 mit „Dog with a Bone“, bekannter wurde sie durch die Singles „Picking Petals“ und „Bloodstream“.",
+    "facts": [
+     "Alyssa Grace Proffitt ist eine amerikanische Singer-Songwriterin mit Sitz in Kalifornien.",
+     "Ihr Aufnahmedebüt gab sie 2026 mit „Dog with a Bone“, und größere Bekanntheit erlangte sie durch die Singles „Picking Petals“ und „Bloodstream“."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı · denver, 2026",
+    "who": "Alyssa Grace Proffitt, Kaliforniya merkezli Amerikalı bir şarkıcı ve söz yazarıdır. Kayıt debüsünü 2026'da \"Dog with a Bone\" ile yaptı; \"Picking Petals\" ve \"Bloodstream\" single'larıyla daha geniş bir kitleye ulaştı.",
+    "facts": [
+     "Alyssa Grace Proffitt, Kaliforniya merkezli Amerikalı bir şarkıcı ve söz yazarıdır.",
+     "Kayıt debüsünü 2026'da \"Dog with a Bone\" ile yaptı ve \"Picking Petals\" ile \"Bloodstream\" single'larıyla daha geniş bir tanınırlık kazandı."
+    ]
+   }
+  },
+  {
+   "id": "79e936f8-9d30-40df-9e51-1714b7ba8f36",
+   "slug": "parra-for-cuva-ages-16-16f79a5b",
+   "title": "Parra for Cuva - Ages 16+",
+   "name": "Parra for Cuva",
+   "source_url": "https://en.wikipedia.org/wiki/Parra_for_Cuva",
+   "extract": "Nicolas Demuth, known by stage name Parra for Cuva, is a German musician and DJ.\nHe is best known for his house production.",
+   "en": {
+    "kicker": "german musician and dj · denver",
+    "who": "Nicolas Demuth, known by stage name Parra for Cuva, is a German musician and DJ. He is best known for his house production.",
+    "facts": [
+     "Nicolas Demuth, known by stage name Parra for Cuva, is a German musician and DJ.",
+     "He is best known for his house production."
+    ]
+   },
+   "de": {
+    "kicker": "deutscher musiker und dj · denver",
+    "who": "Nicolas Demuth, unter dem Künstlernamen Parra for Cuva bekannt, ist ein deutscher Musiker und DJ. Am bekanntesten ist er für seine House-Produktionen.",
+    "facts": [
+     "Nicolas Demuth, unter dem Künstlernamen Parra for Cuva bekannt, ist ein deutscher Musiker und DJ.",
+     "Am bekanntesten ist er für seine House-Produktionen."
+    ]
+   },
+   "tr": {
+    "kicker": "alman müzisyen ve dj · denver",
+    "who": "Nicolas Demuth, sahne adı Parra for Cuva olan Alman bir müzisyen ve DJ'dir. En çok house prodüksiyonlarıyla tanınır.",
+    "facts": [
+     "Nicolas Demuth, sahne adı Parra for Cuva olan Alman bir müzisyen ve DJ'dir.",
+     "En çok house prodüksiyonlarıyla tanınır."
+    ]
+   }
+  },
+  {
+   "id": "67ad1017-20a7-4680-9422-9b0bd3b1988d",
+   "slug": "l7-the-last-hurrah-tour-2026-661cace7",
+   "title": "L7: The Last Hurrah Tour 2026",
+   "name": "L7",
+   "source_url": "https://en.wikipedia.org/wiki/L7_(band)",
+   "extract": "L7 is an American punk rock band founded in Los Angeles, California, first active from 1985 to 2001 and re-formed in 2014. The group currently consists of Suzi Gardner, Donita Sparks, Dee Plakas and Janis Tanaka. L7 has released seven studio albums and has toured widely in the United States, Europe, Japan, Australia, and South America. \"Pretend We're Dead\" was heavily played on United States alternative radio and entered the top 10 on the Billboard Modern Rock chart in 1992.",
+   "en": {
+    "kicker": "american punk rock band · denver, 1985",
+    "who": "L7 is an American punk rock band founded in Los Angeles, California. The group currently consists of Suzi Gardner, Donita Sparks, Dee Plakas and Janis Tanaka.",
+    "facts": [
+     "L7 is an American punk rock band founded in Los Angeles, California, first active from 1985 to 2001 and re-formed in 2014.",
+     "\"Pretend We're Dead\" was heavily played on United States alternative radio and entered the top 10 on the Billboard Modern Rock chart in 1992."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische punkrockband · denver, 1985",
+    "who": "L7 ist eine amerikanische Punkrockband, die in Los Angeles, Kalifornien, gegründet wurde. Die Band besteht derzeit aus Suzi Gardner, Donita Sparks, Dee Plakas und Janis Tanaka.",
+    "facts": [
+     "L7 ist eine amerikanische Punkrockband, die in Los Angeles, Kalifornien, gegründet wurde, von 1985 bis 2001 aktiv war und sich 2014 neu formierte.",
+     "„Pretend We're Dead“ lief im US-Alternativradio häufig und erreichte 1992 die Top 10 der Billboard-Modern-Rock-Charts."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan punk rock grubu · denver, 1985",
+    "who": "L7, Los Angeles, Kaliforniya'da kurulmuş Amerikan bir punk rock grubudur. Grubun şu anki kadrosu Suzi Gardner, Donita Sparks, Dee Plakas ve Janis Tanaka'dan oluşur.",
+    "facts": [
+     "L7, Los Angeles, Kaliforniya'da kurulmuş Amerikan bir punk rock grubudur; 1985 ile 2001 arasında aktifti ve 2014'te yeniden kuruldu.",
+     "\"Pretend We're Dead\", Amerika Birleşik Devletleri alternatif radyolarında çok çalındı ve 1992'de Billboard Modern Rock listesinde ilk 10'a girdi."
+    ]
+   }
+  },
+  {
+   "id": "dccaa716-a200-4bad-a472-ea0e11483ed1",
+   "slug": "chayce-beckham-a9525895",
+   "title": "Chayce Beckham",
+   "name": "Chayce Beckham",
+   "source_url": "https://en.wikipedia.org/wiki/Chayce_Beckham",
+   "extract": "Chayce Beckham is an American singer-songwriter from Apple Valley, California, who rose to fame after winning the nineteenth season of the singing reality show American Idol.",
+   "en": {
+    "kicker": "american singer-songwriter · denver",
+    "who": "Chayce Beckham is an American singer-songwriter from Apple Valley, California. He rose to fame after winning the nineteenth season of the singing reality show American Idol.",
+    "facts": [
+     "Chayce Beckham is an American singer-songwriter from Apple Valley, California.",
+     "Chayce Beckham rose to fame after winning the nineteenth season of the singing reality show American Idol."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · denver",
+    "who": "Chayce Beckham ist ein amerikanischer Singer-Songwriter aus Apple Valley, Kalifornien. Bekannt wurde er durch den Sieg in der neunzehnten Staffel der Gesangs-Reality-Show American Idol.",
+    "facts": [
+     "Chayce Beckham ist ein amerikanischer Singer-Songwriter aus Apple Valley, Kalifornien.",
+     "Chayce Beckham wurde bekannt, nachdem er die neunzehnte Staffel der Gesangs-Reality-Show American Idol gewonnen hatte."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı · denver",
+    "who": "Chayce Beckham, Kaliforniya'nın Apple Valley kentinden Amerikalı bir şarkıcı ve söz yazarıdır. Şöhretini, gerçeklik yarışma programı American Idol'un on dokuzuncu sezonunu kazanarak elde etti.",
+    "facts": [
+     "Chayce Beckham, Kaliforniya'nın Apple Valley kentinden Amerikalı bir şarkıcı ve söz yazarıdır.",
+     "Chayce Beckham, gerçeklik yarışma programı American Idol'un on dokuzuncu sezonunu kazanarak şöhret oldu."
+    ]
+   }
+  },
+  {
+   "id": "26330693-0e0e-43b2-b467-5183c43c691a",
+   "slug": "darude-cd31ea9a",
+   "title": "Darude",
+   "name": "Darude",
+   "source_url": "https://en.wikipedia.org/wiki/Darude",
+   "extract": "Toni-Ville Henrik Virtanen, better known by his stage name Darude, is a Finnish DJ and record producer from Eura, Satakunta. His music is characterised by its progressive/uplifting style. He started making music in 1995 and released the platinum-selling hit single \"Sandstorm\" in late 1999. His debut studio album, Before the Storm, was released on 18 September 2000, and sold 800,000 copies worldwide, earning Darude three Finnish Grammy Awards. It peaked at number one on Finland's Official List and number 6 on the Billboard Dance/Electronic Albums chart in the United States. Darude's second studio album, Rush, reached number 11 on the Billboard dance chart in 2003 and number 4 on weekly album ",
+   "en": {
+    "kicker": "finnish dj and producer · denver, 1995",
+    "who": "Toni-Ville Henrik Virtanen, better known by his stage name Darude, is a Finnish DJ and record producer from Eura, Satakunta. His music is characterised by its progressive/uplifting style.",
+    "facts": [
+     "He started making music in 1995 and released the platinum-selling hit single \"Sandstorm\" in late 1999.",
+     "His debut studio album, Before the Storm, was released on 18 September 2000, and sold 800,000 copies worldwide, earning Darude three Finnish Grammy Awards."
+    ]
+   },
+   "de": {
+    "kicker": "finnischer dj und produzent · denver, 1995",
+    "who": "Toni-Ville Henrik Virtanen, unter dem Namen Darude bekannt, ist ein finnischer DJ und Musikproduzent aus Eura in Satakunta. Seine Musik ist progressiv und aufbauend.",
+    "facts": [
+     "Er begann 1995 Musik zu machen und veröffentlichte Ende 1999 die Single „Sandstorm“, die sich platinweit verkaufte.",
+     "Sein Debütalbum Before the Storm erschien am 18. September 2000, verkaufte weltweit 800.000 Exemplare und brachte Darude drei finnische Grammy Awards ein."
+    ]
+   },
+   "tr": {
+    "kicker": "fin dj ve yapımcı · denver, 1995",
+    "who": "Toni-Ville Henrik Virtanen, sahne adı Darude ile tanınan, Satakunta'nın Eura kentinden bir Fin DJ ve plak yapımcısıdır. Müziği progresif ve yükseltici bir tarza sahiptir.",
+    "facts": [
+     "1995 yılında müzik yapmaya başladı ve 1999'un sonlarında platin satan \"Sandstorm\" single'ını yayımladı.",
+     "Debut stüdyo albümü Before the Storm, 18 Eylül 2000'de yayımlandı, dünya genelinde 800.000 kopya sattı ve Darude'a üç Fin Grammy Ödülü kazandırdı."
+    ]
+   }
+  },
+  {
+   "id": "ae4e9d42-1d4d-41a3-a60a-55b159d187f2",
+   "slug": "margaret-glaspy-6eaf2354",
+   "title": "Margaret Glaspy",
+   "name": "Margaret Glaspy",
+   "source_url": "https://en.wikipedia.org/wiki/Margaret_Glaspy",
+   "extract": "Margaret Glaspy is an American singer and songwriter based in New York City. She began playing and living in New York at 21 years old and is currently signed with ATO Records. Her debut full-length album, Emotions and Math, was self-produced and received critical acclaim, while her subsequent records have followed suit, from her EP Born Yesterday to her second full-length Devotion.",
+   "en": {
+    "kicker": "american singer-songwriter · denver",
+    "who": "Margaret Glaspy is an American singer and songwriter based in New York City. Her debut full-length album, Emotions and Math, was self-produced.",
+    "facts": [
+     "Margaret Glaspy is an American singer and songwriter based in New York City.",
+     "Her debut full-length album, Emotions and Math, was self-produced and received critical acclaim."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin · denver",
+    "who": "Margaret Glaspy ist eine amerikanische Sängerin und Songwriterin mit Sitz in New York City. Ihr erstes Album in voller Länge, Emotions and Math, produzierte sie selbst.",
+    "facts": [
+     "Margaret Glaspy ist eine amerikanische Sängerin und Songwriterin mit Sitz in New York City.",
+     "Ihr erstes Album in voller Länge, Emotions and Math, produzierte sie selbst und erhielt große Anerkennung von der Kritik."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı · denver",
+    "who": "Margaret Glaspy, New York City merkezli Amerikalı bir şarkıcı ve söz yazarıdır. İlk tam uzunluklu albümü Emotions and Math'i kendisi prodüye etti.",
+    "facts": [
+     "Margaret Glaspy, New York City merkezli Amerikalı bir şarkıcı ve söz yazarıdır.",
+     "Debut tam uzunluklu albümü Emotions and Math kendi prodüksiyonuyla çıktı ve eleştirel beğeni topladı."
+    ]
+   }
+  }
+ ]
+}

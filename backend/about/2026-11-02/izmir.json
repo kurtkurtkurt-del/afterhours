@@ -1,0 +1,166 @@
+{
+  "city": "izmir",
+  "day": "2026-11-02",
+  "nights": [
+    {
+      "id": "40700de6-59c8-473a-b4f4-3af4ae0c24e4",
+      "slug": "yuksek-sadakat-9afc4ae2",
+      "title": "Yüksek Sadakat",
+      "name": "Yüksek Sadakat",
+      "source_url": "https://en.wikipedia.org/wiki/Y%C3%BCksek_Sadakat",
+      "extract": "Yüksek Sadakat is a Turkish rock band that was formed in 1997 by Kutlu Özmakinacı, but became popular in early 2006 with their first album with the same name. The founder and bass player Kutlu Özmakinacı, used to be the editor of a music magazine called Blue Jean. Their music is a mix of pop rock with powerful beats utilizing Turkish instruments, keyboard and guitar solos. The name of the band is a literal translation of the term High Fidelity (Hi-Fi) into Turkish.",
+      "en": {
+        "kicker": "turkish rock band · izmir, 1997",
+        "who": "Yüksek Sadakat is a Turkish rock band that was formed in 1997 by Kutlu Özmakinacı. The band became popular in early 2006 with its first album with the same name.",
+        "facts": [
+          "Their music is a mix of pop rock with powerful beats utilizing Turkish instruments, keyboard and guitar solos.",
+          "The name of the band is a literal translation of the term High Fidelity (Hi-Fi) into Turkish."
+        ]
+      },
+      "de": {
+        "kicker": "türkische rockband · izmir, 1997",
+        "who": "Yüksek Sadakat ist eine türkische Rockband, die 1997 von Kutlu Özmakinacı gegründet wurde. Mit ihrem gleichnamigen ersten Album wurde die Band Anfang 2006 bekannt.",
+        "facts": [
+          "Ihre Musik ist eine Mischung aus Pop-Rock mit kraftvollen Beats, bei der türkische Instrumente sowie Keyboard- und Gitarrensoli zum Einsatz kommen.",
+          "Der Name der Band ist eine wörtliche Übersetzung des Begriffs High Fidelity (Hi-Fi) ins Türkische."
+        ]
+      },
+      "tr": {
+        "kicker": "türk rock grubu · izmir, 1997",
+        "who": "Yüksek Sadakat, 1997'de Kutlu Özmakinacı tarafından kurulmuş Türk bir rock grubudur. Grup, 2006 başında aynı adı taşıyan ilk albümüyle popülerleşti.",
+        "facts": [
+          "Müzikleri, Türk enstrümanları, klavye ve gitar sololarını kullanan güçlü ritimlerle harmanlanmış pop rocktır.",
+          "Grubun adı, High Fidelity (Hi-Fi) teriminin Türkçeye birebir çevirisidir."
+        ]
+      }
+    },
+    {
+      "id": "a92680bc-6563-4dd2-923b-14b18153ed3f",
+      "slug": "karsu-5c11d26c",
+      "title": "Karsu",
+      "name": "Karsu",
+      "source_url": "https://en.wikipedia.org/wiki/Karsu",
+      "extract": "Karsu Dönmez, known mononymously as Karsu, is a Turkish-Dutch singer, pianist and composer. While her music style is a blend of various genres, jazz pop is probably the best description for it. She has songs in Dutch, English, and Turkish.",
+      "en": {
+        "kicker": "turkish-dutch singer, pianist and composer · izmir",
+        "who": "Karsu Dönmez, known mononymously as Karsu, is a Turkish-Dutch singer, pianist and composer. She has songs in Dutch, English, and Turkish.",
+        "facts": [
+          "While her music style is a blend of various genres, jazz pop is probably the best description for it.",
+          "She has songs in Dutch, English, and Turkish."
+        ]
+      },
+      "de": {
+        "kicker": "türkisch-niederländische sängerin · izmir",
+        "who": "Karsu Dönmez, die unter dem Namen Karsu auftritt, ist eine türkisch-niederländische Sängerin, Pianistin und Komponistin. Sie singt Lieder auf Niederländisch, Englisch und Türkisch.",
+        "facts": [
+          "Ihr Musikstil ist eine Mischung verschiedener Genres, wobei Jazzpop wohl die treffendste Beschreibung ist.",
+          "Sie hat Lieder auf Niederländisch, Englisch und Türkisch."
+        ]
+      },
+      "tr": {
+        "kicker": "türk-hollandalı şarkıcı ve piyanist · izmir",
+        "who": "Karsu Dönmez, Karsu adıyla tanınan, Türk-Hollandalı bir şarkıcı, piyanist ve bestecidir. Şarkıları Hollandaca, İngilizce ve Türkçe.",
+        "facts": [
+          "Müzik tarzı çeşitli türlerin karışımıdır; bunu en iyi anlatan tanım muhtemelen caz popudur.",
+          "Hollandaca, İngilizce ve Türkçe şarkıları vardır."
+        ]
+      }
+    },
+    {
+      "id": "99d22d04-5214-4be2-9494-9bb287cc62ee",
+      "slug": "batu-akdeniz-6d7ab86a",
+      "title": "Batu Akdeniz",
+      "name": "Batu Akdeniz",
+      "source_url": "https://en.wikipedia.org/wiki/Batu_Akdeniz",
+      "extract": "Batu Akdeniz is a Turkish rock musician. He is known for both his solo works and his collaborations with the Heavy Sky band.",
+      "en": {
+        "kicker": "turkish rock musician · izmir",
+        "who": "Batu Akdeniz is a Turkish rock musician known for his solo work and his collaborations with the band Heavy Sky.",
+        "facts": [
+          "Batu Akdeniz is a Turkish rock musician.",
+          "He is known for both his solo works and his collaborations with the Heavy Sky band."
+        ]
+      },
+      "de": {
+        "kicker": "türkischer rockmusiker · izmir",
+        "who": "Batu Akdeniz ist ein türkischer Rockmusiker, der sowohl für seine Soloarbeiten als auch für seine Zusammenarbeit mit der Band Heavy Sky bekannt ist.",
+        "facts": [
+          "Batu Akdeniz ist ein türkischer Rockmusiker.",
+          "Er ist sowohl für seine Soloarbeiten als auch für seine Zusammenarbeit mit der Band Heavy Sky bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "türk rock müzisyeni · izmir",
+        "who": "Batu Akdeniz, Türk bir rock müzisyenidir. Hem solo çalışmalarıyla hem de Heavy Sky grubuyla yaptığı işbirlikleriyle tanınır.",
+        "facts": [
+          "Batu Akdeniz, Türk bir rock müzisyenidir.",
+          "Hem solo çalışmalarıyla hem de Heavy Sky grubuyla yaptığı işbirlikleriyle tanınır."
+        ]
+      }
+    },
+    {
+      "id": "c519671e-b547-48d5-bc55-6b38dc51c7e3",
+      "slug": "blackbriar-3e0dcde9",
+      "title": "Blackbriar",
+      "name": "Blackbriar",
+      "source_url": "https://en.wikipedia.org/wiki/Blackbriar_(band)",
+      "extract": "Blackbriar is a Dutch alternative metal band from Assen. They have released three albums, four EPs, six singles, twelve official music videos, one official lyric video and four acoustic live videos.",
+      "en": {
+        "kicker": "dutch alternative metal band · izmir",
+        "who": "Blackbriar is a Dutch alternative metal band from Assen. The band has released three albums and four EPs.",
+        "facts": [
+          "Blackbriar is a Dutch alternative metal band from Assen.",
+          "They have released three albums, four EPs, six singles, twelve official music videos, one official lyric video and four acoustic live videos."
+        ]
+      },
+      "de": {
+        "kicker": "niederländische alternative-metal-band · izmir",
+        "who": "Blackbriar ist eine niederländische Alternative-Metal-Band aus Assen. Die Band hat drei Alben und vier EPs veröffentlicht.",
+        "facts": [
+          "Blackbriar ist eine niederländische Alternative-Metal-Band aus Assen.",
+          "Sie hat drei Alben, vier EPs, sechs Singles, zwölf offizielle Musikvideos, ein offizielles Lyric-Video und vier akustische Live-Videos veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "hollandalı alternatif metal grubu · izmir",
+        "who": "Blackbriar, Assen kentinden çıkmış bir Hollandalı alternatif metal grubudur. Grup üç albüm ve dört EP yayımladı.",
+        "facts": [
+          "Blackbriar, Assen kentinden çıkmış bir Hollandalı alternatif metal grubudur.",
+          "Grup üç albüm, dört EP, altı single, on iki resmi müzik videosu, bir resmi lyric video ve dört akustik canlı video yayımladı."
+        ]
+      }
+    },
+    {
+      "id": "8287455b-0905-4220-8328-118dcb621d02",
+      "slug": "emre-ayd-n-0bf4dafd",
+      "title": "Emre Aydın",
+      "name": "Emre Aydın",
+      "source_url": "https://en.wikipedia.org/wiki/Emre_Ayd%C4%B1n",
+      "extract": "Emre Aydın is a Turkish rock singer-songwriter. The singer won the MTV Europe Music Awards 2008 in the \"Europe's Favourite Act\" category. He is also the former lead singer for the Turkish rock band 6. Cadde.",
+      "en": {
+        "kicker": "turkish rock singer-songwriter · izmir",
+        "who": "Emre Aydın is a Turkish rock singer-songwriter. He was once the lead singer for the Turkish rock band 6. Cadde.",
+        "facts": [
+          "The singer won the MTV Europe Music Awards 2008 in the \"Europe's Favourite Act\" category.",
+          "He is also the former lead singer for the Turkish rock band 6. Cadde."
+        ]
+      },
+      "de": {
+        "kicker": "türkischer rock-singer-songwriter · izmir",
+        "who": "Emre Aydın ist ein türkischer Rock-Singer-Songwriter. Er war früher Leadsänger der türkischen Rockband 6. Cadde.",
+        "facts": [
+          "Der Sänger gewann bei den MTV Europe Music Awards 2008 in der Kategorie \"Europe's Favourite Act\".",
+          "Er ist außerdem ehemaliger Leadsänger der türkischen Rockband 6. Cadde."
+        ]
+      },
+      "tr": {
+        "kicker": "türk rock şarkıcısı ve söz yazarı · izmir",
+        "who": "Emre Aydın bir Türk rock şarkıcısı ve söz yazarıdır. Daha önce Türk rock grubu 6. Cadde'nin baş vokalistiydi.",
+        "facts": [
+          "Şarkıcı, MTV Europe Music Awards 2008'de \"Europe's Favourite Act\" kategorisinde ödül kazandı.",
+          "Ayrıca Türk rock grubu 6. Cadde'nin eski baş vokalistidir."
+        ]
+      }
+    }
+  ]
+}

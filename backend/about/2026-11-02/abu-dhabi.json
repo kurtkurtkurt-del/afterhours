@@ -1,0 +1,102 @@
+{
+  "city": "abu-dhabi",
+  "day": "2026-11-02",
+  "nights": [
+    {
+      "id": "99a8f000-0825-4ef7-977b-e2d5c83a398b",
+      "slug": "ghostly-kisses-c1fd6071",
+      "title": "Ghostly Kisses",
+      "name": "Ghostly Kisses",
+      "source_url": "https://en.wikipedia.org/wiki/Ghostly_Kisses",
+      "extract": "Ghostly Kisses is the musical project of French-Canadian singers Margaux Sauvé and Louis-Étienne Santais. They are based in Quebec. Sauvé is signed to the British record label Akira Records. The name 'Ghostly Kisses' was inspired by the William Faulkner poem Une ballade des dames perdues, which includes the verse \"And brush my lips with little ghostly kisses.\" Clash describes her music as having \"a weightless quality, something that transcends the ephemeral to grapple with key facets of our lives.\"",
+      "en": {
+        "kicker": "french-canadian music project · quebec",
+        "who": "Ghostly Kisses is the musical project of French-Canadian singers Margaux Sauvé and Louis-Étienne Santais. They are based in Quebec.",
+        "facts": [
+          "Sauvé is signed to the British record label Akira Records.",
+          "The name 'Ghostly Kisses' was inspired by the William Faulkner poem Une ballade des dames perdues."
+        ]
+      },
+      "de": {
+        "kicker": "französisch-kanadisches musikprojekt · quebec",
+        "who": "Ghostly Kisses ist das Musikprojekt der französisch-kanadischen Sänger Margaux Sauvé und Louis-Étienne Santais. Die beiden sind in Quebec ansässig.",
+        "facts": [
+          "Sauvé steht beim britischen Label Akira Records unter Vertrag.",
+          "Der Name „Ghostly Kisses“ wurde durch das Gedicht „Une ballade des dames perdues“ von William Faulkner inspiriert."
+        ]
+      },
+      "tr": {
+        "kicker": "fransız-kanadalı müzik projesi · quebec",
+        "who": "Ghostly Kisses, Fransız-Kanadalı şarkıcılar Margaux Sauvé ve Louis-Étienne Santais'nin müzik projesidir. Ekip Quebec'te faaliyet gösteriyor.",
+        "facts": [
+          "Sauvé, İngiliz plak şirketi Akira Records ile sözleşmelidir.",
+          "\"Ghostly Kisses\" adı, William Faulkner'ın \"Une ballade des dames perdues\" şiirinden esinlenilmiştir."
+        ]
+      }
+    },
+    {
+      "id": "20264e91-9a2b-4b90-8b73-38c6f1bed6c7",
+      "slug": "imagine-dragons-saturday-82f977ae",
+      "title": "Imagine Dragons - Saturday",
+      "name": "Imagine Dragons",
+      "source_url": "https://en.wikipedia.org/wiki/Imagine_Dragons",
+      "extract": "Imagine Dragons are an American pop rock band formed in 2008, based in Las Vegas, Nevada. The band currently consists of lead singer Dan Reynolds, guitarist Wayne Sermon, and bassist Ben McKee. Their debut single, \"It's Time\", was released in February 2012, reaching the Top 20 of various charts around the world. Their debut album, Night Visions, which resulted in the chart-topping singles \"Radioactive\" and \"Demons\", reached No. 2 in America on release in September 2012, and achieved Platinum sales by June 2013. Rolling Stone named \"Radioactive\", which held the record for most weeks charted on the Billboard Hot 100, the \"biggest rock hit of the year\". MTV called them \"the year's biggest break",
+      "en": {
+        "kicker": "american pop rock band · las vegas, 2008",
+        "who": "Imagine Dragons are an American pop rock band formed in 2008, based in Las Vegas, Nevada. The band currently consists of lead singer Dan Reynolds, guitarist Wayne Sermon, and bassist Ben McKee.",
+        "facts": [
+          "Their debut album, Night Visions, reached No. 2 in America on release in September 2012.",
+          "Their debut single, \"It's Time\", was released in February 2012, reaching the Top 20 of various charts around the world."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische pop-rock-band · las vegas, 2008",
+        "who": "Imagine Dragons sind eine amerikanische Pop-Rock-Band, die 2008 gegründet wurde und in Las Vegas, Nevada, ansässig ist. Die Band besteht derzeit aus Sänger Dan Reynolds, Gitarrist Wayne Sermon und Bassist Ben McKee.",
+        "facts": [
+          "Ihr Debütalbum Night Visions erreichte bei Veröffentlichung im September 2012 Platz 2 in Amerika.",
+          "Ihre Debütsingle „It's Time“ erschien im Februar 2012 und erreichte die Top 20 verschiedener Charts weltweit."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı pop rock grubu · las vegas, 2008",
+        "who": "Imagine Dragons, 2008 yılında kurulan ve Nevada'nın Las Vegas kentinde merkezli bir Amerikan pop rock grubudur. Grubun şu anki üyeleri baş vokalist Dan Reynolds, gitarist Wayne Sermon ve basçı Ben McKee'dir.",
+        "facts": [
+          "Debut albümleri Night Visions, Eylül 2012'de yayımlandığında Amerika'da 2. sıraya yükseldi.",
+          "Debut single'ları \"It's Time\", Şubat 2012'de yayımlandı ve dünya genelinde çeşitli listelerin ilk 20'sine girdi."
+        ]
+      }
+    },
+    {
+      "id": "4d1e2799-78a9-416e-8d4f-b51eda889647",
+      "slug": "diljit-dosanjh-83a06fb1",
+      "title": "Diljit Dosanjh",
+      "name": "Diljit Dosanjh",
+      "source_url": "https://en.wikipedia.org/wiki/Diljit_Dosanjh",
+      "extract": "Diljit Dosanjh is an Indian-born American singer, actor, and film producer who works in Punjabi music as well as Punjabi and Hindi cinema. Dosanjh entered the Social 50 chart by Billboard in 2020. He has been featured in various music charts, including the Canadian Albums Chart, the UK Asian chart by Official Charts Company and the New Zealand Hot Singles. His films, including Jatt & Juliet 2 (2013), Sajjan Singh Rangroot (2018), Honsla Rakh (2021), and Jatt & Juliet 3 (2024) are among the highest grossing Punjabi films in history.",
+      "en": {
+        "kicker": "indian-born american singer and actor",
+        "who": "Diljit Dosanjh is an Indian-born American singer, actor, and film producer who works in Punjabi music as well as Punjabi and Hindi cinema. Dosanjh entered the Social 50 chart by Billboard in 2020.",
+        "facts": [
+          "His films, including Jatt & Juliet 2 (2013), Sajjan Singh Rangroot (2018), Honsla Rakh (2021), and Jatt & Juliet 3 (2024) are among the highest grossing Punjabi films in history.",
+          "He has been featured in various music charts, including the Canadian Albums Chart, the UK Asian chart by Official Charts Company and the New Zealand Hot Singles."
+        ]
+      },
+      "de": {
+        "kicker": "indisch-amerikanischer sänger und schauspieler",
+        "who": "Diljit Dosanjh ist ein in Indien geborener amerikanischer Sänger, Schauspieler und Filmproduzent, der in der Punjabi-Musik sowie im Punjabi- und Hindi-Kino tätig ist. Im Jahr 2020 stieg Dosanjh in die Social-50-Charts von Billboard ein.",
+        "facts": [
+          "Seine Filme, darunter Jatt & Juliet 2 (2013), Sajjan Singh Rangroot (2018), Honsla Rakh (2021) und Jatt & Juliet 3 (2024), gehören zu den erfolgreichsten Punjabi-Filmen aller Zeiten.",
+          "Er war in verschiedenen Musikcharts vertreten, darunter den kanadischen Albumcharts, den britischen Asian Charts der Official Charts Company und den neuseeländischen Hot Singles."
+        ]
+      },
+      "tr": {
+        "kicker": "hint kökenli amerikalı şarkıcı ve oyuncu",
+        "who": "Diljit Dosanjh, Hindistan doğumlu bir Amerikalı şarkıcı, oyuncu ve film yapımcısıdır. Punjabi müziğinde ve Punjabi ile Hintçe sinemasında çalışıyor. 2020'de Billboard'un Social 50 listesine girdi.",
+        "facts": [
+          "Jatt & Juliet 2 (2013), Sajjan Singh Rangroot (2018), Honsla Rakh (2021) ve Jatt & Juliet 3 (2024) gibi filmleri, tarihin en çok hasılat yapan Punjabi filmleri arasında yer alıyor.",
+          "Kanada Albüm Listesi, Birleşik Krallık'ın Official Charts Company tarafından hazırlanan Asian listesi ve Yeni Zelanda Hot Singles listesi dahil çeşitli müzik listelerinde yer aldı."
+        ]
+      }
+    }
+  ]
+}

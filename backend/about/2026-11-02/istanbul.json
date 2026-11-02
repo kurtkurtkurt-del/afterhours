@@ -1,0 +1,102 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-02",
+ "nights": [
+  {
+   "id": "391ca938-5e0e-491b-b5c3-89ddab8708bc",
+   "slug": "emir-can-igrek-ffc15eb5",
+   "title": "Emir Can İğrek",
+   "name": "Emir Can İğrek",
+   "source_url": "https://en.wikipedia.org/wiki/Emir_Can_%C4%B0%C4%9Frek",
+   "extract": "Emir Can İğrek is a Turkish singer and songwriter. He started making music by setting up small stage groups in the city where he was born. In 2019, he had his breakthrough with the song \"Nalan\". At the 2020 PowerTürk Music Awards, he was awarded as the \"Most Powerful Newcomer of the Year\". He has also composed songs for artists such as Funda Arar and Ferhat Göçer.",
+   "en": {
+    "kicker": "turkish singer and songwriter · istanbul",
+    "who": "Emir Can İğrek is a Turkish singer and songwriter. He has also composed songs for artists such as Funda Arar and Ferhat Göçer.",
+    "facts": [
+     "In 2019, he had his breakthrough with the song \"Nalan\".",
+     "At the 2020 PowerTürk Music Awards, he was awarded as the \"Most Powerful Newcomer of the Year\"."
+    ]
+   },
+   "de": {
+    "kicker": "türkischer sänger und songwriter · istanbul",
+    "who": "Emir Can İğrek ist ein türkischer Sänger und Songwriter. Er hat außerdem Lieder für Künstler wie Funda Arar und Ferhat Göçer komponiert.",
+    "facts": [
+     "2019 gelang ihm der Durchbruch mit dem Lied \"Nalan\".",
+     "Bei den PowerTürk Music Awards 2020 wurde er als \"Most Powerful Newcomer of the Year\" ausgezeichnet."
+    ]
+   },
+   "tr": {
+    "kicker": "türk şarkıcı ve söz yazarı · istanbul",
+    "who": "Emir Can İğrek bir Türk şarkıcı ve söz yazarıdır. Funda Arar ve Ferhat Göçer gibi sanatçılar için de şarkılar bestelemiştir.",
+    "facts": [
+     "2019'da \"Nalan\" şarkısıyla çıkışını yaptı.",
+     "2020 PowerTürk Music Awards'ta \"Most Powerful Newcomer of the Year\" ödülüne layık görüldü."
+    ]
+   }
+  },
+  {
+   "id": "41e050c6-d6d1-44e0-bfdd-f26aaf6a21df",
+   "slug": "levent-yuksel-143bead3",
+   "title": "Levent Yüksel",
+   "name": "Levent Yüksel",
+   "source_url": "https://en.wikipedia.org/wiki/Levent_Y%C3%BCksel",
+   "extract": "Levent Uğur Yüksel is a Turkish pop singer and multi instrumentalist. He has been active in live music industry since 1993.",
+   "en": {
+    "kicker": "turkish pop singer · istanbul",
+    "who": "Levent Uğur Yüksel is a Turkish pop singer and multi instrumentalist. He has been active in the live music industry since 1993.",
+    "facts": [
+     "Levent Uğur Yüksel is a Turkish pop singer and multi instrumentalist.",
+     "He has been active in live music industry since 1993."
+    ]
+   },
+   "de": {
+    "kicker": "türkischer popsänger · istanbul",
+    "who": "Levent Uğur Yüksel ist ein türkischer Popsänger und Multiinstrumentalist. Er ist seit 1993 in der Live-Musikbranche aktiv.",
+    "facts": [
+     "Levent Uğur Yüksel ist ein türkischer Popsänger und Multiinstrumentalist.",
+     "Er ist seit 1993 in der Live-Musikbranche aktiv."
+    ]
+   },
+   "tr": {
+    "kicker": "türk pop şarkıcısı · istanbul",
+    "who": "Levent Uğur Yüksel, Türk bir pop şarkıcısı ve çok enstrümanlı bir müzisyendir. 1993'ten beri canlı müzik sektöründe aktiftir.",
+    "facts": [
+     "Levent Uğur Yüksel, Türk bir pop şarkıcısı ve çok enstrümanlı bir müzisyendir.",
+     "1993'ten beri canlı müzik sektöründe aktif olarak çalışmaktadır."
+    ]
+   }
+  },
+  {
+   "id": "f72c401a-e66f-45f0-a384-197e6a361399",
+   "slug": "ersay-uner-b000c66c",
+   "title": "Ersay Üner",
+   "name": "Ersay Üner",
+   "source_url": "https://en.wikipedia.org/wiki/Ersay_%C3%9Cner",
+   "extract": "Ersay Üner, is a Turkish pop music singer-songwriter. He became known in Turkey in 2000s by writing and composing songs for Demet Akalın.",
+   "en": {
+    "kicker": "turkish pop singer-songwriter · istanbul",
+    "who": "Ersay Üner is a Turkish pop music singer-songwriter. He became known in Turkey in the 2000s by writing and composing songs for Demet Akalın.",
+    "facts": [
+     "Ersay Üner, is a Turkish pop music singer-songwriter.",
+     "He became known in Turkey in 2000s by writing and composing songs for Demet Akalın."
+    ]
+   },
+   "de": {
+    "kicker": "türkischer popmusik-singer-songwriter · istanbul",
+    "who": "Ersay Üner ist ein türkischer Singer-Songwriter der Popmusik. In den 2000er-Jahren wurde er in der Türkei bekannt, als er Lieder für Demet Akalın schrieb und komponierte.",
+    "facts": [
+     "Ersay Üner ist ein türkischer Singer-Songwriter der Popmusik.",
+     "In der Türkei wurde er in den 2000er-Jahren bekannt, indem er Lieder für Demet Akalın schrieb und komponierte."
+    ]
+   },
+   "tr": {
+    "kicker": "türk pop müziği şarkıcısı · istanbul",
+    "who": "Ersay Üner, Türk pop müziğinin şarkıcı ve söz yazarıdır. 2000'li yıllarda Demet Akalın için şarkı yazıp besteleyerek Türkiye'de tanındı.",
+    "facts": [
+     "Ersay Üner, Türk pop müziğinin şarkıcı ve söz yazarıdır.",
+     "2000'li yıllarda Demet Akalın için şarkı yazıp besteleyerek Türkiye'de tanınmaya başladı."
+    ]
+   }
+  }
+ ]
+}

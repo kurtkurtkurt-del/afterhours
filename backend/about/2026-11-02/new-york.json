@@ -1,0 +1,102 @@
+{
+  "city": "new-york",
+  "day": "2026-11-02",
+  "nights": [
+    {
+      "id": "6801b87a-8711-4836-80b9-cd6265a7d260",
+      "slug": "chief-keef-4d9aef4a",
+      "title": "Chief Keef",
+      "name": "Chief Keef",
+      "source_url": "https://en.wikipedia.org/wiki/Chief_Keef",
+      "extract": "Keith Farrelle Cozart, known professionally as Chief Keef, is an American rapper and record producer. Beginning his career as a teenager, he gained regional recognition for his mixtapes in the early 2010s. Cozart has since been credited with popularizing the hip hop subgenre drill among mainstream audiences and is considered a progenitor of the genre.",
+      "en": {
+        "kicker": "american rapper and record producer",
+        "who": "Keith Farrelle Cozart, known professionally as Chief Keef, is an American rapper and record producer. Beginning his career as a teenager, he gained regional recognition for his mixtapes in the early 2010s.",
+        "facts": [
+          "Beginning his career as a teenager, he gained regional recognition for his mixtapes in the early 2010s.",
+          "Cozart has since been credited with popularizing the hip hop subgenre drill among mainstream audiences and is considered a progenitor of the genre."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und musikproduzent",
+        "who": "Keith Farrelle Cozart, künstlerisch bekannt als Chief Keef, ist ein amerikanischer Rapper und Musikproduzent. Er begann seine Karriere als Teenager.",
+        "facts": [
+          "Mit seinen Mixtapes erlangte er in den frühen 2010er-Jahren zunächst regionale Anerkennung, als er noch Teenager war.",
+          "Cozart wird inzwischen die Popularisierung des Hip-Hop-Subgenres Drill beim Mainstream-Publikum zugeschrieben; er gilt als Wegbereiter des Genres."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve plak yapımcısı",
+        "who": "Sahne adı Chief Keef olan Keith Farrelle Cozart, Amerikalı bir rapçi ve plak yapımcısıdır. Genç yaşta kariyerine başladı.",
+        "facts": [
+          "Kariyerine genç yaşta başladı ve 2010'ların başında mixtapeleriyle bölgesel tanınırlık kazandı.",
+          "Cozart, drill alt türünü ana akım kitleler arasında yaygınlaştırmakla anılıyor ve bu türün öncülerinden biri sayılıyor."
+        ]
+      }
+    },
+    {
+      "id": "4a904746-81bd-468d-8717-537f3fcabd91",
+      "slug": "robert-glasper-7013fa12",
+      "title": "Robert Glasper",
+      "name": "Robert Glasper",
+      "source_url": "https://en.wikipedia.org/wiki/Robert_Glasper",
+      "extract": "Robert Andre Glasper is an American pianist, record producer, songwriter, and musical arranger. His music embodies numerous musical genres, primarily centered on jazz. Glasper has won five Grammy Awards from 11 nominations.",
+      "en": {
+        "kicker": "american jazz pianist, producer and songwriter",
+        "who": "Robert Andre Glasper is an American pianist, record producer, songwriter, and musical arranger. He has won five Grammy Awards.",
+        "facts": [
+          "His music embodies numerous musical genres, primarily centered on jazz.",
+          "Glasper has won five Grammy Awards from 11 nominations."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer jazzpianist, produzent und songwriter",
+        "who": "Robert Andre Glasper ist ein amerikanischer Pianist, Musikproduzent, Songwriter und Arrangeur. Er hat fünf Grammy Awards gewonnen.",
+        "facts": [
+          "Seine Musik umfasst zahlreiche Genres, wobei der Jazz im Mittelpunkt steht.",
+          "Glasper hat fünf Grammys aus elf Nominierungen gewonnen."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı caz piyanisti, yapımcı ve söz yazarı",
+        "who": "Robert Andre Glasper, Amerikalı bir piyanist, plak yapımcısı, söz yazarı ve aranjördür. Beş Grammy Ödülü kazanmıştır.",
+        "facts": [
+          "Müziği pek çok müzik türünü bir araya getirir; ağırlıklı olarak caz merkezlidir.",
+          "Glasper, on bir adaylıktan beş Grammy Ödülü kazandı."
+        ]
+      }
+    },
+    {
+      "id": "0576f2a7-29a4-430c-a5a8-24042cd8b54e",
+      "slug": "mike-dawes-df4e5e3f",
+      "title": "Mike Dawes",
+      "name": "Mike Dawes",
+      "source_url": "https://en.wikipedia.org/wiki/Mike_Dawes",
+      "extract": "Michael Kenneth James Dawes is an English fingerstyle guitar player known for composing, arranging, and performing multiple parts simultaneously on the guitar. As of 2025, he has released four studio albums, one live record, one EP, and numerous singles.",
+      "en": {
+        "kicker": "english fingerstyle guitarist",
+        "who": "Michael Kenneth James Dawes is an English fingerstyle guitar player known for composing, arranging, and performing multiple parts simultaneously on the guitar.",
+        "facts": [
+          "As of 2025, he has released four studio albums, one live record, one EP, and numerous singles.",
+          "He is known for composing, arranging, and performing multiple parts simultaneously on the guitar."
+        ]
+      },
+      "de": {
+        "kicker": "englischer fingerstyle-gitarrist",
+        "who": "Michael Kenneth James Dawes ist ein englischer Fingerstyle-Gitarrist. Er ist dafür bekannt, mehrere Stimmen gleichzeitig auf der Gitarre zu komponieren, zu arrangieren und zu spielen.",
+        "facts": [
+          "Seit 2025 hat er vier Studioalben, ein Live-Album, eine EP und zahlreiche Singles veröffentlicht.",
+          "Er ist dafür bekannt, mehrere Stimmen gleichzeitig auf der Gitarre zu komponieren, zu arrangieren und zu spielen."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz fingerstyle gitarist",
+        "who": "Michael Kenneth James Dawes, İngiliz bir fingerstyle gitarcıdır. Gitarda aynı anda birden fazla parçayı besteleyip düzenleyerek ve icra ederek tanınır.",
+        "facts": [
+          "2025 itibarıyla dört stüdyo albümü, bir canlı kayıt, bir EP ve çok sayıda single yayımladı.",
+          "Gitarda aynı anda birden fazla parçayı besteleyip düzenleme ve çalma konusunda tanınır."
+        ]
+      }
+    }
+  ]
+}
