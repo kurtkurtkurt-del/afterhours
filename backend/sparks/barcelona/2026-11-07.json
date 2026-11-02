@@ -1,0 +1,27 @@
+{
+  "city": "barcelona",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "show up go up, english open mic.",
+        "de": "show up go up, englisches open mic.",
+        "tr": "show up go up, ingilizce açık mikrofon."
+      },
+      "line": {
+        "en": "weekly saturday open mic in english at the alcove on via laietana, 17:00. free to watch, a drink is required, and you sign up on the eventbrite page.",
+        "de": "wöchentliches englischsprachiges open mic am samstag um 17:00 im the alcove an der via laietana. zuschauen gratis, ein getränk ist pflicht, anmeldung über die eventbrite-seite.",
+        "tr": "her cumartesi 17:00'de via laietana'daki the alcove'da ingilizce açık mikrofon. izlemek ücretsiz, bir içecek gerekli, kaydı eventbrite sayfasından yap."
+      },
+      "place": {
+        "en": "the alcove",
+        "de": "the alcove",
+        "tr": "the alcove"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Show Up Go Up, weekly Saturday 17:00 English open mic at The Alcove, Via Laietana, per its current Eventbrite page; the 2026 dates were not listed one by one."
+    }
+  ]
+}

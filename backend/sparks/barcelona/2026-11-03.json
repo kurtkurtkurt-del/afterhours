@@ -1,0 +1,14 @@
+{
+  "city": "barcelona",
+  "day": "2026-11-03",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "barça – aston villa at the camp nou.", "de": "barça – aston villa im camp nou.", "tr": "camp nou'da barça – aston villa." },
+      "line": { "en": "champions league, matchday 4, kick-off 21:00. tickets only through fcbarcelona.com; if they are gone, find a bar that shows the match on the night.", "de": "champions league, spieltag 4, anpfiff 21:00. tickets nur über fcbarcelona.com; sind sie weg, eine bar suchen, die das spiel an diesem abend zeigt.", "tr": "şampiyonlar ligi, 4. hafta, saat 21:00'de başlıyor. biletler yalnızca fcbarcelona.com üzerinden; biletler biterse o gece maçı gösteren bir bar bul." },
+      "place": { "en": "camp nou", "de": "camp nou", "tr": "camp nou" },
+      "hour": 21, "minute": 0,
+      "why": "Barça vs Aston Villa, UCL matchday 4 at Spotify Camp Nou, Tue 3 Nov 21:00 CET (fcbarcelona.com calendar and bundesliga.com)."
+    }
+  ]
+}
