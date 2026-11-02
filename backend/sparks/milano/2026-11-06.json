@@ -1,0 +1,14 @@
+{
+  "city": "milano",
+  "day": "2026-11-06",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "m.t. jones at santeria toscana 31, jazzmi.", "de": "m.t. jones in der santeria toscana 31, jazzmi.", "tr": "santeria toscana 31'de m.t. jones, jazzmi." },
+      "line": { "en": "jazzmi concert, friday 6 nov 21:30 at santeria toscana 31, listed at about 30 euro. the festival runs to 8 nov; tickets on jazzmi.it.", "de": "jazzmi-konzert, freitag 6. nov 21:30 in der santeria toscana 31, laut angebot ca. 30 euro. das festival läuft bis 8. nov; tickets auf jazzmi.it.", "tr": "jazzmi konseri, cuma 6 kasım 21:30 santeria toscana 31'de, listeye göre yaklaşık 30 euro. festival 8 kasıma kadar sürüyor; biletler jazzmi.it'te." },
+      "place": { "en": "santeria toscana 31", "de": "santeria toscana 31", "tr": "santeria toscana 31" },
+      "hour": 21, "minute": 30,
+      "why": "M.T. Jones at Santeria Toscana 31, Fri 6 Nov 21:30 in the JAZZMI 2026 programme (zero.eu event listing and a ticketing listing); confirm on jazzmi.it."
+    }
+  ]
+}
