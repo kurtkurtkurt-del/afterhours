@@ -1,0 +1,27 @@
+{
+  "city": "bologna",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "antiques and old things at santo stefano.",
+        "de": "antiquitäten und altes an santo stefano.",
+        "tr": "santo stefano'da antika ve eski eşyalar."
+      },
+      "line": {
+        "en": "the bologna antiques market on piazza santo stefano, 09:00 to 18:00. old prints, furniture, books and lace. best in the morning.",
+        "de": "der antiquitätenmarkt auf der piazza santo stefano, 9 bis 18 uhr. alte drucke, möbel, bücher und spitze. am besten am vormittag.",
+        "tr": "piazza santo stefano'daki antika pazarı, 09:00 - 18:00. eski baskılar, mobilya, kitaplar ve dantel. en iyisi sabah."
+      },
+      "place": {
+        "en": "piazza santo stefano",
+        "de": "piazza santo stefano",
+        "tr": "piazza santo stefano"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Mercato Antiquario Città di Bologna, Piazza Santo Stefano, Sun 8 Nov 09:00 to 18:00 (Confcommercio Ascom Bologna; BolognaToday autumn markets guide)."
+    }
+  ]
+}
