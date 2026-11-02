@@ -148,7 +148,11 @@ def card(e, poster_png):
 
 
 def general():
-    """A single card for the pages that are not events."""
+    """A single card for the pages that are not events.
+
+    Since 03.11.2026 that card is og/afterhours-2.png, drawn as HTML (the logo face and
+    the card stack) and rendered in a headless browser; this older drawing stays only so
+    og/afterhours.png can be made again for links already cached with it."""
     canvas = Image.new("RGB", (W, H), BLACK)
     draw = ImageDraw.Draw(canvas)
     wordmark(draw, 80, 196, 120, WHITE)
@@ -156,7 +160,7 @@ def general():
     draw.text((84, 400), "raves · club nights · konzert · festival · meetup · hausparty",
              font=font(21, 400), fill=FAINT)
     canvas.save(OUT / "afterhours.png", quality=90)
-    print("  og/afterhours.png")
+    print("  og/afterhours.png (old, unused)")
 
 
 if __name__ == "__main__":
