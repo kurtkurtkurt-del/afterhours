@@ -1,0 +1,14 @@
+{
+  "city": "sevilla",
+  "day": "2026-11-05",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "los jueves on calle feria, the antiques market.", "de": "los jueves in der calle feria, der antikmarkt.", "tr": "calle feria'da los jueves, antika pazarı." },
+      "line": { "en": "the thursday antiques and flea market on calle feria, open 08:30 to 14:00. mild weather, with some rain risk later in the week, so go early.", "de": "der donnerstagsmarkt für antiquitäten und flohmarkt in der calle feria, 08:30 bis 14:00. mild, mit etwas regenrisiko später in der woche; also früh hingehen.", "tr": "calle feria'daki perşembe antika ve bit pazarı, 08:30 ile 14:00 arası açık. hava ılık, hafta sonuna doğru yağmur ihtimali var; erken git." },
+      "place": { "en": "los jueves, calle feria", "de": "los jueves, calle feria", "tr": "los jueves, calle feria" },
+      "hour": 10, "minute": 0,
+      "why": "Los Jueves antiques and flea market on calle Feria, Thursdays 08:30 to 14:00 (Seville market listing site); rain risk from local press forecasts (elpespunte, sevillaactualidad)."
+    }
+  ]
+}
