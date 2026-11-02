@@ -1,0 +1,14 @@
+{
+  "city": "torino",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "gran balon, the antiques market on the second sunday.", "de": "gran balon, der antikmarkt am zweiten sonntag.", "tr": "gran balon, ayın ikinci pazarında antika pazarı." },
+      "line": { "en": "the big antiques and vintage market, borgo dora up to the cortile del maglio, 8 to 18. one sunday a month; this month the 8th.", "de": "der große antik- und vintage-markt, von borgo dora bis zum cortile del maglio, 8 bis 18 uhr. einmal im monat, diesmal der 8.", "tr": "büyük antika ve vintage pazarı, borgo dora'dan cortile del maglio'ya kadar, 8'den 18'e. ayda bir kez, bu ay 8'inde." },
+      "place": { "en": "gran balon, borgo dora", "de": "gran balon, borgo dora", "tr": "gran balon, borgo dora" },
+      "hour": 9, "minute": 0,
+      "why": "Gran Balon, second sunday of the month, 8 nov 2026, 8:00 to 18:00 per guidatorino.com; siviaggia.it's piedmont november 2026 market list has the same date."
+    }
+  ]
+}

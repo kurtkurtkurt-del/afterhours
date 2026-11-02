@@ -1,0 +1,14 @@
+{
+  "city": "torino",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "balon, the saturday flea market in borgo dora.", "de": "balon, der samstags-flohmarkt in borgo dora.", "tr": "borgo dora'da balon, cumartesi pire pazarı." },
+      "line": { "en": "every saturday from 7 to 18 in the streets round borgo dora. old things, cheap things, a lot of people. go in the late morning.", "de": "jeden samstag von 7 bis 18 uhr in den straßen um borgo dora. altes, billiges, viele leute. am besten am späten vormittag.", "tr": "her cumartesi 7'den 18'e borgo dora çevresindeki sokaklarda. eski şeyler, ucuz şeyler, çok insan. öğleye doğru git." },
+      "place": { "en": "balon, borgo dora", "de": "balon, borgo dora", "tr": "balon, borgo dora" },
+      "hour": 10, "minute": 0,
+      "why": "Balon del sabato, every saturday 7:00 to 18:00 around borgo dora and porta palazzo; guidatorino.com's balon guide lists the 7 nov market."
+    }
+  ]
+}
