@@ -143,7 +143,8 @@ export default function DeckViewer({ cards, mode, special, onKeep, onLetGo, onUn
             nights={entries}
             room={!!special}
             bottom={tabSpace + 4}
-            top={(headBottom || top + 30) + 14}
+            // a clear gap under the tabs and pickers, so the poster never rides up into them (owner, 03.11.2026)
+            top={(headBottom || top + 30) + 28}
             onSwipe={swipe}
             onUndo={undo}
             onReset={() => {

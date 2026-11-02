@@ -13,10 +13,12 @@ import { chooseCity } from '@/data/here';
 import { useT } from '@/i18n';
 import { colors, fonts, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import { usePullRefresh } from '@/components/Refresh';
 
 // City picker. The chosen city is stored, the photo fades out, and the app opens.
 export default function ExploreScreen() {
   const insets = useSafeAreaInsets();
+  const refresh = usePullRefresh();
   const { session } = useAuth();
   const t = useT();
   // Intro on first visit only (it can be replayed from settings).
@@ -48,7 +50,7 @@ export default function ExploreScreen() {
       <StatusBar style={barStyle} />
       <BackButton />
       <SoundCorner />
-      <ScrollView
+      <ScrollView refreshControl={refresh}
         contentContainerStyle={[styles.body, { paddingBottom: insets.bottom + 24 }]}
         showsVerticalScrollIndicator={false}
       >

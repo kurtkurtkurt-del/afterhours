@@ -30,6 +30,7 @@ import { brand } from '@/theme/layout';
 import PeopleMap, { fitScale } from '@/components/PeopleMap';
 import { peopleMap, type MapData } from '@/data/peopleMap';
 import { layout as mapLayout } from '@/lib/islands';
+import { usePullRefresh } from '@/components/Refresh';
 
 
 // Messages, a tab of its own since 12.10.2026 (design B in prototypes/messages-page.html;
@@ -41,6 +42,7 @@ import { layout as mapLayout } from '@/lib/islands';
 export default function MessagesScreen() {
   const { session } = useAuth();
   const insets = useSafeAreaInsets();
+  const refresh = usePullRefresh();
   const tabSpace = useTabBarSpace();
   const { t, up } = useLang();
   const tick = useRefreshOnFocus('cards');
@@ -97,7 +99,7 @@ export default function MessagesScreen() {
   return (
     <View style={styles.root}>
       <StatusBar style={barStyle} />
-      <PullDownScroll
+      <PullDownScroll refreshControl={refresh}
         closes={false}
         header={
           <View style={styles.band}>

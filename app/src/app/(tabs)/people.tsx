@@ -37,6 +37,7 @@ import { sparkOf } from '@/content/sparks';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import { usePullRefresh } from '@/components/Refresh';
 
 const fallbackPhoto = require('../../../assets/intro/concert.jpg');
 
@@ -50,14 +51,13 @@ const fallbackPhoto = require('../../../assets/intro/concert.jpg');
 // every 6 s, with one sample card from each deck between them, its pill opening that deck); your people (faces, a red
 // ring for whoever is out right now, what each is up to). Stories, posts and past nights
 // are in yours. A group without a plan or a vote is only in the line, not the gallery.
-// first names for the people further out on a sample wave (never shown as real)
-const WAVE_NAMES = ['tarık', 'noa', 'ece', 'felix', 'mele', 'hana', 'yusuf', 'ruby', 'lev', 'ana', 'kai', 'bo'];
 
 export default function PeopleScreen() {
   const insets = useSafeAreaInsets();
+  const refresh = usePullRefresh();
   const tabSpace = useTabBarSpace();
   // Your groups (44_groups.sql), read on every visit.
-  useShelf('groups'); // redraws when a refresh lands on the shelf
+  const pulled = useShelf('groups'); // redraws when a refresh lands on the shelf, or on a pull
   const [freshGroups, setGroups] = useState<GroupRow[] | null>(null);
   const groups = freshGroups ?? peek<GroupRow[]>('groups', '') ?? [];
   const { session } = useAuth();
@@ -73,7 +73,7 @@ export default function PeopleScreen() {
     return () => {
       live = false;
     };
-  }, [uid, real.ready]);
+  }, [uid, real.ready, pulled]);
   // Who is coming: your answers (stored, friends see them) and your friends' (32_rsvp.sql).
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [theirAnswers, setTheirAnswers] = useState<Rsvp[]>([]);
@@ -122,8 +122,6 @@ export default function PeopleScreen() {
   const local = useLocalCity();
   const feedCity = local.slug ?? 'munchen';
   const [upcoming, setUpcoming] = useState<Night[]>([]);
-  // more real nights of the city, for the sample waves (not the ones on the sample friends' deck)
-  const [wavePool, setWavePool] = useState<Night[]>([]);
   // Specialties: one deck per occasion, soonest first (content/specials.ts).
   const occasions = useMemo(() => bySoonest(specials), []);
   const [special, setSpecial] = useState<Partial<Record<SpecialId, Night[]>>>({});
@@ -133,7 +131,7 @@ export default function PeopleScreen() {
     return () => {
       live = false;
     };
-  }, [occasions, feedCity]);
+  }, [occasions, feedCity, pulled]);
   const specialDecks = useMemo(() => Object.fromEntries(Object.entries(special).map(([id, rows]) => [id, (rows ?? []).map((n) => toDeckCard(n, []))])) as Partial<Record<SpecialId, DeckCard[]>>, [special]);
   const specialCards = (id: SpecialId) => specialDecks[id] ?? [];
   const isSpecial = (d: typeof deck): d is SpecialId => !!d && specials.some((o) => o.id === d);
@@ -145,13 +143,12 @@ export default function PeopleScreen() {
         if (!live) return;
         const withPhoto = rows.filter((n) => n.image_url);
         setUpcoming(withPhoto.slice(0, 8));
-        setWavePool(withPhoto.slice(8, 22));
       })
       .catch(() => {});
     return () => {
       live = false;
     };
-  }, [feedCity]);
+  }, [feedCity, pulled]);
   const nights: YoursNight[] = sample && upcoming.length
     ? upcoming.map((n, i) => ({
         id: n.id,
@@ -192,7 +189,7 @@ export default function PeopleScreen() {
     return () => {
       live = false;
     };
-  }, [uid, real.ready]);
+  }, [uid, real.ready, pulled]);
   useTabReset('people', () => {
     setDeck(null);
     setQuery('');
@@ -234,23 +231,13 @@ export default function PeopleScreen() {
     return () => {
       live = false;
     };
-  }, [uid, real.ready]);
+  }, [uid, real.ready, pulled]);
   const realWave2 = useMemo(() => waveCards(waveRows, 2), [waveRows]);
   const realWave3 = useMemo(() => waveCards(waveRows, 3), [waveRows]);
-  // Until anyone out there keeps something: the city's real nights coming up, with sample
-  // chains on them — your (sample) friend, then the keeper you do not know (owner, 26.10.2026:
-  // the invented nights that stood here are gone; the deck says sample).
-  const sampleWave = (wave: 2 | 3) =>
-    wavePool
-      .filter((_, i) => (wave === 2 ? i % 2 === 0 : i % 2 === 1))
-      .map((n, i): DeckCard => {
-        const friend = sampleFriends[i % sampleFriends.length].name;
-        const between = WAVE_NAMES[(i * 3 + 1) % WAVE_NAMES.length];
-        const keeper = WAVE_NAMES[(i * 3 + (wave === 2 ? 1 : 2)) % WAVE_NAMES.length];
-        return { ...toDeckCard(n, []), key: `w${wave}-${n.id}`, via: { wave, path: wave === 2 ? [friend, keeper] : [friend, between, keeper] } };
-      });
-  const wave2 = realWave2.length ? realWave2 : sampleWave(2);
-  const wave3 = realWave3.length ? realWave3 : sampleWave(3);
+  // Only real waves: until someone out there keeps a night, those decks stay empty
+  // (owner, 03.11.2026: nothing made up in the app).
+  const wave2 = realWave2;
+  const wave3 = realWave3;
   const waveSample = (deck === 'wave2' && !realWave2.length) || (deck === 'wave3' && !realWave3.length);
 
   // Friends' deck: nights friends kept, one card per night, keepers as squares.
@@ -264,15 +251,7 @@ export default function PeopleScreen() {
     });
     return [...byId.values()];
   }, [real.swipes, live, tickets]);
-  // Until a friend keeps something: a sample friends' deck of real nights coming up
-  // here, with sample friends on them (keeping one keeps the real night).
-  const friendsDeck = useMemo<DeckCard[]>(
-    () =>
-      friendsCards.length
-        ? friendsCards
-        : upcoming.map((n, i) => toDeckCard(n, sampleFriends.slice(i % 6, (i % 6) + 1 + (i % 3)).map((f) => ({ name: f.name, live: !!f.live })))),
-    [friendsCards, upcoming],
-  );
+  const friendsDeck = friendsCards;
   const friendsSample = !friendsCards.length && friendsDeck.length > 0;
   // Your deck: nights you kept, with friends who kept the same night.
   const mineCards = useMemo<DeckCard[]>(
@@ -364,7 +343,7 @@ export default function PeopleScreen() {
     return () => {
       live = false;
     };
-  }, [uid, galleryIds]);
+  }, [uid, galleryIds, pulled]);
   const answer = (nightId: string, a: Answer) => {
     const again = answers[nightId] === a; // the same answer twice takes it back
     setAnswers((s) => {
@@ -418,7 +397,7 @@ export default function PeopleScreen() {
         <Text style={styles.title}>{t('connect.title')}</Text>
         <SoundCorner />
       </View>
-      <ScrollView
+      <ScrollView refreshControl={refresh}
         ref={scroll}
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom + 28 }]}

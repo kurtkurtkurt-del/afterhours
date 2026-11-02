@@ -22,6 +22,7 @@ import { useLocalCity } from '@/data/here';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import { usePullRefresh } from '@/components/Refresh';
 
 // Yours, the feed. Top to bottom: stories (ringed faces, as on Instagram), then one
 // endless feed like a timeline: the posts by you and your friends (newest first), then
@@ -35,6 +36,7 @@ export default function YoursScreenGate() {
 
 function YoursScreen() {
   const insets = useSafeAreaInsets();
+  const refresh = usePullRefresh();
   const tabSpace = useTabBarSpace();
   // Posts by you and your friends (45_posts.sql), read on every visit.
   const [posts, setPosts] = useState<Post[]>([]);
@@ -92,7 +94,7 @@ function YoursScreen() {
         </Pressable>
         <SoundCorner />
       </View>
-      <ScrollView
+      <ScrollView refreshControl={refresh}
         ref={scroll}
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={[styles.body, { paddingBottom: TAB_BAR_SPACE + insets.bottom + 28 }]}

@@ -4,7 +4,8 @@ import { launchImageLibraryAsync } from 'expo-image-picker';
 import { ImageManipulator, SaveFormat } from 'expo-image-manipulator';
 import { File, Paths } from 'expo-file-system';
 import Storage from 'expo-sqlite/kv-store';
-import { PHOTO_CACHE, photoName } from '@/lib/photoName';
+import * as Crypto from 'expo-crypto';
+import { PHOTO_CACHE } from '@/lib/photoName';
 import { supabase } from '@/lib/supabase';
 import { must, remember } from '@/lib/offline';
 import { useAuth } from '@/auth/AuthContext';
@@ -75,9 +76,22 @@ async function account() {
   return user && !user.is_anonymous ? user.id : null;
 }
 
+// profile_photos only accepts <user>/<1-16 digits>.jpg (24_photos.sql, profile_photos_path_shape),
+// so the shared 32-hex photoName() makes photo_set refuse every upload. 16 random digits
+// (~53 bits) fit the rule and are still not something anyone could count through.
+function photoDigits(): string {
+  let out = '';
+  while (out.length < 16) {
+    for (const b of Crypto.getRandomValues(new Uint8Array(24))) {
+      if (b < 250 && out.length < 16) out += String(b % 10); // 250 = 25 × 10: no bias
+    }
+  }
+  return out;
+}
+
 // Uploads the local file, writes the path to the database, removes the old file.
 async function upload(uid: string, uri: string) {
-  const path = `${uid}/${photoName()}.jpg`;
+  const path = `${uid}/${photoDigits()}.jpg`;
   const bytes = await new File(uri).arrayBuffer();
   const sent = await supabase.storage.from(BUCKET).upload(path, bytes, { contentType: 'image/jpeg', cacheControl: PHOTO_CACHE });
   if (sent.error) throw sent.error;

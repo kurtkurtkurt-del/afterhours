@@ -196,7 +196,8 @@ export function useShelf(...groups: string[]) {
           setN((x) => x + 1);
         }, 60);
     };
-    const offs = joined.split('|').map((g) => onShelf(g, bump));
+    // '*' is the pull to refresh: every screen reading a shelf reads again
+    const offs = [...joined.split('|'), '*'].map((g) => onShelf(g, bump));
     return () => {
       offs.forEach((off) => off());
       if (timer) clearTimeout(timer);
@@ -217,6 +218,18 @@ export function invalidate(...groups: string[]) {
 
 // Background refreshes in flight, one per shelf entry.
 const inflight = new Map<string, Promise<void>>();
+
+// Pull to refresh (owner, 03.11.2026): every shelf a screen listens to waits for the server
+// on its next read, and every useShelf counter goes up. Resolves once the background
+// fetches that started have settled.
+export async function invalidateAll() {
+  const groups = [...shelfListeners.keys()].filter((g) => g !== '*');
+  groups.forEach((g) => forced.add(g));
+  groups.forEach(emit);
+  emit('*');
+  await new Promise((r) => setTimeout(r, 150));
+  await Promise.allSettled([...inflight.values()]);
+}
 function refresh<T>(shelfKey: string, group: string, key: string, work: () => Promise<T>, max: number) {
   const id = `${shelfKey}|${key}`;
   if (inflight.has(id)) return;

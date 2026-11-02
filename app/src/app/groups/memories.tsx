@@ -14,6 +14,7 @@ import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { useLang } from '@/i18n';
 import { colors, fonts, radius, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import { usePullRefresh } from '@/components/Refresh';
 
 const two = (n: number) => String(n).padStart(2, '0');
 // photo heights cycle, so the two columns do not line up like a grid
@@ -29,6 +30,7 @@ export default function Memories() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { t, up } = useLang();
   const insets = useSafeAreaInsets();
+  const refresh = usePullRefresh();
   const { session } = useAuth();
   const tick = useRefreshOnFocus();
   const [name, setName] = useState('');
@@ -83,7 +85,7 @@ export default function Memories() {
   return (
     <View style={styles.root}>
       <StatusBar style={barStyle} />
-      <ScrollView contentContainerStyle={[styles.body, { paddingTop: Math.max(insets.top, 20) + 16, paddingBottom: insets.bottom + 110 }]}>
+      <ScrollView refreshControl={refresh} contentContainerStyle={[styles.body, { paddingTop: Math.max(insets.top, 20) + 16, paddingBottom: insets.bottom + 110 }]}>
         <Text style={styles.title}>{name.toLowerCase()}</Text>
         <Text style={styles.vibe}>{up(`${t('groups.vibe')} · ${vibe}`)}</Text>
         <Said text={said} bad />

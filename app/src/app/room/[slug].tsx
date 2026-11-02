@@ -13,6 +13,7 @@ import { fetchNight } from '@/data/deck';
 import { useShelf } from '@/lib/offline';
 import { colors, fonts, radius, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import { usePullRefresh } from '@/components/Refresh';
 
 const two = (n: number) => String(n).padStart(2, '0');
 const left = (iso: string) => {
@@ -35,6 +36,7 @@ const ddmm = (iso: string | null) => {
 export default function RoomScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const insets = useSafeAreaInsets();
+  const refresh = usePullRefresh();
   const { t, tn, up } = useLang();
   // A long press on someone's line reports it (51_safety.sql).
   const reporting = useReport();
@@ -114,7 +116,7 @@ export default function RoomScreen() {
         <BackButton lift={open ? 96 : 0} />
       </View>
       <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
-        <ScrollView
+        <ScrollView refreshControl={refresh}
           ref={scroll}
           contentContainerStyle={styles.body}
           showsVerticalScrollIndicator={false}

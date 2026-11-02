@@ -40,6 +40,7 @@ import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius, ground, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 import NightThumb from '@/components/NightThumb';
+import { usePullRefresh } from '@/components/Refresh';
 const RECORD = require('../../../assets/record/record.webp');
 
 // Card width as a share of the screen; each card leaves this much of the previous one visible.
@@ -62,6 +63,7 @@ export default function AccountScreen() {
   const runs = useRunsVenues(null, !session || isAnonymous);
   const { t, tn, up } = useLang();
   const insets = useSafeAreaInsets();
+  const refresh = usePullRefresh();
   const { width, height } = useWindowDimensions();
   const [open, setOpen] = useState<number | null>(null);
   const [side, setSide] = useState<'front' | 'back'>('front');
@@ -168,7 +170,7 @@ export default function AccountScreen() {
   return (
     <View style={styles.root} onLayout={(e) => setRootH(e.nativeEvent.layout.height)}>
       <StatusBar style={barStyle} />
-      <ScrollView ref={page} showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: tabBottom }} style={styles.page}>
+      <ScrollView refreshControl={refresh} ref={page} showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: tabBottom }} style={styles.page}>
         <View style={styles.top} onLayout={(e) => setAboveH(e.nativeEvent.layout.height)}>
           <Text style={styles.title} pointerEvents="none">
             {t('account.title')}

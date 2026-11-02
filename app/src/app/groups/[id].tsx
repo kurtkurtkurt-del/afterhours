@@ -53,6 +53,7 @@ import {
 import { useLang } from '@/i18n';
 import { colors, fonts, radius, tint, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
+import { usePullRefresh } from '@/components/Refresh';
 
 type Tab = 'trip' | 'swipe' | 'matches' | 'plan' | 'live';
 const ACTIONS = 86;
@@ -231,6 +232,7 @@ function MatchBurst({ text, onEnd }: { text: string; onEnd: () => void }) {
 function Matches({ id, matches, nameOf, top, onPlan }: { id: string; matches: Match[]; nameOf: (id: string) => string; top: number; onPlan: () => void }) {
   const { t, up } = useLang();
   const insets = useSafeAreaInsets();
+  const refresh = usePullRefresh();
   const [picking, setPicking] = useState(false);
   const [picked, setPicked] = useState<string[]>([]);
   const [asking, setAsking] = useState<Match | null>(null);
@@ -249,7 +251,7 @@ function Matches({ id, matches, nameOf, top, onPlan }: { id: string; matches: Ma
     );
   return (
     <>
-      <ScrollView contentContainerStyle={{ paddingTop: top + 8, paddingHorizontal: brand.left, paddingBottom: insets.bottom + 120 }}>
+      <ScrollView refreshControl={refresh} contentContainerStyle={{ paddingTop: top + 8, paddingHorizontal: brand.left, paddingBottom: insets.bottom + 120 }}>
         {!matches.length ? <Quiet text={t('groups.matches.none')} /> : null}
         {matches.length >= 2 ? (
           <View style={styles.pickRow}>
@@ -329,6 +331,7 @@ function Matches({ id, matches, nameOf, top, onPlan }: { id: string; matches: Ma
 function PlanTab({ id, me, top, groupName }: { id: string; me: string; top: number; groupName: string }) {
   const { t, up } = useLang();
   const insets = useSafeAreaInsets();
+  const refresh = usePullRefresh();
   const [state, setState] = useState<PlanState | null>(null);
   const [also, setAlso] = useState<AlsoThere[]>([]);
   const [said, setSaid] = useState<string | null>(null);
@@ -351,7 +354,7 @@ function PlanTab({ id, me, top, groupName }: { id: string; me: string; top: numb
   const word = { in: t('groups.plan.in'), maybe: t('groups.plan.maybe'), out: t('groups.plan.out') };
   const at = (iso: string) => iso.slice(11, 16);
   return (
-    <ScrollView contentContainerStyle={{ paddingTop: top + 8, paddingHorizontal: brand.left, paddingBottom: insets.bottom + 100 }}>
+    <ScrollView refreshControl={refresh} contentContainerStyle={{ paddingTop: top + 8, paddingHorizontal: brand.left, paddingBottom: insets.bottom + 100 }}>
       <Said text={said} bad />
       {state === null ? <Quiet text="…" /> : null}
 
