@@ -15,7 +15,7 @@ import { ActionButton, SAMPLES, confirmBlock, useConnect } from '@/components/Pe
 import { useReport } from '@/components/ReportSheet';
 import { friendRemove, person, personPeople, type Found, type PersonCard } from '@/data/friends';
 import { dmStart } from '@/data/dms';
-import { friendPhotos } from '@/data/photo';
+import { friendPhotos, personPhoto } from '@/data/photo';
 import { personCards, toCardData } from '@/data/checkin';
 import { useProfileExtra } from '@/data/profile';
 import { useRunsVenues } from '@/data/venues';
@@ -107,16 +107,19 @@ export default function PersonScreen() {
       },
     ]);
 
-  // The photo table only returns confirmed friends' rows; anyone else gets the initial.
+  // Friends (and someone asking you) come from the photo table; an open card asks for its
+  // one photo by handle (115). Anyone else gets the initial.
   const id = found?.id;
   useEffect(() => {
-    if (!id) return;
+    if (!id && !handle) return;
     let live = true;
-    friendPhotos().then((m) => live && setPhoto(m.get(id) ?? null));
+    friendPhotos()
+      .then((m) => (id && m.get(id)) || (handle && !isSample ? personPhoto(handle) : null))
+      .then((u) => live && setPhoto(u ?? null));
     return () => {
       live = false;
     };
-  }, [id, relation, freshPhotos]);
+  }, [id, handle, isSample, relation, freshPhotos]);
 
   const since = card?.created_at ? new Date(card.created_at) : null;
   const sinceText = since && !isNaN(since.getTime()) ? `${String(since.getMonth() + 1).padStart(2, '0')}.${since.getFullYear()}` : null;

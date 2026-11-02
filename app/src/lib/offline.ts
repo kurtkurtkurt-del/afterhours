@@ -219,6 +219,12 @@ export function invalidate(...groups: string[]) {
 // Background refreshes in flight, one per shelf entry.
 const inflight = new Map<string, Promise<void>>();
 
+// A tab press (owner, 03.11.2026): every screen reading a shelf reads again at once. The
+// saved copy shows straight away and the background fetch brings what is new; nothing waits.
+export function refreshShelves() {
+  emit('*');
+}
+
 // Pull to refresh (owner, 03.11.2026): every shelf a screen listens to waits for the server
 // on its next read, and every useShelf counter goes up. Resolves once the background
 // fetches that started have settled.

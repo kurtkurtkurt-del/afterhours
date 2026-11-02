@@ -132,7 +132,7 @@ export default function PeopleMapScreen() {
         <View style={[styles.requests, { top: insets.top + (cities.length ? 166 : 126) }]}>
           {requests.slice(0, 3).map((f) => (
             <View key={f.other_id} style={styles.request}>
-              <Pressable onPress={() => f.handle && openPerson(f.handle)} style={styles.requestWho} accessibilityRole="button">
+              <Pressable onPress={() => router.push(`/friend/${f.other_id}`)} style={styles.requestWho} accessibilityRole="button">
                 <View style={styles.requestFace}><Avatar name={f.handle ?? f.display_name ?? '?'} size={30} /></View>
                 <View style={styles.requestText}>
                   <Text style={styles.requestName} numberOfLines={1}>{(f.display_name ?? f.handle ?? '').toLowerCase()}</Text>

@@ -17,12 +17,13 @@ import SoundCorner from '@/components/SoundCorner';
 import { confirmBlock } from '@/components/People';
 import { friends, nights } from '@/content/friends';
 import { SAMPLES } from '@/content/samples';
-import { friendAccept, friendRemove, friendRequest } from '@/data/friends';
+import { friendRemove, friendRequest } from '@/data/friends';
 import { useYours } from '@/data/yours';
 import { upperData, useLang } from '@/i18n';
 import { colors, fonts, radius, barStyle, scrim } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 import PillAction from '@/components/PillAction';
+import FriendRequest from '@/components/FriendRequest';
 
 // Friend page, in the account page's language: their photo (or drawn face) full-bleed
 // with the name large, then on paper their kept nights as photo cards, their text and
@@ -76,6 +77,16 @@ export default function FriendScreen() {
           <Text style={[styles.note, { marginTop: 24 }]}>{t('friend.qr')}</Text>
         </PullDownScroll>
       </View>
+    );
+  }
+
+  // An incoming request: the request page (design 3, owner 03.11.2026).
+  if (rf?.pending === 'incoming') {
+    return (
+      <>
+        <StatusBar style={barStyle} />
+        <FriendRequest rf={rf} />
+      </>
     );
   }
 
@@ -202,11 +213,6 @@ export default function FriendScreen() {
               </View>
               {said ? <Text style={styles.prompt}>{said}</Text> : null}
               <View style={styles.actions}>
-                {rf?.pending === 'incoming' ? (
-                  <Pressable onPress={() => friendAccept(rf.id).then(() => router.back()).catch((e) => setSent(String(e.message).toLowerCase()))} style={({ pressed }) => [styles.accept, pressed && styles.pressed]}>
-                    <Text style={styles.acceptText}>{t('friend.accept')}</Text>
-                  </Pressable>
-                ) : null}
                 {rf ? (
                   <PillAction
                     surface="paper"

@@ -256,6 +256,13 @@ export const pages = {
   'notify.live': { en: 'friends out now', de: 'freunde unterwegs', tr: 'dışarıdaki arkadaşlar' },
   'notify.live.hint': { en: 'when a friend checks in to a night', de: 'wenn ein freund in einer nacht eincheckt', tr: 'bir arkadaşın bir geceye check-in yaptığında' },
   'friend.accept': { en: 'accept', de: 'annehmen', tr: 'kabul et' },
+  // the request page (design 3 of design/friend-request-5.html, owner 03.11.2026)
+  'friend.req.tag': { en: 'wants to add you', de: 'will dich adden', tr: 'seni eklemek istiyor' },
+  'friend.req.mutual': { en: '{n} people you both know', de: '{n} leute, die ihr beide kennt', tr: 'ikinizin de tanıdığı {n} kişi' },
+  'friend.req.mutual.one': { en: 'one person you both know', de: 'eine person, die ihr beide kennt', tr: 'ikinizin de tanıdığı bir kişi' },
+  'friend.req.mutual.none': { en: 'nobody you both know yet', de: 'noch niemand, den ihr beide kennt', tr: 'henüz ortak tanıdığınız yok' },
+  'friend.req.kept': { en: '{n} kept', de: '{n} behalten', tr: '{n} saklandı' },
+  'friend.decline': { en: 'decline', de: 'ablehnen', tr: 'reddet' },
   'friend.cancel': { en: 'cancel request', de: 'anfrage zurückziehen', tr: 'isteği geri al' },
   'friend.remove': { en: 'remove friend', de: 'freund entfernen', tr: 'arkadaşı çıkar' },
   'terms.title': { en: 'before you go in', de: 'bevor du reingehst', tr: 'içeri girmeden önce' },

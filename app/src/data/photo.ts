@@ -245,6 +245,12 @@ export function usePhoto() {
 
 // Friends' photos: id → URL. The database enforces access; the table only returns
 // your own row and those of confirmed friends.
+// 115_photo_requests.sql: the photo on a card you may see by handle (a friend, someone
+// asking you, or a discoverable card). Null when there is none, or before 115 is applied.
+export async function personPhoto(handle: string): Promise<string | null> {
+  const path = await remember('photos', 'person:' + handle, async () => ((await must(supabase.rpc('person_photo', { p_handle: handle }))) ?? null) as string | null).catch(() => null);
+  return path ? photoUrl(path) : null;
+}
 export async function friendPhotos(): Promise<Map<string, string>> {
   const rows = await remember('photos', '', async () => ((await must(supabase.from('profile_photos').select('user_id,path'))) ?? []) as { user_id: string; path: string }[]).catch(() => []);
   return new Map(rows.map((r) => [r.user_id, photoUrl(r.path)]));

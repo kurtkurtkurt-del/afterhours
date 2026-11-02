@@ -6,6 +6,7 @@ import Icon, { type IconName } from '@/components/Icon';
 import { usePhoto } from '@/data/photo';
 import { useLang } from '@/i18n';
 import { tabPressedAgain } from '@/hooks/useTabReset';
+import { refreshShelves } from '@/lib/offline';
 import { colors } from '@/theme/tokens';
 
 // A full-width bar on the bottom edge, ink with a hairline on top, five icons with no
@@ -40,6 +41,7 @@ export function TabItem({ icon, isFocused, onPress, ...props }: ItemProps) {
       // Pressing the open tab again resets it to its start.
       onPress={(e) => {
         if (isFocused) tabPressedAgain(icon);
+        refreshShelves();
         onPress?.(e);
       }}
       accessibilityRole="tab"
