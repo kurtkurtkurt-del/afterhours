@@ -43,6 +43,9 @@ await db.exec(`
   update public.profiles set handle = 'berk'  where id = '${B}';
 `);
 const [ev] = await rows(`select id, slug from public.events where is_published order by slug limit 1`);
+// The seed nights carry fixed dates that have long passed; a room freezes 56 hours after
+// its night, so the night under test starts now.
+await db.exec(`update public.events set starts_at = now() where id = '${ev.id}'`);
 
 console.log("\n— check-in —");
 {
