@@ -1,0 +1,166 @@
+{
+  "city": "glasgow",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "a69d6de3-d097-408e-baf1-3fe651800157",
+      "slug": "morcheeba-904527dc",
+      "title": "Morcheeba",
+      "name": "Morcheeba",
+      "source_url": "https://en.wikipedia.org/wiki/Morcheeba",
+      "extract": "Morcheeba are an English electronic band formed in the mid-1990s with founding members brothers Paul and Ross Godfrey who later recruited vocalist Skye Edwards. They mix influences from trip hop, rock, folk rock and downtempo, and have produced eleven regular studio albums since 1995, two of which reached the UK top ten. Edwards left the band in 2003, after which the brothers used a number of guest singers before she rejoined in 2010. They recruit additional members for their live performances and have toured internationally. Paul Godfrey distanced himself from the band in 2014. Edwards and Ross Godfrey later formed Skye & Ross and released a self-titled album in September 2016. Their latest",
+      "en": {
+        "kicker": "english electronic band · formed mid-1990s",
+        "who": "Morcheeba are an English electronic band formed in the mid-1990s by brothers Paul and Ross Godfrey, later joined by vocalist Skye Edwards. They mix trip hop, rock, folk rock and downtempo.",
+        "facts": [
+          "Morcheeba are an English electronic band formed in the mid-1990s with founding members brothers Paul and Ross Godfrey.",
+          "They have produced eleven regular studio albums since 1995, two of which reached the UK top ten."
+        ]
+      },
+      "de": {
+        "kicker": "englische elektronik-band · mitte der 1990er gegründet",
+        "who": "Morcheeba sind eine englische Elektronik-Band, Mitte der 1990er von den Brüdern Paul und Ross Godfrey gegründet; später kam Sängerin Skye Edwards hinzu. Sie verbinden Trip-Hop, Rock, Folk-Rock und Downtempo.",
+        "facts": [
+          "Morcheeba sind eine englische Elektronik-Band, Mitte der 1990er mit den Gründern Paul und Ross Godfrey gegründet.",
+          "Seit 1995 haben sie elf reguläre Studioalben veröffentlicht, zwei davon erreichten die britischen Top Ten."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz elektronik grubu · 1990'ların ortasında kuruldu",
+        "who": "Morcheeba, 1990'ların ortasında Paul ve Ross Godfrey kardeşler tarafından kurulmuş bir İngiliz elektronik grubudur; daha sonra vokalist Skye Edwards katıldı. Trip hop, rock, folk rock ve downtempo'yu harmanlarlar.",
+        "facts": [
+          "Morcheeba, kurucu üyeleri Paul ve Ross Godfrey kardeşler olan, 1990'ların ortasında kurulmuş bir İngiliz elektronik grubudur.",
+          "1995'ten beri on bir düzenli stüdyo albümü yayımladılar; bunların ikisi İngiltere ilk onuna girdi."
+        ]
+      }
+    },
+    {
+      "id": "1cc05596-e37e-463d-a18e-57e93de48e6c",
+      "slug": "walk-off-the-earth-fb69b3dd",
+      "title": "Walk Off The Earth",
+      "name": "Walk off the Earth",
+      "source_url": "https://en.wikipedia.org/wiki/Walk_off_the_Earth",
+      "extract": "Walk off the Earth is a Canadian indie pop band from Burlington, Ontario. The group is known for its music videos of covers and originals. The band is well known for covering pop-genre music on YouTube, making use of instruments such as the ukulele and the theremin, as well as looping samples. The band's recorded music and videos are produced by member and multi-instrumentalist Gianni \"Luminati\" Nicassio.",
+      "en": {
+        "kicker": "canadian indie pop band · burlington, ontario",
+        "who": "Walk off the Earth is a Canadian indie pop band from Burlington, Ontario. The group is known for music videos of covers and originals, often using the ukulele, the theremin and looping samples.",
+        "facts": [
+          "The band is well known for covering pop-genre music on YouTube, making use of instruments such as the ukulele and the theremin, as well as looping samples.",
+          "The band's recorded music and videos are produced by member and multi-instrumentalist Gianni \"Luminati\" Nicassio."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische indie-pop-band · burlington, ontario",
+        "who": "Walk off the Earth ist eine kanadische Indie-Pop-Band aus Burlington, Ontario. Die Gruppe ist für Musikvideos mit Covers und Eigenkompositionen bekannt, oft mit Ukulele, Theremin und Loops.",
+        "facts": [
+          "Die Band ist auf YouTube bekannt für Pop-Covers, bei denen Instrumente wie Ukulele und Theremin sowie Loops zum Einsatz kommen.",
+          "Ihre Aufnahmen und Videos werden von Mitglied und Multiinstrumentalist Gianni \"Luminati\" Nicassio produziert."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı indie pop grubu · burlington, ontario",
+        "who": "Walk off the Earth, Ontario'nun Burlington kentinden bir Kanadalı indie pop grubudur. Grup, cover ve özgün parçalardan oluşan müzik videolarıyla tanınır; çoğunlukla ukulele, theremin ve loop örnekleri kullanır.",
+        "facts": [
+          "Grup, YouTube'da ukulele, theremin ve loop örnekleri gibi enstrümanlarla pop cover'ları yapmasıyla bilinir.",
+          "Grubun kayıtları ve videoları, üye ve çok enstrümantalist Gianni \"Luminati\" Nicassio tarafından üretiliyor."
+        ]
+      }
+    },
+    {
+      "id": "95861508-1806-415e-bb6c-36ffbf62ce25",
+      "slug": "puscifer-b71aa6e0",
+      "title": "Puscifer",
+      "name": "Puscifer",
+      "source_url": "https://en.wikipedia.org/wiki/Puscifer",
+      "extract": "Puscifer is an American rock group formed in Los Angeles by Maynard James Keenan, lead singer of Tool and A Perfect Circle. Keenan was the only constant member of the band and he considered the project to be his \"creative subconscious\". Later, frequent collaborators Mat Mitchell and Carina Round became permanent members.",
+      "en": {
+        "kicker": "american rock band · los angeles",
+        "who": "Puscifer is an American rock group formed in Los Angeles by Maynard James Keenan, lead singer of Tool and A Perfect Circle. Keenan was the only constant member, and he considered the project his \"creative subconscious\".",
+        "facts": [
+          "Puscifer is an American rock group formed in Los Angeles by Maynard James Keenan, lead singer of Tool and A Perfect Circle.",
+          "Later, frequent collaborators Mat Mitchell and Carina Round became permanent members."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · los angeles",
+        "who": "Puscifer ist eine amerikanische Rockgruppe, die in Los Angeles von Maynard James Keenan gegründet wurde, dem Sänger von Tool und A Perfect Circle. Keenan war das einzige konstante Mitglied und nannte das Projekt sein \"kreatives Unterbewusstsein\".",
+        "facts": [
+          "Puscifer ist eine amerikanische Rockgruppe, die in Los Angeles von Maynard James Keenan gegründet wurde, dem Sänger von Tool und A Perfect Circle.",
+          "Später wurden die häufigen Mitarbeiter Mat Mitchell und Carina Round feste Mitglieder."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · los angeles",
+        "who": "Puscifer, Tool ve A Perfect Circle'ın baş vokalisti Maynard James Keenan tarafından Los Angeles'ta kurulmuş Amerikalı bir rock grubudur. Keenan tek sabit üyeydi ve projeyi kendi \"yaratıcı bilinçaltı\" olarak görüyordu.",
+        "facts": [
+          "Puscifer, Tool ve A Perfect Circle'ın baş vokalisti Maynard James Keenan tarafından Los Angeles'ta kurulmuş Amerikalı bir rock grubudur.",
+          "Sık çalıştığı Mat Mitchell ve Carina Round daha sonra grubun kalıcı üyeleri oldu."
+        ]
+      }
+    },
+    {
+      "id": "f9dcd6f2-815a-4639-b885-43f8373b617f",
+      "slug": "joan-as-police-woman-9b6e7563",
+      "title": "Joan As Police Woman",
+      "name": "Joan As Police Woman",
+      "source_url": "https://en.wikipedia.org/wiki/Joan_As_Police_Woman",
+      "extract": "Joan Wasser is an American musician, singer-songwriter and producer who releases music as Joan As Police Woman. She began her career playing violin with the Dambuilders and played with Black Beetle, Antony and the Johnsons, and Those Bastard Souls. Since 2004 she has released her solo material as Joan As Police Woman. She has released five regular studio albums, one extended play (EP), a number of singles and two albums of cover songs. Throughout her career, she has regularly collaborated with other artists as a writer, performer and arranger.",
+      "en": {
+        "kicker": "american musician and producer · joan as police woman",
+        "who": "Joan Wasser is an American musician, singer-songwriter and producer who releases music as Joan As Police Woman. She began her career playing violin with the Dambuilders and has released five regular studio albums under the name since 2004.",
+        "facts": [
+          "She began her career playing violin with the Dambuilders.",
+          "Since 2004 she has released her solo material as Joan As Police Woman."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische musikerin und produzentin · joan as police woman",
+        "who": "Joan Wasser ist eine amerikanische Musikerin, Singer-Songwriterin und Produzentin, die unter dem Namen Joan As Police Woman veröffentlicht. Sie begann ihre Karriere als Geigerin bei den Dambuilders; seit 2004 hat sie fünf reguläre Studioalben unter diesem Namen veröffentlicht.",
+        "facts": [
+          "Sie begann ihre Karriere als Geigerin bei den Dambuilders.",
+          "Seit 2004 veröffentlicht sie ihr Solomaterial als Joan As Police Woman."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı müzisyen ve yapımcı · joan as police woman",
+        "who": "Joan Wasser, Joan As Police Woman adıyla müzik yayımlayan Amerikalı bir müzisyen, şarkıcı-söz yazarı ve yapımcıdır. Kariyerine Dambuilders'ta keman çalarak başladı; 2004'ten beri bu adla beş düzenli stüdyo albümü yayımladı.",
+        "facts": [
+          "Kariyerine Dambuilders'ta keman çalarak başladı.",
+          "2004'ten beri solo materyalini Joan As Police Woman adıyla yayımlıyor."
+        ]
+      }
+    },
+    {
+      "id": "29b13884-a98f-4296-88c6-e68713f92924",
+      "slug": "myles-smith-my-mess-my-heart-my-life-tour-da291dc4",
+      "title": "Myles Smith: My Mess, My Heart, My Life. Tour",
+      "name": "Myles Smith",
+      "source_url": "https://en.wikipedia.org/wiki/Myles_Smith",
+      "extract": "Myles Michael Smith-Thompson is a British singer. He is best known for his 2024 singles \"Stargazing\" and \"Nice to Meet You\". His debut studio album, My Mess, My Heart, My Life. was released on 19 June 2026.",
+      "en": {
+        "kicker": "british singer · my mess, my heart, my life",
+        "who": "Myles Smith is a British singer, best known for his 2024 singles \"Stargazing\" and \"Nice to Meet You\". His debut studio album, My Mess, My Heart, My Life., was released on 19 June 2026.",
+        "facts": [
+          "He is best known for his 2024 singles \"Stargazing\" and \"Nice to Meet You\".",
+          "His debut studio album, My Mess, My Heart, My Life., was released on 19 June 2026."
+        ]
+      },
+      "de": {
+        "kicker": "britischer sänger · my mess, my heart, my life",
+        "who": "Myles Smith ist ein britischer Sänger, bekannt vor allem durch seine Singles \"Stargazing\" und \"Nice to Meet You\" von 2024. Sein Debütalbum My Mess, My Heart, My Life. erschien am 19. Juni 2026.",
+        "facts": [
+          "Bekannt ist er vor allem durch seine Singles \"Stargazing\" und \"Nice to Meet You\" von 2024.",
+          "Sein Debütalbum My Mess, My Heart, My Life. erschien am 19. Juni 2026."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı · my mess, my heart, my life",
+        "who": "Myles Smith, İngiliz bir şarkıcıdır; en çok 2024 single'ları \"Stargazing\" ve \"Nice to Meet You\" ile tanınır. Debut stüdyo albümü My Mess, My Heart, My Life. 19 Haziran 2026'da yayımlandı.",
+        "facts": [
+          "En çok 2024 single'ları \"Stargazing\" ve \"Nice to Meet You\" ile tanınır.",
+          "Debut stüdyo albümü My Mess, My Heart, My Life. 19 Haziran 2026'da yayımlandı."
+        ]
+      }
+    }
+  ]
+}

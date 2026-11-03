@@ -1,0 +1,38 @@
+{
+  "city": "birmingham",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "db804c76-2327-4821-b634-344226075207",
+      "slug": "jack-savoretti-9264b1c5",
+      "title": "Jack Savoretti",
+      "name": "Jack Savoretti",
+      "source_url": "https://en.wikipedia.org/wiki/Jack_Savoretti",
+      "extract": "Giovanni Edgar Charles Galletto-Savoretti, known professionally as Jack Savoretti, is a British acoustic singer, songwriter, and musician. He has released eight studio albums to date: Between the Minds (2007), Harder Than Easy (2009), Before the Storm (2012), Written in Scars (2015), Sleep No More (2016), Singing to Strangers (2019), Europiana (2021) and Miss Italia (2024). Singing to Strangers became his first number-one album on the UK Albums Chart.",
+      "en": {
+        "kicker": "british acoustic singer and songwriter · eight albums",
+        "who": "Jack Savoretti, born Giovanni Edgar Charles Galletto-Savoretti, is a British acoustic singer, songwriter and musician. His eighth studio album, Miss Italia, came out in 2024.",
+        "facts": [
+          "He has released eight studio albums to date.",
+          "Singing to Strangers became his first number-one album on the UK Albums Chart."
+        ]
+      },
+      "de": {
+        "kicker": "britischer akustik-singer-songwriter · acht alben",
+        "who": "Jack Savoretti, eigentlich Giovanni Edgar Charles Galletto-Savoretti, ist ein britischer Akustik-Singer, Songwriter und Musiker. Sein achtes Studioalbum Miss Italia erschien 2024.",
+        "facts": [
+          "Bisher hat er acht Studioalben veröffentlicht.",
+          "Singing to Strangers wurde sein erstes Album auf Platz eins der britischen Albumcharts."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz akustik şarkıcı ve söz yazarı · sekiz albüm",
+        "who": "Gerçek adı Giovanni Edgar Charles Galletto-Savoretti olan Jack Savoretti, İngiliz bir akustik şarkıcı, söz yazarı ve müzisyendir. Sekizinci stüdyo albümü Miss Italia 2024'te çıktı.",
+        "facts": [
+          "Bugüne kadar sekiz stüdyo albümü yayımladı.",
+          "Singing to Strangers, İngiltere Albüm Listesi'nde birinciliğe yükselen ilk albümü oldu."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "city": "manchester",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "62d7cbd3-0908-479a-9f40-939f5b4be0f3",
+      "slug": "cloud-nothings-009d86ba",
+      "title": "Cloud Nothings",
+      "name": "Cloud Nothings",
+      "source_url": "https://en.wikipedia.org/wiki/Cloud_Nothings",
+      "extract": "Cloud Nothings is an American indie rock band from Cleveland, Ohio, United States, founded by singer-songwriter Dylan Baldi. It currently consists of lead singer and guitarist Dylan Baldi, drummer Jayson Gerycz, and bassist Chris Brown.",
+      "en": {
+        "kicker": "american indie rock band · cleveland, ohio",
+        "who": "Cloud Nothings is an American indie rock band from Cleveland, Ohio, founded by singer-songwriter Dylan Baldi. It currently consists of Baldi, drummer Jayson Gerycz and bassist Chris Brown.",
+        "facts": [
+          "Cloud Nothings is an American indie rock band from Cleveland, Ohio, United States, founded by singer-songwriter Dylan Baldi.",
+          "It currently consists of lead singer and guitarist Dylan Baldi, drummer Jayson Gerycz, and bassist Chris Brown."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische indie-rock-band · cleveland, ohio",
+        "who": "Cloud Nothings ist eine amerikanische Indie-Rock-Band aus Cleveland, Ohio, gegründet vom Singer-Songwriter Dylan Baldi. Heute besteht sie aus Baldi, Schlagzeuger Jayson Gerycz und Bassist Chris Brown.",
+        "facts": [
+          "Cloud Nothings ist eine amerikanische Indie-Rock-Band aus Cleveland, Ohio, gegründet vom Singer-Songwriter Dylan Baldi.",
+          "Derzeit besteht sie aus Sänger und Gitarrist Dylan Baldi, Schlagzeuger Jayson Gerycz und Bassist Chris Brown."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı indie rock grubu · cleveland, ohio",
+        "who": "Cloud Nothings, şarkıcı-söz yazarı Dylan Baldi tarafından kurulmuş, Ohio'nun Cleveland kentinden Amerikalı bir indie rock grubudur. Bugün Baldi, davulcu Jayson Gerycz ve basçı Chris Brown'dan oluşuyor.",
+        "facts": [
+          "Cloud Nothings, şarkıcı-söz yazarı Dylan Baldi tarafından kurulmuş, Ohio'nun Cleveland kentinden bir Amerikalı indie rock grubudur.",
+          "Şu an baş vokalist ve gitarist Dylan Baldi, davulcu Jayson Gerycz ve basçı Chris Brown'dan oluşuyor."
+        ]
+      }
+    },
+    {
+      "id": "89ef87a8-f3ec-4281-ac0e-d2ffb93cb91b",
+      "slug": "the-slow-show-white-water-anniversary-live-tour-132bb7d0",
+      "title": "THE SLOW SHOW - WHITE WATER ANNIVERSARY LIVE TOUR",
+      "name": "The Slow Show",
+      "source_url": "https://en.wikipedia.org/wiki/The_Slow_Show",
+      "extract": "The Slow Show is a British indie pop band, formed in Manchester, UK in 2010. Their music has been described as \"minimalist but epic numbers steeped in atmospheric sonic landscapes\" with singer Rob Goodwin's \"croaky baritone\" as a feature that stands out. They have been compared to the likes of Elbow, The National or Tindersticks.",
+      "en": {
+        "kicker": "british indie pop band · formed in manchester, 2010",
+        "who": "The Slow Show is a British indie pop band formed in Manchester in 2010. Their music has been described as minimalist but epic, with singer Rob Goodwin's croaky baritone as a standout feature.",
+        "facts": [
+          "The Slow Show is a British indie pop band, formed in Manchester, UK in 2010.",
+          "They have been compared to the likes of Elbow, The National or Tindersticks."
+        ]
+      },
+      "de": {
+        "kicker": "britische indie-pop-band · gegründet 2010 in manchester",
+        "who": "The Slow Show ist eine britische Indie-Pop-Band, 2010 in Manchester gegründet. Ihre Musik wird als minimalistisch, aber episch beschrieben, mit der rauen Baritonstimme von Sänger Rob Goodwin als markantem Merkmal.",
+        "facts": [
+          "The Slow Show ist eine britische Indie-Pop-Band, 2010 in Manchester, Großbritannien, gegründet.",
+          "Sie werden mit Bands wie Elbow, The National oder Tindersticks verglichen."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz indie pop grubu · 2010'da manchester'da kuruldu",
+        "who": "The Slow Show, 2010'da Manchester'da kurulmuş bir İngiliz indie pop grubudur. Müzikleri minimalist ama epik olarak tanımlanır; vokalist Rob Goodwin'in gıcırtılı baritonu öne çıkan özelliktir.",
+        "facts": [
+          "The Slow Show, 2010'da Manchester, Birleşik Krallık'ta kurulmuş bir İngiliz indie pop grubudur.",
+          "Elbow, The National ya da Tindersticks gibi gruplara benzetilmişlerdir."
+        ]
+      }
+    },
+    {
+      "id": "54875406-6290-433e-b565-63b8829140fa",
+      "slug": "goldie-boutilier-74a7c582",
+      "title": "Goldie Boutilier",
+      "name": "Goldie Boutilier",
+      "source_url": "https://en.wikipedia.org/wiki/Goldie_Boutilier",
+      "extract": "Goldie Boutilier is a Canadian singer, songwriter, model and DJ. She has released three studio albums and six EPs.",
+      "en": {
+        "kicker": "canadian singer, songwriter, model and dj",
+        "who": "Goldie Boutilier is a Canadian singer, songwriter, model and DJ. She has released three studio albums and six EPs.",
+        "facts": [
+          "She has released three studio albums and six EPs.",
+          "She is a Canadian singer, songwriter, model and DJ."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische sängerin, songwriterin, model und dj",
+        "who": "Goldie Boutilier ist eine kanadische Sängerin, Songwriterin, Model und DJ. Sie hat drei Studioalben und sechs EPs veröffentlicht.",
+        "facts": [
+          "Sie hat drei Studioalben und sechs EPs veröffentlicht.",
+          "Sie ist eine kanadische Sängerin, Songwriterin, Model und DJ."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı şarkıcı, söz yazarı, model ve dj",
+        "who": "Goldie Boutilier, Kanadalı bir şarkıcı, söz yazarı, model ve DJ'dir. Üç stüdyo albümü ve altı EP yayımladı.",
+        "facts": [
+          "Üç stüdyo albümü ve altı EP yayımladı.",
+          "Kanadalı bir şarkıcı, söz yazarı, model ve DJ'dir."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "city": "los-angeles",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "fa201940-596e-4194-9742-1e21cb0b45ca",
+      "slug": "nia-archives-f8058ef9",
+      "title": "Nia Archives",
+      "name": "Nia Archives",
+      "source_url": "https://en.wikipedia.org/wiki/Nia_Archives",
+      "extract": "Dehaney Nia Lishahn Hunt, known professionally as Nia Archives, is an English record producer, DJ, singer and songwriter. Born in Bradford in West Yorkshire, she moved to Leeds aged seven, out of the family home aged sixteen, and then to Greater Manchester, during which time she was inspired by jungle documentaries and the women within them.",
+      "en": {
+        "kicker": "english record producer, dj and songwriter",
+        "who": "Dehaney Nia Lishahn Hunt, known professionally as Nia Archives, is an English record producer, DJ, singer and songwriter. Born in Bradford, she moved to Leeds aged seven and later to Greater Manchester, where she was inspired by jungle documentaries and the women within them.",
+        "facts": [
+          "Born in Bradford in West Yorkshire, she moved to Leeds aged seven.",
+          "She was inspired by jungle documentaries and the women within them."
+        ]
+      },
+      "de": {
+        "kicker": "englische produzentin, dj und songwriterin",
+        "who": "Dehaney Nia Lishahn Hunt, bekannt als Nia Archives, ist eine englische Musikproduzentin, DJ, Sängerin und Songwriterin. Sie wurde in Bradford geboren und zog mit sieben Jahren nach Leeds.",
+        "facts": [
+          "Sie wurde in Bradford in West Yorkshire geboren und zog mit sieben Jahren nach Leeds.",
+          "Sie ließ sich von Jungle-Dokumentationen und den Frauen darin inspirieren."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz plak yapımcısı, dj ve söz yazarı",
+        "who": "Dehaney Nia Lishahn Hunt, Nia Archives adıyla tanınan İngiliz bir plak yapımcısı, DJ, şarkıcı ve söz yazarıdır. Bradford'da doğdu, yedi yaşında Leeds'e taşındı.",
+        "facts": [
+          "West Yorkshire'daki Bradford'da doğdu ve yedi yaşında Leeds'e taşındı.",
+          "Jungle belgesellerinden ve bunların içindeki kadınlardan ilham aldı."
+        ]
+      }
+    },
+    {
+      "id": "ae651ac0-331e-4d3d-b4d0-5dedaf9df806",
+      "slug": "snakehips-9449cdec",
+      "title": "Snakehips",
+      "name": "Snakehips",
+      "source_url": "https://en.wikipedia.org/wiki/Snakehips_(duo)",
+      "extract": "Snakehips are a British electronic music duo. The line-up consists of Oliver Lee and James Carter. Snakehips made their name with Hype Machine doing remixes for Banks, The Weeknd, Bondax and Wild Belle. They are best known for their 2015 single, \"All My Friends\" featuring Tinashe and Chance the Rapper.",
+      "en": {
+        "kicker": "british electronic music duo · 2015 'all my friends'",
+        "who": "Snakehips are a British electronic music duo whose line-up consists of Oliver Lee and James Carter. They made their name with remixes for Banks, The Weeknd, Bondax and Wild Belle.",
+        "facts": [
+          "Snakehips made their name with Hype Machine doing remixes for Banks, The Weeknd, Bondax and Wild Belle.",
+          "They are best known for their 2015 single \"All My Friends\" featuring Tinashe and Chance the Rapper."
+        ]
+      },
+      "de": {
+        "kicker": "britisches elektronik-duo · 2015 'all my friends'",
+        "who": "Snakehips sind ein britisches Elektronik-Duo aus Oliver Lee und James Carter. Bekannt wurden sie durch Remixe für Banks, The Weeknd, Bondax und Wild Belle.",
+        "facts": [
+          "Snakehips wurden durch Remixe für Banks, The Weeknd, Bondax und Wild Belle bekannt, damals noch mit Hype Machine.",
+          "Am bekanntesten sind sie für ihre Single \"All My Friends\" von 2015 mit Tinashe und Chance the Rapper."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz elektronik müzik ikilisi · 2015 'all my friends'",
+        "who": "Snakehips, Oliver Lee ve James Carter'dan oluşan İngiliz bir elektronik müzik ikilisidir. Banks, The Weeknd, Bondax ve Wild Belle için yaptıkları remix'lerle tanındılar.",
+        "facts": [
+          "Snakehips, Hype Machine ile Banks, The Weeknd, Bondax ve Wild Belle için remix yaparak ün kazandı.",
+          "En çok 2015 single'ları \"All My Friends\" ile tanınırlar; şarkıda Tinashe ve Chance the Rapper yer alır."
+        ]
+      }
+    }
+  ]
+}

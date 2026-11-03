@@ -1,0 +1,70 @@
+{
+  "city": "seattle",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "02e80a01-5d40-44d9-ad19-eb2665eb13f4",
+      "slug": "aterciopelados-la-pipa-de-la-paz-30-anos-tour-a50d285d",
+      "title": "Aterciopelados: La Pipa De La Paz 30 Años Tour",
+      "name": "Aterciopelados",
+      "source_url": "https://en.wikipedia.org/wiki/Aterciopelados",
+      "extract": "Aterciopelados, also known as Los Aterciopelados, is a rock band from Colombia, led by Andrea Echeverri and Héctor Buitrago. Their music fuses rock with a variety of Colombian and Latin American musical traditions. Aterciopelados have recorded eight albums.",
+      "en": {
+        "kicker": "colombian rock band · eight albums",
+        "who": "Aterciopelados, also known as Los Aterciopelados, is a rock band from Colombia led by Andrea Echeverri and Héctor Buitrago. Their music fuses rock with a variety of Colombian and Latin American musical traditions.",
+        "facts": [
+          "Aterciopelados are led by Andrea Echeverri and Héctor Buitrago.",
+          "They have recorded eight albums."
+        ]
+      },
+      "de": {
+        "kicker": "kolumbianische rockband · acht alben",
+        "who": "Aterciopelados, auch Los Aterciopelados genannt, ist eine Rockband aus Kolumbien, angeführt von Andrea Echeverri und Héctor Buitrago. Ihre Musik verbindet Rock mit verschiedenen kolumbianischen und lateinamerikanischen Musiktraditionen.",
+        "facts": [
+          "Aterciopelados werden von Andrea Echeverri und Héctor Buitrago angeführt.",
+          "Sie haben acht Alben aufgenommen."
+        ]
+      },
+      "tr": {
+        "kicker": "kolombiyalı rock grubu · sekiz albüm",
+        "who": "Aterciopelados, Los Aterciopelados olarak da bilinen, Andrea Echeverri ve Héctor Buitrago önderliğindeki Kolombiyalı bir rock grubudur. Müzikleri rock'ı Kolombiya ve Latin Amerika müzik geleneklerinin çeşitliliğiyle harmanlar.",
+        "facts": [
+          "Grup, Andrea Echeverri ve Héctor Buitrago önderliğinde çalışır.",
+          "Sekiz albüm kaydetmişlerdir."
+        ]
+      }
+    },
+    {
+      "id": "3790b639-4eec-4c56-a1a1-9596e4db61ae",
+      "slug": "jon-spencer-ab9d0215",
+      "title": "Jon Spencer",
+      "name": "Jon Spencer",
+      "source_url": "https://en.wikipedia.org/wiki/Jon_Spencer",
+      "extract": "Jon Spencer is an American singer, guitarist, and bandleader known for his work in the noise- and garage-rock scenes with Pussy Galore, Boss Hog, and especially Jon Spencer Blues Explosion. In the mid-1990s he collaborated with Mississippi hill country blues musician R. L. Burnside on the album A Ass Pocket of Whiskey (1996), a crossover that drew wider attention to Burnside beyond blues audiences. After announcing in 2022 that the Blues Explosion had ended, Spencer issued new music and toured with Jon Spencer & the Hitmakers, featuring Sam Coomes and Janet Weiss, and later formed a trio with Kendall Wind and Macky “Spider” Bowman of The Bobby Lees.",
+      "en": {
+        "kicker": "american singer, guitarist and bandleader",
+        "who": "Jon Spencer is an American singer, guitarist and bandleader known for his work in noise and garage rock with Pussy Galore, Boss Hog and Jon Spencer Blues Explosion. After the Blues Explosion ended, he toured with Jon Spencer & the Hitmakers and later formed a trio with Kendall Wind and Macky \"Spider\" Bowman.",
+        "facts": [
+          "In the mid-1990s he collaborated with Mississippi hill country blues musician R. L. Burnside on the album A Ass Pocket of Whiskey (1996).",
+          "That crossover drew wider attention to Burnside beyond blues audiences."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer sänger, gitarrist und bandleader",
+        "who": "Jon Spencer ist ein amerikanischer Sänger, Gitarrist und Bandleader, bekannt aus der Noise- und Garage-Rock-Szene mit Pussy Galore, Boss Hog und Jon Spencer Blues Explosion. Nach dem Ende der Blues Explosion trat er mit Jon Spencer & the Hitmakers auf und gründete später ein Trio.",
+        "facts": [
+          "Mitte der 1990er arbeitete er mit dem Blues-Musiker R. L. Burnside aus den Hill Countrys von Mississippi am Album A Ass Pocket of Whiskey (1996) zusammen.",
+          "Diese Crossover-Platte machte Burnside über das Blues-Publikum hinaus bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı, gitarist ve grup lideri",
+        "who": "Jon Spencer, Pussy Galore, Boss Hog ve Jon Spencer Blues Explosion ile noise ve garage rock alanındaki çalışmalarıyla tanınan Amerikalı bir şarkıcı, gitarist ve grup lideridir. Blues Explosion'ın sona ermesinin ardından Jon Spencer & the Hitmakers ile turneye çıktı, daha sonra bir üçlü kurdu.",
+        "facts": [
+          "1990'ların ortasında Mississippi hill country blues müzisyeni R. L. Burnside ile A Ass Pocket of Whiskey (1996) albümünde çalıştı.",
+          "Bu melez albüm, Burnside'a blues dinleyicilerinin ötesinde daha geniş ilgi çekti."
+        ]
+      }
+    }
+  ]
+}

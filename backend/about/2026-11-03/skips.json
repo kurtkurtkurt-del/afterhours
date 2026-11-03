@@ -1392,6 +1392,66 @@
    "slug": "karate-andi-5d313cec",
    "city": "zurich",
    "why": "no page of that name (nearest: Karate India Organisation)"
+  },
+  {
+   "id": "28dc4d85-1c34-4bac-83e0-a766adf72df6",
+   "slug": "ayta-sozeri-cd1117f0",
+   "city": "ankara",
+   "why": "extract too thin: one claim, no second fact to state"
+  },
+  {
+   "id": "b8e2262e-c53d-41b1-8b39-2f3ef7f07d6f",
+   "slug": "david-garrett-immortal-classic-tour-2027-3ee7890d",
+   "city": "basel",
+   "why": "extract too thin: one claim, no second fact to state"
+  },
+  {
+   "id": "0fd74052-e84f-46e7-9f27-483b2de6aec8",
+   "slug": "jonas-brothers-the-burning-up-tour-all-over-agai-09406aa1",
+   "city": "houston",
+   "why": "check: album list runs past the sourced extract; 2025 not in extract"
+  },
+  {
+   "id": "c9432937-01ef-4e8b-869d-e1601734df44",
+   "slug": "noah-gundersen-rites-of-spring-us-tour-fall-2026-c0fc4608",
+   "city": "houston",
+   "why": "extract too thin: one claim, no second fact to state"
+  },
+  {
+   "id": "5b56a39d-8dc2-4da3-b53c-fab62a98eb8e",
+   "slug": "world-news-73b066cd",
+   "city": "london",
+   "why": "extract is only a member roster, no second fact to state"
+  },
+  {
+   "id": "b62e549c-3bae-4cd2-a4aa-2f4c772b56bc",
+   "slug": "sadurn-969508ef",
+   "city": "montreal",
+   "why": "extract too thin: one claim, no second fact to state"
+  },
+  {
+   "id": "acad8d66-f580-417f-a264-247b5e5e2790",
+   "slug": "cory-branan-1bdf8828",
+   "city": "new-orleans",
+   "why": "extract too thin: one claim, no second fact to state"
+  },
+  {
+   "id": "96b95a6e-076e-4eb1-94d9-ef08f4062bab",
+   "slug": "coyle-girelli-0804d5ae",
+   "city": "new-york",
+   "why": "check: the sourced facts sit past the extract cut; 2025 not in extract"
+  },
+  {
+   "id": "65eeaf9c-55ee-4ff1-80bb-b98933ada985",
+   "slug": "karina-rykman-98857dea",
+   "city": "san-francisco",
+   "why": "extract too thin: one claim, no second fact to state"
+  },
+  {
+   "id": "c06efcc1-5bd1-4732-8c39-e3e8b3d9dadf",
+   "slug": "tiffany-day-halo-tour-europe-bcfd5882",
+   "city": "warszawa",
+   "why": "check: 2025 not in extract, only 'the following year'"
   }
  ]
 }

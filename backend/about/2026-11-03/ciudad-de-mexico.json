@@ -1,0 +1,38 @@
+{
+  "city": "ciudad-de-mexico",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "745428b0-7ba1-4aa3-aaf8-9cf32e195e52",
+      "slug": "fernando-delgadillo-eedc8c6c",
+      "title": "Fernando Delgadillo",
+      "name": "Fernando Delgadillo",
+      "source_url": "https://en.wikipedia.org/wiki/Fernando_Delgadillo",
+      "extract": "Fernando Delgadillo is a Mexican musician and composer. He is considered a major representative of the Folk music genre in Mexico often referred to as ¨Trova¨. He is considered the ¨Creador de la canción informal¨",
+      "en": {
+        "kicker": "mexican musician and composer · folk trova",
+        "who": "Fernando Delgadillo is a Mexican musician and composer. He is considered a major representative of the Folk music genre in Mexico, often referred to as \"Trova\".",
+        "facts": [
+          "He is considered a major representative of the Folk music genre in Mexico often referred to as \"Trova\".",
+          "He is considered the \"Creador de la canción informal\"."
+        ]
+      },
+      "de": {
+        "kicker": "mexikanischer musiker und komponist · folk-trova",
+        "who": "Fernando Delgadillo ist ein mexikanischer Musiker und Komponist. Er gilt als bedeutender Vertreter der mexikanischen Folkmusik, die oft \"Trova\" genannt wird.",
+        "facts": [
+          "Er gilt als bedeutender Vertreter der Folkmusik in Mexiko, die oft als \"Trova\" bezeichnet wird.",
+          "Er gilt als \"Creador de la canción informal\"."
+        ]
+      },
+      "tr": {
+        "kicker": "meksikalı müzisyen ve besteci · folk trova",
+        "who": "Fernando Delgadillo, Meksikalı bir müzisyen ve bestecidir. Meksika'da \"Trova\" olarak da anılan folk müziğin önemli temsilcilerinden biri sayılır.",
+        "facts": [
+          "Meksika'da sık sık \"Trova\" olarak anılan folk müziğin önemli temsilcilerinden biri sayılır.",
+          "\"Creador de la canción informal\" olarak kabul edilir."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "nashville",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "e71d409d-877f-41de-ad96-e3336de4d52b",
+      "slug": "julia-jacklin-north-america-tour-2026-aa98ce67",
+      "title": "Julia Jacklin - North America Tour 2026",
+      "name": "Julia Jacklin",
+      "source_url": "https://en.wikipedia.org/wiki/Julia_Jacklin",
+      "extract": "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales. Jacklin's musical style has been described as indie pop, indie folk, and alternative country. She has released four studio albums, Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) and The Gem (2026). Jacklin has also performed with the band Phantastic Ferniture, with whom she released the debut single \"Fuckin 'n' Rollin\" and a self-titled album in 2018, followed by subsequent singles.",
+      "en": {
+        "kicker": "australian singer-songwriter · blue mountains",
+        "who": "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales. Her style has been described as indie pop, indie folk and alternative country.",
+        "facts": [
+          "She has released four studio albums: Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) and The Gem (2026).",
+          "She has also performed with the band Phantastic Ferniture, with whom she released a self-titled album in 2018."
+        ]
+      },
+      "de": {
+        "kicker": "australische singer-songwriterin · blue mountains",
+        "who": "Julia Jacklin ist eine australische Singer-Songwriterin aus den Blue Mountains in New South Wales. Ihr Stil wird als Indie-Pop, Indie-Folk und Alternative Country beschrieben.",
+        "facts": [
+          "Sie hat vier Studioalben veröffentlicht: Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) und The Gem (2026).",
+          "Sie trat auch mit der Band Phantastic Ferniture auf, mit der sie 2018 ein gleichnamiges Album veröffentlichte."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı şarkıcı-söz yazarı · blue mountains",
+        "who": "Julia Jacklin, New South Wales'in Blue Mountains bölgesinden Avustralyalı bir şarkıcı-söz yazarıdır. Tarzı indie pop, indie folk ve alternatif country olarak tanımlanır.",
+        "facts": [
+          "Dört stüdyo albümü yayımladı: Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) ve The Gem (2026).",
+          "2018'de Phantastic Ferniture grubuyla adını taşıyan bir albüm yayımladı."
+        ]
+      }
+    }
+  ]
+}
