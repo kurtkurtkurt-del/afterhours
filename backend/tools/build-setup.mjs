@@ -122,6 +122,7 @@ const structure = [
   ["113_about_skips.sql", "WHO IS THIS, LOOKED FOR AND NOT FOUND"],
   ["114_group_asks.sql", "A GROUP INVITES, IT DOES NOT GRAB"],
   ["115_photo_requests.sql", "THE FACE ON A REQUEST, AND ON AN OPEN CARD"],
+  ["116_intro_hints.sql", "ASK FOR AN INTRO, WITH WHAT THE CIRCLE ALREADY SHOWS"],
 ];
 
 /* A visible version stamp goes at the top of the file, so one look at the

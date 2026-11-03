@@ -122,4 +122,5 @@ export const EXPECTED_SQL = [
   "113_about_skips.sql",
   "114_group_asks.sql",
   "115_photo_requests.sql",
+  "116_intro_hints.sql",
 ];
