@@ -1,0 +1,15 @@
+{
+  "city": "wroclaw",
+  "day": "2026-11-06",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "the haunted night route through las osobowicki.", "de": "die gruselige nachtroute durch den las osobowicki.", "tr": "las osobowicki'de hayaletli gece rotası." },
+      "line": { "en": "the noc upiorów route through the forest, starting 18:30 on friday. fourth edition, the longest route so far.", "de": "die noc-upiorów-route durch den wald, ab 18:30 am freitag. vierte ausgabe, bisher die längste strecke.", "tr": "ormandan geçen noc upiorów rotası, cuma 18:30'da başlıyor. dördüncü baskı, şimdiye dek en uzun rota." },
+      "place": { "en": "las osobowicki", "de": "las osobowicki", "tr": "las osobowicki" },
+      "hour": 18,
+      "minute": 30,
+      "why": "Noc Upiorów w Lesie Osobowickim, Fri 6 Nov 2026 from 18:30 by the sports field in Las Osobowicki (wroclaw.pl event listing; organiser's Instagram is @noc_upiorow)."
+    }
+  ]
+}
