@@ -81,6 +81,18 @@ export default function PullDownScroll({ children, style, header, closes = true,
     width: interpolate(drag.value, [0, CLOSE], [44, 64], Extrapolation.CLAMP),
   }));
 
+  // a tab: just the scroll, so its pull to refresh has nothing between it and the finger
+  if (!closes) {
+    return (
+      <View style={styles.wrap}>
+        <Animated.ScrollView style={style} {...rest}>
+          {children}
+        </Animated.ScrollView>
+        {header}
+      </View>
+    );
+  }
+
   return (
     <GestureDetector gesture={pan}>
       <Animated.View style={[styles.wrap, move]}>

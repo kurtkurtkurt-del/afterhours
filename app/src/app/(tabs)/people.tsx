@@ -54,7 +54,7 @@ const fallbackPhoto = require('../../../assets/intro/concert.jpg');
 
 export default function PeopleScreen() {
   const insets = useSafeAreaInsets();
-  const refresh = usePullRefresh();
+  const refresh = usePullRefresh(undefined, brand.top + 44);
   const tabSpace = useTabBarSpace();
   // Your groups (44_groups.sql), read on every visit.
   const pulled = useShelf('groups'); // redraws when a refresh lands on the shelf, or on a pull

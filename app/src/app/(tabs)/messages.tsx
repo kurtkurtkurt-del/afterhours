@@ -42,7 +42,7 @@ import { usePullRefresh } from '@/components/Refresh';
 export default function MessagesScreen() {
   const { session } = useAuth();
   const insets = useSafeAreaInsets();
-  const refresh = usePullRefresh();
+  const refresh = usePullRefresh(undefined, brand.top + 44);
   const tabSpace = useTabBarSpace();
   const { t, up } = useLang();
   const tick = useRefreshOnFocus('cards');

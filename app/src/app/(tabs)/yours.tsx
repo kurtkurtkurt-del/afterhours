@@ -36,7 +36,7 @@ export default function YoursScreenGate() {
 
 function YoursScreen() {
   const insets = useSafeAreaInsets();
-  const refresh = usePullRefresh();
+  const refresh = usePullRefresh(undefined, brand.top + 44);
   const tabSpace = useTabBarSpace();
   // Posts by you and your friends (45_posts.sql), read on every visit.
   const [posts, setPosts] = useState<Post[]>([]);
