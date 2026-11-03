@@ -1,0 +1,14 @@
+{
+  "city": "porto",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "feira da vandoma, saturday morning.", "de": "feira da vandoma, samstagmorgen.", "tr": "feira da vandoma, cumartesi sabahı." },
+      "line":  { "en": "second-hand stalls: clothes, records, books and tools. free entry; the market closes at 13:00, so go early.", "de": "gebrauchtwaren: kleidung, schallplatten, bücher und werkzeug. eintritt frei; der markt schließt um 13:00, also früh kommen.", "tr": "ikinci el tezgâhlar: giysi, plak, kitap ve aletler. giriş ücretsiz; pazar saat 13:00'te kapanıyor, o yüzden erken gidin." },
+      "place": { "en": "feira da vandoma", "de": "feira da vandoma", "tr": "feira da vandoma" },
+      "hour": 9, "minute": 0,
+      "why": "Visit Porto listing: Feira da Vandoma on Saturday mornings 08:00-13:00, free entry, Praça Vandoma in Campanhã; the Saturday 7 Nov date follows the weekly pattern, which the sources only infer."
+    }
+  ]
+}
