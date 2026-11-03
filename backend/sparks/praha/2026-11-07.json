@@ -1,0 +1,14 @@
+{
+  "city": "praha",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "the saturday flea market in vysočany.", "de": "der samstagsflohmarkt in vysočany.", "tr": "vysočany'da cumartesi bleší pazarı." },
+      "line": { "en": "the bleší trh u elektry is open 06:00 to 14:00 on saturdays and sundays. walk the stalls in the morning; pedestrian entry about 50 czk.", "de": "der bleší trh u elektry ist samstags und sonntags von 06:00 bis 14:00 offen. morgens die stände ablaufen; eintritt zu fuß etwa 50 czk.", "tr": "bleší trh u elektry cumartesi ve pazar 06:00 ile 14:00 arası açık. sabah tezgahları gez; yayalar için giriş yaklaşık 50 czk." },
+      "place": { "en": "bleší trh u elektry", "de": "bleší trh u elektry", "tr": "bleší trh u elektry" },
+      "hour": 9, "minute": 0,
+      "why": "Bleší trhy Praha, U Elektry, Vysočany, saturdays and sundays 06:00 to 14:00 (antikport.cz listing); 7 Nov is a saturday."
+    }
+  ]
+}
