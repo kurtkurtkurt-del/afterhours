@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 import Animated, { FadeIn, FadeOut, SlideInDown, SlideOutDown } from 'react-native-reanimated';
@@ -11,6 +11,7 @@ import { friendPhotos, usePhoto } from '@/data/photo';
 import { friendsLive } from '@/data/checkin';
 import { dmStart } from '@/data/dms';
 import { friendAccept, friendsList, type FriendRow } from '@/data/friends';
+import { introHints, introLines, REASONS, type IntroHints, type Reason } from '@/data/intro';
 import Avatar from '@/components/Avatar';
 import Svg, { Path } from 'react-native-svg';
 import { chain, layout, narrow, type Placed, type Shape } from '@/lib/islands';
@@ -22,10 +23,14 @@ import { brand } from '@/theme/layout';
 // middle, your friends around you, their circles as islands and the people beyond them
 // blurred. A friend opens their profile; a blurred one says who they are to you and offers
 // to ask the friend in between for an intro. Nobody in the crowd is ever named (101).
+// The ask (owner, 03.11.2026) opens with who this is to you, picked from ready answers,
+// then shows what the circle around them already shows you (116) and two or three first
+// lines the model wrote from those facts alone (backend/functions/intro-lines). The friend
+// gets a message written from your answer, waiting unsent in the chat for you to change.
 export default function PeopleMapScreen() {
   const { width, height } = useWindowDimensions();
   const insets = useSafeAreaInsets();
-  const { t, up } = useLang();
+  const { t, tn, tx, up, lang } = useLang();
   const { photo } = usePhoto();
   const [data, setData] = useState<MapData | null>(null);
   const [failed, setFailed] = useState(false);
@@ -33,6 +38,12 @@ export default function PeopleMapScreen() {
   const [live, setLive] = useState<Set<string>>(new Set());
   const [who, setWho] = useState<Placed | null>(null);
   const [asking, setAsking] = useState(false);
+  // the ask: your answer, a line of your own, what their circle shows, the first lines (null: being written)
+  const [reason, setReason] = useState<Reason | null>(null);
+  const [note, setNote] = useState('');
+  const [hints, setHints] = useState<IntroHints | null>(null);
+  const [lines, setLines] = useState<string[] | null>(null);
+  const asked = useRef('');
   // friend requests waiting for you (they lived in the row on messages before the map took its place)
   const [requests, setRequests] = useState<FriendRow[]>([]);
   const loadRequests = () => friendsList().then((l) => setRequests(l.filter((f) => f.status === 'pending' && f.direction === 'incoming')), () => {});
@@ -62,17 +73,57 @@ export default function PeopleMapScreen() {
     if (n.w === 0) return;
     if (n.w === 1) return n.h ? openPerson(n.h) : undefined; // a friend: straight to the profile
     setWho(n);
+    asked.current = n.id;
+    setReason(null);
+    setNote('');
+    setHints(null);
+    setLines(null);
+    introHints(n.id).then((h) => asked.current === n.id && setHints(h), () => {});
   };
+  const pick = (r: Reason) => {
+    if (!who || r === reason) return;
+    const code = who.id;
+    setReason(r);
+    setLines(null);
+    introLines(code, r, lang).then((l) => asked.current === code && setLines(l), () => asked.current === code && setLines([]));
+  };
+  // small true things, each from what you can already see; none when there is nothing to say
+  const traits = (h: IntroHints | null): string[] => {
+    if (!h) return [];
+    const names = h.via.slice(0, 3).map((v) => (v.n ?? v.h).toLowerCase()).join(', ');
+    const out: string[] = [];
+    if (h.steps === 2 && h.ties >= 2) out.push(t('intro.t.ties', { n: h.ties }));
+    if (h.steps === 3 && names) out.push(t('intro.t.far', { names }));
+    if (h.city) out.push(t(h.same_city ? 'intro.t.sameCity' : 'intro.t.city', { city: h.city.toLowerCase() }));
+    if (h.kinds.length) out.push(t('intro.t.kinds', { kinds: h.kinds.map((k) => tx('type.' + k.k, k.k)).join(' · ') }));
+    if (h.rooms.length) out.push(t('intro.t.rooms', { rooms: h.rooms.map((r) => r.toLowerCase()).join(' · ') }));
+    if (h.shared.length) out.push(tn('intro.t.shared', h.shared_n, { title: h.shared[0].t.toLowerCase() }));
+    return out;
+  };
+  const shown = traits(hints);
   const via = who && lay ? [...(lay.neighbours.get(who.id) ?? [])].map((id) => lay.byId.get(id)!).filter((x) => x?.w === 1) : [];
   const path = who && lay ? chain(lay, who.id) : [];
   const door = via[0] ?? path[0];
+  // the message to the friend in between, from your answer; it waits in the chat unsent
+  const draft = () => {
+    if (!door?.h || !reason) return '';
+    const others = (hints?.via ?? []).filter((v) => v.h !== door.h).slice(0, 3).map((v) => (v.n ?? v.h).toLowerCase());
+    return [
+      t(who?.w === 2 ? 'intro.draft.ask' : 'intro.draft.ask3', { name: (door.n ?? door.h).toLowerCase() }),
+      t(`intro.why.${reason}`),
+      hints?.city ? t('intro.draft.city', { city: hints.city.toLowerCase() }) : '',
+      hints?.steps === 2 && others.length ? t('intro.draft.also', { names: others.join(', ') }) : '',
+      note.trim(),
+    ].filter(Boolean).join(' ');
+  };
   const intro = () => {
-    if (!door?.h) return;
+    if (!door?.h || !reason) return;
     setAsking(true);
+    const text = draft();
     dmStart(door.h)
       .then((id) => {
         setWho(null);
-        router.push({ pathname: '/dm/[id]', params: { id, name: (door.n ?? door.h ?? '').toLowerCase() } });
+        router.push({ pathname: '/dm/[id]', params: { id, name: (door.n ?? door.h ?? '').toLowerCase(), draft: text } });
       })
       .catch(() => {})
       .finally(() => setAsking(false));
@@ -174,8 +225,10 @@ export default function PeopleMapScreen() {
           <Animated.View entering={FadeIn.duration(200)} exiting={FadeOut.duration(200)} style={styles.scrim}>
             <Pressable style={StyleSheet.absoluteFill} onPress={() => setWho(null)} />
           </Animated.View>
-          <Animated.View entering={SlideInDown.duration(300)} exiting={SlideOutDown.duration(240)} style={[styles.sheet, { paddingBottom: insets.bottom + 22 }]}>
+          <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={styles.sheetWrap} pointerEvents="box-none">
+          <Animated.View entering={SlideInDown.duration(300)} exiting={SlideOutDown.duration(240)} style={[styles.sheet, { maxHeight: height * 0.86, paddingBottom: insets.bottom + 22 }]}>
             <View style={styles.grab} />
+            <ScrollView keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
             <View style={styles.whoRow}>
               <View style={[styles.blur, { backgroundColor: ISLAND[who.island % ISLAND.length] }]}>
                 <View style={styles.blurIn} />
@@ -190,12 +243,66 @@ export default function PeopleMapScreen() {
               </View>
             </View>
             <Text style={styles.chain}>{up([t('pmap.you'), ...path.map((p) => (p.w === 1 ? (p.n ?? p.h ?? '').toLowerCase() : '·'))].join(' → ').replace(/·$/, '?'))}</Text>
+
             {door?.h ? (
-              <Pressable onPress={intro} disabled={asking} style={({ pressed }) => [styles.pill, styles.pillWide, (pressed || asking) && styles.pressed]} accessibilityRole="button">
-                <Text style={styles.pillText}>{t('pmap.intro', { name: (door.n ?? door.h).toLowerCase() })}</Text>
-              </Pressable>
+              <>
+                <Text style={styles.askTitle}>{t('intro.ask')}</Text>
+                <Text style={styles.askSub}>{t('intro.askSub')}</Text>
+                <View style={styles.reasons}>
+                  {REASONS.map((r) => (
+                    <Pressable key={r} onPress={() => pick(r)} style={({ pressed }) => [styles.reason, reason === r && styles.reasonOn, pressed && styles.pressed]} accessibilityRole="radio" accessibilityState={{ selected: reason === r }}>
+                      <Text style={[styles.reasonText, reason === r && styles.reasonTextOn]}>{t(`intro.r.${r}`)}</Text>
+                    </Pressable>
+                  ))}
+                </View>
+                {reason ? (
+                  <TextInput
+                    value={note}
+                    onChangeText={setNote}
+                    placeholder={t('intro.note', { name: (door.n ?? door.h).toLowerCase() })}
+                    placeholderTextColor={colors.meta}
+                    maxLength={140}
+                    style={styles.note}
+                  />
+                ) : null}
+
+                {reason && shown.length ? (
+                  <View style={styles.part}>
+                    <Text style={styles.partLabel}>{up(t('intro.circle'))}</Text>
+                    {shown.map((x) => (
+                      <View key={x} style={styles.trait}>
+                        <View style={styles.traitDot} />
+                        <Text style={styles.traitText}>{x}</Text>
+                      </View>
+                    ))}
+                    <Text style={styles.partNote}>{t('intro.circleNote')}</Text>
+                  </View>
+                ) : null}
+
+                {reason && (lines === null || lines.length) ? (
+                  <View style={styles.part}>
+                    <Text style={styles.partLabel}>{up(t('intro.lines'))}</Text>
+                    {lines === null ? (
+                      <Text style={styles.writing}>{t('intro.writing')}</Text>
+                    ) : (
+                      lines.map((l) => (
+                        <View key={l} style={styles.line}>
+                          <Text style={styles.lineText}>{l}</Text>
+                        </View>
+                      ))
+                    )}
+                    {lines?.length ? <Text style={styles.partNote}>{t('intro.linesNote')}</Text> : null}
+                  </View>
+                ) : null}
+
+                <Pressable onPress={intro} disabled={asking || !reason} style={({ pressed }) => [styles.pill, styles.pillWide, (pressed || asking) && styles.pressed, !reason && styles.pillOff]} accessibilityRole="button" accessibilityState={{ disabled: !reason }}>
+                  <Text style={styles.pillText}>{t('pmap.intro', { name: (door.n ?? door.h).toLowerCase() })}</Text>
+                </Pressable>
+              </>
             ) : null}
+            </ScrollView>
           </Animated.View>
+          </KeyboardAvoidingView>
         </>
       ) : null}
     </View>
@@ -240,7 +347,8 @@ const styles = StyleSheet.create({
   pressed: { opacity: 0.6 },
   homeDot: { width: 14, height: 14, borderRadius: 7, borderWidth: 2, borderColor: colors.paper },
   scrim: { ...StyleSheet.absoluteFill, backgroundColor: 'rgba(14,13,12,0.38)' },
-  sheet: { position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: colors.ink, borderTopLeftRadius: 26, borderTopRightRadius: 26, paddingHorizontal: 22, paddingTop: 10 },
+  sheetWrap: { ...StyleSheet.absoluteFill, justifyContent: 'flex-end' },
+  sheet: { backgroundColor: colors.ink, borderTopLeftRadius: 26, borderTopRightRadius: 26, paddingHorizontal: 22, paddingTop: 10 },
   grab: { alignSelf: 'center', width: 40, height: 4, borderRadius: 2, backgroundColor: colors.ink3, marginBottom: 16 },
   whoRow: { flexDirection: 'row', alignItems: 'center', gap: 14 },
   blur: { width: 64, height: 64, borderRadius: 32, opacity: 0.45, alignItems: 'center', justifyContent: 'center' },
@@ -249,4 +357,22 @@ const styles = StyleSheet.create({
   whoTitle: { fontFamily: fonts.semibold, fontSize: 20, letterSpacing: -0.5, color: colors.paper },
   whoLine: { fontFamily: fonts.regular, fontSize: 13, lineHeight: 18, color: colors.mute, marginTop: 3 },
   chain: { fontFamily: fonts.jet, fontSize: 10, letterSpacing: 1.1, color: colors.spotText, marginTop: 16 },
+  askTitle: { fontFamily: fonts.semibold, fontSize: 17, letterSpacing: -0.4, color: colors.paper, marginTop: 22 },
+  askSub: { fontFamily: fonts.regular, fontSize: 13, color: colors.mute, marginTop: 3 },
+  reasons: { flexDirection: 'row', flexWrap: 'wrap', gap: 7, marginTop: 12 },
+  reason: { borderRadius: radius.pill, paddingVertical: 8, paddingHorizontal: 13, backgroundColor: colors.card },
+  reasonOn: { backgroundColor: colors.paper },
+  reasonText: { fontFamily: fonts.semibold, fontSize: 12.5, color: colors.mute },
+  reasonTextOn: { color: colors.ink },
+  note: { marginTop: 12, borderRadius: 14, backgroundColor: colors.card, paddingHorizontal: 14, paddingVertical: 11, fontFamily: fonts.regular, fontSize: 14, color: colors.paper },
+  part: { marginTop: 20 },
+  partLabel: { fontFamily: fonts.jet, fontSize: 9.5, letterSpacing: 1.1, color: colors.meta, marginBottom: 8 },
+  partNote: { fontFamily: fonts.regular, fontSize: 11.5, lineHeight: 16, color: colors.meta, marginTop: 6 },
+  trait: { flexDirection: 'row', alignItems: 'center', gap: 9, paddingVertical: 4 },
+  traitDot: { width: 5, height: 5, borderRadius: 3, backgroundColor: colors.spot },
+  traitText: { flex: 1, fontFamily: fonts.regular, fontSize: 14, lineHeight: 19, color: colors.paper },
+  writing: { fontFamily: fonts.regular, fontSize: 13.5, color: colors.mute },
+  line: { backgroundColor: colors.card, borderRadius: 14, paddingHorizontal: 14, paddingVertical: 11, marginBottom: 7 },
+  lineText: { fontFamily: fonts.regular, fontSize: 14.5, lineHeight: 20, color: colors.paper },
+  pillOff: { opacity: 0.4 },
 });

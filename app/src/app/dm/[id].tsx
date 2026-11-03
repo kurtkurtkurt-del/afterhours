@@ -26,12 +26,13 @@ function nightOf(body: string): { text: string; slug: string | null } {
 }
 
 export default function DmScreen() {
-  const { id, name: given } = useLocalSearchParams<{ id: string; name?: string }>();
+  // draft: a line written for you elsewhere (ask for an intro, people-map.tsx); it waits in the box, unsent
+  const { id, name: given, draft } = useLocalSearchParams<{ id: string; name?: string; draft?: string }>();
   const { t } = useLang();
   const insets = useSafeAreaInsets();
   const [name, setName] = useState(given ?? '');
   const [lines, setLines] = useState<DmLine[]>([]);
-  const [text, setText] = useState('');
+  const [text, setText] = useState(draft ?? '');
   const [said, setSaid] = useState<string | null>(null);
   const last = useRef(0);
   const scroll = useRef<ScrollView>(null);
