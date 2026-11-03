@@ -1,0 +1,56 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "a69d6de3-d097-408e-baf1-3fe651800157",
+   "slug": "morcheeba-904527dc",
+   "title": "Morcheeba",
+   "act": "Morcheeba",
+   "name": "Morcheeba",
+   "description": "English electronic band",
+   "source_url": "https://en.wikipedia.org/wiki/Morcheeba",
+   "extract": "Morcheeba are an English electronic band formed in the mid-1990s with founding members brothers Paul and Ross Godfrey who later recruited vocalist Skye Edwards. They mix influences from trip hop, rock, folk rock and downtempo, and have produced eleven regular studio albums since 1995, two of which reached the UK top ten. Edwards left the band in 2003, after which the brothers used a number of guest singers before she rejoined in 2010. They recruit additional members for their live performances and have toured internationally. Paul Godfrey distanced himself from the band in 2014. Edwards and Ross Godfrey later formed Skye & Ross and released a self-titled album in September 2016. Their latest studio album without Paul as Morcheeba, Escape the Chaos, was released in 2025."
+  },
+  {
+   "id": "1cc05596-e37e-463d-a18e-57e93de48e6c",
+   "slug": "walk-off-the-earth-fb69b3dd",
+   "title": "Walk Off The Earth",
+   "act": "Walk Off The Earth",
+   "name": "Walk off the Earth",
+   "description": "Canadian indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Walk_off_the_Earth",
+   "extract": "Walk off the Earth is a Canadian indie pop band from Burlington, Ontario. The group is known for its music videos of covers and originals. The band is well known for covering pop-genre music on YouTube, making use of instruments such as the ukulele and the theremin, as well as looping samples. The band's recorded music and videos are produced by member and multi-instrumentalist Gianni \"Luminati\" Nicassio."
+  },
+  {
+   "id": "95861508-1806-415e-bb6c-36ffbf62ce25",
+   "slug": "puscifer-b71aa6e0",
+   "title": "Puscifer",
+   "act": "Puscifer",
+   "name": "Puscifer",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Puscifer",
+   "extract": "Puscifer is an American rock group formed in Los Angeles by Maynard James Keenan, lead singer of Tool and A Perfect Circle. Keenan was the only constant member of the band and he considered the project to be his \"creative subconscious\". Later, frequent collaborators Mat Mitchell and Carina Round became permanent members."
+  },
+  {
+   "id": "f9dcd6f2-815a-4639-b885-43f8373b617f",
+   "slug": "joan-as-police-woman-9b6e7563",
+   "title": "Joan As Police Woman",
+   "act": "Joan As Police Woman",
+   "name": "Joan As Police Woman",
+   "description": "American musician (born 1970)",
+   "source_url": "https://en.wikipedia.org/wiki/Joan_As_Police_Woman",
+   "extract": "Joan Wasser is an American musician, singer-songwriter and producer who releases music as Joan As Police Woman. She began her career playing violin with the Dambuilders and played with Black Beetle, Antony and the Johnsons, and Those Bastard Souls. Since 2004 she has released her solo material as Joan As Police Woman. She has released five regular studio albums, one extended play (EP), a number of singles and two albums of cover songs. Throughout her career, she has regularly collaborated with other artists as a writer, performer and arranger."
+  },
+  {
+   "id": "29b13884-a98f-4296-88c6-e68713f92924",
+   "slug": "myles-smith-my-mess-my-heart-my-life-tour-da291dc4",
+   "title": "Myles Smith: My Mess, My Heart, My Life. Tour",
+   "act": "Myles Smith",
+   "name": "Myles Smith",
+   "description": "British singer (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Myles_Smith",
+   "extract": "Myles Michael Smith-Thompson is a British singer. He is best known for his 2024 singles \"Stargazing\" and \"Nice to Meet You\". His debut studio album, My Mess, My Heart, My Life. was released on 19 June 2026."
+  }
+ ]
+}

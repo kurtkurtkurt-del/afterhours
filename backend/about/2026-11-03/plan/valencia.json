@@ -1,0 +1,16 @@
+{
+ "city": "valencia",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "d163fb00-e0a5-458e-9903-9d1c646ac715",
+   "slug": "queens-of-the-stone-age-perfecth-world-tour-3055ff63",
+   "title": "Queens Of The Stone Age - Perfecth World Tour",
+   "act": "Queens Of The Stone Age",
+   "name": "Queens of the Stone Age",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Queens_of_the_Stone_Age",
+   "extract": "Queens of the Stone Age is an American rock band formed in Palm Desert, California, in 1996. The band was founded by vocalist and guitarist Josh Homme shortly before he returned to his native Palm Desert, California. Homme has been the only constant member throughout multiple line-up changes; since 2013, the line-up has consisted of Homme, Troy Van Leeuwen, Michael Shuman, Dean Fertita, and Jon Theodore."
+  }
+ ]
+}

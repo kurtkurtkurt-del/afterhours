@@ -1,0 +1,56 @@
+{
+ "city": "london",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "bd9e7c8a-54dd-449a-af9e-f2d535989a5b",
+   "slug": "stevie-wonder-songs-in-the-key-of-life-performan-0336ba1e",
+   "title": "Stevie Wonder: Songs In The Key of Life Performances",
+   "act": "Stevie Wonder",
+   "name": "Stevie Wonder",
+   "description": "American musician (born 1950)",
+   "source_url": "https://en.wikipedia.org/wiki/Stevie_Wonder",
+   "extract": "Stevland Hardaway Morris, known professionally as Stevie Wonder, is an American singer-songwriter, musician, and record producer. He is widely regarded as one of the most influential musicians of the 20th century, and is credited as a pioneer and influence by musicians across a range of genres that include R&B, pop, soul, gospel, funk, and jazz. Wonder's use of synthesizers and other electronic musical instruments in the 1970s reshaped the conventions of contemporary R&B. He also helped drive such genres into the album era, crafting his LPs as cohesive and consistent, in addition to socially conscious statements with complex compositions."
+  },
+  {
+   "id": "78a3c23d-b410-4582-a79a-bf62ccbaf7e4",
+   "slug": "cat-power-bed559d7",
+   "title": "Cat Power",
+   "act": "Cat Power",
+   "name": "Cat Power",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Cat_Power",
+   "extract": "Charlyn Marie  \"Chan\" Marshall, better known by her stage name Cat Power, is an American singer-songwriter. Cat Power was originally the name of her first band, but has become her stage name as a solo artist."
+  },
+  {
+   "id": "5b56a39d-8dc2-4da3-b53c-fab62a98eb8e",
+   "slug": "world-news-73b066cd",
+   "title": "World News",
+   "act": "World News",
+   "name": "World News",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/World_News_(band)",
+   "extract": "World News are a London-based alternative rock band consisting of Alex Evans, Rory Evans, Malte Henning (drums), and Jack Tollman."
+  },
+  {
+   "id": "37ed21ba-857d-4aa4-b01f-10c1276eb2b7",
+   "slug": "lp-04ff729a",
+   "title": "LP",
+   "act": "LP",
+   "name": "LP",
+   "description": "American musician (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/LP_(singer)",
+   "extract": "Laura Pergolizzi, known professionally as LP, is an American singer, musician and songwriter from Brooklyn, New York. LP has released seven albums and three EPs. LP has written songs for other artists including Rihanna, Christina Aguilera, the Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd and Céline Dion."
+  },
+  {
+   "id": "7f7e75e9-b2f3-443b-b1ef-ddec9c311cde",
+   "slug": "ghostly-kisses-f23d673b",
+   "title": "Ghostly Kisses",
+   "act": "Ghostly Kisses",
+   "name": "Ghostly Kisses",
+   "description": "Singer",
+   "source_url": "https://en.wikipedia.org/wiki/Ghostly_Kisses",
+   "extract": "Ghostly Kisses is the musical project of French-Canadian singers Margaux Sauvé and Louis-Étienne Santais. They are based in Quebec. Sauvé is signed to the British record label Akira Records. The name 'Ghostly Kisses' was inspired by the William Faulkner poem Une ballade des dames perdues, which includes the verse \"And brush my lips with little ghostly kisses.\" Clash describes her music as having \"a weightless quality, something that transcends the ephemeral to grapple with key facets of our lives.\""
+  }
+ ]
+}

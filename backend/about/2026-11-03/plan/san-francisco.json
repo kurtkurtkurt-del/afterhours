@@ -1,0 +1,26 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "833e8d91-9c06-42d1-85fb-dc13924dadfc",
+   "slug": "alex-cameron-5704db15",
+   "title": "Alex Cameron",
+   "act": "Alex Cameron",
+   "name": "Alex Cameron",
+   "description": "Australian singer (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Alex_Cameron_(musician)",
+   "extract": "Alexander Cameron is an Australian singer-songwriter from Sydney. He is best known for his solo career, a high-concept act in which Cameron initially adopted the persona of a failed entertainer. Between 2012 and 2024, Cameron was often joined during live performances and in the studio by his saxophonist and \"business partner\" Roy Molloy. Before making music under his own name, Cameron was a member of the electronica act Seekae, with whom he released three studio albums."
+  },
+  {
+   "id": "65eeaf9c-55ee-4ff1-80bb-b98933ada985",
+   "slug": "karina-rykman-98857dea",
+   "title": "Karina Rykman",
+   "act": "Karina Rykman",
+   "name": "Karina Rykman",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Karina_Rykman",
+   "extract": "Karina Rykman is an indie/jam rock singer-songwriter, bassist, and guitarist from New York."
+  }
+ ]
+}

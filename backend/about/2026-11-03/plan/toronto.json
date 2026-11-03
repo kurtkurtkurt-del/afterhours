@@ -1,0 +1,16 @@
+{
+ "city": "toronto",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "6eb156ab-e915-4c89-9dc9-334e466afd49",
+   "slug": "olafur-arnalds-da470589",
+   "title": "Ólafur Arnalds",
+   "act": "Ólafur Arnalds",
+   "name": "Ólafur Arnalds",
+   "description": "Icelandic musician and composer (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/%C3%93lafur_Arnalds",
+   "extract": "Ólafur Arnalds is an Icelandic multi-instrumentalist and producer from Mosfellsbær, Iceland. He mixes strings and piano with loops and beats, a sound ranging from ambient/electronic to atmospheric pop. He is also the former drummer for hardcore punk and metal bands Fighting Shit, Celestine, and others."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "manchester",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "62d7cbd3-0908-479a-9f40-939f5b4be0f3",
+   "slug": "cloud-nothings-009d86ba",
+   "title": "Cloud Nothings",
+   "act": "Cloud Nothings",
+   "name": "Cloud Nothings",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Cloud_Nothings",
+   "extract": "Cloud Nothings is an American indie rock band from Cleveland, Ohio, United States, founded by singer-songwriter Dylan Baldi. It currently consists of lead singer and guitarist Dylan Baldi, drummer Jayson Gerycz, and bassist Chris Brown."
+  },
+  {
+   "id": "89ef87a8-f3ec-4281-ac0e-d2ffb93cb91b",
+   "slug": "the-slow-show-white-water-anniversary-live-tour-132bb7d0",
+   "title": "THE SLOW SHOW - WHITE WATER ANNIVERSARY LIVE TOUR",
+   "act": "THE SLOW SHOW",
+   "name": "The Slow Show",
+   "description": "British indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Slow_Show",
+   "extract": "The Slow Show is a British indie pop band, formed in Manchester, UK in 2010. Their music has been described as \"minimalist but epic numbers steeped in atmospheric sonic landscapes\" with singer Rob Goodwin's \"croaky baritone\" as a feature that stands out. They have been compared to the likes of Elbow, The National or Tindersticks."
+  },
+  {
+   "id": "54875406-6290-433e-b565-63b8829140fa",
+   "slug": "goldie-boutilier-74a7c582",
+   "title": "Goldie Boutilier",
+   "act": "Goldie Boutilier",
+   "name": "Goldie Boutilier",
+   "description": "Canadian musician",
+   "source_url": "https://en.wikipedia.org/wiki/Goldie_Boutilier",
+   "extract": "Goldie Boutilier is a Canadian singer, songwriter, model and DJ. She has released three studio albums and six EPs."
+  }
+ ]
+}

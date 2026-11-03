@@ -1,0 +1,16 @@
+{
+ "city": "brussel",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "bf267bca-00f5-44eb-8400-1d2098488c12",
+   "slug": "mon-laferte-0fb657c3",
+   "title": "Mon Laferte",
+   "act": "Mon Laferte",
+   "name": "Mon Laferte",
+   "description": "Chilean-Mexican singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Mon_Laferte",
+   "extract": "Norma Montserrat Bustamante Laferte, known professionally as Mon Laferte, is a Chilean and Mexican singer-songwriter. Recognized for her versatility, her musical style spans a wide array of genres, including pop, alternative, bolero, cumbia, and salsa. She rose to international prominence in the 2010s, particularly for her melodramatic vocals and theatrical stage presence. In 2025, Billboard named her one of the greatest female Latin pop artists of all time."
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "city": "dublin",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "4e5335dd-4a83-402b-a74b-e949dd81efc0",
+   "slug": "christy-moore-695d70cb",
+   "title": "Christy Moore",
+   "act": "Christy Moore",
+   "name": "Christy Moore",
+   "description": "Irish folk singer, songwriter, and guitarist (born 1945)",
+   "source_url": "https://en.wikipedia.org/wiki/Christy_Moore",
+   "extract": "Christopher Andrew \"Christy\" Moore is an Irish folk singer, songwriter and guitarist. He was one of the founding members of the bands Planxty and Moving Hearts and has had significant success as a solo artist. His first album, Paddy on the Road, was recorded with Dominic Behan in 1969. Moore is best known for his political and social commentary and left-wing, Irish republican views. In 2007, he was named as Ireland's greatest living musician in RTÉ's People of the Year Awards. Moore is most known for his unique style, including driving rhythms on six-string acoustic guitar and bodhrán as well as slower ballads."
+  },
+  {
+   "id": "3ae8a999-c430-4ccf-82c4-39de18aa065a",
+   "slug": "goldie-boutilier-party-26-tour-ae17d3a3",
+   "title": "Goldie Boutilier - Party 26 Tour",
+   "act": "Goldie Boutilier",
+   "name": "Goldie Boutilier",
+   "description": "Canadian musician",
+   "source_url": "https://en.wikipedia.org/wiki/Goldie_Boutilier",
+   "extract": "Goldie Boutilier is a Canadian singer, songwriter, model and DJ. She has released three studio albums and six EPs."
+  },
+  {
+   "id": "268e0765-0c29-46f8-a586-ec23a91ad88d",
+   "slug": "little-angels-063f3d32",
+   "title": "Little Angels",
+   "act": "Little Angels",
+   "name": "Little Angels",
+   "description": "English hard rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Little_Angels",
+   "extract": "Little Angels are an English hard rock band predominantly active between the mid-1980s and mid-1990s. The band reformed to play the 2012 Download Festival. In February of 2026 they announced a UK tour scheduled for November, quickly adding extra dates due to ticket demand and then finally announcing that two further dates in Dublin and Belfast would begin the tour."
+  },
+  {
+   "id": "e6bb1bf5-d38d-45fa-8fef-0ad051188268",
+   "slug": "underscores-f7c4219c",
+   "title": "Underscores",
+   "act": "Underscores",
+   "name": "Underscores",
+   "description": "American musician (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Underscores_(musician)",
+   "extract": "Devon Grey Karpf, known professionally as April Harper Grey and performing as Underscores, is an American singer-songwriter and producer. Born in San Francisco, California, Grey began releasing dubstep music on SoundCloud at the age of 13. After releasing three EPs from 2018 to 2020 that incorporated other genres such as jazz and future bass, she rose to prominence with her hyperpop and rock-influenced debut album Fishmonger in early 2021. She released its companion EP and opened for 100 Gecs on tour later that year."
+  },
+  {
+   "id": "a4d96211-af04-4f5b-a3c4-0436b7c3b18b",
+   "slug": "mike-viola-759f1cf4",
+   "title": "Mike Viola",
+   "act": "Mike Viola",
+   "name": "Mike Viola",
+   "description": "American singer-songwriter (born 1966)",
+   "source_url": "https://en.wikipedia.org/wiki/Mike_Viola",
+   "extract": "Michael Anthony Viola is an American record producer, musician, singer, and songwriter, best known for his work with Dawes, Panic! at the Disco, Andrew Bird, Ryan Adams, J.S. Ondara, Mandy Moore, and Jenny Lewis. His original music has been featured on soundtracks for movies such as That Thing You Do!, Walk Hard: The Dewey Cox Story, and Get Him to the Greek."
+  }
+ ]
+}

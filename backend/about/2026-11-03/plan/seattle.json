@@ -1,0 +1,26 @@
+{
+ "city": "seattle",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "02e80a01-5d40-44d9-ad19-eb2665eb13f4",
+   "slug": "aterciopelados-la-pipa-de-la-paz-30-anos-tour-a50d285d",
+   "title": "Aterciopelados: La Pipa De La Paz 30 Años Tour",
+   "act": "Aterciopelados",
+   "name": "Aterciopelados",
+   "description": "Rock band from Colombia",
+   "source_url": "https://en.wikipedia.org/wiki/Aterciopelados",
+   "extract": "Aterciopelados, also known as Los Aterciopelados, is a rock band from Colombia, led by Andrea Echeverri and Héctor Buitrago. Their music fuses rock with a variety of Colombian and Latin American musical traditions. Aterciopelados have recorded eight albums."
+  },
+  {
+   "id": "3790b639-4eec-4c56-a1a1-9596e4db61ae",
+   "slug": "jon-spencer-ab9d0215",
+   "title": "Jon Spencer",
+   "act": "Jon Spencer",
+   "name": "Jon Spencer",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Jon_Spencer",
+   "extract": "Jon Spencer is an American singer, guitarist, and bandleader known for his work in the noise- and garage-rock scenes with Pussy Galore, Boss Hog, and especially Jon Spencer Blues Explosion. In the mid-1990s he collaborated with Mississippi hill country blues musician R. L. Burnside on the album A Ass Pocket of Whiskey (1996), a crossover that drew wider attention to Burnside beyond blues audiences. After announcing in 2022 that the Blues Explosion had ended, Spencer issued new music and toured with Jon Spencer & the Hitmakers, featuring Sam Coomes and Janet Weiss, and later formed a trio with Kendall Wind and Macky “Spider” Bowman of The Bobby Lees."
+  }
+ ]
+}
