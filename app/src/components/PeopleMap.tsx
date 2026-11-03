@@ -25,6 +25,8 @@ type Props = {
   myPhoto: string | null;
   interactive?: boolean;
   scale?: number;
+  // what lies over the top of the map (the filters on the page): you sit in the middle of what is left
+  top?: number;
   onTap?: (n: Placed) => void;
 };
 export type PeopleMapHandle = { home: () => void; zoom: (by: number) => void };
@@ -36,7 +38,7 @@ export function fitScale(l: Layout, width: number, height: number) {
   return Math.max(0.22, Math.min(0.55, (Math.min(width, height * 1.6) / 2 - 10) / far));
 }
 
-const PeopleMap = forwardRef<PeopleMapHandle, Props>(function PeopleMap({ layout, width, height, photos, live, myPhoto, interactive = true, scale = 1, onTap }, ref) {
+const PeopleMap = forwardRef<PeopleMapHandle, Props>(function PeopleMap({ layout, width, height, photos, live, myPhoto, interactive = true, scale = 1, top = 0, onTap }, ref) {
   const box = useMemo(() => {
     let x0 = 0, y0 = 0, x1 = 0, y1 = 0;
     for (const n of layout.nodes) { x0 = Math.min(x0, n.x); y0 = Math.min(y0, n.y); x1 = Math.max(x1, n.x); y1 = Math.max(y1, n.y); }
@@ -44,7 +46,7 @@ const PeopleMap = forwardRef<PeopleMapHandle, Props>(function PeopleMap({ layout
   }, [layout]);
   // where you sit on screen: the middle, a little above it. tx/ty: where the drawing's top left
   // corner is on screen; sc: its scale (two fingers, or the + and − buttons, 0.35 to 2.4)
-  const homeX = width / 2 + box.x0 * scale, homeY = height * 0.46 + box.y0 * scale;
+  const homeX = width / 2 + box.x0 * scale, homeY = top + (height - top) * 0.46 + box.y0 * scale;
   const tx = useSharedValue(homeX), ty = useSharedValue(homeY), sc = useSharedValue(scale);
   const MIN = 0.35, MAX = 2.4;
   useImperativeHandle(ref, () => ({

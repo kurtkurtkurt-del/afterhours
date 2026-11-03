@@ -133,7 +133,7 @@ export default function PeopleMapScreen() {
     <View style={styles.root}>
       <StatusBar style={barStyle} />
       {lay ? (
-        <PeopleMap key={`${wave}/${city ?? ''}`} ref={map} layout={lay} width={width} height={height} photos={photos} live={live} myPhoto={photo} onTap={tapped} />
+        <PeopleMap key={`${wave}/${city ?? ''}`} ref={map} layout={lay} width={width} height={height} top={insets.top + (cities.length ? 166 : 126)} photos={photos} live={live} myPhoto={photo} onTap={tapped} />
       ) : (
         <View style={styles.empty}>
           <Text style={styles.emptyText}>{failed ? t('offline.empty') : data ? t('pmap.empty') : up(t('person.loading'))}</Text>
