@@ -1,0 +1,14 @@
+{
+  "city": "lisboa",
+  "day": "2026-11-05",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "walk to the santa catarina lookout.", "de": "spaziergang zum miradouro de santa catarina.", "tr": "santa catarina seyir terasına yürüyüş." },
+      "line": { "en": "mild mid-week, around 16 to 22 degrees on the ipma trend. walk up from cais do sodré, sit on the steps and watch the city go gold.", "de": "milde wochenmitte, laut ipma-trend etwa 16 bis 22 grad. von cais do sodré hochlaufen, auf den stufen sitzen und zusehen, wie die stadt golden wird.", "tr": "hafta ortası ılık, ipma eğilimine göre 16 ila 22 derece. cais do sodré'den yokuş yukarı yürü, basamaklarda otur ve şehrin altın rengine dönüşünü izle." },
+      "place": { "en": "miradouro de santa catarina", "de": "miradouro de santa catarina", "tr": "miradouro de santa catarina" },
+      "hour": 16, "minute": 0,
+      "why": "IPMA weekly trend for 2 to 8 nov (ipma.pt) gives mid-week highs of 16 to 22 degrees; the lookout is a public viewpoint. Forecast not checked day by day."
+    }
+  ]
+}
