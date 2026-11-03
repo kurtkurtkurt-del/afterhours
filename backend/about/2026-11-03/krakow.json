@@ -1,0 +1,38 @@
+{
+  "city": "krakow",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "d0e73ee3-9571-4b68-8bc9-c43b27ac5ffe",
+      "slug": "the-ruins-of-beverast-be61ff61",
+      "title": "The Ruins of Beverast",
+      "name": "The Ruins of Beverast",
+      "source_url": "https://en.wikipedia.org/wiki/The_Ruins_of_Beverast",
+      "extract": "The Ruins of Beverast is a German blackened doom metal project formed by Alexander von Meilenwald in 2003 after the disbandment of his previous band Nagelfar. \"Beverast\" is Meilenwald's own derivation of the word \"Bifröst\", the old Norse term for the bridge between Midgard and Asgard.",
+      "en": {
+        "kicker": "german blackened doom metal band · formed 2003",
+        "who": "The Ruins of Beverast is a German blackened doom metal project formed by Alexander von Meilenwald in 2003, after the disbandment of his previous band Nagelfar. The name is his own derivation of the Old Norse word for the bridge between Midgard and Asgard.",
+        "facts": [
+          "The Ruins of Beverast was formed by Alexander von Meilenwald in 2003 after the disbandment of his previous band Nagelfar.",
+          "\"Beverast\" is Meilenwald's own derivation of the word \"Bifröst\", the old Norse term for the bridge between Midgard and Asgard."
+        ]
+      },
+      "de": {
+        "kicker": "deutsche blackened-doom-metal-band · gegründet 2003",
+        "who": "The Ruins of Beverast ist ein deutsches Blackened-Doom-Metal-Projekt, 2003 von Alexander von Meilenwald gegründet, nachdem seine vorherige Band Nagelfar aufgelöst wurde. Der Name leitet sich vom altnordischen Wort für die Brücke zwischen Midgard und Asgard ab.",
+        "facts": [
+          "The Ruins of Beverast wurde 2003 von Alexander von Meilenwald gegründet, nachdem seine vorherige Band Nagelfar aufgelöst wurde.",
+          "\"Beverast\" ist Meilenwalds eigene Ableitung von \"Bifröst\", dem altnordischen Begriff für die Brücke zwischen Midgard und Asgard."
+        ]
+      },
+      "tr": {
+        "kicker": "alman blackened doom metal grubu · 2003'te kuruldu",
+        "who": "The Ruins of Beverast, önceki grubu Nagelfar'ın dağılmasının ardından 2003'te Alexander von Meilenwald tarafından kurulmuş Alman bir blackened doom metal projesidir. Adı, Midgard ile Asgard arasındaki köprü için kullanılan eski Norse sözcüğünden Meilenwald'ın kendi türettiği bir kelimedir.",
+        "facts": [
+          "The Ruins of Beverast, önceki grubu Nagelfar'ın dağılmasının ardından 2003'te Alexander von Meilenwald tarafından kuruldu.",
+          "\"Beverast\", Meilenwald'ın \"Bifröst\" sözcüğünden kendi türettiği addır; Bifröst, Midgard ile Asgard arasındaki köprünün eski Norse adıdır."
+        ]
+      }
+    }
+  ]
+}

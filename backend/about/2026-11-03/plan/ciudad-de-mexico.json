@@ -1,0 +1,16 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "745428b0-7ba1-4aa3-aaf8-9cf32e195e52",
+   "slug": "fernando-delgadillo-eedc8c6c",
+   "title": "Fernando Delgadillo",
+   "act": "Fernando Delgadillo",
+   "name": "Fernando Delgadillo",
+   "description": "Mexican musician and composer",
+   "source_url": "https://en.wikipedia.org/wiki/Fernando_Delgadillo",
+   "extract": "Fernando Delgadillo is a Mexican musician and composer. He is considered a major representative of the Folk music genre in Mexico often referred to as ¨Trova¨. He is considered the ¨Creador de la canción informal¨"
+  }
+ ]
+}

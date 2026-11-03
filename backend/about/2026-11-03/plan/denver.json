@@ -1,0 +1,16 @@
+{
+ "city": "denver",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "cda2f7b1-c6ea-4198-899e-db04865f84ae",
+   "slug": "cut-copy-20a010cb",
+   "title": "Cut Copy",
+   "act": "Cut Copy",
+   "name": "Cut Copy",
+   "description": "Australian synth-pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Cut_Copy",
+   "extract": "Cut Copy are an Australian synth-pop band formed in 2001 by Dan Whitford. Originally a home-recording project, the band now includes Tim Hoey (guitars), Ben Browning, and Mitchell Scott (drums)."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "washington",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "bb0eae06-2cb8-475d-9f58-63ab18d22108",
+   "slug": "national-symphony-orchestra-serenades-and-simple-028e79b5",
+   "title": "National Symphony Orchestra: Serenades & Simple Songs",
+   "act": "National Symphony Orchestra",
+   "name": "National Symphony Orchestra",
+   "description": "Orchestra in Washington, DC",
+   "source_url": "https://en.wikipedia.org/wiki/National_Symphony_Orchestra",
+   "extract": "The National Symphony Orchestra (NSO) is an American symphony orchestra based in Washington, D.C. Founded in 1930 by cellist Hans Kindler, its principal performing venue is the John F. Kennedy Center for the Performing Arts."
+  },
+  {
+   "id": "05e725c4-8824-47de-8659-3e91a6e62ae5",
+   "slug": "sammy-rae-and-the-friends-the-get-down-33ff562b",
+   "title": "Sammy Rae & The Friends - the GET DOWN!",
+   "act": "Sammy Rae & The Friends",
+   "name": "Sammy Rae & The Friends",
+   "description": "American jazz-pop band from Brooklyn",
+   "source_url": "https://en.wikipedia.org/wiki/Sammy_Rae_%26_The_Friends",
+   "extract": "Sammy Rae & The Friends is an American jazz-pop band from Brooklyn, New York City, led by singer-songwriter Samantha \"Sammy Rae\" Bowers. Formed in 2016, the group is known for high-energy live shows; in February 2024 they played two sold-out nights at Washington, D.C.’s 9:30 Club. Their debut studio album, Something for Everybody, was released on September 20, 2024, via Nettwerk, following the EPs The Good Life (2018) and Let's Throw a Party (2021)."
+  }
+ ]
+}

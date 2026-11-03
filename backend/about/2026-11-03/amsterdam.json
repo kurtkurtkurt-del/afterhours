@@ -1,0 +1,38 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "d371f41f-e342-4adf-b755-9c0fb4820789",
+      "slug": "edsilia-rombley-premium-seats-36ccd5de",
+      "title": "Edsilia Rombley | Premium Seats",
+      "name": "Edsilia Rombley",
+      "source_url": "https://en.wikipedia.org/wiki/Edsilia_Rombley",
+      "extract": "Edsilia Francisca Rombley is a Dutch singer and television presenter. She began her career in 1995, as a member of the Dutch girl group Dignity. Rombley began her solo career in 1996, after winning the Dutch talent show Soundmixshow, later winning the European Soundmix Show as well the following year.",
+      "en": {
+        "kicker": "dutch singer and television presenter · 1995",
+        "who": "Edsilia Rombley is a Dutch singer and television presenter. She began her career in 1995 as a member of the Dutch girl group Dignity, then started a solo career in 1996.",
+        "facts": [
+          "She began her career in 1995, as a member of the Dutch girl group Dignity.",
+          "Rombley began her solo career in 1996, after winning the Dutch talent show Soundmixshow, later winning the European Soundmix Show as well the following year."
+        ]
+      },
+      "de": {
+        "kicker": "niederländische sängerin und fernsehmoderatorin · 1995",
+        "who": "Edsilia Rombley ist eine niederländische Sängerin und Fernsehmoderatorin. 1995 begann sie als Mitglied der Girlgroup Dignity, 1996 startete sie ihre Solokarriere.",
+        "facts": [
+          "Sie begann ihre Karriere 1995 als Mitglied der niederländischen Girlgroup Dignity.",
+          "1996 startete sie solo, nachdem sie die niederländische Talentshow Soundmixshow gewonnen hatte; im Jahr darauf gewann sie auch die European Soundmix Show."
+        ]
+      },
+      "tr": {
+        "kicker": "hollandalı şarkıcı ve televizyon sunucusu · 1995",
+        "who": "Edsilia Rombley bir Hollandalı şarkıcı ve televizyon sunucusudur. 1995'te Hollandalı kız grubu Dignity'nin üyesi olarak başladı, 1996'da solo kariyerine geçti.",
+        "facts": [
+          "Kariyerine 1995'te Hollandalı kız grubu Dignity'nin bir üyesi olarak başladı.",
+          "1996'da Hollanda yetenek yarışması Soundmixshow'u kazanarak solo kariyerine başladı; ertesi yıl European Soundmix Show'u da kazandı."
+        ]
+      }
+    }
+  ]
+}

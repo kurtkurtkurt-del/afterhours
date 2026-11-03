@@ -1,0 +1,38 @@
+{
+  "city": "brussel",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "bf267bca-00f5-44eb-8400-1d2098488c12",
+      "slug": "mon-laferte-0fb657c3",
+      "title": "Mon Laferte",
+      "name": "Mon Laferte",
+      "source_url": "https://en.wikipedia.org/wiki/Mon_Laferte",
+      "extract": "Norma Montserrat Bustamante Laferte, known professionally as Mon Laferte, is a Chilean and Mexican singer-songwriter. Recognized for her versatility, her musical style spans a wide array of genres, including pop, alternative, bolero, cumbia, and salsa. She rose to international prominence in the 2010s, particularly for her melodramatic vocals and theatrical stage presence. In 2025, Billboard named her one of the greatest female Latin pop artists of all time.",
+      "en": {
+        "kicker": "chilean-mexican singer-songwriter · since the 2010s",
+        "who": "Mon Laferte is a Chilean and Mexican singer-songwriter whose style spans pop, alternative, bolero, cumbia and salsa. She rose to international prominence in the 2010s, known for her melodramatic vocals and theatrical stage presence.",
+        "facts": [
+          "She rose to international prominence in the 2010s, particularly for her melodramatic vocals and theatrical stage presence.",
+          "In 2025, Billboard named her one of the greatest female Latin pop artists of all time."
+        ]
+      },
+      "de": {
+        "kicker": "chilenisch-mexikanische singer-songwriterin · seit den 2010ern",
+        "who": "Mon Laferte ist eine chilenisch-mexikanische Singer-Songwriterin, deren Stil Pop, Alternative, Bolero, Cumbia und Salsa umfasst. In den 2010er-Jahren wurde sie international bekannt, vor allem durch ihren melodramatischen Gesang und ihre theatralische Bühnenpräsenz.",
+        "facts": [
+          "In den 2010er-Jahren wurde sie international bekannt, vor allem durch ihren melodramatischen Gesang und ihre theatralische Bühnenpräsenz.",
+          "2025 nannte Billboard sie eine der größten weiblichen Latin-Pop-Künstlerinnen aller Zeiten."
+        ]
+      },
+      "tr": {
+        "kicker": "şilili-meksikalı şarkıcı-söz yazarı · 2010'lardan beri",
+        "who": "Mon Laferte, pop, alternatif, bolero, cumbia ve salsa türlerini kapsayan bir tarzı olan Şilili-Meksikalı bir şarkıcı ve söz yazarıdır. 2010'larda melodramatik vokali ve teatral sahne duruşuyla uluslararası çapta öne çıktı.",
+        "facts": [
+          "2010'larda özellikle melodramatik vokali ve teatral sahne duruşuyla uluslararası çapta öne çıktı.",
+          "2025'te Billboard, onu tüm zamanların en büyük kadın Latin pop sanatçılarından biri ilan etti."
+        ]
+      }
+    }
+  ]
+}

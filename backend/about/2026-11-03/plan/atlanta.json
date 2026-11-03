@@ -1,0 +1,36 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "b66f9494-323d-4ead-aa09-a50b52d3d06d",
+   "slug": "wolf-and-bear-fa95aae9",
+   "title": "Wolf & Bear",
+   "act": "Wolf & Bear",
+   "name": "Wolf & Bear",
+   "description": "American post-hardcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Wolf_%26_Bear",
+   "extract": "Wolf & Bear is an American post-hardcore band from Sacramento, California. Formed in 2013, the band consists of vocalists Marcus Cisneros and Blair de Leon, guitarists Cameron Nunez and Louie Baltazar, and drummer Jacob Koval. The band originated in the Central Valley hardcore punk music scene, later signing to Blue Swan Records and releasing a split with post-hardcore band Adventurer in May 2016 and their debut studio album, Everything Is Going Grey, in October 2017."
+  },
+  {
+   "id": "47b1a126-ebb2-49ed-8e18-5e3ffc5120f9",
+   "slug": "stella-lefty-lefty-live-89cec1dc",
+   "title": "Stella Lefty: Lefty Live",
+   "act": "Stella Lefty",
+   "name": "Stella Lefty",
+   "description": "American singer-songwriter (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Stella_Lefty",
+   "extract": "Stella Lefkofsky, better known by her stage name Stella Lefty, is an American singer-songwriter. Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100."
+  },
+  {
+   "id": "7ce67add-ead0-4a07-8c80-2e85f4059a58",
+   "slug": "the-neighbourhood-the-wourld-tour-1b94f9e7",
+   "title": "The Neighbourhood: THE WOURLD TOUR",
+   "act": "The Neighbourhood",
+   "name": "The Neighbourhood",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Neighbourhood",
+   "extract": "The Neighbourhood is an American alternative rock band formed in Newbury Park, California, in 2011. The band consists of vocalist Jesse Rutherford, guitarists Jeremy Fredman and Zach Abels, bassist Mikey Margott and drummer Brandon Fried. After releasing two EPs, I'm Sorry... and Thank You, The Neighbourhood signed with Columbia Records to release their debut studio album, I Love You. in 2013. \"Sweater Weather\", the album's third single, became the only song from the project on the Billboard Hot 100, peaking at number 14, and resurged in popularity nearly a decade later on radio airplay and Spotify. Other notable hits from the band include \"Afraid\", \"Daddy Issues\", \"Baby Come Home 2/Valentines\", \"Softcore\", \"You Get Me So High\", \"Reflections\" and \"The Beach\"."
+  }
+ ]
+}

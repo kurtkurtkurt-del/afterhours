@@ -1,0 +1,70 @@
+{
+  "city": "madrid",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "dcb90377-2378-4a1f-9c0a-6aa31b5b4d56",
+      "slug": "yandel-4811f182",
+      "title": "Yandel",
+      "name": "Yandel",
+      "source_url": "https://en.wikipedia.org/wiki/Yandel",
+      "extract": "Llandel Veguilla Malavé, best known by his stage name Yandel, is a Puerto Rican singer who is a member of the reggaeton duo Wisin & Yandel. He released his first solo album, Quien Contra Mí, in 2003. His second solo studio album, De Líder a Leyenda, was released in 2013 and was certified Gold (Latin) by the RIAA in 2014.",
+      "en": {
+        "kicker": "puerto rican singer · wisin & yandel",
+        "who": "Llandel Veguilla Malavé, best known as Yandel, is a Puerto Rican singer and a member of the reggaeton duo Wisin & Yandel. His second solo studio album, De Líder a Leyenda, was released in 2013.",
+        "facts": [
+          "He released his first solo album, Quien Contra Mí, in 2003.",
+          "His second solo studio album, De Líder a Leyenda, was released in 2013 and was certified Gold (Latin) by the RIAA in 2014."
+        ]
+      },
+      "de": {
+        "kicker": "puertoricanischer sänger · wisin & yandel",
+        "who": "Llandel Veguilla Malavé, bekannt als Yandel, ist ein puertoricanischer Sänger und Mitglied des Reggaeton-Duos Wisin & Yandel. Sein zweites Soloalbum De Líder a Leyenda erschien 2013.",
+        "facts": [
+          "Sein erstes Soloalbum Quien Contra Mí erschien 2003.",
+          "Sein zweites Soloalbum De Líder a Leyenda erschien 2013 und wurde 2014 von der RIAA in den USA (Latin) mit Gold ausgezeichnet."
+        ]
+      },
+      "tr": {
+        "kicker": "porto rikolu şarkıcı · wisin & yandel",
+        "who": "Llandel Veguilla Malavé, Yandel adıyla tanınan bir Porto Rikolu şarkıcıdır ve reggaeton ikilisi Wisin & Yandel'in üyesidir. İkinci solo stüdyo albümü De Líder a Leyenda 2013'te çıktı.",
+        "facts": [
+          "İlk solo albümü Quien Contra Mí'yi 2003'te yayımladı.",
+          "İkinci solo stüdyo albümü De Líder a Leyenda 2013'te çıktı ve 2014'te RIAA tarafından Gold (Latin) sertifikası aldı."
+        ]
+      }
+    },
+    {
+      "id": "144f4b8c-92ce-4a96-ac76-31b652d35624",
+      "slug": "colin-james-3872ba03",
+      "title": "Colin James",
+      "name": "Colin James",
+      "source_url": "https://en.wikipedia.org/wiki/Colin_James",
+      "extract": "Colin James is a Canadian blues rock singer and songwriter. James has been very successful in Canada, having attained seven Gold-certified albums in Canada during his career, including four Platinum albums and two Double Platinum albums.",
+      "en": {
+        "kicker": "canadian blues rock singer and songwriter",
+        "who": "Colin James is a Canadian blues rock singer and songwriter. He has been very successful in Canada, with seven Gold-certified albums during his career.",
+        "facts": [
+          "James has attained seven Gold-certified albums in Canada during his career.",
+          "He has four Platinum albums and two Double Platinum albums."
+        ]
+      },
+      "de": {
+        "kicker": "kanadischer blues-rock-sänger und songwriter",
+        "who": "Colin James ist ein kanadischer Blues-Rock-Sänger und Songwriter. Er war in Kanada sehr erfolgreich, mit sieben Gold-Alben während seiner Karriere.",
+        "facts": [
+          "James erreichte in seiner Karriere sieben in Kanada mit Gold ausgezeichnete Alben.",
+          "Er hat vier Platin-Alben und zwei Doppel-Platin-Alben."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı blues rock şarkıcı ve söz yazarı",
+        "who": "Colin James, Kanadalı bir blues rock şarkıcısı ve söz yazarıdır. Kanada'da çok başarılı oldu; kariyeri boyunca yedi Gold sertifikalı albümü var.",
+        "facts": [
+          "Kariyeri boyunca Kanada'da yedi Gold sertifikalı albüme ulaştı.",
+          "Dört Platinum ve iki Double Platinum albümü var."
+        ]
+      }
+    }
+  ]
+}

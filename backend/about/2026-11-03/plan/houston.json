@@ -1,0 +1,26 @@
+{
+ "city": "houston",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "0fd74052-e84f-46e7-9f27-483b2de6aec8",
+   "slug": "jonas-brothers-the-burning-up-tour-all-over-agai-09406aa1",
+   "title": "Jonas Brothers: The Burning Up Tour All Over Again",
+   "act": "Jonas Brothers",
+   "name": "Jonas Brothers",
+   "description": "American pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Jonas_Brothers",
+   "extract": "The Jonas Brothers are an American pop rock band formed in 2005 comprising brothers Kevin Jonas, Joe Jonas, and Nick Jonas. Raised in Wyckoff, New Jersey, the Jonas Brothers moved to Little Falls, New Jersey, in 2005, where they wrote their first record that made its release on Hollywood Records, a Disney-owned record label, after which they gained popularity from their appearances on Disney Channel. They starred in the 2008 Disney Channel Original Movie Camp Rock and its 2010 sequel, Camp Rock 2: The Final Jam. They also starred in their own Disney Channel series Jonas, which was rebranded as Jonas L.A. for its second season. The band has released seven albums: It's About Time (2006), Jonas Brothers (2007), A Little Bit Longer (2008), Lines, Vines and Trying Times (2009), Happiness Begins (2019), The Album (2023) and Greetings from Your Hometown (2025)."
+  },
+  {
+   "id": "c9432937-01ef-4e8b-869d-e1601734df44",
+   "slug": "noah-gundersen-rites-of-spring-us-tour-fall-2026-c0fc4608",
+   "title": "Noah Gundersen: Rites of Spring US TOUR FALL 2026",
+   "act": "Noah Gundersen",
+   "name": "Noah Gundersen",
+   "description": "American singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Noah_Gundersen",
+   "extract": "Noah Gundersen is an American indie folk singer-songwriter from Seattle."
+  }
+ ]
+}

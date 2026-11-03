@@ -1,0 +1,38 @@
+{
+  "city": "boston",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "11a8849e-9b4f-42fd-8da6-7282a446c428",
+      "slug": "bryce-alakai-da6b7d9f",
+      "title": "Bryce Alakai",
+      "name": "Bryce Alakai",
+      "source_url": "https://en.wikipedia.org/wiki/Bryce_Alakai",
+      "extract": "Bryce Alakai is an American DJ, music producer, model and television personality, known for winning the eighth season of the Peacock dating show Love Island USA in 2026, alongside Trinity Tatum.",
+      "en": {
+        "kicker": "american dj and producer · love island usa winner, 2026",
+        "who": "Bryce Alakai is an American DJ, music producer, model and television personality. He is known for winning the eighth season of the Peacock dating show Love Island USA in 2026.",
+        "facts": [
+          "Bryce Alakai is an American DJ, music producer, model and television personality.",
+          "He won the eighth season of the Peacock dating show Love Island USA in 2026, alongside Trinity Tatum."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer dj und produzent · gewinner love island usa, 2026",
+        "who": "Bryce Alakai ist ein amerikanischer DJ, Musikproduzent, Model und Fernsehpersönlichkeit. Bekannt wurde er durch den Gewinn der achten Staffel der Peacock-Datingshow Love Island USA im Jahr 2026.",
+        "facts": [
+          "Bryce Alakai ist ein amerikanischer DJ, Musikproduzent, Model und Fernsehpersönlichkeit.",
+          "2026 gewann er die achte Staffel der Peacock-Datingshow Love Island USA an der Seite von Trinity Tatum."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı dj ve yapımcı · love island usa birincisi, 2026",
+        "who": "Bryce Alakai, Amerikalı bir DJ, müzik yapımcısı, model ve televizyon kişiliğidir. 2026'da Peacock'in flört programı Love Island USA'nın sekizinci sezonunu kazanmasıyla tanındı.",
+        "facts": [
+          "Bryce Alakai, Amerikalı bir DJ, müzik yapımcısı, model ve televizyon kişiliğidir.",
+          "2026'da Peacock'in flört programı Love Island USA'nın sekizinci sezonunu Trinity Tatum ile birlikte kazandı."
+        ]
+      }
+    }
+  ]
+}

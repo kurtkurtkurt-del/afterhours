@@ -1,0 +1,38 @@
+{
+  "city": "new-york",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "7b9c6809-c832-40c2-8aa4-ce25b915f57b",
+      "slug": "blake-whiten-8b548903",
+      "title": "Blake Whiten",
+      "name": "Blake Whiten",
+      "source_url": "https://en.wikipedia.org/wiki/Blake_Whiten",
+      "extract": "Blake Whiten is an American country singer and songwriter. His debut album, Something to Say, was released in 2026, which included his first Billboard Hot 100 hit \"Bet on That\".",
+      "en": {
+        "kicker": "american country singer and songwriter · 2026",
+        "who": "Blake Whiten is an American country singer and songwriter. His debut album, Something to Say, was released in 2026.",
+        "facts": [
+          "His debut album, Something to Say, was released in 2026.",
+          "It included his first Billboard Hot 100 hit \"Bet on That\"."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer country-sänger und songwriter · 2026",
+        "who": "Blake Whiten ist ein amerikanischer Country-Sänger und Songwriter. Sein Debütalbum Something to Say erschien 2026.",
+        "facts": [
+          "Sein Debütalbum Something to Say erschien 2026.",
+          "Es enthielt seinen ersten Billboard-Hot-100-Hit \"Bet on That\"."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı country şarkıcı ve söz yazarı · 2026",
+        "who": "Blake Whiten, Amerikalı bir country şarkıcısı ve söz yazarıdır. Debut albümü Something to Say 2026'da çıktı.",
+        "facts": [
+          "Debut albümü Something to Say 2026'da çıktı.",
+          "Albümde ilk Billboard Hot 100 listesi hiti \"Bet on That\" yer aldı."
+        ]
+      }
+    }
+  ]
+}

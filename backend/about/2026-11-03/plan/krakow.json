@@ -1,0 +1,16 @@
+{
+ "city": "krakow",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "d0e73ee3-9571-4b68-8bc9-c43b27ac5ffe",
+   "slug": "the-ruins-of-beverast-be61ff61",
+   "title": "The Ruins of Beverast",
+   "act": "The Ruins of Beverast",
+   "name": "The Ruins of Beverast",
+   "description": "German blackened doom metal band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Ruins_of_Beverast",
+   "extract": "The Ruins of Beverast is a German blackened doom metal project formed by Alexander von Meilenwald in 2003 after the disbandment of his previous band Nagelfar. \"Beverast\" is Meilenwald's own derivation of the word \"Bifröst\", the old Norse term for the bridge between Midgard and Asgard."
+  }
+ ]
+}

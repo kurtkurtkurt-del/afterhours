@@ -1,0 +1,26 @@
+{
+ "city": "new-york",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "7b9c6809-c832-40c2-8aa4-ce25b915f57b",
+   "slug": "blake-whiten-8b548903",
+   "title": "Blake Whiten",
+   "act": "Blake Whiten",
+   "name": "Blake Whiten",
+   "description": "American country singer (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Blake_Whiten",
+   "extract": "Blake Whiten is an American country singer and songwriter. His debut album, Something to Say, was released in 2026, which included his first Billboard Hot 100 hit \"Bet on That\"."
+  },
+  {
+   "id": "96b95a6e-076e-4eb1-94d9-ef08f4062bab",
+   "slug": "coyle-girelli-0804d5ae",
+   "title": "Coyle Girelli",
+   "act": "Coyle Girelli",
+   "name": "Coyle Girelli",
+   "description": "English musician",
+   "source_url": "https://en.wikipedia.org/wiki/Coyle_Girelli",
+   "extract": "Coyle Girelli is a British and American recording artist, multi-platinum selling songwriter, composer, record producer, multi-instrumentalist, theater producer and entrepreneur. He is a co-founder and CEO of music company Calm and Collected Music Group and CAC Music Publishing and is the founder of entertainment production company Goldfire Productions, as well as being involved in several other business ventures. \nFormerly frontman of alternative rock bands Your Vegas and The Chevin he released his debut solo album, Love Kills, in 2018. He has written songs for BTS, Daisy the Great, Robin Schulz, Westlife and many others and co-composed songs for the record breaking French musicals Robin des Bois and Les Trois Mousquetaires. His sophomore solo album Funland was released in February 2022 to critical acclaim and his third solo album \"Museum Day\" released in autumn 2023. His fourth solo album \"Out Of This Town\" was released on Sun Records in 2025 and featured a collection of songs written with legendary songwriter Mac Davis."
+  }
+ ]
+}

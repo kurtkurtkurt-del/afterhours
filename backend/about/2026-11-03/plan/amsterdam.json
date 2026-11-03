@@ -1,0 +1,16 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "d371f41f-e342-4adf-b755-9c0fb4820789",
+   "slug": "edsilia-rombley-premium-seats-36ccd5de",
+   "title": "Edsilia Rombley | Premium Seats",
+   "act": "Edsilia Rombley",
+   "name": "Edsilia Rombley",
+   "description": "Dutch singer and television presenter (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/Edsilia_Rombley",
+   "extract": "Edsilia Francisca Rombley is a Dutch singer and television presenter. She began her career in 1995, as a member of the Dutch girl group Dignity. Rombley began her solo career in 1996, after winning the Dutch talent show Soundmixshow, later winning the European Soundmix Show as well the following year."
+  }
+ ]
+}

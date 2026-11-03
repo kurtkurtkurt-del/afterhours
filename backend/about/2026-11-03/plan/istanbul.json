@@ -1,0 +1,26 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "45f7f57c-882f-4614-8e3b-121ad60a3dc9",
+   "slug": "hande-yener-8344e9cf",
+   "title": "Hande Yener",
+   "act": "Hande Yener",
+   "name": "Hande Yener",
+   "description": "Turkish singer and songwriter (born 1973)",
+   "source_url": "https://en.wikipedia.org/wiki/Hande_Yener",
+   "extract": "Makbule Hande Özyener, known professionally as Hande Yener, is a Turkish singer and songwriter. She made her debut in the early 2000s, and since then has become a prominent figure of Turkish pop music with numerous songs that topped the music charts. Alongside her music career, she is also known for her choice of clothes and has renewed her image multiple times over the years. She has occasionally made changes in her music style as well; for a while, she started making electronic music, but this period was short-lived and she again returned to performing pop music. During her career, both her professional and personal life have been among the favorite subjects of columnists, and her rivalry and on and off feud with Demet Akalın were covered in the tabloids from time to time."
+  },
+  {
+   "id": "4c8f9856-8e50-4e89-b22b-ae68ccf297db",
+   "slug": "simge-650cd4f2",
+   "title": "Simge",
+   "act": "Simge",
+   "name": "Simge",
+   "description": "Turkish singer, songwriter and composer (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/Simge_(singer)",
+   "extract": "Simge Sağın, known mononymously as Simge, is a Turkish singer. From early 2010s, she started to make Turkish pop songs, and with the release of her single \"Miş Miş\" in 2015 she became one of the most famous artists in Turkey."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "fa201940-596e-4194-9742-1e21cb0b45ca",
+   "slug": "nia-archives-f8058ef9",
+   "title": "Nia Archives",
+   "act": "Nia Archives",
+   "name": "Nia Archives",
+   "description": "English record producer, DJ and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Nia_Archives",
+   "extract": "Dehaney Nia Lishahn Hunt, known professionally as Nia Archives, is an English record producer, DJ, singer and songwriter. Born in Bradford in West Yorkshire, she moved to Leeds aged seven, out of the family home aged sixteen, and then to Greater Manchester, during which time she was inspired by jungle documentaries and the women within them."
+  },
+  {
+   "id": "ae651ac0-331e-4d3d-b4d0-5dedaf9df806",
+   "slug": "snakehips-9449cdec",
+   "title": "Snakehips",
+   "act": "Snakehips",
+   "name": "Snakehips",
+   "description": "British electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Snakehips_(duo)",
+   "extract": "Snakehips are a British electronic music duo. The line-up consists of Oliver Lee and James Carter. Snakehips made their name with Hype Machine doing remixes for Banks, The Weeknd, Bondax and Wild Belle. They are best known for their 2015 single, \"All My Friends\" featuring Tinashe and Chance the Rapper."
+  }
+ ]
+}

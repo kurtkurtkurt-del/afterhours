@@ -1,0 +1,102 @@
+{
+  "city": "atlanta",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "b66f9494-323d-4ead-aa09-a50b52d3d06d",
+      "slug": "wolf-and-bear-fa95aae9",
+      "title": "Wolf & Bear",
+      "name": "Wolf & Bear",
+      "source_url": "https://en.wikipedia.org/wiki/Wolf_%26_Bear",
+      "extract": "Wolf & Bear is an American post-hardcore band from Sacramento, California. Formed in 2013, the band consists of vocalists Marcus Cisneros and Blair de Leon, guitarists Cameron Nunez and Louie Baltazar, and drummer Jacob Koval. The band originated in the Central Valley hardcore punk music scene, later signing to Blue Swan Records and releasing a split with post-hardcore band Adventurer in May 2016 and their debut studio album, Everything Is Going Grey, in October 2017.",
+      "en": {
+        "kicker": "american post-hardcore band · sacramento, 2013",
+        "who": "Wolf & Bear is an American post-hardcore band from Sacramento, California, formed in 2013. It grew out of the Central Valley hardcore punk scene and later signed to Blue Swan Records.",
+        "facts": [
+          "The band originated in the Central Valley hardcore punk music scene, later signing to Blue Swan Records.",
+          "Their debut studio album, Everything Is Going Grey, came out in October 2017."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische post-hardcore-band · sacramento, 2013",
+        "who": "Wolf & Bear ist eine amerikanische Post-Hardcore-Band aus Sacramento, Kalifornien, gegründet 2013. Sie stammt aus der Hardcore-Punk-Szene des Central Valley und unterschrieb später bei Blue Swan Records.",
+        "facts": [
+          "Die Band entstand in der Hardcore-Punk-Szene des Central Valley und unterschrieb später bei Blue Swan Records.",
+          "Ihr Debütalbum Everything Is Going Grey erschien im Oktober 2017."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı post-hardcore grubu · sacramento, 2013",
+        "who": "Wolf & Bear, Kaliforniya'nın Sacramento kentinden 2013'te kurulmuş bir Amerikan post-hardcore grubudur. Central Valley hardcore punk sahnesinden doğdu ve sonradan Blue Swan Records ile anlaştı.",
+        "facts": [
+          "Grup Central Valley hardcore punk sahnesinde doğdu, sonradan Blue Swan Records ile anlaştı.",
+          "Debut stüdyo albümleri Everything Is Going Grey Ekim 2017'de çıktı."
+        ]
+      }
+    },
+    {
+      "id": "47b1a126-ebb2-49ed-8e18-5e3ffc5120f9",
+      "slug": "stella-lefty-lefty-live-89cec1dc",
+      "title": "Stella Lefty: Lefty Live",
+      "name": "Stella Lefty",
+      "source_url": "https://en.wikipedia.org/wiki/Stella_Lefty",
+      "extract": "Stella Lefkofsky, better known by her stage name Stella Lefty, is an American singer-songwriter. Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100.",
+      "en": {
+        "kicker": "american singer-songwriter · 'boston' hit, 2026",
+        "who": "Stella Lefkofsky, known as Stella Lefty, is an American singer-songwriter. Her 2026 country-pop single \"Boston\" reached number two on the US Billboard Hot 100.",
+        "facts": [
+          "Stella Lefkofsky, better known by her stage name Stella Lefty, is an American singer-songwriter.",
+          "Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin · hit 'boston', 2026",
+        "who": "Stella Lefkofsky, bekannt als Stella Lefty, ist eine amerikanische Singer-Songwriterin. Ihre Country-Pop-Single \"Boston\" von 2026 erreichte Platz zwei der US Billboard Hot 100.",
+        "facts": [
+          "Stella Lefkofsky, besser bekannt unter ihrem Künstlernamen Stella Lefty, ist eine amerikanische Singer-Songwriterin.",
+          "Ihre Country-Pop-Single \"Boston\" von 2026 erreichte in den US Billboard Hot 100 Platz zwei."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı · 'boston' hit'i, 2026",
+        "who": "Sahne adı Stella Lefty olan Stella Lefkofsky, Amerikalı bir şarkıcı ve söz yazarıdır. 2026 country-pop single'ı \"Boston\", ABD Billboard Hot 100 listesinde ikinciliğe yükseldi.",
+        "facts": [
+          "Sahne adıyla daha çok bilinen Stella Lefkofsky, Amerikalı bir şarkıcı ve söz yazarıdır.",
+          "2026 country-pop single'ı \"Boston\", ABD Billboard Hot 100 listesinde zirvede ikinci sıraya ulaştı."
+        ]
+      }
+    },
+    {
+      "id": "7ce67add-ead0-4a07-8c80-2e85f4059a58",
+      "slug": "the-neighbourhood-the-wourld-tour-1b94f9e7",
+      "title": "The Neighbourhood: THE WOURLD TOUR",
+      "name": "The Neighbourhood",
+      "source_url": "https://en.wikipedia.org/wiki/The_Neighbourhood",
+      "extract": "The Neighbourhood is an American alternative rock band formed in Newbury Park, California, in 2011. The band consists of vocalist Jesse Rutherford, guitarists Jeremy Fredman and Zach Abels, bassist Mikey Margott and drummer Brandon Fried. After releasing two EPs, I'm Sorry... and Thank You, The Neighbourhood signed with Columbia Records to release their debut studio album, I Love You. in 2013. \"Sweater Weather\", the album's third single, became the only song from the project on the Billboard Hot 100, peaking at number 14, and resurged in popularity nearly a decade later on radio airplay and Spotify. Other notable hits from the band include \"Afraid\", \"Daddy Issues\", \"Baby Come Home 2/Valentin",
+      "en": {
+        "kicker": "american alternative rock band · newbury park, 2011",
+        "who": "The Neighbourhood is an American alternative rock band formed in Newbury Park, California, in 2011. Their debut studio album, I Love You., came out in 2013 on Columbia Records.",
+        "facts": [
+          "The Neighbourhood is an American alternative rock band formed in Newbury Park, California, in 2011.",
+          "\"Sweater Weather\", the album's third single, peaked at number 14 on the Billboard Hot 100."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische alternative-rock-band · newbury park, 2011",
+        "who": "The Neighbourhood ist eine amerikanische Alternative-Rock-Band, gegründet 2011 in Newbury Park, Kalifornien. Ihr Debütalbum I Love You. erschien 2013 bei Columbia Records.",
+        "facts": [
+          "The Neighbourhood ist eine amerikanische Alternative-Rock-Band, gegründet 2011 in Newbury Park, Kalifornien.",
+          "\"Sweater Weather\", die dritte Single des Albums, erreichte Platz 14 der Billboard Hot 100."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı alternatif rock grubu · newbury park, 2011",
+        "who": "The Neighbourhood, 2011'de Kaliforniya'nın Newbury Park kentinde kurulmuş Amerikalı bir alternatif rock grubudur. Debut stüdyo albümleri I Love You. 2013'te Columbia Records'tan çıktı.",
+        "facts": [
+          "The Neighbourhood, 2011'de Kaliforniya'nın Newbury Park kentinde kurulmuş Amerikalı bir alternatif rock grubudur.",
+          "Albümün üçüncü single'ı \"Sweater Weather\", Billboard Hot 100 listesinde 14. sıraya ulaştı."
+        ]
+      }
+    }
+  ]
+}

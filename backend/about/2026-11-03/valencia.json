@@ -1,0 +1,38 @@
+{
+  "city": "valencia",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "d163fb00-e0a5-458e-9903-9d1c646ac715",
+      "slug": "queens-of-the-stone-age-perfecth-world-tour-3055ff63",
+      "title": "Queens Of The Stone Age - Perfecth World Tour",
+      "name": "Queens of the Stone Age",
+      "source_url": "https://en.wikipedia.org/wiki/Queens_of_the_Stone_Age",
+      "extract": "Queens of the Stone Age is an American rock band formed in Palm Desert, California, in 1996. The band was founded by vocalist and guitarist Josh Homme shortly before he returned to his native Palm Desert, California. Homme has been the only constant member throughout multiple line-up changes; since 2013, the line-up has consisted of Homme, Troy Van Leeuwen, Michael Shuman, Dean Fertita, and Jon Theodore.",
+      "en": {
+        "kicker": "american rock band · palm desert, 1996",
+        "who": "Queens of the Stone Age is an American rock band formed in Palm Desert, California, in 1996 by Josh Homme. Homme has been the only constant member through multiple line-up changes.",
+        "facts": [
+          "Queens of the Stone Age is an American rock band formed in Palm Desert, California, in 1996.",
+          "Since 2013 the line-up has consisted of Homme, Troy Van Leeuwen, Michael Shuman, Dean Fertita and Jon Theodore."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · palm desert, 1996",
+        "who": "Queens of the Stone Age ist eine amerikanische Rockband, 1996 in Palm Desert, Kalifornien, von Josh Homme gegründet. Homme ist durch alle Besetzungswechsel das einzige konstante Mitglied.",
+        "facts": [
+          "Queens of the Stone Age ist eine amerikanische Rockband, 1996 in Palm Desert, Kalifornien, gegründet.",
+          "Seit 2013 besteht die Besetzung aus Homme, Troy Van Leeuwen, Michael Shuman, Dean Fertita und Jon Theodore."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · palm desert, 1996",
+        "who": "Queens of the Stone Age, 1996'da Josh Homme tarafından California'nın Palm Desert kentinde kurulmuş Amerikalı bir rock grubudur. Homme, pek çok kadro değişikliğine rağmen tek sabit üye olmuştur.",
+        "facts": [
+          "Queens of the Stone Age, 1996'da California'nın Palm Desert kentinde kurulmuş Amerikalı bir rock grubudur.",
+          "2013'ten beri kadro Homme, Troy Van Leeuwen, Michael Shuman, Dean Fertita ve Jon Theodore'dan oluşuyor."
+        ]
+      }
+    }
+  ]
+}

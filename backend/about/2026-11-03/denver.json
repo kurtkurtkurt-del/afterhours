@@ -1,0 +1,38 @@
+{
+  "city": "denver",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "cda2f7b1-c6ea-4198-899e-db04865f84ae",
+      "slug": "cut-copy-20a010cb",
+      "title": "Cut Copy",
+      "name": "Cut Copy",
+      "source_url": "https://en.wikipedia.org/wiki/Cut_Copy",
+      "extract": "Cut Copy are an Australian synth-pop band formed in 2001 by Dan Whitford. Originally a home-recording project, the band now includes Tim Hoey (guitars), Ben Browning, and Mitchell Scott (drums).",
+      "en": {
+        "kicker": "australian synth-pop band · formed 2001",
+        "who": "Cut Copy are an Australian synth-pop band formed in 2001 by Dan Whitford. Originally a home-recording project, the band now includes Tim Hoey, Ben Browning and Mitchell Scott.",
+        "facts": [
+          "Cut Copy are an Australian synth-pop band formed in 2001 by Dan Whitford.",
+          "Originally a home-recording project, the band now includes Tim Hoey (guitars), Ben Browning, and Mitchell Scott (drums)."
+        ]
+      },
+      "de": {
+        "kicker": "australische synth-pop-band · gegründet 2001",
+        "who": "Cut Copy sind eine australische Synth-Pop-Band, 2001 von Dan Whitford gegründet. Ursprünglich ein Heimaufnahme-Projekt, gehören heute Tim Hoey, Ben Browning und Mitchell Scott zur Band.",
+        "facts": [
+          "Cut Copy sind eine 2001 von Dan Whitford gegründete australische Synth-Pop-Band.",
+          "Ursprünglich ein Heimaufnahme-Projekt, gehören heute Tim Hoey (Gitarren), Ben Browning und Mitchell Scott (Schlagzeug) zur Band."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı synth-pop grubu · 2001'de kuruldu",
+        "who": "Cut Copy, 2001'de Dan Whitford tarafından kurulmuş bir Avustralyalı synth-pop grubudur. Başlangıçta evde kayıt yapılan bir proje olan grupta bugün Tim Hoey, Ben Browning ve Mitchell Scott yer alıyor.",
+        "facts": [
+          "Cut Copy, 2001'de Dan Whitford tarafından kurulmuş bir Avustralyalı synth-pop grubudur.",
+          "Başlangıçta evde kayıt projesi olan grupta bugün Tim Hoey (gitar), Ben Browning ve Mitchell Scott (davul) yer alıyor."
+        ]
+      }
+    }
+  ]
+}

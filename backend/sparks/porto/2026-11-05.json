@@ -1,0 +1,14 @@
+{
+  "city": "porto",
+  "day": "2026-11-05",
+  "sparks": [
+    {
+      "kind": "sunrise",
+      "title": { "en": "sunrise at the foz, clear sky.", "de": "sonnenaufgang an der foz, klarer himmel.", "tr": "foz'da gün doğumu, açık gökyüzü." },
+      "line":  { "en": "clear and dry on thursday; sunrise about 07:10. be at passeio alegre by 06:45 and wait by the river.", "de": "klar und trocken am donnerstag; sonnenaufgang gegen 07:10. um 06:45 am passeio alegre sein und am fluss warten.", "tr": "perşembe günü açık ve kuru; gün doğumu yaklaşık 07:10. saat 06:45'te passeio alegre'de olun ve nehir kenarında bekleyin." },
+      "place": { "en": "passeio alegre", "de": "passeio alegre", "tr": "passeio alegre" },
+      "hour": 6, "minute": 45,
+      "why": "IPMA forecast quoted by Viva Porto: sun and clear sky on Thu 5 Nov; sunrise about 07:05 on 1 Nov per sunrise-sunset.org, so about 07:10 by the 5th."
+    }
+  ]
+}

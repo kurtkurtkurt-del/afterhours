@@ -1,0 +1,38 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "833e8d91-9c06-42d1-85fb-dc13924dadfc",
+      "slug": "alex-cameron-5704db15",
+      "title": "Alex Cameron",
+      "name": "Alex Cameron",
+      "source_url": "https://en.wikipedia.org/wiki/Alex_Cameron_(musician)",
+      "extract": "Alexander Cameron is an Australian singer-songwriter from Sydney. He is best known for his solo career, a high-concept act in which Cameron initially adopted the persona of a failed entertainer. Between 2012 and 2024, Cameron was often joined during live performances and in the studio by his saxophonist and \"business partner\" Roy Molloy. Before making music under his own name, Cameron was a member of the electronica act Seekae, with whom he released three studio albums.",
+      "en": {
+        "kicker": "australian singer-songwriter · sydney",
+        "who": "Alexander Cameron is an Australian singer-songwriter from Sydney. He is best known for a high-concept solo act in which he adopted the persona of a failed entertainer.",
+        "facts": [
+          "He is best known for his solo career, a high-concept act in which Cameron initially adopted the persona of a failed entertainer.",
+          "Before making music under his own name, he was a member of the electronica act Seekae, with whom he released three studio albums."
+        ]
+      },
+      "de": {
+        "kicker": "australischer singer-songwriter · sydney",
+        "who": "Alexander Cameron ist ein australischer Singer-Songwriter aus Sydney. Bekannt ist er vor allem für ein konzeptuelles Solo-Projekt, in dem er die Rolle eines gescheiterten Entertainers übernahm.",
+        "facts": [
+          "Bekannt ist er vor allem durch seine Solokarriere, ein konzeptuelles Projekt, in dem er zunächst die Rolle eines gescheiterten Entertainers übernahm.",
+          "Bevor er unter eigenem Namen Musik machte, war er Mitglied der Electronica-Band Seekae, mit der er drei Studioalben veröffentlichte."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı şarkıcı-söz yazarı · sydney",
+        "who": "Alexander Cameron, Sydney'den Avustralyalı bir şarkıcı-söz yazarıdır. Başarısız bir eğlence sanatçısı personasını benimsediği, konsept bir solo projeyle tanınır.",
+        "facts": [
+          "Başarısız bir eğlence sanatçısı personasını benimsediği konsept solo kariyeriyle tanınır.",
+          "Kendi adıyla müzik yapmadan önce, üç stüdyo albümü çıkardığı electronica grubu Seekae'nin üyesiydi."
+        ]
+      }
+    }
+  ]
+}

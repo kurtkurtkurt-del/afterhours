@@ -1,0 +1,26 @@
+{
+ "city": "madrid",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "dcb90377-2378-4a1f-9c0a-6aa31b5b4d56",
+   "slug": "yandel-4811f182",
+   "title": "Yandel",
+   "act": "Yandel",
+   "name": "Yandel",
+   "description": "Puerto Rican singer (born 1977)",
+   "source_url": "https://en.wikipedia.org/wiki/Yandel",
+   "extract": "Llandel Veguilla Malavé, best known by his stage name Yandel, is a Puerto Rican singer who is a member of the reggaeton duo Wisin & Yandel. He released his first solo album, Quien Contra Mí, in 2003. His second solo studio album, De Líder a Leyenda, was released in 2013 and was certified Gold (Latin) by the RIAA in 2014."
+  },
+  {
+   "id": "144f4b8c-92ce-4a96-ac76-31b652d35624",
+   "slug": "colin-james-3872ba03",
+   "title": "Colin James",
+   "act": "Colin James",
+   "name": "Colin James",
+   "description": "Canadian singer-songwriter (born 1964)",
+   "source_url": "https://en.wikipedia.org/wiki/Colin_James",
+   "extract": "Colin James is a Canadian blues rock singer and songwriter. James has been very successful in Canada, having attained seven Gold-certified albums in Canada during his career, including four Platinum albums and two Double Platinum albums."
+  }
+ ]
+}

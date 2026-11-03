@@ -1,0 +1,70 @@
+{
+  "city": "washington",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "bb0eae06-2cb8-475d-9f58-63ab18d22108",
+      "slug": "national-symphony-orchestra-serenades-and-simple-028e79b5",
+      "title": "National Symphony Orchestra: Serenades & Simple Songs",
+      "name": "National Symphony Orchestra",
+      "source_url": "https://en.wikipedia.org/wiki/National_Symphony_Orchestra",
+      "extract": "The National Symphony Orchestra (NSO) is an American symphony orchestra based in Washington, D.C. Founded in 1930 by cellist Hans Kindler, its principal performing venue is the John F. Kennedy Center for the Performing Arts.",
+      "en": {
+        "kicker": "american symphony orchestra · washington, d.c., 1930",
+        "who": "The National Symphony Orchestra (NSO) is an American symphony orchestra based in Washington, D.C. It was founded in 1930 by cellist Hans Kindler.",
+        "facts": [
+          "The National Symphony Orchestra was founded in 1930 by cellist Hans Kindler.",
+          "Its principal performing venue is the John F. Kennedy Center for the Performing Arts."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches sinfonieorchester · washington, d.c., 1930",
+        "who": "Das National Symphony Orchestra (NSO) ist ein amerikanisches Sinfonieorchester mit Sitz in Washington, D.C. Es wurde 1930 vom Cellisten Hans Kindler gegründet.",
+        "facts": [
+          "Das National Symphony Orchestra wurde 1930 vom Cellisten Hans Kindler gegründet.",
+          "Seine wichtigste Spielstätte ist das John F. Kennedy Center for the Performing Arts."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan senfoni orkestrası · washington, d.c., 1930",
+        "who": "National Symphony Orchestra (NSO), merkezi Washington, D.C.'de olan Amerikan bir senfoni orkestrasıdır. 1930'da çellist Hans Kindler tarafından kuruldu.",
+        "facts": [
+          "National Symphony Orchestra, 1930'da çellist Hans Kindler tarafından kuruldu.",
+          "Başlıca konser mekânı John F. Kennedy Center for the Performing Arts'tır."
+        ]
+      }
+    },
+    {
+      "id": "05e725c4-8824-47de-8659-3e91a6e62ae5",
+      "slug": "sammy-rae-and-the-friends-the-get-down-33ff562b",
+      "title": "Sammy Rae & The Friends - the GET DOWN!",
+      "name": "Sammy Rae & The Friends",
+      "source_url": "https://en.wikipedia.org/wiki/Sammy_Rae_%26_The_Friends",
+      "extract": "Sammy Rae & The Friends is an American jazz-pop band from Brooklyn, New York City, led by singer-songwriter Samantha \"Sammy Rae\" Bowers. Formed in 2016, the group is known for high-energy live shows; in February 2024 they played two sold-out nights at Washington, D.C.’s 9:30 Club. Their debut studio album, Something for Everybody, was released on September 20, 2024, via Nettwerk, following the EPs The Good Life (2018) and Let's Throw a Party (2021).",
+      "en": {
+        "kicker": "american jazz-pop band · brooklyn, formed 2016",
+        "who": "Sammy Rae & The Friends is an American jazz-pop band from Brooklyn, New York City, led by singer-songwriter Samantha \"Sammy Rae\" Bowers. Formed in 2016, the group is known for high-energy live shows.",
+        "facts": [
+          "Formed in 2016, the group is known for high-energy live shows.",
+          "Their debut studio album, Something for Everybody, was released on September 20, 2024, via Nettwerk."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische jazz-pop-band · brooklyn, gegründet 2016",
+        "who": "Sammy Rae & The Friends ist eine amerikanische Jazz-Pop-Band aus Brooklyn, New York City, angeführt von Singer-Songwriterin Samantha \"Sammy Rae\" Bowers. 2016 gegründet, ist die Gruppe für energiegeladene Live-Shows bekannt.",
+        "facts": [
+          "2016 gegründet, ist die Gruppe für energiegeladene Live-Shows bekannt.",
+          "Ihr Debütalbum Something for Everybody erschien am 20. September 2024 bei Nettwerk."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı jazz-pop grubu · brooklyn, 2016'da kuruldu",
+        "who": "Sammy Rae & The Friends, şarkıcı-söz yazarı Samantha \"Sammy Rae\" Bowers önderliğinde New York City'nin Brooklyn semtinden Amerikalı bir jazz-pop grubudur. 2016'da kurulan grup, yüksek enerjili canlı performanslarıyla bilinir.",
+        "facts": [
+          "2016'da kurulan grup, yüksek enerjili canlı performanslarıyla bilinir.",
+          "Debut stüdyo albümleri Something for Everybody, 20 Eylül 2024'te Nettwerk üzerinden yayımlandı."
+        ]
+      }
+    }
+  ]
+}

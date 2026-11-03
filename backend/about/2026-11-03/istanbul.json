@@ -1,0 +1,70 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "45f7f57c-882f-4614-8e3b-121ad60a3dc9",
+      "slug": "hande-yener-8344e9cf",
+      "title": "Hande Yener",
+      "name": "Hande Yener",
+      "source_url": "https://en.wikipedia.org/wiki/Hande_Yener",
+      "extract": "Makbule Hande Özyener, known professionally as Hande Yener, is a Turkish singer and songwriter. She made her debut in the early 2000s, and since then has become a prominent figure of Turkish pop music with numerous songs that topped the music charts. Alongside her music career, she is also known for her choice of clothes and has renewed her image multiple times over the years. She has occasionally made changes in her music style as well; for a while, she started making electronic music, but this period was short-lived and she again returned to performing pop music. During her career, both her professional and personal life have been among the favorite subjects of columnists, and her rivalry ",
+      "en": {
+        "kicker": "turkish singer and songwriter · pop since the early 2000s",
+        "who": "Makbule Hande Özyener, known professionally as Hande Yener, is a Turkish singer and songwriter. Since her debut in the early 2000s she has become a prominent figure of Turkish pop music, with songs that topped the charts.",
+        "facts": [
+          "She made her debut in the early 2000s, and since then has become a prominent figure of Turkish pop music.",
+          "Alongside her music career, she is also known for her choice of clothes and has renewed her image multiple times over the years."
+        ]
+      },
+      "de": {
+        "kicker": "türkische sängerin und songwriterin · pop seit den frühen 2000ern",
+        "who": "Makbule Hande Özyener, bekannt als Hande Yener, ist eine türkische Sängerin und Songwriterin. Seit ihrem Debüt Anfang der 2000er ist sie eine prägende Figur des türkischen Pop, mit Songs, die die Charts anführten.",
+        "facts": [
+          "Sie debütierte Anfang der 2000er und ist seitdem eine prägende Figur des türkischen Pop.",
+          "Neben ihrer Musikkarriere ist sie auch für ihre Kleiderwahl bekannt und hat ihr Image über die Jahre mehrfach erneuert."
+        ]
+      },
+      "tr": {
+        "kicker": "türk şarkıcı ve söz yazarı · 2000'lerin başından beri pop",
+        "who": "Makbule Hande Özyener, sahne adıyla Hande Yener, Türk bir şarkıcı ve söz yazarıdır. 2000'lerin başındaki debut'undan beri Türk pop müziğinin öne çıkan isimlerinden biri ve listelerin zirvesine çıkan şarkıları var.",
+        "facts": [
+          "2000'lerin başında debut yaptı ve o zamandan beri Türk pop müziğinin öne çıkan isimlerinden biri oldu.",
+          "Müzik kariyerinin yanı sıra kıyafet seçimleriyle de tanınır ve yıllar içinde görüntüsünü birçok kez yeniledi."
+        ]
+      }
+    },
+    {
+      "id": "4c8f9856-8e50-4e89-b22b-ae68ccf297db",
+      "slug": "simge-650cd4f2",
+      "title": "Simge",
+      "name": "Simge",
+      "source_url": "https://en.wikipedia.org/wiki/Simge_(singer)",
+      "extract": "Simge Sağın, known mononymously as Simge, is a Turkish singer. From early 2010s, she started to make Turkish pop songs, and with the release of her single \"Miş Miş\" in 2015 she became one of the most famous artists in Turkey.",
+      "en": {
+        "kicker": "turkish singer · pop since the 2010s",
+        "who": "Simge Sağın, known mononymously as Simge, is a Turkish singer. From the early 2010s she started to make Turkish pop songs, and she became one of the most famous artists in Turkey.",
+        "facts": [
+          "From the early 2010s she started to make Turkish pop songs.",
+          "With the release of her single \"Miş Miş\" in 2015 she became one of the most famous artists in Turkey."
+        ]
+      },
+      "de": {
+        "kicker": "türkische sängerin · pop seit den 2010ern",
+        "who": "Simge Sağın, unter dem Namen Simge bekannt, ist eine türkische Sängerin. Seit Anfang der 2010er macht sie türkischen Pop und wurde zu einer der bekanntesten Künstlerinnen der Türkei.",
+        "facts": [
+          "Seit Anfang der 2010er macht sie türkische Popsongs.",
+          "Mit ihrer Single \"Miş Miş\" von 2015 wurde sie eine der bekanntesten Künstlerinnen der Türkei."
+        ]
+      },
+      "tr": {
+        "kicker": "türk şarkıcı · 2010'lardan beri pop",
+        "who": "Simge Sağın, tek adıyla Simge, Türk bir şarkıcıdır. 2010'ların başından itibaren Türkçe pop şarkılar yapmaya başladı ve Türkiye'nin en ünlü sanatçılarından biri oldu.",
+        "facts": [
+          "2010'ların başından itibaren Türkçe pop şarkılar yapmaya başladı.",
+          "2015'te yayımladığı \"Miş Miş\" single'ı ile Türkiye'nin en ünlü sanatçılarından biri oldu."
+        ]
+      }
+    }
+  ]
+}

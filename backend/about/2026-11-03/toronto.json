@@ -1,0 +1,38 @@
+{
+  "city": "toronto",
+  "day": "2026-11-03",
+  "nights": [
+    {
+      "id": "6eb156ab-e915-4c89-9dc9-334e466afd49",
+      "slug": "olafur-arnalds-da470589",
+      "title": "Ólafur Arnalds",
+      "name": "Ólafur Arnalds",
+      "source_url": "https://en.wikipedia.org/wiki/%C3%93lafur_Arnalds",
+      "extract": "Ólafur Arnalds is an Icelandic multi-instrumentalist and producer from Mosfellsbær, Iceland. He mixes strings and piano with loops and beats, a sound ranging from ambient/electronic to atmospheric pop. He is also the former drummer for hardcore punk and metal bands Fighting Shit, Celestine, and others.",
+      "en": {
+        "kicker": "icelandic multi-instrumentalist and producer",
+        "who": "Ólafur Arnalds is an Icelandic multi-instrumentalist and producer from Mosfellsbær. He mixes strings and piano with loops and beats, a sound ranging from ambient and electronic to atmospheric pop.",
+        "facts": [
+          "He mixes strings and piano with loops and beats.",
+          "He is also the former drummer for hardcore punk and metal bands Fighting Shit, Celestine, and others."
+        ]
+      },
+      "de": {
+        "kicker": "isländischer multiinstrumentalist und produzent",
+        "who": "Ólafur Arnalds ist ein isländischer Multiinstrumentalist und Produzent aus Mosfellsbær. Er verbindet Streicher und Klavier mit Loops und Beats, zwischen Ambient, Elektronik und atmosphärischem Pop.",
+        "facts": [
+          "Er verbindet Streicher und Klavier mit Loops und Beats.",
+          "Er war außerdem Schlagzeuger der Hardcore-Punk- und Metal-Bands Fighting Shit, Celestine und anderer."
+        ]
+      },
+      "tr": {
+        "kicker": "izlandalı çok enstrümanlı müzisyen ve yapımcı",
+        "who": "Ólafur Arnalds, Mosfellsbær'den bir İzlandalı çok enstrümanlı müzisyen ve yapımcıdır. Yaylı çalgıları ve piyanoyu loop'lar ve beat'lerle harmanlar; sesi ambient ve elektronikten atmosferik pop'a uzanır.",
+        "facts": [
+          "Yaylı çalgıları ve piyanoyu loop'lar ve beat'lerle harmanlar.",
+          "Hardcore punk ve metal gruplarından Fighting Shit, Celestine ve diğerlerinin eski davulcusudur."
+        ]
+      }
+    }
+  ]
+}

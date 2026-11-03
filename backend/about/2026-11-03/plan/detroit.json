@@ -1,0 +1,16 @@
+{
+ "city": "detroit",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "74fc7bbe-6cd2-4851-8945-147419439046",
+   "slug": "the-neighbourhood-the-wourld-tour-c5be3ad9",
+   "title": "The Neighbourhood: THE WOURLD TOUR",
+   "act": "The Neighbourhood",
+   "name": "The Neighbourhood",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Neighbourhood",
+   "extract": "The Neighbourhood is an American alternative rock band formed in Newbury Park, California, in 2011. The band consists of vocalist Jesse Rutherford, guitarists Jeremy Fredman and Zach Abels, bassist Mikey Margott and drummer Brandon Fried. After releasing two EPs, I'm Sorry... and Thank You, The Neighbourhood signed with Columbia Records to release their debut studio album, I Love You. in 2013. \"Sweater Weather\", the album's third single, became the only song from the project on the Billboard Hot 100, peaking at number 14, and resurged in popularity nearly a decade later on radio airplay and Spotify. Other notable hits from the band include \"Afraid\", \"Daddy Issues\", \"Baby Come Home 2/Valentines\", \"Softcore\", \"You Get Me So High\", \"Reflections\" and \"The Beach\"."
+  }
+ ]
+}

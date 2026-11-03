@@ -1,0 +1,14 @@
+{
+  "city": "porto",
+  "day": "2026-11-04",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "fc porto – napoli at the dragão.", "de": "fc porto – neapel im dragão.", "tr": "fc porto – napoli, dragão'da." },
+      "line":  { "en": "champions league, kick-off 20:00 at the estádio do dragão. the club's own agenda lists the time.", "de": "champions league, anpfiff 20:00 im estádio do dragão. die uhrzeit steht in der offiziellen agenda des klubs.", "tr": "şampiyonlar ligi, saat 20:00'de estádio do dragão'da. başlama saati kulübün kendi takviminde yazıyor." },
+      "place": { "en": "estádio do dragão", "de": "estádio do dragão", "tr": "estádio do dragão" },
+      "hour": 20, "minute": 0,
+      "why": "FC Porto v SSC Napoli, Champions League matchday 4, Wed 4 Nov 20:00 at the Dragão (fcporto.pt weekly agenda, Sport TV5 listing)."
+    }
+  ]
+}

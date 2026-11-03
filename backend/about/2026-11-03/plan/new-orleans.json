@@ -1,0 +1,16 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-03",
+ "nights": [
+  {
+   "id": "acad8d66-f580-417f-a264-247b5e5e2790",
+   "slug": "cory-branan-1bdf8828",
+   "title": "Cory Branan",
+   "act": "Cory Branan",
+   "name": "Cory Branan",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Cory_Branan",
+   "extract": "Cory Dale Branan is an American singer-songwriter from Mississippi."
+  }
+ ]
+}
