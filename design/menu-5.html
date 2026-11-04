@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>menu — design 5</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* afterhours — menu designs (owner, 04.11.2026). The site's rules, strictly:
+   black on white, one typeface, no boxes, no shadows, no rounded corners;
+   the only line is a 1px hairline. The small labels are 10px, uppercase,
+   tracked, at 38–50% opacity, as everywhere on the site. */
+:root{--black:#000;--white:#fff;--red:#d7261e;--hair:rgba(0,0,0,.14);--sans:"Inter Tight",system-ui,sans-serif;--logo:"ArchivoLogo","Archivo","Inter Tight",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--white)}
+body{font-family:var(--sans);color:var(--black);background:var(--white);font-size:14px;line-height:1.5;padding:44px 32px 120px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.page{max-width:1240px;margin:0 auto}
+h1{font-size:15px;font-weight:500;letter-spacing:-.01em}
+h1 span{opacity:.45;font-weight:400}
+p.lead{font-size:13px;max-width:720px;opacity:.6;margin:6px 0 40px}
+.lab{font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.42;display:block;margin:0 0 10px}
+section{margin-bottom:56px}
+/* frames: a hairline around the rendered header, nothing more */
+.frame{border:1px solid var(--hair);background:var(--white);overflow:hidden}
+.frame.desk{width:100%;max-width:1180px}
+.frame.phone{width:390px;max-width:100%}
+.pair{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start}
+.pair>div{min-width:0}
+.pair>div.d{flex:1 1 640px}
+.pair>div.p{flex:0 0 390px;max-width:100%}
+/* the site header, as style.css has it */
+.hd{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;padding:28px 32px 22px}
+.links{flex-wrap:wrap;row-gap:14px}
+.logo{font-family:var(--logo);font-size:26px;font-weight:900;letter-spacing:-.02em;line-height:1}
+.logo::after{content:".";color:var(--red)}
+.links{display:flex;gap:34px;align-items:flex-start}
+.links a{display:block;font-size:15px;letter-spacing:-.01em;white-space:nowrap}
+.links a[aria-current]{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.links a small,.map small{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.42;margin-top:8px;font-weight:400}
+.links a small.red{color:var(--red);opacity:.85}
+.plus{font-size:19px;line-height:15px;font-weight:300}
+/* what the page under the header looks like (a hint only) */
+.body{border-top:1px solid var(--hair);padding:22px 32px 26px;font-size:12px;opacity:.5}
+.body b{font-weight:500}
+/* phone */
+.phone .hd{padding:14px 16px 10px;flex-wrap:wrap;gap:6px 0}
+.phone .logo{font-size:22px;flex:1 0 100%}
+.phone .links{flex:1 0 100%;gap:14px;flex-wrap:wrap;margin-top:8px}
+.phone .links a{font-size:12px}
+.phone .links a small{display:none}
+.phone .map{padding:10px 16px 12px;border-top:1px solid var(--hair);font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.42;line-height:1.7}
+.phone .body{padding:16px 16px 18px}
+/* table */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-weight:400;font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.42;padding:0 0 10px;border-bottom:1px solid var(--black)}
+td{padding:11px 24px 11px 0;border-bottom:1px solid var(--hair);vertical-align:top}
+td:first-child{font-weight:500;width:22%}
+td:nth-child(2){width:24%}
+td i{font-style:normal;opacity:.5}
+td em{font-style:normal;color:var(--red)}
+/* notes */
+.notes{list-style:none;max-width:760px}
+.notes li{padding:10px 0;border-bottom:1px solid var(--hair);font-size:13px;display:grid;grid-template-columns:110px 1fr;gap:16px}
+.notes li b{font-weight:400;font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.42;padding-top:4px}
+.notes li:first-child{border-top:1px solid var(--black)}
+@media (max-width:720px){body{padding:24px 16px 80px}.hd{padding:14px 16px 10px;flex-wrap:wrap;gap:6px 0}.logo{font-size:22px;flex:1 0 100%}.links{flex:1 0 100%;gap:14px;flex-wrap:wrap;margin-top:8px}.links a{font-size:12px}.links a small{display:none}.notes li{grid-template-columns:1fr;gap:4px}}
+
+.hd5 .links{gap:30px}
+.open{margin-left:auto;padding-left:34px}
+.open a{font-size:15px}
+.open a::after{content:" →"}
+.door{border-top:1px solid var(--hair);padding:34px 32px 40px;display:grid;grid-template-columns:1fr 390px;gap:48px;align-items:start}
+.door h2{font-size:34px;font-weight:500;letter-spacing:-.03em;line-height:1.05;max-width:520px}
+.door p{font-size:13px;opacity:.6;max-width:440px;margin-top:14px}
+.door .cta{margin-top:22px;font-size:15px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;display:inline-block}
+.pwa{border:1px solid var(--black);height:520px;position:relative;display:flex;flex-direction:column;justify-content:space-between}
+.pwa .top{padding:14px 16px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.42;display:flex;justify-content:space-between}
+.pwa .card{margin:0 auto;width:250px;height:330px;border:1px solid var(--black);display:flex;flex-direction:column;justify-content:flex-end;padding:14px}
+.pwa .card b{font-weight:500;font-size:15px;display:block}
+.pwa .card span{font-size:11px;opacity:.55}
+.pwa .bar{display:flex;justify-content:space-around;border-top:1px solid var(--black);padding:12px 8px;font-size:11px}
+.pwa .bar b{font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.pwa .plus5{position:absolute;right:16px;bottom:58px;width:28px;height:28px;border:1px solid var(--black);display:grid;place-items:center;font-size:18px;line-height:1;font-weight:300}
+.pwa .under{position:absolute;left:0;right:0;top:50%;text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.42;transform:translateY(-50%);pointer-events:none;display:none}
+.phone .hd5 .links{gap:16px}
+.phone .open{margin-left:0;padding-left:0}
+.phone .open a{font-size:12px}
+.phone .door{grid-template-columns:1fr;padding:18px 16px 16px;gap:16px}
+.phone .door h2{font-size:22px}
+.phone .pwa{height:420px}
+.phone .pwa .card{width:200px;height:250px}
+.what{max-width:760px;font-size:13px}
+.what p{padding:10px 0;border-bottom:1px solid var(--hair)}
+.what p:first-child{border-top:1px solid var(--black)}
+.what b{font-weight:500}
+</style>
+</head>
+<body>
+<div class="page">
+<h1>menu — design 5 <span>· the site is the pwa's door</span></h1>
+
+<p class="lead">the radical one. the site stops being a second version of the product and becomes its door: a header of four words — afterhours · map · host · account — and one verb, “open the web app”. everything that is the product (the deck, the people, the rooms, the collection) lives in the PWA, framed on the landing page and installed from it.</p>
+
+<section>
+<div class="pair">
+<div class="d">
+<span class="lab">desktop · 1180 · the landing</span>
+<div class="frame desk">
+  <div class="hd hd5">
+    <a class="logo" href="#">afterhours</a>
+    <nav class="links">
+      <a href="#">map<small>map</small></a>
+      <a href="#">host<small>flow “+”</small></a>
+      <a href="#">account<small>you</small></a>
+      <span class="open"><a href="#">open the web app</a><small style="display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.42;margin-top:8px">the pwa · all five tabs</small></span>
+    </nav>
+  </div>
+  <div class="door">
+    <div>
+      <h2>one night at a time. keep it or let it go.</h2>
+      <p>no search. the deck hands you a night, you swipe. every night you go to becomes a card. the web app is the same app, in the browser, installable from this page.</p>
+      <a class="cta" href="#">open the web app</a>
+    </div>
+    <div class="pwa" aria-label="the pwa, framed">
+      <div class="top"><span>afterhours · web app</span><span>munich · tonight</span></div>
+      <div class="card"><b>blitz · friday</b><span>techno · 23:00 · 1.4 km · 3 of yours were here</span></div>
+      <span class="plus5">+</span>
+      <div class="bar"><span>messages</span><span>connect</span><b>flow</b><span>map</span><span>account</span></div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="p">
+<span class="lab">phone · 390 · the door is the app</span>
+<div class="frame phone">
+  <div class="hd hd5">
+    <a class="logo" href="#">afterhours</a>
+    <nav class="links">
+      <a href="#">map</a><a href="#">host</a><a href="#">account</a><span class="open"><a href="#">open the web app</a></span>
+    </nav>
+  </div>
+  <div class="map">map → map · host → flow “+” · account → you · open the web app → messages, connect, flow, map, account</div>
+  <div class="door">
+    <div class="pwa">
+      <div class="top"><span>web app</span><span>add to home screen</span></div>
+      <div class="card"><b>blitz · friday</b><span>techno · 23:00 · 1.4 km</span></div>
+      <span class="plus5">+</span>
+      <div class="bar"><span>messages</span><span>connect</span><b>flow</b><span>map</span><span>account</span></div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<span class="lab">site word → app tab → what's there</span>
+<table><thead><tr><th>site word</th><th>app tab</th><th>what's there</th></tr></thead><tbody>
+<tr><td>afterhours</td><td>—</td><td>the landing: the sentence, the framed web app, the store links, the footer. the only page that is not the app</td></tr>
+<tr><td>map</td><td>map</td><td>the one app tab that also makes sense as a public page: nights on a map, no sign-in, shareable by link</td></tr>
+<tr><td>host</td><td>flow's “+”</td><td>make a night, with a ticket / among friends. hosts arrive from a laptop; this stays a real web page (<i>host/</i>)</td></tr>
+<tr><td>account</td><td>account</td><td>sign in, register, reset, settings, download my data, delete. the forms stay on the web; the app's account tab opens them</td></tr>
+<tr><td>open the web app</td><td>messages · connect · flow · map · account</td><td>the pwa: the deck instead of the wall, the people, the rooms, the collection. the night pages (<i>explore/event/?slug=</i>) stay as public links and open inside it</td></tr>
+<tr><td>help · legal · language</td><td>settings</td><td>help becomes a page inside the web app's account; impressum, datenschutz, agb and the language picker stay in the site footer</td></tr>
+</tbody></table>
+</section>
+
+<section>
+<span class="lab">what this would mean</span>
+<div class="what">
+<p><b>the wall goes.</b> the web no longer has its own way of showing nights; the deck is the one way, in the app and in the browser. <i>explore/</i> becomes a redirect into the web app's flow tab. the README's “two surfaces” becomes one surface with a door in front.</p>
+<p><b>the closed pages go.</b> <i>friends/</i>, <i>maps/</i>, <i>djs/</i> and their “only available in the app” with the phone preview are no longer needed: the thing itself is one click away.</p>
+<p><b>the pwa must carry it.</b> today the pwa is the expo app in a browser. for this design it has to work signed out (the deck in read-only), take a night link, install cleanly on ios and android, and be as fast as the plain html it replaces. this is the real cost — weeks, not days.</p>
+<p><b>the site keeps four jobs.</b> the door (landing + store links), hosting, the account forms, the legal pages. these are the pages that search engines and e-mails land on, and they stay plain html with no build step.</p>
+<p><b>the words line up by removal.</b> there is no second vocabulary left to align: the app's five words are the product, the site's four words are the frame around it.</p>
+</div>
+</section>
+
+<section>
+<span class="lab">notes</span>
+<ul class="notes"><li><b>renamed</b><span>host an event → host. nothing else — the other words are the app's and arrive with it</span></li><li><b>moves</b><span>explore, your people, collection, help, messages, groups all move into the web app. host and account stay as pages</span></li><li><b>stays web-only</b><span>the landing, host, the account forms, the legal pages, language, the night page as a public link</span></li><li><b>the risk</b><span>it bets the web on the pwa. if the pwa is slow or cannot be installed from a given browser, the web has nothing to show but a sentence</span></li><li><b>why this one</b><span>it is the only design where the three faces are not aligned but identical: the site is a frame, the app is the product, the pwa is the app</span></li></ul></section>
+</div>
+</body>
+</html>

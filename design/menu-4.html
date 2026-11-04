@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>menu — design 4</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* afterhours — menu designs (owner, 04.11.2026). The site's rules, strictly:
+   black on white, one typeface, no boxes, no shadows, no rounded corners;
+   the only line is a 1px hairline. The small labels are 10px, uppercase,
+   tracked, at 38–50% opacity, as everywhere on the site. */
+:root{--black:#000;--white:#fff;--red:#d7261e;--hair:rgba(0,0,0,.14);--sans:"Inter Tight",system-ui,sans-serif;--logo:"ArchivoLogo","Archivo","Inter Tight",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--white)}
+body{font-family:var(--sans);color:var(--black);background:var(--white);font-size:14px;line-height:1.5;padding:44px 32px 120px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.page{max-width:1240px;margin:0 auto}
+h1{font-size:15px;font-weight:500;letter-spacing:-.01em}
+h1 span{opacity:.45;font-weight:400}
+p.lead{font-size:13px;max-width:720px;opacity:.6;margin:6px 0 40px}
+.lab{font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.42;display:block;margin:0 0 10px}
+section{margin-bottom:56px}
+/* frames: a hairline around the rendered header, nothing more */
+.frame{border:1px solid var(--hair);background:var(--white);overflow:hidden}
+.frame.desk{width:100%;max-width:1180px}
+.frame.phone{width:390px;max-width:100%}
+.pair{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start}
+.pair>div{min-width:0}
+.pair>div.d{flex:1 1 640px}
+.pair>div.p{flex:0 0 390px;max-width:100%}
+/* the site header, as style.css has it */
+.hd{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;padding:28px 32px 22px}
+.links{flex-wrap:wrap;row-gap:14px}
+.logo{font-family:var(--logo);font-size:26px;font-weight:900;letter-spacing:-.02em;line-height:1}
+.logo::after{content:".";color:var(--red)}
+.links{display:flex;gap:34px;align-items:flex-start}
+.links a{display:block;font-size:15px;letter-spacing:-.01em;white-space:nowrap}
+.links a[aria-current]{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.links a small,.map small{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.42;margin-top:8px;font-weight:400}
+.links a small.red{color:var(--red);opacity:.85}
+.plus{font-size:19px;line-height:15px;font-weight:300}
+/* what the page under the header looks like (a hint only) */
+.body{border-top:1px solid var(--hair);padding:22px 32px 26px;font-size:12px;opacity:.5}
+.body b{font-weight:500}
+/* phone */
+.phone .hd{padding:14px 16px 10px;flex-wrap:wrap;gap:6px 0}
+.phone .logo{font-size:22px;flex:1 0 100%}
+.phone .links{flex:1 0 100%;gap:14px;flex-wrap:wrap;margin-top:8px}
+.phone .links a{font-size:12px}
+.phone .links a small{display:none}
+.phone .map{padding:10px 16px 12px;border-top:1px solid var(--hair);font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.42;line-height:1.7}
+.phone .body{padding:16px 16px 18px}
+/* table */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-weight:400;font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.42;padding:0 0 10px;border-bottom:1px solid var(--black)}
+td{padding:11px 24px 11px 0;border-bottom:1px solid var(--hair);vertical-align:top}
+td:first-child{font-weight:500;width:22%}
+td:nth-child(2){width:24%}
+td i{font-style:normal;opacity:.5}
+td em{font-style:normal;color:var(--red)}
+/* notes */
+.notes{list-style:none;max-width:760px}
+.notes li{padding:10px 0;border-bottom:1px solid var(--hair);font-size:13px;display:grid;grid-template-columns:110px 1fr;gap:16px}
+.notes li b{font-weight:400;font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.42;padding-top:4px}
+.notes li:first-child{border-top:1px solid var(--black)}
+@media (max-width:720px){body{padding:24px 16px 80px}.hd{padding:14px 16px 10px;flex-wrap:wrap;gap:6px 0}.logo{font-size:22px;flex:1 0 100%}.links{flex:1 0 100%;gap:14px;flex-wrap:wrap;margin-top:8px}.links a{font-size:12px}.links a small{display:none}.notes li{grid-template-columns:1fr;gap:4px}}
+
+.c .hd{flex-direction:column;align-items:center;padding:26px 32px 18px;gap:16px}
+.c .logo{font-size:28px}
+.c .links{gap:0;align-items:baseline;justify-content:center;flex-wrap:wrap}
+.c .links a{text-align:center}
+.c .links a+a::before{content:"·";opacity:.35;margin:0 16px}
+.c .links a small{display:none}
+.c .maps{display:flex;justify-content:center;gap:0;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.42;padding:0 32px 18px;text-align:center;flex-wrap:wrap}
+.c .maps span+span::before{content:"·";margin:0 14px;opacity:.6}
+.c .sub{display:flex;justify-content:center;gap:0;font-size:13px;padding:0 32px 18px;flex-wrap:wrap}
+.c .sub a+a::before{content:"·";opacity:.35;margin:0 12px}
+.c .sub a[aria-current]{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.c .sub .who{opacity:.5;margin-right:18px}
+.phone.c .hd{padding:16px 16px 12px;gap:12px}
+.phone.c .logo{font-size:22px;flex:none}
+.phone.c .links{flex:none;margin:0}
+.phone.c .links a{font-size:12px}
+.phone.c .links a+a::before{margin:0 8px}
+.phone.c .maps{display:none}
+.phone.c .sub{font-size:12px;padding:0 16px 14px}
+.phone.c .sub a+a::before{margin:0 8px}
+.two{display:grid;gap:28px}
+</style>
+</head>
+<body>
+<div class="page">
+<h1>menu — design 4 <span>· one word-mark, one line, mirrored from the bar</span></h1>
+
+<p class="lead">one centred word-mark and under it one line of words, “·” between them, the app's tab bar read left to right. no dropdown anywhere: on the account page a third line appears with what the app keeps behind account — collection, settings, help. on every other page that line does not exist.</p>
+
+<section>
+<div class="two">
+<div>
+<span class="lab">desktop · 1180 · on the wall — two lines</span>
+<div class="frame desk c">
+  <div class="hd">
+    <a class="logo" href="#">afterhours</a>
+    <nav class="links">
+      <a href="#">messages</a><a href="#">connect</a><a href="#" aria-current="page">flow</a><a href="#">map</a><a href="#">account</a>
+    </nav>
+  </div>
+  <div class="maps"><span>in the app</span><span>people · yours</span><span>the deck · here the wall</span><span>map · preview</span><span>you</span></div>
+  <div class="body" style="text-align:center"><b>soonest first.</b> 115 nights · munich</div>
+</div>
+</div>
+<div>
+<span class="lab">desktop · 1180 · on the account page, signed in as ada — the third line appears</span>
+<div class="frame desk c">
+  <div class="hd">
+    <a class="logo" href="#">afterhours</a>
+    <nav class="links">
+      <a href="#">messages</a><a href="#">connect</a><a href="#">flow</a><a href="#">map</a><a href="#" aria-current="page">account</a>
+    </nav>
+  </div>
+  <div class="sub"><span class="who">welcome ada (:</span><a href="#" aria-current="page">your page</a><a href="#">collection</a><a href="#">host a night</a><a href="#">settings</a><a href="#">help</a><a href="#">sign out</a></div>
+  <div class="body" style="text-align:center"><b>what you kept.</b> 3 nights · 1 card</div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="pair">
+<div class="p">
+<span class="lab">phone · 390 · on the wall</span>
+<div class="frame phone c">
+  <div class="hd">
+    <a class="logo" href="#">afterhours</a>
+    <nav class="links">
+      <a href="#">messages</a><a href="#">connect</a><a href="#" aria-current="page">flow</a><a href="#">map</a><a href="#">account</a>
+    </nav>
+  </div>
+  <div class="map" style="text-align:center">messages → in the app · connect → people · flow → the deck, here the wall · map → map · account → you</div>
+  <div class="body" style="text-align:center"><b>soonest first.</b> 115 nights · munich</div>
+</div>
+</div>
+<div class="p">
+<span class="lab">phone · 390 · on the account page</span>
+<div class="frame phone c">
+  <div class="hd">
+    <a class="logo" href="#">afterhours</a>
+    <nav class="links">
+      <a href="#">messages</a><a href="#">connect</a><a href="#">flow</a><a href="#">map</a><a href="#" aria-current="page">account</a>
+    </nav>
+  </div>
+  <div class="sub"><a href="#" aria-current="page">your page</a><a href="#">collection</a><a href="#">host</a><a href="#">settings</a><a href="#">help</a></div>
+  <div class="body" style="text-align:center"><b>what you kept.</b> 3 nights · 1 card</div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<span class="lab">site word → app tab → what's there</span>
+<table><thead><tr><th>site word</th><th>app tab</th><th>what's there</th></tr></thead><tbody>
+<tr><td>messages</td><td>messages</td><td>the rooms, dms. closed on the web: the page says “in the app” with the phone preview</td></tr>
+<tr><td>connect</td><td>people <i>(connect.)</i></td><td>your people, requests, groups. <i>friends/</i>, closed</td></tr>
+<tr><td>flow</td><td>flow <i>(the deck)</i></td><td>on the web: the wall. the word is the app's; the second line under the menu says “the deck · here the wall”</td></tr>
+<tr><td>map</td><td>map</td><td><i>maps/</i>, closed, the preview</td></tr>
+<tr><td>account</td><td>account</td><td>your page — and only here the third line: your page · collection · host a night · settings · help · sign out</td></tr>
+<tr><td>third line</td><td>account's inner pages</td><td>collection (<i>cards/</i>), host (<i>host/</i>, the app's “+”), settings, help, feedback. hosting lives under account because a host is a signed-in person</td></tr>
+</tbody></table>
+</section>
+
+<section>
+<span class="lab">notes</span>
+<ul class="notes"><li><b>renamed</b><span>explore → flow · your people → connect · host an event → host a night (under account)</span></li><li><b>moves</b><span>host, collection and help leave the top line and live on the account page's third line. the greeting “welcome ada (:” moves from the menu word to the start of that line; “account” stays “account” whether signed in or not</span></li><li><b>stays web-only</b><span>the account page's third line is the web's; the app has these behind a screen, not in a row. language stays in the footer</span></li><li><b>the risk</b><span>a centred header changes every page's top: the logo is no longer top-left, and the landing's transparent header sits over the poster wall centred. hosting is two clicks from the home page, which is a step back for hosts</span></li><li><b>why this one</b><span>it reads like a title page: the name, then the five words, mirrored from the bar in the thumb's order. it is the most app-like without borrowing a single app shape</span></li></ul></section>
+</div>
+</body>
+</html>

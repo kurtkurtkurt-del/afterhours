@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>menu — design 1</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* afterhours — menu designs (owner, 04.11.2026). The site's rules, strictly:
+   black on white, one typeface, no boxes, no shadows, no rounded corners;
+   the only line is a 1px hairline. The small labels are 10px, uppercase,
+   tracked, at 38–50% opacity, as everywhere on the site. */
+:root{--black:#000;--white:#fff;--red:#d7261e;--hair:rgba(0,0,0,.14);--sans:"Inter Tight",system-ui,sans-serif;--logo:"ArchivoLogo","Archivo","Inter Tight",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--white)}
+body{font-family:var(--sans);color:var(--black);background:var(--white);font-size:14px;line-height:1.5;padding:44px 32px 120px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.page{max-width:1240px;margin:0 auto}
+h1{font-size:15px;font-weight:500;letter-spacing:-.01em}
+h1 span{opacity:.45;font-weight:400}
+p.lead{font-size:13px;max-width:720px;opacity:.6;margin:6px 0 40px}
+.lab{font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.42;display:block;margin:0 0 10px}
+section{margin-bottom:56px}
+/* frames: a hairline around the rendered header, nothing more */
+.frame{border:1px solid var(--hair);background:var(--white);overflow:hidden}
+.frame.desk{width:100%;max-width:1180px}
+.frame.phone{width:390px;max-width:100%}
+.pair{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start}
+.pair>div{min-width:0}
+.pair>div.d{flex:1 1 640px}
+.pair>div.p{flex:0 0 390px;max-width:100%}
+/* the site header, as style.css has it */
+.hd{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;padding:28px 32px 22px}
+.links{flex-wrap:wrap;row-gap:14px}
+.logo{font-family:var(--logo);font-size:26px;font-weight:900;letter-spacing:-.02em;line-height:1}
+.logo::after{content:".";color:var(--red)}
+.links{display:flex;gap:34px;align-items:flex-start}
+.links a{display:block;font-size:15px;letter-spacing:-.01em;white-space:nowrap}
+.links a[aria-current]{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.links a small,.map small{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.42;margin-top:8px;font-weight:400}
+.links a small.red{color:var(--red);opacity:.85}
+.plus{font-size:19px;line-height:15px;font-weight:300}
+/* what the page under the header looks like (a hint only) */
+.body{border-top:1px solid var(--hair);padding:22px 32px 26px;font-size:12px;opacity:.5}
+.body b{font-weight:500}
+/* phone */
+.phone .hd{padding:14px 16px 10px;flex-wrap:wrap;gap:6px 0}
+.phone .logo{font-size:22px;flex:1 0 100%}
+.phone .links{flex:1 0 100%;gap:14px;flex-wrap:wrap;margin-top:8px}
+.phone .links a{font-size:12px}
+.phone .links a small{display:none}
+.phone .map{padding:10px 16px 12px;border-top:1px solid var(--hair);font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.42;line-height:1.7}
+.phone .body{padding:16px 16px 18px}
+/* table */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-weight:400;font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.42;padding:0 0 10px;border-bottom:1px solid var(--black)}
+td{padding:11px 24px 11px 0;border-bottom:1px solid var(--hair);vertical-align:top}
+td:first-child{font-weight:500;width:22%}
+td:nth-child(2){width:24%}
+td i{font-style:normal;opacity:.5}
+td em{font-style:normal;color:var(--red)}
+/* notes */
+.notes{list-style:none;max-width:760px}
+.notes li{padding:10px 0;border-bottom:1px solid var(--hair);font-size:13px;display:grid;grid-template-columns:110px 1fr;gap:16px}
+.notes li b{font-weight:400;font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.42;padding-top:4px}
+.notes li:first-child{border-top:1px solid var(--black)}
+@media (max-width:720px){body{padding:24px 16px 80px}.hd{padding:14px 16px 10px;flex-wrap:wrap;gap:6px 0}.logo{font-size:22px;flex:1 0 100%}.links{flex:1 0 100%;gap:14px;flex-wrap:wrap;margin-top:8px}.links a{font-size:12px}.links a small{display:none}.notes li{grid-template-columns:1fr;gap:4px}}
+</style>
+</head>
+<body>
+<div class="page">
+<h1>menu — design 1 <span>· the app's five words</span></h1>
+
+<p class="lead">the site takes the app's five words, exactly and in the app's order. hosting is a "+" as in the app. what the web cannot open says so under the word — not after you click.</p>
+
+<section>
+<div class="pair">
+<div class="d">
+<span class="lab">desktop · 1180 · signed out, on the wall</span>
+<div class="frame desk">
+  <div class="hd">
+    <a class="logo" href="#">afterhours</a>
+    <nav class="links">
+      <a href="#">messages<small class="red">in the app</small></a>
+      <a href="#">connect<small>people · yours</small></a>
+      <a href="#" aria-current="page">flow<small>the deck · here: the wall</small></a>
+      <a href="#">map<small>map · preview</small></a>
+      <a href="#" class="plus" title="host an event">+<small>make a night</small></a>
+      <a href="#">account<small>you · collection · help</small></a>
+    </nav>
+  </div>
+  <div class="body"><b>soonest first.</b> 115 nights · munich · the filter line sits here</div>
+</div>
+</div>
+<div class="p">
+<span class="lab">phone · 390</span>
+<div class="frame phone">
+  <div class="hd">
+    <a class="logo" href="#">afterhours</a>
+    <nav class="links">
+      <a href="#">messages</a><a href="#">connect</a><a href="#" aria-current="page">flow</a><a href="#">map</a><a href="#" class="plus">+</a><a href="#">account</a>
+    </nav>
+  </div>
+  <div class="map">messages → in the app · connect → people · flow → the deck (here: the wall) · map → map · + → make a night · account → you, collection, help</div>
+  <div class="body"><b>soonest first.</b> 115 nights · munich</div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<span class="lab">site word → app tab → what's there</span>
+<table><thead><tr><th>site word</th><th>app tab</th><th>what's there</th></tr></thead><tbody>
+<tr><td>messages</td><td>messages</td><td>the rooms and your dms. <em>closed on the web</em>: the page says “in the app” and shows the phone preview</td></tr>
+<tr><td>connect</td><td>people <i>(titled connect.)</i></td><td>your people, requests, groups. on the web: <i>friends/</i>, closed, with the preview</td></tr>
+<tr><td>flow</td><td>flow <i>(the deck)</i></td><td>the deck in the app; on the web the same nights hang on the wall (<i>explore/</i>). the word is the app's, the page is the web's</td></tr>
+<tr><td>map</td><td>map</td><td>the map; closed on the web (<i>maps/</i>) until the web map exists</td></tr>
+<tr><td>+</td><td>flow's “+”</td><td>make a night: with a ticket / among friends → <i>host/</i></td></tr>
+<tr><td>account</td><td>account</td><td>you, settings, the collection (<i>cards/</i>), help, give feedback — one page with sub-lines</td></tr>
+</tbody></table>
+</section>
+
+<section>
+<span class="lab">notes</span>
+<ul class="notes"><li><b>renamed</b><span>explore → flow · your people → connect · host an event → + (the glyph, with “host an event” as its title)</span></li><li><b>moves</b><span>collection and help leave the menu and sit under account, as in the app. messages joins the menu even though it is closed on the web, so the row of words is the same on both sides</span></li><li><b>stays web-only</b><span>the wall itself (there is no deck in the browser), the night pages, login/register/reset, the legal pages, language</span></li><li><b>the risk</b><span>“flow” on a page that is a wall — a visitor who has never seen the app does not know the word. the small line under it carries the explanation; on the phone that line is lost, so the page title (“soonest first.”) has to do it</span></li><li><b>cost</b><span>menu.js keeps working (the account link still has <i>login/</i> in its href); the i18n keys nav.* get new values in en/de/tr; two new pages: <i>messages/</i> (closed) and the account sub-line</span></li></ul></section>
+</div>
+</body>
+</html>
