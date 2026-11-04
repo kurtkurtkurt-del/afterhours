@@ -858,6 +858,78 @@
    "slug": "tricky-uk-65721204",
    "city": "zurich",
    "why": "no page of that name (nearest: Tricky (rapper))"
+  },
+  {
+   "id": "e8e41789-47eb-44f5-8eb7-eb62c0b0d6ba",
+   "slug": "cem-adrian-bf7028b0",
+   "city": "boston",
+   "why": "thin: the extract is one sentence, so there is no second fact to write"
+  },
+  {
+   "id": "703bbdf0-cb5f-4d38-aa7d-f5418792a150",
+   "slug": "the-atlas-moth-b14bc035",
+   "city": "dallas",
+   "why": "thin: the extract is one sentence, so there is no second fact to write"
+  },
+  {
+   "id": "b99e9941-efc9-4019-92ea-24a093fcdc67",
+   "slug": "catch-your-breath-not-broken-enough-tour-d0b1bae0",
+   "city": "detroit",
+   "why": "thin: the extract is one sentence, so there is no second fact to write"
+  },
+  {
+   "id": "c75bc3ad-66db-447e-9141-eaa129c1e959",
+   "slug": "flawed-mangoes-ffebf4fe",
+   "city": "dublin",
+   "why": "thin: the extract is one sentence, so there is no second fact to write"
+  },
+  {
+   "id": "3264cbb5-8902-40bc-81d3-2223cf802c2a",
+   "slug": "skilla-baby-the-price-of-fame-tour-634e6027",
+   "city": "los-angeles",
+   "why": "thin: the extract is one sentence, so there is no second fact to write"
+  },
+  {
+   "id": "d0038a31-49c3-43d0-89c8-a4199af8023d",
+   "slug": "danny-brown-atrocity-exhibition-10-year-annivers-ae160b82",
+   "city": "los-angeles",
+   "why": "thin: the extract is one sentence, so there is no second fact to write"
+  },
+  {
+   "id": "fbbce8ec-cfc3-4691-9b77-176c8be941fe",
+   "slug": "cyrille-aimee-7a997843",
+   "city": "new-york",
+   "why": "thin: the extract is one sentence, so there is no second fact to write"
+  },
+  {
+   "id": "8b464754-a4d0-4678-a352-4d3a68b76cfc",
+   "slug": "beauty-school-dropout-the-circus-776dbb8b",
+   "city": "new-york",
+   "why": "thin: the extract is one sentence, so there is no second fact to write"
+  },
+  {
+   "id": "a44efe8e-6de4-4011-860a-c5c89dcceba7",
+   "slug": "we-are-scientists-4fe992bb",
+   "city": "dallas",
+   "why": "check: the kicker names an american band and a genre, which the extract does not state (it says only new york city-based rock band)"
+  },
+  {
+   "id": "7deb24b5-a7ea-4f9c-bf23-79d980d31466",
+   "slug": "swapmeet-c40e487a",
+   "city": "manchester",
+   "why": "check: the german text genders a member (sängerin) that the extract and english do not state"
+  },
+  {
+   "id": "136c3279-7c0f-497b-b9cf-50c3b1c7faab",
+   "slug": "twisted-teens-a3bda977",
+   "city": "new-york",
+   "why": "check: a german fact adds sound details found in neither english nor turkish"
+  },
+  {
+   "id": "7c661241-d782-4f3d-805e-4e88bc033641",
+   "slug": "svdden-death-482e7c89",
+   "city": "toronto",
+   "why": "check: the kicker asserts a nationality the extract does not state"
   }
  ]
 }

@@ -1,0 +1,38 @@
+{
+  "city": "philadelphia",
+  "day": "2026-11-04",
+  "nights": [
+    {
+      "id": "65a0ede2-ce80-4207-8a4e-7cf544c6de29",
+      "slug": "the-paradox-cb7e272d",
+      "title": "The Paradox",
+      "name": "The Paradox",
+      "source_url": "https://en.wikipedia.org/wiki/The_Paradox_(band)",
+      "extract": "The Paradox is an American pop-punk band from Atlanta, Georgia, formed in 2024. Its members are Eric Dangerfield, Donald Bryant (bass), Christopher \"Xelan\" Bernard, and Percy \"PC3\" Crews (drums). They are the first all-black punk band to be number 1 on Billboard's Alternative Airplay chart.",
+      "en": {
+        "kicker": "american pop-punk band · atlanta, 2024",
+        "who": "The Paradox is an American pop-punk band from Atlanta, Georgia, formed in 2024. They are the first all-black punk band to be number 1 on Billboard's Alternative Airplay chart.",
+        "facts": [
+          "The Paradox is an American pop-punk band from Atlanta, Georgia, formed in 2024.",
+          "They are the first all-black punk band to be number 1 on Billboard's Alternative Airplay chart."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische pop-punk-band · atlanta, 2024",
+        "who": "the paradox ist eine amerikanische pop-punk-band aus atlanta, georgia, gegründet 2024. sie sind die erste rein schwarze punkband, die auf platz 1 der billboard alternative airplay charts stand.",
+        "facts": [
+          "the paradox ist eine amerikanische pop-punk-band aus atlanta, georgia, 2024 gegründet.",
+          "sie sind die erste rein schwarze punkband mit platz 1 in den billboard-alternative-airplay-charts."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan pop-punk grubu · atlanta, 2024",
+        "who": "the paradox, georgia eyaletinin atlanta kentinden 2024'te kurulmuş amerikan bir pop-punk grubudur. billboard alternative airplay listesinde birinci olan ilk tamamen siyahi punk grubu.",
+        "facts": [
+          "the paradox, 2024'te kurulmuş amerikan bir pop-punk grubudur.",
+          "billboard'un alternative airplay listesinde birinci olan ilk tamamen siyahi punk grubudur."
+        ]
+      }
+    }
+  ]
+}

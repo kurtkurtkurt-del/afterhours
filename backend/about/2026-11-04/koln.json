@@ -1,0 +1,38 @@
+{
+  "city": "koln",
+  "day": "2026-11-04",
+  "nights": [
+    {
+      "id": "da08a399-c11b-491c-aa0d-058d00994618",
+      "slug": "adela-the-red-bottoms-tour-c5e11d0f",
+      "title": "Adéla - The Red Bottoms Tour",
+      "name": "Adéla",
+      "source_url": "https://en.wikipedia.org/wiki/Ad%C3%A9la",
+      "extract": "Adéla Jergová is a Slovak singer, songwriter, and dancer. After spending her teenage years training as a ballet dancer, she pivoted to making pop music, competing in the talent competition reality show Dream Academy in 2023 and releasing her debut extended play (EP) The Provocateur in 2025. She then supported Demi Lovato on her It's Not That Deep Tour. Her debut studio album Prima and its singles \"Ain't in LA\" and \"Nicole Kidman\" all made the UK and US charts, with Prima additionally topping the charts in the Netherlands and Belgium and entering the top ten of several others.",
+      "en": {
+        "kicker": "slovak singer, songwriter and dancer · prima",
+        "who": "Adéla Jergová is a Slovak singer, songwriter, and dancer. She released her debut EP The Provocateur in 2025 and then supported Demi Lovato on her It's Not That Deep Tour.",
+        "facts": [
+          "Her debut studio album Prima and its singles \"Ain't in LA\" and \"Nicole Kidman\" all made the UK and US charts.",
+          "Prima additionally topped the charts in the Netherlands and Belgium."
+        ]
+      },
+      "de": {
+        "kicker": "slowakische sängerin, songwriterin und tänzerin · prima",
+        "who": "adéla jergová ist eine slowakische sängerin, songwriterin und tänzerin. 2025 erschien ihre debüt-ep the provocateur, danach begleitete sie demi lovato auf deren it's not that deep tour.",
+        "facts": [
+          "ihr debütalbum prima und die singles \"ain't in la\" und \"nicole kidman\" erreichten alle die charts in großbritannien und den usa.",
+          "prima stand zusätzlich an der spitze der charts in den niederlanden und belgien."
+        ]
+      },
+      "tr": {
+        "kicker": "slovak şarkıcı, söz yazarı ve dansçı · prima",
+        "who": "adéla jergová, slovak bir şarkıcı, söz yazarı ve dansçıdır. 2025'te ilk ep'i the provocateur'ı yayımladı, ardından demi lovato'nun it's not that deep turnesinde ona eşlik etti.",
+        "facts": [
+          "ilk stüdyo albümü prima ile \"ain't in la\" ve \"nicole kidman\" single'ları birleşik krallık ve abd listelerine girdi.",
+          "prima ayrıca hollanda ve belçika listelerinde birinci oldu."
+        ]
+      }
+    }
+  ]
+}

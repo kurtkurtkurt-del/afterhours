@@ -1,0 +1,38 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-04",
+  "nights": [
+    {
+      "id": "6f77c1e5-d0ca-46f2-829b-5c4ec28cdbba",
+      "slug": "freya-skye-stars-align-tour-ac33d171",
+      "title": "Freya Skye - Stars Align Tour",
+      "name": "Freya Skye",
+      "source_url": "https://en.wikipedia.org/wiki/Freya_Skye",
+      "extract": "Freya Skye is an English singer and actress. She represented the United Kingdom in the Junior Eurovision Song Contest 2022, after which she was signed to Hollywood Records. Skye also has a talent holding deal for projects with Disney Branded Television. As an actress, she has appeared in The Next Step and made her film debut starring as Nova Bright in Zombies 4: Dawn of the Vampires. As a musician, Skye has released a number of singles since 2020 and released her debut extended play Stardust in 2026 and embarked on her first headlining tour, the Stars Align Tour.",
+      "en": {
+        "kicker": "english singer and actress · stars align tour",
+        "who": "Freya Skye is an English singer and actress. She has released singles since 2020 and her debut extended play, Stardust, in 2026.",
+        "facts": [
+          "She represented the United Kingdom in the Junior Eurovision Song Contest 2022, after which she was signed to Hollywood Records.",
+          "As an actress, she has appeared in The Next Step and made her film debut starring as Nova Bright in Zombies 4: Dawn of the Vampires."
+        ]
+      },
+      "de": {
+        "kicker": "englische sängerin und schauspielerin · stars align tour",
+        "who": "freya skye ist eine englische sängerin und schauspielerin. seit 2020 hat sie singles veröffentlicht, 2026 folgte ihre debüt-ep stardust.",
+        "facts": [
+          "sie vertrat das vereinigte königreich beim junior eurovision song contest 2022 und wurde danach von hollywood records unter vertrag genommen.",
+          "als schauspielerin war sie in the next step zu sehen und gab ihr filmdebüt als nova bright in zombies 4: dawn of the vampires."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı ve oyuncu · stars align tour",
+        "who": "freya skye ingiliz bir şarkıcı ve oyuncudur. 2020'den beri single'lar yayımladı, 2026'da ilk genişletilmiş plağı stardust'ı çıkardı.",
+        "facts": [
+          "junior eurovision şarkı yarışması 2022'de birleşik krallık'ı temsil etti, ardından hollywood records ile sözleşme imzaladı.",
+          "oyuncu olarak the next step dizisinde rol aldı ve zombies 4: dawn of the vampires filminde nova bright rolüyle sinema çıkışını yaptı."
+        ]
+      }
+    }
+  ]
+}
