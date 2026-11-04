@@ -133,7 +133,12 @@ export default function MessagesScreen() {
                 place of the row that folded open faces, search, requests and suggestions: adding someone and
                 answering a request live on the map page now. */}
             <Pressable onPress={() => router.push('/people-map')} accessibilityRole="button" accessibilityLabel={t('pmap.card')} style={({ pressed }) => [styles.mapCard, pressed && styles.pressed]}>
-              {mapLay ? <PeopleMap layout={mapLay} width={width - brand.left * 2} height={150} photos={photos} live={liveIds} myPhoto={myPhoto} interactive={false} scale={fitScale(mapLay, width - brand.left * 2, 150)} /> : null}
+              {/* its own clipping box: on Android the card's rounded edge let the scaled faces through (owner, 04.11.2026) */}
+              {mapLay ? (
+                <View style={styles.mapClip} pointerEvents="none">
+                  <PeopleMap layout={mapLay} width={width - brand.left * 2} height={150} photos={photos} live={liveIds} myPhoto={myPhoto} interactive={false} scale={fitScale(mapLay, width - brand.left * 2, 150)} />
+                </View>
+              ) : null}
               <View style={styles.mapText} pointerEvents="none">
                 <View style={styles.text}>
                   <Text style={styles.mapName}>{t('pmap.card')}</Text>
@@ -227,6 +232,7 @@ export default function MessagesScreen() {
 
 const styles = StyleSheet.create({
   mapCard: { marginHorizontal: brand.left, marginTop: 14, marginBottom: 6, height: 150, borderRadius: 22, overflow: 'hidden', backgroundColor: colors.card, borderWidth: 1, borderColor: colors.ink3 },
+  mapClip: { position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, overflow: 'hidden', borderRadius: 21 },
   mapText: { position: 'absolute', left: 14, right: 14, bottom: 12, flexDirection: 'row', alignItems: 'flex-end', gap: 10 },
   mapName: { fontFamily: fonts.semibold, fontSize: 16, letterSpacing: -0.4, color: colors.paper },
   mapLine: { fontFamily: fonts.jet, fontSize: 9, letterSpacing: 1.1, color: colors.spotText, marginTop: 3 },

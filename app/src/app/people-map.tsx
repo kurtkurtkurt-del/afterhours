@@ -164,9 +164,9 @@ export default function PeopleMapScreen() {
               </Pressable>
             ))}
           </View>
+          {/* the row scrolls, so it must leave room for the chip shadows: clipped at its edge,
+              Android drew them as a white box inside the pills (owner, 04.11.2026) */}
           {cities.length ? (
-            {/* the row scrolls, so it must leave room for the chip shadows: clipped at its edge,
-                Android drew them as a white box inside the pills (owner, 04.11.2026) */}
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.cityScroll} contentContainerStyle={styles.cityRow}>
               <Pressable onPress={() => setCity(null)} style={[styles.cityChip, !city && styles.chipOn]} accessibilityRole="button">
                 <Text style={[styles.chipText, !city && styles.chipTextOn]}>{t('pmap.allCities')}</Text>

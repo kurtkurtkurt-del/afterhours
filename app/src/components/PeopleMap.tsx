@@ -32,10 +32,13 @@ type Props = {
 export type PeopleMapHandle = { home: () => void; zoom: (by: number) => void };
 
 // The scale at which you and your friends (and the first of the crowd) fit a small card.
+// The scale at which the whole map (you and the first two waves) fits a box of width × height:
+// each axis on its own, so a wide map is held by the width and a tall one by the height.
+// Measured by the longest reach it ran out of the messages card top and bottom (owner, 04.11.2026).
 export function fitScale(l: Layout, width: number, height: number) {
-  let far = 1;
-  for (const n of l.nodes) if (n.w <= 2) far = Math.max(far, Math.hypot(n.x, n.y) + n.r + 18);
-  return Math.max(0.22, Math.min(0.55, (Math.min(width, height * 1.6) / 2 - 10) / far));
+  let farX = 1, farY = 1;
+  for (const n of l.nodes) if (n.w <= 2) { farX = Math.max(farX, Math.abs(n.x) + n.r + 14); farY = Math.max(farY, Math.abs(n.y) + n.r + 22); }
+  return Math.max(0.16, Math.min(0.55, (width / 2 - 8) / farX, (height / 2 - 6) / farY));
 }
 
 const PeopleMap = forwardRef<PeopleMapHandle, Props>(function PeopleMap({ layout, width, height, photos, live, myPhoto, interactive = true, scale = 1, top = 0, onTap }, ref) {
