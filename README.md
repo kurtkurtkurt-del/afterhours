@@ -7,7 +7,7 @@ Three things in one repository, sharing one Supabase project:
 | Where | What |
 |---|---|
 | `/` (this folder) | **The website** — [kurtkurtkurt-del.github.io/afterhours](https://kurtkurtkurt-del.github.io/afterhours/). Plain HTML/CSS/JS, no build. The landing, the wall, the night pages, the account. |
-| `app/` | **The app** — Expo / React Native, Android first. The deck, the map, yours, the collection, the djs, check-in and the room. §6 |
+| `app/` | **The app** — Expo / React Native, Android first. The deck, the map, people, messages, the collection, check-in and the room. §6 |
 | `backend/` | **The database** — the SQL, the tests, the Ticketmaster sync, the backup. §8–§9 |
 
 A night: rave, club night, konzert, festival, meetup, hausparty. Munich
@@ -38,11 +38,11 @@ The product in three sentences:
    centre of the page.
 
 **Two surfaces, one product.** The app is where the night happens: the
-deck, the map, who's coming, check-in, the room, the collection, the djs.
+deck, the map, who's coming, check-in, the room, the collection, messages.
 The web is the door and the archive: the landing, the wall, every night's
 page with beforehours, the account and its settings — and for what lives
-in the app, a page that says so (`friends/`, `maps/`, `djs/`: "only
-available in the app."). The words are the same on both sides; the list
+in the app, a page that says so (`friends/`, `maps/`: "only
+available in the app."; `djs/` only redirects to `host/`). The words are the same on both sides; the list
 is in §6.
 
 ### The spirit
@@ -105,13 +105,18 @@ listing: §6.
 |---|---|---|
 | `index.html` | The landing page, seven screens deep: the poster wall and the hero → how swiping works → a strip of cards → the room → who is playing → the turning city globe → a black footer screen with `go outside` and `get the app` | works |
 | `explore/` | **The wall.** Every night that fits, six posters across, soonest first; the words come on hover. The filter line (country / city / kind / date) above it. The deck itself lives in the app | works |
-| `explore/event/?slug=…` | **The night page** (a contact sheet): where · when · kind (ticket / szene), the ticket, who's coming, the after, beforehours, the card it leaves you. One shell for every night; the night is fetched by slug. §5 | works |
-| `djs/` · `friends/` · `maps/` | **Closed on the web.** The title (`who is playing.` / `yours.` / `go local.`), then "only available in the app." and a `preview.` button that opens a phone (`phone.js`) playing the app's real screenshots from `phone/` with a finger tapping and dragging (`djs-1/2`, `yours-1/2`, `map-1/2/3` .jpg, portrait phone captures; finger positions per shot are set in `phone.js`) | closed, live in the app |
-| `cards/` | **The collection** — afterhours cards. Three samples; empty when signed in until the first check-in | a skeleton |
+| `explore/event/?slug=…` | **The night page** (a contact sheet): where · when · kind (ticket / szene), the ticket, who's coming, the after, beforehours, the card it leaves you. One shell for every night; the night is fetched by slug from `events_public`, and when there is no row the `night_page` RPC (`95_past_night_page.sql`) opens a night that is over or was cancelled, so a shared link keeps working (`explore/event.js`). §5 | works |
+| `friends/` · `maps/` | **Closed on the web.** The title (`your people.` / `go local.`), then "only available in the app." and a `preview.` button that opens a phone (`phone.js`) playing the app's real screenshots from `phone/` with a finger tapping and dragging (`yours-1/2`, `map-1/2/3` .jpg, portrait phone captures; finger positions per shot are set in `phone.js`; `djs-1/2.jpg` are still there for the old djs scene) | closed, live in the app |
+| `djs/` | A redirect (`meta refresh` + canonical) to `host/`. Nothing of its own any more; the old scene in `phone.js` is unreachable | redirect |
+| `host/` | **Host an event** (`host/host.js`): the poster on the left (a 2:3 drop zone, jpeg or png up to 3 MB; `117_poster_uploads.sql` lets a signed-in member write `posters/<their id>/…` into the public `posters` bucket, anything else is refused before upload), the facts on the right (name · kind · who is it for · city · venue · date · doors · ticket link · a line). `publish` → the `event_submit` RPC; staff look at it, then it is on the wall and in the app. `just my people` is refused with a pointer to the app: a night for your own people is a spark (make → among friends), not a listing | works, signed in |
+| `cards/` | **The collection** — afterhours cards. Signed out: a note and `sign in`, no cards (the samples went on 03.11.2026); signed in, your own from `my_cards` (`cards/session-state.js`). §7 | works |
 | `login/` | Sign-in (`account` in the menu). Three columns: sign in · (first time? / settings) · give feedback | works |
 | `register/` | **Registration** — two steps: email + password, then the handle (+ city). Not finished until a handle is chosen | works |
 | `reset/` | **A new password** — sends the recovery link signed out; sets the new password once the link lands you back signed in. The app's reset mail points here too | works |
-| `settings/` | **Settings** — profile (handle, name, one line, city) · privacy (who sees what you kept, findable by handle, email me) · account (download my data, delete account — type your handle to confirm) | works |
+| `settings/` | **Settings** — profile (handle, name, one line, city) · privacy (who sees what you kept, findable by handle, the blocked list) · sign-in (change the email: a link goes to the new address; `change the password` → `reset/`; `sign out everywhere`) · account (download my data, delete account — type your handle to confirm) | works |
+| `delete/` | **Delete your account** from outside the app, signed out: enter the account's email, a link comes, then "for good, then." and it is gone (profile, cards, messages, groups, photos). The Play listing's account-deletion address | works |
+| `p/?h=…` | **Someone you met** — where the tap/NFC card lands (`app/src/lib/tap.ts` writes the link): the handle large, `try afterhours` (the PWA) and `open in the app`; "in the app: search their name to add them". No data of its own; the handle comes from `?h=` | works |
+| `g/?c=…` | **A group invite** — the 8-letter code large, "in the app: people → groups → join with a code" and `open in the app` (`afterhours://groups/join?code=…`) | works |
 | `profile/?handle=…` | **Somebody's page** — how you reach them, what they kept, their cards | works |
 | `feedback/` | **Feedback** — subject, message, an optional way to reach you. No sign-in needed | works |
 | `help/` | How this works: the app's six steps (one card · it becomes a card · the room · who is going · near you · who is playing), then what the web shows. Two live numbers at the top from `health()` | works |
@@ -124,15 +129,18 @@ listing: §6.
 
 Every page has a **footer**: `© 2026 afterhours` + impressum · datenschutz
 · agb. It has two forms: the normal one that sits in the flow, and
-`foot thin` for the full-screen pages (`explore`, `maps`, `friends`,
-`djs`) where it sits in the corner. Three pages have no footer:
+`foot thin` for the full-screen pages (`explore`, `maps`, `friends`)
+where it sits in the corner. Three pages have no footer:
 `index.html` (it has its own black footer screen), `admin/` and
 `strip.html`.
 
-**The menu** is the app's tab order: `explore · djs · yours · map ·
-collection · help · account` (`yours` → `friends/`, `map` → `maps/`,
-`collection` → `cards/`, `account` → `login/`). Signed in, `account`
-becomes "welcome <name> (:".
+**The menu** (`index.html`, the same on every page): `explore · host an
+event · your people · map · collection · help · account` (`host an event`
+→ `host/`, `your people` → `friends/`, `map` → `maps/`, `collection` →
+`cards/`, `account` → `login/`). Right of it two pills, `get the app`
+(the store) over `get the web app` (the PWA; `webapp.js`), and the
+language globe (`i18n.js`). Signed in, `account` becomes "welcome <name>
+(:".
 
 **Every surface.** The layout is desktop-first and narrows in bands, each
 a `@media` block in `style.css`: below **1180px** the photo scales with
@@ -573,7 +581,7 @@ asks for and stays with it.
 
 | Route | What |
 |---|---|
-| `index` | The intro (the wordmark), then the home screen: a rotating tagline, `sign up`, `explore your city`, the sound toggle. Signed in, straight to `yours` |
+| `index` | The intro (the wordmark), then the home screen: a rotating tagline, `sign up`, `explore your city`, the sound toggle. Signed in, straight to `/flow` (`index.tsx`) |
 | `film` | **The intro film**, second cut (12.10.2026; retimed 20.10.2026 to about 43 s with shorter lines so each can be read, D4; silent — the home screen's sound corner already plays). Written by hand: `app/tools/film/film.html` is the source, `npm run film` (in `app/`, `tools/build-film.mjs`) builds `assets/film/film.html` with the app's own photos (resized by `sips`) and the three typefaces inline, so it plays in the WebView offline. Nine scenes on one timeline: the red dot and the name; a concert photo with *your city. after dark.*; the flow card (design E) swiped right with the red tint and left with the paper one; the night page as a ticket (design B) and a tap on `get a ticket ↗`; people (design C) with the red rings and a wave chain *friends of friends · via berk*; a Berlin spark, *hike the grunewald to the teufelsberg.*, sent in one tap; the map with pins, radar rings and the card walking `‹ 3 of 8 ›`; the account sleeve with a card landing in the collection and the red messages button; the name and *explore your city*. Captions in en · de · tr (`__LANG__` in the source, written in by `film.tsx` before loading). `explore your city` on the home screen and settings → `show the intro again` open it; `skip` top right; it posts `end` and the app goes on to `signup` (members go back). `film.html#s4` in a browser holds one scene for looking at it. The first cut (Claude Design export) is gone. |
 | `explore` | The old six onboarding slides + `where are you based?` — no longer linked |
 | `(tabs)/flow` | **The deck.** One card; under the city a `tickets · spark` switch, and on `tickets` a third row with `all events · any time`. **The card** (11.10.2026, design E in `prototypes/ticket-card.html`, `components/CardFace.tsx`): the poster, with the date in its top left corner as an ink tag (`fri 17.10` in Archivo, `23:00` beside it; `date tba` when there is none) and the kind in a small one at its top right (`who is this?` and the share mark sit under it); under it the ink block holds only the title (red Archivo, a size larger), the venue (nothing when the night has none; the city stood in for a day on 12.10.2026 and read as a wrong place, so it went) and the friends who kept it; the block never shrinks under 124 px; `details ↓` on the left, `keep` on the right (no arrow since 11.10.2026). `ticket` is said once, by the hint that appears when the card is pulled up (one line, 13 px, air around the words) — until then the block stacked kind · ticket, venue and date under the title in mono, and said ticket twice. Under the card, with room around them, three buttons that do what a swipe does: ✕ let go · ↺ undo (small, faint while there is nothing to undo) · a red ♥ keep. **Keeping** shows a red heart and `KEPT` over the deck for a moment (not for sparks; a still fade when the phone asks for less motion). A night's card carries a **share** mark at its top right, under **who is this?** when it has a text (both below). `tickets` is the plain deck; `spark` holds only **sparks** (below) |
@@ -588,10 +596,26 @@ asks for and stays with it.
 | `person/[handle]` · `list/[kind]` | **Someone's profile** (06.10.2026), opened from search, suggestions, your people, who's coming, the names in the feed: the same record sleeve as your account — their photo (friends only; otherwise their initial), the bio, their links (friends only), their two counts, a full-width red button that says what it does (`add friend` · `accept request` · `request sent` · `friends`), then their collection (`person_cards()`, `36_person_cards.sql`, friends only). Sample people (the names in the sample friends of the people tab) get a page drawn from the name, marked sample. `list/events` and `list/people` (`?handle=` for someone else, `38_profile_lists.sql`): the nights kept and the people, each row opens the night or the profile; pulls down to close |
 | `dj/[id]` · `friend/[id]` · `friend/add` | A dj (follow, sets, next); **a friend, in the account page's language** — their photo (or drawn face) full-bleed with the name large and `live` when out, then on paper their kept nights as photo cards (tap = the night), their text and links, nights together, accept / remove; adding one by handle |
 | `signup` · `welcome` | Email + password (or `leave both empty to look around first`), then the handle |
-| `auth-callback` | Where Google sends you back (`afterhours://auth-callback`); sets the session from the address and goes on to `welcome` (handle) or `yours` |
+| `auth-callback` | Where Google sends you back (`afterhours://auth-callback`); sets the session from the address and goes on to `welcome` (no handle yet) or `/flow` |
 | `settings` | **Grouped** (07.10.2026): a profile card on top (photo · name · `edit ›`), then one row per group with what is inside as its hint — **app** (language, background music, genre) · **privacy** · **notifications** (allow on this phone, then the switches in three groups: friends, nights, discovery; quiet hours 00:00–09:00; `lib/push.ts` + `26_push.sql`) · **account** (with delete account in a red box of its own) · **about**. Each opens its own page (`settings?section=…`), so every setting is one or two taps away. Every page closes by pulling down. `›` opens inside the app, `↗` leaves it. The version sits at the bottom of the home and about pages | `download my data` writes the export to a file and opens the share sheet (browser: a download; `expo-sharing`, 20.10.2026).
 | `profile` | **Edit profile** — where `edit ›` leads: photo, name, handle (its status beside the label), bio (300, several lines), **about you** (1500), city, **elsewhere** (seven networks: instagram · tiktok · spotify · soundcloud · x · whatsapp · website; a leading @ is dropped, whatsapp keeps the digits; the spotify and whatsapp fields say in grey what to type; only friends see them); one `save profile` writes them through `profile_setup()`, `profile_about_set()` and `profile_links_set()` and goes back. Pulling down closes it |
 | `credits` | The music (Free Music Archive, CC BY), the map tiles, the type |
+| `make` | The + on the flow (design 12B): two big photo cards, a ticketed night for everyone or a spark among friends; the spark card opens the kinds |
+| `spark/[kind]` | A spark's page: the night page's layout for a night that does not exist yet; `create it` works with one press (name, time, place, friends suggested), the wave decides who gets it; `?invite=<id>` is someone else's spark (in / out) |
+| `groups/` | Your groups, live ones first, the once groups that are over at the end; on top a group to make from friends who kept the same nights |
+| `groups/[id]` | One group as the deck (flow 1, 03.11.2026): the head in one row, the deck below, a strip for how the matches stand; add a friend, the link, the look, chat, memories, live behind `···`. A travel group opens on its passport |
+| `groups/new` | Making a group (`?with=<ids>` from a suggestion) or its look (`?id=…`): cover, name, sign, colour, who is in, leave, delete |
+| `groups/add` | Adding friends to a group: the ones not in yet as faces, a tap picks, `add` puts them in |
+| `groups/invite` | The invitation as people will see it, with the QR, the code (14 days, 20 people) and the link |
+| `groups/join` | Joining by code, from a link (`?code=…`) or typed: who is in, an empty place for you, `come too` |
+| `groups/chat` | The group's thread with its own moments (a plan set, a vote started or decided) as quiet lines; read every 3 s; a long press deletes your own |
+| `groups/memories` · `groups/album` | Our nights, photos first (design 11E): a two-column wall of every photo, newest night first; `+` adds one. `album` is one night's photos, a long press takes yours out |
+| `specials` | All the specialties (03.11.2026): the fifty occasions as squares, soonest first, a search line on top; a tap hands the occasion to connect, which opens its deck |
+| `onboard` | Right after sign up (28.10.2026): afterhours writes to you as a chat — the kinds of nights you go out for, add a friend, how you want to look through nights (swipe, poster, classic). Skippable at every step; the answers stay on the phone |
+| `people-map` | Your people as a map (28.10.2026): you in the middle, friends around you, their circles as islands, the people beyond blurred; a blurred one offers an intro through the friend in between (101, 116) |
+| `desk/` | The venue desk (`97_venue_desk.sql`): what a community manager sees instead of the panel — their rooms with this month's numbers, calendar, people, comments, a push to say something (`desk/[venue]`, `calendar`, `people`, `comments`, `say`) |
+| `panel/` | The staff panel, opened from the mark beside the gear on the account page: numbers on top, then nights, pending, reports, reported posts, appeals, dj pages waiting, comments, feedback, people and roles, the log, app errors (one file each) |
+| `post/new` | A post, camera first (design 2A). Posts are off (`content/flags.ts`) and the route redirects — except a story (`?story=1`, the + on messages): a photo seen as a ring on top of messages for a day |
 
 **Google sign-in** (`auth/google.ts`): `continue with google` on the sign-up screen — one door for signing up and signing in. Supabase's Google provider through an in-app browser (`expo-web-browser`), back to `afterhours://auth-callback`, the session is set from the returned address (implicit tokens or a pkce code, both handled). A guest who presses it gets Google LINKED to the same user (`linkIdentity`, needs "manual linking" on in Supabase) so their swipes stay; if linking is off it falls back to a plain sign-in. First time in, the handle step (`welcome`) as with email. Needs, once: a Google Cloud OAuth client (web) with `https://<project>.supabase.co/auth/v1/callback`, the Google provider switched on in Supabase with that client, and `afterhours://auth-callback` in Supabase's redirect URLs.
 
@@ -653,8 +677,6 @@ First picks (built since 07.10.2026: 2, 3, 12, 13, 19, 23, 24 and the new place 
 
 **The tab bar sits 22 px higher on Android** (`LIFT` in `components/TabBar.tsx`, counted into `TAB_BAR_SPACE`): the system navigation bar is hidden, so the inset is 0 and taps near the bottom edge were swiping the system bar back instead of reaching the icons. The strip under the icons stays empty ink.
 
-**Pressing the open tab again** takes it back to its start (`hooks/useTabReset.ts`, fired by `TabItem`): djs and yours scroll to the top and close what is open, account closes the card and rewinds its strip, the map drops the picked night and refits to 3 km around you tonight, the deck closes its pickers and is dealt again.
-
 **Where you are.** `data/here.ts` is the one current city the whole app reads (the deck, the map, onboarding). The tabs shell asks for the position when the app opens and again when it comes back after half an hour; the city is worked out from the NIGHTS nearest to you (`nights_near`, 60 km, the majority city of the closest 30), not from the place name — a phone set to english says "Munich" and the list says "münchen". Only when there are no nights around does it fall back to matching the name. A city you pick by hand holds until you actually move to another city.
 
 **Under `app/src/`:** `data/` (the RPC calls: `deck.ts`, `checkin.ts`,
@@ -678,8 +700,10 @@ edited by hand: `ios/` and `android/` are generated.
   (`explore/event/index.html?slug=…`). The app opens the site for the
   poster SVGs (`SITE` in `data/deck.ts`), the password reset (`reset/`),
   the privacy page (`datenschutz/`) and "afterhours on the web" in
-  settings → about; the Play listing names `settings/` as the
-  account-deletion page. The night page reads **beforehours** from
+  settings → about; the Play listing names `delete/` as the
+  account-deletion page. The update gate (`components/UpdateGate.tsx`,
+  `min_app_version`) sends android to the Play listing and everything
+  else to the site root (`UPDATE_URL` in `data/safety.ts`). The night page reads **beforehours** from
   `comments_public` (`data/comments.ts`); writing still happens on the web
   ("say something on the web").
 - *Site → app.* Every night page has **open in the app**
@@ -779,7 +803,10 @@ separate from Safari's).
   seen on the web — they came up on every page there and the browser is for a
   look, not a lesson
 - publish: `cd app && tools/publish-pwa.sh` (export with the base URL,
-  `404.html` for deep links, force-push to `afterhours-pwa` on `main`).
+  `404.html` for deep links, `push -f` to `afterhours-pwa` on `main` — no
+  history; what is published is what the last run exported, nothing else).
+  Open the published address afterwards: the 04.11.2026 16:44Z run shipped
+  an empty shell ("No routes found", see §12).
   Supabase → Authentication → URL Configuration → Redirect URLs needs
   `https://kurtkurtkurt-del.github.io/afterhours-pwa/**`
 - web traps (22.10.2026): expo-router's `TabSlot` container does not shrink, so
@@ -797,25 +824,33 @@ separate from Safari's).
 
 ## 7. The afterhours card
 
-`cards.js` builds an SVG card out of a night's data. Three places on the
-site use it — the strip on the landing page, `cards/`, the past editions
-on a night page — and the app draws the same SVG through
-`app/src/content/cardsgen.js` (identical apart from the font names; the
-app renders it with `SvgXml`). Both are set in Inter Tight; the voice note
-line reads `VOICE NOTE · SOON` until recording exists.
+One card per night you went to, front only. `app/src/content/cardsgen.js`
+(04.11.2026) is the one generator; `node app/tools/cards-site.mjs` copies
+it to `cards.js` at the repo root as a classic script (`window.CARDS`), so
+the strip on the landing page, `cards/` and the app (`SvgXml`) draw the
+same SVG. Edit `cardsgen.js`, then run the tool. The fonts are web names
+by default (Inter Tight, JetBrains Mono); the app swaps in its own with
+`CARDS.setFonts`.
 
 ```js
-CARDS.front(night, "unique-id")   // the front
-CARDS.back(night, "unique-id")    // the back: that night's timeline
+CARDS.front(night, "unique-id")   // the one face a card has
+CARDS.kindOf(typeName)            // a type name → one of the six kinds
+CARDS.pickDesign(kind, id)        // the stable design for a night
 ```
 
-The `night` object: `city t ty v d metal motif in out dur crew more aud
-msg who froze no at1 at2 q1 q2`. See `cards/card-data.js` for an example.
+The card says only what the product knows: the night's **name**, the
+**date · doors**, **who came** (initials, only when there was anyone),
+one **music note** (the night's preview track when there is one, else a
+small motif) and the night's **photo** when it has one, over a motif face
+drawn for the kind. **Six kinds** — rave, club, concert, festival, meetup,
+house — **× ten designs** each; a night always gets the same design (kind
++ a stable id). Paper or ink, one red; no gradients, no metal.
 
-- **Metals:** steel, gold, chrome, copper, gunmetal, brass, rose, titanium,
-  nickel, anthracite
-- **Motifs:** rays, oval, diagonal, orbit, grid, moon, moire, bands, iso,
-  descend
+The `night` object: `kind id ty t d doors v city crew track artist photo`.
+`cards/session-state.js` `toCard` and the app's `data/checkin.ts`
+`toCardData` build it from the same `my_cards` row the same way, so both
+sides look alike; `CARDS.nights` holds the twelve example nights the
+generator ships with.
 
 ---
 
@@ -851,7 +886,7 @@ msg who froze no at1 at2 q1 q2`. See `cards/card-data.js` for an example.
 
 **Likes and comments on posts** (09.10.2026, `55_post_social.sql`, `components/PostCard.tsx`, `components/PostBits.tsx`). A post reads like a photo app's: who and when, the photo full width, the heart and the speech mark, *n likes*, the words, the first two comments, *all n comments*, *add a comment*. Two taps on the photo like it (a heart blooms over it); the heart likes and unlikes. *n likes* opens who liked it, newest first (blocked people left out; a tap opens the person). The speech mark opens the comments: write one, a long press deletes your own (or any under your post) and reports someone else's. Whoever sees the post may like and comment; the author gets a push for each (switch: posts). Comments are reported, banned, limited (60 an hour) and noticed like everything else. 17 tests in `backend/test/post-social.test.mjs`.
 
-**The site and the app, one account** (09.10.2026, `cards/session-state.js`, `session.js`, `explore/event.js`, `backend/README.md` "One account, app and site"). Both talk to the same Supabase project, so an account is one account. Signed in, the site's collection shows your own cards from `my_cards`, drawn as the app draws them; signed out, the three samples. Login and register offer *continue with apple* and *continue with google* (Supabase's web flow; set up once in the panel). A night's page on the site shows the night, the ticket and *open in the app* only: who is going, beforehours and where the night goes on are gone from it (they live in the app).
+**The site and the app, one account** (09.10.2026, `cards/session-state.js`, `session.js`, `explore/event.js`, `backend/README.md` "One account, app and site"). Both talk to the same Supabase project, so an account is one account. Signed in, the site's collection shows your own cards from `my_cards`, drawn as the app draws them; signed out, no cards (the samples went on 03.11.2026). Login and register offer *continue with apple* and *continue with google* (Supabase's web flow; set up once in the panel). A night's page on the site shows the night, the ticket and *open in the app* only: who is going, beforehours and where the night goes on are gone from it (they live in the app).
 
 **One panel, app and site** (09.10.2026, `admin/admin.js`). The site's panel is rebuilt on the app's: the same gate (`my_role`: admins and community managers), the same sections (overview with what waits, nights with new / edit / delete, sent in, reports with remove / keep / close the account, reported posts, dj pages waiting, comments, make a venue or a dj; for the admin people and roles with bans, feedback, the log, app errors and the database) and the same database functions, so both do the same thing and the log shows both. The file list it checks the database against is kept equal to `backend/tools/expected-sql.mjs` by the setup test.
 
@@ -1372,6 +1407,9 @@ Every one of these cost us something:
 - **`perl -pi -e` with `|` as the delimiter and a `?v=` pattern** is a way
   to shred a file: the escaping is nested three deep (shell, perl, regex).
   For version bumps, use the command above and read the diff afterwards.
+- **Always open the published URL after `publish-pwa.sh`.** A build from a tree
+  that is not `app/` ships without routes (04.11.2026 16:44Z: an empty shell,
+  "No routes found"), and the script force-pushes with no history to fall back on.
 
 ---
 

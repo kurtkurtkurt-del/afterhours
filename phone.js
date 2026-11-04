@@ -1,5 +1,5 @@
 /* ---------- "preview." on the closed pages: a phone that shows the app ----------
-   djs, yours and map live in the app only. The "preview." button opens a
+   your people and the map live in the app only (djs/ now sends on to host/). The "preview." button opens a
    big phone in the middle of the page and plays a short scene inside it:
    real screenshots of the app, a finger that taps and drags, one line under
    the phone saying what is happening. At the end: the store badges.

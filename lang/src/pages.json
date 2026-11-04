@@ -234,25 +234,15 @@
     "de": "Die Karte zeigt die Nächte um dich herum, heute Nacht. Szene-Nächte geben ihre Adresse beim Einchecken frei.",
     "tr": "Harita bu gece çevrendeki geceleri gösterir. Szene geceleri adresini check-in'de açar."
   },
-  "help.djs.title": {
-    "en": "who is playing.",
-    "de": "wer spielt.",
-    "tr": "kim çalıyor."
-  },
-  "help.djs.text": {
-    "en": "Live now, later tonight, this week. Their sets, their photos, their next night.",
-    "de": "Jetzt live, später heute Nacht, diese Woche. Ihre Sets, ihre Fotos, ihre nächste Nacht.",
-    "tr": "Şu an canlı, bu gece daha geç, bu hafta. Setleri, fotoğrafları, bir sonraki geceleri."
-  },
   "help.web.title": {
     "en": "on the web",
     "de": "im web",
     "tr": "web'de"
   },
   "help.web.text": {
-    "en": "The wall (explore), every night's page with beforehours, your account and its settings, and this page. The deck, the map, yours, the collection and the djs live in the app — <a href=\"https://play.google.com/store/apps/details?id=app.afterhours.android\" target=\"_blank\" rel=\"noopener\">get it on google play</a>. A night's web page opens the same night in the app with \"open in the app\"; a night shared from the app opens its web page.",
-    "de": "Die Wand (entdecken), die Seite jeder Nacht mit beforehours, dein Konto und seine Einstellungen, und diese Seite. Der Stapel, die Karte, deins, die Sammlung und die DJs leben in der App — <a href=\"https://play.google.com/store/apps/details?id=app.afterhours.android\" target=\"_blank\" rel=\"noopener\">jetzt bei google play</a>. Die Webseite einer Nacht öffnet dieselbe Nacht in der App mit „in der app öffnen“; eine aus der App geteilte Nacht öffnet ihre Webseite.",
-    "tr": "Duvar (keşfet), her gecenin beforehours'lu sayfası, hesabın ve ayarları, bir de bu sayfa. Deste, harita, seninkiler, koleksiyon ve dj'ler uygulamada yaşar — <a href=\"https://play.google.com/store/apps/details?id=app.afterhours.android\" target=\"_blank\" rel=\"noopener\">google play'den indir</a>. Bir gecenin web sayfası “uygulamada aç” ile aynı geceyi uygulamada açar; uygulamadan paylaşılan bir gece de kendi web sayfasını açar."
+    "en": "The wall (explore), every night's page with beforehours, host an event, the collection, your account and its settings, and this page. The deck, the map, your people, messages and the collection live in the app — <a href=\"https://play.google.com/store/apps/details?id=app.afterhours.android\" target=\"_blank\" rel=\"noopener\">get it on google play</a>. A night's web page opens the same night in the app with \"open in the app\"; a night shared from the app opens its web page.",
+    "de": "Die Wand (entdecken), die Seite jeder Nacht mit beforehours, event veranstalten, die Sammlung, dein Konto und seine Einstellungen, und diese Seite. Der Stapel, die Karte, deine Leute, Nachrichten und die Sammlung leben in der App — <a href=\"https://play.google.com/store/apps/details?id=app.afterhours.android\" target=\"_blank\" rel=\"noopener\">jetzt bei google play</a>. Die Webseite einer Nacht öffnet dieselbe Nacht in der App mit „in der app öffnen“; eine aus der App geteilte Nacht öffnet ihre Webseite.",
+    "tr": "Duvar (keşfet), her gecenin beforehours'lu sayfası, etkinlik düzenle, koleksiyon, hesabın ve ayarları, bir de bu sayfa. Deste, harita, insanların, mesajlar ve koleksiyon uygulamada yaşar — <a href=\"https://play.google.com/store/apps/details?id=app.afterhours.android\" target=\"_blank\" rel=\"noopener\">google play'den indir</a>. Bir gecenin web sayfası “uygulamada aç” ile aynı geceyi uygulamada açar; uygulamadan paylaşılan bir gece de kendi web sayfasını açar."
   },
   "help.wrong.title": {
     "en": "something wrong?",

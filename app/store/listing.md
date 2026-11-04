@@ -5,7 +5,7 @@
 - category: Lifestyle (alt: Events) · content rating: fill the IARC questionnaire; nightlife + user comments → likely "Teen"/16+
 - contact email: you@example.com
 - privacy policy url: https://kurtkurtkurt-del.github.io/afterhours/datenschutz/
-- account deletion url (required): https://kurtkurtkurt-del.github.io/afterhours/settings/  (delete account lives there and in the app)
+- account deletion url (required): https://kurtkurtkurt-del.github.io/afterhours/delete/  (signed out, by email link; also in settings/ and in the app)
 
 ## title (30)
 afterhours
