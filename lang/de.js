@@ -87,7 +87,7 @@ window.AH_LANG.de = {
 "before.when.now":"gerade eben",
 "before.when.yesterday":"gestern",
 "cards.count":"{n} nächte, in denen du warst, wie in der app.",
-"cards.desc":"Die Nächte, in denen du wirklich warst, als afterhours-Karten: die Klänge, die Gespräche, was um vier Uhr morgens gesagt wurde.",
+"cards.desc":"Die Nächte, in denen du warst, als afterhours-Karten: der Name, das Datum, wer mitkam, ein Track.",
 "cards.empty":"noch nichts hier.",
 "cards.failed":"die karten kamen nicht. gleich nochmal versuchen.",
 "cards.flip":"{name} umdrehen",

@@ -1,346 +1,286 @@
-/* eslint-disable */
-// web sitesinin afterhours kart üreteci, olduğu gibi (claudecode/afterhours/cards.js).
-// tek fark: fontlar inter tight, ve dışa aktarım module. svg dizesi döner; SvgXml çizer.
-/* afterhours — a deck of ten night cards (the user's own design).
-   Taken from an earlier sketch; only the demo render was removed, and it
-   was wrapped in its own scope so it does not pollute the global names. */
+/* afterhours — the afterhours card generator (04.11.2026).
+
+   One card per night you went to. It says only what the product knows:
+   the night's name, the date and the doors, who came with you (initials,
+   only when there was anyone), one music note (the night's track when we
+   have one, else a small motif), the night's photo when it has one, and a
+   motif face designed for the kind of night. Nothing else.
+
+   Six kinds × ten designs = sixty faces. A night always gets the same
+   design (kind + a stable id, see pickDesign). No gradients, no metal:
+   paper or ink, one red.
+
+   THE SAME FILE draws the card in the app (SvgXml), in the web app and on
+   the site: the site copy (cards.js at the repo root) is made from this
+   one by app/tools/cards-site.mjs. Edit here, then run the tool.           */
 
 const CARDS = (function () {
 
-// ─────────── METAL THEMES ───────────
-const METALS = {
-  steel:{name:'brushed steel',
-    grad:['#3e4147','#8d939b','#4a4e55','#b9bfc7','#5a5f67','#d8dde3','#666b73','#a7adb5','#41454b','#9ba1a9','#787e86'],
-    edge:['#e8edf2','#6a6f77','#dfe4ea','#585d64','#c2c8cf'],
-    plate:['#22252a','#171a1e','#2b2f35','#15181c'],
-    deep:'#0a0b0d', poster:'#141619', dim:'#5c6169', mid:'#8e949c',
-    hi:'#d8dde3', txt:'#f0ece3', sub:'#7b8189', faint:'#4e535a', line:'#3a3e44', accent:'#c9ced5', hair:'#ffffff', hairO:.04},
-  gold:{name:'gold',
-    grad:['#6b4c13','#d9b45c','#7a5a1c','#f3dc9a','#8a6522','#ffeec2','#96702a','#e6c876','#6f5217','#d4b160','#b99447'],
-    edge:['#ffeec2','#8a6522','#f3dc9a','#6f5217','#dcbb6b'],
-    plate:['#241a08','#161005','#2b2009','#130e04'],
-    deep:'#0d0903', poster:'#171105', dim:'#7a5a1c', mid:'#b8913c',
-    hi:'#ffeec2', txt:'#f7e9c4', sub:'#96702a', faint:'#6f5217', line:'#4a3712', accent:'#f3dc9a', hair:'#ffd98a', hairO:.05},
-  chrome:{name:'chrome',
-    grad:['#7d8894','#ffffff','#5f6a76','#eef3f8','#46505b','#ffffff','#6d7883','#dde4eb','#3d4650','#f5f9fc','#c3ccd5'],
-    edge:['#ffffff','#5f6a76','#eef3f8','#46505b','#c3ccd5'],
-    plate:['#dfe5eb','#f7fafc','#c4cdd6','#aeb8c2'],
-    deep:'#8a949e', poster:'#1a1e23', dim:'#535d68', mid:'#9aa5b0',
-    hi:'#2f3740', txt:'#232a31', sub:'#59636d', faint:'#98a2ac', line:'#a8b2bc', accent:'#46505b', hair:'#5c6670', hairO:.11, light:1},
-  copper:{name:'oxidised copper',
-    grad:['#5a2f1c','#c9784b','#6b3a22','#e8a274','#7d4527','#f7c9a4','#8a4d2b','#d68d5e','#603322','#bd7047','#8f5030'],
-    edge:['#f7c9a4','#7d4527','#4a9c8a','#6b3a22','#d68d5e'],
-    plate:['#241309','#150c06','#1c2a26','#120a04'],
-    deep:'#0d0703', poster:'#1a0f07', dim:'#6b3a22', mid:'#a86039',
-    hi:'#f7c9a4', txt:'#f2d3b4', sub:'#8a5a3c', faint:'#6b3a22', line:'#4a2a18', accent:'#4a9c8a', hair:'#e8a274', hairO:.05, patina:1},
-  gunmetal:{name:'gunmetal',
-    grad:['#242830','#5c6474','#2e333d','#7d8598','#383e49','#9aa2b4','#434a57','#6e7688','#282d36','#5a6272','#4a515e'],
-    edge:['#9aa2b4','#383e49','#8990a2','#2e333d','#6e7688'],
-    plate:['#181b21','#101318','#1e222a','#0d1014'],
-    deep:'#080a0d', poster:'#111419', dim:'#3a404b', mid:'#5c6474',
-    hi:'#9aa2b4', txt:'#c8cdd8', sub:'#5f6674', faint:'#383e49', line:'#2a2f38', accent:'#8a92a4', hair:'#aab2c4', hairO:.035},
-  brass:{name:'brass',
-    grad:['#5e4a17','#c4a648','#6d5620','#e3cb7e','#7b6226','#f5e3a8','#876e2c','#d4bb62','#5f4c1a','#bda653','#96803a'],
-    edge:['#f5e3a8','#7b6226','#e3cb7e','#5f4c1a','#c9b25c'],
-    plate:['#201a0a','#141006','#26200c','#110d05'],
-    deep:'#0c0904', poster:'#161206', dim:'#6d5620', mid:'#a68d3c',
-    hi:'#f5e3a8', txt:'#ece0b8', sub:'#876e2c', faint:'#5f4c1a', line:'#403316', accent:'#e3cb7e', hair:'#e3cb7e', hairO:.045},
-  rose:{name:'rose gold',
-    grad:['#6b3a34','#d99a8c','#7d4640','#f2c2b4','#8a524a','#ffd9cc','#96605a','#e6ab9c','#6f423c','#d4948a','#b97f74'],
-    edge:['#ffd9cc','#8a524a','#f2c2b4','#6f423c','#dca79c'],
-    plate:['#241413','#16100f','#2b1a18','#130d0c'],
-    deep:'#0d0706', poster:'#170f0e', dim:'#7d4640', mid:'#b8776c',
-    hi:'#ffd9cc', txt:'#f5ded6', sub:'#96605a', faint:'#6f423c', line:'#4a2b28', accent:'#f2c2b4', hair:'#ffb8a8', hairO:.05},
-  titanium:{name:'titanium',
-    grad:['#2a3644','#6a8299','#33414f','#8ea6bd','#3d4d5d','#aec6dd','#48596b','#7d94aa','#2e3a48','#688096','#54697d'],
-    edge:['#aec6dd','#3d4d5d','#8ea6bd','#2e3a48','#7d94aa'],
-    plate:['#151d26','#0e141b','#1b242e','#0b1015'],
-    deep:'#070b0f', poster:'#101720', dim:'#3a4a5a', mid:'#5f7688',
-    hi:'#aec6dd', txt:'#cfdde9', sub:'#5f7688', faint:'#3d4d5d', line:'#28333f', accent:'#8ea6bd', hair:'#b8d4ea', hairO:.04},
-  nickel:{name:'nickel',
-    grad:['#2f3a34','#748a7e','#3a463f','#96ab9e','#45524a','#b6cabd','#505e55','#84998c','#33403a','#6f8478','#5c6a62'],
-    edge:['#b6cabd','#45524a','#96ab9e','#33403a','#84998c'],
-    plate:['#1a211d','#121814','#212a24','#0f1411'],
-    deep:'#090d0b', poster:'#131a16', dim:'#3d4a43', mid:'#65786c',
-    hi:'#b6cabd', txt:'#d4e0d8', sub:'#65786c', faint:'#45524a', line:'#2b352f', accent:'#96ab9e', hair:'#a8c4b4', hairO:.04},
-  anthracite:{name:'anthracite',
-    grad:['#1c1c1e','#4e4e52','#232326','#6c6c72','#2a2a2e','#88888f','#333338','#5c5c62','#1f1f22','#4a4a4f','#3c3c41'],
-    edge:['#88888f','#2a2a2e','#6c6c72','#1f1f22','#5c5c62'],
-    plate:['#151517','#0e0e10','#1b1b1e','#0b0b0d'],
-    deep:'#060607', poster:'#111113', dim:'#2e2e32', mid:'#4e4e52',
-    hi:'#88888f', txt:'#b8b8bf', sub:'#5a5a60', faint:'#333338', line:'#252529', accent:'#9a9aa2', hair:'#c8c8d0', hairO:.03}
+// ───────────────────────── palette & fonts ─────────────────────────
+const PAPER = '#f4f1ea', INK = '#111111', RED = '#d7261e';
+// scheme: where the motif lives and what it is drawn with
+const SCHEMES = [
+  { bg: PAPER, fg: INK,   m: INK   },   // ink on paper
+  { bg: INK,   fg: PAPER, m: PAPER },   // paper on ink
+  { bg: PAPER, fg: INK,   m: RED   },   // red on paper
+  { bg: INK,   fg: PAPER, m: RED   },   // red on ink
+];
+// Web names by default; the app swaps in its own (setFonts).
+let fonts = { regular: 'Inter Tight', medium: 'Inter Tight', mono: 'JetBrains Mono' };
+const setFonts = (f) => { fonts = { ...fonts, ...f }; };
+const weight = () => (fonts.medium === fonts.regular ? ' font-weight="500"' : '');
+
+const esc = (v) => String(v == null ? '' : v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const rnd = (n) => { const x = Math.sin(n * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+const f2 = (n) => Math.round(n * 100) / 100;
+
+// drawing helpers (the motif window is 400 × 272, origin top left)
+const W = 400, H = 272, CX = 200, CY = 136;
+const L = (x1, y1, x2, y2, c, w, more) => `<line x1="${f2(x1)}" y1="${f2(y1)}" x2="${f2(x2)}" y2="${f2(y2)}" stroke="${c}" stroke-width="${w || 1.5}"${more || ''}/>`;
+const C = (cx, cy, r, c, w, more) => `<circle cx="${f2(cx)}" cy="${f2(cy)}" r="${f2(r)}" fill="none" stroke="${c}" stroke-width="${w || 1.5}"${more || ''}/>`;
+const D = (cx, cy, r, c, more) => `<circle cx="${f2(cx)}" cy="${f2(cy)}" r="${f2(r)}" fill="${c}"${more || ''}/>`;
+const R = (x, y, w, h, c, sw, more) => `<rect x="${f2(x)}" y="${f2(y)}" width="${f2(w)}" height="${f2(h)}" fill="none" stroke="${c}" stroke-width="${sw || 1.5}"${more || ''}/>`;
+const B = (x, y, w, h, c, more) => `<rect x="${f2(x)}" y="${f2(y)}" width="${f2(w)}" height="${f2(h)}" fill="${c}"${more || ''}/>`;
+const P = (d, c, w, more) => `<path d="${d}" fill="none" stroke="${c}" stroke-width="${w || 1.5}" stroke-linecap="round" stroke-linejoin="round"${more || ''}/>`;
+const F = (d, c, more) => `<path d="${d}" fill="${c}"${more || ''}/>`;
+const O = (o) => ` opacity="${o}"`;
+// a sine path across the window
+const sine = (y, amp, period, phase, x0, x1) => {
+  let d = ''; const a = x0 == null ? 0 : x0, b = x1 == null ? W : x1;
+  for (let x = a; x <= b; x += 6) d += (x === a ? 'M' : 'L') + f2(x) + ' ' + f2(y + Math.sin((x / period) * Math.PI * 2 + (phase || 0)) * amp);
+  return d;
 };
 
-// ─────────── POSTER MOTIFS ───────────
-// each takes (id, m) and uses the metal palette
+// ───────────────────────── the sixty motifs ─────────────────────────
+// each: (m = motif colour, fg = text colour, bg) → svg inside the 400×272 window
 const MOTIFS = {
-  rays:(id,m)=>{let s=`<g transform="translate(200,140)">`;
-    const A=[[-170,-52,-170,-12],[-158,40,-134,78],[-86,118,-46,142],[12,170,52,160],[114,98,142,66],[170,18,168,-24],[130,-96,106,-128],[32,-170,-8,-172]];
-    A.forEach(p=>s+=`<path d="M0,0 L${p[0]},${p[1]} L${p[2]},${p[3]} Z" fill="${m.dim}"/>`);
-    const B=[[-144,60,-114,96],[34,166,72,146],[170,-4,158,-44]];
-    B.forEach(p=>s+=`<path d="M0,0 L${p[0]},${p[1]} L${p[2]},${p[3]} Z" fill="${m.mid}"/>`);
-    s+=`<circle r="96" fill="none" stroke="url(#e${id})" stroke-width="2.5"/><circle r="78" fill="none" stroke="url(#e${id})" stroke-width="2.5"/>`;
-    s+=`<circle r="68" fill="${m.deep}"/><path d="M-46 0 Q0 -38 46 0 Q0 38 -46 0 Z" fill="url(#g${id})"/>`;
-    s+=`<circle r="19" fill="${m.poster}"/><circle r="8" fill="${m.hi}"/></g>`;return s;},
-
-  oval:(id,m)=>`<ellipse cx="200" cy="142" rx="74" ry="94" fill="url(#g${id})"/>
-    <ellipse cx="200" cy="142" rx="52" ry="70" fill="${m.poster}"/>
-    <path d="M200 82 L214 130 L262 142 L214 154 L200 202 L186 154 L138 142 L186 130 Z" fill="url(#g${id})"/>
-    <circle cx="200" cy="142" r="9" fill="${m.hi}"/>
-    <path d="M156 196 Q200 224 244 196" fill="none" stroke="${m.mid}" stroke-width="2.5"/>`,
-
-  diagonal:(id,m)=>`<path d="M0 0 L400 0 L0 300 Z" fill="${m.dim}"/>
-    <g stroke="url(#e${id})" stroke-width="2"><path d="M0 130 L400 130"/><path d="M0 146 L400 146"/><path d="M0 162 L400 162"/></g>
-    <circle cx="200" cy="146" r="44" fill="${m.poster}" stroke="url(#e${id})" stroke-width="2.5"/>
-    <text x="200" y="156" text-anchor="middle" font-family="InterTight_400Regular" font-weight="700" font-size="25" fill="url(#g${id})">10</text>`,
-
-  orbit:(id,m)=>`<g fill="none" stroke="${m.mid}" stroke-width="2">
-      <ellipse cx="200" cy="146" rx="150" ry="56"/>
-      <ellipse cx="200" cy="146" rx="150" ry="56" transform="rotate(38 200 146)"/>
-      <ellipse cx="200" cy="146" rx="150" ry="56" transform="rotate(-38 200 146)"/></g>
-    <g fill="none" stroke="${m.dim}" stroke-width="1.5">
-      <ellipse cx="200" cy="146" rx="112" ry="40" transform="rotate(76 200 146)"/></g>
-    <circle cx="200" cy="146" r="52" fill="url(#g${id})"/>
-    <circle cx="200" cy="146" r="52" fill="none" stroke="url(#e${id})" stroke-width="3"/>
-    <g fill="${m.hi}"><circle cx="348" cy="92" r="5"/><circle cx="56" cy="212" r="4"/><circle cx="300" cy="240" r="3.5"/></g>`,
-
-  grid:(id,m)=>{let s='',x,y,i=0;
-    const cells=[[36,30],[148,30],[260,30],[36,116],[148,116],[260,116],[36,202],[148,202],[260,202]];
-    cells.forEach((c,k)=>{
-      const fill = k%3===0?m.dim:(k%3===1?m.poster:m.mid);
-      s+=`<rect x="${c[0]}" y="${c[1]}" width="104" height="72" fill="${fill}" stroke="url(#e${id})" stroke-width="1.6"/>`;
-      if(k%3===0) s+=`<circle cx="${c[0]+52}" cy="${c[1]+36}" r="22" fill="${m.poster}"/>`;
-      if(k%3===1) s+=`<rect x="${c[0]+32}" y="${c[1]+16}" width="40" height="40" fill="url(#g${id})"/>`;
-      if(k%3===2) s+=`<path d="M${c[0]+26} ${c[1]+54} L${c[0]+78} ${c[1]+54} L${c[0]+78} ${c[1]+16} Z" fill="${m.poster}"/>`;
-    });return s;},
-
-  moon:(id,m)=>{let s='';
-    const ys=[74,150,226];
-    ys.forEach((y,r)=>{
-      const op=[1,.6,.3][r];
-      s+=`<g opacity="${op}">
-        <circle cx="66" cy="${y}" r="24" fill="none" stroke="${m.mid}" stroke-width="2.2"/>
-        <path d="M148 ${y-24} A24 24 0 0 1 148 ${y+24} Z" fill="url(#g${id})"/>
-        <circle cx="148" cy="${y}" r="24" fill="none" stroke="${m.mid}" stroke-width="2.2"/>
-        <circle cx="230" cy="${y}" r="24" fill="url(#g${id})"/>
-        <path d="M312 ${y-24} A24 24 0 0 0 312 ${y+24} Z" fill="url(#g${id})"/>
-        <circle cx="312" cy="${y}" r="24" fill="none" stroke="${m.mid}" stroke-width="2.2"/></g>`;});
-    return s;},
-
-  moire:(id,m)=>{let s=`<g fill="none" stroke="${m.mid}" stroke-width="1.8">`;
-    for(let r=14;r<=180;r+=17) s+=`<circle cx="180" cy="146" r="${r}"/>`;
-    s+=`</g><g fill="none" stroke="${m.hi}" stroke-width="1.3" opacity="0.85">`;
-    for(let r=14;r<=150;r+=17) s+=`<circle cx="228" cy="168" r="${r}"/>`;
-    s+=`</g><path d="M212 76 L166 178 L200 178 L182 268 L246 152 L206 152 L240 76 Z" fill="url(#g${id})"/>`;
-    return s;},
-
-  bands:(id,m)=>{let s='';
-    const c=[m.dim,m.mid,m.hi,m.mid,m.dim,m.faint];
-    c.forEach((col,i)=>s+=`<rect y="${28+i*42}" width="400" height="42" fill="${col}" opacity="${.5+i*.06}"/>`);
-    s+=`<circle cx="200" cy="146" r="76" fill="${m.poster}"/>
-        <circle cx="200" cy="146" r="76" fill="none" stroke="url(#e${id})" stroke-width="3"/>
-        <path d="M200 70 A76 76 0 0 1 200 222 Z" fill="url(#g${id})"/>`;
-    return s;},
-
-  iso:(id,m)=>`<path d="M132 82 L200 44 L268 82 L268 214 L200 252 L132 214 Z" fill="${m.dim}"/>
-    <path d="M132 82 L200 120 L200 252 L132 214 Z" fill="${m.poster}"/>
-    <path d="M200 120 L268 82 L268 214 L200 252 Z" fill="${m.mid}"/>
-    <path d="M132 82 L200 44 L268 82 L200 120 Z" fill="url(#g${id})"/>
-    <path d="M52 152 L88 132 L124 152 L124 216 L88 236 L52 216 Z" fill="${m.dim}"/>
-    <path d="M52 152 L88 172 L88 236 L52 216 Z" fill="${m.poster}"/>
-    <path d="M276 158 L312 138 L348 158 L348 216 L312 236 L276 216 Z" fill="${m.dim}"/>
-    <path d="M312 178 L348 158 L348 216 L312 236 Z" fill="${m.mid}"/>`,
-
-  descend:(id,m)=>`<path d="M0 40 L400 40 L400 300 L0 300 Z" fill="${m.dim}"/>
-    <path d="M40 76 L360 76 L360 300 L40 300 Z" fill="${m.poster}"/>
-    <path d="M80 118 L320 118 L320 300 L80 300 Z" fill="${m.deep}"/>
-    <path d="M124 166 L276 166 L276 300 L124 300 Z" fill="${m.deep}"/>
-    <g stroke="url(#e${id})" stroke-width="2.5" fill="none">
-      <path d="M0 40 L400 40"/><path d="M40 76 L360 76"/><path d="M80 118 L320 118"/><path d="M124 166 L276 166"/></g>
-    <g stroke="url(#e${id})" stroke-width="3" stroke-linecap="round" fill="none">
-      <path d="M200 196 L200 250"/><path d="M178 230 L200 252 L222 230"/></g>`
+  rave: [
+    // 1 strobe — light from one point, every other ray a step shorter
+    (m, fg, bg) => { let s = ''; for (let i = 0; i < 48; i++) { const a = (i / 48) * Math.PI * 2, r = i % 2 ? 150 : 230; s += L(CX + Math.cos(a) * 22, CY + Math.sin(a) * 22, CX + Math.cos(a) * r, CY + Math.sin(a) * r, m, i % 4 === 0 ? 2.2 : 1); } return s + D(CX, CY, 9, m); },
+    // 2 kick — one square, struck seven times
+    (m) => { let s = ''; for (let i = 0; i < 7; i++) { const r = 24 + i * 20; s += `<rect x="${CX - r}" y="${CY - r}" width="${r * 2}" height="${r * 2}" fill="none" stroke="${m}" stroke-width="${3.2 - i * 0.35}" transform="rotate(45 ${CX} ${CY})"/>`; } return s + `<rect x="${CX - 10}" y="${CY - 10}" width="20" height="20" fill="${m}" transform="rotate(45 ${CX} ${CY})"/>`; },
+    // 3 laser — two fans of lines crossing above a floor
+    (m) => { let s = L(0, 236, W, 236, m, 1); for (let i = 0; i < 9; i++) { s += L(40, 0, 20 + i * 48, 236, m, i === 4 ? 2.4 : 1); s += L(360, 0, 380 - i * 48, 236, m, i === 4 ? 2.4 : 1); } return s; },
+    // 4 smoke — the fog machine, twelve layers
+    (m) => { let s = ''; for (let i = 0; i < 12; i++) s += P(sine(40 + i * 19, 5 + i * 1.2, 90 + i * 9, i * 1.3), m, 1.6, O(f2(0.25 + i * 0.065))); return s; },
+    // 5 four to the floor — a grid of beats, every fourth one lands
+    (m) => { let s = ''; for (let r = 0; r < 9; r++) for (let c = 0; c < 16; c++) { const x = 32 + c * 22.4, y = 32 + r * 26; s += c % 4 === 0 ? D(x, y, 4.5, m) : D(x, y, 1.6, m, O(0.5)); } return s; },
+    // 6 warehouse — a sawtooth roof and the pillars under it
+    (m) => { let s = 'M0 92'; for (let i = 0; i < 5; i++) s += ` L${i * 80 + 52} 40 L${i * 80 + 80} 92`; s = P(s, m, 2) + L(0, 92, W, 92, m, 1); for (let i = 0; i < 5; i++) s += L(i * 80 + 80, 92, i * 80 + 80, 240, m, 1.2); return s + L(0, 240, W, 240, m, 2); },
+    // 7 bpm — the meter, bars from the middle
+    (m) => { let s = L(0, CY, W, CY, m, 1, O(0.5)); for (let i = 0; i < 44; i++) { const x = 14 + i * 8.6, h = 14 + rnd(i) * 70 + Math.sin(i / 3.2) * 36; s += B(x, CY - h, 3.4, h * 2, m, i % 8 === 0 ? '' : O(0.55)); } return s; },
+    // 8 tunnel — the way in, the point of escape off to one side
+    (m) => { let s = ''; const vx = 250, vy = 120; for (let i = 0; i < 8; i++) { const k = Math.pow(0.78, i); s += R(vx - (vx) * k, vy - vy * k, W * k, H * k, m, 2 - i * 0.18); } s += L(0, 0, vx, vy, m, 1, O(0.5)) + L(W, 0, vx, vy, m, 1, O(0.5)) + L(0, H, vx, vy, m, 1, O(0.5)) + L(W, H, vx, vy, m, 1, O(0.5)); return s; },
+    // 9 sunrise — the sun comes up on the way home, cut by the blinds
+    (m, fg, bg) => { let s = `<clipPath id="rave9"><path d="M60 230 A140 140 0 0 1 340 230 Z"/></clipPath><g clip-path="url(#rave9)">` + B(60, 90, 280, 140, m); for (let i = 0; i < 7; i++) s += B(0, 230 - i * 20 - 6 + i * 1.2, W, 4 + i * 0.6, bg); return s + '</g>' + L(0, 230, W, 230, m, 2); },
+    // 10 reel — the tape it was all recorded on
+    (m) => { let s = R(60, 70, 280, 134, m, 2) + ` <rect x="60" y="70" width="280" height="134" rx="6" fill="none" stroke="${m}" stroke-width="2"/>`; [140, 260].forEach((x) => { s += C(x, 137, 32, m, 2) + C(x, 137, 9, m, 2); for (let i = 0; i < 6; i++) { const a = (i / 6) * Math.PI * 2; s += L(x + Math.cos(a) * 12, 137 + Math.sin(a) * 12, x + Math.cos(a) * 28, 137 + Math.sin(a) * 28, m, 1.5); } }); return s + L(172, 137, 228, 137, m, 1) + R(150, 180, 100, 10, m, 1.2); },
+  ],
+  club: [
+    // 1 mirror ball — a circle of small mirrors, hung from the ceiling
+    (m, fg, bg) => { let s = `<clipPath id="club1"><circle cx="${CX}" cy="150" r="88"/></clipPath>` + L(CX, 0, CX, 62, m, 1.5) + `<g clip-path="url(#club1)">` + D(CX, 150, 88, m); for (let i = -9; i <= 9; i++) { s += L(CX + i * 11, 50, CX + i * 11, 250, bg, 1.4); s += L(100, 150 + i * 11, 300, 150 + i * 11, bg, 1.4); } s += '</g>'; [[86, 92], [318, 110], [70, 210], [330, 214]].forEach(([x, y], k) => { s += L(x - 9, y, x + 9, y, m, 1.2) + L(x, y - 9, x, y + 9, m, 1.2); }); return s; },
+    // 2 the rope — three posts and the line you wait behind
+    (m) => { let s = L(0, 232, W, 232, m, 1); [70, 200, 330].forEach((x) => { s += L(x, 96, x, 232, m, 2.4) + D(x, 90, 7, m) + L(x - 18, 232, x + 18, 232, m, 3); }); return s + P('M70 108 Q135 180 200 108', m, 3) + P('M200 108 Q265 180 330 108', m, 3); },
+    // 3 the stamp — the mark on the back of your hand
+    (m) => { let s = `<g transform="rotate(-12 ${CX} ${CY})">` + C(CX, CY, 92, m, 3) + C(CX, CY, 80, m, 1.2, ' stroke-dasharray="3 5"') + C(CX, CY, 52, m, 2.5); for (let i = 0; i < 24; i++) { const a = (i / 24) * Math.PI * 2; s += L(CX + Math.cos(a) * 58, CY + Math.sin(a) * 58, CX + Math.cos(a) * 70, CY + Math.sin(a) * 70, m, i % 6 === 0 ? 2.5 : 1.2); } return s + L(CX - 26, CY - 26, CX + 26, CY + 26, m, 3) + L(CX + 26, CY - 26, CX - 26, CY + 26, m, 3) + '</g>'; },
+    // 4 neon — one tube, lit, with its ghosts
+    (m) => `<rect x="70" y="56" width="260" height="160" rx="80" fill="none" stroke="${m}" stroke-width="12" opacity="0.14"/><rect x="70" y="56" width="260" height="160" rx="80" fill="none" stroke="${m}" stroke-width="3"/><rect x="104" y="86" width="192" height="100" rx="50" fill="none" stroke="${m}" stroke-width="1.6"/>` + L(70, 216, 70, 272, m, 1.2) + L(330, 216, 330, 272, m, 1.2),
+    // 5 bass — five waves, each one longer
+    (m) => { let s = ''; for (let i = 0; i < 5; i++) s += P(sine(50 + i * 43, 8 + i * 5, 60 + i * 34, i * 0.8), m, 2 + i * 0.3); return s; },
+    // 6 vinyl — only records tonight
+    (m, fg, bg) => { let s = D(CX, CY, 118, m); for (let r = 56; r < 116; r += 6) s += C(CX, CY, r, bg, 0.8, O(0.55)); s += D(CX, CY, 42, bg) + C(CX, CY, 42, m, 1.5) + D(CX, CY, 5, m); return s + L(CX - 30, CY + 14, CX + 30, CY + 14, m, 1) + L(CX - 24, CY - 12, CX + 24, CY - 12, m, 1); },
+    // 7 downstairs — the floor is one level below
+    (m) => { let d = 'M20 40'; for (let i = 0; i < 8; i++) d += ` L${20 + i * 45} ${40 + i * 26} L${65 + i * 45} ${40 + i * 26}`; d += ' L380 248'; let s = P(d, m, 2.6); for (let i = 0; i < 8; i++) s += L(65 + i * 45, 40 + i * 26, 65 + i * 45, 272, m, 1, O(0.35)); return s + P('M20 20 L380 228', m, 1, O(0.5)); },
+    // 8 the door — a slit of light under it
+    (m, fg, bg) => R(136, 30, 128, 212, m, 2.5) + L(136, 242, 264, 242, m, 1) + B(136, 236, 128, 6, m) + D(244, 140, 5, m) + F('M136 242 L60 272 L340 272 L264 242 Z', m, O(0.16)) + L(136, 30, 136, 242, m, 1) + L(200, 30, 200, 60, m, 1, O(0.4)),
+    // 9 the glass — one coupe, one more behind it
+    (m) => { const g = (x, y, k, o) => `<g opacity="${o}">` + P(`M${x - 56 * k} ${y} Q${x} ${y + 70 * k} ${x + 56 * k} ${y}`, m, 2.2) + L(x - 56 * k, y, x + 56 * k, y, m, 2.2) + L(x, y + 70 * k, x, y + 118 * k, m, 2.2) + L(x - 30 * k, y + 118 * k, x + 30 * k, y + 118 * k, m, 2.6) + D(x + 14 * k, y + 22 * k, 6 * k, m) + '</g>'; return g(236, 110, 0.82, 0.45) + g(176, 86, 1.1, 1); },
+    // 10 the tag — what the coat check gives you
+    (m, fg, bg) => `<g transform="rotate(14 ${CX} ${CY})">` + F('M140 56 L260 56 L260 226 L140 226 Z', bg) + R(140, 56, 120, 170, m, 2.4) + C(200, 82, 8, m, 2) + L(154, 130, 246, 130, m, 1.2) + L(154, 150, 226, 150, m, 1.2) + L(154, 170, 236, 170, m, 1.2) + L(154, 190, 214, 190, m, 1.2) + '</g>' + P('M196 36 C 150 10, 120 30, 110 0', m, 1.4),
+  ],
+  concert: [
+    // 1 spotlight — one beam, a pool of light, a stand
+    (m, fg, bg) => F('M200 0 L60 272 L340 272 Z', m, O(0.14)) + F('M200 0 L120 272 L280 272 Z', m, O(0.12)) + `<ellipse cx="200" cy="262" rx="110" ry="12" fill="${m}" opacity="0.22"/>` + L(200, 150, 200, 258, m, 2.5) + L(176, 258, 224, 258, m, 2.5) + `<rect x="190" y="118" width="20" height="36" rx="10" fill="${m}"/>`,
+    // 2 lighters — the slow song
+    (m) => { let s = ''; for (let r = 0; r < 4; r++) for (let c = 0; c < 9; c++) { const x = 36 + c * 41 + (r % 2) * 20, y = 60 + r * 56 + rnd(r * 9 + c) * 14; const lit = (r * 9 + c) % 5 === 2; s += F(`M${x} ${y - 16} C${x + 9} ${y - 4} ${x + 7} ${y + 6} ${x} ${y + 8} C${x - 7} ${y + 6} ${x - 9} ${y - 4} ${x} ${y - 16} Z`, m, lit ? '' : O(0.3)) + L(x, y + 10, x, y + 24, m, 1.4, lit ? '' : O(0.3)); } return s; },
+    // 3 the stage — the front edge and the rows before it
+    (m) => { let s = F('M40 30 L360 30 L400 86 L0 86 Z', m, O(0.14)) + P('M40 30 L360 30 L400 86 L0 86 Z', m, 2); for (let r = 0; r < 5; r++) for (let c = 0; c < 12 + r; c++) { const x = 200 + (c - (11 + r) / 2) * (30 - r * 1.5), y = 118 + r * 34; s += P(`M${x - 9} ${y + 8} A9 9 0 0 1 ${x + 9} ${y + 8}`, m, 1.6, O(0.35 + r * 0.16)); } return s; },
+    // 4 the amp — the wall of speakers
+    (m) => { let s = R(40, 26, 320, 220, m, 2.5); [[120, 86], [280, 86], [120, 186], [280, 186]].forEach(([x, y]) => { s += C(x, y, 42, m, 2) + C(x, y, 26, m, 1.2) + D(x, y, 8, m); }); [[52, 38], [348, 38], [52, 234], [348, 234]].forEach(([x, y]) => (s += D(x, y, 3, m))); return s + L(40, 136, 360, 136, m, 1, O(0.4)); },
+    // 5 the wave — the room, recorded
+    (m) => { let s = ''; for (let i = 0; i < 64; i++) { const x = 10 + i * 6, env = Math.sin((i / 64) * Math.PI), h = (6 + rnd(i * 3) * 70 + Math.sin(i / 2.1) * 30) * env + 3; s += L(x, CY - h, x, CY + h, m, 2.6, i % 9 === 4 ? '' : O(0.55)); } return s; },
+    // 6 strings — six of them and a pick
+    (m) => { let s = ''; for (let i = 0; i < 6; i++) s += L(0, 68 + i * 28, W, 68 + i * 28, m, 0.8 + i * 0.4); [90, 150, 230, 320].forEach((x) => (s += L(x, 60, x, 216, m, 1, O(0.3)))); return s + F('M254 120 C280 108 306 118 296 150 C290 172 276 190 266 196 C256 186 232 160 230 142 C228 128 240 124 254 120 Z', m); },
+    // 7 the stub — torn along the dotted line
+    (m, fg, bg) => `<g transform="rotate(-8 ${CX} ${CY})">` + R(60, 70, 280, 132, m, 2.4) + D(60, 136, 12, bg) + C(60, 136, 12, m, 2.4) + D(340, 136, 12, bg) + C(340, 136, 12, m, 2.4) + L(248, 70, 248, 202, m, 1.6, ' stroke-dasharray="4 6"') + L(84, 104, 216, 104, m, 1.2) + L(84, 124, 190, 124, m, 1.2) + L(84, 160, 160, 160, m, 1.2) + L(84, 178, 140, 178, m, 1.2) + L(272, 96, 316, 96, m, 1.2) + L(272, 176, 316, 176, m, 1.2) + '</g>',
+    // 8 encore — they came back out
+    (m) => { let s = ''; for (let i = 0; i < 6; i++) { const k = 1 - i * 0.14, y = 232 - i * 38; s += P(`M${CX - 150 * k} ${y} L${CX} ${y - 54 * k} L${CX + 150 * k} ${y}`, m, 1.6 + i * 0.5, O(0.35 + i * 0.13)); } return s; },
+    // 9 the crowd — rows of heads, closer every row
+    (m) => { let s = ''; for (let r = 0; r < 5; r++) { const n = 14 - r * 2, rad = 7 + r * 4, y = 60 + r * 46; for (let c = 0; c < n; c++) { const x = 200 + (c - (n - 1) / 2) * (28 + r * 10) + (r % 2 ? 8 : 0); s += r === 4 ? F(`M${x - rad} ${y + rad} A${rad} ${rad} 0 0 1 ${x + rad} ${y + rad} Z`, m) : P(`M${x - rad} ${y + rad} A${rad} ${rad} 0 0 1 ${x + rad} ${y + rad}`, m, 1.4); } } return s; },
+    // 10 the hall — arch over arch over the stage
+    (m) => { let s = ''; for (let i = 0; i < 5; i++) { const k = 1 - i * 0.17; s += P(`M${CX - 186 * k} 272 L${CX - 186 * k} ${140 - 60 * k + 60} A${186 * k} ${150 * k} 0 0 1 ${CX + 186 * k} ${140 - 60 * k + 60} L${CX + 186 * k} 272`, m, 2.4 - i * 0.3); } return s + L(118, 236, 282, 236, m, 2.5) + L(130, 250, 270, 250, m, 1, O(0.4)); },
+  ],
+  festival: [
+    // 1 tents — the field at night
+    (m) => { let s = L(0, 236, W, 236, m, 1.5); [[70, 46], [160, 70], [250, 56], [330, 40]].forEach(([x, h], k) => { s += P(`M${x - h * 1.2} 236 L${x} ${236 - h * 1.6} L${x + h * 1.2} 236`, m, 2, k === 2 ? '' : O(0.5)) + L(x, 236 - h * 1.6, x, 236, m, 1, O(0.3)); if (k === 2) s += F(`M${x - h * 1.2} 236 L${x} ${236 - h * 1.6} L${x + h * 1.2} 236 Z`, m, O(0.18)); }); return s; },
+    // 2 the wristband — you do not take it off for days
+    (m, fg, bg) => `<g transform="rotate(-28 ${CX} ${CY})">` + B(-60, CY - 34, 520, 68, m) + `<g opacity="0.5">` + Array.from({ length: 16 }, (_, i) => L(-40 + i * 34, CY - 34, -20 + i * 34, CY + 34, bg, 1.4)).join('') + '</g>' + B(CX + 70, CY - 22, 34, 44, bg) + R(CX + 70, CY - 22, 34, 44, m, 2) + '</g>',
+    // 3 the sun — it did not set until ten
+    (m) => { let s = D(CX, 120, 56, m); for (let i = 0; i < 32; i++) { const a = (i / 32) * Math.PI * 2; s += L(CX + Math.cos(a) * 72, 120 + Math.sin(a) * 72, CX + Math.cos(a) * (i % 2 ? 84 : 100), 120 + Math.sin(a) * (i % 2 ? 84 : 100), m, 1.6); } return s + L(0, 232, W, 232, m, 1.5) + L(150, 248, 250, 248, m, 1, O(0.4)) + L(170, 260, 230, 260, m, 1, O(0.3)); },
+    // 4 bunting — two strings of flags
+    (m) => { let s = P('M0 50 Q200 150 400 50', m, 1.6) + P('M0 150 Q200 250 400 150', m, 1.6); for (let i = 0; i < 10; i++) { const t = (i + 0.5) / 10, x = t * W, y1 = 50 + (1 - Math.pow(2 * t - 1, 2)) * 50, y2 = 150 + (1 - Math.pow(2 * t - 1, 2)) * 50; s += F(`M${x - 13} ${y1} L${x + 13} ${y1} L${x} ${y1 + 30} Z`, m, i % 3 ? O(0.45) : '') + F(`M${x - 13} ${y2} L${x + 13} ${y2} L${x} ${y2 + 30} Z`, m, (i + 1) % 3 ? O(0.45) : ''); } return s; },
+    // 5 three stages — you could not be at all of them
+    (m) => { let s = L(0, 236, W, 236, m, 1.5); [[60, 110, 70], [200, 160, 110], [340, 100, 60]].forEach(([x, w, h], k) => { s += R(x - w / 2, 236 - h, w, h, m, 2) + P(`M${x - w / 2} ${236 - h} L${x} ${236 - h - 26} L${x + w / 2} ${236 - h}`, m, 2); for (let i = 0; i < 4; i++) s += D(x - w / 2 + 12 + i * ((w - 24) / 3), 236 - h + 14, 3, m); }); return s; },
+    // 6 the map — the path between the stages
+    (m) => { let s = P('M30 240 C 90 150, 120 260, 170 170 S 250 60, 300 120 S 360 60, 380 40', m, 1.6, ' stroke-dasharray="2 7"'); [[30, 240, 0.5], [170, 170, 0.5], [300, 120, 1], [380, 40, 0.5]].forEach(([x, y, o]) => { s += `<g opacity="${o}">` + F(`M${x} ${y} L${x - 11} ${y - 20} A13 13 0 1 1 ${x + 11} ${y - 20} Z`, m) + D(x, y - 24, 4.5, '#ffffff', O(0.9)) + '</g>'; }); return s; },
+    // 7 rain — it rained, nobody left
+    (m) => { let s = ''; for (let i = 0; i < 120; i++) { const x = rnd(i) * 440 - 20, y = rnd(i + 500) * 240, l = 10 + rnd(i + 900) * 16; s += L(x, y, x - l * 0.35, y + l, m, 1.3, O(0.35 + rnd(i + 77) * 0.5)); } return s + `<ellipse cx="120" cy="250" rx="56" ry="8" fill="none" stroke="${m}" stroke-width="1.4"/><ellipse cx="290" cy="258" rx="40" ry="6" fill="none" stroke="${m}" stroke-width="1.4"/>`; },
+    // 8 the camp — a field of small tents, yours is the dark one
+    (m) => { let s = ''; for (let r = 0; r < 4; r++) for (let c = 0; c < 8; c++) { const x = 40 + c * 46 + (r % 2) * 23, y = 60 + r * 52, me = r === 2 && c === 3; s += me ? F(`M${x - 18} ${y + 12} L${x} ${y - 14} L${x + 18} ${y + 12} Z`, m) : P(`M${x - 18} ${y + 12} L${x} ${y - 14} L${x + 18} ${y + 12} Z`, m, 1.4, O(0.55)); } return s; },
+    // 9 fireworks — the last night
+    (m) => { const burst = (cx, cy, r, n, o) => { let s = `<g opacity="${o}">`; for (let i = 0; i < n; i++) { const a = (i / n) * Math.PI * 2; s += L(cx + Math.cos(a) * r * 0.3, cy + Math.sin(a) * r * 0.3, cx + Math.cos(a) * r, cy + Math.sin(a) * r, m, 1.4) + D(cx + Math.cos(a) * r, cy + Math.sin(a) * r, 2.6, m); } return s + '</g>'; }; return burst(150, 120, 92, 18, 1) + burst(300, 70, 50, 12, 0.6) + burst(320, 210, 40, 10, 0.45) + L(150, 272, 150, 230, m, 1, O(0.3)); },
+    // 10 the wheel — you saw the whole site from up there
+    (m) => { let s = C(CX, 124, 96, m, 2.4) + C(CX, 124, 12, m, 2); for (let i = 0; i < 12; i++) { const a = (i / 12) * Math.PI * 2; const x = CX + Math.cos(a) * 96, y = 124 + Math.sin(a) * 96; s += L(CX, 124, x, y, m, 1.2) + `<rect x="${f2(x - 7)}" y="${f2(y)}" width="14" height="14" rx="3" fill="none" stroke="${m}" stroke-width="1.6"/>`; } return s + P(`M${CX} 124 L${CX - 70} 272`, m, 2.2) + P(`M${CX} 124 L${CX + 70} 272`, m, 2.2) + L(80, 272, 320, 272, m, 1.5); },
+  ],
+  meetup: [
+    // 1 the round table — eight chairs
+    (m) => { let s = C(CX, CY, 60, m, 2.4); for (let i = 0; i < 8; i++) { const a = (i / 8) * Math.PI * 2, x = CX + Math.cos(a) * 92, y = CY + Math.sin(a) * 92; s += `<rect x="${f2(x - 11)}" y="${f2(y - 11)}" width="22" height="22" rx="5" fill="${i === 2 ? m : 'none'}" stroke="${m}" stroke-width="1.8" transform="rotate(${f2((a * 180) / Math.PI)} ${f2(x)} ${f2(y)})"/>`; } return s; },
+    // 2 two bubbles — somebody said something
+    (m, fg, bg) => F('M60 60 L250 60 L250 160 L110 160 L80 190 L86 160 L60 160 Z', m) + `<rect x="60" y="60" width="190" height="100" rx="14" fill="${m}"/>` + F('M150 120 L340 120 L340 220 L314 220 L320 250 L290 220 L150 220 Z', bg) + `<rect x="150" y="120" width="190" height="100" rx="14" fill="${bg}" stroke="${m}" stroke-width="2.4"/>` + P('M290 220 L320 250 L314 220', m, 2.4) + L(174, 156, 300, 156, m, 1.4) + L(174, 176, 270, 176, m, 1.4) + L(174, 196, 290, 196, m, 1.4),
+    // 3 coffee — the meeting that started at the counter
+    (m) => P('M120 110 L120 200 Q120 236 156 236 L224 236 Q260 236 260 200 L260 110 Z', m, 2.6) + P('M260 130 Q310 130 310 165 Q310 200 260 200', m, 2.6) + `<ellipse cx="190" cy="252" rx="90" ry="8" fill="none" stroke="${m}" stroke-width="1.8"/>` + P('M156 92 C150 80 164 70 158 56', m, 1.8, O(0.6)) + P('M190 92 C184 80 198 70 192 52', m, 1.8, O(0.6)) + P('M224 92 C218 80 232 70 226 56', m, 1.8, O(0.6)),
+    // 4 the name tag — hello, my name is
+    (m, fg, bg) => `<g transform="rotate(-6 ${CX} ${CY})">` + `<rect x="70" y="66" width="260" height="150" rx="10" fill="${bg}" stroke="${m}" stroke-width="2.4"/>` + `<path d="M80 66 L320 66 Q330 66 330 76 L330 112 L70 112 L70 76 Q70 66 80 66 Z" fill="${m}"/>` + L(96, 150, 300, 150, m, 1.4) + L(96, 176, 240, 176, m, 1.4) + L(96, 198, 180, 198, m, 1.4) + '</g>',
+    // 5 the handshake — two links
+    (m) => `<rect x="60" y="86" width="170" height="100" rx="50" fill="none" stroke="${m}" stroke-width="12" transform="rotate(-20 ${CX} ${CY})"/><rect x="170" y="86" width="170" height="100" rx="50" fill="none" stroke="${m}" stroke-width="12" transform="rotate(20 ${CX} ${CY})"/>`,
+    // 6 chairs — rows, an aisle, one seat still free
+    (m) => { let s = ''; for (let r = 0; r < 3; r++) for (let c = 0; c < 8; c++) { const x = 40 + c * 42 + (c > 3 ? 24 : 0), y = 70 + r * 66, free = r === 1 && c === 5; s += `<rect x="${x}" y="${y}" width="26" height="26" rx="4" fill="${free ? 'none' : m}" stroke="${m}" stroke-width="1.6"/>` + L(x, y - 10, x + 26, y - 10, m, 2); } return s; },
+    // 7 the whiteboard — notes left on it
+    (m, fg, bg) => R(40, 36, 320, 200, m, 2.4) + L(40, 236, 80, 272, m, 1.5) + L(360, 236, 320, 272, m, 1.5) + B(70, 66, 50, 50, m) + B(136, 86, 50, 50, m, O(0.45)) + B(96, 150, 50, 50, m, O(0.45)) + B(260, 60, 50, 50, m, O(0.45)) + L(212, 80, 244, 80, m, 1.6) + L(212, 100, 236, 100, m, 1.6) + P('M200 180 Q260 120 330 190', m, 1.6, ' stroke-dasharray="3 5"'),
+    // 8 seven o clock — when it was meant to start
+    (m) => { let s = C(CX, CY, 100, m, 2.4); for (let i = 0; i < 12; i++) { const a = (i / 12) * Math.PI * 2; s += L(CX + Math.cos(a) * 86, CY + Math.sin(a) * 86, CX + Math.cos(a) * (i % 3 ? 94 : 100), CY + Math.sin(a) * (i % 3 ? 94 : 100), m, i % 3 ? 1.4 : 2.4); } return s + L(CX, CY, CX, CY - 58, m, 3) + L(CX, CY, CX - 42, CY + 42, m, 3) + D(CX, CY, 5, m); },
+    // 9 pins — where next
+    (m) => { let s = L(0, 244, W, 244, m, 1, ' stroke-dasharray="2 6"') + L(0, 228, W, 228, m, 1, ' stroke-dasharray="2 6"'); [[110, 244, 26, 0.5], [210, 228, 38, 1], [310, 244, 20, 0.5]].forEach(([x, y, r, o]) => { s += `<g opacity="${o}">` + F(`M${x} ${y} L${x - r * 0.75} ${y - r * 1.6} A${r} ${r} 0 1 1 ${x + r * 0.75} ${y - r * 1.6} Z`, m) + D(x, y - r * 1.95, r * 0.36, o === 1 ? '#ffffff' : m, o === 1 ? O(0.9) : O(0)) + '</g>'; }); return s; },
+    // 10 threads — who knew whom by the end
+    (m) => { const pts = [[60, 60], [170, 40], [300, 70], [350, 160], [250, 130], [120, 150], [50, 220], [190, 236], [330, 240]], ed = [[0, 1], [1, 2], [1, 4], [2, 3], [3, 4], [4, 5], [5, 0], [5, 6], [6, 7], [7, 4], [7, 8], [8, 3]]; let s = ''; ed.forEach(([a, b]) => (s += L(pts[a][0], pts[a][1], pts[b][0], pts[b][1], m, 1.2, O(0.5)))); pts.forEach(([x, y], i) => (s += i === 4 ? D(x, y, 12, m) : C(x, y, 8, m, 2))); return s; },
+  ],
+  house: [
+    // 1 the house — one window lit
+    (m) => P('M60 150 L200 40 L340 150', m, 2.6) + R(90, 130, 220, 120, m, 2.4) + R(176, 190, 48, 60, m, 2) + R(110, 156, 40, 34, m, 1.8) + B(250, 156, 40, 34, m) + L(250, 173, 290, 173, m, 1) + L(270, 156, 270, 190, m, 1) + L(40, 250, 360, 250, m, 1.5),
+    // 2 the window — from the street you could tell
+    (m, fg, bg) => B(90, 36, 220, 200, m) + L(200, 36, 200, 236, bg, 6) + L(90, 136, 310, 136, bg, 6) + R(90, 36, 220, 200, m, 4) + F('M90 36 L130 36 L124 236 L90 236 Z', bg, O(0.35)) + F('M310 36 L270 36 L276 236 L310 236 Z', bg, O(0.35)) + L(60, 250, 340, 250, m, 2),
+    // 3 balloons — from the ceiling
+    (m) => { let s = ''; [[110, 100, 30, 1], [170, 70, 26, 0.45], [230, 110, 34, 0.45], [300, 80, 28, 0.45], [150, 160, 22, 0.45]].forEach(([x, y, r, o]) => { s += `<g opacity="${o}"><ellipse cx="${x}" cy="${y}" rx="${r}" ry="${r * 1.2}" fill="${m}"/>` + F(`M${x - 5} ${y + r * 1.2} L${x + 5} ${y + r * 1.2} L${x} ${y + r * 1.2 + 7} Z`, m) + P(`M${x} ${y + r * 1.2 + 7} Q${x + 12} ${y + r * 1.2 + 60} ${x - 6} ${y + r * 1.2 + 110}`, m, 1.2) + '</g>'; }); return s; },
+    // 4 the kitchen — where everyone ends up
+    (m) => { let s = L(40, 226, 360, 226, m, 2.4); [[80, 120, 28], [128, 90, 24], [176, 140, 30], [226, 100, 20], [270, 126, 26], [322, 84, 24]].forEach(([x, h, w], k) => { s += P(`M${x - w / 2} 226 L${x - w / 2} ${226 - h + 30} Q${x - w / 2} ${226 - h + 10} ${x - 6} ${226 - h} L${x - 6} ${226 - h - 18} L${x + 6} ${226 - h - 18} L${x + 6} ${226 - h} Q${x + w / 2} ${226 - h + 10} ${x + w / 2} ${226 - h + 30} L${x + w / 2} 226 Z`, m, 2, k === 2 ? '' : O(0.5)); if (k === 2) s += F(`M${x - w / 2} 226 L${x - w / 2} ${226 - h + 40} L${x + w / 2} ${226 - h + 40} L${x + w / 2} 226 Z`, m, O(0.35)); }); return s; },
+    // 5 the stairs — third floor, no lift
+    (m) => { let d = 'M30 250'; for (let i = 0; i < 7; i++) d += ` L${30 + i * 48} ${250 - i * 32} L${78 + i * 48} ${250 - i * 32}`; return P(d, m, 2.8) + P('M60 196 L380 -16', m, 1.4) + L(60, 196, 60, 230, m, 1.4) + L(170, 124, 170, 158, m, 1.4) + L(280, 52, 280, 86, m, 1.4); },
+    // 6 the record player — somebody took over
+    (m, fg, bg) => R(50, 50, 300, 180, m, 2.4) + D(160, 140, 72, m) + D(160, 140, 24, bg) + D(160, 140, 4, m) + D(300, 80, 10, m) + L(300, 80, 236, 168, m, 3) + L(236, 168, 224, 182, m, 6) + R(280, 190, 40, 14, m, 1.6),
+    // 7 the plants — the one with the balcony
+    (m) => { let s = R(160, 200, 80, 60, m, 2.4) + L(150, 200, 250, 200, m, 2.4); const leaf = (x, y, a, k, o) => `<ellipse cx="${x}" cy="${y}" rx="${12 * k}" ry="${30 * k}" fill="${m}" opacity="${o}" transform="rotate(${a} ${x} ${y})"/>`; s += L(200, 200, 200, 96, m, 2) + L(200, 170, 150, 120, m, 1.6) + L(200, 150, 250, 100, m, 1.6) + L(200, 130, 160, 80, m, 1.6); s += leaf(200, 70, 0, 1, 1) + leaf(142, 106, -46, 0.9, 0.5) + leaf(258, 86, 50, 0.9, 0.5) + leaf(150, 64, -30, 0.7, 0.5) + leaf(236, 140, 70, 0.6, 0.5); return s; },
+    // 8 ring twice — the bell
+    (m, fg, bg) => `<rect x="150" y="66" width="100" height="150" rx="12" fill="none" stroke="${m}" stroke-width="2.4"/>` + D(200, 110, 22, m) + R(170, 156, 60, 10, m, 1.4) + R(170, 178, 60, 10, m, 1.4) + P('M268 96 A40 40 0 0 1 268 124', m, 2) + P('M284 82 A60 60 0 0 1 284 138', m, 2, O(0.6)) + P('M132 96 A40 40 0 0 0 132 124', m, 2) + P('M116 82 A60 60 0 0 0 116 138', m, 2, O(0.6)),
+    // 9 the couch — where the night ended
+    (m) => `<rect x="60" y="120" width="280" height="90" rx="14" fill="none" stroke="${m}" stroke-width="2.6"/><rect x="40" y="110" width="40" height="100" rx="14" fill="none" stroke="${m}" stroke-width="2.6"/><rect x="320" y="110" width="40" height="100" rx="14" fill="none" stroke="${m}" stroke-width="2.6"/>` + L(200, 130, 200, 210, m, 1.4) + `<rect x="92" y="96" width="98" height="40" rx="8" fill="${m}"/><rect x="210" y="96" width="98" height="40" rx="8" fill="none" stroke="${m}" stroke-width="2"/>` + L(70, 210, 70, 240, m, 2.4) + L(330, 210, 330, 240, m, 2.4),
+    // 10 the roofs — the moon over the street
+    (m) => { let d = 'M0 236 L0 170 L40 170 L40 120 L90 90 L140 120 L140 180 L180 180 L180 110 L230 110 L230 150 L270 150 L270 100 L310 70 L350 100 L350 200 L400 200 L400 236 Z'; return F(d, m) + D(300, 44, 22, m) + L(0, 236, W, 236, m, 1.5) + B(60, 140, 10, 12, '#ffffff', O(0.85)) + B(192, 130, 10, 12, '#ffffff', O(0.85)); },
+  ],
 };
 
-// ─────────── NIGHTS ───────────
-const EVENTS = [
- {t:'A$AP Rocky',   ty:'KONZERT',    v:'OLYMPIAHALLE',      d:'11.09.26', metal:'gold',       motif:'rays',
-  in:'23:47', out:'03:12', dur:'3H 25M', crew:['L','E','J','M'], more:9, aud:'0:38', msg:14, who:'MIRA',
-  froze:'13.09', no:'0147', at1:'01:04', at2:'02:19',
-  q1:['what even was that set','E','04:12'], q2:['who is still standing','L','05:47']},
+const KINDS = ['rave', 'club', 'concert', 'festival', 'meetup', 'house'];
+// type names from the database → kind
+const kindOf = (name) => {
+  const n = String(name || '').toLowerCase();
+  if (n.includes('rave')) return 'rave';
+  if (n.includes('konzert') || n.includes('concert')) return 'concert';
+  if (n.includes('festival')) return 'festival';
+  if (n.includes('meetup')) return 'meetup';
+  if (n.includes('haus') || n.includes('house')) return 'house';
+  return 'club';
+};
+// a night always gets the same design: its kind and a stable id (the slug)
+const hash = (s) => Array.from(String(s)).reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
+const pickDesign = (id) => hash(id) % 10;
 
- {t:'Nick Cave',    ty:'KONZERT',    v:'OLYMPIAPARK',       d:'23.08.26', metal:'nickel',     motif:'oval',
-  in:'20:12', out:'23:40', dur:'3H 28M', crew:['S','K','T'], more:4, aud:'1:12', msg:6, who:'KAAN',
-  froze:'25.08', no:'0092', at1:'21:38', at2:'22:50',
-  q1:['when the strings came in','S','22:04'], q2:['i will not forget tonight','T','23:31']},
+// ───────────────────────── the card ─────────────────────────
+// e: { kind, design, t, d, doors, v, city, crew[], track, artist, photo }
+function wrap(t, max) {
+  const words = String(t).split(/\s+/), lines = ['']; let i = 0;
+  for (const w of words) { if (lines[i] && (lines[i] + ' ' + w).length > max) { if (i === 1) { lines[i] = lines[i].slice(0, max - 1).trimEnd() + '…'; return lines; } lines[++i] = w; } else lines[i] = lines[i] ? lines[i] + ' ' + w : w; }
+  return lines;
+}
+function note(x, y, c) { // a small quaver
+  return `<g transform="translate(${x},${y})">${D(4, 14, 4, c)}${L(7.5, 14, 7.5, 0, c, 1.6)}${P('M7.5 0 C11 2 13 5 12 9', c, 1.6)}</g>`;
+}
 
- {t:'Bonez & RAF',  ty:'KONZERT',    v:'OLYMPIAHALLE',      d:'21.12.26', metal:'brass',      motif:'diagonal',
-  in:'20:03', out:'01:18', dur:'5H 15M', crew:['D','Y','B','N','C'], more:16, aud:'0:22', msg:31, who:'DENİZ',
-  froze:'23.12', no:'0311', at1:'22:47', at2:'00:16',
-  q1:['ten years, i do not believe it','Y','23:12'], q2:['it is freezing outside','B','01:22']},
+function front(e, i) {
+  const kind = KINDS.includes(e.kind) ? e.kind : kindOf(e.kind);
+  const design = Number.isInteger(e.design) ? ((e.design % 10) + 10) % 10 : pickDesign(e.id || e.t);
+  const sc = SCHEMES[design % 4], bg = sc.bg, fg = sc.fg, m = sc.m;
+  const motifs = MOTIFS[kind] && MOTIFS[kind].length ? MOTIFS[kind] : MOTIFS.rave;
+  const motif = (motifs[design] || motifs[0])(m, fg, bg);
+  const id = 'c' + String(i).replace(/[^a-z0-9]/gi, '');
+  const faint = 0.55;
+  const crew = Array.isArray(e.crew) ? e.crew.filter(Boolean).slice(0, 6) : [];
+  const photo = e.photo ? String(e.photo) : '';
+  const titleMax = photo ? 15 : 22;
+  const lines = wrap(e.t || '', titleMax);
+  const longest = Math.max(...lines.map((l) => l.length));
+  // the size follows the room: 344 px wide, 240 next to a photo; ~0.6 em per capital
+  const size = Math.max(14, Math.min(32, Math.floor((photo ? 240 : 344) / (0.62 * Math.max(longest, 1)))));
+  const title = lines.map((l, k) => `<text x="28" y="${358 + k * (size + 4)}" font-family="${fonts.medium}"${weight()} font-size="${size}" letter-spacing="-0.6" fill="${fg}">${esc(l.toUpperCase())}</text>`).join('');
+  const when = [e.d, e.doors ? 'DOORS ' + e.doors : ''].filter(Boolean).join(' · ');
+  const where = [e.v, e.city].filter(Boolean).map((s) => String(s).toUpperCase()).join(' · ');
+  const yAfter = 358 + (lines.length - 1) * (size + 4);
+  // the people who came: initials in squares, only when there were any
+  let with_ = '';
+  if (crew.length) {
+    with_ = `<text x="28" y="472" font-family="${fonts.mono}" font-size="9.5" letter-spacing="2" fill="${fg}" opacity="${faint}">WITH</text>`;
+    crew.forEach((c, k) => { const x = 28 + k * 34; with_ += R(x, 480, 28, 28, fg, 1) + `<text x="${x + 14}" y="${499}" text-anchor="middle" font-family="${fonts.regular}" font-size="13" fill="${fg}">${esc(String(c).toUpperCase().slice(0, 2))}</text>`; });
+  }
+  // the music note: the track when the night has one, else the small motif
+  const music = e.track
+    ? note(28, 548, m) + `<text x="52" y="561" font-family="${fonts.mono}" font-size="10" letter-spacing="0.6" fill="${fg}">${esc(String(e.track).toUpperCase().slice(0, 30))}</text>` + (e.artist ? `<text x="52" y="575" font-family="${fonts.mono}" font-size="9" letter-spacing="1" fill="${fg}" opacity="${faint}">${esc(String(e.artist).toUpperCase().slice(0, 34))}</text>` : '')
+    : `<g opacity="${faint}">${L(28, 556, 110, 556, fg, 1)}${L(28, 562, 110, 562, fg, 1)}${L(28, 568, 110, 568, fg, 1)}</g>` + note(60, 548, m) + note(84, 544, m);
+  const img = photo
+    ? `<clipPath id="p${id}"><rect x="276" y="336" width="96" height="96"/></clipPath><image href="${esc(photo)}" x="276" y="336" width="96" height="96" preserveAspectRatio="xMidYMid slice" clip-path="url(#p${id})"/>` + R(276, 336, 96, 96, fg, 1)
+    : '';
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <rect width="400" height="600" fill="${bg}"/>
+  <text x="28" y="31" font-family="${fonts.mono}" font-size="10" letter-spacing="3" fill="${fg}">${esc(String(e.ty || kind).toUpperCase())}</text>
+  <text x="372" y="31" text-anchor="end" font-family="${fonts.mono}" font-size="10" letter-spacing="3" fill="${fg}" opacity="${faint}">AFTERHOURS</text>
+  <clipPath id="w${id}"><rect x="0" y="44" width="400" height="272"/></clipPath>
+  <g clip-path="url(#w${id})"><g transform="translate(0,44)">${motif}</g></g>
+  ${L(0, 316, 400, 316, fg, 1)}
+  ${title}
+  <text x="28" y="${yAfter + 26}" font-family="${fonts.mono}" font-size="10.5" letter-spacing="1.6" fill="${fg}">${esc(when)}</text>
+  <text x="28" y="${yAfter + 44}" font-family="${fonts.mono}" font-size="9.5" letter-spacing="1.6" fill="${fg}" opacity="${faint}">${esc(where)}</text>
+  ${img}
+  ${with_}
+  ${L(28, 530, 372, 530, fg, 1, O(0.35))}
+  ${music}
+  <rect x="8" y="8" width="384" height="584" fill="none" stroke="${fg}" stroke-width="1" opacity="0.5"/>
+</svg>`;
+}
 
- {t:'Thirty Seconds to Mars', ty:'KONZERT', v:'OLYMPIAHALLE', d:'12.04.27', metal:'titanium', motif:'orbit',
-  in:'19:52', out:'23:14', dur:'3H 22M', crew:['A','R'], more:2, aud:'0:47', msg:9, who:'ARDA',
-  froze:'14.04', no:'0428', at1:'21:20', at2:'22:36',
-  q1:['we were right at the front','A','21:44'], q2:['my ears are ringing','R','23:26']},
-
- {t:'AnnenMayKantereit', ty:'KONZERT', v:'OLYMPIAPARK',     d:'15.09.26', metal:'copper',     motif:'bands',
-  in:'19:30', out:'23:02', dur:'3H 32M', crew:['F','P','G'], more:6, aud:'1:04', msg:12, who:'PINAR',
-  froze:'17.09', no:'0163', at1:'20:58', at2:'22:14',
-  q1:['everyone was singing along','F','21:36'], q2:['sitting on the grass helped','G','22:48']},
-
- {t:'Elysium',      ty:'FESTIVAL',   v:'MAXVORSTADT',       d:'12.09.26', metal:'chrome',     motif:'grid',
-  in:'22:14', out:'06:02', dur:'7H 48M', crew:['V','H','O','Z'], more:22, aud:'0:31', msg:47, who:'ZEYNEP',
-  froze:'14.09', no:'0158', at1:'01:22', at2:'03:48',
-  q1:['all three stages are full','V','00:41'], q2:['sun is up, shall we go','O','05:54']},
-
- {t:'Mondscheinexpress', ty:'FESTIVAL', v:'BAHNWÄRTER THIEL', d:'19.11.26', metal:'gunmetal', motif:'moon',
-  in:'21:06', out:'02:44', dur:'5H 38M', crew:['I','U','W'], more:8, aud:'0:56', msg:18, who:'İLKE',
-  froze:'21.11', no:'0219', at1:'23:12', at2:'01:30',
-  q1:['it started to snow','I','23:48'], q2:['we moved next to the fire','U','01:52']},
-
- {t:'Blitz',        ty:'RAVE',       v:'MUSEUMSINSEL 1',    d:'05.09.26', metal:'anthracite', motif:'moire',
-  in:'23:59', out:'07:18', dur:'7H 19M', crew:['L','E','J','M'], more:11, aud:'0:38', msg:26, who:'LINA',
-  froze:'07.09', no:'0151', at1:'02:15', at2:'04:40',
-  q1:['no phones, thank god','J','02:31'], q2:['let this b2b never end','M','05:12']},
-
- {t:'Silo West',    ty:'RAVE',       v:'MÜNCHEN',           d:'05.09.26', metal:'steel',      motif:'iso',
-  in:'14:22', out:'21:05', dur:'6H 43M', crew:['B','N'], more:5, aud:'0:44', msg:15, who:'BERK',
-  froze:'07.09', no:'0149', at1:'16:40', at2:'18:52',
-  q1:['a daytime rave is another thing','B','17:18'], q2:['the sunset came right on time','N','20:04']},
-
- {t:'Unterwelt',    ty:'CLUB NIGHT', v:'SUNNY RED',         d:'02.10.26', metal:'rose',       motif:'descend',
-  in:'22:38', out:'04:26', dur:'5H 48M', crew:['C','Ş','A'], more:7, aud:'0:29', msg:21, who:'CEREN',
-  froze:'04.10', no:'0186', at1:'00:52', at2:'02:38',
-  q1:['it gets warmer further down','Ş','01:10'], q2:['that last track was a legend','C','04:12']}
+// Twelve nights for the landing strip (two per kind). Not real; the strip only shows what a card is.
+const NIGHTS = [
+  { kind: 'rave', design: 0, ty: 'RAVE', t: 'Blitz', v: 'MUSEUMSINSEL 1', city: 'MÜNCHEN', d: 'SAT 05.09.26', doors: '23:59', crew: ['L', 'E', 'J', 'M'], track: 'Innerbloom', artist: 'Rüfüs Du Sol' },
+  { kind: 'concert', design: 3, ty: 'KONZERT', t: 'A$AP Rocky', v: 'OLYMPIAHALLE', city: 'MÜNCHEN', d: 'FRI 11.09.26', doors: '20:00', crew: ['M'], track: null },
+  { kind: 'club', design: 5, ty: 'CLUB NIGHT', t: 'Karaköy Alt Kat', v: 'KARAKÖY', city: 'İSTANBUL', d: 'SAT 19.09.26', doors: '23:00', crew: ['E', 'B', 'S'], track: 'Teardrop', artist: 'Massive Attack' },
+  { kind: 'festival', design: 2, ty: 'FESTIVAL', t: 'Elysium', v: 'MAXVORSTADT', city: 'MÜNCHEN', d: 'SAT 12.09.26', doors: '22:00', crew: [], track: null },
+  { kind: 'meetup', design: 8, ty: 'MEETUP', t: 'Open Talk', v: 'MUCCA', city: 'MÜNCHEN', d: 'THU 24.09.26', doors: '19:00', crew: ['A', 'N'], track: null },
+  { kind: 'house', design: 1, ty: 'HAUSPARTY', t: 'Housewarming', v: 'SCHWABING', city: 'MÜNCHEN', d: 'SAT 03.10.26', doors: '21:00', crew: ['K', 'T', 'Z'], track: 'Jungle', artist: 'Fred again..' },
+  { kind: 'rave', design: 6, ty: 'RAVE', t: 'Silo West', v: 'SILO', city: 'MÜNCHEN', d: 'SAT 05.09.26', doors: '14:00', crew: ['B', 'N'], track: null },
+  { kind: 'concert', design: 9, ty: 'KONZERT', t: 'Nick Cave', v: 'OLYMPIAPARK', city: 'MÜNCHEN', d: 'SUN 23.08.26', doors: '19:30', crew: [], track: 'Into My Arms', artist: 'Nick Cave' },
+  { kind: 'club', design: 7, ty: 'CLUB NIGHT', t: 'Unterwelt', v: 'SUNNY RED', city: 'MÜNCHEN', d: 'FRI 02.10.26', doors: '22:00', crew: ['C', 'Ş', 'A'], track: null },
+  { kind: 'festival', design: 9, ty: 'FESTIVAL', t: 'Mondscheinexpress', v: 'BAHNWÄRTER THIEL', city: 'MÜNCHEN', d: 'THU 19.11.26', doors: '21:00', crew: ['I', 'U'], track: null },
+  { kind: 'meetup', design: 0, ty: 'MEETUP', t: 'Round Table', v: 'IMPACT HUB', city: 'MÜNCHEN', d: 'WED 30.09.26', doors: '18:30', crew: [], track: null },
+  { kind: 'house', design: 4, ty: 'HAUSPARTY', t: 'Up the Stairs', v: 'MAXVORSTADT', city: 'MÜNCHEN', d: 'SAT 10.10.26', doors: '20:00', crew: ['D', 'Y'], track: 'Opus', artist: 'Eric Prydz' },
 ];
 
-// ─────────── DEFS ───────────
-function defs(id,m){
-  const gs=m.grad.map((c,i)=>`<stop offset="${Math.round(i*100/(m.grad.length-1))}%" stop-color="${c}"/>`).join('');
-  const es=m.edge.map((c,i)=>`<stop offset="${Math.round(i*100/(m.edge.length-1))}%" stop-color="${c}"/>`).join('');
-  const ps=m.plate.map((c,i)=>`<stop offset="${[0,40,72,100][i]}%" stop-color="${c}"/>`).join('');
-  return `<defs>
-    <linearGradient id="g${id}" x1="0" y1="0" x2="1" y2="0.3">${gs}</linearGradient>
-    <linearGradient id="e${id}" x1="0" y1="0" x2="1" y2="1">${es}</linearGradient>
-    <linearGradient id="p${id}" x1="0" y1="0" x2="0.6" y2="1">${ps}</linearGradient>
-    <clipPath id="c${id}"><rect x="0" y="0" width="400" height="300"/></clipPath>
-  </defs>`;
-}
-function hairlines(m,ys){return `<g stroke="${m.hair}" stroke-width="0.5" opacity="${m.hairO}">`+
-  ys.map(y=>`<line x1="0" y1="${y}" x2="400" y2="${y}"/>`).join('')+`</g>`;}
-function rule(m,y){return `<line x1="34" y1="${y}" x2="366" y2="${y}" stroke="${m.deep}" stroke-width="1.5"/>
-  <line x1="34" y1="${y+1.5}" x2="366" y2="${y+1.5}" stroke="${m.faint}" stroke-width="1"/>`;}
-
-const WAVE=[26,42,62,30,78,50,22,70,38,86,54,26,74,46,94,58,30,82,50,22,70,42,90,62,30,78,50,22,66,38,82,54,26,70,42,18,50];
-function wave(id,m,x0,yc){return `<g fill="url(#g${id})">`+WAVE.map((h,i)=>
-  `<rect x="${x0+i*9}" y="${yc-h/2}" width="4" height="${h}"/>`).join('')+`</g>`;}
-
-// ─────────── THE FRONT ───────────
-// Every piece of night data goes through esc() on its way into the SVG
-// string: the callers hand the result to innerHTML, so a title carrying
-// a < or & must arrive as text, never as markup.
-const esc=(v)=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-
-function front(e,i){
-  const m=METALS[e.metal]||METALS.steel, id='f'+i;
-  /* A card that has not been earned yet is the same plate with the night
-     missing from it. Nothing is hidden and nothing is blurred: the slots
-     are all drawn, they are simply empty, which is the whole argument —
-     you are looking at what the room fills in for you. */
-  const av=e.blank?[0,1,2,3].map(k=>
-    `<rect x="${34+k*54}" y="442" width="44" height="44" fill="none" stroke="${m.faint}" stroke-width="1.2" stroke-dasharray="4 4"/>`).join('')
-   :e.crew.map((c,k)=>
-    `<rect x="${34+k*54}" y="442" width="44" height="44" fill="${m.light?'#2f3740':m.poster}" stroke="${m.mid}" stroke-width="1"/>
-     <text x="${56+k*54}" y="472" text-anchor="middle" font-family="InterTight_400Regular" font-size="17" fill="${m.light?'#eef3f8':m.hi}">${esc(c)}</text>`).join('')
-   +`<rect x="${34+e.crew.length*54}" y="442" width="44" height="44" fill="none" stroke="${m.faint}" stroke-width="1.2" stroke-dasharray="4 4"/>
-     <text x="${56+e.crew.length*54}" y="471" text-anchor="middle" font-family="InterTight_400Regular" font-size="15" fill="${m.sub}">+${esc(e.more)}</text>`;
-  return `<svg viewBox="0 0 400 600">${defs(id,m)}
-  <rect width="400" height="600" fill="url(#p${id})"/>
-  ${hairlines(m,[322,332,344,358,376,398,424,454,490,530,572])}
-  ${m.patina?`<g fill="#3f7d6f" opacity="0.13"><path d="M0 400 C 60 380, 90 430, 150 410 C 200 394, 230 440, 280 424 L 400 440 L 400 600 L 0 600 Z"/></g>`:''}
-  <g clip-path="url(#c${id})">
-    <rect width="400" height="300" fill="${m.poster}"/>
-    ${(MOTIFS[e.motif]||MOTIFS.rays)(id,m)}
-    <path d="M-40 0 L110 0 L30 300 L-120 300 Z" fill="#fff" opacity="0.05"/>
-  </g>
-  <line x1="0" y1="300" x2="400" y2="300" stroke="${m.deep}" stroke-width="2"/>
-  <line x1="0" y1="302" x2="400" y2="302" stroke="${m.mid}" stroke-width="1"/>
-
-  <text x="34" y="52" font-family="InterTight_400Regular" font-size="11" letter-spacing="3" fill="${m.mid}">${esc(e.ty)}</text>
-  <text x="366" y="52" text-anchor="end" font-family="InterTight_400Regular" font-size="11" letter-spacing="3" fill="${e.blank?m.faint:(m.light?m.hi:m.accent)}">${e.blank?'NOT YET':'CHECKED IN'}</text>
-
-  <text x="34" y="348" font-family="InterTight_500Medium" font-size="${e.t.length>26?19:(e.t.length>16?26:(e.t.length>12?31:37))}" letter-spacing="-1.4" fill="url(#g${id})">${esc(e.t.toUpperCase())}</text>
-  <text x="34" y="372" font-family="InterTight_400Regular" font-size="10.5" letter-spacing="2" fill="${m.sub}">${[e.d,e.v,e.blank?'':e.in].filter(Boolean).map(esc).join(' · ')}</text>
-
-  ${rule(m,398)}
-  <text x="34" y="424" font-family="InterTight_400Regular" font-size="10" letter-spacing="3" fill="${m.sub}">WHO WAS THERE</text>
-  ${av}
-  ${rule(m,514)}
-  <g font-family="InterTight_400Regular" font-size="10.5" letter-spacing="1.6">
-    <text x="34" y="540" fill="${m.sub}">AUDIO</text><text x="34" y="558" fill="${e.blank?m.faint:m.hi}">${e.blank?'—:—':esc(e.aud)}</text>
-    <text x="140" y="540" fill="${m.sub}">MESSAGES</text><text x="140" y="558" fill="${e.blank?m.faint:m.hi}">${e.blank?'—':esc(e.msg)}</text>
-    <text x="260" y="540" fill="${m.sub}">ROOM</text><text x="260" y="558" fill="${m.faint}">${e.blank?'OPEN':'FROZEN'}</text>
-  </g>
-  <rect x="7" y="7" width="386" height="586" fill="none" stroke="url(#e${id})" stroke-width="4"/>
-  <rect x="13" y="13" width="374" height="574" fill="none" stroke="${m.deep}" stroke-width="1"/>
-</svg>`;}
-
-// ─────────── THE BACK ───────────
-function back(e,i){
-  const m=METALS[e.metal]||METALS.steel, id='b'+i;
-  /* The unearned back: the same four marks, none of them struck. A
-     timeline with nothing on it yet is still a timeline, and it says
-     what the night is going to be asked to fill. */
-  const marks=e.blank
-    ?[['—:—','ARRIVED',m.faint,0],
-      ['—:—','VOICE NOTE',m.faint,0],
-      ['—:—','MESSAGES',m.faint,0],
-      ['—:—','LEFT',m.faint,0]]
-    :[[e.in,'ARRIVED · WITH '+e.crew.length,m.hi,1],
-      [e.at1,'VOICE NOTE',m.accent,1],
-      [e.at2,e.msg+' MESSAGES',m.mid,1],
-      [e.out,'LEFT',m.sub,0]];
-  const tl=marks.map((k,n)=>{
-    const y=106+n*56;
-    return (k[3]?`<rect x="42" y="${y}" width="12" height="12" fill="${k[2]}"/>`
-                :`<rect x="42" y="${y}" width="12" height="12" fill="none" stroke="${m.mid}" stroke-width="1.5"/>`)
-      +`<text x="74" y="${y+10}" font-size="12" fill="${k[2]}">${esc(k[0])}</text>`
-      +`<text x="150" y="${y+10}" font-size="10" fill="${m.sub}">${esc(k[1])}</text>`;}).join('');
-  return `<svg viewBox="0 0 400 600">${defs(id,m)}
-  <rect width="400" height="600" fill="url(#p${id})"/>
-  ${hairlines(m,[70,96,128,168,214,266,324,388,458,534])}
-  ${m.patina?`<g fill="#4a9c8a" opacity="0.07"><path d="M0 470 C 60 458, 96 492, 156 478 C 210 466, 250 500, 300 488 L 400 498 L 400 600 L 0 600 Z"/></g>`:''}
-  <path d="M-40 0 L90 0 L10 600 L-120 600 Z" fill="#fff" opacity="0.026"/>
-
-  <text x="34" y="52" font-family="InterTight_400Regular" font-size="11" letter-spacing="3" fill="${m.mid}">THE NIGHT</text>
-  <text x="366" y="52" text-anchor="end" font-family="InterTight_400Regular" font-size="11" letter-spacing="3" fill="${e.blank?m.faint:(m.light?m.hi:m.accent)}">${e.blank?'—H —M':esc(e.dur)}</text>
-  ${rule(m,70)}
-
-  <line x1="48" y1="104" x2="48" y2="286" stroke="${m.line}" stroke-width="1.5"/>
-  <g font-family="InterTight_400Regular" letter-spacing="1.4">${tl}</g>
-
-  ${rule(m,318)}
-  <text x="34" y="344" font-family="InterTight_400Regular" font-size="10" letter-spacing="3" fill="${m.sub}">VOICE NOTE · SOON</text>
-  ${e.blank?`<g opacity="0.16">${wave(id,m,34,387)}</g>`:wave(id,m,34,387)}
-  ${e.blank
-    ?`<g transform="translate(34,444)"><rect width="34" height="34" fill="none" stroke="${m.faint}" stroke-width="1.2" stroke-dasharray="4 4"/><path d="M12 9 L25 17 L12 25 Z" fill="${m.faint}"/></g>`
-    :`<g transform="translate(34,444)"><rect width="34" height="34" fill="url(#g${id})"/><path d="M12 9 L25 17 L12 25 Z" fill="${m.poster}"/></g>`}
-  <text x="80" y="466" font-family="InterTight_400Regular" font-size="10.5" letter-spacing="1.6" fill="${m.sub}">${e.blank?'NOBODY HAS SPOKEN YET':esc(e.who)+' · '+esc(e.at1)}</text>
-
-  ${rule(m,498)}
-  <g font-family="InterTight_400Regular" font-size="11">${e.blank
-    ?`<text x="34" y="524" letter-spacing="1.6" font-size="10" fill="${m.faint}">OVERHEARD · NOTHING YET</text>
-      <line x1="34" y1="546" x2="366" y2="546" stroke="${m.faint}" stroke-width="1" stroke-dasharray="4 5" opacity="0.7"/>`
-    :`${e.q1?`<text x="34" y="524" fill="${m.light?m.accent:m.txt}">"${esc(e.q1[0])}"</text><text x="366" y="524" text-anchor="end" font-size="9.5" fill="${m.faint}">${esc(e.q1[1])} · ${esc(e.q1[2])}</text>`:''}
-      ${e.q2?`<text x="34" y="548" fill="${m.light?m.accent:m.txt}">"${esc(e.q2[0])}"</text><text x="366" y="548" text-anchor="end" font-size="9.5" fill="${m.faint}">${esc(e.q2[1])} · ${esc(e.q2[2])}</text>`:''}`}
-  </g>
-  <text x="34" y="578" font-family="InterTight_400Regular" font-size="9.5" letter-spacing="2" fill="${m.faint}">${e.blank?'ROOM NOT FROZEN · NO. NOT ISSUED':'ROOM FROZEN '+esc(e.froze)+' · NO. '+esc(e.no)}</text>
-
-  <rect x="7" y="7" width="386" height="586" fill="none" stroke="url(#e${id})" stroke-width="4"/>
-  <rect x="13" y="13" width="374" height="574" fill="none" stroke="${m.deep}" stroke-width="1"/>
-</svg>`;}
-
-  return { nights: EVENTS, front, back };
+return { front, nights: NIGHTS, kinds: KINDS, kindOf, pickDesign, setFonts, designs: () => KINDS.map((k) => MOTIFS[k].length) };
 })();
 
 export default CARDS;

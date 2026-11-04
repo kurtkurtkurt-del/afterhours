@@ -464,7 +464,7 @@ const ambient = (() => {
 
 const s3Rail = document.getElementById("s3-rail");
 
-// One pair per night: front and back touching, then a gap.
+// One card per night (a card has one face since 04.11.2026), then a gap.
 // The list is printed twice; the counter keeps running so the SVG ids
   // never collide.
 for (let again = 0; again < 2; again++) {
@@ -472,7 +472,7 @@ for (let again = 0; again < 2; again++) {
     const index = again * CARDS.nights.length + i;
     const pair = document.createElement("div");
     pair.className = "s3-pair";
-    pair.innerHTML = CARDS.front(night, index) + CARDS.back(night, index);
+    pair.innerHTML = CARDS.front(night, index);
     s3Rail.appendChild(pair);
   });
 }

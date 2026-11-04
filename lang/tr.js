@@ -87,7 +87,7 @@ window.AH_LANG.tr = {
 "before.when.now":"az önce",
 "before.when.yesterday":"dün",
 "cards.count":"gittiğin {n} gece, uygulamadakiyle aynı.",
-"cards.desc":"Gerçekten gittiğin geceler, afterhours kartları olarak: sesler, sohbetler, sabahın dördünde söylenenler.",
+"cards.desc":"Gittiğin geceler, afterhours kartları olarak: adı, tarihi, kimlerle gittiğin, bir parça.",
 "cards.empty":"henüz burada bir şey yok.",
 "cards.failed":"kartlar yüklenemedi. birazdan tekrar dene.",
 "cards.flip":"{name} kartını çevir",

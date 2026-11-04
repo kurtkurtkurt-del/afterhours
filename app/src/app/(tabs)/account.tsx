@@ -30,7 +30,7 @@ import type { Night } from '@/data/deck';
 import { sparkOf } from '@/content/sparks';
 import { collection as sampleCards } from '@/content/collection';
 import { SAMPLES } from '@/content/samples';
-import { myCards, toCardData, type CardRow } from '@/data/checkin';
+import { cardSounds, myCards, toCardData, type CardRow, type CardSound } from '@/data/checkin';
 import { useRefreshOnFocus } from '@/hooks/useRefresh';
 import { isStaff, useRole } from '@/data/staff';
 import { useRunsVenues } from '@/data/venues';
@@ -66,7 +66,6 @@ export default function AccountScreen() {
   const refresh = usePullRefresh();
   const { width, height } = useWindowDimensions();
   const [open, setOpen] = useState<number | null>(null);
-  const [side, setSide] = useState<'front' | 'back'>('front');
   const [cards, setCards] = useState<CardRow[] | null>(null);
   const { photo, choose, remove, broken } = usePhoto();
   const [sheet, setSheet] = useState(false);
@@ -85,10 +84,17 @@ export default function AccountScreen() {
   // Show the new name and city after returning from settings.
   const profile = useProfile(tick);
   const uid = session?.user.id;
+  const [sounds, setSounds] = useState<Map<string, CardSound>>(new Map());
   useEffect(() => {
     if (!uid) return;
     let cancelled = false;
-    myCards().then((c) => !cancelled && setCards(c)).catch(() => {});
+    myCards()
+      .then((c) => {
+        if (cancelled) return;
+        setCards(c);
+        cardSounds(c.map((r) => r.slug)).then((m) => !cancelled && setSounds(m));
+      })
+      .catch(() => {});
     return () => {
       cancelled = true;
     };
@@ -117,7 +123,7 @@ export default function AccountScreen() {
   // Real cards; samples (labelled at the top right) when there are none.
   const real = cards && cards.length > 0;
   const samples: NightCardData[] = SAMPLES ? sampleCards : [];
-  const collection: NightCardData[] = real ? cards.map(toCardData) : samples;
+  const collection: NightCardData[] = real ? cards.map((r) => toCardData(r, sounds.get(r.slug))) : samples;
   const cities = real ? distinct(cards.map((c) => c.city_name)) : distinct(samples.map((c) => c.city));
 
   const name = (profile?.display_name ?? session?.user.email?.split('@')[0] ?? t('account.you')).toLowerCase();
@@ -424,7 +430,6 @@ export default function AccountScreen() {
             <Pressable
               key={`${c.t}-${i}`}
               onPress={() => {
-                setSide('front');
                 setOpen(i);
               }}
               style={({ pressed }) => [styles.card, i > 0 && { marginLeft: -Math.round(cardW * (1 - STEP)) }, pressed && styles.pressed]}
@@ -516,15 +521,12 @@ export default function AccountScreen() {
         note={!session || isAnonymous ? t('account.photo.note.guest') : t('account.photo.note')}
       />
 
-      {/* Enlarged card: tap to flip. */}
+      {/* The card, enlarged. */}
       <Modal visible={open !== null} transparent animationType="fade" onRequestClose={() => setOpen(null)}>
         <Pressable style={styles.dim} onPress={() => setOpen(null)}>
           {open !== null && collection[open] && (
-            <Pressable onPress={() => setSide((s) => (s === 'front' ? 'back' : 'front'))}>
-              <AfterhoursCard data={collection[open]} index={open} side={side} width={Math.min(width - 48, 360, Math.floor((height - 300) / 1.5))} />
-            </Pressable>
+            <AfterhoursCard data={collection[open]} index={open} width={Math.min(width - 48, 360, Math.floor((height - 300) / 1.5))} />
           )}
-          <Text style={styles.flipHint}>{up(t('account.flip'))}</Text>
           {/* Under the card: that night's room. Sample cards have none. */}
           {open !== null && real && cards?.[open] ? (
             <Pressable
@@ -650,5 +652,4 @@ const styles = StyleSheet.create({
   roomLink: { alignItems: 'center', gap: 4, marginTop: 6, paddingHorizontal: 22, paddingVertical: 10, borderWidth: 1, borderColor: colors.spot, borderRadius: radius.md },
   roomLinkText: { fontFamily: fonts.logo, fontSize: 26, letterSpacing: -0.5, color: colors.spotText },
   roomLinkSub: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.meta },
-  flipHint: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
 });

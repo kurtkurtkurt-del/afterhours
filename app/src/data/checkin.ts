@@ -2,7 +2,8 @@ import { serverText } from '@/lib/serverText';
 import { supabase } from '@/lib/supabase';
 import { OfflineError, invalidate, must, outbox, peek, pendingJobs, remember, send, type Job } from '@/lib/offline';
 import type { Night } from '@/data/deck';
-import type { NightCardData } from '@/content/cardsgen';
+import CARDS, { type NightCardData } from '@/content/cardsgen';
+import { previewsFor } from '@/data/previews';
 import type { Key } from '@/i18n/dict';
 
 // 19_checkins.sql: check_in, my_cards, room_info, room_list, room_post, friends_live
@@ -154,27 +155,44 @@ export async function friendsLive(): Promise<LiveFriend[]> {
   return remember('live', '', async () => ((await must(supabase.rpc('friends_live'))) ?? []) as LiveFriend[]);
 }
 
-// For the generator: metal and motif derive from the night id, so a card always renders the same.
-const METALS = ['steel', 'gold', 'chrome', 'copper', 'gunmetal', 'brass', 'rose', 'titanium', 'nickel', 'anthracite'];
-const MOTIFS = ['rays', 'oval', 'diagonal', 'orbit', 'grid', 'moon', 'moire', 'bands', 'iso', 'descend'];
-const hash = (s: string) => Array.from(s).reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
+// For the generator (content/cardsgen.js): the card says only what the row knows. The
+// design comes from the kind and the slug inside the generator, so a night always
+// renders the same card. The track, when the night has one, comes from cardSounds.
 const hhmm = (iso: string | null) => (iso ? new Date(iso).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) : '');
-const ddmm = (iso: string | null, year = false) =>
-  iso ? new Date(iso).toLocaleDateString('en-GB', year ? { day: '2-digit', month: '2-digit', year: '2-digit' } : { day: '2-digit', month: '2-digit' }) : '';
+const dayDate = (iso: string | null) => {
+  if (!iso) return '';
+  const d = new Date(iso);
+  return `${d.toLocaleDateString('en-GB', { weekday: 'short' }).toUpperCase()} ${d.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: '2-digit' })}`;
+};
 
-export function toCardData(r: CardRow): NightCardData {
-  const h = hash(r.slug);
-  const start = r.starts_at ?? r.checked_at;
-  const end = new Date(new Date(start).getTime() + 6 * 3600_000).toISOString();
+export type CardSound = { track: string; artist: string };
+
+export function toCardData(r: CardRow, sound?: CardSound | null): NightCardData {
   return {
-    t: r.title.length > 28 ? r.title.slice(0, 27).trimEnd() + '…' : r.title, ty: r.type_name.toUpperCase(), v: (r.venue_name ?? r.city_name).toUpperCase(), d: ddmm(start, true),
-    metal: METALS[h % METALS.length], motif: MOTIFS[(h >> 4) % MOTIFS.length],
-    in: hhmm(r.checked_at), out: hhmm(end), dur: '6H 00M',
-    crew: r.crew.map((c) => c.toUpperCase()), more: r.crew_more, aud: '0:00', msg: r.post_count,
-    who: (r.q1_who ?? '').toUpperCase(), froze: ddmm(r.freeze_at), no: r.waiting ? '····' : String(r.card_no).padStart(4, '0'),
-    at1: hhmm(r.q1_at), at2: hhmm(r.q2_at),
-    q1: r.q1_body ? [r.q1_body, r.q1_who?.toUpperCase() ?? '', hhmm(r.q1_at)] : undefined,
-    q2: r.q2_body ? [r.q2_body, r.q2_who?.toUpperCase() ?? '', hhmm(r.q2_at)] : undefined,
-    blank: !r.frozen && r.post_count === 0,
+    kind: CARDS.kindOf(r.type_name), id: r.slug, ty: r.type_name,
+    t: r.title, d: dayDate(r.starts_at ?? r.checked_at), doors: r.starts_at ? hhmm(r.starts_at) : '',
+    v: r.venue_name, city: r.city_name,
+    crew: r.crew.map((c) => c.toUpperCase()),
+    track: sound?.track ?? null, artist: sound?.artist ?? null,
+    photo: r.image_url,
   };
+}
+
+// The music note: the night's preview track (63_previews.sql), by slug. Nights without
+// one are simply missing from the map; the card then shows the small motif.
+export async function cardSounds(slugs: string[]): Promise<Map<string, CardSound>> {
+  const out = new Map<string, CardSound>();
+  const list = [...new Set(slugs.filter(Boolean))];
+  if (!list.length) return out;
+  try {
+    const ids = await remember('cardIds', list.slice().sort().join(','), async () => (await must(supabase.from('events').select('id,slug').in('slug', list))) as { id: string; slug: string }[], 8, { ttl: 6 * 3600_000 });
+    const previews = await previewsFor(ids.map((e) => e.id));
+    ids.forEach((e) => {
+      const p = previews.get(e.id);
+      if (p) out.set(e.slug, { track: p.track, artist: p.artist });
+    });
+  } catch {
+    // offline or refused: the cards keep their motif
+  }
+  return out;
 }

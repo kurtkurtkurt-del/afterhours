@@ -86,14 +86,6 @@
   const MONTHS = YEAR.slice(0, 8);
   const NAMES = ["Lina", "Emre", "Mira", "Jonas", "Selin", "Deniz", "Kaya", "Nora",
                  "Bosse", "Ada", "Tuna", "Ilay", "Marek", "Juli", "Ege", "Rana"];
-  const METALS = ["steel", "chrome", "gunmetal", "titanium", "nickel", "anthracite", "brass", "copper", "rose", "gold"];
-  const MOTIFS = ["rays", "oval", "diagonal", "orbit", "grid", "moon", "moire", "bands", "iso", "descend"];
-  const OVERHEARD = [
-    "nobody in the front row sat down", "we lost each other by midnight",
-    "the back room was better", "phones stayed in pockets",
-    "side seats were the right call", "they said no encore. there was one",
-    "we stayed until the lights came up", "the queue was the best part",
-  ];
 
   if (!handle) {
     area.appendChild(el("p", "pf-none", AH.t("profile.none")));
@@ -377,23 +369,15 @@
     nights.slice(0, count).forEach((e, i) => {
       const m = String(e.meta || "").split("·").map((s) => s.trim()).filter(Boolean);
       const night = {
-        t: shortTitle(e.title), ty: (e.kind || "").toUpperCase(),
-        v: (m[0] || p.city[1]).toUpperCase(), d: m[1] || "",
-        metal: pick(rnd, METALS), motif: pick(rnd, MOTIFS),
-        in: "2" + i + ":1" + i, out: "0" + i + ":4" + i, dur: (3 + i % 3) + "H " + (10 + i * 7) + "M",
-        crew: others.slice(i, i + 3).map((n) => n[0]), more: 2 + Math.floor(rnd() * 7),
-        aud: "0:" + (20 + Math.floor(rnd() * 39)), msg: 6 + Math.floor(rnd() * 20),
-        who: (others[i] || p.name).toUpperCase(),
-        froze: (m[1] || "").slice(0, 5), no: "0" + (100 + Math.floor(rnd() * 800)),
-        at1: "2" + i + ":4" + i, at2: "0" + i + ":1" + i,
-        q1: [pick(rnd, OVERHEARD), (others[i + 1] || "L")[0], "2" + i + ":5" + i],
-        q2: [pick(rnd, OVERHEARD), (others[i + 2] || "M")[0], "0" + i + ":2" + i],
+        kind: e.kind, id: e.slug || e.title, t: shortTitle(e.title), ty: (e.kind || "").toUpperCase(),
+        v: (m[0] || p.city[1]).toUpperCase(), city: p.city[1], d: m[1] || "",
+        crew: others.slice(i, i + 3).map((n) => n[0]),
       };
       const fig = el("figure", "cs-earn-card");
       const faceBox = el("div", "cs-earn-face");
       faceBox.innerHTML = CARDS.front(night, "s" + i);
       fig.appendChild(faceBox);
-      fig.appendChild(el("figcaption", null, AH.t("profile.metal." + night.metal) + " · " + (night.d || "").toLowerCase()));
+      fig.appendChild(el("figcaption", null, (night.d || "").toLowerCase()));
       shelf.appendChild(fig);
     });
     band.appendChild(shelf);

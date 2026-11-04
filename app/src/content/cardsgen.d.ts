@@ -1,16 +1,27 @@
+export type CardKind = 'rave' | 'club' | 'concert' | 'festival' | 'meetup' | 'house';
+// What a card holds, nothing more (owner, 04.11.2026).
 export type NightCardData = {
-  city?: string;
-  t: string; ty: string; v: string; d: string;
-  metal: string; motif: string;
-  in: string; out: string; dur: string;
-  crew: string[]; more: number; aud: string; msg: number; who: string;
-  froze: string; no: string; at1: string; at2: string;
-  q1?: [string, string, string]; q2?: [string, string, string];
-  blank?: boolean;
+  kind: CardKind | string;      // a kind, or the type name from the database (kindOf picks)
+  design?: number;              // 0–9; when missing, pickDesign(id) decides
+  id?: string;                  // the stable id (slug) the design is picked from
+  ty?: string;                  // the type label on the card (RAVE, KONZERT …)
+  t: string;                    // the night's name
+  d: string;                    // the date, as shown
+  doors?: string;               // the time the doors opened, as shown
+  v?: string | null;            // venue
+  city?: string | null;
+  crew?: string[];              // initials of the people who came, if any
+  track?: string | null;        // the night's track when there is one
+  artist?: string | null;
+  photo?: string | null;        // the night's photo when there is one
 };
 declare const CARDS: {
   nights: NightCardData[];
-  front: (e: NightCardData, i: number) => string;
-  back: (e: NightCardData, i: number) => string;
+  kinds: CardKind[];
+  front: (e: NightCardData, i: number | string) => string;
+  kindOf: (typeName: string | null | undefined) => CardKind;
+  pickDesign: (id: string) => number;
+  setFonts: (f: { regular?: string; medium?: string; mono?: string }) => void;
+  designs: () => number[];
 };
 export default CARDS;

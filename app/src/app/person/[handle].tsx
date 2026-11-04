@@ -16,7 +16,7 @@ import { useReport } from '@/components/ReportSheet';
 import { friendRemove, person, personPeople, type Found, type PersonCard } from '@/data/friends';
 import { dmStart } from '@/data/dms';
 import { friendPhotos, personPhoto } from '@/data/photo';
-import { personCards, toCardData } from '@/data/checkin';
+import { cardSounds, personCards, toCardData } from '@/data/checkin';
 import { useProfileExtra } from '@/data/profile';
 import { useRunsVenues } from '@/data/venues';
 import { useShelf } from '@/lib/offline';
@@ -55,7 +55,6 @@ export default function PersonScreen() {
   const [cards, setCards] = useState<NightCardData[] | null>(null);
   const [peopleCount, setPeopleCount] = useState<number | null>(null);
   const [open, setOpen] = useState<number | null>(null);
-  const [side, setSide] = useState<'front' | 'back'>('front');
   const [rootH, setRootH] = useState(0);
   const [aboveH, setAboveH] = useState(0);
   const [headH, setHeadH] = useState(0);
@@ -73,7 +72,10 @@ export default function PersonScreen() {
       .then((data) => live && setState({ handle, data }))
       .catch(() => live && setState({ handle, data: null }));
     personCards(handle)
-      .then((rows) => live && setCards(rows.map(toCardData)))
+      .then(async (rows) => {
+        const sounds = await cardSounds(rows.map((r) => r.slug));
+        if (live) setCards(rows.map((r) => toCardData(r, sounds.get(r.slug))));
+      })
       .catch(() => live && setCards([]));
     // Their people: only a friend (or you) gets the list, so only then is there a count.
     personPeople(handle)
@@ -237,7 +239,6 @@ export default function PersonScreen() {
                   <Pressable
                     key={`${c.t}-${i}`}
                     onPress={() => {
-                      setSide('front');
                       setOpen(i);
                     }}
                     style={({ pressed }) => [i > 0 && { marginLeft: -Math.round(cardW * (1 - STEP)) }, pressed && styles.pressed]}
@@ -253,15 +254,12 @@ export default function PersonScreen() {
         )}
       </PullDownScroll>
 
-      {/* Enlarged card: tap to flip. */}
+      {/* The card, enlarged. */}
       <Modal visible={open !== null} transparent animationType="fade" onRequestClose={() => setOpen(null)}>
         <Pressable style={styles.dim} onPress={() => setOpen(null)}>
           {open !== null && collection[open] && (
-            <Pressable onPress={() => setSide((s) => (s === 'front' ? 'back' : 'front'))}>
-              <AfterhoursCard data={collection[open]} index={open} side={side} width={Math.min(width - 48, 360, Math.floor((height - 300) / 1.5))} />
-            </Pressable>
+            <AfterhoursCard data={collection[open]} index={open} width={Math.min(width - 48, 360, Math.floor((height - 300) / 1.5))} />
           )}
-          <Text style={styles.flipHint}>{up(t('account.flip'))}</Text>
         </Pressable>
       </Modal>
       {reporting.sheet}
@@ -294,5 +292,4 @@ const styles = StyleSheet.create({
   note: { fontFamily: fonts.regular, fontSize: 10, letterSpacing: 1.6, color: colors.meta },
   pressed: { opacity: 0.7 },
   dim: { flex: 1, backgroundColor: ground(0.92), alignItems: 'center', justifyContent: 'center', gap: 18 },
-  flipHint: { fontFamily: fonts.regular, fontSize: 11, letterSpacing: 1.4, color: colors.mute },
 });

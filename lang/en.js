@@ -87,7 +87,7 @@ window.AH_LANG.en = {
 "before.when.now":"just now",
 "before.when.yesterday":"yesterday",
 "cards.count":"{n} nights you were at, the same as in the app.",
-"cards.desc":"The nights you actually went to, as afterhours cards: the sounds, the conversations, what was said at four in the morning.",
+"cards.desc":"The nights you went to, as afterhours cards: the name, the date, who came with you, one track.",
 "cards.empty":"nothing here yet.",
 "cards.failed":"the cards did not load. try again in a moment.",
 "cards.flip":"flip {name}",

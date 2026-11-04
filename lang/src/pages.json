@@ -27,7 +27,7 @@
   "maps.schematic": { "en": "schematic, not to scale", "de": "schematisch, nicht maßstabsgetreu", "tr": "şematik, ölçekli değil" },
 
   "cards.title": { "en": "collection | afterhours", "de": "sammlung | afterhours", "tr": "koleksiyon | afterhours" },
-  "cards.desc": { "en": "The nights you actually went to, as afterhours cards: the sounds, the conversations, what was said at four in the morning.", "de": "Die Nächte, in denen du wirklich warst, als afterhours-Karten: die Klänge, die Gespräche, was um vier Uhr morgens gesagt wurde.", "tr": "Gerçekten gittiğin geceler, afterhours kartları olarak: sesler, sohbetler, sabahın dördünde söylenenler." },
+  "cards.desc": { "en": "The nights you went to, as afterhours cards: the name, the date, who came with you, one track.", "de": "Die Nächte, in denen du warst, als afterhours-Karten: der Name, das Datum, wer mitkam, ein Track.", "tr": "Gittiğin geceler, afterhours kartları olarak: adı, tarihi, kimlerle gittiğin, bir parça." },
   "cards.h1": { "en": "collection.", "de": "sammlung.", "tr": "koleksiyon." },
   "cards.empty": { "en": "nothing here yet.", "de": "noch nichts hier.", "tr": "henüz burada bir şey yok." },
   "cards.loading": { "en": "your cards…", "de": "deine karten…", "tr": "kartların…" },
