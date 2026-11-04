@@ -897,6 +897,31 @@ process photographed and posted. Count how many people post the card on
 their own; more than five means it works, and only then the 500-piece
 order.
 
+**NFC, and the card as a key** (26.10.2026). A tap on the card opens the
+night. NFC does not work on top of metal, so the chip is an *on-metal*
+NTAG213 sticker (ferrite-backed, €0.40–0.80 at 500) under the printed
+sticker and the overlay, which puts the card at about €2.00–2.30; a
+ready-made NFC metal card from the supplier is €2–4. Writing is free: a
+phone app (NFC Tools) writes a URL to each tag in ten seconds, then
+locks it. iPhone and Android read a URL tag without any app installed.
+The tag never carries the night's address, only the card's own —
+`afterhours…/c/0208-x7k2`, the number printed on the card plus an
+unguessable tail — and the server sends it on, so the destination can
+change later and every tap is counted.
+
+Where it lands is the night's **album**: who was there, the hours, and
+the photos of that night. The person with the card adds photos and
+sends the link to friends; friends add theirs; the album keeps growing
+after the night. Seeing it needs only the link, adding needs an account
+(someone who was at the night or came in by the link); the owner and the
+staff can take a photo down. Nothing of this exists yet. Most of the
+pieces do — the night page on the site and in the app, posts with
+photos and the photos bucket, likes and comments, who was there — and
+three things are missing: posts attached to a night and gathered on one
+page, that page reachable from outside by its link, and the card
+redirect (a table: card, night, taps). One or two days on top of what is
+there.
+
 **What the app needs when it is built.** A *send me the card* ask on a
 night one was at (consent, name on the letterbox as its own field,
 address kept only until the Sunday it is delivered and deleted after),

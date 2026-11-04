@@ -367,3 +367,17 @@ Owner bu projeyi 26.10.2026'da baştan sona yazdırdı; yukarıdaki bölümlerin
 - Site/PWA sürümü **199**; README §10 hâlâ 195 diyor. `backend/README.md` "278 checks"
   diyor; gerçek 950+.
 - Commit sayısı **400**; `try/light` `main`'in 30 commit önünde.
+
+---
+
+## 12. 28.10.2026 güvenlik denetimi
+
+- Rapor: [security-audit-2026-10-28.md](security-audit-2026-10-28.md) — **0 kritik,
+  2 yüksek, 16 orta, 14 düşük, 6 bilgi**.
+- En acil: bekleyen arkadaşlık isteği `profiles` satırının tamamını açıyor (H-1);
+  `profile_kept`/`event_people` anon'a açık (H-2); şart/18+ kapısı sunucuda yok (M-10);
+  hesap silme re-auth istemiyor (M-11); sitede implicit token (M-12).
+- Canlı RLS matrisi temiz: 48 tablonun kişisel olanları `401` veya `0 satır`.
+- Repo durumu değişti: çalışma artık **`main`** üzerinde (28.10.2026), `try/light`
+  birleşti, SQL **103**'e kadar; yeni: venue desk (97), spark days (98), storage queue
+  (100), people map (101–103).

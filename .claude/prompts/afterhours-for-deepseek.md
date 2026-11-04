@@ -340,8 +340,8 @@ config.js   →  data.js (live mi local mi?)  →  window.POSTERS  →  data-aft
 ```
 
 ```html
-<script src="../data.js?v=199" data-fallback="../events-data.js?v=199"
-        data-after="wall.js?v=199, filters.js?v=199"></script>
+<script src="../data.js?v=200" data-fallback="../events-data.js?v=200"
+        data-after="wall.js?v=200, filters.js?v=200"></script>
 ```
 
 Ortak `AH` nesnesi: `AH.mode`, `AH.request()`, `AH.session`, `AH.signedIn()`, `AH.sessionReady`, `AH.onSessionChange`, `AH.refreshSession()` (her istek öncesi token tazeler), `AH.signUp/signInWithPassword/requestRecovery/updatePassword`, `AH.events/kept/saveSwipe/friends/comments/myProfile`, `AH.t/tn/has/i18nApply/setLang`. **Supabase SDK yok**, düz `fetch`.
@@ -565,7 +565,7 @@ README §12 tam liste; burada en çok tekrar edenler:
 
 ## 10. Şu anki durum ve açık işler (26.10.2026)
 
-**Canlı:** Site GitHub Pages'te (`?v=199`), PWA `afterhours-pwa`'da (22.10 yayını), Supabase'de SQL 00-96 + enrich yapıştırılı (`health: 96 of 96`), Ticketmaster günlük senkron çalışıyor, APK v26 (lokal build, USB ile telefonda). Play'de closed test var (farklı imza olabilir).
+**Canlı:** Site GitHub Pages'te (`?v=200`), PWA `afterhours-pwa`'da (22.10 yayını), Supabase'de SQL 00-96 + enrich yapıştırılı (`health: 96 of 96`), Ticketmaster günlük senkron çalışıyor, APK v26 (lokal build, USB ile telefonda). Play'de closed test var (farklı imza olabilir).
 
 **Dal:** `try/light` = origin, `main`'in 30 commit önünde. Owner `main`'e merge edecek. 3 küçük uncommitted düzeltme.
 

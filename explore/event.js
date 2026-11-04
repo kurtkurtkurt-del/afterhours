@@ -612,8 +612,15 @@
   } else if (window.AH && AH.mode === "live" && AH.request) {
     AH.request("/events_public?slug=eq." + encodeURIComponent(slug) + "&limit=1")
       .then((rows) => {
-        if (rows && rows[0] && AH.rowToEvent) build(AH.rowToEvent(rows[0]));
-        else buildGone();
+        if (rows && rows[0] && AH.rowToEvent) return build(AH.rowToEvent(rows[0]));
+        /* a night that is over or was cancelled is off the wall but keeps its page
+           (95_past_night_page.sql) — the app opens it the same way, so a card shared
+           from the collection lands on a page, not on "gone" */
+        return AH.request("/rpc/night_page", { method: "POST", body: JSON.stringify({ p_slug: slug }) })
+          .then((past) => {
+            if (past && past[0] && AH.rowToEvent) build(AH.rowToEvent(past[0]));
+            else buildGone();
+          });
       })
       .catch(buildGone);
   } else {

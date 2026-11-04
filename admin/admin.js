@@ -114,6 +114,7 @@
     "96_spark_edit.sql",
     "97_venue_desk.sql",
     "98_spark_days.sql",
+    "99_spark_week.sql",
     "100_storage_queue.sql",
     "101_people_map.sql",
     "102_people_places.sql",

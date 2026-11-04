@@ -15,8 +15,12 @@
   let kind = "", who = "tickets";
 
   /* --- the poster: pick or drop, then show it in the frame --- */
+  /* 117_poster_uploads.sql takes jpeg or png up to 3 MB; anything else is refused here,
+     not silently dropped at the bucket */
+  const POSTER_MAX = 3 * 1024 * 1024;
   function showFile(f) {
-    if (!f || !/^image\//.test(f.type)) return;
+    if (!f || !/^image\/(jpeg|png)$/.test(f.type)) { if (f) say("host.err.poster.type", true); return; }
+    if (f.size > POSTER_MAX) return say("host.err.poster.size", true);
     file.chosen = f;
     const url = URL.createObjectURL(f);
     preview.src = url;
@@ -86,6 +90,9 @@
     if (!(AH.signedIn && AH.signedIn())) return say("host.err.signin", true);
     const name = $("host-name").value.trim(), city = citySel.value, date = $("host-date").value, link = $("host-link").value.trim();
     if (!name || !kind || !city || !date || !link) return say("host.err.fill", true);
+    /* a night for your own people is not a listing: on the wall everyone would see it.
+       That lives in the app as a spark (make → among friends); nothing is sent from here */
+    if (who === "friends") return say("host.friends.app", true);
 
     const venue = $("host-venue").value.trim();
     const line = $("host-body").value.trim();

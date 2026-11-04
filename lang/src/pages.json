@@ -900,8 +900,23 @@
     "tr": "yayınlanıyor…"
   },
   "host.done": {
-    "en": "it is in. a person looks at it, then it is on the wall and in the app. your nights: account → my nights.",
+    "en": "it is in. a person looks at it, then it is on the wall and in the app.",
     "de": "drin. ein mensch sieht es an, dann hängt es an der wand und in der app.",
-    "tr": "gitti. bir insan bakar, sonra duvarda ve uygulamada. gecelerin: hesap → gecelerim."
+    "tr": "gitti. bir insan bakar, sonra duvarda ve uygulamada."
+  },
+  "host.friends.app": {
+    "en": "a night for your own people is not a listing — in the app, the + on the flow: among friends. nothing was sent.",
+    "de": "eine nacht nur für deine leute ist kein eintrag — in der app, das + im flow: unter freunden. nichts wurde gesendet.",
+    "tr": "sadece senin insanların için bir gece ilan değildir — uygulamada, akıştaki +: arkadaşlar arasında. hiçbir şey gönderilmedi."
+  },
+  "host.err.poster.type": {
+    "en": "jpg or png only.",
+    "de": "nur jpg oder png.",
+    "tr": "yalnız jpg ya da png."
+  },
+  "host.err.poster.size": {
+    "en": "the poster is over 3 mb.",
+    "de": "das poster ist über 3 mb.",
+    "tr": "afiş 3 mb'ın üstünde."
   }
 }
