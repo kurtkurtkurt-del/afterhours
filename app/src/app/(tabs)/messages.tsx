@@ -212,7 +212,7 @@ export default function MessagesScreen() {
             <ScrollView style={styles.sheetList} keyboardShouldPersistTaps="handled">
               {shownFriends.slice(0, 8).map((f) => (
                 <Pressable key={f.other_id} onPress={() => pick(f)} accessibilityRole="button" style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
-                  <View style={styles.face}><Avatar name={f.handle ?? f.display_name ?? '?'} size={34} /></View>
+                  <View style={styles.face}>{photos.get(f.other_id) ? <Image source={{ uri: photos.get(f.other_id) }} style={StyleSheet.absoluteFill} contentFit="cover" /> : <Avatar name={f.handle ?? f.display_name ?? '?'} size={34} />}</View>
                   <View style={styles.text}>
                     <Text style={styles.name} numberOfLines={1}>{(f.display_name ?? f.handle ?? '').toLowerCase()}</Text>
                     <Text style={styles.meta} numberOfLines={1}>@{f.handle}</Text>
@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.ink },
   plusWrap: { position: 'absolute', top: brand.top - 4, right: brand.left + 96, alignItems: 'center', zIndex: 3 },
   plus: { width: 34, height: 34, borderRadius: 17, backgroundColor: colors.paper, alignItems: 'center', justifyContent: 'center' },
-  plusWord: { fontFamily: fonts.jet, fontSize: 8, letterSpacing: 1, color: colors.mute, marginTop: 4, textTransform: 'uppercase' },
+  plusWord: { fontFamily: fonts.medium, fontSize: 11, letterSpacing: -0.2, color: colors.mute, marginTop: 4 },
   band: { position: 'absolute', top: 0, left: 0, right: 0, height: brand.top + 44, backgroundColor: colors.ink, zIndex: 2 },
   title: { position: 'absolute', top: brand.top - 8, left: brand.left, fontFamily: fonts.semibold, fontSize: 30, lineHeight: 32, letterSpacing: -0.9, color: colors.paper },
   body: { paddingTop: brand.top + 48, paddingHorizontal: brand.left },

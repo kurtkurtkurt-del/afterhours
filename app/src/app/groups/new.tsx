@@ -17,7 +17,6 @@ import {
   coverUrl,
   GROUP_COLORS,
   GROUP_EMOJI,
-  groupAdd,
   groupCreate,
   groupDelete,
   groupGet,
@@ -40,9 +39,10 @@ import { useLang } from '@/i18n';
 import { colors, fonts, radius, barStyle } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 
-// Making a group (/groups/new, ?with=<ids> from a suggestion) or changing one
-// (?id=…): the look, the deck (city and days), who is in. Friends are added
-// directly; anyone else comes in with the link (invite).
+// Making a group (/groups/new, ?with=<ids> from a suggestion), or its look (?id=…):
+// cover, name, sign, colour, and at the end who is in, leave, delete. The city and the
+// days live on the group page (the pill), friends are added on groups/add (flow 1,
+// owner 03.11.2026).
 export default function GroupEdit() {
   const { id, with: preset } = useLocalSearchParams<{ id?: string; with?: string }>();
   const { t } = useLang();
@@ -71,7 +71,6 @@ export default function GroupEdit() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  const inGroup = new Set(group?.members.map((m) => m.id) ?? []);
   const owner = group?.members.find((m) => m.id === uid)?.role === 'owner';
   const toggle = (who: string) =>
     setPicked((s) => {
@@ -87,11 +86,7 @@ export default function GroupEdit() {
     try {
       if (id) {
         await groupUpdate(id, f);
-        if (f.kind === 'travel') await groupLegsSet(id, f.legs);
         if (f.cover !== (group?.cover_path ?? null) && (f.cover === null || f.cover.startsWith('preset/'))) await groupSetCover(id, f.cover);
-        const add = [...picked].filter((x) => !inGroup.has(x));
-        if (add.length) await groupAdd(id, add);
-        setPicked(new Set());
         await load();
         setSaid({ text: t('staff.saved') });
       } else {
@@ -124,7 +119,7 @@ export default function GroupEdit() {
   if (!id) return <Wizard f={f} set={set} cities={cities} friends={friends} picked={picked} toggle={toggle} said={said} busy={busy} save={save} />;
 
   return (
-    <StaffPage title={id ? t('groups.edit') : t('groups.new')}>
+    <StaffPage title={t('groups.look')}>
       <View style={styles.face}>
         <GroupBadge emoji={f.emoji} color={f.color} cover={f.cover} size={96} />
       </View>
@@ -146,22 +141,6 @@ export default function GroupEdit() {
           <Pressable key={c} onPress={() => set({ color: c })} accessibilityLabel={c} style={[styles.swatch, { backgroundColor: GROUP_COLORS[c] }, f.color === c && styles.swatchOn]} />
         ))}
       </View>
-
-      {/* A group is for good (owner, 11.10.2026): no "just once", no last day. Groups made
-          "once" before keep their dates in the table; the app no longer offers them. */}
-      {f.kind === 'travel' ? (
-        <>
-          <Text style={styles.label}>{t('groups.step.route').toUpperCase()}</Text>
-          <RouteEditor legs={f.legs} cities={cities} onChange={(legs) => set({ legs })} />
-        </>
-      ) : (
-        <Choice
-          label={t('groups.f.city')}
-          value={f.city ?? '*'}
-          options={[{ id: '*', label: t('groups.f.anywhere') }, ...cities.map((c) => ({ id: c.slug, label: c.name.toLowerCase() }))]}
-          onSelect={(c) => set({ city: c === '*' ? null : c })}
-        />
-      )}
 
       {group ? (
         <>
@@ -187,25 +166,6 @@ export default function GroupEdit() {
           </Panel>
         </View>
       ) : null}
-
-      <Section title={group ? t('groups.add') : t('groups.f.friends')} />
-      {friends.filter((r) => !inGroup.has(r.other_id)).length ? (
-        <Panel>
-          {friends
-            .filter((r) => !inGroup.has(r.other_id))
-            .map((r) => (
-              <Row
-                key={r.other_id}
-                label={(r.display_name ?? r.handle ?? '—').toLowerCase()}
-                hint={r.handle ? `@${r.handle}` : undefined}
-                right={<Switch on={picked.has(r.other_id)} />}
-                onPress={() => toggle(r.other_id)}
-              />
-            ))}
-        </Panel>
-      ) : (
-        <Quiet text={t('groups.f.friends.none')} />
-      )}
 
       <Said text={said?.text ?? null} bad={said?.bad} />
       <View style={staffStyles.save}>

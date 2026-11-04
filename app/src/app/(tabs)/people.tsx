@@ -18,6 +18,7 @@ import DeckViewer from '@/components/DeckViewer';
 import MotifField from '@/components/Motifs';
 import { bySoonest, nextDate, specialOf, specials, type SpecialId } from '@/content/specials';
 import { fetchSpecial } from '@/data/specials';
+import { takeSpecial } from '@/data/specialOpen';
 import { toDeckCard, type DeckCard } from '@/components/CardFace';
 import { TAB_BAR_SPACE, useTabBarSpace } from '@/components/TabBar';
 import { fetchDeck, posterUrl, swipe, unswipe, type Night } from '@/data/deck';
@@ -122,8 +123,9 @@ export default function PeopleScreen() {
   const local = useLocalCity();
   const feedCity = local.slug ?? 'munchen';
   const [upcoming, setUpcoming] = useState<Night[]>([]);
-  // Specialties: one deck per occasion, soonest first (content/specials.ts).
-  const occasions = useMemo(() => bySoonest(specials), []);
+  // Specialties: one deck per occasion, soonest first (content/specials.ts). Six on the
+  // tab, all fifty on /specials; a deck picked there is opened here (data/specialOpen.ts).
+  const occasions = useMemo(() => bySoonest(specials).slice(0, 6), []);
   const [special, setSpecial] = useState<Partial<Record<SpecialId, Night[]>>>({});
   useEffect(() => {
     let live = true;
@@ -132,6 +134,20 @@ export default function PeopleScreen() {
       live = false;
     };
   }, [occasions, feedCity, pulled]);
+  const [deck, setDeck] = useState<'mine' | 'friends' | 'wave2' | 'wave3' | SpecialId | null>(null);
+  const openSpecial = useCallback(
+    (id: SpecialId) => {
+      setDeck(id);
+      if (special[id] === undefined) fetchSpecial(specialOf(id), feedCity).then((rows) => setSpecial((m) => ({ ...m, [id]: rows })));
+    },
+    [special, feedCity],
+  );
+  useFocusEffect(
+    useCallback(() => {
+      const id = takeSpecial();
+      if (id) openSpecial(id);
+    }, [openSpecial]),
+  );
   const specialDecks = useMemo(() => Object.fromEntries(Object.entries(special).map(([id, rows]) => [id, (rows ?? []).map((n) => toDeckCard(n, []))])) as Partial<Record<SpecialId, DeckCard[]>>, [special]);
   const specialCards = (id: SpecialId) => specialDecks[id] ?? [];
   const isSpecial = (d: typeof deck): d is SpecialId => !!d && specials.some((o) => o.id === d);
@@ -176,7 +192,6 @@ export default function PeopleScreen() {
 
   // Friend search: while typing, results replace the page.
   const [query, setQuery] = useState('');
-  const [deck, setDeck] = useState<'mine' | 'friends' | 'wave2' | 'wave3' | SpecialId | null>(null);
   const scroll = useRef<ScrollView>(null);
   const people = useRef<ScrollView>(null);
   const { width } = useWindowDimensions();
@@ -635,14 +650,16 @@ export default function PeopleScreen() {
               </Pressable>
             )}
             {/* Specialties: two squares to a screen, the rest sideways; a tap opens the deck. */}
-            <Head label={t('special.title')} />
+            <Pressable onPress={() => router.push('/specials')} accessibilityRole="button">
+              <Head label={t('special.title')} note={`${t('special.all')} · ${specials.length} ›`} />
+            </Pressable>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} snapToInterval={squareW + 10} decelerationRate="fast" contentContainerStyle={styles.squares}>
               {occasions.map((o) => {
                 const rows = special[o.id];
                 const n = rows?.length ?? 0;
                 const line = rows === undefined ? ' ' : n ? `${tn('special.nights', n)} · ${dayLabel(nextDate(o).toISOString())}` : t('special.back', { month: monthName(nextDate(o)) });
                 return (
-                  <Pressable key={o.id} onPress={() => setDeck(o.id)} style={({ pressed }) => [styles.square, { width: squareW, height: squareW }, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t(o.label)}>
+                  <Pressable key={o.id} onPress={() => openSpecial(o.id)} style={({ pressed }) => [styles.square, { width: squareW, height: squareW }, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t(o.label)}>
                     <LinearGradient colors={[o.ground, o.deep]} start={{ x: 0, y: 0 }} end={{ x: 0.4, y: 1 }} style={StyleSheet.absoluteFill} />
                     <MotifField special={o} width={squareW} height={squareW} kind="cover" />
                     <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.55)']} style={styles.squareShade} pointerEvents="none" />

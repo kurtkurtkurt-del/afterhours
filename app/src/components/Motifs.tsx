@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Svg, { Circle, Ellipse, G, Line, Path, Polygon, Rect } from 'react-native-svg';
-import type { Special, SpecialId } from '@/content/specials';
+import type { MotifSet, Special } from '@/content/specials';
 
 // The motifs of the specialties (content/specials.ts), drawn by hand in a 100 × 100 box:
 // pumpkins, bats, a web and the moon for halloween; bursts, confetti and sparkles for new
@@ -167,7 +167,7 @@ type Spot = { m: Name; x: number; y: number; s: number; r?: number; o?: number; 
 
 // Where the motifs sit. "cover": a square; "room": a screen around a deck, so they keep to
 // the edges and the bands above and below the card.
-const LAYOUTS: Record<SpecialId, { cover: Spot[]; room: Spot[] }> = {
+const LAYOUTS: Record<MotifSet, { cover: Spot[]; room: Spot[] }> = {
   halloween: {
     cover: [
       { m: 'moon', x: 0.8, y: 0.2, s: 0.3, c: [2] },
@@ -241,18 +241,35 @@ const LAYOUTS: Record<SpecialId, { cover: Spot[]; room: Spot[] }> = {
       { m: 'pretzel', x: 0.5, y: 0.67, s: 0.12, r: 12, c: [3, 0] },
     ],
   },
+  // the shared set (03.11.2026): a burst, sparkles and confetti in the occasion's own colours
+  plain: {
+    cover: [
+      { m: 'burst', x: 0.74, y: 0.28, s: 0.5, c: [0, 1], o: 0.9 },
+      { m: 'sparkle', x: 0.26, y: 0.22, s: 0.16, c: [1] },
+      { m: 'sparkle', x: 0.44, y: 0.5, s: 0.1, c: [2] },
+      { m: 'confetti', x: 0.5, y: 0.7, s: 0.6, c: [0, 1, 2, 0], o: 0.8 },
+    ],
+    room: [
+      { m: 'burst', x: 0.2, y: 0.21, s: 0.34, c: [0, 1], o: 0.85 },
+      { m: 'sparkle', x: 0.5, y: 0.18, s: 0.07, c: [1] },
+      { m: 'burst', x: 0.8, y: 0.24, s: 0.26, c: [2, 0], o: 0.8 },
+      { m: 'confetti', x: 0.25, y: 0.67, s: 0.36, c: [0, 1, 2, 0] },
+      { m: 'confetti', x: 0.75, y: 0.68, s: 0.36, r: 40, c: [2, 0, 1, 0] },
+      { m: 'sparkle', x: 0.5, y: 0.66, s: 0.08, c: [1] },
+    ],
+  },
 };
 
 // A pretzel's brown sits beside the theme's own colours (index 3 in oktoberfest).
-const extra: Record<SpecialId, string[]> = { halloween: ['#2A1238'], newyear: [], july4: [], oktoberfest: ['#A8622A'] };
+const extra: Record<MotifSet, string[]> = { halloween: ['#2A1238'], newyear: [], july4: [], oktoberfest: ['#A8622A'], plain: [] };
 
 // memo: a field is pure in its props; the connect page re-renders often and the four covers must not redraw with it
 function MotifFieldInner({ special, width, height, kind }: { special: Special; width: number; height: number; kind: 'cover' | 'room' }) {
-  const palette = [...special.accents, ...extra[special.id]];
+  const palette = [...special.accents, ...extra[special.motif]];
   const short = Math.min(width, height);
   return (
     <View style={[StyleSheet.absoluteFill, { overflow: 'hidden' }]} pointerEvents="none">
-      {LAYOUTS[special.id][kind].map((p, i) => {
+      {LAYOUTS[special.motif][kind].map((p, i) => {
         const size = p.s * short;
         return (
           <View key={i} style={{ position: 'absolute', left: p.x * width - size / 2, top: p.y * height - size / 2 }}>

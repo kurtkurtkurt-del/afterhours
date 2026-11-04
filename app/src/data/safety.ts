@@ -17,8 +17,10 @@ export const TERMS_VERSION = 1;
 const SITE = 'https://kurtkurtkurt-del.github.io/afterhours';
 export const TERMS_URL = `${SITE}/agb/`;
 export const PRIVACY_URL = `${SITE}/datenschutz/`;
-// Where an app that is too old is sent (78_min_version.sql; the stores come later).
-export const UPDATE_URL = `${SITE}/phone/`;
+// Where an app that is too old is sent (78_min_version.sql): the Play listing on android,
+// the site's door everywhere else (the site has no phone/ page).
+export const PLAY_URL = 'https://play.google.com/store/apps/details?id=app.afterhours.android';
+export const UPDATE_URL = Platform.OS === 'android' ? PLAY_URL : `${SITE}/`;
 
 // The oldest app version the server still answers; null when it cannot be read (offline).
 export async function minAppVersion(): Promise<string | null> {

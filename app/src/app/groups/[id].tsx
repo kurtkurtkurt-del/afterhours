@@ -1,11 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
+import { Linking, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { Easing, FadeIn, FadeOut, ZoomIn, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import { useReport } from '@/components/ReportSheet';
-import BackButton from '@/components/BackButton';
 import Button from '@/components/Button';
 import CardFace, { toDeckCard, openDetails } from '@/components/CardFace';
 import SwipeStack, { type StackHandle } from '@/components/SwipeStack';
@@ -15,8 +14,10 @@ import { posterUrl } from '@/data/deck';
 import { dayLabel } from '@/data/when';
 import GroupBadge from '@/components/GroupBadge';
 import Passport from '@/components/Passport';
-import Icon from '@/components/Icon';
 import PickerSheet from '@/components/PickerSheet';
+import Scrim from '@/components/Scrim';
+import DayPicker, { isoDay, shortDay } from '@/components/DayPicker';
+import { allCities, type Place } from '@/data/staff';
 import { Switch } from '@/components/Row';
 import { rsvpSet, type Answer } from '@/data/rsvp';
 import { Quiet, Said } from '@/components/StaffPage';
@@ -44,21 +45,29 @@ import {
   liveSkip,
   liveState,
   why,
+  groupUpdate,
   type Group,
+  type GroupForm,
   type LiveState,
   type Match,
   type PlanState,
   type AlsoThere,
 } from '@/data/groups';
 import { useLang } from '@/i18n';
-import { colors, fonts, radius, tint, barStyle, scrim } from '@/theme/tokens';
+import { colors, fonts, radius, tint, barStyle, scrim, paperTint } from '@/theme/tokens';
 import { brand } from '@/theme/layout';
 import { usePullRefresh } from '@/components/Refresh';
 
 type Tab = 'trip' | 'swipe' | 'matches' | 'plan' | 'live';
 const ACTIONS = 86;
 
-// One group: its face on top, then three ways to look at its nights.
+// One group, as the deck (design/groups-5.html, flow 1 "the deck", owner 03.11.2026):
+// open it and you are on the first card. The head is one row (back, the badge and the
+// name, the faces, "···"); under it, for a city group, one pill with the city and the
+// days; the deck fills the rest, "listen" and "who is this" sit on the card's right
+// edge. A strip under the buttons says how the matches stand and opens them. Everything
+// else (add a friend, the link, the look, chat, memories, live) waits behind "···".
+// A travel group opens on its passport (the stubs) and comes to the deck from there.
 //   swipe    the group's deck, each in their own time. Faces on a card: who here
 //            already said yes. When your yes completes everyone's, "everyone is in".
 //   matches  what members said yes to: match (all), most (more than half), some.
@@ -66,7 +75,7 @@ const ACTIONS = 86;
 export default function GroupScreen() {
   // ?tab=plan opens straight on the plan (the gallery on people links here).
   const { id, tab: tabParam } = useLocalSearchParams<{ id: string; tab?: string }>();
-  const { t, up } = useLang();
+  const { t, up, lang } = useLang();
   // A long press on the name reports the group (51_safety.sql).
   const reporting = useReport();
   const insets = useSafeAreaInsets();
@@ -76,9 +85,13 @@ export default function GroupScreen() {
   const shown: Tab = tab ?? (group?.kind === 'travel' ? 'trip' : 'swipe');
   const [deck, setDeck] = useState<Night[] | null>(null);
   const [matches, setMatches] = useState<Match[]>([]);
+  const [plan, setPlan] = useState<PlanState | null>(null);
+  const [cities, setCities] = useState<Place[]>([]);
   const [said, setSaid] = useState<string | null>(null);
   const [burst, setBurst] = useState(0);
   const [headH, setHeadH] = useState(0);
+  const [more, setMore] = useState(false);
+  const [where, setWhere] = useState(false);
   const stackRef = useRef<StackHandle>(null);
   // how many cards of this deck you answered here: the next one is deck[seen]
   const [seen, setSeen] = useState(0);
@@ -86,20 +99,27 @@ export default function GroupScreen() {
   const load = useCallback(() => {
     groupGet(id).then(setGroup, (e) => setSaid(why(e)));
     groupMatches(id).then(setMatches, () => {});
+    groupPlan(id).then(setPlan, () => {});
   }, [id]);
   useFocusEffect(load);
+  const [deckKey, setDeckKey] = useState(0);
   useEffect(() => {
     groupDeck(id).then(setDeck, (e) => {
       setDeck([]);
       setSaid(why(e));
     });
-  }, [id]);
+  }, [id, deckKey]);
+  useEffect(() => {
+    allCities().then(setCities, () => {});
+  }, []);
 
   const nameOf = (uid: string) => (group?.members.find((m) => m.id === uid)?.name ?? '?').toLowerCase();
   const yesOf = (nightId: string) => matches.find((m) => m.id === nightId)?.yes_ids ?? [];
 
+  const track = useTrack();
   const onSwipe = (n: Night, direction: 'left' | 'right') => {
     setSeen((x) => x + 1);
+    track.stop();
     const others = yesOf(n.id).filter((u) => u !== group?.me).length;
     if (direction === 'right' && group && others === group.members.length - 1 && group.members.length > 1) setBurst((b) => b + 1);
     groupSwipe(id, n.id, direction).then(() => groupMatches(id).then(setMatches, () => {}), (e) => setSaid(why(e)));
@@ -108,62 +128,132 @@ export default function GroupScreen() {
   const current = deck?.[seen];
   const completes = !!current && !!group && group.members.length > 1 && yesOf(current.id).filter((u) => u !== group.me).length === group.members.length - 1;
   const top = Math.max(brand.top, insets.top + 24);
-  const window = group ? [group.city_slug, group.date_from || group.date_to ? `${group.date_from ?? '…'} – ${group.date_to ?? '…'}` : t('groups.window.all')].filter(Boolean).join(' · ') : '';
+
+  // "who is this?" and "listen" on the card's edge: read once per night as it comes up.
+  const [abouts, setAbouts] = useState<Map<string, About | null>>(new Map());
+  const [previews, setPreviews] = useState<Map<string, Preview | null>>(new Map());
+  const [reading, setReading] = useState<About | null>(null);
+  const currentId = current?.id ?? null;
+  const asked = useRef(new Set<string>());
+  useEffect(() => {
+    if (!currentId || asked.current.has(currentId)) return;
+    asked.current.add(currentId);
+    aboutFor([currentId], lang).then((m) => setAbouts((prev) => new Map(prev).set(currentId, m.get(currentId) ?? null)), () => {});
+    previewsFor([currentId]).then((m) => setPreviews((prev) => new Map(prev).set(currentId, m.get(currentId) ?? null)), () => {});
+  }, [currentId, lang]);
+  const about = currentId ? abouts.get(currentId) ?? null : null;
+  const preview = currentId ? previews.get(currentId) ?? null : null;
+  const playing = !!preview && track.playing === currentId;
+
+  // the strip under the buttons: how the matches stand, and the plan if there is one
+  const nMatch = matches.filter((m) => m.status === 'match').length;
+  const nMost = matches.filter((m) => m.status === 'most').length;
+  const strip = [nMatch ? t('groups.matches', { n: nMatch }) : null, nMost ? t('groups.strip.most', { n: nMost }) : null, plan?.plan ? plan.plan.title.toLowerCase() : plan?.round ? t('groups.card.vote') : t('groups.strip.noPlan')].filter(Boolean).join(' · ') || t('groups.strip.nothing');
+
+  // where and when, one line: the city (or everywhere) and the days in words
+  const cityName = group?.city_slug ? cities.find((c) => c.slug === group.city_slug)?.name.toLowerCase() ?? group.city_slug : t('groups.f.anywhere');
+  const whenWord = group ? whenLabel(group.date_from, group.date_to, t) : '';
+  const saveWhere = (city: string | null, from: string | null, to: string | null) => {
+    if (!group) return;
+    const f: GroupForm = { name: group.name, emoji: group.emoji, color: group.color, kind: group.kind, city, from, to, legs: [], cover: group.cover_path };
+    setGroup({ ...group, city_slug: city, date_from: from, date_to: to });
+    groupUpdate(id, f).then(() => {
+      load();
+      setSeen(0);
+      setDeckKey((k) => k + 1);
+    }, (e) => setSaid(why(e)));
+  };
+
+  const go = (path: string) => router.push({ pathname: path as '/groups/add', params: { id } });
+  const moreOptions = [
+    { id: 'add', label: t('groups.friend.add') },
+    { id: 'invite', label: t('groups.invite.link') },
+    { id: 'look', label: t('groups.look') },
+    { id: 'chat', label: t('groups.chat') },
+    { id: 'memories', label: t('groups.memories') },
+    { id: 'live', label: t('groups.tab.live') },
+  ];
+  const onMore = (k: string) => {
+    if (k === 'add') go('/groups/add');
+    else if (k === 'invite') go('/groups/invite');
+    else if (k === 'look') go('/groups/new');
+    else if (k === 'chat') go('/groups/chat');
+    else if (k === 'memories') go('/groups/memories');
+    else if (k === 'live') setTab('live');
+  };
+  const home: Tab = group?.kind === 'travel' ? 'trip' : 'swipe';
 
   return (
     <View style={styles.root}>
       <StatusBar style={barStyle} />
       <View style={[styles.head, { paddingTop: top - 8 }]} onLayout={(e) => setHeadH(e.nativeEvent.layout.height)}>
         <View style={styles.headRow}>
-          <Pressable onPress={() => router.push({ pathname: '/groups/memories', params: { id } })} onLongPress={() => id && reporting.ask('group', id)} style={styles.headLink} accessibilityRole="button" accessibilityHint={t('groups.memories.hint')}>
-          {group ? <GroupBadge emoji={group.emoji} color={group.color} cover={group.cover_path} size={44} /> : null}
-          <View style={styles.headText}>
-            <Text style={styles.name} numberOfLines={1}>{group?.name ?? '…'} <Text style={styles.under}>· {t('groups.memories')} ›</Text></Text>
-            <Text style={styles.under} numberOfLines={1}>{group ? `${group.members.map((m) => (m.name ?? m.handle ?? '?').toLowerCase()).join(', ')} · ${window}` : ''}</Text>
-          </View>
+          <Pressable onPress={() => (shown === home ? (router.canGoBack() ? router.back() : router.replace('/groups')) : setTab(home))} hitSlop={8} style={({ pressed }) => [styles.round, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t('word.back')}>
+            <Text style={styles.roundText}>‹</Text>
           </Pressable>
-          <Pressable onPress={() => router.push({ pathname: '/groups/chat', params: { id } })} hitSlop={8} accessibilityLabel={t('groups.chat')} style={({ pressed }) => [styles.chip, pressed && styles.pressed]}>
-            <Icon name="chat" size={17} color={colors.paper} />
+          <Pressable onPress={() => go('/groups/memories')} onLongPress={() => id && reporting.ask('group', id)} style={styles.headLink} accessibilityRole="button" accessibilityHint={t('groups.memories.hint')}>
+            {group ? <GroupBadge emoji={group.emoji} color={group.color} cover={group.cover_path} size={32} /> : null}
+            <Text style={styles.name} numberOfLines={1}>{group?.name ?? '…'}</Text>
           </Pressable>
-          <Pressable onPress={() => router.push({ pathname: '/groups/invite', params: { id } })} hitSlop={8} style={({ pressed }) => [styles.chip, pressed && styles.pressed]}>
-            <Text style={styles.chipText}>{t('groups.invite')}</Text>
+          <Pressable onPress={() => go('/groups/add')} style={styles.headFaces} accessibilityRole="button" accessibilityLabel={t('groups.friend.add')}>
+            {(group?.members ?? []).slice(0, 4).map((m, i) => (
+              <View key={m.id} style={[styles.face, i > 0 && styles.faceOverlap]}>
+                <Text style={styles.faceText}>{(m.name ?? m.handle ?? '?').charAt(0).toUpperCase()}</Text>
+              </View>
+            ))}
           </Pressable>
-          <Pressable onPress={() => router.push({ pathname: '/groups/new', params: { id } })} hitSlop={8} style={({ pressed }) => [styles.chip, pressed && styles.pressed]}>
-            <Text style={styles.chipText}>{t('groups.edit')}</Text>
+          <Pressable onPress={() => setMore(true)} hitSlop={8} style={({ pressed }) => [styles.round, pressed && styles.pressed]} accessibilityRole="button" accessibilityLabel={t('groups.more')}>
+            <Text style={styles.roundText}>···</Text>
           </Pressable>
         </View>
-        <View style={styles.tabs} accessibilityRole="tablist">
-          {(group?.kind === 'travel' ? (['trip', 'swipe', 'matches', 'plan', 'live'] as const) : (['swipe', 'matches', 'plan', 'live'] as const)).map((k) => (
-            <Pressable key={k} onPress={() => setTab(k)} accessibilityRole="tab" accessibilityState={{ selected: shown === k }} style={[styles.tab, shown === k && styles.tabOn]}>
-              {k === 'live' ? <View style={styles.liveDot} /> : null}
-              <Text style={[styles.tabText, shown === k && styles.tabTextOn]}>
-                {t(`groups.tab.${k}`)}
-                {k === 'matches' && matches.some((m) => m.status === 'match') ? ` · ${matches.filter((m) => m.status === 'match').length}` : ''}
-              </Text>
-            </Pressable>
-          ))}
-        </View>
+        {shown === 'swipe' && group && group.kind !== 'travel' ? (
+          <Pressable onPress={() => setWhere(true)} style={({ pressed }) => [styles.where, pressed && styles.pressed]} accessibilityRole="button">
+            <Text style={styles.whereText}>
+              {cityName} <Text style={styles.whereDot}>·</Text> {whenWord} <Text style={styles.whereDot}>›</Text>
+            </Text>
+          </Pressable>
+        ) : null}
+        {shown !== home ? (
+          <Pressable onPress={() => setTab(home)} hitSlop={8} style={styles.crumb} accessibilityRole="button">
+            <Text style={styles.crumbText}>‹ {t(home === 'trip' ? 'groups.tab.trip' : 'groups.backDeck')}</Text>
+            <Text style={styles.crumbHere}>{t(`groups.tab.${shown}`)}</Text>
+          </Pressable>
+        ) : null}
         <Said text={said} bad />
       </View>
 
       {shown === 'trip' && group ? <Passport id={id} group={group} top={headH} onSwipe={() => setTab('swipe')} /> : null}
       {shown === 'swipe' ? (
-        <View style={[styles.stage, { paddingTop: headH + 6, paddingBottom: insets.bottom + 84 }]}>
+        <View style={[styles.stage, { paddingTop: headH + 6, paddingBottom: insets.bottom + ACTIONS + 44 }]}>
           {deck ? (
             <SwipeStack
+              key={deckKey}
               ref={stackRef}
               items={deck}
               keyOf={(n) => n.id}
               stamps={{ right: t('groups.stamp.yes'), left: t('groups.stamp.no') }}
               onSwipe={(n, way) => onSwipe(n, way === 'right' ? 'right' : 'left')}
-              render={(n) => <ScoreCard night={n} yes={yesOf(n.id).filter((u) => u !== group?.me).length} members={group?.members.length ?? 1} group={group?.name ?? ''} />}
+              render={(n) => (
+                <ScoreCard
+                  night={n}
+                  yes={yesOf(n.id).filter((u) => u !== group?.me).length}
+                  members={group?.members.length ?? 1}
+                  group={group?.name ?? ''}
+                  about={n.id === currentId ? about : null}
+                  preview={n.id === currentId ? preview : null}
+                  playing={n.id === currentId && playing}
+                  onAsk={() => about && setReading(about)}
+                  onListen={() => preview && track.play(n.id, { uri: preview.preview_url })}
+                  overlay={n.id === currentId && playing && preview ? <ListenOverlay preview={preview} elapsed={track.elapsed} duration={track.duration} onStop={track.stop} /> : undefined}
+                />
+              )}
               empty={<Quiet text={t('groups.deck.done')} />}
             />
           ) : (
             <Quiet text="…" />
           )}
           {deck && seen < deck.length ? (
-            <View style={[styles.scoreButtons, { bottom: insets.bottom + 18 }]}>
+            <View style={[styles.scoreButtons, { bottom: insets.bottom + 56 }]}>
               <Pressable onPress={() => stackRef.current?.swipe('left')} style={({ pressed }) => [styles.scoreLine, pressed && styles.pressed]} accessibilityRole="button">
                 <Text style={styles.scoreLineText}>{t('groups.swipe.no')}</Text>
               </Pressable>
@@ -172,6 +262,10 @@ export default function GroupScreen() {
               </Pressable>
             </View>
           ) : null}
+          <Pressable onPress={() => setTab(plan?.plan || plan?.round ? 'plan' : 'matches')} style={({ pressed }) => [styles.strip, { bottom: insets.bottom + 12 }, pressed && styles.pressed]} accessibilityRole="button">
+            {nMatch || plan?.plan ? <View style={styles.stripDot} /> : null}
+            <Text style={styles.stripText} numberOfLines={1}>{strip} ›</Text>
+          </Pressable>
           {burst ? <MatchBurst key={burst} text={up(t('groups.match.burst'))} onEnd={() => setBurst(0)} /> : null}
         </View>
       ) : null}
@@ -180,17 +274,125 @@ export default function GroupScreen() {
       {shown === 'plan' ? <PlanTab id={id} me={group?.me ?? ''} top={headH} groupName={group?.name ?? ''} /> : null}
       {shown === 'live' ? <Live id={id} me={group?.me ?? ''} top={headH} nameOf={nameOf} onChange={() => groupMatches(id).then(setMatches, () => {})} /> : null}
 
-      {tab !== 'swipe' ? <BackButton /> : null}
       <Tips page="group" tip={{ title: 'tips.group.1.t', body: 'tips.group.1.b', motion: 'swipe' }} bottom={insets.bottom + ACTIONS + 10} />
+      <PickerSheet open={more} title={group?.name.toLowerCase() ?? ''} options={moreOptions} selected={null} onSelect={onMore} onClose={() => setMore(false)} />
+      {group && where ? <WhereSheet open cities={cities} city={group.city_slug} from={group.date_from} to={group.date_to} onSave={saveWhere} onClose={() => setWhere(false)} /> : null}
+      <AboutSheet about={reading} onClose={() => setReading(null)} onKeep={() => { setReading(null); setTimeout(() => stackRef.current?.swipe('right'), 280); }} />
       {reporting.sheet}
     </View>
+  );
+}
+
+// The days of a city group in words: every night ahead, tonight, this weekend, the
+// next 7 days, or the two days as picked.
+type WhenKey = 'all' | 'tonight' | 'weekend' | 'week' | 'pick';
+const plusDays = (d: Date, n: number) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
+function whenRange(key: WhenKey): [string | null, string | null] {
+  const now = new Date();
+  if (key === 'all') return [null, null];
+  if (key === 'tonight') return [isoDay(now), isoDay(now)];
+  if (key === 'week') return [isoDay(now), isoDay(plusDays(now, 7))];
+  // the weekend: friday to sunday; from today when it is already on
+  const dow = (now.getDay() + 6) % 7; // 0 = monday
+  const fri = dow >= 4 ? now : plusDays(now, 4 - dow);
+  const sun = plusDays(fri, dow >= 4 ? 6 - dow : 2);
+  return [isoDay(fri), isoDay(sun)];
+}
+function whenKey(from: string | null, to: string | null): WhenKey {
+  if (!from && !to) return 'all';
+  for (const k of ['tonight', 'weekend', 'week'] as const) {
+    const [f, u] = whenRange(k);
+    if (f === from && u === to) return k;
+  }
+  return 'pick';
+}
+function whenLabel(from: string | null, to: string | null, t: ReturnType<typeof useLang>['t']) {
+  const k = whenKey(from, to);
+  if (k === 'all') return t('groups.window.all');
+  if (k !== 'pick') return t(`groups.when.${k}`);
+  return `${shortDay(from ?? to)} – ${shortDay(to ?? from)}`;
+}
+
+// Where and when, as a sheet: the cities as chips, the days as words; "pick days"
+// asks for the first and the last day. Saved on done.
+function WhereSheet({ open, cities, city, from, to, onSave, onClose }: { open: boolean; cities: Place[]; city: string | null; from: string | null; to: string | null; onSave: (city: string | null, from: string | null, to: string | null) => void; onClose: () => void }) {
+  const { t, up } = useLang();
+  const insets = useSafeAreaInsets();
+  const [c, setC] = useState(city);
+  const [range, setRange] = useState<[string | null, string | null]>([from, to]);
+  const [picking, setPicking] = useState<'from' | 'to' | null>(null);
+  const chain = useRef(false); // the first day picked: the picker closes, then opens for the last
+  const key = whenKey(range[0], range[1]);
+  const words: WhenKey[] = ['all', 'tonight', 'weekend', 'week', 'pick'];
+  const pick = (k: WhenKey) => (k === 'pick' ? setPicking('from') : setRange(whenRange(k)));
+  const done = () => {
+    onSave(c, range[0], range[1]);
+    onClose();
+  };
+  return (
+    <>
+      <Modal visible={open && !picking} transparent animationType="fade" onRequestClose={onClose}>
+        <Scrim onPress={onClose} />
+        <View style={[styles.sheet, { paddingBottom: insets.bottom + 20 }]}>
+          <View style={styles.grab} />
+          <Text style={styles.sheetTitle}>{t('groups.where')}</Text>
+          <Text style={styles.under}>{t('groups.where.hint')}</Text>
+          <Text style={styles.sheetLabel}>{up(t('groups.where.city'))}</Text>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
+            {[{ slug: '*', name: t('groups.f.anywhere') }, ...cities].map((x) => {
+              const on = (c ?? '*') === x.slug;
+              return (
+                <Pressable key={x.slug} onPress={() => setC(x.slug === '*' ? null : x.slug)} style={[styles.chipPill, on && styles.chipPillOn]} accessibilityRole="radio" accessibilityState={{ selected: on }}>
+                  <Text style={[styles.chipPillText, on && styles.chipPillTextOn]}>{x.name.toLowerCase()}</Text>
+                </Pressable>
+              );
+            })}
+          </ScrollView>
+          <Text style={styles.sheetLabel}>{up(t('groups.where.days'))}</Text>
+          <View style={styles.chipsWrap}>
+            {words.map((k) => {
+              const on = key === k;
+              return (
+                <Pressable key={k} onPress={() => pick(k)} style={[styles.chipPill, on && styles.chipPillOn]} accessibilityRole="radio" accessibilityState={{ selected: on }}>
+                  <Text style={[styles.chipPillText, on && styles.chipPillTextOn]}>{k === 'all' ? t('groups.window.all') : k === 'pick' && on ? `${shortDay(range[0])} – ${shortDay(range[1])}` : t(`groups.when.${k}`)}</Text>
+                </Pressable>
+              );
+            })}
+          </View>
+          <View style={styles.sheetFoot}>
+            <Button label={t('word.done')} onPress={done} />
+          </View>
+        </View>
+      </Modal>
+      <DayPicker
+        open={picking !== null}
+        title={t(picking === 'to' ? 'groups.when.to' : 'groups.when.from')}
+        value={picking === 'to' ? range[1] : range[0]}
+        min={picking === 'to' ? range[0] : null}
+        onSelect={(d) => {
+          if (picking === 'from') {
+            setRange([d, range[1] && range[1] >= d ? range[1] : d]);
+            chain.current = true;
+          } else {
+            setRange([range[0] ?? d, d]);
+            setPicking(null);
+          }
+        }}
+        onClose={() => {
+          if (chain.current) {
+            chain.current = false;
+            setPicking('to');
+          } else setPicking(null);
+        }}
+      />
+    </>
   );
 }
 
 // One night in the group's deck (design 5E): the photo full, the score huge on top
 // (how many of the others said yes, of everyone), the night at the bottom.
 const fallback = require('../../../assets/intro/concert.jpg');
-function ScoreCard({ night, yes, members, group }: { night: Night; yes: number; members: number; group: string }) {
+function ScoreCard({ night, yes, members, group, about, preview, playing, onAsk, onListen, overlay }: { night: Night; yes: number; members: number; group: string; about: About | null; preview: Preview | null; playing: boolean; onAsk: () => void; onListen: () => void; overlay?: ReactNode }) {
   const { t, up } = useLang();
   const uri = night.image_url ?? posterUrl(night);
   return (
@@ -208,6 +410,12 @@ function ScoreCard({ night, yes, members, group }: { night: Night; yes: number; 
         <Text style={styles.scoreTitle} numberOfLines={2}>{night.title.toLowerCase()}</Text>
         <Text style={styles.scoreMeta} numberOfLines={1}>{[up(dayLabel(night.starts_at)), night.venue_name?.toLowerCase(), night.city_name?.toLowerCase()].filter(Boolean).join(' · ')}</Text>
       </View>
+      {/* listen and who is this, on the card's right edge (flow 1) */}
+      <View style={styles.edge} pointerEvents="box-none">
+        {preview ? <ListenButton onPress={onListen} playing={playing} /> : null}
+        {about ? <AskButton onPress={onAsk} /> : null}
+      </View>
+      {overlay}
     </View>
   );
 }
@@ -586,6 +794,33 @@ const styles = StyleSheet.create({
   chip: { height: 30, paddingHorizontal: 12, borderRadius: radius.pill, borderWidth: 1, borderColor: colors.ink3, justifyContent: 'center' },
   chipText: { fontFamily: fonts.medium, fontSize: 12.5, color: colors.paper },
   pressed: { opacity: 0.6 },
+  round: { width: 34, height: 34, borderRadius: 17, borderWidth: 1, borderColor: colors.ink3, alignItems: 'center', justifyContent: 'center' },
+  roundText: { fontFamily: fonts.medium, fontSize: 18, lineHeight: 20, color: colors.paper },
+  headFaces: { flexDirection: 'row' },
+  face: { width: 26, height: 26, borderRadius: 13, backgroundColor: colors.ink3, borderWidth: 2, borderColor: colors.ink, alignItems: 'center', justifyContent: 'center' },
+  faceOverlap: { marginLeft: -8 },
+  faceText: { fontFamily: fonts.semibold, fontSize: 11, color: colors.paper },
+  where: { alignSelf: 'flex-start', marginTop: 8, height: 30, paddingHorizontal: 12, borderRadius: radius.pill, borderWidth: 1, borderColor: colors.edge, justifyContent: 'center' },
+  whereText: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper },
+  whereDot: { color: colors.mute },
+  crumb: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10 },
+  crumbText: { fontFamily: fonts.regular, fontSize: 13, color: colors.mute },
+  crumbHere: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper },
+  strip: { position: 'absolute', left: brand.left, right: brand.left, height: 36, borderRadius: radius.sm, backgroundColor: paperTint(0.06), flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 14 },
+  stripDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: colors.spot },
+  stripText: { flex: 1, fontFamily: fonts.regular, fontSize: 13, color: colors.paper },
+  edge: { position: 'absolute', right: 0, top: '36%', alignItems: 'flex-end', gap: 8 },
+  sheet: { position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: colors.ink, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, paddingHorizontal: brand.left, paddingTop: 10 },
+  grab: { alignSelf: 'center', width: 38, height: 4, borderRadius: 2, backgroundColor: colors.ink3, marginBottom: 14 },
+  sheetTitle: { fontFamily: fonts.semibold, fontSize: 19, letterSpacing: -0.4, color: colors.paper, marginBottom: 4 },
+  sheetLabel: { fontFamily: fonts.regular, fontSize: 10.5, letterSpacing: 1.5, color: colors.meta, marginTop: 20, marginBottom: 10 },
+  chips: { gap: 8, paddingRight: brand.left },
+  chipsWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  chipPill: { height: 34, paddingHorizontal: 14, borderRadius: radius.pill, borderWidth: 1, borderColor: colors.edge, justifyContent: 'center' },
+  chipPillOn: { backgroundColor: colors.paper, borderColor: colors.paper },
+  chipPillText: { fontFamily: fonts.medium, fontSize: 13, color: colors.paper },
+  chipPillTextOn: { color: colors.ink },
+  sheetFoot: { marginTop: 22 },
   tabs: { flexDirection: 'row', alignSelf: 'center', height: 34, padding: 3, marginTop: 12, borderRadius: radius.pill, backgroundColor: colors.ink3, borderWidth: 1, borderColor: '#4a4640' },
   tab: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 14, borderRadius: radius.pill },
   tabOn: { backgroundColor: colors.paper },
