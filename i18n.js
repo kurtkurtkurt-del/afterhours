@@ -203,11 +203,32 @@
 
   function addToMenu() {
     var nav = document.querySelector(".header .header-links");
-    if (!nav || nav.querySelector("[data-lang-pick]")) return;
+    if (!nav || nav.parentNode.querySelector("[data-lang-pick]")) return;
+    var wrap = document.createElement("span");
+    wrap.className = "lang-menu";
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "lang-globe";
+    btn.setAttribute("aria-haspopup", "true");
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-label", AH.t("lang.label"));
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19"/></svg><span class="lang-now">' + lang + "</span>";
     var box = document.createElement("span");
     box.setAttribute("data-lang-pick", "");
-    nav.appendChild(box);
+    wrap.appendChild(btn);
+    wrap.appendChild(box);
+    /* right of the pills (owner, 04.11.2026): the header's right cell holds the pills and the globe */
+    var header = nav.parentNode;
+    var right = header.querySelector(".header-right");
+    if (!right) { right = document.createElement("span"); right.className = "header-right"; header.appendChild(right); }
+    right.appendChild(wrap);
     buildPicker(box);
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var open = wrap.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    document.addEventListener("click", function () { wrap.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); });
   }
 
   /* ------------------------------------------------------ the account */

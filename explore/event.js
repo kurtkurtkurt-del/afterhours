@@ -160,7 +160,7 @@
     if (m.venue) facts.appendChild(factRow(AH.t("night.fact.where"), m.venue.toLowerCase()));
     facts.appendChild(factRow(AH.t("night.fact.when"), [day + (m.date ? " " + shortDate(m.date) : ""), m.time].filter(Boolean).join(" · ")));
     facts.appendChild(factRow(AH.t("night.fact.kind"), kindName(kind) + " · " + AH.t(e.source === "ticketmaster" ? "word.ticket" : "word.szene")));
-    (V.FACTS[kind] || []).forEach(([a, b]) => facts.appendChild(factRow(a, b)));
+    /* the invented rows per kind (closing time, capacity, payment, walk) are gone: only what we know (owner, 04.11.2026) */
     ray.appendChild(facts);
     area.appendChild(ray);
 
@@ -504,6 +504,10 @@
       AH.t("night.card.label")));
 
     const night = {
+      /* the 04.11.2026 generator picks the design from the kind and the slug */
+      kind: kind,
+      id: e.slug,
+      doors: m.time || "",
       t: cardTitle(e, handPicked),
       ty: (kind || "").toUpperCase(),
       v: (m.venue || e.city || "").toUpperCase(),
@@ -521,8 +525,10 @@
     };
 
     const pair = el("div", "cs-earn-pair");
-    [[AH.t("night.card.front"), CARDS.front(night, "e")], [AH.t("night.card.back"), CARDS.back(night, "e")]]
-      .forEach(([side, svg]) => {
+    /* the generator may carry only a front (the 04.11.2026 cards): then one face is shown */
+    const faces = [[AH.t("night.card.front"), CARDS.front(night, "e")]];
+    if (typeof CARDS.back === "function") faces.push([AH.t("night.card.back"), CARDS.back(night, "e")]);
+    faces.forEach(([side, svg]) => {
         const fig = el("figure", "cs-earn-card");
         const face = el("div", "cs-earn-face");
         face.innerHTML = svg;

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' blob: https:; font-src 'self'; connect-src 'self' https://elmnnyxgavwjxvwjgjcu.supabase.co https://itunes.apple.com; manifest-src 'self'; worker-src 'self' blob:; object-src 'self'; base-uri 'self'; form-action 'self'" />
+  <link rel="preconnect" href="https://elmnnyxgavwjxvwjgjcu.supabase.co" crossorigin />
+  <link rel="preconnect" href="https://s1.ticketm.net" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="host.title">host an event | afterhours</title>
+  <meta name="description" content="List your own night on afterhours: name, venue, doors, poster. Free. It shows in the app and on the site." data-i18n-attr="content:host.desc" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="afterhours" />
+  <meta property="og:title" content="host an event — afterhours" />
+  <meta property="og:description" content="List your own night on afterhours: name, venue, doors, poster. Free. It shows in the app and on the site." />
+  <meta property="og:url" content="https://kurtkurtkurt-del.github.io/afterhours/host/index.html" />
+  <meta property="og:image" content="https://kurtkurtkurt-del.github.io/afterhours/og/afterhours-2.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="stylesheet" href="../fonts/fonts.css?v=203" />
+  <link rel="stylesheet" href="../style.css?v=203" />
+  <script src="../i18n.js?v=203"></script>
+</head>
+<body class="djs">
+
+  <a class="skip" href="#content" data-i18n="skip">skip to the content</a>
+
+  <header class="header">
+    <a class="logo" href="../index.html">afterhours</a>
+    <nav class="header-links">
+      <a href="../explore/index.html" data-i18n="nav.explore">explore</a>
+      <a href="../host/index.html" aria-current="page" data-i18n="nav.host">host an event</a>
+      <a href="../friends/index.html" data-i18n="nav.yours">your people</a>
+      <a href="../maps/index.html" data-i18n="nav.map">map</a>
+      <a href="../cards/index.html" data-i18n="nav.collection">collection</a>
+      <a href="../help/index.html" data-i18n="nav.help">help</a>
+      <a href="../login/index.html" data-i18n="nav.account">account</a>
+    </nav>
+  </header>
+
+  <main id="content" tabindex="-1" class="page host">
+    <h1 class="page-title host-title" data-i18n-html="host.h1">host<br />an event.</h1>
+    <form class="host-form" id="host-form" novalidate>
+      <!-- left: the poster -->
+      <label class="host-poster" id="host-poster" for="host-file">
+        <input type="file" id="host-file" accept="image/*" hidden />
+        <img id="host-preview" alt="" hidden />
+        <span class="host-poster-words" id="host-poster-words">
+          <b data-i18n="host.poster">drop the poster here</b>
+          <small data-i18n="host.poster.sub">2:3 · jpg or png · or leave it, we set one in black type</small>
+        </span>
+      </label>
+
+      <!-- right: the facts -->
+      <div class="host-fields">
+        <label class="page-label" for="host-name" data-i18n="host.name">name of the night</label>
+        <input class="page-field host-wide" id="host-name" type="text" required maxlength="80" placeholder="keller all night" data-i18n-attr="placeholder:host.name.ph" />
+
+        <span class="page-label" data-i18n="host.kind">kind</span>
+        <div class="host-pills" id="host-kind" role="radiogroup">
+          <button type="button" class="host-pill" data-kind="rave">rave</button>
+          <button type="button" class="host-pill" data-kind="club-night">club night</button>
+          <button type="button" class="host-pill" data-kind="konzert">konzert</button>
+          <button type="button" class="host-pill" data-kind="festival">festival</button>
+          <button type="button" class="host-pill" data-kind="meetup">meetup</button>
+          <button type="button" class="host-pill" data-kind="hausparty">hausparty</button>
+        </div>
+
+        <span class="page-label" data-i18n="host.for">who is it for</span>
+        <div class="host-pills" id="host-for" role="radiogroup">
+          <button type="button" class="host-pill on" data-for="tickets" data-i18n="host.for.tickets">everyone, with tickets</button>
+          <button type="button" class="host-pill" data-for="open" data-i18n="host.for.open">everyone, open door</button>
+          <button type="button" class="host-pill" data-for="friends" data-i18n="host.for.friends">just my people</button>
+        </div>
+
+        <div class="host-two">
+          <div>
+            <label class="page-label" for="host-city" data-i18n="host.city">city</label>
+            <select class="page-field" id="host-city" required><option value="" data-i18n="host.city.pick">pick a city</option></select>
+          </div>
+          <div>
+            <label class="page-label" for="host-venue" data-i18n="host.venue">venue</label>
+            <input class="page-field" id="host-venue" type="text" maxlength="80" placeholder="glockenbach" data-i18n-attr="placeholder:host.venue.ph" />
+          </div>
+        </div>
+
+        <div class="host-two">
+          <div>
+            <label class="page-label" for="host-date" data-i18n="host.date">date</label>
+            <input class="page-field" id="host-date" type="date" required />
+          </div>
+          <div>
+            <label class="page-label" for="host-time" data-i18n="host.doors">doors</label>
+            <input class="page-field" id="host-time" type="time" value="23:00" />
+          </div>
+        </div>
+
+        <label class="page-label" for="host-link" data-i18n="host.link">ticket or venue link</label>
+        <input class="page-field host-wide" id="host-link" type="url" required placeholder="https://" />
+
+        <label class="page-label" for="host-body" data-i18n="host.line">a line about the night</label>
+        <textarea class="page-field host-wide" id="host-body" rows="2" maxlength="280" placeholder="what kind of night it is, in one or two sentences" data-i18n-attr="placeholder:host.line.ph"></textarea>
+
+        <p class="host-said" id="host-said" hidden></p>
+        <button class="page-button" id="host-publish" type="submit" data-i18n="host.publish">publish</button>
+        <p class="host-note" data-i18n="host.note">a person looks at every new night before it goes on the wall, usually within a day. you need an account; it is free.</p>
+      </div>
+    </form>
+  </main>
+
+
+  <footer class="foot thin right">
+    <p class="foot-name" data-i18n="foot.name">&copy; 2026 afterhours</p>
+    <nav class="foot-links">
+      <a href="../impressum/index.html" data-i18n="foot.impressum">impressum</a>
+      <a href="../datenschutz/index.html" data-i18n="foot.datenschutz">datenschutz</a>
+      <a href="../agb/index.html" data-i18n="foot.agb">agb</a>
+    </nav>
+  </footer>
+
+  <script src="../config.js?v=203"></script>
+  <script src="../session.js?v=203"></script>
+  <script src="../data.js?v=203"
+          data-fallback="../events-data.js?v=203"></script>
+  <script src="../menu.js?v=203"></script>
+
+  <script src="host.js?v=203"></script>
+  <script src="../webapp.js?v=203"></script>
+</body>
+</html>

@@ -196,6 +196,11 @@
     };
   }
   AH.rowToEvent = rowToEvent;
+/* A Ticketmaster picture comes in sizes; the walls show it ~150px wide, so the 3:2
+   portrait (640px, a third of the bytes) is plenty. The night page keeps the big one.
+   (owner, 04.11.2026: the posters opened slowly) */
+AH.wallImage = (url) => (url || "").replace("_RETINA_LANDSCAPE_16_9", "_RETINA_PORTRAIT_3_2");
+
 
   /* A null city means the whole world — the deck function reads it that
      way — and null is also the default: the deck opens on everywhere,
@@ -271,25 +276,61 @@
       .catch(() => []);
   };
 
+  /* The two asks do not need each other, so they go out together: one round trip
+     to the server instead of two in a row (owner, 04.11.2026: the wall opened slowly). */
   const askSample = () =>
-    askFeatured().then((featured) => {
-      const taken = new Set(featured.map((e) => e.slug));
-      return AH.request("/rpc/deck", {
+    Promise.all([
+      askFeatured(),
+      AH.request("/rpc/deck", {
         method: "POST",
         body: JSON.stringify({ p_city: null, p_type: null, p_limit: SAMPLE_POOL }),
-      }).then((rows) => {
-        const byTitle = new Map();
-        shuffle(rows.filter((r) => r.image_url && !taken.has(r.slug))).forEach((r) => {
-          if (!byTitle.has(r.title)) byTitle.set(r.title, r);
-        });
-        const fill = [...byTitle.values()]
-          .slice(0, Math.max(0, sample - featured.length))
-          .map(rowToEvent);
-        return featured.concat(fill);
+      }),
+    ]).then(([featured, rows]) => {
+      const taken = new Set(featured.map((e) => e.slug));
+      const byTitle = new Map();
+      shuffle(rows.filter((r) => r.image_url && !taken.has(r.slug))).forEach((r) => {
+        if (!byTitle.has(r.title)) byTitle.set(r.title, r);
       });
+      const fill = [...byTitle.values()]
+        .slice(0, Math.max(0, sample - featured.length))
+        .map(rowToEvent);
+      return featured.concat(fill);
     });
 
-  const ready = !enabled
+  /* The last wall, kept in the browser (owner, 04.11.2026): the server takes half a
+     second to deal a hand, so a returning visitor gets yesterday's wall at once and
+     a fresh one is dealt behind it for the next visit. Six hours at most, and a night
+     whose date has gone is dropped before it is hung. Only the sampled wall (index)
+     is kept; a city deck is always asked fresh. */
+  const WALL_KEY = "ah.wall.v1";
+  const WALL_TTL = 6 * 60 * 60 * 1000;
+  function savedWall() {
+    if (!sample) return null;
+    try {
+      const kept = JSON.parse(localStorage.getItem(WALL_KEY) || "null");
+      if (!kept || !Array.isArray(kept.list) || Date.now() - kept.at > WALL_TTL) return null;
+      const edge = Date.now() - 6 * 60 * 60 * 1000;
+      const list = kept.list.filter((e) => !e.startsAt || new Date(e.startsAt).getTime() > edge);
+      return list.length >= 6 ? list : null;
+    } catch (_) { return null; }
+  }
+  function saveWall(list) {
+    if (!sample) return list;
+    try { localStorage.setItem(WALL_KEY, JSON.stringify({ at: Date.now(), list })); } catch (_) {}
+    return list;
+  }
+
+  const kept = enabled ? savedWall() : null;
+  if (kept) {
+    window.POSTERS = numberEvents(kept);
+    AH.mode = "live";
+    /* the fresh hand, dealt quietly for next time */
+    session.then(() => askSample()).then(saveWall).catch(() => {});
+  }
+
+  const ready = kept
+    ? Promise.resolve()
+    : !enabled
     ? fallBack(null)
     : session
         /* Carry the local swipes up to the account first, so the deck
@@ -297,7 +338,7 @@
         .then(() => (AH.signedIn && AH.signedIn() && AH.mergeSwipes
           ? AH.mergeSwipes().catch(() => 0)
           : null))
-        .then(() => (sample ? askSample() : AH.events()))
+        .then(() => (sample ? askSample().then(saveWall) : AH.events()))
         .then((list) => {
           if (!list.length) throw new Error("the database came back empty");
           window.POSTERS = numberEvents(list);

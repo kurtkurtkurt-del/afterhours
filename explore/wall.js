@@ -114,7 +114,8 @@
     let art;
     if (e.image) {
       art = document.createElement("img");
-      art.src = e.image;
+      art.src = window.AH && AH.wallImage ? AH.wallImage(e.image) : e.image;
+      art.decoding = "async";
       art.alt = "";
       art.loading = "lazy";
       if (e.pos) art.style.objectPosition = e.pos;

@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>afterhours — five sites</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,900&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* afterhours — five directions for the new site (owner, 04.11.2026). Each direction shows the same
+   three pages: home, nights (a city, one week), host (list your own night). The tokens are the
+   app's: paper ground, ink text, one red. Inter Tight for words, JetBrains Mono for data, the
+   Archivo logo. Nothing here is a template; every direction takes one material from the night. */
+:root{
+  --paper:#FBFAF7; --paper2:#F3F1EC; --ink:#1F1D1A; --ink2:#8A867D; --ink3:#E9E5DD; --mute:#7A766E;
+  --spot:#D7261E; --tint:rgba(215,38,30,.10); --black:#0E0D0C; --onBlack:#F3F1EC; --onBlackMute:#8A867D;
+  --sans:"Inter Tight",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace; --logo:"Archivo",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#D9D6CF}
+body{font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased;padding:48px 40px 120px}
+h1.page{font-size:14px;font-weight:500;letter-spacing:.02em;margin-bottom:6px}
+p.lead{font-size:13px;color:var(--mute);max-width:720px;margin-bottom:40px;line-height:1.5}
+.dir{margin-bottom:96px}
+.dir>header{display:flex;align-items:baseline;gap:18px;margin-bottom:16px}
+.dir>header .n{font:500 12px var(--mono);color:var(--spot)}
+.dir>header h2{font-size:22px;font-weight:600;letter-spacing:-.02em}
+.dir>header p{font-size:13px;color:var(--mute);max-width:620px;line-height:1.45}
+.frames{display:grid;grid-template-columns:1120px 1fr;gap:14px;align-items:start}
+.frame{background:var(--paper);border-radius:6px;overflow:hidden;position:relative;box-shadow:0 1px 0 rgba(0,0,0,.08),0 24px 50px -30px rgba(0,0,0,.35)}
+.frame.home{height:700px}
+.side{display:grid;gap:14px}
+.side .frame{height:343px;width:560px}
+.lab{position:absolute;left:10px;top:8px;font:500 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);z-index:5}
+.logo{font:900 22px/1 var(--logo);font-stretch:62%;letter-spacing:-.02em}
+.logo i{display:inline-block;width:.3em;height:.3em;border-radius:50%;background:var(--spot);margin-left:.08em;vertical-align:baseline}
+.nav{display:flex;gap:26px;font-size:14px;font-weight:500}
+.nav b{font-weight:500;border-bottom:1.5px solid currentColor}
+.nav .lang{display:inline-flex;align-items:center;gap:6px;position:relative;margin-left:8px;font:500 12px var(--mono);letter-spacing:.06em;cursor:default}
+.nav .lang .menu{position:absolute;right:0;top:26px;background:var(--paper);color:var(--ink);border:1px solid var(--ink3);border-radius:8px;padding:6px 10px;font:500 12px var(--mono);white-space:nowrap;display:none}
+.nav .lang:hover .menu{display:block}
+.d .nav .lang .menu{background:var(--black);color:var(--onBlack);border-color:#2A2724}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);font-weight:500;font-size:14px;padding:11px 16px;border-radius:999px}
+.btn.red{background:var(--spot);color:#fff}
+.btn.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
+.mono{font-family:var(--mono)}
+.tag{font:500 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.poster{background:var(--black);border-radius:3px;position:relative;overflow:hidden;color:var(--onBlack)}
+.poster:after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.14),transparent 45%),linear-gradient(0deg,rgba(0,0,0,.45),transparent 50%)}
+.poster span{position:absolute;left:8px;bottom:7px;font:900 14px/1 var(--logo);font-stretch:70%;letter-spacing:-.02em;z-index:1;text-transform:lowercase}
+.poster.c1{background:#2A2D5C}.poster.c2{background:#7A1F1A}.poster.c3{background:#1E4A3A}.poster.c4{background:#3B3B3B}.poster.c5{background:#8A5A12}.poster.c6{background:#4A1E5A}.poster.c7{background:#1C3A6E}.poster.c8{background:#5A2A1A}
+
+/* ========== 1 · the wall ========== */
+.w .top{display:flex;justify-content:space-between;align-items:center;padding:26px 32px}
+.w .grid{position:absolute;left:32px;top:92px;bottom:0;width:470px;display:grid;grid-template-columns:1fr 1fr;gap:12px;overflow:hidden}
+.w .grid .poster{height:195px}
+.w .grid:after{content:"";position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(transparent,var(--paper))}
+.w .text{position:absolute;left:560px;right:40px;top:120px}
+.w .text h3{font-size:46px;line-height:1.02;letter-spacing:-.035em;font-weight:500;max-width:520px}
+.w .text h3+h3{font-weight:400;margin-top:14px;color:var(--ink)}
+.w .count{margin-top:34px;font:400 12px/1.7 var(--mono);max-width:520px}
+.w .count b{font-weight:500;color:var(--spot)}
+.w .acts{margin-top:28px;display:flex;gap:10px}
+.w .hostline{position:absolute;left:560px;right:40px;bottom:36px;font-size:14px;color:var(--mute)}
+.w .hostline a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.w2 .city{padding:22px 24px 0;display:flex;align-items:baseline;gap:16px}
+.w2 .city h3{font-size:30px;letter-spacing:-.03em;font-weight:500}
+.w2 .city span{font:400 11px var(--mono);color:var(--mute)}
+.w2 .days{display:flex;gap:6px;padding:14px 24px}
+.w2 .days i{font:500 11px var(--mono);padding:6px 9px;border-radius:999px;border:1px solid var(--ink3);font-style:normal}
+.w2 .days i.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.w2 .row{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:4px 24px}
+.w2 .row .poster{height:150px}
+.w3{padding:26px 28px}
+.w3 h3{font-size:30px;letter-spacing:-.03em;font-weight:500;line-height:1.05;max-width:360px}
+.w3 .slot{position:absolute;right:28px;top:28px;width:150px;height:225px;border:1.5px dashed var(--ink2);border-radius:3px;display:grid;place-items:center;text-align:center;font-size:12px;color:var(--mute);padding:12px;line-height:1.4}
+.w3 .form{margin-top:22px;display:grid;gap:10px;max-width:330px}
+.w3 .f{border-bottom:1px solid var(--ink);padding:8px 0;font-size:14px;display:flex;justify-content:space-between}
+.w3 .f span{color:var(--ink2)}
+.w3 .btn{margin-top:14px;justify-self:start}
+
+/* ========== 2 · the ticket desk ========== */
+.t{background:var(--paper2)}
+.t .top{display:flex;justify-content:space-between;align-items:center;padding:26px 32px}
+.t .ticket{position:absolute;left:50%;top:118px;transform:translateX(-50%);width:760px;height:430px;background:var(--paper);border-radius:14px;display:grid;grid-template-columns:1fr 220px;box-shadow:0 30px 60px -36px rgba(0,0,0,.45)}
+.t .ticket .main{padding:34px 38px;display:flex;flex-direction:column}
+.t .ticket .stub{border-left:1.5px dashed var(--ink2);padding:30px 26px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.t .ticket .stub:before,.t .ticket .stub:after{content:"";position:absolute;left:-13px;width:24px;height:24px;border-radius:50%;background:var(--paper2)}
+.t .ticket .stub:before{top:-12px}.t .ticket .stub:after{bottom:-12px}
+.t .ticket h3{font-size:64px;line-height:.95;letter-spacing:-.045em;font-weight:600;margin-top:auto}
+.t .ticket .sub{font-size:16px;margin-top:16px;color:var(--mute);max-width:420px;line-height:1.4}
+.t .ticket .row{display:flex;gap:10px;margin-top:26px}
+.t .stub .k{font:500 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.t .stub .v{font:500 22px/1.1 var(--mono);margin-top:4px;letter-spacing:-.02em}
+.t .stub .big{font:500 44px/1 var(--mono);letter-spacing:-.04em}
+.t .stub .bar{height:48px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 5px,var(--ink) 5px 6px,transparent 6px 9px)}
+.t .foot{position:absolute;left:32px;right:32px;bottom:28px;display:flex;justify-content:space-between;font:400 11px var(--mono);color:var(--mute)}
+.t2{background:var(--paper2);padding:22px 24px}
+.t2 .stubs{display:grid;gap:8px;margin-top:14px}
+.t2 .s{background:var(--paper);border-radius:10px;height:62px;display:grid;grid-template-columns:86px 1fr 120px;align-items:center;padding:0 16px;gap:14px}
+.t2 .s .dd{font:500 12px var(--mono);color:var(--spot)}
+.t2 .s .n{font-size:16px;font-weight:500;letter-spacing:-.02em}
+.t2 .s .n small{display:block;font-size:12px;color:var(--mute);font-weight:400;margin-top:2px}
+.t2 .s .r{font:400 11px var(--mono);color:var(--ink2);text-align:right;border-left:1px dashed var(--ink2);padding-left:14px;height:38px;display:flex;align-items:center;justify-content:flex-end}
+.t3{background:var(--paper2);padding:22px 24px}
+.t3 .blank{margin-top:14px;background:var(--paper);border-radius:12px;height:220px;display:grid;grid-template-columns:1fr 150px}
+.t3 .blank .l{padding:24px 26px}
+.t3 .blank .l .in{font-size:28px;letter-spacing:-.03em;font-weight:600;color:var(--ink2);border-bottom:1.5px solid var(--ink3);padding-bottom:6px}
+.t3 .blank .l .in+.in{font-size:14px;font-weight:400;margin-top:14px;padding-bottom:4px}
+.t3 .blank .r{border-left:1.5px dashed var(--ink2);padding:22px 18px;display:flex;flex-direction:column;justify-content:space-between}
+.t3 .blank .r .k{font:500 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+
+/* ========== 3 · the timetable ========== */
+.tt{background:var(--paper)}
+.tt .top{display:flex;justify-content:space-between;align-items:center;padding:26px 32px;border-bottom:1px solid var(--ink)}
+.tt .head{display:grid;grid-template-columns:1fr 1fr;padding:30px 32px 0}
+.tt .head h3{font-size:54px;line-height:.98;letter-spacing:-.04em;font-weight:600}
+.tt .head p{font-size:16px;line-height:1.45;color:var(--mute);align-self:end;max-width:420px}
+.tt table{position:absolute;left:32px;right:32px;top:250px;border-collapse:collapse;width:calc(100% - 64px);font-size:14px}
+.tt th{font:500 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);text-align:left;padding:14px 0 8px;border-bottom:1px solid var(--ink)}
+.tt td{padding:12px 0;border-bottom:1px solid var(--ink3);vertical-align:top}
+.tt td.h{font:500 13px var(--mono);width:84px}
+.tt td.c{width:120px;color:var(--mute)}
+.tt td.n{font-weight:500;letter-spacing:-.01em}
+.tt td.n small{color:var(--mute);font-weight:400;margin-left:8px}
+.tt td.k{text-align:right;font:400 12px var(--mono);color:var(--ink2);width:190px;white-space:nowrap}
+.tt td.k b{color:var(--spot);font-weight:500}
+.tt tr.you td{background:var(--tint)}
+.tt tr.you td.n:before{content:"your night";font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--spot);margin-right:10px}
+.tt tr.now td{padding:0;border-bottom:1.5px solid var(--spot);position:relative;height:0}
+.tt tr.now td:after{content:"now · 23:14";position:absolute;right:0;top:-16px;font:500 10px var(--mono);letter-spacing:.12em;color:var(--spot)}
+.tt2{padding:22px 24px}
+.tt2 .cities{display:grid;grid-template-columns:repeat(3,1fr);gap:0 24px;margin-top:12px;border-top:1px solid var(--ink)}
+.tt2 .cities div{padding:10px 0;border-bottom:1px solid var(--ink3);display:flex;justify-content:space-between;font-size:14px;font-weight:500}
+.tt2 .cities div span{font:400 11px var(--mono);color:var(--ink2)}
+.tt3{padding:22px 24px}
+.tt3 .ask{margin-top:12px;display:grid;grid-template-columns:84px 1fr;gap:0}
+.tt3 .ask div{padding:10px 0;border-bottom:1px solid var(--ink3);font-size:14px}
+.tt3 .ask div:nth-child(odd){font:500 12px var(--mono);color:var(--ink2);padding-top:12px}
+.tt3 .ask div i{font-style:normal;color:var(--ink2)}
+
+/* ========== 4 · after dark ========== */
+.d{background:var(--black);color:var(--onBlack)}
+.d .top{display:flex;justify-content:space-between;align-items:center;padding:26px 32px}
+.d .clock{position:absolute;left:32px;top:110px;font:400 12px var(--mono);color:var(--onBlackMute)}
+.d .clock b{color:var(--onBlack);font-weight:500}
+.d h3{position:absolute;left:32px;right:32px;top:170px;font-size:112px;line-height:.9;letter-spacing:-.05em;font-weight:700}
+.d h3 em{font-style:normal;color:var(--spot)}
+.d .open{position:absolute;left:32px;bottom:40px;right:32px;display:flex;justify-content:space-between;align-items:flex-end}
+.d .open .list{font:400 12px/1.9 var(--mono);color:var(--onBlackMute)}
+.d .open .list b{color:var(--onBlack);font-weight:500}
+.d .open .list i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--spot);margin-right:8px;vertical-align:middle}
+.d .daynote{position:absolute;right:32px;top:110px;font-size:12px;color:var(--onBlackMute);text-align:right;max-width:280px;line-height:1.5}
+.d2{background:var(--black);color:var(--onBlack);padding:22px 24px}
+.d2 .l{display:grid;gap:0;margin-top:14px}
+.d2 .l div{display:grid;grid-template-columns:70px 1fr 60px;padding:10px 0;border-bottom:1px solid #2A2724;font-size:15px;font-weight:500;align-items:center}
+.d2 .l div span{font:400 11px var(--mono);color:var(--onBlackMute)}
+.d2 .l div span.r{text-align:right}
+.d2 .l div.live span.r{color:var(--spot)}
+.d3{background:var(--black);color:var(--onBlack);padding:22px 24px}
+.d3 .big{font-size:40px;line-height:1;letter-spacing:-.04em;font-weight:700;margin-top:10px}
+.d3 .big em{font-style:normal;color:var(--spot)}
+.d3 .steps{margin-top:18px;font-size:14px;line-height:1.7;color:var(--onBlackMute)}
+.d3 .steps b{color:var(--onBlack);font-weight:500}
+
+/* ========== 5 · the deck ========== */
+.k .top{display:flex;justify-content:space-between;align-items:center;padding:26px 32px}
+.k .stage{position:absolute;left:0;right:0;top:92px;bottom:0}
+.k .card{position:absolute;left:50%;top:40px;width:330px;height:470px;margin-left:-165px;border-radius:18px;background:var(--black);color:var(--onBlack);box-shadow:0 40px 70px -40px rgba(0,0,0,.6);overflow:hidden}
+.k .card.b1{transform:translate(-56px,14px) rotate(-7deg) scale(.94);opacity:.9}
+.k .card.b2{transform:translate(56px,14px) rotate(7deg) scale(.94);opacity:.9}
+.k .card .ph{position:absolute;inset:0;background:linear-gradient(200deg,#4A1E5A,#1C3A6E 60%,#0E0D0C)}
+.k .card .ph:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 25%,rgba(255,255,255,.18),transparent 40%)}
+.k .card .dt{position:absolute;left:16px;top:14px;font:500 11px var(--mono);letter-spacing:.1em;background:var(--onBlack);color:var(--black);padding:4px 8px;border-radius:4px}
+.k .card .cap{position:absolute;left:16px;right:16px;bottom:18px}
+.k .card .cap h4{font:900 34px/.95 var(--logo);font-stretch:70%;letter-spacing:-.02em;text-transform:lowercase}
+.k .card .cap p{font:400 11px var(--mono);margin-top:8px;color:#CFCBC2}
+.k .hint{position:absolute;left:32px;bottom:36px;font-size:14px;color:var(--mute);max-width:260px;line-height:1.5}
+.k .hint b{color:var(--ink);font-weight:500}
+.k .keep{position:absolute;right:32px;bottom:36px;text-align:right}
+.k .keep .n{font:500 40px/1 var(--mono);letter-spacing:-.04em}
+.k .keep .n b{color:var(--spot)}
+.k .keep p{font-size:12px;color:var(--mute);margin-top:6px}
+.k .arrows{position:absolute;left:50%;transform:translateX(-50%);bottom:34px;display:flex;gap:14px}
+.k .arrows i{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font-style:normal;font-size:18px}
+.k .arrows i.y{background:var(--spot);border-color:var(--spot);color:#fff}
+.k2{padding:22px 24px}
+.k2 .fan{position:relative;height:260px;margin-top:10px}
+.k2 .fan .m{position:absolute;top:20px;width:120px;height:170px;border-radius:10px;color:var(--onBlack);padding:10px;font:900 15px/1 var(--logo);font-stretch:70%;text-transform:lowercase;display:flex;align-items:flex-end;box-shadow:0 20px 30px -24px rgba(0,0,0,.6)}
+.k2 .fan .m small{position:absolute;left:10px;top:10px;font:500 9px var(--mono);letter-spacing:.1em;color:#CFCBC2}
+.k3{padding:22px 24px}
+.k3 .yours{display:grid;grid-template-columns:150px 1fr;gap:22px;margin-top:12px}
+.k3 .yours .m{height:214px;border-radius:12px;border:1.5px dashed var(--ink2);display:grid;place-items:center;text-align:center;font-size:12px;color:var(--mute);padding:14px;line-height:1.4}
+.k3 .yours .f{display:grid;gap:10px;align-content:start}
+.k3 .yours .f div{border-bottom:1px solid var(--ink);padding:8px 0;font-size:14px;display:flex;justify-content:space-between}
+.k3 .yours .f div span{color:var(--ink2)}
+
+.notes{margin-top:60px;max-width:760px;font-size:13px;color:var(--mute);line-height:1.55}
+.notes h3{font-size:13px;color:var(--ink);margin:18px 0 6px}
+</style>
+</head>
+<body>
+<h1 class="page">afterhours — five directions for the site</h1>
+<p class="lead">Same five tabs in all of them (nights · host · people · app · help), same tokens as the app. Each shows home, then nights for one city and host. The difference is the material each one is built from: the poster, the ticket, the timetable, the hour, the card.</p>
+
+<!-- ===== 1 ===== -->
+<section class="dir">
+  <header><span class="n">1</span><h2>the wall</h2><p>your own showcase, grown up. The posters are the page; the words sit beside them. A host's night is simply one more poster on the wall, nothing special about it, which is the point.</p></header>
+  <div class="frames">
+    <div class="frame home w"><span class="lab">home</span>
+      <div class="top"><span class="logo">afterhours<i></i></span><nav class="nav"><b>nights</b><span>host</span><span>people</span><span>app</span><span>help</span><span class="lang"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19"/></svg>en<b class="menu">en · de · tr</b></span></nav></div>
+      <div class="grid">
+        <div class="poster c1"><span>blitz<br>allnighter</span></div><div class="poster c2"><span>harry klein<br>fri</span></div>
+        <div class="poster c3"><span>rote sonne</span></div><div class="poster c4"><span>bahnwärter<br>thiel</span></div>
+        <div class="poster c5"><span>sonntag<br>am fluss</span></div><div class="poster c6"><span>pathos</span></div>
+      </div>
+      <div class="text">
+        <h3>Discover what's happening tonight in your city.</h3>
+        <h3>Swipe to find them, plan with friends, keep the ones you went to.</h3>
+        <div class="count"><b>143</b> nights in münchen this week · 41 club night · 22 rave · 38 concert · 12 festival · 30 other</div>
+        <div class="acts"><span class="btn">open the app</span><span class="btn ghost">this week's nights</span></div>
+      </div>
+      <div class="hostline">Running a night? <a>Put it on the wall</a> — free, no account for the people who come.</div>
+    </div>
+    <div class="side">
+      <div class="frame w2"><span class="lab">nights · münchen</span>
+        <div class="city"><h3>münchen</h3><span>143 nights · 7 days</span></div>
+        <div class="days"><i class="on">fri 06</i><i>sat 07</i><i>sun 08</i><i>mon 09</i><i>tue 10</i><i>wed 11</i><i>thu 12</i></div>
+        <div class="row"><div class="poster c1"><span>blitz</span></div><div class="poster c2"><span>harry klein</span></div><div class="poster c3"><span>rote sonne</span></div><div class="poster c7"><span>muffat</span></div><div class="poster c8"><span>import export</span></div><div class="poster c6"><span>pathos</span></div></div>
+      </div>
+      <div class="frame w3"><span class="lab">host</span>
+        <h3>Your night, on the wall by tonight.</h3>
+        <div class="slot">drop a poster<br>2:3, any size</div>
+        <div class="form"><div class="f">title <span>required</span></div><div class="f">venue · city <span>type to find</span></div><div class="f">date · doors <span>fri 06.11 · 23:00</span></div><div class="f">ticket link <span>optional</span></div><span class="btn">publish</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2 ===== -->
+<section class="dir">
+  <header><span class="n">2</span><h2>the ticket desk</h2><p>the app's night page is a ticket; the site becomes the box office. Every page is a stub with a perforation. Host = print a blank ticket.</p></header>
+  <div class="frames">
+    <div class="frame home t"><span class="lab">home</span>
+      <div class="top"><span class="logo">afterhours<i></i></span><nav class="nav"><b>nights</b><span>host</span><span>people</span><span>app</span><span>help</span><span class="lang"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19"/></svg>en<b class="menu">en · de · tr</b></span></nav></div>
+      <div class="ticket">
+        <div class="main">
+          <span class="tag">admit one · every city</span>
+          <h3>find your night.<br>one card at a time.</h3>
+          <p class="sub">Club nights, raves, concerts and house parties — in the city you're in, swiped not searched, kept with the people you went with.</p>
+          <div class="row"><span class="btn red">open the app</span><span class="btn ghost">tonight in münchen</span></div>
+        </div>
+        <div class="stub">
+          <div><div class="k">tonight</div><div class="big">143</div><div class="k" style="margin-top:4px">nights · münchen</div></div>
+          <div><div class="k">doors</div><div class="v">23:00</div></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+      <div class="foot"><span>no. 000001</span><span>free · no ads · made in münchen</span><span>impressum · privacy</span></div>
+    </div>
+    <div class="side">
+      <div class="frame t2"><span class="lab">nights · münchen</span>
+        <div style="margin-top:14px;display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:22px;letter-spacing:-.03em;font-weight:600">fri 06.11</b><span class="tag">münchen · 31 nights</span></div>
+        <div class="stubs">
+          <div class="s"><span class="dd">23:00</span><span class="n">Blitz Allnighter<small>blitz · rave</small></span><span class="r">4 of yours</span></div>
+          <div class="s"><span class="dd">23:59</span><span class="n">Harry Klein Friday<small>harry klein · club night</small></span><span class="r">tickets →</span></div>
+          <div class="s"><span class="dd">20:00</span><span class="n">Muffathalle live<small>muffatwerk · concert</small></span><span class="r">sold out</span></div>
+        </div>
+      </div>
+      <div class="frame t3"><span class="lab">host</span>
+        <div style="margin-top:14px;display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:22px;letter-spacing:-.03em;font-weight:600">a blank ticket</b><span class="tag">free · reviewed in a day</span></div>
+        <div class="blank"><div class="l"><div class="in">name of the night</div><div class="in">venue, city</div><div class="in">doors · date</div></div><div class="r"><div><div class="k">doors</div><div class="in" style="font:500 22px var(--mono)">23:00</div></div><span class="btn" style="justify-self:start">print it</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 ===== -->
+<section class="dir">
+  <header><span class="n">3</span><h2>the timetable</h2><p>the most functional of the five: the site is a schedule from 20:00 to 06:00, every night in its hour, a red line at now. A host's night is a row like the others, marked once.</p></header>
+  <div class="frames">
+    <div class="frame home tt"><span class="lab">home</span>
+      <div class="top"><span class="logo">afterhours<i></i></span><nav class="nav"><b>nights</b><span>host</span><span>people</span><span>app</span><span>help</span><span class="lang"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19"/></svg>en<b class="menu">en · de · tr</b></span></nav></div>
+      <div class="head"><h3>münchen,<br>friday night.</h3><p>Every night in the city, in the order it happens. Pick a city, pick a day. Keep the ones you'll go to in the app.</p></div>
+      <table>
+        <tr><th>doors</th><th>kind</th><th>night</th><th style="text-align:right">kept</th></tr>
+        <tr><td class="h">20:00</td><td class="c">concert</td><td class="n">Muffathalle live<small>muffatwerk</small></td><td class="k">sold out</td></tr>
+        <tr><td class="h">22:00</td><td class="c">house party</td><td class="n">Sonntag am Fluss<small>isar, south bank</small></td><td class="k"><b>2 of yours</b></td></tr>
+        <tr class="you"><td class="h">22:30</td><td class="c">club night</td><td class="n">Keller<small>glockenbach</small></td><td class="k">12 kept</td></tr>
+        <tr><td class="h">23:00</td><td class="c">rave</td><td class="n">Blitz Allnighter<small>blitz</small></td><td class="k"><b>4 of yours</b> · 240 kept</td></tr>
+        <tr class="now"><td colspan="4"></td></tr>
+        <tr><td class="h">23:59</td><td class="c">club night</td><td class="n">Harry Klein Friday<small>harry klein</small></td><td class="k">tickets →</td></tr>
+        <tr><td class="h">01:00</td><td class="c">rave</td><td class="n">Rote Sonne late<small>rote sonne</small></td><td class="k">38 kept</td></tr>
+      </table>
+    </div>
+    <div class="side">
+      <div class="frame tt2"><span class="lab">nights · pick a city</span>
+        <b style="font-size:22px;letter-spacing:-.03em;font-weight:600;display:block;margin-top:14px">115 cities, tonight</b>
+        <div class="cities"><div>münchen<span>143</span></div><div>berlin<span>412</span></div><div>istanbul<span>96</span></div><div>wien<span>88</span></div><div>köln<span>74</span></div><div>amsterdam<span>131</span></div><div>hamburg<span>102</span></div><div>paris<span>260</span></div><div>london<span>518</span></div></div>
+      </div>
+      <div class="frame tt3"><span class="lab">host</span>
+        <b style="font-size:22px;letter-spacing:-.03em;font-weight:600;display:block;margin-top:14px">add a row</b>
+        <div class="ask"><div>doors</div><div>fri 06.11 · 22:30</div><div>kind</div><div>club night</div><div>night</div><div>Keller <i>· glockenbach, münchen</i></div><div>link</div><div><i>tickets or the venue, optional</i></div><div>poster</div><div><i>a 2:3 image; without one the row stays text</i></div></div>
+        <span class="btn" style="margin-top:14px">publish the row</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4 ===== -->
+<section class="dir">
+  <header><span class="n">4</span><h2>after dark</h2><p>the site knows what time it is. White by day, black from 20:00 in your city; the headline is the hour. One risk: a page that looks different at lunch and at midnight.</p></header>
+  <div class="frames">
+    <div class="frame home d"><span class="lab" style="color:var(--onBlackMute)">home · 23:14</span>
+      <div class="top"><span class="logo">afterhours<i></i></span><nav class="nav"><b>nights</b><span>host</span><span>people</span><span>app</span><span>help</span><span class="lang"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19"/></svg>en<b class="menu">en · de · tr</b></span></nav></div>
+      <div class="clock"><b>23:14</b> · münchen · fri</div>
+      <div class="daynote">By day this page is white and shows the week. After 20:00 it goes dark and shows what is open right now.</div>
+      <h3>31 rooms<br>open <em>now.</em></h3>
+      <div class="open">
+        <div class="list"><i></i><b>blitz</b> rave · doors 23:00 · 4 of yours<br><i></i><b>harry klein</b> club night · 23:59<br><i></i><b>rote sonne</b> late · 01:00<br><span style="margin-left:15px">+ 28 more in the app</span></div>
+        <div><span class="btn" style="background:var(--onBlack);color:var(--black)">open the app</span></div>
+      </div>
+    </div>
+    <div class="side">
+      <div class="frame d2"><span class="lab" style="color:var(--onBlackMute)">nights · münchen · tonight</span>
+        <b style="font-size:22px;letter-spacing:-.03em;font-weight:600;display:block;margin-top:14px">open now · 31</b>
+        <div class="l"><div class="live"><span>23:00</span>Blitz Allnighter<span class="r">live</span></div><div class="live"><span>23:59</span>Harry Klein Friday<span class="r">live</span></div><div><span>01:00</span>Rote Sonne late<span class="r">soon</span></div><div><span>01:30</span>Pathos after<span class="r">soon</span></div></div>
+      </div>
+      <div class="frame d3"><span class="lab" style="color:var(--onBlackMute)">host</span>
+        <div class="big">your room,<br><em>open</em> on this list.</div>
+        <div class="steps"><b>sign in</b> with your app account · <b>name the night</b>, venue, doors · <b>publish</b> — it shows the moment doors open and leaves the list when they close.</div>
+        <span class="btn" style="background:var(--onBlack);color:var(--black);margin-top:16px">list a night</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5 ===== -->
+<section class="dir">
+  <header><span class="n">5</span><h2>the deck</h2><p>the app's core gesture on the web, no login: swipe tonight's cards with the arrow keys. Keep needs an account, which is the way in. A host's night is a card in the deck.</p></header>
+  <div class="frames">
+    <div class="frame home k"><span class="lab">home</span>
+      <div class="top"><span class="logo">afterhours<i></i></span><nav class="nav"><b>nights</b><span>host</span><span>people</span><span>app</span><span>help</span><span class="lang"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19"/></svg>en<b class="menu">en · de · tr</b></span></nav></div>
+      <div class="stage">
+        <div class="card b1"><div class="ph" style="background:linear-gradient(200deg,#7A1F1A,#2A2D5C 70%)"></div></div>
+        <div class="card b2"><div class="ph" style="background:linear-gradient(200deg,#1E4A3A,#8A5A12 70%)"></div></div>
+        <div class="card"><div class="ph"></div><span class="dt">FRI 06.11 · 23:00</span><div class="cap"><h4>blitz<br>allnighter</h4><p>rave · blitz · museumsinsel · 4 of yours</p></div></div>
+        <div class="hint"><b>← let go · keep →</b><br>Arrow keys or drag. 31 cards tonight in münchen.</div>
+        <div class="arrows"><i>✕</i><i class="y">✓</i></div>
+        <div class="keep"><div class="n"><b>3</b>/31</div><p>kept so far · sign in to hold them</p></div>
+      </div>
+    </div>
+    <div class="side">
+      <div class="frame k2"><span class="lab">nights · münchen · a week in cards</span>
+        <b style="font-size:22px;letter-spacing:-.03em;font-weight:600;display:block;margin-top:14px">fri → thu</b>
+        <div class="fan">
+          <div class="m" style="left:0;background:#2A2D5C;transform:rotate(-8deg)"><small>FRI</small>blitz</div>
+          <div class="m" style="left:85px;background:#7A1F1A;transform:rotate(-4deg)"><small>SAT</small>harry klein</div>
+          <div class="m" style="left:170px;background:#1E4A3A"><small>SUN</small>am fluss</div>
+          <div class="m" style="left:255px;background:#4A1E5A;transform:rotate(4deg)"><small>WED</small>pathos</div>
+          <div class="m" style="left:340px;background:#1C3A6E;transform:rotate(8deg)"><small>THU</small>muffat</div>
+        </div>
+      </div>
+      <div class="frame k3"><span class="lab">host</span>
+        <b style="font-size:22px;letter-spacing:-.03em;font-weight:600;display:block;margin-top:14px">your card in tonight's deck</b>
+        <div class="yours"><div class="m">poster<br>2:3 · it becomes the card</div><div class="f"><div>title <span>required</span></div><div>venue · city <span>type to find</span></div><div>date · doors <span>fri 06.11 · 23:00</span></div><div>ticket link <span>optional</span></div><span class="btn" style="justify-self:start;margin-top:4px">deal it</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="notes">
+  <h3>what they share</h3>
+  Five tabs, app tokens, lowercase headings, no decoration, every number computed from live data (never typed). Night pages, person cards and group invites look the same in all five; only home, nights and host change.
+  <h3>what each one costs</h3>
+  1 needs posters for every night (Ticketmaster images cover ~70%; the rest get the generated poster). 2 and 3 are the cheapest to build and the easiest to keep fast. 4 needs the local hour and open/close times per night (we have doors; closing is estimated). 5 is the most work (the web deck already exists in the PWA, but the no-login variant is new) and the most fun.
+</div>
+</body>
+</html>

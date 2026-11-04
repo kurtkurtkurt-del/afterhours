@@ -50,12 +50,18 @@ body.home .header { background: transparent; }
 /* With an admin signed in a third item joins the menu. We move to three columns
    so the middle one is really in the MIDDLE: space-between cannot do it because
    the sides have different widths. */
+/* Four cells with an admin: logo · admin panel · menu · pills+globe. The menu is long
+   (eight words and the greeting), so it gets the stretch column and tighter gaps, and
+   nothing may wrap onto a second row (owner, 04.11.2026). */
 .header.isadmin {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto auto 1fr auto;
 }
 
-.header.isadmin .header-links { justify-self: end; }
+.header.isadmin .header-links { justify-self: center; gap: 22px; }
+.header.isadmin .header-links a { font-size: 14px; }
+.header.isadmin .header-right { grid-column: 4; }
+.header-links a { white-space: nowrap; }
 
 .header-admin {
   font-size: 15px;
@@ -88,7 +94,8 @@ body.home .header { background: transparent; }
 
 .header-links {
   display: flex;
-  gap: 28px;
+  align-items: center;
+  gap: 34px;   /* "host an event" joined the row; a little more air so the words read (owner, 04.11.2026) */
 }
 
 .header-links a {
@@ -186,7 +193,7 @@ body:not([data-screen="0"]) .photo {
   /* Exactly 3 full rows (6 posters) plus half a row (2 posters) should be
      visible, so row height = screen height / 3.5 */
   --gap: 12px;
-  --top-gap: 92px;                               /* the gap under the menu (the menu is 79px) */
+  --top-gap: 140px;                              /* the gap under the menu (two pills: the menu is ~126px, owner 04.11.2026) */
   --row: calc((100vh - var(--top-gap)) / 3.5);
   --row: calc((100dvh - var(--top-gap)) / 3.5);
   --poster-h: calc(var(--row) - var(--gap));
@@ -291,12 +298,24 @@ img.poster-image {
 
 body:not([data-screen="0"]) .down { opacity: 0; }
 
+/* "more below" (owner, 04.11.2026, option 4 of design/scroll-hint-5.html): the logo's red
+   dot, pulsing, and two small lowercase words; the tracked capitals read like an order. */
 .down-text {
   font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  color: #8a8a8a;
 }
+.down-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d7261e;
+  animation: down-pulse 1.8s ease-in-out infinite;
+}
+@keyframes down-pulse { 50% { opacity: 0.25; } }
+@media (prefers-reduced-motion: reduce) { .down-dot { animation: none; } }
+.down { opacity: 1; }
 
 /* A thin vertical line with an arrow at the end; it breathes downwards */
 .down-arrow {
@@ -582,7 +601,7 @@ img.phone-poster { object-fit: cover; background: #ececea; }
 
 .sound {
   position: fixed;
-  top: 92px;
+  bottom: 28px;   /* under the taller header it looked lost; the corner is its place (owner, 04.11.2026) */
   right: 32px;
   z-index: 5;
   text-align: right;
@@ -596,7 +615,9 @@ img.phone-poster { object-fit: cover; background: #ececea; }
   background: none;
   padding: 6px 0;
   cursor: pointer;
-  color: var(--black);
+  /* white in difference blend: black on the white page, white over the dark photo (owner, 04.11.2026) */
+  color: #fff;
+  mix-blend-mode: difference;
   font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   letter-spacing: 0.015em;
@@ -619,7 +640,7 @@ img.phone-poster { object-fit: cover; background: #ececea; }
 /* The genre list: ink ground, paper line on top, like the app's sheet */
 .sound-genres {
   position: absolute;
-  top: calc(100% + 8px);
+  bottom: calc(100% + 8px);   /* the switch sits in the bottom corner now, so the genres open upwards */
   right: 0;
   width: 220px;
   padding: 14px 18px 12px;
@@ -930,7 +951,7 @@ img.phone-poster { object-fit: cover; background: #ececea; }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 92px 32px 48px;
+  padding: 140px 32px 48px;
   background: #0a0a0a;
   color: #f2f2f0;
 }
@@ -1029,7 +1050,7 @@ body[data-screen="5"] .sound {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 92px 32px;
+  padding: 140px 32px;
   text-align: center;
 }
 
@@ -1218,7 +1239,7 @@ body[data-screen="4"] .sound { opacity: 0; pointer-events: none; }
 /* The breadcrumb showing where you are inside a section */
 .crumb {
   position: fixed;
-  top: 104px;
+  top: 150px;
   left: 64px;
   display: flex;
   gap: 9px;
@@ -1351,7 +1372,7 @@ body[data-screen="4"] .sound { opacity: 0; pointer-events: none; }
 .ex-wall-page {
   min-height: 100vh;
   min-height: 100dvh;
-  padding: 104px 32px 80px;
+  padding: 150px 32px 80px;
 }
 
 .ex-wall-page .ex-filter { margin-bottom: 34px; }
@@ -1552,7 +1573,8 @@ body[data-screen="4"] .sound { opacity: 0; pointer-events: none; }
 .page {
   min-height: 100vh;
   min-height: 100dvh;
-  padding: 104px 32px 48px;
+  /* the header holds two pills now, so it is ~130px tall; pages start under it (owner, 04.11.2026) */
+  padding: 150px 32px 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1616,7 +1638,9 @@ body[data-screen="4"] .sound { opacity: 0; pointer-events: none; }
 .page-button:disabled { opacity: 0.45; cursor: default; }
 
 /* Apple and Google: the same account as in the app (session.js AH.signInWith). */
-.page-oauth { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; max-width: 360px; }
+/* apple and google side by side, so both are on screen at first sight (owner, 04.11.2026) */
+.page-oauth { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 14px; max-width: 520px; }
+.page-oauth .page-or { flex-basis: 100%; }
 .page-or { margin: 0 0 4px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.55; }
 .page-oauth-button {
   padding: 14px 22px;
@@ -1732,7 +1756,7 @@ body[data-screen="4"] .sound { opacity: 0; pointer-events: none; }
 
 .map-text {
   position: absolute;
-  top: 96px;
+  top: 150px;   /* under the two-pill header (owner, 04.11.2026) */
   left: 32px;
   z-index: 2;
   pointer-events: none;
@@ -1979,7 +2003,7 @@ body.friends .page,
 body.djs .page {
   justify-content: start;
   max-width: 1240px;
-  padding-top: 132px;
+  padding-top: 160px;
 }
 
 @media (max-width: 900px) {
@@ -2020,7 +2044,7 @@ body.djs .fr.closed {
    read stays in a narrow column, but on this page a CENTRED one. */
 .help {
   max-width: 1400px;
-  padding: 128px 32px 96px;
+  padding: 160px 32px 96px;
 }
 
 .help-body {
@@ -2781,7 +2805,8 @@ img.cs-poster {
 }
 
 .cs-ticket-sub {
-  margin-top: 9px;
+  margin-top: 12px;
+  margin-bottom: 22px;   /* air between each button and the next (owner, 04.11.2026) */
   font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9px;
   letter-spacing: 0.14em;
@@ -2939,7 +2964,7 @@ img.cs-poster {
    sheet's measure. */
 .pf {
   max-width: 1160px;
-  padding: 118px 32px 64px;
+  padding: 150px 32px 64px;
 }
 
 .pf-none { font-size: 17px; opacity: 0.5; }
@@ -3159,7 +3184,7 @@ a.pf-hop:hover .pf-hop-name { text-decoration: underline; text-underline-offset:
 .fb,
 .reg {
   max-width: 620px;
-  padding: 132px 32px 96px;
+  padding: 160px 32px 96px;
 }
 
 .set .page-title { margin-bottom: 34px; }
@@ -3941,3 +3966,75 @@ body[data-screen="5"] .header-links .lang { color: #f2f2f0; }
 .page-check { display: flex; align-items: flex-start; gap: 10px; margin: 6px 0 14px; font: 400 14px/1.45 "Inter Tight", system-ui, sans-serif; color: inherit; cursor: pointer; }
 .page-check input { margin: 3px 0 0; width: 16px; height: 16px; accent-color: #d7261e; flex: none; }
 .page-check a { color: inherit; text-decoration: underline; }
+
+/* The language switch in the menu: a globe and the current code at the right end;
+   the three codes drop down under it (owner, 04.11.2026). Elsewhere (settings,
+   the landing footer) the switch stays the plain row. */
+.lang-menu { position: relative; display: inline-flex; align-items: center; }
+.lang-globe {
+  appearance: none; border: 0; background: none; padding: 0; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+  font: inherit; font-size: 13px; letter-spacing: 0.04em; color: inherit;
+}
+.lang-globe svg { display: block; }
+.lang-menu .lang {
+  display: none;
+  position: absolute; right: 0; top: calc(100% + 10px);
+  flex-direction: column; align-items: flex-start; gap: 8px;
+  padding: 10px 14px; background: var(--white); border: 1px solid #e3e3e0; border-radius: 10px;
+  color: var(--black);
+}
+.lang-menu.open .lang { display: inline-flex; }
+.lang-menu .lang-code { font-size: 14px; }
+.header .lang-menu { margin-left: 18px; color: var(--black); transition: color 0.5s ease; }
+body[data-screen="4"] .header .lang-menu,
+body[data-screen="5"] .header .lang-menu { color: #f2f2f0; }
+/* The header is three columns everywhere (owner, 04.11.2026): the logo left, the menu
+   words in the true middle, the two pills and the globe on the right. The same grid the
+   admin header already used; the right side is one cell, so the words stay centred. */
+.header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+.header .header-links { justify-self: center; }
+.header .header-right { display: inline-flex; align-items: center; justify-self: end; grid-column: 3; }
+
+/* ---------- host an event (owner, 04.11.2026) ----------
+   The poster on the left in its 2:3 frame, the facts on the right as the site's
+   plain underlined fields, publish at the bottom of the right column. */
+.host { justify-content: flex-start; max-width: 1240px; }
+.host-title { margin-bottom: 36px; }
+.host-form { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 56px; align-items: start; }
+.host-poster {
+  aspect-ratio: 2 / 3;
+  border: 1.5px dashed rgba(0, 0, 0, 0.45);
+  display: grid; place-items: center; text-align: center;
+  padding: 24px; cursor: pointer; position: relative; overflow: hidden;
+  background: var(--white);
+}
+.host-poster.over { border-color: var(--black); background: rgba(0, 0, 0, 0.03); }
+.host-poster.has { border-style: solid; border-color: var(--black); }
+.host-poster img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.host-poster-words b { display: block; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; }
+.host-poster-words small { display: block; margin-top: 8px; font-size: 12px; line-height: 1.5; opacity: 0.5; }
+.host-fields { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.host-fields .page-label { margin-top: 14px; }
+.host-fields .page-label:first-child { margin-top: 0; }
+.host-wide { width: min(100%, 620px); }
+textarea.host-wide { resize: vertical; min-height: 56px; }
+select.page-field { appearance: none; -webkit-appearance: none; border-radius: 0; cursor: pointer; }
+.host-two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; width: min(100%, 620px); }
+.host-two .page-field { width: 100%; }
+.host-two .page-label { display: block; margin-top: 14px; }
+.host-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.host-pill {
+  font: inherit; font-size: 14px; font-weight: 500; letter-spacing: -0.01em;
+  padding: 8px 14px; background: none; border: 1.5px solid var(--black); color: var(--black);
+  border-radius: 999px; cursor: pointer;
+}
+.host-pill.on { background: var(--black); color: var(--white); }
+.host-said { font-size: 14px; margin-top: 10px; opacity: 0.7; }
+.host-said.bad { color: #d7261e; opacity: 1; }
+.host-note { max-width: 520px; font-size: 13px; line-height: 1.5; opacity: 0.5; margin-top: 10px; }
+@media (max-width: 860px) {
+  .host-form { grid-template-columns: 1fr; gap: 28px; }
+  .host-poster { width: min(100%, 260px); }
+  .host-two { grid-template-columns: 1fr; }
+}

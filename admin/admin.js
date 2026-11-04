@@ -131,6 +131,7 @@
   "114_group_asks.sql",
   "115_photo_requests.sql",
   "116_intro_hints.sql",
+  "117_poster_uploads.sql",
   ];
 
   /* A tool, not the site: its words live here, in the three languages. */

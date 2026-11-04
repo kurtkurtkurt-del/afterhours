@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>host an event — five flows</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* host an event — five flows (owner, 04.11.2026). The site's own material: black on white,
+   Inter Tight, JetBrains Mono for the small technical lines, no colour but the one red dot,
+   no shadows, no gradients. Each row is one flow read left to right, four steps. The first
+   question is always the same: who is this night for — ticketed · friends · open door. */
+:root{--black:#000;--white:#fff;--grey:#8a8a8a;--rule:#e2e2e2;--red:#d7261e;
+  --sans:"Inter Tight","Inter",Helvetica,Arial,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#ececea}
+body{font-family:var(--sans);color:var(--black);-webkit-font-smoothing:antialiased;padding:44px 40px 120px}
+h1{font-size:14px;font-weight:500;margin-bottom:4px}
+.lead{font-size:13px;color:var(--grey);max-width:700px;line-height:1.5;margin-bottom:36px}
+.flow{margin-bottom:72px}
+.flow>header{display:flex;gap:16px;align-items:baseline;margin-bottom:14px}
+.flow>header .n{font:500 12px var(--mono);color:var(--red)}
+.flow>header h2{font-size:20px;font-weight:600;letter-spacing:-.02em}
+.flow>header p{font-size:13px;color:var(--grey);max-width:640px;line-height:1.45}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.s{background:var(--white);height:560px;position:relative;overflow:hidden;padding:26px 26px 24px;outline:1px solid rgba(0,0,0,.08)}
+.s .lab{position:absolute;right:14px;top:12px;font:500 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.menu{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:500;margin-bottom:34px}
+.menu .logo{font-weight:600;letter-spacing:-.02em;font-size:15px}
+.menu .logo i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--red);margin-left:1px}
+.menu span{color:var(--grey)}
+.btn{display:inline-block;background:var(--black);color:var(--white);font-size:14px;font-weight:500;padding:11px 16px;text-decoration:none}
+.btn.ghost{background:none;color:var(--black);border:1.5px solid var(--black)}
+.mono{font-family:var(--mono)}
+.small{font:400 11px var(--mono);color:var(--grey);letter-spacing:.02em}
+.h{font-size:34px;line-height:1.02;letter-spacing:-.035em;font-weight:500}
+.h.big{font-size:44px}
+.field{border-bottom:1px solid var(--black);padding:10px 0 8px;font-size:15px;display:flex;justify-content:space-between;align-items:baseline}
+.field span{color:var(--grey)}
+.field.empty{color:var(--grey)}
+.opt{display:flex;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid var(--rule);font-size:20px;letter-spacing:-.02em}
+.opt .k{font:500 11px var(--mono);color:var(--grey);width:14px}
+.opt small{display:block;font-size:13px;color:var(--grey);margin-top:4px;letter-spacing:0}
+.opt.on{font-weight:600}
+.opt.on:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:-7px;position:relative;left:-14px;top:-4px}
+.foot{position:absolute;left:26px;right:26px;bottom:24px;display:flex;justify-content:space-between;align-items:center}
+.foot .small{max-width:200px;line-height:1.5}
+
+/* 1 · the sheet */
+.a .sheet{font:400 13px/1.9 var(--mono)}
+.a .sheet .row{display:flex;gap:10px;border-bottom:1px solid var(--black);padding:6px 0}
+.a .sheet .row b{font-weight:500;width:84px;flex:none;color:var(--grey)}
+.a .sheet .row i{font-style:normal}
+.a .box{display:inline-block;width:11px;height:11px;border:1px solid var(--black);vertical-align:-1px;margin-right:8px}
+.a .box.x{background:var(--black)}
+.a .stamp{position:absolute;right:26px;bottom:70px;width:120px;height:120px;border:2px solid var(--red);border-radius:50%;color:var(--red);display:grid;place-items:center;font:500 11px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;text-align:center;transform:rotate(-12deg)}
+
+/* 2 · one question */
+.b .q{font-size:40px;line-height:1;letter-spacing:-.04em;font-weight:500;margin-bottom:38px}
+.b .ans{font-size:26px;letter-spacing:-.03em;line-height:1.5;color:var(--grey)}
+.b .ans b{display:block;font-weight:500;color:var(--black)}
+.b .ans b:before{content:"→ ";color:var(--red)}
+.b .in{font-size:40px;line-height:1;letter-spacing:-.04em;font-weight:500;border-bottom:2px solid var(--black);padding-bottom:10px;display:inline-block;min-width:60%}
+.b .in i{display:inline-block;width:2px;height:.9em;background:var(--black);vertical-align:-4px;margin-left:2px}
+.b .count{position:absolute;left:26px;top:70px;font:500 11px var(--mono);color:var(--grey);letter-spacing:.14em}
+
+/* 3 · the ticket */
+.c .tk{border:1.5px solid var(--black);height:380px;display:grid;grid-template-columns:1fr 92px;position:relative}
+.c .tk .m{padding:18px;display:flex;flex-direction:column}
+.c .tk .st{border-left:1.5px dashed var(--black);padding:16px 10px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;position:relative}
+.c .tk .st:before,.c .tk .st:after{content:"";position:absolute;left:-9px;width:16px;height:16px;border-radius:50%;background:var(--white);border:1.5px solid var(--black)}
+.c .tk .st:before{top:-9px;border-top-color:transparent}.c .tk .st:after{bottom:-9px;border-bottom-color:transparent}
+.c .tk .k{font:500 9px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.c .tk .v{font:500 16px var(--mono);margin-top:3px}
+.c .tk .t{font-size:30px;line-height:.98;letter-spacing:-.035em;font-weight:600;margin-top:auto;color:var(--grey)}
+.c .tk .t.on{color:var(--black)}
+.c .tk .l{font-size:12px;margin-top:10px;color:var(--grey)}
+.c .tk .bar{width:46px;height:60px;background:repeating-linear-gradient(0deg,var(--black) 0 2px,transparent 2px 5px)}
+.c .mode{display:flex;gap:6px;margin:14px 0 10px}
+.c .mode i{font:500 11px var(--mono);border:1px solid var(--black);padding:5px 9px;font-style:normal}
+.c .mode i.on{background:var(--black);color:var(--white)}
+
+/* 4 · poster first */
+.d .drop{width:100%;height:270px;border:1.5px dashed var(--black);display:grid;place-items:center;text-align:center;font-size:13px;line-height:1.5;color:var(--grey)}
+.d .drop b{display:block;color:var(--black);font-weight:500;font-size:15px}
+.d .pst{width:100%;height:270px;background:var(--black);color:var(--white);position:relative}
+.d .pst b{position:absolute;left:14px;bottom:12px;font-size:26px;line-height:.95;letter-spacing:-.03em;font-weight:700;text-transform:lowercase}
+.d .pst small{position:absolute;left:14px;top:12px;font:500 10px var(--mono);letter-spacing:.14em}
+.d .read{margin-top:16px;font:400 12px/1.8 var(--mono)}
+.d .read b{font-weight:500;color:var(--grey);display:inline-block;width:70px}
+.d .read i{font-style:normal;border-bottom:1px solid var(--black)}
+.d .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.d .two .pst{height:300px}
+
+/* 5 · the conversation */
+.e .line{font-size:17px;line-height:1.45;letter-spacing:-.015em;margin-bottom:22px;max-width:92%}
+.e .line.me{padding-left:28px;color:var(--black);font-weight:500}
+.e .line.me:before{content:"— ";color:var(--red);margin-left:-28px;display:inline-block;width:28px}
+.e .line.q{color:var(--grey)}
+.e .pick{display:flex;flex-wrap:wrap;gap:8px;margin:-8px 0 24px 28px}
+.e .pick i{font-style:normal;font-size:14px;border:1.5px solid var(--black);padding:7px 11px}
+.e .type{position:absolute;left:26px;right:26px;bottom:24px;border-top:1px solid var(--black);padding-top:12px;display:flex;justify-content:space-between;font-size:14px;color:var(--grey)}
+
+.notes{margin-top:50px;max-width:760px;font-size:13px;color:var(--grey);line-height:1.55}
+.notes b{color:var(--black);font-weight:500}
+</style>
+</head>
+<body>
+<h1>host an event — five flows</h1>
+<p class="lead">Four steps each, left to right. The first question is the same in all five: who is this night for — <b>ticketed</b> (a link to tickets, open to everyone), <b>friends</b> (only people in your circle see it; the address shows after a yes), <b>open door</b> (everyone, no tickets). Then the facts, then the poster, then it is live.</p>
+
+<!-- 1 -->
+<section class="flow a">
+  <header><span class="n">1</span><h2>the sheet</h2><p>one long form like a paper registration sheet: typewritten, ruled lines, checkboxes. Everything on one page; you see what is missing at a glance. The stamp at the end is the only ceremony.</p></header>
+  <div class="steps">
+    <div class="s"><span class="lab">1 · who</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="h" style="margin-bottom:26px">New night.</div>
+      <div class="sheet">
+        <div class="row"><b>for</b><i><span class="box x"></span>friends only</i></div>
+        <div class="row"><b></b><i><span class="box"></span>ticketed · everyone</i></div>
+        <div class="row"><b></b><i><span class="box"></span>open door · everyone</i></div>
+      </div>
+      <p class="small" style="margin-top:18px;line-height:1.6">friends only: your people see it in the app, the address comes with their yes. nothing of it is public.</p>
+      <div class="foot"><span class="small">1 of 4</span><span class="btn">next</span></div>
+    </div>
+    <div class="s"><span class="lab">2 · the facts</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="sheet">
+        <div class="row"><b>night</b><i>Keller</i></div>
+        <div class="row"><b>kind</b><i>club night</i></div>
+        <div class="row"><b>where</b><i>Glockenbach, münchen</i></div>
+        <div class="row"><b>when</b><i>fri 06.11 · doors 22:30</i></div>
+        <div class="row"><b>until</b><i>04:00</i></div>
+        <div class="row"><b>who plays</b><i style="color:var(--grey)">optional</i></div>
+        <div class="row"><b>a line</b><i style="color:var(--grey)">what kind of night it is, in one sentence</i></div>
+      </div>
+      <div class="foot"><span class="small">2 of 4</span><span class="btn">next</span></div>
+    </div>
+    <div class="s"><span class="lab">3 · the poster</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="sheet">
+        <div class="row"><b>poster</b><i><span class="box"></span>upload one (2:3)</i></div>
+        <div class="row"><b></b><i><span class="box x"></span>make one from the facts</i></div>
+      </div>
+      <div style="margin:22px 0 0;width:150px;height:225px;background:var(--black);color:var(--white);position:relative"><b style="position:absolute;left:10px;bottom:10px;font-size:22px;line-height:.95;letter-spacing:-.03em;font-weight:700">keller<br>fri</b><small style="position:absolute;left:10px;top:10px;font:500 9px var(--mono);letter-spacing:.14em">22:30 · GLOCKENBACH</small></div>
+      <div class="foot"><span class="small">3 of 4</span><span class="btn">next</span></div>
+    </div>
+    <div class="s"><span class="lab">4 · live</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="sheet">
+        <div class="row"><b>night</b><i>Keller · club night</i></div>
+        <div class="row"><b>when</b><i>fri 06.11 · 22:30–04:00</i></div>
+        <div class="row"><b>for</b><i>friends only · 38 people</i></div>
+        <div class="row"><b>link</b><i>afterhours.app/n/keller-06</i></div>
+      </div>
+      <div class="stamp">published<br>04.11.26</div>
+      <div class="foot"><span class="small">it is in your people's decks now. edit any time.</span><span class="btn ghost">share</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="flow b">
+  <header><span class="n">2</span><h2>one question</h2><p>one question per screen, in the landing's large type; the answers are plain lines, the chosen one gets the red arrow. Nothing else on the page. Slowest to click through, calmest to read.</p></header>
+  <div class="steps">
+    <div class="s"><span class="lab">1 · who</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="count">01 — 06</div>
+      <div class="q" style="margin-top:30px">Who is this<br>night for?</div>
+      <div class="ans"><b>friends</b>everyone, with tickets<br>everyone, open door</div>
+      <div class="foot"><span class="small">↵ to continue</span></div>
+    </div>
+    <div class="s"><span class="lab">2 · name</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="count">02 — 06</div>
+      <div class="q" style="margin-top:30px">What is it<br>called?</div>
+      <div class="in">Keller<i></i></div>
+      <p class="small" style="margin-top:18px">the way it goes on the card. lowercase is fine.</p>
+      <div class="foot"><span class="small">↵ to continue</span></div>
+    </div>
+    <div class="s"><span class="lab">4 · when</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="count">04 — 06</div>
+      <div class="q" style="margin-top:30px">When do the<br>doors open?</div>
+      <div class="in">fri 06.11 · 22:30<i></i></div>
+      <p class="small" style="margin-top:18px">type it, or pick: tonight · tomorrow · fri · sat</p>
+      <div class="foot"><span class="small">↵ to continue</span></div>
+    </div>
+    <div class="s"><span class="lab">6 · live</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="count">06 — 06</div>
+      <div class="q" style="margin-top:30px">Keller<br>is live.</div>
+      <div class="ans" style="font-size:18px;line-height:1.6">friends only · 38 people see it<br>fri 06.11 · 22:30 · glockenbach<br><b style="font-size:18px">copy the link</b></div>
+      <div class="foot"><span class="small">change anything from your account.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="flow c">
+  <header><span class="n">3</span><h2>the ticket you fill</h2><p>the app's night page is a ticket; here the form is the ticket. You type into it and watch it become real. The stub carries the mode: tickets · friends · open.</p></header>
+  <div class="steps">
+    <div class="s"><span class="lab">1 · who</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="mode"><i class="on">friends</i><i>tickets</i><i>open door</i></div>
+      <div class="tk"><div class="m"><span class="small">fri · 06.11</span><div class="t">name of<br>the night</div><div class="l">venue · city</div></div><div class="st"><div><div class="k">for</div><div class="v">friends</div></div><div><div class="k">doors</div><div class="v">--:--</div></div><div class="bar"></div></div></div>
+      <div class="foot"><span class="small">the stub says who gets in</span><span class="btn">fill it</span></div>
+    </div>
+    <div class="s"><span class="lab">2 · typing</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="mode"><i class="on">friends</i><i>tickets</i><i>open door</i></div>
+      <div class="tk"><div class="m"><span class="small">fri · 06.11</span><div class="t on">keller<i style="display:inline-block;width:2px;height:.8em;background:var(--black);vertical-align:-2px"></i></div><div class="l">venue · city</div></div><div class="st"><div><div class="k">for</div><div class="v">friends</div></div><div><div class="k">doors</div><div class="v">--:--</div></div><div class="bar"></div></div></div>
+      <div class="field" style="margin-top:14px">name <span>keller</span></div>
+      <div class="field empty">venue · city</div>
+      <div class="foot"><span class="small">2 of 4</span><span class="btn">next</span></div>
+    </div>
+    <div class="s"><span class="lab">3 · tickets?</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="mode"><i>friends</i><i class="on">tickets</i><i>open door</i></div>
+      <div class="tk"><div class="m"><span class="small">fri · 06.11</span><div class="t on">keller</div><div class="l" style="color:var(--black)">glockenbach · münchen</div></div><div class="st"><div><div class="k">for</div><div class="v">all</div></div><div><div class="k">doors</div><div class="v">22:30</div></div><div><div class="k">from</div><div class="v">12 €</div></div><div class="bar"></div></div></div>
+      <div class="field" style="margin-top:14px">ticket link <span>ra.co/events/…</span></div>
+      <div class="field">from <span>12 €</span></div>
+      <div class="foot"><span class="small">3 of 4</span><span class="btn">next</span></div>
+    </div>
+    <div class="s"><span class="lab">4 · torn off</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="h" style="margin-bottom:16px">It's out.</div>
+      <div class="tk" style="height:300px;transform:rotate(-2deg)"><div class="m"><span class="small">fri · 06.11</span><div class="t on">keller</div><div class="l" style="color:var(--black)">glockenbach · münchen</div></div><div class="st"><div><div class="k">for</div><div class="v">all</div></div><div><div class="k">doors</div><div class="v">22:30</div></div><div class="bar"></div></div></div>
+      <div class="foot"><span class="small">in münchen's deck tonight · the link is copied</span><span class="btn ghost">open it</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="flow d">
+  <header><span class="n">4</span><h2>poster first</h2><p>the landing is a wall of posters; a host starts the same way. Drop the poster, the page reads what it can (name, date, venue) and asks only for the rest. No poster yet? It makes one from the facts, in the site's black type.</p></header>
+  <div class="steps">
+    <div class="s"><span class="lab">1 · drop</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="drop"><div><b>drop the poster here</b>2:3, jpg or png<br><br>or <u>make one from the facts</u></div></div>
+      <div class="read"><b>for</b><i>friends</i> · tickets · open door</div>
+      <div class="foot"><span class="small">1 of 4</span></div>
+    </div>
+    <div class="s"><span class="lab">2 · read</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="pst"><small>FRI 06.11 · 22:30</small><b>keller<br>all night</b></div>
+      <div class="read"><b>name</b><i>Keller all night</i><br><b>when</b><i>fri 06.11 · 22:30</i><br><b>where</b><i style="border-color:var(--red)">?</i> <span style="color:var(--grey)">— we could not read it</span><br><b>kind</b><i>club night</i></div>
+      <div class="foot"><span class="small">read from the poster · tap any line to fix it</span><span class="btn">next</span></div>
+    </div>
+    <div class="s"><span class="lab">3 · the rest</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="two"><div class="pst" style="height:220px"><small>FRI 06.11</small><b>keller</b></div><div><div class="field">where <span>glockenbach</span></div><div class="field">until <span>04:00</span></div><div class="field empty">ticket link</div><div class="field empty">who plays</div></div></div>
+      <p class="small" style="margin-top:18px;line-height:1.6">friends only: 38 people see this. switch to tickets or open door at any time.</p>
+      <div class="foot"><span class="small">3 of 4</span><span class="btn">publish</span></div>
+    </div>
+    <div class="s"><span class="lab">4 · on the wall</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <div class="two"><div class="pst" style="height:300px;opacity:.25"></div><div class="pst" style="height:300px"><small>FRI 06.11</small><b>keller</b></div></div>
+      <div class="h" style="font-size:24px;margin-top:16px">On the wall, between the others.</div>
+      <div class="foot"><span class="small">friends · 38 · fri 06.11</span><span class="btn ghost">share</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="flow e">
+  <header><span class="n">5</span><h2>the conversation</h2><p>the form is a short exchange, the way you would tell a friend about a night: a grey question, your answer in black with a red dash, quick replies where there are only a few. No bubbles, no avatars; it reads like a transcript.</p></header>
+  <div class="steps">
+    <div class="s"><span class="lab">1 · who</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <p class="line q">You're hosting a night. Who is it for?</p>
+      <div class="pick"><i>just my people</i><i>everyone, with tickets</i><i>everyone, open door</i></div>
+      <div class="type"><span>or type it</span><span>↵</span></div>
+    </div>
+    <div class="s"><span class="lab">2</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <p class="line q">You're hosting a night. Who is it for?</p>
+      <p class="line me">just my people</p>
+      <p class="line q">Good — only your 38 friends will see it, and the address goes out with their yes. What's it called?</p>
+      <p class="line me">keller</p>
+      <p class="line q">Where and when?</p>
+      <div class="type"><span>glockenbach, friday 22:30</span><span>↵</span></div>
+    </div>
+    <div class="s"><span class="lab">3</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <p class="line q">Where and when?</p>
+      <p class="line me">glockenbach, friday 22:30</p>
+      <p class="line q">Fri 06.11, doors 22:30, Glockenbach, münchen — right?</p>
+      <div class="pick"><i>yes</i><i>fix it</i></div>
+      <p class="line q">Got a poster? Drop it here, or I'll set one in black type.</p>
+      <div class="pick"><i>drop</i><i>make one</i></div>
+      <div class="type"><span>type</span><span>↵</span></div>
+    </div>
+    <div class="s"><span class="lab">4 · live</span>
+      <div class="menu"><span class="logo">afterhours<i></i></span><span>host an event</span></div>
+      <p class="line q">That's everything.</p>
+      <p class="line" style="font-size:28px;letter-spacing:-.035em;line-height:1.05;font-weight:500">keller is live for your people.</p>
+      <p class="line q">fri 06.11 · 22:30 · glockenbach<br>afterhours.app/n/keller-06 — copied.</p>
+      <div class="pick"><i>share</i><i>open it</i><i>host another</i></div>
+      <div class="type"><span>say "change the time" any time</span><span>↵</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="notes">
+  <b>what they share:</b> one first question (friends · tickets · open door), the same facts, poster optional with a black-type fallback, a link at the end, and edit from the account afterwards. <b>what differs:</b> 1 and 4 fit on one screen and suit the desktop site; 2 and 5 are one thing at a time and feel the same on a phone; 3 is the only one that shows the result while you type. <b>what exists already:</b> the backend takes submitted nights with staff review (`event_submit`), "friends only" needs one new flag on the night (who may see it), the poster-from-facts is the generator the site already uses for nights without an image.
+</div>
+</body>
+</html>

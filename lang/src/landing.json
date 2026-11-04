@@ -25,9 +25,9 @@
     "tr": "göster"
   },
   "home.scroll": {
-    "en": "keep scrolling",
-    "de": "weiter scrollen",
-    "tr": "kaydırmaya devam"
+    "en": "more below",
+    "de": "mehr unten",
+    "tr": "devamı aşağıda"
   },
   "home.phone.label": {
     "en": "who's coming",
@@ -170,9 +170,9 @@
     "tr": "her türden on parça · sen gezinirken çalar"
   },
   "globe.title": {
-    "en": "go local.",
-    "de": "bleib lokal.",
-    "tr": "yerel takıl."
+    "en": "go local. or wild.",
+    "de": "bleib lokal. oder wild.",
+    "tr": "yerel takıl. ya da çılgın."
   },
   "globe.sub": {
     "en": "the map is in the app. roam your city.",

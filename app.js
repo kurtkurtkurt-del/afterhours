@@ -1,7 +1,7 @@
 /* afterhours — the poster wall (placeholder content) */
 
-// 20 posters: 2 columns x 10 rows.
-const SHOWN = POSTERS.slice(0, 20);
+// 10 posters: 2 columns x 5 rows (owner, 04.11.2026: twenty took too long to scroll past).
+const SHOWN = POSTERS.slice(0, 10);
 
 const grid = document.getElementById("posters");
 const info = document.getElementById("info");
@@ -75,7 +75,8 @@ SHOWN.forEach((p, i) => {
   if (p.image) {
     image = document.createElement("img");
     image.alt = "";
-    path = p.image;
+    image.decoding = "async";
+    path = AH.wallImage ? AH.wallImage(p.image) : p.image;
   } else {
     image = document.createElement("object");
     image.type = "image/svg+xml";
@@ -130,7 +131,7 @@ function loadKnob() {
   if (knobLoaded || !document.getElementById("knob")) return;
   knobLoaded = true;
   // A classic script, not a module: modules are blocked on file:// pages
-  for (const src of ["knob.js?v=202", "radio.js?v=202"]) {
+  for (const src of ["knob.js?v=203", "radio.js?v=203"]) {
     const s = document.createElement("script");
     s.src = src;
     s.async = false;            // radio.js runs after knob.js

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>the scroll hint — five ways</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* the line under the landing's intro that says there is more below (owner, 04.11.2026):
+   five gentler ways than KEEP SCROLLING in tracked capitals. Same spot, same width. */
+:root{--black:#000;--white:#fff;--grey:#8a8a8a;--red:#d7261e;--sans:"Inter Tight",Helvetica,Arial,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#ececea}
+body{font-family:var(--sans);color:var(--black);padding:44px 40px 100px;-webkit-font-smoothing:antialiased}
+h1{font-size:14px;font-weight:500;margin-bottom:4px}
+.lead{font-size:13px;color:var(--grey);margin-bottom:30px;max-width:640px;line-height:1.5}
+.row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.f{background:var(--white);height:300px;padding:28px 26px;position:relative;outline:1px solid rgba(0,0,0,.08)}
+.f .n{position:absolute;right:14px;top:12px;font:500 10px var(--mono);letter-spacing:.14em;color:var(--red)}
+.f .intro{font-size:17px;line-height:1.25;letter-spacing:-.02em;font-weight:500;max-width:240px}
+.f .intro+.intro{font-weight:400;margin-top:10px}
+.f .btn{display:inline-block;background:var(--black);color:var(--white);font-size:13px;font-weight:500;padding:9px 13px;margin-top:18px}
+.f .why{position:absolute;left:26px;right:26px;bottom:14px;font-size:11px;color:var(--grey);line-height:1.45}
+.hint{margin-top:26px;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--grey)}
+@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@keyframes pulse{50%{opacity:.25}}
+/* 1 a sentence */
+.h1 .hint{font-size:14px;color:var(--black);font-weight:400;letter-spacing:-.01em}
+.h1 .hint i{display:inline-block;width:1px;height:18px;background:var(--black);animation:drift 2.4s ease-in-out infinite}
+/* 2 the arrow alone */
+.h2 .hint span{display:none}
+.h2 .hint i{display:block;width:22px;height:22px;border-right:1px solid var(--black);border-bottom:1px solid var(--black);transform:rotate(45deg);animation:drift 2.4s ease-in-out infinite;margin-left:4px}
+/* 3 a count */
+.h3 .hint{font:400 12px var(--mono);color:var(--black);letter-spacing:.02em}
+.h3 .hint b{font-weight:500;color:var(--red)}
+.h3 .hint i{display:inline-block;width:1px;height:16px;background:var(--black)}
+/* 4 the dot */
+.h4 .hint{font-size:13px;color:var(--grey)}
+.h4 .hint i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);animation:pulse 1.8s ease-in-out infinite}
+/* 5 a page corner */
+.h5 .hint{position:absolute;left:26px;right:26px;bottom:52px;justify-content:space-between;font-size:12px;color:var(--grey);border-top:1px solid var(--black);padding-top:10px;margin:0}
+.h5 .hint b{font-weight:500;color:var(--black)}
+</style>
+</head>
+<body>
+<h1>the scroll hint — five ways</h1>
+<p class="lead">The same spot under the intro and the black button. KEEP SCROLLING in tracked capitals reads like an instruction; these are quieter and say what is below instead of what to do.</p>
+<div class="row">
+  <div class="f h1"><span class="n">1</span>
+    <p class="intro">find your night: rave, club night, concert, festival, house party.</p><p class="intro">one card at a time.</p><span class="btn">show me</span>
+    <div class="hint"><i></i><span>tonight's posters are just below</span></div>
+    <div class="why">a plain sentence in the site's own voice, lowercase, with the thin line that already breathes. Says what is there, not what to do.</div>
+  </div>
+  <div class="f h2"><span class="n">2</span>
+    <p class="intro">find your night: rave, club night, concert, festival, house party.</p><p class="intro">one card at a time.</p><span class="btn">show me</span>
+    <div class="hint"><i></i><span></span></div>
+    <div class="why">no words. one slow chevron drifting down, nothing else. The quietest; relies on the posters already peeking in.</div>
+  </div>
+  <div class="f h3"><span class="n">3</span>
+    <p class="intro">find your night: rave, club night, concert, festival, house party.</p><p class="intro">one card at a time.</p><span class="btn">show me</span>
+    <div class="hint"><i></i><span><b>143</b> nights in münchen this week ↓</span></div>
+    <div class="why">a number instead of a verb: the live count the footer already computes, so it is never a typed claim. Mono, the site's data voice.</div>
+  </div>
+  <div class="f h4"><span class="n">4</span>
+    <p class="intro">find your night: rave, club night, concert, festival, house party.</p><p class="intro">one card at a time.</p><span class="btn">show me</span>
+    <div class="hint"><i></i><span>more below</span></div>
+    <div class="why">the red dot from the logo, pulsing, and two small words. The dot is the site's only colour, so it carries the eye without shouting.</div>
+  </div>
+  <div class="f h5"><span class="n">5</span>
+    <p class="intro">find your night: rave, club night, concert, festival, house party.</p><p class="intro">one card at a time.</p><span class="btn">show me</span>
+    <div class="hint"><span><b>↓</b> this week's posters</span><span>01 / 08</span></div>
+    <div class="why">a rule across the bottom like a page footer: what is next on the left, where you are in the posters on the right (the counter the wall already keeps).</div>
+  </div>
+</div>
+</body>
+</html>
