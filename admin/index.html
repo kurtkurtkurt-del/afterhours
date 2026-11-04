@@ -22,10 +22,10 @@
   <link rel="manifest" href="../manifest.webmanifest" />
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
-  <link rel="stylesheet" href="../fonts/fonts.css?v=204" />
-  <link rel="stylesheet" href="../style.css?v=204" />
-  <link rel="stylesheet" href="admin.css?v=204" />
-  <script src="../i18n.js?v=204"></script>
+  <link rel="stylesheet" href="../fonts/fonts.css?v=205" />
+  <link rel="stylesheet" href="../style.css?v=205" />
+  <link rel="stylesheet" href="admin.css?v=205" />
+  <script src="../i18n.js?v=205"></script>
 </head>
 <body class="admin">
 
@@ -34,13 +34,19 @@
   <header class="header">
     <a class="logo" href="../index.html">afterhours</a>
     <nav class="header-links">
-      <a href="../explore/index.html" data-i18n="nav.explore">explore</a>
-      <a href="../host/index.html" data-i18n="nav.host">host an event</a>
-      <a href="../friends/index.html" data-i18n="nav.yours">your people</a>
+      <a href="../messages/index.html" data-i18n="nav.messages">messages</a>
+      <a href="../friends/index.html" data-i18n="nav.connect">connect</a>
+      <a href="../explore/index.html" data-i18n="nav.flow">flow</a>
       <a href="../maps/index.html" data-i18n="nav.map">map</a>
+      <a href="../login/index.html" aria-current="page" data-i18n="nav.account">account</a>
+    </nav>
+    <!-- the account page's own line: what the app keeps behind account (design 4, 04.11.2026) -->
+    <nav class="header-sub">
+      <a class="header-me" href="../login/index.html" data-i18n="nav.signin">sign in</a>
       <a href="../cards/index.html" data-i18n="nav.collection">collection</a>
+      <a href="../host/index.html" data-i18n="nav.hostnight">host a night</a>
+      <a href="../settings/index.html" data-i18n="nav.settings">settings</a>
       <a href="../help/index.html" data-i18n="nav.help">help</a>
-      <a href="../login/index.html" data-i18n="nav.account">account</a>
     </nav>
   </header>
 
@@ -71,11 +77,11 @@
     <section class="adm2-body" id="adm-body" aria-live="polite"></section>
   </main>
 
-  <script src="../config.js?v=204"></script>
-  <script src="../session.js?v=204"></script>
-  <script src="../data.js?v=204"></script>
-  <script src="admin.js?v=204"></script>
+  <script src="../config.js?v=205"></script>
+  <script src="../session.js?v=205"></script>
+  <script src="../data.js?v=205"></script>
+  <script src="admin.js?v=205"></script>
 
-  <script src="../webapp.js?v=204"></script>
+  <script src="../webapp.js?v=205"></script>
 </body>
 </html>

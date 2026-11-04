@@ -30,9 +30,9 @@
     "tr": "Elle çizilmiş otuz altı poster, her geceye bir tane."
   },
   "friends.title": {
-    "en": "your people | afterhours",
-    "de": "deine leute | afterhours",
-    "tr": "seninkiler | afterhours"
+    "en": "connect | afterhours",
+    "de": "connect | afterhours",
+    "tr": "connect | afterhours"
   },
   "friends.desc": {
     "en": "The nights you kept, your friends' kept nights, who is coming, and a match when you both keep the same one.",
@@ -40,9 +40,9 @@
     "tr": "Sakladığın geceler, arkadaşlarının sakladıkları, kim geliyor, ve ikiniz de aynı geceyi saklarsanız bir eşleşme."
   },
   "friends.h1": {
-    "en": "your people.",
-    "de": "deine leute.",
-    "tr": "seninkiler."
+    "en": "connect.",
+    "de": "connect.",
+    "tr": "connect."
   },
   "djs.title": {
     "en": "djs | afterhours",
@@ -908,5 +908,20 @@
     "en": "the poster is over 3 mb.",
     "de": "das poster ist über 3 mb.",
     "tr": "afiş 3 mb'ın üstünde."
+  },
+  "messages.h1": {
+    "en": "messages.",
+    "de": "nachrichten.",
+    "tr": "mesajlar."
+  },
+  "messages.title": {
+    "en": "messages | afterhours",
+    "de": "nachrichten | afterhours",
+    "tr": "mesajlar | afterhours"
+  },
+  "messages.desc": {
+    "en": "Your rooms and messages live in the app.",
+    "de": "Deine Räume und Nachrichten leben in der App.",
+    "tr": "Odaların ve mesajların uygulamada yaşar."
   }
 }

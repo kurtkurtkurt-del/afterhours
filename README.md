@@ -106,7 +106,7 @@ listing: §6.
 | `index.html` | The landing page, seven screens deep: the poster wall and the hero → how swiping works → a strip of cards → the room → who is playing → the turning city globe → a black footer screen with `go outside` and `get the app` | works |
 | `explore/` | **The wall.** Every night that fits, six posters across, soonest first; the words come on hover. The filter line (country / city / kind / date) above it. The deck itself lives in the app | works |
 | `explore/event/?slug=…` | **The night page** (a contact sheet): where · when · kind (ticket / szene), the ticket, who's coming, the after, beforehours, the card it leaves you. One shell for every night; the night is fetched by slug from `events_public`, and when there is no row the `night_page` RPC (`95_past_night_page.sql`) opens a night that is over or was cancelled, so a shared link keeps working (`explore/event.js`). §5 | works |
-| `friends/` · `maps/` | **Closed on the web.** The title (`your people.` / `go local.`), then "only available in the app." and a `preview.` button that opens a phone (`phone.js`) playing the app's real screenshots from `phone/` with a finger tapping and dragging (`yours-1/2`, `map-1/2/3` .jpg, portrait phone captures; finger positions per shot are set in `phone.js`; `djs-1/2.jpg` are still there for the old djs scene) | closed, live in the app |
+| `messages/` · `friends/` · `maps/` | **Closed on the web.** The title (`messages.` / `connect.` / `go local.`), then "only available in the app." and a `preview.` button that opens a phone (`phone.js`) playing the app's real screenshots from `phone/` with a finger tapping and dragging (`yours-1/2`, `map-1/2/3` .jpg, portrait phone captures; finger positions per shot are set in `phone.js`; `djs-1/2.jpg` are still there for the old djs scene) | closed, live in the app |
 | `djs/` | A redirect (`meta refresh` + canonical) to `host/`. Nothing of its own any more; the old scene in `phone.js` is unreachable | redirect |
 | `host/` | **Host an event** (`host/host.js`): the poster on the left (a 2:3 drop zone, jpeg or png up to 3 MB; `117_poster_uploads.sql` lets a signed-in member write `posters/<their id>/…` into the public `posters` bucket, anything else is refused before upload), the facts on the right (name · kind · who is it for · city · venue · date · doors · ticket link · a line). `publish` → the `event_submit` RPC; staff look at it, then it is on the wall and in the app. `just my people` is refused with a pointer to the app: a night for your own people is a spark (make → among friends), not a listing | works, signed in |
 | `cards/` | **The collection** — afterhours cards. Signed out: a note and `sign in`, no cards (the samples went on 03.11.2026); signed in, your own from `my_cards` (`cards/session-state.js`). §7 | works |
@@ -134,13 +134,23 @@ where it sits in the corner. Three pages have no footer:
 `index.html` (it has its own black footer screen), `admin/` and
 `strip.html`.
 
-**The menu** (`index.html`, the same on every page): `explore · host an
-event · your people · map · collection · help · account` (`host an event`
-→ `host/`, `your people` → `friends/`, `map` → `maps/`, `collection` →
-`cards/`, `account` → `login/`). Right of it two pills, `get the app`
-(the store) over `get the web app` (the PWA; `webapp.js`), and the
-language globe (`i18n.js`). Signed in, `account` becomes "welcome <name>
-(:".
+**The menu** (design 4, owner 04.11.2026; `index.html`, the same on every
+page) is a title page: the word-mark centred, under it one line of five
+words with a dot between them, the app's tab bar read left to right —
+`messages · connect · flow · map · account` (`messages` → `messages/`,
+closed; `connect` → `friends/`, closed; `flow` → `explore/`, the wall;
+`map` → `maps/`, closed; `account` → `login/`). No dropdown anywhere: on
+the account pages (`login/`, `register/`, `reset/`, `settings/`,
+`cards/`, `profile/`, `host/`, `help/`, `feedback/`, `delete/`, `admin/`)
+a third, smaller line holds what the app keeps behind account —
+`sign in · collection · host a night · settings · help`; signed in,
+`menu.js` turns `sign in` into "welcome <name> (:" (→ `profile/`), adds
+`sign out` at the end and, for an admin, `admin panel`. In the top right
+corner, out of the column, two pills — `get the app` (the store) over
+`get the web app` (the PWA; `webapp.js`) — and the language globe
+(`i18n.js`); on a phone the pills and the globe sit side by side on a
+row of their own under the words. The five designs this was chosen from
+are `design/menu-1..5.html` (`design/menu-all.html` side by side).
 
 **Every surface.** The layout is desktop-first and narrows in bands, each
 a `@media` block in `style.css`: below **1180px** the photo scales with
@@ -270,9 +280,8 @@ crawler reads (`og:` tags are not translated — crawlers run no scripts).
 While a page in another language is being swapped the body is hidden
 (`html.i18n-wait`), for 1.5 s at the very most.
 
-**The switch** sits at the right end of the menu on every page (beside
-the logo on a phone, where the menu row scrolls sideways instead of
-wrapping), written out in the landing's footer and in `settings/` —
+**The switch** is the globe in the top right corner of every page (on a
+phone on the pills' row under the menu words), written out in the landing's footer and in `settings/` —
 where it works signed out too. A choice made on a device wins; somebody
 who signs in on a device that has never chosen gets the language of
 their account.
@@ -332,7 +341,7 @@ language) and `upperData()` (data) do it by hand.
 | `i18n.js` | **The three languages.** First script of every page; decides the language, loads `lang/*.js`, translates the markup, builds the switch |
 | `lang/src/*.json` → `lang/*.js` | The words, three languages side by side; the generated dictionaries the pages load |
 | `tools-lang.py` | Builds the dictionaries and refuses a half-translated one (CI runs `--check`) |
-| `menu.js` | The menu as the session leaves it: "welcome \<name\>", an admin link for the admin |
+| `menu.js` | The account pages' third menu line as the session leaves it: "welcome \<name\>", sign out, an admin link for the admin |
 | `beforehours.js` | The comments before a night (reading is public, writing needs an account) |
 | `app.js` | The landing page's seven screens, the poster wall, the scrolling logic |
 | `globe.js` | The turning city globe. No Three.js — its own projection maths, drawn onto a canvas |

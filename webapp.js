@@ -29,9 +29,10 @@
 @keyframes webapp-pulse { 50% { opacity: 0.35; } }
 @media (prefers-reduced-motion: reduce) { .app-cta::before, .webapp-cta::before { animation: none; } }
 @media (max-width: 720px) {
-  /* On a phone the menu takes two rows; the pill sits right of the logo. */
+  /* On a phone the header is a centred column (design 4); the pills sit side by side
+     on their own row under the words, not over them. */
   .header { position: fixed; }
-  .app-ctas { position: absolute; top: 12px; right: 16px; margin: 0; gap: 4px; }
+  .app-ctas { position: static; flex-direction: row; margin: 0; gap: 6px; }
   .app-ctas.floating { position: fixed; top: 12px; right: 16px; }
   .app-cta, .webapp-cta { padding: 7px 11px 7px 10px; font-size: 12px; }
 }`;

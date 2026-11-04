@@ -709,22 +709,9 @@ img.phone-poster { object-fit: cover; background: #ececea; }
   /* Five tabs plus the logo did not fit on one line at 375px: "i prefer maps"
      broke across three lines and climbed over the logo. The menu moved to its
      own row. */
-  .header {
-    padding: 14px 16px 10px;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 6px 0;
-  }
+  .header { padding: 12px 16px 10px; }
 
-  .header.isadmin { display: flex; }   /* three columns are unnecessary on a phone */
-
-  .logo { font-size: 22px; flex: 1 0 100%; }
-
-  .header-links {
-    flex: 1 0 100%;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
+  .logo { font-size: 22px; }
 
   .header-links a { font-size: 12px; white-space: nowrap; }
   .header-admin { font-size: 12px; margin: 0; order: 1; }
@@ -741,7 +728,7 @@ img.phone-poster { object-fit: cover; background: #ececea; }
     display: flex;
     flex-direction: column;
     gap: 0;                      /* the 72px column gap on desktop would become a row gap here */
-    padding: 74px 16px 0;
+    padding: 150px 16px 0;   /* the centred header is three rows tall on a phone (design 4) */
   }
 
   .side { order: -1; }            /* the intro text goes above the posters */
@@ -1463,7 +1450,7 @@ body[data-screen="4"] .sound { opacity: 0; pointer-events: none; }
 }
 
 @media (max-width: 720px) {
-  .ex-wall-page { padding: 92px 16px 72px; }
+  .ex-wall-page { padding: 150px 16px 72px; }
   .ex-wall-page .ex-filter { gap: 16px; margin-bottom: 26px; }
   .fl-button { font-size: 13px; }
   .fl-list { min-width: 168px; }
@@ -1735,7 +1722,7 @@ body[data-screen="4"] .sound { opacity: 0; pointer-events: none; }
 }
 
 @media (max-width: 720px) {
-  .page { padding: 92px 16px 56px; }
+  .page { padding: 150px 16px 56px; }
   .page-title { font-size: 38px; margin-bottom: 32px; }
   .page-field { font-size: 18px; }
   .page-button { font-size: 16px; padding: 15px 34px; }
@@ -2000,6 +1987,7 @@ body[data-screen="4"] .sound { opacity: 0; pointer-events: none; }
 /* friends&more: the title sits at the top left, where it stood when the
    page still had two columns under it. */
 body.friends .page,
+body.messages .page,
 body.djs .page {
   justify-content: start;
   max-width: 1240px;
@@ -2008,7 +1996,8 @@ body.djs .page {
 
 @media (max-width: 900px) {
   body.friends .page,
-body.djs .page { padding-top: 104px; }
+  body.messages .page,
+  body.djs .page { padding-top: 150px; }
 }
 
 /* --- friends&more is closed on the web ---
@@ -2091,7 +2080,7 @@ body.djs .fr.closed {
 
 @media (max-width: 720px) {
   /* They do not fit side by side on a phone: stacked, all aligned left */
-  .help { padding: 104px 16px 64px; }
+  .help { padding: 160px 16px 64px; }
   .stats { grid-template-columns: minmax(0, 1fr); margin-bottom: 34px; }
   .stat {
     display: flex;
@@ -2122,7 +2111,7 @@ body.djs .fr.closed {
 }
 
 @media (max-width: 720px) {
-  .help { padding: 104px 16px 64px; }
+  .help { padding: 160px 16px 64px; }
   .help .page-title { font-size: 38px; }
   .help-text { font-size: 15px; }
 }
@@ -2911,7 +2900,7 @@ img.cs-poster {
     display: flex;
     flex-direction: column;
     gap: 34px;
-    padding: 104px 16px 64px;
+    padding: 160px 16px 64px;
   }
 
   /* On a phone the rail neither sticks nor stays together: first a small poster,
@@ -3158,7 +3147,7 @@ a.pf-hop:hover .pf-hop-name { text-decoration: underline; text-underline-offset:
 .pf-cards .cs-earn-card { flex: 0 0 230px; }
 
 @media (max-width: 900px) {
-  .pf { padding: 104px 16px 56px; }
+  .pf { padding: 160px 16px 56px; }
   /* Four hops have to fit a phone: 4 × 78 plus three hairlines is 343
      with nothing to spare, so the row may also scroll rather than push
      the page sideways. */
@@ -3307,7 +3296,7 @@ a.pf-hop:hover .pf-hop-name { text-decoration: underline; text-underline-offset:
 .account-status.error { opacity: 1; color: #c22a1f; }
 
 @media (max-width: 720px) {
-  .set, .fb, .reg { padding: 104px 16px 64px; }
+  .set, .fb, .reg { padding: 160px 16px 64px; }
   .set .page-title, .fb .page-title, .reg .page-title { font-size: 38px; }
   .set-choice { gap: 16px; }
 }
@@ -3989,12 +3978,36 @@ body[data-screen="5"] .header-links .lang { color: #f2f2f0; }
 .header .lang-menu { margin-left: 18px; color: var(--black); transition: color 0.5s ease; }
 body[data-screen="4"] .header .lang-menu,
 body[data-screen="5"] .header .lang-menu { color: #f2f2f0; }
-/* The header is three columns everywhere (owner, 04.11.2026): the logo left, the menu
-   words in the true middle, the two pills and the globe on the right. The same grid the
-   admin header already used; the right side is one cell, so the words stay centred. */
-.header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
-.header .header-links { justify-self: center; }
-.header .header-right { display: inline-flex; align-items: center; justify-self: end; grid-column: 3; }
+/* Design 4 (owner, 04.11.2026): a title page. The word-mark centred, under it one line
+   of five words with a dot between them, the app's tab bar read left to right
+   (messages · connect · flow · map · account). On the account pages a third line
+   appears with what the app keeps behind account. The two pills and the globe sit in
+   the top right corner, out of the column. No dropdown anywhere. */
+.header { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 22px 32px 16px; }
+.header.isadmin { display: flex; }
+.header .header-links { gap: 0; }
+.header .header-links a { padding: 0 14px; position: relative; }
+.header .header-links a + a::before { content: "·"; position: absolute; left: -4px; opacity: 0.45; }
+.header .header-sub { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px 0; margin-top: -4px; }
+.header .header-sub a, .header .header-sub .header-who {
+  font-size: 13px; letter-spacing: -0.01em; color: var(--black); text-decoration: none;
+  padding: 0 11px; position: relative; opacity: 0.72; white-space: nowrap;
+}
+.header .header-sub .header-who { opacity: 1; }
+.header .header-sub a + a::before, .header .header-sub .header-who + a::before { content: "·"; position: absolute; left: -3px; opacity: 0.45; }
+.header .header-sub a[aria-current="page"] { opacity: 1; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+.header .header-right { position: absolute; right: 24px; top: 18px; display: inline-flex; align-items: center; }
+.header .header-admin { margin: 0; font-size: 13px; padding: 0 11px; text-decoration: none; opacity: 0.72; }
+.header .header-sub .header-admin { color: #d7261e; opacity: 1; }
+@media (max-width: 720px) {
+  .header { padding: 12px 16px 10px; gap: 8px; align-items: center; }
+  .logo { flex: none; }
+  .header .header-links { flex: none; flex-wrap: nowrap; overflow-x: auto; max-width: 100%; }
+  .header .header-links a { padding: 0 9px; font-size: 13px; }
+  .header .header-sub a, .header .header-sub .header-who { font-size: 12px; padding: 0 8px; }
+  .header .header-right { position: static; display: flex; justify-content: center; gap: 10px; margin-top: 2px; }
+  .header .header-right .lang-menu { margin-left: 4px; }
+}
 
 /* ---------- host an event (owner, 04.11.2026) ----------
    The poster on the left in its 2:3 frame, the facts on the right as the site's

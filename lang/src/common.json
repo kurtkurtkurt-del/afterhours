@@ -328,5 +328,45 @@
     "en": "host an event",
     "de": "event veranstalten",
     "tr": "etkinlik düzenle"
+  },
+  "nav.messages": {
+    "en": "messages",
+    "de": "nachrichten",
+    "tr": "mesajlar"
+  },
+  "nav.connect": {
+    "en": "connect",
+    "de": "connect",
+    "tr": "connect"
+  },
+  "nav.flow": {
+    "en": "flow",
+    "de": "flow",
+    "tr": "flow"
+  },
+  "nav.signin": {
+    "en": "sign in",
+    "de": "anmelden",
+    "tr": "giriş yap"
+  },
+  "nav.yourpage": {
+    "en": "your page",
+    "de": "deine seite",
+    "tr": "sayfan"
+  },
+  "nav.hostnight": {
+    "en": "host a night",
+    "de": "eine nacht veranstalten",
+    "tr": "bir gece düzenle"
+  },
+  "nav.settings": {
+    "en": "settings",
+    "de": "einstellungen",
+    "tr": "ayarlar"
+  },
+  "nav.signout": {
+    "en": "sign out",
+    "de": "abmelden",
+    "tr": "çıkış yap"
   }
 }

@@ -1,7 +1,11 @@
-/* afterhours — the menu, according to who is signed in.
-   It does two things:
-     · adds "admin panel" in the middle when an admin is signed in
-     · replaces "login" on the right with "welcome <name> (:"
+/* afterhours — the menu, according to who is signed in (design 4, 04.11.2026).
+   The header is a title page: the word-mark, one line of five words (messages ·
+   connect · flow · map · account), and on the account pages a third line with what
+   the app keeps behind account. This file touches only that third line:
+     · "sign in" becomes "welcome <name> (:" and points at your page
+     · "sign out" is added at the end, and works
+     · "admin panel" joins the line when an admin is signed in (on a page without
+       the line, a line is made for it)
    Signed out, the menu is exactly what the markup says.
 
    Hiding the admin link is NOT a security measure. The authority comes
@@ -10,6 +14,7 @@
 (function () {
   const AH = (window.AH = window.AH || {});
   if (!AH.sessionReady) return;
+  const t = (k, v) => (AH.t ? AH.t(k, v) : k);
 
   /* Pages sit at different depths (root, explore/, explore/<slug>/). We
      work the root out from the logo's own href, so the site keeps working
@@ -20,19 +25,29 @@
     return href.replace(/index\.html$/, "");
   }
 
-  function addAdminLink() {
+  /* the third line: there on the account pages; made when the admin needs it */
+  function subLine(make) {
     const header = document.querySelector(".header");
-    if (!header || document.querySelector(".header-admin")) return;
+    if (!header) return null;
+    let sub = header.querySelector(".header-sub");
+    if (!sub && make) {
+      sub = document.createElement("nav");
+      sub.className = "header-sub";
+      header.appendChild(sub);
+    }
+    return sub;
+  }
 
+  function addAdminLink() {
+    if (document.querySelector(".header-admin")) return;
+    const sub = subLine(true);
+    if (!sub) return;
     const a = document.createElement("a");
     a.className = "header-admin";
     a.href = rootPath() + "admin/index.html";
-    a.textContent = AH.t ? AH.t("menu.admin") : "admin panel";
-
-    /* The middle of the menu: between the logo and the links */
-    const nav = header.querySelector(".header-links");
-    header.insertBefore(a, nav);
-    header.classList.add("isadmin");
+    a.textContent = t("menu.admin");
+    sub.appendChild(a);
+    document.querySelector(".header").classList.add("isadmin");
   }
 
   function removeAdminLink() {
@@ -40,25 +55,44 @@
     if (a) a.remove();
     const header = document.querySelector(".header");
     if (header) header.classList.remove("isadmin");
+    const sub = subLine(false);
+    if (sub && !sub.children.length) sub.remove();
   }
 
-  /* --- the "login" link on the right --- */
+  /* --- "sign in" ↔ "welcome <name> (:" and the sign-out word --- */
 
-  const loginLink = () => document.querySelector('.header-links a[href*="login/"]');
+  const me = () => document.querySelector(".header-sub .header-me");
 
   function greet(name) {
-    const a = loginLink();
+    const a = me();
     if (!a) return;
-    if (!a.dataset.wasText) a.dataset.wasText = a.textContent;
-    a.textContent = AH.t ? AH.t("menu.welcome", { name: name }) : "welcome " + name + " (:";
+    if (!a.dataset.wasText) { a.dataset.wasText = a.textContent; a.dataset.wasHref = a.getAttribute("href"); }
+    a.textContent = t("menu.welcome", { name: name });
+    a.href = rootPath() + "profile/index.html";
+    if (!document.querySelector(".header-out")) {
+      const out = document.createElement("a");
+      out.className = "header-out";
+      out.href = "#";
+      out.textContent = t("nav.signout");
+      out.addEventListener("click", (e) => {
+        e.preventDefault();
+        AH.signOut().then(() => { location.href = rootPath() + "login/index.html"; });
+      });
+      const sub = a.parentNode;
+      const admin = sub.querySelector(".header-admin");
+      sub.insertBefore(out, admin || null);
+    }
   }
 
   function unGreet() {
-    const a = loginLink();
+    const a = me();
     if (a && a.dataset.wasText) {
       a.textContent = a.dataset.wasText;
-      delete a.dataset.wasText;
+      a.setAttribute("href", a.dataset.wasHref);
+      delete a.dataset.wasText; delete a.dataset.wasHref;
     }
+    const out = document.querySelector(".header-out");
+    if (out) out.remove();
   }
 
   /* Name order: handle → first part of the display name → first part of
@@ -71,7 +105,7 @@
       (AH.session && AH.session.user && AH.session.user.email) ||
       "";
     const first = String(raw).split("@")[0].split(/[.\s_]/)[0];
-    return first ? first.toLowerCase() : (AH.t ? AH.t("menu.you") : "you");
+    return first ? first.toLowerCase() : t("menu.you");
   }
 
   /* The "last seen" a friend gets from profile_card() only moves when
