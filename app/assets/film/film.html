@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>afterhours · the film</title>
 <!--
-  The intro film, third cut (04.11.2026): the same nine scenes and photos as the second
-  cut, but 7 seconds, hard cuts to a techno beat (tools/film/beat.m4a, inline).
+  The intro film, third cut (04./05.11.2026): 7 seconds, hard cuts to a techno beat
+  (tools/film/beat.m4a, inline). Six scenes play: logo, swipe, ticket, people, map, out;
+  the city, spark and sleeve scenes of the second cut stay in the markup, unshown.
   Source: app/tools/film/film.html; built by `npm run film` into app/assets/film/film.html
   with the photos, type and sound inline. A 390×844 stage scaled to the screen; the
   timeline is SCENES below; the block `/* fast cut */` at the end of the style overrides
@@ -327,35 +328,35 @@ body { font-family: var(--sans); color: var(--paper); font-weight: 400; }
 .cap p { display: none; }
 .cap h2 { font-size: 50px; }
 .on .phone.in { animation-duration: .4s; animation-delay: 0s !important; }
-.on .tap { animation-duration: .5s; animation-delay: .25s !important; }
+.on .tap { animation-duration: .5s; animation-delay: .4s !important; }
 #s0.on .word { animation-delay: .1s; animation-duration: .35s; }
 #s0.on .ring { animation-duration: .5s; }
 #s0.on .dot { animation: beat .5s ease-in-out 1, gone .25s ease .3s forwards; }
 #s1.on .photo { animation-duration: 1.2s; }
 #s1 .lines .l:nth-child(2) { animation-delay: .18s !important; }
-#s2.on .c1 { animation: swipeR .45s var(--ease) .35s both; }
-#s2.on .c1 .tintR { animation: tintin .2s ease .25s both; }
-#s2.on .c2 { animation: up .3s var(--ease) .45s both; }
-#s2.on .c2 .tintL { animation: tintin .2s ease .7s both; }
-#s2.on .c2 .mover { animation: swipeL .4s var(--ease) .75s both; }
-#s2.on .c3 { animation: up2 .3s var(--ease) .85s both; }
-#s2.on .hand { animation: hand .5s var(--ease) .25s both; }
-#s3.on .act .btn { animation: press .3s ease .35s both; }
-#s3.on .got { animation: rise .3s var(--ease) .55s both; }
+#s2.on .c1 { animation: swipeR .5s var(--ease) .5s both; }
+#s2.on .c1 .tintR { animation: tintin .2s ease .4s both; }
+#s2.on .c2 { animation: up .3s var(--ease) .7s both; }
+#s2.on .c2 .tintL { animation: tintin .2s ease 1s both; }
+#s2.on .c2 .mover { animation: swipeL .45s var(--ease) 1.05s both; }
+#s2.on .c3 { animation: up2 .3s var(--ease) 1.2s both; }
+#s2.on .hand { animation: hand .55s var(--ease) .4s both; }
+#s3.on .act .btn { animation: press .3s ease .55s both; }
+#s3.on .got { animation: rise .3s var(--ease) .8s both; }
 #s4.on .face:nth-child(2) i { animation: ringpop .3s var(--ease) .2s both; }
-#s4.on .chain { animation: rise .3s var(--ease) .3s both; }
-#s4.on .rings i:nth-child(2) { animation: ringon .2s ease .5s both; }
-#s4.on .rings i:nth-child(3) { animation: ringon .2s ease .65s both; }
+#s4.on .chain { animation: rise .3s var(--ease) .5s both; }
+#s4.on .rings i:nth-child(2) { animation: ringon .2s ease .8s both; }
+#s4.on .rings i:nth-child(3) { animation: ringon .2s ease 1s both; }
 #s5.on .chips .chip:nth-child(2) { animation: chipon .2s ease .25s both; }
 #s5.on .chips .chip:first-child { animation: chipoff .2s ease .25s both; }
 #s5.on .send .btn { animation: press .3s ease .4s both; }
 #s5.on .sent { animation: rise .3s var(--ease) .6s both; }
-#s6.on .mapbg svg { animation: pan 1s var(--ease) .2s both; }
-#s6.on .hand2 { animation: hand2 .45s var(--ease) .15s both; }
-#s6.on .mcard .v1 { animation: outL .3s var(--ease) .4s both; }
-#s6.on .mcard .v2 { animation: inR .3s var(--ease) .45s both; }
-#s6.on .p2 { animation: pinbig .25s var(--ease) .5s both; }
-#s6.on .p1 { animation: pinsmall .25s var(--ease) .5s both; }
+#s6.on .mapbg svg { animation: pan 1.2s var(--ease) .2s both; }
+#s6.on .hand2 { animation: hand2 .5s var(--ease) .3s both; }
+#s6.on .mcard .v1 { animation: outL .3s var(--ease) .65s both; }
+#s6.on .mcard .v2 { animation: inR .3s var(--ease) .7s both; }
+#s6.on .p2 { animation: pinbig .25s var(--ease) .75s both; }
+#s6.on .p1 { animation: pinsmall .25s var(--ease) .75s both; }
 #s7.on .disc { animation: discout .5s var(--ease) .05s both; }
 #s7.on .checked { animation: popin .3s var(--ease) .1s both, fadeout .2s ease .6s both; }
 #s7.on .fly { animation: fly .55s var(--ease) .3s both; }
@@ -656,12 +657,13 @@ body { font-family: var(--sans); color: var(--paper); font-weight: 400; }
     }
   }
 
-  // the timeline: when each scene comes on (ms); cuts on the beat of tools/film/beat.m4a
-  // (about 128 bpm → a cut every two bars ≈ 0.78 s). The last entry ends the film.
+  // the timeline: when each scene comes on (ms), on the beat of tools/film/beat.m4a.
+  // Four features only (05.11): swipe, ticket, people, map; the city, spark and sleeve
+  // scenes stay in the markup for a longer cut but are not shown. The last entry ends the film.
   var SCENES = [
-    ['s0', 0], ['s1', 600], ['s2', 1350], ['s3', 2150], ['s4', 2950], ['s5', 3750], ['s6', 4550], ['s7', 5350], ['s8', 6150]
+    ['s0', 0], ['s2', 500], ['s3', 2000], ['s4', 3400], ['s6', 4900], ['s8', 6400]
   ];
-  var END = 7200;
+  var END = 7300;
   var current = document.getElementById('s0');
   // #s4 in the address: that scene alone, held (for looking at it while making it)
   var held = /^#s[0-8]$/.test(location.hash) ? location.hash.slice(1) : null;
