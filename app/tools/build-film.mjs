@@ -1,6 +1,6 @@
 // Builds the intro film: tools/film/film.html (readable source) → assets/film/film.html
 // (one file, offline). {{img:name}} becomes a base64 JPEG resized with sips (macOS),
-// {{font:name}} a base64 woff2 from the site's fonts folder. `npm run film` in app/.
+// {{font:name}} a base64 woff2 from the site's fonts folder, {{snd:name}} a base64 m4a. `npm run film` in app/.
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, readFileSync, writeFileSync, statSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -37,6 +37,9 @@ const FONTS = {
   mono: 'fonts/JetBrainsMono-400-latin.woff2',
 };
 
+// name → file under app/
+const SOUNDS = { beat: 'tools/film/beat.m4a' };
+
 const tmp = mkdtempSync(join(tmpdir(), 'film-'));
 const b64 = (p) => readFileSync(p).toString('base64');
 const image = (name) => {
@@ -46,16 +49,17 @@ const image = (name) => {
   return `data:image/jpeg;base64,${b64(out)}`;
 };
 const font = (name) => `data:font/woff2;base64,${b64(join(repo, FONTS[name]))}`;
+const sound = (name) => `data:audio/mp4;base64,${b64(join(app, SOUNDS[name]))}`;
 
 let html = readFileSync(join(app, 'tools/film/film.html'), 'utf8');
 const missing = [];
-html = html.replace(/\{\{(img|font):([\w-]+)\}\}/g, (m, kind, name) => {
-  const table = kind === 'img' ? IMAGES : FONTS;
+html = html.replace(/\{\{(img|font|snd):([\w-]+)\}\}/g, (m, kind, name) => {
+  const table = kind === 'img' ? IMAGES : kind === 'font' ? FONTS : SOUNDS;
   if (!table[name]) {
     missing.push(m);
     return m;
   }
-  return kind === 'img' ? image(name) : font(name);
+  return kind === 'img' ? image(name) : kind === 'font' ? font(name) : sound(name);
 });
 if (missing.length) {
   console.error('unknown:', [...new Set(missing)].join(' '));

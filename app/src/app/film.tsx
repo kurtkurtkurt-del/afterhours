@@ -13,9 +13,9 @@ import { brand } from '@/theme/layout';
 
 // Intro film: "explore your city" plays it, then the sign-up screen follows. Someone
 // signed in (settings → show the intro again) goes back where they came from instead.
-// Second cut, 12.10.2026: written by hand in tools/film/film.html and built into
-// assets/film/film.html by `npm run film` (one file: the app's photos and type inline,
-// plays offline, about 43 s). The app writes the language in before loading it.
+// Third cut, 04.11.2026: written by hand in tools/film/film.html and built into
+// assets/film/film.html by `npm run film` (one file: the app's photos, type and the
+// beat inline, plays offline, 7 s, hard cuts to a techno beat). The app writes the language in before loading it.
 // The film signals the end itself via postMessage('end'); if it never does,
 // the timeout moves on. "Skip" is always available.
 const FILM = require('../../assets/film/film.html');

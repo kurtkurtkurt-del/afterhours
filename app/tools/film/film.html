@@ -5,10 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>afterhours · the film</title>
 <!--
-  The intro film, second cut (12.10.2026). Source: app/tools/film/film.html; built by
-  `npm run film` into app/assets/film/film.html with the photos and type inline.
-  A 390×844 stage scaled to the screen; nine scenes on one timeline (43 s) (SCENES below);
-  each scene's own motion starts when it gets the class `on`. Posts `end` to the app.
+  The intro film, third cut (04.11.2026): the same nine scenes and photos as the second
+  cut, but 7 seconds, hard cuts to a techno beat (tools/film/beat.m4a, inline).
+  Source: app/tools/film/film.html; built by `npm run film` into app/assets/film/film.html
+  with the photos, type and sound inline. A 390×844 stage scaled to the screen; the
+  timeline is SCENES below; the block `/* fast cut */` at the end of the style overrides
+  the slow second-cut delays. Posts `end` to the app.
 -->
 <style>
 @font-face { font-family: "ArchivoLogo"; font-weight: 900; src: url("{{font:logo}}") format("woff2"); }
@@ -316,12 +318,63 @@ body { font-family: var(--sans); color: var(--paper); font-weight: 400; }
 #s8 .word { position: absolute; left: 0; right: 0; top: 46%; margin-top: -40px; text-align: center; font-size: 66px; }
 #s8 .explore { position: absolute; left: 24px; right: 24px; top: 46%; margin-top: 44px; text-align: center; font-size: 22px; font-weight: 500; letter-spacing: -.5px; color: var(--mute); }
 #s8 .cities { position: absolute; left: 0; right: 0; bottom: 90px; text-align: center; color: var(--meta); }
+/* fast cut (04.11.2026): hard cuts, every in-scene move within ~0.8 s */
+.scene { transition: opacity .12s linear, visibility 0s linear .12s; }
+.scene.on { transition: opacity .12s linear; }
+.on .rise { animation-duration: .35s; animation-delay: 0s !important; }
+.on .fade { animation-duration: .3s; animation-delay: .1s !important; }
+.on .grow { animation-duration: .35s; animation-delay: 0s !important; }
+.cap p { display: none; }
+.cap h2 { font-size: 50px; }
+.on .phone.in { animation-duration: .4s; animation-delay: 0s !important; }
+.on .tap { animation-duration: .5s; animation-delay: .25s !important; }
+#s0.on .word { animation-delay: .1s; animation-duration: .35s; }
+#s0.on .ring { animation-duration: .5s; }
+#s0.on .dot { animation: beat .5s ease-in-out 1, gone .25s ease .3s forwards; }
+#s1.on .photo { animation-duration: 1.2s; }
+#s1 .lines .l:nth-child(2) { animation-delay: .18s !important; }
+#s2.on .c1 { animation: swipeR .45s var(--ease) .35s both; }
+#s2.on .c1 .tintR { animation: tintin .2s ease .25s both; }
+#s2.on .c2 { animation: up .3s var(--ease) .45s both; }
+#s2.on .c2 .tintL { animation: tintin .2s ease .7s both; }
+#s2.on .c2 .mover { animation: swipeL .4s var(--ease) .75s both; }
+#s2.on .c3 { animation: up2 .3s var(--ease) .85s both; }
+#s2.on .hand { animation: hand .5s var(--ease) .25s both; }
+#s3.on .act .btn { animation: press .3s ease .35s both; }
+#s3.on .got { animation: rise .3s var(--ease) .55s both; }
+#s4.on .face:nth-child(2) i { animation: ringpop .3s var(--ease) .2s both; }
+#s4.on .chain { animation: rise .3s var(--ease) .3s both; }
+#s4.on .rings i:nth-child(2) { animation: ringon .2s ease .5s both; }
+#s4.on .rings i:nth-child(3) { animation: ringon .2s ease .65s both; }
+#s5.on .chips .chip:nth-child(2) { animation: chipon .2s ease .25s both; }
+#s5.on .chips .chip:first-child { animation: chipoff .2s ease .25s both; }
+#s5.on .send .btn { animation: press .3s ease .4s both; }
+#s5.on .sent { animation: rise .3s var(--ease) .6s both; }
+#s6.on .mapbg svg { animation: pan 1s var(--ease) .2s both; }
+#s6.on .hand2 { animation: hand2 .45s var(--ease) .15s both; }
+#s6.on .mcard .v1 { animation: outL .3s var(--ease) .4s both; }
+#s6.on .mcard .v2 { animation: inR .3s var(--ease) .45s both; }
+#s6.on .p2 { animation: pinbig .25s var(--ease) .5s both; }
+#s6.on .p1 { animation: pinsmall .25s var(--ease) .5s both; }
+#s7.on .disc { animation: discout .5s var(--ease) .05s both; }
+#s7.on .checked { animation: popin .3s var(--ease) .1s both, fadeout .2s ease .6s both; }
+#s7.on .fly { animation: fly .55s var(--ease) .3s both; }
+#s7.on .msgbtn { animation: grow .3s var(--ease) .7s both; }
+#s8 .word { animation-duration: .3s; }
+#s8 .explore { animation-delay: .15s !important; }
+#s8 .cities { animation-delay: .3s !important; }
+/* a red flash on every cut, in time with the beat */
+#flash { position: absolute; inset: 0; z-index: 18; pointer-events: none; background: var(--spot); opacity: 0; }
+#flash.hit { animation: flash .22s ease-out both; }
+@keyframes flash { from { opacity: .35; } to { opacity: 0; } }
 </style>
 </head>
 <body>
 <div id="stage">
   <div id="vignette"></div>
   <div id="grain"></div>
+  <div id="flash"></div>
+  <audio id="beat" src="{{snd:beat}}" preload="auto" playsinline></audio>
 
   <!-- S0: the dot -->
   <section class="scene on" id="s0">
@@ -603,19 +656,20 @@ body { font-family: var(--sans); color: var(--paper); font-weight: 400; }
     }
   }
 
-  // the timeline: when each scene comes on (ms); the last entry ends the film
+  // the timeline: when each scene comes on (ms); cuts on the beat of tools/film/beat.m4a
+  // (about 128 bpm → a cut every two bars ≈ 0.78 s). The last entry ends the film.
   var SCENES = [
-    ['s0', 0], ['s1', 2400], ['s2', 6000], ['s3', 12000], ['s4', 17500], ['s5', 23000], ['s6', 28500], ['s7', 34000], ['s8', 39000]
+    ['s0', 0], ['s1', 600], ['s2', 1350], ['s3', 2150], ['s4', 2950], ['s5', 3750], ['s6', 4550], ['s7', 5350], ['s8', 6150]
   ];
-  // each scene holds long enough to read its line at about 15 letters a second in the
-  // longest language (German); measured 20.10.2026 (D4)
-  var END = 43000;
+  var END = 7200;
   var current = document.getElementById('s0');
   // #s4 in the address: that scene alone, held (for looking at it while making it)
   var held = /^#s[0-8]$/.test(location.hash) ? location.hash.slice(1) : null;
   window.addEventListener('hashchange', function () { location.reload(); });
+  var flash = document.getElementById('flash');
   function show(id) {
     var next = document.getElementById(id);
+    flash.classList.remove('hit'); void flash.offsetWidth; flash.classList.add('hit');
     if (current && current !== next) current.classList.remove('on');
     next.classList.add('on');
     current = next;
@@ -624,6 +678,10 @@ body { font-family: var(--sans); color: var(--paper); font-weight: 400; }
     show(held);
     return;
   }
+  // the beat: the WebView allows autoplay (mediaPlaybackRequiresUserAction=false); a
+  // browser that refuses it keeps the film silent and the cuts keep their timing.
+  var beat = document.getElementById('beat');
+  try { var pl = beat.play(); if (pl && pl.catch) pl.catch(function () {}); } catch (e) {}
   for (var j = 1; j < SCENES.length; j++) setTimeout(show.bind(null, SCENES[j][0]), SCENES[j][1]);
   function end() {
     try {
