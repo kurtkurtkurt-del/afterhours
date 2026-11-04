@@ -1,0 +1,16 @@
+{
+ "city": "chicago",
+ "day": "2026-11-04",
+ "nights": [
+  {
+   "id": "ee66600c-8165-4f79-9eeb-f930168907e0",
+   "slug": "parra-for-cuva-871c2412",
+   "title": "Parra for Cuva",
+   "act": "Parra for Cuva",
+   "name": "Parra for Cuva",
+   "description": "German musician (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Parra_for_Cuva",
+   "extract": "Nicolas Demuth, known by stage name Parra for Cuva, is a German musician and DJ.\nHe is best known for his house production."
+  }
+ ]
+}

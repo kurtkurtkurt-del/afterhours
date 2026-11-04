@@ -1,0 +1,46 @@
+{
+ "city": "new-york",
+ "day": "2026-11-04",
+ "nights": [
+  {
+   "id": "136c3279-7c0f-497b-b9cf-50c3b1c7faab",
+   "slug": "twisted-teens-a3bda977",
+   "title": "Twisted Teens",
+   "act": "Twisted Teens",
+   "name": "Twisted Teens",
+   "description": "American rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/Twisted_Teens",
+   "extract": "Twisted Teens are an American rock duo formed in New Orleans, Louisiana. The band consists of vocalist and multi-instrumentalist Caspian Halliwell and steel guitarist RJ Santos. Pairing raspy vocals, lo-fi electric guitar, and heavy basslines with country-style console steel, fingerpicked acoustic guitar, and dark, absurdist storytelling, the band established their signature sound with their 2024 self-titled debut. They built further critical acclaim in 2026 through back-to-back album releases: Blame the Clown in February, followed by Florida Water Blues in July. The duo signed to the record label Sub Pop in August 2026."
+  },
+  {
+   "id": "fbbce8ec-cfc3-4691-9b77-176c8be941fe",
+   "slug": "cyrille-aimee-7a997843",
+   "title": "Cyrille Aimée",
+   "act": "Cyrille Aimée",
+   "name": "Cyrille Aimée",
+   "description": "French jazz singer",
+   "source_url": "https://en.wikipedia.org/wiki/Cyrille_Aim%C3%A9e",
+   "extract": "Cyrille Aimée Daudel is a French jazz singer."
+  },
+  {
+   "id": "ea12781f-0317-44bc-afdb-5fc8765003ac",
+   "slug": "buena-vista-social-club-23d870ac",
+   "title": "Buena Vista Social Club",
+   "act": "Buena Vista Social Club",
+   "name": "Buena Vista Social Club",
+   "description": "Cuban musical ensemble",
+   "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+   "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years."
+  },
+  {
+   "id": "8b464754-a4d0-4678-a352-4d3a68b76cfc",
+   "slug": "beauty-school-dropout-the-circus-776dbb8b",
+   "title": "Beauty School Dropout - The Circus",
+   "act": "Beauty School Dropout",
+   "name": "Beauty School Dropout",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Beauty_School_Dropout_(band)",
+   "extract": "Beauty School Dropout is an American rock band formed in Los Angeles, California, in 2020 by lead vocalist Cole \"Colie\" Hutzler, bassist Brent \"Beepus\" Burdett, producer/guitarist Bardo Novotny and drummer Colton Flurry."
+  }
+ ]
+}
