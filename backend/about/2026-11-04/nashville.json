@@ -1,0 +1,102 @@
+{
+  "city": "nashville",
+  "day": "2026-11-04",
+  "nights": [
+    {
+      "id": "a813faba-b0dd-45f6-8f94-8384e2fb0218",
+      "slug": "tyler-nance-08547873",
+      "title": "Tyler Nance",
+      "name": "Tyler Nance",
+      "source_url": "https://en.wikipedia.org/wiki/Tyler_Nance",
+      "extract": "Charles Tyler Lee Nance is an American country singer-songwriter originally from Lamar, Missouri. He gained prominence in 2025 with his viral single \"Keeps Me Sane\".",
+      "en": {
+        "kicker": "american country singer-songwriter · lamar, missouri",
+        "who": "Charles Tyler Lee Nance is an American country singer-songwriter originally from Lamar, Missouri. He gained prominence in 2025 with his viral single \"Keeps Me Sane\".",
+        "facts": [
+          "Charles Tyler Lee Nance is an American country singer-songwriter originally from Lamar, Missouri.",
+          "He gained prominence in 2025 with his viral single \"Keeps Me Sane\"."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer country-singer-songwriter · lamar, missouri",
+        "who": "charles tyler lee nance ist ein amerikanischer country-singer-songwriter aus lamar, missouri. 2025 wurde er mit seiner viralen single \"keeps me sane\" bekannt.",
+        "facts": [
+          "charles tyler lee nance ist ein amerikanischer country-singer-songwriter, ursprünglich aus lamar, missouri.",
+          "2025 wurde er mit seiner viralen single \"keeps me sane\" bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı country şarkıcı-söz yazarı · lamar, missouri",
+        "who": "charles tyler lee nance, aslen missouri'nin lamar kentinden gelen amerikalı bir country şarkıcı ve söz yazarıdır. 2025'te viral olan \"keeps me sane\" single'ı ile ün kazandı.",
+        "facts": [
+          "charles tyler lee nance, aslen missouri'nin lamar kentinden gelen amerikalı bir country şarkıcı ve söz yazarıdır.",
+          "2025'te viral olan \"keeps me sane\" single'ı ile ün kazandı."
+        ]
+      }
+    },
+    {
+      "id": "03de9a4b-de83-4a13-8303-da1b15f77094",
+      "slug": "blue-october-foiled-20th-anniversary-world-tour-4109d3de",
+      "title": "Blue October: Foiled 20th Anniversary World Tour",
+      "name": "Blue October",
+      "source_url": "https://en.wikipedia.org/wiki/Blue_October",
+      "extract": "Blue October is an American rock band originally from Houston, Texas, formed in 1995. It currently consists of singer/guitarist Justin Furstenfeld, drummer Jeremy Furstenfeld, multi-instrumentalist Ryan Delahoussaye, bassist Matt Noveskey, and lead guitarist Will Knaak.",
+      "en": {
+        "kicker": "american rock band · houston, 1995",
+        "who": "Blue October is an American rock band originally from Houston, Texas, formed in 1995. It currently consists of singer and guitarist Justin Furstenfeld, drummer Jeremy Furstenfeld, multi-instrumentalist Ryan Delahoussaye, bassist Matt Noveskey and lead guitarist Will Knaak.",
+        "facts": [
+          "Blue October is an American rock band originally from Houston, Texas, formed in 1995.",
+          "It currently consists of singer/guitarist Justin Furstenfeld, drummer Jeremy Furstenfeld, multi-instrumentalist Ryan Delahoussaye, bassist Matt Noveskey, and lead guitarist Will Knaak."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · houston, 1995",
+        "who": "blue october ist eine amerikanische rockband aus houston, texas, die 1995 gegründet wurde. aktuell besteht sie aus sänger und gitarrist justin furstenfeld, schlagzeuger jeremy furstenfeld, multiinstrumentalist ryan delahoussaye, bassist matt noveskey und leadgitarrist will knaak.",
+        "facts": [
+          "blue october ist eine amerikanische rockband aus houston, texas, 1995 gegründet.",
+          "aktuell besteht sie aus justin furstenfeld, jeremy furstenfeld, ryan delahoussaye, matt noveskey und will knaak."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan rock grubu · houston, 1995",
+        "who": "blue october, aslen houston, texas'ten gelen amerikalı bir rock grubudur ve 1995'te kuruldu. grup bugün şarkıcı ve gitarist justin furstenfeld, davulcu jeremy furstenfeld, çok enstrümanlı ryan delahoussaye, bas gitarist matt noveskey ve solo gitarist will knaak'tan oluşuyor.",
+        "facts": [
+          "blue october, aslen houston, texas'ten gelen amerikalı bir rock grubudur ve 1995'te kuruldu.",
+          "grup bugün justin furstenfeld, jeremy furstenfeld, ryan delahoussaye, matt noveskey ve will knaak'tan oluşuyor."
+        ]
+      }
+    },
+    {
+      "id": "c9c8c8bd-9d3b-42dc-9ee7-7e332619094c",
+      "slug": "gwar-95cc846e",
+      "title": "GWAR",
+      "name": "Gwar",
+      "source_url": "https://en.wikipedia.org/wiki/Gwar",
+      "extract": "Gwar is an American heavy metal band formed in Richmond, Virginia, in 1984, composed of and operated by a frequently rotating line-up of musicians, artists, and filmmakers collectively known as Slave Pit Inc. Since the death of frontman Dave Brockie in 2014, the collective has continued recording and performing without any of its founding artists or musicians.",
+      "en": {
+        "kicker": "american heavy metal band · richmond, 1984",
+        "who": "Gwar is an American heavy metal band formed in Richmond, Virginia, in 1984. It is composed of a frequently rotating line-up of musicians, artists and filmmakers collectively known as Slave Pit Inc.",
+        "facts": [
+          "Gwar is an American heavy metal band formed in Richmond, Virginia, in 1984, composed of and operated by a frequently rotating line-up of musicians, artists, and filmmakers collectively known as Slave Pit Inc.",
+          "Since the death of frontman Dave Brockie in 2014, the collective has continued recording and performing without any of its founding artists or musicians."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische heavy-metal-band · richmond, 1984",
+        "who": "gwar ist eine amerikanische heavy-metal-band, die 1984 in richmond, virginia, gegründet wurde. sie wird von einem häufig wechselnden line-up aus musikern, künstlern und filmemachern betrieben, die gemeinsam als slave pit inc. bekannt sind.",
+        "facts": [
+          "gwar ist eine amerikanische heavy-metal-band aus richmond, virginia, 1984 gegründet und getragen von einem häufig wechselnden line-up, das als slave pit inc. firmiert.",
+          "seit dem tod von frontmann dave brockie 2014 nimmt das kollektiv ohne seine gründungsmitglieder weiter musik auf und tritt auf."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan heavy metal grubu · richmond, 1984",
+        "who": "gwar, 1984'te virginia eyaletinin richmond kentinde kurulmuş amerikan bir heavy metal grubudur. slave pit inc. adıyla bilinen, sık sık değişen müzisyen, sanatçı ve film yapımcılarından oluşan bir kolektif tarafından yürütülür.",
+        "facts": [
+          "gwar, 1984'te richmond, virginia'da kurulmuş amerikan bir heavy metal grubudur.",
+          "2014'te ön adam dave brockie'nin ölümünden beri kolektif, kurucu sanatçı ve müzisyenleri olmadan kayıt yapmaya ve sahne almaya devam ediyor."
+        ]
+      }
+    }
+  ]
+}

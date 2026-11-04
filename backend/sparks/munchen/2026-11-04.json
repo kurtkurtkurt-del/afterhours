@@ -1,0 +1,657 @@
+{
+  "city": "munchen",
+  "day": "2026-11-04",
+  "sparks": [
+    {
+      "kind": "derby",
+      "title": {
+        "en": "a quiet derby night, no match.",
+        "de": "ein derby-abend ohne spiel.",
+        "tr": "maçsız bir derbi akşamı."
+      },
+      "line": {
+        "en": "no bayern game today (they played atlético on tuesday). meet at an old-town beer hall and argue about the next one over a helles.",
+        "de": "heute kein bayern-spiel, das war gestern bei atlético. trefft euch in einer altstadt-wirtschaft und streitet beim helles über das nächste.",
+        "tr": "bugün bayern maçı yok, dün atlético deplasmandaydı. eski şehirde bir birahanede buluşun, bir helles eşliğinde sıradaki maçı tartışın."
+      },
+      "place": {
+        "en": "augustiner am platzl",
+        "de": "augustiner am platzl",
+        "tr": "augustiner am platzl"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No Bayern match on 4.11: they played Atlético Madrid on 3.11 at 21:00 (UEFA/FC Bayern schedule). Kept a generic derby-night spark."
+    },
+    {
+      "kind": "grill",
+      "title": {
+        "en": "a roof for the grill.",
+        "de": "der grill unter dach.",
+        "tr": "ızgara çatı altında."
+      },
+      "line": {
+        "en": "early november, dark by 17:00. skip the park; grill on a balcony or in a courtyard with a hat on, or fry it indoors.",
+        "de": "anfang november, ab fünf dunkel. nicht im park, sondern auf dem balkon oder im hof mit mütze, oder einfach in der pfanne.",
+        "tr": "kasım başı, beşte hava kararıyor. parka gitmeyin; balkonda ya da avluda bereyle ızgara yapın, olmazsa tavada."
+      },
+      "place": {
+        "en": "zuhause oder im hof",
+        "de": "zuhause oder im hof",
+        "tr": "zuhause oder im hof"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "hike",
+      "title": {
+        "en": "a short climb before dark.",
+        "de": "ein kurzer aufstieg vor der dunkelheit.",
+        "tr": "akşamdan önce kısa bir tırmanış."
+      },
+      "line": {
+        "en": "the olympiaberg is a 20-minute walk to a city view. go in the morning light; the sun sets around 16:45.",
+        "de": "der olympiaberg ist in 20 minuten erreicht und gibt dir den blick über die stadt. geh im morgenlicht, die sonne geht gegen 16:45 unter.",
+        "tr": "olympiaberg yirmi dakikada çıkılır, şehir manzarası verir. sabah ışığında gidin, güneş 16:45 civarı batıyor."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 9,
+      "minute": 30,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "sunrise",
+      "title": {
+        "en": "sunrise on the monopteros.",
+        "de": "sonnenaufgang am monopteros.",
+        "tr": "monopteros'ta gün doğumu."
+      },
+      "line": {
+        "en": "sunrise is around 06:55. climb the hill at 06:35 with a warm drink; november skies here can be grey, so no promises.",
+        "de": "sonnenaufgang gegen 06:55. um 06:35 auf dem hügel sein, mit etwas warmem; der himmel kann im november grau bleiben.",
+        "tr": "gün doğumu 06:55 civarı. 06:35'te tepede olun, yanınızda sıcak bir şey olsun; kasımda gökyüzü gri kalabilir."
+      },
+      "place": {
+        "en": "monopteros im englischen garten",
+        "de": "monopteros im englischen garten",
+        "tr": "monopteros im englischen garten"
+      },
+      "hour": 6,
+      "minute": 35,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "breakfast",
+      "title": {
+        "en": "a slow weekday breakfast.",
+        "de": "ein langsames frühstück unter der woche.",
+        "tr": "yavaş bir hafta içi kahvaltısı."
+      },
+      "line": {
+        "en": "wednesday, nothing is shut. take a table in glockenbachviertel and stay for a second coffee.",
+        "de": "mittwoch, alles hat auf. such dir einen tisch im glockenbachviertel und bleib für einen zweiten kaffee.",
+        "tr": "çarşamba, her yer açık. glockenbach'ta bir masa tutun, ikinci kahveye de kalın."
+      },
+      "place": {
+        "en": "ein café im glockenbach",
+        "de": "ein café im glockenbach",
+        "tr": "ein café im glockenbach"
+      },
+      "hour": 9,
+      "minute": 30,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "rooftop",
+      "title": {
+        "en": "the view from above, in a coat.",
+        "de": "der blick von oben, im mantel.",
+        "tr": "yukarıdan manzara, montla."
+      },
+      "line": {
+        "en": "sunset is near 16:45, so go up at 16:30 to catch the last light over the roofs. bring a jacket; it is cold up there.",
+        "de": "sonnenuntergang gegen 16:45, also um 16:30 hoch für das letzte licht über den dächern. jacke mitnehmen, oben ist es kalt.",
+        "tr": "gün batımı 16:45 civarı; son ışığı çatılar üzerinde yakalamak için 16:30'da çıkın. mont alın, orası soğuk."
+      },
+      "place": {
+        "en": "eine dachterrasse in der altstadt",
+        "de": "eine dachterrasse in der altstadt",
+        "tr": "eine dachterrasse in der altstadt"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "swim",
+      "title": {
+        "en": "a warm pool, not the isar.",
+        "de": "ein warmes becken statt isar.",
+        "tr": "ısıtmalı havuz, isar değil."
+      },
+      "line": {
+        "en": "the lakes are done for the season. the müller'sches volksbad has an indoor pool and a sauna; check the evening hours first.",
+        "de": "die seen sind durch für die saison. das müller'sches volksbad hat ein hallenbad und eine sauna; schau vorher nach den abendzeiten.",
+        "tr": "göller bu sezon bitti. müller'sches volksbad'da kapalı havuz ve sauna var; önce akşam saatlerine bakın."
+      },
+      "place": {
+        "en": "müller'sches volksbad",
+        "de": "müller'sches volksbad",
+        "tr": "müller'sches volksbad"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "quiz",
+      "title": {
+        "en": "a pub quiz on a wednesday.",
+        "de": "ein kneipenquiz am mittwoch.",
+        "tr": "çarşamba akşamı pub quiz."
+      },
+      "line": {
+        "en": "midweek is quiz weather. find a bar in the maxvorstadt that runs one, bring a team of four and a pen.",
+        "de": "mitte der woche ist quizwetter. such dir eine bar in der maxvorstadt mit quiz, bring vier leute und einen stift.",
+        "tr": "hafta ortası quiz havası. maxvorstadt'ta quiz yapan bir bar bulun, dört kişilik takım ve bir kalem getirin."
+      },
+      "place": {
+        "en": "eine kneipe in der maxvorstadt",
+        "de": "eine kneipe in der maxvorstadt",
+        "tr": "eine kneipe in der maxvorstadt"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "newplace",
+      "title": {
+        "en": "a street you have not eaten on.",
+        "de": "eine straße, in der du noch nie gegessen hast.",
+        "tr": "hiç yemek yemediğin bir sokak."
+      },
+      "line": {
+        "en": "walk the streets off the gärtnerplatz and pick the first place you have never been in. no looking up reviews.",
+        "de": "lauf durch die straßen um den gärtnerplatz und geh in den ersten laden, in dem du noch nie warst. keine bewertungen lesen.",
+        "tr": "gärtnerplatz çevresindeki sokaklarda yürüyün, hiç girmediğiniz ilk yere girin. yorumlara bakmak yok."
+      },
+      "place": {
+        "en": "gärtnerplatz",
+        "de": "gärtnerplatz",
+        "tr": "gärtnerplatz"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "camera",
+      "title": {
+        "en": "golden hour with a camera.",
+        "de": "goldene stunde mit kamera.",
+        "tr": "fotoğraf makinesiyle altın saat."
+      },
+      "line": {
+        "en": "the light goes soft around 15:30 and is gone by 17:00. shoot the wet leaves along the old botanical garden and the stachus fountain.",
+        "de": "das licht wird gegen 15:30 weich und ist um fünf weg. fotografier das nasse laub am alten botanischen garten und am stachus-brunnen.",
+        "tr": "ışık 15:30'da yumuşar, beşte gider. eski botanik bahçesi ve stachus çeşmesi çevresindeki yaprakları çekin."
+      },
+      "place": {
+        "en": "alter botanischer garten",
+        "de": "alter botanischer garten",
+        "tr": "alter botanischer garten"
+      },
+      "hour": 15,
+      "minute": 30,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "festival",
+      "title": {
+        "en": "the first lights of the season.",
+        "de": "die ersten lichter der saison.",
+        "tr": "sezonun ilk ışıkları."
+      },
+      "line": {
+        "en": "no festival i can confirm today. walk the old town; the christmas lights and markets start later in november.",
+        "de": "heute kein festival, das ich bestätigen kann. lauf durch die altstadt; lichter und weihnachtsmärkte kommen erst später im november.",
+        "tr": "bugün doğrulayabildiğim bir festival yok. eski şehirde yürüyün; ışıklar ve noel pazarları kasımın ilerleyen günlerinde başlıyor."
+      },
+      "place": {
+        "en": "ein markt in der innenstadt",
+        "de": "ein markt in der innenstadt",
+        "tr": "ein markt in der innenstadt"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "No festival confirmed for Wed 4.11 in mvp.de or munich.travel listings; the alternative christmas market comes later in the month. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "karaoke, a wednesday kind.",
+        "de": "karaoke, mittwochs-edition.",
+        "tr": "karaoke, çarşamba usulü."
+      },
+      "line": {
+        "en": "midweek bars are easy to get into. pick a song everyone knows and go first.",
+        "de": "unter der woche kommt man leicht rein. nimm ein lied, das alle kennen, und sing als erste.",
+        "tr": "hafta ortası barlara girmek kolay. herkesin bildiği bir şarkı seçin ve ilk siz söyleyin."
+      },
+      "place": {
+        "en": "eine karaokebar im zentrum",
+        "de": "eine karaokebar im zentrum",
+        "tr": "eine karaokebar im zentrum"
+      },
+      "hour": 21,
+      "minute": 0,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "vinyl",
+      "title": {
+        "en": "an hour in the crates.",
+        "de": "eine stunde in den kisten.",
+        "tr": "plak kasalarında bir saat."
+      },
+      "line": {
+        "en": "browse the record shops around the glockenbach and buy one record you know nothing about.",
+        "de": "stöbere in den plattenläden im glockenbach und kauf eine platte, von der du nichts weißt.",
+        "tr": "glockenbach'taki plakçılara bakın ve hakkında hiçbir şey bilmediğiniz bir plak alın."
+      },
+      "place": {
+        "en": "ein plattenladen im glockenbach",
+        "de": "ein plattenladen im glockenbach",
+        "tr": "ein plattenladen im glockenbach"
+      },
+      "hour": 17,
+      "minute": 30,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "openair",
+      "title": {
+        "en": "a lunch outside, bundled up.",
+        "de": "mittagspause draußen, eingepackt.",
+        "tr": "dışarıda öğle arası, sıkı giyinik."
+      },
+      "line": {
+        "en": "no open-air event this time of year. take a bench in the hofgarten with a hot drink at midday, the warmest hour.",
+        "de": "um diese jahreszeit gibt es kein open air. nimm eine bank im hofgarten mit einem heißen getränk, mittags ist es am wärmsten.",
+        "tr": "bu mevsimde açık hava etkinliği yok. öğlen en sıcak saatte hofgarten'de sıcak bir içecekle bir bank bulun."
+      },
+      "place": {
+        "en": "hofgarten",
+        "de": "hofgarten",
+        "tr": "hofgarten"
+      },
+      "hour": 13,
+      "minute": 0,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "bike",
+      "title": {
+        "en": "the isar on two wheels.",
+        "de": "die isar auf zwei rädern.",
+        "tr": "isar boyunca iki tekerle."
+      },
+      "line": {
+        "en": "ride the isar path south from the deutsches museum to the flaucher, 25 minutes each way, in the early afternoon. leaves are down; mind the wet.",
+        "de": "vom deutschen museum den isarradweg bis zum flaucher, je 25 minuten, am frühen nachmittag. das laub liegt, vorsicht bei nässe.",
+        "tr": "deutsches museum'dan flaucher'e isar bisiklet yolu, gidiş 25 dakika, öğleden sonra erken. yapraklar yerde, ıslağa dikkat."
+      },
+      "place": {
+        "en": "isarradweg",
+        "de": "isarradweg",
+        "tr": "isarradweg"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "cinema",
+      "title": {
+        "en": "a film in a small cinema.",
+        "de": "ein film im kleinen kino.",
+        "tr": "küçük bir sinemada film."
+      },
+      "line": {
+        "en": "a wednesday night, the seats are free. pick an independent cinema in the old town and go in without knowing the plot.",
+        "de": "mittwochabend, die plätze sind leer. such dir ein programmkino in der altstadt und geh rein, ohne die handlung zu kennen.",
+        "tr": "çarşamba akşamı, koltuklar boş. eski şehirde bağımsız bir sinema seçin ve konusunu bilmeden girin."
+      },
+      "place": {
+        "en": "werkstattkino oder theatiner film",
+        "de": "werkstattkino oder theatiner film",
+        "tr": "werkstattkino oder theatiner film"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "boardgames",
+      "title": {
+        "en": "board games, a table, a pot of tea.",
+        "de": "brettspiele, ein tisch, eine kanne tee.",
+        "tr": "kutu oyunu, bir masa, bir demlik çay."
+      },
+      "line": {
+        "en": "a wednesday evening is quiet in the game cafés. take a two-hour game and a pot of tea.",
+        "de": "mittwochabends ist es in den spielecafés ruhig. nimm ein spiel für zwei stunden und eine kanne tee.",
+        "tr": "çarşamba akşamları oyun kafeleri sakin. iki saatlik bir oyun ve bir demlik çay alın."
+      },
+      "place": {
+        "en": "ein spielecafé",
+        "de": "ein spielecafé",
+        "tr": "ein spielecafé"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "a look around for old things.",
+        "de": "ein blick auf altes zeug.",
+        "tr": "eski eşyalara bakmak için."
+      },
+      "line": {
+        "en": "i can't confirm a flea market today. try the antique shops around the schwabing and the isarvorstadt.",
+        "de": "einen flohmarkt kann ich heute nicht bestätigen. probier die antiquitätenläden in schwabing und der isarvorstadt.",
+        "tr": "bugün bir bit pazarını doğrulayamıyorum. schwabing ve isarvorstadt'taki antikacılara bakın."
+      },
+      "place": {
+        "en": "ein flohmarkt",
+        "de": "ein flohmarkt",
+        "tr": "ein flohmarkt"
+      },
+      "hour": 11,
+      "minute": 0,
+      "why": "No flea market confirmed for Wed 4.11. Generic suggestion; no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "skate",
+      "title": {
+        "en": "a roof for the skate.",
+        "de": "ein dach fürs skaten.",
+        "tr": "kaykay için çatı."
+      },
+      "line": {
+        "en": "the november ground is wet. go to an indoor park, or wait for a dry window and the open plaza on the isar.",
+        "de": "der november-boden ist nass. geh in eine halle oder warte auf ein trockenes fenster und die offene fläche an der isar.",
+        "tr": "kasım zemini ıslak. kapalı bir parka gidin, ya da kuru bir an bekleyip isar kıyısındaki açık alana çıkın."
+      },
+      "place": {
+        "en": "eine skatehalle",
+        "de": "eine skatehalle",
+        "tr": "eine skatehalle"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "cook",
+      "title": {
+        "en": "cook one dish together.",
+        "de": "ein gericht zusammen kochen.",
+        "tr": "birlikte tek bir yemek."
+      },
+      "line": {
+        "en": "pick one dish, split the shopping at the viktualienmarkt before 18:00, and cook it at home with three friends.",
+        "de": "such ein gericht aus, teilt den einkauf auf dem viktualienmarkt vor 18 uhr auf und kocht es zu hause mit drei freunden.",
+        "tr": "bir yemek seçin, viktualienmarkt alışverişini akşam altıdan önce bölüşün ve üç arkadaşla evde pişirin."
+      },
+      "place": {
+        "en": "bei einem von euch",
+        "de": "bei einem von euch",
+        "tr": "bei einem von euch"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "sauna",
+      "title": {
+        "en": "a sauna in the cold.",
+        "de": "eine sauna in der kälte.",
+        "tr": "soğukta bir sauna."
+      },
+      "line": {
+        "en": "a wet, cold evening is made for it. go to a public sauna such as the cosimabad and do three rounds.",
+        "de": "ein nasskalter abend ist dafür gemacht. geh in eine öffentliche sauna wie das cosimabad und mach drei gänge.",
+        "tr": "ıslak, soğuk bir akşam tam yeri. cosimabad gibi bir halk saunasına gidin ve üç tur yapın."
+      },
+      "place": {
+        "en": "cosima wellenbad oder bad giesing",
+        "de": "cosima wellenbad oder bad giesing",
+        "tr": "cosima wellenbad oder bad giesing"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "an open mic night, maybe.",
+        "de": "vielleicht ein open mic.",
+        "tr": "belki bir açık mikrofon."
+      },
+      "line": {
+        "en": "i can't confirm one for today. ask in the bars of haidhausen or the au; many run an open stage midweek.",
+        "de": "für heute kann ich keins bestätigen. frag in den bars in haidhausen oder der au; viele haben unter der woche eine offene bühne.",
+        "tr": "bugün için doğrulayamıyorum. haidhausen ve au'daki barlara sorun; çoğunda hafta ortası açık sahne olur."
+      },
+      "place": {
+        "en": "eine bar in der au",
+        "de": "eine bar in der au",
+        "tr": "eine bar in der au"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No open mic confirmed for Wed 4.11; generic suggestion. Kept as a lead, not an event."
+    },
+    {
+      "kind": "pingpong",
+      "title": {
+        "en": "ping-pong, loser buys.",
+        "de": "tischtennis, wer verliert zahlt.",
+        "tr": "masa tenisi, kaybeden ısmarlar."
+      },
+      "line": {
+        "en": "find a bar with a table or a public one in the park, bring a ball, and play to eleven.",
+        "de": "such eine bar mit platte oder eine öffentliche im park, bring einen ball mit und spielt bis elf.",
+        "tr": "masası olan bir bar ya da parkta halka açık bir masa bulun, top getirin ve on bire kadar oynayın."
+      },
+      "place": {
+        "en": "eine bar mit tischtennis",
+        "de": "eine bar mit tischtennis",
+        "tr": "eine bar mit tischtennis"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "bouldering",
+      "title": {
+        "en": "bouldering, indoors.",
+        "de": "bouldern, drinnen.",
+        "tr": "boulder, kapalıda."
+      },
+      "line": {
+        "en": "munich has several halls. go after work, take a friend who is better than you.",
+        "de": "münchen hat mehrere hallen. geh nach der arbeit und nimm jemanden mit, der besser ist als du.",
+        "tr": "münih'te birkaç salon var. işten sonra gidin, sizden iyi bir arkadaş getirin."
+      },
+      "place": {
+        "en": "eine boulderhalle",
+        "de": "eine boulderhalle",
+        "tr": "eine boulderhalle"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "picnic",
+      "title": {
+        "en": "a picnic under glass.",
+        "de": "ein picknick unter glas.",
+        "tr": "camın altında piknik."
+      },
+      "line": {
+        "en": "outside is too cold. the greenhouses of the botanical garden are warm; check the opening hours and bring a thermos.",
+        "de": "draußen ist es zu kalt. die gewächshäuser im botanischen garten sind warm; schau nach den öffnungszeiten und bring eine thermoskanne.",
+        "tr": "dışarısı çok soğuk. botanik bahçesinin seraları sıcak; açılış saatlerine bakın, termos getirin."
+      },
+      "place": {
+        "en": "botanischer garten, gewächshäuser",
+        "de": "botanischer garten, gewächshäuser",
+        "tr": "botanischer garten, gewächshäuser"
+      },
+      "hour": 12,
+      "minute": 30,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "crawl",
+      "title": {
+        "en": "three bars, one rule.",
+        "de": "drei bars, eine regel.",
+        "tr": "üç bar, tek kural."
+      },
+      "line": {
+        "en": "a wednesday crawl: three bars within ten minutes of each other, one drink each, then the next.",
+        "de": "eine mittwochs-tour: drei bars, je zehn minuten auseinander, ein getränk pro bar, dann weiter.",
+        "tr": "çarşamba turu: aralarında on dakika olan üç bar, her birinde bir içki, sonra bir sonrakine."
+      },
+      "place": {
+        "en": "gärtnerplatz bis glockenbach",
+        "de": "gärtnerplatz bis glockenbach",
+        "tr": "gärtnerplatz bis glockenbach"
+      },
+      "hour": 20,
+      "minute": 30,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "stars",
+      "title": {
+        "en": "stars if the sky opens.",
+        "de": "sterne, wenn der himmel aufreißt.",
+        "tr": "gökyüzü açılırsa yıldızlar."
+      },
+      "line": {
+        "en": "it is dark by 17:30. if the clouds break, the olympiaberg is the darkest high spot in town. check the forecast first.",
+        "de": "um halb sechs ist es dunkel. wenn die wolken aufreißen, ist der olympiaberg der dunkelste hohe punkt der stadt. vorher den wetterbericht prüfen.",
+        "tr": "17:30'da hava karanlık. bulutlar dağılırsa olympiaberg şehrin en karanlık yüksek noktası. önce tahmine bakın."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "football",
+      "title": {
+        "en": "watch the other matches.",
+        "de": "die anderen spiele schauen.",
+        "tr": "diğer maçları izleyin."
+      },
+      "line": {
+        "en": "bayern played yesterday. tonight other champions league games are on; ask a bar with a screen which one they show.",
+        "de": "bayern hat gestern gespielt. heute laufen andere champions-league-spiele; frag in einer bar mit leinwand, welches sie zeigen.",
+        "tr": "bayern dün oynadı. bu akşam başka şampiyonlar ligi maçları var; ekranı olan bir bara hangisini verdiklerini sorun."
+      },
+      "place": {
+        "en": "champions league on a screen",
+        "de": "champions league on a screen",
+        "tr": "champions league on a screen"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "4.11 is UCL matchday 4 second night (Dortmund–Betis, Leipzig–City, others per ZDF/footballwebpages); Bayern is not among them. No EHC Red Bull home game today (in-muenchen.de)."
+    },
+    {
+      "kind": "tram",
+      "title": {
+        "en": "the 19 across town.",
+        "de": "die 19 quer durch die stadt.",
+        "tr": "şehri kesen 19 numaralı tramvay."
+      },
+      "line": {
+        "en": "ride tram 19 from the maximilianeum west to pasing. it is a 40-minute city tour for the price of a ticket.",
+        "de": "fahr mit der tram 19 vom max-weber-platz nach westen. eine stadtrundfahrt von 40 minuten zum preis eines tickets.",
+        "tr": "19 numaralı tramvayla bir uçtan öbür uca gidin. bir biletle kırk dakikalık şehir turu."
+      },
+      "place": {
+        "en": "tram 19 von st.-veit-straße",
+        "de": "tram 19 von st.-veit-straße",
+        "tr": "tram 19 von st.-veit-straße"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    },
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "jazz at the unterfahrt.",
+        "de": "jazz in der unterfahrt.",
+        "tr": "unterfahrt'ta caz."
+      },
+      "line": {
+        "en": "the unterfahrt in haidhausen is the jazz club locals use. check the evening programme and bring cash for the door.",
+        "de": "die unterfahrt in haidhausen ist der jazzclub der münchner. schau ins abendprogramm und bring bargeld für die tür mit.",
+        "tr": "haidhausen'daki unterfahrt, münihlilerin caz kulübü. akşam programına bakın, kapı için nakit getirin."
+      },
+      "place": {
+        "en": "unterfahrt",
+        "de": "unterfahrt",
+        "tr": "unterfahrt"
+      },
+      "hour": 20,
+      "minute": 30,
+      "why": "Unterfahrt is a standing Munich jazz club; today's programme not checked. Generic suggestion."
+    },
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a walk at the last light.",
+        "de": "ein spaziergang im letzten licht.",
+        "tr": "son ışıkta yürüyüş."
+      },
+      "line": {
+        "en": "the lake loop takes an hour. leave by 16:00 to be home before dark; the paths will be wet.",
+        "de": "die runde um den see dauert eine stunde. um 16 uhr los, dann bist du vor der dunkelheit zurück; die wege sind nass.",
+        "tr": "göl turu bir saat sürer. 16:00'da çıkın, hava kararmadan dönün; yollar ıslak olacak."
+      },
+      "place": {
+        "en": "englischer garten, kleinhesseloher see",
+        "de": "englischer garten, kleinhesseloher see",
+        "tr": "englischer garten, kleinhesseloher see"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Nothing special confirmed for Wed 4.11; weekday spark. no forecast I could confirm for this day (dwd.de/muenchen.de unreachable from the run); written for typical early-november weather, sunrise about 06:55 and sunset about 16:45."
+    }
+  ]
+}

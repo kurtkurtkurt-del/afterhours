@@ -1,0 +1,38 @@
+{
+  "city": "new-york",
+  "day": "2026-11-04",
+  "nights": [
+    {
+      "id": "ea12781f-0317-44bc-afdb-5fc8765003ac",
+      "slug": "buena-vista-social-club-23d870ac",
+      "title": "Buena Vista Social Club",
+      "name": "Buena Vista Social Club",
+      "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+      "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years.",
+      "en": {
+        "kicker": "cuban musical ensemble · havana, 1996",
+        "who": "Buena Vista Social Club was a musical ensemble made up primarily of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold and produced by American guitarist Ry Cooder.",
+        "facts": [
+          "They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s.",
+          "To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years."
+        ]
+      },
+      "de": {
+        "kicker": "kubanisches musikensemble · havanna, 1996",
+        "who": "buena vista social club war ein musikensemble aus überwiegend kubanischen musikern, gegründet 1996. das projekt wurde von world-circuit-chef nick gold organisiert und von dem amerikanischen gitarristen ry cooder produziert.",
+        "facts": [
+          "der name stammt vom gleichnamigen club der mitglieder im havannaer viertel buenavista, einem beliebten musikort der 1940er jahre.",
+          "um die damals populären stile wie son, bolero und danzón zu präsentieren, holte man rund ein dutzend altgedienter musiker, von denen manche jahrelang im ruhestand waren."
+        ]
+      },
+      "tr": {
+        "kicker": "küba müzik topluluğu · havana, 1996",
+        "who": "buena vista social club, çoğunlukla kübalı müzisyenlerden oluşan bir müzik topluluğuydu ve 1996'da kuruldu. proje world circuit yöneticisi nick gold tarafından organize edildi, amerikalı gitarist ry cooder tarafından prodüksiyonu yapıldı.",
+        "facts": [
+          "ad, 1940'larda havana'nın buenavista semtinde popüler bir müzik mekânı olan aynı adlı kulüpten geliyor.",
+          "dönemin popüler tarzları son, bolero ve danzón'u sergilemek için bir düzine kıdemli müzisyeni bir araya getirdiler, bunların bazıları yıllardır emekli olmuştu."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "detroit",
+ "day": "2026-11-04",
+ "nights": [
+  {
+   "id": "b99e9941-efc9-4019-92ea-24a093fcdc67",
+   "slug": "catch-your-breath-not-broken-enough-tour-d0b1bae0",
+   "title": "Catch Your Breath - Not Broken Enough Tour",
+   "act": "Catch Your Breath",
+   "name": "Catch Your Breath",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Catch_Your_Breath_(band)",
+   "extract": "Catch Your Breath is an American rock band based in Austin, Texas."
+  }
+ ]
+}

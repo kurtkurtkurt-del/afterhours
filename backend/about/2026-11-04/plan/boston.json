@@ -1,0 +1,46 @@
+{
+ "city": "boston",
+ "day": "2026-11-04",
+ "nights": [
+  {
+   "id": "e8e41789-47eb-44f5-8eb7-eb62c0b0d6ba",
+   "slug": "cem-adrian-bf7028b0",
+   "title": "Cem Adrian",
+   "act": "Cem Adrian",
+   "name": "Cem Adrian",
+   "description": "Turkish singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Cem_Adrian",
+   "extract": "Cem Filiz, better known by his stage name Cem Adrian, is a Turkish musician of Bosniak descent, singer-songwriter and record producer."
+  },
+  {
+   "id": "9b17b8a9-490f-4e14-97b6-aaa32cf7b5d7",
+   "slug": "the-blasting-company-f0286ebb",
+   "title": "The Blasting Company",
+   "act": "The Blasting Company",
+   "name": "The Blasting Company",
+   "description": "American nouveau-Folk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Blasting_Company",
+   "extract": "The Blasting Company, formerly known as the Petrojvic Blasting Company, is an American nouveau-folk band based in Los Angeles, California. The band was founded in 2008 by half-brothers Justin Rubenstein and J.R. Kaufman, with the group expanding to anywhere from five to ten members later."
+  },
+  {
+   "id": "6af83180-df84-457b-a4f3-bc0ac49b4696",
+   "slug": "george-clanton-fe5a26d4",
+   "title": "George Clanton",
+   "act": "George Clanton",
+   "name": "George Clanton",
+   "description": "American musician (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/George_Clanton",
+   "extract": "George Wayland Clanton Jr., also known by the monikers Mirror Kisses, ESPRIT 空想, CHINA, and Kid's Garden, is an American electronic musician and singer-songwriter that emerged from the vaporwave music scene in the early 2010s. He established his independent record label 100% Electronica in 2015, and in 2019 launched the first vaporwave music festival, 100% ElectroniCON."
+  },
+  {
+   "id": "aa3f3165-c8ab-4b95-9c6b-34b5274a612e",
+   "slug": "six60-ae719aab",
+   "title": "SIX60",
+   "act": "SIX60",
+   "name": "Six60",
+   "description": "New Zealand rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Six60",
+   "extract": "Six60 is a New Zealand pop rock band formed in Dunedin, Otago in 2008. The band consists of Matiu Walters, Ji Fraser, Chris Mac, and Marlon Gerbes."
+  }
+ ]
+}

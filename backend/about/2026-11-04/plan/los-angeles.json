@@ -1,0 +1,26 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-04",
+ "nights": [
+  {
+   "id": "3264cbb5-8902-40bc-81d3-2223cf802c2a",
+   "slug": "skilla-baby-the-price-of-fame-tour-634e6027",
+   "title": "Skilla Baby: The Price of Fame Tour",
+   "act": "Skilla Baby",
+   "name": "Skilla Baby",
+   "description": "American rapper (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Skilla_Baby",
+   "extract": "Trevon Gardner, known professionally as Skilla Baby, is an American rapper from Detroit, Michigan."
+  },
+  {
+   "id": "d0038a31-49c3-43d0-89c8-a4199af8023d",
+   "slug": "danny-brown-atrocity-exhibition-10-year-annivers-ae160b82",
+   "title": "Danny Brown: Atrocity Exhibition 10 Year Anniversary Show (Los Angeles, CA)",
+   "act": "Danny Brown",
+   "name": "Danny Brown",
+   "description": "American rapper (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/Danny_Brown",
+   "extract": "Daniel Dewan Sewell, better known by his stage name Danny Brown, is an American rapper, songwriter, actor and podcaster."
+  }
+ ]
+}
