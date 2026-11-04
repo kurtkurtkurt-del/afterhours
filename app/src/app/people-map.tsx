@@ -165,7 +165,9 @@ export default function PeopleMapScreen() {
             ))}
           </View>
           {cities.length ? (
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.cityRow}>
+            {/* the row scrolls, so it must leave room for the chip shadows: clipped at its edge,
+                Android drew them as a white box inside the pills (owner, 04.11.2026) */}
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.cityScroll} contentContainerStyle={styles.cityRow}>
               <Pressable onPress={() => setCity(null)} style={[styles.cityChip, !city && styles.chipOn]} accessibilityRole="button">
                 <Text style={[styles.chipText, !city && styles.chipTextOn]}>{t('pmap.allCities')}</Text>
               </Pressable>
@@ -324,8 +326,9 @@ const styles = StyleSheet.create({
   chipText: { fontFamily: fonts.semibold, fontSize: 11.5, color: colors.mute },
   chipTextOn: { color: colors.ink },
   chipCount: { fontFamily: fonts.jet, fontSize: 10 },
-  cityRow: { gap: 6, paddingHorizontal: brand.left },
-  cityChip: { borderRadius: radius.pill, paddingVertical: 7, paddingHorizontal: 12, backgroundColor: colors.card, shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 6, elevation: 2 },
+  cityScroll: { marginVertical: -10, overflow: 'visible' },
+  cityRow: { gap: 6, paddingHorizontal: brand.left, paddingVertical: 10 },
+  cityChip: { borderRadius: radius.pill, paddingVertical: 7, paddingHorizontal: 12, backgroundColor: colors.card, overflow: 'hidden', shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 6, elevation: 2 },
   request: { flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: colors.card, borderRadius: 18, paddingVertical: 8, paddingLeft: 10, paddingRight: 8, shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 10, elevation: 3 },
   requestWho: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 10 },
   requestFace: { width: 30, height: 30, borderRadius: 15, overflow: 'hidden' },
