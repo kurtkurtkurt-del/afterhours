@@ -1,6 +1,6 @@
 -- ============================================================
 --  afterhours — SETUP 1 / 2 : THE STRUCTURE
---  VERSION: 2026-11-04 16:59   ← if the editor shows this line, it is the right copy
+--  VERSION: 2026-11-04 17:04   ← if the editor shows this line, it is the right copy
 --
 --  In the Supabase panel: SQL Editor → New query → paste this file
 --  IN FULL → Run.
@@ -22046,7 +22046,7 @@ end $$;
 --
 -- The site has a host page: a person lists their own night (event_submit, 36: staff look
 -- at it before it is on the wall). The night may carry a poster. Until now only the admin
--- could write into the posters bucket (12), so a member's poster failed and the night
+-- could write into the posters bucket (12), so the poster of a member failed and the night
 -- went in without it. From now on a signed-in member may upload into the posters bucket
 -- under their own folder, posters/<their id>/..., the same way the photos bucket works
 -- (24): the folder is the person, nobody writes into another folder, and nobody lists
@@ -22110,7 +22110,7 @@ end $$;
 
 do $$ begin
   if to_regprocedure('public.migration_done(text, text)') is not null then
-    perform public.migration_done('117_poster_uploads.sql', '76a9201a049023a93f3a5ff91c560f0e5870002ed64f6ab85e566014ab8d0ec2');
+    perform public.migration_done('117_poster_uploads.sql', 'f371fa846619a9f34880b902e93833e97af5f33e3586e2e69c9241b0da0be004');
   elsif to_regprocedure('public.migration_done(text)') is not null then
     perform public.migration_done('117_poster_uploads.sql');
   end if;
