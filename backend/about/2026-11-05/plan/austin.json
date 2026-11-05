@@ -1,0 +1,16 @@
+{
+ "city": "austin",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "24a7bc1e-3c2a-4db8-a6bb-badda514bae6",
+   "slug": "sim-9c7e81a2",
+   "title": "SiM",
+   "act": "SiM",
+   "name": "SiM",
+   "description": "Japanese alternative metal band",
+   "source_url": "https://en.wikipedia.org/wiki/SiM",
+   "extract": "SiM are a Japanese metalcore band from Kanagawa Prefecture formed in 2004. The band currently consists of MAH (vocals), SHOW-HATE (guitar), SIN (bass), and GODRi (drums). Their musical style mixes nu metal, alternative, hip-hop, ska, reggae, dub, and punk with rebellious lyrics and songs with attitude."
+  }
+ ]
+}

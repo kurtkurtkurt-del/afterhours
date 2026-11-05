@@ -1,0 +1,36 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "a4112bf0-a298-4e9b-8f5c-29f3ff6d3df8",
+   "slug": "stevie-wonder-songs-in-the-key-of-life-performan-fd699e09",
+   "title": "Stevie Wonder: Songs In The Key of Life Performances",
+   "act": "Stevie Wonder",
+   "name": "Stevie Wonder",
+   "description": "American musician (born 1950)",
+   "source_url": "https://en.wikipedia.org/wiki/Stevie_Wonder",
+   "extract": "Stevland Hardaway Morris, known professionally as Stevie Wonder, is an American singer-songwriter, musician, and record producer. He is widely regarded as one of the most influential musicians of the 20th century, and is credited as a pioneer and influence by musicians across a range of genres that include R&B, pop, soul, gospel, funk, and jazz. Wonder's use of synthesizers and other electronic musical instruments in the 1970s reshaped the conventions of contemporary R&B. He also helped drive such genres into the album era, crafting his LPs as cohesive and consistent, in addition to socially conscious statements with complex compositions."
+  },
+  {
+   "id": "a9e33e25-84b0-4ec1-8bc3-6b5b47031566",
+   "slug": "the-sheepdogs-23d1ee55",
+   "title": "The Sheepdogs",
+   "act": "The Sheepdogs",
+   "name": "The Sheepdogs",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Sheepdogs",
+   "extract": "The Sheepdogs are a Canadian rock band formed in Saskatoon, Saskatchewan, in 2004. The Sheepdogs were the first unsigned band to make the cover of Rolling Stone and have gone on to a career featuring multi-platinum album sales and four Juno Awards."
+  },
+  {
+   "id": "3b0d20e0-40cf-4236-952b-4bcdd0334181",
+   "slug": "ole-60-022c8d5e",
+   "title": "Ole 60",
+   "act": "Ole 60",
+   "name": "Ole 60",
+   "description": "American country music band",
+   "source_url": "https://en.wikipedia.org/wiki/Ole_60",
+   "extract": "Ole 60 is an American country/alt-country band from Hawesville, Kentucky, formed in 2023, known for blending Appalachian storytelling with elements of grunge, southern rock, folk music, and traditional country. The band consists of Jacob Ty Young, Tristan Roby, Ryan Laslie, Colby Clark, Aden Wood (drums), Dwight McGlynn, and Dustin \"Catfish\" Fuqua. The band gained widespread attention in 2024 through breakout singles like \"smoke & a light\" and \"Thoughts of You\", and acclaimed debut album Smokestack Town in 2025."
+  }
+ ]
+}

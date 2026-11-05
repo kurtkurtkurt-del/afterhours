@@ -1,0 +1,26 @@
+{
+ "city": "new-york",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "b6b4c501-3837-40ea-ad1e-73c1639e7168",
+   "slug": "hurricane-wisdom-ed45cbb5",
+   "title": "Hurricane Wisdom",
+   "act": "Hurricane Wisdom",
+   "name": "Hurricane Wisdom",
+   "description": "American rapper (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Hurricane_Wisdom",
+   "extract": "Wisdom Mikeal Oluola, known professionally as Hurricane Wisdom, is an American rapper, singer-songwriter, and social media personality. Born in Tallahassee, Florida, and growing up in Havana, Florida, Oluola started his music career in 2018 or 2019, although he started taking the career seriously in 2020, with his debut single being \"Granny's Baby\"."
+  },
+  {
+   "id": "5bb6484d-d8e9-4679-890f-712875d21bcc",
+   "slug": "pedro-fernandez-ave-fenix-two-r-db3565e8",
+   "title": "Pedro Fernández - Ave Fénix Two'r",
+   "act": "Pedro Fernández",
+   "name": "Pedro Fernández",
+   "description": "Mexican singer, songwriter, actor, and television host",
+   "source_url": "https://en.wikipedia.org/wiki/Pedro_Fern%C3%A1ndez_(singer)",
+   "extract": "José Martín Cuevas Cobos, known by his stage name Pedro Fernández, is a Mexican singer, songwriter, actor, and television host. Fernández began his international career as Pedrito Fernández at the age of seven. In the 1980s, he turned to be known as a scream king, thanks to his horror film starring roles in films such as Vacaciones de terror (1989), Pánico en la montaña (1989) and Trampa Infernal (1989)."
+  }
+ ]
+}

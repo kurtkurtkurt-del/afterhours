@@ -1,0 +1,26 @@
+{
+ "city": "koln",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "5132c394-f485-47f1-ad1f-7f6af17a9923",
+   "slug": "isaiah-rashad-lil-sunny-s-awful-road-trip-d4199eb0",
+   "title": "Isaiah Rashad - Lil Sunny’s Awful Road Trip",
+   "act": "Isaiah Rashad",
+   "name": "Isaiah Rashad",
+   "description": "American rapper (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Isaiah_Rashad",
+   "extract": "Isaiah Rashad Joel McClain is an American rapper and singer. He first gained recognition following his performances on the 2012 Smoker's Club Tour alongside rappers Juicy J, Joey Badass and Smoke DZA. He is a founding member of the Chattanooga, Tennessee-based hip-hop collective TheHouse, which he formed with rappers YGTUT, Michael Da Vinci (MikeyD), Chris P, and Brian Brown."
+  },
+  {
+   "id": "6b5db1d9-3347-4cc3-8d20-416cf1ee9238",
+   "slug": "sim-hooman-after-all-world-tour-d4b32147",
+   "title": "SiM - Hooman After All World Tour",
+   "act": "SiM",
+   "name": "SiM",
+   "description": "Japanese alternative metal band",
+   "source_url": "https://en.wikipedia.org/wiki/SiM",
+   "extract": "SiM are a Japanese metalcore band from Kanagawa Prefecture formed in 2004. The band currently consists of MAH (vocals), SHOW-HATE (guitar), SIN (bass), and GODRi (drums). Their musical style mixes nu metal, alternative, hip-hop, ska, reggae, dub, and punk with rebellious lyrics and songs with attitude."
+  }
+ ]
+}

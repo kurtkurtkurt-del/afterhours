@@ -1,0 +1,26 @@
+{
+ "city": "chicago",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "b0800153-94d7-46b1-bb97-e823c0a7597b",
+   "slug": "jai-wolf-ages-18-b62a2f7e",
+   "title": "Jai Wolf - Ages 18+",
+   "act": "Jai Wolf",
+   "name": "Jai Wolf",
+   "description": "American electronic music producer (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Jai_Wolf",
+   "extract": "Sajeeb Saha, known professionally as Jai Wolf, is a Bangladeshi-American DJ and producer. He is best known for his singles, \"Indian Summer\", \"Like It's Over\", and \"Starlight\". He is currently signed to Mom + Pop Music."
+  },
+  {
+   "id": "7f0717e1-fe6b-4297-bc04-8f96acea4d03",
+   "slug": "little-image-fall-2026-tour-aae11509",
+   "title": "Little Image: Fall 2026 Tour",
+   "act": "Little Image",
+   "name": "Little Image",
+   "description": "American alt-pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Little_Image",
+   "extract": "Little Image are an American alternative pop band from Dallas, Texas. They released their major label debut, Self Titled, on Hollywood Records on May 12, 2023, after the independent release of Musings in 2017."
+  }
+ ]
+}

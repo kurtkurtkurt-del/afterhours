@@ -1,0 +1,16 @@
+{
+ "city": "munchen",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "82820fed-1271-43ad-bc25-bb3d4958918d",
+   "slug": "mico-in-between-tour-f4c7e2a5",
+   "title": "MICO - IN:BETWEEN TOUR",
+   "act": "MICO",
+   "name": "Mico",
+   "description": "Canadian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Mico_(singer)",
+   "extract": "Jose Miguel Veloso, known professionally as Mico, is a Canadian singer-songwriter and musician from Toronto. He initially grew a fanbase online through Discord and Twitch, breaking out commercially with his 2022 single \"cut my hair\", which became a top-30 radio hit in Canada. In 2025, he signed with Columbia Records following a string of independent extended plays."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "las-vegas",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "eedfc162-f562-4ad5-85c5-55a8002b96d2",
+   "slug": "tim-mcgraw-official-caesars-ticket-hotel-package-4595282a",
+   "title": "Tim McGraw | Official Caesars Ticket + Hotel Packages",
+   "act": "Tim McGraw",
+   "name": "Tim McGraw",
+   "description": "American country singer and actor (born 1967)",
+   "source_url": "https://en.wikipedia.org/wiki/Tim_McGraw",
+   "extract": "Samuel Timothy McGraw is an American country singer and actor. He has released 17 studio albums. Ten of those albums have reached number one on the Top Country Albums charts, with his 1994 breakthrough album Not a Moment Too Soon being the top country album of 1994. In total, McGraw's albums have produced 65 singles, 25 of which have reached number one on the Hot Country Songs or Country Airplay charts."
+  },
+  {
+   "id": "94e7e8d8-253a-4265-bb31-bfa644aeeb60",
+   "slug": "tim-mcgraw-live-in-las-vegas-d2b39b66",
+   "title": "Tim McGraw: Live in Las Vegas",
+   "act": "Tim McGraw",
+   "name": "Tim McGraw",
+   "description": "American country singer and actor (born 1967)",
+   "source_url": "https://en.wikipedia.org/wiki/Tim_McGraw",
+   "extract": "Samuel Timothy McGraw is an American country singer and actor. He has released 17 studio albums. Ten of those albums have reached number one on the Top Country Albums charts, with his 1994 breakthrough album Not a Moment Too Soon being the top country album of 1994. In total, McGraw's albums have produced 65 singles, 25 of which have reached number one on the Hot Country Songs or Country Airplay charts."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "ankara",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "af72b2a2-6ee6-4130-97ed-252d0987b1b3",
+   "slug": "teoman-d56ef1a3",
+   "title": "Teoman",
+   "act": "Teoman",
+   "name": "Teoman",
+   "description": "Turkish singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Teoman_(singer)",
+   "extract": "Fazlı Teoman Yakupoğlu is a Turkish acoustic rock singer and songwriter. His biggest hits include Paramparça, Senden Önce Senden Sonra, 17 and Papatya. On Papatya, Turkish rock singer Özlem Tekin is featured as a backing vocalist. Şebnem Ferah has also been featured on a couple of Teoman's tracks."
+  }
+ ]
+}

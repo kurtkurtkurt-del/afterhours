@@ -1,0 +1,16 @@
+{
+ "city": "brussel",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "8d6053d0-ae75-4992-9392-7faba647a47e",
+   "slug": "skip-the-use-4fc1cbb2",
+   "title": "Skip The Use",
+   "act": "Skip The Use",
+   "name": "Skip the Use",
+   "description": "French music band",
+   "source_url": "https://en.wikipedia.org/wiki/Skip_the_Use",
+   "extract": "Skip the Use is a French band with electro funk, rock and punk influences founded in 2008 with musicians from Ronchin, near Lille and made up of Mat Bastard (vocals), Yan Stefani (guitar), Nelson Martins (bass) and Enzo Gabert (drums). The band is signed with Polydor and has distribution arrangement with Universal Music."
+  }
+ ]
+}

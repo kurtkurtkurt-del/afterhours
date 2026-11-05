@@ -1,0 +1,16 @@
+{
+ "city": "toronto",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "84edafaf-6ed0-41a6-95a8-bc14fb861e69",
+   "slug": "pretty-sick-3dd1c0e3",
+   "title": "Pretty Sick",
+   "act": "Pretty Sick",
+   "name": "Pretty Sick",
+   "description": "American rock band from New York City",
+   "source_url": "https://en.wikipedia.org/wiki/Pretty_Sick",
+   "extract": "Pretty Sick is an American indie rock band from New York City, New York. It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz."
+  }
+ ]
+}

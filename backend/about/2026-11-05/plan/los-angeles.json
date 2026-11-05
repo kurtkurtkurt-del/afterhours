@@ -1,0 +1,36 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "cd5ab85d-d518-48b3-a4c0-cc1d52c352d2",
+   "slug": "dan-and-phil-hard-launch-world-tour-5477191c",
+   "title": "Dan and Phil: Hard Launch World Tour",
+   "act": "Dan and Phil",
+   "name": "Dan and Phil",
+   "description": "English entertainment and business duo",
+   "source_url": "https://en.wikipedia.org/wiki/Dan_and_Phil",
+   "extract": "Dan and Phil are an English entertainment and business duo, consisting of partners Daniel Howell and Phil Lester. They are best known for their collaborative work on YouTube since meeting in 2009. Additionally, they have collaborated on television and radio presenting, books, tours, and original films."
+  },
+  {
+   "id": "ae4604b5-37b3-44db-8a69-f0f7ad81b0b5",
+   "slug": "syml-solo-in-north-america-2026-d90c8aa3",
+   "title": "SYML - Solo in North America 2026",
+   "act": "SYML",
+   "name": "Syml",
+   "description": "American musician (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Syml",
+   "extract": "SYML is the solo venture of Brian Leseney Fennell, an American musician from Issaquah, Washington. He was previously part of the indie band Barcelona. SYML released his eponymous debut album on May 3, 2019, through Nettwerk Records."
+  },
+  {
+   "id": "a711d480-dc75-46d9-9394-dcd00ca7185a",
+   "slug": "danny-brown-atrocity-exhibition-10-year-annivers-cb3fc94a",
+   "title": "Danny Brown: Atrocity Exhibition 10 Year Anniversary Show",
+   "act": "Danny Brown",
+   "name": "Danny Brown",
+   "description": "American rapper (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/Danny_Brown",
+   "extract": "Daniel Dewan Sewell, better known by his stage name Danny Brown, is an American rapper, songwriter, actor and podcaster."
+  }
+ ]
+}

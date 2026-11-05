@@ -1,0 +1,56 @@
+{
+ "city": "dublin",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "6729da43-85af-4955-8b61-bf3c91bb9d54",
+   "slug": "muna-c407b646",
+   "title": "MUNA",
+   "act": "MUNA",
+   "name": "Muna",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Muna_(band)",
+   "extract": "Muna is an American indie pop band consisting of Katie Gavin, Josette Maskin, and Naomi McPherson. They released two studio albums with RCA Records, About U (2017) and Saves the World (2019), before signing with independent label Saddest Factory Records, which released their third studio album, Muna, in June 2022, and Dancing on the Wall in May 2026."
+  },
+  {
+   "id": "e9769586-1fad-4a5c-988b-8d4e4afe1622",
+   "slug": "car-bomb-28c02b8e",
+   "title": "Car Bomb",
+   "act": "Car Bomb",
+   "name": "Car Bomb",
+   "description": "American mathcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Car_Bomb_(band)",
+   "extract": "Car Bomb is an American mathcore band from Rockville Centre, New York that was initially formed in 2000. Their debut album, Centralia, was released through Relapse Records on February 6, 2007."
+  },
+  {
+   "id": "1f4bb064-82b4-458e-8fc3-001e3dc052d7",
+   "slug": "the-stylistics-d1c715be",
+   "title": "The Stylistics",
+   "act": "The Stylistics",
+   "name": "The Stylistics",
+   "description": "American music group",
+   "source_url": "https://en.wikipedia.org/wiki/The_Stylistics",
+   "extract": "The Stylistics are an American Philadelphia soul group that achieved their greatest chart success in the 1970s. They formed in 1968, with a lineup of singers Russell Thompkins Jr., Herb Murrell, Airrion Love, James Smith, and James Dunn. All of their U.S. hits were ballads characterized by the falsetto of Russell Thompkins Jr. and the production of Thom Bell. During the early 1970s, the group had twelve consecutive R&B top ten hits including \"Stop, Look, Listen\", \"You Are Everything\", \"Betcha by Golly, Wow\", \"I'm Stone in Love with You\", \"Break Up to Make Up\", \"People Make the World Go Round\" and \"You Make Me Feel Brand New\". They had five gold singles and three gold albums."
+  },
+  {
+   "id": "aa5d4ff1-59b3-43b3-b1b6-e9ab2f2bebb6",
+   "slug": "brennan-wedl-1f303261",
+   "title": "Brennan Wedl",
+   "act": "Brennan Wedl",
+   "name": "Brennan Wedl",
+   "description": "American indie musician (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Brennan_Wedl",
+   "extract": "Brennan Wedl is an American indie musician from Minneapolis, Minnesota who is currently based in Nashville, Tennessee. Wedl was previously in the queercore group, Dazey and the Scouts."
+  },
+  {
+   "id": "fa5aa2b4-eb9a-4ac7-b42c-7892b68b56d2",
+   "slug": "de-staat-90c6ef05",
+   "title": "De Staat",
+   "act": "De Staat",
+   "name": "De Staat",
+   "description": "Dutch alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/De_Staat",
+   "extract": "De Staat is a Dutch alternative rock band, formed in Nijmegen in 2006. Their name translates to \"The State\"."
+  }
+ ]
+}

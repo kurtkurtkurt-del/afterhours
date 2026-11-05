@@ -1,0 +1,86 @@
+{
+ "city": "manchester",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "ef4bcbd8-5256-413d-ad94-bda727dcc5ff",
+   "slug": "bellowhead-ef076c8a",
+   "title": "Bellowhead",
+   "act": "Bellowhead",
+   "name": "Bellowhead",
+   "description": "English folk band",
+   "source_url": "https://en.wikipedia.org/wiki/Bellowhead",
+   "extract": "Bellowhead is an English contemporary folk band, active from 2004 to 2016, reforming in 2020. The eleven-piece act played traditional dance tunes, folk songs and shanties, with arrangements drawing inspiration from a wide range of musical styles and influences. The band included percussion and a four-piece brass section. Bellowhead's bandmembers played more than 20 instruments among them, whilst all performers provided vocals."
+  },
+  {
+   "id": "ecf7d561-4f30-45f8-b313-d9354871b305",
+   "slug": "muse-the-wow-signal-europa-tour-8f6c9cda",
+   "title": "Muse - The Wow! Signal Europa Tour",
+   "act": "Muse",
+   "name": "Muse",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Muse_(band)",
+   "extract": "Muse are an English rock band from Teignmouth, Devon, formed in 1994. The band consists of Matt Bellamy, Chris Wolstenholme, and Dominic Howard."
+  },
+  {
+   "id": "ed753b80-cbc7-4f65-bfc2-23eea9ff1a9d",
+   "slug": "faux-real-4ea909bc",
+   "title": "Faux Real",
+   "act": "Faux Real",
+   "name": "Faux Real",
+   "description": "French-American art pop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Faux_Real_(duo)",
+   "extract": "Faux Real is a French-American art pop duo consisting of brothers Elliott Arndt and Virgile Arndt."
+  },
+  {
+   "id": "4ffd6d29-e0eb-4329-b8af-5b4b48313ca9",
+   "slug": "ellur-7a4bd9b8",
+   "title": "Ellur",
+   "act": "Ellur",
+   "name": "Ellur",
+   "description": "British musician (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Ellur",
+   "extract": "Ella Megan McNamara, known professionally as Ellur, is an English singer-songwriter from Halifax. She is the daughter of Embrace guitarist Richard McNamara. Her debut album At Home In My Mind was released in 2026."
+  },
+  {
+   "id": "3580f4d2-e8dd-400b-92ef-e9cf07973bb6",
+   "slug": "ok-go-1df05b3a",
+   "title": "OK Go",
+   "act": "OK Go",
+   "name": "OK Go",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/OK_Go",
+   "extract": "OK Go is an American rock band formed in 1998 and based in Los Angeles, California. The band is composed of Damian Kulash, Tim Nordwind, Dan Konopka, and Andy Ross."
+  },
+  {
+   "id": "95a395ab-e1b4-4ed3-9d9d-2daa0c28e218",
+   "slug": "little-angels-big-bad-and-back-tour-563ebae1",
+   "title": "Little Angels - Big Bad And Back Tour",
+   "act": "Little Angels",
+   "name": "Little Angels",
+   "description": "English hard rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Little_Angels",
+   "extract": "Little Angels are an English hard rock band predominantly active between the mid-1980s and mid-1990s. The band reformed to play the 2012 Download Festival. In February of 2026 they announced a UK tour scheduled for November, quickly adding extra dates due to ticket demand and then finally announcing that two further dates in Dublin and Belfast would begin the tour."
+  },
+  {
+   "id": "96fe4af7-a12c-4218-9283-c971a5e78d8d",
+   "slug": "yard-act-06621a90",
+   "title": "Yard Act",
+   "act": "Yard Act",
+   "name": "Yard Act",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Yard_Act",
+   "extract": "Yard Act is an English post-punk band from Leeds, West Yorkshire, formed in 2019. The band consists of James Smith, Ryan Needham (bass), Sam Shipstone (guitar) and Jay Russell (drums)."
+  },
+  {
+   "id": "14ae5494-c133-4745-86bb-96ec8db4b64a",
+   "slug": "seb-lowe-90a47b01",
+   "title": "Seb Lowe",
+   "act": "Seb Lowe",
+   "name": "Seb Lowe",
+   "description": "English musician (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Seb_Lowe",
+   "extract": "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. He is known for incorporating politics into his music, having started out uploading videos of his songs to TikTok."
+  }
+ ]
+}

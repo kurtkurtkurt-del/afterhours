@@ -1,0 +1,16 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "a039bbd7-8c53-4be9-a82d-ef3dfbfd2eb1",
+   "slug": "gryffin-d330ae05",
+   "title": "GRYFFIN",
+   "act": "GRYFFIN",
+   "name": "Gryffin",
+   "description": "American musician and producer (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Gryffin",
+   "extract": "Daniel Griffith, known by his stage name Gryffin, is an American musician, DJ, and music producer. He gained recognition for remixing some well-known songs such as Tove Lo's \"Talking Body\", Maroon 5's \"Animals\" and Years & Years' \"Desire\"."
+  }
+ ]
+}

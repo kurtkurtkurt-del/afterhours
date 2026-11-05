@@ -1,0 +1,36 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "6faebfc3-47e6-4fe6-a34a-99a17fa6a8b7",
+   "slug": "nia-archives-6396c265",
+   "title": "Nia Archives",
+   "act": "Nia Archives",
+   "name": "Nia Archives",
+   "description": "English record producer, DJ and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Nia_Archives",
+   "extract": "Dehaney Nia Lishahn Hunt, known professionally as Nia Archives, is an English record producer, DJ, singer and songwriter. Born in Bradford in West Yorkshire, she moved to Leeds aged seven, out of the family home aged sixteen, and then to Greater Manchester, during which time she was inspired by jungle documentaries and the women within them."
+  },
+  {
+   "id": "877bcee4-4d86-4636-a988-15543601b989",
+   "slug": "quadeca-bb6756fa",
+   "title": "Quadeca",
+   "act": "Quadeca",
+   "name": "Quadeca",
+   "description": "American musician, producer, and YouTuber (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Quadeca",
+   "extract": "Benjamin Fernando Barajas Lasky, better known by his stage name Quadeca, is an American singer-songwriter, record producer and rapper. Lasky began uploading songs and videos to his YouTube channel in the 2010s and began pursuing his musical career in the 2020s, which has since been met with critical acclaim."
+  },
+  {
+   "id": "2e146b48-258f-4f18-a99b-826e87adddd2",
+   "slug": "sienna-spiro-my-house-tour-c5d864e3",
+   "title": "Sienna Spiro: My House Tour",
+   "act": "Sienna Spiro",
+   "name": "Sienna Spiro",
+   "description": "English singer-songwriter (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Sienna_Spiro",
+   "extract": "Sienna Ann Spiro is an English singer-songwriter and record producer. Known for her distinct, powerful voice, she began sharing viral singing videos on TikTok in 2021. She started releasing music in 2024, including \"Maybe\", which became her debut on the UK Singles Chart. She released Sink Now, Swim Later, her debut extended play, in February 2025. Her breakthrough success came with the release of \"Die on This Hill\", which charted in numerous countries. She released her debut studio album, Visitor, on 3 July 2026, and achieved her first UK number one single with its track \"Great Expectation\"."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "denver",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "bf03d974-d1f2-4839-9c6d-6a4d72afaccd",
+   "slug": "shaun-cassidy-cebfc9d0",
+   "title": "Shaun Cassidy",
+   "act": "Shaun Cassidy",
+   "name": "Shaun Cassidy",
+   "description": "American singer, actor, producer and writer (born 1958)",
+   "source_url": "https://en.wikipedia.org/wiki/Shaun_Cassidy",
+   "extract": "Shaun Paul Cassidy is an American singer, actor, television producer and screenwriter. He has created or produced a number of television series, including American Gothic, Roar, and Invasion. Cassidy was also an executive producer and writer for NBC's medical drama New Amsterdam."
+  }
+ ]
+}

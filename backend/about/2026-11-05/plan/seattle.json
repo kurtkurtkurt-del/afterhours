@@ -1,0 +1,56 @@
+{
+ "city": "seattle",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "fdbebcad-5e41-4d27-b889-d878d0d62472",
+   "slug": "l7-21-and-over-24554068",
+   "title": "L7 - 21 and Over",
+   "act": "L7",
+   "name": "L7",
+   "description": "American punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/L7_(band)",
+   "extract": "L7 is an American punk rock band founded in Los Angeles, California, first active from 1985 to 2001 and re-formed in 2014. The group currently consists of Suzi Gardner, Donita Sparks, Dee Plakas and Janis Tanaka. L7 has released seven studio albums and has toured widely in the United States, Europe, Japan, Australia, and South America. \"Pretend We're Dead\" was heavily played on United States alternative radio and entered the top 10 on the Billboard Modern Rock chart in 1992."
+  },
+  {
+   "id": "1bedceb6-1b86-403d-b75a-f1c9d7a689cb",
+   "slug": "tank-and-the-bangas-the-last-balloon-tour-2026-w-5a139a36",
+   "title": "Tank and The Bangas - The Last Balloon Tour 2026 w/ Ariel J. & Zeus",
+   "act": "Tank and The Bangas",
+   "name": "Tank and the Bangas",
+   "description": "American musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Tank_and_the_Bangas",
+   "extract": "Tank and the Bangas is an American musical group based in New Orleans, Louisiana. The band won the 2017 NPR Tiny Desk Contest and in November 2019, they were nominated in the Best New Artist category for the 2020 Grammy Awards. They have released three studio albums, Thinktank (2013), Green Balloon (2019), and Red Balloon (2022). In 2025, they won their first Grammy for the 2024 album, The Heart, The Mind, The Soul for Best Spoken Word Poetry Album."
+  },
+  {
+   "id": "ee1b06dc-7ea7-4ba7-8487-10c8ccec3af5",
+   "slug": "isaiah-rashad-lil-sunny-s-awful-road-trip-f8c4fc95",
+   "title": "ISAIAH RASHAD: Lil Sunny's Awful Road Trip",
+   "act": "ISAIAH RASHAD",
+   "name": "Isaiah Rashad",
+   "description": "American rapper (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Isaiah_Rashad",
+   "extract": "Isaiah Rashad Joel McClain is an American rapper and singer. He first gained recognition following his performances on the 2012 Smoker's Club Tour alongside rappers Juicy J, Joey Badass and Smoke DZA. He is a founding member of the Chattanooga, Tennessee-based hip-hop collective TheHouse, which he formed with rappers YGTUT, Michael Da Vinci (MikeyD), Chris P, and Brian Brown."
+  },
+  {
+   "id": "4d11855d-19ab-4236-a410-c60393de452d",
+   "slug": "allison-russell-ages-21-abc29d5c",
+   "title": "Allison Russell - Ages 21+",
+   "act": "Allison Russell",
+   "name": "Allison Russell",
+   "description": "Canadian singer-songwriter, musician and activist",
+   "source_url": "https://en.wikipedia.org/wiki/Allison_Russell",
+   "extract": "Allison Russell is a Canadian singer, songwriter, musician, actress and activist."
+  },
+  {
+   "id": "8f90cbb0-59c8-4e35-9368-1d432ffdaef2",
+   "slug": "alex-cameron-c5149728",
+   "title": "Alex Cameron",
+   "act": "Alex Cameron",
+   "name": "Alex Cameron",
+   "description": "Australian singer (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Alex_Cameron_(musician)",
+   "extract": "Alexander Cameron is an Australian singer-songwriter from Sydney. He is best known for his solo career, a high-concept act in which Cameron initially adopted the persona of a failed entertainer. Between 2012 and 2024, Cameron was often joined during live performances and in the studio by his saxophonist and \"business partner\" Roy Molloy. Before making music under his own name, Cameron was a member of the electronica act Seekae, with whom he released three studio albums."
+  }
+ ]
+}

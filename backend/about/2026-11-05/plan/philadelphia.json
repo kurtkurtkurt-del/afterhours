@@ -1,0 +1,16 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "33e6fd12-c07d-4c95-a549-14ef7c5c2757",
+   "slug": "mountain-grass-unit-3c171b26",
+   "title": "Mountain Grass Unit",
+   "act": "Mountain Grass Unit",
+   "name": "Mountain Grass Unit",
+   "description": "American bluegrass band",
+   "source_url": "https://en.wikipedia.org/wiki/Mountain_Grass_Unit",
+   "extract": "Mountain Grass Unit (MGU) is a four-piece bluegrass band founded in Birmingham, Alabama in 2018. The band consists of members Drury Anderson (lead vocals, mandolin), Luke Black (guitar), Sam Wilson (bass), and Josiah Nelson (fiddle). Unlike typical bluegrass arrangements, MGU does not feature a banjo."
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "city": "boston",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "a233b93d-d9bc-46a8-b4a4-20d7071e425d",
+   "slug": "geese-fcdfa9c7",
+   "title": "GEESE",
+   "act": "GEESE",
+   "name": "Geese",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Geese_(band)",
+   "extract": "Geese is an American rock band from New York City that formed in 2016. It comprises lead vocalist and guitarist-keyboardist Cameron Winter, guitarist Emily Green, bassist Dominic DiGesu and drummer Max Bassin as of 2024. Guitarist Foster Hudson was a member of the group from 2019 until 2023. During live performances, the band is joined by keyboardist Sam Revaz."
+  },
+  {
+   "id": "a736598f-b393-45aa-825f-43acb2d44577",
+   "slug": "michigander-20304c3f",
+   "title": "Michigander",
+   "act": "Michigander",
+   "name": "Michigander",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Michigander_(band)",
+   "extract": "Michigander is an American rock band created in 2014 from Kalamazoo, Michigan. It is the solo project centered around its vocalist, songwriter and multi-instrumentalist frontman, Jason Singer."
+  },
+  {
+   "id": "9310ec6e-42e0-41cd-a498-40112af6689b",
+   "slug": "ax-and-the-hatchetmen-the-late-checkout-tour-202-f5640141",
+   "title": "Ax and the Hatchetmen: The Late Checkout Tour 2026",
+   "act": "Ax and the Hatchetmen",
+   "name": "Ax and the Hatchetmen",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/Ax_and_the_Hatchetmen",
+   "extract": "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018. Members of the group include Axel Ellis, Salvatore Defilippis (vocals/guitar), Hunter Olshefke (vocals/bass), Phil Pistone (trumpet), Quinn Dolan (saxophone), and Chaandmon Croft (drums). They are signed with Arista Records and their first album, So Much to Tell You, was released October 24, 2025 with a tour of the same name."
+  },
+  {
+   "id": "d8f142b3-5fea-47fe-84f8-1d458d1a6bb4",
+   "slug": "journey-final-frontier-tour-an-evening-with-61b7b6f1",
+   "title": "JOURNEY - Final Frontier Tour (An Evening With)",
+   "act": "JOURNEY",
+   "name": "Journey",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Journey_(band)",
+   "extract": "Journey is an American rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch. The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals."
+  },
+  {
+   "id": "4d739f97-49f7-4ca4-b391-058c8cb64314",
+   "slug": "beartooth-pure-ecstasy-world-tour-18068ac1",
+   "title": "Beartooth: Pure Ecstasy World Tour",
+   "act": "Beartooth",
+   "name": "Beartooth",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Beartooth_(band)",
+   "extract": "Beartooth is an American rock band founded by vocalist and multi-instrumentalist Caleb Shomo in Columbus, Ohio, in 2012. Originally, Beartooth was a studio project with Shomo performing all instruments, before expanding to a group with four or five members over their existence. They are known for relatively more conventional songwriting than some of Shomo's other work, with an emphasis on melodic hooks and catchy choruses. Beartooth has been signed to Red Bull Records since 2013; their debut EP Sick was released on July 26, 2013, followed by the debut full-length album Disgusting on June 10, 2014. Since then, Shomo has released a further five studio albums under the Beartooth moniker: Aggressive (2016), Disease (2018), Below (2021), The Surface (2023), and Pure Ecstasy (2026)."
+  },
+  {
+   "id": "5551baae-64f3-4076-a47a-a9d810044ef5",
+   "slug": "phillip-phillips-let-s-go-far-tour-18-9c977325",
+   "title": "Phillip Phillips: Let's Go Far Tour (18+)",
+   "act": "Phillip Phillips",
+   "name": "Phillip Phillips",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Phillip_Phillips",
+   "extract": "Phillip LaDon Phillips Jr. is an American singer-songwriter who rose to fame after winning the eleventh season of American Idol in 2012. His coronation song, \"Home\", became the best-selling coronation song in American Idol history."
+  }
+ ]
+}

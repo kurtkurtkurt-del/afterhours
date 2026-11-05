@@ -1,0 +1,16 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "02ae6875-7c07-4986-83cb-53097b30a325",
+   "slug": "yuksek-sadakat-42ba538b",
+   "title": "Yüksek Sadakat",
+   "act": "Yüksek Sadakat",
+   "name": "Yüksek Sadakat",
+   "description": "Turkish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Y%C3%BCksek_Sadakat",
+   "extract": "Yüksek Sadakat is a Turkish rock band that was formed in 1997 by Kutlu Özmakinacı, but became popular in early 2006 with their first album with the same name. The founder and bass player Kutlu Özmakinacı, used to be the editor of a music magazine called Blue Jean. Their music is a mix of pop rock with powerful beats utilizing Turkish instruments, keyboard and guitar solos. The name of the band is a literal translation of the term High Fidelity (Hi-Fi) into Turkish."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "390638c4-e7f4-466d-9cf3-9ef997bb7efb",
+   "slug": "muna-gets-so-hot-tour-6f9b0cc6",
+   "title": "MUNA: Gets So Hot Tour",
+   "act": "MUNA",
+   "name": "Muna",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Muna_(band)",
+   "extract": "Muna is an American indie pop band consisting of Katie Gavin, Josette Maskin, and Naomi McPherson. They released two studio albums with RCA Records, About U (2017) and Saves the World (2019), before signing with independent label Saddest Factory Records, which released their third studio album, Muna, in June 2022, and Dancing on the Wall in May 2026."
+  }
+ ]
+}

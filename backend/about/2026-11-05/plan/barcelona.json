@@ -1,0 +1,16 @@
+{
+ "city": "barcelona",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "723954a8-1635-4369-a1ea-1f4fdac7dd31",
+   "slug": "polyphia-be-not-afraid-world-tour-566e3393",
+   "title": "Polyphia: BE NOT AFRAID World Tour",
+   "act": "Polyphia",
+   "name": "Polyphia",
+   "description": "American progressive rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Polyphia",
+   "extract": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music. Polyphia has released five studio albums, one live record, two EPs, and numerous singles."
+  }
+ ]
+}

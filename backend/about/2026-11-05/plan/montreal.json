@@ -1,0 +1,16 @@
+{
+ "city": "montreal",
+ "day": "2026-11-05",
+ "nights": [
+  {
+   "id": "9755fd87-56de-4bf6-a98c-5194d25a2290",
+   "slug": "the-record-company-41515c38",
+   "title": "The Record Company",
+   "act": "The Record Company",
+   "name": "The Record Company",
+   "description": "American blues rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Record_Company",
+   "extract": "The Record Company is a Grammy-nominated blues rock band from Los Angeles. The members are Chris Vos, Alex Stiff, and Marc Cazorla. Their music is influenced by blues musicians such as John Lee Hooker."
+  }
+ ]
+}
