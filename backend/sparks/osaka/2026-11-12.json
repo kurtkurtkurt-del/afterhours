@@ -1,0 +1,14 @@
+{
+  "city": "osaka",
+  "day": "2026-11-12",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "walk the midosuji lights.", "de": "midosuji-lichter entlang laufen.", "tr": "midosuji ışıklarında yürüyüş." },
+      "line": { "en": "about four kilometres of illuminations, free and no booking. the lights come on around 17:00; start at hanshin-mae in the north and walk south to namba nishiguchi.", "de": "etwa vier kilometer beleuchtung, kostenlos und ohne anmeldung. die lichter gehen gegen 17:00 an; im norden bei hanshin-mae starten und nach süden bis namba nishiguchi laufen.", "tr": "yaklaşık dört kilometre aydınlatma, ücretsiz ve rezervasyonsuz. ışıklar 17:00 civarında yanıyor; kuzeyde hanshin-mae'den başla, güneye namba nishiguchi'ye yürü." },
+      "place": { "en": "midosuji, hanshin-mae to namba nishiguchi", "de": "midosuji, hanshin-mae bis namba nishiguchi", "tr": "midosuji, hanshin-mae - namba nishiguchi" },
+      "hour": 17, "minute": 0,
+      "why": "Midosuji Illumination 2026, 3 Nov to 31 Dec, about 4 km from Hanshin-mae to Namba Nishiguchi from about 17:00, per japantravel.com and todolist-japan.com; the official Osaka site was not checked for exact hours."
+    }
+  ]
+}
