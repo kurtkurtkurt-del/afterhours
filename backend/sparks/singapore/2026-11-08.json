@@ -1,0 +1,14 @@
+{
+  "city": "singapore",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "little india light-up on deepavali.", "de": "little india im lichterglanz zu deepavali.", "tr": "deepavali'de little india ışıkları." },
+      "line": { "en": "deepavali is sunday 8 nov, monday 9 is the holiday in lieu. the serangoon road lights come on from 7pm and the festival village bazaar runs to 8 nov; walk it after dark.", "de": "deepavali ist sonntag, 8. nov, montag, 9. nov ist der ersatzfeiertag. die lichter in der serangoon road gehen ab 19 uhr an, der festival village bazaar läuft bis 8. nov; nach einbruch der dunkelheit hingehen.", "tr": "deepavali pazar, 8 kasım; pazartesi 9 kasım telafi tatili. serangoon road ışıkları 19:00'da yanıyor, festival village pazarı 8 kasıma kadar açık; hava kararınca yürü." },
+      "place": { "en": "serangoon road", "de": "serangoon road", "tr": "serangoon road" },
+      "hour": 19, "minute": 0,
+      "why": "Deepavali on sun 8 nov with mon 9 nov in lieu (MOM list, via Circles.Life and officeholidays); the Little India light-up runs nightly from 7pm and the Festival Village bazaar to 8 nov, per radicalstorage and littlebigreddot guides."
+    }
+  ]
+}

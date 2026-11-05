@@ -1,0 +1,14 @@
+{
+  "city": "singapore",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "bugis street market after dark.", "de": "bugis street market bei nacht.", "tr": "bugis street market'te gece." },
+      "line": { "en": "the bugis street night market is open until 10pm; go after dinner and walk the stalls. it is an open-air market, so look at the sky before you set off.", "de": "der nachtmarkt in der bugis street hat bis 22 uhr offen; nach dem abendessen hingehen und die stände ablaufen. es ist ein markt unter freiem himmel, also vorher den himmel prüfen.", "tr": "bugis street gece pazarı 22:00'ye kadar açık; akşam yemeğinden sonra gidip tezgâhları gez. açık hava pazarı, yola çıkmadan önce havaya bak." },
+      "place": { "en": "bugis street market", "de": "bugis street market", "tr": "bugis street market" },
+      "hour": 19, "minute": 0,
+      "why": "Bugis Street Market is a permanent night market open until 10pm daily, per Secret Singapore's 2026 best-night-markets piece; the 7 nov forecast was not confirmed."
+    }
+  ]
+}
