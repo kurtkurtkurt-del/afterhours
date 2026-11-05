@@ -1,0 +1,14 @@
+{
+  "city": "tokyo",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "koganei park, the last night of the autumn lights.", "de": "koganei-park, der letzte abend der herbstbeleuchtung.", "tr": "koganei parkı, sonbahar ışıklarının son gecesi." },
+      "line": { "en": "the koganei park autumn illumination ends on sunday 8 november. walk the paths near the edo-tokyo open-air museum once it is dark.", "de": "die herbstbeleuchtung im koganei-park endet am sonntag 8. november. spaziert nach einbruch der dunkelheit über die wege nahe dem freilichtmuseum edo-tokyo.", "tr": "koganei parkı'ndaki sonbahar ışıklandırması pazar 8 kasım'da sona eriyor. hava karardığında edo-tokyo açık hava müzesi yakınındaki yollarda yürü." },
+      "place": { "en": "koganei park, ikoi-no-hiroba", "de": "koganei-park, ikoi-no-hiroba", "tr": "koganei parkı, ikoi-no-hiroba" },
+      "hour": 17, "minute": 0,
+      "why": "Koganei Park autumn illumination, 23.10 to 8.11.2026, at Ikoi-no-Hiroba and paths by the Edo-Tokyo Open Air Architectural Museum (2026 illumination listing found in search; check the park's own site)."
+    }
+  ]
+}

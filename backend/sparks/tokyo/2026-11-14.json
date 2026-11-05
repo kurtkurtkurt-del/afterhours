@@ -1,0 +1,14 @@
+{
+  "city": "tokyo",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "hachioji jazz day, several stages in one day.", "de": "hachioji jazz day, mehrere bühnen an einem tag.", "tr": "hachioji jazz day, bir günde birkaç sahne." },
+      "line": { "en": "hachioji jazz day runs 10:00 to 20:00 on saturday 14 november over several venues in the town. pick a stage and stay for the evening sets.", "de": "der hachioji jazz day läuft samstag 14. november von 10:00 bis 20:00 an mehreren orten der stadt. such dir eine bühne aus und bleib für die abendsets.", "tr": "hachioji jazz day, 14 kasım cumartesi 10:00 ile 20:00 arası şehirdeki birkaç mekanda sürer. bir sahne seç ve akşam setleri için kal." },
+      "place": { "en": "gakuen toshi center event hall", "de": "gakuen toshi center event hall", "tr": "gakuen toshi center event hall" },
+      "hour": 15, "minute": 0,
+      "why": "Hachioji JAZZ DAY 2026, sat 14.11, 10:00 to 20:00 over several venues including the Gakuen Toshi Center Event Hall (2026 event listing found in search)."
+    }
+  ]
+}

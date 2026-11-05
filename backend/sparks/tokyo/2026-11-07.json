@@ -1,0 +1,22 @@
+{
+  "city": "tokyo",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "tori-no-ichi at otori shrine, asakusa.", "de": "tori-no-ichi am otori-schrein, asakusa.", "tr": "asakusa'da otori tapınağında tori-no-ichi." },
+      "line": { "en": "the first rooster day of the tori-no-ichi. the shrine and the temple next door are open all day, and the stalls sell the rake charms for good business luck.", "de": "der erste hahnentag des tori-no-ichi. schrein und nachbartempel sind den ganzen tag geöffnet, die stände verkaufen die rechen-glücksbringer für gutes geschäft.", "tr": "tori-no-ichi'nin ilk horoz günü. tapınak ve yandaki tapınak bütün gün açık; standlar iyi iş için tırmık biçimli şans nesnelerini satıyor." },
+      "place": { "en": "otori shrine, asakusa", "de": "otori-schrein, asakusa", "tr": "otori tapınağı, asakusa" },
+      "hour": 17, "minute": 0,
+      "why": "First rooster day (ichi-no-tori) of the 2026 tori-no-ichi on sat 7.11, open all day per matcha-jp and Exoticca's Tokyo November guide."
+    },
+    {
+      "kind": "flea",
+      "title": { "en": "oedo antique market, tokyo international forum.", "de": "oedo-antikmarkt am tokyo international forum.", "tr": "oedo antika pazarı, tokyo international forum'da." },
+      "line": { "en": "the oedo antique market on saturday 7 november, a short walk from yurakucho station. old prints, glassware and small things to dig through.", "de": "der oedo-antikmarkt am samstag 7. november, wenige schritte vom bahnhof yurakucho. alte drucke, glaswaren und kleine dinge zum durchstöbern.", "tr": "7 kasım cumartesi oedo antika pazarı, yurakucho istasyonundan kısa bir yürüme mesafesinde. eski baskılar, cam eşyalar ve küçük şeyler." },
+      "place": { "en": "tokyo international forum", "de": "tokyo international forum", "tr": "tokyo international forum" },
+      "hour": 10, "minute": 0,
+      "why": "Oedo Antique Market listed for sat 7.11 on the tokyocheapo.com event calendar, held at Tokyo International Forum."
+    }
+  ]
+}
