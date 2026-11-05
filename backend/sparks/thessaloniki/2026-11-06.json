@@ -1,0 +1,14 @@
+{
+  "city": "thessaloniki",
+  "day": "2026-11-06",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "the film festival at the olympion.", "de": "das filmfestival im olympion.", "tr": "olympion'da film festivali." },
+      "line": { "en": "the 67th festival runs 5 to 15 november with 258 films. pick a screening at the olympion on aristotelous square; showtimes are on filmfestival.gr.", "de": "das 67. festival läuft vom 5. bis 15. november mit 258 filmen. ein screening im olympion am aristotelousplatz aussuchen; die zeiten stehen auf filmfestival.gr.", "tr": "67. festival 5 ila 15 kasım arasında, 258 filmle. aristotelous meydanı'ndaki olympion'da bir gösterim seç; seanslar filmfestival.gr'de." },
+      "place": { "en": "olympion", "de": "olympion", "tr": "olympion" },
+      "hour": 19, "minute": 0,
+      "why": "67th Thessaloniki International Film Festival runs 5 to 15 Nov 2026 with 258 films at the Olympion (greekcitytimes.com, filmfestival.gr); no screening time was confirmed, so the hour is a suggestion."
+    }
+  ]
+}

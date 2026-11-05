@@ -1,0 +1,14 @@
+{
+  "city": "thessaloniki",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "last weekend of the film festival.", "de": "letztes wochenende des filmfestivals.", "tr": "film festivalinin son hafta sonu." },
+      "line": { "en": "the festival closes on 15 november. saturday is the last full weekend at the olympion; check filmfestival.gr for the screening you want.", "de": "das festival endet am 15. november. der samstag ist das letzte volle wochenende im olympion; das gewünschte screening auf filmfestival.gr prüfen.", "tr": "festival 15 kasım'da kapanıyor. cumartesi olympion'da son tam hafta sonu; istediğin gösterimi filmfestival.gr'den kontrol et." },
+      "place": { "en": "olympion", "de": "olympion", "tr": "olympion" },
+      "hour": 19, "minute": 0,
+      "why": "67th Thessaloniki International Film Festival runs 5 to 15 Nov 2026 (greekcitytimes.com); the screening on this day is not confirmed."
+    }
+  ]
+}
