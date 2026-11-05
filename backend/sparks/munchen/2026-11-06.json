@@ -3,6 +3,447 @@
   "day": "2026-11-06",
   "sparks": [
     {
+      "kind": "derby",
+      "title": {
+        "en": "friday before the bayern weekend.",
+        "de": "der freitag vor dem bayern-wochenende.",
+        "tr": "bayern hafta sonunun önceki cuması."
+      },
+      "line": {
+        "en": "no match tonight, but bayern play in mainz tomorrow. get the table at a pub early and make a bet on the score.",
+        "de": "heute kein spiel, aber bayern spielt morgen in mainz. früh einen pubtisch sichern und auf das ergebnis wetten.",
+        "tr": "bu akşam maç yok ama bayern yarın mainz'ta. pubda erkenden masa tut, skora iddiaya gir."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No FC Bayern, 1860 or national-team match confirmed for Fri 6.11 (Bayern play at Mainz on Sat 7.11). Bayern at Mainz Sat 7.11 15:30 (hessenschau.de matchday list); tonight is a pre-match warm-up."
+    },
+    {
+      "kind": "grill",
+      "title": {
+        "en": "a warm grill night, indoors.",
+        "de": "grillabend, diesmal drinnen.",
+        "tr": "sıcak bir mangal gecesi, bu kez içeride."
+      },
+      "line": {
+        "en": "too cold for the isar banks. grill at home or take a table at a steak place; bring the people, split the bill.",
+        "de": "zu kalt für die isarufer. zuhause grillen oder einen tisch im steakhaus nehmen; leute mitbringen, rechnung teilen.",
+        "tr": "isar kıyısı için fazla soğuk. evde ızgara yap ya da bir steakhouse'ta masa al; arkadaşları getir, hesabı böl."
+      },
+      "place": {
+        "en": "ochsenbraterei",
+        "de": "ochsenbraterei",
+        "tr": "ochsenbraterei"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. "
+    },
+    {
+      "kind": "hike",
+      "title": {
+        "en": "a short hike to the olympiaberg.",
+        "de": "olympiaberg, kurze wanderung.",
+        "tr": "olympiaberg'e kısa bir yürüyüş."
+      },
+      "line": {
+        "en": "no time for the alps on a work night. the olympiaberg gives you the city view in 30 minutes; go before the light is gone.",
+        "de": "für die alpen fehlt abends die zeit. der olympiaberg gibt dir in 30 minuten den stadtblick; geh, solange es hell ist.",
+        "tr": "hafta içi akşamı alpler için zaman yok. olympiaberg 30 dakikada şehir manzarası verir; ışık bitmeden çık."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 15,
+      "minute": 30,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. Sunset about 16:40, so go in the afternoon."
+    },
+    {
+      "kind": "sunrise",
+      "title": {
+        "en": "sunrise over the isar.",
+        "de": "sonnenaufgang über der isar.",
+        "tr": "isar üzerinde gün doğumu."
+      },
+      "line": {
+        "en": "sunrise is at about 06:55. flaucher is quiet at that hour; bring a flask of something hot.",
+        "de": "sonnenaufgang gegen 06:55. am flaucher ist es um die zeit still; eine thermoskanne mit etwas heißem mitbringen.",
+        "tr": "gün doğumu 06:55 civarı. o saatte flaucher sessiz; termosta sıcak bir şey getir."
+      },
+      "place": {
+        "en": "flaucher",
+        "de": "flaucher",
+        "tr": "flaucher"
+      },
+      "hour": 6,
+      "minute": 35,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. Start is sunrise minus 20 minutes."
+    },
+    {
+      "kind": "breakfast",
+      "title": {
+        "en": "friday breakfast, no rush.",
+        "de": "freitagsfrühstück ohne eile.",
+        "tr": "acelesiz cuma kahvaltısı."
+      },
+      "line": {
+        "en": "a long breakfast before the weekend. glockenbach has plenty of places; go at ten and order the second round.",
+        "de": "ein langes frühstück vor dem wochenende. im glockenbach gibt es genug orte; um zehn hin und eine zweite runde bestellen.",
+        "tr": "hafta sonundan önce uzun bir kahvaltı. glockenbach'ta bol mekan var; ona doğru git, ikinci turu söyle."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Generic Munich version for a November Friday; nothing special confirmed. "
+    },
+    {
+      "kind": "rooftop",
+      "title": {
+        "en": "a roof with a view, wrapped up.",
+        "de": "dach mit aussicht, warm eingepackt.",
+        "tr": "manzaralı bir çatı, sıkı giyinerek."
+      },
+      "line": {
+        "en": "it is cold, so take a hot drink up: the view from the frauenkirche tower or a hotel bar over the old town. dress warmly.",
+        "de": "es ist kalt, also ein heißgetränk mitnehmen: blick vom turm der frauenkirche oder aus einer hotelbar über der altstadt. warm anziehen.",
+        "tr": "hava soğuk, sıcak bir içecekle çık: frauenkirche kulesinden ya da eski şehre bakan bir otel barından manzara. kalın giyin."
+      },
+      "place": {
+        "en": "frauenkirche",
+        "de": "frauenkirche",
+        "tr": "frauenkirche"
+      },
+      "hour": 15,
+      "minute": 45,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. "
+    },
+    {
+      "kind": "swim",
+      "title": {
+        "en": "an indoor swim in the volksbad.",
+        "de": "schwimmen im volksbad.",
+        "tr": "volksbad'da kapalı havuz."
+      },
+      "line": {
+        "en": "the isar is far too cold. the müller'sches volksbad is the jugendstil pool in the old town; check the opening hours before you go.",
+        "de": "die isar ist viel zu kalt. das müller'sche volksbad ist das jugendstilbad in der altstadt; öffnungszeiten vorher prüfen.",
+        "tr": "isar çok soğuk. müller'sches volksbad eski şehirdeki jugendstil havuz; gitmeden çalışma saatlerine bak."
+      },
+      "place": {
+        "en": "müller'sches volksbad",
+        "de": "müller'sches volksbad",
+        "tr": "müller'sches volksbad"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. Indoor pool only; hours not verified."
+    },
+    {
+      "kind": "quiz",
+      "title": {
+        "en": "pub quiz on a friday.",
+        "de": "pubquiz am freitag.",
+        "tr": "cuma akşamı pub quiz."
+      },
+      "line": {
+        "en": "gather a team of four and find a pub quiz in the city. winning means free rounds, losing means you pay.",
+        "de": "ein vierer-team zusammentrommeln und ein pubquiz in der stadt suchen. gewinnen heißt freie runden, verlieren heißt zahlen.",
+        "tr": "dört kişilik takım kur, şehirde bir pub quiz bul. kazanırsan bedava tur, kaybedersen sen ödersin."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Generic Munich version for a November Friday; nothing special confirmed. No quiz night verified; check the pub's own page."
+    },
+    {
+      "kind": "newplace",
+      "title": {
+        "en": "a place you have never been.",
+        "de": "ein ort, an dem du nie warst.",
+        "tr": "hiç gitmediğin bir yer."
+      },
+      "line": {
+        "en": "pick a bar in a district you skip. haidhausen, au or westend; walk in without a plan and stay for one round.",
+        "de": "such dir eine bar in einem viertel, das du auslässt. haidhausen, au oder westend; ohne plan rein und eine runde bleiben.",
+        "tr": "atladığın bir mahallede bir bar seç. haidhausen, au ya da westend; plansız gir, bir tur kal."
+      },
+      "place": {
+        "en": "haidhausen",
+        "de": "haidhausen",
+        "tr": "haidhausen"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Generic Munich version for a November Friday; nothing special confirmed. "
+    },
+    {
+      "kind": "camera",
+      "title": {
+        "en": "golden hour is early now.",
+        "de": "die goldene stunde kommt früh.",
+        "tr": "altın saat artık erken."
+      },
+      "line": {
+        "en": "sunset is about 16:40, so the light is best at 16:00. take a camera to the monopteros in the englischer garten.",
+        "de": "sonnenuntergang gegen 16:40, das beste licht ist um 16:00. kamera mit zum monopteros im englischen garten.",
+        "tr": "gün batımı 16:40 civarı, en iyi ışık 16:00. kamerayı alıp englischer garten'daki monopteros'a git."
+      },
+      "place": {
+        "en": "monopteros",
+        "de": "monopteros",
+        "tr": "monopteros"
+      },
+      "hour": 15,
+      "minute": 45,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. "
+    },
+    {
+      "kind": "festival",
+      "title": {
+        "en": "the tollwood winter is not on yet.",
+        "de": "tollwood-winter läuft noch nicht.",
+        "tr": "tollwood kışı henüz başlamadı."
+      },
+      "line": {
+        "en": "no festival confirmed for tonight. the teatro spiegelzelt show starts its run today; look it up if you want a big evening out.",
+        "de": "heute kein festival bestätigt. die teatro-spiegelzelt-show startet heute ihre spielzeit; wenn du einen großen abend willst, schau nach.",
+        "tr": "bu akşam doğrulanmış bir festival yok. teatro spiegelzelt gösterisi bugün başlıyor; büyük bir akşam istiyorsan bak."
+      },
+      "place": {
+        "en": "teatro spiegelzelt",
+        "de": "teatro spiegelzelt",
+        "tr": "teatro spiegelzelt"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "teatro – the art of show & cuisine runs from 6.11.2026 to 14.2.2027 (mvp.de listing)."
+    },
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "karaoke, one song each.",
+        "de": "karaoke, jeder ein lied.",
+        "tr": "karaoke, herkese bir şarkı."
+      },
+      "line": {
+        "en": "a friday karaoke night with a rule: everybody sings once, no skipping. pick the song for the person next to you.",
+        "de": "ein freitags-karaoke mit regel: jeder singt einmal, keiner drückt sich. such das lied für den nachbarn aus.",
+        "tr": "kuralı olan bir cuma karaokesi: herkes bir kez söyler, kaçmak yok. yanındakine şarkıyı sen seç."
+      },
+      "place": {
+        "en": "karaoke bar",
+        "de": "karaoke bar",
+        "tr": "karaoke bar"
+      },
+      "hour": 21,
+      "minute": 0,
+      "why": "Generic Munich version for a November Friday; nothing special confirmed. No specific venue verified."
+    },
+    {
+      "kind": "vinyl",
+      "title": {
+        "en": "digging for records.",
+        "de": "platten wühlen.",
+        "tr": "plak karıştırma."
+      },
+      "line": {
+        "en": "an hour in a record shop in the glockenbach, then one record each for the evening. no streaming.",
+        "de": "eine stunde im plattenladen im glockenbach, dann für den abend je eine platte. kein streaming.",
+        "tr": "glockenbach'ta bir plak dükkanında bir saat, sonra akşam için herkese bir plak. streaming yok."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Generic Munich version for a November Friday; nothing special confirmed. "
+    },
+    {
+      "kind": "openair",
+      "title": {
+        "en": "no open air tonight.",
+        "de": "heute kein open air.",
+        "tr": "bu gece açık hava yok."
+      },
+      "line": {
+        "en": "it is november and nothing is confirmed outdoors. keep the speaker for a living room, or go to the olympiapark for a walk in the dusk.",
+        "de": "es ist november und draußen ist nichts bestätigt. die box lieber im wohnzimmer lassen oder im dämmerlicht durch den olympiapark gehen.",
+        "tr": "kasım ve dışarıda doğrulanmış bir şey yok. hoparlörü oturma odasında tut ya da alacakaranlıkta olympiapark'ta yürü."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. No open-air event confirmed."
+    },
+    {
+      "kind": "bike",
+      "title": {
+        "en": "a bike ride along the isar.",
+        "de": "mit dem rad an der isar.",
+        "tr": "isar boyunca bisiklet."
+      },
+      "line": {
+        "en": "the isar path from the deutsches museum to the flaucher is flat and lit in parts. bring lights and gloves.",
+        "de": "der isarweg vom deutschen museum zum flaucher ist flach und teils beleuchtet. licht und handschuhe mitnehmen.",
+        "tr": "deutsches museum'dan flaucher'a isar yolu düz ve kısmen aydınlık. ışık ve eldiven al."
+      },
+      "place": {
+        "en": "flaucher",
+        "de": "flaucher",
+        "tr": "flaucher"
+      },
+      "hour": 15,
+      "minute": 30,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. "
+    },
+    {
+      "kind": "cinema",
+      "title": {
+        "en": "friday at the cinema.",
+        "de": "freitag im kino.",
+        "tr": "cuma günü sinema."
+      },
+      "line": {
+        "en": "the best rainy-day plan. the city has the arri, the city kino and the mathäser; pick a film at six and eat after.",
+        "de": "der beste plan bei schlechtem wetter. die stadt hat das arri, das city kino und das mathäser; um sechs einen film aussuchen, danach essen.",
+        "tr": "kötü hava için en iyi plan. şehirde arri, city kino ve mathäser var; altıda film seç, sonra yemek ye."
+      },
+      "place": {
+        "en": "arri kino",
+        "de": "arri kino",
+        "tr": "arri kino"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Generic Munich version for a November Friday; nothing special confirmed. No specific screening verified."
+    },
+    {
+      "kind": "boardgames",
+      "title": {
+        "en": "board games on a cold night.",
+        "de": "brettspiele an einem kalten abend.",
+        "tr": "soğuk bir gecede kutu oyunları."
+      },
+      "line": {
+        "en": "a friday with a table, snacks and a long game. bring one you know and one nobody has played.",
+        "de": "ein freitag mit tisch, snacks und einem langen spiel. eins mitbringen, das du kennst, und eins, das keiner gespielt hat.",
+        "tr": "masa, atıştırmalık ve uzun bir oyunla bir cuma. bildiğin bir oyunu ve kimsenin oynamadığını getir."
+      },
+      "place": {
+        "en": "brettspiel café",
+        "de": "brettspiel café",
+        "tr": "brettspiel café"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Generic Munich version for a November Friday; nothing special confirmed. "
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "no flea market on a friday.",
+        "de": "freitags kein flohmarkt.",
+        "tr": "cuma günü bit pazarı yok."
+      },
+      "line": {
+        "en": "the big flea markets are on the weekend. today walk the second-hand shops in the glockenbach and haidhausen instead.",
+        "de": "die großen flohmärkte sind am wochenende. heute stattdessen durch die second-hand-läden im glockenbach und in haidhausen.",
+        "tr": "büyük bit pazarları hafta sonu. bugün onun yerine glockenbach ve haidhausen'daki ikinci el dükkanlarını gez."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Generic Munich version for a November Friday; nothing special confirmed. Flea markets are weekend events; Friday uses shops."
+    },
+    {
+      "kind": "skate",
+      "title": {
+        "en": "skating when it is dry.",
+        "de": "skaten, wenn es trocken ist.",
+        "tr": "kuruysa kaykay."
+      },
+      "line": {
+        "en": "no forecast confirmed, so check the sky first. the olympiapark has smooth ground; if it is wet, take the shoes and get a hot drink.",
+        "de": "keine vorhersage bestätigt, also erst den himmel prüfen. der olympiapark hat glatten boden; ist es nass, schuhe mitnehmen und heißes trinken holen.",
+        "tr": "tahmin doğrulanmadı, önce gökyüzüne bak. olympiapark'ın zemini düz; ıslaksa ayakkabıyla çık, sıcak bir şey iç."
+      },
+      "place": {
+        "en": "olympiapark",
+        "de": "olympiapark",
+        "tr": "olympiapark"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. "
+    },
+    {
+      "kind": "cook",
+      "title": {
+        "en": "cook together, five dishes.",
+        "de": "zusammen kochen, fünf gerichte.",
+        "tr": "birlikte pişir, beş yemek."
+      },
+      "line": {
+        "en": "go to the viktualienmarkt before it closes, buy for five, then cook at home. everyone brings one thing.",
+        "de": "zum viktualienmarkt, bevor er schließt, für fünf einkaufen und zuhause kochen. jeder bringt etwas mit.",
+        "tr": "kapanmadan viktualienmarkt'a git, beş kişilik al, evde pişir. herkes bir şey getirsin."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Generic Munich version for a November Friday; nothing special confirmed. Market stalls typically close early evening."
+    },
+    {
+      "kind": "sauna",
+      "title": {
+        "en": "sauna on a cold friday.",
+        "de": "sauna an einem kalten freitag.",
+        "tr": "soğuk bir cumada sauna."
+      },
+      "line": {
+        "en": "the best answer to november. therme erding is the big one and open daily; or a smaller sauna in the city. towel, water, three rounds.",
+        "de": "die beste antwort auf den november. die therme erding ist die große und täglich offen; oder eine kleinere sauna in der stadt. handtuch, wasser, drei runden.",
+        "tr": "kasıma en iyi cevap. therme erding büyük olan ve her gün açık; ya da şehirde daha küçük bir sauna. havlu, su, üç tur."
+      },
+      "place": {
+        "en": "therme erding",
+        "de": "therme erding",
+        "tr": "therme erding"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. Therme Erding is generally open daily; hours not verified."
+    },
+    {
       "kind": "openmic",
       "title": {
         "en": "comedy open mic, lucky punch.",
@@ -22,6 +463,195 @@
       "hour": 18,
       "minute": 0,
       "why": "LUCKY PUNCH Comedy Open Mic at the Hoftheater (Sendling), Fri 6.11.2026 18:00, per mvp.de and regioactive.de listings (tickets from 9.90 euros)."
+    },
+    {
+      "kind": "pingpong",
+      "title": {
+        "en": "ping-pong, winner stays.",
+        "de": "tischtennis, der sieger bleibt.",
+        "tr": "masa tenisi, kazanan kalır."
+      },
+      "line": {
+        "en": "a table in a bar or a club with free tables. winner stays on, loser buys the next round.",
+        "de": "ein tisch in einer bar oder einem verein mit freien tischen. der sieger bleibt, der verlierer gibt die nächste runde aus.",
+        "tr": "bir barda ya da boş masası olan bir kulüpte masa. kazanan kalır, kaybeden sonraki turu ısmarlar."
+      },
+      "place": {
+        "en": "tischtennis",
+        "de": "tischtennis",
+        "tr": "tischtennis"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Generic Munich version for a November Friday; nothing special confirmed. "
+    },
+    {
+      "kind": "bouldering",
+      "title": {
+        "en": "bouldering after work.",
+        "de": "bouldern nach der arbeit.",
+        "tr": "işten sonra bouldering."
+      },
+      "line": {
+        "en": "indoor climbing is the plan for a cold evening. the boulderwelt in munich is one of several halls; book a slot and bring chalk.",
+        "de": "klettern drinnen ist der plan für einen kalten abend. die boulderwelt münchen ist eine von mehreren hallen; slot buchen, magnesia mitbringen.",
+        "tr": "soğuk bir akşam için kapalı tırmanış plan. boulderwelt münchen birkaç salondan biri; yer ayır, magnezyum getir."
+      },
+      "place": {
+        "en": "boulderwelt münchen",
+        "de": "boulderwelt münchen",
+        "tr": "boulderwelt münchen"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. Hours not verified."
+    },
+    {
+      "kind": "picnic",
+      "title": {
+        "en": "an indoor picnic.",
+        "de": "ein picknick drinnen.",
+        "tr": "içeride piknik."
+      },
+      "line": {
+        "en": "it is too cold for the park. spread a blanket in a living room or a hall, bring bread, cheese and something warm.",
+        "de": "für den park zu kalt. decke im wohnzimmer oder einer halle ausbreiten, brot, käse und etwas warmes mitbringen.",
+        "tr": "park için çok soğuk. oturma odasına ya da bir salona battaniye ser, ekmek, peynir ve sıcak bir şey getir."
+      },
+      "place": {
+        "en": "zuhause",
+        "de": "zuhause",
+        "tr": "zuhause"
+      },
+      "hour": 17,
+      "minute": 30,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. "
+    },
+    {
+      "kind": "crawl",
+      "title": {
+        "en": "a friday bar crawl.",
+        "de": "eine freitags-kneipentour.",
+        "tr": "cuma bar turu."
+      },
+      "line": {
+        "en": "four bars in the glockenbach, one drink each. start at six, finish before midnight, keep the order.",
+        "de": "vier bars im glockenbach, je ein getränk. um sechs beginnen, vor mitternacht fertig, reihenfolge halten.",
+        "tr": "glockenbach'ta dört bar, her birinde bir içki. altıda başla, gece yarısından önce bitir, sırayı koru."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Generic Munich version for a November Friday; nothing special confirmed. No FC Bayern, 1860 or national-team match confirmed for Fri 6.11 (Bayern play at Mainz on Sat 7.11). "
+    },
+    {
+      "kind": "stars",
+      "title": {
+        "en": "stars if the sky is clear.",
+        "de": "sterne, wenn der himmel klar ist.",
+        "tr": "gökyüzü açıksa yıldızlar."
+      },
+      "line": {
+        "en": "no forecast confirmed, so only go if it is clear. the olympiaberg is dark enough on its upper side; wear warm layers.",
+        "de": "keine vorhersage bestätigt, also nur bei klarem himmel. der olympiaberg ist an seiner oberen seite dunkel genug; mehrere schichten anziehen.",
+        "tr": "tahmin doğrulanmadı, sadece hava açıksa git. olympiaberg'in üst tarafı yeterince karanlık; kat kat giyin."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. "
+    },
+    {
+      "kind": "football",
+      "title": {
+        "en": "five-a-side or a screen.",
+        "de": "kleinfeld oder bildschirm.",
+        "tr": "halı saha ya da ekran."
+      },
+      "line": {
+        "en": "no match to watch tonight, so play: a hall pitch at six, or a table at a pub for the bayern build-up.",
+        "de": "heute kein spiel zu schauen, also selbst spielen: eine halle um sechs, oder ein pubtisch für die bayern-einstimmung.",
+        "tr": "bu akşam izlenecek maç yok, o yüzden oyna: altıda bir salon sahası ya da bayern öncesi pubda masa."
+      },
+      "place": {
+        "en": "kleinfeld",
+        "de": "kleinfeld",
+        "tr": "kleinfeld"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "No FC Bayern, 1860 or national-team match confirmed for Fri 6.11 (Bayern play at Mainz on Sat 7.11). "
+    },
+    {
+      "kind": "tram",
+      "title": {
+        "en": "ride the 19 to the end.",
+        "de": "mit der 19 bis zur endstation.",
+        "tr": "19 numaralı tramvayla sona kadar."
+      },
+      "line": {
+        "en": "the 19 crosses the old town and the maximilianstrasse. board at the stachus at dusk and ride to the last stop.",
+        "de": "die 19 quert die altstadt und die maximilianstraße. in der dämmerung am stachus einsteigen und bis zur endhaltestelle fahren.",
+        "tr": "19 eski şehri ve maximilianstrasse'yi geçer. alacakaranlıkta stachus'tan bin, son durağa kadar git."
+      },
+      "place": {
+        "en": "stachus",
+        "de": "stachus",
+        "tr": "stachus"
+      },
+      "hour": 16,
+      "minute": 45,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. "
+    },
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "jazz at the unterfahrt.",
+        "de": "jazz in der unterfahrt.",
+        "tr": "unterfahrt'ta caz."
+      },
+      "line": {
+        "en": "the unterfahrt in haidhausen is the town's jazz cellar. check the evening programme, then get a table early.",
+        "de": "die unterfahrt in haidhausen ist der jazzkeller der stadt. abendprogramm prüfen und früh einen tisch sichern.",
+        "tr": "haidhausen'daki unterfahrt şehrin caz mahzeni. akşam programına bak, erkenden masa tut."
+      },
+      "place": {
+        "en": "unterfahrt",
+        "de": "unterfahrt",
+        "tr": "unterfahrt"
+      },
+      "hour": 20,
+      "minute": 30,
+      "why": "Generic Munich version for a November Friday; nothing special confirmed. Programme not verified."
+    },
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a dusk walk in the englischer garten.",
+        "de": "dämmerungsspaziergang im englischen garten.",
+        "tr": "englischer garten'de alacakaranlık yürüyüşü."
+      },
+      "line": {
+        "en": "the sun sets at about 16:40; walk from the chinesischer turm to the monopteros in the last light and end with a hot drink.",
+        "de": "die sonne geht gegen 16:40 unter; im letzten licht vom chinesischen turm zum monopteros und mit einem heißgetränk enden.",
+        "tr": "güneş 16:40 civarı batıyor; son ışıkta chinesischer turm'dan monopteros'a yürü, sıcak bir içecekle bitir."
+      },
+      "place": {
+        "en": "chinesischer turm",
+        "de": "chinesischer turm",
+        "tr": "chinesischer turm"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Friday 6.11.2026 in early November (typical 1-8°C, no forecast confirmed, so kept indoor-friendly or dress-warm); sunrise about 06:55, sunset about 16:40. "
     }
   ]
 }
