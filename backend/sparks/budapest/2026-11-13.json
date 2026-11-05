@@ -1,0 +1,14 @@
+{
+  "city": "budapest",
+  "day": "2026-11-13",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "the advent bazilika opens on szent istván tér.", "de": "der advent bazilika öffnet am szent istván tér.", "tr": "advent bazilika szent istván tér'de açılıyor." },
+      "line": { "en": "the christmas market by the basilica opens today and runs until 1 january 2027. the stalls are on szent istván tér.", "de": "der weihnachtsmarkt an der basilika öffnet heute und läuft bis 1. januar 2027. die stände stehen auf dem szent istván tér.", "tr": "bazilikanın yanındaki noel pazarı bugün açılıyor ve 1 ocak 2027'ye kadar sürüyor. tezgâhlar szent istván tér'de." },
+      "place": { "en": "advent bazilika", "de": "advent bazilika", "tr": "advent bazilika" },
+      "hour": 17, "minute": 0,
+      "why": "Advent Bazilika Christmas market opening Fri 13 Nov 2026, running to 1 Jan 2027 (Rustourismnews, citing the official programme); an older Time Out piece gives 14 Nov, so confirm on adventbazilika.hu."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "city": "budapest",
+  "day": "2026-11-12",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "noémi barkóczi at the müpa festival theatre.", "de": "noémi barkóczi im müpa festival theatre.", "tr": "müpa festival theatre'da noémi barkóczi." },
+      "line": { "en": "a world music, jazz and pop concert at 20:00 in the festival theatre. tickets were listed at 3,900 to 6,900 huf.", "de": "ein konzert mit world music, jazz und pop um 20:00 im festival theatre. tickets waren für 3.900 bis 6.900 huf gelistet.", "tr": "festival theatre'da saat 20:00'de world music, caz ve pop konseri. biletler 3.900 ile 6.900 huf arasında listelenmiş." },
+      "place": { "en": "müpa festival theatre", "de": "müpa festival theatre", "tr": "müpa festival theatre" },
+      "hour": 19, "minute": 30,
+      "why": "Noémi Barkóczi concert, Thu 12 Nov 2026 20:00, Festival Theatre, Müpa Budapest (mupa.hu programme listing)."
+    }
+  ]
+}
