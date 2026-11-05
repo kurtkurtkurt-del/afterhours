@@ -1,0 +1,38 @@
+{
+  "city": "vancouver",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "a039bbd7-8c53-4be9-a82d-ef3dfbfd2eb1",
+      "slug": "gryffin-d330ae05",
+      "title": "GRYFFIN",
+      "name": "Gryffin",
+      "source_url": "https://en.wikipedia.org/wiki/Gryffin",
+      "extract": "Daniel Griffith, known by his stage name Gryffin, is an American musician, DJ, and music producer. He gained recognition for remixing some well-known songs such as Tove Lo's \"Talking Body\", Maroon 5's \"Animals\" and Years & Years' \"Desire\".",
+      "en": {
+        "kicker": "american musician, dj and producer",
+        "who": "daniel griffith, known by his stage name gryffin, is an american musician, dj and music producer. he gained recognition for remixing songs such as tove lo's \"talking body\", maroon 5's \"animals\" and years & years' \"desire\".",
+        "facts": [
+          "He gained recognition for remixing some well-known songs such as Tove Lo's \"Talking Body\", Maroon 5's \"Animals\" and Years & Years' \"Desire\".",
+          "Daniel Griffith is known by his stage name Gryffin."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer musiker, dj und produzent",
+        "who": "daniel griffith, bekannt unter dem künstlernamen gryffin, ist ein amerikanischer musiker, dj und musikproduzent. bekannt wurde er durch remixe bekannter songs wie „talking body“ von tove lo, „animals“ von maroon 5 und „desire“ von years & years.",
+        "facts": [
+          "er wurde durch remixe bekannter songs wie „talking body“ von tove lo, „animals“ von maroon 5 und „desire“ von years & years bekannt.",
+          "daniel griffith ist unter seinem künstlernamen gryffin bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı müzisyen, dj ve yapımcı",
+        "who": "daniel griffith, gryffin sahne adıyla tanınan amerikalı bir müzisyen, dj ve müzik yapımcısıdır. tove lo'nun \"talking body\", maroon 5'in \"animals\" ve years & years'ın \"desire\" parçalarının remixleriyle ün kazandı.",
+        "facts": [
+          "tove lo'nun \"talking body\", maroon 5'in \"animals\" ve years & years'ın \"desire\" parçalarının remixleriyle tanındı.",
+          "daniel griffith, gryffin sahne adıyla bilinir."
+        ]
+      }
+    }
+  ]
+}

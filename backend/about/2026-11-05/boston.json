@@ -1,0 +1,198 @@
+{
+  "city": "boston",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "a233b93d-d9bc-46a8-b4a4-20d7071e425d",
+      "slug": "geese-fcdfa9c7",
+      "title": "GEESE",
+      "name": "Geese",
+      "source_url": "https://en.wikipedia.org/wiki/Geese_(band)",
+      "extract": "Geese is an American rock band from New York City that formed in 2016. It comprises lead vocalist and guitarist-keyboardist Cameron Winter, guitarist Emily Green, bassist Dominic DiGesu and drummer Max Bassin as of 2024. Guitarist Foster Hudson was a member of the group from 2019 until 2023. During live performances, the band is joined by keyboardist Sam Revaz.",
+      "en": {
+        "kicker": "american rock band · new york city, 2016",
+        "who": "geese are an american rock band from new york city, formed in 2016. lead vocalist and guitarist-keyboardist cameron winter leads the group, and keyboardist sam revaz joins them live.",
+        "facts": [
+          "Cameron Winter is the lead vocalist and guitarist-keyboardist of the band.",
+          "Guitarist Foster Hudson was a member of the group from 2019 until 2023."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · new york city, 2016",
+        "who": "geese sind eine amerikanische rockband aus new york city, gegründet 2016. sänger und gitarrist cameron winter führt die band an, live werden sie von keyboarder sam revaz unterstützt.",
+        "facts": [
+          "cameron winter ist sänger sowie gitarrist und keyboarder der band.",
+          "gitarrist foster hudson gehörte der gruppe von 2019 bis 2023 an."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan rock grubu · new york city, 2016",
+        "who": "geese, 2016'da kurulmuş new york city merkezli bir amerikan rock grubudur. baş vokalist ve gitarist-klavyeci cameron winter grubun önünde yer alır, canlı performanslarda klavyeci sam revaz da eşlik eder.",
+        "facts": [
+          "cameron winter grubun baş vokalisti ve gitarist-klavyecisidir.",
+          "gitarist foster hudson 2019'dan 2023'e kadar grubun üyesiydi."
+        ]
+      }
+    },
+    {
+      "id": "a736598f-b393-45aa-825f-43acb2d44577",
+      "slug": "michigander-20304c3f",
+      "title": "Michigander",
+      "name": "Michigander",
+      "source_url": "https://en.wikipedia.org/wiki/Michigander_(band)",
+      "extract": "Michigander is an American rock band created in 2014 from Kalamazoo, Michigan. It is the solo project centered around its vocalist, songwriter and multi-instrumentalist frontman, Jason Singer.",
+      "en": {
+        "kicker": "american rock band · kalamazoo, 2014",
+        "who": "michigander is an american rock band created in 2014 in kalamazoo, michigan. it is a solo project centered around its vocalist, songwriter and multi-instrumentalist frontman, jason singer.",
+        "facts": [
+          "Jason Singer is its vocalist, songwriter and multi-instrumentalist frontman.",
+          "The project was created in 2014 from Kalamazoo, Michigan."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · kalamazoo, 2014",
+        "who": "michigander ist eine amerikanische rockband, die 2014 in kalamazoo, michigan entstand. sie ist das soloprojekt von jason singer, dem sänger, songwriter und multiinstrumentalisten.",
+        "facts": [
+          "jason singer ist sänger, songwriter und multiinstrumentalist des projekts.",
+          "das projekt entstand 2014 in kalamazoo, michigan."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan rock grubu · kalamazoo, 2014",
+        "who": "michigander, 2014'te michigan'ın kalamazoo kentinde kurulmuş amerikan bir rock projesidir. solo bir proje olup merkezinde vokalist, söz yazarı ve çok enstrümanlı ön adam jason singer vardır.",
+        "facts": [
+          "jason singer projenin vokalisti, söz yazarı ve çok enstrümanlı ön adamıdır.",
+          "proje 2014'te kalamazoo, michigan'da kuruldu."
+        ]
+      }
+    },
+    {
+      "id": "9310ec6e-42e0-41cd-a498-40112af6689b",
+      "slug": "ax-and-the-hatchetmen-the-late-checkout-tour-202-f5640141",
+      "title": "Ax and the Hatchetmen: The Late Checkout Tour 2026",
+      "name": "Ax and the Hatchetmen",
+      "source_url": "https://en.wikipedia.org/wiki/Ax_and_the_Hatchetmen",
+      "extract": "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018. Members of the group include Axel Ellis, Salvatore Defilippis (vocals/guitar), Hunter Olshefke (vocals/bass), Phil Pistone (trumpet), Quinn Dolan (saxophone), and Chaandmon Croft (drums). They are signed with Arista Records and their first album, So Much to Tell You, was released October 24, 2025 with a tour of the same name.",
+      "en": {
+        "kicker": "american indie rock band · chicago, 2018",
+        "who": "ax and the hatchetmen are an american alternative and indie rock band formed in chicago in 2018. they are signed to arista records, and their first album came out in october 2025.",
+        "facts": [
+          "They are signed with Arista Records and their first album, So Much to Tell You, was released October 24, 2025 with a tour of the same name.",
+          "Members include Axel Ellis, Salvatore Defilippis, Hunter Olshefke, Phil Pistone, Quinn Dolan, and Chaandmon Croft."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische indie-rock-band · chicago, 2018",
+        "who": "ax and the hatchetmen sind eine amerikanische alternative- und indie-rockband, die 2018 in chicago gegründet wurde. sie stehen bei arista records unter vertrag, ihr erstes album erschien im oktober 2025.",
+        "facts": [
+          "ihr erstes album „so much to tell you“ erschien am 24. oktober 2025 und wurde mit einer gleichnamigen tour begleitet.",
+          "zur band gehören axel ellis, salvatore defilippis, hunter olshefke, phil pistone, quinn dolan und chaandmon croft."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan indie rock grubu · chicago, 2018",
+        "who": "ax and the hatchetmen, 2018'de chicago'da kurulmuş amerikan bir alternatif ve indie rock grubudur. arista records ile çalışıyorlar ve ilk albümleri ekim 2025'te çıktı.",
+        "facts": [
+          "ilk albümleri so much to tell you, 24 ekim 2025'te yayımlandı ve aynı adlı bir turneye eşlik etti.",
+          "grupta axel ellis, salvatore defilippis, hunter olshefke, phil pistone, quinn dolan ve chaandmon croft yer alıyor."
+        ]
+      }
+    },
+    {
+      "id": "d8f142b3-5fea-47fe-84f8-1d458d1a6bb4",
+      "slug": "journey-final-frontier-tour-an-evening-with-61b7b6f1",
+      "title": "JOURNEY - Final Frontier Tour (An Evening With)",
+      "name": "Journey",
+      "source_url": "https://en.wikipedia.org/wiki/Journey_(band)",
+      "extract": "Journey is an American rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch. The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals.",
+      "en": {
+        "kicker": "american rock band · san francisco, 1973",
+        "who": "journey is an american rock band formed in san francisco in 1973 by former members of santana, the steve miller band and frumious bandersnatch. arnel pineda sings lead vocals in the current lineup.",
+        "facts": [
+          "As of 2026 the band consists of Neal Schon, Jonathan Cain, Deen Castronovo, Arnel Pineda, Jason Derlatka and Todd Jensen.",
+          "The band was formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · san francisco, 1973",
+        "who": "journey ist eine amerikanische rockband, die 1973 in san francisco von ehemaligen mitgliedern von santana, der steve miller band und frumious bandersnatch gegründet wurde. arnel pineda singt in der aktuellen besetzung die lead-vocals.",
+        "facts": [
+          "2026 besteht die band aus neal schon, jonathan cain, deen castronovo, arnel pineda, jason derlatka und todd jensen.",
+          "die band wurde 1973 in san francisco von ehemaligen mitgliedern von santana, der steve miller band und frumious bandersnatch gegründet."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan rock grubu · san francisco, 1973",
+        "who": "journey, 1973'te san francisco'da santana, steve miller band ve frumious bandersnatch'ın eski üyeleri tarafından kurulmuş amerikan bir rock grubudur. bugünkü kadroda arnel pineda ön vokalde yer alıyor.",
+        "facts": [
+          "2026 itibarıyla grup neal schon, jonathan cain, deen castronovo, arnel pineda, jason derlatka ve todd jensen'den oluşuyor.",
+          "grup 1973'te san francisco'da santana, steve miller band ve frumious bandersnatch'ın eski üyeleri tarafından kuruldu."
+        ]
+      }
+    },
+    {
+      "id": "4d739f97-49f7-4ca4-b391-058c8cb64314",
+      "slug": "beartooth-pure-ecstasy-world-tour-18068ac1",
+      "title": "Beartooth: Pure Ecstasy World Tour",
+      "name": "Beartooth",
+      "source_url": "https://en.wikipedia.org/wiki/Beartooth_(band)",
+      "extract": "Beartooth is an American rock band founded by vocalist and multi-instrumentalist Caleb Shomo in Columbus, Ohio, in 2012. Originally, Beartooth was a studio project with Shomo performing all instruments, before expanding to a group with four or five members over their existence. They are known for relatively more conventional songwriting than some of Shomo's other work, with an emphasis on melodic hooks and catchy choruses. Beartooth has been signed to Red Bull Records since 2013; their debut EP Sick was released on July 26, 2013, followed by the debut full-length album Disgusting on June 10, 2014. Since then, Shomo has released a further five studio albums under the Beartooth moniker: Aggres",
+      "en": {
+        "kicker": "american rock band · columbus, ohio, 2012",
+        "who": "beartooth is an american rock band founded by vocalist Caleb Shomo in Columbus, Ohio, in 2012. it began as a studio project with shomo playing every instrument, and later grew into a group of four or five members.",
+        "facts": [
+          "Beartooth has been signed to Red Bull Records since 2013.",
+          "Their debut EP Sick was released on July 26, 2013, followed by the debut full-length album Disgusting on June 10, 2014."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · columbus, ohio, 2012",
+        "who": "beartooth ist eine amerikanische rockband, die 2012 in columbus, ohio, von sänger caleb shomo gegründet wurde. zunächst war sie ein studioprojekt, bei dem shomo alle instrumente spielte; später wuchs sie zu einer band mit vier oder fünf mitgliedern.",
+        "facts": [
+          "beartooth ist seit 2013 bei red bull records unter vertrag.",
+          "ihre debüt-ep sick erschien am 26. juli 2013, gefolgt vom debütalbum disgusting am 10. juni 2014."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan rock grubu · columbus, ohio, 2012",
+        "who": "beartooth, 2012'de ohio'nun columbus kentinde vokalist caleb shomo tarafından kurulmuş amerikan bir rock grubudur. önce shomo'nun tüm enstrümanları kendisinin çaldığı bir stüdyo projesiydi, sonra dört ya da beş üyeli bir gruba dönüştü.",
+        "facts": [
+          "beartooth 2013'ten beri red bull records ile çalışıyor.",
+          "ilk ep'leri sick 26 temmuz 2013'te, ardından debut albümü disgusting 10 haziran 2014'te yayımlandı."
+        ]
+      }
+    },
+    {
+      "id": "5551baae-64f3-4076-a47a-a9d810044ef5",
+      "slug": "phillip-phillips-let-s-go-far-tour-18-9c977325",
+      "title": "Phillip Phillips: Let's Go Far Tour (18+)",
+      "name": "Phillip Phillips",
+      "source_url": "https://en.wikipedia.org/wiki/Phillip_Phillips",
+      "extract": "Phillip LaDon Phillips Jr. is an American singer-songwriter who rose to fame after winning the eleventh season of American Idol in 2012. His coronation song, \"Home\", became the best-selling coronation song in American Idol history.",
+      "en": {
+        "kicker": "american singer-songwriter · american idol, 2012",
+        "who": "phillip phillips is an american singer-songwriter who rose to fame after winning the eleventh season of american idol in 2012. his coronation song, \"home\", became the best-selling coronation song in american idol history.",
+        "facts": [
+          "His coronation song, \"Home\", became the best-selling coronation song in American Idol history.",
+          "Phillip LaDon Phillips Jr. is an American singer-songwriter who won the eleventh season of American Idol in 2012."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter · american idol, 2012",
+        "who": "phillip phillips ist ein amerikanischer singer-songwriter, der 2012 mit dem gewinn der elften staffel von american idol bekannt wurde. sein krönungssong „home“ wurde der meistverkaufte krönungssong in der geschichte der show.",
+        "facts": [
+          "sein krönungssong „home“ wurde der meistverkaufte krönungssong in der geschichte von american idol.",
+          "phillip laDon phillips jr. gewann 2012 die elfte staffel von american idol."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan şarkıcı-söz yazarı · american idol, 2012",
+        "who": "phillip phillips, 2012'de american idol'ın on birinci sezonunu kazanarak ün kazanan amerikalı bir şarkıcı ve söz yazarıdır. taç giyme şarkısı \"home\", american idol tarihinin en çok satan taç giyme şarkısı oldu.",
+        "facts": [
+          "taç giyme şarkısı \"home\", american idol tarihinin en çok satan taç giyme şarkısı oldu.",
+          "phillip laDon phillips jr. 2012'de american idol'ın on birinci sezonunu kazandı."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "city": "dublin",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "6729da43-85af-4955-8b61-bf3c91bb9d54",
+      "slug": "muna-c407b646",
+      "title": "MUNA",
+      "name": "Muna",
+      "source_url": "https://en.wikipedia.org/wiki/Muna_(band)",
+      "extract": "Muna is an American indie pop band consisting of Katie Gavin, Josette Maskin, and Naomi McPherson. They released two studio albums with RCA Records, About U (2017) and Saves the World (2019), before signing with independent label Saddest Factory Records, which released their third studio album, Muna, in June 2022, and Dancing on the Wall in May 2026.",
+      "en": {
+        "kicker": "american indie pop band · about u, 2017",
+        "who": "muna is an american indie pop band made up of katie gavin, josette maskin and naomi mcpherson. they released two albums with rca records before signing with the independent label saddest factory records.",
+        "facts": [
+          "They released two studio albums with RCA Records, About U (2017) and Saves the World (2019).",
+          "Saddest Factory Records released their third studio album, Muna, in June 2022, and Dancing on the Wall in May 2026."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische indie-pop-band · about u, 2017",
+        "who": "muna ist eine amerikanische indie-pop-band aus katie gavin, josette maskin und naomi mcpherson. nach zwei alben bei rca records wechselten sie zum independent-label saddest factory records.",
+        "facts": [
+          "bei rca records erschienen die studioalben about u (2017) und saves the world (2019).",
+          "bei saddest factory records erschien im juni 2022 das dritte studioalbum muna und im mai 2026 dancing on the wall."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan indie pop grubu · about u, 2017",
+        "who": "muna; katie gavin, josette maskin ve naomi mcpherson'dan oluşan amerikan bir indie pop grubudur. rca records ile iki albüm yaptıktan sonra bağımsız plak şirketi saddest factory records'a geçtiler.",
+        "facts": [
+          "rca records ile about u (2017) ve saves the world (2019) albümlerini yayımladılar.",
+          "saddest factory records, haziran 2022'de üçüncü stüdyo albümü muna'yı ve mayıs 2026'da dancing on the wall'ı çıkardı."
+        ]
+      }
+    },
+    {
+      "id": "e9769586-1fad-4a5c-988b-8d4e4afe1622",
+      "slug": "car-bomb-28c02b8e",
+      "title": "Car Bomb",
+      "name": "Car Bomb",
+      "source_url": "https://en.wikipedia.org/wiki/Car_Bomb_(band)",
+      "extract": "Car Bomb is an American mathcore band from Rockville Centre, New York that was initially formed in 2000. Their debut album, Centralia, was released through Relapse Records on February 6, 2007.",
+      "en": {
+        "kicker": "american mathcore band · new york, 2000",
+        "who": "car bomb is an american mathcore band from rockville centre, new york, initially formed in 2000. their debut album, centralia, came out through relapse records.",
+        "facts": [
+          "Their debut album, Centralia, was released through Relapse Records on February 6, 2007.",
+          "Car Bomb is an American mathcore band from Rockville Centre, New York that was initially formed in 2000."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische mathcore-band · new york, 2000",
+        "who": "car bomb ist eine amerikanische mathcore-band aus rockville centre, new york, die ursprünglich 2000 gegründet wurde. ihr debütalbum centralia erschien bei relapse records.",
+        "facts": [
+          "das debütalbum centralia erschien am 6. februar 2007 bei relapse records.",
+          "die band wurde ursprünglich im jahr 2000 gegründet."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan mathcore grubu · new york, 2000",
+        "who": "car bomb, new york'un rockville centre kentinde ilk olarak 2000'de kurulmuş amerikan bir mathcore grubudur. debut albümleri centralia, relapse records üzerinden çıktı.",
+        "facts": [
+          "debut albümleri centralia, 6 şubat 2007'de relapse records aracılığıyla yayımlandı.",
+          "grup başlangıçta 2000 yılında kuruldu."
+        ]
+      }
+    },
+    {
+      "id": "1f4bb064-82b4-458e-8fc3-001e3dc052d7",
+      "slug": "the-stylistics-d1c715be",
+      "title": "The Stylistics",
+      "name": "The Stylistics",
+      "source_url": "https://en.wikipedia.org/wiki/The_Stylistics",
+      "extract": "The Stylistics are an American Philadelphia soul group that achieved their greatest chart success in the 1970s. They formed in 1968, with a lineup of singers Russell Thompkins Jr., Herb Murrell, Airrion Love, James Smith, and James Dunn. All of their U.S. hits were ballads characterized by the falsetto of Russell Thompkins Jr. and the production of Thom Bell. During the early 1970s, the group had twelve consecutive R&B top ten hits including \"Stop, Look, Listen\", \"You Are Everything\", \"Betcha by Golly, Wow\", \"I'm Stone in Love with You\", \"Break Up to Make Up\", \"People Make the World Go Round\" and \"You Make Me Feel Brand New\". They had five gold singles and three gold albums.",
+      "en": {
+        "kicker": "american philadelphia soul group · 1968",
+        "who": "the stylistics are an american philadelphia soul group whose greatest chart success came in the 1970s. they formed in 1968, and their ballads were shaped by falsetto singer russell thompkins jr. and producer thom bell.",
+        "facts": [
+          "During the early 1970s, the group had twelve consecutive R&B top ten hits, including \"Stop, Look, Listen\" and \"You Make Me Feel Brand New\".",
+          "They had five gold singles and three gold albums."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische philly-soul-gruppe · 1968",
+        "who": "the stylistics sind eine amerikanische soulgruppe aus philadelphia, ihre größten chart-erfolge hatten sie in den 1970er jahren. gegründet 1968, prägten die falsettstimme von russell thompkins jr. und die produktion von thom bell ihre balladen.",
+        "facts": [
+          "in den frühen 1970er jahren hatte die gruppe zwölf aufeinanderfolgende r&b-top-ten-hits, darunter „stop, look, listen“ und „you make me feel brand new“.",
+          "sie hatten fünf goldene singles und drei goldene alben."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan philadelphia soul grubu · 1968",
+        "who": "the stylistics, 1970'lerde en büyük liste başarısını yakalayan amerikan bir philadelphia soul grubudur. 1968'de kuruldular ve balladlarının sesi russell thompkins jr.'ın falsetto'su ve thom bell'in yapımıyla şekillendi.",
+        "facts": [
+          "1970'lerin başında grup, \"stop, look, listen\" ve \"you make me feel brand new\" dahil on iki art arda r&b top on hiti aldı.",
+          "beş altın single ve üç altın albüm çıkardılar."
+        ]
+      }
+    },
+    {
+      "id": "aa5d4ff1-59b3-43b3-b1b6-e9ab2f2bebb6",
+      "slug": "brennan-wedl-1f303261",
+      "title": "Brennan Wedl",
+      "name": "Brennan Wedl",
+      "source_url": "https://en.wikipedia.org/wiki/Brennan_Wedl",
+      "extract": "Brennan Wedl is an American indie musician from Minneapolis, Minnesota who is currently based in Nashville, Tennessee. Wedl was previously in the queercore group, Dazey and the Scouts.",
+      "en": {
+        "kicker": "american indie musician · minneapolis",
+        "who": "brennan wedl is an american indie musician from minneapolis, minnesota, now based in nashville, tennessee. previously in the queercore group dazey and the scouts.",
+        "facts": [
+          "Brennan Wedl is an American indie musician from Minneapolis, Minnesota who is currently based in Nashville, Tennessee.",
+          "Wedl was previously in the queercore group, Dazey and the Scouts."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer indie-musiker · minneapolis",
+        "who": "brennan wedl ist ein amerikanischer indie-musiker aus minneapolis, minnesota, und lebt inzwischen in nashville, tennessee. zuvor war wedl bei der queercore-gruppe dazey and the scouts.",
+        "facts": [
+          "brennan wedl stammt aus minneapolis, minnesota, und lebt derzeit in nashville, tennessee.",
+          "wedl war zuvor Mitglied der queercore-gruppe Dazey and the Scouts."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan indie müzisyen · minneapolis",
+        "who": "brennan wedl, minnesota'nın minneapolis kentinden bir amerikan indie müzisyenidir ve şu anda tennessee'nin nashville kentinde yaşıyor. daha önce queercore grubu dazey and the scouts'ta yer aldı.",
+        "facts": [
+          "brennan wedl minnesota'nın minneapolis kentinden, şu anda tennessee'nin nashville kentinde yaşıyor.",
+          "wedl daha önce queercore grubu dazey and the scouts'ın üyesiydi."
+        ]
+      }
+    },
+    {
+      "id": "fa5aa2b4-eb9a-4ac7-b42c-7892b68b56d2",
+      "slug": "de-staat-90c6ef05",
+      "title": "De Staat",
+      "name": "De Staat",
+      "source_url": "https://en.wikipedia.org/wiki/De_Staat",
+      "extract": "De Staat is a Dutch alternative rock band, formed in Nijmegen in 2006. Their name translates to \"The State\".",
+      "en": {
+        "kicker": "dutch alternative rock band · nijmegen, 2006",
+        "who": "de staat is a dutch alternative rock band from nijmegen. its name translates to \"the state\".",
+        "facts": [
+          "De Staat is a Dutch alternative rock band, formed in Nijmegen in 2006.",
+          "Their name translates to \"The State\"."
+        ]
+      },
+      "de": {
+        "kicker": "niederländische alternative-rock-band · nijmegen, 2006",
+        "who": "de staat ist eine niederländische alternative-rock-band aus nijmegen. der name bedeutet übersetzt „der staat“.",
+        "facts": [
+          "de staat ist eine niederländische alternative-rock-band, gegründet 2006 in nijmegen.",
+          "der name der band bedeutet übersetzt „der staat“."
+        ]
+      },
+      "tr": {
+        "kicker": "hollandalı alternatif rock grubu · nijmegen, 2006",
+        "who": "de staat, nijmegen'de kurulmuş hollandalı bir alternatif rock grubudur. adının çevirisi \"devlet\" anlamına gelir.",
+        "facts": [
+          "de staat, 2006'da nijmegen'de kurulmuş hollandalı bir alternatif rock grubudur.",
+          "grubun adı çevrildiğinde \"devlet\" anlamına gelir."
+        ]
+      }
+    }
+  ]
+}

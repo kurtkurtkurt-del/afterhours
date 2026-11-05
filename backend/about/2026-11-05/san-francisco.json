@@ -1,0 +1,102 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "6faebfc3-47e6-4fe6-a34a-99a17fa6a8b7",
+      "slug": "nia-archives-6396c265",
+      "title": "Nia Archives",
+      "name": "Nia Archives",
+      "source_url": "https://en.wikipedia.org/wiki/Nia_Archives",
+      "extract": "Dehaney Nia Lishahn Hunt, known professionally as Nia Archives, is an English record producer, DJ, singer and songwriter. Born in Bradford in West Yorkshire, she moved to Leeds aged seven, out of the family home aged sixteen, and then to Greater Manchester, during which time she was inspired by jungle documentaries and the women within them.",
+      "en": {
+        "kicker": "english record producer, dj and songwriter",
+        "who": "dehaney nia lishahn hunt, known as nia archives, is an english record producer, dj, singer and songwriter. born in bradford, west yorkshire, she was inspired by jungle documentaries and the women within them.",
+        "facts": [
+          "Born in Bradford in West Yorkshire, she moved to Leeds aged seven.",
+          "She was inspired by jungle documentaries and the women within them."
+        ]
+      },
+      "de": {
+        "kicker": "englische produzentin, dj und songwriterin · bradford",
+        "who": "dehaney nia lishahn hunt, bekannt als nia archives, ist eine englische produzentin, dj, sängerin und songwriterin. sie stammt aus bradford in west yorkshire.",
+        "facts": [
+          "sie wurde in bradford in west yorkshire geboren und zog im alter von sieben jahren nach leeds.",
+          "sie ließ sich von jungle-dokumentationen und den frauen darin inspirieren."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz plak yapımcısı ve dj · bradford",
+        "who": "dehaney nia lishahn hunt, nia archives adıyla tanınan, ingiliz bir plak yapımcısı, dj, şarkıcı ve söz yazarıdır. bradford, west yorkshire'da doğdu.",
+        "facts": [
+          "west yorkshire'ın bradford kentinde doğdu ve yedi yaşındayken leeds'e taşındı.",
+          "jungle belgesellerinden ve içlerindeki kadınlardan ilham aldı."
+        ]
+      }
+    },
+    {
+      "id": "877bcee4-4d86-4636-a988-15543601b989",
+      "slug": "quadeca-bb6756fa",
+      "title": "Quadeca",
+      "name": "Quadeca",
+      "source_url": "https://en.wikipedia.org/wiki/Quadeca",
+      "extract": "Benjamin Fernando Barajas Lasky, better known by his stage name Quadeca, is an American singer-songwriter, record producer and rapper. Lasky began uploading songs and videos to his YouTube channel in the 2010s and began pursuing his musical career in the 2020s, which has since been met with critical acclaim.",
+      "en": {
+        "kicker": "american singer-songwriter and producer · youtube",
+        "who": "benjamin fernando barajas lasky, known as quadeca, is an american singer-songwriter, record producer and rapper. he began uploading songs and videos to his youtube channel in the 2010s.",
+        "facts": [
+          "Lasky began uploading songs and videos to his YouTube channel in the 2010s.",
+          "He began pursuing his music career in the 2020s, which has since been met with critical acclaim."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter und produzent",
+        "who": "benjamin fernando barajas lasky, bekannt als quadeca, ist ein amerikanischer singer-songwriter, musikproduzent und rapper. in den 2010er jahren begann er, songs und videos auf seinen youtube-kanal hochzuladen.",
+        "facts": [
+          "in den 2020er jahren verfolgte er seine musikkarriere ernsthaft, was ihm seither große kritikerresonanz einbrachte.",
+          "lasky lud in den 2010er jahren songs und videos auf seinen youtube-kanal hoch."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı singer-songwriter ve yapımcı · youtube",
+        "who": "benjamin fernando barajas lasky, quadeca adıyla tanınan amerikalı bir şarkıcı, söz yazarı, yapımcı ve rapçidir. 2010'larda youtube kanalına şarkı ve video yüklemeye başladı.",
+        "facts": [
+          "2020'lerde müzik kariyerinin peşine düştü ve bu çalışmalar o zamandan beri büyük eleştirel beğeni topladı.",
+          "lasky, 2010'larda youtube kanalına şarkı ve video yüklemeye başladı."
+        ]
+      }
+    },
+    {
+      "id": "2e146b48-258f-4f18-a99b-826e87adddd2",
+      "slug": "sienna-spiro-my-house-tour-c5d864e3",
+      "title": "Sienna Spiro: My House Tour",
+      "name": "Sienna Spiro",
+      "source_url": "https://en.wikipedia.org/wiki/Sienna_Spiro",
+      "extract": "Sienna Ann Spiro is an English singer-songwriter and record producer. Known for her distinct, powerful voice, she began sharing viral singing videos on TikTok in 2021. She started releasing music in 2024, including \"Maybe\", which became her debut on the UK Singles Chart. She released Sink Now, Swim Later, her debut extended play, in February 2025. Her breakthrough success came with the release of \"Die on This Hill\", which charted in numerous countries. She released her debut studio album, Visitor, on 3 July 2026, and achieved her first UK number one single with its track \"Great Expectation\".",
+      "en": {
+        "kicker": "english singer-songwriter and record producer",
+        "who": "sienna ann spiro is an english singer-songwriter and record producer. known for her powerful voice, she began sharing viral singing videos on tiktok in 2021.",
+        "facts": [
+          "She released her debut studio album, Visitor, on 3 July 2026.",
+          "She achieved her first UK number one single with its track \"Great Expectation\"."
+        ]
+      },
+      "de": {
+        "kicker": "englische singer-songwriterin und produzentin",
+        "who": "sienna ann spiro ist eine englische singer-songwriterin und musikproduzentin. bekannt für ihre kraftvolle stimme, begann sie 2021 mit viralen gesangsvideos auf tiktok.",
+        "facts": [
+          "sie veröffentlichte am 3. juli 2026 ihr debütalbum visitor.",
+          "mit dem titel „great expectation“ erreichte sie ihre erste nummer eins in großbritannien."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı-söz yazarı ve yapımcı",
+        "who": "sienna ann spiro, ingiliz bir şarkıcı, söz yazarı ve plak yapımcısıdır. güçlü sesiyle tanınır ve 2021'de tiktok'ta viral şarkı videoları paylaşmaya başladı.",
+        "facts": [
+          "debut stüdyo albümü visitor'ı 3 temmuz 2026'da yayımladı.",
+          "\"great expectation\" parçasıyla birleşik krallık'ta ilk numaralı single'ına ulaştı."
+        ]
+      }
+    }
+  ]
+}

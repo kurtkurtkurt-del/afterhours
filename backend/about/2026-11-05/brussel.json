@@ -1,0 +1,38 @@
+{
+  "city": "brussel",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "8d6053d0-ae75-4992-9392-7faba647a47e",
+      "slug": "skip-the-use-4fc1cbb2",
+      "title": "Skip The Use",
+      "name": "Skip the Use",
+      "source_url": "https://en.wikipedia.org/wiki/Skip_the_Use",
+      "extract": "Skip the Use is a French band with electro funk, rock and punk influences founded in 2008 with musicians from Ronchin, near Lille and made up of Mat Bastard (vocals), Yan Stefani (guitar), Nelson Martins (bass) and Enzo Gabert (drums). The band is signed with Polydor and has distribution arrangement with Universal Music.",
+      "en": {
+        "kicker": "french band with electro funk and punk · 2008",
+        "who": "skip the use is a french band with electro funk, rock and punk influences, founded in 2008 with musicians from ronchin, near lille.",
+        "facts": [
+          "The band is signed with Polydor and has distribution arrangement with Universal Music.",
+          "Skip the Use was founded in 2008 with musicians from Ronchin, near Lille."
+        ]
+      },
+      "de": {
+        "kicker": "französische band · electro-funk und punk · 2008",
+        "who": "skip the use ist eine französische band mit einflüssen aus electro-funk, rock und punk. sie wurde 2008 von musikern aus ronchin bei lille gegründet.",
+        "facts": [
+          "die band ist bei polydor unter vertrag und hat einen vertriebsvertrag mit universal music.",
+          "skip the use wurde 2008 von musikern aus ronchin bei lille gegründet."
+        ]
+      },
+      "tr": {
+        "kicker": "fransız electro funk ve punk grubu · 2008",
+        "who": "skip the use, electro funk, rock ve punk etkileriyle 2008'de lille yakınlarındaki ronchin'den müzisyenlerce kurulmuş fransız bir gruptur.",
+        "facts": [
+          "grup polydor ile sözleşmeli ve universal music ile dağıtım anlaşması var.",
+          "skip the use, 2008'de lille yakınlarındaki ronchin'den müzisyenlerce kuruldu."
+        ]
+      }
+    }
+  ]
+}

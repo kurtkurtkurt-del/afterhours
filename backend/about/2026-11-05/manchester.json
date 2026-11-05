@@ -1,0 +1,230 @@
+{
+  "city": "manchester",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "ef4bcbd8-5256-413d-ad94-bda727dcc5ff",
+      "slug": "bellowhead-ef076c8a",
+      "title": "Bellowhead",
+      "name": "Bellowhead",
+      "source_url": "https://en.wikipedia.org/wiki/Bellowhead",
+      "extract": "Bellowhead is an English contemporary folk band, active from 2004 to 2016, reforming in 2020. The eleven-piece act played traditional dance tunes, folk songs and shanties, with arrangements drawing inspiration from a wide range of musical styles and influences. The band included percussion and a four-piece brass section. Bellowhead's bandmembers played more than 20 instruments among them, whilst all performers provided vocals.",
+      "en": {
+        "kicker": "english folk band · 2004 to 2016",
+        "who": "bellowhead is an english contemporary folk band, active from 2004 to 2016 and reformed in 2020. the eleven-piece act played traditional dance tunes, folk songs and shanties.",
+        "facts": [
+          "The eleven-piece act played traditional dance tunes, folk songs and shanties, with arrangements drawing inspiration from a wide range of musical styles.",
+          "Bellowhead's bandmembers played more than 20 instruments among them, and all performers provided vocals."
+        ]
+      },
+      "de": {
+        "kicker": "englische folk-band · 2004 bis 2016",
+        "who": "bellowhead ist eine englische contemporary-folk-band, die von 2004 bis 2016 aktiv war und sich 2020 neu formierte. die elfköpfige formation spielte traditionelle tanzmelodien, folksongs und shanties.",
+        "facts": [
+          "die elfköpfige formation spielte traditionelle tanzmelodien, folksongs und shanties, mit arrangements aus einer breiten palette musikalischer stile.",
+          "die bandmitglieder spielten zusammen über 20 instrumente, und alle übernahmen gesang."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz folk grubu · 2004–2016",
+        "who": "bellowhead, 2004'ten 2016'ya kadar aktif olan ve 2020'de yeniden kurulan ingiliz bir çağdaş folk grubudur. on bir kişilik grup geleneksel dans melodileri, halk şarkıları ve shanty'ler çaldı.",
+        "facts": [
+          "grup geleneksel dans melodileri, halk şarkıları ve shanty'leri çok çeşitli müzik stillerinden ilham alan düzenlemelerle çaldı.",
+          "üyeler aralarında 20'den fazla enstrüman çalıyor ve tüm sanatçılar vokal yaptı."
+        ]
+      }
+    },
+    {
+      "id": "ecf7d561-4f30-45f8-b313-d9354871b305",
+      "slug": "muse-the-wow-signal-europa-tour-8f6c9cda",
+      "title": "Muse - The Wow! Signal Europa Tour",
+      "name": "Muse",
+      "source_url": "https://en.wikipedia.org/wiki/Muse_(band)",
+      "extract": "Muse are an English rock band from Teignmouth, Devon, formed in 1994. The band consists of Matt Bellamy, Chris Wolstenholme, and Dominic Howard.",
+      "en": {
+        "kicker": "english rock band · teignmouth, 1994",
+        "who": "muse is an english rock band from devon whose current members are matt bellamy, chris wolstenholme and dominic howard.",
+        "facts": [
+          "Muse are an English rock band from Teignmouth, Devon, formed in 1994.",
+          "The band consists of Matt Bellamy, Chris Wolstenholme, and Dominic Howard."
+        ]
+      },
+      "de": {
+        "kicker": "englische rockband · teignmouth, 1994",
+        "who": "muse ist eine englische rockband aus devon, deren aktuelle mitglieder matt bellamy, chris wolstenholme und dominic howard sind.",
+        "facts": [
+          "muse ist eine englische rockband aus teignmouth in devon, gegründet 1994.",
+          "zur band gehören matt bellamy, chris wolstenholme und dominic howard."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rock grubu · teignmouth, 1994",
+        "who": "muse, devon'un teignmouth kentinden 1994'te kurulmuş bir ingiliz rock grubudur. kadrosunda matt bellamy, chris wolstenholme ve dominic howard yer alıyor.",
+        "facts": [
+          "muse, 1994'te kurulmuş devon'lu bir ingiliz rock grubudur.",
+          "grubu matt bellamy, chris wolstenholme ve dominic howard oluşturuyor."
+        ]
+      }
+    },
+    {
+      "id": "4ffd6d29-e0eb-4329-b8af-5b4b48313ca9",
+      "slug": "ellur-7a4bd9b8",
+      "title": "Ellur",
+      "name": "Ellur",
+      "source_url": "https://en.wikipedia.org/wiki/Ellur",
+      "extract": "Ella Megan McNamara, known professionally as Ellur, is an English singer-songwriter from Halifax. She is the daughter of Embrace guitarist Richard McNamara. Her debut album At Home In My Mind was released in 2026.",
+      "en": {
+        "kicker": "english singer-songwriter · halifax",
+        "who": "ella megan mcnamara, known as ellur, is an english singer-songwriter from halifax. she is the daughter of embrace guitarist richard mcnamara.",
+        "facts": [
+          "She is the daughter of Embrace guitarist Richard McNamara.",
+          "Her debut album At Home In My Mind was released in 2026."
+        ]
+      },
+      "de": {
+        "kicker": "englische singer-songwriterin · halifax",
+        "who": "ella megan mcnamara, bekannt als ellur, ist eine englische singer-songwriterin aus halifax. sie ist die tochter von embrace-gitarrist richard mcnamara.",
+        "facts": [
+          "sie ist die tochter von embrace-gitarrist richard mcnamara.",
+          "ihr debütalbum at home in my mind erschien 2026."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı-söz yazarı · halifax",
+        "who": "ella megan mcnamara, ellur adıyla tanınan, halifax'ten bir ingiliz şarkıcı ve söz yazarıdır. embrace gitaristi richard mcnamara'nın kızıdır.",
+        "facts": [
+          "embrace gitaristi richard mcnamara'nın kızıdır.",
+          "debut albümü at home in my mind 2026'da çıktı."
+        ]
+      }
+    },
+    {
+      "id": "3580f4d2-e8dd-400b-92ef-e9cf07973bb6",
+      "slug": "ok-go-1df05b3a",
+      "title": "OK Go",
+      "name": "OK Go",
+      "source_url": "https://en.wikipedia.org/wiki/OK_Go",
+      "extract": "OK Go is an American rock band formed in 1998 and based in Los Angeles, California. The band is composed of Damian Kulash, Tim Nordwind, Dan Konopka, and Andy Ross.",
+      "en": {
+        "kicker": "american rock band · los angeles, 1998",
+        "who": "ok go is an american rock band formed in 1998 and based in los angeles, california. the band is composed of damian kulash, tim nordwind, dan konopka and andy ross.",
+        "facts": [
+          "The band is composed of Damian Kulash, Tim Nordwind, Dan Konopka, and Andy Ross.",
+          "OK Go is an American rock band formed in 1998 and based in Los Angeles, California."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · los angeles, 1998",
+        "who": "ok go ist eine amerikanische rockband, die 1998 gegründet wurde und in los angeles, kalifornien, ansässig ist. die band besteht aus damian kulash, tim nordwind, dan konopka und andy ross.",
+        "facts": [
+          "die band besteht aus damian kulash, tim nordwind, dan konopka und andy ross.",
+          "ok go wurde 1998 gegründet und hat sitz in los angeles, kalifornien."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan rock grubu · los angeles, 1998",
+        "who": "ok go, 1998'de kurulmuş ve kaliforniya'nın los angeles kentinde yer alan amerikan bir rock grubudur. kadrosu damian kulash, tim nordwind, dan konopka ve andy ross'tan oluşuyor.",
+        "facts": [
+          "grubu damian kulash, tim nordwind, dan konopka ve andy ross oluşturuyor.",
+          "ok go, 1998'de kurulmuş amerikan bir rock grubudur."
+        ]
+      }
+    },
+    {
+      "id": "95a395ab-e1b4-4ed3-9d9d-2daa0c28e218",
+      "slug": "little-angels-big-bad-and-back-tour-563ebae1",
+      "title": "Little Angels - Big Bad And Back Tour",
+      "name": "Little Angels",
+      "source_url": "https://en.wikipedia.org/wiki/Little_Angels",
+      "extract": "Little Angels are an English hard rock band predominantly active between the mid-1980s and mid-1990s. The band reformed to play the 2012 Download Festival. In February of 2026 they announced a UK tour scheduled for November, quickly adding extra dates due to ticket demand and then finally announcing that two further dates in Dublin and Belfast would begin the tour.",
+      "en": {
+        "kicker": "english hard rock band · reformed 2012",
+        "who": "little angels are an english hard rock band, predominantly active between the mid-1980s and mid-1990s. the band reformed to play the 2012 download festival.",
+        "facts": [
+          "The band reformed to play the 2012 Download Festival.",
+          "In February of 2026 they announced a UK tour scheduled for November, quickly adding extra dates due to ticket demand."
+        ]
+      },
+      "de": {
+        "kicker": "englische hardrock-band · reunion 2012",
+        "who": "little angels sind eine englische hardrock-band, die vor allem zwischen mitte der 1980er und mitte der 1990er jahre aktiv war. die band formierte sich für das download festival 2012 neu.",
+        "facts": [
+          "die band formierte sich 2012 für einen auftritt beim download festival neu.",
+          "im februar 2026 kündigten sie eine britische tour im november an, die wegen der ticketnachfrage schnell um weitere termine erweitert wurde."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz hard rock grubu · 2012'de yeniden kuruldu",
+        "who": "little angels, esas olarak 1980'lerin ortasıyla 1990'ların ortası arasında aktif olmuş ingiliz bir hard rock grubudur. grup 2012 download festivali için yeniden bir araya geldi.",
+        "facts": [
+          "grup 2012 download festivali'nde çalmak için yeniden bir araya geldi.",
+          "şubat 2026'da kasım ayı için bir ingiltere turnesi duyurdular; bilet talebi nedeniyle ek tarihler de hızla eklendi."
+        ]
+      }
+    },
+    {
+      "id": "96fe4af7-a12c-4218-9283-c971a5e78d8d",
+      "slug": "yard-act-06621a90",
+      "title": "Yard Act",
+      "name": "Yard Act",
+      "source_url": "https://en.wikipedia.org/wiki/Yard_Act",
+      "extract": "Yard Act is an English post-punk band from Leeds, West Yorkshire, formed in 2019. The band consists of James Smith, Ryan Needham (bass), Sam Shipstone (guitar) and Jay Russell (drums).",
+      "en": {
+        "kicker": "british post-punk band · leeds, 2019",
+        "who": "yard act are an english post-punk band from leeds, west yorkshire, formed in 2019. the band consists of james smith, ryan needham on bass, sam shipstone on guitar and jay russell on drums.",
+        "facts": [
+          "The band consists of James Smith, Ryan Needham (bass), Sam Shipstone (guitar) and Jay Russell (drums).",
+          "Yard Act is an English post-punk band from Leeds, West Yorkshire, formed in 2019."
+        ]
+      },
+      "de": {
+        "kicker": "englische post-punk-band · leeds, 2019",
+        "who": "yard act sind eine englische post-punk-band aus leeds, west yorkshire, gegründet 2019. zur besetzung gehören james smith, ryan needham (bass), sam shipstone (gitarre) und jay russell (schlagzeug).",
+        "facts": [
+          "die band besteht aus james smith, ryan needham (bass), sam shipstone (gitarre) und jay russell (schlagzeug).",
+          "yard act ist eine englische post-punk-band aus leeds, west yorkshire, gegründet 2019."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz post-punk grubu · leeds, 2019",
+        "who": "yard act, 2019'da kurulmuş west yorkshire'ın leeds kentinden ingiliz bir post-punk grubudur. kadroda james smith, ryan needham (bas), sam shipstone (gitar) ve jay russell (davul) yer alıyor.",
+        "facts": [
+          "grubu james smith, ryan needham (bas), sam shipstone (gitar) ve jay russell (davul) oluşturuyor.",
+          "yard act, 2019'da kurulmuş west yorkshire, leeds'ten ingiliz bir post-punk grubudur."
+        ]
+      }
+    },
+    {
+      "id": "14ae5494-c133-4745-86bb-96ec8db4b64a",
+      "slug": "seb-lowe-90a47b01",
+      "title": "Seb Lowe",
+      "name": "Seb Lowe",
+      "source_url": "https://en.wikipedia.org/wiki/Seb_Lowe",
+      "extract": "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. He is known for incorporating politics into his music, having started out uploading videos of his songs to TikTok.",
+      "en": {
+        "kicker": "english singer-songwriter · saddleworth",
+        "who": "sebastian lowe is an english singer-songwriter from saddleworth, greater manchester. he is known for bringing politics into his music, and he started out uploading videos of his songs to tiktok.",
+        "facts": [
+          "He is known for incorporating politics into his music.",
+          "He started out uploading videos of his songs to TikTok."
+        ]
+      },
+      "de": {
+        "kicker": "englischer singer-songwriter · saddleworth",
+        "who": "sebastian lowe ist ein englischer singer-songwriter aus saddleworth in greater manchester. er ist bekannt dafür, politik in seine musik einfließen zu lassen.",
+        "facts": [
+          "er ist dafür bekannt, politik in seine musik einfließen zu lassen.",
+          "er begann damit, videos seiner songs auf tiktok hochzuladen."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı-söz yazarı · saddleworth",
+        "who": "sebastian lowe, greater manchester'ın saddleworth kentinden bir ingiliz şarkıcı ve söz yazarıdır. müziğine siyaseti katmasıyla tanınır.",
+        "facts": [
+          "müziğine siyaseti dahil etmesiyle tanınır.",
+          "şarkılarının videolarını tiktok'a yükleyerek başladı."
+        ]
+      }
+    }
+  ]
+}

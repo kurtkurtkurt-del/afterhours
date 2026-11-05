@@ -1,0 +1,102 @@
+{
+  "city": "glasgow",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "a4112bf0-a298-4e9b-8f5c-29f3ff6d3df8",
+      "slug": "stevie-wonder-songs-in-the-key-of-life-performan-fd699e09",
+      "title": "Stevie Wonder: Songs In The Key of Life Performances",
+      "name": "Stevie Wonder",
+      "source_url": "https://en.wikipedia.org/wiki/Stevie_Wonder",
+      "extract": "Stevland Hardaway Morris, known professionally as Stevie Wonder, is an American singer-songwriter, musician, and record producer. He is widely regarded as one of the most influential musicians of the 20th century, and is credited as a pioneer and influence by musicians across a range of genres that include R&B, pop, soul, gospel, funk, and jazz. Wonder's use of synthesizers and other electronic musical instruments in the 1970s reshaped the conventions of contemporary R&B. He also helped drive such genres into the album era, crafting his LPs as cohesive and consistent, in addition to socially conscious statements with complex compositions.",
+      "en": {
+        "kicker": "american singer-songwriter and record producer",
+        "who": "stevland hardaway morris, known as stevie wonder, is an american singer-songwriter, musician and record producer. he is widely regarded as one of the most influential musicians of the 20th century.",
+        "facts": [
+          "Wonder's use of synthesizers and other electronic musical instruments in the 1970s reshaped the conventions of contemporary R&B.",
+          "He crafted his LPs as cohesive and consistent albums, in addition to socially conscious statements with complex compositions."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter und produzent",
+        "who": "stevland hardaway morris, bekannt als stevie wonder, ist ein amerikanischer singer-songwriter, musiker und produzent. er gilt als einer der einflussreichsten musiker des 20. jahrhunderts.",
+        "facts": [
+          "wonders einsatz von synthesizern und anderen elektronischen instrumenten in den 1970er jahren veränderte die konventionen des zeitgenössischen r&b.",
+          "er gestaltete seine langspielplatten als in sich geschlossene, konsistente alben, dazu kamen sozial engagierte aussagen mit komplexen kompositionen."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı singer-songwriter ve yapımcı",
+        "who": "stevland hardaway morris, stevie wonder adıyla tanınan amerikalı bir şarkıcı, söz yazarı, müzisyen ve yapımcıdır. 20. yüzyılın en etkili müzisyenlerinden biri olarak kabul edilir.",
+        "facts": [
+          "wonder'ın 1970'lerde sentezleyicileri ve diğer elektronik enstrümanları kullanması, çağdaş r&b'nin kurallarını yeniden şekillendirdi.",
+          "albümlerini tutarlı ve bütünlüklü, karmaşık bestelerle toplumsal duyarlılık taşıyan yapıtlar olarak kurguladı."
+        ]
+      }
+    },
+    {
+      "id": "a9e33e25-84b0-4ec1-8bc3-6b5b47031566",
+      "slug": "the-sheepdogs-23d1ee55",
+      "title": "The Sheepdogs",
+      "name": "The Sheepdogs",
+      "source_url": "https://en.wikipedia.org/wiki/The_Sheepdogs",
+      "extract": "The Sheepdogs are a Canadian rock band formed in Saskatoon, Saskatchewan, in 2004. The Sheepdogs were the first unsigned band to make the cover of Rolling Stone and have gone on to a career featuring multi-platinum album sales and four Juno Awards.",
+      "en": {
+        "kicker": "canadian rock band · saskatoon, 2004",
+        "who": "the sheepdogs are a canadian rock band formed in saskatoon, saskatchewan, in 2004. they were the first unsigned band to make the cover of rolling stone.",
+        "facts": [
+          "The Sheepdogs were the first unsigned band to make the cover of Rolling Stone.",
+          "They have gone on to a career featuring multi-platinum album sales and four Juno Awards."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische rockband · saskatoon, 2004",
+        "who": "the sheepdogs sind eine kanadische rockband, die 2004 in saskatoon, saskatchewan, gegründet wurde. sie waren die erste unsignierte band auf dem titelbild des rolling stone.",
+        "facts": [
+          "the sheepdogs waren die erste unsignierte band auf dem cover des rolling stone.",
+          "danach folgte eine karriere mit mehrfach-platin-verkäufen und vier juno awards."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı rock grubu · saskatoon, 2004",
+        "who": "the sheepdogs, 2004'te saskatchewan'ın saskatoon kentinde kurulmuş kanadalı bir rock grubudur. rolling stone'un kapağına çıkan ilk plak sözleşmesi olmayan grup oldular.",
+        "facts": [
+          "the sheepdogs, rolling stone kapağına çıkan ilk plak sözleşmesi olmayan gruptu.",
+          "ardından çoklu platin satışları ve dört juno ödülü içeren bir kariyer geldi."
+        ]
+      }
+    },
+    {
+      "id": "3b0d20e0-40cf-4236-952b-4bcdd0334181",
+      "slug": "ole-60-022c8d5e",
+      "title": "Ole 60",
+      "name": "Ole 60",
+      "source_url": "https://en.wikipedia.org/wiki/Ole_60",
+      "extract": "Ole 60 is an American country/alt-country band from Hawesville, Kentucky, formed in 2023, known for blending Appalachian storytelling with elements of grunge, southern rock, folk music, and traditional country. The band consists of Jacob Ty Young, Tristan Roby, Ryan Laslie, Colby Clark, Aden Wood (drums), Dwight McGlynn, and Dustin \"Catfish\" Fuqua. The band gained widespread attention in 2024 through breakout singles like \"smoke & a light\" and \"Thoughts of You\", and acclaimed debut album Smokestack Town in 2025.",
+      "en": {
+        "kicker": "american country band · hawesville, kentucky, 2023",
+        "who": "ole 60 is an american country and alt-country band from hawesville, kentucky, formed in 2023. they blend appalachian storytelling with grunge, southern rock, folk and traditional country.",
+        "facts": [
+          "The band gained widespread attention in 2024 through breakout singles like \"smoke & a light\" and \"Thoughts of You\".",
+          "Their acclaimed debut album, Smokestack Town, came out in 2025."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische country-band · hawesville, kentucky, 2023",
+        "who": "ole 60 ist eine amerikanische country- und alt-country-band aus hawesville, kentucky, gegründet 2023. sie verbinden appalachische erzähltraditionen mit grunge, southern rock, folk und traditionellem country.",
+        "facts": [
+          "die band erlangte 2024 mit singles wie „smoke & a light“ und „thoughts of you“ große aufmerksamkeit.",
+          "ihr gefeiertes debütalbum smokestack town erschien 2025."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan country grubu · hawesville, kentucky, 2023",
+        "who": "ole 60, 2023'te kentucky'nin hawesville kentinde kurulmuş amerikan bir country ve alt-country grubudur. appalachian hikâye anlatımını grunge, southern rock, folk ve geleneksel country ile harmanlarlar.",
+        "facts": [
+          "grup 2024'te \"smoke & a light\" ve \"thoughts of you\" gibi single'larla geniş ilgi gördü.",
+          "beğeni toplayan debut albümleri smokestack town 2025'te çıktı."
+        ]
+      }
+    }
+  ]
+}

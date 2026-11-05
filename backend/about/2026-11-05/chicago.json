@@ -1,0 +1,70 @@
+{
+  "city": "chicago",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "b0800153-94d7-46b1-bb97-e823c0a7597b",
+      "slug": "jai-wolf-ages-18-b62a2f7e",
+      "title": "Jai Wolf - Ages 18+",
+      "name": "Jai Wolf",
+      "source_url": "https://en.wikipedia.org/wiki/Jai_Wolf",
+      "extract": "Sajeeb Saha, known professionally as Jai Wolf, is a Bangladeshi-American DJ and producer. He is best known for his singles, \"Indian Summer\", \"Like It's Over\", and \"Starlight\". He is currently signed to Mom + Pop Music.",
+      "en": {
+        "kicker": "bangladeshi-american dj and producer",
+        "who": "sajeeb saha, known professionally as jai wolf, is a bangladeshi-american dj and producer. he is best known for the singles \"indian summer\", \"like it's over\" and \"starlight\".",
+        "facts": [
+          "He is best known for his singles, \"Indian Summer\", \"Like It's Over\", and \"Starlight\".",
+          "He is currently signed to Mom + Pop Music."
+        ]
+      },
+      "de": {
+        "kicker": "bangladeschisch-amerikanischer dj und produzent",
+        "who": "sajeeb saha, unter dem namen jai wolf bekannt, ist ein bangladeschisch-amerikanischer dj und produzent. bekannt ist er vor allem durch die singles „indian summer“, „like it's over“ und „starlight“.",
+        "facts": [
+          "am bekanntesten ist er für die singles „indian summer“, „like it's over“ und „starlight“.",
+          "er steht derzeit bei mom + pop music unter vertrag."
+        ]
+      },
+      "tr": {
+        "kicker": "bangladeşli-amerikalı dj ve yapımcı",
+        "who": "sajeeb saha, jai wolf adıyla tanınan bir bangladeşli-amerikalı dj ve yapımcıdır. en çok \"indian summer\", \"like it's over\" ve \"starlight\" single'larıyla biliniyor.",
+        "facts": [
+          "en çok \"indian summer\", \"like it's over\" ve \"starlight\" single'larıyla tanınır.",
+          "şu anda mom + pop music ile sözleşmeli."
+        ]
+      }
+    },
+    {
+      "id": "7f0717e1-fe6b-4297-bc04-8f96acea4d03",
+      "slug": "little-image-fall-2026-tour-aae11509",
+      "title": "Little Image: Fall 2026 Tour",
+      "name": "Little Image",
+      "source_url": "https://en.wikipedia.org/wiki/Little_Image",
+      "extract": "Little Image are an American alternative pop band from Dallas, Texas. They released their major label debut, Self Titled, on Hollywood Records on May 12, 2023, after the independent release of Musings in 2017.",
+      "en": {
+        "kicker": "american alt-pop band · dallas, texas",
+        "who": "little image are an american alternative pop band from dallas, texas. they released their major label debut, self titled, on hollywood records after the independent release of musings in 2017.",
+        "facts": [
+          "They released their major label debut, Self Titled, on Hollywood Records on May 12, 2023.",
+          "The independent release of Musings came in 2017, before their major label debut."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische alt-pop-band · dallas, texas",
+        "who": "little image sind eine amerikanische alternative-pop-band aus dallas, texas. ihr major-label-debüt „self titled“ erschien am 12. mai 2023 bei hollywood records, nach der unabhängigen veröffentlichung von musings im jahr 2017.",
+        "facts": [
+          "das major-label-debüt „self titled“ erschien am 12. mai 2023 bei hollywood records.",
+          "2017 erschien zunächst musings in unabhängiger veröffentlichung."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan alt-pop grubu · dallas, teksas",
+        "who": "little image, teksas'ın dallas kentinden amerikan bir alternatif pop grubudur. 2017'de bağımsız olarak çıkardıkları musings'in ardından major plak şirketi debut çalışması self titled'ı hollywood records ile yayımladılar.",
+        "facts": [
+          "major plak şirketi debut çalışması self titled, 12 mayıs 2023'te hollywood records'da yayımlandı.",
+          "grup 2017'de musings'i bağımsız olarak yayımladı."
+        ]
+      }
+    }
+  ]
+}

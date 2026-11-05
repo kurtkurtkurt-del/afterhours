@@ -1,0 +1,38 @@
+{
+  "city": "philadelphia",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "33e6fd12-c07d-4c95-a549-14ef7c5c2757",
+      "slug": "mountain-grass-unit-3c171b26",
+      "title": "Mountain Grass Unit",
+      "name": "Mountain Grass Unit",
+      "source_url": "https://en.wikipedia.org/wiki/Mountain_Grass_Unit",
+      "extract": "Mountain Grass Unit (MGU) is a four-piece bluegrass band founded in Birmingham, Alabama in 2018. The band consists of members Drury Anderson (lead vocals, mandolin), Luke Black (guitar), Sam Wilson (bass), and Josiah Nelson (fiddle). Unlike typical bluegrass arrangements, MGU does not feature a banjo.",
+      "en": {
+        "kicker": "bluegrass band · birmingham, alabama, 2018",
+        "who": "mountain grass unit is a four-piece bluegrass band founded in birmingham, alabama, in 2018. unlike typical bluegrass arrangements, the band does not feature a banjo.",
+        "facts": [
+          "The band consists of members Drury Anderson (lead vocals, mandolin), Luke Black (guitar), Sam Wilson (bass), and Josiah Nelson (fiddle).",
+          "Unlike typical bluegrass arrangements, MGU does not feature a banjo."
+        ]
+      },
+      "de": {
+        "kicker": "bluegrass-band · birmingham, alabama, 2018",
+        "who": "mountain grass unit ist eine vierköpfige bluegrass-band, die 2018 in birmingham, alabama, gegründet wurde. anders als bei typischen bluegrass-arrangements kommt bei ihr kein banjo vor.",
+        "facts": [
+          "zur band gehören drury anderson (leadgesang, mandoline), luke black (gitarre), sam wilson (bass) und josiah nelson (fiedel).",
+          "anders als bei typischen bluegrass-arrangements spielt die band kein banjo."
+        ]
+      },
+      "tr": {
+        "kicker": "bluegrass grubu · birmingham, alabama, 2018",
+        "who": "mountain grass unit, 2018'de alabama'nın birmingham kentinde kurulmuş dört kişilik bir bluegrass grubudur. tipik bluegrass düzenlemelerinden farklı olarak banjo kullanmazlar.",
+        "facts": [
+          "grubun üyeleri drury anderson (ana vokal, mandolin), luke black (gitar), sam wilson (bas) ve josiah nelson (keman)dır.",
+          "tipik bluegrass düzenlemelerinin aksine grupta banjo yer almaz."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "austin",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "24a7bc1e-3c2a-4db8-a6bb-badda514bae6",
+      "slug": "sim-9c7e81a2",
+      "title": "SiM",
+      "name": "SiM",
+      "source_url": "https://en.wikipedia.org/wiki/SiM",
+      "extract": "SiM are a Japanese metalcore band from Kanagawa Prefecture formed in 2004. The band currently consists of MAH (vocals), SHOW-HATE (guitar), SIN (bass), and GODRi (drums). Their musical style mixes nu metal, alternative, hip-hop, ska, reggae, dub, and punk with rebellious lyrics and songs with attitude.",
+      "en": {
+        "kicker": "japanese metalcore band · kanagawa, 2004",
+        "who": "sim are a japanese metalcore band from kanagawa prefecture, formed in 2004. they mix nu metal, alternative, hip-hop, ska and punk with rebellious lyrics.",
+        "facts": [
+          "Their musical style mixes nu metal, alternative, hip-hop, ska, reggae, dub, and punk with rebellious lyrics and songs with attitude.",
+          "The band currently consists of MAH (vocals), SHOW-HATE (guitar), SIN (bass), and GODRi (drums)."
+        ]
+      },
+      "de": {
+        "kicker": "japanische metalcore-band · kanagawa, 2004",
+        "who": "sim sind eine japanische metalcore-band aus der präfektur kanagawa, gegründet 2004. ihr stil verbindet nu metal, alternative, hip-hop, ska und punk mit rebellischen texten.",
+        "facts": [
+          "ihr musikalischer stil verbindet nu metal, alternative, hip-hop, ska, reggae, dub und punk mit rebellischen texten und attitüde.",
+          "die band besteht derzeit aus MAH (gesang), SHOW-HATE (gitarre), SIN (bass) und GODRi (schlagzeug)."
+        ]
+      },
+      "tr": {
+        "kicker": "japon metalcore grubu · kanagawa, 2004",
+        "who": "sim, kanagawa eyaletinden 2004'te kurulmuş bir japon metalcore grubudur. müzikleri nu metal, alternatif, hip-hop, ska ve punk'ı asi sözlerle harmanlar.",
+        "facts": [
+          "müzik tarzları, nu metal, alternatif, hip-hop, ska, reggae, dub ve punk'ı asi sözler ve tavırlı şarkılarla harmanlar.",
+          "grup şu anda MAH (vokal), SHOW-HATE (gitar), SIN (bas) ve GODRi (davul) kadrosuyla çalıyor."
+        ]
+      }
+    }
+  ]
+}

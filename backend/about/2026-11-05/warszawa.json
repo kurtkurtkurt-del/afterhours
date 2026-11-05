@@ -1,0 +1,38 @@
+{
+  "city": "warszawa",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "390638c4-e7f4-466d-9cf3-9ef997bb7efb",
+      "slug": "muna-gets-so-hot-tour-6f9b0cc6",
+      "title": "MUNA: Gets So Hot Tour",
+      "name": "Muna",
+      "source_url": "https://en.wikipedia.org/wiki/Muna_(band)",
+      "extract": "Muna is an American indie pop band consisting of Katie Gavin, Josette Maskin, and Naomi McPherson. They released two studio albums with RCA Records, About U (2017) and Saves the World (2019), before signing with independent label Saddest Factory Records, which released their third studio album, Muna, in June 2022, and Dancing on the Wall in May 2026.",
+      "en": {
+        "kicker": "american indie pop band · about u, 2017",
+        "who": "muna is an american indie pop band made up of katie gavin, josette maskin and naomi mcpherson. they released two albums with rca records before signing with the independent label saddest factory records.",
+        "facts": [
+          "They released two studio albums with RCA Records, About U (2017) and Saves the World (2019).",
+          "Saddest Factory Records released their third studio album, Muna, in June 2022, and Dancing on the Wall in May 2026."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische indie-pop-band · about u, 2017",
+        "who": "muna ist eine amerikanische indie-pop-band aus katie gavin, josette maskin und naomi mcpherson. nach zwei alben bei rca records wechselten sie zum independent-label saddest factory records.",
+        "facts": [
+          "bei rca records erschienen die studioalben about u (2017) und saves the world (2019).",
+          "bei saddest factory records erschien im juni 2022 das dritte studioalbum muna und im mai 2026 dancing on the wall."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan indie pop grubu · about u, 2017",
+        "who": "muna; katie gavin, josette maskin ve naomi mcpherson'dan oluşan amerikan bir indie pop grubudur. rca records ile iki albüm yaptıktan sonra bağımsız plak şirketi saddest factory records'a geçtiler.",
+        "facts": [
+          "rca records ile about u (2017) ve saves the world (2019) albümlerini yayımladılar.",
+          "saddest factory records, haziran 2022'de üçüncü stüdyo albümü muna'yı ve mayıs 2026'da dancing on the wall'ı çıkardı."
+        ]
+      }
+    }
+  ]
+}

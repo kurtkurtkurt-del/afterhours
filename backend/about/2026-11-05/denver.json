@@ -1,0 +1,38 @@
+{
+  "city": "denver",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "bf03d974-d1f2-4839-9c6d-6a4d72afaccd",
+      "slug": "shaun-cassidy-cebfc9d0",
+      "title": "Shaun Cassidy",
+      "name": "Shaun Cassidy",
+      "source_url": "https://en.wikipedia.org/wiki/Shaun_Cassidy",
+      "extract": "Shaun Paul Cassidy is an American singer, actor, television producer and screenwriter. He has created or produced a number of television series, including American Gothic, Roar, and Invasion. Cassidy was also an executive producer and writer for NBC's medical drama New Amsterdam.",
+      "en": {
+        "kicker": "american singer, actor and producer",
+        "who": "shaun paul cassidy is an american singer, actor, television producer and screenwriter. he has created or produced a number of television series, including american gothic, roar and invasion.",
+        "facts": [
+          "He has created or produced a number of television series, including American Gothic, Roar, and Invasion.",
+          "Cassidy was also an executive producer and writer for NBC's medical drama New Amsterdam."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer sänger, schauspieler und produzent",
+        "who": "shaun paul cassidy ist ein amerikanischer sänger, schauspieler, fernsehproduzent und drehbuchautor. er hat zahlreiche tv-serien erfunden oder produziert, darunter american gothic, roar und invasion.",
+        "facts": [
+          "er hat zahlreiche fernsehserien erfunden oder produziert, darunter american gothic, roar und invasion.",
+          "cassidy war außerdem executive producer und autor der nbc-medizinserie new amsterdam."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı, oyuncu ve yapımcı",
+        "who": "shaun paul cassidy, amerikalı bir şarkıcı, oyuncu, televizyon yapımcısı ve senaristtir. american gothic, roar ve invasion gibi bir dizi televizyon dizisini yaratmış ya da yapımcılığını üstlenmiştir.",
+        "facts": [
+          "american gothic, roar ve invasion dahil birçok televizyon dizisini yaratmış ya da yapımcılığını üstlenmiştir.",
+          "cassidy ayrıca nbc'nin tıbbi dramı new amsterdam'ın yapımcısı ve yazarıydı."
+        ]
+      }
+    }
+  ]
+}

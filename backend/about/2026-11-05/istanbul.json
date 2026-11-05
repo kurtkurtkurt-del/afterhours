@@ -1,0 +1,38 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "02ae6875-7c07-4986-83cb-53097b30a325",
+      "slug": "yuksek-sadakat-42ba538b",
+      "title": "Yüksek Sadakat",
+      "name": "Yüksek Sadakat",
+      "source_url": "https://en.wikipedia.org/wiki/Y%C3%BCksek_Sadakat",
+      "extract": "Yüksek Sadakat is a Turkish rock band that was formed in 1997 by Kutlu Özmakinacı, but became popular in early 2006 with their first album with the same name. The founder and bass player Kutlu Özmakinacı, used to be the editor of a music magazine called Blue Jean. Their music is a mix of pop rock with powerful beats utilizing Turkish instruments, keyboard and guitar solos. The name of the band is a literal translation of the term High Fidelity (Hi-Fi) into Turkish.",
+      "en": {
+        "kicker": "turkish pop rock band · 1997",
+        "who": "yüksek sadakat is a turkish rock band formed in 1997 by kutlu özmakinacı. it became popular in early 2006 with its first album of the same name.",
+        "facts": [
+          "Their music is a mix of pop rock with powerful beats utilizing Turkish instruments, keyboard and guitar solos.",
+          "The name of the band is a literal translation of the term High Fidelity (Hi-Fi) into Turkish."
+        ]
+      },
+      "de": {
+        "kicker": "türkische pop-rock-band · 1997",
+        "who": "yüksek sadakat ist eine türkische rockband, die 1997 von kutlu özmakinacı gegründet wurde. mit dem gleichnamigen debütalbum wurde sie 2006 populär.",
+        "facts": [
+          "ihre musik ist eine mischung aus pop-rock mit kraftvollen beats, die türkische instrumente, keyboard und gitarrensoli einsetzt.",
+          "der bandname ist eine wörtliche übersetzung des begriffs high fidelity (hi-fi) ins türkische."
+        ]
+      },
+      "tr": {
+        "kicker": "türk pop rock grubu · 1997",
+        "who": "yüksek sadakat, 1997'de kutlu özmakinacı tarafından kurulmuş türk bir rock grubudur. aynı adı taşıyan ilk albümüyle 2006'nın başında popüler oldu.",
+        "facts": [
+          "müzikleri, türk enstrümanları, klavye ve gitar sololarını kullanan güçlü ritimlerle pop rock'ın karışımıdır.",
+          "grubun adı, high fidelity (hi-fi) teriminin türkçe'ye birebir çevirisidir."
+        ]
+      }
+    }
+  ]
+}

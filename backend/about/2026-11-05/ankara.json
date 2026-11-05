@@ -1,0 +1,38 @@
+{
+  "city": "ankara",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "af72b2a2-6ee6-4130-97ed-252d0987b1b3",
+      "slug": "teoman-d56ef1a3",
+      "title": "Teoman",
+      "name": "Teoman",
+      "source_url": "https://en.wikipedia.org/wiki/Teoman_(singer)",
+      "extract": "Fazlı Teoman Yakupoğlu is a Turkish acoustic rock singer and songwriter. His biggest hits include Paramparça, Senden Önce Senden Sonra, 17 and Papatya. On Papatya, Turkish rock singer Özlem Tekin is featured as a backing vocalist. Şebnem Ferah has also been featured on a couple of Teoman's tracks.",
+      "en": {
+        "kicker": "turkish acoustic rock singer · songwriter",
+        "who": "fazlı teoman yakupoğlu is a turkish acoustic rock singer and songwriter. his biggest hits include paramparça, senden önce senden sonra, 17 and papatya.",
+        "facts": [
+          "His biggest hits include Paramparça, Senden Önce Senden Sonra, 17 and Papatya.",
+          "Şebnem Ferah has also been featured on a couple of Teoman's tracks."
+        ]
+      },
+      "de": {
+        "kicker": "türkischer akustikrock-sänger · songwriter",
+        "who": "fazlı teoman yakupoğlu ist ein türkischer akustikrock-sänger und songwriter. zu seinen größten hits zählen paramparça, senden önce senden sonra, 17 und papatya.",
+        "facts": [
+          "zu seinen größten hits zählen paramparça, senden önce senden sonra, 17 und papatya.",
+          "şebnem ferah war auf einigen von teomans stücken als gast zu hören."
+        ]
+      },
+      "tr": {
+        "kicker": "türk akustik rock şarkıcısı · söz yazarı",
+        "who": "fazlı teoman yakupoğlu bir türk akustik rock şarkıcısı ve söz yazarıdır. en büyük hitleri arasında paramparça, senden önce senden sonra, 17 ve papatya yer alır.",
+        "facts": [
+          "en büyük hitleri arasında paramparça, senden önce senden sonra, 17 ve papatya yer alır.",
+          "şebnem ferah teoman'ın birkaç parçasında da yer aldı."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "toronto",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "84edafaf-6ed0-41a6-95a8-bc14fb861e69",
+      "slug": "pretty-sick-3dd1c0e3",
+      "title": "Pretty Sick",
+      "name": "Pretty Sick",
+      "source_url": "https://en.wikipedia.org/wiki/Pretty_Sick",
+      "extract": "Pretty Sick is an American indie rock band from New York City, New York. It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz.",
+      "en": {
+        "kicker": "american indie rock band · new york city",
+        "who": "pretty sick is an american indie rock band from new york city, with sabrina fuentes on vocals and bass.",
+        "facts": [
+          "It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz.",
+          "Pretty Sick is an American indie rock band from New York City, New York."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische indie-rock-band · new york city",
+        "who": "pretty sick ist eine amerikanische indie-rock-band aus new york city, mit sabrina fuentes am gesang und bass.",
+        "facts": [
+          "derzeit besteht die band aus sabrina fuentes (gesang, bass), eva kaufman (schlagzeug) und benjamin arauz (gitarre).",
+          "pretty sick ist eine amerikanische indie-rock-band aus new york city, new york."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan indie rock grubu · new york city",
+        "who": "pretty sick, new york city'den bir amerikan indie rock grubudur. vokal ve bassta sabrina fuentes yer alıyor.",
+        "facts": [
+          "grup şu anda vokal ve bas sabrina fuentes, davul eva kaufman ve gitar benjamin arauz'dan oluşuyor.",
+          "pretty sick, new york, new york city'den amerikan bir indie rock grubudur."
+        ]
+      }
+    }
+  ]
+}

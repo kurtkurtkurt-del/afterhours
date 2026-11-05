@@ -1,0 +1,38 @@
+{
+  "city": "birmingham",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "e20db638-b9e1-4afd-a6c1-d785acf5ba15",
+      "slug": "the-guest-list-d65cbe9f",
+      "title": "The Guest List",
+      "name": "The Guest List",
+      "source_url": "https://en.wikipedia.org/wiki/The_Guest_List_(band)",
+      "extract": "The Guest List are an English indie rock band from Manchester, formed in 2021. The band consists of Cai Alty, Tom Quigley, Leio Hunter, Sid Wallace (bass) and Angus Gilchrist (drums). They first gained attention online with covers of indie songs before releasing original material, and released their debut album, Something Real, in August 2026.",
+      "en": {
+        "kicker": "english indie rock band · manchester, 2021",
+        "who": "the guest list are an english indie rock band from manchester, formed in 2021, with cai alty, tom quigley, leio hunter, sid wallace and angus gilchrist in the lineup.",
+        "facts": [
+          "They first gained attention online with covers of indie songs before releasing original material.",
+          "They released their debut album, Something Real, in August 2026."
+        ]
+      },
+      "de": {
+        "kicker": "englische indie-rock-band · manchester, 2021",
+        "who": "the guest list sind eine englische indie-rock-band aus manchester, gegründet 2021. zur besetzung gehören cai alty, tom quigley, leio hunter, sid wallace und angus gilchrist.",
+        "facts": [
+          "sie wurden zunächst online mit covern bekannter indie-songs bekannt, bevor sie eigenes material veröffentlichten.",
+          "ihr debütalbum „something real“ erschien im august 2026."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz indie rock grubu · manchester, 2021",
+        "who": "the guest list, 2021'de kurulmuş manchester merkezli bir ingiliz indie rock grubudur. kadroda cai alty, tom quigley, leio hunter, sid wallace ve angus gilchrist yer alır.",
+        "facts": [
+          "önce internette indie şarkılarının coverlarıyla dikkat çektiler, sonra kendi materyallerini yayımladılar.",
+          "debut albümleri \"something real\" ağustos 2026'da çıktı."
+        ]
+      }
+    }
+  ]
+}

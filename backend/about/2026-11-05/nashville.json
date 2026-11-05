@@ -1,0 +1,38 @@
+{
+  "city": "nashville",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "e098a4d5-824c-46ca-beef-1afd16f74022",
+      "slug": "fetty-wap-nostalgia-tour-a8311a7a",
+      "title": "Fetty Wap: Nostalgia Tour",
+      "name": "Fetty Wap",
+      "source_url": "https://en.wikipedia.org/wiki/Fetty_Wap",
+      "extract": "Willie Junior Maxwell II, better known by his stage name Fetty Wap, is an American rapper, singer, and songwriter. He quickly rose to mainstream prominence after his 2014 song \"Trap Queen\" peaked at number two on the Billboard Hot 100 and led him to sign with 300 Entertainment, an imprint of Atlantic Records. Two of his 2015 singles, \"679\" and \"My Way\", peaked within the top ten of the chart; all three—as well as the top 40 single \"Again\"—preceded his eponymous debut studio album (2015), which peaked atop the Billboard 200. During this time, he became distinctive for his melodic blending of singing and rapping, lighthearted lyrics, \"bouncy\" production, and exclamation of various catchphrases",
+      "en": {
+        "kicker": "american rapper and singer · trap queen, 2014",
+        "who": "willie junior maxwell ii, known as fetty wap, is an american rapper, singer and songwriter. his 2014 single \"trap queen\" peaked at number two on the billboard hot 100.",
+        "facts": [
+          "His 2014 song \"Trap Queen\" peaked at number two on the Billboard Hot 100 and led him to sign with 300 Entertainment, an imprint of Atlantic Records.",
+          "His eponymous debut studio album, released in 2015, peaked atop the Billboard 200."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und sänger · 2014",
+        "who": "willie junior maxwell ii, bekannt als fetty wap, ist ein amerikanischer rapper, sänger und songwriter. sein song „trap queen“ von 2014 erreichte platz zwei des billboard hot 100.",
+        "facts": [
+          "sein song „trap queen“ von 2014 erreichte platz zwei des billboard hot 100 und führte zum vertrag bei 300 entertainment, einem imprint von atlantic records.",
+          "sein gleichnamiges debütalbum erschien 2015 und erreichte die spitze des billboard 200."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve şarkıcı · 2014",
+        "who": "willie junior maxwell ii, fetty wap adıyla tanınan amerikalı bir rapçi, şarkıcı ve söz yazarıdır. 2014 tarihli \"trap queen\" billboard hot 100'de ikinci sıraya yükseldi.",
+        "facts": [
+          "2014'teki \"trap queen\" şarkısı hot 100'de ikinci sıraya yükseldi ve atlantic records'un bir etiketi olan 300 entertainment ile sözleşmesine yol açtı.",
+          "adını taşıyan debut stüdyo albümü 2015'te çıktı ve billboard 200'ün zirvesine yerleşti."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "city": "las-vegas",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "eedfc162-f562-4ad5-85c5-55a8002b96d2",
+      "slug": "tim-mcgraw-official-caesars-ticket-hotel-package-4595282a",
+      "title": "Tim McGraw | Official Caesars Ticket + Hotel Packages",
+      "name": "Tim McGraw",
+      "source_url": "https://en.wikipedia.org/wiki/Tim_McGraw",
+      "extract": "Samuel Timothy McGraw is an American country singer and actor. He has released 17 studio albums. Ten of those albums have reached number one on the Top Country Albums charts, with his 1994 breakthrough album Not a Moment Too Soon being the top country album of 1994. In total, McGraw's albums have produced 65 singles, 25 of which have reached number one on the Hot Country Songs or Country Airplay charts.",
+      "en": {
+        "kicker": "american country singer and actor",
+        "who": "samuel timothy mcgraw is an american country singer and actor. he has released 17 studio albums, and ten of them reached number one on the top country albums charts.",
+        "facts": [
+          "Ten of those albums have reached number one on the Top Country Albums charts, with his 1994 breakthrough album Not a Moment Too Soon being the top country album of 1994.",
+          "In total, McGraw's albums have produced 65 singles, 25 of which have reached number one on the Hot Country Songs or Country Airplay charts."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer country-sänger und schauspieler",
+        "who": "samuel timothy mcgraw ist ein amerikanischer country-sänger und schauspieler. er hat 17 studioalben veröffentlicht, zehn davon erreichten auf den top country albums charts die nummer eins.",
+        "facts": [
+          "zehn dieser alben erreichten die spitze der top country albums charts, sein durchbruchsalbum not a moment too soon von 1994 war 1994 das beste country-album.",
+          "insgesamt brachten mcgraws alben 65 singles hervor, 25 davon erreichten die nummer eins der hot country songs oder country airplay charts."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı country şarkıcı ve oyuncu",
+        "who": "samuel timothy mcgraw, amerikalı bir country şarkıcısı ve oyuncudur. 17 stüdyo albümü yayımladı, bunların on tanesi top country albums listelerinde birinci sıraya çıktı.",
+        "facts": [
+          "albümlerinin on tanesi top country albums listesinde birinci oldu; 1994 çıkışı not a moment too soon, 1994'ün en iyi country albümüydü.",
+          "mcgraw'ın albümleri toplamda 65 single üretti; bunların 25'i hot country songs veya country airplay listelerinde birinci oldu."
+        ]
+      }
+    },
+    {
+      "id": "94e7e8d8-253a-4265-bb31-bfa644aeeb60",
+      "slug": "tim-mcgraw-live-in-las-vegas-d2b39b66",
+      "title": "Tim McGraw: Live in Las Vegas",
+      "name": "Tim McGraw",
+      "source_url": "https://en.wikipedia.org/wiki/Tim_McGraw",
+      "extract": "Samuel Timothy McGraw is an American country singer and actor. He has released 17 studio albums. Ten of those albums have reached number one on the Top Country Albums charts, with his 1994 breakthrough album Not a Moment Too Soon being the top country album of 1994. In total, McGraw's albums have produced 65 singles, 25 of which have reached number one on the Hot Country Songs or Country Airplay charts.",
+      "en": {
+        "kicker": "american country singer and actor",
+        "who": "samuel timothy mcgraw is an american country singer and actor. he has released 17 studio albums, and ten of them reached number one on the top country albums charts.",
+        "facts": [
+          "Ten of those albums have reached number one on the Top Country Albums charts, with his 1994 breakthrough album Not a Moment Too Soon being the top country album of 1994.",
+          "In total, McGraw's albums have produced 65 singles, 25 of which have reached number one on the Hot Country Songs or Country Airplay charts."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer country-sänger und schauspieler",
+        "who": "samuel timothy mcgraw ist ein amerikanischer country-sänger und schauspieler. er hat 17 studioalben veröffentlicht, zehn davon erreichten auf den top country albums charts die nummer eins.",
+        "facts": [
+          "zehn dieser alben erreichten die spitze der top country albums charts, sein durchbruchsalbum not a moment too soon von 1994 war 1994 das beste country-album.",
+          "insgesamt brachten mcgraws alben 65 singles hervor, 25 davon erreichten die nummer eins der hot country songs oder country airplay charts."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı country şarkıcı ve oyuncu",
+        "who": "samuel timothy mcgraw, amerikalı bir country şarkıcısı ve oyuncudur. 17 stüdyo albümü yayımladı, bunların on tanesi top country albums listelerinde birinci sıraya çıktı.",
+        "facts": [
+          "albümlerinin on tanesi top country albums listesinde birinci oldu; 1994 çıkışı not a moment too soon, 1994'ün en iyi country albümüydü.",
+          "mcgraw'ın albümleri toplamda 65 single üretti; bunların 25'i hot country songs veya country airplay listelerinde birinci oldu."
+        ]
+      }
+    }
+  ]
+}

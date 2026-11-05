@@ -1,0 +1,70 @@
+{
+  "city": "new-york",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "b6b4c501-3837-40ea-ad1e-73c1639e7168",
+      "slug": "hurricane-wisdom-ed45cbb5",
+      "title": "Hurricane Wisdom",
+      "name": "Hurricane Wisdom",
+      "source_url": "https://en.wikipedia.org/wiki/Hurricane_Wisdom",
+      "extract": "Wisdom Mikeal Oluola, known professionally as Hurricane Wisdom, is an American rapper, singer-songwriter, and social media personality. Born in Tallahassee, Florida, and growing up in Havana, Florida, Oluola started his music career in 2018 or 2019, although he started taking the career seriously in 2020, with his debut single being \"Granny's Baby\".",
+      "en": {
+        "kicker": "american rapper and singer · florida",
+        "who": "wisdom mikeal oluola, known as hurricane wisdom, is an american rapper, singer-songwriter and social media personality. he started his music career in 2018 or 2019 and took it seriously from 2020.",
+        "facts": [
+          "He started his music career in 2018 or 2019, although he started taking the career seriously in 2020.",
+          "He was born in Tallahassee, Florida, and grew up in Havana, Florida."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und social-media-persönlichkeit",
+        "who": "wisdom mikeal oluola, bekannt als hurricane wisdom, ist ein amerikanischer rapper, singer-songwriter und social-media-persönlichkeit. seine musikkarriere begann 2018 oder 2019, ernsthaft verfolgte er sie ab 2020.",
+        "facts": [
+          "er begann seine musikkarriere 2018 oder 2019, verfolgte sie aber erst ab 2020 ernsthaft.",
+          "er wurde in tallahassee, florida, geboren und wuchs in havana, florida, auf."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve sosyal medya fenomeni · florida",
+        "who": "wisdom mikeal oluola, hurricane wisdom adıyla tanınan amerikalı bir rapçi, şarkıcı, söz yazarı ve sosyal medya fenomenidir. müzik kariyerine 2018 ya da 2019'da başladı, 2020'den itibaren ciddiye aldı.",
+        "facts": [
+          "müzik kariyerine 2018 ya da 2019'da başladı, ama işi ciddiye almaya 2020'de başladı.",
+          "florida'nın tallahassee kentinde doğdu ve havana, florida'da büyüdü."
+        ]
+      }
+    },
+    {
+      "id": "5bb6484d-d8e9-4679-890f-712875d21bcc",
+      "slug": "pedro-fernandez-ave-fenix-two-r-db3565e8",
+      "title": "Pedro Fernández - Ave Fénix Two'r",
+      "name": "Pedro Fernández",
+      "source_url": "https://en.wikipedia.org/wiki/Pedro_Fern%C3%A1ndez_(singer)",
+      "extract": "José Martín Cuevas Cobos, known by his stage name Pedro Fernández, is a Mexican singer, songwriter, actor, and television host. Fernández began his international career as Pedrito Fernández at the age of seven. In the 1980s, he turned to be known as a scream king, thanks to his horror film starring roles in films such as Vacaciones de terror (1989), Pánico en la montaña (1989) and Trampa Infernal (1989).",
+      "en": {
+        "kicker": "mexican singer, songwriter and actor",
+        "who": "jose martin cuevas cobos, known as pedro fernández, is a mexican singer, songwriter, actor and television host. he began his international career as pedrito fernández at the age of seven.",
+        "facts": [
+          "In the 1980s, he turned to be known as a scream king, thanks to his horror film starring roles such as Vacaciones de terror (1989), Pánico en la montaña (1989) and Trampa Infernal (1989).",
+          "Fernández began his international career as Pedrito Fernández at the age of seven."
+        ]
+      },
+      "de": {
+        "kicker": "mexikanischer sänger, songwriter und schauspieler",
+        "who": "josé martín cuevas cobos, bekannt als pedro fernández, ist ein mexikanischer sänger, songwriter, schauspieler und fernsehmoderator. seine internationale karriere begann er als pedrito fernández im alter von sieben jahren.",
+        "facts": [
+          "in den 1980er jahren wurde er als „scream king“ bekannt, unter anderem durch horrorfilme wie vacaciones de terror (1989), pánico en la montaña (1989) und trampa infernal (1989).",
+          "seine internationale karriere begann er im alter von sieben jahren als pedrito fernández."
+        ]
+      },
+      "tr": {
+        "kicker": "meksikalı şarkıcı, söz yazarı ve oyuncu",
+        "who": "josé martín cuevas cobos, pedro fernández adıyla tanınan meksikalı bir şarkıcı, söz yazarı, oyuncu ve televizyon sunucusudur. uluslararası kariyerine yedi yaşında pedrito fernández adıyla başladı.",
+        "facts": [
+          "1980'lerde vacaciones de terror (1989), pánico en la montaña (1989) ve trampa infernal (1989) gibi korku filmleriyle \"scream king\" olarak tanındı.",
+          "uluslararası kariyerine yedi yaşında pedrito fernández olarak başladı."
+        ]
+      }
+    }
+  ]
+}

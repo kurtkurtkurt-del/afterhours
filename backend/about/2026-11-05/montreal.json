@@ -1,0 +1,38 @@
+{
+  "city": "montreal",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "9755fd87-56de-4bf6-a98c-5194d25a2290",
+      "slug": "the-record-company-41515c38",
+      "title": "The Record Company",
+      "name": "The Record Company",
+      "source_url": "https://en.wikipedia.org/wiki/The_Record_Company",
+      "extract": "The Record Company is a Grammy-nominated blues rock band from Los Angeles. The members are Chris Vos, Alex Stiff, and Marc Cazorla. Their music is influenced by blues musicians such as John Lee Hooker.",
+      "en": {
+        "kicker": "blues rock band · los angeles",
+        "who": "the record company is a grammy-nominated blues rock band from los angeles, made up of chris vos, alex stiff and marc cazorla.",
+        "facts": [
+          "Their music is influenced by blues musicians such as John Lee Hooker.",
+          "The members are Chris Vos, Alex Stiff, and Marc Cazorla."
+        ]
+      },
+      "de": {
+        "kicker": "blues-rock-band · los angeles",
+        "who": "the record company ist eine grammy-nominierte blues-rock-band aus los angeles, bestehend aus chris vos, alex stiff und marc cazorla.",
+        "facts": [
+          "ihre musik ist von blues-musikern wie john lee hooker beeinflusst.",
+          "zu den mitgliedern gehören chris vos, alex stiff und marc cazorla."
+        ]
+      },
+      "tr": {
+        "kicker": "blues rock grubu · los angeles",
+        "who": "the record company, los angeles'tan grammy adayı bir blues rock grubudur. kadrosunda chris vos, alex stiff ve marc cazorla yer alıyor.",
+        "facts": [
+          "müzikleri john lee hooker gibi blues müzisyenlerinden etkilenmiştir.",
+          "grubun üyeleri chris vos, alex stiff ve marc cazorla'dır."
+        ]
+      }
+    }
+  ]
+}

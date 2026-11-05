@@ -1,0 +1,70 @@
+{
+  "city": "los-angeles",
+  "day": "2026-11-05",
+  "nights": [
+    {
+      "id": "cd5ab85d-d518-48b3-a4c0-cc1d52c352d2",
+      "slug": "dan-and-phil-hard-launch-world-tour-5477191c",
+      "title": "Dan and Phil: Hard Launch World Tour",
+      "name": "Dan and Phil",
+      "source_url": "https://en.wikipedia.org/wiki/Dan_and_Phil",
+      "extract": "Dan and Phil are an English entertainment and business duo, consisting of partners Daniel Howell and Phil Lester. They are best known for their collaborative work on YouTube since meeting in 2009. Additionally, they have collaborated on television and radio presenting, books, tours, and original films.",
+      "en": {
+        "kicker": "english entertainment and business duo",
+        "who": "dan and phil are an english entertainment and business duo made up of daniel howell and phil lester. they are best known for their collaborative work on youtube since meeting in 2009.",
+        "facts": [
+          "They have collaborated on television and radio presenting, books, tours, and original films.",
+          "Partners Daniel Howell and Phil Lester have worked together on YouTube since meeting in 2009."
+        ]
+      },
+      "de": {
+        "kicker": "englisches entertainment- und business-duo",
+        "who": "dan and phil sind ein englisches entertainment- und business-duo aus daniel howell und phil lester. bekannt wurden sie vor allem durch ihre gemeinsamen youtube-arbeiten, seit sie sich 2009 kennenlernten.",
+        "facts": [
+          "die beiden haben außerdem bei fernseh- und radiomoderation, büchern, touren und eigenen filmen zusammengearbeitet.",
+          "die partner daniel howell und phil lester arbeiten seit ihrem kennenlernen 2009 auf youtube zusammen."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz eğlence ve iş ikilisi",
+        "who": "dan and phil, daniel howell ve phil lester'dan oluşan bir ingiliz eğlence ve iş ikilisidir. 2009'da tanıştıklarından beri youtube'daki ortak işleriyle tanınırlar.",
+        "facts": [
+          "ikili televizyon ve radyo sunuculuğu, kitaplar, turneler ve özgün filmlerde de birlikte çalıştı.",
+          "daniel howell ve phil lester, 2009'da tanıştıklarından beri youtube'da birlikte çalışıyor."
+        ]
+      }
+    },
+    {
+      "id": "ae4604b5-37b3-44db-8a69-f0f7ad81b0b5",
+      "slug": "syml-solo-in-north-america-2026-d90c8aa3",
+      "title": "SYML - Solo in North America 2026",
+      "name": "Syml",
+      "source_url": "https://en.wikipedia.org/wiki/Syml",
+      "extract": "SYML is the solo venture of Brian Leseney Fennell, an American musician from Issaquah, Washington. He was previously part of the indie band Barcelona. SYML released his eponymous debut album on May 3, 2019, through Nettwerk Records.",
+      "en": {
+        "kicker": "american solo musician · issaquah, washington",
+        "who": "syml is the solo venture of brian leseney fennell, an american musician from issaquah, washington. he was previously part of the indie band barcelona.",
+        "facts": [
+          "SYML released his eponymous debut album on May 3, 2019, through Nettwerk Records.",
+          "He was previously part of the indie band Barcelona."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer solomusiker · issaquah, washington",
+        "who": "syml ist das soloprojekt von brian leseney fennell, einem amerikanischen musiker aus issaquah, washington. zuvor gehörte er der indie-band barcelona an.",
+        "facts": [
+          "syml veröffentlichte sein gleichnamiges debütalbum am 3. mai 2019 bei nettwerk records.",
+          "zuvor gehörte er der indie-band barcelona an."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı solo müzisyen · issaquah, washington",
+        "who": "syml, washington'un issaquah kentinden amerikalı müzisyen brian leseney fennell'ın solo projesidir. daha önce indie grubu barcelona'nın üyesiydi.",
+        "facts": [
+          "syml, 3 mayıs 2019'da nettwerk records aracılığıyla adını taşıyan debut albümünü yayımladı.",
+          "daha önce indie grubu barcelona'da yer aldı."
+        ]
+      }
+    }
+  ]
+}
