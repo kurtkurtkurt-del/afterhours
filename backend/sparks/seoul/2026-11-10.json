@@ -1,0 +1,14 @@
+{
+  "city": "seoul",
+  "day": "2026-11-10",
+  "sparks": [
+    {
+      "kind": "sunrise",
+      "title": { "en": "sunrise from namsan on tuesday.", "de": "sonnenaufgang am namsan am dienstag.", "tr": "salı günü namsan'dan gündoğumu." },
+      "line": { "en": "sunrise is about 07:05 on tuesday and the sky is forecast mostly clear. climb namsan from 06:00 and be at the top before the light comes.", "de": "der sonnenaufgang ist am dienstag gegen 07:05 und der himmel soll größtenteils klar sein. steig ab 06:00 auf den namsan und sei vor dem licht oben.", "tr": "salı günü gündoğumu yaklaşık 07:05'te ve gökyüzü büyük ölçüde açık olacak. 06:00'dan itibaren namsan'a çık, ışık gelmeden tepede ol." },
+      "place": { "en": "namsan", "de": "namsan", "tr": "namsan" },
+      "hour": 6, "minute": 0,
+      "why": "Sunrise at 07:05 on tue 10 nov for seoul (vedpanchang.com); KMA medium-range forecast of 1 Nov shows mostly clear skies from mon to wed."
+    }
+  ]
+}
