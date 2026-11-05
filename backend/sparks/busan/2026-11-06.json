@@ -1,0 +1,14 @@
+{
+  "city": "busan",
+  "day": "2026-11-06",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "busan illustration fair at bexco.", "de": "busan illustration fair im bexco.", "tr": "bexco'da busan illustration fair." },
+      "line": { "en": "the busan illustration fair runs 6 to 8 nov at bexco, exhibition center 2, hall 4. go in the afternoon; check the hours on the official page first.", "de": "die busan illustration fair läuft vom 6. bis 8. november im bexco, ausstellungszentrum 2, halle 4. am nachmittag hingehen; die öffnungszeiten vorher auf der offiziellen seite prüfen.", "tr": "busan illustration fair 6-8 kasım'da bexco'da, sergi merkezi 2, salon 4'te. öğleden sonra git; saatleri önce resmi sayfadan kontrol et." },
+      "place": { "en": "bexco", "de": "bexco", "tr": "bexco" },
+      "hour": 14, "minute": 0,
+      "why": "Busan Illustration Fair at BEXCO Exhibition Center 2, Hall 4, 6 to 8 Nov 2026, per BEXCO's events page and the visitkorea and ktriptips listings; the edition label (V.6 or V.7) differs between sources, so the hours are left to the venue page."
+    }
+  ]
+}

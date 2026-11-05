@@ -1,0 +1,27 @@
+{
+  "city": "busan",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "busan fireworks festival on gwangalli beach.",
+        "de": "busan-feuerwerksfestival am gwangalli-strand.",
+        "tr": "gwangalli plajı'nda busan havai fişek festivali."
+      },
+      "line": {
+        "en": "the 21st busan fireworks festival, main show at 19:00 over gwangalli. buses stop near the beach around 18:00, so go early. watching from the sand is free; paid seats on nol.",
+        "de": "das 21. busan-feuerwerksfestival, die hauptshow um 19:00 über gwangalli. busse halten am strand etwa ab 18:00 nicht mehr, also früh kommen. vom sand aus kostenlos; sitzplätze über nol.",
+        "tr": "21. busan havai fişek festivali, ana gösteri 19:00'da gwangalli üzerinde. plajın yanındaki otobüsler 18:00 civarı durur, erken git. kumdan izlemek ücretsiz; koltuklar nol'den."
+      },
+      "place": {
+        "en": "gwangalli beach",
+        "de": "gwangalli-strand",
+        "tr": "gwangalli plajı"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "21st Busan Fireworks Festival, Sat 7 Nov 2026, main show about 19:00 at Gwangalli Beach, per Travie and KKday 2026 festival guides; the sources agree on the date and the bus cut-off."
+    }
+  ]
+}
