@@ -1,0 +1,38 @@
+{
+  "city": "austin",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "9bd73c7e-b16c-4460-b1de-e1221b5b99e9",
+      "slug": "james-mcmurtry-58a03c8e",
+      "title": "James McMurtry",
+      "name": "James McMurtry",
+      "source_url": "https://en.wikipedia.org/wiki/James_McMurtry",
+      "extract": "James McMurtry is an American rock and folk rock/Americana singer, songwriter, guitarist, bandleader, and occasional actor. He performs with veteran bandmates Daren Hess, Cornbread and Tim Holt.",
+      "en": {
+        "kicker": "rock and folk rock/americana singer, songwriter, guitarist",
+        "who": "James McMurtry is an american rock and folk rock/americana singer, songwriter, guitarist, bandleader, and occasional actor. He performs with veteran bandmates Daren Hess, Cornbread and Tim Holt.",
+        "facts": [
+          "He is an american singer, songwriter, guitarist, bandleader, and occasional actor.",
+          "He performs with veteran bandmates Daren Hess, Cornbread and Tim Holt."
+        ]
+      },
+      "de": {
+        "kicker": "rock- und folk-rock/americana-sänger, songwriter, gitarrist",
+        "who": "James McMurtry ist ein amerikanischer Rock- und Folk-Rock/Americana-Sänger, Songwriter, Gitarrist, Bandleader und gelegentlicher Schauspieler. Er tritt mit seinen erfahrenen Bandkollegen Daren Hess, Cornbread und Tim Holt auf.",
+        "facts": [
+          "Er ist Sänger, Songwriter, Gitarrist, Bandleader und gelegentlich auch Schauspieler.",
+          "Er spielt mit den erfahrenen Bandkollegen Daren Hess, Cornbread und Tim Holt."
+        ]
+      },
+      "tr": {
+        "kicker": "rock ve folk rock/americana şarkıcısı, söz yazarı, gitarist",
+        "who": "James McMurtry, rock ve folk rock/americana tarzında bir amerikalı şarkıcı, söz yazarı, gitarist, grup lideri ve ara sıra oyuncudur. Deneyimli grup arkadaşları Daren Hess, Cornbread ve Tim Holt ile birlikte sahne alır.",
+        "facts": [
+          "Amerikalı bir şarkıcı, söz yazarı, gitarist, grup lideri ve ara sıra oyuncudur.",
+          "Deneyimli grup arkadaşları Daren Hess, Cornbread ve Tim Holt ile birlikte çalar."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "krakow",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "dce74b22-a981-491e-a9fc-fe2fa1ea91ff",
+      "slug": "happysad-25-lecie-zespo-u-2f25d892",
+      "title": "Happysad - 25 lecie zespołu",
+      "name": "Happysad",
+      "source_url": "https://en.wikipedia.org/wiki/Happysad",
+      "extract": "Happysad is a Polish rock band. The band plays melodic rock with elements of punk and reggae. It was created in Skarżysko-Kamienna in 2001 by musicians who had been playing since 1995 under the name HCKF. In 1997 the name was changed to Happy Sad Generation. The name Happysad was established in 2002.",
+      "en": {
+        "kicker": "polish rock band · 2001, skarżysko-kamienna",
+        "who": "Happysad is a Polish rock band that plays melodic rock with elements of punk and reggae. The band was created in Skarżysko-Kamienna in 2001 by musicians who had been playing since 1995 under the name HCKF. The name was changed to Happy Sad Generation in 1997 and the name Happysad was established in 2002.",
+        "facts": [
+          "the band was created in 2001 by musicians who had been playing since 1995 under the name HCKF.",
+          "in 1997 the name was changed to Happy Sad Generation, and the name Happysad was established in 2002."
+        ]
+      },
+      "de": {
+        "kicker": "polnische rockband · 2001, skarżysko-kamienna",
+        "who": "Happysad ist eine polnische rockband, die melodischen rock mit elementen aus punk und reggae spielt. die band wurde 2001 in skarżysko-kamienna von musikern gegründet, die seit 1995 unter dem namen HCKF gespielt hatten. 1997 wurde der name in Happy Sad Generation geändert, 2002 wurde der name Happysad festgelegt.",
+        "facts": [
+          "die band wurde 2001 von musikern gegründet, die seit 1995 unter dem namen HCKF gespielt hatten.",
+          "1997 wurde der name in Happy Sad Generation geändert, und der name Happysad wurde 2002 festgelegt."
+        ]
+      },
+      "tr": {
+        "kicker": "polonyalı rock grubu · 2001, skarżysko-kamienna",
+        "who": "Happysad, melodik rock çalan bir Polonyalı rock grubudur ve müziğinde punk ile reggae öğeleri de yer alır. grup, 1995'ten beri HCKF adıyla çalan müzisyenler tarafından 2001 yılında skarżysko-kamienna'da kuruldu. 1997'de adı Happy Sad Generation olarak değiştirildi, Happysad adı ise 2002'de belirlendi.",
+        "facts": [
+          "grup 2001 yılında, 1995'ten beri HCKF adıyla çalan müzisyenler tarafından kuruldu.",
+          "1997'de adı Happy Sad Generation olarak değiştirildi ve Happysad adı 2002'de belirlendi."
+        ]
+      }
+    }
+  ]
+}

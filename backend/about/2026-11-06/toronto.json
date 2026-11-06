@@ -1,0 +1,102 @@
+{
+  "city": "toronto",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "c459efc3-708e-45ba-ab24-d65a8597952a",
+      "slug": "hovvdy-0d506c60",
+      "title": "Hovvdy",
+      "name": "Hovvdy",
+      "source_url": "https://en.wikipedia.org/wiki/Hovvdy",
+      "extract": "Hovvdy is an American indie pop duo formed in Austin, Texas by Charlie Martin and Will Taylor.",
+      "en": {
+        "kicker": "American indie pop duo · Austin, Texas",
+        "who": "Hovvdy is an American indie pop duo. Charlie Martin and Will Taylor formed the group in Austin, Texas.",
+        "facts": [
+          "Hovvdy is an American indie pop duo.",
+          "the duo was formed in Austin, Texas by Charlie Martin and Will Taylor."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches indie-pop-duo · Austin, Texas",
+        "who": "Hovvdy ist ein amerikanisches indie-pop-duo. Charlie Martin und Will Taylor gründeten die gruppe in Austin, Texas.",
+        "facts": [
+          "Hovvdy ist ein amerikanisches indie-pop-duo.",
+          "das duo wurde in Austin, Texas von Charlie Martin und Will Taylor gegründet."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı indie pop ikilisi · Austin, Texas",
+        "who": "Hovvdy amerikalı bir indie pop ikilisidir. Charlie Martin ve Will Taylor grubu Austin, Texas'ta kurdu.",
+        "facts": [
+          "Hovvdy amerikalı bir indie pop ikilisidir.",
+          "grup, Austin, Texas'ta Charlie Martin ve Will Taylor tarafından kuruldu."
+        ]
+      }
+    },
+    {
+      "id": "13b05972-6a83-4d25-81c5-c219e04f2c4b",
+      "slug": "kate-nash-8cda9a9d",
+      "title": "Kate Nash",
+      "name": "Kate Nash",
+      "source_url": "https://en.wikipedia.org/wiki/Kate_Nash",
+      "extract": "Kate Marie Nash is an English singer, songwriter, musician, and actress. Her singles \"Foundations\" (2007) and \"Do-Wah-Doo\" (2010) charted at numbers 2 and 15 on the UK singles chart and her albums Made of Bricks (2007) and My Best Friend Is You (2010) charted at numbers 1 and 8 on the UK Albums Chart.",
+      "en": {
+        "kicker": "English singer and songwriter · UK charts",
+        "who": "Kate Marie Nash is an English singer, songwriter, musician, and actress. Her singles charted on the UK singles chart and her albums on the UK Albums Chart.",
+        "facts": [
+          "the singles \"Foundations\" (2007) and \"Do-Wah-Doo\" (2010) charted at numbers 2 and 15 on the UK singles chart.",
+          "the albums Made of Bricks (2007) and My Best Friend Is You (2010) charted at numbers 1 and 8 on the UK Albums Chart."
+        ]
+      },
+      "de": {
+        "kicker": "englische sängerin und songwriterin · uk-charts",
+        "who": "Kate Marie Nash ist eine englische sängerin, songwriterin, musikerin und schauspielerin. ihre singles waren in den britischen singlecharts vertreten, ihre alben in den britischen albumcharts.",
+        "facts": [
+          "die singles „Foundations“ (2007) und „Do-Wah-Doo“ (2010) erreichten auf den britischen singlecharts platz 2 und 15.",
+          "die alben Made of Bricks (2007) und My Best Friend Is You (2010) erreichten auf den britischen albumcharts platz 1 und 8."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz şarkıcı ve söz yazarı · UK listeleri",
+        "who": "Kate Marie Nash, İngiliz bir şarkıcı, söz yazarı, müzisyen ve oyunculuktur. single'ları UK single listesinde, albümleri UK albüm listesinde yer aldı.",
+        "facts": [
+          "\"Foundations\" (2007) ve \"Do-Wah-Doo\" (2010) single'ları UK single listesinde sırasıyla 2. ve 15. sıraya yerleşti.",
+          "Made of Bricks (2007) ve My Best Friend Is You (2010) albümleri UK albüm listesinde sırasıyla 1. ve 8. sıraya yerleşti."
+        ]
+      }
+    },
+    {
+      "id": "5842fee4-caec-41ad-bb7f-cc9cfeead5c6",
+      "slug": "die-spitz-64265196",
+      "title": "Die Spitz",
+      "name": "Die Spitz",
+      "source_url": "https://en.wikipedia.org/wiki/Die_Spitz",
+      "extract": "Die Spitz is an American rock band from Austin, Texas, consisting of guitarist/singer/drummer Ava Schrobilgen, guitarist/singer Eleanor Livingston, bassist Kate Halter, and drummer/singer/guitarist Chloe de St. Aubin. Their debut album Something to Consume was released in September 2025.",
+      "en": {
+        "kicker": "American rock band · Austin, Texas",
+        "who": "Die Spitz is an American rock band from Austin, Texas. the band consists of Ava Schrobilgen, Eleanor Livingston, Kate Halter and Chloe de St. Aubin.",
+        "facts": [
+          "the four members are Ava Schrobilgen, Eleanor Livingston, Kate Halter and Chloe de St. Aubin.",
+          "their debut album Something to Consume was released in September 2025."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · Austin, Texas",
+        "who": "Die Spitz ist eine amerikanische rockband aus Austin, Texas. die band besteht aus Ava Schrobilgen, Eleanor Livingston, Kate Halter und Chloe de St. Aubin.",
+        "facts": [
+          "die vier mitglieder sind Ava Schrobilgen, Eleanor Livingston, Kate Halter und Chloe de St. Aubin.",
+          "ihr debütalbum Something to Consume erschien im september 2025."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı rock grubu · Austin, Texas",
+        "who": "Die Spitz, Austin, Texas'tan bir Amerikalı rock grubudur. grubun üyeleri Ava Schrobilgen, Eleanor Livingston, Kate Halter ve Chloe de St. Aubin'dir.",
+        "facts": [
+          "grubun dört üyesi Ava Schrobilgen, Eleanor Livingston, Kate Halter ve Chloe de St. Aubin'dir.",
+          "ilk albümleri Something to Consume eylül 2025'te yayımlandı."
+        ]
+      }
+    }
+  ]
+}

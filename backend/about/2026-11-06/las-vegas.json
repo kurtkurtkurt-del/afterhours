@@ -1,0 +1,134 @@
+{
+  "city": "las-vegas",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "473f2886-4ee5-4438-95a6-815619da12c3",
+      "slug": "barry-manilow-19d959b6",
+      "title": "Barry Manilow",
+      "name": "Barry Manilow",
+      "source_url": "https://en.wikipedia.org/wiki/Barry_Manilow",
+      "extract": "Barry Manilow is an American singer, songwriter and record producer with a career spanning over 60 years. His hit recordings include \"Mandy\", \"Could It Be Magic\", \"I Write the Songs\", \"Weekend in New England\", \"Looks Like We Made It\", \"Can't Smile Without You\", \"Copacabana \", and \"Ready to Take a Chance Again\".",
+      "en": {
+        "kicker": "American singer, songwriter and record producer",
+        "who": "Barry Manilow is an American singer, songwriter and record producer with a career spanning over 60 years. His hit recordings include \"Mandy\", \"Could It Be Magic\" and \"I Write the Songs\".",
+        "facts": [
+          "His hit recordings include \"Mandy\", \"Could It Be Magic\" and \"I Write the Songs\".",
+          "His career spans over 60 years."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer Sänger, Songwriter und Musikproduzent",
+        "who": "Barry Manilow ist ein amerikanischer Sänger, Songwriter und Musikproduzent mit einer Karriere, die sich über mehr als 60 Jahre erstreckt. Zu seinen Hitaufnahmen gehören \"Mandy\", \"Could It Be Magic\" und \"I Write the Songs\".",
+        "facts": [
+          "Zu seinen Hitaufnahmen gehören \"Mandy\", \"Could It Be Magic\" und \"I Write the Songs\".",
+          "Seine Karriere erstreckt sich über mehr als 60 Jahre."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı şarkıcı, söz yazarı ve plak yapımcısı",
+        "who": "Barry Manilow, altmış yılı aşkın bir kariyere sahip Amerikalı bir şarkıcı, söz yazarı ve plak yapımcısıdır. Hit kayıtları arasında \"Mandy\", \"Could It Be Magic\" ve \"I Write the Songs\" yer alır.",
+        "facts": [
+          "Hit kayıtları arasında \"Mandy\", \"Could It Be Magic\" ve \"I Write the Songs\" yer alır.",
+          "Kariyeri altmış yılı aşkın bir süreye yayılır."
+        ]
+      }
+    },
+    {
+      "id": "f9f87682-733c-47b7-95d9-99b896557a53",
+      "slug": "mon-laferte-femme-fatale-tour-cf1438b5",
+      "title": "Mon Laferte - Femme Fatale Tour",
+      "name": "Mon Laferte",
+      "source_url": "https://en.wikipedia.org/wiki/Mon_Laferte",
+      "extract": "Norma Montserrat Bustamante Laferte, known professionally as Mon Laferte, is a Chilean and Mexican singer-songwriter. Recognized for her versatility, her musical style spans a wide array of genres, including pop, alternative, bolero, cumbia, and salsa. She rose to international prominence in the 2010s, particularly for her melodramatic vocals and theatrical stage presence. In 2025, Billboard named her one of the greatest female Latin pop artists of all time.",
+      "en": {
+        "kicker": "Chilean and Mexican singer-songwriter · 2010s",
+        "who": "Norma Montserrat Bustamante Laferte, known professionally as Mon Laferte, is a Chilean and Mexican singer-songwriter. She rose to international prominence in the 2010s, particularly for her melodramatic vocals and theatrical stage presence.",
+        "facts": [
+          "Her musical style spans a wide array of genres, including pop, alternative, bolero, cumbia and salsa.",
+          "In 2025, Billboard named her one of the greatest female Latin pop artists of all time."
+        ]
+      },
+      "de": {
+        "kicker": "chilenisch-mexikanische Singer-Songwriterin · 2010er",
+        "who": "Norma Montserrat Bustamante Laferte, bekannt als Mon Laferte, ist eine chilenisch-mexikanische Singer-Songwriterin. Internationale Bekanntheit erlangte sie in den 2010er-Jahren, besonders durch ihren melodramatischen Gesang und ihre theatralische Bühnenpräsenz.",
+        "facts": [
+          "Ihr musikalischer Stil umfasst ein breites Spektrum an Genres, darunter Pop, Alternative, Bolero, Cumbia und Salsa.",
+          "2025 nannte Billboard sie eine der größten weiblichen Latin-Pop-Künstlerinnen aller Zeiten."
+        ]
+      },
+      "tr": {
+        "kicker": "Şilili ve Meksikalı şarkıcı-söz yazarı · 2010'lar",
+        "who": "Norma Montserrat Bustamante Laferte, sahne adıyla Mon Laferte, Şilili ve Meksikalı bir şarkıcı-söz yazarıdır. 2010'larda uluslararası alanda öne çıktı; özellikle melodramatik vokali ve tiyatral sahne performansıyla tanındı.",
+        "facts": [
+          "Müzikal tarzı pop, alternatif, bolero, cumbia ve salsa gibi geniş bir tür yelpazesini kapsar.",
+          "2025'te Billboard, onu tüm zamanların en büyük kadın Latin pop sanatçıları arasında saydı."
+        ]
+      }
+    },
+    {
+      "id": "601bae6b-3c1a-4c08-944f-7b7c7f9a78b3",
+      "slug": "metallica-suite-reservation-bd856367",
+      "title": "Metallica - Suite Reservation",
+      "name": "Metallica",
+      "source_url": "https://en.wikipedia.org/wiki/Metallica",
+      "extract": "Metallica is an American heavy metal band. It was formed in Los Angeles in 1981 by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. The band's fast tempos, instrumentals and aggressive musicianship made them one of the founding \"big four\" bands of thrash metal, alongside Megadeth, Anthrax and Slayer. Metallica's current lineup comprises founding members and primary songwriters Hetfield and Ulrich, longtime lead guitarist Kirk Hammett and bassist Robert Trujillo. Former members of the band are bassists Ron McGovney, Cliff Burton and Jason Newsted, as well as guitarist Dave Mustaine, who formed Megadeth after being fired fro",
+      "en": {
+        "kicker": "American heavy metal band · formed in Los Angeles in 1981",
+        "who": "Metallica is an American heavy metal band. It was formed in Los Angeles in 1981 by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. Its current lineup comprises Hetfield, Ulrich, Kirk Hammett and Robert Trujillo.",
+        "facts": [
+          "Its fast tempos, instrumentals and aggressive musicianship made the band one of the founding \"big four\" bands of thrash metal, alongside Megadeth, Anthrax and Slayer.",
+          "Former member Dave Mustaine formed Megadeth after being fired from Metallica in 1983."
+        ]
+      },
+      "de": {
+        "kicker": "Heavy-Metal-Band · 1981 in Los Angeles gegründet",
+        "who": "Metallica ist eine amerikanische Heavy-Metal-Band. Sie wurde 1981 in Los Angeles von Sänger und Gitarrist James Hetfield und Schlagzeuger Lars Ulrich gegründet und war den größten Teil ihrer Laufbahn in San Francisco ansässig. Zur aktuellen Besetzung gehören Hetfield, Ulrich, Kirk Hammett und Robert Trujillo.",
+        "facts": [
+          "Mit ihren schnellen Tempi, ihren Instrumentalpassagen und ihrer aggressiven Spielweise zählt die Band zu den Gründungsbands der \"Big Four\" des Thrash Metal, neben Megadeth, Anthrax und Slayer.",
+          "Der frühere Gitarrist Dave Mustaine gründete Megadeth, nachdem er 1983 bei Metallica gefeuert worden war."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı heavy metal grubu · 1981, Los Angeles",
+        "who": "Metallica, Amerikalı bir heavy metal grubudur. Grup, 1981'de Los Angeles'ta vokalist/gitarist James Hetfield ve davulcu Lars Ulrich tarafından kuruldu ve kariyerinin büyük bölümünde San Francisco'yu merkez üssü olarak kullandı. Güncel kadroda Hetfield, Ulrich, Kirk Hammett ve Robert Trujillo yer alıyor.",
+        "facts": [
+          "Hızlı tempoları, enstrümantal bölümleri ve agresif çalgıcılığıyla grup, Megadeth, Anthrax ve Slayer ile birlikte thrash metalin kurucu \"big four\" gruplarından biri oldu.",
+          "Eski üyelerden Dave Mustaine, 1983'te Metallica'dan kovulduktan sonra Megadeth'i kurdu."
+        ]
+      }
+    },
+    {
+      "id": "8b0461b6-bf14-4967-bf69-7062471ed09d",
+      "slug": "metallica-life-burns-faster-a15e66a7",
+      "title": "Metallica: Life Burns Faster",
+      "name": "Metallica",
+      "source_url": "https://en.wikipedia.org/wiki/Metallica",
+      "extract": "Metallica is an American heavy metal band. It was formed in Los Angeles in 1981 by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. The band's fast tempos, instrumentals and aggressive musicianship made them one of the founding \"big four\" bands of thrash metal, alongside Megadeth, Anthrax and Slayer. Metallica's current lineup comprises founding members and primary songwriters Hetfield and Ulrich, longtime lead guitarist Kirk Hammett and bassist Robert Trujillo. Former members of the band are bassists Ron McGovney, Cliff Burton and Jason Newsted, as well as guitarist Dave Mustaine, who formed Megadeth after being fired fro",
+      "en": {
+        "kicker": "American heavy metal band · formed in Los Angeles in 1981",
+        "who": "Metallica is an American heavy metal band. It was formed in Los Angeles in 1981 by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. Its current lineup comprises Hetfield, Ulrich, Kirk Hammett and Robert Trujillo.",
+        "facts": [
+          "Its fast tempos, instrumentals and aggressive musicianship made the band one of the founding \"big four\" bands of thrash metal, alongside Megadeth, Anthrax and Slayer.",
+          "Former member Dave Mustaine formed Megadeth after being fired from Metallica in 1983."
+        ]
+      },
+      "de": {
+        "kicker": "Heavy-Metal-Band · 1981 in Los Angeles gegründet",
+        "who": "Metallica ist eine amerikanische Heavy-Metal-Band. Sie wurde 1981 in Los Angeles von Sänger und Gitarrist James Hetfield und Schlagzeuger Lars Ulrich gegründet und war den größten Teil ihrer Laufbahn in San Francisco ansässig. Zur aktuellen Besetzung gehören Hetfield, Ulrich, Kirk Hammett und Robert Trujillo.",
+        "facts": [
+          "Mit ihren schnellen Tempi, ihren Instrumentalpassagen und ihrer aggressiven Spielweise zählt die Band zu den Gründungsbands der \"Big Four\" des Thrash Metal, neben Megadeth, Anthrax und Slayer.",
+          "Der frühere Gitarrist Dave Mustaine gründete Megadeth, nachdem er 1983 bei Metallica gefeuert worden war."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı heavy metal grubu · 1981, Los Angeles",
+        "who": "Metallica, Amerikalı bir heavy metal grubudur. Grup, 1981'de Los Angeles'ta vokalist/gitarist James Hetfield ve davulcu Lars Ulrich tarafından kuruldu ve kariyerinin büyük bölümünde San Francisco'yu merkez üssü olarak kullandı. Güncel kadroda Hetfield, Ulrich, Kirk Hammett ve Robert Trujillo yer alıyor.",
+        "facts": [
+          "Hızlı tempoları, enstrümantal bölümleri ve agresif çalgıcılığıyla grup, Megadeth, Anthrax ve Slayer ile birlikte thrash metalin kurucu \"big four\" gruplarından biri oldu.",
+          "Eski üyelerden Dave Mustaine, 1983'te Metallica'dan kovulduktan sonra Megadeth'i kurdu."
+        ]
+      }
+    }
+  ]
+}

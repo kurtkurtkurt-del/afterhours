@@ -1,0 +1,70 @@
+{
+  "city": "philadelphia",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "48485370-f846-407f-9cb7-159d62b1ceeb",
+      "slug": "mountain-grass-unit-appalachian-smoke-tour-4431e2c4",
+      "title": "Mountain Grass Unit - Appalachian Smoke Tour",
+      "name": "Mountain Grass Unit",
+      "source_url": "https://en.wikipedia.org/wiki/Mountain_Grass_Unit",
+      "extract": "Mountain Grass Unit (MGU) is a four-piece bluegrass band founded in Birmingham, Alabama in 2018. The band consists of members Drury Anderson (lead vocals, mandolin), Luke Black (guitar), Sam Wilson (bass), and Josiah Nelson (fiddle). Unlike typical bluegrass arrangements, MGU does not feature a banjo.",
+      "en": {
+        "kicker": "bluegrass band · Birmingham, Alabama, 2018",
+        "who": "Mountain Grass Unit (MGU) is a four-piece bluegrass band founded in Birmingham, Alabama in 2018. The band consists of Drury Anderson, Luke Black, Sam Wilson and Josiah Nelson. Unlike typical bluegrass arrangements, the group does not feature a banjo.",
+        "facts": [
+          "the band was founded in Birmingham, Alabama in 2018.",
+          "unlike typical bluegrass arrangements, MGU does not feature a banjo."
+        ]
+      },
+      "de": {
+        "kicker": "bluegrass-band · Birmingham, Alabama, 2018",
+        "who": "Mountain Grass Unit (MGU) ist eine vierköpfige bluegrass-band, die 2018 in Birmingham, Alabama gegründet wurde. Zur band gehören Drury Anderson, Luke Black, Sam Wilson und Josiah Nelson. Anders als bei typischen bluegrass-arrangements verzichtet MGU auf ein banjo.",
+        "facts": [
+          "die band wurde 2018 in Birmingham, Alabama gegründet.",
+          "anders als bei typischen bluegrass-arrangements kommt bei MGU kein banjo vor."
+        ]
+      },
+      "tr": {
+        "kicker": "bluegrass grubu · Birmingham, Alabama, 2018",
+        "who": "Mountain Grass Unit (MGU), 2018 yılında Birmingham, Alabama'da kurulan dört üyeli bir bluegrass grubudur. Grubun üyeleri Drury Anderson, Luke Black, Sam Wilson ve Josiah Nelson'dır. Tipik bluegrass düzenlemelerinin aksine, MGU'da banjo yer almaz.",
+        "facts": [
+          "grup 2018 yılında Birmingham, Alabama'da kuruldu.",
+          "tipik bluegrass düzenlemelerinin aksine, MGU'da banjo yer almaz."
+        ]
+      }
+    },
+    {
+      "id": "ca39d138-59e2-4990-ad44-29d92a061d11",
+      "slug": "orville-peck-man-turned-mule-tour-f441bbe7",
+      "title": "Orville Peck - Man Turned Mule Tour",
+      "name": "Orville Peck",
+      "source_url": "https://en.wikipedia.org/wiki/Orville_Peck",
+      "extract": "Daniel Pitout, known professionally as Orville Peck, is a South African country musician and actor based in the United States and Canada, widely known for often wearing a mask and not showing his face publicly.",
+      "en": {
+        "kicker": "country musician and actor · United States and Canada",
+        "who": "Daniel Pitout, known professionally as Orville Peck, is a South African country musician and actor. He is based in the United States and Canada. He is widely known for often wearing a mask and not showing his face publicly.",
+        "facts": [
+          "Daniel Pitout, known professionally as Orville Peck, is a South African country musician and actor based in the United States and Canada.",
+          "he is widely known for often wearing a mask and not showing his face publicly."
+        ]
+      },
+      "de": {
+        "kicker": "country-musiker und schauspieler · USA und Kanada",
+        "who": "Daniel Pitout, der unter dem künstlernamen Orville Peck auftritt, ist ein südafrikanischer country-musiker und schauspieler. Er ist in den USA und Kanada ansässig. Er ist weithin dafür bekannt, häufig eine maske zu tragen und sein gesicht in der öffentlichkeit nicht zu zeigen.",
+        "facts": [
+          "Daniel Pitout, bekannt als Orville Peck, ist ein südafrikanischer country-musiker und schauspieler, der in den USA und Kanada ansässig ist.",
+          "er ist vor allem dafür bekannt, häufig eine maske zu tragen und sein gesicht nicht öffentlich zu zeigen."
+        ]
+      },
+      "tr": {
+        "kicker": "country müzisyeni ve oyuncu · Birleşik Devletler ve Kanada",
+        "who": "Daniel Pitout, Orville Peck adıyla tanınan, Güney Afrikalı bir country müzisyeni ve oyuncudur. Birleşik Devletler ve Kanada merkezli çalışmaktadır. Maske takması ve yüzünü halka açık olarak göstermemesiyle geniş çapta tanınır.",
+        "facts": [
+          "Daniel Pitout, Orville Peck adıyla tanınan, Güney Afrikalı bir country müzisyeni ve oyuncudur ve Birleşik Devletler ve Kanada merkezlidir.",
+          "sıklıkla maske takması ve yüzünü halka açık olarak göstermemesiyle geniş çapta tanınır."
+        ]
+      }
+    }
+  ]
+}

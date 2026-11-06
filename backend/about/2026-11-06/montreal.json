@@ -1,0 +1,102 @@
+{
+ "city": "montreal",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "3227ddd8-b318-4107-8f44-623d23010484",
+   "slug": "mary-in-the-junkyard-2439ecee",
+   "title": "mary in the junkyard",
+   "name": "Mary in the Junkyard",
+   "source_url": "https://en.wikipedia.org/wiki/Mary_in_the_Junkyard",
+   "extract": "Mary in the Junkyard are a British band from London. The band consists of vocalist and guitarist Clari Freeman-Taylor, viola and bass player Saya Barbaglia and drummer David Addison. The band are signed with All My Friends (AMF) Records. They have been compared to Adrianne Lenker and Wolf Alice.",
+   "en": {
+    "kicker": "British band · London",
+    "who": "Mary in the Junkyard are a British band from London. they have been compared to Adrianne Lenker and Wolf Alice.",
+    "facts": [
+     "the band consists of vocalist and guitarist Clari Freeman-Taylor, viola and bass player Saya Barbaglia and drummer David Addison.",
+     "the band is signed with All My Friends (AMF) Records."
+    ]
+   },
+   "de": {
+    "kicker": "britische band · London",
+    "who": "Mary in the Junkyard sind eine britische band aus London. sie wurden mit Adrianne Lenker und Wolf Alice verglichen.",
+    "facts": [
+     "die band besteht aus Vokalist und Gitarrist Clari Freeman-Taylor, Saya Barbaglia an Viola und Bass sowie Schlagzeuger David Addison.",
+     "die band steht bei All My Friends (AMF) Records unter vertrag."
+    ]
+   },
+   "tr": {
+    "kicker": "i̇ngiliz band · London",
+    "who": "Mary in the Junkyard, Londra'dan bir i̇ngiliz band. Adrianne Lenker ve Wolf Alice ile karşılaştırıldılar.",
+    "facts": [
+     "band; vokalist ve gitarist Clari Freeman-Taylor, viyola ve bas çalan Saya Barbaglia ile davulcu David Addison'dan oluşur.",
+     "band, All My Friends (AMF) Records ile sözleşmelidir."
+    ]
+   }
+  },
+  {
+   "id": "031b64c7-e5a4-4617-92cf-0813685ec1fa",
+   "slug": "parra-for-cuva-7015ee60",
+   "title": "Parra for Cuva",
+   "name": "Parra for Cuva",
+   "source_url": "https://en.wikipedia.org/wiki/Parra_for_Cuva",
+   "extract": "Nicolas Demuth, known by stage name Parra for Cuva, is a German musician and DJ.\nHe is best known for his house production.",
+   "en": {
+    "kicker": "German musician and DJ · house production",
+    "who": "Parra for Cuva is the stage name of Nicolas Demuth, a German musician and DJ. he is best known for his house production.",
+    "facts": [
+     "Nicolas Demuth performs under the stage name Parra for Cuva.",
+     "his best-known work is house production."
+    ]
+   },
+   "de": {
+    "kicker": "deutscher Musiker und DJ · House-Produktion",
+    "who": "Parra for Cuva ist das Künstlerpseudonym von Nicolas Demuth, einem deutschen Musiker und DJ. er ist vor allem für seine House-Produktionen bekannt.",
+    "facts": [
+     "Nicolas Demuth tritt unter dem Künstlernamen Parra for Cuva auf.",
+     "seine bekanntesten arbeiten sind House-Produktionen."
+    ]
+   },
+   "tr": {
+    "kicker": "Alman müzisyen ve DJ · house prodüksiyonu",
+    "who": "Parra for Cuva, Nicolas Demuth'un sahne adıdır; kendisi bir Alman müzisyen ve DJ'dir. en çok house prodüksiyonlarıyla tanınır.",
+    "facts": [
+     "Nicolas Demuth, Parra for Cuva sahne adıyla çalışır.",
+     "en çok house prodüksiyonlarıyla tanınır."
+    ]
+   }
+  },
+  {
+   "id": "a70bb176-ad3d-46a4-97b6-bbe1c7c28a38",
+   "slug": "slaughter-to-prevail-north-america-2026-leg-2-4e49ab5b",
+   "title": "Slaughter To Prevail: North America 2026 Leg 2",
+   "name": "Slaughter to Prevail",
+   "source_url": "https://en.wikipedia.org/wiki/Slaughter_to_Prevail",
+   "extract": "Slaughter to Prevail is a Russian-British-American deathcore band formed in 2014 in Yekaterinburg and currently based in Orlando, Florida, United States. The band has had numerous line-up changes over the years, with Russian vocalist Aleksandr \"Alex Terrible\" Shikolai and British lead guitarist Jack Simmons as the only constant members. The current line-up features Russian musicians with bassist Mikhail Petrov, drummer Evgeny Novikov, and rhythm guitarist Dmitry Mamedov.",
+   "en": {
+    "kicker": "deathcore band · formed 2014, Yekaterinburg",
+    "who": "Slaughter to Prevail is a Russian-British-American deathcore band. the current line-up features Russian musicians, bassist Mikhail Petrov, drummer Evgeny Novikov and rhythm guitarist Dmitry Mamedov.",
+    "facts": [
+     "the band was formed in 2014 in Yekaterinburg and is currently based in Orlando, Florida, United States.",
+     "Aleksandr \"Alex Terrible\" Shikolai and British lead guitarist Jack Simmons are the only constant members of the line-up."
+    ]
+   },
+   "de": {
+    "kicker": "Deathcore-Band · gegründet 2014, Jekaterinburg",
+    "who": "Slaughter to Prevail ist eine russisch-britisch-amerikanische Deathcore-Band. die aktuelle besetzung umfasst die russischen musiker Bassist Mikhail Petrov, Schlagzeuger Evgeny Novikov und Rhythmusgitarrist Dmitry Mamedov.",
+    "facts": [
+     "die band wurde 2014 in Jekaterinburg gegründet und ist heute in Orlando, Florida, USA, ansässig.",
+     "Aleksandr \"Alex Terrible\" Shikolai und der britische Leadgitarrist Jack Simmons sind die einzigen konstanten mitglieder der besetzung."
+    ]
+   },
+   "tr": {
+    "kicker": "deathcore grubu · 2014, Yekaterinburg'da kuruldu",
+    "who": "Slaughter to Prevail, Rus-İngiliz-Amerikan bir deathcore grubudur. güncel kadroda Rus müzisyenler yer alıyor: bas gitarda Mikhail Petrov, davulda Evgeny Novikov ve ritim gitarda Dmitry Mamedov.",
+    "facts": [
+     "grup 2014'te Yekaterinburg'da kuruldu ve şu anda Orlando, Florida, Amerika Birleşik Devletleri'nde faaliyet gösteriyor.",
+     "Aleksandr \"Alex Terrible\" Shikolai ve İngiliz solo gitarist Jack Simmons, kadrodaki tek sabit üyeler."
+    ]
+   }
+  }
+ ]
+}

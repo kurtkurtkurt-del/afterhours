@@ -1,0 +1,102 @@
+{
+  "city": "birmingham",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "dba7434f-5913-41af-828d-55b17a027f20",
+      "slug": "drake-milligan-fbbdf435",
+      "title": "Drake Milligan",
+      "name": "Drake Milligan",
+      "source_url": "https://en.wikipedia.org/wiki/Drake_Milligan",
+      "extract": "Drake Milligan is an American singer, best known for portraying Elvis Presley on the CMT series Sun Records and starring in the film Nobody where he portrayed a young teen Elvis. He has also appeared on American Idol and America's Got Talent. Milligan has charted with the singles \"Sounds Like Something I'd Do\" and \"Honky Tonkin' About\", the latter of which became his first number one when it topped the Canadian country chart. His debut album, Dallas/Fort Worth, was released on September 15, 2022.",
+      "en": {
+        "kicker": "american singer · debut album, 2022",
+        "who": "Drake Milligan is an American singer, best known for portraying Elvis Presley on the CMT series Sun Records. He has also appeared on American Idol and America's Got Talent.",
+        "facts": [
+          "His debut album, Dallas/Fort Worth, was released on September 15, 2022.",
+          "His single \"Honky Tonkin' About\" became his first number one when it topped the Canadian country chart."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer sänger · debütalbum, 2022",
+        "who": "Drake Milligan ist ein amerikanischer Sänger, der vor allem durch die Darstellung von Elvis Presley in der CMT-Serie Sun Records bekannt ist. Er trat außerdem bei American Idol und America's Got Talent auf.",
+        "facts": [
+          "Sein Debütalbum Dallas/Fort Worth erschien am 15. September 2022.",
+          "Seine single „Honky Tonkin' About“ wurde sein erster Nummer-eins-hit, als sie an der spitze der kanadischen country-charts stand."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı · ilk albüm, 2022",
+        "who": "Drake Milligan, CMT dizisi Sun Records'ta Elvis Presley'i canlandırmasıyla en çok tanınan bir Amerikalı şarkıcıdır. American Idol ve America's Got Talent programlarında da yer almıştır.",
+        "facts": [
+          "Debut albümü Dallas/Fort Worth, 15 Eylül 2022'de yayımlandı.",
+          "“Honky Tonkin' About” adlı single, Kanada country listesinin zirvesine çıkarak ilk birinciliğini getirdi."
+        ]
+      }
+    },
+    {
+      "id": "9e8bab9c-96ae-4bc6-87a9-a1e645619dfe",
+      "slug": "aaron-rowe-d8814f43",
+      "title": "Aaron Rowe",
+      "name": "Aaron Rowe",
+      "source_url": "https://en.wikipedia.org/wiki/Aaron_Rowe_(singer)",
+      "extract": "Aaron Rowe is an Irish singer-songwriter and musician from Dublin. Rowe is best known for his debut single, \"Hey Ma\", released in May 2025, in addition to follow-up singles, \"Talking with You\" and \"Lose Lose\".",
+      "en": {
+        "kicker": "irish singer-songwriter · dublin, 2025",
+        "who": "Aaron Rowe is an Irish singer-songwriter and musician from Dublin. He is best known for his debut single, \"Hey Ma\".",
+        "facts": [
+          "The debut single \"Hey Ma\" was released in May 2025.",
+          "Follow-up singles include \"Talking with You\" and \"Lose Lose\"."
+        ]
+      },
+      "de": {
+        "kicker": "irischer singer-songwriter · aus dublin, 2025",
+        "who": "Aaron Rowe ist ein irischer singer-songwriter und musiker aus Dublin. Er ist vor allem für seine debütsingle „Hey Ma“ bekannt.",
+        "facts": [
+          "Die debütsingle „Hey Ma“ erschien im mai 2025.",
+          "Weitere singles sind „Talking with You“ und „Lose Lose“."
+        ]
+      },
+      "tr": {
+        "kicker": "İrlandalı şarkı yazarı · Dublin, 2025",
+        "who": "Aaron Rowe, Dublin'den bir İrlandalı şarkı yazarı ve müzisyendir. En çok ilk single'ı \"Hey Ma\" ile tanınır.",
+        "facts": [
+          "İlk single \"Hey Ma\", mayıs 2025'te yayımlandı.",
+          "Ardından gelen single'lar arasında \"Talking with You\" ve \"Lose Lose\" yer alır."
+        ]
+      }
+    },
+    {
+      "id": "5b6b0a4c-ba0c-4f39-b225-46e14dbaf314",
+      "slug": "the-big-moon-8145890e",
+      "title": "The Big Moon",
+      "name": "The Big Moon",
+      "source_url": "https://en.wikipedia.org/wiki/The_Big_Moon",
+      "extract": "The Big Moon are a British indie rock band, formed in 2014 in London by frontwoman Juliette Jackson. Their debut album, Love in the 4th Dimension, was released on 6 April 2017, containing a number of tracks previously released on their EP The Road. The album was shortlisted for the prestigious Mercury Prize in 2017. They are signed to Fiction Records and have toured internationally. They supported Pixies on their 2019 UK tour.",
+      "en": {
+        "kicker": "british indie rock band · london, 2014",
+        "who": "The Big Moon are a British indie rock band, formed in 2014 in London by frontwoman Juliette Jackson. They are signed to Fiction Records and have toured internationally. They supported Pixies on their 2019 UK tour.",
+        "facts": [
+          "Their debut album, Love in the 4th Dimension, was released on 6 April 2017.",
+          "The album was shortlisted for the Mercury Prize in 2017."
+        ]
+      },
+      "de": {
+        "kicker": "britische indie-rock-band · london, 2014",
+        "who": "The Big Moon sind eine britische indie-rock-band, die 2014 in London von der frontfrau Juliette Jackson gegründet wurde. Die band steht bei Fiction Records unter vertrag und war international auf tour. 2019 war sie beim UK-tour von Pixies als vorband dabei.",
+        "facts": [
+          "Ihr debütalbum Love in the 4th Dimension erschien am 6. april 2017.",
+          "Das album stand 2017 auf der shortlist für den Mercury Prize."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz indie rock grubu · Londra, 2014",
+        "who": "The Big Moon, 2014'te Londra'da ön kadın vokalist Juliette Jackson tarafından kurulan bir İngiliz indie rock grubudur. Grup Fiction Records ile sözleşmeli olup uluslararası turnelere çıkmıştır. 2019'da Pixies'in İngiltere turnesinde açılış yapmıştır.",
+        "facts": [
+          "Debut albümleri Love in the 4th Dimension, 6 Nisan 2017'de yayımlandı.",
+          "Albüm, 2017'de Mercury Ödülü'nün kısa listesine girdi."
+        ]
+      }
+    }
+  ]
+}

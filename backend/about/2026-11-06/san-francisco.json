@@ -1,0 +1,70 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "56705b54-a16b-4b90-912d-5e911bad000e",
+   "slug": "the-tallest-man-on-earth-984f6f55",
+   "title": "The Tallest Man on Earth",
+   "name": "The Tallest Man on Earth",
+   "source_url": "https://en.wikipedia.org/wiki/The_Tallest_Man_on_Earth",
+   "extract": "Kristian Matsson is a Swedish singer-songwriter who performs under the stage name The Tallest Man on Earth. Matsson grew up in Leksand, and began his solo career in 2006, having previously been the lead singer of the indie band Montezumas. His music has often drawn comparisons to the music of Bob Dylan.",
+   "en": {
+    "kicker": "swedish singer-songwriter · solo career from 2006",
+    "who": "Kristian Matsson is a swedish singer-songwriter who performs as The Tallest Man on Earth. He grew up in Leksand and was previously the lead singer of the indie band Montezumas. His music has often been compared to the music of Bob Dylan.",
+    "facts": [
+     "Matsson grew up in Leksand and began his solo career in 2006.",
+     "His music has often drawn comparisons to the music of Bob Dylan."
+    ]
+   },
+   "de": {
+    "kicker": "schwedischer singer-songwriter · solokarriere seit 2006",
+    "who": "Kristian Matsson ist ein schwedischer singer-songwriter, der unter dem künstlernamen The Tallest Man on Earth auftritt. Er wuchs in Leksand auf und war zuvor sänger der indie-band Montezumas. Seine musik wurde häufig mit der musik von Bob Dylan verglichen.",
+    "facts": [
+     "Matsson wuchs in Leksand auf und startete 2006 seine solokarriere.",
+     "Seine musik wurde häufig mit der musik von Bob Dylan verglichen."
+    ]
+   },
+   "tr": {
+    "kicker": "isveçli şarkıcı ve söz yazarı · 2006'dan beri solo kariyer",
+    "who": "Kristian Matsson, The Tallest Man on Earth sahne adıyla şarkı söyleyen bir isveçli şarkıcı ve söz yazarıdır. Leksand'da büyüdü ve daha önce Montezumas adlı indie grubunda baş vokalistti. Müziği sıklıkla Bob Dylan'ın müziğiyle karşılaştırılmıştır.",
+    "facts": [
+     "Matsson Leksand'da büyüdü ve 2006'da solo kariyerine başladı.",
+     "Müziği çoğu zaman Bob Dylan'ın müziğiyle karşılaştırıldı."
+    ]
+   }
+  },
+  {
+   "id": "5fba70d7-07ff-45c7-abad-9111eff385c0",
+   "slug": "teddy-swims-the-ugly-tour-fc181948",
+   "title": "Teddy Swims: The UGLY Tour",
+   "name": "Teddy Swims",
+   "source_url": "https://en.wikipedia.org/wiki/Teddy_Swims",
+   "extract": "Jaten Collin Dimsdale, known professionally as Teddy Swims, is an American singer and songwriter. Known for creating genre-blending music that includes elements of R&B, soul, hip-hop, and contemporary pop, Swims originally began to attract fans by posting song covers on YouTube during 2019 and 2020. Swims' third extended play, Tough Love (2022), became his first entry on the Billboard 200.",
+   "en": {
+    "kicker": "american singer and songwriter · youtube covers from 2019",
+    "who": "Jaten Collin Dimsdale, known professionally as Teddy Swims, is an American singer and songwriter. His music blends genres, including R&B, soul, hip-hop, and contemporary pop.",
+    "facts": [
+     "Swims originally began to attract fans by posting song covers on YouTube during 2019 and 2020.",
+     "His third extended play, Tough Love (2022), became his first entry on the Billboard 200."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer und songwriter · youtube-covers ab 2019",
+    "who": "Jaten Collin Dimsdale, professionell bekannt als Teddy Swims, ist ein amerikanischer singer und songwriter. Seine musik verbindet genres, darunter R&B, soul, hip-hop und zeitgenössischer pop.",
+    "facts": [
+     "Swims begann seine fans zunächst mit song-covers auf YouTube in den jahren 2019 und 2020 zu gewinnen.",
+     "Seine dritte ep, Tough Love (2022), wurde sein erster eintrag in den Billboard 200."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı · 2019'dan itibaren youtube kapakları",
+    "who": "Jaten Collin Dimsdale, sahne adıyla Teddy Swims, amerikalı bir şarkıcı ve söz yazarıdır. Müziği R&B, soul, hip-hop ve çağdaş pop gibi türleri harmanlar.",
+    "facts": [
+     "Swims, 2019 ve 2020 yıllarında YouTube'da şarkı kapakları paylaşarak hayran kitlesi kazanmaya başladı.",
+     "Üçüncü ep'i Tough Love (2022), Billboard 200 listesine giren ilk çalışması oldu."
+    ]
+   }
+  }
+ ]
+}

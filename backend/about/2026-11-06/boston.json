@@ -1,0 +1,38 @@
+{
+  "city": "boston",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "dd8fc7c3-5225-46eb-a159-e01966651d0a",
+      "slug": "the-longest-johns-919a126c",
+      "title": "The Longest Johns",
+      "name": "The Longest Johns",
+      "source_url": "https://en.wikipedia.org/wiki/The_Longest_Johns",
+      "extract": "The Longest Johns are an English folk musical group from Bristol, England, consisting of Andy Yates, Jonathan \"JD\" Darley, and Robbie Sattin. They are known for performing folk music and sea shanties in the English tradition, and they also compose and record their own music. They gained popularity from their rendition of the folk song \"Wellerman\", which went viral on TikTok in early 2021.",
+      "en": {
+        "kicker": "English folk group · Bristol, England",
+        "who": "The Longest Johns are an English folk musical group from Bristol, England, consisting of Andy Yates, Jonathan \"JD\" Darley, and Robbie Sattin. they perform folk music and sea shanties in the English tradition, and also compose and record their own music. they gained popularity from their rendition of the folk song \"Wellerman\".",
+        "facts": [
+          "their rendition of the folk song \"Wellerman\" went viral on TikTok in early 2021.",
+          "they perform folk music and sea shanties in the English tradition."
+        ]
+      },
+      "de": {
+        "kicker": "englische folk-musikgruppe · Bristol, England",
+        "who": "The Longest Johns sind eine englische folk-musikgruppe aus Bristol, England, bestehend aus Andy Yates, Jonathan \"JD\" Darley und Robbie Sattin. sie spielen folk-musik und sea shanties in der englischen tradition und komponieren und nehmen auch eigene musik auf. bekannt wurden sie durch ihre version des folksongs \"Wellerman\".",
+        "facts": [
+          "ihre version des folksongs \"Wellerman\" ging Anfang 2021 auf TikTok viral.",
+          "sie spielen folk-musik und sea shanties in der englischen tradition."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz folk müzik grubu · Bristol, England",
+        "who": "The Longest Johns, İngiltere'nin Bristol kentinden gelen ve Andy Yates, Jonathan \"JD\" Darley ve Robbie Sattin'den oluşan bir İngiliz folk müzik grubudur. grup, geleneksel İngiliz tarzında folk müziği ve sea shanty'ler icra eder; ayrıca kendi müziklerini de bestelerler ve kaydederler. grup, \"Wellerman\" adlı folk şarkısının yorumuyla popülerlik kazanmıştır.",
+        "facts": [
+          "\"Wellerman\" adlı folk şarkısının yorumu 2021 başında TikTok'ta viral oldu.",
+          "grup, geleneksel İngiliz tarzında folk müziği ve sea shanty'ler icra eder."
+        ]
+      }
+    }
+  ]
+}

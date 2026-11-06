@@ -1,0 +1,38 @@
+{
+  "city": "new-orleans",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "1e120baf-50ae-4c20-8678-a2b13f65a59f",
+      "slug": "bill-kirchen-e3602257",
+      "title": "Bill Kirchen",
+      "name": "Bill Kirchen",
+      "source_url": "https://en.wikipedia.org/wiki/Bill_Kirchen",
+      "extract": "William Knight Kirchen is an American guitarist, singer and songwriter. He was a member of Commander Cody and His Lost Planet Airmen from 1967 to the mid-1970s and later worked with Nick Lowe. Guitar Player magazine described Kirchen as \"Titan of The Telecaster\" for his prowess on the guitar.",
+      "en": {
+        "kicker": "american guitarist, singer and songwriter",
+        "who": "Bill Kirchen is an American guitarist, singer and songwriter. He later worked with Nick Lowe.",
+        "facts": [
+          "He was a member of Commander Cody and His Lost Planet Airmen from 1967 to the mid-1970s.",
+          "Guitar Player magazine described him as \"Titan of the Telecaster\" for his prowess on the guitar."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer gitarrist, sänger und songwriter",
+        "who": "Bill Kirchen ist ein amerikanischer gitarrist, sänger und songwriter. Er arbeitete später mit Nick Lowe zusammen.",
+        "facts": [
+          "Er war von 1967 bis mitte der 1970er jahre mitglied von Commander Cody and His Lost Planet Airmen.",
+          "Das magazin Guitar Player bezeichnete ihn für sein können an der gitarre als \"Titan of the Telecaster\"."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı gitarist, şarkıcı ve söz yazarı",
+        "who": "Bill Kirchen amerikalı bir gitarist, şarkıcı ve söz yazarıdır. Daha sonra Nick Lowe ile çalıştı.",
+        "facts": [
+          "1967'den 1970'lerin ortasına kadar Commander Cody and His Lost Planet Airmen grubunun üyesiydi.",
+          "Guitar Player dergisi, gitar konusundaki becerisi nedeniyle onu \"Titan of the Telecaster\" olarak tanımladı."
+        ]
+      }
+    }
+  ]
+}

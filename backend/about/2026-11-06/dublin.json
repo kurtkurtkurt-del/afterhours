@@ -1,0 +1,38 @@
+{
+  "city": "dublin",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "ec00176b-4473-4372-913d-beeca82b8b56",
+      "slug": "igorrr-b5b793b2",
+      "title": "Igorrr",
+      "name": "Igorrr",
+      "source_url": "https://en.wikipedia.org/wiki/Igorrr",
+      "extract": "Gautier Serre, better known by his stage name Igorrr, is a French musician, composer and producer. Under the Igorrr alias, he combines a variety of disparate genres, including black metal, baroque music, breakcore, and trip hop, into a singular sound. Serre is also part of the now disbanded side-projects Whourkr and Corpo-Mente. The Igorrr project has evolved into a full-fledged group with vocalists Laure Le Prunenec and Laurent Lunoir, drummer Sylvain Bouvier, guitarist Martyn Clément and bassist Erlend Caspersen. In 2021, both vocalists left the band and were replaced by JB Le Bail and Aphrodite Patoulidou; the latter was later replaced by Marthe Alexandre. In 2024, Rémi Serafino became dr",
+      "en": {
+        "kicker": "French musician, composer and producer",
+        "who": "Gautier Serre, better known by his stage name Igorrr, is a French musician, composer and producer. Under the Igorrr alias he combines black metal, baroque music, breakcore and trip hop into a singular sound. The Igorrr project has evolved into a full-fledged group with a changing lineup.",
+        "facts": [
+          "Serre is also part of the now disbanded side-projects Whourkr and Corpo-Mente.",
+          "In 2021, both vocalists left the band and were replaced by JB Le Bail and Aphrodite Patoulidou; the latter was later replaced by Marthe Alexandre."
+        ]
+      },
+      "de": {
+        "kicker": "französischer musiker, komponist und produzent",
+        "who": "Gautier Serre, besser bekannt unter dem Künstlernamen Igorrr, ist ein französischer Musiker, Komponist und Produzent. Unter dem Alias Igorrr verbindet er Black Metal, Barockmusik, Breakcore und Trip-Hop zu einem eigenständigen Sound. Das Projekt Igorrr hat sich zu einer vollwertigen Band mit wechselnder Besetzung entwickelt.",
+        "facts": [
+          "Serre ist außerdem Teil der inzwischen aufgelösten Nebenprojekte Whourkr und Corpo-Mente.",
+          "2021 verließen beide Sänger die Band und wurden durch JB Le Bail und Aphrodite Patoulidou ersetzt; Letztere wurde später durch Marthe Alexandre abgelöst."
+        ]
+      },
+      "tr": {
+        "kicker": "fransız müzisyen, besteci ve yapımcı",
+        "who": "Sahne adı Igorrr ile daha çok tanınan Gautier Serre, bir Fransız müzisyen, besteci ve yapımcıdır. Igorrr takma adı altında black metal, barok müzik, breakcore ve trip hop gibi farklı türleri tek bir seste birleştirir. Igorrr projesi, değişen bir kadroyla tam teşekküllü bir gruba dönüşmüştür.",
+        "facts": [
+          "Serre, bugün dağılmış olan Whourkr ve Corpo-Mente yan projelerinin de bir parçasıdır.",
+          "2021de iki vokalist gruptan ayrıldı ve yerlerine JB Le Bail ile Aphrodite Patoulidou geçti; Patoulidou sonradan Marthe Alexandre ile değiştirildi."
+        ]
+      }
+    }
+  ]
+}

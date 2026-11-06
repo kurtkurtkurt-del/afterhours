@@ -1,0 +1,70 @@
+{
+  "city": "glasgow",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "71885234-b88c-47da-b245-97367d9984d9",
+      "slug": "anvil-pounding-the-past-tour-9b91fa96",
+      "title": "Anvil - Pounding the Past Tour",
+      "name": "Anvil",
+      "source_url": "https://en.wikipedia.org/wiki/Anvil_(band)",
+      "extract": "Anvil is a Canadian heavy metal band formed in Toronto in 1978. The band currently consists of founding members guitarist/vocalist Steve \"Lips\" Kudlow and drummer Robb Reiner, along with bassist Chris Robertson who joined in 2014. As of 2024, the band has released twenty studio albums; they have been cited as having influenced many notable heavy metal groups including Megadeth, Slayer, Anthrax, and Metallica.",
+      "en": {
+        "kicker": "Canadian heavy metal band · formed in Toronto, 1978",
+        "who": "Anvil is a Canadian heavy metal band formed in Toronto in 1978. The current lineup includes founding members guitarist and vocalist Steve \"Lips\" Kudlow and drummer Robb Reiner, along with bassist Chris Robertson, who joined in 2014.",
+        "facts": [
+          "as of 2024, the band has released twenty studio albums.",
+          "they have been cited as influencing many notable heavy metal groups, including Megadeth, Slayer, Anthrax and Metallica."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische heavy-metal-band · gegründet 1978 in Toronto",
+        "who": "Anvil ist eine kanadische heavy-metal-band, die 1978 in Toronto gegründet wurde. Zur aktuellen besetzung gehören die gründungsmitglieder Steve \"Lips\" Kudlow (gitarre, gesang) und Robb Reiner (schlagzeug). Hinzu kommt der bassist Chris Robertson, der 2014 einstieg.",
+        "facts": [
+          "bis 2024 hat die band zwanzig studioalben veröffentlicht.",
+          "Anvil wird als einfluss vieler bekannter heavy-metal-gruppen genannt, darunter Megadeth, Slayer, Anthrax und Metallica."
+        ]
+      },
+      "tr": {
+        "kicker": "Kanadalı heavy metal grubu · 1978'de Toronto'da kuruldu",
+        "who": "Anvil, 1978'de Toronto'da kurulmuş bir Kanadalı heavy metal grubudur. Güncel kadroda kurucu üyeler gitarist ve vokalist Steve \"Lips\" Kudlow ile davulcu Robb Reiner yer alıyor. Ayrıca 2014'te katılan bassist Chris Robertson de kadroda.",
+        "facts": [
+          "2024 itibarıyla grup yirmi stüdyo albümü yayımlamış durumda.",
+          "grup, Megadeth, Slayer, Anthrax ve Metallica dahil birçok ünlü heavy metal grubunu etkilemiş olarak anılıyor."
+        ]
+      }
+    },
+    {
+      "id": "11866309-84cf-4226-87ac-69f4d96d989d",
+      "slug": "ok-go-c6c89f11",
+      "title": "OK Go",
+      "name": "OK Go",
+      "source_url": "https://en.wikipedia.org/wiki/OK_Go",
+      "extract": "OK Go is an American rock band formed in 1998 and based in Los Angeles, California. The band is composed of Damian Kulash, Tim Nordwind, Dan Konopka, and Andy Ross.",
+      "en": {
+        "kicker": "American rock band · formed 1998 in Los Angeles",
+        "who": "OK Go is an American rock band. The band is composed of Damian Kulash, Tim Nordwind, Dan Konopka and Andy Ross.",
+        "facts": [
+          "the band was formed in 1998.",
+          "the band is based in Los Angeles, California."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · gegründet 1998 in Los Angeles",
+        "who": "OK Go ist eine amerikanische rockband. Die band besteht aus Damian Kulash, Tim Nordwind, Dan Konopka und Andy Ross.",
+        "facts": [
+          "die band wurde 1998 gegründet.",
+          "sie ist in Los Angeles, Kalifornien, ansässig."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı rock grubu · 1998'de Los Angeles'ta kuruldu",
+        "who": "OK Go bir Amerikalı rock grubudur. Grubun üyeleri Damian Kulash, Tim Nordwind, Dan Konopka ve Andy Ross'tur.",
+        "facts": [
+          "grup 1998'de kuruldu.",
+          "grup, Kaliforniya'nın Los Angeles kentinde faaliyet gösteriyor."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "716f2b86-16a2-4409-b457-0dd4c1434628",
+      "slug": "merve-ozbey-b6111229",
+      "title": "Merve Özbey",
+      "name": "Merve Özbey",
+      "source_url": "https://en.wikipedia.org/wiki/Merve_%C3%96zbey",
+      "extract": "Merve Özbey is a Turkish singer and songwriter. Due to her collaborations with Erdem Kınay in the songs \"Duman\" and \"Helal Ettim\", she became famous in Turkey.",
+      "en": {
+        "kicker": "singer and songwriter · Turkey",
+        "who": "Merve Özbey is a Turkish singer and songwriter. Her collaborations with Erdem Kınay on the songs \"Duman\" and \"Helal Ettim\" made her famous in Turkey.",
+        "facts": [
+          "Merve Özbey is a Turkish singer and songwriter.",
+          "Her collaborations with Erdem Kınay on the songs \"Duman\" and \"Helal Ettim\" made her famous in Turkey."
+        ]
+      },
+      "de": {
+        "kicker": "Sängerin und Songwriterin · Türkei",
+        "who": "Merve Özbey ist eine türkische Sängerin und Songwriterin. Durch ihre Zusammenarbeit mit Erdem Kınay bei den Liedern „Duman“ und „Helal Ettim“ wurde sie in der Türkei bekannt.",
+        "facts": [
+          "Merve Özbey ist eine türkische Sängerin und Songwriterin.",
+          "Durch ihre Zusammenarbeit mit Erdem Kınay bei den Liedern „Duman“ und „Helal Ettim“ wurde sie in der Türkei bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "şarkıcı ve söz yazarı · Türkiye",
+        "who": "Merve Özbey Türk bir şarkıcı ve söz yazarıdır. Erdem Kınay ile yaptığı \"Duman\" ve \"Helal Ettim\" şarkılarıyla Türkiye'de ünlendi.",
+        "facts": [
+          "Merve Özbey Türk bir şarkıcı ve söz yazarıdır.",
+          "Erdem Kınay ile yaptığı \"Duman\" ve \"Helal Ettim\" şarkılarıyla Türkiye'de ünlendi."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "seattle",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "653b02a0-9db5-4fd8-b6b6-f57fe5d411dc",
+      "slug": "static-dress-59f66718",
+      "title": "Static Dress",
+      "name": "Static Dress",
+      "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+      "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games.",
+      "en": {
+        "kicker": "English rock band · formed 2018, Leeds, West Yorkshire",
+        "who": "Static Dress are an English rock band from Leeds, West Yorkshire. Their current lineup is lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding.",
+        "facts": [
+          "formed in 2018, the band is a concept band whose material follows a continuous story.",
+          "they have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+        ]
+      },
+      "de": {
+        "kicker": "englische Rockband · gegründet 2018, Leeds, West Yorkshire",
+        "who": "Static Dress ist eine englische Rockband aus Leeds, West Yorkshire. Die aktuelle Besetzung besteht aus Sänger Olli Appleyard, Schlagzeuger Sam Ogden, Gitarrist Vincent Weight und Bassist George Holding.",
+        "facts": [
+          "Die Band wurde 2018 gegründet und ist eine Konzeptband, deren Material einer durchgehenden Geschichte folgt.",
+          "Bisher erschienen zwei Studioalben, drei EPs und verschiedene Einzelsingles sowie ein Comicbuch und drei Videospiele."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz rock grubu · 2018'de kuruldu, Leeds, West Yorkshire",
+        "who": "Static Dress, Leeds, West Yorkshire'dan bir İngiliz rock grubudur. Güncel kadro; baş vokal Olli Appleyard, davulcu Sam Ogden, gitarist Vincent Weight ve basçı George Holding'den oluşuyor.",
+        "facts": [
+          "Grup 2018'de kuruldu ve materyalleri sürekli bir hikayeyi takip eden bir konsept grup olarak çalışıyor.",
+          "Grup iki tam uzunluklu stüdyo albümü, üç EP, çeşitli tekil şarkılar, bir çizgi roman ve üç video oyunu yayımladı."
+        ]
+      }
+    }
+  ]
+}

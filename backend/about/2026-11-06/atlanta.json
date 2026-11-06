@@ -1,0 +1,38 @@
+{
+  "city": "atlanta",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "2d7245d8-8db8-4a18-b680-56d89311369c",
+      "slug": "olivia-rodrigo-the-unraveled-tour-8c457fcc",
+      "title": "Olivia Rodrigo: The Unraveled Tour",
+      "name": "Olivia Rodrigo",
+      "source_url": "https://en.wikipedia.org/wiki/Olivia_Rodrigo",
+      "extract": "Olivia Isabel Rodrigo is an American singer-songwriter and actress. Rodrigo began her career as a child actress, appearing in commercials and the direct-to-video film An American Girl: Grace Stirs Up Success (2015). She rose to prominence with her leading roles in the Disney Channel series Bizaardvark (2016–2019) and the Disney+ series High School Musical: The Musical: The Series (2019–2022).",
+      "en": {
+        "kicker": "American singer-songwriter and actress",
+        "who": "Olivia Isabel Rodrigo is an American singer-songwriter and actress. She began her career as a child actress, appearing in commercials and the direct-to-video film An American Girl: Grace Stirs Up Success (2015). She rose to prominence through leading roles in the Disney Channel series Bizaardvark and the Disney+ series High School Musical: The Musical: The Series.",
+        "facts": [
+          "Rodrigo started out as a child actress in commercials and the direct-to-video film An American Girl: Grace Stirs Up Success (2015).",
+          "She rose to prominence with leading roles in the Disney Channel series Bizaardvark (2016–2019) and the Disney+ series High School Musical: The Musical: The Series (2019–2022)."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische Singer-Songwriterin und Schauspielerin",
+        "who": "Olivia Isabel Rodrigo ist eine amerikanische Singer-Songwriterin und Schauspielerin. Sie begann ihre Karriere als Kinderdarstellerin in Werbespots und dem direkt auf Video veröffentlichten Film An American Girl: Grace Stirs Up Success (2015). Bekannt wurde sie durch Hauptrollen in der Disney-Channel-Serie Bizaardvark (2016–2019) und der Disney+-Serie High School Musical: The Musical: The Series (2019–2022).",
+        "facts": [
+          "Rodrigo begann als Kinderdarstellerin in Werbespots und im Direct-to-Video-Film An American Girl: Grace Stirs Up Success (2015).",
+          "Den Durchbruch schaffte sie mit Hauptrollen in der Disney-Channel-Serie Bizaardvark (2016–2019) und der Disney+-Serie High School Musical: The Musical: The Series (2019–2022)."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı-söz yazarı ve oyuncu",
+        "who": "Olivia Isabel Rodrigo, amerikalı bir şarkıcı-söz yazarı ve oyuncudur. Kariyerine reklamlarda ve doğrudan video olarak yayımlanan An American Girl: Grace Stirs Up Success (2015) filminde çocuk oyuncu olarak başladı. Disney Channel dizisi Bizaardvark (2016–2019) ve Disney+ dizisi High School Musical: The Musical: The Series'deki (2019–2022) başrolleriyle ön plana çıktı.",
+        "facts": [
+          "Rodrigo, reklamlarda ve doğrudan video olarak çıkan An American Girl: Grace Stirs Up Success (2015) filminde çocuk oyuncu olarak kariyerine başladı.",
+          "Disney Channel dizisi Bizaardvark (2016–2019) ve Disney+ dizisi High School Musical: The Musical: The Series (2019–2022) ile ön plana çıktı."
+        ]
+      }
+    }
+  ]
+}

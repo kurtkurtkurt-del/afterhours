@@ -1,0 +1,38 @@
+{
+  "city": "roma",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "e697d538-09a4-48bc-904f-aa3ae3d0a5e4",
+      "slug": "kingfishr-roma-summer-fest-3d133cdd",
+      "title": "Kingfishr | Roma Summer Fest",
+      "name": "Kingfishr",
+      "source_url": "https://en.wikipedia.org/wiki/Kingfishr",
+      "extract": "Kingfishr are an Irish indie folk group formed in Letterkenny Co Donegal in 2022 comprising members Eddie Keogh, Eoghan \"McGoo\" McGrath, and Eoin \"Fitz\" Fitzgibbon. The band's breakout success was their song \"Killeagh\", which reached number one on the Irish Singles Chart on 2 May 2025. Their debut studio album Halcyon was released in August 2025.",
+      "en": {
+        "kicker": "irish indie folk group · 2022, letterkenny, co donegal",
+        "who": "kingfishr are an irish indie folk group formed in letterkenny, co donegal, in 2022. the members are eddie keogh, eoghan \"mcgoo\" mcgrath and eoin \"fitz\" fitzgibbon.",
+        "facts": [
+          "their song \"killeagh\" was their breakout success and reached number one on the Irish Singles Chart on 2 May 2025.",
+          "their debut studio album halcyon was released in august 2025."
+        ]
+      },
+      "de": {
+        "kicker": "irische indie-folk-gruppe · 2022, letterkenny, co donegal",
+        "who": "kingfishr sind eine irische indie-folk-gruppe, die 2022 in letterkenny, co donegal, gegründet wurde. zu den mitgliedern gehören eddie keogh, eoghan \"mcgoo\" mcgrath und eoin \"fitz\" fitzgibbon.",
+        "facts": [
+          "ihr durchbruch gelang mit dem song \"killeagh\", der am 2. mai 2025 die nummer eins der irischen singlecharts erreichte.",
+          "ihr debütalbum halcyon erschien im august 2025."
+        ]
+      },
+      "tr": {
+        "kicker": "İrlandalı indie folk grubu · 2022, letterkenny, co donegal",
+        "who": "kingfishr, 2022 yılında letterkenny, co donegal'de kurulmuş bir İrlandalı indie folk grubudur. üyeleri eddie keogh, eoghan \"mcgoo\" mcgrath ve eoin \"fitz\" fitzgibbon'dır.",
+        "facts": [
+          "çıkış başarısını, 2 mayıs 2025'te İrlanda single listesinde birinci olan \"killeagh\" şarkısıyla elde etti.",
+          "ilk stüdyo albümü halcyon, 2025 yılının ağustos ayında yayımlandı."
+        ]
+      }
+    }
+  ]
+}

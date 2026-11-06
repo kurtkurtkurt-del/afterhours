@@ -1,0 +1,38 @@
+{
+  "city": "new-york",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "19ac47ba-45f8-45cf-9f69-bb98af4a48c0",
+      "slug": "buena-vista-social-club-dbc10a0c",
+      "title": "Buena Vista Social Club",
+      "name": "Buena Vista Social Club",
+      "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+      "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years.",
+      "en": {
+        "kicker": "Cuban musical ensemble · formed 1996",
+        "who": "Buena Vista Social Club was a musical ensemble made up primarily of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González.",
+        "facts": [
+          "The group took its name from the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s.",
+          "To showcase styles such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years."
+        ]
+      },
+      "de": {
+        "kicker": "kubanisches musikensemble · gegründet 1996",
+        "who": "Buena Vista Social Club war ein musikensemble, das überwiegend aus kubanischen musikern bestand und 1996 gegründet wurde. Das projekt wurde von World-Circuit-Manager Nick Gold organisiert, vom amerikanischen gitarristen Ry Cooder produziert und von Juan de Marcos González geleitet.",
+        "facts": [
+          "Der name geht auf den gleichnamigen club der mitglieder im viertel Buenavista in Havanna zurück, einen beliebten musikort der 1940er jahre.",
+          "Um beliebte stile wie son, bolero und danzón zu präsentieren, warben sie ein dutzend altgediente musiker an, von denen einige seit vielen jahren im ruhestand waren."
+        ]
+      },
+      "tr": {
+        "kicker": "Küba müzik topluluğu · 1996 yılında kuruldu",
+        "who": "Buena Vista Social Club, ağırlıklı olarak Kübalı müzisyenlerden oluşan ve 1996 yılında kurulan bir müzik topluluğuydu. Proje, World Circuit yöneticisi Nick Gold tarafından organize edildi, Amerikalı gitarist Ry Cooder tarafından prodüse edildi ve Juan de Marcos González tarafından yönetildi.",
+        "facts": [
+          "Grup, Havana'nın Buenavista semtinde bulunan ve 1940'larda popüler bir müzik mekanı olan, üyelerinin aynı adı taşıyan kulübünden adını aldı.",
+          "Son, bolero ve danzón gibi dönemin popüler tarzlarını sergilemek için, bazıları uzun yıllar emekli olmuş bir düzine deneyimli müzisyeni kadrosuna kattılar."
+        ]
+      }
+    }
+  ]
+}

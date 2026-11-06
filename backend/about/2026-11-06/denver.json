@@ -1,0 +1,102 @@
+{
+ "city": "denver",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "1a8bb3df-5308-40a6-8671-1bf87b4a151b",
+   "slug": "311-ages-16-c8a135e4",
+   "title": "311 - Ages 16+",
+   "name": "311",
+   "source_url": "https://en.wikipedia.org/wiki/311_(band)",
+   "extract": "311 is an American rock band from Omaha, Nebraska. The band was formed in 1988 by vocalist and guitarist Nick Hexum, lead guitarist Jim Watson, bassist Aaron \"P-Nut\" Wills, and drummer Chad Sexton. Watson was replaced by Tim Mahoney in 1990. In 1992, Doug \"SA\" Martinez joined as a second vocalist and turntablist.",
+   "en": {
+    "kicker": "American rock band · formed 1988, Omaha, Nebraska",
+    "who": "311 is an American rock band from Omaha, Nebraska. the band was formed in 1988 by Nick Hexum, Jim Watson, Aaron \"P-Nut\" Wills and Chad Sexton.",
+    "facts": [
+     "Jim Watson was replaced by Tim Mahoney in 1990.",
+     "in 1992, Doug \"SA\" Martinez joined as a second vocalist and turntablist."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · gegründet 1988, Omaha, Nebraska",
+    "who": "311 ist eine amerikanische rockband aus Omaha, Nebraska. die band wurde 1988 von Nick Hexum, Jim Watson, Aaron „P-Nut“ Wills und Chad Sexton gegründet.",
+    "facts": [
+     "Jim Watson wurde 1990 durch Tim Mahoney ersetzt.",
+     "1992 stieß Doug „SA“ Martinez als zweiter sänger und turntablist dazu."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · 1988, Omaha, Nebraska'da kuruldu",
+    "who": "311, Omaha, Nebraska'dan gelen amerikalı bir rock grubudur. grup 1988'de Nick Hexum, Jim Watson, Aaron „P-Nut“ Wills ve Chad Sexton tarafından kuruldu.",
+    "facts": [
+     "1990'da Jim Watson'ın yerine Tim Mahoney geçti.",
+     "1992'de Doug „SA“ Martinez ikinci vokalist ve turntablist olarak gruba katıldı."
+    ]
+   }
+  },
+  {
+   "id": "6447becb-9028-4761-b55c-a6c069e7805a",
+   "slug": "static-dress-a9d7e754",
+   "title": "Static Dress",
+   "name": "Static Dress",
+   "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+   "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games.",
+   "en": {
+    "kicker": "English rock band · formed 2018, Leeds, West Yorkshire",
+    "who": "Static Dress are an English rock band from Leeds, West Yorkshire. formed in 2018, they are a concept band whose material follows a continuous story.",
+    "facts": [
+     "They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games.",
+     "They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding."
+    ]
+   },
+   "de": {
+    "kicker": "englische rockband · gegründet 2018, Leeds, West Yorkshire",
+    "who": "Static Dress sind eine englische rockband aus Leeds, West Yorkshire. gegründet 2018, sind sie eine konzeptband, deren musik einer durchgehenden geschichte folgt.",
+    "facts": [
+     "sie haben zwei studioalben, drei eps und verschiedene singles veröffentlicht, dazu ein comicbuch und drei videospiele.",
+     "derzeit besteht die band aus dem leadsänger Olli Appleyard, schlagzeuger Sam Ogden, gitarrist Vincent Weight und bassist George Holding."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz rock grubu · 2018'de kuruldu, Leeds, West Yorkshire",
+    "who": "Static Dress, Leeds, West Yorkshire'dan bir İngiliz rock grubudur. 2018'de kurulan grup, materyalinin süregelen bir hikayeyi izlediği bir konsept gruptur.",
+    "facts": [
+     "grup iki tam uzunluklu stüdyo albümü, üç EP, çeşitli tekli şarkılar, bir çizgi roman ve üç video oyunu yayımladı.",
+     "grubun şu anki kadrosu: baş vokalist Olli Appleyard, davulcu Sam Ogden, gitarist Vincent Weight ve basçı George Holding."
+    ]
+   }
+  },
+  {
+   "id": "b68e149c-105a-4b8e-b938-11f5aa4c371a",
+   "slug": "todd-rundgren-b035c954",
+   "title": "Todd Rundgren",
+   "name": "Todd Rundgren",
+   "source_url": "https://en.wikipedia.org/wiki/Todd_Rundgren",
+   "extract": "Todd Harry Rundgren is an American musician, singer, songwriter, and record producer who has performed a diverse range of styles as a solo artist and as a member of the bands Nazz and Utopia. He is known for his sophisticated and often unorthodox music, his occasionally lavish stage shows, and his later experiments with interactive art. He also produced music videos and was an early adopter and promoter of various computer technologies, such as using the Internet as a means of music distribution in the late 1990s.",
+   "en": {
+    "kicker": "American musician and record producer",
+    "who": "Todd Harry Rundgren is an American musician, singer, songwriter and record producer. he has performed a diverse range of styles as a solo artist and as a member of the bands Nazz and Utopia.",
+    "facts": [
+     "he is known for his sophisticated and often unorthodox music, his occasionally lavish stage shows, and his later experiments with interactive art.",
+     "he also produced music videos and was an early adopter and promoter of various computer technologies, such as using the Internet as a means of music distribution in the late 1990s."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer musiker und musikproduzent",
+    "who": "Todd Harry Rundgren ist ein amerikanischer musiker, sänger, songwriter und musikproduzent. er trat in einer vielfalt von stilen als solokünstler auf und als mitglied der bands Nazz und Utopia.",
+    "facts": [
+     "er ist bekannt für seine anspruchsvolle und oft unorthodoxe musik, seine zuweilen aufwendigen bühnenshows und seine späteren experimente mit interaktiver kunst.",
+     "er produzierte außerdem musikvideos und war ein früher anwender und förderer verschiedener computertechnologien, etwa des internets als mittel zum musikvertrieb in den späten 1990er jahren."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı müzisyen ve plak yapımcısı",
+    "who": "Todd Harry Rundgren, amerikalı müzisyen, şarkıcı, söz yazarı ve plak yapımcısıdır. solo sanatçı olarak ve Nazz ile Utopia gruplarının üyesi olarak çok çeşitli tarzlarda müzik yaptı.",
+    "facts": [
+     "sofistike ve çoğu zaman alışılmadık müziği, zaman zaman gösterişli sahne şovları ve sonraki yıllardaki interaktif sanat deneyleriyle tanınır.",
+     "ayrıca müzik videoları üretti ve 1990'ların sonlarında internetin müzik dağıtımı aracı olarak kullanılması gibi çeşitli bilgisayar teknolojilerinin erken benimseyicisi ve tanıtıcısıydı."
+    ]
+   }
+  }
+ ]
+}

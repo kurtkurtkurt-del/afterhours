@@ -1,0 +1,38 @@
+{
+  "city": "houston",
+  "day": "2026-11-06",
+  "nights": [
+    {
+      "id": "91cc88ec-50d5-41a5-bbe5-305193e817af",
+      "slug": "bleood-kill-your-idols-tour-bac7f825",
+      "title": "bleood - Kill Your Idols Tour",
+      "name": "Bleood",
+      "source_url": "https://en.wikipedia.org/wiki/Bleood",
+      "extract": "Jamari Isiaha Spencer-Brown, known professionally as Bleood, is an American rapper and record producer. He initially emerged as a member of New York City rapper Xaviersobased's collective 1c34.",
+      "en": {
+        "kicker": "rapper and record producer · American",
+        "who": "Jamari Isiaha Spencer-Brown, known professionally as Bleood, is an American rapper and record producer. he initially emerged as a member of a collective belonging to New York City rapper Xaviersobased.",
+        "facts": [
+          "he initially emerged as a member of the collective 1c34.",
+          "the collective 1c34 belongs to New York City rapper Xaviersobased."
+        ]
+      },
+      "de": {
+        "kicker": "rapper und musikproduzent · amerikanisch",
+        "who": "Jamari Isiaha Spencer-Brown, unter dem künstlernamen Bleood bekannt, ist ein amerikanischer rapper und musikproduzent. er trat zunächst als mitglied des kollektivs 1c34 in erscheinung, das dem rapper Xaviersobased aus New York City gehört.",
+        "facts": [
+          "er trat zunächst als mitglied des kollektivs 1c34 in erscheinung.",
+          "das kollektiv 1c34 gehört dem rapper Xaviersobased aus New York City."
+        ]
+      },
+      "tr": {
+        "kicker": "rapçi ve müzik yapımcısı · amerikalı",
+        "who": "Jamari Isiaha Spencer-Brown, sahne adıyla Bleood, amerikalı bir rapçi ve müzik yapımcısıdır. ilk olarak New York City'li rapçi Xaviersobased'in kolektifi 1c34'ün üyesi olarak öne çıktı.",
+        "facts": [
+          "ilk olarak 1c34 kolektifinin üyesi olarak öne çıktı.",
+          "bu kolektif New York City'li rapçi Xaviersobased'e aittir."
+        ]
+      }
+    }
+  ]
+}

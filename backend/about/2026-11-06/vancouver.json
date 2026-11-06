@@ -1,0 +1,38 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "64b367a3-f94f-41e1-b73c-e9c2af49bd1a",
+   "slug": "sonreal-here-goes-nothing-tour-19ac34aa",
+   "title": "SonReal - Here Goes Nothing Tour",
+   "name": "SonReal",
+   "source_url": "https://en.wikipedia.org/wiki/SonReal",
+   "extract": "Aaron Hoffman, better known by his stage name SonReal, is an independent Canadian singer, rapper and songwriter.",
+   "en": {
+    "kicker": "independent singer, rapper and songwriter · Canada",
+    "who": "This is the page for SonReal, the act on this night. The source is a short Wikipedia summary of the artist.",
+    "facts": [
+     "Aaron Hoffman is the name behind the stage name SonReal.",
+     "He is described as an independent Canadian singer, rapper and songwriter."
+    ]
+   },
+   "de": {
+    "kicker": "unabhängiger sänger, rapper und songwriter · Kanada",
+    "who": "Dies ist die Seite zu SonReal, dem Act dieser Nacht. Die Quelle ist eine kurze Wikipedia-Zusammenfassung des Künstlers.",
+    "facts": [
+     "Aaron Hoffman steckt hinter dem Künstlernamen SonReal.",
+     "Er wird als unabhängiger kanadischer Sänger, Rapper und Songwriter beschrieben."
+    ]
+   },
+   "tr": {
+    "kicker": "bağımsız şarkıcı, rapçi ve söz yazarı · Kanada",
+    "who": "Bu sayfa, bu gecenin sanatçısı SonReal'e aittir. Kaynak, sanatçının kısa bir Wikipedia özetidir.",
+    "facts": [
+     "Aaron Hoffman, SonReal sahne adıyla tanınmaktadır.",
+     "Kendisi bağımsız bir Kanadalı şarkıcı, rapçi ve söz yazarı olarak tanımlanmaktadır."
+    ]
+   }
+  }
+ ]
+}
