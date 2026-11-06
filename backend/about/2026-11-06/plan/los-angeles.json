@@ -1,0 +1,36 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "ea9695d3-5762-4730-941f-60caa55d7d38",
+   "slug": "yuki-chiba-2b3e328d",
+   "title": "Yuki Chiba",
+   "act": "Yuki Chiba",
+   "name": "Yuki Chiba",
+   "description": "Japanese rapper and singer (born 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Yuki_Chiba",
+   "extract": "Yuki Chiba , formerly known by his stage name Kohh, is a Japanese rapper, singer, and songwriter."
+  },
+  {
+   "id": "c381e041-2be7-4c61-baa6-5102cb1662a5",
+   "slug": "dodie-4c10a736",
+   "title": "Dodie",
+   "act": "Dodie",
+   "name": "Dodie",
+   "description": "English singer and songwriter (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Dodie",
+   "extract": "Dorothy Miranda Clark, known mononymously as Dodie, is an English singer, songwriter, author and YouTuber. She has released two studio albums: Build a Problem (2021), which peaked at number 3 on the UK Albums Chart, and Not for Lack of Trying (2025). She has also released four independent extended plays (EPs): Intertwined (2016), You (2017), Human (2019), and Hot Mess (2022), the first three of which charted in the top 40 of the UK Albums Chart. In 2023, she co-founded a band, Fizz, with her friends Orla Gartland, Greta Isaac, and Martin Luke Brown."
+  },
+  {
+   "id": "e26546ac-dc65-4b63-8d79-8f2f6f16e3f2",
+   "slug": "syml-solo-in-north-america-2026-c505e4ae",
+   "title": "SYML: Solo in North America 2026",
+   "act": "SYML",
+   "name": "Syml",
+   "description": "American musician (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Syml",
+   "extract": "SYML is the solo venture of Brian Leseney Fennell, an American musician from Issaquah, Washington. He was previously part of the indie band Barcelona. SYML released his eponymous debut album on May 3, 2019, through Nettwerk Records."
+  }
+ ]
+}

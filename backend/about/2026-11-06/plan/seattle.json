@@ -1,0 +1,16 @@
+{
+ "city": "seattle",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "653b02a0-9db5-4fd8-b6b6-f57fe5d411dc",
+   "slug": "static-dress-59f66718",
+   "title": "Static Dress",
+   "act": "Static Dress",
+   "name": "Static Dress",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+   "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+  }
+ ]
+}

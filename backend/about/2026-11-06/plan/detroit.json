@@ -1,0 +1,16 @@
+{
+ "city": "detroit",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "939e84cf-9293-4ebb-bbc0-60e9f4e1b595",
+   "slug": "boney-james-83439000",
+   "title": "Boney James",
+   "act": "Boney James",
+   "name": "Boney James",
+   "description": "American saxophonist and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Boney_James",
+   "extract": "Boney James is an American saxophonist, recording artist, songwriter and record producer."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "austin",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "9bd73c7e-b16c-4460-b1de-e1221b5b99e9",
+   "slug": "james-mcmurtry-58a03c8e",
+   "title": "James McMurtry",
+   "act": "James McMurtry",
+   "name": "James McMurtry",
+   "description": "American musician (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/James_McMurtry",
+   "extract": "James McMurtry is an American rock and folk rock/Americana singer, songwriter, guitarist, bandleader, and occasional actor. He performs with veteran bandmates Daren Hess, Cornbread and Tim Holt."
+  }
+ ]
+}

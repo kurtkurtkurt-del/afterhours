@@ -1,0 +1,36 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "56705b54-a16b-4b90-912d-5e911bad000e",
+   "slug": "the-tallest-man-on-earth-984f6f55",
+   "title": "The Tallest Man on Earth",
+   "act": "The Tallest Man on Earth",
+   "name": "The Tallest Man on Earth",
+   "description": "Swedish singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/The_Tallest_Man_on_Earth",
+   "extract": "Kristian Matsson is a Swedish singer-songwriter who performs under the stage name The Tallest Man on Earth. Matsson grew up in Leksand, and began his solo career in 2006, having previously been the lead singer of the indie band Montezumas. His music has often drawn comparisons to the music of Bob Dylan."
+  },
+  {
+   "id": "985bfab3-2b41-4bc9-b30d-dedd70735cda",
+   "slug": "yuki-chiba-a09b89a4",
+   "title": "Yuki Chiba",
+   "act": "Yuki Chiba",
+   "name": "Yuki Chiba",
+   "description": "Japanese rapper and singer (born 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Yuki_Chiba",
+   "extract": "Yuki Chiba , formerly known by his stage name Kohh, is a Japanese rapper, singer, and songwriter."
+  },
+  {
+   "id": "5fba70d7-07ff-45c7-abad-9111eff385c0",
+   "slug": "teddy-swims-the-ugly-tour-fc181948",
+   "title": "Teddy Swims: The UGLY Tour",
+   "act": "Teddy Swims",
+   "name": "Teddy Swims",
+   "description": "American singer and songwriter (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Teddy_Swims",
+   "extract": "Jaten Collin Dimsdale, known professionally as Teddy Swims, is an American singer and songwriter. Known for creating genre-blending music that includes elements of R&B, soul, hip-hop, and contemporary pop, Swims originally began to attract fans by posting song covers on YouTube during 2019 and 2020. Swims' third extended play, Tough Love (2022), became his first entry on the Billboard 200."
+  }
+ ]
+}

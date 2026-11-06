@@ -1,0 +1,36 @@
+{
+ "city": "dublin",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "ec00176b-4473-4372-913d-beeca82b8b56",
+   "slug": "igorrr-b5b793b2",
+   "title": "Igorrr",
+   "act": "Igorrr",
+   "name": "Igorrr",
+   "description": "French musician",
+   "source_url": "https://en.wikipedia.org/wiki/Igorrr",
+   "extract": "Gautier Serre, better known by his stage name Igorrr, is a French musician, composer and producer. Under the Igorrr alias, he combines a variety of disparate genres, including black metal, baroque music, breakcore, and trip hop, into a singular sound. Serre is also part of the now disbanded side-projects Whourkr and Corpo-Mente. The Igorrr project has evolved into a full-fledged group with vocalists Laure Le Prunenec and Laurent Lunoir, drummer Sylvain Bouvier, guitarist Martyn Clément and bassist Erlend Caspersen. In 2021, both vocalists left the band and were replaced by JB Le Bail and Aphrodite Patoulidou; the latter was later replaced by Marthe Alexandre. In 2024, Rémi Serafino became drummer. Gerda Iguchi succeeded Alexandre as vocalist in 2026."
+  },
+  {
+   "id": "b83e22f2-f49b-474a-87a9-c905a2d9ec56",
+   "slug": "mark-ambor-00fde294",
+   "title": "Mark Ambor",
+   "act": "Mark Ambor",
+   "name": "Mark Ambor",
+   "description": "American singer-songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Mark_Ambor",
+   "extract": "Mark Gregory Damboragian, known professionally as Mark Ambor, is an American singer-songwriter. He is best known for his 2024 single \"Belong Together\"."
+  },
+  {
+   "id": "94e6ca00-8f28-49fe-8dbd-d85f30662727",
+   "slug": "the-fray-autumn-light-tour-31b425eb",
+   "title": "The Fray: Autumn Light Tour",
+   "act": "The Fray",
+   "name": "The Fray",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Fray",
+   "extract": "The Fray is an American rock band from Denver, Colorado, formed in 2002 by schoolmates Isaac Slade and Joe King. Their debut studio album, How to Save a Life (2005) was released by Epic Records and received quadruple platinum certification by the Recording Industry Association of America (RIAA), as well as platinum certification in Australia, Canada, New Zealand and the United Kingdom. Its release was supported by their first hit single, \"Over My Head \", which peaked at number eight on the Billboard Hot 100. The band saw their furthest success with the song's follow-up, \"How to Save a Life\", which peaked at number three on the chart and was also a hit in Australia, Canada, Ireland, Italy, Spain, Sweden and the United Kingdom. Both songs received Grammy Award nominations: Best Pop Performance by a Duo or Group with Vocals, and Best Rock Performance by a Duo or Group, respectively."
+  }
+ ]
+}

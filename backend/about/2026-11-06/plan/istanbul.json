@@ -1,0 +1,16 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "716f2b86-16a2-4409-b457-0dd4c1434628",
+   "slug": "merve-ozbey-b6111229",
+   "title": "Merve Özbey",
+   "act": "Merve Özbey",
+   "name": "Merve Özbey",
+   "description": "Turkish singer and songwriter (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Merve_%C3%96zbey",
+   "extract": "Merve Özbey is a Turkish singer and songwriter. Due to her collaborations with Erdem Kınay in the songs \"Duman\" and \"Helal Ettim\", she became famous in Turkey."
+  }
+ ]
+}

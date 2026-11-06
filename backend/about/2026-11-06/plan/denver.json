@@ -1,0 +1,36 @@
+{
+ "city": "denver",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "1a8bb3df-5308-40a6-8671-1bf87b4a151b",
+   "slug": "311-ages-16-c8a135e4",
+   "title": "311 - Ages 16+",
+   "act": "311",
+   "name": "311",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/311_(band)",
+   "extract": "311 is an American rock band from Omaha, Nebraska. The band was formed in 1988 by vocalist and guitarist Nick Hexum, lead guitarist Jim Watson, bassist Aaron \"P-Nut\" Wills, and drummer Chad Sexton. Watson was replaced by Tim Mahoney in 1990. In 1992, Doug \"SA\" Martinez joined as a second vocalist and turntablist."
+  },
+  {
+   "id": "6447becb-9028-4761-b55c-a6c069e7805a",
+   "slug": "static-dress-a9d7e754",
+   "title": "Static Dress",
+   "act": "Static Dress",
+   "name": "Static Dress",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+   "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+  },
+  {
+   "id": "b68e149c-105a-4b8e-b938-11f5aa4c371a",
+   "slug": "todd-rundgren-b035c954",
+   "title": "Todd Rundgren",
+   "act": "Todd Rundgren",
+   "name": "Todd Rundgren",
+   "description": "American musician (born 1948)",
+   "source_url": "https://en.wikipedia.org/wiki/Todd_Rundgren",
+   "extract": "Todd Harry Rundgren is an American musician, singer, songwriter, and record producer who has performed a diverse range of styles as a solo artist and as a member of the bands Nazz and Utopia. He is known for his sophisticated and often unorthodox music, his occasionally lavish stage shows, and his later experiments with interactive art. He also produced music videos and was an early adopter and promoter of various computer technologies, such as using the Internet as a means of music distribution in the late 1990s."
+  }
+ ]
+}

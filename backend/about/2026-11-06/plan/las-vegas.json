@@ -1,0 +1,46 @@
+{
+ "city": "las-vegas",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "473f2886-4ee5-4438-95a6-815619da12c3",
+   "slug": "barry-manilow-19d959b6",
+   "title": "Barry Manilow",
+   "act": "Barry Manilow",
+   "name": "Barry Manilow",
+   "description": "American singer (born 1943)",
+   "source_url": "https://en.wikipedia.org/wiki/Barry_Manilow",
+   "extract": "Barry Manilow is an American singer, songwriter and record producer with a career spanning over 60 years. His hit recordings include \"Mandy\", \"Could It Be Magic\", \"I Write the Songs\", \"Weekend in New England\", \"Looks Like We Made It\", \"Can't Smile Without You\", \"Copacabana \", and \"Ready to Take a Chance Again\"."
+  },
+  {
+   "id": "f9f87682-733c-47b7-95d9-99b896557a53",
+   "slug": "mon-laferte-femme-fatale-tour-cf1438b5",
+   "title": "Mon Laferte - Femme Fatale Tour",
+   "act": "Mon Laferte",
+   "name": "Mon Laferte",
+   "description": "Chilean-Mexican singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Mon_Laferte",
+   "extract": "Norma Montserrat Bustamante Laferte, known professionally as Mon Laferte, is a Chilean and Mexican singer-songwriter. Recognized for her versatility, her musical style spans a wide array of genres, including pop, alternative, bolero, cumbia, and salsa. She rose to international prominence in the 2010s, particularly for her melodramatic vocals and theatrical stage presence. In 2025, Billboard named her one of the greatest female Latin pop artists of all time."
+  },
+  {
+   "id": "601bae6b-3c1a-4c08-944f-7b7c7f9a78b3",
+   "slug": "metallica-suite-reservation-bd856367",
+   "title": "Metallica - Suite Reservation",
+   "act": "Metallica",
+   "name": "Metallica",
+   "description": "American heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Metallica",
+   "extract": "Metallica is an American heavy metal band. It was formed in Los Angeles in 1981 by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. The band's fast tempos, instrumentals and aggressive musicianship made them one of the founding \"big four\" bands of thrash metal, alongside Megadeth, Anthrax and Slayer. Metallica's current lineup comprises founding members and primary songwriters Hetfield and Ulrich, longtime lead guitarist Kirk Hammett and bassist Robert Trujillo. Former members of the band are bassists Ron McGovney, Cliff Burton and Jason Newsted, as well as guitarist Dave Mustaine, who formed Megadeth after being fired from Metallica in 1983."
+  },
+  {
+   "id": "8b0461b6-bf14-4967-bf69-7062471ed09d",
+   "slug": "metallica-life-burns-faster-a15e66a7",
+   "title": "Metallica: Life Burns Faster",
+   "act": "Metallica",
+   "name": "Metallica",
+   "description": "American heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Metallica",
+   "extract": "Metallica is an American heavy metal band. It was formed in Los Angeles in 1981 by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. The band's fast tempos, instrumentals and aggressive musicianship made them one of the founding \"big four\" bands of thrash metal, alongside Megadeth, Anthrax and Slayer. Metallica's current lineup comprises founding members and primary songwriters Hetfield and Ulrich, longtime lead guitarist Kirk Hammett and bassist Robert Trujillo. Former members of the band are bassists Ron McGovney, Cliff Burton and Jason Newsted, as well as guitarist Dave Mustaine, who formed Megadeth after being fired from Metallica in 1983."
+  }
+ ]
+}

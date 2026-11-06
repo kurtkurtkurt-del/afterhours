@@ -1,0 +1,46 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "714c4e62-ddd5-4afd-8c41-6e179f2d1691",
+   "slug": "jenny-talia-without-adult-supervision-877c1c3c",
+   "title": "Jenny Talia: Without Adult Supervision",
+   "act": "Jenny Talia",
+   "name": "Jenny Talia",
+   "description": "Australian comedian and singer",
+   "source_url": "https://en.wikipedia.org/wiki/Jenny_Talia",
+   "extract": "Jenny Talia is an Australian-born U.S.–based comedy singer-songwriter. She also performs country music as T. J. Dennis. Talia is the daughter of Kevin Bloody Wilson, an Australian comedian and entertainer, for whom she is an occasional support act. Her comedy is similar in style to her father's but is from a female perspective. Talia, originally from Kalgoorlie, relocated to Nashville in 1999 and has been based in Chicago where she lives with her husband and children."
+  },
+  {
+   "id": "ce402980-3e38-4559-9cb1-2789f3465b4b",
+   "slug": "squeeze-5e8932b2",
+   "title": "Squeeze",
+   "act": "Squeeze",
+   "name": "Squeeze",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Squeeze_(band)",
+   "extract": "Squeeze are an English rock band that came to prominence in the United Kingdom during the new wave period of the late 1970s, and continued recording in the 1980s, 1990s and 2010s. In the UK, their singles \"Cool for Cats\", \"Up the Junction\", and \"Labelled with Love\" were top-ten chart hits. Though not as commercially successful in the United States, Squeeze had American hits with \"Tempted\", \"Black Coffee in Bed\", and \"Hourglass\", and were considered a part of the Second British Invasion."
+  },
+  {
+   "id": "71885234-b88c-47da-b245-97367d9984d9",
+   "slug": "anvil-pounding-the-past-tour-9b91fa96",
+   "title": "Anvil - Pounding the Past Tour",
+   "act": "Anvil",
+   "name": "Anvil",
+   "description": "Canadian heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Anvil_(band)",
+   "extract": "Anvil is a Canadian heavy metal band formed in Toronto in 1978. The band currently consists of founding members guitarist/vocalist Steve \"Lips\" Kudlow and drummer Robb Reiner, along with bassist Chris Robertson who joined in 2014. As of 2024, the band has released twenty studio albums; they have been cited as having influenced many notable heavy metal groups including Megadeth, Slayer, Anthrax, and Metallica."
+  },
+  {
+   "id": "11866309-84cf-4226-87ac-69f4d96d989d",
+   "slug": "ok-go-c6c89f11",
+   "title": "OK Go",
+   "act": "OK Go",
+   "name": "OK Go",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/OK_Go",
+   "extract": "OK Go is an American rock band formed in 1998 and based in Los Angeles, California. The band is composed of Damian Kulash, Tim Nordwind, Dan Konopka, and Andy Ross."
+  }
+ ]
+}

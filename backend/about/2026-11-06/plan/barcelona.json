@@ -1,0 +1,16 @@
+{
+ "city": "barcelona",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "c348f697-2655-42cb-abf0-07a9ad0d20d4",
+   "slug": "kingfishr-europe-2026-479ef335",
+   "title": "Kingfishr - Europe 2026",
+   "act": "Kingfishr",
+   "name": "Kingfishr",
+   "description": "Musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Kingfishr",
+   "extract": "Kingfishr are an Irish indie folk group formed in Letterkenny Co Donegal in 2022 comprising members Eddie Keogh, Eoghan \"McGoo\" McGrath, and Eoin \"Fitz\" Fitzgibbon. The band's breakout success was their song \"Killeagh\", which reached number one on the Irish Singles Chart on 2 May 2025. Their debut studio album Halcyon was released in August 2025."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "montreal",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "3227ddd8-b318-4107-8f44-623d23010484",
+   "slug": "mary-in-the-junkyard-2439ecee",
+   "title": "mary in the junkyard",
+   "act": "mary in the junkyard",
+   "name": "Mary in the Junkyard",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Mary_in_the_Junkyard",
+   "extract": "Mary in the Junkyard are a British band from London. The band consists of vocalist and guitarist Clari Freeman-Taylor, viola and bass player Saya Barbaglia and drummer David Addison. The band are signed with All My Friends (AMF) Records. They have been compared to Adrianne Lenker and Wolf Alice."
+  },
+  {
+   "id": "031b64c7-e5a4-4617-92cf-0813685ec1fa",
+   "slug": "parra-for-cuva-7015ee60",
+   "title": "Parra for Cuva",
+   "act": "Parra for Cuva",
+   "name": "Parra for Cuva",
+   "description": "German musician (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Parra_for_Cuva",
+   "extract": "Nicolas Demuth, known by stage name Parra for Cuva, is a German musician and DJ.\nHe is best known for his house production."
+  },
+  {
+   "id": "a70bb176-ad3d-46a4-97b6-bbe1c7c28a38",
+   "slug": "slaughter-to-prevail-north-america-2026-leg-2-4e49ab5b",
+   "title": "Slaughter To Prevail: North America 2026 Leg 2",
+   "act": "Slaughter To Prevail",
+   "name": "Slaughter to Prevail",
+   "description": "Russian deathcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Slaughter_to_Prevail",
+   "extract": "Slaughter to Prevail is a Russian-British-American deathcore band formed in 2014 in Yekaterinburg and currently based in Orlando, Florida, United States. The band has had numerous line-up changes over the years, with Russian vocalist Aleksandr \"Alex Terrible\" Shikolai and British lead guitarist Jack Simmons as the only constant members. The current line-up features Russian musicians with bassist Mikhail Petrov, drummer Evgeny Novikov, and rhythm guitarist Dmitry Mamedov."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "dba7434f-5913-41af-828d-55b17a027f20",
+   "slug": "drake-milligan-fbbdf435",
+   "title": "Drake Milligan",
+   "act": "Drake Milligan",
+   "name": "Drake Milligan",
+   "description": "American singer (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Drake_Milligan",
+   "extract": "Drake Milligan is an American singer, best known for portraying Elvis Presley on the CMT series Sun Records and starring in the film Nobody where he portrayed a young teen Elvis. He has also appeared on American Idol and America's Got Talent. Milligan has charted with the singles \"Sounds Like Something I'd Do\" and \"Honky Tonkin' About\", the latter of which became his first number one when it topped the Canadian country chart. His debut album, Dallas/Fort Worth, was released on September 15, 2022."
+  },
+  {
+   "id": "9e8bab9c-96ae-4bc6-87a9-a1e645619dfe",
+   "slug": "aaron-rowe-d8814f43",
+   "title": "Aaron Rowe",
+   "act": "Aaron Rowe",
+   "name": "Aaron Rowe",
+   "description": "Irish singer-songwriter and musician (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Aaron_Rowe_(singer)",
+   "extract": "Aaron Rowe is an Irish singer-songwriter and musician from Dublin. Rowe is best known for his debut single, \"Hey Ma\", released in May 2025, in addition to follow-up singles, \"Talking with You\" and \"Lose Lose\"."
+  },
+  {
+   "id": "5b6b0a4c-ba0c-4f39-b225-46e14dbaf314",
+   "slug": "the-big-moon-8145890e",
+   "title": "The Big Moon",
+   "act": "The Big Moon",
+   "name": "The Big Moon",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Big_Moon",
+   "extract": "The Big Moon are a British indie rock band, formed in 2014 in London by frontwoman Juliette Jackson. Their debut album, Love in the 4th Dimension, was released on 6 April 2017, containing a number of tracks previously released on their EP The Road. The album was shortlisted for the prestigious Mercury Prize in 2017. They are signed to Fiction Records and have toured internationally. They supported Pixies on their 2019 UK tour."
+  }
+ ]
+}

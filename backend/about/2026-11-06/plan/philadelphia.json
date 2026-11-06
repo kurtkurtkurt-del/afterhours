@@ -1,0 +1,36 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "48485370-f846-407f-9cb7-159d62b1ceeb",
+   "slug": "mountain-grass-unit-appalachian-smoke-tour-4431e2c4",
+   "title": "Mountain Grass Unit - Appalachian Smoke Tour",
+   "act": "Mountain Grass Unit",
+   "name": "Mountain Grass Unit",
+   "description": "American bluegrass band",
+   "source_url": "https://en.wikipedia.org/wiki/Mountain_Grass_Unit",
+   "extract": "Mountain Grass Unit (MGU) is a four-piece bluegrass band founded in Birmingham, Alabama in 2018. The band consists of members Drury Anderson (lead vocals, mandolin), Luke Black (guitar), Sam Wilson (bass), and Josiah Nelson (fiddle). Unlike typical bluegrass arrangements, MGU does not feature a banjo."
+  },
+  {
+   "id": "49cd6c94-e776-4a55-8466-5904e6c6e91e",
+   "slug": "honey-revenge-876c43ac",
+   "title": "Honey Revenge",
+   "act": "Honey Revenge",
+   "name": "Honey Revenge",
+   "description": "American pop rock and pop-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Honey_Revenge",
+   "extract": "Honey Revenge is an American pop rock and pop-punk band formed in Los Angeles in 2021. Comprising lead vocalist Devin Papadol and guitarist Donny Lloyd, the band formed after Lloyd joined a five-piece band Papadol was in and continued working together after the other three members left. They released their debut album, Retrovision, in June 2023. They have frequently cited You Me at Six, Paramore, Hannah Montana, and Demi Lovato as influences."
+  },
+  {
+   "id": "ca39d138-59e2-4990-ad44-29d92a061d11",
+   "slug": "orville-peck-man-turned-mule-tour-f441bbe7",
+   "title": "Orville Peck - Man Turned Mule Tour",
+   "act": "Orville Peck",
+   "name": "Orville Peck",
+   "description": "South African country musician (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Orville_Peck",
+   "extract": "Daniel Pitout, known professionally as Orville Peck, is a South African country musician and actor based in the United States and Canada, widely known for often wearing a mask and not showing his face publicly."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "dallas",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "2e49f072-153d-44fb-b79b-c28d0e5765d0",
+   "slug": "streetlight-manifesto-the-presence-of-the-past-t-9b093038",
+   "title": "Streetlight Manifesto: The Presence of the Past Tour",
+   "act": "Streetlight Manifesto",
+   "name": "Streetlight Manifesto",
+   "description": "American ska punk band from New Jersey",
+   "source_url": "https://en.wikipedia.org/wiki/Streetlight_Manifesto",
+   "extract": "Streetlight Manifesto is an American ska punk band from New Brunswick, New Jersey, formed in 2002. They released their debut album, Everything Goes Numb, through Victory Records on August 26, 2003. The band headlined and sold out their first concert at Rutgers University in New Brunswick on December 9, 2003. Several members were previously involved in New Jersey's third wave ska scene, most notably Tomas Kalnoky, a founding member of Catch 22, and members of the band One Cool Guy. Kalnoky and several other members also attended Rutgers University."
+  }
+ ]
+}

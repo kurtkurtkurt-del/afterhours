@@ -1,0 +1,36 @@
+{
+ "city": "toronto",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "c459efc3-708e-45ba-ab24-d65a8597952a",
+   "slug": "hovvdy-0d506c60",
+   "title": "Hovvdy",
+   "act": "Hovvdy",
+   "name": "Hovvdy",
+   "description": "American indie pop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Hovvdy",
+   "extract": "Hovvdy is an American indie pop duo formed in Austin, Texas by Charlie Martin and Will Taylor."
+  },
+  {
+   "id": "13b05972-6a83-4d25-81c5-c219e04f2c4b",
+   "slug": "kate-nash-8cda9a9d",
+   "title": "Kate Nash",
+   "act": "Kate Nash",
+   "name": "Kate Nash",
+   "description": "British musician (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Kate_Nash",
+   "extract": "Kate Marie Nash is an English singer, songwriter, musician, and actress. Her singles \"Foundations\" (2007) and \"Do-Wah-Doo\" (2010) charted at numbers 2 and 15 on the UK singles chart and her albums Made of Bricks (2007) and My Best Friend Is You (2010) charted at numbers 1 and 8 on the UK Albums Chart."
+  },
+  {
+   "id": "5842fee4-caec-41ad-bb7f-cc9cfeead5c6",
+   "slug": "die-spitz-64265196",
+   "title": "Die Spitz",
+   "act": "Die Spitz",
+   "name": "Die Spitz",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Die_Spitz",
+   "extract": "Die Spitz is an American rock band from Austin, Texas, consisting of guitarist/singer/drummer Ava Schrobilgen, guitarist/singer Eleanor Livingston, bassist Kate Halter, and drummer/singer/guitarist Chloe de St. Aubin. Their debut album Something to Consume was released in September 2025."
+  }
+ ]
+}

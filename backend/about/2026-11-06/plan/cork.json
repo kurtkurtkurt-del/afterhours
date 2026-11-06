@@ -1,0 +1,16 @@
+{
+ "city": "cork",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "ffc6b962-4664-4b04-8475-e10e5f9692c6",
+   "slug": "garth-brooks-the-irish-tour-2027-c0e2e94e",
+   "title": "Garth Brooks - the Irish Tour 2027",
+   "act": "Garth Brooks",
+   "name": "Garth Brooks",
+   "description": "American country singer (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Garth_Brooks",
+   "extract": "Troyal Garth Brooks is an American country singer and songwriter. His musical style blends traditional country with pop and rock elements, which has earned him his immense popularity, particularly in the United States, with success on the country music single and album charts, multi-platinum recordings and record-breaking live performances, while also crossing over into the mainstream pop arena."
+  }
+ ]
+}

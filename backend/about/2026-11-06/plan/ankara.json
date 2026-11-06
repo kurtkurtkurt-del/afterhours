@@ -1,0 +1,16 @@
+{
+ "city": "ankara",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "3a59e484-f24d-4ee6-bea3-877da991200e",
+   "slug": "emre-altug-ce7b7667",
+   "title": "Emre Altuğ",
+   "act": "Emre Altuğ",
+   "name": "Emre Altuğ",
+   "description": "Turkish pop singer and actor",
+   "source_url": "https://en.wikipedia.org/wiki/Emre_Altu%C4%9F",
+   "extract": "Niyazi Emre Altuğ is a Turkish actor and singer."
+  }
+ ]
+}

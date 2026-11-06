@@ -1,0 +1,16 @@
+{
+ "city": "roma",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "e697d538-09a4-48bc-904f-aa3ae3d0a5e4",
+   "slug": "kingfishr-roma-summer-fest-3d133cdd",
+   "title": "Kingfishr | Roma Summer Fest",
+   "act": "Kingfishr",
+   "name": "Kingfishr",
+   "description": "Musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Kingfishr",
+   "extract": "Kingfishr are an Irish indie folk group formed in Letterkenny Co Donegal in 2022 comprising members Eddie Keogh, Eoghan \"McGoo\" McGrath, and Eoin \"Fitz\" Fitzgibbon. The band's breakout success was their song \"Killeagh\", which reached number one on the Irish Singles Chart on 2 May 2025. Their debut studio album Halcyon was released in August 2025."
+  }
+ ]
+}

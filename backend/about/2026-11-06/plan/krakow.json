@@ -1,0 +1,16 @@
+{
+ "city": "krakow",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "dce74b22-a981-491e-a9fc-fe2fa1ea91ff",
+   "slug": "happysad-25-lecie-zespo-u-2f25d892",
+   "title": "Happysad - 25 lecie zespołu",
+   "act": "Happysad",
+   "name": "Happysad",
+   "description": "Polish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Happysad",
+   "extract": "Happysad is a Polish rock band. The band plays melodic rock with elements of punk and reggae. It was created in Skarżysko-Kamienna in 2001 by musicians who had been playing since 1995 under the name HCKF. In 1997 the name was changed to Happy Sad Generation. The name Happysad was established in 2002."
+  }
+ ]
+}

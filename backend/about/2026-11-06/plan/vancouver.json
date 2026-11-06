@@ -1,0 +1,16 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "64b367a3-f94f-41e1-b73c-e9c2af49bd1a",
+   "slug": "sonreal-here-goes-nothing-tour-19ac34aa",
+   "title": "SonReal - Here Goes Nothing Tour",
+   "act": "SonReal",
+   "name": "SonReal",
+   "description": "Canadian singer (born 1985)",
+   "source_url": "https://en.wikipedia.org/wiki/SonReal",
+   "extract": "Aaron Hoffman, better known by his stage name SonReal, is an independent Canadian singer, rapper and songwriter."
+  }
+ ]
+}

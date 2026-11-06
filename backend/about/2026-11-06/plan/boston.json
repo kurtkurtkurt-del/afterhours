@@ -1,0 +1,36 @@
+{
+ "city": "boston",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "dee3c02a-2728-45d6-a314-3cb07de557e4",
+   "slug": "brutalismus-3000-ages-18-b8445f4f",
+   "title": "Brutalismus 3000 - Ages 18+",
+   "act": "Brutalismus 3000",
+   "name": "Brutalismus 3000",
+   "description": "German electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Brutalismus_3000",
+   "extract": "Brutalismus 3000 are an electronic music duo from Berlin, comprising Victoria Vassiliki Daldas and Theo Zeitner."
+  },
+  {
+   "id": "dd8fc7c3-5225-46eb-a159-e01966651d0a",
+   "slug": "the-longest-johns-919a126c",
+   "title": "The Longest Johns",
+   "act": "The Longest Johns",
+   "name": "The Longest Johns",
+   "description": "British folk music group",
+   "source_url": "https://en.wikipedia.org/wiki/The_Longest_Johns",
+   "extract": "The Longest Johns are an English folk musical group from Bristol, England, consisting of Andy Yates, Jonathan \"JD\" Darley, and Robbie Sattin. They are known for performing folk music and sea shanties in the English tradition, and they also compose and record their own music. They gained popularity from their rendition of the folk song \"Wellerman\", which went viral on TikTok in early 2021."
+  },
+  {
+   "id": "d4a04d4b-0a16-4e03-9d42-0a72ea7413af",
+   "slug": "giant-rooks-caa8c4f0",
+   "title": "Giant Rooks",
+   "act": "Giant Rooks",
+   "name": "Giant Rooks",
+   "description": "German indie band",
+   "source_url": "https://en.wikipedia.org/wiki/Giant_Rooks",
+   "extract": "Giant Rooks are a German indie rock band from Hamm, Germany founded in 2014. They are best known for their EP Wild Stare, their album How Have You Been? and their top-100 charting cover of \"Tom's Diner\" by Suzanne Vega."
+  }
+ ]
+}

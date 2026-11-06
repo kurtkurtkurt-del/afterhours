@@ -1,0 +1,16 @@
+{
+ "city": "stockholm",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "3c8d943a-664f-4211-9685-ea745f43f188",
+   "slug": "shout-out-louds-cff67edd",
+   "title": "Shout Out Louds",
+   "act": "Shout Out Louds",
+   "name": "Shout Out Louds",
+   "description": "Swedish indie pop/rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Shout_Out_Louds",
+   "extract": "Shout Out Louds is a Swedish indie pop band from Stockholm."
+  }
+ ]
+}

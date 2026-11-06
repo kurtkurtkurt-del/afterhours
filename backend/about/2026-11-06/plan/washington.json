@@ -1,0 +1,46 @@
+{
+ "city": "washington",
+ "day": "2026-11-06",
+ "nights": [
+  {
+   "id": "6f108327-4d26-4b6e-8e63-1c6d49f2a623",
+   "slug": "joy-oladokun-41f7b8fd",
+   "title": "Joy Oladokun",
+   "act": "Joy Oladokun",
+   "name": "Joy Oladokun",
+   "description": "American singer-songwriter (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Joy_Oladokun",
+   "extract": "Olubukola Joy Oladokun is an American singer-songwriter. Oladokun's music spans the genres of folk, R&B, rock, and pop and is influenced by her identity as a queer person of color. She has released six studio albums: Carry (2016), In Defense of My Own Happiness  (2020), In Defense of My Own Happiness (2021), Proof of Life (2023), Observations from a Crowded Room (2024), and Hope is a Heavy Thing (2026)."
+  },
+  {
+   "id": "474fa46b-e1a0-441b-8b75-c3627739cc32",
+   "slug": "protomartyr-75551700",
+   "title": "Protomartyr",
+   "act": "Protomartyr",
+   "name": "Protomartyr",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Protomartyr_(band)",
+   "extract": "Protomartyr is an American post-punk band formed in Detroit, Michigan, in 2010. The band consists of Joe Casey (vocals), Greg Ahee (guitar), Alex Leonard (drums), and Scott Davidson (bass). During live performances, the band is currently joined by multi-instrumentalist Fred Thomas. Between 2020 and 2024, Kelley Deal joined the band in a touring capacity, providing additional keyboards, guitar and backing vocals."
+  },
+  {
+   "id": "d638943e-8944-4b75-bb56-c473ce83cad8",
+   "slug": "joy-oladokun-the-heavy-things-tour-81412cd0",
+   "title": "Joy Oladokun: The Heavy Things Tour",
+   "act": "Joy Oladokun",
+   "name": "Joy Oladokun",
+   "description": "American singer-songwriter (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Joy_Oladokun",
+   "extract": "Olubukola Joy Oladokun is an American singer-songwriter. Oladokun's music spans the genres of folk, R&B, rock, and pop and is influenced by her identity as a queer person of color. She has released six studio albums: Carry (2016), In Defense of My Own Happiness  (2020), In Defense of My Own Happiness (2021), Proof of Life (2023), Observations from a Crowded Room (2024), and Hope is a Heavy Thing (2026)."
+  },
+  {
+   "id": "1f452aca-aa21-413a-9b20-6bf7c38b41a7",
+   "slug": "joe-russo-s-almost-dead-f02bf629",
+   "title": "Joe Russo's Almost Dead",
+   "act": "Joe Russo's Almost Dead",
+   "name": "Joe Russo's Almost Dead",
+   "description": "American rock/jam band",
+   "source_url": "https://en.wikipedia.org/wiki/Joe_Russo's_Almost_Dead",
+   "extract": "Joe Russo's Almost Dead is an American rock band formed in 2013 in Brooklyn, New York. The group is known for high-energy, improvisational reinterpretations of the Grateful Dead catalog rather than note-for-note tribute performances. Led by drummer Joe Russo, who had previously played Grateful Dead material with Furthur. The band features Russo's longtime collaborators Marco Benevento, Dave Dreiwitz, Scott Metzger, and Tom Hamilton."
+  }
+ ]
+}
