@@ -1,0 +1,14 @@
+{
+  "city": "hong-kong",
+  "day": "2026-11-17",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "stacey kent at freespace, west kowloon.", "de": "stacey kent im freespace, west kowloon.", "tr": "freespace, west kowloon'da stacey kent." },
+      "line": { "en": "two performances by stacey kent at freespace on tuesday 17 november, part of the cathay westk jazz fest. check the ticket listing for the times before you go.", "de": "zwei auftritte von stacey kent im freespace am dienstag 17. november, Teil des cathay westk jazz fest. die zeiten stehen auf der ticketseite, bitte vorher prüfen.", "tr": "17 kasım salı günü freespace'te stacey kent'in iki konseri, cathay westk jazz fest kapsamında. gitmeden önce saatleri bilet sayfasından kontrol et." },
+      "place": { "en": "freespace, west kowloon", "de": "freespace, west kowloon", "tr": "freespace, west kowloon" },
+      "hour": 19, "minute": 30,
+      "why": "Stacey Kent, two performances at Freespace on 17.11 within the Cathay WestK Jazz Fest 2026, per festival coverage in The Standard and Time Out Hong Kong. Set times not confirmed; 19:30 is a suggestion."
+    }
+  ]
+}

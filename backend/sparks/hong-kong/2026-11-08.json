@@ -1,0 +1,14 @@
+{
+  "city": "hong-kong",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "know your guidefong at central market.", "de": "know your guidefong im central market.", "tr": "central market'ta know your guidefong." },
+      "line": { "en": "a day of sustainable hong kong brands on the first floor of central market, from 13:00 to 19:00. the building is a restored 1939 bauhaus-style landmark, and entry to central market is free.", "de": "ein tag mit nachhaltigen marken aus hongkong im ersten stock des central market, von 13:00 bis 19:00. das gebäude ist ein restaurierter historischer bau im bauhausstil von 1939, und der eintritt ist frei.", "tr": "central market'ın birinci katında 13:00'ten 19:00'a kadar sürdürülebilir hong kong markaları günü. bina 1939 tarihli, restore edilmiş bauhaus tarzı bir yapı; girişi ücretsiz." },
+      "place": { "en": "central market, queen's road central", "de": "central market, queen's road central", "tr": "central market, queen's road central" },
+      "hour": 13, "minute": 0,
+      "why": "Know Your GuideFong Hong Kong on sun 8.11, 13:00-19:00, 1/F event space at Central Market, per The Beat Hong Kong and startmeup.hk. A brand market rather than a classic flea; ticket prices to be checked on the organiser's page."
+    }
+  ]
+}

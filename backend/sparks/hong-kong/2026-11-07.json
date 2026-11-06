@@ -1,0 +1,14 @@
+{
+  "city": "hong-kong",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "hong kong museum festival, fun day at the museum of history.", "de": "hongkonger museumsfestival, fun day im museum of history.", "tr": "hong kong müze festivali, museum of history fun day'de." },
+      "line": { "en": "the museum festival runs to 30 november, and the museum of history holds its fun day on saturday. the festival hours are 11:00 to 18:00, so it fits an afternoon in tsim sha tsui.", "de": "das museumsfestival läuft bis 30. november, und das museum of history veranstaltet am samstag seinen fun day. die festivalzeiten sind 11:00 bis 18:00, also passt es gut in einen nachmittag in tsim sha tsui.", "tr": "müze festivali 30 kasım'a kadar sürüyor ve museum of history cumartesi günü fun day düzenliyor. festival saatleri 11:00 ile 18:00 arası; tsim sha tsui'de bir öğleden sonraya uygun." },
+      "place": { "en": "museum of history, tsim sha tsui", "de": "museum of history, tsim sha tsui", "tr": "museum of history, tsim sha tsui" },
+      "hour": 11, "minute": 0,
+      "why": "Hong Kong Museum of History Fun Day on sat 7.11 listed by The Beat Hong Kong (Best Events, 2-8 Nov); festival dates and 11:00-18:00 hours from a Hong Kong Museum Festival 2026 listing. Festival programme itself to be checked on the official site."
+    }
+  ]
+}
