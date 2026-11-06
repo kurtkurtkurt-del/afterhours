@@ -1,0 +1,27 @@
+{
+  "city": "los-angeles",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": {
+        "en": "sunset walk and talk at griffith observatory.",
+        "de": "sonnenuntergangs-spaziergang und gespräch am griffith observatory.",
+        "tr": "griffith observatory'de gün batımı yürüyüşü ve sohbeti."
+      },
+      "line": {
+        "en": "a walk and talk at the observatory from 3:30 to 6 pm, timed for the sunset. go early and stay on for the stars.",
+        "de": "ein spaziergang und gespräch am observatorium von 15.30 bis 18 uhr, passend zum sonnenuntergang. früh kommen und für die sterne bleiben.",
+        "tr": "gözlemevinde 15.30 ile 18.00 arası yürüyüş ve sohbet, gün batımına göre. erken gel, yıldızlar için kal."
+      },
+      "place": {
+        "en": "griffith observatory",
+        "de": "griffith observatory",
+        "tr": "griffith observatory"
+      },
+      "hour": 15,
+      "minute": 30,
+      "why": "Griffith Observatory event calendar lists Sunset Walk & Talk on Saturday 14 November 2026, 3:30 to 6:00 pm."
+    }
+  ]
+}

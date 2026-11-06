@@ -1,0 +1,22 @@
+{
+  "city": "los-angeles",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "rose bowl flea market, pasadena.", "de": "rose bowl flea market in pasadena.", "tr": "pasadena'da rose bowl flea market." },
+      "line": { "en": "the monthly market on the rose bowl stadium lot: over 2,500 vendors, vintage, antiques and art.", "de": "der monatliche markt auf dem parkplatz des rose bowl stadions: über 2.500 händler, vintage, antiquitäten und kunst.", "tr": "rose bowl stadyumu otoparkında aylık pazar: 2.500'den fazla satıcı, vintage, antika ve sanat." },
+      "place": { "en": "rose bowl stadium", "de": "rose bowl stadium", "tr": "rose bowl stadium" },
+      "hour": 9, "minute": 0,
+      "why": "Second Sunday of the month, 8 November 2026, per coloradoboulevard.net and Pasadena Now; hours vary between sources (9am start in most), so check the Eventbrite listing."
+    },
+    {
+      "kind": "jazz",
+      "title": { "en": "vocal jazz jam at the world stage.", "de": "vokal-jazz-jam im the world stage.", "tr": "the world stage'de vokal caz jam'i." },
+      "line": { "en": "open vocal jazz jam at the world stage in crenshaw on sunday evening. come to listen or sing; check the listing for the current start time.", "de": "offene vokal-jazz-jam im the world stage in crenshaw am sonntagabend. zum zuhören oder singen; die aktuelle startzeit steht auf der seite.", "tr": "crenshaw'daki the world stage'de pazar akşamı açık vokal caz jam'i. dinlemeye ya da şarkı söylemeye gel; güncel saat ilanda." },
+      "place": { "en": "the world stage", "de": "the world stage", "tr": "the world stage" },
+      "hour": 20, "minute": 0,
+      "why": "Recent Eventbrite listing for a Sunday vocal jazz jam at The World Stage Performance Gallery, 4321 Degnan Blvd; the 8 pm start comes from a venue directory and is not confirmed on the listing."
+    }
+  ]
+}
