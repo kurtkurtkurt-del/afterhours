@@ -1,0 +1,14 @@
+{
+  "city": "detroit",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "eastern market saturday, from six.", "de": "eastern market samstag, ab sechs.", "tr": "cumartesi eastern market, altıdan itibaren." },
+      "line": { "en": "the saturday market runs 6 to 4 at eastern market. walk the sheds and the stalls before the lunch crowd.", "de": "der samstagsmarkt läuft von 6 bis 16 uhr am eastern market. durch die hallen und stände schlendern, bevor das mittagsgedränge kommt.", "tr": "cumartesi pazarı 6 ile 16 arasında eastern market'te. mittagdan önce hallerde ve tezgâhlarda dolaşın." },
+      "place": { "en": "eastern market", "de": "eastern market", "tr": "eastern market" },
+      "hour": 9, "minute": 0,
+      "why": "Eastern Market Saturday market, 6 a.m. to 4 p.m., 2934 Russell St (MarketSpread event listing; check easternmarket.org)."
+    }
+  ]
+}
