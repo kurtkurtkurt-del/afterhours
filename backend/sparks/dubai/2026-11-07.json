@@ -1,0 +1,14 @@
+{
+  "city": "dubai",
+  "day": "2026-11-07",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "noor festival of lights at souk al seef.", "de": "noor-lichterfest am souk al seef.", "tr": "souk al seef'te noor ışık festivali." },
+      "line": { "en": "the noor festival of lights at souk al seef runs 18:00 to 23:00 and is free. the creek-side souk is the place to walk after dark; check the programme before you go, it can still change.", "de": "das noor-lichterfest im souk al seef läuft von 18:00 bis 23:00 und ist frei. der souk am creek ist nach dem dunkel werden der ort zum schlendern; das programm vorher prüfen, es kann sich noch ändern.", "tr": "souk al seef'teki noor ışık festivali 18:00 ile 23:00 arası sürer ve ücretsizdir. creek kenarındaki çarşı karanlıktan sonra gezilecek yer; program değişebileceği için gitmeden önce kontrol et." },
+      "place": { "en": "souk al seef", "de": "souk al seef", "tr": "souk al seef" },
+      "hour": 18, "minute": 0,
+      "why": "Noor Festival of Lights at Souk Al Seef, sat 7.11 18:00 to 23:00, free, per the Visit Dubai events calendar (visitdubai.com, noor-festival-of-lights-2026); the venue is also named by Gulf News."
+    }
+  ]
+}
