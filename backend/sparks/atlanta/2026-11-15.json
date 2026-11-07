@@ -1,0 +1,27 @@
+{
+  "city": "atlanta",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": {
+        "en": "falcons – chiefs at one, mercedes-benz stadium.",
+        "de": "falcons – chiefs um eins, mercedes-benz stadium.",
+        "tr": "falcons – chiefs, saat bir, mercedes-benz stadyumu."
+      },
+      "line": {
+        "en": "the falcons host kansas city at 1 p.m. et on cbs, mercedes-benz stadium downtown.",
+        "de": "die falcons empfangen kansas city um 13 uhr ortszeit (et) auf cbs, im mercedes-benz stadium in der innenstadt.",
+        "tr": "falcons, kansas city'yi yerel saatle 13.00'te (et) cbs'te ağırlıyor. maç mercedes-benz stadyumu'nda, şehir merkezinde."
+      },
+      "place": {
+        "en": "mercedes-benz stadium",
+        "de": "mercedes-benz stadium",
+        "tr": "mercedes-benz stadium"
+      },
+      "hour": 13,
+      "minute": 0,
+      "why": "Atlanta Falcons 2026 schedule, Week 10, Nov 15 1:00 p.m. ET vs Kansas City Chiefs at Mercedes-Benz Stadium, CBS (NFL schedule listings found via search; confirm on atlantafalcons.com)."
+    }
+  ]
+}
