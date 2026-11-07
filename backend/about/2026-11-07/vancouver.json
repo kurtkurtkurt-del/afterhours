@@ -1,0 +1,38 @@
+{
+  "city": "vancouver",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "6ff0ccaf-4951-4b59-a612-ba21a7f51188",
+      "slug": "tyla-the-a-pop-world-tour-7a7092df",
+      "title": "TYLA - THE A*POP WORLD TOUR",
+      "name": "Tyla",
+      "source_url": "https://en.wikipedia.org/wiki/Tyla",
+      "extract": "Tyla Laura Seethal is a South African singer-songwriter. Dubbed the \"Queen of Popiano\", her musical style is characterised by a fusion of pop and amapiano.",
+      "en": {
+        "kicker": "singer-songwriter · south africa",
+        "who": "Tyla is a South African singer-songwriter. she is dubbed the queen of popiano, and her style fuses pop and amapiano.",
+        "facts": [
+          "Tyla Laura Seethal is a South African singer-songwriter.",
+          "dubbed the \"queen of popiano\", her musical style is characterised by a fusion of pop and amapiano."
+        ]
+      },
+      "de": {
+        "kicker": "singer-songwriterin · südafrika",
+        "who": "Tyla ist eine südafrikanische singer-songwriterin. sie wird als queen of popiano bezeichnet, und ihr musikstil verbindet pop mit amapiano.",
+        "facts": [
+          "Tyla Laura Seethal ist eine südafrikanische singer-songwriterin.",
+          "als \"queen of popiano\" bezeichnet, zeichnet sich ihr musikstil durch eine verschmelzung aus pop und amapiano aus."
+        ]
+      },
+      "tr": {
+        "kicker": "şarkıcı ve söz yazarı · güney afrika",
+        "who": "Tyla, güney afrikalı bir şarkıcı ve söz yazarıdır. \"queen of popiano\" lakabıyla anılır; müziği pop ve amapiano füzyonuyla karakterize edilir.",
+        "facts": [
+          "Tyla Laura Seethal, güney afrikalı bir şarkıcı ve söz yazarıdır.",
+          "\"queen of popiano\" olarak anılan Tyla'nın müzik tarzı, pop ve amapiano füzyonuyla karakterize edilir."
+        ]
+      }
+    }
+  ]
+}

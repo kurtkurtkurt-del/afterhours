@@ -1,0 +1,38 @@
+{
+  "city": "washington",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "9985559b-508e-485e-adb3-9b5ca12326c7",
+      "slug": "strawberry-guy-26be3de2",
+      "title": "Strawberry Guy",
+      "name": "Strawberry Guy",
+      "source_url": "https://en.wikipedia.org/wiki/Strawberry_Guy",
+      "extract": "Alexander Morgan Stephens, better known by his stage name Strawberry Guy, is a Welsh indie pop musician. He is best known for his 2019 single \"Mrs Magic\", which gained popularity via TikTok.",
+      "en": {
+        "kicker": "Welsh indie pop musician · known for a 2019 single",
+        "who": "Alexander Morgan Stephens, better known by his stage name Strawberry Guy, is a Welsh indie pop musician. he is best known for his 2019 single \"Mrs Magic\".",
+        "facts": [
+          "Alexander Morgan Stephens, better known by his stage name Strawberry Guy, is a Welsh indie pop musician.",
+          "best known for his 2019 single \"Mrs Magic\", which gained popularity via TikTok."
+        ]
+      },
+      "de": {
+        "kicker": "walisischer indie-pop-musiker · single von 2019",
+        "who": "Alexander Morgan Stephens, besser bekannt unter seinem künstlernamen Strawberry Guy, ist ein walisischer indie-pop-musiker. er ist vor allem für seine single \"Mrs Magic\" aus dem jahr 2019 bekannt.",
+        "facts": [
+          "Alexander Morgan Stephens, besser bekannt unter dem namen Strawberry Guy, ist ein walisischer indie-pop-musiker.",
+          "er ist vor allem für seine single \"Mrs Magic\" aus dem jahr 2019 bekannt, die über TikTok an popularität gewann."
+        ]
+      },
+      "tr": {
+        "kicker": "galli indie pop müzisyen · 2019 single'ı ile tanınır",
+        "who": "Alexander Morgan Stephens, sahne adı Strawberry Guy ile bilinen galli bir indie pop müzisyenidir. en çok 2019 yılındaki \"Mrs Magic\" adlı single'ıyla tanınır.",
+        "facts": [
+          "Alexander Morgan Stephens, sahne adı Strawberry Guy ile bilinen galli bir indie pop müzisyenidir.",
+          "2019 yılındaki \"Mrs Magic\" adlı single'ıyla en çok tanınır ve bu single TikTok üzerinden popülerlik kazandı."
+        ]
+      }
+    }
+  ]
+}

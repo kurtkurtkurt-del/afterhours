@@ -1,0 +1,38 @@
+{
+  "city": "austin",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "e643dfb8-619e-4e55-a90e-d83363d0dade",
+      "slug": "clara-la-san-chosen-silences-tour-fall-2026-00c06433",
+      "title": "Clara La San - Chosen Silences Tour Fall 2026",
+      "name": "Clara La San",
+      "source_url": "https://en.wikipedia.org/wiki/Clara_La_San",
+      "extract": "Rosemary Clare Louise Francis, known professionally as Clara La San, is a British singer, songwriter, and record producer. In 2013, her debut song \"Let You Go\" became popular on SoundCloud. Her follow-up song \"In This Darkness\" later went viral on TikTok upon being rereleased in 2022. Her debut studio album, Made Mistakes, was released in 2024.",
+      "en": {
+        "kicker": "British singer, songwriter and producer · debut album 2024",
+        "who": "Rosemary Clare Louise Francis, known professionally as Clara La San, is a British singer, songwriter and record producer. Her follow-up song \"In This Darkness\" later went viral on TikTok after being rereleased in 2022.",
+        "facts": [
+          "in 2013, her debut song \"Let You Go\" became popular on SoundCloud.",
+          "her debut studio album, Made Mistakes, was released in 2024."
+        ]
+      },
+      "de": {
+        "kicker": "britische sängerin und produzentin · debüt 2024",
+        "who": "Rosemary Clare Louise Francis, als Künstlerin bekannt als Clara La San, ist eine britische Sängerin, Songwriterin und Musikproduzentin. Ihr Folgesong „In This Darkness“ wurde nach seiner Neuveröffentlichung 2022 auf TikTok viral.",
+        "facts": [
+          "im jahr 2013 wurde ihr debütsong „Let You Go“ auf SoundCloud populär.",
+          "ihr debüt-studioalbum „Made Mistakes“ erschien 2024."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz şarkıcı, söz yazarı ve yapımcı · ilk albüm 2024",
+        "who": "Rosemary Clare Louise Francis, sahne adıyla Clara La San, İngiliz bir şarkıcı, söz yazarı ve plak yapımcısıdır. Takip eden şarkısı „In This Darkness“, 2022'de yeniden yayımlanmasının ardından TikTok'ta viral oldu.",
+        "facts": [
+          "2013 yılında ilk şarkısı „Let You Go“ SoundCloud'da popüler hale geldi.",
+          "ilk stüdyo albümü „Made Mistakes“ 2024 yılında yayımlandı."
+        ]
+      }
+    }
+  ]
+}

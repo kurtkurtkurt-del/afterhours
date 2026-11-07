@@ -1,0 +1,38 @@
+{
+  "city": "milano",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "a5e73a82-e2a4-45d1-a6e6-3436f158c575",
+      "slug": "marco-mengoni-residency-allo-sbagliato-5a7133ae",
+      "title": "Marco Mengoni - Residency Allo Sbagliato",
+      "name": "Marco Mengoni",
+      "source_url": "https://en.wikipedia.org/wiki/Marco_Mengoni",
+      "extract": "Marco Mengoni is an Italian singer-songwriter who rose to fame in 2009 after winning the third season of the Italian talent show X Factor. Since then he has sold over 2.8 million records in Italy, peaking the Italian albums chart seven consecutive times and entering the Top 10 Italian Singles Chart fifteen times. He won the Sanremo Music Festival in 2013 and again in 2023, therefore representing Italy in the Eurovision Song Contest in both years.",
+      "en": {
+        "kicker": "Italian singer-songwriter · 2009, Italy",
+        "who": "Marco Mengoni is an Italian singer-songwriter who rose to fame in 2009 after winning the third season of the Italian talent show X Factor. He won the Sanremo Music Festival in 2013 and again in 2023, representing Italy in the Eurovision Song Contest in both years.",
+        "facts": [
+          "since then he has sold over 2.8 million records in Italy.",
+          "he won the Sanremo Music Festival in 2013 and again in 2023."
+        ]
+      },
+      "de": {
+        "kicker": "italienischer singer-songwriter · 2009, Italien",
+        "who": "Marco Mengoni ist ein italienischer singer-songwriter, der 2009 nach dem Sieg in der dritten Staffel der italienischen Talentshow X Factor bekannt wurde. Er gewann das Sanremo Music Festival 2013 und erneut 2023 und vertrat Italien damit in beiden Jahren beim Eurovision Song Contest.",
+        "facts": [
+          "seitdem hat er über 2,8 millionen tonträger in Italien verkauft.",
+          "er gewann das Sanremo Music Festival 2013 und erneut 2023."
+        ]
+      },
+      "tr": {
+        "kicker": "italyan şarkıcı-söz yazarı · 2009, İtalya",
+        "who": "Marco Mengoni, 2009'da İtalyan yetenek yarışması X Factor'ün üçüncü sezonunu kazanarak ün kazanmış bir italyan şarkıcı ve söz yazarıdır. Sanremo Music Festival'i 2013'te ve yeniden 2023'te kazandı; bu sayede her iki yılda da İtalya'yı Eurovision Song Contest'te temsil etti.",
+        "facts": [
+          "o zamandan beri İtalya'da 2,8 milyondan fazla plak sattı.",
+          "Sanremo Music Festival'i 2013'te ve yine 2023'te kazandı."
+        ]
+      }
+    }
+  ]
+}

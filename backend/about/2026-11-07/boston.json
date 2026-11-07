@@ -1,0 +1,38 @@
+{
+  "city": "boston",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "c42f1d09-7e8f-4ccb-af0d-32b55e16a158",
+      "slug": "die-spitz-f2cf7f04",
+      "title": "Die Spitz",
+      "name": "Die Spitz",
+      "source_url": "https://en.wikipedia.org/wiki/Die_Spitz",
+      "extract": "Die Spitz is an American rock band from Austin, Texas, consisting of guitarist/singer/drummer Ava Schrobilgen, guitarist/singer Eleanor Livingston, bassist Kate Halter, and drummer/singer/guitarist Chloe de St. Aubin. Their debut album Something to Consume was released in September 2025.",
+      "en": {
+        "kicker": "american rock band · austin, texas",
+        "who": "die spitz is an american rock band from austin, texas. the lineup is ava schrobilgen (guitar, vocals, drums), eleanor livingston (guitar, vocals), kate halter (bass) and chloe de st. aubin (drums, vocals, guitar). their debut album, something to consume, came out in september 2025.",
+        "facts": [
+          "Die Spitz is an American rock band from Austin, Texas.",
+          "Their debut album Something to Consume was released in September 2025."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · austin, texas",
+        "who": "die spitz ist eine amerikanische rockband aus austin, texas. zur besetzung gehören ava schrobilgen (gitarre, gesang, schlagzeug), eleanor livingston (gitarre, gesang), kate halter (bass) und chloe de st. aubin (schlagzeug, gesang, gitarre). das debütalbum something to consume erschien im september 2025.",
+        "facts": [
+          "die spitz ist eine amerikanische rockband aus austin, texas.",
+          "das debütalbum something to consume erschien im september 2025."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · austin, texas",
+        "who": "die spitz, texas'ın austin kentinden bir amerikalı rock grubudur. kadroda ava schrobilgen (gitar, şarkı, davul), eleanor livingston (gitar, şarkı), kate halter (bas) ve chloe de st. aubin (davul, şarkı, gitar) yer alıyor. grubun debut albümü something to consume eylül 2025'te yayımlandı.",
+        "facts": [
+          "die spitz, texas'ın austin kentinden bir amerikalı rock grubudur.",
+          "debut albümü something to consume eylül 2025'te yayımlandı."
+        ]
+      }
+    }
+  ]
+}

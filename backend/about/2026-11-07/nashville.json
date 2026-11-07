@@ -1,0 +1,70 @@
+{
+  "city": "nashville",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "dda6fca0-fdc7-4e7c-85d7-a19f12ac4a30",
+      "slug": "yebba-d50876da",
+      "title": "Yebba",
+      "name": "Yebba",
+      "source_url": "https://en.wikipedia.org/wiki/Yebba",
+      "extract": "Abigail Elizabeth Smith, known professionally as Yebba, is an American singer and songwriter from West Memphis, Arkansas. She first became known for her YouTube channel and then for her backing vocal performance on Chance the Rapper's SNL performance of the song \"Same Drugs\" in 2016 and releasing her debut single \"Evergreen\" in 2017. She has collaborated with a number of artists, including PJ Morton, Sam Smith, Mark Ronson, Stormzy, Ed Sheeran, A$AP Rocky, Tyler, the Creator and Drake. She won a Grammy Award in the category Best Traditional R&B Performance for her feature on PJ Morton's cover of \"How Deep Is Your Love\" in 2019.",
+      "en": {
+        "kicker": "american singer and songwriter · west memphis, arkansas",
+        "who": "Yebba is the professional name of Abigail Elizabeth Smith, a singer and songwriter from West Memphis, Arkansas. She first became known through her YouTube channel and a backing vocal part on Chance the Rapper's SNL performance of \"Same Drugs\". She has collaborated with artists including PJ Morton, Sam Smith, Mark Ronson, Ed Sheeran and Drake.",
+        "facts": [
+          "Abigail Elizabeth Smith, known professionally as Yebba, is an American singer and songwriter from West Memphis, Arkansas.",
+          "She won a Grammy Award in the category Best Traditional R&B Performance for her feature on PJ Morton's cover of \"How Deep Is Your Love\" in 2019."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische sängerin und songwriterin · west memphis, arkansas",
+        "who": "Yebba ist der Künstlername von Abigail Elizabeth Smith, einer Sängerin und Songwriterin aus West Memphis, Arkansas. Bekannt wurde sie zunächst über ihren YouTube-Kanal und einen Background-Gesang bei Chance the Rappers SNL-Auftritt von \"Same Drugs\". Sie hat mit Künstlern wie PJ Morton, Sam Smith, Mark Ronson, Ed Sheeran und Drake zusammengearbeitet.",
+        "facts": [
+          "Abigail Elizabeth Smith, die unter dem Namen Yebba auftritt, ist eine amerikanische Sängerin und Songwriterin aus West Memphis, Arkansas.",
+          "Sie gewann einen Grammy Award in der Kategorie Best Traditional R&B Performance für ihren Gesangsbeitrag zu PJ Mortons Coverversion von \"How Deep Is Your Love\" im Jahr 2019."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı ve söz yazarı · west memphis, arkansas",
+        "who": "Yebba, West Memphis, Arkansas'tan bir şarkıcı ve söz yazarı olan Abigail Elizabeth Smith'in sahne adıdır. İlk olarak YouTube kanalıyla ve Chance the Rapper'ın SNL performansında \"Same Drugs\" şarkısındaki arka plan vokaliyle tanındı. PJ Morton, Sam Smith, Mark Ronson, Ed Sheeran ve Drake gibi sanatçılarla birlikte çalıştı.",
+        "facts": [
+          "Sahne adı Yebba olan Abigail Elizabeth Smith, West Memphis, Arkansas'tan Amerikalı bir şarkıcı ve söz yazarıdır.",
+          "2019'da PJ Morton'ın \"How Deep Is Your Love\" cover'ındaki katkısıyla Best Traditional R&B Performance kategorisinde bir Grammy Ödülü kazandı."
+        ]
+      }
+    },
+    {
+      "id": "2f8f8aae-9528-49ee-abc7-d9afd69fe339",
+      "slug": "charlie-parr-f4385dba",
+      "title": "Charlie Parr",
+      "name": "Charlie Parr",
+      "source_url": "https://en.wikipedia.org/wiki/Charlie_Parr",
+      "extract": "Charlie Parr is an American country blues musician. Born in Austin, Minnesota, he spent part of his childhood in Hollandale before starting his music career in Duluth. His influences include Charlie Patton, Bukka White, Reverend Gary Davis, Dave Van Ronk, Mississippi John Hurt, and his self-professed \"hero\" \"Spider\" John Koerner. He plays a Mule resonator, National resonator guitar, a fretless open-back banjo, and a twelve-string guitar, often in the Piedmont blues style. He is divorced from Emily Parr, who occasionally adds vocals to his music. He has two children.",
+      "en": {
+        "kicker": "country blues musician · born in austin, minnesota",
+        "who": "Charlie Parr is a country blues musician who was born in Austin, Minnesota, and started his music career in Duluth. His influences include Charlie Patton, Bukka White, Reverend Gary Davis and Mississippi John Hurt. He plays several resonator guitars, a banjo and a twelve-string guitar.",
+        "facts": [
+          "Charlie Parr is an American country blues musician.",
+          "He plays a Mule resonator, National resonator guitar, a fretless open-back banjo, and a twelve-string guitar, often in the Piedmont blues style."
+        ]
+      },
+      "de": {
+        "kicker": "country-blues-musiker · geboren in austin, minnesota",
+        "who": "Charlie Parr ist ein Country-Blues-Musiker, der in Austin, Minnesota, geboren wurde und seine musikalische Laufbahn in Duluth begann. Zu seinen Einflüssen gehören Charlie Patton, Bukka White, Reverend Gary Davis und Mississippi John Hurt. Er spielt verschiedene Resonatorgitarren, ein Banjo und eine Zwölfsaitige.",
+        "facts": [
+          "Charlie Parr ist ein amerikanischer Country-Blues-Musiker.",
+          "Er spielt eine Mule-Resonatorgitarre, eine National-Resonatorgitarre, ein Banjo ohne Bund mit offenem Rücken und eine Zwölfsaitige, oft im Piedmont-Blues-Stil."
+        ]
+      },
+      "tr": {
+        "kicker": "country blues müzisyeni · austin, minnesota doğumlu",
+        "who": "Charlie Parr, Austin, Minnesota'da doğan bir country blues müzisyenidir ve müzik kariyerine Duluth'ta başlamıştır. Etkilendiği isimler arasında Charlie Patton, Bukka White, Reverend Gary Davis ve Mississippi John Hurt bulunur. Çeşitli resonator gitarlar, bir banjo ve on iki telli bir gitar çalar.",
+        "facts": [
+          "Charlie Parr, Amerikalı bir country blues müzisyenidir.",
+          "Mule resonator, National resonator gitar, perdesiz açık sırtlı banjo ve on iki telli gitar çalar; çoğunlukla Piedmont blues tarzında."
+        ]
+      }
+    }
+  ]
+}

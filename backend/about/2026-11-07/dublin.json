@@ -1,0 +1,102 @@
+{
+  "city": "dublin",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "b5cefe79-e3e1-44c6-8488-e3d04d9d17be",
+      "slug": "brian-kennedy-5b3506c5",
+      "title": "Brian Kennedy",
+      "name": "Brian Kennedy",
+      "source_url": "https://en.wikipedia.org/wiki/Brian_Kennedy_(singer)",
+      "extract": "Brian Edward Patrick Kennedy is a singer, songwriter, and author from Northern Ireland. He had a number of hit singles and albums in the UK and Ireland during the 1990s and 2000s. He represented Ireland in the Eurovision Song Contest 2006 with his song \"Every Song is a Cry for Love\" and finished in 10th place, with his performance notably marking the 1,000th song to be performed in Eurovision history.",
+      "en": {
+        "kicker": "singer, songwriter and author · Northern Ireland",
+        "who": "Brian Kennedy is a singer, songwriter and author from Northern Ireland. During the 1990s and 2000s he had hit singles and albums in the UK and Ireland.",
+        "facts": [
+          "he had a number of hit singles and albums in the UK and Ireland during the 1990s and 2000s.",
+          "he represented Ireland in the Eurovision Song Contest 2006 with his song \"Every Song is a Cry for Love\" and finished in 10th place."
+        ]
+      },
+      "de": {
+        "kicker": "sänger, songwriter und autor · Nordirland",
+        "who": "Brian Kennedy ist ein sänger, songwriter und autor aus Nordirland. In den 1990er und 2000er jahren hatte er mehrere erfolgreiche singles und alben in Großbritannien und Irland.",
+        "facts": [
+          "er hatte in den 1990er und 2000er jahren mehrere hitsingles und alben in Großbritannien und Irland.",
+          "er vertrat Irland beim Eurovision Song Contest 2006 mit dem lied „Every Song is a Cry for Love“ und belegte den 10. platz."
+        ]
+      },
+      "tr": {
+        "kicker": "şarkıcı, söz yazarı ve yazar · Kuzey İrlanda",
+        "who": "Brian Kennedy, Kuzey İrlanda'dan bir şarkıcı, söz yazarı ve yazardır. 1990'lar ve 2000'lerde Birleşik Krallık ve İrlanda'da birçok hit single ve albüme imza attı.",
+        "facts": [
+          "1990'lar ve 2000'lerde Birleşik Krallık ve İrlanda'da çok sayıda hit single ve albümü vardı.",
+          "2006 Eurovision Şarkı Yarışması'nda „Every Song is a Cry for Love“ şarkısıyla İrlanda'yı temsil etti ve 10. sırada bitirdi."
+        ]
+      }
+    },
+    {
+      "id": "b52d6084-a656-44bb-8bc8-bab18bdd18de",
+      "slug": "widowspeak-c14e012f",
+      "title": "Widowspeak",
+      "name": "Widowspeak",
+      "source_url": "https://en.wikipedia.org/wiki/Widowspeak",
+      "extract": "Widowspeak is an American indie rock band from Brooklyn, New York City, United States. The band consists of guitarist and vocalist Molly Hamilton and guitarist Robert Earl Thomas.",
+      "en": {
+        "kicker": "indie rock band · Brooklyn, New York City",
+        "who": "Widowspeak is an American indie rock band from Brooklyn, New York City, United States. Its lineup is built around guitarist and vocalist Molly Hamilton and guitarist Robert Earl Thomas.",
+        "facts": [
+          "Widowspeak is an American indie rock band from Brooklyn, New York City, United States.",
+          "the band consists of guitarist and vocalist Molly Hamilton and guitarist Robert Earl Thomas."
+        ]
+      },
+      "de": {
+        "kicker": "indie-rock-band · Brooklyn, New York City",
+        "who": "Widowspeak ist eine amerikanische indie-rock-band aus Brooklyn, New York City, Vereinigte Staaten. Zur band gehören die gitarristin und sängerin Molly Hamilton sowie der gitarrist Robert Earl Thomas.",
+        "facts": [
+          "Widowspeak ist eine amerikanische indie-rock-band aus Brooklyn, New York City, Vereinigte Staaten.",
+          "die band besteht aus der gitarristin und sängerin Molly Hamilton und dem gitarristen Robert Earl Thomas."
+        ]
+      },
+      "tr": {
+        "kicker": "indie rock grubu · Brooklyn, New York City",
+        "who": "Widowspeak, Birleşik Devletler'in Brooklyn, New York City kentinden bir Amerikan indie rock grubudur. Grup, gitarist ve vokalist Molly Hamilton ile gitarist Robert Earl Thomas'tan oluşur.",
+        "facts": [
+          "Widowspeak, Birleşik Devletler'in Brooklyn, New York City kentinden bir Amerikan indie rock grubudur.",
+          "grup, gitarist ve vokalist Molly Hamilton ile gitarist Robert Earl Thomas'tan oluşur."
+        ]
+      }
+    },
+    {
+      "id": "e1a80516-5e4e-4f5f-92a3-12f67da03813",
+      "slug": "ole-60-off-the-grid-tour-29f82623",
+      "title": "Ole 60 - Off the Grid Tour",
+      "name": "Ole 60",
+      "source_url": "https://en.wikipedia.org/wiki/Ole_60",
+      "extract": "Ole 60 is an American country/alt-country band from Hawesville, Kentucky, formed in 2023, known for blending Appalachian storytelling with elements of grunge, southern rock, folk music, and traditional country. The band consists of Jacob Ty Young, Tristan Roby, Ryan Laslie, Colby Clark, Aden Wood (drums), Dwight McGlynn, and Dustin \"Catfish\" Fuqua. The band gained widespread attention in 2024 through breakout singles like \"smoke & a light\" and \"Thoughts of You\", and acclaimed debut album Smokestack Town in 2025.",
+      "en": {
+        "kicker": "country and alt-country band · Hawesville, Kentucky, 2023",
+        "who": "Ole 60 is an American country and alt-country band from Hawesville, Kentucky, formed in 2023. It is known for blending Appalachian storytelling with elements of grunge, southern rock, folk music and traditional country.",
+        "facts": [
+          "Ole 60 is an American country/alt-country band from Hawesville, Kentucky, formed in 2023, known for blending Appalachian storytelling with elements of grunge, southern rock, folk music, and traditional country.",
+          "the band gained widespread attention in 2024 through breakout singles like \"smoke & a light\" and \"Thoughts of You\", and acclaimed debut album Smokestack Town in 2025."
+        ]
+      },
+      "de": {
+        "kicker": "country- und alt-country-band · Hawesville, Kentucky, 2023",
+        "who": "Ole 60 ist eine amerikanische country- und alt-country-band aus Hawesville, Kentucky, die 2023 gegründet wurde. Sie verbindet Appalachian-Erzählungen mit elementen aus grunge, southern rock, folk und traditionellem country.",
+        "facts": [
+          "Ole 60 ist eine amerikanische country/alt-country-band aus Hawesville, Kentucky, die 2023 gegründet wurde und für die verbindung von Appalachian-Storytelling mit elementen aus grunge, southern rock, folk music und traditionellem country bekannt ist.",
+          "die band erhielt 2024 breite aufmerksamkeit durch durchbruchssingles wie „smoke & a light“ und „Thoughts of You“, und 2025 kam das gefeierte debütalbum Smokestack Town heraus."
+        ]
+      },
+      "tr": {
+        "kicker": "country ve alt-country grubu · Hawesville, Kentucky, 2023",
+        "who": "Ole 60, 2023'te kurulan ve Kentucky'nin Hawesville kentinden çıkan bir Amerikan country ve alt-country grubudur. Appalachian hikâye anlatımını grunge, southern rock, folk ve geleneksel country öğeleriyle harmanlamasıyla bilinir.",
+        "facts": [
+          "Ole 60, Kentucky'nin Hawesville kentinden çıkan ve 2023'te kurulan bir Amerikan country/alt-country grubudur; Appalachian hikâye anlatımını grunge, southern rock, folk müzik ve geleneksel country öğeleriyle harmanlamasıyla bilinir.",
+          "grup 2024'te „smoke & a light“ ve „Thoughts of You“ gibi çıkış single'larıyla geniş ilgi gördü ve 2025'te beğeni toplayan debüt albümü Smokestack Town yayımlandı."
+        ]
+      }
+    }
+  ]
+}

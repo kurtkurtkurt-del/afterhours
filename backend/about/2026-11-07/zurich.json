@@ -1,0 +1,38 @@
+{
+  "city": "zurich",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "4100746d-0998-4780-9603-d5c7017b1aa8",
+      "slug": "john-summit-europe-ctrl-escape-tour-05b43d19",
+      "title": "JOHN SUMMIT - EUROPE CTRL ESCAPE TOUR",
+      "name": "John Summit",
+      "source_url": "https://en.wikipedia.org/wiki/John_Summit",
+      "extract": "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label. His music includes original tracks and remixes, primarily focused in the genre of tech house.",
+      "en": {
+        "kicker": "american dj and record producer",
+        "who": "John Summit is the stage name of John Walter Schuster. He is also a former accountant and the current owner of the Experts Only label. His music includes original tracks and remixes, primarily focused in the genre of tech house.",
+        "facts": [
+          "better known by his stage name John Summit, he is an american dj and record producer.",
+          "his music includes original tracks and remixes, primarily focused in the genre of tech house."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer dj und musikproduzent",
+        "who": "John Summit ist das Künstlerpseudonym von John Walter Schuster. Er ist außerdem ein ehemaliger Buchhalter und der aktuelle Besitzer des Labels Experts Only. Seine Musik umfasst eigene Tracks und Remixe, vor allem im Genre Tech House.",
+        "facts": [
+          "unter seinem künstlernamen John Summit besser bekannt, ist er ein amerikanischer dj und musikproduzent.",
+          "seine musik umfasst eigene tracks und remixe, vor allem im genre tech house."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı dj ve müzik yapımcısı",
+        "who": "John Summit, John Walter Schuster'ın sahne adıdır. Eski bir muhasebeci olan sanatçı, şu an Experts Only plak etiketinin sahibidir. Müziği orijinal parçaları ve remiksleri kapsar, ağırlıklı olarak tech house türünde üretir.",
+        "facts": [
+          "takma adı John Summit olan bu sanatçı, amerikalı bir dj ve müzik yapımcısıdır.",
+          "müziği orijinal parçaları ve remiksleri içerir, ağırlıklı olarak tech house türündedir."
+        ]
+      }
+    }
+  ]
+}

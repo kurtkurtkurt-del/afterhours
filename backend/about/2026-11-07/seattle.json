@@ -1,0 +1,70 @@
+{
+ "city": "seattle",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "ff7306ac-2491-4fbf-a23f-f16228df88a3",
+   "slug": "seattle-symphony-632fe642",
+   "title": "Seattle Symphony",
+   "name": "Seattle Symphony",
+   "source_url": "https://en.wikipedia.org/wiki/Seattle_Symphony",
+   "extract": "The Seattle Symphony is an American orchestra based in Seattle, Washington. Since 1998, the orchestra is resident at Benaroya Hall. The orchestra also serves as the accompanying orchestra for the Seattle Opera.",
+   "en": {
+    "kicker": "American orchestra · Seattle, Washington",
+    "who": "the Seattle Symphony is an American orchestra based in Seattle, Washington. since 1998 it has been resident at Benaroya Hall. the orchestra also serves as the accompanying orchestra for the Seattle Opera.",
+    "facts": [
+     "the Seattle Symphony is an American orchestra based in Seattle, Washington.",
+     "since 1998, the orchestra is resident at Benaroya Hall."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanisches orchester · Seattle, Washington",
+    "who": "das Seattle Symphony ist ein amerikanisches orchester mit sitz in Seattle, Washington. seit 1998 ist das orchester in der Benaroya Hall ansässig. außerdem begleitet es als orchester die Seattle Opera.",
+    "facts": [
+     "das Seattle Symphony ist ein amerikanisches orchester mit sitz in Seattle, Washington.",
+     "seit 1998 ist das orchester in der Benaroya Hall ansässig."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan orkestrası · Seattle, Washington",
+    "who": "Seattle Symphony, Seattle, Washington merkezli bir amerikan orkestrasıdır. 1998'den beri Benaroya Hall'da yerleşik olarak çalışmaktadır. orkestra ayrıca Seattle Opera'ya eşlik eden orkestra olarak da görev yapar.",
+    "facts": [
+     "Seattle Symphony, Seattle, Washington merkezli bir amerikan orkestrasıdır.",
+     "1998'den beri orkestra Benaroya Hall'da yerleşik olarak çalışmaktadır."
+    ]
+   }
+  },
+  {
+   "id": "6f6d435f-3f54-433b-ba40-9aa7ed5a0cf3",
+   "slug": "margaret-glaspy-the-i-am-both-tour-3494da32",
+   "title": "Margaret Glaspy: The I Am Both Tour",
+   "name": "Margaret Glaspy",
+   "source_url": "https://en.wikipedia.org/wiki/Margaret_Glaspy",
+   "extract": "Margaret Glaspy is an American singer and songwriter based in New York City. She began playing and living in New York at 21 years old and is currently signed with ATO Records. Her debut full-length album, Emotions and Math, was self-produced and received critical acclaim, while her subsequent records have followed suit, from her EP Born Yesterday to her second full-length Devotion.",
+   "en": {
+    "kicker": "American singer and songwriter · New York City",
+    "who": "Margaret Glaspy is an American singer and songwriter based in New York City. she began playing and living in New York at 21 years old. she is currently signed with ATO Records.",
+    "facts": [
+     "Margaret Glaspy is an American singer and songwriter based in New York City.",
+     "her debut full-length album, Emotions and Math, was self-produced and received critical acclaim."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische sängerin und songwriterin · New York City",
+    "who": "Margaret Glaspy ist eine amerikanische sängerin und songwriterin mit sitz in New York City. sie begann im alter von 21 jahren in New York zu spielen und dort zu leben. sie steht derzeit bei ATO Records unter vertrag.",
+    "facts": [
+     "Margaret Glaspy ist eine amerikanische sängerin und songwriterin mit sitz in New York City.",
+     "ihr debütalbum Emotions and Math wurde selbst produziert und erhielt kritikerlob."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan şarkıcı ve söz yazarı · New York City",
+    "who": "Margaret Glaspy, New York City merkezli amerikan bir şarkıcı ve söz yazarıdır. 21 yaşında New York'ta çalmaya ve yaşamaya başladı. şu anda ATO Records ile sözleşmelidir.",
+    "facts": [
+     "Margaret Glaspy, New York City merkezli amerikan bir şarkıcı ve söz yazarıdır.",
+     "ilk tam uzunluklu albümü Emotions and Math kendi prodüksiyonuyla hazırlandı ve eleştirel beğeni topladı."
+    ]
+   }
+  }
+ ]
+}

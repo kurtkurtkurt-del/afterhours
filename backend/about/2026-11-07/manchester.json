@@ -1,0 +1,102 @@
+{
+  "city": "manchester",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "1dba9ecb-a308-4ad6-b051-ab79896280a6",
+      "slug": "mason-hill-73e65f20",
+      "title": "Mason Hill",
+      "name": "Mason Hill",
+      "source_url": "https://en.wikipedia.org/wiki/Mason_Hill_(band)",
+      "extract": "Mason Hill are a Scottish rock band, from Glasgow, who formed in 2015 officially. Coined by schoolmates James Bird and Scott Taylor in early 2013. They added Craig McFetridge shortly after to the line up and in due course Matthew Ward joined ranks (2014) followed shortly after by Marc Montgomery (2015) to complete the band.\nAfter Taylor’s departure from the band in 2023 due to health concerns the band started their search for a replacement. In September 2025 Tom Ward officially joined Mason Hill publicly after working with the band for a year. Tom Ward is the current lead vocalist for Mason Hill.",
+      "en": {
+        "kicker": "Scottish rock band · formed in 2015, Glasgow",
+        "who": "Mason Hill is a Scottish rock band from Glasgow. Tom Ward, who joined in September 2025, is the current lead vocalist.",
+        "facts": [
+          "Mason Hill are a Scottish rock band, from Glasgow, who formed in 2015 officially.",
+          "Tom Ward is the current lead vocalist for Mason Hill."
+        ]
+      },
+      "de": {
+        "kicker": "Schottische Rockband · gegründet 2015 in Glasgow",
+        "who": "Mason Hill ist eine schottische Rockband aus Glasgow. Tom Ward stieß im September 2025 offiziell zur Band und ist heute Leadsänger.",
+        "facts": [
+          "Mason Hill sind eine schottische Rockband aus Glasgow, die offiziell im Jahr 2015 gegründet wurde.",
+          "Tom Ward ist der aktuelle Leadsänger von Mason Hill."
+        ]
+      },
+      "tr": {
+        "kicker": "İskoç rock grubu · 2015, Glasgow",
+        "who": "Mason Hill, Glasgow'dan İskoç bir rock grubudur. Tom Ward, Eylül 2025'te gruba resmen katıldı ve şu anda baş vokalisttir.",
+        "facts": [
+          "Mason Hill, Glasgow'dan İskoç bir rock grubudur ve resmi olarak 2015 yılında kurulmuştur.",
+          "Tom Ward, Mason Hill'in şu anki baş vokalistidir."
+        ]
+      }
+    },
+    {
+      "id": "345cdbe5-6454-4aea-ac4f-eaf8c1cc4c1f",
+      "slug": "chloe-slater-65d79a7d",
+      "title": "Chloe Slater",
+      "name": "Chloe Slater",
+      "source_url": "https://en.wikipedia.org/wiki/Chloe_Slater",
+      "extract": "Chloe Leanne Slater is an English singer-songwriter based in Manchester. Writing about social and political issues, she has been releasing music since 2023 and has issued two extended plays: You Can't Put a Price on Fun, and Love Me Please.",
+      "en": {
+        "kicker": "English singer-songwriter · based in Manchester",
+        "who": "Chloe Leanne Slater is an English singer-songwriter based in Manchester. she writes about social and political issues and has been releasing music since 2023.",
+        "facts": [
+          "Chloe Leanne Slater is an English singer-songwriter based in Manchester.",
+          "she has been releasing music since 2023 and has issued two extended plays: You Can't Put a Price on Fun, and Love Me Please."
+        ]
+      },
+      "de": {
+        "kicker": "Englische Singer-Songwriterin · in Manchester ansässig",
+        "who": "Chloe Leanne Slater ist eine englische Singer-Songwriterin aus Manchester. Sie schreibt über soziale und politische Themen und veröffentlicht seit 2023 Musik.",
+        "facts": [
+          "Chloe Leanne Slater ist eine englische Singer-Songwriterin, die in Manchester ansässig ist.",
+          "Seit 2023 veröffentlicht sie Musik und hat zwei EPs herausgebracht: You Can't Put a Price on Fun und Love Me Please."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz şarkıcı-söz yazarı · Manchester merkezli",
+        "who": "Chloe Leanne Slater, Manchester merkezli bir İngiliz şarkıcı-söz yazarıdır. Sosyal ve siyasi konular hakkında yazıyor ve 2023'ten beri müzik yayımlıyor.",
+        "facts": [
+          "Chloe Leanne Slater, Manchester merkezli bir İngiliz şarkıcı-söz yazarıdır.",
+          "2023'ten beri müzik yayımlıyor ve iki EP çıkardı: You Can't Put a Price on Fun ve Love Me Please."
+        ]
+      }
+    },
+    {
+      "id": "1aa050ce-a56f-4ac1-bbdc-82403ebf02d7",
+      "slug": "paul-heaton-737f0c84",
+      "title": "Paul Heaton",
+      "name": "Paul Heaton",
+      "source_url": "https://en.wikipedia.org/wiki/Paul_Heaton",
+      "extract": "Paul David Heaton is an English singer-songwriter. He was the lead singer and main lyricist of the Housemartins, who had commercial success in the UK and other European countries from 1985 to 1988, releasing several singles, including \"Happy Hour\" and the UK number one \"Caravan of Love\" in 1986, before the group disbanded. Heaton then formed the Beautiful South with the Housemartins' drummer, Dave Hemingway. The band's debut single, \"Song for Whoever\", and debut album, Welcome to the Beautiful South, were released in 1989 to commercial success. They had a series of hits throughout the 1990s, including the number-one single \"A Little Time\", and disbanded in 2007.",
+      "en": {
+        "kicker": "English singer-songwriter · Housemartins, Beautiful South",
+        "who": "Paul David Heaton is an English singer-songwriter. he was the lead singer and main lyricist of the Housemartins before later forming the Beautiful South.",
+        "facts": [
+          "Paul David Heaton is an English singer-songwriter.",
+          "Heaton then formed the Beautiful South with the Housemartins' drummer, Dave Hemingway."
+        ]
+      },
+      "de": {
+        "kicker": "Englischer Singer-Songwriter · Housemartins, Beautiful South",
+        "who": "Paul David Heaton ist ein englischer Singer-Songwriter. Er war Leadsänger und Hauptliedtexter der Housemartins und gründete später die Beautiful South.",
+        "facts": [
+          "Paul David Heaton ist ein englischer Singer-Songwriter.",
+          "Danach gründete er gemeinsam mit dem Schlagzeuger der Housemartins, Dave Hemingway, die Beautiful South."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz şarkıcı-söz yazarı · Housemartins, Beautiful South",
+        "who": "Paul David Heaton bir İngiliz şarkıcı-söz yazarıdır. Housemartins'in baş vokalisti ve ana söz yazarıydı, ardından Beautiful South'u kurdu.",
+        "facts": [
+          "Paul David Heaton, bir İngiliz şarkıcı-söz yazarıdır.",
+          "Ardından Housemartins'in davulcusu Dave Hemingway ile birlikte Beautiful South'u kurdu."
+        ]
+      }
+    }
+  ]
+}

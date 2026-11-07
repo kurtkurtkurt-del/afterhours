@@ -1884,6 +1884,84 @@
    "slug": "ski-aggu-b0707382",
    "city": "zurich",
    "why": "not a music act (German musical artist (born 1997))"
+  },
+  {
+   "id": "bcd6ff03-bc00-4263-9aa3-a44d15aa3a31",
+   "slug": "catch-your-breath-02b4fd8e",
+   "city": "montreal",
+   "why": "check: extract too thin (one sentence)"
+  },
+  {
+   "id": "302754a9-91e5-4b91-a83c-c5cdde58dfe0",
+   "slug": "garth-brooks-blame-it-all-on-my-roots-arena-tour-ab30bf3d",
+   "city": "seattle",
+   "why": "check: tr adds a claim (mainstream pop crossover) that en and de omit"
+  },
+  {
+   "id": "ce70417f-9a7c-4b48-acda-88dab246bc78",
+   "slug": "flower-face-0c1b5397",
+   "city": "amsterdam",
+   "why": "extract is a single sentence with no releases or dates, too thin for two facts"
+  },
+  {
+   "id": "1a3f76c5-8d63-4f74-8017-b9028c2d7db9",
+   "slug": "makaya-mccraven-0c741a1e",
+   "city": "austin",
+   "why": "extract too thin: a single sentence with no facts to write from"
+  },
+  {
+   "id": "b0280666-f364-4bd2-a10d-a96cbb678304",
+   "slug": "gavin-adcock-the-day-i-hang-it-up-tour-2026-e214a17b",
+   "city": "boston",
+   "why": "extract is a single sentence; only one fact can be stated from it"
+  },
+  {
+   "id": "899ea37a-3bb6-4f72-be68-0d2fd7abafe2",
+   "slug": "jerry-rivera-7371fdd0",
+   "city": "ciudad-de-mexico",
+   "why": "extract is a single sentence; year in the description is not in the extract"
+  },
+  {
+   "id": "bc939eb0-8a05-4666-8d1f-e6a8f14f356b",
+   "slug": "sucioperro-5e2b0654",
+   "city": "glasgow",
+   "why": "thin extract: a single sentence with no second fact to write from"
+  },
+  {
+   "id": "b3829309-1858-48e5-b400-a2cd5d7ee8d0",
+   "slug": "lee-ritenour-album-release-b5997766",
+   "city": "los-angeles",
+   "why": "extract is a single sentence, too thin for two facts"
+  },
+  {
+   "id": "53fe6597-d668-478c-9a7d-f442afb76feb",
+   "slug": "gold-panda-7807e2e4",
+   "city": "manchester",
+   "why": "extract is thin; the second sentence describes a different performer"
+  },
+  {
+   "id": "7c14517c-b121-493b-9cee-01b4c22a798c",
+   "slug": "mack-geiger-0163a003",
+   "city": "nashville",
+   "why": "extract is one sentence only; cannot support two distinct facts"
+  },
+  {
+   "id": "3bf5272d-bce0-4113-9327-9af03dafc748",
+   "slug": "senza-cri-live-2027-09bf5079",
+   "city": "roma",
+   "why": "extract too thin: one sentence, no second fact"
+  },
+  {
+   "id": "20b3113a-2dea-4eb8-9f01-92ca946f62b7",
+   "slug": "yuki-chiba-ea2433db",
+   "city": "seattle",
+   "why": "extract is a single sentence, too thin for two facts"
+  },
+  {
+   "id": "5c16eebd-2341-4ce0-a972-c0e658586dbb",
+   "slug": "brutalismus-3000-harmony-us-tour-2026-cd56570e",
+   "city": "washington",
+   "why": "extract is a single sentence, too thin for two facts and a who text"
   }
  ]
 }

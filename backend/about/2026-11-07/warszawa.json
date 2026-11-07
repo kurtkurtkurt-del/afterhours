@@ -1,0 +1,38 @@
+{
+  "city": "warszawa",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "0aefe4b3-c198-4f6b-8c61-25d3f9b3772e",
+      "slug": "t-love-0425cbcb",
+      "title": "T.LOVE",
+      "name": "T.Love",
+      "source_url": "https://en.wikipedia.org/wiki/T.Love",
+      "extract": "T.Love is a Polish rock band formed in 1982, originally known as Teenage Love Alternative, by Zygmunt \"Muniek\" Staszczyk, Janusz Konorowski, Dariusz Zając and Jacek Wudecki, all friends from high school in Częstochowa.",
+      "en": {
+        "kicker": "polish rock band · formed 1982, częstochowa",
+        "who": "T.Love is a Polish rock band. it was formed in 1982, originally as Teenage Love Alternative, by Zygmunt \"Muniek\" Staszczyk, Janusz Konorowski, Dariusz Zając and Jacek Wudecki. they were all friends from high school in Częstochowa.",
+        "facts": [
+          "T.Love is a Polish rock band formed in 1982, originally known as Teenage Love Alternative.",
+          "Zygmunt \"Muniek\" Staszczyk, Janusz Konorowski, Dariusz Zając and Jacek Wudecki were all friends from high school in Częstochowa."
+        ]
+      },
+      "de": {
+        "kicker": "polnische rockband · gegründet 1982, częstochowa",
+        "who": "T.Love ist eine polnische rockband. sie wurde 1982 unter dem ursprünglichen namen teenage love alternative von zygmunt \"muniek\" staszczyk, janusz konorowski, dariusz zając und jacek wudecki gegründet. die gründer waren alle freunde aus der highschool in częstochowa.",
+        "facts": [
+          "T.Love ist eine polnische rockband, die 1982 gegründet wurde und zunächst teenage love alternative hieß.",
+          "Zygmunt \"Muniek\" Staszczyk, Janusz Konorowski, Dariusz Zając und Jacek Wudecki waren alle freunde aus der highschool in Częstochowa."
+        ]
+      },
+      "tr": {
+        "kicker": "polonyalı rock grubu · 1982, częstochowa",
+        "who": "T.Love, 1982 yılında kurulmuş bir polonyalı rock grubudur. grup başlangıçta teenage love alternative adıyla anılıyordu; kurucuları zygmunt \"muniek\" staszczyk, janusz konorowski, dariusz zając ve jacek wudecki'dir. hepsi częstochowa'daki liseden beri arkadaştı.",
+        "facts": [
+          "T.Love, 1982'de kurulmuş bir polonyalı rock grubudur ve başlangıçta teenage love alternative adını taşıyordu.",
+          "Zygmunt \"Muniek\" Staszczyk, Janusz Konorowski, Dariusz Zając ve Jacek Wudecki, Częstochowa'daki liseden beri birbirlerinin arkadaşıydı."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "8539ec01-2e26-4c8a-84e5-9b29782810f6",
+      "slug": "pentagram-electric-61bd34b7",
+      "title": "Pentagram : Electric",
+      "name": "Pentagram",
+      "source_url": "https://en.wikipedia.org/wiki/Pentagram_(band)",
+      "extract": "Pentagram is an American doom metal band from Alexandria, Virginia. They are noted as one of the pioneers of heavy metal, particularly of the aforementioned subgenre doom metal. As such, they are considered one of the \"big four\" of doom metal alongside Candlemass, Saint Vitus, and Trouble. The band's sound has drawn comparisons to Black Sabbath. Pentagram frontman Bobby Liebling has expressed distaste for the \"doom metal\" terminology, instead preferring Pentagram to be referred to as a \"heavy hard rock\" band.",
+      "en": {
+        "kicker": "American doom metal band · Alexandria, Virginia",
+        "who": "Pentagram is an American doom metal band from Alexandria, Virginia. They are noted as one of the pioneers of heavy metal and as one of the 'big four' of doom metal, alongside Candlemass, Saint Vitus and Trouble. Frontman Bobby Liebling has expressed distaste for the doom metal label and prefers the term heavy hard rock.",
+        "facts": [
+          "Pentagram is an American doom metal band from Alexandria, Virginia.",
+          "The band's sound has drawn comparisons to Black Sabbath."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische doom-metal-band · alexandria, virginia",
+        "who": "Pentagram ist eine amerikanische Doom-Metal-Band aus Alexandria, Virginia. Die Band gilt als eine der Pionierinnen des Heavy Metal und zählt zu den 'big four' des Doom Metal, zusammen mit Candlemass, Saint Vitus und Trouble. Frontmann Bobby Liebling hat seine Abneigung gegen die Bezeichnung Doom Metal geäußert und bevorzugt den Begriff heavy hard rock.",
+        "facts": [
+          "Pentagram ist eine amerikanische Doom-Metal-Band aus Alexandria, Virginia.",
+          "Der Klang der Band wurde mit Black Sabbath verglichen."
+        ]
+      },
+      "tr": {
+        "kicker": "Amerikalı doom metal grubu · Alexandria, Virginia",
+        "who": "Pentagram, Virginia eyaletinin Alexandria kentinden çıkmış bir Amerikalı doom metal grubudur. Grup, heavy metal'in öncülerinden biri olarak anılır ve doom metal'in candlemass, saint vitus ve trouble ile birlikte 'big four' olarak bilinen grubundan biridir. Ön adam bobby liebling, doom metal terimine olan rahatsızlığını dile getirmiş ve grubun heavy hard rock olarak anılmasını tercih etmiştir.",
+        "facts": [
+          "Pentagram, Virginia eyaletinin Alexandria kentinden çıkmış bir Amerikalı doom metal grubudur.",
+          "Grubun sesi Black Sabbath ile kıyaslamalara yol açmıştır."
+        ]
+      }
+    }
+  ]
+}

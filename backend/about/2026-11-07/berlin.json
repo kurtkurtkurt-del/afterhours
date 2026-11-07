@@ -1,0 +1,38 @@
+{
+  "city": "berlin",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "78e1cdd6-15c9-4f32-be10-6e726e04406b",
+      "slug": "overmono-pure-devotion-world-tour-920a0573",
+      "title": "Overmono - Pure Devotion - World Tour",
+      "name": "Overmono",
+      "source_url": "https://en.wikipedia.org/wiki/Overmono",
+      "extract": "Overmono is a Welsh electronic music duo consisting of the brothers Tom and Ed Russell.",
+      "en": {
+        "kicker": "electronic music duo · Welsh",
+        "who": "Overmono is a Welsh electronic music duo. The duo consists of the brothers Tom and Ed Russell.",
+        "facts": [
+          "Overmono is a Welsh electronic music duo.",
+          "Overmono's members are the brothers Tom and Ed Russell."
+        ]
+      },
+      "de": {
+        "kicker": "elektronisches musikduo · walisisch",
+        "who": "Overmono ist ein walisisches elektronisches musikduo. Das duo besteht aus den brüdern Tom und Ed Russell.",
+        "facts": [
+          "Overmono ist ein walisisches elektronisches musikduo.",
+          "Die mitglieder von Overmono sind die brüder Tom und Ed Russell."
+        ]
+      },
+      "tr": {
+        "kicker": "elektronik müzik ikilisi · galli",
+        "who": "Overmono, galli bir elektronik müzik ikilisidir. İkili, kardeşler Tom ve Ed Russell'dan oluşmaktadır.",
+        "facts": [
+          "Overmono, galli bir elektronik müzik ikilisidir.",
+          "Overmono'nun üyeleri kardeşler Tom ve Ed Russell'dır."
+        ]
+      }
+    }
+  ]
+}

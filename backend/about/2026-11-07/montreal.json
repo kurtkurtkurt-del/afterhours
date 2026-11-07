@@ -1,0 +1,38 @@
+{
+ "city": "montreal",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "6f8e31be-1600-4155-baf0-2692fc8d3d0f",
+   "slug": "freak-slug-017b0948",
+   "title": "FREAK SLUG",
+   "name": "Freak Slug",
+   "source_url": "https://en.wikipedia.org/wiki/Freak_Slug",
+   "extract": "Xenya Genovese, known by her stage name Freak Slug, is a British indie rock musician from Manchester.",
+   "en": {
+    "kicker": "British indie rock musician · Manchester",
+    "who": "Freak Slug is the stage name of Xenya Genovese. She is a British indie rock musician from Manchester.",
+    "facts": [
+     "Xenya Genovese, known by her stage name Freak Slug, is a British indie rock musician from Manchester.",
+     "Xenya Genovese is from Manchester."
+    ]
+   },
+   "de": {
+    "kicker": "britische indie rock musikerin · Manchester",
+    "who": "Freak Slug ist der Künstlername von Xenya Genovese. Sie ist eine britische indie rock musikerin aus Manchester.",
+    "facts": [
+     "Xenya Genovese, die unter dem Künstlernamen Freak Slug bekannt ist, ist eine britische indie rock musikerin aus Manchester.",
+     "Xenya Genovese stammt aus Manchester."
+    ]
+   },
+   "tr": {
+    "kicker": "İngiliz indie rock müzisyeni · Manchester",
+    "who": "Freak Slug, Xenya Genovese'nin sahne adıdır. Kendisi Manchester'dan gelen bir İngiliz indie rock müzisyenidir.",
+    "facts": [
+     "Xenya Genovese, sahne adı Freak Slug olarak bilinen bir İngiliz indie rock müzisyenidir.",
+     "Xenya Genovese, Manchester'dan gelmektedir."
+    ]
+   }
+  }
+ ]
+}

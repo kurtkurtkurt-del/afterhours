@@ -1,0 +1,38 @@
+{
+  "city": "leipzig",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "73cff2da-b7f6-43d8-a9d5-9eda95873736",
+      "slug": "xavier-naidoo-live-2027-fc0d26b9",
+      "title": "Xavier Naidoo - Live 2027",
+      "name": "Xavier Naidoo",
+      "source_url": "https://en.wikipedia.org/wiki/Xavier_Naidoo",
+      "extract": "Xavier Kurt Naidoo is a German soul and R&B singer, songwriter and record producer. He is a founding member of German band Söhne Mannheims, and started two record labels, Beats Around the Bush and Naidoo Records. Naidoo also has a successful solo career. His debut album Nicht von dieser Welt (1998) has sold over 1 million records, and all his next six albums Zwischenspiel – Alles für den Herrn (2002), Telegramm für X (2005), Alles kann besser werden (2009), Danke für's Zuhören (2012), Bei meiner Seele (2013) und Nicht von dieser Welt 2 (2016) reached number 1 on the German album charts. Most of his songs are in German, but he has also released a few English songs.",
+      "en": {
+        "kicker": "german soul and r&b singer · debut album 1998",
+        "who": "xavier kurt naidoo is a German soul and R&B singer, songwriter and record producer. he is a founding member of German band Söhne Mannheims, and started two record labels, Beats Around the Bush and Naidoo Records. naidoo also has a successful solo career.",
+        "facts": [
+          "he is a founding member of German band Söhne Mannheims.",
+          "his debut album Nicht von dieser Welt (1998) has sold over 1 million records."
+        ]
+      },
+      "de": {
+        "kicker": "deutscher soul- und r&b-sänger · debütalbum 1998",
+        "who": "xavier kurt naidoo ist ein deutscher soul- und r&b-sänger, songwriter und musikproduzent. er ist gründungsmitglied der deutschen band Söhne Mannheims und gründete zwei plattenlabels, Beats Around the Bush und Naidoo Records. naidoo hat außerdem eine erfolgreiche solokarriere.",
+        "facts": [
+          "er ist gründungsmitglied der deutschen band Söhne Mannheims.",
+          "sein debütalbum Nicht von dieser Welt (1998) hat über 1 million tonträger verkauft."
+        ]
+      },
+      "tr": {
+        "kicker": "alman soul ve r&b sanatçısı · ilk albüm 1998",
+        "who": "xavier kurt naidoo bir alman soul ve r&b sanatçısı, söz yazarı ve plak yapımcısıdır. söhne mannheims adlı alman grubunun kurucu üyelerinden biridir ve beats around the bush ile naidoo records adlı iki plak şirketi kurmuştur. naidoo ayrıca başarılı bir solo kariyere sahiptir.",
+        "facts": [
+          "söhne mannheims grubunun kurucu üyelerinden biridir.",
+          "ilk albümü nicht von dieser welt (1998) 1 milyondan fazla kayıt satmıştır."
+        ]
+      }
+    }
+  ]
+}

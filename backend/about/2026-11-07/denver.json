@@ -1,0 +1,70 @@
+{
+  "city": "denver",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "29f92203-ab29-4ee4-8391-05f24ad86b90",
+      "slug": "vince-staples-cry-baby-tour-514447d3",
+      "title": "Vince Staples - Cry Baby Tour",
+      "name": "Vince Staples",
+      "source_url": "https://en.wikipedia.org/wiki/Vince_Staples",
+      "extract": "Vincent Jamal Staples is an American rapper, singer, songwriter, and actor. He first became known for his appearances on the projects from Odd Future members and affiliates, including Earl Sweatshirt's Earl (2010) and Doris (2013), Mike G.’s Ali (2010) and The Jet Age of Tomorrow's Journey to the 5th Echelon (2010). He signed with Talib Kweli's Blacksmith Records prior to the release of his collaborative mixtape with Mac Miller, Stolen Youth (2013). The following year, he signed with No I.D.'s ARTium Recordings, an imprint of Def Jam Recordings, to release his debut extended play, Hell Can Wait (2014), which received critical acclaim and marked his first entry on the Billboard 200.",
+      "en": {
+        "kicker": "american rapper and actor · debut ep, 2014",
+        "who": "vincent jamal staples is an american rapper, singer, songwriter, and actor. he first became known for his appearances on the projects from Odd Future members and affiliates, including Earl Sweatshirt's Earl (2010) and Doris (2013).",
+        "facts": [
+          "He signed with Talib Kweli's Blacksmith Records prior to the release of his collaborative mixtape with Mac Miller, Stolen Youth (2013).",
+          "the following year, he signed with No I.D.’s ARTium Recordings, an imprint of Def Jam Recordings, to release his debut extended play, Hell Can Wait (2014), which received critical acclaim and marked his first entry on the Billboard 200."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und schauspieler · debüt-ep, 2014",
+        "who": "vincent jamal staples ist ein amerikanischer rapper, sänger, songwriter und schauspieler. er wurde zunächst durch seine auftritte bei projekten von odd future-mitgliedern und deren umfeld bekannt, darunter earl sweatshirts earl (2010) und doris (2013).",
+        "facts": [
+          "er unterschrieb bei talib kwelis blacksmith records, bevor das gemeinsame mixtape mit mac miller, stolen youth (2013), erschien.",
+          "im folgejahr unterschrieb er bei no i.d.s arTium recordings, einem imprint von def jam recordings, und veröffentlichte seine debüt-ep hell can wait (2014), die von der kritik gefeiert wurde und seinen ersten eintrag in den billboard 200 markierte."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve oyuncu · ilk ep, 2014",
+        "who": "vincent jamal staples amerikalı bir rapçi, şarkıcı, söz yazarı ve oyuncudur. ilk olarak odd future üyelerinin ve yakın çevresinin projelerindeki görünümleriyle tanındı; bunlar arasında earl sweatshirt'ün earl (2010) ve doris (2013) albümleri yer alır.",
+        "facts": [
+          "talib kweli'nin blacksmith records şirketiyle anlaştı; bu, mac miller ile birlikte hazırladığı stolen youth (2013) mixtape'inin yayımlanmasından önceydi.",
+          "ertesi yıl no i.d.'nin arTium recordings etiketiyle anlaştı; def jam recordings'in bir imprint'i olan bu etiketten çıkan hell can wait (2014) adlı ep'si eleştirmenlerce beğenildi ve billboard 200'e ilk girişini yaptı."
+        ]
+      }
+    },
+    {
+      "id": "4a42f3cb-6f8b-4c51-8550-c8176b69f03b",
+      "slug": "three-days-grace-alienation-tour-bcabb2ca",
+      "title": "Three Days Grace - Alienation Tour",
+      "name": "Three Days Grace",
+      "source_url": "https://en.wikipedia.org/wiki/Three_Days_Grace",
+      "extract": "Three Days Grace is a Canadian rock band formed in Norwood, Ontario, in 1992 originally as Groundswell. Groundswell played in various local Norwood backyard parties and area establishments before disbanding in 1995 and regrouping in 1997 under its current name.",
+      "en": {
+        "kicker": "canadian rock band · formed in norwood, ontario, 1992",
+        "who": "three days grace is a canadian rock band. it was formed in Norwood, Ontario, in 1992 originally as Groundswell.",
+        "facts": [
+          "Groundswell played in various local Norwood backyard parties and area establishments before disbanding in 1995 and regrouping in 1997 under its current name.",
+          "Three Days Grace is a Canadian rock band formed in Norwood, Ontario, in 1992 originally as Groundswell."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische rockband · gegründet 1992 in norwood, ontario",
+        "who": "three days grace ist eine kanadische rockband. sie wurde 1992 in Norwood, Ontario, zunächst unter dem namen Groundswell gegründet.",
+        "facts": [
+          "groundswell spielte auf verschiedenen lokalen partys im hinterhof und in örtlichen lokalen in norwood, bevor sich die band 1995 auflöste und 1997 unter ihrem heutigen namen neu formierte.",
+          "sie wurde 1992 in Norwood, Ontario, zunächst als Groundswell gegründet."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı rock grubu · 1992'de norwood, ontario'da kuruldu",
+        "who": "three days grace kanadalı bir rock grubudur. 1992'de Norwood, Ontario'da groundswell adıyla kuruldu.",
+        "facts": [
+          "groundswell, norwood'daki çeşitli yerel arka bahçe partilerinde ve bölgedeki mekanlarda çaldı; 1995'te dağılıp 1997'de bugünkü adı altında yeniden bir araya geldi.",
+          "1992'de Norwood, Ontario'da, başlangıçta Groundswell adıyla kuruldu."
+        ]
+      }
+    }
+  ]
+}

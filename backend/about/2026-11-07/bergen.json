@@ -1,0 +1,38 @@
+{
+  "city": "bergen",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "96776c53-bf62-4a47-a348-5c8773f21fb9",
+      "slug": "tobias-sten-c2bd2945",
+      "title": "Tobias Sten",
+      "name": "Tobias Sten",
+      "source_url": "https://en.wikipedia.org/wiki/Tobias_Sten",
+      "extract": "Tobias Johannessen Stenersen, known professionally as Tobias Sten, is a Norwegian country singer and songwriter. His self-titled debut album was released in May 2025, which reached No. 1 in the Norwegian albums charts and spawned multiple hits, including \"Hånd i hånd\", which reached No. 1 in the Norwegian singles charts.",
+      "en": {
+        "kicker": "norwegian country singer · debut album, may 2025",
+        "who": "tobias sten is a norwegian country singer and songwriter, known professionally under the name tobias johannessen stenersen. his self-titled debut album came out in may 2025 and spawned several hits. the single \"hånd i hånd\" reached no. 1 in the norwegian singles charts.",
+        "facts": [
+          "tobias sten is a Norwegian country singer and songwriter.",
+          "his self-titled debut album was released in May 2025, and it reached No. 1 in the Norwegian albums charts."
+        ]
+      },
+      "de": {
+        "kicker": "norwegischer country-sänger · debütalbum, mai 2025",
+        "who": "tobias sten ist ein norwegischer country-sänger und songwriter, bürgerlich tobias johannessen stenersen. sein gleichnamiges debütalbum erschien im mai 2025 und brachte mehrere hits hervor. die single \"hånd i hånd\" erreichte platz eins der norwegischen single-charts.",
+        "facts": [
+          "tobias sten ist ein norwegischer country-sänger und songwriter.",
+          "sein gleichnamiges debütalbum erschien im mai 2025 und erreichte platz eins der norwegischen albumcharts."
+        ]
+      },
+      "tr": {
+        "kicker": "norveçli country şarkıcı · ilk albüm, mayıs 2025",
+        "who": "tobias sten norveçli bir country şarkıcı ve söz yazarıdır, asıl adıyla tobias johannessen stenersen. kendi adını taşıyan ilk albümü mayıs 2025'te yayımlandı ve birkaç hit doğurdu. \"hånd i hånd\" adlı şarkı norveç single listelerinde 1 numaraya ulaştı.",
+        "facts": [
+          "tobias sten norveçli bir country şarkıcı ve söz yazarıdır.",
+          "kendi adını taşıyan ilk albümü mayıs 2025'te yayımlandı ve norveç albüm listelerinde 1 numaraya ulaştı."
+        ]
+      }
+    }
+  ]
+}

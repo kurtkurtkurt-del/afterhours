@@ -1,0 +1,70 @@
+{
+  "city": "houston",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "683f02e8-41c7-4c9d-bf5b-1cba6c265611",
+      "slug": "matt-maeson-watch-my-step-tour-023a4214",
+      "title": "Matt Maeson: Watch My Step Tour",
+      "name": "Matt Maeson",
+      "source_url": "https://en.wikipedia.org/wiki/Matt_Maeson",
+      "extract": "Matt Maeson is an American singer-songwriter and musician from Virginia Beach, Virginia, signed to Neon Gold Records and Atlantic Records.",
+      "en": {
+        "kicker": "singer-songwriter and musician · Virginia Beach, Virginia",
+        "who": "Matt Maeson is an American singer-songwriter and musician from Virginia Beach, Virginia. He is signed to Neon Gold Records and Atlantic Records.",
+        "facts": [
+          "Matt Maeson is an American singer-songwriter and musician from Virginia Beach, Virginia.",
+          "signed to Neon Gold Records and Atlantic Records."
+        ]
+      },
+      "de": {
+        "kicker": "singer-songwriter und musiker · Virginia Beach, Virginia",
+        "who": "Matt Maeson ist ein US-amerikanischer Singer-Songwriter und Musiker aus Virginia Beach, Virginia. Er steht bei Neon Gold Records und Atlantic Records unter Vertrag.",
+        "facts": [
+          "Matt Maeson ist ein US-amerikanischer Singer-Songwriter und Musiker aus Virginia Beach, Virginia.",
+          "Er steht bei Neon Gold Records und Atlantic Records unter Vertrag."
+        ]
+      },
+      "tr": {
+        "kicker": "şarkı yazarı ve müzisyen · Virginia Beach, Virginia",
+        "who": "Matt Maeson, Virginia Beach, Virginia'dan çıkan Amerikalı bir şarkı yazarı ve müzisyendir. Neon Gold Records ve Atlantic Records ile sözleşmelidir.",
+        "facts": [
+          "Matt Maeson, Virginia Beach, Virginia'dan çıkan Amerikalı bir şarkı yazarı ve müzisyendir.",
+          "Neon Gold Records ve Atlantic Records ile sözleşmelidir."
+        ]
+      }
+    },
+    {
+      "id": "23c90d0e-c3e9-4931-bcd7-e507142d5d45",
+      "slug": "tiny-habits-c3c820c1",
+      "title": "Tiny Habits",
+      "name": "Tiny Habits",
+      "source_url": "https://en.wikipedia.org/wiki/Tiny_Habits",
+      "extract": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa. Their first EP, Tiny Things, was released in April 2023. Their debut studio album All For Something was released in May 2024. Their second album Keepers came out in August 2026.",
+      "en": {
+        "kicker": "folk-pop trio · Boston, 2022",
+        "who": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa. Their second album Keepers came out in August 2026.",
+        "facts": [
+          "Tiny Habits is an American folk-pop music group formed in Boston in 2022.",
+          "Their debut studio album All For Something was released in May 2024."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches folk-pop-trio · Boston, 2022",
+        "who": "Tiny Habits ist eine amerikanische Folk-Pop-Musikgruppe, die 2022 in Boston gegründet wurde. Das Trio besteht aus Cinya Khan, Maya Rae und Judah Mayowa, allesamt Absolventen des Berklee College of Music. Ihr zweites Album Keepers erschien im August 2026.",
+        "facts": [
+          "Tiny Habits ist eine amerikanische Folk-Pop-Musikgruppe, die 2022 in Boston gegründet wurde.",
+          "Ihr Debüt-Studioalbum All For Something erschien im Mai 2024."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı folk-pop üçlüsü · Boston, 2022",
+        "who": "Tiny Habits, 2022 yılında Boston'da kurulan Amerikalı bir folk-pop müzik grubudur. Üçlü, Berklee College of Music mezunları Cinya Khan, Maya Rae ve Judah Mayowa'dan oluşuyor. İkinci albümleri Keepers Ağustos 2026'da çıktı.",
+        "facts": [
+          "Tiny Habits, 2022 yılında Boston'da kurulan Amerikalı bir folk-pop müzik grubudur.",
+          "ilk stüdyo albümleri All For Something, Mayıs 2024'te yayımlandı."
+        ]
+      }
+    }
+  ]
+}

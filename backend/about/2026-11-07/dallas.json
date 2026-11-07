@@ -1,0 +1,38 @@
+{
+  "city": "dallas",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "78db3a63-03ee-4bce-8102-3d035a25dfda",
+      "slug": "em-beihold-tales-of-a-failed-shapeshifter-tour-ed1fc964",
+      "title": "Em Beihold: Tales Of A Failed Shapeshifter Tour",
+      "name": "Em Beihold",
+      "source_url": "https://en.wikipedia.org/wiki/Em_Beihold",
+      "extract": "Emily Mahin Beihold is an American singer-songwriter. She released her debut EP Infrared in 2017. After signing to Republic Records in 2021, she released her major-label debut single \"Numb Little Bug\" in 2022, which brought her widespread recognition. The same year, she released her second EP, Egg in the Backseat. Her debut album, Tales of a Failed Shapeshifter, was released on February 27, 2026.",
+      "en": {
+        "kicker": "American singer-songwriter · debut album, 2026",
+        "who": "Emily Mahin Beihold is an American singer-songwriter. She released her second EP, Egg in the Backseat, in 2022, and that same year her single \"Numb Little Bug\" brought her widespread recognition. Her debut album, Tales of a Failed Shapeshifter, was released on February 27, 2026.",
+        "facts": [
+          "she released her debut EP Infrared in 2017.",
+          "after signing to Republic Records in 2021, she released her major-label debut single \"Numb Little Bug\" in 2022."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin · debütalbum, 2026",
+        "who": "Emily Mahin Beihold ist eine amerikanische singer-songwriterin. Sie veröffentlichte 2022 ihre zweite EP Egg in the Backseat, und im selben jahr brachte ihre single \"Numb Little Bug\" ihr große bekanntheit. Ihr debütalbum Tales of a Failed Shapeshifter erschien am 27. februar 2026.",
+        "facts": [
+          "sie veröffentlichte ihre debüt-ep Infrared im jahr 2017.",
+          "nach ihrer unterzeichnung bei Republic Records im jahr 2021 veröffentlichte sie 2022 ihre major-label-debütsingle \"Numb Little Bug\"."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı ve söz yazarı · ilk albüm, 2026",
+        "who": "Emily Mahin Beihold amerikalı bir şarkıcı ve söz yazarıdır. 2022'de ikinci ep'i Egg in the Backseat'i yayımladı ve aynı yıl çıkardığı \"Numb Little Bug\" single'ı kendisine geniş bir tanınırlık kazandırdı. İlk albümü Tales of a Failed Shapeshifter, 27 Şubat 2026'da yayımlandı.",
+        "facts": [
+          "2017'de ilk ep'i Infrared'i yayımladı.",
+          "2021'de Republic Records ile anlaşmasının ardından 2022'de major plak şirketindeki ilk single'ı \"Numb Little Bug\"ı yayımladı."
+        ]
+      }
+    }
+  ]
+}

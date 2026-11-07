@@ -1,0 +1,38 @@
+{
+  "city": "singapore",
+  "day": "2026-11-07",
+  "nights": [
+    {
+      "id": "55fbd2fb-f4ae-4898-a042-fb6764dfbec9",
+      "slug": "katseye-the-wildworld-tour-79ef3038",
+      "title": "KATSEYE: THE WILDWORLD TOUR",
+      "name": "Katseye",
+      "source_url": "https://en.wikipedia.org/wiki/Katseye",
+      "extract": "Katseye is a girl group formed in 2024, based in Los Angeles. The group consists of six members: Daniela Avanzini, Lara Raj, Manon Bannerman, Megan Skiendiel, Sophia Laforteza, and Yoonchae Jeung. With members from the Philippines, South Korea, Switzerland, and the United States, Katseye is often called a \"global girl group\".",
+      "en": {
+        "kicker": "girl group · formed 2024, Los Angeles",
+        "who": "Katseye is a girl group formed in 2024, based in Los Angeles. the group has six members from the Philippines, South Korea, Switzerland, and the United States. it is often called a \"global girl group\".",
+        "facts": [
+          "Katseye is a girl group formed in 2024, based in Los Angeles.",
+          "Katseye is often called a \"global girl group\"."
+        ]
+      },
+      "de": {
+        "kicker": "Girlgroup · gegründet 2024, Los Angeles",
+        "who": "Katseye ist eine im Jahr 2024 gegründete Girlgroup mit Sitz in Los Angeles. Die Gruppe hat sechs Mitglieder aus den Philippinen, Südkorea, der Schweiz und den Vereinigten Staaten. Sie wird oft als \"globale Girlgroup\" bezeichnet.",
+        "facts": [
+          "Katseye ist eine im Jahr 2024 gegründete Girlgroup mit Sitz in Los Angeles.",
+          "Katseye wird oft als \"globale Girlgroup\" bezeichnet."
+        ]
+      },
+      "tr": {
+        "kicker": "kız grubu · 2024'te kuruldu, Los Angeles",
+        "who": "Katseye, 2024 yılında kurulan ve Los Angeles merkezli bir kız grubudur. Grubun altı üyesi Filipinler, Güney Kore, İsviçre ve Amerika Birleşik Devletleri'nden gelir. Katseye sık sık \"küresel kız grubu\" olarak anılır.",
+        "facts": [
+          "Katseye, 2024 yılında kurulan ve Los Angeles merkezli bir kız grubudur.",
+          "Katseye sık sık \"küresel kız grubu\" olarak anılır."
+        ]
+      }
+    }
+  ]
+}
