@@ -1,0 +1,22 @@
+{
+  "city": "miami",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "usa – haiti at nu stadium.", "de": "usa – haiti im nu stadium.", "tr": "nu stadium'da usa – haiti." },
+      "line":  { "en": "concacaf nations league quarterfinal, first leg, kick-off 4:30 pm at miami freedom park. haiti is the designated home side, and the match was moved to miami.", "de": "concacaf nations league viertelfinale, hinspiel, anpfiff 16:30 im miami freedom park. haiti ist das heimteam, das spiel wurde nach miami verlegt.", "tr": "concacaf uluslar ligi çeyrek final, ilk maç, saat 16:30'da miami freedom park'ta. haiti bu maçta ev sahibi, maç miami'ye taşındı." },
+      "place": { "en": "nu stadium at miami freedom park", "de": "nu stadium at miami freedom park", "tr": "nu stadium at miami freedom park" },
+      "hour": 16, "minute": 30,
+      "why": "CONCACAF Nations League quarterfinal first leg, Haiti vs USA, Sat 14 Nov 4:30 pm ET, per U.S. Soccer and CONCACAF announcements."
+    },
+    {
+      "kind": "flea",
+      "title": { "en": "vintage market at the merrick house.", "de": "vintage-markt am merrick house.", "tr": "merrick house'ta vintage pazarı." },
+      "line":  { "en": "vintage dealers and independent makers in the garden of the merrick family house: housewares, furniture, clothes and collectibles. admission listed as free, 10 am to 4 pm.", "de": "vintage-händler und kleine hersteller im garten des merrick-hauses: haushalt, möbel, kleidung und sammlerstücke. eintritt laut angabe frei, 10 bis 16 uhr.", "tr": "merrick ailesinin evinin bahçesinde vintage satıcılar ve bağımsız üreticiler: ev eşyası, mobilya, giyim ve koleksiyon parçaları. giriş ilana göre ücretsiz, 10:00-16:00." },
+      "place": { "en": "merrick house", "de": "merrick house", "tr": "merrick house" },
+      "hour": 10, "minute": 0,
+      "why": "Coral Market at the Merrick House, Sat 14 Nov 10 am-4 pm at 907 Coral Way, per miamiandbeaches.com and coralgables.com listings."
+    }
+  ]
+}

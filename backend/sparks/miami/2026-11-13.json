@@ -1,0 +1,14 @@
+{
+  "city": "miami",
+  "day": "2026-11-13",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "night market at miami worldcenter.", "de": "night market am miami worldcenter.", "tr": "miami worldcenter'da night market." },
+      "line":  { "en": "friday open-air market on the promenade by club studio, 40 local vendors, free entry, 5 to 9 pm. easy to combine with dinner downtown.", "de": "freitags offener markt auf der promenade bei club studio, 40 lokale händler, eintritt frei, 17 bis 21 uhr. gut mit einem abendessen in downtown zu verbinden.", "tr": "club studio yanındaki promenadda cuma açık hava pazarı, 40 yerel satıcı, giriş ücretsiz, 17:00-21:00. downtown'da akşam yemeğiyle birleştirmek kolay." },
+      "place": { "en": "miami worldcenter", "de": "miami worldcenter", "tr": "miami worldcenter" },
+      "hour": 17, "minute": 0,
+      "why": "Miami Worldcenter Night Market, Fridays 5-9 pm, per miamiworldcenter.com; listed for Fri 13 Nov in The Miami Guide's November calendar."
+    }
+  ]
+}

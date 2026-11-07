@@ -1,0 +1,14 @@
+{
+  "city": "miami",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "dolphins – lions at hard rock stadium.", "de": "dolphins – lions im hard rock stadium.", "tr": "hard rock stadyumu'nda dolphins – lions." },
+      "line":  { "en": "the nfl home game against detroit at 1 pm, in miami gardens. an early kick-off, so the evening stays free.", "de": "das nfl-heimspiel gegen detroit um 13 uhr in miami gardens. früher anpfiff, der abend bleibt frei.", "tr": "detroit'e karşı nfl ev maçı, saat 13:00, miami gardens'ta. erken başlama saati, akşam boş kalıyor." },
+      "place": { "en": "hard rock stadium", "de": "hard rock stadium", "tr": "hard rock stadium" },
+      "hour": 13, "minute": 0,
+      "why": "Miami Dolphins vs Detroit Lions, home game Sun 8 Nov at 1 pm, per the miamiandbeaches.com event listing and the Dolphins' 2026 home schedule."
+    }
+  ]
+}
