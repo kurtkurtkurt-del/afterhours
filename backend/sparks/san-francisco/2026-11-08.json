@@ -1,0 +1,27 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "the alemany flea market at nine.",
+        "de": "der alemany flohmarkt um neun.",
+        "tr": "alemany bit pazarı, dokuzda."
+      },
+      "line": {
+        "en": "the sunday flea on alemany boulevard in bernal heights, free to walk in. go early for the good stalls; it runs until mid-afternoon.",
+        "de": "der sonntags-flohmarkt am alemany boulevard in bernal heights, eintritt frei. früh kommen für die guten stände; bis in den nachmittag.",
+        "tr": "bernal heights'ta alemany bulvarı'ndaki pazar günü pazarı, girişi ücretsiz. iyi tezgâhlar için erken git; öğleden sonraya kadar açık."
+      },
+      "place": {
+        "en": "alemany flea market",
+        "de": "alemany flea market",
+        "tr": "alemany flea market"
+      },
+      "hour": 9,
+      "minute": 0,
+      "why": "Alemany Flea Market, 100 Alemany Blvd, open Sundays 7am to 3pm and free, per a flea market guide (fleamarketinsiders.com, timeout.com); the city runs it through the Real Estate Division (sf.gov)."
+    }
+  ]
+}

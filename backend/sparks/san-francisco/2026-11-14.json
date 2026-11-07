@@ -1,0 +1,14 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "renegade craft fair at fort mason, eleven.", "de": "renegade craft fair im fort mason, elf uhr.", "tr": "fort mason'da renegade craft fair, on bir." },
+      "line": { "en": "the winter craft market: makers and handmade goods in the festival pavilion. free entry with a suggested $5; open 11 to 5 on saturday and sunday.", "de": "der winter-craftmarkt: macherinnen und handgemachtes in der festival pavilion. eintritt frei, vorgeschlagen 5 dollar; samstag und sonntag von 11 bis 17 uhr.", "tr": "kış el sanatları pazarı: festival pavilion'da üreticiler ve elde yapılmış ürünler. giriş ücretsiz, önerilen 5 dolar; cumartesi ve pazar 11'den 17'ye." },
+      "place": { "en": "fort mason festival pavilion", "de": "fort mason festival pavilion", "tr": "fort mason festival pavilion" },
+      "hour": 11, "minute": 0,
+      "why": "Renegade Craft Fair San Francisco, 14 and 15 Nov 2026, Fort Mason Festival Pavilion, per renegadecraft.com; 11am to 5pm and free entry from a Fort Mason listing. Confirm on renegadecraft.com before going."
+    }
+  ]
+}
