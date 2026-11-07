@@ -1,0 +1,26 @@
+{
+ "city": "berlin",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "aaee7726-fc25-4e20-a601-298e350d7b8f",
+   "slug": "gutalax-shit-on-the-dancefloor-mini-tour-2026-3a5fbc0f",
+   "title": "Gutalax – \"Shit on the Dancefloor Mini Tour 2026\"",
+   "act": "Gutalax",
+   "name": "Gutalax",
+   "description": "Czech goregrind band",
+   "source_url": "https://en.wikipedia.org/wiki/Gutalax",
+   "extract": "Gutalax is a Czech goregrind band formed in 2009."
+  },
+  {
+   "id": "c5523ee1-2d58-4dae-819e-268b35ef0053",
+   "slug": "neschastny-sluchai-705a8639",
+   "title": "Neschastny Sluchai",
+   "act": "Neschastny Sluchai",
+   "name": "Neschastny Sluchai",
+   "description": "Russian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Neschastny_Sluchai",
+   "extract": "Neschastny Sluchai is a Russian rock band that was formed by Valdis Pelsh and Alexey Kortnev in 1983, while both men were students at Moscow State University."
+  }
+ ]
+}

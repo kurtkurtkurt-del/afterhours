@@ -1,0 +1,26 @@
+{
+ "city": "ottawa",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "68e594b8-7453-4d08-86aa-4818bf6e7e57",
+   "slug": "down-with-webster-47ff46aa",
+   "title": "Down With Webster",
+   "act": "Down With Webster",
+   "name": "Down with Webster",
+   "description": "Canadian rap rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Down_with_Webster",
+   "extract": "Down with Webster is a Canadian rap rock band from The Beaches area of Toronto who signed with Universal Motown in April 2009. The band first achieved commercial success with the release of the 2009 EP, Time to Win, Vol. I which consisted of the singles \"Rich Girl$\", \"Your Man\" and \"Whoa Is Me\". Their major-label debut album, Time to Win, Vol. II (2011) featured the track \"She's Dope\". The 2014 follow-up album Party for Your Life included the songs \"One in a Million\" and \"Chills.\" The band has been nominated for Juno Awards, MuchMusic Video Awards and Canadian Radio Music Awards."
+  },
+  {
+   "id": "0f35ad7e-b6df-4d51-a437-e6a95eb7869d",
+   "slug": "amos-the-transparent-rockin-around-the-xmas-tree-a0bf3098",
+   "title": "Amos The Transparent  - Rockin' Around The Xmas Tree",
+   "act": "Amos The Transparent",
+   "name": "Amos the Transparent",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Amos_the_Transparent",
+   "extract": "Amos the Transparent is a Canadian rock band from Ottawa, Ontario. Members are Jonathan Chandler, Olenka Reshitnyk, Dan Hay (guitar), James Nicol, drummer Christopher Wilson and cellist Mike Yates."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "nashville",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "e0148ef0-951a-4299-a3d2-25c604b3dabe",
+   "slug": "the-amity-affliction-house-of-cards-2026-0497d9e5",
+   "title": "The Amity Affliction: HOUSE OF CARDS 2026",
+   "act": "The Amity Affliction",
+   "name": "The Amity Affliction",
+   "description": "Australian post-hardcore band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Amity_Affliction",
+   "extract": "The Amity Affliction is an Australian metalcore band originally from Gympie, Queensland, formed in 2003. The band currently consists of Joel Birch, Dan Brown (guitar) and Jonathan Reeves. The band has released nine studio albums – the most recent of which, House of Cards, was released in 2026. They are known for their highly personal songs, often dealing with depression, anxiety, death, substance abuse, and suicide, many lyrics stemming from vocalist Joel Birch's past struggles."
+  },
+  {
+   "id": "d074fd95-3d93-4386-86c8-3a2c87541bac",
+   "slug": "lauren-alaina-08e98cf6",
+   "title": "Lauren Alaina",
+   "act": "Lauren Alaina",
+   "name": "Lauren Alaina",
+   "description": "American singer & songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Lauren_Alaina",
+   "extract": "Lauren Alaina Kristine Arnold is an American singer and songwriter from Rossville, Georgia. She was the runner-up on the tenth season of American Idol, losing to Scotty McCreery. Her debut studio album, Wildflower, was released on October 11, 2011. Her second album, Road Less Traveled, was released January 27, 2017. Alaina later achieved her first number one on the Country Airplay chart with the album's title track. Her second number one came later that year when she simultaneously topped five Billboard charts with her friend and former classmate Kane Brown on their diamond-certified duet \"What Ifs\". In addition to this song with Brown, Alaina became an in-demand duet vocalist throughout the next few years, appearing on number one collaborations with Hardy, Devin Dawson, and Dustin Lynch. Her third studio album, Sitting Pretty on Top of the World, was released on September 3, 2021."
+  },
+  {
+   "id": "0b3a74b1-e7d0-4642-9eca-ad5fa35fbf2b",
+   "slug": "jimmy-eat-world-25-years-of-bleed-american-3c01fd15",
+   "title": "JIMMY EAT WORLD - 25 YEARS OF BLEED AMERICAN",
+   "act": "JIMMY EAT WORLD",
+   "name": "Jimmy Eat World",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Jimmy_Eat_World",
+   "extract": "Jimmy Eat World is an American rock band formed in Mesa, Arizona, in 1993. The band is composed of vocalist and lead guitarist Jim Adkins, rhythm guitarist and vocalist Tom Linton, bassist Rick Burch, and drummer Zach Lind. They have released ten studio albums, all but the first featuring the current line-up."
+  }
+ ]
+}

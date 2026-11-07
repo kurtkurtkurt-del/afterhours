@@ -1,0 +1,26 @@
+{
+ "city": "seattle",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "a1662023-1a2a-426e-94da-3c489ad4ddef",
+   "slug": "nimino-ages-21-6ba446cd",
+   "title": "nimino - Ages 21+",
+   "act": "nimino",
+   "name": "Nimino",
+   "description": "British musician and DJ",
+   "source_url": "https://en.wikipedia.org/wiki/Nimino",
+   "extract": "Nimino, born Milo Evans, is a British producer and DJ. Nimino's music sits in the intersection of house, hip hop, and garage music."
+  },
+  {
+   "id": "d559c9e0-2ad9-40f8-8140-0c850ceda8b7",
+   "slug": "inna-9aeb73f2",
+   "title": "Inna",
+   "act": "Inna",
+   "name": "Inna",
+   "description": "Romanian singer and songwriter (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/Inna",
+   "extract": "Elena Alexandra Apostoleanu, known professionally as Inna, is a Romanian singer and songwriter. Born in Mangalia and raised in Neptun, she studied political science at Ovidius University before meeting the Romanian trio Play & Win and pursuing a music career. She adopted the stage name \"Alessandra\" and a pop-rock style in 2008; later that year, she changed her stage name to \"Inna\" and began releasing EDM, house and popcorn music. \"Hot\" (2008), her debut single, was a commercial success worldwide and topped the Romanian and Billboard's Hot Dance Airplay chart, among others. Her debut studio album of the same name followed in August 2009 and was certified Gold and Platinum. It featured several other successful singles in Europe, including \"Amazing\" (2009), the singer's second number-one single in Romania."
+  }
+ ]
+}

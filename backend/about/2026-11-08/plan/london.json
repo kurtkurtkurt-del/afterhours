@@ -1,0 +1,66 @@
+{
+ "city": "london",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "f08003cf-24ec-428d-9688-90341c030447",
+   "slug": "kaarija-1318b447",
+   "title": "KÄÄRIJÄ",
+   "act": "KÄÄRIJÄ",
+   "name": "Käärijä",
+   "description": "Finnish musician (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/K%C3%A4%C3%A4rij%C3%A4",
+   "extract": "Jere Mikael Pöyhönen, known professionally as Käärijä, is a Finnish rapper, singer and songwriter. He represented Finland in the Eurovision Song Contest 2023 with the song \"Cha Cha Cha\", placing second with 526 points and finishing first in the public vote with 376. His entry topped the charts in Finland, Sweden, Latvia and Lithuania and reached the top ten in thirteen other countries, becoming the first song in Finnish to reach the top ten of the UK Singles Chart."
+  },
+  {
+   "id": "55e0e176-38e3-4267-a38d-5600ac0d520e",
+   "slug": "noname-38f9faf7",
+   "title": "NONAME",
+   "act": "NONAME",
+   "name": "Noname",
+   "description": "American rapper",
+   "source_url": "https://en.wikipedia.org/wiki/Noname_(rapper)",
+   "extract": "Fatimah Nyeema Warner, known professionally as Noname, is an American rapper. She began rapping and performing slam poetry in 2010, and gained wider recognition in 2013 for her appearance on the track \"Lost\" from Chance the Rapper's mixtape Acid Rap. She released her debut mixtape, Telefone, in 2016 to critical acclaim. Her debut album, Room 25, was released in 2018 and received further acclaim."
+  },
+  {
+   "id": "df4af68f-2288-44ee-93ac-2c8a304394e1",
+   "slug": "paul-heaton-ed5c6337",
+   "title": "Paul Heaton",
+   "act": "Paul Heaton",
+   "name": "Paul Heaton",
+   "description": "British musician (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Paul_Heaton",
+   "extract": "Paul David Heaton is an English singer-songwriter. He was the lead singer and main lyricist of the Housemartins, who had commercial success in the UK and other European countries from 1985 to 1988, releasing several singles, including \"Happy Hour\" and the UK number one \"Caravan of Love\" in 1986, before the group disbanded. Heaton then formed the Beautiful South with the Housemartins' drummer, Dave Hemingway. The band's debut single, \"Song for Whoever\", and debut album, Welcome to the Beautiful South, were released in 1989 to commercial success. They had a series of hits throughout the 1990s, including the number-one single \"A Little Time\", and disbanded in 2007."
+  },
+  {
+   "id": "8044a885-78df-4af6-b661-9f21b27fb0c0",
+   "slug": "puscifer-19c8f7bd",
+   "title": "Puscifer",
+   "act": "Puscifer",
+   "name": "Puscifer",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Puscifer",
+   "extract": "Puscifer is an American rock group formed in Los Angeles by Maynard James Keenan, lead singer of Tool and A Perfect Circle. Keenan was the only constant member of the band and he considered the project to be his \"creative subconscious\". Later, frequent collaborators Mat Mitchell and Carina Round became permanent members."
+  },
+  {
+   "id": "c59f2438-7191-47e2-8217-bae91c6f27d3",
+   "slug": "tove-lo-estrus-tour-d4598f59",
+   "title": "Tove Lo: ESTRUS TOUR",
+   "act": "Tove Lo",
+   "name": "Tove Lo",
+   "description": "Swedish singer and songwriter (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Tove_Lo",
+   "extract": "Ebba Tove Elsa Nilsson, known professionally as Tove Lo, is a Swedish singer-songwriter. She is known for her raw, grunge-influenced take on pop music. Referring to her autobiographical lyrics, Out called Lo \"the saddest girl in Sweden\", while Rolling Stone called her \"Sweden's darkest pop export\"."
+  },
+  {
+   "id": "6eef435b-a703-415b-a1d5-bed75e974deb",
+   "slug": "ryan-beatty-9a7c4431",
+   "title": "Ryan Beatty",
+   "act": "Ryan Beatty",
+   "name": "Ryan Beatty",
+   "description": "American singer (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Ryan_Beatty",
+   "extract": "Ryan Kevin Beatty is an American singer-songwriter. He was born in Clovis, California, and now resides in Los Angeles."
+  }
+ ]
+}

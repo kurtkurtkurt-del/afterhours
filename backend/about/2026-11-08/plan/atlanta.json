@@ -1,0 +1,56 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "844d3b89-de81-4fba-a9c7-67afc2e71e53",
+   "slug": "the-revivalists-cfe27355",
+   "title": "The Revivalists",
+   "act": "The Revivalists",
+   "name": "The Revivalists",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Revivalists",
+   "extract": "The Revivalists are an American rock band formed in New Orleans, Louisiana, in 2007. The eight-piece band consists of Ed Williams, David Shaw, Zack Feinberg (guitar), Rob Ingraham (saxophone), George Gekas, Andrew Campanelli, Michael Girardot, and Paulet \"PJ\" Howard."
+  },
+  {
+   "id": "481b2057-610e-4604-9986-ac93e759007c",
+   "slug": "pain-of-truth-d0f5186b",
+   "title": "Pain Of Truth",
+   "act": "Pain Of Truth",
+   "name": "Pain of Truth",
+   "description": "American hardcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Pain_of_Truth",
+   "extract": "Pain of Truth are an American hardcore punk band formed on Long Island, New York in 2020. As of 2024, they have released one demo, two split EPs, and two studio albums."
+  },
+  {
+   "id": "c53bae67-bd78-42d1-98c6-9626275c8888",
+   "slug": "suicide-silence-reminders-of-hell-tour-0b9349ef",
+   "title": "Suicide Silence: REMINDERS OF HELL TOUR",
+   "act": "Suicide Silence",
+   "name": "Suicide Silence",
+   "description": "American deathcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Suicide_Silence",
+   "extract": "Suicide Silence is an American deathcore band from Riverside, California. The band was established in 2002, and has released seven studio albums, three EPs, and nineteen music videos. They were awarded the Revolver Golden God award for \"Best New Talent\" in 2009. The group currently consists of guitarists Chris Garza and Mark Heylmun, bassist Dan Kenny, vocalist Hernan \"Eddie\" Hermida and drummer Ernie Iniguez."
+  },
+  {
+   "id": "690f181f-c2fc-4ed1-bf90-faa8a16187a5",
+   "slug": "the-red-clay-strays-9b12a986",
+   "title": "The Red Clay Strays",
+   "act": "The Red Clay Strays",
+   "name": "The Red Clay Strays",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Red_Clay_Strays",
+   "extract": "The Red Clay Strays are an American country rock band formed in Mobile, Alabama, best known for their 2022 single \"Wondering Why\", which had success in late 2023 after going viral on TikTok. It was their first song to chart on the Billboard Hot 100, reaching No. 71."
+  },
+  {
+   "id": "0e5df124-4155-4c1f-9566-ef30f37a299b",
+   "slug": "greg-freeman-b3b234dc",
+   "title": "Greg Freeman",
+   "act": "Greg Freeman",
+   "name": "Greg Freeman",
+   "description": "American country musician",
+   "source_url": "https://en.wikipedia.org/wiki/Greg_Freeman_(musician)",
+   "extract": "Greg Freeman is an American alternative country musician based in Burlington, Vermont. Freeman was raised in Bethesda, Maryland. Freeman released his debut studio album in 2022 titled I Looked Out, through the record label Bud Tapes. After the album slowly gained attention, it was reissued in 2024 through Transgressive Records imprint Canvasback Music. Freeman announced his second full-length album in April 2025 titled Burnover. The album was released on August 22, 2025. Freeman's third full length album, All Set The Bone, was released on October 2, 2026"
+  }
+ ]
+}

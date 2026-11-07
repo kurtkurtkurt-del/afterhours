@@ -1,0 +1,66 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "efe49a78-89eb-4455-872b-b5e0604d0012",
+   "slug": "rhye-3f1bc178",
+   "title": "Rhye",
+   "act": "Rhye",
+   "name": "Rhye",
+   "description": "R&B musical project",
+   "source_url": "https://en.wikipedia.org/wiki/Rhye",
+   "extract": "Rhye is an R&B musical project of Canadian singer Mike Milosh. It originally consisted of him and Danish instrumentalist Robin Hannibal. They released the singles \"Open\" and \"The Fall\" online without much detail, which led to speculation about the band. Their debut album, Woman, was released on March 4, 2013. In June 2013, the album was longlisted for the 2013 Polaris Music Prize. In 2017, it was reported that Robin Hannibal was no longer a member of Rhye and that the project had evolved into a music collective led by Milosh and focused around the associated live band. Their second album, Blood, was released on February 2, 2018, and was largely written, produced, and performed by Milosh."
+  },
+  {
+   "id": "e1829640-5da4-4ad5-a1f2-c2dc1f380391",
+   "slug": "bonobo-distance-in-static-live-north-american-to-35141993",
+   "title": "Bonobo - Distance In Static Live North American Tour",
+   "act": "Bonobo",
+   "name": "Bonobo",
+   "description": "English musician, producer, and DJ (born 1976)",
+   "source_url": "https://en.wikipedia.org/wiki/Bonobo_(musician)",
+   "extract": "Simon Charles Green, known by his stage name Bonobo, is an English musician, producer, and DJ based in Los Angeles. He debuted with a trip hop aesthetic and has since explored more upbeat approaches as well as jazz and world music influences. His electronic sound incorporates the use of organic instrumentation and is recreated by a full band in live performances."
+  },
+  {
+   "id": "3014b2f0-7ba1-4b55-bc82-85d2bf2c7a67",
+   "slug": "underoath-define-the-great-line-20th-anniversary-e65eb069",
+   "title": "Underoath - Define the Great Line 20th Anniversary Tour",
+   "act": "Underoath",
+   "name": "Underoath",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Underoath",
+   "extract": "Underoath is an American rock band from Tampa, Florida. It was founded by lead vocalist Dallas Taylor and guitarist Luke Morton in 1997 in Ocala, Florida; subsequently, its additional members were from Tampa, including drummer, singer and last remaining original member Aaron Gillespie. The band's current lineup consists of Gillespie, keyboardist Christopher Dudley, lead guitarist Timothy McTague, bassist Grant Brandell, and lead vocalist Spencer Chamberlain."
+  },
+  {
+   "id": "ab9723be-b5ad-4fba-a29e-a977e3da17af",
+   "slug": "whitmer-thomas-189f9b65",
+   "title": "WHITMER THOMAS",
+   "act": "WHITMER THOMAS",
+   "name": "Whitmer Thomas",
+   "description": "American comedian, actor and musician",
+   "source_url": "https://en.wikipedia.org/wiki/Whitmer_Thomas",
+   "extract": "Whitmer Alexander Thomas is an American comedian, actor, and musician."
+  },
+  {
+   "id": "c756d7fd-16b9-4f36-92f3-0627555f6812",
+   "slug": "turnover-down-on-earth-tour-a64eb71f",
+   "title": "Turnover - Down On Earth Tour",
+   "act": "Turnover",
+   "name": "Turnover",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Turnover_(band)",
+   "extract": "Turnover is an American rock band from Virginia Beach, Virginia. The band were formed in 2009 by brothers Austin and Casey (drums) Getz alongside longtime friend Danny Dempsey (bass); the three have gone on to oversee every iteration of the band to date. The three are currently joined in the band by lead guitarist Nick Rayfield, who began touring with the band in 2017 and was later officially inducted as a full-time member in 2022. Turnover have released six studio albums and four EPs across their career. Their most recent album, Down on Earth, was released on May 29th 2026."
+  },
+  {
+   "id": "dcdc4bcf-5d52-4721-9c4c-e784ac7073dd",
+   "slug": "emancipator-9d5d5b19",
+   "title": "Emancipator",
+   "act": "Emancipator",
+   "name": "Emancipator",
+   "description": "American music producer and DJ (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Emancipator_(musician)",
+   "extract": "Douglas Appling, better known by his stage name, Emancipator, is an American producer and DJ based in Portland, Oregon, United States. He launched his music career by self-releasing his debut album, Soon It Will Be Cold Enough, in 2006 while he was a college student. He has released eight studio albums, two live albums, five EPs and three remix collections. He also founded his own record label, Loci Records, in 2012 and formed a live band called the Emancipator Ensemble in 2013."
+  }
+ ]
+}

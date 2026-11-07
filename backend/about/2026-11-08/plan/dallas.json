@@ -1,0 +1,36 @@
+{
+ "city": "dallas",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "1d5f669a-0928-4287-a189-3e095d4d68a3",
+   "slug": "bleood-7b88f57d",
+   "title": "bleood",
+   "act": "bleood",
+   "name": "Bleood",
+   "description": "American rapper and record producer (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Bleood",
+   "extract": "Jamari Isiaha Spencer-Brown, known professionally as Bleood, is an American rapper and record producer. He initially emerged as a member of New York City rapper Xaviersobased's collective 1c34."
+  },
+  {
+   "id": "d6907796-5b32-4641-893d-eafd2042ddf9",
+   "slug": "jessie-reyez-a-little-vengeance-tour-fdd89c40",
+   "title": "Jessie Reyez: A Little Vengeance Tour",
+   "act": "Jessie Reyez",
+   "name": "Jessie Reyez",
+   "description": "Canadian singer-songwriter (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Jessie_Reyez",
+   "extract": "Jessica Reyez is a Canadian singer-songwriter. Her 2016 single, \"Figures\", peaked at number 58 on the Canadian Hot 100 and received triple platinum certification by Music Canada (MC) and platinum by the Recording Industry Association of America (RIAA). Her debut extended play (EP), Kiddo (2017), led her to win Breakthrough Artist from four nominations at the 2018 Juno Awards. Her second EP, Being Human in Public (2018), was released the following year, won R&B/Soul Recording of the Year at the 2019 Juno Awards, and was nominated for Best Urban Contemporary Album at the 2020 Grammy Awards."
+  },
+  {
+   "id": "d0258813-ad60-4f9b-9631-192c7eccc2bd",
+   "slug": "daughtry-20-years-unplugged-tour-f09cff9b",
+   "title": "Daughtry - 20 Years Unplugged Tour",
+   "act": "Daughtry",
+   "name": "Daughtry",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Daughtry_(band)",
+   "extract": "Daughtry is an American rock band formed and fronted by namesake Chris Daughtry, who was a finalist on the fifth season of American Idol. Their self-titled debut album was released in November 2006 and reached number one on the Billboard 200. The album went on to sell more than six million copies in the United States, and has been certified six times platinum by the RIAA. Daughtry was also named the best selling album of 2007 by Billboard, becoming the fastest-selling debut rock album in Nielsen SoundScan history. The album produced four top 20 hits on the Billboard Hot 100, including top five hits \"It's Not Over\" and \"Home\"."
+  }
+ ]
+}

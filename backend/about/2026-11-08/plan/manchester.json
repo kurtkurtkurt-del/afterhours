@@ -1,0 +1,66 @@
+{
+ "city": "manchester",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "9d3e6f64-d60d-4a19-bcf5-0e80507606a3",
+   "slug": "skye-newman-7e0894dd",
+   "title": "Skye Newman",
+   "act": "Skye Newman",
+   "name": "Skye Newman",
+   "description": "English singer-songwriter (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Skye_Newman",
+   "extract": "Skye Newman is an English singer-songwriter from south-east London."
+  },
+  {
+   "id": "4f6c14e6-943f-4e3a-bf37-fc4fac754c42",
+   "slug": "paris-paloma-70280f1e",
+   "title": "Paris Paloma",
+   "act": "Paris Paloma",
+   "name": "Paris Paloma",
+   "description": "British singer-songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Paris_Paloma",
+   "extract": "Paris Paloma is a British singer-songwriter and guitarist. She gained prominence through the single \"Labour\" (2023). Her debut album, Cacophony, was released in 2024. Her second album, The Fatal Flaw, followed in 2026."
+  },
+  {
+   "id": "e968377e-049e-4c25-9595-a85a66690a3e",
+   "slug": "caravan-palace-912f6e0a",
+   "title": "Caravan Palace",
+   "act": "Caravan Palace",
+   "name": "Caravan Palace",
+   "description": "French electro swing band",
+   "source_url": "https://en.wikipedia.org/wiki/Caravan_Palace",
+   "extract": "Caravan Palace is a French electro-swing band based in Paris. The band's influences include Django Reinhardt, Vitalic, Lionel Hampton, and Daft Punk. The band released their debut studio album, Caravan Palace, on the Wagram label in October 2008. The record charted in Switzerland, Belgium, and France, where it reached a peak position of number 11."
+  },
+  {
+   "id": "78cfc173-e721-4bdb-91b8-36f825b3f64f",
+   "slug": "rizzle-kicks-854f5678",
+   "title": "Rizzle Kicks",
+   "act": "Rizzle Kicks",
+   "name": "Rizzle Kicks",
+   "description": "English hip hop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Rizzle_Kicks",
+   "extract": "Rizzle Kicks are a British hip-hop duo from Brighton, England, consisting of Jordan \"Rizzle\" Stephens and Harley \"Sylvester\" Alexander-Sule. Their debut album, Stereo Typical, was released in 2011. As of May 2012, Rizzle Kicks had sold over one million singles and over 600,000 albums in the UK."
+  },
+  {
+   "id": "5eba04b6-c569-4b1e-8fb9-317b04492139",
+   "slug": "boko-yout-28939390",
+   "title": "Boko Yout",
+   "act": "Boko Yout",
+   "name": "Boko Yout",
+   "description": "Swedish music group",
+   "source_url": "https://en.wikipedia.org/wiki/Boko_Yout",
+   "extract": "Boko Yout is a Swedish music group. Previously, the group's singer Paul Adamah, born 1998 in Örebro, used the name Boko Yout as a stage name for his solo project, but since 2025 Boko Yout became a group with the addition of Kevin Stierne on bass and Joel Kiviaho on drums."
+  },
+  {
+   "id": "ad6b57b6-0e0c-42b9-97c1-0448c21a49d0",
+   "slug": "myles-smith-my-mess-my-heart-my-life-tour-41f8e94b",
+   "title": "Myles Smith: My Mess, My Heart, My Life. Tour",
+   "act": "Myles Smith",
+   "name": "Myles Smith",
+   "description": "British singer (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Myles_Smith",
+   "extract": "Myles Michael Smith-Thompson is a British singer. He is best known for his 2024 singles \"Stargazing\" and \"Nice to Meet You\". His debut studio album, My Mess, My Heart, My Life. was released on 19 June 2026."
+  }
+ ]
+}

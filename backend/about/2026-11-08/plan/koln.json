@@ -1,0 +1,16 @@
+{
+ "city": "koln",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "ca11c24c-a962-4cab-90e6-719dba3bdb81",
+   "slug": "she-wants-revenge-europe-2027-78bb928b",
+   "title": "She Wants Revenge - Europe 2027",
+   "act": "She Wants Revenge",
+   "name": "She Wants Revenge",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/She_Wants_Revenge",
+   "extract": "She Wants Revenge is an American rock band, based in San Fernando Valley, California. Formed in 2004, the band is led by the duo of singer and guitarist Justin Warfield and multi-instrumentalist Adam Bravin. Their music has been influenced by post-punk, darkwave and gothic rock. The band has sold more than 300,000 records in the US."
+  }
+ ]
+}

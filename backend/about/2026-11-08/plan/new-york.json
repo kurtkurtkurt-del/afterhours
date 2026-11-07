@@ -1,0 +1,56 @@
+{
+ "city": "new-york",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "517d00e4-e047-4cc4-8735-18a47c64039b",
+   "slug": "degenerates-bcbcff69",
+   "title": "Degenerates",
+   "act": "Degenerates",
+   "name": "Degenerates",
+   "description": "Australian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Degenerates_(band)",
+   "extract": "Degenerates is an Australian rock band formed by Jamie Durrant, Julien Chick (bass) and David Klenjans (drums). Their EP Out Of My Head saw them nominated at the ARIA Music Awards of 1992 for Best New Talent."
+  },
+  {
+   "id": "bc2099a5-44eb-4a3f-a781-80985fdce6cf",
+   "slug": "new-york-philharmonic-thibaudet-performs-liszt-5b270858",
+   "title": "New York Philharmonic: Thibaudet Performs Liszt",
+   "act": "New York Philharmonic",
+   "name": "New York Philharmonic",
+   "description": "American symphony orchestra",
+   "source_url": "https://en.wikipedia.org/wiki/New_York_Philharmonic",
+   "extract": "The New York Philharmonic is an American symphony orchestra based in New York City. Known officially as the Philharmonic-Symphony Society of New York, Inc., and globally known as the New York Philharmonic Orchestra (NYPO) or the New York Philharmonic-Symphony Orchestra, it is one of the leading American orchestras popularly called the \"Big Five\". The philharmonic's home is David Geffen Hall, at New York's Lincoln Center for the Performing Arts."
+  },
+  {
+   "id": "5eec0db1-05dc-49d3-8518-040e17983067",
+   "slug": "bryan-andrews-60f9dd7f",
+   "title": "Bryan Andrews",
+   "act": "Bryan Andrews",
+   "name": "Bryan Andrews",
+   "description": "American country singer and activist",
+   "source_url": "https://en.wikipedia.org/wiki/Bryan_Andrews_(singer)",
+   "extract": "Bryan Andrews is an American country music singer and activist. He is best known for his politically-themed songs, often from his own progressive left-wing viewpoint. Many of his songs have been described as protest songs."
+  },
+  {
+   "id": "5e317fef-86c5-42f7-bb43-63ecd77fb73d",
+   "slug": "sleeping-with-sirens-an-ending-in-itself-tour-c580832c",
+   "title": "Sleeping With Sirens: An Ending In Itself Tour",
+   "act": "Sleeping With Sirens",
+   "name": "Sleeping with Sirens",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Sleeping_with_Sirens",
+   "extract": "Sleeping with Sirens is an American rock band originally formed in Orlando, Florida. The band currently consists of Kellin Quinn, Justin Hills, Nick Martin, Matty Best, and Tony Pizzuti. The band was formed in 2009 by Nick Trombino of Broadway and Brandon McMaster. The group is currently signed to Rise Records and have released eight full-length studio albums, one live album, and one acoustic EP."
+  },
+  {
+   "id": "e8264283-b1ff-4de7-ba10-2faff46b670a",
+   "slug": "buena-vista-social-club-fe89be1a",
+   "title": "Buena Vista Social Club",
+   "act": "Buena Vista Social Club",
+   "name": "Buena Vista Social Club",
+   "description": "Cuban musical ensemble",
+   "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+   "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years."
+  }
+ ]
+}

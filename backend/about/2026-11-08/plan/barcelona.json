@@ -1,0 +1,16 @@
+{
+ "city": "barcelona",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "004e6605-db05-4bab-91e2-cc602f2cc808",
+   "slug": "razorlight-a939167d",
+   "title": "Razorlight",
+   "act": "Razorlight",
+   "name": "Razorlight",
+   "description": "English indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Razorlight",
+   "extract": "Razorlight are an English indie rock band, formed in 2002 in London by lead singer and guitarist Johnny Borrell. Along with Borrell, the current line-up of the band is composed of founding members Björn Ågren on guitar and bassist Carl Dalemo, as well as drummer Andy Burrows. This lineup is a reunion of the lineup from the band's second and third albums."
+  }
+ ]
+}

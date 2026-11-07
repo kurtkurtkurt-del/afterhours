@@ -1,0 +1,46 @@
+{
+ "city": "boston",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "a9d94f1c-050e-43b9-a6db-d449fbc34066",
+   "slug": "blue-october-foiled-20th-anniversary-world-tour-94b645df",
+   "title": "Blue October: Foiled 20th Anniversary World Tour",
+   "act": "Blue October",
+   "name": "Blue October",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Blue_October",
+   "extract": "Blue October is an American rock band originally from Houston, Texas, formed in 1995. It currently consists of singer/guitarist Justin Furstenfeld, drummer Jeremy Furstenfeld, multi-instrumentalist Ryan Delahoussaye, bassist Matt Noveskey, and lead guitarist Will Knaak."
+  },
+  {
+   "id": "5ca06acb-407e-4f8f-ae11-bbc17d7f0930",
+   "slug": "punch-brothers-2e5e26e8",
+   "title": "Punch Brothers",
+   "act": "Punch Brothers",
+   "name": "Punch Brothers",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/Punch_Brothers",
+   "extract": "Punch Brothers is an American band consisting of Chris Thile (mandolin), Brittany Haas (fiddle/violin), Noam Pikelny (banjo), Chris Eldridge (guitar), and Paul Kowert (bass). Their style has been described as \"bluegrass instrumentation and spontaneity in the strictures of modern classical\" as well as \"American country-classical chamber music\"."
+  },
+  {
+   "id": "32f1d986-1ff2-47df-a937-78ed7e093788",
+   "slug": "victoria-monet-frequency-of-love-tour-bb3af770",
+   "title": "Victoria Monét: Frequency Of Love Tour",
+   "act": "Victoria Monét",
+   "name": "Victoria Monét",
+   "description": "American singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Victoria_Mon%C3%A9t",
+   "extract": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim. Her debut studio album, Jaguar II (2023) became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year. The nomination was among seven she received at the 66th Annual Grammy Awards, from which she won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical."
+  },
+  {
+   "id": "bed01daf-58cd-4699-83ec-7b95b37e3fa0",
+   "slug": "dark-star-orchestra-48458680",
+   "title": "Dark Star Orchestra",
+   "act": "Dark Star Orchestra",
+   "name": "Dark Star Orchestra",
+   "description": "American tribute band",
+   "source_url": "https://en.wikipedia.org/wiki/Dark_Star_Orchestra",
+   "extract": "Dark Star Orchestra is a Grateful Dead tribute band formed in Chicago, Illinois. They serve now as an international touring tribute band to the rock group the Grateful Dead. Since 1997, the band has been \"celebrating the Grateful Dead concert experience.\""
+  }
+ ]
+}

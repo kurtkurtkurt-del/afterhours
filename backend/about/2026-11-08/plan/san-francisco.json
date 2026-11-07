@@ -1,0 +1,66 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "1dbf64f8-1088-4c3a-a927-e4c453432307",
+   "slug": "band-of-horses-1f9e8a26",
+   "title": "Band of Horses",
+   "act": "Band of Horses",
+   "name": "Band of Horses",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Band_of_Horses",
+   "extract": "Band of Horses is an American rock band formed in 2004 in Seattle, Washington. Led by singer-songwriter Ben Bridwell, who has been the band's sole constant member throughout numerous line-up changes, the band's current line-up also includes longtime member Creighton Barrett (drums) alongside Matt Gentling, Brett Nash, and Joel Graves."
+  },
+  {
+   "id": "aa06279f-1d8b-46fc-b0f7-2aa17b3a6edc",
+   "slug": "russian-circles-27e12a5b",
+   "title": "Russian Circles",
+   "act": "Russian Circles",
+   "name": "Russian Circles",
+   "description": "American post-metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Russian_Circles",
+   "extract": "Russian Circles is an American instrumental post-metal band based in Chicago, Illinois. The band was originally formed by childhood friends Mike Sullivan and Dave Turncrantz after their previous musical projects dissolved. After parting ways with their original bass player Colin DeKuiper in 2007, the trio was rounded out by Brian Cook. The band has gained widespread recognition based on a series of critically acclaimed albums and extensive international touring. Their name is taken from a drill exercise used in ice hockey, a sport Sullivan and Turncrantz grew up playing in their original hometown of St. Louis."
+  },
+  {
+   "id": "43ff44da-70d2-4856-a6ee-904123c165f2",
+   "slug": "marc-broussard-626ef263",
+   "title": "Marc Broussard",
+   "act": "Marc Broussard",
+   "name": "Marc Broussard",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Marc_Broussard",
+   "extract": "Marc Broussard is an American singer-songwriter. His style is best described as \"bayou soul\", a mix of funk, blues, R&B, rock and pop, matched with distinct Southern roots. He has released twelve studio albums, one live album, and three EPs, and has charted twice on Hot Adult Top 40 Tracks."
+  },
+  {
+   "id": "8b30ee1c-41a6-416f-9eaa-ff48d3f3637d",
+   "slug": "stephen-day-fdeae67f",
+   "title": "Stephen Day",
+   "act": "Stephen Day",
+   "name": "Stephen Day",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Stephen_Day_(singer)",
+   "extract": "Stephen Day is an American singer-songwriter based in Nashville, Tennessee. Day released his debut extended play Undergrad Romance and The Moses In Me in April 2016 during his sophomore year of college. Day has released four full-length studio albums, Guess I'm Grown Now — and its acoustic version, The Shapes I'm In, Gold Mine, and Stephen Day. \nDay has been signed to Riser House Records, based in Nashville, since October 2024."
+  },
+  {
+   "id": "85cca05b-2d42-4ed1-b824-ae2bf453e241",
+   "slug": "natanya-5da83856",
+   "title": "Natanya",
+   "act": "Natanya",
+   "name": "Natanya",
+   "description": "British singer-songwriter (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Natanya",
+   "extract": "Natanya Morayo Popoola is an English singer-songwriter from North London. She initially gained popularity in 2022 from her single \"Foolish\" and followed it the following year with an EP, Sorrow At Sunrise. Natanya ventured into dance-pop with the Feline's Return pair of EPs in 2025, and released her mixtape, Attitude Era!, in 2026."
+  },
+  {
+   "id": "0e201025-e20b-4182-a004-80031471f79c",
+   "slug": "olafur-arnalds-11-12-257335de",
+   "title": "Olafur Arnalds - 11/12",
+   "act": "Olafur Arnalds",
+   "name": "Ólafur Arnalds",
+   "description": "Icelandic musician and composer (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/%C3%93lafur_Arnalds",
+   "extract": "Ólafur Arnalds is an Icelandic multi-instrumentalist and producer from Mosfellsbær, Iceland. He mixes strings and piano with loops and beats, a sound ranging from ambient/electronic to atmospheric pop. He is also the former drummer for hardcore punk and metal bands Fighting Shit, Celestine, and others."
+  }
+ ]
+}

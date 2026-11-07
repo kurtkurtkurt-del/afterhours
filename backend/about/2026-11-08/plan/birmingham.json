@@ -1,0 +1,46 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "7523a309-54fd-46d7-95af-c8b350144e46",
+   "slug": "tony-hadley-the-christmas-big-band-tour-2026-fa5e766a",
+   "title": "TONY HADLEY - The Christmas Big Band Tour 2026",
+   "act": "TONY HADLEY",
+   "name": "Tony Hadley",
+   "description": "English pop/rock singer (born 1960)",
+   "source_url": "https://en.wikipedia.org/wiki/Tony_Hadley",
+   "extract": "Anthony Patrick Hadley is an English pop singer. He rose to fame in the 1980s as the lead singer of the new wave band Spandau Ballet and launched a solo career following the group's split in 1990. Hadley returned to the band in 2009 but left again in 2017, and has since toured regularly as a solo artist. Hadley has been noted for his expressive voice and vocal range."
+  },
+  {
+   "id": "867068ec-4348-4775-b8b4-f20181fcdf29",
+   "slug": "eagles-of-death-metal-celebrating-20-years-of-de-6ccfa454",
+   "title": "Eagles of Death Metal - CELEBRATING 20 YEARS OF \"DEATH BY SEXY...\"",
+   "act": "Eagles of Death Metal",
+   "name": "Eagles of Death Metal",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Eagles_of_Death_Metal",
+   "extract": "Eagles of Death Metal is an American rock band from Palm Desert, California, formed in 1998. Founded by Jesse Hughes and Josh Homme (drums), the band includes a wide range of other musicians who perform both on the band's studio albums and at live shows."
+  },
+  {
+   "id": "3f044ca5-f89c-448d-b7d6-8af4884c99f3",
+   "slug": "songer-c4ef7062",
+   "title": "Songer",
+   "act": "Songer",
+   "name": "Songer",
+   "description": "British rapper from Reading",
+   "source_url": "https://en.wikipedia.org/wiki/Songer",
+   "extract": "James Songer, known professionally as Songer, is a British rapper and songwriter from Wokingham, Berkshire, England, known for his highly lyrical, wordplay-heavy style and versatility across multiple genres, including UK Hip Hop, Drum and Bass, and UK Garage. He gained significant attention through viral freestyles on the popular UK platform BL@CKBOX and has since amassed millions of streams as an independent artist."
+  },
+  {
+   "id": "51ca5c68-df32-4fee-ac54-555cc2a45d92",
+   "slug": "seb-lowe-7485fd44",
+   "title": "Seb Lowe",
+   "act": "Seb Lowe",
+   "name": "Seb Lowe",
+   "description": "English musician (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Seb_Lowe",
+   "extract": "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. He is known for incorporating politics into his music, having started out uploading videos of his songs to TikTok."
+  }
+ ]
+}

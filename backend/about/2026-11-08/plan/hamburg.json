@@ -1,0 +1,16 @@
+{
+ "city": "hamburg",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "7b075d7b-a7c8-4caa-977e-2622185692bf",
+   "slug": "dagny-europe-2027-a49f0118",
+   "title": "DAGNY - Europe 2027",
+   "act": "DAGNY",
+   "name": "Dagny",
+   "description": "Norwegian singer and songwriter (b. 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Dagny_(singer)",
+   "extract": "Dagny Norvoll Sandvik, known mononymously as Dagny, is a Norwegian singer and songwriter. Her music is pop-based, incorporating elements of indie, dance, synth-pop, electropop and disco. She has released two studio albums, Strangers / Lovers (2020) and Elle (2024), and one EP, Ultraviolet (2016). Her single \"Somebody\" won Song of the Year at the 2020 P3 Gull, and her 2017 track \"Love You Like That\" was the basis for Katy Perry's \"Never Really Over\" (2019). She frequently performs at festivals in Norway and the United Kingdom including Øyafestivalen, Stavernfestivalen, and Bergenfest."
+  }
+ ]
+}

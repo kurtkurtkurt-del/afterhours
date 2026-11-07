@@ -1,0 +1,26 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "51d4c158-7713-473e-98f1-06545ab67e5b",
+   "slug": "jethro-tull-the-curiosity-tour-e80c364f",
+   "title": "Jethro Tull - The Curiosity Tour",
+   "act": "Jethro Tull",
+   "name": "Jethro Tull",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Jethro_Tull_(band)",
+   "extract": "Jethro Tull are a British rock band formed in Blackpool, Lancashire, in 1967. Emerging from the 1960s British blues scene, the band soon developed a distinctive progressive rock sound, blending hard rock, English folk music and classical music, while undergoing numerous stylistic shifts throughout its history. The band was founded and has been continuously led by Ian Anderson, its principal composer, lead vocalist, and multi-instrumentalist best known for his flute playing. The group has featured a succession of musicians throughout its history, including significant contributors such as long-time guitarist Martin Barre, bassists Glenn Cornick, Jeffrey Hammond, John Glascock, Dave Pegg and Jonathan Noyce, drummers Clive Bunker, Barrie \"Barriemore\" Barlow and Doane Perry, and keyboardists John Evan, Dee Palmer, Peter-John Vettese and Andrew Giddings."
+  },
+  {
+   "id": "160e56bd-ae3f-4298-8b1a-85009314fdc3",
+   "slug": "polyphia-be-not-afraid-world-tour-628b4c2f",
+   "title": "Polyphia: BE NOT AFRAID World Tour",
+   "act": "Polyphia",
+   "name": "Polyphia",
+   "description": "American progressive rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Polyphia",
+   "extract": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music. Polyphia has released five studio albums, one live record, two EPs, and numerous singles."
+  }
+ ]
+}

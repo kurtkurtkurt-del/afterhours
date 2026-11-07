@@ -1,0 +1,36 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "9b349f3c-3f28-40aa-8b51-2c94adf4cc2b",
+   "slug": "aitana-66f59d73",
+   "title": "Aitana",
+   "act": "Aitana",
+   "name": "Aitana",
+   "description": "Spanish singer (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Aitana_(singer)",
+   "extract": "Aitana Ocaña Morales, known mononymously as Aitana, is a Spanish singer and songwriter. She first gained national recognition in 2017, placing as the runner-up in the revival series of the Spanish reality television talent show Operación Triunfo. While competing on the show, Aitana recorded the single \"Lo Malo\" with fellow contestant Ana Guerra. The song became an instant hit in Spain, debuting at number-one and holding the spot for several weeks. Following the competition, Aitana signed a 360º record deal with Universal Music Spain and released her debut solo single \"Teléfono\" to commercial success and streaming-breaking records."
+  },
+  {
+   "id": "d82c46c0-a145-44d7-a321-6640be5ad49e",
+   "slug": "rainao-317bd735",
+   "title": "RaiNao",
+   "act": "RaiNao",
+   "name": "RaiNao",
+   "description": "Puerto Rican singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/RaiNao",
+   "extract": "Naomi Ramírez Rivera, known professionally as RaiNao, is a Puerto Rican singer-songwriter. Based in Santurce, San Juan, Puerto Rico, her music incorporates elements of reggaeton, jazz, R&B, and alternative pop, shaped by her background in music theory and live performance. She got signed to Rimas Entertainment in 2024."
+  },
+  {
+   "id": "01901252-d878-4bc1-86ea-e269d882670f",
+   "slug": "dimash-qudaibergen-c3bc581b",
+   "title": "Dimash Qudaibergen",
+   "act": "Dimash Qudaibergen",
+   "name": "Dimash Qudaibergen",
+   "description": "Kazakh musician (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Dimash_Qudaibergen",
+   "extract": "Dinmukhammed Qanatuly Qudaibergen, known professionally as Dimash Qudaibergen and mononymously as Dimash, is a Kazakh singer, songwriter, and multi-instrumentalist. He is university-trained in classical as well as contemporary music, and is known for his exceptionally wide vocal range. He has performed songs in 16 languages."
+  }
+ ]
+}

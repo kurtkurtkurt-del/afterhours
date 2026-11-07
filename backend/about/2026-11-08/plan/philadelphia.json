@@ -1,0 +1,56 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "5d20dc0f-ecfd-4ee7-8af6-aa793934e181",
+   "slug": "ax-and-the-hatchetmen-eadc39be",
+   "title": "Ax and the Hatchetmen",
+   "act": "Ax and the Hatchetmen",
+   "name": "Ax and the Hatchetmen",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/Ax_and_the_Hatchetmen",
+   "extract": "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018. Members of the group include Axel Ellis, Salvatore Defilippis (vocals/guitar), Hunter Olshefke (vocals/bass), Phil Pistone (trumpet), Quinn Dolan (saxophone), and Chaandmon Croft (drums). They are signed with Arista Records and their first album, So Much to Tell You, was released October 24, 2025 with a tour of the same name."
+  },
+  {
+   "id": "88ae589b-4f9f-4f54-ae58-46e826154b78",
+   "slug": "a-boogie-wit-da-hoodie-10-years-of-artist-763fee37",
+   "title": "A BOOGIE WIT DA HOODIE: 10 YEARS OF ARTIST",
+   "act": "A BOOGIE WIT DA HOODIE",
+   "name": "A Boogie wit da Hoodie",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/A_Boogie_wit_da_Hoodie",
+   "extract": "Artist Julius Dubose, known professionally as A Boogie wit da Hoodie or simply A Boogie, is an American rapper. He signed with Atlantic Records to release his debut studio album, The Bigger Artist (2017). Led by the Billboard Hot 100-top 20 single \"Drowning\", the album was met with critical praise and peaked at number four on the Billboard 200."
+  },
+  {
+   "id": "80180acd-1ac8-402d-bd28-40f544dfb948",
+   "slug": "giant-rooks-dfeb0daa",
+   "title": "Giant Rooks",
+   "act": "Giant Rooks",
+   "name": "Giant Rooks",
+   "description": "German indie band",
+   "source_url": "https://en.wikipedia.org/wiki/Giant_Rooks",
+   "extract": "Giant Rooks are a German indie rock band from Hamm, Germany founded in 2014. They are best known for their EP Wild Stare, their album How Have You Been? and their top-100 charting cover of \"Tom's Diner\" by Suzanne Vega."
+  },
+  {
+   "id": "972aceae-1144-41f9-9f13-b90c7477326d",
+   "slug": "yung-gravy-the-joyrider-tour-cd242cf0",
+   "title": "Yung Gravy: The Joyrider Tour",
+   "act": "Yung Gravy",
+   "name": "Yung Gravy",
+   "description": "American rapper (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Yung_Gravy",
+   "extract": "Matthew Raymond Hauri, better known by his stage name Yung Gravy, is an American rapper."
+  },
+  {
+   "id": "2b60daae-e32e-40c6-b18b-b41a45aa4b7a",
+   "slug": "joe-russo-s-almost-dead-4d104168",
+   "title": "Joe Russo's Almost Dead",
+   "act": "Joe Russo's Almost Dead",
+   "name": "Joe Russo's Almost Dead",
+   "description": "American rock/jam band",
+   "source_url": "https://en.wikipedia.org/wiki/Joe_Russo's_Almost_Dead",
+   "extract": "Joe Russo's Almost Dead is an American rock band formed in 2013 in Brooklyn, New York. The group is known for high-energy, improvisational reinterpretations of the Grateful Dead catalog rather than note-for-note tribute performances. Led by drummer Joe Russo, who had previously played Grateful Dead material with Furthur. The band features Russo's longtime collaborators Marco Benevento, Dave Dreiwitz, Scott Metzger, and Tom Hamilton."
+  }
+ ]
+}

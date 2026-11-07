@@ -1,0 +1,16 @@
+{
+ "city": "denver",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "8fbafb45-d7da-4a76-86c7-c6e12d1d3487",
+   "slug": "the-musical-box-19fc487d",
+   "title": "The Musical Box",
+   "act": "The Musical Box",
+   "name": "The Musical Box",
+   "description": "Canadian Genesis tribute band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Musical_Box_(band)",
+   "extract": "The Musical Box are a Canadian tribute band formed in Montreal, Quebec in 1993 who recreate performances by the English rock band Genesis during the 1970s. The current line-up is formed of singer and performer Denis Gagné, guitarist François Gagnon, bassist Sébastien Lamothe, keyboardist Ian Benhamou, and drummer Marc Laflamme."
+  }
+ ]
+}

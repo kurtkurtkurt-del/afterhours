@@ -1,0 +1,26 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "f9ae0b19-12ee-4014-8050-7a7ddebe8b1e",
+   "slug": "conway-the-machine-bc89ab3c",
+   "title": "Conway the Machine",
+   "act": "Conway the Machine",
+   "name": "Conway the Machine",
+   "description": "American rapper (born 1982)",
+   "source_url": "https://en.wikipedia.org/wiki/Conway_the_Machine",
+   "extract": "Demond Price, known professionally as Conway the Machine, or simply Conway, is an American rapper and co-founder of the hip hop label Griselda Records, alongside his paternal half-brother Westside Gunn, and Mach-Hommy. Acclaimed for his 1990s inspired, dark and gritty lyricism, he rose to prominence following his mixtape Reject 2 (2015) and debut studio album From King to a God (2020). His second album, God Don't Make Mistakes (2022), was released by Shady Records, and met with universal acclaim."
+  },
+  {
+   "id": "3dfd5115-7a71-40c4-976d-0d385243ed55",
+   "slug": "elder-island-16806f13",
+   "title": "Elder Island",
+   "act": "Elder Island",
+   "name": "Elder Island",
+   "description": "English musical trio",
+   "source_url": "https://en.wikipedia.org/wiki/Elder_Island_(band)",
+   "extract": "Elder Island is an English musical trio from Bristol, formed in 2014. As of 2026, they have released three studio albums, three EPs, two remix albums, and numerous singles."
+  }
+ ]
+}

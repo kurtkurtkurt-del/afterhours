@@ -1,0 +1,46 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "590b8b51-e53d-4a2d-805e-12bed20aff18",
+   "slug": "yal-n-bir-buyulu-gece-f40b7668",
+   "title": "Yalın - Bir Büyülü Gece",
+   "act": "Yalın",
+   "name": "Yalın",
+   "description": "Turkish pop singer and songwriter (born 1980)",
+   "source_url": "https://en.wikipedia.org/wiki/Yal%C4%B1n",
+   "extract": "Hüseyin Yalın, better known by his surname Yalın, is a Turkish pop singer and songwriter. He achieved success with the song \"Zalim\" in 2004."
+  },
+  {
+   "id": "d1e9d0bb-864c-4f7d-9741-041967cb8174",
+   "slug": "gokhan-k-rdar-kurtlar-vadisi-soundtrack-symphony-9d2ef508",
+   "title": "Gökhan Kırdar : Kurtlar Vadisi Soundtrack Symphony",
+   "act": "Gökhan Kırdar",
+   "name": "Gökhan Kırdar",
+   "description": "Turkish musician and composer (born 1970)",
+   "source_url": "https://en.wikipedia.org/wiki/G%C3%B6khan_K%C4%B1rdar",
+   "extract": "Gökhan Kırdar is a Turkish musician and film score composer."
+  },
+  {
+   "id": "35f8c3e1-b58a-413b-bb84-6657e179e249",
+   "slug": "manga-electric-d7417f1d",
+   "title": "maNga : Electric",
+   "act": "maNga",
+   "name": "Manga",
+   "description": "Turkish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Manga_(band)",
+   "extract": "Manga is a Turkish rock band whose music is mainly a fusion of Anatolian melodies with electronic elements. In 2009, they won both the Best Turkish Act award from MTV Turkey and consequently the Best European Act award from MTV Networks Europe in MTV Europe Music Awards 2009. They represented Turkey at the Eurovision Song Contest 2010 with the song \"We Could Be the Same\" and took second place."
+  },
+  {
+   "id": "1277a801-8966-4c3a-93ee-b18dae686230",
+   "slug": "bengu-5cb21384",
+   "title": "Bengü",
+   "act": "Bengü",
+   "name": "Bengü",
+   "description": "Turkish singer (born 1979)",
+   "source_url": "https://en.wikipedia.org/wiki/Beng%C3%BC",
+   "extract": "Bengü Erden is a Turkish singer. She became first familiar with music during her time at the İzmir State Symphony Orchestra. In İzmir, she was cast in a leading role in the musical \"Oliver Twist\". She later took singing lessons with İzmir State Conservatory's general manager, Müfit Bayraş. In 1998, by performing a song by Müfit Bayşara, she ranked second at the competition Pop Show '98, organized by Mü-Yap and Show TV. She then studied music at Istanbul Academy. She worked as a backing vocalist for Kenan Doğulu for three years. In 2007, Bengü became the winner of Show TV's singing competition Bak Kim Dans Ediyor. Her first album, Hoş Geldin, was produced by Kenan Doğulu and Ozan Doğulu and released in July 2000. Her second studio album, Bağlasan Durmam, was released in 2005.\nAfter two years, she released her third studio album, Taktik. With the song \"Korkma Kalbim\" from this album, she received a digital certification from Mü-Yap and the album became one of the best-selling albums of the year."
+  }
+ ]
+}

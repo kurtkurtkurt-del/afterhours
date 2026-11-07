@@ -1,0 +1,56 @@
+{
+ "city": "washington",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "eb37e643-1f94-423f-8997-9fc8c9500c5f",
+   "slug": "trey-anastasio-band-ca657fb4",
+   "title": "Trey Anastasio Band",
+   "act": "Trey Anastasio Band",
+   "name": "Trey Anastasio Band",
+   "description": "American musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Trey_Anastasio_Band",
+   "extract": "Trey Anastasio Band, or TAB, is an American rock band led by singer-songwriter and guitarist Trey Anastasio of Phish. The band has existed in several permutations since 1998. Versions of the band have had different members, and briefly used the names Eight Foot Fluorescent Tubes and 70 Volt Parade. The current lineup consists of Anastasio, Russ Lawton (drums), Ray Paczkowski (keyboards), Cyro Baptista (percussion), Dezron Douglas (bass), Natalie Cressman, Jennifer Hartswick, and Kenneth Whalum. Anastasio and Lawton are the only remaining members from the band's original 1998 formation. Musicians from TAB have accompanied Anastasio on several of his solo studio albums."
+  },
+  {
+   "id": "9c4be650-0842-4c21-adae-32fbfcd819da",
+   "slug": "bedouine-78743987",
+   "title": "Bedouine",
+   "act": "Bedouine",
+   "name": "Bedouine",
+   "description": "Syrian-American musician (born 1985)",
+   "source_url": "https://en.wikipedia.org/wiki/Bedouine",
+   "extract": "Azniv Korkejian, known by her stage name Bedouine, is a Syrian-American musician. She has lived in a number of cities and countries, including Saudi Arabia, Houston, Syria, and Boston."
+  },
+  {
+   "id": "380d8dfe-2f57-45fe-b8a7-174728378a34",
+   "slug": "ax-and-the-hatchetmen-the-late-checkout-tour-202-1eff8b86",
+   "title": "Ax and the Hatchetmen: The Late Checkout Tour 2026",
+   "act": "Ax and the Hatchetmen",
+   "name": "Ax and the Hatchetmen",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/Ax_and_the_Hatchetmen",
+   "extract": "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018. Members of the group include Axel Ellis, Salvatore Defilippis (vocals/guitar), Hunter Olshefke (vocals/bass), Phil Pistone (trumpet), Quinn Dolan (saxophone), and Chaandmon Croft (drums). They are signed with Arista Records and their first album, So Much to Tell You, was released October 24, 2025 with a tour of the same name."
+  },
+  {
+   "id": "99759c8d-ce85-4efb-8bac-941d730ff9e6",
+   "slug": "fruit-bats-94fae2e9",
+   "title": "Fruit Bats",
+   "act": "Fruit Bats",
+   "name": "Fruit Bats",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Fruit_Bats_(band)",
+   "extract": "Fruit Bats is an American indie rock band formed in 1997 in Chicago, Illinois, as the project of singer and songwriter Eric D. Johnson. Johnson is the band's sole permanent member, with various musicians joining the band in live and studio settings."
+  },
+  {
+   "id": "f423160d-7362-45a2-9f21-e371a1e8860f",
+   "slug": "gilla-band-30dd9f48",
+   "title": "Gilla Band",
+   "act": "Gilla Band",
+   "name": "Gilla Band",
+   "description": "Irish post-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Gilla_Band",
+   "extract": "Gilla Band are an Irish post-punk and noise rock band from Dublin. It was founded in 2011 and comprises vocalist Dara Kiely, guitarist Alan Duggan, bassist Daniel Fox, and drummer Adam Faulkner."
+  }
+ ]
+}

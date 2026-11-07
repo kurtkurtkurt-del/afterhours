@@ -1,0 +1,36 @@
+{
+ "city": "detroit",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "2fc27c6e-ca80-4402-bd94-d80406e1dfb8",
+   "slug": "yung-gravy-the-joyrider-tour-e5c849f9",
+   "title": "Yung Gravy: The Joyrider Tour",
+   "act": "Yung Gravy",
+   "name": "Yung Gravy",
+   "description": "American rapper (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Yung_Gravy",
+   "extract": "Matthew Raymond Hauri, better known by his stage name Yung Gravy, is an American rapper."
+  },
+  {
+   "id": "c4671330-b7fe-49d6-9fd3-42105a9c9016",
+   "slug": "los-tigres-del-norte-suite-rental-d921a3e3",
+   "title": "Los Tigres del Norte - Suite Rental",
+   "act": "Los Tigres del Norte",
+   "name": "Los Tigres del Norte",
+   "description": "California-based norteño Mexican band",
+   "source_url": "https://en.wikipedia.org/wiki/Los_Tigres_del_Norte",
+   "extract": "Los Tigres del Norte are a Mexican norteño band based in San Jose, California. Originally founded in the small town Rosa Morada in the municipality of Mocorito, Sinaloa, and with sales of 32 million albums, the band is one of the most recognized and prominent acts of regional Mexican music, due to their long history and successes. The band is known for their political and romantic corridos, some of which have faced censorship. The band is the only Mexican group to win 7 Grammy Awards and 13 Latin Grammys. In addition, the band has made 40 films alongside the Almada brothers among other well-known Mexican actors."
+  },
+  {
+   "id": "5315e0ac-37ed-4d29-836d-350656c87028",
+   "slug": "hawthorne-heights-20th-anniversary-of-if-only-yo-6539ab5b",
+   "title": "Hawthorne Heights - 20th anniversary of If Only You Were Lonely",
+   "act": "Hawthorne Heights",
+   "name": "Hawthorne Heights",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Hawthorne_Heights",
+   "extract": "Hawthorne Heights is an American rock band formed in Dayton, Ohio, in 2001. Originally called A Day in the Life, their lineup consists of JT Woodruff, Matt Ridenour and Mark McMillon."
+  }
+ ]
+}

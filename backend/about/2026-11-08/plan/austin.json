@@ -1,0 +1,16 @@
+{
+ "city": "austin",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "f74c08b9-f03e-45aa-ac36-0c3cce90fd0a",
+   "slug": "dexter-and-the-moonrocks-77234490",
+   "title": "Dexter and The Moonrocks",
+   "act": "Dexter and The Moonrocks",
+   "name": "Dexter and the Moonrocks",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Dexter_and_the_Moonrocks",
+   "extract": "Dexter and the Moonrocks are an American rock band from Throckmorton, Texas formed in 2021. Combining elements of country and rock music, they have described their genre as \"Western space grunge\", which they chose to name their 2024 EP after. The band gained traction after a clip for their song \"Couch\" went viral on TikTok. Their song \"Freakin' Out\" peaked at number 33 on the Billboard Hot 100."
+  }
+ ]
+}

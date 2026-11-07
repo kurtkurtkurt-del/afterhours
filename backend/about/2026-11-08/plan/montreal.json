@@ -1,0 +1,46 @@
+{
+ "city": "montreal",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "b6e3efd7-5eeb-497f-9faf-1e118aa8a6a8",
+   "slug": "sam-shackleton-15e0b04f",
+   "title": "Sam Shackleton",
+   "act": "Sam Shackleton",
+   "name": "Sam Shackleton",
+   "description": "Scottish folk musician",
+   "source_url": "https://en.wikipedia.org/wiki/Sam_Shackleton",
+   "extract": "Sam Shackleton, also known as Sorley the Bard, is a Scottish folk musician, singer-songwriter, and clawhammer banjoist from Stirling. Based in Edinburgh, he records traditional trans-Atlantic folk music and original tracks."
+  },
+  {
+   "id": "055ea30b-d59d-4aef-9666-5fbe1b6f5349",
+   "slug": "julia-jacklin-north-america-tour-2026-e81cc33f",
+   "title": "Julia Jacklin - North America Tour 2026",
+   "act": "Julia Jacklin",
+   "name": "Julia Jacklin",
+   "description": "Australian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Jacklin",
+   "extract": "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales. Jacklin's musical style has been described as indie pop, indie folk, and alternative country. She has released four studio albums, Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) and The Gem (2026). Jacklin has also performed with the band Phantastic Ferniture, with whom she released the debut single \"Fuckin 'n' Rollin\" and a self-titled album in 2018, followed by subsequent singles."
+  },
+  {
+   "id": "aee1a337-5fc6-421a-a1f1-0260769197da",
+   "slug": "protest-the-hero-100d6bfb",
+   "title": "PROTEST THE HERO",
+   "act": "PROTEST THE HERO",
+   "name": "Protest the Hero",
+   "description": "Canadian progressive metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Protest_the_Hero",
+   "extract": "Protest the Hero is a Canadian progressive metal band formed in Whitby, Ontario, in 1999. Originally named Happy Go Lucky, the band changed their name to Protest the Hero and released their debut EP, Search for the Truth, in 2002. In 2005, the band released their first album Kezia on Canadian indie label Underground Operations."
+  },
+  {
+   "id": "8955a95e-ac00-4370-be75-7cf5d7db6588",
+   "slug": "mamas-gun-873413eb",
+   "title": "MAMAS GUN",
+   "act": "MAMAS GUN",
+   "name": "Mamas Gun",
+   "description": "British contemporary soul band",
+   "source_url": "https://en.wikipedia.org/wiki/Mamas_Gun",
+   "extract": "Mamas Gun is a British contemporary soul band. They found early international success with a radio-friendly soul pop sound. They made 5 full-length albums with evolving personnel, reaching a sound rooted in classic soul with alternative/progressive leanings. Golden Days (2018) marked a major turning point, the band having recorded and produced it themselves."
+  }
+ ]
+}

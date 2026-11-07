@@ -1,0 +1,36 @@
+{
+ "city": "dublin",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "03b9e166-ce9e-439e-8b31-71fccefbbc62",
+   "slug": "niall-horan-a50fa9c1",
+   "title": "Niall Horan",
+   "act": "Niall Horan",
+   "name": "Niall Horan",
+   "description": "Irish singer, songwriter and musician (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Niall_Horan",
+   "extract": "Niall James Horan is an Irish singer, songwriter, musician, and multi-instrumentalist. He rose to prominence as a member of the boy band One Direction, formed in 2010 on the singing competition The X Factor. The group released five albums and went on to become one of the best-selling boy bands of all time."
+  },
+  {
+   "id": "baa0e73a-ccf3-4f3a-9e38-e5159e0f1a8f",
+   "slug": "poison-ruin-23d2e4d6",
+   "title": "Poison Ruïn",
+   "act": "Poison Ruïn",
+   "name": "Poison Ruïn",
+   "description": "American heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Poison_Ru%C3%AFn",
+   "extract": "Poison Ruïn is an American punk/heavy metal band from Philadelphia, Pennsylvania. The band consists of singer/guitarist/keyboardist Mac Kennedy, guitarist Nao Demand, bassist Will McAndrew, and drummer Allen Chapman. Their most recent album Hymns from the Hills was released in April 2026. The band's music has been described as \"dark age punk\" and \"medieval-minded metallic punk,\" with a \"doomy, dungeon-crawler aesthetic that summons the drab hues and existential dread of the dark ages\""
+  },
+  {
+   "id": "8c268766-f893-4ca7-954f-893476b11b93",
+   "slug": "swapmeet-571e8b75",
+   "title": "Swapmeet",
+   "act": "Swapmeet",
+   "name": "Swapmeet",
+   "description": "Australian indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Swapmeet_(band)",
+   "extract": "Swapmeet is an Australian indie rock band formed in Adelaide in 2022. The group consists of guitarists and drummers Maxwell Elphick and Jack Medlyn, lead vocalist and guitarist Venus O’Broin, and bassist Joshua Doherty."
+  }
+ ]
+}

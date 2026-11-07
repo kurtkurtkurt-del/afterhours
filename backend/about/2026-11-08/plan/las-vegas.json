@@ -1,0 +1,46 @@
+{
+ "city": "las-vegas",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "cc9659c7-e88d-46a8-b232-de9fd6573dfb",
+   "slug": "barry-manilow-d2760825",
+   "title": "Barry Manilow",
+   "act": "Barry Manilow",
+   "name": "Barry Manilow",
+   "description": "American singer (born 1943)",
+   "source_url": "https://en.wikipedia.org/wiki/Barry_Manilow",
+   "extract": "Barry Manilow is an American singer, songwriter and record producer with a career spanning over 60 years. His hit recordings include \"Mandy\", \"Could It Be Magic\", \"I Write the Songs\", \"Weekend in New England\", \"Looks Like We Made It\", \"Can't Smile Without You\", \"Copacabana \", and \"Ready to Take a Chance Again\"."
+  },
+  {
+   "id": "8a6dce9f-60cc-4d2a-9bdb-f4179ed6badf",
+   "slug": "daniel-tosh-my-first-farewell-tour-cd932fde",
+   "title": "Daniel Tosh: My First Farewell Tour",
+   "act": "Daniel Tosh",
+   "name": "Daniel Tosh",
+   "description": "American comedian and producer (born 1975)",
+   "source_url": "https://en.wikipedia.org/wiki/Daniel_Tosh",
+   "extract": "Daniel Dwight Tosh is an American comedian, writer, and producer. After graduating from the University of Central Florida with a degree in marketing, Tosh moved to Los Angeles to pursue a career in comedy. His career accelerated in 2001 after a performance on the Late Show with David Letterman. He went on to appear in other national shows, leading to his own 30-minute special on Comedy Central Presents two years later. From 2009 to 2020, Tosh was the host of Comedy Central series Tosh.0, a showcase of popular Internet video clips with the addition of Tosh's narrative comedic dialogue. Daniel Tosh also went on his own series of comedy tours from 2010 to 2015."
+  },
+  {
+   "id": "10227a4f-89d6-442b-aa7b-84207dd5c93b",
+   "slug": "daughtry-6449aacd",
+   "title": "Daughtry",
+   "act": "Daughtry",
+   "name": "Daughtry",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Daughtry_(band)",
+   "extract": "Daughtry is an American rock band formed and fronted by namesake Chris Daughtry, who was a finalist on the fifth season of American Idol. Their self-titled debut album was released in November 2006 and reached number one on the Billboard 200. The album went on to sell more than six million copies in the United States, and has been certified six times platinum by the RIAA. Daughtry was also named the best selling album of 2007 by Billboard, becoming the fastest-selling debut rock album in Nielsen SoundScan history. The album produced four top 20 hits on the Billboard Hot 100, including top five hits \"It's Not Over\" and \"Home\"."
+  },
+  {
+   "id": "cf9d3405-dd0c-4c6d-8edd-e938688be78c",
+   "slug": "metallica-suite-reservation-6cd58c5d",
+   "title": "Metallica - Suite Reservation",
+   "act": "Metallica",
+   "name": "Metallica",
+   "description": "American heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Metallica",
+   "extract": "Metallica is an American heavy metal band. It was formed in Los Angeles in 1981 by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. The band's fast tempos, instrumentals and aggressive musicianship made them one of the founding \"big four\" bands of thrash metal, alongside Megadeth, Anthrax and Slayer. Metallica's current lineup comprises founding members and primary songwriters Hetfield and Ulrich, longtime lead guitarist Kirk Hammett and bassist Robert Trujillo. Former members of the band are bassists Ron McGovney, Cliff Burton and Jason Newsted, as well as guitarist Dave Mustaine, who formed Megadeth after being fired from Metallica in 1983."
+  }
+ ]
+}

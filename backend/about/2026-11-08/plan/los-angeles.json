@@ -1,0 +1,66 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "9d079f91-f6b1-4ae9-a520-4ad14010f48d",
+   "slug": "foy-vance-06312c76",
+   "title": "Foy Vance",
+   "act": "Foy Vance",
+   "name": "Foy Vance",
+   "description": "Northern Irish singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Foy_Vance",
+   "extract": "Foy Best Vance is a Northern Irish musician and singer-songwriter, signed to Ed Sheeran's Gingerbread Man record label. Vance has toured as a support act to Sheeran and his music has been featured on numerous TV shows."
+  },
+  {
+   "id": "e0d729a8-2761-4575-8459-37837edab9c1",
+   "slug": "stephen-day-abc6686d",
+   "title": "Stephen Day",
+   "act": "Stephen Day",
+   "name": "Stephen Day",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Stephen_Day_(singer)",
+   "extract": "Stephen Day is an American singer-songwriter based in Nashville, Tennessee. Day released his debut extended play Undergrad Romance and The Moses In Me in April 2016 during his sophomore year of college. Day has released four full-length studio albums, Guess I'm Grown Now — and its acoustic version, The Shapes I'm In, Gold Mine, and Stephen Day. \nDay has been signed to Riser House Records, based in Nashville, since October 2024."
+  },
+  {
+   "id": "39b52591-491a-42a5-92b2-0b0dbfc36161",
+   "slug": "russian-circles-741f89b5",
+   "title": "Russian Circles",
+   "act": "Russian Circles",
+   "name": "Russian Circles",
+   "description": "American post-metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Russian_Circles",
+   "extract": "Russian Circles is an American instrumental post-metal band based in Chicago, Illinois. The band was originally formed by childhood friends Mike Sullivan and Dave Turncrantz after their previous musical projects dissolved. After parting ways with their original bass player Colin DeKuiper in 2007, the trio was rounded out by Brian Cook. The band has gained widespread recognition based on a series of critically acclaimed albums and extensive international touring. Their name is taken from a drill exercise used in ice hockey, a sport Sullivan and Turncrantz grew up playing in their original hometown of St. Louis."
+  },
+  {
+   "id": "b7c40793-6c9e-4643-a7ba-65fc67688d0d",
+   "slug": "turnover-down-on-earth-tour-sold-out-66dbb7b2",
+   "title": "Turnover - Down On Earth Tour (Sold Out)",
+   "act": "Turnover",
+   "name": "Turnover",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Turnover_(band)",
+   "extract": "Turnover is an American rock band from Virginia Beach, Virginia. The band were formed in 2009 by brothers Austin and Casey (drums) Getz alongside longtime friend Danny Dempsey (bass); the three have gone on to oversee every iteration of the band to date. The three are currently joined in the band by lead guitarist Nick Rayfield, who began touring with the band in 2017 and was later officially inducted as a full-time member in 2022. Turnover have released six studio albums and four EPs across their career. Their most recent album, Down on Earth, was released on May 29th 2026."
+  },
+  {
+   "id": "0aff2d7c-475b-4504-9162-ec13326d099d",
+   "slug": "ateez-golden-hour-part-6-official-album-release-dde4e669",
+   "title": "ATEEZ - GOLDEN HOUR : Part.6 OFFICIAL ALBUM RELEASE PARTY",
+   "act": "ATEEZ",
+   "name": "Ateez",
+   "description": "South Korean boy band",
+   "source_url": "https://en.wikipedia.org/wiki/Ateez",
+   "extract": "Ateez is a South Korean boy band formed by KQ Entertainment. The group consists of eight members: Hongjoong, Seonghwa, Yunho, Yeosang, San, Mingi, Wooyoung and Jongho. They debuted on October 24, 2018, with the extended play (EP) Treasure EP.1: All to Zero."
+  },
+  {
+   "id": "e15fa80f-9379-499f-b5b8-505d4616b3fb",
+   "slug": "denise-julia-fe0e460d",
+   "title": "Denise Julia",
+   "act": "Denise Julia",
+   "name": "Denise Julia",
+   "description": "Filipino singer (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Denise_Julia",
+   "extract": "Julia Denise Lee, better known by her stage name Denise Julia, is a Filipino singer-songwriter, record producer, and model. She signed with Sony Music Philippines. In 2026, she moved to Empire Distribution, a record label in the United States. Numerous media outlets have recognized Julia as a leading figure in the new wave of Filipino R&B."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "72653912-d6e2-4d10-a297-a4bb220ef209",
+   "slug": "alabama-3-0ad93f29",
+   "title": "Alabama 3",
+   "act": "Alabama 3",
+   "name": "Alabama 3",
+   "description": "British band",
+   "source_url": "https://en.wikipedia.org/wiki/Alabama_3",
+   "extract": "Alabama 3 is a British musical group founded in Brixton, London, in 1995. Their track \"Woke Up This Morning\" was used for the opening credits of the TV series The Sopranos. In the United States, the band is known as A3, to avoid legal conflict with the country music band Alabama."
+  },
+  {
+   "id": "455ed6f7-5637-454c-be62-a2b2fdde6ae9",
+   "slug": "muna-gets-so-hot-tour-7295cd12",
+   "title": "MUNA: Gets So Hot Tour",
+   "act": "MUNA",
+   "name": "Muna",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Muna_(band)",
+   "extract": "Muna is an American indie pop band consisting of Katie Gavin, Josette Maskin, and Naomi McPherson. They released two studio albums with RCA Records, About U (2017) and Saves the World (2019), before signing with independent label Saddest Factory Records, which released their third studio album, Muna, in June 2022, and Dancing on the Wall in May 2026."
+  },
+  {
+   "id": "b39fde8d-fdde-4b38-998e-a3613a587652",
+   "slug": "de-staat-44f10284",
+   "title": "De Staat",
+   "act": "De Staat",
+   "name": "De Staat",
+   "description": "Dutch alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/De_Staat",
+   "extract": "De Staat is a Dutch alternative rock band, formed in Nijmegen in 2006. Their name translates to \"The State\"."
+  }
+ ]
+}

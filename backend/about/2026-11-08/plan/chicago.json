@@ -1,0 +1,56 @@
+{
+ "city": "chicago",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "79c5c6e7-54b7-4066-9528-e03e7afba82b",
+   "slug": "joy-oladokun-dfdda57b",
+   "title": "Joy Oladokun",
+   "act": "Joy Oladokun",
+   "name": "Joy Oladokun",
+   "description": "American singer-songwriter (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Joy_Oladokun",
+   "extract": "Olubukola Joy Oladokun is an American singer-songwriter. Oladokun's music spans the genres of folk, R&B, rock, and pop and is influenced by her identity as a queer person of color. She has released six studio albums: Carry (2016), In Defense of My Own Happiness  (2020), In Defense of My Own Happiness (2021), Proof of Life (2023), Observations from a Crowded Room (2024), and Hope is a Heavy Thing (2026)."
+  },
+  {
+   "id": "787d24f6-0a1b-44cd-80b6-aa64a6934d2f",
+   "slug": "alyssa-grace-3fdeb70d",
+   "title": "Alyssa Grace",
+   "act": "Alyssa Grace",
+   "name": "Alyssa Grace",
+   "description": "American singer (born 2007)",
+   "source_url": "https://en.wikipedia.org/wiki/Alyssa_Grace",
+   "extract": "Alyssa Grace Proffitt is an American singer-songwriter based in California. She made her recording debut in 2026 with \"Dog with a Bone\" and gained wider recognition through the singles \"Picking Petals\" and \"Bloodstream\"."
+  },
+  {
+   "id": "b4fa6520-85a0-4d60-93eb-3a6b0317b41d",
+   "slug": "khantrast-ages-17-daf4605c",
+   "title": "Khantrast - Ages 17+",
+   "act": "Khantrast",
+   "name": "Khantrast",
+   "description": "Chinese-American rapper and singer from New York (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Khantrast",
+   "extract": "Anthony Zhang, known professionally as Khantrast is a Chinese-American rapper from Brooklyn, New York City, USA. With his first releases being posted on Soundcloud in 2017, Khantrast has since grown to be a prominent figure in the Asian-American rap scene."
+  },
+  {
+   "id": "a4675f80-0fed-4a62-ac53-66bc10fdd727",
+   "slug": "better-than-ezra-legends-of-the-fall-closer-to-t-520069ea",
+   "title": "Better Than Ezra - Legends of the Fall: Closer To The Edge",
+   "act": "Better Than Ezra",
+   "name": "Better Than Ezra",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Better_Than_Ezra",
+   "extract": "Better Than Ezra is an American alternative rock band based in New Orleans, Louisiana, and signed with Round Hill Music. The band formed in 1988 in Baton Rouge, Louisiana, and consists of Kevin Griffin, Tom Drummond, Michael Jerome (drums), and James Arthur Payne Jr.. The band has released nine studio albums, most recently 2024's Super Magick. They are best known for their 1993 multi-platinum album Deluxe and the 1995 single \"Good\", which reached number 1 on the Billboard Modern Rock Tracks chart."
+  },
+  {
+   "id": "cfa09f81-5854-4455-a9aa-0d87d6fd9518",
+   "slug": "the-war-and-treaty-67aefec2",
+   "title": "The War and Treaty",
+   "act": "The War and Treaty",
+   "name": "The War and Treaty",
+   "description": "American country music duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_War_and_Treaty",
+   "extract": "The War and Treaty is an American husband-and-wife duo consisting of singer-songwriters Michael Trotter Jr. and Tanya Trotter. Their debut studio album, Healing Tide (2018), received generally favorable reviews upon its release. Their second album, Hearts Town (2020), featured a collaboration with Emmylou Harris and had a Triple A top 40 hit single \"Five More Minutes.\" In 2022, they signed to Universal Music Group Nashville, and released their major label debut, Lover's Game (2023). Their collaboration with Zach Bryan on the song \"Hey Driver\" made the top 20 on the Billboard Hot 100."
+  }
+ ]
+}
