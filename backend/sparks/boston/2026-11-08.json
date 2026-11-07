@@ -1,0 +1,14 @@
+{
+  "city": "boston",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "patriots – packers at gillette, 4:25.", "de": "patriots – packers im gillette, 16:25.", "tr": "gillette'de patriots – packers, 16:25." },
+      "line":  { "en": "patriots against the packers at gillette, kickoff 4:25 pm, shown on fox. get there early for the lot.", "de": "patriots gegen die packers im gillette, anpfiff 16:25 uhr, übertragung auf fox. früh da sein für den parkplatz.", "tr": "patriots, packers'a karşı gillette'de; maç 16:25'te başlıyor, fox'ta yayınlanıyor. otoparka erken gelin." },
+      "place": { "en": "gillette stadium", "de": "gillette stadium", "tr": "gillette stadium" },
+      "hour": 15, "minute": 30,
+      "why": "Patriots vs Green Bay Packers, NFL week 9, Sun 8 Nov 4:25 pm ET at Gillette Stadium on FOX (patriots.com; tickpick listing)."
+    }
+  ]
+}
