@@ -1,0 +1,46 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "8872669d-d9cf-4f30-a45a-8824df97c704",
+   "slug": "the-jayhawks-a3ea9e6b",
+   "title": "The Jayhawks",
+   "act": "The Jayhawks",
+   "name": "The Jayhawks",
+   "description": "American country and rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Jayhawks",
+   "extract": "The Jayhawks are an American alternative country and country rock band that emerged from the Twin Cities music scene in the mid-1980s. Led by vocalists/guitarists/songwriters Gary Louris and Mark Olson, their country rock sound was influential on many bands who played the Twin Cities circuit during the 1980s and 1990s, such as Uncle Tupelo, the Gear Daddies and the Honeydogs. They have released eleven studio albums, with and without Olson, including five on the American Recordings label. After going on hiatus from 2005 to 2009, the 1995 lineup of the band reunited and released the album Mockingbird Time in September 2011; Olson left the band for the second time after the tour to promote the album. After another hiatus in 2013, the 1997 lineup led by Louris reunited to play shows in 2014 to support the reissue of three albums originally released between 1997 and 2003. Since then, the band has continued to tour and record, releasing the albums Live at The Belly Up in 2015; Paging Mr. Proust, co-produced by Peter Buck and Tucker Martine, in 2016; Back Roads and Abandoned Motels in 2018; XOXO in 2020; and Sanctuary Park in 2026."
+  },
+  {
+   "id": "1dff8328-9d19-4f7c-9ce9-3797058d74dc",
+   "slug": "judah-and-the-lion-2416f6c4",
+   "title": "Judah & the Lion",
+   "act": "Judah & the Lion",
+   "name": "Judah & the Lion",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/Judah_%26_the_Lion",
+   "extract": "Judah & the Lion are an American rock and roll band from Nashville, Tennessee, formed in 2011. They have released five studio albums and five EPs. Currently the band consists of Judah Akers and Brian Macdonald."
+  },
+  {
+   "id": "ee52e971-2aff-4297-bd4b-0fa76b3f3e3c",
+   "slug": "yebba-889da6ca",
+   "title": "Yebba",
+   "act": "Yebba",
+   "name": "Yebba",
+   "description": "American singer (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Yebba",
+   "extract": "Abigail Elizabeth Smith, known professionally as Yebba, is an American singer and songwriter from West Memphis, Arkansas. She first became known for her YouTube channel and then for her backing vocal performance on Chance the Rapper's SNL performance of the song \"Same Drugs\" in 2016 and releasing her debut single \"Evergreen\" in 2017. She has collaborated with a number of artists, including PJ Morton, Sam Smith, Mark Ronson, Stormzy, Ed Sheeran, A$AP Rocky, Tyler, the Creator and Drake. She won a Grammy Award in the category Best Traditional R&B Performance for her feature on PJ Morton's cover of \"How Deep Is Your Love\" in 2019."
+  },
+  {
+   "id": "2d333fc5-7d99-4489-bff9-7c263cd8944d",
+   "slug": "ub40-d956408d",
+   "title": "UB40",
+   "act": "UB40",
+   "name": "UB40",
+   "description": "English reggae/pop band",
+   "source_url": "https://en.wikipedia.org/wiki/UB40",
+   "extract": "UB40 are an English reggae band, formed in December 1978 in Birmingham, England. The band has had more than 50 singles in the UK singles chart and has also achieved considerable international success. They have been nominated for the Grammy Award for Best Reggae Album four times and were nominated for the Brit Award for Best British Group in 1984. UB40 have sold more than 100 million records worldwide. The ethnic make-up of the band's original line-up was diverse, with musicians of English, Welsh, Irish, Jamaican, Scottish and Yemeni parentage."
+  }
+ ]
+}

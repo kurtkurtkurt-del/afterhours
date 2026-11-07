@@ -1,0 +1,26 @@
+{
+ "city": "montreal",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "6f8e31be-1600-4155-baf0-2692fc8d3d0f",
+   "slug": "freak-slug-017b0948",
+   "title": "FREAK SLUG",
+   "act": "FREAK SLUG",
+   "name": "Freak Slug",
+   "description": "British indie rock musician",
+   "source_url": "https://en.wikipedia.org/wiki/Freak_Slug",
+   "extract": "Xenya Genovese, known by her stage name Freak Slug, is a British indie rock musician from Manchester."
+  },
+  {
+   "id": "bcd6ff03-bc00-4263-9aa3-a44d15aa3a31",
+   "slug": "catch-your-breath-02b4fd8e",
+   "title": "Catch Your Breath",
+   "act": "Catch Your Breath",
+   "name": "Catch Your Breath",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Catch_Your_Breath_(band)",
+   "extract": "Catch Your Breath is an American rock band based in Austin, Texas."
+  }
+ ]
+}

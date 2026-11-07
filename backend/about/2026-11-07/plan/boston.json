@@ -1,0 +1,26 @@
+{
+ "city": "boston",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "b0280666-f364-4bd2-a10d-a96cbb678304",
+   "slug": "gavin-adcock-the-day-i-hang-it-up-tour-2026-e214a17b",
+   "title": "Gavin Adcock: The Day I Hang It Up Tour 2026",
+   "act": "Gavin Adcock",
+   "name": "Gavin Adcock",
+   "description": "American singer-songwriter (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Gavin_Adcock",
+   "extract": "Gavin David Adcock is an American country music singer-songwriter."
+  },
+  {
+   "id": "c42f1d09-7e8f-4ccb-af0d-32b55e16a158",
+   "slug": "die-spitz-f2cf7f04",
+   "title": "Die Spitz",
+   "act": "Die Spitz",
+   "name": "Die Spitz",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Die_Spitz",
+   "extract": "Die Spitz is an American rock band from Austin, Texas, consisting of guitarist/singer/drummer Ava Schrobilgen, guitarist/singer Eleanor Livingston, bassist Kate Halter, and drummer/singer/guitarist Chloe de St. Aubin. Their debut album Something to Consume was released in September 2025."
+  }
+ ]
+}

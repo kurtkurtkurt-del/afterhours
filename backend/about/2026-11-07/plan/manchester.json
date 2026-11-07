@@ -1,0 +1,46 @@
+{
+ "city": "manchester",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "1dba9ecb-a308-4ad6-b051-ab79896280a6",
+   "slug": "mason-hill-73e65f20",
+   "title": "Mason Hill",
+   "act": "Mason Hill",
+   "name": "Mason Hill",
+   "description": "Hard rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Mason_Hill_(band)",
+   "extract": "Mason Hill are a Scottish rock band, from Glasgow, who formed in 2015 officially. Coined by schoolmates James Bird and Scott Taylor in early 2013. They added Craig McFetridge shortly after to the line up and in due course Matthew Ward joined ranks (2014) followed shortly after by Marc Montgomery (2015) to complete the band.\nAfter Taylor’s departure from the band in 2023 due to health concerns the band started their search for a replacement. In September 2025 Tom Ward officially joined Mason Hill publicly after working with the band for a year. Tom Ward is the current lead vocalist for Mason Hill."
+  },
+  {
+   "id": "345cdbe5-6454-4aea-ac4f-eaf8c1cc4c1f",
+   "slug": "chloe-slater-65d79a7d",
+   "title": "Chloe Slater",
+   "act": "Chloe Slater",
+   "name": "Chloe Slater",
+   "description": "English singer-songwriter (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Chloe_Slater",
+   "extract": "Chloe Leanne Slater is an English singer-songwriter based in Manchester. Writing about social and political issues, she has been releasing music since 2023 and has issued two extended plays: You Can't Put a Price on Fun, and Love Me Please."
+  },
+  {
+   "id": "53fe6597-d668-478c-9a7d-f442afb76feb",
+   "slug": "gold-panda-7807e2e4",
+   "title": "Gold Panda",
+   "act": "Gold Panda",
+   "name": "Gold Panda",
+   "description": "English record producer and songwriter (born 1980)",
+   "source_url": "https://en.wikipedia.org/wiki/Gold_Panda",
+   "extract": "Derwin Schlecker, professionally known as Gold Panda, is an English electronic music producer and songwriter.\nDerwin Dicker also performs house music as DJ Jenifa."
+  },
+  {
+   "id": "1aa050ce-a56f-4ac1-bbdc-82403ebf02d7",
+   "slug": "paul-heaton-737f0c84",
+   "title": "Paul Heaton",
+   "act": "Paul Heaton",
+   "name": "Paul Heaton",
+   "description": "British musician (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Paul_Heaton",
+   "extract": "Paul David Heaton is an English singer-songwriter. He was the lead singer and main lyricist of the Housemartins, who had commercial success in the UK and other European countries from 1985 to 1988, releasing several singles, including \"Happy Hour\" and the UK number one \"Caravan of Love\" in 1986, before the group disbanded. Heaton then formed the Beautiful South with the Housemartins' drummer, Dave Hemingway. The band's debut single, \"Song for Whoever\", and debut album, Welcome to the Beautiful South, were released in 1989 to commercial success. They had a series of hits throughout the 1990s, including the number-one single \"A Little Time\", and disbanded in 2007."
+  }
+ ]
+}

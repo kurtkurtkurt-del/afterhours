@@ -1,0 +1,16 @@
+{
+ "city": "new-york",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "15aa120f-b839-42b0-9d11-c475aa97cc70",
+   "slug": "hiss-golden-messenger-i-m-people-tour-a5a8dfa5",
+   "title": "Hiss Golden Messenger: I'm People Tour",
+   "act": "Hiss Golden Messenger",
+   "name": "Hiss Golden Messenger",
+   "description": "American folk band",
+   "source_url": "https://en.wikipedia.org/wiki/Hiss_Golden_Messenger",
+   "extract": "Hiss Golden Messenger is an American folk band originating from Durham, North Carolina, formed in 2007 and led by singer and songwriter M.C. Taylor."
+  }
+ ]
+}

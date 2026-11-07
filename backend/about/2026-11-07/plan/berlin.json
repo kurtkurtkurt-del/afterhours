@@ -1,0 +1,16 @@
+{
+ "city": "berlin",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "78e1cdd6-15c9-4f32-be10-6e726e04406b",
+   "slug": "overmono-pure-devotion-world-tour-920a0573",
+   "title": "Overmono - Pure Devotion - World Tour",
+   "act": "Overmono",
+   "name": "Overmono",
+   "description": "Welsh electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Overmono",
+   "extract": "Overmono is a Welsh electronic music duo consisting of the brothers Tom and Ed Russell."
+  }
+ ]
+}

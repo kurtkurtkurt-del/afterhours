@@ -1,0 +1,66 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "bc939eb0-8a05-4666-8d1f-e6a8f14f356b",
+   "slug": "sucioperro-5e2b0654",
+   "title": "Sucioperro",
+   "act": "Sucioperro",
+   "name": "Sucioperro",
+   "description": "Scottish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Sucioperro",
+   "extract": "Sucioperro are a Scottish alternative rock band from Ayr, South Ayrshire, formed in 2002."
+  },
+  {
+   "id": "7d77b8ea-c776-469c-b45d-88ed8d4c642b",
+   "slug": "little-angels-big-bad-and-back-tour-5b82cbe6",
+   "title": "Little Angels - Big Bad And Back Tour",
+   "act": "Little Angels",
+   "name": "Little Angels",
+   "description": "English hard rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Little_Angels",
+   "extract": "Little Angels are an English hard rock band predominantly active between the mid-1980s and mid-1990s. The band reformed to play the 2012 Download Festival. In February of 2026 they announced a UK tour scheduled for November, quickly adding extra dates due to ticket demand and then finally announcing that two further dates in Dublin and Belfast would begin the tour."
+  },
+  {
+   "id": "206c53fd-08a5-431c-949e-d6378d548c5a",
+   "slug": "onslaught-the-force-from-hell-59e0f740",
+   "title": "Onslaught - The Force From Hell",
+   "act": "Onslaught",
+   "name": "Onslaught",
+   "description": "British thrash metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Onslaught_(band)",
+   "extract": "Onslaught are a British thrash metal band from Bristol, England, active from 1982 to 1991 and again since 2005. The band drew influences from US and British hardcore punk bands such as Discharge and the Exploited, as well as the new wave of British heavy metal (NWOBHM), and eventually adopted a straightforward thrash metal sound. Jason Anderson of AllMusic described their sound as \"punishing\". They have been recognised as British thrash metal pioneers, and referred to as one of the country's so-called \"Big Four\", along with Sabbat, Xentrix, and Acid Reign. To date, Onslaught have released eight studio albums, one compilation, four singles, and three live recordings: a live album and two live DVDs."
+  },
+  {
+   "id": "f7bd09a6-da37-40dc-8b64-c1c718346521",
+   "slug": "the-script-the-man-in-the-arena-tour-5e4fbed4",
+   "title": "The Script - The Man In The Arena Tour",
+   "act": "The Script",
+   "name": "The Script",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Script",
+   "extract": "The Script are an Irish pop rock band formed in 2001 in Dublin by lead vocalist and keyboardist Danny O'Donoghue, lead guitarist Mark Sheehan and drummer Glen Power. The band currently consists of O'Donoghue, Power, Benjamin Sargeant and Ben Weaver (guitar). Sheehan was a member of the band up until his death in 2023. The band moved to London after signing to Sony Label Group imprint Phonogenic and released their first album The Script in August 2008, preceded by the debut single \"We Cry\" as well as other singles such as \"The Man Who Can't Be Moved\", \"Breakeven\" and \"Before the Worst\". The album peaked at number one in both Ireland and the UK."
+  },
+  {
+   "id": "56dff3a3-b84b-43f6-bf08-e5276f18837e",
+   "slug": "skindred-7c7dbc78",
+   "title": "Skindred",
+   "act": "Skindred",
+   "name": "Skindred",
+   "description": "Welsh metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Skindred",
+   "extract": "Skindred is a Welsh rock band that fuses heavy metal with other genres, most notably reggae. Formed in Newport in 1998, they are well known for their energetic and involving live performances and have won several awards including \"Best Live Band\" at the 2011 UK Metal Hammer Golden Gods Awards and the \"Devotion Award\" at the 2011 Kerrang! Awards. In 2026, the band's ninth album You Got This became their first album to top the UK Albums Chart."
+  },
+  {
+   "id": "015d6bc7-91aa-4e9f-8996-3b4712cd60ba",
+   "slug": "teenage-fanclub-67cce81f",
+   "title": "Teenage Fanclub",
+   "act": "Teenage Fanclub",
+   "name": "Teenage Fanclub",
+   "description": "Scottish alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Teenage_Fanclub",
+   "extract": "Teenage Fanclub are a Scottish alternative rock band formed in Glasgow in 1989. The group was founded by Norman Blake, Raymond McGinley and Gerard Love, all of whom shared lead vocals and songwriting duties until Love's departure in 2018. As of 2023, the band's lineup consists of Blake, McGinley, longtime drummer Francis MacDonald, Dave McGowan and Euros Childs."
+  }
+ ]
+}

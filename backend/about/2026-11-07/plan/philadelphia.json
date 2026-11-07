@@ -1,0 +1,36 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "f0abf11f-1921-4dc3-a8f0-6e290938775e",
+   "slug": "madeon-0f96ccf9",
+   "title": "Madeon",
+   "act": "Madeon",
+   "name": "Madeon",
+   "description": "French musician and DJ (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Madeon",
+   "extract": "Hugo Pierre Leclercq, better known by his stage name Madeon, is a French musician, DJ, record producer, singer and songwriter from Nantes, based in Los Angeles. He initially came to widespread public attention at age 17 through a YouTube video, \"Pop Culture\", where he performed a mash-up of 39 different popular songs in real-time using a Novation Launchpad. It received millions of hits in its first few days of release. Madeon has cited the Beatles and Daft Punk as his greatest musical influences."
+  },
+  {
+   "id": "6a2f1f99-333f-4bb5-95ca-07602b6cea0f",
+   "slug": "phillip-phillips-65875a71",
+   "title": "Phillip Phillips",
+   "act": "Phillip Phillips",
+   "name": "Phillip Phillips",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Phillip_Phillips",
+   "extract": "Phillip LaDon Phillips Jr. is an American singer-songwriter who rose to fame after winning the eleventh season of American Idol in 2012. His coronation song, \"Home\", became the best-selling coronation song in American Idol history."
+  },
+  {
+   "id": "40ee9ac4-485b-4394-a22c-e5ef7d08d379",
+   "slug": "victoria-monet-frequency-of-love-tour-9e1b3446",
+   "title": "Victoria Monét: Frequency Of Love Tour",
+   "act": "Victoria Monét",
+   "name": "Victoria Monét",
+   "description": "American singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Victoria_Mon%C3%A9t",
+   "extract": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim. Her debut studio album, Jaguar II (2023) became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year. The nomination was among seven she received at the 66th Annual Grammy Awards, from which she won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical."
+  }
+ ]
+}

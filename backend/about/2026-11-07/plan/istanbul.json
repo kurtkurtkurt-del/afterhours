@@ -1,0 +1,16 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "8539ec01-2e26-4c8a-84e5-9b29782810f6",
+   "slug": "pentagram-electric-61bd34b7",
+   "title": "Pentagram : Electric",
+   "act": "Pentagram",
+   "name": "Pentagram",
+   "description": "American heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Pentagram_(band)",
+   "extract": "Pentagram is an American doom metal band from Alexandria, Virginia. They are noted as one of the pioneers of heavy metal, particularly of the aforementioned subgenre doom metal. As such, they are considered one of the \"big four\" of doom metal alongside Candlemass, Saint Vitus, and Trouble. The band's sound has drawn comparisons to Black Sabbath. Pentagram frontman Bobby Liebling has expressed distaste for the \"doom metal\" terminology, instead preferring Pentagram to be referred to as a \"heavy hard rock\" band."
+  }
+ ]
+}

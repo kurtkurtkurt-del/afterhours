@@ -1,0 +1,26 @@
+{
+ "city": "austin",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "e643dfb8-619e-4e55-a90e-d83363d0dade",
+   "slug": "clara-la-san-chosen-silences-tour-fall-2026-00c06433",
+   "title": "Clara La San - Chosen Silences Tour Fall 2026",
+   "act": "Clara La San",
+   "name": "Clara La San",
+   "description": "British singer, songwriter, and record producer",
+   "source_url": "https://en.wikipedia.org/wiki/Clara_La_San",
+   "extract": "Rosemary Clare Louise Francis, known professionally as Clara La San, is a British singer, songwriter, and record producer. In 2013, her debut song \"Let You Go\" became popular on SoundCloud. Her follow-up song \"In This Darkness\" later went viral on TikTok upon being rereleased in 2022. Her debut studio album, Made Mistakes, was released in 2024."
+  },
+  {
+   "id": "1a3f76c5-8d63-4f74-8017-b9028c2d7db9",
+   "slug": "makaya-mccraven-0c741a1e",
+   "title": "Makaya McCraven",
+   "act": "Makaya McCraven",
+   "name": "Makaya McCraven",
+   "description": "American jazz drummer and bandleader (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Makaya_McCraven",
+   "extract": "Makaya McCraven is an American jazz drummer and bandleader."
+  }
+ ]
+}

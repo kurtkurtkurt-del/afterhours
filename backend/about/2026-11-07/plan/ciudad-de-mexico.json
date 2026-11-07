@@ -1,0 +1,16 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "899ea37a-3bb6-4f72-be68-0d2fd7abafe2",
+   "slug": "jerry-rivera-7371fdd0",
+   "title": "Jerry Rivera.",
+   "act": "Jerry Rivera.",
+   "name": "Jerry Rivera",
+   "description": "Puerto Rican singer (born 1973)",
+   "source_url": "https://en.wikipedia.org/wiki/Jerry_Rivera",
+   "extract": "Jerry Rivera is a Puerto Rican salsa singer and songwriter."
+  }
+ ]
+}

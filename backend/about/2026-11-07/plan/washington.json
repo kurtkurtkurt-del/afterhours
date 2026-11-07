@@ -1,0 +1,26 @@
+{
+ "city": "washington",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "5c16eebd-2341-4ce0-a972-c0e658586dbb",
+   "slug": "brutalismus-3000-harmony-us-tour-2026-cd56570e",
+   "title": "Brutalismus 3000: Harmony US Tour 2026",
+   "act": "Brutalismus 3000",
+   "name": "Brutalismus 3000",
+   "description": "German electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Brutalismus_3000",
+   "extract": "Brutalismus 3000 are an electronic music duo from Berlin, comprising Victoria Vassiliki Daldas and Theo Zeitner."
+  },
+  {
+   "id": "9985559b-508e-485e-adb3-9b5ca12326c7",
+   "slug": "strawberry-guy-26be3de2",
+   "title": "Strawberry Guy",
+   "act": "Strawberry Guy",
+   "name": "Strawberry Guy",
+   "description": "Welsh indie pop musician",
+   "source_url": "https://en.wikipedia.org/wiki/Strawberry_Guy",
+   "extract": "Alexander Morgan Stephens, better known by his stage name Strawberry Guy, is a Welsh indie pop musician. He is best known for his 2019 single \"Mrs Magic\", which gained popularity via TikTok."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "6ff0ccaf-4951-4b59-a612-ba21a7f51188",
+   "slug": "tyla-the-a-pop-world-tour-7a7092df",
+   "title": "TYLA - THE A*POP WORLD TOUR",
+   "act": "TYLA",
+   "name": "Tyla",
+   "description": "South African singer-songwriter (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Tyla",
+   "extract": "Tyla Laura Seethal is a South African singer-songwriter. Dubbed the \"Queen of Popiano\", her musical style is characterised by a fusion of pop and amapiano."
+  }
+ ]
+}

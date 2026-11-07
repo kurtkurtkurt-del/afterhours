@@ -1,0 +1,76 @@
+{
+ "city": "las-vegas",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "4620458f-dd84-4ff1-8484-cbedfc967d5f",
+   "slug": "rival-sons-domestic-bliss-tour-ab64afcb",
+   "title": "Rival Sons - Domestic Bliss Tour",
+   "act": "Rival Sons",
+   "name": "Rival Sons",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Rival_Sons",
+   "extract": "Rival Sons are an American rock band formed in Long Beach, California in 2009 and also affiliated with Nashville, Tennessee. The band consists of Jay Buchanan, Scott Holiday (guitar), Dave Beste and Michael Miley (drums). In their most recent tour they were joined by keyboard player Jesse Nason, and Todd Ögren accompanied them on previous tours. They are signed to Atlantic Records via Dave Cobb's label Low Country Sound, an imprint of Elektra."
+  },
+  {
+   "id": "c7b4b5bf-941b-4abe-8033-9641ea1cf4bf",
+   "slug": "firehouse-65166b0b",
+   "title": "Firehouse",
+   "act": "Firehouse",
+   "name": "FireHouse",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/FireHouse",
+   "extract": "FireHouse is an American hard rock band that formed in 1984 in Richmond, Virginia. They then moved to Charlotte, North Carolina, where they signed with Epic Records in 1989. The band reached stardom during the early 1990s with charting rock singles including \"All She Wrote,\" Don't Treat Me Bad,\" and \"Reach for the Sky,\" as well as with power ballads \"Love of a Lifetime,\" \"When I Look into Your Eyes,\" and \"I Live My Life for You.\" At the 1992 American Music Awards, FireHouse won the award for \"Favorite New Heavy Metal/Hard Rock Artist.\""
+  },
+  {
+   "id": "0cfb3b13-f092-4f3f-b57a-ddf486b621fc",
+   "slug": "brad-paisley-one-man-six-strings-bfc45cd6",
+   "title": "Brad Paisley - One Man Six Strings",
+   "act": "Brad Paisley",
+   "name": "Brad Paisley",
+   "description": "American country musician (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Brad_Paisley",
+   "extract": "Brad Douglas Paisley is an American country music singer, songwriter, and guitarist. His first success came in 1997 as the writer of David Kersh's \"Another You\". After this, he signed with Arista Nashville in 1998, and released his debut album Who Needs Pictures in 1999. This was the first of 12 studio albums he released for the label before its closure in 2023, after which he transferred to EMI Nashville. His most commercially successful albums are Mud on the Tires (2003) and Time Well Wasted (2005), both certified double platinum by the Recording Industry Association of America."
+  },
+  {
+   "id": "7c2510b5-eaca-4a1d-8634-cc533003d168",
+   "slug": "tim-mcgraw-live-in-las-vegas-9e2ae481",
+   "title": "Tim McGraw: Live in Las Vegas",
+   "act": "Tim McGraw",
+   "name": "Tim McGraw",
+   "description": "American country singer and actor (born 1967)",
+   "source_url": "https://en.wikipedia.org/wiki/Tim_McGraw",
+   "extract": "Samuel Timothy McGraw is an American country singer and actor. He has released 17 studio albums. Ten of those albums have reached number one on the Top Country Albums charts, with his 1994 breakthrough album Not a Moment Too Soon being the top country album of 1994. In total, McGraw's albums have produced 65 singles, 25 of which have reached number one on the Hot Country Songs or Country Airplay charts."
+  },
+  {
+   "id": "f2daacde-a1cb-421c-8560-1a388a8f4c67",
+   "slug": "tim-mcgraw-official-caesars-ticket-hotel-package-67c7daf5",
+   "title": "Tim McGraw | Official Caesars Ticket + Hotel Packages",
+   "act": "Tim McGraw",
+   "name": "Tim McGraw",
+   "description": "American country singer and actor (born 1967)",
+   "source_url": "https://en.wikipedia.org/wiki/Tim_McGraw",
+   "extract": "Samuel Timothy McGraw is an American country singer and actor. He has released 17 studio albums. Ten of those albums have reached number one on the Top Country Albums charts, with his 1994 breakthrough album Not a Moment Too Soon being the top country album of 1994. In total, McGraw's albums have produced 65 singles, 25 of which have reached number one on the Hot Country Songs or Country Airplay charts."
+  },
+  {
+   "id": "6ac50219-f60f-4405-a9ac-0bfa652eb094",
+   "slug": "jeezy-official-caesars-ticket-hotel-packages-17a85e74",
+   "title": "Jeezy | Official Caesars Ticket + Hotel Packages",
+   "act": "Jeezy",
+   "name": "Jeezy",
+   "description": "American rapper (born 1977)",
+   "source_url": "https://en.wikipedia.org/wiki/Jeezy",
+   "extract": "Jay Wayne Jenkins, known by his stage name Jeezy, is an American rapper. He is credited, alongside fellow Georgia-based rappers T.I. and Gucci Mane, with pioneering the hip hop subgenre trap music for mainstream audiences. Jenkins began his career in 2001, releasing two independent albums until signing with Def Jam Recordings to release his major label debut, Let's Get It: Thug Motivation 101 (2005). The album peaked at number two on the Billboard 200, sold 172,000 copies in its first week, and received double platinum certification by the Recording Industry Association of America (RIAA); its lead single, \"Soul Survivor\", peaked at number four on the Billboard Hot 100 and remains his highest-charting song."
+  },
+  {
+   "id": "ded50391-b08e-4640-bdf7-c64e38595621",
+   "slug": "jeezy-the-legend-of-the-snowman-7002d4de",
+   "title": "Jeezy: The Legend of The Snowman",
+   "act": "Jeezy",
+   "name": "Jeezy",
+   "description": "American rapper (born 1977)",
+   "source_url": "https://en.wikipedia.org/wiki/Jeezy",
+   "extract": "Jay Wayne Jenkins, known by his stage name Jeezy, is an American rapper. He is credited, alongside fellow Georgia-based rappers T.I. and Gucci Mane, with pioneering the hip hop subgenre trap music for mainstream audiences. Jenkins began his career in 2001, releasing two independent albums until signing with Def Jam Recordings to release his major label debut, Let's Get It: Thug Motivation 101 (2005). The album peaked at number two on the Billboard 200, sold 172,000 copies in its first week, and received double platinum certification by the Recording Industry Association of America (RIAA); its lead single, \"Soul Survivor\", peaked at number four on the Billboard Hot 100 and remains his highest-charting song."
+  }
+ ]
+}

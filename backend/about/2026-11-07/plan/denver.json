@@ -1,0 +1,26 @@
+{
+ "city": "denver",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "29f92203-ab29-4ee4-8391-05f24ad86b90",
+   "slug": "vince-staples-cry-baby-tour-514447d3",
+   "title": "Vince Staples - Cry Baby Tour",
+   "act": "Vince Staples",
+   "name": "Vince Staples",
+   "description": "American rapper and actor (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Vince_Staples",
+   "extract": "Vincent Jamal Staples is an American rapper, singer, songwriter, and actor. He first became known for his appearances on the projects from Odd Future members and affiliates, including Earl Sweatshirt's Earl (2010) and Doris (2013), Mike G.’s Ali (2010) and The Jet Age of Tomorrow's Journey to the 5th Echelon (2010). He signed with Talib Kweli's Blacksmith Records prior to the release of his collaborative mixtape with Mac Miller, Stolen Youth (2013). The following year, he signed with No I.D.'s ARTium Recordings, an imprint of Def Jam Recordings, to release his debut extended play, Hell Can Wait (2014), which received critical acclaim and marked his first entry on the Billboard 200."
+  },
+  {
+   "id": "4a42f3cb-6f8b-4c51-8550-c8176b69f03b",
+   "slug": "three-days-grace-alienation-tour-bcabb2ca",
+   "title": "Three Days Grace - Alienation Tour",
+   "act": "Three Days Grace",
+   "name": "Three Days Grace",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Three_Days_Grace",
+   "extract": "Three Days Grace is a Canadian rock band formed in Norwood, Ontario, in 1992 originally as Groundswell. Groundswell played in various local Norwood backyard parties and area establishments before disbanding in 1995 and regrouping in 1997 under its current name."
+  }
+ ]
+}

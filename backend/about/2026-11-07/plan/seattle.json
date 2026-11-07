@@ -1,0 +1,46 @@
+{
+ "city": "seattle",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "ff7306ac-2491-4fbf-a23f-f16228df88a3",
+   "slug": "seattle-symphony-632fe642",
+   "title": "Seattle Symphony",
+   "act": "Seattle Symphony",
+   "name": "Seattle Symphony",
+   "description": "American orchestra",
+   "source_url": "https://en.wikipedia.org/wiki/Seattle_Symphony",
+   "extract": "The Seattle Symphony is an American orchestra based in Seattle, Washington. Since 1998, the orchestra is resident at Benaroya Hall. The orchestra also serves as the accompanying orchestra for the Seattle Opera."
+  },
+  {
+   "id": "20b3113a-2dea-4eb8-9f01-92ca946f62b7",
+   "slug": "yuki-chiba-ea2433db",
+   "title": "Yuki Chiba",
+   "act": "Yuki Chiba",
+   "name": "Yuki Chiba",
+   "description": "Japanese rapper and singer (born 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Yuki_Chiba",
+   "extract": "Yuki Chiba , formerly known by his stage name Kohh, is a Japanese rapper, singer, and songwriter."
+  },
+  {
+   "id": "302754a9-91e5-4b91-a83c-c5cdde58dfe0",
+   "slug": "garth-brooks-blame-it-all-on-my-roots-arena-tour-ab30bf3d",
+   "title": "Garth Brooks - Blame It All On My Roots Arena Tour",
+   "act": "Garth Brooks",
+   "name": "Garth Brooks",
+   "description": "American country singer (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Garth_Brooks",
+   "extract": "Troyal Garth Brooks is an American country singer and songwriter. His musical style blends traditional country with pop and rock elements, which has earned him his immense popularity, particularly in the United States, with success on the country music single and album charts, multi-platinum recordings and record-breaking live performances, while also crossing over into the mainstream pop arena."
+  },
+  {
+   "id": "6f6d435f-3f54-433b-ba40-9aa7ed5a0cf3",
+   "slug": "margaret-glaspy-the-i-am-both-tour-3494da32",
+   "title": "Margaret Glaspy: The I Am Both Tour",
+   "act": "Margaret Glaspy",
+   "name": "Margaret Glaspy",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Margaret_Glaspy",
+   "extract": "Margaret Glaspy is an American singer and songwriter based in New York City. She began playing and living in New York at 21 years old and is currently signed with ATO Records. Her debut full-length album, Emotions and Math, was self-produced and received critical acclaim, while her subsequent records have followed suit, from her EP Born Yesterday to her second full-length Devotion."
+  }
+ ]
+}

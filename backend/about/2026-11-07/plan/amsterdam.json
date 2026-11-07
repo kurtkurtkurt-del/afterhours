@@ -1,0 +1,56 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "c9d7690f-8f49-4dc5-be87-b83623fbdeb4",
+   "slug": "mollie-elizabeth-8aa01e4c",
+   "title": "Mollie Elizabeth",
+   "act": "Mollie Elizabeth",
+   "name": "Mollie Elizabeth",
+   "description": "American singer (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Mollie_Elizabeth",
+   "extract": "Mollie Elizabeth, known on social media as doeyedfairie, is an American singer. She first gained attention when her song \"Vegas Venetian\" went viral in January 2025. After signing with Neon Gold Records, she achieved further recognition with her 2026 single \"Run Rabbit\"."
+  },
+  {
+   "id": "c45c89c6-1020-4d46-acc1-1d5bcdc5c678",
+   "slug": "good-charlotte-premium-seats-ea047201",
+   "title": "Good Charlotte | Premium Seats",
+   "act": "Good Charlotte",
+   "name": "Good Charlotte",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Good_Charlotte",
+   "extract": "Good Charlotte is an American rock band formed in Waldorf, Maryland, in 1995. The band currently consists of Joel Madden, Benji Madden, Paul Thomas (bass), and Billy Martin."
+  },
+  {
+   "id": "1ec77a36-7fa9-45fd-be72-a43f3c4f7ff7",
+   "slug": "good-charlotte-motel-du-cap-eu-uk-tour-d2f9e450",
+   "title": "Good Charlotte - Motel Du Cap EU/UK Tour",
+   "act": "Good Charlotte",
+   "name": "Good Charlotte",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Good_Charlotte",
+   "extract": "Good Charlotte is an American rock band formed in Waldorf, Maryland, in 1995. The band currently consists of Joel Madden, Benji Madden, Paul Thomas (bass), and Billy Martin."
+  },
+  {
+   "id": "6fbbb271-bef9-41bf-8075-1c2d31d285ba",
+   "slug": "waylon-wyatt-005106cc",
+   "title": "Waylon Wyatt",
+   "act": "Waylon Wyatt",
+   "name": "Waylon Wyatt",
+   "description": "American country music singer",
+   "source_url": "https://en.wikipedia.org/wiki/Waylon_Wyatt",
+   "extract": "Waylon Wyatt Potter is an American country music singer-songwriter, musician, and producer from Hackett, Arkansas. He garnered popularity when his first song \"Everything Under the Sun\" became viral on TikTok. He is signed to Darkroom Records and has released two extended plays with the label. His debut album, Dustpiles, was released in July 2026."
+  },
+  {
+   "id": "ce70417f-9a7c-4b48-acda-88dab246bc78",
+   "slug": "flower-face-0c1b5397",
+   "title": "Flower Face",
+   "act": "Flower Face",
+   "name": "Flower Face",
+   "description": "Canadian folk musician",
+   "source_url": "https://en.wikipedia.org/wiki/Flower_Face",
+   "extract": "Ruby McKinnon, known professionally as Flower Face, is a Canadian goth-folk and dreampop musician based in Montreal."
+  }
+ ]
+}

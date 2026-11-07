@@ -1,0 +1,36 @@
+{
+ "city": "nashville",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "dda6fca0-fdc7-4e7c-85d7-a19f12ac4a30",
+   "slug": "yebba-d50876da",
+   "title": "Yebba",
+   "act": "Yebba",
+   "name": "Yebba",
+   "description": "American singer (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Yebba",
+   "extract": "Abigail Elizabeth Smith, known professionally as Yebba, is an American singer and songwriter from West Memphis, Arkansas. She first became known for her YouTube channel and then for her backing vocal performance on Chance the Rapper's SNL performance of the song \"Same Drugs\" in 2016 and releasing her debut single \"Evergreen\" in 2017. She has collaborated with a number of artists, including PJ Morton, Sam Smith, Mark Ronson, Stormzy, Ed Sheeran, A$AP Rocky, Tyler, the Creator and Drake. She won a Grammy Award in the category Best Traditional R&B Performance for her feature on PJ Morton's cover of \"How Deep Is Your Love\" in 2019."
+  },
+  {
+   "id": "2f8f8aae-9528-49ee-abc7-d9afd69fe339",
+   "slug": "charlie-parr-f4385dba",
+   "title": "Charlie Parr",
+   "act": "Charlie Parr",
+   "name": "Charlie Parr",
+   "description": "American country blues musician (born 1967)",
+   "source_url": "https://en.wikipedia.org/wiki/Charlie_Parr",
+   "extract": "Charlie Parr is an American country blues musician. Born in Austin, Minnesota, he spent part of his childhood in Hollandale before starting his music career in Duluth. His influences include Charlie Patton, Bukka White, Reverend Gary Davis, Dave Van Ronk, Mississippi John Hurt, and his self-professed \"hero\" \"Spider\" John Koerner. He plays a Mule resonator, National resonator guitar, a fretless open-back banjo, and a twelve-string guitar, often in the Piedmont blues style. He is divorced from Emily Parr, who occasionally adds vocals to his music. He has two children."
+  },
+  {
+   "id": "7c14517c-b121-493b-9cee-01b4c22a798c",
+   "slug": "mack-geiger-0163a003",
+   "title": "Mack Geiger",
+   "act": "Mack Geiger",
+   "name": "Mack Geiger",
+   "description": "Australian country musician",
+   "source_url": "https://en.wikipedia.org/wiki/Mack_Geiger",
+   "extract": "William Mack Geiger is an Australian country singer-songwriter from Mount Larcom, Australia."
+  }
+ ]
+}

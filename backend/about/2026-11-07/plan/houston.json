@@ -1,0 +1,26 @@
+{
+ "city": "houston",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "683f02e8-41c7-4c9d-bf5b-1cba6c265611",
+   "slug": "matt-maeson-watch-my-step-tour-023a4214",
+   "title": "Matt Maeson: Watch My Step Tour",
+   "act": "Matt Maeson",
+   "name": "Matt Maeson",
+   "description": "American singer-songwriter and musician",
+   "source_url": "https://en.wikipedia.org/wiki/Matt_Maeson",
+   "extract": "Matt Maeson is an American singer-songwriter and musician from Virginia Beach, Virginia, signed to Neon Gold Records and Atlantic Records."
+  },
+  {
+   "id": "23c90d0e-c3e9-4931-bcd7-e507142d5d45",
+   "slug": "tiny-habits-c3c820c1",
+   "title": "Tiny Habits",
+   "act": "Tiny Habits",
+   "name": "Tiny Habits",
+   "description": "American folk-pop trio",
+   "source_url": "https://en.wikipedia.org/wiki/Tiny_Habits",
+   "extract": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa. Their first EP, Tiny Things, was released in April 2023. Their debut studio album All For Something was released in May 2024. Their second album Keepers came out in August 2026."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "0aefe4b3-c198-4f6b-8c61-25d3f9b3772e",
+   "slug": "t-love-0425cbcb",
+   "title": "T.LOVE",
+   "act": "T.LOVE",
+   "name": "T.Love",
+   "description": "Polish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/T.Love",
+   "extract": "T.Love is a Polish rock band formed in 1982, originally known as Teenage Love Alternative, by Zygmunt \"Muniek\" Staszczyk, Janusz Konorowski, Dariusz Zając and Jacek Wudecki, all friends from high school in Częstochowa."
+  }
+ ]
+}

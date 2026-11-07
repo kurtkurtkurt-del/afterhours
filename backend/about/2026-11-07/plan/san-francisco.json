@@ -1,0 +1,66 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "630371a6-573f-41d7-9381-d82ac557365a",
+   "slug": "buzzcocks-celebrating-50-years-of-buzzcocks-34381fe8",
+   "title": "Buzzcocks: Celebrating 50 Years of Buzzcocks",
+   "act": "Buzzcocks",
+   "name": "Buzzcocks",
+   "description": "British punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Buzzcocks",
+   "extract": "Buzzcocks are an English punk rock band formed by singer-songwriter and guitarist Pete Shelley and singer-songwriter Howard Devoto in Bolton in 1976. They achieved commercial success with singles that fuse pop with rapid-fire punk energy, inspiring the power pop and pop punk movements; these singles were later collected on Singles Going Steady, an acclaimed compilation album music journalist and critic Ned Raggett described as a \"punk masterpiece\"."
+  },
+  {
+   "id": "d73e4c5d-5490-4f05-aa99-8d0892da6124",
+   "slug": "mad-tsai-1968af53",
+   "title": "Mad Tsai",
+   "act": "Mad Tsai",
+   "name": "Mad Tsai",
+   "description": "American musician and Influencer",
+   "source_url": "https://en.wikipedia.org/wiki/Mad_Tsai",
+   "extract": "Mad Tsai is an American singer-songwriter and social media personality. Of Taiwanese and Peruvian descent, Tsai gained recognition through the short-video platform TikTok under the handle @madsteaparty. His music explores themes of queerness, adolescence, and self-identity, often blending elements of pop, bedroom pop, and alternative music."
+  },
+  {
+   "id": "5bbed9ef-f3e3-4865-8229-eb4edbdd9fe6",
+   "slug": "soft-cell-abf8bafd",
+   "title": "Soft Cell",
+   "act": "Soft Cell",
+   "name": "Soft Cell",
+   "description": "English synthpop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Soft_Cell",
+   "extract": "Soft Cell are an English synth-pop band who came to prominence in the early 1980s. They consisted of vocalist Marc Almond and instrumentalist David Ball until the latter's death in 2025. The band are primarily known for their 1981 hit version of \"Tainted Love\" and their platinum-selling debut album Non-Stop Erotic Cabaret."
+  },
+  {
+   "id": "ac804016-0652-4aa4-ae9c-baa78012457d",
+   "slug": "olafur-arnalds-11-11-f7ede7b4",
+   "title": "Olafur Arnalds - 11/11",
+   "act": "Olafur Arnalds",
+   "name": "Ólafur Arnalds",
+   "description": "Icelandic musician and composer (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/%C3%93lafur_Arnalds",
+   "extract": "Ólafur Arnalds is an Icelandic multi-instrumentalist and producer from Mosfellsbær, Iceland. He mixes strings and piano with loops and beats, a sound ranging from ambient/electronic to atmospheric pop. He is also the former drummer for hardcore punk and metal bands Fighting Shit, Celestine, and others."
+  },
+  {
+   "id": "f082e0d2-910a-4220-affc-7fb406866af4",
+   "slug": "the-damned-final-damnation-50-7bec8819",
+   "title": "THE DAMNED - FINAL DAMNATION 50",
+   "act": "THE DAMNED",
+   "name": "The Damned",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Damned_(band)",
+   "extract": "The Damned are an English rock band formed in London in 1976 by lead vocalist Dave Vanian, guitarist Brian James, bassist Captain Sensible and drummer Rat Scabies. They were the first punk band from the United Kingdom to release a single, \"New Rose\" (1976), release a studio album, Damned Damned Damned (1977) and tour the United States. The band briefly dissolved after their second album, Music for Pleasure (1977), was critically dismissed. They re-formed without Brian James and released Machine Gun Etiquette (1979)."
+  },
+  {
+   "id": "d94e5042-e986-430e-a33e-fef2f30b371d",
+   "slug": "brand-new-80f1dd9f",
+   "title": "Brand New",
+   "act": "Brand New",
+   "name": "Brand New",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Brand_New_(band)",
+   "extract": "Brand New is an American rock band formed in 2000 from Long Island, New York. Consisting of lead vocalist and rhythm guitarist Jesse Lacey, lead guitarist Vincent Accardi, bassist Garrett Tierney and drummer Brian Lane, the band earned critical recognition as one of the most influential emo bands, and was acclaimed for their musical development and artistic innovation compared to other groups in the scene from which they originated."
+  }
+ ]
+}

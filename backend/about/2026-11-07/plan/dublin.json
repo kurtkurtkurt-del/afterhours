@@ -1,0 +1,36 @@
+{
+ "city": "dublin",
+ "day": "2026-11-07",
+ "nights": [
+  {
+   "id": "b5cefe79-e3e1-44c6-8488-e3d04d9d17be",
+   "slug": "brian-kennedy-5b3506c5",
+   "title": "Brian Kennedy",
+   "act": "Brian Kennedy",
+   "name": "Brian Kennedy",
+   "description": "Northern Irish singer",
+   "source_url": "https://en.wikipedia.org/wiki/Brian_Kennedy_(singer)",
+   "extract": "Brian Edward Patrick Kennedy is a singer, songwriter, and author from Northern Ireland. He had a number of hit singles and albums in the UK and Ireland during the 1990s and 2000s. He represented Ireland in the Eurovision Song Contest 2006 with his song \"Every Song is a Cry for Love\" and finished in 10th place, with his performance notably marking the 1,000th song to be performed in Eurovision history."
+  },
+  {
+   "id": "b52d6084-a656-44bb-8bc8-bab18bdd18de",
+   "slug": "widowspeak-c14e012f",
+   "title": "Widowspeak",
+   "act": "Widowspeak",
+   "name": "Widowspeak",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Widowspeak",
+   "extract": "Widowspeak is an American indie rock band from Brooklyn, New York City, United States. The band consists of guitarist and vocalist Molly Hamilton and guitarist Robert Earl Thomas."
+  },
+  {
+   "id": "e1a80516-5e4e-4f5f-92a3-12f67da03813",
+   "slug": "ole-60-off-the-grid-tour-29f82623",
+   "title": "Ole 60 - Off the Grid Tour",
+   "act": "Ole 60",
+   "name": "Ole 60",
+   "description": "American country music band",
+   "source_url": "https://en.wikipedia.org/wiki/Ole_60",
+   "extract": "Ole 60 is an American country/alt-country band from Hawesville, Kentucky, formed in 2023, known for blending Appalachian storytelling with elements of grunge, southern rock, folk music, and traditional country. The band consists of Jacob Ty Young, Tristan Roby, Ryan Laslie, Colby Clark, Aden Wood (drums), Dwight McGlynn, and Dustin \"Catfish\" Fuqua. The band gained widespread attention in 2024 through breakout singles like \"smoke & a light\" and \"Thoughts of You\", and acclaimed debut album Smokestack Town in 2025."
+  }
+ ]
+}
