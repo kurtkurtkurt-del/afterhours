@@ -1,0 +1,14 @@
+{
+  "city": "las-vegas",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "raiders vs seahawks at allegiant.", "de": "raiders gegen seahawks im allegiant.", "tr": "raiders, allegiant'ta seahawks'a karşı." },
+      "line": { "en": "the raiders host the seahawks at allegiant stadium, kickoff 13:05 local time per ticket listings. check the time on the ticket page.", "de": "die raiders empfangen die seahawks im allegiant stadium, anpfiff 13:05 ortszeit laut ticketlisting. zeit auf der ticketseite prüfen.", "tr": "raiders, allegiant stadium'da seahawks'ı ağırlıyor, bilet listelerine göre yerel saatle 13:05'te başlıyor. saati bilet sayfasından kontrol et." },
+      "place": { "en": "allegiant stadium", "de": "allegiant stadium", "tr": "allegiant stadium" },
+      "hour": 13, "minute": 5,
+      "why": "Las Vegas Raiders vs Seattle Seahawks, home, Sun 15 Nov, per CBS Sports and ticket listings (4:05 pm ET is 1:05 pm PT); a second-week item."
+    }
+  ]
+}

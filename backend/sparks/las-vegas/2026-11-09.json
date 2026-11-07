@@ -1,0 +1,14 @@
+{
+  "city": "las-vegas",
+  "day": "2026-11-09",
+  "sparks": [
+    {
+      "kind": "newplace",
+      "title": { "en": "the corner store opens at the cosmopolitan.", "de": "the corner store öffnet im cosmopolitan.", "tr": "the corner store cosmopolitan'da açılıyor." },
+      "line": { "en": "the new york restaurant opens on the cosmopolitan's third floor today, in the old blue ribbon room. a first table after work.", "de": "das new yorker restaurant öffnet heute im dritten stock des cosmopolitan, im ehemaligen blue-ribbon-raum. ein erster tisch nach der arbeit.", "tr": "new york restoranı bugün cosmopolitan'ın üçüncü katında, eski blue ribbon mekânında açılıyor. iş sonrası ilk masa." },
+      "place": { "en": "the corner store", "de": "the corner store", "tr": "the corner store" },
+      "hour": 18, "minute": 0,
+      "why": "The Corner Store opens at The Cosmopolitan on Mon 9 Nov, per Las Vegas Review-Journal (neon.reviewjournal.com); the opening hour is not confirmed, 18:00 is a suggestion."
+    }
+  ]
+}
