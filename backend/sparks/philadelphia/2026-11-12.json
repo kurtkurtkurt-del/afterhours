@@ -1,0 +1,18 @@
+{
+  "city": "philadelphia",
+  "day": "2026-11-12",
+  "sparks": [
+    {
+      "kind": "newplace",
+      "title": { "en": "field day, the new bar in northern liberties.", "de": "field day, die neue bar in northern liberties.", "tr": "field day, northern liberties'te yeni bar." },
+      "line": {
+        "en": "danny childs' cocktail bar opened in late october, with 45 cocktails built on regional ingredients.",
+        "de": "die cocktailbar von danny childs hat ende oktober eröffnet, mit 45 cocktails aus regionalen zutaten.",
+        "tr": "danny childs'ın kokteyl barı ekim sonunda açıldı; bölgesel malzemelerle yapılmış 45 kokteyli var."
+      },
+      "place": { "en": "field day", "de": "field day", "tr": "field day" },
+      "hour": 18, "minute": 0,
+      "why": "Field Day, Danny Childs' cocktail bar in Northern Liberties, opened 21 Oct 2026 (Philadelphia Inquirer); Inquirer lists hours 4pm to midnight Wed to Sat, so Thursday 18:00 fits."
+    }
+  ]
+}

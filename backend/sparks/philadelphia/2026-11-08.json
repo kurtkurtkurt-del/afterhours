@@ -1,0 +1,18 @@
+{
+  "city": "philadelphia",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "eagles – giants, 1pm, at the linc.", "de": "eagles – giants, 13 uhr, im linc.", "tr": "eagles – giants, 13:00, linc'te." },
+      "line": {
+        "en": "the eagles host the giants at 1pm on fox.",
+        "de": "die eagles empfangen die giants um 13 uhr auf fox.",
+        "tr": "eagles, giants'ı 13:00'te fox'ta ağırlıyor."
+      },
+      "place": { "en": "lincoln financial field", "de": "lincoln financial field", "tr": "lincoln financial field" },
+      "hour": 13, "minute": 0,
+      "why": "Eagles home game vs the New York Giants, Sun 8 Nov 1:00pm ET on FOX (philadelphiaeagles.com and giants.com week 9 pages). Weather not confirmed, so left out."
+    }
+  ]
+}
