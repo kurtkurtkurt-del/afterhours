@@ -1,0 +1,14 @@
+{
+  "city": "houston",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "36th native american pow wow at traders village.", "de": "36. native american pow wow im traders village.", "tr": "traders village'da 36. native american pow wow." },
+      "line":  { "en": "two days of intertribal dancing, drumming and native crafts. entry is free, parking is paid. check the hours before you go.", "de": "zwei tage intertribal tanz, trommeln und handwerk. der eintritt ist frei, das parken kostet. vorher die zeiten prüfen.", "tr": "iki gün intertribal dans, davul ve yerel el sanatları. giriş ücretsiz, park ücretli. gitmeden saatleri kontrol et." },
+      "place": { "en": "traders village", "de": "traders village", "tr": "traders village" },
+      "hour": null, "minute": null,
+      "why": "36th Native American Pow Wow at Traders Village Houston on 14 and 15 November, per a travel article (travelandtourworld.com); 2026 hours not confirmed, so no start time is given."
+    }
+  ]
+}
