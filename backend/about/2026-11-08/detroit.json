@@ -1,0 +1,70 @@
+{
+ "city": "detroit",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "c4671330-b7fe-49d6-9fd3-42105a9c9016",
+   "slug": "los-tigres-del-norte-suite-rental-d921a3e3",
+   "title": "Los Tigres del Norte - Suite Rental",
+   "name": "Los Tigres del Norte",
+   "source_url": "https://en.wikipedia.org/wiki/Los_Tigres_del_Norte",
+   "extract": "Los Tigres del Norte are a Mexican norteño band based in San Jose, California. Originally founded in the small town Rosa Morada in the municipality of Mocorito, Sinaloa, and with sales of 32 million albums, the band is one of the most recognized and prominent acts of regional Mexican music, due to their long history and successes. The band is known for their political and romantic corridos, some of which have faced censorship. The band is the only Mexican group to win 7 Grammy Awards and 13 Latin Grammys. In addition, the band has made 40 films alongside the Almada brothers among other well-known Mexican actors.",
+   "en": {
+    "kicker": "norteño band · San Jose, California",
+    "who": "Los Tigres del Norte are a mexican norteño band based in San Jose, California. They are known for their political and romantic corridos, some of which have faced censorship. Originally founded in Rosa Morada in Sinaloa, they are one of the most recognized and prominent acts of regional mexican music.",
+    "facts": [
+     "The band is the only Mexican group to win 7 Grammy Awards and 13 Latin Grammys.",
+     "In addition, the band has made 40 films alongside the Almada brothers among other well-known Mexican actors."
+    ]
+   },
+   "de": {
+    "kicker": "norteño-band · San Jose, California",
+    "who": "Los Tigres del Norte sind eine mexikanische norteño-band mit sitz in San Jose, California. Die band ist für ihre politischen und romantischen corridos bekannt, von denen einige zensiert wurden. ursprünglich in Rosa Morada in Sinaloa gegründet, gehören sie zu den bekanntesten acts der regionalen mexikanischen musik.",
+    "facts": [
+     "die band ist die einzige mexikanische gruppe, die 7 grammy awards und 13 latin grammys gewonnen hat.",
+     "außerdem hat die band 40 filme zusammen mit den almada-brüdern und anderen bekannten mexikanischen schauspielern gedreht."
+    ]
+   },
+   "tr": {
+    "kicker": "norteño grubu · San Jose, California",
+    "who": "Los Tigres del Norte, San Jose, California merkezli bir meksika norteño grubudur. grup, bazıları sansüre uğramış siyasi ve romantik corridos'larıyla tanınır. Rosa Morada, Sinaloa'da kurulan grup, bölgesel meksika müziğinin en tanınmış ve öne çıkan topluluklarından biridir.",
+    "facts": [
+     "grup, 7 grammy ödülü ve 13 latin grammy kazanan tek meksikalı gruptur.",
+     "ayrıca grup, almada kardeşler ve diğer ünlü meksikalı oyuncularla birlikte 40 film çekti."
+    ]
+   }
+  },
+  {
+   "id": "5315e0ac-37ed-4d29-836d-350656c87028",
+   "slug": "hawthorne-heights-20th-anniversary-of-if-only-yo-6539ab5b",
+   "title": "Hawthorne Heights - 20th anniversary of If Only You Were Lonely",
+   "name": "Hawthorne Heights",
+   "source_url": "https://en.wikipedia.org/wiki/Hawthorne_Heights",
+   "extract": "Hawthorne Heights is an American rock band formed in Dayton, Ohio, in 2001. Originally called A Day in the Life, their lineup consists of JT Woodruff, Matt Ridenour and Mark McMillon.",
+   "en": {
+    "kicker": "american rock band · Dayton, Ohio, 2001",
+    "who": "Hawthorne Heights is an American rock band formed in Dayton, Ohio. Originally called A Day in the Life, the band's lineup consists of JT Woodruff, Matt Ridenour and Mark McMillon.",
+    "facts": [
+     "Hawthorne Heights is an American rock band formed in Dayton, Ohio, in 2001.",
+     "Originally called A Day in the Life, their lineup consists of JT Woodruff, Matt Ridenour and Mark McMillon."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · Dayton, Ohio, 2001",
+    "who": "Hawthorne Heights ist eine amerikanische rockband, die in Dayton, Ohio, gegründet wurde. ursprünglich unter dem namen A Day in the Life, besteht ihre besetzung aus JT Woodruff, Matt Ridenour und Mark McMillon.",
+    "facts": [
+     "Hawthorne Heights ist eine amerikanische rockband, die 2001 in Dayton, Ohio, gegründet wurde.",
+     "ursprünglich unter dem namen A Day in the Life, besteht ihre besetzung aus JT Woodruff, Matt Ridenour und Mark McMillon."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · Dayton, Ohio, 2001",
+    "who": "Hawthorne Heights, Dayton, Ohio'da kurulan bir amerikalı rock grubudur. başlangıçta A Day in the Life adıyla anılan grubun kadrosu JT Woodruff, Matt Ridenour ve Mark McMillon'dan oluşur.",
+    "facts": [
+     "Hawthorne Heights, 2001 yılında Dayton, Ohio'da kurulan bir amerikalı rock grubudur.",
+     "başlangıçta A Day in the Life adıyla anılan grubun kadrosu JT Woodruff, Matt Ridenour ve Mark McMillon'dan oluşur."
+    ]
+   }
+  }
+ ]
+}

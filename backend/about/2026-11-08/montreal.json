@@ -1,0 +1,102 @@
+{
+  "city": "montreal",
+  "day": "2026-11-08",
+  "nights": [
+    {
+      "id": "b6e3efd7-5eeb-497f-9faf-1e118aa8a6a8",
+      "slug": "sam-shackleton-15e0b04f",
+      "title": "Sam Shackleton",
+      "name": "Sam Shackleton",
+      "source_url": "https://en.wikipedia.org/wiki/Sam_Shackleton",
+      "extract": "Sam Shackleton, also known as Sorley the Bard, is a Scottish folk musician, singer-songwriter, and clawhammer banjoist from Stirling. Based in Edinburgh, he records traditional trans-Atlantic folk music and original tracks.",
+      "en": {
+        "kicker": "scottish folk musician · stirling",
+        "who": "Sam Shackleton, also known as Sorley the Bard, is a Scottish folk musician, singer-songwriter, and clawhammer banjoist from Stirling. Based in Edinburgh, he records traditional trans-Atlantic folk music and original tracks.",
+        "facts": [
+          "Sam Shackleton, also known as Sorley the Bard, is a Scottish folk musician, singer-songwriter, and clawhammer banjoist from Stirling.",
+          "Based in Edinburgh, he records traditional trans-Atlantic folk music and original tracks."
+        ]
+      },
+      "de": {
+        "kicker": "schottischer folk-musiker · stirling",
+        "who": "sam shackleton, auch bekannt als Sorley the Bard, ist ein schottischer folk-musiker, singer-songwriter und clawhammer-banjospieler aus Stirling. er lebt in Edinburgh und nimmt traditionelle transatlantische folkmusik sowie eigene stücke auf.",
+        "facts": [
+          "sam shackleton ist ein schottischer folk-musiker, singer-songwriter und clawhammer-banjospieler aus Stirling.",
+          "er lebt in Edinburgh und nimmt traditionelle transatlantische folkmusik sowie eigene stücke auf."
+        ]
+      },
+      "tr": {
+        "kicker": "iskoç folk müzisyeni · stirling",
+        "who": "sam shackleton, Sorley the Bard olarak da bilinir; Stirling'li bir iskoç folk müzisyeni, şarkı yazarı ve clawhammer banjocusudur. Edinburgh'da yaşar ve geleneksel trans-atlantik folk müziği ile özgün parçalar kaydeder.",
+        "facts": [
+          "sam shackleton, Stirling'den bir iskoç folk müzisyeni, şarkı yazarı ve clawhammer banjocusudur.",
+          "Edinburgh'da yaşar ve geleneksel trans-atlantik folk müziği ile özgün parçalar kaydeder."
+        ]
+      }
+    },
+    {
+      "id": "055ea30b-d59d-4aef-9666-5fbe1b6f5349",
+      "slug": "julia-jacklin-north-america-tour-2026-e81cc33f",
+      "title": "Julia Jacklin - North America Tour 2026",
+      "name": "Julia Jacklin",
+      "source_url": "https://en.wikipedia.org/wiki/Julia_Jacklin",
+      "extract": "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales. Jacklin's musical style has been described as indie pop, indie folk, and alternative country. She has released four studio albums, Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) and The Gem (2026). Jacklin has also performed with the band Phantastic Ferniture, with whom she released the debut single \"Fuckin 'n' Rollin\" and a self-titled album in 2018, followed by subsequent singles.",
+      "en": {
+        "kicker": "australian singer-songwriter · new south wales",
+        "who": "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales. Her musical style has been described as indie pop, indie folk, and alternative country. She has released four studio albums, including Crushing (2019) and The Gem (2026).",
+        "facts": [
+          "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales.",
+          "Jacklin's musical style has been described as indie pop, indie folk, and alternative country."
+        ]
+      },
+      "de": {
+        "kicker": "australische singer-songwriterin · new south wales",
+        "who": "julia jacklin ist eine australische singer-songwriterin aus den Blue Mountains in New South Wales. ihr musikalischer stil wird als indie-pop, indie-folk und alternative country beschrieben. sie hat vier studioalben veröffentlicht, darunter Crushing (2019) und The Gem (2026).",
+        "facts": [
+          "julia jacklin ist eine australische singer-songwriterin aus der region Blue Mountains in New South Wales.",
+          "ihr musikalischer stil wird als indie-pop, indie-folk und alternative country beschrieben."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı şarkı yazarı · new south wales",
+        "who": "julia jacklin, New South Wales'in Blue Mountains bölgesinden bir avustralyalı şarkı yazarıdır. müzik tarzı indie pop, indie folk ve alternatif country olarak tanımlanmıştır. Crushing (2019) ve The Gem (2026) dahil dört stüdyo albümü yayımlamıştır.",
+        "facts": [
+          "julia jacklin, New South Wales'in Blue Mountains bölgesinden bir avustralyalı şarkı yazarıdır.",
+          "müzik tarzı indie pop, indie folk ve alternatif country olarak tanımlanmıştır."
+        ]
+      }
+    },
+    {
+      "id": "aee1a337-5fc6-421a-a1f1-0260769197da",
+      "slug": "protest-the-hero-100d6bfb",
+      "title": "PROTEST THE HERO",
+      "name": "Protest the Hero",
+      "source_url": "https://en.wikipedia.org/wiki/Protest_the_Hero",
+      "extract": "Protest the Hero is a Canadian progressive metal band formed in Whitby, Ontario, in 1999. Originally named Happy Go Lucky, the band changed their name to Protest the Hero and released their debut EP, Search for the Truth, in 2002. In 2005, the band released their first album Kezia on Canadian indie label Underground Operations.",
+      "en": {
+        "kicker": "canadian progressive metal band · whitby, 1999",
+        "who": "Protest the Hero is a Canadian progressive metal band formed in Whitby, Ontario, in 1999. Originally named Happy Go Lucky, the band changed its name to Protest the Hero and released its debut EP, Search for the Truth, in 2002.",
+        "facts": [
+          "Protest the Hero is a Canadian progressive metal band formed in Whitby, Ontario, in 1999.",
+          "In 2005, the band released their first album Kezia on Canadian indie label Underground Operations."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische progressive-metal-band · whitby, 1999",
+        "who": "protest the hero ist eine kanadische progressive-metal-band, die 1999 in Whitby, Ontario, gegründet wurde. ursprünglich hieß die band Happy Go Lucky, bevor sie sich in Protest the Hero umbenannte. ihre debüt-ep Search for the Truth erschien 2002.",
+        "facts": [
+          "protest the hero ist eine kanadische progressive-metal-band, die 1999 in Whitby, Ontario, gegründet wurde.",
+          "2005 veröffentlichte die band ihr erstes album Kezia beim kanadischen indie-label Underground Operations."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı progressive metal grubu · whitby, 1999",
+        "who": "protest the hero, 1999'da Ontario'nun Whitby kentinde kurulmuş kanadalı bir progressive metal grubudur. grup başlangıçta Happy Go Lucky adını taşıyordu ve adını Protest the Hero olarak değiştirdi. debut ep'si Search for the Truth 2002'de yayımlandı.",
+        "facts": [
+          "protest the hero, 1999'da Ontario'nun Whitby kentinde kurulmuş kanadalı bir progressive metal grubudur.",
+          "2005'te grup, kanadalı bağımsız plak şirketi Underground Operations ile ilk albümü Kezia'yı yayımladı."
+        ]
+      }
+    }
+  ]
+}

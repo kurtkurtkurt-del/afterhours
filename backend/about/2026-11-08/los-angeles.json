@@ -1,0 +1,198 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "9d079f91-f6b1-4ae9-a520-4ad14010f48d",
+   "slug": "foy-vance-06312c76",
+   "title": "Foy Vance",
+   "name": "Foy Vance",
+   "source_url": "https://en.wikipedia.org/wiki/Foy_Vance",
+   "extract": "Foy Best Vance is a Northern Irish musician and singer-songwriter, signed to Ed Sheeran's Gingerbread Man record label. Vance has toured as a support act to Sheeran and his music has been featured on numerous TV shows.",
+   "en": {
+    "kicker": "northern irish singer-songwriter · northern ireland",
+    "who": "Foy Best Vance is a Northern Irish musician and singer-songwriter. He is signed to Ed Sheeran's Gingerbread Man record label, and he has toured as a support act to Sheeran.",
+    "facts": [
+     "Foy Best Vance is a Northern Irish musician and singer-songwriter, signed to Ed Sheeran's Gingerbread Man record label.",
+     "Vance has toured as a support act to Sheeran and his music has been featured on numerous TV shows."
+    ]
+   },
+   "de": {
+    "kicker": "nordirischer singer-songwriter · nordirland",
+    "who": "Foy Best Vance ist ein nordirischer musiker und singer-songwriter. Er steht beim label Gingerbread Man von Ed Sheeran unter vertrag und ist als vorgruppe mit Sheeran getourt.",
+    "facts": [
+     "Foy Best Vance ist ein nordirischer musiker und singer-songwriter, der beim label Gingerbread Man von Ed Sheeran unter vertrag steht.",
+     "Vance ist als vorgruppe von Sheeran getourt, und seine musik war in zahlreichen TV-shows zu hören."
+    ]
+   },
+   "tr": {
+    "kicker": "kuzey irlandalı şarkıcı-söz yazarı · kuzey irlanda",
+    "who": "Foy Best Vance kuzey irlandalı bir müzisyen ve şarkıcı-söz yazarıdır. Ed Sheeran'ın Gingerbread Man plak şirketiyle sözleşmelidir ve Sheeran'a destek sanatçısı olarak turneye çıkmıştır.",
+    "facts": [
+     "Foy Best Vance, Ed Sheeran'ın Gingerbread Man plak şirketiyle sözleşmeli kuzey irlandalı bir müzisyen ve şarkıcı-söz yazarıdır.",
+     "Vance, Sheeran'a destek sanatçısı olarak turneye çıkmış ve müziği çok sayıda TV programında yer almıştır."
+    ]
+   }
+  },
+  {
+   "id": "e0d729a8-2761-4575-8459-37837edab9c1",
+   "slug": "stephen-day-abc6686d",
+   "title": "Stephen Day",
+   "name": "Stephen Day",
+   "source_url": "https://en.wikipedia.org/wiki/Stephen_Day_(singer)",
+   "extract": "Stephen Day is an American singer-songwriter based in Nashville, Tennessee. Day released his debut extended play Undergrad Romance and The Moses In Me in April 2016 during his sophomore year of college. Day has released four full-length studio albums, Guess I'm Grown Now — and its acoustic version, The Shapes I'm In, Gold Mine, and Stephen Day. \nDay has been signed to Riser House Records, based in Nashville, since October 2024.",
+   "en": {
+    "kicker": "american singer-songwriter · nashville, tennessee",
+    "who": "Stephen Day is an American singer-songwriter based in Nashville, Tennessee. He has released four full-length studio albums, including an acoustic version of Guess I'm Grown Now.",
+    "facts": [
+     "Stephen Day is an American singer-songwriter based in Nashville, Tennessee.",
+     "Day has been signed to Riser House Records, based in Nashville, since October 2024."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · nashville, tennessee",
+    "who": "Stephen Day ist ein amerikanischer singer-songwriter aus Nashville, Tennessee. Er hat vier vollwertige studioalben veröffentlicht, darunter eine akustische version von Guess I'm Grown Now.",
+    "facts": [
+     "Stephen Day ist ein amerikanischer singer-songwriter mit basis in Nashville, Tennessee.",
+     "Day steht seit oktober 2024 bei Riser House Records unter vertrag, einem label aus Nashville."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · nashville, tennessee",
+    "who": "Stephen Day, Nashville, Tennessee merkezli amerikalı bir şarkıcı-söz yazarıdır. Guess I'm Grown Now albümünün akustik versiyonu dahil dört tam uzunluklu stüdyo albümü yayımlamıştır.",
+    "facts": [
+     "Stephen Day, Nashville, Tennessee merkezli amerikalı bir şarkıcı-söz yazarıdır.",
+     "Day, ekim 2024'ten beri Nashville merkezli Riser House Records ile sözleşmelidir."
+    ]
+   }
+  },
+  {
+   "id": "39b52591-491a-42a5-92b2-0b0dbfc36161",
+   "slug": "russian-circles-741f89b5",
+   "title": "Russian Circles",
+   "name": "Russian Circles",
+   "source_url": "https://en.wikipedia.org/wiki/Russian_Circles",
+   "extract": "Russian Circles is an American instrumental post-metal band based in Chicago, Illinois. The band was originally formed by childhood friends Mike Sullivan and Dave Turncrantz after their previous musical projects dissolved. After parting ways with their original bass player Colin DeKuiper in 2007, the trio was rounded out by Brian Cook. The band has gained widespread recognition based on a series of critically acclaimed albums and extensive international touring. Their name is taken from a drill exercise used in ice hockey, a sport Sullivan and Turncrantz grew up playing in their original hometown of St. Louis.",
+   "en": {
+    "kicker": "american post-metal band · chicago, illinois",
+    "who": "Russian Circles is an American instrumental post-metal band based in Chicago, Illinois. The band was originally formed by childhood friends Mike Sullivan and Dave Turncrantz, and it is now a trio with Brian Cook.",
+    "facts": [
+     "Russian Circles is an American instrumental post-metal band based in Chicago, Illinois.",
+     "The band has gained widespread recognition based on a series of critically acclaimed albums and extensive international touring."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische post-metal-band · chicago, illinois",
+    "who": "Russian Circles ist eine amerikanische instrumentale post-metal-band mit sitz in Chicago, Illinois. Die band wurde von den kindheitsfreunden Mike Sullivan und Dave Turncrantz gegründet und besteht heute als trio mit Brian Cook.",
+    "facts": [
+     "Russian Circles ist eine amerikanische instrumentale post-metal-band mit sitz in Chicago, Illinois.",
+     "Die band hat breite anerkennung gewonnen, aufgrund einer reihe von hochgelobten alben und ausgedehnter internationaler tourneen."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı post-metal grubu · chicago, illinois",
+    "who": "Russian Circles, Chicago, Illinois merkezli amerikalı bir enstrümantal post-metal grubudur. Grup, çocukluk arkadaşları Mike Sullivan ve Dave Turncrantz tarafından kuruldu ve bugün Brian Cook ile üçlü olarak çalmaktadır.",
+    "facts": [
+     "Russian Circles, Chicago, Illinois merkezli amerikalı bir enstrümantal post-metal grubudur.",
+     "Grup, eleştirmenlerce beğenilen bir dizi albüm ve yoğun uluslararası turneler sayesinde geniş bir tanınırlık kazanmıştır."
+    ]
+   }
+  },
+  {
+   "id": "b7c40793-6c9e-4643-a7ba-65fc67688d0d",
+   "slug": "turnover-down-on-earth-tour-sold-out-66dbb7b2",
+   "title": "Turnover - Down On Earth Tour (Sold Out)",
+   "name": "Turnover",
+   "source_url": "https://en.wikipedia.org/wiki/Turnover_(band)",
+   "extract": "Turnover is an American rock band from Virginia Beach, Virginia. The band were formed in 2009 by brothers Austin and Casey (drums) Getz alongside longtime friend Danny Dempsey (bass); the three have gone on to oversee every iteration of the band to date. The three are currently joined in the band by lead guitarist Nick Rayfield, who began touring with the band in 2017 and was later officially inducted as a full-time member in 2022. Turnover have released six studio albums and four EPs across their career. Their most recent album, Down on Earth, was released on May 29th 2026.",
+   "en": {
+    "kicker": "american rock band · virginia beach, 2009",
+    "who": "Turnover is an American rock band from Virginia Beach, Virginia. The band was formed in 2009 by brothers Austin and Casey Getz alongside Danny Dempsey, and lead guitarist Nick Rayfield has been a full-time member since 2022.",
+    "facts": [
+     "Turnover is an American rock band from Virginia Beach, Virginia.",
+     "Turnover have released six studio albums and four EPs across their career."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · virginia beach, 2009",
+    "who": "Turnover ist eine amerikanische rockband aus Virginia Beach, Virginia. Die band wurde 2009 von den brüdern Austin und Casey Getz zusammen mit Danny Dempsey gegründet, und leadgitarrist Nick Rayfield ist seit 2022 vollwertiges mitglied.",
+    "facts": [
+     "Turnover ist eine amerikanische rockband aus Virginia Beach, Virginia.",
+     "Turnover haben im laufe ihrer karriere sechs studioalben und vier EPs veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · virginia beach, 2009",
+    "who": "Turnover, Virginia Beach, Virginia kentinden bir amerikalı rock grubudur. Grup 2009'da kardeşler Austin ve Casey Getz ile Danny Dempsey tarafından kuruldu; lead gitarist Nick Rayfield ise 2022'den beri tam zamanlı üye.",
+    "facts": [
+     "Turnover, Virginia Beach, Virginia kentinden bir amerikalı rock grubudur.",
+     "Turnover kariyeri boyunca altı stüdyo albümü ve dört EP yayımlamıştır."
+    ]
+   }
+  },
+  {
+   "id": "0aff2d7c-475b-4504-9162-ec13326d099d",
+   "slug": "ateez-golden-hour-part-6-official-album-release-dde4e669",
+   "title": "ATEEZ - GOLDEN HOUR : Part.6 OFFICIAL ALBUM RELEASE PARTY",
+   "name": "Ateez",
+   "source_url": "https://en.wikipedia.org/wiki/Ateez",
+   "extract": "Ateez is a South Korean boy band formed by KQ Entertainment. The group consists of eight members: Hongjoong, Seonghwa, Yunho, Yeosang, San, Mingi, Wooyoung and Jongho. They debuted on October 24, 2018, with the extended play (EP) Treasure EP.1: All to Zero.",
+   "en": {
+    "kicker": "south korean boy band · 2018",
+    "who": "Ateez is a South Korean boy band formed by KQ Entertainment. The group consists of eight members: Hongjoong, Seonghwa, Yunho, Yeosang, San, Mingi, Wooyoung and Jongho.",
+    "facts": [
+     "Ateez is a South Korean boy band formed by KQ Entertainment.",
+     "They debuted on October 24, 2018, with the extended play (EP) Treasure EP.1: All to Zero."
+    ]
+   },
+   "de": {
+    "kicker": "südkoreanische boyband · 2018",
+    "who": "Ateez ist eine südkoreanische boyband, die von KQ Entertainment gegründet wurde. Die gruppe besteht aus acht mitgliedern: Hongjoong, Seonghwa, Yunho, Yeosang, San, Mingi, Wooyoung und Jongho.",
+    "facts": [
+     "Ateez ist eine südkoreanische boyband, die von KQ Entertainment gegründet wurde.",
+     "Sie debütierten am 24. oktober 2018 mit der EP Treasure EP.1: All to Zero."
+    ]
+   },
+   "tr": {
+    "kicker": "güney koreli erkek grubu · 2018",
+    "who": "Ateez, KQ Entertainment tarafından kurulmuş güney koreli bir erkek grubudur. Grup, Hongjoong, Seonghwa, Yunho, Yeosang, San, Mingi, Wooyoung ve Jongho adlı sekiz üyeden oluşur.",
+    "facts": [
+     "Ateez, KQ Entertainment tarafından kurulmuş güney koreli bir erkek grubudur.",
+     "Grup, 24 ekim 2018'de Treasure EP.1: All to Zero adlı EP ile çıkış yaptı."
+    ]
+   }
+  },
+  {
+   "id": "e15fa80f-9379-499f-b5b8-505d4616b3fb",
+   "slug": "denise-julia-fe0e460d",
+   "title": "Denise Julia",
+   "name": "Denise Julia",
+   "source_url": "https://en.wikipedia.org/wiki/Denise_Julia",
+   "extract": "Julia Denise Lee, better known by her stage name Denise Julia, is a Filipino singer-songwriter, record producer, and model. She signed with Sony Music Philippines. In 2026, she moved to Empire Distribution, a record label in the United States. Numerous media outlets have recognized Julia as a leading figure in the new wave of Filipino R&B.",
+   "en": {
+    "kicker": "filipino singer-songwriter · philippines",
+    "who": "Julia Denise Lee, better known by her stage name Denise Julia, is a Filipino singer-songwriter, record producer, and model. She signed with Sony Music Philippines, and numerous media outlets have recognized her as a leading figure in the new wave of Filipino R&B.",
+    "facts": [
+     "Julia Denise Lee, better known by her stage name Denise Julia, is a Filipino singer-songwriter, record producer, and model.",
+     "In 2026, she moved to Empire Distribution, a record label in the United States."
+    ]
+   },
+   "de": {
+    "kicker": "filipinische singer-songwriterin · philippinen",
+    "who": "Julia Denise Lee, besser bekannt unter ihrem künstlernamen Denise Julia, ist eine filipinische singer-songwriterin, musikproduzentin und model. Sie hat bei Sony Music Philippines unterschrieben, und zahlreiche medien zählen sie zu den führenden köpfen der neuen welle des filipinischen R&B.",
+    "facts": [
+     "Julia Denise Lee, besser bekannt unter ihrem künstlernamen Denise Julia, ist eine filipinische singer-songwriterin, musikproduzentin und model.",
+     "Im jahr 2026 wechselte sie zu Empire Distribution, einem plattenlabel in den vereinigten staaten."
+    ]
+   },
+   "tr": {
+    "kicker": "filipinli şarkıcı-söz yazarı · filipinler",
+    "who": "Julia Denise Lee, sahne adıyla Denise Julia, filipinli bir şarkıcı-söz yazarı, plak yapımcısı ve mankendir. Sony Music Philippines ile sözleşme imzalamıştır ve çok sayıda medya kuruluşu onu yeni filipin R&B dalgasının önde gelen isimlerinden biri olarak kabul etmiştir.",
+    "facts": [
+     "Julia Denise Lee, sahne adıyla Denise Julia, filipinli bir şarkıcı-söz yazarı, plak yapımcısı ve mankendir.",
+     "2026'da Amerika Birleşik Devletleri'nde bir plak şirketi olan Empire Distribution'a geçmiştir."
+    ]
+   }
+  }
+ ]
+}

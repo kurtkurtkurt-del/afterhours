@@ -1,0 +1,38 @@
+{
+ "city": "seattle",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "d559c9e0-2ad9-40f8-8140-0c850ceda8b7",
+   "slug": "inna-9aeb73f2",
+   "title": "Inna",
+   "name": "Inna",
+   "source_url": "https://en.wikipedia.org/wiki/Inna",
+   "extract": "Elena Alexandra Apostoleanu, known professionally as Inna, is a Romanian singer and songwriter. Born in Mangalia and raised in Neptun, she studied political science at Ovidius University before meeting the Romanian trio Play & Win and pursuing a music career. She adopted the stage name \"Alessandra\" and a pop-rock style in 2008; later that year, she changed her stage name to \"Inna\" and began releasing EDM, house and popcorn music. \"Hot\" (2008), her debut single, was a commercial success worldwide and topped the Romanian and Billboard's Hot Dance Airplay chart, among others. Her debut studio album of the same name followed in August 2009 and was certified Gold and Platinum.",
+   "en": {
+    "kicker": "romanian singer and songwriter · Mangalia",
+    "who": "Elena Alexandra Apostoleanu, known professionally as Inna, is a romanian singer and songwriter. born in Mangalia and raised in Neptun, she studied political science at Ovidius University before pursuing a music career. In 2008 she changed her stage name to Inna and began releasing edm, house and popcorn music.",
+    "facts": [
+     "\"Hot\" (2008), her debut single, was a commercial success worldwide and topped the Romanian and Billboard's Hot Dance Airplay chart, among others.",
+     "her debut studio album of the same name followed in August 2009 and was certified Gold and Platinum."
+    ]
+   },
+   "de": {
+    "kicker": "rumänische sängerin und songwriterin · Mangalia",
+    "who": "Elena Alexandra Apostoleanu, bekannt als Inna, ist eine rumänische sängerin und songwriterin. geboren in Mangalia und aufgewachsen in Neptun, studierte sie politikwissenschaft an der Ovidius-Universität, bevor sie eine musikkarriere begann. 2008 änderte sie ihren künstlernamen in Inna und begann, edm, house und popcorn-musik zu veröffentlichen.",
+    "facts": [
+     "\"Hot\" (2008), ihre debütsingle, war weltweit ein kommerzieller erfolg und stand unter anderem an der spitze der rumänischen und der Billboard Hot Dance Airplay-charts.",
+     "ihr gleichnamiges studioalbum erschien im august 2009 und wurde mit Gold und Platin zertifiziert."
+    ]
+   },
+   "tr": {
+    "kicker": "romanyalı şarkıcı ve söz yazarı · Mangalia",
+    "who": "Elena Alexandra Apostoleanu, sahne adıyla Inna, romanyalı bir şarkıcı ve söz yazarıdır. Mangalia'da doğup Neptun'da büyüdü; müzik kariyerine başlamadan önce Ovidius Üniversitesi'nde siyaset bilimi okudu. 2008'de sahne adını Inna olarak değiştirdi ve edm, house ve popcorn müzik yayımlamaya başladı.",
+    "facts": [
+     "\"Hot\" (2008), ilk single'ı, dünya çapında ticari bir başarı oldu ve diğerleri arasında Romanya ve Billboard Hot Dance Airplay listelerinin zirvesine çıktı.",
+     "aynı adı taşıyan ilk stüdyo albümü ağustos 2009'da yayımlandı ve Gold ve Platin sertifikası aldı."
+    ]
+   }
+  }
+ ]
+}

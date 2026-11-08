@@ -3660,6 +3660,186 @@
    "slug": "paint-and-sip-in-wien-67776ef5",
    "city": "wien",
    "why": "no page"
+  },
+  {
+   "id": "aaee7726-fc25-4e20-a601-298e350d7b8f",
+   "slug": "gutalax-shit-on-the-dancefloor-mini-tour-2026-3a5fbc0f",
+   "city": "berlin",
+   "why": "extract too thin: one sentence, no second fact"
+  },
+  {
+   "id": "867068ec-4348-4775-b8b4-f20181fcdf29",
+   "slug": "eagles-of-death-metal-celebrating-20-years-of-de-6ccfa454",
+   "city": "birmingham",
+   "why": "extract too thin; founder sentence ambiguous (Hughes and Homme)"
+  },
+  {
+   "id": "2fc27c6e-ca80-4402-bd94-d80406e1dfb8",
+   "slug": "yung-gravy-the-joyrider-tour-e5c849f9",
+   "city": "detroit",
+   "why": "extract too thin: one sentence (American rapper)"
+  },
+  {
+   "id": "8c268766-f893-4ca7-954f-893476b11b93",
+   "slug": "swapmeet-571e8b75",
+   "city": "dublin",
+   "why": "extract too thin: origin and lineup only"
+  },
+  {
+   "id": "b39fde8d-fdde-4b38-998e-a3613a587652",
+   "slug": "de-staat-44f10284",
+   "city": "glasgow",
+   "why": "extract too thin: two sentences, both are the facts"
+  },
+  {
+   "id": "d1e9d0bb-864c-4f7d-9741-041967cb8174",
+   "slug": "gokhan-k-rdar-kurtlar-vadisi-soundtrack-symphony-9d2ef508",
+   "city": "istanbul",
+   "why": "extract too thin: one sentence, no soundtrack symphony"
+  },
+  {
+   "id": "6eef435b-a703-415b-a1d5-bed75e974deb",
+   "slug": "ryan-beatty-9a7c4431",
+   "city": "london",
+   "why": "extract too thin: nationality and residence only"
+  },
+  {
+   "id": "9d3e6f64-d60d-4a19-bcf5-0e80507606a3",
+   "slug": "skye-newman-7e0894dd",
+   "city": "manchester",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "972aceae-1144-41f9-9f13-b90c7477326d",
+   "slug": "yung-gravy-the-joyrider-tour-cd242cf0",
+   "city": "philadelphia",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "a1662023-1a2a-426e-94da-3c489ad4ddef",
+   "slug": "nimino-ages-21-6ba446cd",
+   "city": "seattle",
+   "why": "extract too thin: two sentences, both are the facts"
+  },
+  {
+   "id": "ab9723be-b5ad-4fba-a29e-a977e3da17af",
+   "slug": "whitmer-thomas-189f9b65",
+   "city": "vancouver",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "9c4be650-0842-4c21-adae-32fbfcd819da",
+   "slug": "bedouine-78743987",
+   "city": "washington",
+   "why": "extract too thin: nationality and places lived only"
+  },
+  {
+   "id": "f9ae0b19-12ee-4014-8050-7a7ddebe8b1e",
+   "slug": "conway-the-machine-bc89ab3c",
+   "city": "amsterdam",
+   "why": "check: tr fact 1 drops Mach-Hommy and misrenders paternal half-brother"
+  },
+  {
+   "id": "690f181f-c2fc-4ed1-bf90-faa8a16187a5",
+   "slug": "the-red-clay-strays-9b12a986",
+   "city": "atlanta",
+   "why": "check: en/de/tr facts differ"
+  },
+  {
+   "id": "c5523ee1-2d58-4dae-819e-268b35ef0053",
+   "slug": "neschastny-sluchai-705a8639",
+   "city": "berlin",
+   "why": "check: de not native: common nouns lowercase"
+  },
+  {
+   "id": "3f044ca5-f89c-448d-b7d6-8af4884c99f3",
+   "slug": "songer-c4ef7062",
+   "city": "birmingham",
+   "why": "check: tr who adds production claim not in extract; page identity unconfirmed"
+  },
+  {
+   "id": "787d24f6-0a1b-44cd-80b6-aa64a6934d2f",
+   "slug": "alyssa-grace-3fdeb70d",
+   "city": "chicago",
+   "why": "check: en/de/tr facts differ; tr not native"
+  },
+  {
+   "id": "d82c46c0-a145-44d7-a321-6640be5ad49e",
+   "slug": "rainao-317bd735",
+   "city": "ciudad-de-mexico",
+   "why": "check: tr fact 2 duplicated müzik, not native"
+  },
+  {
+   "id": "ca11c24c-a962-4cab-90e6-719dba3bdb81",
+   "slug": "she-wants-revenge-europe-2027-78bb928b",
+   "city": "koln",
+   "why": "check: tr uses German word tonträger"
+  },
+  {
+   "id": "8a6dce9f-60cc-4d2a-9bdb-f4179ed6badf",
+   "slug": "daniel-tosh-my-first-farewell-tour-cd932fde",
+   "city": "las-vegas",
+   "why": "check: kicker ties 2001 to Los Angeles, not in extract"
+  },
+  {
+   "id": "cf9d3405-dd0c-4c6d-8edd-e938688be78c",
+   "slug": "metallica-suite-reservation-6cd58c5d",
+   "city": "las-vegas",
+   "why": "check: tr fact 1 contradicts tr who; en fact 1 repeats who"
+  },
+  {
+   "id": "df4af68f-2288-44ee-93ac-2c8a304394e1",
+   "slug": "paul-heaton-ed5c6337",
+   "city": "london",
+   "why": "check: de fact 2 wrong article and gender"
+  },
+  {
+   "id": "8955a95e-ac00-4370-be75-7cf5d7db6588",
+   "slug": "mamas-gun-873413eb",
+   "city": "montreal",
+   "why": "check: de singular/plural mismatch"
+  },
+  {
+   "id": "d074fd95-3d93-4386-86c8-3a2c87541bac",
+   "slug": "lauren-alaina-08e98cf6",
+   "city": "nashville",
+   "why": "check: en fact 2 not in stored extract (cut at 700 chars)"
+  },
+  {
+   "id": "68e594b8-7453-4d08-86aa-4818bf6e7e57",
+   "slug": "down-with-webster-47ff46aa",
+   "city": "ottawa",
+   "why": "check: en fact 1 clause missing in de and tr"
+  },
+  {
+   "id": "2b60daae-e32e-40c6-b18b-b41a45aa4b7a",
+   "slug": "joe-russo-s-almost-dead-4d104168",
+   "city": "philadelphia",
+   "why": "check: tr who differs from en and de"
+  },
+  {
+   "id": "0e201025-e20b-4182-a004-80031471f79c",
+   "slug": "olafur-arnalds-11-12-257335de",
+   "city": "san-francisco",
+   "why": "check: tr not native; nationality repeated"
+  },
+  {
+   "id": "3cbea69c-6f67-4581-ab88-44dbf24f7973",
+   "slug": "bumpin-uglies-0fd6b14d",
+   "city": "toronto",
+   "why": "check: de kicker drops ska"
+  },
+  {
+   "id": "923ba3de-68d6-435d-ae5e-72184a0772eb",
+   "slug": "bumpin-uglies-orange-crush-tour-with-artikal-sou-f2169e72",
+   "city": "toronto",
+   "why": "check: de kicker drops ska"
+  },
+  {
+   "id": "efe49a78-89eb-4455-872b-b5e0604d0012",
+   "slug": "rhye-3f1bc178",
+   "city": "vancouver",
+   "why": "check: kicker year 2013 not in extract"
   }
  ]
 }

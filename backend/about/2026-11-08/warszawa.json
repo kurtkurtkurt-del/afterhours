@@ -1,0 +1,70 @@
+{
+  "city": "warszawa",
+  "day": "2026-11-08",
+  "nights": [
+    {
+      "id": "51d4c158-7713-473e-98f1-06545ab67e5b",
+      "slug": "jethro-tull-the-curiosity-tour-e80c364f",
+      "title": "Jethro Tull - The Curiosity Tour",
+      "name": "Jethro Tull",
+      "source_url": "https://en.wikipedia.org/wiki/Jethro_Tull_(band)",
+      "extract": "Jethro Tull are a British rock band formed in Blackpool, Lancashire, in 1967. Emerging from the 1960s British blues scene, the band soon developed a distinctive progressive rock sound, blending hard rock, English folk music and classical music, while undergoing numerous stylistic shifts throughout its history. The band was founded and has been continuously led by Ian Anderson, its principal composer, lead vocalist, and multi-instrumentalist best known for his flute playing. The group has featured a succession of musicians throughout its history, including significant contributors such as long-time guitarist Martin Barre, bassists Glenn Cornick, Jeffrey Hammond, John Glascock, Dave Pegg and J",
+      "en": {
+        "kicker": "british rock band · blackpool, 1967",
+        "who": "Jethro Tull are a British rock band formed in Blackpool, Lancashire, in 1967. Emerging from the 1960s British blues scene, the band soon developed a distinctive progressive rock sound, blending hard rock, English folk music and classical music. The band was founded and has been continuously led by Ian Anderson, its principal composer, lead vocalist, and multi-instrumentalist best known for his flute playing.",
+        "facts": [
+          "Jethro Tull are a British rock band formed in Blackpool, Lancashire, in 1967.",
+          "The band was founded and has been continuously led by Ian Anderson, its principal composer, lead vocalist, and multi-instrumentalist best known for his flute playing."
+        ]
+      },
+      "de": {
+        "kicker": "britische rockband · blackpool, 1967",
+        "who": "Jethro Tull sind eine britische rockband, die 1967 in Blackpool, Lancashire, gegründet wurde. Aus der britischen blues-szene der 1960er jahre entwickelte die band bald einen eigenen progressive-rock-klang, der hard rock, englische folkmusik und klassische musik verbindet. Gegründet wurde die band von Ian Anderson, ihrem hauptkomponisten, leadsänger und multiinstrumentalisten, der vor allem für sein flötenspiel bekannt ist, und er leitet sie seither ununterbrochen.",
+        "facts": [
+          "Jethro Tull sind eine britische rockband, die 1967 in Blackpool, Lancashire, gegründet wurde.",
+          "Die band wurde von Ian Anderson gegründet und wird seither ununterbrochen von ihm geleitet, er ist ihr hauptkomponist, leadsänger und multiinstrumentalist."
+        ]
+      },
+      "tr": {
+        "kicker": "britanya rock grubu · blackpool, 1967",
+        "who": "Jethro Tull, 1967 yılında Blackpool, Lancashire'da kurulmuş bir britanya rock grubudur. 1960'ların britanya blues sahnesinden çıkan grup, hard rock, ingiliz halk müziği ve klasik müziği harmanlayan kendine özgü bir progressive rock sesi geliştirdi. Grup, baş bestecisi, baş vokalisti ve flütüyle tanınan çok enstrümanlı müzisyen Ian Anderson tarafından kuruldu ve o, grubu kesintisiz olarak yönetti.",
+        "facts": [
+          "Jethro Tull, 1967 yılında Blackpool, Lancashire'da kurulmuş bir britanya rock grubudur.",
+          "Grup, Ian Anderson tarafından kuruldu ve onun liderliğinde kesintisiz sürdü; kendisi baş besteci, baş vokalist ve flütüyle tanınan çok enstrümanlı bir müzisyendir."
+        ]
+      }
+    },
+    {
+      "id": "160e56bd-ae3f-4298-8b1a-85009314fdc3",
+      "slug": "polyphia-be-not-afraid-world-tour-628b4c2f",
+      "title": "Polyphia: BE NOT AFRAID World Tour",
+      "name": "Polyphia",
+      "source_url": "https://en.wikipedia.org/wiki/Polyphia",
+      "extract": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music. Polyphia has released five studio albums, one live record, two EPs, and numerous singles.",
+      "en": {
+        "kicker": "american rock band · plano, texas, 2010",
+        "who": "Polyphia is an American rock band based in Plano, Texas, formed in 2010. The group consists of guitarists Tim Henson and Scott LePage, bassist Clay Gober, and drummer Clay Aeschliman. Rooted in a heavy metal sound in their early releases, the band's music evolved into a more progressive rock style in their later productions, combining elements of electronic and hip-hop music.",
+        "facts": [
+          "Polyphia is an American rock band based in Plano, Texas, formed in 2010.",
+          "Polyphia has released five studio albums, one live record, two EPs, and numerous singles."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · plano, texas, 2010",
+        "who": "Polyphia ist eine amerikanische rockband mit sitz in Plano, Texas, die 2010 gegründet wurde. Zur band gehören die gitarristen Tim Henson und Scott LePage, bassist Clay Gober und schlagzeuger Clay Aeschliman. Ihre frühen veröffentlichungen wurzeln im heavy metal, später wurde ihre musik zu einem stärker progressiven rockstil, der elemente aus elektronischer musik und hip-hop verbindet.",
+        "facts": [
+          "Polyphia ist eine amerikanische rockband mit sitz in Plano, Texas, die 2010 gegründet wurde.",
+          "Polyphia hat fünf studioalben, eine live-platte, zwei EPs und zahlreiche singles veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan rock grubu · plano, texas, 2010",
+        "who": "Polyphia, 2010 yılında kurulmuş, Plano, Texas merkezli bir amerikan rock grubudur. Grubun kadrosunda gitarist Tim Henson ve Scott LePage, basçı Clay Gober ve davulcu Clay Aeschliman yer alıyor. İlk yayımlarında heavy metal sesine yaslanan grubun müziği, sonraki yapımlarında elektronik ve hip-hop müziğin öğelerini harmanlayan daha progresif bir rock tarzına evrildi.",
+        "facts": [
+          "Polyphia, 2010 yılında kurulmuş, Plano, Texas merkezli bir amerikan rock grubudur.",
+          "Polyphia beş stüdyo albümü, bir canlı kayıt, iki EP ve çok sayıda single yayımladı."
+        ]
+      }
+    }
+  ]
+}

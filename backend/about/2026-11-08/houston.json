@@ -1,0 +1,102 @@
+{
+  "city": "houston",
+  "day": "2026-11-08",
+  "nights": [
+    {
+      "id": "2890a307-11c8-4818-994b-955a3476d8c5",
+      "slug": "chrissy-chlapecka-2f62d121",
+      "title": "Chrissy Chlapecka",
+      "name": "Chrissy Chlapecka",
+      "source_url": "https://en.wikipedia.org/wiki/Chrissy_Chlapecka",
+      "extract": "Christine Nicole Chlapecka is an American singer, TikTok personality, and left-wing activist. She is best known as a key figure in \"#BimboTok\", a TikTok subculture centered on reclaiming the bimbo stereotype and aesthetic in a queer, feminist, and leftist context.",
+      "en": {
+        "kicker": "american singer · TikTok personality",
+        "who": "Chlapecka is a singer and TikTok personality, and a left-wing activist. She is a key figure in #BimboTok, a TikTok subculture that reclaims the bimbo stereotype.",
+        "facts": [
+          "Christine Nicole Chlapecka is an American singer, TikTok personality, and left-wing activist.",
+          "She is best known as a key figure in \"#BimboTok\", a TikTok subculture centered on reclaiming the bimbo stereotype and aesthetic in a queer, feminist, and leftist context."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische sängerin · TikTok-persönlichkeit",
+        "who": "Chlapecka ist sängerin, TikTok-persönlichkeit und linke aktivistin. sie ist eine zentrale figur von #BimboTok, einer TikTok-subkultur, die das bimbo-stereotyp zurückerobern will.",
+        "facts": [
+          "Christine Nicole Chlapecka ist eine amerikanische sängerin, TikTok-persönlichkeit und linke aktivistin.",
+          "sie ist vor allem als zentrale figur von „#BimboTok“ bekannt, einer TikTok-subkultur, die das bimbo-stereotyp und seine ästhetik in einem queeren, feministischen und linken kontext zurückerobern will."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı · TikTok kişiliği",
+        "who": "Chlapecka bir şarkıcı, TikTok kişiliği ve sol görüşlü bir aktivisttir. #BimboTok adlı TikTok alt kültürünün öne çıkan isimlerinden biridir; bu alt kültür bimbo klişesini geri kazanmayı amaçlar.",
+        "facts": [
+          "Christine Nicole Chlapecka, amerikalı bir şarkıcı, TikTok kişiliği ve sol görüşlü bir aktivisttir.",
+          "queer, feminist ve solcu bir bağlamda bimbo klişesini ve estetiğini geri kazanmaya odaklanan bir TikTok alt kültürü olan \"#BimboTok\"un öne çıkan isimlerinden biridir."
+        ]
+      }
+    },
+    {
+      "id": "d28a56d9-3afd-402a-a330-a1cf81ed5011",
+      "slug": "jessie-reyez-a-little-vengeance-tour-e09d6254",
+      "title": "Jessie Reyez: A Little Vengeance Tour",
+      "name": "Jessie Reyez",
+      "source_url": "https://en.wikipedia.org/wiki/Jessie_Reyez",
+      "extract": "Jessica Reyez is a Canadian singer-songwriter. Her 2016 single, \"Figures\", peaked at number 58 on the Canadian Hot 100 and received triple platinum certification by Music Canada (MC) and platinum by the Recording Industry Association of America (RIAA). Her debut extended play (EP), Kiddo (2017), led her to win Breakthrough Artist from four nominations at the 2018 Juno Awards. Her second EP, Being Human in Public (2018), was released the following year, won R&B/Soul Recording of the Year at the 2019 Juno Awards, and was nominated for Best Urban Contemporary Album at the 2020 Grammy Awards.",
+      "en": {
+        "kicker": "canadian singer-songwriter · debut ep Kiddo, 2017",
+        "who": "Jessie Reyez is a Canadian singer-songwriter. Her 2016 single, \"Figures\", peaked at number 58 on the Canadian Hot 100 and received triple platinum certification by Music Canada.",
+        "facts": [
+          "Her debut extended play (EP), Kiddo (2017), led her to win Breakthrough Artist from four nominations at the 2018 Juno Awards.",
+          "Her second EP, Being Human in Public (2018), was released the following year, won R&B/Soul Recording of the Year at the 2019 Juno Awards, and was nominated for Best Urban Contemporary Album at the 2020 Grammy Awards."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische singer-songwriterin · debüt-ep Kiddo, 2017",
+        "who": "Jessie Reyez ist eine kanadische singer-songwriterin. ihre single „Figures“ aus dem jahr 2016 erreichte platz 58 der kanadischen Hot 100 und erhielt von Music Canada dreifachen platin-status.",
+        "facts": [
+          "ihre debüt-ep Kiddo (2017) verhalf ihr bei den Juno Awards 2018 nach vier nominierungen zum sieg als Breakthrough Artist.",
+          "ihre zweite ep Being Human in Public (2018) erschien im folgenden jahr, gewann bei den Juno Awards 2019 den preis für das R&B/Soul Recording of the Year und war bei den Grammy Awards 2020 in der kategorie Best Urban Contemporary Album nominiert."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı şarkıcı-söz yazarı · ilk ep Kiddo, 2017",
+        "who": "Jessie Reyez, kanadalı bir şarkıcı ve söz yazarıdır. 2016 yılında çıkardığı Figures adlı single, Kanada Hot 100 listesinde 58. sıraya yükseldi ve Music Canada tarafından üçlü platin sertifika aldı.",
+        "facts": [
+          "Kiddo (2017) adlı ilk ep'i, 2018 Juno Ödülleri'nde dört adaylıktan sonra Breakthrough Artist ödülünü kazanmasını sağladı.",
+          "İkinci ep'i Being Human in Public (2018) ertesi yıl yayımlandı, 2019 Juno Ödülleri'nde R&B/Soul Recording of the Year ödülünü kazandı ve 2020 Grammy Ödülleri'nde Best Urban Contemporary Album kategorisinde aday gösterildi."
+        ]
+      }
+    },
+    {
+      "id": "a99ee6ef-d5c9-4123-aab7-2bf839791d02",
+      "slug": "icon-for-hire-scripted-15-year-anniversary-tour-ead711c1",
+      "title": "Icon for Hire: Scripted 15 Year Anniversary Tour",
+      "name": "Icon for Hire",
+      "source_url": "https://en.wikipedia.org/wiki/Icon_for_Hire",
+      "extract": "Icon for Hire is an American rock band from Decatur, Illinois. Formed in 2007, the band's current lineup consists of singer Ariel Bloomer and lead guitarist Shawn Jump. They released two EPs independently before signing to Tooth & Nail Records, through which they released their first two albums: Scripted in 2011 and Icon for Hire on October 15, 2013. Their third album, You Can't Kill Us, was independently released on November 25, 2016. Their fourth album, Amorphous, was released on February 19, 2021, also independently. Their fifth independent studio album, The Reckoning, was released on September 30, 2022.",
+      "en": {
+        "kicker": "american rock band · Decatur, Illinois",
+        "who": "The band released two EPs independently before signing to Tooth & Nail Records. Its fifth independent studio album, The Reckoning, was released on September 30, 2022.",
+        "facts": [
+          "Icon for Hire is an American rock band from Decatur, Illinois.",
+          "Formed in 2007, the band's current lineup consists of singer Ariel Bloomer and lead guitarist Shawn Jump."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rock-band · Decatur, Illinois",
+        "who": "die band veröffentlichte zwei EPs in eigener regie, bevor sie bei Tooth & Nail Records unterschrieb. ihr fünftes unabhängiges studioalbum, The Reckoning, erschien am 30. september 2022.",
+        "facts": [
+          "Icon for Hire ist eine amerikanische rock-band aus Decatur, Illinois.",
+          "die band wurde 2007 gegründet, ihre aktuelle besetzung besteht aus sänger Ariel Bloomer und leadgitarrist Shawn Jump."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · Decatur, Illinois",
+        "who": "Grup, Tooth & Nail Records ile anlaşmadan önce iki ep'i kendi imkanlarıyla yayımladı. Beşinci bağımsız stüdyo albümü The Reckoning, 30 Eylül 2022'de çıktı.",
+        "facts": [
+          "Icon for Hire, Illinois eyaletinin Decatur kentinden çıkan amerikalı bir rock grubudur.",
+          "2007 yılında kurulan grubun mevcut kadrosu, vokalist Ariel Bloomer ve baş gitarist Shawn Jump'tan oluşuyor."
+        ]
+      }
+    }
+  ]
+}

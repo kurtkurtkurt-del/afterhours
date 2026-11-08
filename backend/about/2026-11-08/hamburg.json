@@ -1,0 +1,38 @@
+{
+ "city": "hamburg",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "7b075d7b-a7c8-4caa-977e-2622185692bf",
+   "slug": "dagny-europe-2027-a49f0118",
+   "title": "DAGNY - Europe 2027",
+   "name": "Dagny",
+   "source_url": "https://en.wikipedia.org/wiki/Dagny_(singer)",
+   "extract": "Dagny Norvoll Sandvik, known mononymously as Dagny, is a Norwegian singer and songwriter. Her music is pop-based, incorporating elements of indie, dance, synth-pop, electropop and disco. She has released two studio albums, Strangers / Lovers (2020) and Elle (2024), and one EP, Ultraviolet (2016). Her single \"Somebody\" won Song of the Year at the 2020 P3 Gull, and her 2017 track \"Love You Like That\" was the basis for Katy Perry's \"Never Really Over\" (2019). She frequently performs at festivals in Norway and the United Kingdom including Øyafestivalen, Stavernfestivalen, and Bergenfest.",
+   "en": {
+    "kicker": "norwegian singer and songwriter · norway",
+    "who": "Dagny is a Norwegian singer and songwriter, known mononymously as Dagny. Her music is pop-based, with elements of indie, dance, synth-pop, electropop and disco. She frequently performs at festivals in Norway and the United Kingdom.",
+    "facts": [
+     "Her music is pop-based, incorporating elements of indie, dance, synth-pop, electropop and disco.",
+     "She has released two studio albums, Strangers / Lovers (2020) and Elle (2024), and one EP, Ultraviolet (2016)."
+    ]
+   },
+   "de": {
+    "kicker": "norwegische sängerin und songwriterin · norwegen",
+    "who": "Dagny ist eine norwegische Sängerin und Songwriterin, die mononym als Dagny auftritt. Ihre Musik basiert auf Pop und enthält Elemente aus Indie, Dance, Synth-Pop, Electropop und Disco. Sie tritt häufig auf Festivals in Norwegen und dem Vereinigten Königreich auf.",
+    "facts": [
+     "Ihre Musik basiert auf Pop und enthält Elemente aus Indie, Dance, Synth-Pop, Electropop und Disco.",
+     "Sie hat zwei Studioalben, Strangers / Lovers (2020) und Elle (2024), sowie eine EP, Ultraviolet (2016), veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "norveçli şarkıcı ve söz yazarı · norveç",
+    "who": "Dagny, Dagny adıyla tanınan norveçli bir şarkıcı ve söz yazarıdır. Müziği pop temellidir ve indie, dance, synth-pop, electropop ile disco öğeleri içerir. Norveç ve birleşik krallık'taki festivallerde sık sık sahne alır.",
+    "facts": [
+     "Müziği pop temellidir ve indie, dance, synth-pop, electropop ile disco öğeleri içerir.",
+     "Strangers / Lovers (2020) ve Elle (2024) adlı iki stüdyo albümü ile Ultraviolet (2016) adlı bir EP yayımlamıştır."
+    ]
+   }
+  }
+ ]
+}

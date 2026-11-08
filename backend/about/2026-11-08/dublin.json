@@ -1,0 +1,70 @@
+{
+  "city": "dublin",
+  "day": "2026-11-08",
+  "nights": [
+    {
+      "id": "03b9e166-ce9e-439e-8b31-71fccefbbc62",
+      "slug": "niall-horan-a50fa9c1",
+      "title": "Niall Horan",
+      "name": "Niall Horan",
+      "source_url": "https://en.wikipedia.org/wiki/Niall_Horan",
+      "extract": "Niall James Horan is an Irish singer, songwriter, musician, and multi-instrumentalist. He rose to prominence as a member of the boy band One Direction, formed in 2010 on the singing competition The X Factor. The group released five albums and went on to become one of the best-selling boy bands of all time.",
+      "en": {
+        "kicker": "irish singer, songwriter and multi-instrumentalist",
+        "who": "niall james horan is an irish singer, songwriter, musician, and multi-instrumentalist. he rose to prominence in the boy band One Direction. the group released five albums and became one of the best-selling boy bands of all time.",
+        "facts": [
+          "Niall James Horan is an Irish singer, songwriter, musician, and multi-instrumentalist.",
+          "He rose to prominence as a member of the boy band One Direction, formed in 2010 on the singing competition The X Factor."
+        ]
+      },
+      "de": {
+        "kicker": "irischer sänger, songwriter und multiinstrumentalist",
+        "who": "niall james horan ist ein irischer sänger, songwriter, musiker und multiinstrumentalist. er wurde als mitglied der boyband one direction bekannt. die gruppe veröffentlichte fünf alben und zählt zu den meistverkauften boybands aller zeiten.",
+        "facts": [
+          "niall james horan ist ein irischer sänger, songwriter, musiker und multiinstrumentalist.",
+          "er wurde als mitglied der boyband one direction bekannt, die 2010 in der castingshow the x factor gegründet wurde."
+        ]
+      },
+      "tr": {
+        "kicker": "irlandalı şarkıcı ve söz yazarı",
+        "who": "niall james horan, irlandalı bir şarkıcı, söz yazarı, müzisyen ve çok enstrümanlı bir sanatçıdır. boy grubu one direction'ın bir üyesi olarak ön plana çıktı. grup beş albüm yayımladı ve tüm zamanların en çok satan boy gruplarından biri oldu.",
+        "facts": [
+          "niall james horan, irlandalı bir şarkıcı, söz yazarı, müzisyen ve çok enstrümanlı bir sanatçıdır.",
+          "one direction, 2010'da the x factor şarkı yarışmasında kuruldu."
+        ]
+      }
+    },
+    {
+      "id": "baa0e73a-ccf3-4f3a-9e38-e5159e0f1a8f",
+      "slug": "poison-ruin-23d2e4d6",
+      "title": "Poison Ruïn",
+      "name": "Poison Ruïn",
+      "source_url": "https://en.wikipedia.org/wiki/Poison_Ru%C3%AFn",
+      "extract": "Poison Ruïn is an American punk/heavy metal band from Philadelphia, Pennsylvania. The band consists of singer/guitarist/keyboardist Mac Kennedy, guitarist Nao Demand, bassist Will McAndrew, and drummer Allen Chapman. Their most recent album Hymns from the Hills was released in April 2026. The band's music has been described as \"dark age punk\" and \"medieval-minded metallic punk,\" with a \"doomy, dungeon-crawler aesthetic that summons the drab hues and existential dread of the dark ages\"",
+      "en": {
+        "kicker": "american punk/heavy metal band",
+        "who": "the band consists of singer/guitarist/keyboardist Mac Kennedy, guitarist Nao Demand, bassist Will McAndrew, and drummer Allen Chapman. its sound is described as dark age punk and medieval-minded metallic punk, with a doomy, dungeon-crawler aesthetic.",
+        "facts": [
+          "Poison Ruïn is an American punk/heavy metal band from Philadelphia, Pennsylvania.",
+          "Their most recent album Hymns from the Hills was released in April 2026."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische punk/heavy-metal-band",
+        "who": "zur band gehören sänger, gitarrist und keyboarder mac kennedy, gitarist nao demand, bassist will mcandrew und schlagzeuger allen chapman. ihr klang wird als dark age punk und medieval-minded metallic punk beschrieben, mit einer düsteren, an dungeon-crawler erinnernden ästhetik.",
+        "facts": [
+          "poison ruïn ist eine amerikanische punk/heavy-metal-band aus philadelphia, pennsylvania.",
+          "ihr neuestes album hymns from the hills erschien im april 2026."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı punk/heavy metal grubu",
+        "who": "poison ruïn, philadelphia, pennsylvania'dan amerikalı bir punk/heavy metal grubudur. grubun üyeleri singer/gitarist/klavyeci mac kennedy, gitarist nao demand, bassist will mcandrew ve davulcu allen chapman. müzikleri dark age punk ve medieval-minded metallic punk olarak tanımlanıyor; karanlık, zindan temalı bir estetiği var.",
+        "facts": [
+          "poison ruïn, philadelphia, pennsylvania'dan amerikalı bir punk/heavy metal grubudur.",
+          "en son albümleri hymns from the hills, nisan 2026'da yayımlandı."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "city": "birmingham",
+  "day": "2026-11-08",
+  "nights": [
+    {
+      "id": "7523a309-54fd-46d7-95af-c8b350144e46",
+      "slug": "tony-hadley-the-christmas-big-band-tour-2026-fa5e766a",
+      "title": "TONY HADLEY - The Christmas Big Band Tour 2026",
+      "name": "Tony Hadley",
+      "source_url": "https://en.wikipedia.org/wiki/Tony_Hadley",
+      "extract": "Anthony Patrick Hadley is an English pop singer. He rose to fame in the 1980s as the lead singer of the new wave band Spandau Ballet and launched a solo career following the group's split in 1990. Hadley returned to the band in 2009 but left again in 2017, and has since toured regularly as a solo artist. Hadley has been noted for his expressive voice and vocal range.",
+      "en": {
+        "kicker": "english pop singer · spandau ballet",
+        "who": "Tony Hadley is an English pop singer, best known as the lead singer of the new wave band Spandau Ballet. He launched a solo career after the group split in 1990, and has toured regularly as a solo artist since leaving the band again in 2017.",
+        "facts": [
+          "He rose to fame in the 1980s as the lead singer of the new wave band Spandau Ballet and launched a solo career following the group's split in 1990.",
+          "Hadley has been noted for his expressive voice and vocal range."
+        ]
+      },
+      "de": {
+        "kicker": "englischer popsänger · spandau ballet",
+        "who": "Tony Hadley ist ein englischer popsänger, bekannt als leadsänger der new-wave-band Spandau Ballet. Nach der trennung der gruppe 1990 startete er eine solokarriere, und seit seinem erneuten ausstieg 2017 tritt er regelmäßig als solokünstler auf.",
+        "facts": [
+          "in den 1980er-jahren wurde er als leadsänger der new-wave-band Spandau Ballet bekannt, und nach der trennung der gruppe 1990 startete er eine solokarriere.",
+          "Hadley gilt als sänger mit einer ausdrucksstarken stimme und großem stimmumfang."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz pop şarkıcısı · spandau ballet",
+        "who": "Tony Hadley, Spandau Ballet grubunun solisti olarak tanınan bir ingiliz pop şarkıcısıdır. grup 1990'da dağılınca solo kariyerine başladı ve 2017'de gruptan yeniden ayrıldıktan sonra düzenli olarak solo sanatçı olarak turneye çıkıyor.",
+        "facts": [
+          "1980'lerde new wave grubu Spandau Ballet'ın solisti olarak ün kazandı ve grubun 1990'daki dağılmasının ardından solo kariyerine başladı.",
+          "Hadley, etkileyici sesi ve geniş ses aralığıyla dikkat çekiyor."
+        ]
+      }
+    },
+    {
+      "id": "51ca5c68-df32-4fee-ac54-555cc2a45d92",
+      "slug": "seb-lowe-7485fd44",
+      "title": "Seb Lowe",
+      "name": "Seb Lowe",
+      "source_url": "https://en.wikipedia.org/wiki/Seb_Lowe",
+      "extract": "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. He is known for incorporating politics into his music, having started out uploading videos of his songs to TikTok.",
+      "en": {
+        "kicker": "english singer-songwriter · saddleworth",
+        "who": "Seb Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. He is known for incorporating politics into his music, and started out uploading videos of his songs to TikTok.",
+        "facts": [
+          "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester.",
+          "He is known for incorporating politics into his music, having started out uploading videos of his songs to TikTok."
+        ]
+      },
+      "de": {
+        "kicker": "englischer singer-songwriter · saddleworth",
+        "who": "Seb Lowe ist ein englischer singer-songwriter aus Saddleworth, Greater Manchester. Er verbindet politik mit seiner musik und hat angefangen, videos seiner songs auf TikTok hochzuladen.",
+        "facts": [
+          "Sebastian Lowe ist ein englischer singer-songwriter aus Saddleworth, Greater Manchester.",
+          "er ist dafür bekannt, politik in seine musik einzubauen, und hat damit begonnen, videos seiner songs auf TikTok hochzuladen."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı ve söz yazarı · saddleworth",
+        "who": "Seb Lowe, Greater Manchester'ın Saddleworth bölgesinden bir ingiliz şarkıcı ve söz yazarıdır. müziğine siyaseti dahil etmesiyle tanınır ve kariyerine şarkılarının videolarını TikTok'a yükleyerek başladı.",
+        "facts": [
+          "Sebastian Lowe, Greater Manchester'ın Saddleworth bölgesinden bir ingiliz şarkıcı ve söz yazarıdır.",
+          "müziğine siyaseti dahil etmesiyle bilinir ve kariyerine şarkılarının videolarını TikTok'a yükleyerek başladı."
+        ]
+      }
+    }
+  ]
+}

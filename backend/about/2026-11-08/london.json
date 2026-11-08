@@ -1,0 +1,134 @@
+{
+  "city": "london",
+  "day": "2026-11-08",
+  "nights": [
+    {
+      "id": "f08003cf-24ec-428d-9688-90341c030447",
+      "slug": "kaarija-1318b447",
+      "title": "KÄÄRIJÄ",
+      "name": "Käärijä",
+      "source_url": "https://en.wikipedia.org/wiki/K%C3%A4%C3%A4rij%C3%A4",
+      "extract": "Jere Mikael Pöyhönen, known professionally as Käärijä, is a Finnish rapper, singer and songwriter. He represented Finland in the Eurovision Song Contest 2023 with the song \"Cha Cha Cha\", placing second with 526 points and finishing first in the public vote with 376. His entry topped the charts in Finland, Sweden, Latvia and Lithuania and reached the top ten in thirteen other countries, becoming the first song in Finnish to reach the top ten of the UK Singles Chart.",
+      "en": {
+        "kicker": "finnish rapper and singer · eurovision 2023",
+        "who": "Jere Mikael Pöyhönen, known as Käärijä, is a Finnish rapper, singer and songwriter. He represented Finland at the Eurovision Song Contest 2023.",
+        "facts": [
+          "He represented Finland in the Eurovision Song Contest 2023 with the song \"Cha Cha Cha\", placing second with 526 points and finishing first in the public vote with 376.",
+          "His entry topped the charts in Finland, Sweden, Latvia and Lithuania and reached the top ten in thirteen other countries, becoming the first song in Finnish to reach the top ten of the UK Singles Chart."
+        ]
+      },
+      "de": {
+        "kicker": "finnischer rapper und sänger · eurovision 2023",
+        "who": "Jere Mikael Pöyhönen, bekannt als Käärijä, ist ein finnischer rapper, sänger und songwriter. Er vertrat Finnland 2023 beim Eurovision Song Contest.",
+        "facts": [
+          "Er vertrat Finnland 2023 beim Eurovision Song Contest mit dem lied \"Cha Cha Cha\" und belegte mit 526 punkten den zweiten platz, während er mit 376 punkten die öffentliche abstimmung gewann.",
+          "Sein beitrag erreichte in Finnland, Schweden, Lettland und Litauen die spitze der charts und die top ten in dreizehn weiteren ländern und war damit der erste finnischsprachige song, der es in die top ten der UK Singles Chart schaffte."
+        ]
+      },
+      "tr": {
+        "kicker": "fin rapçi ve şarkıcı · eurovision 2023",
+        "who": "Jere Mikael Pöyhönen, Käärijä adıyla tanınır; Finli bir rapçi, şarkıcı ve söz yazarıdır. 2023'te Finlandiya'yı Eurovision Şarkı Yarışması'nda temsil etti.",
+        "facts": [
+          "2023 Eurovision Şarkı Yarışması'nda Finlandiya'yı \"Cha Cha Cha\" şarkısıyla temsil etti, 526 puanla ikinci oldu ve halk oylamasında 376 puanla birinci oldu.",
+          "Parçası Finlandiya, İsveç, Letonya ve Litvanya'da listelerin zirvesine çıktı, diğer on üç ülkede ilk ona girdi ve Fince yazılmış ilk şarkı olarak UK Singles Chart'ın ilk on'una girdi."
+        ]
+      }
+    },
+    {
+      "id": "55e0e176-38e3-4267-a38d-5600ac0d520e",
+      "slug": "noname-38f9faf7",
+      "title": "NONAME",
+      "name": "Noname",
+      "source_url": "https://en.wikipedia.org/wiki/Noname_(rapper)",
+      "extract": "Fatimah Nyeema Warner, known professionally as Noname, is an American rapper. She began rapping and performing slam poetry in 2010, and gained wider recognition in 2013 for her appearance on the track \"Lost\" from Chance the Rapper's mixtape Acid Rap. She released her debut mixtape, Telefone, in 2016 to critical acclaim. Her debut album, Room 25, was released in 2018 and received further acclaim.",
+      "en": {
+        "kicker": "american rapper · debut mixtape, 2016",
+        "who": "Fatimah Nyeema Warner, known professionally as Noname, is an American rapper. She began rapping and performing slam poetry in 2010, and gained wider recognition in 2013 for her appearance on the track \"Lost\" from Chance the Rapper's mixtape Acid Rap.",
+        "facts": [
+          "She released her debut mixtape, Telefone, in 2016 to critical acclaim.",
+          "Her debut album, Room 25, was released in 2018 and received further acclaim."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rapperin · debüt-mixtape, 2016",
+        "who": "Fatimah Nyeema Warner, bekannt als Noname, ist eine amerikanische rapperin. Sie begann 2010 mit rap und slam poetry und wurde 2013 durch ihren auftritt im track \"Lost\" aus Chance the Rappers mixtape Acid Rap bekannter.",
+        "facts": [
+          "Sie veröffentlichte 2016 ihr debüt-mixtape Telefone und erhielt dafür viel lob von der kritik.",
+          "Ihr debütalbum Room 25 erschien 2018 und erhielt weitere anerkennung."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi · ilk mixtape, 2016",
+        "who": "Fatimah Nyeema Warner, Noname adıyla tanınan Amerikalı bir rapçidir. 2010'da rap yapmaya ve slam poetry sunmaya başladı; 2013'te ise Chance the Rapper'ın Acid Rap mixtape'indeki \"Lost\" parçasında yer almasıyla daha geniş bir kitleye ulaştı.",
+        "facts": [
+          "2016'da ilk mixtape'i Telefone'u yayımladı ve eleştirmenlerden büyük övgü aldı.",
+          "İlk albümü Room 25, 2018'de yayımlandı ve daha fazla övgü topladı."
+        ]
+      }
+    },
+    {
+      "id": "8044a885-78df-4af6-b661-9f21b27fb0c0",
+      "slug": "puscifer-19c8f7bd",
+      "title": "Puscifer",
+      "name": "Puscifer",
+      "source_url": "https://en.wikipedia.org/wiki/Puscifer",
+      "extract": "Puscifer is an American rock group formed in Los Angeles by Maynard James Keenan, lead singer of Tool and A Perfect Circle. Keenan was the only constant member of the band and he considered the project to be his \"creative subconscious\". Later, frequent collaborators Mat Mitchell and Carina Round became permanent members.",
+      "en": {
+        "kicker": "american rock band · los angeles",
+        "who": "Puscifer is an American rock group formed in Los Angeles by Maynard James Keenan, lead singer of Tool and A Perfect Circle. Later, frequent collaborators Mat Mitchell and Carina Round became permanent members.",
+        "facts": [
+          "Puscifer is an American rock group formed in Los Angeles by Maynard James Keenan, lead singer of Tool and A Perfect Circle.",
+          "Keenan was the only constant member of the band and he considered the project to be his \"creative subconscious\"."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · los angeles",
+        "who": "Puscifer ist eine amerikanische rockgruppe, die in Los Angeles gegründet wurde. Später wurden die häufigen mitarbeiter Mat Mitchell und Carina Round feste mitglieder.",
+        "facts": [
+          "Puscifer ist eine amerikanische rockgruppe, die in Los Angeles von Maynard James Keenan gegründet wurde, dem leadsänger von Tool und A Perfect Circle.",
+          "Keenan war das einzige konstante mitglied der band, und er betrachtete das projekt als seine \"creative subconscious\"."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · los angeles",
+        "who": "Puscifer, Los Angeles'ta kurulmuş Amerikalı bir rock grubudur. Sık çalıştığı Mat Mitchell ve Carina Round daha sonra grubun kalıcı üyeleri oldu.",
+        "facts": [
+          "Puscifer, Tool ve A Perfect Circle'ın baş vokalisti Maynard James Keenan tarafından Los Angeles'ta kurulmuş Amerikalı bir rock grubudur.",
+          "Keenan grubun tek sabit üyesiydi ve projeyi kendi \"creative subconscious\"u olarak görüyordu."
+        ]
+      }
+    },
+    {
+      "id": "c59f2438-7191-47e2-8217-bae91c6f27d3",
+      "slug": "tove-lo-estrus-tour-d4598f59",
+      "title": "Tove Lo: ESTRUS TOUR",
+      "name": "Tove Lo",
+      "source_url": "https://en.wikipedia.org/wiki/Tove_Lo",
+      "extract": "Ebba Tove Elsa Nilsson, known professionally as Tove Lo, is a Swedish singer-songwriter. She is known for her raw, grunge-influenced take on pop music. Referring to her autobiographical lyrics, Out called Lo \"the saddest girl in Sweden\", while Rolling Stone called her \"Sweden's darkest pop export\".",
+      "en": {
+        "kicker": "swedish singer-songwriter · sweden",
+        "who": "Ebba Tove Elsa Nilsson, known professionally as Tove Lo, is a Swedish singer-songwriter. She is known for her raw, grunge-influenced take on pop music.",
+        "facts": [
+          "She is known for her raw, grunge-influenced take on pop music.",
+          "Referring to her autobiographical lyrics, Out called Lo \"the saddest girl in Sweden\", while Rolling Stone called her \"Sweden's darkest pop export\"."
+        ]
+      },
+      "de": {
+        "kicker": "schwedische singer-songwriterin · schweden",
+        "who": "Ebba Tove Elsa Nilsson, bekannt als Tove Lo, ist eine schwedische singer-songwriterin. Sie ist für ihre rohe, grunge-beeinflusste popmusik bekannt.",
+        "facts": [
+          "Sie ist für ihre rohe, von grunge beeinflusste interpretation von popmusik bekannt.",
+          "Mit Blick auf ihre autobiografischen texte nannte Out Lo \"the saddest girl in Sweden\", während Rolling Stone sie \"Sweden's darkest pop export\" nannte."
+        ]
+      },
+      "tr": {
+        "kicker": "isveçli şarkıcı ve söz yazarı · isveç",
+        "who": "Ebba Tove Elsa Nilsson, Tove Lo adıyla tanınan İsveçli bir şarkıcı ve söz yazarıdır. Ham ve grunge etkili pop anlayışıyla bilinir.",
+        "facts": [
+          "O, ham ve grunge etkili pop anlayışıyla tanınır.",
+          "Otobiyografik sözlerine atıfta bulunan Out, Lo'ya \"the saddest girl in Sweden\" dedi; Rolling Stone ise onu \"Sweden's darkest pop export\" olarak tanımladı."
+        ]
+      }
+    }
+  ]
+}

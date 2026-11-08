@@ -1,0 +1,230 @@
+{
+  "city": "toronto",
+  "day": "2026-11-08",
+  "nights": [
+    {
+      "id": "3f94370e-805b-4e2d-8d5f-f15331ac5a66",
+      "slug": "the-menzingers-everything-i-ever-saw-north-ameri-d4dfdac2",
+      "title": "The Menzingers: Everything I Ever Saw North American Tour",
+      "name": "The Menzingers",
+      "source_url": "https://en.wikipedia.org/wiki/The_Menzingers",
+      "extract": "The Menzingers are an American punk rock band from Scranton, Pennsylvania, formed in 2006. The band consists of Greg Barnett, Tom May, Eric Keen (bass) and Joe Godino (drums). To date, the band has released eight studio albums, with their most recent, Everything I Ever Saw, released on July 17, 2026.",
+      "en": {
+        "kicker": "american punk rock band · scranton, pennsylvania",
+        "who": "The Menzingers are an American punk rock band from Scranton, Pennsylvania, formed in 2006. The band consists of Greg Barnett, Tom May, Eric Keen (bass) and Joe Godino (drums).",
+        "facts": [
+          "The Menzingers are an American punk rock band from Scranton, Pennsylvania, formed in 2006.",
+          "To date, the band has released eight studio albums, with their most recent, Everything I Ever Saw, released on July 17, 2026."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische punkrock-band · scranton, pennsylvania",
+        "who": "The Menzingers sind eine amerikanische punkrock-band aus Scranton, Pennsylvania, die 2006 gegründet wurde. zur band gehören Greg Barnett, Tom May, Eric Keen (bass) und Joe Godino (schlagzeug).",
+        "facts": [
+          "The Menzingers sind eine amerikanische punkrock-band aus Scranton, Pennsylvania, gegründet 2006.",
+          "bisher hat die band acht studioalben veröffentlicht, das neueste, Everything I Ever Saw, erschien am 17. juli 2026."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı punk rock grubu · scranton, pennsylvania",
+        "who": "The Menzingers, 2006 yılında kurulmuş, Pennsylvania'nın Scranton kentinden amerikalı bir punk rock grubudur. grubun üyeleri Greg Barnett, Tom May, Eric Keen (bas) ve Joe Godino'dur (davul).",
+        "facts": [
+          "The Menzingers, Pennsylvania'nın Scranton kentinde 2006 yılında kurulmuş amerikalı bir punk rock grubudur.",
+          "bugüne kadar grup sekiz stüdyo albümü yayımladı; en son albümleri Everything I Ever Saw, 17 temmuz 2026'da çıktı."
+        ]
+      }
+    },
+    {
+      "id": "b19509c6-f5ce-47ef-9f5e-bfd50981a93d",
+      "slug": "trippie-redd-the-non-disclosure-agreement-tour-d04bbdb7",
+      "title": "Trippie Redd - The Non-disclosure Agreement Tour",
+      "name": "Trippie Redd",
+      "source_url": "https://en.wikipedia.org/wiki/Trippie_Redd",
+      "extract": "Michael Lamar White II, known professionally as Trippie Redd, is an American rapper, singer, and songwriter. Born and raised in Canton, Ohio, he has contributed to the progression of emo rap and rage, a subgenre of trap music.",
+      "en": {
+        "kicker": "american rapper, singer and songwriter · canton, ohio",
+        "who": "Trippie Redd is the stage name of Michael Lamar White II, an American rapper, singer and songwriter. Born and raised in Canton, Ohio, he has helped move emo rap and rage, a subgenre of trap music, forward.",
+        "facts": [
+          "Michael Lamar White II, known professionally as Trippie Redd, is an American rapper, singer, and songwriter.",
+          "Born and raised in Canton, Ohio, he has contributed to the progression of emo rap and rage, a subgenre of trap music."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper, sänger und songwriter · canton, ohio",
+        "who": "Trippie Redd ist das künstlerpseudonym von Michael Lamar White II, einem amerikanischen rapper, sänger und songwriter. er wuchs in Canton, Ohio, auf und hat zur weiterentwicklung von emo rap und rage, einer unterart des trap, beigetragen.",
+        "facts": [
+          "Michael Lamar White II, bekannt als Trippie Redd, ist ein amerikanischer rapper, sänger und songwriter.",
+          "in Canton, Ohio, geboren und aufgewachsen, hat er zur entwicklung von emo rap und rage, einer unterart des trap, beigetragen."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi, şarkıcı ve söz yazarı · canton, ohio",
+        "who": "Trippie Redd, Michael Lamar White II'nin sahne adıdır; kendisi amerikalı bir rapçi, şarkıcı ve söz yazarıdır. Ohio'nun Canton kentinde doğup büyüdü ve trap müziğin bir alt türü olan emo rap ve rage'in gelişimine katkıda bulundu.",
+        "facts": [
+          "Michael Lamar White II, sahne adıyla Trippie Redd, amerikalı bir rapçi, şarkıcı ve söz yazarıdır.",
+          "Ohio'nun Canton kentinde doğup büyüdü ve trap müziğin bir alt türü olan emo rap ve rage'in gelişimine katkıda bulundu."
+        ]
+      }
+    },
+    {
+      "id": "1d13e2af-2f7d-41ee-a9bd-7d500e4260cc",
+      "slug": "sammy-rae-and-the-friends-the-get-down-83e0b072",
+      "title": "Sammy Rae & The Friends - the GET DOWN!",
+      "name": "Sammy Rae & The Friends",
+      "source_url": "https://en.wikipedia.org/wiki/Sammy_Rae_%26_The_Friends",
+      "extract": "Sammy Rae & The Friends is an American jazz-pop band from Brooklyn, New York City, led by singer-songwriter Samantha \"Sammy Rae\" Bowers. Formed in 2016, the group is known for high-energy live shows; in February 2024 they played two sold-out nights at Washington, D.C.’s 9:30 Club. Their debut studio album, Something for Everybody, was released on September 20, 2024, via Nettwerk, following the EPs The Good Life (2018) and Let's Throw a Party (2021).",
+      "en": {
+        "kicker": "american jazz-pop band · brooklyn, new york city",
+        "who": "Sammy Rae & The Friends is an American jazz-pop band from Brooklyn, New York City, led by singer-songwriter Samantha \"Sammy Rae\" Bowers. Formed in 2016, the group is known for high-energy live shows.",
+        "facts": [
+          "Sammy Rae & The Friends is an American jazz-pop band from Brooklyn, New York City, led by singer-songwriter Samantha \"Sammy Rae\" Bowers.",
+          "Their debut studio album, Something for Everybody, was released on September 20, 2024, via Nettwerk, following the EPs The Good Life (2018) and Let's Throw a Party (2021)."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische jazz-pop-band · brooklyn, new york city",
+        "who": "Sammy Rae & The Friends ist eine amerikanische jazz-pop-band aus Brooklyn, New York City, geleitet von der singer-songwriterin Samantha „Sammy Rae“ Bowers. die 2016 gegründete gruppe ist für ihre energiegeladenen livekonzerte bekannt.",
+        "facts": [
+          "Sammy Rae & The Friends ist eine amerikanische jazz-pop-band aus Brooklyn, New York City, geleitet von der singer-songwriterin Samantha „Sammy Rae“ Bowers.",
+          "ihr debütalbum Something for Everybody erschien am 20. september 2024 bei Nettwerk, nach den eps The Good Life (2018) und Let's Throw a Party (2021)."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı jazz-pop grubu · brooklyn, new york city",
+        "who": "Sammy Rae & The Friends, Brooklyn, New York City'den amerikalı bir jazz-pop grubudur ve singer-songwriter Samantha „Sammy Rae“ Bowers tarafından yönetilmektedir. 2016'da kurulan grup, yüksek enerjili canlı performanslarıyla tanınır.",
+        "facts": [
+          "Sammy Rae & The Friends, Brooklyn, New York City'den amerikalı bir jazz-pop grubudur ve singer-songwriter Samantha „Sammy Rae“ Bowers tarafından yönetilmektedir.",
+          "İlk stüdyo albümleri Something for Everybody, 20 eylül 2024'te Nettwerk aracılığıyla yayımlandı; bu albümden önce The Good Life (2018) ve Let's Throw a Party (2021) EP'leri çıkmıştı."
+        ]
+      }
+    },
+    {
+      "id": "de582d47-a891-47f9-b2c8-c24b7f85ef57",
+      "slug": "donny-benet-7114fe26",
+      "title": "Donny Benét",
+      "name": "Donny Benét",
+      "source_url": "https://en.wikipedia.org/wiki/Donny_Ben%C3%A9t",
+      "extract": "Donny Benét is an Australian recording artist, based in Sydney. In 2011, he released his debut studio album Don't Hold Back through indie label Rice is Nice. His fifth studio album, Mr Experience, reached #26 on the ARIA Charts in May 2020.",
+      "en": {
+        "kicker": "australian recording artist · sydney",
+        "who": "Donny Benét is an Australian recording artist based in Sydney. He released his debut studio album, Don't Hold Back, in 2011, and his fifth, Mr Experience, reached #26 on the ARIA Charts in May 2020.",
+        "facts": [
+          "Donny Benét is an Australian recording artist, based in Sydney.",
+          "In 2011, he released his debut studio album Don't Hold Back through indie label Rice is Nice."
+        ]
+      },
+      "de": {
+        "kicker": "australischer aufnahmekünstler · sydney",
+        "who": "Donny Benét ist ein australischer aufnahmekünstler mit sitz in Sydney. 2011 veröffentlichte er sein debütalbum Don't Hold Back beim indie-label Rice is Nice, sein fünftes studioalbum Mr Experience erreichte im mai 2020 platz 26 der ARIA-charts.",
+        "facts": [
+          "Donny Benét ist ein australischer aufnahmekünstler mit sitz in Sydney.",
+          "2011 veröffentlichte er sein debütalbum Don't Hold Back über das indie-label Rice is Nice."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı kayıt sanatçısı · sydney",
+        "who": "Donny Benét, Sydney merkezli avustralyalı bir kayıt sanatçısıdır. 2011'de ilk stüdyo albümü Don't Hold Back'i indie plak şirketi Rice is Nice aracılığıyla yayımladı; beşinci albümü Mr Experience, mayıs 2020'de ARIA Listeleri'nde 26. sıraya ulaştı.",
+        "facts": [
+          "Donny Benét, Sydney merkezli avustralyalı bir kayıt sanatçısıdır.",
+          "2011'de ilk stüdyo albümü Don't Hold Back'i indie plak şirketi Rice is Nice aracılığıyla yayımladı."
+        ]
+      }
+    },
+    {
+      "id": "696a53c5-75eb-47b5-9de5-351366f5450c",
+      "slug": "pouya-the-forever-glades-tour-30610c72",
+      "title": "Pouya: The Forever Glades Tour",
+      "name": "Pouya",
+      "source_url": "https://en.wikipedia.org/wiki/Pouya",
+      "extract": "Kevin Pouya, known mononymously as Pouya, is an American rapper. Considered as a pioneer of the underground rap scene that began on SoundCloud in 2012, along with discovering the well known hip-hop duo Suicideboys in their early career, Pouya has developed a long-lasting core fanbase as an independent artist.",
+      "en": {
+        "kicker": "american rapper · soundcloud underground rap",
+        "who": "Kevin Pouya, known mononymously as Pouya, is an American rapper. He is considered a pioneer of the underground rap scene that began on SoundCloud in 2012, and has built a long-lasting core fanbase as an independent artist.",
+        "facts": [
+          "Kevin Pouya, known mononymously as Pouya, is an American rapper.",
+          "Considered as a pioneer of the underground rap scene that began on SoundCloud in 2012, along with discovering the well known hip-hop duo Suicideboys in their early career, Pouya has developed a long-lasting core fanbase as an independent artist."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper · underground-rap von soundcloud",
+        "who": "Kevin Pouya, bekannt als Pouya, ist ein amerikanischer rapper. er gilt als pionier der underground-rap-szene, die 2012 auf SoundCloud begann, und hat als unabhängiger künstler eine langlebige, feste fanbasis aufgebaut.",
+        "facts": [
+          "Kevin Pouya, bekannt als Pouya, ist ein amerikanischer rapper.",
+          "als pionier der underground-rap-szene, die 2012 auf SoundCloud begann, und durch die entdeckung des bekannten hip-hop-duos Suicideboys zu beginn seiner karriere hat Pouya als unabhängiger künstler eine langlebige, feste fanbasis aufgebaut."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi · soundcloud'da yeraltı rap",
+        "who": "Kevin Pouya, Pouya adıyla bilinen amerikalı bir rapçidir. 2012'de SoundCloud'da başlayan yeraltı rap sahnesinin öncülerinden sayılır ve bağımsız bir sanatçı olarak uzun soluklu, sadık bir hayran kitlesi oluşturmuştur.",
+        "facts": [
+          "Kevin Pouya, Pouya adıyla bilinen amerikalı bir rapçidir.",
+          "2012'de SoundCloud'da başlayan yeraltı rap sahnesinin öncülerinden sayılan Pouya, kariyerinin başında Suicideboys ikilisini keşfetmesiyle de tanınır ve bağımsız bir sanatçı olarak uzun süreli bir hayran kitlesi oluşturmuştur."
+        ]
+      }
+    },
+    {
+      "id": "3eb68e99-739e-402d-9e5e-f85796ca785a",
+      "slug": "dodie-not-for-lack-of-clarinets-40f5545d",
+      "title": "dodie - Not For Lack Of Clarinets",
+      "name": "Dodie",
+      "source_url": "https://en.wikipedia.org/wiki/Dodie",
+      "extract": "Dorothy Miranda Clark, known mononymously as Dodie, is an English singer, songwriter, author and YouTuber. She has released two studio albums: Build a Problem (2021), which peaked at number 3 on the UK Albums Chart, and Not for Lack of Trying (2025). She has also released four independent extended plays (EPs): Intertwined (2016), You (2017), Human (2019), and Hot Mess (2022), the first three of which charted in the top 40 of the UK Albums Chart. In 2023, she co-founded a band, Fizz, with her friends Orla Gartland, Greta Isaac, and Martin Luke Brown.",
+      "en": {
+        "kicker": "english singer, songwriter and youtuber",
+        "who": "Dorothy Miranda Clark, known mononymously as Dodie, is an English singer, songwriter, author and YouTuber. In 2023 she co-founded the band Fizz with her friends Orla Gartland, Greta Isaac and Martin Luke Brown.",
+        "facts": [
+          "Dorothy Miranda Clark, known mononymously as Dodie, is an English singer, songwriter, author and YouTuber.",
+          "She has released two studio albums: Build a Problem (2021), which peaked at number 3 on the UK Albums Chart, and Not for Lack of Trying (2025)."
+        ]
+      },
+      "de": {
+        "kicker": "englische sängerin, songwriterin und youtuberin",
+        "who": "Dorothy Miranda Clark, bekannt als Dodie, ist eine englische sängerin, songwriterin, autorin und youtuberin. 2023 gründete sie mit ihren freunden Orla Gartland, Greta Isaac und Martin Luke Brown die band Fizz.",
+        "facts": [
+          "Dorothy Miranda Clark, bekannt als Dodie, ist eine englische sängerin, songwriterin, autorin und youtuberin.",
+          "sie hat zwei studioalben veröffentlicht: Build a Problem (2021), das in den britischen albumcharts auf platz 3 stieg, und Not for Lack of Trying (2025)."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı, söz yazarı ve youtuber",
+        "who": "Dorothy Miranda Clark, Dodie adıyla bilinen bir ingiliz şarkıcı, söz yazarı, yazar ve youtuber'dır. 2023'te arkadaşları Orla Gartland, Greta Isaac ve Martin Luke Brown ile birlikte Fizz adlı grubu kurdu.",
+        "facts": [
+          "Dorothy Miranda Clark, Dodie adıyla bilinen bir ingiliz şarkıcı, söz yazarı, yazar ve youtuber'dır.",
+          "İki stüdyo albümü yayımladı: İngiltere Albüm Listesi'nde 3. sıraya yükselen Build a Problem (2021) ve Not for Lack of Trying (2025)."
+        ]
+      }
+    },
+    {
+      "id": "e6524d92-6948-47ab-b658-9a4844d8c313",
+      "slug": "nia-archives-5447039e",
+      "title": "Nia Archives",
+      "name": "Nia Archives",
+      "source_url": "https://en.wikipedia.org/wiki/Nia_Archives",
+      "extract": "Dehaney Nia Lishahn Hunt, known professionally as Nia Archives, is an English record producer, DJ, singer and songwriter. Born in Bradford in West Yorkshire, she moved to Leeds aged seven, out of the family home aged sixteen, and then to Greater Manchester, during which time she was inspired by jungle documentaries and the women within them.",
+      "en": {
+        "kicker": "english record producer, dj and songwriter · bradford",
+        "who": "Dehaney Nia Lishahn Hunt, known professionally as Nia Archives, is an English record producer, DJ, singer and songwriter. Born in Bradford, she moved to Leeds aged seven and then to Greater Manchester, where she was inspired by jungle documentaries and the women within them.",
+        "facts": [
+          "Dehaney Nia Lishahn Hunt, known professionally as Nia Archives, is an English record producer, DJ, singer and songwriter.",
+          "Born in Bradford in West Yorkshire, she moved to Leeds aged seven, out of the family home aged sixteen, and then to Greater Manchester, during which time she was inspired by jungle documentaries and the women within them."
+        ]
+      },
+      "de": {
+        "kicker": "englische musikproduzentin, dj und songwriterin · bradford",
+        "who": "Dehaney Nia Lishahn Hunt, bekannt als Nia Archives, ist eine englische musikproduzentin, dj, sängerin und songwriterin. Sie wurde in Bradford geboren, zog mit sieben nach Leeds und später nach Greater Manchester, wo sie von jungle-dokumentationen und den frauen darin inspiriert wurde.",
+        "facts": [
+          "Dehaney Nia Lishahn Hunt, bekannt als Nia Archives, ist eine englische musikproduzentin, dj, sängerin und songwriterin.",
+          "in Bradford in West Yorkshire geboren, zog sie mit sieben nach Leeds, mit sechzehn aus dem elternhaus aus und danach nach Greater Manchester, wo sie von jungle-dokumentationen und den frauen darin inspiriert wurde."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz müzik yapımcısı, dj ve söz yazarı · bradford",
+        "who": "Dehaney Nia Lishahn Hunt, Nia Archives adıyla tanınan bir ingiliz müzik yapımcısı, dj, şarkıcı ve söz yazarıdır. West Yorkshire'daki Bradford'da doğdu; yedi yaşında Leeds'e, ardından Greater Manchester'a taşındı ve burada jungle belgesellerinden ve bu belgesellerdeki kadınlardan ilham aldı.",
+        "facts": [
+          "Dehaney Nia Lishahn Hunt, Nia Archives adıyla tanınan bir ingiliz müzik yapımcısı, dj, şarkıcı ve söz yazarıdır.",
+          "West Yorkshire'daki Bradford'da doğdu, yedi yaşında Leeds'e, on altı yaşında aile evinden ayrılıp Greater Manchester'a taşındı ve bu süreçte jungle belgesellerinden ve bu belgesellerdeki kadınlardan ilham aldı."
+        ]
+      }
+    }
+  ]
+}

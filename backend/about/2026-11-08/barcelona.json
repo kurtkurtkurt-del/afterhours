@@ -1,0 +1,38 @@
+{
+ "city": "barcelona",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "004e6605-db05-4bab-91e2-cc602f2cc808",
+   "slug": "razorlight-a939167d",
+   "title": "Razorlight",
+   "name": "Razorlight",
+   "source_url": "https://en.wikipedia.org/wiki/Razorlight",
+   "extract": "Razorlight are an English indie rock band, formed in 2002 in London by lead singer and guitarist Johnny Borrell. Along with Borrell, the current line-up of the band is composed of founding members Björn Ågren on guitar and bassist Carl Dalemo, as well as drummer Andy Burrows. This lineup is a reunion of the lineup from the band's second and third albums.",
+   "en": {
+    "kicker": "english indie rock band · london, 2002",
+    "who": "Razorlight are an English indie rock band formed in London by lead singer and guitarist Johnny Borrell. The current line-up includes founding members Björn Ågren on guitar and bassist Carl Dalemo, along with drummer Andy Burrows.",
+    "facts": [
+     "Razorlight are an English indie rock band, formed in 2002 in London by lead singer and guitarist Johnny Borrell.",
+     "This lineup is a reunion of the lineup from the band's second and third albums."
+    ]
+   },
+   "de": {
+    "kicker": "englische indie-rock-band · london, 2002",
+    "who": "razorlight sind eine englische indie-rock-band, die 2002 in london von frontmann und gitarrist johnny borrell gegründet wurde. zur aktuellen besetzung gehören die gründungsmitglieder björn ågren an der gitarre und bassist carl dalemo sowie schlagzeuger andy burrows.",
+    "facts": [
+     "razorlight sind eine englische indie-rock-band, die 2002 in london von frontmann und gitarrist johnny borrell gegründet wurde.",
+     "diese besetzung ist eine wiedervereinigung der besetzung aus den zweiten und dritten alben der band."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz indie rock grubu · londra, 2002",
+    "who": "razorlight, 2002 yılında londra'da ön vokalist ve gitarist johnny borrell tarafından kurulmuş bir ingiliz indie rock grubudur. grubun mevcut kadrosunda kurucu üyeler björn ågren (gitar) ve basçı carl dalemo ile davulcu andy burrows yer almaktadır.",
+    "facts": [
+     "razorlight, 2002 yılında londra'da ön vokalist ve gitarist johnny borrell tarafından kurulmuş bir ingiliz indie rock grubudur.",
+     "bu kadro, grubun ikinci ve üçüncü albümlerindeki kadronun yeniden bir araya gelişidir."
+    ]
+   }
+  }
+ ]
+}

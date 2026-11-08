@@ -1,0 +1,38 @@
+{
+  "city": "ottawa",
+  "day": "2026-11-08",
+  "nights": [
+    {
+      "id": "0f35ad7e-b6df-4d51-a437-e6a95eb7869d",
+      "slug": "amos-the-transparent-rockin-around-the-xmas-tree-a0bf3098",
+      "title": "Amos The Transparent  - Rockin' Around The Xmas Tree",
+      "name": "Amos the Transparent",
+      "source_url": "https://en.wikipedia.org/wiki/Amos_the_Transparent",
+      "extract": "Amos the Transparent is a Canadian rock band from Ottawa, Ontario. Members are Jonathan Chandler, Olenka Reshitnyk, Dan Hay (guitar), James Nicol, drummer Christopher Wilson and cellist Mike Yates.",
+      "en": {
+        "kicker": "canadian rock band · ottawa, ontario",
+        "who": "Amos the Transparent is a Canadian rock band from Ottawa, Ontario. its members are Jonathan Chandler, Olenka Reshitnyk, Dan Hay (guitar), James Nicol, drummer Christopher Wilson and cellist Mike Yates.",
+        "facts": [
+          "Amos the Transparent is a Canadian rock band from Ottawa, Ontario.",
+          "Members are Jonathan Chandler, Olenka Reshitnyk, Dan Hay (guitar), James Nicol, drummer Christopher Wilson and cellist Mike Yates."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische rockband · ottawa, ontario",
+        "who": "Amos the Transparent ist eine kanadische rockband aus Ottawa, Ontario. zu den mitgliedern gehören jonathan chandler, olenka reshitnyk, dan hay (gitarre), james nicol, schlagzeuger christopher wilson und cellist mike yates.",
+        "facts": [
+          "Amos the Transparent ist eine kanadische rockband aus Ottawa, Ontario.",
+          "zu den mitgliedern gehören jonathan chandler, olenka reshitnyk, dan hay (gitarre), james nicol, schlagzeuger christopher wilson und cellist mike yates."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı rock grubu · ottawa, ontario",
+        "who": "amos the transparent, ottawa, ontario'dan kanadalı bir rock grubudur. üyeleri jonathan chandler, olenka reshitnyk, dan hay (gitar), james nicol, davulcu christopher wilson ve viyolonselci mike yates.",
+        "facts": [
+          "amos the transparent, ottawa, ontario'dan kanadalı bir rock grubudur.",
+          "üyeler jonathan chandler, olenka reshitnyk, dan hay (gitar), james nicol, davulcu christopher wilson ve viyolonselci mike yates."
+        ]
+      }
+    }
+  ]
+}

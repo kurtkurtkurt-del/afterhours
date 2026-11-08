@@ -1,0 +1,102 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-08",
+  "nights": [
+    {
+      "id": "590b8b51-e53d-4a2d-805e-12bed20aff18",
+      "slug": "yal-n-bir-buyulu-gece-f40b7668",
+      "title": "Yalın - Bir Büyülü Gece",
+      "name": "Yalın",
+      "source_url": "https://en.wikipedia.org/wiki/Yal%C4%B1n",
+      "extract": "Hüseyin Yalın, better known by his surname Yalın, is a Turkish pop singer and songwriter. He achieved success with the song \"Zalim\" in 2004.",
+      "en": {
+        "kicker": "turkish pop singer and songwriter",
+        "who": "Hüseyin Yalın, better known by his surname Yalın, is a Turkish pop singer and songwriter. He achieved success with the song \"Zalim\" in 2004.",
+        "facts": [
+          "Hüseyin Yalın, better known by his surname Yalın, is a Turkish pop singer and songwriter.",
+          "He achieved success with the song \"Zalim\" in 2004."
+        ]
+      },
+      "de": {
+        "kicker": "türkischer popsänger und songwriter",
+        "who": "Hüseyin Yalın, besser unter seinem nachnamen Yalın bekannt, ist ein türkischer popsänger und songwriter. er erzielte erfolg mit dem lied \"Zalim\" im jahr 2004.",
+        "facts": [
+          "Hüseyin Yalın, besser unter seinem nachnamen Yalın bekannt, ist ein türkischer popsänger und songwriter.",
+          "er erzielte erfolg mit dem lied \"Zalim\" im jahr 2004."
+        ]
+      },
+      "tr": {
+        "kicker": "türk pop şarkıcısı ve söz yazarı",
+        "who": "Hüseyin Yalın, soyadıyla tanınan Yalın, türk bir pop şarkıcısı ve söz yazarıdır. 2004 yılında \"Zalim\" şarkısıyla başarı elde etti.",
+        "facts": [
+          "Hüseyin Yalın, soyadıyla tanınan Yalın, türk bir pop şarkıcısı ve söz yazarıdır.",
+          "2004 yılında \"Zalim\" şarkısıyla başarı elde etti."
+        ]
+      }
+    },
+    {
+      "id": "35f8c3e1-b58a-413b-bb84-6657e179e249",
+      "slug": "manga-electric-d7417f1d",
+      "title": "maNga : Electric",
+      "name": "Manga",
+      "source_url": "https://en.wikipedia.org/wiki/Manga_(band)",
+      "extract": "Manga is a Turkish rock band whose music is mainly a fusion of Anatolian melodies with electronic elements. In 2009, they won both the Best Turkish Act award from MTV Turkey and consequently the Best European Act award from MTV Networks Europe in MTV Europe Music Awards 2009. They represented Turkey at the Eurovision Song Contest 2010 with the song \"We Could Be the Same\" and took second place.",
+      "en": {
+        "kicker": "turkish rock band · eurovision 2010",
+        "who": "Manga is a Turkish rock band whose music is mainly a fusion of Anatolian melodies with electronic elements. In 2009, the band won the Best Turkish Act award from MTV Turkey and then the Best European Act award from MTV Networks Europe.",
+        "facts": [
+          "Manga is a Turkish rock band whose music is mainly a fusion of Anatolian melodies with electronic elements.",
+          "They represented Turkey at the Eurovision Song Contest 2010 with the song \"We Could Be the Same\" and took second place."
+        ]
+      },
+      "de": {
+        "kicker": "türkische rockband · eurovision 2010",
+        "who": "Manga ist eine türkische rockband, deren musik hauptsächlich eine verschmelzung anatolischer melodien mit elektronischen elementen ist. 2009 gewann die band den preis als bester türkischer act von MTV Turkey und danach den preis als bester europäischer act von MTV Networks Europe.",
+        "facts": [
+          "manga ist eine türkische rockband, deren musik hauptsächlich eine verschmelzung anatolischer melodien mit elektronischen elementen ist.",
+          "sie vertraten die türkei 2010 beim Eurovision Song Contest mit dem lied \"We Could Be the Same\" und belegten den zweiten platz."
+        ]
+      },
+      "tr": {
+        "kicker": "türk rock grubu · eurovision 2010",
+        "who": "Manga, müziği ağırlıklı olarak anadolu melodilerinin elektronik öğelerle harmanlanmasından oluşan bir türk rock grubudur. 2009'da grup, MTV Turkey'den en iyi türk sanatçısı ödülünü, ardından MTV Networks Europe'dan en iyi avrupalı sanatçı ödülünü kazandı.",
+        "facts": [
+          "manga, müziği ağırlıklı olarak anadolu melodilerinin elektronik öğelerle harmanlanmasından oluşan bir türk rock grubudur.",
+          "2010 eurovision şarkı yarışması'nda türkiye'yi \"We Could Be the Same\" şarkısıyla temsil etti ve ikincilik elde etti."
+        ]
+      }
+    },
+    {
+      "id": "1277a801-8966-4c3a-93ee-b18dae686230",
+      "slug": "bengu-5cb21384",
+      "title": "Bengü",
+      "name": "Bengü",
+      "source_url": "https://en.wikipedia.org/wiki/Beng%C3%BC",
+      "extract": "Bengü Erden is a Turkish singer. She became first familiar with music during her time at the İzmir State Symphony Orchestra. In İzmir, she was cast in a leading role in the musical \"Oliver Twist\". She later took singing lessons with İzmir State Conservatory's general manager, Müfit Bayraş. In 1998, by performing a song by Müfit Bayşara, she ranked second at the competition Pop Show '98, organized by Mü-Yap and Show TV. She then studied music at Istanbul Academy. She worked as a backing vocalist for Kenan Doğulu for three years. In 2007, Bengü became the winner of Show TV's singing competition Bak Kim Dans Ediyor. Her first album, Hoş Geldin, was produced by Kenan Doğulu and Ozan Doğulu and r",
+      "en": {
+        "kicker": "turkish singer · pop show '98, second place",
+        "who": "Bengü Erden is a Turkish singer. She became first familiar with music during her time at the İzmir State Symphony Orchestra. She worked as a backing vocalist for Kenan Doğulu for three years.",
+        "facts": [
+          "Bengü Erden is a Turkish singer.",
+          "In 2007, Bengü became the winner of Show TV's singing competition Bak Kim Dans Ediyor."
+        ]
+      },
+      "de": {
+        "kicker": "türkische sängerin · pop show '98, zweiter platz",
+        "who": "Bengü Erden ist eine türkische Sängerin. Mit musik vertraut wurde sie zuerst während ihrer zeit am İzmir State Symphony Orchestra. Danach arbeitete sie drei jahre lang als backgroundsängerin für Kenan Doğulu.",
+        "facts": [
+          "Bengü Erden ist eine türkische Sängerin.",
+          "2007 wurde Bengü Gewinnerin des Gesangswettbewerbs Bak Kim Dans Ediyor von Show TV."
+        ]
+      },
+      "tr": {
+        "kicker": "türk şarkıcı · pop show '98, ikincilik",
+        "who": "Bengü Erden türk bir şarkıcıdır. Müziğe ilk olarak İzmir Devlet Senfoni Orkestrası'nda görev yaparken ısındı. Kenan Doğulu'nun arka vokalistliğini üç yıl boyunca yaptı.",
+        "facts": [
+          "Bengü Erden türk bir şarkıcıdır.",
+          "2007'de Bengü, Show TV'nin şarkı yarışması Bak Kim Dans Ediyor'un birincisi oldu."
+        ]
+      }
+    }
+  ]
+}

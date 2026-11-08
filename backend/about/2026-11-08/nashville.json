@@ -1,0 +1,70 @@
+{
+  "city": "nashville",
+  "day": "2026-11-08",
+  "nights": [
+    {
+      "id": "e0148ef0-951a-4299-a3d2-25c604b3dabe",
+      "slug": "the-amity-affliction-house-of-cards-2026-0497d9e5",
+      "title": "The Amity Affliction: HOUSE OF CARDS 2026",
+      "name": "The Amity Affliction",
+      "source_url": "https://en.wikipedia.org/wiki/The_Amity_Affliction",
+      "extract": "The Amity Affliction is an Australian metalcore band originally from Gympie, Queensland, formed in 2003. The band currently consists of Joel Birch, Dan Brown (guitar) and Jonathan Reeves. The band has released nine studio albums – the most recent of which, House of Cards, was released in 2026. They are known for their highly personal songs, often dealing with depression, anxiety, death, substance abuse, and suicide, many lyrics stemming from vocalist Joel Birch's past struggles.",
+      "en": {
+        "kicker": "australian metalcore band · gympie, 2003",
+        "who": "The Amity Affliction are an Australian metalcore band from Gympie, Queensland, formed in 2003. The band currently consists of Joel Birch, Dan Brown (guitar) and Jonathan Reeves.",
+        "facts": [
+          "The band has released nine studio albums – the most recent of which, House of Cards, was released in 2026.",
+          "They are known for their highly personal songs, often dealing with depression, anxiety, death, substance abuse, and suicide, many lyrics stemming from vocalist Joel Birch's past struggles."
+        ]
+      },
+      "de": {
+        "kicker": "australische metalcore-band · gympie, 2003",
+        "who": "The Amity Affliction sind eine australische metalcore-band aus gympie in queensland, gegründet 2003. derzeit gehören joel birch, dan brown (gitarre) und jonathan reeves zur band.",
+        "facts": [
+          "die band hat neun studioalben veröffentlicht, das neueste, house of cards, erschien 2026.",
+          "sie sind bekannt für sehr persönliche songs, die oft von depression, angst, tod, substanzmissbrauch und suizid handeln, viele texte stammen aus den früheren kämpfen von sänger joel birch."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı metalcore grubu · gympie, 2003",
+        "who": "The Amity Affliction, queensland'in gympie kentinden çıkan bir avustralya metalcore grubudur ve 2003 yılında kuruldu. grubun şu anki üyeleri joel birch, dan brown (gitar) ve jonathan reeves'tir.",
+        "facts": [
+          "grup, en yenisi 2026'da çıkan house of cards dahil dokuz stüdyo albümü yayımladı.",
+          "kişisel şarkılarıyla bilinirler; bu şarkılar çoğunlukla depresyon, kaygı, ölüm, madde kötüye kullanımı ve intihar gibi konulara değinir, birçok söz vokalist joel birch'ün geçmişteki mücadelelerinden kaynaklanır."
+        ]
+      }
+    },
+    {
+      "id": "0b3a74b1-e7d0-4642-9eca-ad5fa35fbf2b",
+      "slug": "jimmy-eat-world-25-years-of-bleed-american-3c01fd15",
+      "title": "JIMMY EAT WORLD - 25 YEARS OF BLEED AMERICAN",
+      "name": "Jimmy Eat World",
+      "source_url": "https://en.wikipedia.org/wiki/Jimmy_Eat_World",
+      "extract": "Jimmy Eat World is an American rock band formed in Mesa, Arizona, in 1993. The band is composed of vocalist and lead guitarist Jim Adkins, rhythm guitarist and vocalist Tom Linton, bassist Rick Burch, and drummer Zach Lind. They have released ten studio albums, all but the first featuring the current line-up.",
+      "en": {
+        "kicker": "american rock band · mesa, arizona, 1993",
+        "who": "Jimmy Eat World is a rock band from Mesa, Arizona, formed in 1993. Its current line-up is vocalist and lead guitarist Jim Adkins, rhythm guitarist and vocalist Tom Linton, bassist Rick Burch and drummer Zach Lind.",
+        "facts": [
+          "Jimmy Eat World is an American rock band formed in Mesa, Arizona, in 1993.",
+          "They have released ten studio albums, all but the first featuring the current line-up."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · mesa, arizona, 1993",
+        "who": "Jimmy Eat World ist eine rockband aus Mesa in Arizona, gegründet 1993. die aktuelle besetzung besteht aus sänger und sologitarrist Jim Adkins, rhythmusgitarrist und sänger Tom Linton, bassist Rick Burch und schlagzeuger Zach Lind.",
+        "facts": [
+          "Jimmy Eat World ist eine amerikanische rockband, die 1993 in Mesa, Arizona, gegründet wurde.",
+          "sie haben zehn studioalben veröffentlicht, alle außer dem ersten mit der heutigen besetzung."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · mesa, arizona, 1993",
+        "who": "Jimmy Eat World, 1993 yılında arizona'nın Mesa kentinde kurulmuş bir rock grubudur. grubun şu anki kadrosu vokal ve solo gitarda Jim Adkins, ritm gitarda ve vokalde Tom Linton, basta Rick Burch ve davulda Zach Lind'dir.",
+        "facts": [
+          "Jimmy Eat World, 1993'te arizona'nın Mesa kentinde kurulmuş amerikalı bir rock grubudur.",
+          "grup, ilki dışındaki on stüdyo albümünü şu anki kadroyla yayımladı."
+        ]
+      }
+    }
+  ]
+}

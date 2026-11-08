@@ -1,0 +1,166 @@
+{
+ "city": "new-york",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "517d00e4-e047-4cc4-8735-18a47c64039b",
+   "slug": "degenerates-bcbcff69",
+   "title": "Degenerates",
+   "name": "Degenerates",
+   "source_url": "https://en.wikipedia.org/wiki/Degenerates_(band)",
+   "extract": "Degenerates is an Australian rock band formed by Jamie Durrant, Julien Chick (bass) and David Klenjans (drums). Their EP Out Of My Head saw them nominated at the ARIA Music Awards of 1992 for Best New Talent.",
+   "en": {
+    "kicker": "australian rock band",
+    "who": "Degenerates is an australian rock band. Jamie Durrant, Julien Chick and David Klenjans formed the group. Their EP Out Of My Head earned a nomination at the ARIA Music Awards.",
+    "facts": [
+     "Degenerates is an Australian rock band formed by Jamie Durrant, Julien Chick (bass) and David Klenjans (drums).",
+     "Their EP Out Of My Head saw them nominated at the ARIA Music Awards of 1992 for Best New Talent."
+    ]
+   },
+   "de": {
+    "kicker": "australische rockband",
+    "who": "Degenerates ist eine australische rockband. Gegründet wurde sie von Jamie Durrant, Julien Chick und David Klenjans. Ihre EP Out Of My Head brachte ihnen eine nominierung bei den ARIA Music Awards ein.",
+    "facts": [
+     "Degenerates ist eine australische rockband, gegründet von Jamie Durrant, Julien Chick (bass) und David Klenjans (schlagzeug).",
+     "Ihre EP Out Of My Head brachte ihnen 1992 eine nominierung bei den ARIA Music Awards für den preis Best New Talent ein."
+    ]
+   },
+   "tr": {
+    "kicker": "avustralyalı rock grubu",
+    "who": "Degenerates avustralyalı bir rock grubudur. Grubu Jamie Durrant, Julien Chick ve David Klenjans kurdu. Ep'leri Out Of My Head, grubu ARIA Music Awards'a aday gösterdi.",
+    "facts": [
+     "Degenerates, Jamie Durrant, Julien Chick (bas) ve David Klenjans (davul) tarafından kurulan avustralyalı bir rock grubudur.",
+     "Ep'leri Out Of My Head, grubu 1992 ARIA Music Awards'ta en yeni yetenek dalında aday gösterdi."
+    ]
+   }
+  },
+  {
+   "id": "bc2099a5-44eb-4a3f-a781-80985fdce6cf",
+   "slug": "new-york-philharmonic-thibaudet-performs-liszt-5b270858",
+   "title": "New York Philharmonic: Thibaudet Performs Liszt",
+   "name": "New York Philharmonic",
+   "source_url": "https://en.wikipedia.org/wiki/New_York_Philharmonic",
+   "extract": "The New York Philharmonic is an American symphony orchestra based in New York City. Known officially as the Philharmonic-Symphony Society of New York, Inc., and globally known as the New York Philharmonic Orchestra (NYPO) or the New York Philharmonic-Symphony Orchestra, it is one of the leading American orchestras popularly called the \"Big Five\". The philharmonic's home is David Geffen Hall, at New York's Lincoln Center for the Performing Arts.",
+   "en": {
+    "kicker": "american symphony orchestra · new york city",
+    "who": "The New York Philharmonic is one of the leading american orchestras, popularly called the 'Big Five'. It is known officially as the Philharmonic-Symphony Society of New York, Inc. Its home is David Geffen Hall at Lincoln Center for the Performing Arts.",
+    "facts": [
+     "The New York Philharmonic is an American symphony orchestra based in New York City.",
+     "The philharmonic's home is David Geffen Hall, at New York's Lincoln Center for the Performing Arts."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanisches sinfonieorchester · new york city",
+    "who": "Das New York Philharmonic gehört zu den führenden amerikanischen orchestern und wird populär als 'Big Five' bezeichnet. Offiziell heißt es Philharmonic-Symphony Society of New York, Inc. Seine heimstätte ist die David Geffen Hall im Lincoln Center for the Performing Arts.",
+    "facts": [
+     "Das New York Philharmonic ist ein amerikanisches sinfonieorchester mit sitz in new york city.",
+     "Die heimstätte des philharmonic ist die David Geffen Hall im Lincoln Center for the Performing Arts in New York."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan senfoni orkestrası · new york city",
+    "who": "New York Philharmonic, popüler adıyla 'Big Five' olarak anılan, önde gelen amerikan orkestralarından biridir. Resmi adı Philharmonic-Symphony Society of New York, Inc.'dir. Evi, Lincoln Center for the Performing Arts içindeki David Geffen Hall'dur.",
+    "facts": [
+     "New York Philharmonic, new york city merkezli bir amerikan senfoni orkestrasıdır.",
+     "Evi, new york'taki Lincoln Center for the Performing Arts içindeki David Geffen Hall'dur."
+    ]
+   }
+  },
+  {
+   "id": "5eec0db1-05dc-49d3-8518-040e17983067",
+   "slug": "bryan-andrews-60f9dd7f",
+   "title": "Bryan Andrews",
+   "name": "Bryan Andrews",
+   "source_url": "https://en.wikipedia.org/wiki/Bryan_Andrews_(singer)",
+   "extract": "Bryan Andrews is an American country music singer and activist. He is best known for his politically-themed songs, often from his own progressive left-wing viewpoint. Many of his songs have been described as protest songs.",
+   "en": {
+    "kicker": "american country singer and activist",
+    "who": "Bryan Andrews is an american country music singer and activist. He is best known for politically-themed songs, often from his own progressive left-wing viewpoint. Many of his songs have been described as protest songs.",
+    "facts": [
+     "Bryan Andrews is an American country music singer and activist.",
+     "He is best known for his politically-themed songs, often from his own progressive left-wing viewpoint."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer country-sänger und aktivist",
+    "who": "Bryan Andrews ist ein amerikanischer country-musiker und aktivist. Er ist vor allem für seine politisch geprägten songs bekannt, oft aus seiner eigenen progressiven, linksgerichteten sicht. Viele seiner songs wurden als protestsongs beschrieben.",
+    "facts": [
+     "Bryan Andrews ist ein amerikanischer country-musiker und aktivist.",
+     "Er ist vor allem für seine politisch geprägten songs bekannt, oft aus seiner eigenen progressiven, linksgerichteten sicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı country şarkıcısı ve aktivist",
+    "who": "Bryan Andrews amerikalı bir country müzik şarkıcısı ve aktivisttir. En çok politik temalı şarkılarıyla tanınır; bunlar genellikle kendi progresif, sol görüşlü bakış açısından yazılmıştır. Şarkılarının birçoğu protest şarkısı olarak tanımlanmıştır.",
+    "facts": [
+     "Bryan Andrews amerikalı bir country müzik şarkıcısı ve aktivisttir.",
+     "En çok politik temalı şarkılarıyla tanınır; bunlar genellikle kendi progresif, sol görüşlü bakış açısından yazılmıştır."
+    ]
+   }
+  },
+  {
+   "id": "5e317fef-86c5-42f7-bb43-63ecd77fb73d",
+   "slug": "sleeping-with-sirens-an-ending-in-itself-tour-c580832c",
+   "title": "Sleeping With Sirens: An Ending In Itself Tour",
+   "name": "Sleeping with Sirens",
+   "source_url": "https://en.wikipedia.org/wiki/Sleeping_with_Sirens",
+   "extract": "Sleeping with Sirens is an American rock band originally formed in Orlando, Florida. The band currently consists of Kellin Quinn, Justin Hills, Nick Martin, Matty Best, and Tony Pizzuti. The band was formed in 2009 by Nick Trombino of Broadway and Brandon McMaster. The group is currently signed to Rise Records and have released eight full-length studio albums, one live album, and one acoustic EP.",
+   "en": {
+    "kicker": "american rock band · orlando, florida",
+    "who": "Sleeping with Sirens is an american rock band originally formed in Orlando, Florida. The band was formed in 2009 by Nick Trombino of Broadway and Brandon McMaster. The current lineup is Kellin Quinn, Justin Hills, Nick Martin, Matty Best and Tony Pizzuti.",
+    "facts": [
+     "Sleeping with Sirens is an American rock band originally formed in Orlando, Florida.",
+     "The group is currently signed to Rise Records and have released eight full-length studio albums, one live album, and one acoustic EP."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · orlando, florida",
+    "who": "Sleeping with Sirens ist eine amerikanische rockband, die ursprünglich in Orlando, Florida gegründet wurde. Gegründet wurde die band 2009 von Nick Trombino von Broadway und Brandon McMaster. Zur aktuellen besetzung gehören Kellin Quinn, Justin Hills, Nick Martin, Matty Best und Tony Pizzuti.",
+    "facts": [
+     "Sleeping with Sirens ist eine amerikanische rockband, die ursprünglich in Orlando, Florida gegründet wurde.",
+     "Die gruppe ist derzeit bei Rise Records unter vertrag und hat acht vollständige studioalben, ein livealbum und eine akustik-ep veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan rock grubu · orlando, florida",
+    "who": "Sleeping with Sirens, başlangıçta Orlando, Florida'da kurulmuş amerikan bir rock grubudur. Grup 2009'da Broadway'den Nick Trombino ve Brandon McMaster tarafından kuruldu. Güncel kadrosu Kellin Quinn, Justin Hills, Nick Martin, Matty Best ve Tony Pizzuti'den oluşur.",
+    "facts": [
+     "Sleeping with Sirens, başlangıçta Orlando, Florida'da kurulmuş amerikan bir rock grubudur.",
+     "Grup şu anda Rise Records ile anlaşmalıdır ve sekiz tam uzunluklu stüdyo albümü, bir canlı albüm ve bir akustik ep yayımlamıştır."
+    ]
+   }
+  },
+  {
+   "id": "e8264283-b1ff-4de7-ba10-2faff46b670a",
+   "slug": "buena-vista-social-club-fe89be1a",
+   "title": "Buena Vista Social Club",
+   "name": "Buena Vista Social Club",
+   "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+   "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years.",
+   "en": {
+    "kicker": "cuban musical ensemble · 1996",
+    "who": "Buena Vista Social Club was a musical ensemble made up primarily of cuban musicians. It was organized by Nick Gold of World Circuit and produced by Ry Cooder, an american guitarist. It showcased popular styles of the time, such as son, bolero and danzón.",
+    "facts": [
+     "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996.",
+     "The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González."
+    ]
+   },
+   "de": {
+    "kicker": "kubanisches musikensemble · 1996",
+    "who": "Buena Vista Social Club war ein musikensemble, das vor allem aus kubanischen musikern bestand. Organisiert wurde es von Nick Gold von World Circuit und produziert von Ry Cooder. Es stellte beliebte stile der zeit vor, etwa son, bolero und danzón.",
+    "facts": [
+     "Buena Vista Social Club war ein musikensemble, das vor allem aus kubanischen musikern bestand und 1996 gegründet wurde.",
+     "Das projekt wurde von World Circuit-manager Nick Gold organisiert, von dem amerikanischen gitarristen Ry Cooder produziert und von Juan de Marcos González geleitet."
+    ]
+   },
+   "tr": {
+    "kicker": "küba müzik topluluğu · 1996",
+    "who": "Buena Vista Social Club, ağırlıklı olarak küba'lı müzisyenlerden oluşan bir müzik topluluğuydu. Topluluk World Circuit yöneticisi Nick Gold tarafından organize edildi ve Ry Cooder tarafından prodüse edildi. Dönemin popüler tarzları olan son, bolero ve danzón'u öne çıkardı.",
+    "facts": [
+     "Buena Vista Social Club, 1996'da kurulan ve ağırlıklı olarak küba'lı müzisyenlerden oluşan bir müzik topluluğuydu.",
+     "Proje World Circuit yöneticisi Nick Gold tarafından organize edildi, amerikalı gitarist Ry Cooder tarafından prodüse edildi ve Juan de Marcos González tarafından yönetildi."
+    ]
+   }
+  }
+ ]
+}

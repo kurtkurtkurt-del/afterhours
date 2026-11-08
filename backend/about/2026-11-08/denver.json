@@ -1,0 +1,38 @@
+{
+ "city": "denver",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "8fbafb45-d7da-4a76-86c7-c6e12d1d3487",
+   "slug": "the-musical-box-19fc487d",
+   "title": "The Musical Box",
+   "name": "The Musical Box",
+   "source_url": "https://en.wikipedia.org/wiki/The_Musical_Box_(band)",
+   "extract": "The Musical Box are a Canadian tribute band formed in Montreal, Quebec in 1993 who recreate performances by the English rock band Genesis during the 1970s. The current line-up is formed of singer and performer Denis Gagné, guitarist François Gagnon, bassist Sébastien Lamothe, keyboardist Ian Benhamou, and drummer Marc Laflamme.",
+   "en": {
+    "kicker": "canadian tribute band · montreal, 1993",
+    "who": "The Musical Box are a Canadian tribute band that recreates the 1970s performances of the English rock band Genesis. The band was formed in Montreal, Quebec in 1993. The current line-up includes singer and performer Denis Gagné.",
+    "facts": [
+     "The Musical Box are a Canadian tribute band formed in Montreal, Quebec in 1993 who recreate performances by the English rock band Genesis during the 1970s.",
+     "The current line-up is formed of singer and performer Denis Gagné, guitarist François Gagnon, bassist Sébastien Lamothe, keyboardist Ian Benhamou, and drummer Marc Laflamme."
+    ]
+   },
+   "de": {
+    "kicker": "kanadische tribute-band · montreal, 1993",
+    "who": "The Musical Box ist eine kanadische tribute-band, die Auftritte der englischen rockband Genesis aus den 1970er jahren nachbildet. Sie wurde 1993 in Montreal, Quebec gegründet. Zur aktuellen besetzung gehört sänger und performer Denis Gagné.",
+    "facts": [
+     "The Musical Box ist eine kanadische tribute-band, die 1993 in Montreal, Quebec gegründet wurde und Auftritte der englischen rockband Genesis aus den 1970er jahren nachbildet.",
+     "Zur aktuellen besetzung gehören sänger und performer Denis Gagné, gitarrist François Gagnon, bassist Sébastien Lamothe, keyboarder Ian Benhamou und schlagzeuger Marc Laflamme."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı tribute grubu · montreal, 1993",
+    "who": "The Musical Box, 1970'lerdeki ingiliz rock grubu Genesis'in performanslarını yeniden canlandıran kanadalı bir tribute grubudur. Grup 1993'te Montreal, Quebec'te kuruldu. Mevcut kadroda şarkıcı ve sahne sanatçısı Denis Gagné yer alıyor.",
+    "facts": [
+     "The Musical Box, 1993 yılında Montreal, Quebec'te kurulan ve 1970'lerdeki Genesis performanslarını yeniden canlandıran kanadalı bir tribute grubudur.",
+     "Grubun mevcut kadrosunda şarkıcı ve sahne sanatçısı Denis Gagné, gitarist François Gagnon, basçı Sébastien Lamothe, klavyeci Ian Benhamou ve davulcu Marc Laflamme yer alıyor."
+    ]
+   }
+  }
+ ]
+}

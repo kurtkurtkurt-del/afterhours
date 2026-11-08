@@ -1,0 +1,70 @@
+{
+  "city": "las-vegas",
+  "day": "2026-11-08",
+  "nights": [
+    {
+      "id": "cc9659c7-e88d-46a8-b232-de9fd6573dfb",
+      "slug": "barry-manilow-d2760825",
+      "title": "Barry Manilow",
+      "name": "Barry Manilow",
+      "source_url": "https://en.wikipedia.org/wiki/Barry_Manilow",
+      "extract": "Barry Manilow is an American singer, songwriter and record producer with a career spanning over 60 years. His hit recordings include \"Mandy\", \"Could It Be Magic\", \"I Write the Songs\", \"Weekend in New England\", \"Looks Like We Made It\", \"Can't Smile Without You\", \"Copacabana \", and \"Ready to Take a Chance Again\".",
+      "en": {
+        "kicker": "american singer, songwriter and record producer",
+        "who": "Barry Manilow is an american singer, songwriter and record producer with a career spanning over 60 years. his hit recordings include \"Mandy\", \"Could It Be Magic\" and \"I Write the Songs\".",
+        "facts": [
+          "Barry Manilow is an American singer, songwriter and record producer with a career spanning over 60 years.",
+          "His hit recordings include \"Mandy\", \"Could It Be Magic\", \"I Write the Songs\", \"Weekend in New England\", \"Looks Like We Made It\", \"Can't Smile Without You\", \"Copacabana \", and \"Ready to Take a Chance Again\"."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer sänger, songwriter und musikproduzent",
+        "who": "Barry Manilow ist ein amerikanischer sänger, songwriter und musikproduzent mit einer karriere von über 60 jahren. zu seinen hits gehören „Mandy“, „Could It Be Magic“ und „I Write the Songs“.",
+        "facts": [
+          "Barry Manilow ist ein amerikanischer sänger, songwriter und musikproduzent mit einer karriere von über 60 jahren.",
+          "seine hits sind unter anderem „Mandy“, „Could It Be Magic“, „I Write the Songs“, „Weekend in New England“, „Looks Like We Made It“, „Can't Smile Without You“, „Copacabana“ und „Ready to Take a Chance Again“."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı, söz yazarı ve plak yapımcısı",
+        "who": "Barry Manilow, 60 yılı aşkın süren kariyeriyle amerikalı bir şarkıcı, söz yazarı ve plak yapımcısıdır. başlıca hitleri arasında „Mandy“, „Could It Be Magic“ ve „I Write the Songs“ yer alır.",
+        "facts": [
+          "Barry Manilow, 60 yılı aşkın süren kariyeriyle amerikalı bir şarkıcı, söz yazarı ve plak yapımcısıdır.",
+          "hit kayıtları arasında „Mandy“, „Could It Be Magic“, „I Write the Songs“, „Weekend in New England“, „Looks Like We Made It“, „Can't Smile Without You“, „Copacabana“ ve „Ready to Take a Chance Again“ yer alır."
+        ]
+      }
+    },
+    {
+      "id": "10227a4f-89d6-442b-aa7b-84207dd5c93b",
+      "slug": "daughtry-6449aacd",
+      "title": "Daughtry",
+      "name": "Daughtry",
+      "source_url": "https://en.wikipedia.org/wiki/Daughtry_(band)",
+      "extract": "Daughtry is an American rock band formed and fronted by namesake Chris Daughtry, who was a finalist on the fifth season of American Idol. Their self-titled debut album was released in November 2006 and reached number one on the Billboard 200. The album went on to sell more than six million copies in the United States, and has been certified six times platinum by the RIAA. Daughtry was also named the best selling album of 2007 by Billboard, becoming the fastest-selling debut rock album in Nielsen SoundScan history. The album produced four top 20 hits on the Billboard Hot 100, including top five hits \"It's Not Over\" and \"Home\".",
+      "en": {
+        "kicker": "american rock band · debut album, 2006",
+        "who": "Daughtry is an american rock band formed and fronted by namesake Chris Daughtry, who was a finalist on the fifth season of American Idol. their self-titled debut album was released in November 2006.",
+        "facts": [
+          "their self-titled debut album was released in November 2006 and reached number one on the Billboard 200.",
+          "The album went on to sell more than six million copies in the United States, and has been certified six times platinum by the RIAA."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · debütalbum, 2006",
+        "who": "Daughtry ist eine amerikanische rockband, die vom namensgeber Chris Daughtry gegründet und angeführt wird, der finalist der fünften staffel von American Idol war. ihr selbstbetiteltes debütalbum erschien im November 2006.",
+        "facts": [
+          "ihr selbstbetiteltes debütalbum erschien im November 2006 und erreichte Platz eins der Billboard 200.",
+          "das album verkaufte sich in den Vereinigten Staaten über sechs millionen mal und wurde in den USA sechsfach platin von der RIAA zertifiziert."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · ilk albüm, 2006",
+        "who": "Daughtry, American Idol'ın beşinci sezonunda finalist olan ve adaşı Chris Daughtry tarafından kurulan ve öne çıkarılan amerikalı bir rock grubudur. kendi adını taşıyan ilk albümleri Kasım 2006'da yayımlandı.",
+        "facts": [
+          "kendi adını taşıyan ilk albümleri Kasım 2006'da yayımlandı ve Billboard 200 listesinde birinci sıraya ulaştı.",
+          "albüm Birleşik Devletler'de altı milyondan fazla sattı ve RIAA tarafından altı kez platin sertifikası aldı."
+        ]
+      }
+    }
+  ]
+}

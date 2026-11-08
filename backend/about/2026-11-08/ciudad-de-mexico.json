@@ -1,0 +1,70 @@
+{
+  "city": "ciudad-de-mexico",
+  "day": "2026-11-08",
+  "nights": [
+    {
+      "id": "9b349f3c-3f28-40aa-8b51-2c94adf4cc2b",
+      "slug": "aitana-66f59d73",
+      "title": "Aitana",
+      "name": "Aitana",
+      "source_url": "https://en.wikipedia.org/wiki/Aitana_(singer)",
+      "extract": "Aitana Ocaña Morales, known mononymously as Aitana, is a Spanish singer and songwriter. She first gained national recognition in 2017, placing as the runner-up in the revival series of the Spanish reality television talent show Operación Triunfo. While competing on the show, Aitana recorded the single \"Lo Malo\" with fellow contestant Ana Guerra. The song became an instant hit in Spain, debuting at number-one and holding the spot for several weeks. Following the competition, Aitana signed a 360º record deal with Universal Music Spain and released her debut solo single \"Teléfono\" to commercial success and streaming-breaking records.",
+      "en": {
+        "kicker": "spanish singer and songwriter · 2017, spain",
+        "who": "Aitana Ocaña Morales, known as Aitana, is a Spanish singer and songwriter. She placed as runner-up in the revival of the reality talent show Operación Triunfo, and her single \"Lo Malo\" with Ana Guerra became an instant hit in Spain.",
+        "facts": [
+          "Aitana Ocaña Morales, known mononymously as Aitana, is a Spanish singer and songwriter.",
+          "She first gained national recognition in 2017, placing as the runner-up in the revival series of the Spanish reality television talent show Operación Triunfo."
+        ]
+      },
+      "de": {
+        "kicker": "spanische sängerin und songwriterin · 2017, Spanien",
+        "who": "Aitana Ocaña Morales, als Aitana bekannt, ist eine spanische Sängerin und Songwriterin. Sie wurde Zweite bei der Neuauflage der Castingshow Operación Triunfo, und ihre Single \"Lo Malo\" mit Ana Guerra wurde in Spanien sofort ein Hit.",
+        "facts": [
+          "Aitana Ocaña Morales, als Aitana bekannt, ist eine spanische Sängerin und Songwriterin.",
+          "Sie gewann 2017 erstmals nationale Aufmerksamkeit und wurde Zweite bei der Neuauflage der spanischen Reality-Castingshow Operación Triunfo."
+        ]
+      },
+      "tr": {
+        "kicker": "ispanyol şarkıcı ve söz yazarı · 2017, İspanya",
+        "who": "Aitana Ocaña Morales, Aitana adıyla bilinen, ispanyol bir şarkıcı ve söz yazarıdır. Operación Triunfo'nun yeniden başlatılan sezonunda ikinci oldu ve Ana Guerra ile birlikte seslendirdiği \"Lo Malo\" İspanya'da anında bir hit oldu.",
+        "facts": [
+          "Aitana Ocaña Morales, Aitana adıyla bilinen, ispanyol bir şarkıcı ve söz yazarıdır.",
+          "2017'de ulusal çapta tanınmaya başladı; yeniden başlatılan Operación Triunfo yarışmasında ikinci oldu."
+        ]
+      }
+    },
+    {
+      "id": "01901252-d878-4bc1-86ea-e269d882670f",
+      "slug": "dimash-qudaibergen-c3bc581b",
+      "title": "Dimash Qudaibergen",
+      "name": "Dimash Qudaibergen",
+      "source_url": "https://en.wikipedia.org/wiki/Dimash_Qudaibergen",
+      "extract": "Dinmukhammed Qanatuly Qudaibergen, known professionally as Dimash Qudaibergen and mononymously as Dimash, is a Kazakh singer, songwriter, and multi-instrumentalist. He is university-trained in classical as well as contemporary music, and is known for his exceptionally wide vocal range. He has performed songs in 16 languages.",
+      "en": {
+        "kicker": "kazakh singer, songwriter and multi-instrumentalist",
+        "who": "Dinmukhammed Qanatuly Qudaibergen, known as Dimash, is a Kazakh singer, songwriter and multi-instrumentalist. He is university-trained in classical and contemporary music and is known for his exceptionally wide vocal range.",
+        "facts": [
+          "Dinmukhammed Qanatuly Qudaibergen, known professionally as Dimash Qudaibergen and mononymously as Dimash, is a Kazakh singer, songwriter, and multi-instrumentalist.",
+          "He has performed songs in 16 languages."
+        ]
+      },
+      "de": {
+        "kicker": "kasachischer sänger, songwriter und multiinstrumentalist",
+        "who": "Dinmukhammed Qanatuly Qudaibergen, bekannt als Dimash, ist ein kasachischer Sänger, Songwriter und Multiinstrumentalist. Er hat eine universitäre Ausbildung in klassischer und zeitgenössischer Musik und ist für seinen außergewöhnlich großen Stimmumfang bekannt.",
+        "facts": [
+          "Dinmukhammed Qanatuly Qudaibergen, professionell als Dimash Qudaibergen und einnamig als Dimash bekannt, ist ein kasachischer Sänger, Songwriter und Multiinstrumentalist.",
+          "Er hat Lieder in 16 Sprachen vorgetragen."
+        ]
+      },
+      "tr": {
+        "kicker": "kazak şarkıcı, söz yazarı ve çok enstrümanlı müzisyen",
+        "who": "Dinmukhammed Qanatuly Qudaibergen, Dimash adıyla tanınan, kazak bir şarkıcı, söz yazarı ve çok enstrümanlı müzisyendir. Klasik ve çağdaş müzik alanında üniversite eğitimi almıştır ve olağanüstü geniş vokal aralığıyla bilinir.",
+        "facts": [
+          "Dinmukhammed Qanatuly Qudaibergen, Dimash Qudaibergen olarak ve tek adla Dimash olarak bilinen, kazak bir şarkıcı, söz yazarı ve çok enstrümanlı müzisyendir.",
+          "16 dilde şarkı seslendirmiştir."
+        ]
+      }
+    }
+  ]
+}

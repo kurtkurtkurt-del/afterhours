@@ -1,0 +1,70 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "72653912-d6e2-4d10-a297-a4bb220ef209",
+   "slug": "alabama-3-0ad93f29",
+   "title": "Alabama 3",
+   "name": "Alabama 3",
+   "source_url": "https://en.wikipedia.org/wiki/Alabama_3",
+   "extract": "Alabama 3 is a British musical group founded in Brixton, London, in 1995. Their track \"Woke Up This Morning\" was used for the opening credits of the TV series The Sopranos. In the United States, the band is known as A3, to avoid legal conflict with the country music band Alabama.",
+   "en": {
+     "kicker": "british musical group · brixton, london, 1995",
+     "who": "Alabama 3 is a British musical group founded in Brixton, London, in 1995. Their track \"Woke Up This Morning\" was used for the opening credits of the TV series The Sopranos. In the United States the band goes by A3, to avoid legal conflict with the country band Alabama.",
+     "facts": [
+       "Alabama 3 is a British musical group founded in Brixton, London, in 1995.",
+       "Their track \"Woke Up This Morning\" was used for the opening credits of the TV series The Sopranos."
+     ]
+   },
+   "de": {
+     "kicker": "britische musikgruppe · brixton, london, 1995",
+     "who": "Alabama 3 ist eine britische musikgruppe, die 1995 in Brixton, London, gegründet wurde. ihr titel „Woke Up This Morning“ wurde im vorspann der fernsehserie The Sopranos verwendet. in den vereinigten staaten heißt die band a3, um rechtliche konflikte mit der country-band Alabama zu vermeiden.",
+     "facts": [
+       "Alabama 3 ist eine britische musikgruppe, die 1995 in Brixton, London, gegründet wurde.",
+       "ihr titel „Woke Up This Morning“ wurde im vorspann der fernsehserie The Sopranos verwendet."
+     ]
+   },
+   "tr": {
+     "kicker": "britanyalı müzik grubu · brixton, london, 1995",
+     "who": "Alabama 3, 1995 yılında London'ın Brixton semtinde kurulmuş britanyalı bir müzik grubudur. \"Woke Up This Morning\" adlı parçası, The Sopranos dizisinin açılış jeneriğinde kullanıldı. Amerika Birleşik Devletleri'nde grup, country müzik grubu Alabama ile yasal bir çatışmayı önlemek için A3 olarak biliniyor.",
+     "facts": [
+       "Alabama 3, 1995 yılında London'ın Brixton semtinde kurulmuş britanyalı bir müzik grubudur.",
+       "\"Woke Up This Morning\" adlı parçası, The Sopranos dizisinin açılış jeneriğinde kullanıldı."
+     ]
+   }
+  },
+  {
+   "id": "455ed6f7-5637-454c-be62-a2b2fdde6ae9",
+   "slug": "muna-gets-so-hot-tour-7295cd12",
+   "title": "MUNA: Gets So Hot Tour",
+   "name": "Muna",
+   "source_url": "https://en.wikipedia.org/wiki/Muna_(band)",
+   "extract": "Muna is an American indie pop band consisting of Katie Gavin, Josette Maskin, and Naomi McPherson. They released two studio albums with RCA Records, About U (2017) and Saves the World (2019), before signing with independent label Saddest Factory Records, which released their third studio album, Muna, in June 2022, and Dancing on the Wall in May 2026.",
+   "en": {
+     "kicker": "american indie pop band · three members",
+     "who": "Muna is an American indie pop band made up of Katie Gavin, Josette Maskin, and Naomi McPherson. They released two studio albums with RCA Records before signing with independent label Saddest Factory Records. Their third studio album, Muna, came out in June 2022.",
+     "facts": [
+       "Muna is an American indie pop band consisting of Katie Gavin, Josette Maskin, and Naomi McPherson.",
+       "They released two studio albums with RCA Records, About U (2017) and Saves the World (2019), before signing with independent label Saddest Factory Records."
+     ]
+   },
+   "de": {
+     "kicker": "amerikanische indie-pop-band · drei mitglieder",
+     "who": "Muna ist eine amerikanische indie-pop-band, zu der Katie Gavin, Josette Maskin und Naomi McPherson gehören. sie veröffentlichten zwei studioalben bei RCA Records, bevor sie zum unabhängigen label Saddest Factory Records wechselten. ihr drittes studioalbum, Muna, erschien im juni 2022.",
+     "facts": [
+       "Muna ist eine amerikanische indie-pop-band, zu der Katie Gavin, Josette Maskin und Naomi McPherson gehören.",
+       "sie veröffentlichten zwei studioalben bei RCA Records, About U (2017) und Saves the World (2019), bevor sie zum unabhängigen label Saddest Factory Records wechselten."
+     ]
+   },
+   "tr": {
+     "kicker": "amerikalı indie pop grubu · üç üye",
+     "who": "Muna, Katie Gavin, Josette Maskin ve Naomi McPherson'dan oluşan amerikalı bir indie pop grubudur. Grup, RCA Records ile iki stüdyo albümü yayımladıktan sonra bağımsız plak şirketi Saddest Factory Records'a geçti. Üçüncü stüdyo albümleri Muna, haziran 2022'de çıktı.",
+     "facts": [
+       "Muna, Katie Gavin, Josette Maskin ve Naomi McPherson'dan oluşan amerikalı bir indie pop grubudur.",
+       "Grup, RCA Records ile iki stüdyo albümü, About U (2017) ve Saves the World (2019) yayımladı, ardından bağımsız plak şirketi Saddest Factory Records'a geçti."
+     ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "city": "boston",
+ "day": "2026-11-08",
+ "nights": [
+  {
+   "id": "a9d94f1c-050e-43b9-a6db-d449fbc34066",
+   "slug": "blue-october-foiled-20th-anniversary-world-tour-94b645df",
+   "title": "Blue October: Foiled 20th Anniversary World Tour",
+   "name": "Blue October",
+   "source_url": "https://en.wikipedia.org/wiki/Blue_October",
+   "extract": "Blue October is an American rock band originally from Houston, Texas, formed in 1995. It currently consists of singer/guitarist Justin Furstenfeld, drummer Jeremy Furstenfeld, multi-instrumentalist Ryan Delahoussaye, bassist Matt Noveskey, and lead guitarist Will Knaak.",
+   "en": {
+    "kicker": "american rock band · houston, texas, 1995",
+    "who": "Blue October is a rock band from Houston, Texas, formed in 1995. Singer and guitarist Justin Furstenfeld is one of its five current members.",
+    "facts": [
+     "Blue October is an American rock band originally from Houston, Texas, formed in 1995.",
+     "It currently consists of singer/guitarist Justin Furstenfeld, drummer Jeremy Furstenfeld, multi-instrumentalist Ryan Delahoussaye, bassist Matt Noveskey, and lead guitarist Will Knaak."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · houston, texas, 1995",
+    "who": "Blue October ist eine Rockband aus Houston, Texas, die 1995 gegründet wurde. Sänger und Gitarrist Justin Furstenfeld gehört zu den fünf aktuellen Mitgliedern.",
+    "facts": [
+     "Blue October ist eine amerikanische Rockband aus Houston, Texas, die 1995 gegründet wurde.",
+     "Zurzeit besteht sie aus Sänger und Gitarrist Justin Furstenfeld, Schlagzeuger Jeremy Furstenfeld, Multiinstrumentalist Ryan Delahoussaye, Bassist Matt Noveskey und Leadgitarrist Will Knaak."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · houston, texas, 1995",
+    "who": "Blue October, 1995 yılında kurulmuş, Houston, Texas kökenli bir rock grubudur. Şarkıcı ve gitarist Justin Furstenfeld, bugünkü beş üyeden biridir.",
+    "facts": [
+     "Blue October, 1995 yılında kurulan, aslen Houston, Texas'tan Amerikalı bir rock grubudur.",
+     "Bugün şarkıcı ve gitarist Justin Furstenfeld, davulcu Jeremy Furstenfeld, çok enstrümanlı Ryan Delahoussaye, basçı Matt Noveskey ve solo gitarist Will Knaak'tan oluşmaktadır."
+    ]
+   }
+  },
+  {
+   "id": "5ca06acb-407e-4f8f-ae11-bbc17d7f0930",
+   "slug": "punch-brothers-2e5e26e8",
+   "title": "Punch Brothers",
+   "name": "Punch Brothers",
+   "source_url": "https://en.wikipedia.org/wiki/Punch_Brothers",
+   "extract": "Punch Brothers is an American band consisting of Chris Thile (mandolin), Brittany Haas (fiddle/violin), Noam Pikelny (banjo), Chris Eldridge (guitar), and Paul Kowert (bass). Their style has been described as \"bluegrass instrumentation and spontaneity in the strictures of modern classical\" as well as \"American country-classical chamber music\".",
+   "en": {
+    "kicker": "american band · bluegrass and modern classical",
+    "who": "Punch Brothers is an American band of five musicians: Chris Thile on mandolin, Brittany Haas on fiddle and violin, Noam Pikelny on banjo, Chris Eldridge on guitar and Paul Kowert on bass. Their style has been described in terms of bluegrass and modern classical music.",
+    "facts": [
+     "Punch Brothers is an American band consisting of Chris Thile (mandolin), Brittany Haas (fiddle/violin), Noam Pikelny (banjo), Chris Eldridge (guitar), and Paul Kowert (bass).",
+     "Their style has been described as \"bluegrass instrumentation and spontaneity in the strictures of modern classical\" as well as \"American country-classical chamber music\"."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische band · bluegrass und moderne klassik",
+    "who": "Punch Brothers ist eine amerikanische Band aus fünf Musikern: Chris Thile spielt Mandoline, Brittany Haas Geige, Noam Pikelny Banjo, Chris Eldridge Gitarre und Paul Kowert Bass. Ihr Stil wird mit Bluegrass und moderner Klassik beschrieben.",
+    "facts": [
+     "Punch Brothers ist eine amerikanische Band mit Chris Thile (Mandoline), Brittany Haas (Fiedel/Violine), Noam Pikelny (Banjo), Chris Eldridge (Gitarre) und Paul Kowert (Bass).",
+     "Ihr Stil wurde als \"Bluegrass-Instrumentierung und Spontaneität in den Grenzen der modernen Klassik\" sowie als \"amerikanische Country-Klassik-Kammermusik\" beschrieben."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı grup · bluegrass ve modern klasik",
+    "who": "Punch Brothers, Chris Thile'ın mandolin, Brittany Haas'ın keman, Noam Pikelny'nin banjo, Chris Eldridge'in gitar ve Paul Kowert'in bas çaldığı beş müzisyenli Amerikalı bir gruptur. Tarzları bluegrass ve modern klasik müzikle birlikte anlatılmaktadır.",
+    "facts": [
+     "Punch Brothers, Chris Thile (mandolin), Brittany Haas (keman), Noam Pikelny (banjo), Chris Eldridge (gitar) ve Paul Kowert (bas) üyelerinden oluşan Amerikalı bir gruptur.",
+     "Tarzları \"modern klasiğin sınırları içinde bluegrass çalgılaması ve doğaçlama\" ve ayrıca \"Amerikan country-klasik oda müziği\" olarak tanımlanmıştır."
+    ]
+   }
+  },
+  {
+   "id": "32f1d986-1ff2-47df-a937-78ed7e093788",
+   "slug": "victoria-monet-frequency-of-love-tour-bb3af770",
+   "title": "Victoria Monét: Frequency Of Love Tour",
+   "name": "Victoria Monét",
+   "source_url": "https://en.wikipedia.org/wiki/Victoria_Mon%C3%A9t",
+   "extract": "Victoria Monét McCants is an American singer-songwriter. First gaining recognition for her songwriting work, Monét pursued a recording career with the release of a series of extended plays (EPs); her fifth, Jaguar (2020) was met with critical acclaim. Her debut studio album, Jaguar II (2023) became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year. The nomination was among seven she received at the 66th Annual Grammy Awards, from which she won Best New Artist, Best R&B Album and Best Engineered Album, Non-Classical.",
+   "en": {
+    "kicker": "american singer-songwriter · jaguar ii, 2023",
+    "who": "Victoria Monét McCants is an American singer-songwriter, first recognized for her songwriting work. She then pursued a recording career with a series of extended plays before her debut studio album.",
+    "facts": [
+     "Victoria Monét McCants is an American singer-songwriter.",
+     "Her debut studio album, Jaguar II (2023) became her commercial breakthrough and was supported by the hit single \"On My Mama\", which peaked within the top 40 of the Billboard Hot 100 and earned a Grammy Award nomination for Record of the Year."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin · jaguar ii, 2023",
+    "who": "Victoria Monét McCants ist eine amerikanische Singer-Songwriterin, die zunächst für ihre Songwriting-Arbeit bekannt wurde. Danach verfolgte sie eine Plattenkarriere mit einer Reihe von EPs, bevor ihr erstes Studioalbum erschien.",
+    "facts": [
+     "Victoria Monét McCants ist eine amerikanische Singer-Songwriterin.",
+     "Ihr erstes Studioalbum Jaguar II (2023) wurde ihr kommerzieller Durchbruch und wurde vom Hit \"On My Mama\" unterstützt, der sich in den Top 40 der Billboard Hot 100 platzierte und eine Grammy-Nominierung für Record of the Year erhielt."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · jaguar ii, 2023",
+    "who": "Victoria Monét McCants, ilk olarak söz yazarlığıyla tanınan Amerikalı bir şarkıcı ve söz yazarıdır. Ardından debut stüdyo albümünden önce bir dizi uzun çalışma (EP) ile kayıt kariyerine yöneldi.",
+    "facts": [
+     "Victoria Monét McCants Amerikalı bir şarkıcı ve söz yazarıdır.",
+     "Debut stüdyo albümü Jaguar II (2023) ticari çıkışı oldu; Billboard Hot 100'de ilk 40'a yerleşen ve Grammy'de En İyi Kayıt nominasyonu alan \"On My Mama\" single'ı ile desteklendi."
+    ]
+   }
+  },
+  {
+   "id": "bed01daf-58cd-4699-83ec-7b95b37e3fa0",
+   "slug": "dark-star-orchestra-48458680",
+   "title": "Dark Star Orchestra",
+   "name": "Dark Star Orchestra",
+   "source_url": "https://en.wikipedia.org/wiki/Dark_Star_Orchestra",
+   "extract": "Dark Star Orchestra is a Grateful Dead tribute band formed in Chicago, Illinois. They serve now as an international touring tribute band to the rock group the Grateful Dead. Since 1997, the band has been \"celebrating the Grateful Dead concert experience.\"",
+   "en": {
+    "kicker": "grateful dead tribute band · chicago, illinois",
+    "who": "Dark Star Orchestra is a tribute band formed in Chicago, Illinois. It now serves as an international touring tribute to the Grateful Dead.",
+    "facts": [
+     "Dark Star Orchestra is a Grateful Dead tribute band formed in Chicago, Illinois.",
+     "Since 1997, the band has been \"celebrating the Grateful Dead concert experience.\""
+    ]
+   },
+   "de": {
+    "kicker": "grateful-dead-tributeband · chicago, illinois",
+    "who": "Dark Star Orchestra ist eine Tributeband, die in Chicago, Illinois gegründet wurde. Heute tritt sie international auf und ist eine Hommage an die Grateful Dead.",
+    "facts": [
+     "Dark Star Orchestra ist eine in Chicago, Illinois gegründete Tributeband an die Grateful Dead.",
+     "Seit 1997 widmet sich die Band dem \"Feiern des Grateful-Dead-Konzerterlebnisses\"."
+    ]
+   },
+   "tr": {
+    "kicker": "grateful dead tribute grubu · chicago, illinois",
+    "who": "Dark Star Orchestra, Chicago, Illinois'da kurulmuş bir tribute grubudur. Bugün uluslararası turnelerle Grateful Dead'e saygı sunmaktadır.",
+    "facts": [
+     "Dark Star Orchestra, Chicago, Illinois'da kurulmuş bir Grateful Dead tribute grubudur.",
+     "1997'den beri grup \"Grateful Dead konser deneyimini kutlamaktadır\"."
+    ]
+   }
+  }
+ ]
+}

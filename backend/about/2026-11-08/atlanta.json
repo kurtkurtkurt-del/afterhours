@@ -1,0 +1,134 @@
+{
+  "city": "atlanta",
+  "day": "2026-11-08",
+  "nights": [
+    {
+      "id": "844d3b89-de81-4fba-a9c7-67afc2e71e53",
+      "slug": "the-revivalists-cfe27355",
+      "title": "The Revivalists",
+      "name": "The Revivalists",
+      "source_url": "https://en.wikipedia.org/wiki/The_Revivalists",
+      "extract": "The Revivalists are an American rock band formed in New Orleans, Louisiana, in 2007. The eight-piece band consists of Ed Williams, David Shaw, Zack Feinberg (guitar), Rob Ingraham (saxophone), George Gekas, Andrew Campanelli, Michael Girardot, and Paulet \"PJ\" Howard.",
+      "en": {
+        "kicker": "american rock band · new orleans, 2007",
+        "who": "The Revivalists are a rock band formed in New Orleans, Louisiana, in 2007. The eight-piece line-up includes Ed Williams, David Shaw, Zack Feinberg, Rob Ingraham, George Gekas, Andrew Campanelli, Michael Girardot and Paulet \"PJ\" Howard.",
+        "facts": [
+          "The Revivalists are an American rock band formed in New Orleans, Louisiana, in 2007.",
+          "The eight-piece band consists of Ed Williams, David Shaw, Zack Feinberg (guitar), Rob Ingraham (saxophone), George Gekas, Andrew Campanelli, Michael Girardot, and Paulet \"PJ\" Howard."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · new orleans, 2007",
+        "who": "The Revivalists sind eine rockband, die 2007 in New Orleans, Louisiana, gegründet wurde. die achtköpfige besetzung umfasst Ed Williams, David Shaw, Zack Feinberg, Rob Ingraham, George Gekas, Andrew Campanelli, Michael Girardot und Paulet \"PJ\" Howard.",
+        "facts": [
+          "The Revivalists sind eine amerikanische rockband, die 2007 in New Orleans, Louisiana, gegründet wurde.",
+          "die band besteht aus acht mitgliedern: Ed Williams, David Shaw, Zack Feinberg (gitarre), Rob Ingraham (saxophon), George Gekas, Andrew Campanelli, Michael Girardot und Paulet \"PJ\" Howard."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan rock grubu · new orleans, 2007",
+        "who": "The Revivalists, 2007 yılında New Orleans, Louisiana'da kurulmuş bir rock grubudur. sekiz kişilik kadroda Ed Williams, David Shaw, Zack Feinberg, Rob Ingraham, George Gekas, Andrew Campanelli, Michael Girardot ve Paulet \"PJ\" Howard yer alır.",
+        "facts": [
+          "The Revivalists, 2007 yılında New Orleans, Louisiana'da kurulmuş bir amerikan rock grubudur.",
+          "grup sekiz kişiden oluşur: Ed Williams, David Shaw, Zack Feinberg (gitar), Rob Ingraham (saksafon), George Gekas, Andrew Campanelli, Michael Girardot ve Paulet \"PJ\" Howard."
+        ]
+      }
+    },
+    {
+      "id": "481b2057-610e-4604-9986-ac93e759007c",
+      "slug": "pain-of-truth-d0f5186b",
+      "title": "Pain Of Truth",
+      "name": "Pain of Truth",
+      "source_url": "https://en.wikipedia.org/wiki/Pain_of_Truth",
+      "extract": "Pain of Truth are an American hardcore punk band formed on Long Island, New York in 2020. As of 2024, they have released one demo, two split EPs, and two studio albums.",
+      "en": {
+        "kicker": "american hardcore punk band · long island, 2020",
+        "who": "Pain of Truth is a hardcore punk band from Long Island, New York. As of 2024 the band has put out one demo, two split EPs and two studio albums.",
+        "facts": [
+          "Pain of Truth are an American hardcore punk band formed on Long Island, New York in 2020.",
+          "As of 2024, they have released one demo, two split EPs, and two studio albums."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische hardcore-punkband · long island, 2020",
+        "who": "Pain of Truth ist eine hardcore-punkband aus Long Island, New York. stand 2024 hat die band eine demo, zwei split-eps und zwei studioalben veröffentlicht.",
+        "facts": [
+          "Pain of Truth sind eine amerikanische hardcore-punkband, die 2020 auf Long Island, New York, gegründet wurde.",
+          "stand 2024 haben sie eine demo, zwei split-eps und zwei studioalben veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan hardcore punk grubu · long island, 2020",
+        "who": "Pain of Truth, New York'un Long Island bölgesinden bir hardcore punk grubudur. 2024 itibarıyla grup bir demo, iki split ep ve iki stüdyo albümü yayımlamıştır.",
+        "facts": [
+          "Pain of Truth, 2020 yılında Long Island, New York'ta kurulmuş bir amerikan hardcore punk grubudur.",
+          "2024 itibarıyla bir demo, iki split ep ve iki stüdyo albümü yayımladılar."
+        ]
+      }
+    },
+    {
+      "id": "c53bae67-bd78-42d1-98c6-9626275c8888",
+      "slug": "suicide-silence-reminders-of-hell-tour-0b9349ef",
+      "title": "Suicide Silence: REMINDERS OF HELL TOUR",
+      "name": "Suicide Silence",
+      "source_url": "https://en.wikipedia.org/wiki/Suicide_Silence",
+      "extract": "Suicide Silence is an American deathcore band from Riverside, California. The band was established in 2002, and has released seven studio albums, three EPs, and nineteen music videos. They were awarded the Revolver Golden God award for \"Best New Talent\" in 2009. The group currently consists of guitarists Chris Garza and Mark Heylmun, bassist Dan Kenny, vocalist Hernan \"Eddie\" Hermida and drummer Ernie Iniguez.",
+      "en": {
+        "kicker": "american deathcore band · riverside, 2002",
+        "who": "Suicide Silence is a deathcore band from Riverside, California. The group currently consists of guitarists Chris Garza and Mark Heylmun, bassist Dan Kenny, vocalist Hernan \"Eddie\" Hermida and drummer Ernie Iniguez.",
+        "facts": [
+          "The band was established in 2002, and has released seven studio albums, three EPs, and nineteen music videos.",
+          "They were awarded the Revolver Golden God award for \"Best New Talent\" in 2009."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische deathcore-band · riverside, 2002",
+        "who": "Suicide Silence ist eine deathcore-band aus Riverside, Kalifornien. aktuell besteht die gruppe aus den gitarristen Chris Garza und Mark Heylmun, bassist Dan Kenny, sänger Hernan \"Eddie\" Hermida und schlagzeuger Ernie Iniguez.",
+        "facts": [
+          "die band wurde 2002 gegründet und hat sieben studioalben, drei eps und neunzehn musikvideos veröffentlicht.",
+          "sie wurden 2009 mit dem Revolver Golden God Award für \"Best New Talent\" ausgezeichnet."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan deathcore grubu · riverside, 2002",
+        "who": "Suicide Silence, Kaliforniya'nın Riverside kentinde kurulmuş bir deathcore grubudur. grup şu anda gitaristler Chris Garza ve Mark Heylmun, basçı Dan Kenny, vokalist Hernan \"Eddie\" Hermida ve davulcu Ernie Iniguez'den oluşuyor.",
+        "facts": [
+          "grup 2002 yılında kuruldu ve yedi stüdyo albümü, üç ep ve on dokuz müzik videosu yayımladı.",
+          "2009 yılında Revolver Golden God ödülünü \"Best New Talent\" kategorisinde aldılar."
+        ]
+      }
+    },
+    {
+      "id": "0e5df124-4155-4c1f-9566-ef30f37a299b",
+      "slug": "greg-freeman-b3b234dc",
+      "title": "Greg Freeman",
+      "name": "Greg Freeman",
+      "source_url": "https://en.wikipedia.org/wiki/Greg_Freeman_(musician)",
+      "extract": "Greg Freeman is an American alternative country musician based in Burlington, Vermont. Freeman was raised in Bethesda, Maryland. Freeman released his debut studio album in 2022 titled I Looked Out, through the record label Bud Tapes. After the album slowly gained attention, it was reissued in 2024 through Transgressive Records imprint Canvasback Music. Freeman announced his second full-length album in April 2025 titled Burnover. The album was released on August 22, 2025. Freeman's third full length album, All Set The Bone, was released on October 2, 2026",
+      "en": {
+        "kicker": "american alternative country musician · burlington, vermont",
+        "who": "Greg Freeman is an American alternative country musician based in Burlington, Vermont, and was raised in Bethesda, Maryland. He released his debut studio album, I Looked Out, in 2022 through the record label Bud Tapes.",
+        "facts": [
+          "Freeman released his debut studio album in 2022 titled I Looked Out, through the record label Bud Tapes.",
+          "Freeman announced his second full-length album in April 2025 titled Burnover."
+        ]
+      },
+      "de": {
+        "kicker": "alternative-country musiker · burlington, vermont",
+        "who": "Greg Freeman ist ein amerikanischer alternative-country musiker mit sitz in Burlington, Vermont. aufgewachsen ist er in Bethesda, Maryland. sein debütalbum I Looked Out erschien 2022 beim label Bud Tapes.",
+        "facts": [
+          "freeman veröffentlichte sein debütalbum im jahr 2022 unter dem titel I Looked Out beim label Bud Tapes.",
+          "freeman kündigte im april 2025 sein zweites album an, das den titel Burnover trägt."
+        ]
+      },
+      "tr": {
+        "kicker": "alternatif country müzisyeni · burlington, vermont",
+        "who": "Greg Freeman, Vermont'ın Burlington kentinde yaşayan amerikan alternatif country müzisyenidir. Maryland'in Bethesda kentinde büyüdü. debut stüdyo albümü I Looked Out'u 2022'de Bud Tapes plak şirketi aracılığıyla yayımladı.",
+        "facts": [
+          "freeman, debut stüdyo albümü I Looked Out'u 2022 yılında Bud Tapes plak şirketi aracılığıyla yayımladı.",
+          "freeman, ikinci uzun çalar albümünü nisan 2025'te duyurdu ve adını Burnover koydu."
+        ]
+      }
+    }
+  ]
+}
