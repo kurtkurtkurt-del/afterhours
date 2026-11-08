@@ -1,0 +1,46 @@
+{
+ "city": "nashville",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "0f4e0011-5f35-467a-96d0-dae7ccbcb498",
+   "slug": "yaelokre-57cb4e82",
+   "title": "Yaelokre",
+   "act": "Yaelokre",
+   "name": "Yaelokre",
+   "description": "Filipino-Icelandic singer-songwriter and multimedia artist",
+   "source_url": "https://en.wikipedia.org/wiki/Yaelokre",
+   "extract": "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist known for their folk music storytelling project under the stage name Yaelokre. Ósk began releasing music under the project name in early 2024, going viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart the same year."
+  },
+  {
+   "id": "8c79f435-271d-4fa8-b97e-1d902b6c4c08",
+   "slug": "blake-whiten-0254dac9",
+   "title": "Blake Whiten",
+   "act": "Blake Whiten",
+   "name": "Blake Whiten",
+   "description": "American country singer (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Blake_Whiten",
+   "extract": "Blake Whiten is an American country singer and songwriter. His debut album, Something to Say, was released in 2026, which included his first Billboard Hot 100 hit \"Bet on That\"."
+  },
+  {
+   "id": "33119f93-c2c7-423f-b905-3fc86dfd17b8",
+   "slug": "sawyer-brown-38e8e53f",
+   "title": "Sawyer Brown",
+   "act": "Sawyer Brown",
+   "name": "Sawyer Brown",
+   "description": "American country music band",
+   "source_url": "https://en.wikipedia.org/wiki/Sawyer_Brown",
+   "extract": "Sawyer Brown is an American country music band. It was founded in 1981 in Apopka, Florida, by Mark Miller, Gregg \"Hobie\" Hubbard, Bobby Randall, Joe \"Curly\" Smyth (drums), and Jim Scholten. The five musicians were originally members of country singer Don King's road band, but chose to stay together after King retired in 1981. After competing on the television competition series Star Search and winning that show's grand prize, they signed to Capitol Records in 1984. The band recorded for Capitol between then and 1991, and for Curb Records between 1991 and 2005, except for a short time in 2003 when they were signed to Lyric Street Records. Duncan Cameron, formerly of the Amazing Rhythm Aces, replaced Randall in 1991, and Shayne Hill replaced him in 2004. In 2020 Jim Stepped down as bassist and Nathan Winkler replaced him. Nathan has also been their monitor technician since 2018."
+  },
+  {
+   "id": "e37e4424-e09a-4b67-8b40-70019f03ead9",
+   "slug": "little-river-band-197b5e5b",
+   "title": "Little River Band",
+   "act": "Little River Band",
+   "name": "Little River Band",
+   "description": "Australian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Little_River_Band",
+   "extract": "Little River Band (LRB) are a rock band formed in Melbourne, Australia, in March 1975. The band achieved commercial success in both Australia and the United States. They have sold more than 30 million records; six studio albums reached the top 10 on the Australian Kent Music Report albums chart including Diamantina Cocktail and First Under the Wire, which both peaked at No. 2. Nine singles appeared in the top 20 on the related singles chart, with \"Help Is on Its Way\" (1977) as their only number-one hit. Ten singles reached the top 20 on the Billboard Hot 100 with \"Reminiscing\" their highest, peaking at No. 3."
+  }
+ ]
+}

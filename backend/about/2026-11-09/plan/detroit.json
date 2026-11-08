@@ -1,0 +1,26 @@
+{
+ "city": "detroit",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "b5d377bb-f3fe-4687-86c8-bb6360f163e3",
+   "slug": "cheap-trick-all-washed-up-tour-07fe0086",
+   "title": "Cheap Trick: All Washed Up Tour",
+   "act": "Cheap Trick",
+   "name": "Cheap Trick",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Cheap_Trick",
+   "extract": "Cheap Trick is an American rock band formed in Rockford, Illinois, in 1973. The band's work bridged elements of 1960s guitar pop, 1970s hard rock, and the emerging punk rock sound, and helped set the template for subsequent power pop artists."
+  },
+  {
+   "id": "3e241834-ecaa-4d22-92c5-2c6b809bf445",
+   "slug": "black-milk-5baba128",
+   "title": "Black Milk",
+   "act": "Black Milk",
+   "name": "Black Milk",
+   "description": "American rapper and producer (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Black_Milk",
+   "extract": "Curtis Eugene Cross, better known by his stage name Black Milk, is an American rapper, songwriter, and record producer."
+  }
+ ]
+}

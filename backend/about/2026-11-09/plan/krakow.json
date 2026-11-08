@@ -1,0 +1,16 @@
+{
+ "city": "krakow",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "8a676eed-3123-41bf-888d-f14ebb680032",
+   "slug": "baby-lasagna-935bd4a8",
+   "title": "Baby Lasagna",
+   "act": "Baby Lasagna",
+   "name": "Baby Lasagna",
+   "description": "Croatian singer",
+   "source_url": "https://en.wikipedia.org/wiki/Baby_Lasagna",
+   "extract": "Marko Purišić, known professionally as Baby Lasagna, is a Croatian singer-songwriter and music producer, best known as a founding member of Manntra. He represented Croatia in the Eurovision Song Contest 2024 with the song \"Rim Tim Tagi Dim\", where he finished in second place overall with 547 points and first in the public vote, becoming Croatia's highest-scoring Eurovision entrant since its debut as an independent country in 1993."
+  }
+ ]
+}

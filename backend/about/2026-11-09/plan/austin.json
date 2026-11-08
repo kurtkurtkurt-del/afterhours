@@ -1,0 +1,46 @@
+{
+ "city": "austin",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "82478042-0c2e-4dd5-8930-adfa911564e1",
+   "slug": "the-army-the-navy-51f60a82",
+   "title": "The Army, The Navy",
+   "act": "The Army, The Navy",
+   "name": "The Army, The Navy",
+   "description": "American musical duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_Army%2C_The_Navy",
+   "extract": "The Army, The Navy is an American folk-pop band consisting of Maia Ciambriello and Sasha Goldberg."
+  },
+  {
+   "id": "95d3f65b-96d6-4754-919e-fd424067f5f7",
+   "slug": "tank-and-the-bangas-the-last-balloon-tour-w-arie-ad44ee3c",
+   "title": "Tank and The Bangas: The Last Balloon Tour w/ Ariel J. & ZEUS",
+   "act": "Tank and The Bangas",
+   "name": "Tank and the Bangas",
+   "description": "American musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Tank_and_the_Bangas",
+   "extract": "Tank and the Bangas is an American musical group based in New Orleans, Louisiana. The band won the 2017 NPR Tiny Desk Contest and in November 2019, they were nominated in the Best New Artist category for the 2020 Grammy Awards. They have released three studio albums, Thinktank (2013), Green Balloon (2019), and Red Balloon (2022). In 2025, they won their first Grammy for the 2024 album, The Heart, The Mind, The Soul for Best Spoken Word Poetry Album."
+  },
+  {
+   "id": "ae00aee4-b47d-48d3-8849-a362f297bbbd",
+   "slug": "static-dress-076f6e9e",
+   "title": "Static Dress",
+   "act": "Static Dress",
+   "name": "Static Dress",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+   "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+  },
+  {
+   "id": "ff3d6eaf-c3d4-4711-982e-a246f3b0fc8a",
+   "slug": "paul-cauthen-c3dd56c5",
+   "title": "Paul Cauthen",
+   "act": "Paul Cauthen",
+   "name": "Paul Cauthen",
+   "description": "American singer-songwriter (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/Paul_Cauthen",
+   "extract": "Paul Mark Cauthen is an American singer-songwriter from East Texas. He started his music career in an Americana/indie folk rock duo called Sons of Fathers, before turning solo. He has released five albums and an EP as a solo artist, the most recent being Book of Paul released on 3 April, 2026."
+  }
+ ]
+}

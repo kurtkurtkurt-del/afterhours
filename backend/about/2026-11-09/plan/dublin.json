@@ -1,0 +1,66 @@
+{
+ "city": "dublin",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "900c9269-c972-42da-895c-4983884ae924",
+   "slug": "deyyess-36e13b35",
+   "title": "Déyyess",
+   "act": "Déyyess",
+   "name": "Déyyess",
+   "description": "English singer",
+   "source_url": "https://en.wikipedia.org/wiki/D%C3%A9yyess",
+   "extract": "Hannah Jennifer Marie Butcher, known professionally as Déyyess, is an English singer-songwriter. She has released a number of singles and two EPs."
+  },
+  {
+   "id": "b3d25c67-d85e-434d-a50b-d58b92872462",
+   "slug": "bassvictim-4d463eea",
+   "title": "Bassvictim",
+   "act": "Bassvictim",
+   "name": "Bassvictim",
+   "description": "Electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Bassvictim",
+   "extract": "Bassvictim is an electronic music duo formed in London in 2022 by Polish-English singer songwriter Maria Manow and American musician and producer Ike Clateman. In 2025, they released their debut album Forever."
+  },
+  {
+   "id": "cb3057f9-fe46-4c5a-8af0-fa4553ed180f",
+   "slug": "clara-mann-8d5b7129",
+   "title": "Clara Mann",
+   "act": "Clara Mann",
+   "name": "Clara Mann",
+   "description": "British singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Clara_Mann",
+   "extract": "Clara Mann is a British singer-songwriter. She released her debut album Rift on state51 in March 2025. Her second album, Wishbone was released on 23 October 2026."
+  },
+  {
+   "id": "dc8f5946-26ca-47e0-8215-4ae8ec2b738d",
+   "slug": "don-toliver-nitrous-octane-world-tour-leg-2-5ff5fa46",
+   "title": "DON TOLIVER: NITROUS - OCTANE WORLD TOUR LEG 2",
+   "act": "DON TOLIVER",
+   "name": "Don Toliver",
+   "description": "American rapper and singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Don_Toliver",
+   "extract": "Caleb Zackery \"Don\" Toliver is an American rapper, singer and songwriter. His debut mixtape, Donny Womack (2018), was released one day prior to fellow Houston rapper Travis Scott's album Astroworld, on which Toliver made a guest appearance. In the following week, he signed with Scott's record label, Cactus Jack Records, in a joint venture with Atlantic Records."
+  },
+  {
+   "id": "b8410890-83c3-43ab-829e-dc250f30ceba",
+   "slug": "don-toliver-e5a7b57f",
+   "title": "Don Toliver",
+   "act": "Don Toliver",
+   "name": "Don Toliver",
+   "description": "American rapper and singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Don_Toliver",
+   "extract": "Caleb Zackery \"Don\" Toliver is an American rapper, singer and songwriter. His debut mixtape, Donny Womack (2018), was released one day prior to fellow Houston rapper Travis Scott's album Astroworld, on which Toliver made a guest appearance. In the following week, he signed with Scott's record label, Cactus Jack Records, in a joint venture with Atlantic Records."
+  },
+  {
+   "id": "9b6b94ba-aecb-4dd3-8011-e36373d22a10",
+   "slug": "julia-wolf-ea00c2d2",
+   "title": "Julia Wolf",
+   "act": "Julia Wolf",
+   "name": "Julia Wolf",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Wolf_(musician)",
+   "extract": "Julia Jade Capello, known professionally as Julia Wolf, is an American singer. Known for her ethereal vocals and self-produced alt-pop sound, she blends elements of indie pop, alternative rock, and R&B. Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory (2021) and her studio albums Good Thing We Stayed (2023) and Pressure (2025)."
+  }
+ ]
+}

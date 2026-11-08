@@ -1,0 +1,16 @@
+{
+ "city": "houston",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "93d2f830-2bd0-484c-868d-4ea4d9755a2c",
+   "slug": "pedro-sampaio-adddbb83",
+   "title": "Pedro Sampaio",
+   "act": "Pedro Sampaio",
+   "name": "Pedro Sampaio",
+   "description": "Brazilian singer and music producer",
+   "source_url": "https://en.wikipedia.org/wiki/Pedro_Sampaio",
+   "extract": "Pedro do Espirito Santo Sampaio is a Brazilian singer, music producer and DJ, known for the songs \"Sentadão\", \"Escada do Prédio\", with Marina Sena, and \"Chama Ela\", in partnership with the singer Lexa. He is signed to Warner Music Brasil."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "boston",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "1969de01-6971-4108-aa98-020aa4305bca",
+   "slug": "strawberry-guy-4a92ed58",
+   "title": "Strawberry Guy",
+   "act": "Strawberry Guy",
+   "name": "Strawberry Guy",
+   "description": "Welsh indie pop musician",
+   "source_url": "https://en.wikipedia.org/wiki/Strawberry_Guy",
+   "extract": "Alexander Morgan Stephens, better known by his stage name Strawberry Guy, is a Welsh indie pop musician. He is best known for his 2019 single \"Mrs Magic\", which gained popularity via TikTok."
+  },
+  {
+   "id": "ab30adaa-c953-4de5-a756-138d66d1c714",
+   "slug": "yung-gravy-the-joyrider-tour-bde45503",
+   "title": "Yung Gravy: The Joyrider Tour",
+   "act": "Yung Gravy",
+   "name": "Yung Gravy",
+   "description": "American rapper (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Yung_Gravy",
+   "extract": "Matthew Raymond Hauri, better known by his stage name Yung Gravy, is an American rapper."
+  },
+  {
+   "id": "97f8cecd-5313-4600-8139-52855133e260",
+   "slug": "pouya-the-foreverglades-tour-2f6dc7ca",
+   "title": "Pouya - The Foreverglades Tour",
+   "act": "Pouya",
+   "name": "Pouya",
+   "description": "American rapper (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Pouya",
+   "extract": "Kevin Pouya, known mononymously as Pouya, is an American rapper. Considered as a pioneer of the underground rap scene that began on SoundCloud in 2012, along with discovering the well known hip-hop duo Suicideboys in their early career, Pouya has developed a long-lasting core fanbase as an independent artist."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "city": "chicago",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "e56b5a3c-7119-473b-99fd-1502b66b4416",
+   "slug": "hunxho-e19e7da4",
+   "title": "Hunxho",
+   "act": "Hunxho",
+   "name": "Hunxho",
+   "description": "American rapper (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Hunxho",
+   "extract": "Ibrahim Muhammad Dodo, known professionally as Hunxho is an American rapper, singer and songwriter. He is signed to 300 Entertainment. Hunxho initially rose to fame with the song \"Let's Get It\" in 2021, which spawned a remix with rapper 21 Savage. Later that year, he released the mixtape Street Poet 2."
+  },
+  {
+   "id": "16b7eb9d-70b0-4978-bd01-33a03c843e32",
+   "slug": "michelle-branch-everywhere-and-back-again-tour-6505c496",
+   "title": "Michelle Branch: Everywhere And Back Again Tour",
+   "act": "Michelle Branch",
+   "name": "Michelle Branch",
+   "description": "American musician (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Michelle_Branch",
+   "extract": "Michelle Jacquet Branch is an American singer, songwriter, and guitarist. She won a Grammy Award for Best Pop Collaboration with Vocals with Santana for their 2002 single, \"The Game of Love\"."
+  },
+  {
+   "id": "402299c9-7971-4a98-9903-226bd16b2078",
+   "slug": "cut-copy-235fc689",
+   "title": "Cut Copy",
+   "act": "Cut Copy",
+   "name": "Cut Copy",
+   "description": "Australian synth-pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Cut_Copy",
+   "extract": "Cut Copy are an Australian synth-pop band formed in 2001 by Dan Whitford. Originally a home-recording project, the band now includes Tim Hoey (guitars), Ben Browning, and Mitchell Scott (drums)."
+  },
+  {
+   "id": "496c1b7c-33b8-4304-b7f3-9bdff7549f6e",
+   "slug": "shyne-2622-lgnd-tour-ages-18-14ed7b1d",
+   "title": "Shyne: 2622 LGND Tour - Ages 18+",
+   "act": "Shyne",
+   "name": "Shyne",
+   "description": "Belizean rapper and politician (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/Shyne",
+   "extract": "Moses Michael Levi Barrow, best known by his stage name Shyne, is a Belizean politician and former rapper. He served as Leader of the Opposition in the House of Representatives, and the leader of the Belize United Democratic Party."
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "5d1c1691-2f3f-42ae-b321-b15b8f1f3c7f",
+   "slug": "yal-n-bir-buyulu-gece-6b0d38a2",
+   "title": "Yalın - Bir Büyülü Gece",
+   "act": "Yalın",
+   "name": "Yalın",
+   "description": "Turkish pop singer and songwriter (born 1980)",
+   "source_url": "https://en.wikipedia.org/wiki/Yal%C4%B1n",
+   "extract": "Hüseyin Yalın, better known by his surname Yalın, is a Turkish pop singer and songwriter. He achieved success with the song \"Zalim\" in 2004."
+  },
+  {
+   "id": "ed680c7a-0148-4ceb-a333-63b227c7a12f",
+   "slug": "alt-n-gun-130842f2",
+   "title": "Altın Gün",
+   "act": "Altın Gün",
+   "name": "Altın Gün",
+   "description": "Dutch Anatolian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Alt%C4%B1n_G%C3%BCn",
+   "extract": "Altın Gün is a Dutch psychedelic rock band from Amsterdam, formed in 2016. Founded by bassist Jasper Verhulst, the band's vocalist Erdinç Ecevit Yıldız is of Turkish ethnicity while the other four members are Dutch."
+  },
+  {
+   "id": "fcd817ee-498f-4026-a892-272135d4e17a",
+   "slug": "ask-n-nur-yengi-21008a42",
+   "title": "Aşkın Nur Yengi",
+   "act": "Aşkın Nur Yengi",
+   "name": "Aşkın Nur Yengi",
+   "description": "Turkish singer and actress (born 1970)",
+   "source_url": "https://en.wikipedia.org/wiki/A%C5%9Fk%C4%B1n_Nur_Yengi",
+   "extract": "Aşkın Nur Yengi is a Turkish singer, composer, and actress.\nShe started working as a backing vocalist for Sezen Aksu and with Aksu's help, released her first studio album in 1990. With her debut album Sevgiliye in 1990, she became one of the most successful Turkish singers of the '90s."
+  },
+  {
+   "id": "e5576547-585a-45d2-8b73-e99b56405c5a",
+   "slug": "simge-82ececb2",
+   "title": "Simge",
+   "act": "Simge",
+   "name": "Simge",
+   "description": "Turkish singer, songwriter and composer (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/Simge_(singer)",
+   "extract": "Simge Sağın, known mononymously as Simge, is a Turkish singer. From early 2010s, she started to make Turkish pop songs, and with the release of her single \"Miş Miş\" in 2015 she became one of the most famous artists in Turkey."
+  },
+  {
+   "id": "77f292bb-78c0-4b85-a662-98f69b8e9faf",
+   "slug": "ayta-sozeri-1f46b8d7",
+   "title": "Ayta Sözeri",
+   "act": "Ayta Sözeri",
+   "name": "Ayta Sözeri",
+   "description": "Turkish actress and singer",
+   "source_url": "https://en.wikipedia.org/wiki/Ayta_S%C3%B6zeri",
+   "extract": "Ayta Sözeri is a Turkish actress, singer and LGBT activist."
+  }
+ ]
+}

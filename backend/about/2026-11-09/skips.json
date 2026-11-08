@@ -1,0 +1,3269 @@
+{
+ "day": "2026-11-09",
+ "skips": [
+  {
+   "id": "8b89d511-2ac0-49d4-bbf1-8022a1a62465",
+   "slug": "riverdance-ed2e0713",
+   "city": "abu-dhabi",
+   "why": "not a music act (Irish musical and dance production)"
+  },
+  {
+   "id": "00256635-9d83-4154-bc64-12536e7c56f9",
+   "slug": "buiten-westen-e7154ccd",
+   "city": "amsterdam",
+   "why": "no page"
+  },
+  {
+   "id": "f32cc041-0367-4207-9f86-6e22ee7d4a93",
+   "slug": "cassius-club-df4cf422",
+   "city": "amsterdam",
+   "why": "no page of that name (nearest: Cassius Clay vs. Alex Miteff)"
+  },
+  {
+   "id": "d8c6386e-f22c-4adb-a923-c7f7587e814d",
+   "slug": "to-the-moon-and-back-chef-special-acoustic-blok-d0f984e1",
+   "city": "amsterdam",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "438745ee-47aa-466d-80e6-29bb84d78068",
+   "slug": "all-you-need-is-kill-2025-535ad674",
+   "city": "amsterdam",
+   "why": "no page of that name (nearest: All You Need Is Kill (film))"
+  },
+  {
+   "id": "6393e3ea-9bfa-4fb7-8f63-9393c26630a2",
+   "slug": "cassia-fcd37773",
+   "city": "amsterdam",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "75e490f8-819b-42fb-b758-bc4a98146d62",
+   "slug": "to-the-moon-and-back-thomas-azier-blok-4-91b1bfb8",
+   "city": "amsterdam",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "c836ed6b-a26a-4323-870d-bfd114c8d7eb",
+   "slug": "salmo-dd39f020",
+   "city": "amsterdam",
+   "why": "not a music act (Genus of fishes)"
+  },
+  {
+   "id": "9653b9e6-9e93-4d25-ac05-271159ea8b23",
+   "slug": "this-is-michael-d0ae54a0",
+   "city": "amsterdam",
+   "why": "no page of that name (nearest: Michael Thevis)"
+  },
+  {
+   "id": "da5556c4-07c3-4cd5-93ea-ac53b1e339d3",
+   "slug": "alice-olsthoorn-sad-bitches-mini-rave-0707b294",
+   "city": "amsterdam",
+   "why": "no page"
+  },
+  {
+   "id": "0c4a628e-2de5-4a96-9944-112a78f0c989",
+   "slug": "muna-support-dcae8a3f",
+   "city": "amsterdam",
+   "why": "no page of that name (nearest: MAGA movement)"
+  },
+  {
+   "id": "fc5114aa-ff59-4f30-b5e3-878ea803869d",
+   "slug": "chico-chico-7f628be4",
+   "city": "amsterdam",
+   "why": "no page of that name (nearest: Chick Chick Boom)"
+  },
+  {
+   "id": "935c6d41-3008-4007-b512-4efe7a1c9f2d",
+   "slug": "avond-van-de-filmmuziek-2026-29257494",
+   "city": "amsterdam",
+   "why": "no page"
+  },
+  {
+   "id": "ed29858f-ad32-4e7d-a4d6-31afe02f4a42",
+   "slug": "80ler-90lar-gulumseten-hat-ralar-efd94f08",
+   "city": "ankara",
+   "why": "no page"
+  },
+  {
+   "id": "c546679f-237c-4398-9b4b-4f1962caf1d4",
+   "slug": "yusuf-bilal-alt-ntas-entel-maganda-stand-up-0e181dce",
+   "city": "ankara",
+   "why": "no page"
+  },
+  {
+   "id": "2b0e3b2f-c805-4375-88a5-59efab971b0f",
+   "slug": "fazl-polat-saka-saka-stand-up-1d977412",
+   "city": "ankara",
+   "why": "no page of that name (nearest: Fazli (poet))"
+  },
+  {
+   "id": "acf17658-1c4f-48a1-8b86-7ff1e89b49d8",
+   "slug": "donkisot-suz-donkisot-b726b65c",
+   "city": "ankara",
+   "why": "no page"
+  },
+  {
+   "id": "cf88731d-78e8-4673-be1f-a8bebf9466fd",
+   "slug": "deprem-gurdal-1560c43a",
+   "city": "ankara",
+   "why": "no page"
+  },
+  {
+   "id": "f29935db-cc0a-4e70-8506-a1777534e973",
+   "slug": "guldur-guldur-show-652f6993",
+   "city": "ankara",
+   "why": "not a music act (2013 Turkish TV series or program)"
+  },
+  {
+   "id": "c9fec6b6-c497-4e8f-b370-6b7a5b63e0e6",
+   "slug": "hisseli-harikalar-kumpanyas-a800baeb",
+   "city": "ankara",
+   "why": "no page"
+  },
+  {
+   "id": "f4ee3c6e-9dc6-4656-8159-3f471874b67e",
+   "slug": "bu-hikaye-senden-uzun-osman-92073e2c",
+   "city": "ankara",
+   "why": "no page"
+  },
+  {
+   "id": "ddb2fe34-b295-4064-b2c2-c489ec5ccd71",
+   "slug": "meksika-acmaz-iyi-misin-df306e63",
+   "city": "ankara",
+   "why": "no page"
+  },
+  {
+   "id": "82d65cde-794a-4be4-a986-6d930b39c58c",
+   "slug": "a-brilliant-idea-f3f1e002",
+   "city": "athina",
+   "why": "no page"
+  },
+  {
+   "id": "f3e98043-0451-49dc-91ba-42303d53a216",
+   "slug": "death-and-the-maiden-c8d5433d",
+   "city": "athina",
+   "why": "no page of that name (nearest: Death and the Maiden (film))"
+  },
+  {
+   "id": "fbd9cff0-4a4a-419e-9a77-503e40961b2e",
+   "slug": "the-chairs-b22d0df9",
+   "city": "athina",
+   "why": "not a music act (1952 play by Eugène Ionesco)"
+  },
+  {
+   "id": "d43fab34-a66b-4f50-9f9e-cf7c50f2794a",
+   "slug": "concert-for-the-planet-a469288a",
+   "city": "atlanta",
+   "why": "no page"
+  },
+  {
+   "id": "bcdb2e9d-29ae-4bec-bf75-0a6f748361b8",
+   "slug": "like-father-a998a7af",
+   "city": "atlanta",
+   "why": "not a music act (2018 film project directed by Lauren Miller)"
+  },
+  {
+   "id": "99bfa2a4-c0a0-463f-b715-b3c5b84c2db6",
+   "slug": "jim-henson-s-labyrinth-in-concert-da14f1e2",
+   "city": "atlanta",
+   "why": "no page"
+  },
+  {
+   "id": "9cde67e3-e5d7-403e-9acb-28cc1b22180d",
+   "slug": "zauntee-god-remembers-tour-382b1af9",
+   "city": "atlanta",
+   "why": "not a music act (Musical artist)"
+  },
+  {
+   "id": "d7929f47-93ba-472f-9fb8-4bb1c2bfca13",
+   "slug": "holywatr-deo-gratias-tour-ff66127b",
+   "city": "atlanta",
+   "why": "no page of that name (nearest: Holy War (BYU–Utah))"
+  },
+  {
+   "id": "5be3456f-07f3-48bd-ad61-974cec474d0a",
+   "slug": "first-to-eleven-68ff662a",
+   "city": "atlanta",
+   "why": "no page of that name (nearest: Starting lineup)"
+  },
+  {
+   "id": "aa8c5a1b-c5ca-4550-8a88-8ad5d982ec5e",
+   "slug": "cory-grinder-6dc3d87c",
+   "city": "atlanta",
+   "why": "no page"
+  },
+  {
+   "id": "a0c36d6e-7ba7-4b93-a41c-d09e0fd35299",
+   "slug": "yheti-b2b-toadface-9b62749b",
+   "city": "atlanta",
+   "why": "no page"
+  },
+  {
+   "id": "e7efc5ef-fe51-415c-a664-ba01f34f81b6",
+   "slug": "a-christmas-carol-aaeb9f1b",
+   "city": "atlanta",
+   "why": "not a music act (1843 novella by Charles Dickens)"
+  },
+  {
+   "id": "c137033c-794b-43aa-86b4-649375a215ef",
+   "slug": "tokyo-machine-w-dodge-and-fuski-98b9d8d1",
+   "city": "atlanta",
+   "why": "no page"
+  },
+  {
+   "id": "7e76ff0f-0875-412c-9ba9-5cb572078574",
+   "slug": "big-ass-truck-i-e-bc8bb434",
+   "city": "atlanta",
+   "why": "no page"
+  },
+  {
+   "id": "1418b19c-6737-4d5f-847d-693fde64828b",
+   "slug": "randy-feltface-gimmick-68ec3bdb",
+   "city": "atlanta",
+   "why": "not a music act (Australian puppet comedian)"
+  },
+  {
+   "id": "455e043e-3968-4776-943f-cf7215d83303",
+   "slug": "frigga-five-album-release-show-0b8a6a24",
+   "city": "atlanta",
+   "why": "no page of that name (nearest: Frigg gas field)"
+  },
+  {
+   "id": "54a08168-7e1c-4394-b855-de2cd1cba252",
+   "slug": "tommy-fleece-f29704ec",
+   "city": "atlanta",
+   "why": "no page of that name (nearest: Tommy Fleetwood)"
+  },
+  {
+   "id": "1e6638a1-927f-4067-a4ae-c9310472a924",
+   "slug": "mako-takeover-concert-mako-girls-1f7cb76a",
+   "city": "atlanta",
+   "why": "no page"
+  },
+  {
+   "id": "783e025a-92d3-4c4b-81a1-039bb6a31244",
+   "slug": "subtronics-c7eca670",
+   "city": "atlanta",
+   "why": "not a music act (Musical artist)"
+  },
+  {
+   "id": "47b96f2a-20df-43f2-b7d3-36ff428b760a",
+   "slug": "the-haunt-the-ghost-tour-live-at-smith-s-olde-ba-cf6d7499",
+   "city": "atlanta",
+   "why": "no page"
+  },
+  {
+   "id": "4c415c4b-753b-4b70-bdbb-55126d7684d0",
+   "slug": "austin-food-wine-festival-a28e590f",
+   "city": "austin",
+   "why": "not a music act (Food festival in Texas, United States)"
+  },
+  {
+   "id": "537c70f8-06a8-4465-ac1b-96a1778eec52",
+   "slug": "a-beautiful-noise-touring-1d2d04f8",
+   "city": "austin",
+   "why": "no page"
+  },
+  {
+   "id": "c3501caa-3bc4-4e50-bede-cac18e54916d",
+   "slug": "alvin-kuai-ec6649ea",
+   "city": "austin",
+   "why": "no page of that name (nearest: Alvin Kamara)"
+  },
+  {
+   "id": "1eff417a-5023-4c9b-8924-823caa9ed1a7",
+   "slug": "anthony-fuentes-0351fb7b",
+   "city": "austin",
+   "why": "no page"
+  },
+  {
+   "id": "bc8885c7-c82c-4c01-88c4-a266c8c1c91f",
+   "slug": "paige-fish-0eb8d612",
+   "city": "austin",
+   "why": "no page of that name (nearest: Paige Fischer)"
+  },
+  {
+   "id": "fb6f6871-9d57-4414-8654-1b0ec07fbb05",
+   "slug": "matt-the-electrician-30-years-in-south-austin-cfd2ce57",
+   "city": "austin",
+   "why": "no page"
+  },
+  {
+   "id": "8b82eaeb-882c-49bf-a44f-51da34c16087",
+   "slug": "father-of-peace-20fead0f",
+   "city": "austin",
+   "why": "no page of that name (nearest: Masaya Nakamura (businessman))"
+  },
+  {
+   "id": "6d582245-290c-4685-aedf-5e1c7a5cbadf",
+   "slug": "actors-from-the-london-stage-c3a53df9",
+   "city": "austin",
+   "why": "no page"
+  },
+  {
+   "id": "d3592bc8-5dd5-47a8-b9fc-b9da24098295",
+   "slug": "river-shook-86a28470",
+   "city": "austin",
+   "why": "no page of that name (nearest: River shark)"
+  },
+  {
+   "id": "216a4d6b-1e1d-4458-8503-18423aac5d7d",
+   "slug": "los-dos-de-tamaulipas-d3c25d0f",
+   "city": "austin",
+   "why": "no page"
+  },
+  {
+   "id": "00c9011f-14cb-4a96-8d14-1aa1695d1fc2",
+   "slug": "daisy-grenade-w-boyish-a533d41f",
+   "city": "austin",
+   "why": "no page"
+  },
+  {
+   "id": "7898204e-f0e2-4406-9f00-0cbfb4797fac",
+   "slug": "the-floozies-be15539b",
+   "city": "austin",
+   "why": "no page of that name (nearest: The Poozies)"
+  },
+  {
+   "id": "8e53b93e-1a8b-4298-afcb-49a21abaeb5f",
+   "slug": "earthquake-f44921a1",
+   "city": "austin",
+   "why": "not a music act (Sudden movement of the Earth's crust)"
+  },
+  {
+   "id": "f25c66a4-baf7-46e3-b6f5-26b95a627e4b",
+   "slug": "mike-feeney-7009ec5d",
+   "city": "austin",
+   "why": "no page of that name (nearest: Mike Sweeney)"
+  },
+  {
+   "id": "420929b7-9e6f-464e-9014-771a6bf60e00",
+   "slug": "ty-myers-the-legal-tour-2026-b115dacd",
+   "city": "austin",
+   "why": "not a music act (Musical artist)"
+  },
+  {
+   "id": "d7e92c95-17be-40c9-b5bc-2b612921d8fc",
+   "slug": "duo-fun-big-fun-museum-museo-de-las-ilusiones-c6ded3c4",
+   "city": "barcelona",
+   "why": "no page of that name (nearest: Du Fu)"
+  },
+  {
+   "id": "3f489ce2-2328-48cd-9640-fee82893a353",
+   "slug": "metaxy-749e4351",
+   "city": "berlin",
+   "why": "not a music act (Concept in Platonic philosophy)"
+  },
+  {
+   "id": "8fe6ba23-de68-4cda-8489-e8e704912b64",
+   "slug": "cirque-du-soleil-alize-780dd475",
+   "city": "berlin",
+   "why": "no page"
+  },
+  {
+   "id": "1e78ec05-ca62-416a-a43e-cfcdc901c095",
+   "slug": "laughs-pizza-and-shots-english-comedy-night-in-t-f3f3d08d",
+   "city": "berlin",
+   "why": "no page"
+  },
+  {
+   "id": "3bedb7b8-0030-426a-acb9-5a4392a5aaa7",
+   "slug": "sinatra-night-berlin-b7dea7a0",
+   "city": "berlin",
+   "why": "no page"
+  },
+  {
+   "id": "16b2502a-9447-4dd7-9b14-d3a47299b5ee",
+   "slug": "darkest-thoughts-improvised-english-stand-up-com-55674be1",
+   "city": "berlin",
+   "why": "no page"
+  },
+  {
+   "id": "0526b485-5414-4bed-b442-80994149710d",
+   "slug": "hatsune-miku-miku-expo-2026-europe-3202a887",
+   "city": "berlin",
+   "why": "not a music act (Singing voice synthesizer software)"
+  },
+  {
+   "id": "91801177-c385-48d0-89b0-bfe4ba2738fb",
+   "slug": "mittermeiers-lucky-punch-comedy-club-prasentiert-81c331f8",
+   "city": "berlin",
+   "why": "no page"
+  },
+  {
+   "id": "baadd9ea-0e89-4fde-a8eb-c52c0197747b",
+   "slug": "nokia-angel-necromance-tour-2e2910d0",
+   "city": "berlin",
+   "why": "no page of that name (nearest: Angelo Novi)"
+  },
+  {
+   "id": "2e6ce97a-d333-4d77-ba61-53f6aa5e92b8",
+   "slug": "gurriers-nobody-s-coming-to-save-you-tour-2026-930ebc8e",
+   "city": "berlin",
+   "why": "no page of that name (nearest: Chav)"
+  },
+  {
+   "id": "6a5d10ea-c21f-4b9f-b5b3-d14c816b6bab",
+   "slug": "tekno-live-4c42eb18",
+   "city": "birmingham",
+   "why": "no page of that name (nearest: Tekno (musician))"
+  },
+  {
+   "id": "542fbae4-f805-4376-bb15-07ccf6b1f624",
+   "slug": "split-second-93f72670",
+   "city": "birmingham",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "0958edce-854c-4a1c-a265-59c3e19b0c93",
+   "slug": "thomas-green-brainstorm-4e7748a4",
+   "city": "birmingham",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "ae242e42-5d70-4d0f-8028-c4226c481b9f",
+   "slug": "meek-4186067b",
+   "city": "birmingham",
+   "why": "no page of that name (nearest: Meek Mill)"
+  },
+  {
+   "id": "89abef1a-9d76-4a42-8165-2d7f95f70c95",
+   "slug": "radio-free-alice-0347cfe3",
+   "city": "birmingham",
+   "why": "no page of that name (nearest: Radio Free Albemuth (film))"
+  },
+  {
+   "id": "bd1ea072-17e1-4629-8627-590f52138950",
+   "slug": "susan-calman-tall-tales-9977b5e0",
+   "city": "birmingham",
+   "why": "not a music act (Scottish comedian (born 1974))"
+  },
+  {
+   "id": "007787ad-1b6c-476f-bdf1-47a608d560b2",
+   "slug": "hits-radio-live-birmingham-2026-93ea7876",
+   "city": "birmingham",
+   "why": "no page"
+  },
+  {
+   "id": "939cef42-311d-4df8-abc3-fb39d0e83c4d",
+   "slug": "elvana-elvis-fronted-nirvana-birmingham-xoyo-d5ba3939",
+   "city": "birmingham",
+   "why": "no page of that name (nearest: Elvana Gjata)"
+  },
+  {
+   "id": "df75a668-089c-4320-8eca-8c3bec3af2e5",
+   "slug": "embrace-e051eef2",
+   "city": "birmingham",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "3ed95189-79fd-4786-b6d0-1ff806317bf3",
+   "slug": "jenna-raine-f85e37d0",
+   "city": "birmingham",
+   "why": "no page of that name (nearest: Jenna Kanell)"
+  },
+  {
+   "id": "edfe57d2-d1f5-4100-97cb-5c6fbdf645c2",
+   "slug": "drew-dunn-3f283c3c",
+   "city": "boston",
+   "why": "no page of that name (nearest: Drew University)"
+  },
+  {
+   "id": "72023511-ab92-4f75-9406-623fcd8ac8cc",
+   "slug": "porch-light-hush-tour-5162c051",
+   "city": "boston",
+   "why": "not a music act (2026 single by Noah Kahan)"
+  },
+  {
+   "id": "b000dacb-25c2-4e6a-baa3-345d1d522a5f",
+   "slug": "mr-fantasy-sexy-saturday-nights-tour-4f3ca7b7",
+   "city": "boston",
+   "why": "not a music act (1967 studio album by Traffic)"
+  },
+  {
+   "id": "a77d7c7e-cb37-43c6-be73-cb07733cf0a6",
+   "slug": "steven-feifke-and-friends-10th-album-celebration-dad7db68",
+   "city": "boston",
+   "why": "no page"
+  },
+  {
+   "id": "a36503ff-4adf-49a0-a948-cc07dbb43efc",
+   "slug": "comics-come-home-e335a40e",
+   "city": "boston",
+   "why": "not a music act (Annual charity stand-up comedy festival)"
+  },
+  {
+   "id": "8e36d6be-3e42-47ce-a775-e6359f462087",
+   "slug": "mph-1c4b5247",
+   "city": "boston",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "ae38f5de-9de0-4ac4-a1cf-30f6034f795b",
+   "slug": "klass-xv-the-prelude-konpa-direk-live-and-loud-737a7957",
+   "city": "boston",
+   "why": "no page of that name (nearest: Myleene Klass)"
+  },
+  {
+   "id": "fe2b83f3-8955-4279-9944-14b27cf82a71",
+   "slug": "favela-encantada-wig-party-18-nov-14-play-boston-9b7e079c",
+   "city": "boston",
+   "why": "no page"
+  },
+  {
+   "id": "5f1849d0-3857-493c-80d7-f27abf40d1f3",
+   "slug": "bradeazy-f22b8cc8",
+   "city": "boston",
+   "why": "no page of that name (nearest: Bianca Bradey)"
+  },
+  {
+   "id": "262eaaa2-903c-429a-a4f3-03e74ae628df",
+   "slug": "furball-boston-5-year-anniversary-0c7e2ec4",
+   "city": "boston",
+   "why": "no page"
+  },
+  {
+   "id": "aa7efad5-86ea-4aa7-86eb-59189ca6139a",
+   "slug": "william-black-21-350d6f28",
+   "city": "boston",
+   "why": "no page of that name (nearest: William Blackstone)"
+  },
+  {
+   "id": "f9df0a0a-5154-4d71-b747-b940b67e95ec",
+   "slug": "a-drag-queen-christmas-d38338ee",
+   "city": "boston",
+   "why": "not a music act (Drag tour in the United States)"
+  },
+  {
+   "id": "d987e634-91c5-4d04-8dbe-a9c3049f2d2f",
+   "slug": "the-mountain-grass-unit-18-and-over-b83edc97",
+   "city": "boston",
+   "why": "no page"
+  },
+  {
+   "id": "9e261a65-3008-4e32-b90f-cff0e9956089",
+   "slug": "insomnium-and-amorphis-18-92151235",
+   "city": "boston",
+   "why": "no page"
+  },
+  {
+   "id": "cf0276a3-f533-4fac-a15f-77f67048800a",
+   "slug": "the-sound-of-music-9db394ec",
+   "city": "boston",
+   "why": "not a music act (Musical by Rodgers and Hammerstein, premiered in 1959)"
+  },
+  {
+   "id": "72dea1a9-ce48-4f3a-b80c-bafc84dc3a1d",
+   "slug": "sir-woman-playtime-tour-18-ad1e1eef",
+   "city": "boston",
+   "why": "no page of that name (nearest: Sir Norman Lamont, 2nd Baronet)"
+  },
+  {
+   "id": "1751f593-7c32-45c8-af6e-130347fe6fc5",
+   "slug": "ilana-glazer-live-6c7e5607",
+   "city": "boston",
+   "why": "no page"
+  },
+  {
+   "id": "1f7452c6-c182-4624-823c-3dd4335e65f8",
+   "slug": "edgar-yves-jr-dans-vigilance-fc738a1b",
+   "city": "brussel",
+   "why": "no page"
+  },
+  {
+   "id": "36eb5bdf-178b-4dfd-b8c7-a909eaa9af96",
+   "slug": "common-saturdays-free-rsvp-671cec03",
+   "city": "calgary",
+   "why": "no page"
+  },
+  {
+   "id": "8e2c1bf2-3269-41b6-a0a0-4934add65cc4",
+   "slug": "jann-arden-and-her-holiday-orchestra-de8c7ce1",
+   "city": "calgary",
+   "why": "no page"
+  },
+  {
+   "id": "176e5e75-8337-4442-8e22-a10bb91dfec8",
+   "slug": "jake-vaadeland-9aea1be9",
+   "city": "calgary",
+   "why": "not a music act (Musical artist)"
+  },
+  {
+   "id": "5d247560-e048-4c09-8b01-c71f107b1594",
+   "slug": "jimbo-ruins-xxxmas-4b792421",
+   "city": "calgary",
+   "why": "no page"
+  },
+  {
+   "id": "b7899f24-0dcb-4de6-847e-a451c11e2470",
+   "slug": "cjay-92-christmas-recital-with-p-o-d-and-buckche-e70a4b19",
+   "city": "calgary",
+   "why": "no page"
+  },
+  {
+   "id": "dcb0ade3-ae7e-426f-a882-ab1d6381a293",
+   "slug": "the-second-city-s-pandemonium-please-hold-e37d529c",
+   "city": "chicago",
+   "why": "no page of that name (nearest: The Second City's Next Comedy Legend)"
+  },
+  {
+   "id": "7edacb97-c48d-4850-a81a-a17905b5744a",
+   "slug": "chicago-architecture-center-river-cruise-aboard-4663412a",
+   "city": "chicago",
+   "why": "no page"
+  },
+  {
+   "id": "6c475259-7223-4544-ac26-e092d01d736f",
+   "slug": "the-chicago-theatre-tour-experience-e5b1822b",
+   "city": "chicago",
+   "why": "no page of that name (nearest: Chicago Theatre)"
+  },
+  {
+   "id": "d087d362-19e3-468e-b69b-7d75dd412a1a",
+   "slug": "jersey-boys-chicago-c2e7cc83",
+   "city": "chicago",
+   "why": "no page"
+  },
+  {
+   "id": "7a5e4acd-9e3d-4d69-b518-c7f3bf019c29",
+   "slug": "dr-neil-degrasse-tyson-astronomy-bizarre-eec85bf4",
+   "city": "chicago",
+   "why": "no page"
+  },
+  {
+   "id": "49410367-8232-4bd9-b8b1-ee451c5bd857",
+   "slug": "vape-the-grease-parody-50c0f0bc",
+   "city": "chicago",
+   "why": "no page"
+  },
+  {
+   "id": "f280b30e-1e47-479d-8333-7f8a40b243b6",
+   "slug": "sold-out-genesis-owusu-after-louise-62180319",
+   "city": "chicago",
+   "why": "no page"
+  },
+  {
+   "id": "83b00153-aa16-4204-8bc7-7592df4addc7",
+   "slug": "a-midsummer-night-s-dream-70ef3120",
+   "city": "chicago",
+   "why": "not a music act (Play by William Shakespeare)"
+  },
+  {
+   "id": "18c9f63e-3cf9-439c-83b8-a0643a722a41",
+   "slug": "drunk-shakespeare-a-drunk-christmas-carol-21-eve-80f2967e",
+   "city": "chicago",
+   "why": "not a music act (2014 off-Broadway play)"
+  },
+  {
+   "id": "9b47b262-6ce8-4a62-ab2b-9cff8612e0e3",
+   "slug": "it-s-a-wonderful-life-a-live-radio-play-b754e61e",
+   "city": "chicago",
+   "why": "not a music act (1946 film by Frank Capra)"
+  },
+  {
+   "id": "54f1b04c-f083-4e19-a0a5-95e63279ef53",
+   "slug": "eldon-ages-17-cb73eab7",
+   "city": "chicago",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "2ba562cd-2a0c-4b21-b852-1d5c08a64bbb",
+   "slug": "yo-yo-ma-and-the-cso-40822e67",
+   "city": "chicago",
+   "why": "no page"
+  },
+  {
+   "id": "03ad3450-8090-48c0-b572-35c27343d9f0",
+   "slug": "hovvdy-17-event-e0d2aeb3",
+   "city": "chicago",
+   "why": "no page"
+  },
+  {
+   "id": "fa3b74f0-1084-4e07-a7c0-66906dddce60",
+   "slug": "liana-zhen-ai-and-astrid-sonne-present-normal-dr-0eb09d81",
+   "city": "chicago",
+   "why": "no page"
+  },
+  {
+   "id": "71c82168-d585-492f-8476-3f8f26bc7bb8",
+   "slug": "hovvdy-with-christian-lee-hutson-e7c7b2be",
+   "city": "chicago",
+   "why": "no page"
+  },
+  {
+   "id": "a303b2bf-4a29-4139-a139-63e6039747e7",
+   "slug": "sold-out-mary-in-the-junkyard-lefty-parker-3f3081ae",
+   "city": "chicago",
+   "why": "no page"
+  },
+  {
+   "id": "26abffef-4252-4bb8-87e7-6a3b20bb7672",
+   "slug": "afterlife-afterparty-frost-children-dj-86b9dca5",
+   "city": "chicago",
+   "why": "no page"
+  },
+  {
+   "id": "d38ab09e-15e0-4b29-87d1-fe6feca73f87",
+   "slug": "amigos-intocables-2c181074",
+   "city": "ciudad-de-mexico",
+   "why": "no page"
+  },
+  {
+   "id": "d3550217-fe03-42f2-b547-f92b08822781",
+   "slug": "la-llorona-al-final-del-camino-2c72135e",
+   "city": "ciudad-de-mexico",
+   "why": "no page"
+  },
+  {
+   "id": "b39a8695-9d59-4d82-ab2b-be5a916465c0",
+   "slug": "mystika-un-viaje-inmersivo-espiritual-por-pepe-s-8e7576b6",
+   "city": "ciudad-de-mexico",
+   "why": "no page of that name (nearest: Mystikal)"
+  },
+  {
+   "id": "73f64042-120c-4e5b-950e-e0b545803a1d",
+   "slug": "noche-italiana-il-club-della-canzone-cc8bf6a2",
+   "city": "ciudad-de-mexico",
+   "why": "no page of that name (nearest: Italian Night)"
+  },
+  {
+   "id": "1b92c982-6de3-42fb-9c1c-ac53f0c23568",
+   "slug": "leyendas-45d45a30",
+   "city": "ciudad-de-mexico",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "74a38fa2-d103-4eb6-8a29-f31f46da0251",
+   "slug": "infierno-6394eed5",
+   "city": "ciudad-de-mexico",
+   "why": "no page of that name (nearest: Infierno en el Ring)"
+  },
+  {
+   "id": "5630a1d2-b793-443b-9152-a2df8b4f66b1",
+   "slug": "karol-g-viajando-por-el-mundo-tropitour-8ef5dad4",
+   "city": "ciudad-de-mexico",
+   "why": "no page"
+  },
+  {
+   "id": "edd65cf6-24c9-40cd-a6f2-29e776511dff",
+   "slug": "carlos-cuevas-el-rey-del-bolero-9c9b5ac1",
+   "city": "ciudad-de-mexico",
+   "why": "not a music act (Spanish actor)"
+  },
+  {
+   "id": "3ea88a86-3dcb-4e87-826f-a8ca997030c5",
+   "slug": "la-cantadera-fc29a6fb",
+   "city": "ciudad-de-mexico",
+   "why": "no page of that name (nearest: La Cantera Formation)"
+  },
+  {
+   "id": "b93d81fc-d3fd-4b16-9abb-20d1f26712d4",
+   "slug": "cafres-y-estramboticos-352ad770",
+   "city": "ciudad-de-mexico",
+   "why": "no page"
+  },
+  {
+   "id": "be518ddf-093c-49c8-a43d-2d4a9e83d4c5",
+   "slug": "maria-san-felipe-por-si-volvieras-45b25025",
+   "city": "ciudad-de-mexico",
+   "why": "no page"
+  },
+  {
+   "id": "d28002f2-160d-4e99-bd02-f6391efa5a48",
+   "slug": "entre-ardidas-el-show-26e12445",
+   "city": "ciudad-de-mexico",
+   "why": "no page"
+  },
+  {
+   "id": "a4e1c5a4-4c2e-4430-b485-483759636a29",
+   "slug": "hablemos-de-lo-que-no-existe-1f9b536b",
+   "city": "ciudad-de-mexico",
+   "why": "no page"
+  },
+  {
+   "id": "c1ffca7e-ecc6-4efd-8be8-82afacbb898d",
+   "slug": "specialized-karaoke-night-with-ruen-2a981c1e",
+   "city": "dallas",
+   "why": "no page"
+  },
+  {
+   "id": "1036c34a-eaeb-4e67-8a0c-e82ad88ce990",
+   "slug": "taylor-bickett-mori-a0c23278",
+   "city": "dallas",
+   "why": "no page"
+  },
+  {
+   "id": "3f4a931e-c001-4b20-bef9-c4589ccd07ad",
+   "slug": "movements-16-and-under-with-parent-or-legal-guar-5ab7a8d9",
+   "city": "dallas",
+   "why": "no page"
+  },
+  {
+   "id": "c7bd6e32-959e-464c-8685-d818a0195a21",
+   "slug": "the-lowliest-one-f14a0449",
+   "city": "dallas",
+   "why": "no page"
+  },
+  {
+   "id": "a1dc6db3-a33f-4fe6-a2ed-bea02079ff4d",
+   "slug": "r-z-presents-se-esta-haciendo-tarde-1c1bcfc2",
+   "city": "dallas",
+   "why": "no page of that name (nearest: The RZA Presents: Afro Samurai Resurrection OST)"
+  },
+  {
+   "id": "a1977151-d74d-4297-b906-6195a854a227",
+   "slug": "zhu-on-the-move-18-event-3a25485d",
+   "city": "dallas",
+   "why": "no page"
+  },
+  {
+   "id": "6fcaf8e2-b66d-47e6-8920-7de20fc95480",
+   "slug": "dallas-fetish-ball-fe6e0767",
+   "city": "dallas",
+   "why": "no page"
+  },
+  {
+   "id": "261a38c8-9794-47d0-afbd-487a4cf352b7",
+   "slug": "jazz-at-the-muse-evening-with-andrea-fdd07cd6",
+   "city": "dallas",
+   "why": "no page"
+  },
+  {
+   "id": "6be0b574-283a-4d9f-9af4-b19b12c93c74",
+   "slug": "lizzie-morgan-f9b51fd6",
+   "city": "dallas",
+   "why": "no page of that name (nearest: Lizzie Dorman Fyler)"
+  },
+  {
+   "id": "a7f4f509-9e27-4d8b-9247-af58fbe1f64f",
+   "slug": "identity-crisis-18-event-37d2b5fc",
+   "city": "dallas",
+   "why": "no page"
+  },
+  {
+   "id": "447e1756-ed1e-4f71-ba0b-b59659722ef9",
+   "slug": "pipe-hillcountry-halfwit-judge-joy-scream-29f89ef8",
+   "city": "dallas",
+   "why": "no page"
+  },
+  {
+   "id": "1049a021-ed30-45a7-9353-af02b9ffcda6",
+   "slug": "chase-petra-w-jer-7304b097",
+   "city": "dallas",
+   "why": "no page"
+  },
+  {
+   "id": "0d899612-46de-4b5c-a2a1-5bed24df9e18",
+   "slug": "cannibal-ox-the-cold-vein-25-year-anniversary-18-8205d616",
+   "city": "denver",
+   "why": "no page"
+  },
+  {
+   "id": "8120a7e2-82e4-4f10-acc1-cbd910af733f",
+   "slug": "straight-no-chaser-making-spirits-bright-tour-8332db02",
+   "city": "denver",
+   "why": "not a music act (American a cappella group)"
+  },
+  {
+   "id": "a6dbc541-8416-4043-8911-18961ea2e03a",
+   "slug": "ali-wong-49fb3527",
+   "city": "denver",
+   "why": "not a music act (American comedian and actress (born 1982))"
+  },
+  {
+   "id": "0221a725-32e7-4fdc-8bc3-0e4a359e41f6",
+   "slug": "what-a-glorious-feeling-4b22f11e",
+   "city": "denver",
+   "why": "no page"
+  },
+  {
+   "id": "c0bfb726-21f8-45ed-b2bf-2f0e96e5e1a9",
+   "slug": "tommy-davidson-80d9232f",
+   "city": "denver",
+   "why": "not a music act (American actor and comedian)"
+  },
+  {
+   "id": "501074c0-fe13-4e0a-a030-b9c134d90d09",
+   "slug": "macbeth-ed026027",
+   "city": "denver",
+   "why": "not a music act (Play by William Shakespeare)"
+  },
+  {
+   "id": "fd4266c3-08db-4b8d-85cc-d603d36eec5b",
+   "slug": "bahamas-16-and-over-48d672b8",
+   "city": "denver",
+   "why": "no page"
+  },
+  {
+   "id": "12178a37-b50c-4e04-9436-8c2178f9aa1c",
+   "slug": "worship-w-sub-focus-a672905e",
+   "city": "denver",
+   "why": "no page"
+  },
+  {
+   "id": "14a94af2-7063-4a58-80c3-886c8f16ae6d",
+   "slug": "ladies-night-and-noche-sonidera-4c1fc0b9",
+   "city": "denver",
+   "why": "no page"
+  },
+  {
+   "id": "744bcf7a-7276-4681-8c63-a284f38b0948",
+   "slug": "joe-nichols-27b1320c",
+   "city": "denver",
+   "why": "not a music act (American country music artist (born 1976))"
+  },
+  {
+   "id": "e52352d1-5adb-4ebb-a758-514a0c3ed430",
+   "slug": "levi-bloom-with-grayson-ratliff-2eb7dcce",
+   "city": "denver",
+   "why": "no page"
+  },
+  {
+   "id": "d14f61bd-df64-4497-b5e3-cd38e8d1bdfd",
+   "slug": "kyle-starkey-x-paige-tomlinson-358e1f9c",
+   "city": "denver",
+   "why": "no page"
+  },
+  {
+   "id": "8374ca20-18a9-4aba-b740-080fe63ccfee",
+   "slug": "marlo-4c323d24",
+   "city": "denver",
+   "why": "no page of that name (nearest: Marlo Hoogstraten)"
+  },
+  {
+   "id": "f1db7b7f-1cb4-4eb0-a6d2-f76534a5b51a",
+   "slug": "deborah-de-luca-bd8956c4",
+   "city": "denver",
+   "why": "no page of that name (nearest: Deborah J. Lucas)"
+  },
+  {
+   "id": "41953e30-d92e-40bb-aa5d-d6611fa5311e",
+   "slug": "the-carpenters-songbook-a-live-celebration-35a6bcb5",
+   "city": "denver",
+   "why": "no page"
+  },
+  {
+   "id": "9f5ad834-a593-41f8-92bd-babb10deacb0",
+   "slug": "mph-16-and-over-cff7fb86",
+   "city": "denver",
+   "why": "no page"
+  },
+  {
+   "id": "09be48bc-6a1d-44c2-9f68-e801e4557c10",
+   "slug": "nier-orchestra-concert-8f9f55e5",
+   "city": "denver",
+   "why": "no page of that name (nearest: Nier (video game))"
+  },
+  {
+   "id": "fe5deac9-9aa4-4fb1-818a-12804f5a868c",
+   "slug": "fortune-feimster-takin-care-of-biscuits-live-spe-8670568b",
+   "city": "denver",
+   "why": "not a music act (American comedian (born 1980))"
+  },
+  {
+   "id": "1acea896-e150-4ec5-b4cb-d3b3983f0b6a",
+   "slug": "paramount-theatre-club-seating-fortune-feimster-f3dd98db",
+   "city": "denver",
+   "why": "no page"
+  },
+  {
+   "id": "d550a3d5-4d56-43d9-8f14-aa5c65c772a7",
+   "slug": "kurt-vile-and-the-violators-c9922b17",
+   "city": "denver",
+   "why": "no page of that name (nearest: Kurt Vile)"
+  },
+  {
+   "id": "8881087f-0e42-40bf-a534-57e8673d5b7c",
+   "slug": "surely-tempo-e96ee1dc",
+   "city": "denver",
+   "why": "no page of that name (nearest: Surely Tomorrow)"
+  },
+  {
+   "id": "bbbb2e46-9046-45c2-b4cb-d077497841ef",
+   "slug": "cat-clyde-and-dean-johnson-359eef0a",
+   "city": "denver",
+   "why": "no page"
+  },
+  {
+   "id": "f9a11b29-41d2-4b05-825f-d6c4fc3a3345",
+   "slug": "dave-hause-and-the-mermaid-b425e611",
+   "city": "denver",
+   "why": "no page"
+  },
+  {
+   "id": "751c9e87-21d4-4fd2-bd60-535d09408f65",
+   "slug": "havok-hellripper-slackjaw-xoth-ardennes-8c5fdc6c",
+   "city": "detroit",
+   "why": "no page"
+  },
+  {
+   "id": "fe2ccde2-24fe-400e-8bb0-c06af519eae3",
+   "slug": "exhumed-jarhead-fertilizer-savage-master-molder-293ffd68",
+   "city": "detroit",
+   "why": "no page"
+  },
+  {
+   "id": "a2a979d6-bb46-4140-8eae-26e710be4c76",
+   "slug": "kingdom-of-giants-deadlands-holy-wars-night-ride-d62e5b3f",
+   "city": "detroit",
+   "why": "no page"
+  },
+  {
+   "id": "2f7501f5-af59-4f29-bd95-4958280f0ff4",
+   "slug": "chase-petra-jer-leisure-hour-sewing-club-3f2f8f6f",
+   "city": "detroit",
+   "why": "no page"
+  },
+  {
+   "id": "340328e5-78cb-4557-b026-342f42d59c64",
+   "slug": "kevin-bridges-here-if-you-need-me-54855c03",
+   "city": "dublin",
+   "why": "not a music act (Scottish stand-up comedian (born 1986))"
+  },
+  {
+   "id": "b056a107-f6dc-4396-9d79-6f36d253ed51",
+   "slug": "trevor-wallace-the-alpha-beta-male-b298fb97",
+   "city": "dublin",
+   "why": "not a music act (American comedian (born 1992))"
+  },
+  {
+   "id": "2ac23564-babe-4d7e-b8c2-73d832fe5f9b",
+   "slug": "justin-cassidy-dun-laoghaire-comedy-festival-nov-b8f54d38",
+   "city": "dublin",
+   "why": "no page"
+  },
+  {
+   "id": "08cfbfcb-0230-4038-aaf6-ec40d0603c93",
+   "slug": "mgna-crrrta-c6d6d3df",
+   "city": "dublin",
+   "why": "no page"
+  },
+  {
+   "id": "b6e7c03c-a452-48c4-9c83-d6e1686d1206",
+   "slug": "emma-doran-emmaculate-1d33c66f",
+   "city": "dublin",
+   "why": "not a music act (Irish comedian, podcaster and actress)"
+  },
+  {
+   "id": "f88bdc46-1d7b-411b-84ca-d332e3371c7f",
+   "slug": "search-results-7bc7c322",
+   "city": "dublin",
+   "why": "no page of that name (nearest: Search engine results page)"
+  },
+  {
+   "id": "a0fb6063-a798-436c-b5c7-e0a5b3565e6e",
+   "slug": "gotts-street-park-d155029e",
+   "city": "dublin",
+   "why": "no page"
+  },
+  {
+   "id": "9d799b21-be05-488c-8b07-bb31ba952c68",
+   "slug": "deirdre-o-kane-all-the-rage-0198a2cf",
+   "city": "dublin",
+   "why": "not a music act (Irish actor and comedian (born 1968))"
+  },
+  {
+   "id": "b6ee1ace-873c-4c94-b06e-c7b890d4ef40",
+   "slug": "johnluke-2918a9be",
+   "city": "dublin",
+   "why": "no page of that name (nearest: John-Luke Roberts)"
+  },
+  {
+   "id": "7ed81fb3-615a-474b-83eb-6064296aa6d7",
+   "slug": "sarah-julia-c94c38e9",
+   "city": "dublin",
+   "why": "no page of that name (nearest: Sarah Nauta)"
+  },
+  {
+   "id": "43d69d84-eaf1-47c0-b5bf-3f35e08e4df8",
+   "slug": "kiss-facility-6feeec26",
+   "city": "dublin",
+   "why": "no page of that name (nearest: Sega Bodega)"
+  },
+  {
+   "id": "739c731e-25e0-48f4-ac85-ce2040931df8",
+   "slug": "pronounced-at-23eb8b78",
+   "city": "dublin",
+   "why": "no page of that name (nearest: (Pronounced 'Lĕh-'nérd 'Skin-'nérd))"
+  },
+  {
+   "id": "259ca1e1-9eaf-4a41-b3ff-ccd4da1a2806",
+   "slug": "mero-legacy-tour-2027-28bf4986",
+   "city": "frankfurt",
+   "why": "no page of that name (nearest: Merovingian dynasty)"
+  },
+  {
+   "id": "bce23b82-5b23-435a-b039-b24ee13dcafc",
+   "slug": "vega-tour-2027-e3578b77",
+   "city": "frankfurt",
+   "why": "not a music act (Brightest star in the constellation Lyra)"
+  },
+  {
+   "id": "af1d3f42-7b61-4d15-8df7-9fb60b208604",
+   "slug": "undeath-slimelord-09fb2eee",
+   "city": "glasgow",
+   "why": "no page"
+  },
+  {
+   "id": "acef9c03-b16f-445f-85d3-fc71f41296c9",
+   "slug": "beabadoobee-w-wisp-4fb35922",
+   "city": "glasgow",
+   "why": "no page"
+  },
+  {
+   "id": "bdab8191-0328-465a-96bb-6cd4fc2dcc30",
+   "slug": "the-devil-and-the-universe-71f6bcb0",
+   "city": "glasgow",
+   "why": "no page"
+  },
+  {
+   "id": "d05810fa-7450-4141-a290-34c6392df594",
+   "slug": "martyn-joseph-54a63997",
+   "city": "glasgow",
+   "why": "not a music act (Welsh musical artist (born 1960))"
+  },
+  {
+   "id": "a708cbb1-110a-419b-8bb7-6ea9c2e02fc6",
+   "slug": "temples-8759d668",
+   "city": "glasgow",
+   "why": "no page of that name (nearest: Temple)"
+  },
+  {
+   "id": "5499e417-87da-493f-8d4c-8b850e5d3272",
+   "slug": "conor-mclain-ccc8206e",
+   "city": "glasgow",
+   "why": "no page of that name (nearest: Conor McLaughlin)"
+  },
+  {
+   "id": "3115b431-e347-4d12-98c5-2339c39929a2",
+   "slug": "hamburg-grand-opening-old-but-gold-u30-hip-hop-p-3fd98395",
+   "city": "hamburg",
+   "why": "no page of that name (nearest: The Grand Opening)"
+  },
+  {
+   "id": "d1d6924f-e6c8-45ed-aaed-5047ff3b7021",
+   "slug": "franco-escamilla-el-juicio-44f25401",
+   "city": "houston",
+   "why": "no page"
+  },
+  {
+   "id": "e4c6c8d4-3e30-4900-a93e-125b8c9e818a",
+   "slug": "lenny-pearce-toddler-rave-world-tour-461080f7",
+   "city": "houston",
+   "why": "no page of that name (nearest: Justice Crew)"
+  },
+  {
+   "id": "307e3761-6d6e-492d-8bfa-f05c39a92530",
+   "slug": "dead-on-a-sunday-7f208157",
+   "city": "houston",
+   "why": "no page"
+  },
+  {
+   "id": "a58c53d8-3c80-48fe-aa4f-f175040159e3",
+   "slug": "olivia-o-brien-presents-the-pixie-tour-02730a17",
+   "city": "houston",
+   "why": "no page"
+  },
+  {
+   "id": "e7425d9b-7364-4164-8611-f869c2a84d22",
+   "slug": "desi-banks-0daf9a6c",
+   "city": "houston",
+   "why": "not a music act (American comedian (born 1993))"
+  },
+  {
+   "id": "2015607f-1603-4f59-bdf2-cde73363ec23",
+   "slug": "faust-58358cf8",
+   "city": "houston",
+   "why": "not a music act (Protagonist of a classic German legend)"
+  },
+  {
+   "id": "5782d5fc-a137-4c22-9f6d-f09ca305aa34",
+   "slug": "leanne-morgan-7397777d",
+   "city": "houston",
+   "why": "not a music act (American comedian and actress)"
+  },
+  {
+   "id": "89cd3e3e-cc1c-46d3-a2ca-96b9b5c82d57",
+   "slug": "streetlight-manifesto-w-bridge-city-sinners-10b7c8a8",
+   "city": "houston",
+   "why": "no page"
+  },
+  {
+   "id": "fff90c41-0400-4173-aa94-8361cf4bf48a",
+   "slug": "ozz-a-tribute-to-ozzy-osbourne-w-victims-of-a-sy-4ac568a1",
+   "city": "houston",
+   "why": "no page of that name (nearest: Ouarzazate Airport)"
+  },
+  {
+   "id": "c29469ac-4a78-45f1-b787-207b80003d6a",
+   "slug": "steve-aoki-with-joyryde-18-and-over-037c639b",
+   "city": "houston",
+   "why": "no page"
+  },
+  {
+   "id": "65379e7f-b9bd-4057-a0fe-07a5d0e67db4",
+   "slug": "buena-vista-orchestra-f6d1570e",
+   "city": "houston",
+   "why": "no page"
+  },
+  {
+   "id": "439e9bee-9292-49cf-8e33-20221571bc6d",
+   "slug": "father-of-peace-the-year-of-madness-and-the-myst-f0b63ba7",
+   "city": "houston",
+   "why": "no page of that name (nearest: Masaya Nakamura (businessman))"
+  },
+  {
+   "id": "a8434d84-8294-45da-88f3-35c33f0a60af",
+   "slug": "house-of-heavy-c2e2c52b",
+   "city": "houston",
+   "why": "no page of that name (nearest: House of Leaves)"
+  },
+  {
+   "id": "735434db-000a-4097-92a5-de28ce784b4b",
+   "slug": "breakaway-houston-2026-official-after-party-ft-k-5c1e15b7",
+   "city": "houston",
+   "why": "no page"
+  },
+  {
+   "id": "34bec590-a897-4d7c-bc90-b2803be51de0",
+   "slug": "sahlar-da-vururlar-69162ec1",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "72506405-b0e5-4f4e-8ba1-941c2c8a81f7",
+   "slug": "her-sey-biraz-yalan-73e48ff4",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "6c6adaa8-ed4d-449b-a861-55375ea9c66e",
+   "slug": "dus-pay-87168f5d",
+   "city": "istanbul",
+   "why": "no page of that name (nearest: Dušan Ivković)"
+  },
+  {
+   "id": "0a421282-e53a-46c5-a126-61d80b5f8314",
+   "slug": "guldur-guldur-show-f75e9233",
+   "city": "istanbul",
+   "why": "not a music act (2013 Turkish TV series or program)"
+  },
+  {
+   "id": "93d73c35-4193-4719-bd1c-0b0832ecb7a6",
+   "slug": "yasemin-sakall-oglu-peki-ya-ben-sark-c-olsayd-m-3ed8d903",
+   "city": "istanbul",
+   "why": "not a music act (Turkish comedian (born 1988))"
+  },
+  {
+   "id": "a0a65e58-2eba-4db4-9008-ebf730a284b8",
+   "slug": "kwoon-889e31e8",
+   "city": "istanbul",
+   "why": "no page of that name (nearest: Kevin Ngan)"
+  },
+  {
+   "id": "0b3a6292-7575-44ed-8612-e2f0d1600a11",
+   "slug": "esra-celik-tas-ma-kapasitesi-7e9cc997",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "652b8d6f-c78b-4150-a7d1-02f640a4dbfc",
+   "slug": "sattas-unplugged-501492a5",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "54894556-e371-4242-bbca-187805c8b85f",
+   "slug": "neseli-gazino-ae822d10",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "3ab0307f-0c96-49c2-b29b-d6e8bd1080ff",
+   "slug": "f-rat-devecioglu-ile-felsefe-terapi-kayg-y-yarat-d6a67f22",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "3840ec85-6e45-4fb8-86ce-6c485de34226",
+   "slug": "f-rat-devecioglu-ile-felsefe-terapisi-kayg-y-yar-56db8c33",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "7f69998a-e84f-4c25-9fea-3a9dbe44c430",
+   "slug": "okan-reis-akustik-sahne-kas-m-etkinlikleri-07d9d26b",
+   "city": "istanbul",
+   "why": "no page of that name (nearest: Okan Ersoy)"
+  },
+  {
+   "id": "a82ad9d4-fdc2-4b0a-92ce-7c1ab4fb30a9",
+   "slug": "evlilikte-ufak-tefek-cinayetler-497e895b",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "20fe0123-c3a7-4b3b-80f2-01c14216d015",
+   "slug": "ali-poyrazoglu-s-ng-r-s-ng-r-beyoglu-46a2db9f",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "4304e9e7-5e08-4f31-9c02-c58806136b17",
+   "slug": "mechul-pasa-adb56f8f",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "10309ea1-04ac-4613-b251-f2f0db8ab9c8",
+   "slug": "eglenceli-cinayetler-kumpanyas-metres-gazino-gec-a566f2fa",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "56634068-d783-4580-9184-3807f94e4957",
+   "slug": "alpay-erdem-stand-up-ee86575b",
+   "city": "istanbul",
+   "why": "no page of that name (nearest: Alper Demirol)"
+  },
+  {
+   "id": "c47ac911-97c0-4548-9d7c-7c1c1ce381a4",
+   "slug": "cenk-eren-68e4a5ec",
+   "city": "istanbul",
+   "why": "no page of that name (nearest: La Cenerentola)"
+  },
+  {
+   "id": "aeed7647-2f98-4468-9bb8-7cd3f53039bf",
+   "slug": "kerimcan-durmaz-004405d7",
+   "city": "istanbul",
+   "why": "not a music act (Turkish Internet celebrity (born 1994))"
+  },
+  {
+   "id": "4330a7fe-6ebe-4885-8522-d4461231da53",
+   "slug": "babetna-2a23518e",
+   "city": "istanbul",
+   "why": "no page of that name (nearest: Babar Azam)"
+  },
+  {
+   "id": "5db1d1ee-b028-4d1b-8474-11ddbf68c0f1",
+   "slug": "7pf2p-pink-floyd-tribute-a54e0afa",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "70f14ae9-23d2-422f-938c-083ee5dd525a",
+   "slug": "dj-p-nar-alkan-90-lar-2000-ler-turkce-pop-partis-6411bb07",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "c7ae0bb0-c49f-40bb-b566-4b1a62cd642f",
+   "slug": "throwback-festival-2026-c1b7b81b",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "177c22d6-cc98-4c53-a643-7d6cec5cb71a",
+   "slug": "seksendort-23fd2790",
+   "city": "istanbul",
+   "why": "not a music act (no description)"
+  },
+  {
+   "id": "474827de-80e7-45fb-bad5-6769605b5e71",
+   "slug": "ekin-uzunlar-e6d86c0d",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "b61da0bb-007a-4762-acb8-55165b03b5be",
+   "slug": "edepsiz-komedi-3323ebf8",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "ec149f5f-360d-467c-8b9b-a180d984649f",
+   "slug": "uygar-doganay-d7a5183e",
+   "city": "istanbul",
+   "why": "no page"
+  },
+  {
+   "id": "4416a042-ea8b-4504-8b76-491efbe91895",
+   "slug": "touche-fcb1260a",
+   "city": "izmir",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "143d87d4-5275-422a-a89a-071d9521c1a2",
+   "slug": "chaos-comedy-club-koln-99094336",
+   "city": "koln",
+   "why": "no page"
+  },
+  {
+   "id": "3f28d857-9b04-4303-89f4-1458285d8302",
+   "slug": "van-gogh-and-vincent-13c4878a",
+   "city": "krakow",
+   "why": "no page of that name (nearest: Vincent van Gogh)"
+  },
+  {
+   "id": "40632bc9-d089-4c5c-8352-f3e6009eee94",
+   "slug": "muzeum-banksy-75abb0df",
+   "city": "krakow",
+   "why": "no page"
+  },
+  {
+   "id": "0af6c718-31ca-4da7-b9bd-2d2d859511ea",
+   "slug": "wastin-away-jimmy-buffett-tribute-show-d8e8424a",
+   "city": "las-vegas",
+   "why": "no page of that name (nearest: Snakes and Ladders (Gerry Rafferty album))"
+  },
+  {
+   "id": "853434a5-8cf2-4327-be61-83f4721e2472",
+   "slug": "cirque-du-soleil-mystere-995d5d57",
+   "city": "las-vegas",
+   "why": "not a music act (Canadian contemporary circus company)"
+  },
+  {
+   "id": "bc8ec70e-6d8e-4dcf-b177-46855a7a89f7",
+   "slug": "the-sister-moon-project-celebrating-the-music-of-f81f8b4b",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "0bcb1db4-034f-4bd9-8ce7-fa4eda06513d",
+   "slug": "all-shook-up-dca5415f",
+   "city": "las-vegas",
+   "why": "not a music act (1957 single by Elvis Presley)"
+  },
+  {
+   "id": "4b74e6cb-491e-4bc1-b1a8-593b5939c360",
+   "slug": "queen-selena-12f46f83",
+   "city": "las-vegas",
+   "why": "no page of that name (nearest: Queen Saleha of Brunei)"
+  },
+  {
+   "id": "8391d78c-0f9d-4850-b355-690ebf0cb9da",
+   "slug": "magic-mike-live-las-vegas-18-event-535a688a",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "745053a1-8dad-44a0-8b8c-602268aa26a2",
+   "slug": "all-motown-d6083131",
+   "city": "las-vegas",
+   "why": "no page of that name (nearest: All Town Aren't We)"
+  },
+  {
+   "id": "b8ae580c-19d7-4a61-a542-da248afe0e6e",
+   "slug": "sinatra-live-starring-michael-sinatra-recommende-fce96cfe",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "403a5ef4-adb6-4779-8b80-2b375b0fa7bd",
+   "slug": "king-of-diamonds-2eb25251",
+   "city": "las-vegas",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "42c63065-7935-49ce-805e-fe370de477eb",
+   "slug": "deseo-3623cc4c",
+   "city": "las-vegas",
+   "why": "no page of that name (nearest: Deseo (Paulina Rubio album))"
+  },
+  {
+   "id": "1e00b23c-ad38-498e-87ab-3a3923165154",
+   "slug": "ritual-sundays-dj-franzen-ages-21-e0b72bea",
+   "city": "las-vegas",
+   "why": "no page of that name (nearest: Rituals Under a Scarlet Sky)"
+  },
+  {
+   "id": "7902728a-433b-47d4-bf0c-9a2ba49af65f",
+   "slug": "the-venetian-resort-gondolas-3962d6a1",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "abec3e73-e1dd-424c-a3e3-8e96c571e2d6",
+   "slug": "cirque-du-soleil-o-872ffb87",
+   "city": "las-vegas",
+   "why": "not a music act (Canadian contemporary circus company)"
+  },
+  {
+   "id": "d18fec94-104e-4e89-b13d-2adc258245a7",
+   "slug": "piano-man-c393798d",
+   "city": "las-vegas",
+   "why": "not a music act (1973 single by Billy Joel)"
+  },
+  {
+   "id": "10577700-29fa-425c-89e6-77a812e10e8d",
+   "slug": "the-empire-strips-back-e9fb5e55",
+   "city": "las-vegas",
+   "why": "no page of that name (nearest: The Empire Strikes Back)"
+  },
+  {
+   "id": "b5bde52d-54ed-48f7-b0da-eddcc96647c5",
+   "slug": "fantasy-bd8b48ca",
+   "city": "las-vegas",
+   "why": "not a music act (Literary genre)"
+  },
+  {
+   "id": "697d24a4-8ef7-4381-af08-9cae9dd086ec",
+   "slug": "jeff-dunham-inappropriate-contact-18c70c21",
+   "city": "las-vegas",
+   "why": "not a music act (American ventriloquist and comedian (born 1962))"
+  },
+  {
+   "id": "247f6c8d-f3cf-4229-9eaf-4df4dd6e1c31",
+   "slug": "jeff-dunham-official-caesars-ticket-hotel-packag-4a4251e2",
+   "city": "las-vegas",
+   "why": "not a music act (American ventriloquist and comedian (born 1962))"
+  },
+  {
+   "id": "b512f1dc-1a6d-484e-8ad0-f87fe7884008",
+   "slug": "criss-angel-mindfreak-las-vegas-fce3d46c",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "5de46534-15ec-4420-b936-4f365e4969cb",
+   "slug": "comedy-cellar-las-vegas-2e8b75db",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "483a3eaf-649b-49de-88c6-3bed05781645",
+   "slug": "absinthe-dff0ca88",
+   "city": "las-vegas",
+   "why": "not a music act (Alcoholic drink)"
+  },
+  {
+   "id": "fe71e547-7465-42e3-b607-bbfd402ee41f",
+   "slug": "v-the-ultimate-variety-show-d2d05f5e",
+   "city": "las-vegas",
+   "why": "not a music act (Twenty-second letter of the Latin alphabet)"
+  },
+  {
+   "id": "06bf348b-e5b9-46b7-9d3f-df2acf311930",
+   "slug": "mj-live-michael-jackson-tribute-concert-f450884d",
+   "city": "las-vegas",
+   "why": "no page of that name (nearest: MJ Lenderman)"
+  },
+  {
+   "id": "54c900c9-3e01-4e0d-aaf7-4d94ccfd3f53",
+   "slug": "josh-wolf-at-jimmy-kimmel-s-comedy-club-b487847e",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "0fbfa9d3-d5db-4d34-9b2e-885b8a5f8b85",
+   "slug": "the-book-of-mormon-touring-d1ccfad5",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "c2537bfb-df11-4ead-930d-a4fd80b46858",
+   "slug": "shin-lim-8f6b5ce8",
+   "city": "las-vegas",
+   "why": "not a music act (Canadian-American magician (born 1991))"
+  },
+  {
+   "id": "cfd9c9ba-2863-45f3-94d1-5311fad5dfde",
+   "slug": "titanic-the-artifact-exhibition-73af68e4",
+   "city": "las-vegas",
+   "why": "not a music act (British passenger liner that sank in 1912)"
+  },
+  {
+   "id": "7c054464-e3ed-4ee7-a359-44e1ab82ae0a",
+   "slug": "ultimate-4d-experience-e634daad",
+   "city": "las-vegas",
+   "why": "no page of that name (nearest: The Ultimate Experience)"
+  },
+  {
+   "id": "a41e1657-e9c9-4c4f-857c-8ac0e6e1f090",
+   "slug": "real-bodies-d78ea860",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "c7f05b30-3d11-4f6a-8e96-3d2cfbdd16e0",
+   "slug": "eiffel-tower-viewing-deck-59e19533",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "bdae47eb-34a9-49e2-9fb0-4835fa275610",
+   "slug": "the-big-apple-coaster-at-nyny-4d02f7bd",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "4e61035f-d63f-47a5-b960-90850d871dea",
+   "slug": "dita-von-teese-d91be4f1",
+   "city": "las-vegas",
+   "why": "not a music act (American vedette, burlesque dancer, model, and businesswoman)"
+  },
+  {
+   "id": "2329cc09-d07f-47a2-9a87-b38da6c066f7",
+   "slug": "penn-and-teller-801a81b6",
+   "city": "las-vegas",
+   "why": "not a music act (American illusionists and entertainers)"
+  },
+  {
+   "id": "97bfdae3-d751-4822-8dc4-39d27f50b2f5",
+   "slug": "the-wizard-of-oz-at-sphere-6a76fc4d",
+   "city": "las-vegas",
+   "why": "not a music act (2025 immersive version of The Wizard of Oz)"
+  },
+  {
+   "id": "a3527b50-14ae-4837-bb83-e1e565847609",
+   "slug": "jabbawockeez-06bf1ec3",
+   "city": "las-vegas",
+   "why": "not a music act (American hip-hop dance crew)"
+  },
+  {
+   "id": "af44ece5-254f-45ff-93d2-3834b034c079",
+   "slug": "blue-man-group-las-vegas-b4380734",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "0095515f-e54f-42b9-b4cb-fd9537ee7834",
+   "slug": "bodies-the-exhibition-5cc3ca09",
+   "city": "las-vegas",
+   "why": "not a music act (Exhibition of preserved human bodies)"
+  },
+  {
+   "id": "3c41dcb0-8ec0-4e11-8b13-47bb42548e98",
+   "slug": "fly-linq-zipline-at-the-linq-29b3f6da",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "0ffbb38c-0e34-4ce1-9fb7-ed16f5bfcde5",
+   "slug": "allegiant-stadium-tours-0cd91ffe",
+   "city": "las-vegas",
+   "why": "not a music act (Multi-purpose indoor stadium in Paradise, Nevada, U.S.)"
+  },
+  {
+   "id": "9226c3b8-8869-47af-a58b-a99f19c9cc3c",
+   "slug": "discovering-king-tut-s-tomb-aaf550dd",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "6fd90f05-c6ed-40a6-97ad-080828176663",
+   "slug": "high-roller-wheel-at-the-linq-df5e6a62",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "714d856e-64a2-427c-9ffb-20c160e8dc93",
+   "slug": "vicki-barbolak-at-laugh-factory-las-vegas-b9e29ce1",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "d7fe0516-8bff-415e-9c0b-93e9c7237425",
+   "slug": "late-night-magic-at-the-magicians-room-683a4b3a",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "3c91fc19-afeb-4821-b394-c17be5719a12",
+   "slug": "luenell-at-jimmy-kimmel-s-comedy-club-03c00263",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "b5560a15-0001-4c81-add7-092108e7ec55",
+   "slug": "rupaul-s-drag-race-live-las-vegas-f243b7b2",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "e85eb372-df17-4769-8af3-1219b78f2bc8",
+   "slug": "colors-of-mexico-6affe949",
+   "city": "las-vegas",
+   "why": "no page"
+  },
+  {
+   "id": "68adfbd9-a5f4-4180-9f1b-e67884459a4c",
+   "slug": "comedy-happy-hour-eine-stunde-comedy-59cf2553",
+   "city": "leipzig",
+   "why": "no page"
+  },
+  {
+   "id": "cb537d7e-f8ac-46cf-b6cc-63d035096dd5",
+   "slug": "comedy-show-stand-up-comedy-in-leipzig-8f3631d2",
+   "city": "leipzig",
+   "why": "no page of that name (nearest: Comedy Showcase)"
+  },
+  {
+   "id": "e1ea592c-6b97-4d58-baeb-531394094324",
+   "slug": "comedy-slam-deluxe-d475eab0",
+   "city": "leipzig",
+   "why": "no page"
+  },
+  {
+   "id": "ae2c5618-5968-462a-a7f2-bc4bcfca278f",
+   "slug": "ally-pally-fireworks-and-drone-festival-2026-sun-bb19c88d",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "45f894f4-fa42-4349-ae45-c3e2f926dfa5",
+   "slug": "abba-voyage-4dbbbfc2",
+   "city": "london",
+   "why": "not a music act (2022–2027 concert residency by ABBA)"
+  },
+  {
+   "id": "9d60353b-14d8-44c6-a3d5-7be8c872f7ed",
+   "slug": "twist-museum-london-s-home-of-illusions-peak-0a547706",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "10c49756-df8c-41d5-a891-4c3f907dd5f5",
+   "slug": "the-view-from-the-shard-20bb23e0",
+   "city": "london",
+   "why": "not a music act (Observation deck in London, England)"
+  },
+  {
+   "id": "ca7d9714-7ff9-4953-8ed9-efb7167975ef",
+   "slug": "mamma-mia-the-party-851f3e49",
+   "city": "london",
+   "why": "no page of that name (nearest: The O2)"
+  },
+  {
+   "id": "8a5d2912-758c-430b-aa47-637621ae45b8",
+   "slug": "the-sunday-service-w-ed-gamble-9c5b4a9d",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "a9c5d0ba-8bdc-45b0-9cba-b10e75bcc404",
+   "slug": "tonehaus-live-1-year-anniversary-celebration-2a65999d",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "909236d4-6a70-49a8-94f4-f41da3010045",
+   "slug": "mark-thomas-40-in-stand-up-years-c328e935",
+   "city": "london",
+   "why": "not a music act (English comedian (born 1963))"
+  },
+  {
+   "id": "1063c633-bfca-4849-b007-0226f1976ffb",
+   "slug": "hermeto-pascoal-s-mothership-75737817",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "6effad2a-32ec-438a-80dd-2a125f321566",
+   "slug": "allt-91e4f845",
+   "city": "london",
+   "why": "no page of that name (nearest: All That)"
+  },
+  {
+   "id": "23efa1eb-8fe5-48f1-b23f-de5d8dd40bcd",
+   "slug": "titanique-1566f2db",
+   "city": "london",
+   "why": "not a music act (2017 jukebox musical)"
+  },
+  {
+   "id": "12bfac08-26ad-42b7-a14d-cece03779fe7",
+   "slug": "magic-mike-live-07da6f89",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "c6d5f661-000e-418d-836a-7c957ebd1470",
+   "slug": "somewhere-soul-presents-levitation-orchestra-2016310a",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "428edc00-e3ab-4abf-a97c-bcdb7ce5a4aa",
+   "slug": "the-play-that-goes-wrong-27209fff",
+   "city": "london",
+   "why": "not a music act (British comedy play)"
+  },
+  {
+   "id": "5d9262f7-96ab-40c6-ba4f-b3e95371df05",
+   "slug": "six-the-musical-80da343b",
+   "city": "london",
+   "why": "no page of that name (nearest: Six (musical))"
+  },
+  {
+   "id": "5510d40e-78bb-48e0-8c3c-8b50b6047a9e",
+   "slug": "thurston-moore-and-mark-wastell-27f59446",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "c852f72c-a68e-4c9f-bfa0-a72bfcd59d0e",
+   "slug": "gilbert-o-sullivan-celebrating-60-years-of-music-8b4d8056",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "ee6388b1-670f-48ac-9f14-d296972913fd",
+   "slug": "franz-and-marie-4c98b88c",
+   "city": "london",
+   "why": "no page of that name (nearest: Marie-Louise von Franz)"
+  },
+  {
+   "id": "306cc7bc-f884-4f19-85f9-aac37691fe23",
+   "slug": "diwali-celebrations-london-s-biggest-bollywood-d-4a3e7893",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "f7c9a530-f982-49c9-8c8e-a8ee0bd00e43",
+   "slug": "the-comedy-store-players-sunday-8th-november-7626aca5",
+   "city": "london",
+   "why": "not a music act (Comedy troupe in London)"
+  },
+  {
+   "id": "60f8c0c1-9d15-4818-a54f-5130efb2f3df",
+   "slug": "john-achkar-6fc2d114",
+   "city": "london",
+   "why": "not a music act (Lebanese stand-up comedian (born 1990))"
+  },
+  {
+   "id": "02090b85-9f70-47d3-89d2-95e7bc131060",
+   "slug": "josh-pugh-ha-ha-yeah-sound-881d7f2a",
+   "city": "london",
+   "why": "not a music act (English stand-up comedian)"
+  },
+  {
+   "id": "5f3c3e31-8729-4a2f-a84b-47dd7defda33",
+   "slug": "shrek-s-adventure-standard-experience-9c0cf90e",
+   "city": "london",
+   "why": "no page of that name (nearest: DreamWorks Tours: Shrek's Adventure!)"
+  },
+  {
+   "id": "b439f1e0-d681-4e59-8170-7f7e73242faa",
+   "slug": "frameless-gift-card-redemption-5cd0fc0d",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "3d5103bb-6ed5-442c-a480-6724343ce6ac",
+   "slug": "lagrimas-9824c04c",
+   "city": "london",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "3f871889-f992-452f-bfb5-170d9dad7c23",
+   "slug": "twist-museum-london-s-home-of-illusions-standard-8b53024d",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "aa13f0cf-f277-445c-a1da-05ba507faaf2",
+   "slug": "james-carter-coltrane-a-centennial-supreme-7c842572",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "0e42132e-7558-486a-ba79-9a0441afaefd",
+   "slug": "mon-9th-nov-stand-up-comedy-show-big-belly-comed-e9d7fce5",
+   "city": "london",
+   "why": "no page of that name (nearest: Víctor Montaño)"
+  },
+  {
+   "id": "99231a1a-c736-49f5-b4d6-9180f033a1ea",
+   "slug": "okkultist-h-i-g-h-19280012",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "2c343f36-f5f3-4184-ab4b-037911c6137b",
+   "slug": "double-bill-tell-me-straight-and-aggy-f07fac1d",
+   "city": "london",
+   "why": "no page of that name (nearest: Double billing)"
+  },
+  {
+   "id": "4c9d6672-de94-45f3-a981-ad2b78ada9c3",
+   "slug": "wolves-in-the-throne-room-knights-of-tiamat-fall-bd57e47c",
+   "city": "london",
+   "why": "no page"
+  },
+  {
+   "id": "3b779dc0-1958-4fa3-9d4f-5f168814f481",
+   "slug": "health-9612c8d9",
+   "city": "london",
+   "why": "not a music act (Desirable level of functional or metabolic efficiency of a living being)"
+  },
+  {
+   "id": "e142b5c8-3917-4383-b9bc-04e32ffdab3f",
+   "slug": "the-music-man-7b1afcec",
+   "city": "los-angeles",
+   "why": "not a music act (Musical by Meredith Willson)"
+  },
+  {
+   "id": "bdbca43e-b6a5-493a-8cd1-4ffafd32d7c4",
+   "slug": "ninajirachi-18-and-over-d2fb5211",
+   "city": "los-angeles",
+   "why": "no page"
+  },
+  {
+   "id": "b71d57c7-f908-4b67-83c8-68e515f07ea3",
+   "slug": "mercer-henderson-4011ad69",
+   "city": "los-angeles",
+   "why": "no page of that name (nearest: Douglas Mercer-Henderson)"
+  },
+  {
+   "id": "f8961048-9a31-4acc-a02e-df48a86762d3",
+   "slug": "upsell-mezzanine-bleachers-not-a-ticket-4e3c664f",
+   "city": "los-angeles",
+   "why": "no page of that name (nearest: Upselling)"
+  },
+  {
+   "id": "fee24f34-8201-4e84-8d78-1b3f56b2a284",
+   "slug": "upsell-premium-viewing-not-a-ticket-b7bc40fd",
+   "city": "los-angeles",
+   "why": "no page of that name (nearest: Upselling)"
+  },
+  {
+   "id": "a4c2ccf1-45b6-41d1-ad39-24385434b4ff",
+   "slug": "navy-blue-knight-vision-tour-2026-with-miguel-at-c7c3abaa",
+   "city": "los-angeles",
+   "why": "not a music act (Dark shade of blue)"
+  },
+  {
+   "id": "e42ecf8a-1edc-464a-a69f-2e718a5c990f",
+   "slug": "grahame-lesh-and-friends-f1d885dc",
+   "city": "los-angeles",
+   "why": "no page"
+  },
+  {
+   "id": "41963106-90e5-4050-8a95-766e21bf1333",
+   "slug": "gianmarco-soresi-the-misery-loves-tour-23a79ab8",
+   "city": "los-angeles",
+   "why": "not a music act (American stand-up comedian, actor (born 1988))"
+  },
+  {
+   "id": "04f16926-b839-4c56-8e8a-534098cc7d56",
+   "slug": "trap-karaoke-los-angeles-9d9aaad5",
+   "city": "los-angeles",
+   "why": "no page"
+  },
+  {
+   "id": "f1b4c96e-3e93-488d-a161-6820b3eff922",
+   "slug": "jervis-campbell-with-allie-paige-ef96c482",
+   "city": "los-angeles",
+   "why": "no page"
+  },
+  {
+   "id": "0141069e-99e4-4bb2-ae7f-2b476e954749",
+   "slug": "wah-show-madrid-el-show-mas-espectacular-del-mun-c70f228d",
+   "city": "madrid",
+   "why": "no page"
+  },
+  {
+   "id": "7a3ee0f8-c730-4b8b-80cd-babdc4ca846b",
+   "slug": "museo-banksy-madrid-06e1fd74",
+   "city": "madrid",
+   "why": "no page"
+  },
+  {
+   "id": "72b3856a-fce3-427b-8067-60de814cb8d2",
+   "slug": "tablao-flamenco-las-tablas-d19c0cf0",
+   "city": "madrid",
+   "why": "no page"
+  },
+  {
+   "id": "3ea9432b-1b06-4fc4-b08b-21cc7779b5a2",
+   "slug": "tablao-flamenco-1911-el-tablao-mas-antiguo-del-m-b3184f45",
+   "city": "madrid",
+   "why": "no page"
+  },
+  {
+   "id": "921ef507-492a-497e-81ca-e76e8d321ac1",
+   "slug": "lene-lovich-uk-2026-tour-3cb2a02d",
+   "city": "manchester",
+   "why": "no page"
+  },
+  {
+   "id": "53bae2a0-d929-4f97-984b-0074b4f5fc3e",
+   "slug": "colin-miller-fbfa9cdd",
+   "city": "manchester",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "d1b375ba-4ed5-4a8d-b306-3f1cb07cded8",
+   "slug": "red-richardson-39b6b20d",
+   "city": "manchester",
+   "why": "not a music act (English stand-up comedian)"
+  },
+  {
+   "id": "5833787f-b598-4576-a027-e32c2840ba58",
+   "slug": "shabaka-9d4028e8",
+   "city": "manchester",
+   "why": "not a music act (Egyptian pharaoh)"
+  },
+  {
+   "id": "6dcaff61-488b-416a-b01b-0eb558292939",
+   "slug": "joyce-moreno-dc0b3aa2",
+   "city": "manchester",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "e611f84e-c148-4f2e-9e3f-9dab64f2e182",
+   "slug": "jamie-hutchinson-can-my-mate-come-he-s-sound-ebc96591",
+   "city": "manchester",
+   "why": "no page of that name (nearest: James Hutchinson Woodworth)"
+  },
+  {
+   "id": "3dee9fb7-6f34-437e-8d3b-43a5e12301ce",
+   "slug": "sarah-julia-8a73155e",
+   "city": "manchester",
+   "why": "no page of that name (nearest: Sarah Nauta)"
+  },
+  {
+   "id": "073a07df-ac96-4886-a03f-93deea2891c1",
+   "slug": "haute-and-freddy-e5c2ee23",
+   "city": "manchester",
+   "why": "no page of that name (nearest: Haute and Freddy)"
+  },
+  {
+   "id": "4e22a912-69fe-4e17-be78-5de39b43154a",
+   "slug": "liz-lawrence-848183ca",
+   "city": "manchester",
+   "why": "not a music act (Musical artist)"
+  },
+  {
+   "id": "d56f6b37-7cb8-4d9e-b2d0-bb1e084f8c04",
+   "slug": "good-health-good-wealth-c731e49d",
+   "city": "manchester",
+   "why": "no page"
+  },
+  {
+   "id": "36417ffc-de54-4ea1-9e25-a220f4bb6325",
+   "slug": "friday-night-live-improv-comedy-miami-show-ecb5475b",
+   "city": "miami",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "3b5b21b9-35ac-45e6-9527-5d2dcbe8c09a",
+   "slug": "dale-impro-impro-en-espanol-ce40dcfd",
+   "city": "miami",
+   "why": "no page of that name (nearest: Dali Mpofu)"
+  },
+  {
+   "id": "493bc0bb-131e-4ae8-8126-3019f86f415e",
+   "slug": "deathmatch-competitive-improv-show-69fd8c86",
+   "city": "miami",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "7144d4d3-491f-4aa6-8be1-9be551a53dff",
+   "slug": "stefano-rapone-giulia-cerruti-sandro-canori-allo-4a010beb",
+   "city": "milano",
+   "why": "no page"
+  },
+  {
+   "id": "631f7817-256f-4267-9dc1-abfca67645f7",
+   "slug": "kayhan-kalhor-duo-the-art-of-improvisation-in-ir-9b9ec51f",
+   "city": "milano",
+   "why": "no page"
+  },
+  {
+   "id": "5cd9f868-d219-48cb-8506-7e81bca86c55",
+   "slug": "giuse-the-lizia-a8c4ff5f",
+   "city": "milano",
+   "why": "no page"
+  },
+  {
+   "id": "3030f812-99de-4657-9a9d-2065b63e3ef9",
+   "slug": "enzo-avitabile-e-peppe-servillo-la-musica-dei-ci-ba27ca57",
+   "city": "milano",
+   "why": "no page"
+  },
+  {
+   "id": "2cfc7cd1-d8f2-4f85-9876-4a17a1cc0328",
+   "slug": "anna-million-dollar-babe-tour-2026-8fe520e8",
+   "city": "milano",
+   "why": "not a music act (2026 studio album by Anna)"
+  },
+  {
+   "id": "318073a4-c8bb-4830-b2b6-e1fc392f2c0f",
+   "slug": "jam-23-uk-edition-2b16d29e",
+   "city": "monterrey",
+   "why": "no page"
+  },
+  {
+   "id": "28227852-76c2-4f06-8bbf-96a7bff31eca",
+   "slug": "zz-top-suites-a0653ea9",
+   "city": "monterrey",
+   "why": "no page"
+  },
+  {
+   "id": "a315187a-53b2-43e9-9b96-4d4d938fc405",
+   "slug": "the-olllam-9ba0597c",
+   "city": "montreal",
+   "why": "no page of that name (nearest: The All-American Rejects)"
+  },
+  {
+   "id": "571c115a-c14e-4bb0-b90e-6f1c48b009fb",
+   "slug": "wheeler-walker-jr-pullin-out-the-farewell-tour-d2d4b351",
+   "city": "montreal",
+   "why": "no page of that name (nearest: Ben Hoffman)"
+  },
+  {
+   "id": "f804f529-5285-4822-b80c-1128c2483d4c",
+   "slug": "allan-rayman-6dd81c7a",
+   "city": "montreal",
+   "why": "not a music act (Musical artist)"
+  },
+  {
+   "id": "e0563182-d88e-4693-93c2-a702cc6d22f2",
+   "slug": "show-du-refuge-1ce4687c",
+   "city": "montreal",
+   "why": "no page"
+  },
+  {
+   "id": "c37dc496-49ea-4694-ab20-114fbcc67595",
+   "slug": "cannelle-18a7c595",
+   "city": "montreal",
+   "why": "not a music act (Musical artist)"
+  },
+  {
+   "id": "09d536be-271c-47bd-a881-4e4a4696090c",
+   "slug": "jose-gaudet-y-etait-temps-69928308",
+   "city": "montreal",
+   "why": "no page of that name (nearest: José Gautier Benítez)"
+  },
+  {
+   "id": "d04cd1ff-7292-44e0-af6b-74bc0f49350b",
+   "slug": "ezra-collective-a6160876",
+   "city": "montreal",
+   "why": "not a music act (British jazz quintet)"
+  },
+  {
+   "id": "43f71c7a-b285-475c-9049-b8044eebb88e",
+   "slug": "a-good-year-0cb10e5f",
+   "city": "montreal",
+   "why": "not a music act (2006 film by Ridley Scott)"
+  },
+  {
+   "id": "1731cefa-5db2-4aa2-a58e-54488f03146b",
+   "slug": "bass-ship-w-wooli-5e99aff2",
+   "city": "montreal",
+   "why": "no page"
+  },
+  {
+   "id": "ab05f0e2-1220-47a5-a31b-63bfa67d68d2",
+   "slug": "tommy-fleece-076fd289",
+   "city": "montreal",
+   "why": "no page of that name (nearest: Tommy Fleetwood)"
+  },
+  {
+   "id": "11435c5d-bdc5-4d84-8a7a-e3e60f5f29ba",
+   "slug": "bass-ship-presente-wooli-kai-wachi-hol-masquerad-fe59b607",
+   "city": "montreal",
+   "why": "no page"
+  },
+  {
+   "id": "77e25327-73f3-4bc5-b9e7-0cf47f5cbf0f",
+   "slug": "raine-maida-and-chantal-kreviazuk-i-m-going-to-b-a9ac39d5",
+   "city": "montreal",
+   "why": "no page"
+  },
+  {
+   "id": "d6e87842-13fc-41f6-8b41-e44d4a0d1f1d",
+   "slug": "hullis-comedy-dinner-show-e22ca760",
+   "city": "munchen",
+   "why": "no page of that name (nearest: Isaac Hull)"
+  },
+  {
+   "id": "acd9f2d3-978c-491c-97b1-2f46b33d39ad",
+   "slug": "levin-liam-pech-tour-2027-0cabb438",
+   "city": "munchen",
+   "why": "no page of that name (nearest: Amiram Levin)"
+  },
+  {
+   "id": "51f49ab6-0738-4d44-9810-f913cabeac9c",
+   "slug": "amplify-nashville-072feb8f",
+   "city": "nashville",
+   "why": "no page"
+  },
+  {
+   "id": "e53c4787-a6c9-4f52-923f-73668ff95ce0",
+   "slug": "havok-w-hellripper-slackjaw-and-xoth-f190f9fc",
+   "city": "nashville",
+   "why": "no page"
+  },
+  {
+   "id": "28dacb1a-bc5f-47f1-ba17-45cc4a2fb18f",
+   "slug": "death-becomes-her-touring-6e36b170",
+   "city": "nashville",
+   "why": "no page"
+  },
+  {
+   "id": "a5ba1601-c953-4c56-ab0e-26cccd4f5206",
+   "slug": "grand-ole-opry-opry-100-86259254",
+   "city": "nashville",
+   "why": "not a music act (Radio and television broadcast from Nashville, Tennessee)"
+  },
+  {
+   "id": "4e16ddd9-7e14-4ee8-98a7-8cfe1b076514",
+   "slug": "shiners-18-event-34245035",
+   "city": "nashville",
+   "why": "no page"
+  },
+  {
+   "id": "79d15fe5-2eb6-470a-b3a6-9b0d41fa52bf",
+   "slug": "devon-gilfillian-w-alex-lambert-46d6b52b",
+   "city": "nashville",
+   "why": "no page"
+  },
+  {
+   "id": "7a2af6b9-1700-4adc-8db4-5461da5de004",
+   "slug": "succor-creek-beagle-whimper-37dc84f0",
+   "city": "nashville",
+   "why": "no page"
+  },
+  {
+   "id": "242e0675-b2d3-4b8f-b257-3a862dde6f7c",
+   "slug": "devon-gilfillian-time-will-tell-tour-w-alex-lamb-17721e2d",
+   "city": "nashville",
+   "why": "no page"
+  },
+  {
+   "id": "73a4acf7-f7b5-46b0-a5b3-2763ba2b5321",
+   "slug": "sold-out-yaelokre-27d343a2",
+   "city": "nashville",
+   "why": "no page"
+  },
+  {
+   "id": "4e75902c-f84f-4f3d-a2b5-025fd8e1e871",
+   "slug": "in-the-round-with-jay-clementi-erin-enderlin-tre-9e00fd21",
+   "city": "nashville",
+   "why": "no page"
+  },
+  {
+   "id": "14c72fd8-081e-4b48-9606-43c08efb5442",
+   "slug": "give-a-crap-nashville-ft-kelsi-mayne-hollye-b-an-006a3fa1",
+   "city": "nashville",
+   "why": "no page"
+  },
+  {
+   "id": "5dd19d50-63d1-46b4-a1b4-51be129ad31a",
+   "slug": "judah-and-the-lion-431cad78",
+   "city": "nashville",
+   "why": "no page of that name (nearest: Judah & the Lion)"
+  },
+  {
+   "id": "7f1de969-36fa-4fcf-b3ca-98700ce2c955",
+   "slug": "in-the-row-with-tigirlily-gold-sarah-buxton-john-af69e7d4",
+   "city": "nashville",
+   "why": "no page"
+  },
+  {
+   "id": "c52362d1-ea42-4bf3-bbde-51dc53f3bb9a",
+   "slug": "up-top-comedy-e562153d",
+   "city": "nashville",
+   "why": "no page of that name (nearest: Uptown Comedy Club)"
+  },
+  {
+   "id": "91b5cf4e-6b7a-44be-a417-b116260bd48a",
+   "slug": "grateful-shred-fe78c7c1",
+   "city": "nashville",
+   "why": "no page of that name (nearest: Kohl Center)"
+  },
+  {
+   "id": "0cb2d69e-f09d-4adf-91f3-663fa6632609",
+   "slug": "sold-out-blake-whiten-726dc990",
+   "city": "nashville",
+   "why": "no page"
+  },
+  {
+   "id": "ff9d48f7-1e3f-4523-a9c9-df7dd00eea4d",
+   "slug": "the-eaglemaniacs-the-music-of-don-henley-and-the-fc0bf14d",
+   "city": "nashville",
+   "why": "no page"
+  },
+  {
+   "id": "17399092-a27b-4c82-b8ae-3bc174834248",
+   "slug": "eva-cassel-album-release-show-feat-liam-bauman-l-21e5b2db",
+   "city": "nashville",
+   "why": "no page"
+  },
+  {
+   "id": "276152c2-3221-4e70-ab27-8e1867dac1e4",
+   "slug": "the-lion-king-touring-recommended-for-ages-6-and-47e2e9ba",
+   "city": "new-orleans",
+   "why": "no page"
+  },
+  {
+   "id": "85d8e4fd-aedf-4547-9c7f-08570afad762",
+   "slug": "lou-barlow-and-bobby-bare-jr-acoustic-song-swap-39042852",
+   "city": "new-orleans",
+   "why": "no page"
+  },
+  {
+   "id": "db954757-a275-4768-92b1-20b61b8f6b99",
+   "slug": "moved-to-domino-lounge-mike-baggetta-and-eli-win-4da3c576",
+   "city": "new-orleans",
+   "why": "no page"
+  },
+  {
+   "id": "73349f22-74a0-4a0e-a3dd-a1cb8b7934c2",
+   "slug": "bitch-cabal-feat-mannequin-pussy-and-wednesday-ca59eb8b",
+   "city": "new-orleans",
+   "why": "no page"
+  },
+  {
+   "id": "cd339f05-d5fb-41c1-bedc-479fb88e5ccc",
+   "slug": "jamison-ross-and-uno-all-stars-fb05b909",
+   "city": "new-orleans",
+   "why": "no page"
+  },
+  {
+   "id": "7142d8d2-7da4-4116-9b5e-c6a623bd33d4",
+   "slug": "ole-smoky-roadshow-presents-moonshine-and-music-2992b369",
+   "city": "new-orleans",
+   "why": "no page"
+  },
+  {
+   "id": "a03c3f84-d9ea-49fa-be30-644d4c37c97a",
+   "slug": "subterranean-songwriter-night-w-natasha-sanchez-074b6e5f",
+   "city": "new-orleans",
+   "why": "no page"
+  },
+  {
+   "id": "3fcbf112-9402-4f21-9019-92ee5a2f106e",
+   "slug": "rocky-in-concert-6e7bbb07",
+   "city": "new-orleans",
+   "why": "no page"
+  },
+  {
+   "id": "c9ab846a-037f-4cb3-9b38-e1ab7c8bfac0",
+   "slug": "hot-mulligan-north-american-fall-tour-5b9677c1",
+   "city": "new-orleans",
+   "why": "no page"
+  },
+  {
+   "id": "14c38daf-a487-4616-91ec-62205f1a3d97",
+   "slug": "karen-shiraishi-s-now-i-know-record-release-b4ecb68c",
+   "city": "new-orleans",
+   "why": "no page"
+  },
+  {
+   "id": "3c93a2d9-8837-4490-8a9d-140801e57e10",
+   "slug": "loyola-s-uptown-threauxdown-3ba590bd",
+   "city": "new-orleans",
+   "why": "no page"
+  },
+  {
+   "id": "891daff4-1182-48e6-a4a4-3a9860691e87",
+   "slug": "the-uptown-jazz-orchestra-with-terrence-taplin-bd231ca4",
+   "city": "new-orleans",
+   "why": "no page"
+  },
+  {
+   "id": "c8492f91-6a4a-4c97-a3a3-43ca9dbb87ec",
+   "slug": "sally-baby-s-silver-dollars-0f596f7c",
+   "city": "new-orleans",
+   "why": "no page"
+  },
+  {
+   "id": "c62bc0f5-7d62-4e84-91f7-739ffb495ddf",
+   "slug": "fizzy-gavin-eckler-organ-trio-49741e8c",
+   "city": "new-orleans",
+   "why": "no page"
+  },
+  {
+   "id": "b51b2ae5-81a7-4a6e-b440-80469b1db56c",
+   "slug": "kurt-vile-and-the-violators-2484b17e",
+   "city": "new-orleans",
+   "why": "no page of that name (nearest: Kurt Vile)"
+  },
+  {
+   "id": "d10aa5ba-3feb-4df3-af56-51ded3eece08",
+   "slug": "and-juliet-8c1e5e4a",
+   "city": "new-york",
+   "why": "not a music act (2019 jukebox musical)"
+  },
+  {
+   "id": "02562666-85d1-47fa-a59b-9a34afd66963",
+   "slug": "the-lion-king-4690fdc1",
+   "city": "new-york",
+   "why": "not a music act (1994 American animated film)"
+  },
+  {
+   "id": "0124907e-6516-485b-94e0-4228a5ba7727",
+   "slug": "six-the-musical-32c21c8f",
+   "city": "new-york",
+   "why": "no page of that name (nearest: 6)"
+  },
+  {
+   "id": "63ed622b-1b8a-4519-8741-7cf99f94bca3",
+   "slug": "the-rocky-horror-show-f9e53dea",
+   "city": "new-york",
+   "why": "not a music act (1973 musical by Richard O'Brien)"
+  },
+  {
+   "id": "228dc39e-186e-4398-97cf-77cfe261b395",
+   "slug": "harry-potter-and-the-cursed-child-b7063d8c",
+   "city": "new-york",
+   "why": "not a music act (2016 play by Jack Thorne)"
+  },
+  {
+   "id": "bd624115-b9c3-4f32-b83b-b4678f9e231c",
+   "slug": "wicked-7df18dcf",
+   "city": "new-york",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "9f09895c-7e42-4c0f-8268-45a0d1c261ca",
+   "slug": "the-book-of-mormon-88f0ba9d",
+   "city": "new-york",
+   "why": "no page of that name (nearest: Book of Mormon)"
+  },
+  {
+   "id": "57b4fc48-1e88-474b-bedd-d2b416265328",
+   "slug": "tatiana-eva-marie-e0154560",
+   "city": "new-york",
+   "why": "not a music act (Musical artist)"
+  },
+  {
+   "id": "eddc524c-c235-4f26-bfe6-36d0bf376d74",
+   "slug": "chicago-the-musical-260d8b54",
+   "city": "new-york",
+   "why": "not a music act (Most populous city in Illinois, US)"
+  },
+  {
+   "id": "b7d19f13-141f-4029-95b1-78146c255ac6",
+   "slug": "the-curious-case-of-the-curse-of-benjamin-button-2e0c596c",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "86ddba54-68be-4e1c-bf47-0b959cb8472d",
+   "slug": "paranormal-activity-ny-b37cb315",
+   "city": "new-york",
+   "why": "no page of that name (nearest: Paranormal Activity)"
+  },
+  {
+   "id": "767c9ba7-ceb6-49be-a6e0-3b0ae52d07f1",
+   "slug": "2-22-a-ghost-story-b0108ddb",
+   "city": "new-york",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "e858cf37-c39d-461a-b053-621e80aafc1d",
+   "slug": "hadestown-a4ef4dfb",
+   "city": "new-york",
+   "why": "not a music act (Musical by Anaïs Mitchell)"
+  },
+  {
+   "id": "fa83f70c-1997-4a0f-a29d-86f000ef7d96",
+   "slug": "lost-boys-musical-w-unknown-mortal-orchestra-34a5750d",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "61cd2291-1d57-4034-a443-0348b43c9d9c",
+   "slug": "king-of-drag-ages-16-64e994de",
+   "city": "new-york",
+   "why": "not a music act (American reality television series)"
+  },
+  {
+   "id": "f6bc1c6d-6e03-4ebb-8a46-effc34706efa",
+   "slug": "allan-rayman-16-and-over-331357cc",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "d6ee3680-b40c-4613-8539-d830419b3883",
+   "slug": "the-banksy-museum-new-york-943aa232",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "0d5aaad5-1512-479d-9a1b-febd682f0aec",
+   "slug": "arklight-woodhead-childless-kabuki-love-66ce8a15",
+   "city": "new-york",
+   "why": "no page of that name (nearest: Arknights: Endfield)"
+  },
+  {
+   "id": "af0a007e-1725-434f-a945-407a3c32137e",
+   "slug": "matt-pavolka-new-quintet-e7aa6cac",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "7b9acfb5-7ec1-4bb9-84f5-2aa5e4198e9b",
+   "slug": "jane-irving-trio-899c70a8",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "744e9197-e361-4b5e-b623-007f7178f4e9",
+   "slug": "aladdin-89b666ec",
+   "city": "new-york",
+   "why": "not a music act (Middle-Eastern folk tale)"
+  },
+  {
+   "id": "87381e16-7b30-4e7f-b48a-1a64af0c3a21",
+   "slug": "gavin-bermudez-samara-southpxw-421f3b11",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "477941c1-9fac-41cc-9649-e155a50f1f7b",
+   "slug": "the-lion-king-new-york-ny-ae01e7bd",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "689440bd-38de-44b7-9090-b7ce98f2cd49",
+   "slug": "oh-mary-84451a17",
+   "city": "new-york",
+   "why": "not a music act (2024 play by Cole Escola)"
+  },
+  {
+   "id": "ae4ce9cf-df13-4263-a192-398d4006120e",
+   "slug": "christmas-spectacular-starring-the-radio-city-ro-03baf4a3",
+   "city": "new-york",
+   "why": "not a music act (Annual musical stage show in New York City)"
+  },
+  {
+   "id": "549e27a2-3525-4650-abf4-f28d4ba8feab",
+   "slug": "best-friends-with-nicole-byer-and-sasheer-zamata-9d14b4f6",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "235cf04b-bf77-40f7-be0f-db00dd527b90",
+   "slug": "porch-light-hush-tour-d573eb55",
+   "city": "new-york",
+   "why": "not a music act (2026 single by Noah Kahan)"
+  },
+  {
+   "id": "670e2901-81b2-4c73-a3f2-8b279a053321",
+   "slug": "ny-comedy-festival-presents-sarah-sherman-and-pa-877ffed4",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "c5a1fd68-3883-4373-a5d9-08a540c5dfd4",
+   "slug": "lage-lund-quartet-6b361d3e",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "76d9da41-da37-469a-b2f1-6f90a6b1559c",
+   "slug": "tommy-oeffling-948c65d1",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "cdecda67-4f24-4cb5-9529-6bd7b642512d",
+   "slug": "alfred-robles-01dd7ebe",
+   "city": "new-york",
+   "why": "no page of that name (nearest: Alfred Robens, Baron Robens of Woldingham)"
+  },
+  {
+   "id": "927c17b2-07b9-4d68-be7a-36cea589a34a",
+   "slug": "tatiana-eva-marie-jazz-in-paris-5a8f3ba4",
+   "city": "new-york",
+   "why": "not a music act (Musical artist)"
+  },
+  {
+   "id": "7a8f3168-40a6-4728-9206-2978e7f88563",
+   "slug": "slam-frank-6f2dc229",
+   "city": "new-york",
+   "why": "not a music act (2025 satire musical)"
+  },
+  {
+   "id": "54255684-3bab-4c26-8a1b-a9bfc0e9aee0",
+   "slug": "six-new-york-ny-aa47bb05",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "3972caea-6342-4ca8-92a9-e270ba62f636",
+   "slug": "darkness-shrugs-86cd863c",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "98afad95-538a-4002-b074-bd3fff1459dd",
+   "slug": "ny-comedy-festival-presents-marc-maron-yammering-efd69d57",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "28322aef-6a44-4697-9295-ed3c4b3d7112",
+   "slug": "midnight-abc01d74",
+   "city": "new-york",
+   "why": "not a music act (Transition time from one day to the next)"
+  },
+  {
+   "id": "70a5cd92-f4ed-4c8b-8019-7ed2f4dc1104",
+   "slug": "the-lost-boys-2b422a82",
+   "city": "new-york",
+   "why": "not a music act (1987 film by Joel Schumacher)"
+  },
+  {
+   "id": "80901a55-0343-4655-99b5-7d599f10bdc5",
+   "slug": "modern-alibi-f7ed2669",
+   "city": "new-york",
+   "why": "no page of that name (nearest: Modern liberalism in the United States)"
+  },
+  {
+   "id": "aac936cc-3474-4142-9da1-6ce838c01d91",
+   "slug": "madison-square-garden-tour-experience-1288fbb5",
+   "city": "new-york",
+   "why": "not a music act (Multi-purpose indoor arena in New York City, U.S.)"
+  },
+  {
+   "id": "17d057e7-d7b2-4185-85a4-1dce0cbf04df",
+   "slug": "radio-city-music-hall-tour-experience-d14f6984",
+   "city": "new-york",
+   "why": "not a music act (Venue and theater in New York City)"
+  },
+  {
+   "id": "fe4874de-a86f-44b0-b741-7b4d69c1386a",
+   "slug": "grateful-dead-night-never-miss-a-sunday-show-9ccc83d8",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "9683a577-c78b-4866-bbac-e6f9dd318c56",
+   "slug": "the-birdland-latin-jazz-orchestra-4b1f8337",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "a3fc7217-d33d-4d50-9d10-2645e2cafd11",
+   "slug": "hotel-allan-the-10-year-anniversary-tour-f43c75e7",
+   "city": "new-york",
+   "why": "no page of that name (nearest: Hotel Adlon)"
+  },
+  {
+   "id": "81cb4222-48d5-4f1f-93f3-c43774067642",
+   "slug": "naama-trio-3917570b",
+   "city": "new-york",
+   "why": "no page of that name (nearest: Naaman Roosevelt)"
+  },
+  {
+   "id": "a65c360c-7586-4a5f-9c42-78c945d38178",
+   "slug": "stefano-doglioni-quartet-c2351c4f",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "38b9a11d-c66b-4cdb-aed3-b87ec0d1309d",
+   "slug": "frank-wood-and-his-nyc-all-stars-band-db757f91",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "98f0494f-4fb6-42c6-afdc-4aa621650a5f",
+   "slug": "julia-raye-bb64e13a",
+   "city": "new-york",
+   "why": "no page of that name (nearest: Julia Roberts)"
+  },
+  {
+   "id": "eda700ef-ca37-4ea4-b341-f1ade7bb2dcd",
+   "slug": "panas-athanatos-quartet-3983bc2e",
+   "city": "new-york",
+   "why": "no page"
+  },
+  {
+   "id": "bec5919a-e684-4281-b6f9-8fdd74e55296",
+   "slug": "the-midnight-special-0c5f8635",
+   "city": "new-york",
+   "why": "no page of that name (nearest: Midnight Special)"
+  },
+  {
+   "id": "c606c564-e79b-452a-9e1a-5a286f7b1ae3",
+   "slug": "darling-west-lights-juleturne-2026-fa-billetter-02952fc2",
+   "city": "oslo",
+   "why": "no page of that name (nearest: Darling, South Africa)"
+  },
+  {
+   "id": "3a202d06-b15b-4af6-bf23-272aad26c104",
+   "slug": "darling-west-lights-juleturne-2026-ekstrakonsert-86e20322",
+   "city": "oslo",
+   "why": "no page of that name (nearest: Darling, South Africa)"
+  },
+  {
+   "id": "c02cb3f8-5d4f-4bbe-82fe-ff09b0867531",
+   "slug": "daaam-this-is-hip-hop-a-live-in-concert-728abe1c",
+   "city": "ottawa",
+   "why": "no page"
+  },
+  {
+   "id": "5cd0ab87-84c0-4cfc-806b-7a2f37b5f591",
+   "slug": "jamie-fine-0cfa3cda",
+   "city": "ottawa",
+   "why": "no page of that name (nearest: Elijah Woods x Jamie Fine)"
+  },
+  {
+   "id": "c32dfe17-74d1-4e3b-a3a6-73975d3b7cb6",
+   "slug": "topdog-underdog-f67894d6",
+   "city": "philadelphia",
+   "why": "not a music act (Play by Suzan-Lori Parks, premiered 2001)"
+  },
+  {
+   "id": "81579b90-c391-4657-86cd-b557e5f6a60c",
+   "slug": "bryan-andrews-21-event-59b90157",
+   "city": "philadelphia",
+   "why": "no page"
+  },
+  {
+   "id": "e33ab0d4-1699-4342-a339-757efcc16f5a",
+   "slug": "george-clanton-w-ryan-hemsworth-b8176340",
+   "city": "philadelphia",
+   "why": "no page"
+  },
+  {
+   "id": "91a2864b-387d-4053-90d9-9b13434b9561",
+   "slug": "tony-baker-7c1c4ef3",
+   "city": "philadelphia",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "b6cbed51-6494-431d-a4ac-4506504f1a7a",
+   "slug": "archer-oh-integra-pink-d5d93026",
+   "city": "philadelphia",
+   "why": "no page"
+  },
+  {
+   "id": "5434e3f7-5fcf-45dc-851b-38cf75ac1683",
+   "slug": "night-moves-gianna-866d267d",
+   "city": "philadelphia",
+   "why": "no page"
+  },
+  {
+   "id": "8e25df41-bfb7-4e06-9403-7fbb73ce07d8",
+   "slug": "punch-line-philly-open-mic-night-b2f47fde",
+   "city": "philadelphia",
+   "why": "no page"
+  },
+  {
+   "id": "8c050df4-c650-4a67-8dac-2f11455af882",
+   "slug": "chloe-kimes-edce06f7",
+   "city": "philadelphia",
+   "why": "no page of that name (nearest: Chloe Kim)"
+  },
+  {
+   "id": "a68898e2-aada-46f5-886d-0bfe210fd58a",
+   "slug": "restricted-21-and-over-2055b5bd",
+   "city": "philadelphia",
+   "why": "no page"
+  },
+  {
+   "id": "c4f930c7-60ca-48c4-9210-5f8f71062b8c",
+   "slug": "socialists-shake-ass-587309bc",
+   "city": "philadelphia",
+   "why": "no page"
+  },
+  {
+   "id": "801097d9-d20c-480d-9594-788c9c7daa29",
+   "slug": "indo-warehouse-ba40f8ff",
+   "city": "philadelphia",
+   "why": "no page of that name (nearest: Komplett)"
+  },
+  {
+   "id": "b28b7d76-f7eb-488a-92b2-f37d5fc452cf",
+   "slug": "jesse-roper-21-event-62c04b81",
+   "city": "philadelphia",
+   "why": "no page"
+  },
+  {
+   "id": "6a6691e1-16b9-4525-8c04-10e0bfe10ce1",
+   "slug": "beat-27f017a4",
+   "city": "philadelphia",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "3770508e-0dc2-4519-be95-12157e1846a1",
+   "slug": "donny-benet-with-otnes-21-event-e08e91ab",
+   "city": "philadelphia",
+   "why": "no page"
+  },
+  {
+   "id": "bc7833ed-dc6c-4404-8ede-ecbdeafcf7b9",
+   "slug": "cristina-mariani-81bb3778",
+   "city": "philadelphia",
+   "why": "no page of that name (nearest: Cristina Marsans)"
+  },
+  {
+   "id": "e68d2a63-b478-41b3-b277-377579242871",
+   "slug": "philadelphia-burlesque-academy-student-showcase-e1f39439",
+   "city": "philadelphia",
+   "why": "no page"
+  },
+  {
+   "id": "fb1afdf2-1668-497e-86f2-8a690cedc435",
+   "slug": "blue-line-buddies-must-have-ticket-to-game-9d072aca",
+   "city": "philadelphia",
+   "why": "no page of that name (nearest: Metro Line M3 (Budapest Metro))"
+  },
+  {
+   "id": "2ca9c94e-4364-47f6-92bc-d126976a8c0e",
+   "slug": "post-game-slap-shot-must-have-ticket-to-game-58cfb985",
+   "city": "philadelphia",
+   "why": "no page"
+  },
+  {
+   "id": "c76c7b09-253d-45fc-8bfe-0b049ba5eddc",
+   "slug": "high-5-tunnel-must-have-ticket-to-game-4667bc7e",
+   "city": "philadelphia",
+   "why": "no page of that name (nearest: Polytunnel)"
+  },
+  {
+   "id": "7b82a53f-dd3b-4eca-8be9-bce1582540b5",
+   "slug": "flyers-pregame-tours-must-have-ticket-to-game-84d686d0",
+   "city": "philadelphia",
+   "why": "no page"
+  },
+  {
+   "id": "007a47af-ec9f-488c-b2a8-6a3bdab27ab2",
+   "slug": "primepoint-social-pass-must-have-ticket-to-game-b0fd74fa",
+   "city": "philadelphia",
+   "why": "no page"
+  },
+  {
+   "id": "717d81f0-6564-4953-a8a4-fe80da34075e",
+   "slug": "the-bends-3671e652",
+   "city": "philadelphia",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "b7f9d04f-4694-4e62-ab92-31f73ac1befb",
+   "slug": "sf-leonard-cohen-festival-song-and-spirit-a97c4b20",
+   "city": "san-francisco",
+   "why": "no page"
+  },
+  {
+   "id": "1d9eb911-5724-4233-a161-7d7c22be0bc0",
+   "slug": "davide-de-pierro-539b1cc7",
+   "city": "san-francisco",
+   "why": "no page"
+  },
+  {
+   "id": "9b312295-c7ff-4308-8392-84265da986a3",
+   "slug": "the-big-star-quintet-029ea115",
+   "city": "san-francisco",
+   "why": "no page"
+  },
+  {
+   "id": "76452ae9-2bd4-4852-8b1d-8ab63d995ba6",
+   "slug": "geoffrey-asmus-sold-out-a1a73206",
+   "city": "san-francisco",
+   "why": "no page of that name (nearest: Geoffrey Sampson)"
+  },
+  {
+   "id": "1398a15a-a961-4df7-bebd-fb873f40e6bc",
+   "slug": "valentino-khan-21-and-over-c9faf206",
+   "city": "san-francisco",
+   "why": "no page"
+  },
+  {
+   "id": "1aa448b1-2e35-445c-9fae-ff757c804dea",
+   "slug": "locked-shut-rust-drop-step-damnata-500c6713",
+   "city": "san-francisco",
+   "why": "no page"
+  },
+  {
+   "id": "7df0f018-4a06-46d3-909d-c330a0080f28",
+   "slug": "it-s-raining-queens-martha-wash-and-marsha-warfi-1a019ab6",
+   "city": "san-francisco",
+   "why": "no page"
+  },
+  {
+   "id": "974243b9-5e07-4592-8084-3fef4445544b",
+   "slug": "ceremony-19fc4c8d",
+   "city": "san-francisco",
+   "why": "not a music act (Event of ritual significance, performed on a special occasion)"
+  },
+  {
+   "id": "7c1531e1-dae4-44bd-998d-ace3e45b441a",
+   "slug": "mustache-harbor-04a59e03",
+   "city": "san-francisco",
+   "why": "no page"
+  },
+  {
+   "id": "37f1ea3b-b094-4716-aa77-68dec508895a",
+   "slug": "the-moth-grandslam-championship-c843b008",
+   "city": "san-francisco",
+   "why": "no page"
+  },
+  {
+   "id": "5b046449-8b7d-4eaa-aad5-880cc4cf2348",
+   "slug": "sutekh-hexen-sin-pavilion-home-is-the-void-silak-6c863ab0",
+   "city": "san-francisco",
+   "why": "no page"
+  },
+  {
+   "id": "6fd04b03-4938-4760-8d17-fa0b5e164314",
+   "slug": "maris-sold-out-f7779a4c",
+   "city": "san-francisco",
+   "why": "no page"
+  },
+  {
+   "id": "04b5d510-c81c-4d76-83db-d340512845ca",
+   "slug": "the-mf-function-e8b3db78",
+   "city": "san-francisco",
+   "why": "no page of that name (nearest: Theta function)"
+  },
+  {
+   "id": "ec77fff9-c4a6-4cfa-8234-e3c09bb9d2d0",
+   "slug": "outlander-in-concert-07765b62",
+   "city": "seattle",
+   "why": "no page"
+  },
+  {
+   "id": "45fb5354-71a8-42b9-b30a-d3d8756c7a53",
+   "slug": "kexp-presents-squirrel-flower-w-sour-widows-415d29db",
+   "city": "seattle",
+   "why": "no page"
+  },
+  {
+   "id": "b76483b7-d74f-4cb4-af51-33d26d02baa2",
+   "slug": "reggaeton-y-2000s-e6c51833",
+   "city": "seattle",
+   "why": "no page"
+  },
+  {
+   "id": "c473df0c-b89f-4e75-b3fd-692639ec11e8",
+   "slug": "clock-out-lounge-presents-sparta-w-special-guest-f983bdeb",
+   "city": "seattle",
+   "why": "no page"
+  },
+  {
+   "id": "07b1c73a-0d0f-4410-a0bf-c75857909a48",
+   "slug": "crab-fa56b369",
+   "city": "seattle",
+   "why": "not a music act (Group of crustaceans)"
+  },
+  {
+   "id": "ee144d54-eb1a-41ba-9d7d-e349ddafff02",
+   "slug": "beck-ride-lonesome-tour-1abbe18b",
+   "city": "seattle",
+   "why": "no page of that name (nearest: Beck (manga))"
+  },
+  {
+   "id": "b900435b-d3cc-44c1-9c06-3a0eae19959c",
+   "slug": "seattle-mariners-ballpark-tour-85728a9a",
+   "city": "seattle",
+   "why": "no page"
+  },
+  {
+   "id": "c22d11db-7b95-4d7d-89b1-b9a54f08b512",
+   "slug": "gorillat-4bb1951f",
+   "city": "seattle",
+   "why": "no page of that name (nearest: Gorilla Tag)"
+  },
+  {
+   "id": "8280a949-7aeb-43e8-9bc8-d53b7b402444",
+   "slug": "punchis-punchis-banda-rave-ages-18-7e0b0f2e",
+   "city": "seattle",
+   "why": "no page"
+  },
+  {
+   "id": "08249951-6e60-47b3-b0dc-d3aec90e1d35",
+   "slug": "silverada-w-emily-nenni-both-shows-4e3a38d4",
+   "city": "seattle",
+   "why": "no page"
+  },
+  {
+   "id": "19b02901-c458-4e3f-b041-7bc918a45c32",
+   "slug": "silverada-w-emily-nenni-night-one-4c74cc83",
+   "city": "seattle",
+   "why": "no page"
+  },
+  {
+   "id": "254d68e1-81ce-408a-abef-709b6d777ce1",
+   "slug": "radio-gaza-and-wo-pop-present-a-benefit-for-pale-4c497f85",
+   "city": "seattle",
+   "why": "no page"
+  },
+  {
+   "id": "29d60180-d4be-4e90-b421-db9118e58352",
+   "slug": "dilly-disco-cravings-faf0b2df",
+   "city": "seattle",
+   "why": "no page of that name (nearest: Diplo discography)"
+  },
+  {
+   "id": "5d0886e9-ffc5-485f-9418-2fd505d6d59c",
+   "slug": "cem-adrian-21-event-1683c45b",
+   "city": "seattle",
+   "why": "no page"
+  },
+  {
+   "id": "95576786-b13f-46f0-bda5-2b4ca93ebd7e",
+   "slug": "russian-circles-w-primitive-man-10af3e3d",
+   "city": "seattle",
+   "why": "no page"
+  },
+  {
+   "id": "3947adab-7272-48a4-bc8a-6c9d3612fd7d",
+   "slug": "raised-by-tv-events-presents-all-ages-bob-s-burg-cf29411c",
+   "city": "seattle",
+   "why": "no page"
+  },
+  {
+   "id": "e16b27b9-9e68-4b6e-97fb-4975cd7d64e8",
+   "slug": "mamma-mia-the-party-1dd7f712",
+   "city": "stockholm",
+   "why": "no page of that name (nearest: The O2)"
+  },
+  {
+   "id": "bc127462-9256-4e0e-bc73-70aa1a67ad07",
+   "slug": "blushing-brides-tribute-to-the-rolling-stones-15be5700",
+   "city": "toronto",
+   "why": "no page"
+  },
+  {
+   "id": "71e50e5e-ab82-4158-a5a3-28f14332381c",
+   "slug": "ryan-maguire-w-block-warmers-and-kilsen-c5573708",
+   "city": "toronto",
+   "why": "no page"
+  },
+  {
+   "id": "054fddbf-f980-455c-b1ad-8b52ddd9ddd5",
+   "slug": "madds-buckley-2026-2027-north-american-tour-100ed5bd",
+   "city": "toronto",
+   "why": "no page"
+  },
+  {
+   "id": "03238672-5b98-4ed8-a932-9e2d9248e95f",
+   "slug": "rock-with-love-5-featuring-dwayne-gretzky-651b4838",
+   "city": "toronto",
+   "why": "no page"
+  },
+  {
+   "id": "ef7ca26a-8d87-4398-b8d3-9af8ff118797",
+   "slug": "rogers-centre-ballpark-tours-70692ad1",
+   "city": "toronto",
+   "why": "no page"
+  },
+  {
+   "id": "b399e35e-bace-4233-9569-803dce92a032",
+   "slug": "guided-tours-of-scotiabank-arena-34049d2d",
+   "city": "toronto",
+   "why": "no page of that name (nearest: Guided by Voices)"
+  },
+  {
+   "id": "bda90deb-1790-4b1c-b937-3db041013d7b",
+   "slug": "premium-guided-tours-of-scotiabank-arena-aec32e41",
+   "city": "toronto",
+   "why": "no page"
+  },
+  {
+   "id": "1655822b-5640-4446-b4d0-ad5dff1b54cf",
+   "slug": "classic-albums-live-3434d838",
+   "city": "toronto",
+   "why": "not a music act (Concert series based in Ontario, Canada)"
+  },
+  {
+   "id": "155bf920-3e9e-451c-a0db-af2632a7e3e2",
+   "slug": "the-olllam-1a2f7c85",
+   "city": "toronto",
+   "why": "no page of that name (nearest: The All-American Rejects)"
+  },
+  {
+   "id": "0a97ab0c-3bc4-4d41-a6b1-94e904641842",
+   "slug": "ark-identity-40857811",
+   "city": "toronto",
+   "why": "no page of that name (nearest: Arab identity)"
+  },
+  {
+   "id": "2ff3e16b-47ed-4e2e-b2c0-fe7b19079f0a",
+   "slug": "godfrey-4d39459d",
+   "city": "toronto",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "af5a2097-3b3e-48ae-b65f-7860e67478de",
+   "slug": "school-night-cc81cba5",
+   "city": "toronto",
+   "why": "no page of that name (nearest: Chappell Roan)"
+  },
+  {
+   "id": "c69151b4-2a90-46ea-bcb1-0e2aa3120cbe",
+   "slug": "centraal-w-nate-northfield-qualisonic-and-jjfa-eac68de2",
+   "city": "toronto",
+   "why": "no page"
+  },
+  {
+   "id": "8f830811-1fd4-4026-aad3-aacf6c31f868",
+   "slug": "nataly-aukar-live-3939f339",
+   "city": "toronto",
+   "why": "no page"
+  },
+  {
+   "id": "f2c315e8-c935-4ba6-a1bd-3335edc1b9cb",
+   "slug": "cirque-du-soleil-luzia-039cc669",
+   "city": "vancouver",
+   "why": "not a music act (Canadian contemporary circus company)"
+  },
+  {
+   "id": "1fae72f9-593d-40a5-9e30-9d4f72de67cf",
+   "slug": "2026-koyote-festival-north-america-tour-b9189f32",
+   "city": "vancouver",
+   "why": "no page"
+  },
+  {
+   "id": "060b2b69-d081-44ea-8c3b-b93702b87fd9",
+   "slug": "true-mountain-laurel-with-paisley-saggu-4aeff2af",
+   "city": "vancouver",
+   "why": "no page"
+  },
+  {
+   "id": "7633a2a5-8621-48ed-b18e-d2ba5f895236",
+   "slug": "michael-bernard-fitzgerald-with-merrick-winter-26c1699f",
+   "city": "vancouver",
+   "why": "no page"
+  },
+  {
+   "id": "5a645b03-7480-4a3e-81a5-289c80e1af59",
+   "slug": "alleycvt-f7af9725",
+   "city": "vancouver",
+   "why": "no page of that name (nearest: List of Monstercat artists)"
+  },
+  {
+   "id": "213b3796-ee81-46a0-afd0-c48c58252ef9",
+   "slug": "truck-violence-with-emma-goldman-and-tall-mary-a8eacccf",
+   "city": "vancouver",
+   "why": "no page"
+  },
+  {
+   "id": "fc7ba114-1707-4357-844c-08200374c05c",
+   "slug": "2dead-boyz-x-the-underachievers-no1livesforever-713c4236",
+   "city": "vancouver",
+   "why": "no page"
+  },
+  {
+   "id": "ba160520-30f0-46bb-81c1-08e585634939",
+   "slug": "clarion-with-novulent-and-cherry-pick-32e29fbe",
+   "city": "vancouver",
+   "why": "no page"
+  },
+  {
+   "id": "589c3612-0373-4367-9194-a9893d51547c",
+   "slug": "best-of-2010-s-at-happy-ending-fridays-c9ba4bae",
+   "city": "vancouver",
+   "why": "no page"
+  },
+  {
+   "id": "58fb4280-97fd-4f1e-ba0c-5d5bdaf068c8",
+   "slug": "stacked-pres-dennett-bb6d2398",
+   "city": "vancouver",
+   "why": "no page of that name (nearest: Restricted Boltzmann machine)"
+  },
+  {
+   "id": "83d02b15-966b-45b7-a1e8-a59d603e968a",
+   "slug": "saliah-in-vancouver-3f5b013c",
+   "city": "vancouver",
+   "why": "no page"
+  },
+  {
+   "id": "9b3c616a-03c2-4ede-b92e-6f5e1d3a8c3e",
+   "slug": "for-real-fridays-the-weeknd-4ever-0249a6cf",
+   "city": "vancouver",
+   "why": "no page"
+  },
+  {
+   "id": "cee7e179-fa4e-40e3-8382-366136c1783c",
+   "slug": "surf-hat-with-trestles-da9e550b",
+   "city": "vancouver",
+   "why": "no page"
+  },
+  {
+   "id": "4f176ca0-463b-4ab6-8e61-62a9251c444f",
+   "slug": "playhouse-pres-frank-walker-97f33f15",
+   "city": "vancouver",
+   "why": "no page of that name (nearest: Playhouse Presents)"
+  },
+  {
+   "id": "b20ecf44-5a84-4200-a852-fa3acc60af05",
+   "slug": "koncert-przy-swiecach-11462fb5",
+   "city": "warszawa",
+   "why": "no page"
+  },
+  {
+   "id": "c5f11d23-e91a-4c19-8ea0-830df16ab23c",
+   "slug": "jeremi-sikorski-wracam-on-tour-ab0b31f6",
+   "city": "warszawa",
+   "why": "no page"
+  },
+  {
+   "id": "f9395aa9-52ac-4147-9e3e-647896aa9657",
+   "slug": "dj-blik-and-dominika-p-onka-95da7139",
+   "city": "warszawa",
+   "why": "no page"
+  },
+  {
+   "id": "5977fa5c-f5e1-49de-82d6-b4aae127192f",
+   "slug": "kasia-kowalska-1fd78a04",
+   "city": "warszawa",
+   "why": "not a music act (Musical artist)"
+  },
+  {
+   "id": "9f870644-05ad-4835-82db-1605631038d6",
+   "slug": "wesghost-if-it-s-not-forever-e7391bfa",
+   "city": "warszawa",
+   "why": "no page of that name (nearest: Westchester County, New York)"
+  },
+  {
+   "id": "8c70a69d-2124-4a6a-a200-608104025d93",
+   "slug": "amble-a8991ac4",
+   "city": "washington",
+   "why": "not a music act (Town and civil parish in Northumberland, England)"
+  },
+  {
+   "id": "f4c34984-4a92-402d-b71b-9804b9a25887",
+   "slug": "alex-o-connor-pre-show-q-and-a-ticket-47fac5ae",
+   "city": "washington",
+   "why": "not a music act (English podcaster and YouTuber (born 1999))"
+  },
+  {
+   "id": "bbc1ae0e-21f0-4e1c-b6fb-1cbe65638853",
+   "slug": "bill-blumenreich-presents-alex-o-connor-0e5254c2",
+   "city": "washington",
+   "why": "no page"
+  },
+  {
+   "id": "01b0c1ac-6534-4ffe-bad2-283e3ea67d15",
+   "slug": "jojo-cfabcc77",
+   "city": "washington",
+   "why": "not a music act (Name list)"
+  },
+  {
+   "id": "3d41614f-830d-4610-93ce-b769241b419e",
+   "slug": "love-actually-live-in-concert-4ffc3853",
+   "city": "washington",
+   "why": "not a music act (2003 film by Richard Curtis)"
+  },
+  {
+   "id": "27e9b42e-7710-43d3-be8d-be760575b621",
+   "slug": "the-bends-if-you-insist-tour-88e37673",
+   "city": "washington",
+   "why": "disambiguation or no summary"
+  },
+  {
+   "id": "70c95e9b-5d3d-41d6-805d-64283246b049",
+   "slug": "disney-descendants-zombies-and-camp-rock-worlds-c23b248d",
+   "city": "washington",
+   "why": "no page"
+  },
+  {
+   "id": "65c8eadc-1f5b-4c0f-b0d3-0275405b3abe",
+   "slug": "jacob-banks-uk-66cb3556",
+   "city": "zurich",
+   "why": "no page of that name (nearest: Jacob Banks)"
+  }
+ ]
+}

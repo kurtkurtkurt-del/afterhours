@@ -1,0 +1,66 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "992f7960-fe54-4829-819c-b3d27e6b2e6a",
+   "slug": "keenan-te-the-afterthought-tour-w-frankie-venter-ee0e0a1e",
+   "title": "Keenan Te: The Afterthought Tour w/ Frankie Venter",
+   "act": "Keenan Te",
+   "name": "Keenan Te",
+   "description": "Australian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Keenan_Te",
+   "extract": "Keenan Te is an Australian singer-songwriter of Vietnamese and Cambodian heritage. He is known for piano-driven ballads and songs that gained popularity through TikTok."
+  },
+  {
+   "id": "4b97201a-c469-4af2-b2fd-64ba3463b831",
+   "slug": "the-army-the-navy-9afe04c4",
+   "title": "The Army, The Navy",
+   "act": "The Army, The Navy",
+   "name": "The Army, The Navy",
+   "description": "American musical duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_Army%2C_The_Navy",
+   "extract": "The Army, The Navy is an American folk-pop band consisting of Maia Ciambriello and Sasha Goldberg."
+  },
+  {
+   "id": "f616d0f7-c0ae-4911-96bf-8f1160fade05",
+   "slug": "finn-askew-d25e97d2",
+   "title": "Finn Askew",
+   "act": "Finn Askew",
+   "name": "Finn Askew",
+   "description": "British singer",
+   "source_url": "https://en.wikipedia.org/wiki/Finn_Askew",
+   "extract": "Samuel Finn Valler Askew is a British musician from Wellington in south-west England."
+  },
+  {
+   "id": "f0025b80-d2f7-42a3-9668-83e1ed51594b",
+   "slug": "sid-sriram-72e948cd",
+   "title": "Sid Sriram",
+   "act": "Sid Sriram",
+   "name": "Sid Sriram",
+   "description": "Indian-American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Sid_Sriram",
+   "extract": "Sidharth Sriram known as Sid Sriram is an Indian Carnatic musician, music producer, playback singer. He is an R&B songwriter and has been working in the Tamil, Telugu, Kannada, Malayalam, Hindi, Marathi and English music industry. He regularly collaborates with his sister Pallavi Sriram, a Bharatanatyam dancer, and music director."
+  },
+  {
+   "id": "4d1da633-98ee-46fe-83b7-ff6ce884c680",
+   "slug": "olafur-arnalds-fbb48e58",
+   "title": "Ólafur Arnalds",
+   "act": "Ólafur Arnalds",
+   "name": "Ólafur Arnalds",
+   "description": "Icelandic musician and composer (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/%C3%93lafur_Arnalds",
+   "extract": "Ólafur Arnalds is an Icelandic multi-instrumentalist and producer from Mosfellsbær, Iceland. He mixes strings and piano with loops and beats, a sound ranging from ambient/electronic to atmospheric pop. He is also the former drummer for hardcore punk and metal bands Fighting Shit, Celestine, and others."
+  },
+  {
+   "id": "daebfd8c-28fd-41a4-bdb7-f2ea67250bdc",
+   "slug": "pupsies-6c1a51ce",
+   "title": "pupsies",
+   "act": "pupsies",
+   "name": "Pupsies",
+   "description": "American singer (born 2006 or 2007)",
+   "source_url": "https://en.wikipedia.org/wiki/Pupsies",
+   "extract": "Cindy Kamgaing, known professionally as Pupsies, is an American singer. She became known for her song \"Misery\" in 2026."
+  }
+ ]
+}

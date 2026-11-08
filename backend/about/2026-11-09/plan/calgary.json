@@ -1,0 +1,16 @@
+{
+ "city": "calgary",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "b76c681e-a621-43e7-9f59-7d8bf58055f4",
+   "slug": "choir-choir-choir-un-silent-night-an-epic-holida-08cdc881",
+   "title": "Choir! Choir! Choir! - Un-Silent Night: An EPIC Holiday Sing-Along!",
+   "act": "Choir! Choir! Choir!",
+   "name": "Choir! Choir! Choir!",
+   "description": "Canadian choir",
+   "source_url": "https://en.wikipedia.org/wiki/Choir!_Choir!_Choir!",
+   "extract": "Choir! Choir! Choir! is a Canadian musical choir, based in Toronto, Ontario. Instead of a traditional organizational model, the choir is structured as an open participation group where anybody who wants to attend an event is welcome to perform as part of the choir."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "6a43a407-6335-4411-80bc-dd69e4d70b2f",
+   "slug": "jools-holland-and-his-rhythm-and-blues-orchestra-fa5029a1",
+   "title": "Jools Holland and His Rhythm & Blues Orchestra",
+   "act": "Jools Holland and His Rhythm & Blues Orchestra",
+   "name": "Jools Holland and his Rhythm & Blues Orchestra",
+   "description": "Jools Holland's backing band",
+   "source_url": "https://en.wikipedia.org/wiki/Jools_Holland_and_his_Rhythm_%26_Blues_Orchestra",
+   "extract": "Jools Holland and his Rhythm & Blues Orchestra is an English rhythm and blues band led by boogie-woogie and former Squeeze pianist and television personality Jools Holland."
+  },
+  {
+   "id": "ed6cb739-f6cb-429e-84b2-b42e6978f986",
+   "slug": "courteeners-8199f7e6",
+   "title": "Courteeners",
+   "act": "Courteeners",
+   "name": "Courteeners",
+   "description": "English band",
+   "source_url": "https://en.wikipedia.org/wiki/Courteeners",
+   "extract": "Courteeners are an English band formed in Middleton, Greater Manchester, in 2006 by Liam Fray, Michael Campbell, and Mark Cuppello, with Daniel \"Conan\" Moores joining shortly after to replace the band's initial guitarist.; Mark Cuppello was replaced by the band's producer Joe Cross in 2015. They previously toured with pianist Adam Payne, who has been featured on every album, but in 2019 was replaced with Elina Lin. In December 2012, the band dropped \"The\" from their name, continuing simply as \"Courteeners\". In 2024, Cross and Lin became official members of the band."
+  },
+  {
+   "id": "d88e851b-25f1-4a0e-aa9d-6547a44796ca",
+   "slug": "the-rifles-646e4243",
+   "title": "The Rifles",
+   "act": "The Rifles",
+   "name": "The Rifles",
+   "description": "English indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Rifles_(band)",
+   "extract": "The Rifles are an English indie rock band from Chingford, London."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "antwerpen",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "04f93038-84f4-44ca-aad0-b1b1b83ad521",
+   "slug": "agnes-obel-d2ede438",
+   "title": "Agnes Obel",
+   "act": "Agnes Obel",
+   "name": "Agnes Obel",
+   "description": "Danish musician (born 1980)",
+   "source_url": "https://en.wikipedia.org/wiki/Agnes_Obel",
+   "extract": "Agnes Caroline Thaarup Obel is a Danish singer, songwriter, and musician based in Berlin."
+  }
+ ]
+}

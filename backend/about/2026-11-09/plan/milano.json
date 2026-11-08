@@ -1,0 +1,16 @@
+{
+ "city": "milano",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "cb07ec8b-e7af-4f2c-a33a-8d18ff78fd3f",
+   "slug": "marco-mengoni-residency-allo-sbagliato-1b9c840a",
+   "title": "Marco Mengoni - Residency Allo Sbagliato",
+   "act": "Marco Mengoni",
+   "name": "Marco Mengoni",
+   "description": "Italian singer (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Marco_Mengoni",
+   "extract": "Marco Mengoni is an Italian singer-songwriter who rose to fame in 2009 after winning the third season of the Italian talent show X Factor. Since then he has sold over 2.8 million records in Italy, peaking the Italian albums chart seven consecutive times and entering the Top 10 Italian Singles Chart fifteen times. He won the Sanremo Music Festival in 2013 and again in 2023, therefore representing Italy in the Eurovision Song Contest in both years."
+  }
+ ]
+}

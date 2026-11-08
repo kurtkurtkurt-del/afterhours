@@ -1,0 +1,26 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "29ba16b5-de26-49e8-9417-c70e0e3cd2b2",
+   "slug": "morat-c53efe6b",
+   "title": "Morat",
+   "act": "Morat",
+   "name": "Morat",
+   "description": "Colombian folk-pop Band",
+   "source_url": "https://en.wikipedia.org/wiki/Morat_(band)",
+   "extract": "Morat is a Colombian Latin pop rock band formed in the country's capital city, Bogotá. The band is made up of Juan Pablo Isaza, Juan Pablo Villamil, and the brothers Simón Vargas and Martín Vargas. Drummer Alejandro Posada was also a founding member of the band, but left in 2016 and was replaced by Martín Vargas."
+  },
+  {
+   "id": "1da4932d-f1ba-48bb-bf53-7c0e1fc8e9e2",
+   "slug": "los-angeles-azules-3f4ac7f4",
+   "title": "Los Angeles Azules",
+   "act": "Los Angeles Azules",
+   "name": "Los Ángeles Azules",
+   "description": "Mexican musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Los_%C3%81ngeles_Azules",
+   "extract": "Los Ángeles Azules are a Mexican musical group that plays the Mexican Cumbia genre, which is the style of cumbia adopted in various Mexican regions."
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "city": "new-york",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "f19a25af-4ba6-4c62-9f75-fffd042fc21b",
+   "slug": "kino-all-ages-under-16-with-adult-a2d85042",
+   "title": "KINO - All Ages (under 16 with adult)",
+   "act": "KINO",
+   "name": "Kino",
+   "description": "Soviet rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kino_(band)",
+   "extract": "Kino is a Russian rock band formed in Leningrad in 1981. The band was co-founded and headed by Viktor Tsoi, who wrote the music and lyrics for almost all of the band's songs, until his death in 1990. Over the course of eight years, Kino released over ninety songs spanning over seven studio albums, as well as releasing a few compilations and live albums. During the days of the Soviet Union, the band's music was also widely circulated in the form of bootleg recordings through the underground magnitizdat distribution scene. Viktor Tsoi died in a car accident in 1990. Shortly after his death, the band broke up after releasing their final album, consisting of songs that Tsoi and the group were working on in the months before his death."
+  },
+  {
+   "id": "92cade94-f761-4fc7-882a-0c31933ca682",
+   "slug": "almost-monday-thank-god-it-s-almost-monday-a84cdeb8",
+   "title": "almost monday - THANK GOD IT'S ALMOST MONDAY",
+   "act": "almost monday",
+   "name": "Almost Monday",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Almost_Monday",
+   "extract": "Almost Monday is an American indie pop band based in San Diego, California."
+  },
+  {
+   "id": "55db08e6-647f-4740-9e06-6a77e180d6cb",
+   "slug": "jamie-macdonald-left-it-in-the-river-tour-ff4848cb",
+   "title": "Jamie MacDonald - Left It In The River Tour",
+   "act": "Jamie MacDonald",
+   "name": "Jamie MacDonald",
+   "description": "American contemporary Christian pop singer",
+   "source_url": "https://en.wikipedia.org/wiki/Jamie_MacDonald_(singer)",
+   "extract": "Jamie Lyn MacDonald is an American singer-songwriter and film music writer primarily active within the genre of contemporary Christian and soul music. Originally from Caro, Michigan, and now based in Nashville, Tennessee, MacDonald began her music career independently in 2014; she later gained prominence in 2025 following a signing with Capitol Christian Music Group and subsequent release of the singles \"Desperate\", \"Left It in the River\", and \"Ain't No Way\", each of which went on to experience chart-topping success on the Billboard Christian Airplay and Christian Adult Contemporary Airplay charts. Her self-titled debut album was released in early 2026, and that year she received the Dove Award for New Artist of the Year as well as being recognized as an \"Artist to Watch\" by both Amazon and Spotify."
+  },
+  {
+   "id": "a4347da5-99b7-43bc-bfba-c6ffb1af87e8",
+   "slug": "kenyon-dixon-68dfbaed",
+   "title": "Kenyon Dixon",
+   "act": "Kenyon Dixon",
+   "name": "Kenyon Dixon",
+   "description": "American singer & musician (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Kenyon_Dixon",
+   "extract": "Kenyon Dixon is an American Grammy-nominated R&B singer-songwriter, musician, and producer."
+  },
+  {
+   "id": "8df414c8-ac32-47be-94a1-baf2a4b49a26",
+   "slug": "saya-gray-7d6c2e1a",
+   "title": "Saya Gray",
+   "act": "Saya Gray",
+   "name": "Saya Gray",
+   "description": "Canadian musician (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Saya_Gray",
+   "extract": "Saya Gray is a Canadian musician. She has four albums or EPs, starting with her debut in 2022."
+  }
+ ]
+}

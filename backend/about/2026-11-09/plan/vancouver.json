@@ -1,0 +1,26 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "0c693166-d5df-4c26-9115-f46d8e5b66a7",
+   "slug": "rodrigo-y-gabriela-d60b66bc",
+   "title": "Rodrigo y Gabriela",
+   "act": "Rodrigo y Gabriela",
+   "name": "Rodrigo y Gabriela",
+   "description": "Mexican guitar duo",
+   "source_url": "https://en.wikipedia.org/wiki/Rodrigo_y_Gabriela",
+   "extract": "Rodrigo y Gabriela are a Mexican acoustic guitar duo featuring musicians Rodrigo Sánchez and Gabriela Quintero. Residing in Mexico City, they began their career in Dublin, Ireland, where they played for the first eight years of their career as a duo. Their music consists largely of instrumental duets on the flamenco guitar, with a musical style influenced by a number of genres including nuevo flamenco, rock, and heavy metal."
+  },
+  {
+   "id": "6ee38e46-18d0-4acf-a2af-6988470ceced",
+   "slug": "amtrac-7901ba1e",
+   "title": "Amtrac",
+   "act": "Amtrac",
+   "name": "Amtrac",
+   "description": "American DJ and electronic music producer (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Amtrac_(musician)",
+   "extract": "Caleb Cornett, known professionally as Amtrac, is an American DJ, electronic music producer, singer, multi-instrumentalist, and songwriter."
+  }
+ ]
+}

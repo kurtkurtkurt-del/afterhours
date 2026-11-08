@@ -1,0 +1,46 @@
+{
+ "city": "denver",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "04dfe86c-5010-4afe-a847-1bd733771777",
+   "slug": "amtrac-18-28837ea0",
+   "title": "Amtrac - 18+",
+   "act": "Amtrac",
+   "name": "Amtrac",
+   "description": "American DJ and electronic music producer (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Amtrac_(musician)",
+   "extract": "Caleb Cornett, known professionally as Amtrac, is an American DJ, electronic music producer, singer, multi-instrumentalist, and songwriter."
+  },
+  {
+   "id": "43027b6b-1e15-4694-b002-ed104065bad6",
+   "slug": "tokimonsta-f12d932e",
+   "title": "TOKiMONSTA",
+   "act": "TOKiMONSTA",
+   "name": "Tokimonsta",
+   "description": "American record producer and DJ (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Tokimonsta",
+   "extract": "Jennifer Lee, known professionally as Tokimonsta, is an American record producer and DJ based in Los Angeles. She has collaborated with artists such as Anderson .Paak, EarthGang, Isaiah Rashad, Selah Sue, and ZHU. Additionally, she has published a number of official remixes, a few being Beck, Duran Duran, Olafur Arnalds, Disclosure, Sia, the Squid Game theme, and Odesza."
+  },
+  {
+   "id": "2ea991ea-bc37-4fc7-91e5-0b017cded415",
+   "slug": "lucy-bedroque-196e45fa",
+   "title": "Lucy Bedroque",
+   "act": "Lucy Bedroque",
+   "name": "Lucy Bedroque",
+   "description": "American rapper and producer (born 2006)",
+   "source_url": "https://en.wikipedia.org/wiki/Lucy_Bedroque",
+   "extract": "Jeremiah Jabulani Mark, known professionally as Lucy Bedroque, is an American rapper, singer and record producer based in Los Angeles. In 2025, they released their debut mixtape Unmusique."
+  },
+  {
+   "id": "9656ee5c-958f-4daf-9fe6-8d57a083d505",
+   "slug": "dev-lemons-eat-the-pavement-tour-a660cc14",
+   "title": "Dev Lemons: Eat The Pavement Tour",
+   "act": "Dev Lemons",
+   "name": "Dev Lemons",
+   "description": "American singer-songwriter and record producer (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Dev_Lemons",
+   "extract": "Devon Vonder Schmalz, also known as Dev Lemons, is an American singer-songwriter, record producer, and YouTuber. She initially gained popularity by making music theory videos as SongPsych on TikTok and YouTube and through her personal YouTube channel, Dev Limes. She has released two studio albums, Surface Tension in 2025, and Hunting What We Already Killed in 2026."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "c595ab67-42c5-4ee3-91a1-ea418907229b",
+   "slug": "beabadoobee-the-powerlines-tour-b17c6108",
+   "title": "beabadoobee: The Powerlines Tour",
+   "act": "beabadoobee",
+   "name": "Beabadoobee",
+   "description": "Filipino and British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Beabadoobee",
+   "extract": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021, she released five extended plays (EPs) under the independent label Dirty Hit: Lice (2018), Patched Up (2018), Loveworm (2019), Space Cadet (2019) and Our Extended Play (2021). Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim. Her second studio album, Beatopia, was released on July 2022, and spawned the hit \"The Perfect Pair\". Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart. In September 2026, her fourth studio album, Pylon topped the British and Australian charts."
+  },
+  {
+   "id": "6a432552-8217-4aee-9325-28d20292558c",
+   "slug": "seb-lowe-ba727380",
+   "title": "Seb Lowe",
+   "act": "Seb Lowe",
+   "name": "Seb Lowe",
+   "description": "English musician (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Seb_Lowe",
+   "extract": "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. He is known for incorporating politics into his music, having started out uploading videos of his songs to TikTok."
+  },
+  {
+   "id": "2645c758-bfa2-4689-a63d-1282c67ad3f5",
+   "slug": "the-dualers-9c1f067b",
+   "title": "The Dualers",
+   "act": "The Dualers",
+   "name": "The Dualers",
+   "description": "British ska musical group",
+   "source_url": "https://en.wikipedia.org/wiki/The_Dualers",
+   "extract": "The Dualers are an eight-piece ska and reggae band from South East London. Initially comprising brothers Si and Tyber Cranstoun, and now led by Tyber following Si's departure in 2010 for a solo career, they first developed a profile when the single \"Kiss on the Lips\" entered the UK top 30, peaking at 21, in October 2004 despite no industry backing."
+  }
+ ]
+}

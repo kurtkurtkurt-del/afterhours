@@ -1,0 +1,26 @@
+{
+ "city": "ottawa",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "e82f872d-6ed6-40a4-9385-8eb0fbc3061e",
+   "slug": "zeds-dead-348ff6c7",
+   "title": "Zeds Dead",
+   "act": "Zeds Dead",
+   "name": "Zeds Dead",
+   "description": "Canadian electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Zeds_Dead",
+   "extract": "Zeds Dead is a Canadian electronic music duo from Toronto consisting of Dylan Mamid, also known as DC, and Zachary Rapp-Rovan, also known as Hooks. The duo rose to prominence releasing original music and remixes from 2009 to 2010 before becoming a staple on the international touring circuit thereafter. They explore a diverse variety of genres that combine aspects of dubstep, UK garage, house, electro house, hip-hop, glitch, drum and bass, and more."
+  },
+  {
+   "id": "2417d01a-7342-4d65-8bb8-9d5a35e3d780",
+   "slug": "loud-luxury-d09b0e26",
+   "title": "Loud Luxury",
+   "act": "Loud Luxury",
+   "name": "Loud Luxury",
+   "description": "Canadian DJ duo",
+   "source_url": "https://en.wikipedia.org/wiki/Loud_Luxury",
+   "extract": "Loud Luxury are a Canadian music production and DJ duo consisting of Andrew Fedyk and Joe De Pace. They are currently based in Los Angeles, California. They gained recognition following their 2017 release \"Body\" and their remix of the Martin Garrix and Dua Lipa single \"Scared to Be Lonely\"."
+  }
+ ]
+}

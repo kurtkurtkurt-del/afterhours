@@ -1,0 +1,16 @@
+{
+ "city": "hamburg",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "56b1bed1-cd5e-42a7-8ff0-43729c67605a",
+   "slug": "sim-hooman-after-all-world-tour-a4672b0b",
+   "title": "SiM - Hooman After All World Tour",
+   "act": "SiM",
+   "name": "SiM",
+   "description": "Japanese alternative metal band",
+   "source_url": "https://en.wikipedia.org/wiki/SiM",
+   "extract": "SiM are a Japanese metalcore band from Kanagawa Prefecture formed in 2004. The band currently consists of MAH (vocals), SHOW-HATE (guitar), SIN (bass), and GODRi (drums). Their musical style mixes nu metal, alternative, hip-hop, ska, reggae, dub, and punk with rebellious lyrics and songs with attitude."
+  }
+ ]
+}

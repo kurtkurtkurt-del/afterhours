@@ -1,0 +1,76 @@
+{
+ "city": "london",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "070cfb8c-ed67-4b20-a6fe-d33c9ef21d3a",
+   "slug": "bodyslam-615761ab",
+   "title": "BODYSLAM",
+   "act": "BODYSLAM",
+   "name": "Bodyslam",
+   "description": "Thai rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Bodyslam_(band)",
+   "extract": "Bodyslam is a Thai rock band. They are known for their dynamic performances and deep lyrics, having released their first album in 2002."
+  },
+  {
+   "id": "dc25f003-e230-43ca-a27d-3aec85ebdad9",
+   "slug": "los-fastidios-07a1dac7",
+   "title": "Los Fastidios",
+   "act": "Los Fastidios",
+   "name": "Los Fastidios",
+   "description": "Italian Oi! band",
+   "source_url": "https://en.wikipedia.org/wiki/Los_Fastidios",
+   "extract": "Los Fastidios is an Italian Oi! band. It was formed in Verona in 1991, however only one of the original band members remains. Songs of Los Fastidios deal with common life situations, as well as promoting equality, socialism and fight against discrimination. The band is often identified with the SHARP movement."
+  },
+  {
+   "id": "1a1663e0-5f09-4797-ba0c-944aae8e2c2d",
+   "slug": "freya-skye-5cb448e1",
+   "title": "Freya Skye",
+   "act": "Freya Skye",
+   "name": "Freya Skye",
+   "description": "English singer and actress (born 2009)",
+   "source_url": "https://en.wikipedia.org/wiki/Freya_Skye",
+   "extract": "Freya Skye is an English singer and actress. She represented the United Kingdom in the Junior Eurovision Song Contest 2022, after which she was signed to Hollywood Records. Skye also has a talent holding deal for projects with Disney Branded Television. As an actress, she has appeared in The Next Step and made her film debut starring as Nova Bright in Zombies 4: Dawn of the Vampires. As a musician, Skye has released a number of singles since 2020 and released her debut extended play Stardust in 2026 and embarked on her first headlining tour, the Stars Align Tour."
+  },
+  {
+   "id": "543ad733-4e74-4679-9732-8c017783daea",
+   "slug": "the-home-team-4941be39",
+   "title": "The Home Team",
+   "act": "The Home Team",
+   "name": "The Home Team",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Home_Team",
+   "extract": "The Home Team is an American rock band from Seattle, Washington, formed in 2013 by Daniel Matson and John Baran. The band currently consists of vocalist Brian Butcher, bassist Ryne Olson, guitarist John Baran, and drummer Daniel Matson."
+  },
+  {
+   "id": "de3d2bbb-57c9-4610-a40f-6d2ad3977bfb",
+   "slug": "infinity-song-895325ec",
+   "title": "Infinity Song",
+   "act": "Infinity Song",
+   "name": "Infinity Song",
+   "description": "American soft rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Infinity_Song",
+   "extract": "Infinity Song is an American soft rock band composed of siblings Abraham, Angel, Israel and Momo Boyd. Based in New York City, the group has released three albums under record label Roc Nation."
+  },
+  {
+   "id": "c9d8668f-4b7a-4b10-ad78-4a61566a5691",
+   "slug": "ole-60-off-the-grid-tour-8179271f",
+   "title": "Ole 60 - Off the Grid Tour",
+   "act": "Ole 60",
+   "name": "Ole 60",
+   "description": "American country music band",
+   "source_url": "https://en.wikipedia.org/wiki/Ole_60",
+   "extract": "Ole 60 is an American country/alt-country band from Hawesville, Kentucky, formed in 2023, known for blending Appalachian storytelling with elements of grunge, southern rock, folk music, and traditional country. The band consists of Jacob Ty Young, Tristan Roby, Ryan Laslie, Colby Clark, Aden Wood (drums), Dwight McGlynn, and Dustin \"Catfish\" Fuqua. The band gained widespread attention in 2024 through breakout singles like \"smoke & a light\" and \"Thoughts of You\", and acclaimed debut album Smokestack Town in 2025."
+  },
+  {
+   "id": "86f96fa8-51bd-4876-8afe-baf3e4c93279",
+   "slug": "jerub-955a5329",
+   "title": "JERUB",
+   "act": "JERUB",
+   "name": "Jerub",
+   "description": "English singer-songwriter (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Jerub",
+   "extract": "Gideon Ogheneochuko Akpovi, known professionally as Jerub, is an English pop and soul singer and songwriter from Nottingham, signed to Elevate Music Ltd. and Absolute Label Services. He garnered a following from local audiences from live performances early on in his career, and in 2023 experienced breakout success as a performer at several major music festivals. As a solo musician, he has released three extended plays, Feel It (2021), Finding My Feet (2023), and Carry the Load (2024), and one mixtape, The Wonder Years (2025)."
+  }
+ ]
+}

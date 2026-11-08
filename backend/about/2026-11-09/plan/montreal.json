@@ -1,0 +1,56 @@
+{
+ "city": "montreal",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "d8832e06-86b2-4769-a52c-b1a7062a2a21",
+   "slug": "michael-jackson-legacy-ced48d99",
+   "title": "Michael Jackson  - Legacy",
+   "act": "Michael Jackson",
+   "name": "Michael Jackson",
+   "description": "American singer and songwriter (1958–2009)",
+   "source_url": "https://en.wikipedia.org/wiki/Michael_Jackson",
+   "extract": "Michael Joseph Jackson was an American singer, songwriter, dancer, and philanthropist. Dubbed the \"King of Pop\", he is widely regarded as one of the most culturally significant figures of the 20th century. His musical achievements broke American racial barriers and made him a dominant figure worldwide. Through his songs, music videos, concerts, and fashion, he transformed visual performance in popular music, popularizing street dance moves such as the moonwalk, the robot, and the anti-gravity lean. Jackson is often deemed the greatest entertainer of all time."
+  },
+  {
+   "id": "96921c6d-3665-40c3-88ac-c33479e52710",
+   "slug": "boy-golden-1526c982",
+   "title": "Boy Golden",
+   "act": "Boy Golden",
+   "name": "Boy Golden",
+   "description": "Canadian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Boy_Golden_(musician)",
+   "extract": "Boy Golden is the stage name of Liam Duncan, a Canadian alternative country singer-songwriter based in Winnipeg, Manitoba."
+  },
+  {
+   "id": "50eb7554-833c-4641-a032-547035b261a4",
+   "slug": "orville-peck-man-turned-mule-tour-bfe5877f",
+   "title": "Orville Peck - Man Turned Mule Tour",
+   "act": "Orville Peck",
+   "name": "Orville Peck",
+   "description": "South African country musician (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Orville_Peck",
+   "extract": "Daniel Pitout, known professionally as Orville Peck, is a South African country musician and actor based in the United States and Canada, widely known for often wearing a mask and not showing his face publicly."
+  },
+  {
+   "id": "4253ef76-8ac9-4609-b428-62788edea23d",
+   "slug": "too-many-zooz-97ec8750",
+   "title": "Too Many Zooz",
+   "act": "Too Many Zooz",
+   "name": "Too Many Zooz",
+   "description": "American music group",
+   "source_url": "https://en.wikipedia.org/wiki/Too_Many_Zooz",
+   "extract": "Too Many Zooz is an American music group based in New York City, consisting of Leo Pellegrino, Matt \"Doe\" Muirhead (trumpet), and David \"King of Sludge\" Parks (drums)."
+  },
+  {
+   "id": "5737cbfa-17be-4de5-a518-40ae62c95f90",
+   "slug": "la-fouine-2da9b4ad",
+   "title": "La Fouine",
+   "act": "La Fouine",
+   "name": "La Fouine",
+   "description": "French rapper (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/La_Fouine",
+   "extract": "Laouni Mouhid, commonly known by his stage name La Fouine, as well as Fouiny, is a French rapper and singer. He is the founder of record label Banlieue Sale and the clothing line Street Swagg. La Fouine was voted Best French Artist at the MTV Europe Music Awards in 2011 and Best Male Artist at the Trace Urban Music Awards in 2013. With two million subscribers on YouTube, seven million on Facebook, and four million on Twitter, he was the most-followed French rapper on social media in 2015. Known as \"the rapper with the goatee,\" he eventually shaved it off in June 2016."
+  }
+ ]
+}

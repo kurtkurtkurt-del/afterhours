@@ -1,0 +1,76 @@
+{
+ "city": "washington",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "2cfdd5e3-ffe0-440a-acb7-2e21402caa80",
+   "slug": "geese-getting-killed-again-tour-0b8e7db3",
+   "title": "Geese - Getting Killed Again Tour",
+   "act": "Geese",
+   "name": "Geese",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Geese_(band)",
+   "extract": "Geese is an American rock band from New York City that formed in 2016. It comprises lead vocalist and guitarist-keyboardist Cameron Winter, guitarist Emily Green, bassist Dominic DiGesu and drummer Max Bassin as of 2024. Guitarist Foster Hudson was a member of the group from 2019 until 2023. During live performances, the band is joined by keyboardist Sam Revaz."
+  },
+  {
+   "id": "0ad33d11-0295-4dbc-82f4-f40cd977cbad",
+   "slug": "giant-rooks-a375a8cc",
+   "title": "Giant Rooks",
+   "act": "Giant Rooks",
+   "name": "Giant Rooks",
+   "description": "German indie band",
+   "source_url": "https://en.wikipedia.org/wiki/Giant_Rooks",
+   "extract": "Giant Rooks are a German indie rock band from Hamm, Germany founded in 2014. They are best known for their EP Wild Stare, their album How Have You Been? and their top-100 charting cover of \"Tom's Diner\" by Suzanne Vega."
+  },
+  {
+   "id": "4b4015ec-885d-488a-be11-48d0ddd48fd0",
+   "slug": "pi-erre-bourne-made-in-paris-f4803275",
+   "title": "PI'ERRE BOURNE - MADE IN PARIS",
+   "act": "PI'ERRE BOURNE",
+   "name": "Pi'erre Bourne",
+   "description": "American record producer and rapper (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Pi'erre_Bourne",
+   "extract": "Jordan Timothy Jenks, known professionally as Pi'erre Bourne, is an American record producer, rapper, singer, songwriter, and audio engineer. He is known for producing the 2017 singles \"Magnolia\" for Playboi Carti and \"Gummo\" for 6ix9ine, both of which entered the top 30 of the U.S. Billboard Hot 100. He has worked extensively with artists including Playboi Carti, Lil Uzi Vert, Lil Yachty, Young Thug, Juice Wrld, Young Nudy, Trippie Redd, Kanye West, Drake, Nav, 6ix9ine, Duwap Kaine, and 21 Savage."
+  },
+  {
+   "id": "4664df2a-70c0-4331-9471-8de89be51a7b",
+   "slug": "greg-freeman-65a13834",
+   "title": "Greg Freeman",
+   "act": "Greg Freeman",
+   "name": "Greg Freeman",
+   "description": "American country musician",
+   "source_url": "https://en.wikipedia.org/wiki/Greg_Freeman_(musician)",
+   "extract": "Greg Freeman is an American alternative country musician based in Burlington, Vermont. Freeman was raised in Bethesda, Maryland. Freeman released his debut studio album in 2022 titled I Looked Out, through the record label Bud Tapes. After the album slowly gained attention, it was reissued in 2024 through Transgressive Records imprint Canvasback Music. Freeman announced his second full-length album in April 2025 titled Burnover. The album was released on August 22, 2025. Freeman's third full length album, All Set The Bone, was released on October 2, 2026"
+  },
+  {
+   "id": "8477e0d8-3ab6-4666-b26d-f8a3eaded7ff",
+   "slug": "gregory-porter-dc-jazz-festival-benefit-concert-db001fed",
+   "title": "Gregory Porter - DC Jazz Festival Benefit Concert, A Night of Stars",
+   "act": "Gregory Porter",
+   "name": "Gregory Porter",
+   "description": "American singer and songwriter (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Gregory_Porter",
+   "extract": "Gregory Porter is an American singer, songwriter, and musician. He has twice won the Grammy Award for Best Jazz Vocal Album: first in 2014 for Liquid Spirit and then again in 2017 for Take Me to the Alley."
+  },
+  {
+   "id": "2e797ff8-feb9-4dc9-ae4c-8067808369db",
+   "slug": "donny-benet-051e2c0e",
+   "title": "Donny Benét",
+   "act": "Donny Benét",
+   "name": "Donny Benét",
+   "description": "Australian musician",
+   "source_url": "https://en.wikipedia.org/wiki/Donny_Ben%C3%A9t",
+   "extract": "Donny Benét is an Australian recording artist, based in Sydney. In 2011, he released his debut studio album Don't Hold Back through indie label Rice is Nice. His fifth studio album, Mr Experience, reached #26 on the ARIA Charts in May 2020."
+  },
+  {
+   "id": "fcab9fd9-b5a4-44c6-859e-60cd1f1da240",
+   "slug": "die-spitz-3de80cac",
+   "title": "Die Spitz",
+   "act": "Die Spitz",
+   "name": "Die Spitz",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Die_Spitz",
+   "extract": "Die Spitz is an American rock band from Austin, Texas, consisting of guitarist/singer/drummer Ava Schrobilgen, guitarist/singer Eleanor Livingston, bassist Kate Halter, and drummer/singer/guitarist Chloe de St. Aubin. Their debut album Something to Consume was released in September 2025."
+  }
+ ]
+}

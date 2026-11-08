@@ -1,0 +1,56 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "44ba01e7-83a6-4370-9dcf-9944c8ab67d6",
+   "slug": "orville-peck-man-turned-mule-tour-882f94f8",
+   "title": "Orville Peck - Man Turned Mule Tour",
+   "act": "Orville Peck",
+   "name": "Orville Peck",
+   "description": "South African country musician (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Orville_Peck",
+   "extract": "Daniel Pitout, known professionally as Orville Peck, is a South African country musician and actor based in the United States and Canada, widely known for often wearing a mask and not showing his face publicly."
+  },
+  {
+   "id": "1045c1b6-b741-4dbf-9510-3b3da3cf2af0",
+   "slug": "little-image-5a4147b2",
+   "title": "Little Image",
+   "act": "Little Image",
+   "name": "Little Image",
+   "description": "American alt-pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Little_Image",
+   "extract": "Little Image are an American alternative pop band from Dallas, Texas. They released their major label debut, Self Titled, on Hollywood Records on May 12, 2023, after the independent release of Musings in 2017."
+  },
+  {
+   "id": "a6141799-92a7-493c-9d25-c2cec9112ef5",
+   "slug": "carl-cox-d99af546",
+   "title": "Carl Cox",
+   "act": "Carl Cox",
+   "name": "Carl Cox",
+   "description": "British DJ (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Carl_Cox",
+   "extract": "\nCarl Andrew Cox is a British house and techno club DJ, radio DJ, motorsport team owner and record producer. He lives in Frankston, Victoria, Australia."
+  },
+  {
+   "id": "7e4dd74a-20e0-4f2e-bc36-2a8e1a2cdbf7",
+   "slug": "paula-cole-80d00bec",
+   "title": "Paula Cole",
+   "act": "Paula Cole",
+   "name": "Paula Cole",
+   "description": "American singer (born 1968)",
+   "source_url": "https://en.wikipedia.org/wiki/Paula_Cole",
+   "extract": "Paula Dorothy Cole is an American singer and songwriter. After gaining attention for her performances as a vocalist on Peter Gabriel's 1993–1994 Secret World Tour, she released her first album, Harbinger, which suffered from a lack of promotion when the label, Imago Records, folded shortly after its release. Her second album, This Fire (1996), brought her worldwide acclaim, peaking at number 20 on the Billboard 200 album chart and producing two hit singles, the triple-Grammy nominated \"Where Have All the Cowboys Gone?\", which reached the top ten of the Billboard Hot 100 in 1997, and \"I Don't Want to Wait\", which was used as the theme song of the television show Dawson's Creek. Cole was a featured performer in the 1996 prototype mini-tour for Lilith Fair, and also was a headliner for Lilith Fair in 1997 and 1998. She won the Grammy Award for Best New Artist in 1998, and that same year became the first woman to be nominated for \"Producer of the Year\" without a male collaborator."
+  },
+  {
+   "id": "cf41cd9a-331a-485a-ab9a-8d84c1abb7c5",
+   "slug": "george-clanton-4b8975a8",
+   "title": "George Clanton",
+   "act": "George Clanton",
+   "name": "George Clanton",
+   "description": "American musician (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/George_Clanton",
+   "extract": "George Wayland Clanton Jr., also known by the monikers Mirror Kisses, ESPRIT 空想, CHINA, and Kid's Garden, is an American electronic musician and singer-songwriter that emerged from the vaporwave music scene in the early 2010s. He established his independent record label 100% Electronica in 2015, and in 2019 launched the first vaporwave music festival, 100% ElectroniCON."
+  }
+ ]
+}

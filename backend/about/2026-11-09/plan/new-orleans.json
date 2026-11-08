@@ -1,0 +1,16 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "e9ce4df6-6c73-4f7e-a232-2a72bb1f11c4",
+   "slug": "pretty-lights-soundship-space-bus-tour-12908e75",
+   "title": "Pretty Lights - Soundship Space Bus Tour",
+   "act": "Pretty Lights",
+   "name": "Pretty Lights",
+   "description": "American electronic music producer (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/Pretty_Lights",
+   "extract": "Derek Vincent Smith, known by his stage name Pretty Lights, is an American electronic music producer. Pretty Lights was originally a music project consisting of Smith and Michal Menert, who left after the release of their first album and returned in 2023. Rick Rubin once described Pretty Lights as \"the face and voice of the new American electronic music scene\"."
+  }
+ ]
+}

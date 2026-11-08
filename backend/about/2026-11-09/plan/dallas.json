@@ -1,0 +1,26 @@
+{
+ "city": "dallas",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "4540abfb-0d5e-4154-bed5-e1dfef25f60c",
+   "slug": "new-constellations-4375dc2c",
+   "title": "New Constellations",
+   "act": "New Constellations",
+   "name": "New Constellations",
+   "description": "American dream pop band",
+   "source_url": "https://en.wikipedia.org/wiki/New_Constellations",
+   "extract": "New Constellations is an American dream pop and synthwave duo based out of Portland, Oregon."
+  },
+  {
+   "id": "46697bc4-47f1-470b-8686-54652c779890",
+   "slug": "dragonforce-inhuman-rampage-20th-anniversary-d6154fea",
+   "title": "DragonForce: Inhuman Rampage 20th Anniversary",
+   "act": "DragonForce",
+   "name": "DragonForce",
+   "description": "British power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/DragonForce",
+   "extract": "DragonForce are a British power metal band from London, formed in 1999. They are known for their long and fast guitar solos, fantasy-themed lyrics and retro video game-influenced sound. The band themselves refer to their music as \"extreme power metal\"."
+  }
+ ]
+}

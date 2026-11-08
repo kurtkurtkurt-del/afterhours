@@ -1,0 +1,46 @@
+{
+ "city": "ankara",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "c29b248d-6944-4252-8b38-d77569028628",
+   "slug": "oi-va-voi-e95b3d80",
+   "title": "Oi Va Voi",
+   "act": "Oi Va Voi",
+   "name": "Oi Va Voi",
+   "description": "British band",
+   "source_url": "https://en.wikipedia.org/wiki/Oi_Va_Voi",
+   "extract": "Oi Va Voi are a British band formed in London, England in the year 2000. The band emerged from the UK world music crossover scene, enabling Jewish musicians to bring cultural styles into contemporary songwriting. The band blended their heritage with an emphasis on modern pop sensibilities reflecting their own individual interests in indie rock and alt-folk and the urban dance music of the clubs of London. The band takes its name from a Yiddish-derived exclamation popular in modern Hebrew meaning, approximately, \"Oh, my gosh!\"."
+  },
+  {
+   "id": "51242d6c-6d52-4ffd-8680-c5936cc8338e",
+   "slug": "karsu-4dec0804",
+   "title": "Karsu",
+   "act": "Karsu",
+   "name": "Karsu",
+   "description": "Dutch singer (born 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Karsu",
+   "extract": "Karsu Dönmez, known mononymously as Karsu, is a Turkish-Dutch singer, pianist and composer. While her music style is a blend of various genres, jazz pop is probably the best description for it. She has songs in Dutch, English, and Turkish."
+  },
+  {
+   "id": "2627b668-c0c3-4b34-a54a-07767c8a625b",
+   "slug": "ogun-sanl-soy-f6e4c780",
+   "title": "Ogün Sanlısoy",
+   "act": "Ogün Sanlısoy",
+   "name": "Ogün Sanlısoy",
+   "description": "Turkish musician (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Og%C3%BCn_Sanl%C4%B1soy",
+   "extract": "Ogün Sanlısoy is a Turkish musician, vocalist and guitarist for thrash metal band Mezarkabul."
+  },
+  {
+   "id": "22d79cd0-a9b0-490e-8c15-6a038f2e00ec",
+   "slug": "demet-akal-n-2a3615c8",
+   "title": "Demet Akalın",
+   "act": "Demet Akalın",
+   "name": "Demet Akalın",
+   "description": "Turkish singer",
+   "source_url": "https://en.wikipedia.org/wiki/Demet_Akal%C4%B1n",
+   "extract": "Demet Akalın is a Turkish singer and former model. Due to the popular songs she has released since the middle of the 2000s, she has become a prominent figure in Turkish pop music."
+  }
+ ]
+}
