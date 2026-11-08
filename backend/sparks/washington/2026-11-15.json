@@ -1,0 +1,14 @@
+{
+  "city": "washington",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "flea at eastern market, nine to four.", "de": "flohmarkt am eastern market, neun bis vier.", "tr": "eastern market'te bit pazarı, dokuzdan dörde." },
+      "line":  { "en": "the sunday flea at eastern market, seventh and c street se, 9 to 4. free to walk in. sunset is 16:54, so go in the morning.", "de": "der sonntags-flohmarkt am eastern market, 7th und c street se, 9 bis 16 uhr. der eintritt ist frei. sonnenuntergang ist um 16:54, also am vormittag hingehen.", "tr": "eastern market'in pazar günü bit pazarı, 7th ve c street se, 09:00–16:00. giriş ücretsiz. gün batımı 16:54'te, o yüzden sabah gidin." },
+      "place": { "en": "eastern market", "de": "eastern market", "tr": "eastern market" },
+      "hour": 9, "minute": 0,
+      "why": "Flea Market at Eastern Market, 7th & C St SE, open Sundays 9am-4pm, free (washington.org); sunset 16:54 on 15 Nov (weather2travel)."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "city": "washington",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "breakfast",
+      "title": { "en": "farm market on half street, till one.", "de": "bauernmarkt in der half street, bis eins.", "tr": "half street'te çiftlik pazarı, bire kadar." },
+      "line":  { "en": "the farm market on half street runs 9 to 1 until the 21st. eat something from a stall, then walk the row.", "de": "der bauernmarkt in der half street läuft von 9 bis 13 uhr bis zum 21. essen Sie etwas am stand, dann einmal die reihe ab.", "tr": "half street çiftlik pazarı 21'ine kadar 9'dan 13'e açık. bir tezgâhtan bir şeyler yiyin, sonra sırayı dolaşın." },
+      "place": { "en": "half street central farm market", "de": "half street central farm market", "tr": "half street central farm market" },
+      "hour": 9, "minute": 30,
+      "why": "Half Street Central Farm Market, 1250 Half St SE, 9am-1pm, season through Nov 21 (marketspread listing); the Saturday 14th comes from the search summary, not the listing itself."
+    }
+  ]
+}

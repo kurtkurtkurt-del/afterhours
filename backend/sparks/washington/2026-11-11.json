@@ -1,0 +1,14 @@
+{
+  "city": "washington",
+  "day": "2026-11-11",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "jazz wednesday at esl.", "de": "jazz am mittwoch im esl.", "tr": "esl'de çarşamba cazı." },
+      "line":  { "en": "the weekly jazz night at esl on 9th street. doors at nine, the band from about half past ten. free entry, 21 and over.", "de": "der wöchentliche jazzabend im esl an der 9th street. einlass um neun, die band ab etwa halb elf. eintritt frei, ab 21.", "tr": "esl'de haftalık caz gecesi, 9th street'te. kapılar dokuzda, grup yaklaşık 22:30'da. giriş ücretsiz, 21 yaş ve üzeri." },
+      "place": { "en": "esl", "de": "esl", "tr": "esl" },
+      "hour": 21, "minute": 0,
+      "why": "Jazz Wednesday at ESL, 1230 9th St NW, weekly through late November 2026, doors 9pm, free, 21+ (washington.org listing)."
+    }
+  ]
+}
