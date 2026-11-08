@@ -1,0 +1,27 @@
+{
+  "city": "new-orleans",
+  "day": "2026-11-13",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "we belong here: odesza on the riverfront.",
+        "de": "we belong here: odesza am riverfront.",
+        "tr": "we belong here: riverfront'ta odesza."
+      },
+      "line": {
+        "en": "the debut of we belong here, a dance festival on the riverfront next to the french quarter. odesza opens friday with a dj set; the day runs from 2pm to 10pm.",
+        "de": "das debüt von we belong here, einem tanzfestival am riverfront direkt neben dem french quarter. odesza eröffnet den freitag mit einem dj-set; der tag läuft von 14 bis 22 uhr.",
+        "tr": "we belong here'ın ilk yılı, french quarter'ın yanında riverfront'ta bir dans festivali. odesza cuma günü dj seti ile açıyor; gün 14:00'den 22:00'ye sürüyor."
+      },
+      "place": {
+        "en": "goldring woldenberg riverfront park",
+        "de": "goldring woldenberg riverfront park",
+        "tr": "goldring woldenberg riverfront park"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "We Belong Here New Orleans, 13-15 nov 2026, Goldring Woldenberg Riverfront Park; ODESZA Dj set on friday (festival listings at technoairlines.com and thatfestivalsite.com); daily 2pm-10pm from discotech.me. Age policy conflicts between listings (18+ vs 21+), so check webelonghere.world/neworleans."
+    }
+  ]
+}
