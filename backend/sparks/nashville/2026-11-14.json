@@ -1,0 +1,14 @@
+{
+  "city": "nashville",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "saturday flea at plaza mariachi.", "de": "samstags-flohmarkt im plaza mariachi.", "tr": "plaza mariachi'de cumartesi pazarı." },
+      "line": { "en": "outdoor flea market, open 08:00 to 16:00 on saturdays and sundays, free to walk in. fruit and vegetables, new and used clothes, furniture, tools and home goods; vendors come and go.", "de": "freiluft-flohmarkt, samstags und sonntags von 08:00 bis 16:00, der eintritt ist frei. obst und gemüse, neue und gebrauchte kleidung, möbel, werkzeug und haushaltswaren; die stände wechseln.", "tr": "açık hava pazarı, cumartesi ve pazar 08:00 - 16:00 arası, girişi ücretsiz. meyve sebze, yeni ve kullanılmış giysi, mobilya, alet ve ev eşyası; tezgâhlar değişebilir." },
+      "place": { "en": "plaza mariachi", "de": "plaza mariachi", "tr": "plaza mariachi" },
+      "hour": 10, "minute": 0,
+      "why": "Plaza Mariachi flea, recurring every Saturday and Sunday 8 AM to 4 PM at 3955 Nolensville Pike, per the plazamariachi.com November 2026 calendar and its weekend description; no individual 2026 dates were listed, so the weekend pattern is the source."
+    }
+  ]
+}

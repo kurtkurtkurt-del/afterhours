@@ -1,0 +1,27 @@
+{
+  "city": "nashville",
+  "day": "2026-11-10",
+  "sparks": [
+    {
+      "kind": "quiz",
+      "title": {
+        "en": "team trivia at chapstick.",
+        "de": "team-trivia im chapstick.",
+        "tr": "chapstick'te takım bilgi yarışması."
+      },
+      "line": {
+        "en": "weekly tuesday team trivia, 19:00 to 21:00, in east nashville. bring a team of friends or join one at the bar; check the venue's socials for the week before you go.",
+        "de": "wöchentliche dienstags-teamtrivia, 19:00 bis 21:00, in east nashville. mit freunden im team kommen oder dort einem team beitreten; vorher die social-kanäle des lokals prüfen.",
+        "tr": "her salı takım bilgi yarışması, 19:00 - 21:00, east nashville'de. arkadaşlarınla bir takım olarak gel ya da barda bir takıma katıl; gitmeden mekânın sosyal medyasından haftayı kontrol et."
+      },
+      "place": {
+        "en": "chapstick",
+        "de": "chapstick",
+        "tr": "chapstick"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Chapstick team trivia listed for Tue 10 Nov 2026, 7 to 9 PM, East Nashville, on outxout.com, which also lists the 3rd, 17th and 24th of November."
+    }
+  ]
+}
