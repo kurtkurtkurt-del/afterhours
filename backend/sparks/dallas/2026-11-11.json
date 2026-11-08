@@ -1,0 +1,14 @@
+{
+  "city": "dallas",
+  "day": "2026-11-11",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "the arboretum lights go on for the season.", "de": "die lichter im arboretum gehen an.", "tr": "arboretum'un ışıkları bu sezon yanıyor." },
+      "line": { "en": "holiday at the arboretum opens wednesday 11 nov and runs to 3 jan; the evening lights are on from 17:00. the 12 days of christmas gazebos are in their last year.", "de": "holiday at the arboretum beginnt mittwoch 11.11. und läuft bis 3.1.; die abendlichter sind ab 17 uhr an. die 12-days-of-christmas-pavillons stehen dieses jahr zum letzten mal.", "tr": "holiday at the arboretum çarşamba 11 kasım'da açılıyor, 3 ocak'a kadar sürüyor; akşam ışıkları 17:00'den itibaren yanıyor. 12 days of christmas kameriyeleri bu yıl son kez." },
+      "place": { "en": "dallas arboretum", "de": "dallas arboretum", "tr": "dallas arboretum" },
+      "hour": 17, "minute": 30,
+      "why": "Holiday at the Arboretum 2026 opens wed 11 nov through 3 jan 2027 per the Dallas Arboretum holiday page (dallasarboretum.org/holiday); 17:00 evening start from a 2026 ticketing guide (thrillzing.com). Some older pages still show 2025 dates and were not used."
+    }
+  ]
+}

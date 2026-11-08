@@ -1,0 +1,14 @@
+{
+  "city": "dallas",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "cowboys host the 49ers on sunday afternoon.", "de": "cowboys gegen die 49ers am sonntagnachmittag.", "tr": "cowboys, pazar öğleden sonra 49ers'ı ağırlıyor." },
+      "line": { "en": "cowboys vs san francisco 49ers, sunday 15 nov at 15:25 on fox, the week 10 home game. the stadium is in arlington, so allow time for the drive from downtown.", "de": "cowboys gegen san francisco 49ers, sonntag 15.11. um 15:25 uhr auf fox, das heimspiel in woche 10. das stadion liegt in arlington, also zeit für die fahrt aus der innenstadt einplanen.", "tr": "cowboys – san francisco 49ers, pazar 15 kasım 15:25'te fox'ta, 10. hafta ev sahibi maçı. stadyum arlington'da; şehir merkezinden yola erken çık." },
+      "place": { "en": "at&t stadium, arlington", "de": "at&t stadium, arlington", "tr": "at&t stadium, arlington" },
+      "hour": 15, "minute": 25,
+      "why": "Cowboys vs 49ers, week 10 home game, sun 15 nov 3:25 pm on FOX per the official Cowboys schedule as reported by fox4news (fox4news.com/sports/dallas-cowboys-2026-schedule-dates-primetime-games-opponents-more); the time zone is assumed to be central."
+    }
+  ]
+}
