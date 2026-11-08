@@ -1,0 +1,14 @@
+{
+  "city": "toronto",
+  "day": "2026-11-12",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "the distillery winter village opens.", "de": "das distillery winter village öffnet.", "tr": "distillery winter village açılıyor." },
+      "line": { "en": "the christmas market in the distillery district opens with the tree lighting at 18:00. free before 16:00; paid tickets apply at peak hours, including opening night.", "de": "der weihnachtsmarkt im distillery district öffnet mit der baumbeleuchtung um 18:00. vor 16:00 ist der eintritt frei; zu den stoßzeiten, auch am eröffnungsabend, gibt es bezahlte tickets.", "tr": "distillery bölgesindeki noel pazarı, saat 18:00'deki ağaç ışıklandırmasıyla açılıyor. 16:00'dan önce giriş ücretsiz; açılış gecesi dahil yoğun saatlerde ücretli bilet gerekiyor." },
+      "place": { "en": "distillery district", "de": "distillery district", "tr": "distillery district" },
+      "hour": 18, "minute": 0,
+      "why": "Distillery Winter Village 2026 opening and tree lighting, Thu 12 Nov 18:00, running to 3 Jan 2027 (newswire.ca release; todocanada listing)."
+    }
+  ]
+}
