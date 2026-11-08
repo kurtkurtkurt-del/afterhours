@@ -1,0 +1,27 @@
+{
+  "city": "denver",
+  "day": "2026-11-08",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "the denver bloody mary festival at reelworks.",
+        "de": "das denver bloody mary festival im reelworks.",
+        "tr": "reelworks'te denver bloody mary festivali."
+      },
+      "line": {
+        "en": "unlimited bloody marys from local bars and one people's choice vote. general entry from 12:15, vip from 11:30. 21+ only.",
+        "de": "unbegrenzt bloody marys von lokalen bars und eine stimme für den people's choice. einlass ab 12:15, vip ab 11:30. nur ab 21.",
+        "tr": "yerel barlardan sınırsız bloody mary ve people's choice için bir oy. genel giriş 12:15, vip 11:30'dan. yalnızca 21 yaş ve üstü."
+      },
+      "place": {
+        "en": "reelworks",
+        "de": "reelworks",
+        "tr": "reelworks"
+      },
+      "hour": 12,
+      "minute": 15,
+      "why": "The tenth annual Denver Bloody Mary Festival, Sun 8 Nov 11:30-14:30 at Reelworks Denver, 1399 35th St (thebloodymaryfest.com and Eventbrite; Denver Gazette)."
+    }
+  ]
+}
