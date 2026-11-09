@@ -1,0 +1,27 @@
+{
+  "city": "munchen",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "derby",
+      "title": {
+        "en": "red bull münchen – krefeld, on sunday.",
+        "de": "red bull münchen – krefeld, am sonntag.",
+        "tr": "red bull münchen – krefeld, pazar günü."
+      },
+      "line": {
+        "en": "ice hockey against krefeld at the sap garden at 14:00. get there before the puck drops and have a beer in the hall first.",
+        "de": "eishockey gegen krefeld im sap garden um 14:00. vor dem bully da sein und vorher ein bier in der halle.",
+        "tr": "krefeld'e karşı sap garden'da 14:00'te buz hokeyi. puck düşmeden gel, önce salonda bir bira iç."
+      },
+      "place": {
+        "en": "sap garden",
+        "de": "sap garden",
+        "tr": "sap garden"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "EHC Red Bull München vs Krefeld Pinguine, Sun 15.11 at 14:00, SAP Garden (in-muenchen.de listing; club schedule not checked)."
+    }
+  ]
+}

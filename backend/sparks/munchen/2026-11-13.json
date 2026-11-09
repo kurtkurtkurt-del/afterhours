@@ -1,0 +1,27 @@
+{
+  "city": "munchen",
+  "day": "2026-11-13",
+  "sparks": [
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "comedy open mic on a friday.",
+        "de": "comedy open mic an einem freitag.",
+        "tr": "cuma günü comedy open mic."
+      },
+      "line": {
+        "en": "the lucky punch open mic at the hoftheater in sendling starts at six. tickets are online only, so book before you go.",
+        "de": "das lucky punch open mic im hoftheater in sendling beginnt um sechs. tickets nur online, also vorher buchen.",
+        "tr": "sendling'deki hoftheater'da lucky punch open mic altıda başlıyor. biletler yalnız çevrimiçi, gitmeden önce al."
+      },
+      "place": {
+        "en": "hoftheater",
+        "de": "hoftheater",
+        "tr": "hoftheater"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "LUCKY PUNCH Comedy Open Mic at the Hoftheater, Fri 13.11 at 18:00, online tickets only (mvp.de listing). Comedy Kills and Urban Comedy also list 13.11; not used."
+    }
+  ]
+}

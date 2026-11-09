@@ -1,0 +1,27 @@
+{
+  "city": "munchen",
+  "day": "2026-11-11",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "st martin's lanterns in the old town.",
+        "de": "sankt martin mit laternen in der altstadt.",
+        "tr": "eski şehirde st. martin fenerleri."
+      },
+      "line": {
+        "en": "martinstag, a wednesday. the inner-city parishes meet at 16:30 on the frauenplatz for a short play, then the lantern walk. bring a lamp, an led one is fine; dress warm.",
+        "de": "martinstag, ein mittwoch. die innenstadtpfarreien treffen sich um 16:30 am frauenplatz zu einem kurzen spiel, dann der laternenumzug. laterne mitbringen, eine led-laterne reicht; warm anziehen.",
+        "tr": "martinstag, çarşamba. şehir merkezi cemaatleri 16:30'da frauenplatz'ta kısa bir oyun ve ardından fener yürüyüşü için toplanıyor. fener getir, ledli de olur; sıcak giyin."
+      },
+      "place": {
+        "en": "frauenplatz",
+        "de": "frauenplatz",
+        "tr": "frauenplatz"
+      },
+      "hour": 16,
+      "minute": 30,
+      "why": "Joint St. Martin celebration of the inner-city parishes, Wed 11.11 from 16:30 with a Martinsspiel on the Frauenplatz, then the lantern walk (muenchen.de)."
+    }
+  ]
+}
