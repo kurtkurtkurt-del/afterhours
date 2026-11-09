@@ -1,0 +1,14 @@
+{
+  "city": "vancouver",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "the vancouver flea market on terminal ave.", "de": "der vancouver flea market an der terminal avenue.", "tr": "terminal ave'de vancouver flea market." },
+      "line": { "en": "the weekend flea at 703 terminal ave, open saturday and sunday. sunday mornings are the calm hours; go early.", "de": "der wochenend-flohmarkt in der terminal avenue 703, samstag und sonntag offen. sonntagvormittags ist es am ruhigsten, also früh hin.", "tr": "terminal ave 703'te hafta sonu flea market, cumartesi ve pazar açık. pazar sabahları en sakin saatler, erken gidin." },
+      "place": { "en": "vancouver flea market", "de": "vancouver flea market", "tr": "vancouver flea market" },
+      "hour": 10, "minute": 0,
+      "why": "Vancouver Flea Market, 703 Terminal Ave, weekend hours listed as Sat and Sun 9:00 to 16:30 (Hotels.com guide) or 9:00 to 17:00 (another guide, undated). Hours may be out of date; check before going."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "city": "vancouver",
+  "day": "2026-11-19",
+  "sparks": [
+    {
+      "kind": "crawl",
+      "title": { "en": "eastside culture crawl, the first night.", "de": "eastside culture crawl, der erste abend.", "tr": "eastside culture crawl, ilk gece." },
+      "line": { "en": "the 30th eastside culture crawl: over 500 artist studios across east vancouver, four days. thursday evenings run 17:00 to 22:00.", "de": "der 30. eastside culture crawl: über 500 künstleratelier im osten von vancouver, vier tage. donnerstagabends von 17 bis 22 uhr.", "tr": "30. eastside culture crawl: doğu vancouver'da 500'ü aşkın sanatçı atölyesi, dört gün. perşembe akşamları 17 ile 22 arası." },
+      "place": { "en": "eastside arts district", "de": "eastside arts district", "tr": "eastside arts district" },
+      "hour": 17, "minute": 0,
+      "why": "Eastside Culture Crawl, 19 to 22 Nov 2026 in Vancouver's Eastside Arts District; Thu and Fri 17:00 to 22:00 per a Curiocity and BroadwayWorld listing. One source gives 18 to 21 Nov, which I did not use. Falls in days eight to fourteen."
+    }
+  ]
+}
