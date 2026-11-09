@@ -1,0 +1,14 @@
+{
+  "city": "ottawa",
+  "day": "2026-11-18",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "peter hum trio jam at night oat.", "de": "jam mit dem peter hum trio im night oat.", "tr": "night oat'ta peter hum trio jam'i." },
+      "line": { "en": "the monthly jazz jam session, 19:30 to 22:30, $12 cover. the gladstone room also has comedy and open-stage nights.", "de": "die monatliche jazz-jamsession, 19:30 bis 22:30 uhr, 12 $ eintritt. das lokal in gladstone hat auch comedy- und open-stage-abende.", "tr": "aylık caz jam oturumu, 19:30–22:30, giriş 12 $. gladstone'daki mekânda komedi ve açık sahne geceleri de var." },
+      "place": { "en": "night oat", "de": "night oat", "tr": "night oat" },
+      "hour": 19, "minute": 30,
+      "why": "Night Oat jazz jam with the Peter Hum Trio, third Wednesday of the month, 7:30 to 10:30pm, $12 cover (613today venue listing); 18 Nov is that third Wednesday, not checked against a dated 2026 post."
+    }
+  ]
+}
