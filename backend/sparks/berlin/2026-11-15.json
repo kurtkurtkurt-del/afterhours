@@ -1,0 +1,14 @@
+{
+  "city": "berlin",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "sunday flea market at the mauerpark.", "de": "sonntagsflohmarkt im mauerpark.", "tr": "mauerpark'ta pazar günü pire pazarı." },
+      "line": { "en": "the stalls run every sunday from 10:00 to 18:00. bring cash, and come early for the better boxes.", "de": "die stände sind jeden sonntag von 10 bis 18 uhr offen. bargeld mitnehmen und für die besseren kisten früh kommen.", "tr": "tezgahlar her pazar 10:00 ile 18:00 arası açık. nakit al, iyi kutular için erken gel." },
+      "place": { "en": "mauerpark", "de": "mauerpark", "tr": "mauerpark" },
+      "hour": 10, "minute": 0,
+      "why": "The Mauerpark flea market runs every Sunday 10:00 to 18:00 per Berlin flea-market listings (in-berlin-brandenburg.com); the November date was not checked one by one."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "city": "berlin",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "union – leipzig at the alte försterei.", "de": "union – leipzig an der alten försterei.", "tr": "union – leipzig, alte försterei'de." },
+      "line": { "en": "bundesliga matchday 10 at 15:30, union at home. the time comes from match listings and may still move, so check the bundesliga or club site before you go.", "de": "bundesliga-spieltag 10 um 15:30, union im heimspiel. die anstoßzeit stammt aus spielplänen und kann sich noch ändern, also vor dem besuch die bundesliga- oder vereinsseite prüfen.", "tr": "bundesliga 10. hafta, saat 15:30'da, union ev sahibi. saat maç listelerinden alındı ve değişebilir; gitmeden önce bundesliga veya kulüp sitesini kontrol et." },
+      "place": { "en": "stadion an der alten försterei", "de": "stadion an der alten försterei", "tr": "stadion an der alten försterei" },
+      "hour": 15, "minute": 30,
+      "why": "Union vs RB Leipzig, Bundesliga matchday 10, sat 21.11 at 15:30 per anstosszeiten.de and a t-online live-ticker listing; the DFL time may not yet be final."
+    }
+  ]
+}
