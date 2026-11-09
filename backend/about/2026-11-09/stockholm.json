@@ -1,0 +1,38 @@
+{
+  "city": "stockholm",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "640abe4b-7ce9-47d7-86e1-e6fbdcf70781",
+      "slug": "thundermother-mothers-of-thunder-tour-2027-450a81fd",
+      "title": "Thundermother - Mothers Of Thunder Tour 2027",
+      "name": "Thundermother",
+      "source_url": "https://en.wikipedia.org/wiki/Thundermother",
+      "extract": "Thundermother is an all-female Swedish hard rock band founded by Filippa Nässil and Moa Munoz in Växjö 2009. The band has toured with Scorpions across Europe and North America, played with Kiss, Danish rock band D-A-D and Swedish rock band Backyard Babies. Thundermother has produced seven albums, the first album Rock'N'Roll Disaster came out in 2014 and the latest album Dirty and Divine was released February 2025.",
+      "en": {
+        "kicker": "swedish hard rock band · växjö, 2009",
+        "who": "Thundermother is an all-female swedish hard rock band. it was founded by Filippa Nässil and Moa Munoz in Växjö in 2009. the band has played with Kiss, D-A-D and Backyard Babies.",
+        "facts": [
+          "the first album, Rock'N'Roll Disaster, came out in 2014.",
+          "the band has toured with Scorpions across Europe and North America."
+        ]
+      },
+      "de": {
+        "kicker": "schwedische hardrockband · växjö, 2009",
+        "who": "Thundermother ist eine rein weibliche schwedische hardrockband. sie wurde 2009 in Växjö von Filippa Nässil und Moa Munoz gegründet. die band hat bereits mit Kiss, D-A-D und Backyard Babies gespielt.",
+        "facts": [
+          "das erste album Rock'N'Roll Disaster erschien 2014.",
+          "die band ist mit den Scorpions durch Europa und Nordamerika getourt."
+        ]
+      },
+      "tr": {
+        "kicker": "isveçli hard rock grubu · växjö, 2009",
+        "who": "Thundermother, Filippa Nässil ve Moa Munoz tarafından 2009'da Växjö'de kurulmuş, tamamen kadınlardan oluşan isveçli bir hard rock grubudur. grup, Kiss, D-A-D ve Backyard Babies ile birlikte sahne almıştır.",
+        "facts": [
+          "ilk albüm Rock'N'Roll Disaster 2014'te çıktı.",
+          "grup, Scorpions ile Avrupa ve Kuzey Amerika boyunca turneye çıkmıştır."
+        ]
+      }
+    }
+  ]
+}

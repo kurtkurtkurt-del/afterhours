@@ -1,0 +1,38 @@
+{
+  "city": "vancouver",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "0c693166-d5df-4c26-9115-f46d8e5b66a7",
+      "slug": "rodrigo-y-gabriela-d60b66bc",
+      "title": "Rodrigo y Gabriela",
+      "name": "Rodrigo y Gabriela",
+      "source_url": "https://en.wikipedia.org/wiki/Rodrigo_y_Gabriela",
+      "extract": "Rodrigo y Gabriela are a Mexican acoustic guitar duo featuring musicians Rodrigo Sánchez and Gabriela Quintero. Residing in Mexico City, they began their career in Dublin, Ireland, where they played for the first eight years of their career as a duo. Their music consists largely of instrumental duets on the flamenco guitar, with a musical style influenced by a number of genres including nuevo flamenco, rock, and heavy metal.",
+      "en": {
+        "kicker": "mexican guitar duo · mexico city",
+        "who": "Rodrigo y Gabriela are a mexican acoustic guitar duo featuring musicians Rodrigo Sánchez and Gabriela Quintero. they reside in Mexico City, and began their career in Dublin, Ireland. their music consists largely of instrumental duets on the flamenco guitar, with a musical style influenced by nuevo flamenco, rock, and heavy metal.",
+        "facts": [
+          "they began their career in Dublin, Ireland, where they played for the first eight years of their career as a duo.",
+          "their music consists largely of instrumental duets on the flamenco guitar."
+        ]
+      },
+      "de": {
+        "kicker": "mexikanisches gitarrenduo · mexiko-stadt",
+        "who": "Rodrigo y Gabriela sind ein mexikanisches akustikgitarren-duo mit den musikern Rodrigo Sánchez und Gabriela Quintero. sie leben in Mexiko-Stadt und begannen ihre karriere in Dublin, Irland. ihre musik besteht größtenteils aus instrumentalen duetten auf der flamenco-gitarre, mit einem musikalischen stil, der von nuevo flamenco, rock und heavy metal beeinflusst ist.",
+        "facts": [
+          "sie begannen ihre karriere in Dublin, Irland, wo sie die ersten acht jahre ihrer karriere als duo spielten.",
+          "ihre musik besteht größtenteils aus instrumentalen duetten auf der flamenco-gitarre."
+        ]
+      },
+      "tr": {
+        "kicker": "meksikalı gitar ikilisi · mexico city",
+        "who": "Rodrigo y Gabriela, Rodrigo Sánchez ve Gabriela Quintero'dan oluşan bir meksikalı akustik gitar ikilisidir. Mexico City'de yaşıyorlar ve kariyerlerine Dublin, İrlanda'da başladılar. müzikleri büyük ölçüde flamenko gitarda enstrümantal düetlerden oluşuyor ve nuevo flamenko, rock ve heavy metal dahil birçok türden etkilenen bir müzikal tarza sahip.",
+        "facts": [
+          "kariyerlerine Dublin, İrlanda'da başladılar ve kariyerlerinin ilk sekiz yılında ikili olarak sahne aldılar.",
+          "müziklerinin büyük bölümü flamenko gitarda enstrümantal düetlerden oluşuyor."
+        ]
+      }
+    }
+  ]
+}

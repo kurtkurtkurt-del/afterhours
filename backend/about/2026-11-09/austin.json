@@ -1,0 +1,102 @@
+{
+  "city": "austin",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "95d3f65b-96d6-4754-919e-fd424067f5f7",
+      "slug": "tank-and-the-bangas-the-last-balloon-tour-w-arie-ad44ee3c",
+      "title": "Tank and The Bangas: The Last Balloon Tour w/ Ariel J. & ZEUS",
+      "name": "Tank and the Bangas",
+      "source_url": "https://en.wikipedia.org/wiki/Tank_and_the_Bangas",
+      "extract": "Tank and the Bangas is an American musical group based in New Orleans, Louisiana. The band won the 2017 NPR Tiny Desk Contest and in November 2019, they were nominated in the Best New Artist category for the 2020 Grammy Awards. They have released three studio albums, Thinktank (2013), Green Balloon (2019), and Red Balloon (2022). In 2025, they won their first Grammy for the 2024 album, The Heart, The Mind, The Soul for Best Spoken Word Poetry Album.",
+      "en": {
+        "kicker": "american musical group · new orleans, louisiana",
+        "who": "Tank and the Bangas is an american musical group based in New Orleans, Louisiana. in 2025, they won their first Grammy for the 2024 album The Heart, The Mind, The Soul for Best Spoken Word Poetry Album.",
+        "facts": [
+          "the band won the 2017 NPR Tiny Desk Contest.",
+          "they have released three studio albums, Thinktank (2013), Green Balloon (2019), and Red Balloon (2022)."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische musikgruppe · new orleans, louisiana",
+        "who": "Tank and the Bangas ist eine amerikanische musikgruppe mit sitz in New Orleans, Louisiana. im jahr 2025 gewann die band ihren ersten Grammy für das album The Heart, The Mind, The Soul aus dem jahr 2024 in der kategorie Best Spoken Word Poetry Album.",
+        "facts": [
+          "die band gewann 2017 den NPR Tiny Desk Contest.",
+          "sie haben drei studioalben veröffentlicht: Thinktank (2013), Green Balloon (2019) und Red Balloon (2022)."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan müzik grubu · new orleans, louisiana",
+        "who": "Tank and the Bangas, louisiana eyaletindeki new orleans merkezli bir amerikan müzik grubudur. 2025'te, 2024 yapımı The Heart, The Mind, The Soul albümüyle En İyi Sözlü Şiir Albümü dalında ilk Grammy ödülünü kazandılar.",
+        "facts": [
+          "grup, 2017 NPR Tiny Desk Contest yarışmasını kazandı.",
+          "üç stüdyo albümü yayımladılar: Thinktank (2013), Green Balloon (2019) ve Red Balloon (2022)."
+        ]
+      }
+    },
+    {
+      "id": "ae00aee4-b47d-48d3-8849-a362f297bbbd",
+      "slug": "static-dress-076f6e9e",
+      "title": "Static Dress",
+      "name": "Static Dress",
+      "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+      "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games.",
+      "en": {
+        "kicker": "english rock band · leeds, 2018",
+        "who": "Static Dress are an english rock band from Leeds, West Yorkshire. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding.",
+        "facts": [
+          "formed in 2018, Static Dress are a concept band with their material following a continuous story.",
+          "they have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+        ]
+      },
+      "de": {
+        "kicker": "englische rockband · leeds, 2018",
+        "who": "Static Dress ist eine englische rockband aus Leeds, West Yorkshire. derzeit besteht die band aus frontsänger Olli Appleyard, schlagzeuger Sam Ogden, gitarrist Vincent Weight und bassist George Holding.",
+        "facts": [
+          "Static Dress wurde 2018 gegründet und ist eine konzeptband, deren material einer durchgehenden geschichte folgt.",
+          "sie haben zwei studioalben in voller länge, drei EPs und verschiedene einzelsingles sowie ein comicbuch und drei videospiele veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rock grubu · leeds, 2018",
+        "who": "Static Dress, West Yorkshire'ın Leeds kentinden çıkan bir ingiliz rock grubudur. grubun şu anki kadrosu; vokalist Olli Appleyard, davulcu Sam Ogden, gitarist Vincent Weight ve basçı George Holding'den oluşuyor.",
+        "facts": [
+          "Static Dress, 2018'de kuruldu ve içerikleri kesintisiz bir hikayeyi takip eden bir konsept gruptur.",
+          "iki tam uzunluklu stüdyo albümü, üç EP ve çeşitli tekil şarkılar ile bir çizgi roman ve üç video oyunu yayımladılar."
+        ]
+      }
+    },
+    {
+      "id": "ff3d6eaf-c3d4-4711-982e-a246f3b0fc8a",
+      "slug": "paul-cauthen-c3dd56c5",
+      "title": "Paul Cauthen",
+      "name": "Paul Cauthen",
+      "source_url": "https://en.wikipedia.org/wiki/Paul_Cauthen",
+      "extract": "Paul Mark Cauthen is an American singer-songwriter from East Texas. He started his music career in an Americana/indie folk rock duo called Sons of Fathers, before turning solo. He has released five albums and an EP as a solo artist, the most recent being Book of Paul released on 3 April, 2026.",
+      "en": {
+        "kicker": "american singer-songwriter · east texas",
+        "who": "Paul Mark Cauthen is an american singer-songwriter from East Texas. He started his music career in an Americana/indie folk rock duo called Sons of Fathers, before turning solo.",
+        "facts": [
+          "he has released five albums and an EP as a solo artist.",
+          "the most recent is Book of Paul, released on 3 April, 2026."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter · East Texas",
+        "who": "Paul Mark Cauthen ist ein amerikanischer singer-songwriter aus East Texas. seine karriere begann er im Americana/indie-folkrock-duo Sons of Fathers, bevor er solo weitermachte.",
+        "facts": [
+          "als solokünstler hat er fünf alben und eine EP veröffentlicht.",
+          "das jüngste werk ist Book of Paul, veröffentlicht am 3. April 2026."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan şarkıcı-söz yazarı · east texas",
+        "who": "Paul Mark Cauthen, East Texas'lı bir amerikan şarkıcı-söz yazarıdır. müzik kariyerine Americana/indie folk rock ikilisi Sons of Fathers'ta başladı, ardından solo çalışmalara yöneldi.",
+        "facts": [
+          "solo sanatçı olarak beş albüm ve bir EP yayımladı.",
+          "en son çıkan Book of Paul, 3 Nisan 2026'da yayımlandı."
+        ]
+      }
+    }
+  ]
+}

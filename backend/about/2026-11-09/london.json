@@ -1,0 +1,230 @@
+{
+ "city": "london",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "070cfb8c-ed67-4b20-a6fe-d33c9ef21d3a",
+   "slug": "bodyslam-615761ab",
+   "title": "BODYSLAM",
+   "name": "Bodyslam",
+   "source_url": "https://en.wikipedia.org/wiki/Bodyslam_(band)",
+   "extract": "Bodyslam is a Thai rock band. They are known for their dynamic performances and deep lyrics, having released their first album in 2002.",
+   "en": {
+    "kicker": "thai rock band · first album, 2002",
+    "who": "Bodyslam is a Thai rock band. They are known for their dynamic performances and deep lyrics, having released their first album in 2002.",
+    "facts": [
+     "They are known for their dynamic performances and deep lyrics.",
+     "They released their first album in 2002."
+    ]
+   },
+   "de": {
+    "kicker": "thailändische rockband · erstes album, 2002",
+    "who": "Bodyslam ist eine thailändische rockband. sie sind für ihre dynamischen auftritte und tiefgründigen texte bekannt und haben 2002 ihr erstes album veröffentlicht.",
+    "facts": [
+     "sie sind für ihre dynamischen auftritte und tiefgründigen texte bekannt.",
+     "sie haben 2002 ihr erstes album veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "tay rock grubu · ilk albüm, 2002",
+    "who": "Bodyslam bir tay rock grubudur. dinamik performansları ve derin sözleriyle bilinirler ve 2002'de ilk albümlerini yayımladılar.",
+    "facts": [
+     "dinamik performanslarıyla ve derin sözleriyle bilinirler.",
+     "ilk albümlerini 2002'de yayımladılar."
+    ]
+   }
+  },
+  {
+   "id": "dc25f003-e230-43ca-a27d-3aec85ebdad9",
+   "slug": "los-fastidios-07a1dac7",
+   "title": "Los Fastidios",
+   "name": "Los Fastidios",
+   "source_url": "https://en.wikipedia.org/wiki/Los_Fastidios",
+   "extract": "Los Fastidios is an Italian Oi! band. It was formed in Verona in 1991, however only one of the original band members remains. Songs of Los Fastidios deal with common life situations, as well as promoting equality, socialism and fight against discrimination. The band is often identified with the SHARP movement.",
+   "en": {
+    "kicker": "italian oi band · verona, 1991",
+    "who": "Los Fastidios is an Italian Oi band. It was formed in Verona in 1991, however only one of the original band members remains. Songs of Los Fastidios deal with common life situations, as well as promoting equality, socialism and fight against discrimination.",
+    "facts": [
+     "It was formed in Verona in 1991, however only one of the original band members remains.",
+     "The band is often identified with the SHARP movement."
+    ]
+   },
+   "de": {
+    "kicker": "italienische oi-band · verona, 1991",
+    "who": "Los Fastidios ist eine italienische oi-band. sie wurde 1991 in Verona gegründet, allerdings ist nur noch eines der ursprünglichen bandmitglieder übrig. ihre songs handeln von alltäglichen lebenssituationen und fördern gleichheit, sozialismus und den kampf gegen diskriminierung.",
+    "facts": [
+     "sie wurde 1991 in Verona gegründet, allerdings ist nur noch eines der ursprünglichen bandmitglieder übrig.",
+     "die band wird häufig mit der SHARP-bewegung in verbindung gebracht."
+    ]
+   },
+   "tr": {
+    "kicker": "italyan oi grubu · verona, 1991",
+    "who": "Los Fastidios bir italyan oi grubudur. grup 1991'de Verona'da kuruldu, ancak orijinal üyelerden yalnızca biri hâlâ grupta. şarkıları gündelik yaşam durumlarını ele alır; eşitliği, sosyalizmi ve ayrımcılıkla mücadeleyi de teşvik eder.",
+    "facts": [
+     "grup 1991'de Verona'da kuruldu, ancak orijinal üyelerden yalnızca biri hâlâ grupta.",
+     "grup sıklıkla SHARP hareketiyle anılır."
+    ]
+   }
+  },
+  {
+   "id": "1a1663e0-5f09-4797-ba0c-944aae8e2c2d",
+   "slug": "freya-skye-5cb448e1",
+   "title": "Freya Skye",
+   "name": "Freya Skye",
+   "source_url": "https://en.wikipedia.org/wiki/Freya_Skye",
+   "extract": "Freya Skye is an English singer and actress. She represented the United Kingdom in the Junior Eurovision Song Contest 2022, after which she was signed to Hollywood Records. Skye also has a talent holding deal for projects with Disney Branded Television. As an actress, she has appeared in The Next Step and made her film debut starring as Nova Bright in Zombies 4: Dawn of the Vampires. As a musician, Skye has released a number of singles since 2020 and released her debut extended play Stardust in 2026 and embarked on her first headlining tour, the Stars Align Tour.",
+   "en": {
+    "kicker": "english singer and actress · debut ep, 2026",
+    "who": "Freya Skye is an English singer and actress. She represented the United Kingdom in the Junior Eurovision Song Contest 2022, after which she was signed to Hollywood Records. As a musician, she has released a number of singles since 2020.",
+    "facts": [
+     "She represented the United Kingdom in the Junior Eurovision Song Contest 2022.",
+     "She released her debut extended play Stardust in 2026."
+    ]
+   },
+   "de": {
+    "kicker": "englische sängerin und schauspielerin · debüt-ep, 2026",
+    "who": "Freya Skye ist eine englische sängerin und schauspielerin. sie vertrat das Vereinigte Königreich beim Junior Eurovision Song Contest 2022, danach wurde sie bei Hollywood Records unter vertrag genommen. als musikerin hat sie seit 2020 eine reihe von singles veröffentlicht.",
+    "facts": [
+     "sie vertrat das Vereinigte Königreich beim Junior Eurovision Song Contest 2022.",
+     "sie veröffentlichte ihre debüt-ep Stardust im Jahr 2026."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı ve oyuncu · ilk ep, 2026",
+    "who": "Freya Skye bir ingiliz şarkıcı ve oyuncudur. 2022'de Junior Eurovision Şarkı Yarışması'nda Birleşik Krallık'ı temsil etti ve bunun ardından Hollywood Records ile sözleşme imzaladı. müzisyen olarak 2020'den beri çok sayıda single yayımladı.",
+    "facts": [
+     "2022'de Junior Eurovision Şarkı Yarışması'nda Birleşik Krallık'ı temsil etti.",
+     "ilk ep'i Stardust'ı 2026'da yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "543ad733-4e74-4679-9732-8c017783daea",
+   "slug": "the-home-team-4941be39",
+   "title": "The Home Team",
+   "name": "The Home Team",
+   "source_url": "https://en.wikipedia.org/wiki/The_Home_Team",
+   "extract": "The Home Team is an American rock band from Seattle, Washington, formed in 2013 by Daniel Matson and John Baran. The band currently consists of vocalist Brian Butcher, bassist Ryne Olson, guitarist John Baran, and drummer Daniel Matson.",
+   "en": {
+    "kicker": "american rock band · seattle, 2013",
+    "who": "The Home Team is an American rock band from Seattle, Washington, formed in 2013 by Daniel Matson and John Baran. The current lineup is vocalist Brian Butcher, bassist Ryne Olson, guitarist John Baran and drummer Daniel Matson.",
+    "facts": [
+     "The Home Team is an American rock band from Seattle, Washington, formed in 2013 by Daniel Matson and John Baran.",
+     "The band currently consists of vocalist Brian Butcher, bassist Ryne Olson, guitarist John Baran, and drummer Daniel Matson."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · seattle, 2013",
+    "who": "The Home Team ist eine amerikanische rockband aus Seattle, Washington, die 2013 von Daniel Matson und John Baran gegründet wurde. die band besteht derzeit aus sänger Brian Butcher, bassist Ryne Olson, gitarrist John Baran und schlagzeuger Daniel Matson.",
+    "facts": [
+     "The Home Team ist eine amerikanische rockband aus Seattle, Washington, die 2013 von Daniel Matson und John Baran gegründet wurde.",
+     "die band besteht derzeit aus sänger Brian Butcher, bassist Ryne Olson, gitarrist John Baran und schlagzeuger Daniel Matson."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan rock grubu · seattle, 2013",
+    "who": "The Home Team, Seattle, Washington'dan bir amerikan rock grubudur ve 2013'te Daniel Matson ile John Baran tarafından kuruldu. grup şu anda vokalist Brian Butcher, basçı Ryne Olson, gitarist John Baran ve davulcu Daniel Matson'dan oluşuyor.",
+    "facts": [
+     "The Home Team, Seattle, Washington'dan bir amerikan rock grubudur ve 2013'te Daniel Matson ile John Baran tarafından kuruldu.",
+     "grup şu anda vokalist Brian Butcher, basçı Ryne Olson, gitarist John Baran ve davulcu Daniel Matson'dan oluşuyor."
+    ]
+   }
+  },
+  {
+   "id": "de3d2bbb-57c9-4610-a40f-6d2ad3977bfb",
+   "slug": "infinity-song-895325ec",
+   "title": "Infinity Song",
+   "name": "Infinity Song",
+   "source_url": "https://en.wikipedia.org/wiki/Infinity_Song",
+   "extract": "Infinity Song is an American soft rock band composed of siblings Abraham, Angel, Israel and Momo Boyd. Based in New York City, the group has released three albums under record label Roc Nation.",
+   "en": {
+    "kicker": "american soft rock band · new york city",
+    "who": "Infinity Song is an American soft rock band composed of siblings Abraham, Angel, Israel and Momo Boyd. Based in New York City, the group has released three albums under record label Roc Nation.",
+    "facts": [
+     "Infinity Song is an American soft rock band composed of siblings Abraham, Angel, Israel and Momo Boyd.",
+     "Based in New York City, the group has released three albums under record label Roc Nation."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische soft-rock-band · new york city",
+    "who": "Infinity Song ist eine amerikanische soft-rock-band, die aus den geschwistern Abraham, Angel, Israel und Momo Boyd besteht. mit sitz in New York City hat die gruppe drei alben beim plattenlabel Roc Nation veröffentlicht.",
+    "facts": [
+     "Infinity Song ist eine amerikanische soft-rock-band, die aus den geschwistern Abraham, Angel, Israel und Momo Boyd besteht.",
+     "mit sitz in New York City hat die gruppe drei alben beim plattenlabel Roc Nation veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan soft rock grubu · new york city",
+    "who": "Infinity Song, kardeşler Abraham, Angel, Israel ve Momo Boyd'dan oluşan bir amerikan soft rock grubudur. New York City'de kurulu olan grup, Roc Nation plak şirketi altında üç albüm yayımladı.",
+    "facts": [
+     "Infinity Song, kardeşler Abraham, Angel, Israel ve Momo Boyd'dan oluşan bir amerikan soft rock grubudur.",
+     "New York City merkezli grup, Roc Nation plak şirketi altında üç albüm yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "c9d8668f-4b7a-4b10-ad78-4a61566a5691",
+   "slug": "ole-60-off-the-grid-tour-8179271f",
+   "title": "Ole 60 - Off the Grid Tour",
+   "name": "Ole 60",
+   "source_url": "https://en.wikipedia.org/wiki/Ole_60",
+   "extract": "Ole 60 is an American country/alt-country band from Hawesville, Kentucky, formed in 2023, known for blending Appalachian storytelling with elements of grunge, southern rock, folk music, and traditional country. The band consists of Jacob Ty Young, Tristan Roby, Ryan Laslie, Colby Clark, Aden Wood (drums), Dwight McGlynn, and Dustin \"Catfish\" Fuqua. The band gained widespread attention in 2024 through breakout singles like \"smoke & a light\" and \"Thoughts of You\", and acclaimed debut album Smokestack Town in 2025.",
+   "en": {
+    "kicker": "american alt-country band · hawesville, kentucky, 2023",
+    "who": "Ole 60 is an American country/alt-country band from Hawesville, Kentucky, formed in 2023, known for blending Appalachian storytelling with elements of grunge, southern rock, folk music, and traditional country. The band gained widespread attention in 2024 through breakout singles like \"smoke & a light\" and \"Thoughts of You\", and acclaimed debut album Smokestack Town in 2025.",
+    "facts": [
+     "Ole 60 is an American country/alt-country band from Hawesville, Kentucky, formed in 2023.",
+     "The band gained widespread attention in 2024 through breakout singles like \"smoke & a light\" and \"Thoughts of You\"."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische alt-country-band · hawesville, kentucky, 2023",
+    "who": "Ole 60 ist eine amerikanische country/alt-country-band aus Hawesville, Kentucky, die 2023 gegründet wurde und dafür bekannt ist, appalachische erzählkunst mit elementen von grunge, southern rock, folk und traditioneller country-musik zu verbinden. die band erlangte 2024 dank durchbruch-singles wie \"smoke & a light\" und \"Thoughts of You\" große aufmerksamkeit, dazu kam 2025 das gefeierte debütalbum Smokestack Town.",
+    "facts": [
+     "Ole 60 ist eine amerikanische country/alt-country-band aus Hawesville, Kentucky, die 2023 gegründet wurde.",
+     "die band erlangte 2024 mit durchbruch-singles wie \"smoke & a light\" und \"Thoughts of You\" große aufmerksamkeit."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikan alt-country grubu · hawesville, kentucky, 2023",
+    "who": "Ole 60, 2023'te kurulmuş, Hawesville, Kentucky'li bir amerikan country/alt-country grubudur. Appalachian hikâye anlatımını grunge, southern rock, folk ve geleneksel country unsurlarıyla harmanlamasıyla bilinir. grup 2024'te \"smoke & a light\" ve \"Thoughts of You\" gibi singlelarla geniş ilgi gördü; 2025'te ise övgü toplayan debut albümü Smokestack Town yayımlandı.",
+    "facts": [
+     "Ole 60, 2023'te kurulmuş, Hawesville, Kentucky'li bir amerikan country/alt-country grubudur.",
+     "grup 2024'te \"smoke & a light\" ve \"Thoughts of You\" gibi singlelarla geniş ilgi gördü."
+    ]
+   }
+  },
+  {
+   "id": "86f96fa8-51bd-4876-8afe-baf3e4c93279",
+   "slug": "jerub-955a5329",
+   "title": "JERUB",
+   "name": "Jerub",
+   "source_url": "https://en.wikipedia.org/wiki/Jerub",
+   "extract": "Gideon Ogheneochuko Akpovi, known professionally as Jerub, is an English pop and soul singer and songwriter from Nottingham, signed to Elevate Music Ltd. and Absolute Label Services. He garnered a following from local audiences from live performances early on in his career, and in 2023 experienced breakout success as a performer at several major music festivals. As a solo musician, he has released three extended plays, Feel It (2021), Finding My Feet (2023), and Carry the Load (2024), and one mixtape, The Wonder Years (2025).",
+   "en": {
+    "kicker": "english pop and soul singer · nottingham",
+    "who": "Jerub is an English pop and soul singer and songwriter from Nottingham, signed to Elevate Music Ltd. and Absolute Label Services. He garnered a following from local audiences from live performances early on in his career, and in 2023 experienced breakout success as a performer at several major music festivals.",
+    "facts": [
+     "He garnered a following from local audiences from live performances early on in his career.",
+     "As a solo musician, he has released three extended plays, Feel It (2021), Finding My Feet (2023), and Carry the Load (2024), and one mixtape, The Wonder Years (2025)."
+    ]
+   },
+   "de": {
+    "kicker": "englischer pop- und soul-sänger · nottingham",
+    "who": "Jerub ist ein englischer pop- und soul-sänger und songwriter aus Nottingham, bei Elevate Music Ltd. und Absolute Label Services unter vertrag. er gewann schon früh in seiner karriere mit live-auftritten ein treues publikum vor ort und erlebte 2023 als interpret bei mehreren großen musikfestivals seinen durchbruch.",
+    "facts": [
+     "er gewann schon früh in seiner karriere mit live-auftritten ein treues publikum vor ort.",
+     "als solo-musiker veröffentlichte er die eps Feel It (2021), Finding My Feet (2023) und Carry the Load (2024) sowie das mixtape The Wonder Years (2025)."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz pop ve soul şarkıcısı · nottingham",
+    "who": "Jerub, Nottingham'dan bir ingiliz pop ve soul şarkıcısı ve söz yazarıdır; Elevate Music Ltd. ve Absolute Label Services ile sözleşmelidir. kariyerinin başında canlı performanslarıyla yerel izleyicilerden bir takipçi kitlesi kazandı ve 2023'te birkaç büyük müzik festivalinde sahne alarak büyük bir çıkış yaptı.",
+    "facts": [
+     "kariyerinin başında canlı performanslarıyla yerel izleyicilerden bir takipçi kitlesi kazandı.",
+     "solo müzisyen olarak üç ep yayımladı: Feel It (2021), Finding My Feet (2023) ve Carry the Load (2024); ayrıca The Wonder Years (2025) adlı bir mixtape çıkardı."
+    ]
+   }
+  }
+ ]
+}

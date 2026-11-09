@@ -1,0 +1,166 @@
+{
+  "city": "atlanta",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "44ba01e7-83a6-4370-9dcf-9944c8ab67d6",
+      "slug": "orville-peck-man-turned-mule-tour-882f94f8",
+      "title": "Orville Peck - Man Turned Mule Tour",
+      "name": "Orville Peck",
+      "source_url": "https://en.wikipedia.org/wiki/Orville_Peck",
+      "extract": "Daniel Pitout, known professionally as Orville Peck, is a South African country musician and actor based in the United States and Canada, widely known for often wearing a mask and not showing his face publicly.",
+      "en": {
+        "kicker": "south african country musician · united states and canada",
+        "who": "Orville Peck is a south african country musician and actor based in the United States and Canada. He is widely known for often wearing a mask and not showing his face publicly.",
+        "facts": [
+          "Daniel Pitout, known professionally as Orville Peck, is a south african country musician and actor.",
+          "He is widely known for often wearing a mask and not showing his face publicly."
+        ]
+      },
+      "de": {
+        "kicker": "country-musiker aus südafrika · usa und kanada",
+        "who": "Orville Peck ist ein südafrikanischer country-musiker und schauspieler mit wohnsitz in den Vereinigten Staaten und Kanada. er ist vor allem dafür bekannt, oft eine maske zu tragen und sein gesicht nicht öffentlich zu zeigen.",
+        "facts": [
+          "Daniel Pitout, bekannt als Orville Peck, ist ein südafrikanischer country-musiker und schauspieler.",
+          "er ist vor allem dafür bekannt, oft eine maske zu tragen und sein gesicht nicht öffentlich zu zeigen."
+        ]
+      },
+      "tr": {
+        "kicker": "güney afrikalı country müzisyeni · abd ve kanada",
+        "who": "Orville Peck, abd ve Kanada'da yaşayan güney afrikalı bir country müzisyeni ve oyuncudur. maske takmasıyla tanınır ve yüzünü kamuoyu önünde göstermemesiyle ünlüdür.",
+        "facts": [
+          "Daniel Pitout, Orville Peck adıyla tanınan, güney afrikalı bir country müzisyeni ve oyuncudur.",
+          "maske takmasıyla tanınır ve yüzünü kamuoyu önünde göstermemesiyle ünlüdür."
+        ]
+      }
+    },
+    {
+      "id": "1045c1b6-b741-4dbf-9510-3b3da3cf2af0",
+      "slug": "little-image-5a4147b2",
+      "title": "Little Image",
+      "name": "Little Image",
+      "source_url": "https://en.wikipedia.org/wiki/Little_Image",
+      "extract": "Little Image are an American alternative pop band from Dallas, Texas. They released their major label debut, Self Titled, on Hollywood Records on May 12, 2023, after the independent release of Musings in 2017.",
+      "en": {
+        "kicker": "american alternative pop band · dallas, texas",
+        "who": "Little Image are an american alternative pop band from Dallas, Texas. They released their major label debut, Self Titled, on Hollywood Records on May 12, 2023.",
+        "facts": [
+          "Their major label debut came after the independent release of Musings in 2017.",
+          "Self Titled was released on Hollywood Records on May 12, 2023."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische alternative-popband · dallas, texas",
+        "who": "Little Image sind eine amerikanische alternative-popband aus Dallas, Texas. sie veröffentlichten ihr major-label-debüt Self Titled am 12. mai 2023 bei Hollywood Records.",
+        "facts": [
+          "das major-label-debüt kam nach der unabhängigen veröffentlichung von Musings im jahr 2017.",
+          "Self Titled erschien am 12. mai 2023 bei Hollywood Records."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı alternatif pop grubu · dallas, texas",
+        "who": "Little Image, Dallas, Texas'tan bir amerikan alternatif pop grubudur. majör plak şirketiyle çıkardıkları ilk albüm Self Titled, 12 mayıs 2023'te Hollywood Records'ta yayımlandı.",
+        "facts": [
+          "majör plak debütü, 2017'de bağımsız olarak yayımlanan Musings'ten sonra geldi.",
+          "Self Titled, 12 mayıs 2023'te Hollywood Records'ta yayımlandı."
+        ]
+      }
+    },
+    {
+      "id": "a6141799-92a7-493c-9d25-c2cec9112ef5",
+      "slug": "carl-cox-d99af546",
+      "title": "Carl Cox",
+      "name": "Carl Cox",
+      "source_url": "https://en.wikipedia.org/wiki/Carl_Cox",
+      "extract": "\nCarl Andrew Cox is a British house and techno club DJ, radio DJ, motorsport team owner and record producer. He lives in Frankston, Victoria, Australia.",
+      "en": {
+        "kicker": "british house and techno dj · frankston, australia",
+        "who": "Carl Cox is a British house and techno club DJ, radio DJ, motorsport team owner and record producer. He lives in Frankston, Victoria, Australia.",
+        "facts": [
+          "Carl Andrew Cox is a British house and techno club DJ, radio DJ, motorsport team owner and record producer.",
+          "He lives in Frankston, Victoria, Australia."
+        ]
+      },
+      "de": {
+        "kicker": "britischer house- und techno-dj · frankston, australien",
+        "who": "Carl Cox ist ein britischer house- und techno-club-dj, radio-dj, motorsport-teambesitzer und plattenproduzent. er lebt in Frankston, Victoria, Australien.",
+        "facts": [
+          "Carl Andrew Cox ist ein britischer house- und techno-club-dj, radio-dj, motorsport-teambesitzer und plattenproduzent.",
+          "er lebt in Frankston, Victoria, Australien."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz house ve techno dj · frankston, avustralya",
+        "who": "Carl Cox, ingiliz house ve techno kulüp dj'i, radyo dj'i, motor sporu takım sahibi ve plak yapımcısıdır. Frankston, Victoria, Avustralya'da yaşıyor.",
+        "facts": [
+          "Carl Andrew Cox, ingiliz house ve techno kulüp dj'i, radyo dj'i, motor sporu takım sahibi ve plak yapımcısıdır.",
+          "Frankston, Victoria, Avustralya'da yaşıyor."
+        ]
+      }
+    },
+    {
+      "id": "7e4dd74a-20e0-4f2e-bc36-2a8e1a2cdbf7",
+      "slug": "paula-cole-80d00bec",
+      "title": "Paula Cole",
+      "name": "Paula Cole",
+      "source_url": "https://en.wikipedia.org/wiki/Paula_Cole",
+      "extract": "Paula Dorothy Cole is an American singer and songwriter. After gaining attention for her performances as a vocalist on Peter Gabriel's 1993–1994 Secret World Tour, she released her first album, Harbinger, which suffered from a lack of promotion when the label, Imago Records, folded shortly after its release. Her second album, This Fire (1996), brought her worldwide acclaim, peaking at number 20 on the Billboard 200 album chart and producing two hit singles, the triple-Grammy nominated \"Where Have All the Cowboys Gone?\", which reached the top ten of the Billboard Hot 100 in 1997, and \"I Don't Want to Wait\", which was used as the theme song of the television show Dawson's Creek. Cole was a fea",
+      "en": {
+        "kicker": "american singer and songwriter",
+        "who": "Paula Dorothy Cole is an american singer and songwriter. After gaining attention for her performances as a vocalist on Peter Gabriel's 1993–1994 Secret World Tour, she released her first album, Harbinger.",
+        "facts": [
+          "Her first album, Harbinger, suffered from a lack of promotion when the label, Imago Records, folded shortly after its release.",
+          "Her second album, This Fire (1996), brought her worldwide acclaim, peaking at number 20 on the Billboard 200 album chart."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische sängerin und songwriterin",
+        "who": "Paula Dorothy Cole ist eine amerikanische sängerin und songwriterin. nachdem sie durch ihre auftritte als sängerin bei Peter Gabriels Secret World Tour 1993–1994 aufmerksamkeit erregt hatte, veröffentlichte sie ihr erstes album Harbinger.",
+        "facts": [
+          "ihr erstes album Harbinger litt unter mangelnder werbung, als das label Imago Records kurz nach seiner veröffentlichung einstellte.",
+          "ihr zweites album This Fire (1996) brachte ihr weltweite anerkennung und erreichte platz 20 der Billboard 200-albumcharts."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı ve söz yazarı",
+        "who": "Paula Dorothy Cole, amerikalı bir şarkıcı ve söz yazarıdır. Peter Gabriel'in 1993–1994 Secret World Tour'undaki vokalistliğiyle dikkat çektikten sonra ilk albümü Harbinger'ı yayımladı.",
+        "facts": [
+          "ilk albümü Harbinger, Imago Records adlı plak şirketi kısa süre sonra kapanınca tanıtım eksikliğinden zarar gördü.",
+          "ikinci albümü This Fire (1996), dünya çapında beğeni topladı ve Billboard 200 albüm listesinde 20. sıraya ulaştı."
+        ]
+      }
+    },
+    {
+      "id": "cf41cd9a-331a-485a-ab9a-8d84c1abb7c5",
+      "slug": "george-clanton-4b8975a8",
+      "title": "George Clanton",
+      "name": "George Clanton",
+      "source_url": "https://en.wikipedia.org/wiki/George_Clanton",
+      "extract": "George Wayland Clanton Jr., also known by the monikers Mirror Kisses, ESPRIT 空想, CHINA, and Kid's Garden, is an American electronic musician and singer-songwriter that emerged from the vaporwave music scene in the early 2010s. He established his independent record label 100% Electronica in 2015, and in 2019 launched the first vaporwave music festival, 100% ElectroniCON.",
+      "en": {
+        "kicker": "american electronic musician · early 2010s",
+        "who": "George Wayland Clanton Jr. is an american electronic musician and singer-songwriter that emerged from the vaporwave music scene in the early 2010s. He established his independent record label 100% Electronica in 2015.",
+        "facts": [
+          "He established his independent record label 100% Electronica in 2015, and in 2019 launched the first vaporwave music festival, 100% ElectroniCON.",
+          "He emerged from the vaporwave music scene in the early 2010s."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer elektronik-musiker · anfang der 2010er",
+        "who": "George Wayland Clanton Jr. ist ein amerikanischer elektronik-musiker und singer-songwriter, der anfang der 2010er jahre aus der vaporwave-musikszene hervorging. er gründete 2015 sein unabhängiges plattenlabel 100% Electronica.",
+        "facts": [
+          "er gründete 2015 sein unabhängiges plattenlabel 100% Electronica und startete 2019 das erste vaporwave-musikfestival, 100% ElectroniCON.",
+          "er kam anfang der 2010er jahre aus der vaporwave-musikszene hervor."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı elektronik müzisyen · 2010'ların başı",
+        "who": "George Wayland Clanton Jr., 2010'ların başında vaporwave müzik sahnesinden çıkan amerikalı bir elektronik müzisyen ve şarkı yazarıdır. 2015'te bağımsız plak şirketi 100% Electronica'yı kurdu.",
+        "facts": [
+          "2015'te bağımsız plak şirketi 100% Electronica'yı kurdu ve 2019'da ilk vaporwave müzik festivalini, 100% ElectroniCON'u başlattı.",
+          "2010'ların başında vaporwave müzik sahnesinden çıktı."
+        ]
+      }
+    }
+  ]
+}

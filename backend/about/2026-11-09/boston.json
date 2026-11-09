@@ -1,0 +1,70 @@
+{
+  "city": "boston",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "1969de01-6971-4108-aa98-020aa4305bca",
+      "slug": "strawberry-guy-4a92ed58",
+      "title": "Strawberry Guy",
+      "name": "Strawberry Guy",
+      "source_url": "https://en.wikipedia.org/wiki/Strawberry_Guy",
+      "extract": "Alexander Morgan Stephens, better known by his stage name Strawberry Guy, is a Welsh indie pop musician. He is best known for his 2019 single \"Mrs Magic\", which gained popularity via TikTok.",
+      "en": {
+        "kicker": "welsh indie pop musician",
+        "who": "Alexander Morgan Stephens, better known by his stage name Strawberry Guy, is a welsh indie pop musician. he is best known for his 2019 single \"Mrs Magic\", which gained popularity via TikTok.",
+        "facts": [
+          "he is best known for his 2019 single \"Mrs Magic\", which gained popularity via TikTok.",
+          "Alexander Morgan Stephens is better known by his stage name Strawberry Guy."
+        ]
+      },
+      "de": {
+        "kicker": "walisischer indie-popmusiker",
+        "who": "Alexander Morgan Stephens, besser bekannt unter seinem künstlernamen Strawberry Guy, ist ein walisischer indie-popmusiker. er ist vor allem für seine single „Mrs Magic“ aus dem jahr 2019 bekannt, die über TikTok an popularität gewann.",
+        "facts": [
+          "er ist vor allem für seine single „Mrs Magic“ aus dem jahr 2019 bekannt, die über TikTok an popularität gewann.",
+          "Alexander Morgan Stephens ist unter seinem künstlernamen Strawberry Guy besser bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "galli indie pop müzisyeni",
+        "who": "Alexander Morgan Stephens, sahne adı Strawberry Guy ile daha iyi bilinen bir galli indie pop müzisyenidir. 2019 tarihli \"Mrs Magic\" single'ıyla en çok bilinir; bu şarkı TikTok üzerinden popülerlik kazandı.",
+        "facts": [
+          "2019 tarihli \"Mrs Magic\" single'ıyla en çok bilinir; bu şarkı TikTok üzerinden popülerlik kazandı.",
+          "Alexander Morgan Stephens, sahne adı Strawberry Guy ile daha iyi bilinir."
+        ]
+      }
+    },
+    {
+      "id": "97f8cecd-5313-4600-8139-52855133e260",
+      "slug": "pouya-the-foreverglades-tour-2f6dc7ca",
+      "title": "Pouya - The Foreverglades Tour",
+      "name": "Pouya",
+      "source_url": "https://en.wikipedia.org/wiki/Pouya",
+      "extract": "Kevin Pouya, known mononymously as Pouya, is an American rapper. Considered as a pioneer of the underground rap scene that began on SoundCloud in 2012, along with discovering the well known hip-hop duo Suicideboys in their early career, Pouya has developed a long-lasting core fanbase as an independent artist.",
+      "en": {
+        "kicker": "american rapper",
+        "who": "Kevin Pouya, known mononymously as Pouya, is an american rapper. He is considered a pioneer of the underground rap scene that began on SoundCloud in 2012, and along with discovering the hip-hop duo Suicideboys in their early career, he has developed a long-lasting core fanbase as an independent artist.",
+        "facts": [
+          "Considered as a pioneer of the underground rap scene that began on SoundCloud in 2012.",
+          "Pouya has developed a long-lasting core fanbase as an independent artist."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper",
+        "who": "Kevin Pouya, bekannt unter dem einzigen namen Pouya, ist ein amerikanischer rapper. er gilt als pionier der underground-rap-szene, die 2012 auf SoundCloud begann, und entdeckte das hip-hop-duo Suicideboys in deren frühen karriere. als unabhängiger künstler hat er eine langlebige kern-fanbasis aufgebaut.",
+        "facts": [
+          "er gilt als pionier der underground-rap-szene, die 2012 auf SoundCloud begann.",
+          "als unabhängiger künstler hat Pouya eine langlebige kern-fanbasis aufgebaut."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi",
+        "who": "Kevin Pouya, tek adıyla Pouya olarak bilinen bir amerikalı rapçidir. 2012'de SoundCloud'da başlayan underground rap sahnesinin öncülerinden biri olarak kabul edilir; erken kariyerlerinde Suicideboys ikilisini keşfetmesiyle de öne çıkar. bağımsız bir sanatçı olarak uzun süreli bir çekirdek hayran kitlesi oluşturmuştur.",
+        "facts": [
+          "2012'de SoundCloud'da başlayan underground rap sahnesinin öncülerinden biri olarak kabul edilir.",
+          "bağımsız bir sanatçı olarak Pouya uzun süreli bir çekirdek hayran kitlesi oluşturmuştur."
+        ]
+      }
+    }
+  ]
+}

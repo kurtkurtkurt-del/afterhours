@@ -1,0 +1,70 @@
+{
+ "city": "chicago",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "e56b5a3c-7119-473b-99fd-1502b66b4416",
+   "slug": "hunxho-e19e7da4",
+   "title": "Hunxho",
+   "name": "Hunxho",
+   "source_url": "https://en.wikipedia.org/wiki/Hunxho",
+   "extract": "Ibrahim Muhammad Dodo, known professionally as Hunxho is an American rapper, singer and songwriter. He is signed to 300 Entertainment. Hunxho initially rose to fame with the song \"Let's Get It\" in 2021, which spawned a remix with rapper 21 Savage. Later that year, he released the mixtape Street Poet 2.",
+   "en": {
+    "kicker": "american rapper, singer and songwriter",
+    "who": "Ibrahim Muhammad Dodo, known professionally as Hunxho, is an american rapper, singer and songwriter. he is signed to 300 Entertainment.",
+    "facts": [
+     "Hunxho initially rose to fame with the song \"Let's Get It\" in 2021, which spawned a remix with rapper 21 Savage.",
+     "later that year, he released the mixtape Street Poet 2."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper, sänger und songwriter",
+    "who": "Ibrahim Muhammad Dodo, bekannt als Hunxho, ist ein amerikanischer rapper, sänger und songwriter. er steht bei 300 Entertainment unter vertrag.",
+    "facts": [
+     "Hunxho wurde 2021 mit dem song \"Let's Get It\" bekannt, aus dem ein remix mit dem rapper 21 Savage entstand.",
+     "später im selben jahr veröffentlichte er das mixtape Street Poet 2."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi, şarkıcı ve söz yazarı",
+    "who": "Ibrahim Muhammad Dodo, sahne adıyla Hunxho, amerikalı bir rapçi, şarkıcı ve söz yazarıdır. 300 Entertainment ile sözleşmelidir.",
+    "facts": [
+     "Hunxho, 2021'de \"Let's Get It\" şarkısıyla ünlenmeye başladı; bu şarkının 21 Savage ile yapılan bir remix'i çıktı.",
+     "aynı yıl içinde Street Poet 2 adlı mixtape'i yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "16b7eb9d-70b0-4978-bd01-33a03c843e32",
+   "slug": "michelle-branch-everywhere-and-back-again-tour-6505c496",
+   "title": "Michelle Branch: Everywhere And Back Again Tour",
+   "name": "Michelle Branch",
+   "source_url": "https://en.wikipedia.org/wiki/Michelle_Branch",
+   "extract": "Michelle Jacquet Branch is an American singer, songwriter, and guitarist. She won a Grammy Award for Best Pop Collaboration with Vocals with Santana for their 2002 single, \"The Game of Love\".",
+   "en": {
+    "kicker": "american singer, songwriter and guitarist",
+    "who": "Michelle Jacquet Branch is an american singer, songwriter, and guitarist. she won a Grammy Award for Best Pop Collaboration with Vocals with Santana.",
+    "facts": [
+     "she won a Grammy Award for Best Pop Collaboration with Vocals with Santana for their 2002 single, \"The Game of Love\".",
+     "Michelle Jacquet Branch is an american singer, songwriter, and guitarist."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische sängerin, songwriterin und gitaristin",
+    "who": "Michelle Jacquet Branch ist eine amerikanische sängerin, songwriterin und gitaristin. sie gewann einen Grammy Award für Best Pop Collaboration with Vocals gemeinsam mit Santana.",
+    "facts": [
+     "sie gewann einen Grammy Award für Best Pop Collaboration with Vocals gemeinsam mit Santana für ihre single aus dem jahr 2002, \"The Game of Love\".",
+     "Michelle Jacquet Branch ist eine amerikanische sängerin, songwriterin und gitaristin."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı, söz yazarı ve gitarist",
+    "who": "Michelle Jacquet Branch amerikalı bir şarkıcı, söz yazarı ve gitaristtir. Santana ile birlikte Best Pop Collaboration with Vocals dalında bir Grammy Award kazandı.",
+    "facts": [
+     "2002 yılındaki \"The Game of Love\" single'ı için Santana ile birlikte Best Pop Collaboration with Vocals dalında bir Grammy Award kazandı.",
+     "Michelle Jacquet Branch amerikalı bir şarkıcı, söz yazarı ve gitaristtir."
+    ]
+   }
+  }
+ ]
+}

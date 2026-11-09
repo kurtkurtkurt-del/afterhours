@@ -1,0 +1,102 @@
+{
+ "city": "nashville",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "0f4e0011-5f35-467a-96d0-dae7ccbcb498",
+   "slug": "yaelokre-57cb4e82",
+   "title": "Yaelokre",
+   "name": "Yaelokre",
+   "source_url": "https://en.wikipedia.org/wiki/Yaelokre",
+   "extract": "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist known for their folk music storytelling project under the stage name Yaelokre. Ósk began releasing music under the project name in early 2024, going viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart the same year.",
+   "en": {
+    "kicker": "filipino-icelandic singer-songwriter · 2024",
+    "who": "Christopher Kristjansson, known professionally as Keath Ósk, is a filipino-icelandic singer-songwriter and multimedia artist. They are known for a folk music storytelling project under the stage name Yaelokre.",
+    "facts": [
+     "Ósk began releasing music under the project name in early 2024.",
+     "the song \"Harpy Hare\" went viral on TikTok in July of the same year, entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart."
+    ]
+   },
+   "de": {
+    "kicker": "filipinisch-isländischer singer-songwriter · 2024",
+    "who": "Christopher Kristjansson, unter dem künstlernamen Keath Ósk bekannt, ist ein filipinisch-isländischer singer-songwriter und multimedia-künstler. unter dem namen Yaelokre verfolgt die person ein folk-musikprojekt rund ums geschichtenerzählen.",
+    "facts": [
+     "Ósk begann anfang 2024, musik unter dem projektnamen zu veröffentlichen.",
+     "das lied \"Harpy Hare\" wurde im juli desselben jahres auf TikTok viral, stieg in die TikTok Billboard Top 50 ein und setzte sich an die spitze von Spotifys Global Viral Songs Chart."
+    ]
+   },
+   "tr": {
+    "kicker": "filipin-izlandalı şarkıcı-söz yazarı · 2024",
+    "who": "Christopher Kristjansson, sahne adıyla Keath Ósk, bir filipin-izlandalı şarkıcı-söz yazarı ve çoklu ortam sanatçısıdır. Yaelokre sahne adıyla folk müzik ve hikâye anlatımına dayalı bir proje yürütür.",
+    "facts": [
+     "Ósk, bu proje adı altında müziği 2024'ün başında yayımlamaya başladı.",
+     "\"Harpy Hare\" şarkısı aynı yıl temmuzda TikTok'ta viral oldu; TikTok Billboard Top 50 listesine girdi ve Spotify'ın Global Viral Songs Chart listesinin zirvesine yükseldi."
+    ]
+   }
+  },
+  {
+   "id": "33119f93-c2c7-423f-b905-3fc86dfd17b8",
+   "slug": "sawyer-brown-38e8e53f",
+   "title": "Sawyer Brown",
+   "name": "Sawyer Brown",
+   "source_url": "https://en.wikipedia.org/wiki/Sawyer_Brown",
+   "extract": "Sawyer Brown is an American country music band. It was founded in 1981 in Apopka, Florida, by Mark Miller, Gregg \"Hobie\" Hubbard, Bobby Randall, Joe \"Curly\" Smyth (drums), and Jim Scholten. The five musicians were originally members of country singer Don King's road band, but chose to stay together after King retired in 1981. After competing on the television competition series Star Search and winning that show's grand prize, they signed to Capitol Records in 1984. The band recorded for Capitol between then and 1991, and for Curb Records between 1991 and 2005, except for a short time in 2003 when they were signed to Lyric Street Records. Duncan Cameron, formerly of the Amazing Rhythm Aces, r",
+   "en": {
+    "kicker": "american country music band · Apopka, Florida, 1981",
+    "who": "Sawyer Brown is an american country music band. It was founded in 1981 in Apopka, Florida, by Mark Miller, Gregg \"Hobie\" Hubbard, Bobby Randall, Joe \"Curly\" Smyth and Jim Scholten. After competing on the television competition series Star Search and winning that show's grand prize, they signed to Capitol Records in 1984.",
+    "facts": [
+     "the five musicians were originally members of country singer Don King's road band.",
+     "the band recorded for Capitol until 1991, and for Curb Records between 1991 and 2005."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische country-band · Apopka, Florida, 1981",
+    "who": "Sawyer Brown ist eine amerikanische country-band. sie wurde 1981 in Apopka, Florida, von Mark Miller, Gregg \"Hobie\" Hubbard, Bobby Randall, Joe \"Curly\" Smyth und Jim Scholten gegründet. nach der teilnahme an der fernsehshow Star Search und dem gewinn des hauptpreises unterschrieb die band 1984 bei Capitol Records.",
+    "facts": [
+     "die fünf musiker waren ursprünglich mitglieder der tourband des country-sängers Don King.",
+     "die band nahm bis 1991 für Capitol auf und von 1991 bis 2005 für Curb Records."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı country müzik grubu · Apopka, Florida, 1981",
+    "who": "Sawyer Brown, amerikalı bir country müzik grubudur. grup 1981'de Florida'nın Apopka kentinde Mark Miller, Gregg \"Hobie\" Hubbard, Bobby Randall, Joe \"Curly\" Smyth ve Jim Scholten tarafından kuruldu. Star Search adlı televizyon yarışmasında yarışıp büyük ödülü kazanan grup, 1984'te Capitol Records ile sözleşme imzaladı.",
+    "facts": [
+     "grubun beş üyesi başlangıçta country şarkıcısı Don King'in tur grubunun üyeleriydi.",
+     "grup 1991'e kadar Capitol Records için, 1991 ile 2005 arasında ise Curb Records için kayıt yaptı."
+    ]
+   }
+  },
+  {
+   "id": "e37e4424-e09a-4b67-8b40-70019f03ead9",
+   "slug": "little-river-band-197b5e5b",
+   "title": "Little River Band",
+   "name": "Little River Band",
+   "source_url": "https://en.wikipedia.org/wiki/Little_River_Band",
+   "extract": "Little River Band (LRB) are a rock band formed in Melbourne, Australia, in March 1975. The band achieved commercial success in both Australia and the United States. They have sold more than 30 million records; six studio albums reached the top 10 on the Australian Kent Music Report albums chart including Diamantina Cocktail and First Under the Wire, which both peaked at No. 2. Nine singles appeared in the top 20 on the related singles chart, with \"Help Is on Its Way\" (1977) as their only number-one hit. Ten singles reached the top 20 on the Billboard Hot 100 with \"Reminiscing\" their highest, peaking at No. 3.",
+   "en": {
+    "kicker": "australian rock band · Melbourne, Australia, 1975",
+    "who": "Little River Band (LRB) are a rock band formed in Melbourne, Australia, in March 1975. the band achieved commercial success in both Australia and the United States. they have sold more than 30 million records.",
+    "facts": [
+     "six studio albums reached the top 10 on the Australian Kent Music Report albums chart, including Diamantina Cocktail and First Under the Wire.",
+     "ten singles reached the top 20 on the Billboard Hot 100, with \"Reminiscing\" their highest, peaking at no. 3."
+    ]
+   },
+   "de": {
+    "kicker": "australische rockband · Melbourne, Australien, 1975",
+    "who": "Little River Band (LRB) ist eine rockband, die im märz 1975 in Melbourne, Australien, gegründet wurde. die band hatte kommerziellen erfolg in Australien und den vereinigten staaten. sie hat mehr als 30 millionen tonträger verkauft.",
+    "facts": [
+     "sechs studioalben erreichten die top 10 der australischen Kent Music Report albumcharts, darunter Diamantina Cocktail und First Under the Wire.",
+     "zehn singles erreichten die top 20 der Billboard Hot 100, am höchsten mit \"Reminiscing\" auf platz 3."
+    ]
+   },
+   "tr": {
+    "kicker": "avustralyalı rock grubu · Melbourne, Avustralya, 1975",
+    "who": "Little River Band (LRB), 1975 yılının martında Melbourne, Avustralya'da kurulmuş bir rock grubudur. grup hem Avustralya'da hem de Amerika Birleşik Devletleri'nde ticari başarı elde etti. 30 milyondan fazla plak sattılar.",
+    "facts": [
+     "altı stüdyo albümü, Avustralya'nın Kent Music Report albüm listesinde ilk 10'a girdi; bunlar arasında Diamantina Cocktail ve First Under the Wire de vardı.",
+     "on single, Billboard Hot 100 listesinde ilk 20'ye girdi; en yükseği \"Reminiscing\" oldu ve 3. sıraya ulaştı."
+    ]
+   }
+  }
+ ]
+}

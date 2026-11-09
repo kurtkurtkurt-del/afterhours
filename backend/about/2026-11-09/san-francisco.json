@@ -1,0 +1,134 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "b453fbf6-918a-4d19-a015-cdbe873a1ba3",
+      "slug": "l7-0ed74808",
+      "title": "L7",
+      "name": "L7",
+      "source_url": "https://en.wikipedia.org/wiki/L7_(band)",
+      "extract": "L7 is an American punk rock band founded in Los Angeles, California, first active from 1985 to 2001 and re-formed in 2014. The group currently consists of Suzi Gardner, Donita Sparks, Dee Plakas and Janis Tanaka. L7 has released seven studio albums and has toured widely in the United States, Europe, Japan, Australia, and South America. \"Pretend We're Dead\" was heavily played on United States alternative radio and entered the top 10 on the Billboard Modern Rock chart in 1992.",
+      "en": {
+        "kicker": "american punk rock band · los angeles, california",
+        "who": "L7 is an american punk rock band founded in Los Angeles, California. the group currently consists of Suzi Gardner, Donita Sparks, Dee Plakas and Janis Tanaka.",
+        "facts": [
+          "L7 has released seven studio albums and has toured widely in the United States, Europe, Japan, Australia, and South America.",
+          "\"Pretend We're Dead\" was heavily played on United States alternative radio and entered the top 10 on the Billboard Modern Rock chart in 1992."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische punkrock-band · los angeles, kalifornien",
+        "who": "L7 ist eine amerikanische punkrock-band, gegründet in Los Angeles, Kalifornien. die gruppe besteht derzeit aus Suzi Gardner, Donita Sparks, Dee Plakas und Janis Tanaka.",
+        "facts": [
+          "L7 hat sieben studioalben veröffentlicht und war in den Vereinigten Staaten, Europa, Japan, Australien und Südamerika auf tour.",
+          "\"Pretend We're Dead\" wurde im alternativen radio der Vereinigten Staaten stark gespielt und stieg 1992 in die top 10 der Billboard Modern Rock charts ein."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı punk rock grubu · los angeles, kaliforniya",
+        "who": "L7, Los Angeles, Kaliforniya'da kurulan bir amerikalı punk rock grubudur. grubun şu anki üyeleri Suzi Gardner, Donita Sparks, Dee Plakas ve Janis Tanaka'dır.",
+        "facts": [
+          "L7 yedi stüdyo albümü yayımladı ve Amerika Birleşik Devletleri, Avrupa, Japonya, Avustralya ve Güney Amerika'da geniş çapta tur yaptı.",
+          "\"Pretend We're Dead\", Amerika Birleşik Devletleri'nde alternatif radyolarda yoğun olarak çalındı ve 1992'de Billboard Modern Rock listesinde ilk 10'a girdi."
+        ]
+      }
+    },
+    {
+      "id": "d82afccf-762c-409a-90a6-0d2a2dab6f5e",
+      "slug": "kino-921b28d7",
+      "title": "KINO",
+      "name": "Kino",
+      "source_url": "https://en.wikipedia.org/wiki/Kino_(band)",
+      "extract": "Kino is a Russian rock band formed in Leningrad in 1981. The band was co-founded and headed by Viktor Tsoi, who wrote the music and lyrics for almost all of the band's songs, until his death in 1990. Over the course of eight years, Kino released over ninety songs spanning over seven studio albums, as well as releasing a few compilations and live albums. During the days of the Soviet Union, the band's music was also widely circulated in the form of bootleg recordings through the underground magnitizdat distribution scene. Viktor Tsoi died in a car accident in 1990. Shortly after his death, the band broke up after releasing their final album, consisting of songs that Tsoi and the group were working on in the months before his death.",
+      "en": {
+        "kicker": "russian rock band · leningrad, 1981",
+        "who": "Kino is a russian rock band formed in Leningrad in 1981. the band was co-founded and headed by Viktor Tsoi, who wrote the music and lyrics for almost all of its songs until his death in 1990.",
+        "facts": [
+          "over the course of eight years, Kino released over ninety songs spanning over seven studio albums.",
+          "Viktor Tsoi died in a car accident in 1990."
+        ]
+      },
+      "de": {
+        "kicker": "russische rockband · leningrad, 1981",
+        "who": "Kino ist eine russische rockband, die 1981 in Leningrad gegründet wurde. die band wurde von Viktor Zoi mitbegründet und geleitet, der bis zu seinem tod 1990 die musik und die texte fast aller lieder schrieb.",
+        "facts": [
+          "im verlauf von acht jahren veröffentlichte Kino über neunzig lieder, die sich auf mehr als sieben studioalben verteilten.",
+          "Viktor Zoi starb 1990 bei einem autounfall."
+        ]
+      },
+      "tr": {
+        "kicker": "rus rock grubu · leningrad, 1981",
+        "who": "Kino, 1981'de Leningrad'da kurulan bir rus rock grubudur. grup Viktor Tsoi tarafından birlikte kurulmuş ve yönetilmiştir; Tsoi, 1990'daki ölümüne kadar grubun hemen hemen tüm şarkılarının müziğini ve sözlerini yazmıştır.",
+        "facts": [
+          "sekiz yıl boyunca Kino, yedi stüdyo albümüne yayılan doksandan fazla şarkı yayımladı.",
+          "Viktor Tsoi 1990'da bir araba kazasında hayatını kaybetti."
+        ]
+      }
+    },
+    {
+      "id": "585a7905-3f61-4aa9-8b8b-a87138575d3b",
+      "slug": "deante-hitchcock-d6e8cfce",
+      "title": "Deante' Hitchcock",
+      "name": "Deante' Hitchcock",
+      "source_url": "https://en.wikipedia.org/wiki/Deante'_Hitchcock",
+      "extract": "Deante' Van Hitchcock, is an American rapper from Riverdale, Georgia. He initially gained recognition as a rapper following the releases of three mixtapes: 19 Summers (2012), Wishful Thinking (2015) and Good (2016). He received widespread attention on the internet in 2016 after a weekly series of freestyles called New Atlanta Tuesday's. In 2017, he signed to ByStorm and RCA Records. His debut album Better was released on May 13, 2020.",
+      "en": {
+        "kicker": "american rapper · riverdale, georgia",
+        "who": "Deante' Van Hitchcock is an american rapper from Riverdale, Georgia. he initially gained recognition as a rapper following the releases of three mixtapes.",
+        "facts": [
+          "his debut album Better was released on May 13, 2020.",
+          "in 2017, he signed to ByStorm and RCA Records."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper · riverdale, georgia",
+        "who": "Deante' Van Hitchcock ist ein amerikanischer rapper aus Riverdale, Georgia. er wurde zunächst durch drei mixtapes bekannt, darunter 19 Summers, Wishful Thinking und Good.",
+        "facts": [
+          "sein debütalbum Better wurde am 13. mai 2020 veröffentlicht.",
+          "2017 unterzeichnete er bei ByStorm und RCA Records."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi · riverdale, georgia",
+        "who": "Deante' Van Hitchcock, Georgia eyaletinin Riverdale kentinden bir amerikalı rapçidir. ilk olarak 19 Summers, Wishful Thinking ve Good adlı üç mikstapin ardından tanındı.",
+        "facts": [
+          "debut albümü Better, 13 mayıs 2020'de yayımlandı.",
+          "2017'de ByStorm ve RCA Records ile anlaşma imzaladı."
+        ]
+      }
+    },
+    {
+      "id": "e85a0298-160d-45ea-8bc1-3c2940001f2c",
+      "slug": "tank-and-the-bangas-the-last-balloon-tour-c2f10adf",
+      "title": "Tank and The Bangas - The Last Balloon Tour",
+      "name": "Tank and the Bangas",
+      "source_url": "https://en.wikipedia.org/wiki/Tank_and_the_Bangas",
+      "extract": "Tank and the Bangas is an American musical group based in New Orleans, Louisiana. The band won the 2017 NPR Tiny Desk Contest and in November 2019, they were nominated in the Best New Artist category for the 2020 Grammy Awards. They have released three studio albums, Thinktank (2013), Green Balloon (2019), and Red Balloon (2022). In 2025, they won their first Grammy for the 2024 album, The Heart, The Mind, The Soul for Best Spoken Word Poetry Album.",
+      "en": {
+        "kicker": "american musical group · new orleans, louisiana",
+        "who": "Tank and the Bangas is an american musical group based in New Orleans, Louisiana. they have released three studio albums, Thinktank, Green Balloon and Red Balloon.",
+        "facts": [
+          "in 2025, they won their first Grammy for the 2024 album The Heart, The Mind, The Soul for Best Spoken Word Poetry Album.",
+          "the band won the 2017 NPR Tiny Desk Contest."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische musikgruppe · new orleans, louisiana",
+        "who": "Tank and the Bangas ist eine amerikanische musikgruppe mit sitz in New Orleans, Louisiana. die band hat drei studioalben veröffentlicht, darunter Thinktank, Green Balloon und Red Balloon.",
+        "facts": [
+          "im jahr 2025 gewann die band ihren ersten Grammy für das 2024 erschienene album The Heart, The Mind, The Soul in der kategorie Best Spoken Word Poetry Album.",
+          "die band gewann 2017 den NPR Tiny Desk Contest."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı müzik grubu · new orleans, louisiana",
+        "who": "Tank and the Bangas, Louisiana eyaletinin New Orleans kentinde merkezli bir amerikalı müzik grubudur. grup üç stüdyo albümü yayımladı: Thinktank, Green Balloon ve Red Balloon.",
+        "facts": [
+          "2025'te grup, 2024 albümü The Heart, The Mind, The Soul ile En İyi Sözlü Şiir Albümü dalında ilk Grammy'sini kazandı.",
+          "grup 2017 NPR Tiny Desk Contest'i kazandı."
+        ]
+      }
+    }
+  ]
+}

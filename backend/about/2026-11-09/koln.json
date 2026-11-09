@@ -1,0 +1,38 @@
+{
+  "city": "koln",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "9e417876-b526-4ecd-bf43-e240f9120911",
+      "slug": "lauren-sanderson-come-say-sum-tour-eu-uk-2027-d9096ae5",
+      "title": "Lauren Sanderson - Come Say Sum Tour EU/UK 2027",
+      "name": "Lauren Sanderson",
+      "source_url": "https://en.wikipedia.org/wiki/Lauren_Sanderson",
+      "extract": "Lauren Sanderson is an American singer and songwriter originally from Fort Wayne, Indiana, currently based in Nashville. Her music blends influences from pop, R&B and hip hop, and through it she aims to empower her fans and be \"the voice for people who may not be able to speak\".",
+      "en": {
+        "kicker": "american singer and songwriter · nashville",
+        "who": "Lauren Sanderson is an american singer and songwriter originally from Fort Wayne, Indiana, currently based in Nashville. Her music blends influences from pop, r&b and hip hop, and through it she aims to empower her fans.",
+        "facts": [
+          "her music blends influences from pop, r&b and hip hop.",
+          "through it she aims to empower her fans and be \"the voice for people who may not be able to speak\"."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische sängerin und songwriterin · nashville",
+        "who": "Lauren Sanderson ist eine amerikanische sängerin und songwriterin, ursprünglich aus Fort Wayne, Indiana, und heute in Nashville ansässig. ihre musik verbindet einflüsse aus pop, r&b und hip hop, und mit ihr möchte sie ihre fans stärken.",
+        "facts": [
+          "ihre musik verbindet einflüsse aus pop, r&b und hip hop.",
+          "mit ihrer musik will sie ihre fans stärken und „die stimme für menschen sein, die vielleicht nicht sprechen können“."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı ve söz yazarı · nashville",
+        "who": "Lauren Sanderson, aslen Fort Wayne, Indiana'lı, şu anda Nashville'de yaşayan Amerikalı bir şarkıcı ve söz yazarıdır. müziği pop, r&b ve hip hop'tan etkileri harmanlıyor ve bu müzik aracılığıyla hayranlarını güçlendirmeyi amaçlıyor.",
+        "facts": [
+          "müziği pop, r&b ve hip hop'tan etkileri harmanlıyor.",
+          "bu müzik aracılığıyla hayranlarını güçlendirmeyi ve “konuşamayan insanlar için ses olmayı” amaçlıyor."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "city": "los-angeles",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "992f7960-fe54-4829-819c-b3d27e6b2e6a",
+      "slug": "keenan-te-the-afterthought-tour-w-frankie-venter-ee0e0a1e",
+      "title": "Keenan Te: The Afterthought Tour w/ Frankie Venter",
+      "name": "Keenan Te",
+      "source_url": "https://en.wikipedia.org/wiki/Keenan_Te",
+      "extract": "Keenan Te is an Australian singer-songwriter of Vietnamese and Cambodian heritage. He is known for piano-driven ballads and songs that gained popularity through TikTok.",
+      "en": {
+        "kicker": "australian singer-songwriter",
+        "who": "Keenan Te is an australian singer-songwriter of vietnamese and cambodian heritage. he is known for piano-driven ballads and songs that gained popularity through TikTok.",
+        "facts": [
+          "Keenan Te is an australian singer-songwriter of vietnamese and cambodian heritage.",
+          "he is known for piano-driven ballads and songs that gained popularity through TikTok."
+        ]
+      },
+      "de": {
+        "kicker": "australischer singer-songwriter",
+        "who": "Keenan Te ist ein australischer singer-songwriter mit vietnamesischer und kambodschanischer herkunft. er ist bekannt für klavierbetonte balladen und songs, die über TikTok an popularität gewannen.",
+        "facts": [
+          "Keenan Te ist ein australischer singer-songwriter mit vietnamesischer und kambodschanischer herkunft.",
+          "er ist bekannt für klavierbetonte balladen und songs, die über TikTok an popularität gewannen."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı şarkıcı ve söz yazarı",
+        "who": "Keenan Te, vietnam ve kamboçya kökenli bir avustralyalı şarkıcı ve söz yazarıdır. piyano ağırlıklı baladları ve TikTok üzerinden popülerlik kazanan şarkılarıyla tanınır.",
+        "facts": [
+          "Keenan Te, vietnam ve kamboçya kökenli bir avustralyalı şarkıcı ve söz yazarıdır.",
+          "piyano ağırlıklı baladları ve TikTok üzerinden popülerlik kazanan şarkılarıyla tanınır."
+        ]
+      }
+    },
+    {
+      "id": "f0025b80-d2f7-42a3-9668-83e1ed51594b",
+      "slug": "sid-sriram-72e948cd",
+      "title": "Sid Sriram",
+      "name": "Sid Sriram",
+      "source_url": "https://en.wikipedia.org/wiki/Sid_Sriram",
+      "extract": "Sidharth Sriram known as Sid Sriram is an Indian Carnatic musician, music producer, playback singer. He is an R&B songwriter and has been working in the Tamil, Telugu, Kannada, Malayalam, Hindi, Marathi and English music industry. He regularly collaborates with his sister Pallavi Sriram, a Bharatanatyam dancer, and music director.",
+      "en": {
+        "kicker": "indian carnatic musician",
+        "who": "Sidharth Sriram, known as Sid Sriram, is an indian carnatic musician, music producer, playback singer. he is an r&b songwriter and has been working in the tamil, telugu, kannada, malayalam, hindi, marathi and english music industry. he regularly collaborates with his sister Pallavi Sriram, a bharatanatyam dancer, and music director.",
+        "facts": [
+          "he is an r&b songwriter and has been working in the tamil, telugu, kannada, malayalam, hindi, marathi and english music industry.",
+          "he regularly collaborates with his sister Pallavi Sriram, a bharatanatyam dancer, and music director."
+        ]
+      },
+      "de": {
+        "kicker": "indischer carnatic-musiker",
+        "who": "Sidharth Sriram, bekannt als Sid Sriram, ist ein indischer carnatic-musiker, musikproduzent und playback-sänger. er ist r&b-songwriter und arbeitet in der tamilischen, telugu-, kannada-, malayalam-, hindi-, marathi- und englischen musikindustrie. er arbeitet regelmäßig mit seiner schwester Pallavi Sriram zusammen, einer bharatanatyam-tänzerin und musikdirektorin.",
+        "facts": [
+          "er ist r&b-songwriter und arbeitet in der tamilischen, telugu-, kannada-, malayalam-, hindi-, marathi- und englischen musikindustrie.",
+          "er arbeitet regelmäßig mit seiner schwester Pallavi Sriram zusammen, einer bharatanatyam-tänzerin und musikdirektorin."
+        ]
+      },
+      "tr": {
+        "kicker": "hintli karnatik müzisyen",
+        "who": "Sidharth Sriram, Sid Sriram adıyla tanınan, hintli bir karnatik müzisyen, müzik yapımcısı ve playback şarkıcısıdır. r&b söz yazarıdır ve tamil, telugu, kannada, malayalam, hintçe, marathi ve ingilizce müzik endüstrisinde çalışmaktadır. kız kardeşi Pallavi Sriram, bir bharatanatyam dansçısı ve müzik yönetmeni ile düzenli olarak birlikte çalışır.",
+        "facts": [
+          "r&b söz yazarıdır ve tamil, telugu, kannada, malayalam, hintçe, marathi ve ingilizce müzik endüstrisinde çalışmaktadır.",
+          "kız kardeşi Pallavi Sriram, bir bharatanatyam dansçısı ve müzik yönetmeni ile düzenli olarak birlikte çalışır."
+        ]
+      }
+    },
+    {
+      "id": "4d1da633-98ee-46fe-83b7-ff6ce884c680",
+      "slug": "olafur-arnalds-fbb48e58",
+      "title": "Ólafur Arnalds",
+      "name": "Ólafur Arnalds",
+      "source_url": "https://en.wikipedia.org/wiki/%C3%93lafur_Arnalds",
+      "extract": "Ólafur Arnalds is an Icelandic multi-instrumentalist and producer from Mosfellsbær, Iceland. He mixes strings and piano with loops and beats, a sound ranging from ambient/electronic to atmospheric pop. He is also the former drummer for hardcore punk and metal bands Fighting Shit, Celestine, and others.",
+      "en": {
+        "kicker": "icelandic multi-instrumentalist · mosfellsbær, iceland",
+        "who": "Ólafur Arnalds is an icelandic multi-instrumentalist and producer from mosfellsbær, iceland. he mixes strings and piano with loops and beats, a sound ranging from ambient/electronic to atmospheric pop.",
+        "facts": [
+          "he mixes strings and piano with loops and beats, a sound ranging from ambient/electronic to atmospheric pop.",
+          "he is also the former drummer for hardcore punk and metal bands Fighting Shit, Celestine, and others."
+        ]
+      },
+      "de": {
+        "kicker": "isländischer multi-instrumentalist · mosfellsbær, island",
+        "who": "Ólafur Arnalds ist ein isländischer multi-instrumentalist und produzent aus mosfellsbær, island. er verbindet streicher und klavier mit loops und beats, ein klang, der von ambient/elektronisch bis zu atmosphärischem pop reicht.",
+        "facts": [
+          "er verbindet streicher und klavier mit loops und beats, ein klang, der von ambient/elektronisch bis zu atmosphärischem pop reicht.",
+          "er war zudem früher schlagzeuger für die hardcore-punk- und metal-bands Fighting Shit, Celestine und andere."
+        ]
+      },
+      "tr": {
+        "kicker": "izlandalı çok enstrümanlı müzisyen · mosfellsbær, izlanda",
+        "who": "Ólafur Arnalds, izlanda'nın mosfellsbær kentinden çok enstrümanlı bir müzisyen ve yapımcıdır. yaylı çalgıları ve piyanoyu döngülerle ve vuruşlarla birleştirir; bu ses ambient/elektronikten atmosferik popa uzanır.",
+        "facts": [
+          "yaylı çalgıları ve piyanoyu döngülerle ve vuruşlarla birleştirir, bu ses ambient/elektronikten atmosferik popa uzanır.",
+          "ayrıca hardcore punk ve metal gruplarında eski davulcusudur: Fighting Shit, Celestine ve diğerleri."
+        ]
+      }
+    },
+    {
+      "id": "daebfd8c-28fd-41a4-bdb7-f2ea67250bdc",
+      "slug": "pupsies-6c1a51ce",
+      "title": "pupsies",
+      "name": "Pupsies",
+      "source_url": "https://en.wikipedia.org/wiki/Pupsies",
+      "extract": "Cindy Kamgaing, known professionally as Pupsies, is an American singer. She became known for her song \"Misery\" in 2026.",
+      "en": {
+        "kicker": "american singer · 2026",
+        "who": "Cindy Kamgaing, known professionally as Pupsies, is an american singer. she became known for her song \"Misery\" in 2026.",
+        "facts": [
+          "Cindy Kamgaing, known professionally as Pupsies, is an american singer.",
+          "she became known for her song \"Misery\" in 2026."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische sängerin · 2026",
+        "who": "Cindy Kamgaing, die professionell als Pupsies bekannt ist, ist eine amerikanische sängerin. sie wurde 2026 durch ihren song \"Misery\" bekannt.",
+        "facts": [
+          "Cindy Kamgaing, die professionell als Pupsies bekannt ist, ist eine amerikanische sängerin.",
+          "sie wurde 2026 durch ihren song \"Misery\" bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı · 2026",
+        "who": "Cindy Kamgaing, profesyonel olarak Pupsies adıyla tanınan amerikalı bir şarkıcıdır. 2026'da \"Misery\" şarkısıyla tanınmaya başladı.",
+        "facts": [
+          "Cindy Kamgaing, profesyonel olarak Pupsies adıyla tanınan amerikalı bir şarkıcıdır.",
+          "2026'da \"Misery\" şarkısıyla tanınmaya başladı."
+        ]
+      }
+    }
+  ]
+}

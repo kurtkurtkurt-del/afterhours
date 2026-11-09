@@ -1,0 +1,38 @@
+{
+ "city": "antwerpen",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "04f93038-84f4-44ca-aad0-b1b1b83ad521",
+   "slug": "agnes-obel-d2ede438",
+   "title": "Agnes Obel",
+   "name": "Agnes Obel",
+   "source_url": "https://en.wikipedia.org/wiki/Agnes_Obel",
+   "extract": "Agnes Caroline Thaarup Obel is a Danish singer, songwriter, and musician based in Berlin.",
+   "en": {
+    "kicker": "danish singer, songwriter, and musician · berlin",
+    "who": "Agnes Caroline Thaarup Obel is a danish singer, songwriter, and musician. The act is based in berlin.",
+    "facts": [
+     "Agnes Obel is a danish singer, songwriter, and musician.",
+     "Agnes Obel is based in berlin."
+    ]
+   },
+   "de": {
+    "kicker": "dänischer sänger, songwriter und musiker · berlin",
+    "who": "Agnes Caroline Thaarup Obel ist ein dänischer sänger, songwriter und musiker. Der act ist in berlin ansässig.",
+    "facts": [
+     "Agnes Obel ist ein dänischer sänger, songwriter und musiker.",
+     "Agnes Obel ist in berlin ansässig."
+    ]
+   },
+   "tr": {
+    "kicker": "danimarkalı şarkıcı, söz yazarı ve müzisyen · berlin",
+    "who": "Agnes Caroline Thaarup Obel danimarkalı bir şarkıcı, söz yazarı ve müzisyendir. Sanatçı berlin'de yerleşiktir.",
+    "facts": [
+     "Agnes Obel danimarkalı bir şarkıcı, söz yazarı ve müzisyendir.",
+     "Agnes Obel berlin'de yerleşiktir."
+    ]
+   }
+  }
+ ]
+}

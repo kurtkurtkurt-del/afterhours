@@ -1,0 +1,70 @@
+{
+ "city": "ankara",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "c29b248d-6944-4252-8b38-d77569028628",
+   "slug": "oi-va-voi-e95b3d80",
+   "title": "Oi Va Voi",
+   "name": "Oi Va Voi",
+   "source_url": "https://en.wikipedia.org/wiki/Oi_Va_Voi",
+   "extract": "Oi Va Voi are a British band formed in London, England in the year 2000. The band emerged from the UK world music crossover scene, enabling Jewish musicians to bring cultural styles into contemporary songwriting. The band blended their heritage with an emphasis on modern pop sensibilities reflecting their own individual interests in indie rock and alt-folk and the urban dance music of the clubs of London. The band takes its name from a Yiddish-derived exclamation popular in modern Hebrew meaning, approximately, \"Oh, my gosh!\".",
+   "en": {
+    "kicker": "british band · london, 2000",
+    "who": "Oi Va Voi are a british band formed in London, England, in 2000. the band blended their heritage with an emphasis on modern pop sensibilities, reflecting their own interests in indie rock and alt-folk and the urban dance music of the clubs of London.",
+    "facts": [
+     "the band emerged from the UK world music crossover scene, enabling jewish musicians to bring cultural styles into contemporary songwriting.",
+     "the band takes its name from a Yiddish-derived exclamation popular in modern Hebrew, meaning approximately “oh, my gosh”."
+    ]
+   },
+   "de": {
+    "kicker": "britische band · london, 2000",
+    "who": "Oi Va Voi sind eine britische band, die 2000 in London, England, gegründet wurde. die band entstand aus der britischen world-music-crossover-szene und gab jüdischen musikern die möglichkeit, kulturelle stile in zeitgenössische songs einzubringen. sie verband ihr erbe mit modernen pop-einflüssen sowie indie rock, alt-folk und der urbanen tanzmusik der londoner clubs.",
+    "facts": [
+     "der name der band stammt von einem aus dem jiddischen abgeleiteten ausruf, der im modernen hebräisch gebräuchlich ist und etwa „oh, mein gott“ bedeutet.",
+     "die band entstand aus der britischen world-music-crossover-szene, die jüdischen musikern erlaubte, kulturelle stile in zeitgenössische musik einzubringen."
+    ]
+   },
+   "tr": {
+    "kicker": "britanyalı grup · londra, 2000",
+    "who": "Oi Va Voi, 2000 yılında Londra, İngiltere'de kurulmuş bir britanyalı gruptur. grup, birleşik krallık'ın dünya müziği geçiş sahnesinden doğdu ve yahudi müzisyenlerin kültürel tarzlarını çağdaş şarkı yazarlığına taşımasını sağladı. grup, mirasını modern pop duyarlılığıyla harmanladı; indie rock, alt-folk ve Londra kulüplerinin kentsel dans müziğine olan ilgilerini yansıttı.",
+    "facts": [
+     "grup, adını modern ibranicede yaygın olan ve yaklaşık „oh, my gosh“ anlamına gelen yidişçe kökenli bir ünlemden alır.",
+     "grup, ingiliz dünya müziği sahnesinden doğarak çağdaş şarkı yazarlığına kültürel tarzlar kattı."
+    ]
+   }
+  },
+  {
+   "id": "22d79cd0-a9b0-490e-8c15-6a038f2e00ec",
+   "slug": "demet-akal-n-2a3615c8",
+   "title": "Demet Akalın",
+   "name": "Demet Akalın",
+   "source_url": "https://en.wikipedia.org/wiki/Demet_Akal%C4%B1n",
+   "extract": "Demet Akalın is a Turkish singer and former model. Due to the popular songs she has released since the middle of the 2000s, she has become a prominent figure in Turkish pop music.",
+   "en": {
+    "kicker": "turkish singer and former model",
+    "who": "Demet Akalın is a turkish singer and former model. her popular songs since the middle of the 2000s have made her a prominent figure in turkish pop music.",
+    "facts": [
+     "she has released popular songs since the middle of the 2000s.",
+     "she has become a prominent figure in turkish pop music."
+    ]
+   },
+   "de": {
+    "kicker": "türkische sängerin und ehemaliges model",
+    "who": "Demet Akalın ist eine türkische sängerin und ehemaliges model. ihre bekannten lieder seit der mitte der 2000er jahre haben sie zu einer prominenten figur der türkischen popmusik gemacht.",
+    "facts": [
+     "sie hat seit der mitte der 2000er jahre beliebte lieder veröffentlicht.",
+     "sie ist zu einer prominenten figur der türkischen popmusik geworden."
+    ]
+   },
+   "tr": {
+    "kicker": "türk şarkıcı ve eski manken",
+    "who": "Demet Akalın bir türk şarkıcı ve eski mankendir. 2000'lerin ortasından bu yana yayınladığı popüler şarkılar sayesinde türk pop müziğinde öne çıkan bir isim oldu.",
+    "facts": [
+     "2000'lerin ortasından bu yana popüler şarkılar yayınladı.",
+     "türk pop müziğinde öne çıkan bir isim haline geldi."
+    ]
+   }
+  }
+ ]
+}

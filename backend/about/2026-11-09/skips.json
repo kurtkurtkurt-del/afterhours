@@ -3264,6 +3264,186 @@
    "slug": "jacob-banks-uk-66cb3556",
    "city": "zurich",
    "why": "no page of that name (nearest: Jacob Banks)"
+  },
+  {
+   "id": "1da4932d-f1ba-48bb-bf53-7c0e1fc8e9e2",
+   "slug": "los-angeles-azules-3f4ac7f4",
+   "city": "ciudad-de-mexico",
+   "why": "extract is a single sentence with no year or place; too thin for kicker and two facts"
+  },
+  {
+   "id": "3e241834-ecaa-4d22-92c5-2c6b809bf445",
+   "slug": "black-milk-5baba128",
+   "city": "detroit",
+   "why": "extract is a single sentence giving only name and occupation; no second fact"
+  },
+  {
+   "id": "4540abfb-0d5e-4154-bed5-e1dfef25f60c",
+   "slug": "new-constellations-4375dc2c",
+   "city": "dallas",
+   "why": "extract is a single sentence giving only genre and home city"
+  },
+  {
+   "id": "ab30adaa-c953-4de5-a756-138d66d1c714",
+   "slug": "yung-gravy-the-joyrider-tour-bde45503",
+   "city": "boston",
+   "why": "extract is one sentence; too thin for who text and two facts"
+  },
+  {
+   "id": "d88e851b-25f1-4a0e-aa9d-6547a44796ca",
+   "slug": "the-rifles-646e4243",
+   "city": "birmingham",
+   "why": "extract is one sentence (genre and origin only); no second distinct fact"
+  },
+  {
+   "id": "496c1b7c-33b8-4304-b7f3-9bdff7549f6e",
+   "slug": "shyne-2622-lgnd-tour-ages-18-14ed7b1d",
+   "city": "chicago",
+   "why": "page is for a Belizean politician and former rapper, not established as the performing act"
+  },
+  {
+   "id": "04dfe86c-5010-4afe-a847-1bd733771777",
+   "slug": "amtrac-18-28837ea0",
+   "city": "denver",
+   "why": "extract is thin: one sentence giving name and roles"
+  },
+  {
+   "id": "82478042-0c2e-4dd5-8930-adfa911564e1",
+   "slug": "the-army-the-navy-51f60a82",
+   "city": "austin",
+   "why": "extract is one sentence (genre and two member names); too thin for two facts"
+  },
+  {
+   "id": "77f292bb-78c0-4b85-a662-98f69b8e9faf",
+   "slug": "ayta-sozeri-1f46b8d7",
+   "city": "istanbul",
+   "why": "extract is one sentence with no year, place or work"
+  },
+  {
+   "id": "2627b668-c0c3-4b34-a54a-07767c8a625b",
+   "slug": "ogun-sanl-soy-f6e4c780",
+   "city": "ankara",
+   "why": "extract is one sentence; cannot support two facts"
+  },
+  {
+   "id": "6ee38e46-18d0-4acf-a2af-6988470ceced",
+   "slug": "amtrac-7901ba1e",
+   "city": "vancouver",
+   "why": "extract is one sentence (DJ, producer, singer); too thin"
+  },
+  {
+   "id": "f19a25af-4ba6-4c62-9f75-fffd042fc21b",
+   "slug": "kino-all-ages-under-16-with-adult-a2d85042",
+   "city": "new-york",
+   "why": "likely a tribute show: band broke up after Viktor Tsoi died in 1990"
+  },
+  {
+   "id": "92cade94-f761-4fc7-882a-0c31933ca682",
+   "slug": "almost-monday-thank-god-it-s-almost-monday-a84cdeb8",
+   "city": "new-york",
+   "why": "extract is one sentence; not enough for two facts"
+  },
+  {
+   "id": "a4347da5-99b7-43bc-bfba-c6ffb1af87e8",
+   "slug": "kenyon-dixon-68dfbaed",
+   "city": "new-york",
+   "why": "extract is one sentence; not enough for two facts"
+  },
+  {
+   "id": "8df414c8-ac32-47be-94a1-baf2a4b49a26",
+   "slug": "saya-gray-7d6c2e1a",
+   "city": "new-york",
+   "why": "extract is thin; who text would repeat the facts"
+  },
+  {
+   "id": "4b97201a-c469-4af2-b2fd-64ba3463b831",
+   "slug": "the-army-the-navy-9afe04c4",
+   "city": "los-angeles",
+   "why": "extract is one sentence; no second distinct fact"
+  },
+  {
+   "id": "f616d0f7-c0ae-4911-96bf-8f1160fade05",
+   "slug": "finn-askew-d25e97d2",
+   "city": "los-angeles",
+   "why": "extract is one sentence with no second fact"
+  },
+  {
+   "id": "d8832e06-86b2-4769-a52c-b1a7062a2a21",
+   "slug": "michael-jackson-legacy-ced48d99",
+   "city": "montreal",
+   "why": "title Legacy for an act who died in 2009 reads as a tribute show"
+  },
+  {
+   "id": "96921c6d-3665-40c3-88ac-c33479e52710",
+   "slug": "boy-golden-1526c982",
+   "city": "montreal",
+   "why": "extract is one sentence (stage name, genre, city)"
+  },
+  {
+   "id": "49b1655f-6b3c-413a-b488-70bf6bcf6c95",
+   "slug": "whitmer-thomas-40571adb",
+   "city": "san-francisco",
+   "why": "extract is one sentence; no second stated fact"
+  },
+  {
+   "id": "bab8e8f7-bda3-47a9-ae06-cc9af74ace40",
+   "slug": "other-lives-04e1532b",
+   "city": "san-francisco",
+   "why": "extract is one sentence; no second stated fact"
+  },
+  {
+   "id": "8c79f435-271d-4fa8-b97e-1d902b6c4c08",
+   "slug": "blake-whiten-0254dac9",
+   "city": "nashville",
+   "why": "extract too thin: identity and album sentences only"
+  },
+  {
+   "id": "7eb1ba06-ad11-4ed9-8cab-515cb3996efa",
+   "slug": "deyyess-5fa7fad4",
+   "city": "manchester",
+   "why": "extract too thin: identity and one line about singles and EPs"
+  },
+  {
+   "id": "8477e0d8-3ab6-4666-b26d-f8a3eaded7ff",
+   "slug": "gregory-porter-dc-jazz-festival-benefit-concert-db001fed",
+   "city": "washington",
+   "why": "extract is two sentences; too thin for who and two distinct facts"
+  },
+  {
+   "id": "b5d377bb-f3fe-4687-86c8-bb6360f163e3",
+   "slug": "cheap-trick-all-washed-up-tour-07fe0086",
+   "city": "detroit",
+   "why": "check: de and tr facts[1] omit a clause that en facts[1] states; the facts do not match across languages"
+  },
+  {
+   "id": "402299c9-7971-4a98-9903-226bd16b2078",
+   "slug": "cut-copy-235fc689",
+   "city": "chicago",
+   "why": "check: de facts[1] lowercases the proper names tim hoey, ben browning and mitchell scott"
+  },
+  {
+   "id": "51242d6c-6d52-4ffd-8680-c5936cc8338e",
+   "slug": "karsu-4dec0804",
+   "city": "ankara",
+   "why": "check: de and tr who texts lowercase the proper name karsu"
+  },
+  {
+   "id": "55db08e6-647f-4740-9e06-6a77e180d6cb",
+   "slug": "jamie-macdonald-left-it-in-the-river-tour-ff4848cb",
+   "city": "new-york",
+   "why": "check: the Dove Award fact is not in the stored 700-character extract"
+  },
+  {
+   "id": "fcab9fd9-b5a4-44c6-859e-60cd1f1da240",
+   "slug": "die-spitz-3de80cac",
+   "city": "washington",
+   "why": "check: de who gives every member a feminine form that the extract does not state"
+  },
+  {
+   "id": "4664df2a-70c0-4331-9471-8de89be51a7b",
+   "slug": "greg-freeman-65a13834",
+   "city": "washington",
+   "why": "check: surname freeman lowercased in en and de who text; names must stay capitalised"
   }
  ]
 }

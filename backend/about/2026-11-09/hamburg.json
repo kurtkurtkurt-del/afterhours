@@ -1,0 +1,38 @@
+{
+  "city": "hamburg",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "56b1bed1-cd5e-42a7-8ff0-43729c67605a",
+      "slug": "sim-hooman-after-all-world-tour-a4672b0b",
+      "title": "SiM - Hooman After All World Tour",
+      "name": "SiM",
+      "source_url": "https://en.wikipedia.org/wiki/SiM",
+      "extract": "SiM are a Japanese metalcore band from Kanagawa Prefecture formed in 2004. The band currently consists of MAH (vocals), SHOW-HATE (guitar), SIN (bass), and GODRi (drums). Their musical style mixes nu metal, alternative, hip-hop, ska, reggae, dub, and punk with rebellious lyrics and songs with attitude.",
+      "en": {
+        "kicker": "japanese metalcore band · kanagawa prefecture, 2004",
+        "who": "SiM are a japanese metalcore band from Kanagawa Prefecture, formed in 2004. the band currently consists of MAH (vocals), SHOW-HATE (guitar), SIN (bass), and GODRi (drums). their musical style mixes nu metal, alternative, hip-hop, ska, reggae, dub, and punk with rebellious lyrics and songs with attitude.",
+        "facts": [
+          "the band currently consists of MAH (vocals), SHOW-HATE (guitar), SIN (bass), and GODRi (drums).",
+          "their musical style mixes nu metal, alternative, hip-hop, ska, reggae, dub, and punk with rebellious lyrics and songs with attitude."
+        ]
+      },
+      "de": {
+        "kicker": "japanische metalcore-band · kanagawa prefecture, 2004",
+        "who": "SiM sind eine japanische metalcore-band aus der präfektur Kanagawa, gegründet 2004. die band besteht derzeit aus MAH (gesang), SHOW-HATE (gitarre), SIN (bass) und GODRi (schlagzeug). ihr musikstil mischt nu metal, alternative, hip-hop, ska, reggae, dub und punk mit rebellischen texten und songs mit attitüde.",
+        "facts": [
+          "die band besteht derzeit aus MAH (gesang), SHOW-HATE (gitarre), SIN (bass) und GODRi (schlagzeug).",
+          "ihr musikstil mischt nu metal, alternative, hip-hop, ska, reggae, dub und punk mit rebellischen texten und songs mit attitüde."
+        ]
+      },
+      "tr": {
+        "kicker": "japon metalcore grubu · kanagawa prefecture, 2004",
+        "who": "SiM, Kanagawa Prefecture'dan bir japon metalcore grubudur ve 2004 yılında kurulmuştur. grup şu anda MAH (vokal), SHOW-HATE (gitar), SIN (bas) ve GODRi (davul) üyelerinden oluşmaktadır. müzik tarzları nu metal, alternatif, hip-hop, ska, reggae, dub ve punk ile asi sözleri ve tavırlı şarkıları harmanlamaktadır.",
+        "facts": [
+          "grup şu anda MAH (vokal), SHOW-HATE (gitar), SIN (bas) ve GODRi (davul) üyelerinden oluşmaktadır.",
+          "müzik tarzları nu metal, alternatif, hip-hop, ska, reggae, dub ve punk ile asi sözleri ve tavırlı şarkıları harmanlamaktadır."
+        ]
+      }
+    }
+  ]
+}

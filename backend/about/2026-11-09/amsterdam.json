@@ -1,0 +1,70 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "a3c0f618-ab82-4212-994b-aeb7a695ec7c",
+      "slug": "baby-lasagna-54396a1f",
+      "title": "Baby Lasagna",
+      "name": "Baby Lasagna",
+      "source_url": "https://en.wikipedia.org/wiki/Baby_Lasagna",
+      "extract": "Marko Purišić, known professionally as Baby Lasagna, is a Croatian singer-songwriter and music producer, best known as a founding member of Manntra. He represented Croatia in the Eurovision Song Contest 2024 with the song \"Rim Tim Tagi Dim\", where he finished in second place overall with 547 points and first in the public vote, becoming Croatia's highest-scoring Eurovision entrant since its debut as an independent country in 1993.",
+      "en": {
+        "kicker": "croatian singer-songwriter · croatia, 2024",
+        "who": "Marko Purišić, known professionally as Baby Lasagna, is a Croatian singer-songwriter and music producer. He is best known as a founding member of Manntra.",
+        "facts": [
+          "He represented Croatia in the Eurovision Song Contest 2024 with the song \"Rim Tim Tagi Dim\", where he finished in second place overall with 547 points.",
+          "He finished first in the public vote, becoming Croatia's highest-scoring Eurovision entrant since its debut as an independent country in 1993."
+        ]
+      },
+      "de": {
+        "kicker": "kroatischer singer-songwriter · kroatien, 2024",
+        "who": "Marko Purišić, unter dem künstlernamen Baby Lasagna bekannt, ist ein kroatischer singer-songwriter und musikproduzent. er ist vor allem als gründungsmitglied von Manntra bekannt.",
+        "facts": [
+          "er vertrat kroatien beim Eurovision Song Contest 2024 mit dem lied \"Rim Tim Tagi Dim\" und belegte insgesamt den zweiten platz mit 547 punkten.",
+          "er belegte beim publikumsvoting den ersten platz und erzielte damit die höchste punktzahl eines kroatischen teilnehmers seit dem debüt als unabhängiger staat 1993."
+        ]
+      },
+      "tr": {
+        "kicker": "hırvat şarkıcı-söz yazarı · hırvatistan, 2024",
+        "who": "Marko Purišić, sahne adıyla Baby Lasagna, bir hırvat şarkıcı-söz yazarı ve müzik yapımcısıdır. en çok Manntra'nın kurucu üyelerinden biri olarak tanınır.",
+        "facts": [
+          "hırvatistan'ı 2024 Eurovision Şarkı Yarışması'nda \"Rim Tim Tagi Dim\" şarkısıyla temsil etti ve toplamda 547 puanla ikinci oldu.",
+          "halk oylamasında birinci oldu ve 1993'te bağımsız bir ülke olarak debutundan bu yana hırvatistan'ın en yüksek puanlı eurovision katılımcısı oldu."
+        ]
+      }
+    },
+    {
+      "id": "6b6ec3d0-581d-44b2-bf48-ce15a3214ed7",
+      "slug": "bongeziwe-mabandla-da7229ed",
+      "title": "Bongeziwe Mabandla",
+      "name": "Bongeziwe Mabandla",
+      "source_url": "https://en.wikipedia.org/wiki/Bongeziwe_Mabandla",
+      "extract": "Bongeziwe Mabandla is a South African musician based in Johannesburg, predominantly playing folk music with lyrics in isiXhosa, accompanied by a guitar.",
+      "en": {
+        "kicker": "south african musician · johannesburg",
+        "who": "Bongeziwe Mabandla is a South African musician based in Johannesburg. He predominantly plays folk music with lyrics in isiXhosa, accompanied by a guitar.",
+        "facts": [
+          "He is based in Johannesburg and predominantly plays folk music with lyrics in isiXhosa.",
+          "His folk music is accompanied by a guitar."
+        ]
+      },
+      "de": {
+        "kicker": "südafrikanischer musiker · johannesburg",
+        "who": "Bongeziwe Mabandla ist ein südafrikanischer musiker mit sitz in johannesburg. er spielt überwiegend folkmusik mit texten auf isiXhosa, begleitet von einer gitarre.",
+        "facts": [
+          "er lebt in johannesburg und spielt überwiegend folkmusik mit texten auf isiXhosa.",
+          "seine folkmusik wird von einer gitarre begleitet."
+        ]
+      },
+      "tr": {
+        "kicker": "güney afrikalı müzisyen · johannesburg",
+        "who": "Bongeziwe Mabandla, johannesburg merkezli bir güney afrikalı müzisyendir. ağırlıklı olarak isiXhosa dilinde sözlerle folk müzik çalar ve bu müzik bir gitarla eşlik edilerek icra edilir.",
+        "facts": [
+          "johannesburg'da yaşar ve ağırlıklı olarak isiXhosa dilinde sözlerle folk müzik çalar.",
+          "folk müziği bir gitarla eşlik edilerek icra edilir."
+        ]
+      }
+    }
+  ]
+}

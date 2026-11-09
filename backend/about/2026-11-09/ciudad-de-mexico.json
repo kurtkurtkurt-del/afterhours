@@ -1,0 +1,38 @@
+{
+  "city": "ciudad-de-mexico",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "29ba16b5-de26-49e8-9417-c70e0e3cd2b2",
+      "slug": "morat-c53efe6b",
+      "title": "Morat",
+      "name": "Morat",
+      "source_url": "https://en.wikipedia.org/wiki/Morat_(band)",
+      "extract": "Morat is a Colombian Latin pop rock band formed in the country's capital city, Bogotá. The band is made up of Juan Pablo Isaza, Juan Pablo Villamil, and the brothers Simón Vargas and Martín Vargas. Drummer Alejandro Posada was also a founding member of the band, but left in 2016 and was replaced by Martín Vargas.",
+      "en": {
+        "kicker": "colombian latin pop rock band · bogotá",
+        "who": "morat is a colombian latin pop rock band formed in the country's capital city, bogotá. the band is made up of juan pablo isaza, juan pablo villamil, and the brothers simón vargas and martín vargas.",
+        "facts": [
+          "morat is a colombian latin pop rock band formed in the country's capital city, bogotá.",
+          "drummer alejandro posada was also a founding member of the band, but left in 2016 and was replaced by martín vargas."
+        ]
+      },
+      "de": {
+        "kicker": "kolumbianische latin-pop-rock-band · bogotá",
+        "who": "morat ist eine kolumbianische latin-pop-rock-band, die in der hauptstadt des landes, bogotá, gegründet wurde. zur band gehören juan pablo isaza, juan pablo villamil sowie die brüder simón vargas und martín vargas.",
+        "facts": [
+          "morat ist eine kolumbianische latin-pop-rock-band, die in der hauptstadt des landes, bogotá, gegründet wurde.",
+          "schlagzeuger alejandro posada war ebenfalls gründungsmitglied der band, verließ sie aber 2016 und wurde durch martín vargas ersetzt."
+        ]
+      },
+      "tr": {
+        "kicker": "kolombiyalı latin pop rock grubu · bogotá",
+        "who": "morat, ülkenin başkenti bogotá'da kurulmuş kolombiyalı bir latin pop rock grubudur. grubun üyeleri juan pablo isaza, juan pablo villamil ve kardeşler simón vargas ile martín vargas'tır.",
+        "facts": [
+          "morat, ülkenin başkenti bogotá'da kurulmuş kolombiyalı bir latin pop rock grubudur.",
+          "davulcu alejandro posada da grubun kurucu üyelerindendi, ancak 2016'da ayrıldı ve yerine martín vargas geçti."
+        ]
+      }
+    }
+  ]
+}

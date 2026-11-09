@@ -1,0 +1,134 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "5d1c1691-2f3f-42ae-b321-b15b8f1f3c7f",
+      "slug": "yal-n-bir-buyulu-gece-6b0d38a2",
+      "title": "Yalın - Bir Büyülü Gece",
+      "name": "Yalın",
+      "source_url": "https://en.wikipedia.org/wiki/Yal%C4%B1n",
+      "extract": "Hüseyin Yalın, better known by his surname Yalın, is a Turkish pop singer and songwriter. He achieved success with the song \"Zalim\" in 2004.",
+      "en": {
+        "kicker": "turkish pop singer and songwriter · 2004",
+        "who": "Hüseyin Yalın, better known by his surname Yalın, is a turkish pop singer and songwriter. he achieved success with the song \"Zalim\" in 2004.",
+        "facts": [
+          "he achieved success with the song \"Zalim\" in 2004.",
+          "Hüseyin Yalın is better known by his surname Yalın."
+        ]
+      },
+      "de": {
+        "kicker": "türkischer popsänger und songwriter · 2004",
+        "who": "Hüseyin Yalın, besser bekannt unter seinem nachnamen Yalın, ist ein türkischer popsänger und songwriter. er erzielte erfolg mit dem song \"Zalim\" im jahr 2004.",
+        "facts": [
+          "er erzielte erfolg mit dem song \"Zalim\" im jahr 2004.",
+          "Hüseyin Yalın ist besser unter seinem nachnamen Yalın bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "türk pop şarkıcısı ve söz yazarı · 2004",
+        "who": "Hüseyin Yalın, soyadı Yalın ile daha iyi tanınan bir türk pop şarkıcısı ve söz yazarıdır. 2004'te \"Zalim\" şarkısıyla başarı kazandı.",
+        "facts": [
+          "2004'te \"Zalim\" şarkısıyla başarı kazandı.",
+          "Hüseyin Yalın, soyadı Yalın ile daha iyi tanınır."
+        ]
+      }
+    },
+    {
+      "id": "ed680c7a-0148-4ceb-a333-63b227c7a12f",
+      "slug": "alt-n-gun-130842f2",
+      "title": "Altın Gün",
+      "name": "Altın Gün",
+      "source_url": "https://en.wikipedia.org/wiki/Alt%C4%B1n_G%C3%BCn",
+      "extract": "Altın Gün is a Dutch psychedelic rock band from Amsterdam, formed in 2016. Founded by bassist Jasper Verhulst, the band's vocalist Erdinç Ecevit Yıldız is of Turkish ethnicity while the other four members are Dutch.",
+      "en": {
+        "kicker": "dutch psychedelic rock band · amsterdam, 2016",
+        "who": "Altın Gün is a dutch psychedelic rock band from Amsterdam, formed in 2016. it was founded by bassist Jasper Verhulst. its vocalist, Erdinç Ecevit Yıldız, is of turkish ethnicity, while the other four members are dutch.",
+        "facts": [
+          "Altın Gün is a dutch psychedelic rock band from Amsterdam, formed in 2016.",
+          "the band's vocalist is of turkish ethnicity, while the other four members are dutch."
+        ]
+      },
+      "de": {
+        "kicker": "niederländische psychedelic-rock-band · amsterdam, 2016",
+        "who": "Altın Gün ist eine niederländische psychedelic-rock-band aus Amsterdam, gegründet 2016. sie wurde von bassist Jasper Verhulst gegründet. der vokalist Erdinç Ecevit Yıldız ist türkischer abstammung, während die anderen vier mitglieder niederländisch sind.",
+        "facts": [
+          "Altın Gün ist eine niederländische psychedelic-rock-band aus Amsterdam, gegründet 2016.",
+          "der vokalist der band ist türkischer abstammung, während die anderen vier mitglieder niederländisch sind."
+        ]
+      },
+      "tr": {
+        "kicker": "hollandalı psikedelik rock grubu · amsterdam, 2016",
+        "who": "Altın Gün, 2016 yılında Amsterdam'da kurulan bir hollandalı psikedelik rock grubudur. grup, bas gitarist Jasper Verhulst tarafından kuruldu. grubun vokalisti Erdinç Ecevit Yıldız türk kökenlidir, diğer dört üye ise hollandalıdır.",
+        "facts": [
+          "Altın Gün, 2016 yılında Amsterdam'da kurulan bir hollandalı psikedelik rock grubudur.",
+          "grubun vokalisti türk kökenlidir, diğer dört üye ise hollandalıdır."
+        ]
+      }
+    },
+    {
+      "id": "fcd817ee-498f-4026-a892-272135d4e17a",
+      "slug": "ask-n-nur-yengi-21008a42",
+      "title": "Aşkın Nur Yengi",
+      "name": "Aşkın Nur Yengi",
+      "source_url": "https://en.wikipedia.org/wiki/A%C5%9Fk%C4%B1n_Nur_Yengi",
+      "extract": "Aşkın Nur Yengi is a Turkish singer, composer, and actress.\nShe started working as a backing vocalist for Sezen Aksu and with Aksu's help, released her first studio album in 1990. With her debut album Sevgiliye in 1990, she became one of the most successful Turkish singers of the '90s.",
+      "en": {
+        "kicker": "turkish singer, composer and actress · 1990",
+        "who": "Aşkın Nur Yengi is a turkish singer, composer and actress. she started working as a backing vocalist for Sezen Aksu, and with Aksu's help released her first studio album in 1990. with her debut album Sevgiliye in 1990, she became one of the most successful turkish singers of the '90s.",
+        "facts": [
+          "with her debut album Sevgiliye in 1990, she became one of the most successful turkish singers of the '90s.",
+          "she started working as a backing vocalist for Sezen Aksu."
+        ]
+      },
+      "de": {
+        "kicker": "türkische sängerin, komponistin und schauspielerin · 1990",
+        "who": "Aşkın Nur Yengi ist eine türkische sängerin, komponistin und schauspielerin. sie begann als backgroundsängerin für Sezen Aksu zu arbeiten und veröffentlichte mit Aksus hilfe 1990 ihr erstes studioalbum. mit ihrem debütalbum Sevgiliye wurde sie 1990 zu einer der erfolgreichsten türkischen sängerinnen der neunziger jahre.",
+        "facts": [
+          "mit ihrem debütalbum Sevgiliye wurde sie 1990 zu einer der erfolgreichsten türkischen sängerinnen der neunziger jahre.",
+          "sie begann als backgroundsängerin für Sezen Aksu zu arbeiten."
+        ]
+      },
+      "tr": {
+        "kicker": "türk şarkıcı, besteci ve oyuncu · 1990",
+        "who": "Aşkın Nur Yengi bir türk şarkıcı, besteci ve oyuncudur. Sezen Aksu'ya arka vokalist olarak çalışmaya başladı, Aksu'nun yardımıyla ilk stüdyo albümünü 1990'da çıkardı. 1990'da çıkardığı debut albümü Sevgiliye ile 90'ların en başarılı türk şarkıcılarından biri oldu.",
+        "facts": [
+          "1990'da çıkardığı debut albümü Sevgiliye ile 90'ların en başarılı türk şarkıcılarından biri oldu.",
+          "Sezen Aksu'ya arka vokalist olarak çalışmaya başladı."
+        ]
+      }
+    },
+    {
+      "id": "e5576547-585a-45d2-8b73-e99b56405c5a",
+      "slug": "simge-82ececb2",
+      "title": "Simge",
+      "name": "Simge",
+      "source_url": "https://en.wikipedia.org/wiki/Simge_(singer)",
+      "extract": "Simge Sağın, known mononymously as Simge, is a Turkish singer. From early 2010s, she started to make Turkish pop songs, and with the release of her single \"Miş Miş\" in 2015 she became one of the most famous artists in Turkey.",
+      "en": {
+        "kicker": "turkish singer · 2015",
+        "who": "Simge Sağın, known mononymously as Simge, is a turkish singer. from early 2010s, she started to make turkish pop songs. with the release of her single \"Miş Miş\" in 2015, she became one of the most famous artists in Turkey.",
+        "facts": [
+          "with the release of her single \"Miş Miş\" in 2015 she became one of the most famous artists in Turkey.",
+          "from early 2010s, she started to make turkish pop songs."
+        ]
+      },
+      "de": {
+        "kicker": "türkische sängerin · 2015",
+        "who": "Simge Sağın, als Simge bekannt, ist eine türkische sängerin. ab anfang der 2010er jahre begann sie, türkische pop-songs zu machen. mit der veröffentlichung ihrer single \"Miş Miş\" im jahr 2015 wurde sie zu einer der bekanntesten künstlerinnen der Türkei.",
+        "facts": [
+          "mit der veröffentlichung ihrer single \"Miş Miş\" im jahr 2015 wurde sie zu einer der bekanntesten künstlerinnen der Türkei.",
+          "ab anfang der 2010er jahre begann sie, türkische pop-songs zu machen."
+        ]
+      },
+      "tr": {
+        "kicker": "türk şarkıcı · 2015",
+        "who": "Simge Sağın, tek adıyla Simge olarak bilinen bir türk şarkıcıdır. 2010'ların başından itibaren türk pop şarkıları yapmaya başladı. \"Miş Miş\" adlı single'ının 2015'te yayımlanmasıyla Türkiye'nin en ünlü sanatçılarından biri oldu.",
+        "facts": [
+          "\"Miş Miş\" adlı single'ının 2015'te yayımlanmasıyla Türkiye'nin en ünlü sanatçılarından biri oldu.",
+          "2010'ların başından itibaren türk pop şarkıları yapmaya başladı."
+        ]
+      }
+    }
+  ]
+}

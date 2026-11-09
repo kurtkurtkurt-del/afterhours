@@ -1,0 +1,38 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "e9ce4df6-6c73-4f7e-a232-2a72bb1f11c4",
+   "slug": "pretty-lights-soundship-space-bus-tour-12908e75",
+   "title": "Pretty Lights - Soundship Space Bus Tour",
+   "name": "Pretty Lights",
+   "source_url": "https://en.wikipedia.org/wiki/Pretty_Lights",
+   "extract": "Derek Vincent Smith, known by his stage name Pretty Lights, is an American electronic music producer. Pretty Lights was originally a music project consisting of Smith and Michal Menert, who left after the release of their first album and returned in 2023. Rick Rubin once described Pretty Lights as \"the face and voice of the new American electronic music scene\".",
+   "en": {
+    "kicker": "american electronic music producer",
+    "who": "Derek Vincent Smith, known by his stage name Pretty Lights, is an american electronic music producer. Pretty Lights was originally a music project consisting of Smith and Michal Menert, who left after the release of their first album and returned in 2023.",
+    "facts": [
+     "Pretty Lights was originally a music project consisting of Smith and Michal Menert, who left after the release of their first album and returned in 2023.",
+     "Rick Rubin once described Pretty Lights as \"the face and voice of the new american electronic music scene\"."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer elektronik-musikproduzent",
+    "who": "Derek Vincent Smith, unter dem künstlernamen Pretty Lights bekannt, ist ein amerikanischer elektronik-musikproduzent. Pretty Lights war ursprünglich ein musikprojekt aus Smith und Michal Menert, die nach der veröffentlichung ihres ersten albums ausstiegen und 2023 zurückkehrten.",
+    "facts": [
+     "Pretty Lights war ursprünglich ein musikprojekt aus Smith und Michal Menert, die nach der veröffentlichung ihres ersten albums ausstiegen und 2023 zurückkehrten.",
+     "Rick Rubin beschrieb Pretty Lights einmal als \"das gesicht und die stimme der neuen amerikanischen elektronikmusik-szene\"."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı elektronik müzik yapımcısı",
+    "who": "Derek Vincent Smith, sahne adıyla Pretty Lights olarak bilinen amerikalı bir elektronik müzik yapımcısıdır. Pretty Lights, başlangıçta Smith ve Michal Menert'ten oluşan bir müzik projesiydi; ilk albümün çıkışının ardından ayrılan bu isimler 2023'te geri döndü.",
+    "facts": [
+     "Pretty Lights, başlangıçta Smith ve Michal Menert'ten oluşan bir müzik projesiydi; ilk albümün çıkışının ardından ayrılan bu isimler 2023'te geri döndü.",
+     "Rick Rubin, Pretty Lights'ı bir keresinde \"yeni amerikan elektronik müzik sahnesinin yüzü ve sesi\" olarak tanımlamıştı."
+    ]
+   }
+  }
+ ]
+}

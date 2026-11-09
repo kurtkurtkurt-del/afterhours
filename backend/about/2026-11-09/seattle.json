@@ -1,0 +1,38 @@
+{
+  "city": "seattle",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "db4b6ca5-3605-42e6-b4d7-33bf62851e44",
+      "slug": "houndmouth-96897219",
+      "title": "Houndmouth",
+      "name": "Houndmouth",
+      "source_url": "https://en.wikipedia.org/wiki/Houndmouth",
+      "extract": "Houndmouth is an American alternative blues and rock band from New Albany, Indiana, formed in 2011, consisting of Matt Myers, Caleb Hickman, Zac Anderson, and Noah Denney (drums).",
+      "en": {
+        "kicker": "american alternative blues and rock band · new albany, 2011",
+        "who": "Houndmouth is an american alternative blues and rock band from New Albany, Indiana. the band was formed in 2011 and its members are Matt Myers, Caleb Hickman, Zac Anderson and Noah Denney (drums).",
+        "facts": [
+          "Houndmouth was formed in 2011 and is from New Albany, Indiana.",
+          "the band consists of Matt Myers, Caleb Hickman, Zac Anderson, and Noah Denney (drums)."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische alternative-blues-rock-band · new albany, 2011",
+        "who": "Houndmouth ist eine amerikanische alternative-blues- und rockband aus New Albany, Indiana. die band wurde 2011 gegründet, und zu ihren mitgliedern gehören Matt Myers, Caleb Hickman, Zac Anderson und Noah Denney (schlagzeug).",
+        "facts": [
+          "Houndmouth wurde 2011 gegründet und stammt aus New Albany, Indiana.",
+          "zur band gehören Matt Myers, Caleb Hickman, Zac Anderson und Noah Denney (schlagzeug)."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan alternatif blues ve rock grubu · new albany, 2011",
+        "who": "Houndmouth, Indiana'nın New Albany kentinden bir amerikan alternatif blues ve rock grubudur. grup 2011 yılında kuruldu ve kadrosunda Matt Myers, Caleb Hickman, Zac Anderson ve davulcu Noah Denney yer alıyor.",
+        "facts": [
+          "Houndmouth 2011 yılında kuruldu ve New Albany, Indiana'dan geliyor.",
+          "grubun kadrosunda Matt Myers, Caleb Hickman, Zac Anderson ve davulcu Noah Denney yer alıyor."
+        ]
+      }
+    }
+  ]
+}

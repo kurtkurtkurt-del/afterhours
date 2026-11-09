@@ -1,0 +1,134 @@
+{
+ "city": "manchester",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "9ee52a37-c1f3-4f74-a3d3-54a65fdd0545",
+   "slug": "widowspeak-aae47af9",
+   "title": "WIDOWSPEAK",
+   "name": "Widowspeak",
+   "source_url": "https://en.wikipedia.org/wiki/Widowspeak",
+   "extract": "Widowspeak is an American indie rock band from Brooklyn, New York City, United States. The band consists of guitarist and vocalist Molly Hamilton and guitarist Robert Earl Thomas.",
+   "en": {
+    "kicker": "american indie rock band · brooklyn, new york city",
+    "who": "Widowspeak is an american indie rock band from Brooklyn, New York City, United States. the band consists of guitarist and vocalist Molly Hamilton and guitarist Robert Earl Thomas.",
+    "facts": [
+     "Widowspeak is from Brooklyn, New York City, United States.",
+     "the band consists of guitarist and vocalist Molly Hamilton and guitarist Robert Earl Thomas."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-rock-band · brooklyn, new york city",
+    "who": "Widowspeak ist eine amerikanische indie-rock-band aus Brooklyn, New York City, Vereinigte Staaten. die band besteht aus Molly Hamilton (gitarre und gesang) und Robert Earl Thomas (gitarre).",
+    "facts": [
+     "Widowspeak stammt aus Brooklyn, New York City, Vereinigte Staaten.",
+     "die band besteht aus Molly Hamilton (gitarre und gesang) und Robert Earl Thomas (gitarre)."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie rock grubu · brooklyn, new york city",
+    "who": "Widowspeak, Brooklyn, New York City, Amerika Birleşik Devletleri'nden bir amerikalı indie rock grubudur. grup, gitarist ve vokalist Molly Hamilton ile gitarist Robert Earl Thomas'tan oluşur.",
+    "facts": [
+     "grup Brooklyn, New York City, Amerika Birleşik Devletleri'nden gelir.",
+     "grup, gitarist ve vokalist Molly Hamilton ile gitarist Robert Earl Thomas'tan oluşur."
+    ]
+   }
+  },
+  {
+   "id": "bcf16990-83ee-41ea-94dc-490656979b28",
+   "slug": "beabadoobee-the-powerlines-tour-5dd27a57",
+   "title": "beabadoobee: The Powerlines Tour",
+   "name": "Beabadoobee",
+   "source_url": "https://en.wikipedia.org/wiki/Beabadoobee",
+   "extract": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021, she released five extended plays (EPs) under the independent label Dirty Hit: Lice (2018), Patched Up (2018), Loveworm (2019), Space Cadet (2019) and Our Extended Play (2021). Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim. Her second studio album, Beatopia, was released on July 2022, and spawned the hit \"The Perfect Pair\". Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart. In September 2026, her fourth studio album, Pyl",
+   "en": {
+    "kicker": "filipino and british singer and songwriter",
+    "who": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a filipino and british singer and songwriter. From 2018 to 2021 she released five extended plays under the independent label Dirty Hit.",
+    "facts": [
+     "her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim.",
+     "her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart."
+    ]
+   },
+   "de": {
+    "kicker": "filipinisch-britische sängerin und songwriterin",
+    "who": "Beatrice Kristi Ilejay Laus, professionell als Beabadoobee bekannt, ist eine filipinisch-britische sängerin und songwriterin. von 2018 bis 2021 veröffentlichte sie fünf EPs beim unabhängigen label Dirty Hit.",
+    "facts": [
+     "ihr debütalbum Fake It Flowers erschien im oktober 2020 und erhielt viel kritikerlob.",
+     "ihr drittes studioalbum This Is How Tomorrow Moves erschien im august 2024; es wurde ihr erstes album, das die spitze der UK Albums Chart erreichte."
+    ]
+   },
+   "tr": {
+    "kicker": "filipinli ve britanyalı şarkıcı ve söz yazarı",
+    "who": "Beatrice Kristi Ilejay Laus, Beabadoobee adıyla tanınan, filipinli ve britanyalı bir şarkıcı ve söz yazarıdır. 2018 ile 2021 arasında bağımsız plak şirketi Dirty Hit'te beş genişletilmiş plak (EP) çıkardı.",
+    "facts": [
+     "debut stüdyo albümü Fake It Flowers ekim 2020'de yayımlandı ve eleştirmenlerden övgü aldı.",
+     "üçüncü stüdyo albümü This Is How Tomorrow Moves ağustos 2024'te yayımlandı; UK Albums Chart'ın zirvesine çıkan ilk albümü oldu."
+    ]
+   }
+  },
+  {
+   "id": "2230c993-3c77-48ce-820b-4d8cd9a8c0c8",
+   "slug": "eagles-of-death-metal-d2abdf1c",
+   "title": "Eagles of Death Metal",
+   "name": "Eagles of Death Metal",
+   "source_url": "https://en.wikipedia.org/wiki/Eagles_of_Death_Metal",
+   "extract": "Eagles of Death Metal is an American rock band from Palm Desert, California, formed in 1998. Founded by Jesse Hughes and Josh Homme (drums), the band includes a wide range of other musicians who perform both on the band's studio albums and at live shows.",
+   "en": {
+    "kicker": "american rock band · palm desert, california, 1998",
+    "who": "Eagles of Death Metal is an american rock band from Palm Desert, California, formed in 1998. Jesse Hughes and Josh Homme founded it, and it includes a wide range of other musicians who perform on its albums and at live shows.",
+    "facts": [
+     "the band was founded by Jesse Hughes and Josh Homme.",
+     "the band includes a wide range of other musicians who perform both on the band's studio albums and at live shows."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · palm desert, california, 1998",
+    "who": "Eagles of Death Metal ist eine amerikanische rockband aus Palm Desert, California, die 1998 entstand. Jesse Hughes und Josh Homme gründeten sie; zu der band gehört eine breite auswahl weiterer musiker, die auf den studioalben und bei live-auftritten mitwirken.",
+    "facts": [
+     "die band wurde von Jesse Hughes und Josh Homme gegründet.",
+     "die band umfasst eine breite auswahl weiterer musiker, die sowohl auf den studioalben der band als auch bei live-auftritten spielen."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · palm desert, california, 1998",
+    "who": "Eagles of Death Metal, Palm Desert, California'dan amerikalı bir rock grubudur ve 1998'de kuruldu. grubu Jesse Hughes ve Josh Homme kurdu; grupta, stüdyo albümlerinde ve canlı performanslarda yer alan çok sayıda başka müzisyen bulunur.",
+    "facts": [
+     "grup, Jesse Hughes ve Josh Homme tarafından kuruldu.",
+     "grupta, stüdyo albümlerinde ve canlı performanslarda yer alan çok sayıda başka müzisyen bulunur."
+    ]
+   }
+  },
+  {
+   "id": "f8832652-9d14-42d9-b996-ed47337b7354",
+   "slug": "the-temperance-movement-let-it-all-out-tour-2026-52068433",
+   "title": "The Temperance Movement - Let It All Out Tour 2026",
+   "name": "The Temperance Movement",
+   "source_url": "https://en.wikipedia.org/wiki/The_Temperance_Movement_(band)",
+   "extract": "The Temperance Movement are a British blues rock supergroup formed in 2011 by Glasgow-born vocalist Phil Campbell and guitarists Luke Potashnick and Paul Sayer. The rhythm section consists of bassist Nick Fyffe and drummer Simon Lea. The band released their Pride EP in 2012, and their eponymous debut studio album was released on 16 September 2013. Collectively the band have a rich history of experience, having previously played with Rooster, Ben's Brother, Jamiroquai, Ray Davies, The Waterboys and Feeder.",
+   "en": {
+    "kicker": "british blues rock supergroup · 2011",
+    "who": "The Temperance Movement are a british blues rock supergroup formed in 2011 by Glasgow-born vocalist Phil Campbell and guitarists Luke Potashnick and Paul Sayer. the rhythm section consists of bassist Nick Fyffe and drummer Simon Lea.",
+    "facts": [
+     "the band released their Pride EP in 2012, and their eponymous debut studio album was released on 16 September 2013.",
+     "Collectively the band have a rich history of experience, having previously played with Rooster, Ben's Brother, Jamiroquai, Ray Davies, The Waterboys and Feeder."
+    ]
+   },
+   "de": {
+    "kicker": "britische blues-rock-supergroup · 2011",
+    "who": "The Temperance Movement sind eine britische blues-rock-supergroup, die 2011 von dem in Glasgow geborenen sänger Phil Campbell sowie den gitarristen Luke Potashnick und Paul Sayer gegründet wurde. die rhythmusgruppe besteht aus dem bassisten Nick Fyffe und dem schlagzeuger Simon Lea.",
+    "facts": [
+     "die band veröffentlichte 2012 die Pride EP, und ihr gleichnamiges debütalbum erschien am 16. september 2013.",
+     "gemeinsam hat die band eine reiche erfahrung, da sie zuvor mit Rooster, Ben's Brother, Jamiroquai, Ray Davies, The Waterboys und Feeder zusammengespielt hat."
+    ]
+   },
+   "tr": {
+    "kicker": "britanyalı blues rock süper grup · 2011",
+    "who": "The Temperance Movement, Glasgow doğumlu vokalist Phil Campbell ile gitarist Luke Potashnick ve Paul Sayer tarafından 2011'de kurulan bir britanyalı blues rock süper grubudur. ritim bölümü bassist Nick Fyffe ve davulcu Simon Lea'dan oluşur.",
+    "facts": [
+     "grup Pride EP'sini 2012'de yayımladı ve kendi adını taşıyan debüt stüdyo albümü 16 eylül 2013'te yayımlandı.",
+     "grup topluca zengin bir deneyime sahip; daha önce Rooster, Ben's Brother, Jamiroquai, Ray Davies, The Waterboys ve Feeder ile çalışmıştır."
+    ]
+   }
+  }
+ ]
+}

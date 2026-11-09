@@ -1,0 +1,38 @@
+{
+ "city": "dallas",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "46697bc4-47f1-470b-8686-54652c779890",
+   "slug": "dragonforce-inhuman-rampage-20th-anniversary-d6154fea",
+   "title": "DragonForce: Inhuman Rampage 20th Anniversary",
+   "name": "DragonForce",
+   "source_url": "https://en.wikipedia.org/wiki/DragonForce",
+   "extract": "DragonForce are a British power metal band from London, formed in 1999. They are known for their long and fast guitar solos, fantasy-themed lyrics and retro video game-influenced sound. The band themselves refer to their music as \"extreme power metal\".",
+   "en": {
+    "kicker": "british power metal band · london, formed 1999",
+    "who": "DragonForce are a British power metal band from London, formed in 1999. the band is known for its fantasy-themed lyrics and retro video game-influenced sound.",
+    "facts": [
+     "they are known for their long and fast guitar solos.",
+     "the band themselves refer to their music as \"extreme power metal\"."
+    ]
+   },
+   "de": {
+    "kicker": "britische power-metal-band · london, gegründet 1999",
+    "who": "DragonForce sind eine britische power-metal-band aus London, gegründet 1999. die band ist für ihre fantasy-geprägten texte und ihren von retro-videospielen beeinflussten sound bekannt.",
+    "facts": [
+     "sie sind bekannt für ihre langen und schnellen gitarrensoli.",
+     "die band selbst bezeichnet ihre musik als \"extreme power metal\"."
+    ]
+   },
+   "tr": {
+    "kicker": "britanyalı power metal grubu · londra, 1999'da kuruldu",
+    "who": "DragonForce, londra'dan bir britanyalı power metal grubudur ve 1999'da kurulmuştur. grup, fantezi temalı şarkı sözleri ve retro video oyunlarından etkilenen sesiyle bilinir.",
+    "facts": [
+     "grup, uzun ve hızlı gitar sololarıyla bilinir.",
+     "grup kendi müziğini \"extreme power metal\" olarak tanımlar."
+    ]
+   }
+  }
+ ]
+}

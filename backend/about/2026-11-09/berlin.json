@@ -1,0 +1,38 @@
+{
+  "city": "berlin",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "cd5c5960-0cf1-40be-8578-dbca2c8cbd56",
+      "slug": "tinie-tempah-the-night-s-not-dead-tour-d97a57b3",
+      "title": "Tinie Tempah - THE NIGHT´S NOT DEAD TOUR",
+      "name": "Tinie Tempah",
+      "source_url": "https://en.wikipedia.org/wiki/Tinie_Tempah",
+      "extract": "Patrick Chukwuemeka Okogwu, better known by his stage name Tinie Tempah, is an English rapper, singer and television presenter. Born and raised in London, he created his own entertainment company Disturbing London in 2006, alongside Dumi Oburota. After signing with Parlophone in 2009 and releasing several mixtapes, he rose to fame with the UK number-one singles \"Pass Out\" and \"Written in the Stars\" in 2010.",
+      "en": {
+        "kicker": "english rapper and singer · London, 2010",
+        "who": "Patrick Chukwuemeka Okogwu, better known by his stage name Tinie Tempah, is an english rapper, singer and television presenter. born and raised in London, he created his own entertainment company Disturbing London in 2006, alongside Dumi Oburota. after signing with Parlophone in 2009 and releasing several mixtapes, he rose to fame.",
+        "facts": [
+          "he created his own entertainment company Disturbing London in 2006, alongside Dumi Oburota.",
+          "he rose to fame with the UK number-one singles \"Pass Out\" and \"Written in the Stars\" in 2010."
+        ]
+      },
+      "de": {
+        "kicker": "englischer rapper und sänger · London, 2010",
+        "who": "Patrick Chukwuemeka Okogwu, besser bekannt unter seinem bühnennamen Tinie Tempah, ist ein englischer rapper, sänger und fernsehmoderator. in London geboren und aufgewachsen, gründete er 2006 zusammen mit Dumi Oburota sein eigenes unterhaltungsunternehmen Disturbing London. nach seiner unterzeichnung bei Parlophone 2009 und mehreren mixtapes wurde er bekannt.",
+        "facts": [
+          "er gründete 2006 zusammen mit Dumi Oburota sein eigenes unterhaltungsunternehmen Disturbing London.",
+          "2010 wurde er mit den UK-nummer-eins-singles „Pass Out“ und „Written in the Stars“ bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rapçi ve şarkıcı · Londra, 2010",
+        "who": "Patrick Chukwuemeka Okogwu, sahne adı Tinie Tempah olan ingiliz rapçi, şarkıcı ve televizyon sunucusudur. Londra'da doğup büyüdü ve 2006'da Dumi Oburota ile birlikte kendi eğlence şirketi Disturbing London'ı kurdu. 2009'da Parlophone ile anlaşmasının ardından birkaç mixtape yayımladı ve ün kazandı.",
+        "facts": [
+          "2006'da kendi eğlence şirketi Disturbing London'ı Dumi Oburota ile birlikte kurdu.",
+          "2010'da Birleşik Krallık'ta bir numaraya yükselen 'Pass Out' ve 'Written in the Stars' şarkılarıyla ünlendi."
+        ]
+      }
+    }
+  ]
+}

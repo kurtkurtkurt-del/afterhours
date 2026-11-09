@@ -1,0 +1,38 @@
+{
+  "city": "houston",
+  "day": "2026-11-09",
+  "nights": [
+    {
+      "id": "93d2f830-2bd0-484c-868d-4ea4d9755a2c",
+      "slug": "pedro-sampaio-adddbb83",
+      "title": "Pedro Sampaio",
+      "name": "Pedro Sampaio",
+      "source_url": "https://en.wikipedia.org/wiki/Pedro_Sampaio",
+      "extract": "Pedro do Espirito Santo Sampaio is a Brazilian singer, music producer and DJ, known for the songs \"Sentadão\", \"Escada do Prédio\", with Marina Sena, and \"Chama Ela\", in partnership with the singer Lexa. He is signed to Warner Music Brasil.",
+      "en": {
+        "kicker": "brazilian singer, music producer and dj",
+        "who": "Pedro do Espirito Santo Sampaio is a brazilian singer, music producer and dj. He is known for the songs \"Sentadão\", \"Escada do Prédio\", with Marina Sena, and \"Chama Ela\", in partnership with the singer Lexa. He is signed to Warner Music Brasil.",
+        "facts": [
+          "he is signed to Warner Music Brasil.",
+          "he is known for the songs \"Sentadão\", \"Escada do Prédio\", with Marina Sena, and \"Chama Ela\", in partnership with the singer Lexa."
+        ]
+      },
+      "de": {
+        "kicker": "brasilianischer sänger, musikproduzent und dj",
+        "who": "Pedro do Espirito Santo Sampaio ist ein brasilianischer sänger, musikproduzent und dj. Er ist bekannt für die songs \"Sentadão\", \"Escada do Prédio\", mit Marina Sena, und \"Chama Ela\", in partnerschaft mit dem sänger Lexa. Er steht bei Warner Music Brasil unter vertrag.",
+        "facts": [
+          "er steht bei Warner Music Brasil unter vertrag.",
+          "er ist bekannt für die songs \"Sentadão\", \"Escada do Prédio\", mit Marina Sena, und \"Chama Ela\", in partnerschaft mit dem sänger Lexa."
+        ]
+      },
+      "tr": {
+        "kicker": "brezilyalı şarkıcı, müzik yapımcısı ve dj",
+        "who": "Pedro do Espirito Santo Sampaio bir brezilyalı şarkıcı, müzik yapımcısı ve dj'dir. \"Sentadão\" ve \"Escada do Prédio\" (Marina Sena ile) ile \"Chama Ela\" şarkılarıyla bilinir; \"Chama Ela\" ise şarkıcı Lexa ile iş birliği içindedir. O, Warner Music Brasil ile sözleşmelidir.",
+        "facts": [
+          "o, Warner Music Brasil ile sözleşmelidir.",
+          "bilinen şarkıları arasında \"Sentadão\", \"Escada do Prédio\" (Marina Sena ile) ve şarkıcı Lexa ile iş birliği içinde olan \"Chama Ela\" bulunur."
+        ]
+      }
+    }
+  ]
+}

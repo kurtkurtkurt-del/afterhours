@@ -1,0 +1,38 @@
+{
+ "city": "calgary",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "b76c681e-a621-43e7-9f59-7d8bf58055f4",
+   "slug": "choir-choir-choir-un-silent-night-an-epic-holida-08cdc881",
+   "title": "Choir! Choir! Choir! - Un-Silent Night: An EPIC Holiday Sing-Along!",
+   "name": "Choir! Choir! Choir!",
+   "source_url": "https://en.wikipedia.org/wiki/Choir!_Choir!_Choir!",
+   "extract": "Choir! Choir! Choir! is a Canadian musical choir, based in Toronto, Ontario. Instead of a traditional organizational model, the choir is structured as an open participation group where anybody who wants to attend an event is welcome to perform as part of the choir.",
+   "en": {
+    "kicker": "canadian musical choir · toronto, ontario",
+    "who": "a canadian musical choir, based in Toronto, Ontario. the choir is structured as an open participation group rather than around a traditional organizational model. anybody who wants to attend an event is welcome to perform as part of the choir.",
+    "facts": [
+     "instead of a traditional organizational model, the choir is structured as an open participation group.",
+     "anybody who wants to attend an event is welcome to perform as part of the choir."
+    ]
+   },
+   "de": {
+    "kicker": "kanadischer musikchor · toronto, ontario",
+    "who": "ein kanadischer musikchor mit sitz in Toronto, Ontario. der chor ist als offene mitmachgruppe aufgebaut, statt nach einem traditionellen organisationsmodell zu arbeiten. wer an einer veranstaltung teilnehmen möchte, ist willkommen, als teil des chors aufzutreten.",
+    "facts": [
+     "statt eines traditionellen organisationsmodells ist der chor als offene mitmachgruppe aufgebaut.",
+     "wer an einer veranstaltung teilnehmen möchte, ist willkommen, als teil des chors aufzutreten."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı müzik korosu · toronto, ontario",
+    "who": "Toronto, Ontario merkezli kanadalı bir müzik korosudur. geleneksel bir organizasyon modeli yerine, koro açık katılımlı bir grup olarak yapılandırılmıştır. bir etkinliğe katılmak isteyen herkes koronun bir parçası olarak sahne almaya davetlidir.",
+    "facts": [
+     "geleneksel bir organizasyon modeli yerine, koro açık katılımlı bir grup olarak yapılandırılmıştır.",
+     "bir etkinliğe katılmak isteyen herkes koronun bir parçası olarak sahne almaya davetlidir."
+    ]
+   }
+  }
+ ]
+}

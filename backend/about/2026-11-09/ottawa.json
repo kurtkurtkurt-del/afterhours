@@ -1,0 +1,70 @@
+{
+ "city": "ottawa",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "e82f872d-6ed6-40a4-9385-8eb0fbc3061e",
+   "slug": "zeds-dead-348ff6c7",
+   "title": "Zeds Dead",
+   "name": "Zeds Dead",
+   "source_url": "https://en.wikipedia.org/wiki/Zeds_Dead",
+   "extract": "Zeds Dead is a Canadian electronic music duo from Toronto consisting of Dylan Mamid, also known as DC, and Zachary Rapp-Rovan, also known as Hooks. The duo rose to prominence releasing original music and remixes from 2009 to 2010 before becoming a staple on the international touring circuit thereafter. They explore a diverse variety of genres that combine aspects of dubstep, UK garage, house, electro house, hip-hop, glitch, drum and bass, and more.",
+   "en": {
+    "kicker": "canadian electronic music duo · toronto",
+    "who": "Zeds Dead is a canadian electronic music duo from Toronto consisting of Dylan Mamid, also known as DC, and Zachary Rapp-Rovan, also known as Hooks. the duo rose to prominence releasing original music and remixes from 2009 to 2010 before becoming a staple on the international touring circuit thereafter.",
+    "facts": [
+     "the duo rose to prominence releasing original music and remixes from 2009 to 2010.",
+     "they explore a diverse variety of genres that combine aspects of dubstep, UK garage, house, electro house, hip-hop, glitch, drum and bass, and more."
+    ]
+   },
+   "de": {
+    "kicker": "kanadisches elektronisches musikduo · toronto",
+    "who": "Zeds Dead ist ein kanadisches elektronisches musikduo aus Toronto, bestehend aus Dylan Mamid, auch bekannt als DC, und Zachary Rapp-Rovan, auch bekannt als Hooks. das duo wurde mit originalmusik und remixen von 2009 bis 2010 bekannt und wurde danach zu einem festen bestandteil des internationalen tourneezirkuits.",
+    "facts": [
+     "das duo wurde mit originalmusik und remixen von 2009 bis 2010 bekannt.",
+     "es erkundet eine vielfalt an genres, die aspekte von dubstep, UK garage, house, electro house, hip-hop, glitch, drum and bass und mehr verbinden."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı elektronik müzik ikilisi · toronto",
+    "who": "Zeds Dead, Toronto'dan Dylan Mamid (DC) ve Zachary Rapp-Rovan (Hooks) adlı iki kişiden oluşan bir kanadalı elektronik müzik ikilisidir. ikili, 2009 ile 2010 yılları arasında özgün müzik ve remikslerle öne çıktı, ardından uluslararası tur devresinin düzenli bir parçası oldu.",
+    "facts": [
+     "ikili, 2009 ile 2010 arasında özgün müzik ve remikslerle öne çıktı.",
+     "dubstep, UK garage, house, electro house, hip-hop, glitch, drum and bass ve daha birçok türün özelliklerini birleştiren çeşitli türler keşfediyorlar."
+    ]
+   }
+  },
+  {
+   "id": "2417d01a-7342-4d65-8bb8-9d5a35e3d780",
+   "slug": "loud-luxury-d09b0e26",
+   "title": "Loud Luxury",
+   "name": "Loud Luxury",
+   "source_url": "https://en.wikipedia.org/wiki/Loud_Luxury",
+   "extract": "Loud Luxury are a Canadian music production and DJ duo consisting of Andrew Fedyk and Joe De Pace. They are currently based in Los Angeles, California. They gained recognition following their 2017 release \"Body\" and their remix of the Martin Garrix and Dua Lipa single \"Scared to Be Lonely\".",
+   "en": {
+    "kicker": "canadian dj duo · los angeles, california",
+    "who": "Loud Luxury are a canadian music production and dj duo consisting of Andrew Fedyk and Joe De Pace. they are currently based in Los Angeles, California. they gained recognition following their 2017 release \"Body\" and their remix of the Martin Garrix and Dua Lipa single \"Scared to Be Lonely\".",
+    "facts": [
+     "they gained recognition following their 2017 release \"Body\" and their remix of the Martin Garrix and Dua Lipa single \"Scared to Be Lonely\".",
+     "they are currently based in Los Angeles, California."
+    ]
+   },
+   "de": {
+    "kicker": "kanadisches dj-duo · los angeles, kalifornien",
+    "who": "Loud Luxury sind ein kanadisches musikproduktions- und dj-duo, bestehend aus Andrew Fedyk und Joe De Pace. sie sind derzeit in Los Angeles, Kalifornien, ansässig. sie erlangten anerkennung nach ihrer veröffentlichung von \"Body\" im jahr 2017 und ihrem remix der single \"Scared to Be Lonely\" von Martin Garrix und Dua Lipa.",
+    "facts": [
+     "sie erlangten anerkennung nach ihrer veröffentlichung von \"Body\" im jahr 2017 und ihrem remix der single \"Scared to Be Lonely\" von Martin Garrix und Dua Lipa.",
+     "sie sind derzeit in Los Angeles, Kalifornien, ansässig."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı dj ikilisi · los angeles, kaliforniya",
+    "who": "Loud Luxury, Andrew Fedyk ve Joe De Pace'den oluşan bir kanadalı müzik prodüksiyonu ve dj ikilisidir. şu anda Los Angeles, Kaliforniya'da yaşıyorlar. 2017 yılında çıkardıkları \"Body\" ile ve Martin Garrix ile Dua Lipa'nın \"Scared to Be Lonely\" single'ının remixi ile tanınmaya başladılar.",
+    "facts": [
+     "2017 yılında çıkardıkları \"Body\" ve Martin Garrix ile Dua Lipa'nın \"Scared to Be Lonely\" single'ının remixi ile tanınmaya başladılar.",
+     "şu anda Los Angeles, Kaliforniya'da yaşıyorlar."
+    ]
+   }
+  }
+ ]
+}

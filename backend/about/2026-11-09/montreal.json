@@ -1,0 +1,102 @@
+{
+ "city": "montreal",
+ "day": "2026-11-09",
+ "nights": [
+  {
+   "id": "50eb7554-833c-4641-a032-547035b261a4",
+   "slug": "orville-peck-man-turned-mule-tour-bfe5877f",
+   "title": "Orville Peck - Man Turned Mule Tour",
+   "name": "Orville Peck",
+   "source_url": "https://en.wikipedia.org/wiki/Orville_Peck",
+   "extract": "Daniel Pitout, known professionally as Orville Peck, is a South African country musician and actor based in the United States and Canada, widely known for often wearing a mask and not showing his face publicly.",
+   "en": {
+    "kicker": "south african country musician · united states and canada",
+    "who": "Daniel Pitout, known professionally as Orville Peck, is a south african country musician and actor. he is based in the United States and Canada, and is widely known for often wearing a mask and not showing his face publicly.",
+    "facts": [
+     "he is widely known for often wearing a mask and not showing his face publicly.",
+     "he is based in the United States and Canada."
+    ]
+   },
+   "de": {
+    "kicker": "südafrikanischer country-musiker · usa und kanada",
+    "who": "Daniel Pitout, unter dem künstlernamen Orville Peck bekannt, ist ein südafrikanischer country-musiker und schauspieler. er ist in den USA und Kanada ansässig und weithin dafür bekannt, dass er oft eine maske trägt und sein gesicht nicht öffentlich zeigt.",
+    "facts": [
+     "er ist weithin dafür bekannt, dass er oft eine maske trägt und sein gesicht nicht öffentlich zeigt.",
+     "er ist in den USA und Kanada ansässig."
+    ]
+   },
+   "tr": {
+    "kicker": "güney afrikalı country müzisyeni · abd ve kanada",
+    "who": "Daniel Pitout, sahne adıyla Orville Peck olarak bilinen, güney afrikalı bir country müzisyeni ve oyuncudur. ABD ve Kanada'da faaliyet gösteriyor ve sık sık maske takmasıyla, yüzünü halka açık olarak göstermemesiyle geniş çapta tanınıyor.",
+    "facts": [
+     "sık sık maske takmasıyla ve yüzünü halka açık olarak göstermemesiyle tanınıyor.",
+     "ABD ve Kanada'da faaliyet gösteriyor."
+    ]
+   }
+  },
+  {
+   "id": "4253ef76-8ac9-4609-b428-62788edea23d",
+   "slug": "too-many-zooz-97ec8750",
+   "title": "Too Many Zooz",
+   "name": "Too Many Zooz",
+   "source_url": "https://en.wikipedia.org/wiki/Too_Many_Zooz",
+   "extract": "Too Many Zooz is an American music group based in New York City, consisting of Leo Pellegrino, Matt \"Doe\" Muirhead (trumpet), and David \"King of Sludge\" Parks (drums).",
+   "en": {
+    "kicker": "american music group · new york city",
+    "who": "Too Many Zooz is an american music group based in New York City. it consists of Leo Pellegrino, Matt \"Doe\" Muirhead (trumpet), and David \"King of Sludge\" Parks (drums).",
+    "facts": [
+     "Too Many Zooz is based in New York City.",
+     "the group consists of Leo Pellegrino, Matt \"Doe\" Muirhead (trumpet), and David \"King of Sludge\" Parks (drums)."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische musikgruppe · new york city",
+    "who": "Too Many Zooz ist eine amerikanische musikgruppe mit sitz in New York City. die gruppe besteht aus Leo Pellegrino, Matt „Doe“ Muirhead (trompete) und David „King of Sludge“ Parks (schlagzeug).",
+    "facts": [
+     "Too Many Zooz ist in New York City ansässig.",
+     "die gruppe besteht aus Leo Pellegrino, Matt „Doe“ Muirhead (trompete) und David „King of Sludge“ Parks (schlagzeug)."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı müzik grubu · new york city",
+    "who": "Too Many Zooz, New York City merkezli amerikalı bir müzik grubudur. grup, Leo Pellegrino, Matt \"Doe\" Muirhead (trompet) ve David \"King of Sludge\" Parks (davul) üyelerinden oluşuyor.",
+    "facts": [
+     "Too Many Zooz, New York City merkezli bir amerikalı müzik grubudur.",
+     "grup, Leo Pellegrino, Matt \"Doe\" Muirhead (trompet) ve David \"King of Sludge\" Parks (davul) üyelerinden oluşuyor."
+    ]
+   }
+  },
+  {
+   "id": "5737cbfa-17be-4de5-a518-40ae62c95f90",
+   "slug": "la-fouine-2da9b4ad",
+   "title": "La Fouine",
+   "name": "La Fouine",
+   "source_url": "https://en.wikipedia.org/wiki/La_Fouine",
+   "extract": "Laouni Mouhid, commonly known by his stage name La Fouine, as well as Fouiny, is a French rapper and singer. He is the founder of record label Banlieue Sale and the clothing line Street Swagg. La Fouine was voted Best French Artist at the MTV Europe Music Awards in 2011 and Best Male Artist at the Trace Urban Music Awards in 2013. With two million subscribers on YouTube, seven million on Facebook, and four million on Twitter, he was the most-followed French rapper on social media in 2015. Known as \"the rapper with the goatee,\" he eventually shaved it off in June 2016.",
+   "en": {
+    "kicker": "french rapper and singer",
+    "who": "Laouni Mouhid, commonly known by his stage name La Fouine, as well as Fouiny, is a french rapper and singer. he is the founder of the record label Banlieue Sale and the clothing line Street Swagg.",
+    "facts": [
+     "La Fouine was voted best french artist at the MTV Europe Music Awards in 2011.",
+     "he was the most-followed french rapper on social media in 2015."
+    ]
+   },
+   "de": {
+    "kicker": "französischer rapper und sänger",
+    "who": "Laouni Mouhid, unter seinem künstlernamen La Fouine (auch Fouiny) bekannt, ist ein französischer rapper und sänger. er ist gründer des plattenlabels Banlieue Sale und der bekleidungslinie Street Swagg.",
+    "facts": [
+     "La Fouine wurde bei den MTV Europe Music Awards 2011 zum besten französischen künstler gewählt.",
+     "er war 2015 der meistgefolgte französische rapper in den sozialen medien."
+    ]
+   },
+   "tr": {
+    "kicker": "fransız rapçi ve şarkıcı",
+    "who": "Laouni Mouhid, sahne adı La Fouine (ayrıca Fouiny) olan fransız bir rapçi ve şarkıcıdır. Banlieue Sale plak şirketinin ve Street Swagg giyim markasının kurucusudur.",
+    "facts": [
+     "La Fouine, 2011 yılında MTV Europe Music Awards'ta en iyi fransız sanatçı seçildi.",
+     "2015 yılında sosyal medyada en çok takip edilen fransız rapçiydi."
+    ]
+   }
+  }
+ ]
+}
