@@ -1,0 +1,14 @@
+{
+  "city": "monterrey",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "second day of the futurfestival.", "de": "zweiter tag des futurfestivals.", "tr": "futurfestival'in ikinci günü." },
+      "line": { "en": "day two of kappa futurfestival at parque fundidora, grúa and horno 3 areas. daily times not confirmed; check the official ticket site before going.", "de": "tag zwei des kappa futurfestivals im parque fundidora, bereiche grúa und horno 3. tageszeiten nicht bestätigt; vor dem besuch auf der offiziellen ticketseite prüfen.", "tr": "parque fundidora'da kappa futurfestival'in ikinci günü, grúa ve horno 3 alanları. günlük saatler doğrulanmadı; gitmeden önce resmi bilet sitesine bak." },
+      "place": { "en": "parque fundidora", "de": "parque fundidora", "tr": "parque fundidora" },
+      "hour": 17, "minute": 0,
+      "why": "Kappa FuturFestival Mexico, Parque Fundidora, Sat 14 Nov 2026 (technoairlines.com; electronicgroove.com). Start hour is a suggestion; the official daily schedule was not found."
+    }
+  ]
+}
