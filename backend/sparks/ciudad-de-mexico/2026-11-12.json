@@ -1,0 +1,14 @@
+{
+  "city": "ciudad-de-mexico",
+  "day": "2026-11-12",
+  "sparks": [
+    {
+      "kind": "cinema",
+      "title": { "en": "ficunam is still showing films till sunday.", "de": "das ficunam zeigt bis sonntag noch filme.", "tr": "ficunam pazar gününe kadar film gösteriyor." },
+      "line": { "en": "unam's film festival runs 5 to 15 november, over 250 screenings across the city. check the programme for the film and the venue; 19:00 is a suggestion, not a listed time.", "de": "das filmfestival der unam läuft vom 5. bis 15. november, über 250 vorführungen in der stadt. programm für film und ort prüfen; 19:00 ist nur ein vorschlag, keine angegebene zeit.", "tr": "unam film festivali 5 ile 15 kasım arasında sürüyor, şehirde 250'den fazla gösterim var. film ve mekân için programa bakın; 19:00 bir öneri, ilan edilmiş bir saat değil." },
+      "place": { "en": "ficunam, various venues", "de": "ficunam, verschiedene orte", "tr": "ficunam, çeşitli mekânlar" },
+      "hour": 19, "minute": 0,
+      "why": "FICUNAM 2026, 5 to 15 nov, more than 250 screenings in several venues (Chilango; Diario de México)."
+    }
+  ]
+}

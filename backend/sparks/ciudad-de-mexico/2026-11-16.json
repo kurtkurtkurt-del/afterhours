@@ -1,0 +1,14 @@
+{
+  "city": "ciudad-de-mexico",
+  "day": "2026-11-16",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "a slow walk through chapultepec on the holiday.", "de": "ein langsamer spaziergang durch chapultepec am feiertag.", "tr": "tatil gününde chapultepec'te yavaş bir yürüyüş." },
+      "line": { "en": "monday 16 is a public holiday in most sources, and some shops may be shut. the park is open to walk; no forecast was found, so take a layer for the morning.", "de": "montag 16. ist laut den meisten quellen ein feiertag, geschäfte können geschlossen sein. der park ist zum gehen offen; keine wettervorhersage gefunden, also für den morgen eine jacke mitnehmen.", "tr": "16 pazartesi çoğu kaynağa göre resmi tatil, bazı dükkânlar kapalı olabilir. park yürüyüşe açık; hava tahmini bulunamadı, sabah için bir katman alın." },
+      "place": { "en": "bosque de chapultepec", "de": "bosque de chapultepec", "tr": "bosque de chapultepec" },
+      "hour": 10, "minute": 0,
+      "why": "Monday 16 nov is Día de la Revolución, a federal holiday most sources list (they differ on whether it is a rest day); no forecast found, so this is a holiday spark, not a weather one."
+    }
+  ]
+}

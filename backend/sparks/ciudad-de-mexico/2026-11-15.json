@@ -1,0 +1,14 @@
+{
+  "city": "ciudad-de-mexico",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "lagunilla tianguis, sunday morning.", "de": "tianguis der lagunilla, sonntagvormittag.", "tr": "lagunilla tianguisi, pazar sabahı." },
+      "line": { "en": "the sunday flea market in la lagunilla, a long strip of stalls for collectors: old records, tools and prints. go in the morning.", "de": "der sonntagsflohmarkt in la lagunilla, eine lange reihe von ständen für sammler: alte platten, werkzeug und drucke. am besten vormittags.", "tr": "la lagunilla'daki pazar günü pazarı; koleksiyoncular için uzun bir stand sırası: eski plaklar, aletler ve baskılar. sabah gidin." },
+      "place": { "en": "la lagunilla", "de": "la lagunilla", "tr": "la lagunilla" },
+      "hour": 10, "minute": 0,
+      "why": "Tianguis de la Lagunilla, a Sunday market listed in Culture Trip and City-Tour guides; no closure notice found for 15 nov 2026."
+    }
+  ]
+}
