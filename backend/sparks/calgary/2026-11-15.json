@@ -1,0 +1,14 @@
+{
+  "city": "calgary",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "113th grey cup at mcmahon stadium.", "de": "113. grey cup im mcmahon stadium.", "tr": "113. grey cup, mcmahon stadyumu'nda." },
+      "line":  { "en": "the cfl final, kickoff 5pm mountain time. there is no public parking at the stadium, so take transit or a ride share.", "de": "das cfl-finale, anpfiff 17 uhr mountain time. am stadion gibt es keinen öffentlichen parkplatz, also bahn oder fahrdienst nehmen.", "tr": "cfl finali, başlama saati 17:00 mountain saati. stadyumda halka açık otopark yok, toplu taşıma ya da araç paylaşımı kullan." },
+      "place": { "en": "mcmahon stadium", "de": "mcmahon stadium", "tr": "mcmahon stadium" },
+      "hour": 17, "minute": 0,
+      "why": "113th Grey Cup at McMahon Stadium, Sun Nov 15, 5pm MT per the CFL; no public parking per greycupfestival.ca FAQ."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "city": "calgary",
+  "day": "2026-11-12",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "grey cup street festival at stampede park.", "de": "grey-cup-straßenfest im stampede park.", "tr": "stampede park'ta grey cup sokak festivali." },
+      "line":  { "en": "the free street festival runs 11am to 9pm, up to the game on sunday. come after work and walk the stalls.", "de": "das kostenlose straßenfest läuft von 11 bis 21 uhr, bis zum spiel am sonntag. komm nach der arbeit und geh durch die stände.", "tr": "ücretsiz sokak festivali 11:00 ile 21:00 arası, pazar günkü maça kadar açık. iş çıkışı gel, standları gez." },
+      "place": { "en": "stampede park", "de": "stampede park", "tr": "stampede park" },
+      "hour": 17, "minute": 0,
+      "why": "113th Grey Cup Street Festival at Stampede Park, free, Nov 12-14 11am-9pm (Global News; greycupfestival.ca)."
+    }
+  ]
+}
