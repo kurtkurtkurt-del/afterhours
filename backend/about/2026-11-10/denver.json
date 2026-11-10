@@ -1,0 +1,38 @@
+{
+  "city": "denver",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "d9ef9380-1db1-4b06-8a14-cc69cb5814aa",
+      "slug": "half-alive-986b68ef",
+      "title": "half alive",
+      "name": "Half Alive",
+      "source_url": "https://en.wikipedia.org/wiki/Half_Alive_(band)",
+      "extract": "Half Alive is an American rock duo formed in Long Beach, California, in 2016. It consists of vocalist Josh Taylor and bassist J. Tyler Johnson, formerly accompanied by drummer Brett Kramer. The band began recording music in 2017, and have since released three studio albums, a compilation vinyl record, three extended plays of new material, three extended plays of live recordings, and many singles.",
+      "en": {
+        "kicker": "american rock duo · long beach, california, 2016",
+        "who": "Half Alive is an American rock duo formed in Long Beach, California, in 2016. It consists of vocalist Josh Taylor and bassist J. Tyler Johnson, formerly accompanied by drummer Brett Kramer. The band has released three studio albums and many singles.",
+        "facts": [
+          "Half Alive is an American rock duo formed in Long Beach, California, in 2016.",
+          "It consists of vocalist Josh Taylor and bassist J. Tyler Johnson, formerly accompanied by drummer Brett Kramer."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches rock-duo · long beach, california, 2016",
+        "who": "Half Alive ist ein amerikanisches Rock-Duo, das 2016 in Long Beach, Kalifornien, gegründet wurde. Es besteht aus Sänger Josh Taylor und Bassist J. Tyler Johnson, früher begleitet von Schlagzeuger Brett Kramer. Die Band hat drei Studioalben und viele Singles veröffentlicht.",
+        "facts": [
+          "Half Alive ist ein amerikanisches Rock-Duo, das 2016 in Long Beach, Kalifornien, gegründet wurde.",
+          "Es besteht aus Sänger Josh Taylor und Bassist J. Tyler Johnson, früher begleitet von Schlagzeuger Brett Kramer."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock ikilisi · long beach, california, 2016",
+        "who": "Half Alive, 2016'da Long Beach, California'da kurulmuş Amerikalı bir rock ikilisidir. Grup vokalist Josh Taylor ve basçı J. Tyler Johnson'dan oluşur; daha önce davulcu Brett Kramer de grupta yer alıyordu. Grup üç stüdyo albümü ve birçok single yayımladı.",
+        "facts": [
+          "Half Alive, 2016'da Long Beach, California'da kurulmuş Amerikalı bir rock ikilisidir.",
+          "Grup, vokalist Josh Taylor ve basçı J. Tyler Johnson'dan oluşur; daha önce davulcu Brett Kramer da grupta yer alıyordu."
+        ]
+      }
+    }
+  ]
+}

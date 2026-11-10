@@ -1,0 +1,70 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "768b4b84-6f8c-4830-a71d-58f21704d5f9",
+      "slug": "tove-lo-premium-seats-b1faf1da",
+      "title": "Tove Lo | Premium Seats",
+      "name": "Tove Lo",
+      "source_url": "https://en.wikipedia.org/wiki/Tove_Lo",
+      "extract": "Ebba Tove Elsa Nilsson, known professionally as Tove Lo, is a Swedish singer-songwriter. She is known for her raw, grunge-influenced take on pop music. Referring to her autobiographical lyrics, Out called Lo \"the saddest girl in Sweden\", while Rolling Stone called her \"Sweden's darkest pop export\".",
+      "en": {
+        "kicker": "swedish singer-songwriter",
+        "who": "Tove Lo is a Swedish singer-songwriter, real name Ebba Tove Elsa Nilsson. She is known for a raw, grunge-influenced take on pop music. Out called her \"the saddest girl in Sweden\", referring to her autobiographical lyrics.",
+        "facts": [
+          "Ebba Tove Elsa Nilsson, known professionally as Tove Lo, is a Swedish singer-songwriter.",
+          "She is known for her raw, grunge-influenced take on pop music."
+        ]
+      },
+      "de": {
+        "kicker": "schwedische singer-songwriterin",
+        "who": "Tove Lo ist eine schwedische Singer-Songwriterin, bürgerlich Ebba Tove Elsa Nilsson. Sie ist für ihren rohen, grunge-beeinflussten Popsound bekannt. Wegen ihrer autobiografischen Texte nannte das Magazin Out sie \"the saddest girl in Sweden\".",
+        "facts": [
+          "Ebba Tove Elsa Nilsson, bekannt als Tove Lo, ist eine schwedische Singer-Songwriterin.",
+          "Sie ist für ihre rohe, grunge-beeinflusste Interpretation von Pop bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "isveçli şarkıcı ve söz yazarı",
+        "who": "Tove Lo, gerçek adıyla Ebba Tove Elsa Nilsson, bir İsveçli şarkıcı ve söz yazarıdır. Pop müziğe ham, grunge etkili bir yaklaşımıyla tanınır. Otobiyografik sözleri nedeniyle Out dergisi onu \"the saddest girl in Sweden\" olarak nitelendirdi.",
+        "facts": [
+          "Ebba Tove Elsa Nilsson, lakabıyla Tove Lo, bir İsveçli şarkıcı ve söz yazarıdır.",
+          "Pop müziğe ham ve grunge etkili bir bakışıyla tanınır."
+        ]
+      }
+    },
+    {
+      "id": "a03f5ab2-2cdd-4d9c-b610-b811e63eacff",
+      "slug": "tove-lo-estrus-4c8dc9cf",
+      "title": "Tove Lo: Estrus",
+      "name": "Tove Lo",
+      "source_url": "https://en.wikipedia.org/wiki/Tove_Lo",
+      "extract": "Ebba Tove Elsa Nilsson, known professionally as Tove Lo, is a Swedish singer-songwriter. She is known for her raw, grunge-influenced take on pop music. Referring to her autobiographical lyrics, Out called Lo \"the saddest girl in Sweden\", while Rolling Stone called her \"Sweden's darkest pop export\".",
+      "en": {
+        "kicker": "swedish singer-songwriter",
+        "who": "Tove Lo is a Swedish singer-songwriter, real name Ebba Tove Elsa Nilsson. She is known for a raw, grunge-influenced take on pop music. Out called her \"the saddest girl in Sweden\", referring to her autobiographical lyrics.",
+        "facts": [
+          "Ebba Tove Elsa Nilsson, known professionally as Tove Lo, is a Swedish singer-songwriter.",
+          "She is known for her raw, grunge-influenced take on pop music."
+        ]
+      },
+      "de": {
+        "kicker": "schwedische singer-songwriterin",
+        "who": "Tove Lo ist eine schwedische Singer-Songwriterin, bürgerlich Ebba Tove Elsa Nilsson. Sie ist für ihren rohen, grunge-beeinflussten Popsound bekannt. Wegen ihrer autobiografischen Texte nannte das Magazin Out sie \"the saddest girl in Sweden\".",
+        "facts": [
+          "Ebba Tove Elsa Nilsson, bekannt als Tove Lo, ist eine schwedische Singer-Songwriterin.",
+          "Sie ist für ihre rohe, grunge-beeinflusste Interpretation von Pop bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "isveçli şarkıcı ve söz yazarı",
+        "who": "Tove Lo, gerçek adıyla Ebba Tove Elsa Nilsson, bir İsveçli şarkıcı ve söz yazarıdır. Pop müziğe ham, grunge etkili bir yaklaşımıyla tanınır. Otobiyografik sözleri nedeniyle Out dergisi onu \"the saddest girl in Sweden\" olarak nitelendirdi.",
+        "facts": [
+          "Ebba Tove Elsa Nilsson, lakabıyla Tove Lo, bir İsveçli şarkıcı ve söz yazarıdır.",
+          "Pop müziğe ham ve grunge etkili bir bakışıyla tanınır."
+        ]
+      }
+    }
+  ]
+}

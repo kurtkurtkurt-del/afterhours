@@ -1,0 +1,102 @@
+{
+  "city": "vancouver",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "c75cdb90-d9d5-46dc-95a0-345d9b34bbe3",
+      "slug": "boynextdoor-tour-knock-on-vol-2-in-north-america-c2f14e88",
+      "title": "BOYNEXTDOOR TOUR 'KNOCK ON Vol.2' IN NORTH AMERICA",
+      "name": "BoyNextDoor",
+      "source_url": "https://en.wikipedia.org/wiki/BoyNextDoor",
+      "extract": "BoyNextDoor is a South Korean boy band formed by KOZ Entertainment in 2023. The group consists of six members: Sungho, Riwoo, Myung Jaehyun, Taesan, Leehan, and Woonhak. Characterized by its eponymous \"boy next door\" image, the group defines their work as easy listening with themes drawn from daily life.",
+      "en": {
+        "kicker": "south korean boy band · formed 2023",
+        "who": "BoyNextDoor is a South Korean boy band formed by KOZ Entertainment in 2023. The group has six members. Its work is described as easy listening with themes drawn from daily life, and its image is characterized by the \"boy next door\" label.",
+        "facts": [
+          "BoyNextDoor is a South Korean boy band formed by KOZ Entertainment in 2023.",
+          "The group consists of six members: Sungho, Riwoo, Myung Jaehyun, Taesan, Leehan, and Woonhak."
+        ]
+      },
+      "de": {
+        "kicker": "südkoreanische boyband · gegründet 2023",
+        "who": "BoyNextDoor ist eine südkoreanische Boyband, die 2023 von KOZ Entertainment gegründet wurde. Die Gruppe hat sechs Mitglieder. Ihre Musik wird als Easy Listening mit Themen aus dem Alltag beschrieben, und ihr Image ist vom Bild des „boy next door“ geprägt.",
+        "facts": [
+          "BoyNextDoor ist eine südkoreanische Boyband, die 2023 von KOZ Entertainment gegründet wurde.",
+          "Die Gruppe besteht aus sechs Mitgliedern: Sungho, Riwoo, Myung Jaehyun, Taesan, Leehan und Woonhak."
+        ]
+      },
+      "tr": {
+        "kicker": "güney koreli erkek grubu · 2023'te kuruldu",
+        "who": "BoyNextDoor, 2023 yılında KOZ Entertainment tarafından kurulmuş bir Güney Kore erkek grubudur. Grup altı üyeden oluşuyor. Müziği günlük hayattan temalarla kolay dinlenen bir müzik olarak tanımlanıyor ve imajı \"komşu çocuk\" (boy next door) figürüyle öne çıkıyor.",
+        "facts": [
+          "BoyNextDoor, 2023 yılında KOZ Entertainment tarafından kurulmuş bir Güney Kore erkek grubudur.",
+          "Grup altı üyeden oluşuyor: Sungho, Riwoo, Myung Jaehyun, Taesan, Leehan ve Woonhak."
+        ]
+      }
+    },
+    {
+      "id": "1d230fbf-4106-45df-8c9d-4d7ab5ab0d37",
+      "slug": "gary-numan-dc42c96c",
+      "title": "Gary Numan",
+      "name": "Gary Numan",
+      "source_url": "https://en.wikipedia.org/wiki/Gary_Numan",
+      "extract": "Gary Anthony James Webb, known professionally as Gary Numan, is an English musician. He entered the music industry as frontman of the new wave band Tubeway Army. The band's second and final album, 1979's Replicas, reached No. 1 on the UK Albums Chart, and spawned a UK No. 1 single with \"Are 'Friends' Electric?\". Following the band's split, he released his debut solo album The Pleasure Principle later in 1979, which also reached No. 1 in the UK and produced another UK No. 1 single with \"Cars\". Although his commercial popularity peaked in the late 1970s and early 1980s, he has maintained a strong cult following since then. He has sold over 10 million records.",
+      "en": {
+        "kicker": "english musician · tubeway army frontman",
+        "who": "Gary Anthony James Webb, known professionally as Gary Numan, is an English musician. He entered the music industry as frontman of the new wave band Tubeway Army. Although his commercial popularity peaked in the late 1970s and early 1980s, he has maintained a strong cult following since then.",
+        "facts": [
+          "He entered the music industry as frontman of the new wave band Tubeway Army.",
+          "He has sold over 10 million records."
+        ]
+      },
+      "de": {
+        "kicker": "englischer musiker · frontmann von tubeway army",
+        "who": "Gary Anthony James Webb, unter dem Künstlernamen Gary Numan bekannt, ist ein englischer Musiker. Er stieg in die Musikbranche als Frontmann der New-Wave-Band Tubeway Army ein. Sein kommerzieller Erfolg erreichte Ende der 1970er und Anfang der 1980er Jahre seinen Höhepunkt, doch seitdem hat er eine starke Kultgemeinde.",
+        "facts": [
+          "Er stieg in die Musikbranche als Frontmann der New-Wave-Band Tubeway Army ein.",
+          "Er hat über 10 Millionen Platten verkauft."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz müzisyen · tubeway army solisti",
+        "who": "Gary Anthony James Webb, sahne adıyla Gary Numan, bir İngiliz müzisyendir. Müzik endüstrisine, new wave grubu Tubeway Army'nin solisti olarak girdi. Ticari popülaritesi 1970'lerin sonları ile 1980'lerin başında zirve yapmış olsa da o zamandan beri güçlü bir kült takipçi kitlesine sahip.",
+        "facts": [
+          "Müzik endüstrisine, new wave grubu Tubeway Army'nin solisti olarak girdi.",
+          "10 milyonun üzerinde plak sattı."
+        ]
+      }
+    },
+    {
+      "id": "e4d432ea-5e20-4619-a776-25181e27a454",
+      "slug": "garaj-mahal-19a3cc6c",
+      "title": "Garaj Mahal",
+      "name": "Garaj Mahal",
+      "source_url": "https://en.wikipedia.org/wiki/Garaj_Mahal",
+      "extract": "Garaj Mahal is a jazz fusion band formed in 2000 that combines jazz, rock, Indian music, and funk. The band consists of Fareed Haque (guitar), Kai Eckhardt (bass), Sean Rickman (drums), and Eric Levy (keyboards). Garaj Mahal allows its music to be recorded at concerts.",
+      "en": {
+        "kicker": "jazz fusion band · formed 2000",
+        "who": "Garaj Mahal is a jazz fusion band formed in 2000 that combines jazz, rock, Indian music, and funk. The band consists of Fareed Haque on guitar, Kai Eckhardt on bass, Sean Rickman on drums and Eric Levy on keyboards. The band allows its music to be recorded at concerts.",
+        "facts": [
+          "Garaj Mahal is a jazz fusion band formed in 2000 that combines jazz, rock, Indian music, and funk.",
+          "Garaj Mahal allows its music to be recorded at concerts."
+        ]
+      },
+      "de": {
+        "kicker": "jazz-fusion-band · gegründet 2000",
+        "who": "Garaj Mahal ist eine 2000 gegründete Jazz-Fusion-Band, die Jazz, Rock, indische Musik und Funk verbindet. Zur Band gehören Fareed Haque an der Gitarre, Kai Eckhardt am Bass, Sean Rickman am Schlagzeug und Eric Levy an den Keyboards. Die Band erlaubt, dass ihre Musik bei Konzerten aufgenommen wird.",
+        "facts": [
+          "Garaj Mahal ist eine 2000 gegründete Jazz-Fusion-Band, die Jazz, Rock, indische Musik und Funk verbindet.",
+          "Garaj Mahal erlaubt, dass ihre Musik bei Konzerten aufgenommen wird."
+        ]
+      },
+      "tr": {
+        "kicker": "caz füzyon grubu · 2000'de kuruldu",
+        "who": "Garaj Mahal, 2000 yılında kurulmuş, caz, rock, Hint müziği ve funk'ı birleştiren bir caz füzyon grubudur. Grubun üyeleri gitarda Fareed Haque, basta Kai Eckhardt, davulda Sean Rickman ve klavyede Eric Levy'dir. Grup, müziğinin konserlerde kaydedilmesine izin verir.",
+        "facts": [
+          "Garaj Mahal, 2000 yılında kurulmuş, caz, rock, Hint müziği ve funk'ı birleştiren bir caz füzyon grubudur.",
+          "Garaj Mahal, müziğinin konserlerde kaydedilmesine izin verir."
+        ]
+      }
+    }
+  ]
+}

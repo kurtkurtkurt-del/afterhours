@@ -1,0 +1,38 @@
+{
+  "city": "chicago",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "151d7aee-e3c2-4641-a7bc-58efc51e4c48",
+      "slug": "frost-children-ages-17-7b68dd0c",
+      "title": "Frost Children - Ages 17+",
+      "name": "Frost Children",
+      "source_url": "https://en.wikipedia.org/wiki/Frost_Children",
+      "extract": "Frost Children is an American pop duo from St. Louis, Missouri, now residing in New York City. The duo consists of siblings Angel and Lulu Prost.",
+      "en": {
+        "kicker": "american pop duo · st. louis, missouri",
+        "who": "Frost Children is an American pop duo from St. Louis, Missouri, now living in New York City. The duo is made up of the siblings Angel and Lulu Prost.",
+        "facts": [
+          "Frost Children is an American pop duo from St. Louis, Missouri, now residing in New York City.",
+          "The duo consists of siblings Angel and Lulu Prost."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches popduo · st. louis, missouri",
+        "who": "Frost Children ist ein amerikanisches Popduo aus St. Louis, Missouri, das heute in New York City lebt. Das Duo besteht aus den Geschwistern Angel und Lulu Prost.",
+        "facts": [
+          "Frost Children ist ein amerikanisches Popduo aus St. Louis, Missouri, das heute in New York City lebt.",
+          "Das Duo besteht aus den Geschwistern Angel und Lulu Prost."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı pop ikilisi · st. louis, missouri",
+        "who": "Frost Children, St. Louis, Missouri'den bir Amerikan pop ikilisidir. İkili, kardeşler Angel ve Lulu Prost'tan oluşur ve şimdi New York City'de yaşıyor.",
+        "facts": [
+          "Frost Children, St. Louis, Missouri'den gelen bir Amerikan pop ikilisidir ve şimdi New York City'de yaşamaktadır.",
+          "İkili, kardeşler Angel ve Lulu Prost'tan oluşmaktadır."
+        ]
+      }
+    }
+  ]
+}

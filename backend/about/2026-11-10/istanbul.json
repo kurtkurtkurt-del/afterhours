@@ -1,0 +1,70 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "16b792f2-015e-441f-b33c-da689ff4f823",
+   "slug": "pinhani-31ff7d82",
+   "title": "Pinhani",
+   "name": "Pinhani",
+   "source_url": "https://en.wikipedia.org/wiki/Pinhani",
+   "extract": "Pinhâni is a Turkish alternative rock band. It was founded on 5 April 2004 by two cousins Sinan Kaynakçı and Zeynep Eylül Üçer as a modern rock band in Turkey. Pinhani have released several albums. Pinhani also made the soundtrack for the Turkish TV Series 'Kavak Yelleri'.",
+   "en": {
+    "kicker": "turkish alternative rock band · turkey, 2004",
+    "who": "Pinhani is a turkish alternative rock band founded in 2004 by two cousins, Sinan Kaynakçı and Zeynep Eylül Üçer. The band has released several albums and made the soundtrack for the Turkish TV series 'Kavak Yelleri'.",
+    "facts": [
+     "Pinhâni is a Turkish alternative rock band.",
+     "It was founded on 5 April 2004 by two cousins Sinan Kaynakçı and Zeynep Eylül Üçer as a modern rock band in Turkey."
+    ]
+   },
+   "de": {
+    "kicker": "türkische alternative-rockband · türkei, 2004",
+    "who": "Pinhani ist eine türkische alternative-rockband, die 2004 von zwei cousins, Sinan Kaynakçı und Zeynep Eylül Üçer, gegründet wurde. Die band hat mehrere alben veröffentlicht und den soundtrack zur türkischen tv-serie 'Kavak Yelleri' geschrieben.",
+    "facts": [
+     "Pinhâni ist eine türkische alternative-rockband.",
+     "sie wurde am 5. april 2004 von den cousins Sinan Kaynakçı und Zeynep Eylül Üçer als moderne rockband in der türkei gegründet."
+    ]
+   },
+   "tr": {
+    "kicker": "türk alternatif rock grubu · türkiye, 2004",
+    "who": "Pinhani, 2004'te iki kuzen Sinan Kaynakçı ve Zeynep Eylül Üçer tarafından kurulan bir türk alternatif rock grubudur. Grup birkaç albüm yayımladı ve 'Kavak Yelleri' dizisinin müziklerini yaptı.",
+    "facts": [
+     "Pinhâni, bir türk alternatif rock grubudur.",
+     "5 nisan 2004'te iki kuzen Sinan Kaynakçı ve Zeynep Eylül Üçer tarafından türkiye'de modern bir rock grubu olarak kuruldu."
+    ]
+   }
+  },
+  {
+   "id": "e8e94de8-fe63-41c8-aa92-83afd438f24b",
+   "slug": "serdar-ortac-a920837d",
+   "title": "Serdar Ortaç",
+   "name": "Serdar Ortaç",
+   "source_url": "https://en.wikipedia.org/wiki/Serdar_Orta%C3%A7",
+   "extract": "Serdar Ortaç is a Turkish singer, songwriter and composer from Istanbul.\nHe is known as one of the most popular singers in Turkish pop-music history.",
+   "en": {
+    "kicker": "turkish singer, songwriter and composer · istanbul",
+    "who": "Serdar Ortaç is a turkish singer, songwriter and composer from Istanbul. He is known as one of the most popular singers in turkish pop music history.",
+    "facts": [
+     "Serdar Ortaç is a Turkish singer, songwriter and composer from Istanbul.",
+     "He is known as one of the most popular singers in Turkish pop-music history."
+    ]
+   },
+   "de": {
+    "kicker": "türkischer sänger, songwriter und komponist · istanbul",
+    "who": "Serdar Ortaç ist ein türkischer sänger, songwriter und komponist aus Istanbul. Er gilt als einer der beliebtesten sänger in der geschichte der türkischen popmusik.",
+    "facts": [
+     "Serdar Ortaç ist ein türkischer Sänger, Songwriter und Komponist aus Istanbul.",
+     "er gilt als einer der beliebtesten sänger in der geschichte der türkischen popmusik."
+    ]
+   },
+   "tr": {
+    "kicker": "türk şarkıcı, söz yazarı ve besteci · istanbul",
+    "who": "Serdar Ortaç, İstanbul'dan bir türk şarkıcı, söz yazarı ve bestecidir. Türk pop müziği tarihinin en popüler şarkıcılarından biri olarak bilinir.",
+    "facts": [
+     "Serdar Ortaç, İstanbul'dan bir Türk şarkıcı, söz yazarı ve bestecidir.",
+     "o, türk pop müziği tarihinin en popüler şarkıcılarından biri olarak bilinir."
+    ]
+   }
+  }
+ ]
+}

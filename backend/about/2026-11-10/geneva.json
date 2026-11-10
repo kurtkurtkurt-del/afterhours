@@ -1,0 +1,38 @@
+{
+ "city": "geneva",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "7ba2cdec-77a2-4a4f-942e-c90618d7c429",
+   "slug": "indochine-9187cb32",
+   "title": "Indochine",
+   "name": "Indochine",
+   "source_url": "https://en.wikipedia.org/wiki/Indochine_(band)",
+   "extract": "Indochine is a French rock and new wave band formed in Paris in 1981. It achieved significant success in the 1980s across the Francophone world, Europe, and Latin America with hit songs L'Aventurier and Canary Bay. After releasing several critically praised but commercially disappointing albums in the 1990s, the band experienced a resurgence with the 2002 album Paradize. To date, Indochine has sold over 10 million albums and singles worldwide.",
+   "en": {
+    "kicker": "french rock and new wave band · paris, 1981",
+    "who": "Indochine is a french rock and new wave band that formed in Paris in 1981. In the 1980s it had significant success across the francophone world, europe and latin america. To date the band has sold over 10 million albums and singles worldwide.",
+    "facts": [
+     "Indochine is a French rock and new wave band formed in Paris in 1981.",
+     "To date, Indochine has sold over 10 million albums and singles worldwide."
+    ]
+   },
+   "de": {
+    "kicker": "französische rock- und new-wave-band · paris, 1981",
+    "who": "Indochine ist eine französische rock- und new-wave-band, die 1981 in Paris gegründet wurde. In den 1980er-jahren hatte sie großen erfolg im frankophonen raum, in europa und in lateinamerika. bis heute hat die band weltweit über 10 millionen alben und singles verkauft.",
+    "facts": [
+     "Indochine ist eine französische rock- und new-wave-band, die 1981 in Paris gegründet wurde.",
+     "bis heute hat Indochine weltweit über 10 millionen alben und singles verkauft."
+    ]
+   },
+   "tr": {
+    "kicker": "fransız rock ve new wave grubu · paris, 1981",
+    "who": "Indochine, 1981'de Paris'te kurulan bir fransız rock ve new wave grubudur. 1980'lerde frankofon dünyada, avrupa'da ve latin amerika'da önemli bir başarı elde etti. grup bugüne dek dünya genelinde 10 milyondan fazla albüm ve single sattı.",
+    "facts": [
+     "Indochine, 1981'de Paris'te kurulan bir fransız rock ve new wave grubudur.",
+     "bugüne dek Indochine dünya genelinde 10 milyondan fazla albüm ve single sattı."
+    ]
+   }
+  }
+ ]
+}

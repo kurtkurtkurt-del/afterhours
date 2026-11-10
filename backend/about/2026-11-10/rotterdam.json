@@ -1,0 +1,38 @@
+{
+ "city": "rotterdam",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "0821f4a7-23a5-43a6-b765-cd8b124528ad",
+   "slug": "luka-bloom-d05912ca",
+   "title": "Luka Bloom",
+   "name": "Luka Bloom",
+   "source_url": "https://en.wikipedia.org/wiki/Luka_Bloom",
+   "extract": "Kevin Barry Moore, known professionally as Luka Bloom, is an Irish folk singer-songwriter. He is the younger brother of folk singer Christy Moore.",
+   "en": {
+    "kicker": "irish folk singer-songwriter",
+    "who": "Kevin Barry Moore, known professionally as Luka Bloom, is an Irish folk singer-songwriter. He is the younger brother of folk singer Christy Moore.",
+    "facts": [
+     "Kevin Barry Moore, known professionally as Luka Bloom, is an Irish folk singer-songwriter.",
+     "He is the younger brother of folk singer Christy Moore."
+    ]
+   },
+   "de": {
+    "kicker": "irischer folk-singer-songwriter",
+    "who": "Kevin Barry Moore, unter dem Künstlernamen Luka Bloom bekannt, ist ein irischer Folk-Singer-Songwriter. Er ist der jüngere Bruder des Folksängers Christy Moore.",
+    "facts": [
+     "Kevin Barry Moore, unter dem Künstlernamen Luka Bloom bekannt, ist ein irischer Folk-Singer-Songwriter.",
+     "Er ist der jüngere Bruder des Folksängers Christy Moore."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı folk şarkıcı ve söz yazarı",
+    "who": "Kevin Barry Moore, sahne adıyla Luka Bloom, İrlandalı bir folk şarkıcısı ve söz yazarıdır. Folk şarkıcısı Christy Moore'un küçük erkek kardeşidir.",
+    "facts": [
+     "Kevin Barry Moore, sahne adıyla Luka Bloom, İrlandalı bir folk şarkıcısı ve söz yazarıdır.",
+     "Folk şarkıcısı Christy Moore'un küçük erkek kardeşidir."
+    ]
+   }
+  }
+ ]
+}

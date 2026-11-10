@@ -1,0 +1,70 @@
+{
+ "city": "houston",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "431efa24-a872-4fd8-99c0-ac5066a00a03",
+   "slug": "el-tri-17cdf334",
+   "title": "El Tri",
+   "name": "El Tri",
+   "source_url": "https://en.wikipedia.org/wiki/El_Tri_(band)",
+   "extract": "El Tri is a Mexican rock band from Mexico City fronted by Alex Lora. It is a spinoff of Three Souls in My Mind, formed in 1968. The group is regarded as influential in the development of Mexican rock music.",
+   "en": {
+    "kicker": "mexican rock band · mexico city, 1968",
+    "who": "El Tri is a mexican rock band from Mexico City, fronted by Alex Lora. It is a spinoff of Three Souls in My Mind, and the group is regarded as influential in the development of mexican rock music.",
+    "facts": [
+     "El Tri is a Mexican rock band from Mexico City fronted by Alex Lora.",
+     "The group is regarded as influential in the development of Mexican rock music."
+    ]
+   },
+   "de": {
+    "kicker": "mexikanische rockband · mexiko-stadt, 1968",
+    "who": "El Tri ist eine mexikanische rockband aus Mexiko-Stadt, angeführt von Alex Lora. Die band ist ein ableger von Three Souls in My Mind und gilt als einflussreich für die entwicklung der mexikanischen rockmusik.",
+    "facts": [
+     "El Tri ist eine mexikanische rockband aus Mexiko-Stadt, angeführt von Alex Lora.",
+     "die gruppe gilt als einflussreich für die entwicklung der mexikanischen rockmusik."
+    ]
+   },
+   "tr": {
+    "kicker": "meksikalı rock grubu · mexico city, 1968",
+    "who": "El Tri, Mexico City'den bir meksikalı rock grubudur ve ön yüzü Alex Lora'dır. Three Souls in My Mind'ın bir yan kolu olan grup, meksika rock müziğinin gelişiminde etkili kabul edilmektedir.",
+    "facts": [
+     "El Tri, Mexico City'den Alex Lora'nın öncülüğündeki bir meksikalı rock grubudur.",
+     "grup, meksika rock müziğinin gelişiminde etkili kabul edilmektedir."
+    ]
+   }
+  },
+  {
+   "id": "ffd70381-f415-4fac-8c5a-92707c97085b",
+   "slug": "keenan-te-34067757",
+   "title": "Keenan Te",
+   "name": "Keenan Te",
+   "source_url": "https://en.wikipedia.org/wiki/Keenan_Te",
+   "extract": "Keenan Te is an Australian singer-songwriter of Vietnamese and Cambodian heritage. He is known for piano-driven ballads and songs that gained popularity through TikTok.",
+   "en": {
+    "kicker": "australian singer-songwriter · piano ballads",
+    "who": "Keenan Te is an australian singer-songwriter of Vietnamese and Cambodian heritage. He is known for piano-driven ballads, and some of his songs gained popularity through TikTok.",
+    "facts": [
+     "Keenan Te is an Australian singer-songwriter of Vietnamese and Cambodian heritage.",
+     "He is known for piano-driven ballads and songs that gained popularity through TikTok."
+    ]
+   },
+   "de": {
+    "kicker": "australischer singer-songwriter · klavierballaden",
+    "who": "Keenan Te ist ein australischer singer-songwriter mit vietnamesischen und kambodschanischen wurzeln. Er ist für klavierbetonte balladen bekannt, und einige seiner lieder wurden über TikTok populär.",
+    "facts": [
+     "Keenan Te ist ein australischer singer-songwriter mit vietnamesischen und kambodschanischen wurzeln.",
+     "er ist bekannt für klavierbetonte balladen und lieder, die durch TikTok an beliebtheit gewannen."
+    ]
+   },
+   "tr": {
+    "kicker": "avustralyalı şarkıcı-söz yazarı · piyano baladları",
+    "who": "Keenan Te, vietnamlı ve kamboçyalı kökenli bir avustralyalı şarkıcı ve söz yazarıdır. Piyano ağırlıklı baladlarıyla tanınır ve bazı şarkıları TikTok sayesinde popüler oldu.",
+    "facts": [
+     "Keenan Te, vietnamlı ve kamboçyalı kökenli bir avustralyalı şarkıcı ve söz yazarıdır.",
+     "piyano ağırlıklı baladlarıyla tanınır ve TikTok üzerinden popülerlik kazanan şarkılarıyla bilinir."
+    ]
+   }
+  }
+ ]
+}

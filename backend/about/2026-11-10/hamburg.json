@@ -1,0 +1,38 @@
+{
+ "city": "hamburg",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "73ffcb9c-0e49-46a8-90ce-b66bba302fdc",
+   "slug": "elder-island-2026-adff90fe",
+   "title": "Elder Island - 2026",
+   "name": "Elder Island",
+   "source_url": "https://en.wikipedia.org/wiki/Elder_Island_(band)",
+   "extract": "Elder Island is an English musical trio from Bristol, formed in 2014. As of 2026, they have released three studio albums, three EPs, two remix albums, and numerous singles.",
+   "en": {
+    "kicker": "english musical trio · bristol, 2014",
+    "who": "Elder Island is an english musical trio from Bristol, formed in 2014. As of 2026 they have released three studio albums, three EPs and two remix albums, plus numerous singles.",
+    "facts": [
+     "Elder Island is an English musical trio from Bristol, formed in 2014.",
+     "As of 2026, they have released three studio albums, three EPs, two remix albums, and numerous singles."
+    ]
+   },
+   "de": {
+    "kicker": "englisches musiktrio · bristol, 2014",
+    "who": "Elder Island ist ein englisches musiktrio aus Bristol, das 2014 gegründet wurde. bis 2026 haben sie drei studioalben, drei eps, zwei remixalben und zahlreiche singles veröffentlicht.",
+    "facts": [
+     "Elder Island ist ein englisches musiktrio aus Bristol, das 2014 gegründet wurde.",
+     "bis 2026 haben sie drei studioalben, drei eps, zwei remixalben und zahlreiche singles veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz müzik üçlüsü · bristol, 2014",
+    "who": "Elder Island, 2014'te kurulan, Bristol'dan bir ingiliz müzik üçlüsüdür. 2026 itibarıyla üç stüdyo albümü, üç EP, iki remiks albümü ve çok sayıda single yayımladılar.",
+    "facts": [
+     "Elder Island, 2014'te kurulan, Bristol'dan bir ingiliz müzik üçlüsüdür.",
+     "2026 itibarıyla üç stüdyo albümü, üç EP, iki remiks albümü ve çok sayıda single yayımladılar."
+    ]
+   }
+  }
+ ]
+}

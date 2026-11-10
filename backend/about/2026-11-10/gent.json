@@ -1,0 +1,38 @@
+{
+ "city": "gent",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "7bc47b2a-b1d9-44f6-b7cd-fb6f588172ab",
+   "slug": "hooverphonic-a0e0c62f",
+   "title": "Hooverphonic",
+   "name": "Hooverphonic",
+   "source_url": "https://en.wikipedia.org/wiki/Hooverphonic",
+   "extract": "Hooverphonic is a Belgian electronic band that was formed in October 1995. Though originally categorized as a trip hop group, they quickly expanded their sound to the point where it could no longer be described as a belonging to a single genre, but rather as encompassing alternative, electronica, electropop, rock, and a mixture of others. The band was originally named Hoover, but was later renamed Hooverphonic to avoid confusion with bands already using the Hoover name.",
+   "en": {
+    "kicker": "belgian electronic band · 1995",
+    "who": "Hooverphonic is a belgian electronic band formed in October 1995. The band began as a trip hop group and widened its sound into alternative, electronica, electropop and rock. It was first called Hoover and was renamed to avoid confusion with other bands using that name.",
+    "facts": [
+     "Hooverphonic is a Belgian electronic band that was formed in October 1995.",
+     "The band was originally named Hoover, but was later renamed Hooverphonic to avoid confusion with bands already using the Hoover name."
+    ]
+   },
+   "de": {
+    "kicker": "belgische elektronikband · 1995",
+    "who": "Hooverphonic ist eine belgische elektronikband, die im oktober 1995 gegründet wurde. Die band begann als trip-hop-gruppe und erweiterte ihren klang um alternative, electronica, electropop und rock. Zunächst hieß sie Hoover, dann wurde sie umbenannt, um verwechslungen mit anderen bands dieses namens zu vermeiden.",
+    "facts": [
+     "Hooverphonic ist eine belgische elektronikband, die im oktober 1995 gegründet wurde.",
+     "die band hieß ursprünglich Hoover, wurde aber später in Hooverphonic umbenannt, um verwechslungen mit bands zu vermeiden, die den namen Hoover bereits nutzten."
+    ]
+   },
+   "tr": {
+    "kicker": "belçikalı elektronik grup · 1995",
+    "who": "Hooverphonic, ekim 1995'te kurulan belçikalı bir elektronik gruptur. trip hop grubu olarak başladı ve sesini alternatif, electronica, electropop ve rock alanlarına genişletti. önce Hoover adını taşıdı, aynı adı kullanan başka gruplarla karışmasın diye ad değiştirdi.",
+    "facts": [
+     "Hooverphonic, ekim 1995'te kurulan belçikalı bir elektronik gruptur.",
+     "grup başlangıçta Hoover adını taşıyordu, ancak aynı adı kullanan gruplarla karışmasın diye daha sonra Hooverphonic olarak yeniden adlandırıldı."
+    ]
+   }
+  }
+ ]
+}

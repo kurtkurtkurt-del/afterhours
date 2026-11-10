@@ -1,0 +1,70 @@
+{
+  "city": "stuttgart",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "97dd84e6-fea7-4ecd-b847-682a677708c3",
+      "slug": "nickelback-everything-under-the-sun-tour-8739265e",
+      "title": "Nickelback: Everything Under The Sun Tour",
+      "name": "Nickelback",
+      "source_url": "https://en.wikipedia.org/wiki/Nickelback",
+      "extract": "Nickelback is a Canadian rock band formed in 1995 in Hanna, Alberta, comprising lead guitarist and lead vocalist Chad Kroeger, rhythm guitarist, keyboardist and backing vocalist Ryan Peake, and bassist Mike Kroeger. It went through several drummer changes between 1995 and 2005 before Daniel Adair joined.",
+      "en": {
+        "kicker": "canadian rock band · hanna, alberta, 1995",
+        "who": "Nickelback is a Canadian rock band formed in 1995 in Hanna, Alberta. The band is led by Chad Kroeger, with Ryan Peake and bassist Mike Kroeger. It went through several drummer changes between 1995 and 2005 before Daniel Adair joined.",
+        "facts": [
+          "Nickelback is a Canadian rock band formed in 1995 in Hanna, Alberta, comprising lead guitarist and lead vocalist Chad Kroeger, rhythm guitarist, keyboardist and backing vocalist Ryan Peake, and bassist Mike Kroeger.",
+          "It went through several drummer changes between 1995 and 2005 before Daniel Adair joined."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische rockband · hanna, alberta, 1995",
+        "who": "Nickelback ist eine kanadische Rockband, die 1995 in Hanna, Alberta, gegründet wurde. Chad Kroeger führt die Band als Leadgitarrist und Leadsänger, außerdem gehören Ryan Peake und Bassist Mike Kroeger dazu. Zwischen 1995 und 2005 wechselte die Band mehrmals den Schlagzeuger, bevor Daniel Adair dazustieß.",
+        "facts": [
+          "Nickelback ist eine kanadische Rockband, die 1995 in Hanna, Alberta, gegründet wurde und aus Leadgitarrist und Leadsänger Chad Kroeger, Rhythmusgitarrist, Keyboarder und Backgroundsänger Ryan Peake sowie Bassist Mike Kroeger besteht.",
+          "Zwischen 1995 und 2005 gab es mehrere Schlagzeugerwechsel, bevor Daniel Adair dazustieß."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı rock grubu · hanna, alberta, 1995",
+        "who": "Nickelback, 1995 yılında Alberta'nın Hanna kentinde kurulmuş Kanadalı bir rock grubudur. Grubun lideri Chad Kroeger'dir; Ryan Peake ve basçı Mike Kroeger de grupta yer alır. Grup 1995 ile 2005 arasında birkaç kez davulcu değiştirdi, ardından Daniel Adair katıldı.",
+        "facts": [
+          "Nickelback, 1995 yılında Alberta'nın Hanna kentinde kurulmuş Kanadalı bir rock grubudur; grupta lead gitarist ve lead vokalist Chad Kroeger, ritim gitaristi, klavyeci ve destek vokalisti Ryan Peake ve basçı Mike Kroeger yer alır.",
+          "Grup 1995 ile 2005 arasında birkaç kez davulcu değiştirdi, ardından Daniel Adair katıldı."
+        ]
+      }
+    },
+    {
+      "id": "ee94c47f-53c5-4b19-9b6f-318bb25758ee",
+      "slug": "rondo-veneziano-2c965611",
+      "title": "Rondò Veneziano",
+      "name": "Rondò Veneziano",
+      "source_url": "https://en.wikipedia.org/wiki/Rond%C3%B2_Veneziano",
+      "extract": "Rondò Veneziano is an Italian chamber orchestra, specializing in Baroque music, playing original instruments, but incorporating a rock-style rhythm section of synthesizer, bass guitar and drums, originally led by Maestro Gian Piero Reverberi, who is also the principal composer of all of the original Rondò Veneziano pieces. The unusual addition of modern instruments, more suitable for jazz, combined with Reverberi's arrangements and original compositions, have resulted in lavish novel versions of classical works over the years. As a rule in their concert tours, the musicians, mostly women, add to the overall Baroque effect wearing Baroque-era attire and coiffures. The orchestra's album sales ",
+      "en": {
+        "kicker": "italian chamber orchestra · baroque music",
+        "who": "Rondò Veneziano is an Italian chamber orchestra that plays Baroque music on original instruments. Its rhythm section adds synthesizer, bass guitar and drums, and the original pieces were composed by Gian Piero Reverberi. The musicians, mostly women, wear Baroque-era attire on tour.",
+        "facts": [
+          "Rondò Veneziano is an Italian chamber orchestra, specializing in Baroque music, playing original instruments, but incorporating a rock-style rhythm section of synthesizer, bass guitar and drums, originally led by Maestro Gian Piero Reverberi, who is also the principal composer of all of the original Rondò Veneziano pieces.",
+          "As a rule in their concert tours, the musicians, mostly women, add to the overall Baroque effect wearing Baroque-era attire and coiffures."
+        ]
+      },
+      "de": {
+        "kicker": "italienisches kammerorchester · barockmusik",
+        "who": "Rondò Veneziano ist ein italienisches Kammerorchester, das Barockmusik auf Originalinstrumenten spielt. Der Rhythmusteil aus Synthesizer, E-Bass und Schlagzeug gibt der Musik einen rockigen Klang. Die Originalstücke stammen von Gian Piero Reverberi, und die Musikerinnen tragen auf Tournee Kleidung der Barockzeit.",
+        "facts": [
+          "Rondò Veneziano ist ein italienisches Kammerorchester, das auf Barockmusik spezialisiert ist und einen rockigen Rhythmusteil aus Synthesizer, E-Bass und Schlagzeug einsetzt.",
+          "Auf ihren Konzertreisen tragen die Musikerinnen, meist Frauen, Kleidung und Frisuren der Barockzeit, was den Barockeffekt verstärkt."
+        ]
+      },
+      "tr": {
+        "kicker": "italyan oda orkestrası · barok müzik",
+        "who": "Rondò Veneziano, barok müziğe odaklanan ve orijinal enstrümanlar kullanan bir İtalyan oda orkestrasıdır. Ritim bölümünde rock tarzında synthesizer, bas gitar ve davul yer alır. Orijinal parçaların bestecisi Gian Piero Reverberi'dir ve konserlerdeki müzisyenler, çoğunlukla kadınlar, barok dönem kıyafetleri giyer.",
+        "facts": [
+          "Rondò Veneziano, barok müziğe odaklanan, orijinal enstrümanlar kullanan ve rock tarzı bir ritim bölümü içeren bir İtalyan oda orkestrasıdır.",
+          "Konser turlarında, çoğunlukla kadın olan müzisyenler barok dönem kıyafet ve saç modelleriyle barok etkiyi tamamlar."
+        ]
+      }
+    }
+  ]
+}

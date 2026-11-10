@@ -1,0 +1,102 @@
+{
+  "city": "ankara",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "7c79f00d-4839-4760-b5cf-2b8405a2d2f8",
+      "slug": "ersay-uner-fd9e755b",
+      "title": "Ersay Üner",
+      "name": "Ersay Üner",
+      "source_url": "https://en.wikipedia.org/wiki/Ersay_%C3%9Cner",
+      "extract": "Ersay Üner, is a Turkish pop music singer-songwriter. He became known in Turkey in 2000s by writing and composing songs for Demet Akalın.",
+      "en": {
+        "kicker": "turkish pop singer-songwriter",
+        "who": "Ersay Üner is a Turkish pop music singer-songwriter. He became known in Turkey in the 2000s by writing and composing songs for Demet Akalın.",
+        "facts": [
+          "Ersay Üner, is a Turkish pop music singer-songwriter.",
+          "He became known in Turkey in 2000s by writing and composing songs for Demet Akalın."
+        ]
+      },
+      "de": {
+        "kicker": "türkischer popmusik-singer-songwriter",
+        "who": "Ersay Üner ist ein türkischer Popmusik-Singer-Songwriter. In den 2000ern wurde er in der Türkei bekannt, als er Lieder für Demet Akalın schrieb und komponierte.",
+        "facts": [
+          "Ersay Üner ist ein türkischer Popmusik-Singer-Songwriter.",
+          "In den 2000ern wurde er in der Türkei bekannt, indem er Lieder für Demet Akalın schrieb und komponierte."
+        ]
+      },
+      "tr": {
+        "kicker": "türk pop şarkıcısı ve söz yazarı",
+        "who": "Ersay Üner bir Türk pop müziği şarkıcısı ve söz yazarıdır. 2000'li yıllarda Demet Akalın için şarkı yazıp besteleyerek Türkiye'de tanındı.",
+        "facts": [
+          "Ersay Üner bir Türk pop müziği şarkıcısı ve söz yazarıdır.",
+          "2000'li yıllarda Demet Akalın için şarkı yazıp besteleyerek Türkiye'de tanındı."
+        ]
+      }
+    },
+    {
+      "id": "0cb51077-f6ac-48d9-8674-88fcaf57cfa2",
+      "slug": "paradise-lost-ea61adef",
+      "title": "Paradise Lost",
+      "name": "Paradise Lost",
+      "source_url": "https://en.wikipedia.org/wiki/Paradise_Lost_(band)",
+      "extract": "Paradise Lost are a British gothic metal band. Formed in Halifax, West Yorkshire, in 1988, they are considered pioneers of death-doom and the main influence on gothic metal. As of 2005, Paradise Lost have sold over two million albums worldwide.",
+      "en": {
+        "kicker": "british gothic metal band · halifax, 1988",
+        "who": "Paradise Lost are a British gothic metal band formed in Halifax, West Yorkshire, in 1988. They are considered pioneers of death-doom and the main influence on gothic metal.",
+        "facts": [
+          "Paradise Lost are a British gothic metal band.",
+          "Formed in Halifax, West Yorkshire, in 1988, they are considered pioneers of death-doom and the main influence on gothic metal."
+        ]
+      },
+      "de": {
+        "kicker": "britische gothic-metal-band · halifax, 1988",
+        "who": "Paradise Lost sind eine britische Gothic-Metal-Band. Sie gelten als Pioniere des Death-Doom und als wichtigster Einfluss auf den Gothic Metal.",
+        "facts": [
+          "Paradise Lost sind eine britische Gothic-Metal-Band.",
+          "In Halifax, West Yorkshire, 1988 gegründet, gelten sie als Pioniere des Death-Doom und als wichtigster Einfluss auf den Gothic Metal."
+        ]
+      },
+      "tr": {
+        "kicker": "İngiliz gotik metal grubu · halifax, 1988",
+        "who": "Paradise Lost, İngiliz bir gotik metal grubudur. 1988'de Halifax, West Yorkshire'da kurulan grup, death-doom'un öncüleri ve gotik metal üzerindeki başlıca etki olarak kabul edilir.",
+        "facts": [
+          "Paradise Lost, İngiliz bir gotik metal grubudur.",
+          "1988'de Halifax, West Yorkshire'da kurulan grup, death-doom'un öncüleri ve gotik metal üzerindeki başlıca etki olarak kabul edilir."
+        ]
+      }
+    },
+    {
+      "id": "bf8641e2-f7c5-4e82-abbe-b6e1fb0dfd7b",
+      "slug": "draconian-19eeab1f",
+      "title": "Draconian",
+      "name": "Draconian",
+      "source_url": "https://en.wikipedia.org/wiki/Draconian_(band)",
+      "extract": "Draconian is a Swedish gothic metal band formed in Säffle in 1994. The band's lineup had changed over the years, with only founding members Anders Jacobsson and Johan Ericson still active members. Since the release of their first album Where Lovers Mourn in 2003; the lineup has been mostly stable, with Jerry Torstensson on drums, and Lisa Johansson and Heike Langhans alternately singing clean vocal parts. The band has released eight studio albums along with various singles and music videos.",
+      "en": {
+        "kicker": "swedish gothic metal band · säffle, 1994",
+        "who": "Draconian is a Swedish gothic metal band formed in Säffle in 1994. The band has released eight studio albums along with various singles and music videos.",
+        "facts": [
+          "Draconian is a Swedish gothic metal band formed in Säffle in 1994.",
+          "The band has released eight studio albums along with various singles and music videos."
+        ]
+      },
+      "de": {
+        "kicker": "schwedische gothic-metal-band · säffle, 1994",
+        "who": "Draconian ist eine schwedische Gothic-Metal-Band, die 1994 in Säffle gegründet wurde. Die Band hat acht Studioalben sowie verschiedene Singles und Musikvideos veröffentlicht.",
+        "facts": [
+          "Draconian ist eine schwedische Gothic-Metal-Band, die 1994 in Säffle gegründet wurde.",
+          "Die Band hat acht Studioalben sowie verschiedene Singles und Musikvideos veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "isveçli gotik metal grubu · säffle, 1994",
+        "who": "Draconian, 1994'te Säffle'de kurulan İsveçli bir gotik metal grubudur. Grup, çeşitli single'lar ve müzik videolarının yanı sıra sekiz stüdyo albümü yayımladı.",
+        "facts": [
+          "Draconian, 1994'te Säffle'de kurulan İsveçli bir gotik metal grubudur.",
+          "Grup, çeşitli single'lar ve müzik videolarının yanı sıra sekiz stüdyo albümü yayımladı."
+        ]
+      }
+    }
+  ]
+}

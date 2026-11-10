@@ -1,0 +1,102 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "25f77b11-b5b8-4e5b-a1e1-f388ec9124cb",
+      "slug": "underoath-define-the-great-line-20th-anniversary-43e5e3a4",
+      "title": "Underoath - Define the Great Line 20th Anniversary Tour",
+      "name": "Underoath",
+      "source_url": "https://en.wikipedia.org/wiki/Underoath",
+      "extract": "Underoath is an American rock band from Tampa, Florida. It was founded by lead vocalist Dallas Taylor and guitarist Luke Morton in 1997 in Ocala, Florida; subsequently, its additional members were from Tampa, including drummer, singer and last remaining original member Aaron Gillespie. The band's current lineup consists of Gillespie, keyboardist Christopher Dudley, lead guitarist Timothy McTague, bassist Grant Brandell, and lead vocalist Spencer Chamberlain.",
+      "en": {
+        "kicker": "american rock band · tampa, florida",
+        "who": "Underoath is an American rock band from Tampa, Florida. The band was founded in 1997 in Ocala, Florida, by lead vocalist Dallas Taylor and guitarist Luke Morton.",
+        "facts": [
+          "Underoath is an American rock band from Tampa, Florida.",
+          "It was founded by lead vocalist Dallas Taylor and guitarist Luke Morton in 1997 in Ocala, Florida."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · tampa, florida",
+        "who": "Underoath ist eine amerikanische Rockband aus Tampa, Florida. Die Band wurde 1997 in Ocala, Florida, von Leadsänger Dallas Taylor und Gitarrist Luke Morton gegründet.",
+        "facts": [
+          "Underoath ist eine amerikanische Rockband aus Tampa, Florida.",
+          "Die Band wurde 1997 in Ocala, Florida, von Leadsänger Dallas Taylor und Gitarrist Luke Morton gegründet."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · tampa, florida",
+        "who": "Underoath, Florida'nın Tampa kentinden çıkan Amerikalı bir rock grubudur. Grup 1997'de Ocala, Florida'da baş vokalist Dallas Taylor ve gitarist Luke Morton tarafından kuruldu.",
+        "facts": [
+          "Underoath, Florida'nın Tampa kentinden çıkan Amerikalı bir rock grubudur.",
+          "Grup, baş vokalist Dallas Taylor ve gitarist Luke Morton tarafından 1997'de Ocala, Florida'da kuruldu."
+        ]
+      }
+    },
+    {
+      "id": "38493713-9f28-4235-ad46-3a6dee28e8f7",
+      "slug": "paul-cauthen-8522684d",
+      "title": "Paul Cauthen",
+      "name": "Paul Cauthen",
+      "source_url": "https://en.wikipedia.org/wiki/Paul_Cauthen",
+      "extract": "Paul Mark Cauthen is an American singer-songwriter from East Texas. He started his music career in an Americana/indie folk rock duo called Sons of Fathers, before turning solo. He has released five albums and an EP as a solo artist, the most recent being Book of Paul released on 3 April, 2026.",
+      "en": {
+        "kicker": "american singer-songwriter · east texas",
+        "who": "Paul Mark Cauthen is an American singer-songwriter from East Texas. He started out in the Americana and indie folk rock duo Sons of Fathers before turning solo.",
+        "facts": [
+          "He started his music career in an Americana/indie folk rock duo called Sons of Fathers, before turning solo.",
+          "He has released five albums and an EP as a solo artist, the most recent being Book of Paul released on 3 April, 2026."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter · east texas",
+        "who": "Paul Mark Cauthen ist ein amerikanischer Singer-Songwriter aus East Texas. Er begann seine Karriere im Duo Sons of Fathers, bevor er solo weitermachte.",
+        "facts": [
+          "Er begann seine Musikkarriere in dem Americana- und Indie-Folkrock-Duo Sons of Fathers, bevor er solo weitermachte.",
+          "Als Solokünstler hat er fünf Alben und eine EP veröffentlicht; das neueste ist Book of Paul, erschienen am 3. April 2026."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı ve söz yazarı · east texas",
+        "who": "Paul Mark Cauthen, East Texas'tan bir Amerikalı şarkıcı ve söz yazarıdır. Solo kariyerine geçmeden önce Americana ve indie folk rock ikilisi Sons of Fathers'ta çalmaya başladı.",
+        "facts": [
+          "Müzik kariyerine Americana ve indie folk rock ikilisi Sons of Fathers'ta başladı, ardından solo kariyerine yöneldi.",
+          "Solo sanatçı olarak beş albüm ve bir EP yayımladı; en son çıkan Book of Paul, 3 Nisan 2026'da yayımlandı."
+        ]
+      }
+    },
+    {
+      "id": "b8e49843-3948-4d6b-afbf-35c37b4f0b66",
+      "slug": "inna-eecbcc1a",
+      "title": "INNA",
+      "name": "Inna",
+      "source_url": "https://en.wikipedia.org/wiki/Inna",
+      "extract": "Elena Alexandra Apostoleanu, known professionally as Inna, is a Romanian singer and songwriter. Born in Mangalia and raised in Neptun, she studied political science at Ovidius University before meeting the Romanian trio Play & Win and pursuing a music career. She adopted the stage name \"Alessandra\" and a pop-rock style in 2008; later that year, she changed her stage name to \"Inna\" and began releasing EDM, house and popcorn music. \"Hot\" (2008), her debut single, was a commercial success worldwide and topped the Romanian and Billboard's Hot Dance Airplay chart, among others. Her debut studio album of the same name followed in August 2009 and was certified Gold and Platinum. It featured several",
+      "en": {
+        "kicker": "romanian singer and songwriter · 2008",
+        "who": "Inna is a Romanian singer and songwriter, born in Mangalia and raised in Neptun. Her debut single \"Hot\" was a commercial success worldwide.",
+        "facts": [
+          "Elena Alexandra Apostoleanu, known professionally as Inna, is a Romanian singer and songwriter.",
+          "\"Hot\" (2008), her debut single, was a commercial success worldwide and topped the Romanian and Billboard's Hot Dance Airplay chart, among others."
+        ]
+      },
+      "de": {
+        "kicker": "rumänische sängerin und songwriterin · 2008",
+        "who": "Inna ist eine rumänische Sängerin und Songwriterin, geboren in Mangalia und aufgewachsen in Neptun. Ihre Debütsingle \"Hot\" war weltweit ein kommerzieller Erfolg.",
+        "facts": [
+          "Elena Alexandra Apostoleanu, unter dem Künstlernamen Inna bekannt, ist eine rumänische Sängerin und Songwriterin.",
+          "\"Hot\" (2008), ihre Debütsingle, war weltweit ein kommerzieller Erfolg und stand unter anderem an der Spitze der rumänischen Charts sowie der Billboard-Hot-Dance-Airplay-Liste."
+        ]
+      },
+      "tr": {
+        "kicker": "romen şarkıcı ve söz yazarı · 2008",
+        "who": "Inna, Mangalia'da doğup Neptun'da büyüyen bir Romen şarkıcı ve söz yazarıdır. Debut single'ı \"Hot\" dünya genelinde ticari bir başarı elde etti.",
+        "facts": [
+          "Sahne adı Inna olan Elena Alexandra Apostoleanu, Romen bir şarkıcı ve söz yazarıdır.",
+          "Debut single'ı \"Hot\" (2008), dünya genelinde ticari bir başarı elde etti ve diğerleri arasında Romanya listesinde ve Billboard Hot Dance Airplay listesinde zirveye çıktı."
+        ]
+      }
+    }
+  ]
+}

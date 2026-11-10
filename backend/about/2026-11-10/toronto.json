@@ -1,0 +1,38 @@
+{
+  "city": "toronto",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "5ae41a7b-89d0-4ab2-9625-aab44d55b40b",
+      "slug": "tobiahs-1bf8f4dd",
+      "title": "Tobiahs",
+      "name": "Tobiahs",
+      "source_url": "https://en.wikipedia.org/wiki/Tobiahs",
+      "extract": "Tobiahs Fakhri, known professionally by the mononym Tobiahs, is an Australian electronic dance music producer, singer, songwriter, and musician from Melbourne, Australia. He is best known for his singles \"Lifetime\" and \"Angel of Mine\".",
+      "en": {
+        "kicker": "australian edm producer · melbourne",
+        "who": "Tobiahs is the mononym of Tobiahs Fakhri, an Australian electronic dance music producer, singer, songwriter and musician from Melbourne. He is best known for his singles \"Lifetime\" and \"Angel of Mine\".",
+        "facts": [
+          "Tobiahs Fakhri, known professionally by the mononym Tobiahs, is an Australian electronic dance music producer, singer, songwriter, and musician from Melbourne, Australia.",
+          "He is best known for his singles \"Lifetime\" and \"Angel of Mine\"."
+        ]
+      },
+      "de": {
+        "kicker": "australischer edm-produzent · melbourne",
+        "who": "Tobiahs ist das Pseudonym von Tobiahs Fakhri, einem australischen Produzenten, Sänger, Songwriter und Musiker aus Melbourne im Bereich Electronic Dance Music. Er ist vor allem für seine Singles „Lifetime“ und „Angel of Mine“ bekannt.",
+        "facts": [
+          "Tobiahs Fakhri, der unter dem Mononym Tobiahs bekannt ist, ist ein australischer Produzent, Sänger, Songwriter und Musiker aus Melbourne.",
+          "Er ist vor allem für seine Singles „Lifetime“ und „Angel of Mine“ bekannt."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı edm yapımcısı · melbourne",
+        "who": "Tobiahs, Tobiahs Fakhri'nin mononim adıdır; Melbourne'den bir Avustralyalı elektronik dans müziği yapımcısı, şarkıcı, söz yazarı ve müzisyendir. En çok \"Lifetime\" ve \"Angel of Mine\" single'larıyla tanınır.",
+        "facts": [
+          "Tobiahs Fakhri, Melbourne'den bir Avustralyalı elektronik dans müziği yapımcısı, şarkıcı, söz yazarı ve müzisyendir.",
+          "En çok \"Lifetime\" ve \"Angel of Mine\" single'larıyla tanınır."
+        ]
+      }
+    }
+  ]
+}

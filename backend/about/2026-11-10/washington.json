@@ -1,0 +1,70 @@
+{
+  "city": "washington",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "4aba8d91-64eb-4b61-827c-7d7cb65e7246",
+      "slug": "the-pineapple-thief-21daaa14",
+      "title": "The Pineapple Thief",
+      "name": "The Pineapple Thief",
+      "source_url": "https://en.wikipedia.org/wiki/The_Pineapple_Thief",
+      "extract": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset. As of June 2024, the group consists of Soord on vocals, guitars, and keyboards, Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums. They have released 16 studio albums, 6 EPs, and several live and compilation albums.",
+      "en": {
+        "kicker": "english progressive rock band · founded 1999",
+        "who": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset. As of June 2024, Soord is joined by Jon Sykes on bass, Steve Kitch on keyboards and Gavin Harrison on drums. They have released 16 studio albums, 6 EPs, and several live and compilation albums.",
+        "facts": [
+          "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset.",
+          "They have released 16 studio albums, 6 EPs, and several live and compilation albums."
+        ]
+      },
+      "de": {
+        "kicker": "englische progressive-rock-band · gegründet 1999",
+        "who": "The Pineapple Thief sind eine englische Progressive-Rock-Band, die 1999 von Bruce Soord in Yeovil, Somerset, gegründet wurde. Seit Juni 2024 spielen neben Soord Jon Sykes am Bass, Steve Kitch an den Keyboards und Gavin Harrison am Schlagzeug. Sie haben 16 Studioalben, 6 EPs sowie mehrere Live- und Compilation-Alben veröffentlicht.",
+        "facts": [
+          "The Pineapple Thief sind eine englische Progressive-Rock-Band, die 1999 von Bruce Soord in Yeovil, Somerset, gegründet wurde.",
+          "Sie haben 16 Studioalben, 6 EPs sowie mehrere Live- und Compilation-Alben veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz progresif rock grubu · 1999'da kuruldu",
+        "who": "The Pineapple Thief, 1999 yılında Bruce Soord tarafından Yeovil, Somerset'te kurulmuş bir İngiliz progresif rock grubudur. Haziran 2024 itibarıyla Soord'a bas gitarda Jon Sykes, klavyede Steve Kitch ve davulda Gavin Harrison eşlik ediyor. Grup 16 stüdyo albümü, 6 EP ve birkaç canlı ile derleme albüm yayımladı.",
+        "facts": [
+          "The Pineapple Thief, 1999 yılında Bruce Soord tarafından Yeovil, Somerset'te kurulmuş bir İngiliz progresif rock grubudur.",
+          "Grup 16 stüdyo albümü, 6 EP ve birkaç canlı ile derleme albüm yayımladı."
+        ]
+      }
+    },
+    {
+      "id": "32fc726f-722f-4531-b4e6-90efa85aece5",
+      "slug": "bailen-swim-at-your-own-risk-tour-db2a6397",
+      "title": "BAILEN - SWIM!!! At Your Own Risk Tour",
+      "name": "Bailen",
+      "source_url": "https://en.wikipedia.org/wiki/Bailen_(band)",
+      "extract": "BAILEN is an American alternative music group based in New York City. The band consists of fraternal twins Daniel Bailen (vocals/bass/synth/guitar) and David Bailen (vocals/drums), as well as younger sister Julia Bailen (vocals/guitar). The band performed a Paste Session on February 5, 2019 and had their single \"I Was Wrong\" featured as Song of the Day by The Current on March 14, 2019. Their single \"I Was Wrong\" was featured by NPR World Cafe in \"Heavy Rotation: 10 Songs They Can't Stop Listening To\" on March 30, 2019. The band was featured in Billboard just a few weeks later on April 18, 2019.",
+      "en": {
+        "kicker": "american alternative music group · new york city",
+        "who": "BAILEN is an American alternative music group based in New York City. The band is made up of fraternal twins Daniel and David Bailen, along with their younger sister Julia Bailen. Daniel plays bass and synth, David plays drums, and Julia plays guitar, and all three sing.",
+        "facts": [
+          "BAILEN is an American alternative music group based in New York City.",
+          "The band consists of fraternal twins Daniel Bailen (vocals/bass/synth/guitar) and David Bailen (vocals/drums), as well as younger sister Julia Bailen (vocals/guitar)."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische alternative-musikgruppe · new york city",
+        "who": "BAILEN ist eine amerikanische Alternative-Musikgruppe mit Sitz in New York City. Die Band besteht aus den zweieiigen Zwillingen Daniel und David Bailen sowie deren jüngerer Schwester Julia Bailen. Daniel spielt Bass und Synthesizer, David Schlagzeug und Julia Gitarre, und alle drei singen.",
+        "facts": [
+          "BAILEN ist eine amerikanische Alternative-Musikgruppe mit Sitz in New York City.",
+          "Die Band besteht aus den zweieiigen Zwillingen Daniel Bailen (Gesang, Bass, Synthesizer, Gitarre) und David Bailen (Gesang, Schlagzeug) sowie der jüngeren Schwester Julia Bailen (Gesang, Gitarre)."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı alternatif müzik grubu · new york city",
+        "who": "BAILEN, New York City merkezli Amerikalı bir alternatif müzik grubudur. Grup, ikiz kardeşler Daniel ve David Bailen ile küçük kız kardeşleri Julia Bailen'den oluşuyor. Daniel bas ve synth, David davul, Julia gitar çalıyor ve üçü de şarkı söylüyor.",
+        "facts": [
+          "BAILEN, New York City merkezli Amerikalı bir alternatif müzik grubudur.",
+          "Grup, ikiz kardeşler Daniel Bailen (vokal/bas/synth/gitar) ve David Bailen (vokal/davul) ile küçük kız kardeşleri Julia Bailen'den (vokal/gitar) oluşuyor."
+        ]
+      }
+    }
+  ]
+}

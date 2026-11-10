@@ -1,0 +1,102 @@
+{
+  "city": "manchester",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "ea35559f-7b4b-4a09-bd13-cfae9d21b822",
+      "slug": "9th-wonder-e656dbf3",
+      "title": "9th Wonder",
+      "name": "9th Wonder",
+      "source_url": "https://en.wikipedia.org/wiki/9th_Wonder",
+      "extract": "Patrick Denard Douthit, better known as 9th Wonder, is an American record producer, record executive, educator, and DJ who is the CEO of Jamla Records, distributed and marketed by Roc Nation, and Empire Distribution. As of Fall 2022, Douthit is Professor of the Practice in Residence in the Program in African American Studies at Wake Forest University. He also continues to teach courses at Duke University alongside his longtime collaborator, Professor Mark Anthony Neal.",
+      "en": {
+        "kicker": "american record producer · CEO of Jamla Records",
+        "who": "Patrick Denard Douthit, known as 9th Wonder, is an American record producer, record executive, educator, and DJ. He is the CEO of Jamla Records, which is distributed and marketed by Roc Nation and Empire Distribution.",
+        "facts": [
+          "As of Fall 2022, Douthit is Professor of the Practice in Residence in the Program in African American Studies at Wake Forest University.",
+          "He also continues to teach courses at Duke University alongside his longtime collaborator, Professor Mark Anthony Neal."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer produzent · CEO von Jamla Records",
+        "who": "Patrick Denard Douthit, bekannt als 9th Wonder, ist ein amerikanischer Musikproduzent, Plattenmanager, Pädagoge und DJ. Er ist CEO von Jamla Records, das von Roc Nation und Empire Distribution vertrieben und vermarktet wird.",
+        "facts": [
+          "Seit Herbst 2022 ist Douthit Professor of the Practice in Residence im Programm für Afroamerikanische Studien an der Wake Forest University.",
+          "Er unterrichtet außerdem weiterhin an der Duke University, zusammen mit seinem langjährigen Mitarbeiter Professor Mark Anthony Neal."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı müzik yapımcısı · Jamla Records CEO'su",
+        "who": "Patrick Denard Douthit, 9th Wonder adıyla tanınan Amerikalı bir müzik yapımcısı, plak yöneticisi, eğitimci ve DJ'dir. Jamla Records'un CEO'sudur ve plak şirketi Roc Nation ile Empire Distribution tarafından dağıtılıp pazarlanıyor.",
+        "facts": [
+          "2022 sonbaharından beri Douthit, Wake Forest Üniversitesi'nde Afrika Amerikan Çalışmaları programında Professor of the Practice in Residence unvanını taşıyor.",
+          "Duke Üniversitesi'nde uzun süredir birlikte çalıştığı Profesör Mark Anthony Neal ile ders vermeyi sürdürüyor."
+        ]
+      }
+    },
+    {
+      "id": "efda3f14-e7cc-4140-93cb-58b5618f80ab",
+      "slug": "enter-shikari-lose-your-self-tour-2026-6aa03d83",
+      "title": "Enter Shikari - LOSE YOUR SELF TOUR 2026",
+      "name": "Enter Shikari",
+      "source_url": "https://en.wikipedia.org/wiki/Enter_Shikari",
+      "extract": "Enter Shikari are an English rock band formed in St Albans, Hertfordshire in 1999 by bassist Chris Batten, lead vocalist and keyboardist Rou Reynolds, and drummer Rob Rolfe. In 2003, guitarist Rory Clewlow joined the band to complete its current line-up, and it adopted its current name.",
+      "en": {
+        "kicker": "english rock band · St Albans, 1999",
+        "who": "Enter Shikari are an English rock band. They were formed in St Albans, Hertfordshire, in 1999.",
+        "facts": [
+          "In 2003, guitarist Rory Clewlow joined the band to complete its current line-up, and it adopted its current name.",
+          "Enter Shikari are an English rock band formed in St Albans, Hertfordshire in 1999 by bassist Chris Batten, lead vocalist and keyboardist Rou Reynolds, and drummer Rob Rolfe."
+        ]
+      },
+      "de": {
+        "kicker": "englische rockband · St Albans, 1999",
+        "who": "Enter Shikari sind eine englische Rockband. Sie wurden 1999 in St Albans, Hertfordshire, gegründet.",
+        "facts": [
+          "Im Jahr 2003 trat Gitarrist Rory Clewlow der Band bei, um die aktuelle Besetzung zu vervollständigen, und die Band nahm ihren heutigen Namen an.",
+          "Die Band wurde 1999 in St Albans, Hertfordshire, von Bassist Chris Batten, Leadsänger und Keyboarder Rou Reynolds und Schlagzeuger Rob Rolfe gegründet."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz rock grubu · St Albans, 1999",
+        "who": "Enter Shikari, İngiliz bir rock grubudur. Grup 1999'da Hertfordshire'daki St Albans kentinde kuruldu.",
+        "facts": [
+          "2003'te gitarist Rory Clewlow, mevcut kadroyu tamamlamak için gruba katıldı ve grup bugünkü adını aldı.",
+          "Grup 1999'da, basçı Chris Batten, vokalist ve klavyeci Rou Reynolds ve davulcu Rob Rolfe tarafından kuruldu."
+        ]
+      }
+    },
+    {
+      "id": "12813cd7-b1a2-4760-b624-a2876dbbe6b0",
+      "slug": "look-mum-no-computer-d44e89df",
+      "title": "Look Mum No Computer",
+      "name": "Look Mum No Computer",
+      "source_url": "https://en.wikipedia.org/wiki/Look_Mum_No_Computer",
+      "extract": "Sam James Bartle, known by the stage names Sam Battle and Look Mum No Computer, is an English musician, YouTuber, electronics enthusiast, and composer. He posts videos about making pro audio equipment and synthesisers, as well as original music.",
+      "en": {
+        "kicker": "english musician and youtuber · electronics enthusiast",
+        "who": "Look Mum No Computer is the stage name used by Sam James Bartle, an English musician. He posts videos about making pro audio equipment and synthesisers, and also writes original music.",
+        "facts": [
+          "Sam James Bartle, known by the stage names Sam Battle and Look Mum No Computer, is an English musician, YouTuber, electronics enthusiast, and composer.",
+          "He posts videos about making pro audio equipment and synthesisers, as well as original music."
+        ]
+      },
+      "de": {
+        "kicker": "englischer musiker und youtuber · elektronik-fan",
+        "who": "Look Mum No Computer ist ein Künstlername von Sam James Bartle, einem englischen Musiker. Er stellt Videos über den Bau professioneller Audiogeräte und Synthesizer her und veröffentlicht auch eigene Musik.",
+        "facts": [
+          "Sam James Bartle, bekannt unter den Künstlernamen Sam Battle und Look Mum No Computer, ist ein englischer Musiker, YouTuber, Elektronik-Enthusiast und Komponist.",
+          "Er postet Videos darüber, wie man professionelle Audiogeräte und Synthesizer baut, sowie eigene Musik."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz müzisyen ve youtuber · elektronik meraklısı",
+        "who": "Look Mum No Computer, İngiliz müzisyen Sam James Bartle'ın sahne adıdır. Profesyonel ses ekipmanı ve sentezleyici yapımı üzerine videolar çekiyor ve özgün müzik de üretiyor.",
+        "facts": [
+          "Sam Battle ve Look Mum No Computer sahne adlarıyla bilinen Sam James Bartle; İngiliz müzisyen, YouTuber, elektronik meraklısı ve bestecidir.",
+          "Profesyonel ses ekipmanları ve sentezleyiciler yapmak üzerine videolar paylaşıyor, ayrıca özgün müzik de yayımlıyor."
+        ]
+      }
+    }
+  ]
+}

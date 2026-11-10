@@ -1,0 +1,70 @@
+{
+  "city": "london",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "7d94d8e8-b0ea-4845-8649-135d02ba4e23",
+      "slug": "the-march-violets-3c0380b2",
+      "title": "The March Violets",
+      "name": "The March Violets",
+      "source_url": "https://en.wikipedia.org/wiki/The_March_Violets",
+      "extract": "The March Violets are an English post-punk/gothic rock band formed in 1981 in Leeds, incorporating male and female singers, drum machine rhythms and echo-laden electric guitar, much in the style of fellow Leeds band the Sisters of Mercy. Seven March Violets singles reached the UK Indie Chart; the Natural History collection also was an indie hit.",
+      "en": {
+        "kicker": "english post-punk and gothic rock band · Leeds, 1981",
+        "who": "The March Violets are an English post-punk and gothic rock band. They were formed in 1981 in Leeds, combining male and female singers with drum machine rhythms and echo-laden electric guitar.",
+        "facts": [
+          "The March Violets are an English post-punk/gothic rock band formed in 1981 in Leeds, incorporating male and female singers, drum machine rhythms and echo-laden electric guitar, much in the style of fellow Leeds band the Sisters of Mercy.",
+          "Seven March Violets singles reached the UK Indie Chart; the Natural History collection also was an indie hit."
+        ]
+      },
+      "de": {
+        "kicker": "englische post-punk- und gothic-rock-band · Leeds, 1981",
+        "who": "The March Violets sind eine englische Post-Punk- und Gothic-Rock-Band. Sie wurden 1981 in Leeds gegründet und verbanden männliche und weibliche Sänger mit Drumcomputer-Rhythmen und hallender E-Gitarre.",
+        "facts": [
+          "Die March Violets sind eine englische Post-Punk- und Gothic-Rock-Band aus Leeds, die männliche und weibliche Sänger, Drumcomputer-Rhythmen und hallende E-Gitarre verbindet.",
+          "Sieben Singles der March Violets erreichten die britische Indie-Chart; auch die Sammlung Natural History war ein Indie-Hit."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz post-punk ve gotik rock grubu · Leeds, 1981",
+        "who": "The March Violets, İngiliz bir post-punk ve gotik rock grubudur. 1981'de Leeds'te kuruldular ve erkek ile kadın vokalleri, davul makinesi ritimleri ve yankılı elektro gitarı bir araya getirdiler.",
+        "facts": [
+          "The March Violets, 1981'de Leeds'te kurulan; erkek ve kadın vokalleri, davul makinesi ritimleri ve yankılı elektro gitarı, Leeds'li Sisters of Mercy'yi andıran bir İngiliz post-punk ve gotik rock grubudur.",
+          "Grubun yedi single'ı İngiltere Indie Listesi'ne girdi; Natural History derlemesi de bir indie hit oldu."
+        ]
+      }
+    },
+    {
+      "id": "a94183fb-bc32-4632-b4c0-8e4023fa4e1f",
+      "slug": "dirty-three-2d58fe47",
+      "title": "Dirty Three",
+      "name": "Dirty Three",
+      "source_url": "https://en.wikipedia.org/wiki/Dirty_Three",
+      "extract": "Dirty Three are an Australian instrumental rock band, consisting of Warren Ellis, Mick Turner and Jim White (drums), which formed in 1992. Their 1996 album Horse Stories was voted by Rolling Stone as one of the top three albums of the year. Two of their albums have peaked into the top 50 on the ARIA Albums Chart, Ocean Songs (1998) and Toward the Low Sun (2012). During their career they have spent much of their time overseas when not performing together. Turner is based in Melbourne, White lives in New York, and Ellis in Paris. Australian rock music historian Ian McFarlane described them as providing a \"rumbling, dynamic sound incorporated open-ended, improvisational, electric rock ... minus",
+      "en": {
+        "kicker": "australian instrumental rock band · formed 1992",
+        "who": "Dirty Three are an Australian instrumental rock band, made up of Warren Ellis, Mick Turner and Jim White on drums. The band formed in 1992, and its members have spent much of their time overseas when not performing together.",
+        "facts": [
+          "Their 1996 album Horse Stories was voted by Rolling Stone as one of the top three albums of the year.",
+          "Two of their albums have peaked into the top 50 on the ARIA Albums Chart, Ocean Songs (1998) and Toward the Low Sun (2012)."
+        ]
+      },
+      "de": {
+        "kicker": "australische instrumental-rockband · gegründet 1992",
+        "who": "Dirty Three sind eine australische Instrumental-Rockband aus Warren Ellis, Mick Turner und Jim White am Schlagzeug. Die Band entstand 1992, und ihre Mitglieder verbringen viel Zeit im Ausland, wenn sie nicht gemeinsam auftreten.",
+        "facts": [
+          "Ihr Album Horse Stories von 1996 wurde vom Rolling Stone zu einem der drei besten Alben des Jahres gewählt.",
+          "Zwei ihrer Alben erreichten die Top 50 der ARIA Albums Chart."
+        ]
+      },
+      "tr": {
+        "kicker": "avustralyalı enstrümantal rock grubu · 1992",
+        "who": "Dirty Three, Warren Ellis, Mick Turner ve davulda Jim White'dan oluşan Avustralyalı bir enstrümantal rock grubudur. Grup 1992'de kuruldu ve üyeleri birlikte sahne almadıkları zamanların çoğunu yurt dışında geçiriyor.",
+        "facts": [
+          "Grubun 1996 yapımı Horse Stories albümü, Rolling Stone tarafından yılın en iyi üç albümünden biri seçildi.",
+          "Albümlerinden ikisi ARIA Albums Chart listesinin ilk 50'sine girdi."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "city": "new-york",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "0cf31c8b-8fea-41b9-93c8-fc4a3da0d0db",
+      "slug": "madra-salach-9f311a4f",
+      "title": "Madra Salach",
+      "name": "Madra Salach",
+      "source_url": "https://en.wikipedia.org/wiki/Madra_Salach",
+      "extract": "Madra Salach is an Irish contemporary-folk band based in Dublin founded in 2023. Formed by founding members Paul Banks, Adam Cullen and Dara Duffy as they played gigs across various venues in the Northside of Dublin. Three additional members joined to complete the group, with Maxime Arnold, Jack Lawlor and Jack Martin rounding off the six-piece group. Madra Salach have played multiple festivals such as All Together Now and Electric Picnic, shows, and released their debut EP, It's a Hell of an Age in January 2026.",
+      "en": {
+        "kicker": "irish contemporary-folk band · Dublin, 2023",
+        "who": "Madra Salach are an Irish contemporary-folk band based in Dublin, founded in 2023. The six-piece group was formed by Paul Banks, Adam Cullen and Dara Duffy, with Maxime Arnold, Jack Lawlor and Jack Martin joining them.",
+        "facts": [
+          "Madra Salach is an Irish contemporary-folk band based in Dublin founded in 2023.",
+          "Madra Salach have played multiple festivals such as All Together Now and Electric Picnic, shows, and released their debut EP, It's a Hell of an Age in January 2026."
+        ]
+      },
+      "de": {
+        "kicker": "irische contemporary-folk-band · Dublin, 2023",
+        "who": "Madra Salach ist eine irische Contemporary-Folk-Band mit Sitz in Dublin, gegründet 2023. Die Gruppe besteht aus sechs Mitgliedern, die von Paul Banks, Adam Cullen und Dara Duffy gegründet wurde.",
+        "facts": [
+          "Madra Salach ist eine irische Contemporary-Folk-Band mit Sitz in Dublin, die 2023 gegründet wurde.",
+          "Die Band hat auf mehreren Festivals wie All Together Now und Electric Picnic gespielt und im Januar 2026 ihre Debüt-EP It's a Hell of an Age veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "İrlandalı çağdaş-folk grubu · Dublin, 2023",
+        "who": "Madra Salach, 2023'te Dublin'de kurulmuş bir İrlandalı çağdaş folk grubudur. Grup, Paul Banks, Adam Cullen ve Dara Duffy tarafından kuruldu ve altı kişiden oluşuyor.",
+        "facts": [
+          "Madra Salach, 2023'te kurulmuş, Dublin merkezli bir İrlandalı çağdaş folk grubudur.",
+          "Grup All Together Now ve Electric Picnic gibi festivallerde sahne aldı ve Ocak 2026'da ilk EP'leri It's a Hell of an Age'i yayımladı."
+        ]
+      }
+    },
+    {
+      "id": "6d365e1c-1d5a-460a-84a7-669ceffe9e1f",
+      "slug": "kota-the-friend-661afda1",
+      "title": "KOTA The Friend",
+      "name": "Kota the Friend",
+      "source_url": "https://en.wikipedia.org/wiki/Kota_the_Friend",
+      "extract": "Avery Marcel Joshua Jones, known by his stage name Kota the Friend, is an American rapper, singer, songwriter, and record producer, born and raised in Brooklyn, New York. He took his stage name from the Disney movie Brother Bear and has claimed it is a Native American word meaning friend.",
+      "en": {
+        "kicker": "american rapper and producer · Brooklyn, New York",
+        "who": "Kota the Friend is an American rapper, singer, songwriter, and record producer. He was born and raised in Brooklyn, New York.",
+        "facts": [
+          "Avery Marcel Joshua Jones, known by his stage name Kota the Friend, is an American rapper, singer, songwriter, and record producer, born and raised in Brooklyn, New York.",
+          "He took his stage name from the Disney movie Brother Bear and has claimed it is a Native American word meaning friend."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und produzent · Brooklyn, New York",
+        "who": "Kota the Friend ist ein amerikanischer Rapper aus Brooklyn, New York. Den Künstlernamen hat er vom Disney-Film Brother Bear übernommen.",
+        "facts": [
+          "Avery Marcel Joshua Jones, bekannt als Kota the Friend, ist ein amerikanischer Rapper, Sänger, Songwriter und Musikproduzent, der in Brooklyn, New York, geboren wurde und aufwuchs.",
+          "Er hat seinen Künstlernamen aus dem Disney-Film Brother Bear übernommen und behauptet, er bedeute in einer indianischen Sprache Freund."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve yapımcı · Brooklyn, New York",
+        "who": "Kota the Friend, New York'un Brooklyn semtinden bir rapçidir. Sahne adını Disney filmi Brother Bear'dan aldığını söylüyor.",
+        "facts": [
+          "Avery Marcel Joshua Jones, Kota the Friend sahne adıyla bilinen; Brooklyn, New York'ta doğup büyümüş Amerikalı bir rapçi, şarkıcı, söz yazarı ve müzik yapımcısıdır.",
+          "Sahne adını Disney filmi Brother Bear'dan aldı ve bunun yerli Amerikan dilinde \"dost\" anlamına geldiğini iddia etti."
+        ]
+      }
+    },
+    {
+      "id": "f2a18554-4d9c-499b-8d7a-559862c98793",
+      "slug": "buena-vista-social-club-43705dbf",
+      "title": "Buena Vista Social Club",
+      "name": "Buena Vista Social Club",
+      "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+      "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years.",
+      "en": {
+        "kicker": "cuban musical ensemble · formed 1996",
+        "who": "Buena Vista Social Club was a musical ensemble made up mainly of Cuban musicians. It was formed in 1996 and recruited a dozen veteran musicians, some of whom had been retired for many years.",
+        "facts": [
+          "The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González.",
+          "They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s."
+        ]
+      },
+      "de": {
+        "kicker": "kubanisches musikensemble · gegründet 1996",
+        "who": "Buena Vista Social Club war ein Musikensemble, das hauptsächlich aus kubanischen Musikern bestand. Es wurde 1996 gegründet und holte etwa ein Dutzend erfahrener Musiker zusammen, von denen einige seit vielen Jahren im Ruhestand waren.",
+        "facts": [
+          "Das Projekt wurde von World-Circuit-Manager Nick Gold organisiert, vom Amerikaner Ry Cooder produziert und von Juan de Marcos González geleitet.",
+          "Den Namen gab die Gruppe nach dem gleichnamigen Club der Mitglieder im Stadtviertel Buenavista in Havanna, einem beliebten Musiklokal der 1940er Jahre."
+        ]
+      },
+      "tr": {
+        "kicker": "kübalı müzik topluluğu · 1996'da kuruldu",
+        "who": "Buena Vista Social Club, ağırlıklı olarak Kübalı müzisyenlerden oluşan bir müzik topluluğuydu. 1996'da kuruldu ve bir düzine deneyimli müzisyeni bir araya getirdi.",
+        "facts": [
+          "Proje, World Circuit yöneticisi Nick Gold tarafından organize edildi, Amerikalı gitarist Ry Cooder tarafından yapıldı ve Juan de Marcos González tarafından yönetildi.",
+          "Grup adını, Havana'nın Buenavista semtindeki aynı adlı üyelerin kulübünden aldı; kulüp 1940'larda popüler bir müzik mekanıydı."
+        ]
+      }
+    }
+  ]
+}

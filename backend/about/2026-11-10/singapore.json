@@ -1,0 +1,70 @@
+{
+  "city": "singapore",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "e22edffc-4fcd-4b98-add0-2ae76d4ca4b5",
+      "slug": "wave-to-earth-the-pieces-tour-1822cb18",
+      "title": "wave to earth – the pieces tour",
+      "name": "Wave to Earth",
+      "source_url": "https://en.wikipedia.org/wiki/Wave_to_Earth",
+      "extract": "Wave to Earth is a South Korean indie rock band that consists of lead vocalist and guitarist Daniel Kim, drummer Dong Q, and bassist John Cha. Since their formation in 2019, they have released one studio album, 0.1 Flaws and All. in 2023 and their third extended play Play with Earth! 0.03 in 2024.",
+      "en": {
+        "kicker": "south korean indie rock band · 2019",
+        "who": "Wave to Earth is a South Korean indie rock band with lead vocalist and guitarist Daniel Kim, drummer Dong Q, and bassist John Cha. The band has been active since its formation in 2019.",
+        "facts": [
+          "Wave to Earth is a South Korean indie rock band that consists of lead vocalist and guitarist Daniel Kim, drummer Dong Q, and bassist John Cha.",
+          "Since their formation in 2019, they have released one studio album, 0.1 Flaws and All."
+        ]
+      },
+      "de": {
+        "kicker": "südkoreanische indie-rockband · 2019",
+        "who": "Wave to Earth ist eine südkoreanische Indie-Rockband mit Sänger und Gitarrist Daniel Kim, Schlagzeuger Dong Q und Bassist John Cha. Seit ihrer Gründung 2019 hat die Band ein Studioalbum veröffentlicht.",
+        "facts": [
+          "Wave to Earth ist eine südkoreanische Indie-Rockband, zu der Sänger und Gitarrist Daniel Kim, Schlagzeuger Dong Q und Bassist John Cha gehören.",
+          "Seit ihrer Gründung im Jahr 2019 hat die Band ein Studioalbum veröffentlicht: 0.1 Flaws and All."
+        ]
+      },
+      "tr": {
+        "kicker": "güney koreli indie rock grubu · 2019",
+        "who": "Wave to Earth, vokalist ve gitarist Daniel Kim, davulcu Dong Q ve basçı John Cha'dan oluşan bir Güney Koreli indie rock grubudur. Grup 2019'da kuruldu.",
+        "facts": [
+          "Wave to Earth, vokalist ve gitarist Daniel Kim, davulcu Dong Q ve basçı John Cha'dan oluşan Güney Koreli bir indie rock grubudur.",
+          "2019'daki kuruluşlarından bu yana bir stüdyo albümü yayımladılar: 0.1 Flaws and All."
+        ]
+      }
+    },
+    {
+      "id": "356835e6-3acd-41f3-84bd-8941101abf6d",
+      "slug": "six60-right-here-right-now-asia-2026-tour-in-sin-77ec3fde",
+      "title": "SIX60: Right Here Right Now Asia 2026 Tour In Singapore",
+      "name": "Six60",
+      "source_url": "https://en.wikipedia.org/wiki/Six60",
+      "extract": "Six60 is a New Zealand pop rock band formed in Dunedin, Otago in 2008. The band consists of Matiu Walters, Ji Fraser, Chris Mac, and Marlon Gerbes.",
+      "en": {
+        "kicker": "new zealand pop rock band · 2008",
+        "who": "Six60 is a New Zealand pop rock band formed in Dunedin, Otago in 2008. The band consists of Matiu Walters, Ji Fraser, Chris Mac, and Marlon Gerbes.",
+        "facts": [
+          "Six60 is a New Zealand pop rock band formed in Dunedin, Otago in 2008.",
+          "The band consists of Matiu Walters, Ji Fraser, Chris Mac, and Marlon Gerbes."
+        ]
+      },
+      "de": {
+        "kicker": "neuseeländische pop-rockband · 2008",
+        "who": "Six60 ist eine neuseeländische Pop-Rockband, die 2008 in Dunedin, Otago gegründet wurde. Zur Band gehören Matiu Walters, Ji Fraser, Chris Mac und Marlon Gerbes.",
+        "facts": [
+          "Six60 ist eine neuseeländische Pop-Rockband, die 2008 in Dunedin, Otago gegründet wurde.",
+          "Zur Band gehören Matiu Walters, Ji Fraser, Chris Mac und Marlon Gerbes."
+        ]
+      },
+      "tr": {
+        "kicker": "yeni zelandalı pop rock grubu · 2008",
+        "who": "Six60, 2008'de Otago'nun Dunedin kentinde kurulmuş Yeni Zelandalı bir pop rock grubudur. Grubun üyeleri Matiu Walters, Ji Fraser, Chris Mac ve Marlon Gerbes'tir.",
+        "facts": [
+          "Six60, 2008'de Otago'nun Dunedin kentinde kurulmuş Yeni Zelandalı bir pop rock grubudur.",
+          "Grup Matiu Walters, Ji Fraser, Chris Mac ve Marlon Gerbes'ten oluşur."
+        ]
+      }
+    }
+  ]
+}

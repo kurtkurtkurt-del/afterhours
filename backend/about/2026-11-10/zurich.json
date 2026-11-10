@@ -1,0 +1,102 @@
+{
+  "city": "zurich",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "80bddd0c-b4bf-4d0c-9ace-c65ca5af902d",
+      "slug": "isaiah-rashad-d3ebf44c",
+      "title": "Isaiah Rashad",
+      "name": "Isaiah Rashad",
+      "source_url": "https://en.wikipedia.org/wiki/Isaiah_Rashad",
+      "extract": "Isaiah Rashad Joel McClain is an American rapper and singer. He first gained recognition following his performances on the 2012 Smoker's Club Tour alongside rappers Juicy J, Joey Badass and Smoke DZA. He is a founding member of the Chattanooga, Tennessee-based hip-hop collective TheHouse, which he formed with rappers YGTUT, Michael Da Vinci (MikeyD), Chris P, and Brian Brown.",
+      "en": {
+        "kicker": "american rapper and singer",
+        "who": "Isaiah Rashad Joel McClain is an American rapper and singer. He first gained recognition following his performances on the 2012 Smoker's Club Tour alongside rappers Juicy J, Joey Badass and Smoke DZA. He is a founding member of the Chattanooga, Tennessee-based hip-hop collective TheHouse.",
+        "facts": [
+          "Isaiah Rashad Joel McClain is an American rapper and singer.",
+          "He first gained recognition following his performances on the 2012 Smoker's Club Tour alongside rappers Juicy J, Joey Badass and Smoke DZA."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und sänger",
+        "who": "Isaiah Rashad Joel McClain ist ein amerikanischer Rapper und Sänger. Bekannt wurde er durch seine Auftritte bei der Smoker's Club Tour 2012 zusammen mit den Rappern Juicy J, Joey Badass und Smoke DZA. Er ist Gründungsmitglied des Hip-Hop-Kollektivs TheHouse aus Chattanooga, Tennessee.",
+        "facts": [
+          "Isaiah Rashad Joel McClain ist ein amerikanischer Rapper und Sänger.",
+          "Bekannt wurde er durch seine Auftritte bei der Smoker's Club Tour 2012 zusammen mit den Rappern Juicy J, Joey Badass und Smoke DZA."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve şarkıcı",
+        "who": "Isaiah Rashad Joel McClain, Amerikalı bir rapçi ve şarkıcıdır. İlk kez 2012 Smoker's Club Tour'daki performanslarıyla Juicy J, Joey Badass ve Smoke DZA ile birlikte dikkat çekti. Chattanooga, Tennessee merkezli hip-hop kolektifi TheHouse'un kurucu üyelerinden biridir.",
+        "facts": [
+          "Isaiah Rashad Joel McClain, Amerikalı bir rapçi ve şarkıcıdır.",
+          "İlk kez 2012 Smoker's Club Tour'daki performanslarıyla Juicy J, Joey Badass ve Smoke DZA ile birlikte dikkat çekti."
+        ]
+      }
+    },
+    {
+      "id": "54746f4e-8b96-4a2d-af52-690e432b3987",
+      "slug": "jaill-b6d2d51d",
+      "title": "JAILL",
+      "name": "Jaill",
+      "source_url": "https://en.wikipedia.org/wiki/Jaill",
+      "extract": "Jaill is an indie rock band formed in Milwaukee, Wisconsin, in 2002. The band consists of Vincent Kircher, Austin Dutmer, and Andrew Harris. Their music is described as psych-pop, with up-beat guitar and punk music matched with dark lyrics. Their 2010 album, That's How We Burn, earned them the most attention, receiving multiple reviews.",
+      "en": {
+        "kicker": "indie rock band · milwaukee, 2002",
+        "who": "Jaill is an indie rock band formed in Milwaukee, Wisconsin, in 2002. The band consists of Vincent Kircher, Austin Dutmer, and Andrew Harris. Their music is described as psych-pop, with up-beat guitar and punk music matched with dark lyrics.",
+        "facts": [
+          "Jaill is an indie rock band formed in Milwaukee, Wisconsin, in 2002.",
+          "Their music is described as psych-pop, with up-beat guitar and punk music matched with dark lyrics."
+        ]
+      },
+      "de": {
+        "kicker": "indie-rockband · milwaukee, 2002",
+        "who": "Jaill ist eine Indie-Rockband, die 2002 in Milwaukee, Wisconsin, gegründet wurde. Zur Band gehören Vincent Kircher, Austin Dutmer und Andrew Harris. Ihre Musik wird als Psychpop beschrieben, mit schwungvollen Gitarren und Punk, die auf düstere Texte treffen.",
+        "facts": [
+          "Jaill ist eine Indie-Rockband, die 2002 in Milwaukee, Wisconsin, gegründet wurde.",
+          "Ihre Musik wird als Psychpop beschrieben, mit schwungvollen Gitarren und Punk, die auf düstere Texte treffen."
+        ]
+      },
+      "tr": {
+        "kicker": "indie rock grubu · milwaukee, 2002",
+        "who": "Jaill, 2002 yılında Milwaukee, Wisconsin'de kurulmuş bir indie rock grubudur. Grubun üyeleri Vincent Kircher, Austin Dutmer ve Andrew Harris'tir. Müzikleri psych-pop olarak tanımlanıyor; hareketli gitar ve punk, karanlık sözlerle birleşiyor.",
+        "facts": [
+          "Jaill, 2002 yılında Milwaukee, Wisconsin'de kurulmuş bir indie rock grubudur.",
+          "Müzikleri psych-pop olarak tanımlanıyor; hareketli gitar ve punk, karanlık sözlerle birleşiyor."
+        ]
+      }
+    },
+    {
+      "id": "2615c744-4961-4b11-b8b8-fbde3ca392ec",
+      "slug": "signs-of-the-swarm-43c35eb2",
+      "title": "Signs Of The Swarm",
+      "name": "Signs of the Swarm",
+      "source_url": "https://en.wikipedia.org/wiki/Signs_of_the_Swarm",
+      "extract": "Signs of the Swarm is an American deathcore band from Pittsburgh, Pennsylvania, formed in 2014. The band has released six studio albums, and consists of drummer Bobby Crow, vocalist David Simonich, guitarist Carl Schulz and bassist Michael Cassese.",
+      "en": {
+        "kicker": "american deathcore band · pittsburgh, 2014",
+        "who": "Signs of the Swarm is an American deathcore band from Pittsburgh, Pennsylvania, formed in 2014. The band has released six studio albums. Its members are drummer Bobby Crow, vocalist David Simonich, guitarist Carl Schulz and bassist Michael Cassese.",
+        "facts": [
+          "Signs of the Swarm is an American deathcore band from Pittsburgh, Pennsylvania, formed in 2014.",
+          "The band has released six studio albums, and consists of drummer Bobby Crow, vocalist David Simonich, guitarist Carl Schulz and bassist Michael Cassese."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische deathcore-band · pittsburgh, 2014",
+        "who": "Signs of the Swarm ist eine amerikanische Deathcore-Band aus Pittsburgh, Pennsylvania, die 2014 gegründet wurde. Die Band hat sechs Studioalben veröffentlicht. Zu ihr gehören Schlagzeuger Bobby Crow, Sänger David Simonich, Gitarrist Carl Schulz und Bassist Michael Cassese.",
+        "facts": [
+          "Signs of the Swarm ist eine amerikanische Deathcore-Band aus Pittsburgh, Pennsylvania, die 2014 gegründet wurde.",
+          "Die Band hat sechs Studioalben veröffentlicht und besteht aus Schlagzeuger Bobby Crow, Sänger David Simonich, Gitarrist Carl Schulz und Bassist Michael Cassese."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı deathcore grubu · pittsburgh, 2014",
+        "who": "Signs of the Swarm, 2014 yılında kurulmuş, Pittsburgh, Pennsylvania'dan bir Amerikalı deathcore grubudur. Grup altı stüdyo albümü yayımladı. Üyeleri davulcu Bobby Crow, vokalist David Simonich, gitarist Carl Schulz ve basçı Michael Cassese'dir.",
+        "facts": [
+          "Signs of the Swarm, 2014 yılında kurulmuş, Pittsburgh, Pennsylvania'dan bir Amerikalı deathcore grubudur.",
+          "Grup altı stüdyo albümü yayımladı ve davulcu Bobby Crow, vokalist David Simonich, gitarist Carl Schulz ve basçı Michael Cassese'den oluşuyor."
+        ]
+      }
+    }
+  ]
+}

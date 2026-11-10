@@ -1,0 +1,38 @@
+{
+  "city": "birmingham",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "ab041581-8250-46b5-8357-1504ae5301a8",
+      "slug": "jack-and-jack-birmingham-mama-roux-s-2baddc54",
+      "title": "Jack & Jack | Birmingham, Mama Roux's",
+      "name": "Jack & Jack",
+      "source_url": "https://en.wikipedia.org/wiki/Jack_%26_Jack",
+      "extract": "Jack & Jack are an American pop-rap duo from Omaha, Nebraska, consisting of Jack Johnson and Jack Gilinsky, based in Los Angeles, California. After success via the social media app Vine, the duo turned to careers as musicians. Their 2014 single \"Wild Life\" peaked at number 87 on the US Billboard Hot 100. They also featured on Jonas Blue's 2018 hit single \"Rise\", which peaked at number three in the UK Singles Chart in addition to charting within the top 20 of various other European countries and Australia.",
+      "en": {
+        "kicker": "american pop-rap duo · omaha, nebraska",
+        "who": "Jack & Jack are an American pop-rap duo from Omaha, Nebraska, made up of Jack Johnson and Jack Gilinsky. After success on the social media app Vine, the duo turned to careers as musicians.",
+        "facts": [
+          "Jack & Jack are an American pop-rap duo from Omaha, Nebraska, consisting of Jack Johnson and Jack Gilinsky, based in Los Angeles, California.",
+          "Their 2014 single \"Wild Life\" peaked at number 87 on the US Billboard Hot 100."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches pop-rap-duo · omaha, nebraska",
+        "who": "Jack & Jack sind ein amerikanisches Pop-Rap-Duo aus Omaha, Nebraska, bestehend aus Jack Johnson und Jack Gilinsky. Nach ihrem Erfolg über die Social-Media-App Vine wandten sich die beiden einer Karriere als Musiker zu.",
+        "facts": [
+          "Jack & Jack sind ein amerikanisches Pop-Rap-Duo aus Omaha, Nebraska, bestehend aus Jack Johnson und Jack Gilinsky, mit Sitz in Los Angeles, Kalifornien.",
+          "Ihre Single \"Wild Life\" aus dem Jahr 2014 erreichte Platz 87 der US Billboard Hot 100."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı pop-rap ikilisi · omaha, nebraska",
+        "who": "Jack & Jack, Nebraska'nın Omaha kentinden bir Amerikalı pop-rap ikilisidir ve Jack Johnson ile Jack Gilinsky'den oluşur. Sosyal medya uygulaması Vine'daki başarılarının ardından müzisyenlik kariyerine yöneldiler.",
+        "facts": [
+          "Jack & Jack, Nebraska'nın Omaha kentinden, Jack Johnson ve Jack Gilinsky'den oluşan Amerikalı bir pop-rap ikilisidir ve Los Angeles, Kaliforniya merkezlidir.",
+          "2014 single'ı \"Wild Life\", US Billboard Hot 100 listesinde 87. sıraya ulaştı."
+        ]
+      }
+    }
+  ]
+}

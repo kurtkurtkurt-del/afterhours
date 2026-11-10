@@ -1,0 +1,70 @@
+{
+  "city": "frankfurt",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "fa478d17-240e-4fea-a5a8-3f26e7843c0a",
+      "slug": "todd-kessler-026c2f0d",
+      "title": "Todd Kessler",
+      "name": "Todd Kessler",
+      "source_url": "https://en.wikipedia.org/wiki/Todd_Kessler",
+      "extract": "Todd Kessler is an American film and television writer, producer and director. Among his credits are showrunner and co-creator of Nickelodeon's preschool series Blue's Clues and director and producer of the feature film Keith (2008).",
+      "en": {
+        "kicker": "american film and television writer, producer and director",
+        "who": "Todd Kessler is an American film and television writer, producer and director. Among his credits are showrunner and co-creator of Nickelodeon's preschool series Blue's Clues. He was also director and producer of the feature film Keith (2008).",
+        "facts": [
+          "Todd Kessler is an American film and television writer, producer and director.",
+          "Among his credits are showrunner and co-creator of Nickelodeon's preschool series Blue's Clues and director and producer of the feature film Keith (2008)."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer autor, produzent und regisseur",
+        "who": "Todd Kessler ist ein amerikanischer Autor, Produzent und Regisseur für Film und Fernsehen. Zu seinen Arbeiten gehören die Showrunner- und Co-Creator-Tätigkeit für die Vorschulserie Blue's Clues von Nickelodeon sowie Regie und Produktion des Spielfilms Keith (2008).",
+        "facts": [
+          "Todd Kessler ist ein amerikanischer Autor, Produzent und Regisseur für Film und Fernsehen.",
+          "Zu seinen Arbeiten gehören die Showrunner- und Co-Creator-Tätigkeit für die Vorschulserie Blue's Clues von Nickelodeon sowie Regie und Produktion des Spielfilms Keith (2008)."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı film ve dizi yazarı, yapımcı, yönetmen",
+        "who": "Todd Kessler, Amerikalı bir film ve televizyon yazarı, yapımcı ve yönetmendir. Nickelodeon'ın okul öncesi dizisi Blue's Clues'un showrunner'ı ve yaratıcı ortağı olmuştur. Keith (2008) adlı uzun metrajlı filmin de yönetmeni ve yapımcısıdır.",
+        "facts": [
+          "Todd Kessler, Amerikalı bir film ve televizyon yazarı, yapımcı ve yönetmendir.",
+          "Yapımları arasında Nickelodeon'ın okul öncesi dizisi Blue's Clues'un showrunner'ı ve yaratıcı ortağı olması ile Keith (2008) adlı uzun metrajlı filmin yönetmenliği ve yapımcılığı yer alır."
+        ]
+      }
+    },
+    {
+      "id": "24716bf7-26de-44b9-9333-d7f260af3212",
+      "slug": "sim-hooman-after-all-world-tour-2dd5e4f0",
+      "title": "SiM - Hooman After All World Tour",
+      "name": "SiM",
+      "source_url": "https://en.wikipedia.org/wiki/SiM",
+      "extract": "SiM are a Japanese metalcore band from Kanagawa Prefecture formed in 2004. The band currently consists of MAH (vocals), SHOW-HATE (guitar), SIN (bass), and GODRi (drums). Their musical style mixes nu metal, alternative, hip-hop, ska, reggae, dub, and punk with rebellious lyrics and songs with attitude.",
+      "en": {
+        "kicker": "japanese metalcore band · kanagawa prefecture, 2004",
+        "who": "SiM is a Japanese metalcore band from Kanagawa Prefecture, formed in 2004. The band currently consists of MAH on vocals, SHOW-HATE on guitar, SIN on bass and GODRi on drums. Their style mixes nu metal, alternative, hip-hop, ska, reggae, dub and punk.",
+        "facts": [
+          "SiM are a Japanese metalcore band from Kanagawa Prefecture formed in 2004.",
+          "The band currently consists of MAH (vocals), SHOW-HATE (guitar), SIN (bass), and GODRi (drums)."
+        ]
+      },
+      "de": {
+        "kicker": "japanische metalcore-band · kanagawa, 2004",
+        "who": "SiM ist eine japanische Metalcore-Band aus der Präfektur Kanagawa, gegründet 2004. Die Band besteht derzeit aus MAH (Gesang), SHOW-HATE (Gitarre), SIN (Bass) und GODRi (Schlagzeug). Ihr Stil mischt Nu Metal, Alternative, Hip-Hop, Ska, Reggae, Dub und Punk.",
+        "facts": [
+          "SiM sind eine japanische Metalcore-Band aus der Präfektur Kanagawa, gegründet 2004.",
+          "Die Band besteht derzeit aus MAH (Gesang), SHOW-HATE (Gitarre), SIN (Bass) und GODRi (Schlagzeug)."
+        ]
+      },
+      "tr": {
+        "kicker": "japon metalcore grubu · kanagawa, 2004",
+        "who": "SiM, 2004'te kurulmuş, Kanagawa Eyaleti'nden bir Japon metalcore grubudur. Grubun şu anki kadrosu MAH (vokal), SHOW-HATE (gitar), SIN (bas) ve GODRi (davul)'dir. Müzikleri nu metal, alternatif, hip-hop, ska, reggae, dub ve punk'ı harmanlar.",
+        "facts": [
+          "SiM, Kanagawa Eyaleti'nden 2004 yılında kurulmuş bir Japon metalcore grubudur.",
+          "Grup şu anda MAH (vokal), SHOW-HATE (gitar), SIN (bas) ve GODRi (davul)'den oluşmaktadır."
+        ]
+      }
+    }
+  ]
+}

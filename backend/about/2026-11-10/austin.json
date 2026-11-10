@@ -1,0 +1,70 @@
+{
+  "city": "austin",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "c67a92aa-dfa8-4589-81b3-824a193d316d",
+      "slug": "jonas-brothers-the-burning-up-tour-all-over-agai-e8fa21f7",
+      "title": "Jonas Brothers: The Burning Up Tour All Over Again",
+      "name": "Jonas Brothers",
+      "source_url": "https://en.wikipedia.org/wiki/Jonas_Brothers",
+      "extract": "The Jonas Brothers are an American pop rock band formed in 2005 comprising brothers Kevin Jonas, Joe Jonas, and Nick Jonas. Raised in Wyckoff, New Jersey, the Jonas Brothers moved to Little Falls, New Jersey, in 2005, where they wrote their first record that made its release on Hollywood Records, a Disney-owned record label, after which they gained popularity from their appearances on Disney Channel. They starred in the 2008 Disney Channel Original Movie Camp Rock and its 2010 sequel, Camp Rock 2: The Final Jam. They also starred in their own Disney Channel series Jonas, which was rebranded as Jonas L.A. for its second season. The band has released seven albums: It's About Time (2006), Jonas",
+      "en": {
+        "kicker": "american pop rock band · 2005",
+        "who": "The Jonas Brothers are an American pop rock band formed in 2005, made up of brothers Kevin, Joe and Nick Jonas. They gained popularity from their appearances on Disney Channel and starred in the Camp Rock films.",
+        "facts": [
+          "The Jonas Brothers are an American pop rock band formed in 2005 comprising brothers Kevin Jonas, Joe Jonas, and Nick Jonas.",
+          "They starred in the 2008 Disney Channel Original Movie Camp Rock and its 2010 sequel, Camp Rock 2: The Final Jam."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische pop-rock-band · 2005",
+        "who": "Die Jonas Brothers sind eine amerikanische Pop-Rock-Band, die 2005 gegründet wurde und aus den Brüdern Kevin, Joe und Nick Jonas besteht. Durch ihre Auftritte bei Disney Channel wurden sie bekannt, und sie spielten in den Camp-Rock-Filmen mit.",
+        "facts": [
+          "Die Jonas Brothers sind eine amerikanische Pop-Rock-Band, die 2005 gegründet wurde und aus den Brüdern Kevin Jonas, Joe Jonas und Nick Jonas besteht.",
+          "Sie spielten im Disney-Channel-Film Camp Rock aus dem Jahr 2008 und in dessen Fortsetzung Camp Rock 2: The Final Jam aus dem Jahr 2010 mit."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı pop rock grubu · 2005",
+        "who": "The Jonas Brothers, 2005'te kurulan Amerikalı bir pop rock grubudur ve Kevin, Joe ve Nick Jonas kardeşlerden oluşur. Disney Channel'daki çıkışlarıyla ün kazandılar ve Camp Rock filmlerinde rol aldılar.",
+        "facts": [
+          "The Jonas Brothers, 2005'te kurulan, Kevin Jonas, Joe Jonas ve Nick Jonas kardeşlerden oluşan Amerikalı bir pop rock grubudur.",
+          "Grup, 2008 yapımı Disney Channel Orijinal Filmi Camp Rock'ta ve 2010'da çıkan devamı Camp Rock 2: The Final Jam'de rol aldı."
+        ]
+      }
+    },
+    {
+      "id": "22632396-373d-44e1-8ddd-d353d67424fd",
+      "slug": "chelsea-handler-71d4b301",
+      "title": "Chelsea Handler",
+      "name": "Chelsea Handler",
+      "source_url": "https://en.wikipedia.org/wiki/Chelsea_Handler",
+      "extract": "Chelsea Joy Handler is an American stand-up comedian, actress, writer, television host, and producer. She hosted the late-night talk show Chelsea Lately on the E! network from 2007 to 2014 and released a documentary series, Chelsea Does, on Netflix in January 2016. From 2016 to 2017, Handler hosted the talk show Chelsea on Netflix.",
+      "en": {
+        "kicker": "american stand-up comedian and writer",
+        "who": "Chelsea Handler is an American stand-up comedian, actress, writer, television host, and producer. From 2016 to 2017 she hosted the talk show Chelsea on Netflix.",
+        "facts": [
+          "Chelsea Joy Handler is an American stand-up comedian, actress, writer, television host, and producer.",
+          "From 2016 to 2017, Handler hosted the talk show Chelsea on Netflix."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische stand-up-comedian und autorin",
+        "who": "Chelsea Handler ist eine amerikanische Stand-up-Comedian, Schauspielerin, Autorin, Fernsehmoderatorin und Produzentin. Von 2016 bis 2017 moderierte sie die Talkshow Chelsea bei Netflix.",
+        "facts": [
+          "Chelsea Joy Handler ist eine amerikanische Stand-up-Comedian, Schauspielerin, Autorin, Fernsehmoderatorin und Produzentin.",
+          "Von 2016 bis 2017 moderierte sie die Talkshow Chelsea bei Netflix."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı stand-up komedyen ve yazar",
+        "who": "Chelsea Handler, Amerikalı bir stand-up komedyen, oyuncu, yazar, televizyon sunucusu ve yapımcıdır. 2016'dan 2017'ye kadar Netflix'te Chelsea adlı talk show'u sundu.",
+        "facts": [
+          "Chelsea Joy Handler, Amerikalı bir stand-up komedyen, oyuncu, yazar, televizyon sunucusu ve yapımcıdır.",
+          "2016'dan 2017'ye kadar Netflix'te Chelsea adlı talk show'u sundu."
+        ]
+      }
+    }
+  ]
+}

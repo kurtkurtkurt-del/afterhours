@@ -1,0 +1,70 @@
+{
+  "city": "stockholm",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "849e35e2-fe72-44fb-b1f0-94c51bc00b7f",
+      "slug": "bi-2-df0c1960",
+      "title": "Bi-2",
+      "name": "Bi-2",
+      "source_url": "https://en.wikipedia.org/wiki/Bi-2",
+      "extract": "Bi-2 is a Belarusian pop-rock band, formed in 1988 in Babruysk. During their career, Bi-2 achieved international success in Eastern Europe.",
+      "en": {
+        "kicker": "belarusian pop-rock band · 1988",
+        "who": "Bi-2 is a Belarusian pop-rock band, formed in 1988 in Babruysk. During their career, the band achieved international success in Eastern Europe.",
+        "facts": [
+          "Bi-2 is a Belarusian pop-rock band, formed in 1988 in Babruysk.",
+          "During their career, Bi-2 achieved international success in Eastern Europe."
+        ]
+      },
+      "de": {
+        "kicker": "belarussische pop-rockband · 1988",
+        "who": "Bi-2 ist eine belarussische Pop-Rockband, die 1988 in Babrujsk gegründet wurde. Im Laufe ihrer Karriere hatte die Band internationalen Erfolg in Osteuropa.",
+        "facts": [
+          "Bi-2 ist eine belarussische Pop-Rockband, die 1988 in Babrujsk gegründet wurde.",
+          "Im Laufe ihrer Karriere erzielte Bi-2 internationalen Erfolg in Osteuropa."
+        ]
+      },
+      "tr": {
+        "kicker": "belaruslu pop rock grubu · 1988",
+        "who": "Bi-2, 1988'de Babruysk'te kurulmuş Belaruslu bir pop rock grubudur. Kariyeri boyunca Doğu Avrupa'da uluslararası bir başarı elde etti.",
+        "facts": [
+          "Bi-2, 1988'de Babruysk'te kurulmuş Belaruslu bir pop rock grubudur.",
+          "Kariyerleri boyunca Bi-2, Doğu Avrupa'da uluslararası bir başarı elde etti."
+        ]
+      }
+    },
+    {
+      "id": "9d2b43d5-9233-4a60-ba17-5d29d6f4740f",
+      "slug": "dirty-honey-b08e2396",
+      "title": "Dirty Honey",
+      "name": "Dirty Honey",
+      "source_url": "https://en.wikipedia.org/wiki/Dirty_Honey",
+      "extract": "Dirty Honey is an American rock band from Los Angeles, formed in 2017. It consists of singer Marc LaBelle, guitarist John Notto, bassist Justin Smolian, and drummer Jaydon Bean.",
+      "en": {
+        "kicker": "american rock band · los angeles, 2017",
+        "who": "Dirty Honey is an American rock band from Los Angeles, formed in 2017. The band consists of singer Marc LaBelle, guitarist John Notto, bassist Justin Smolian, and drummer Jaydon Bean.",
+        "facts": [
+          "Dirty Honey is an American rock band from Los Angeles, formed in 2017.",
+          "It consists of singer Marc LaBelle, guitarist John Notto, bassist Justin Smolian, and drummer Jaydon Bean."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · los angeles, 2017",
+        "who": "Dirty Honey ist eine amerikanische Rockband aus Los Angeles, die 2017 gegründet wurde. Zur Band gehören Sänger Marc LaBelle, Gitarrist John Notto, Bassist Justin Smolian und Schlagzeuger Jaydon Bean.",
+        "facts": [
+          "Dirty Honey ist eine amerikanische Rockband aus Los Angeles, die 2017 gegründet wurde.",
+          "Zur Band gehören Sänger Marc LaBelle, Gitarrist John Notto, Bassist Justin Smolian und Schlagzeuger Jaydon Bean."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · los angeles, 2017",
+        "who": "Dirty Honey, 2017'de kurulmuş Los Angeles'lı Amerikalı bir rock grubudur. Grubun kadrosunda vokalist Marc LaBelle, gitarist John Notto, basçı Justin Smolian ve davulcu Jaydon Bean yer alır.",
+        "facts": [
+          "Dirty Honey, 2017'de kurulmuş Los Angeles'lı Amerikalı bir rock grubudur.",
+          "Grubun kadrosunda vokalist Marc LaBelle, gitarist John Notto, basçı Justin Smolian ve davulcu Jaydon Bean yer alır."
+        ]
+      }
+    }
+  ]
+}

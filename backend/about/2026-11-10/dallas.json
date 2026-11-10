@@ -1,0 +1,102 @@
+{
+  "city": "dallas",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "cfdde7b3-8846-4a24-a0a0-30e48f96efa5",
+      "slug": "lyle-lovett-6f03ed1f",
+      "title": "Lyle Lovett",
+      "name": "Lyle Lovett",
+      "source_url": "https://en.wikipedia.org/wiki/Lyle_Lovett",
+      "extract": "Lyle Pearce Lovett is an American country singer-songwriter and actor. Active since 1980, he has recorded 14 albums and released 25 singles including the number 10 hit on the U.S. Billboard Hot Country Songs chart, \"Cowboy Man\". Lovett has won four Grammy Awards including Best Male Country Vocal Performance and Best Country Album. His most recent album is 12th of June, released in 2022.",
+      "en": {
+        "kicker": "american country singer-songwriter and actor",
+        "who": "Lyle Lovett is an American country singer-songwriter and actor. He has been active since 1980 and has recorded 14 albums. He has won four Grammy Awards, including Best Male Country Vocal Performance and Best Country Album.",
+        "facts": [
+          "Lyle Pearce Lovett is an American country singer-songwriter and actor.",
+          "Lovett has won four Grammy Awards including Best Male Country Vocal Performance and Best Country Album."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer country-singer-songwriter und schauspieler",
+        "who": "Lyle Lovett ist ein amerikanischer Country-Singer-Songwriter und Schauspieler. Er ist seit 1980 aktiv und hat 14 Alben aufgenommen. Er hat vier Grammy Awards gewonnen, darunter für Best Male Country Vocal Performance und Best Country Album.",
+        "facts": [
+          "Lyle Pearce Lovett ist ein amerikanischer Country-Singer-Songwriter und Schauspieler.",
+          "Lovett hat vier Grammy Awards gewonnen, darunter Best Male Country Vocal Performance und Best Country Album."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı country şarkıcı, söz yazarı ve oyuncu",
+        "who": "Lyle Lovett Amerikalı bir country şarkıcı, söz yazarı ve oyuncudur. 1980'den beri aktif ve 14 albüm kaydetti. Best Male Country Vocal Performance ve Best Country Album dahil dört Grammy kazandı.",
+        "facts": [
+          "Lyle Pearce Lovett, Amerikalı bir country şarkıcı, söz yazarı ve oyuncudur.",
+          "Lovett, Best Male Country Vocal Performance ve Best Country Album dahil dört Grammy ödülü kazanmıştır."
+        ]
+      }
+    },
+    {
+      "id": "4720f5cc-2e37-4832-8e4b-72c3cf0b314f",
+      "slug": "big-ass-truck-700a3ef9",
+      "title": "Big Ass Truck",
+      "name": "Big Ass Truck",
+      "source_url": "https://en.wikipedia.org/wiki/Big_Ass_Truck",
+      "extract": "Big Ass Truck (BAT) is an American rock band from Memphis, Tennessee which incorporates elements of hip-hop, rock, funk and psychedelia in their music. The band includes a DJ spinning records, that provides beats, loops, and samples during recordings and live performances. The group disbanded sometime after the release of the 2001 album The Rug; however, as of 2021, the band has been playing live shows again.",
+      "en": {
+        "kicker": "american rock band · memphis, tennessee",
+        "who": "Big Ass Truck is an American rock band from Memphis, Tennessee. Its music mixes rock with hip-hop, funk and psychedelia, and the band includes a DJ. The group disbanded after the 2001 album The Rug, but has been playing live shows again since 2021.",
+        "facts": [
+          "Big Ass Truck (BAT) is an American rock band from Memphis, Tennessee which incorporates elements of hip-hop, rock, funk and psychedelia in their music.",
+          "The group disbanded sometime after the release of the 2001 album The Rug; however, as of 2021, the band has been playing live shows again."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · memphis, tennessee",
+        "who": "Big Ass Truck ist eine amerikanische Rockband aus Memphis, Tennessee. Ihre Musik verbindet Rock mit Hip-Hop, Funk und Psychedelia, und zur Band gehört ein DJ. Die Gruppe löste sich nach dem Album The Rug von 2001 auf, spielt seit 2021 aber wieder live.",
+        "facts": [
+          "Big Ass Truck (BAT) ist eine amerikanische Rockband aus Memphis, Tennessee, die Elemente von Hip-Hop, Rock, Funk und Psychedelia in ihre Musik einbezieht.",
+          "Die Gruppe hat sich nach der Veröffentlichung des Albums The Rug von 2001 irgendwann aufgelöst; seit 2021 spielt die Band aber wieder live."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan rock grubu · memphis, tennessee",
+        "who": "Big Ass Truck, Memphis, Tennessee'den bir Amerikan rock grubudur. Müziğinde rock'ın yanında hip-hop, funk ve psychedelia öğeleri bulunur, grupta bir DJ de yer alır. Grup 2001 albümü The Rug'dan sonra dağıldı, 2021'den beri yeniden canlı performans veriyor.",
+        "facts": [
+          "Big Ass Truck (BAT), Memphis, Tennessee'den bir Amerikan rock grubudur ve müziğinde hip-hop, rock, funk ve psychedelia öğelerini bir araya getirir.",
+          "Grup, 2001 tarihli The Rug albümünün yayımlanmasının ardından bir süre sonra dağıldı; ancak 2021 itibarıyla grup yeniden canlı performans sergiliyor."
+        ]
+      }
+    },
+    {
+      "id": "82073081-af93-40cd-adde-844c4a6fd948",
+      "slug": "bryan-andrews-c10c9bab",
+      "title": "Bryan Andrews",
+      "name": "Bryan Andrews",
+      "source_url": "https://en.wikipedia.org/wiki/Bryan_Andrews_(singer)",
+      "extract": "Bryan Andrews is an American country music singer and activist. He is best known for his politically-themed songs, often from his own progressive left-wing viewpoint. Many of his songs have been described as protest songs.",
+      "en": {
+        "kicker": "american country singer and activist",
+        "who": "Bryan Andrews is an American country music singer and activist. He is best known for his politically-themed songs, often from his own progressive left-wing viewpoint. Many of his songs have been described as protest songs.",
+        "facts": [
+          "Bryan Andrews is an American country music singer and activist.",
+          "He is best known for his politically-themed songs, often from his own progressive left-wing viewpoint."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer country-sänger und aktivist",
+        "who": "Bryan Andrews ist ein amerikanischer Country-Musiker und Aktivist. Er ist vor allem für seine politisch geprägten Lieder bekannt, oft aus seiner eigenen progressiven, linksgerichteten Sicht. Viele seiner Lieder werden als Protestlieder beschrieben.",
+        "facts": [
+          "Bryan Andrews ist ein amerikanischer Country-Musiker und Aktivist.",
+          "Er ist vor allem für seine politisch geprägten Lieder bekannt, oft aus seiner eigenen progressiven, linksgerichteten Sicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı country şarkıcı ve aktivist",
+        "who": "Bryan Andrews, Amerikalı bir country müzik şarkıcısı ve aktivisttir. Politik temalı şarkılarıyla tanınır; bu şarkılar çoğunlukla kendi ilerici, sol görüşünden beslenir. Şarkılarının birçoğu protest şarkısı olarak tanımlanmıştır.",
+        "facts": [
+          "Bryan Andrews, Amerikalı bir country müzik şarkıcısı ve aktivisttir.",
+          "Politik temalı şarkılarıyla en çok bilinir; bu şarkılar çoğunlukla kendi ilerici, sol görüşünden gelir."
+        ]
+      }
+    }
+  ]
+}

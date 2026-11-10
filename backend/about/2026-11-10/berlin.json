@@ -1,0 +1,38 @@
+{
+  "city": "berlin",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "702905b9-b56f-4e14-abea-2ae7b042e29a",
+      "slug": "glaive-god-save-the-three-tour-3310267a",
+      "title": "glaive - God Save The Three Tour",
+      "name": "Glaive",
+      "source_url": "https://en.wikipedia.org/wiki/Glaive_(musician)",
+      "extract": "Ash Blue Gutierrez, known professionally as Glaive, is an American singer-songwriter. After posting a string of hyperpop songs to SoundCloud during the beginning of the COVID-19 pandemic that earned him a following, he signed a record deal with Interscope Records and released his debut extended play, Cypress Grove, in 2020. His debut album, I Care So Much That I Don't Care at All, was released in 2023. His second album, May It Never Falter, was released in 2024. His third, Y'all, was released in September 2025. A collaborative album with Kurtains called God Save the Three, was released in May 2026. Glaive's fourth solo studio album, Polesden Lacey, is set for release in January 2027.",
+      "en": {
+        "kicker": "american singer-songwriter · hyperpop",
+        "who": "Glaive is the stage name of Ash Blue Gutierrez, an American singer-songwriter. He gained a following by posting hyperpop songs to SoundCloud, and a collaborative album with Kurtains, God Save the Three, was released in May 2026.",
+        "facts": [
+          "Ash Blue Gutierrez, known professionally as Glaive, is an American singer-songwriter.",
+          "A collaborative album with Kurtains called God Save the Three, was released in May 2026."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer singer-songwriter · hyperpop",
+        "who": "Glaive ist das Pseudonym von Ash Blue Gutierrez, einem amerikanischen Singer-Songwriter. Bekannt wurde er durch Hyperpop-Songs, die er auf SoundCloud veröffentlichte. Das gemeinsame Album God Save the Three mit Kurtains erschien im Mai 2026.",
+        "facts": [
+          "Ash Blue Gutierrez, bekannt als Glaive, ist ein amerikanischer Singer-Songwriter.",
+          "Ein gemeinsames Album mit Kurtains namens God Save the Three erschien im Mai 2026."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı ve söz yazarı · hyperpop",
+        "who": "Glaive, Amerikalı bir şarkıcı ve söz yazarı olan Ash Blue Gutierrez'in sahne adıdır. SoundCloud'a yüklediği hyperpop şarkılarıyla takipçi kazandı. Kurtains ile yaptığı ortak albüm God Save the Three Mayıs 2026'da yayımlandı.",
+        "facts": [
+          "Ash Blue Gutierrez, sahne adıyla Glaive, Amerikalı bir şarkıcı ve söz yazarıdır.",
+          "Kurtains ile yapılan God Save the Three adlı ortak albüm Mayıs 2026'da yayımlandı."
+        ]
+      }
+    }
+  ]
+}

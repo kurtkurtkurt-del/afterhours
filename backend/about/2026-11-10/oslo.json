@@ -1,0 +1,70 @@
+{
+  "city": "oslo",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "75d748f9-3947-4590-b046-2e56eebe66aa",
+      "slug": "beabadoobee-the-powerlines-tour-e51a902b",
+      "title": "beabadoobee: The Powerlines Tour",
+      "name": "Beabadoobee",
+      "source_url": "https://en.wikipedia.org/wiki/Beabadoobee",
+      "extract": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021, she released five extended plays (EPs) under the independent label Dirty Hit: Lice (2018), Patched Up (2018), Loveworm (2019), Space Cadet (2019) and Our Extended Play (2021). Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim. Her second studio album, Beatopia, was released on July 2022, and spawned the hit \"The Perfect Pair\". Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart. In September 2026, her fourth studio album, Pyl",
+      "en": {
+        "kicker": "filipino and british singer and songwriter",
+        "who": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021 she released five extended plays under the independent label Dirty Hit.",
+        "facts": [
+          "Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim.",
+          "Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart."
+        ]
+      },
+      "de": {
+        "kicker": "filipinisch-britische sängerin und songwriterin",
+        "who": "Beatrice Kristi Ilejay Laus, unter dem Künstlernamen Beabadoobee bekannt, ist eine philippinisch-britische Sängerin und Songwriterin. Von 2018 bis 2021 veröffentlichte sie fünf Extended Plays beim unabhängigen Label Dirty Hit.",
+        "facts": [
+          "Ihr Debütalbum Fake It Flowers erschien im Oktober 2020 und erhielt viel Anerkennung von der Kritik.",
+          "Ihr drittes Studioalbum This Is How Tomorrow Moves erschien im August 2024; es war ihr erstes Album, das die britischen Albumcharts anführte."
+        ]
+      },
+      "tr": {
+        "kicker": "filipinli ve britanyalı şarkıcı ve söz yazarı",
+        "who": "Beatrice Kristi Ilejay Laus, sahne adıyla Beabadoobee, Filipinli ve İngiliz bir şarkıcı ve söz yazarıdır. 2018 ile 2021 arasında bağımsız Dirty Hit etiketiyle beş EP yayımladı.",
+        "facts": [
+          "Debut stüdyo albümü Fake It Flowers Ekim 2020'de yayımlandı ve eleştirmenlerden büyük övgü aldı.",
+          "Üçüncü stüdyo albümü This Is How Tomorrow Moves Ağustos 2024'te yayımlandı; bu, İngiltere Albüm Listesi'nin zirvesine çıkan ilk albümü oldu."
+        ]
+      }
+    },
+    {
+      "id": "af5edbc6-6fee-4bb7-a379-4cf62281505a",
+      "slug": "chelsea-wolfe-the-dark-world-tour-bd37f26b",
+      "title": "Chelsea Wolfe: THE DARK World Tour",
+      "name": "Chelsea Wolfe",
+      "source_url": "https://en.wikipedia.org/wiki/Chelsea_Wolfe",
+      "extract": "Chelsea Joy Wolfe is an American singer-songwriter and musician. Her work blends elements of gothic rock, doom metal, and folk.",
+      "en": {
+        "kicker": "american singer-songwriter and musician",
+        "who": "Chelsea Joy Wolfe is an American singer-songwriter and musician. Her work blends elements of gothic rock, doom metal, and folk.",
+        "facts": [
+          "Chelsea Joy Wolfe is an American singer-songwriter and musician.",
+          "Her work blends elements of gothic rock, doom metal, and folk."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin und musikerin",
+        "who": "Chelsea Joy Wolfe ist eine amerikanische Singer-Songwriterin und Musikerin. Ihr Werk verbindet Elemente von Gothic Rock, Doom Metal und Folk.",
+        "facts": [
+          "Chelsea Joy Wolfe ist eine amerikanische Singer-Songwriterin und Musikerin.",
+          "Ihr Werk verbindet Elemente von Gothic Rock, Doom Metal und Folk."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı, söz yazarı ve müzisyen",
+        "who": "Chelsea Joy Wolfe Amerikalı bir şarkıcı, söz yazarı ve müzisyendir. Müziği gotik rock, doom metal ve folk öğelerini harmanlar.",
+        "facts": [
+          "Chelsea Joy Wolfe Amerikalı bir şarkıcı, söz yazarı ve müzisyendir.",
+          "Müziği gotik rock, doom metal ve folk öğelerini harmanlar."
+        ]
+      }
+    }
+  ]
+}

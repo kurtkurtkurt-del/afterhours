@@ -1506,6 +1506,570 @@
    "slug": "ariel-posen-7ad5d16d",
    "city": "zurich",
    "why": "no page of that name (nearest: The Bros. Landreth)"
+  },
+  {
+   "id": "f2142d24-d107-4f29-9874-2b0a7ea5942d",
+   "slug": "the-bootleg-beatles-53b2c73b",
+   "city": "rotterdam",
+   "why": "check: tribute act (Beatles tribute band, not the act)"
+  },
+  {
+   "id": "01851825-b4ad-4334-88e3-ead3b8ef201a",
+   "slug": "the-afghan-whigs-1ce3fd4d",
+   "city": "new-orleans",
+   "why": "check: who cites the source page instead of plain copy"
+  },
+  {
+   "id": "0ad9fd53-6b97-4f5a-906b-d8cdb3d52ae2",
+   "slug": "julia-wolf-deep-end-world-tour-2026-baf630ba",
+   "city": "koln",
+   "why": "check: tr text uses a non-word (harmlar)"
+  },
+  {
+   "id": "514c1d27-cfef-4de9-9122-c04e43e34930",
+   "slug": "tarkan-d5b28834",
+   "city": "abu-dhabi",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "c8865552-e51f-481d-af3d-0891a4e99b39",
+   "slug": "overmono-pure-devotion-world-tour-d712e15e",
+   "city": "amsterdam",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "ef2245cc-e4e8-4daa-a977-9d26e305d0fd",
+   "slug": "chris-klafford-712ac70c",
+   "city": "amsterdam",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "055cae0e-2066-4a5d-8827-b73f11cbcbf6",
+   "slug": "new-constellations-3951e4aa",
+   "city": "atlanta",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "263ee02b-fadf-43dd-a5ed-3477ef4495c1",
+   "slug": "son-mieux-24-hours-eu-album-tour-835a240e",
+   "city": "berlin",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "eaccbc2a-bf99-4989-a56a-0c1ceb7a0d3a",
+   "slug": "kelsey-lu-so-help-me-god-tour-7e0100f0",
+   "city": "berlin",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "394c67d6-ed99-4585-8b2a-9eff54ecbe97",
+   "slug": "overmono-pure-devotion-world-tour-gallery-seat-577de8d2",
+   "city": "berlin",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "ead87ee9-0757-477c-b2d5-c46b21e77063",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-32208ef4",
+   "city": "berlin",
+   "why": "tribute act: the page is a different act (the tribute is not the act)"
+  },
+  {
+   "id": "7deb1129-9417-440a-9592-b14c77fddc1c",
+   "slug": "undeath-d2ee39b8",
+   "city": "birmingham",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "39f7642f-76a1-4f29-84f2-2971ea73da5c",
+   "slug": "sombr-you-are-the-reason-tour-91f8af16",
+   "city": "boston",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "bd1a733f-d7ec-49d7-86ff-6be428f12d9c",
+   "slug": "overmono-pure-devotion-world-tour-3ece987f",
+   "city": "brussel",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "613672be-c376-4566-875f-327e5ea8abad",
+   "slug": "i-muvrini-5f01f74e",
+   "city": "brussel",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "b67fe5e3-3466-408d-b8a7-de5589514380",
+   "slug": "the-last-internationale-dde5e1cd",
+   "city": "brussel",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "77368228-a384-443d-97bf-6cd3988b012d",
+   "slug": "the-darcys-the-good-time-tour-7fa127a7",
+   "city": "calgary",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "840e96b4-4eaa-44bd-ba51-b171b98c0e14",
+   "slug": "mack-geiger-81a906c5",
+   "city": "chicago",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "4731a9ce-e4e4-4388-a7f4-63a424d83e7d",
+   "slug": "mack-geiger-when-it-s-pouring-2026-tour-with-tre-b0af6324",
+   "city": "chicago",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "2fd620cb-a5ca-498f-b4ae-0983411b7e6c",
+   "slug": "hiss-golden-messenger-i-m-people-tour-with-sam-a-2a710ed0",
+   "city": "chicago",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "01bcfe4c-ff85-4333-a407-dc59957178f6",
+   "slug": "dj-jean-76a9bb01",
+   "city": "cork",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "16467e84-c4d6-4b0f-838b-9404c73635f0",
+   "slug": "alexandra-kay-cbbb7b4c",
+   "city": "cork",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "d410756e-21b6-4592-b97e-0c5a46da99a6",
+   "slug": "mario-rosenstock-cff53dbe",
+   "city": "cork",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "9adf9f50-c871-4ad0-bc1b-c61c40a84175",
+   "slug": "the-bootleg-beatles-65ffe54a",
+   "city": "cork",
+   "why": "tribute act: the page is a different act (the tribute is not the act)"
+  },
+  {
+   "id": "32d67f0c-50ba-4d89-b514-4b5b3e2f8688",
+   "slug": "gavin-adcock-a7fb1b07",
+   "city": "detroit",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "bd1cc79b-22db-4b07-9031-ca7eaacca23f",
+   "slug": "hovvdy-1207bf2f",
+   "city": "detroit",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "7e99ca69-be3a-44c5-b040-24aada5b6252",
+   "slug": "richy-ahmed-house-rules-8f237409",
+   "city": "dubai",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "fac1c16e-ba67-4758-aff5-91acfb490f4c",
+   "slug": "pa-sheehy-the-magic-we-found-tour-901c712f",
+   "city": "frankfurt",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "e8553885-4e4a-470c-a26c-358defe88509",
+   "slug": "the-silos-cb79c4ad",
+   "city": "frankfurt",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "f1af9377-6168-409e-bce8-1ca7a645d141",
+   "slug": "bombargo-love-in-spite-of-everything-tour-69993976",
+   "city": "frankfurt",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "06160bc0-1466-45ae-a966-698196ce3f7a",
+   "slug": "bee-gees-60-years-of-hits-cca04f7e",
+   "city": "gent",
+   "why": "tribute act: the page is a different act (the tribute is not the act)"
+  },
+  {
+   "id": "8f4e0063-98b3-46d4-b20b-e4fe1e9a4685",
+   "slug": "kommil-foo-babel-b45ddafa",
+   "city": "gent",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "34e8c797-485b-469b-ada8-aba9fd2033b1",
+   "slug": "carlos-sadness-e81082e6",
+   "city": "guadalajara",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "137eb3f7-cf82-4813-afde-c03b6582acbf",
+   "slug": "son-mieux-24-hours-eu-album-tour-d8aa42b6",
+   "city": "hamburg",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "37609bfe-03d6-4893-bd9d-c5a75596e0de",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-78ed7735",
+   "city": "hamburg",
+   "why": "tribute act: the page is a different act (the tribute is not the act)"
+  },
+  {
+   "id": "b01476b9-383d-4cb6-9add-8286d2b25ddf",
+   "slug": "green-lung-0f7cf7d3",
+   "city": "hamburg",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "dea97921-4c84-4988-8d26-6f413588e9ae",
+   "slug": "soner-ar-ca-7355395d",
+   "city": "istanbul",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "eaeee4c2-676f-48a3-8060-2b3544407627",
+   "slug": "murat-dalk-l-c-00d42a78",
+   "city": "istanbul",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "b76301f6-baef-4e2f-b0e2-7848c438d123",
+   "slug": "ogun-sanl-soy-671c431d",
+   "city": "izmir",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "3e27617b-e6b6-4fbb-b482-885bbfcc3ad1",
+   "slug": "gokhan-turkmen-2e15d7ae",
+   "city": "izmir",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "1cb27b49-2b33-4989-a14f-800f14cadc50",
+   "slug": "soner-sar-kabaday-623646f6",
+   "city": "izmir",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "39d3a567-e730-419d-b7d9-8c7a1b238d4c",
+   "slug": "ilkay-akkaya-9442ef7a",
+   "city": "izmir",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "1fd22220-6919-436d-90d3-1ca4a909d23b",
+   "slug": "son-mieux-24-hours-eu-album-tour-aa921f1a",
+   "city": "koln",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "ad5a4a46-623c-4a34-8a7a-fab3459a541a",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-2323901b",
+   "city": "koln",
+   "why": "tribute act: the page is a different act (the tribute is not the act)"
+  },
+  {
+   "id": "a090c5e7-bd06-4005-90ac-7e044b2bb005",
+   "slug": "pa-sheehy-the-magic-we-found-tour-9e5ff76c",
+   "city": "koln",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "71c1a260-e90d-4e2b-9e01-7984e3ee587e",
+   "slug": "ayra-starr-starrgirl-world-tour-1122a2ef",
+   "city": "koln",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "8db4f96f-3daf-4050-a97c-1ba62c61432e",
+   "slug": "strangelove-the-depeche-mode-experience-e7504067",
+   "city": "krakow",
+   "why": "tribute act: the page is a different act (the tribute is not the act)"
+  },
+  {
+   "id": "3c0caea3-cc32-45ca-8d96-4da8d9fbc643",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-f88079c4",
+   "city": "leipzig",
+   "why": "tribute act: the page is a different act (the tribute is not the act)"
+  },
+  {
+   "id": "9638363a-ed6f-43cb-a590-d50028f20ab1",
+   "slug": "schandmaul-sternensegler-tour-2027-b1e05410",
+   "city": "leipzig",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "fe287248-79e5-4fd3-8625-d670565f3370",
+   "slug": "kelsey-lu-bb8bbb45",
+   "city": "london",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "b1ec4850-0448-4970-8087-88bd4a82b450",
+   "slug": "benjamin-clementine-allo-sbagliato-2f1a7874",
+   "city": "milano",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "aa158dc4-b369-4c6e-a6de-9bd61fe46a65",
+   "slug": "leire-martinez-00e758ce",
+   "city": "monterrey",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "1ae01a01-bdb2-4edd-b7e9-5486dbdac1f7",
+   "slug": "caloncho-89ae745d",
+   "city": "monterrey",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "663a2d2d-ceb6-4d30-a32a-c60ed2b0a6cb",
+   "slug": "la-gusana-ciega-claroscuro-07996f44",
+   "city": "monterrey",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "70786493-9fb4-4e7e-8a69-ed5e1a0c9d37",
+   "slug": "carlos-sadness-20eb72c8",
+   "city": "monterrey",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "676038ba-6bcb-40eb-b5df-f270207808b0",
+   "slug": "espinoza-paz-7a59af8c",
+   "city": "monterrey",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "4e9a9e84-3dc3-45bb-8bd1-0afefbaa3ec6",
+   "slug": "silvio-rodriguez-13c5bac8",
+   "city": "monterrey",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "bedf241d-20b0-41f3-8fed-2b171486c4a7",
+   "slug": "jeff-harnar-i-know-things-now-my-life-in-sondhei-c8f654ed",
+   "city": "new-york",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "600f6c6c-9766-4be7-a4a5-7d702a2a220b",
+   "slug": "new-constellations-it-comes-in-waves-tour-694a70be",
+   "city": "new-york",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "3e55dcb9-c0e8-4616-ba9b-c66244c04d73",
+   "slug": "tayc-f3caabd7",
+   "city": "oslo",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "1e4db758-2f26-43e5-957d-65072282495b",
+   "slug": "stein-torleif-bjella-innegubbens-dr-ymejul-10db9651",
+   "city": "oslo",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "ecc5fb8f-0b2d-4b7c-b2fd-9f153ea2b2c7",
+   "slug": "death-by-unga-bunga-1450561a",
+   "city": "oslo",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "0c25b28d-e96c-41d3-a5db-340d9b1e45f9",
+   "slug": "shakey-graves-fondness-etc-tour-1e571ceb",
+   "city": "ottawa",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "1b0e2dfa-530b-44eb-8515-30719d80e863",
+   "slug": "tedua-palasport-2027-5e2f6373",
+   "city": "roma",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "aa15fcfb-5c59-4baa-9409-e6226086ef1e",
+   "slug": "gabry-ponte-circotron-the-dance-show-86649744",
+   "city": "roma",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "c89dc103-39f0-4dc2-98d5-4b32e331ae50",
+   "slug": "eli-and-fur-ages-21-b13580cc",
+   "city": "san-francisco",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "973737da-a8a7-4e82-b5ec-d0056a7727bf",
+   "slug": "allison-russell-ed706670",
+   "city": "san-francisco",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "b782199b-6331-43f0-a2c4-392940b335e6",
+   "slug": "c-o-f-f-i-n-78e11237",
+   "city": "stockholm",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "2d686c9e-4888-438a-b4e3-3e185500d4d0",
+   "slug": "noah-gundersen-a336be8c",
+   "city": "stockholm",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "fcd44d7a-2c20-43c4-bd92-c7e57cd7fc7a",
+   "slug": "dea-matrona-d0b65e4f",
+   "city": "stockholm",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "0603109c-f515-411b-9306-51c884c53358",
+   "slug": "dead-poet-society-1fe0921d",
+   "city": "stockholm",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "579266f6-a7cd-47ad-84e0-2523b35b7d18",
+   "slug": "marika-hackman-3501f9c2",
+   "city": "stockholm",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "17ee822b-df41-46b0-85f2-4ad0125d5475",
+   "slug": "andreas-gabalier-arena-tour-2027-1abf0d22",
+   "city": "stuttgart",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "a624c260-49f9-476d-83e3-f3820438ec56",
+   "slug": "gabry-ponte-circotron-the-dance-show-49eea527",
+   "city": "torino",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "bfbc5c31-2939-48b3-bfe0-9b184e96c36b",
+   "slug": "sami-beigi-live-in-toronto-fd4dec90",
+   "city": "toronto",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "39a12fe5-88c1-45b5-8608-03af5f3e3e8e",
+   "slug": "dj-tennis-4am-license-1395f79c",
+   "city": "toronto",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "b04315d0-9c10-49e9-9319-862d05d28792",
+   "slug": "allison-russell-fa589a66",
+   "city": "vancouver",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "3cf3a485-6da9-491c-a26b-486b88b5f3aa",
+   "slug": "houndmouth-the-lordy-tour-d0685f3b",
+   "city": "vancouver",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "da304b98-bd19-444d-91f4-a8cae32e8a9e",
+   "slug": "sassy-009-6824f54b",
+   "city": "vancouver",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "fc7bb445-c6e7-4e1c-a83f-72152ce49e77",
+   "slug": "erdling-b4178b2b",
+   "city": "warszawa",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "68d334ff-f58a-4813-b8fa-2fa951cdc6d9",
+   "slug": "the-last-internationale-ee41cf83",
+   "city": "warszawa",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "dde2c438-b731-4142-842b-1f2161713f12",
+   "slug": "sombr-you-are-the-reason-tour-eba94a9d",
+   "city": "washington",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "7c9a0b9d-1697-4bab-ba1c-a27d83f1275c",
+   "slug": "new-constellations-it-comes-in-waves-tour-1ed64edf",
+   "city": "washington",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "205d9a43-bbe1-480b-ae65-e717240d787b",
+   "slug": "freak-slug-7efb24cb",
+   "city": "washington",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "ca750c6a-1ff4-4a01-9729-0b1974e16401",
+   "slug": "erdling-131a50d6",
+   "city": "wien",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "0f1b66f9-9c5b-439f-8bb0-a91247b6dc47",
+   "slug": "son-mieux-67a20938",
+   "city": "wien",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "67657b9c-d7fd-40e6-b90c-bf7e6b98a55c",
+   "slug": "alela-diane-2bf00b75",
+   "city": "wien",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "d30ffaa5-ddcb-44a8-98fa-d96fa18eb4e5",
+   "slug": "the-veils-fragile-world-d8bd4a67",
+   "city": "wien",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "6323baf4-1f49-4029-b565-95009063884e",
+   "slug": "too-many-zooz-audio-lipstick-tour-cfce1750",
+   "city": "wroclaw",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "455ed067-e126-4470-9238-e6f23df77ac3",
+   "slug": "son-mieux-e27aba8a",
+   "city": "zurich",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "03c51dea-5c7c-4fc7-bf06-7f0c24e84955",
+   "slug": "filow-3d6410c9",
+   "city": "zurich",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "16d8d826-b8d7-481f-baaa-ca82d87ffef3",
+   "slug": "the-scratch-856a6663",
+   "city": "zurich",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "d5ca4a0c-6aff-40ce-a629-8c6c31778d92",
+   "slug": "ayra-starr-starrgirl-world-tour-642e6389",
+   "city": "zurich",
+   "why": "thin: extract does not support two facts"
+  },
+  {
+   "id": "7a85378c-cac6-4464-90e3-b892769328c1",
+   "slug": "almost-monday-46eb0864",
+   "city": "zurich",
+   "why": "thin: extract does not support two facts"
   }
  ]
 }

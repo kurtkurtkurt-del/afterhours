@@ -1,0 +1,38 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "30f149ab-1c5a-47ca-9521-1417f2312009",
+   "slug": "michelle-shocked-0612fcd3",
+   "title": "Michelle Shocked",
+   "name": "Michelle Shocked",
+   "source_url": "https://en.wikipedia.org/wiki/Michelle_Shocked",
+   "extract": "Michelle Shocked is an American singer-songwriter. Her music has entered the Billboard Hot 100, been nominated for the Grammy Award for Best Contemporary Folk Album, and received an award for Folk Album of the Year at the CMJ New Music Awards.",
+   "en": {
+    "kicker": "american singer-songwriter · grammy nominee",
+    "who": "Michelle Shocked is an American singer-songwriter. Her music has reached the Billboard Hot 100, and she has been recognised by both the Grammy Awards and the CMJ New Music Awards.",
+    "facts": [
+     "Michelle Shocked is an American singer-songwriter.",
+     "Her music has entered the Billboard Hot 100, been nominated for the Grammy Award for Best Contemporary Folk Album, and received an award for Folk Album of the Year at the CMJ New Music Awards."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin · Grammy-Nominierung",
+    "who": "Michelle Shocked ist eine amerikanische Singer-Songwriterin. Ihre Musik erreichte die Billboard Hot 100, und sie wurde sowohl bei den Grammys als auch bei den CMJ New Music Awards gewürdigt.",
+    "facts": [
+     "Michelle Shocked ist eine amerikanische Singer-Songwriterin.",
+     "Ihre Musik gelangte in die Billboard Hot 100, wurde für den Grammy in der Kategorie Best Contemporary Folk Album nominiert und erhielt einen Preis als Folk Album of the Year bei den CMJ New Music Awards."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · grammy adayı",
+    "who": "Michelle Shocked, Amerikalı bir şarkıcı ve söz yazarıdır. Müziği Billboard Hot 100 listesine girdi ve hem Grammy hem de CMJ New Music Awards tarafından takdir edildi.",
+    "facts": [
+     "Michelle Shocked, Amerikalı bir şarkıcı ve söz yazarıdır.",
+     "Müziği Billboard Hot 100 listesine girdi, Grammy'de En İyi Çağdaş Folk Albümü dalında aday gösterildi ve CMJ New Music Awards'ta Yılın Folk Albümü ödülünü aldı."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "dusseldorf",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "fbaaadbd-95d3-4b5a-bd37-b21597192008",
+      "slug": "megadeth-breakout-hibernation-of-the-nations-eur-1128e2a9",
+      "title": "Megadeth - Breakout: Hibernation Of The Nations Europe Tour 2027",
+      "name": "Megadeth",
+      "source_url": "https://en.wikipedia.org/wiki/Megadeth",
+      "extract": "Megadeth is an American heavy metal band formed in Los Angeles in 1983 by vocalist and guitarist Dave Mustaine. Known for their technically complex guitar work and musicianship, Megadeth is one of the \"big four\" of American thrash metal—along with Slayer, Anthrax, and Metallica—and is credited with helping to develop and popularize the genre. Their music features intricate arrangements, fast rhythm sections, dual lead guitars, and lyrical themes such as war, conflicts, politics, religion, death, and personal relationships.",
+      "en": {
+        "kicker": "american heavy metal band · los angeles, 1983",
+        "who": "Megadeth is an American heavy metal band formed in Los Angeles in 1983 by vocalist and guitarist Dave Mustaine. The band is known for technically complex guitar work and musicianship. Its music features intricate arrangements and fast rhythm sections.",
+        "facts": [
+          "Megadeth is an American heavy metal band formed in Los Angeles in 1983 by vocalist and guitarist Dave Mustaine.",
+          "Their music features intricate arrangements, fast rhythm sections, dual lead guitars, and lyrical themes such as war, conflicts, politics, religion, death, and personal relationships."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische heavy-metal-band · los angeles, 1983",
+        "who": "Megadeth ist eine amerikanische Heavy-Metal-Band, die 1983 in Los Angeles von Sänger und Gitarrist Dave Mustaine gegründet wurde. Die Band ist für technisch anspruchsvolles Gitarrenspiel und Musikalität bekannt. Ihre Musik zeichnet sich durch komplexe Arrangements und schnelle Rhythmusteile aus.",
+        "facts": [
+          "Megadeth ist eine amerikanische Heavy-Metal-Band, die 1983 in Los Angeles von Sänger und Gitarrist Dave Mustaine gegründet wurde.",
+          "Ihre Musik zeichnet sich durch komplexe Arrangements, schnelle Rhythmusteile, doppelte Leadgitarren und lyrische Themen wie Krieg, Konflikte, Politik, Religion, Tod und persönliche Beziehungen aus."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikan heavy metal grubu · los angeles, 1983",
+        "who": "Megadeth, 1983'te Los Angeles'ta vokalist ve gitarist Dave Mustaine tarafından kurulmuş bir Amerikan heavy metal grubudur. Teknik olarak karmaşık gitar çalışması ve müzikalitesiyle tanınır. Müziğinde girift düzenlemeler ve hızlı ritim bölümleri bulunur.",
+        "facts": [
+          "Megadeth, 1983'te Los Angeles'ta vokalist ve gitarist Dave Mustaine tarafından kurulmuş bir Amerikan heavy metal grubudur.",
+          "Müzikleri; karmaşık düzenlemeler, hızlı ritim bölümleri, çift lead gitarlar ve savaş, çatışmalar, siyaset, din, ölüm ve kişisel ilişkiler gibi sözlere sahiptir."
+        ]
+      }
+    }
+  ]
+}

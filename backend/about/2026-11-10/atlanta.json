@@ -1,0 +1,102 @@
+{
+  "city": "atlanta",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "56013a10-ef64-4734-9061-59e242531deb",
+      "slug": "wolves-of-glendale-5bd0616a",
+      "title": "Wolves of Glendale",
+      "name": "Wolves of Glendale",
+      "source_url": "https://en.wikipedia.org/wiki/Wolves_of_Glendale",
+      "extract": "Wolves of Glendale is an American comedy rock band formed in 2022 in Los Angeles, California. The band consists of guitarist Ethan Edenburg, drummer Eric Jackowitz, and guitarist/keyboardist Tom McGovern. All three members sing, with many of their songs featuring vocal harmony and shared lead vocals.",
+      "en": {
+        "kicker": "american comedy rock band · los angeles, 2022",
+        "who": "Wolves of Glendale is an American comedy rock band formed in 2022 in Los Angeles, California. All three members sing, and many of their songs feature vocal harmony and shared lead vocals.",
+        "facts": [
+          "Wolves of Glendale is an American comedy rock band formed in 2022 in Los Angeles, California.",
+          "All three members sing, with many of their songs featuring vocal harmony and shared lead vocals."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische comedy-rockband · los angeles, 2022",
+        "who": "Wolves of Glendale ist eine amerikanische Comedy-Rockband, die 2022 in Los Angeles, Kalifornien, gegründet wurde. Alle drei Mitglieder singen, und viele Songs setzen auf Gesangsharmonien und geteilten Leadgesang.",
+        "facts": [
+          "Wolves of Glendale ist eine amerikanische Comedy-Rockband, die 2022 in Los Angeles, Kalifornien, gegründet wurde.",
+          "Alle drei Mitglieder singen, und viele Songs setzen auf Gesangsharmonien und geteilten Leadgesang."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı komedi rock grubu · los angeles, 2022",
+        "who": "Wolves of Glendale, 2022'de Los Angeles, Kaliforniya'da kurulan Amerikalı bir komedi rock grubudur. Üç üyenin de şarkı söylediği grubun birçok şarkısında vokal uyumu ve ortak baş vokal bulunur.",
+        "facts": [
+          "Wolves of Glendale, 2022'de Los Angeles, Kaliforniya'da kurulan Amerikalı bir komedi rock grubudur.",
+          "Üç üyenin de şarkı söylediği grubun birçok şarkısında vokal uyumu ve ortak baş vokal bulunur."
+        ]
+      }
+    },
+    {
+      "id": "39ea57d0-405d-4385-af50-5047fed0db75",
+      "slug": "chat-pile-who-loves-the-sun-tour-2026-417346c5",
+      "title": "Chat Pile - Who Loves The Sun Tour 2026",
+      "name": "Chat Pile",
+      "source_url": "https://en.wikipedia.org/wiki/Chat_Pile",
+      "extract": "Chat Pile is an American noise rock/sludge metal band from Oklahoma City, Oklahoma, formed in 2019. The band is composed of four members using the pseudonyms Raygun Busch (vocals), Luther Manhole (guitar), Stin (bass), and Cap'n Ron (drums).",
+      "en": {
+        "kicker": "american noise rock/sludge metal band · oklahoma city, 2019",
+        "who": "Chat Pile is an American noise rock and sludge metal band from Oklahoma City, formed in 2019. Its four members perform under the pseudonyms Raygun Busch, Luther Manhole, Stin and Cap'n Ron.",
+        "facts": [
+          "Chat Pile is an American noise rock/sludge metal band from Oklahoma City, Oklahoma, formed in 2019.",
+          "The band is composed of four members using the pseudonyms Raygun Busch (vocals), Luther Manhole (guitar), Stin (bass), and Cap'n Ron (drums)."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische noise-rock-band · oklahoma city, 2019",
+        "who": "Chat Pile ist eine amerikanische Noise-Rock- und Sludge-Metal-Band aus Oklahoma City, die 2019 gegründet wurde. Die vier Mitglieder treten unter Pseudonymen auf: Raygun Busch, Luther Manhole, Stin und Cap'n Ron.",
+        "facts": [
+          "Chat Pile ist eine amerikanische Noise-Rock- und Sludge-Metal-Band aus Oklahoma City, Oklahoma, die 2019 gegründet wurde.",
+          "Die Band besteht aus vier Mitgliedern, die die Pseudonyme Raygun Busch (Gesang), Luther Manhole (Gitarre), Stin (Bass) und Cap'n Ron (Schlagzeug) verwenden."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı noise rock grubu · oklahoma city, 2019",
+        "who": "Chat Pile, 2019'da kurulan, Oklahoma City'den bir Amerikalı noise rock ve sludge metal grubudur. Dört üye grupta takma adlarla yer alır: Raygun Busch, Luther Manhole, Stin ve Cap'n Ron.",
+        "facts": [
+          "Chat Pile, 2019'da kurulan, Oklahoma City, Oklahoma'dan bir Amerikalı noise rock/sludge metal grubudur.",
+          "Grup, Raygun Busch (vokal), Luther Manhole (gitar), Stin (bas) ve Cap'n Ron (davul) takma adlarını kullanan dört üyeden oluşur."
+        ]
+      }
+    },
+    {
+      "id": "fa665601-bb51-4476-a7d5-00d176d35f48",
+      "slug": "john-summit-ctrl-escape-arena-tour-11846e5e",
+      "title": "JOHN SUMMIT - CTRL ESCAPE ARENA TOUR",
+      "name": "John Summit",
+      "source_url": "https://en.wikipedia.org/wiki/John_Summit",
+      "extract": "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label. His music includes original tracks and remixes, primarily focused in the genre of tech house.",
+      "en": {
+        "kicker": "american dj and record producer",
+        "who": "John Summit is the stage name of John Walter Schuster, an American DJ and record producer. He owns the Experts Only label, and his music is primarily focused on tech house.",
+        "facts": [
+          "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label.",
+          "His music includes original tracks and remixes, primarily focused in the genre of tech house."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer dj und musikproduzent",
+        "who": "John Summit ist das Pseudonym von John Walter Schuster, einem amerikanischen DJ und Musikproduzenten. Er ist außerdem Inhaber des Labels Experts Only, und seine Musik konzentriert sich vor allem auf Tech House.",
+        "facts": [
+          "John Walter Schuster, besser bekannt unter seinem Künstlernamen John Summit, ist ein amerikanischer DJ und Musikproduzent, ehemaliger Buchhalter und heutiger Inhaber des Labels Experts Only.",
+          "Seine Musik umfasst Originalstücke und Remixe, die vor allem im Genre Tech House angesiedelt sind."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı dj ve müzik yapımcısı",
+        "who": "John Summit, sahne adıyla tanınan John Walter Schuster'dır. Amerikalı bir DJ ve müzik yapımcısıdır ve Experts Only etiketinin sahibidir. Müziği ağırlıklı olarak tech house türüne odaklanır.",
+        "facts": [
+          "John Walter Schuster, sahne adıyla John Summit, Amerikalı bir DJ ve müzik yapımcısı, eski muhasebeci ve Experts Only etiketinin güncel sahibidir.",
+          "Müziği özgün parçaları ve remixleri içerir ve ağırlıklı olarak tech house türüne odaklanır."
+        ]
+      }
+    }
+  ]
+}

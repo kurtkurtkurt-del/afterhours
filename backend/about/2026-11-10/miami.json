@@ -1,0 +1,70 @@
+{
+  "city": "miami",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "f22a694b-f9ff-4212-9cb4-f23e19af2a0e",
+      "slug": "pain-of-truth-d1d92729",
+      "title": "PAIN OF TRUTH",
+      "name": "Pain of Truth",
+      "source_url": "https://en.wikipedia.org/wiki/Pain_of_Truth",
+      "extract": "Pain of Truth are an American hardcore punk band formed on Long Island, New York in 2020. As of 2024, they have released one demo, two split EPs, and two studio albums.",
+      "en": {
+        "kicker": "american hardcore punk band · Long Island, 2020",
+        "who": "Pain of Truth is a hardcore punk act from Long Island, New York, formed in 2020. The band has put out a demo, two split EPs and two studio albums.",
+        "facts": [
+          "Pain of Truth are an American hardcore punk band formed on Long Island, New York in 2020.",
+          "As of 2024, they have released one demo, two split EPs, and two studio albums."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische hardcore-punkband · Long Island, 2020",
+        "who": "Pain of Truth sind eine amerikanische Hardcore-Punkband aus Long Island, New York, gegründet 2020. Bis 2024 haben sie ein Demo, zwei Split-EPs und zwei Studioalben veröffentlicht.",
+        "facts": [
+          "Pain of Truth sind eine amerikanische Hardcore-Punkband, die 2020 auf Long Island, New York, gegründet wurde.",
+          "Stand 2024 haben sie ein Demo, zwei Split-EPs und zwei Studioalben veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı hardcore punk grubu · Long Island, 2020",
+        "who": "Pain of Truth, New York'un Long Island bölgesinde 2020 yılında kurulmuş Amerikalı bir hardcore punk grubudur. 2024 itibarıyla bir demo, iki split EP ve iki stüdyo albümü yayımladılar.",
+        "facts": [
+          "Grup, 2020 yılında New York'un Long Island bölgesinde kuruldu.",
+          "2024 itibarıyla bir demo, iki split EP ve iki stüdyo albümü çıkardılar."
+        ]
+      }
+    },
+    {
+      "id": "375b945e-44fe-4630-ae54-94e258538fd6",
+      "slug": "david-bisbal-tour-eternos-2026-447812ee",
+      "title": "David Bisbal - Tour Eternos 2026",
+      "name": "David Bisbal",
+      "source_url": "https://en.wikipedia.org/wiki/David_Bisbal",
+      "extract": "David Bisbal Ferre is a Spanish singer and actor. He gained his initial fame as the runner-up on the first edition of the reality television talent show Operación Triunfo.",
+      "en": {
+        "kicker": "spanish singer and actor · Operación Triunfo runner-up",
+        "who": "David Bisbal is a Spanish singer and actor. He is best known for finishing as runner-up on the first edition of the reality talent show Operación Triunfo.",
+        "facts": [
+          "David Bisbal Ferre is a Spanish singer and actor.",
+          "He gained his initial fame as the runner-up on the first edition of the reality television talent show Operación Triunfo."
+        ]
+      },
+      "de": {
+        "kicker": "spanischer sänger · Zweiter bei Operación Triunfo",
+        "who": "David Bisbal ist ein spanischer Sänger und Schauspieler. Seine ersten Erfolge feierte er als Zweitplatzierter der ersten Staffel der Castingshow Operación Triunfo.",
+        "facts": [
+          "David Bisbal Ferre ist ein spanischer Sänger und Schauspieler.",
+          "Seinen anfänglichen Ruhm erlangte er als Zweitplatzierter der ersten Staffel der Reality-Castingshow Operación Triunfo."
+        ]
+      },
+      "tr": {
+        "kicker": "ispanyol şarkıcı ve oyuncu · Operación Triunfo ikincisi",
+        "who": "David Bisbal, İspanyol bir şarkıcı ve oyuncudur. İlk ünü, gerçeklik televizyonu yetenek yarışması Operación Triunfo'nun ilk sezonunda ikinci olarak kazandı.",
+        "facts": [
+          "David Bisbal Ferre, İspanyol bir şarkıcı ve oyuncudur.",
+          "İlk ünü, gerçeklik televizyonu yetenek yarışması Operación Triunfo'nun ilk sezonunda ikinci olarak kazandı."
+        ]
+      }
+    }
+  ]
+}

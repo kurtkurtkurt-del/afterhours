@@ -1,0 +1,38 @@
+{
+  "city": "los-angeles",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "a2eb0d1a-7822-4b18-abfd-4595767f6168",
+      "slug": "swmrs-76948fac",
+      "title": "SWMRS",
+      "name": "SWMRS",
+      "source_url": "https://en.wikipedia.org/wiki/SWMRS",
+      "extract": "SWMRS is an American punk rock band from the San Francisco Bay Area, consisting of brothers Max, Cole, and Cade Becker. Formed out of their earlier band Emily's Army, SWMRS blends punk, pop, and indie influences. The band has released four studio albums and toured extensively around the world.",
+      "en": {
+        "kicker": "american punk rock band · San Francisco Bay Area",
+        "who": "SWMRS is an American punk rock band from the San Francisco Bay Area, made up of brothers Max, Cole, and Cade Becker. The band blends punk, pop, and indie influences, and has toured extensively around the world.",
+        "facts": [
+          "Formed out of their earlier band Emily's Army, SWMRS blends punk, pop, and indie influences.",
+          "The band has released four studio albums and toured extensively around the world."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische punkrock-band · San Francisco Bay Area",
+        "who": "SWMRS sind eine amerikanische Punkrock-Band aus der San Francisco Bay Area, bestehend aus den Brüdern Max, Cole und Cade Becker. Die Band verbindet Einflüsse aus Punk, Pop und Indie und ist weltweit ausgiebig auf Tour gewesen.",
+        "facts": [
+          "Die Band ging aus ihrer früheren Gruppe Emily's Army hervor und verbindet Einflüsse aus Punk, Pop und Indie.",
+          "Die Band hat vier Studioalben veröffentlicht und ist ausgiebig um die Welt getourt."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı punk rock grubu · San Francisco Bay Area",
+        "who": "SWMRS, San Francisco Bay Area'dan gelen Amerikalı bir punk rock grubudur. Kardeşler Max, Cole ve Cade Becker'dan oluşuyor ve grup punk, pop ve indie etkilerini harmanlıyor.",
+        "facts": [
+          "Önceki grupları Emily's Army'den doğan SWMRS, punk, pop ve indie etkilerini harmanlıyor.",
+          "Grup dört stüdyo albümü yayımladı ve dünya çapında geniş turneler yaptı."
+        ]
+      }
+    }
+  ]
+}

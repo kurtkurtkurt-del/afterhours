@@ -1,0 +1,38 @@
+{
+  "city": "torino",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "85d0c367-223a-4286-bd94-075721cebe25",
+      "slug": "gianna-nannini-giannagold-a3b38127",
+      "title": "GIANNA NANNINI | GIANNAGOLD",
+      "name": "Gianna Nannini",
+      "source_url": "https://en.wikipedia.org/wiki/Gianna_Nannini",
+      "extract": "Gianna Nannini is an Italian singer and songwriter. Her most notable songs include \"America\" (1979), \"Fotoromanza\" (1984), \"I maschi\" (1987), \"Meravigliosa creatura\" (1995), \"Sei nell'anima\" (2006) and \"Bello e impossibile\" (1986). The latter became a hit across Europe, especially in Austria, Germany, Italy and Switzerland.",
+      "en": {
+        "kicker": "italian singer and songwriter",
+        "who": "Gianna Nannini is an Italian singer and songwriter. Her most notable songs include \"America\", \"Fotoromanza\" and \"Bello e impossibile\". \"Bello e impossibile\" became a hit across Europe, especially in Austria, Germany, Italy and Switzerland.",
+        "facts": [
+          "Gianna Nannini is an Italian singer and songwriter.",
+          "Her most notable songs include \"America\" (1979), \"Fotoromanza\" (1984), \"I maschi\" (1987), \"Meravigliosa creatura\" (1995), \"Sei nell'anima\" (2006) and \"Bello e impossibile\" (1986)."
+        ]
+      },
+      "de": {
+        "kicker": "italienische sängerin und songwriterin",
+        "who": "Gianna Nannini ist eine italienische Sängerin und Songwriterin. Zu ihren bekanntesten Songs gehören „America“, „Fotoromanza“ und „Bello e impossibile“. „Bello e impossibile“ wurde in ganz Europa zum Hit, besonders in Österreich, Deutschland, Italien und der Schweiz.",
+        "facts": [
+          "Gianna Nannini ist eine italienische Sängerin und Songwriterin.",
+          "Zu ihren bekanntesten Songs gehören „America“ (1979), „Fotoromanza“ (1984), „I maschi“ (1987), „Meravigliosa creatura“ (1995), „Sei nell'anima“ (2006) und „Bello e impossibile“ (1986)."
+        ]
+      },
+      "tr": {
+        "kicker": "italyan şarkıcı ve söz yazarı",
+        "who": "Gianna Nannini bir İtalyan şarkıcı ve söz yazarıdır. En bilinen şarkıları arasında \"America\", \"Fotoromanza\" ve \"Bello e impossibile\" yer alır. \"Bello e impossibile\" Avrupa'da, özellikle Avusturya, Almanya, İtalya ve İsviçre'de bir hit oldu.",
+        "facts": [
+          "Gianna Nannini bir İtalyan şarkıcı ve söz yazarıdır.",
+          "En bilinen şarkıları arasında \"America\" (1979), \"Fotoromanza\" (1984), \"I maschi\" (1987), \"Meravigliosa creatura\" (1995), \"Sei nell'anima\" (2006) ve \"Bello e impossibile\" (1986) yer alır."
+        ]
+      }
+    }
+  ]
+}

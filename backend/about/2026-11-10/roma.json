@@ -1,0 +1,38 @@
+{
+  "city": "roma",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "2f6e4266-7e45-4611-bea9-e850286a6c79",
+      "slug": "laura-pausini-io-canto-world-tour-31c28cd9",
+      "title": "Laura Pausini - Io Canto World Tour",
+      "name": "Laura Pausini",
+      "source_url": "https://en.wikipedia.org/wiki/Laura_Pausini",
+      "extract": "Laura Pausini is an Italian pop singer. She rose to fame in 1993, winning the newcomer artists' section of the 43rd Sanremo Music Festival with the song \"La solitudine\", which became an Italian standard and an international hit. Her self-titled debut album was released in Italy on 23 April 1993 and later became an international success, selling two million copies worldwide. Its follow-up, Laura, was released in 1994 and confirmed her international success, selling three million copies worldwide.",
+      "en": {
+        "kicker": "italian pop singer · 1993",
+        "who": "Laura Pausini is an Italian pop singer. She rose to fame in 1993 with the song \"La solitudine\", which became an Italian standard and an international hit.",
+        "facts": [
+          "She rose to fame in 1993, winning the newcomer artists' section of the 43rd Sanremo Music Festival with the song \"La solitudine\", which became an Italian standard and an international hit.",
+          "Her self-titled debut album was released in Italy on 23 April 1993 and later became an international success, selling two million copies worldwide."
+        ]
+      },
+      "de": {
+        "kicker": "italienische popsängerin · 1993",
+        "who": "Laura Pausini ist eine italienische Popsängerin. 1993 wurde sie mit dem Lied \"La solitudine\" bekannt, das zu einem italienischen Standard und einem internationalen Hit wurde.",
+        "facts": [
+          "1993 wurde sie berühmt, als sie mit dem Lied \"La solitudine\" den Newcomer-Bereich des 43. Sanremo Music Festival gewann; das Lied wurde ein italienischer Standard und ein internationaler Hit.",
+          "Ihr gleichnamiges Debütalbum erschien am 23. April 1993 in Italien, wurde später ein internationaler Erfolg und verkaufte weltweit zwei Millionen Exemplare."
+        ]
+      },
+      "tr": {
+        "kicker": "italyan pop şarkıcısı · 1993",
+        "who": "Laura Pausini bir İtalyan pop şarkıcısıdır. 1993'te \"La solitudine\" şarkısıyla ün kazandı; şarkı İtalya'da bir standart ve uluslararası bir hit oldu.",
+        "facts": [
+          "1993'te, 43. Sanremo Müzik Festivali'nin yeni sanatçılar bölümünde \"La solitudine\" şarkısıyla birinci olarak ün kazandı.",
+          "Kendi adını taşıyan debut albümü 23 Nisan 1993'te İtalya'da yayımlandı, sonradan uluslararası bir başarı elde etti ve dünya genelinde iki milyon kopya sattı."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "city": "boston",
+  "day": "2026-11-10",
+  "nights": [
+    {
+      "id": "37c75636-2986-4066-9367-2b14b82af5c6",
+      "slug": "stella-lefty-df244e62",
+      "title": "Stella Lefty",
+      "name": "Stella Lefty",
+      "source_url": "https://en.wikipedia.org/wiki/Stella_Lefty",
+      "extract": "Stella Lefkofsky, better known by her stage name Stella Lefty, is an American singer-songwriter. Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100.",
+      "en": {
+        "kicker": "american singer-songwriter",
+        "who": "Stella Lefty is the stage name of Stella Lefkofsky, an American singer-songwriter. Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100.",
+        "facts": [
+          "Stella Lefkofsky, better known by her stage name Stella Lefty, is an American singer-songwriter.",
+          "Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin",
+        "who": "Stella Lefty ist das Pseudonym von Stella Lefkofsky, einer amerikanischen Singer-Songwriterin. Ihre Country-Pop-Single \"Boston\" aus dem Jahr 2026 erreichte Platz zwei der US Billboard Hot 100.",
+        "facts": [
+          "Stella Lefkofsky, besser bekannt unter ihrem Künstlernamen Stella Lefty, ist eine amerikanische Singer-Songwriterin.",
+          "Ihre Country-Pop-Single \"Boston\" aus dem Jahr 2026 erreichte Platz zwei der US Billboard Hot 100."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı ve söz yazarı",
+        "who": "Stella Lefty, Stella Lefkofsky'nin sahne adıdır ve Amerikalı bir şarkıcı ve söz yazarıdır. 2026 yapımı country pop single'ı \"Boston\", US Billboard Hot 100 listesinde ikinci sıraya kadar yükseldi.",
+        "facts": [
+          "Stella Lefkofsky, sahne adıyla Stella Lefty, Amerikalı bir şarkıcı ve söz yazarıdır.",
+          "2026 yapımı country pop single'ı \"Boston\", US Billboard Hot 100 listesinde ikinci sıraya ulaştı."
+        ]
+      }
+    }
+  ]
+}
