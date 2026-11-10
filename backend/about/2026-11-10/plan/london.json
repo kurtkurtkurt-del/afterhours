@@ -1,0 +1,36 @@
+{
+ "city": "london",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "7d94d8e8-b0ea-4845-8649-135d02ba4e23",
+   "slug": "the-march-violets-3c0380b2",
+   "title": "The March Violets",
+   "act": "The March Violets",
+   "name": "The March Violets",
+   "description": "English post-punk/gothic rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_March_Violets",
+   "extract": "The March Violets are an English post-punk/gothic rock band formed in 1981 in Leeds, incorporating male and female singers, drum machine rhythms and echo-laden electric guitar, much in the style of fellow Leeds band the Sisters of Mercy. Seven March Violets singles reached the UK Indie Chart; the Natural History collection also was an indie hit."
+  },
+  {
+   "id": "fe287248-79e5-4fd3-8625-d670565f3370",
+   "slug": "kelsey-lu-bb8bbb45",
+   "title": "Kelsey Lu",
+   "act": "Kelsey Lu",
+   "name": "Kelsey Lu",
+   "description": "American singer and cellist (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Kelsey_Lu",
+   "extract": "Kelsey Elizabeth McJunkins, known professionally as Kelsey Lu, is an American singer and cellist based in Los Angeles, California."
+  },
+  {
+   "id": "a94183fb-bc32-4632-b4c0-8e4023fa4e1f",
+   "slug": "dirty-three-2d58fe47",
+   "title": "Dirty Three",
+   "act": "Dirty Three",
+   "name": "Dirty Three",
+   "description": "Australian instrumental rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Dirty_Three",
+   "extract": "Dirty Three are an Australian instrumental rock band, consisting of Warren Ellis, Mick Turner and Jim White (drums), which formed in 1992. Their 1996 album Horse Stories was voted by Rolling Stone as one of the top three albums of the year. Two of their albums have peaked into the top 50 on the ARIA Albums Chart, Ocean Songs (1998) and Toward the Low Sun (2012). During their career they have spent much of their time overseas when not performing together. Turner is based in Melbourne, White lives in New York, and Ellis in Paris. Australian rock music historian Ian McFarlane described them as providing a \"rumbling, dynamic sound incorporated open-ended, improvisational, electric rock ... minus the jazz-rock histrionics\". In October 2010, Ocean Songs was listed in the book 100 Best Australian Albums."
+  }
+ ]
+}

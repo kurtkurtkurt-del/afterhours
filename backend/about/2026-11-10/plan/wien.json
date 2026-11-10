@@ -1,0 +1,46 @@
+{
+ "city": "wien",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "ca750c6a-1ff4-4a01-9729-0b1974e16401",
+   "slug": "erdling-131a50d6",
+   "title": "Erdling",
+   "act": "Erdling",
+   "name": "Erdling",
+   "description": "German rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Erdling",
+   "extract": "Erdling is a German Neue Deutsche Härte band formed in 2014 by Neill Freiwald and Niklas Kahl."
+  },
+  {
+   "id": "0f1b66f9-9c5b-439f-8bb0-a91247b6dc47",
+   "slug": "son-mieux-67a20938",
+   "title": "Son Mieux",
+   "act": "Son Mieux",
+   "name": "Son Mieux",
+   "description": "Dutch indie pop group",
+   "source_url": "https://en.wikipedia.org/wiki/Son_Mieux",
+   "extract": "Son Mieux is a Dutch indie pop group from The Hague headed by Camiel Meiresonne."
+  },
+  {
+   "id": "67657b9c-d7fd-40e6-b90c-bf7e6b98a55c",
+   "slug": "alela-diane-2bf00b75",
+   "title": "Alela Diane",
+   "act": "Alela Diane",
+   "name": "Alela Diane",
+   "description": "American singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Alela_Diane",
+   "extract": "Alela Diane Menig, known as Alela Diane, is an American singer-songwriter from Nevada City, California."
+  },
+  {
+   "id": "d30ffaa5-ddcb-44a8-98fa-d96fa18eb4e5",
+   "slug": "the-veils-fragile-world-d8bd4a67",
+   "title": "The Veils - Fragile World",
+   "act": "The Veils",
+   "name": "The Veils",
+   "description": "English/New Zealand rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Veils",
+   "extract": "The Veils are an English/New Zealand indie/rock band fronted by singer and songwriter Finn Andrews."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "880587fd-d3fe-46a1-9900-4f8a80f992f8",
+   "slug": "boston-manor-59313705",
+   "title": "Boston Manor",
+   "act": "Boston Manor",
+   "name": "Boston Manor",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Boston_Manor_(band)",
+   "extract": "Boston Manor are a British rock band formed in Blackpool, Lancashire, England, in March 2013. They released a first EP, Here/Now, through Never Mend Records on Bandcamp, and in 2014 they signed with Failure By Design Records for their second EP, Driftwood. In 2015 the band signed with Pure Noise Records: with them, they released another EP, Saudade, as well as their full-length albums Be Nothing (2016), Welcome to the Neighbourhood (2018) and Glue (2020). The band's sound blends emo with heavier influences, reminiscent of '90s grunge and early 2000s post-hardcore. The band have been nominated for Best British Breakthrough at Kerrang! Awards in 2018 and Welcome to the Neighbourhood received a nomination for Best Album Artwork at Heavy Music Awards in 2019."
+  },
+  {
+   "id": "838d5ba1-675a-4e9d-ba0c-7511dfeec4d7",
+   "slug": "trippie-redd-88d8a3d5",
+   "title": "Trippie Redd",
+   "act": "Trippie Redd",
+   "name": "Trippie Redd",
+   "description": "American rapper (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Trippie_Redd",
+   "extract": "Michael Lamar White II, known professionally as Trippie Redd, is an American rapper, singer, and songwriter. Born and raised in Canton, Ohio, he has contributed to the progression of emo rap and rage, a subgenre of trap music."
+  },
+  {
+   "id": "6a040a0a-c158-4816-a5cb-c5df2327d287",
+   "slug": "die-spitz-e2cb2fda",
+   "title": "Die Spitz",
+   "act": "Die Spitz",
+   "name": "Die Spitz",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Die_Spitz",
+   "extract": "Die Spitz is an American rock band from Austin, Texas, consisting of guitarist/singer/drummer Ava Schrobilgen, guitarist/singer Eleanor Livingston, bassist Kate Halter, and drummer/singer/guitarist Chloe de St. Aubin. Their debut album Something to Consume was released in September 2025."
+  }
+ ]
+}

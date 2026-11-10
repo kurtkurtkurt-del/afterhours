@@ -1,0 +1,36 @@
+{
+ "city": "seattle",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "fc91feac-39d4-4394-b029-f6fc7aadc77e",
+   "slug": "2slimey-8d24770f",
+   "title": "2slimey",
+   "act": "2slimey",
+   "name": "2Slimey",
+   "description": "Mexican-American rapper (born 2006)",
+   "source_url": "https://en.wikipedia.org/wiki/2Slimey",
+   "extract": "Sergio Garcia, known professionally as 2slimey, is a Mexican-American rapper. Known for his usage of heavy bass and distortion across his music, he first rose to prominence within the underground rap scene in 2024 after a snippet of his track \"Shrimp\" went viral online. His releases include a 2024 mixtape SsoMe and his 2025 debut studio album High Anxiety. A rerelease of the latter, titled More Anxiety, was released in 2026, while another studio album, Straight Edge, is scheduled to release in November 2026."
+  },
+  {
+   "id": "768171cf-a1cd-44f3-aac9-13e47c7ad718",
+   "slug": "eiv-r-298b6472",
+   "title": "Eivør",
+   "act": "Eivør",
+   "name": "Eivør",
+   "description": "Faroese singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Eiv%C3%B8r_(singer)",
+   "extract": "Eivør Pálsdóttir, known mononymously as Eivør, is a Faroese singer-songwriter. Born and raised in Syðrugøta, she had her first televised performance at the age of 13. Over the course of her decades-long career, her musical output has spanned a wide range of genres such as folk, art pop, jazz, folk rock, classical and electronica."
+  },
+  {
+   "id": "6701fe22-5996-442d-ab6e-9345e274d7bf",
+   "slug": "underoath-define-the-great-line-20th-anniversary-612fd2d5",
+   "title": "Underoath - Define the Great Line 20th Anniversary Tour",
+   "act": "Underoath",
+   "name": "Underoath",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Underoath",
+   "extract": "Underoath is an American rock band from Tampa, Florida. It was founded by lead vocalist Dallas Taylor and guitarist Luke Morton in 1997 in Ocala, Florida; subsequently, its additional members were from Tampa, including drummer, singer and last remaining original member Aaron Gillespie. The band's current lineup consists of Gillespie, keyboardist Christopher Dudley, lead guitarist Timothy McTague, bassist Grant Brandell, and lead vocalist Spencer Chamberlain."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "c8865552-e51f-481d-af3d-0891a4e99b39",
+   "slug": "overmono-pure-devotion-world-tour-d712e15e",
+   "title": "Overmono: Pure Devotion - World Tour",
+   "act": "Overmono",
+   "name": "Overmono",
+   "description": "Welsh electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Overmono",
+   "extract": "Overmono is a Welsh electronic music duo consisting of the brothers Tom and Ed Russell."
+  },
+  {
+   "id": "768b4b84-6f8c-4830-a71d-58f21704d5f9",
+   "slug": "tove-lo-premium-seats-b1faf1da",
+   "title": "Tove Lo | Premium Seats",
+   "act": "Tove Lo",
+   "name": "Tove Lo",
+   "description": "Swedish singer and songwriter (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Tove_Lo",
+   "extract": "Ebba Tove Elsa Nilsson, known professionally as Tove Lo, is a Swedish singer-songwriter. She is known for her raw, grunge-influenced take on pop music. Referring to her autobiographical lyrics, Out called Lo \"the saddest girl in Sweden\", while Rolling Stone called her \"Sweden's darkest pop export\"."
+  },
+  {
+   "id": "a03f5ab2-2cdd-4d9c-b610-b811e63eacff",
+   "slug": "tove-lo-estrus-4c8dc9cf",
+   "title": "Tove Lo: Estrus",
+   "act": "Tove Lo",
+   "name": "Tove Lo",
+   "description": "Swedish singer and songwriter (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Tove_Lo",
+   "extract": "Ebba Tove Elsa Nilsson, known professionally as Tove Lo, is a Swedish singer-songwriter. She is known for her raw, grunge-influenced take on pop music. Referring to her autobiographical lyrics, Out called Lo \"the saddest girl in Sweden\", while Rolling Stone called her \"Sweden's darkest pop export\"."
+  },
+  {
+   "id": "ef2245cc-e4e8-4daa-a977-9d26e305d0fd",
+   "slug": "chris-klafford-712ac70c",
+   "title": "Chris Kläfford",
+   "act": "Chris Kläfford",
+   "name": "Chris Kläfford",
+   "description": "Swedish singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Chris_Kl%C3%A4fford",
+   "extract": "Mikael Christoffer Kläfford Sjögren is a Swedish singer and songwriter, born in Ramsberg, Sweden."
+  }
+ ]
+}

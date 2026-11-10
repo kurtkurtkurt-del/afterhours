@@ -1,0 +1,16 @@
+{
+ "city": "guadalajara",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "34e8c797-485b-469b-ada8-aba9fd2033b1",
+   "slug": "carlos-sadness-e81082e6",
+   "title": "Carlos Sadness",
+   "act": "Carlos Sadness",
+   "name": "Carlos Sadness",
+   "description": "Spanish singer and composer",
+   "source_url": "https://en.wikipedia.org/wiki/Carlos_Sadness",
+   "extract": "Carlos Sadness is a Spanish singer, songwriter and illustrator."
+  }
+ ]
+}

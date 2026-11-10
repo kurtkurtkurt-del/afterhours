@@ -1,0 +1,26 @@
+{
+ "city": "miami",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "f22a694b-f9ff-4212-9cb4-f23e19af2a0e",
+   "slug": "pain-of-truth-d1d92729",
+   "title": "PAIN OF TRUTH",
+   "act": "PAIN OF TRUTH",
+   "name": "Pain of Truth",
+   "description": "American hardcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Pain_of_Truth",
+   "extract": "Pain of Truth are an American hardcore punk band formed on Long Island, New York in 2020. As of 2024, they have released one demo, two split EPs, and two studio albums."
+  },
+  {
+   "id": "375b945e-44fe-4630-ae54-94e258538fd6",
+   "slug": "david-bisbal-tour-eternos-2026-447812ee",
+   "title": "David Bisbal - Tour Eternos 2026",
+   "act": "David Bisbal",
+   "name": "David Bisbal",
+   "description": "Spanish singer (born 1979)",
+   "source_url": "https://en.wikipedia.org/wiki/David_Bisbal",
+   "extract": "David Bisbal Ferre is a Spanish singer and actor. He gained his initial fame as the runner-up on the first edition of the reality television talent show Operación Triunfo."
+  }
+ ]
+}

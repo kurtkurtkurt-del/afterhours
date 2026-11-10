@@ -1,0 +1,46 @@
+{
+ "city": "chicago",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "151d7aee-e3c2-4641-a7bc-58efc51e4c48",
+   "slug": "frost-children-ages-17-7b68dd0c",
+   "title": "Frost Children - Ages 17+",
+   "act": "Frost Children",
+   "name": "Frost Children",
+   "description": "American hyperpop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Frost_Children",
+   "extract": "Frost Children is an American pop duo from St. Louis, Missouri, now residing in New York City. The duo consists of siblings Angel and Lulu Prost."
+  },
+  {
+   "id": "840e96b4-4eaa-44bd-ba51-b171b98c0e14",
+   "slug": "mack-geiger-81a906c5",
+   "title": "Mack Geiger",
+   "act": "Mack Geiger",
+   "name": "Mack Geiger",
+   "description": "Australian country musician",
+   "source_url": "https://en.wikipedia.org/wiki/Mack_Geiger",
+   "extract": "William Mack Geiger is an Australian country singer-songwriter from Mount Larcom, Australia."
+  },
+  {
+   "id": "4731a9ce-e4e4-4388-a7f4-63a424d83e7d",
+   "slug": "mack-geiger-when-it-s-pouring-2026-tour-with-tre-b0af6324",
+   "title": "Mack Geiger - When it's Pouring 2026 Tour with Trey Pendley",
+   "act": "Mack Geiger",
+   "name": "Mack Geiger",
+   "description": "Australian country musician",
+   "source_url": "https://en.wikipedia.org/wiki/Mack_Geiger",
+   "extract": "William Mack Geiger is an Australian country singer-songwriter from Mount Larcom, Australia."
+  },
+  {
+   "id": "2fd620cb-a5ca-498f-b4ae-0983411b7e6c",
+   "slug": "hiss-golden-messenger-i-m-people-tour-with-sam-a-2a710ed0",
+   "title": "Hiss Golden Messenger - I'm People Tour with Sam Amidon",
+   "act": "Hiss Golden Messenger",
+   "name": "Hiss Golden Messenger",
+   "description": "American folk band",
+   "source_url": "https://en.wikipedia.org/wiki/Hiss_Golden_Messenger",
+   "extract": "Hiss Golden Messenger is an American folk band originating from Durham, North Carolina, formed in 2007 and led by singer and songwriter M.C. Taylor."
+  }
+ ]
+}

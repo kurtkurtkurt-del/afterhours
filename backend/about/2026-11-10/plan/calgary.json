@@ -1,0 +1,16 @@
+{
+ "city": "calgary",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "77368228-a384-443d-97bf-6cd3988b012d",
+   "slug": "the-darcys-the-good-time-tour-7fa127a7",
+   "title": "The Darcys - the Good Time Tour",
+   "act": "The Darcys",
+   "name": "The Darcys",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Darcys",
+   "extract": "The Darcys are a Canadian two-piece art rock band from Toronto, Ontario."
+  }
+ ]
+}

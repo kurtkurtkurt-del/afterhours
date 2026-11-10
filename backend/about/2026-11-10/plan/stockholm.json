@@ -1,0 +1,76 @@
+{
+ "city": "stockholm",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "b782199b-6331-43f0-a2c4-392940b335e6",
+   "slug": "c-o-f-f-i-n-78e11237",
+   "title": "C.O.F.F.I.N",
+   "act": "C.O.F.F.I.N",
+   "name": "C.O.F.F.I.N",
+   "description": "Australian punk, rock group",
+   "source_url": "https://en.wikipedia.org/wiki/C.O.F.F.I.N",
+   "extract": "Starting in 2005, C.O.F.F.I.N is a rock band from the Northern Beaches area of Sydney, New South Wales, Australia."
+  },
+  {
+   "id": "849e35e2-fe72-44fb-b1f0-94c51bc00b7f",
+   "slug": "bi-2-df0c1960",
+   "title": "Bi-2",
+   "act": "Bi-2",
+   "name": "Bi-2",
+   "description": "Belarusian pop-rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Bi-2",
+   "extract": "Bi-2 is a Belarusian pop-rock band, formed in 1988 in Babruysk. During their career, Bi-2 achieved international success in Eastern Europe."
+  },
+  {
+   "id": "2d686c9e-4888-438a-b4e3-3e185500d4d0",
+   "slug": "noah-gundersen-a336be8c",
+   "title": "Noah Gundersen",
+   "act": "Noah Gundersen",
+   "name": "Noah Gundersen",
+   "description": "American singer-songwriter (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Noah_Gundersen",
+   "extract": "Noah Gundersen is an American indie folk singer-songwriter from Seattle."
+  },
+  {
+   "id": "9d2b43d5-9233-4a60-ba17-5d29d6f4740f",
+   "slug": "dirty-honey-b08e2396",
+   "title": "Dirty Honey",
+   "act": "Dirty Honey",
+   "name": "Dirty Honey",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Dirty_Honey",
+   "extract": "Dirty Honey is an American rock band from Los Angeles, formed in 2017. It consists of singer Marc LaBelle, guitarist John Notto, bassist Justin Smolian, and drummer Jaydon Bean."
+  },
+  {
+   "id": "fcd44d7a-2c20-43c4-bd92-c7e57cd7fc7a",
+   "slug": "dea-matrona-d0b65e4f",
+   "title": "Dea Matrona",
+   "act": "Dea Matrona",
+   "name": "Dea Matrona",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Dea_Matrona_(band)",
+   "extract": "Dea Matrona are an Irish rock band based in Belfast and led by Orláith Forsythe and Mollie McGinn."
+  },
+  {
+   "id": "0603109c-f515-411b-9306-51c884c53358",
+   "slug": "dead-poet-society-1fe0921d",
+   "title": "Dead Poet Society",
+   "act": "Dead Poet Society",
+   "name": "Dead Poet Society",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Dead_Poet_Society",
+   "extract": "Dead Poet Society is an American rock band formed in Boston, Massachusetts in 2013."
+  },
+  {
+   "id": "579266f6-a7cd-47ad-84e0-2523b35b7d18",
+   "slug": "marika-hackman-3501f9c2",
+   "title": "Marika Hackman",
+   "act": "Marika Hackman",
+   "name": "Marika Hackman",
+   "description": "British singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Marika_Hackman",
+   "extract": "Marika Louise Hackman is an English vocalist, multi-instrumentalist and songwriter."
+  }
+ ]
+}

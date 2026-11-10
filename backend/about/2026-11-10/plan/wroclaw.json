@@ -1,0 +1,16 @@
+{
+ "city": "wroclaw",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "6323baf4-1f49-4029-b565-95009063884e",
+   "slug": "too-many-zooz-audio-lipstick-tour-cfce1750",
+   "title": "Too Many Zooz: Audio Lipstick Tour",
+   "act": "Too Many Zooz",
+   "name": "Too Many Zooz",
+   "description": "American music group",
+   "source_url": "https://en.wikipedia.org/wiki/Too_Many_Zooz",
+   "extract": "Too Many Zooz is an American music group based in New York City, consisting of Leo Pellegrino, Matt \"Doe\" Muirhead (trumpet), and David \"King of Sludge\" Parks (drums)."
+  }
+ ]
+}

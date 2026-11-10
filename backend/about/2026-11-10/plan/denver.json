@@ -1,0 +1,16 @@
+{
+ "city": "denver",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "d9ef9380-1db1-4b06-8a14-cc69cb5814aa",
+   "slug": "half-alive-986b68ef",
+   "title": "half alive",
+   "act": "half alive",
+   "name": "Half Alive",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Half_Alive_(band)",
+   "extract": "Half Alive is an American rock duo formed in Long Beach, California, in 2016. It consists of vocalist Josh Taylor and bassist J. Tyler Johnson, formerly accompanied by drummer Brett Kramer. The band began recording music in 2017, and have since released three studio albums, a compilation vinyl record, three extended plays of new material, three extended plays of live recordings, and many singles."
+  }
+ ]
+}

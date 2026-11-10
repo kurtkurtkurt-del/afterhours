@@ -1,0 +1,26 @@
+{
+ "city": "boston",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "37c75636-2986-4066-9367-2b14b82af5c6",
+   "slug": "stella-lefty-df244e62",
+   "title": "Stella Lefty",
+   "act": "Stella Lefty",
+   "name": "Stella Lefty",
+   "description": "American singer-songwriter (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Stella_Lefty",
+   "extract": "Stella Lefkofsky, better known by her stage name Stella Lefty, is an American singer-songwriter. Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100."
+  },
+  {
+   "id": "39f7642f-76a1-4f29-84f2-2971ea73da5c",
+   "slug": "sombr-you-are-the-reason-tour-91f8af16",
+   "title": "SOMBR - You Are The Reason Tour",
+   "act": "SOMBR",
+   "name": "Sombr",
+   "description": "American singer and songwriter (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Sombr",
+   "extract": "Shane Michael Boose, known professionally as Sombr, is an American singer-songwriter and musician."
+  }
+ ]
+}

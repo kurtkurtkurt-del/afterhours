@@ -1,0 +1,56 @@
+{
+ "city": "berlin",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "263ee02b-fadf-43dd-a5ed-3477ef4495c1",
+   "slug": "son-mieux-24-hours-eu-album-tour-835a240e",
+   "title": "SON MIEUX - 24 Hours - EU Album Tour",
+   "act": "SON MIEUX",
+   "name": "Son Mieux",
+   "description": "Dutch indie pop group",
+   "source_url": "https://en.wikipedia.org/wiki/Son_Mieux",
+   "extract": "Son Mieux is a Dutch indie pop group from The Hague headed by Camiel Meiresonne."
+  },
+  {
+   "id": "eaccbc2a-bf99-4989-a56a-0c1ceb7a0d3a",
+   "slug": "kelsey-lu-so-help-me-god-tour-7e0100f0",
+   "title": "Kelsey Lu - So Help Me God Tour",
+   "act": "Kelsey Lu",
+   "name": "Kelsey Lu",
+   "description": "American singer and cellist (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Kelsey_Lu",
+   "extract": "Kelsey Elizabeth McJunkins, known professionally as Kelsey Lu, is an American singer and cellist based in Los Angeles, California."
+  },
+  {
+   "id": "394c67d6-ed99-4585-8b2a-9eff54ecbe97",
+   "slug": "overmono-pure-devotion-world-tour-gallery-seat-577de8d2",
+   "title": "Overmono - Pure Devotion - World Tour | Gallery Seat",
+   "act": "Overmono",
+   "name": "Overmono",
+   "description": "Welsh electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Overmono",
+   "extract": "Overmono is a Welsh electronic music duo consisting of the brothers Tom and Ed Russell."
+  },
+  {
+   "id": "ead87ee9-0757-477c-b2d5-c46b21e77063",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-32208ef4",
+   "title": "Strangelove - The DEPECHE MODE Experience Black Celebration 2026",
+   "act": "Strangelove",
+   "name": "Strangelove",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Strangelove_(band)",
+   "extract": "Strangelove were an English alternative rock band, formed in Bristol in 1991 comprising singer Patrick Duff, guitarists Alex Lee & Julian Poole, bassist Joe Allen and John Langley on drums. They released two EPs and three albums before disbanding in 1998."
+  },
+  {
+   "id": "702905b9-b56f-4e14-abea-2ae7b042e29a",
+   "slug": "glaive-god-save-the-three-tour-3310267a",
+   "title": "glaive - God Save The Three Tour",
+   "act": "glaive",
+   "name": "Glaive",
+   "description": "American musician (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Glaive_(musician)",
+   "extract": "Ash Blue Gutierrez, known professionally as Glaive, is an American singer-songwriter. After posting a string of hyperpop songs to SoundCloud during the beginning of the COVID-19 pandemic that earned him a following, he signed a record deal with Interscope Records and released his debut extended play, Cypress Grove, in 2020. His debut album, I Care So Much That I Don't Care at All, was released in 2023. His second album, May It Never Falter, was released in 2024. His third, Y'all, was released in September 2025. A collaborative album with Kurtains called God Save the Three, was released in May 2026. Glaive's fourth solo studio album, Polesden Lacey, is set for release in January 2027."
+  }
+ ]
+}

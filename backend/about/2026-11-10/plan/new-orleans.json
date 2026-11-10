@@ -1,0 +1,26 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "01851825-b4ad-4334-88e3-ead3b8ef201a",
+   "slug": "the-afghan-whigs-1ce3fd4d",
+   "title": "The Afghan Whigs",
+   "act": "The Afghan Whigs",
+   "name": "The Afghan Whigs",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Afghan_Whigs",
+   "extract": "The Afghan Whigs are an American rock band from Cincinnati, Ohio. They were active from 1986 to 2001, reformed briefly in 2006 and again from 2011 to present."
+  },
+  {
+   "id": "30f149ab-1c5a-47ca-9521-1417f2312009",
+   "slug": "michelle-shocked-0612fcd3",
+   "title": "Michelle Shocked",
+   "act": "Michelle Shocked",
+   "name": "Michelle Shocked",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Michelle_Shocked",
+   "extract": "Michelle Shocked is an American singer-songwriter. Her music has entered the Billboard Hot 100, been nominated for the Grammy Award for Best Contemporary Folk Album, and received an award for Folk Album of the Year at the CMJ New Music Awards."
+  }
+ ]
+}

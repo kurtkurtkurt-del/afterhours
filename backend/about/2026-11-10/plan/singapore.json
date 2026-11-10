@@ -1,0 +1,26 @@
+{
+ "city": "singapore",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "e22edffc-4fcd-4b98-add0-2ae76d4ca4b5",
+   "slug": "wave-to-earth-the-pieces-tour-1822cb18",
+   "title": "wave to earth – the pieces tour",
+   "act": "wave to earth",
+   "name": "Wave to Earth",
+   "description": "South Korean indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Wave_to_Earth",
+   "extract": "Wave to Earth is a South Korean indie rock band that consists of lead vocalist and guitarist Daniel Kim, drummer Dong Q, and bassist John Cha. Since their formation in 2019, they have released one studio album, 0.1 Flaws and All. in 2023 and their third extended play Play with Earth! 0.03 in 2024."
+  },
+  {
+   "id": "356835e6-3acd-41f3-84bd-8941101abf6d",
+   "slug": "six60-right-here-right-now-asia-2026-tour-in-sin-77ec3fde",
+   "title": "SIX60: Right Here Right Now Asia 2026 Tour In Singapore",
+   "act": "SIX60",
+   "name": "Six60",
+   "description": "New Zealand rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Six60",
+   "extract": "Six60 is a New Zealand pop rock band formed in Dunedin, Otago in 2008. The band consists of Matiu Walters, Ji Fraser, Chris Mac, and Marlon Gerbes."
+  }
+ ]
+}

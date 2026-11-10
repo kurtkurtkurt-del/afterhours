@@ -1,0 +1,26 @@
+{
+ "city": "houston",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "431efa24-a872-4fd8-99c0-ac5066a00a03",
+   "slug": "el-tri-17cdf334",
+   "title": "El Tri",
+   "act": "El Tri",
+   "name": "El Tri",
+   "description": "Mexican rock band",
+   "source_url": "https://en.wikipedia.org/wiki/El_Tri_(band)",
+   "extract": "El Tri is a Mexican rock band from Mexico City fronted by Alex Lora. It is a spinoff of Three Souls in My Mind, formed in 1968. The group is regarded as influential in the development of Mexican rock music."
+  },
+  {
+   "id": "ffd70381-f415-4fac-8c5a-92707c97085b",
+   "slug": "keenan-te-34067757",
+   "title": "Keenan Te",
+   "act": "Keenan Te",
+   "name": "Keenan Te",
+   "description": "Australian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Keenan_Te",
+   "extract": "Keenan Te is an Australian singer-songwriter of Vietnamese and Cambodian heritage. He is known for piano-driven ballads and songs that gained popularity through TikTok."
+  }
+ ]
+}

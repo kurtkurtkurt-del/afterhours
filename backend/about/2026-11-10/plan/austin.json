@@ -1,0 +1,26 @@
+{
+ "city": "austin",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "c67a92aa-dfa8-4589-81b3-824a193d316d",
+   "slug": "jonas-brothers-the-burning-up-tour-all-over-agai-e8fa21f7",
+   "title": "Jonas Brothers: The Burning Up Tour All Over Again",
+   "act": "Jonas Brothers",
+   "name": "Jonas Brothers",
+   "description": "American pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Jonas_Brothers",
+   "extract": "The Jonas Brothers are an American pop rock band formed in 2005 comprising brothers Kevin Jonas, Joe Jonas, and Nick Jonas. Raised in Wyckoff, New Jersey, the Jonas Brothers moved to Little Falls, New Jersey, in 2005, where they wrote their first record that made its release on Hollywood Records, a Disney-owned record label, after which they gained popularity from their appearances on Disney Channel. They starred in the 2008 Disney Channel Original Movie Camp Rock and its 2010 sequel, Camp Rock 2: The Final Jam. They also starred in their own Disney Channel series Jonas, which was rebranded as Jonas L.A. for its second season. The band has released seven albums: It's About Time (2006), Jonas Brothers (2007), A Little Bit Longer (2008), Lines, Vines and Trying Times (2009), Happiness Begins (2019), The Album (2023) and Greetings from Your Hometown (2025)."
+  },
+  {
+   "id": "22632396-373d-44e1-8ddd-d353d67424fd",
+   "slug": "chelsea-handler-71d4b301",
+   "title": "Chelsea Handler",
+   "act": "Chelsea Handler",
+   "name": "Chelsea Handler",
+   "description": "American comedian, actress, writer, and producer (born 1975)",
+   "source_url": "https://en.wikipedia.org/wiki/Chelsea_Handler",
+   "extract": "Chelsea Joy Handler is an American stand-up comedian, actress, writer, television host, and producer. She hosted the late-night talk show Chelsea Lately on the E! network from 2007 to 2014 and released a documentary series, Chelsea Does, on Netflix in January 2016. From 2016 to 2017, Handler hosted the talk show Chelsea on Netflix."
+  }
+ ]
+}

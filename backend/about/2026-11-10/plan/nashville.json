@@ -1,0 +1,36 @@
+{
+ "city": "nashville",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "524b8fdd-b240-43df-b9bc-652bf7c6dd45",
+   "slug": "shaun-cassidy-69ac04c6",
+   "title": "Shaun Cassidy",
+   "act": "Shaun Cassidy",
+   "name": "Shaun Cassidy",
+   "description": "American singer, actor, producer and writer (born 1958)",
+   "source_url": "https://en.wikipedia.org/wiki/Shaun_Cassidy",
+   "extract": "Shaun Paul Cassidy is an American singer, actor, television producer and screenwriter. He has created or produced a number of television series, including American Gothic, Roar, and Invasion. Cassidy was also an executive producer and writer for NBC's medical drama New Amsterdam."
+  },
+  {
+   "id": "a89d1ed6-8b0d-440f-a15a-e2640aa95f80",
+   "slug": "the-neighbourhood-the-wourld-tour-24c269cc",
+   "title": "The Neighbourhood: THE WOURLD TOUR",
+   "act": "The Neighbourhood",
+   "name": "The Neighbourhood",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Neighbourhood",
+   "extract": "The Neighbourhood is an American alternative rock band formed in Newbury Park, California, in 2011. The band consists of vocalist Jesse Rutherford, guitarists Jeremy Fredman and Zach Abels, bassist Mikey Margott and drummer Brandon Fried. After releasing two EPs, I'm Sorry... and Thank You, The Neighbourhood signed with Columbia Records to release their debut studio album, I Love You. in 2013. \"Sweater Weather\", the album's third single, became the only song from the project on the Billboard Hot 100, peaking at number 14, and resurged in popularity nearly a decade later on radio airplay and Spotify. Other notable hits from the band include \"Afraid\", \"Daddy Issues\", \"Baby Come Home 2/Valentines\", \"Softcore\", \"You Get Me So High\", \"Reflections\" and \"The Beach\"."
+  },
+  {
+   "id": "369a675d-d8ab-43d1-8594-f640252bb50b",
+   "slug": "deana-carter-d762dc80",
+   "title": "Deana Carter",
+   "act": "Deana Carter",
+   "name": "Deana Carter",
+   "description": "American country singer-songwriter (born 1966)",
+   "source_url": "https://en.wikipedia.org/wiki/Deana_Carter",
+   "extract": "Deana Kay Carter is an American country music singer-songwriter who broke through in 1996 with the release of her debut album Did I Shave My Legs for This?, which was certified 5× Multi-Platinum in the United States for sales of over 5 million. It was followed by 1998's Everything's Gonna Be Alright, 2003's I'm Just a Girl, 2005's The Story of My Life, and 2007's The Chain. Overall, Carter's albums have accounted for 14 singles, including three which reached Number One on the Billboard country charts: \"Strawberry Wine\", \"We Danced Anyway\", and \"How Do I Get There\"."
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "city": "monterrey",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "aa158dc4-b369-4c6e-a6de-9bd61fe46a65",
+   "slug": "leire-martinez-00e758ce",
+   "title": "Leire Martínez",
+   "act": "Leire Martínez",
+   "name": "Leire Martínez",
+   "description": "Spanish singer and songwriter (born 1979)",
+   "source_url": "https://en.wikipedia.org/wiki/Leire_Mart%C3%ADnez",
+   "extract": "Leire Martínez Ochoa, is a Spanish singer, songwriter and was the lead vocalist of the band La Oreja de Van Gogh from 2008 to 2024."
+  },
+  {
+   "id": "1ae01a01-bdb2-4edd-b7e9-5486dbdac1f7",
+   "slug": "caloncho-89ae745d",
+   "title": "Caloncho",
+   "act": "Caloncho",
+   "name": "Caloncho",
+   "description": "Mexican musician and singer",
+   "source_url": "https://en.wikipedia.org/wiki/Caloncho",
+   "extract": "Óscar Alfonso Castro, better known as Caloncho, is a Mexican musician and singer."
+  },
+  {
+   "id": "36734def-3427-466e-a319-f0220e74a4df",
+   "slug": "david-bisbal-tour-eternos-2026-4f5936cc",
+   "title": "David Bisbal Tour Eternos 2026",
+   "act": "David Bisbal",
+   "name": "David Bisbal",
+   "description": "Spanish singer (born 1979)",
+   "source_url": "https://en.wikipedia.org/wiki/David_Bisbal",
+   "extract": "David Bisbal Ferre is a Spanish singer and actor. He gained his initial fame as the runner-up on the first edition of the reality television talent show Operación Triunfo."
+  },
+  {
+   "id": "663a2d2d-ceb6-4d30-a32a-c60ed2b0a6cb",
+   "slug": "la-gusana-ciega-claroscuro-07996f44",
+   "title": "La Gusana Ciega - Claroscuro",
+   "act": "La Gusana Ciega",
+   "name": "La Gusana Ciega",
+   "description": "Mexican rock band",
+   "source_url": "https://en.wikipedia.org/wiki/La_Gusana_Ciega",
+   "extract": "La Gusana Ciega is a Mexican alternative rock and pop-rock band composed of Daniel Gutiérrez, Germán Arroyo (drums), and Luis Ernesto Martínez \"Lu\" (bass)."
+  },
+  {
+   "id": "70786493-9fb4-4e7e-8a69-ed5e1a0c9d37",
+   "slug": "carlos-sadness-20eb72c8",
+   "title": "Carlos Sadness",
+   "act": "Carlos Sadness",
+   "name": "Carlos Sadness",
+   "description": "Spanish singer and composer",
+   "source_url": "https://en.wikipedia.org/wiki/Carlos_Sadness",
+   "extract": "Carlos Sadness is a Spanish singer, songwriter and illustrator."
+  },
+  {
+   "id": "676038ba-6bcb-40eb-b5df-f270207808b0",
+   "slug": "espinoza-paz-7a59af8c",
+   "title": "Espinoza Paz",
+   "act": "Espinoza Paz",
+   "name": "Espinoza Paz",
+   "description": "Mexican musician and composer",
+   "source_url": "https://en.wikipedia.org/wiki/Espinoza_Paz",
+   "extract": "Isidro Chávez Espinoza, better known as Espinoza Paz, is a Latin Grammy nominated Mexican musician and songwriter of regional Mexican music."
+  },
+  {
+   "id": "4e9a9e84-3dc3-45bb-8bd1-0afefbaa3ec6",
+   "slug": "silvio-rodriguez-13c5bac8",
+   "title": "Silvio Rodríguez",
+   "act": "Silvio Rodríguez",
+   "name": "Silvio Rodríguez",
+   "description": "Cuban folk singer and songwriter (born 1946)",
+   "source_url": "https://en.wikipedia.org/wiki/Silvio_Rodr%C3%ADguez",
+   "extract": "Silvio Rodríguez Domínguez is a Cuban musician, and leader of the Nueva Trova movement."
+  }
+ ]
+}

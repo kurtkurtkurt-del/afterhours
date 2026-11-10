@@ -1,0 +1,56 @@
+{
+ "city": "oslo",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "3e55dcb9-c0e8-4616-ba9b-c66244c04d73",
+   "slug": "tayc-f3caabd7",
+   "title": "Tayc",
+   "act": "Tayc",
+   "name": "Tayc",
+   "description": "French singer",
+   "source_url": "https://en.wikipedia.org/wiki/Tayc",
+   "extract": "Julien Franck Bouadjie Monono Kamgang, better known as Tayc, is a French singer."
+  },
+  {
+   "id": "75d748f9-3947-4590-b046-2e56eebe66aa",
+   "slug": "beabadoobee-the-powerlines-tour-e51a902b",
+   "title": "beabadoobee: The Powerlines Tour",
+   "act": "beabadoobee",
+   "name": "Beabadoobee",
+   "description": "Filipino and British singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Beabadoobee",
+   "extract": "Beatrice Kristi Ilejay Laus, known professionally as Beabadoobee, is a Filipino and British singer and songwriter. From 2018 to 2021, she released five extended plays (EPs) under the independent label Dirty Hit: Lice (2018), Patched Up (2018), Loveworm (2019), Space Cadet (2019) and Our Extended Play (2021). Her debut studio album Fake It Flowers was released in October 2020, and received critical acclaim. Her second studio album, Beatopia, was released on July 2022, and spawned the hit \"The Perfect Pair\". Her third studio album, This Is How Tomorrow Moves, was released in August 2024; it became her first album to peak atop the UK Albums Chart. In September 2026, her fourth studio album, Pylon topped the British and Australian charts."
+  },
+  {
+   "id": "1e4db758-2f26-43e5-957d-65072282495b",
+   "slug": "stein-torleif-bjella-innegubbens-dr-ymejul-10db9651",
+   "title": "Stein Torleif Bjella - Innegubbens Drøymejul",
+   "act": "Stein Torleif Bjella",
+   "name": "Stein Torleif Bjella",
+   "description": "Norwegian songwriter, singer and guitarist",
+   "source_url": "https://en.wikipedia.org/wiki/Stein_Torleif_Bjella",
+   "extract": "Stein Torleif Bjella is a Norwegian songwriter, singer and guitarist."
+  },
+  {
+   "id": "af5edbc6-6fee-4bb7-a379-4cf62281505a",
+   "slug": "chelsea-wolfe-the-dark-world-tour-bd37f26b",
+   "title": "Chelsea Wolfe: THE DARK World Tour",
+   "act": "Chelsea Wolfe",
+   "name": "Chelsea Wolfe",
+   "description": "American singer-songwriter (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Chelsea_Wolfe",
+   "extract": "Chelsea Joy Wolfe is an American singer-songwriter and musician. Her work blends elements of gothic rock, doom metal, and folk."
+  },
+  {
+   "id": "ecc5fb8f-0b2d-4b7c-b2fd-9f153ea2b2c7",
+   "slug": "death-by-unga-bunga-1450561a",
+   "title": "Death By Unga Bunga",
+   "act": "Death By Unga Bunga",
+   "name": "Death by Unga Bunga",
+   "description": "Norwegian garage rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Death_by_Unga_Bunga",
+   "extract": "Death by Unga Bunga is a Norwegian garage rock band from Moss, Norway."
+  }
+ ]
+}

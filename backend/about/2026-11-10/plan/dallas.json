@@ -1,0 +1,36 @@
+{
+ "city": "dallas",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "cfdde7b3-8846-4a24-a0a0-30e48f96efa5",
+   "slug": "lyle-lovett-6f03ed1f",
+   "title": "Lyle Lovett",
+   "act": "Lyle Lovett",
+   "name": "Lyle Lovett",
+   "description": "American country singer (born 1957)",
+   "source_url": "https://en.wikipedia.org/wiki/Lyle_Lovett",
+   "extract": "Lyle Pearce Lovett is an American country singer-songwriter and actor. Active since 1980, he has recorded 14 albums and released 25 singles including the number 10 hit on the U.S. Billboard Hot Country Songs chart, \"Cowboy Man\". Lovett has won four Grammy Awards including Best Male Country Vocal Performance and Best Country Album. His most recent album is 12th of June, released in 2022."
+  },
+  {
+   "id": "4720f5cc-2e37-4832-8e4b-72c3cf0b314f",
+   "slug": "big-ass-truck-700a3ef9",
+   "title": "Big Ass Truck",
+   "act": "Big Ass Truck",
+   "name": "Big Ass Truck",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Big_Ass_Truck",
+   "extract": "Big Ass Truck (BAT) is an American rock band from Memphis, Tennessee which incorporates elements of hip-hop, rock, funk and psychedelia in their music. The band includes a DJ spinning records, that provides beats, loops, and samples during recordings and live performances. The group disbanded sometime after the release of the 2001 album The Rug; however, as of 2021, the band has been playing live shows again."
+  },
+  {
+   "id": "82073081-af93-40cd-adde-844c4a6fd948",
+   "slug": "bryan-andrews-c10c9bab",
+   "title": "Bryan Andrews",
+   "act": "Bryan Andrews",
+   "name": "Bryan Andrews",
+   "description": "American country singer and activist",
+   "source_url": "https://en.wikipedia.org/wiki/Bryan_Andrews_(singer)",
+   "extract": "Bryan Andrews is an American country music singer and activist. He is best known for his politically-themed songs, often from his own progressive left-wing viewpoint. Many of his songs have been described as protest songs."
+  }
+ ]
+}

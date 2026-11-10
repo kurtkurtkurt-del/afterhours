@@ -1,0 +1,46 @@
+{
+ "city": "hamburg",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "137eb3f7-cf82-4813-afde-c03b6582acbf",
+   "slug": "son-mieux-24-hours-eu-album-tour-d8aa42b6",
+   "title": "SON MIEUX - 24 Hours – EU Album Tour",
+   "act": "SON MIEUX",
+   "name": "Son Mieux",
+   "description": "Dutch indie pop group",
+   "source_url": "https://en.wikipedia.org/wiki/Son_Mieux",
+   "extract": "Son Mieux is a Dutch indie pop group from The Hague headed by Camiel Meiresonne."
+  },
+  {
+   "id": "73ffcb9c-0e49-46a8-90ce-b66bba302fdc",
+   "slug": "elder-island-2026-adff90fe",
+   "title": "Elder Island - 2026",
+   "act": "Elder Island",
+   "name": "Elder Island",
+   "description": "English musical trio",
+   "source_url": "https://en.wikipedia.org/wiki/Elder_Island_(band)",
+   "extract": "Elder Island is an English musical trio from Bristol, formed in 2014. As of 2026, they have released three studio albums, three EPs, two remix albums, and numerous singles."
+  },
+  {
+   "id": "37609bfe-03d6-4893-bd9d-c5a75596e0de",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-78ed7735",
+   "title": "Strangelove - The DEPECHE MODE Experience Black Celebration 2026",
+   "act": "Strangelove",
+   "name": "Strangelove",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Strangelove_(band)",
+   "extract": "Strangelove were an English alternative rock band, formed in Bristol in 1991 comprising singer Patrick Duff, guitarists Alex Lee & Julian Poole, bassist Joe Allen and John Langley on drums. They released two EPs and three albums before disbanding in 1998."
+  },
+  {
+   "id": "b01476b9-383d-4cb6-9add-8286d2b25ddf",
+   "slug": "green-lung-0f7cf7d3",
+   "title": "Green Lung",
+   "act": "Green Lung",
+   "name": "Green Lung",
+   "description": "British rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Green_Lung",
+   "extract": "Green Lung is a British stoner/doom metal band formed in 2017 in London, currently signed to Nuclear Blast Records."
+  }
+ ]
+}

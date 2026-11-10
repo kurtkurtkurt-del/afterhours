@@ -1,0 +1,26 @@
+{
+ "city": "rotterdam",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "0821f4a7-23a5-43a6-b765-cd8b124528ad",
+   "slug": "luka-bloom-d05912ca",
+   "title": "Luka Bloom",
+   "act": "Luka Bloom",
+   "name": "Luka Bloom",
+   "description": "Irish folk singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Luka_Bloom",
+   "extract": "Kevin Barry Moore, known professionally as Luka Bloom, is an Irish folk singer-songwriter. He is the younger brother of folk singer Christy Moore."
+  },
+  {
+   "id": "f2142d24-d107-4f29-9874-2b0a7ea5942d",
+   "slug": "the-bootleg-beatles-53b2c73b",
+   "title": "The Bootleg Beatles",
+   "act": "The Bootleg Beatles",
+   "name": "The Bootleg Beatles",
+   "description": "Beatles tribute band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Bootleg_Beatles",
+   "extract": "The Bootleg Beatles are a Beatles tribute band. They have performed over 4,000 times since their establishment in March 1980."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "brussel",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "bd1a733f-d7ec-49d7-86ff-6be428f12d9c",
+   "slug": "overmono-pure-devotion-world-tour-3ece987f",
+   "title": "Overmono: Pure Devotion - World Tour",
+   "act": "Overmono",
+   "name": "Overmono",
+   "description": "Welsh electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Overmono",
+   "extract": "Overmono is a Welsh electronic music duo consisting of the brothers Tom and Ed Russell."
+  },
+  {
+   "id": "613672be-c376-4566-875f-327e5ea8abad",
+   "slug": "i-muvrini-5f01f74e",
+   "title": "I Muvrini",
+   "act": "I Muvrini",
+   "name": "I Muvrini",
+   "description": "Folk music group from Corsica, France",
+   "source_url": "https://en.wikipedia.org/wiki/I_Muvrini",
+   "extract": "I Muvrini is a Corsican folk music group, who sing traditional Corsican music (Polyphony) in their native Corsican language."
+  },
+  {
+   "id": "b67fe5e3-3466-408d-b8a7-de5589514380",
+   "slug": "the-last-internationale-dde5e1cd",
+   "title": "The Last Internationale",
+   "act": "The Last Internationale",
+   "name": "The Last Internationale",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Last_Internationale",
+   "extract": "The Last Internationale (TLI) is an American rock band formed by New York City guitarist Edgey Pires and vocalist Delila Paz."
+  }
+ ]
+}

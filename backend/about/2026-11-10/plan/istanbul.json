@@ -1,0 +1,46 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "dea97921-4c84-4988-8d26-6f413588e9ae",
+   "slug": "soner-ar-ca-7355395d",
+   "title": "Soner Arıca",
+   "act": "Soner Arıca",
+   "name": "Soner Arıca",
+   "description": "Turkish singer and record producer",
+   "source_url": "https://en.wikipedia.org/wiki/Soner_Ar%C4%B1ca",
+   "extract": "Soner Arıca is a Turkish singer and record producer."
+  },
+  {
+   "id": "16b792f2-015e-441f-b33c-da689ff4f823",
+   "slug": "pinhani-31ff7d82",
+   "title": "Pinhani",
+   "act": "Pinhani",
+   "name": "Pinhani",
+   "description": "Turkish alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Pinhani",
+   "extract": "Pinhâni is a Turkish alternative rock band. It was founded on 5 April 2004 by two cousins Sinan Kaynakçı and Zeynep Eylül Üçer as a modern rock band in Turkey. Pinhani have released several albums. Pinhani also made the soundtrack for the Turkish TV Series 'Kavak Yelleri'."
+  },
+  {
+   "id": "eaeee4c2-676f-48a3-8060-2b3544407627",
+   "slug": "murat-dalk-l-c-00d42a78",
+   "title": "Murat Dalkılıç",
+   "act": "Murat Dalkılıç",
+   "name": "Murat Dalkılıç",
+   "description": "Turkish pop singer (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Murat_Dalk%C4%B1l%C4%B1%C3%A7",
+   "extract": "Sırrı Murat Dalkılıç is a Turkish pop singer, songwriter, music producer, film and animation producer, director and actor."
+  },
+  {
+   "id": "e8e94de8-fe63-41c8-aa92-83afd438f24b",
+   "slug": "serdar-ortac-a920837d",
+   "title": "Serdar Ortaç",
+   "act": "Serdar Ortaç",
+   "name": "Serdar Ortaç",
+   "description": "Kurdish-Turkish singer, songwriter, and composer (born 1970)",
+   "source_url": "https://en.wikipedia.org/wiki/Serdar_Orta%C3%A7",
+   "extract": "Serdar Ortaç is a Turkish singer, songwriter and composer from Istanbul.\nHe is known as one of the most popular singers in Turkish pop-music history."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "abu-dhabi",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "514c1d27-cfef-4de9-9122-c04e43e34930",
+   "slug": "tarkan-d5b28834",
+   "title": "TARKAN",
+   "act": "TARKAN",
+   "name": "Tarkan",
+   "description": "Turkish singer-songwriter (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Tarkan_(singer)",
+   "extract": "Tarkan Tevetoğlu is a German-born Turkish singer-songwriter."
+  }
+ ]
+}

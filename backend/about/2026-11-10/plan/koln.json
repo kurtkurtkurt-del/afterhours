@@ -1,0 +1,56 @@
+{
+ "city": "koln",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "1fd22220-6919-436d-90d3-1ca4a909d23b",
+   "slug": "son-mieux-24-hours-eu-album-tour-aa921f1a",
+   "title": "SON MIEUX - 24 Hours - EU Album Tour",
+   "act": "SON MIEUX",
+   "name": "Son Mieux",
+   "description": "Dutch indie pop group",
+   "source_url": "https://en.wikipedia.org/wiki/Son_Mieux",
+   "extract": "Son Mieux is a Dutch indie pop group from The Hague headed by Camiel Meiresonne."
+  },
+  {
+   "id": "ad5a4a46-623c-4a34-8a7a-fab3459a541a",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-2323901b",
+   "title": "Strangelove - The DEPECHE MODE Experience Black Celebration 2026",
+   "act": "Strangelove",
+   "name": "Strangelove",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Strangelove_(band)",
+   "extract": "Strangelove were an English alternative rock band, formed in Bristol in 1991 comprising singer Patrick Duff, guitarists Alex Lee & Julian Poole, bassist Joe Allen and John Langley on drums. They released two EPs and three albums before disbanding in 1998."
+  },
+  {
+   "id": "0ad9fd53-6b97-4f5a-906b-d8cdb3d52ae2",
+   "slug": "julia-wolf-deep-end-world-tour-2026-baf630ba",
+   "title": "JULIA WOLF - Deep End World Tour 2026",
+   "act": "JULIA WOLF",
+   "name": "Julia Wolf",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Wolf_(musician)",
+   "extract": "Julia Jade Capello, known professionally as Julia Wolf, is an American singer. Known for her ethereal vocals and self-produced alt-pop sound, she blends elements of indie pop, alternative rock, and R&B. Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory (2021) and her studio albums Good Thing We Stayed (2023) and Pressure (2025)."
+  },
+  {
+   "id": "a090c5e7-bd06-4005-90ac-7e044b2bb005",
+   "slug": "pa-sheehy-the-magic-we-found-tour-9e5ff76c",
+   "title": "Pa Sheehy - The Magic We Found Tour",
+   "act": "Pa Sheehy",
+   "name": "Pa Sheehy",
+   "description": "Irish singer-songwriter (born 1986/87)",
+   "source_url": "https://en.wikipedia.org/wiki/Pa_Sheehy",
+   "extract": "Patrick \"Pa\" Sheehy is an Irish singer-songwriter from Dingle, County Kerry."
+  },
+  {
+   "id": "71c1a260-e90d-4e2b-9e01-7984e3ee587e",
+   "slug": "ayra-starr-starrgirl-world-tour-1122a2ef",
+   "title": "Ayra Starr: Starrgirl World Tour",
+   "act": "Ayra Starr",
+   "name": "Ayra Starr",
+   "description": "Beninese-born Nigerian singer (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Ayra_Starr",
+   "extract": "Oyinkansola Sarah Aderibigbe, known professionally as Ayra Starr, is a Beninese-born Nigerian singer-songwriter and producer."
+  }
+ ]
+}

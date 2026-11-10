@@ -1,0 +1,36 @@
+{
+ "city": "toronto",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "bfbc5c31-2939-48b3-bfe0-9b184e96c36b",
+   "slug": "sami-beigi-live-in-toronto-fd4dec90",
+   "title": "Sami Beigi Live in Toronto",
+   "act": "Sami Beigi",
+   "name": "Sami Beigi",
+   "description": "Iranian singer (born 1982)",
+   "source_url": "https://en.wikipedia.org/wiki/Sami_Beigi",
+   "extract": "Saman Es'hagh Beigi, known as Sami Beigi, is an Iranian singer and songwriter currently living in Irvine, California, United States."
+  },
+  {
+   "id": "39a12fe5-88c1-45b5-8608-03af5f3e3e8e",
+   "slug": "dj-tennis-4am-license-1395f79c",
+   "title": "DJ Tennis | 4AM License",
+   "act": "DJ Tennis",
+   "name": "DJ Tennis",
+   "description": "Italian musician",
+   "source_url": "https://en.wikipedia.org/wiki/DJ_Tennis",
+   "extract": "Manfredi Romano, known professionally as DJ Tennis, is an Italian electronic dance music DJ, music producer and label owner."
+  },
+  {
+   "id": "5ae41a7b-89d0-4ab2-9625-aab44d55b40b",
+   "slug": "tobiahs-1bf8f4dd",
+   "title": "Tobiahs",
+   "act": "Tobiahs",
+   "name": "Tobiahs",
+   "description": "Australian EDM producer (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Tobiahs",
+   "extract": "Tobiahs Fakhri, known professionally by the mononym Tobiahs, is an Australian electronic dance music producer, singer, songwriter, and musician from Melbourne, Australia. He is best known for his singles \"Lifetime\" and \"Angel of Mine\"."
+  }
+ ]
+}

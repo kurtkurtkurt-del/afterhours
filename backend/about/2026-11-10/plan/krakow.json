@@ -1,0 +1,16 @@
+{
+ "city": "krakow",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "8db4f96f-3daf-4050-a97c-1ba62c61432e",
+   "slug": "strangelove-the-depeche-mode-experience-e7504067",
+   "title": "Strangelove: The Depeche Mode Experience",
+   "act": "Strangelove",
+   "name": "Strangelove",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Strangelove_(band)",
+   "extract": "Strangelove were an English alternative rock band, formed in Bristol in 1991 comprising singer Patrick Duff, guitarists Alex Lee & Julian Poole, bassist Joe Allen and John Langley on drums. They released two EPs and three albums before disbanding in 1998."
+  }
+ ]
+}

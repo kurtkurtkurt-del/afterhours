@@ -1,0 +1,66 @@
+{
+ "city": "detroit",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "335ff843-64b8-45b5-a8a1-050779609ecd",
+   "slug": "the-war-and-treaty-157f0784",
+   "title": "The War And Treaty",
+   "act": "The War And Treaty",
+   "name": "The War and Treaty",
+   "description": "American country music duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_War_and_Treaty",
+   "extract": "The War and Treaty is an American husband-and-wife duo consisting of singer-songwriters Michael Trotter Jr. and Tanya Trotter. Their debut studio album, Healing Tide (2018), received generally favorable reviews upon its release. Their second album, Hearts Town (2020), featured a collaboration with Emmylou Harris and had a Triple A top 40 hit single \"Five More Minutes.\" In 2022, they signed to Universal Music Group Nashville, and released their major label debut, Lover's Game (2023). Their collaboration with Zach Bryan on the song \"Hey Driver\" made the top 20 on the Billboard Hot 100."
+  },
+  {
+   "id": "32d67f0c-50ba-4d89-b514-4b5b3e2f8688",
+   "slug": "gavin-adcock-a7fb1b07",
+   "title": "Gavin Adcock",
+   "act": "Gavin Adcock",
+   "name": "Gavin Adcock",
+   "description": "American singer-songwriter (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Gavin_Adcock",
+   "extract": "Gavin David Adcock is an American country music singer-songwriter."
+  },
+  {
+   "id": "8f94023e-99d8-4875-baac-229a3d3d3b36",
+   "slug": "manchester-orchestra-i-m-like-a-virgin-losing-a-ea07808a",
+   "title": "Manchester Orchestra - I???m Like a Virgin Losing a Child 20th Anniversary Tour",
+   "act": "Manchester Orchestra",
+   "name": "Manchester Orchestra",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Manchester_Orchestra",
+   "extract": "Manchester Orchestra is an American rock band from Atlanta, Georgia, which formed in 2004. The group's current line-up is composed of lead singer, songwriter and rhythm guitarist Andy Hull, lead guitarist Robert McDowell, and bassist Andy Prince. Hull is the band's only original member, having overseen every iteration of the band to date. Former drummer Jeremiah Edmond parted ways with the band in January 2010 to focus on his family and on running the band's record label, Favorite Gentlemen. The band's original bassist, Jonathan Corley, parted ways with the band in 2013. Keyboardist-percussionist Chris Freeman announced his departure from the band in September 2016. The group's most recent drummer, Tim Very, died in February 2026."
+  },
+  {
+   "id": "bd1cc79b-22db-4b07-9031-ca7eaacca23f",
+   "slug": "hovvdy-1207bf2f",
+   "title": "Hovvdy",
+   "act": "Hovvdy",
+   "name": "Hovvdy",
+   "description": "American indie pop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Hovvdy",
+   "extract": "Hovvdy is an American indie pop duo formed in Austin, Texas by Charlie Martin and Will Taylor."
+  },
+  {
+   "id": "0da2e2e3-fae2-485a-bfd1-f431727a2886",
+   "slug": "zeds-dead-bassonic-temple-ages-16-4d2b7615",
+   "title": "Zeds Dead: Bassonic Temple - Ages 16+",
+   "act": "Zeds Dead",
+   "name": "Zeds Dead",
+   "description": "Canadian electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Zeds_Dead",
+   "extract": "Zeds Dead is a Canadian electronic music duo from Toronto consisting of Dylan Mamid, also known as DC, and Zachary Rapp-Rovan, also known as Hooks. The duo rose to prominence releasing original music and remixes from 2009 to 2010 before becoming a staple on the international touring circuit thereafter. They explore a diverse variety of genres that combine aspects of dubstep, UK garage, house, electro house, hip-hop, glitch, drum and bass, and more."
+  },
+  {
+   "id": "308a7fa3-bce5-4c8b-aed4-d82d3f6d0664",
+   "slug": "turnover-down-on-earth-tour-941ff4d5",
+   "title": "Turnover - Down On Earth Tour",
+   "act": "Turnover",
+   "name": "Turnover",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Turnover_(band)",
+   "extract": "Turnover is an American rock band from Virginia Beach, Virginia. The band were formed in 2009 by brothers Austin and Casey (drums) Getz alongside longtime friend Danny Dempsey (bass); the three have gone on to oversee every iteration of the band to date. The three are currently joined in the band by lead guitarist Nick Rayfield, who began touring with the band in 2017 and was later officially inducted as a full-time member in 2022. Turnover have released six studio albums and four EPs across their career. Their most recent album, Down on Earth, was released on May 29th 2026."
+  }
+ ]
+}

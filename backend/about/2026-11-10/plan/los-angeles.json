@@ -1,0 +1,16 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "a2eb0d1a-7822-4b18-abfd-4595767f6168",
+   "slug": "swmrs-76948fac",
+   "title": "SWMRS",
+   "act": "SWMRS",
+   "name": "SWMRS",
+   "description": "American punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/SWMRS",
+   "extract": "SWMRS is an American punk rock band from the San Francisco Bay Area, consisting of brothers Max, Cole, and Cade Becker. Formed out of their earlier band Emily's Army, SWMRS blends punk, pop, and indie influences. The band has released four studio albums and toured extensively around the world."
+  }
+ ]
+}

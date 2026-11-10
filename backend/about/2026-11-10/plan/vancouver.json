@@ -1,0 +1,66 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "b04315d0-9c10-49e9-9319-862d05d28792",
+   "slug": "allison-russell-fa589a66",
+   "title": "Allison Russell",
+   "act": "Allison Russell",
+   "name": "Allison Russell",
+   "description": "Canadian singer-songwriter, musician and activist",
+   "source_url": "https://en.wikipedia.org/wiki/Allison_Russell",
+   "extract": "Allison Russell is a Canadian singer, songwriter, musician, actress and activist."
+  },
+  {
+   "id": "3cf3a485-6da9-491c-a26b-486b88b5f3aa",
+   "slug": "houndmouth-the-lordy-tour-d0685f3b",
+   "title": "Houndmouth: The Lordy Tour",
+   "act": "Houndmouth",
+   "name": "Houndmouth",
+   "description": "American alternative blues band",
+   "source_url": "https://en.wikipedia.org/wiki/Houndmouth",
+   "extract": "Houndmouth is an American alternative blues and rock band from New Albany, Indiana, formed in 2011, consisting of Matt Myers, Caleb Hickman, Zac Anderson, and Noah Denney (drums)."
+  },
+  {
+   "id": "da304b98-bd19-444d-91f4-a8cae32e8a9e",
+   "slug": "sassy-009-6824f54b",
+   "title": "Sassy 009",
+   "act": "Sassy 009",
+   "name": "Sassy 009",
+   "description": "Norwegian musician",
+   "source_url": "https://en.wikipedia.org/wiki/Sassy_009",
+   "extract": "Sunniva Lindgård, better known as Sassy 009, is a Scandinavian musician originally from Oslo, Norway."
+  },
+  {
+   "id": "c75cdb90-d9d5-46dc-95a0-345d9b34bbe3",
+   "slug": "boynextdoor-tour-knock-on-vol-2-in-north-america-c2f14e88",
+   "title": "BOYNEXTDOOR TOUR 'KNOCK ON Vol.2' IN NORTH AMERICA",
+   "act": "BOYNEXTDOOR",
+   "name": "BoyNextDoor",
+   "description": "South Korean boy band",
+   "source_url": "https://en.wikipedia.org/wiki/BoyNextDoor",
+   "extract": "BoyNextDoor is a South Korean boy band formed by KOZ Entertainment in 2023. The group consists of six members: Sungho, Riwoo, Myung Jaehyun, Taesan, Leehan, and Woonhak. Characterized by its eponymous \"boy next door\" image, the group defines their work as easy listening with themes drawn from daily life."
+  },
+  {
+   "id": "1d230fbf-4106-45df-8c9d-4d7ab5ab0d37",
+   "slug": "gary-numan-dc42c96c",
+   "title": "Gary Numan",
+   "act": "Gary Numan",
+   "name": "Gary Numan",
+   "description": "British musician (born 1958)",
+   "source_url": "https://en.wikipedia.org/wiki/Gary_Numan",
+   "extract": "Gary Anthony James Webb, known professionally as Gary Numan, is an English musician. He entered the music industry as frontman of the new wave band Tubeway Army. The band's second and final album, 1979's Replicas, reached No. 1 on the UK Albums Chart, and spawned a UK No. 1 single with \"Are 'Friends' Electric?\". Following the band's split, he released his debut solo album The Pleasure Principle later in 1979, which also reached No. 1 in the UK and produced another UK No. 1 single with \"Cars\". Although his commercial popularity peaked in the late 1970s and early 1980s, he has maintained a strong cult following since then. He has sold over 10 million records."
+  },
+  {
+   "id": "e4d432ea-5e20-4619-a776-25181e27a454",
+   "slug": "garaj-mahal-19a3cc6c",
+   "title": "Garaj Mahal",
+   "act": "Garaj Mahal",
+   "name": "Garaj Mahal",
+   "description": "American musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Garaj_Mahal",
+   "extract": "Garaj Mahal is a jazz fusion band formed in 2000 that combines jazz, rock, Indian music, and funk. The band consists of Fareed Haque (guitar), Kai Eckhardt (bass), Sean Rickman (drums), and Eric Levy (keyboards). Garaj Mahal allows its music to be recorded at concerts."
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "city": "cork",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "01bcfe4c-ff85-4333-a407-dc59957178f6",
+   "slug": "dj-jean-76a9bb01",
+   "title": "DJ Jean",
+   "act": "DJ Jean",
+   "name": "DJ Jean",
+   "description": "Dutch disc jockey (born 1968)",
+   "source_url": "https://en.wikipedia.org/wiki/DJ_Jean",
+   "extract": "DJ Jean is a Dutch disc jockey."
+  },
+  {
+   "id": "983ad385-297a-4359-b659-32ebf0c44732",
+   "slug": "florence-road-1899f705",
+   "title": "Florence Road",
+   "act": "Florence Road",
+   "name": "Florence Road",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Florence_Road",
+   "extract": "Florence Road are an Irish rock band formed in Bray, County Wicklow in 2019. The group consists of lead singer and guitarist Lily Aron, guitarist Emma Brandon, bassist Ailbhe Barry and drummer Hannah Kelly. They gained recognition in 2025 following the release of their single, \"Heavy\", but had built a platform on TikTok prior to this by covering music from other artists. The band signed to Warner Records and Warner Chappell Music."
+  },
+  {
+   "id": "95d4d19b-e0cd-48d1-849a-15631ddd5032",
+   "slug": "picture-this-1cd45bc6",
+   "title": "Picture This",
+   "act": "Picture This",
+   "name": "Picture This",
+   "description": "Irish pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Picture_This_(band)",
+   "extract": "Picture This are an Irish pop rock musical band based in Athy, County Kildare, comprising Ryan Hennessy, Jimmy Rainsford, Owen Cardiff and Cliff Deane. In 2017, they released their eponymous debut album, which entered atop the Irish Albums Chart. In early 2019, they released their follow up album Mdrn Lv. Their third studio album Life in Colour was released in June 2021. On 26 April 2024 they released their fourth, Parked Car Conversations."
+  },
+  {
+   "id": "16467e84-c4d6-4b0f-838b-9404c73635f0",
+   "slug": "alexandra-kay-cbbb7b4c",
+   "title": "Alexandra Kay",
+   "act": "Alexandra Kay",
+   "name": "Alexandra Kay",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Alexandra_Kay",
+   "extract": "Alexandra Kay is an American country music singer-songwriter from Waterloo, Illinois signed to Wheelhouse Records."
+  },
+  {
+   "id": "d410756e-21b6-4592-b97e-0c5a46da99a6",
+   "slug": "mario-rosenstock-cff53dbe",
+   "title": "Mario Rosenstock",
+   "act": "Mario Rosenstock",
+   "name": "Mario Rosenstock",
+   "description": "Irish actor, comedian and musician",
+   "source_url": "https://en.wikipedia.org/wiki/Mario_Rosenstock",
+   "extract": "Mario Rosenstock is an Irish actor, comedian, impressionist and musician."
+  },
+  {
+   "id": "9e2a6bb7-ef61-4895-b3fc-e3b840890753",
+   "slug": "paul-heaton-cc7c6375",
+   "title": "Paul Heaton",
+   "act": "Paul Heaton",
+   "name": "Paul Heaton",
+   "description": "British musician (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Paul_Heaton",
+   "extract": "Paul David Heaton is an English singer-songwriter. He was the lead singer and main lyricist of the Housemartins, who had commercial success in the UK and other European countries from 1985 to 1988, releasing several singles, including \"Happy Hour\" and the UK number one \"Caravan of Love\" in 1986, before the group disbanded. Heaton then formed the Beautiful South with the Housemartins' drummer, Dave Hemingway. The band's debut single, \"Song for Whoever\", and debut album, Welcome to the Beautiful South, were released in 1989 to commercial success. They had a series of hits throughout the 1990s, including the number-one single \"A Little Time\", and disbanded in 2007."
+  },
+  {
+   "id": "d7a3f1bd-6a3e-4d5d-a13f-3397b2153a54",
+   "slug": "glasvegas-cc09054c",
+   "title": "Glasvegas",
+   "act": "Glasvegas",
+   "name": "Glasvegas",
+   "description": "Scottish indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Glasvegas",
+   "extract": "Glasvegas are a Scottish indie rock band from Glasgow. The band consists of James Allan (vocals), Rab Allan and Paul Donoghue, with Swedish drummer Jonna Löfgren joining the group in 2010 until her departure in 2020. Their platinum-selling debut album, Glasvegas, released in September 2008, was well received by critics and reached No. 2 in the UK Albums Chart. It was nominated for the Mercury Music Prize in September 2009. The album went on to enjoy further critical and commercial success in North America and in Sweden. On 1 December 2008, less than three months after the release of their debut album, the band released the mini-album A Snowflake Fell , a 6-track Christmas EP, which was recorded in Transylvania."
+  },
+  {
+   "id": "9adf9f50-c871-4ad0-bc1b-c61c40a84175",
+   "slug": "the-bootleg-beatles-65ffe54a",
+   "title": "The Bootleg Beatles",
+   "act": "The Bootleg Beatles",
+   "name": "The Bootleg Beatles",
+   "description": "Beatles tribute band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Bootleg_Beatles",
+   "extract": "The Bootleg Beatles are a Beatles tribute band. They have performed over 4,000 times since their establishment in March 1980."
+  }
+ ]
+}

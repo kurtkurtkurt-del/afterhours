@@ -1,0 +1,16 @@
+{
+ "city": "ottawa",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "0c25b28d-e96c-41d3-a5db-340d9b1e45f9",
+   "slug": "shakey-graves-fondness-etc-tour-1e571ceb",
+   "title": "Shakey Graves - Fondness, Etc. Tour",
+   "act": "Shakey Graves",
+   "name": "Shakey Graves",
+   "description": "American Americana musician",
+   "source_url": "https://en.wikipedia.org/wiki/Shakey_Graves",
+   "extract": "Shakey Graves is an American musician and actor from Austin, Texas."
+  }
+ ]
+}

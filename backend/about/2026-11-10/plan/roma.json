@@ -1,0 +1,36 @@
+{
+ "city": "roma",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "1b0e2dfa-530b-44eb-8515-30719d80e863",
+   "slug": "tedua-palasport-2027-5e2f6373",
+   "title": "Tedua - Palasport 2027",
+   "act": "Tedua",
+   "name": "Tedua",
+   "description": "Italian singer-songwriter, rapper and actor (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Tedua",
+   "extract": "Mario Molinari better known professionally as Tedua, is an Italian rapper, singer, and songwriter."
+  },
+  {
+   "id": "aa15fcfb-5c59-4baa-9409-e6226086ef1e",
+   "slug": "gabry-ponte-circotron-the-dance-show-86649744",
+   "title": "Gabry Ponte - CIRCOTRON - The dance show",
+   "act": "Gabry Ponte",
+   "name": "Gabry Ponte",
+   "description": "Italian musician, DJ and producer (born 1973)",
+   "source_url": "https://en.wikipedia.org/wiki/Gabry_Ponte",
+   "extract": "Gabriele \"Gabry\" Ponte is an Italian musician, DJ and producer, best known as a member of Eiffel 65."
+  },
+  {
+   "id": "2f6e4266-7e45-4611-bea9-e850286a6c79",
+   "slug": "laura-pausini-io-canto-world-tour-31c28cd9",
+   "title": "Laura Pausini - Io Canto World Tour",
+   "act": "Laura Pausini",
+   "name": "Laura Pausini",
+   "description": "Italian singer (born 1974)",
+   "source_url": "https://en.wikipedia.org/wiki/Laura_Pausini",
+   "extract": "Laura Pausini is an Italian pop singer. She rose to fame in 1993, winning the newcomer artists' section of the 43rd Sanremo Music Festival with the song \"La solitudine\", which became an Italian standard and an international hit. Her self-titled debut album was released in Italy on 23 April 1993 and later became an international success, selling two million copies worldwide. Its follow-up, Laura, was released in 1994 and confirmed her international success, selling three million copies worldwide."
+  }
+ ]
+}

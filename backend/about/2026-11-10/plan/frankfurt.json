@@ -1,0 +1,56 @@
+{
+ "city": "frankfurt",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "fac1c16e-ba67-4758-aff5-91acfb490f4c",
+   "slug": "pa-sheehy-the-magic-we-found-tour-901c712f",
+   "title": "Pa Sheehy - The Magic We Found Tour",
+   "act": "Pa Sheehy",
+   "name": "Pa Sheehy",
+   "description": "Irish singer-songwriter (born 1986/87)",
+   "source_url": "https://en.wikipedia.org/wiki/Pa_Sheehy",
+   "extract": "Patrick \"Pa\" Sheehy is an Irish singer-songwriter from Dingle, County Kerry."
+  },
+  {
+   "id": "fa478d17-240e-4fea-a5a8-3f26e7843c0a",
+   "slug": "todd-kessler-026c2f0d",
+   "title": "Todd Kessler",
+   "act": "Todd Kessler",
+   "name": "Todd Kessler",
+   "description": "American film and television writer, producer and director",
+   "source_url": "https://en.wikipedia.org/wiki/Todd_Kessler",
+   "extract": "Todd Kessler is an American film and television writer, producer and director. Among his credits are showrunner and co-creator of Nickelodeon's preschool series Blue's Clues and director and producer of the feature film Keith (2008)."
+  },
+  {
+   "id": "24716bf7-26de-44b9-9333-d7f260af3212",
+   "slug": "sim-hooman-after-all-world-tour-2dd5e4f0",
+   "title": "SiM - Hooman After All World Tour",
+   "act": "SiM",
+   "name": "SiM",
+   "description": "Japanese alternative metal band",
+   "source_url": "https://en.wikipedia.org/wiki/SiM",
+   "extract": "SiM are a Japanese metalcore band from Kanagawa Prefecture formed in 2004. The band currently consists of MAH (vocals), SHOW-HATE (guitar), SIN (bass), and GODRi (drums). Their musical style mixes nu metal, alternative, hip-hop, ska, reggae, dub, and punk with rebellious lyrics and songs with attitude."
+  },
+  {
+   "id": "e8553885-4e4a-470c-a26c-358defe88509",
+   "slug": "the-silos-cb79c4ad",
+   "title": "THE SILOS",
+   "act": "THE SILOS",
+   "name": "The Silos",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Silos",
+   "extract": "The Silos is an American rock band formed by Walter Salas-Humara and Bob Rupe in New York City, United States, in 1985."
+  },
+  {
+   "id": "f1af9377-6168-409e-bce8-1ca7a645d141",
+   "slug": "bombargo-love-in-spite-of-everything-tour-69993976",
+   "title": "BOMBARGO – Love, In Spite of Everything TOUR!",
+   "act": "BOMBARGO",
+   "name": "Bombargo",
+   "description": "Canadian indie pop band formed 2013",
+   "source_url": "https://en.wikipedia.org/wiki/Bombargo",
+   "extract": "Bombargo is an independent pop band from Saskatoon, Saskatchewan, formed in 2013 by Nathan Thoen and Spencer Chilliak."
+  }
+ ]
+}

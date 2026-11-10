@@ -1,0 +1,46 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "56013a10-ef64-4734-9061-59e242531deb",
+   "slug": "wolves-of-glendale-5bd0616a",
+   "title": "Wolves of Glendale",
+   "act": "Wolves of Glendale",
+   "name": "Wolves of Glendale",
+   "description": "American comedy music band",
+   "source_url": "https://en.wikipedia.org/wiki/Wolves_of_Glendale",
+   "extract": "Wolves of Glendale is an American comedy rock band formed in 2022 in Los Angeles, California. The band consists of guitarist Ethan Edenburg, drummer Eric Jackowitz, and guitarist/keyboardist Tom McGovern. All three members sing, with many of their songs featuring vocal harmony and shared lead vocals."
+  },
+  {
+   "id": "055cae0e-2066-4a5d-8827-b73f11cbcbf6",
+   "slug": "new-constellations-3951e4aa",
+   "title": "New Constellations",
+   "act": "New Constellations",
+   "name": "New Constellations",
+   "description": "American dream pop band",
+   "source_url": "https://en.wikipedia.org/wiki/New_Constellations",
+   "extract": "New Constellations is an American dream pop and synthwave duo based out of Portland, Oregon."
+  },
+  {
+   "id": "39ea57d0-405d-4385-af50-5047fed0db75",
+   "slug": "chat-pile-who-loves-the-sun-tour-2026-417346c5",
+   "title": "Chat Pile - Who Loves The Sun Tour 2026",
+   "act": "Chat Pile",
+   "name": "Chat Pile",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Chat_Pile",
+   "extract": "Chat Pile is an American noise rock/sludge metal band from Oklahoma City, Oklahoma, formed in 2019. The band is composed of four members using the pseudonyms Raygun Busch (vocals), Luther Manhole (guitar), Stin (bass), and Cap'n Ron (drums)."
+  },
+  {
+   "id": "fa665601-bb51-4476-a7d5-00d176d35f48",
+   "slug": "john-summit-ctrl-escape-arena-tour-11846e5e",
+   "title": "JOHN SUMMIT - CTRL ESCAPE ARENA TOUR",
+   "act": "JOHN SUMMIT",
+   "name": "John Summit",
+   "description": "American DJ and record producer (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/John_Summit",
+   "extract": "John Walter Schuster, better known by his stage name John Summit, is an American DJ and record producer, former accountant and current owner of the Experts Only label. His music includes original tracks and remixes, primarily focused in the genre of tech house."
+  }
+ ]
+}

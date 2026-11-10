@@ -1,0 +1,36 @@
+{
+ "city": "ankara",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "7c79f00d-4839-4760-b5cf-2b8405a2d2f8",
+   "slug": "ersay-uner-fd9e755b",
+   "title": "Ersay Üner",
+   "act": "Ersay Üner",
+   "name": "Ersay Üner",
+   "description": "Turkish pop music singer-songwriter (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/Ersay_%C3%9Cner",
+   "extract": "Ersay Üner, is a Turkish pop music singer-songwriter. He became known in Turkey in 2000s by writing and composing songs for Demet Akalın."
+  },
+  {
+   "id": "0cb51077-f6ac-48d9-8674-88fcaf57cfa2",
+   "slug": "paradise-lost-ea61adef",
+   "title": "Paradise Lost",
+   "act": "Paradise Lost",
+   "name": "Paradise Lost",
+   "description": "British gothic metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Paradise_Lost_(band)",
+   "extract": "Paradise Lost are a British gothic metal band. Formed in Halifax, West Yorkshire, in 1988, they are considered pioneers of death-doom and the main influence on gothic metal. As of 2005, Paradise Lost have sold over two million albums worldwide."
+  },
+  {
+   "id": "bf8641e2-f7c5-4e82-abbe-b6e1fb0dfd7b",
+   "slug": "draconian-19eeab1f",
+   "title": "Draconian",
+   "act": "Draconian",
+   "name": "Draconian",
+   "description": "Swedish gothic metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Draconian_(band)",
+   "extract": "Draconian is a Swedish gothic metal band formed in Säffle in 1994. The band's lineup had changed over the years, with only founding members Anders Jacobsson and Johan Ericson still active members. Since the release of their first album Where Lovers Mourn in 2003; the lineup has been mostly stable, with Jerry Torstensson on drums, and Lisa Johansson and Heike Langhans alternately singing clean vocal parts. The band has released eight studio albums along with various singles and music videos."
+  }
+ ]
+}

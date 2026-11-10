@@ -1,0 +1,36 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "fc7bb445-c6e7-4e1c-a83f-72152ce49e77",
+   "slug": "erdling-b4178b2b",
+   "title": "ERDLING",
+   "act": "ERDLING",
+   "name": "Erdling",
+   "description": "German rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Erdling",
+   "extract": "Erdling is a German Neue Deutsche Härte band formed in 2014 by Neill Freiwald and Niklas Kahl."
+  },
+  {
+   "id": "68d334ff-f58a-4813-b8fa-2fa951cdc6d9",
+   "slug": "the-last-internationale-ee41cf83",
+   "title": "The Last Internationale",
+   "act": "The Last Internationale",
+   "name": "The Last Internationale",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Last_Internationale",
+   "extract": "The Last Internationale (TLI) is an American rock band formed by New York City guitarist Edgey Pires and vocalist Delila Paz."
+  },
+  {
+   "id": "6629da88-1399-47ba-b06e-0c3eb5a744f4",
+   "slug": "baby-lasagna-bb3391af",
+   "title": "Baby Lasagna",
+   "act": "Baby Lasagna",
+   "name": "Baby Lasagna",
+   "description": "Croatian singer",
+   "source_url": "https://en.wikipedia.org/wiki/Baby_Lasagna",
+   "extract": "Marko Purišić, known professionally as Baby Lasagna, is a Croatian singer-songwriter and music producer, best known as a founding member of Manntra. He represented Croatia in the Eurovision Song Contest 2024 with the song \"Rim Tim Tagi Dim\", where he finished in second place overall with 547 points and first in the public vote, becoming Croatia's highest-scoring Eurovision entrant since its debut as an independent country in 1993."
+  }
+ ]
+}

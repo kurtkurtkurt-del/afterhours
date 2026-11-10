@@ -1,0 +1,36 @@
+{
+ "city": "milano",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "b08b5f18-5e97-4f35-a324-d84b599f2cbc",
+   "slug": "marco-mengoni-residency-allo-sbagliato-41d8a2b4",
+   "title": "Marco Mengoni - Residency Allo Sbagliato",
+   "act": "Marco Mengoni",
+   "name": "Marco Mengoni",
+   "description": "Italian singer (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Marco_Mengoni",
+   "extract": "Marco Mengoni is an Italian singer-songwriter who rose to fame in 2009 after winning the third season of the Italian talent show X Factor. Since then he has sold over 2.8 million records in Italy, peaking the Italian albums chart seven consecutive times and entering the Top 10 Italian Singles Chart fifteen times. He won the Sanremo Music Festival in 2013 and again in 2023, therefore representing Italy in the Eurovision Song Contest in both years."
+  },
+  {
+   "id": "b1ec4850-0448-4970-8087-88bd4a82b450",
+   "slug": "benjamin-clementine-allo-sbagliato-2f1a7874",
+   "title": "Benjamin Clementine - Allo Sbagliato",
+   "act": "Benjamin Clementine",
+   "name": "Benjamin Clementine",
+   "description": "British musician (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Benjamin_Clementine",
+   "extract": "Benjamin Sainte-Clémentine, known as Benjamin Clementine, is a British actor, composer, and musician."
+  },
+  {
+   "id": "b232415a-c088-4475-927d-b3d139abb2f4",
+   "slug": "muse-the-wow-signal-europa-tour-d7620afb",
+   "title": "Muse - The Wow! Signal Europa Tour",
+   "act": "Muse",
+   "name": "Muse",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Muse_(band)",
+   "extract": "Muse are an English rock band from Teignmouth, Devon, formed in 1994. The band consists of Matt Bellamy, Chris Wolstenholme, and Dominic Howard."
+  }
+ ]
+}

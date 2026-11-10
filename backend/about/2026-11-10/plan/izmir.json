@@ -1,0 +1,46 @@
+{
+ "city": "izmir",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "b76301f6-baef-4e2f-b0e2-7848c438d123",
+   "slug": "ogun-sanl-soy-671c431d",
+   "title": "Ogün Sanlısoy",
+   "act": "Ogün Sanlısoy",
+   "name": "Ogün Sanlısoy",
+   "description": "Turkish musician (born 1971)",
+   "source_url": "https://en.wikipedia.org/wiki/Og%C3%BCn_Sanl%C4%B1soy",
+   "extract": "Ogün Sanlısoy is a Turkish musician, vocalist and guitarist for thrash metal band Mezarkabul."
+  },
+  {
+   "id": "3e27617b-e6b6-4fbb-b482-885bbfcc3ad1",
+   "slug": "gokhan-turkmen-2e15d7ae",
+   "title": "Gökhan Türkmen",
+   "act": "Gökhan Türkmen",
+   "name": "Gökhan Türkmen",
+   "description": "Turkish singer (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/G%C3%B6khan_T%C3%BCrkmen",
+   "extract": "Gökhan Türkmen is a Turkish singer."
+  },
+  {
+   "id": "1cb27b49-2b33-4989-a14f-800f14cadc50",
+   "slug": "soner-sar-kabaday-623646f6",
+   "title": "Soner Sarıkabadayı",
+   "act": "Soner Sarıkabadayı",
+   "name": "Soner Sarıkabadayı",
+   "description": "Turkish singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Soner_Sar%C4%B1kabaday%C4%B1",
+   "extract": "Soner Sarıkabadayı is a Turkish pop music singer and songwriter."
+  },
+  {
+   "id": "39d3a567-e730-419d-b7d9-8c7a1b238d4c",
+   "slug": "ilkay-akkaya-9442ef7a",
+   "title": "İlkay Akkaya",
+   "act": "İlkay Akkaya",
+   "name": "İlkay Akkaya",
+   "description": "Turkish singer (born 1964)",
+   "source_url": "https://en.wikipedia.org/wiki/%C4%B0lkay_Akkaya",
+   "extract": "İlkay Akkaya is a Turkish singer and member of the Turkish music group Grup Kızılırmak."
+  }
+ ]
+}

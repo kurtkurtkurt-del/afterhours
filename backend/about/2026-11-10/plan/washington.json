@@ -1,0 +1,56 @@
+{
+ "city": "washington",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "dde2c438-b731-4142-842b-1f2161713f12",
+   "slug": "sombr-you-are-the-reason-tour-eba94a9d",
+   "title": "SOMBR - You Are The Reason Tour",
+   "act": "SOMBR",
+   "name": "Sombr",
+   "description": "American singer and songwriter (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Sombr",
+   "extract": "Shane Michael Boose, known professionally as Sombr, is an American singer-songwriter and musician."
+  },
+  {
+   "id": "7c9a0b9d-1697-4bab-ba1c-a27d83f1275c",
+   "slug": "new-constellations-it-comes-in-waves-tour-1ed64edf",
+   "title": "New Constellations: It Comes In Waves Tour",
+   "act": "New Constellations",
+   "name": "New Constellations",
+   "description": "American dream pop band",
+   "source_url": "https://en.wikipedia.org/wiki/New_Constellations",
+   "extract": "New Constellations is an American dream pop and synthwave duo based out of Portland, Oregon."
+  },
+  {
+   "id": "205d9a43-bbe1-480b-ae65-e717240d787b",
+   "slug": "freak-slug-7efb24cb",
+   "title": "Freak Slug",
+   "act": "Freak Slug",
+   "name": "Freak Slug",
+   "description": "British indie rock musician",
+   "source_url": "https://en.wikipedia.org/wiki/Freak_Slug",
+   "extract": "Xenya Genovese, known by her stage name Freak Slug, is a British indie rock musician from Manchester."
+  },
+  {
+   "id": "4aba8d91-64eb-4b61-827c-7d7cb65e7246",
+   "slug": "the-pineapple-thief-21daaa14",
+   "title": "The Pineapple Thief",
+   "act": "The Pineapple Thief",
+   "name": "The Pineapple Thief",
+   "description": "British progressive rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pineapple_Thief",
+   "extract": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset. As of June 2024, the group consists of Soord on vocals, guitars, and keyboards, Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums. They have released 16 studio albums, 6 EPs, and several live and compilation albums."
+  },
+  {
+   "id": "32fc726f-722f-4531-b4e6-90efa85aece5",
+   "slug": "bailen-swim-at-your-own-risk-tour-db2a6397",
+   "title": "BAILEN - SWIM!!! At Your Own Risk Tour",
+   "act": "BAILEN",
+   "name": "Bailen",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/Bailen_(band)",
+   "extract": "BAILEN is an American alternative music group based in New York City. The band consists of fraternal twins Daniel Bailen (vocals/bass/synth/guitar) and David Bailen (vocals/drums), as well as younger sister Julia Bailen (vocals/guitar). The band performed a Paste Session on February 5, 2019 and had their single \"I Was Wrong\" featured as Song of the Day by The Current on March 14, 2019. Their single \"I Was Wrong\" was featured by NPR World Cafe in \"Heavy Rotation: 10 Songs They Can't Stop Listening To\" on March 30, 2019. The band was featured in Billboard just a few weeks later on April 18, 2019."
+  }
+ ]
+}

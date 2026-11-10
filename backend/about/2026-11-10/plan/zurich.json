@@ -1,0 +1,86 @@
+{
+ "city": "zurich",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "455ed067-e126-4470-9238-e6f23df77ac3",
+   "slug": "son-mieux-e27aba8a",
+   "title": "Son Mieux",
+   "act": "Son Mieux",
+   "name": "Son Mieux",
+   "description": "Dutch indie pop group",
+   "source_url": "https://en.wikipedia.org/wiki/Son_Mieux",
+   "extract": "Son Mieux is a Dutch indie pop group from The Hague headed by Camiel Meiresonne."
+  },
+  {
+   "id": "03c51dea-5c7c-4fc7-bf06-7f0c24e84955",
+   "slug": "filow-3d6410c9",
+   "title": "Filow",
+   "act": "Filow",
+   "name": "Filow",
+   "description": "German musician",
+   "source_url": "https://en.wikipedia.org/wiki/Filow",
+   "extract": "Felix Nier, known professionally as Filow, is a German influencer and musician."
+  },
+  {
+   "id": "16d8d826-b8d7-481f-baaa-ca82d87ffef3",
+   "slug": "the-scratch-856a6663",
+   "title": "The Scratch",
+   "act": "The Scratch",
+   "name": "The Scratch",
+   "description": "Irish trad/metal band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Scratch_(band)",
+   "extract": "The Scratch are an Irish band based in Dublin, whose music blends Irish traditional music and heavy metal."
+  },
+  {
+   "id": "80bddd0c-b4bf-4d0c-9ace-c65ca5af902d",
+   "slug": "isaiah-rashad-d3ebf44c",
+   "title": "Isaiah Rashad",
+   "act": "Isaiah Rashad",
+   "name": "Isaiah Rashad",
+   "description": "American rapper (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Isaiah_Rashad",
+   "extract": "Isaiah Rashad Joel McClain is an American rapper and singer. He first gained recognition following his performances on the 2012 Smoker's Club Tour alongside rappers Juicy J, Joey Badass and Smoke DZA. He is a founding member of the Chattanooga, Tennessee-based hip-hop collective TheHouse, which he formed with rappers YGTUT, Michael Da Vinci (MikeyD), Chris P, and Brian Brown."
+  },
+  {
+   "id": "d5ca4a0c-6aff-40ce-a629-8c6c31778d92",
+   "slug": "ayra-starr-starrgirl-world-tour-642e6389",
+   "title": "Ayra Starr: Starrgirl World Tour",
+   "act": "Ayra Starr",
+   "name": "Ayra Starr",
+   "description": "Beninese-born Nigerian singer (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Ayra_Starr",
+   "extract": "Oyinkansola Sarah Aderibigbe, known professionally as Ayra Starr, is a Beninese-born Nigerian singer-songwriter and producer."
+  },
+  {
+   "id": "54746f4e-8b96-4a2d-af52-690e432b3987",
+   "slug": "jaill-b6d2d51d",
+   "title": "JAILL",
+   "act": "JAILL",
+   "name": "Jaill",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Jaill",
+   "extract": "Jaill is an indie rock band formed in Milwaukee, Wisconsin, in 2002. The band consists of Vincent Kircher, Austin Dutmer, and Andrew Harris. Their music is described as psych-pop, with up-beat guitar and punk music matched with dark lyrics. Their 2010 album, That's How We Burn, earned them the most attention, receiving multiple reviews."
+  },
+  {
+   "id": "7a85378c-cac6-4464-90e3-b892769328c1",
+   "slug": "almost-monday-46eb0864",
+   "title": "almost monday",
+   "act": "almost monday",
+   "name": "Almost Monday",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Almost_Monday",
+   "extract": "Almost Monday is an American indie pop band based in San Diego, California."
+  },
+  {
+   "id": "2615c744-4961-4b11-b8b8-fbde3ca392ec",
+   "slug": "signs-of-the-swarm-43c35eb2",
+   "title": "Signs Of The Swarm",
+   "act": "Signs Of The Swarm",
+   "name": "Signs of the Swarm",
+   "description": "American deathcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Signs_of_the_Swarm",
+   "extract": "Signs of the Swarm is an American deathcore band from Pittsburgh, Pennsylvania, formed in 2014. The band has released six studio albums, and consists of drummer Bobby Crow, vocalist David Simonich, guitarist Carl Schulz and bassist Michael Cassese."
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "city": "new-york",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "0cf31c8b-8fea-41b9-93c8-fc4a3da0d0db",
+   "slug": "madra-salach-9f311a4f",
+   "title": "Madra Salach",
+   "act": "Madra Salach",
+   "name": "Madra Salach",
+   "description": "Irish neo-traditional folk band",
+   "source_url": "https://en.wikipedia.org/wiki/Madra_Salach",
+   "extract": "Madra Salach is an Irish contemporary-folk band based in Dublin founded in 2023. Formed by founding members Paul Banks, Adam Cullen and Dara Duffy as they played gigs across various venues in the Northside of Dublin. Three additional members joined to complete the group, with Maxime Arnold, Jack Lawlor and Jack Martin rounding off the six-piece group. Madra Salach have played multiple festivals such as All Together Now and Electric Picnic, shows, and released their debut EP, It's a Hell of an Age in January 2026."
+  },
+  {
+   "id": "bedf241d-20b0-41f3-8fed-2b171486c4a7",
+   "slug": "jeff-harnar-i-know-things-now-my-life-in-sondhei-c8f654ed",
+   "title": "Jeff Harnar -  I KNOW THINGS NOW: My Life in Sondheim’s Words",
+   "act": "Jeff Harnar",
+   "name": "Jeff Harnar",
+   "description": "American cabaret singer (born 1959)",
+   "source_url": "https://en.wikipedia.org/wiki/Jeff_Harnar",
+   "extract": "Jeff Harnar is an American cabaret singer, director, and recording artist."
+  },
+  {
+   "id": "600f6c6c-9766-4be7-a4a5-7d702a2a220b",
+   "slug": "new-constellations-it-comes-in-waves-tour-694a70be",
+   "title": "New Constellations: It Comes In Waves Tour",
+   "act": "New Constellations",
+   "name": "New Constellations",
+   "description": "American dream pop band",
+   "source_url": "https://en.wikipedia.org/wiki/New_Constellations",
+   "extract": "New Constellations is an American dream pop and synthwave duo based out of Portland, Oregon."
+  },
+  {
+   "id": "6d365e1c-1d5a-460a-84a7-669ceffe9e1f",
+   "slug": "kota-the-friend-661afda1",
+   "title": "KOTA The Friend",
+   "act": "KOTA The Friend",
+   "name": "Kota the Friend",
+   "description": "American rapper from New York",
+   "source_url": "https://en.wikipedia.org/wiki/Kota_the_Friend",
+   "extract": "Avery Marcel Joshua Jones, known by his stage name Kota the Friend, is an American rapper, singer, songwriter, and record producer, born and raised in Brooklyn, New York. He took his stage name from the Disney movie Brother Bear and has claimed it is a Native American word meaning friend."
+  },
+  {
+   "id": "f2a18554-4d9c-499b-8d7a-559862c98793",
+   "slug": "buena-vista-social-club-43705dbf",
+   "title": "Buena Vista Social Club",
+   "act": "Buena Vista Social Club",
+   "name": "Buena Vista Social Club",
+   "description": "Cuban musical ensemble",
+   "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+   "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years."
+  }
+ ]
+}

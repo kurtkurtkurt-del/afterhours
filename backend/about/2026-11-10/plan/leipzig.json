@@ -1,0 +1,26 @@
+{
+ "city": "leipzig",
+ "day": "2026-11-10",
+ "nights": [
+  {
+   "id": "3c0caea3-cc32-45ca-8d96-4da8d9fbc643",
+   "slug": "strangelove-the-depeche-mode-experience-black-ce-f88079c4",
+   "title": "Strangelove - The DEPECHE MODE Experience Black Celebration 2026",
+   "act": "Strangelove",
+   "name": "Strangelove",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Strangelove_(band)",
+   "extract": "Strangelove were an English alternative rock band, formed in Bristol in 1991 comprising singer Patrick Duff, guitarists Alex Lee & Julian Poole, bassist Joe Allen and John Langley on drums. They released two EPs and three albums before disbanding in 1998."
+  },
+  {
+   "id": "9638363a-ed6f-43cb-a590-d50028f20ab1",
+   "slug": "schandmaul-sternensegler-tour-2027-b1e05410",
+   "title": "Schandmaul - Sternensegler Tour 2027",
+   "act": "Schandmaul",
+   "name": "Schandmaul",
+   "description": "German medieval folk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Schandmaul",
+   "extract": "Schandmaul is a German medieval folk rock band from the Munich area."
+  }
+ ]
+}
