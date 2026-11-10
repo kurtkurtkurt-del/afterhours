@@ -1,0 +1,14 @@
+{
+  "city": "dusseldorf",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "fortuna at home vs großaspach.", "de": "fortuna zu hause gegen großaspach.", "tr": "fortuna evinde großaspach'a karşı." },
+      "line": { "en": "3. liga home game against sg sonnenhof großaspach, kick-off 14:00 on saturday. an afternoon at the stadium; check tickets on the club site.", "de": "3. liga heimspiel gegen sg sonnenhof großaspach, anpfiff 14:00 am samstag. ein nachmittag im stadion; tickets auf der vereinsseite prüfen.", "tr": "3. liga'da sg sonnenhof großaspach'a karşı ev sahibi maç, cumartesi saat 14:00'te başlıyor. stadyumda bir öğleden sonra; biletleri kulübün sitesinden kontrol et." },
+      "place": { "en": "merkur spiel-arena", "de": "merkur spiel-arena", "tr": "merkur spiel-arena" },
+      "hour": 14, "minute": 0,
+      "why": "Fortuna Düsseldorf home match vs SG Sonnenhof Großaspach, sat 21.11.2026 14:00, per the joyn.de schedule and buli-tipphilfe.de; it falls on day 11, in the look-ahead to days eight to fourteen."
+    }
+  ]
+}
