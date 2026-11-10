@@ -1,0 +1,27 @@
+{
+  "city": "koln",
+  "day": "2026-11-17",
+  "sparks": [
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "the 32nd kölner rudelsingen, everyone sings.",
+        "de": "das 32. kölner rudelsingen, alle singen mit.",
+        "tr": "32. köln rudelsingen, herkes şarkı söylüyor."
+      },
+      "line": {
+        "en": "a whole hall singing the songs together at the volksbühne on the rudolfplatz. start 19:30, tickets from 25.40 euro. no need to know the words.",
+        "de": "ein ganzer saal singt die lieder gemeinsam in der volksbühne am rudolfplatz. beginn 19:30, tickets ab 25,40 euro. die texte muss man nicht können.",
+        "tr": "volksbühne am rudolfplatz'ta tüm salon birlikte şarkı söylüyor. başlangıç 19:30, biletler 25,40 avro'dan. sözleri bilmek gerekmiyor."
+      },
+      "place": {
+        "en": "volksbühne am rudolfplatz",
+        "de": "volksbühne am rudolfplatz",
+        "tr": "volksbühne am rudolfplatz"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Das 32. Kölner Rudelsingen, Volksbühne am Rudolfplatz, Tue 17.11 19:30 (mvp.de, koeln.de and regioactive.de listings)."
+    }
+  ]
+}

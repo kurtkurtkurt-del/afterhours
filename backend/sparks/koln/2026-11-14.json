@@ -1,0 +1,27 @@
+{
+  "city": "koln",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "elfter im elften in the lanxess arena.",
+        "de": "elfter im elften in der lanxess arena.",
+        "tr": "lanxess arena'da elfter im elften."
+      },
+      "line": {
+        "en": "the big cologne carnival concert with kölsch songs and a full hall. it starts at 18:45.",
+        "de": "das große kölner karnevalskonzert mit kölschen liedern und vollem saal. beginn um 18:45.",
+        "tr": "kölsch şarkılarıyla büyük köln karnaval konseri, salon dolu. başlangıç 18:45."
+      },
+      "place": {
+        "en": "lanxess arena",
+        "de": "lanxess arena",
+        "tr": "lanxess arena"
+      },
+      "hour": 18,
+      "minute": 45,
+      "why": "Elfter im Elften 2026, LANXESS arena, Sat 14.11 at 18:45 per the Eventim ticket listing; koeln.de gives 19:00 but most listings agree on 18:45."
+    }
+  ]
+}

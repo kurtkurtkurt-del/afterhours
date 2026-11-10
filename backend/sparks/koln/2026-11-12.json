@@ -1,0 +1,27 @@
+{
+  "city": "koln",
+  "day": "2026-11-12",
+  "sparks": [
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "thursday comedy open mic at echtzeit.",
+        "de": "donnerstags comedy-open-mic bei echtzeit.",
+        "tr": "echtzeit'ta perşembe comedy open mic."
+      },
+      "line": {
+        "en": "the herbstspecial on thursdays at 20:00. the first half is an open mic with three surprise acts, then an experienced headline act; popcorn is free. tickets from 15.73 euro.",
+        "de": "das herbstspecial donnerstags um 20:00. die erste hälfte ist ein open mic mit drei überraschungs-acts, dann ein erfahrener headliner; popcorn ist gratis. tickets ab 15,73 euro.",
+        "tr": "perşembe günleri saat 20:00'de sonbahar özel gösterisi. ilk yarısı üç sürpriz sanatçıyla open mic, sonra deneyimli bir headliner; patlamış mısır bedava. biletler 15,73 avro'dan."
+      },
+      "place": {
+        "en": "echtzeit grill & thrill",
+        "de": "echtzeit grill & thrill",
+        "tr": "echtzeit grill & thrill"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Echtzeit Comedy Herbstspecial Donnerstag, Thu 12.11 20:00, Friesenstraße 33, series runs to 26.11 (regioactive.de and koeln.de listings)."
+    }
+  ]
+}

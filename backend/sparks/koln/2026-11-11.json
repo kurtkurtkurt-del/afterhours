@@ -1,0 +1,27 @@
+{
+  "city": "koln",
+  "day": "2026-11-11",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "the session opens on the heumarkt at 11:11.",
+        "de": "die session startet um 11:11 auf dem heumarkt.",
+        "tr": "session 11:11'de heumarkt'ta açılıyor."
+      },
+      "line": {
+        "en": "the cologne carnival season opens with a free party on the heumarkt and in the old town: two stages, bands, fireworks and confetti. go early for a place near the stage.",
+        "de": "die kölner karnevalssession beginnt um 11:11 mit einer kostenlosen feier auf dem heumarkt und in der altstadt: zwei bühnen, bands, feuerwerk und konfetti. früh kommen für einen platz nahe der bühne.",
+        "tr": "köln karnaval sezonu 11:11'de heumarkt ve eski şehirde ücretsiz bir kutlamayla açılıyor: iki sahne, gruplar, havai fişek ve konfeti. sahneye yakın bir yer için erken gel."
+      },
+      "place": {
+        "en": "heumarkt",
+        "de": "heumarkt",
+        "tr": "heumarkt"
+      },
+      "hour": 11,
+      "minute": 11,
+      "why": "Kölner Session-Eröffnung on 11.11. from 11:11 on Heumarkt and in the Altstadt, free, two stages (festivalsindeutschland.de)."
+    }
+  ]
+}
