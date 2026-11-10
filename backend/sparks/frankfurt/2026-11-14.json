@@ -1,0 +1,14 @@
+{
+  "city": "frankfurt",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "veggienale fair at campus westend.", "de": "veggienale-messe auf dem campus westend.", "tr": "campus westend'de veggienale fuarı." },
+      "line": { "en": "the veggienale fair for vegetarian and vegan food and products, 10:00 to 18:00; day ticket 9 euro, 7 reduced, under 14 free.", "de": "die veggienale, messe für vegetarisches und veganes, 10:00 bis 18:00; tageskarte 9 euro, ermäßigt 7, unter 14 frei.", "tr": "vejetaryen ve vegan ürünler fuarı veggienale, 10:00-18:00; günlük bilet 9 euro, indirimli 7, 14 yaş altı ücretsiz." },
+      "place": { "en": "campus westend festsaal", "de": "campus westend festsaal", "tr": "campus westend festsaal" },
+      "hour": 10, "minute": 0,
+      "why": "VEGGIENALE Frankfurt 14./15.11.2026 at Campus Westend, Sat 10:00-18:00, day ticket 9 euro (messen.de and InStaff listings; a lifeverde.de price is older and was not used)."
+    }
+  ]
+}
