@@ -1,0 +1,14 @@
+{
+  "city": "geneva",
+  "day": "2026-11-13",
+  "sparks": [
+    {
+      "kind": "cinema",
+      "title": { "en": "écosse, terres de légendes at the meg.", "de": "écosse, terres de légendes im meg.", "tr": "meg'de écosse, terres de légendes." },
+      "line": { "en": "a film screening at 18:00 at the musée d'ethnographie, part of festival celtiques, followed by a talk with joanne mciver and jean-sébastien tingaud. chf 15 adults, chf 10 children, in french.", "de": "eine filmvorführung um 18:00 im musée d'ethnographie, teil des festival celtiques, danach gespräch mit joanne mciver und jean-sébastien tingaud. chf 15 erwachsene, chf 10 kinder, auf französisch.", "tr": "saat 18:00'de etnografya müzesi'nde film gösterimi, festival celtiques'in parçası; ardından joanne mciver ve jean-sébastien tingaud ile söyleşi. yetişkin chf 15, çocuk chf 10, fransızca." },
+      "place": { "en": "meg", "de": "meg", "tr": "meg" },
+      "hour": 18, "minute": 0,
+      "why": "Screening of the film Écosse, terres de légendes at the MEG, Fri 13.11 18:00, part of Festival Celtiques, per ADEM (https://adem.ch/en/evenements/scotland-land-of-legend) and geneve.com; the festival programme says 'jeudi' but 13.11.2026 is a Friday, so the day was checked against the calendar."
+    }
+  ]
+}

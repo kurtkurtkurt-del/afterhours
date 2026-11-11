@@ -1,0 +1,27 @@
+{
+  "city": "geneva",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "porta jazz and amr at the amr.",
+        "de": "porta jazz und amr im amr.",
+        "tr": "amr'da porta jazz ve amr."
+      },
+      "line": {
+        "en": "the annual exchange between two jazz clubs, two musicians from each. doors at 20:00, music at 21:00. chf 20 full price.",
+        "de": "der jährliche austausch zwischen zwei jazzclubs, je zwei musiker. einlass um 20:00, musik um 21:00. vollpreis chf 20.",
+        "tr": "iki jazz kulübü arasındaki yıllık değişim, her kulüpten iki müzisyen. kapılar 20:00'de, müzik 21:00'de. tam bilet chf 20."
+      },
+      "place": {
+        "en": "amr",
+        "de": "amr",
+        "tr": "amr"
+      },
+      "hour": 21,
+      "minute": 0,
+      "why": "Porta Jazz and AMR concert at the AMR (rue des Alpes 10), Sat 14.11, doors 20:00, start 21:00, CHF 20, per geneve.com (https://www.geneve.com/en/events/porta-jazz-and-amr)."
+    }
+  ]
+}
