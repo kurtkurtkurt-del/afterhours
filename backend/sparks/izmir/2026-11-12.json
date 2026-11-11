@@ -1,0 +1,14 @@
+{
+  "city": "izmir",
+  "day": "2026-11-12",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "türkiye – belgium at gürsel aksel, 20:00.", "de": "türkiye – belgien im gürsel aksel, 20:00.", "tr": "türkiye – belçika, gürsel aksel'de saat 20:00." },
+      "line": { "en": "nations league, a group match at home in izmir. live and free on atv. meet early and watch it together.", "de": "nations league, ein gruppenspiel zu hause in izmir. live und frei empfangbar auf atv. früh treffen und zusammen schauen.", "tr": "uluslar ligi'nde izmir'de oynanan bir grup maçı. atv'de canlı ve şifresiz. erkenden buluşup birlikte izleyin." },
+      "place": { "en": "gürsel aksel stadium", "de": "gürsel aksel stadium", "tr": "gürsel aksel stadium" },
+      "hour": 20, "minute": 0,
+      "why": "Türkiye vs Belgium, UEFA Nations League A, matchday 5, Thu 12.11.2026 20:00 at Gürsel Aksel Stadium, live on ATV (timeturk.com, yeniasir.com.tr, milligazete.com.tr, politikam.com)."
+    }
+  ]
+}
