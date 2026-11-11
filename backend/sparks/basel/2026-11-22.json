@@ -1,0 +1,27 @@
+{
+  "city": "basel",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": {
+        "en": "fc basel at home against luzern.",
+        "de": "fc basel zu hause gegen luzern.",
+        "tr": "fc basel evinde luzern'e karşı."
+      },
+      "line": {
+        "en": "super league at home, listed at 15:30 uk time, which is 16:30 in basel. check the kick-off on fcb.ch before you plan the bar.",
+        "de": "super league zu hause, angesetzt auf 15.30 uhr britischer zeit, also 16.30 uhr in basel. die anstosszeit auf fcb.ch prüfen, bevor du die bar planst.",
+        "tr": "süper lig evinde, İngiltere saatiyle 15:30, yani basel'de 16:30. barı planlamadan önce başlama saatini fcb.ch'de kontrol et."
+      },
+      "place": {
+        "en": "st. jakob-park",
+        "de": "st. jakob-park",
+        "tr": "st. jakob-park"
+      },
+      "hour": 16,
+      "minute": 30,
+      "why": "FC Basel home vs FC Luzern, Sun 22 Nov 2026 16:30 Basel time per fcb.ch fixture and ticket shop; starting11.com lists 15:30 UK time, the conversion is ours. Kick-off to be checked on fcb.ch."
+    }
+  ]
+}

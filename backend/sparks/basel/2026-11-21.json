@@ -1,0 +1,27 @@
+{
+  "city": "basel",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "saturday flea market at the petersplatz.",
+        "de": "samstagsflohmarkt auf dem petersplatz.",
+        "tr": "petersplatz'ta cumartesi pire pazarı."
+      },
+      "line": {
+        "en": "the market runs every saturday 07:30 to 16:00 and sells only used goods. the canton lists this date without guarantee, so check before you go.",
+        "de": "der markt läuft jeden samstag von 7.30 bis 16 uhr und verkauft nur gebrauchte waren. das datum steht ohne gewähr auf der kantonsliste, bitte vorher prüfen.",
+        "tr": "pazar her cumartesi 07:30 ile 16:00 arası kurulur ve yalnızca ikinci el ürün satılır. tarih kanton listesinde garantisiz yazıyor, gitmeden kontrol et."
+      },
+      "place": {
+        "en": "petersplatz",
+        "de": "petersplatz",
+        "tr": "petersplatz"
+      },
+      "hour": 9,
+      "minute": 0,
+      "why": "Flohmarkt Petersplatz runs Saturdays 07:30 to 16:00 with 21 and 28 Nov listed, per the canton of Basel-Stadt flea market page (bs.ch); the canton gives the dates without guarantee."
+    }
+  ]
+}

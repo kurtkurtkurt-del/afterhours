@@ -1,0 +1,27 @@
+{
+  "city": "basel",
+  "day": "2026-11-20",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "ystimme, the opening of the basler weihnacht.",
+        "de": "ystimme, die eröffnung der basler weihnacht.",
+        "tr": "ystimme, basler weihnacht'ın açılışı."
+      },
+      "line": {
+        "en": "the advent season opens at 17:30 on the marktplatz with the ystimme evening. the christmas markets follow from 26 november.",
+        "de": "die adventszeit beginnt um 17.30 uhr auf dem marktplatz mit dem ystimme-abend. die weihnachtsmärkte folgen ab dem 26. november.",
+        "tr": "adventi döneminin açılışı 17:30'da marktplatz'ta ystimme akşamıyla başlıyor. noel pazarları 26 kasım'dan itibaren açık."
+      },
+      "place": {
+        "en": "marktplatz",
+        "de": "marktplatz",
+        "tr": "marktplatz"
+      },
+      "hour": 17,
+      "minute": 30,
+      "why": "Ystimme opening evening Fri 20 Nov 2026 17:30 on Marktplatz per a bs.ch media release and the basel.com calendar; market start 26 Nov per bs.ch. Days eight to fourteen, added on purpose."
+    }
+  ]
+}

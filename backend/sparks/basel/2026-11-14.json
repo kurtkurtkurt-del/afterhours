@@ -1,0 +1,27 @@
+{
+  "city": "basel",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "buchbasel weekend at the volkshaus.",
+        "de": "buchbasel-wochenende im volkshaus.",
+        "tr": "volkshaus'ta buchbasel hafta sonu."
+      },
+      "line": {
+        "en": "the festival runs 13 to 15 november with its centre in the volkshaus and events across the city. pick the evening that suits; the programme is on the festival site.",
+        "de": "das festival läuft vom 13. bis 15. november mit dem zentrum im volkshaus und veranstaltungen über die ganze stadt. such dir den passenden abend aus; das programm steht auf der festivalseite.",
+        "tr": "festival 13 ile 15 kasım arasında sürüyor; merkezi volkshaus, etkinlikler şehrin her yerinde. sana uyan akşamı seç; program festival sitesinde."
+      },
+      "place": {
+        "en": "volkshaus basel",
+        "de": "volkshaus basel",
+        "tr": "volkshaus basel"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "BuchBasel runs 13 to 15 Nov 2026 per the basel.com events calendar; the festival centre at Volkshaus is from search snippets of buchbasel.ch. The exact Saturday event was not checked."
+    }
+  ]
+}
