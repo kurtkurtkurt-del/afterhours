@@ -1,0 +1,38 @@
+{
+  "city": "wien",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "d3a9e9c0-603f-4064-8ed0-d13dad137b4a",
+      "slug": "de-staat-eu-tour-2027-b836d79f",
+      "title": "De Staat - EU Tour 2027",
+      "name": "De Staat",
+      "source_url": "https://en.wikipedia.org/wiki/De_Staat",
+      "extract": "De Staat is a Dutch alternative rock band, formed in Nijmegen in 2006. Their name translates to \"The State\".",
+      "en": {
+        "kicker": "dutch alternative rock band · nijmegen, 2006",
+        "who": "De Staat is a Dutch alternative rock band, formed in Nijmegen in 2006. Their name translates to \"The State\".",
+        "facts": [
+          "De Staat was formed in Nijmegen in 2006.",
+          "Their name translates to \"The State\"."
+        ]
+      },
+      "de": {
+        "kicker": "niederländische alternative-rockband · nijmegen, 2006",
+        "who": "De Staat ist eine niederländische Alternative-Rockband, die 2006 in Nijmegen gegründet wurde. Der Name bedeutet übersetzt „Der Staat“.",
+        "facts": [
+          "Die Band wurde 2006 in Nijmegen gegründet.",
+          "Ihr Name bedeutet übersetzt „Der Staat“."
+        ]
+      },
+      "tr": {
+        "kicker": "hollandalı alternatif rock grubu · nijmegen, 2006",
+        "who": "De Staat, 2006'da Nijmegen'de kurulmuş bir Hollandalı alternatif rock grubudur. Adı çevirisiyle \"Devlet\" anlamına gelir.",
+        "facts": [
+          "Grup 2006'da Nijmegen'de kuruldu.",
+          "Adı çevirisiyle \"Devlet\" anlamına gelir."
+        ]
+      }
+    }
+  ]
+}

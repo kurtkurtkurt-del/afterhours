@@ -1,0 +1,38 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "9bda1e11-73fc-4044-a9a7-2c26060a865f",
+      "slug": "jessie-ware-the-superbloom-tour-2026-a9bbd29b",
+      "title": "Jessie Ware - The Superbloom Tour 2026",
+      "name": "Jessie Ware",
+      "source_url": "https://en.wikipedia.org/wiki/Jessie_Ware",
+      "extract": "Jessica Lois Ware is a British singer and songwriter. She came to prominence following the release of her debut album, Devotion (2012), which peaked at number five on the UK Albums Chart and produced the single \"Wildest Moments\". Her second album, Tough Love (2014), reached number nine in the UK and produced the singles \"Tough Love\" and \"Say You Love Me\". Her third album, Glasshouse (2017), reached number seven in the UK.",
+      "en": {
+        "kicker": "british singer and songwriter · devotion, 2012",
+        "who": "Jessie Ware is a British singer and songwriter who came to prominence with her debut album, Devotion (2012). Her second album, Tough Love (2014), reached number nine in the UK, and her third, Glasshouse (2017), reached number seven.",
+        "facts": [
+          "Her debut album, Devotion (2012), peaked at number five on the UK Albums Chart.",
+          "Her second album, Tough Love (2014), produced the singles \"Tough Love\" and \"Say You Love Me\"."
+        ]
+      },
+      "de": {
+        "kicker": "britische sängerin und songwriterin · devotion, 2012",
+        "who": "Jessie Ware ist eine britische Sängerin und Songwriterin, die mit ihrem Debütalbum Devotion (2012) bekannt wurde. Ihr zweites Album Tough Love (2014) erreichte in Großbritannien Platz neun, ihr drittes Glasshouse (2017) Platz sieben.",
+        "facts": [
+          "Das Debütalbum Devotion (2012) erreichte Platz fünf der britischen Albumcharts.",
+          "Tough Love (2014) brachte die Singles „Tough Love“ und „Say You Love Me“ hervor."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkıcı ve söz yazarı · devotion, 2012",
+        "who": "Jessie Ware, ilk albümü Devotion (2012) ile öne çıkan İngiliz bir şarkıcı ve söz yazarıdır. İkinci albümü Tough Love (2014) İngiltere'de dokuzuncu, üçüncü albümü Glasshouse (2017) yedinci sıraya yükseldi.",
+        "facts": [
+          "Debut albümü Devotion (2012) İngiltere Albüm Listesi'nde beşinci sıraya kadar çıktı.",
+          "Tough Love (2014) \"Tough Love\" ve \"Say You Love Me\" tekli parçalarını çıkardı."
+        ]
+      }
+    }
+  ]
+}

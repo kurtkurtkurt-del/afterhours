@@ -1,0 +1,38 @@
+{
+  "city": "new-orleans",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "d2264055-c64a-47c7-b47c-d2f80d5529ea",
+      "slug": "fruit-bats-efcdc8ef",
+      "title": "Fruit Bats",
+      "name": "Fruit Bats",
+      "source_url": "https://en.wikipedia.org/wiki/Fruit_Bats_(band)",
+      "extract": "Fruit Bats is an American indie rock band formed in 1997 in Chicago, Illinois, as the project of singer and songwriter Eric D. Johnson. Johnson is the band's sole permanent member, with various musicians joining the band in live and studio settings.",
+      "en": {
+        "kicker": "american indie rock band · chicago, 1997",
+        "who": "Fruit Bats is an American indie rock band formed in 1997 in Chicago, Illinois, as the project of singer and songwriter Eric D. Johnson. Johnson is the band's sole permanent member.",
+        "facts": [
+          "The band was formed in 1997 in Chicago, Illinois.",
+          "Johnson is the band's sole permanent member, with various musicians joining in live and studio settings."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische indie-rockband · chicago, 1997",
+        "who": "Fruit Bats ist eine amerikanische Indie-Rockband, die 1997 in Chicago, Illinois, als Projekt des Sängers und Songwriters Eric D. Johnson entstand. Johnson ist das einzige feste Mitglied.",
+        "facts": [
+          "Die Band entstand 1997 in Chicago, Illinois.",
+          "Johnson ist das einzige dauerhafte Mitglied; wechselnde Musiker kommen für Live- und Studioaufnahmen dazu."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı indie rock grubu · chicago, 1997",
+        "who": "Fruit Bats, 1997'de Chicago, Illinois'de şarkıcı ve söz yazarı Eric D. Johnson'ın projesi olarak kurulmuş Amerikalı bir indie rock grubudur. Johnson, grubun tek kalıcı üyesidir.",
+        "facts": [
+          "Grup 1997'de Chicago, Illinois'de kuruldu.",
+          "Johnson tek kalıcı üye; canlı ve stüdyo çalışmalarında farklı müzisyenler yer alıyor."
+        ]
+      }
+    }
+  ]
+}

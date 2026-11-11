@@ -1,0 +1,38 @@
+{
+  "city": "washington",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "3c2a6cc3-84db-47fb-adca-6a99703337d2",
+      "slug": "jessie-reyez-a-little-vengeance-tour-9283b603",
+      "title": "Jessie Reyez: A Little Vengeance Tour",
+      "name": "Jessie Reyez",
+      "source_url": "https://en.wikipedia.org/wiki/Jessie_Reyez",
+      "extract": "Jessica Reyez is a Canadian singer-songwriter. Her 2016 single, \"Figures\", peaked at number 58 on the Canadian Hot 100 and received triple platinum certification by Music Canada (MC) and platinum by the Recording Industry Association of America (RIAA). Her debut extended play (EP), Kiddo (2017), led her to win Breakthrough Artist from four nominations at the 2018 Juno Awards. Her second EP, Being Human in Public (2018), was released the following year, won R&B/Soul Recording of the Year at the 2019 Juno Awards, and was nominated for Best Urban Contemporary Album at the 2020 Grammy Awards.",
+      "en": {
+        "kicker": "canadian singer-songwriter · kiddo, 2017",
+        "who": "Jessica Reyez is a Canadian singer-songwriter. Her 2016 single \"Figures\" peaked at number 58 on the Canadian Hot 100.",
+        "facts": [
+          "Her debut extended play, Kiddo (2017), led her to win Breakthrough Artist at the 2018 Juno Awards.",
+          "Her second EP, Being Human in Public (2018), won R&B/Soul Recording of the Year at the 2019 Juno Awards."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische singer-songwriterin · kiddo, 2017",
+        "who": "Jessica Reyez ist eine kanadische Singer-Songwriterin. Ihre Single „Figures“ aus dem Jahr 2016 erreichte Platz 58 der kanadischen Hot 100.",
+        "facts": [
+          "Ihre Debüt-EP Kiddo (2017) brachte ihr bei den Juno Awards 2018 den Preis als Breakthrough Artist.",
+          "Ihre zweite EP Being Human in Public (2018) gewann bei den Juno Awards 2019 den Preis für R&B/Soul Recording of the Year."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı şarkı yazarı · kiddo, 2017",
+        "who": "Jessica Reyez, Kanadalı bir şarkı yazarıdır. 2016 tarihli \"Figures\" tekli parçası Kanada Hot 100 listesinde 58. sıraya ulaştı.",
+        "facts": [
+          "Debut EP'si Kiddo (2017), 2018 Juno Ödülleri'nde Breakthrough Artist ödülünü kazanmasını sağladı.",
+          "İkinci EP'si Being Human in Public (2018), 2019 Juno Ödülleri'nde R&B/Soul Recording of the Year ödülünü kazandı."
+        ]
+      }
+    }
+  ]
+}

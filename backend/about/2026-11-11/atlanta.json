@@ -1,0 +1,38 @@
+{
+  "city": "atlanta",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "47ed08c5-5eab-4e52-b548-545a1c83312f",
+      "slug": "katie-pruitt-2ee1eaa4",
+      "title": "Katie Pruitt",
+      "name": "Katie Pruitt",
+      "source_url": "https://en.wikipedia.org/wiki/Katie_Pruitt",
+      "extract": "Katherine Nicole Pruitt is an American singer-songwriter based in Nashville, Tennessee. Her debut album, Expectations, was released in 2020 by Rounder Records. Her second album, Mantras, was released in 2024.",
+      "en": {
+        "kicker": "american singer-songwriter · nashville, 2020",
+        "who": "Katie Pruitt is an American singer-songwriter based in Nashville, Tennessee. Her debut album, Expectations, came out in 2020 on Rounder Records.",
+        "facts": [
+          "Her debut album, Expectations, was released in 2020 by Rounder Records.",
+          "Her second album, Mantras, was released in 2024."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin · nashville, 2020",
+        "who": "Katie Pruitt ist eine amerikanische Singer-Songwriterin mit Sitz in Nashville, Tennessee. Ihr Debütalbum Expectations erschien 2020 bei Rounder Records.",
+        "facts": [
+          "Ihr Debütalbum Expectations wurde 2020 von Rounder Records veröffentlicht.",
+          "Ihr zweites Album Mantras erschien 2024."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkı yazarı · nashville, 2020",
+        "who": "Katie Pruitt, Tennessee'de yaşayan Amerikalı bir şarkı yazarıdır. İlk albümü Expectations, 2020'de Rounder Records etiketiyle çıktı.",
+        "facts": [
+          "Debut albümü Expectations, 2020'de Rounder Records tarafından yayımlandı.",
+          "İkinci albümü Mantras 2024'te yayımlandı."
+        ]
+      }
+    }
+  ]
+}

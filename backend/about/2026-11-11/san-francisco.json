@@ -1,0 +1,70 @@
+{
+  "city": "san-francisco",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "e550a2c8-1f97-4a09-ac1d-201d742eabac",
+      "slug": "the-cactus-blossoms-210a65a2",
+      "title": "The Cactus Blossoms",
+      "name": "The Cactus Blossoms",
+      "source_url": "https://en.wikipedia.org/wiki/The_Cactus_Blossoms",
+      "extract": "The Cactus Blossoms is an American alternative country and indie folk band based in Minneapolis, Minnesota. The band is composed of brothers Jack Torrey and Page Burkum with a touring act including Phillip Hicks (bass), Jake Hanson (guitar), and Jeremy Hanson (drums).",
+      "en": {
+        "kicker": "american alternative country and indie folk band · minneapolis",
+        "who": "The Cactus Blossoms is an American alternative country and indie folk band based in Minneapolis, Minnesota. It is composed of brothers Jack Torrey and Page Burkum.",
+        "facts": [
+          "The band is based in Minneapolis, Minnesota.",
+          "The band is composed of brothers Jack Torrey and Page Burkum."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische alternative-country- und indie-folk-band · minneapolis",
+        "who": "The Cactus Blossoms ist eine amerikanische Alternative-Country- und Indie-Folk-Band aus Minneapolis, Minnesota. Sie besteht aus den Brüdern Jack Torrey und Page Burkum.",
+        "facts": [
+          "Die Band ist in Minneapolis, Minnesota, ansässig.",
+          "Die Band besteht aus den Brüdern Jack Torrey und Page Burkum."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı alternatif country ve indie folk grubu · minneapolis",
+        "who": "The Cactus Blossoms, Minneapolis merkezli Amerikalı bir alternatif country ve indie folk grubudur. Grup, kardeşler Jack Torrey ve Page Burkum'dan oluşur.",
+        "facts": [
+          "Grup Minneapolis, Minnesota merkezlidir.",
+          "Grup, kardeşler Jack Torrey ve Page Burkum'dan oluşuyor."
+        ]
+      }
+    },
+    {
+      "id": "2e42d4a1-8fd8-495f-9a4c-5e792bea936e",
+      "slug": "denise-julia-94bc3f84",
+      "title": "Denise Julia",
+      "name": "Denise Julia",
+      "source_url": "https://en.wikipedia.org/wiki/Denise_Julia",
+      "extract": "Julia Denise Lee, better known by her stage name Denise Julia, is a Filipino singer-songwriter, record producer, and model. She signed with Sony Music Philippines. In 2026, she moved to Empire Distribution, a record label in the United States. Numerous media outlets have recognized Julia as a leading figure in the new wave of Filipino R&B.",
+      "en": {
+        "kicker": "filipino singer-songwriter · filipino r&b",
+        "who": "Denise Julia is the stage name of Julia Denise Lee, a Filipino singer-songwriter, record producer and model. Numerous media outlets have recognized her as a leading figure in the new wave of Filipino R&B.",
+        "facts": [
+          "She signed with Sony Music Philippines.",
+          "In 2026, she moved to Empire Distribution, a record label in the United States."
+        ]
+      },
+      "de": {
+        "kicker": "philippinische singer-songwriterin · filipino-r&b",
+        "who": "Denise Julia ist das Künstlerpseudonym von Julia Denise Lee, einer philippinischen Singer-Songwriterin, Produzentin und Model. Zahlreiche Medien zählen sie zu den führenden Köpfen der neuen Welle des philippinischen R&B.",
+        "facts": [
+          "Sie unterschrieb bei Sony Music Philippines.",
+          "2026 wechselte sie zu Empire Distribution, einem Label in den Vereinigten Staaten."
+        ]
+      },
+      "tr": {
+        "kicker": "filipinli şarkıcı ve söz yazarı · filipin r&b",
+        "who": "Denise Julia, Julia Denise Lee'nin sahne adıdır; Filipinli bir şarkıcı, söz yazarı, yapımcı ve modeldir. Birçok medya kuruluşu onu Filipin R&B'sinin yeni dalgasının önde gelen isimlerinden biri olarak kabul ediyor.",
+        "facts": [
+          "Sony Music Philippines ile anlaşma imzaladı.",
+          "2026'da Amerika Birleşik Devletleri'ndeki Empire Distribution plak şirketine geçti."
+        ]
+      }
+    }
+  ]
+}

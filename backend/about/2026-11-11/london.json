@@ -1,0 +1,38 @@
+{
+  "city": "london",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "a3e43012-5991-489b-b440-0c59a665538d",
+      "slug": "poison-ruin-5060bd9f",
+      "title": "Poison Ruin",
+      "name": "Poison Ruïn",
+      "source_url": "https://en.wikipedia.org/wiki/Poison_Ru%C3%AFn",
+      "extract": "Poison Ruïn is an American punk/heavy metal band from Philadelphia, Pennsylvania. The band consists of singer/guitarist/keyboardist Mac Kennedy, guitarist Nao Demand, bassist Will McAndrew, and drummer Allen Chapman. Their most recent album Hymns from the Hills was released in April 2026. The band's music has been described as \"dark age punk\" and \"medieval-minded metallic punk,\" with a \"doomy, dungeon-crawler aesthetic that summons the drab hues and existential dread of the dark ages\"",
+      "en": {
+        "kicker": "american punk/heavy metal band · philadelphia",
+        "who": "Poison Ruïn is an American punk/heavy metal band from Philadelphia, Pennsylvania. Its music has been described as \"dark age punk\", with a doomy, dungeon-crawler aesthetic.",
+        "facts": [
+          "The band consists of singer/guitarist/keyboardist Mac Kennedy, guitarist Nao Demand, bassist Will McAndrew, and drummer Allen Chapman.",
+          "Their most recent album, Hymns from the Hills, was released in April 2026."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische punk- und heavy-metal-band · philadelphia",
+        "who": "Poison Ruïn ist eine amerikanische Punk- und Heavy-Metal-Band aus Philadelphia, Pennsylvania. Ihre Musik wird als „dark age punk“ beschrieben, mit einer düsteren, an Dungeon-Crawler erinnernden Ästhetik.",
+        "facts": [
+          "Zur Band gehören Mac Kennedy, Nao Demand, Will McAndrew und Allen Chapman.",
+          "Ihr jüngstes Album Hymns from the Hills erschien im April 2026."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı punk ve heavy metal grubu · philadelphia",
+        "who": "Poison Ruïn, Philadelphia, Pennsylvania'dan Amerikalı bir punk ve heavy metal grubudur. Müziği „dark age punk“ olarak tanımlanır; karanlık, zindan temalı bir estetiğe sahiptir.",
+        "facts": [
+          "Grupta Mac Kennedy, Nao Demand, Will McAndrew ve Allen Chapman yer alıyor.",
+          "En son albümleri Hymns from the Hills Nisan 2026'da yayımlandı."
+        ]
+      }
+    }
+  ]
+}

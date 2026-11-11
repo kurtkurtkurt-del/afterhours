@@ -1,0 +1,38 @@
+{
+  "city": "ciudad-de-mexico",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "c27b9cb9-3a40-49dd-bae7-2efdd9ac15ff",
+      "slug": "morat-661a277b",
+      "title": "Morat",
+      "name": "Morat",
+      "source_url": "https://en.wikipedia.org/wiki/Morat_(band)",
+      "extract": "Morat is a Colombian Latin pop rock band formed in the country's capital city, Bogotá. The band is made up of Juan Pablo Isaza, Juan Pablo Villamil, and the brothers Simón Vargas and Martín Vargas. Drummer Alejandro Posada was also a founding member of the band, but left in 2016 and was replaced by Martín Vargas.",
+      "en": {
+        "kicker": "colombian latin pop rock band · bogotá",
+        "who": "Morat is a Colombian Latin pop rock band formed in Bogotá. Its members are Juan Pablo Isaza, Juan Pablo Villamil and the brothers Simón and Martín Vargas.",
+        "facts": [
+          "Morat is a Colombian Latin pop rock band formed in the country's capital city, Bogotá.",
+          "Drummer Alejandro Posada, a founding member, left in 2016 and was replaced by Martín Vargas."
+        ]
+      },
+      "de": {
+        "kicker": "kolumbianische latin-pop-rockband · bogotá",
+        "who": "Morat ist eine kolumbianische Latin-Pop-Rockband, die in Bogotá gegründet wurde. Zur Band gehören Juan Pablo Isaza, Juan Pablo Villamil sowie die Brüder Simón und Martín Vargas.",
+        "facts": [
+          "Die Band wurde in der Hauptstadt Bogotá gegründet.",
+          "Der Schlagzeuger Alejandro Posada, ein Gründungsmitglied, verließ die Band 2016; an seine Stelle trat Martín Vargas."
+        ]
+      },
+      "tr": {
+        "kicker": "kolombiyalı latin pop rock grubu · bogotá",
+        "who": "Morat, Bogotá'da kurulmuş bir Kolombiyalı Latin pop rock grubudur. Üyeleri Juan Pablo Isaza, Juan Pablo Villamil ve Simón ile Martín Vargas kardeşlerdir.",
+        "facts": [
+          "Grup, ülkenin başkenti Bogotá'da kuruldu.",
+          "Kurucu üyelerden davulcu Alejandro Posada 2016'da ayrıldı; yerine Martín Vargas geçti."
+        ]
+      }
+    }
+  ]
+}

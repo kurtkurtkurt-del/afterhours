@@ -1,0 +1,70 @@
+{
+  "city": "seattle",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "2309dc77-d652-4cca-b0d3-46af780049b4",
+      "slug": "olivia-o-brien-be90159a",
+      "title": "Olivia O'Brien",
+      "name": "Olivia O'Brien",
+      "source_url": "https://en.wikipedia.org/wiki/Olivia_O'Brien",
+      "extract": "Olivia Gail O'Brien is an American singer-songwriter. She is best known for her guest appearance on Gnash's 2016 single \"I Hate U, I Love U\", which peaked at number 10 on the Billboard Hot 100. Its success led her to sign with Island Records; the label released two extended plays, three mixtapes, and her debut studio album Was It Even Real? (2019). In 2024, she formed the independent label Girlhood Records and released the EPs Love & Limerence and Everywhere I Go, There I Am. O'Brien signed with Gamma for the release of her second studio album Pixie (2026).",
+      "en": {
+        "kicker": "american singer-songwriter · pixie, 2026",
+        "who": "Olivia O'Brien is an American singer-songwriter. She is best known for her guest appearance on Gnash's 2016 single \"I Hate U, I Love U\", which peaked at number 10 on the Billboard Hot 100.",
+        "facts": [
+          "Its success led her to sign with Island Records.",
+          "O'Brien signed with Gamma for the release of her second studio album Pixie (2026)."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin · pixie, 2026",
+        "who": "Olivia O'Brien ist eine amerikanische Singer-Songwriterin. Bekannt wurde sie durch ihren Gastauftritt auf Gnashs Single „I Hate U, I Love U“ (2016), die in den Billboard Hot 100 auf Platz 10 kam.",
+        "facts": [
+          "Der Erfolg dieser Single brachte ihr einen Vertrag bei Island Records.",
+          "O'Brien unterschrieb bei Gamma für ihr zweites Studioalbum Pixie (2026)."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkı yazarı · pixie, 2026",
+        "who": "Olivia O'Brien, Amerikalı bir şarkı yazarıdır. En çok Gnash'in 2016 tarihli \"I Hate U, I Love U\" tekli parçasındaki konuk performansıyla tanınır; parça Billboard Hot 100'de on numaraya kadar yükseldi.",
+        "facts": [
+          "Bu parçanın başarısı onu Island Records ile anlaşmaya götürdü.",
+          "O'Brien, ikinci stüdyo albümü Pixie'nin (2026) yayımlanması için Gamma ile anlaştı."
+        ]
+      }
+    },
+    {
+      "id": "e4bc71ff-8d3c-4571-b92b-441674c5ae26",
+      "slug": "dev-lemons-b66b870c",
+      "title": "Dev Lemons",
+      "name": "Dev Lemons",
+      "source_url": "https://en.wikipedia.org/wiki/Dev_Lemons",
+      "extract": "Devon Vonder Schmalz, also known as Dev Lemons, is an American singer-songwriter, record producer, and YouTuber. She initially gained popularity by making music theory videos as SongPsych on TikTok and YouTube and through her personal YouTube channel, Dev Limes. She has released two studio albums, Surface Tension in 2025, and Hunting What We Already Killed in 2026.",
+      "en": {
+        "kicker": "american singer-songwriter · surface tension, 2025",
+        "who": "Dev Lemons, also known as Devon Vonder Schmalz, is an American singer-songwriter, record producer and YouTuber. Her personal YouTube channel is called Dev Limes.",
+        "facts": [
+          "She initially gained popularity by making music theory videos as SongPsych on TikTok and YouTube.",
+          "She has released two studio albums, Surface Tension in 2025, and Hunting What We Already Killed in 2026."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische singer-songwriterin · surface tension, 2025",
+        "who": "Dev Lemons, auch bekannt als Devon Vonder Schmalz, ist eine amerikanische Singer-Songwriterin, Produzentin und YouTuberin. Ihr persönlicher YouTube-Kanal heißt Dev Limes.",
+        "facts": [
+          "Bekannt wurde sie zunächst mit Musiktheorie-Videos als SongPsych auf TikTok und YouTube.",
+          "Sie hat zwei Studioalben veröffentlicht: Surface Tension (2025) und Hunting What We Already Killed (2026)."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkı yazarı · surface tension, 2025",
+        "who": "Dev Lemons, Devon Vonder Schmalz olarak da bilinen Amerikalı bir şarkı yazarı, yapımcı ve YouTuber'dır. Kişisel YouTube kanalının adı Dev Limes'tır.",
+        "facts": [
+          "İlk olarak TikTok ve YouTube'da SongPsych adıyla müzik teorisi videoları yaparak ün kazandı.",
+          "İki stüdyo albümü var: Surface Tension (2025) ve Hunting What We Already Killed (2026)."
+        ]
+      }
+    }
+  ]
+}

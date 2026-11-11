@@ -1,0 +1,38 @@
+{
+  "city": "warszawa",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "c06efcc1-5bd1-4732-8c39-e3e8b3d9dadf",
+      "slug": "tiffany-day-halo-tour-europe-bcfd5882",
+      "title": "Tiffany Day - HALO TOUR EUROPE",
+      "name": "Tiffany Day",
+      "source_url": "https://en.wikipedia.org/wiki/Tiffany_Day_(musician)",
+      "extract": "Tiffany Day Ruan, is a Canadian-American singer, songwriter, and record producer. Raised in Wichita, Kansas, she began independently releasing music after a 2017 video of her singing into a well in Italy went viral on Twitter. She released her debut studio album, Lover Tofu Fruit, in 2024. She signed to Broke Records the following year, through which she released her second studio album, Halo, in 2026.",
+      "en": {
+        "kicker": "canadian-american singer and songwriter · halo, 2026",
+        "who": "Tiffany Day Ruan is a Canadian-American singer, songwriter and record producer, raised in Wichita, Kansas. A 2017 video of her singing into a well in Italy went viral on Twitter.",
+        "facts": [
+          "She released her debut studio album, Lover Tofu Fruit, in 2024.",
+          "She signed to Broke Records the following year, through which she released her second studio album, Halo, in 2026."
+        ]
+      },
+      "de": {
+        "kicker": "kanadisch-amerikanische sängerin und songwriterin · halo, 2026",
+        "who": "Tiffany Day Ruan ist eine kanadisch-amerikanische Sängerin, Songwriterin und Produzentin, aufgewachsen in Wichita, Kansas. Ein Video von 2017, in dem sie in Italien in einen Brunnen singt, wurde auf Twitter viral.",
+        "facts": [
+          "Ihr Debütalbum Lover Tofu Fruit erschien 2024.",
+          "2025 unterschrieb sie bei Broke Records, wo 2026 ihr zweites Studioalbum Halo erschien."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı-amerikalı şarkıcı ve söz yazarı · halo, 2026",
+        "who": "Tiffany Day Ruan, Kanadalı-Amerikalı bir şarkıcı, söz yazarı ve yapımcıdır; Kansas'taki Wichita'da büyüdü. 2017'de İtalya'da bir kuyuya şarkı söylediği videosu Twitter'da viral oldu.",
+        "facts": [
+          "Debut stüdyo albümü Lover Tofu Fruit 2024'te çıktı.",
+          "Ertesi yıl Broke Records ile anlaştı ve ikinci stüdyo albümü Halo'yu 2026'da çıkardı."
+        ]
+      }
+    }
+  ]
+}

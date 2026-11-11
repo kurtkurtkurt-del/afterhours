@@ -1,0 +1,38 @@
+{
+  "city": "istanbul",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "6a1b33c0-c458-430a-85bd-dc00e5c05753",
+      "slug": "baba-zula-7f087d2a",
+      "title": "Baba Zula",
+      "name": "Baba Zula",
+      "source_url": "https://en.wikipedia.org/wiki/Baba_Zula",
+      "extract": "Baba Zula is a Turkish alternative musical group, founded in Istanbul in 1996. With a wide variety of influences and a wide range of instruments, they create a unique psychedelic sound.",
+      "en": {
+        "kicker": "turkish alternative group · istanbul, 1996",
+        "who": "Baba Zula is a Turkish alternative musical group, founded in Istanbul in 1996. They combine a wide variety of influences and instruments into a unique psychedelic sound.",
+        "facts": [
+          "The group was founded in Istanbul in 1996.",
+          "They create a unique psychedelic sound with a wide range of instruments."
+        ]
+      },
+      "de": {
+        "kicker": "türkische alternative band · istanbul, 1996",
+        "who": "Baba Zula ist eine türkische alternative Musikgruppe, die 1996 in Istanbul gegründet wurde. Sie verbindet vielfältige Einflüsse und eine große Bandbreite an Instrumenten zu einem eigenen psychedelischen Klang.",
+        "facts": [
+          "Die Gruppe wurde 1996 in Istanbul gegründet.",
+          "Mit einer großen Bandbreite an Instrumenten erzeugen sie einen eigenständigen psychedelischen Klang."
+        ]
+      },
+      "tr": {
+        "kicker": "türk alternatif müzik grubu · istanbul, 1996",
+        "who": "Baba Zula, 1996'da İstanbul'da kurulmuş bir Türk alternatif müzik grubudur. Çok çeşitli etkileri ve enstrümanları birleştirerek özgün, psikedelik bir ses yaratır.",
+        "facts": [
+          "Grup 1996'da İstanbul'da kuruldu.",
+          "Geniş bir enstrüman yelpazesiyle özgün, psikedelik bir ses yaratıyorlar."
+        ]
+      }
+    }
+  ]
+}

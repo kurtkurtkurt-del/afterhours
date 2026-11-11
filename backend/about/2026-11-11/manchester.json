@@ -1,0 +1,38 @@
+{
+  "city": "manchester",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "5a3eebd7-9d7d-4b44-97af-3e712b1ee127",
+      "slug": "kid-kapichi-61ce7e73",
+      "title": "Kid Kapichi",
+      "name": "Kid Kapichi",
+      "source_url": "https://en.wikipedia.org/wiki/Kid_Kapichi",
+      "extract": "Kid Kapichi are an English punk rock band formed in Hastings in 2013. The band consists of vocalist and guitarist Jack Wilson and bassist Eddie Lewis.",
+      "en": {
+        "kicker": "english punk rock band · hastings, 2013",
+        "who": "Kid Kapichi are an English punk rock band formed in Hastings in 2013. Their line-up is built around vocalist and guitarist Jack Wilson and bassist Eddie Lewis.",
+        "facts": [
+          "The band was formed in Hastings in 2013.",
+          "The band consists of vocalist and guitarist Jack Wilson and bassist Eddie Lewis."
+        ]
+      },
+      "de": {
+        "kicker": "englische punkrockband · hastings, 2013",
+        "who": "Kid Kapichi sind eine englische Punkrockband, die 2013 in Hastings gegründet wurde. Die Besetzung um Sänger und Gitarrist Jack Wilson und Bassist Eddie Lewis bildet den Kern.",
+        "facts": [
+          "Die Band wurde 2013 in Hastings gegründet.",
+          "Zur Band gehören Sänger und Gitarrist Jack Wilson sowie Bassist Eddie Lewis."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz punk rock grubu · hastings, 2013",
+        "who": "Kid Kapichi, 2013'te Hastings'te kurulmuş bir İngiliz punk rock grubudur. Kadro, vokalist ve gitarist Jack Wilson ile basçı Eddie Lewis etrafında şekillenir.",
+        "facts": [
+          "Grup 2013'te Hastings'te kuruldu.",
+          "Grup, vokalist ve gitarist Jack Wilson ile basçı Eddie Lewis'ten oluşuyor."
+        ]
+      }
+    }
+  ]
+}

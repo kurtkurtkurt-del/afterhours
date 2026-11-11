@@ -1,0 +1,38 @@
+{
+  "city": "birmingham",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "d86b4b23-5f81-45db-a502-ee840ea720ea",
+      "slug": "julia-wolf-ab72531e",
+      "title": "Julia Wolf",
+      "name": "Julia Wolf",
+      "source_url": "https://en.wikipedia.org/wiki/Julia_Wolf_(musician)",
+      "extract": "Julia Jade Capello, known professionally as Julia Wolf, is an American singer. Known for her ethereal vocals and self-produced alt-pop sound, she blends elements of indie pop, alternative rock, and R&B. Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory (2021) and her studio albums Good Thing We Stayed (2023) and Pressure (2025).",
+      "en": {
+        "kicker": "american alt-pop singer · debut ep, 2021",
+        "who": "Julia Wolf is an American singer known for ethereal vocals and a self-produced alt-pop sound. She blends indie pop, alternative rock and R&B, and first drew attention on TikTok.",
+        "facts": [
+          "Her debut EP Girls in Purgatory (2021) followed early attention on TikTok.",
+          "Her studio albums are Good Thing We Stayed (2023) and Pressure (2025)."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische sängerin · debüt-ep, 2021",
+        "who": "Julia Wolf ist eine amerikanische Sängerin, bekannt für ihre ätherische Stimme und einen selbst produzierten Alt-Pop-Sound. Sie verbindet Indie-Pop, Alternative Rock und R&B und wurde zuerst auf TikTok bekannt.",
+        "facts": [
+          "Ihre Debüt-EP Girls in Purgatory (2021) folgte auf erste Aufmerksamkeit bei TikTok.",
+          "Ihre Studioalben sind Good Thing We Stayed (2023) und Pressure (2025)."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı şarkıcı · ilk ep, 2021",
+        "who": "Julia Wolf, etherik vokalleri ve kendi prodüksiyonu alt-pop sesiyle bilinen Amerikalı bir şarkıcıdır. Indie pop, alternatif rock ve R&B öğelerini harmanlar; ilk olarak TikTok'ta dikkat çekti.",
+        "facts": [
+          "İlk EP'si Girls in Purgatory (2021), TikTok'taki erken ilginin ardından çıktı.",
+          "Stüdyo albümleri Good Thing We Stayed (2023) ve Pressure (2025)'tir."
+        ]
+      }
+    }
+  ]
+}

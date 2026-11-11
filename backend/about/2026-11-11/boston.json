@@ -1,0 +1,102 @@
+{
+  "city": "boston",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "3bbff973-4cf3-4128-872a-d291d30b4ecc",
+      "slug": "patrick-wolf-11ba05b0",
+      "title": "Patrick Wolf",
+      "name": "Patrick Wolf",
+      "source_url": "https://en.wikipedia.org/wiki/Patrick_Wolf",
+      "extract": "Patrick Wolf is an English singer-songwriter from South London. Wolf uses a wide variety of instruments in his music, most commonly the ukulele, piano, and viola. He is known for combining electronic sampling with classical instruments. Wolf's styles range from electronic pop to Baroque chamber music. He has been making music since around 2002.",
+      "en": {
+        "kicker": "english singer-songwriter · south london",
+        "who": "Patrick Wolf is an English singer-songwriter from South London. He is known for combining electronic sampling with classical instruments.",
+        "facts": [
+          "His styles range from electronic pop to Baroque chamber music.",
+          "He has been making music since around 2002."
+        ]
+      },
+      "de": {
+        "kicker": "englischer singer-songwriter · south london",
+        "who": "Patrick Wolf ist ein englischer Singer-Songwriter aus South London. Er ist dafür bekannt, elektronisches Sampling mit klassischen Instrumenten zu verbinden.",
+        "facts": [
+          "Seine Stile reichen von elektronischem Pop bis zu Barock-Kammermusik.",
+          "Er macht seit etwa 2002 Musik."
+        ]
+      },
+      "tr": {
+        "kicker": "ingiliz şarkı yazarı · güney londra",
+        "who": "Patrick Wolf, Güney Londra'dan bir İngiliz şarkı yazarıdır. Elektronik örneklemeyi klasik enstrümanlarla birleştirmesiyle tanınır.",
+        "facts": [
+          "Tarzı elektronik pop'tan barok oda müziğine uzanır.",
+          "2002 civarından beri müzik yapıyor."
+        ]
+      }
+    },
+    {
+      "id": "1d41a235-7b60-4b9d-be85-d417cc9bdee2",
+      "slug": "frost-children-71562fa3",
+      "title": "Frost Children",
+      "name": "Frost Children",
+      "source_url": "https://en.wikipedia.org/wiki/Frost_Children",
+      "extract": "Frost Children is an American pop duo from St. Louis, Missouri, now residing in New York City. The duo consists of siblings Angel and Lulu Prost.",
+      "en": {
+        "kicker": "american pop duo · st. louis, missouri",
+        "who": "Frost Children is a pop duo from St. Louis, Missouri, that now lives in New York City. Its members are siblings Angel and Lulu Prost.",
+        "facts": [
+          "The duo consists of siblings Angel and Lulu Prost.",
+          "The duo is from St. Louis, Missouri, now residing in New York City."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanisches popduo · st. louis, missouri",
+        "who": "Frost Children ist ein Popduo aus St. Louis, Missouri, das heute in New York City lebt. Die Mitglieder sind die Geschwister Angel und Lulu Prost.",
+        "facts": [
+          "Das Duo besteht aus den Geschwistern Angel und Lulu Prost.",
+          "Das Duo ist heute in New York City ansässig."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı pop ikilisi · st. louis, missouri",
+        "who": "Frost Children, Missouri'nin St. Louis kentinden bir pop ikilisidir ve şu an New York City'de yaşıyor. Üyeleri kardeşler Angel ve Lulu Prost'tur.",
+        "facts": [
+          "İkili, kardeşler Angel ve Lulu Prost'tan oluşuyor.",
+          "İkili şu an New York City'de yaşıyor."
+        ]
+      }
+    },
+    {
+      "id": "e6928170-cd4f-4059-91bb-6fcb699505cd",
+      "slug": "trippie-redd-the-non-disclosure-agreement-tour-2bd5ab3d",
+      "title": "Trippie Redd - The Non-disclosure Agreement Tour",
+      "name": "Trippie Redd",
+      "source_url": "https://en.wikipedia.org/wiki/Trippie_Redd",
+      "extract": "Michael Lamar White II, known professionally as Trippie Redd, is an American rapper, singer, and songwriter. Born and raised in Canton, Ohio, he has contributed to the progression of emo rap and rage, a subgenre of trap music.",
+      "en": {
+        "kicker": "american rapper · canton, ohio",
+        "who": "Trippie Redd is the stage name of Michael Lamar White II, an American rapper, singer and songwriter. He has contributed to the progression of emo rap and rage.",
+        "facts": [
+          "He was born and raised in Canton, Ohio.",
+          "He has contributed to the progression of emo rap and rage, a subgenre of trap music."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper · canton, ohio",
+        "who": "Trippie Redd ist ein amerikanischer Rapper, Sänger und Songwriter. Bürgerlich heißt er Michael Lamar White II; er hat den Emo-Rap und Rage mitgeprägt.",
+        "facts": [
+          "Er ist in Canton, Ohio, geboren und aufgewachsen.",
+          "Er hat zur Entwicklung von Emo-Rap und Rage beigetragen, einer Unterform von Trap-Musik."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi · canton, ohio",
+        "who": "Trippie Redd, Amerikalı bir rapçi, şarkıcı ve söz yazarıdır. Asıl adı Michael Lamar White II'dir ve emo rap ile rage'in gelişimine katkıda bulunmuştur.",
+        "facts": [
+          "Ohio'nun Canton kentinde doğup büyümüştür.",
+          "Trap müziğin bir alt türü olan emo rap ve rage'in gelişimine katkıda bulunmuştur."
+        ]
+      }
+    }
+  ]
+}

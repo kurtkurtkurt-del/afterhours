@@ -1,0 +1,38 @@
+{
+  "city": "vancouver",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "8db82c0c-1a77-44ec-b357-06929f3610f4",
+      "slug": "amanda-marshall-the-dirty-30-tour-4d37096e",
+      "title": "Amanda Marshall - The Dirty 30 Tour",
+      "name": "Amanda Marshall",
+      "source_url": "https://en.wikipedia.org/wiki/Amanda_Marshall",
+      "extract": "Amanda Meta Marshall is a Canadian Juno award winning pop-rock singer and songwriter. She has released four studio albums; the first was certified diamond in Canada, with the second and third certified 3× platinum and platinum respectively. She is best known for her 1996 single, \"Birmingham\", which reached number 3 in Canada and was her only song to reach the US charts.",
+      "en": {
+        "kicker": "canadian pop-rock singer · juno award winner",
+        "who": "Amanda Marshall is a Canadian Juno Award-winning pop-rock singer and songwriter. She is best known for her 1996 single \"Birmingham\", which reached number 3 in Canada.",
+        "facts": [
+          "She has released four studio albums, the first certified diamond in Canada.",
+          "Her only song to reach the US charts was \"Birmingham\"."
+        ]
+      },
+      "de": {
+        "kicker": "kanadische pop-rock-sängerin · juno-preisträgerin",
+        "who": "Amanda Marshall ist eine kanadische Pop-Rock-Sängerin und Songwriterin, die mit einem Juno Award ausgezeichnet wurde. Am bekanntesten ist sie für ihre Single „Birmingham“ von 1996, die in Kanada Platz 3 erreichte.",
+        "facts": [
+          "Sie hat vier Studioalben veröffentlicht; das erste wurde in Kanada mit Diamant ausgezeichnet.",
+          "„Birmingham“ war ihr einziger Song, der die US-Charts erreichte."
+        ]
+      },
+      "tr": {
+        "kicker": "kanadalı pop-rock şarkıcısı · juno ödüllü",
+        "who": "Amanda Marshall, Juno Ödülü kazanmış Kanadalı bir pop-rock şarkıcısı ve söz yazarıdır. En çok 1996 tarihli \"Birmingham\" tekli parçasıyla tanınır; parça Kanada'da üçüncü sıraya yükseldi.",
+        "facts": [
+          "Dört stüdyo albümü yayımladı; ilki Kanada'da elmas sertifikası aldı.",
+          "\"Birmingham\", ABD listelerine giren tek şarkısıydı."
+        ]
+      }
+    }
+  ]
+}

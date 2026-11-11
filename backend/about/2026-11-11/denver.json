@@ -1,0 +1,38 @@
+{
+  "city": "denver",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "10d8cd61-de81-4d6d-897f-5c18f476ed90",
+      "slug": "the-living-tombstone-ages-16-593f08f8",
+      "title": "The Living Tombstone - Ages 16+",
+      "name": "The Living Tombstone",
+      "source_url": "https://en.wikipedia.org/wiki/The_Living_Tombstone",
+      "extract": "The Living Tombstone (TLT) is an Israeli-American electronic rock group and YouTube channel, founded as a solo project by Israeli-American producer Yoav Landau in 2011, and becoming a musical duo with American singer Sam Haft in 2016. The group is notable for their songs based on video games and pop culture media, such as the My Little Pony, Five Nights at Freddy's, and Overwatch series as well as original music. Signed to Warner Music, they have released two studio albums, Zero One (2020) and Rust (2025).",
+      "en": {
+        "kicker": "israeli-american electronic rock group · 2011",
+        "who": "The Living Tombstone is an Israeli-American electronic rock group and YouTube channel. It is known for songs based on video games and pop culture, as well as original music.",
+        "facts": [
+          "It became a musical duo with American singer Sam Haft in 2016.",
+          "Signed to Warner Music, they have released two studio albums, Zero One (2020) and Rust (2025)."
+        ]
+      },
+      "de": {
+        "kicker": "israelisch-amerikanische elektro-rockgruppe · 2011",
+        "who": "The Living Tombstone ist eine israelisch-amerikanische Elektro-Rockgruppe und ein YouTube-Kanal. Bekannt ist sie für Songs zu Videospielen und Popkultur sowie für eigene Musik.",
+        "facts": [
+          "2016 wurde sie zu einem Duo mit dem amerikanischen Sänger Sam Haft.",
+          "Bei Warner Music unter Vertrag, haben sie die Studioalben Zero One (2020) und Rust (2025) veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "israilli-amerikalı elektronik rock grubu · 2011",
+        "who": "The Living Tombstone, İsrail-Amerikan bir elektronik rock grubu ve YouTube kanalıdır. Video oyunları ve pop kültürü temalı şarkılarıyla, bir de özgün müzikleriyle tanınır.",
+        "facts": [
+          "2016'da Amerikalı şarkıcı Sam Haft ile müzikal bir ikiliye dönüştüler.",
+          "Warner Music ile anlaşan grup, Zero One (2020) ve Rust (2025) albümlerini çıkardı."
+        ]
+      }
+    }
+  ]
+}

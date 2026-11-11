@@ -1,0 +1,38 @@
+{
+  "city": "austin",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "33587b5a-9aa9-4937-b6a2-e5720235de12",
+      "slug": "the-afghan-whigs-2bd910ef",
+      "title": "The Afghan Whigs",
+      "name": "The Afghan Whigs",
+      "source_url": "https://en.wikipedia.org/wiki/The_Afghan_Whigs",
+      "extract": "The Afghan Whigs are an American rock band from Cincinnati, Ohio. They were active from 1986 to 2001, reformed briefly in 2006 and again from 2011 to present.",
+      "en": {
+        "kicker": "american rock band · cincinnati, 1986",
+        "who": "The Afghan Whigs are an American rock band from Cincinnati, Ohio. They were active from 1986 to 2001 and reformed in 2006 and again from 2011.",
+        "facts": [
+          "The Afghan Whigs are an American rock band from Cincinnati, Ohio.",
+          "They were active from 1986 to 2001, reformed briefly in 2006 and again from 2011 to present."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanische rockband · cincinnati, 1986",
+        "who": "The Afghan Whigs sind eine amerikanische Rockband aus Cincinnati, Ohio. Sie waren von 1986 bis 2001 aktiv und formierten sich 2006 kurz sowie ab 2011 erneut.",
+        "facts": [
+          "Die Band stammt aus Cincinnati, Ohio.",
+          "Sie war von 1986 bis 2001 aktiv, formierte sich 2006 kurz und ab 2011 erneut."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rock grubu · cincinnati, 1986",
+        "who": "The Afghan Whigs, Ohio'nun Cincinnati kentinden bir Amerikan rock grubudur. 1986 ile 2001 arasında aktifti; 2006'da kısa süreliğine ve 2011'den itibaren yeniden birlikte.",
+        "facts": [
+          "Grup Cincinnati, Ohio'dan geliyor.",
+          "1986'dan 2001'e kadar aktifti; 2006'da kısa süreliğine, 2011'den itibaren yeniden birlikte."
+        ]
+      }
+    }
+  ]
+}

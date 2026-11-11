@@ -1,0 +1,38 @@
+{
+  "city": "los-angeles",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "62c5233e-f270-44b0-bb11-c3b6898f9a34",
+      "slug": "cortex-3cbe63d8",
+      "title": "cortex",
+      "name": "Cortex",
+      "source_url": "https://en.wikipedia.org/wiki/Cortex_(band)",
+      "extract": "Cortex is a French jazz funk band formed by band leader Alain Mion in 1974. Cortex is known for polyrhythmic instrumentals and funk, bossa nova, samba-jazz, and psychedelic rock grooves, mixed with atmospheric vocals, inspired by 1970s American funk and jazz. Cortex broke up in 1981, but reformed in 2009 with a rotating group of members. Hip hop samples of Cortex songs in tracks from artists including MF Doom, Madlib, Tyler, the Creator, Kanye West, Flying Lotus, Lupe Fiasco, and Suicideboys have brought newfound interest to the band starting in the early 2000s.",
+      "en": {
+        "kicker": "french jazz funk band · 1974",
+        "who": "Cortex is a French jazz funk band formed by band leader Alain Mion in 1974. It is known for polyrhythmic instrumentals and funk grooves.",
+        "facts": [
+          "Cortex was formed by band leader Alain Mion in 1974.",
+          "Cortex broke up in 1981, but reformed in 2009 with a rotating group of members."
+        ]
+      },
+      "de": {
+        "kicker": "französische jazz-funk-band · 1974",
+        "who": "Cortex ist eine französische Jazz-Funk-Band, die 1974 von Bandleader Alain Mion gegründet wurde. Bekannt ist sie für polyrhythmische Instrumentals und Funk-Grooves.",
+        "facts": [
+          "Die Band wurde 1974 von Bandleader Alain Mion gegründet.",
+          "Cortex löste sich 1981 auf und formierte sich 2009 mit wechselnder Besetzung neu."
+        ]
+      },
+      "tr": {
+        "kicker": "fransız caz funk grubu · 1974",
+        "who": "Cortex, 1974'te grup lideri Alain Mion tarafından kurulan bir Fransız caz funk grubudur. Polirritmik enstrümantal parçalarıyla tanınır.",
+        "facts": [
+          "Grup 1974'te grup lideri Alain Mion tarafından kuruldu.",
+          "1981'de dağılan Cortex, 2009'da değişen üyelerle yeniden kuruldu."
+        ]
+      }
+    }
+  ]
+}

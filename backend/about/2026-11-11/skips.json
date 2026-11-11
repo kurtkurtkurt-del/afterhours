@@ -1224,6 +1224,102 @@
    "slug": "das-lumpenpack-2afff7d9",
    "city": "zurich",
    "why": "no page"
+  },
+  {
+   "id": "28dc4d85-1c34-4bac-83e0-a766adf72df6",
+   "slug": "ayta-sozeri-cd1117f0",
+   "city": "ankara",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "b8e2262e-c53d-41b1-8b39-2f3ef7f07d6f",
+   "slug": "david-garrett-immortal-classic-tour-2027-3ee7890d",
+   "city": "basel",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "604b0f17-b183-4d30-a66b-733e1a1fdda7",
+   "slug": "horsegiirl-nature-is-healing-tour-dfa24f6b",
+   "city": "berlin",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "5fdfe029-5b56-4f9d-81ac-b5e51668a6f4",
+   "slug": "danny-brown-4989c7ea",
+   "city": "chicago",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "fe42eb42-bb98-4a51-acc9-90b6b5cfa744",
+   "slug": "almost-monday-thank-god-it-s-almost-monday-793a05fc",
+   "city": "chicago",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "5e158d87-de8a-4562-a0e4-7f5190a0a8cf",
+   "slug": "mixtape-06c7da51",
+   "city": "istanbul",
+   "why": "not a music act: a generic term (mixtape), not an act"
+  },
+  {
+   "id": "dfc0f568-6e6c-4fdd-98aa-a79ba2dfa877",
+   "slug": "bulent-ortacgil-birsen-tezer-a299c207",
+   "city": "istanbul",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "30581044-03ed-4846-a8d9-4d52950f83da",
+   "slug": "skye-newman-be8d0c0d",
+   "city": "manchester",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "1f738b3a-6657-40e0-8750-be1232ee7b21",
+   "slug": "the-rifles-e230b65c",
+   "city": "manchester",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "b62e549c-3bae-4cd2-a4aa-2f4c772b56bc",
+   "slug": "sadurn-969508ef",
+   "city": "montreal",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "efd20a35-e854-4f67-9ce2-99791887a58a",
+   "slug": "hiss-golden-messenger-i-m-people-tour-w-sam-amid-cd7c1870",
+   "city": "nashville",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "acad8d66-f580-417f-a264-247b5e5e2790",
+   "slug": "cory-branan-1bdf8828",
+   "city": "new-orleans",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "f071b627-3f37-46ce-aed5-b5f63bc23818",
+   "slug": "q-marsden-7e407177",
+   "city": "new-york",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "99ffbab3-2e8f-4fd4-8927-9a5a01fd8c95",
+   "slug": "sadurn-1d858b9b",
+   "city": "toronto",
+   "why": "extract too thin: one sentence"
+  },
+  {
+   "id": "f74c3aa3-843a-4be0-a465-4562573c6085",
+   "slug": "strangelove-the-depeche-mode-experience-e821b693",
+   "city": "warszawa",
+   "why": "not the act: a tribute show (Depeche Mode experience), not the band Strangelove"
+  },
+  {
+   "id": "71b0cc80-7b07-4d3f-b93b-ed32442d914d",
+   "slug": "ikkimel-842679f4",
+   "city": "zurich",
+   "why": "extract too thin: one sentence"
   }
  ]
 }

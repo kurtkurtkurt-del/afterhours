@@ -1,0 +1,38 @@
+{
+  "city": "madrid",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "509bb3e5-4b49-43c9-bbbc-d6c2cf080100",
+      "slug": "yandel-b60006b8",
+      "title": "Yandel",
+      "name": "Yandel",
+      "source_url": "https://en.wikipedia.org/wiki/Yandel",
+      "extract": "Llandel Veguilla Malavé, best known by his stage name Yandel, is a Puerto Rican singer who is a member of the reggaeton duo Wisin & Yandel. He released his first solo album, Quien Contra Mí, in 2003. His second solo studio album, De Líder a Leyenda, was released in 2013 and was certified Gold (Latin) by the RIAA in 2014.",
+      "en": {
+        "kicker": "puerto rican singer · wisin & yandel",
+        "who": "Yandel is the stage name of Llandel Veguilla Malavé, a Puerto Rican singer and member of the reggaeton duo Wisin & Yandel.",
+        "facts": [
+          "He released his first solo album, Quien Contra Mí, in 2003.",
+          "His second solo studio album, De Líder a Leyenda, was released in 2013 and certified Gold (Latin) by the RIAA in 2014."
+        ]
+      },
+      "de": {
+        "kicker": "puertoricanischer sänger · wisin & yandel",
+        "who": "Yandel ist das Künstlerpseudonym von Llandel Veguilla Malavé, einem puertoricanischen Sänger und Mitglied des Reggaeton-Duos Wisin & Yandel.",
+        "facts": [
+          "Sein erstes Soloalbum Quien Contra Mí erschien 2003.",
+          "Sein zweites Soloalbum De Líder a Leyenda erschien 2013 und wurde 2014 von der RIAA in Gold (Latin) ausgezeichnet."
+        ]
+      },
+      "tr": {
+        "kicker": "portorikolu şarkıcı · wisin & yandel",
+        "who": "Yandel, Llandel Veguilla Malavé'nin sahne adıdır; Portorikolu bir şarkıcı ve reggaeton ikilisi Wisin & Yandel'in üyesidir.",
+        "facts": [
+          "İlk solo albümü Quien Contra Mí 2003'te çıktı.",
+          "İkinci solo stüdyo albümü De Líder a Leyenda 2013'te çıktı ve 2014'te RIAA tarafından Gold (Latin) sertifikası aldı."
+        ]
+      }
+    }
+  ]
+}

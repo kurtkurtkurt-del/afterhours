@@ -1,0 +1,70 @@
+{
+  "city": "zurich",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "31784310-55db-4886-9330-c1820e4a57f4",
+      "slug": "swae-lee-d4e61540",
+      "title": "Swae Lee",
+      "name": "Swae Lee",
+      "source_url": "https://en.wikipedia.org/wiki/Swae_Lee",
+      "extract": "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California. Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi.",
+      "en": {
+        "kicker": "american rapper and singer · inglewood, california",
+        "who": "Swae Lee is an American rapper and singer from Inglewood, California. Known for wide-ranged, reverb-heavy vocals, he is one half of the hip-hop duo Rae Sremmurd.",
+        "facts": [
+          "Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd.",
+          "He formed Rae Sremmurd in 2010 with his older brother Slim Jxmmi."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und sänger · inglewood, kalifornien",
+        "who": "Swae Lee ist ein amerikanischer Rapper und Sänger aus Inglewood, Kalifornien. Bekannt ist er für seine weiten, hallschweren Vocals; er ist die eine Hälfte des Hip-Hop-Duos Rae Sremmurd.",
+        "facts": [
+          "Lee ist die eine Hälfte des in Mississippi ansässigen Hip-Hop-Duos Rae Sremmurd.",
+          "Er gründete Rae Sremmurd 2010 zusammen mit seinem älteren Bruder Slim Jxmmi."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve şarkıcı · inglewood, california",
+        "who": "Swae Lee, Kaliforniya'nın Inglewood kentinden Amerikalı bir rapçi ve şarkıcıdır. Geniş vokal aralığı ve yankı ağırlıklı sesiyle tanınır; Mississippi merkezli hip-hop ikilisi Rae Sremmurd'ın bir yarısıdır.",
+        "facts": [
+          "Mississippi merkezli hip-hop ikilisi Rae Sremmurd'ın bir üyesidir.",
+          "Rae Sremmurd'ı 2010'da ağabeyi Slim Jxmmi ile kurdu."
+        ]
+      }
+    },
+    {
+      "id": "3b2b54e8-620b-4ec5-9deb-d59de7c195f7",
+      "slug": "everlast-8f420e4f",
+      "title": "Everlast",
+      "name": "Everlast",
+      "source_url": "https://en.wikipedia.org/wiki/Everlast",
+      "extract": "Erik Francis Schrody, known by his stage names Everlast and Whitey Ford, is an American rapper, singer, and songwriter who was the frontman for hip-hop group House of Pain. His breakthrough as a solo artist came in 1998 with his album Whitey Ford Sings the Blues, which blended rock and hip-hop and garnered him his first Grammy Award nomination for the song \"What It's Like\". The album peaked at number 9 on the Billboard 200 album chart, while the single peaked at number 13 on the Billboard Hot 100 singles chart. As of 2023, they remain his highest mainstream chart positions for an album and single respectively.",
+      "en": {
+        "kicker": "american rapper and singer · house of pain",
+        "who": "Everlast, also known as Whitey Ford, is an American rapper, singer and songwriter. He was the frontman for the hip-hop group House of Pain.",
+        "facts": [
+          "His breakthrough as a solo artist came in 1998 with his album Whitey Ford Sings the Blues.",
+          "The album peaked at number 9 on the Billboard 200 album chart."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer rapper und sänger · house of pain",
+        "who": "Everlast, mit bürgerlichem Namen Erik Francis Schrody, ist ein amerikanischer Rapper, Sänger und Songwriter. Er war Frontmann der Hip-Hop-Gruppe House of Pain.",
+        "facts": [
+          "Sein Solo-Durchbruch kam 1998 mit dem Album Whitey Ford Sings the Blues.",
+          "Das Album erreichte Platz 9 der Billboard 200."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı rapçi ve şarkıcı · house of pain",
+        "who": "Everlast, asıl adı Erik Francis Schrody olan Amerikalı bir rapçi, şarkıcı ve söz yazarıdır. Hip-hop grubu House of Pain'in ön cephesinde yer aldı.",
+        "facts": [
+          "Solo kariyerindeki çıkışı 1998'de Whitey Ford Sings the Blues albümüyle geldi.",
+          "Bu albüm Billboard 200 listesinde dokuzuncu sıraya yükseldi."
+        ]
+      }
+    }
+  ]
+}

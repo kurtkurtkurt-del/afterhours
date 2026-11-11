@@ -1,0 +1,70 @@
+{
+  "city": "glasgow",
+  "day": "2026-11-11",
+  "nights": [
+    {
+      "id": "f41e59fb-92c3-4d06-8c13-9982d9a03571",
+      "slug": "chasing-abbey-c2663e25",
+      "title": "Chasing Abbey",
+      "name": "Chasing Abbey",
+      "source_url": "https://en.wikipedia.org/wiki/Chasing_Abbey",
+      "extract": "Chasing Abbey are an Irish music group combining electronic production with influences from traditional Irish music. They formed in Tullamore, Ireland, in 2016 and the group consists of members Ronan Bell, Jonathan Byrne and Ted Conway. The trio first gained attention with their debut single \"That Good Thing\" in 2017, securing the band a record deal with 3 Beat UK and Universal Music Group. Their next EP, The Oddessy Project, debuted at number one on the Irish Music Charts in 2019. Following the release of their song \"Oh My Johnny\" in 2023, Chasing Abbey signed a record deal with Warner and dance label Spinnin' Records. Their debut album, Cyber Celt, was released on 18th September 2026.",
+      "en": {
+        "kicker": "irish music group · tullamore, 2016",
+        "who": "Chasing Abbey are an Irish music group combining electronic production with influences from traditional Irish music. The trio of Ronan Bell, Jonathan Byrne and Ted Conway formed in 2016.",
+        "facts": [
+          "They formed in Tullamore, Ireland, in 2016.",
+          "Their debut album, Cyber Celt, was released on 18th September 2026."
+        ]
+      },
+      "de": {
+        "kicker": "irische musikgruppe · tullamore, 2016",
+        "who": "Chasing Abbey sind eine irische Musikgruppe, die elektronische Produktion mit Einflüssen traditioneller irischer Musik verbindet. Das Trio aus Ronan Bell, Jonathan Byrne und Ted Conway gründete sich 2016.",
+        "facts": [
+          "Die Band gründete sich 2016 in Tullamore, Irland.",
+          "Ihr Debütalbum Cyber Celt erschien am 18. September 2026."
+        ]
+      },
+      "tr": {
+        "kicker": "irlandalı müzik grubu · tullamore, 2016",
+        "who": "Chasing Abbey, elektronik prodüksiyonu geleneksel İrlanda müziğinin etkileriyle birleştiren İrlandalı bir müzik grubudur. Üç kişilik grup Ronan Bell, Jonathan Byrne ve Ted Conway'den oluşur.",
+        "facts": [
+          "Grup 2016'da İrlanda'nın Tullamore kentinde kuruldu.",
+          "Debut albümleri Cyber Celt, 18 Eylül 2026'da yayımlandı."
+        ]
+      }
+    },
+    {
+      "id": "5d8c3e33-c627-40b8-b920-7f501fe6974d",
+      "slug": "brian-fallon-cff10637",
+      "title": "Brian Fallon",
+      "name": "Brian Fallon",
+      "source_url": "https://en.wikipedia.org/wiki/Brian_Fallon",
+      "extract": "Brian Michael Fallon is an American musician, singer and songwriter. He is best known as the lead vocalist, rhythm guitarist, and main lyricist of the rock band the Gaslight Anthem, with whom he has recorded six studio albums. He was also a member of the duo the Horrible Crowes, alongside the Gaslight Anthem's guitar technician and touring guitarist Ian Perkins. Since 2016, Fallon has released five solo albums and one EP.",
+      "en": {
+        "kicker": "american musician · the gaslight anthem",
+        "who": "Brian Fallon is an American musician, singer and songwriter. He is best known as the lead vocalist and main lyricist of the rock band the Gaslight Anthem.",
+        "facts": [
+          "He has recorded six studio albums with the Gaslight Anthem.",
+          "Since 2016, Fallon has released five solo albums and one EP."
+        ]
+      },
+      "de": {
+        "kicker": "amerikanischer musiker · the gaslight anthem",
+        "who": "Brian Fallon ist ein amerikanischer Musiker, Sänger und Songwriter. Am bekanntesten ist er als Leadsänger und Haupttexter der Rockband The Gaslight Anthem.",
+        "facts": [
+          "Mit The Gaslight Anthem hat er sechs Studioalben aufgenommen.",
+          "Seit 2016 hat Fallon fünf Soloalben und eine EP veröffentlicht."
+        ]
+      },
+      "tr": {
+        "kicker": "amerikalı müzisyen · the gaslight anthem",
+        "who": "Brian Fallon, Amerikalı bir müzisyen, şarkıcı ve söz yazarıdır. En çok rock grubu The Gaslight Anthem'ın baş vokalisti ve ana söz yazarı olarak tanınır.",
+        "facts": [
+          "The Gaslight Anthem ile altı stüdyo albümü kaydetti.",
+          "2016'dan beri beş solo albüm ve bir EP yayımladı."
+        ]
+      }
+    }
+  ]
+}
