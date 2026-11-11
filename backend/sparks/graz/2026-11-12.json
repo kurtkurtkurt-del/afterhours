@@ -1,0 +1,27 @@
+{
+  "city": "graz",
+  "day": "2026-11-12",
+  "sparks": [
+    {
+      "kind": "cinema",
+      "title": {
+        "en": "e.t. at the halle für kunst, free entry.",
+        "de": "e.t. in der halle für kunst, eintritt frei.",
+        "tr": "halle für kunst'ta e.t., giriş ücretsiz."
+      },
+      "line": {
+        "en": "steven spielberg's e.t. as a free screening at 18:00, no booking needed. the hall is at burgring 2.",
+        "de": "steven spielbergs e.t. als freie vorführung um 18:00 uhr, keine anmeldung nötig. die halle ist am burgring 2.",
+        "tr": "steven spielberg'in e.t. filmi 18:00'de ücretsiz gösterimde, rezervasyon gerekmiyor. salon burgring 2'de."
+      },
+      "place": {
+        "en": "halle für kunst steiermark",
+        "de": "halle für kunst steiermark",
+        "tr": "halle für kunst steiermark"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "E.T. screening at the Halle für Kunst Steiermark on 12 Nov 18:00, free and without registration, per graz.net event listing (graz.net/et-filmscreening-halle-fuer-kunst-graz-2026-40057/)."
+    }
+  ]
+}
