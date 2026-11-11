@@ -1,0 +1,27 @@
+{
+  "city": "salzburg",
+  "day": "2026-11-12",
+  "sparks": [
+    {
+      "kind": "newplace",
+      "title": {
+        "en": "le burger opens its first salzburg store at the europark.",
+        "de": "le burger eröffnet erste salzburger filiale im europark.",
+        "tr": "le burger salzburg'daki ilk şubesini europark'ta açıyor."
+      },
+      "line": {
+        "en": "the vienna burger chain opens at 11:11 in the europark food court. the first 111 guests get a 20 euro voucher.",
+        "de": "die wiener burgerkette öffnet um 11:11 uhr im foodcourt des europark. die ersten 111 gäste bekommen einen gutschein über 20 euro.",
+        "tr": "viyana'nın burger zinciri saat 11:11'de europark'ın yemek alanında açılıyor. ilk 111 misafir 20 euroluk bir hediye çeki alıyor."
+      },
+      "place": {
+        "en": "le burger europark",
+        "de": "le burger europark",
+        "tr": "le burger europark"
+      },
+      "hour": 11,
+      "minute": 11,
+      "why": "Le Burger opens its first Salzburg site at EUROPARK on Thu 12 Nov 2026 at 11:11, first 111 guests get a EUR 20 voucher (weekend.at; salzburg24.at)."
+    }
+  ]
+}

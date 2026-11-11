@@ -1,0 +1,14 @@
+{
+  "city": "salzburg",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "night antique and flea market at the messezentrum.", "de": "nacht-, antik- und trödelmarkt im messezentrum.", "tr": "messezentrum'da gece antika ve pire pazarı." },
+      "line": { "en": "antiques, collectibles and odd finds in hall 4, open 16:00 to 22:00. a good early evening without a plan.", "de": "antiquitäten, sammlerstücke und kuriositäten in halle 4, offen von 16 bis 22 uhr. ein guter abend ohne plan.", "tr": "4 numaralı salonda antika, koleksiyon parçaları ve tuhaf buluntular var, 16:00 ile 22:00 arası açık. planı olmayan bir akşam için iyi." },
+      "place": { "en": "messezentrum salzburg, halle 4", "de": "messezentrum salzburg, halle 4", "tr": "messezentrum salzburg, halle 4" },
+      "hour": 16, "minute": 0,
+      "why": "Nacht-, Antik- und Trödelmarkt, Sat 14 Nov 2026, 16:00 to 22:00, Messezentrum Halle 4 (salzburg.info event calendar)."
+    }
+  ]
+}

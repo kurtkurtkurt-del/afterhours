@@ -1,0 +1,27 @@
+{
+  "city": "salzburg",
+  "day": "2026-11-19",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "salzburg christkindlmarkt opens at dom and residenzplatz.",
+        "de": "christkindlmarkt öffnet am dom und residenzplatz.",
+        "tr": "salzburg christkindlmarkt dom ve residenzplatz'ta açılıyor."
+      },
+      "line": {
+        "en": "the market runs until 1 january 2027 across the domplatz, the residenzplatz and part of the kapitelplatz. the first day starts at 10:00.",
+        "de": "der markt läuft bis 1. jänner 2027 über den domplatz, den residenzplatz und einen teil des kapitelplatzes. der erste tag beginnt um 10 uhr.",
+        "tr": "pazar 1 ocak 2027'ye kadar domplatz, residenzplatz ve kapitelplatz'ın bir kısmında sürüyor. ilk gün saat 10:00'da başlıyor."
+      },
+      "place": {
+        "en": "domplatz / residenzplatz",
+        "de": "domplatz / residenzplatz",
+        "tr": "domplatz / residenzplatz"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Salzburger Christkindlmarkt opens Thu 19 Nov 2026, 10:00 per salzburg.info listing; news.at gives the run to 1 Jan 2027. The opening ceremony time is not confirmed."
+    }
+  ]
+}

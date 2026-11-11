@@ -1,0 +1,14 @@
+{
+  "city": "salzburg",
+  "day": "2026-11-18",
+  "sparks": [
+    {
+      "kind": "openmic",
+      "title": { "en": "open session after yoram rosilio at the jazzit.", "de": "open session nach yoram rosilio im jazzit.", "tr": "jazzit'te yoram rosilio'dan sonra açık oturum." },
+      "line": { "en": "the nim & hear night opens with a concert, then an open session for beginners and experienced players alike. start 20:00.", "de": "der abend mit nim & hear beginnt mit einem konzert, danach eine offene session für einsteiger und erfahrene spielerinnen und spieler. beginn 20 uhr.", "tr": "nim & hear gecesi bir konserle başlıyor, ardından hem yeni başlayanlar hem deneyimli müzisyenler için açık oturum geliyor. başlangıç 20:00." },
+      "place": { "en": "jazzit musik club", "de": "jazzit musik club", "tr": "jazzit musik club" },
+      "hour": 20, "minute": 0,
+      "why": "NiM & Hear: Yoram Rosilio at Jazzit Musik Club, Wed 18 Nov 2026 20:00, concert followed by an open session (salzburg.info event calendar)."
+    }
+  ]
+}

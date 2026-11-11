@@ -1,0 +1,27 @@
+{
+  "city": "salzburg",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": {
+        "en": "family tour prunk und backwerk on hohensalzburg.",
+        "de": "familienführung prunk und backwerk auf hohensalzburg.",
+        "tr": "hohensalzburg'da prunk und backwerk aile turu."
+      },
+      "line": {
+        "en": "a german guided tour of about 60 minutes through the rooms where the banquet food was prepared and stored, then the princely chambers. meet at the infopoint.",
+        "de": "eine etwa 60-minütige führung auf deutsch durch die räume, in denen das festmahl vorbereitet und gelagert wurde, danach die fürstenzimmer. treffpunkt infopoint.",
+        "tr": "yaklaşık 60 dakikalık almanca rehberli tur, ziyafet yemeklerinin hazırlanıp saklandığı odalardan prens dairelerine. buluşma noktası infopoint."
+      },
+      "place": {
+        "en": "festung hohensalzburg",
+        "de": "festung hohensalzburg",
+        "tr": "festung hohensalzburg"
+      },
+      "hour": 10,
+      "minute": 30,
+      "why": "Familienführung Prunk und Backwerk, Sun 15 Nov 2026 10:30, Festung Hohensalzburg, German-language tour, per the salzburg.info listing."
+    }
+  ]
+}
