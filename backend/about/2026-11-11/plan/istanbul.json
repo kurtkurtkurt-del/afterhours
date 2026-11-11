@@ -1,0 +1,36 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "5e158d87-de8a-4562-a0e4-7f5190a0a8cf",
+   "slug": "mixtape-06c7da51",
+   "title": "Mixtape",
+   "act": "Mixtape",
+   "name": "Mixtape",
+   "description": "Musical project",
+   "source_url": "https://en.wikipedia.org/wiki/Mixtape",
+   "extract": "In the modern music industry, a mixtape is a musical project, typically with looser constraints than that of an album or extended play. Unlike the traditional album or extended play, mixtapes are more casual or informal projects that allow artists more creative freedom and less commercial pressure. The term has significantly increased in popularity over the years due to high-profile artists marketing their projects as such."
+  },
+  {
+   "id": "dfc0f568-6e6c-4fdd-98aa-a79ba2dfa877",
+   "slug": "bulent-ortacgil-birsen-tezer-a299c207",
+   "title": "Bülent Ortaçgil - Birsen Tezer",
+   "act": "Bülent Ortaçgil",
+   "name": "Bülent Ortaçgil",
+   "description": "Turkish composer and singer (born 1950)",
+   "source_url": "https://en.wikipedia.org/wiki/B%C3%BClent_Orta%C3%A7gil",
+   "extract": "Bülent Ortaçgil is a Turkish composer and singer."
+  },
+  {
+   "id": "6a1b33c0-c458-430a-85bd-dc00e5c05753",
+   "slug": "baba-zula-7f087d2a",
+   "title": "Baba Zula",
+   "act": "Baba Zula",
+   "name": "Baba Zula",
+   "description": "Turkish musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Baba_Zula",
+   "extract": "Baba Zula is a Turkish alternative musical group, founded in Istanbul in 1996. With a wide variety of influences and a wide range of instruments, they create a unique psychedelic sound."
+  }
+ ]
+}

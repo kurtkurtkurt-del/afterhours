@@ -1,0 +1,26 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "f41e59fb-92c3-4d06-8c13-9982d9a03571",
+   "slug": "chasing-abbey-c2663e25",
+   "title": "Chasing Abbey",
+   "act": "Chasing Abbey",
+   "name": "Chasing Abbey",
+   "description": "Irish pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Chasing_Abbey",
+   "extract": "Chasing Abbey are an Irish music group combining electronic production with influences from traditional Irish music. They formed in Tullamore, Ireland, in 2016 and the group consists of members Ronan Bell, Jonathan Byrne and Ted Conway. The trio first gained attention with their debut single \"That Good Thing\" in 2017, securing the band a record deal with 3 Beat UK and Universal Music Group. Their next EP, The Oddessy Project, debuted at number one on the Irish Music Charts in 2019. Following the release of their song \"Oh My Johnny\" in 2023, Chasing Abbey signed a record deal with Warner and dance label Spinnin' Records. Their debut album, Cyber Celt, was released on 18th September 2026."
+  },
+  {
+   "id": "5d8c3e33-c627-40b8-b920-7f501fe6974d",
+   "slug": "brian-fallon-cff10637",
+   "title": "Brian Fallon",
+   "act": "Brian Fallon",
+   "name": "Brian Fallon",
+   "description": "American musician (born 1980)",
+   "source_url": "https://en.wikipedia.org/wiki/Brian_Fallon",
+   "extract": "Brian Michael Fallon is an American musician, singer and songwriter. He is best known as the lead vocalist, rhythm guitarist, and main lyricist of the rock band the Gaslight Anthem, with whom he has recorded six studio albums. He was also a member of the duo the Horrible Crowes, alongside the Gaslight Anthem's guitar technician and touring guitarist Ian Perkins. Since 2016, Fallon has released five solo albums and one EP."
+  }
+ ]
+}

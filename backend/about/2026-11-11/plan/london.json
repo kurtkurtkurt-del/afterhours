@@ -1,0 +1,16 @@
+{
+ "city": "london",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "a3e43012-5991-489b-b440-0c59a665538d",
+   "slug": "poison-ruin-5060bd9f",
+   "title": "Poison Ruin",
+   "act": "Poison Ruin",
+   "name": "Poison Ruïn",
+   "description": "American heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Poison_Ru%C3%AFn",
+   "extract": "Poison Ruïn is an American punk/heavy metal band from Philadelphia, Pennsylvania. The band consists of singer/guitarist/keyboardist Mac Kennedy, guitarist Nao Demand, bassist Will McAndrew, and drummer Allen Chapman. Their most recent album Hymns from the Hills was released in April 2026. The band's music has been described as \"dark age punk\" and \"medieval-minded metallic punk,\" with a \"doomy, dungeon-crawler aesthetic that summons the drab hues and existential dread of the dark ages\""
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "austin",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "33587b5a-9aa9-4937-b6a2-e5720235de12",
+   "slug": "the-afghan-whigs-2bd910ef",
+   "title": "The Afghan Whigs",
+   "act": "The Afghan Whigs",
+   "name": "The Afghan Whigs",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Afghan_Whigs",
+   "extract": "The Afghan Whigs are an American rock band from Cincinnati, Ohio. They were active from 1986 to 2001, reformed briefly in 2006 and again from 2011 to present."
+  }
+ ]
+}

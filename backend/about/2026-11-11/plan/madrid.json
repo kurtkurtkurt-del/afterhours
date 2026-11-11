@@ -1,0 +1,16 @@
+{
+ "city": "madrid",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "509bb3e5-4b49-43c9-bbbc-d6c2cf080100",
+   "slug": "yandel-b60006b8",
+   "title": "Yandel",
+   "act": "Yandel",
+   "name": "Yandel",
+   "description": "Puerto Rican singer (born 1977)",
+   "source_url": "https://en.wikipedia.org/wiki/Yandel",
+   "extract": "Llandel Veguilla Malavé, best known by his stage name Yandel, is a Puerto Rican singer who is a member of the reggaeton duo Wisin & Yandel. He released his first solo album, Quien Contra Mí, in 2003. His second solo studio album, De Líder a Leyenda, was released in 2013 and was certified Gold (Latin) by the RIAA in 2014."
+  }
+ ]
+}

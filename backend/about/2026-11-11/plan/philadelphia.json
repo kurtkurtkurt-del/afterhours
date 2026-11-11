@@ -1,0 +1,16 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "d7eb3a15-7caf-4d09-8250-3956964a3394",
+   "slug": "imminence-axis-mundi-tour-north-america-2026-7eb3f613",
+   "title": "Imminence - Axis Mundi Tour: North America 2026",
+   "act": "Imminence",
+   "name": "Imminence",
+   "description": "Swedish metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Imminence_(band)",
+   "extract": "Imminence is a Swedish metalcore band formed in Trelleborg. The group consists of vocalist Eddie Berg, rhythm guitarist Harald Barrett, lead guitarist Alex Arnoldsson, and bassist Christian Höijer."
+  }
+ ]
+}

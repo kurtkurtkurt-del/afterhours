@@ -1,0 +1,26 @@
+{
+ "city": "new-orleans",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "acad8d66-f580-417f-a264-247b5e5e2790",
+   "slug": "cory-branan-1bdf8828",
+   "title": "Cory Branan",
+   "act": "Cory Branan",
+   "name": "Cory Branan",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Cory_Branan",
+   "extract": "Cory Dale Branan is an American singer-songwriter from Mississippi."
+  },
+  {
+   "id": "d2264055-c64a-47c7-b47c-d2f80d5529ea",
+   "slug": "fruit-bats-efcdc8ef",
+   "title": "Fruit Bats",
+   "act": "Fruit Bats",
+   "name": "Fruit Bats",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Fruit_Bats_(band)",
+   "extract": "Fruit Bats is an American indie rock band formed in 1997 in Chicago, Illinois, as the project of singer and songwriter Eric D. Johnson. Johnson is the band's sole permanent member, with various musicians joining the band in live and studio settings."
+  }
+ ]
+}

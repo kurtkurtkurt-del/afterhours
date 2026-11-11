@@ -1,0 +1,16 @@
+{
+ "city": "nashville",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "efd20a35-e854-4f67-9ce2-99791887a58a",
+   "slug": "hiss-golden-messenger-i-m-people-tour-w-sam-amid-cd7c1870",
+   "title": "Hiss Golden Messenger - I'm People Tour w/ Sam Amidon",
+   "act": "Hiss Golden Messenger",
+   "name": "Hiss Golden Messenger",
+   "description": "American folk band",
+   "source_url": "https://en.wikipedia.org/wiki/Hiss_Golden_Messenger",
+   "extract": "Hiss Golden Messenger is an American folk band originating from Durham, North Carolina, formed in 2007 and led by singer and songwriter M.C. Taylor."
+  }
+ ]
+}

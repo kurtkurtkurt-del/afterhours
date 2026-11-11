@@ -1,0 +1,36 @@
+{
+ "city": "boston",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "3bbff973-4cf3-4128-872a-d291d30b4ecc",
+   "slug": "patrick-wolf-11ba05b0",
+   "title": "Patrick Wolf",
+   "act": "Patrick Wolf",
+   "name": "Patrick Wolf",
+   "description": "English singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Patrick_Wolf",
+   "extract": "Patrick Wolf is an English singer-songwriter from South London. Wolf uses a wide variety of instruments in his music, most commonly the ukulele, piano, and viola. He is known for combining electronic sampling with classical instruments. Wolf's styles range from electronic pop to Baroque chamber music. He has been making music since around 2002."
+  },
+  {
+   "id": "1d41a235-7b60-4b9d-be85-d417cc9bdee2",
+   "slug": "frost-children-71562fa3",
+   "title": "Frost Children",
+   "act": "Frost Children",
+   "name": "Frost Children",
+   "description": "American hyperpop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Frost_Children",
+   "extract": "Frost Children is an American pop duo from St. Louis, Missouri, now residing in New York City. The duo consists of siblings Angel and Lulu Prost."
+  },
+  {
+   "id": "e6928170-cd4f-4059-91bb-6fcb699505cd",
+   "slug": "trippie-redd-the-non-disclosure-agreement-tour-2bd5ab3d",
+   "title": "Trippie Redd - The Non-disclosure Agreement Tour",
+   "act": "Trippie Redd",
+   "name": "Trippie Redd",
+   "description": "American rapper (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Trippie_Redd",
+   "extract": "Michael Lamar White II, known professionally as Trippie Redd, is an American rapper, singer, and songwriter. Born and raised in Canton, Ohio, he has contributed to the progression of emo rap and rage, a subgenre of trap music."
+  }
+ ]
+}

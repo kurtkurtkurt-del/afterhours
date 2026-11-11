@@ -1,0 +1,26 @@
+{
+ "city": "seattle",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "2309dc77-d652-4cca-b0d3-46af780049b4",
+   "slug": "olivia-o-brien-be90159a",
+   "title": "Olivia O'Brien",
+   "act": "Olivia O'Brien",
+   "name": "Olivia O'Brien",
+   "description": "American singer-songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Olivia_O'Brien",
+   "extract": "Olivia Gail O'Brien is an American singer-songwriter. She is best known for her guest appearance on Gnash's 2016 single \"I Hate U, I Love U\", which peaked at number 10 on the Billboard Hot 100. Its success led her to sign with Island Records; the label released two extended plays, three mixtapes, and her debut studio album Was It Even Real? (2019). In 2024, she formed the independent label Girlhood Records and released the EPs Love & Limerence and Everywhere I Go, There I Am. O'Brien signed with Gamma for the release of her second studio album Pixie (2026)."
+  },
+  {
+   "id": "e4bc71ff-8d3c-4571-b92b-441674c5ae26",
+   "slug": "dev-lemons-b66b870c",
+   "title": "Dev Lemons",
+   "act": "Dev Lemons",
+   "name": "Dev Lemons",
+   "description": "American singer-songwriter and record producer (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Dev_Lemons",
+   "extract": "Devon Vonder Schmalz, also known as Dev Lemons, is an American singer-songwriter, record producer, and YouTuber. She initially gained popularity by making music theory videos as SongPsych on TikTok and YouTube and through her personal YouTube channel, Dev Limes. She has released two studio albums, Surface Tension in 2025, and Hunting What We Already Killed in 2026."
+  }
+ ]
+}

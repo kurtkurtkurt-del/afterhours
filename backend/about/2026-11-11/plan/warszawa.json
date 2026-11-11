@@ -1,0 +1,26 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "c06efcc1-5bd1-4732-8c39-e3e8b3d9dadf",
+   "slug": "tiffany-day-halo-tour-europe-bcfd5882",
+   "title": "Tiffany Day - HALO TOUR EUROPE",
+   "act": "Tiffany Day",
+   "name": "Tiffany Day",
+   "description": "American singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Tiffany_Day_(musician)",
+   "extract": "Tiffany Day Ruan, is a Canadian-American singer, songwriter, and record producer. Raised in Wichita, Kansas, she began independently releasing music after a 2017 video of her singing into a well in Italy went viral on Twitter. She released her debut studio album, Lover Tofu Fruit, in 2024. She signed to Broke Records the following year, through which she released her second studio album, Halo, in 2026."
+  },
+  {
+   "id": "f74c3aa3-843a-4be0-a465-4562573c6085",
+   "slug": "strangelove-the-depeche-mode-experience-e821b693",
+   "title": "Strangelove: The Depeche Mode Experience",
+   "act": "Strangelove",
+   "name": "Strangelove",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Strangelove_(band)",
+   "extract": "Strangelove were an English alternative rock band, formed in Bristol in 1991 comprising singer Patrick Duff, guitarists Alex Lee & Julian Poole, bassist Joe Allen and John Langley on drums. They released two EPs and three albums before disbanding in 1998."
+  }
+ ]
+}

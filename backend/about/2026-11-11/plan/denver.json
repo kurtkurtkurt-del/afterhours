@@ -1,0 +1,16 @@
+{
+ "city": "denver",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "10d8cd61-de81-4d6d-897f-5c18f476ed90",
+   "slug": "the-living-tombstone-ages-16-593f08f8",
+   "title": "The Living Tombstone - Ages 16+",
+   "act": "The Living Tombstone",
+   "name": "The Living Tombstone",
+   "description": "Israeli-American electronic rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/The_Living_Tombstone",
+   "extract": "The Living Tombstone (TLT) is an Israeli-American electronic rock group and YouTube channel, founded as a solo project by Israeli-American producer Yoav Landau in 2011, and becoming a musical duo with American singer Sam Haft in 2016. The group is notable for their songs based on video games and pop culture media, such as the My Little Pony, Five Nights at Freddy's, and Overwatch series as well as original music. Signed to Warner Music, they have released two studio albums, Zero One (2020) and Rust (2025)."
+  }
+ ]
+}

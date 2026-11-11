@@ -1,0 +1,26 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "e550a2c8-1f97-4a09-ac1d-201d742eabac",
+   "slug": "the-cactus-blossoms-210a65a2",
+   "title": "The Cactus Blossoms",
+   "act": "The Cactus Blossoms",
+   "name": "The Cactus Blossoms",
+   "description": "American alternative country and indie folk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Cactus_Blossoms",
+   "extract": "The Cactus Blossoms is an American alternative country and indie folk band based in Minneapolis, Minnesota. The band is composed of brothers Jack Torrey and Page Burkum with a touring act including Phillip Hicks (bass), Jake Hanson (guitar), and Jeremy Hanson (drums)."
+  },
+  {
+   "id": "2e42d4a1-8fd8-495f-9a4c-5e792bea936e",
+   "slug": "denise-julia-94bc3f84",
+   "title": "Denise Julia",
+   "act": "Denise Julia",
+   "name": "Denise Julia",
+   "description": "Filipino singer (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Denise_Julia",
+   "extract": "Julia Denise Lee, better known by her stage name Denise Julia, is a Filipino singer-songwriter, record producer, and model. She signed with Sony Music Philippines. In 2026, she moved to Empire Distribution, a record label in the United States. Numerous media outlets have recognized Julia as a leading figure in the new wave of Filipino R&B."
+  }
+ ]
+}

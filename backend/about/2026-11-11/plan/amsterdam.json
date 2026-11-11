@@ -1,0 +1,16 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "9bda1e11-73fc-4044-a9a7-2c26060a865f",
+   "slug": "jessie-ware-the-superbloom-tour-2026-a9bbd29b",
+   "title": "Jessie Ware - The Superbloom Tour 2026",
+   "act": "Jessie Ware",
+   "name": "Jessie Ware",
+   "description": "British singer (born 1984)",
+   "source_url": "https://en.wikipedia.org/wiki/Jessie_Ware",
+   "extract": "Jessica Lois Ware is a British singer and songwriter. She came to prominence following the release of her debut album, Devotion (2012), which peaked at number five on the UK Albums Chart and produced the single \"Wildest Moments\". Her second album, Tough Love (2014), reached number nine in the UK and produced the singles \"Tough Love\" and \"Say You Love Me\". Her third album, Glasshouse (2017), reached number seven in the UK."
+  }
+ ]
+}

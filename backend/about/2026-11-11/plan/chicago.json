@@ -1,0 +1,26 @@
+{
+ "city": "chicago",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "5fdfe029-5b56-4f9d-81ac-b5e51668a6f4",
+   "slug": "danny-brown-4989c7ea",
+   "title": "Danny Brown",
+   "act": "Danny Brown",
+   "name": "Danny Brown",
+   "description": "American rapper (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/Danny_Brown",
+   "extract": "Daniel Dewan Sewell, better known by his stage name Danny Brown, is an American rapper, songwriter, actor and podcaster."
+  },
+  {
+   "id": "fe42eb42-bb98-4a51-acc9-90b6b5cfa744",
+   "slug": "almost-monday-thank-god-it-s-almost-monday-793a05fc",
+   "title": "almost monday - THANK GOD IT'S ALMOST MONDAY",
+   "act": "almost monday",
+   "name": "Almost Monday",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Almost_Monday",
+   "extract": "Almost Monday is an American indie pop band based in San Diego, California."
+  }
+ ]
+}

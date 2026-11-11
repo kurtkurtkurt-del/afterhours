@@ -1,0 +1,16 @@
+{
+ "city": "new-york",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "f071b627-3f37-46ce-aed5-b5f63bc23818",
+   "slug": "q-marsden-7e407177",
+   "title": "Q Marsden",
+   "act": "Q Marsden",
+   "name": "Q Marsden",
+   "description": "American rapper",
+   "source_url": "https://en.wikipedia.org/wiki/Q_Marsden",
+   "extract": "Q Steven Marsden, known mononymously as Q, is an American singer and record producer from Broward County, Florida."
+  }
+ ]
+}

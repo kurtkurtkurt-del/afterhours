@@ -1,0 +1,36 @@
+{
+ "city": "zurich",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "71b0cc80-7b07-4d3f-b93b-ed32442d914d",
+   "slug": "ikkimel-842679f4",
+   "title": "Ikkimel",
+   "act": "Ikkimel",
+   "name": "Ikkimel",
+   "description": "German rapper (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Ikkimel",
+   "extract": "Melina Gaby Strauß, known professionally as Ikkimel, is a German rapper from Berlin-Tempelhof."
+  },
+  {
+   "id": "31784310-55db-4886-9330-c1820e4a57f4",
+   "slug": "swae-lee-d4e61540",
+   "title": "Swae Lee",
+   "act": "Swae Lee",
+   "name": "Swae Lee",
+   "description": "American rapper and singer (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Swae_Lee",
+   "extract": "Khalif Malik Ibn Shaman Brown, known professionally as Swae Lee, is an American rapper and singer from Inglewood, California. Known for his wide-ranged, reverb-heavy vocals and genre-blending, Lee is one half of the Mississippi-based hip-hop duo Rae Sremmurd, which he formed in 2010 with his older brother Slim Jxmmi."
+  },
+  {
+   "id": "3b2b54e8-620b-4ec5-9deb-d59de7c195f7",
+   "slug": "everlast-8f420e4f",
+   "title": "Everlast",
+   "act": "Everlast",
+   "name": "Everlast",
+   "description": "American rapper, singer, and songwriter (born 1969)",
+   "source_url": "https://en.wikipedia.org/wiki/Everlast",
+   "extract": "Erik Francis Schrody, known by his stage names Everlast and Whitey Ford, is an American rapper, singer, and songwriter who was the frontman for hip-hop group House of Pain. His breakthrough as a solo artist came in 1998 with his album Whitey Ford Sings the Blues, which blended rock and hip-hop and garnered him his first Grammy Award nomination for the song \"What It's Like\". The album peaked at number 9 on the Billboard 200 album chart, while the single peaked at number 13 on the Billboard Hot 100 singles chart. As of 2023, they remain his highest mainstream chart positions for an album and single respectively."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "8db82c0c-1a77-44ec-b357-06929f3610f4",
+   "slug": "amanda-marshall-the-dirty-30-tour-4d37096e",
+   "title": "Amanda Marshall - The Dirty 30 Tour",
+   "act": "Amanda Marshall",
+   "name": "Amanda Marshall",
+   "description": "Canadian singer (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Amanda_Marshall",
+   "extract": "Amanda Meta Marshall is a Canadian Juno award winning pop-rock singer and songwriter. She has released four studio albums; the first was certified diamond in Canada, with the second and third certified 3× platinum and platinum respectively. She is best known for her 1996 single, \"Birmingham\", which reached number 3 in Canada and was her only song to reach the US charts."
+  }
+ ]
+}

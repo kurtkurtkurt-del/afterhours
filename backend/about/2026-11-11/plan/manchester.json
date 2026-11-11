@@ -1,0 +1,36 @@
+{
+ "city": "manchester",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "30581044-03ed-4846-a8d9-4d52950f83da",
+   "slug": "skye-newman-be8d0c0d",
+   "title": "Skye Newman",
+   "act": "Skye Newman",
+   "name": "Skye Newman",
+   "description": "English singer-songwriter (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Skye_Newman",
+   "extract": "Skye Newman is an English singer-songwriter from south-east London."
+  },
+  {
+   "id": "1f738b3a-6657-40e0-8750-be1232ee7b21",
+   "slug": "the-rifles-e230b65c",
+   "title": "The Rifles",
+   "act": "The Rifles",
+   "name": "The Rifles",
+   "description": "English indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Rifles_(band)",
+   "extract": "The Rifles are an English indie rock band from Chingford, London."
+  },
+  {
+   "id": "5a3eebd7-9d7d-4b44-97af-3e712b1ee127",
+   "slug": "kid-kapichi-61ce7e73",
+   "title": "Kid Kapichi",
+   "act": "Kid Kapichi",
+   "name": "Kid Kapichi",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kid_Kapichi",
+   "extract": "Kid Kapichi are an English punk rock band formed in Hastings in 2013. The band consists of vocalist and guitarist Jack Wilson and bassist Eddie Lewis."
+  }
+ ]
+}

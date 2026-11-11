@@ -1,0 +1,16 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "d86b4b23-5f81-45db-a502-ee840ea720ea",
+   "slug": "julia-wolf-ab72531e",
+   "title": "Julia Wolf",
+   "act": "Julia Wolf",
+   "name": "Julia Wolf",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Wolf_(musician)",
+   "extract": "Julia Jade Capello, known professionally as Julia Wolf, is an American singer. Known for her ethereal vocals and self-produced alt-pop sound, she blends elements of indie pop, alternative rock, and R&B. Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory (2021) and her studio albums Good Thing We Stayed (2023) and Pressure (2025)."
+  }
+ ]
+}

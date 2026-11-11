@@ -1,0 +1,16 @@
+{
+ "city": "berlin",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "604b0f17-b183-4d30-a66b-733e1a1fdda7",
+   "slug": "horsegiirl-nature-is-healing-tour-dfa24f6b",
+   "title": "horsegiirL - NATURE IS HEALING tour",
+   "act": "horsegiirL",
+   "name": "HorsegiirL",
+   "description": "German DJ and singer (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/HorsegiirL",
+   "extract": "HorsegiirL is a German DJ, singer, and songwriter, known for wearing a horse head mask."
+  }
+ ]
+}

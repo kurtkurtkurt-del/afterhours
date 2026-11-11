@@ -1,0 +1,16 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "47ed08c5-5eab-4e52-b548-545a1c83312f",
+   "slug": "katie-pruitt-2ee1eaa4",
+   "title": "Katie Pruitt",
+   "act": "Katie Pruitt",
+   "name": "Katie Pruitt",
+   "description": "American singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Katie_Pruitt",
+   "extract": "Katherine Nicole Pruitt is an American singer-songwriter based in Nashville, Tennessee. Her debut album, Expectations, was released in 2020 by Rounder Records. Her second album, Mantras, was released in 2024."
+  }
+ ]
+}

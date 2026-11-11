@@ -1,0 +1,16 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-11",
+ "nights": [
+  {
+   "id": "c27b9cb9-3a40-49dd-bae7-2efdd9ac15ff",
+   "slug": "morat-661a277b",
+   "title": "Morat",
+   "act": "Morat",
+   "name": "Morat",
+   "description": "Colombian folk-pop Band",
+   "source_url": "https://en.wikipedia.org/wiki/Morat_(band)",
+   "extract": "Morat is a Colombian Latin pop rock band formed in the country's capital city, Bogotá. The band is made up of Juan Pablo Isaza, Juan Pablo Villamil, and the brothers Simón Vargas and Martín Vargas. Drummer Alejandro Posada was also a founding member of the band, but left in 2016 and was replaced by Martín Vargas."
+  }
+ ]
+}
