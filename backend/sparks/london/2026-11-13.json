@@ -1,0 +1,14 @@
+{
+  "city": "london",
+  "day": "2026-11-13",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "efg london jazz festival opens at the royal festival hall.", "de": "jazzfestival-auftakt in der royal festival hall.", "tr": "royal festival hall'da caz festivali açılışı." },
+      "line": { "en": "the london jazz festival runs until 22 november across more than 60 venues. the opening night is at 19:30 in the royal festival hall; book ahead.", "de": "das london jazz festival läuft bis 22. november an über 60 spielorten. die eröffnung ist um 19:30 uhr in der royal festival hall; früh buchen.", "tr": "london caz festivali 22 kasıma kadar, 60'tan fazla mekânda sürüyor. açılış gecesi 19:30'da royal festival hall'da; biletleri önceden al." },
+      "place": { "en": "royal festival hall", "de": "royal festival hall", "tr": "royal festival hall" },
+      "hour": 19, "minute": 30,
+      "why": "EFG London Jazz Festival runs 13 to 22 Nov 2026 with 60+ venues (Visit London); the opening night at Royal Festival Hall, 7.30pm, comes from one ticket listing (Stereoboard), not checked on the Southbank Centre site."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "city": "london",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "lord mayor's show through the city of london.",
+        "de": "lord mayor's show durch die city of london.",
+        "tr": "city of london'da lord mayor's show."
+      },
+      "line": {
+        "en": "the lord mayor's parade winds through the city on saturday morning, free to watch. arrive early for a place on the route and expect security checks and crowds.",
+        "de": "die parade des lord mayor zieht am samstagvormittag durch die city, kostenlos zu sehen. früh kommen für einen platz an der strecke; mit sicherheitskontrollen und viel gedränge rechnen.",
+        "tr": "lord mayor geçit töreni cumartesi sabahı şehirden geçiyor, izlemesi ücretsiz. güzergâhta yer için erken git; güvenlik kontrolü ve kalabalık olacak."
+      },
+      "place": {
+        "en": "city of london",
+        "de": "city of london",
+        "tr": "city of london"
+      },
+      "hour": 11,
+      "minute": 0,
+      "why": "Lord Mayor's Show, Sat 14 Nov 2026, procession from Mansion House at 11:00, free to watch (City of London timetable; Londonist weekend guide as a cross-check)."
+    }
+  ]
+}

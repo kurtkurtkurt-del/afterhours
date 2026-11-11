@@ -1,0 +1,27 @@
+{
+  "city": "london",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "sunday upmarket in the truman brewery.",
+        "de": "sunday upmarket in der truman brewery.",
+        "tr": "truman brewery'de sunday upmarket."
+      },
+      "line": {
+        "en": "a market of vintage, fashion and homewares stalls, open 10:00 to 18:00 on sundays. a good late-morning walk from brick lane.",
+        "de": "markt mit vintage-, mode- und wohnaccessoires-ständen, sonntags 10 bis 18 uhr offen. ein gutes ziel für den späten vormittag, zu fuß von der brick lane.",
+        "tr": "vintage, moda ve ev dekorasyonu tezgahlarından oluşan bir pazar; pazar günleri 10:00 ile 18:00 arası açık. öğlene doğru brick lane'den yürümek iyi."
+      },
+      "place": {
+        "en": "truman brewery",
+        "de": "truman brewery",
+        "tr": "truman brewery"
+      },
+      "hour": 11,
+      "minute": 0,
+      "why": "Sunday UpMarket, Truman Brewery, Brick Lane, listed for Sundays 10:00 to 18:00 by London & Partners and Visit London; the 15 Nov date itself was not checked on the venue site."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "city": "london",
+  "day": "2026-11-19",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "winter wonderland opens in hyde park.",
+        "de": "winter wonderland öffnet im hyde park.",
+        "tr": "hyde park'ta winter wonderland açılıyor."
+      },
+      "line": {
+        "en": "the christmas fair runs from the 19th to 3 january, closed on christmas day. check the opening hours on the site first; a weekday evening is quieter.",
+        "de": "der weihnachtsjahrmarkt läuft vom 19. november bis 3. januar, an weihnachten geschlossen. die öffnungszeiten vorher auf der seite prüfen; ein wochentagabend ist ruhiger.",
+        "tr": "noel lunaparkı 19 kasımdan 3 ocak'a kadar açık, 25 aralık'ta kapalı. açılış saatlerini önce siteden kontrol et; hafta içi akşamı daha sakin."
+      },
+      "place": {
+        "en": "hyde park",
+        "de": "hyde park",
+        "tr": "hyde park"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Hyde Park Winter Wonderland runs 19 Nov 2026 to 3 Jan 2027 per the official ticket guide (hydeparkwinterwonderland.com); one listing says 20 Nov and the opening hours were not confirmed. Day 8 of the window, added because the week is thin."
+    }
+  ]
+}

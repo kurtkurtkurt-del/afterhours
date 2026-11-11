@@ -1,0 +1,14 @@
+{
+  "city": "london",
+  "day": "2026-11-17",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "jazz at trades, duke ellington night in walthamstow.", "de": "jazz im trades, duke-ellington-abend in walthamstow.", "tr": "trades'te caz, walthamstow'da duke ellington gecesi." },
+      "line": { "en": "a london jazz festival night at walthamstow trades hall, music of duke ellington. doors at 19:00, music from 20:00; tickets are £7.70 with the booking fee.", "de": "ein abend des london jazz festival in der walthamstow trades hall, musik von duke ellington. einlass 19:00, musik ab 20:00; tickets 7,70 pfund inklusive gebühr.", "tr": "walthamstow trades hall'da london caz festivali gecesi, duke ellington'ın müziği. kapılar 19:00'da, müzik 20:00'de; bilet 7,70 sterlin, rezervasyon ücretiyle." },
+      "place": { "en": "walthamstow trades hall", "de": "walthamstow trades hall", "tr": "walthamstow trades hall" },
+      "hour": 19, "minute": 0,
+      "why": "Jazz at Trades, a London Jazz Festival night on Tue 17 Nov 2026 in Walthamstow, Duke Ellington programme, doors 7pm, start 8pm, GBP 7.70 with fee (WeGotTickets listing); no open mic found for the week."
+    }
+  ]
+}
