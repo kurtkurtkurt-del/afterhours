@@ -1,0 +1,14 @@
+{
+  "city": "wien",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "kunst & design markt at the ottakringer brauerei.", "de": "kunst & design markt in der ottakringer brauerei.", "tr": "ottakringer brauerei'de kunst & design pazarı." },
+      "line": { "en": "the art and design market runs sunday 11:00 to 18:00, saturday to 19:00. entry 7 euro, children under 14 free. good for gifts before the christmas rush.", "de": "der markt für kunst und design ist sonntag von 11 bis 18 uhr offen, samstag bis 19 uhr. eintritt 7 euro, kinder unter 14 frei. gut für geschenke vor dem weihnachtstrubel.", "tr": "sanat ve tasarım pazarı pazar günü 11:00 ile 18:00 arası, cumartesi 19:00'a kadar açık. giriş 7 euro, 14 yaş altı çocuklar ücretsiz. hediye bakmak için iyi." },
+      "place": { "en": "ottakringer brauerei", "de": "ottakringer brauerei", "tr": "ottakringer brauerei" },
+      "hour": 13, "minute": 0,
+      "why": "kunst & design markt at the Ottakringer Brauerei, 14 and 15 Nov 2026, EUR 7 entry (wien.gv.at, studium.at)."
+    }
+  ]
+}

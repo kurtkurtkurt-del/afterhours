@@ -1,0 +1,22 @@
+{
+  "city": "wien",
+  "day": "2026-11-13",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "christkindlmarkt opens at the rathausplatz.", "de": "christkindlmarkt am rathausplatz öffnet.", "tr": "rathausplatz'ta christkindlmarkt açılıyor." },
+      "line": { "en": "the vienna christmas market opens on friday 13 november and runs daily from 10:00 to 22:00 until 26 december. come after work for the first mulled wine.", "de": "der markt öffnet freitag 13. november und ist täglich von 10 bis 22 uhr offen, bis 26. dezember. nach der arbeit kommen und den ersten punsch trinken.", "tr": "pazar 13 kasım cuma günü, yani cuma açılıyor ve 26 aralık'a kadar her gün 10:00 ile 22:00 arası açık. ilk sıcak şarap için iş çıkışı gel." },
+      "place": { "en": "rathausplatz", "de": "rathausplatz", "tr": "rathausplatz" },
+      "hour": 17, "minute": 0,
+      "why": "Vienna Christmas market on the Rathausplatz opens 13 Nov 2026, daily 10:00 to 22:00 (news.at, wien.info)."
+    },
+    {
+      "kind": "skate",
+      "title": { "en": "ice rink at the christkindlmarkt.", "de": "eisbahn am christkindlmarkt.", "tr": "christkindlmarkt'ta buz pisti." },
+      "line": { "en": "the eistraum on the christmas market runs from 13 november to 6 january, daily 10:00 to 22:00. a short loop before the first mulled wine.", "de": "der eistraum am christkindlmarkt läuft vom 13. november bis 6. jänner, täglich von 10 bis 22 uhr. eine kurze runde vor dem ersten punsch.", "tr": "christkindlmarkt'taki eistraum 13 kasım'dan 6 ocak'a kadar, her gün 10:00 ile 22:00 arası açık. ilk sıcak şaraptan önce kısa bir tur at." },
+      "place": { "en": "eistraum", "de": "eistraum", "tr": "eistraum" },
+      "hour": 16, "minute": 0,
+      "why": "Eistraum on the Christkindlmarkt, 13 Nov 2026 to 6 Jan 2027, daily 10:00 to 22:00 (wien.info)."
+    }
+  ]
+}
