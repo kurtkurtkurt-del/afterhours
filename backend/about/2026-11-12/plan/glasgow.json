@@ -1,0 +1,56 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "d9071671-12b1-4dd5-9dcc-30cd9d9fda39",
+   "slug": "shinedown-dance-kid-dance-act-ii-92276429",
+   "title": "Shinedown: Dance, Kid, Dance Act II",
+   "act": "Shinedown",
+   "name": "Shinedown",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Shinedown",
+   "extract": "Shinedown is an American rock band from Jacksonville, Florida, formed by singer Brent Smith in 2001 after the dissolution of his previous band, Dreve. Smith, still under contract with record label Atlantic Records, recruited the band's original lineup of Jasin Todd as guitarist, Brad Stewart on bass, and Barry Kerch on drums. Consistent for the first two album cycles, several lineup changes followed in the late 2000s, eventually stabilizing with Smith and Kerch alongside Zach Myers on guitar and Eric Bass on bass. The group has released eight studio albums: Leave a Whisper (2003), Us and Them (2005), The Sound of Madness (2008), Amaryllis (2012), Threat to Survival (2015), Attention Attention (2018), and Planet Zero (2022). The band's eighth album, Eight, was released on May 29, 2026."
+  },
+  {
+   "id": "9b822f7a-27fe-41b8-ad9c-48c88f8dee84",
+   "slug": "rita-wilson-sound-of-a-woman-europe-tour-f79e0f04",
+   "title": "Rita Wilson: Sound of a Woman Europe Tour",
+   "act": "Rita Wilson",
+   "name": "Rita Wilson",
+   "description": "American actress, singer, and producer (born 1956)",
+   "source_url": "https://en.wikipedia.org/wiki/Rita_Wilson",
+   "extract": "Margarita “Rita” Wilson Hanks is an American actress, singer, and producer. Her film appearances include Volunteers (1985), Sleepless in Seattle (1993), Now and Then (1995), That Thing You Do! (1996), Jingle All the Way (1996), The Story of Us (1999), Runaway Bride (1999), It's Complicated (2009), and Larry Crowne (2011), and she appeared in the television series The Good Wife and Girls. Wilson has also performed on Broadway and produced several films, including My Big Fat Greek Wedding (2002). As a singer-songwriter, Wilson has released the albums AM/FM, Rita Wilson, Bigger Picture, Halfway to Home, and Sound of a Woman. In March 2019, she received a star on the Hollywood Walk of Fame."
+  },
+  {
+   "id": "5e9ed89d-3ebd-486d-9066-dbd969fbf341",
+   "slug": "rita-wilson-sound-of-a-woman-europe-tour-1600515e",
+   "title": "Rita Wilson - Sound of a Woman Europe Tour",
+   "act": "Rita Wilson",
+   "name": "Rita Wilson",
+   "description": "American actress, singer, and producer (born 1956)",
+   "source_url": "https://en.wikipedia.org/wiki/Rita_Wilson",
+   "extract": "Margarita “Rita” Wilson Hanks is an American actress, singer, and producer. Her film appearances include Volunteers (1985), Sleepless in Seattle (1993), Now and Then (1995), That Thing You Do! (1996), Jingle All the Way (1996), The Story of Us (1999), Runaway Bride (1999), It's Complicated (2009), and Larry Crowne (2011), and she appeared in the television series The Good Wife and Girls. Wilson has also performed on Broadway and produced several films, including My Big Fat Greek Wedding (2002). As a singer-songwriter, Wilson has released the albums AM/FM, Rita Wilson, Bigger Picture, Halfway to Home, and Sound of a Woman. In March 2019, she received a star on the Hollywood Walk of Fame."
+  },
+  {
+   "id": "43e1b2b4-4144-4aca-a845-18d99374fc2e",
+   "slug": "deyyess-2323147e",
+   "title": "Déyyess",
+   "act": "Déyyess",
+   "name": "Déyyess",
+   "description": "English singer",
+   "source_url": "https://en.wikipedia.org/wiki/D%C3%A9yyess",
+   "extract": "Hannah Jennifer Marie Butcher, known professionally as Déyyess, is an English singer-songwriter. She has released a number of singles and two EPs."
+  },
+  {
+   "id": "dcedf585-41c0-4927-8bfb-7c9fed078fd4",
+   "slug": "life-without-buildings-7e14faf5",
+   "title": "Life Without Buildings",
+   "act": "Life Without Buildings",
+   "name": "Life Without Buildings",
+   "description": "Scottish indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Life_Without_Buildings",
+   "extract": "Life Without Buildings are a Scottish indie rock band formed in Glasgow in 1999. The band consists of Sue Tompkins (vocals), Robert Johnston (guitar), Chris Evans (bass) and Will Bradley (drums). The band existed for three years between 1999 and 2002, releasing one studio album, Any Other City, in 2001, before breaking up the following year. A live album, Live at the Annandale Hotel, was released in 2007."
+  }
+ ]
+}

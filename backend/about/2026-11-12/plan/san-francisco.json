@@ -1,0 +1,36 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "bed698b0-0ed1-4cf4-ba18-f13d69963a49",
+   "slug": "rodrigo-y-gabriela-ourhome-tour-58f5ab76",
+   "title": "Rodrigo y Gabriela - OurHome Tour",
+   "act": "Rodrigo y Gabriela",
+   "name": "Rodrigo y Gabriela",
+   "description": "Mexican guitar duo",
+   "source_url": "https://en.wikipedia.org/wiki/Rodrigo_y_Gabriela",
+   "extract": "Rodrigo y Gabriela are a Mexican acoustic guitar duo featuring musicians Rodrigo Sánchez and Gabriela Quintero. Residing in Mexico City, they began their career in Dublin, Ireland, where they played for the first eight years of their career as a duo. Their music consists largely of instrumental duets on the flamenco guitar, with a musical style influenced by a number of genres including nuevo flamenco, rock, and heavy metal."
+  },
+  {
+   "id": "a7df3be0-2d1a-4039-b44f-91c1c377ee16",
+   "slug": "the-mountain-goats-night-one-openers-c0847022",
+   "title": "The Mountain Goats - Night One: Openers",
+   "act": "The Mountain Goats",
+   "name": "The Mountain Goats",
+   "description": "American indie folk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+   "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark."
+  },
+  {
+   "id": "c01a4bf8-7d5e-4d8b-b697-b15ca8baf51c",
+   "slug": "francisca-valenzuela-d8abddf9",
+   "title": "Francisca Valenzuela",
+   "act": "Francisca Valenzuela",
+   "name": "Francisca Valenzuela",
+   "description": "Chilean-American musician (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Francisca_Valenzuela",
+   "extract": "Francisca Valenzuela Méndez is a Chilean-American singer-songwriter, poet, and multi-instrumentalist. Valenzuela was born and raised in San Francisco, California, where she resided until the age of 12, before moving to Santiago, Chile."
+  }
+ ]
+}

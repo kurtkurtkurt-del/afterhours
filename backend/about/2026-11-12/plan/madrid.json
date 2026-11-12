@@ -1,0 +1,16 @@
+{
+ "city": "madrid",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "07a220b8-e3fd-4b83-bcf7-7348ba945bd2",
+   "slug": "the-k-s-08ed43bb",
+   "title": "THE K´S",
+   "act": "THE K´S",
+   "name": "The K's",
+   "description": "British indie band",
+   "source_url": "https://en.wikipedia.org/wiki/The_K's",
+   "extract": "The K's are an English indie rock band from Earlestown, Merseyside. They are formed of singer/songwriter and guitarist Jamie Boyle, lead guitarist Ryan Breslin, bassist Dexter Baker and drummer Nathan Peers."
+  }
+ ]
+}

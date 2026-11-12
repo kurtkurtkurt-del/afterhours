@@ -1,0 +1,16 @@
+{
+ "city": "las-vegas",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "b6d92d81-74e7-4689-ac00-cc48c660db1f",
+   "slug": "lionel-richie-king-of-hearts-321e8ab7",
+   "title": "Lionel Richie - King of Hearts",
+   "act": "Lionel Richie",
+   "name": "Lionel Richie",
+   "description": "American singer (born 1949)",
+   "source_url": "https://en.wikipedia.org/wiki/Lionel_Richie",
+   "extract": "Lionel Brockman Richie Jr. is an American singer, songwriter, musician, record producer, and television personality. He rose to fame in the 1970s as a songwriter and the co-lead singer of the Motown group Commodores; writing and recording the hit singles \"Easy\", \"Sail On\", \"Three Times a Lady\", and \"Still\" with the group before his departure. In 1980, he wrote and produced the US Billboard Hot 100 number one single \"Lady\" for Kenny Rogers."
+  }
+ ]
+}

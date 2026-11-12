@@ -1,0 +1,36 @@
+{
+ "city": "manchester",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "10c90e41-e5ee-4e92-8100-8d3c729eb406",
+   "slug": "the-fray-7102a268",
+   "title": "The Fray",
+   "act": "The Fray",
+   "name": "The Fray",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Fray",
+   "extract": "The Fray is an American rock band from Denver, Colorado, formed in 2002 by schoolmates Isaac Slade and Joe King. Their debut studio album, How to Save a Life (2005) was released by Epic Records and received quadruple platinum certification by the Recording Industry Association of America (RIAA), as well as platinum certification in Australia, Canada, New Zealand and the United Kingdom. Its release was supported by their first hit single, \"Over My Head \", which peaked at number eight on the Billboard Hot 100. The band saw their furthest success with the song's follow-up, \"How to Save a Life\", which peaked at number three on the chart and was also a hit in Australia, Canada, Ireland, Italy, Spain, Sweden and the United Kingdom. Both songs received Grammy Award nominations: Best Pop Performance by a Duo or Group with Vocals, and Best Rock Performance by a Duo or Group, respectively."
+  },
+  {
+   "id": "364a48a3-e00f-4cc1-894a-e121c371ba68",
+   "slug": "xentrix-de65c0d8",
+   "title": "Xentrix",
+   "act": "Xentrix",
+   "name": "Xentrix",
+   "description": "English thrash metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Xentrix",
+   "extract": "Xentrix are an English thrash metal band formed as Sweet Vengeance in Preston, Lancashire in 1984. They changed their name to Xentrix in 1988, and released four albums – Shattered Existence (1989), For Whose Advantage? (1990), Kin (1992) and Scourge (1996) – before disbanding in 1997. After briefly reuniting in 2005–2006, Xentrix reunited again in 2013, and they have since released three more albums: Bury the Pain (2019), Seven Words (2022) and Allied with the Enemy (2026). As part of the late 1980s-early-to-mid 1990s underground metal scene, Xentrix have been referred to as one of the \"Big Four\" of English thrash metal, along with Acid Reign, Onslaught and Sabbat."
+  },
+  {
+   "id": "ea4cdd85-1db9-4075-be50-383640b3ecff",
+   "slug": "aaron-rowe-8520f169",
+   "title": "Aaron Rowe",
+   "act": "Aaron Rowe",
+   "name": "Aaron Rowe",
+   "description": "Irish singer-songwriter and musician (born 1996)",
+   "source_url": "https://en.wikipedia.org/wiki/Aaron_Rowe_(singer)",
+   "extract": "Aaron Rowe is an Irish singer-songwriter and musician from Dublin. Rowe is best known for his debut single, \"Hey Ma\", released in May 2025, in addition to follow-up singles, \"Talking with You\" and \"Lose Lose\"."
+  }
+ ]
+}

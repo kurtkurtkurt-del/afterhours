@@ -1,0 +1,46 @@
+{
+ "city": "nashville",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "d46ba6bb-5eeb-4762-b29a-2a8ebd992d26",
+   "slug": "gary-nicholson-f51efe4a",
+   "title": "Gary Nicholson",
+   "act": "Gary Nicholson",
+   "name": "Gary Nicholson",
+   "description": "American singer-songwriter (born 1949)",
+   "source_url": "https://en.wikipedia.org/wiki/Gary_Nicholson_(singer)",
+   "extract": "Gary Nicholson is an American singer-songwriter and record producer, known mainly for his work in country music and blues. He is a two-time Grammy winning producer and was inducted into the Texas Heritage Songwriter's Association Hall of Fame. Nicholson has more than 600 recordings and is best known for his work with Willie Nelson, Waylon Jennings, Garth Brooks, George Strait, Ringo Starr, B. B. King, Fleetwood Mac and Billy Joe Shaver."
+  },
+  {
+   "id": "7371c824-c5f1-4dc3-8fee-2544ca5389fd",
+   "slug": "tiny-habits-the-keepers-tour-04e6e860",
+   "title": "Tiny Habits - The Keepers Tour",
+   "act": "Tiny Habits",
+   "name": "Tiny Habits",
+   "description": "American folk-pop trio",
+   "source_url": "https://en.wikipedia.org/wiki/Tiny_Habits",
+   "extract": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa. Their first EP, Tiny Things, was released in April 2023. Their debut studio album All For Something was released in May 2024. Their second album Keepers came out in August 2026."
+  },
+  {
+   "id": "9399ac57-7e43-4987-abc3-aa36a8dcf3e7",
+   "slug": "orville-peck-man-turned-mule-tour-6234f0d8",
+   "title": "Orville Peck - Man Turned Mule Tour",
+   "act": "Orville Peck",
+   "name": "Orville Peck",
+   "description": "South African country musician (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Orville_Peck",
+   "extract": "Daniel Pitout, known professionally as Orville Peck, is a South African country musician and actor based in the United States and Canada, widely known for often wearing a mask and not showing his face publicly."
+  },
+  {
+   "id": "2e208e4e-6835-4233-861a-1e307dc245cf",
+   "slug": "six60-ba90ffbc",
+   "title": "Six60",
+   "act": "Six60",
+   "name": "Six60",
+   "description": "New Zealand rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Six60",
+   "extract": "Six60 is a New Zealand pop rock band formed in Dunedin, Otago in 2008. The band consists of Matiu Walters, Ji Fraser, Chris Mac, and Marlon Gerbes."
+  }
+ ]
+}

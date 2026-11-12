@@ -1,0 +1,26 @@
+{
+ "city": "new-york",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "bb91e41d-a273-47b4-b601-1dba6ea3b974",
+   "slug": "ax-and-the-hatchetmen-the-late-checkout-tour-202-24545507",
+   "title": "Ax and the Hatchetmen: The Late Checkout Tour 2026",
+   "act": "Ax and the Hatchetmen",
+   "name": "Ax and the Hatchetmen",
+   "description": "American band",
+   "source_url": "https://en.wikipedia.org/wiki/Ax_and_the_Hatchetmen",
+   "extract": "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018. Members of the group include Axel Ellis, Salvatore Defilippis (vocals/guitar), Hunter Olshefke (vocals/bass), Phil Pistone (trumpet), Quinn Dolan (saxophone), and Chaandmon Croft (drums). They are signed with Arista Records and their first album, So Much to Tell You, was released October 24, 2025 with a tour of the same name."
+  },
+  {
+   "id": "ceaeae75-6727-46b7-a5d8-09b71b5f2446",
+   "slug": "dee-dee-bridgewater-b2afd880",
+   "title": "Dee Dee Bridgewater",
+   "act": "Dee Dee Bridgewater",
+   "name": "Dee Dee Bridgewater",
+   "description": "American jazz singer (born 1950)",
+   "source_url": "https://en.wikipedia.org/wiki/Dee_Dee_Bridgewater",
+   "extract": "Dee Dee Bridgewater is an American jazz singer and actress. She is a three-time Grammy Award-winning singer-songwriter, as well as a Tony Award-winning stage actress. For 23 years, she was the host of National Public Radio's syndicated radio show JazzSet with Dee Dee Bridgewater. She is a United Nations Goodwill Ambassador for the Food and Agriculture Organization."
+  }
+ ]
+}

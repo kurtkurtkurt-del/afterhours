@@ -1,0 +1,26 @@
+{
+ "city": "dublin",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "0afb7a63-f325-4de7-9f5e-2face6eb36b2",
+   "slug": "niall-horan-dinner-party-live-on-tour-a52aeef8",
+   "title": "Niall Horan: Dinner Party Live On Tour",
+   "act": "Niall Horan",
+   "name": "Niall Horan",
+   "description": "Irish singer, songwriter and musician (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Niall_Horan",
+   "extract": "Niall James Horan is an Irish singer, songwriter, musician, and multi-instrumentalist. He rose to prominence as a member of the boy band One Direction, formed in 2010 on the singing competition The X Factor. The group released five albums and went on to become one of the best-selling boy bands of all time."
+  },
+  {
+   "id": "f61e2d5c-7059-4633-8d1a-0dd8cb70b743",
+   "slug": "niall-horan-926eaf2e",
+   "title": "Niall Horan",
+   "act": "Niall Horan",
+   "name": "Niall Horan",
+   "description": "Irish singer, songwriter and musician (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Niall_Horan",
+   "extract": "Niall James Horan is an Irish singer, songwriter, musician, and multi-instrumentalist. He rose to prominence as a member of the boy band One Direction, formed in 2010 on the singing competition The X Factor. The group released five albums and went on to become one of the best-selling boy bands of all time."
+  }
+ ]
+}

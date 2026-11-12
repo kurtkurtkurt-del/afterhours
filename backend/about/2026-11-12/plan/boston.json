@@ -1,0 +1,16 @@
+{
+ "city": "boston",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "3cbaef63-8341-45ac-beee-05435db77d19",
+   "slug": "angine-de-poitrine-1544eac5",
+   "title": "Angine de Poitrine",
+   "act": "Angine de Poitrine",
+   "name": "Angine de Poitrine",
+   "description": "Canadian experimental rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/Angine_de_Poitrine",
+   "extract": "Angine de Poitrine is a Canadian rock duo formed in Saguenay, Quebec, in 2019. The anonymous pair perform under the pseudonyms Khn de Poitrine and Klek de Poitrine (drums). They are known for complex microtonal compositions in the style of math rock and experimental rock, and an absurdist image involving oversized papier-mâché masks and black-and-white polka-dotted costumes."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "22959782-00a1-46f0-a979-dadbfddeb26e",
+   "slug": "half-me-6231ba7c",
+   "title": "Half Me",
+   "act": "Half Me",
+   "name": "Half Me",
+   "description": "German metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Half_Me",
+   "extract": "Half Me is a German metalcore band formed in Hamburg in 2018."
+  }
+ ]
+}

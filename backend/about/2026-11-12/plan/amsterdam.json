@@ -1,0 +1,16 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "6493bf96-c027-44a8-a9c5-16fc808a5af5",
+   "slug": "tayc-afas-live-amsterdam-2b2031b9",
+   "title": "TAYC – AFAS Live Amsterdam",
+   "act": "TAYC",
+   "name": "Tayc",
+   "description": "French singer",
+   "source_url": "https://en.wikipedia.org/wiki/Tayc",
+   "extract": "Julien Franck Bouadjie Monono Kamgang, better known as Tayc, is a French singer."
+  }
+ ]
+}

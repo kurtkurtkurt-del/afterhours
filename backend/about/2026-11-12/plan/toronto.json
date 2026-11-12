@@ -1,0 +1,16 @@
+{
+ "city": "toronto",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "983a9db6-e097-4a8c-ac67-664ff2cde409",
+   "slug": "barely-alive-reconnect-dee804b3",
+   "title": "BARELY ALIVE - \"RECONNECT\"",
+   "act": "BARELY ALIVE",
+   "name": "Barely Alive",
+   "description": "American electronic music production and DJ duo from Great Barrington, Massachusetts",
+   "source_url": "https://en.wikipedia.org/wiki/Barely_Alive",
+   "extract": "Barely Alive is an American electronic music production and DJ duo composed of Matthew Meier and William \"Watt\" Watkins founded in Great Barrington, Massachusetts, U.S. The duo is well known for their songs on British-American and Los Angeles based electronic music record label: Disciple Records."
+  }
+ ]
+}

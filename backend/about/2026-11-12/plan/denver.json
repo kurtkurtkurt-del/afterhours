@@ -1,0 +1,26 @@
+{
+ "city": "denver",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "2f5a4de8-4d8b-47df-ba77-55ab50662f04",
+   "slug": "pedro-fernandez-ave-fenix-two-r-a6c4e404",
+   "title": "Pedro Fernández - Ave Fénix Two'r",
+   "act": "Pedro Fernández",
+   "name": "Pedro Fernández",
+   "description": "Mexican singer, songwriter, actor, and television host",
+   "source_url": "https://en.wikipedia.org/wiki/Pedro_Fern%C3%A1ndez_(singer)",
+   "extract": "José Martín Cuevas Cobos, known by his stage name Pedro Fernández, is a Mexican singer, songwriter, actor, and television host. Fernández began his international career as Pedrito Fernández at the age of seven. In the 1980s, he turned to be known as a scream king, thanks to his horror film starring roles in films such as Vacaciones de terror (1989), Pánico en la montaña (1989) and Trampa Infernal (1989)."
+  },
+  {
+   "id": "b0fa5499-0339-4a38-9d84-fca4457eb9e0",
+   "slug": "arcangel-la-8va-maravilla-world-tour-264240f7",
+   "title": "Arcángel - La 8va Maravilla World Tour",
+   "act": "Arcángel",
+   "name": "Arcángel",
+   "description": "American rapper and singer (born 1985)",
+   "source_url": "https://en.wikipedia.org/wiki/Arc%C3%A1ngel",
+   "extract": "Austin Agustín Santos, better known by his stage name Arcángel, is an American rapper and singer. He is often described as one of the most influential artists in the Latin urban genre, as well in Latin music overall, and one of the pioneers of Latin trap music. Around 2002, he became interested in becoming a performer of reggaeton. He met fellow singer De la Ghetto while living in Puerto Rico, where they eventually formed a popular then-underground reggaeton duo, Arcángel & De la Ghetto."
+  }
+ ]
+}

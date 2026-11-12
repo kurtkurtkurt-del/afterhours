@@ -1,0 +1,36 @@
+{
+ "city": "detroit",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "b99e9941-efc9-4019-92ea-24a093fcdc67",
+   "slug": "catch-your-breath-not-broken-enough-tour-d0b1bae0",
+   "title": "Catch Your Breath - Not Broken Enough Tour",
+   "act": "Catch Your Breath",
+   "name": "Catch Your Breath",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Catch_Your_Breath_(band)",
+   "extract": "Catch Your Breath is an American rock band based in Austin, Texas."
+  },
+  {
+   "id": "cb1c0c57-0acc-49bd-86db-66efcd3125b5",
+   "slug": "suicide-silence-reminders-of-hell-tour-0a99f262",
+   "title": "Suicide Silence: REMINDERS OF HELL TOUR",
+   "act": "Suicide Silence",
+   "name": "Suicide Silence",
+   "description": "American deathcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Suicide_Silence",
+   "extract": "Suicide Silence is an American deathcore band from Riverside, California. The band was established in 2002, and has released seven studio albums, three EPs, and nineteen music videos. They were awarded the Revolver Golden God award for \"Best New Talent\" in 2009. The group currently consists of guitarists Chris Garza and Mark Heylmun, bassist Dan Kenny, vocalist Hernan \"Eddie\" Hermida and drummer Ernie Iniguez."
+  },
+  {
+   "id": "6fa5575c-db61-4959-bbe5-0bc2401d6aea",
+   "slug": "sabaton-legends-on-tour-d06b21a7",
+   "title": "Sabaton: Legends on Tour",
+   "act": "Sabaton",
+   "name": "Sabaton",
+   "description": "Swedish power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Sabaton_(band)",
+   "extract": "Sabaton is a Swedish power metal band from Falun, formed in 1999 by lead singer Joakim Brodén, bassist Pär Sundström, guitarists Oskar Montelius and Rikard Sundén, and drummer Richard Larsson. The band has gone through multiple lineup changes with Brodén and Sundström remaining the only consistent members. The vast majority of their songs are about historical events, mainly wars and significant battles. As of 2026, the band has released eleven studio albums, four live albums, five live DVDs and thirty music videos."
+  }
+ ]
+}

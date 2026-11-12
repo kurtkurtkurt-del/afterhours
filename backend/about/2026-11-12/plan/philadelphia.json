@@ -1,0 +1,26 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "9006564a-7889-44eb-b99b-0c6a8b2dc25f",
+   "slug": "pi-erre-bourne-made-in-paris-5af5bc4b",
+   "title": "Pi'erre Bourne: Made In Paris",
+   "act": "Pi'erre Bourne",
+   "name": "Pi'erre Bourne",
+   "description": "American record producer and rapper (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Pi'erre_Bourne",
+   "extract": "Jordan Timothy Jenks, known professionally as Pi'erre Bourne, is an American record producer, rapper, singer, songwriter, and audio engineer. He is known for producing the 2017 singles \"Magnolia\" for Playboi Carti and \"Gummo\" for 6ix9ine, both of which entered the top 30 of the U.S. Billboard Hot 100. He has worked extensively with artists including Playboi Carti, Lil Uzi Vert, Lil Yachty, Young Thug, Juice Wrld, Young Nudy, Trippie Redd, Kanye West, Drake, Nav, 6ix9ine, Duwap Kaine, and 21 Savage."
+  },
+  {
+   "id": "bdf3599b-0cba-4e3d-b3f5-a8de953e64af",
+   "slug": "liana-flores-652ddcc7",
+   "title": "Liana Flores",
+   "act": "Liana Flores",
+   "name": "Liana Flores",
+   "description": "British singer-songwriter and guitarist",
+   "source_url": "https://en.wikipedia.org/wiki/Liana_Flores",
+   "extract": "Liana Flores is a British-Brazilian singer-songwriter and guitarist. After independently releasing two extended plays The Water's Fine! (2018) and Recently (2019), her debut studio album Flower of the Soul was released under Verve and Fiction in June 2024."
+  }
+ ]
+}

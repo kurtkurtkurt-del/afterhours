@@ -1,0 +1,46 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "4860758b-e178-4284-b42f-00fd718ae719",
+   "slug": "l7-the-last-hurrah-tour-2026-753a8fb5",
+   "title": "L7: The Last Hurrah Tour 2026",
+   "act": "L7",
+   "name": "L7",
+   "description": "American punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/L7_(band)",
+   "extract": "L7 is an American punk rock band founded in Los Angeles, California, first active from 1985 to 2001 and re-formed in 2014. The group currently consists of Suzi Gardner, Donita Sparks, Dee Plakas and Janis Tanaka. L7 has released seven studio albums and has toured widely in the United States, Europe, Japan, Australia, and South America. \"Pretend We're Dead\" was heavily played on United States alternative radio and entered the top 10 on the Billboard Modern Rock chart in 1992."
+  },
+  {
+   "id": "ab051f1b-d438-4315-9637-9ab86e47d2a8",
+   "slug": "tank-and-the-bangas-ca546df1",
+   "title": "Tank and The Bangas",
+   "act": "Tank and The Bangas",
+   "name": "Tank and the Bangas",
+   "description": "American musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Tank_and_the_Bangas",
+   "extract": "Tank and the Bangas is an American musical group based in New Orleans, Louisiana. The band won the 2017 NPR Tiny Desk Contest and in November 2019, they were nominated in the Best New Artist category for the 2020 Grammy Awards. They have released three studio albums, Thinktank (2013), Green Balloon (2019), and Red Balloon (2022). In 2025, they won their first Grammy for the 2024 album, The Heart, The Mind, The Soul for Best Spoken Word Poetry Album."
+  },
+  {
+   "id": "cabf9768-09a1-41c4-94ea-8f357774177c",
+   "slug": "other-lives-7a021015",
+   "title": "Other Lives",
+   "act": "Other Lives",
+   "name": "Other Lives",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Other_Lives_(band)",
+   "extract": "Other Lives is an American indie rock band from Stillwater, Oklahoma, United States."
+  },
+  {
+   "id": "4e619a6b-d858-4fab-834c-047314f02034",
+   "slug": "miles-minnick-glovember-138b2936",
+   "title": "Miles Minnick - GLOVEMBER",
+   "act": "Miles Minnick",
+   "name": "Miles Minnick",
+   "description": "American rapper (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Miles_Minnick",
+   "extract": "Miles Tyrone Minnick is an American Christian rapper and actor from Pittsburg, California."
+  }
+ ]
+}

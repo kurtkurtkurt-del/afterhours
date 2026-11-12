@@ -1,0 +1,26 @@
+{
+ "city": "dallas",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "a44efe8e-6de4-4011-860a-c5c89dcceba7",
+   "slug": "we-are-scientists-4fe992bb",
+   "title": "We Are Scientists",
+   "act": "We Are Scientists",
+   "name": "We Are Scientists",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/We_Are_Scientists",
+   "extract": "We Are Scientists is a New York City-based rock band that formed in Berkeley, California, in 1999. It consists primarily of guitarist and vocalist Keith Murray and bass guitarist Chris Cain, with drummer Keith Carne joining the band in the studio and for live performances since 2013."
+  },
+  {
+   "id": "34fa8d00-9ab6-4ecd-a496-c6b5ccf6a22e",
+   "slug": "aterciopelados-56027389",
+   "title": "Aterciopelados",
+   "act": "Aterciopelados",
+   "name": "Aterciopelados",
+   "description": "Rock band from Colombia",
+   "source_url": "https://en.wikipedia.org/wiki/Aterciopelados",
+   "extract": "Aterciopelados, also known as Los Aterciopelados, is a rock band from Colombia, led by Andrea Echeverri and Héctor Buitrago. Their music fuses rock with a variety of Colombian and Latin American musical traditions. Aterciopelados have recorded eight albums."
+  }
+ ]
+}

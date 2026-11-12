@@ -1,0 +1,16 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "8c7f489d-7fa8-4511-9ad7-a98062c0c28a",
+   "slug": "rafet-el-roman-46130ff0",
+   "title": "Rafet El Roman",
+   "act": "Rafet El Roman",
+   "name": "Rafet El Roman",
+   "description": "Turkish pop singer (born 1968)",
+   "source_url": "https://en.wikipedia.org/wiki/Rafet_El_Roman",
+   "extract": "Rafet Yaşdut, better known by his stage name Rafet El Roman, is a Turkish pop singer. He holds German citizenship."
+  }
+ ]
+}

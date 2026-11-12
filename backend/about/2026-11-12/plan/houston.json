@@ -1,0 +1,16 @@
+{
+ "city": "houston",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "d0c8782f-091a-4af9-9cb4-87874b3f30c3",
+   "slug": "dragonforce-inhuman-rampage-20th-anniversary-5713e404",
+   "title": "DragonForce: Inhuman Rampage 20th Anniversary",
+   "act": "DragonForce",
+   "name": "DragonForce",
+   "description": "British power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/DragonForce",
+   "extract": "DragonForce are a British power metal band from London, formed in 1999. They are known for their long and fast guitar solos, fantasy-themed lyrics and retro video game-influenced sound. The band themselves refer to their music as \"extreme power metal\"."
+  }
+ ]
+}

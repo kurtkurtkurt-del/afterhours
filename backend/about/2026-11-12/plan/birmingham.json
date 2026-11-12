@@ -1,0 +1,46 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "f8271e08-d5c3-42e2-8db5-9587d8bf239d",
+   "slug": "president-blood-of-your-empire-united-kingdom-ca-e502dab1",
+   "title": "PRESIDENT - Blood of Your Empire: United Kingdom Campaign 2026",
+   "act": "PRESIDENT",
+   "name": "President",
+   "description": "British metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/President_(band)",
+   "extract": "President are an anonymous English band formed in 2025, who blend metalcore with electronica. The band had released no music and were unknown until they were announced to play at that year's Download Festival, sparking speculation about their identity. Their frontman, the eponymous President, is described by Revolver as \"silver-haired, wearing an eerie, not-quite-lifelike mask etched with deep wrinkles and radiating wax-figure unease\". They released their debut EP, King of Terrors, in 2025. Their debut studio album, Blood of Your Empire, was released on 4 September 2026."
+  },
+  {
+   "id": "b7da3f2b-1d04-4937-9e38-f79e9849a2ea",
+   "slug": "the-stylistics-c54efdf1",
+   "title": "The Stylistics",
+   "act": "The Stylistics",
+   "name": "The Stylistics",
+   "description": "American music group",
+   "source_url": "https://en.wikipedia.org/wiki/The_Stylistics",
+   "extract": "The Stylistics are an American Philadelphia soul group that achieved their greatest chart success in the 1970s. They formed in 1968, with a lineup of singers Russell Thompkins Jr., Herb Murrell, Airrion Love, James Smith, and James Dunn. All of their U.S. hits were ballads characterized by the falsetto of Russell Thompkins Jr. and the production of Thom Bell. During the early 1970s, the group had twelve consecutive R&B top ten hits including \"Stop, Look, Listen\", \"You Are Everything\", \"Betcha by Golly, Wow\", \"I'm Stone in Love with You\", \"Break Up to Make Up\", \"People Make the World Go Round\" and \"You Make Me Feel Brand New\". They had five gold singles and three gold albums."
+  },
+  {
+   "id": "2fb2e5aa-46ed-4c87-9e0a-570da0ad6fca",
+   "slug": "del-amitri-a1a975fe",
+   "title": "Del Amitri",
+   "act": "Del Amitri",
+   "name": "Del Amitri",
+   "description": "Scottish alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Del_Amitri",
+   "extract": "Del Amitri are a Scottish alternative rock band formed in Glasgow in 1980. \nThey are best known for their 1990 single \"Nothing Ever Happens\", which reached No. 11 in the UK, and their 1995 hit \"Roll to Me\", which reached the top 10 in both Canada and the United States. They have released seven studio albums, five of which have reached the UK top 10. Del Amitri has sold over six million albums worldwide."
+  },
+  {
+   "id": "6e04598d-de37-4b41-b77d-97ce8d3bbe2f",
+   "slug": "catty-32b7433d",
+   "title": "CATTY",
+   "act": "CATTY",
+   "name": "Catty",
+   "description": "Welsh singer (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Catty_(singer)",
+   "extract": "Catrin Hopkins, known professionally as CATTY, is a Welsh singer and songwriter. She began her music career in 2016 in the musical duo Dusky Grey, before becoming a solo artist and a songwriter. Since going solo, she has released the extended plays Healing Out of Spite and Bracing for Impact, as well as supporting various artists on tour, including Dylan and Stevie Nicks."
+  }
+ ]
+}
