@@ -5,10 +5,10 @@
     {
       "kind": "football",
       "title": { "en": "scotland v north macedonia at hampden.", "de": "schottland – nordmazedonien im hampden.", "tr": "iskoçya – kuzey makedonya, hampden'de." },
-      "line": { "en": "uefa nations league at hampden park, kick-off 19:45 on friday. the scottish fa calls it the last home game of 2026.", "de": "uefa nations league im hampden park, anpfiff freitag 19:45. der schottische verband nennt es das letzte heimspiel 2026.", "tr": "uefa uluslar ligi, hampden park'ta, cuma 19:45'te başlıyor. iskoç futbol federasyonu bunu 2026'nın son iç saha maçı olarak anıyor." },
+      "line": { "en": "uefa nations league at hampden park, kick-off 19:45 on friday. get there early for a pint before the gates.", "de": "uefa nations league im hampden park, anpfiff freitag 19:45. früh kommen für ein bier vor dem einlass.", "tr": "uefa uluslar ligi, hampden park'ta, cuma günü 19:45'te başlıyor. kapılar açılmadan önce bir bira için erken gel." },
       "place": { "en": "hampden park", "de": "hampden park", "tr": "hampden park" },
       "hour": 19, "minute": 45,
-      "why": "Scotland v North Macedonia, Nations League at Hampden Park, Fri 13 Nov 19:45, per the Scottish FA announcement; ESPN lists a different weekday and time, so check before going."
+      "why": "Scotland v North Macedonia, UEFA Nations League at Hampden Park, Fri 13 Nov 19:45, per the Hampden Park What's On listing; some aggregators show other times, so check the stadium page before going."
     }
   ]
 }
