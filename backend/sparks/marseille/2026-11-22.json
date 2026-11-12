@@ -1,0 +1,14 @@
+{
+  "city": "marseille",
+  "day": "2026-11-22",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "om – le mans at the vélodrome.", "de": "om – le mans im vélodrome.", "tr": "vélodrome'da om – le mans." },
+      "line": { "en": "ligue 1, matchday 11, kickoff 20:45. be there by 19:30; check tickets on the club site.", "de": "ligue 1, 11. spieltag, anpfiff 20:45. um 19:30 da sein; tickets auf der vereinsseite prüfen.", "tr": "ligue 1, 11. hafta, başlama 20:45. 19:30'da orada olun; biletleri kulüp sitesinden kontrol edin." },
+      "place": { "en": "stade vélodrome", "de": "stade vélodrome", "tr": "stade vélodrome" },
+      "hour": 19, "minute": 30,
+      "why": "OM vs Le Mans, Ligue 1 matchday 11, sun 22 nov 20:45 at the Vélodrome (cepacvelodrome.com match page, footballclubdemarseille.fr)."
+    }
+  ]
+}

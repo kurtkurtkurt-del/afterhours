@@ -1,0 +1,14 @@
+{
+  "city": "marseille",
+  "day": "2026-11-26",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "om – levski sofia at the vélodrome.", "de": "om – levski sofia im vélodrome.", "tr": "vélodrome'da om – levski sofia." },
+      "line": { "en": "europa league, matchday 5, kickoff 18:45. a thursday night at the vélodrome; be there by 18:00.", "de": "europa league, 5. spieltag, anpfiff 18:45. ein donnerstagabend im vélodrome; um 18:00 da sein.", "tr": "avrupa ligi, 5. hafta, başlama 18:45. vélodrome'da perşembe akşamı; 18:00'de orada olun." },
+      "place": { "en": "stade vélodrome", "de": "stade vélodrome", "tr": "stade vélodrome" },
+      "hour": 18, "minute": 0,
+      "why": "OM vs Levski Sofia, Europa League matchday 5, thu 26 nov 18:45 at the Vélodrome (several OM calendar pages, e.g. newsofmarseille.com and facilabo.com)."
+    }
+  ]
+}

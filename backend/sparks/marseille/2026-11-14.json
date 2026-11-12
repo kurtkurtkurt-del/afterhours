@@ -1,0 +1,14 @@
+{
+  "city": "marseille",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "trio wakan at la méson, jazz sur la ville.", "de": "trio wakan in der la méson, jazz sur la ville.", "tr": "la méson'da trio wakan, jazz sur la ville." },
+      "line": { "en": "an original set, being dantès, after dumas. start 20:00; tickets from 15 euro. one listing says 19:00, so check the ticket page.", "de": "ein eigenes programm, being dantès, nach dumas. beginn 20:00; tickets ab 15 euro. eine liste nennt 19:00, also die ticketseite prüfen.", "tr": "dumas'tan esinlenen özgün program, being dantès. başlama 20:00; biletler 15 euro'dan. bir listede 19:00 yazıyor, bilet sayfasına bakın." },
+      "place": { "en": "la méson", "de": "la méson", "tr": "la méson" },
+      "hour": 20, "minute": 0,
+      "why": "Trio Wakan at La Méson, 52 rue Consolat, sat 14 nov 20:00, Jazz sur la Ville festival (infoconcert.com, marseille-tourisme.com); jds.fr lists 19:00."
+    }
+  ]
+}
