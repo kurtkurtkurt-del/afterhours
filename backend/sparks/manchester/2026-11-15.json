@@ -1,0 +1,14 @@
+{
+  "city": "manchester",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "christmas market on albert square, with the ferris wheel.", "de": "weihnachtsmarkt am albert square, mit riesenrad.", "tr": "albert square'de noel pazarı, dönme dolapla." },
+      "line": { "en": "the christmas market is open on albert square and the big ferris wheel is back. go in the early afternoon, before the evening crowd.", "de": "der weihnachtsmarkt ist auf dem albert square offen, und das große riesenrad ist wieder da. am frühen nachmittag hingehen, vor dem abendtrubel.", "tr": "noel pazarı albert square'de açık ve büyük dönme dolap geri döndü. öğleden sonra, akşam kalabalığından önce gidin." },
+      "place": { "en": "albert square", "de": "albert square", "tr": "albert square" },
+      "hour": 12, "minute": 0,
+      "why": "Manchester Christmas Markets 2026 open from 6 Nov, Albert Square runs to 3 Jan 2027 with the Ferris wheel back (Visit Manchester; Brit Brief)."
+    }
+  ]
+}
