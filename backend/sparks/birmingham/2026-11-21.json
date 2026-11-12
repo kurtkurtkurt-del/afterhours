@@ -1,0 +1,14 @@
+{
+  "city": "birmingham",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "aston villa – sunderland at villa park.", "de": "aston villa – sunderland im villa park.", "tr": "villa park'ta aston villa – sunderland." },
+      "line": { "en": "premier league home game, saturday 15:00 kick-off. allow time for the trip out to the ground.", "de": "premier-league-heimspiel, samstag 15:00 anpfiff. zeit für die fahrt zum stadion einplanen.", "tr": "premier lig ev maçı, cumartesi 15:00 başlangıç. stadyuma gidiş için zaman bırak." },
+      "place": { "en": "villa park", "de": "villa park", "tr": "villa park" },
+      "hour": 15, "minute": 0,
+      "why": "Aston Villa vs Sunderland, Premier League, Villa Park, Sat 21 Nov 2026 15:00, per Goal.com and AirConnect fixture listings; outside the seven days, written as the one big match of the following week."
+    }
+  ]
+}
