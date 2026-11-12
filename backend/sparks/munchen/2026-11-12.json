@@ -1,0 +1,657 @@
+{
+  "city": "munchen",
+  "day": "2026-11-12",
+  "sparks": [
+    {
+      "kind": "derby",
+      "title": {
+        "en": "no bayern tonight, a table anyway.",
+        "de": "heute kein bayern, trotzdem ein tisch.",
+        "tr": "bu akşam bayern yok, yine de bir masa."
+      },
+      "line": {
+        "en": "international break, so no bayern game this thursday. a pub with screens in the old town is the dry place to talk football; come at 20:00.",
+        "de": "länderspielpause, also kein bayern-spiel an diesem donnerstag. eine kneipe mit bildschirmen in der altstadt ist der trockene ort fürs fachsimpeln; um 20:00 kommen.",
+        "tr": "milli ara, bu perşembe bayern maçı yok. eski şehirdeki ekranlı bir pub'da kuru kuru futbol konuşulur; 20:00'de gel."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "fcbayern.com fixtures show no Bayern game on 12.11 (international break; next Köln 20.11). EHC Red Bull München schedule not confirmed. Forecast ~13°C and wet (DWD via daswetter.com, as of 8.11), sunrise ~07:08, sunset ~16:42."
+    },
+    {
+      "kind": "grill",
+      "title": {
+        "en": "grill indoors, it is raining.",
+        "de": "grill drinnen, es regnet.",
+        "tr": "mangal içeride, yağmur var."
+      },
+      "line": {
+        "en": "mild but wet, the isar bank is mud. cook sausages and vegetables in a pan at someone's place, 18:00.",
+        "de": "mild, aber nass, die isar ist matschig. würstchen und gemüse bei jemandem in der pfanne braten, 18:00.",
+        "tr": "ılık ama yağışlı, isar kıyısı çamur. sosis ve sebzeyi birinin evinde tavada pişir, 18:00."
+      },
+      "place": {
+        "en": "bei dir zuhause",
+        "de": "bei dir zuhause",
+        "tr": "bei dir zuhause"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Rain forecast all day, so the grill moves indoors. Forecast ~13°C and wet (DWD via daswetter.com, as of 8.11), sunrise ~07:08, sunset ~16:42."
+    },
+    {
+      "kind": "hike",
+      "title": {
+        "en": "a short hill between the showers.",
+        "de": "ein kurzer hügel zwischen den schauern.",
+        "tr": "sağanaklar arasında kısa bir tepe."
+      },
+      "line": {
+        "en": "mild at 13°c but damp. climb the olympiaberg at 15:00 in a rain jacket and be down before the light goes at 16:40.",
+        "de": "mild bei 13°c, aber feucht. um 15:00 mit regenjacke auf den olympiaberg, vor dem licht um 16:40 wieder unten.",
+        "tr": "13°c ılık ama nemli. 15:00'te yağmurlukla olympiaberg'e çık, ışık 16:40'ta gitmeden in."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Forecast ~13°C and wet (DWD via daswetter.com, as of 8.11), sunrise ~07:08, sunset ~16:42."
+    },
+    {
+      "kind": "sunrise",
+      "title": {
+        "en": "sunrise behind the clouds.",
+        "de": "sonnenaufgang hinter den wolken.",
+        "tr": "bulutların ardında gün doğumu."
+      },
+      "line": {
+        "en": "sunrise is around 07:08 and the sky will be grey and wet. only for the stubborn: olympiaberg at 06:48 with a flask, or sleep in.",
+        "de": "sonnenaufgang gegen 07:08, der himmel grau und nass. nur für die sturen: olympiaberg um 06:48 mit thermoskanne, oder ausschlafen.",
+        "tr": "gün doğumu 07:08 civarı, gökyüzü gri ve ıslak. sadece inatçılar için: 06:48'de termosla olympiaberg, ya da uyu."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 6,
+      "minute": 48,
+      "why": "Forecast ~13°C and wet (DWD via daswetter.com, as of 8.11), sunrise ~07:08, sunset ~16:42."
+    },
+    {
+      "kind": "breakfast",
+      "title": {
+        "en": "a long breakfast, thursday style.",
+        "de": "langes frühstück, donnerstagsstil.",
+        "tr": "uzun bir kahvaltı, perşembe usulü."
+      },
+      "line": {
+        "en": "rain outside, so stay inside: a bakery-café, eggs, a second coffee, 09:30.",
+        "de": "draußen regnet es, also drinnen bleiben: bäckerei-café, eier, ein zweiter kaffee, 09:30.",
+        "tr": "dışarıda yağmur var, içeride kal: fırın-kafe, yumurta, ikinci kahve, 09:30."
+      },
+      "place": {
+        "en": "café frischhut",
+        "de": "café frischhut",
+        "tr": "café frischhut"
+      },
+      "hour": 9,
+      "minute": 30,
+      "why": "Thursday, wet forecast."
+    },
+    {
+      "kind": "rooftop",
+      "title": {
+        "en": "the rooftop only for a quick look.",
+        "de": "die dachterrasse nur für einen kurzen blick.",
+        "tr": "çatı sadece kısa bir bakış için."
+      },
+      "line": {
+        "en": "rain makes it a covered bar with a view. come at 16:30 for the lights coming on, sunset is 16:42.",
+        "de": "bei regen wird es eine überdachte bar mit aussicht. um 16:30 kommen, wenn die lichter angehen, sonnenuntergang 16:42.",
+        "tr": "yağmurda üstü kapalı manzaralı bir bar olur. ışıklar yanarken 16:30'a gel, gün batımı 16:42."
+      },
+      "place": {
+        "en": "dachterrasse mit heizpilzen",
+        "de": "dachterrasse mit heizpilzen",
+        "tr": "dachterrasse mit heizpilzen"
+      },
+      "hour": 16,
+      "minute": 30,
+      "why": "Forecast ~13°C and wet (DWD via daswetter.com, as of 8.11), sunrise ~07:08, sunset ~16:42."
+    },
+    {
+      "kind": "swim",
+      "title": {
+        "en": "a warm pool, not the lake.",
+        "de": "ins warme becken, nicht in den see.",
+        "tr": "göl değil, sıcak havuz."
+      },
+      "line": {
+        "en": "the lakes are for the brave only now. the olympia-schwimmhalle is indoors; go at 19:00 and finish in the sauna if you like.",
+        "de": "die seen sind jetzt nur für mutige. die olympia-schwimmhalle ist drinnen; um 19:00 hin und danach in die sauna.",
+        "tr": "göller artık sadece cesurlar için. olympia-schwimmhalle kapalı; 19:00'da git, sonra saunaya geç."
+      },
+      "place": {
+        "en": "olympia-schwimmhalle",
+        "de": "olympia-schwimmhalle",
+        "tr": "olympia-schwimmhalle"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Thursday, wet 13°C day; indoor option kept as generic."
+    },
+    {
+      "kind": "quiz",
+      "title": {
+        "en": "a pub quiz on a thursday.",
+        "de": "pubquiz am donnerstag.",
+        "tr": "perşembe akşamı pub quiz."
+      },
+      "line": {
+        "en": "many pubs run quiz nights midweek. bring three friends, a pen and an excuse for the wrong answers. 20:00.",
+        "de": "viele kneipen machen unter der woche quizabende. drei freunde, einen stift und eine ausrede für falsche antworten mitbringen. 20:00.",
+        "tr": "birçok pub hafta içi quiz yapar. üç arkadaş, bir kalem ve yanlış cevaplar için bir bahane getir. 20:00."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Thursday; specific quiz night not confirmed, kept generic."
+    },
+    {
+      "kind": "newplace",
+      "title": {
+        "en": "a place you have never been.",
+        "de": "ein ort, an dem du noch nie warst.",
+        "tr": "hiç gitmediğin bir yer."
+      },
+      "line": {
+        "en": "pick a neighbourhood you skip: giesing, haidhausen or sendling. walk in the first bar that looks warm. 19:30.",
+        "de": "such dir ein viertel, das du sonst auslässt: giesing, haidhausen oder sendling. geh in die erste bar, die warm aussieht. 19:30.",
+        "tr": "atladığın bir semt seç: giesing, haidhausen ya da sendling. sıcak görünen ilk bara gir. 19:30."
+      },
+      "place": {
+        "en": "haidhausen",
+        "de": "haidhausen",
+        "tr": "haidhausen"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Thursday, wet 13°C day; indoor option kept as generic."
+    },
+    {
+      "kind": "camera",
+      "title": {
+        "en": "wet streets, one roll.",
+        "de": "nasse straßen, ein film.",
+        "tr": "ıslak sokaklar, tek film."
+      },
+      "line": {
+        "en": "rain makes reflections: the old town at dusk, 16:30, light low and streetlamps on the cobbles. bring a camera, shoot slow.",
+        "de": "regen macht spiegelungen: die altstadt in der dämmerung, 16:30, tiefes licht und laternen auf dem pflaster. kamera mitbringen, langsam fotografieren.",
+        "tr": "yağmur yansıma yapar: alacakaranlıkta eski şehir, 16:30, alçak ışık ve kaldırımda sokak lambaları. kamera getir, yavaş çek."
+      },
+      "place": {
+        "en": "marienplatz",
+        "de": "marienplatz",
+        "tr": "marienplatz"
+      },
+      "hour": 16,
+      "minute": 30,
+      "why": "Forecast ~13°C and wet (DWD via daswetter.com, as of 8.11), sunrise ~07:08, sunset ~16:42."
+    },
+    {
+      "kind": "festival",
+      "title": {
+        "en": "a concert night instead of a festival.",
+        "de": "ein konzertabend statt festival.",
+        "tr": "festival yerine konser gecesi."
+      },
+      "line": {
+        "en": "no festival today, but the muffathalle has dartagnan with storm seeker at 19:00. a loud, warm room on a wet night.",
+        "de": "heute kein festival, aber in der muffathalle spielen dartagnan mit storm seeker um 19:00. ein lauter, warmer raum an einem nassen abend.",
+        "tr": "bugün festival yok ama muffathalle'de 19:00'da storm seeker konuklu dartagnan var. ıslak bir gecede gürültülü, sıcak bir salon."
+      },
+      "place": {
+        "en": "muffathalle",
+        "de": "muffathalle",
+        "tr": "muffathalle"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "mvp.de / regioactive.de list dARTAGNAN (Jubiläumstour) with Storm Seeker at the Muffathalle, 12.11 19:00. No festival or market confirmed."
+    },
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "one song, even off key.",
+        "de": "ein lied, auch schief.",
+        "tr": "tek şarkı, yanlış da olsa."
+      },
+      "line": {
+        "en": "a karaoke bar on a thursday is half empty and kinder for it. sign up for two songs, take a friend who dares. 21:00.",
+        "de": "eine karaokebar am donnerstag ist halb leer und deshalb freundlicher. zwei lieder eintragen, einen mutigen freund mitnehmen. 21:00.",
+        "tr": "perşembe günü karaoke barı yarı boştur, daha naziktir. iki şarkıya yazıl, cesur bir arkadaş getir. 21:00."
+      },
+      "place": {
+        "en": "karaoke-bar",
+        "de": "karaoke-bar",
+        "tr": "karaoke-bar"
+      },
+      "hour": 21,
+      "minute": 0,
+      "why": "Thursday, generic."
+    },
+    {
+      "kind": "vinyl",
+      "title": {
+        "en": "a record shop and a corner to sit.",
+        "de": "plattenladen und eine ecke zum sitzen.",
+        "tr": "plak dükkânı ve oturacak bir köşe."
+      },
+      "line": {
+        "en": "flip through crates for an hour, then play the best find at a bar that lets you. wet-weather friendly. 17:00.",
+        "de": "eine stunde in kisten blättern, dann den besten fund in einer bar auflegen, die es erlaubt. regentauglich. 17:00.",
+        "tr": "bir saat kasalara bak, sonra en iyi buluntuyu izin veren bir barda çaldır. yağmura uygun. 17:00."
+      },
+      "place": {
+        "en": "plattenladen in der maxvorstadt",
+        "de": "plattenladen in der maxvorstadt",
+        "tr": "plattenladen in der maxvorstadt"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Thursday, wet 13°C day; indoor option kept as generic."
+    },
+    {
+      "kind": "openair",
+      "title": {
+        "en": "no open air in november.",
+        "de": "kein open air im november.",
+        "tr": "kasımda açık hava yok."
+      },
+      "line": {
+        "en": "the open-air season is long over. look for a small live gig in a cellar club instead: doors 20:00.",
+        "de": "die open-air-saison ist lange vorbei. such stattdessen ein kleines konzert in einem kellerclub: einlass 20:00.",
+        "tr": "açık hava sezonu çoktan bitti. onun yerine bir kodes kulübünde küçük bir konser bul: kapı 20:00."
+      },
+      "place": {
+        "en": "kellerclub",
+        "de": "kellerclub",
+        "tr": "kellerclub"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Open-air season is over; small gigs are listed for 12.11 on regioactive.de."
+    },
+    {
+      "kind": "bike",
+      "title": {
+        "en": "a short ride, mudguards on.",
+        "de": "eine kurze runde, mit schutzblechen.",
+        "tr": "kısa bir tur, çamurluklu."
+      },
+      "line": {
+        "en": "13°c is fine for cycling, the rain is not. if it eases, ride the isar path from the flaucher at 15:00 with lights on; be home by 16:40.",
+        "de": "13°c sind okay zum radeln, der regen nicht. lässt er nach, ab 15:00 den isarweg vom flaucher mit licht fahren; um 16:40 zuhause sein.",
+        "tr": "13°c bisiklet için uygun, yağmur değil. dinerse 15:00'te flaucher'den ışıklarla isar yolunda sür; 16:40'ta evde ol."
+      },
+      "place": {
+        "en": "isarradweg am flaucher",
+        "de": "isarradweg am flaucher",
+        "tr": "isarradweg am flaucher"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Forecast ~13°C and wet (DWD via daswetter.com, as of 8.11), sunrise ~07:08, sunset ~16:42."
+    },
+    {
+      "kind": "cinema",
+      "title": {
+        "en": "a film in a real cinema.",
+        "de": "ein film im richtigen kino.",
+        "tr": "gerçek bir sinemada film."
+      },
+      "line": {
+        "en": "a thursday evening show on a rainy night, the smaller auditoriums are nearly empty. pick the film at the door. 20:00.",
+        "de": "donnerstagabend an einem regnerischen tag, die kleinen säle sind fast leer. den film an der kasse wählen. 20:00.",
+        "tr": "yağmurlu bir perşembe akşamı, küçük salonlar neredeyse boş. filmi gişede seç. 20:00."
+      },
+      "place": {
+        "en": "theatiner film",
+        "de": "theatiner film",
+        "tr": "theatiner film"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Thursday, wet; film not chosen."
+    },
+    {
+      "kind": "boardgames",
+      "title": {
+        "en": "a board game and a pot of tea.",
+        "de": "brettspiel und eine kanne tee.",
+        "tr": "bir kutu oyun ve bir demlik çay."
+      },
+      "line": {
+        "en": "a wet, dark evening is made for it. bring a game, or find a café that lends them. 19:00.",
+        "de": "ein feuchter, dunkler abend ist dafür gemacht. ein spiel mitbringen oder ein café finden, das welche verleiht. 19:00.",
+        "tr": "nemli, karanlık bir akşam bunun için yaratılmış. oyun getir ya da ödünç veren bir kafe bul. 19:00."
+      },
+      "place": {
+        "en": "brettspielcafé",
+        "de": "brettspielcafé",
+        "tr": "brettspielcafé"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Thursday, wet 13°C day; indoor option kept as generic."
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "a market, but under a roof.",
+        "de": "ein markt, aber unter dach.",
+        "tr": "bir pazar, ama çatı altında."
+      },
+      "line": {
+        "en": "the viktualienmarkt is open on a thursday. buy cheese and bread, then eat standing under the stalls. 12:00.",
+        "de": "der viktualienmarkt ist am donnerstag offen. käse und brot kaufen, dann unter den ständen im stehen essen. 12:00.",
+        "tr": "viktualienmarkt perşembe günü açık. peynir ve ekmek al, tezgâhların altında ayakta ye. 12:00."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 12,
+      "minute": 0,
+      "why": "Viktualienmarkt trades Mon–Sat; rain, so eat under the awnings."
+    },
+    {
+      "kind": "skate",
+      "title": {
+        "en": "skate indoors on a wet day.",
+        "de": "skaten in der halle bei nässe.",
+        "tr": "ıslak günde salonda kaykay."
+      },
+      "line": {
+        "en": "the pavements are wet and dark by five. an indoor skatepark has the ramps dry; 18:00.",
+        "de": "die wege sind nass und um fünf dunkel. eine skatehalle hat trockene rampen; 18:00.",
+        "tr": "kaldırımlar ıslak, beşte karanlık. kapalı bir skatepark'ta rampalar kuru; 18:00."
+      },
+      "place": {
+        "en": "skatehalle",
+        "de": "skatehalle",
+        "tr": "skatehalle"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Thursday, wet 13°C day; indoor option kept as generic."
+    },
+    {
+      "kind": "cook",
+      "title": {
+        "en": "cook together, one pot.",
+        "de": "gemeinsam kochen, ein topf.",
+        "tr": "birlikte pişir, tek tencere."
+      },
+      "line": {
+        "en": "a big pot of soup is plenty. everyone brings one ingredient. 19:00.",
+        "de": "ein großer topf suppe reicht völlig. jeder bringt eine zutat mit. 19:00.",
+        "tr": "büyük bir tencere çorba yeter. herkes bir malzeme getirsin. 19:00."
+      },
+      "place": {
+        "en": "bei dir zuhause",
+        "de": "bei dir zuhause",
+        "tr": "bei dir zuhause"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Wet evening, indoors."
+    },
+    {
+      "kind": "sauna",
+      "title": {
+        "en": "a sauna on a damp day.",
+        "de": "sauna an einem feuchten tag.",
+        "tr": "nemli bir günde sauna."
+      },
+      "line": {
+        "en": "the best use of a wet november evening. the olympia-schwimmhalle or a thermal bath; book for 18:30 and stay for two rounds.",
+        "de": "die beste verwendung eines nassen novemberabends. olympia-schwimmhalle oder eine therme; für 18:30 buchen und zwei durchgänge bleiben.",
+        "tr": "ıslak bir kasım akşamının en iyi kullanımı. olympia-schwimmhalle ya da bir termal; 18:30'a rezerve et, iki tur kal."
+      },
+      "place": {
+        "en": "olympia-schwimmhalle",
+        "de": "olympia-schwimmhalle",
+        "tr": "olympia-schwimmhalle"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Forecast ~13°C and wet (DWD via daswetter.com, as of 8.11), sunrise ~07:08, sunset ~16:42."
+    },
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "a mic, three minutes.",
+        "de": "ein mikro, drei minuten.",
+        "tr": "bir mikrofon, üç dakika."
+      },
+      "line": {
+        "en": "an open mic is about people who try. sign up on the list at the door, bring a poem or a song. 20:00.",
+        "de": "eine open mic lebt von menschen, die es versuchen. an der tür auf die liste, ein gedicht oder ein lied mitbringen. 20:00.",
+        "tr": "open mic deneyenler içindir. kapıdaki listeye yazıl, bir şiir ya da şarkı getir. 20:00."
+      },
+      "place": {
+        "en": "kleine bühne",
+        "de": "kleine bühne",
+        "tr": "kleine bühne"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Thursday, generic."
+    },
+    {
+      "kind": "pingpong",
+      "title": {
+        "en": "a table, a bat, nothing else.",
+        "de": "eine platte, ein schläger, mehr nicht.",
+        "tr": "bir masa, bir raket, başka bir şey yok."
+      },
+      "line": {
+        "en": "indoor and warm: a ping-pong bar or a sports hall table. winner buys the next round. 19:00.",
+        "de": "drinnen und warm: eine pingpong-bar oder eine tischtennisplatte in der sporthalle. der sieger gibt die nächste runde aus. 19:00.",
+        "tr": "kapalı ve sıcak: bir masa tenisi barı ya da spor salonunda masa. kazanan sonraki turu ısmarlar. 19:00."
+      },
+      "place": {
+        "en": "pingpong-bar",
+        "de": "pingpong-bar",
+        "tr": "pingpong-bar"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Thursday, wet 13°C day; indoor option kept as generic."
+    },
+    {
+      "kind": "bouldering",
+      "title": {
+        "en": "climb something indoors.",
+        "de": "drinnen etwas erklimmen.",
+        "tr": "içeride bir şeye tırman."
+      },
+      "line": {
+        "en": "a bouldering gym is dry and warm on a rainy thursday. after work it is busy but friendly. 18:30.",
+        "de": "eine boulderhalle ist an einem regnerischen donnerstag trocken und warm. nach der arbeit voll, aber freundlich. 18:30.",
+        "tr": "yağmurlu bir perşembe günü boulder salonu kuru ve sıcak. iş çıkışı kalabalık ama samimi. 18:30."
+      },
+      "place": {
+        "en": "boulderhalle",
+        "de": "boulderhalle",
+        "tr": "boulderhalle"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Forecast ~13°C and wet (DWD via daswetter.com, as of 8.11), sunrise ~07:08, sunset ~16:42."
+    },
+    {
+      "kind": "picnic",
+      "title": {
+        "en": "a picnic is a hot drink under a roof.",
+        "de": "ein picknick ist ein heißgetränk unter dach.",
+        "tr": "piknik, çatı altında sıcak bir içecek."
+      },
+      "line": {
+        "en": "wet benches, so take the thermos to a covered spot: a café terrace with a roof in the englischer garten, 15:30.",
+        "de": "nasse bänke, also die thermoskanne an einen überdachten platz: ein café mit dach im englischen garten, 15:30.",
+        "tr": "ıslak banklar, termosu üstü kapalı bir yere götür: englischer garten'de çatılı bir kafe, 15:30."
+      },
+      "place": {
+        "en": "englischer garten",
+        "de": "englischer garten",
+        "tr": "englischer garten"
+      },
+      "hour": 15,
+      "minute": 30,
+      "why": "Forecast ~13°C and wet (DWD via daswetter.com, as of 8.11), sunrise ~07:08, sunset ~16:42."
+    },
+    {
+      "kind": "crawl",
+      "title": {
+        "en": "a short crawl, no match to guide it.",
+        "de": "eine kurze tour, ohne spiel als wegweiser.",
+        "tr": "kısa bir bar turu, maç rehberi yok."
+      },
+      "line": {
+        "en": "no match tonight, so three bars within ten minutes of the gärtnerplatz. one drink each, then move on. 20:00.",
+        "de": "heute kein spiel, also drei bars in zehn minuten um den gärtnerplatz. je ein getränk, dann weiter. 20:00.",
+        "tr": "bu akşam maç yok, gärtnerplatz çevresinde on dakikalık üç bar. her birinde bir içki, sonra devam. 20:00."
+      },
+      "place": {
+        "en": "gärtnerplatz",
+        "de": "gärtnerplatz",
+        "tr": "gärtnerplatz"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No Bayern game 12.11."
+    },
+    {
+      "kind": "stars",
+      "title": {
+        "en": "stars only if the sky opens.",
+        "de": "sterne nur, wenn der himmel aufreißt.",
+        "tr": "gökyüzü açılırsa yıldızlar."
+      },
+      "line": {
+        "en": "rain is forecast, so probably cloud. check the sky at 18:30; if it clears, go to the fröttmaninger berg.",
+        "de": "regen ist angesagt, also wohl wolken. um 18:30 den himmel prüfen; wenn es aufklart, zum fröttmaninger berg.",
+        "tr": "yağmur bekleniyor, muhtemelen bulut. 18:30'da gökyüzüne bak; açılırsa fröttmaninger berg'e git."
+      },
+      "place": {
+        "en": "fröttmaninger berg",
+        "de": "fröttmaninger berg",
+        "tr": "fröttmaninger berg"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Forecast ~13°C and wet (DWD via daswetter.com, as of 8.11), sunrise ~07:08, sunset ~16:42."
+    },
+    {
+      "kind": "football",
+      "title": {
+        "en": "no bayern, so a kick-about indoors.",
+        "de": "kein bayern, also kicken in der halle.",
+        "tr": "bayern yok, o yüzden salonda top."
+      },
+      "line": {
+        "en": "international break and a wet pitch: try a five-a-side hall at 19:00. dress in layers.",
+        "de": "länderspielpause und nasser platz: eine kleinfeldhalle um 19:00 probieren. zwiebellook.",
+        "tr": "milli ara ve ıslak saha: 19:00'da halı saha salonu dene. kat kat giyin."
+      },
+      "place": {
+        "en": "kleinfeldhalle",
+        "de": "kleinfeldhalle",
+        "tr": "kleinfeldhalle"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "No Bayern game 12.11 (international break). Forecast ~13°C and wet (DWD via daswetter.com, as of 8.11), sunrise ~07:08, sunset ~16:42."
+    },
+    {
+      "kind": "tram",
+      "title": {
+        "en": "tram 17 across the town.",
+        "de": "tram 17 quer durch die stadt.",
+        "tr": "tram 17 ile şehri boydan boya."
+      },
+      "line": {
+        "en": "a tram ride is the cheapest tour on a wet dark evening. take the 17 from the east to the west, get off where it looks good. 18:00.",
+        "de": "eine tramfahrt ist die günstigste tour an einem nassen dunklen abend. die 17 von ost nach west nehmen, aussteigen, wo es gut aussieht. 18:00.",
+        "tr": "ıslak, karanlık bir akşamda tramvay en ucuz tur. 17'ye doğudan batıya bin, güzel görünen yerde in. 18:00."
+      },
+      "place": {
+        "en": "tram 17",
+        "de": "tram 17",
+        "tr": "tram 17"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Wet evening; generic."
+    },
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "jazz in a small room.",
+        "de": "jazz in einem kleinen raum.",
+        "tr": "küçük bir odada caz."
+      },
+      "line": {
+        "en": "a cellar with a trio and one bottle of wine is the right size for the season. doors 20:00, music at 21:00.",
+        "de": "ein keller mit trio und einer flasche wein hat genau die richtige größe für die jahreszeit. einlass 20:00, musik um 21:00.",
+        "tr": "bir trio ve bir şişe şarap olan bir kodes mevsime tam uyar. kapı 20:00, müzik 21:00."
+      },
+      "place": {
+        "en": "unterfahrt",
+        "de": "unterfahrt",
+        "tr": "unterfahrt"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Thursday, wet 13°C day; indoor option kept as generic."
+    },
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a night walk under an umbrella.",
+        "de": "ein nachtspaziergang unterm schirm.",
+        "tr": "şemsiyeyle gece yürüyüşü."
+      },
+      "line": {
+        "en": "the old town is lit and quiet on a wet thursday. start at the marienplatz at 17:30 and wander the arcades.",
+        "de": "die altstadt ist an einem nassen donnerstag beleuchtet und ruhig. um 17:30 am marienplatz starten und durch die arkaden schlendern.",
+        "tr": "ıslak bir perşembe günü eski şehir ışıklı ve sakin. 17:30'da marienplatz'dan başla, arkadlar boyunca dolaş."
+      },
+      "place": {
+        "en": "marienplatz",
+        "de": "marienplatz",
+        "tr": "marienplatz"
+      },
+      "hour": 17,
+      "minute": 30,
+      "why": "Forecast ~13°C and wet (DWD via daswetter.com, as of 8.11), sunrise ~07:08, sunset ~16:42."
+    }
+  ]
+}
