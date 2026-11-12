@@ -1,0 +1,70 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "9006564a-7889-44eb-b99b-0c6a8b2dc25f",
+   "slug": "pi-erre-bourne-made-in-paris-5af5bc4b",
+   "title": "Pi'erre Bourne: Made In Paris",
+   "name": "Pi'erre Bourne",
+   "source_url": "https://en.wikipedia.org/wiki/Pi'erre_Bourne",
+   "extract": "Jordan Timothy Jenks, known professionally as Pi'erre Bourne, is an American record producer, rapper, singer, songwriter, and audio engineer. He is known for producing the 2017 singles \"Magnolia\" for Playboi Carti and \"Gummo\" for 6ix9ine, both of which entered the top 30 of the U.S. Billboard Hot 100. He has worked extensively with artists including Playboi Carti, Lil Uzi Vert, Lil Yachty, Young Thug, Juice Wrld, Young Nudy, Trippie Redd, Kanye West, Drake, Nav, 6ix9ine, Duwap Kaine, and 21 Savage.",
+   "en": {
+    "kicker": "american record producer and rapper",
+    "who": "Jordan Timothy Jenks, known professionally as Pi'erre Bourne, is an American record producer, rapper, singer, songwriter, and audio engineer. He is known for producing the 2017 singles \"Magnolia\" for Playboi Carti and \"Gummo\" for 6ix9ine.",
+    "facts": [
+     "He is known for producing the 2017 singles \"Magnolia\" for Playboi Carti and \"Gummo\" for 6ix9ine, both of which entered the top 30 of the U.S. Billboard Hot 100.",
+     "He has worked extensively with artists including Playboi Carti, Lil Uzi Vert, Lil Yachty, Young Thug, Juice Wrld, Young Nudy, Trippie Redd, Kanye West, Drake, Nav, 6ix9ine, Duwap Kaine, and 21 Savage."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer produzent und rapper",
+    "who": "Jordan Timothy Jenks, professionell als Pi'erre Bourne bekannt, ist ein amerikanischer Musikproduzent, Rapper, Sänger, Songwriter und Tontechniker. Bekannt ist er für die Produktion der Singles \"Magnolia\" (2017) für Playboi Carti und \"Gummo\" (2017) für 6ix9ine.",
+    "facts": [
+     "Bekannt ist er für die Produktion der Singles \"Magnolia\" (2017) für Playboi Carti und \"Gummo\" (2017) für 6ix9ine, die beide in die Top 30 der US-Billboard-Hot-100 einstiegen.",
+     "Er hat intensiv mit Künstlern wie Playboi Carti, Lil Uzi Vert, Lil Yachty, Young Thug, Juice Wrld, Young Nudy, Trippie Redd, Kanye West, Drake, Nav, 6ix9ine, Duwap Kaine und 21 Savage gearbeitet."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı plak yapımcısı ve rapçi",
+    "who": "Jordan Timothy Jenks, sahne adı pi'erre bourne ile tanınan amerikalı bir plak yapımcısı, rapçi, şarkıcı, söz yazarı ve ses mühendisi. playboi carti için 2017'de \"magnolia\", 6ix9ine için \"gummo\" single'larını üretmesiyle biliniyor.",
+    "facts": [
+     "2017'de playboi carti için \"magnolia\" ve 6ix9ine için \"gummo\" single'larını üretmesiyle biliniyor; ikisi de abd billboard hot 100'ün ilk 30'una girdi.",
+     "playboi carti, lil uzi vert, lil yachty, young thug, juice wrld, young nudy, trippie redd, kanye west, drake, nav, 6ix9ine, duwap kaine ve 21 savage dahil birçok sanatçıyla çalıştı."
+    ]
+   }
+  },
+  {
+   "id": "bdf3599b-0cba-4e3d-b3f5-a8de953e64af",
+   "slug": "liana-flores-652ddcc7",
+   "title": "Liana Flores",
+   "name": "Liana Flores",
+   "source_url": "https://en.wikipedia.org/wiki/Liana_Flores",
+   "extract": "Liana Flores is a British-Brazilian singer-songwriter and guitarist. After independently releasing two extended plays The Water's Fine! (2018) and Recently (2019), her debut studio album Flower of the Soul was released under Verve and Fiction in June 2024.",
+   "en": {
+    "kicker": "british-brazilian singer-songwriter · 2024",
+    "who": "Liana Flores is a British-Brazilian singer-songwriter and guitarist. After independently releasing two extended plays, her debut studio album Flower of the Soul was released under Verve and Fiction in June 2024.",
+    "facts": [
+     "Her debut studio album Flower of the Soul was released under Verve and Fiction in June 2024.",
+     "Liana Flores is a British-Brazilian singer-songwriter and guitarist."
+    ]
+   },
+   "de": {
+    "kicker": "britisch-brasilianische singer-songwriterin · 2024",
+    "who": "Liana Flores ist eine britisch-brasilianische Singer-Songwriterin und Gitarristin. Nach zwei unabhängig veröffentlichten EPs erschien ihr Debütalbum Flower of the Soul im Juni 2024 bei Verve und Fiction.",
+    "facts": [
+     "Ihr Debütalbum Flower of the Soul erschien im Juni 2024 bei Verve und Fiction.",
+     "Liana Flores ist eine britisch-brasilianische Singer-Songwriterin und Gitarristin."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz-brezilyalı şarkıcı ve söz yazarı · 2024",
+    "who": "Liana Flores, ingiliz-brezilyalı bir şarkıcı, söz yazarı ve gitarist. bağımsız olarak iki ep yayımladıktan sonra ilk stüdyo albümü flower of the soul haziran 2024'te verve ve fiction etiketiyle çıktı.",
+    "facts": [
+     "ilk stüdyo albümü flower of the soul haziran 2024'te verve ve fiction etiketiyle çıktı.",
+     "liana flores, ingiliz-brezilyalı bir şarkıcı, söz yazarı ve gitarist."
+    ]
+   }
+  }
+ ]
+}

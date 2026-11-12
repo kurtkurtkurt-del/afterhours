@@ -1,0 +1,38 @@
+{
+ "city": "toronto",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "983a9db6-e097-4a8c-ac67-664ff2cde409",
+   "slug": "barely-alive-reconnect-dee804b3",
+   "title": "BARELY ALIVE - \"RECONNECT\"",
+   "name": "Barely Alive",
+   "source_url": "https://en.wikipedia.org/wiki/Barely_Alive",
+   "extract": "Barely Alive is an American electronic music production and DJ duo composed of Matthew Meier and William \"Watt\" Watkins founded in Great Barrington, Massachusetts, U.S. The duo is well known for their songs on British-American and Los Angeles based electronic music record label: Disciple Records.",
+   "en": {
+    "kicker": "american electronic duo · great barrington, massachusetts",
+    "who": "Barely Alive is an American electronic music production and DJ duo composed of Matthew Meier and William \"Watt\" Watkins, founded in Great Barrington, Massachusetts. The duo is well known for their songs on the record label Disciple Records.",
+    "facts": [
+     "Barely Alive is an American electronic music production and DJ duo composed of Matthew Meier and William \"Watt\" Watkins founded in Great Barrington, Massachusetts, U.S.",
+     "The duo is well known for their songs on British-American and Los Angeles based electronic music record label: Disciple Records."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanisches elektro-duo · great barrington, massachusetts",
+    "who": "Barely Alive ist ein amerikanisches Duo für elektronische Musikproduktion und DJing, bestehend aus Matthew Meier und William \"Watt\" Watkins, gegründet in Great Barrington, Massachusetts. Das Duo ist vor allem durch Songs beim Label Disciple Records bekannt.",
+    "facts": [
+     "Barely Alive ist ein amerikanisches Duo für elektronische Musikproduktion und DJing, bestehend aus Matthew Meier und William \"Watt\" Watkins, gegründet in Great Barrington, Massachusetts.",
+     "Das Duo ist vor allem durch seine Songs beim britisch-amerikanischen Label Disciple Records bekannt, das in Los Angeles ansässig ist."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı elektronik ikili · great barrington, massachusetts",
+    "who": "Barely Alive, matthew meier ve william \"watt\" watkins'ten oluşan, great barrington, massachusetts'te kurulmuş amerikalı bir elektronik müzik prodüksiyon ve dj ikilisi. disciple records etiketindeki şarkılarıyla tanınıyor.",
+    "facts": [
+     "barely alive, matthew meier ve william \"watt\" watkins'ten oluşan, great barrington, massachusetts'te kurulmuş amerikalı bir elektronik müzik prodüksiyon ve dj ikilisi.",
+     "ikili, britanya-amerikan ve los angeles merkezli disciple records etiketindeki şarkılarıyla tanınıyor."
+    ]
+   }
+  }
+ ]
+}

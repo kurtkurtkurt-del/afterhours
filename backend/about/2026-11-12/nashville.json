@@ -1,0 +1,102 @@
+{
+ "city": "nashville",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "d46ba6bb-5eeb-4762-b29a-2a8ebd992d26",
+   "slug": "gary-nicholson-f51efe4a",
+   "title": "Gary Nicholson",
+   "name": "Gary Nicholson",
+   "source_url": "https://en.wikipedia.org/wiki/Gary_Nicholson_(singer)",
+   "extract": "Gary Nicholson is an American singer-songwriter and record producer, known mainly for his work in country music and blues. He is a two-time Grammy winning producer and was inducted into the Texas Heritage Songwriter's Association Hall of Fame. Nicholson has more than 600 recordings and is best known for his work with Willie Nelson, Waylon Jennings, Garth Brooks, George Strait, Ringo Starr, B. B. King, Fleetwood Mac and Billy Joe Shaver.",
+   "en": {
+    "kicker": "american singer-songwriter and producer",
+    "who": "Gary Nicholson is an American singer-songwriter and record producer, known mainly for his work in country music and blues. He is a two-time Grammy winning producer.",
+    "facts": [
+     "He is a two-time Grammy winning producer and was inducted into the Texas Heritage Songwriter's Association Hall of Fame.",
+     "Nicholson has more than 600 recordings and is best known for his work with Willie Nelson, Waylon Jennings, Garth Brooks, George Strait, Ringo Starr, B. B. King, Fleetwood Mac and Billy Joe Shaver."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter und produzent",
+    "who": "Gary Nicholson ist ein amerikanischer Singer-Songwriter und Musikproduzent, vor allem bekannt für seine Arbeit in Country und Blues. Er ist zweifacher Grammy-Gewinner als Produzent.",
+    "facts": [
+     "Er ist zweifacher Grammy-Gewinner als Produzent und wurde in die Hall of Fame der Texas Heritage Songwriters Association aufgenommen.",
+     "Nicholson hat über 600 Aufnahmen gemacht und ist vor allem für seine Arbeit mit Willie Nelson, Waylon Jennings, Garth Brooks, George Strait, Ringo Starr, B. B. King, Fleetwood Mac und Billy Joe Shaver bekannt."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı, söz yazarı ve yapımcı",
+    "who": "Gary Nicholson, ağırlıklı olarak country ve blues alanındaki işleriyle bilinen amerikalı bir şarkıcı, söz yazarı ve plak yapımcısı. iki kez grammy kazanan bir yapımcıdır.",
+    "facts": [
+     "iki kez grammy kazanan bir yapımcı; texas heritage songwriter's association onur listesine girdi.",
+     "nicholson 600'ün üzerinde kayıtta yer aldı; willie nelson, waylon jennings, garth brooks, george strait, ringo starr, b. b. king, fleetwood mac ve billy joe shaver ile çalışmalarıyla tanınıyor."
+    ]
+   }
+  },
+  {
+   "id": "7371c824-c5f1-4dc3-8fee-2544ca5389fd",
+   "slug": "tiny-habits-the-keepers-tour-04e6e860",
+   "title": "Tiny Habits - The Keepers Tour",
+   "name": "Tiny Habits",
+   "source_url": "https://en.wikipedia.org/wiki/Tiny_Habits",
+   "extract": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa. Their first EP, Tiny Things, was released in April 2023. Their debut studio album All For Something was released in May 2024. Their second album Keepers came out in August 2026.",
+   "en": {
+    "kicker": "american folk-pop trio · boston, 2022",
+    "who": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa.",
+    "facts": [
+     "Their first EP, Tiny Things, was released in April 2023.",
+     "Their debut studio album All For Something was released in May 2024."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanisches folk-pop-trio · boston, 2022",
+    "who": "Tiny Habits ist eine amerikanische Folk-Pop-Gruppe, die 2022 in Boston gegründet wurde. Das Trio besteht aus den Berklee-College-of-Music-Absolventen Cinya Khan, Maya Rae und Judah Mayowa.",
+    "facts": [
+     "Ihre erste EP, Tiny Things, erschien im April 2023.",
+     "Ihr Debütalbum All For Something erschien im Mai 2024."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı folk-pop üçlüsü · boston, 2022",
+    "who": "Tiny Habits, 2022'de boston'da kurulmuş amerikalı bir folk-pop grubu. üçlü, berklee müzik koleji mezunları cinya khan, maya rae ve judah mayowa'dan oluşuyor.",
+    "facts": [
+     "ilk ep'leri tiny things nisan 2023'te yayımlandı.",
+     "ilk stüdyo albümleri all for something mayıs 2024'te yayımlandı."
+    ]
+   }
+  },
+  {
+   "id": "2e208e4e-6835-4233-861a-1e307dc245cf",
+   "slug": "six60-ba90ffbc",
+   "title": "Six60",
+   "name": "Six60",
+   "source_url": "https://en.wikipedia.org/wiki/Six60",
+   "extract": "Six60 is a New Zealand pop rock band formed in Dunedin, Otago in 2008. The band consists of Matiu Walters, Ji Fraser, Chris Mac, and Marlon Gerbes.",
+   "en": {
+    "kicker": "new zealand rock band · dunedin, 2008",
+    "who": "Six60 is a New Zealand pop rock band formed in Dunedin, Otago in 2008. The band consists of Matiu Walters, Ji Fraser, Chris Mac, and Marlon Gerbes.",
+    "facts": [
+     "Six60 is a New Zealand pop rock band formed in Dunedin, Otago in 2008.",
+     "The band consists of Matiu Walters, Ji Fraser, Chris Mac, and Marlon Gerbes."
+    ]
+   },
+   "de": {
+    "kicker": "neuseeländische rockband · dunedin, 2008",
+    "who": "Six60 ist eine neuseeländische Pop-Rock-Band, die 2008 in Dunedin, Otago, gegründet wurde. Die Band besteht aus Matiu Walters, Ji Fraser, Chris Mac und Marlon Gerbes.",
+    "facts": [
+     "Six60 ist eine neuseeländische Pop-Rock-Band, die 2008 in Dunedin, Otago, gegründet wurde.",
+     "Die Band besteht aus Matiu Walters, Ji Fraser, Chris Mac und Marlon Gerbes."
+    ]
+   },
+   "tr": {
+    "kicker": "yeni zelandalı rock grubu · dunedin, 2008",
+    "who": "Six60, 2008'de otago'nun dunedin kentinde kurulmuş yeni zelandalı bir pop rock grubu. grup matiu walters, ji fraser, chris mac ve marlon gerbes'ten oluşuyor.",
+    "facts": [
+     "six60, 2008'de otago'nun dunedin kentinde kurulmuş yeni zelandalı bir pop rock grubu.",
+     "grup matiu walters, ji fraser, chris mac ve marlon gerbes'ten oluşuyor."
+    ]
+   }
+  }
+ ]
+}

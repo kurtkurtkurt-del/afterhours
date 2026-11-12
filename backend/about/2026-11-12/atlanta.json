@@ -1,0 +1,102 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "c4bc8211-ee5d-47f1-8c52-9d5ec3a482d4",
+   "slug": "periphery-a-pale-white-dot-us-tour-e1cb6be8",
+   "title": "Periphery - A Pale White Dot US Tour",
+   "name": "Periphery",
+   "source_url": "https://en.wikipedia.org/wiki/Periphery_(band)",
+   "extract": "Periphery is an American progressive metal band that was formed in Washington, D.C., in 2005. Their musical style has been described as progressive metal, djent, and progressive metalcore. They are considered one of the pioneers of the djent movement within progressive metal. They have also received a Grammy nomination. The band consists of vocalist Spencer Sotelo, guitarists Misha Mansoor, Mark Holcomb, Jake Bowen, and drummer Matt Halpern.",
+   "en": {
+    "kicker": "american progressive metal band · washington, d.c., 2005",
+    "who": "Periphery are an American progressive metal band formed in Washington, D.C., in 2005. They are considered one of the pioneers of the djent movement within progressive metal.",
+    "facts": [
+     "They are considered one of the pioneers of the djent movement within progressive metal.",
+     "They have also received a Grammy nomination."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische progressive-metal-band · washington, 2005",
+    "who": "Periphery sind eine amerikanische Progressive-Metal-Band, die 2005 in Washington, D.C., gegründet wurde. Sie gelten als einer der Pioniere der Djent-Bewegung innerhalb des Progressive Metal.",
+    "facts": [
+     "Sie gelten als einer der Pioniere der Djent-Bewegung innerhalb des Progressive Metal.",
+     "Sie haben außerdem eine Grammy-Nominierung erhalten."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı progresif metal grubu · washington d.c., 2005",
+    "who": "Periphery, 2005'te washington d.c.'de kurulmuş bir amerikalı progresif metal grubu. progresif metal içindeki djent akımının öncülerinden biri sayılıyorlar.",
+    "facts": [
+     "progresif metal içindeki djent akımının öncülerinden biri sayılıyorlar.",
+     "ayrıca bir grammy adaylığı da aldılar."
+    ]
+   }
+  },
+  {
+   "id": "f7fd7275-2e8a-48db-88bd-f067fb7c58a3",
+   "slug": "boston-manor-3ad1a4d5",
+   "title": "Boston Manor",
+   "name": "Boston Manor",
+   "source_url": "https://en.wikipedia.org/wiki/Boston_Manor_(band)",
+   "extract": "Boston Manor are a British rock band formed in Blackpool, Lancashire, England, in March 2013. They released a first EP, Here/Now, through Never Mend Records on Bandcamp, and in 2014 they signed with Failure By Design Records for their second EP, Driftwood. In 2015 the band signed with Pure Noise Records: with them, they released another EP, Saudade, as well as their full-length albums Be Nothing (2016), Welcome to the Neighbourhood (2018) and Glue (2020). The band's sound blends emo with heavier influences, reminiscent of '90s grunge and early 2000s post-hardcore. The band have been nominated for Best British Breakthrough at Kerrang! Awards in 2018 and Welcome to the Neighbourhood received a",
+   "en": {
+    "kicker": "british rock band · blackpool, 2013",
+    "who": "Boston Manor are a British rock band formed in Blackpool, Lancashire, England, in March 2013. Their sound blends emo with heavier influences, reminiscent of '90s grunge and early 2000s post-hardcore.",
+    "facts": [
+     "They released a first EP, Here/Now, through Never Mend Records on Bandcamp, and in 2014 they signed with Failure By Design Records for their second EP, Driftwood.",
+     "In 2015 the band signed with Pure Noise Records: with them, they released another EP, Saudade, as well as their full-length albums Be Nothing (2016), Welcome to the Neighbourhood (2018) and Glue (2020)."
+    ]
+   },
+   "de": {
+    "kicker": "britische rockband · blackpool, 2013",
+    "who": "Boston Manor sind eine britische Rockband, die im März 2013 in Blackpool, Lancashire, England, gegründet wurde. Ihr Sound verbindet Emo mit härteren Einflüssen, die an Grunge der 90er und Post-Hardcore der frühen 2000er erinnern.",
+    "facts": [
+     "2015 unterschrieb die Band bei Pure Noise Records; dort erschienen die EP Saudade sowie die Alben Be Nothing (2016), Welcome to the Neighbourhood (2018) und Glue (2020).",
+     "Ihre erste EP Here/Now erschien über Never Mend Records auf Bandcamp; 2014 unterschrieben sie bei Failure By Design Records für die zweite EP Driftwood."
+    ]
+   },
+   "tr": {
+    "kicker": "britanyalı rock grubu · blackpool, 2013",
+    "who": "Boston Manor, mart 2013'te ingiltere'nin lancashire bölgesindeki blackpool'da kurulmuş bir britanyalı rock grubu. sesleri emo'yu, 90'ların grunge'ını ve 2000'lerin başındaki post-hardcore'u andıran daha ağır etkilerle harmanlıyor.",
+    "facts": [
+     "2015'te grup pure noise records ile anlaşma imzaladı; onlarla saudade ep'sini ve be nothing (2016), welcome to the neighbourhood (2018) ile glue (2020) albümlerini yayımladılar.",
+     "ilk ep'leri here/now, never mend records'ta bandcamp üzerinden çıktı; 2014'te failure by design records ile anlaştılar ve ikinci ep'leri driftwood'u yayımladılar."
+    ]
+   }
+  },
+  {
+   "id": "79cf632c-68be-4ef5-9f88-78b07722a63d",
+   "slug": "sweeping-promises-b4823692",
+   "title": "Sweeping Promises",
+   "name": "Sweeping Promises",
+   "source_url": "https://en.wikipedia.org/wiki/Sweeping_Promises",
+   "extract": "Sweeping Promises is an American post-punk duo from Boston, Massachusetts, now based in Lawrence, Kansas, consisting of Lira Mondal and Caufield Schnug. Multi-instrumentalist Spenser Gralla has toured as their live drummer since 2019.",
+   "en": {
+    "kicker": "american post-punk duo · boston, massachusetts",
+    "who": "Sweeping Promises is an American post-punk duo from Boston, Massachusetts, now based in Lawrence, Kansas. The duo consists of Lira Mondal and Caufield Schnug.",
+    "facts": [
+     "Sweeping Promises is an American post-punk duo from Boston, Massachusetts, now based in Lawrence, Kansas, consisting of Lira Mondal and Caufield Schnug.",
+     "Multi-instrumentalist Spenser Gralla has toured as their live drummer since 2019."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanisches post-punk-duo · boston, massachusetts",
+    "who": "Sweeping Promises ist ein amerikanisches Post-Punk-Duo aus Boston, Massachusetts, heute in Lawrence, Kansas ansässig. Das Duo besteht aus Lira Mondal und Caufield Schnug.",
+    "facts": [
+     "Sweeping Promises ist ein amerikanisches Post-Punk-Duo aus Boston, Massachusetts, heute in Lawrence, Kansas ansässig, bestehend aus Lira Mondal und Caufield Schnug.",
+     "Der Multiinstrumentalist Spenser Gralla tourt seit 2019 als ihr Live-Schlagzeuger."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı post-punk ikilisi · boston, massachusetts",
+    "who": "Sweeping Promises, boston, massachusetts'ten çıkmış bir amerikalı post-punk ikilisi; bugün lawrence, kansas'ta yaşıyorlar. ikili lira mondal ve caufield schnug'dan oluşuyor.",
+    "facts": [
+     "Sweeping Promises, boston, massachusetts'ten çıkmış ve bugün lawrence, kansas'ta yaşayan bir amerikalı post-punk ikilisi; lira mondal ve caufield schnug'dan oluşuyor.",
+     "çok enstrümanlı müzisyen spenser gralla, 2019'dan beri onların canlı davulcusu olarak tur yapıyor."
+    ]
+   }
+  }
+ ]
+}

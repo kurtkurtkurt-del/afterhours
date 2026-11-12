@@ -1,0 +1,102 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "bed698b0-0ed1-4cf4-ba18-f13d69963a49",
+   "slug": "rodrigo-y-gabriela-ourhome-tour-58f5ab76",
+   "title": "Rodrigo y Gabriela - OurHome Tour",
+   "name": "Rodrigo y Gabriela",
+   "source_url": "https://en.wikipedia.org/wiki/Rodrigo_y_Gabriela",
+   "extract": "Rodrigo y Gabriela are a Mexican acoustic guitar duo featuring musicians Rodrigo Sánchez and Gabriela Quintero. Residing in Mexico City, they began their career in Dublin, Ireland, where they played for the first eight years of their career as a duo. Their music consists largely of instrumental duets on the flamenco guitar, with a musical style influenced by a number of genres including nuevo flamenco, rock, and heavy metal.",
+   "en": {
+    "kicker": "mexican guitar duo · dublin",
+    "who": "Rodrigo y Gabriela are a Mexican acoustic guitar duo featuring musicians Rodrigo Sánchez and Gabriela Quintero. They began their career in Dublin, Ireland, where they played for the first eight years of their career as a duo.",
+    "facts": [
+     "Their music consists largely of instrumental duets on the flamenco guitar, with a musical style influenced by a number of genres including nuevo flamenco, rock, and heavy metal.",
+     "They began their career in Dublin, Ireland, where they played for the first eight years of their career as a duo."
+    ]
+   },
+   "de": {
+    "kicker": "mexikanisches gitarrenduo · dublin",
+    "who": "Rodrigo y Gabriela sind ein mexikanisches Akustikgitarren-Duo mit den Musikern Rodrigo Sánchez und Gabriela Quintero. Ihre Karriere begann in Dublin, Irland, wo sie in den ersten acht Jahren als Duo auftraten.",
+    "facts": [
+     "Ihre Musik besteht größtenteils aus instrumentalen Duetten auf der Flamenco-Gitarre, mit einem Stil, der von Genres wie Nuevo Flamenco, Rock und Heavy Metal beeinflusst ist.",
+     "Ihre Karriere begann in Dublin, Irland, wo sie in den ersten acht Jahren ihrer Karriere als Duo spielten."
+    ]
+   },
+   "tr": {
+    "kicker": "meksikalı gitar ikilisi · dublin",
+    "who": "Rodrigo y Gabriela, rodrigo sánchez ve gabriela quintero'nun oluşturduğu meksikalı bir akustik gitar ikilisi. kariyerlerine dublin, irlanda'da başladılar ve ilk sekiz yıllarını ikili olarak orada çaldılar.",
+    "facts": [
+     "müzikleri büyük ölçüde flamenko gitarında enstrümantal düetlerden oluşuyor; nuevo flamenco, rock ve heavy metal dahil birçok türden etkileniyor.",
+     "kariyerlerine irlanda'nın dublin kentinde başladılar ve ilk sekiz yıllarını orada ikili olarak çaldılar."
+    ]
+   }
+  },
+  {
+   "id": "a7df3be0-2d1a-4039-b44f-91c1c377ee16",
+   "slug": "the-mountain-goats-night-one-openers-c0847022",
+   "title": "The Mountain Goats - Night One: Openers",
+   "name": "The Mountain Goats",
+   "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+   "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark.",
+   "en": {
+    "kicker": "american indie folk band · claremont, california",
+    "who": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina.",
+    "facts": [
+     "Since 2003, the band has been based in Durham, North Carolina.",
+     "For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-folkband · claremont, kalifornien",
+    "who": "The Mountain Goats sind eine amerikanische Indie-Folkband, die in Claremont, Kalifornien, vom Singer-Songwriter John Darnielle gegründet wurde. Seit 2003 ist die Band in Durham, North Carolina, ansässig.",
+    "facts": [
+     "Seit 2003 ist die Band in Durham, North Carolina, ansässig.",
+     "Viele Jahre lang war Darnielle das einzige Mitglied der Mountain Goats, trotz des pluralen Namens."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie folk grubu · claremont, kaliforniya",
+    "who": "The Mountain Goats, kaliforniya'nın claremont kentinde şarkıcı ve söz yazarı john darnielle tarafından kurulmuş amerikalı bir indie folk grubu. 2003'ten beri merkezi north carolina'nın durham kentinde.",
+    "facts": [
+     "2003'ten beri grup merkezini north carolina'nın durham kentinde kuruyor.",
+     "adına rağmen uzun yıllar grubun tek üyesi darnielle'ydı."
+    ]
+   }
+  },
+  {
+   "id": "c01a4bf8-7d5e-4d8b-b697-b15ca8baf51c",
+   "slug": "francisca-valenzuela-d8abddf9",
+   "title": "Francisca Valenzuela",
+   "name": "Francisca Valenzuela",
+   "source_url": "https://en.wikipedia.org/wiki/Francisca_Valenzuela",
+   "extract": "Francisca Valenzuela Méndez is a Chilean-American singer-songwriter, poet, and multi-instrumentalist. Valenzuela was born and raised in San Francisco, California, where she resided until the age of 12, before moving to Santiago, Chile.",
+   "en": {
+    "kicker": "chilean-american singer-songwriter",
+    "who": "Francisca Valenzuela Méndez is a Chilean-American singer-songwriter, poet, and multi-instrumentalist. Valenzuela was born and raised in San Francisco, California, where she resided until the age of 12, before moving to Santiago, Chile.",
+    "facts": [
+     "Valenzuela was born and raised in San Francisco, California, where she resided until the age of 12, before moving to Santiago, Chile.",
+     "Francisca Valenzuela Méndez is a Chilean-American singer-songwriter, poet, and multi-instrumentalist."
+    ]
+   },
+   "de": {
+    "kicker": "chilenisch-amerikanische singer-songwriterin",
+    "who": "Francisca Valenzuela Méndez ist eine chilenisch-amerikanische Singer-Songwriterin, Dichterin und Multiinstrumentalistin. Valenzuela wurde in San Francisco, Kalifornien, geboren und wuchs dort auf, bis sie 12 Jahre alt war und nach Santiago de Chile zog.",
+    "facts": [
+     "Valenzuela wurde in San Francisco, Kalifornien, geboren und wuchs dort auf, bis sie 12 Jahre alt war und nach Santiago de Chile zog.",
+     "Francisca Valenzuela Méndez ist eine chilenisch-amerikanische Singer-Songwriterin, Dichterin und Multiinstrumentalistin."
+    ]
+   },
+   "tr": {
+    "kicker": "şilili-amerikalı şarkıcı ve söz yazarı",
+    "who": "Francisca Valenzuela Méndez, şilili-amerikalı bir şarkıcı, söz yazarı, şair ve çok enstrümanlı sanatçı. california'nın san francisco kentinde doğdu ve 12 yaşına kadar orada yaşadı; sonra santiago, şili'ye taşındı.",
+    "facts": [
+     "valenzuela, california'nın san francisco kentinde doğdu ve 12 yaşına kadar orada yaşadı; sonra santiago, şili'ye taşındı.",
+     "francisca valenzuela méndez, şilili-amerikalı bir şarkıcı, söz yazarı, şair ve çok enstrümanlı sanatçı."
+    ]
+   }
+  }
+ ]
+}

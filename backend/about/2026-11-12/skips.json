@@ -1254,6 +1254,42 @@
    "slug": "tricky-uk-65721204",
    "city": "zurich",
    "why": "no page of that name (nearest: Tricky (rapper))"
+  },
+  {
+   "id": "6493bf96-c027-44a8-a9c5-16fc808a5af5",
+   "slug": "tayc-afas-live-amsterdam-2b2031b9",
+   "city": "amsterdam",
+   "why": "thin extract: one sentence (French singer)"
+  },
+  {
+   "id": "b99e9941-efc9-4019-92ea-24a093fcdc67",
+   "slug": "catch-your-breath-not-broken-enough-tour-d0b1bae0",
+   "city": "detroit",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "cabf9768-09a1-41c4-94ea-8f357774177c",
+   "slug": "other-lives-7a021015",
+   "city": "los-angeles",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "4e619a6b-d858-4fab-834c-047314f02034",
+   "slug": "miles-minnick-glovember-138b2936",
+   "city": "los-angeles",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "9399ac57-7e43-4987-abc3-aa36a8dcf3e7",
+   "slug": "orville-peck-man-turned-mule-tour-6234f0d8",
+   "city": "nashville",
+   "why": "thin extract: one sentence"
+  },
+  {
+   "id": "22959782-00a1-46f0-a979-dadbfddeb26e",
+   "slug": "half-me-6231ba7c",
+   "city": "warszawa",
+   "why": "thin extract: one sentence (German metalcore band)"
   }
  ]
 }

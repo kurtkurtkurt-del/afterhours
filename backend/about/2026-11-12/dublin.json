@@ -1,0 +1,70 @@
+{
+ "city": "dublin",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "0afb7a63-f325-4de7-9f5e-2face6eb36b2",
+   "slug": "niall-horan-dinner-party-live-on-tour-a52aeef8",
+   "title": "Niall Horan: Dinner Party Live On Tour",
+   "name": "Niall Horan",
+   "source_url": "https://en.wikipedia.org/wiki/Niall_Horan",
+   "extract": "Niall James Horan is an Irish singer, songwriter, musician, and multi-instrumentalist. He rose to prominence as a member of the boy band One Direction, formed in 2010 on the singing competition The X Factor. The group released five albums and went on to become one of the best-selling boy bands of all time.",
+   "en": {
+    "kicker": "irish singer and songwriter",
+    "who": "Niall James Horan is an Irish singer, songwriter, musician, and multi-instrumentalist. He rose to prominence as a member of the boy band One Direction, formed in 2010 on the singing competition The X Factor.",
+    "facts": [
+     "The group released five albums and went on to become one of the best-selling boy bands of all time.",
+     "One Direction was formed in 2010 on the singing competition The X Factor."
+    ]
+   },
+   "de": {
+    "kicker": "irischer sänger und songwriter",
+    "who": "Niall James Horan ist ein irischer Sänger, Songwriter, Musiker und Multiinstrumentalist. Bekannt wurde er als Mitglied der Boyband One Direction, die 2010 bei der Castingshow The X Factor gegründet wurde.",
+    "facts": [
+     "Die Gruppe veröffentlichte fünf Alben und zählt heute zu den meistverkauften Boybands aller Zeiten.",
+     "One Direction wurde 2010 bei der Castingshow The X Factor gegründet."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı şarkıcı ve söz yazarı",
+    "who": "Niall James Horan, irlandalı bir şarkıcı, söz yazarı, müzisyen ve çok enstrümanlı sanatçı. 2010'da the x factor yarışmasında kurulan boy band one direction'ın üyesi olarak ün kazandı.",
+    "facts": [
+     "grup beş albüm yayımladı ve tüm zamanların en çok satan boy band'lerinden biri oldu.",
+     "one direction, 2010'da the x factor yarışmasında kuruldu."
+    ]
+   }
+  },
+  {
+   "id": "f61e2d5c-7059-4633-8d1a-0dd8cb70b743",
+   "slug": "niall-horan-926eaf2e",
+   "title": "Niall Horan",
+   "name": "Niall Horan",
+   "source_url": "https://en.wikipedia.org/wiki/Niall_Horan",
+   "extract": "Niall James Horan is an Irish singer, songwriter, musician, and multi-instrumentalist. He rose to prominence as a member of the boy band One Direction, formed in 2010 on the singing competition The X Factor. The group released five albums and went on to become one of the best-selling boy bands of all time.",
+   "en": {
+    "kicker": "irish singer and songwriter",
+    "who": "Niall James Horan is an Irish singer, songwriter, musician, and multi-instrumentalist. He rose to prominence as a member of the boy band One Direction, formed in 2010 on the singing competition The X Factor.",
+    "facts": [
+     "The group released five albums and went on to become one of the best-selling boy bands of all time.",
+     "One Direction was formed in 2010 on the singing competition The X Factor."
+    ]
+   },
+   "de": {
+    "kicker": "irischer sänger und songwriter",
+    "who": "Niall James Horan ist ein irischer Sänger, Songwriter, Musiker und Multiinstrumentalist. Bekannt wurde er als Mitglied der Boyband One Direction, die 2010 bei der Castingshow The X Factor gegründet wurde.",
+    "facts": [
+     "Die Gruppe veröffentlichte fünf Alben und zählt heute zu den meistverkauften Boybands aller Zeiten.",
+     "One Direction wurde 2010 bei der Castingshow The X Factor gegründet."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı şarkıcı ve söz yazarı",
+    "who": "Niall James Horan, irlandalı bir şarkıcı, söz yazarı, müzisyen ve çok enstrümanlı sanatçı. 2010'da the x factor yarışmasında kurulan boy band one direction'ın üyesi olarak ün kazandı.",
+    "facts": [
+     "grup beş albüm yayımladı ve tüm zamanların en çok satan boy band'lerinden biri oldu.",
+     "one direction, 2010'da the x factor yarışmasında kuruldu."
+    ]
+   }
+  }
+ ]
+}

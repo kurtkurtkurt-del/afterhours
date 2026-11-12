@@ -1,0 +1,38 @@
+{
+ "city": "houston",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "d0c8782f-091a-4af9-9cb4-87874b3f30c3",
+   "slug": "dragonforce-inhuman-rampage-20th-anniversary-5713e404",
+   "title": "DragonForce: Inhuman Rampage 20th Anniversary",
+   "name": "DragonForce",
+   "source_url": "https://en.wikipedia.org/wiki/DragonForce",
+   "extract": "DragonForce are a British power metal band from London, formed in 1999. They are known for their long and fast guitar solos, fantasy-themed lyrics and retro video game-influenced sound. The band themselves refer to their music as \"extreme power metal\".",
+   "en": {
+    "kicker": "british power metal band · london, 1999",
+    "who": "DragonForce are a British power metal band from London, formed in 1999. They are known for their long and fast guitar solos, fantasy-themed lyrics and retro video game-influenced sound.",
+    "facts": [
+     "They are known for their long and fast guitar solos, fantasy-themed lyrics and retro video game-influenced sound.",
+     "The band themselves refer to their music as \"extreme power metal\"."
+    ]
+   },
+   "de": {
+    "kicker": "britische power-metal-band · london, 1999",
+    "who": "DragonForce sind eine britische Power-Metal-Band aus London, die 1999 gegründet wurde. Bekannt sind sie für lange, schnelle Gitarrensoli, fantasylastige Texte und einen von Retro-Videospielen beeinflussten Sound.",
+    "facts": [
+     "Bekannt sind sie für lange, schnelle Gitarrensoli, fantasylastige Texte und einen von Retro-Videospielen beeinflussten Sound.",
+     "Die Band selbst nennt ihre Musik \"extreme power metal\"."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz power metal grubu · londra, 1999",
+    "who": "DragonForce, 1999'da londra'da kurulmuş bir ingiliz power metal grubu. uzun ve hızlı gitar sololarıyla, fantezi temalı sözleriyle ve retro video oyunlarından etkilenen sesiyle tanınıyorlar.",
+    "facts": [
+     "uzun ve hızlı gitar sololarıyla, fantezi temalı sözleriyle ve retro video oyunlarından etkilenen sesiyle tanınıyorlar.",
+     "grup müziklerini kendisi \"extreme power metal\" olarak tanımlıyor."
+    ]
+   }
+  }
+ ]
+}

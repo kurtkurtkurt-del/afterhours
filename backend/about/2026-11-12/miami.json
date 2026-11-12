@@ -1,0 +1,102 @@
+{
+ "city": "miami",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "62d6f157-f730-42ed-9d67-deff578059aa",
+   "slug": "vicente-garcia-aabc7163",
+   "title": "Vicente Garcia",
+   "name": "Vicente García",
+   "source_url": "https://en.wikipedia.org/wiki/Vicente_Garc%C3%ADa_(musician)",
+   "extract": "Vicente Luis García Guillén is a Dominican musician, singer and composer. He is the former lead singer of the Dominican alternative rock band Calor Urbano, which he left in 2010 to pursue a solo career. Garcia has collaborated in concerts with renowned artists such as Juan Luis Guerra, Alejandro Sanz, Cultura Profetica, Juanes, Ximena Sariñana, Louis Michael Figueroa and Maná among others. He has won four Latin Grammy awards including Best New Artist in 2017 and was nominated for the Grammy awards in 2020.",
+   "en": {
+    "kicker": "dominican singer",
+    "who": "Vicente Luis García Guillén is a Dominican musician, singer and composer. He is the former lead singer of the Dominican alternative rock band Calor Urbano, which he left in 2010 to pursue a solo career.",
+    "facts": [
+     "He is the former lead singer of the Dominican alternative rock band Calor Urbano, which he left in 2010 to pursue a solo career.",
+     "He has won four Latin Grammy awards including Best New Artist in 2017 and was nominated for the Grammy awards in 2020."
+    ]
+   },
+   "de": {
+    "kicker": "dominikanischer sänger",
+    "who": "Vicente Luis García Guillén ist ein dominikanischer Musiker, Sänger und Komponist. Er war früher Leadsänger der dominikanischen Alternative-Rockband Calor Urbano, die er 2010 verließ, um solo weiterzumachen.",
+    "facts": [
+     "Er war früher Leadsänger der dominikanischen Alternative-Rockband Calor Urbano, die er 2010 verließ, um solo weiterzumachen.",
+     "Er hat vier Latin Grammys gewonnen, darunter 2017 als Best New Artist, und war 2020 für Grammys nominiert."
+    ]
+   },
+   "tr": {
+    "kicker": "dominikli şarkıcı",
+    "who": "Vicente Luis García Guillén, dominikli bir müzisyen, şarkıcı ve besteci. dominikli alternatif rock grubu calor urbano'nun eski baş vokali; 2010'da solo kariyer için gruptan ayrıldı.",
+    "facts": [
+     "dominikli alternatif rock grubu calor urbano'nun eski baş vokali; 2010'da solo kariyer için gruptan ayrıldı.",
+     "2017'de best new artist dahil dört latin grammy kazandı ve 2020'de grammy'ye aday gösterildi."
+    ]
+   }
+  },
+  {
+   "id": "f653cd5f-bcc3-4ab8-99a0-ad7d683cd4f2",
+   "slug": "justin-nozuka-c50f3e55",
+   "title": "Justin Nozuka",
+   "name": "Justin Nozuka",
+   "source_url": "https://en.wikipedia.org/wiki/Justin_Nozuka",
+   "extract": "Justin Tokimitsu Nozuka  is an American singer, songwriter, and actor of Japanese and Canadian descent. His debut album, Holly, was released in 2007. He has since published five more studio albums: You I Wind Land and Sea (2010), Ulysees (2014), Run to Waters (2018), Daydreams & Endless Nights (2023), and Chlorine (2024).",
+   "en": {
+    "kicker": "american singer and songwriter",
+    "who": "Justin Tokimitsu Nozuka is an American singer, songwriter, and actor of Japanese and Canadian descent. His debut album, Holly, was released in 2007.",
+    "facts": [
+     "His debut album, Holly, was released in 2007.",
+     "He has since published five more studio albums: You I Wind Land and Sea (2010), Ulysees (2014), Run to Waters (2018), Daydreams & Endless Nights (2023), and Chlorine (2024)."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer sänger und songwriter",
+    "who": "Justin Tokimitsu Nozuka ist ein amerikanischer Sänger, Songwriter und Schauspieler mit japanischen und kanadischen Wurzeln. Sein Debütalbum Holly erschien 2007.",
+    "facts": [
+     "Sein Debütalbum Holly erschien 2007.",
+     "Seitdem hat er fünf weitere Studioalben veröffentlicht: You I Wind Land and Sea (2010), Ulysees (2014), Run to Waters (2018), Daydreams & Endless Nights (2023) und Chlorine (2024)."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı",
+    "who": "Justin Tokimitsu Nozuka, japon ve kanadalı kökenli amerikalı bir şarkıcı, söz yazarı ve oyuncu. ilk albümü holly 2007'de yayımlandı.",
+    "facts": [
+     "ilk albümü holly 2007'de yayımlandı.",
+     "bundan sonra beş stüdyo albümü daha yayımladı: you i wind land and sea (2010), ulysees (2014), run to waters (2018), daydreams & endless nights (2023) ve chlorine (2024)."
+    ]
+   }
+  },
+  {
+   "id": "d85e0f26-d5f8-40dd-94d1-3c621416e755",
+   "slug": "ax-and-the-hatchetmen-116c1cde",
+   "title": "Ax and the Hatchetmen",
+   "name": "Ax and the Hatchetmen",
+   "source_url": "https://en.wikipedia.org/wiki/Ax_and_the_Hatchetmen",
+   "extract": "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018. Members of the group include Axel Ellis, Salvatore Defilippis (vocals/guitar), Hunter Olshefke (vocals/bass), Phil Pistone (trumpet), Quinn Dolan (saxophone), and Chaandmon Croft (drums). They are signed with Arista Records and their first album, So Much to Tell You, was released October 24, 2025 with a tour of the same name.",
+   "en": {
+    "kicker": "american indie rock band · chicago, 2018",
+    "who": "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018. They are signed with Arista Records.",
+    "facts": [
+     "Ax and the Hatchetmen are an American alternative/indie rock band formed in Chicago in 2018.",
+     "Their first album, So Much to Tell You, was released October 24, 2025 with a tour of the same name."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-rockband · chicago, 2018",
+    "who": "Ax and the Hatchetmen sind eine amerikanische Alternative- und Indie-Rockband, die 2018 in Chicago gegründet wurde. Die Band steht bei Arista Records unter Vertrag.",
+    "facts": [
+     "Ax and the Hatchetmen sind eine amerikanische Alternative- und Indie-Rockband, die 2018 in Chicago gegründet wurde.",
+     "Ihr erstes Album, So Much to Tell You, erschien am 24. Oktober 2025, begleitet von einer gleichnamigen Tour."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie rock grubu · chicago, 2018",
+    "who": "Ax and the Hatchetmen, 2018'de chicago'da kurulmuş amerikalı bir alternatif ve indie rock grubu. arista records ile anlaşmaları var.",
+    "facts": [
+     "ax and the hatchetmen, 2018'de chicago'da kurulmuş amerikalı bir alternatif ve indie rock grubu.",
+     "ilk albümleri so much to tell you, 24 ekim 2025'te aynı adlı turla birlikte yayımlandı."
+    ]
+   }
+  }
+ ]
+}

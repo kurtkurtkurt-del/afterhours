@@ -1,0 +1,70 @@
+{
+ "city": "seattle",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "1278db8f-134f-4555-804f-9503ea2a721d",
+   "slug": "pretty-sick-78669274",
+   "title": "Pretty Sick",
+   "name": "Pretty Sick",
+   "source_url": "https://en.wikipedia.org/wiki/Pretty_Sick",
+   "extract": "Pretty Sick is an American indie rock band from New York City, New York. It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz.",
+   "en": {
+    "kicker": "american indie rock band · new york city",
+    "who": "Pretty Sick is an American indie rock band from New York City, New York. It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz.",
+    "facts": [
+     "Pretty Sick is an American indie rock band from New York City, New York.",
+     "It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-rockband · new york city",
+    "who": "Pretty Sick ist eine amerikanische Indie-Rockband aus New York City. Derzeit besteht sie aus Sängerin und Bassistin Sabrina Fuentes, Schlagzeugerin Eva Kaufman und Gitarrist Benjamin Arauz.",
+    "facts": [
+     "Pretty Sick ist eine amerikanische Indie-Rockband aus New York City, New York.",
+     "Derzeit besteht sie aus Sängerin und Bassistin Sabrina Fuentes, Schlagzeugerin Eva Kaufman und Gitarrist Benjamin Arauz."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie rock grubu · new york city",
+    "who": "Pretty Sick, new york city'den amerikalı bir indie rock grubu. şu an vokalist ve basçı sabrina fuentes, davulcu eva kaufman ve gitarist benjamin arauz'dan oluşuyor.",
+    "facts": [
+     "pretty sick, new york city, new york'tan amerikalı bir indie rock grubu.",
+     "şu an vokalist ve basçı sabrina fuentes, davulcu eva kaufman ve gitarist benjamin arauz'dan oluşuyor."
+    ]
+   }
+  },
+  {
+   "id": "cad0b2f6-3170-4af2-8e5c-16cd34f5c354",
+   "slug": "katseye-the-wildworld-tour-b140d7ca",
+   "title": "KATSEYE: THE WILDWORLD TOUR",
+   "name": "Katseye",
+   "source_url": "https://en.wikipedia.org/wiki/Katseye",
+   "extract": "Katseye is a girl group formed in 2024, based in Los Angeles. The group consists of six members: Daniela Avanzini, Lara Raj, Manon Bannerman, Megan Skiendiel, Sophia Laforteza, and Yoonchae Jeung. With members from the Philippines, South Korea, Switzerland, and the United States, Katseye is often called a \"global girl group\".",
+   "en": {
+    "kicker": "los angeles-based girl group · 2024",
+    "who": "Katseye is a girl group formed in 2024, based in Los Angeles. The group consists of six members, with members from the Philippines, South Korea, Switzerland, and the United States.",
+    "facts": [
+     "The group consists of six members: Daniela Avanzini, Lara Raj, Manon Bannerman, Megan Skiendiel, Sophia Laforteza, and Yoonchae Jeung.",
+     "With members from the Philippines, South Korea, Switzerland, and the United States, Katseye is often called a \"global girl group\"."
+    ]
+   },
+   "de": {
+    "kicker": "mädchengruppe aus los angeles · 2024",
+    "who": "Katseye ist eine 2024 gegründete Mädchengruppe mit Sitz in Los Angeles. Die Gruppe besteht aus sechs Mitgliedern mit Wurzeln auf den Philippinen, in Südkorea, der Schweiz und den USA.",
+    "facts": [
+     "Die Gruppe besteht aus sechs Mitgliedern: Daniela Avanzini, Lara Raj, Manon Bannerman, Megan Skiendiel, Sophia Laforteza und Yoonchae Jeung.",
+     "Mit Mitgliedern von den Philippinen, aus Südkorea, der Schweiz und den USA wird Katseye oft als \"globale Mädchengruppe\" bezeichnet."
+    ]
+   },
+   "tr": {
+    "kicker": "los angeles merkezli kız grubu · 2024",
+    "who": "Katseye, 2024'te kurulmuş ve los angeles'ta merkezli bir kız grubu. grup altı üyeden oluşuyor; üyeleri filipinler, güney kore, isviçre ve amerika birleşik devletleri'nden.",
+    "facts": [
+     "grup altı üyeden oluşuyor: daniela avanzini, lara raj, manon bannerman, megan skiendiel, sophia laforteza ve yoonchae jeung.",
+     "filipinler, güney kore, isviçre ve abd'den üyelerle katseye çoğu zaman \"küresel kız grubu\" olarak anılıyor."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "8c7f489d-7fa8-4511-9ad7-a98062c0c28a",
+   "slug": "rafet-el-roman-46130ff0",
+   "title": "Rafet El Roman",
+   "name": "Rafet El Roman",
+   "source_url": "https://en.wikipedia.org/wiki/Rafet_El_Roman",
+   "extract": "Rafet Yaşdut, better known by his stage name Rafet El Roman, is a Turkish pop singer. He holds German citizenship.",
+   "en": {
+    "kicker": "turkish pop singer",
+    "who": "Rafet Yaşdut, better known by his stage name Rafet El Roman, is a Turkish pop singer. He holds German citizenship.",
+    "facts": [
+     "Rafet Yaşdut, better known by his stage name Rafet El Roman, is a Turkish pop singer.",
+     "He holds German citizenship."
+    ]
+   },
+   "de": {
+    "kicker": "türkischer popsänger",
+    "who": "Rafet Yaşdut, besser bekannt unter dem Künstlernamen Rafet El Roman, ist ein türkischer Popsänger. Er besitzt die deutsche Staatsbürgerschaft.",
+    "facts": [
+     "Rafet Yaşdut, besser bekannt unter dem Künstlernamen Rafet El Roman, ist ein türkischer Popsänger.",
+     "Er besitzt die deutsche Staatsbürgerschaft."
+    ]
+   },
+   "tr": {
+    "kicker": "türk pop şarkıcısı",
+    "who": "Rafet Yaşdut, sahne adı rafet el roman ile daha çok bilinen türk bir pop şarkıcısı. alman vatandaşlığı da var.",
+    "facts": [
+     "sahne adı rafet el roman ile daha çok bilinen rafet yaşdut, türk bir pop şarkıcısı.",
+     "alman vatandaşlığına sahip."
+    ]
+   }
+  }
+ ]
+}

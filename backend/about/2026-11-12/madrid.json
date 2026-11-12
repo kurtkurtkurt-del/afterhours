@@ -1,0 +1,38 @@
+{
+ "city": "madrid",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "07a220b8-e3fd-4b83-bcf7-7348ba945bd2",
+   "slug": "the-k-s-08ed43bb",
+   "title": "THE K´S",
+   "name": "The K's",
+   "source_url": "https://en.wikipedia.org/wiki/The_K's",
+   "extract": "The K's are an English indie rock band from Earlestown, Merseyside. They are formed of singer/songwriter and guitarist Jamie Boyle, lead guitarist Ryan Breslin, bassist Dexter Baker and drummer Nathan Peers.",
+   "en": {
+    "kicker": "british indie rock band · earlestown",
+    "who": "The K's are an English indie rock band from Earlestown, Merseyside. They are formed of singer/songwriter and guitarist Jamie Boyle, lead guitarist Ryan Breslin, bassist Dexter Baker and drummer Nathan Peers.",
+    "facts": [
+     "They are formed of singer/songwriter and guitarist Jamie Boyle, lead guitarist Ryan Breslin, bassist Dexter Baker and drummer Nathan Peers.",
+     "The K's are an English indie rock band from Earlestown, Merseyside."
+    ]
+   },
+   "de": {
+    "kicker": "britische indie-rockband · earlestown",
+    "who": "The K's sind eine englische Indie-Rockband aus Earlestown, Merseyside. Die Band besteht aus Sänger, Songwriter und Gitarrist Jamie Boyle, Leadgitarrist Ryan Breslin, Bassist Dexter Baker und Schlagzeuger Nathan Peers.",
+    "facts": [
+     "Die Band besteht aus Sänger, Songwriter und Gitarrist Jamie Boyle, Leadgitarrist Ryan Breslin, Bassist Dexter Baker und Schlagzeuger Nathan Peers.",
+     "The K's sind eine englische Indie-Rockband aus Earlestown, Merseyside."
+    ]
+   },
+   "tr": {
+    "kicker": "britanyalı indie rock grubu · earlestown",
+    "who": "The K's, merseyside'ın earlestown kentinden ingiliz bir indie rock grubu. şarkıcı, söz yazarı ve gitarist jamie boyle, solo gitarist ryan breslin, basçı dexter baker ve davulcu nathan peers'tan oluşuyorlar.",
+    "facts": [
+     "şarkıcı, söz yazarı ve gitarist jamie boyle, solo gitarist ryan breslin, basçı dexter baker ve davulcu nathan peers'tan oluşuyorlar.",
+     "the k's, merseyside'ın earlestown kentinden ingiliz bir indie rock grubu."
+    ]
+   }
+  }
+ ]
+}

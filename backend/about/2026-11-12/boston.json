@@ -1,0 +1,38 @@
+{
+ "city": "boston",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "3cbaef63-8341-45ac-beee-05435db77d19",
+   "slug": "angine-de-poitrine-1544eac5",
+   "title": "Angine de Poitrine",
+   "name": "Angine de Poitrine",
+   "source_url": "https://en.wikipedia.org/wiki/Angine_de_Poitrine",
+   "extract": "Angine de Poitrine is a Canadian rock duo formed in Saguenay, Quebec, in 2019. The anonymous pair perform under the pseudonyms Khn de Poitrine and Klek de Poitrine (drums). They are known for complex microtonal compositions in the style of math rock and experimental rock, and an absurdist image involving oversized papier-mâché masks and black-and-white polka-dotted costumes.",
+   "en": {
+    "kicker": "canadian experimental rock duo · saguenay, 2019",
+    "who": "Angine de Poitrine is a Canadian rock duo formed in Saguenay, Quebec, in 2019. The anonymous pair perform under the pseudonyms Khn de Poitrine and Klek de Poitrine (drums).",
+    "facts": [
+     "They are known for complex microtonal compositions in the style of math rock and experimental rock.",
+     "They are known for an absurdist image involving oversized papier-mâché masks and black-and-white polka-dotted costumes."
+    ]
+   },
+   "de": {
+    "kicker": "kanadisches experimentelles rock-duo · saguenay, 2019",
+    "who": "Angine de Poitrine ist ein kanadisches Rock-Duo, das 2019 in Saguenay, Quebec, gegründet wurde. Das anonyme Duo tritt unter den Pseudonymen Khn de Poitrine und Klek de Poitrine (Schlagzeug) auf.",
+    "facts": [
+     "Sie sind für komplexe mikrotonale Kompositionen im Stil von Math-Rock und experimentellem Rock bekannt.",
+     "Bekannt sind sie außerdem für ein absurdes Image mit übergroßen Papiermaché-Masken und schwarz-weiß gepunkteten Kostümen."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı deneysel rock ikilisi · saguenay, 2019",
+    "who": "Angine de Poitrine, 2019'da quebec'in saguenay kentinde kurulmuş kanadalı bir rock ikilisi. kimlikleri belirsiz ikili khn de poitrine ve klek de poitrine (davul) takma adlarıyla çalıyor.",
+    "facts": [
+     "math rock ve deneysel rock tarzında karmaşık mikrotonal bestelerle tanınıyorlar.",
+     "devasa papier-mâché maskeler ve siyah beyaz puantiyeli kostümlerle oluşan absürt görselleriyle de biliniyorlar."
+    ]
+   }
+  }
+ ]
+}

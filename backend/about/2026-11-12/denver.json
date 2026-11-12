@@ -1,0 +1,70 @@
+{
+ "city": "denver",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "2f5a4de8-4d8b-47df-ba77-55ab50662f04",
+   "slug": "pedro-fernandez-ave-fenix-two-r-a6c4e404",
+   "title": "Pedro Fernández - Ave Fénix Two'r",
+   "name": "Pedro Fernández",
+   "source_url": "https://en.wikipedia.org/wiki/Pedro_Fern%C3%A1ndez_(singer)",
+   "extract": "José Martín Cuevas Cobos, known by his stage name Pedro Fernández, is a Mexican singer, songwriter, actor, and television host. Fernández began his international career as Pedrito Fernández at the age of seven. In the 1980s, he turned to be known as a scream king, thanks to his horror film starring roles in films such as Vacaciones de terror (1989), Pánico en la montaña (1989) and Trampa Infernal (1989).",
+   "en": {
+    "kicker": "mexican singer and actor · mexico",
+    "who": "José Martín Cuevas Cobos, known by his stage name Pedro Fernández, is a Mexican singer, songwriter, actor, and television host. In the 1980s, he came to be known as a scream king, thanks to starring roles in horror films.",
+    "facts": [
+     "Fernández began his international career as Pedrito Fernández at the age of seven.",
+     "In the 1980s, he turned to be known as a scream king, thanks to his horror film starring roles in films such as Vacaciones de terror (1989), Pánico en la montaña (1989) and Trampa Infernal (1989)."
+    ]
+   },
+   "de": {
+    "kicker": "mexikanischer sänger und schauspieler",
+    "who": "José Martín Cuevas Cobos, unter dem Künstlernamen Pedro Fernández bekannt, ist ein mexikanischer Sänger, Songwriter, Schauspieler und Fernsehmoderator. In den 1980er Jahren wurde er durch Hauptrollen in Horrorfilmen als Scream King bekannt.",
+    "facts": [
+     "Fernández begann seine internationale Karriere im Alter von sieben Jahren als Pedrito Fernández.",
+     "In den 1980er Jahren wurde er durch seine Hauptrollen in Horrorfilmen wie Vacaciones de terror (1989), Pánico en la montaña (1989) und Trampa Infernal (1989) als Scream King bekannt."
+    ]
+   },
+   "tr": {
+    "kicker": "meksikalı şarkıcı ve oyuncu",
+    "who": "José Martín Cuevas Cobos, sahne adı pedro fernández olan meksikalı bir şarkıcı, söz yazarı, oyuncu ve televizyon sunucusu. 1980'lerde korku filmlerindeki başrolleriyle scream king olarak tanınmaya başladı.",
+    "facts": [
+     "fernández uluslararası kariyerine yedi yaşında pedrito fernández adıyla başladı.",
+     "1980'lerde vacaciones de terror (1989), pánico en la montaña (1989) ve trampa infernal (1989) gibi korku filmlerindeki başrolleriyle scream king olarak tanındı."
+    ]
+   }
+  },
+  {
+   "id": "b0fa5499-0339-4a38-9d84-fca4457eb9e0",
+   "slug": "arcangel-la-8va-maravilla-world-tour-264240f7",
+   "title": "Arcángel - La 8va Maravilla World Tour",
+   "name": "Arcángel",
+   "source_url": "https://en.wikipedia.org/wiki/Arc%C3%A1ngel",
+   "extract": "Austin Agustín Santos, better known by his stage name Arcángel, is an American rapper and singer. He is often described as one of the most influential artists in the Latin urban genre, as well in Latin music overall, and one of the pioneers of Latin trap music. Around 2002, he became interested in becoming a performer of reggaeton. He met fellow singer De la Ghetto while living in Puerto Rico, where they eventually formed a popular then-underground reggaeton duo, Arcángel & De la Ghetto.",
+   "en": {
+    "kicker": "american rapper and singer",
+    "who": "Austin Agustín Santos, better known by his stage name Arcángel, is an American rapper and singer. He is often described as one of the most influential artists in the Latin urban genre.",
+    "facts": [
+     "He is often described as one of the most influential artists in the Latin urban genre, as well in Latin music overall, and one of the pioneers of Latin trap music.",
+     "He met fellow singer De la Ghetto while living in Puerto Rico, where they eventually formed a popular then-underground reggaeton duo, Arcángel & De la Ghetto."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper und sänger",
+    "who": "Austin Agustín Santos, besser bekannt unter dem Künstlernamen Arcángel, ist ein amerikanischer Rapper und Sänger. Er wird häufig als einer der einflussreichsten Künstler des lateinamerikanischen Urban-Genres beschrieben.",
+    "facts": [
+     "Er gilt als einer der einflussreichsten Künstler im lateinamerikanischen Urban-Genre und in der lateinamerikanischen Musik insgesamt sowie als einer der Pioniere des Latin Trap.",
+     "In Puerto Rico lernte er den Sänger De la Ghetto kennen; daraus entstand das damals noch im Untergrund beliebte Reggaeton-Duo Arcángel & De la Ghetto."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi ve şarkıcı",
+    "who": "Austin Agustín Santos, sahne adı arcángel ile daha çok bilinen, amerikalı bir rapçi ve şarkıcı. çoğu zaman latin urban türünün en etkili sanatçılarından biri olarak tarif ediliyor.",
+    "facts": [
+     "latin urban türünde ve genel olarak latin müziğinde en etkili sanatçılardan biri olarak tarif ediliyor; latin trap'in öncülerinden biri sayılıyor.",
+     "porto riko'da yaşarken şarkıcı de la ghetto ile tanıştı; birlikte o zamanlar yeraltında popüler olan arcángel & de la ghetto reggaeton ikilisini kurdular."
+    ]
+   }
+  }
+ ]
+}

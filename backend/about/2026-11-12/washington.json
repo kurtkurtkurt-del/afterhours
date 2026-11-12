@@ -1,0 +1,102 @@
+{
+ "city": "washington",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "d61c0d36-e721-4c6f-bcbf-a1403d7db314",
+   "slug": "yaelokre-dd91aa92",
+   "title": "Yaelokre",
+   "name": "Yaelokre",
+   "source_url": "https://en.wikipedia.org/wiki/Yaelokre",
+   "extract": "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist known for their folk music storytelling project under the stage name Yaelokre. Ósk began releasing music under the project name in early 2024, going viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart the same year.",
+   "en": {
+    "kicker": "filipino-icelandic singer-songwriter · 2024",
+    "who": "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist known for their folk music storytelling project under the stage name Yaelokre. Ósk began releasing music under the project name in early 2024.",
+    "facts": [
+     "Christopher Kristjansson, known professionally as Keath Ósk, is a Filipino-Icelandic singer-songwriter and multimedia artist known for their folk music storytelling project under the stage name Yaelokre.",
+     "Ósk went viral on TikTok in July of the same year for their song \"Harpy Hare\", entering the TikTok Billboard Top 50 and topping Spotify's Global Viral Songs Chart."
+    ]
+   },
+   "de": {
+    "kicker": "philippinisch-isländisch · singer-songwriter · 2024",
+    "who": "Christopher Kristjansson, professionell als Keath Ósk bekannt, ist ein philippinisch-isländischer Singer-Songwriter und Multimedia-Künstler; bekannt ist er für sein Folk-Erzählprojekt unter dem Namen Yaelokre. Ósk begann 2024 unter diesem Projektnamen Musik zu veröffentlichen.",
+    "facts": [
+     "Christopher Kristjansson, professionell als Keath Ósk bekannt, ist ein philippinisch-isländischer Singer-Songwriter und Multimedia-Künstler, bekannt für sein Folk-Erzählprojekt unter dem Namen Yaelokre.",
+     "Im Juli desselben Jahres wurde Ósk auf TikTok mit dem Song \"Harpy Hare\" viral, erreichte die TikTok-Billboard-Top-50 und stand an der Spitze von Spotifys Global Viral Songs Chart."
+    ]
+   },
+   "tr": {
+    "kicker": "filipinli-izlandalı şarkıcı ve söz yazarı · 2024",
+    "who": "Christopher Kristjansson, sahne adı keath ósk, filipinli-izlandalı bir şarkıcı, söz yazarı ve multimedya sanatçısı; yaelokre sahne adıyla yürüttüğü folk müzik hikâye projesiyle tanınıyor. ósk 2024'ün başında bu proje adıyla müzik yayımlamaya başladı.",
+    "facts": [
+     "sahne adı keath ósk olan christopher kristjansson, yaelokre sahne adıyla yürüttüğü folk müzik hikâye projesiyle tanınan filipinli-izlandalı bir şarkıcı, söz yazarı ve multimedya sanatçısı.",
+     "ósk, aynı yılın temmuzunda \"harpy hare\" şarkısıyla tiktok'ta viral oldu; tiktok billboard top 50'ye girdi ve spotify'ın global viral songs listesinin zirvesine çıktı."
+    ]
+   }
+  },
+  {
+   "id": "290358e9-62db-447b-bb40-440e6b0a1722",
+   "slug": "stella-lefty-lefty-live-62064bf0",
+   "title": "Stella Lefty: Lefty Live",
+   "name": "Stella Lefty",
+   "source_url": "https://en.wikipedia.org/wiki/Stella_Lefty",
+   "extract": "Stella Lefkofsky, better known by her stage name Stella Lefty, is an American singer-songwriter. Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100.",
+   "en": {
+    "kicker": "american singer-songwriter",
+    "who": "Stella Lefkofsky, better known by her stage name Stella Lefty, is an American singer-songwriter. Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100.",
+    "facts": [
+     "Stella Lefkofsky, better known by her stage name Stella Lefty, is an American singer-songwriter.",
+     "Her 2026 country-pop single \"Boston\" peaked at number two on the US Billboard Hot 100."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin",
+    "who": "Stella Lefkofsky, besser bekannt unter dem Künstlernamen Stella Lefty, ist eine amerikanische Singer-Songwriterin. Ihre Country-Pop-Single \"Boston\" von 2026 erreichte Platz zwei der US-Billboard-Hot-100.",
+    "facts": [
+     "Stella Lefkofsky, besser bekannt unter dem Künstlernamen Stella Lefty, ist eine amerikanische Singer-Songwriterin.",
+     "Ihre Country-Pop-Single \"Boston\" von 2026 erreichte Platz zwei der US-Billboard-Hot-100."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı",
+    "who": "Stella Lefkofsky, sahne adı stella lefty ile daha çok bilinen amerikalı bir şarkıcı ve söz yazarı. 2026 country-pop single'ı \"boston\" abd billboard hot 100'de ikinci sıraya kadar yükseldi.",
+    "facts": [
+     "sahne adı stella lefty ile daha çok bilinen stella lefkofsky, amerikalı bir şarkıcı ve söz yazarı.",
+     "2026 country-pop single'ı \"boston\" abd billboard hot 100'de ikinci sıraya kadar yükseldi."
+    ]
+   }
+  },
+  {
+   "id": "dcdac933-bb82-4a38-9719-1f372e1ad71e",
+   "slug": "they-might-be-giants-46e12d18",
+   "title": "They Might Be Giants",
+   "name": "They Might Be Giants",
+   "source_url": "https://en.wikipedia.org/wiki/They_Might_Be_Giants",
+   "extract": "They Might Be Giants, often abbreviated as TMBG, is an American alternative rock band formed in Brooklyn in 1982 by vocalist and guitarist John Flansburgh and vocalist and multi-instrumentalist John Linnell. During the band's early years, Flansburgh and Linnell frequently performed as a musical duo, often accompanied by a tape machine or a drum machine. In 1992, They Might Be Giants expanded to include a backing band. The group's current backing band consists of Danny Weinkauf, Dan Miller, and Marty Beller, and their horn section consists of Dan Levine, Stan Harrison, and Mark Pender.",
+   "en": {
+    "kicker": "american alternative rock band · brooklyn, 1982",
+    "who": "They Might Be Giants is an American alternative rock band formed in Brooklyn in 1982 by vocalist and guitarist John Flansburgh and vocalist and multi-instrumentalist John Linnell. In 1992, they expanded to include a backing band.",
+    "facts": [
+     "During the band's early years, Flansburgh and Linnell frequently performed as a musical duo, often accompanied by a tape machine or a drum machine.",
+     "In 1992, They Might Be Giants expanded to include a backing band."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische alternative-rockband · brooklyn, 1982",
+    "who": "They Might Be Giants sind eine amerikanische Alternative-Rockband, die 1982 in Brooklyn von Sänger und Gitarrist John Flansburgh und dem Sänger und Multiinstrumentalisten John Linnell gegründet wurde. 1992 erweiterten sie sich um eine Begleitband.",
+    "facts": [
+     "In den frühen Jahren traten Flansburgh und Linnell häufig als Musikduo auf, oft begleitet von einem Tonbandgerät oder einer Drum Machine.",
+     "1992 erweiterten They Might Be Giants sich um eine Begleitband."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı alternatif rock grubu · brooklyn, 1982",
+    "who": "They Might Be Giants, 1982'de brooklyn'de vokalist ve gitarist john flansburgh ile vokalist ve çok enstrümanlı sanatçı john linnell tarafından kurulmuş amerikalı bir alternatif rock grubu. 1992'de yanlarına bir destek grubu aldılar.",
+    "facts": [
+     "grubun ilk yıllarında flansburgh ile linnell sık sık bir teyp makinesi ya da davul makinesiyle eşlik edilen müzik ikilisi olarak sahne aldı.",
+     "1992'de they might be giants, bir destek grubunu da kapsayacak şekilde genişledi."
+    ]
+   }
+  }
+ ]
+}

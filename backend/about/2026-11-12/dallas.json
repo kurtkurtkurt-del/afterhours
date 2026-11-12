@@ -1,0 +1,70 @@
+{
+ "city": "dallas",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "a44efe8e-6de4-4011-860a-c5c89dcceba7",
+   "slug": "we-are-scientists-4fe992bb",
+   "title": "We Are Scientists",
+   "name": "We Are Scientists",
+   "source_url": "https://en.wikipedia.org/wiki/We_Are_Scientists",
+   "extract": "We Are Scientists is a New York City-based rock band that formed in Berkeley, California, in 1999. It consists primarily of guitarist and vocalist Keith Murray and bass guitarist Chris Cain, with drummer Keith Carne joining the band in the studio and for live performances since 2013.",
+   "en": {
+    "kicker": "rock band · berkeley, 1999",
+    "who": "We Are Scientists is a New York City-based rock band that formed in Berkeley, California, in 1999. It consists primarily of guitarist and vocalist Keith Murray and bass guitarist Chris Cain.",
+    "facts": [
+     "It consists primarily of guitarist and vocalist Keith Murray and bass guitarist Chris Cain, with drummer Keith Carne joining the band in the studio and for live performances since 2013.",
+     "The band formed in Berkeley, California, in 1999."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-rockband · berkeley, 1999",
+    "who": "We Are Scientists ist eine Rockband mit Sitz in New York City, die 1999 in Berkeley, Kalifornien, gegründet wurde. Sie besteht vor allem aus Gitarrist und Sänger Keith Murray und Bassist Chris Cain.",
+    "facts": [
+     "Sie besteht vor allem aus Gitarrist und Sänger Keith Murray und Bassist Chris Cain; Schlagzeuger Keith Carne ist seit 2013 im Studio und bei Liveauftritten dabei.",
+     "Die Band wurde 1999 in Berkeley, Kalifornien, gegründet."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie rock grubu · berkeley, 1999",
+    "who": "We Are Scientists, 1999'da kaliforniya'nın berkeley kentinde kurulmuş, merkezi new york city olan bir rock grubu. ağırlıklı olarak gitarist ve vokalist keith murray ile basçı chris cain'den oluşuyor.",
+    "facts": [
+     "ağırlıklı olarak gitarist ve vokalist keith murray ile basçı chris cain'den oluşuyor; davulcu keith carne 2013'ten beri stüdyoda ve canlı performanslarda gruba katılıyor.",
+     "grup 1999'da kaliforniya'nın berkeley kentinde kuruldu."
+    ]
+   }
+  },
+  {
+   "id": "34fa8d00-9ab6-4ecd-a496-c6b5ccf6a22e",
+   "slug": "aterciopelados-56027389",
+   "title": "Aterciopelados",
+   "name": "Aterciopelados",
+   "source_url": "https://en.wikipedia.org/wiki/Aterciopelados",
+   "extract": "Aterciopelados, also known as Los Aterciopelados, is a rock band from Colombia, led by Andrea Echeverri and Héctor Buitrago. Their music fuses rock with a variety of Colombian and Latin American musical traditions. Aterciopelados have recorded eight albums.",
+   "en": {
+    "kicker": "colombian rock band",
+    "who": "Aterciopelados, also known as Los Aterciopelados, is a rock band from Colombia, led by Andrea Echeverri and Héctor Buitrago. Their music fuses rock with a variety of Colombian and Latin American musical traditions.",
+    "facts": [
+     "Their music fuses rock with a variety of Colombian and Latin American musical traditions.",
+     "Aterciopelados have recorded eight albums."
+    ]
+   },
+   "de": {
+    "kicker": "kolumbianische rockband",
+    "who": "Aterciopelados, auch bekannt als Los Aterciopelados, ist eine Rockband aus Kolumbien, angeführt von Andrea Echeverri und Héctor Buitrago. Ihre Musik verbindet Rock mit verschiedenen kolumbianischen und lateinamerikanischen Musiktraditionen.",
+    "facts": [
+     "Ihre Musik verbindet Rock mit verschiedenen kolumbianischen und lateinamerikanischen Musiktraditionen.",
+     "Aterciopelados haben acht Alben aufgenommen."
+    ]
+   },
+   "tr": {
+    "kicker": "kolombiyalı rock grubu",
+    "who": "Aterciopelados, los aterciopelados olarak da bilinen, andrea echeverri ve héctor buitrago'nun yönettiği bir kolombiya rock grubu. müzikleri rock'ı çeşitli kolombiya ve latin amerika müzik geleneklerleriyle harmanlıyor.",
+    "facts": [
+     "müzikleri rock'ı çeşitli kolombiya ve latin amerika müzik geleneklerleriyle harmanlıyor.",
+     "aterciopelados sekiz albüm kaydetti."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+{
+ "city": "manchester",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "10c90e41-e5ee-4e92-8100-8d3c729eb406",
+   "slug": "the-fray-7102a268",
+   "title": "The Fray",
+   "name": "The Fray",
+   "source_url": "https://en.wikipedia.org/wiki/The_Fray",
+   "extract": "The Fray is an American rock band from Denver, Colorado, formed in 2002 by schoolmates Isaac Slade and Joe King. Their debut studio album, How to Save a Life (2005) was released by Epic Records and received quadruple platinum certification by the Recording Industry Association of America (RIAA), as well as platinum certification in Australia, Canada, New Zealand and the United Kingdom. Its release was supported by their first hit single, \"Over My Head \", which peaked at number eight on the Billboard Hot 100. The band saw their furthest success with the song's follow-up, \"How to Save a Life\", which peaked at number three on the chart and was also a hit in Australia, Canada, Ireland, Italy, Sp",
+   "en": {
+    "kicker": "american rock band · denver, 2002",
+    "who": "The Fray is an American rock band from Denver, Colorado, formed in 2002 by schoolmates Isaac Slade and Joe King. Their debut studio album, How to Save a Life (2005), was released by Epic Records.",
+    "facts": [
+     "Their debut studio album, How to Save a Life (2005) was released by Epic Records and received quadruple platinum certification by the Recording Industry Association of America (RIAA), as well as platinum certification in Australia, Canada, New Zealand and the United Kingdom.",
+     "The band saw their furthest success with the song's follow-up, \"How to Save a Life\", which peaked at number three on the chart."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · denver, 2002",
+    "who": "The Fray ist eine amerikanische Rockband aus Denver, Colorado, die 2002 von den Schulfreunden Isaac Slade und Joe King gegründet wurde. Ihr Debütalbum How to Save a Life (2005) erschien bei Epic Records.",
+    "facts": [
+     "Ihr Debütalbum How to Save a Life (2005) erschien bei Epic Records und erhielt vierfach Platin von der RIAA sowie Platin in Australien, Kanada, Neuseeland und Großbritannien.",
+     "Ihren größten Erfolg hatte die Band mit der Folgesingle \"How to Save a Life\", die Platz drei der Charts erreichte."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · denver, 2002",
+    "who": "The Fray, colorado'nun denver kentinden amerikalı bir rock grubu; 2002'de okul arkadaşları isaac slade ve joe king tarafından kuruldu. ilk stüdyo albümleri how to save a life (2005), epic records tarafından yayımlandı.",
+    "facts": [
+     "ilk stüdyo albümleri how to save a life (2005), epic records tarafından yayımlandı ve riaa'dan dörtlü platin, avustralya, kanada, yeni zelanda ve birleşik krallık'ta platin sertifika aldı.",
+     "grup en büyük başarısını, şarkının devamı olan \"how to save a life\" ile yaşadı; bu şarkı listede üçüncü sıraya kadar çıktı."
+    ]
+   }
+  },
+  {
+   "id": "364a48a3-e00f-4cc1-894a-e121c371ba68",
+   "slug": "xentrix-de65c0d8",
+   "title": "Xentrix",
+   "name": "Xentrix",
+   "source_url": "https://en.wikipedia.org/wiki/Xentrix",
+   "extract": "Xentrix are an English thrash metal band formed as Sweet Vengeance in Preston, Lancashire in 1984. They changed their name to Xentrix in 1988, and released four albums – Shattered Existence (1989), For Whose Advantage? (1990), Kin (1992) and Scourge (1996) – before disbanding in 1997. After briefly reuniting in 2005–2006, Xentrix reunited again in 2013, and they have since released three more albums: Bury the Pain (2019), Seven Words (2022) and Allied with the Enemy (2026). As part of the late 1980s-early-to-mid 1990s underground metal scene, Xentrix have been referred to as one of the \"Big Four\" of English thrash metal, along with Acid Reign, Onslaught and Sabbat.",
+   "en": {
+    "kicker": "english thrash metal band · preston, 1984",
+    "who": "Xentrix are an English thrash metal band formed as Sweet Vengeance in Preston, Lancashire in 1984. They changed their name to Xentrix in 1988, and released four albums before disbanding in 1997.",
+    "facts": [
+     "They changed their name to Xentrix in 1988, and released four albums – Shattered Existence (1989), For Whose Advantage? (1990), Kin (1992) and Scourge (1996) – before disbanding in 1997.",
+     "As part of the late 1980s-early-to-mid 1990s underground metal scene, Xentrix have been referred to as one of the \"Big Four\" of English thrash metal, along with Acid Reign, Onslaught and Sabbat."
+    ]
+   },
+   "de": {
+    "kicker": "englische thrash-metal-band · preston, 1984",
+    "who": "Xentrix sind eine englische Thrash-Metal-Band, die 1984 in Preston, Lancashire, als Sweet Vengeance gegründet wurde. 1988 benannten sie sich in Xentrix um und veröffentlichten vier Alben, bevor sie sich 1997 auflösten.",
+    "facts": [
+     "1988 benannten sie sich in Xentrix um und veröffentlichten die Alben Shattered Existence (1989), For Whose Advantage? (1990), Kin (1992) und Scourge (1996), bevor sie sich 1997 auflösten.",
+     "Im Untergrund-Metal-Szene der späten 1980er und frühen bis mittleren 1990er Jahre gelten Xentrix als eine der \"Big Four\" des englischen Thrash Metal, zusammen mit Acid Reign, Onslaught und Sabbat."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz thrash metal grubu · preston, 1984",
+    "who": "Xentrix, 1984'te lancashire'ın preston kentinde sweet vengeance adıyla kurulmuş bir ingiliz thrash metal grubu. 1988'de adlarını xentrix olarak değiştirdiler ve dört albüm yayımladıktan sonra 1997'de dağıldılar.",
+    "facts": [
+     "1988'de adlarını xentrix olarak değiştirdiler ve shattered existence (1989), for whose advantage? (1990), kin (1992) ve scourge (1996) albümlerini yayımladıktan sonra 1997'de dağıldılar.",
+     "1980'lerin sonu ile 1990'ların ortası arasındaki yeraltı metal sahnesinde xentrix, acid reign, onslaught ve sabbat ile birlikte ingiliz thrash metalin \"big four\"unden biri sayıldı."
+    ]
+   }
+  },
+  {
+   "id": "ea4cdd85-1db9-4075-be50-383640b3ecff",
+   "slug": "aaron-rowe-8520f169",
+   "title": "Aaron Rowe",
+   "name": "Aaron Rowe",
+   "source_url": "https://en.wikipedia.org/wiki/Aaron_Rowe_(singer)",
+   "extract": "Aaron Rowe is an Irish singer-songwriter and musician from Dublin. Rowe is best known for his debut single, \"Hey Ma\", released in May 2025, in addition to follow-up singles, \"Talking with You\" and \"Lose Lose\".",
+   "en": {
+    "kicker": "irish singer-songwriter · dublin",
+    "who": "Aaron Rowe is an Irish singer-songwriter and musician from Dublin. Rowe is best known for his debut single, \"Hey Ma\", released in May 2025.",
+    "facts": [
+     "Aaron Rowe is an Irish singer-songwriter and musician from Dublin.",
+     "Rowe is best known for his debut single, \"Hey Ma\", released in May 2025, in addition to follow-up singles, \"Talking with You\" and \"Lose Lose\"."
+    ]
+   },
+   "de": {
+    "kicker": "irischer singer-songwriter · dublin",
+    "who": "Aaron Rowe ist ein irischer Singer-Songwriter und Musiker aus Dublin. Bekannt ist er vor allem durch seine Debütsingle \"Hey Ma\", die im Mai 2025 erschien.",
+    "facts": [
+     "Aaron Rowe ist ein irischer Singer-Songwriter und Musiker aus Dublin.",
+     "Bekannt ist Rowe vor allem durch seine Debütsingle \"Hey Ma\", die im Mai 2025 erschien, sowie die Folgesingles \"Talking with You\" und \"Lose Lose\"."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı şarkıcı ve söz yazarı · dublin",
+    "who": "Aaron Rowe, dublin'den irlandalı bir şarkıcı, söz yazarı ve müzisyen. en çok mayıs 2025'te çıkan ilk single'ı \"hey ma\" ile tanınıyor.",
+    "facts": [
+     "aaron rowe, dublin'den irlandalı bir şarkıcı, söz yazarı ve müzisyen.",
+     "rowe en çok mayıs 2025'te çıkan ilk single'ı \"hey ma\" ile tanınıyor; takip eden \"talking with you\" ve \"lose lose\" single'ları da var."
+    ]
+   }
+  }
+ ]
+}

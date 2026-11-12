@@ -1,0 +1,38 @@
+{
+ "city": "chicago",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "c3ef4a89-02b1-487b-858d-6eb43d9d6a44",
+   "slug": "carter-faith-cherry-valley-forever-tour-6ff6a9d2",
+   "title": "Carter Faith - Cherry Valley Forever Tour",
+   "name": "Carter Faith",
+   "source_url": "https://en.wikipedia.org/wiki/Carter_Faith",
+   "extract": "Carter Faith Jones, known professionally as Carter Faith, is an American country music singer and songwriter. Her debut album, Cherry Valley, was released on October 3, 2025.",
+   "en": {
+    "kicker": "american country singer · 2025",
+    "who": "Carter Faith Jones, known professionally as Carter Faith, is an American country music singer and songwriter. Her debut album, Cherry Valley, was released in October 2025.",
+    "facts": [
+     "Carter Faith Jones, known professionally as Carter Faith, is an American country music singer and songwriter.",
+     "Her debut album, Cherry Valley, was released on October 3, 2025."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische country-sängerin · 2025",
+    "who": "Carter Faith Jones, professionell als Carter Faith bekannt, ist eine amerikanische Country-Sängerin und Songwriterin. Ihr Debütalbum Cherry Valley erschien im Oktober 2025.",
+    "facts": [
+     "Carter Faith Jones, professionell als Carter Faith bekannt, ist eine amerikanische Country-Sängerin und Songwriterin.",
+     "Ihr Debütalbum Cherry Valley erschien am 3. Oktober 2025."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı country şarkıcısı · 2025",
+    "who": "Carter Faith Jones, sahne adıyla carter faith, amerikalı bir country müzik şarkıcısı ve söz yazarı. ilk albümü cherry valley ekim 2025'te yayımlandı.",
+    "facts": [
+     "Sahne adıyla carter faith olarak bilinen carter faith jones, amerikalı bir country müzik şarkıcısı ve söz yazarı.",
+     "ilk albümü cherry valley, 3 ekim 2025'te yayımlandı."
+    ]
+   }
+  }
+ ]
+}

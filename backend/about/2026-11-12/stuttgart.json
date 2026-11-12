@@ -1,0 +1,38 @@
+{
+ "city": "stuttgart",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "407ec416-7407-46b7-b936-99290ea094f3",
+   "slug": "chase-matthew-2027-europe-and-uk-tour-a1f8a6d9",
+   "title": "Chase Matthew - 2027 Europe and UK Tour",
+   "name": "Chase Matthew",
+   "source_url": "https://en.wikipedia.org/wiki/Chase_Matthew",
+   "extract": "Chase Matthew McQuitty is an American country music singer and songwriter. Signed to Warner Records Nashville, he has charted with the singles \"Love You Again\" and \"Darlin'\".",
+   "en": {
+    "kicker": "american country singer-songwriter",
+    "who": "Chase Matthew McQuitty is an American country music singer and songwriter. Signed to Warner Records Nashville, he has charted with singles.",
+    "facts": [
+     "Chase Matthew McQuitty is an American country music singer and songwriter.",
+     "Signed to Warner Records Nashville, he has charted with the singles \"Love You Again\" and \"Darlin'\"."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer country-singer-songwriter",
+    "who": "Chase Matthew McQuitty ist ein amerikanischer Country-Sänger und Songwriter. Er steht bei Warner Records Nashville unter Vertrag und hat mit den Singles \"Love You Again\" und \"Darlin'\" Chartplatzierungen erreicht.",
+    "facts": [
+     "Chase Matthew McQuitty ist ein amerikanischer Country-Sänger und Songwriter.",
+     "Er steht bei Warner Records Nashville unter Vertrag und hat mit den Singles \"Love You Again\" und \"Darlin'\" Chartplatzierungen erreicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı country şarkıcısı ve söz yazarı",
+    "who": "Chase Matthew McQuitty, amerikalı bir country müzik şarkıcısı ve söz yazarı. warner records nashville ile anlaşmalı; \"love you again\" ve \"darlin'\" single'ları listelere girdi.",
+    "facts": [
+     "chase matthew mcquitty, amerikalı bir country müzik şarkıcısı ve söz yazarı.",
+     "warner records nashville ile anlaşmalı; \"love you again\" ve \"darlin'\" single'ları listelere girdi."
+    ]
+   }
+  }
+ ]
+}

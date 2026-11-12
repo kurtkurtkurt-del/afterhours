@@ -1,0 +1,70 @@
+{
+ "city": "detroit",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "cb1c0c57-0acc-49bd-86db-66efcd3125b5",
+   "slug": "suicide-silence-reminders-of-hell-tour-0a99f262",
+   "title": "Suicide Silence: REMINDERS OF HELL TOUR",
+   "name": "Suicide Silence",
+   "source_url": "https://en.wikipedia.org/wiki/Suicide_Silence",
+   "extract": "Suicide Silence is an American deathcore band from Riverside, California. The band was established in 2002, and has released seven studio albums, three EPs, and nineteen music videos. They were awarded the Revolver Golden God award for \"Best New Talent\" in 2009. The group currently consists of guitarists Chris Garza and Mark Heylmun, bassist Dan Kenny, vocalist Hernan \"Eddie\" Hermida and drummer Ernie Iniguez.",
+   "en": {
+    "kicker": "american deathcore band · 2002",
+    "who": "Suicide Silence is an American deathcore band from Riverside, California. The band was established in 2002, and has released seven studio albums, three EPs, and nineteen music videos.",
+    "facts": [
+     "They were awarded the Revolver Golden God award for \"Best New Talent\" in 2009.",
+     "The group currently consists of guitarists Chris Garza and Mark Heylmun, bassist Dan Kenny, vocalist Hernan \"Eddie\" Hermida and drummer Ernie Iniguez."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische deathcore-band · 2002",
+    "who": "Suicide Silence ist eine amerikanische Deathcore-Band aus Riverside, Kalifornien. Die Band wurde 2002 gegründet und hat sieben Studioalben, drei EPs und neunzehn Musikvideos veröffentlicht.",
+    "facts": [
+     "2009 erhielten sie den Revolver Golden God Award für \"Best New Talent\".",
+     "Die Gruppe besteht derzeit aus den Gitarristen Chris Garza und Mark Heylmun, Bassist Dan Kenny, Sänger Hernan \"Eddie\" Hermida und Schlagzeuger Ernie Iniguez."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı deathcore grubu · 2002",
+    "who": "Suicide Silence, kaliforniya'nın riverside kentinden amerikalı bir deathcore grubu. grup 2002'de kuruldu; yedi stüdyo albümü, üç ep'si ve on dokuz müzik videosu var.",
+    "facts": [
+     "2009'da revolver golden god ödülünü \"best new talent\" dalında aldılar.",
+     "grup şu an gitarist chris garza ve mark heylmun, basçı dan kenny, vokalist hernan \"eddie\" hermida ve davulcu ernie iniguez'den oluşuyor."
+    ]
+   }
+  },
+  {
+   "id": "6fa5575c-db61-4959-bbe5-0bc2401d6aea",
+   "slug": "sabaton-legends-on-tour-d06b21a7",
+   "title": "Sabaton: Legends on Tour",
+   "name": "Sabaton",
+   "source_url": "https://en.wikipedia.org/wiki/Sabaton_(band)",
+   "extract": "Sabaton is a Swedish power metal band from Falun, formed in 1999 by lead singer Joakim Brodén, bassist Pär Sundström, guitarists Oskar Montelius and Rikard Sundén, and drummer Richard Larsson. The band has gone through multiple lineup changes with Brodén and Sundström remaining the only consistent members. The vast majority of their songs are about historical events, mainly wars and significant battles. As of 2026, the band has released eleven studio albums, four live albums, five live DVDs and thirty music videos.",
+   "en": {
+    "kicker": "swedish power metal band · falun, 1999",
+    "who": "Sabaton is a Swedish power metal band from Falun, formed in 1999 by lead singer Joakim Brodén, bassist Pär Sundström, guitarists Oskar Montelius and Rikard Sundén, and drummer Richard Larsson. The vast majority of their songs are about historical events, mainly wars and significant battles.",
+    "facts": [
+     "The vast majority of their songs are about historical events, mainly wars and significant battles.",
+     "As of 2026, the band has released eleven studio albums, four live albums, five live DVDs and thirty music videos."
+    ]
+   },
+   "de": {
+    "kicker": "schwedische power-metal-band · falun, 1999",
+    "who": "Sabaton ist eine schwedische Power-Metal-Band aus Falun, die 1999 von Sänger Joakim Brodén, Bassist Pär Sundström, den Gitarristen Oskar Montelius und Rikard Sundén sowie Schlagzeuger Richard Larsson gegründet wurde. Der größte Teil ihrer Songs handelt von historischen Ereignissen, vor allem von Kriegen und bedeutenden Schlachten.",
+    "facts": [
+     "Der größte Teil ihrer Songs handelt von historischen Ereignissen, vor allem von Kriegen und bedeutenden Schlachten.",
+     "Stand 2026 hat die Band elf Studioalben, vier Live-Alben, fünf Live-DVDs und dreißig Musikvideos veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "isveçli power metal grubu · falun, 1999",
+    "who": "Sabaton, 1999'da falun'da kurulmuş bir isveçli power metal grubu; kurucuları vokalist joakim brodén, basçı pär sundström, gitaristler oskar montelius ile rikard sundén ve davulcu richard larsson. şarkılarının büyük çoğunluğu tarihi olaylar, özellikle savaşlar ve önemli muharebeler üzerine.",
+    "facts": [
+     "şarkılarının büyük çoğunluğu tarihi olaylar, özellikle savaşlar ve önemli muharebeler üzerine.",
+     "2026 itibarıyla grup on bir stüdyo albümü, dört canlı albüm, beş canlı dvd ve otuz müzik videosu yayımladı."
+    ]
+   }
+  }
+ ]
+}

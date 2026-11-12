@@ -1,0 +1,38 @@
+{
+ "city": "las-vegas",
+ "day": "2026-11-12",
+ "nights": [
+  {
+   "id": "b6d92d81-74e7-4689-ac00-cc48c660db1f",
+   "slug": "lionel-richie-king-of-hearts-321e8ab7",
+   "title": "Lionel Richie - King of Hearts",
+   "name": "Lionel Richie",
+   "source_url": "https://en.wikipedia.org/wiki/Lionel_Richie",
+   "extract": "Lionel Brockman Richie Jr. is an American singer, songwriter, musician, record producer, and television personality. He rose to fame in the 1970s as a songwriter and the co-lead singer of the Motown group Commodores; writing and recording the hit singles \"Easy\", \"Sail On\", \"Three Times a Lady\", and \"Still\" with the group before his departure. In 1980, he wrote and produced the US Billboard Hot 100 number one single \"Lady\" for Kenny Rogers.",
+   "en": {
+    "kicker": "american singer and songwriter",
+    "who": "Lionel Brockman Richie Jr. is an American singer, songwriter, musician, record producer, and television personality. He rose to fame in the 1970s as a songwriter and the co-lead singer of the Motown group Commodores.",
+    "facts": [
+     "He rose to fame in the 1970s as a songwriter and the co-lead singer of the Motown group Commodores; writing and recording the hit singles \"Easy\", \"Sail On\", \"Three Times a Lady\", and \"Still\" with the group before his departure.",
+     "In 1980, he wrote and produced the US Billboard Hot 100 number one single \"Lady\" for Kenny Rogers."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer sänger und songwriter",
+    "who": "Lionel Brockman Richie Jr. ist ein amerikanischer Sänger, Songwriter, Musiker, Musikproduzent und Fernsehpersönlichkeit. In den 1970er Jahren wurde er als Songwriter und Co-Leadsänger der Motown-Gruppe Commodores bekannt.",
+    "facts": [
+     "In den 1970er Jahren wurde er als Songwriter und Co-Leadsänger der Motown-Gruppe Commodores bekannt; mit der Gruppe schrieb und nahm er die Hits \"Easy\", \"Sail On\", \"Three Times a Lady\" und \"Still\" auf, bevor er ging.",
+     "1980 schrieb und produzierte er für Kenny Rogers den Nummer-eins-Hit \"Lady\" in den US-Billboard-Hot-100."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı",
+    "who": "Lionel Brockman Richie Jr., amerikalı bir şarkıcı, söz yazarı, müzisyen, plak yapımcısı ve televizyon kişiliği. 1970'lerde motown grubu commodores'ın söz yazarı ve ortak baş vokali olarak ün kazandı.",
+    "facts": [
+     "1970'lerde motown grubu commodores'ın söz yazarı ve ortak baş vokali olarak ün kazandı; gruptan ayrılmadan önce \"easy\", \"sail on\", \"three times a lady\" ve \"still\" hitlerini yazıp kaydetti.",
+     "1980'de kenny rogers için us billboard hot 100 listesinde bir numaralı olan \"lady\" şarkısını yazdı ve prodüksiyonunu yaptı."
+    ]
+   }
+  }
+ ]
+}
