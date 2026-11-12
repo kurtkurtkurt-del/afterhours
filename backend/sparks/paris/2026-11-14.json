@@ -1,0 +1,14 @@
+{
+  "city": "paris",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "skate",
+      "title": { "en": "ice rink at la défense, christmas market open.", "de": "eisbahn in la défense, weihnachtsmarkt offen.", "tr": "la défense'da buz pateni, noel pazarı açık." },
+      "line": { "en": "the ice rink under the grande arche opens with the christmas market from 12 november to 3 january. the market is open 10:00 to 23:00 on saturday; check the rink's own hours before you go.", "de": "die eisbahn unter der grande arche ist mit dem weihnachtsmarkt vom 12. november bis 3. januar geöffnet. der markt hat samstags von 10:00 bis 23:00 offen; die eigenen zeiten der bahn vorher prüfen.", "tr": "grande arche'nin altındaki buz pateni, 12 kasım'dan 3 ocak'a kadar noel pazarıyla birlikte açık. pazar cumartesi 10:00 ile 23:00 arasında açık; gitmeden önce pistin kendi saatlerine bak." },
+      "place": { "en": "patinoire de la défense", "de": "patinoire de la défense", "tr": "patinoire de la défense" },
+      "hour": 17, "minute": 0,
+      "why": "Paris La Défense Christmas market with ice rink, 12 Nov 2026 to 3 Jan 2027, market Saturday 10:00 to 23:00 (parisselectbook.com, onivapp.com); the rink's own hours were not confirmed."
+    }
+  ]
+}
