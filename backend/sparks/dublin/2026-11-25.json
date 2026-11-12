@@ -1,0 +1,18 @@
+{
+  "city": "dublin",
+  "day": "2026-11-25",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "everwinter at the rds.", "de": "everwinter im rds.", "tr": "rds'de everwinter." },
+      "line": {
+        "en": "dublin's big festive fair at the rds, open 14:00 to 21:00 on weekdays and from noon at weekends, shut on mondays, until 3 january. go straight after work.",
+        "de": "dublins großes winterfest im rds, werktags 14 bis 21 uhr, am wochenende ab 12 uhr, montags geschlossen, bis 3. januar. am besten direkt nach der arbeit.",
+        "tr": "dublin'in büyük kış festivali rds'te; hafta içi 14:00 ile 21:00, hafta sonu öğlen 12'den itibaren, pazartesi kapalı, 3 ocak'a kadar. işten çıkınca git."
+      },
+      "place": { "en": "rds, ballsbridge", "de": "rds, ballsbridge", "tr": "rds, ballsbridge" },
+      "hour": 17, "minute": 0,
+      "why": "Everwinter at the RDS, 25 Nov 2026 to 3 Jan 2027, Tue to Fri 14:00 to 21:00, weekends from noon, closed Mondays (theirishroadtrip.com Christmas markets guide). Extra.ie headline of 11 Nov says it has arrived, so the start date is unsettled."
+    }
+  ]
+}

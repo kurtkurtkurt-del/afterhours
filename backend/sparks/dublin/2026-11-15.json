@@ -1,0 +1,18 @@
+{
+  "city": "dublin",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "sunrise",
+      "title": { "en": "sunrise on howth head.", "de": "sonnenaufgang am howth head.", "tr": "howth head'de gün doğumu." },
+      "line": {
+        "en": "the sun comes up around 07:50 this week. the head is a short climb from howth station on the dart; be at the top before the light.",
+        "de": "die sonne geht diese woche gegen 7:50 uhr auf. der kopf liegt einen kurzen aufstieg vom bahnhof howth an der dart entfernt; oben sein, bevor es hell wird.",
+        "tr": "bu hafta güneş 07:50 civarında doğuyor. tepe, dart ile howth istasyonundan kısa bir yokuş; ışık gelmeden zirvede ol."
+      },
+      "place": { "en": "howth head", "de": "howth head", "tr": "howth head" },
+      "hour": 7, "minute": 15,
+      "why": "Sunrise 07:45 to 07:47 on 13 Nov (sunrise-and-sunset.com, General Blue, Alpenglow), a minute or two later by sunday. No weather forecast was found for this day, so none is claimed."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "city": "dublin",
+  "day": "2026-11-19",
+  "sparks": [
+    {
+      "kind": "rooftop",
+      "title": { "en": "a rooftop drink at dion, dame street.", "de": "ein drink auf dem dach im dion, dame street.", "tr": "dion'da çatı katında bir içki, dame street." },
+      "line": {
+        "en": "dion sits on the roof of the old central bank in one central plaza, open every day from noon to eleven. the sun sets around half four now, so the lights do the work.",
+        "de": "dion liegt auf dem dach der alten central bank in one central plaza und ist täglich von 12 bis 23 uhr offen. die sonne geht jetzt gegen halb fünf unter, die lichter übernehmen.",
+        "tr": "dion, one central plaza'daki eski central bank binasının çatısında; her gün öğlen 12'den gece 11'e açık. güneş bu sıralarda dört buçuk civarı batıyor, ışıklar işi görüyor."
+      },
+      "place": { "en": "dion, one central plaza", "de": "dion, one central plaza", "tr": "dion, one central plaza" },
+      "hour": 17, "minute": 30,
+      "why": "DION official site (diondublin.ie) gives dining hours 12:00 to 23:00, seven days a week, at One Central Plaza, Dame Street; sunset from the sunrise-and-sunset sources. Not a new opening."
+    }
+  ]
+}
