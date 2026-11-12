@@ -1,0 +1,18 @@
+{
+  "city": "cork",
+  "day": "2026-11-13",
+  "sparks": [
+    {
+      "kind": "stars",
+      "title": { "en": "novum, under the dome at blackrock castle.", "de": "novum unter der kuppel im blackrock castle.", "tr": "blackrock castle'da kubbenin altında novum." },
+      "line": {
+        "en": "the planetarium show novum, about forty minutes, at 18:30. at most fifteen people a show, so book the seats first.",
+        "de": "die planetariumsshow novum, rund vierzig minuten, um 18:30. höchstens fünfzehn leute pro vorstellung, also die plätze vorher buchen.",
+        "tr": "novum planetaryum gösterisi, yaklaşık kırk dakika, 18:30'da. gösteri başına en fazla on beş kişi, koltukları önceden ayırın."
+      },
+      "place": { "en": "blackrock castle observatory", "de": "blackrock castle observatory", "tr": "blackrock castle observatory" },
+      "hour": 18, "minute": 30,
+      "why": "NOVUM planetarium show, 13 to 15 Nov, 18:30 slot at Blackrock Castle Observatory (bco.ie listing; Cork Independent, 5 Nov 2026, for the fifteen-person cap)."
+    }
+  ]
+}

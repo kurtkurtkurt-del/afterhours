@@ -1,0 +1,30 @@
+{
+  "city": "cork",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "charleville v douglas, junior a gaelic football in grenagh.", "de": "charleville gegen douglas, junior-a-gaelic-football in grenagh.", "tr": "charleville – douglas, grenagh'da junior a gaelic futbol." },
+      "line": {
+        "en": "the junior a football semi-final at 14:00 in grenagh, a village ground outside cork city. a cheap afternoon, and the film at the arc comes after.",
+        "de": "das junior-a-halbfinale um 14:00 in grenagh, ein dorfplatz vor den toren von cork. ein günstiger nachmittag, der film im arc kommt danach.",
+        "tr": "saat 14:00'te grenagh'da junior a yarı finali, cork'un dışında bir köy sahası. ucuz bir öğleden sonra, arc'taki film sonra."
+      },
+      "place": { "en": "grenagh", "de": "grenagh", "tr": "grenagh" },
+      "hour": 14, "minute": 0,
+      "why": "Cork GAA fixtures page (gaacork.ie): McCarthy Insurance Group Junior A football semi-final, Charleville v Douglas, Grenagh, Sat 14 Nov 14:00."
+    },
+    {
+      "kind": "cinema",
+      "title": { "en": "i see buildings fall like lightning, at the arc.", "de": "i see buildings fall like lightning, im arc.", "tr": "i see buildings fall like lightning, arc'ta." },
+      "line": {
+        "en": "a screening at the cork international film festival, 20:30 at the arc cinema on north main street. the festival runs to 22 november.",
+        "de": "eine vorführung beim internationalen filmfestival cork, 20:30 im arc cinema in der north main street. das festival läuft bis zum 22. november.",
+        "tr": "cork uluslararası film festivali'nde bir gösterim, 20:30'da north main street'teki arc cinema'da. festival 22 kasım'a kadar sürüyor."
+      },
+      "place": { "en": "arc cinema", "de": "arc cinema", "tr": "arc cinema" },
+      "hour": 20, "minute": 30,
+      "why": "Cork International Film Festival programme (corkfilmfest.org): I See Buildings Fall Like Lightning, Sat 14 Nov 20:30, Arc Cinema; festival runs 12 to 22 Nov."
+    }
+  ]
+}

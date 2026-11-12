@@ -1,0 +1,18 @@
+{
+  "city": "cork",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "christmas in cork parade, through the city centre.", "de": "christmas in cork parade, durch die innenstadt.", "tr": "christmas in cork geçit töreni, şehir merkezinden." },
+      "line": {
+        "en": "the parade from north main street over patrick's bridge to maccurtain street, 18:30 to 19:30. bands, dancers, french street theatre, then santa switches on the lights.",
+        "de": "die parade von north main street über patrick's bridge zur maccurtain street, 18:30 bis 19:30. bands, tänzer, französisches straßentheater, dann schaltet der weihnachtsmann die lichter ein.",
+        "tr": "north main street'ten patrick's bridge üzerinden maccurtain street'e, 18:30 ile 19:30 arası geçit. bantlar, dansçılar, fransız sokak tiyatrosu, sonra noel baba ışıkları yakar."
+      },
+      "place": { "en": "north main street", "de": "north main street", "tr": "north main street" },
+      "hour": 18, "minute": 30,
+      "why": "Christmas in Cork Parade, Sun 15 Nov 18:30 to 19:30, route and times from the Cork City Council announcement (corkcity.ie) and the Irish Examiner."
+    }
+  ]
+}
