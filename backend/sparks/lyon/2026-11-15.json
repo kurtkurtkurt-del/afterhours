@@ -1,0 +1,14 @@
+{
+  "city": "lyon",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "les puces du canal, sunday morning.", "de": "les puces du canal, sonntagmorgen.", "tr": "les puces du canal'da pazar sabahı." },
+      "line": { "en": "the permanent flea market in villeurbanne is open on sundays. go early, bring cash and a tote bag.", "de": "der dauerhafte flohmarkt in villeurbanne hat sonntags geöffnet. früh hingehen, bargeld und eine tasche mitnehmen.", "tr": "villeurbanne'daki sürekli pazar pazar günleri açık. erken gidin, nakit ve bir çanta alın." },
+      "place": { "en": "les puces du canal", "de": "les puces du canal", "tr": "les puces du canal" },
+      "hour": 7, "minute": 0,
+      "why": "Les Puces du Canal, Villeurbanne, permanent market open thursdays, saturdays and sundays; sundays 07:00 to 15:00 per auvergnerhonealpes-tourisme.com and a market directory (both agree). The big international déballage is on 26 Nov, not this day."
+    }
+  ]
+}
