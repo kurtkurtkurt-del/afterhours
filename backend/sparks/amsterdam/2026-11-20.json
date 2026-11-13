@@ -1,0 +1,27 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-20",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "idfa, the documentary festival, runs until the 22nd.",
+        "de": "idfa, das dokumentarfilmfestival, läuft bis zum 22.",
+        "tr": "idfa belgesel festivali 22'sine kadar sürüyor."
+      },
+      "line": {
+        "en": "idfa runs 12 to 22 november at venues across amsterdam. pick one screening that starts around 19:00, the programme is on idfa.nl, and go for a drink after.",
+        "de": "idfa läuft vom 12. bis 22. november in spielstätten in ganz amsterdam. eine vorstellung um 19:00 aussuchen, das programm steht auf idfa.nl, danach noch etwas trinken.",
+        "tr": "idfa 12 ile 22 kasım arasında amsterdam'ın dört bir yanındaki mekânlarda. saat 19:00 civarı bir gösterim seç, programı idfa.nl'de; sonra bir şeyler içmeye git."
+      },
+      "place": {
+        "en": "idfa venues across the city",
+        "de": "idfa-spielstätten in der stadt",
+        "tr": "şehirdeki idfa mekânları"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "IDFA 2026, 12 to 22 nov, per festival.idfa.nl. Screening times were not checked; the full programme was not loaded."
+    }
+  ]
+}

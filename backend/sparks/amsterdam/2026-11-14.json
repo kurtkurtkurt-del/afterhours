@@ -1,0 +1,48 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "emile parisien floating at the bimhuis.",
+        "de": "emile parisien floating im bimhuis.",
+        "tr": "bimhuis'ta emile parisien floating."
+      },
+      "line": {
+        "en": "emile parisien's floating project at the bimhuis, 20:30 to 22:00. the café opens from 18:30, so come early for a drink.",
+        "de": "emile parisien mit floating im bimhuis, 20:30 bis 22:00. das café öffnet um 18:30, also früh kommen für einen drink.",
+        "tr": "bimhuis'ta emile parisien'in floating projesi, 20:30 - 22:00. kafe 18:30'da açılıyor, içki için erken gel."
+      },
+      "place": {
+        "en": "bimhuis",
+        "de": "bimhuis",
+        "tr": "bimhuis"
+      },
+      "hour": 20,
+      "minute": 30,
+      "why": "Emile Parisien Floating at Bimhuis, Sat 14 nov 20:30 to 22:00, per the bimhuis.nl calendar and iamsterdam.com (both checked in search results)."
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "flea market at the ij-hallen.",
+        "de": "flohmarkt in den ij-hallen.",
+        "tr": "ij-hallen'de bit pazarı."
+      },
+      "line": {
+        "en": "indoor flea market in amsterdam noord, saturday and sunday from 09:00. the stalls are full by late morning.",
+        "de": "indoor-flohmarkt in amsterdam noord, samstag und sonntag ab 09:00. die stände sind gegen späten vormittag voll.",
+        "tr": "amsterdam noord'da kapalı bit pazarı, cumartesi ve pazar 09:00'dan itibaren. tezgâhlar öğleye doğru tam dolu oluyor."
+      },
+      "place": {
+        "en": "ij-hallen",
+        "de": "ij-hallen",
+        "tr": "ij-hallen"
+      },
+      "hour": 11,
+      "minute": 0,
+      "why": "Vlooienmarkt IJ-Hallen, sat 14 and sun 15 nov from 09:00, per fleamapket.com. Single listing; check the market's own page before going."
+    }
+  ]
+}

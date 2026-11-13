@@ -1,0 +1,27 @@
+{
+  "city": "amsterdam",
+  "day": "2026-11-26",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "amsterdam light festival opens on the canals.",
+        "de": "amsterdam light festival öffnet auf den grachten.",
+        "tr": "amsterdam light festival kanallarda açılıyor."
+      },
+      "line": {
+        "en": "fifty-three days of light art on the canals, opening 26 nov, 16:30 to 23:00. walk the amstel or take a boat.",
+        "de": "dreiundfünfzig tage lichtkunst auf den grachten, eröffnung am 26. november, 16:30 bis 23:00. spazieren am amstel oder mit dem boot.",
+        "tr": "kanallarda elli üç gün ışık sanatı, 26 kasım'da açılış, 16:30 - 23:00. amstel boyunca yürü ya da bir tekneye bin."
+      },
+      "place": {
+        "en": "amstel river",
+        "de": "amstel",
+        "tr": "amstel nehri"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Amsterdam Light Festival 2026-27, opens Thu 26 nov, 16:30 to 23:00, per iamsterdam.com. The festtr.com date was discarded as conflicting with the rest."
+    }
+  ]
+}
