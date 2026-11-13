@@ -3,6 +3,447 @@
   "day": "2026-11-13",
   "sparks": [
     {
+      "kind": "derby",
+      "title": {
+        "en": "no match tonight, so pick a pub.",
+        "de": "kein spiel heute, such dir eine kneipe.",
+        "tr": "bugün maç yok, bir pub seç."
+      },
+      "line": {
+        "en": "no bayern, 1860 or ehc fixture found for tonight. kilians by the frauenkirche still has the screens; come for the room.",
+        "de": "für heute ist kein spiel von bayern, 1860 oder ehc bestätigt. das kilians an der frauenkirche hat trotzdem die leinwände.",
+        "tr": "bugün bayern, 1860 ya da ehc maçı yok. kilians yine de ekranlarıyla açık, havası için gel."
+      },
+      "place": {
+        "en": "kilians irish pub",
+        "de": "kilians irish pub",
+        "tr": "kilians irish pub"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "No FC Bayern, TSV 1860 or EHC fixture confirmed for 13.11 in searches; generic indoor version. Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence."
+    },
+    {
+      "kind": "grill",
+      "title": {
+        "en": "rain tonight, grill under a roof.",
+        "de": "regen heute, grillen unter dach.",
+        "tr": "bugün yağmur, çatı altında mangal."
+      },
+      "line": {
+        "en": "a wet friday: skip the isar and fire up a balcony or covered terrace grill with friends. bring something warm.",
+        "de": "nasser freitag: nicht an die isar, lieber balkon oder überdachte terrasse. etwas warmes mitbringen.",
+        "tr": "ıslak bir cuma: isar yerine balkon ya da örtülü teras. yanına sıcak bir şey al."
+      },
+      "place": {
+        "en": "a covered balcony",
+        "de": "a covered balcony",
+        "tr": "a covered balcony"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; rain keeps the Isar banks empty."
+    },
+    {
+      "kind": "hike",
+      "title": {
+        "en": "rain gear on, short walk in the forest.",
+        "de": "regenjacke an, kurze runde im wald.",
+        "tr": "yağmurluk giy, ormanda kısa yürüyüş."
+      },
+      "line": {
+        "en": "light rain all day: a short loop through the forstenrieder park, soaked trees and nobody around. back for tea by dark.",
+        "de": "leichter dauerregen: eine kurze runde durch den forstenrieder park, nasse bäume und kaum leute.",
+        "tr": "gün boyu hafif yağmur: forstenrieder park'ta kısa bir tur, ıslak ağaçlar ve kimse yok."
+      },
+      "place": {
+        "en": "forstenrieder park",
+        "de": "forstenrieder park",
+        "tr": "forstenrieder park"
+      },
+      "hour": 14,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; short daylight (sunset ~16:35)."
+    },
+    {
+      "kind": "sunrise",
+      "title": {
+        "en": "grey sunrise at the olympiaberg.",
+        "de": "graue morgendämmerung am olympiaberg.",
+        "tr": "olympiaberg'de gri gün doğumu."
+      },
+      "line": {
+        "en": "sunrise is about 07:15 but clouds and rain are likely. go up anyway at 06:55 and see the city come out of the dark.",
+        "de": "sonnenaufgang gegen 07:15, aber wohl wolken und regen. 06:55 trotzdem hoch und zusehen, wie die stadt hell wird.",
+        "tr": "gün doğumu 07:15 civarı ama bulut ve yağmur olası. yine de 06:55'te çık, şehrin aydınlanmasını izle."
+      },
+      "place": {
+        "en": "olympiaberg",
+        "de": "olympiaberg",
+        "tr": "olympiaberg"
+      },
+      "hour": 6,
+      "minute": 55,
+      "why": "Sunrise in Munich ~07:15 (computed for mid-November), minus 20 min. Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence."
+    },
+    {
+      "kind": "breakfast",
+      "title": {
+        "en": "friday breakfast out of the rain.",
+        "de": "freitagsfrühstück im trockenen.",
+        "tr": "yağmurdan uzak cuma kahvaltısı."
+      },
+      "line": {
+        "en": "a long slow breakfast at the viktualienmarkt side streets, warm and dry. eggs, coffee, no plans before noon.",
+        "de": "langes, ruhiges frühstück an den gassen um den viktualienmarkt, warm und trocken.",
+        "tr": "viktualienmarkt çevresinde uzun, sakin bir kahvaltı. yumurta, kahve, öğleden önce plan yok."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 9,
+      "minute": 30,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; working day, indoor café."
+    },
+    {
+      "kind": "rooftop",
+      "title": {
+        "en": "too wet for a roof tonight.",
+        "de": "zu nass für ein dach heute.",
+        "tr": "bugün çatı için fazla ıslak."
+      },
+      "line": {
+        "en": "rooftops are closed to the rain. take the lift to a high bar window instead and watch the lights through the drizzle.",
+        "de": "dachterrassen sind bei regen leer. lieber an ein hohes barfenster und die lichter im nieselregen ansehen.",
+        "tr": "yağmurda çatılar boş. onun yerine yüksek bir bar penceresinden çiselemede ışıkları izle."
+      },
+      "place": {
+        "en": "bar at the hotel bayerischer hof",
+        "de": "bar at the hotel bayerischer hof",
+        "tr": "bar at the hotel bayerischer hof"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; rain, open-air roofs unlikely."
+    },
+    {
+      "kind": "swim",
+      "title": {
+        "en": "indoor pool, warm water.",
+        "de": "hallenbad, warmes wasser.",
+        "tr": "kapalı havuz, ılık su."
+      },
+      "line": {
+        "en": "lido season is over. müller'sches volksbad is the old art nouveau pool with a sauna floor. swim lengths while it rains.",
+        "de": "die freibadsaison ist vorbei. das müller'sche volksbad: jugendstil, bahnen ziehen, draußen regnet es.",
+        "tr": "açık havuz sezonu bitti. müller'sches volksbad, art nouveau salon, dışarıda yağmur, içeride kulaç."
+      },
+      "place": {
+        "en": "müller'sches volksbad",
+        "de": "müller'sches volksbad",
+        "tr": "müller'sches volksbad"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; outdoor swimming not sensible in November."
+    },
+    {
+      "kind": "quiz",
+      "title": {
+        "en": "friday pub quiz.",
+        "de": "pub quiz am freitag.",
+        "tr": "cuma pub quiz'i."
+      },
+      "line": {
+        "en": "gather a team of four and find a pub quiz in the altstadt. no match tonight, so the quiz is the night's game.",
+        "de": "team von vier zusammentrommeln und ein pubquiz in der altstadt suchen. kein spiel heute, das quiz ist das spiel.",
+        "tr": "dört kişilik takım kur, altstadt'ta bir pub quiz bul. bugün maç yok, oyun quiz."
+      },
+      "place": {
+        "en": "altstadt pub",
+        "de": "altstadt pub",
+        "tr": "altstadt pub"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; no match to watch, so quiz kind stays generic."
+    },
+    {
+      "kind": "newplace",
+      "title": {
+        "en": "one new place, dry inside.",
+        "de": "ein neuer ort, trocken drinnen.",
+        "tr": "tek yeni yer, içerisi kuru."
+      },
+      "line": {
+        "en": "pick a bar or restaurant you never entered, preferably in glockenbach. rain makes the small rooms feel better.",
+        "de": "such eine bar oder ein restaurant, in dem du noch nie warst, am besten im glockenbach.",
+        "tr": "hiç girmediğin bir bar ya da restoran seç, tercihen glockenbach'ta. yağmurda küçük mekanlar daha güzel."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; generic."
+    },
+    {
+      "kind": "camera",
+      "title": {
+        "en": "rain on the street, camera out.",
+        "de": "regen auf der straße, kamera raus.",
+        "tr": "sokakta yağmur, kamera çıkar."
+      },
+      "line": {
+        "en": "wet cobbles reflect everything. walk the maximilianstraße and the altstadt after dusk, shoot the lights in puddles.",
+        "de": "nasses pflaster spiegelt alles. nach der dämmerung maximilianstraße und altstadt abgehen, lichter in pfützen fotografieren.",
+        "tr": "ıslak kaldırım her şeyi yansıtır. akşamdan sonra maximilianstraße ve altstadt'ı dolaş, su birikintilerinde ışıkları çek."
+      },
+      "place": {
+        "en": "maximilianstraße",
+        "de": "maximilianstraße",
+        "tr": "maximilianstraße"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; sunset ~16:35, rain gives reflections."
+    },
+    {
+      "kind": "festival",
+      "title": {
+        "en": "no festival, but plenty of concerts.",
+        "de": "kein festival, aber viele konzerte.",
+        "tr": "festival yok ama bol konser var."
+      },
+      "line": {
+        "en": "papa roach at the olympiahalle, michael schenker group at the nachtwerk, ikkimel at the zenith. pick a noise.",
+        "de": "papa roach in der olympiahalle, michael schenker group im nachtwerk, ikkimel im zenith. such dir einen lärm aus.",
+        "tr": "olympiahalle'de papa roach, nachtwerk'te michael schenker group, zenith'te ikkimel. bir gürültü seç."
+      },
+      "place": {
+        "en": "olympiahalle",
+        "de": "olympiahalle",
+        "tr": "olympiahalle"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Concert listings for 13.11 (mvp.de, regioactive): Papa Roach, Michael Schenker Group, Ikkimel at Zenith. Not a festival. Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence."
+    },
+    {
+      "kind": "karaoke",
+      "title": {
+        "en": "friday karaoke, no shame.",
+        "de": "freitags karaoke, ohne scham.",
+        "tr": "cuma karaokesi, utanmak yok."
+      },
+      "line": {
+        "en": "a room, a mic and friends. book a karaoke box or find a pub night in the city; pick a song you cannot sing.",
+        "de": "ein raum, ein mikro, freunde. eine karaokebox buchen oder einen kneipenabend suchen.",
+        "tr": "bir oda, bir mikrofon, arkadaşlar. karaoke kabini ayır ya da bir pub gecesi bul."
+      },
+      "place": {
+        "en": "karaoke box in the city",
+        "de": "karaoke box in the city",
+        "tr": "karaoke box in the city"
+      },
+      "hour": 21,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; generic."
+    },
+    {
+      "kind": "vinyl",
+      "title": {
+        "en": "vinyl digging on a rainy day.",
+        "de": "platten stöbern bei regen.",
+        "tr": "yağmurlu günde plak karıştır."
+      },
+      "line": {
+        "en": "rain is the best weather for crates. dig through the record shops around the gärtnerplatz, then listen to one at home.",
+        "de": "regen ist das beste wetter zum kramen. plattenläden um den gärtnerplatz durchstöbern.",
+        "tr": "yağmur plak karıştırmak için en iyi hava. gärtnerplatz çevresindeki plakçıları gez, birini evde dinle."
+      },
+      "place": {
+        "en": "gärtnerplatz",
+        "de": "gärtnerplatz",
+        "tr": "gärtnerplatz"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; indoor."
+    },
+    {
+      "kind": "openair",
+      "title": {
+        "en": "no open air in the rain.",
+        "de": "kein open air bei regen.",
+        "tr": "yağmurda açık hava yok."
+      },
+      "line": {
+        "en": "open air is off tonight. take the music under a roof: the muffathalle has frittenbude on, loud and sweaty.",
+        "de": "open air fällt heute aus. die musik unters dach: in der muffathalle spielt frittenbude.",
+        "tr": "bugün açık hava yok. müziği çatı altına al: muffathalle'de frittenbude çalıyor."
+      },
+      "place": {
+        "en": "muffathalle",
+        "de": "muffathalle",
+        "tr": "muffathalle"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Frittenbude at Muffathalle listed for 13.11 (mvp.de). Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence."
+    },
+    {
+      "kind": "bike",
+      "title": {
+        "en": "rain jacket and a short ride.",
+        "de": "regenjacke und kurze runde.",
+        "tr": "yağmurluk ve kısa bisiklet."
+      },
+      "line": {
+        "en": "a cool wet friday: ride the isar path from the deutsches museum to the tierpark, mudguards on. dry socks after.",
+        "de": "kühler nasser freitag: isarradweg vom deutschen museum bis zum tierpark, mit schutzblech.",
+        "tr": "serin ıslak cuma: deutsches museum'dan tierpark'a isar bisiklet yolu, çamurluk takılı."
+      },
+      "place": {
+        "en": "isar path",
+        "de": "isar path",
+        "tr": "isar path"
+      },
+      "hour": 15,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; short daylight."
+    },
+    {
+      "kind": "cinema",
+      "title": {
+        "en": "cinema on a wet friday.",
+        "de": "kino an einem nassen freitag.",
+        "tr": "ıslak cuma günü sinema."
+      },
+      "line": {
+        "en": "the best friday plan in the rain. the city's arthouse cinemas around the maxvorstadt are warm; pick whatever starts after eight.",
+        "de": "der beste freitagsplan bei regen. die kinos in der maxvorstadt sind warm; such dir was nach acht.",
+        "tr": "yağmurda en iyi cuma planı. maxvorstadt'taki sinemalar sıcak, sekizden sonra başlayan bir film seç."
+      },
+      "place": {
+        "en": "maxvorstadt cinemas",
+        "de": "maxvorstadt cinemas",
+        "tr": "maxvorstadt cinemas"
+      },
+      "hour": 20,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; indoor."
+    },
+    {
+      "kind": "boardgames",
+      "title": {
+        "en": "board games, tea and rain.",
+        "de": "brettspiele, tee und regen.",
+        "tr": "kutu oyunları, çay ve yağmur."
+      },
+      "line": {
+        "en": "bring a game to a table at a café with games on the shelves. rain outside means nobody leaves early.",
+        "de": "ein spiel mitbringen und an einen tisch im spielecafé. bei regen geht niemand früh.",
+        "tr": "bir oyun getir, rafında oyun olan bir kafede masaya otur. dışarıda yağmur, kimse erken gitmez."
+      },
+      "place": {
+        "en": "spielecafé",
+        "de": "spielecafé",
+        "tr": "spielecafé"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; indoor."
+    },
+    {
+      "kind": "flea",
+      "title": {
+        "en": "no flea market, a vintage shop instead.",
+        "de": "kein flohmarkt, lieber ein vintage-laden.",
+        "tr": "bit pazarı yok, onun yerine vintage dükkân."
+      },
+      "line": {
+        "en": "flea markets are weekend business and wet today. walk the vintage shops of the glockenbach and the isarvorstadt.",
+        "de": "flohmärkte sind wochenendsache und heute nass. die vintage-läden im glockenbach abklappern.",
+        "tr": "bit pazarları hafta sonu işi ve bugün ıslak. glockenbach'taki vintage dükkânlarını gez."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; flea markets are weekend; Friday not confirmed."
+    },
+    {
+      "kind": "skate",
+      "title": {
+        "en": "wet concrete, skip the park.",
+        "de": "nasser beton, skatepark ausfallen lassen.",
+        "tr": "ıslak beton, parkı geç."
+      },
+      "line": {
+        "en": "rain makes the skate park slippery. go to an indoor hall instead or save it for a dry weekend.",
+        "de": "regen macht den skatepark rutschig. in eine halle gehen oder für ein trockenes wochenende aufsparen.",
+        "tr": "yağmur parkı kaygan yapar. kapalı bir salona git ya da kuru bir hafta sonuna sakla."
+      },
+      "place": {
+        "en": "skatehalle",
+        "de": "skatehalle",
+        "tr": "skatehalle"
+      },
+      "hour": 17,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; outdoor skating unsafe."
+    },
+    {
+      "kind": "cook",
+      "title": {
+        "en": "cook together, rain outside.",
+        "de": "zusammen kochen, draußen regnet es.",
+        "tr": "birlikte pişir, dışarıda yağmur."
+      },
+      "line": {
+        "en": "buy at the viktualienmarkt, then cook for friends at home. soup, bread, something with the first winter roots.",
+        "de": "am viktualienmarkt einkaufen, dann zu hause für freunde kochen. suppe, brot, wurzelgemüse.",
+        "tr": "viktualienmarkt'tan alışveriş yap, evde arkadaşlara pişir. çorba, ekmek, kök sebze."
+      },
+      "place": {
+        "en": "viktualienmarkt",
+        "de": "viktualienmarkt",
+        "tr": "viktualienmarkt"
+      },
+      "hour": 17,
+      "minute": 30,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; Friday, markets open until late afternoon."
+    },
+    {
+      "kind": "sauna",
+      "title": {
+        "en": "sauna, the best answer to rain.",
+        "de": "sauna, die beste antwort auf regen.",
+        "tr": "sauna, yağmura en iyi cevap."
+      },
+      "line": {
+        "en": "a cold wet friday calls for heat. the müller'sches volksbad has a sauna floor, or the therme erding is a short ride out.",
+        "de": "kalter nasser freitag, da hilft hitze. das müller'sche volksbad hat eine saunaebene.",
+        "tr": "soğuk ıslak cuma sıcak ister. müller'sches volksbad'ın sauna katı var."
+      },
+      "place": {
+        "en": "müller'sches volksbad",
+        "de": "müller'sches volksbad",
+        "tr": "müller'sches volksbad"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; indoor."
+    },
+    {
       "kind": "openmic",
       "title": {
         "en": "comedy open mic on a friday.",
@@ -21,7 +462,196 @@
       },
       "hour": 18,
       "minute": 0,
-      "why": "LUCKY PUNCH Comedy Open Mic at the Hoftheater, Fri 13.11 at 18:00, online tickets only (mvp.de listing). Comedy Kills and Urban Comedy also list 13.11; not used."
+      "why": "LUCKY PUNCH Comedy Open Mic at the Hoftheater, Fri 13.11 at 18:00, online tickets only (mvp.de listing)."
+    },
+    {
+      "kind": "pingpong",
+      "title": {
+        "en": "ping-pong, indoors.",
+        "de": "tischtennis, drinnen.",
+        "tr": "masa tenisi, içeride."
+      },
+      "line": {
+        "en": "outdoor tables are wet, so book an indoor table or a club night. loser buys the next round.",
+        "de": "die platten draußen sind nass, also drinnen spielen. wer verliert, zahlt die nächste runde.",
+        "tr": "dış masalar ıslak, kapalı masa ayır. kaybeden bir sonraki turu ısmarlar."
+      },
+      "place": {
+        "en": "indoor ping-pong bar",
+        "de": "indoor ping-pong bar",
+        "tr": "indoor ping-pong bar"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; indoor."
+    },
+    {
+      "kind": "bouldering",
+      "title": {
+        "en": "bouldering, a dry rock.",
+        "de": "bouldern, trockener fels.",
+        "tr": "bouldering, kuru kaya."
+      },
+      "line": {
+        "en": "rain does not matter in the hall. the boulderwelt in the east has long hours; go straight after work.",
+        "de": "regen ist in der halle egal. die boulderwelt hat lange öffnungszeiten, direkt nach der arbeit hin.",
+        "tr": "salonda yağmur fark etmez. boulderwelt uzun saatler açık, işten çıkınca git."
+      },
+      "place": {
+        "en": "boulderwelt münchen",
+        "de": "boulderwelt münchen",
+        "tr": "boulderwelt münchen"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; indoor."
+    },
+    {
+      "kind": "picnic",
+      "title": {
+        "en": "no picnic, a table at home.",
+        "de": "kein picknick, ein tisch zuhause.",
+        "tr": "piknik yok, evde bir sofra."
+      },
+      "line": {
+        "en": "too wet and cold for a blanket. spread the picnic on a living-room floor: bread, cheese, one proper wine.",
+        "de": "zu nass und kalt für die decke. das picknick auf dem wohnzimmerboden: brot, käse, ein guter wein.",
+        "tr": "örtü için fazla ıslak ve soğuk. pikniği oturma odası zeminine kur: ekmek, peynir, güzel bir şarap."
+      },
+      "place": {
+        "en": "your living room",
+        "de": "your living room",
+        "tr": "your living room"
+      },
+      "hour": 18,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; outdoor not sensible."
+    },
+    {
+      "kind": "crawl",
+      "title": {
+        "en": "a friday crawl from bar to bar.",
+        "de": "freitags von bar zu bar.",
+        "tr": "cuma gecesi bardan bara."
+      },
+      "line": {
+        "en": "start in the glockenbach, drift to the haidhausen. short walks between bars so the rain hardly counts.",
+        "de": "im glockenbach anfangen, ins haidhausen treiben lassen. kurze wege, der regen zählt kaum.",
+        "tr": "glockenbach'ta başla, haidhausen'a sürükle. barlar arası kısa, yağmur neredeyse sayılmaz."
+      },
+      "place": {
+        "en": "glockenbachviertel",
+        "de": "glockenbachviertel",
+        "tr": "glockenbachviertel"
+      },
+      "hour": 21,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; no match; crawl stays generic."
+    },
+    {
+      "kind": "stars",
+      "title": {
+        "en": "no stars tonight.",
+        "de": "heute keine sterne.",
+        "tr": "bugün yıldız yok."
+      },
+      "line": {
+        "en": "clouds and rain cover the sky. skip the stargazing and try the planetarium at the deutsches museum instead.",
+        "de": "wolken und regen verdecken den himmel. sterne diesmal im planetarium des deutschen museums.",
+        "tr": "bulut ve yağmur gökyüzünü kapatıyor. yıldız yerine deutsches museum planetaryumu."
+      },
+      "place": {
+        "en": "deutsches museum",
+        "de": "deutsches museum",
+        "tr": "deutsches museum"
+      },
+      "hour": 16,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; overcast, stargazing not possible."
+    },
+    {
+      "kind": "football",
+      "title": {
+        "en": "football on screen, not on grass.",
+        "de": "fußball auf der leinwand, nicht auf dem rasen.",
+        "tr": "futbol ekranda, çimde değil."
+      },
+      "line": {
+        "en": "the pitch is soaked and no big match is confirmed. a pub with a bundesliga highlights evening is the best bet.",
+        "de": "der platz ist durchnässt und kein großes spiel bestätigt. kneipe mit bundesliga-zusammenfassung ist die beste wahl.",
+        "tr": "saha sırılsıklam, büyük maç yok. bundesliga özetli bir pub en iyisi."
+      },
+      "place": {
+        "en": "pub with a screen",
+        "de": "pub with a screen",
+        "tr": "pub with a screen"
+      },
+      "hour": 19,
+      "minute": 30,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; no confirmed fixtures."
+    },
+    {
+      "kind": "tram",
+      "title": {
+        "en": "tram 28 through the rain.",
+        "de": "tram 28 durch den regen.",
+        "tr": "yağmurda 28 numaralı tramvay."
+      },
+      "line": {
+        "en": "ride the tram line 28 through the old town and the maxvorstadt, window seat, nothing to do but watch.",
+        "de": "mit der tram 28 durch die altstadt und die maxvorstadt, fensterplatz, mehr nicht.",
+        "tr": "28 numaralı tramvayla eski şehir ve maxvorstadt'ı gez, cam kenarı, başka bir şey yok."
+      },
+      "place": {
+        "en": "tram line 28",
+        "de": "tram line 28",
+        "tr": "tram line 28"
+      },
+      "hour": 19,
+      "minute": 0,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; warm and dry inside."
+    },
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "jazz in a small room.",
+        "de": "jazz in einem kleinen raum.",
+        "tr": "küçük bir odada caz."
+      },
+      "line": {
+        "en": "a small jazz night suits the weather. try the unterfahrt in haidhausen or the jazzclub in the maxvorstadt; check the programme first.",
+        "de": "ein kleiner jazzabend passt zum wetter. unterfahrt in haidhausen, programm vorher prüfen.",
+        "tr": "küçük bir caz gecesi havaya yakışır. haidhausen'daki unterfahrt, programa önce bak."
+      },
+      "place": {
+        "en": "unterfahrt",
+        "de": "unterfahrt",
+        "tr": "unterfahrt"
+      },
+      "hour": 20,
+      "minute": 30,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; programme not confirmed; check first."
+    },
+    {
+      "kind": "walk",
+      "title": {
+        "en": "a night walk between showers.",
+        "de": "spaziergang zwischen den schauern.",
+        "tr": "sağanaklar arasında gece yürüyüşü."
+      },
+      "line": {
+        "en": "it will be wet, but a walk from the marienplatz to the english garden with an umbrella is quiet and lit.",
+        "de": "es wird nass, aber ein spaziergang vom marienplatz zum englischen garten mit schirm ist ruhig.",
+        "tr": "ıslak olacak ama şemsiyeyle marienplatz'dan englischer garten'a yürüyüş sakin ve ışıklı."
+      },
+      "place": {
+        "en": "marienplatz",
+        "de": "marienplatz",
+        "tr": "marienplatz"
+      },
+      "hour": 18,
+      "minute": 30,
+      "why": "Fri 13.11; DWD outlook via daswetter.com: cool, near-continuous light rain, low confidence. Nothing special confirmed; sunset ~16:35, dark by 17:30."
     }
   ]
 }
