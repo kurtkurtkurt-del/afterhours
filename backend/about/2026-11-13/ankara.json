@@ -1,0 +1,38 @@
+{
+ "city": "ankara",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "0e2b3ac9-a9fe-4dac-8286-57570f3bf1b3",
+   "slug": "levent-yuksel-e00ab525",
+   "title": "Levent Yüksel",
+   "name": "Levent Yüksel",
+   "source_url": "https://en.wikipedia.org/wiki/Levent_Y%C3%BCksel",
+   "extract": "Levent Uğur Yüksel is a Turkish pop singer and multi instrumentalist. He has been active in live music industry since 1993.",
+   "en": {
+    "kicker": "turkish pop singer · active since 1993",
+    "who": "Levent Yüksel is a Turkish singer and multi-instrumentalist who performs pop music. He has been part of the live music scene since 1993.",
+    "facts": [
+     "Levent Uğur Yüksel is a Turkish pop singer and multi instrumentalist.",
+     "He has been active in live music industry since 1993."
+    ]
+   },
+   "de": {
+    "kicker": "türkischer Popsänger · aktiv seit 1993",
+    "who": "Levent Yüksel ist ein türkischer Sänger und Multiinstrumentalist, der Popmusik macht. Seit 1993 ist er in der Live-Musikszene aktiv.",
+    "facts": [
+     "Levent Uğur Yüksel ist ein türkischer Popsänger und Multiinstrumentalist.",
+     "Er ist seit 1993 in der Live-Musikbranche aktiv."
+    ]
+   },
+   "tr": {
+    "kicker": "türk pop şarkıcısı · 1993'ten beri aktif",
+    "who": "Levent Yüksel, pop müzik yapan bir Türk şarkıcı ve çok enstrümanlı müzisyendir. 1993'ten beri canlı müzik sahnesinde yer alıyor.",
+    "facts": [
+     "Levent Uğur Yüksel bir Türk pop şarkıcısı ve çok enstrümanlı müzisyendir.",
+     "1993'ten beri canlı müzik sektöründe aktif."
+    ]
+   }
+  }
+ ]
+}

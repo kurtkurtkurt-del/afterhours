@@ -1,0 +1,70 @@
+{
+ "city": "seattle",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "0df7f57a-3d06-44f7-9ed3-dbacd851bd70",
+   "slug": "rhye-joy-tour-608eb4a1",
+   "title": "Rhye: Joy Tour",
+   "name": "Rhye",
+   "source_url": "https://en.wikipedia.org/wiki/Rhye",
+   "extract": "Rhye is an R&B musical project of Canadian singer Mike Milosh. It originally consisted of him and Danish instrumentalist Robin Hannibal. They released the singles \"Open\" and \"The Fall\" online without much detail, which led to speculation about the band. Their debut album, Woman, was released on March 4, 2013. In June 2013, the album was longlisted for the 2013 Polaris Music Prize. In 2017, it was reported that Robin Hannibal was no longer a member of Rhye and that the project had evolved into a music collective led by Milosh and focused around the associated live band. Their second album, Blood, was released on February 2, 2018, and was largely written, produced, and performed by Milosh.",
+   "en": {
+    "kicker": "r&b project · mike milosh, canada",
+    "who": "Rhye is an R&B musical project of Canadian singer Mike Milosh. It originally consisted of him and Danish instrumentalist Robin Hannibal, and later evolved into a collective led by Milosh.",
+    "facts": [
+     "Their debut album, Woman, was released on March 4, 2013.",
+     "Their second album, Blood, was released on February 2, 2018, and was largely written, produced, and performed by Milosh."
+    ]
+   },
+   "de": {
+    "kicker": "r&b-projekt · mike milosh, kanada",
+    "who": "Rhye ist ein R&B-Musikprojekt des kanadischen Sängers Mike Milosh. Ursprünglich bestand es aus ihm und dem dänischen Instrumentalisten Robin Hannibal, später entwickelte es sich zu einem Kollektiv unter Milosh.",
+    "facts": [
+     "Das Debütalbum Woman erschien am 4. März 2013.",
+     "Das zweite Album Blood erschien am 2. Februar 2018 und stammt größtenteils von Milosh."
+    ]
+   },
+   "tr": {
+    "kicker": "r&b projesi · kanadalı mike milosh",
+    "who": "Rhye, Kanadalı şarkıcı Mike Milosh'un bir R&B müzik projesidir. Başlangıçta Milosh ve Danimarkalı enstrümantalist Robin Hannibal'dan oluşuyordu; sonra Milosh'un önderliğinde bir kolektife dönüştü.",
+    "facts": [
+     "Debut albümleri Woman, 4 Mart 2013'te yayımlandı.",
+     "İkinci albümleri Blood, 2 Şubat 2018'de çıktı ve büyük ölçüde Milosh tarafından yazıldı ve üretildi."
+    ]
+   }
+  },
+  {
+   "id": "dfbb2530-1b43-481c-8336-862442b00975",
+   "slug": "tyla-the-a-pop-world-tour-9c25baef",
+   "title": "TYLA - THE A*POP WORLD TOUR",
+   "name": "Tyla",
+   "source_url": "https://en.wikipedia.org/wiki/Tyla",
+   "extract": "Tyla Laura Seethal is a South African singer-songwriter. Dubbed the \"Queen of Popiano\", her musical style is characterised by a fusion of pop and amapiano.",
+   "en": {
+    "kicker": "south african singer-songwriter · popiano",
+    "who": "Tyla, full name Tyla Laura Seethal, is a South African singer-songwriter. Dubbed the Queen of Popiano, she fuses pop and amapiano.",
+    "facts": [
+     "Her musical style is characterised by a fusion of pop and amapiano.",
+     "She is dubbed the Queen of Popiano."
+    ]
+   },
+   "de": {
+    "kicker": "südafrikanische singer-songwriterin · popiano",
+    "who": "Tyla, bürgerlich Tyla Laura Seethal, ist eine südafrikanische Singer-Songwriterin. Als „Queen of Popiano“ verbindet sie Pop mit Amapiano.",
+    "facts": [
+     "Ihr musikalischer Stil ist geprägt von einer Verschmelzung aus Pop und Amapiano.",
+     "Sie wird als „Queen of Popiano“ bezeichnet."
+    ]
+   },
+   "tr": {
+    "kicker": "güney afrikalı şarkıcı-söz yazarı · popiano",
+    "who": "Asıl adı Tyla Laura Seethal olan Tyla, Güney Afrikalı bir şarkıcı ve söz yazarıdır. \"Queen of Popiano\" lakabıyla anılır ve pop ile amapiano'yu harmanlar.",
+    "facts": [
+     "Müzikal tarzı pop ve amapiano füzyonuyla karakterize edilir.",
+     "\"Queen of Popiano\" olarak anılır."
+    ]
+   }
+  }
+ ]
+}

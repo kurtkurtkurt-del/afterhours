@@ -1,0 +1,70 @@
+{
+ "city": "berlin",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "fd13825e-0676-418b-a61b-e202ac3afdeb",
+   "slug": "artemas-lovercore-getting-up-to-no-good-tour-654e75f8",
+   "title": "Artemas - LOVERCORE / GETTING UP TO NO GOOD Tour",
+   "name": "Artemas",
+   "source_url": "https://en.wikipedia.org/wiki/Artemas_(musician)",
+   "extract": "Artemas Diamandis, known mononymously as Artemas, is an English singer, songwriter and record producer. He is best known for his singles \"If U Think I'm Pretty\" and the viral \"I Like the Way You Kiss Me\". He is signed to the record label 10K Projects.",
+   "en": {
+    "kicker": "english singer, songwriter and record producer",
+    "who": "Artemas, known mononymously as Artemas Diamandis, is an English singer, songwriter and record producer. He is best known for the singles If U Think I'm Pretty and the viral I Like the Way You Kiss Me.",
+    "facts": [
+     "He is signed to the record label 10K Projects.",
+     "His best-known singles include the viral I Like the Way You Kiss Me."
+    ]
+   },
+   "de": {
+    "kicker": "englischer sänger, songwriter und produzent",
+    "who": "Artemas, mit bürgerlichem Namen Artemas Diamandis, ist ein englischer Sänger, Songwriter und Musikproduzent. Bekannt ist er vor allem durch die Singles If U Think I'm Pretty und den viralen Hit I Like the Way You Kiss Me.",
+    "facts": [
+     "Er steht beim Label 10K Projects unter Vertrag.",
+     "Der virale Hit I Like the Way You Kiss Me gehört zu seinen bekanntesten Singles."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı, söz yazarı ve plak yapımcısı",
+    "who": "Artemas Diamandis adıyla da bilinen Artemas, İngiliz bir şarkıcı, söz yazarı ve plak yapımcısıdır. En çok If U Think I'm Pretty single'ı ve viral hale gelen I Like the Way You Kiss Me ile tanınır.",
+    "facts": [
+     "Plak şirketi 10K Projects ile sözleşmelidir.",
+     "Viral hale gelen I Like the Way You Kiss Me, en bilinen single'ları arasında."
+    ]
+   }
+  },
+  {
+   "id": "82574ec6-6f25-4730-ad0f-12c86fec5864",
+   "slug": "muna-gets-so-hot-tour-6e0986dd",
+   "title": "Muna - Gets So Hot Tour",
+   "name": "Muna",
+   "source_url": "https://en.wikipedia.org/wiki/Muna_(band)",
+   "extract": "Muna is an American indie pop band consisting of Katie Gavin, Josette Maskin, and Naomi McPherson. They released two studio albums with RCA Records, About U (2017) and Saves the World (2019), before signing with independent label Saddest Factory Records, which released their third studio album, Muna, in June 2022, and Dancing on the Wall in May 2026.",
+   "en": {
+    "kicker": "american indie pop band · dancing on the wall, 2026",
+    "who": "Muna is an American indie pop band made up of Katie Gavin, Josette Maskin and Naomi McPherson. After two albums with RCA Records, they moved to the independent label Saddest Factory Records.",
+    "facts": [
+     "They released two studio albums with RCA Records, About U (2017) and Saves the World (2019).",
+     "Their third studio album, Muna, came out in June 2022 on Saddest Factory Records."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-pop-band · dancing on the wall, 2026",
+    "who": "Muna ist eine amerikanische Indie-Pop-Band, zu der Katie Gavin, Josette Maskin und Naomi McPherson gehören. Nach zwei Alben bei RCA Records wechselten sie zum unabhängigen Label Saddest Factory Records.",
+    "facts": [
+     "Bei RCA Records erschienen die Studioalben About U (2017) und Saves the World (2019).",
+     "Ihr drittes Studioalbum Muna erschien im Juni 2022 bei Saddest Factory Records."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie pop grubu · dancing on the wall, 2026",
+    "who": "Muna, Katie Gavin, Josette Maskin ve Naomi McPherson'dan oluşan bir Amerikan indie pop grubudur. RCA Records ile iki stüdyo albümü çıkardıktan sonra bağımsız Saddest Factory Records'a geçtiler.",
+    "facts": [
+     "RCA Records ile About U (2017) ve Saves the World (2019) albümlerini yayımladılar.",
+     "Üçüncü stüdyo albümleri Muna, Haziran 2022'de Saddest Factory Records'da çıktı."
+    ]
+   }
+  }
+ ]
+}

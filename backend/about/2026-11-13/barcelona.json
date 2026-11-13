@@ -1,0 +1,38 @@
+{
+ "city": "barcelona",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "01b4fdc8-c584-48f4-8ff4-7fe6875a79d9",
+   "slug": "jack-and-jack-syn-anti-europe-2026-123b8584",
+   "title": "Jack & Jack: SYN/ANTI EUROPE 2026",
+   "name": "Jack & Jack",
+   "source_url": "https://en.wikipedia.org/wiki/Jack_%26_Jack",
+   "extract": "Jack & Jack are an American pop-rap duo from Omaha, Nebraska, consisting of Jack Johnson and Jack Gilinsky, based in Los Angeles, California. After success via the social media app Vine, the duo turned to careers as musicians. Their 2014 single \"Wild Life\" peaked at number 87 on the US Billboard Hot 100. They also featured on Jonas Blue's 2018 hit single \"Rise\", which peaked at number three in the UK Singles Chart in addition to charting within the top 20 of various other European countries and Australia.",
+   "en": {
+    "kicker": "american pop-rap duo · omaha, nebraska",
+    "who": "Jack & Jack are an American pop-rap duo from Omaha, Nebraska, made up of Jack Johnson and Jack Gilinsky. After success on the social media app Vine, the duo turned to careers as musicians.",
+    "facts": [
+     "Their 2014 single Wild Life peaked at number 87 on the US Billboard Hot 100.",
+     "They featured on Jonas Blue's 2018 hit single Rise, which peaked at number three in the UK Singles Chart."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanisches pop-rap-duo · omaha, nebraska",
+    "who": "Jack & Jack ist ein amerikanisches Pop-Rap-Duo aus Omaha, Nebraska, bestehend aus Jack Johnson und Jack Gilinsky. Nach dem Erfolg auf der Social-Media-App Vine machten sie die Musik zu ihrem Beruf.",
+    "facts": [
+     "Ihre Single Wild Life von 2014 erreichte Platz 87 der US Billboard Hot 100.",
+     "Sie wirkten an Jonas Blues Hit Rise von 2018 mit, der in den britischen Singlecharts Platz drei erreichte."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı pop-rap ikilisi · omaha, nebraska",
+    "who": "Jack & Jack, Nebraska'nın Omaha kentinden Jack Johnson ve Jack Gilinsky'den oluşan bir Amerikan pop-rap ikilisidir. Vine uygulamasındaki başarılarının ardından müzisyenlik kariyerine yöneldiler.",
+    "facts": [
+     "2014 single'ı Wild Life, ABD Billboard Hot 100'de 87. sıraya yükseldi.",
+     "Jonas Blue'nun 2018 hiti Rise'da yer aldılar; şarkı İngiltere single listesinde üçüncü sıraya ulaştı."
+    ]
+   }
+  }
+ ]
+}

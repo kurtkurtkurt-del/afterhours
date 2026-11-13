@@ -1,0 +1,38 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "13a7fc65-acca-4c7c-aa29-77b587341ee3",
+   "slug": "alyssa-grace-938b0041",
+   "title": "Alyssa Grace",
+   "name": "Alyssa Grace",
+   "source_url": "https://en.wikipedia.org/wiki/Alyssa_Grace",
+   "extract": "Alyssa Grace Proffitt is an American singer-songwriter based in California. She made her recording debut in 2026 with \"Dog with a Bone\" and gained wider recognition through the singles \"Picking Petals\" and \"Bloodstream\".",
+   "en": {
+    "kicker": "american singer-songwriter · debut 2026",
+    "who": "Alyssa Grace Proffitt is an American singer-songwriter based in California. She gained wider recognition through the singles Picking Petals and Bloodstream.",
+    "facts": [
+     "She made her recording debut in 2026 with Dog with a Bone.",
+     "Picking Petals and Bloodstream brought her wider recognition."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische singer-songwriterin · debüt 2026",
+    "who": "Alyssa Grace Proffitt ist eine amerikanische Singer-Songwriterin mit Wohnsitz in Kalifornien. Größere Bekanntheit erlangte sie durch die Singles Picking Petals und Bloodstream.",
+    "facts": [
+     "Ihr Aufnahmedebüt gab sie 2026 mit Dog with a Bone.",
+     "Picking Petals und Bloodstream brachten ihr größere Bekanntheit."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · 2026 debut",
+    "who": "Alyssa Grace Proffitt, Kaliforniya merkezli Amerikalı bir şarkıcı ve söz yazarıdır. Picking Petals ve Bloodstream single'larıyla daha geniş bir kitleye ulaştı.",
+    "facts": [
+     "Kayıt kariyerine 2026'da Dog with a Bone ile başladı.",
+     "Picking Petals ve Bloodstream ona daha geniş bir tanınırlık kazandırdı."
+    ]
+   }
+  }
+ ]
+}

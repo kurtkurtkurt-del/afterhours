@@ -1,0 +1,166 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "1e2d0382-a4d7-45ad-9737-fb6203c075ed",
+   "slug": "craig-finn-75c75b0d",
+   "title": "Craig Finn",
+   "name": "Craig Finn",
+   "source_url": "https://en.wikipedia.org/wiki/Craig_Finn",
+   "extract": "Craig A. Finn is an American singer, songwriter and musician. He is best known as the frontman of the American indie rock band the Hold Steady, with whom he has recorded nine studio albums. Prior to forming the Hold Steady, Finn was the frontman of Lifter Puller.",
+   "en": {
+    "kicker": "american singer-songwriter · the hold steady",
+    "who": "Craig Finn is an American singer, songwriter and musician. He is best known as frontman of the indie rock band the Hold Steady.",
+    "facts": [
+     "He has recorded nine studio albums with the Hold Steady.",
+     "Before forming the Hold Steady, Finn was frontman of Lifter Puller."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · the hold steady",
+    "who": "Craig Finn ist ein amerikanischer Sänger, Songwriter und Musiker. Bekannt ist er vor allem als Frontmann der Indie-Rockband The Hold Steady.",
+    "facts": [
+     "Mit The Hold Steady hat er neun Studioalben aufgenommen.",
+     "Vor der Gründung der Hold Steady war Finn Frontmann von Lifter Puller."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · the hold steady",
+    "who": "Craig Finn, Amerikalı bir şarkıcı, söz yazarı ve müzisyendir. En çok indie rock grubu The Hold Steady'nin baş şarkıcısı olarak tanınır.",
+    "facts": [
+     "The Hold Steady ile dokuz stüdyo albümü kaydetti.",
+     "The Hold Steady'yi kurmadan önce Lifter Puller'ın baş şarkıcısıydı."
+    ]
+   }
+  },
+  {
+   "id": "c2497ee2-bc9c-4c5c-91a1-4f6b766c2eb6",
+   "slug": "the-mountain-goats-six-6-show-ticket-17aa8305",
+   "title": "The Mountain Goats - SIX (6) Show Ticket",
+   "name": "The Mountain Goats",
+   "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+   "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark.",
+   "en": {
+    "kicker": "american indie folk band · claremont, california",
+    "who": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Darnielle remains the core member and has worked with many collaborators over time.",
+    "facts": [
+     "Since 2003 the band has been based in Durham, North Carolina.",
+     "For many years, Darnielle was the sole member of the Mountain Goats."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-folkband · claremont, kalifornien",
+    "who": "The Mountain Goats sind eine amerikanische Indie-Folkband, die in Claremont, Kalifornien, vom Singer-Songwriter John Darnielle gegründet wurde. Darnielle ist bis heute der Kern der Band und arbeitete über die Jahre mit vielen Mitmusikern.",
+    "facts": [
+     "Seit 2003 ist die Band in Durham, North Carolina, ansässig.",
+     "Viele Jahre war Darnielle das einzige Mitglied der Mountain Goats."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie folk grubu · claremont, kaliforniya",
+    "who": "The Mountain Goats, Kaliforniya'nın Claremont kentinde şarkıcı-söz yazarı John Darnielle tarafından kurulmuş bir Amerikan indie folk grubudur. Darnielle, yıllar içinde çeşitli iş birlikçilerle çalışarak grubun çekirdeği olmayı sürdürüyor.",
+    "facts": [
+     "2003'ten beri grup Durham, North Carolina'da yerleşik.",
+     "Uzun yıllar Darnielle, The Mountain Goats'un tek üyesiydi."
+    ]
+   }
+  },
+  {
+   "id": "dca8c546-18c5-47c4-867a-84ae0f74ec26",
+   "slug": "manic-street-preachers-c194ee79",
+   "title": "Manic Street Preachers",
+   "name": "Manic Street Preachers",
+   "source_url": "https://en.wikipedia.org/wiki/Manic_Street_Preachers",
+   "extract": "Manic Street Preachers are a Welsh rock band formed in Blackwood, Caerphilly, in 1986. Since 1995, the band has been a three-piece of Nicky Wire (bass) and cousins James Dean Bradfield (vocals/guitar) and Sean Moore (drums). They form a key part of the 1990s Welsh Cool Cymru cultural movement. The band's early releases were in a punk vein, eventually broadening to a wider alternative rock sound. Their early combination of androgynous glam imagery and lyrics about \"culture, alienation, boredom and despair\" gained them a loyal following.",
+   "en": {
+    "kicker": "welsh rock band · blackwood, 1986",
+    "who": "Manic Street Preachers are a Welsh rock band formed in Blackwood, Caerphilly, in 1986. Since 1995 they have been a three-piece built around Nicky Wire, James Dean Bradfield and Sean Moore.",
+    "facts": [
+     "The band was formed in Blackwood, Caerphilly, in 1986.",
+     "They are a key part of the 1990s Welsh Cool Cymru cultural movement."
+    ]
+   },
+   "de": {
+    "kicker": "walisische rockband · blackwood, 1986",
+    "who": "Manic Street Preachers sind eine walisische Rockband, die 1986 in Blackwood, Caerphilly, gegründet wurde. Seit 1995 besteht sie als Trio aus Nicky Wire, James Dean Bradfield und Sean Moore.",
+    "facts": [
+     "Die Band entstand 1986 in Blackwood, Caerphilly.",
+     "Sie ist ein zentraler Teil der walisischen Kulturbewegung Cool Cymru der 1990er."
+    ]
+   },
+   "tr": {
+    "kicker": "galli rock grubu · blackwood, 1986",
+    "who": "Manic Street Preachers, 1986'da Blackwood, Caerphilly'de kurulmuş bir Galli rock grubudur. 1995'ten beri grup, Nicky Wire, James Dean Bradfield ve Sean Moore'dan oluşan bir üçlü olarak çalıyor.",
+    "facts": [
+     "Grup 1986'da Blackwood, Caerphilly'de kuruldu.",
+     "1990'ların Galli Cool Cymru kültür hareketinin önemli bir parçasıydılar."
+    ]
+   }
+  },
+  {
+   "id": "adfdbf9a-71fb-445a-8b7d-507d4ab0474d",
+   "slug": "the-mountain-goats-night-two-alpha-7d66634a",
+   "title": "The Mountain Goats - Night Two: Alpha",
+   "name": "The Mountain Goats",
+   "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+   "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark.",
+   "en": {
+    "kicker": "american indie folk band · claremont, california",
+    "who": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Darnielle remains the core member and has worked with many collaborators over time.",
+    "facts": [
+     "Since 2003 the band has been based in Durham, North Carolina.",
+     "For many years, Darnielle was the sole member of the Mountain Goats."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-folkband · claremont, kalifornien",
+    "who": "The Mountain Goats sind eine amerikanische Indie-Folkband, die in Claremont, Kalifornien, vom Singer-Songwriter John Darnielle gegründet wurde. Darnielle ist bis heute der Kern der Band und arbeitete über die Jahre mit vielen Mitmusikern.",
+    "facts": [
+     "Seit 2003 ist die Band in Durham, North Carolina, ansässig.",
+     "Viele Jahre war Darnielle das einzige Mitglied der Mountain Goats."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie folk grubu · claremont, kaliforniya",
+    "who": "The Mountain Goats, Kaliforniya'nın Claremont kentinde şarkıcı-söz yazarı John Darnielle tarafından kurulmuş bir Amerikan indie folk grubudur. Darnielle, yıllar içinde çeşitli iş birlikçilerle çalışarak grubun çekirdeği olmayı sürdürüyor.",
+    "facts": [
+     "2003'ten beri grup Durham, North Carolina'da yerleşik.",
+     "Uzun yıllar Darnielle, The Mountain Goats'un tek üyesiydi."
+    ]
+   }
+  },
+  {
+   "id": "e3bb19b8-fdb4-4bde-9854-c876713e18af",
+   "slug": "jorja-smith-a81de282",
+   "title": "Jorja Smith",
+   "name": "Jorja Smith",
+   "source_url": "https://en.wikipedia.org/wiki/Jorja_Smith",
+   "extract": "Jorja Alice Smith is an English singer and songwriter. Born and raised in Walsall, West Midlands, she has been writing songs since the age of 11. In 2012, Smith's friend uploaded her cover of Labrinth's \"Earthquake\" to YouTube, which led to her discovery by record producer Guy Moot. After her first two singles received broader recognition, she signed with Sony/ATV in early 2016, releasing two EPs throughout later that year and into 2017.",
+   "en": {
+    "kicker": "english singer and songwriter · walsall",
+    "who": "Jorja Smith is an English singer and songwriter from Walsall, West Midlands. In 2012 a friend uploaded her cover of Labrinth's Earthquake to YouTube, which led to her discovery by producer Guy Moot.",
+    "facts": [
+     "She has been writing songs since the age of 11.",
+     "She signed with Sony/ATV in early 2016."
+    ]
+   },
+   "de": {
+    "kicker": "englische sängerin und songwriterin · walsall",
+    "who": "Jorja Smith ist eine englische Sängerin und Songwriterin aus Walsall in den West Midlands. 2012 lud eine Freundin ihr Cover von Labrinths Earthquake auf YouTube hoch, was zur Entdeckung durch den Produzenten Guy Moot führte.",
+    "facts": [
+     "Sie schreibt seit ihrem elften Lebensjahr Songs.",
+     "Anfang 2016 unterschrieb sie bei Sony/ATV."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı ve söz yazarı · walsall",
+    "who": "Jorja Smith, West Midlands'ın Walsall kentinden bir İngiliz şarkıcı ve söz yazarıdır. 2012'de bir arkadaşı Labrinth'in Earthquake şarkısının cover'ını YouTube'a yükledi; bu, yapımcı Guy Moot'un onu keşfetmesini sağladı.",
+    "facts": [
+     "11 yaşından beri şarkı yazıyor.",
+     "2016'nın başında Sony/ATV ile sözleşme imzaladı."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "da01a916-e91e-4a54-899f-fb6768c7f97d",
+   "slug": "sienna-spiro-my-house-tour-fe3ad941",
+   "title": "Sienna Spiro: My House Tour",
+   "name": "Sienna Spiro",
+   "source_url": "https://en.wikipedia.org/wiki/Sienna_Spiro",
+   "extract": "Sienna Ann Spiro is an English singer-songwriter and record producer. Known for her distinct, powerful voice, she began sharing viral singing videos on TikTok in 2021. She started releasing music in 2024, including \"Maybe\", which became her debut on the UK Singles Chart. She released Sink Now, Swim Later, her debut extended play, in February 2025. Her breakthrough success came with the release of \"Die on This Hill\", which charted in numerous countries. She released her debut studio album, Visitor, on 3 July 2026, and achieved her first UK number one single with its track \"Great Expectation\".",
+   "en": {
+    "kicker": "english singer-songwriter · visitor, 2026",
+    "who": "Sienna Spiro is an English singer-songwriter and record producer known for her distinct, powerful voice. She began sharing viral singing videos on TikTok in 2021.",
+    "facts": [
+     "She released her debut studio album, Visitor, on 3 July 2026.",
+     "Her track Great Expectation gave her a first UK number one single."
+    ]
+   },
+   "de": {
+    "kicker": "englische singer-songwriterin · visitor, 2026",
+    "who": "Sienna Spiro ist eine englische Singer-Songwriterin und Produzentin mit einer markanten, kraftvollen Stimme. Ab 2021 verbreitete sie virale Gesangsvideos auf TikTok.",
+    "facts": [
+     "Ihr Debütalbum Visitor erschien am 3. Juli 2026.",
+     "Mit dem Titel Great Expectation erreichte sie ihre erste Nummer eins in Großbritannien."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı-söz yazarı · visitor, 2026",
+    "who": "Sienna Spiro, İngiliz bir şarkıcı, söz yazarı ve yapımcıdır. Güçlü ve ayırt edici sesiyle tanınır; 2021'de TikTok'ta viral şarkı videoları paylaşmaya başladı.",
+    "facts": [
+     "Debut stüdyo albümü Visitor, 3 Temmuz 2026'da yayımlandı.",
+     "Great Expectation parçasıyla İngiltere'de ilk kez bir numaralı single'a ulaştı."
+    ]
+   }
+  },
+  {
+   "id": "b4423085-47be-4edf-8848-7b5f70fc25fb",
+   "slug": "jai-wolf-10-year-anniversary-tour-f0b20dbe",
+   "title": "Jai Wolf: 10 Year Anniversary Tour",
+   "name": "Jai Wolf",
+   "source_url": "https://en.wikipedia.org/wiki/Jai_Wolf",
+   "extract": "Sajeeb Saha, known professionally as Jai Wolf, is a Bangladeshi-American DJ and producer. He is best known for his singles, \"Indian Summer\", \"Like It's Over\", and \"Starlight\". He is currently signed to Mom + Pop Music.",
+   "en": {
+    "kicker": "bangladeshi-american dj and producer",
+    "who": "Jai Wolf, born Sajeeb Saha, is a Bangladeshi-American DJ and producer. He is best known for the singles Indian Summer, Like It's Over and Starlight.",
+    "facts": [
+     "He is currently signed to Mom + Pop Music.",
+     "His best-known singles include Indian Summer and Starlight."
+    ]
+   },
+   "de": {
+    "kicker": "bangladeschisch-amerikanischer dj und produzent",
+    "who": "Jai Wolf, bürgerlich Sajeeb Saha, ist ein bangladeschisch-amerikanischer DJ und Produzent. Bekannt wurde er vor allem durch die Singles Indian Summer, Like It's Over und Starlight.",
+    "facts": [
+     "Er ist derzeit bei Mom + Pop Music unter Vertrag.",
+     "Zu seinen bekanntesten Singles gehören Indian Summer und Starlight."
+    ]
+   },
+   "tr": {
+    "kicker": "bangladeşli-amerikalı dj ve yapımcı",
+    "who": "Asıl adı Sajeeb Saha olan Jai Wolf, Bangladeşli-Amerikalı bir DJ ve yapımcıdır. En çok Indian Summer, Like It's Over ve Starlight single'larıyla tanınır.",
+    "facts": [
+     "Şu anda Mom + Pop Music ile sözleşmeli.",
+     "En bilinen single'ları arasında Indian Summer ve Starlight var."
+    ]
+   }
+  },
+  {
+   "id": "26c08e5c-b940-4f68-9f7c-52ba0f648460",
+   "slug": "jorja-smith-d9b02929",
+   "title": "Jorja Smith",
+   "name": "Jorja Smith",
+   "source_url": "https://en.wikipedia.org/wiki/Jorja_Smith",
+   "extract": "Jorja Alice Smith is an English singer and songwriter. Born and raised in Walsall, West Midlands, she has been writing songs since the age of 11. In 2012, Smith's friend uploaded her cover of Labrinth's \"Earthquake\" to YouTube, which led to her discovery by record producer Guy Moot. After her first two singles received broader recognition, she signed with Sony/ATV in early 2016, releasing two EPs throughout later that year and into 2017.",
+   "en": {
+    "kicker": "english singer and songwriter · walsall",
+    "who": "Jorja Smith is an English singer and songwriter from Walsall, West Midlands. In 2012 a friend uploaded her cover of Labrinth's Earthquake to YouTube, which led to her discovery by producer Guy Moot.",
+    "facts": [
+     "She has been writing songs since the age of 11.",
+     "She signed with Sony/ATV in early 2016."
+    ]
+   },
+   "de": {
+    "kicker": "englische sängerin und songwriterin · walsall",
+    "who": "Jorja Smith ist eine englische Sängerin und Songwriterin aus Walsall in den West Midlands. 2012 lud eine Freundin ihr Cover von Labrinths Earthquake auf YouTube hoch, was zur Entdeckung durch den Produzenten Guy Moot führte.",
+    "facts": [
+     "Sie schreibt seit ihrem elften Lebensjahr Songs.",
+     "Anfang 2016 unterschrieb sie bei Sony/ATV."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı ve söz yazarı · walsall",
+    "who": "Jorja Smith, West Midlands'ın Walsall kentinden bir İngiliz şarkıcı ve söz yazarıdır. 2012'de bir arkadaşı Labrinth'in Earthquake şarkısının cover'ını YouTube'a yükledi; bu, yapımcı Guy Moot'un onu keşfetmesini sağladı.",
+    "facts": [
+     "11 yaşından beri şarkı yazıyor.",
+     "2016'nın başında Sony/ATV ile sözleşme imzaladı."
+    ]
+   }
+  },
+  {
+   "id": "d0aa921e-a30a-4868-bed4-26324fdd84b7",
+   "slug": "oso-oso-ca2e14dc",
+   "title": "Oso Oso",
+   "name": "Oso Oso",
+   "source_url": "https://en.wikipedia.org/wiki/Oso_Oso",
+   "extract": "Oso Oso is an American rock band from Long Beach, New York. Jade Lilitri, formerly of State Lines, is the only permanent member. Jade uses Lilitri as a pen name. The band has released four studio albums and two EPs. Their 2019 release, Basking in the Glow, and their 2022 release, Sore Thumb, were named \"Best New Music\" by online music magazine Pitchfork.",
+   "en": {
+    "kicker": "american rock band · long beach, new york",
+    "who": "Oso Oso is an American rock band from Long Beach, New York. Jade Lilitri is its only permanent member.",
+    "facts": [
+     "The band has released four studio albums and two EPs.",
+     "Basking in the Glow and Sore Thumb were named Best New Music by Pitchfork."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · long beach, new york",
+    "who": "Oso Oso ist eine amerikanische Rockband aus Long Beach, New York. Jade Lilitri, früher bei State Lines, ist das einzige dauerhafte Mitglied.",
+    "facts": [
+     "Die Band hat vier Studioalben und zwei EPs veröffentlicht.",
+     "Basking in the Glow und Sore Thumb wurden von Pitchfork als Best New Music ausgezeichnet."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · long beach, new york",
+    "who": "Oso Oso, New York'un Long Beach kentinden bir Amerikan rock grubudur. State Lines'tan tanınan Jade Lilitri, tek kalıcı üyedir.",
+    "facts": [
+     "Grup dört stüdyo albümü ve iki EP yayımladı.",
+     "Basking in the Glow ve Sore Thumb, Pitchfork tarafından \"Best New Music\" seçildi."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "city": "rotterdam",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "ef6e37e7-ad03-4f4f-851f-83741f2c292f",
+   "slug": "loreena-mckennitt-the-mask-and-mirror-fb647494",
+   "title": "Loreena McKennitt - The Mask and Mirror",
+   "name": "Loreena McKennitt",
+   "source_url": "https://en.wikipedia.org/wiki/Loreena_McKennitt",
+   "extract": "Loreena McKennitt is a Canadian singer-songwriter, multi-instrumentalist, and composer who writes, records, and performs world music with Celtic and Middle Eastern influences. McKennitt is known for her refined and clear soprano vocals. She has sold more than 16 million records worldwide.",
+   "en": {
+    "kicker": "canadian singer-songwriter · world music",
+    "who": "Loreena McKennitt is a Canadian singer-songwriter, multi-instrumentalist and composer. She performs world music with Celtic and Middle Eastern influences.",
+    "facts": [
+     "She is known for her refined and clear soprano vocals.",
+     "She has sold more than 16 million records worldwide."
+    ]
+   },
+   "de": {
+    "kicker": "kanadische singer-songwriterin · weltmusik",
+    "who": "Loreena McKennitt ist eine kanadische Singer-Songwriterin, Multiinstrumentalistin und Komponistin. Sie macht Weltmusik mit keltischen und nahöstlichen Einflüssen.",
+    "facts": [
+     "Sie ist für ihren klaren, feinen Sopran bekannt.",
+     "Weltweit hat sie mehr als 16 Millionen Tonträger verkauft."
+    ]
+   },
+   "tr": {
+    "kicker": "kanadalı şarkıcı-söz yazarı · dünya müziği",
+    "who": "Loreena McKennitt, Kanadalı bir şarkıcı-söz yazarı, çok enstrümanlı müzisyen ve bestecidir. Keltik ve Orta Doğu etkileriyle dünya müziği yapar.",
+    "facts": [
+     "Rafine ve berrak soprano sesiyle tanınır.",
+     "Dünya çapında 16 milyondan fazla plak sattı."
+    ]
+   }
+  }
+ ]
+}

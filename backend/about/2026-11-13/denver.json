@@ -1,0 +1,70 @@
+{
+ "city": "denver",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "9d7a8ebc-0017-4bdc-93b7-3eeaffb3df2c",
+   "slug": "hurricane-wisdom-cbf96f40",
+   "title": "Hurricane Wisdom",
+   "name": "Hurricane Wisdom",
+   "source_url": "https://en.wikipedia.org/wiki/Hurricane_Wisdom",
+   "extract": "Wisdom Mikeal Oluola, known professionally as Hurricane Wisdom, is an American rapper, singer-songwriter, and social media personality. Born in Tallahassee, Florida, and growing up in Havana, Florida, Oluola started his music career in 2018 or 2019, although he started taking the career seriously in 2020, with his debut single being \"Granny's Baby\".",
+   "en": {
+    "kicker": "american rapper and singer-songwriter · florida",
+    "who": "Hurricane Wisdom, real name Wisdom Mikeal Oluola, is an American rapper, singer-songwriter and social media personality. He grew up in Havana, Florida, and took his music career seriously from 2020.",
+    "facts": [
+     "Born in Tallahassee, Florida, he grew up in Havana, Florida.",
+     "His debut single was Granny's Baby, and he started his music career in 2018 or 2019."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer rapper und singer-songwriter · florida",
+    "who": "Hurricane Wisdom, bürgerlich Wisdom Mikeal Oluola, ist ein amerikanischer Rapper, Singer-Songwriter und Social-Media-Persönlichkeit. Er wuchs in Havana, Florida, auf und nahm seine Musikkarriere ab 2020 ernsthaft in Angriff.",
+    "facts": [
+     "Er wurde in Tallahassee, Florida, geboren und wuchs in Havana auf.",
+     "Seine Debütsingle war Granny's Baby, seine Musikkarriere begann 2018 oder 2019."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi ve söz yazarı-şarkıcı · florida",
+    "who": "Asıl adı Wisdom Mikeal Oluola olan Hurricane Wisdom, Amerikalı bir rapçi, söz yazarı-şarkıcı ve sosyal medya fenomenidir. Florida'nın Havana kentinde büyüdü ve müzik kariyerine 2020'den itibaren ciddi olarak yöneldi.",
+    "facts": [
+     "Tallahassee, Florida'da doğdu ve Havana'da büyüdü.",
+     "Debut single'ı Granny's Baby'dir; müzik kariyerine 2018 ya da 2019'da başladı."
+    ]
+   }
+  },
+  {
+   "id": "b6c74f0c-5d50-416a-92cd-acb3af280316",
+   "slug": "violet-grohl-f67d04ad",
+   "title": "Violet Grohl",
+   "name": "Violet Grohl",
+   "source_url": "https://en.wikipedia.org/wiki/Violet_Grohl",
+   "extract": "Violet Maye Grohl is an American singer and songwriter. She is the eldest daughter of Foo Fighters frontman and former Nirvana drummer Dave Grohl. Her debut album, Be Sweet to Me, was released through Auroura and Republic Records on May 29, 2026.",
+   "en": {
+    "kicker": "american singer and songwriter · debut album 2026",
+    "who": "Violet Grohl is an American singer and songwriter. She is the eldest daughter of Dave Grohl, the Foo Fighters frontman and former Nirvana drummer.",
+    "facts": [
+     "Her debut album, Be Sweet to Me, was released on May 29, 2026.",
+     "She is the eldest daughter of Foo Fighters frontman Dave Grohl."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische sängerin und songwriterin · debütalbum 2026",
+    "who": "Violet Grohl ist eine amerikanische Sängerin und Songwriterin. Sie ist die älteste Tochter von Dave Grohl, dem Frontmann der Foo Fighters und früheren Schlagzeuger von Nirvana.",
+    "facts": [
+     "Ihr Debütalbum Be Sweet to Me erschien am 29. Mai 2026.",
+     "Sie ist die älteste Tochter von Foo-Fighters-Frontmann Dave Grohl."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı ve söz yazarı · debut albüm 2026",
+    "who": "Violet Grohl, Amerikalı bir şarkıcı ve söz yazarıdır. Foo Fighters'ın solisti ve Nirvana'nın eski davulcusu Dave Grohl'un en büyük kızıdır.",
+    "facts": [
+     "Debut albümü Be Sweet to Me, 29 Mayıs 2026'da yayımlandı.",
+     "Foo Fighters'ın solisti Dave Grohl'un en büyük kızıdır."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "ba0b82a6-c714-4495-86c7-de8d111aaa8b",
+   "slug": "glenn-jones-6c501f5b",
+   "title": "Glenn Jones",
+   "name": "Glenn Jones",
+   "source_url": "https://en.wikipedia.org/wiki/Glenn_Jones",
+   "extract": "Glenn Jones is an American R&B/soul singer. He is best known for his songs \"Show Me\", \"We've Only Just Begun \" and \"Here I Go Again\", which reached No. 1 on the Billboard R&B charts in 1991/1992, as well as the track \"I've Been Searching \".",
+   "en": {
+    "kicker": "american r&b and soul singer · 1991",
+    "who": "Glenn Jones is an American R&B and soul singer. He is best known for Show Me, We've Only Just Begun and Here I Go Again.",
+    "facts": [
+     "Here I Go Again reached No. 1 on the Billboard R&B charts in 1991/1992.",
+     "His songs also include the track I've Been Searching."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer r&b- und soulsänger · 1991",
+    "who": "Glenn Jones ist ein amerikanischer R&B- und Soulsänger. Bekannt ist er vor allem durch Show Me, We've Only Just Begun und Here I Go Again.",
+    "facts": [
+     "Here I Go Again erreichte 1991/1992 Platz 1 der Billboard-R&B-Charts.",
+     "Zu seinen Songs gehört auch der Titel I've Been Searching."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı r&b ve soul şarkıcısı · 1991",
+    "who": "Glenn Jones, Amerikalı bir R&B ve soul şarkıcısıdır. En çok Show Me, We've Only Just Begun ve Here I Go Again şarkılarıyla tanınır.",
+    "facts": [
+     "Here I Go Again, 1991/1992'de Billboard R&B listelerinde 1 numaraya ulaştı.",
+     "Şarkıları arasında I've Been Searching adlı parça da var."
+    ]
+   }
+  },
+  {
+   "id": "70f96289-2343-4a00-95f3-25a51db5ba07",
+   "slug": "fontaines-d-c-9729354e",
+   "title": "Fontaines D.C.",
+   "name": "Fontaines D.C.",
+   "source_url": "https://en.wikipedia.org/wiki/Fontaines_D.C.",
+   "extract": "Fontaines D.C. are an Irish rock band formed in Dublin in 2014. The band consists of Grian Chatten (vocals), Conor Curley (guitar), Conor \"Deego\" Deegan III (bass), Tom Coll (drums), and Carlos O'Connell (guitar).",
+   "en": {
+    "kicker": "irish rock band · dublin, 2014",
+    "who": "Fontaines D.C. are an Irish rock band formed in Dublin in 2014. The line-up includes Grian Chatten on vocals, Conor Curley and Carlos O'Connell on guitar, and Tom Coll on drums.",
+    "facts": [
+     "The band was formed in Dublin in 2014.",
+     "Grian Chatten handles vocals, and Conor Deegan III plays bass."
+    ]
+   },
+   "de": {
+    "kicker": "irische rockband · dublin, 2014",
+    "who": "Fontaines D.C. ist eine irische Rockband, die 2014 in Dublin gegründet wurde. Zur Besetzung gehören Grian Chatten (Gesang), Conor Curley und Carlos O'Connell (Gitarre) sowie Tom Coll (Schlagzeug).",
+    "facts": [
+     "Die Band wurde 2014 in Dublin gegründet.",
+     "Grian Chatten singt, und Conor „Deego“ Deegan III spielt Bass."
+    ]
+   },
+   "tr": {
+    "kicker": "irlandalı rock grubu · dublin, 2014",
+    "who": "Fontaines D.C., 2014'te Dublin'de kurulmuş bir İrlanda rock grubudur. Grupta Grian Chatten vokalde, Conor Curley ve Carlos O'Connell gitarda, Tom Coll davulda yer alıyor.",
+    "facts": [
+     "Grup 2014'te Dublin'de kuruldu.",
+     "Grian Chatten vokalleri üstleniyor, Conor Deegan III bas gitar çalıyor."
+    ]
+   }
+  },
+  {
+   "id": "59747789-f603-4a0c-983a-8807906050ec",
+   "slug": "bellowhead-834551b2",
+   "title": "Bellowhead",
+   "name": "Bellowhead",
+   "source_url": "https://en.wikipedia.org/wiki/Bellowhead",
+   "extract": "Bellowhead is an English contemporary folk band, active from 2004 to 2016, reforming in 2020. The eleven-piece act played traditional dance tunes, folk songs and shanties, with arrangements drawing inspiration from a wide range of musical styles and influences. The band included percussion and a four-piece brass section. Bellowhead's bandmembers played more than 20 instruments among them, whilst all performers provided vocals.",
+   "en": {
+    "kicker": "english folk band · active 2004 to 2016",
+    "who": "Bellowhead is an English contemporary folk band that was active from 2004 to 2016 and reformed in 2020. The eleven-piece act played traditional dance tunes, folk songs and shanties.",
+    "facts": [
+     "The band included a four-piece brass section.",
+     "Its arrangements drew on a wide range of musical styles and influences."
+    ]
+   },
+   "de": {
+    "kicker": "englische folkband · aktiv 2004 bis 2016",
+    "who": "Bellowhead ist eine englische zeitgenössische Folkband, die von 2004 bis 2016 aktiv war und sich 2020 wieder formierte. Die elfköpfige Gruppe spielte traditionelle Tanzmelodien, Folklieder und Shanties.",
+    "facts": [
+     "Zur Band gehörte eine vierköpfige Blechbläser-Sektion.",
+     "Ihre Arrangements schöpften aus einer breiten Palette musikalischer Stile und Einflüsse."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz folk grubu · 2004–2016 arası aktif",
+    "who": "Bellowhead, 2004 ile 2016 arasında aktif olan ve 2020'de yeniden kurulan İngiliz çağdaş folk grubudur. On bir kişilik grup geleneksel dans melodileri, folk şarkıları ve shanty'ler çaldı.",
+    "facts": [
+     "Grubun dört kişilik bir nefes bölümü vardı.",
+     "Düzenlemeleri çok çeşitli müzik tarzlarından ve etkilerden besleniyordu."
+    ]
+   }
+  },
+  {
+   "id": "95be78fd-d7b7-4cd7-b0df-da605e5ed608",
+   "slug": "bob-dylan-bac7bf93",
+   "title": "Bob Dylan",
+   "name": "Bob Dylan",
+   "source_url": "https://en.wikipedia.org/wiki/Bob_Dylan",
+   "extract": "Bob Dylan is an American singer-songwriter. Described as one of the greatest songwriters of all time, Dylan has been a major figure in popular culture over his 69-year career. Dylan added increasingly sophisticated lyrical techniques to the folk music of the early 1960s, infusing it \"with the intellectualism of classic literature and poetry\". His lyrics incorporated political, social, and philosophical influences, defying pop music conventions and appealing to the burgeoning counterculture.",
+   "en": {
+    "kicker": "american singer-songwriter · folk, 1960s",
+    "who": "Bob Dylan is an American singer-songwriter, described as one of the greatest songwriters of all time. In the early 1960s he added increasingly sophisticated lyrical techniques to folk music.",
+    "facts": [
+     "Dylan has been a major figure in popular culture over his 69-year career.",
+     "His lyrics incorporated political, social, and philosophical influences."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer singer-songwriter · folk der 1960er",
+    "who": "Bob Dylan ist ein amerikanischer Singer-Songwriter, der als einer der größten Songschreiber aller Zeiten gilt. In den frühen 1960er-Jahren brachte er immer raffiniertere lyrische Techniken in die Folkmusik ein.",
+    "facts": [
+     "Über seine 69-jährige Karriere war Dylan eine zentrale Figur der Popkultur.",
+     "Seine Texte verbanden politische, soziale und philosophische Einflüsse."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı-söz yazarı · 1960'lar folk'u",
+    "who": "Bob Dylan, Amerikalı bir şarkıcı ve söz yazarıdır; tüm zamanların en büyük söz yazarlarından biri sayılır. 1960'ların başında folk müziğe giderek daha karmaşık sözel teknikler getirdi.",
+    "facts": [
+     "69 yıllık kariyeri boyunca Dylan popüler kültürün önemli bir figürü oldu.",
+     "Sözleri politik, sosyal ve felsefi etkileri bir araya getirdi."
+    ]
+   }
+  }
+ ]
+}

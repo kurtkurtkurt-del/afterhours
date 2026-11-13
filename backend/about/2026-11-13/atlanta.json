@@ -1,0 +1,198 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "4bc02858-c330-4ab3-a8e1-31fca3d01ddd",
+   "slug": "fruit-bats-1ee2d3e5",
+   "title": "Fruit Bats",
+   "name": "Fruit Bats",
+   "source_url": "https://en.wikipedia.org/wiki/Fruit_Bats_(band)",
+   "extract": "Fruit Bats is an American indie rock band formed in 1997 in Chicago, Illinois, as the project of singer and songwriter Eric D. Johnson. Johnson is the band's sole permanent member, with various musicians joining the band in live and studio settings.",
+   "en": {
+    "kicker": "american indie rock band · chicago, 1997",
+    "who": "Fruit Bats is an American indie rock project led by singer and songwriter Eric D. Johnson. Johnson is the only permanent member, and other musicians join for live and studio work.",
+    "facts": [
+     "The band was formed in 1997 in Chicago, Illinois.",
+     "Eric D. Johnson is the band's sole permanent member."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-rockband · chicago, 1997",
+    "who": "Fruit Bats ist ein amerikanisches Indie-Rock-Projekt unter Leitung des Sängers und Songwriters Eric D. Johnson. Johnson ist das einzige feste Mitglied, andere Musiker stoßen für Live- und Studioarbeit dazu.",
+    "facts": [
+     "Die Band wurde 1997 in Chicago, Illinois, gegründet.",
+     "Eric D. Johnson ist das einzige dauerhafte Mitglied der Band."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie rock grubu · chicago, 1997",
+    "who": "Fruit Bats, şarkıcı ve söz yazarı Eric D. Johnson'ın önderliğindeki Amerikan indie rock projesidir. Johnson tek kalıcı üyedir; canlı ve stüdyo çalışmalarına başka müzisyenler katılır.",
+    "facts": [
+     "Grup 1997'de Chicago, Illinois'de kuruldu.",
+     "Eric D. Johnson, grubun tek kalıcı üyesidir."
+    ]
+   }
+  },
+  {
+   "id": "9ba44570-a5c5-48b7-b33c-63c50484dd5a",
+   "slug": "josie-edwards-c6a3db9f",
+   "title": "Josie Edwards",
+   "name": "Josie Edwards",
+   "source_url": "https://en.wikipedia.org/wiki/Josie_Edwards",
+   "extract": "Josie Edwards is an American musician and songwriter. She is best known for her 2026 single “Chemical Light\", as well as her 2025 hit “good girls”. She has released two EPs and performed at All Points East as a supporting act for Twenty One Pilots alongside Gang of Youths, Bbno$, and Jessie Murph.",
+   "en": {
+    "kicker": "american musician and songwriter · 2026 single",
+    "who": "Josie Edwards is an American musician and songwriter. She is best known for the 2026 single Chemical Light and the 2025 hit good girls.",
+    "facts": [
+     "She has released two EPs and performed at All Points East.",
+     "Her 2025 hit good girls came before her 2026 single Chemical Light."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische musikerin und songwriterin · single 2026",
+    "who": "Josie Edwards ist eine amerikanische Musikerin und Songwriterin. Bekannt wurde sie vor allem durch die Single Chemical Light von 2026 und den Hit good girls von 2025.",
+    "facts": [
+     "Sie hat zwei EPs veröffentlicht und trat bei All Points East auf.",
+     "Ihr Hit good girls stammt von 2025, die Single Chemical Light von 2026."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı müzisyen ve söz yazarı · 2026 single'ı",
+    "who": "Josie Edwards, Amerikalı bir müzisyen ve söz yazarıdır. En çok 2026 single'ı Chemical Light ve 2025 hiti good girls ile tanınır.",
+    "facts": [
+     "İki EP yayımladı ve All Points East'te sahne aldı.",
+     "good girls 2025 hiti, Chemical Light ise 2026 single'ı."
+    ]
+   }
+  },
+  {
+   "id": "e25aee43-616a-4780-bd33-72185c46d5b3",
+   "slug": "georgia-brass-band-ef99250d",
+   "title": "Georgia Brass Band",
+   "name": "Georgia Brass Band",
+   "source_url": "https://en.wikipedia.org/wiki/Georgia_Brass_Band",
+   "extract": "The Georgia Brass Band was conceived by co-founders Joe Johnson and Christopher Priest in the spring of 1999. It is a traditional British-style brass band. The band performed its first concert in September 1999 and has maintained a very busy schedule ever since.",
+   "en": {
+    "kicker": "traditional british-style brass band · 1999",
+    "who": "The Georgia Brass Band is a traditional British-style brass band, conceived by co-founders Joe Johnson and Christopher Priest. It gave its first concert in September 1999 and has kept a busy schedule ever since.",
+    "facts": [
+     "Co-founders Joe Johnson and Christopher Priest conceived the band in spring 1999.",
+     "The band performed its first concert in September 1999."
+    ]
+   },
+   "de": {
+    "kicker": "traditionelle brass band im britischen stil · 1999",
+    "who": "Die Georgia Brass Band ist eine traditionelle Blaskapelle im britischen Stil. Entworfen haben sie die Mitbegründer Joe Johnson und Christopher Priest; ihr erstes Konzert gab es im September 1999.",
+    "facts": [
+     "Die Mitbegründer Joe Johnson und Christopher Priest entwarfen die Band im Frühjahr 1999.",
+     "Das erste Konzert spielte die Band im September 1999."
+    ]
+   },
+   "tr": {
+    "kicker": "geleneksel ingiliz tarzı brass band · 1999",
+    "who": "Georgia Brass Band, geleneksel İngiliz tarzı bir brass bandtir. Kurucu ortakları Joe Johnson ve Christopher Priest grubu tasarladı; ilk konserini Eylül 1999'da verdi.",
+    "facts": [
+     "Kurucu ortaklar Joe Johnson ve Christopher Priest grubu 1999 baharında tasarladı.",
+     "Grup ilk konserini Eylül 1999'da verdi."
+    ]
+   }
+  },
+  {
+   "id": "cf51c2b5-1862-4a12-bf18-c41013671943",
+   "slug": "doja-cat-tour-ma-vie-world-tour-9a056f30",
+   "title": "Doja Cat - Tour Ma Vie World Tour",
+   "name": "Doja Cat",
+   "source_url": "https://en.wikipedia.org/wiki/Doja_Cat",
+   "extract": "Amala Ratna Zandile Dlamini, known professionally as Doja Cat, is an American rapper and singer-songwriter. Regarded as the \"Queen of Pop-Rap\", she is known for her musical versatility, live performance skills and humorous internet presence. Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\", and Time listed her as one of the world's most influential people in 2023.",
+   "en": {
+    "kicker": "american rapper and singer-songwriter · queen of pop-rap",
+    "who": "Doja Cat, real name Amala Ratna Zandile Dlamini, is an American rapper and singer-songwriter. She is known for her musical versatility, live performance skills and humorous internet presence.",
+    "facts": [
+     "Billboard named her one of the world's biggest pop stars.",
+     "Regarded as the Queen of Pop-Rap, she is known for her musical versatility."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rapperin und songwriterin · queen of pop-rap",
+    "who": "Doja Cat, bürgerlich Amala Ratna Zandile Dlamini, ist eine amerikanische Rapperin und Songwriterin. Sie ist für ihre musikalische Vielseitigkeit, ihre Live-Auftritte und ihre humorvolle Präsenz im Netz bekannt.",
+    "facts": [
+     "Billboard nannte sie einen der größten Popstars der Welt.",
+     "Sie gilt als Queen of Pop-Rap und ist für ihre musikalische Vielseitigkeit bekannt."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rapçi ve söz yazarı-şarkıcı · pop-rap kraliçesi",
+    "who": "Asıl adı Amala Ratna Zandile Dlamini olan Doja Cat, Amerikalı bir rapçi ve söz yazarı-şarkıcıdır. Müzikal çok yönlülüğü, canlı performans becerileri ve mizahi internet varlığıyla tanınır.",
+    "facts": [
+     "Billboard onu dünyanın en büyük pop yıldızlarından biri ilan etti.",
+     "\"Pop-rap'in kraliçesi\" olarak anılır ve müzikal çok yönlülüğüyle bilinir."
+    ]
+   }
+  },
+  {
+   "id": "4e710b6e-3997-49df-a8f9-f3c327ee7bbf",
+   "slug": "i-set-my-friends-on-fire-69fc9e70",
+   "title": "I Set My Friends On Fire",
+   "name": "I Set My Friends on Fire",
+   "source_url": "https://en.wikipedia.org/wiki/I_Set_My_Friends_on_Fire",
+   "extract": "I Set My Friends on Fire is an American post-hardcore band from Miami, Florida. The band was formed in 2007 by Matt Mehana and Nabil Moo. The group signed with Epitaph Records before releasing their debut album, You Can't Spell Slaughter Without Laughter, in 2008. Drummer Chris Lent joined the band in 2009. The group's second album, Astral Rejection, was scheduled to be released on June 22, 2010, but it was shelved for a year by Epitaph. Moo left the band in 2010, then Lent left the band. The group's third album, Caterpillar Sex, was announced in 2013 but has never seen a release.",
+   "en": {
+    "kicker": "american post-hardcore band · miami, 2007",
+    "who": "I Set My Friends on Fire is an American post-hardcore band from Miami, Florida, formed in 2007 by Matt Mehana and Nabil Moo. The band signed with Epitaph Records before releasing its debut album.",
+    "facts": [
+     "The band was formed in 2007 by Matt Mehana and Nabil Moo.",
+     "Their debut album, You Can't Spell Slaughter Without Laughter, came out in 2008."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische post-hardcore-band · miami, 2007",
+    "who": "I Set My Friends on Fire ist eine amerikanische Post-Hardcore-Band aus Miami, Florida, gegründet 2007 von Matt Mehana und Nabil Moo. Die Band unterschrieb bei Epitaph Records, bevor sie ihr Debütalbum veröffentlichte.",
+    "facts": [
+     "Matt Mehana und Nabil Moo gründeten die Band 2007.",
+     "Ihr Debütalbum You Can't Spell Slaughter Without Laughter erschien 2008."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı post-hardcore grubu · miami, 2007",
+    "who": "I Set My Friends on Fire, Miami, Florida'dan bir Amerikan post-hardcore grubudur. Grup 2007'de Matt Mehana ve Nabil Moo tarafından kuruldu ve debut albümünden önce Epitaph Records ile anlaştı.",
+    "facts": [
+     "Grubu 2007'de Matt Mehana ve Nabil Moo kurdu.",
+     "Debut albümleri You Can't Spell Slaughter Without Laughter 2008'de çıktı."
+    ]
+   }
+  },
+  {
+   "id": "fc1901c5-cdec-4fb3-bc84-e9220c755d22",
+   "slug": "the-paradox-02cf2a79",
+   "title": "The Paradox",
+   "name": "The Paradox",
+   "source_url": "https://en.wikipedia.org/wiki/The_Paradox_(band)",
+   "extract": "The Paradox is an American pop-punk band from Atlanta, Georgia, formed in 2024. Its members are Eric Dangerfield, Donald Bryant (bass), Christopher \"Xelan\" Bernard, and Percy \"PC3\" Crews (drums). They are the first all-black punk band to be number 1 on Billboard's Alternative Airplay chart.",
+   "en": {
+    "kicker": "american pop-punk band · atlanta, 2024",
+    "who": "The Paradox is an American pop-punk band from Atlanta, Georgia, formed in 2024. Its members are Eric Dangerfield, Donald Bryant, Christopher Bernard and Percy Crews.",
+    "facts": [
+     "The band was formed in 2024 in Atlanta, Georgia.",
+     "They are the first all-black punk band to be number 1 on Billboard's Alternative Airplay chart."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische pop-punk-band · atlanta, 2024",
+    "who": "The Paradox ist eine amerikanische Pop-Punk-Band aus Atlanta, Georgia, gegründet 2024. Zu den Mitgliedern gehören Eric Dangerfield, Donald Bryant, Christopher „Xelan“ Bernard und Percy „PC3“ Crews.",
+    "facts": [
+     "Die Band wurde 2024 in Atlanta, Georgia, gegründet.",
+     "Sie ist die erste ausschließlich aus Schwarzen bestehende Punkband, die auf Platz 1 der Billboard Alternative Airplay-Charts stand."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı pop-punk grubu · atlanta, 2024",
+    "who": "The Paradox, Atlanta, Georgia'dan bir Amerikan pop-punk grubudur ve 2024'te kuruldu. Üyeleri Eric Dangerfield, Donald Bryant, Christopher \"Xelan\" Bernard ve Percy \"PC3\" Crews'tur.",
+    "facts": [
+     "Grup 2024'te Atlanta, Georgia'da kuruldu.",
+     "Billboard Alternative Airplay listesinde 1 numaraya çıkan ilk tamamen siyahi punk grubu."
+    ]
+   }
+  }
+ ]
+}

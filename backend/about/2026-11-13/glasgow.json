@@ -1,0 +1,230 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "0403b3ba-e234-4fac-bc34-a34e8455fdf8",
+   "slug": "kid-kapichi-down-the-rabbit-hole-4128a488",
+   "title": "Kid Kapichi - Down the Rabbit Hole",
+   "name": "Kid Kapichi",
+   "source_url": "https://en.wikipedia.org/wiki/Kid_Kapichi",
+   "extract": "Kid Kapichi are an English punk rock band formed in Hastings in 2013. The band consists of vocalist and guitarist Jack Wilson and bassist Eddie Lewis.",
+   "en": {
+    "kicker": "english punk rock band · hastings, 2013",
+    "who": "Kid Kapichi are an English punk rock band formed in Hastings. The band is built around Jack Wilson and Eddie Lewis.",
+    "facts": [
+     "The band was formed in Hastings in 2013.",
+     "The band consists of vocalist and guitarist Jack Wilson and bassist Eddie Lewis."
+    ]
+   },
+   "de": {
+    "kicker": "englische punkrockband · hastings, 2013",
+    "who": "Kid Kapichi sind eine englische Punkrockband, die sich 2013 in Hastings gründete. Im Zentrum stehen Sänger und Gitarrist Jack Wilson und Bassist Eddie Lewis.",
+    "facts": [
+     "Die Band wurde 2013 in Hastings gegründet.",
+     "Zur Band gehören Sänger und Gitarrist Jack Wilson sowie Bassist Eddie Lewis."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz punk rock grubu · hastings, 2013",
+    "who": "Kid Kapichi, 2013'te Hastings'te kurulmuş bir İngiliz punk rock grubudur. Grubun merkezinde vokalist ve gitarist Jack Wilson ile basçı Eddie Lewis var.",
+    "facts": [
+     "Grup 2013'te Hastings'te kuruldu.",
+     "Grup, vokalist ve gitarist Jack Wilson ile basçı Eddie Lewis'ten oluşuyor."
+    ]
+   }
+  },
+  {
+   "id": "1b6e1ecb-9079-47bc-84b0-fe80136240f9",
+   "slug": "enter-shikari-c38aa4f0",
+   "title": "Enter Shikari",
+   "name": "Enter Shikari",
+   "source_url": "https://en.wikipedia.org/wiki/Enter_Shikari",
+   "extract": "Enter Shikari are an English rock band formed in St Albans, Hertfordshire in 1999 by bassist Chris Batten, lead vocalist and keyboardist Rou Reynolds, and drummer Rob Rolfe. In 2003, guitarist Rory Clewlow joined the band to complete its current line-up, and it adopted its current name.",
+   "en": {
+    "kicker": "english rock band · st albans, 1999",
+    "who": "Enter Shikari are an English rock band formed in St Albans, Hertfordshire, by Chris Batten, Rou Reynolds and Rob Rolfe.",
+    "facts": [
+     "The band was formed in St Albans, Hertfordshire, in 1999.",
+     "Guitarist Rory Clewlow joined in 2003, and the band adopted its current name then."
+    ]
+   },
+   "de": {
+    "kicker": "englische rockband · st albans, 1999",
+    "who": "Enter Shikari ist eine englische Rockband, die 1999 in St Albans, Hertfordshire, gegründet wurde. Gründungsmitglieder waren Chris Batten, Rou Reynolds und Rob Rolfe.",
+    "facts": [
+     "Die Band entstand 1999 in St Albans, Hertfordshire.",
+     "2003 kam Gitarrist Rory Clewlow hinzu, und die Band nahm ihren heutigen Namen an."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz rock grubu · st albans, 1999",
+    "who": "Enter Shikari, 1999'da Hertfordshire'ın St Albans kentinde Chris Batten, Rou Reynolds ve Rob Rolfe tarafından kurulmuş bir İngiliz rock grubudur.",
+    "facts": [
+     "Grup 1999'da St Albans, Hertfordshire'de kuruldu.",
+     "2003'te gitarist Rory Clewlow katıldı ve grup bugünkü adını aldı."
+    ]
+   }
+  },
+  {
+   "id": "8bc93420-33a2-4982-bbae-b884e2e1adf9",
+   "slug": "cheekface-48b98429",
+   "title": "Cheekface",
+   "name": "Cheekface",
+   "source_url": "https://en.wikipedia.org/wiki/Cheekface",
+   "extract": "Cheekface is an American indie rock band based in Los Angeles, California. Formed in 2017, the group consists of guitarist and lead vocalist Greg Katz, bassist and backup vocalist Amanda Tannen, and drummer Mark Edwards. Cheekface has released six studio albums, five EPs, and one live album, all on Katz's own label, New Professor Music.",
+   "en": {
+    "kicker": "american indie rock band · los angeles, 2017",
+    "who": "Cheekface is an American indie rock band based in Los Angeles, California. Its releases all come out on guitarist Greg Katz's own label, New Professor Music.",
+    "facts": [
+     "Formed in 2017, the group consists of guitarist and lead vocalist Greg Katz, bassist Amanda Tannen and drummer Mark Edwards.",
+     "Cheekface has released six studio albums, five EPs and one live album."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische indie-rockband · los angeles, 2017",
+    "who": "Cheekface ist eine amerikanische Indie-Rockband aus Los Angeles, Kalifornien. Alle Veröffentlichungen erscheinen auf dem eigenen Label von Gitarrist Greg Katz, New Professor Music.",
+    "facts": [
+     "Seit 2017 besteht die Gruppe aus Greg Katz, Amanda Tannen und Mark Edwards.",
+     "Cheekface hat sechs Studioalben, fünf EPs und ein Livealbum veröffentlicht."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı indie rock grubu · los angeles, 2017",
+    "who": "Cheekface, Los Angeles, California merkezli bir Amerikan indie rock grubudur. Tüm yayınları gitarist Greg Katz'ın kendi plak şirketi New Professor Music'te çıkıyor.",
+    "facts": [
+     "Grup 2017'de kuruldu; gitarist ve baş vokalist Greg Katz, basçı ve vokalist Amanda Tannen ve davulcu Mark Edwards'tan oluşuyor.",
+     "Cheekface altı stüdyo albümü, beş EP ve bir canlı albüm yayımladı."
+    ]
+   }
+  },
+  {
+   "id": "0f2c09aa-5c96-4637-bb49-2bd25021a479",
+   "slug": "the-fray-autumn-light-tour-8c3fb62c",
+   "title": "The Fray - Autumn Light Tour",
+   "name": "The Fray",
+   "source_url": "https://en.wikipedia.org/wiki/The_Fray",
+   "extract": "The Fray is an American rock band from Denver, Colorado, formed in 2002 by schoolmates Isaac Slade and Joe King. Their debut studio album, How to Save a Life (2005) was released by Epic Records and received quadruple platinum certification by the Recording Industry Association of America (RIAA), as well as platinum certification in Australia, Canada, New Zealand and the United Kingdom. Its release was supported by their first hit single, \"Over My Head \", which peaked at number eight on the Billboard Hot 100. The band saw their furthest success with the song's follow-up, \"How to Save a Life\", which peaked at number three on the chart and was also a hit in Australia, Canada, Ireland, Italy, Sp",
+   "en": {
+    "kicker": "american rock band · denver, 2002",
+    "who": "The Fray is an American rock band from Denver, Colorado, formed in 2002 by schoolmates Isaac Slade and Joe King. Their debut album, How to Save a Life, received quadruple platinum certification in the United States.",
+    "facts": [
+     "The band was formed in 2002 by schoolmates Isaac Slade and Joe King.",
+     "Their single How to Save a Life peaked at number three on the chart."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · denver, 2002",
+    "who": "The Fray ist eine amerikanische Rockband aus Denver, Colorado, die 2002 von den Schulfreunden Isaac Slade und Joe King gegründet wurde. Ihr Debütalbum How to Save a Life erhielt in den USA vierfachen Platin-Status.",
+    "facts": [
+     "Die Band wurde 2002 von den Schulfreunden Isaac Slade und Joe King gegründet.",
+     "Ihre Single How to Save a Life erreichte Platz drei der Charts."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · denver, 2002",
+    "who": "The Fray, Denver, Colorado'dan bir Amerikan rock grubudur ve 2002'de okul arkadaşları Isaac Slade ile Joe King tarafından kuruldu. Debut albümü How to Save a Life, ABD'de dört kat platin sertifika aldı.",
+    "facts": [
+     "Grup 2002'de okul arkadaşları Isaac Slade ve Joe King tarafından kuruldu.",
+     "How to Save a Life single'ı listede üçüncü sıraya ulaştı."
+    ]
+   }
+  },
+  {
+   "id": "7351b4f3-f242-4f58-b5cd-4086022ea4fb",
+   "slug": "eagles-of-death-metal-4a176ba5",
+   "title": "Eagles of Death Metal",
+   "name": "Eagles of Death Metal",
+   "source_url": "https://en.wikipedia.org/wiki/Eagles_of_Death_Metal",
+   "extract": "Eagles of Death Metal is an American rock band from Palm Desert, California, formed in 1998. Founded by Jesse Hughes and Josh Homme (drums), the band includes a wide range of other musicians who perform both on the band's studio albums and at live shows.",
+   "en": {
+    "kicker": "american rock band · palm desert, 1998",
+    "who": "Eagles of Death Metal is an American rock band from Palm Desert, California, founded by Jesse Hughes and Josh Homme, who plays drums.",
+    "facts": [
+     "The band was formed in 1998 in Palm Desert, California.",
+     "A wide range of other musicians perform on its studio albums and at live shows."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · palm desert, 1998",
+    "who": "Eagles of Death Metal ist eine amerikanische Rockband aus Palm Desert, Kalifornien, gegründet von Jesse Hughes und Josh Homme, der am Schlagzeug sitzt.",
+    "facts": [
+     "Die Band entstand 1998 in Palm Desert, Kalifornien.",
+     "Neben den Gründern spielen viele weitere Musiker auf den Studioalben und bei Live-Auftritten."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · palm desert, 1998",
+    "who": "Eagles of Death Metal, Kaliforniya'nın Palm Desert kentinden bir Amerikan rock grubudur. Grubu Jesse Hughes ve davulda yer alan Josh Homme kurdu.",
+    "facts": [
+     "Grup 1998'de Palm Desert, Kaliforniya'da kuruldu.",
+     "Stüdyo albümlerinde ve canlı performanslarda çok sayıda başka müzisyen de yer alıyor."
+    ]
+   }
+  },
+  {
+   "id": "11e65984-f362-4c58-8e38-b8062ab3d77f",
+   "slug": "richard-shindell-8bcd80e0",
+   "title": "Richard Shindell",
+   "name": "Richard Shindell",
+   "source_url": "https://en.wikipedia.org/wiki/Richard_Shindell",
+   "extract": "Richard Shindell is an American folk singer, songwriter, producer, and musician. Shindell grew up in Port Washington, New York, and now lives in Buenos Aires, Argentina, with his wife, Lila Caimari, a university professor, and their children.",
+   "en": {
+    "kicker": "american folk singer and songwriter",
+    "who": "Richard Shindell is an American folk singer, songwriter, producer and musician. He grew up in Port Washington, New York, and now lives in Buenos Aires, Argentina.",
+    "facts": [
+     "Shindell is an American folk singer, songwriter, producer, and musician.",
+     "He lives in Buenos Aires, Argentina, with his wife, Lila Caimari, a university professor."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer folksänger und songwriter",
+    "who": "Richard Shindell wuchs in Port Washington im Bundesstaat New York auf. Heute lebt er in Buenos Aires in Argentinien.",
+    "facts": [
+     "Richard Shindell ist ein amerikanischer Folksänger, Songwriter, Produzent und Musiker.",
+     "Er lebt in Buenos Aires mit seiner Frau Lila Caimari, einer Universitätsprofessorin, und den gemeinsamen Kindern."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı folk şarkıcısı ve söz yazarı",
+    "who": "Richard Shindell, New York'un Port Washington kentinde büyüdü. Bugün Arjantin'in Buenos Aires kentinde yaşıyor.",
+    "facts": [
+     "Richard Shindell bir Amerikalı folk şarkıcısı, söz yazarı, yapımcı ve müzisyendir.",
+     "Buenos Aires'te eşi Lila Caimari, üniversite öğretim üyesi, ve çocuklarıyla birlikte yaşıyor."
+    ]
+   }
+  },
+  {
+   "id": "38ded548-39fb-4017-95b4-f53ae98eb009",
+   "slug": "chloe-slater-54af66a5",
+   "title": "Chloe Slater",
+   "name": "Chloe Slater",
+   "source_url": "https://en.wikipedia.org/wiki/Chloe_Slater",
+   "extract": "Chloe Leanne Slater is an English singer-songwriter based in Manchester. Writing about social and political issues, she has been releasing music since 2023 and has issued two extended plays: You Can't Put a Price on Fun, and Love Me Please.",
+   "en": {
+    "kicker": "english singer-songwriter · manchester",
+    "who": "Chloe Slater is an English singer-songwriter based in Manchester. Her songs address social and political issues.",
+    "facts": [
+     "She has been releasing music since 2023.",
+     "She has issued two extended plays, You Can't Put a Price on Fun and Love Me Please."
+    ]
+   },
+   "de": {
+    "kicker": "englische singer-songwriterin · manchester",
+    "who": "Chloe Slater ist eine englische Singer-Songwriterin aus Manchester. Ihre Texte handeln von sozialen und politischen Themen.",
+    "facts": [
+     "Sie veröffentlicht seit 2023 Musik.",
+     "Bisher erschienen die EPs You Can't Put a Price on Fun und Love Me Please."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz şarkıcı-söz yazarı · manchester",
+    "who": "Chloe Slater, Manchester merkezli bir İngiliz şarkıcı ve söz yazarıdır. Şarkılarında sosyal ve siyasi konuları işliyor.",
+    "facts": [
+     "2023'ten beri müzik yayımlıyor.",
+     "İki EP'si var: You Can't Put a Price on Fun ve Love Me Please."
+    ]
+   }
+  }
+ ]
+}

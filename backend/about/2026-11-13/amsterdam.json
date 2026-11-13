@@ -1,0 +1,102 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "2c1a8f02-964e-4361-b21f-e65481e0c2a3",
+   "slug": "wasia-project-dfb80c2e",
+   "title": "Wasia Project",
+   "name": "Wasia Project",
+   "source_url": "https://en.wikipedia.org/wiki/Wasia_Project",
+   "extract": "Wasia Project is an English indie pop band consisting of siblings Olivia Hardy and William Gao. The group released their debut single, \"Why Don't U Love Me,\" in 2019. This was followed by their debut extended play (EP) How Can I Pretend? in 2022. In August 2024, they released their second extended play (EP), Isotope. On stage, they are often joined by drummer Nate Wicks, bassist Tom Pacitti, saxophonist Safi Jazz, and trombonist Patrick Minton.",
+   "en": {
+    "kicker": "english indie pop band · debut single 2019",
+    "who": "Wasia Project is an English indie pop band made up of siblings Olivia Hardy and William Gao. On stage they are often joined by a drummer, a bassist, a saxophonist and a trombonist.",
+    "facts": [
+     "The group released their debut single, \"Why Don't U Love Me,\" in 2019.",
+     "In August 2024, they released their second extended play, Isotope."
+    ]
+   },
+   "de": {
+    "kicker": "englische indie-popband · debütsingle 2019",
+    "who": "Wasia Project ist eine englische Indie-Popband aus den Geschwistern Olivia Hardy und William Gao. Live werden sie oft von einem Schlagzeuger, einem Bassisten, einem Saxofonisten und einem Posaunisten begleitet.",
+    "facts": [
+     "Die Gruppe veröffentlichte 2019 ihre Debütsingle „Why Don't U Love Me“.",
+     "Im August 2024 erschien ihre zweite EP Isotope."
+    ]
+   },
+   "tr": {
+    "kicker": "ingiliz indie pop grubu · 2019 ilk single'ı",
+    "who": "Wasia Project, kardeşler Olivia Hardy ve William Gao'dan oluşan bir İngiliz indie pop grubudur. Sahnede çoğunlukla davulcu, basçı, saksofoncu ve trombonist eşlik eder.",
+    "facts": [
+     "Grup ilk single'ı \"Why Don't U Love Me\"yi 2019'da yayımladı.",
+     "Ağustos 2024'te ikinci EP'leri Isotope'u yayımladılar."
+    ]
+   }
+  },
+  {
+   "id": "52fb9bc6-8302-4da7-a27c-f7628c085485",
+   "slug": "the-pretty-reckless-dear-god-tour-c81d834f",
+   "title": "The Pretty Reckless: Dear God Tour",
+   "name": "The Pretty Reckless",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pretty_Reckless",
+   "extract": "The Pretty Reckless is an American rock band from New York City, formed in 2009. The band consists of Taylor Momsen, Ben Phillips, Mark Damon (bass), and Jamie Perkins (drums). In August 2010, the band released their debut studio album, Light Me Up. The album spawned three moderately successful singles, most notably \"Make Me Wanna Die\". The band released the Hit Me Like a Man EP in early 2012. In March 2014, the band released their second studio album, Going to Hell, which included the singles \"Heaven Knows\" and \"Messed Up World \", both of which topped the US and UK rock charts.",
+   "en": {
+    "kicker": "american rock band · new york city, 2009",
+    "who": "The Pretty Reckless is an American rock band from New York City, formed in 2009. The band consists of Taylor Momsen, Ben Phillips, Mark Damon on bass and Jamie Perkins on drums.",
+    "facts": [
+     "In August 2010, the band released their debut studio album, Light Me Up.",
+     "In March 2014, the band released their second studio album, Going to Hell."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · new york city, 2009",
+    "who": "The Pretty Reckless ist eine amerikanische Rockband aus New York City, gegründet 2009. Zur Band gehören Taylor Momsen, Ben Phillips, Mark Damon am Bass und Jamie Perkins am Schlagzeug.",
+    "facts": [
+     "Im August 2010 veröffentlichte die Band ihr Debütalbum Light Me Up.",
+     "Im März 2014 erschien mit Going to Hell ihr zweites Studioalbum."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · new york, 2009",
+    "who": "The Pretty Reckless, 2009'da kurulmuş, New York City'den bir Amerikan rock grubudur. Grupta Taylor Momsen, Ben Phillips, Mark Damon (bas) ve Jamie Perkins (davul) yer alıyor.",
+    "facts": [
+     "Grup Ağustos 2010'da ilk stüdyo albümü Light Me Up'ı yayımladı.",
+     "Mart 2014'te ikinci stüdyo albümü Going to Hell çıktı."
+    ]
+   }
+  },
+  {
+   "id": "7ff4424f-dede-43c3-888c-326025a2db2f",
+   "slug": "the-pretty-reckless-premium-seats-c2ebacca",
+   "title": "The Pretty Reckless | Premium Seats",
+   "name": "The Pretty Reckless",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pretty_Reckless",
+   "extract": "The Pretty Reckless is an American rock band from New York City, formed in 2009. The band consists of Taylor Momsen, Ben Phillips, Mark Damon (bass), and Jamie Perkins (drums). In August 2010, the band released their debut studio album, Light Me Up. The album spawned three moderately successful singles, most notably \"Make Me Wanna Die\". The band released the Hit Me Like a Man EP in early 2012. In March 2014, the band released their second studio album, Going to Hell, which included the singles \"Heaven Knows\" and \"Messed Up World \", both of which topped the US and UK rock charts.",
+   "en": {
+    "kicker": "american rock band · new york city, 2009",
+    "who": "The Pretty Reckless is an American rock band from New York City, formed in 2009. The band consists of Taylor Momsen, Ben Phillips, Mark Damon on bass and Jamie Perkins on drums.",
+    "facts": [
+     "In August 2010, the band released their debut studio album, Light Me Up.",
+     "In March 2014, the band released their second studio album, Going to Hell."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · new york city, 2009",
+    "who": "The Pretty Reckless ist eine amerikanische Rockband aus New York City, gegründet 2009. Zur Band gehören Taylor Momsen, Ben Phillips, Mark Damon am Bass und Jamie Perkins am Schlagzeug.",
+    "facts": [
+     "Im August 2010 veröffentlichte die Band ihr Debütalbum Light Me Up.",
+     "Im März 2014 erschien mit Going to Hell ihr zweites Studioalbum."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · new york, 2009",
+    "who": "The Pretty Reckless, 2009'da kurulmuş, New York City'den bir Amerikan rock grubudur. Grupta Taylor Momsen, Ben Phillips, Mark Damon (bas) ve Jamie Perkins (davul) yer alıyor.",
+    "facts": [
+     "Grup Ağustos 2010'da ilk stüdyo albümü Light Me Up'ı yayımladı.",
+     "Mart 2014'te ikinci stüdyo albümü Going to Hell çıktı."
+    ]
+   }
+  }
+ ]
+}

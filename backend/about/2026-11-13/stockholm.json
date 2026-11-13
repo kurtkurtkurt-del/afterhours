@@ -1,0 +1,38 @@
+{
+ "city": "stockholm",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "c652f925-d8fb-4e56-8162-aa1be2b9c2f4",
+   "slug": "ugly-kid-joe-65acb393",
+   "title": "Ugly Kid Joe",
+   "name": "Ugly Kid Joe",
+   "source_url": "https://en.wikipedia.org/wiki/Ugly_Kid_Joe",
+   "extract": "Ugly Kid Joe is an American hard rock band from Isla Vista, California, formed in 1989. The band's name spoofs the glam metal band Pretty Boy Floyd's name.",
+   "en": {
+    "kicker": "american hard rock band · 1989",
+    "who": "Ugly Kid Joe is an American hard rock band from Isla Vista, California. Its name is a spoof of the glam metal band Pretty Boy Floyd.",
+    "facts": [
+     "The band was formed in 1989 and comes from Isla Vista, California.",
+     "Its name spoofs the name of the glam metal band Pretty Boy Floyd."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische hard-rock-band · 1989",
+    "who": "Ugly Kid Joe ist eine amerikanische Hard-Rock-Band aus Isla Vista, Kalifornien. Ihr Name ist eine Parodie auf die Glam-Metal-Band Pretty Boy Floyd.",
+    "facts": [
+     "Die Band wurde 1989 gegründet und stammt aus Isla Vista, Kalifornien.",
+     "Ihr Name parodiert den Namen der Glam-Metal-Band Pretty Boy Floyd."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı hard rock grubu · 1989",
+    "who": "Ugly Kid Joe, Kaliforniya'nın Isla Vista kentinden bir Amerikan hard rock grubudur. Adı, glam metal grubu Pretty Boy Floyd'un adıyla dalga geçer.",
+    "facts": [
+     "Grup 1989'da kuruldu ve Kaliforniya'nın Isla Vista kentinden geliyor.",
+     "Adı, glam metal grubu Pretty Boy Floyd'un adını parodi eder."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "14610b9a-ceff-4b75-a035-8a689f9be140",
+   "slug": "triples-1e218266",
+   "title": "tripleS",
+   "name": "TripleS",
+   "source_url": "https://en.wikipedia.org/wiki/TripleS",
+   "extract": "TripleS is a South Korean 24-member multinational girl group formed by Modhaus. They aim to be the world's first idol group, where the members will rotate between the full group, sub-units, and solo activities, as chosen by fans. Fans are able to participate and communicate with the group, such as deciding the sub-units and the content through NFT photo cards called \"Objekts\".",
+   "en": {
+    "kicker": "south korean girl group · 24 members",
+    "who": "TripleS is a South Korean multinational girl group formed by Modhaus, with 24 members. It aims to be the world's first idol group, where fans help choose the activities.",
+    "facts": [
+     "The group rotates its members between the full group, sub-units and solo activities.",
+     "Fans take part through NFT photo cards called Objekts."
+    ]
+   },
+   "de": {
+    "kicker": "südkoreanische mädchengruppe · 24 mitglieder",
+    "who": "TripleS ist eine südkoreanische, multinationale Mädchengruppe mit 24 Mitgliedern, die von Modhaus gegründet wurde. Die Gruppe will die erste Idol-Gruppe der Welt sein, in der Fans mitentscheiden.",
+    "facts": [
+     "Die Mitglieder wechseln zwischen Gesamtgruppe, Subunits und Solo-Aktivitäten.",
+     "Fans beteiligen sich über NFT-Fotokarten namens Objekts."
+    ]
+   },
+   "tr": {
+    "kicker": "güney koreli kız grubu · 24 üye",
+    "who": "TripleS, Modhaus tarafından kurulmuş, 24 üyeli çok uluslu bir Güney Kore kız grubudur. Dünyanın ilk idol grubu olmayı hedefliyor; hayranlar faaliyetlerin belirlenmesine katılabiliyor.",
+    "facts": [
+     "Üyeler tam grup, alt gruplar ve solo faaliyetler arasında dönüşümlü olarak yer alıyor.",
+     "Hayranlar NFT fotoğraf kartları olan Objekts aracılığıyla katılıyor."
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "city": "las-vegas",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "95441716-beb1-4db8-8908-39aa608646ac",
+   "slug": "barry-manilow-7b7f33c5",
+   "title": "Barry Manilow",
+   "name": "Barry Manilow",
+   "source_url": "https://en.wikipedia.org/wiki/Barry_Manilow",
+   "extract": "Barry Manilow is an American singer, songwriter and record producer with a career spanning over 60 years. His hit recordings include \"Mandy\", \"Could It Be Magic\", \"I Write the Songs\", \"Weekend in New England\", \"Looks Like We Made It\", \"Can't Smile Without You\", \"Copacabana \", and \"Ready to Take a Chance Again\".",
+   "en": {
+    "kicker": "american singer, songwriter and producer · 60 years",
+    "who": "Barry Manilow is an American singer, songwriter and record producer. His hit recordings include Mandy, Could It Be Magic and I Write the Songs.",
+    "facts": [
+     "His career has spanned over 60 years.",
+     "His hits include Copacabana and Ready to Take a Chance Again."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer sänger, songwriter und produzent",
+    "who": "Barry Manilow ist ein amerikanischer Sänger, Songwriter und Musikproduzent. Zu seinen Hitaufnahmen zählen Mandy, Could It Be Magic und I Write the Songs.",
+    "facts": [
+     "Seine Karriere umspannt über 60 Jahre.",
+     "Zu seinen Hits gehören Copacabana und Ready to Take a Chance Again."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı şarkıcı, söz yazarı ve yapımcı · 60 yıl",
+    "who": "Barry Manilow, Amerikalı bir şarkıcı, söz yazarı ve plak yapımcısıdır. Hit kayıtları arasında Mandy, Could It Be Magic ve I Write the Songs yer alıyor.",
+    "facts": [
+     "Kariyeri 60 yılı aşkın bir süreye yayılıyor.",
+     "Hitleri arasında Copacabana ve Ready to Take a Chance Again da var."
+    ]
+   }
+  },
+  {
+   "id": "8ba3ae3c-4a0a-49a1-97ca-0256869b22f9",
+   "slug": "pedro-fernandez-ave-fenix-two-r-15a1e9a7",
+   "title": "Pedro Fernández - Ave Fénix Two'r",
+   "name": "Pedro Fernández",
+   "source_url": "https://en.wikipedia.org/wiki/Pedro_Fern%C3%A1ndez_(singer)",
+   "extract": "José Martín Cuevas Cobos, known by his stage name Pedro Fernández, is a Mexican singer, songwriter, actor, and television host. Fernández began his international career as Pedrito Fernández at the age of seven. In the 1980s, he turned to be known as a scream king, thanks to his horror film starring roles in films such as Vacaciones de terror (1989), Pánico en la montaña (1989) and Trampa Infernal (1989).",
+   "en": {
+    "kicker": "mexican singer, songwriter and actor",
+    "who": "Pedro Fernández, born José Martín Cuevas Cobos, is a Mexican singer, songwriter, actor and television host. He began his international career as Pedrito Fernández at the age of seven.",
+    "facts": [
+     "In the 1980s he became known as a scream king in horror films.",
+     "His starring roles include Vacaciones de terror (1989) and Pánico en la montaña (1989)."
+    ]
+   },
+   "de": {
+    "kicker": "mexikanischer sänger, songwriter und schauspieler",
+    "who": "Pedro Fernández, bürgerlich José Martín Cuevas Cobos, ist ein mexikanischer Sänger, Songwriter, Schauspieler und Fernsehmoderator. Seine internationale Karriere begann er als Pedrito Fernández im Alter von sieben Jahren.",
+    "facts": [
+     "In den 1980er-Jahren wurde er in Horrorfilmen als Scream King bekannt.",
+     "Zu seinen Hauptrollen gehörten Vacaciones de terror (1989) und Pánico en la montaña (1989)."
+    ]
+   },
+   "tr": {
+    "kicker": "meksikalı şarkıcı, söz yazarı ve oyuncu",
+    "who": "Asıl adı José Martín Cuevas Cobos olan Pedro Fernández, Meksikalı bir şarkıcı, söz yazarı, oyuncu ve televizyon sunucusudur. Uluslararası kariyerine yedi yaşında Pedrito Fernández adıyla başladı.",
+    "facts": [
+     "1980'lerde korku filmleriyle \"scream king\" olarak tanındı.",
+     "Vacaciones de terror (1989) ve Pánico en la montaña (1989) filmlerinde başrol oynadı."
+    ]
+   }
+  }
+ ]
+}

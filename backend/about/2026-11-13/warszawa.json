@@ -1,0 +1,38 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "d44a700c-ae10-4737-9d78-3d83c98e6c4c",
+   "slug": "dzem-594a0f8f",
+   "title": "Dżem",
+   "name": "Dżem",
+   "source_url": "https://en.wikipedia.org/wiki/D%C5%BCem",
+   "extract": "Dżem is a blues rock band formed in Tychy, Poland. Ryszard Riedel, one of the most famous vocalists from Poland, worked with the band. Their songs include: \"Czerwony jak cegła\", \"Whisky\", \"Wehikuł czasu\", \"Sen o Victorii\", \"Harley mój\", \"Mała aleja róż\", \"Naiwne pytania\", \"List do M.\" and many more. They were the back-up band for Eric Clapton's concert in Gdynia on 14 August 2008.",
+   "en": {
+    "kicker": "polish blues rock band · tychy",
+    "who": "Dżem is a Polish blues rock band formed in Tychy. Ryszard Riedel, one of the most famous vocalists from Poland, worked with the band.",
+    "facts": [
+     "The band was formed in Tychy, Poland.",
+     "Dżem was the back-up band for Eric Clapton's concert in Gdynia on 14 August 2008."
+    ]
+   },
+   "de": {
+    "kicker": "polnische bluesrock-band · tychy",
+    "who": "Dżem ist eine polnische Bluesrock-Band, die in Tychy gegründet wurde. Mit der Band arbeitete unter anderem der Sänger Ryszard Riedel, einer der bekanntesten Vokalisten Polens.",
+    "facts": [
+     "Die Band entstand in Tychy, Polen.",
+     "Dżem war am 14. August 2008 die Begleitband bei Eric Claptons Konzert in Gdynia."
+    ]
+   },
+   "tr": {
+    "kicker": "polonyalı blues rock grubu · tychy",
+    "who": "Dżem, Tychy'de kurulmuş bir Polonya blues rock grubudur. Polonya'nın en ünlü vokalistlerinden Ryszard Riedel de grupla çalıştı.",
+    "facts": [
+     "Grup Tychy, Polonya'da kuruldu.",
+     "14 Ağustos 2008'de Gdynia'daki Eric Clapton konserinde yedek grup olarak sahne aldılar."
+    ]
+   }
+  }
+ ]
+}

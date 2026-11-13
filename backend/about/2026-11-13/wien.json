@@ -1,0 +1,38 @@
+{
+ "city": "wien",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "ea1b995d-8251-49b3-a724-ccd19ce6e57e",
+   "slug": "call-it-off-c8c8a5ec",
+   "title": "Call It Off",
+   "name": "Call It Off",
+   "source_url": "https://en.wikipedia.org/wiki/Call_It_Off_(band)",
+   "extract": "Call It Off is a Dutch pop punk band formed in Eindhoven, Netherlands, in 2013. The band was founded by guitarist and vocalist Maurice Bolier, guitarist and vocalist Adrian DeLange, bassist Lesley Klaverdijk, and drummer Sergei Christian. Today, Bolier and Christian still play with the band, while DeLange and Klaverdijk have departed. The band has released three EPs, two albums, and eight singles.",
+   "en": {
+    "kicker": "dutch pop punk band · eindhoven, 2013",
+    "who": "Call It Off is a Dutch pop punk band formed in Eindhoven, Netherlands, in 2013. Maurice Bolier and Sergei Christian still play with the band.",
+    "facts": [
+     "The band has released three EPs, two albums and eight singles.",
+     "The band was founded by Maurice Bolier, Adrian DeLange, Lesley Klaverdijk and Sergei Christian."
+    ]
+   },
+   "de": {
+    "kicker": "niederländische pop-punk-band · eindhoven, 2013",
+    "who": "Call It Off ist eine niederländische Pop-Punk-Band, die 2013 in Eindhoven gegründet wurde. Maurice Bolier und Sergei Christian spielen bis heute in der Band.",
+    "facts": [
+     "Die Band hat drei EPs, zwei Alben und acht Singles veröffentlicht.",
+     "Gegründet wurde sie von Maurice Bolier, Adrian DeLange, Lesley Klaverdijk und Sergei Christian."
+    ]
+   },
+   "tr": {
+    "kicker": "hollandalı pop punk grubu · eindhoven, 2013",
+    "who": "Call It Off, 2013'te Eindhoven, Hollanda'da kurulmuş bir Hollandalı pop punk grubudur. Maurice Bolier ve Sergei Christian bugün de grupta çalmaya devam ediyor.",
+    "facts": [
+     "Grup üç EP, iki albüm ve sekiz single yayımladı.",
+     "Grubu Maurice Bolier, Adrian DeLange, Lesley Klaverdijk ve Sergei Christian kurdu."
+    ]
+   }
+  }
+ ]
+}

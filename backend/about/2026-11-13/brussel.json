@@ -1,0 +1,38 @@
+{
+ "city": "brussel",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "1f7ca969-fa3e-45b8-b13f-6512800b6825",
+   "slug": "masego-fix-your-face-tour-34ffff60",
+   "title": "Masego - Fix Your Face Tour",
+   "name": "Masego",
+   "source_url": "https://en.wikipedia.org/wiki/Masego_(musician)",
+   "extract": "Micah Davis, known professionally as Masego, is a Jamaican and American musician and singer, known for incorporating the saxophone into his music. Masego released two EPs in 2016, The Pink Polo EP with Medasin, and Loose Thoughts. He gained widespread attention with his collaborative record with FKJ called \"Tadow\" released in 2017. In 2018, he released his debut album Lady Lady. His album Studying Abroad: Extended Stay was nominated for the 2022 Grammy Awards in the \"Best Progressive R&B Album\" category.",
+   "en": {
+    "kicker": "jamaican-american musician · saxophone",
+    "who": "Masego, real name Micah Davis, is a Jamaican and American musician and singer known for incorporating the saxophone into his music. He gained widespread attention with Tadow, his collaboration with FKJ.",
+    "facts": [
+     "His debut album, Lady Lady, came out in 2018.",
+     "His album Studying Abroad: Extended Stay was nominated for the 2022 Grammy Awards."
+    ]
+   },
+   "de": {
+    "kicker": "jamaikanisch-amerikanischer musiker · saxofon",
+    "who": "Masego, bürgerlich Micah Davis, ist ein jamaikanisch-amerikanischer Musiker und Sänger, der das Saxofon in seine Musik einbaut. Großes Aufsehen erregte er mit Tadow, seiner Zusammenarbeit mit FKJ.",
+    "facts": [
+     "Sein Debütalbum Lady Lady erschien 2018.",
+     "Sein Album Studying Abroad: Extended Stay war für die Grammys 2022 nominiert."
+    ]
+   },
+   "tr": {
+    "kicker": "jamaikalı-amerikalı müzisyen · saksafon",
+    "who": "Asıl adı Micah Davis olan Masego, Jamaikalı ve Amerikalı bir müzisyen ve şarkıcıdır; saksofonu müziğine dahil etmesiyle tanınır. FKJ ile birlikte yaptığı Tadow ile geniş ilgi gördü.",
+    "facts": [
+     "Debut albümü Lady Lady 2018'de çıktı.",
+     "Studying Abroad: Extended Stay albümü 2022 Grammy Ödülleri'ne aday gösterildi."
+    ]
+   }
+  }
+ ]
+}

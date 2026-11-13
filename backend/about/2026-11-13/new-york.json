@@ -1,0 +1,70 @@
+{
+ "city": "new-york",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "f749658e-3eac-4a8f-be99-00ee5d011512",
+   "slug": "buena-vista-social-club-1aec7b02",
+   "title": "Buena Vista Social Club",
+   "name": "Buena Vista Social Club",
+   "source_url": "https://en.wikipedia.org/wiki/Buena_Vista_Social_Club",
+   "extract": "Buena Vista Social Club was a musical ensemble primarily made up of Cuban musicians, formed in 1996. The project was organized by World Circuit executive Nick Gold, produced by American guitarist Ry Cooder and directed by Juan de Marcos González. They named the group after the members' club of the same name in the Buenavista quarter of Havana, a popular music venue in the 1940s. To showcase the popular styles of the time, such as son, bolero and danzón, they recruited a dozen veteran musicians, some of whom had been retired for many years.",
+   "en": {
+    "kicker": "cuban musical ensemble · formed 1996",
+    "who": "Buena Vista Social Club was a musical ensemble made up mainly of Cuban musicians, formed in 1996. The project was organized by Nick Gold of World Circuit.",
+    "facts": [
+     "The project was produced by guitarist Ry Cooder.",
+     "They recruited a dozen veteran musicians to showcase styles such as son, bolero and danzón."
+    ]
+   },
+   "de": {
+    "kicker": "kubanisches musikensemble · gegründet 1996",
+    "who": "Buena Vista Social Club war ein Musikensemble, das vor allem aus kubanischen Musikern bestand und 1996 gegründet wurde. Das Projekt wurde von Nick Gold von World Circuit organisiert.",
+    "facts": [
+     "Das Projekt wurde vom Gitarristen Ry Cooder produziert.",
+     "Zwölf erfahrene Musiker wurden angeworben, um Stile wie Son, Bolero und Danzón zu präsentieren."
+    ]
+   },
+   "tr": {
+    "kicker": "küba müzik topluluğu · 1996",
+    "who": "Buena Vista Social Club, ağırlıklı olarak Kübalı müzisyenlerden oluşan ve 1996'da kurulan bir müzik topluluğudur. Proje World Circuit yöneticisi Nick Gold tarafından organize edildi.",
+    "facts": [
+     "Proje gitarist Ry Cooder tarafından üretildi.",
+     "Son, bolero ve danzón gibi tarzları sergilemek için on iki deneyimli müzisyen davet edildi."
+    ]
+   }
+  },
+  {
+   "id": "3220938a-1125-496d-a4be-8aa5afc6357a",
+   "slug": "dave-matthews-band-748769be",
+   "title": "Dave Matthews Band",
+   "name": "Dave Matthews Band",
+   "source_url": "https://en.wikipedia.org/wiki/Dave_Matthews_Band",
+   "extract": "Dave Matthews Band is an American rock band formed in Charlottesville, Virginia, in 1991. The band's founding members are singer-songwriter and guitarist Dave Matthews, bassist Stefan Lessard, drummer and backing vocalist Carter Beauford, violinist and backing vocalist Boyd Tinsley, and saxophonist LeRoi Moore. As of 2026, Matthews, Lessard, and Beauford are the only remaining founding members.",
+   "en": {
+    "kicker": "american rock band · charlottesville, 1991",
+    "who": "Dave Matthews Band is an American rock band formed in Charlottesville, Virginia. Its founders included violinist Boyd Tinsley and saxophonist LeRoi Moore.",
+    "facts": [
+     "The band was formed in Charlottesville, Virginia, in 1991.",
+     "As of 2026, Matthews, Lessard and Beauford are the only remaining founding members."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische rockband · charlottesville, 1991",
+    "who": "Dave Matthews Band ist eine amerikanische Rockband aus Charlottesville, Virginia. Zu den Gründungsmitgliedern gehörten der Geiger Boyd Tinsley und der Saxofonist LeRoi Moore.",
+    "facts": [
+     "Die Band wurde 1991 in Charlottesville, Virginia, gegründet.",
+     "Stand 2026 sind Matthews, Lessard und Beauford die einzigen verbliebenen Gründungsmitglieder."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı rock grubu · charlottesville, 1991",
+    "who": "Dave Matthews Band, Virginia'nın Charlottesville kentinde kurulmuş bir Amerikan rock grubudur. Kurucu üyeleri arasında keman çalan Boyd Tinsley ve saksofoncu LeRoi Moore de vardı.",
+    "facts": [
+     "Grup 1991'de Charlottesville, Virginia'da kuruldu.",
+     "2026 itibarıyla Matthews, Lessard ve Beauford kalan tek kurucu üyeler."
+    ]
+   }
+  }
+ ]
+}

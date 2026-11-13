@@ -1,0 +1,38 @@
+{
+ "city": "monterrey",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "7e1c9c60-a3eb-4ccc-92eb-bb222516762c",
+   "slug": "david-bisbal-tour-eternos-2026-suites-479630c6",
+   "title": "David Bisbal Tour Eternos 2026***SUITES***",
+   "name": "David Bisbal",
+   "source_url": "https://en.wikipedia.org/wiki/David_Bisbal",
+   "extract": "David Bisbal Ferre is a Spanish singer and actor. He gained his initial fame as the runner-up on the first edition of the reality television talent show Operación Triunfo.",
+   "en": {
+    "kicker": "spanish singer and actor · operación triunfo",
+    "who": "David Bisbal Ferre is a Spanish singer and actor. He first became known as the runner-up on the first edition of the talent show Operación Triunfo.",
+    "facts": [
+     "He was runner-up on the first edition of Operación Triunfo.",
+     "He is a Spanish singer and actor."
+    ]
+   },
+   "de": {
+    "kicker": "spanischer sänger und schauspieler",
+    "who": "David Bisbal Ferre ist ein spanischer Sänger und Schauspieler. Seinen Durchbruch erlebte er als Zweitplatzierter der ersten Staffel der Castingshow Operación Triunfo.",
+    "facts": [
+     "Er wurde Zweiter der ersten Staffel von Operación Triunfo.",
+     "Er arbeitet als Sänger und Schauspieler."
+    ]
+   },
+   "tr": {
+    "kicker": "ispanyol şarkıcı ve oyuncu · operación triunfo",
+    "who": "David Bisbal Ferre, İspanyol bir şarkıcı ve oyuncudur. İlk ününü, gerçeklik yarışması Operación Triunfo'nun ilk sezonunda ikinci olmasıyla kazandı.",
+    "facts": [
+     "Operación Triunfo'nun ilk sezonunda ikinci oldu.",
+     "İspanyol bir şarkıcı ve oyuncudur."
+    ]
+   }
+  }
+ ]
+}

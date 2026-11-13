@@ -1,0 +1,70 @@
+{
+ "city": "washington",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "e546622b-f638-4536-831d-b92091d0d083",
+   "slug": "they-might-be-giants-four-night-pass-caeff168",
+   "title": "They Might Be Giants - Four Night Pass!",
+   "name": "They Might Be Giants",
+   "source_url": "https://en.wikipedia.org/wiki/They_Might_Be_Giants",
+   "extract": "They Might Be Giants, often abbreviated as TMBG, is an American alternative rock band formed in Brooklyn in 1982 by vocalist and guitarist John Flansburgh and vocalist and multi-instrumentalist John Linnell. During the band's early years, Flansburgh and Linnell frequently performed as a musical duo, often accompanied by a tape machine or a drum machine. In 1992, They Might Be Giants expanded to include a backing band. The group's current backing band consists of Danny Weinkauf, Dan Miller, and Marty Beller, and their horn section consists of Dan Levine, Stan Harrison, and Mark Pender.",
+   "en": {
+    "kicker": "american alternative rock band · brooklyn, 1982",
+    "who": "They Might Be Giants, often abbreviated as TMBG, is an American alternative rock band formed in Brooklyn in 1982. It was founded by John Flansburgh and John Linnell.",
+    "facts": [
+     "The band was formed in Brooklyn in 1982.",
+     "In 1992 the band expanded to include a backing band."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische alternative-rockband · brooklyn, 1982",
+    "who": "They Might Be Giants, kurz TMBG, ist eine amerikanische Alternative-Rockband, die 1982 in Brooklyn gegründet wurde. Gründer sind John Flansburgh und John Linnell.",
+    "facts": [
+     "Die Band entstand 1982 in Brooklyn.",
+     "1992 erweiterte sich die Band um eine Begleitband."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı alternatif rock grubu · brooklyn, 1982",
+    "who": "They Might Be Giants, kısaca TMBG, 1982'de Brooklyn'de kurulmuş bir Amerikan alternatif rock grubudur. Kurucuları John Flansburgh ve John Linnell'dir.",
+    "facts": [
+     "Grup 1982'de Brooklyn'de kuruldu.",
+     "1992'de grup, bir destek grubunu da kapsayacak şekilde genişledi."
+    ]
+   }
+  },
+  {
+   "id": "05b5bc0f-5b5a-4c2f-be60-717ba37b0ad9",
+   "slug": "they-might-be-giants-two-night-pass-11-19-and-11-95127217",
+   "title": "They Might Be Giants - Two Night Pass 11/19 & 11/20!",
+   "name": "They Might Be Giants",
+   "source_url": "https://en.wikipedia.org/wiki/They_Might_Be_Giants",
+   "extract": "They Might Be Giants, often abbreviated as TMBG, is an American alternative rock band formed in Brooklyn in 1982 by vocalist and guitarist John Flansburgh and vocalist and multi-instrumentalist John Linnell. During the band's early years, Flansburgh and Linnell frequently performed as a musical duo, often accompanied by a tape machine or a drum machine. In 1992, They Might Be Giants expanded to include a backing band. The group's current backing band consists of Danny Weinkauf, Dan Miller, and Marty Beller, and their horn section consists of Dan Levine, Stan Harrison, and Mark Pender.",
+   "en": {
+    "kicker": "american alternative rock band · brooklyn, 1982",
+    "who": "They Might Be Giants, often abbreviated as TMBG, is an American alternative rock band formed in Brooklyn in 1982. It was founded by John Flansburgh and John Linnell.",
+    "facts": [
+     "The band was formed in Brooklyn in 1982.",
+     "In 1992 the band expanded to include a backing band."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische alternative-rockband · brooklyn, 1982",
+    "who": "They Might Be Giants, kurz TMBG, ist eine amerikanische Alternative-Rockband, die 1982 in Brooklyn gegründet wurde. Gründer sind John Flansburgh und John Linnell.",
+    "facts": [
+     "Die Band entstand 1982 in Brooklyn.",
+     "1992 erweiterte sich die Band um eine Begleitband."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı alternatif rock grubu · brooklyn, 1982",
+    "who": "They Might Be Giants, kısaca TMBG, 1982'de Brooklyn'de kurulmuş bir Amerikan alternatif rock grubudur. Kurucuları John Flansburgh ve John Linnell'dir.",
+    "facts": [
+     "Grup 1982'de Brooklyn'de kuruldu.",
+     "1992'de grup, bir destek grubunu da kapsayacak şekilde genişledi."
+    ]
+   }
+  }
+ ]
+}

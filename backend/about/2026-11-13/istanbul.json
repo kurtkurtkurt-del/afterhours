@@ -1,0 +1,38 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "df9a8402-c969-4a95-b351-96f5e75c9b5b",
+   "slug": "yuzyuzeyken-konusuruz-55f89627",
+   "title": "Yüzyüzeyken Konuşuruz",
+   "name": "Yüzyüzeyken Konuşuruz",
+   "source_url": "https://en.wikipedia.org/wiki/Y%C3%BCzy%C3%BCzeyken_Konu%C5%9Furuz",
+   "extract": "Yüzyüzeyken Konuşuruz is a Turkish independent alternative rock band founded in May 2011 in Ankara, Turkey by Engin Sevik and S. Kaan Boşnak.",
+   "en": {
+    "kicker": "turkish alternative rock band · ankara, 2011",
+    "who": "Yüzyüzeyken Konuşuruz is a Turkish independent alternative rock band. It was founded in May 2011 in Ankara by Engin Sevik and S. Kaan Boşnak.",
+    "facts": [
+     "The band was founded in May 2011 in Ankara, Turkey.",
+     "Engin Sevik and S. Kaan Boşnak founded the band."
+    ]
+   },
+   "de": {
+    "kicker": "türkische alternative-rockband · ankara, 2011",
+    "who": "Yüzyüzeyken Konuşuruz ist eine türkische unabhängige Alternative-Rockband. Sie wurde im Mai 2011 in Ankara von Engin Sevik und S. Kaan Boşnak gegründet.",
+    "facts": [
+     "Die Band wurde im Mai 2011 in Ankara, Türkei, gegründet.",
+     "Engin Sevik und S. Kaan Boşnak gründeten die Band."
+    ]
+   },
+   "tr": {
+    "kicker": "türk alternatif rock grubu · ankara, 2011",
+    "who": "Yüzyüzeyken Konuşuruz, Ankara'da Mayıs 2011'de Engin Sevik ve S. Kaan Boşnak tarafından kurulmuş bağımsız bir Türk alternatif rock grubudur.",
+    "facts": [
+     "Grup Mayıs 2011'de Ankara, Türkiye'de kuruldu.",
+     "Grubu Engin Sevik ve S. Kaan Boşnak kurdu."
+    ]
+   }
+  }
+ ]
+}

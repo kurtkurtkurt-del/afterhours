@@ -1,0 +1,38 @@
+{
+ "city": "izmir",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "993ba9e2-a5fa-4ccb-9e11-6f0ff510375e",
+   "slug": "pinhani-ec9b0d76",
+   "title": "Pinhani",
+   "name": "Pinhani",
+   "source_url": "https://en.wikipedia.org/wiki/Pinhani",
+   "extract": "Pinhâni is a Turkish alternative rock band. It was founded on 5 April 2004 by two cousins Sinan Kaynakçı and Zeynep Eylül Üçer as a modern rock band in Turkey. Pinhani have released several albums. Pinhani also made the soundtrack for the Turkish TV Series 'Kavak Yelleri'.",
+   "en": {
+    "kicker": "turkish alternative rock band · 2004",
+    "who": "Pinhani is a Turkish alternative rock band founded in 2004 by two cousins, Sinan Kaynakçı and Zeynep Eylül Üçer. The band has released several albums.",
+    "facts": [
+     "It was founded on 5 April 2004.",
+     "Pinhani made the soundtrack for the Turkish TV series Kavak Yelleri."
+    ]
+   },
+   "de": {
+    "kicker": "türkische alternative-rockband · 2004",
+    "who": "Pinhani ist eine türkische Alternative-Rockband, die 2004 von zwei Cousins gegründet wurde: Sinan Kaynakçı und Zeynep Eylül Üçer. Die Band hat mehrere Alben veröffentlicht.",
+    "facts": [
+     "Die Band wurde am 5. April 2004 gegründet.",
+     "Pinhani schrieb den Soundtrack zur türkischen TV-Serie Kavak Yelleri."
+    ]
+   },
+   "tr": {
+    "kicker": "türk alternatif rock grubu · 2004",
+    "who": "Pinhani, 2004'te iki kuzen Sinan Kaynakçı ve Zeynep Eylül Üçer tarafından kurulmuş bir Türk alternatif rock grubudur. Grup birkaç albüm yayımladı.",
+    "facts": [
+     "Grup 5 Nisan 2004'te kuruldu.",
+     "Pinhani, Türk dizisi Kavak Yelleri'nin müziklerini yaptı."
+    ]
+   }
+  }
+ ]
+}

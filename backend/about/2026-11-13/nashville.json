@@ -1,0 +1,102 @@
+{
+ "city": "nashville",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "d81e9b7b-6b8c-442a-acf7-ead4b23c1566",
+   "slug": "chat-pile-who-loves-the-sun-tour-2026-cd005e92",
+   "title": "Chat Pile - Who Loves The Sun Tour 2026",
+   "name": "Chat Pile",
+   "source_url": "https://en.wikipedia.org/wiki/Chat_Pile",
+   "extract": "Chat Pile is an American noise rock/sludge metal band from Oklahoma City, Oklahoma, formed in 2019. The band is composed of four members using the pseudonyms Raygun Busch (vocals), Luther Manhole (guitar), Stin (bass), and Cap'n Ron (drums).",
+   "en": {
+    "kicker": "american noise rock band · oklahoma city, 2019",
+    "who": "Chat Pile is an American noise rock and sludge metal band from Oklahoma City, Oklahoma. Its four members perform under pseudonyms.",
+    "facts": [
+     "The band was formed in Oklahoma City in 2019.",
+     "The members use pseudonyms, including Raygun Busch, Luther Manhole, Stin and Cap'n Ron."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanische noise-rock-band · oklahoma city, 2019",
+    "who": "Chat Pile ist eine amerikanische Noise-Rock- und Sludge-Metal-Band aus Oklahoma City. Die vier Mitglieder treten unter Pseudonymen auf.",
+    "facts": [
+     "Die Band wurde 2019 in Oklahoma City gegründet.",
+     "Die Mitglieder nutzen Pseudonyme wie Raygun Busch, Luther Manhole, Stin und Cap'n Ron."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı noise rock grubu · oklahoma city, 2019",
+    "who": "Chat Pile, Oklahoma City'den bir Amerikan noise rock ve sludge metal grubudur. Dört üye takma adlarla çalıyor.",
+    "facts": [
+     "Grup 2019'da Oklahoma City'de kuruldu.",
+     "Üyeler Raygun Busch, Luther Manhole, Stin ve Cap'n Ron gibi takma adlar kullanıyor."
+    ]
+   }
+  },
+  {
+   "id": "a3dab205-3bac-4934-ada9-2f7c272554da",
+   "slug": "the-time-jumpers-3a03c7d1",
+   "title": "THE TIME JUMPERS",
+   "name": "The Time Jumpers",
+   "source_url": "https://en.wikipedia.org/wiki/The_Time_Jumpers",
+   "extract": "The Time Jumpers is a Western swing band formed in 1998 by a group of Nashville studio musicians who enjoyed jamming together. Country star Vince Gill was a member of the group between 2010 and 2020. The 11–member group started playing occasional local gigs until they agreed to take a regular slot playing at the Station Inn, a venerable Nashville bluegrass venue. They later moved to a larger venue, Nashville's \"3rd & Lindsley\", and were called by Tennessean writer Juli Thanki, \"One of the hottest shows in town\". Some of their guest artists on the weekly live show have included Joe Walsh, Robert Plant, Norah Jones, Bonnie Raitt, Reba McEntire, Jimmy Buffett, Kings of Leon, and Toby Keith. Amy",
+   "en": {
+    "kicker": "western swing band · nashville, 1998",
+    "who": "The Time Jumpers is a Western swing band formed in 1998 by a group of Nashville studio musicians. They played a regular slot at the Station Inn before moving to a larger venue.",
+    "facts": [
+     "Country star Vince Gill was a member of the group between 2010 and 2020.",
+     "The group started with occasional local gigs before taking a regular slot at the Station Inn."
+    ]
+   },
+   "de": {
+    "kicker": "western-swing-band · nashville, 1998",
+    "who": "The Time Jumpers ist eine Western-Swing-Band, die 1998 von Nashvilles Studiomusikern gegründet wurde. Anfangs spielten sie regelmäßig im Station Inn, später zog die Band in eine größere Halle.",
+    "facts": [
+     "Vince Gill gehörte der Gruppe zwischen 2010 und 2020 an.",
+     "Die Gruppe begann mit gelegentlichen Auftritten vor Ort, bevor sie einen festen Termin im Station Inn bekam."
+    ]
+   },
+   "tr": {
+    "kicker": "batı swing grubu · nashville, 1998",
+    "who": "The Time Jumpers, 1998'de Nashville stüdyo müzisyenleri tarafından kurulmuş bir Western swing grubudur. Önce Station Inn'de düzenli sahne aldı, sonra daha büyük bir mekâna taşındı.",
+    "facts": [
+     "Country yıldızı Vince Gill grupta 2010 ile 2020 arasında yer aldı.",
+     "Grup, Station Inn'de düzenli bir yer almadan önce ara sıra yerel konserler vererek başladı."
+    ]
+   }
+  },
+  {
+   "id": "b2ad012f-8b12-4fdf-bdff-2ac386ce31e1",
+   "slug": "kenny-g-31ac9627",
+   "title": "Kenny G",
+   "name": "Kenny G",
+   "source_url": "https://en.wikipedia.org/wiki/Kenny_G",
+   "extract": "Kenneth Bruce Gorelick is an American smooth jazz saxophonist, composer, and record producer. His 1986 album Duotones brought him commercial success. Kenny G is one of the best-selling artists of all time, with global sales totaling more than 75 million records, making him also the best-selling non-vocal musician in history.",
+   "en": {
+    "kicker": "american smooth jazz saxophonist · duotones, 1986",
+    "who": "Kenny G, born Kenneth Bruce Gorelick, is an American smooth jazz saxophonist, composer and record producer. He is one of the best-selling artists of all time.",
+    "facts": [
+     "His 1986 album Duotones brought him commercial success.",
+     "Global sales of his records total more than 75 million."
+    ]
+   },
+   "de": {
+    "kicker": "amerikanischer smooth-jazz-saxofonist · 1986",
+    "who": "Kenny G, bürgerlich Kenneth Bruce Gorelick, ist ein amerikanischer Smooth-Jazz-Saxofonist, Komponist und Produzent. Er zählt zu den meistverkauften Künstlern aller Zeiten.",
+    "facts": [
+     "Sein Album Duotones von 1986 brachte ihm den kommerziellen Erfolg.",
+     "Seine weltweiten Verkäufe liegen bei über 75 Millionen Tonträgern."
+    ]
+   },
+   "tr": {
+    "kicker": "amerikalı smooth jazz saksofoncusu · 1986",
+    "who": "Asıl adı Kenneth Bruce Gorelick olan Kenny G, Amerikalı bir smooth jazz saksofoncusu, besteci ve plak yapımcısıdır. Tüm zamanların en çok satan sanatçıları arasında yer alır.",
+    "facts": [
+     "1986 albümü Duotones ona ticari başarı getirdi.",
+     "Dünya çapındaki satışları 75 milyon plağı aşıyor."
+    ]
+   }
+  }
+ ]
+}
