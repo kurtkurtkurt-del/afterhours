@@ -1,0 +1,16 @@
+{
+ "city": "chicago",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "8c17f016-9e98-4c08-b3ba-f8c63947834d",
+   "slug": "gatsbys-american-dream-bc5e7228",
+   "title": "Gatsbys American Dream",
+   "act": "Gatsbys American Dream",
+   "name": "Gatsbys American Dream",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Gatsbys_American_Dream",
+   "extract": "Gatsbys American Dream is an American indie rock band from Seattle, Washington. Since their founding in 2001, they have released four full-length albums and one EP. The band's self-titled fourth album, their second released with Fearless Records, peaked at number 22 on Billboard's Top Heatseekers chart and number 28 on the Top Independent Albums chart. The band drew their name from F. Scott Fitzgerald's novel The Great Gatsby."
+  }
+ ]
+}

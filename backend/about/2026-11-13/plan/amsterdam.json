@@ -1,0 +1,36 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "2c1a8f02-964e-4361-b21f-e65481e0c2a3",
+   "slug": "wasia-project-dfb80c2e",
+   "title": "Wasia Project",
+   "act": "Wasia Project",
+   "name": "Wasia Project",
+   "description": "English pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Wasia_Project",
+   "extract": "Wasia Project is an English indie pop band consisting of siblings Olivia Hardy and William Gao. The group released their debut single, \"Why Don't U Love Me,\" in 2019. This was followed by their debut extended play (EP) How Can I Pretend? in 2022. In August 2024, they released their second extended play (EP), Isotope. On stage, they are often joined by drummer Nate Wicks, bassist Tom Pacitti, saxophonist Safi Jazz, and trombonist Patrick Minton."
+  },
+  {
+   "id": "52fb9bc6-8302-4da7-a27c-f7628c085485",
+   "slug": "the-pretty-reckless-dear-god-tour-c81d834f",
+   "title": "The Pretty Reckless: Dear God Tour",
+   "act": "The Pretty Reckless",
+   "name": "The Pretty Reckless",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pretty_Reckless",
+   "extract": "The Pretty Reckless is an American rock band from New York City, formed in 2009. The band consists of Taylor Momsen, Ben Phillips, Mark Damon (bass), and Jamie Perkins (drums). In August 2010, the band released their debut studio album, Light Me Up. The album spawned three moderately successful singles, most notably \"Make Me Wanna Die\". The band released the Hit Me Like a Man EP in early 2012. In March 2014, the band released their second studio album, Going to Hell, which included the singles \"Heaven Knows\" and \"Messed Up World \", both of which topped the US and UK rock charts."
+  },
+  {
+   "id": "7ff4424f-dede-43c3-888c-326025a2db2f",
+   "slug": "the-pretty-reckless-premium-seats-c2ebacca",
+   "title": "The Pretty Reckless | Premium Seats",
+   "act": "The Pretty Reckless",
+   "name": "The Pretty Reckless",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pretty_Reckless",
+   "extract": "The Pretty Reckless is an American rock band from New York City, formed in 2009. The band consists of Taylor Momsen, Ben Phillips, Mark Damon (bass), and Jamie Perkins (drums). In August 2010, the band released their debut studio album, Light Me Up. The album spawned three moderately successful singles, most notably \"Make Me Wanna Die\". The band released the Hit Me Like a Man EP in early 2012. In March 2014, the band released their second studio album, Going to Hell, which included the singles \"Heaven Knows\" and \"Messed Up World \", both of which topped the US and UK rock charts."
+  }
+ ]
+}

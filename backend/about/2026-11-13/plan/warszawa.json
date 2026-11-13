@@ -1,0 +1,16 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "d44a700c-ae10-4737-9d78-3d83c98e6c4c",
+   "slug": "dzem-594a0f8f",
+   "title": "Dżem",
+   "act": "Dżem",
+   "name": "Dżem",
+   "description": "Polish blues rock band",
+   "source_url": "https://en.wikipedia.org/wiki/D%C5%BCem",
+   "extract": "Dżem is a blues rock band formed in Tychy, Poland. Ryszard Riedel, one of the most famous vocalists from Poland, worked with the band. Their songs include: \"Czerwony jak cegła\", \"Whisky\", \"Wehikuł czasu\", \"Sen o Victorii\", \"Harley mój\", \"Mała aleja róż\", \"Naiwne pytania\", \"List do M.\" and many more. They were the back-up band for Eric Clapton's concert in Gdynia on 14 August 2008."
+  }
+ ]
+}

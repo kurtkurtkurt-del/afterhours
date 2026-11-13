@@ -1,0 +1,56 @@
+{
+ "city": "manchester",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "cc3e5159-f4b5-4302-b995-3a89dad1e42e",
+   "slug": "shinedown-dance-kid-dance-act-ii-547646fb",
+   "title": "Shinedown: Dance, Kid, Dance Act II",
+   "act": "Shinedown",
+   "name": "Shinedown",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Shinedown",
+   "extract": "Shinedown is an American rock band from Jacksonville, Florida, formed by singer Brent Smith in 2001 after the dissolution of his previous band, Dreve. Smith, still under contract with record label Atlantic Records, recruited the band's original lineup of Jasin Todd as guitarist, Brad Stewart on bass, and Barry Kerch on drums. Consistent for the first two album cycles, several lineup changes followed in the late 2000s, eventually stabilizing with Smith and Kerch alongside Zach Myers on guitar and Eric Bass on bass. The group has released eight studio albums: Leave a Whisper (2003), Us and Them (2005), The Sound of Madness (2008), Amaryllis (2012), Threat to Survival (2015), Attention Attention (2018), and Planet Zero (2022). The band's eighth album, Eight, was released on May 29, 2026."
+  },
+  {
+   "id": "8fd65a5d-285c-40b3-a015-9181b905330f",
+   "slug": "jack-and-jack-manchester-new-century-locker-bbc81b47",
+   "title": "Jack & Jack | Manchester, New Century Locker",
+   "act": "Jack & Jack",
+   "name": "Jack & Jack",
+   "description": "American pop-rap duo",
+   "source_url": "https://en.wikipedia.org/wiki/Jack_%26_Jack",
+   "extract": "Jack & Jack are an American pop-rap duo from Omaha, Nebraska, consisting of Jack Johnson and Jack Gilinsky, based in Los Angeles, California. After success via the social media app Vine, the duo turned to careers as musicians. Their 2014 single \"Wild Life\" peaked at number 87 on the US Billboard Hot 100. They also featured on Jonas Blue's 2018 hit single \"Rise\", which peaked at number three in the UK Singles Chart in addition to charting within the top 20 of various other European countries and Australia."
+  },
+  {
+   "id": "085fc881-3af4-4fd9-a3ee-be5f2aea4a21",
+   "slug": "good-charlotte-motel-du-cap-eu-uk-tour-99bcd639",
+   "title": "Good Charlotte - Motel Du Cap EU/UK Tour",
+   "act": "Good Charlotte",
+   "name": "Good Charlotte",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Good_Charlotte",
+   "extract": "Good Charlotte is an American rock band formed in Waldorf, Maryland, in 1996. The band currently consists of Joel Madden, Benji Madden, Paul Thomas (bass), and Billy Martin."
+  },
+  {
+   "id": "3f2e69b4-2724-4dff-b2a0-764fe40f680b",
+   "slug": "tony-hadley-the-christmas-big-band-tour-2026-738bd60c",
+   "title": "TONY HADLEY - The Christmas Big Band Tour 2026",
+   "act": "TONY HADLEY",
+   "name": "Tony Hadley",
+   "description": "English pop/rock singer (born 1960)",
+   "source_url": "https://en.wikipedia.org/wiki/Tony_Hadley",
+   "extract": "Anthony Patrick Hadley is an English pop singer. He rose to fame in the 1980s as the lead singer of the new wave band Spandau Ballet and launched a solo career following the group's split in 1990. Hadley returned to the band in 2009 but left again in 2017, and has since toured regularly as a solo artist. Hadley has been noted for his expressive voice and vocal range."
+  },
+  {
+   "id": "79fd2eec-6ed0-4061-94ea-887681f24cb0",
+   "slug": "elbow-asleep-in-the-back-d643fd04",
+   "title": "elbow - Asleep in the Back",
+   "act": "elbow",
+   "name": "Elbow",
+   "description": "English alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Elbow_(band)",
+   "extract": "Elbow are an English rock band formed in Bury, Greater Manchester, in 1990. The band consists of Guy Garvey, Craig Potter, Mark Potter, Pete Turner, and Alex Reeves (drums). They have played together since 1990, adopting the name Elbow in 1997. Reeves replaced original drummer Richard Jupp in 2016 as a touring and session musician at first, before becoming a full member in 2024."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "city": "ankara",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "0e2b3ac9-a9fe-4dac-8286-57570f3bf1b3",
+   "slug": "levent-yuksel-e00ab525",
+   "title": "Levent Yüksel",
+   "act": "Levent Yüksel",
+   "name": "Levent Yüksel",
+   "description": "Turkish musician (born 1964)",
+   "source_url": "https://en.wikipedia.org/wiki/Levent_Y%C3%BCksel",
+   "extract": "Levent Uğur Yüksel is a Turkish pop singer and multi instrumentalist. He has been active in live music industry since 1993."
+  }
+ ]
+}

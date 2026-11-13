@@ -1,0 +1,26 @@
+{
+ "city": "berlin",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "fd13825e-0676-418b-a61b-e202ac3afdeb",
+   "slug": "artemas-lovercore-getting-up-to-no-good-tour-654e75f8",
+   "title": "Artemas - LOVERCORE / GETTING UP TO NO GOOD Tour",
+   "act": "Artemas",
+   "name": "Artemas",
+   "description": "English-Cypriot singer-songwriter (born 1999)",
+   "source_url": "https://en.wikipedia.org/wiki/Artemas_(musician)",
+   "extract": "Artemas Diamandis, known mononymously as Artemas, is an English singer, songwriter and record producer. He is best known for his singles \"If U Think I'm Pretty\" and the viral \"I Like the Way You Kiss Me\". He is signed to the record label 10K Projects."
+  },
+  {
+   "id": "82574ec6-6f25-4730-ad0f-12c86fec5864",
+   "slug": "muna-gets-so-hot-tour-6e0986dd",
+   "title": "Muna - Gets So Hot Tour",
+   "act": "Muna",
+   "name": "Muna",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Muna_(band)",
+   "extract": "Muna is an American indie pop band consisting of Katie Gavin, Josette Maskin, and Naomi McPherson. They released two studio albums with RCA Records, About U (2017) and Saves the World (2019), before signing with independent label Saddest Factory Records, which released their third studio album, Muna, in June 2022, and Dancing on the Wall in May 2026."
+  }
+ ]
+}

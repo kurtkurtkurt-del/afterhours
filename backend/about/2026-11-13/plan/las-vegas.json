@@ -1,0 +1,26 @@
+{
+ "city": "las-vegas",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "95441716-beb1-4db8-8908-39aa608646ac",
+   "slug": "barry-manilow-7b7f33c5",
+   "title": "Barry Manilow",
+   "act": "Barry Manilow",
+   "name": "Barry Manilow",
+   "description": "American singer (born 1943)",
+   "source_url": "https://en.wikipedia.org/wiki/Barry_Manilow",
+   "extract": "Barry Manilow is an American singer, songwriter and record producer with a career spanning over 60 years. His hit recordings include \"Mandy\", \"Could It Be Magic\", \"I Write the Songs\", \"Weekend in New England\", \"Looks Like We Made It\", \"Can't Smile Without You\", \"Copacabana \", and \"Ready to Take a Chance Again\"."
+  },
+  {
+   "id": "8ba3ae3c-4a0a-49a1-97ca-0256869b22f9",
+   "slug": "pedro-fernandez-ave-fenix-two-r-15a1e9a7",
+   "title": "Pedro Fernández - Ave Fénix Two'r",
+   "act": "Pedro Fernández",
+   "name": "Pedro Fernández",
+   "description": "Mexican singer, songwriter, actor, and television host",
+   "source_url": "https://en.wikipedia.org/wiki/Pedro_Fern%C3%A1ndez_(singer)",
+   "extract": "José Martín Cuevas Cobos, known by his stage name Pedro Fernández, is a Mexican singer, songwriter, actor, and television host. Fernández began his international career as Pedrito Fernández at the age of seven. In the 1980s, he turned to be known as a scream king, thanks to his horror film starring roles in films such as Vacaciones de terror (1989), Pánico en la montaña (1989) and Trampa Infernal (1989)."
+  }
+ ]
+}

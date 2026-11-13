@@ -1,0 +1,46 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "da01a916-e91e-4a54-899f-fb6768c7f97d",
+   "slug": "sienna-spiro-my-house-tour-fe3ad941",
+   "title": "Sienna Spiro: My House Tour",
+   "act": "Sienna Spiro",
+   "name": "Sienna Spiro",
+   "description": "English singer-songwriter (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Sienna_Spiro",
+   "extract": "Sienna Ann Spiro is an English singer-songwriter and record producer. Known for her distinct, powerful voice, she began sharing viral singing videos on TikTok in 2021. She started releasing music in 2024, including \"Maybe\", which became her debut on the UK Singles Chart. She released Sink Now, Swim Later, her debut extended play, in February 2025. Her breakthrough success came with the release of \"Die on This Hill\", which charted in numerous countries. She released her debut studio album, Visitor, on 3 July 2026, and achieved her first UK number one single with its track \"Great Expectation\"."
+  },
+  {
+   "id": "b4423085-47be-4edf-8848-7b5f70fc25fb",
+   "slug": "jai-wolf-10-year-anniversary-tour-f0b20dbe",
+   "title": "Jai Wolf: 10 Year Anniversary Tour",
+   "act": "Jai Wolf",
+   "name": "Jai Wolf",
+   "description": "American electronic music producer (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Jai_Wolf",
+   "extract": "Sajeeb Saha, known professionally as Jai Wolf, is a Bangladeshi-American DJ and producer. He is best known for his singles, \"Indian Summer\", \"Like It's Over\", and \"Starlight\". He is currently signed to Mom + Pop Music."
+  },
+  {
+   "id": "26c08e5c-b940-4f68-9f7c-52ba0f648460",
+   "slug": "jorja-smith-d9b02929",
+   "title": "Jorja Smith",
+   "act": "Jorja Smith",
+   "name": "Jorja Smith",
+   "description": "British singer and songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Jorja_Smith",
+   "extract": "Jorja Alice Smith is an English singer and songwriter. Born and raised in Walsall, West Midlands, she has been writing songs since the age of 11. In 2012, Smith's friend uploaded her cover of Labrinth's \"Earthquake\" to YouTube, which led to her discovery by record producer Guy Moot. After her first two singles received broader recognition, she signed with Sony/ATV in early 2016, releasing two EPs throughout later that year and into 2017."
+  },
+  {
+   "id": "d0aa921e-a30a-4868-bed4-26324fdd84b7",
+   "slug": "oso-oso-ca2e14dc",
+   "title": "Oso Oso",
+   "act": "Oso Oso",
+   "name": "Oso Oso",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Oso_Oso",
+   "extract": "Oso Oso is an American rock band from Long Beach, New York. Jade Lilitri, formerly of State Lines, is the only permanent member. Jade uses Lilitri as a pen name. The band has released four studio albums and two EPs. Their 2019 release, Basking in the Glow, and their 2022 release, Sore Thumb, were named \"Best New Music\" by online music magazine Pitchfork."
+  }
+ ]
+}

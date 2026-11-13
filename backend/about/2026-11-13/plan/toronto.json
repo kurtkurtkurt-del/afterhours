@@ -1,0 +1,46 @@
+{
+ "city": "toronto",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "a107cce9-216c-4b8a-b9e3-261146383e27",
+   "slug": "alyssa-grace-3b15c6ae",
+   "title": "Alyssa Grace",
+   "act": "Alyssa Grace",
+   "name": "Alyssa Grace",
+   "description": "American singer (born 2007)",
+   "source_url": "https://en.wikipedia.org/wiki/Alyssa_Grace",
+   "extract": "Alyssa Grace Proffitt is an American singer-songwriter based in California. She made her recording debut in 2026 with \"Dog with a Bone\" and gained wider recognition through the singles \"Picking Petals\" and \"Bloodstream\"."
+  },
+  {
+   "id": "d71c92e0-5137-45bc-958b-17994b83248b",
+   "slug": "julia-jacklin-north-america-tour-2026-a724a48b",
+   "title": "Julia Jacklin - North America Tour 2026",
+   "act": "Julia Jacklin",
+   "name": "Julia Jacklin",
+   "description": "Australian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Jacklin",
+   "extract": "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales. Jacklin's musical style has been described as indie pop, indie folk, and alternative country. She has released four studio albums, Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) and The Gem (2026). Jacklin has also performed with the band Phantastic Ferniture, with whom she released the debut single \"Fuckin 'n' Rollin\" and a self-titled album in 2018, followed by subsequent singles."
+  },
+  {
+   "id": "075c9d9e-f94b-47c0-85ed-6a777aa5d050",
+   "slug": "memphis-lk-ebd2ed2e",
+   "title": "Memphis LK",
+   "act": "Memphis LK",
+   "name": "Memphis LK",
+   "description": "Australian record producer",
+   "source_url": "https://en.wikipedia.org/wiki/Memphis_LK",
+   "extract": "Memphis Lillian Fairfax Kelly, known professionally as Memphis LK, is an Australian singer, songwriter, record producer and DJ. She is the daughter of Australian actress Kaarin Fairfax and musician Paul Kelly. Memphis has played at festivals, Splendour in the Grass, Party in the Paddock, Beyond the Valley, Listen Out, Pitch Festival, Great Escape Festival and Way Out West. She is currently independent."
+  },
+  {
+   "id": "57a9a7eb-c5ef-4210-b0fb-e7c7dadb9f4f",
+   "slug": "wage-war-emergency-broadcast-tour-bcc05704",
+   "title": "WAGE WAR - EMERGENCY BROADCAST TOUR",
+   "act": "WAGE WAR",
+   "name": "Wage War",
+   "description": "American metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Wage_War",
+   "extract": "Wage War is an American metalcore band formed in Ocala, Florida in 2010 under the name Empires. The band consists of lead vocalist Briton Bond, lead guitarist Seth Blake, rhythm guitarist and clean vocalist Cody Quistad, bassist Chris Gaylord, and drummer Stephen Kluesener."
+  }
+ ]
+}

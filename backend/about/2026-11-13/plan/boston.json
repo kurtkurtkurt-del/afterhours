@@ -1,0 +1,26 @@
+{
+ "city": "boston",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "ac0fd354-b658-4b8c-ac07-b35c1a4d8322",
+   "slug": "julia-jacklin-39de5569",
+   "title": "Julia Jacklin",
+   "act": "Julia Jacklin",
+   "name": "Julia Jacklin",
+   "description": "Australian singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Jacklin",
+   "extract": "Julia Jacklin is an Australian singer-songwriter from the Blue Mountains region of New South Wales. Jacklin's musical style has been described as indie pop, indie folk, and alternative country. She has released four studio albums, Don't Let the Kids Win (2016), Crushing (2019), Pre Pleasure (2022) and The Gem (2026). Jacklin has also performed with the band Phantastic Ferniture, with whom she released the debut single \"Fuckin 'n' Rollin\" and a self-titled album in 2018, followed by subsequent singles."
+  },
+  {
+   "id": "16f8f6ec-c8fb-4ebd-8c69-2c1fd93e0c2c",
+   "slug": "tiny-habits-the-keepers-tour-7516a925",
+   "title": "Tiny Habits - The Keepers Tour",
+   "act": "Tiny Habits",
+   "name": "Tiny Habits",
+   "description": "American folk-pop trio",
+   "source_url": "https://en.wikipedia.org/wiki/Tiny_Habits",
+   "extract": "Tiny Habits is an American folk-pop music group formed in Boston in 2022. The trio consists of Berklee College of Music alumni Cinya Khan, Maya Rae, and Judah Mayowa. Their first EP, Tiny Things, was released in April 2023. Their debut studio album All For Something was released in May 2024. Their second album Keepers came out in August 2026."
+  }
+ ]
+}

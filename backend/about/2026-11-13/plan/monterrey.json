@@ -1,0 +1,16 @@
+{
+ "city": "monterrey",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "7e1c9c60-a3eb-4ccc-92eb-bb222516762c",
+   "slug": "david-bisbal-tour-eternos-2026-suites-479630c6",
+   "title": "David Bisbal Tour Eternos 2026***SUITES***",
+   "act": "David Bisbal",
+   "name": "David Bisbal",
+   "description": "Spanish singer (born 1979)",
+   "source_url": "https://en.wikipedia.org/wiki/David_Bisbal",
+   "extract": "David Bisbal Ferre is a Spanish singer and actor. He gained his initial fame as the runner-up on the first edition of the reality television talent show Operación Triunfo."
+  }
+ ]
+}

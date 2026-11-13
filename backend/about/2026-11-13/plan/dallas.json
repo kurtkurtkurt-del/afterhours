@@ -1,0 +1,36 @@
+{
+ "city": "dallas",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "211cbafb-3b32-4160-84e1-f92830f4d927",
+   "slug": "dallas-symphony-orchestra-f6b8831d",
+   "title": "Dallas Symphony Orchestra",
+   "act": "Dallas Symphony Orchestra",
+   "name": "Dallas Symphony Orchestra",
+   "description": "Orchestra",
+   "source_url": "https://en.wikipedia.org/wiki/Dallas_Symphony_Orchestra",
+   "extract": "The Dallas Symphony Orchestra (DSO) is an American orchestra based in Dallas, Texas. Its principal performing venue is the Morton H. Meyerson Symphony Center in the Arts District of downtown Dallas."
+  },
+  {
+   "id": "c815bb51-c6c0-4725-bef8-5fcfaefac4b6",
+   "slug": "southfm-bb4303a4",
+   "title": "SouthFM",
+   "act": "SouthFM",
+   "name": "SouthFM",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/SouthFM",
+   "extract": "SouthFM  is an American alternative rock band based in Dallas, Texas. They formed in 2000 and disbanded in October 2006. The band officially released two full-length albums, Drama Kids (2003) and Swallowing the Pill (2005). The band reunited for one concert in June 2010, and played more shows in November 2010. As of 2016, they have reformed and are working on a new album."
+  },
+  {
+   "id": "d55c82e2-3d54-4798-b30b-0b8749bcbaf0",
+   "slug": "journey-final-frontier-tour-an-evening-with-9bb522b3",
+   "title": "JOURNEY - Final Frontier Tour (An Evening With)",
+   "act": "JOURNEY",
+   "name": "Journey",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Journey_(band)",
+   "extract": "Journey is an American rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch. The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals."
+  }
+ ]
+}

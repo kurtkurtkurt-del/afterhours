@@ -1,0 +1,16 @@
+{
+ "city": "brussel",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "1f7ca969-fa3e-45b8-b13f-6512800b6825",
+   "slug": "masego-fix-your-face-tour-34ffff60",
+   "title": "Masego - Fix Your Face Tour",
+   "act": "Masego",
+   "name": "Masego",
+   "description": "Jamaican musician (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Masego_(musician)",
+   "extract": "Micah Davis, known professionally as Masego, is a Jamaican and American musician and singer, known for incorporating the saxophone into his music. Masego released two EPs in 2016, The Pink Polo EP with Medasin, and Loose Thoughts. He gained widespread attention with his collaborative record with FKJ called \"Tadow\" released in 2017. In 2018, he released his debut album Lady Lady. His album Studying Abroad: Extended Stay was nominated for the 2022 Grammy Awards in the \"Best Progressive R&B Album\" category."
+  }
+ ]
+}

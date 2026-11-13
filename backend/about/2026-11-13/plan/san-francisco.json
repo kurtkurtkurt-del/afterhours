@@ -1,0 +1,56 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "1e2d0382-a4d7-45ad-9737-fb6203c075ed",
+   "slug": "craig-finn-75c75b0d",
+   "title": "Craig Finn",
+   "act": "Craig Finn",
+   "name": "Craig Finn",
+   "description": "American singer-songwriter and musician",
+   "source_url": "https://en.wikipedia.org/wiki/Craig_Finn",
+   "extract": "Craig A. Finn is an American singer, songwriter and musician. He is best known as the frontman of the American indie rock band the Hold Steady, with whom he has recorded nine studio albums. Prior to forming the Hold Steady, Finn was the frontman of Lifter Puller."
+  },
+  {
+   "id": "c2497ee2-bc9c-4c5c-91a1-4f6b766c2eb6",
+   "slug": "the-mountain-goats-six-6-show-ticket-17aa8305",
+   "title": "The Mountain Goats - SIX (6) Show Ticket",
+   "act": "The Mountain Goats",
+   "name": "The Mountain Goats",
+   "description": "American indie folk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+   "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark."
+  },
+  {
+   "id": "dca8c546-18c5-47c4-867a-84ae0f74ec26",
+   "slug": "manic-street-preachers-c194ee79",
+   "title": "Manic Street Preachers",
+   "act": "Manic Street Preachers",
+   "name": "Manic Street Preachers",
+   "description": "Welsh rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Manic_Street_Preachers",
+   "extract": "Manic Street Preachers are a Welsh rock band formed in Blackwood, Caerphilly, in 1986. Since 1995, the band has been a three-piece of Nicky Wire (bass) and cousins James Dean Bradfield (vocals/guitar) and Sean Moore (drums). They form a key part of the 1990s Welsh Cool Cymru cultural movement. The band's early releases were in a punk vein, eventually broadening to a wider alternative rock sound. Their early combination of androgynous glam imagery and lyrics about \"culture, alienation, boredom and despair\" gained them a loyal following."
+  },
+  {
+   "id": "adfdbf9a-71fb-445a-8b7d-507d4ab0474d",
+   "slug": "the-mountain-goats-night-two-alpha-7d66634a",
+   "title": "The Mountain Goats - Night Two: Alpha",
+   "act": "The Mountain Goats",
+   "name": "The Mountain Goats",
+   "description": "American indie folk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+   "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark."
+  },
+  {
+   "id": "e3bb19b8-fdb4-4bde-9854-c876713e18af",
+   "slug": "jorja-smith-a81de282",
+   "title": "Jorja Smith",
+   "act": "Jorja Smith",
+   "name": "Jorja Smith",
+   "description": "British singer and songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Jorja_Smith",
+   "extract": "Jorja Alice Smith is an English singer and songwriter. Born and raised in Walsall, West Midlands, she has been writing songs since the age of 11. In 2012, Smith's friend uploaded her cover of Labrinth's \"Earthquake\" to YouTube, which led to her discovery by record producer Guy Moot. After her first two singles received broader recognition, she signed with Sony/ATV in early 2016, releasing two EPs throughout later that year and into 2017."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "seattle",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "0df7f57a-3d06-44f7-9ed3-dbacd851bd70",
+   "slug": "rhye-joy-tour-608eb4a1",
+   "title": "Rhye: Joy Tour",
+   "act": "Rhye",
+   "name": "Rhye",
+   "description": "R&B musical project",
+   "source_url": "https://en.wikipedia.org/wiki/Rhye",
+   "extract": "Rhye is an R&B musical project of Canadian singer Mike Milosh. It originally consisted of him and Danish instrumentalist Robin Hannibal. They released the singles \"Open\" and \"The Fall\" online without much detail, which led to speculation about the band. Their debut album, Woman, was released on March 4, 2013. In June 2013, the album was longlisted for the 2013 Polaris Music Prize. In 2017, it was reported that Robin Hannibal was no longer a member of Rhye and that the project had evolved into a music collective led by Milosh and focused around the associated live band. Their second album, Blood, was released on February 2, 2018, and was largely written, produced, and performed by Milosh."
+  },
+  {
+   "id": "dfbb2530-1b43-481c-8336-862442b00975",
+   "slug": "tyla-the-a-pop-world-tour-9c25baef",
+   "title": "TYLA - THE A*POP WORLD TOUR",
+   "act": "TYLA",
+   "name": "Tyla",
+   "description": "South African singer-songwriter (born 2002)",
+   "source_url": "https://en.wikipedia.org/wiki/Tyla",
+   "extract": "Tyla Laura Seethal is a South African singer-songwriter. Dubbed the \"Queen of Popiano\", her musical style is characterised by a fusion of pop and amapiano."
+  }
+ ]
+}

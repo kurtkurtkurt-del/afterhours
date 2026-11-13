@@ -1,0 +1,16 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "13a7fc65-acca-4c7c-aa29-77b587341ee3",
+   "slug": "alyssa-grace-938b0041",
+   "title": "Alyssa Grace",
+   "act": "Alyssa Grace",
+   "name": "Alyssa Grace",
+   "description": "American singer (born 2007)",
+   "source_url": "https://en.wikipedia.org/wiki/Alyssa_Grace",
+   "extract": "Alyssa Grace Proffitt is an American singer-songwriter based in California. She made her recording debut in 2026 with \"Dog with a Bone\" and gained wider recognition through the singles \"Picking Petals\" and \"Bloodstream\"."
+  }
+ ]
+}

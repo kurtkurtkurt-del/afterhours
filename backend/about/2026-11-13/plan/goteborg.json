@@ -1,0 +1,16 @@
+{
+ "city": "goteborg",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "49a24485-4786-4364-8237-7242b62a725a",
+   "slug": "ugly-kid-joe-f82cd001",
+   "title": "Ugly Kid Joe",
+   "act": "Ugly Kid Joe",
+   "name": "Ugly Kid Joe",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Ugly_Kid_Joe",
+   "extract": "Ugly Kid Joe is an American hard rock band from Isla Vista, California, formed in 1989. The band's name spoofs the glam metal band Pretty Boy Floyd's name."
+  }
+ ]
+}

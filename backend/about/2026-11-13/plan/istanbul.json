@@ -1,0 +1,16 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "df9a8402-c969-4a95-b351-96f5e75c9b5b",
+   "slug": "yuzyuzeyken-konusuruz-55f89627",
+   "title": "Yüzyüzeyken Konuşuruz",
+   "act": "Yüzyüzeyken Konuşuruz",
+   "name": "Yüzyüzeyken Konuşuruz",
+   "description": "Alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Y%C3%BCzy%C3%BCzeyken_Konu%C5%9Furuz",
+   "extract": "Yüzyüzeyken Konuşuruz is a Turkish independent alternative rock band founded in May 2011 in Ankara, Turkey by Engin Sevik and S. Kaan Boşnak."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "city": "nashville",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "24994e7f-3425-4a04-b1e5-d84e37088802",
+   "slug": "drake-white-bb9dfa03",
+   "title": "Drake White",
+   "act": "Drake White",
+   "name": "Drake White",
+   "description": "American country music singer (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Drake_White",
+   "extract": "William Drake White is an American country music singer and the leader of Drake White & The Big Fire."
+  },
+  {
+   "id": "d81e9b7b-6b8c-442a-acf7-ead4b23c1566",
+   "slug": "chat-pile-who-loves-the-sun-tour-2026-cd005e92",
+   "title": "Chat Pile - Who Loves The Sun Tour 2026",
+   "act": "Chat Pile",
+   "name": "Chat Pile",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Chat_Pile",
+   "extract": "Chat Pile is an American noise rock/sludge metal band from Oklahoma City, Oklahoma, formed in 2019. The band is composed of four members using the pseudonyms Raygun Busch (vocals), Luther Manhole (guitar), Stin (bass), and Cap'n Ron (drums)."
+  },
+  {
+   "id": "a3dab205-3bac-4934-ada9-2f7c272554da",
+   "slug": "the-time-jumpers-3a03c7d1",
+   "title": "THE TIME JUMPERS",
+   "act": "THE TIME JUMPERS",
+   "name": "The Time Jumpers",
+   "description": "Musical group",
+   "source_url": "https://en.wikipedia.org/wiki/The_Time_Jumpers",
+   "extract": "The Time Jumpers is a Western swing band formed in 1998 by a group of Nashville studio musicians who enjoyed jamming together. Country star Vince Gill was a member of the group between 2010 and 2020. The 11–member group started playing occasional local gigs until they agreed to take a regular slot playing at the Station Inn, a venerable Nashville bluegrass venue. They later moved to a larger venue, Nashville's \"3rd & Lindsley\", and were called by Tennessean writer Juli Thanki, \"One of the hottest shows in town\". Some of their guest artists on the weekly live show have included Joe Walsh, Robert Plant, Norah Jones, Bonnie Raitt, Reba McEntire, Jimmy Buffett, Kings of Leon, and Toby Keith. Amy Grant said, \"You can't hear that caliber of musicians every Monday night for a cover charge in any town in America except here\". The group rarely travels, but in 2010 they performed at New York's Lincoln Center. In 2007, they recorded a live album entitled Jumpin' Time and in 2012 recorded The Time Jumpers. At the 2017 Grammy Awards the group won \"Best American Roots Song\" for Vince Gill's composition \"Kid Sister\"."
+  },
+  {
+   "id": "b2ad012f-8b12-4fdf-bdff-2ac386ce31e1",
+   "slug": "kenny-g-31ac9627",
+   "title": "Kenny G",
+   "act": "Kenny G",
+   "name": "Kenny G",
+   "description": "American jazz saxophonist and composer (born 1956)",
+   "source_url": "https://en.wikipedia.org/wiki/Kenny_G",
+   "extract": "Kenneth Bruce Gorelick is an American smooth jazz saxophonist, composer, and record producer. His 1986 album Duotones brought him commercial success. Kenny G is one of the best-selling artists of all time, with global sales totaling more than 75 million records, making him also the best-selling non-vocal musician in history."
+  }
+ ]
+}

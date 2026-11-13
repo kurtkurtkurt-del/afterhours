@@ -1,0 +1,66 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "4bc02858-c330-4ab3-a8e1-31fca3d01ddd",
+   "slug": "fruit-bats-1ee2d3e5",
+   "title": "Fruit Bats",
+   "act": "Fruit Bats",
+   "name": "Fruit Bats",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Fruit_Bats_(band)",
+   "extract": "Fruit Bats is an American indie rock band formed in 1997 in Chicago, Illinois, as the project of singer and songwriter Eric D. Johnson. Johnson is the band's sole permanent member, with various musicians joining the band in live and studio settings."
+  },
+  {
+   "id": "9ba44570-a5c5-48b7-b33c-63c50484dd5a",
+   "slug": "josie-edwards-c6a3db9f",
+   "title": "Josie Edwards",
+   "act": "Josie Edwards",
+   "name": "Josie Edwards",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/Josie_Edwards",
+   "extract": "Josie Edwards is an American musician and songwriter. She is best known for her 2026 single “Chemical Light\", as well as her 2025 hit “good girls”. She has released two EPs and performed at All Points East as a supporting act for Twenty One Pilots alongside Gang of Youths, Bbno$, and Jessie Murph."
+  },
+  {
+   "id": "e25aee43-616a-4780-bd33-72185c46d5b3",
+   "slug": "georgia-brass-band-ef99250d",
+   "title": "Georgia Brass Band",
+   "act": "Georgia Brass Band",
+   "name": "Georgia Brass Band",
+   "description": "American music group",
+   "source_url": "https://en.wikipedia.org/wiki/Georgia_Brass_Band",
+   "extract": "The Georgia Brass Band was conceived by co-founders Joe Johnson and Christopher Priest in the spring of 1999. It is a traditional British-style brass band. The band performed its first concert in September 1999 and has maintained a very busy schedule ever since."
+  },
+  {
+   "id": "cf51c2b5-1862-4a12-bf18-c41013671943",
+   "slug": "doja-cat-tour-ma-vie-world-tour-9a056f30",
+   "title": "Doja Cat - Tour Ma Vie World Tour",
+   "act": "Doja Cat",
+   "name": "Doja Cat",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Doja_Cat",
+   "extract": "Amala Ratna Zandile Dlamini, known professionally as Doja Cat, is an American rapper and singer-songwriter. Regarded as the \"Queen of Pop-Rap\", she is known for her musical versatility, live performance skills and humorous internet presence. Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\", and Time listed her as one of the world's most influential people in 2023."
+  },
+  {
+   "id": "4e710b6e-3997-49df-a8f9-f3c327ee7bbf",
+   "slug": "i-set-my-friends-on-fire-69fc9e70",
+   "title": "I Set My Friends On Fire",
+   "act": "I Set My Friends On Fire",
+   "name": "I Set My Friends on Fire",
+   "description": "American post-hardcore band",
+   "source_url": "https://en.wikipedia.org/wiki/I_Set_My_Friends_on_Fire",
+   "extract": "I Set My Friends on Fire is an American post-hardcore band from Miami, Florida. The band was formed in 2007 by Matt Mehana and Nabil Moo. The group signed with Epitaph Records before releasing their debut album, You Can't Spell Slaughter Without Laughter, in 2008. Drummer Chris Lent joined the band in 2009. The group's second album, Astral Rejection, was scheduled to be released on June 22, 2010, but it was shelved for a year by Epitaph. Moo left the band in 2010, then Lent left the band. The group's third album, Caterpillar Sex, was announced in 2013 but has never seen a release."
+  },
+  {
+   "id": "fc1901c5-cdec-4fb3-bc84-e9220c755d22",
+   "slug": "the-paradox-02cf2a79",
+   "title": "The Paradox",
+   "act": "The Paradox",
+   "name": "The Paradox",
+   "description": "American pop punk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Paradox_(band)",
+   "extract": "The Paradox is an American pop-punk band from Atlanta, Georgia, formed in 2024. Its members are Eric Dangerfield, Donald Bryant (bass), Christopher \"Xelan\" Bernard, and Percy \"PC3\" Crews (drums). They are the first all-black punk band to be number 1 on Billboard's Alternative Airplay chart."
+  }
+ ]
+}

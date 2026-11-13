@@ -1,0 +1,46 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "ba0b82a6-c714-4495-86c7-de8d111aaa8b",
+   "slug": "glenn-jones-6c501f5b",
+   "title": "Glenn Jones",
+   "act": "Glenn Jones",
+   "name": "Glenn Jones",
+   "description": "American R&B/soul singer (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Glenn_Jones",
+   "extract": "Glenn Jones is an American R&B/soul singer. He is best known for his songs \"Show Me\", \"We've Only Just Begun \" and \"Here I Go Again\", which reached No. 1 on the Billboard R&B charts in 1991/1992, as well as the track \"I've Been Searching \"."
+  },
+  {
+   "id": "70f96289-2343-4a00-95f3-25a51db5ba07",
+   "slug": "fontaines-d-c-9729354e",
+   "title": "Fontaines D.C.",
+   "act": "Fontaines D.C.",
+   "name": "Fontaines D.C.",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Fontaines_D.C.",
+   "extract": "Fontaines D.C. are an Irish rock band formed in Dublin in 2014. The band consists of Grian Chatten (vocals), Conor Curley (guitar), Conor \"Deego\" Deegan III (bass), Tom Coll (drums), and Carlos O'Connell (guitar)."
+  },
+  {
+   "id": "59747789-f603-4a0c-983a-8807906050ec",
+   "slug": "bellowhead-834551b2",
+   "title": "Bellowhead",
+   "act": "Bellowhead",
+   "name": "Bellowhead",
+   "description": "English folk band",
+   "source_url": "https://en.wikipedia.org/wiki/Bellowhead",
+   "extract": "Bellowhead is an English contemporary folk band, active from 2004 to 2016, reforming in 2020. The eleven-piece act played traditional dance tunes, folk songs and shanties, with arrangements drawing inspiration from a wide range of musical styles and influences. The band included percussion and a four-piece brass section. Bellowhead's bandmembers played more than 20 instruments among them, whilst all performers provided vocals."
+  },
+  {
+   "id": "95be78fd-d7b7-4cd7-b0df-da605e5ed608",
+   "slug": "bob-dylan-bac7bf93",
+   "title": "Bob Dylan",
+   "act": "Bob Dylan",
+   "name": "Bob Dylan",
+   "description": "American singer-songwriter (born 1941)",
+   "source_url": "https://en.wikipedia.org/wiki/Bob_Dylan",
+   "extract": "Bob Dylan is an American singer-songwriter. Described as one of the greatest songwriters of all time, Dylan has been a major figure in popular culture over his 69-year career. Dylan added increasingly sophisticated lyrical techniques to the folk music of the early 1960s, infusing it \"with the intellectualism of classic literature and poetry\". His lyrics incorporated political, social, and philosophical influences, defying pop music conventions and appealing to the burgeoning counterculture."
+  }
+ ]
+}

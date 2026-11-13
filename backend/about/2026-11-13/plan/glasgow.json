@@ -1,0 +1,76 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "0403b3ba-e234-4fac-bc34-a34e8455fdf8",
+   "slug": "kid-kapichi-down-the-rabbit-hole-4128a488",
+   "title": "Kid Kapichi - Down the Rabbit Hole",
+   "act": "Kid Kapichi",
+   "name": "Kid Kapichi",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kid_Kapichi",
+   "extract": "Kid Kapichi are an English punk rock band formed in Hastings in 2013. The band consists of vocalist and guitarist Jack Wilson and bassist Eddie Lewis."
+  },
+  {
+   "id": "1b6e1ecb-9079-47bc-84b0-fe80136240f9",
+   "slug": "enter-shikari-c38aa4f0",
+   "title": "Enter Shikari",
+   "act": "Enter Shikari",
+   "name": "Enter Shikari",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Enter_Shikari",
+   "extract": "Enter Shikari are an English rock band formed in St Albans, Hertfordshire in 1999 by bassist Chris Batten, lead vocalist and keyboardist Rou Reynolds, and drummer Rob Rolfe. In 2003, guitarist Rory Clewlow joined the band to complete its current line-up, and it adopted its current name."
+  },
+  {
+   "id": "8bc93420-33a2-4982-bbae-b884e2e1adf9",
+   "slug": "cheekface-48b98429",
+   "title": "Cheekface",
+   "act": "Cheekface",
+   "name": "Cheekface",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Cheekface",
+   "extract": "Cheekface is an American indie rock band based in Los Angeles, California. Formed in 2017, the group consists of guitarist and lead vocalist Greg Katz, bassist and backup vocalist Amanda Tannen, and drummer Mark Edwards. Cheekface has released six studio albums, five EPs, and one live album, all on Katz's own label, New Professor Music."
+  },
+  {
+   "id": "0f2c09aa-5c96-4637-bb49-2bd25021a479",
+   "slug": "the-fray-autumn-light-tour-8c3fb62c",
+   "title": "The Fray - Autumn Light Tour",
+   "act": "The Fray",
+   "name": "The Fray",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Fray",
+   "extract": "The Fray is an American rock band from Denver, Colorado, formed in 2002 by schoolmates Isaac Slade and Joe King. Their debut studio album, How to Save a Life (2005) was released by Epic Records and received quadruple platinum certification by the Recording Industry Association of America (RIAA), as well as platinum certification in Australia, Canada, New Zealand and the United Kingdom. Its release was supported by their first hit single, \"Over My Head \", which peaked at number eight on the Billboard Hot 100. The band saw their furthest success with the song's follow-up, \"How to Save a Life\", which peaked at number three on the chart and was also a hit in Australia, Canada, Ireland, Italy, Spain, Sweden and the United Kingdom. Both songs received Grammy Award nominations: Best Pop Performance by a Duo or Group with Vocals, and Best Rock Performance by a Duo or Group, respectively."
+  },
+  {
+   "id": "7351b4f3-f242-4f58-b5cd-4086022ea4fb",
+   "slug": "eagles-of-death-metal-4a176ba5",
+   "title": "Eagles of Death Metal",
+   "act": "Eagles of Death Metal",
+   "name": "Eagles of Death Metal",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Eagles_of_Death_Metal",
+   "extract": "Eagles of Death Metal is an American rock band from Palm Desert, California, formed in 1998. Founded by Jesse Hughes and Josh Homme (drums), the band includes a wide range of other musicians who perform both on the band's studio albums and at live shows."
+  },
+  {
+   "id": "11e65984-f362-4c58-8e38-b8062ab3d77f",
+   "slug": "richard-shindell-8bcd80e0",
+   "title": "Richard Shindell",
+   "act": "Richard Shindell",
+   "name": "Richard Shindell",
+   "description": "Singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Richard_Shindell",
+   "extract": "Richard Shindell is an American folk singer, songwriter, producer, and musician. Shindell grew up in Port Washington, New York, and now lives in Buenos Aires, Argentina, with his wife, Lila Caimari, a university professor, and their children."
+  },
+  {
+   "id": "38ded548-39fb-4017-95b4-f53ae98eb009",
+   "slug": "chloe-slater-54af66a5",
+   "title": "Chloe Slater",
+   "act": "Chloe Slater",
+   "name": "Chloe Slater",
+   "description": "English singer-songwriter (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Chloe_Slater",
+   "extract": "Chloe Leanne Slater is an English singer-songwriter based in Manchester. Writing about social and political issues, she has been releasing music since 2023 and has issued two extended plays: You Can't Put a Price on Fun, and Love Me Please."
+  }
+ ]
+}

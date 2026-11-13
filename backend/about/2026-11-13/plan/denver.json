@@ -1,0 +1,26 @@
+{
+ "city": "denver",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "9d7a8ebc-0017-4bdc-93b7-3eeaffb3df2c",
+   "slug": "hurricane-wisdom-cbf96f40",
+   "title": "Hurricane Wisdom",
+   "act": "Hurricane Wisdom",
+   "name": "Hurricane Wisdom",
+   "description": "American rapper (born 2004)",
+   "source_url": "https://en.wikipedia.org/wiki/Hurricane_Wisdom",
+   "extract": "Wisdom Mikeal Oluola, known professionally as Hurricane Wisdom, is an American rapper, singer-songwriter, and social media personality. Born in Tallahassee, Florida, and growing up in Havana, Florida, Oluola started his music career in 2018 or 2019, although he started taking the career seriously in 2020, with his debut single being \"Granny's Baby\"."
+  },
+  {
+   "id": "b6c74f0c-5d50-416a-92cd-acb3af280316",
+   "slug": "violet-grohl-f67d04ad",
+   "title": "Violet Grohl",
+   "act": "Violet Grohl",
+   "name": "Violet Grohl",
+   "description": "American musician (born 2006)",
+   "source_url": "https://en.wikipedia.org/wiki/Violet_Grohl",
+   "extract": "Violet Maye Grohl is an American singer and songwriter. She is the eldest daughter of Foo Fighters frontman and former Nirvana drummer Dave Grohl. Her debut album, Be Sweet to Me, was released through Auroura and Republic Records on May 29, 2026."
+  }
+ ]
+}

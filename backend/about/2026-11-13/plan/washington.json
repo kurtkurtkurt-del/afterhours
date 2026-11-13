@@ -1,0 +1,26 @@
+{
+ "city": "washington",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "e546622b-f638-4536-831d-b92091d0d083",
+   "slug": "they-might-be-giants-four-night-pass-caeff168",
+   "title": "They Might Be Giants - Four Night Pass!",
+   "act": "They Might Be Giants",
+   "name": "They Might Be Giants",
+   "description": "American alternative rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/They_Might_Be_Giants",
+   "extract": "They Might Be Giants, often abbreviated as TMBG, is an American alternative rock band formed in Brooklyn in 1982 by vocalist and guitarist John Flansburgh and vocalist and multi-instrumentalist John Linnell. During the band's early years, Flansburgh and Linnell frequently performed as a musical duo, often accompanied by a tape machine or a drum machine. In 1992, They Might Be Giants expanded to include a backing band. The group's current backing band consists of Danny Weinkauf, Dan Miller, and Marty Beller, and their horn section consists of Dan Levine, Stan Harrison, and Mark Pender."
+  },
+  {
+   "id": "05b5bc0f-5b5a-4c2f-be60-717ba37b0ad9",
+   "slug": "they-might-be-giants-two-night-pass-11-19-and-11-95127217",
+   "title": "They Might Be Giants - Two Night Pass 11/19 & 11/20!",
+   "act": "They Might Be Giants",
+   "name": "They Might Be Giants",
+   "description": "American alternative rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/They_Might_Be_Giants",
+   "extract": "They Might Be Giants, often abbreviated as TMBG, is an American alternative rock band formed in Brooklyn in 1982 by vocalist and guitarist John Flansburgh and vocalist and multi-instrumentalist John Linnell. During the band's early years, Flansburgh and Linnell frequently performed as a musical duo, often accompanied by a tape machine or a drum machine. In 1992, They Might Be Giants expanded to include a backing band. The group's current backing band consists of Danny Weinkauf, Dan Miller, and Marty Beller, and their horn section consists of Dan Levine, Stan Harrison, and Mark Pender."
+  }
+ ]
+}

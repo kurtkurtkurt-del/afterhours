@@ -1,0 +1,16 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-13",
+ "nights": [
+  {
+   "id": "14610b9a-ceff-4b75-a035-8a689f9be140",
+   "slug": "triples-1e218266",
+   "title": "tripleS",
+   "act": "tripleS",
+   "name": "TripleS",
+   "description": "South Korean girl group",
+   "source_url": "https://en.wikipedia.org/wiki/TripleS",
+   "extract": "TripleS is a South Korean 24-member multinational girl group formed by Modhaus. They aim to be the world's first idol group, where the members will rotate between the full group, sub-units, and solo activities, as chosen by fans. Fans are able to participate and communicate with the group, such as deciding the sub-units and the content through NFT photo cards called \"Objekts\"."
+  }
+ ]
+}
