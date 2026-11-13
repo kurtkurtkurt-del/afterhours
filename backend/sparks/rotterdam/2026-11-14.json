@@ -1,0 +1,27 @@
+{
+  "city": "rotterdam",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": {
+        "en": "ambrose akinmusire quartet at lantarenvenster, 20:30.",
+        "de": "ambrose akinmusire quartet im lantarenvenster, 20:30.",
+        "tr": "lantarenvenster'da ambrose akinmusire quartet, 20:30."
+      },
+      "line": {
+        "en": "the trumpeter's quartet on a new album tour, a seated concert at 20:30. tickets are €27 with a free seat choice, so book before you go.",
+        "de": "das quartett des trompeters auf albumtour, sitzkonzert um 20:30. tickets kosten 27 euro, die platzwahl ist frei, also vorher buchen.",
+        "tr": "trompetçinin albüm turnesindeki kuartetiyle, 20:30'da oturarak izlenen konser. biletler 27 euro, koltuk seçimi serbest, gitmeden önce al."
+      },
+      "place": {
+        "en": "lantarenvenster",
+        "de": "lantarenvenster",
+        "tr": "lantarenvenster"
+      },
+      "hour": 20,
+      "minute": 30,
+      "why": "Ambrose Akinmusire Quartet at LantarenVenster Rotterdam, sat 14.11 20:30, from the venue programme and rotterdamstyle.com listing."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "city": "rotterdam",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "44 x rotterdam rave at the van nelle fabriek.",
+        "de": "44 x rotterdam rave in der van nelle fabriek.",
+        "tr": "van nelle fabriek'te 44 x rotterdam rave."
+      },
+      "line": {
+        "en": "a rave with 44 artists, in the van nelle fabriek for the first time. tickets through ticketswap; the start time is on the festival page.",
+        "de": "ein rave mit 44 artists, zum ersten mal in der van nelle fabriek. tickets über ticketswap, die startzeit steht auf der festivalseite.",
+        "tr": "44 sanatçılı bir rave, van nelle fabriek'te ilk kez. biletler ticketswap'ta, başlangıç saati festival sayfasında."
+      },
+      "place": {
+        "en": "van nelle fabriek",
+        "de": "van nelle fabriek",
+        "tr": "van nelle fabriek"
+      },
+      "hour": null,
+      "minute": null,
+      "why": "44 x Rotterdam Rave 2026, Van Nelle Fabriek, sat 21.11, from festivalinfo.nl; start time and line-up were not confirmed."
+    }
+  ]
+}
