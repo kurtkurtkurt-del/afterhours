@@ -1,0 +1,14 @@
+{
+  "city": "brussel",
+  "day": "2026-11-14",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "antiques and bric-a-brac at the grand sablon.", "de": "antiquitäten und trödel am grand sablon.", "tr": "grand sablon'da antika ve eski eşya." },
+      "line": { "en": "the antiques stalls on place du grand sablon, saturday and sunday mornings. about forty dealers; the cafés on the square are good for after.", "de": "die antiquitätenstände auf dem place du grand sablon, samstag und sonntag morgens. rund vierzig händler; die cafés am platz passen danach.", "tr": "place du grand sablon'daki antika tezgahları, cumartesi ve pazar sabahları. yaklaşık kırk satıcı; sonrası için meydandaki kafeler uygun." },
+      "place": { "en": "place du grand sablon", "de": "place du grand sablon", "tr": "place du grand sablon" },
+      "hour": 10, "minute": 0,
+      "why": "Sablon antiques market, about 40 dealers, Sat and Sun mornings (markets.brussels.be; guides differ on hours, 9:00 start in all of them)."
+    }
+  ]
+}

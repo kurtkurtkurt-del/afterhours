@@ -1,0 +1,14 @@
+{
+  "city": "brussel",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "bric-a-brac and used things at jeu de balle.", "de": "trödel und gebrauchtes am jeu de balle.", "tr": "jeu de balle'da eski eşya ve ikinci el." },
+      "line": { "en": "the daily flea market at place du jeu de balle, open until 15:00 on sunday. most stalls take cash only, so bring some.", "de": "der tägliche flohmarkt am place du jeu de balle, sonntags bis 15 uhr. die meisten stände nehmen nur bargeld.", "tr": "place du jeu de balle'daki her gün kurulan pazar, pazar günü 15:00'e kadar açık. çoğu tezgah yalnızca nakit alır." },
+      "place": { "en": "place du jeu de balle", "de": "place du jeu de balle", "tr": "place du jeu de balle" },
+      "hour": 10, "minute": 0,
+      "why": "Jeu de Balle flea market, open daily, weekends until 15:00 (brussels.be outdoor markets; hours differ in other guides). Cash-only note from Brussels Times guides."
+    }
+  ]
+}
