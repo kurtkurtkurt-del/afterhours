@@ -1,0 +1,14 @@
+{
+  "city": "antwerpen",
+  "day": "2026-11-17",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "wajdi riahi trio at platform.", "de": "wajdi riahi trio im platform.", "tr": "platform'da wajdi riahi trio." },
+      "line": { "en": "zabonprés sessions: wajdi riahi's trio at platform on verlatstraat. tuesday, concert from 20:00.", "de": "zabonprés sessions: das trio von wajdi riahi im platform an der verlatstraat. dienstag, konzert ab 20:00.", "tr": "zabonprés sessions: wajdi riahi üçlüsü, verlatstraat'taki platform'da. salı, konser saat 20:00'de." },
+      "place": { "en": "platform", "de": "platform", "tr": "platform" },
+      "hour": 20, "minute": 0,
+      "why": "Wajdi Riahi Trio, Zabonprés Sessions, Platform, Verlatstraat 20, Antwerp, Tue 17 Nov 2026 20:00 (jazzinbelgium.be)."
+    }
+  ]
+}
