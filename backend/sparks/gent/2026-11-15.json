@@ -1,0 +1,14 @@
+{
+  "city": "gent",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": { "en": "the sint welcome at the houtdok, 15:00.", "de": "der sint wird am houtdok begrüßt, 15:00.", "tr": "sint houtdok'ta karşılanıyor, 15:00." },
+      "line": { "en": "the sint and his helpers moor at the houtdok from 15:00, with a welcome song rehearsed beforehand. a slow walk down to the water, then back into the city.", "de": "der sint und seine helfer legen ab 15:00 am houtdok an, mit einem willkommenslied, das vorher geübt wird. ein ruhiger spaziergang zum wasser, danach zurück in die stadt.", "tr": "sint ve yardımcıları 15:00'ten itibaren houtdok'a yanaşıyor; karşılama şarkısı önceden çalışılıyor. suya doğru yavaş bir yürüyüş, sonra şehre dönüş." },
+      "place": { "en": "houtdok", "de": "houtdok", "tr": "houtdok" },
+      "hour": 15, "minute": 0,
+      "why": "The city of Gent (stad.gent, Sinterklaas komt naar Gent) says the sint moors at the Houtdok on Sunday 15 Nov 2026 from 15:00 with a welcome song."
+    }
+  ]
+}
