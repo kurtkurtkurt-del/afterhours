@@ -1,0 +1,14 @@
+{
+  "city": "barcelona",
+  "day": "2026-11-18",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "els encants, the old flea market.", "de": "els encants, der alte flohmarkt.", "tr": "els encants, eski bit pazarı." },
+      "line": { "en": "the old flea market at plaça de les glòries, open 09:00 to 20:00, covered sectors included. a slow wednesday wander through the stalls.", "de": "der alte flohmarkt an der plaça de les glòries, geöffnet 09:00 bis 20:00, mit überdachten bereichen. ein ruhiger mittwochsbummel durch die stände.", "tr": "plaça de les glòries'deki eski bit pazarı, 09:00 ile 20:00 arası açık, kapalı bölümleri de var. çarşamba günü tezgahlar arasında sakin bir gezinti." },
+      "place": { "en": "els encants vells", "de": "els encants vells", "tr": "els encants vells" },
+      "hour": 10, "minute": 0,
+      "why": "Els Encants Vells, Barcelona city council page: open Mon, Wed, Fri and Sat 09:00 to 20:00. The page is undated; no November 2026 change found."
+    }
+  ]
+}

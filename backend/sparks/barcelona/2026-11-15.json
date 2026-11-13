@@ -1,0 +1,14 @@
+{
+  "city": "barcelona",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "sunday book market at sant antoni.", "de": "sonntags-büchermarkt am sant antoni.", "tr": "pazar sabahı sant antoni kitap pazarı." },
+      "line": { "en": "the sunday book and collectibles market on comte d'urgell, open 08:30 to 14:00. a slow morning among old books.", "de": "der sonntägliche bücher- und sammlermarkt an der comte d'urgell, geöffnet 08:30 bis 14:00. ein ruhiger vormittag zwischen alten büchern.", "tr": "comte d'urgell'deki pazar kitap ve koleksiyon pazarı, 08:30 ile 14:00 arası açık. eski kitaplar arasında sakin bir sabah." },
+      "place": { "en": "mercat de sant antoni", "de": "mercat de sant antoni", "tr": "mercat de sant antoni" },
+      "hour": 9, "minute": 0,
+      "why": "Mercat dominical de Sant Antoni, Ajuntament de Barcelona market page: books and collectibles, Sundays 08:30 to 14:00. No November notice found."
+    }
+  ]
+}
