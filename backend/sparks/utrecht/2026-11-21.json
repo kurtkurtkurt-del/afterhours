@@ -1,0 +1,27 @@
+{
+  "city": "utrecht",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": {
+        "en": "fc utrecht – cambuur at the galgenwaard.",
+        "de": "fc utrecht – cambuur im galgenwaard.",
+        "tr": "galgenwaard'da fc utrecht – cambuur."
+      },
+      "line": {
+        "en": "the home game against sc cambuur, eredivisie round 13. most listings give 18:45 as kick-off, so check the club site before you go.",
+        "de": "das heimspiel gegen sc cambuur, eredivisie-runde 13. laut den meisten quellen anpfiff 18:45, vorher auf der vereinsseite prüfen.",
+        "tr": "eredivisie 13. hafta, sc cambuur'a karşı ev sahibi maç. çoğu kaynağa göre başlama 18:45, gitmeden önce kulüp sitesine bak."
+      },
+      "place": {
+        "en": "stadion galgenwaard",
+        "de": "stadion galgenwaard",
+        "tr": "stadion galgenwaard"
+      },
+      "hour": 18,
+      "minute": 45,
+      "why": "FC Utrecht vs SC Cambuur, sat 21.11, Stadion Galgenwaard (fcupdate.nl, footballticketnet.com, voetbalwedden.net). Kick-off 18:45 per voetbalwedden and oddslot; other sites give other times, so the time is not confirmed on the club site."
+    }
+  ]
+}
