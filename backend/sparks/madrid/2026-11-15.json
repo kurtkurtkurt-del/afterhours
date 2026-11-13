@@ -1,0 +1,22 @@
+{
+  "city": "madrid",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "football",
+      "title": { "en": "spain – england at the metropolitano.", "de": "spanien – england im metropolitano.", "tr": "ispanya – ingiltere, metropolitano'da." },
+      "line": { "en": "uefa nations league, last group matchday: spain against england at 20:45. check the club for tickets; if they are gone, find a bar with the match on and go early.", "de": "uefa nations league, letzter gruppenspieltag: spanien gegen england um 20:45. tickets beim verein prüfen; wenn sie weg sind, eine bar mit dem spiel suchen und früh hingehen.", "tr": "uluslar ligi, grup maçlarının son haftası: ispanya – ingiltere saat 20:45'te. biletleri kulüpten kontrol et; yoksa maçın yayınlandığı bir bar bul ve erken git." },
+      "place": { "en": "metropolitano", "de": "metropolitano", "tr": "metropolitano" },
+      "hour": 20, "minute": 45,
+      "why": "Spain vs England, UEFA Nations League group stage final matchday, Sun 15 Nov 20:45 at the Riyadh Air Metropolitano (atleticodemadrid.com news item; esmadrid agenda)."
+    },
+    {
+      "kind": "flea",
+      "title": { "en": "el rastro, the sunday market.", "de": "el rastro, der sonntagsmarkt.", "tr": "el rastro, pazar günü." },
+      "line": { "en": "the old flea market from cascorro down ribera de curtidores, 09:00 to 15:00. go before ten, when it gets crowded; metro la latina.", "de": "der alte flohmarkt von der plaza cascorro die ribera de curtidores hinunter, 9 bis 15 uhr. vor zehn hin, dann wird es voll; u-bahn la latina.", "tr": "cascorro'dan ribera de curtidores boyunca inen eski bit pazarı, 09:00 – 15:00. on olmadan git, sonra kalabalıklaşır; metro la latina." },
+      "place": { "en": "el rastro", "de": "el rastro", "tr": "el rastro" },
+      "hour": 9, "minute": 30,
+      "why": "El Rastro runs every Sunday and holiday 09:00 to 15:00 from Plaza de Cascorro down Ribera de Curtidores, per mercadillos.org and La Maleta Inquieta's 2026 Rastro guide; no closure found for Sun 15 Nov."
+    }
+  ]
+}
