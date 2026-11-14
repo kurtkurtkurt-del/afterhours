@@ -1,0 +1,14 @@
+{
+  "city": "porto",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "feira da vandoma, the saturday flea market.", "de": "feira da vandoma, der samstags-flohmarkt.", "tr": "feira da vandoma, cumartesi pazarı." },
+      "line": { "en": "saturday market on avenida 25 de abril near the estádio do dragão, 08:00 to 13:00. antiques and old things. go early.", "de": "samstagsmarkt an der avenida 25 de abril nahe dem estádio do dragão, 08:00 bis 13:00. antiquitäten und altes. früh hingehen.", "tr": "cumartesi pazarı, avenida 25 de abril'de, estádio do dragão yakınında, 08:00 ile 13:00 arası. antika ve eski eşyalar. erken gidin." },
+      "place": { "en": "avenida 25 de abril", "de": "avenida 25 de abril", "tr": "avenida 25 de abril" },
+      "hour": 8, "minute": 0,
+      "why": "Feira da Vandoma runs saturdays 08:00 to 13:00 on avenida 25 de abril, per visitporto.travel and the Câmara Municipal do Porto market guide; no 2026 change found, so the date follows the weekly pattern."
+    }
+  ]
+}
