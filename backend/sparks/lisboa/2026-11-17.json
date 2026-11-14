@@ -1,0 +1,14 @@
+{
+  "city": "lisboa",
+  "day": "2026-11-17",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "tuesday flea market at the feira da ladra.", "de": "dienstagsflohmarkt auf der feira da ladra.", "tr": "feira da ladra'da salı pire pazarı." },
+      "line": { "en": "the stalls run tuesdays and saturdays from 09:00 to 18:00 on campo de santa clara. tuesday is calmer than saturday, good for browsing slowly.", "de": "die stände sind dienstags und samstags von 9 bis 18 uhr auf dem campo de santa clara. der dienstag ist ruhiger als der samstag, gut zum langsamen stöbern.", "tr": "tezgahlar salı ve cumartesi günleri 09:00-18:00 arası campo de santa clara'da açık. salı cumartesiden sakin, yavaş yavaş gezmek için iyi." },
+      "place": { "en": "feira da ladra", "de": "feira da ladra", "tr": "feira da ladra" },
+      "hour": 10, "minute": 0,
+      "why": "Feira da Ladra runs on tuesdays and saturdays, 09:00 to 18:00, per Visit Lisboa and Time Out listings; one guide gives 16:00 as closing, so check before going."
+    }
+  ]
+}

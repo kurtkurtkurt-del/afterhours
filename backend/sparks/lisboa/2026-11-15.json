@@ -1,0 +1,27 @@
+{
+  "city": "lisboa",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "walk",
+      "title": {
+        "en": "sunset walk up to the graça lookout.",
+        "de": "spaziergang zum sonnenuntergang am miradouro da graça.",
+        "tr": "miradouro da graça'da gün batımı yürüyüşü."
+      },
+      "line": {
+        "en": "sunset is around 17:23 on sunday. walk up through alfama and be at the graça lookout by 17:00 for the light over the rooftops.",
+        "de": "der sonnenuntergang ist am sonntag gegen 17:23. durch die alfama hochlaufen und um 17:00 am aussichtspunkt graça sein, für das licht über den dächern.",
+        "tr": "pazar günü gün batımı yaklaşık 17:23. alfama'dan yukarı yürü, çatılar üzerindeki ışık için 17:00'de graça seyir terasında ol."
+      },
+      "place": {
+        "en": "miradouro da graça",
+        "de": "miradouro da graça",
+        "tr": "miradouro da graça"
+      },
+      "hour": 16,
+      "minute": 45,
+      "why": "Sunset on sun 15 Nov is 17:23 in Lisbon per a sunrise and sunset table (sunrise 07:19); no forecast for the day was found, so the walk is not weather-checked."
+    }
+  ]
+}

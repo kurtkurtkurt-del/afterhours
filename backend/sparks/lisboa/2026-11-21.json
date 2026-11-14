@@ -1,0 +1,27 @@
+{
+  "city": "lisboa",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "saturday flea market at the feira da ladra.",
+        "de": "samstagsflohmarkt auf der feira da ladra.",
+        "tr": "feira da ladra'da cumartesi pire pazarı."
+      },
+      "line": {
+        "en": "the busiest day of the flea market: stalls on campo de santa clara from 09:00 to 18:00. come early for the better stalls.",
+        "de": "der vollste tag des flohmarkts: die stände auf dem campo de santa clara von 9 bis 18 uhr. für die besseren stände früh kommen.",
+        "tr": "pire pazarının en kalabalık günü: campo de santa clara'da 09:00-18:00 arası tezgahlar. daha iyi tezgahlar için erken gel."
+      },
+      "place": {
+        "en": "feira da ladra",
+        "de": "feira da ladra",
+        "tr": "feira da ladra"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Feira da Ladra runs on saturdays, 09:00 to 18:00, per Visit Lisboa; Time Out describes saturday as the busier of its two market days."
+    }
+  ]
+}
