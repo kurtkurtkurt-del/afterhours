@@ -1,0 +1,26 @@
+{
+  "city": "bologna",
+  "day": "2026-11-17",
+  "sparks": [
+    {
+      "kind": "openmic",
+      "title": {
+        "en": "open mic at macondo.",
+        "de": "open mic im macondo.",
+        "tr": "macondo'da open mic."
+      },
+      "line": {
+        "en": "the stage at macondo in via del pratello is open to anyone on tuesdays. wind and percussion instruments are not allowed, so bring a guitar or your voice.",
+        "de": "die bühne im macondo in der via del pratello steht dienstags jedem offen. blasinstrumente und percussion sind nicht erlaubt, also gitarre oder stimme mitbringen.",
+        "tr": "via del pratello'daki macondo'nun sahnesi salı günleri herkese açık. üflemeli ve vurmalı çalgılar kabul edilmiyor; gitar ya da sesinle gel."
+      },
+      "place": {
+        "en": "macondo, via del pratello 22",
+        "de": "macondo, via del pratello 22",
+        "tr": "macondo, via del pratello 22"
+      },
+      "hour": 21, "minute": 30,
+      "why": "Macondo open mic, weekly on tuesdays at via del pratello 22, per the zero.eu listing for the venue; wind and percussion instruments excluded. The start time is a suggestion, check the venue."
+    }
+  ]
+}

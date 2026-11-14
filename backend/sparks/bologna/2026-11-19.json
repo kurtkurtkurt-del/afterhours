@@ -1,0 +1,26 @@
+{
+  "city": "bologna",
+  "day": "2026-11-19",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": {
+        "en": "christmas market in piazza xx settembre.",
+        "de": "weihnachtsmarkt auf der piazza xx settembre.",
+        "tr": "piazza xx settembre'de noel pazarı."
+      },
+      "line": {
+        "en": "natale a porta galliera opens today by the station, stalls for clothes, accessories and gifts. indicative hours 08:00 to 20:00, open until 6 january.",
+        "de": "natale a porta galliera öffnet heute am bahnhof, buden für mode, accessoires und geschenke. richtzeiten 8 bis 20 uhr, bis 6. januar geöffnet.",
+        "tr": "natale a porta galliera bugün istasyon yanında açılıyor; giysi, aksesuar ve hediyelik tezgâhlar. tahmini saatler 08:00 - 20:00, 6 ocak'a kadar açık."
+      },
+      "place": {
+        "en": "piazza xx settembre",
+        "de": "piazza xx settembre",
+        "tr": "piazza xx settembre"
+      },
+      "hour": 17, "minute": 0,
+      "why": "Natale a Porta Galliera, from 19 Nov to 6 Jan in piazza xx settembre, 08:00 to 20:00 indicative (idealista, Bologna Christmas Markets 2026 guide)."
+    }
+  ]
+}
