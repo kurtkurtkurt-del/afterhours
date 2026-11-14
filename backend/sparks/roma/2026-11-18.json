@@ -1,0 +1,14 @@
+{
+  "city": "roma",
+  "day": "2026-11-18",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "gregory hutchinson, miles davis at the auditorium.", "de": "gregory hutchinson, miles davis im auditorium.", "tr": "gregory hutchinson, auditorium'da miles davis." },
+      "line": { "en": "roma jazz festival: 'kind of now, the pulse of miles davis' in sala petrassi at 20:00. book through the auditorium parco della musica site.", "de": "roma jazz festival: 'kind of now, the pulse of miles davis' in der sala petrassi um 20:00. tickets über die seite des auditorium parco della musica.", "tr": "roma jazz festivali: 'kind of now, the pulse of miles davis', sala petrassi'de saat 20:00. biletleri auditorium parco della musica sitesinden al." },
+      "place": { "en": "auditorium parco della musica", "de": "auditorium parco della musica", "tr": "auditorium parco della musica" },
+      "hour": 20, "minute": 0,
+      "why": "Roma Jazz Festival programme, Gregory Hutchinson in Sala Petrassi, Wed 18 Nov 20:00 (romeing.it festival listing)."
+    }
+  ]
+}

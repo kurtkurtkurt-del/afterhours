@@ -1,0 +1,14 @@
+{
+  "city": "roma",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": { "en": "porta portese, the sunday flea market.", "de": "porta portese, der sonntagsflohmarkt.", "tr": "porta portese, pazar günü bit pazarı." },
+      "line": { "en": "held every sunday morning, stalls open early and close around 14:00. tram 3 and 8 stop there. go early for the better finds.", "de": "findet jeden sonntagmorgen statt, die stände öffnen früh und schließen gegen 14:00. straßenbahn 3 und 8 halten dort. früh kommen lohnt sich.", "tr": "her pazar sabahı kurulur, tezgâhlar erken açılır ve yaklaşık 14:00'te kapanır. 3 ve 8 numaralı tramvaylar oraya durur. iyi parçalar için erken git." },
+      "place": { "en": "porta portese", "de": "porta portese", "tr": "porta portese" },
+      "hour": 9, "minute": 0,
+      "why": "Porta Portese flea market runs every sunday, with tram 3 and 8 access, per the Turismo Roma market page (turismoroma.it); no november closure found."
+    }
+  ]
+}

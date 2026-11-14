@@ -1,0 +1,14 @@
+{
+  "city": "roma",
+  "day": "2026-11-21",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "musei in musica, the civic museums at night.", "de": "musei in musica, die städtischen museen am abend.", "tr": "musei in musica, şehir müzeleri gece." },
+      "line": { "en": "the civic museums open in the evening for musei in musica, the capitoline from 20:00. the full programme is not online yet, so check turismoroma.it before you go.", "de": "die städtischen museen öffnen abends für musei in musica, die kapitolinischen ab 20:00. das vollständige programm ist noch nicht online; vorher auf turismoroma.it prüfen.", "tr": "şehir müzeleri musei in musica için akşam açılıyor, kapitolini saat 20:00'den itibaren. tam program henüz yayımlanmadı; gitmeden önce turismoroma.it'e bak." },
+      "place": { "en": "musei capitolini", "de": "musei capitolini", "tr": "musei capitolini" },
+      "hour": 20, "minute": 0,
+      "why": "Musei in Musica 2026 on Sat 21 Nov with evening opening from 20:00 for the Musei Capitolini and others, per Turismo Roma (programme not yet published)."
+    }
+  ]
+}

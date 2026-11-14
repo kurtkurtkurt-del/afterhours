@@ -1,0 +1,14 @@
+{
+  "city": "roma",
+  "day": "2026-11-20",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "omasta at the alcazar, jazz.", "de": "omasta im alcazar, jazz.", "tr": "alcazar'da omasta, caz." },
+      "line": { "en": "roma jazz festival night at the alcazar, omasta on stage at 21:00. check the alcazar site for the ticket price.", "de": "roma jazz festival im alcazar, omasta um 21:00 auf der bühne. den ticketpreis auf der seite des alcazar prüfen.", "tr": "roma jazz festivali kapsamında alcazar'da omasta saat 21:00'de sahnede. bilet fiyatını alcazar'ın sitesinden kontrol et." },
+      "place": { "en": "alcazar", "de": "alcazar", "tr": "alcazar" },
+      "hour": 21, "minute": 0,
+      "why": "Omasta at the Alcazar, Roma Jazz Festival programme, Fri 20 Nov 21:00 (romeing.it festival listing)."
+    }
+  ]
+}
