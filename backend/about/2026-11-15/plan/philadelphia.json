@@ -1,0 +1,46 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "252cb17a-849e-40e5-b93c-a642dddc11de",
+   "slug": "the-pineapple-thief-00259cd5",
+   "title": "The Pineapple Thief",
+   "act": "The Pineapple Thief",
+   "name": "The Pineapple Thief",
+   "description": "British progressive rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pineapple_Thief",
+   "extract": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset. As of June 2024, the group consists of Soord on vocals, guitars, and keyboards, Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums. They have released 16 studio albums, 6 EPs, and several live and compilation albums."
+  },
+  {
+   "id": "4e9a13a7-c092-41f8-bf2a-0ba5d9ca31a1",
+   "slug": "steve-aoki-646d4fb2",
+   "title": "Steve Aoki",
+   "act": "Steve Aoki",
+   "name": "Steve Aoki",
+   "description": "American DJ and music producer (born 1977)",
+   "source_url": "https://en.wikipedia.org/wiki/Steve_Aoki",
+   "extract": "Steven Hiroyuki Aoki is an American DJ and record producer. In 2012, Pollstar designated Aoki as the highest-grossing electronic dance music artist in North America from tours. In 2024, Gold House recognized him as one of the Most Impactful Asians. He has collaborated with artists such as will.i.am, Afrojack, AJR, LMFAO, Tini, Linkin Park, Agnez Mo, Iggy Azalea, Grandson, Lil Jon, Blink-182, Taking Back Sunday, Laidback Luke, BTS, Backstreet Boys, Vini Vici, Lauren Jauregui, and Fall Out Boy and is known for his remixes of artists such as Kid Cudi."
+  },
+  {
+   "id": "33723b43-311d-4edd-a02b-cd4ea4a98a8f",
+   "slug": "the-menzingers-everything-i-ever-saw-north-ameri-40ae40ee",
+   "title": "The Menzingers: Everything I Ever Saw North American Tour",
+   "act": "The Menzingers",
+   "name": "The Menzingers",
+   "description": "American punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Menzingers",
+   "extract": "The Menzingers are an American punk rock band from Scranton, Pennsylvania, formed in 2006. The band consists of Greg Barnett, Tom May, Eric Keen (bass) and Joe Godino (drums). To date, the band has released eight studio albums, with their most recent, Everything I Ever Saw, released on July 17, 2026."
+  },
+  {
+   "id": "a47a93fe-f4ac-4ce0-8f10-70c8563daf27",
+   "slug": "suicide-silence-reminders-of-hell-tour-2c85598b",
+   "title": "Suicide Silence: REMINDERS OF HELL TOUR",
+   "act": "Suicide Silence",
+   "name": "Suicide Silence",
+   "description": "American deathcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Suicide_Silence",
+   "extract": "Suicide Silence is an American deathcore band from Riverside, California. The band was established in 2002, and has released seven studio albums, three EPs, and nineteen music videos. They were awarded the Revolver Golden God award for \"Best New Talent\" in 2009. The group currently consists of guitarists Chris Garza and Mark Heylmun, bassist Dan Kenny, vocalist Hernan \"Eddie\" Hermida and drummer Ernie Iniguez."
+  }
+ ]
+}

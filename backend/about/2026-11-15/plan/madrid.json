@@ -1,0 +1,16 @@
+{
+ "city": "madrid",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "ca8030f4-ac8e-4205-85f3-c1633095d975",
+   "slug": "marisela-5f03925a",
+   "title": "Marisela",
+   "act": "Marisela",
+   "name": "Marisela",
+   "description": "Mexican-American singer (born 1966)",
+   "source_url": "https://en.wikipedia.org/wiki/Marisela",
+   "extract": "Marisela Esqueda, known professionally as Marisela, is an American singer and songwriter. She is also referred to as \"La Dama de Hierro\". Her debut album, Sin Él, entered at No. 16 on the first Billboard Latin Albums Chart."
+  }
+ ]
+}

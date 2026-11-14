@@ -1,0 +1,26 @@
+{
+ "city": "austin",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "1a3f76c5-8d63-4f74-8017-b9028c2d7db9",
+   "slug": "makaya-mccraven-0c741a1e",
+   "title": "Makaya McCraven",
+   "act": "Makaya McCraven",
+   "name": "Makaya McCraven",
+   "description": "American jazz drummer and bandleader (born 1983)",
+   "source_url": "https://en.wikipedia.org/wiki/Makaya_McCraven",
+   "extract": "Makaya McCraven is an American jazz drummer and bandleader."
+  },
+  {
+   "id": "faa5cdf5-d252-45b8-931a-3cd830a72e71",
+   "slug": "imminence-axis-mundi-tour-north-america-2026-7e8d6392",
+   "title": "Imminence - Axis Mundi Tour: North America 2026",
+   "act": "Imminence",
+   "name": "Imminence",
+   "description": "Swedish metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Imminence_(band)",
+   "extract": "Imminence is a Swedish metalcore band formed in Trelleborg. The group consists of vocalist Eddie Berg, rhythm guitarist Harald Barrett, lead guitarist Alex Arnoldsson, and bassist Christian Höijer."
+  }
+ ]
+}

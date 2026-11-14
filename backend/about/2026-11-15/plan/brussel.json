@@ -1,0 +1,16 @@
+{
+ "city": "brussel",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "c4958ebd-61f1-451b-a957-32b3d8d5e49f",
+   "slug": "beth-hart-4b539ce9",
+   "title": "Beth Hart",
+   "act": "Beth Hart",
+   "name": "Beth Hart",
+   "description": "American blues rock musician (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Beth_Hart",
+   "extract": "Beth Hart is an American musician from Los Angeles, California. She rose to fame with the release of her 1999 single \"L.A. Song \" from her second album Screamin' for My Supper. The single was a number one hit in New Zealand, as well as reaching the top five of the US Adult Contemporary and Top 10 on the Billboard Adult Top 40 charts."
+  }
+ ]
+}

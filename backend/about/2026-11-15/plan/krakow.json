@@ -1,0 +1,16 @@
+{
+ "city": "krakow",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "2ff9acca-1c61-434f-acdf-5ea92ff2435d",
+   "slug": "the-ocean-55aed08d",
+   "title": "THE OCEAN",
+   "act": "THE OCEAN",
+   "name": "The Ocean",
+   "description": "German post-metal band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Ocean_(band)",
+   "extract": "The Ocean is a German post-metal band formed in 2001 by German guitarist Robin Staps."
+  }
+ ]
+}

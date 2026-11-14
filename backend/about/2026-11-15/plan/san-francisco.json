@@ -1,0 +1,56 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "5ad68c91-ea73-4a36-9ad8-81e4e908aed7",
+   "slug": "icona-pop-fe2b4df3",
+   "title": "Icona Pop",
+   "act": "Icona Pop",
+   "name": "Icona Pop",
+   "description": "Swedish synth-pop duo",
+   "source_url": "https://en.wikipedia.org/wiki/Icona_Pop",
+   "extract": "Icona Pop are a Swedish synth-pop duo that formed in 2009, with electro house and indie pop music influences. Its two members, Aino Jawo and Caroline Hjelt, grew up in Stockholm and created what the Swedish press has described as music which \"you can both laugh and cry to at the same time\". They signed to TEN Music Group in 2009 and are currently also in a label deal with Ultra Music. Their biggest hit to date has been \"I Love It\"."
+  },
+  {
+   "id": "9ebdeace-0ceb-4576-982a-61905e769107",
+   "slug": "dj-stingray-ages-21-756651ac",
+   "title": "DJ Stingray - Ages 21+",
+   "act": "DJ Stingray",
+   "name": "DJ Stingray",
+   "description": "American DJ and producer",
+   "source_url": "https://en.wikipedia.org/wiki/DJ_Stingray",
+   "extract": "DJ Stingray, or Sherard Ingram, is an American electronic music producer and DJ from Detroit, Michigan. He is known as a prominent figure in Detroit’s techno and electro scene. He is the founder of Urban Tribe and an associate of legendary Detroit electro duo Drexciya. As both a DJ and producer, Ingram specializes in futuristic electro, preferring fast tempos and inventive beat patterns to more accessible, club-friendly rhythms. When asked to describe his style of electronic music, he prefers to classify it as Techno."
+  },
+  {
+   "id": "f38d92e0-c564-4d52-b43e-46c0d4804ae9",
+   "slug": "the-mountain-goats-night-four-the-sunset-tree-665c4dfb",
+   "title": "The Mountain Goats - Night Four: The Sunset Tree",
+   "act": "The Mountain Goats",
+   "name": "The Mountain Goats",
+   "description": "American indie folk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+   "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark."
+  },
+  {
+   "id": "611c3de7-1d96-4421-bf88-bf2f1d1a00c6",
+   "slug": "pretty-sick-02f2bb1b",
+   "title": "Pretty Sick",
+   "act": "Pretty Sick",
+   "name": "Pretty Sick",
+   "description": "American rock band from New York City",
+   "source_url": "https://en.wikipedia.org/wiki/Pretty_Sick",
+   "extract": "Pretty Sick is an American indie rock band from New York City, New York. It currently consists of vocalist and bassist Sabrina Fuentes, drummer Eva Kaufman, and guitarist Benjamin Arauz."
+  },
+  {
+   "id": "71aba879-4ffc-4ef2-841d-fcec09cd4c67",
+   "slug": "carl-cox-club-darc-season-2-ages-21-c8be2c65",
+   "title": "Carl Cox - Club Darc Season 2  - Ages 21+",
+   "act": "Carl Cox",
+   "name": "Carl Cox",
+   "description": "British DJ (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Carl_Cox",
+   "extract": "\nCarl Andrew Cox is a British house and techno club DJ, radio DJ, motorsport team owner and record producer. He lives in Frankston, Victoria, Australia."
+  }
+ ]
+}

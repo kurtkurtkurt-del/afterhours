@@ -1,0 +1,16 @@
+{
+ "city": "detroit",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "77b80018-245c-452f-a040-6af869acaa8e",
+   "slug": "protomartyr-8d4e7e59",
+   "title": "Protomartyr",
+   "act": "Protomartyr",
+   "name": "Protomartyr",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Protomartyr_(band)",
+   "extract": "Protomartyr is an American post-punk band formed in Detroit, Michigan, in 2010. The band consists of Joe Casey (vocals), Greg Ahee (guitar), Alex Leonard (drums), and Scott Davidson (bass). During live performances, the band is currently joined by multi-instrumentalist Fred Thomas. Between 2020 and 2024, Kelley Deal joined the band in a touring capacity, providing additional keyboards, guitar and backing vocals."
+  }
+ ]
+}

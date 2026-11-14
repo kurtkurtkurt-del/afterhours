@@ -1,0 +1,16 @@
+{
+ "city": "oslo",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "d9a00c80-efb6-4a4b-9cd4-5c8f91b2450c",
+   "slug": "delillos-09b52df5",
+   "title": "Delillos",
+   "act": "Delillos",
+   "name": "DeLillos",
+   "description": "Norwegian pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/DeLillos",
+   "extract": "deLillos  is a Norwegian pop rock band formed in Oslo in 1984. They are generally regarded as one of the \"Four Greats\" in modern Norwegian pop music, i.e. one of the four 1980s groups that founded a new tradition for rock music with lyrics in Norwegian. The remaining three \"Greats\" are DumDum Boys, Raga Rockers and Jokke & Valentinerne."
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "7628b4ff-b4ad-478c-86eb-cf35b7286464",
+   "slug": "mariah-carey-0430cb21",
+   "title": "Mariah Carey",
+   "act": "Mariah Carey",
+   "name": "Mariah Carey",
+   "description": "American singer-songwriter (born 1969)",
+   "source_url": "https://en.wikipedia.org/wiki/Mariah_Carey",
+   "extract": "Mariah Carey is an American singer-songwriter, record producer, and actress. Dubbed the \"Songbird Supreme\", Carey is known for her five-octave vocal range, melismatic singing style, signature use of the whistle register, and diva persona. An influential figure in popular culture, she was ranked as the fifth-greatest singer of all time by Rolling Stone in 2023."
+  },
+  {
+   "id": "0c71138b-0a8c-4d37-9d25-97158fb57cc9",
+   "slug": "takura-a1a27a4e",
+   "title": "Takura",
+   "act": "Takura",
+   "name": "Takura",
+   "description": "Zimbabwean singer and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Takura",
+   "extract": "Takura Shonhai is a Zimbabwean singer and songwriter. He is well known for his frequent collaborations with Chase & Status and Sub Focus, as well as many other dubstep and drum and bass artists. His guest appearances have accumulated over 17 million views on YouTube, and his song \"Flashing Lights\" has charted in the United Kingdom at number 98 in the UK Singles Chart and number 15 in the UK Dance Chart. He managed to share a stage with Plan B and also co-wrote Rihanna's 2009 single \"Wait Your Turn\" which has over 28 million views on YouTube. This song was charted at number 45 in the UK Singles Chart. On 10 September 2013, Door Policy released the three-track EP No Cover Charge for free download. It features a guest appearance from \"Traktor\" singer L Marshall."
+  },
+  {
+   "id": "d911451f-163c-470e-b949-7af9802ba1d9",
+   "slug": "phoebe-bridgers-8711cade",
+   "title": "Phoebe Bridgers",
+   "act": "Phoebe Bridgers",
+   "name": "Phoebe Bridgers",
+   "description": "American singer and songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Phoebe_Bridgers",
+   "extract": "Phoebe Lucille Bridgers is an American singer-songwriter, record producer, and actress. Her indie folk music typically centers on acoustic guitar and electronic production, with melancholic lyrical themes. She has won four Grammy Awards from eleven nominations."
+  },
+  {
+   "id": "406b7ecd-0a0d-4fa1-9430-b17e2f709a6d",
+   "slug": "bleachers-79894fd9",
+   "title": "Bleachers",
+   "act": "Bleachers",
+   "name": "Bleachers",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Bleachers_(band)",
+   "extract": "Bleachers is an American rock band from New Jersey, formed in 2013 by musician Jack Antonoff. Antonoff was the only permanent member of the group until 2023, when longtime touring musicians Mikey Freedom Hart, Sean Hutchinson, Evan Smith, Michael Riddleberger, and Zem Audu became official members."
+  }
+ ]
+}

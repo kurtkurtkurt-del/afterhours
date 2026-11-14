@@ -1,0 +1,66 @@
+{
+ "city": "atlanta",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "7357eaa9-0d0a-4319-a91a-719dab91a1c5",
+   "slug": "chrissy-chlapecka-deb638f9",
+   "title": "Chrissy Chlapecka",
+   "act": "Chrissy Chlapecka",
+   "name": "Chrissy Chlapecka",
+   "description": "American singer and TikTok personality (born 2000)",
+   "source_url": "https://en.wikipedia.org/wiki/Chrissy_Chlapecka",
+   "extract": "\nChristine Nicole Chlapecka is an American singer, TikTok personality, and left-wing activist. She is best known as a key figure in \"#BimboTok\", a TikTok subculture centered on reclaiming the bimbo stereotype and aesthetic in a queer, feminist, and leftist context."
+  },
+  {
+   "id": "1b82b023-a3fd-4497-8ad0-e4dc34fcc169",
+   "slug": "bleood-12ab5138",
+   "title": "bleood",
+   "act": "bleood",
+   "name": "Bleood",
+   "description": "American rapper and record producer (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Bleood",
+   "extract": "Jamari Isiaha Spencer-Brown, known professionally as Bleood, is an American rapper and record producer. He initially emerged as a member of New York City rapper Xaviersobased's collective 1c34."
+  },
+  {
+   "id": "1062e154-a879-4737-9117-74cdf8f5aa64",
+   "slug": "l-rain-ca954193",
+   "title": "L'Rain",
+   "act": "L'Rain",
+   "name": "L'Rain",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/L'Rain",
+   "extract": "Taja Cheek, known professionally as L'Rain, is an American experimentalist, multi-instrumentalist, composer, and curator known primarily as the lead vocalist and songwriter of her eponymous band. L'Rain has been recognized for experimental music that draws on a vast number of traditions and genres in a practice and aesthetic Cheek calls \"approaching songness\"."
+  },
+  {
+   "id": "918341b0-2ba0-4e90-b165-829dbedb5abd",
+   "slug": "waterparks-night-1-413ea67e",
+   "title": "Waterparks - NIGHT 1",
+   "act": "Waterparks",
+   "name": "Waterparks",
+   "description": "American pop rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Waterparks_(band)",
+   "extract": "Waterparks is an American pop rock band formed in Houston, Texas in 2011. The group currently consists of lead vocalist and rhythm guitarist Awsten Knight, backing vocalist and lead guitarist Geoff Wigington, and backing vocalist and drummer Otto Wood."
+  },
+  {
+   "id": "afccbec6-ff2d-445d-9667-d0e71d159fa0",
+   "slug": "imminence-axis-mundi-tour-north-america-2026-47e80297",
+   "title": "Imminence - Axis Mundi Tour: North America 2026",
+   "act": "Imminence",
+   "name": "Imminence",
+   "description": "Swedish metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Imminence_(band)",
+   "extract": "Imminence is a Swedish metalcore band formed in Trelleborg. The group consists of vocalist Eddie Berg, rhythm guitarist Harald Barrett, lead guitarist Alex Arnoldsson, and bassist Christian Höijer."
+  },
+  {
+   "id": "5731e5b6-c84a-4590-bbaf-8463a164cbc3",
+   "slug": "alyssa-grace-4610717c",
+   "title": "Alyssa Grace",
+   "act": "Alyssa Grace",
+   "name": "Alyssa Grace",
+   "description": "American singer (born 2007)",
+   "source_url": "https://en.wikipedia.org/wiki/Alyssa_Grace",
+   "extract": "Alyssa Grace Proffitt is an American singer-songwriter based in California. She made her recording debut in 2026 with \"Dog with a Bone\" and gained wider recognition through the singles \"Picking Petals\" and \"Bloodstream\"."
+  }
+ ]
+}

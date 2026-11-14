@@ -1,0 +1,86 @@
+{
+ "city": "washington",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "5c16eebd-2341-4ce0-a972-c0e658586dbb",
+   "slug": "brutalismus-3000-harmony-us-tour-2026-cd56570e",
+   "title": "Brutalismus 3000: Harmony US Tour 2026",
+   "act": "Brutalismus 3000",
+   "name": "Brutalismus 3000",
+   "description": "German electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Brutalismus_3000",
+   "extract": "Brutalismus 3000 are an electronic music duo from Berlin, comprising Victoria Vassiliki Daldas and Theo Zeitner."
+  },
+  {
+   "id": "60b593ae-17b3-4226-bafb-a76b7b21b415",
+   "slug": "sammy-rae-and-the-friends-the-get-down-92483a37",
+   "title": "Sammy Rae & The Friends - the GET DOWN!",
+   "act": "Sammy Rae & The Friends",
+   "name": "Sammy Rae & The Friends",
+   "description": "American jazz-pop band from Brooklyn",
+   "source_url": "https://en.wikipedia.org/wiki/Sammy_Rae_%26_The_Friends",
+   "extract": "Sammy Rae & The Friends is an American jazz-pop band from Brooklyn, New York City, led by singer-songwriter Samantha \"Sammy Rae\" Bowers. Formed in 2016, the group is known for high-energy live shows; in February 2024 they played two sold-out nights at Washington, D.C.’s 9:30 Club. Their debut studio album, Something for Everybody, was released on September 20, 2024, via Nettwerk, following the EPs The Good Life (2018) and Let's Throw a Party (2021)."
+  },
+  {
+   "id": "6ca5f1d9-2965-4f12-a394-8cdc48549567",
+   "slug": "national-symphony-orchestra-serenades-and-simple-479d24f9",
+   "title": "National Symphony Orchestra: Serenades & Simple Songs",
+   "act": "National Symphony Orchestra",
+   "name": "National Symphony Orchestra",
+   "description": "Orchestra in Washington, DC",
+   "source_url": "https://en.wikipedia.org/wiki/National_Symphony_Orchestra",
+   "extract": "The National Symphony Orchestra (NSO) is an American symphony orchestra based in Washington, D.C. Founded in 1930 by cellist Hans Kindler, its principal performing venue is the John F. Kennedy Center for the Performing Arts."
+  },
+  {
+   "id": "8f17bef0-25a7-4ecb-9983-b81cbc8f58d5",
+   "slug": "eric-prydz-f0495aac",
+   "title": "Eric Prydz",
+   "act": "Eric Prydz",
+   "name": "Eric Prydz",
+   "description": "Swedish DJ and record producer (born 1976)",
+   "source_url": "https://en.wikipedia.org/wiki/Eric_Prydz",
+   "extract": "Eric Sheridan Prydz, also known by his many aliases including Pryda and Cirez D, is a Swedish DJ and record producer. He rose to prominence with his 2004 hit single \"Call on Me\", and saw continued chart success with \"Proper Education\" in 2007, \"Pjanoo\" in 2008, and \"Opus\" in 2015. In 2016, he released his debut studio album, Opus."
+  },
+  {
+   "id": "cf3ffd04-2813-4521-accc-33150ede2e30",
+   "slug": "liana-flores-78fad7c5",
+   "title": "Liana Flores",
+   "act": "Liana Flores",
+   "name": "Liana Flores",
+   "description": "British singer-songwriter and guitarist",
+   "source_url": "https://en.wikipedia.org/wiki/Liana_Flores",
+   "extract": "Liana Flores is a British-Brazilian singer-songwriter and guitarist. After independently releasing two extended plays The Water's Fine! (2018) and Recently (2019), her debut studio album Flower of the Soul was released under Verve and Fiction in June 2024."
+  },
+  {
+   "id": "e9195846-a041-49cc-af65-2866974b2cc1",
+   "slug": "dark-star-orchestra-celebrating-45-years-of-reck-54a29763",
+   "title": "Dark Star Orchestra - Celebrating 45 Years of Reckoning",
+   "act": "Dark Star Orchestra",
+   "name": "Dark Star Orchestra",
+   "description": "American tribute band",
+   "source_url": "https://en.wikipedia.org/wiki/Dark_Star_Orchestra",
+   "extract": "Dark Star Orchestra is a Grateful Dead tribute band formed in Chicago, Illinois. They serve now as an international touring tribute band to the rock group the Grateful Dead. Since 1997, the band has been \"celebrating the Grateful Dead concert experience.\""
+  },
+  {
+   "id": "fbdb5a49-2eeb-46e8-94df-bdc19a26039e",
+   "slug": "doja-cat-tour-ma-vie-world-tour-51948819",
+   "title": "Doja Cat - Tour Ma Vie World Tour",
+   "act": "Doja Cat",
+   "name": "Doja Cat",
+   "description": "American rapper (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Doja_Cat",
+   "extract": "Amala Ratna Zandile Dlamini, known professionally as Doja Cat, is an American rapper and singer-songwriter. Regarded as the \"Queen of Pop-Rap\", she is known for her musical versatility, live performance skills and humorous internet presence. Billboard named her \"one of the world's biggest pop stars\" and \"one of the defining pop stars of this era\", and Time listed her as one of the world's most influential people in 2023."
+  },
+  {
+   "id": "a2ff291d-de64-426b-afd1-184a4d32257d",
+   "slug": "national-symphony-orchestra-the-nutcracker-and-c-b64bb792",
+   "title": "National Symphony Orchestra: The Nutcracker & Cinderella",
+   "act": "National Symphony Orchestra",
+   "name": "National Symphony Orchestra",
+   "description": "Orchestra in Washington, DC",
+   "source_url": "https://en.wikipedia.org/wiki/National_Symphony_Orchestra",
+   "extract": "The National Symphony Orchestra (NSO) is an American symphony orchestra based in Washington, D.C. Founded in 1930 by cellist Hans Kindler, its principal performing venue is the John F. Kennedy Center for the Performing Arts."
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "city": "amsterdam",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "ce70417f-9a7c-4b48-acda-88dab246bc78",
+   "slug": "flower-face-0c1b5397",
+   "title": "Flower Face",
+   "act": "Flower Face",
+   "name": "Flower Face",
+   "description": "Canadian folk musician",
+   "source_url": "https://en.wikipedia.org/wiki/Flower_Face",
+   "extract": "Ruby McKinnon, known professionally as Flower Face, is a Canadian goth-folk and dreampop musician based in Montreal."
+  },
+  {
+   "id": "44b18441-5bea-4f1d-94c3-1eec8c3e6f15",
+   "slug": "tinie-tempah-c648d529",
+   "title": "Tinie Tempah",
+   "act": "Tinie Tempah",
+   "name": "Tinie Tempah",
+   "description": "British rapper and singer (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Tinie_Tempah",
+   "extract": "Patrick Chukwuemeka Okogwu, better known by his stage name Tinie Tempah, is an English rapper, singer and television presenter. Born and raised in London, he created his own entertainment company Disturbing London in 2006, alongside Dumi Oburota. After signing with Parlophone in 2009 and releasing several mixtapes, he rose to fame with the UK number-one singles \"Pass Out\" and \"Written in the Stars\" in 2010."
+  },
+  {
+   "id": "2b5420b4-6cb3-4e6e-887c-353d7ddb9494",
+   "slug": "taemin-premium-seats-7c80b6ea",
+   "title": "Taemin | Premium Seats",
+   "act": "Taemin",
+   "name": "Taemin",
+   "description": "South Korean singer and actor (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Taemin",
+   "extract": "Lee Tae-min, known mononymously as Taemin, is a South Korean singer and actor. He debuted as a member of the South Korean boy band Shinee in May 2008 and the supergroup SuperM in 2019, both under SM Entertainment, and has subsequently been labeled by media outlets as the \"Idol's Idol\" due to the large number of idols citing him as an inspiration. As an actor, Taemin's first role was as Junsu in the 2009 MBC comedy Hilarious Housewives."
+  },
+  {
+   "id": "b64506fb-9c06-48e3-96da-6c23c2d960dc",
+   "slug": "bryson-tiller-wine-and-dine-ticket-not-included-03519975",
+   "title": "Bryson Tiller | Wine & Dine (TICKET NOT INCLUDED)",
+   "act": "Bryson Tiller",
+   "name": "Bryson Tiller",
+   "description": "American singer (born 1993)",
+   "source_url": "https://en.wikipedia.org/wiki/Bryson_Tiller",
+   "extract": "Bryson Tiller is an American R&B singer and rapper. He began his career in 2011 with his debut mixtape, Killer Instinct Vol. 1. He gained mainstream recognition following the release of his 2015 single \"Don't\", which peaked at number 13 on the Billboard Hot 100 and received quintuple platinum certification by the Recording Industry Association of America (RIAA). Its success led to a recording contract with RCA Records, who issued \"Don't\" as the lead single for his debut studio album Trapsoul (2015), which entered the top ten of the Billboard 200."
+  },
+  {
+   "id": "06af6a80-fc9d-4a01-a504-7157cf924242",
+   "slug": "kid-kapichi-acd60d52",
+   "title": "Kid Kapichi",
+   "act": "Kid Kapichi",
+   "name": "Kid Kapichi",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kid_Kapichi",
+   "extract": "Kid Kapichi are an English punk rock band formed in Hastings in 2013. The band consists of vocalist and guitarist Jack Wilson and bassist Eddie Lewis."
+  }
+ ]
+}

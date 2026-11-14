@@ -1,0 +1,16 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "6b343863-52ea-4d54-b4b0-11e56b46d664",
+   "slug": "ich-troje-99bc92e7",
+   "title": "Ich Troje",
+   "act": "Ich Troje",
+   "name": "Ich Troje",
+   "description": "Polish pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Ich_Troje",
+   "extract": "Ich Troje is a Polish pop band. Ich Troje was founded in 1996 by songwriter Michał Wiśniewski and composer Jacek Łągwa. Since 2000, Ich Troje has been one of the most successful Polish groups. They have sold more than 1.5 million records since June 2001. Their songs are typically about love, betrayal and break-ups. They represented Poland in the Eurovision Song Contest twice: with \"Keine Grenzen – Żadnych granic\" in 2003 and \"Follow My Heart\" in 2006."
+  }
+ ]
+}

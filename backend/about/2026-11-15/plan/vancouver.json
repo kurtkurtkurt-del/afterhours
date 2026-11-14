@@ -1,0 +1,16 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "001c6118-aed9-45db-ace1-0c2574fe76b0",
+   "slug": "tiga-194d1dac",
+   "title": "Tiga",
+   "act": "Tiga",
+   "name": "Tiga",
+   "description": "Canadian DJ and musician (born 1974)",
+   "source_url": "https://en.wikipedia.org/wiki/Tiga_(musician)",
+   "extract": "Tiga James Sontag, known simply as Tiga, is a Canadian musician, DJ, record producer, and music programmer. He has released four albums: Sexor (2006), Ciao! (2009), No Fantasy Required (2016), and Hotlife (2026). With his debut album, Sexor, winning the 2007 Juno Award for Dance Recording of the Year. Tiga released a selection of compilations in the early 2000s, featuring mixes such as American Gigolo, DJ-Kicks: Tiga and, Mixed Emotions. His compilation mix, Tiga Non-Stop, was released in November 2012, and premiered Tiga's latest single \"Plush\". The mix also features tracks from artists such as Kindness, Duke Dumont and Blawan."
+  }
+ ]
+}

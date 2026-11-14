@@ -1,0 +1,16 @@
+{
+ "city": "zurich",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "2cdad80e-99a6-4d82-9e67-6aa86b72ab0d",
+   "slug": "og-keemo-cd9c6717",
+   "title": "OG Keemo",
+   "act": "OG Keemo",
+   "name": "OG Keemo",
+   "description": "German rapper",
+   "source_url": "https://en.wikipedia.org/wiki/OG_Keemo",
+   "extract": "Karim Joel Martin, known professionally as OG Keemo, is a German rapper."
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "city": "houston",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "234f99c2-b9ac-4600-a308-2dcdd5fcd60b",
+   "slug": "george-clanton-3849fd86",
+   "title": "George Clanton",
+   "act": "George Clanton",
+   "name": "George Clanton",
+   "description": "American musician (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/George_Clanton",
+   "extract": "George Wayland Clanton Jr., also known by the monikers Mirror Kisses, ESPRIT 空想, CHINA, and Kid's Garden, is an American electronic musician and singer-songwriter that emerged from the vaporwave music scene in the early 2010s. He established his independent record label 100% Electronica in 2015, and in 2019 launched the first vaporwave music festival, 100% ElectroniCON."
+  },
+  {
+   "id": "794a0a41-951c-4cee-bf7a-56e59a9ed355",
+   "slug": "pedro-fernandez-ave-fenix-two-r-c42336e0",
+   "title": "Pedro Fernández - Ave Fénix Two'r",
+   "act": "Pedro Fernández",
+   "name": "Pedro Fernández",
+   "description": "Mexican singer, songwriter, actor, and television host",
+   "source_url": "https://en.wikipedia.org/wiki/Pedro_Fern%C3%A1ndez_(singer)",
+   "extract": "José Martín Cuevas Cobos, known by his stage name Pedro Fernández, is a Mexican singer, songwriter, actor, and television host. Fernández began his international career as Pedrito Fernández at the age of seven. In the 1980s, he turned to be known as a scream king, thanks to his horror film starring roles in films such as Vacaciones de terror (1989), Pánico en la montaña (1989) and Trampa Infernal (1989)."
+  },
+  {
+   "id": "85bbf218-978c-4584-847e-aebea03d17d5",
+   "slug": "beatriz-adriana-la-basurita-tour-e6e319c1",
+   "title": "BEATRIZ ADRIANA - LA BASURITA TOUR",
+   "act": "BEATRIZ ADRIANA",
+   "name": "Beatriz Adriana",
+   "description": "Mexican singer (born 1958)",
+   "source_url": "https://en.wikipedia.org/wiki/Beatriz_Adriana",
+   "extract": "Beatriz Adriana Flores de Saracho, commonly known as Beatriz Adriana, is a Mexican singer of ranchera."
+  }
+ ]
+}

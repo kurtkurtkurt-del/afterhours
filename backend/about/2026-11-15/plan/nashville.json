@@ -1,0 +1,36 @@
+{
+ "city": "nashville",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "ec15fd34-e12b-40e1-a2e6-c926da184cc1",
+   "slug": "giant-rooks-e3e3f8dd",
+   "title": "Giant Rooks",
+   "act": "Giant Rooks",
+   "name": "Giant Rooks",
+   "description": "German indie band",
+   "source_url": "https://en.wikipedia.org/wiki/Giant_Rooks",
+   "extract": "Giant Rooks are a German indie rock band from Hamm, Germany founded in 2014. They are best known for their EP Wild Stare, their album How Have You Been? and their top-100 charting cover of \"Tom's Diner\" by Suzanne Vega."
+  },
+  {
+   "id": "013bfd1e-7a31-4d7c-99c5-6c5d78058f5a",
+   "slug": "joy-oladokun-the-heavy-things-tour-fee0b3cc",
+   "title": "Joy Oladokun: The Heavy Things Tour",
+   "act": "Joy Oladokun",
+   "name": "Joy Oladokun",
+   "description": "American singer-songwriter (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Joy_Oladokun",
+   "extract": "Olubukola Joy Oladokun is an American singer-songwriter. Oladokun's music spans the genres of folk, R&B, rock, and pop and is influenced by her identity as a queer person of color. She has released six studio albums: Carry (2016), In Defense of My Own Happiness  (2020), In Defense of My Own Happiness (2021), Proof of Life (2023), Observations from a Crowded Room (2024), and Hope is a Heavy Thing (2026)."
+  },
+  {
+   "id": "96f7e4bb-0085-4595-8508-472b4dc7f0b4",
+   "slug": "zack-fox-aa6588fa",
+   "title": "Zack Fox",
+   "act": "Zack Fox",
+   "name": "Zack Fox",
+   "description": "American comedian, rapper and actor (born 1990)",
+   "source_url": "https://en.wikipedia.org/wiki/Zack_Fox",
+   "extract": "Zachary Channing Fox is an American stand-up comedian, rapper, actor, DJ, and internet personality from Atlanta, Georgia. He has collaborated with Kenny Beats, Flying Lotus, Thundercat, Doechii, and Bnyx. He describes his genre of art as \"Shemar-Core,\" a term that likely references actor Shemar Moore, who serves as an artistic muse for Fox."
+  }
+ ]
+}

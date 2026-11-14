@@ -1,0 +1,56 @@
+{
+ "city": "chicago",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "6bcf3974-1c2e-4067-84e9-c6cbb393b689",
+   "slug": "brutalismus-3000-ages-18-549828b0",
+   "title": "Brutalismus 3000 - Ages 18+",
+   "act": "Brutalismus 3000",
+   "name": "Brutalismus 3000",
+   "description": "German electronic music duo",
+   "source_url": "https://en.wikipedia.org/wiki/Brutalismus_3000",
+   "extract": "Brutalismus 3000 are an electronic music duo from Berlin, comprising Victoria Vassiliki Daldas and Theo Zeitner."
+  },
+  {
+   "id": "101eca95-0e3c-4d2f-9ff9-5e1613443bdc",
+   "slug": "pedro-sampaio-734c942f",
+   "title": "Pedro Sampaio",
+   "act": "Pedro Sampaio",
+   "name": "Pedro Sampaio",
+   "description": "Brazilian singer and music producer",
+   "source_url": "https://en.wikipedia.org/wiki/Pedro_Sampaio",
+   "extract": "Pedro do Espirito Santo Sampaio is a Brazilian singer, music producer and DJ, known for the songs \"Sentadão\", \"Escada do Prédio\", with Marina Sena, and \"Chama Ela\", in partnership with the singer Lexa. He is signed to Warner Music Brasil."
+  },
+  {
+   "id": "6845a4e7-cfb8-4020-bfdd-33816151fee1",
+   "slug": "manchester-orchestra-ages-18-45fb51ce",
+   "title": "Manchester Orchestra - Ages 18+",
+   "act": "Manchester Orchestra",
+   "name": "Manchester Orchestra",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Manchester_Orchestra",
+   "extract": "Manchester Orchestra is an American rock band from Atlanta, Georgia, which formed in 2004. The group's current line-up is composed of lead singer, songwriter and rhythm guitarist Andy Hull, lead guitarist Robert McDowell, and bassist Andy Prince. Hull is the band's only original member, having overseen every iteration of the band to date. Former drummer Jeremiah Edmond parted ways with the band in January 2010 to focus on his family and on running the band's record label, Favorite Gentlemen. The band's original bassist, Jonathan Corley, parted ways with the band in 2013. Keyboardist-percussionist Chris Freeman announced his departure from the band in September 2016. The group's most recent drummer, Tim Very, died in February 2026."
+  },
+  {
+   "id": "4b4d7b61-8831-414f-8750-40d5badcd048",
+   "slug": "saosin-20-years-of-self-titled-9f5ba260",
+   "title": "Saosin: 20 Years of Self-Titled",
+   "act": "Saosin",
+   "name": "Saosin",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Saosin",
+   "extract": "Saosin is an American rock band formed in 2003 in Orange County, California. The group originally consisted of Beau Burchell, Justin Shekoski, Zach Kennedy and Anthony Green. They released their debut EP, Translating the Name, in 2003. The following year, Green departed from the band and Cove Reber joined as vocalist. The band released their self-titled debut album in 2006 under Capitol Records."
+  },
+  {
+   "id": "2e833bb8-252f-4843-975b-225653831038",
+   "slug": "jessie-reyez-a-little-vengeance-tour-80ff0490",
+   "title": "Jessie Reyez: A Little Vengeance Tour",
+   "act": "Jessie Reyez",
+   "name": "Jessie Reyez",
+   "description": "Canadian singer-songwriter (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Jessie_Reyez",
+   "extract": "Jessica Reyez is a Canadian singer-songwriter. Her 2016 single, \"Figures\", peaked at number 58 on the Canadian Hot 100 and received triple platinum certification by Music Canada (MC) and platinum by the Recording Industry Association of America (RIAA). Her debut extended play (EP), Kiddo (2017), led her to win Breakthrough Artist from four nominations at the 2018 Juno Awards. Her second EP, Being Human in Public (2018), was released the following year, won R&B/Soul Recording of the Year at the 2019 Juno Awards, and was nominated for Best Urban Contemporary Album at the 2020 Grammy Awards."
+  }
+ ]
+}

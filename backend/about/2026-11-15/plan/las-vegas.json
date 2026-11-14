@@ -1,0 +1,46 @@
+{
+ "city": "las-vegas",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "66c4ac4d-44a7-4157-a063-f24fc5f9f2f7",
+   "slug": "teddy-swims-1446651e",
+   "title": "Teddy Swims",
+   "act": "Teddy Swims",
+   "name": "Teddy Swims",
+   "description": "American singer and songwriter (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Teddy_Swims",
+   "extract": "Jaten Collin Dimsdale, known professionally as Teddy Swims, is an American singer and songwriter. Known for creating genre-blending music that includes elements of R&B, soul, hip-hop, and contemporary pop, Swims originally began to attract fans by posting song covers on YouTube during 2019 and 2020. Swims' third extended play, Tough Love (2022), became his first entry on the Billboard 200."
+  },
+  {
+   "id": "e5f2d224-6fa0-49da-b3bc-7ff9c72bf720",
+   "slug": "gwar-ceb7be3a",
+   "title": "GWAR",
+   "act": "GWAR",
+   "name": "Gwar",
+   "description": "American heavy metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Gwar",
+   "extract": "Gwar is an American heavy metal band formed in Richmond, Virginia, in 1984, composed of and operated by a frequently rotating line-up of musicians, artists, and filmmakers collectively known as Slave Pit Inc. Since the death of frontman Dave Brockie in 2014, the collective has continued recording and performing without any of its founding artists or musicians."
+  },
+  {
+   "id": "1774244d-fc92-439d-a71c-48c646b9901e",
+   "slug": "barry-manilow-f4247157",
+   "title": "Barry Manilow",
+   "act": "Barry Manilow",
+   "name": "Barry Manilow",
+   "description": "American singer (born 1943)",
+   "source_url": "https://en.wikipedia.org/wiki/Barry_Manilow",
+   "extract": "Barry Manilow is an American singer, songwriter and record producer with a career spanning over 60 years. His hit recordings include \"Mandy\", \"Could It Be Magic\", \"I Write the Songs\", \"Weekend in New England\", \"Looks Like We Made It\", \"Can't Smile Without You\", \"Copacabana \", and \"Ready to Take a Chance Again\"."
+  },
+  {
+   "id": "28d6b2c4-43db-40be-8c0f-af7fe6a55cd0",
+   "slug": "katseye-the-wildworld-tour-092bcd83",
+   "title": "KATSEYE: THE WILDWORLD TOUR",
+   "act": "KATSEYE",
+   "name": "Katseye",
+   "description": "Los Angeles–based girl group",
+   "source_url": "https://en.wikipedia.org/wiki/Katseye",
+   "extract": "Katseye is a girl group formed in 2024, based in Los Angeles. The group consists of six members: Daniela Avanzini, Lara Raj, Manon Bannerman, Megan Skiendiel, Sophia Laforteza, and Yoonchae Jeung. With members from the Philippines, South Korea, Switzerland, and the United States, Katseye is often called a \"global girl group\"."
+  }
+ ]
+}

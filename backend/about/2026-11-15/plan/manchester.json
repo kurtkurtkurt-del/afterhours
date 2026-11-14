@@ -1,0 +1,76 @@
+{
+ "city": "manchester",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "53fe6597-d668-478c-9a7d-f442afb76feb",
+   "slug": "gold-panda-7807e2e4",
+   "title": "Gold Panda",
+   "act": "Gold Panda",
+   "name": "Gold Panda",
+   "description": "English record producer and songwriter (born 1980)",
+   "source_url": "https://en.wikipedia.org/wiki/Gold_Panda",
+   "extract": "Derwin Schlecker, professionally known as Gold Panda, is an English electronic music producer and songwriter.\nDerwin Dicker also performs house music as DJ Jenifa."
+  },
+  {
+   "id": "f9fa8164-5b91-43c4-8442-b0bf8e002d3e",
+   "slug": "fontaines-d-c-029b20c7",
+   "title": "Fontaines D.C.",
+   "act": "Fontaines D.C.",
+   "name": "Fontaines D.C.",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Fontaines_D.C.",
+   "extract": "Fontaines D.C. are an Irish rock band formed in Dublin in 2014. The band consists of Grian Chatten (vocals), Conor Curley (guitar), Conor \"Deego\" Deegan III (bass), Tom Coll (drums), and Carlos O'Connell (guitar)."
+  },
+  {
+   "id": "2881b6f7-6d80-4270-afaa-5a0a6b4e9adb",
+   "slug": "gloryhammer-404a56c2",
+   "title": "Gloryhammer",
+   "act": "Gloryhammer",
+   "name": "Gloryhammer",
+   "description": "British power metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Gloryhammer",
+   "extract": "Gloryhammer are a British power metal band founded by keyboardist Christopher Bowes, lead vocalist of the band Alestorm. Each member of the band represents a character in the story concept. Band members appear on stage in armour and costumes to represent their respective characters."
+  },
+  {
+   "id": "3735f284-64b9-46c2-b8d8-040d4363d38c",
+   "slug": "opus-kink-6f46ebb0",
+   "title": "Opus Kink",
+   "act": "Opus Kink",
+   "name": "Opus Kink",
+   "description": "English jazz-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Opus_Kink",
+   "extract": "Opus Kink are an English post-punk and jazz punk band formed in Brighton in 2017, consisting of Sam Abbo, Angus Rogers, Fin Abbo, Jack Banjo Courtney, Jazz Pope, and Jed Morgans. The band have released three EPs: Requiem For a Quarantine (2020), Til the Stream Runs Dry (2022) and My Eyes, Brother! (2023). Their debut album ‘The Sweet Goodbye’ was released on 31st July 2026. The band are known for incendiary, cult-like live performances, an esoteric range of influences and sonic and lyrical world-building."
+  },
+  {
+   "id": "ebdb3c33-10e7-462a-9106-1b4aa0e321a1",
+   "slug": "president-blood-of-your-empire-united-kingdom-ca-b955ea2c",
+   "title": "PRESIDENT - Blood of Your Empire: United Kingdom Campaign 2026",
+   "act": "PRESIDENT",
+   "name": "President",
+   "description": "British metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/President_(band)",
+   "extract": "President are an anonymous English band formed in 2025, who blend metalcore with electronica. The band had released no music and were unknown until they were announced to play at that year's Download Festival, sparking speculation about their identity. Their frontman, the eponymous President, is described by Revolver as \"silver-haired, wearing an eerie, not-quite-lifelike mask etched with deep wrinkles and radiating wax-figure unease\". They released their debut EP, King of Terrors, in 2025. Their debut studio album, Blood of Your Empire, was released on 4 September 2026."
+  },
+  {
+   "id": "cd14f214-5acb-4a3c-bf33-6d7bcb55f39b",
+   "slug": "drake-milligan-7a3af797",
+   "title": "Drake Milligan",
+   "act": "Drake Milligan",
+   "name": "Drake Milligan",
+   "description": "American singer (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Drake_Milligan",
+   "extract": "Drake Milligan is an American singer, best known for portraying Elvis Presley on the CMT series Sun Records and starring in the film Nobody where he portrayed a young teen Elvis. He has also appeared on American Idol and America's Got Talent. Milligan has charted with the singles \"Sounds Like Something I'd Do\" and \"Honky Tonkin' About\", the latter of which became his first number one when it topped the Canadian country chart. His debut album, Dallas/Fort Worth, was released on September 15, 2022."
+  },
+  {
+   "id": "2ad03139-9e32-4dbb-9743-b1094d856053",
+   "slug": "the-moonlandingz-d71c12a1",
+   "title": "The Moonlandingz",
+   "act": "The Moonlandingz",
+   "name": "The Moonlandingz",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Moonlandingz",
+   "extract": "The Moonlandingz are an English rock band, formed in 2015. The band consists of Eccentronic Research Council duo Adrian Flanagan and Dean Honer, along with Fat White Family members Saul Adamczewski and Lias Kaci Saoudi. The band was originally designed as a concept act for the Eccentronic Research Council's fifth album Johnny Rocket, Narcissist and Music Machine…I'm Your Biggest Fan, with the act's charismatic and otherworldly frontman Johnny Rocket being played by Saoudi."
+  }
+ ]
+}

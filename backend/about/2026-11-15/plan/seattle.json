@@ -1,0 +1,36 @@
+{
+ "city": "seattle",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "f9fa5162-e0a9-466b-98ea-87df22d85d88",
+   "slug": "garth-brooks-blame-it-all-on-my-roots-arena-tour-bf33ee31",
+   "title": "Garth Brooks - Blame It All On My Roots Arena Tour",
+   "act": "Garth Brooks",
+   "name": "Garth Brooks",
+   "description": "American country singer (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Garth_Brooks",
+   "extract": "Troyal Garth Brooks is an American country singer and songwriter. His musical style blends traditional country with pop and rock elements, which has earned him his immense popularity, particularly in the United States, with success on the country music single and album charts, multi-platinum recordings and record-breaking live performances, while also crossing over into the mainstream pop arena."
+  },
+  {
+   "id": "48a33470-ccbb-40c8-a4b7-a9391d43151b",
+   "slug": "garaj-mahal-ages-21-65454d87",
+   "title": "GARAJ MAHAL - Ages 21+",
+   "act": "GARAJ MAHAL",
+   "name": "Garaj Mahal",
+   "description": "American musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Garaj_Mahal",
+   "extract": "Garaj Mahal is a jazz fusion band formed in 2000 that combines jazz, rock, Indian music, and funk. The band consists of Fareed Haque (guitar), Kai Eckhardt (bass), Sean Rickman (drums), and Eric Levy (keyboards). Garaj Mahal allows its music to be recorded at concerts."
+  },
+  {
+   "id": "b71ae903-b070-415a-91ee-e8238deb2151",
+   "slug": "psycroptic-c4ec1a72",
+   "title": "Psycroptic",
+   "act": "Psycroptic",
+   "name": "Psycroptic",
+   "description": "Australian metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Psycroptic",
+   "extract": "Psycroptic are an Australian technical death metal band formed in Hobart, Tasmania in 1999. The Haley brothers, drummer Dave and guitarist Joe, are mainstay members. Singer Jason Peppiatt joined in 2004. In 2008, they signed to Nuclear Blast. As of August 2022, the band have released eight studio albums. They have toured Australia supporting Incantation, Decapitated, Origin and Misery Index. Psycroptic have toured Europe with Nile and Deicide. In February 2019, the band co-headlined a tour with Aversions Crown and support bands Within Destruction, Hadal Maw and Hollow World across Europe. They headlined a 2019 tour of the United States in support of the album As the Kingdom Drowns."
+  }
+ ]
+}

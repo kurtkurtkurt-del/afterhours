@@ -1,0 +1,36 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "899ea37a-3bb6-4f72-be68-0d2fd7abafe2",
+   "slug": "jerry-rivera-7371fdd0",
+   "title": "Jerry Rivera.",
+   "act": "Jerry Rivera.",
+   "name": "Jerry Rivera",
+   "description": "Puerto Rican singer (born 1973)",
+   "source_url": "https://en.wikipedia.org/wiki/Jerry_Rivera",
+   "extract": "Jerry Rivera is a Puerto Rican salsa singer and songwriter."
+  },
+  {
+   "id": "dddbd87d-dcf3-4dc0-b110-8eca77be6f27",
+   "slug": "babasonicos-aa06a037",
+   "title": "Babasonicos",
+   "act": "Babasonicos",
+   "name": "Babasónicos",
+   "description": "Argentine rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Babas%C3%B3nicos",
+   "extract": "Babasónicos is an Argentine rock band, formed in the early 1990s along with others such as Peligrosos Gorriones and Los Brujos. After emerging in the wave of Argentine New Rock bands of the late 1980s and early 1990s, Babasonicos became one of the banner groups of the \"sonic\" underground rock movement in Argentina in the late 1990s."
+  },
+  {
+   "id": "0564b419-a57a-43e5-8f69-08b6afb8fb44",
+   "slug": "love-of-lesbian-8f77c169",
+   "title": "Love of Lesbian",
+   "act": "Love of Lesbian",
+   "name": "Love of Lesbian",
+   "description": "Spanish band from Catalonia",
+   "source_url": "https://en.wikipedia.org/wiki/Love_of_Lesbian",
+   "extract": "Love of Lesbian is a Spanish indie pop band. They were nominated for the MTV Europe Music Award for Best Spanish Act at the 2012 MTV Europe Music Awards. Their album La noche eterna. Los días no vividos. reached number 1 in 2012."
+  }
+ ]
+}

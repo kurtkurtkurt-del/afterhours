@@ -1,0 +1,66 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "9346e312-b884-4548-93a0-39925b644ca8",
+   "slug": "skindred-294cffbd",
+   "title": "Skindred",
+   "act": "Skindred",
+   "name": "Skindred",
+   "description": "Welsh metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Skindred",
+   "extract": "Skindred is a Welsh rock band that fuses heavy metal with other genres, most notably reggae. Formed in Newport in 1998, they are well known for their energetic and involving live performances and have won several awards including \"Best Live Band\" at the 2011 UK Metal Hammer Golden Gods Awards and the \"Devotion Award\" at the 2011 Kerrang! Awards. In 2026, the band's ninth album You Got This became their first album to top the UK Albums Chart."
+  },
+  {
+   "id": "4640c54f-5806-476e-bf72-7d71c488f323",
+   "slug": "teenage-fanclub-75d77ca6",
+   "title": "Teenage Fanclub",
+   "act": "Teenage Fanclub",
+   "name": "Teenage Fanclub",
+   "description": "Scottish alternative rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Teenage_Fanclub",
+   "extract": "Teenage Fanclub are a Scottish alternative rock band formed in Glasgow in 1989. The group was founded by Norman Blake, Raymond McGinley and Gerard Love, all of whom shared lead vocals and songwriting duties until Love's departure in 2018. As of 2023, the band's lineup consists of Blake, McGinley, longtime drummer Francis MacDonald, Dave McGowan and Euros Childs."
+  },
+  {
+   "id": "01005fbe-8eac-4e9e-a7f0-6344c73351bf",
+   "slug": "mogwai-7133c745",
+   "title": "Mogwai",
+   "act": "Mogwai",
+   "name": "Mogwai",
+   "description": "Scottish post-rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Mogwai",
+   "extract": "Mogwai are a Scottish post-rock band, formed in 1995 in Glasgow. The band consists of Stuart Braithwaite, Barry Burns, Dominic Aitchison, and Martin Bulloch (drums). Mogwai typically compose lengthy guitar-based instrumental pieces that feature dynamic contrast, melodic bass guitar lines, and heavy use of distortion and effects."
+  },
+  {
+   "id": "0aa35d25-8029-44ee-8ae6-2d2dd1df7c15",
+   "slug": "young-knives-812fd0f9",
+   "title": "Young Knives",
+   "act": "Young Knives",
+   "name": "Young Knives",
+   "description": "English indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Young_Knives",
+   "extract": "Young Knives are an English indie rock band from Ashby-de-la-Zouch, Leicestershire, currently based in Wantage, Oxfordshire. The group consists of brothers Henry Dartnall and Thomas Bonsu-Dartnall. Oliver Askew was the band's drummer from 1998 until 2015."
+  },
+  {
+   "id": "a47aa0c8-5d4c-4747-a063-7e93ad6d27ce",
+   "slug": "the-big-moon-f2896f59",
+   "title": "The Big Moon",
+   "act": "The Big Moon",
+   "name": "The Big Moon",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Big_Moon",
+   "extract": "The Big Moon are a British indie rock band, formed in 2014 in London by frontwoman Juliette Jackson. Their debut album, Love in the 4th Dimension, was released on 6 April 2017, containing a number of tracks previously released on their EP The Road. The album was shortlisted for the prestigious Mercury Prize in 2017. They are signed to Fiction Records and have toured internationally. They supported Pixies on their 2019 UK tour."
+  },
+  {
+   "id": "afa8e565-9547-4bae-b04d-2f611e288ee1",
+   "slug": "pye-corner-audio-f9157984",
+   "title": "Pye Corner Audio",
+   "act": "Pye Corner Audio",
+   "name": "Pye Corner Audio",
+   "description": "British electronic music project by Martin Jenkins",
+   "source_url": "https://en.wikipedia.org/wiki/Pye_Corner_Audio",
+   "extract": "Pye Corner Audio is a British electronic music project by Martin Jenkins. Vols 1–2 and Vols 3–4 of the project's Black Mill Tapes, originally self-released, were later released by Type Records. In 2012, its Sleep Games album was released through the Ghost Box label."
+  }
+ ]
+}

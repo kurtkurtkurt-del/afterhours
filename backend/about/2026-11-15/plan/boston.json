@@ -1,0 +1,36 @@
+{
+ "city": "boston",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "f5e09c1c-92e4-4c03-b011-86c2c82c8e8a",
+   "slug": "boston-symphony-orchestra-cb947329",
+   "title": "Boston Symphony Orchestra",
+   "act": "Boston Symphony Orchestra",
+   "name": "Boston Symphony Orchestra",
+   "description": "American symphony orchestra in Boston",
+   "source_url": "https://en.wikipedia.org/wiki/Boston_Symphony_Orchestra",
+   "extract": "The Boston Symphony Orchestra (BSO) is an American symphony orchestra based in Boston. It is the second-oldest orchestra in the United States and one of the five major American symphony orchestras commonly referred to as the \"Big Five\". Founded by Henry Lee Higginson in 1881, the BSO performs most of its concerts at Boston's Symphony Hall and in the summer performs at Tanglewood. It has an offshoot organization, The Boston Pops, founded in 1885 also by Higginson to perform \"concerts of a lighter kind of music.\" The Pops has its own schedule and musical director, and consists mostly of musicians from the ranks of the BSO."
+  },
+  {
+   "id": "dc2385dc-7a00-4598-b809-cddadab12fcd",
+   "slug": "orville-peck-man-turned-mule-tour-cc3540db",
+   "title": "Orville Peck - Man Turned Mule Tour",
+   "act": "Orville Peck",
+   "name": "Orville Peck",
+   "description": "South African country musician (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Orville_Peck",
+   "extract": "Daniel Pitout, known professionally as Orville Peck, is a South African country musician and actor based in the United States and Canada, widely known for often wearing a mask and not showing his face publicly."
+  },
+  {
+   "id": "3413f0ea-88d7-4675-b2b3-253f8e595e94",
+   "slug": "space-laces-42fdcef2",
+   "title": "SPACE LACES",
+   "act": "SPACE LACES",
+   "name": "Space Laces",
+   "description": "American electronic musician and DJ",
+   "source_url": "https://en.wikipedia.org/wiki/Space_Laces",
+   "extract": "Ian Slider, better known by his stage name Space Laces, is an American electronic musician and DJ. Slider is known for his work in bass music and his releases through British record label Never Say Die Records. Slider was a frequent collaborator of Canadian dubstep producer Excision in the 2010s, including on the dubstep group Destroid. Slider first produced music under the alias cornandbeans, which he allegedly abandoned in 2008."
+  }
+ ]
+}

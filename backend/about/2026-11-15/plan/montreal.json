@@ -1,0 +1,26 @@
+{
+ "city": "montreal",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "bcd6ff03-bc00-4263-9aa3-a44d15aa3a31",
+   "slug": "catch-your-breath-02b4fd8e",
+   "title": "Catch Your Breath",
+   "act": "Catch Your Breath",
+   "name": "Catch Your Breath",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Catch_Your_Breath_(band)",
+   "extract": "Catch Your Breath is an American rock band based in Austin, Texas."
+  },
+  {
+   "id": "a39a57b4-c2d3-4055-8948-133660e8f849",
+   "slug": "the-pineapple-thief-b0103156",
+   "title": "The Pineapple Thief",
+   "act": "The Pineapple Thief",
+   "name": "The Pineapple Thief",
+   "description": "British progressive rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Pineapple_Thief",
+   "extract": "The Pineapple Thief are an English progressive rock band founded in 1999 by Bruce Soord in Yeovil, Somerset. As of June 2024, the group consists of Soord on vocals, guitars, and keyboards, Jon Sykes on bass, Steve Kitch on keyboards, and Gavin Harrison on drums. They have released 16 studio albums, 6 EPs, and several live and compilation albums."
+  }
+ ]
+}

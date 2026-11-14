@@ -1,0 +1,66 @@
+{
+ "city": "toronto",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "cffe01c8-17ea-4f95-a7ac-2fb5f4790609",
+   "slug": "trivium-crown-in-the-grave-world-tour-ccc29295",
+   "title": "TRIVIUM: CROWN IN THE GRAVE WORLD TOUR",
+   "act": "TRIVIUM",
+   "name": "Trivium",
+   "description": "American metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Trivium_(band)",
+   "extract": "Trivium is an American heavy metal band from Orlando, Florida, formed in 1999. The band's creative core comprises three long-time members; vocalist and guitarist Matt Heafy, guitarist Corey Beaulieu, and bassist Paolo Gregoletto. The band has changed drummers numerous times, with Alex Rüdinger becoming the most recent addition in October 2025."
+  },
+  {
+   "id": "f4efee7b-3b14-4982-b6f1-e7eafd44ec0d",
+   "slug": "strawberry-guy-2a0384a9",
+   "title": "Strawberry Guy",
+   "act": "Strawberry Guy",
+   "name": "Strawberry Guy",
+   "description": "Welsh indie pop musician",
+   "source_url": "https://en.wikipedia.org/wiki/Strawberry_Guy",
+   "extract": "Alexander Morgan Stephens, better known by his stage name Strawberry Guy, is a Welsh indie pop musician. He is best known for his 2019 single \"Mrs Magic\", which gained popularity via TikTok."
+  },
+  {
+   "id": "0a565f40-3771-4bf3-b0fd-b733b8ea5cd8",
+   "slug": "sam-shackleton-north-american-headline-tour-6bc9b90c",
+   "title": "Sam Shackleton: North American Headline Tour",
+   "act": "Sam Shackleton",
+   "name": "Sam Shackleton",
+   "description": "Scottish folk musician",
+   "source_url": "https://en.wikipedia.org/wiki/Sam_Shackleton",
+   "extract": "Sam Shackleton, also known as Sorley the Bard, is a Scottish folk musician, singer-songwriter, and clawhammer banjoist from Stirling. Based in Edinburgh, he records traditional trans-Atlantic folk music and original tracks."
+  },
+  {
+   "id": "b2d5ef99-ca14-4464-8d5d-ccccea53b6c2",
+   "slug": "jorja-smith-9387964b",
+   "title": "Jorja Smith",
+   "act": "Jorja Smith",
+   "name": "Jorja Smith",
+   "description": "British singer and songwriter (born 1997)",
+   "source_url": "https://en.wikipedia.org/wiki/Jorja_Smith",
+   "extract": "Jorja Alice Smith is an English singer and songwriter. Born and raised in Walsall, West Midlands, she has been writing songs since the age of 11. In 2012, Smith's friend uploaded her cover of Labrinth's \"Earthquake\" to YouTube, which led to her discovery by record producer Guy Moot. After her first two singles received broader recognition, she signed with Sony/ATV in early 2016, releasing two EPs throughout later that year and into 2017."
+  },
+  {
+   "id": "e90c246d-fd82-42e0-89c7-45de637bc37b",
+   "slug": "too-many-zooz-live-in-canada-mostly-tour-w-compo-da3ca251",
+   "title": "Too Many Zooz; Live in Canada (Mostly!) Tour w/ Compost",
+   "act": "Too Many Zooz;",
+   "name": "Too Many Zooz",
+   "description": "American music group",
+   "source_url": "https://en.wikipedia.org/wiki/Too_Many_Zooz",
+   "extract": "Too Many Zooz is an American music group based in New York City, consisting of Leo Pellegrino, Matt \"Doe\" Muirhead (trumpet), and David \"King of Sludge\" Parks (drums)."
+  },
+  {
+   "id": "0c10dfa2-3232-467d-81ac-761ac0c4368b",
+   "slug": "catch-your-breath-not-broken-enough-tour-d9cc7e38",
+   "title": "Catch Your Breath - Not Broken Enough Tour",
+   "act": "Catch Your Breath",
+   "name": "Catch Your Breath",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Catch_Your_Breath_(band)",
+   "extract": "Catch Your Breath is an American rock band based in Austin, Texas."
+  }
+ ]
+}

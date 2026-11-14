@@ -1,0 +1,36 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-15",
+ "nights": [
+  {
+   "id": "7f2076a6-e806-4915-b69d-d73a6356d085",
+   "slug": "ufuk-beydemir-5e061ad5",
+   "title": "Ufuk Beydemir",
+   "act": "Ufuk Beydemir",
+   "name": "Ufuk Beydemir",
+   "description": "Turkish singer (born 1992)",
+   "source_url": "https://en.wikipedia.org/wiki/Ufuk_Beydemir",
+   "extract": "Ufuk Beydemir is a Turkish singer, songwriter and tennis coach. He became known in Turkey with the release of his song \"Ay Tenli Kadın\". In 2018, Beydemir ranked third on the list of nominees for \"Musician of the Year Award\" at the GQ Men of the Year awards by GQ Türkiye. Beydemir, who released his first album Sevda Gibi in 2018, was given the \"Most Powerful Newcomer-Singer\" award at the 2019 PowerTürk Music Awards."
+  },
+  {
+   "id": "66e808c8-8580-4ebe-bc69-5a7f57c44007",
+   "slug": "bengu-b6a83256",
+   "title": "Bengü",
+   "act": "Bengü",
+   "name": "Bengü",
+   "description": "Turkish singer (born 1979)",
+   "source_url": "https://en.wikipedia.org/wiki/Beng%C3%BC",
+   "extract": "Bengü Erden is a Turkish singer. She became first familiar with music during her time at the İzmir State Symphony Orchestra. In İzmir, she was cast in a leading role in the musical \"Oliver Twist\". She later took singing lessons with İzmir State Conservatory's general manager, Müfit Bayraş. In 1998, by performing a song by Müfit Bayşara, she ranked second at the competition Pop Show '98, organized by Mü-Yap and Show TV. She then studied music at Istanbul Academy. She worked as a backing vocalist for Kenan Doğulu for three years. In 2007, Bengü became the winner of Show TV's singing competition Bak Kim Dans Ediyor. Her first album, Hoş Geldin, was produced by Kenan Doğulu and Ozan Doğulu and released in July 2000. Her second studio album, Bağlasan Durmam, was released in 2005.\nAfter two years, she released her third studio album, Taktik. With the song \"Korkma Kalbim\" from this album, she received a digital certification from Mü-Yap and the album became one of the best-selling albums of the year."
+  },
+  {
+   "id": "155fc858-ee70-4512-b497-b2c245949859",
+   "slug": "isaiah-collier-3564512d",
+   "title": "İsaiah Collier",
+   "act": "İsaiah Collier",
+   "name": "Isaiah Collier",
+   "description": "American jazz musician (born 1998)",
+   "source_url": "https://en.wikipedia.org/wiki/Isaiah_Collier_(musician)",
+   "extract": "Isaiah Collier is an American jazz composer and saxophonist based in Chicago and Brooklyn. He started playing saxophone at age 11. Until 2024, he performed with his band The Chosen Few. He was selected as one of the top 25 rising jazz stars by Downbeat Magazine in July 2024. He has recorded six albums as of 2024. In 2025, he performed a tribute concert in honour of the 60th anniversary of John Coltrane's A Love Supreme."
+  }
+ ]
+}
