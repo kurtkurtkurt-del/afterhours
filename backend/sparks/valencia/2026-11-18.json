@@ -1,0 +1,14 @@
+{
+  "city": "valencia",
+  "day": "2026-11-18",
+  "sparks": [
+    {
+      "kind": "jazz",
+      "title": { "en": "evas quartet at the bellas artes auditorium.", "de": "evas quartet im auditorium der bellas artes.", "tr": "bellas artes auditoryumu'nda evas quartet." },
+      "line": { "en": "free entry, part of the novembre jazz upv festival, 20:00 on the campus de vera. the festival runs from 17 to 20 november.", "de": "eintritt frei, teil des novembre jazz upv festivals, 20 uhr auf dem campus de vera. das festival läuft vom 17. bis 20. november.", "tr": "giriş ücretsiz, novembre jazz upv festivalinin parçası; saat 20:00'de campus de vera'da. festival 17 ile 20 kasım arasında sürüyor." },
+      "place": { "en": "auditorio de bellas artes", "de": "auditorio de bellas artes", "tr": "auditorio de bellas artes" },
+      "hour": 20, "minute": 0,
+      "why": "Evas Quartet, Novembre Jazz UPV, wed 18.11 20:00 at the Auditorio de Bellas Artes, Campus de Vera, free entry, per conocevalencia.es; festival dates per novembrejazz.webs.upv.es."
+    }
+  ]
+}

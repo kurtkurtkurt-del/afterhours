@@ -1,0 +1,27 @@
+{
+  "city": "valencia",
+  "day": "2026-11-15",
+  "sparks": [
+    {
+      "kind": "flea",
+      "title": {
+        "en": "rastro de valencia, the sunday flea market.",
+        "de": "rastro de valencia, der sonntags-flohmarkt.",
+        "tr": "rastro de valencia, pazar günü bit pazarı."
+      },
+      "line": {
+        "en": "many stalls of second-hand goods and collectibles, 09:00 to 14:00 in parque amelia chiner on avinguda de tarongers. free entry; go before lunch.",
+        "de": "viele stände mit gebrauchtwaren und sammlerstücken, 9 bis 14 uhr im parque amelia chiner an der avinguda de tarongers. eintritt frei; am besten vor dem mittag hin.",
+        "tr": "çok sayıda tezgâh, ikinci el eşya ve koleksiyon parçaları; saat 09:00 ile 14:00 arası avinguda de tarongers üzerindeki parque amelia chiner'de. giriş ücretsiz; öğlenden önce git."
+      },
+      "place": {
+        "en": "parque amelia chiner",
+        "de": "parque amelia chiner",
+        "tr": "parque amelia chiner"
+      },
+      "hour": 10,
+      "minute": 0,
+      "why": "Rastro de Valencia, sundays 09:00 to 14:00 at parque Amelia Chiner on avinguda de tarongers, free entry, per infosvalencia.com; no public holiday on sun 15.11."
+    }
+  ]
+}
