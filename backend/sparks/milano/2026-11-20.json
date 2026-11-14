@@ -1,0 +1,14 @@
+{
+  "city": "milano",
+  "day": "2026-11-20",
+  "sparks": [
+    {
+      "kind": "festival",
+      "title": { "en": "milano drawing week opening, at the cittadella.", "de": "eröffnung der milano drawing week, cittadella.", "tr": "milano drawing week açılışı, cittadella'da." },
+      "line": { "en": "the drawing week opens friday 18:30 to 22:00 at the cittadella degli archivi, the run goes to 29 nov.", "de": "die drawing week eröffnet freitag von 18:30 bis 22:00 in der cittadella degli archivi, bis 29. november.", "tr": "drawing week cuma 18:30 ile 22:00 arasında cittadella degli archivi'de açılıyor; 29 kasıma kadar sürüyor." },
+      "place": { "en": "cittadella degli archivi", "de": "cittadella degli archivi", "tr": "cittadella degli archivi" },
+      "hour": 18, "minute": 30,
+      "why": "Milano Drawing Week 2026 opening party, Fri 20 Nov 18:30 to 22:00 at Cittadella degli Archivi, per artapartofculture.net."
+    }
+  ]
+}
