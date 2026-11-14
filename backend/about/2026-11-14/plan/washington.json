@@ -1,0 +1,16 @@
+{
+ "city": "washington",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "e004c4c5-70f1-4a6c-8607-f00a9521856f",
+   "slug": "ruben-studdard-d3a19636",
+   "title": "Ruben Studdard",
+   "act": "Ruben Studdard",
+   "name": "Ruben Studdard",
+   "description": "American singer (born 1978)",
+   "source_url": "https://en.wikipedia.org/wiki/Ruben_Studdard",
+   "extract": "Christopher Theodore Ruben Studdard is an American singer and actor. He rose to fame as the winner of the second season of American Idol and received a Grammy Award nomination in 2003 for Best Male R&B Vocal Performance for his recording of \"Superstar\". In the years following Idol, Studdard has released seven studio albums, including his platinum-selling debut, Soulful, and the top-selling gospel follow-up, I Need an Angel. He is most well known for his recording career, which has produced hits including \"Flying Without Wings\", \"Sorry 2004\", and \"Change Me\", but he has also segued into television and stage work. Most notably, he starred as Fats Waller in a national tour revival of Ain't Misbehavin', which spawned a Grammy-nominated soundtrack."
+  }
+ ]
+}

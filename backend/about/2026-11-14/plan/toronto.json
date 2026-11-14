@@ -1,0 +1,76 @@
+{
+ "city": "toronto",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "9527ada0-8c17-4291-a779-6fdb754fc7d7",
+   "slug": "sombr-you-are-the-reason-tour-3671e797",
+   "title": "SOMBR - You Are The Reason Tour",
+   "act": "SOMBR",
+   "name": "Sombr",
+   "description": "American singer and songwriter (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Sombr",
+   "extract": "Shane Michael Boose, known professionally as Sombr, is an American singer-songwriter and musician."
+  },
+  {
+   "id": "0a78f621-6439-4de0-a01a-36c1dfb9077d",
+   "slug": "slow-pulp-f8296419",
+   "title": "Slow Pulp",
+   "act": "Slow Pulp",
+   "name": "Slow Pulp",
+   "description": "American indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Slow_Pulp",
+   "extract": "Slow Pulp is an American indie rock band from Madison, Wisconsin, currently based in Chicago, Illinois. Formed in 2015, the band has held the same line-up since 2017: Emily Massey on lead vocals and rhythm guitar, Alex Leeds on bass and backing vocals, Teddy Matthews on drums and percussion, and Henry Stoehr on lead guitar. The band have released three studio albums to date: Moveys (2020), Yard (2023), and Melodie (2026)."
+  },
+  {
+   "id": "33c87d63-ab34-4b2f-8ef3-8cd4695b96ad",
+   "slug": "francis-of-delirium-3a5d21df",
+   "title": "Francis of Delirium",
+   "act": "Francis of Delirium",
+   "name": "Francis of Delirium",
+   "description": "Luxembourgish musician",
+   "source_url": "https://en.wikipedia.org/wiki/Francis_of_Delirium",
+   "extract": "Jana Bahrich, known professionally as Francis of Delirium, is a Luxembourgish indie rock musician. After playing French horn and banjo as a child, she went on to become a prominent musician in and beyond Luxembourg. She has toured with various bands and headlined her own tour in April 2024 for her debut album, Lighthouse, which was released in March 2024."
+  },
+  {
+   "id": "5c8aa890-8e44-4fca-9a75-591de7ebf730",
+   "slug": "mountain-grass-unit-appalachian-smoke-tour-e73a1a2b",
+   "title": "Mountain Grass Unit - Appalachian Smoke Tour",
+   "act": "Mountain Grass Unit",
+   "name": "Mountain Grass Unit",
+   "description": "American bluegrass band",
+   "source_url": "https://en.wikipedia.org/wiki/Mountain_Grass_Unit",
+   "extract": "Mountain Grass Unit (MGU) is a four-piece bluegrass band founded in Birmingham, Alabama in 2018. The band consists of members Drury Anderson (lead vocals, mandolin), Luke Black (guitar), Sam Wilson (bass), and Josiah Nelson (fiddle). Unlike typical bluegrass arrangements, MGU does not feature a banjo."
+  },
+  {
+   "id": "a53f0bf0-33be-4dfb-a298-8785fe76c33f",
+   "slug": "patrick-wolf-61db204d",
+   "title": "Patrick Wolf",
+   "act": "Patrick Wolf",
+   "name": "Patrick Wolf",
+   "description": "English singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Patrick_Wolf",
+   "extract": "Patrick Wolf is an English singer-songwriter from South London. Wolf uses a wide variety of instruments in his music, most commonly the ukulele, piano, and viola. He is known for combining electronic sampling with classical instruments. Wolf's styles range from electronic pop to Baroque chamber music. He has been making music since around 2002."
+  },
+  {
+   "id": "125ab62d-af67-4414-9ff6-f99bc3cadff9",
+   "slug": "orville-peck-man-turned-mule-tour-f95aa89c",
+   "title": "Orville Peck - Man Turned Mule Tour",
+   "act": "Orville Peck",
+   "name": "Orville Peck",
+   "description": "South African country musician (born 1988)",
+   "source_url": "https://en.wikipedia.org/wiki/Orville_Peck",
+   "extract": "Daniel Pitout, known professionally as Orville Peck, is a South African country musician and actor based in the United States and Canada, widely known for often wearing a mask and not showing his face publicly."
+  },
+  {
+   "id": "4c83ae0a-a121-428a-8634-e7a46fb8a616",
+   "slug": "slaughter-to-prevail-north-america-2026-leg-2-57e8645c",
+   "title": "Slaughter To Prevail: North America 2026 Leg 2",
+   "act": "Slaughter To Prevail",
+   "name": "Slaughter to Prevail",
+   "description": "Russian deathcore band",
+   "source_url": "https://en.wikipedia.org/wiki/Slaughter_to_Prevail",
+   "extract": "Slaughter to Prevail is a Russian-British-American deathcore band formed in 2014 in Yekaterinburg and currently based in Orlando, Florida, United States. The band has had numerous line-up changes over the years, with Russian vocalist Aleksandr \"Alex Terrible\" Shikolai and British lead guitarist Jack Simmons as the only constant members. The current line-up features Russian musicians with bassist Mikhail Petrov, drummer Evgeny Novikov, and rhythm guitarist Dmitry Mamedov."
+  }
+ ]
+}

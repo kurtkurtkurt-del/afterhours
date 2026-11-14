@@ -1,0 +1,16 @@
+{
+ "city": "warszawa",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "f16be706-cd72-4f45-b4ae-b6d60c887294",
+   "slug": "seb-lowe-c15e2806",
+   "title": "Seb Lowe",
+   "act": "Seb Lowe",
+   "name": "Seb Lowe",
+   "description": "English musician (born 2003)",
+   "source_url": "https://en.wikipedia.org/wiki/Seb_Lowe",
+   "extract": "Sebastian Lowe is an English singer-songwriter from Saddleworth, Greater Manchester. He is known for incorporating politics into his music, having started out uploading videos of his songs to TikTok."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "city": "brussel",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "b4ec6ee8-e5ba-4da5-bb55-1291cf0b848a",
+   "slug": "emeli-sande-d04e13e0",
+   "title": "Emeli Sandé",
+   "act": "Emeli Sandé",
+   "name": "Emeli Sandé",
+   "description": "British singer (born 1987)",
+   "source_url": "https://en.wikipedia.org/wiki/Emeli_Sand%C3%A9",
+   "extract": "Adele Emily Sandé, known professionally as Emeli Sandé, is a British singer and songwriter. Born in Sunderland, Tyne and Wear, England and raised in Alford, Aberdeenshire, Scotland, Sandé rose to prominence after her guest appearance on Chipmunk's 2009 single \"Diamond Rings\", which peaked within the top ten of the UK singles chart. The following year, she guest appeared on Wiley's single \"Never Be Your Woman\", which also peaked within the chart's top ten. In 2012, she received the Brit Awards' Critics' Choice Award."
+  },
+  {
+   "id": "2435a7bf-a449-41ed-904c-15b29f1596d3",
+   "slug": "thomas-fersen-d9e44b7c",
+   "title": "Thomas Fersen",
+   "act": "Thomas Fersen",
+   "name": "Thomas Fersen",
+   "description": "French singer-songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Thomas_Fersen",
+   "extract": "Thomas Fersen is a French singer-songwriter."
+  }
+ ]
+}

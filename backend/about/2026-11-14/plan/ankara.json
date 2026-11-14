@@ -1,0 +1,36 @@
+{
+ "city": "ankara",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "3a59e484-f24d-4ee6-bea3-877da991200e",
+   "slug": "emre-altug-ce7b7667",
+   "title": "Emre Altuğ",
+   "act": "Emre Altuğ",
+   "name": "Emre Altuğ",
+   "description": "Turkish pop singer and actor",
+   "source_url": "https://en.wikipedia.org/wiki/Emre_Altu%C4%9F",
+   "extract": "Niyazi Emre Altuğ is a Turkish actor and singer."
+  },
+  {
+   "id": "8f721438-5a76-45be-8e05-6fcf0c0fd195",
+   "slug": "bengu-74b50530",
+   "title": "Bengü",
+   "act": "Bengü",
+   "name": "Bengü",
+   "description": "Turkish singer (born 1979)",
+   "source_url": "https://en.wikipedia.org/wiki/Beng%C3%BC",
+   "extract": "Bengü Erden is a Turkish singer. She became first familiar with music during her time at the İzmir State Symphony Orchestra. In İzmir, she was cast in a leading role in the musical \"Oliver Twist\". She later took singing lessons with İzmir State Conservatory's general manager, Müfit Bayraş. In 1998, by performing a song by Müfit Bayşara, she ranked second at the competition Pop Show '98, organized by Mü-Yap and Show TV. She then studied music at Istanbul Academy. She worked as a backing vocalist for Kenan Doğulu for three years. In 2007, Bengü became the winner of Show TV's singing competition Bak Kim Dans Ediyor. Her first album, Hoş Geldin, was produced by Kenan Doğulu and Ozan Doğulu and released in July 2000. Her second studio album, Bağlasan Durmam, was released in 2005.\nAfter two years, she released her third studio album, Taktik. With the song \"Korkma Kalbim\" from this album, she received a digital certification from Mü-Yap and the album became one of the best-selling albums of the year."
+  },
+  {
+   "id": "b568ca9c-b43f-4113-8297-617fea4150e6",
+   "slug": "hande-mehan-cea80b60",
+   "title": "Hande Mehan",
+   "act": "Hande Mehan",
+   "name": "Hande Mehan",
+   "description": "Turkish musician and songwriter",
+   "source_url": "https://en.wikipedia.org/wiki/Hande_Mehan",
+   "extract": "Hande Mehan is a Turkish musician and songwriter. Mehan, who had become a producer for Cem Adrian after meeting him during her university years, started her own music career the song \"Sen Beni Güzel Hatırla\", which was written and composed by herself."
+  }
+ ]
+}

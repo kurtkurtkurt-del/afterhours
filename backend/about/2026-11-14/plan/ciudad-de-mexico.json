@@ -1,0 +1,26 @@
+{
+ "city": "ciudad-de-mexico",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "e0529e06-3f0d-4975-95f9-549dfefebe9d",
+   "slug": "lp-1e1be893",
+   "title": "LP",
+   "act": "LP",
+   "name": "LP",
+   "description": "American musician (born 1981)",
+   "source_url": "https://en.wikipedia.org/wiki/LP_(singer)",
+   "extract": "Laura Pergolizzi, known professionally as LP, is an American singer, musician and songwriter from Brooklyn, New York. LP has released seven albums and three EPs. LP has written songs for other artists including Rihanna, Christina Aguilera, the Backstreet Boys, Leona Lewis, Mylène Farmer, Cher Lloyd and Céline Dion."
+  },
+  {
+   "id": "d8eb4c37-6d30-43d0-89f3-0f75b41c64bf",
+   "slug": "soda-stereo-1f5f2ad7",
+   "title": "Soda Stereo",
+   "act": "Soda Stereo",
+   "name": "Soda Stereo",
+   "description": "Argentine rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Soda_Stereo",
+   "extract": "Soda Stereo was an Argentine rock band formed in Buenos Aires in 1982. The band's membership consisted of singer-guitarist Gustavo Cerati, bassist Zeta Bosio and drummer Charly Alberti. During their career, the band released seven studio albums before disbanding in 1997. Soda Stereo is the best-selling Argentine band of all time, having sold seven million records by 2007."
+  }
+ ]
+}

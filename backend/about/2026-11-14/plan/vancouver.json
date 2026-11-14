@@ -1,0 +1,16 @@
+{
+ "city": "vancouver",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "7a17cbfb-95fc-4d26-9683-7e05874ccf1c",
+   "slug": "tyson-yoshi-c0ca7416",
+   "title": "TYSON YOSHI",
+   "act": "TYSON YOSHI",
+   "name": "Tyson Yoshi",
+   "description": "Hong Kong singer-songwriter (born 1994)",
+   "source_url": "https://en.wikipedia.org/wiki/Tyson_Yoshi",
+   "extract": "Ben Cheng Tsun Yin, better known by his stage name Tyson Yoshi, is a Hong Kong singer-songwriter, and MV director. He made his debut in 2018 with his single \"To My Queen\"."
+  }
+ ]
+}

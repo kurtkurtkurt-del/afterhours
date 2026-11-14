@@ -1,0 +1,26 @@
+{
+ "city": "wien",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "c847bdca-6ab4-4c92-bc52-4c3a93c79533",
+   "slug": "loreena-mckennitt-the-mask-and-mirror-30th-anniv-7e1f46f5",
+   "title": "Loreena McKennitt: The Mask and Mirror - 30th Anniversary Tour",
+   "act": "Loreena McKennitt",
+   "name": "Loreena McKennitt",
+   "description": "Canadian musician (born 1957)",
+   "source_url": "https://en.wikipedia.org/wiki/Loreena_McKennitt",
+   "extract": "Loreena McKennitt is a Canadian singer-songwriter, multi-instrumentalist, and composer who writes, records, and performs world music with Celtic and Middle Eastern influences. McKennitt is known for her refined and clear soprano vocals. She has sold more than 16 million records worldwide."
+  },
+  {
+   "id": "00e3026e-5951-42a5-b301-f9d5b852a68d",
+   "slug": "kaleo-way-down-we-go-tour-d7d4bf51",
+   "title": "KALEO - Way Down We Go Tour",
+   "act": "KALEO",
+   "name": "Kaleo",
+   "description": "Icelandic rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Kaleo_(band)",
+   "extract": "KALEO is an Icelandic blues rock band which formed in Mosfellsbær in 2012. It consists of lead vocalist and guitarist Jökull Júlíusson, drummer Davíð Antonsson, bassist Daniel Kristjánsson, lead guitarist Rubin Pollock and harmonicist Þorleifur Gaukur Davíðsson. They have released four studio albums, Kaleo (2013), A/B (2016), Surface Sounds (2021), and Mixed Emotions (2025), as well as the EP Glasshouse (2013)."
+  }
+ ]
+}

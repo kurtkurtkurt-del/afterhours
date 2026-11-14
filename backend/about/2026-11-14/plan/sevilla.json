@@ -1,0 +1,16 @@
+{
+ "city": "sevilla",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "26f06a5a-e854-4ef9-8649-18a9624e363c",
+   "slug": "u2-the-greatest-show-on-earth-world-tour-740b252e",
+   "title": "U2: The Greatest Show On Earth World Tour",
+   "act": "U2",
+   "name": "U2",
+   "description": "Irish rock band",
+   "source_url": "https://en.wikipedia.org/wiki/U2",
+   "extract": "U2 are an Irish rock band formed in Dublin in 1976. They comprise Bono, the Edge, Adam Clayton, and Larry Mullen Jr.. Initially rooted in post-punk, U2's musical style has evolved throughout their career, yet has maintained an anthemic quality built on Bono's expressive vocals and the Edge's chiming, effects-based guitar sounds. Bono's lyrics, often embellished with spiritual imagery, focus on personal and sociopolitical themes. Popular for their live performances, the group have staged several elaborate tours."
+  }
+ ]
+}

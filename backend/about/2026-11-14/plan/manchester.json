@@ -1,0 +1,26 @@
+{
+ "city": "manchester",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "35e98c97-076a-4147-b0ca-bb1c297d36c5",
+   "slug": "muna-ffb3a94c",
+   "title": "MUNA",
+   "act": "MUNA",
+   "name": "Muna",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Muna_(band)",
+   "extract": "Muna is an American indie pop band consisting of Katie Gavin, Josette Maskin, and Naomi McPherson. They released two studio albums with RCA Records, About U (2017) and Saves the World (2019), before signing with independent label Saddest Factory Records, which released their third studio album, Muna, in June 2022, and Dancing on the Wall in May 2026."
+  },
+  {
+   "id": "09321405-f615-46d3-896e-320e75b51b2e",
+   "slug": "radio-free-alice-61f6eb40",
+   "title": "RADIO FREE ALICE",
+   "act": "RADIO FREE ALICE",
+   "name": "Radio Free Alice",
+   "description": "Australian post-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Radio_Free_Alice",
+   "extract": "Radio Free Alice is an Australian post-punk band from Melbourne."
+  }
+ ]
+}

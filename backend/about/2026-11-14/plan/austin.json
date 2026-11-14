@@ -1,0 +1,36 @@
+{
+ "city": "austin",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "9dfc21e2-1ca9-402d-be83-5e8c40a59fb5",
+   "slug": "rawayana-donde-es-el-after-world-tour-2e091307",
+   "title": "RAWAYANA - Donde es el after? World Tour",
+   "act": "RAWAYANA",
+   "name": "Rawayana",
+   "description": "Venezuelan musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Rawayana",
+   "extract": "Rawayana is a Venezuelan band formed in Caracas in 2007. The group's music combines a variety of musical genres including reggae, psychedelic, electronic, funk and salsa, and the members describe their style as \"trippy pop\". The band consists of Alberto \"Beto\" Montenegro, Antonio \"Tony\" Casas, Andrés \"Fofo\" Story and Alejandro \"Abeja\" Abeijón."
+  },
+  {
+   "id": "01f7d6d3-5e2e-44b9-ac2d-85d3e9863d3c",
+   "slug": "north-mississippi-allstars-99aeb9c7",
+   "title": "North Mississippi Allstars",
+   "act": "North Mississippi Allstars",
+   "name": "North Mississippi Allstars",
+   "description": "American southern rock and blues band",
+   "source_url": "https://en.wikipedia.org/wiki/North_Mississippi_Allstars",
+   "extract": "North Mississippi Allstars is an American blues and southern rock band from Hernando, Mississippi, founded in 1996. The band is currently composed of brothers Luther Dickinson and Cody Dickinson. Their most recent album Still Shakin'  was released in 2025."
+  },
+  {
+   "id": "615e1fcb-a625-49e1-856c-8edb58211dd5",
+   "slug": "rawayana-donde-es-el-after-world-tour-31e06745",
+   "title": "RAWAYANA - ¿Dónde es el after? World Tour",
+   "act": "RAWAYANA",
+   "name": "Rawayana",
+   "description": "Venezuelan musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Rawayana",
+   "extract": "Rawayana is a Venezuelan band formed in Caracas in 2007. The group's music combines a variety of musical genres including reggae, psychedelic, electronic, funk and salsa, and the members describe their style as \"trippy pop\". The band consists of Alberto \"Beto\" Montenegro, Antonio \"Tony\" Casas, Andrés \"Fofo\" Story and Alejandro \"Abeja\" Abeijón."
+  }
+ ]
+}

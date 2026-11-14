@@ -1,0 +1,56 @@
+{
+ "city": "san-francisco",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "ee3f1f01-f9e8-4c3f-9564-7ff1e5850492",
+   "slug": "silverada-2e44a5fc",
+   "title": "Silverada",
+   "act": "Silverada",
+   "name": "Silverada",
+   "description": "American country band",
+   "source_url": "https://en.wikipedia.org/wiki/Silverada",
+   "extract": "Silverada is an American neotraditional country and Americana band based in Austin, Texas. It was formed by singer-songwriter Mike Harmeier in 2007. Its members are singer and guitarist Harmeier, drummer Taylor Englert, guitarist Catlin Rutherford, keyboard player Parker Twomey, and bassist Omar Oyoque."
+  },
+  {
+   "id": "1c90816d-44a8-4a55-b3d7-c5fa98ee5327",
+   "slug": "son-volt-55e54a5e",
+   "title": "Son Volt",
+   "act": "Son Volt",
+   "name": "Son Volt",
+   "description": "American rock band formed in 1994",
+   "source_url": "https://en.wikipedia.org/wiki/Son_Volt",
+   "extract": "Son Volt is an American rock band formed in 1994 by Jay Farrar after the breakup of Uncle Tupelo. The band's current line-up consists of Farrar, Andrew DuPlantis, John Horton (guitar), Mark Patterson (drums), and Mark Spencer. In addition to playing alternative rock, the band is considered a staple of the alternative country rock movement of the 1990s. The band's sound also is rooted in folk rock and Americana. The band went on an indefinite hiatus in 2001, before reforming in 2004."
+  },
+  {
+   "id": "ce7c036b-a49a-4ee9-a395-ecf5e039d5c9",
+   "slug": "john-carroll-kirby-2151dfcd",
+   "title": "John Carroll Kirby",
+   "act": "John Carroll Kirby",
+   "name": "John Carroll Kirby",
+   "description": "American musician",
+   "source_url": "https://en.wikipedia.org/wiki/John_Carroll_Kirby",
+   "extract": "John Carroll Kirby is an American composer based in Los Angeles, California, United States. As a musician, Kirby has collaborated with artists including Remi Wolf, Solange, Frank Ocean, Miley Cyrus, Norah Jones, Bat for Lashes, Connan Mockasin, Sébastien Tellier, Harry Styles, and others."
+  },
+  {
+   "id": "71e5cfa0-0ff9-4155-8187-64fe5ead19c8",
+   "slug": "the-mountain-goats-night-three-stump-the-band-b0414237",
+   "title": "The Mountain Goats - Night Three: Stump the Band",
+   "act": "The Mountain Goats",
+   "name": "The Mountain Goats",
+   "description": "American indie folk band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Mountain_Goats",
+   "extract": "The Mountain Goats are an American indie folk band formed in Claremont, California, by singer-songwriter John Darnielle. Since 2003, the band has been based in Durham, North Carolina. For many years, the sole member of the Mountain Goats was Darnielle, despite the plural moniker. Although he remains the core member of the band, he has worked with a variety of collaborators over time, including bassist and vocalist Peter Hughes, drummer Jon Wurster, multi-instrumentalist Matt Douglas, singer-songwriter Franklin Bruno, bassist and vocalist Rachel Ware, singer-songwriter/producer John Vanderslice, guitarist Kaki King, and multi-instrumentalist Annie Clark."
+  },
+  {
+   "id": "f9f6f9d4-fe56-497f-8c7e-37bc7d273c14",
+   "slug": "jamila-woods-10-years-of-heavn-a2ab1224",
+   "title": "Jamila Woods: 10 Years of HEAVN",
+   "act": "Jamila Woods",
+   "name": "Jamila Woods",
+   "description": "American singer-songwriter and poet (born 1989)",
+   "source_url": "https://en.wikipedia.org/wiki/Jamila_Woods",
+   "extract": "Jamila Abidemi Woods is an American singer, songwriter and poet based in Chicago, Illinois. Her work focuses on themes of Black ancestry, Black feminism, and Black identity, with recurring emphases on self-love and the City of Chicago."
+  }
+ ]
+}

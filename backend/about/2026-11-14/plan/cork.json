@@ -1,0 +1,26 @@
+{
+ "city": "cork",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "ffc6b962-4664-4b04-8475-e10e5f9692c6",
+   "slug": "garth-brooks-the-irish-tour-2027-c0e2e94e",
+   "title": "Garth Brooks - the Irish Tour 2027",
+   "act": "Garth Brooks",
+   "name": "Garth Brooks",
+   "description": "American country singer (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Garth_Brooks",
+   "extract": "Troyal Garth Brooks is an American country singer and songwriter. His musical style blends traditional country with pop and rock elements, which has earned him his immense popularity, particularly in the United States, with success on the country music single and album charts, multi-platinum recordings and record-breaking live performances, while also crossing over into the mainstream pop arena."
+  },
+  {
+   "id": "953d7305-b09e-4053-b4f0-72ef8a890856",
+   "slug": "the-human-league-generations-2027-14ce9278",
+   "title": "The Human League - Generations 2027",
+   "act": "The Human League",
+   "name": "The Human League",
+   "description": "English synth-pop band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Human_League",
+   "extract": "The Human League are an English synth-pop band formed in Sheffield in 1977. Initially an experimental electronic outfit, the group signed to Virgin Records in 1979 and later attained widespread commercial success with their third album Dare in 1981 after restructuring their lineup. The album produced the hit singles \"The Sound of the Crowd\", \"Love Action \", \"Open Your Heart\" and the UK and US number one \"Don't You Want Me\". The band received the Brit Award for Best British Breakthrough Act in 1982. Further hits followed throughout the 1980s and into the 1990s, including the non-album singles \"Mirror Man\" (1982) and \"(Keep Feeling) Fascination\" (1983), \"The Lebanon\" from the album Hysteria (1984), \"Human\" from the album Crash (1986) and \"Tell Me When\" from the album Octopus (1995)."
+  }
+ ]
+}

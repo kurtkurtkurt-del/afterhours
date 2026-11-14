@@ -1,0 +1,36 @@
+{
+ "city": "istanbul",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "5ada8679-cbcf-4be3-a3c0-44ecf3212675",
+   "slug": "ragheb-alama-6be8a4c1",
+   "title": "Ragheb Alama",
+   "act": "Ragheb Alama",
+   "name": "Ragheb Alama",
+   "description": "Lebanese singer-songwriter and entertainer (born 1962)",
+   "source_url": "https://en.wikipedia.org/wiki/Ragheb_Alama",
+   "extract": "Ragheb Sobhi Alama is a Lebanese music artist and television personality. Alama began his career in the 1980s when he appeared as a contestant on the talent show broadcast Studio El Fan, on which he received the Platinum Award."
+  },
+  {
+   "id": "1b9ceb48-0ef1-45d8-be77-93c38904ae73",
+   "slug": "ziynet-sali-d0b691c4",
+   "title": "Ziynet Sali",
+   "act": "Ziynet Sali",
+   "name": "Ziynet Sali",
+   "description": "Turkish-Cypriot singer (born 1975)",
+   "source_url": "https://en.wikipedia.org/wiki/Ziynet_Sali",
+   "extract": "Ziynet Sali Safter is a Cypriot singer who also holds British citizenship. Her later works contain pop elements while her earlier works also had rebetiko and classical Turkish music themes."
+  },
+  {
+   "id": "12bfce01-3451-41ec-8cb3-bd1c9628c8d4",
+   "slug": "paradise-lost-b7b1b1a1",
+   "title": "Paradise Lost",
+   "act": "Paradise Lost",
+   "name": "Paradise Lost",
+   "description": "British gothic metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Paradise_Lost_(band)",
+   "extract": "Paradise Lost are a British gothic metal band. Formed in Halifax, West Yorkshire, in 1988, they are considered pioneers of death-doom and the main influence on gothic metal. As of 2005, Paradise Lost have sold over two million albums worldwide."
+  }
+ ]
+}

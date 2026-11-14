@@ -1,0 +1,56 @@
+{
+ "city": "houston",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "e1ee0d50-9899-42db-8f30-0d2802229d50",
+   "slug": "journey-e2b34c54",
+   "title": "Journey",
+   "act": "Journey",
+   "name": "Journey",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Journey_(band)",
+   "extract": "Journey is an American rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch. The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals."
+  },
+  {
+   "id": "504b1d66-e705-4193-b960-bbd126e69f61",
+   "slug": "tab-benoit-da0fad30",
+   "title": "Tab Benoit",
+   "act": "Tab Benoit",
+   "name": "Tab Benoit",
+   "description": "American guitarist and singer (born 1967)",
+   "source_url": "https://en.wikipedia.org/wiki/Tab_Benoit",
+   "extract": "Tab Benoit is an American blues guitarist, musician, and singer. His playing combines a number of blues styles, primarily Delta blues."
+  },
+  {
+   "id": "263bc2b2-4729-40dd-9363-e656b42eb56a",
+   "slug": "rawayana-donde-es-el-after-world-tour-8864aaee",
+   "title": "RAWAYANA - ¿Dónde es el after? World Tour",
+   "act": "RAWAYANA",
+   "name": "Rawayana",
+   "description": "Venezuelan musical group",
+   "source_url": "https://en.wikipedia.org/wiki/Rawayana",
+   "extract": "Rawayana is a Venezuelan band formed in Caracas in 2007. The group's music combines a variety of musical genres including reggae, psychedelic, electronic, funk and salsa, and the members describe their style as \"trippy pop\". The band consists of Alberto \"Beto\" Montenegro, Antonio \"Tony\" Casas, Andrés \"Fofo\" Story and Alejandro \"Abeja\" Abeijón."
+  },
+  {
+   "id": "208a7e7b-f241-41e9-8984-e355697b7ae4",
+   "slug": "north-mississippi-allstars-1317419b",
+   "title": "North Mississippi Allstars",
+   "act": "North Mississippi Allstars",
+   "name": "North Mississippi Allstars",
+   "description": "American southern rock and blues band",
+   "source_url": "https://en.wikipedia.org/wiki/North_Mississippi_Allstars",
+   "extract": "North Mississippi Allstars is an American blues and southern rock band from Hernando, Mississippi, founded in 1996. The band is currently composed of brothers Luther Dickinson and Cody Dickinson. Their most recent album Still Shakin'  was released in 2025."
+  },
+  {
+   "id": "7d346509-f3b7-46bf-bf6f-f9bf007dffad",
+   "slug": "paul-cauthen-c7e38dbe",
+   "title": "Paul Cauthen",
+   "act": "Paul Cauthen",
+   "name": "Paul Cauthen",
+   "description": "American singer-songwriter (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/Paul_Cauthen",
+   "extract": "Paul Mark Cauthen is an American singer-songwriter from East Texas. He started his music career in an Americana/indie folk rock duo called Sons of Fathers, before turning solo. He has released five albums and an EP as a solo artist, the most recent being Book of Paul released on 3 April, 2026."
+  }
+ ]
+}

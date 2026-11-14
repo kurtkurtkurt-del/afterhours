@@ -1,0 +1,16 @@
+{
+ "city": "miami",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "3d23dba7-680a-4d67-bf1f-abea4e2bb56e",
+   "slug": "chromeo-ages-18-644b8443",
+   "title": "Chromeo - Ages 18+",
+   "act": "Chromeo",
+   "name": "Chromeo",
+   "description": "Canadian electro-funk musical duo",
+   "source_url": "https://en.wikipedia.org/wiki/Chromeo",
+   "extract": "Chromeo is a Canadian electro-funk duo from Montreal, formed in 2002 by musicians David \"Dave 1\" Macklovitch and Patrick \"P-Thugg\" Gemayel. Their sound draws from soul music, dance music, rock, synth-pop, disco and funk."
+  }
+ ]
+}

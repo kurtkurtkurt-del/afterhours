@@ -1,0 +1,26 @@
+{
+ "city": "chicago",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "f35381f8-b550-4792-b650-ba5a37001ae5",
+   "slug": "francis-of-delirium-ages-17-bd7031b4",
+   "title": "Francis of Delirium - Ages 17+",
+   "act": "Francis of Delirium",
+   "name": "Francis of Delirium",
+   "description": "Luxembourgish musician",
+   "source_url": "https://en.wikipedia.org/wiki/Francis_of_Delirium",
+   "extract": "Jana Bahrich, known professionally as Francis of Delirium, is a Luxembourgish indie rock musician. After playing French horn and banjo as a child, she went on to become a prominent musician in and beyond Luxembourg. She has toured with various bands and headlined her own tour in April 2024 for her debut album, Lighthouse, which was released in March 2024."
+  },
+  {
+   "id": "5ab328b8-bb63-4af0-a7b1-02ff4e5c5ce8",
+   "slug": "the-menzingers-everything-i-ever-saw-north-ameri-f61209f7",
+   "title": "The Menzingers: Everything I Ever Saw North American Tour",
+   "act": "The Menzingers",
+   "name": "The Menzingers",
+   "description": "American punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Menzingers",
+   "extract": "The Menzingers are an American punk rock band from Scranton, Pennsylvania, formed in 2006. The band consists of Greg Barnett, Tom May, Eric Keen (bass) and Joe Godino (drums). To date, the band has released eight studio albums, with their most recent, Everything I Ever Saw, released on July 17, 2026."
+  }
+ ]
+}

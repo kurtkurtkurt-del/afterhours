@@ -1,0 +1,76 @@
+{
+ "city": "glasgow",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "bb3c7677-3966-4750-b021-ac9a5f49de64",
+   "slug": "the-guest-list-8e1389d0",
+   "title": "The Guest List",
+   "act": "The Guest List",
+   "name": "The Guest List",
+   "description": "English indie rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Guest_List_(band)",
+   "extract": "The Guest List are an English indie rock band from Manchester, formed in 2021. The band consists of Cai Alty, Tom Quigley, Leio Hunter, Sid Wallace (bass) and Angus Gilchrist (drums). They first gained attention online with covers of indie songs before releasing original material, and released their debut album, Something Real, in August 2026."
+  },
+  {
+   "id": "a81018d4-e78b-4875-9ba3-980bc1dbe92a",
+   "slug": "president-blood-of-your-empire-united-kingdom-ca-1d80f72e",
+   "title": "PRESIDENT - Blood of Your Empire: United Kingdom Campaign 2026",
+   "act": "PRESIDENT",
+   "name": "President",
+   "description": "British metalcore band",
+   "source_url": "https://en.wikipedia.org/wiki/President_(band)",
+   "extract": "President are an anonymous English band formed in 2025, who blend metalcore with electronica. The band had released no music and were unknown until they were announced to play at that year's Download Festival, sparking speculation about their identity. Their frontman, the eponymous President, is described by Revolver as \"silver-haired, wearing an eerie, not-quite-lifelike mask etched with deep wrinkles and radiating wax-figure unease\". They released their debut EP, King of Terrors, in 2025. Their debut studio album, Blood of Your Empire, was released on 4 September 2026."
+  },
+  {
+   "id": "9d199401-2a71-4f78-835c-9c4b19307158",
+   "slug": "the-temperance-movement-737af908",
+   "title": "The Temperance Movement",
+   "act": "The Temperance Movement",
+   "name": "The Temperance Movement",
+   "description": "Blues rock band",
+   "source_url": "https://en.wikipedia.org/wiki/The_Temperance_Movement_(band)",
+   "extract": "The Temperance Movement are a British blues rock supergroup formed in 2011 by Glasgow-born vocalist Phil Campbell and guitarists Luke Potashnick and Paul Sayer. The rhythm section consists of bassist Nick Fyffe and drummer Simon Lea. The band released their Pride EP in 2012, and their eponymous debut studio album was released on 16 September 2013. Collectively the band have a rich history of experience, having previously played with Rooster, Ben's Brother, Jamiroquai, Ray Davies, The Waterboys and Feeder."
+  },
+  {
+   "id": "e3a3e170-16b8-4ba0-90a8-4a9ca97a8ee8",
+   "slug": "julia-wolf-fe9efdd5",
+   "title": "Julia Wolf",
+   "act": "Julia Wolf",
+   "name": "Julia Wolf",
+   "description": "American singer",
+   "source_url": "https://en.wikipedia.org/wiki/Julia_Wolf_(musician)",
+   "extract": "Julia Jade Capello, known professionally as Julia Wolf, is an American singer. Known for her ethereal vocals and self-produced alt-pop sound, she blends elements of indie pop, alternative rock, and R&B. Capello gained early attention on TikTok before releasing her debut EP Girls in Purgatory (2021) and her studio albums Good Thing We Stayed (2023) and Pressure (2025)."
+  },
+  {
+   "id": "a4d6092c-a741-4e77-8b41-41958aff0bd1",
+   "slug": "opus-kink-8fdb88e3",
+   "title": "Opus Kink",
+   "act": "Opus Kink",
+   "name": "Opus Kink",
+   "description": "English jazz-punk band",
+   "source_url": "https://en.wikipedia.org/wiki/Opus_Kink",
+   "extract": "Opus Kink are an English post-punk and jazz punk band formed in Brighton in 2017, consisting of Sam Abbo, Angus Rogers, Fin Abbo, Jack Banjo Courtney, Jazz Pope, and Jed Morgans. The band have released three EPs: Requiem For a Quarantine (2020), Til the Stream Runs Dry (2022) and My Eyes, Brother! (2023). Their debut album ‘The Sweet Goodbye’ was released on 31st July 2026. The band are known for incendiary, cult-like live performances, an esoteric range of influences and sonic and lyrical world-building."
+  },
+  {
+   "id": "161f1271-be24-4183-8fcc-5c9b2586f56d",
+   "slug": "courteeners-3ddd8ee7",
+   "title": "Courteeners",
+   "act": "Courteeners",
+   "name": "Courteeners",
+   "description": "English band",
+   "source_url": "https://en.wikipedia.org/wiki/Courteeners",
+   "extract": "Courteeners are an English band formed in Middleton, Greater Manchester, in 2006 by Liam Fray, Michael Campbell, and Mark Cuppello, with Daniel \"Conan\" Moores joining shortly after to replace the band's initial guitarist.; Mark Cuppello was replaced by the band's producer Joe Cross in 2015. They previously toured with pianist Adam Payne, who has been featured on every album, but in 2019 was replaced with Elina Lin. In December 2012, the band dropped \"The\" from their name, continuing simply as \"Courteeners\". In 2024, Cross and Lin became official members of the band."
+  },
+  {
+   "id": "0343ede4-e862-4892-8082-b08a899f085a",
+   "slug": "saves-the-day-ed8e3b03",
+   "title": "Saves the Day",
+   "act": "Saves the Day",
+   "name": "Saves the Day",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Saves_the_Day",
+   "extract": "Saves the Day is an American rock band formed in 1997 in Princeton, New Jersey. The band currently consists of lead vocalist and guitarist Chris Conley, guitarist Arun Bali, bassist Rodrigo Palma, and drummer Claudio Rivera."
+  }
+ ]
+}

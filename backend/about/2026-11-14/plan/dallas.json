@@ -1,0 +1,56 @@
+{
+ "city": "dallas",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "2e49f072-153d-44fb-b79b-c28d0e5765d0",
+   "slug": "streetlight-manifesto-the-presence-of-the-past-t-9b093038",
+   "title": "Streetlight Manifesto: The Presence of the Past Tour",
+   "act": "Streetlight Manifesto",
+   "name": "Streetlight Manifesto",
+   "description": "American ska punk band from New Jersey",
+   "source_url": "https://en.wikipedia.org/wiki/Streetlight_Manifesto",
+   "extract": "Streetlight Manifesto is an American ska punk band from New Brunswick, New Jersey, formed in 2002. They released their debut album, Everything Goes Numb, through Victory Records on August 26, 2003. The band headlined and sold out their first concert at Rutgers University in New Brunswick on December 9, 2003. Several members were previously involved in New Jersey's third wave ska scene, most notably Tomas Kalnoky, a founding member of Catch 22, and members of the band One Cool Guy. Kalnoky and several other members also attended Rutgers University."
+  },
+  {
+   "id": "90fe98eb-bb44-47d5-bd33-fb322534edb6",
+   "slug": "buzzcocks-1df8b448",
+   "title": "Buzzcocks",
+   "act": "Buzzcocks",
+   "name": "Buzzcocks",
+   "description": "British punk rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Buzzcocks",
+   "extract": "Buzzcocks are an English punk rock band formed by singer-songwriter and guitarist Pete Shelley and singer-songwriter Howard Devoto in Bolton in 1976. They achieved commercial success with singles that fuse pop with rapid-fire punk energy, inspiring the power pop and pop punk movements; these singles were later collected on Singles Going Steady, an acclaimed compilation album music journalist and critic Ned Raggett described as a \"punk masterpiece\"."
+  },
+  {
+   "id": "7f148adc-fbaf-4460-92fe-0f46f2a477b7",
+   "slug": "paul-cauthen-ddb96ad8",
+   "title": "Paul Cauthen",
+   "act": "Paul Cauthen",
+   "name": "Paul Cauthen",
+   "description": "American singer-songwriter (born 1986)",
+   "source_url": "https://en.wikipedia.org/wiki/Paul_Cauthen",
+   "extract": "Paul Mark Cauthen is an American singer-songwriter from East Texas. He started his music career in an Americana/indie folk rock duo called Sons of Fathers, before turning solo. He has released five albums and an EP as a solo artist, the most recent being Book of Paul released on 3 April, 2026."
+  },
+  {
+   "id": "6b7d1a0c-eb14-48a1-bb4f-c20bf132ec4f",
+   "slug": "better-than-ezra-legends-of-the-fall-closer-to-t-0ffffcaf",
+   "title": "Better Than Ezra - Legends of the Fall: Closer To The Edge",
+   "act": "Better Than Ezra",
+   "name": "Better Than Ezra",
+   "description": "American rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Better_Than_Ezra",
+   "extract": "Better Than Ezra is an American alternative rock band based in New Orleans, Louisiana, and signed with Round Hill Music. The band formed in 1988 in Baton Rouge, Louisiana, and consists of Kevin Griffin, Tom Drummond, Michael Jerome (drums), and James Arthur Payne Jr.. The band has released nine studio albums, most recently 2024's Super Magick. They are best known for their 1993 multi-platinum album Deluxe and the 1995 single \"Good\", which reached number 1 on the Billboard Modern Rock Tracks chart."
+  },
+  {
+   "id": "f3bc76c2-b088-4646-aa53-e564a4828fc5",
+   "slug": "static-dress-injury-episode-usa-tour-169cdc10",
+   "title": "STATIC DRESS: INJURY EPISODE USA TOUR",
+   "act": "STATIC DRESS",
+   "name": "Static Dress",
+   "description": "English rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Static_Dress",
+   "extract": "Static Dress are an English rock band from Leeds, West Yorkshire. Formed in 2018, Static Dress are a concept band with their material following a continuous story. They currently consist of lead vocalist Olli Appleyard, drummer Sam Ogden, guitarist Vincent Weight and bassist George Holding. They have released two full-length studio albums, three EPs and various standalone singles, as well as a comic book and three video games."
+  }
+ ]
+}

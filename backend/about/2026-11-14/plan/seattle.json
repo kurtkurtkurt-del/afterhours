@@ -1,0 +1,66 @@
+{
+ "city": "seattle",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "e636123c-3817-499a-bd06-e747eb7df011",
+   "slug": "todd-rundgren-damned-if-i-do-tour-9860e790",
+   "title": "Todd Rundgren: DAMNED IF I DO TOUR",
+   "act": "Todd Rundgren",
+   "name": "Todd Rundgren",
+   "description": "American musician (born 1948)",
+   "source_url": "https://en.wikipedia.org/wiki/Todd_Rundgren",
+   "extract": "Todd Harry Rundgren is an American musician, singer, songwriter, and record producer who has performed a diverse range of styles as a solo artist and as a member of the bands Nazz and Utopia. He is known for his sophisticated and often unorthodox music, his occasionally lavish stage shows, and his later experiments with interactive art. He also produced music videos and was an early adopter and promoter of various computer technologies, such as using the Internet as a means of music distribution in the late 1990s."
+  },
+  {
+   "id": "4a80ad20-cc23-4d1d-aa27-e60e2824b026",
+   "slug": "julien-baker-9aab4c18",
+   "title": "Julien Baker",
+   "act": "Julien Baker",
+   "name": "Julien Baker",
+   "description": "American rock musician (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Julien_Baker",
+   "extract": "Julien Rose Baker is an American indie rock singer-songwriter and guitarist. Her music is noted for its moody quality and confessional lyrical style, as well as frank explorations of topics including Christianity, addiction, mental illness, and human nature. She has received six Grammy Award nominations and three wins as a member of Boygenius."
+  },
+  {
+   "id": "45181ade-ab22-4cb3-b7a6-9c0d39f040c1",
+   "slug": "lil-tracy-4b456a68",
+   "title": "Lil Tracy",
+   "act": "Lil Tracy",
+   "name": "Lil Tracy",
+   "description": "American rapper and singer (born 1995)",
+   "source_url": "https://en.wikipedia.org/wiki/Lil_Tracy",
+   "extract": "\n\nJazz Ishmael Butler, known professionally as Lil Tracy and formerly as Yung Bruh, is an American rapper, singer and songwriter. He emerged from the underground hip-hop scene associated with SoundCloud in the mid-2010s, developing a style that incorporates cloud rap, emo rap, trap and influences from punk rock and electronic music."
+  },
+  {
+   "id": "c2a473a1-2c4d-4a3f-923d-b58aeec9fef3",
+   "slug": "rodrigo-y-gabriela-ourhome-tour-ec95ea3f",
+   "title": "Rodrigo y Gabriela - OurHome Tour",
+   "act": "Rodrigo y Gabriela",
+   "name": "Rodrigo y Gabriela",
+   "description": "Mexican guitar duo",
+   "source_url": "https://en.wikipedia.org/wiki/Rodrigo_y_Gabriela",
+   "extract": "Rodrigo y Gabriela are a Mexican acoustic guitar duo featuring musicians Rodrigo Sánchez and Gabriela Quintero. Residing in Mexico City, they began their career in Dublin, Ireland, where they played for the first eight years of their career as a duo. Their music consists largely of instrumental duets on the flamenco guitar, with a musical style influenced by a number of genres including nuevo flamenco, rock, and heavy metal."
+  },
+  {
+   "id": "e438e16d-1344-49ab-bd6f-8a6024e1a6cc",
+   "slug": "gary-numan-6f7b580d",
+   "title": "Gary Numan",
+   "act": "Gary Numan",
+   "name": "Gary Numan",
+   "description": "British musician (born 1958)",
+   "source_url": "https://en.wikipedia.org/wiki/Gary_Numan",
+   "extract": "Gary Anthony James Webb, known professionally as Gary Numan, is an English musician. He entered the music industry as frontman of the new wave band Tubeway Army. The band's second and final album, 1979's Replicas, reached No. 1 on the UK Albums Chart, and spawned a UK No. 1 single with \"Are 'Friends' Electric?\". Following the band's split, he released his debut solo album The Pleasure Principle later in 1979, which also reached No. 1 in the UK and produced another UK No. 1 single with \"Cars\". Although his commercial popularity peaked in the late 1970s and early 1980s, he has maintained a strong cult following since then. He has sold over 10 million records."
+  },
+  {
+   "id": "4601fba6-c49e-479f-af2f-79b9f3fcf3a4",
+   "slug": "fear-factory-4b539a1c",
+   "title": "Fear Factory",
+   "act": "Fear Factory",
+   "name": "Fear Factory",
+   "description": "American industrial metal band",
+   "source_url": "https://en.wikipedia.org/wiki/Fear_Factory",
+   "extract": "Fear Factory is an American industrial metal band formed in Los Angeles in 1989. It has released ten full-length albums and evolved through a succession of sounds, all in its main style of industrial metal. Over the years, the band has undergone frequent changes in its lineup. Lead vocalist Burton C. Bell was the only consistent member for 31 years until his departure in 2020. Guitarist Dino Cazares is the only remaining original member in Fear Factory's current lineup, after a seven-year sabbatical from the band between 2002 and 2009. The current lineup of Fear Factory consists of Cazares, bassist Tony Campos, vocalist Milo Silvestro and drummer Pete Webber."
+  }
+ ]
+}

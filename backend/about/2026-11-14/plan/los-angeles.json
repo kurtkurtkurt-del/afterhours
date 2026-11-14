@@ -1,0 +1,26 @@
+{
+ "city": "los-angeles",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "1cdcf097-3922-4645-be54-23c7c3a67c8b",
+   "slug": "arde-bogota-83811195",
+   "title": "Arde Bogota",
+   "act": "Arde Bogota",
+   "name": "Arde Bogotá",
+   "description": "Musical ensemble",
+   "source_url": "https://en.wikipedia.org/wiki/Arde_Bogot%C3%A1",
+   "extract": "Arde Bogotá is a Spanish alternative rock band originally from the city of Cartagena located in the Region of Murcia. The band was formed in 2017 and took its name from the Colombian city of Bogotá, where its first recordings were heard. The group is made up of Antonio García, Dani Sánchez, Pepe Esteban and José Ángel Mercader."
+  },
+  {
+   "id": "c281f5d9-87ed-4017-9882-19eb3369a10a",
+   "slug": "gary-numan-844886c3",
+   "title": "Gary Numan",
+   "act": "Gary Numan",
+   "name": "Gary Numan",
+   "description": "British musician (born 1958)",
+   "source_url": "https://en.wikipedia.org/wiki/Gary_Numan",
+   "extract": "Gary Anthony James Webb, known professionally as Gary Numan, is an English musician. He entered the music industry as frontman of the new wave band Tubeway Army. The band's second and final album, 1979's Replicas, reached No. 1 on the UK Albums Chart, and spawned a UK No. 1 single with \"Are 'Friends' Electric?\". Following the band's split, he released his debut solo album The Pleasure Principle later in 1979, which also reached No. 1 in the UK and produced another UK No. 1 single with \"Cars\". Although his commercial popularity peaked in the late 1970s and early 1980s, he has maintained a strong cult following since then. He has sold over 10 million records."
+  }
+ ]
+}

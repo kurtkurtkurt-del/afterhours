@@ -1,0 +1,16 @@
+{
+ "city": "philadelphia",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "5e55758e-2c84-47aa-a6cb-2dc8fe44ff4e",
+   "slug": "sombr-you-are-the-reason-tour-dbced695",
+   "title": "SOMBR - You Are The Reason Tour",
+   "act": "SOMBR",
+   "name": "Sombr",
+   "description": "American singer and songwriter (born 2005)",
+   "source_url": "https://en.wikipedia.org/wiki/Sombr",
+   "extract": "Shane Michael Boose, known professionally as Sombr, is an American singer-songwriter and musician."
+  }
+ ]
+}

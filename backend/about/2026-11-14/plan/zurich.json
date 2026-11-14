@@ -1,0 +1,26 @@
+{
+ "city": "zurich",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "2ff4bedc-0988-4acf-958e-47d4912efdba",
+   "slug": "thundermother-f57ec4ba",
+   "title": "Thundermother",
+   "act": "Thundermother",
+   "name": "Thundermother",
+   "description": "Swedish hard rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Thundermother",
+   "extract": "Thundermother is an all-female Swedish hard rock band founded by Filippa Nässil and Moa Munoz in Växjö 2009. The band has toured with Scorpions across Europe and North America, played with Kiss, Danish rock band D-A-D and Swedish rock band Backyard Babies. Thundermother has produced seven albums, the first album Rock'N'Roll Disaster came out in 2014 and the latest album Dirty and Divine was released February 2025."
+  },
+  {
+   "id": "9ec28841-4501-4b73-b7e0-3b71bc2ce976",
+   "slug": "cleopatrick-52b4b97a",
+   "title": "cleopatrick",
+   "act": "cleopatrick",
+   "name": "Cleopatrick",
+   "description": "Canadian rock duo",
+   "source_url": "https://en.wikipedia.org/wiki/Cleopatrick",
+   "extract": "Cleopatrick is a Canadian rock duo based in Cobourg, Ontario. They released their debut album, Bummer, on June 4, 2021 and three EPs by their own record label, called Nowhere Special Recordings. Their second album, Fake Moon, was released on March 14, 2025."
+  }
+ ]
+}

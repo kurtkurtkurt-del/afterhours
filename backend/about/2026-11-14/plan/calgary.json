@@ -1,0 +1,16 @@
+{
+ "city": "calgary",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "a2f912be-8d37-47dd-ad58-acbbd809da61",
+   "slug": "trooper-36709da2",
+   "title": "Trooper",
+   "act": "Trooper",
+   "name": "Trooper",
+   "description": "Canadian rock band",
+   "source_url": "https://en.wikipedia.org/wiki/Trooper_(band)",
+   "extract": "Trooper is a Canadian rock band formed by singer Ra McGuire and guitarist Brian Smith in 1975. The group is best known for their 1970s hits \"Raise a Little Hell\", \"We're Here for a Good Time \", \"The Boys in the Bright White Sports Car\", \"General Hand Grenade\", \"3 Dressed Up as a 9\", \"Janine\", \"Two for the Show\", \"Oh, Pretty Lady\", and \"Santa Maria\"."
+  }
+ ]
+}

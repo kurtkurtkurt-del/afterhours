@@ -1,0 +1,36 @@
+{
+ "city": "denver",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "a350af5a-6c3a-4234-8885-125e6472ad15",
+   "slug": "ivy-queen-ages-16-aeacec1b",
+   "title": "Ivy Queen - Ages 16+",
+   "act": "Ivy Queen",
+   "name": "Ivy Queen",
+   "description": "Puerto Rican rapper (born 1972)",
+   "source_url": "https://en.wikipedia.org/wiki/Ivy_Queen",
+   "extract": "Martha Ivelisse Pesante Rodríguez, known professionally as Ivy Queen, is a Puerto Rican rapper and singer. She is considered one of the pioneers of the reggaeton genre. Dubbed the Queen of Reggaeton, she is one of the most influential reggaeton artists of all time."
+  },
+  {
+   "id": "3b814e6f-2b59-4a48-a6ea-9742d408f30a",
+   "slug": "vansire-c65fc0ea",
+   "title": "Vansire",
+   "act": "Vansire",
+   "name": "Vansire",
+   "description": "American dream pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Vansire",
+   "extract": "Vansire is an American dream pop band from Rochester, Minnesota, consisting of Josh Augustin and Sam Winemiller. They are currently signed to Spirit Goth Records. Vansire has performed at ROCKChester and First Avenue, played a live session with Audiotree, and collaborated with artists such as Alexandros, Chester Watson, Jeremiah Jae, and Mick Jenkins."
+  },
+  {
+   "id": "625f1e37-2655-46f0-8c43-9c85e033d360",
+   "slug": "almost-monday-d77d252b",
+   "title": "almost monday",
+   "act": "almost monday",
+   "name": "Almost Monday",
+   "description": "American indie pop band",
+   "source_url": "https://en.wikipedia.org/wiki/Almost_Monday",
+   "extract": "Almost Monday is an American indie pop band based in San Diego, California."
+  }
+ ]
+}

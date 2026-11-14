@@ -1,0 +1,26 @@
+{
+ "city": "birmingham",
+ "day": "2026-11-14",
+ "nights": [
+  {
+   "id": "65f51ee3-eb67-4b3d-864c-fb3f3497d31a",
+   "slug": "gabriella-cilmi-ecd834c2",
+   "title": "Gabriella Cilmi",
+   "act": "Gabriella Cilmi",
+   "name": "Gabriella Cilmi",
+   "description": "Australian pop singer and songwriter (born 1991)",
+   "source_url": "https://en.wikipedia.org/wiki/Gabriella_Cilmi",
+   "extract": "Gabriella Lucia Cilmi is an Australian and Italian pop singer and songwriter. A contralto, Cilmi is known for her distinctive raspy singing voice."
+  },
+  {
+   "id": "1b5a275d-d3bf-426e-bc6d-82c87fab3c3f",
+   "slug": "fat-dog-2ed4d24d",
+   "title": "Fat Dog",
+   "act": "Fat Dog",
+   "name": "Fat Dog",
+   "description": "English band",
+   "source_url": "https://en.wikipedia.org/wiki/Fat_Dog",
+   "extract": "Fat Dog are an English band, currently consisting of Joe Love, Chris Hughes, Morgan Wallace, and Ellis D. The band formed in 2020 in South East London."
+  }
+ ]
+}
